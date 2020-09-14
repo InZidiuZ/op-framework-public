@@ -421,13 +421,13 @@ OP.Global.Locales.Languages["es-MX"] = {
 		-- game/miscellaneous
 		-- these two commands should remain the same on all languages in case someone joins in with a language they don't know.
 		-- you can change the _help parts though if you'd like, not the "language code" though.
-		language_command = "/language",
-		language_command_help = "Set your preferred language. This change will save for future sessions. The change is immediate.",
-		language_command_parameter_language = "language code",
+		language_command = "/idioma",
+		language_command_help = "Establezca su idioma preferido. Este cambio se guardará para futuras sesiones. El cambio es inmediato.",
+		language_command_parameter_language = "Codigo del idioma",
 		language_command_parameter_language_help = "El código de idioma que desea habilitar. Para ver su idioma actual, así como todos los demás idiomas disponibles, escriba /languages. Para el idioma predeterminado, deje este argumento vacío.",
 		language_command_substitutes = "/lang",
 
-		languages_command = "/languages",
+		languages_command = "/idiomas",
 		languages_command_help = "Verifique su idioma actual, así como todos los demás idiomas disponibles.",
 		languages_command_substitutes = "/langs",
 
@@ -833,7 +833,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 
 	cinematic = {
 		cinematic = "Cinematic",
-		black_bars_set_to = "The cinematic black bars has now been set to ${blackBarsHeight}%."
+		black_bars_set_to = "Las barras cinematográficas ahora se han configurado en ${blackBarsHeight}%."
 	},
 
 	compass = {
@@ -855,7 +855,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		unitName = "Nombre Unidad: ${unitName}",
 		unitSpeed = "Velocidad Unidad: ${unitSpeed} mp/h",
 		bottom_part_1 = "Este vehículo tiene licencia para el",
-		bottom_part_2 = "Estado de san andrés",
+		bottom_part_2 = "Estado de San Andreas",
 		bottom_part_3 = "Cualquier uso no autorizado está sujeto a una fuerte penalización bajo 13 S.A. Pen. 502(a).",
 	},
 
@@ -903,9 +903,9 @@ OP.Global.Locales.Languages["es-MX"] = {
 		grocery_store = "Tienda",
 		tool_store = "Tienda de herramientas",
 		gun_store = "Ammu-Nation",
-		gun_store_with_shooting_range = "Ammu-Nation with Range",
+		gun_store_with_shooting_range = "Ammu-Nation con Rango",
 		bar = "Bar",
-		strip_club = "El Vainilla",
+		strip_club = "Vanilla Unicorn",
 		police_armory = "Armería de la policía",
 		ems_store = "Tienda EMS",
 		chop_shop = "Chop Shop",
@@ -1325,7 +1325,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		to_join = "para unirse",
 		main_menu = "Menú principal",
 		disconnect = "Desconectarse",
-		disconnect_confirm = "Está seguro de que desea desconectarse del servidor?",
+		disconnect_confirm = "¿Está seguro de que desea desconectarse del servidor?",
 		yes = "Si",
 		no = "No",
 		name = "Nombre",
@@ -1338,7 +1338,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		new_character = "Nuevo personaje",
 		select_character = "Selecciona personaje",
 		delete_character = "Eliminar personaje",
-		delete_character_confirm = "Estás seguro de que deseas eliminar este personaje?",
+		delete_character_confirm = "¿Estás seguro de que deseas eliminar este personaje?",
 		create_character = "Crear personaje",
 		first_name = "Nombre",
 		last_name = "Apellido",
@@ -1360,18 +1360,18 @@ OP.Global.Locales.Languages["es-MX"] = {
 	},
 
 	miscellaneous = {
-		language_unavailable = "El idioma `${languageCode}` aún no está disponible Si desea crear localización para este idioma, siéntase libre de unirse al discord de desarrollo OP-FW para obtener más información en http://discord.gg/yRBWkjb!",
+		language_unavailable = "El idioma `${languageCode}` aún no está disponible. Si desea crear localización para este idioma, siéntase libre de unirse al discord de desarrollo OP-FW para obtener más información en http://discord.gg/yRBWkjb!",
 		same_language = "Tu ya tienes ${languageCode} como su idioma establecido.",
 		language_set = "Su idioma preferido ahora se ha establecido en ${languageCode}.",
 		current_language = "Idioma actual",
 		available_language_codes = "Idiomas Disponibles",
 		ping_pong = "Pong!",
-		ping_response = "${ping}ms (callback time: ${cbTime}ms)",
+		ping_response = "${ping}ms (tiempo de respuesta: ${cbTime}ms)",
 		invalid_input = "Entrada Inválida.",
 		missing_input = "Entrada Faltante.",
-		ooc_first_time = "Vemos que todavía no has usado / ooc! Antes de dejar que lo use, nos gustaría darle una pequeña advertencia. El comando / ooc solo se debe usar en situaciones inmediatas, y todas y cada una de las preguntas o mensajes no inmediatos se deben redirigir a nuestro discord en $ {communityDiscord}. ¡Eso es todo! Para comenzar a usar / ooc, escriba / ooc_on. Podrá apagarlo nuevamente con / ooc_off.",
+		ooc_first_time = "Vemos que todavía no has usado /ooc! Antes de dejar que lo use, nos gustaría darle una pequeña advertencia. El comando /ooc solo se debe usar en situaciones inmediatas, y todas y cada una de las preguntas o mensajes no inmediatos se deben redirigir a nuestro discord en $ {communityDiscord}. ¡Eso es todo! Para comenzar a usar /ooc, escriba /ooc_on. Podrá apagarlo nuevamente con /ooc_off.",
 		ooc_not_logged_in = "Usted no se ha identificado.",
-		ooc_timed_out = "Actualmente se ha excedido el tiempo de espera del chat OOC. por favor espera.",
+		ooc_timed_out = "Actualmente se ha excedido el tiempo de espera del chat OOC. Por favor espera.",
 		ooc_muted_no_reason = "Has sido silenciado del chat global de OOC sin una razón específica.",
 		ooc_muted = "Has sido silenciado del chat global de OOC por la razón `${reason}`.",
 		global_ooc_title = "OOC ${playerName}",
@@ -1760,7 +1760,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 
 	-- vehicles/*
 	car_wash = {
-		use_car_wash = "Presiona ~INPUT_CONTEXT~  para usar el autolavado. El costo es $15.",
+		use_car_wash = "Presiona ~INPUT_CONTEXT~ para usar el autolavado. El costo es $15.",
 		stop_car_to_wash = "Detén tu auto para usar el autolavado.",
 		vehicle_already_clean = "Este auto esta muy limpio para ser lavado.",
 		car_wash = "Autolavado",
