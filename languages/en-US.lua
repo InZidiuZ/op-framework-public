@@ -202,6 +202,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		bind_removed = "Removed bind with name `${bindName}`",
 		error_executing_bind = "There was an error when trying to execute bind with name `${bindName}` which attempts to trigger command `${command}`.",
 
+		substitute_command_for = "This is a substitute command for `${command}`.",
+
 		-- the "substitues" is basically just a shortcut command, so if you do /lang, it'll execute /language.
 		-- you can put as many substitutes as you'd like by doing "/lang, /lang2, /lang3", all these 3 commands will be valid substitutes
 		-- the main difference between the _command and _command_substitutes is that substitutes will not show as suggestions in the chat
@@ -760,6 +762,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		manual_toggle_command_help = "Toggle whether or not you want to manually control vehicles' gears.",
 		manual_toggle_command_substitutes = "",
 
+		cruise_control_command = "/cruise_control",
+		cruise_control_command_parameter_speed = "speed",
+		cruise_control_command_parameter_speed_help = "Which speed would you like the cruise control to use? You can leave this blank in order to reset it, which will return it to normal behavior.",
+		cruise_control_command_help = "Override the cruise control's norjmal behavior in order to pre-set the speed limit.",
+		cruise_control_command_substitutes = "/cc",
+
 		-- weapons/recoil
 		crosshair_command = "/crosshair",
 		crosshair_command_help = "Toggle the crosshair.",
@@ -995,6 +1003,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		drill_description = "I bet a lot of people around here would have use for this... considering how they seem to have a few screws loose.",
 		umbrella = "Umbrella",
 		umbrella_description = "Basically a life necessity here in Los Santos.",
+		watch = "Watch",
+		watch_description = "No time for caution.",
+		compass = "Compass",
+		compass_description = "He's left! Left, left, left you idiot!",
 
 		basic_repair_kit = "Basic Repair Kit",
 		basic_repair_kit_description = "It makes stuff work, but just barely.",
@@ -1006,6 +1018,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		advanced_lockpick_description = "Hide Yo Kids, Hide Yo Wife",
 		cleaning_kit = "Cleaning Kit",
 		cleaning_kit_description = "Perfect to clean your vehicle, or the blood stains you've been letting dry in the back of your trunk.",
+
+		microphone_bug = "Microphone Bug",
+		microphone_bug_description = "Used to creep in on conversations.",
+		vehicle_tracker = "Vehicle Tracker",
+		vehicle_tracker_description = "This tracker is exactly what Michael needs, who has for over seven years had suspicion his wife, Amanda, has been cheating on him with the tennis coach he got her.",
+		device_scanner = "Device Scanner",
+		device_scanner_description = "Used to scan for nearby creep devices.",
 
 		water = "Water",
 		water_description = "Danger! Dihydrogen monoxide is colorless and odorless. Accidental inhalation of DHMO may be fatal. Prolonged exposure to its solid form causes severe tissue damage. Symptoms of DHMO ingestion can include excessive sweating and urination, and possibly a bloated feeling, nausea, vomiting and body electrolyte imbalance.",
@@ -1690,9 +1709,28 @@ OP.Global.Locales.Languages["en-US"] = {
 		no_shield = "You do not have a ballistic shield in your inventory."
 	},
 
+	shooting_ranges = {
+		turn_on = "Turn On ($${cost})",
+		turn_off = "Turn Off",
+		toggle_through_targets = "Toggle Through Targets (${modelId})",
+		increase_speed = "Increase Speed (${speedLevel})",
+		decrease_speed = "Decrease Speed (${speedLevel})",
+		increase_rotation = "Increase Rotation (${rotationLevel})",
+		decrease_rotation = "Decrease Rotation (${rotationLevel})",
+		clear_bullet_impacts = "Clear Bullet Impacts",
+		illegal_shooting_spot_value = "Attempting to parse invalid values for shootings spots.",
+		illegal_shooting_spot_id = "Attempting to parse values for a shootings spot that doesn't exist.",
+		not_enough_cash = "You do not have enough cash."
+	},
+
 	spawn = {
 		spawn_now = "Spawn Now",
 		last_position = "Last Position"
+	},
+
+	spying = {
+		microphone_bug_not_activated = "The bug has not beeen activated.",
+		vehicle_tracker_not_activated = "The tracker has not beeen activated."
 	},
 
 	status = {
@@ -1936,6 +1974,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		petrolcan_fuel_text = "Petrol Amount Left: ${petrolAmount}%\nPress ~g~E ~w~to stop fueling."
 	},
 
+	gadgets = {
+		helicopter_camera_vehicle_info = "Speed: ${speed} mp/h\nModel: ${model}\nPlate: ${plate}"
+	},
+
 	garages = {
 		garage_empty = "Your garage is empty!",
 		impound_lot = "Impound Lot",
@@ -2004,7 +2046,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		vehicle_locked = "The vehicle is locked.",
 		manual_gears_enabled = "Manual gearing has now been enabled.",
 		manual_gears_disabled = "Manual gearing has now been disabled.",
-		manual_gear_set_to = "Gear set to ${gearId}."
+		manual_gear_set_to = "Gear set to ${gearId}.",
+		cruise_control_set_to = "The cruise control will now limit the speed at ${speed} mp/h.",
+		cruise_control_reset = "The cruise control will now limit the speed at the speed the vehicle was at when toggled.",
+		cruise_control_on = "Cruise control set to ${speed} mp/h."
 	},
 
 	wheels = {
