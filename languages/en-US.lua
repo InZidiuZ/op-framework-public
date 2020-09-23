@@ -3,6 +3,10 @@ if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
 OP.Global.Locales.Languages["en-US"] = {
+	-- configuration settings for language
+	largeNumberSeperator = ",", -- with it set as ",", 1000000 -> 1,000,000 in a lot of labels
+	floatSeperator = ".", -- with it set as ".", (25 + (1/5)) -> 25.2
+
 	-- locales shared between all resources
 	shared = {
 		system = "System",
@@ -56,7 +60,17 @@ OP.Global.Locales.Languages["en-US"] = {
 		removed_bank = "Removed Bank",
 		removed_bank_balance_from_player = "Removed $${amount} bank balance from ${consoleName}.",
 
+		money_event_not_admin = "Attempted to toggle money event `${moneyEvent}`.",
+
 		event_not_admin = "Attempted to ${eventName}, but user didn't have proper permissions to do so.",
+
+		removed_bank = "Spawn",
+		removed_bank_balance_from_player = "Removed $${amount} bank balance from ${consoleName}.",
+
+		spawned_item_title = "Spawned Item",
+		spawned_item_details = "${consoleName} spawned in ${amount}x `${itemName}` for themselves.",
+		spawned_item_for_player_title = "Spawned Item For Player",
+		spawned_item_for_player_details = "${consoleName} spawned in ${amount}x `${itemName}` for ${targetConsoleName}.",
 
 		report_title = "REPORT ${reporterName}",
 		report_logs_title = "Report",
@@ -201,6 +215,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		bind_added = "Added bind with name `${bindName}` which will execute command `${command}` when control id `${control}` is pressed.",
 		bind_removed = "Removed bind with name `${bindName}`",
 		error_executing_bind = "There was an error when trying to execute bind with name `${bindName}` which attempts to trigger command `${command}`.",
+		command_binds_limit_reached = "You've reached the command binds limit of ${maxCommandBinds}.",
 
 		substitute_command_for = "This is a substitute command for `${command}`.",
 
@@ -389,7 +404,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		command_bind_command_parameter_command_help = "The command you are wanting to bind. The '/' does not have to be included, though it can.",
 		command_bind_command_parameter_control = "control",
 		command_bind_command_parameter_control_help = "The control id you want to bind this command to. Here's a list of all the controls: `https://docs.fivem.net/docs/game-references/controls/`",
-		command_bind_command_substitutes = "/bind",
+		command_bind_command_substitutes = "/bind_add, /bindadd, /add_bind, /addbind",
 
 		command_bind_remove_command = "/command_bind_remove",
 		command_bind_remove_command_help = "Remove a command bind.",
@@ -637,6 +652,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		security_cameras_health_command_help = "Toggle the security cameras health debug tool.",
 		security_cameras_health_command_substitutes = "/cam_health",
 
+		-- game/spying
+		search_for_devices_command = "/search_for_devices",
+		search_for_devices_command_help = "Search for nearby devices.",
+		search_for_devices_command_substitutes = "/search_devices, /searchdevices, /s4d",
+
 		-- game/status
 		status_reset_command = "/status_reset",
 		status_reset_command_help = "Reset status levels.",
@@ -844,6 +864,13 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	-- game/*
+	blindfold = {
+		blindfolding_player = "Putting Paper Bag On Player",
+		blindfolding_self = "Putting On Paper Bag",
+		hold_to_take_blindfold_off = "Hold ~INPUT_VEH_HEADLIGHT~ to take off the Paper Bag.",
+		hold_to_take_blindfold_off_holding = "Keep holding to take off the Paper Bag."
+	},
+
 	blips = {
 		church = "Church"
 	},
@@ -1025,6 +1052,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		vehicle_tracker_description = "This tracker is exactly what Michael needs, who has for over seven years had suspicion his wife, Amanda, has been cheating on him with the tennis coach he got her.",
 		device_scanner = "Device Scanner",
 		device_scanner_description = "Used to scan for nearby creep devices.",
+
+		paper_bag = "Paper Bag",
+		paper_bag_description = "Perfect for storing groceries or perhaps someone's head, dead or alive.",
+		burger_shot_delivery = "Burger Shot Delivery",
+		burger_shot_delivery_description = "\"America's favorite national quick service factory farmed restaurant chain, and shining beacon of the global march towards cultural homogenization.\"",
 
 		water = "Water",
 		water_description = "Danger! Dihydrogen monoxide is colorless and odorless. Accidental inhalation of DHMO may be fatal. Prolonged exposure to its solid form causes severe tissue damage. Symptoms of DHMO ingestion can include excessive sweating and urination, and possibly a bloated feeling, nausea, vomiting and body electrolyte imbalance.",
@@ -1364,7 +1396,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		rolling_joints = "Rolling Joints",
 		changing_license_plate = "Changing License Plate",
 		unable_to_change_license_plate = "You are unable to change the license plate while there are players inside the vehicle.",
-		equipping_parachute = "Equipping Parachute"
+		equipping_parachute = "Equipping Parachute",
+		lockpicking_vehicle = "Lockpicking Vehicle"
 	},
 
 	login = {
@@ -1729,8 +1762,40 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	spying = {
-		microphone_bug_not_activated = "The bug has not beeen activated.",
-		vehicle_tracker_not_activated = "The tracker has not beeen activated."
+		microphone_bug_not_activated = "This bug has not beeen activated.",
+		vehicle_tracker_not_activated = "This tracker has not beeen activated.",
+		microphone_bug_active_with_battery = "This microphone bug is currently active. Its battery is at ${batteryPercentage}%. You can \"Use\" it to listen in on any conversations it may pick up.<br><br>Device Id: ${deviceId}.",
+		microphone_bug_ran_out_of_battery = "This microphone bug has run out of battery. The phyiscal microphone bug will decay after a week.<br><br>Device Id: ${deviceId}.",
+		vehicle_tracker_active_with_battery = "This vehicle tracker is currently active. Its battery is at ${batteryPercentage}%. As long as the vehicle this tracker is attached to is available, it will display on your map.<br><br>Device Id: ${deviceId}.",
+		vehicle_tracker_ran_out_of_battery = "This vehicle tracker has run out of battery. The phyiscal vehicle tracker will decay after a week.<br><br>Device Id: ${deviceId}",
+		scanning_for_devices = "Scanning For Devices",
+		searching_for_devices = "Searching For Devices",
+		no_nearby_vehicle = "No nearby vehicle.",
+		placing_vehicle_tracker = "Placing Vehicle Tracker",
+		error_using_vehicle_tracker = "There was an error while trying to place the vehicle tracker.",
+		vehicle_tracker_placed = "The vehicle tracker has been successfully placed.",
+		error_using_microphone_bug = "There was an error while trying to place the microphone bug.",
+		microphone_bug_placed = "The microphone bug has been successfully placed.",
+		placing_microphone_bug_on_vehicle = "Placing Bug On Vehicle",
+		placing_microphone_bug_on_player = "Placing Bug On Player",
+		placing_microphone_bug_on_ground = "Placing Bug On Ground",
+		error_using_device_scanner = "There was an error while trying to use the device scanner.",
+		error_searching_for_devices = "There was an error while trying to search for devices.",
+		found_devices = "Found ${totalDevices} devices.",
+		no_nearby_devices_found = "No nearby devices found.",
+		microphone_bug = "Microphone Bug",
+		microphone_bug_destroy = "Microphone Bug\n[E] Destroy",
+		vehicle_tracker = "Vehicle Tracker",
+		vehicle_tracker_destroy = "Vehicle Tracker\n[E] Destroy",
+		destroying_device = "Destroying Device",
+		tracker_will_appear_on_map = "This tracker has already been activated. It will appear on your map for as long as the vehicle is available and the tracker has battery.",
+		spy_ui_info = "Listening In On Microphone Bug (#${deviceId})",
+		spy_ui_location = "${location}, ${time}",
+		spy_ui_exit = "Press ESC to exit the Microphone Bug",
+		spy_ui_connecting = "Connecting To Microphone Bug (#${deviceId})",
+		spy_ui_connection_failed = "Failed To Connect To Microphone Bug (#${deviceId})",
+		spy_ui_awaiting_data = "Awaiting data...",
+		spy_ui_data_failed = "Data failed"
 	},
 
 	status = {
@@ -1848,7 +1913,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		tracker_visible = "Your tracker is now visible.",
 		tracker_hidden = "Your tracker is now hidden.",
 		tracker = "Tracker",
-		stockade_robbery_tracker = "Stockade Truck (10-78)"
+		stockade_robbery_tracker = "Stockade Truck (10-78)",
+		tracked_vehicle = "Tracked Vehicle (${trackerId})"
 	},
 
 	trains = {
