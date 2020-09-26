@@ -1997,16 +1997,16 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	stockade = {
 		dispatch = "[Keskus]",
-		status_1a = "10-31, Auto alarm käivitus hädaabi nupuga ${streetName}.",
-		status_1b = "10-31, Auto alarm käivitus hädaabi nupuga tänaval ${streetName} near ${crossingRoad}.",
-		status_2a = "10-31, Auto alarm käivitus tänaval kuna keegi näppis uksi tänaval ${streetName}.",
-		status_2b = "10-31, Auto alarm käivitus tänaval kuna keegi näppis uksi tänaval ${streetName} ${crossingRoad}.",
-		status_3a = "10-31, Auto alarm käivitus tänaval, Vabad üksused reageerige ${streetName} tänavale.",
-		status_3b = "10-31, Auto alarm käivitus tänaval ${streetName} ${crossingRoad}.",
+		status_1a = "10-31, Pangaveoki röövi alarm käivitus hädaabi nupuga ${streetName}.",
+		status_1b = "10-31, Pangaveoki röövi alarm käivitus hädaabi nupuga tänaval ${streetName} near ${crossingRoad}.",
+		status_2a = "10-31, Pangaveoki röövi alarm käivitus tänaval kuna keegi näppis uksi tänaval ${streetName}.",
+		status_2b = "10-31, Pangaveoki röövi alarm käivitus tänaval kuna keegi näppis uksi tänaval ${streetName} ${crossingRoad}.",
+		status_3a = "10-31, Pangaveoki röövi alarm käivitus tänaval, Vabad üksused reageerige ${streetName} tänavale.",
+		status_3b = "10-31, Pangaveoki röövi alarm käivitus tänaval ${streetName} ${crossingRoad}.",
 		grab_gold_bar = "[${InteractionKey}] Võta kullakang (${barsRemaining} jäänud)",
 		grabbing_gold_bar = "Kullakangi haaramine",
 		use_advanced_lockpick = "[${InteractionKey}] Kasuta kallimaid tööriistu",
-		lockpicking_stockade = "Lockpicking Stockade"
+		lockpicking_stockade = "Veoki muukimine"
 	},
 
 	-- menus/*
@@ -2227,7 +2227,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		remove_undershirt = "Remove Undershirt",
 		no_idea = "No idea",
 		head = "pea",
-		hats_and_helmets = "peakatted",
+		hats_and_helmets = "Peakatted",
 		glasses = "Prillid",
 		earrings = "Kõrvarõngad",
 		left_wrist = "Vasak ranne",
