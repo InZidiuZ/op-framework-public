@@ -12,7 +12,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		system = "System",
 		warning = "Warning",
 		invalid_input = "Invalid Input.",
-		missing_input = "Missing Input."
+		missing_input = "Missing Input.",
+		player_not_found = "Could not find player with server ID `${serverId}`."
 	},
 
 	-- animations/*
@@ -30,23 +31,22 @@ OP.Global.Locales.Languages["en-US"] = {
 	admin = {
 		aimbot_activated = "Aimbot Activated",
 
-		feature_toggle_not_admin = "Attempted to toggle someone else's ${featureName}, but didn't have proper permissions to do so.",
+		feature_toggle_not_admin = "Attempted to toggle their own or someone else's `${featureName}`, but didn't have proper permissions to do so.",
 		feature_toggle_activated_logs_title = "Remotely Toggled Feature",
 		feature_toggle_activated_logs_details = "${consoleName} toggled `${featureName}` for player ${targetConsoleName}.",
-		feature_toggle_activated_all_logs_title = "Remotely Toggled Feature For Everyoneesta",
+		feature_toggle_activated_all_logs_title = "Remotely Toggled Feature For Everyone",
 		feature_toggle_activated_all_logs_details = "${consoleName} toggled `${featureName}` for everyone.",
 		feature_toggle_activated_self_logs_title = "Toggled Feature",
 		feature_toggle_activated_self_on_logs_details = "${consoleName} toggled `${featureName}` on for themselves.",
 		feature_toggle_activated_self_off_logs_details = "${consoleName} toggled `${featureName}` off for themselves.",
-		feature_toggle_success = "Toggled ${featureName} for ${consoleName}.",
-		feature_toggle_success_all = "Toggled ${featureName} for everyone.",
-		feature_toggle_failed = "Failed to toggle ${featureName} for server ID ${serverId}.",
+		feature_toggle_success = "Toggled `${featureName}` for ${consoleName}.",
+		feature_toggle_success_all = "Toggled `${featureName}` for everyone.",
+		feature_toggle_failed = "Failed to toggle `${featureName}` for server ID ${serverId}.",
 
 		model_name_not_provided = "No model name parsed.",
 		model_name_invalid = "Model name `${modelName}` is invalid.",
 
 		invalid_amount = "Invalid amount.",
-		player_not_found = "We were unable to find a player with server ID ${serverId}.",
 
 		added_cash = "Added Cash",
 		added_cash_to_player = "Added $${amount} cash to ${consoleName}.",
@@ -331,6 +331,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		aimbot_command_parameter_server_id_help = "If you're wanting to toggle the aimbot for someone else, insert their server id here.",
 		aimbot_command_substitutes = "",
 
+		wallhack_command = "/wallhack",
+		wallhack_command_help = "Toggle wallhack.",
+		wallhack_command_parameter_server_id = "server id",
+		wallhack_command_parameter_server_id_help = "If you're wanting to toggle the wallhack for someone else, insert their server id here.",
+		wallhack_command_substitutes = "",
+
 		add_cash_command = "/add_cash",
 		add_cash_command_help = "Add cash to someone's character.",
 		add_cash_command_parameter_amount = "amount",
@@ -473,6 +479,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		doors_scan_command = "/doors_scan",
 		doors_scan_command_help = "Scan for nearby doors and save them to a text file.",
 		doors_scan_command_substitutes = "",
+
+		-- game/health
+		revive_command = "/revive",
+		revive_command_help = "Revive someone from the dead.",
+		revive_command_parameter_server_id = "server id",
+		revive_command_parameter_server_id_help = "The player's server ID you want to revive. You can leave this blank or at `0` to select yourself. You can also do `-1` in order to revive everyone.",
+		revive_command_parameter_remove_injuries = "remove injuries",
+		revive_command_parameter_remove_injuries_help = "Set this to any value except for `0` or `false` to remove all injuries as well.",
+		revive_command_substitutes = "",
 
 		-- game/hud
 		watermark_command = "/watermark",
@@ -663,6 +678,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		status_reset_command_parameter_server_id = "server id",
 		status_reset_command_parameter_server_id_help = "The player's server ID you are wanting to reset the status for. If left at blank, yourself will automatically be selected.",
 		status_reset_command_substitutes = "",
+
+		set_body_armor_command = "/set_body_armor",
+		set_body_armor_command_help = "Set someone's body armor level.",
+		set_body_armor_command_parameter_server_id = "server id",
+		set_body_armor_command_parameter_server_id_help = "The player's server ID you want to set the body armor level for. You can leave this blank or at `0` to select yourself. You can also do `-1` in order to set everyone's body armor level.",
+		set_body_armor_command_parameter_body_armor_level = "body armor level",
+		set_body_armor_command_parameter_body_armor_level_help = "The body armor level you'd like to set. This value can be anywhere from `0` to `100`. Leaving this as blank or as an invalid value will default to `100`.",
+		set_body_armor_command_substitutes = "/body_armor",
 
 		-- game/trackers
 		tracker_command = "/tracker",
@@ -900,6 +923,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		black_bars_set_to = "The cinematic black bars has now been set to ${blackBarsHeight}%."
 	},
 
+	clip_saver = {
+		start_recording = "Start Recording",
+		clip_save = "Save Clip",
+		clip_discard = "Discard Clip"
+	},
+
 	compass = {
 		north = "N",
 		north_east = "NE",
@@ -946,6 +975,28 @@ OP.Global.Locales.Languages["en-US"] = {
 		jewelry_store_closed = "The Jewelry Store is currently closed. Please come back later.",
 		bank_closed = "The Bank is currently closed. Please come back later.",
 		store_closed = "The Store is currently closed. Please come back later."
+	},
+
+	health = {
+		successfully_revived_player = "Successfully revived ${consoleName}.",
+		successfully_revived_player_removed_injuries = "Successfully revived ${consoleName} and removed their injuries.",
+		successfully_revived_everyone = "Successfully revived everyone.",
+		successfully_revived_everyone_removed_injuries = "Successfully revived and removed everyone's injuries.",
+		failed_to_revive = "Failed to execute the `/revive` command correctly.",
+		revive_player_not_staff = "Player attempted to revive another player but they didn't have the requried permissions to do so.",
+		revive_self_not_staff = "Player attempted to revive another themselves but they didn't have the requried permissions to do so.",
+		revived_self_removed_injuries_title = "Revived Self And Removed Injuries",
+		revived_self_removed_injuries_details = "${consoleName} revived themselves and removed their injuries.",
+		revived_self_title = "Revived Self",
+		revived_self_details = "${consoleName} revived themselves.",
+		revived_everyone_removed_injuries_title = "Revived Everyone And Removed Injuries",
+		revived_everyone_removed_injuries_details = "${consoleName} revived everyone and removed their injuries.",
+		revived_everyone_title = "Revived Everyone",
+		revived_everyone_details = "${consoleName} revived everyone.",
+		revived_player_removed_injuries_title = "Revived Player And Removed Injuries",
+		revived_player_removed_injuries_details = "${consoleName} revived ${targetConsoleName} and removed their injuries.",
+		revived_player_title = "Revived Player",
+		revived_player_details = "${consoleName} revived ${targetConsoleName}.",
 	},
 
 	hud = {
@@ -1688,6 +1739,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		radio_removed = "You have lost your radio.",
 		no_radio = "You don't have a radio.",
 		frequency_set_to = "The frequency has been set to ${frequency}.",
+		frequency_already_set_to = "The frequency is already set to ${frequency}.",
 		radio_volume_same = "The radio volume is already set to `${radioVolume}`.",
 		radio_volume_reset = "The radio volume has now been reset.",
 		radio_volume_set = "The radio volume has now been set to `${radioVolume}`.",
@@ -1802,7 +1854,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		status_reset = "Successfully reset the status for ${consoleName}.",
 		status_reset_failed = "No user with server ID `${serverId}` was found.",
 		reset_status_not_staff = "Attempted to reset a player's status without required permissions.",
-		status_reset_for_all = "Successfully reset the status for everyone."
+		status_reset_for_all = "Successfully reset the status for everyone.",
+		failed_to_set_body_armor_level = "Failed to execute the `/set_body_armor` command correctly.",
+		set_body_armor_level_player = "Successfully set the body armor level for ${consoleName} to `${bodyArmorLevel}`.",
+		set_body_armor_level_everyone = "Successfully set everyone's body armor level to `${bodyArmorLevel}`.",
+		set_body_armor_level_self_title = "Set Body Armor Level For Self",
+		set_body_armor_level_self_details = "${consoleName} set their own body armor level to `${bodyArmorLevel}`.",
+		set_body_armor_level_everyone_title = "Set Body Armor Level For Everyone",
+		set_body_armor_level_everyone_details = "${consoleName} set their everyone's body armor level to `${bodyArmorLevel}`.",
+		set_body_armor_level_player_title = "Set Body Armor Level For Player",
+		set_body_armor_level_player_details = "${consoleName} updated ${targetConsoleName} and set their body armor level to `${bodyArmorLevel}`.",
+		set_body_armor_level_player_not_staff = "Player attempted to set another player's body armor level but they didn't have the requried permissions to do so.",
+		set_body_armor_level_self_not_staff = "Player attempted to set their own body armor level but they didn't have the requried permissions to do so."
 	},
 
 	sync = {
@@ -2115,7 +2178,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		manual_gear_set_to = "Gear set to ${gearId}.",
 		cruise_control_set_to = "The cruise control will now limit the speed at ${speed} mp/h.",
 		cruise_control_reset = "The cruise control will now limit the speed at the speed the vehicle was at when toggled.",
-		cruise_control_on = "Cruise control set to ${speed} mp/h."
+		cruise_control_on = "Cruise control set to ${speed} mp/h.",
+		cruise_control_on_plane = "Cruise control set to ${speed} mp/h and ${altitude} ft.",
 	},
 
 	wheels = {
