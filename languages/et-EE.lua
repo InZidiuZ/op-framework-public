@@ -949,6 +949,28 @@ OP.Global.Locales.Languages["et-EE"] = {
 		store_closed = "Pood on kinni, Ei näe wä!?"
 	},
 
+	health = {
+		successfully_revived_player = "Successfully revived ${consoleName}.",
+		successfully_revived_player_removed_injuries = "Successfully revived ${consoleName} and removed their injuries.",
+		successfully_revived_everyone = "Successfully revived everyone.",
+		successfully_revived_everyone_removed_injuries = "Successfully revived and removed everyone's injuries.",
+		failed_to_revive = "Failed to execute the `/revive` command correctly.",
+		revive_player_not_staff = "Player attempted to revive another player but they didn't have the requried permissions to do so.",
+		revive_self_not_staff = "Player attempted to revive another themselves but they didn't have the requried permissions to do so.",
+		revived_self_removed_injuries_title = "Revived Self And Removed Injuries",
+		revived_self_removed_injuries_details = "${consoleName} revived themselves and removed their injuries.",
+		revived_self_title = "Revived Self",
+		revived_self_details = "${consoleName} revived themselves.",
+		revived_everyone_removed_injuries_title = "Revived Everyone And Removed Injuries",
+		revived_everyone_removed_injuries_details = "${consoleName} revived everyone and removed their injuries.",
+		revived_everyone_title = "Revived Everyone",
+		revived_everyone_details = "${consoleName} revived everyone.",
+		revived_player_removed_injuries_title = "Revived Player And Removed Injuries",
+		revived_player_removed_injuries_details = "${consoleName} revived ${targetConsoleName} and removed their injuries.",
+		revived_player_title = "Revived Player",
+		revived_player_details = "${consoleName} revived ${targetConsoleName}.",
+	},
+
 	hud = {
 		mph = "mp/h",
 		ft = "ft",
@@ -1803,7 +1825,18 @@ OP.Global.Locales.Languages["et-EE"] = {
 		status_reset = "Successfully reset the status for ${consoleName}.",
 		status_reset_failed = "No user with server ID `${serverId}` was found.",
 		reset_status_not_staff = "Attempted to reset a player's status without required permissions.",
-		status_reset_for_all = "Successfully reset the status for everyone."
+		status_reset_for_all = "Successfully reset the status for everyone.",
+		failed_to_set_body_armor_level = "Failed to execute the `/set_body_armor` command correctly.",
+		set_body_armor_level_player = "Successfully set the body armor level for ${consoleName} to `${bodyArmorLevel}`.",
+		set_body_armor_level_everyone = "Successfully set everyone's body armor level to `${bodyArmorLevel}`.",
+		set_body_armor_level_self_title = "Set Body Armor Level For Self",
+		set_body_armor_level_self_details = "${consoleName} set their own body armor level to `${bodyArmorLevel}`.",
+		set_body_armor_level_everyone_title = "Set Body Armor Level For Everyone",
+		set_body_armor_level_everyone_details = "${consoleName} set their everyone's body armor level to `${bodyArmorLevel}`.",
+		set_body_armor_level_player_title = "Set Body Armor Level For Player",
+		set_body_armor_level_player_details = "${consoleName} updated ${targetConsoleName} and set their body armor level to `${bodyArmorLevel}`.",
+		set_body_armor_level_player_not_staff = "Player attempted to set another player's body armor level but they didn't have the requried permissions to do so.",
+		set_body_armor_level_self_not_staff = "Player attempted to set their own body armor level but they didn't have the requried permissions to do so."
 	},
 
 	sync = {
@@ -1989,11 +2022,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 	-- illegal/*
 	corner = {
-		corner_ped = "Corner Ped - ${cornerPedDistance}m (${cornerPedTimer})",
-		corner_ped_title = "Corner Ped",
-		corner_ped_already_active = "There is already a corner ped waiting for you.",
-		no_node_found = "No nearby nodes for peds found.",
-		no_sell_area = "You are not in an area where peds are interested in drugs."
+		corner_ped = "Klient - ${cornerPedDistance}m (${cornerPedTimer})",
+		corner_ped_title = "Klient",
+		corner_ped_already_active = "Sul juba on klient kellele müüa.",
+		no_node_found = "Klient pole saadaval.",
+		no_sell_area = "Selles kohas pole piisavalt kliente."
 	},
 
 	stockade = {
@@ -2261,11 +2294,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 		not_a_clothing_spot = "Sa pead markeri sisse astuma!",
 		customization = "Kujundus",
 		accessories = "Aksessuaarid",
-		freemode_models = "Bannable",
+		freemode_models = "Freemode models",
 		male_models = "Mehed NPC",
 		female_models = "Naised NPC",
 		ems_models = "EMS NPC",
-		multiplayer_models = "Tava online player",
+		multiplayer_models = "Singeplayer",
 		serial_number = "Seeria number: ${serialNumber}<br>See relv kuulub ${fullName} (${characterId}).",
 		serial_number_unknown = "Seeria number: Kehtetu.",
 		evidence_incomplete = "See asitõend pole valmis.",
