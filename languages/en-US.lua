@@ -1,3 +1,4 @@
+if not OP then OP = {} end
 if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
@@ -45,6 +46,17 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		model_name_not_provided = "No model name parsed.",
 		model_name_invalid = "Model name `${modelName}` is invalid.",
+		failed_to_spawn_vehicle = "Failed to execute the `/spawn_vehicle` command correctly.",
+		spawned_vehicle_for_player = "Successfully spawned `${modelName}` for ${consoleName}.",
+		spawned_vehicle_for_everyone = "Successfully spawned `${modelName}` for everyone.",
+		spawn_vehicle_for_player_not_staff = "Player attempted to spawn a vehicle for someone else but they didn't have the requried permissions to do so.",
+		spawn_vehicle_for_self_not_staff = "Player attempted to spawn a vehicle for themselves but they didn't have the requried permissions to do so.",
+		spawned_vehicle_for_self_title = "Spawned Vehicle",
+		spawned_vehicle_for_self_details = "${consoleName} spawned a vehicle with model name `${modelName}`.",
+		spawned_vehicle_for_player_title = "Spawned Vehicle For Player",
+		spawned_vehicle_for_player_details = "${consoleName} spawned a vehicle with model name `${modelName}` for player ${targetConsoleName}.",
+		spawned_vehicle_for_everyone_title = "Spawned Vehicle For Everyone",
+		spawned_vehicle_for_everyone_details = "${consoleName} spawned a vehicle with model name `${modelName}` for everyone.",
 
 		invalid_amount = "Invalid amount.",
 
@@ -323,6 +335,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		spawn_vehicle_command_help = "Spawn a vehicle.",
 		spawn_vehicle_command_parameter_model_name = "model name",
 		spawn_vehicle_command_parameter_model_name_help = "The model name of the vehicle you're wanting to spawn.",
+		spawn_vehicle_command_parameter_server_id = "server id",
+		spawn_vehicle_command_parameter_server_id_help = "The player's server id you'd like to spawn this vehicle for. You can leave this as blank or at `0` to select yourself.",
 		spawn_vehicle_command_substitutes = "/sv",
 
 		aimbot_command = "/aimbot",
@@ -1050,6 +1064,10 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		logs_item_moved_title = "Item Moved",
 		logs_item_moved_details = "${consoleName} moved ${moveAmount}x ${itemLabel} to ${endInventory}:${endSlot} from inventory ${startInventory}:${startSlot}.",
+
+		logs_item_purchased_title = "Item(s) Purchased",
+		logs_item_purchased_no_tax_details = "${consoleName} purchased ${purchaseAmount}x `${itemLabel}` for $${purchaseCost}.",
+		logs_item_purchased_tax_details = "${consoleName} purchased ${purchaseAmount}x `${itemLabel}` for $${purchaseCost} with an additional $${taxCost} due to a ${salesTaxPercentage}% sales tax.",
 
 		-- items & item descriptions
 		body_armour = "Body Armour",
