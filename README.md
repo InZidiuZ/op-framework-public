@@ -20,4 +20,5 @@ To make changes to the files, make a pull request and wait for approval. PRs tha
 13 = Legacy Roleplay Nepal (Whitelist)<br>
 14 = Legacy Battle Royale<br>
 15 = Legacy Roleplay Norway<br>
-16 = Legacy Roleplay Lithuania
+16 = Legacy Roleplay Lithuania<br>
+17 = Legacy Roleplay Estonia
