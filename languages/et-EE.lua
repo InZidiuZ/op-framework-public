@@ -43,8 +43,20 @@ OP.Global.Locales.Languages["et-EE"] = {
 		feature_toggle_success_all = "Lülitas ${featureName} kõigi jaoks.",
 		feature_toggle_failed = "Ebaõnnestus lülitada ${featureName} mängijal ${serverId}.",
 
-		model_name_not_provided = "Ükski nimi ei kattu sellega",
-		model_name_invalid = "Mudeli nimi `${modelName}`on kehtetu.",
+		model_name_not_provided = "No model name parsed.",
+		model_name_invalid = "Model name `${modelName}` is invalid.",
+		failed_to_spawn_vehicle = "Failed to execute the `/spawn_vehicle` command correctly.",
+		spawned_vehicle_for_player = "Successfully spawned `${modelName}` for ${consoleName}.",
+		spawned_vehicle_for_everyone = "Successfully spawned `${modelName}` for everyone.",
+		spawn_vehicle_for_player_not_staff = "Player attempted to spawn a vehicle for someone else but they didn't have the requried permissions to do so.",
+		spawn_vehicle_for_self_not_staff = "Player attempted to spawn a vehicle for themselves but they didn't have the requried permissions to do so.",
+		spawned_vehicle_for_self_title = "Spawned Vehicle",
+		spawned_vehicle_for_self_details = "${consoleName} spawned a vehicle with model name `${modelName}`.",
+		spawned_vehicle_for_player_title = "Spawned Vehicle For Player",
+		spawned_vehicle_for_player_details = "${consoleName} spawned a vehicle with model name `${modelName}` for player ${targetConsoleName}.",
+		spawned_vehicle_for_everyone_title = "Spawned Vehicle For Everyone",
+		spawned_vehicle_for_everyone_details = "${consoleName} spawned a vehicle with model name `${modelName}` for everyone.",
+
 
 		invalid_amount = "Kehtetu summa.",
 		player_not_found = "Ei õnnestunud leida mängijat ID-ga ${serverId}.",
@@ -331,6 +343,12 @@ OP.Global.Locales.Languages["et-EE"] = {
 		aimbot_command_parameter_server_id = "server id",
 		aimbot_command_parameter_server_id_help = "Kui sa tahad aimboti kellegile teisele panna siis pane siia mängija ID.",
 		aimbot_command_substitutes = "",
+		
+		wallhack_command = "/wallhack",
+		wallhack_command_help = "Lükka wallhack peale.",
+		wallhack_command_parameter_server_id = "server id",
+		wallhack_command_parameter_server_id_help = "Kui tahad kellegile wallhacki peale panna siis sisesta tema ID.",
+		wallhack_command_substitutes = "",
 
 		add_cash_command = "/lisaraha",
 		add_cash_command_help = "Lisa raha kellegi karakterile.",
@@ -474,6 +492,15 @@ OP.Global.Locales.Languages["et-EE"] = {
 		doors_scan_command = "/doors_scan",
 		doors_scan_command_help = "Scan for nearby doors and save them to a text file.",
 		doors_scan_command_substitutes = "",
+		
+		-- game/health
+		revive_command = "/revive",
+		revive_command_help = "Revive keegi.",
+		revive_command_parameter_server_id = "server id",
+		revive_command_parameter_server_id_help = "Mängija ID keda tahad reviveda. 0 kui ennast, -1 kui kõiki",
+		revive_command_parameter_remove_injuries = "Eemalda vigastused",
+		revive_command_parameter_remove_injuries_help = "Pane 0 kui tahad et vigastused ka eemalduksid..",
+		revive_command_substitutes = "",
 
 		-- game/hud
 		watermark_command = "/watermark",
@@ -664,6 +691,14 @@ OP.Global.Locales.Languages["et-EE"] = {
 		status_reset_command_parameter_server_id = "server id",
 		status_reset_command_parameter_server_id_help = "The player's server ID you are wanting to reset the status for. If left at blank, yourself will automatically be selected.",
 		status_reset_command_substitutes = "",
+		
+		set_body_armor_command = "/set_body_armor",
+		set_body_armor_command_help = "Set someone's body armor level.",
+		set_body_armor_command_parameter_server_id = "server id",
+		set_body_armor_command_parameter_server_id_help = "The player's server ID you want to set the body armor level for. You can leave this blank or at `0` to select yourself. You can also do `-1` in order to set everyone's body armor level.",
+		set_body_armor_command_parameter_body_armor_level = "body armor level",
+		set_body_armor_command_parameter_body_armor_level_help = "The body armor level you'd like to set. This value can be anywhere from `0` to `100`. Leaving this as blank or as an invalid value will default to `100`.",
+		set_body_armor_command_substitutes = "/body_armor",
 
 		-- game/trackers
 		tracker_command = "/tracker",
@@ -899,6 +934,13 @@ OP.Global.Locales.Languages["et-EE"] = {
 	cinematic = {
 		cinematic = "Cinematic",
 		black_bars_set_to = "The cinematic black bars has now been set to ${blackBarsHeight}%."
+		
+		},
+
+	clip_saver = {
+		start_recording = "Hakka recordima",
+		clip_save = "Salvesta clip",
+		clip_discard = "Ära salvesta"
 	},
 
 	compass = {
@@ -943,10 +985,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		locked_press_to_unlock = "[${InteractionKey}] Lukus",
 		unlocked_press_to_lock = "[${InteractionKey}] Lahti",
 		locking = "Lukustamine",
-		unlocking = "Ära vahi seda ust!",
-		jewelry_store_closed = "Pood kinni, Mine ära siit nüüd!.",
-		bank_closed = "Mine röövi muud panka röövel!",
-		store_closed = "Pood on kinni, Ei näe wä!?"
+		unlocking = "Lukustub!",
+		jewelry_store_closed = "Juveelipood on kinni!.",
+		bank_closed = "Panga uksed on kinni!",
+		store_closed = "Pood on kinni!"
 	},
 
 	health = {
@@ -1022,6 +1064,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		logs_item_moved_title = "Item Moved",
 		logs_item_moved_details = "${consoleName} moved ${moveAmount}x ${itemLabel} to ${endInventory}:${endSlot} from inventory ${startInventory}:${startSlot}.",
+		
+		logs_item_purchased_title = "Ost oli edukas!",
+		logs_item_purchased_no_tax_details = "${consoleName} ostis ${purchaseAmount}x `${itemLabel}` $${purchaseCost}eest.",
+		logs_item_purchased_tax_details = "${consoleName} ostis ${purchaseAmount}x `${itemLabel}`  $${purchaseCost}eest ja maksud läksid maha $${taxCost} protsendiga ${salesTaxPercentage}%.",
+
 
 		-- items & item descriptions
 		body_armour = "Kuulivest",
