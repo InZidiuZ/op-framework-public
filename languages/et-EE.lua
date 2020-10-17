@@ -3,10 +3,12 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
-OP.Global.Locales.Languages["et-EE"] = {
-    -- configuration settings for language
-    largeNumberSeperator = ",", -- with it set as ",", 1000000 -> 1,000,000 in a lot of labels
-    floatSeperator = ".", -- with it set as ".", (25 + (1/5)) -> 25.2
+OP.Global.Locales.Languages["en-US"] = {
+	-- configuration settings for language
+	largeNumberSeperator = ",", -- with it set as ",", 1000000 -> 1,000,000 in a lot of labels
+	floatSeperator = ".", -- with it set as ".", (25 + (1/5)) -> 25.2
+	useMetric = false,
+
 
 	-- locales shared between all resources
 	shared = {
@@ -14,6 +16,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		warning = "Warning",
 		invalid_input = "Invalid Input.",
 		missing_input = "Missing Input."
+		player_not_found = "Could not find player with server ID `${serverId}`."
 	},
 
 	-- animations/*
@@ -332,10 +335,12 @@ OP.Global.Locales.Languages["et-EE"] = {
 		protective_mode_command_parameter_playtime_help = "Minimaalne mänguaeg (sekundites) mida vähemalt vaja ,et joinida.",
 		protective_mode_command_substitutes = "/protective_mode",
 
-		spawn_vehicle_command = "/sõiduk",
-		spawn_vehicle_command_help = "Spawni sõiduk.",
-		spawn_vehicle_command_parameter_model_name = "Auto nimi",
-		spawn_vehicle_command_parameter_model_name_help = "Auto nimi mida tahad spawnida",
+		spawn_vehicle_command = "/spawn_vehicle",
+		spawn_vehicle_command_help = "Spawni endale sõiduk.",
+		spawn_vehicle_command_parameter_model_name = "mudeli nimi",
+		spawn_vehicle_command_parameter_model_name_help = "Mudeli nimi mida soovid spawnida.",
+		spawn_vehicle_command_parameter_server_id = "mängija id",
+		spawn_vehicle_command_parameter_server_id_help = "ID kellele soovid spawnida sõidukit, Kui jätad tühjaks siis endale.",
 		spawn_vehicle_command_substitutes = "/sv",
 
 		aimbot_command = "/aimbot",
