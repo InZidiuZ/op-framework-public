@@ -3,12 +3,11 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
-OP.Global.Locales.Languages["en-US"] = {
+OP.Global.Locales.Languages["et-EE"] = {
 	-- configuration settings for language
 	largeNumberSeperator = ",", -- with it set as ",", 1000000 -> 1,000,000 in a lot of labels
 	floatSeperator = ".", -- with it set as ".", (25 + (1/5)) -> 25.2
 	useMetric = false,
-
 
 	-- locales shared between all resources
 	shared = {
