@@ -4,9 +4,10 @@ if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
 OP.Global.Locales.Languages["et-EE"] = {
-    -- configuration settings for language
-    largeNumberSeperator = ",", -- with it set as ",", 1000000 -> 1,000,000 in a lot of labels
-    floatSeperator = ".", -- with it set as ".", (25 + (1/5)) -> 25.2
+	-- configuration settings for language
+	largeNumberSeperator = ",", -- with it set as ",", 1000000 -> 1,000,000 in a lot of labels
+	floatSeperator = ".", -- with it set as ".", (25 + (1/5)) -> 25.2
+	useMetric = false,
 
 	-- locales shared between all resources
 	shared = {
@@ -14,6 +15,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		warning = "Warning",
 		invalid_input = "Invalid Input.",
 		missing_input = "Missing Input."
+		player_not_found = "Ei leidnud mängijat ID-ga `${serverId}`."
 	},
 
 	-- animations/*
@@ -56,7 +58,6 @@ OP.Global.Locales.Languages["et-EE"] = {
 		spawned_vehicle_for_player_details = "${consoleName} spawned a vehicle with model name `${modelName}` for player ${targetConsoleName}.",
 		spawned_vehicle_for_everyone_title = "Spawned Vehicle For Everyone",
 		spawned_vehicle_for_everyone_details = "${consoleName} spawned a vehicle with model name `${modelName}` for everyone.",
-
 
 		invalid_amount = "Kehtetu summa.",
 		player_not_found = "Ei õnnestunud leida mängijat ID-ga ${serverId}.",
@@ -1038,8 +1039,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		bar = "Baar",
 		strip_club = "Stripikas",
 		police_armory = "Relvaruum",
-		ems_store = "apteek",
-		chop_shop = "Kahtlane hiinapood",
+		ems_store = "Apteek",
+		chop_shop = "Chop Shop",
 		pd_prefix = "PD",
 		ems_prefix = "EMS",
 		inventory_overweight = "Su taskud on täis!",
@@ -1085,30 +1086,30 @@ OP.Global.Locales.Languages["et-EE"] = {
 		phone = "Telefon",
 		phone_description = "never:tm:",
 		radio = "Raadio",
-		radio_description = "Meta vahend!",
+		radio_description = "Sidekontroll!",
 
 		radio_chop_shop = "Chop Shop Raadio",
 		radio_chop_shop_description = "Siit saab kasulikku infot.",
 
 		binoculars = "Binoklid",
-		binoculars_description = "Parim tööriist perverdile!",
+		binoculars_description = "Zoom x16!",
 		handcuffs = "Käerauad",
-		handcuffs_description = "OMG, Käerauad???!.",
+		handcuffs_description = "Rauast tehtud.",
 		bolt_cutter = "Poldilõikur",
-		bolt_cutter_description = "Varastatud töörist...",
+		bolt_cutter_description = "Käeraudade lahti tegemiseks",
 		drill = "Puur",
-		drill_description = "Saad kruvi seina lasta, Suht äge.",
+		drill_description = "Kruvi seina laskmiseks",
 		umbrella = "Vihmavari",
 		umbrella_description = "Kurat kuidas see lahti käib?.",
 		watch = "Käekell",
-		watch_description = "Et jõuaks õigeks ajaks pannkooke sõõma minna.",
+		watch_description = "Rolex.",
 		compass = "Kompass",
 		compass_description = "Hahaha, Mis sa noob eksisid ära we??",
 
 		basic_repair_kit = "Odav tööriistakast",
-		basic_repair_kit_description = "Türa, Mingi pooled tööriistad puudu siit.",
+		basic_repair_kit_description = "Pooled tööriistad on siit puudu.",
 		advanced_repair_kit = "Kallis tööriistakast",
-		advanced_repair_kit_description = "Sellega saab isegi murtuid südameid korda teha.",
+		advanced_repair_kit_description = "Kõrg-kvaliteediga tööriistad.",
 		basic_lockpick = "Odav murdraud",
 		basic_lockpick_description = "Nonii, Lähme röövima?",
 		advanced_lockpick = "Kallis murdraud",
@@ -1116,10 +1117,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		cleaning_kit = "Puhastuskomplekt",
 		cleaning_kit_description = "Parim vahend millega oma sitast autot pesta :)",
 
-		microphone_bug = "KGB mikker",
+		microphone_bug = "Diktofon",
 		microphone_bug_description = "Salajasi vestluseid pealt kuulata...",
-		vehicle_tracker = "Lutikas",
-		vehicle_tracker_description = "1-2, Auto alla plaks. Nüüd saad jälgida seda venda kes su naise üle lõi.",
+		vehicle_tracker = "GPS",
+		vehicle_tracker_description = "See käib auto peale.",
 		device_scanner = "Elektroonika andur",
 		device_scanner_description = "Saad näha ümbruses olevat elektroonikat.",
 
@@ -1129,7 +1130,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		burger_shot_delivery_description = "\"Linna parim burks.\"",
 
 		water = "Vesi",
-		water_description = "Tallinna kraanivesi",
+		water_description = "Värske...",
 		hamburger = "Hamburger",
 		hamburger_description = "Maitseb nagu...... Odav burger?",
 		belgian_fries = "Friikartulid",
@@ -1137,20 +1138,20 @@ OP.Global.Locales.Languages["et-EE"] = {
 		coke = "Koka",
 		coke_description = "Pablo escobar?",
 		wonder_waffle = "Vahvel",
-		wonder_waffle_description = "Vanaema tehtud vahvlid, Nämm nämm.",
+		wonder_waffle_description = "Nämm nämm.",
 		cheeseburger = "Juustuburger",
-		cheeseburger_description = "1 eurone burger mida isegi kodutu ei söö.",
+		cheeseburger_description = "Burger aga juustuga.",
 		donut = "Sõõrik",
-		donut_description = "Söö see ruttu ära enne kui mendid tulevad.",
+		donut_description = "Mendi toit.",
 		green_apple = "Roheline õun",
-		green_apple_description = "Näeb välja nagu oleks ära mürgitatud aga pohh.",
+		green_apple_description = "Toores?.",
 		sandwich = "Võileib",
-		sandwich_description = "Päris soe.",
+		sandwich_description = "Toit.",
 		taco = "Taco",
 		taco_description = "Kui sa selle ära sööd siis sa oskad hispaania keelt.",
 
 		beer = "Õlu",
-		beer_description = "Odav kraam.",
+		beer_description = "Odav õlle.",
 		vodka = "Viin",
 		vodka_description = "Русский стиль, cука ебать.",
 		tequila = "Tekiila",
@@ -1158,7 +1159,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		whiskey = "Viski",
 		whiskey_description = "Parmu jook.",
 		cider = "Siider",
-		cider_description = "No see naiste jook...",
+		cider_description = "Naiste jook...",
 		rum = "Rumm",
 		rum_description = "Jack Sparrow, Captain Jack Sparrow!",
 		absinthe = "Absint",
@@ -1183,8 +1184,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		weed_4oz = "Kanep 4g",
 		weed_4oz_description = "1680 bro",
 
-		ejector_seat = "Ejector Seat",
-		ejector_seat_description = "Banned (twice) Kebab man's idea.",
+		ejector_seat = "Auto iste",
+		ejector_seat_description = "Teeb auto ülikiireks.",
 		tuner_chip = "Tuner Chip",
 		tuner_chip_description = "WOW, I'M SPEED.",
 
@@ -1219,7 +1220,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		steel_description = "Craftimise jaoks.",
 
 		thermite = "Thermite",
-		thermite_description = "Mis türa asi see veel on?",
+		thermite_description = "Pulber",
 		fake_plate = "Numbrimärk",
 		fake_plate_description = "It is what it is.",
 		evidence_bag_empty = "Tühi minigrip kott.",
@@ -1228,15 +1229,15 @@ OP.Global.Locales.Languages["et-EE"] = {
 		evidence_bag_description = "Seda saab teie vastu kasutada kohtus.",
 
 		pistol_ammo = "Püstoli kuulid",
-		pistol_ammo_description = "Gang värk.",
+		pistol_ammo_description = "9.mm.",
 		sub_ammo = "SMG kuulid",
-		sub_ammo_description = "gang gang.",
+		sub_ammo_description = "9.mm.",
 		rifle_ammo = "Rifle kuulid",
-		rifle_ammo_description = "Pangaröövi jaoks...",
+		rifle_ammo_description = "5.56",
 		sniper_ammo = "Sniper kuulid",
 		sniper_ammo_description = "Alfa 4, Positsioonil.",
 		shotgun_ammo = "Shotgun kuulid",
-		shotgun_ammo_description = "Kummikuulid...... HUI KAH",
+		shotgun_ammo_description = "Slug padrun",
 
 		weapon_dagger = "Antiikne pistoda",
 		weapon_bat = "Pesapalli kurikas",
@@ -1244,7 +1245,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		weapon_crowbar = "Sõrgkang",
 		weapon_unarmed = "Rusikas",
 		weapon_flashlight = "Taskulamp",
-		weapon_golfclub = "Gofli kepp",
+		weapon_golfclub = "Goflikepp",
 		weapon_hammer = "Haamer",
 		weapon_hatchet = "Kirves",
 		weapon_knuckle = "Nukirauad",
