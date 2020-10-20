@@ -417,15 +417,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		substitutes_command_help = "Show all available substitutes.",
 		substitutes_command_substitutes = "",
 
-		command_bind_command = "/command_bind",
-		command_bind_command_help = "Bind a command to a control.",
-		command_bind_command_parameter_bind_name = "bind name",
-		command_bind_command_parameter_bind_name_help = "The 'name' of the bind. This name must be one word and less than 20 characters, and will later be used to identify and remove this bind.",
-		command_bind_command_parameter_command = "command",
-		command_bind_command_parameter_command_help = "The command you are wanting to bind. The '/' does not have to be included, though it can.",
-		command_bind_command_parameter_control = "control",
-		command_bind_command_parameter_control_help = "The control id you want to bind this command to. Here's a list of all the controls: `https://docs.fivem.net/docs/game-references/controls/`",
-		command_bind_command_substitutes = "/bind_add, /bindadd, /add_bind, /addbind",
+		command_bind_add_command = "/command_bind_add",
+		command_bind_add_command_help = "Bind a command to a control.",
+		command_bind_add_command_parameter_bind_name = "bind name",
+		command_bind_add_command_parameter_bind_name_help = "The 'name' of the bind. This name must be one word and less than 20 characters, and will later be used to identify and remove this bind.",
+		command_bind_add_command_parameter_control = "control",
+		command_bind_add_command_parameter_control_help = "The control id you want to bind this command to. Here's a list of all the controls: `https://docs.fivem.net/docs/game-references/controls/`",
+		command_bind_add_command_parameter_command = "command",
+		command_bind_add_command_parameter_command_help = "The command you are wanting to bind. The '/' does not have to be included, though it can. You can also add in parameters.",
+		command_bind_add_command_substitutes = "/command_bind, /bind_add, /bindadd, /add_bind, /addbind",
 
 		command_bind_remove_command = "/command_bind_remove",
 		command_bind_remove_command_help = "Remove a command bind.",
@@ -655,7 +655,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		frequency_command_help = "Set what frequency your radio is on.",
 		frequency_command_parameter_frequency = "frequency",
 		frequency_command_parameter_frequency_help = "The frequency you would like to go to.",
-		frequency_command_substitutes = "",
+		frequency_command_substitutes = "/freq",
 
 		radio_sounds_command = "/radio_sounds",
 		radio_sounds_command_help = "Adjust the radio sound effects' volume.",
@@ -959,9 +959,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		video = "Video: ${video}",
 		time = "Time: ${time}",
 		date = "Date: ${date}",
-		unitId = "Unit ID: ${unitId}",
-		unitName = "Unit Name: ${unitName}",
-		unitSpeed = "Unit Speed: ${unitSpeed} mp/h",
+		unit_id = "Unit ID: ${unitId}",
+		unit_name = "Unit Name: ${unitName}",
+		unit_speed_metric = "Unit Speed: ${unitSpeed} km/h",
+		unit_speed_imperial = "Unit Speed: ${unitSpeed} mp/h",
 		bottom_part_1 = "This vehicle is licensesd to the",
 		bottom_part_2 = "State of San Andreas",
 		bottom_part_3 = "Any unauthorized use is subject to heavy penalty under 13 S.A. Pen. Code 502(a).",
@@ -1016,10 +1017,12 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	hud = {
 		mph = "mp/h",
+		kmh = "km/h",
 		ft = "ft",
+		m = "m",
 		belt = "BELT",
 		cruise = "CRUISE",
-		fuel = "FUEL",
+		fuel = "fuel",
 		fps = "FPS",
 		ping = "PING"
 	},
@@ -1566,7 +1569,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		unmuted_player = "Unmuted Player",
 		unmuted_player_details = "${consoleName} unmuted ${targetConsoleName}.",
 		player_unmuted = "Player Unmuted",
-		player_unmuted_details = "${targetConsoleName} has been unmuted by ${consoleName}."
+		player_unmuted_details = "${targetConsoleName} has been unmuted by ${consoleName}.",
+		ooc_cancelled_same_as_last = "Your OOC message was cancelled as you attempted to send two identical messages in a row.",
+		identical_ooc_message = "Player attempted to post two identical OOC messages in a row."
 	},
 
 	notepads = {
@@ -2119,11 +2124,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		purchase_jerry_can = "Press ~g~${InventoryKey} ~w~to purchase a Jerry Can.",
 		gas_station = "Gas Station",
 		vehicle_engine_on = "The vehicle's engine is running.",
-		petrolcan_fuel_text = "Petrol Amount Left: ${petrolAmount}%\nPress ~g~E ~w~to stop fueling."
+		petrolcan_fuel_text = "Petrol Amount Left: ${petrolAmount}%\nPress ~g~E ~w~to stop fueling.",
+		player_busy = "You are busy with something else."
 	},
 
 	gadgets = {
-		helicopter_camera_vehicle_info = "Speed: ${speed} mp/h\nModel: ${model}\nPlate: ${plate}"
+		helicopter_camera_vehicle_info_metric = "Speed: ${speed} km/h\nModel: ${model}\nPlate: ${plate}",
+		helicopter_camera_vehicle_info_imperial = "Speed: ${speed} mp/h\nModel: ${model}\nPlate: ${plate}",
 	},
 
 	garages = {
@@ -2195,10 +2202,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		manual_gears_enabled = "Manual gearing has now been enabled.",
 		manual_gears_disabled = "Manual gearing has now been disabled.",
 		manual_gear_set_to = "Gear set to ${gearId}.",
-		cruise_control_set_to = "The cruise control will now limit the speed at ${speed} mp/h.",
+		cruise_control_set_to_metric = "The cruise control will now limit the speed at ${speed} km/h.",
+		cruise_control_set_to_imperial = "The cruise control will now limit the speed at ${speed} mp/h.",
 		cruise_control_reset = "The cruise control will now limit the speed at the speed the vehicle was at when toggled.",
-		cruise_control_on = "Cruise control set to ${speed} mp/h.",
-		cruise_control_on_plane = "Cruise control set to ${speed} mp/h and ${altitude} ft.",
+		cruise_control_on_metric = "Cruise control set to ${speed} km/h.",
+		cruise_control_on_imperial = "Cruise control set to ${speed} mp/h.",
+		cruise_control_on_plane_metric = "Cruise control set to ${speed} km/h and ${altitude} meters.",
+		cruise_control_on_plane_imperial = "Cruise control set to ${speed} mp/h and ${altitude} ft.",
 	},
 
 	wheels = {
