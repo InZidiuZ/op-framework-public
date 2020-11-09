@@ -7,7 +7,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 	-- configuration settings for language
 	largeNumberSeperator = ",", -- with it set as ",", 1000000 -> 1,000,000 in a lot of labels
 	floatSeperator = ".", -- with it set as ".", (25 + (1/5)) -> 25.2
-	useMetric = false,
+	useMetric = true,
 
 	-- locales shared between all resources
 	shared = {
@@ -460,9 +460,9 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		-- game/dashcam
 		unit_id_command = "/unit_id",
-		unit_id_command_help = "Määra oma üksuse ID.",
-		unit_id_command_parameter_unit_id = "unit id",
-		unit_id_command_parameter_unit_id_help = "Sinu üksuse ID, Võid jätta tühjaks.",
+		unit_id_command_help = "Määra oma kutsung..",
+		unit_id_command_parameter_unit_id = "kutsung.",
+		unit_id_command_parameter_unit_id_help = "Sinu kutsung, Võid jätta tühjaks.",
 		unit_id_command_substitutes = "",
 
 		-- game/debug
@@ -960,10 +960,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		video = "Video: ${video}",
 		time = "Kellaaeg: ${time}",
 		date = "Kuupäev: ${date}",
-		unit_id = "Unit ID: ${unitId}",
-		unit_name = "Unit Name: ${unitName}",
-		unit_speed_metric = "Unit Speed: ${unitSpeed} km/h",
-		unit_speed_imperial = "Unit Speed: ${unitSpeed} mp/h",
+		unit_id = "Kutsung: ${unitId}",
+		unit_name = "Nimi: ${unitName}",
+		unit_speed_metric = "Auto kiirus: ${unitSpeed} km/h",
+		unit_speed_imperial = "Auto kiirus: ${unitSpeed} mp/h",
 		bottom_part_1 = "See sõiduk kuulub",
 		bottom_part_2 = "San Andreas Osariigile",
 		bottom_part_3 = "Igasugust ebaseaduslikku video kasutust karistatakse paragrahviga: 13 S.A. Pen. Code 502(a).",
@@ -1470,7 +1470,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		rolling_joints = "Jointide rollimine.",
 		changing_license_plate = "Numbrimärgi vahetamine.",
 		unable_to_change_license_plate = "Kutsu oma sõbrad autost välja...",
-		equipping_parachute = "Made In China langevari",
+		equipping_parachute = "Langevarju selga panemine",
 		lockpicking_vehicle = "Auto muukimine."
 	},
 
@@ -1586,11 +1586,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 	},
 
 	overview = {
-		header_title = "OP Framework - Overview UI",
-		select_information = "Information",
-		select_activity_points = "Activity Points",
-		select_staff_points = "Staff Points",
-		about_title = "About the overview UI",
+		header_title = "Legacy Eesti-Punktid",
+		select_information = "Informatsioon",
+		select_activity_points = "Aktiivsus punktid",
+		select_staff_points = "Staff punktid",
+		about_title = "Ülevaade",
 
 		-- eh idk if putting entire chunks of html code is the way to go but for now it is xd
 		about_text = [[
@@ -1611,60 +1611,60 @@ OP.Global.Locales.Languages["et-EE"] = {
 			Onto the future!
 		]],
 
-		about_activity_points_title = "About Activity Points",
+		about_activity_points_title = "Aktiivsus punktid",
 
 		about_activity_points_text = [[
-			You can gain activity points by being on-duty in jobs that offer these points. Currently, only the Medical/EMS and Law Enforcement/police jobs offer this.
+			Sul on võimalik teenida aktiivsus punkte töökohtadega. Praegu saavad aktiivsus punkte ainult Meedikud/Politseinikud.
 			<br><br>
-			Every minute, a certain amount of activity points is distributed in each job among the players who are on-duty. This means that if there are 4 players on-duty as police, each player will get 25% of the activity points that minute. The amount of activity points distributed is decided by taking the server's current player amount and dividing that by 32.
+			Iga minut jagatakse aktiivsus punkte töölistele laiali. See tähendab ,et kui on 4 on-duty politseiniku sees siis iga politseinik saab 25% aktiivsus punktidest endale. Aktiivsus punktid antakse igale töötajale olenevalt serveri mängijate arvust ja jagades selle omakorda 32-ga.
 			<br><br>
-			The activity points resets for everyone at the beginning of each week. If you had a certain amount of activity points, you will be given priority in the queue for the entire next week.
+			 Aktiivsus punktid resetivad iga nädal kõigil inimestel. Kui sul oli piisavalt aktiivsus punkte enne reseti siis antakse sulle järgneva nädalani lõpuni priority queue mis kestab 7 päeva.
 				<br><br>
-				Activity points required for queue priority at this time:
+				Aktiivsus punktidega saadavad priority-d:
 				<ul class="list">
-				<li>400: Low Job Priority.</li>
-				<li>700: Medium Job Priority.</li>
-				<li>1000: High Job Priority.</li>
+				<li>400: Level 1 Queue Priority.</li>
+				<li>700: Level 2 Queue Priority.</li>
+				<li>1000: Level 3 Queue Priority.</li>
 			</ul>
 		]],
 
-		activity_points_this_week = "This Week",
-		activity_points_last_week = "Last Week",
-		activity_points_current = "Activity Points: <b>${activityPoints} + ${gainAmount}/minute</b>",
-		activity_points_current_no_gain = "Activity Points: <b>${activityPoints}</b>",
-		activity_points_goal_low = "<br><br>Your current activity goal is at 400 points for Low Job Priority, with <b>${remainingPoints} to go</b>!",
-		activity_points_goal_medium = "<br><br>Your current activity goal is at 700 points for Medium Job Priority, with <b>${remainingPoints} to go</b>!",
-		activity_points_goal_high = "<br><br>Your current activity goal is at 1000 points for High Job Priority, with <b>${remainingPoints} to go</b>!",
-		activity_points_goal_none = "You currently have no activity goals.",
-		activity_points_not_enough = "You did not have enough activity points to qualify for queue priority last week.",
-		activity_points_last_week_low = "Impressive, you had enough activity points last week to qualify for Low Job Priority in the queue!",
-		activity_points_last_week_medium = "Amazing, you had enough activity points last week to qualify for Medium Job Priority in the queue!",
-		activity_points_last_week_high = "Incredible, you had enough activity points last week to qualify for High Job Priority in the queue!",
+		activity_points_this_week = "See nädal",
+		activity_points_last_week = "Eelmine nädal",
+		activity_points_current = "Aktiivsus punktid: <b>${activityPoints} + ${gainAmount}/minute</b>",
+		activity_points_current_no_gain = "Aktiivsus punktid: <b>${activityPoints}</b>",
+		activity_points_goal_low = "<br><br>Sinu praegune eesmärk on saada level 1 priority 400. punktiga, sul on veel <b>${remainingPoints} punkti puudu ,et see saada </b>!",
+		activity_points_goal_medium = "<br><br>Sinu praegune eesmärk on saada level 2 priority 700. punktiga, sul on veel<b>${remainingPoints} punkti puudu ,et see saada </b>!",
+		activity_points_goal_high = "<br><br>Sinu praegune eesmärk on saada level 3 priority 1000. punktiga, sul on veel <b>${remainingPoints} punkti puudu ,et see saada </b>!",
+		activity_points_goal_none = "Sul ei ole praegu ühtegi eesmärki.",
+		activity_points_not_enough = "Sul ei olnud piisavalt aktiivsus punkte eelmisel nädalal ,et priorityt endale saada.",
+		activity_points_last_week_low = "Tubli, sul oli eelmisel nädalal piisavalt punkte ,et endale level 1 priority saada!",
+		activity_points_last_week_medium = "Hämmastav, sul oli eelmisel nädalal piisavalt punkte ,et endale level 2 priority saada!",
+		activity_points_last_week_high = "SUPER, sul oli eelmisel nädalal piisavalt punkte ,et endale level 3 priority saada!",
 
-		about_staff_points_title = "About Staff Points",
+		about_staff_points_title = "Staff punktid",
 
 		about_staff_points_text = [[
-			Similar to the activity points for jobs, you will gain staff points when you're in the server with your staff availability toggled on.
+			Sarnaneb aktiivsus punktidega, staff punkte teenid samamoodi kui sa oled piisavalt serveris on-duty adminina.
 			<br><br>
-			Every minute, a certain amount of staff points is distributed to all active staff members. This means that if there are 4 staff members active, each person will get 25% of the staff points that minute. The amount of staff points distributed is decided by taking the server's current player amount and dividing that by 32.
+			Iga minut jagatakse staff punkte aktiivsetele adminitele laiali. See tähendab ,et kui on 4 on-duty adminit sees siis iga admin saab 25% staff punktidest endale. Staff punktid antakse igale aktiivsele adminile olenevalt serveri mängijate arvust ja jagades selle omakorda 32-ga.
 			<br><br>
-			The staff points resets for everyone at the beginning of each week. Your eight most recent weeks will be available for display in a table below.
+			Staff punktid resetivad kõikide adminite vahel iga nädala lõpul. Tabelist saad näha oma 8. viimast nädalat mille käigus said staff punkte.
 		]],
 
-		staff_points_this_week = "This Week",
-		staff_points_current = "Staff Points: <b>${staffPoints} + ${gainAmount}/minute</b>",
-		staff_points_current_no_gain = "Staff Points: <b>${staffPoints}</b>",
-		staff_points_table = "Staff Points Table",
-		this_week = "This Week",
-		one_week_ago = "1 Week Ago",
-		two_weeks_ago = "2 Weeks Ago",
-		three_weeks_ago = "3 Weeks Ago",
-		four_weeks_ago = "4 Weeks Ago",
-		five_weeks_ago = "5 Weeks Ago",
-		six_weeks_ago = "6 Weeks Ago",
-		seven_weeks_ago = "7 Weeks Ago",
-		eight_weeks_ago = "8 Weeks Ago",
-		previous_weeks_average = "Previous Weeks' Average",
+		staff_points_this_week = "See nädal",
+		staff_points_current = "Staff Punktid: <b>${staffPoints} + ${gainAmount}/minute</b>",
+		staff_points_current_no_gain = "Staff Punktid: <b>${staffPoints}</b>",
+		staff_points_table = "Staff Punktide tabel",
+		this_week = "See nädal",
+		one_week_ago = "1 nädal tagasi",
+		two_weeks_ago = "2 nädalat tagasi",
+		three_weeks_ago = "3 nädalat tagasi",
+		four_weeks_ago = "4 nädalat tagasi",
+		five_weeks_ago = "5 nädalat tagasi",
+		six_weeks_ago = "6 nädalat tagasi",
+		seven_weeks_ago = "7 nädalat tagasi",
+		eight_weeks_ago = "8 nädalat tagasi",
+		previous_weeks_average = "Eelmised nädalad' Keskmine",
 
 		about_sound_effects_title = "Sound Effects",
 		about_sound_effects_text = "These fields allows you to override some sound effects. They require a link to an .oog file in order to work properly. It must also be an https:// URL and not an http:// one. An easy way of uploading a file would be to upload it to discord, then copy its link, and inserting it into the fields here.",
