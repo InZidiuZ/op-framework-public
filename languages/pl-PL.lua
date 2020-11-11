@@ -47,16 +47,16 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		model_name_not_provided = "Nie podano modelu auta.",
 		model_name_invalid = "Model auta `${modelName}` jest nieprawidłowy.",
-		failed_to_spawn_vehicle = "Nie udało się użyć komendy `/spawn_vehicle` poprawnie.",	
-		spawned_vehicle_for_player = "Udało się zrespić `${modelName}` dla ${consoleName}.",	
-		spawned_vehicle_for_everyone = "Udało się zrespić `${modelName}` dla wszystkich.",	
-		spawn_vehicle_for_player_not_staff = "Gracz próbował zrespić pojazd dla kogoś, ale nie posiada odpowiednich uprawnień.",	
-		spawn_vehicle_for_self_not_staff = "Gracz próbował zrespić pojazd dla siebie, ale nie posiada odpowiednich uprawnień.",	
-		spawned_vehicle_for_self_title = "Zrespiono pojazd",	
-		spawned_vehicle_for_self_details = "${consoleName} zrespił pojazd o modelu i nazwie `${modelName}`.",	
-		spawned_vehicle_for_player_title = "Zrespiono pojazd dla gracza",	
-		spawned_vehicle_for_player_details = "${consoleName} zrespiono pojazd o modelu `${modelName}` dla gracza ${targetConsoleName}.",	
-		spawned_vehicle_for_everyone_title = "Zrespiono pojazd dla wszystkich",	
+		failed_to_spawn_vehicle = "Nie udało się użyć komendy `/spawn_vehicle` poprawnie.",
+		spawned_vehicle_for_player = "Udało się zrespić `${modelName}` dla ${consoleName}.",
+		spawned_vehicle_for_everyone = "Udało się zrespić `${modelName}` dla wszystkich.",
+		spawn_vehicle_for_player_not_staff = "Gracz próbował zrespić pojazd dla kogoś, ale nie posiada odpowiednich uprawnień.",
+		spawn_vehicle_for_self_not_staff = "Gracz próbował zrespić pojazd dla siebie, ale nie posiada odpowiednich uprawnień.",
+		spawned_vehicle_for_self_title = "Zrespiono pojazd",
+		spawned_vehicle_for_self_details = "${consoleName} zrespił pojazd o modelu i nazwie `${modelName}`.",
+		spawned_vehicle_for_player_title = "Zrespiono pojazd dla gracza",
+		spawned_vehicle_for_player_details = "${consoleName} zrespiono pojazd o modelu `${modelName}` dla gracza ${targetConsoleName}.",
+		spawned_vehicle_for_everyone_title = "Zrespiono pojazd dla wszystkich",
 		spawned_vehicle_for_everyone_details = "${consoleName} zrespiono pojazd o modelu `${modelName}` dla wszystkich.",
 
 		invalid_amount = "Nieprawidłowa kwota.",
@@ -336,7 +336,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		spawn_vehicle_command_help = "Respi pojazd.",
 		spawn_vehicle_command_parameter_model_name = "nazwa modelu",
 		spawn_vehicle_command_parameter_model_name_help = "Nazwa modelu pojazdu który próbujesz zrespić.",
-		spawn_vehicle_command_parameter_server_id = "serwer id",	
+		spawn_vehicle_command_parameter_server_id = "serwer id",
 		spawn_vehicle_command_parameter_server_id_help = "Serwer ID gracza dla którego chcesz zrespić pojazd. Możesz zostawić `0` by zrespić dla siebie.",
 		spawn_vehicle_command_substitutes = "/sv",
 
@@ -956,15 +956,15 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	dashcam = {
-		video = "Nagranie: ${video}",	
-		time = "Czas: ${time}",	
-		date = "Data: ${date}",	
-		unit_id = "ID jednostki: ${unitId}",	
-		unit_name = "Nazwa jednostki: ${unitName}",	
-		unit_speed_metric = "Prędkość jednostki: ${unitSpeed} km/h",	
-		unit_speed_imperial = "Prędkość jednostki: ${unitSpeed} mp/h",	
-		bottom_part_1 = "Ten pojazd należy do",	
-		bottom_part_2 = "State of San Andreas",	
+		video = "Nagranie: ${video}",
+		time = "Czas: ${time}",
+		date = "Data: ${date}",
+		unit_id = "ID jednostki: ${unitId}",
+		unit_name = "Nazwa jednostki: ${unitName}",
+		unit_speed_metric = "Prędkość jednostki: ${unitSpeed} km/h",
+		unit_speed_imperial = "Prędkość jednostki: ${unitSpeed} mp/h",
+		bottom_part_1 = "Ten pojazd należy do",
+		bottom_part_2 = "State of San Andreas",
 		bottom_part_3 = "Każde nieuprawnione użycie podlega surowej karze w ramach 13 S.A. Pen. Kod 502(a).",
 	},
 
@@ -1016,14 +1016,14 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	hud = {
-		mph = "mp/h",	
-		kmh = "km/h",	
-		ft = "ft",	
-		m = "m",	
-		belt = "Pasy",	
-		cruise = "Tempomat",	
-		fuel = "Paliwo",	
-		fps = "FPS",	
+		mph = "mp/h",
+		kmh = "km/h",
+		ft = "ft",
+		m = "m",
+		belt = "Pasy",
+		cruise = "Tempomat",
+		fuel = "Paliwo",
+		fps = "FPS",
 		ping = "PING"
 	},
 
@@ -1069,8 +1069,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		logs_item_moved_title = "Przedmiot Przeniesiony",
 		logs_item_moved_details = "${consoleName} Przeniósł ${moveAmount}x ${itemLabel} Do ${endInventory}:${endSlot} z Ekwipunku ${startInventory}:${startSlot}.",
 		
-		logs_item_purchased_title = "Przedmiot kupiony",	
-		logs_item_purchased_no_tax_details = "${consoleName} kupiony ${purchaseAmount}x `${itemLabel}` za $${purchaseCost}.",	
+		logs_item_purchased_title = "Przedmiot kupiony",
+		logs_item_purchased_no_tax_details = "${consoleName} kupiony ${purchaseAmount}x `${itemLabel}` za $${purchaseCost}.",
 		logs_item_purchased_tax_details = "${consoleName} kupiony ${purchaseAmount}x `${itemLabel}` za $${purchaseCost} z dodatkowym $${taxCost} ze wzgledu na ${salesTaxPercentage}% podatek.",
 		
 		-- items & item descriptions
@@ -1570,7 +1570,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		unmuted_player_details = "${consoleName} odmutowano ${targetConsoleName}.",
 		player_unmuted = "Gracz odmutowany",
 		player_unmuted_details = "${targetConsoleName} został odmutowany za ${consoleName}.",
-		ooc_cancelled_same_as_last = "Twoja wiadomośc OOC została zablokowana, nie możesz wysyłać dwukrotnie takiej samej.",	
+		ooc_cancelled_same_as_last = "Twoja wiadomośc OOC została zablokowana, nie możesz wysyłać dwukrotnie takiej samej.",
 		identical_ooc_message = "Gracz próbował napisać na czacie LOOC identyczną wiadomośc dwukrotnie."
 	},
 
@@ -2129,7 +2129,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	gadgets = {
-		helicopter_camera_vehicle_info_metric = "Prędkość: ${speed} km/h\nModel: ${model}\nPlate: ${plate}",	
+		helicopter_camera_vehicle_info_metric = "Prędkość: ${speed} km/h\nModel: ${model}\nPlate: ${plate}",
 		helicopter_camera_vehicle_info_imperial = "Prędkość: ${speed} mp/h\nModel: ${model}\nPlate: ${plate}",
 	},
 
@@ -2202,12 +2202,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		manual_gears_enabled = "Włączony manual",
 		manual_gears_disabled = "Wyłączony manual",
 		manual_gear_set_to = "Bieg ustawiony na ${gearId}.",
-		cruise_control_set_to_metric = "Tempomat ustawiony na ${speed} km/h.",	
-		cruise_control_set_to_imperial = "Tempomat ustawiony na ${speed} mp/h.",	
-		cruise_control_reset = "Tempomat będzie teraz ustawiony na prędkość w moemencie jego włączenia.",	
-		cruise_control_on_metric = "Tempomat ustawiony na ${speed} km/h.",	
-		cruise_control_on_imperial = "Tempomat ustawiony na ${speed} mp/h.",	
-		cruise_control_on_plane_metric = "Tempomat ustawiony na ${speed} km/h i ${altitude} metry.",	
+		cruise_control_set_to_metric = "Tempomat ustawiony na ${speed} km/h.",
+		cruise_control_set_to_imperial = "Tempomat ustawiony na ${speed} mp/h.",
+		cruise_control_reset = "Tempomat będzie teraz ustawiony na prędkość w moemencie jego włączenia.",
+		cruise_control_on_metric = "Tempomat ustawiony na ${speed} km/h.",
+		cruise_control_on_imperial = "Tempomat ustawiony na ${speed} mp/h.",
+		cruise_control_on_plane_metric = "Tempomat ustawiony na ${speed} km/h i ${altitude} metry.",
 		cruise_control_on_plane_imperial = "Tempomat ustawiony na ${speed} mp/h i ${altitude} ft.",
 	},
 
