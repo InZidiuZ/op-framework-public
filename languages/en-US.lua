@@ -154,7 +154,17 @@ OP.Global.Locales.Languages["en-US"] = {
 		spawn_item_not_staff = "Attempted to spawn an item without proper permissions",
 		no_item_name = "No item name provided.",
 		invalid_item_name = "${itemName} is not a valid item name.",
-		item_spawned = "Spawned ${amount}x `${itemName}` for ${consoleName}."
+		item_spawned = "Spawned ${amount}x `${itemName}` for ${consoleName}.",
+
+		set_warning_message_not_staff = "Attempted to set the server's warning message without proper permissions.",
+		warning_message_set_to = "The warning message has been set to `${warningMessage}`.",
+		warning_message_removed = "The warning message been removed.",
+		warning_message_error = "An error occured while trying to set the warning message.",
+		warning_message_identical = "You are unable to set the warning message to what it already is set to.",
+		warning_message_set_to_title = "Warning Message Set",
+		warning_message_set_to_details = "${consoleName} has set the warning message to `${warningMessage}`.",
+		warning_message_removed_title = "Warning Message Removed",
+		warning_message_removed_details = "${consoleName} has removed the warning message."
 	},
 
 	anticheat = {
@@ -170,7 +180,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		removed_model_to_list = "Removed model `${modelName}` (${modelHash}) from the detection list.",
 		model_not_in_list = "Model `${modelName}` (${modelHash}) is not added to the detection list.",
 		set_model_detected_not_staff = "Player attempted to add a model to the detection list, but didn't have correct permissions to do so.",
-		set_model_undetected_not_staff = "Player attempted to remove a model from the detection list, but didn't have correct permissions to do so."
+		set_model_undetected_not_staff = "Player attempted to remove a model from the detection list, but didn't have correct permissions to do so.",
+		add_detection_area_not_staff = "Player attempted to add a detection area, but didn't have correct permissions to do so."
 	},
 
 	authentication = {
@@ -341,16 +352,40 @@ OP.Global.Locales.Languages["en-US"] = {
 		spawn_vehicle_command_substitutes = "/sv",
 
 		aimbot_command = "/aimbot",
-		aimbot_command_help = "Toggle aimbot.",
+		aimbot_command_help = "Toggle 'aimbot'.",
 		aimbot_command_parameter_server_id = "server id",
-		aimbot_command_parameter_server_id_help = "If you're wanting to toggle the aimbot for someone else, insert their server id here.",
+		aimbot_command_parameter_server_id_help = "If you're wanting to toggle the 'aimbot' for someone else, insert their server id here.",
 		aimbot_command_substitutes = "",
 
 		wallhack_command = "/wallhack",
-		wallhack_command_help = "Toggle wallhack.",
+		wallhack_command_help = "Toggle 'wallhack'.",
 		wallhack_command_parameter_server_id = "server id",
-		wallhack_command_parameter_server_id_help = "If you're wanting to toggle the wallhack for someone else, insert their server id here.",
+		wallhack_command_parameter_server_id_help = "If you're wanting to toggle the 'wallhack' for someone else, insert their server id here.",
 		wallhack_command_substitutes = "",
+
+		speed_boost_command = "/speed_boost",
+		speed_boost_command_help = "Toggle 'speed boost'.",
+		speed_boost_command_parameter_server_id = "server id",
+		speed_boost_command_parameter_server_id_help = "If you're wanting to toggle the 'speed boost' for someone else, insert their server id here.",
+		speed_boost_command_substitutes = "",
+
+		indestructibility_command = "/indestructibility",
+		indestructibility_command_help = "Toggle 'indestructibility'.",
+		indestructibility_command_parameter_server_id = "server id",
+		indestructibility_command_parameter_server_id_help = "If you're wanting to toggle the 'indestructibility' for someone else, insert their server id here.",
+		indestructibility_command_substitutes = "/ind",
+
+		no_nearby_vehicles_command = "/no_nearby_vehicles",
+		no_nearby_vehicles_command_help = "Toggle 'no nearby vehicles'.",
+		no_nearby_vehicles_command_parameter_server_id = "server id",
+		no_nearby_vehicles_command_parameter_server_id_help = "If you're wanting to toggle the 'no nearby vehicles' for someone else, insert their server id here.",
+		no_nearby_vehicles_command_substitutes = "",
+
+		speed_up_progress_bar_command = "/speed_up_progress_bar",
+		speed_up_progress_bar_command_help = "Toggle 'speed up progress bar'.",
+		speed_up_progress_bar_command_parameter_server_id = "server id",
+		speed_up_progress_bar_command_parameter_server_id_help = "If you're wanting to toggle the 'speed up progress bar' for someone else, insert their server id here.",
+		speed_up_progress_bar_command_substitutes = "/speed_up",
 
 		add_cash_command = "/add_cash",
 		add_cash_command_help = "Add cash to someone's character.",
@@ -394,6 +429,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		spawn_item_command_parameter_server_id_help = "The player's server ID you'd like to spawn the item for. If left blank, yourself is selected.",
 		spawn_item_command_substitutes = "/si",
 
+		warning_message_command = "/warning_message",
+		warning_message_command_help = "Add a global server message for all players.",
+		warning_message_command_parameter_message = "message",
+		warning_message_command_parameter_message_help = "The message you would like to display to the players. You can leave this paramater blank to remove the warning message.",
+		warning_message_command_substitutes = "",
+
 		-- base/anticheat
 		model_detect_add_command = "/model_detect_add",
 		model_detect_add_command_help = "Temporarily add a model to the detection list. The list resets on server restart.",
@@ -401,12 +442,17 @@ OP.Global.Locales.Languages["en-US"] = {
 		model_detect_add_command_parameter_model_help = "The model you woud like to detect. Can be both a model name and a model hash.",
 		model_detect_add_command_substitutes = "/detect",
 
-		-- base/anticheat
 		model_detect_remove_command = "/model_detect_remove",
 		model_detect_remove_command_help = "Remove a model from the detection list.",
 		model_detect_remove_command_parameter_model = "model",
 		model_detect_remove_command_parameter_model_help = "The model you woud like to remove. Can be both a model name and a model hash.",
 		model_detect_remove_command_substitutes = "/undetect",
+
+		area_detect_add_command = "/area_detect_add",
+		area_detect_add_command_help = "Create an area where all spawned entities within the area will be sent to you with some information.",
+		area_detect_add_command_parameter_radius = "radius",
+		area_detect_add_command_parameter_radius_help = "The radius of the circle in which entities will be detected. The minimum value is `10` and the maximum is `5000`. Leaving this as blank will default to `100`.",
+		area_detect_add_command_substitutes = "",
 
 		-- base/commands
 		help_command = "/help",
@@ -582,6 +628,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		unmute_command_parameter_server_id_help = "The player's server ID you are wanting to unmute.",
 		unmute_command_substitutes = "",
 
+		use_measurement_command = "/use_measurement",
+		use_measurement_command_help = "Override the locale's preferred measurement system.",
+		use_measurement_command_parameter_measurement = "measurement",
+		use_measurement_command_parameter_measurement_help = "The measurement system you would like to use. Valid values are `Imperial` and `Metric`. You can leave this paramater as blank or as an invalid value to use default.",
+		use_measurement_command_substitutes = "/measurement, /meas",
+
 		-- game/money
 		cash_command = "/cash",
 		cash_command_help = "Display your cash balance.",
@@ -682,6 +734,17 @@ OP.Global.Locales.Languages["en-US"] = {
 		security_cameras_health_command_help = "Toggle the security cameras health debug tool.",
 		security_cameras_health_command_substitutes = "/cam_health",
 
+		-- game/sound_effects
+		play_sound_command = "/play_sound",
+		play_sound_command_help = "Play a sound for a player or all players.",
+		play_sound_command_parameter_url = "url",
+		play_sound_command_parameter_url_help = "The sound's download URL.",
+		play_sound_command_parameter_volume = "volume",
+		play_sound_command_parameter_volume_help = "The volume level the sound should play at. Valid values range from `0` to `1`. This value will default to `0.1`.",
+		play_sound_command_parameter_server_id = "server id",
+		play_sound_command_parameter_server_id_help = "The player's server ID you want to play this sound for. You can do `-1` for all players.",
+		play_sound_command_substitutes = "",
+
 		-- game/spying
 		search_for_devices_command = "/search_for_devices",
 		search_for_devices_command_help = "Search for nearby devices.",
@@ -728,7 +791,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weather_command = "/weather",
 		weather_command_help = "Change the weather.",
 		weather_command_parameter_weather = "weather name",
-		weather_command_parameter_weather_help = "The weather's name you would like to set it to. Valid weather names are CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT and BLIZZARD.",
+		weather_command_parameter_weather_help = "The weather's name you would like to set it to. Valid weather names are EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS and HALLOWEEN.",
 		weather_command_substitutes = "",
 
 		freeze_time_command = "/freeze_time",
@@ -1241,6 +1304,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		shotgun_ammo = "Shotgun Ammo",
 		shotgun_ammo_description = "People think there's gunpowder in these! Clowns... they're filled with love and joy.",
 
+		pistol_ammo = "Pistol Ammo",
+		pistol_ammo_description = "Perfect for casual use. Fits in most handhelds.",
+
+		silver_watches = "Silver Watches",
+		silver_watches_description = "",
+		necklaces = "Necklaces",
+		necklaces_description = "Add some extra bling to your outfit!",
+		gold_watches = "Gold Watches",
+		gold_watches_description = "And... where did you get these, exactly?",
+		diamonds = "Diamonds",
+		diamonds_description = "You need 24 to make a full armor. I'd recommend getting 27 though so you can get yourself a pickaxe too.",
+
 		weapon_dagger = "Antique Cavalry Dagger",
 		weapon_bat = "Baseball Bat",
 		weapon_bottle = "Broken Bottle",
@@ -1571,7 +1646,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		player_unmuted = "Player Unmuted",
 		player_unmuted_details = "${targetConsoleName} has been unmuted by ${consoleName}.",
 		ooc_cancelled_same_as_last = "Your OOC message was cancelled as you attempted to send two identical messages in a row.",
-		identical_ooc_message = "Player attempted to post two identical OOC messages in a row."
+		identical_ooc_message = "Player attempted to post two identical OOC messages in a row.",
+		use_measurement_metric = "You have set your preferred system of measurement to metric.",
+		use_measurement_imperial = "You have set your preferred system of measurement to imperial.",
+		use_measurement_default = "You will now be using the locale's default system of measurement.",
+		already_using_metric_measurement = "You already have metric set as your preferred measurement system.",
+		already_using_imperial_measurement = "You already have imperial set as your preferred measurement system.",
+		already_using_default_measurement = "You are already using the locale's default system of measurement."
 	},
 
 	notepads = {
@@ -1634,7 +1715,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		activity_points_goal_low = "<br><br>Your current activity goal is at 400 points for Low Job Priority, with <b>${remainingPoints} to go</b>!",
 		activity_points_goal_medium = "<br><br>Your current activity goal is at 700 points for Medium Job Priority, with <b>${remainingPoints} to go</b>!",
 		activity_points_goal_high = "<br><br>Your current activity goal is at 1000 points for High Job Priority, with <b>${remainingPoints} to go</b>!",
-		activity_points_goal_none = "You currently have no activity goals.",
+		activity_points_goal_none = "<br><br>You currently have no activity goals.",
 		activity_points_not_enough = "You did not have enough activity points to qualify for queue priority last week.",
 		activity_points_last_week_low = "Impressive, you had enough activity points last week to qualify for Low Job Priority in the queue!",
 		activity_points_last_week_medium = "Amazing, you had enough activity points last week to qualify for Medium Job Priority in the queue!",
@@ -1672,6 +1753,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		sound_effect_placeholder = "URL to .oog file...",
 		sound_effect_save = "Save",
 		sound_effect_reset = "Reset"
+	},
+
+	pawn_shops = {
+		sell_items = "Sell ${itemLabel}",
+		press_to_sell_items = "[E] Sell ${itemLabel}",
+		sold_items = "Sold ${sellAmount}x ${itemLabel} for $${sellPrice}.",
+		no_items_to_sell = "You have no ${itemLabel} to sell.",
+		illegal_pawn_shop_id = "Attempting to parse values for a pawn shop that doesn't exist."
 	},
 
 	ped_messages = {
@@ -1762,6 +1851,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		radio_turned_off = "The radio has been turned off.",
 		radio_removed = "You have lost your radio.",
 		no_radio = "You don't have a radio.",
+		unable_to_use_radio_while_cuffed = "You can not use the radio while you are cuffed.",
 		frequency_set_to = "The frequency has been set to ${frequency}.",
 		frequency_already_set_to = "The frequency is already set to ${frequency}.",
 		radio_volume_same = "The radio volume is already set to `${radioVolume}`.",
@@ -1830,6 +1920,23 @@ OP.Global.Locales.Languages["en-US"] = {
 		illegal_shooting_spot_value = "Attempting to parse invalid values for shootings spots.",
 		illegal_shooting_spot_id = "Attempting to parse values for a shootings spot that doesn't exist.",
 		not_enough_cash = "You do not have enough cash."
+	},
+
+	sound_effects = {
+		illegal_sound_effect = "Attempted to tell other clients to play an external sound effect.",
+		played_sound_effect_for_everyone_title = "Played Sound Effect For Everyone",
+		played_sound_effect_for_everyone_details = "${consoleName} played a sound effect for everyone. The sound effect had URL `${url}` and was set to play at volume level `${volume}`.",
+		played_sound_effect_for_player_title = "Played Sound Effect For Player",
+		played_sound_effect_for_player_details = "${consoleName} played a sound effect for ${targetConsoleName}. The sound effect had URL `${url}` and was set to play at volume level `${volume}`.",
+		url_invalid = "The provided URL is not valid. It must be uploaded on a secure conenction. (https://)",
+		url_missing = "Please add the URL to the sound you are trying to play.",
+		error_invalid_url = "The provided URL was not valid. It must be uploaded on a secure conenction. (https://)",
+		error_missing_url = "There was no URL provided.",
+		error_no_permissions = "You did not have the required permissions to play this sound.",
+		error_user_not_found = "We could not find your user data.",
+		error_not_found = "An unknown error occured.",
+		played_sound_effect_for_player = "Played sound effect for ${consoleName}. The sound effect had URL `${url}` and was set to play at volume level `${volume}`.",
+		played_sound_effect_for_everyone = "Played sound effect for everyone. The sound effect had URL `${url}` and was set to play at volume level `${volume}`."
 	},
 
 	spawn = {
@@ -2004,6 +2111,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		tracked_vehicle = "Tracked Vehicle (${trackerId})"
 	},
 
+	training = {
+		on_team_defenders = "You are a defender!",
+		on_team_attackers = "You are an attacker!",
+		defending = "DEFENDING",
+		attacking = "ATTACKING"
+	},
+
 	trains = {
 		set_train_speed_not_staff = "Attempted to set the train's speed without required permissions.",
 		train_speed_reset = "The train's speed has now been reset.",
@@ -2067,10 +2181,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		minutes = "minutes",
 		second = "second",
 		seconds = "seconds"
-	},
-
-	soundeffects = {
-		illegal_sound_effect = "Attempted to tell other clients to play an external sound effect."
 	},
 
 	-- illegal/*
@@ -2357,6 +2467,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		male_models = "Male models",
 		female_models = "Female models",
 		ems_models = "EMS Models",
+		animal_models = "Animal Models",
 		multiplayer_models = "Multiplayer Models",
 		serial_number = "Serial Number: ${serialNumber}<br>This weapon is registered to ${fullName} (${characterId}).",
 		serial_number_unknown = "Serial Number: Unknown.",
