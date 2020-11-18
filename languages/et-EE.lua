@@ -154,7 +154,17 @@ OP.Global.Locales.Languages["et-EE"] = {
 		spawn_item_not_staff = "Üritas spawnida asja ilma õigusteta",
 		no_item_name = "Palun pane asja nimi kirja.",
 		invalid_item_name = "${itemName} ei ole õige nimi.",
-		item_spawned = "Spawnis ${amount}x `${itemName}` mängija ${consoleName} jaoks."
+		item_spawned = "Spawnis ${amount}x `${itemName}` mängija ${consoleName} jaoks.",
+		
+		set_warning_message_not_staff = "Üritasid hoiatust kirjutada ilma vastavate õigusteta.",
+		warning_message_set_to = "Hoiatus on kirjutatud kirjaga: `${warningMessage}`.",
+		warning_message_removed = "Hoiatusteade on eemaldatud.",
+		warning_message_error = "Viga tekkis hoiatusteate kirjutamisel.",
+		warning_message_identical = "Sa ei saa hoiatusteadet kirjutada kuna samasugune on juba aktiivne.",
+		warning_message_set_to_title = "Hoiatusteade aktiivne.",
+		warning_message_set_to_details = "${consoleName} kirjutas hoiatusteate kirjaga: `${warningMessage}`.",
+		warning_message_removed_title = "Hoiatusteate pealkiri eemaldatud.",
+		warning_message_removed_details = "${consoleName} eemaldas hoiatusteate.",
 	},
 
 	anticheat = {
@@ -351,6 +361,30 @@ OP.Global.Locales.Languages["et-EE"] = {
 		wallhack_command_parameter_server_id = "server id",
 		wallhack_command_parameter_server_id_help = "Kui tahad kellegile wallhacki peale panna siis sisesta tema ID.",
 		wallhack_command_substitutes = "",
+		
+		speed_boost_command = "/speed_boost",
+		speed_boost_command_help = "Lülita 'speed boost' sisse.",
+		speed_boost_command_parameter_server_id = "mängija id",
+		speed_boost_command_parameter_server_id_help = "Kui sa soovid kellegile speed boosti peale panna siis sisesta tema ID siia.",
+		speed_boost_command_substitutes = "",
+
+		indestructibility_command = "/indestructibility",
+		indestructibility_command_help = "Lülita 'surematus' sisse.",
+		indestructibility_command_parameter_server_id = "mängija id",
+		indestructibility_command_parameter_server_id_help = "Kui sa tahad kedagi surematuks teha siis pane tema ID siia.",
+		indestructibility_command_substitutes = "/ind",
+
+		no_nearby_vehicles_command = "/no_nearby_vehicles",
+		no_nearby_vehicles_command_help = "Lülita 'no nearby vehicles' sisse.",
+		no_nearby_vehicles_command_parameter_server_id = "mängija id",
+		no_nearby_vehicles_command_parameter_server_id_help = "Kui sa tahad kellegi teise jaoks seda sisse lülitada siis sisesta siia tema ID.",
+		no_nearby_vehicles_command_substitutes = "",
+
+		speed_up_progress_bar_command = "/speed_up_progress_bar",
+		speed_up_progress_bar_command_help = "Lülita 'speed up progress bar' sisse.",
+		speed_up_progress_bar_command_parameter_server_id = "mängija id",
+		speed_up_progress_bar_command_parameter_server_id_help = "Kui sa tahad kellegi teise jaoks selle sisse lülitada siis sisesta siia tema ID.",
+		speed_up_progress_bar_command_substitutes = "/speed_up",
 
 		add_cash_command = "/lisaraha",
 		add_cash_command_help = "Lisa raha kellegi karakterile.",
@@ -393,6 +427,12 @@ OP.Global.Locales.Languages["et-EE"] = {
 		spawn_item_command_parameter_server_id = "server id",
 		spawn_item_command_parameter_server_id_help = "Mängija id kellele soovid itemit spawnida, Jäta tühjaks kui tahad lisada endale.",
 		spawn_item_command_substitutes = "/si",
+		
+		warning_message_command = "/warning_message",
+		warning_message_command_help = "Kirjuta hoiatus kõikidele mängijatele.",
+		warning_message_command_parameter_message = "sõnum",
+		warning_message_command_parameter_message_help = "Sõnum mida soovid edastada. Jäta tühjaks ,et eelmine sõnum eemaldada.",
+		warning_message_command_substitutes = "/warning",
 
 		-- base/anticheat
 		model_detect_add_command = "/model_detect_add",
@@ -407,6 +447,12 @@ OP.Global.Locales.Languages["et-EE"] = {
 		model_detect_remove_command_parameter_model = "model",
 		model_detect_remove_command_parameter_model_help = "Model mida tahad eemaldada, Võib olla modeli nimi või siis hash.",
 		model_detect_remove_command_substitutes = "/undetect",
+		
+		area_detect_add_command = "/area_detect_add",
+		area_detect_add_command_help = "Tee ala kus igasugune liikumine saadab sulle sõnumi.",
+		area_detect_add_command_parameter_radius = "raadius",
+		area_detect_add_command_parameter_radius_help = "Ala raadius kus hakkatakse liikumist kontrollima. Miinimum arv on '10' ja maximum 5000'. Jättes selle tühjaks paneb see default arvule ehk '100'.",
+		area_detect_add_command_substitutes = "",
 
 		-- base/commands
 		help_command = "/juhend",
@@ -581,6 +627,12 @@ OP.Global.Locales.Languages["et-EE"] = {
 		unmute_command_parameter_server_id = "server id",
 		unmute_command_parameter_server_id_help = "Mängija id keda unmuted.",
 		unmute_command_substitutes = "",
+		
+		use_measurement_command = "/use_measurement",
+		use_measurement_command_help = "Muuda speedomeetril KMH/MPH",
+		use_measurement_command_parameter_measurement = "mõõtmine",
+		use_measurement_command_parameter_measurement_help = "Mõõdik mida soovid speedomeetril kasutada. kas 'Imperial või 'Metric'. Jäta tühjaks kui tahad kasutada default mõõdikut ehk KMH.",
+		use_measurement_command_substitutes = "/measurement, /meas, /kiirus",
 
 		-- game/money
 		cash_command = "/raha",
@@ -679,8 +731,19 @@ OP.Global.Locales.Languages["et-EE"] = {
 		security_cameras_scan_command_substitutes = "/scan, /scan_cams, /scancams",
 
 		security_cameras_health_command = "/camhealth",
-		security_cameras_health_command_help = "Mingi kaamera elu värk.",
+		security_cameras_health_command_help = "Vaata kui korras kaamera on.",
 		security_cameras_health_command_substitutes = "/cam_health",
+		
+		-- game/sound_effects
+		play_sound_command = "/play_sound",
+		play_sound_command_help = "Mängi heli mängijale või tervele serverile.",
+		play_sound_command_parameter_url = "url",
+		play_sound_command_parameter_url_help = "Heli allalaetud URL",
+		play_sound_command_parameter_volume = "helitugevus",
+		play_sound_command_parameter_volume_help = "Helitugevus, 0-1. Default on 0.1.",
+		play_sound_command_parameter_server_id = "mängija id",
+		play_sound_command_parameter_server_id_help = "Mängija ID kellele soovid heli panna. Kirjuta -'1' kui soovid kõigile panna",
+		play_sound_command_substitutes = "",
 
 		-- game/spying
 		search_for_devices_command = "/seaded",
@@ -1241,6 +1304,15 @@ OP.Global.Locales.Languages["et-EE"] = {
 		sniper_ammo_description = "Alfa 4, Positsioonil.",
 		shotgun_ammo = "Shotgun kuulid",
 		shotgun_ammo_description = "Slug padrun",
+		
+		silver_watches = "Hõbedast käekell",
+		silver_watches_description = "",
+		necklaces = "Kaelakee",
+		necklaces_description = "Sädelev kaelakee mis näeb välja väga kallis!",
+		gold_watches = "Kullast käekell",
+		gold_watches_description = "Esmapilgul väga kallis käekell.",
+		diamonds = "Teemant",
+		diamonds_description = "Sul on vaja 24 ,et endale armor craftida. Ma ise soovitaksin 27 saada ,sest siis saad peale armori veel pickaxe ka.",
 
 		weapon_dagger = "Antiikne pistoda",
 		weapon_bat = "Pesapalli kurikas",
@@ -1572,7 +1644,13 @@ OP.Global.Locales.Languages["et-EE"] = {
 		player_unmuted = "Player Unmuted",
 		player_unmuted_details = "${targetConsoleName} has been unmuted by ${consoleName}.",
         ooc_cancelled_same_as_last = "Sinu sõnum ei läinud teele kuna see on samasugune mis eelmine.",
-		identical_ooc_message = "Mängija üritas kaks samasugust sõnumit OOC chatti kirjutada."
+		identical_ooc_message = "Mängija üritas kaks samasugust sõnumit OOC chatti kirjutada.",
+		use_measurement_metric = "Sa panid oma mõõdiku KMH peale.",
+		use_measurement_imperial = "Sa panid oma mõõdiku MPH peale.",
+		use_measurement_default = "Sa panid oma mõõdiku defaultiks",
+		already_using_metric_measurement = "Sa juba kasutad mõõdikut millel on KMH",
+		already_using_imperial_measurement = "Sa juba kasutad mõõdikut millel on MPH",
+		already_using_default_measurement = "Sa juba kasutad default mõõdikut"
 	},
 
 	notepads = {
@@ -1674,6 +1752,15 @@ OP.Global.Locales.Languages["et-EE"] = {
 		sound_effect_save = "Save",
 		sound_effect_reset = "Reset"
 	},
+	
+	pawn_shops = {
+		sell_items = "Müü ${itemLabel}",
+		press_to_sell_items = "[E] Müü ${itemLabel}",
+		sold_items = "Müüsid ${sellAmount}x ${itemLabel} $${sellPrice} eest.",
+		no_items_to_sell = "Sul pole ${itemLabel} ,et seda müüa.",
+		illegal_pawn_shop_id = "Pandimaja"
+		
+		},
 
 	ped_messages = {
 		attempt_succeeded = "üritas ${attemptMessage} ja see õnnestus",
@@ -1764,7 +1851,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		radio_removed = "You have lost your radio.",
 		no_radio = "You don't have a radio.",
 		frequency_set_to = "The frequency has been set to ${frequency}.",
-        frequency_already_set_to = "Sa oled juba sellel kanalil: ${frequency}.",
+		unable_to_use_radio_while_cuffed = "Sa ei saa raadiot kasutada käeraudades.",
+                frequency_already_set_to = "Sa oled juba sellel kanalil: ${frequency}.",
 		radio_volume_same = "The radio volume is already set to `${radioVolume}`.",
 		radio_volume_reset = "The radio volume has now been reset.",
 		radio_volume_set = "The radio volume has now been set to `${radioVolume}`.",
@@ -1778,7 +1866,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 	},
 
 	security_cameras = {
-		illegal_security_camera = "Kaamera hävitamine",
+		illegal_security_camera = "Illegaalne turvakaamera",
 		offline = "Offline",
 		camera_list = "Camera List",
 		camera = "Camera ${cameraId}",
@@ -1831,6 +1919,24 @@ OP.Global.Locales.Languages["et-EE"] = {
 		illegal_shooting_spot_value = "Attempting to parse invalid values for shootings spots.",
 		illegal_shooting_spot_id = "Attempting to parse values for a shootings spot that doesn't exist.",
 		not_enough_cash = "Pole piisavalt raha."
+		
+		},
+
+	sound_effects = {
+		illegal_sound_effect = "Üritasid heli mängijatele tööle panna.",
+		played_sound_effect_for_everyone_title = "Panid heli tööle kõikidele mängijatele.",
+		played_sound_effect_for_everyone_details = "${consoleName} mängis heliklippi. Heliklipi URL oli `${url}` ja see oli helitugevusega `${volume}`.",
+		played_sound_effect_for_player_title = "Mängis heliefekti kõikidele.",
+		played_sound_effect_for_player_details = "${consoleName} mängis heliefekti mängijale ${targetConsoleName}. Heliefekti URL `${url}` helitugevusega `${volume}`.",
+		url_invalid = "Kehtetu URL. Kontrolli URL üle ,et see oleks ikka (https://)",
+		url_missing = "Sisesta heli URL mida soovid mängida.",
+		error_invalid_url = "Valitud URL on kehtetu. KOntrolli see üle ,et see oleks ikka (https://)",
+		error_missing_url = "Sa ei sisestanud URL-i.",
+		error_no_permissions = "Sul pole vastavaid õiguseid ,et seda heliefekti mängida.",
+		error_user_not_found = "Me ei suutnud su andmeid tuvastada",
+		error_not_found = "Tundmatu viga tekkis.",
+		played_sound_effect_for_player = "Mängisid heliefekti mängijale ${consoleName}. Heliefekti URL `${url}` heliefekti tugevus `${volume}`.",
+		played_sound_effect_for_everyone = "Mängisid heliefekti kõikidele. Heliefekti url `${url}` heliefekti tugevus  `${volume}`."
 	},
 
 	spawn = {
@@ -2000,9 +2106,17 @@ OP.Global.Locales.Languages["et-EE"] = {
 		error_finding_tracker = "Ebaõnnestus leida sinu lutikat.",
 		tracker_visible = "Sinu lutikas on nüüd nähtav.",
 		tracker_hidden = "Sinu lutikas on nüüd peidetud.",
-		tracker = "Lutikas",
-		stockade_robbery_tracker = "Auto rööv",
-		tracked_vehicle = "Lutikas autol: (${trackerId})"
+		tracker = "GPS",
+		stockade_robbery_tracker = "Pangaauto rööv",
+		tracked_vehicle = "GPS autol: (${trackerId})"
+		
+		},
+
+	training = {
+		on_team_defenders = "Sa oled team 'punane'!",
+		on_team_attackers = "Sa oled team 'sinine'!",
+		defending = "KAITSJA",
+		attacking = "RÜNDAJA"
 	},
 
 	trains = {
@@ -2355,10 +2469,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 		not_a_clothing_spot = "Sa pead markeri sisse astuma!",
 		customization = "Kujundus",
 		accessories = "Aksessuaarid",
-		freemode_models = "Freemode models",
-		male_models = "Mehed NPC",
-		female_models = "Naised NPC",
+		freemode_models = "Online Characterid",
+		male_models = "Meeste NPC-d",
+		female_models = "Naiste NPC-d",
 		ems_models = "EMS NPC",
+		animal_models = "Looma modelid",
 		multiplayer_models = "Singeplayer",
 		serial_number = "Seeria number: ${serialNumber}<br>See relv kuulub ${fullName} (${characterId}).",
 		serial_number_unknown = "Seeria number: Kehtetu.",
