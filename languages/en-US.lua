@@ -1304,9 +1304,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		shotgun_ammo = "Shotgun Ammo",
 		shotgun_ammo_description = "People think there's gunpowder in these! Clowns... they're filled with love and joy.",
 
-		pistol_ammo = "Pistol Ammo",
-		pistol_ammo_description = "Perfect for casual use. Fits in most handhelds.",
-
 		silver_watches = "Silver Watches",
 		silver_watches_description = "",
 		necklaces = "Necklaces",
