@@ -164,7 +164,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		warning_message_set_to_title = "Hoiatusteade aktiivne.",
 		warning_message_set_to_details = "${consoleName} kirjutas hoiatusteate kirjaga: `${warningMessage}`.",
 		warning_message_removed_title = "Hoiatusteate pealkiri eemaldatud.",
-		warning_message_removed_details = "${consoleName} eemaldas hoiatusteate."
+		warning_message_removed_details = "${consoleName} eemaldas hoiatusteate.",
 	},
 
 	anticheat = {
