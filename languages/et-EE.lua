@@ -154,7 +154,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		spawn_item_not_staff = "Üritas spawnida asja ilma õigusteta",
 		no_item_name = "Palun pane asja nimi kirja.",
 		invalid_item_name = "${itemName} ei ole õige nimi.",
-		item_spawned = "Spawnis ${amount}x `${itemName}` mängija ${consoleName} jaoks."
+		item_spawned = "Spawnis ${amount}x `${itemName}` mängija ${consoleName} jaoks.",
 		
 		set_warning_message_not_staff = "Üritasid hoiatust kirjutada ilma vastavate õigusteta.",
 		warning_message_set_to = "Hoiatus on kirjutatud kirjaga: `${warningMessage}`.",
