@@ -167,7 +167,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		warning_message_removed_details = "${consoleName} has removed the warning message."
 	},
 
-	anticheat = {
+	anti_cheat = {
 		illegal_client_event = "Triggered an illegal client event with name `${eventName}`.",
 		illegal_server_event = "Triggered an illegal server event with name `${eventName}`.",
 		bad_entity_spawn = "Spawned in an entity with model name `${modelName}`.",
@@ -181,7 +181,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		model_not_in_list = "Model `${modelName}` (${modelHash}) is not added to the detection list.",
 		set_model_detected_not_staff = "Player attempted to add a model to the detection list, but didn't have correct permissions to do so.",
 		set_model_undetected_not_staff = "Player attempted to remove a model from the detection list, but didn't have correct permissions to do so.",
-		add_detection_area_not_staff = "Player attempted to add a detection area, but didn't have correct permissions to do so."
+		add_detection_area_not_staff = "Player attempted to add a detection area, but didn't have correct permissions to do so.",
+		remove_detection_area_not_staff = "Player attempted to remove a detection area, but didn't have correct permissions to do so.",
+		detection_area_close = "[E] Remove Detection Area (${areaId})",
+		detection_area = "Detection Area (${areaId})"
 	},
 
 	authentication = {
@@ -435,7 +438,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		warning_message_command_parameter_message_help = "The message you would like to display to the players. You can leave this paramater blank to remove the warning message.",
 		warning_message_command_substitutes = "",
 
-		-- base/anticheat
+		-- base/anti_cheat
 		model_detect_add_command = "/model_detect_add",
 		model_detect_add_command_help = "Temporarily add a model to the detection list. The list resets on server restart.",
 		model_detect_add_command_parameter_model = "model",
@@ -448,11 +451,17 @@ OP.Global.Locales.Languages["en-US"] = {
 		model_detect_remove_command_parameter_model_help = "The model you woud like to remove. Can be both a model name and a model hash.",
 		model_detect_remove_command_substitutes = "/undetect",
 
-		area_detect_add_command = "/area_detect_add",
-		area_detect_add_command_help = "Create an area where all spawned entities within the area will be sent to you with some information.",
-		area_detect_add_command_parameter_radius = "radius",
-		area_detect_add_command_parameter_radius_help = "The radius of the circle in which entities will be detected. The minimum value is `10` and the maximum is `5000`. Leaving this as blank will default to `100`.",
-		area_detect_add_command_substitutes = "",
+		detection_area_add_command = "/detection_area_add",
+		detection_area_add_command_help = "Create an area where all spawned entities within that area will be sent to you with some information. The information can be found in the Overview UI.",
+		detection_area_add_command_parameter_radius = "radius",
+		detection_area_add_command_parameter_radius_help = "The radius of the circle in which entities will be detected. The minimum value is `10` and the maximum is `5000`. Leaving this as blank will default to `100`.",
+		detection_area_add_command_substitutes = "/area_add",
+
+		detection_area_remove_command = "/detection_area_remove",
+		detection_area_remove_command_help = "Remove a detection area.",
+		detection_area_remove_command_parameter_area_id = "deteciton area id",
+		detection_area_remove_command_parameter_area_id_help = "The ID of the detection area you are wanting to remove.",
+		detection_area_remove_command_substitutes = "/area_remove",
 
 		-- base/commands
 		help_command = "/help",
@@ -1305,7 +1314,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		shotgun_ammo_description = "People think there's gunpowder in these! Clowns... they're filled with love and joy.",
 
 		silver_watches = "Silver Watches",
-		silver_watches_description = "",
+		silver_watches_description = "Watch out!",
 		necklaces = "Necklaces",
 		necklaces_description = "Add some extra bling to your outfit!",
 		gold_watches = "Gold Watches",
@@ -1667,6 +1676,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		select_information = "Information",
 		select_activity_points = "Activity Points",
 		select_staff_points = "Staff Points",
+		select_moderation = "Moderation",
+		select_settings = "Settings",
 		about_title = "About the overview UI",
 
 		-- eh idk if putting entire chunks of html code is the way to go but for now it is xd
@@ -1742,6 +1753,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		seven_weeks_ago = "7 Weeks Ago",
 		eight_weeks_ago = "8 Weeks Ago",
 		previous_weeks_average = "Previous Weeks' Average",
+
+		about_detection_areas_title = "Detection Areas",
+		about_detection_areas_text = "Detection areas can be a useful tool for the staff members when trying to identify a cheater spawning in unwanted vehicles and/or peds. To create a detection area, use `/detection_area_add`. Once you've created an area, it will appear here. Only the latest 100 entities will be logged in each area.",
+		detection_area_title = "Detection Area #${detectionAreaId}",
 
 		about_sound_effects_title = "Sound Effects",
 		about_sound_effects_text = "These fields allows you to override some sound effects. They require a link to an .oog file in order to work properly. It must also be an https:// URL and not an http:// one. An easy way of uploading a file would be to upload it to discord, then copy its link, and inserting it into the fields here.",
@@ -2109,10 +2124,22 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	training = {
-		on_team_defenders = "You are a defender!",
-		on_team_attackers = "You are an attacker!",
-		defending = "DEFENDING",
-		attacking = "ATTACKING"
+		on_team_attackers = "You are an attacker!\nTime left: ${time}",
+		on_team_defenders = "You are a defender!\nTime left: ${time}",
+		attackers = "Attackers:",
+		defenders = "Defenders:",
+		waiting_for_players = "Waiting for more players.\nThere must be at least one player on each team.",
+		none = "N/A",
+		waiting_for_training_area_data = "Waiting for training area data.",
+		match_starting_in = "The match will be starting in ${seconds} seconds.",
+		loading_match = "Waiting for players to load. The match will begin in ${seconds} seconds.",
+		attackers_help_text = "Kill all the defenders before the cooldown is over to win!",
+		defenders_help_text = "Kill all the attackers or wait until the cooldown is over to win!",
+		attacker = "ATTACKER",
+		defender = "DEFENDER",
+		attackers_won = "The attackers won!",
+		defenders_won = "The defenders won!",
+		training_blip = "Training"
 	},
 
 	trains = {
