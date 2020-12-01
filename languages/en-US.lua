@@ -45,7 +45,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		feature_toggle_success_all = "Toggled `${featureName}` for everyone.",
 		feature_toggle_failed = "Failed to toggle `${featureName}` for server ID ${serverId}.",
 
-		model_name_not_provided = "No model name parsed.",
+		model_name_not_provided = "No model name passed.",
 		model_name_invalid = "Model name `${modelName}` is invalid.",
 		failed_to_spawn_vehicle = "Failed to execute the `/spawn_vehicle` command correctly.",
 		spawned_vehicle_for_player = "Successfully spawned `${modelName}` for ${consoleName}.",
@@ -183,7 +183,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_model_undetected_not_staff = "Player attempted to remove a model from the detection list, but didn't have correct permissions to do so.",
 		add_detection_area_not_staff = "Player attempted to add a detection area, but didn't have correct permissions to do so.",
 		remove_detection_area_not_staff = "Player attempted to remove a detection area, but didn't have correct permissions to do so.",
-		detection_area_close = "[E] Remove Detection Area (${areaId})",
+		detection_area_close = "[${InteractionKey}] Remove Detection Area (${areaId})",
 		detection_area = "Detection Area (${areaId})"
 	},
 
@@ -203,6 +203,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		random = "random",
 		beginner = "beginner",
 		custom = "custom",
+		christmas = "christmas",
 
 		job_low = "low job",
 		job_medium = "medium job",
@@ -224,7 +225,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		protective_mode_on = "Server Protective Mode is currently enabled on this server, meaning only players with a certain amount of playtime may connect to the server. This is only momentary, and the server should resume to normal soon.\n\nJoin our discord for more information on this occurrence at ${communityDiscord}.",
 		server_restarting = "The server is currently restarting. Please try again in a few minutes.",
 		connection_cancelled = "This connection was cancelled as another one is already active.",
-		no_reason_provided = "No reason provided."
+		no_reason_provided = "No reason provided.",
+		discord_whitelist_id_not_found = "We were unable to find your discord id. Make sure you have discord open in the background and that you have allowed FiveM to fetch data from your discord client.\n\n${communityDiscord}"
 	},
 
 	commands = {
@@ -1005,6 +1007,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		cancel = "Cancel"
 	},
 
+	christmas = {
+		claimed_advent_calendar_hatch_details = "Claimed Advent Calendar Hatch",
+		claimed_money = "${consoleName} claimed $${amount}.",
+		claimed_item = "${consoleName} claimed `${itemLabel}`.",
+		claimed_vehicle = "${consoleName} claimed a Christmas-special vehicle.",
+		claimed_queue_priority = "${consoleName} claimed a week of Christmas queue priority."
+	},
+
 	cinematic = {
 		cinematic = "Cinematic",
 		black_bars_set_to = "The cinematic black bars has now been set to ${blackBarsHeight}%."
@@ -1146,7 +1156,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		logs_item_purchased_tax_details = "${consoleName} purchased ${purchaseAmount}x `${itemLabel}` for $${purchaseCost} with an additional $${taxCost} due to a ${salesTaxPercentage}% sales tax.",
 
 		-- items & item descriptions
-		body_armour = "Body Armour",
+		body_armour = "Body Armor",
 		body_armour_description = "A modern viking chest-plate. Guaranteed to absorb at least 80% of bullets fired at you, to ensure you have the best odds at any gunfight!",
 		first_aid_kit = "First Aid Kit",
 		first_aid_kit_description = "The \"do-it-yourself\" doctor-kit.",
@@ -1321,6 +1331,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		gold_watches_description = "And... where did you get these, exactly?",
 		diamonds = "Diamonds",
 		diamonds_description = "You need 24 to make a full armor. I'd recommend getting 27 though so you can get yourself a pickaxe too.",
+
+		weather_spell_snow = "Weather Spell (Snow)",
+		weather_spell_snow_description = "Using this item will let you temporarily control the weather and make it snow! It is a one-time use, so use with care. If you use two weather spells at once, they second one will simply queue up.",
+		weather_spell_rain = "Weather Spell (Rain)",
+		weather_spell_rain_description = "Using this item will let you temporarily control the weather and make it rain! It is a one-time use, so use with care. If you use two weather spells at once, they second one will simply queue up.",
+		weather_spell_thunder = "Weather Spell (Thunder)",
+		weather_spell_thunder_description = "Using this item will let you temporarily control the weather and make a thunderstorm! It is a one-time use, so use with care. If you use two weather spells at once, they second one will simply queue up.",
+
+		zombie_pill = "Zombie Pill",
+		zombie_pill_description = "A strange pill that does even stranger things... Swallow at your own risk.",
 
 		weapon_dagger = "Antique Cavalry Dagger",
 		weapon_bat = "Baseball Bat",
@@ -1551,7 +1571,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		changing_license_plate = "Changing License Plate",
 		unable_to_change_license_plate = "You are unable to change the license plate while there are players inside the vehicle.",
 		equipping_parachute = "Equipping Parachute",
-		lockpicking_vehicle = "Lockpicking Vehicle"
+		lockpicking_vehicle = "Lockpicking Vehicle",
+		illegal_weather_name = "Attempting to use a weather spell with an illegal weather name.",
+		equipping_body_armor = "Equipping Body Armor"
 	},
 
 	login = {
@@ -1764,15 +1786,67 @@ OP.Global.Locales.Languages["en-US"] = {
 		radio_mic_click_off = "Radio Mic Click (Off)",
 		sound_effect_placeholder = "URL to .oog file...",
 		sound_effect_save = "Save",
-		sound_effect_reset = "Reset"
+		sound_effect_reset = "Reset",
+
+		december_1 = "1st of December",
+		december_2 = "2nd of December",
+		december_3 = "3rd of December",
+		december_4 = "4th of December",
+		december_5 = "5th of December",
+		december_6 = "6th of December",
+		december_7 = "7th of December",
+		december_8 = "8th of December",
+		december_9 = "9th of December",
+		december_10 = "10th of December",
+		december_11 = "11th of December",
+		december_12 = "12th of December",
+		december_13 = "13th of December",
+		december_14 = "14th of December",
+		december_15 = "15th of December",
+		december_16 = "16th of December",
+		december_17 = "17th of December",
+		december_18 = "18th of December",
+		december_19 = "19th of December",
+		december_20 = "20th of December",
+		december_21 = "21st of December",
+		december_22 = "22nd of December",
+		december_23 = "23rd of December",
+		december_24 = "24th of December",
+		hatch_closed = "CLOSED",
+		hatch_open = "OPEN",
+		hatch_claim = "CLAIM",
+		hatch_opened = "CLAIMED",
+		hatch_waiting = "WAITING",
+
+		about_advent_calendar_title = "About The Advent Calendar",
+		about_advent_calendar_text = [[
+			The advent calendar is a holiday feature meant to bring some more joy to the players of ${communityName} throughout the month of December!
+			<br><br>
+			Every day, another hatch will become available, containing money, an item, a vehicle or something else. All hatches belonging to a previous date will be available. Once a hatch has been opened, you must claim it in order to receive it. Opening and collecting will become impossible after the 25th of December.
+			<br><br>
+			Next hatch unlocks in ${time}.
+		]],
+
+		unlocks_in_days_hours_minutes_seconds = "${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds",
+		unlocks_in_hours_minutes_seconds = "${hours} hours, ${minutes} minutes and ${seconds} seconds",
+		unlocks_in_minutes_seconds = "${minutes} minutes and ${seconds} seconds",
+		unlocks_in_seconds = "${seconds} seconds",
+		unlocks_in_an_unknown_amount_of_time = "an unknown amount of time",
+
+		unopened_hatch = "Unopened Hatch",
+		won_money = "${amount} Cash", -- uh for some reason the (js) locale system doesn't seem to like two $$ after each other here and I'm too incompetent to figure out so if you know how to fix it pls let me know tnx!! or just leave it at 1 $ like this :)
+		won_vehicle = "Vehicle (Christmas Special)",
+		won_queue_priority = "A Week Of Queue Priority!"
 	},
 
 	pawn_shops = {
 		sell_items = "Sell ${itemLabel}",
-		press_to_sell_items = "[E] Sell ${itemLabel}",
+		press_to_sell_items = "[${InteractionKey}] Sell ${itemLabel}",
 		sold_items = "Sold ${sellAmount}x ${itemLabel} for $${sellPrice}.",
 		no_items_to_sell = "You have no ${itemLabel} to sell.",
-		illegal_pawn_shop_id = "Attempting to parse values for a pawn shop that doesn't exist."
+		illegal_pawn_shop_id = "Attempting to pass values for a pawn shop that doesn't exist.",
+		used_pawn_shop_title = "Used Pawn Shop",
+		used_pawn_shop_details = "${consoleName} used a pawn shop and sold ${sellAmount} `${itemLabel}` and received $${sellPrice}."
 	},
 
 	ped_messages = {
@@ -1929,9 +2003,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		increase_rotation = "Increase Rotation (${rotationLevel})",
 		decrease_rotation = "Decrease Rotation (${rotationLevel})",
 		clear_bullet_impacts = "Clear Bullet Impacts",
-		illegal_shooting_spot_value = "Attempting to parse invalid values for shootings spots.",
-		illegal_shooting_spot_id = "Attempting to parse values for a shootings spot that doesn't exist.",
+		illegal_shooting_spot_value = "Attempting to pass invalid values for shootings spots.",
+		illegal_shooting_spot_id = "Attempting to pass values for a shootings spot that doesn't exist.",
 		not_enough_cash = "You do not have enough cash."
+	},
+
+	snow = {
+		hold_to_pick_up_snowballs = "Hold ~INPUT_CONTEXT~ to pick up snowballs."
 	},
 
 	sound_effects = {
@@ -1979,9 +2057,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		found_devices = "Found ${totalDevices} devices.",
 		no_nearby_devices_found = "No nearby devices found.",
 		microphone_bug = "Microphone Bug",
-		microphone_bug_destroy = "Microphone Bug\n[E] Destroy",
+		microphone_bug_destroy = "Microphone Bug\n[${InteractionKey}] Destroy",
 		vehicle_tracker = "Vehicle Tracker",
-		vehicle_tracker_destroy = "Vehicle Tracker\n[E] Destroy",
+		vehicle_tracker_destroy = "Vehicle Tracker\n[${InteractionKey}] Destroy",
 		destroying_device = "Destroying Device",
 		tracker_will_appear_on_map = "This tracker has already been activated. It will appear on your map for as long as the vehicle is available and the tracker has battery.",
 		spy_ui_info = "Listening In On Microphone Bug (#${deviceId})",
@@ -2189,6 +2267,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		yoga_mat_use = "[${InteractionKey}] Yoga Mat",
 		yoga_mat = "Yoga Mat",
 		press_to_stop_yoga = "Press ~INPUT_CONTEXT~ to stop doing yoga."
+	},
+
+	zombies = {
+		hold_to_continue_looting_zombie = "[${InteractionKey}] Looting Zombie",
+		press_to_loot_zombie = "[${InteractionKey}] Loot Zombie",
+		looting_zombie = "Looting Zombie",
+		zombie_looting_injection = "Excessive zombie looting! (Bypassed server-timeout, most likely using an injector to accomplish this.)"
 	},
 
 	-- global/*
@@ -2447,7 +2532,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		decals = "Decals",
 		shirts = "Shirts",
 		parachute_and_bag = "Parachute / bag",
-		armour = "Armour",
+		armour = "Armor",
 		components = "Components",
 		textures = "Textures",
 		colour_palette = "Colour Palette",
