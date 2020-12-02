@@ -181,7 +181,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		model_not_in_list = "Model `${modelName}` (${modelHash}) nie jest dodany do listy detekcji.",
 		set_model_detected_not_staff = "Gracz próbował dodać model do listy detekcji, ale nie miał do tego odpowiednich uprawnień.",
 		set_model_undetected_not_staff = "Gracz próbował usunąć model z listy detekcji, ale nie miał do tego odpowiednich uprawnień.",
-		add_detection_area_not_staff = "Gracz próbował dodać model z listy detekcji, ale nie miał do tego odpowiednich uprawnień."
+		add_detection_area_not_staff = "Gracz próbował dodać model z listy detekcji, ale nie miał do tego odpowiednich uprawnień.",
+		remove_detection_area_not_staff = "Gracz próbował usunąć model z listy detekcji, ale nie miał do tego odpowiednich uprawnień.",
+		detection_area_close = "[${InteractionKey}] Usuń listę detekcji (${areaId})",
+		detection_area = "Strefa detekcji (${areaId})"
 	},
 
 	authentication = {
@@ -200,6 +203,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		random = "losowe",
 		beginner = "początkujący",
 		custom = "niestandardowy",
+		christmas = "święta",
 
 		job_low = "Mała praca",
 		job_medium = "Średnia praca",
@@ -221,7 +225,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		protective_mode_on = "Tryb ochronny serwera jest obecnie włączony na serwerze, co oznacza że tylko gracze z pewną ilością przegranego czasu mogą połączyć się z serwerem. To jest tylko chwilowe, i serwer wróci do normalności wkrótce.\n\nJeśli chcesz się dowiedzieć więcej o tym problemie dołącz tutaj ${communityDiscord}.",
 		server_restarting = "Serwer się restartuje. Spróbuj ponownie za kilka minut.",
 		connection_cancelled = "To połączenie zostało anulowane, ponieważ inne jest już aktywne..",
-		no_reason_provided = "Nie podano powodu."
+		no_reason_provided = "Nie podano powodu.",
+		discord_whitelist_id_not_found = "Nie byliśmy w stanie odnaleźc Twojego ID discorda. Upewnij się, że masz włączony discord podczas gry.\n\n${communityDiscord}"
 	},
 
 	commands = {
@@ -453,6 +458,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		area_detect_add_command_parameter_radius = "promień",
 		area_detect_add_command_parameter_radius_help = "Promień okręgu, w którym obiekty będą wykrywane. Minimalna wartość to „10”, a maksymalna to „5000”. Pozostawienie tego jako pustego spowoduje domyślnie ustawienie „100”.",
 		area_detect_add_command_substitutes = "",
+		
+		detection_area_remove_command = "/detection_area_remove",
+		detection_area_remove_command_help = "Usuń strefę detekcji.",
+		detection_area_remove_command_parameter_area_id = "id strefy detekcji.",
+		detection_area_remove_command_parameter_area_id_help = "ID strefy detekcji, którą chcesz usunąć.",
+		detection_area_remove_command_substitutes = "/area_remove",
 
 		-- base/commands
 		help_command = "/help",
@@ -791,7 +802,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		weather_command = "/weather",
 		weather_command_help = "Zmień pogode.",
 		weather_command_parameter_weather = "weather name",
-		weather_command_parameter_weather_help = "CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT and BLIZZARD.",
+		weather_command_parameter_weather_help = "EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS and HALLOWEEN.",
 		weather_command_substitutes = "",
 
 		freeze_time_command = "/freeze_time",
@@ -994,6 +1005,14 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		save = "Zapisz",
 		cancel = "Anuluj"
+	},
+
+	christmas = {
+		claimed_advent_calendar_hatch_details = "Zatwierdzony kalendarz świąteczny",
+		claimed_money = "${consoleName} zatwierdzone $${amount}.",
+		claimed_item = "${consoleName} zatwierdzony `${itemLabel}`.",
+		claimed_vehicle = "${consoleName} zatwierdzony specjalny świąteczny pojazd.",
+		claimed_queue_priority = "${consoleName} zatwierdzona kolejka szybszego wejścia przez okres świąt."
 	},
 
 	cinematic = {
@@ -1306,7 +1325,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		pistol_ammo = "Amunicja do pistoletu",
 		pistol_ammo_description = "Amunicja pasująca do większości broni krótkich.",
-		
+
 		silver_watches = "Srebrne zegarki",
 		silver_watches_description = "Cenne zegarki z bogatego kruszcu",
 		necklaces = "Naszyjniki",
@@ -1315,6 +1334,15 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		gold_watches_description = "Cenne zegarki z bogatego kruszcu",
 		diamonds = "Diamenty",
 		diamonds_description = "Najlepszy przyjaciel kobiety",
+
+		weather_spell_snow = "Zaklęcie śniegu",
+		weather_spell_snow_description = "Użycie tego przedmiotu sprawi, że chwilowo wejdziesz w posiadanie zdolności zmiany pogody! Jest to jednorazowy przedmiot także uważaj! Jeżeli użyjesz dwa na raz to drugi będzie oczekiwał w kolejce na koniec pierwszego.",
+		weather_spell_rain = "Zaklęcie deszczu",
+		weather_spell_rain_description = "Użycie tego przedmiotu sprawi, że chwilowo wejdziesz w posiadanie zdolności zmiany pogody! Jest to jednorazowy przedmiot także uważaj! Jeżeli użyjesz dwa na raz to drugi będzie oczekiwał w kolejce na koniec pierwszego.",
+		weather_spell_thunder = "Zaklęcie burzy",
+		weather_spell_thunder_description = "Użycie tego przedmiotu sprawi, że chwilowo wejdziesz w posiadanie zdolności zmiany pogody! Jest to jednorazowy przedmiot także uważaj! Jeżeli użyjesz dwa na raz to drugi będzie oczekiwał w kolejce na koniec pierwszego.",
+		zombie_pill = "Tabletka zombie",
+		zombie_pill_description = "Nowy narkotyk, który oddziałowuje na zmyłsy ludzkie jak nic innego. Bad trip po mecie to nic przy tym. Używać z rozwagą.",
 
 		weapon_dagger = "Antyczny Sztylet",
 		weapon_bat = "Kij Baseball'owy",
@@ -1752,15 +1780,65 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		radio_mic_click_off = "Radio Mic Click (Off)",
 		sound_effect_placeholder = "URL do .oog plik...",
 		sound_effect_save = "Zapisz",
-		sound_effect_reset = "Reset"
+		sound_effect_reset = "Reset",
+
+		december_1 = "1 Grudnia",
+		december_2 = "2 Grudnia",
+		december_3 = "3 Grudnia",
+		december_4 = "4 Grudnia",
+		december_5 = "5 Grudnia",
+		december_6 = "6 Grudnia",
+		december_7 = "7 Grudnia",
+		december_8 = "8 Grudnia",
+		december_9 = "9 Grudnia",
+		december_10 = "10 Grudnia",
+		december_11 = "11 Grudnia",
+		december_12 = "12 Grudnia",
+		december_13 = "13 Grudnia",
+		december_14 = "14 Grudnia",
+		december_15 = "15 Grudnia",
+		december_16 = "16 Grudnia",
+		december_17 = "17 Grudnia",
+		december_18 = "18 Grudnia",
+		december_19 = "19 Grudnia",
+		december_20 = "20 Grudnia",
+		december_21 = "21 Grudnia",
+		december_22 = "22 Grudnia",
+		december_23 = "23 Grudnia",
+		december_24 = "24 Grudnia",
+		hatch_closed = "NIEDOSTĘPNE",
+		hatch_open = "DOSTĘPNE",
+		hatch_claim = "WEŹ",
+		hatch_opened = "ODEBRANE",
+		hatch_waiting = "OCZEKUJĄCE",
+
+		about_advent_calendar_title = "O kalendarzu adwentowym",
+		about_advent_calendar_text = [[
+			Jest to funkcja, która ma wnieść trochę luzu i możliwości zarobku dla graczy ${communityName} w ciągu grudnia 2020.
+			<br><br>
+			Każdego dnia, kolejna szansa wylosowania przemdiotu będzie możliwa, pieniądze, przedmioty, samochód lub coś innego. Kiedy otworzysz okno z danego dnia musisz dodatkowo kliknąć "odbierz" żeby otrzymać przedmioty. Otwieranie i zbieranie przedmiotów po 25 grudnia będzie niemożliwe!
+			<br><br>
+			Kolejne otwarcie dostępne za.. ${time}.
+		]],
+		unlocks_in_days_hours_minutes_seconds = "${days} dni, ${hours} godzin, ${minutes} minut i ${seconds} sekund",
+		unlocks_in_hours_minutes_seconds = "${hours} godzin, ${minutes} minut i ${seconds} sekund",
+		unlocks_in_minutes_seconds = "${minutes} minut i ${seconds} sekund",
+		unlocks_in_seconds = "${seconds} sekund",
+		unlocks_in_an_unknown_amount_of_time = "nieznana ilość czasu",
+		unopened_hatch = "Nieotwarta szansa",
+		won_money = "${amount} Pieniądze", -- uh for some reason the (js) locale system doesn't seem to like two $$ after each other here and I'm too incompetent to figure out so if you know how to fix it pls let me know tnx!! or just leave it at 1 $ like this :)
+		won_vehicle = "Pojazd świateczny",
+		won_queue_priority = "Tydzień priorytetu w kolejce!"
 	},
-	
+
 	pawn_shops = {
 		sell_items = "Sprzedaj ${itemLabel}",
 		press_to_sell_items = "[E] Sprzedaj ${itemLabel}",
 		sold_items = "Sprzedano ${sellAmount}x ${itemLabel} za $${sellPrice}.",
 		no_items_to_sell = "Nie masz ${itemLabel} na sprzedaż.",
 		illegal_pawn_shop_id = "Próba sprzedaży przedmiotów, których nie ma.",
+		used_pawn_shop_title = "Użyto Lombardu",
+		used_pawn_shop_details = "${consoleName} użyto lombard i sprzedano ${sellAmount} `${itemLabel}` i otrzymano $${sellPrice}."
 	},
 
 	ped_messages = {
@@ -1842,7 +1920,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	peds = {
-		ped_robbing_injection = "Nadmierne rabowanie pedów! (Bypassed server-timeout, most likely using an injector to accomplish this.)"
+		ped_robbing_injection = "Nadmierne rabowanie pedów!"
 	},
 
 	radio = {
@@ -1919,6 +1997,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		illegal_shooting_spot_value = "Attempting to parse invalid values for shootings spots.",
 		illegal_shooting_spot_id = "Attempting to parse values for a shootings spot that doesn't exist.",
 		not_enough_cash = "You do not have enough cash."
+	},
+
+	snow = {
+		hold_to_pick_up_snowballs = "Przytrzymaj ~INPUT_CONTEXT~ żeby ulepić śnieżkę."
 	},
 
 	sound_effects = {
@@ -2114,7 +2196,19 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		on_team_defenders = "Jesteś obrońcą!",
 		on_team_attackers = "Jesteś napastnikiem!",
 		defending = "BRONIENIE",
-		attacking = "ATAKOWANIE"
+		attacking = "ATAKOWANIE",
+		waiting_for_players = "Oczekuj na więcej graczy. Musi być minimum po jednym graczu w każdej drużynie.",
+		none = "N/A",
+		waiting_for_training_area_data = "Mapa wczytuje się, oczekuj.",
+		match_starting_in = "Mecz rozpocznie się za ${seconds} sekund.",
+		loading_match = "Oczekiwanie na graczy. Mecz rozpocznie się za${seconds} sekund.",
+		attackers_help_text = "Zabij wszystkich przeciników zanim skończy się czas!",
+		defenders_help_text = "Zabij wszystkich przeciników zanim skończy się czas!",
+		attacker = "NAPASTNIK",
+		defender = "OBROŃCA",
+		attackers_won = "Napastnicy wygrali!",
+		defenders_won = "Obrońcy wygrali!",
+		training_blip = "Trening"
 	},
 
 	trains = {
@@ -2164,6 +2258,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		yoga_mat_use = "[${InteractionKey}] Mata do jogi",
 		yoga_mat = "Mata do jogi",
 		press_to_stop_yoga = "Naciśnij ~INPUT_CONTEXT~ żeby przestać uprawiać jogę."
+	},
+
+	zombies = {
+		hold_to_continue_looting_zombie = "[${InteractionKey}] Przeszukaj zombie",
+		press_to_loot_zombie = "[${InteractionKey}] Przeszukaj zombie",
+		looting_zombie = "Przeszukujesz ciało zombie",
+		zombie_looting_injection = "Nadmierne grabieże zombie!"
 	},
 
 	-- global/*
