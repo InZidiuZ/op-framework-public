@@ -159,12 +159,24 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_warning_message_not_staff = "Attempted to set the server's warning message without proper permissions.",
 		warning_message_set_to = "The warning message has been set to `${warningMessage}`.",
 		warning_message_removed = "The warning message been removed.",
-		warning_message_error = "An error occured while trying to set the warning message.",
+		warning_message_error = "An error occurred while trying to set the warning message.",
 		warning_message_identical = "You are unable to set the warning message to what it already is set to.",
 		warning_message_set_to_title = "Warning Message Set",
 		warning_message_set_to_details = "${consoleName} has set the warning message to `${warningMessage}`.",
 		warning_message_removed_title = "Warning Message Removed",
-		warning_message_removed_details = "${consoleName} has removed the warning message."
+		warning_message_removed_details = "${consoleName} has removed the warning message.",
+
+		indestructibility_on = "Toggled 'Indestructibility' On.",
+		indestructibility_off = "Toggled 'Indestructibility' Off.",
+		speed_boost_on = "Toggled 'Speed Boost' On.",
+		speed_boost_off = "Toggled 'Speed Boost' Off.",
+		no_nearby_vehicles_on = "Toggled 'No Nearby Vehicles' On.",
+		no_nearby_vehicles_off = "Toggled 'No Nearby Vehicles' Off.",
+		speed_up_progres_bar_on = "Toggled 'Speed Up Progress Bar' On.",
+		speed_up_progres_bar_off = "Toggled 'Speed Up Progress Bar' Off.",
+
+		report_muted_no_reason = "You have been muted from the report command without a specified reason.",
+		report_muted = "You have been muted from the report command for reason `${reason}`.",
 	},
 
 	anti_cheat = {
@@ -193,7 +205,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		steam_account_not_found = "You are not connected to steam. Please relaunch FiveM while steam is open and logged in.",
 		authenticating_local_server = "Authenticating with local server...",
 		authenticating_global_server = "Authenticating with OP-FW servers...",
-		error_fetching_data = "An error occured while fetching your data.",
+		error_fetching_data = "An error occurred while fetching your data.",
 		region_blocked = "This server has blocked the region you are connecting from.",
 
 		developer = "developer",
@@ -214,7 +226,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		ban_indefinite = "This ban is indefinite.",
 		ban_expires = "This ban will expire in ${timeLeft}.",
 		not_whitelisted = "You are not whitelisted on this server. For information on how to apply, please join our discord guild.\n\n${communityDiscord}",
-		api_error = "An error occured while fetching your data. (error code ${errorCode})",
+		api_error = "An error occurred while fetching your data. (error code ${errorCode})",
 		pepega_moderate = "You have been globally banned from all OP-FW servers without any specified reasons.",
 		pepega_ultimate = "yOu haVe bEeN BaNnEd fRom tHis sERveR",
 		ban_code_not_found = "You have been globally banend from all OP-FW servers. We were unable to find any data for your ban code.",
@@ -378,7 +390,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		indestructibility_command_help = "Toggle 'indestructibility'.",
 		indestructibility_command_parameter_server_id = "server id",
 		indestructibility_command_parameter_server_id_help = "If you're wanting to toggle the 'indestructibility' for someone else, insert their server id here.",
-		indestructibility_command_substitutes = "/ind",
+		indestructibility_command_substitutes = "/ind, /god, /god_mode, /godmode",
 
 		no_nearby_vehicles_command = "/no_nearby_vehicles",
 		no_nearby_vehicles_command_help = "Toggle 'no nearby vehicles'.",
@@ -626,15 +638,17 @@ OP.Global.Locales.Languages["en-US"] = {
 		clear_chat_all_command_substitutes = "/clsall",
 
 		mute_command = "/mute",
-		mute_command_help = "Mute a player from the OOC chat.",
+		mute_command_help = "Mute a player from the OOC chat and the report command.",
 		mute_command_parameter_server_id = "server id",
 		mute_command_parameter_server_id_help = "The player's server ID you are wanting to mute.",
+		mute_command_parameter_expire = "expire",
+		mute_command_parameter_expire_help = "The length of the player's mute. This can be left blank, at `0` or `false` for an indefinite mute. You can use w/d/h for the length. (ex: `3d2h` -> 3 days, 2 hours)",
 		mute_command_parameter_reason = "reason",
 		mute_command_parameter_reason_help = "The reason behind the player's mute.",
 		mute_command_substitutes = "",
 
 		unmute_command = "/unmute",
-		unmute_command_help = "Unmute a player from the OOC chat.",
+		unmute_command_help = "Unmute a player from the OOC and the report command.",
 		unmute_command_parameter_server_id = "server id",
 		unmute_command_parameter_server_id_help = "The player's server ID you are wanting to unmute.",
 		unmute_command_substitutes = "",
@@ -698,7 +712,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		roll_command_parameter_rolls = "rolls",
 		roll_command_parameter_rolls_help = "The amount of rolls you would like to do. You are limited to 20.",
 		roll_command_parameter_max = "max",
-		roll_command_parameter_max_help = "The highest value you can get on one roll. The highest value here is 100.",
+		roll_command_parameter_max_help = "The highest value you can get on one roll. The highest value here is 100,000.",
 		roll_command_substitutes = "",
 
 		card_command = "/card",
@@ -972,7 +986,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		logs_character_created_details = "${consoleName} has created character ${fullName} (${characterId}).",
 		logs_character_deleted_title = "Character Deleted",
 		logs_character_deleted_details = "${consoleName} has deleted character ${fullName} (${characterId}).",
-		server_core_is_restarting = "The server's core is being restarted."
+		server_core_is_restarting = "The server's core is being restarted.",
+		you_timed_out = "You timed out!"
 	},
 
 	-- game/*
@@ -1035,6 +1050,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		south_West = "SW",
 		west = "W",
 		north_west = "NW"
+	},
+
+	courthouse = {
+		press_to_use_gavel = "Press ~INPUT_CONTEXT~ to use the Gavel."
 	},
 
 	dashcam = {
@@ -1109,6 +1128,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		ping = "PING"
 	},
 
+	identification = {
+		citizen_card = "Citizen Card",
+		citizen_card_details = "${firstName} ${lastName} | Date Of Birth: ${dateOfBirth} | Gender: ${gender} | Citizen ID: ${characterId}",
+		gender_male = "Male",
+		gender_female = "Female"
+	},
+
 	inventory = {
 		access_trunk = "Move here to access the trunk",
 
@@ -1126,6 +1152,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		police_armory = "Police Armory",
 		ems_store = "EMS Store",
 		chop_shop = "Chop Shop",
+		courthouse = "Courthouse",
+		burger_shot = "Burger Shot",
 		pd_prefix = "PD",
 		ems_prefix = "EMS",
 		inventory_overweight = "Your inventory is overweight!",
@@ -1464,7 +1492,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_wrench_description = "Perennial favourite of apocalyptic survivalists and violent fathers the world over, apparently it also doubles as some kind of tool.",
 		weapon_battleaxe_description = "If it's good enough for medieval foot soldiers, modern border guards and pushy soccer moms, it's good enough for you.",
 		weapon_poolcue_description = "Ah, there's no sound as satisfying as the crack of a perfect break, especially when it's the other guy's spine.",
-		weapon_stone_hatchet_description = "",
+		weapon_stone_hatchet_description = "No description.",
 
 		weapon_pistol_description = "Standard handgun. A .45 caliber combat pistol with a magazine capacity of 12 rounds that can be extended to 16.",
 		weapon_pistol_mk2_description = "Balance, simplicity, precision: nothing keeps the peace like an extended barrel in the other guy's mouth.",
@@ -1528,7 +1556,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		weapon_rpg_description = "A portable, shoulder-launched, anti-tank weapon that fires explosive warheads. Very effective for taking down vehicles or large groups of assailants.",
 		weapon_grenadelauncher_description = "A compact, lightweight grenade launcher with semi-automatic functionality. Holds up to 10 rounds.",
-		weapon_grenadelauncher_smoke_description = "",
+		weapon_grenadelauncher_smoke_description = "No description.",
 		weapon_minigun_description = "A devastating 6-barrel machine gun that features Gatling-style rotating barrels. Very high rate of fire (2000 to 6000 rounds per minute).",
 		weapon_firework_description = "Put the flair back in flare with this firework launcher, guaranteed to raise some oohs and aahs from the crowd.",
 		weapon_railgun_description = "All you need to know is - magnets, and it does horrible things to the things it's pointed at.",
@@ -1537,20 +1565,20 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_rayminigun_description = "Republican Space Ranger Special. GO AHEAD, SAY I'M COMPENSATING FOR SOMETHING. I DARE YOU.",
 
 		weapon_grenade_description = "Standard fragmentation grenade. Pull pin, throw, then find cover. Ideal for eliminating clustered assailants.",
-		weapon_bzgas_description = "",
+		weapon_bzgas_description = "No description.",
 		weapon_molotov_description = "Crude yet highly effective incendiary weapon. No happy hour with this cocktail.",
 		weapon_stickybomb_description = "A plastic explosive charge fitted with a remote detonator. Can be thrown and then detonated or attached to a vehicle then detonated.",
 		weapon_proxmine_description = "Leave a present to your friends with these motion sensor landmines. Short delay after activation.",
 		weapon_snowball_description = "Be on the lookout and ready to round up your Crew for a friendly snowball fight, but be forewarned, those icy little suckers can pack a wallop.",
 		weapon_pipebomb_description = "Remember, it doesn't count as an IED when you buy it in a store and use it in a first world country.",
-		weapon_ball_description = "",
+		weapon_ball_description = "No description.",
 		weapon_smokegrenade_description = "Tear gas grenade, particularly effective at incapacitating multiple assailants. Sustained exposure can be lethal.",
-		weapon_flare_description = "",
+		weapon_flare_description = "No description.",
 
 		weapon_petrolcan_description = "Leaves a trail of gasoline that can be ignited.",
 		gadget_parachute_description = "This nylon sports parachute features a ram-air parafoil design for increased control over direction and speed.",
-		weapon_fireextinguisher_description = "",
-		weapon_hazardcan_description = ""
+		weapon_fireextinguisher_description = "No description.",
+		weapon_hazardcan_description = "No description."
 	},
 
 	items = {
@@ -1573,7 +1601,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		equipping_parachute = "Equipping Parachute",
 		lockpicking_vehicle = "Lockpicking Vehicle",
 		illegal_weather_name = "Attempting to use a weather spell with an illegal weather name.",
-		equipping_body_armor = "Equipping Body Armor"
+		equipping_body_armor = "Equipping Body Armor",
+		illegal_burger_shot_delivery_item_id = "Attempting to use a burger shot delivery item with with an illegal item id."
 	},
 
 	login = {
@@ -1674,7 +1703,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		player_unmuted = "Player Unmuted",
 		player_unmuted_details = "${targetConsoleName} has been unmuted by ${consoleName}.",
 		ooc_cancelled_same_as_last = "Your OOC message was cancelled as you attempted to send two identical messages in a row.",
-		identical_ooc_message = "Player attempted to post two identical OOC messages in a row.",
 		use_measurement_metric = "You have set your preferred system of measurement to metric.",
 		use_measurement_imperial = "You have set your preferred system of measurement to imperial.",
 		use_measurement_default = "You will now be using the locale's default system of measurement.",
@@ -1931,6 +1959,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		ped_robbing_injection = "Excessive ped-robbing! (Bypassed server-timeout, most likely using an injector to accomplish this.)"
 	},
 
+	phone = {
+		-- Scripting Part:
+		you_do_not_have_a_phone = "You do not have a phone.",
+
+		-- UI Part:
+		
+	},
+
 	radio = {
 		frequency = "Frequency",
 		switch = "Switch",
@@ -2024,7 +2060,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		error_missing_url = "There was no URL provided.",
 		error_no_permissions = "You did not have the required permissions to play this sound.",
 		error_user_not_found = "We could not find your user data.",
-		error_not_found = "An unknown error occured.",
+		error_not_found = "An unknown error occurred.",
 		played_sound_effect_for_player = "Played sound effect for ${consoleName}. The sound effect had URL `${url}` and was set to play at volume level `${volume}`.",
 		played_sound_effect_for_everyone = "Played sound effect for everyone. The sound effect had URL `${url}` and was set to play at volume level `${volume}`."
 	},
@@ -2193,7 +2229,7 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	trackers = {
-		error_finding_tracker = "An error occured while finding your tracker.",
+		error_finding_tracker = "An error occurred while finding your tracker.",
 		tracker_visible = "Your tracker is now visible.",
 		tracker_hidden = "Your tracker is now hidden.",
 		tracker = "Tracker",
@@ -2315,6 +2351,41 @@ OP.Global.Locales.Languages["en-US"] = {
 		lockpicking_stockade = "Lockpicking Stockade"
 	},
 
+	-- jobs/*
+	burger_shot = {
+		start_delivery = "Start a delivery.",
+		press_to_start_delivery = "Press ~g~${InteractionKey} ~w~to start a delivery.",
+		alerady_in_delivery = "You already have an active delivery.",
+		not_burger_shot_employee = "You must be a Burger Shot employee to start a delivery.",
+		finish_delivery = "Finish the delivery.",
+		press_to_finish_delivery = "Press ~g~${InteractionKey} ~w~to finish the delivery.",
+		started_delivery = "Started a delivery to ${deliveryName}. The location has been marked on your map.",
+		finished_delivery = "The delivery to ${deliveryName} has been completed. You received $${deliveryPrice} and $${distanceBonus} in tip, totalling $${totalPrice}.",
+		error_finishing_delivery = "An error occurred while trying to finish your delivery.",
+		finished_delivery_title = "Finished Burger Shot Delivery",
+		finished_delivery_details = "${consoleName} finished a Burger Shot delivery and received $${deliveryPrice} and $${distanceBonus} in tip, totalling $${totalPrice}.",
+		delivery_blip = "Burger Shot Delivery"
+	},
+
+	job_center = {
+		life_invader = "Life Invader",
+		ui_close_menu = "Close Menu",
+		press_to_browse_jobs = "Press ~INPUT_CONTEXT~ to browse jobs.",
+		change_job = "Change Job: ${jobName}",
+		job_unemployed = "Unemployed",
+		job_transportation = "Trucker",
+		job_taxi = "Taxi Driver",
+		job_journalist = "Journalist",
+		job_government = "Waste Collector",
+		job_mechanic = "Tow Driver",
+		job_delivery = "Delivery Job",
+		changed_job_already_set_to_job = "Your job is already set to ${jobName}.",
+		changed_job_success = "Successfully set your job to ${jobName}.",
+		changed_job_failure = "An error occurred while trying to set your job to ${jobName}.",
+		changed_job_title = "Changed Job",
+		changed_job_details = "${consoleName} changed their job to `${jobName}`."
+	},
+
 	-- menus/*
 	hydrogen = {
 		number1_of_number2 = "${number1} of ${number2}"
@@ -2366,16 +2437,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		vehicle_currently_at = "Your vehicle can currently be found at ${location}.",
 		vehicle_in_garage = "Your vehicle is located in ${garageName}.",
 		vehicle_withdrawn = "Your vehicle has been withdrawn.",
-		error_withdrawing = "An error occured while trying to withdraw your vehicle.",
+		error_withdrawing = "An error occurred while trying to withdraw your vehicle.",
 		vehicle_in_the_way = "There is a vehicle blocking the spawn point.",
 		vehicle_is_out = "Your vehicle is already out.",
 		vehicle_stored = "Your vehicle has been stored.",
-		error_storing = "An error occured while trying to store the vehicle.",
+		error_storing = "An error occurred while trying to store the vehicle.",
 		vehicle_not_owned = "You do not own this vehicle!",
 		no_nearby_vehicle = "No nearby vehicles found.",
 		no_vehicles_to_retrieve = "You have no vehicles to retrieve!",
 		vehicle_retrieved = "The vehicle has been successfully retrieved.",
-		error_retrieving = "An error occured while trying to retrieve your vehicle.",
+		error_retrieving = "An error occurred while trying to retrieve your vehicle.",
 		not_enough_balance_to_retrieve = "You do not have enough balance in either of your accounts to retrieve this vehicle.",
 		press_to_access = "Press ~INPUT_CONTEXT~ to access the garage.",
 		ui_return = "Return",
