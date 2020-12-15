@@ -831,13 +831,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		blackout_command_help = "Toggle whether a blackout is active or not.",
 		blackout_command_substitutes = "",
 
-		-- game/trains
-		train_speed_command = "/train_speed",
-		train_speed_command_help = "Set the train's speed.",
-		train_speed_command_parameter_speed = "speed",
-		train_speed_command_parameter_speed_help = "The speed you would like to set the train to. This value may be 'false' or blank for the default speed, otherwise it must be a number above or equal to 0.",
-		train_speed_command_substitutes = "",
-
 		-- illegal/corner
 		corner_command = "/corner",
 		corner_command_help = "Sell drugs to a nearby person. The drug you sell is based on the location you are in.",
@@ -1129,10 +1122,17 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	identification = {
+		los_santos = "Los Santos",
 		citizen_card = "Citizen Card",
-		citizen_card_details = "${firstName} ${lastName} | Date Of Birth: ${dateOfBirth} | Gender: ${gender} | Citizen ID: ${characterId}",
+		first_name = "First Name",
+		last_name = "Last Name",
+		gender = "Gender",
 		gender_male = "Male",
-		gender_female = "Female"
+		gender_female = "Female",
+		date_of_birth = "Date Of Birth",
+		citizen_id = "Citizen ID",
+		citizen_card_details = "${firstName} ${lastName} | Date Of Birth: ${dateOfBirth} | Gender: ${gender} | Citizen ID: ${characterId}",
+		just_showed_citizen_card = "You just showed a Citizen Card. Please wait a bit."
 	},
 
 	inventory = {
@@ -1883,6 +1883,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		dice_message = "rolled a dice and got a ${diceNumber}",
 		roll_message = "rolled a custom dice with settings ${rolls}d${max} and got ${totalValue}",
 		card_message = "drew a card and got ${cardLabel}",
+		citizen_card_message = "showed a citizen card (${characterId})",
 		ped_message_logs_title = "Ped Message",
 		ped_message_logs_details = "${consoleName} sent a ped message with the following message: `${pedMessage}`",
 		attached_ped_message_logs_title = "Attached Ped Message",
@@ -2122,7 +2123,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_body_armor_level_player_title = "Set Body Armor Level For Player",
 		set_body_armor_level_player_details = "${consoleName} updated ${targetConsoleName} and set their body armor level to `${bodyArmorLevel}`.",
 		set_body_armor_level_player_not_staff = "Player attempted to set another player's body armor level but they didn't have the requried permissions to do so.",
-		set_body_armor_level_self_not_staff = "Player attempted to set their own body armor level but they didn't have the requried permissions to do so."
+		set_body_armor_level_self_not_staff = "Player attempted to set their own body armor level but they didn't have the requried permissions to do so.",
+		stress_level_warning = "You are stressed! Lower you stress by smoking Cigarettes, Joints or doing activities like Yoga."
 	},
 
 	sync = {
@@ -2256,31 +2258,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		training_blip = "Training"
 	},
 
-	trains = {
-		set_train_speed_not_staff = "Attempted to set the train's speed without required permissions.",
-		train_speed_reset = "The train's speed has now been reset.",
-		train_speed_set = "The train's speed has now been set to ${trainSpeed}.",
-		invalid_input = "Invalid Input. The value must be a number."
-	},
-
-	trams = {
-		waiting_to_leave = "The tram is leaving in ~g~${seconds} ~w~seconds.",
-		waiting_to_leave_enter = "The tram is leaving in ~g~${seconds} ~w~seconds.\nPress ~g~E ~w~to enter for ~g~$5~w~.",
-		waiting_to_leave_exit = "The tram is leaving in ~g~${seconds} ~w~seconds.\nPress ~g~E ~w~to exit.",
-		waiting_for_passengers = "The tram is waiting for passengers.",
-		waiting_for_passengers_enter = "The tram is waiting for passengers.\nPress ~g~E ~w~to enter for ~g~$5~w~.",
-		waiting_for_tram_distance = "The tram is arriving at the station.\nDistance from station: ${distance}m.",
-		waiting_for_tram = "Waiting for a tram...",
-		press_to_exit = "Press ~INPUT_CONTEXT~ to exit the tram.",
-		not_enough_balance = "You do not have enough cash to ride the tram.",
-		metro_station_blip = "Metro Station",
-		purchase_ticket = "Press ~INPUT_CONTEXT~ to purchase a Tram Ticket. The cost is $5.",
-		ticket_already_purchased = "You have already purchased a Tram Ticket.",
-		ticket_not_enough_cash = "You do not have enough cash to pay for the Tram Ticket.",
-		ticket_purchased = "You have purchased a Tram Ticket!",
-		ticket_booth_damaged = "This Ticket Booth is damaged. Please use another one."
-	},
-
 	vending_machines = {
 		vending_coffee = "Press ~INPUT_CONTEXT~ to purchase a Coffee. The cost is $${cost}.",
 		vending_coffee_not_enough_cash = "You do not have enough cash to purchase a Coffee. The cost is $${cost}.",
@@ -2407,14 +2384,14 @@ OP.Global.Locales.Languages["en-US"] = {
 	fuel = {
 		exit_to_fuel = "Exit the vehicle to refuel.",
 		press_to_fuel = "Press ~g~${InteractionKey} ~w~to refuel the vehicle.",
-		fuel_pump_text = "Fuel Cost: $${fuelCost}\nPress ~g~E ~w~to stop fueling.",
+		fuel_pump_text = "Fuel Cost: $${fuelCost}~n~Press ~g~E ~w~to stop fueling.",
 		vehicle_text = "Fuel Level: ${fuelLevel}%",
 		tank_full = "The tank is full.",
 		vehicle_busy = "The nearby vehicle is busy.",
 		purchase_jerry_can = "Press ~g~${InventoryKey} ~w~to purchase a Jerry Can.",
 		gas_station = "Gas Station",
 		vehicle_engine_on = "The vehicle's engine is running.",
-		petrolcan_fuel_text = "Petrol Amount Left: ${petrolAmount}%\nPress ~g~E ~w~to stop fueling.",
+		petrolcan_fuel_text = "Petrol Amount Left: ${petrolAmount}%~n~Press ~g~E ~w~to stop fueling.",
 		player_busy = "You are busy with something else."
 	},
 
