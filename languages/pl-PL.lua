@@ -164,7 +164,18 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		warning_message_set_to_title = "Komunikat ostrzegawczy ustawiony.",
 		warning_message_set_to_details = "${consoleName} ustawił komunikat ostrzegawczy na `${warningMessage}`.",
 		warning_message_removed_title = "Komunikat ostrzegawczy usunięty.",
-		warning_message_removed_details = "${consoleName} usunał komunikat ostrzegawczy."
+		warning_message_removed_details = "${consoleName} usunał komunikat ostrzegawczy.",
+
+		indestructibility_on = "Włączono 'Indestructibility'.",
+		indestructibility_off = "Wyłączono 'Indestructibility'.",
+		speed_boost_on = "Włączono 'Speed Boost'.",
+		speed_boost_off = "Wyłączono 'Speed Boost'.",
+		no_nearby_vehicles_on = "Włączono 'No Nearby Vehicles'.",
+		no_nearby_vehicles_off = "Wyłączono 'No Nearby Vehicles' Off.",
+		speed_up_progres_bar_on = "Włączono 'Pasek progresji Speed Up'.",
+		speed_up_progres_bar_off = "Wyłączono 'Pasek progresji Speed Up'.",
+		report_muted_no_reason = "Zostałeś wyciszony bez okreslonego powodu.",
+		report_muted = "Zostałeś wyciszony z powodu `${reason}`."
 	},
 
 	anticheat = {
@@ -1109,6 +1120,20 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		ping = "PING"
 	},
 
+	identification = {
+		los_santos = "Los Santos",
+		citizen_card = "Karta obywatela",
+		first_name = "Imię",
+		last_name = "Nazwisko",
+		gender = "Płeć",
+		gender_male = "Mężczyzna",
+		gender_female = "Kobieta",
+		date_of_birth = "Data urodzenia",
+		citizen_id = "ID obywatela",
+		citizen_card_details = "${firstName} ${lastName} | Data urodzenia: ${dateOfBirth} | Płeć: ${gender} | ID obywatela: ${characterId}",
+		just_showed_citizen_card = "Właśnie pokazałeś swoją kartę obywatela. Poczekaj chwilę."
+	},
+
 	inventory = {
 		access_trunk = "Podejdź aby mieć dostęp do bagażnika",
 
@@ -1322,9 +1347,6 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		sniper_ammo_description = "Amunicja snajperska",
 		shotgun_ammo = "Amunicja do strzelby",
 		shotgun_ammo_description = "Amunicja do strzelby.",
-
-		pistol_ammo = "Amunicja do pistoletu",
-		pistol_ammo_description = "Amunicja pasująca do większości broni krótkich.",
 
 		silver_watches = "Srebrne zegarki",
 		silver_watches_description = "Cenne zegarki z bogatego kruszcu",
@@ -1573,7 +1595,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		changing_license_plate = "Zmienianie tablicy rejestracyjnej",
 		unable_to_change_license_plate = "Nie możesz zmienić tablicy rejestracyjnej gdy w samochodzie są inni gracze.",
 		equipping_parachute = "Ubieranie Spadochronu",
-		lockpicking_vehicle = "Uruchamianie pojazdu"
+		lockpicking_vehicle = "Uruchamianie pojazdu",
+		illegal_weather_name = "Próba użycia zaklęcia pogody z nieodpowiednią nazwą.",
+		equipping_body_armor = "Uzbrajanie body armora",
+		illegal_burger_shot_delivery_item_id = "Próba nieprawidłowego użycia itemu burther shot dostawa."
 	},
 
 	login = {
@@ -1920,7 +1945,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	peds = {
-		ped_robbing_injection = "Nadmierne rabowanie pedów!"
+		ped_robbing_injection = "Nadmierne rabowanie pedów!",
+
 	},
 
 	radio = {
@@ -2304,6 +2330,41 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		grabbing_gold_bar = "Zabieranie Sztabek Złota",
 		use_advanced_lockpick = "[${InteractionKey}] Użyj Zaawansowanego Wytrychu",
 		lockpicking_stockade = "Włamywanie się"
+	},
+
+	-- jobs/*
+	burger_shot = {
+		start_delivery = "Rozpocznij dostawę.",
+		press_to_start_delivery = "Wciśnij ~g~${InteractionKey} ~w~by rozpocząć dostawę.",
+		alerady_in_delivery = "Masz w tej chwili jedno zamówienie w toku.",
+		not_burger_shot_employee = "Musisz być pracownikiem Burger Shota żeby rozpoczać dostawę.",
+		finish_delivery = "Dokończ dostawę.",
+		press_to_finish_delivery = "Wciśnij ~g~${InteractionKey} ~w~żeby zakończyć dostarczanie.",
+		started_delivery = "Rozpoczęto dostawę do ${deliveryName}. Lokacja została oznaczona na mapie.",
+		finished_delivery = "Dostawa do ${deliveryName} została zrealizowana. Otrzymałeś $${deliveryPrice} i $${distanceBonus} napiwku, w sumie $${totalPrice}.",
+		error_finishing_delivery = "Wystąpił problem związany z Twoją dostawą.",
+		finished_delivery_title = "Zakończono dostarczanie towarów Burger Shot",
+		finished_delivery_details = "${consoleName} zakończył dostawę Burger Shota, otrzymał $${deliveryPrice} i $${distanceBonus} napiwku, w sumie $${totalPrice}.",
+		delivery_blip = "Burger Shot dostawy"
+	},
+
+	job_center = {
+		life_invader = "Life Invader",
+		ui_close_menu = "Zamknij menu",
+		press_to_browse_jobs = "Wciśnij ~INPUT_CONTEXT~ by zobaczyć oferty pracy.",
+		change_job = "Zmień pracę: ${jobName}",
+		job_unemployed = "Bezrobotny",
+		job_transportation = "Kierowca ciężarowy",
+		job_taxi = "Taxówkarz",
+		job_journalist = "Dziennikarz",
+		job_government = "Śmieciarz",
+		job_mechanic = "Mechanik",
+		job_delivery = "Kurier",
+		changed_job_already_set_to_job = "Zostałeś zatrudniony jako ${jobName}.",
+		changed_job_success = "Brawo, zostałeś właśnie ${jobName}.",
+		changed_job_failure = "Wystąpił błąd podczas aplikowania do pracy ${jobName}.",
+		changed_job_title = "Zmieniono pracę",
+		changed_job_details = "${consoleName} zmienił pracę na `${jobName}`."
 	},
 
 	-- menus/*
