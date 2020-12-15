@@ -1872,6 +1872,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		dice_message = "rzucił kostką i dostał ${diceNumber}",
 		roll_message = "Rzucił kostką z ustawieniami ${rolls}d${max} i dostał ${totalValue}",
 		card_message = "wyciągnął kartę i dostał ${cardLabel}",
+		citizen_card_message = "pokazujesz kartę obywatela (${characterId})",
 		ped_message_logs_title = "Wiadomość do peda",
 		ped_message_logs_details = "${consoleName} Wysłał wiadomość do peda z treścią: `${pedMessage}`",
 		attached_ped_message_logs_title = "Attached Ped Message",
