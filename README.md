@@ -16,9 +16,7 @@ To make changes to the files, make a pull request and wait for approval. PRs tha
 9 = Legacy Roleplay India (Whitelist)<br>
 10 = Legacy Roleplay Bangladesh<br>
 11 = Legacy Roleplay Nepal<br>
-12 = Legacy Roleplay Bhutan<br>
 13 = Legacy Roleplay Nepal (Whitelist)<br>
 14 = Legacy Battle Royale<br>
-15 = Legacy Roleplay Norway<br>
 16 = Legacy Roleplay Lithuania<br>
 17 = Legacy Roleplay Estonia
