@@ -520,6 +520,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		calibrate_command_help = "Toggle the calibrate UI.",
 		calibrate_command_substitutes = "",
 
+		-- game/cayo_perico
+		toggle_cayo_perico = "/toggle_cayo_perico",
+		toggle_cayo_perico_help = "Toggle the Cayo Perico island.",
+		toggle_cayo_perico_substitutes = "/toggle_island, /island",
+
 		-- game/cinematic
 		cinematic_command = "/cinematic",
 		cinematic_command_help = "Toggle cinematic black bars.",
@@ -1118,7 +1123,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		cruise = "CRUISE",
 		fuel = "fuel",
 		fps = "FPS",
-		ping = "PING"
+		ping = "PING",
+		autopilot = "autopilot"
 	},
 
 	identification = {
@@ -1369,6 +1375,9 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		zombie_pill = "Zombie Pill",
 		zombie_pill_description = "A strange pill that does even stranger things... Swallow at your own risk.",
+
+		self_driving_chip = "Self-Driving Chip",
+		self_driving_chip_description = "Dead deers everywhere... fucking hilarious.",
 
 		weapon_dagger = "Antique Cavalry Dagger",
 		weapon_bat = "Baseball Bat",
@@ -2024,6 +2033,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		grocery_store_18 = "Sandy Shores 24/7",
 		grocery_store_19 = "Grapeseed LTD Gasoline",
 		grocery_store_20 = "Mount Chiliad 24/7"
+	},
+
+	self_driving = {
+		not_driving_a_vehicle = "You are not currently operating a vehicle.",
+		not_a_self_driving_vehicle = "The vehicle you are operating does not support autopilot.",
+		no_waypoint_set = "Please set a waypoint to mark your destination.",
+		self_driving_engaged = "The autopilot has been engaged. Press ~INPUT_SPRINT~ and ~INPUT_DUCK~ to control the crusie speed.",
+		self_driving_disengaged = "The autopilot has been disengaged.",
+		destination_too_close = "The marked destination is too close.",
+		self_driving_could_not_be_engaged = "The autopilot coud not be engaged."
 	},
 
 	shield = {
