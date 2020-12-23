@@ -174,6 +174,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		no_nearby_vehicles_off = "Wyłączono 'No Nearby Vehicles' Off.",
 		speed_up_progres_bar_on = "Włączono 'Pasek progresji Speed Up'.",
 		speed_up_progres_bar_off = "Wyłączono 'Pasek progresji Speed Up'.",
+        
 		report_muted_no_reason = "Zostałeś wyciszony bez okreslonego powodu.",
 		report_muted = "Zostałeś wyciszony z powodu `${reason}`."
 	},
@@ -519,6 +520,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		calibrate_command_help = "Skalibruj swoje UI.",
 		calibrate_command_substitutes = "",
 
+		-- game/cayo_perico
+		toggle_cayo_perico = "/toggle_cayo_perico",
+		toggle_cayo_perico_help = "Włącza podgląd Cayo Perico.",
+		toggle_cayo_perico_substitutes = "/wlacz_wyspa, /wyspa",
+
 		-- game/cinematic
 		cinematic_command = "/cinematic",
 		cinematic_command_help = "Włącza tryb filmowy",
@@ -640,6 +646,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		mute_command_help = "Wycisz gracza na czacie OOC.",
 		mute_command_parameter_server_id = "server id",
 		mute_command_parameter_server_id_help = "ID gracza, którego chcesz wyciszyć.",
+		mute_command_parameter_expire = "wygasa",
+		mute_command_parameter_expire_help = "Długość wyciszenia gracza.",
 		mute_command_parameter_reason = "powód",
 		mute_command_parameter_reason_help = "Powód wyciszenia gracza.",
 		mute_command_substitutes = "",
@@ -828,13 +836,6 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		blackout_command_help = "Włącz/Wyłącz Blackout",
 		blackout_command_substitutes = "",
 
-		-- game/trains
-		train_speed_command = "/train_speed",
-		train_speed_command_help = "Ustawia predkość tramwaja.",
-		train_speed_command_parameter_speed = "Predkość",
-		train_speed_command_parameter_speed_help = "Prędkość, do jakiej chciałbyś ustawić pociąg. Wartość ta może być pusta dla prędkości domyślnej, w przeciwnym razie musi to być liczba powyżej lub równa 0.",
-		train_speed_command_substitutes = "",
-
 		-- illegal/corner
 		corner_command = "/corner",
 		corner_command_help = "Sprzedaj narkotyki pobliskiej osobie. Narkotyk który sprzedajesz bazowany jest na twoim położeniu.",
@@ -983,7 +984,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		logs_character_created_details = "${consoleName} Stworzył Postać ${fullName} (${characterId}).",
 		logs_character_deleted_title = "Postać Usunięto",
 		logs_character_deleted_details = "${consoleName} Usunął Postać ${fullName} (${characterId}).",
-		server_core_is_restarting = "Server Core jest w trakcie restartowania."
+		server_core_is_restarting = "Server Core jest w trakcie restartowania.",
+		you_timed_out = "Za długie oczekiwanie!"
 	},
 
 	-- game/*
@@ -1046,6 +1048,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		south_West = "SW",
 		west = "W",
 		north_west = "NW"
+	},
+
+	courthouse = {	
+		press_to_use_gavel = "Naciśnij ~INPUT_CONTEXT~ by uderzyć młotkiem."
 	},
 
 	dashcam = {
@@ -1117,7 +1123,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		cruise = "Tempomat",
 		fuel = "Paliwo",
 		fps = "FPS",
-		ping = "PING"
+		ping = "PING",
+		autopilot = "autopilot"
 	},
 
 	identification = {
@@ -1151,6 +1158,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		police_armory = "Zbrojownia policyjna",
 		ems_store = "Sklep EMS",
 		chop_shop = "Chop Shop",
+		courthouse = "Sąd",
+		burger_shot = "Burger Shot",
 		pd_prefix = "PD",
 		ems_prefix = "EMS",
 		inventory_overweight = "Twój ekwipunek jest przeciążony!",
@@ -1363,8 +1372,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		weather_spell_rain_description = "Użycie tego przedmiotu sprawi, że chwilowo wejdziesz w posiadanie zdolności zmiany pogody! Jest to jednorazowy przedmiot także uważaj! Jeżeli użyjesz dwa na raz to drugi będzie oczekiwał w kolejce na koniec pierwszego.",
 		weather_spell_thunder = "Zaklęcie burzy",
 		weather_spell_thunder_description = "Użycie tego przedmiotu sprawi, że chwilowo wejdziesz w posiadanie zdolności zmiany pogody! Jest to jednorazowy przedmiot także uważaj! Jeżeli użyjesz dwa na raz to drugi będzie oczekiwał w kolejce na koniec pierwszego.",
+
 		zombie_pill = "Tabletka zombie",
 		zombie_pill_description = "Nowy narkotyk, który oddziałowuje na zmyłsy ludzkie jak nic innego. Bad trip po mecie to nic przy tym. Używać z rozwagą.",
+
+		self_driving_chip = "Chip autonomiczny",
+		self_driving_chip_description = "Chip pozwalający wgrać oprogramowanie 'JD2137', software zmienia pojazd w samowystarczalną jednostkę autonomiczną",
 
 		weapon_dagger = "Antyczny Sztylet",
 		weapon_bat = "Kij Baseball'owy",
@@ -1699,7 +1712,6 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		player_unmuted = "Gracz odmutowany",
 		player_unmuted_details = "${targetConsoleName} został odmutowany za ${consoleName}.",
 		ooc_cancelled_same_as_last = "Twoja wiadomośc OOC została zablokowana, nie możesz wysyłać dwukrotnie takiej samej.",
-		identical_ooc_message = "Gracz próbował napisać na czacie LOOC identyczną wiadomośc dwukrotnie.",
 		use_measurement_metric = "Ustawiłeś preferowany system miar na metryczny.",
 		use_measurement_imperial = "Ustawiłeś preferowany system miar na imperialny.",
 		use_measurement_default = "Będziesz teraz używać domyślnego systemu pomiaru ustawień regionalnych.",
@@ -1723,6 +1735,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		select_information = "Informacje",
 		select_activity_points = "Punkty Aktywności",
 		select_staff_points = "Staff Points",
+		select_moderation = "Moderacja",
+		select_settings = "Ustawienia",
 		about_title = "O ogólnym zarysie Overview UI",
 
 		-- eh idk if putting entire chunks of html code is the way to go but for now it is xd
@@ -1773,7 +1787,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		activity_points_last_week_low = "Imponujące, miałeś wystarczająco dużo punktów aktywności w zeszłym tygodniu, aby zakwalifikować aby dostać Niska Priorytetu Pracy w kolejce!",
 		activity_points_last_week_medium = "Niesamowite, miałeś wystarczająco dużo punktów aktywności w zeszłym tygodniu, aby zakwalifikować się do Średniego Priorytetu Pracy w kolejce!",
 		activity_points_last_week_high = "Niewiarygodne, miałeś wystarczająco dużo punktów aktywności w zeszłym tygodniu, aby zakwalifikować się do Wysokiego Priorytetu Pracy w kolejce!",
-	
+
 		about_staff_points_title = "About Staff Points",
 
 		about_staff_points_text = [[
@@ -1798,6 +1812,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		seven_weeks_ago = "7 Tygodni temu",
 		eight_weeks_ago = "8 Tygodni temu",
 		previous_weeks_average = "Poprzednie tygodnie' średnio",
+
+		about_detection_areas_title = "Strefy detekcji",
+		about_detection_areas_text = "Byl tu dlugi opis i mam go w dupie bo chuja warta ta komenda.",
+		detection_area_title = "Strefa detekcji #${detectionAreaId}",
 
 		about_sound_effects_title = "Efekty dzwiekowe",
 		about_sound_effects_text = "Wymagany jest plik oog..",
@@ -1845,11 +1863,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 			<br><br>
 			Kolejne otwarcie dostępne za.. ${time}.
 		]],
+
 		unlocks_in_days_hours_minutes_seconds = "${days} dni, ${hours} godzin, ${minutes} minut i ${seconds} sekund",
 		unlocks_in_hours_minutes_seconds = "${hours} godzin, ${minutes} minut i ${seconds} sekund",
 		unlocks_in_minutes_seconds = "${minutes} minut i ${seconds} sekund",
 		unlocks_in_seconds = "${seconds} sekund",
 		unlocks_in_an_unknown_amount_of_time = "nieznana ilość czasu",
+
 		unopened_hatch = "Nieotwarta szansa",
 		won_money = "${amount} Pieniądze", -- uh for some reason the (js) locale system doesn't seem to like two $$ after each other here and I'm too incompetent to figure out so if you know how to fix it pls let me know tnx!! or just leave it at 1 $ like this :)
 		won_vehicle = "Pojazd świateczny",
@@ -1947,7 +1967,14 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 	peds = {
 		ped_robbing_injection = "Nadmierne rabowanie pedów!",
+	},
 
+		phone = {
+		-- Scripting Part:
+		you_do_not_have_a_phone = "You do not have a phone.",
+
+		-- UI Part:
+		
 	},
 
 	radio = {
@@ -1956,6 +1983,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		radio_turned_off = "Radio zostało wyłączone.",
 		radio_removed = "Zgubiłeś swoje radio.",
 		no_radio = "Nie masz radia.",
+		unable_to_use_radio_while_cuffed = "Nie jesteś w stanie używać radia w momencie jak jestes zakuty.",
 		frequency_set_to = "częstotliwość została ustawiona na ${frequency}.",
 		frequency_already_set_to = "Częstotliwość jest już ustawiona na ${frequency}.",
 		radio_volume_same = "Głośność radia jest już ustawiona na `${radioVolume}`.",
@@ -2005,6 +2033,16 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		grocery_store_18 = "Sandy Shores 24/7",
 		grocery_store_19 = "Grapeseed LTD Gasoline",
 		grocery_store_20 = "Mount Chiliad 24/7"
+	},
+
+	self_driving = {	
+		not_driving_a_vehicle = "Obecnie nie prowadzisz pojazdu.",
+		not_a_self_driving_vehicle = "Pojazd, którym się poruszasz nie sprzyja temu oprogramowaniu.",
+		no_waypoint_set = "Proszę zaznaczyć lokalizację docelową.",
+		self_driving_engaged = "Autopilot uruchomiony. Wciśnij ~INPUT_SPRINT~ oraz ~INPUT_DUCK~ by kontrolować prędkość.",
+		self_driving_disengaged = "Autopilot został wyłączony.",
+		destination_too_close = "Zaznaczona lokalizacja jest za blisko, wybierz dalszą podróż.",
+		self_driving_could_not_be_engaged = "Autopilot napotkał problem, oprogramowanie nie zostało uruchomione."
 	},
 
 	shield = {
@@ -2093,18 +2131,19 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		status_reset = "Pomyślnie zresetowano status dla ${consoleName}.",
 		status_reset_failed = "Brak gracza z Server ID `${serverId}`",
 		reset_status_not_staff = "Próba zresetowania statusu gracza bez wymaganych uprawnień.",
-		status_reset_for_all = "Successfully reset the status for everyone.",
-		failed_to_set_body_armor_level = "Failed to execute the `/set_body_armor` command correctly.",
-		set_body_armor_level_player = "Successfully set the body armor level for ${consoleName} to `${bodyArmorLevel}`.",
-		set_body_armor_level_everyone = "Successfully set everyone's body armor level to `${bodyArmorLevel}`.",
-		set_body_armor_level_self_title = "Set Body Armor Level For Self",
-		set_body_armor_level_self_details = "${consoleName} set their own body armor level to `${bodyArmorLevel}`.",
-		set_body_armor_level_everyone_title = "Set Body Armor Level For Everyone",
-		set_body_armor_level_everyone_details = "${consoleName} set their everyone's body armor level to `${bodyArmorLevel}`.",
-		set_body_armor_level_player_title = "Set Body Armor Level For Player",
-		set_body_armor_level_player_details = "${consoleName} updated ${targetConsoleName} and set their body armor level to `${bodyArmorLevel}`.",
-		set_body_armor_level_player_not_staff = "Player attempted to set another player's body armor level but they didn't have the requried permissions to do so.",
-		set_body_armor_level_self_not_staff = "Player attempted to set their own body armor level but they didn't have the requried permissions to do so."
+		status_reset_for_all = "Poprawnie zresetowano poziom pancerza dla wszystkich.",
+		failed_to_set_body_armor_level = "Niestety nie udało się ustawić `/set_body_armor` poprawnie.",
+		set_body_armor_level_player = "Poprawnie ustawił poziom pancerza dla ${consoleName} na `${bodyArmorLevel}`.",
+		set_body_armor_level_everyone = "Poprawnie ustawił poziom pancerza dla wszystkich `${bodyArmorLevel}`.",
+		set_body_armor_level_self_title = "Ustawił poziom pancerza dla siebie.",
+		set_body_armor_level_self_details = "${consoleName} ustawił własny poziom pancerza na `${bodyArmorLevel}`.",
+		set_body_armor_level_everyone_title = "Ustawił poziom pancerza dla wszystkich",
+		set_body_armor_level_everyone_details = "${consoleName} ustawił poziom pancerza na `${bodyArmorLevel}`.",
+		set_body_armor_level_player_title = "Ustawiono poziom pancerza",
+		set_body_armor_level_player_details = "${consoleName} zaktualizował ${targetConsoleName} i ustawil poziom pancerza na `${bodyArmorLevel}`.",
+		set_body_armor_level_player_not_staff = "Inny gracz próbował ustawić komuś poziom pancerza nie posiadając odpowiednich uprawnień.",
+		set_body_armor_level_self_not_staff = "Gracz próbował ustawić swój poziom pancerza nie posiadając odpowiednich uprawnień.",
+		stress_level_warning = "Zajeb szluga albo jointa byczku, jestes cały pospinany!"
 	},
 
 	sync = {
@@ -2236,31 +2275,6 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		attackers_won = "Napastnicy wygrali!",
 		defenders_won = "Obrońcy wygrali!",
 		training_blip = "Trening"
-	},
-
-	trains = {
-		set_train_speed_not_staff = "Próbowano ustawić prędkość pociągu bez wymaganych uprawnień.",
-		train_speed_reset = "Prędkość pociągu została teraz zresetowana.",
-		train_speed_set = "Prędkość pociągu została teraz ustawiona na ${trainSpeed}.",
-		invalid_input = "Nieprawidłowe dane. Wartość musi być liczbą."
-	},
-
-	trams = {
-		waiting_to_leave = "Tramwaj odjeżdża za ~g~${seconds} ~w~sekund.",
-		waiting_to_leave_enter = "Tramwaj odjeżdża za ~g~${seconds} ~w~sekund.\nNaciśnij ~g~E ~w~aby wejść za ~g~$5~w~.",
-		waiting_to_leave_exit = "Tramwaj odjeżdża za ~g~${seconds} ~w~sekund.\nNaciśnij ~g~E ~w~aby wyjść.",
-		waiting_for_passengers = "Tramwaj czeka na pasażerów.",
-		waiting_for_passengers_enter = "Tramwaj czeka na pasażerów.\nNaciśnij ~g~E ~w~aby wejść za ~g~$5~w~.",
-		waiting_for_tram_distance = "Tramwaj zbliża się do stacji.\nOdległość od stacji: ${distance}m.",
-		waiting_for_tram = "Czekasz na tramwaj...",
-		press_to_exit = "Naciśnij ~INPUT_CONTEXT~ aby wyjść z tramwaju",
-		not_enough_balance = "Nie masz wystarczająco dużo gotówki, żeby jechać tramwajem.",
-		metro_station_blip = "Stacja Metra",
-		purchase_ticket = "Naciśnij ~INPUT_CONTEXT~ żeby kupić bilet. Koszt wynosi 5 dolarów.",
-		ticket_already_purchased = "Kupiłeś już bilet.",
-		ticket_not_enough_cash = "Nie masz wystarczającej ilości gotówki, żeby zapłacić za bilet.",
-		ticket_purchased = "Kupiłeś bilet!",
-		ticket_booth_damaged = "Ta budka z biletami jest uszkodzona. Proszę skorzystać z innej."
 	},
 
 	vending_machines = {
@@ -2629,6 +2643,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		male_models = "Modele Męskie",
 		female_models = "Modele Kobiece",
 		ems_models = "Modele Służbowe",
+		animal_models = "Modele zwierząt",
 		multiplayer_models = "Modele MultiPlayer",
 		serial_number = "Numer Seryjny: ${serialNumber}<br>Ta broń jest zarejestrowana na ${fullName} (${characterId}).",
 		serial_number_unknown = "Numer Seryjny: Nieznany.",
