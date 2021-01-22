@@ -1155,7 +1155,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		gun_store_with_shooting_range = "Ammu-Nation with Range",
 		bar = "Bar",
 		strip_club = "Strip Club",
-		police_armory = "Police Armory",
+		police_store = "Police Store",
 		ems_store = "EMS Store",
 		chop_shop = "Chop Shop",
 		courthouse = "Courthouse",
@@ -2172,7 +2172,10 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		blackout_enabled = "A blackout is now present in the city.",
 		blackout_disabled = "The city is no longer in a blackout.",
-		blackout_not_staff = "Attempted to toggle a blackout without required permissions."
+		blackout_not_staff = "Attempted to toggle a blackout without required permissions.",
+
+		weather_changed_title = "Weather Changed",
+		weather_changed_details = "${consoleName} changed the weather to `${weatherName}`."
 	},
 
 	teleporters = {
@@ -2236,11 +2239,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		exit_mayor_office = "Exit Mayor's Office",
 		exit_mayor_office_interact = "[${InteractionKey}] Exit Mayor's Office",
 
-		enter_pillbox_hospital = "Enter Pillbox Hospital",
-		enter_pillbox_hospital_interact = "[${InteractionKey}] Enter Pillbox Hospital",
+		enter_upper_pillbox_hospital = "Enter Upper Pillbox Hospital",
+		enter_upper_pillbox_hospital_interact = "[${InteractionKey}] Enter Upper Pillbox Hospital",
 
-		exit_pillbox_hospital = "Exit Pillbox Hospital",
-		exit_pillbox_hospital_interact = "[${InteractionKey}] Exit Pillbox Hospital",
+		enter_lower_pillbox = "Enter Lower Pillbox Hospital",
+		enter_lower_pillbox_interact = "[${InteractionKey}] Enter Lower Pillbox Hospital",
 
 		enter_pillbox_roof = "Enter Pillbox Roof",
 		enter_pillbox_roof_interact = "[${InteractionKey}] Enter Pillbox Roof",
