@@ -1379,6 +1379,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		self_driving_chip = "Self-Driving Chip",
 		self_driving_chip_description = "Dead deers everywhere... fucking hilarious.",
 
+		raspberry = "Raspberry",
+		raspberry_description = "https://i.redd.it/jbcj0uqbihg41.jpg",
+
 		weapon_dagger = "Antique Cavalry Dagger",
 		weapon_bat = "Baseball Bat",
 		weapon_bottle = "Broken Bottle",
