@@ -1379,6 +1379,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		self_driving_chip = "Chip autonomiczny",
 		self_driving_chip_description = "Chip pozwalający wgrać oprogramowanie 'JD2137', software zmienia pojazd w samowystarczalną jednostkę autonomiczną",
 
+		raspberry = "Raspberry",
+		raspberry_description = "https://i.redd.it/jbcj0uqbihg41.jpg",
+
 		weapon_dagger = "Antyczny Sztylet",
 		weapon_bat = "Kij Baseball'owy",
 		weapon_bottle = "Rozbita Butelka",
@@ -2172,7 +2175,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		blackout_enabled = "W mieście jest teraz zaciemnienie.",
 		blackout_disabled = "Miasto nie jest już w stanie zaciemnienia.",
-		blackout_not_staff = "Próbował przełączyć zaciemnienie bez wymaganych uprawnień."
+		blackout_not_staff = "Próbował przełączyć zaciemnienie bez wymaganych uprawnień.",
+
+		weather_changed_title = "Pogoda zmieniona",
+		weather_changed_details = "${consoleName} zmienił pogodę na `${weatherName}`."
 	},
 
 	teleporters = {
@@ -2236,11 +2242,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		exit_mayor_office = "Wyjdź z Biura Burmistrza",
 		exit_mayor_office_interact = "[${InteractionKey}] Wyjdź z Biura Burmistrza",
 
-		enter_pillbox_hospital = "Wejdż do Szpitala Pillbox",
-		enter_pillbox_hospital_interact = "[${InteractionKey}] Wejdż do Szpitala Pillbox",
+		enter_upper_pillbox_hospital = "Wejdź do górnej częśći Pillbox",
+		enter_upper_pillbox_hospital_interact = "[${InteractionKey}] Wejdź do górnej częśći Pillbox",
 
-		exit_pillbox_hospital = "Wyjdż z Szpitala Pillbox",
-		exit_pillbox_hospital_interact = "[${InteractionKey}] Wyjdż z Szpitala Pillbox",
+		enter_lower_pillbox = "Zejdź na dolną część Pillbox",
+		enter_lower_pillbox_interact = "[${InteractionKey}] Zejdź na dolną część Pillbox",
 
 		enter_pillbox_roof = "Wejdż na dach Pillbox",
 		enter_pillbox_roof_interact = "[${InteractionKey}] Wejdż na dach Pillbox",
