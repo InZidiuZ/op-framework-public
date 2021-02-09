@@ -9,11 +9,10 @@ To make changes to the files, make a pull request and wait for approval. PRs tha
 2 = OP-FW Test Server<br>
 3 = Legacy Roleplay International<br>
 4 = Legacy Roleplay Latin America<br>
-5 = Legacy Roleplay Italy<br>
 6 = Legacy Roleplay Poland<br>
 7 = Legacy Roleplay Pakistan<br>
-8 = Legacy Roleplay India<br>
+8 = Legacy Roleplay India (Public)<br>
 9 = Legacy Roleplay India (Whitelist)<br>
 10 = Legacy Roleplay Bangladesh<br>
-13 = Legacy Roleplay Nepal (Whitelist)<br>
+13 = Legacy Roleplay Nepal<br>
 14 = Legacy Battle Royale<br>
