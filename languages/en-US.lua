@@ -842,13 +842,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		corner_command_substitutes = "",
 
 		-- vehicles/keys
-		givekey_command = "/givekey",
-		givekey_command_help = "Give a vehicle key to a nearby person.",
-		givekey_command_parameter_server_id = "server id",
-		givekey_command_parameter_server_id_help = "The player's server id you would like to give the key to. This can be left blank (or at 0) to give it to the nearest person.",
-		givekey_command_parameter_plate_number = "plate number",
-		givekey_command_parameter_plate_number_help = "The vehicle's plate number you wish to give the key for. This can also be left blank to automatically select the nearest vehicle.",
-		givekey_command_substitutes = "",
+		give_key_command = "/give_key",
+		give_key_command_help = "Give a vehicle key to a nearby person.",
+		give_key_command_parameter_server_id = "server id",
+		give_key_command_parameter_server_id_help = "The player's server id you would like to give the key to. This can be left blank (or at 0) to give it to the nearest person.",
+		give_key_command_parameter_plate_number = "plate number",
+		give_key_command_parameter_plate_number_help = "The vehicle's plate number you wish to give the key for. This can also be left blank to automatically select the nearest vehicle.",
+		give_key_command_substitutes = "/givekey",
 
 		-- vehicles/modifications
 		wheel_offset_command = "/wheel_offset",
@@ -2006,7 +2006,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		offline = "Offline",
 		camera_list = "Camera List",
 		camera = "Camera ${cameraId}",
-		mrpd = "Mission Row PD",
+		mission_row_pd = "Mission Row PD",
+		pillbox_hospital = "Pillbox Hospital",
 		jewelry_store = "Rockford Hills Jewelry Store",
 		principal_bank = "Principal Bank",
 		bank_1 = "Legion Square Bank",
