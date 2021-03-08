@@ -176,11 +176,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		no_nearby_vehicles_off = "Wyłączono 'No Nearby Vehicles' Off.",
 		speed_up_progres_bar_on = "Włączono 'Pasek progresji Speed Up'.",
 		speed_up_progres_bar_off = "Wyłączono 'Pasek progresji Speed Up'.",
-        
+
 		report_muted_no_reason = "Zostałeś wyciszony bez okreslonego powodu.",
 		report_muted = "Zostałeś wyciszony z powodu `${reason}`.",
 
-        user_banned_warning_no_reason = "Ta osoba została zbanowana bez podanego powodu. Automatycznie wygenerowane powiadomienie.",
+		user_banned_warning_no_reason = "Ta osoba została zbanowana bez podanego powodu. Automatycznie wygenerowane powiadomienie.",
 		user_banned_warning = "Zbanowałeś te osobę z powodem `${reason}`. Automatycznie wygenerowane powiadomienie."
 	},
 
@@ -855,7 +855,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		give_key_command_parameter_plate_number_help = "Numer rejestracyjny pojazdu, którego klucze chcesz dać. Jeśli parametr zostanie pusty automatycznie wybrane będzie najbliższy pojazd.",
 		give_key_command_substitutes = "/dajklucze",
 
-	   -- vehicles/modifications
+		-- vehicles/modifications
 		wheel_offset_command = "/wheel_offset",
 		wheel_offset_command_help = "Modyfikuje rozstaw kół pojazdu.",
 		wheel_offset_command_parameter_wheels = "front/back",
@@ -1677,7 +1677,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		available_language_codes = "Dostępne języki",
 		ping_pong = "Pong!",
 		ping_response = "${ping}ms (callback time: ${cbTime}ms)",
-		ooc_first_time = "Widzimy, że jeszcze nie użyłeś /ooc! Zanim pozwolimy ci z niego skorzystać, chcielibyśmy dać ci małe ostrzeżenie. Komenda /ooc ma być używane tylko w sytuacjach nagłych, a wszystkie inne mają być na /report - /looc lub powinny być przekierowane na naszego discorda  ${communityDiscord}. To wszystko! Aby zacząć używać komendy /ooc, wpisz /ooc_on. Będziesz mógł ją ponownie wyłączyć za pomocą /ooc_off.",
+		ooc_first_time = "Widzimy, że jeszcze nie użyłeś /ooc! Zanim pozwolimy ci z niego skorzystać, chcielibyśmy dać ci małe ostrzeżenie. Komenda /ooc ma być używane tylko w sytuacjach nagłych, a wszystkie inne mają być na /report - /looc lub powinny być przekierowane na naszego discorda ${communityDiscord}. To wszystko! Aby zacząć używać komendy /ooc, wpisz /ooc_on. Będziesz mógł ją ponownie wyłączyć za pomocą /ooc_off.",
 		ooc_not_logged_in = "Nie jesteś podłączony.",
 		ooc_timed_out = "W tej chwili nie możesz korzystać z czatu OOC. Proszę zaczekać.",
 		ooc_muted_no_reason = "Zostałeś wyciszony z czatu OOC bez określonego powodu.",
@@ -1771,18 +1771,18 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		about_activity_points_title = "O punktach aktywności",
 
 		about_activity_points_text = [[
-            Możesz zdobyć Punkty Aktywności Pracy Obecnie tylko w pracach związanych z medycyną/EMS i ochroną porządku publicznego/policją
-            <br><br>
-            Co minutę, pewna ilość punktów aktywności jest rozdzielana w każdej pracy pomiędzy graczy, którzy są na służbie. Oznacza to, że jeśli na służbie jako policja będzie 4 graczy, każdy z nich otrzyma 25% punktów aktywności w danej minucie. Ilość rozdawanych punktów aktywności jest ustalana na podstawie aktualnej liczby graczy na serwerze i dzielona przez 64.
-            <br><br>
-            Punkty aktywności są resetowane dla wszystkich na początku każdego tygodnia. Jeśli miałeś określoną ilość punktów aktywności, otrzymasz priorytet w kolejce przez cały następny tydzień.
-                <br><br>
-                Punkty aktywności wymagane dla priorytetu kolejki w tym momencie:
-                <ul class="list">
-                <li>400: Niski Priorytet.</li>
-                <li>700: Średni Priorytet.</li>
-                <li>1000: Wysoki Priorytet.</li>
-            </ul>
+			Możesz zdobyć Punkty Aktywności Pracy Obecnie tylko w pracach związanych z medycyną/EMS i ochroną porządku publicznego/policją
+			<br><br>
+			Co minutę, pewna ilość punktów aktywności jest rozdzielana w każdej pracy pomiędzy graczy, którzy są na służbie. Oznacza to, że jeśli na służbie jako policja będzie 4 graczy, każdy z nich otrzyma 25% punktów aktywności w danej minucie. Ilość rozdawanych punktów aktywności jest ustalana na podstawie aktualnej liczby graczy na serwerze i dzielona przez 64.
+			<br><br>
+			Punkty aktywności są resetowane dla wszystkich na początku każdego tygodnia. Jeśli miałeś określoną ilość punktów aktywności, otrzymasz priorytet w kolejce przez cały następny tydzień.
+				<br><br>
+				Punkty aktywności wymagane dla priorytetu kolejki w tym momencie:
+				<ul class="list">
+				<li>400: Niski Priorytet.</li>
+				<li>700: Średni Priorytet.</li>
+				<li>1000: Wysoki Priorytet.</li>
+			</ul>
 		]],
 
 		activity_points_this_week = "Ten tydzień",
@@ -1997,8 +1997,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		frequency_set_to = "częstotliwość została ustawiona na ${frequency}.",
 		frequency_already_set_to = "Częstotliwość jest już ustawiona na ${frequency}.",
 		radio_volume_same = "Głośność radia jest już ustawiona na `${radioVolume}`.",
-		radio_volume_reset = "Głośność radia została  zresetowana.",
-		radio_volume_set = "Głośność radia została  ustawiona na `${radioVolume}`.",
+		radio_volume_reset = "Głośność radia została zresetowana.",
+		radio_volume_set = "Głośność radia została ustawiona na `${radioVolume}`.",
 		radio_volume_current = "Twój obecny poziom głośności radia jest ustawiony na `${radioVolume}`.",
 		radio_volume_current_default = "Twoja aktualna głośność radia jest domyślna.",
 		radio_sound_effects_same = "Głośność efektów dźwiękowych radia jest już ustawiona na `${radioSoundEffects}`.",
