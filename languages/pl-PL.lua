@@ -89,7 +89,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		report_logs_title = "Zgłoś",
 		report_logs_details = "${consoleName} stworzył zgłoszenie z następującą wiadomością: `${reportMessage}`",
 
-		announcement_title = "Ogłoszenie Administracji",
+		announcement_staff_title = "Ogłoszenie Administracji",
+		announcement_server_title = "Ogłoszenie",
+
 		announcement_logs_title = "Serwerowe Ogłoszenie",
 		announcement_logs_details = "${consoleName} Ogłosił dla całego serwera: `${announcementMessage}`",
 		announcement_not_admin = "Sprobowano napisać ogłoszenie admnistracyjne.",
@@ -155,7 +157,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		no_item_name = "Nie podano nazwy przedmiotu.",
 		invalid_item_name = "${itemName} jest niepoprawną nawzą przedmiotu.",
 		item_spawned = "Zespawnował ${amount}x `${itemName}` dla ${consoleName}.",
-		
+
 		set_warning_message_not_staff = "Podjęto próbę ustawienia komunikatu ostrzegawczego serwera bez odpowiednich uprawnień.",
 		warning_message_set_to = "Komunikat ostrzegawczy został ustawiony na `${warningMessage}`.",
 		warning_message_removed = "Komunikat ostrzegawczy został usunięty.",
@@ -174,9 +176,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		no_nearby_vehicles_off = "Wyłączono 'No Nearby Vehicles' Off.",
 		speed_up_progres_bar_on = "Włączono 'Pasek progresji Speed Up'.",
 		speed_up_progres_bar_off = "Wyłączono 'Pasek progresji Speed Up'.",
-        
+
 		report_muted_no_reason = "Zostałeś wyciszony bez okreslonego powodu.",
-		report_muted = "Zostałeś wyciszony z powodu `${reason}`."
+		report_muted = "Zostałeś wyciszony z powodu `${reason}`.",
+
+		user_banned_warning_no_reason = "Ta osoba została zbanowana bez podanego powodu. Automatycznie wygenerowane powiadomienie.",
+		user_banned_warning = "Zbanowałeś te osobę z powodem `${reason}`. Automatycznie wygenerowane powiadomienie."
 	},
 
 	anticheat = {
@@ -385,25 +390,25 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		speed_boost_command_parameter_server_id = "server id",
 		speed_boost_command_parameter_server_id_help = "Jeżeli chcesz przełączyć 'zwiększenie prędkości' dla innego gracza, wpisz po tym jego ID.",
 		speed_boost_command_substitutes = "/zwiekszanie_predkosci",
-		
+
 		indestructibility_command = "/indestructibility",
 		indestructibility_command_help = "Przełącz 'niezniszczalność'.",
 		indestructibility_command_parameter_server_id = "server id",
 		indestructibility_command_parameter_server_id_help = "Jeżeli chcesz przełączyć 'niezniszczalność' dla innego gracza, wpisz po tym jego ID.",
 		indestructibility_command_substitutes = "/niezniszczalnosc",
-		
+
 		no_nearby_vehicles_command = "/no_nearby_vehicles",
 		no_nearby_vehicles_command_help = "Przełącz 'no nearby vehicles'.",
 		no_nearby_vehicles_command_parameter_server_id = "server id",
 		no_nearby_vehicles_command_parameter_server_id_help = "Jeżeli chcesz przełączyć 'no nearby vehicles' dla innego gracza, wpisz po tym jego ID.",
 		no_nearby_vehicles_command_substitutes = "/brakpojazdow",
-		
+
 		speed_up_progress_bar_command = "/speed_up_progress_bar",
 		speed_up_progress_bar_command_help = "Przełącz 'speed up progress bar'.",
 		speed_up_progress_bar_command_parameter_server_id = "server id",
 		speed_up_progress_bar_command_parameter_server_id_help = "Jeżeli chcesz przełączyć 'speed up progress bar' dla innego gracza, wpisz po tym jego ID.",
 		speed_up_progress_bar_command_substitutes = "/speed_up",
-		
+
 		add_cash_command = "/add_cash",
 		add_cash_command_help = "Dodaje komuś pieniądze.",
 		add_cash_command_parameter_amount = "ilość",
@@ -451,7 +456,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		warning_message_command_parameter_message = "message",
 		warning_message_command_parameter_message_help = "The message you would like to display to the players. You can leave this paramater blank to remove the warning message.",
 		warning_message_command_substitutes = "",
-		
+
 		-- base/anticheat
 		model_detect_add_command = "/model_detect_add",
 		model_detect_add_command_help = "Dodano przedmiot do listy detekcji, po restarcie zostnaie usunięty.",
@@ -464,13 +469,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		model_detect_remove_command_parameter_model = "model",
 		model_detect_remove_command_parameter_model_help = "Model, który chciałbyś usunąć..",
 		model_detect_remove_command_substitutes = "/undetect",
-		
+
 		area_detect_add_command = "/area_detect_add",
 		area_detect_add_command_help = "Utwórz obszar, w którym wszystkie pojawiające się w nim istoty zostaną wysłane do ciebie z pewnymi informacjami.",
 		area_detect_add_command_parameter_radius = "promień",
 		area_detect_add_command_parameter_radius_help = "Promień okręgu, w którym obiekty będą wykrywane. Minimalna wartość to „10”, a maksymalna to „5000”. Pozostawienie tego jako pustego spowoduje domyślnie ustawienie „100”.",
 		area_detect_add_command_substitutes = "",
-		
+
 		detection_area_remove_command = "/detection_area_remove",
 		detection_area_remove_command_help = "Usuń strefę detekcji.",
 		detection_area_remove_command_parameter_area_id = "id strefy detekcji.",
@@ -657,7 +662,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		unmute_command_parameter_server_id = "server id",
 		unmute_command_parameter_server_id_help = "ID gracza, którego chcesz odciszyć.",
 		unmute_command_substitutes = "",
-		
+
 		use_measurement_command = "/use_measurement",
 		use_measurement_command_help = "Zastąp preferowany system pomiarów.",
 		use_measurement_command_parameter_measurement = "pomiary",
@@ -763,7 +768,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		security_cameras_health_command = "/security_cameras_health",
 		security_cameras_health_command_help = "Włącza tryb ustalania HP dla kamer",
 		security_cameras_health_command_substitutes = "/cam_health",
-		
+
 		-- game/sound_effects
 		play_sound_command = "/play_sound",
 		play_sound_command_help = "Odtwórz dźwięk dla gracza lub wszystkich graczy.",
@@ -850,7 +855,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		give_key_command_parameter_plate_number_help = "Numer rejestracyjny pojazdu, którego klucze chcesz dać. Jeśli parametr zostanie pusty automatycznie wybrane będzie najbliższy pojazd.",
 		give_key_command_substitutes = "/dajklucze",
 
-	   -- vehicles/modifications
+		-- vehicles/modifications
 		wheel_offset_command = "/wheel_offset",
 		wheel_offset_command_help = "Modyfikuje rozstaw kół pojazdu.",
 		wheel_offset_command_parameter_wheels = "front/back",
@@ -928,7 +933,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 	discord = {
 		one_player = "1 Gracz",
-		multiple_players = "${playerAmount} Graczy"
+		multiple_players = "${playerAmount} Graczy",
+		join_with_fivem = "Dołącz z FiveM",
+		discord_guild = "Discord Guild"
 	},
 
 	errors = {
@@ -1670,7 +1677,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		available_language_codes = "Dostępne języki",
 		ping_pong = "Pong!",
 		ping_response = "${ping}ms (callback time: ${cbTime}ms)",
-		ooc_first_time = "Widzimy, że jeszcze nie użyłeś /ooc! Zanim pozwolimy ci z niego skorzystać, chcielibyśmy dać ci małe ostrzeżenie. Komenda /ooc ma być używane tylko w sytuacjach nagłych, a wszystkie inne mają być na /report - /looc lub powinny być przekierowane na naszego discorda  ${communityDiscord}. To wszystko! Aby zacząć używać komendy /ooc, wpisz /ooc_on. Będziesz mógł ją ponownie wyłączyć za pomocą /ooc_off.",
+		ooc_first_time = "Widzimy, że jeszcze nie użyłeś /ooc! Zanim pozwolimy ci z niego skorzystać, chcielibyśmy dać ci małe ostrzeżenie. Komenda /ooc ma być używane tylko w sytuacjach nagłych, a wszystkie inne mają być na /report - /looc lub powinny być przekierowane na naszego discorda ${communityDiscord}. To wszystko! Aby zacząć używać komendy /ooc, wpisz /ooc_on. Będziesz mógł ją ponownie wyłączyć za pomocą /ooc_off.",
 		ooc_not_logged_in = "Nie jesteś podłączony.",
 		ooc_timed_out = "W tej chwili nie możesz korzystać z czatu OOC. Proszę zaczekać.",
 		ooc_muted_no_reason = "Zostałeś wyciszony z czatu OOC bez określonego powodu.",
@@ -1764,18 +1771,18 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		about_activity_points_title = "O punktach aktywności",
 
 		about_activity_points_text = [[
-            Możesz zdobyć Punkty Aktywności Pracy Obecnie tylko w pracach związanych z medycyną/EMS i ochroną porządku publicznego/policją
-            <br><br>
-            Co minutę, pewna ilość punktów aktywności jest rozdzielana w każdej pracy pomiędzy graczy, którzy są na służbie. Oznacza to, że jeśli na służbie jako policja będzie 4 graczy, każdy z nich otrzyma 25% punktów aktywności w danej minucie. Ilość rozdawanych punktów aktywności jest ustalana na podstawie aktualnej liczby graczy na serwerze i dzielona przez 64.
-            <br><br>
-            Punkty aktywności są resetowane dla wszystkich na początku każdego tygodnia. Jeśli miałeś określoną ilość punktów aktywności, otrzymasz priorytet w kolejce przez cały następny tydzień.
-                <br><br>
-                Punkty aktywności wymagane dla priorytetu kolejki w tym momencie:
-                <ul class="list">
-                <li>400: Niski Priorytet.</li>
-                <li>700: Średni Priorytet.</li>
-                <li>1000: Wysoki Priorytet.</li>
-            </ul>
+			Możesz zdobyć Punkty Aktywności Pracy Obecnie tylko w pracach związanych z medycyną/EMS i ochroną porządku publicznego/policją
+			<br><br>
+			Co minutę, pewna ilość punktów aktywności jest rozdzielana w każdej pracy pomiędzy graczy, którzy są na służbie. Oznacza to, że jeśli na służbie jako policja będzie 4 graczy, każdy z nich otrzyma 25% punktów aktywności w danej minucie. Ilość rozdawanych punktów aktywności jest ustalana na podstawie aktualnej liczby graczy na serwerze i dzielona przez 64.
+			<br><br>
+			Punkty aktywności są resetowane dla wszystkich na początku każdego tygodnia. Jeśli miałeś określoną ilość punktów aktywności, otrzymasz priorytet w kolejce przez cały następny tydzień.
+				<br><br>
+				Punkty aktywności wymagane dla priorytetu kolejki w tym momencie:
+				<ul class="list">
+				<li>400: Niski Priorytet.</li>
+				<li>700: Średni Priorytet.</li>
+				<li>1000: Wysoki Priorytet.</li>
+			</ul>
 		]],
 
 		activity_points_this_week = "Ten tydzień",
@@ -1990,8 +1997,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		frequency_set_to = "częstotliwość została ustawiona na ${frequency}.",
 		frequency_already_set_to = "Częstotliwość jest już ustawiona na ${frequency}.",
 		radio_volume_same = "Głośność radia jest już ustawiona na `${radioVolume}`.",
-		radio_volume_reset = "Głośność radia została  zresetowana.",
-		radio_volume_set = "Głośność radia została  ustawiona na `${radioVolume}`.",
+		radio_volume_reset = "Głośność radia została zresetowana.",
+		radio_volume_set = "Głośność radia została ustawiona na `${radioVolume}`.",
 		radio_volume_current = "Twój obecny poziom głośności radia jest ustawiony na `${radioVolume}`.",
 		radio_volume_current_default = "Twoja aktualna głośność radia jest domyślna.",
 		radio_sound_effects_same = "Głośność efektów dźwiękowych radia jest już ustawiona na `${radioSoundEffects}`.",
@@ -2006,7 +2013,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		offline = "Offline",
 		camera_list = "Lista Kamer",
 		camera = "Kamera ${cameraId}",
-		mrpd = "Mission Row PD",
+		mission_row_pd = "Mission Row PD",
+		pillbox_hospital = "Pillbox Hospital",
 		jewelry_store = "Rockford Hills Jewelry Store",
 		principal_bank = "Principal Bank",
 		bank_1 = "Legion Square Bank",
@@ -2256,10 +2264,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	trackers = {
-        error_finding_tracker = "Wystąpił błąd podczas wyszukiwania twojego GPS.",
-        tracker_visible = "Twój GPS jest teraz widoczny.",
-        tracker_hidden = "Twój GPS jest teraz ukryty.",
-        tracker = "GPS",
+		error_finding_tracker = "Wystąpił błąd podczas wyszukiwania twojego GPS.",
+		tracker_visible = "Twój GPS jest teraz widoczny.",
+		tracker_hidden = "Twój GPS jest teraz ukryty.",
+		tracker = "GPS",
 		stockade_robbery_tracker = "Furgonetka Stockade(10-90)",
 		tracked_vehicle = "Śledzony pojazd (${trackerId})"
 	},
