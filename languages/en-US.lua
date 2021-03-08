@@ -108,6 +108,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		staff_pm_not_user_not_found = "User with server ID ${serverId} was not found.",
 		staff_pm_not_recipient_not_staff = "The player you are attepting to send a message to is not a staff member.",
 		staff_pm_unable_to_message_self = "You are not able to message yourself.",
+		staff_pm_warning = "Staff PM Warning",
+		staff_pm_first_time = "We see you have never used staff PMs before. To respond to a staff PM, use the /staffpm command.",
 
 		illegal_entity_wipe = "Player attempted to wipe entities, but didn't have permissions.",
 		wiped_entities = "Wiped Entities",
@@ -846,6 +848,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		corner_command_help = "Sell drugs to a nearby person. The drug you sell is based on the location you are in.",
 		corner_command_substitutes = "",
 
+		corner_debug_command = "/corner_debug",
+		corner_debug_command_help = "Show all the sell areas.",
+		corner_debug_command_substitutes = "",
+
 		-- vehicles/keys
 		give_key_command = "/give_key",
 		give_key_command_help = "Give a vehicle key to a nearby person.",
@@ -1388,6 +1394,9 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		raspberry = "Raspberry",
 		raspberry_description = "https://i.redd.it/jbcj0uqbihg41.jpg",
+
+		pigeon_milk = "Pigeon Milk",
+		pigeon_milk_description = "\"Shoulda drank pigeon milk that stuff will knock you right out\"\nMilk extracted by Vedder with love.",
 
 		weapon_dagger = "Antique Cavalry Dagger",
 		weapon_bat = "Baseball Bat",
@@ -2344,7 +2353,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		corner_ped_title = "Corner Ped",
 		corner_ped_already_active = "There is already a corner ped waiting for you.",
 		no_node_found = "No nearby nodes for peds found.",
-		no_sell_area = "You are not in an area where peds are interested in drugs."
+		no_sell_area = "You are not in an area where peds are interested in drugs.",
+		inside_areas_none = "Inside Areas: None",
+		inside_areas = "Inside Areas: ${insideAreas}"
 	},
 
 	stockade = {
