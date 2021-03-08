@@ -89,7 +89,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		report_logs_title = "Zgłoś",
 		report_logs_details = "${consoleName} stworzył zgłoszenie z następującą wiadomością: `${reportMessage}`",
 
-		announcement_title = "Ogłoszenie Administracji",
+		announcement_staff_title = "Ogłoszenie Administracji",
+        announcement_server_title = "Ogłoszenie",
+
 		announcement_logs_title = "Serwerowe Ogłoszenie",
 		announcement_logs_details = "${consoleName} Ogłosił dla całego serwera: `${announcementMessage}`",
 		announcement_not_admin = "Sprobowano napisać ogłoszenie admnistracyjne.",
@@ -176,7 +178,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		speed_up_progres_bar_off = "Wyłączono 'Pasek progresji Speed Up'.",
         
 		report_muted_no_reason = "Zostałeś wyciszony bez okreslonego powodu.",
-		report_muted = "Zostałeś wyciszony z powodu `${reason}`."
+		report_muted = "Zostałeś wyciszony z powodu `${reason}`.",
+
+        user_banned_warning_no_reason = "Ta osoba została zbanowana bez podanego powodu. Automatycznie wygenerowane powiadomienie.",
+		user_banned_warning = "Zbanowałeś te osobę z powodem `${reason}`. Automatycznie wygenerowane powiadomienie."
 	},
 
 	anticheat = {
@@ -928,7 +933,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 	discord = {
 		one_player = "1 Gracz",
-		multiple_players = "${playerAmount} Graczy"
+		multiple_players = "${playerAmount} Graczy",
+        join_with_fivem = "Dołącz z FiveM",
+		discord_guild = "Discord Guild"
 	},
 
 	errors = {
@@ -2006,7 +2013,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		offline = "Offline",
 		camera_list = "Lista Kamer",
 		camera = "Kamera ${cameraId}",
-		mrpd = "Mission Row PD",
+        mission_row_pd = "Mission Row PD",
+		pillbox_hospital = "Pillbox Hospital",
 		jewelry_store = "Rockford Hills Jewelry Store",
 		principal_bank = "Principal Bank",
 		bank_1 = "Legion Square Bank",
