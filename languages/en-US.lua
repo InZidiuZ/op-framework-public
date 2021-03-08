@@ -89,7 +89,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		report_logs_title = "Report",
 		report_logs_details = "${consoleName} created a report with the following message: `${reportMessage}`",
 
-		announcement_title = "Staff Announcement",
+		announcement_staff_title = "Staff Announcement",
+		announcement_server_title = "Server Announcement",
+
 		announcement_logs_title = "Server Wide Announcement",
 		announcement_logs_details = "${consoleName} broadcasted the following message to the entire server: `${announcementMessage}`",
 		announcement_not_admin = "Attempted to post a staff announcement.",
@@ -177,6 +179,9 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		report_muted_no_reason = "You have been muted from the report command without a specified reason.",
 		report_muted = "You have been muted from the report command for reason `${reason}`.",
+
+		user_banned_warning_no_reason = "I banned this person without a specified reason. This warning was generated automatically as a result of the ban.",
+		user_banned_warning = "I banned this person with the reason `${reason}`. This warning was generated automatically as a result of the ban."
 	},
 
 	anti_cheat = {
@@ -928,7 +933,9 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	discord = {
 		one_player = "1 player",
-		multiple_players = "${playerAmount} players"
+		multiple_players = "${playerAmount} players",
+		join_with_fivem = "Join with FiveM",
+		discord_guild = "Discord Guild"
 	},
 
 	errors = {
