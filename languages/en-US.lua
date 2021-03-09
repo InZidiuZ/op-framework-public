@@ -119,8 +119,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		you_have_been_kicked = "You have been kicked by ${kicker} for reason `${reason}`.",
 		you_have_been_kicked_no_reason = "You have been kicked without a specified reason by ${kicker}.",
 
+		logs_player_kicked_title = "Player Kicked",
+		logs_player_kicked_details = "${consoleName} has been kicked from the server by ${kicker} for reason `${reason}`.",
+		logs_player_kicked_no_reason_details = "${consoleName} has been kicked from the server by ${kicker} without a specified reason.",
+
 		you_have_been_banned = "You have been banned by ${banner} for reason `${reason}`.",
 		you_have_been_banned_no_reason = "You have been banned without a specified reason by ${banner}.",
+
+		logs_player_banned_title = "Player Banned",
+		logs_player_banned_details = "${consoleName} has been banned from the server by ${kicker} for reason `${reason}`.",
+		logs_player_banned_no_reason_details = "${consoleName} has been banned from the server by ${kicker} without a specified reason.",
 
 		player_kicked = "${consoleName} has been kicked from the server.",
 		player_banned = "${consoleName} has been banned from the server.",
