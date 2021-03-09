@@ -108,6 +108,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		staff_pm_not_user_not_found = "Użytkownik z Server ID ${serverId} nie został znaleziony.",
 		staff_pm_not_recipient_not_staff = "Gracz, do którego chcesz wysłać wiadomość, nie jest członkiem administracji.",
 		staff_pm_unable_to_message_self = "Nie mozesz wysłać wiadomości do samego siebie.",
+		staff_pm_warning = "Staff PM ostrzeżenie",
+		staff_pm_first_time = "Nie używałes wcześniej tej komendy. By odpowiedzieć na staff PM, użyj komendy /staffpm",
 
 		illegal_entity_wipe = "Gracz spróbował wyczyścić obiekty, lecz nie posiadano właściwych permisji.",
 		wiped_entities = "Wyczyszczono objekty",
@@ -846,6 +848,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		corner_command_help = "Sprzedaj narkotyki pobliskiej osobie. Narkotyk który sprzedajesz bazowany jest na twoim położeniu.",
 		corner_command_substitutes = "/klient",
 
+		corner_debug_command = "/corner_debug",
+		corner_debug_command_help = "Pokazuje sterfy sprzedaży.",
+		corner_debug_command_substitutes = "/strefy",
+
 		-- vehicles/keys
 		give_key_command = "/give_key",
 		give_key_command_help = "Daj klucze do pojazdu najbliższej osobie.",
@@ -1389,6 +1395,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		raspberry = "Raspberry",
 		raspberry_description = "https://i.redd.it/jbcj0uqbihg41.jpg",
 
+		pigeon_milk = "Ptasie mleczko",
+		pigeon_milk_description = "Napój o możliwie największej zawartości białka w 100ml",
+
 		weapon_dagger = "Antyczny sztylet",
 		weapon_bat = "Kij baseball'owy",
 		weapon_bottle = "Rozbita butelka",
@@ -1608,7 +1617,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		move_to_put_fake_plate = "Stań tutaj aby nałożyć fałszywe rejestracje.",
 		unable_to_repair = "Nie możesz naprawić pojazdu gdy w środku są inni gracze.",
 		unable_to_clean = "Nie możesz wyczyścić pojazdu gdy w środku są inni gracze.",
-		failed_lockpicking = "Nie udało Ci się złaać zamka",
+		failed_lockpicking = "Nie udało Ci się złamać zamka",
 		lockpicking_succeeded = "Udało Ci się złamać zamek.",
 		hotwiring_vehicle = "Próbujesz odpalić silnik.",
 		lockpick_broke = "Wytrych się złamał.",
@@ -2340,11 +2349,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 	-- illegal/*
 	corner = {
-		corner_ped = "Zainteresowany Klient - ${cornerPedDistance}m (${cornerPedTimer})",
-		corner_ped_title = "Zainteresowany Klient",
-		corner_ped_already_active = "Czeka już na Ciebie zainteresowany Klient.",
+		corner_ped = "Zainteresowany klient - ${cornerPedDistance}m (${cornerPedTimer})",
+		corner_ped_title = "Zainteresowany klient",
+		corner_ped_already_active = "Zainteresowany klient już czeka.",
 		no_node_found = "Nie znaleziono pobliskich punktów dla klientów.",
-		no_sell_area = "Nie jesteś w obszarze, w którym klienci są zainteresowani narkotykami."
+		no_sell_area = "Nie jesteś w obszarze, w którym klienci są zainteresowani narkotykami.",
+		inside_areas_none = "Obszar wewnętrzny: brak",
+		inside_areas = "Obszar wewnętrzny: ${insideAreas}"
 	},
 
 	stockade = {
