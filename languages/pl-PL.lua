@@ -119,8 +119,16 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		you_have_been_kicked = "Zostałeś wyrzucony przez ${kicker} z powodem `${reason}`.",
 		you_have_been_kicked_no_reason = "Zostałeś wyrzucony z serwera beż nadanego powodu przez ${kicker}.",
 
+		logs_player_kicked_title = "Gracz wyrzucony",
+		logs_player_kicked_details = "${consoleName} został wyrzucony z serwera przez ${kicker} z powodem `${reason}`.",
+		logs_player_kicked_no_reason_details = "${consoleName} został wyrzucony z serwera przez ${kicker} bez podanego.",
+
 		you_have_been_banned = "Zostałeś zbanowany przez ${banner} za `${reason}`.",
 		you_have_been_banned_no_reason = "Zostałeś zbanowany z serwera beż nadanego powodu przez ${banner}.",
+
+		logs_player_banned_title = "Gracz zbanowany",
+		logs_player_banned_details = "${consoleName} został zbanowany na serwerze przez ${kicker} z powodu `${reason}`.",
+		logs_player_banned_no_reason_details = "${consoleName} został zbanowany na serwerze przez ${kicker} bez podanego powodu.",
 
 		player_kicked = "${consoleName} Został wyrzucony z serwera.",
 		player_banned = "${consoleName} Został zbanowany z serwera.",
@@ -585,6 +593,18 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		revive_command_parameter_remove_injuries_help = "Ustaw dowolną wartość oprócz `0` albo `false` by wyleczyć wszystkie rany również.",
 		revive_command_substitutes = "",
 
+		recent_deaths = "/recent_deaths",
+		recent_deaths_help = "Wyświetli listę osób, które w ostatnim czasie zgineły.",
+		recent_deaths_parameter_amount = "ilość",
+		recent_deaths_parameter_amount_help = "Ilość zgonów, które chciałbyś wyświetlić. Przyjmowane wartości to od 1 do 100, jeżeli pozostawisz puste to domyślnie wyświetli 20.",
+		recent_deaths_substitutes = "/check_deaths",
+
+		player_death = "/player_death",
+		player_death_help = "Zdobądź informację o ostatnich zgonach konkretnego gracza.",
+		player_death_parameter_server_id = "server id",
+		player_death_parameter_server_id_help = "Pozostaw pustą tą wartość to wyświetlisz Twoją listę zgonów.",
+		player_death_substitutes = "/check_death",
+
 		-- game/hud
 		watermark_command = "/watermark",
 		watermark_command_help = "Wyłącz/Włącz znak wodny",
@@ -807,6 +827,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		tracker_command_help = "włącz/wyłącz swój gps.",
 		tracker_command_substitutes = "/gps",
 
+		trackers_split_command = "/trackers_split",
+		trackers_split_command_help = "Użyj do przełączenia GPS na rozdzielone pozycjonowanie.",
+		trackers_split_command_substitutes = "/gps_split",
+
 		-- game/shield
 		shield_command = "/shield",
 		shield_command_help = "Wyjęcie tarczy policyjnej",
@@ -1013,6 +1037,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		church = "Kościół"
 	},
 
+	blockage = {
+		restricted_area = "Ten teren jest strzeżony. ZAWRÓĆ!"
+	},
+
 	calibrate = {
 		none = "Żaden",
 		mouse_button = "Przycisk myszy ${mouseButton}",
@@ -1125,6 +1153,18 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		revived_player_removed_injuries_details = "${consoleName} revived ${targetConsoleName} and removed their injuries.",
 		revived_player_title = "Revived Player",
 		revived_player_details = "${consoleName} revived ${targetConsoleName}.",
+		get_recent_deaths_not_staff = "Player attempted to get recent deaths, but didn't have correct permissions to do so.",
+		get_player_last_death_staff = "Player attempted to get a player's last death, but didn't have correct permissions to do so.",
+		recent_deaths = "Ostatnie zgony.",
+		no_recent_deaths = "Brak zgonów w ostatnim czasie.",
+		recent_deaths_list_entry = "${recentDeathId}. ${consoleName} zginał ${timer} sekund temu.",
+		target_user_not_found = "Wybrany gracz z tym ID nie został odnaleziony.",
+		no_server_id_sent = "Brak podanego ID.",
+		no_permissions = "Brak uprawnień.",
+		user_not_found = "Gracz nieznaleziony.",
+		player_death = "Zgon gracza",
+		player_death_recent = "${consoleName} zginał ${timer} sekund temu.",
+		no_recent_death = "${consoleName} nie zginał w ostatnim czasie."
 	},
 
 	hud = {
@@ -2241,12 +2281,6 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		exit_office_shop = "Wyjdż z Biura",
 		exit_office_shop_interact = "[${InteractionKey}] Wejdż z Biura",
 
-		enter_exclusive_dealership = "Wejdż do Exclusive Dealership",
-		enter_exclusive_dealership_interact = "[${InteractionKey}] Wejdż do Exclusive Dealership",
-
-		exit_exclusive_dealership = "Wyjdż z Exclusive Dealership",
-		exit_exclusive_dealership_interact = "[${InteractionKey}] Wyjdż z Exclusive Dealership",
-
 		enter_cocaine_lab = "Wejdż",
 		enter_cocaine_lab_interact = "[${InteractionKey}] Wejdż",
 
@@ -2277,8 +2311,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		tracker_visible = "Twój GPS jest teraz widoczny.",
 		tracker_hidden = "Twój GPS jest teraz ukryty.",
 		tracker = "GPS",
+		trackers = "GPSy",
 		stockade_robbery_tracker = "Furgonetka Stockade(10-90)",
-		tracked_vehicle = "Śledzony pojazd (${trackerId})"
+		tracked_vehicle = "Śledzony pojazd (${trackerId})",
+		tracker_character = "${firstName} ${lastName}",
+		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName}",
+		trackers_in_category = "GPSy będą teraz zgrupowane",
+		trackers_split = "GPSy będą teraz rodzielone indywidualnie."
 	},
 
 	training = {
