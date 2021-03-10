@@ -593,6 +593,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		revive_command_parameter_remove_injuries_help = "Set this to any value except for `0` or `false` to remove all injuries as well.",
 		revive_command_substitutes = "",
 
+		recent_deaths = "/recent_deaths",
+		recent_deaths_help = "Get the most recent deaths.",
+		recent_deaths_parameter_amount = "amount",
+		recent_deaths_parameter_amount_help = "The amount of deaths you'd like to receive. Valid values are between `1` and `100`. Leaving this as blank will auto-select `20`.",
+		recent_deaths_substitutes = "/check_deaths",
+
+		player_death = "/player_death",
+		player_death_help = "Get a player's recent death.",
+		player_death_parameter_server_id = "server id",
+		player_death_parameter_server_id_help = "The player's server ID. Leaving this as blank will auto-select your own ID.",
+		player_death_substitutes = "/check_death",
+
 		-- game/hud
 		watermark_command = "/watermark",
 		watermark_command_help = "Toggle the center-top watermark.",
@@ -815,6 +827,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		tracker_command_help = "Toggle your tracker's visibility.",
 		tracker_command_substitutes = "",
 
+		trackers_split_command = "/trackers_split",
+		trackers_split_command_help = "Toggle between having trackers stored inside of a category on the map and having them split.",
+		trackers_split_command_substitutes = "",
+
 		-- game/shield
 		shield_command = "/shield",
 		shield_command_help = "Toggle the ballistic shield.",
@@ -1021,6 +1037,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		church = "Church"
 	},
 
+	blockage = {
+		restricted_area = "This is a restircted area. Please return!"
+	},
+
 	calibrate = {
 		none = "None",
 		mouse_button = "Mouse Button ${mouseButton}",
@@ -1133,6 +1153,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		revived_player_removed_injuries_details = "${consoleName} revived ${targetConsoleName} and removed their injuries.",
 		revived_player_title = "Revived Player",
 		revived_player_details = "${consoleName} revived ${targetConsoleName}.",
+		get_recent_deaths_not_staff = "Player attempted to get recent deaths, but didn't have correct permissions to do so.",
+		get_player_last_death_staff = "Player attempted to get a player's last death, but didn't have correct permissions to do so.",
+		recent_deaths = "Recent Deaths",
+		no_recent_deaths = "There are no recent deaths.",
+		recent_deaths_list_entry = "${recentDeathId}. ${consoleName} died ${timer} seconds ago.",
+		target_user_not_found = "Target user not found.",
+		no_server_id_sent = "No server ID sent.",
+		no_permissions = "No permissions.",
+		user_not_found = "User not found.",
+		player_death = "Player Death",
+		player_death_recent = "${consoleName} last died ${timer} seconds ago.",
+		no_recent_death = "${consoleName} has not died recently."
 	},
 
 	hud = {
@@ -2249,12 +2281,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		exit_office_shop = "Exit Office",
 		exit_office_shop_interact = "[${InteractionKey}] Exit Office",
 
-		enter_exclusive_dealership = "Enter Exclusive Dealership",
-		enter_exclusive_dealership_interact = "[${InteractionKey}] Enter Exclusive Dealership",
-
-		exit_exclusive_dealership = "Exit Exclusive Dealership",
-		exit_exclusive_dealership_interact = "[${InteractionKey}] Exit Exclusive Dealership",
-
 		enter_cocaine_lab = "Enter Cocaine Lab",
 		enter_cocaine_lab_interact = "[${InteractionKey}] Enter Cocaine Lab",
 
@@ -2285,8 +2311,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		tracker_visible = "Your tracker is now visible.",
 		tracker_hidden = "Your tracker is now hidden.",
 		tracker = "Tracker",
+		trackers = "Trackers",
 		stockade_robbery_tracker = "Stockade Truck (10-78)",
-		tracked_vehicle = "Tracked Vehicle (${trackerId})"
+		tracked_vehicle = "Tracked Vehicle (${trackerId})",
+		tracker_character = "${firstName} ${lastName}",
+		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName}",
+		trackers_in_category = "Trackers will now be stored inside of a category on the map.",
+		trackers_split = "Trackers will now be split into individual blips."
 	},
 
 	training = {
