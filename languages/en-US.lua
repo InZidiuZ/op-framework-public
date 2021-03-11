@@ -1429,6 +1429,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		zombie_pill = "Zombie Pill",
 		zombie_pill_description = "A strange pill that does even stranger things... Swallow at your own risk.",
 
+		acid = "Acid",
+		acid_description = "Makes you high permanently. There's no escaping it.",
+
 		self_driving_chip = "Self-Driving Chip",
 		self_driving_chip_description = "Dead deers everywhere... fucking hilarious.",
 
