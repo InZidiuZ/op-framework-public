@@ -1429,6 +1429,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		zombie_pill = "Tabletka zombie",
 		zombie_pill_description = "Nowy narkotyk, który oddziałowuje na zmyłsy ludzkie jak nic innego. Bad trip po mecie to nic przy tym. Używać z rozwagą.",
 
+		acid = "LSD",
+		acid_description = "Zastanów się dwa razy zanim to połkniesz, może to być ostatni raz.",
+
 		self_driving_chip = "Chip autonomiczny",
 		self_driving_chip_description = "Chip pozwalający wgrać oprogramowanie 'JD2137', software zmienia pojazd w samowystarczalną jednostkę autonomiczną",
 
