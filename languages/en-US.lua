@@ -84,6 +84,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		spawned_item_details = "${consoleName} spawned in ${amount}x `${itemName}` for themselves.",
 		spawned_item_for_player_title = "Spawned Item For Player",
 		spawned_item_for_player_details = "${consoleName} spawned in ${amount}x `${itemName}` for ${targetConsoleName}.",
+		spawned_item_for_everyone_title = "Spawned Item For Everyone",
+		spawned_item_for_everyone_details = "${consoleName} spawned in ${amount}x `${itemName}` for everyone.",
 
 		report_title = "REPORT ${reporterName}",
 		report_logs_title = "Report",
@@ -127,8 +129,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		you_have_been_banned_no_reason = "You have been banned without a specified reason by ${banner}.",
 
 		logs_player_banned_title = "Player Banned",
-		logs_player_banned_details = "${consoleName} has been banned from the server by ${kicker} for reason `${reason}`.",
-		logs_player_banned_no_reason_details = "${consoleName} has been banned from the server by ${kicker} without a specified reason.",
+		logs_player_banned_details = "${consoleName} has been banned from the server by ${banner} for reason `${reason}`.",
+		logs_player_banned_no_reason_details = "${consoleName} has been banned from the server by ${banner} without a specified reason.",
 
 		player_kicked = "${consoleName} has been kicked from the server.",
 		player_banned = "${consoleName} has been banned from the server.",
@@ -167,6 +169,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		no_item_name = "No item name provided.",
 		invalid_item_name = "${itemName} is not a valid item name.",
 		item_spawned = "Spawned ${amount}x `${itemName}` for ${consoleName}.",
+		item_spawned_for_everyone = "Spawned ${amount}x `${itemName}` for everyone.",
 
 		set_warning_message_not_staff = "Attempted to set the server's warning message without proper permissions.",
 		warning_message_set_to = "The warning message has been set to `${warningMessage}`.",
@@ -1441,6 +1444,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		pigeon_milk = "Pigeon Milk",
 		pigeon_milk_description = "\"Shoulda drank pigeon milk that stuff will knock you right out\"\nMilk extracted by Vedder with love.",
 
+		boombox = "Boombox",
+		boombox_description = "Play music and be obnoxious anywhere, any time!",
+
 		weapon_dagger = "Antique Cavalry Dagger",
 		weapon_bat = "Baseball Bat",
 		weapon_bottle = "Broken Bottle",
@@ -1787,9 +1793,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		press_to_open = "Press ~INPUT_CONTEXT~ to open this Notepad.",
 		notepad_busy = "Someone else is in this notepad.",
 		dropped_notepad_title = "Notepad Dropped",
-		dropped_notepad_title_details = "${consoleName} dropped a notepad with text `${text}`.",
+		dropped_notepad_text_and_pixels_title_details = "${consoleName} dropped a notepad with a drawing and text `${text}`.",
+		dropped_notepad_text_title_details = "${consoleName} dropped a notepad with text `${text}`.",
+		dropped_notepad_pixels_title_details = "${consoleName} dropped a notepad with a drawing.",
+		dropped_notepad_pixels_penis_title_details = "${consoleName} dropped a notepad with a drawing that seems to resemble a penis.",
 		updated_notepad_title = "Notepad Updated",
-		updated_notepad_title_details = "${consoleName} updated a notepad with text `${text}`."
+		updated_notepad_text_and_pixels_title_details = "${consoleName} updated a notepad with a drawing and text `${text}`.",
+		updated_notepad_text_title_details = "${consoleName} updated a notepad with text `${text}`.",
+		updated_notepad_pixels_title_details = "${consoleName} updated a notepad with a drawing.",
+		updated_notepad_pixels_penis_title_details = "${consoleName} updated a notepad with a drawing that seems to resemble a penis."
 	},
 
 	overview = {
@@ -2039,6 +2051,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		
 	},
 
+	players = {
+		player_left = "Player Left [${serverId}]"
+	},
+
 	radio = {
 		frequency = "Frequency",
 		switch = "Switch",
@@ -2069,6 +2085,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		pillbox_hospital = "Pillbox Hospital",
 		jewelry_store = "Rockford Hills Jewelry Store",
 		principal_bank = "Principal Bank",
+		boilingbroke_penitentiary = "Boilingbroke Penitentiary",
 		bank_1 = "Legion Square Bank",
 		bank_2 = "Rockford Hills Bank",
 		bank_3 = "Alta Bank",
@@ -2356,7 +2373,10 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	voice = {
-		illegal_radio_frequency = "Attempting to access illegal radio frequencies."
+		illegal_radio_frequency = "Attempting to access illegal radio frequencies.",
+		voice_chat = "Voice Chat",
+		voice_server_connected = "Connected to the voice server. Sending voice data to relevant players.",
+		voice_server_disconnected = "Disconnected from the voice server. Waiting for connection."
 	},
 
 	yoga = {
@@ -2519,7 +2539,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		ui_close_menu = "Close Menu",
 		garage_letter = "Garage ${letter}",
 		no_vehicles_impounded = "None of your vehicles are impounded!",
-		you_must_retrieve_this_vehicle = "You will have to retrieve this vehicle in order to get access to it."
+		you_must_retrieve_this_vehicle = "You will have to retrieve this vehicle in order to get access to it.",
+		garage = "Garage",
+		retrieved_vehicle_logs_title = "Retrieved Vehicle",
+		retrieved_vehicle_logs_details = "${consoleName} retrieved vehicle with plate `${plate}` for $250."
 	},
 
 	keys = {
