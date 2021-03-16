@@ -84,6 +84,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		spawned_item_details = "${consoleName} zrespiono ${amount}x `${itemName}` dla siebie.",
 		spawned_item_for_player_title = "Zrespiono przedmiot dla gracza",
 		spawned_item_for_player_details = "${consoleName} zrespiono w ${amount}x `${itemName}` dla ${targetConsoleName}.",
+		spawned_item_for_everyone_title = "Zrespiono dla wszystkich",
+		spawned_item_for_everyone_details = "${consoleName} zerspiono w ilosci ${amount}x `${itemName}` dla wsztstkich.",
 
 		report_title = "Zgłoś ${reporterName}",
 		report_logs_title = "Zgłoś",
@@ -167,6 +169,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		no_item_name = "Nie podano nazwy przedmiotu.",
 		invalid_item_name = "${itemName} jest niepoprawną nawzą przedmiotu.",
 		item_spawned = "Zespawnował ${amount}x `${itemName}` dla ${consoleName}.",
+		item_spawned_for_everyone = "Zrespiono ${amount}x `${itemName}` dla wszystkich.",
 
 		set_warning_message_not_staff = "Podjęto próbę ustawienia komunikatu ostrzegawczego serwera bez odpowiednich uprawnień.",
 		warning_message_set_to = "Komunikat ostrzegawczy został ustawiony na `${warningMessage}`.",
@@ -1441,6 +1444,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		pigeon_milk = "Ptasie mleczko",
 		pigeon_milk_description = "Napój o możliwie największej zawartości białka w 100ml",
 
+		boombox = "Boombox",
+		boombox_description = "Słuchaj swojej ulubionej muzyki o każdej porze dnia i gdzie chcesz.",
+
 		weapon_dagger = "Antyczny sztylet",
 		weapon_bat = "Kij baseball'owy",
 		weapon_bottle = "Rozbita butelka",
@@ -1786,10 +1792,16 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		placeholder = "Zrób notatki",
 		press_to_open = "Naciśnij ~INPUT_CONTEXT~ by otworzyć ten notatnik.",
 		notepad_busy = "Ktoś inny używa tego notatnika.",
-		dropped_notepad_title = "Notatnik upuszczony",
-		dropped_notepad_title_details = "${consoleName} Upuszczono uzupełniony notatnik `${text}`.",
-		updated_notepad_title = "Zaktualizowany notatnik",
-		updated_notepad_title_details = "${consoleName} Zaktualizowano notatnik treścią `${text}`."
+		dropped_notepad_title = "Notatnik upuszczony.",
+		dropped_notepad_text_and_pixels_title_details = "${consoleName} upuścił notatnik z rysunkiem i tekstem. `${text}`.",
+		dropped_notepad_text_title_details = "${consoleName} upuścił notatnik z tekstem. `${text}`.",
+		dropped_notepad_pixels_title_details = "${consoleName} upuścil notatnik z rysunkiem..",
+		dropped_notepad_pixels_penis_title_details = "${consoleName} upuścił notatnik z rysunkiem przypominającym kutasa.",
+		updated_notepad_title = "Notatnik zauktualizowany.",
+		updated_notepad_text_and_pixels_title_details = "${consoleName} zaktualizował notatnik rysunkiem i tekstem. `${text}`.",
+		updated_notepad_text_title_details = "${consoleName} zaktualizował notatnik tekstem `${text}`.",
+		updated_notepad_pixels_title_details = "${consoleName} zaktualizował notatnik rysunkiem.",
+		updated_notepad_pixels_penis_title_details = "${consoleName} zaktualizował notatnik z rysunkiem przypominającym kutasa."
 	},
 
 	overview = {
@@ -2039,6 +2051,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		
 	},
 
+		players = {
+		player_left = "Gracz opuścił serwer [${serverId}]"
+	},
+
 	radio = {
 		frequency = "Częstotliwość:",
 		switch = "Zmień",
@@ -2069,6 +2085,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		pillbox_hospital = "Pillbox Hospital",
 		jewelry_store = "Rockford Hills Jewelry Store",
 		principal_bank = "Principal Bank",
+		boilingbroke_penitentiary = "Zakład karny Boilingbroke",
 		bank_1 = "Legion Square Bank",
 		bank_2 = "Rockford Hills Bank",
 		bank_3 = "Alta Bank",
@@ -2356,7 +2373,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	voice = {
-		illegal_radio_frequency = "Próba uzyskania dostępu do nielegalnych częstotliwości radiowych."
+		illegal_radio_frequency = "Próba uzyskania dostępu do nielegalnych częstotliwości radiowych.",
+		voice_chat = "Czat głosowy",
+		voice_server_connected = "Dołączyłeś poprawnie do czatu głosowego.",
+		voice_server_disconnected = "Odłączono od czatu głosowego, oczekiwanie na ponowne połączenie."
 	},
 
 	yoga = {
@@ -2519,7 +2539,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		ui_close_menu = "Zamknij Menu",
 		garage_letter = "Garaż ${letter}",
 		no_vehicles_impounded = "Żaden z twoich pojazdów nie jest na parkingu policyjnym!",
-		you_must_retrieve_this_vehicle = "Będziesz musiał odzyskać ten pojazd, aby uzyskać do niego dostęp."
+		you_must_retrieve_this_vehicle = "Będziesz musiał odzyskać ten pojazd, aby uzyskać do niego dostęp.",
+		garage = "Garaż",
+		retrieved_vehicle_logs_title = "Odzyskany pojazd",
+		retrieved_vehicle_logs_details = "${consoleName} odzyskano pojazd o rejestracji `${plate}` za $250."
 	},
 
 	keys = {
