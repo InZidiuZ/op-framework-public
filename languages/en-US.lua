@@ -25,8 +25,10 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	emotes = {
 		get_in_trunk = "Press ~INPUT_ENTER~ to enter trunk",
+		put_boombox_in_trunk = "Press ~INPUT_ENTER~ to put boombox in the trunk",
 		put_player_in_trunk = "Press ~INPUT_ENTER~ to put the player in the trunk",
-		trunk_interaction_display = "[${VehicleEnterKey}] Climb Out [${InteractionKey}] Open/Close Trunk"
+		trunk_interaction_display = "[${VehicleEnterKey}] Climb Out [${InteractionKey}] Open/Close Trunk",
+		boombox_already_in_trunk = "There is already a boombox in the trunk."
 	},
 
 	-- base/*
@@ -239,7 +241,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		job_medium = "medium job",
 		job_high = "high job",
 
-		banned_globally = "You have been globally banned from all OP-FW servers.\n\nBan Hash: ${banHash}\nBan Reason: ${banReason}\n\nIf you believe this to be a false ban, please join the OP-FW discord guild for information on how to appeal at discord.gg/yRBWkjb",
+		banned_globally = "You have been globally banned from all OP-FW servers.\n\nBan Hash: ${banHash}\nBan Reason: ${banReason}\n\nIf you believe this to be a false ban, please join the OP-FW discord guild for information on how to appeal at ${frameworkDiscord}",
 		banned_locally = "You have been banned from ${communityName}.\n\nBan Hash: ${banHash}\nBanned By: ${creatorName}\nBan Reason: ${banReason}\nTimestamp: ${timestamp}\n\n${indefiniteOrExpires}\n\nJoin our discord guild for information on how to appeal at ${communityDiscord}.",
 		ban_indefinite = "This ban is indefinite.",
 		ban_expires = "This ban will expire in ${timeLeft}.",
@@ -308,13 +310,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		announce_command_parameter_message_help = "The message you would like to broadcast.",
 		announce_command_help = "",
 
-		staff_pm_command = "/staffpm",
+		staff_pm_command = "/staff_pm",
 		staff_pm_command_help = "Send a message to either a staff member, or to a player as a staff member.",
 		staff_pm_command_parameter_server_id = "server id",
 		staff_pm_command_parameter_server_id_help = "The player's server ID you are trying to message.",
 		staff_pm_command_parameter_message = "message",
 		staff_pm_command_parameter_message_help = "The message you would like to send.",
-		staff_pm_command_substitutes = "",
+		staff_pm_command_substitutes = "/staffpm",
 
 		staff_command = "/staff",
 		staff_command_help = "Broadcast a message to all active staff members.",
@@ -533,6 +535,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		leaderboard_command_help = "Check the playtime leaderboard.",
 		leaderboard_command_substitutes = "",
 
+		-- game/audio
+		audio_debug_command = "/audio_debug",
+		audio_debug_command_help = "Toggle the audio debug.",
+		audio_debug_command_substitutes = "",
+
 		-- game/calibrate
 		calibrate_command = "/calibrate",
 		calibrate_command_help = "Toggle the calibrate UI.",
@@ -549,6 +556,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		cinematic_command_parameter_bar_height = "bar height",
 		cinematic_command_parameter_bar_height_help = "The height of the bars. Must be between 0 and 50 (percentage). The default is 10. Leaving it blank will set it to the value you last used.",
 		cinematic_command_substitutes = "",
+
+		-- game/culling
+		culling_debug_command = "/culling_debug",
+		culling_debug_command_help = "Toggle the culling debug.",
+		culling_debug_command_substitutes = "",
 
 		-- game/dashcam
 		unit_id_command = "/unit_id",
@@ -693,6 +705,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		use_measurement_command_parameter_measurement = "measurement",
 		use_measurement_command_parameter_measurement_help = "The measurement system you would like to use. Valid values are `Imperial` and `Metric`. You can leave this paramater as blank or as an invalid value to use default.",
 		use_measurement_command_substitutes = "/measurement, /meas",
+
+		no_copyright_command = "/no_copyright",
+		no_copyright_command_help = "This command will disable all potentially copyrighted sounds coming from the framework when enabled.",
+		no_copyright_command_substitutes = "",
 
 		-- game/money
 		cash_command = "/cash",
@@ -870,6 +886,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		blackout_command_help = "Toggle whether a blackout is active or not.",
 		blackout_command_substitutes = "",
 
+		-- game/voice
+		voice_debug_command = "/voice_debug",
+		voice_debug_command_help = "Toggle the voice debug.",
+		voice_debug_command_substitutes = "",
+
 		-- illegal/corner
 		corner_command = "/corner",
 		corner_command_help = "Sell drugs to a nearby person. The drug you sell is based on the location you are in.",
@@ -1029,6 +1050,10 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	-- game/*
+	audio = {
+		audio_id = "Audio ${audioId}"
+	},
+
 	blindfold = {
 		blindfolding_player = "Putting Paper Bag On Player",
 		blindfolding_self = "Putting On Paper Bag",
@@ -1042,6 +1067,22 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	blockage = {
 		restricted_area = "This is a restircted area. Please return!"
+	},
+
+	boomboxes = {
+		store_boombox = "Store the Boombox in your inventory",
+		put_boombox_down = "Put the Boombox on the ground",
+		use_boombox = "Use the Boombox",
+		hold_to_pick_boombox_up = "Hold to pick the Boombox up",
+		illegal_boombox_item_id = "Attempting to use a boombox item with with an illegal item id.",
+		boombox_id = "Boombox #${boomboxId}",
+		music = "Music",
+		play = "Play",
+		pause = "Pause",
+		skip_song = "Skip Song",
+		volume = "Volume",
+		logs_attempted_to_add_song_title = "Attempted To Add Song",
+		logs_attempted_to_add_song_details = "${consoleName} attempted to add a song with video ID `${videoId}` to boombox with ID `${boomboxId}`."
 	},
 
 	calibrate = {
@@ -1065,7 +1106,7 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	christmas = {
-		claimed_advent_calendar_hatch_details = "Claimed Advent Calendar Hatch",
+		claimed_advent_calendar_hatch_title = "Claimed Advent Calendar Hatch",
 		claimed_money = "${consoleName} claimed $${amount}.",
 		claimed_item = "${consoleName} claimed `${itemLabel}`.",
 		claimed_vehicle = "${consoleName} claimed a Christmas-special vehicle.",
@@ -1222,6 +1263,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		vehicle_locked = "The vehicle is locked.",
 		press_to_access_store = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to access the store.",
 		press_to_access_locker = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to access your private locker.",
+
+		store_help = "To purchase something, drag an item from the secondary inventory into your own.",
+		store_tax = "Store Tax",
+		store_tax_percentage = "${tax}%",
 
 		search = "Search",
 		amount = "Amount",
@@ -1447,6 +1492,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		boombox = "Boombox",
 		boombox_description = "Play music and be obnoxious anywhere, any time!",
 
+		lighter = "Lighter",
+		lighter_description = "some man just want to see worlds burn",
+
 		weapon_dagger = "Antique Cavalry Dagger",
 		weapon_bat = "Baseball Bat",
 		weapon_bottle = "Broken Bottle",
@@ -1652,7 +1700,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_smokegrenade_description = "Tear gas grenade, particularly effective at incapacitating multiple assailants. Sustained exposure can be lethal.",
 		weapon_flare_description = "No description.",
 
-		weapon_petrolcan_description = "Leaves a trail of gasoline that can be ignited.",
+		weapon_petrolcan_description = "Leaves a trail of gasoline that can be ignited.<br><br>Gasoline remaining: ${petrolAmount}%.",
 		gadget_parachute_description = "This nylon sports parachute features a ram-air parafoil design for increased control over direction and speed.",
 		weapon_fireextinguisher_description = "No description.",
 		weapon_hazardcan_description = "No description."
@@ -1679,7 +1727,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		lockpicking_vehicle = "Lockpicking Vehicle",
 		illegal_weather_name = "Attempting to use a weather spell with an illegal weather name.",
 		equipping_body_armor = "Equipping Body Armor",
-		illegal_burger_shot_delivery_item_id = "Attempting to use a burger shot delivery item with with an illegal item id."
+		illegal_burger_shot_delivery_item_id = "Attempting to use a burger shot delivery item with with an illegal item id.",
+		illegal_lighter_item_id = "Attempting to use a lighter item with with an illegal item id."
 	},
 
 	login = {
@@ -1724,17 +1773,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		illegal_character_slot = "You are not able to create a character in this slot.",
 		missing_character_creation_data = "Missing character creation data.",
 		character_already_loaded = "You already have a character loaded.",
-		bad_words = "Attempted to create a character with a possibly bad word in either the name or backstory: `${badWords}`"
+		bad_words = "Attempted to create a character with a possibly bad word in either the name or backstory: `${badWords}`",
+		discord = "Discord"
 	},
 
 	miscellaneous = {
-		language_unavailable = "Language `${languageCode}` is not available yet. If you would like to create localization for this language, feel free to join the OP-FW development discord guild for more information at http://discord.gg/yRBWkjb!",
+		language_unavailable = "Language `${languageCode}` is not available yet. If you would like to create localization for this language, feel free to join the OP-FW development discord guild for more information at ${frameworkDiscord}!",
 		same_language = "You already have ${languageCode} as your set language.",
 		language_set = "Your preferred language has now been set to ${languageCode}.",
 		current_language = "Current Language",
 		available_language_codes = "Available Languages",
 		ping_pong = "Pong!",
-		ping_response = "${ping}ms (callback time: ${cbTime}ms)",
+		ping_response = "${ping}ms (callback time: ${callbackTime}ms)",
 		ooc_first_time = "We see you have not yet used /ooc! Before letting you use it, we would like to give you a small warning. The /ooc command is only to be used in immediate situations, and any and all non-immediate questions or messages should be redirected towards our discord guild at ${communityDiscord}. That's all! To start using /ooc, type /ooc_on. You will be able to turn it off again with /ooc_off.",
 		ooc_not_logged_in = "You are not logged in.",
 		ooc_timed_out = "You are currently timed out from the OOC chat. Please wait.",
@@ -1785,7 +1835,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		use_measurement_default = "You will now be using the locale's default system of measurement.",
 		already_using_metric_measurement = "You already have metric set as your preferred measurement system.",
 		already_using_imperial_measurement = "You already have imperial set as your preferred measurement system.",
-		already_using_default_measurement = "You are already using the locale's default system of measurement."
+		already_using_default_measurement = "You are already using the locale's default system of measurement.",
+		no_copyright = "No Copyright",
+		no_copyright_warning = "Hi! Are you a streamer or content creator where DMCA and copyright claims is a problem? If so, we suggest toggling the `${noCopyrightCommand}` command so that we can stop certain copyrighted material from showing and playing on your game. This feature starts working as soon as it is toggled.",
+		no_copyright_enabled = "The 'No Copyright' feature has been enabled.",
+		no_copyright_disabled = "The 'No Copyright' feature has been disabled."
 	},
 
 	notepads = {
@@ -2078,6 +2132,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	security_cameras = {
 		illegal_security_camera = "Attempting to tamper with illegal security cameras.",
+		no_city_ping = "Failed to ping the city cameras.",
 		offline = "Offline",
 		camera_list = "Camera List",
 		camera = "Camera ${cameraId}",
@@ -2376,7 +2431,22 @@ OP.Global.Locales.Languages["en-US"] = {
 		illegal_radio_frequency = "Attempting to access illegal radio frequencies.",
 		voice_chat = "Voice Chat",
 		voice_server_connected = "Connected to the voice server. Sending voice data to relevant players.",
-		voice_server_disconnected = "Disconnected from the voice server. Waiting for connection."
+		voice_server_disconnected = "Disconnected from the voice server. Waiting for connection.",
+		voice_muted = "The voice chat has been muted.",
+		voice_unmuted = "The voice chat has been unmuted.",
+		broadcasting_voice_to_players = "Broadcasting To Players:",
+		listening_to_virtual_players = "Listening To Virtual Players:",
+		radio = "Radio",
+		phone = "Phone",
+		muted_players = "Muted Players:",
+		connected = "Connected: ${connected}",
+		muted = "Muted: ${muted}",
+		boolean_true = "True",
+		boolean_false = "False",
+		target_channel = "Target Channel: ${targetChannel}",
+		actual_channel = "Actual Channel: ${actualChannel}",
+		target_radius = "Target Radius: ${targetRadius}",
+		actual_radius = "Actual Radius: ${actualRadius}"
 	},
 
 	yoga = {
