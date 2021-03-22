@@ -774,6 +774,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		ped_messages_command_help = "Toggle whether or not ped messages should show in the chat.",
 		ped_messages_command_substitutes = "",
 
+		-- game/props
+		props_manage_command = "/props_manage",
+		props_manage_command_help = "Manage nearby props.",
+		props_manage_command_substitutes = "/manage_props",
+
 		-- game/radio
 		radio_command = "/radio",
 		radio_command_help = "Toggle the radio UI.",
@@ -1368,6 +1373,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		sandwich_description = "It's vegan.",
 		taco = "Taco",
 		taco_description = "El Brayan's speciality.",
+		banana = "Banana",
+		banana_description = "sus",
 
 		beer = "Beer",
 		beer_description = "Angry water.",
@@ -1494,6 +1501,35 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		lighter = "Lighter",
 		lighter_description = "some man just want to see worlds burn",
+
+		campfire = "Campfire",
+		campfire_description = "Can be placed anywhere in the world. Perfect for camping, hunting and fishing!",
+		tent = "Tent",
+		tent_description = "Can be placed anywhere in the world. Perfect for camping, hunting and fishing!",
+		cloth_tent = "Cloth Tent",
+		cloth_tent_description = "Can be placed anywhere in the world. Perfect for camping, hunting and fishing!",
+		canvas_tent = "Canvas Tent",
+		canvas_tent_description = "Can be placed anywhere in the world. Perfect for camping, hunting and fishing!",
+		plastic_chair = "Plastic Chair",
+		plastic_chair_description = "Can be placed anywhere in the world. Perfect for camping, hunting and fishing!",
+		fishing_chair = "Fishing Chair",
+		fishing_chair_description = "Can be placed anywhere in the world. Perfect for camping, hunting and fishing!",
+		yoga_mat = "Yoga Mat",
+		yoga_mat_description = "Can be placed anywhere in the world. Perfect for camping, hunting and fishing!",
+		cooler_box = "Cooler Box",
+		cooler_box_description = "Can be placed anywhere in the world. Perfect for camping, hunting and fishing!",
+		parasol = "Parasol",
+		parasol_description = "Can be placed anywhere in the world. Perfect for camping, hunting and fishing!",
+		parasol_table = "Parasol Table",
+		parasol_table_description = "Can be placed anywhere in the world. Perfect for camping, hunting and fishing!",
+		table = "Table",
+		table_description = "Can be placed anywhere in the world. Perfect for camping, hunting and fishing!",
+		towel = "Towel",
+		towel_description = "Can be placed anywhere in the world. Perfect for camping, hunting and fishing!",
+		disposable_grill = "Disposable Grill",
+		disposable_grill_description = "Can be placed anywhere in the world. Perfect for camping, hunting and fishing!",
+		grill = "Grill",
+		grill_description = "Can be placed anywhere in the world. Perfect for camping, hunting and fishing!",
 
 		weapon_dagger = "Antique Cavalry Dagger",
 		weapon_bat = "Baseball Bat",
@@ -2107,6 +2143,10 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	players = {
 		player_left = "Player Left [${serverId}]"
+	},
+
+	props = {
+		illegal_prop_item_id = "Attempting to use a prop item with with an illegal item id."
 	},
 
 	radio = {
