@@ -25,8 +25,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 	emotes = {
 		get_in_trunk = "Naciśnij ~INPUT_ENTER~ aby otworzyć bagażnik",
+		put_boombox_in_trunk = "Naciśnij ~INPUT_ENTER~ aby włożyć boombox do bagażnik",
 		put_player_in_trunk = "Naciśnij ~INPUT_ENTER~ aby włożyć osobe do bagażnika",
-		trunk_interaction_display = "[${VehicleEnterKey}] Wydostań się [${InteractionKey}] Otwórz/Zamknij Bagażnik"
+		trunk_interaction_display = "[${VehicleEnterKey}] Wydostań się [${InteractionKey}] Otwórz/Zamknij Bagażnik",
+		boombox_already_in_trunk = "Boombox już znajduje się w bagażniku."
 	},
 
 	-- base/*
@@ -533,6 +535,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		leaderboard_command_help = "Sprawdz tablice przegranych godzin na serwerze.",
 		leaderboard_command_substitutes = "/topka",
 
+		-- game/audio
+		audio_debug_command = "/audio_debug",
+		audio_debug_command_help = "Włącz debuger audio.",
+		audio_debug_command_substitutes = "",
+
 		-- game/calibrate
 		calibrate_command = "/calibrate",
 		calibrate_command_help = "Skalibruj swoje UI.",
@@ -549,6 +556,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		cinematic_command_parameter_bar_height = "Wysokość pasków",
 		cinematic_command_parameter_bar_height_help = "Wysokość pasków. Musi byc od 0 do 50 (w procentanch). Podstawowa ilość to 10. Nie wpisując nic, % pasków zmieni sie w ostatnie zapamietane.",
 		cinematic_command_substitutes = "",
+
+		-- game/culling
+		culling_debug_command = "/culling_debug",
+		culling_debug_command_help = "Włącz culling debug.",
+		culling_debug_command_substitutes = "",
 
 		-- game/dashcam
 		unit_id_command = "/unit_id",
@@ -694,6 +706,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		use_measurement_command_parameter_measurement_help = "System pomiarowy, którego chcesz użyć. Prawidłowe wartości to „Imperial” i „Metric”. Możesz pozostawić ten parametr jako pusty lub nieprawidłową wartość, aby użyć wartości domyślnej.",
 		use_measurement_command_substitutes = "/measurement, /meas",
 
+		no_copyright_command = "/no_copyright",
+		no_copyright_command_help = "Ta komenda pomoże w blokowaniu treści objętymi prawami autorskimi, komenda dla streamerów.",
+		no_copyright_command_substitutes = "",
+
 		-- game/money
 		cash_command = "/kasa",
 		cash_command_help = "Pokazuje ilość gotówki.",
@@ -757,6 +773,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		ped_messages_command = "/ped_messages",
 		ped_messages_command_help = "Wybierz, czy wiadomości ped mają być wyświetlane na czacie.",
 		ped_messages_command_substitutes = "",
+
+		-- game/props
+		props_manage_command = "/props_manage",
+		props_manage_command_help = "Zarządzaj przedmiotami w pobliżu.",
+		props_manage_command_substitutes = "/przedmioty",
 
 		-- game/radio
 		radio_command = "/radio",
@@ -869,6 +890,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		blackout_command = "/blackout",
 		blackout_command_help = "Włącz/Wyłącz Blackout",
 		blackout_command_substitutes = "",
+
+		-- game/voice
+		voice_debug_command = "/voice_debug",
+		voice_debug_command_help = "Włącz voice debug.",
+		voice_debug_command_substitutes = "",
 
 		-- illegal/corner
 		corner_command = "/corner",
@@ -1029,6 +1055,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	-- game/*
+	audio = {
+		audio_id = "Audio ${audioId}"
+	},
+
 	blindfold = {
 		blindfolding_player = "Zakladanie papierowej torby na głowę gracza",
 		blindfolding_self = "Zakładanie papierowej torby na głowę",
@@ -1042,6 +1072,22 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 	blockage = {
 		restricted_area = "Ten teren jest strzeżony. ZAWRÓĆ!"
+	},
+
+	boomboxes = {
+		store_boombox = "Przechowuj Boombox w swoim ekwipunku.",
+		put_boombox_down = "Połóż Boombox na ziemi.",
+		use_boombox = "Użyj Boomboxa.",
+		hold_to_pick_boombox_up = "Przytrzymaj by podnieść.",
+		illegal_boombox_item_id = "Próba użycia Boomboxa z niewłaściwym itemem.",
+		boombox_id = "Boombox #${boomboxId}",
+		music = "Muzyka",
+		play = "Graj",
+		pause = "Pauza",
+		skip_song = "Pomiń utwór",
+		volume = "Głośność",
+		logs_attempted_to_add_song_title = "Próba dodania piosenki do kolejki",
+		logs_attempted_to_add_song_details = "${consoleName} Próba dodania piosenki do kolejki z wideoID `${videoId}` do Boomboxa z ID `${boomboxId}`."
 	},
 
 	calibrate = {
@@ -1223,6 +1269,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		press_to_access_store = "Naciśnij ~INPUT_REPLAY_SHOWHOTKEY~ by wejść do sklepu.",
 		press_to_access_locker = "Naciśnij ~INPUT_REPLAY_SHOWHOTKEY~ by otrzymać dostęp do prywatnej szafki.",
 
+		store_help = "Aby zakupić przedmiot przeciągnij go z prawego okna do lewego.",
+		store_tax = "Podatek obowiazujący w sklepie",
+		store_tax_percentage = "${tax}%",
+
 		search = "Szukaj",
 		amount = "Ilość",
 		use = "Użyj",
@@ -1323,6 +1373,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		sandwich_description = "Świeża kanapka wykonana z lokalnych produktów.",
 		taco = "Taco",
 		taco_description = "Specjalność El Brayana.",
+		banana = "Banana",
+		banana_description = "sopa de macaco",
 
 		beer = "Piwo",
 		beer_description = "Napój o niskim stężeniu alkoholowym, 18+",
@@ -1446,6 +1498,38 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		boombox = "Boombox",
 		boombox_description = "Słuchaj swojej ulubionej muzyki o każdej porze dnia i gdzie chcesz.",
+
+		lighter = "Zapalniczka",
+		lighter_description = "Mały przenośny przedmiot służący do wytwarzania ognia, najczęściej w celu zapalenia papierosa, człowieka lub cygara",
+
+		campfire = "Ognisko",
+		campfire_description = "Część asortymentu do rozłożenia biwaku.",
+		tent = "Namiot",
+		tent_description = "Część asortymentu do rozłożenia biwaku.",
+		cloth_tent = "Namiot materiałowy",
+		cloth_tent_description = "Część asortymentu do rozłożenia biwaku.",
+		canvas_tent = "Namuit płócienncy",
+		canvas_tent_description = "Część asortymentu do rozłożenia biwaku.",
+		plastic_chair = "Plastikowe krzesło",
+		plastic_chair_description = "Część asortymentu do rozłożenia biwaku.",
+		fishing_chair = "Krzesełko na ryby",
+		fishing_chair_description = "Część asortymentu do rozłożenia biwaku.",
+		yoga_mat = "Mata do yogi",
+		yoga_mat_description = "Część asortymentu do rozłożenia biwaku.",
+		cooler_box = "Przenośna lodówka",
+		cooler_box_description = "Część asortymentu do rozłożenia biwaku.",
+		parasol = "Parasol",
+		parasol_description = "Część asortymentu do rozłożenia biwaku.",
+		parasol_table = "Parasol na stelażu",
+		parasol_table_description = "Część asortymentu do rozłożenia biwaku.",
+		table = "Stół",
+		table_description = "Część asortymentu do rozłożenia biwaku.",
+		towel = "Ręcznik",
+		towel_description = "Część asortymentu do rozłożenia biwaku.",
+		disposable_grill = "Jednorazowy grill",
+		disposable_grill_description = "Część asortymentu do rozłożenia biwaku.",
+		grill = "Grill",
+		grill_description = "Część asortymentu do rozłożenia biwaku.",
 
 		weapon_dagger = "Antyczny sztylet",
 		weapon_bat = "Kij baseball'owy",
@@ -1679,7 +1763,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		lockpicking_vehicle = "Uruchamianie pojazdu",
 		illegal_weather_name = "Próba użycia zaklęcia pogody z nieodpowiednią nazwą.",
 		equipping_body_armor = "Zakładasz nową kamizelkę",
-		illegal_burger_shot_delivery_item_id = "Próba nieprawidłowego użycia itemu burther shot dostawa."
+		illegal_burger_shot_delivery_item_id = "Próba nieprawidłowego użycia itemu burgher shot dostawa.",
+		illegal_lighter_item_id = "Próba nieprawidłowego użycia zapalniczki z innym przedmiotem."
 	},
 
 	login = {
@@ -1724,7 +1809,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		illegal_character_slot = "Nie jesteś w stanie utworzyć postaci na tym slocie.",
 		missing_character_creation_data = "Brakujące dane dotyczące tworzenia postaci.",
 		character_already_loaded = "Masz już załadowaną postać.",
-		bad_words = "Próbowano stworzyć postać z potencjalnie brzydkim słowem w nazwie lub historii: `${badWords}`"
+		bad_words = "Próbowano stworzyć postać z potencjalnie brzydkim słowem w nazwie lub historii: `${badWords}`",
+		discord = "Discord"
 	},
 
 	miscellaneous = {
@@ -1785,7 +1871,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		use_measurement_default = "Będziesz teraz używać domyślnego systemu pomiaru ustawień regionalnych.",
 		already_using_metric_measurement = "Masz już ustawione metryki jako preferowany system miar.",
 		already_using_imperial_measurement = "Masz już zestaw imperialny jako preferowany system miar.",
-		already_using_default_measurement = "Używasz już domyślnego systemu miar dla ustawień regionalnych."
+		already_using_default_measurement = "Używasz już domyślnego systemu miar dla ustawień regionalnych.",
+		no_copyright = "Brak praw autorskich",
+		no_copyright_warning = "Jesteś streamerem i obowiązują Cię umowy o szanowaniu praw autorkisch utworów muzycznych? Jeżeli tak to sugeruję użycie komendy: `${noCopyrightCommand}`.",
+		no_copyright_enabled = "Komenda 'No Copyright' jest włączona.",
+		no_copyright_disabled = "Komenda 'No Copyright' jest wyłączona."
 	},
 
 	notepads = {
@@ -2055,6 +2145,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		player_left = "Gracz opuścił serwer [${serverId}]"
 	},
 
+	props = {
+		illegal_prop_item_id = "Niewłaścia próba użycia przedmiotu z innym."
+	},
+
 	radio = {
 		frequency = "Częstotliwość:",
 		switch = "Zmień",
@@ -2078,6 +2172,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 	security_cameras = {
 		illegal_security_camera = "Próba ingerencji w kamery bezpieczeństwa.",
+		no_city_ping = "Nieudana próba włączenia podglądu kamer.",
 		offline = "Offline",
 		camera_list = "Lista Kamer",
 		camera = "Kamera ${cameraId}",
@@ -2376,7 +2471,22 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		illegal_radio_frequency = "Próba uzyskania dostępu do nielegalnych częstotliwości radiowych.",
 		voice_chat = "Czat głosowy",
 		voice_server_connected = "Dołączyłeś poprawnie do czatu głosowego.",
-		voice_server_disconnected = "Odłączono od czatu głosowego, oczekiwanie na ponowne połączenie."
+		voice_server_disconnected = "Odłączono od czatu głosowego, oczekiwanie na ponowne połączenie.",
+		voice_muted = "Czat głosowy został wyciszony.",
+		voice_unmuted = "Czat głosowy został odciszony.",
+		broadcasting_voice_to_players = "Nadawanie dla graczy:",
+		listening_to_virtual_players = "W pobliżu słychać:",
+		radio = "Radio",
+		phone = "Telefon",
+		muted_players = "Wyciszeni gracze:",
+		connected = "Połączono: ${connected}",
+		muted = "Zmutowano: ${muted}",
+		boolean_true = "True",
+		boolean_false = "False",
+		target_channel = "Target Channel: ${targetChannel}",
+		actual_channel = "Actual Channel: ${actualChannel}",
+		target_radius = "Target Radius: ${targetRadius}",
+		actual_radius = "Actual Radius: ${actualRadius}"
 	},
 
 	yoga = {
