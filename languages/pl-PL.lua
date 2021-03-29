@@ -634,6 +634,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		trunk_command_help = "Spróbuj otworzyć pobliski bagażnik",
 		trunk_command_substitutes = "",
 
+		wipe_ground_inventories_command = "/wipe_ground_inventories",
+		wipe_ground_inventories_command_help = "Wipe nearby ground inventories.",
+		wipe_ground_inventories_command_parameter_server_id = "promień",
+		wipe_ground_inventories_command_parameter_server_id_help = "Promień zasięgu czyszczenia. Puste automatycznie ustawi wartość '100'. Poprawne wartości zaczynają się od '0' i `-1` wyczyści wszystko na mapie.",
+		wipe_ground_inventories_command_substitutes = "/wipeinvs, /wipe_inventories, /wipe_ground",
+
 		-- game/mdt
 		mdt_command = "/mdt",
 		mdt_command_help = "Włącz MDT.",
@@ -904,6 +910,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		corner_debug_command = "/corner_debug",
 		corner_debug_command_help = "Pokazuje sterfy sprzedaży.",
 		corner_debug_command_substitutes = "/strefy",
+
+		-- interfaces/interfaces
+		clear_uis_command = "/clear_uis",
+		clear_uis_command_help = "Czyści wszystkie UI focuses.",
+		clear_uis_command_substitutes = "",
 
 		-- vehicles/keys
 		give_key_command = "/give_key",
@@ -1290,11 +1301,26 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		logs_item_moved_title = "Przedmiot Przeniesiony",
 		logs_item_moved_details = "${consoleName} Przeniósł ${moveAmount}x ${itemLabel} Do ${endInventory}:${endSlot} z Ekwipunku ${startInventory}:${startSlot}.",
-		
+
 		logs_item_purchased_title = "Przedmiot kupiony",
 		logs_item_purchased_no_tax_details = "${consoleName} kupiony ${purchaseAmount}x `${itemLabel}` za $${purchaseCost}.",
 		logs_item_purchased_tax_details = "${consoleName} kupiony ${purchaseAmount}x `${itemLabel}` za $${purchaseCost} z dodatkowym $${taxCost} ze wzgledu na ${salesTaxPercentage}% podatek.",
-		
+
+		radius_invalid = "Podany promień `${radius}` to nieprawidłowa wartość.",
+		wiped_all_ground_inventories = "Wyczyszczono ${inventoriesWiped} przedmioty na ziemi.",
+		wiped_nearby_ground_inventories = "Wyczyszczono ${inventoriesWiped} przedmioty na ziemi w promieniu `${radius}`.",
+		failed_to_wipe_ground_inventories = "Nie udało się usunąć przedmiotów na ziemi.",
+		no_ground_inventories = "Brak przedmiotów do usunięcia.",
+		no_ground_inventories_within_radius = "Brak przedmiotów do usunięcia w promieniu `${radius}`.",
+
+		wipe_inventories_not_staff = "Gracz próbował usunąć przedmioty, ale nie posiadał do tego odpowiednich uprawnień.",
+
+		logs_wiped_all_ground_inventories_title = "wyczyszczono wszystkie przedmioty na ziemi.",
+		logs_wiped_all_ground_inventories_details = "${consoleName} wyczyścił wszystkie przedmioty na ziemi.",
+
+		logs_wiped_nearby_ground_inventories_title = "wyczyszczono wszystkie przedmioty na ziemi.",
+		logs_wiped_nearby_ground_inventories_details = "${consoleName} wyczyścił wszystkie przedmioty na ziemi w promieniu `${radius}`.",
+
 		-- items & item descriptions
 		body_armour = "Pancerz",
 		body_armour_description = "Twarda powłoka mająca ochraniać ciało osoby noszacej.",
@@ -1764,7 +1790,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		illegal_weather_name = "Próba użycia zaklęcia pogody z nieodpowiednią nazwą.",
 		equipping_body_armor = "Zakładasz nową kamizelkę",
 		illegal_burger_shot_delivery_item_id = "Próba nieprawidłowego użycia itemu burgher shot dostawa.",
-		illegal_lighter_item_id = "Próba nieprawidłowego użycia zapalniczki z innym przedmiotem."
+		illegal_lighter_item_id = "Próba nieprawidłowego użycia zapalniczki z innym przedmiotem.",
+		unable_to_use_lighter_in_vehicle = "Nie możesz użyć zapalniczki podczas podróży pojazdem."
 	},
 
 	login = {
@@ -2181,6 +2208,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		jewelry_store = "Rockford Hills Jewelry Store",
 		principal_bank = "Principal Bank",
 		boilingbroke_penitentiary = "Zakład karny Boilingbroke",
+		flywheels_garage = "Flywheels Garage",
+		sandy_shores_pd = "Sandy Shores PD",
+		sandy_shores_hospital = "Sandy Shores Hospital",
 		bank_1 = "Legion Square Bank",
 		bank_2 = "Rockford Hills Bank",
 		bank_3 = "Alta Bank",
@@ -2527,7 +2557,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		no_node_found = "Nie znaleziono pobliskich punktów dla klientów.",
 		no_sell_area = "Nie jesteś w obszarze, w którym klienci są zainteresowani narkotykami.",
 		inside_areas_none = "Obszar wewnętrzny: brak",
-		inside_areas = "Obszar wewnętrzny: ${insideAreas}"
+		inside_areas = "Obszar wewnętrzny: ${insideAreas}",
+		not_able_to_sell = "Nie możesz sprzedawać w tym momencie towaru. Przejdź się pare kroków i poszukaj klienta za moment."
 	},
 
 	stockade = {
@@ -2695,6 +2726,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		cruise_control_on_imperial = "Tempomat ustawiony na ${speed} mp/h.",
 		cruise_control_on_plane_metric = "Tempomat ustawiony na ${speed} km/h i ${altitude} metry.",
 		cruise_control_on_plane_imperial = "Tempomat ustawiony na ${speed} mp/h i ${altitude} ft.",
+		you_are_cuffed = "Jesteś zakuty.",
+		belt_is_on_and_vehicle_is_locked = "Twój pas jest zapięty, a pojazd zamknięty.",
+		belt_is_on = "Twój pas jest zapięty.",
+		vehicle_is_locked = "Pojazd jest zamknięty."
 	},
 
 	wheels = {
