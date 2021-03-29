@@ -608,31 +608,37 @@ OP.Global.Locales.Languages["en-US"] = {
 		revive_command_parameter_remove_injuries_help = "Set this to any value except for `0` or `false` to remove all injuries as well.",
 		revive_command_substitutes = "",
 
-		recent_deaths = "/recent_deaths",
-		recent_deaths_help = "Get the most recent deaths.",
-		recent_deaths_parameter_amount = "amount",
-		recent_deaths_parameter_amount_help = "The amount of deaths you'd like to receive. Valid values are between `1` and `100`. Leaving this as blank will auto-select `20`.",
-		recent_deaths_substitutes = "/check_deaths",
+		recent_deaths_command = "/recent_deaths",
+		recent_deaths_command_help = "Get the most recent deaths.",
+		recent_deaths_command_parameter_amount = "amount",
+		recent_deaths_command_parameter_amount_help = "The amount of deaths you'd like to receive. Valid values are between `1` and `100`. Leaving this as blank will auto-select `20`.",
+		recent_deaths_command_substitutes = "/check_deaths",
 
-		player_death = "/player_death",
-		player_death_help = "Get a player's recent death.",
-		player_death_parameter_server_id = "server id",
-		player_death_parameter_server_id_help = "The player's server ID. Leaving this as blank will auto-select your own ID.",
-		player_death_substitutes = "/check_death",
+		player_death_command = "/player_death",
+		player_death_command_help = "Get a player's recent death.",
+		player_death_command_parameter_server_id = "server id",
+		player_death_command_parameter_server_id_help = "The player's server ID. Leaving this as blank will auto-select your own ID.",
+		player_death_command_substitutes = "/check_death",
 
 		-- game/hud
 		watermark_command = "/watermark",
 		watermark_command_help = "Toggle the center-top watermark.",
 		watermark_command_substitutes = "",
 
-		metrics_toggle = "/metrics_toggle",
-		metrics_toggle_help = "Toggle the center-top metrics display.",
-		metrics_toggle_substitutes = "/metrics, /metrics_display",
+		metrics_toggle_command = "/metrics_toggle",
+		metrics_toggle_command_help = "Toggle the center-top metrics display.",
+		metrics_toggle_command_substitutes = "/metrics, /metrics_display",
 
 		-- game/inventory
 		trunk_command = "/trunk",
 		trunk_command_help = "Attempt to access a nearby trunk inventory.",
 		trunk_command_substitutes = "",
+
+		wipe_ground_inventories_command = "/wipe_ground_inventories",
+		wipe_ground_inventories_command_help = "Wipe nearby ground inventories.",
+		wipe_ground_inventories_command_parameter_server_id = "radius",
+		wipe_ground_inventories_command_parameter_server_id_help = "The wipe radius. Leaving this as blank will auto-select `100`. Valid values are above `0`, as well as `0` and `-1` which will select all inventories.",
+		wipe_ground_inventories_command_substitutes = "/wipeinvs, /wipe_inventories, /wipe_ground",
 
 		-- game/mdt
 		mdt_command = "/mdt",
@@ -799,7 +805,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		radio_volume_command = "/radio_volume",
 		radio_volume_command_help = "Adjust the radio's volume.",
 		radio_volume_command_parameter_volume = "volume level",
-		radio_volume_command_parameter_volume_help = "The volume level of the radio. The value must be between 0 and 1. The default is 1. Leaving this blank will return your current volume level.",
+		radio_volume_command_parameter_volume_help = "The volume level of the radio. The value must be between 0 and 1. The default is 0.5. Leaving this blank will return your current volume level.",
 		radio_volume_command_substitutes = "",
 
 		-- game/security_cameras
@@ -904,6 +910,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		corner_debug_command = "/corner_debug",
 		corner_debug_command_help = "Show all the sell areas.",
 		corner_debug_command_substitutes = "",
+
+		-- interfaces/interfaces
+		clear_uis_command = "/clear_uis",
+		clear_uis_command_help = "Clear all UI focuses.",
+		clear_uis_command_substitutes = "",
 
 		-- vehicles/keys
 		give_key_command = "/give_key",
@@ -1203,7 +1214,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		revived_player_title = "Revived Player",
 		revived_player_details = "${consoleName} revived ${targetConsoleName}.",
 		get_recent_deaths_not_staff = "Player attempted to get recent deaths, but didn't have correct permissions to do so.",
-		get_player_last_death_staff = "Player attempted to get a player's last death, but didn't have correct permissions to do so.",
+		get_player_last_death_not_staff = "Player attempted to get a player's last death, but didn't have correct permissions to do so.",
 		recent_deaths = "Recent Deaths",
 		no_recent_deaths = "There are no recent deaths.",
 		recent_deaths_list_entry = "${recentDeathId}. ${consoleName} died ${timer} seconds ago.",
@@ -1294,6 +1305,21 @@ OP.Global.Locales.Languages["en-US"] = {
 		logs_item_purchased_title = "Item(s) Purchased",
 		logs_item_purchased_no_tax_details = "${consoleName} purchased ${purchaseAmount}x `${itemLabel}` for $${purchaseCost}.",
 		logs_item_purchased_tax_details = "${consoleName} purchased ${purchaseAmount}x `${itemLabel}` for $${purchaseCost} with an additional $${taxCost} due to a ${salesTaxPercentage}% sales tax.",
+
+		radius_invalid = "A radius of `${radius}` is not a valid value.",
+		wiped_all_ground_inventories = "Wiped ${inventoriesWiped} ground inventories.",
+		wiped_nearby_ground_inventories = "Wiped ${inventoriesWiped} ground inventories within a radius of `${radius}`.",
+		failed_to_wipe_ground_inventories = "Failed to wipe ground inventories.",
+		no_ground_inventories = "There were no ground inventories to wipe.",
+		no_ground_inventories_within_radius = "There were no ground inventories to wipe within a radius of `${radius}`.",
+
+		wipe_inventories_not_staff = "Player attempted to wipe inventories, but didn't have correct permissions to do so.",
+
+		logs_wiped_all_ground_inventories_title = "Wiped All Ground Inventories",
+		logs_wiped_all_ground_inventories_details = "${consoleName} wiped all ground inventories.",
+
+		logs_wiped_nearby_ground_inventories_title = "Wiped Nearby Ground Inventories",
+		logs_wiped_nearby_ground_inventories_details = "${consoleName} wiped all ground inventories within a radius of `${radius}`.",
 
 		-- items & item descriptions
 		body_armour = "Body Armor",
@@ -1764,7 +1790,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		illegal_weather_name = "Attempting to use a weather spell with an illegal weather name.",
 		equipping_body_armor = "Equipping Body Armor",
 		illegal_burger_shot_delivery_item_id = "Attempting to use a burger shot delivery item with with an illegal item id.",
-		illegal_lighter_item_id = "Attempting to use a lighter item with with an illegal item id."
+		illegal_lighter_item_id = "Attempting to use a lighter item with with an illegal item id.",
+		unable_to_use_lighter_in_vehicle = "You are not able to use a lighter in a vehicle."
 	},
 
 	login = {
@@ -2181,6 +2208,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		jewelry_store = "Rockford Hills Jewelry Store",
 		principal_bank = "Principal Bank",
 		boilingbroke_penitentiary = "Boilingbroke Penitentiary",
+		flywheels_garage = "Flywheels Garage",
+		sandy_shores_pd = "Sandy Shores PD",
+		sandy_shores_hospital = "Sandy Shores Hospital",
 		bank_1 = "Legion Square Bank",
 		bank_2 = "Rockford Hills Bank",
 		bank_3 = "Alta Bank",
@@ -2527,7 +2557,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		no_node_found = "No nearby nodes for peds found.",
 		no_sell_area = "You are not in an area where peds are interested in drugs.",
 		inside_areas_none = "Inside Areas: None",
-		inside_areas = "Inside Areas: ${insideAreas}"
+		inside_areas = "Inside Areas: ${insideAreas}",
+		not_able_to_sell = "You are not able to sell right now. Walk around for a bit before trying to sell again."
 	},
 
 	stockade = {
@@ -2695,6 +2726,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		cruise_control_on_imperial = "Cruise control set to ${speed} mp/h.",
 		cruise_control_on_plane_metric = "Cruise control set to ${speed} km/h and ${altitude} meters.",
 		cruise_control_on_plane_imperial = "Cruise control set to ${speed} mp/h and ${altitude} ft.",
+		you_are_cuffed = "You are cuffed.",
+		belt_is_on_and_vehicle_is_locked = "Your belt is on and the vehicle is locked.",
+		belt_is_on = "Your belt is on.",
+		vehicle_is_locked = "The vehicle is locked."
 	},
 
 	wheels = {
