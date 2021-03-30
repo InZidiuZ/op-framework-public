@@ -1062,7 +1062,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		logs_character_deleted_title = "Postać usunięto",
 		logs_character_deleted_details = "${consoleName} Usunął Postać ${fullName} (${characterId}).",
 		server_core_is_restarting = "Server Core jest w trakcie restartowania.",
-		you_timed_out = "Za długie oczekiwanie!"
+		you_timed_out = "Za długie oczekiwanie!",
+		kicked_for_no_specified_reason = "Zostałeś wyrzucony bez podanego powodu.",
+		kicked_player = "Wyrzucono gracza.",
+		player_not_found = "Gracz nie został odnaleziony.",
+		missing_steam_identifier = "Brak Idealne`."
 	},
 
 	-- game/*
