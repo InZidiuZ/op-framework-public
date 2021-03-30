@@ -636,8 +636,8 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		wipe_ground_inventories_command = "/wipe_ground_inventories",
 		wipe_ground_inventories_command_help = "Wipe nearby ground inventories.",
-		wipe_ground_inventories_command_parameter_server_id = "radius",
-		wipe_ground_inventories_command_parameter_server_id_help = "The wipe radius. Leaving this as blank will auto-select `100`. Valid values are above `0`, as well as `0` and `-1` which will select all inventories.",
+		wipe_ground_inventories_command_parameter_radius = "radius",
+		wipe_ground_inventories_command_parameter_radius_help = "The wipe radius. Leaving this as blank will auto-select `100`. Valid values are above `0`, as well as `0` and `-1` which will select all inventories.",
 		wipe_ground_inventories_command_substitutes = "/wipeinvs, /wipe_inventories, /wipe_ground",
 
 		-- game/mdt
@@ -1062,7 +1062,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		logs_character_deleted_title = "Character Deleted",
 		logs_character_deleted_details = "${consoleName} has deleted character ${fullName} (${characterId}).",
 		server_core_is_restarting = "The server's core is being restarted.",
-		you_timed_out = "You timed out!"
+		you_timed_out = "You timed out!",
+		kicked_for_no_specified_reason = "You were kicked for no specified reason.",
+		kicked_player = "Kicked player.",
+		player_not_found = "Player not found.",
+		missing_steam_identifier = "Missing `steamIdentifier`."
 	},
 
 	-- game/*
@@ -1431,10 +1435,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		oxy_description = "The most boring drug.",
 		weed_seeds = "Weed Seeds",
 		weed_seeds_description = "Grows the 420, bro",
+		weed_1q = "Weed 1q",
+		weed_1q_description = "420 bro",
 		weed_1oz = "Weed 1oz",
-		weed_1oz_description = "420 bro",
-		weed_4oz = "Weed 4oz",
-		weed_4oz_description = "1680 bro",
+		weed_1oz_description = "1680 bro",
 
 		ejector_seat = "Ejector Seat",
 		ejector_seat_description = "Banned (twice) Kebab man's idea.",
