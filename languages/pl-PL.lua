@@ -636,8 +636,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		wipe_ground_inventories_command = "/wipe_ground_inventories",
 		wipe_ground_inventories_command_help = "Wipe nearby ground inventories.",
-		wipe_ground_inventories_command_parameter_server_id = "promień",
-		wipe_ground_inventories_command_parameter_server_id_help = "Promień zasięgu czyszczenia. Puste automatycznie ustawi wartość '100'. Poprawne wartości zaczynają się od '0' i `-1` wyczyści wszystko na mapie.",
+		wipe_ground_inventories_command_parameter_radius = "promień",
+		wipe_ground_inventories_command_parameter_radius_help = = "Promień zasięgu czyszczenia. Puste automatycznie ustawi wartość '100'. Poprawne wartości zaczynają się od '0' i `-1` wyczyści wszystko na mapie.",
 		wipe_ground_inventories_command_substitutes = "/wipeinvs, /wipe_inventories, /wipe_ground",
 
 		-- game/mdt
@@ -1062,7 +1062,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		logs_character_deleted_title = "Postać usunięto",
 		logs_character_deleted_details = "${consoleName} Usunął Postać ${fullName} (${characterId}).",
 		server_core_is_restarting = "Server Core jest w trakcie restartowania.",
-		you_timed_out = "Za długie oczekiwanie!",
+		you_timed_out = "Za długie oczekiwanie!"
 		kicked_for_no_specified_reason = "Zostałeś wyrzucony bez podanego powodu.",
 		kicked_player = "Wyrzucono gracza.",
 		player_not_found = "Gracz nie został odnaleziony.",
@@ -1435,10 +1435,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		oxy_description = "Innowacyjny narkotyk.",
 		weed_seeds = "Weed Seeds",
 		weed_seeds_description = "Nasiona konopii",
+		weed_1q = "Weed 1q",
+		weed_1q_description = "420 bro",
 		weed_1oz = "Weed 1oz",
-		weed_1oz_description = "Jedna porcja zioła",
-		weed_4oz = "Weed 4oz",
-		weed_4oz_description = "Cztery porcje zioła",
+		weed_1oz_description = "1680 bro",
 
 		ejector_seat = "Siedzenie odrzutowe.",
 		ejector_seat_description = "Wohoooooo.",
