@@ -100,6 +100,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		announcement_logs_details = "${consoleName} broadcasted the following message to the entire server: `${announcementMessage}`",
 		announcement_not_admin = "Attempted to post a staff announcement.",
 
+		announcement_maintenance = "The server will be going down in ${minutes} minutes for maintenance.",
+		announcement_update = "The server will be going down in ${minutes} minutes for an update.",
+		announcement_restart = "The server will be going down in ${minutes} minutes for a restart.",
+
+		posted_announcement = "Posted announcement message.",
+		posted_announcement_locale = "Posted announcement message from locale.",
+		failed_to_post_announcement = "Failed to post announcement message as no message was added.",
+		failed_to_post_announcement_locale = "Failed to post announcement message as the announcement locale added is not supported.",
+
 		staff_title = "STAFF ${staffName}",
 		staff_message_logs_title = "Staff Message",
 		staff_message_logs_details = "${consoleName} sent the following message in the staff chat: `${staffMessage}`",
@@ -535,10 +544,21 @@ OP.Global.Locales.Languages["en-US"] = {
 		leaderboard_command_help = "Check the playtime leaderboard.",
 		leaderboard_command_substitutes = "",
 
+		refresh_package_command = "/refresh_package",
+		refresh_package_command_help = "Refresh your package.",
+		refresh_package_command_substitutes = "",
+
 		-- game/audio
 		audio_debug_command = "/audio_debug",
 		audio_debug_command_help = "Toggle the audio debug.",
 		audio_debug_command_substitutes = "",
+
+		-- game/boomboxes
+		wipe_boomboxes_command = "/wipe_boomboxes",
+		wipe_boomboxes_command_help = "Wipe boomboxes.",
+		wipe_boomboxes_command_parameter_radius = "radius",
+		wipe_boomboxes_command_parameter_radius_help = "The wipe radius. Leaving this as blank will auto-select `100`. Valid values are above `0`, as well as `0` and `-1` which will select all inventories.",
+		wipe_boomboxes_command_substitutes = "",
 
 		-- game/calibrate
 		calibrate_command = "/calibrate",
@@ -635,7 +655,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		trunk_command_substitutes = "",
 
 		wipe_ground_inventories_command = "/wipe_ground_inventories",
-		wipe_ground_inventories_command_help = "Wipe nearby ground inventories.",
+		wipe_ground_inventories_command_help = "Wipe ground inventories.",
 		wipe_ground_inventories_command_parameter_radius = "radius",
 		wipe_ground_inventories_command_parameter_radius_help = "The wipe radius. Leaving this as blank will auto-select `100`. Valid values are above `0`, as well as `0` and `-1` which will select all inventories.",
 		wipe_ground_inventories_command_substitutes = "/wipeinvs, /wipe_inventories, /wipe_ground",
@@ -902,6 +922,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		voice_debug_command_help = "Toggle the voice debug.",
 		voice_debug_command_substitutes = "",
 
+		-- global/entities
+		local_entities_debug_command = "/local_entities_debug",
+		local_entities_debug_command_help = "Toggle the debug for local entities.",
+		local_entities_debug_command_substitutes = "/lentities",
+
 		-- illegal/corner
 		corner_command = "/corner",
 		corner_command_help = "Sell drugs to a nearby person. The drug you sell is based on the location you are in.",
@@ -1027,7 +1052,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		queue_position_with_priority = "🐌 You are ${queueEntryId}/${queueLength} in the queue with ${priorityName} priority. 🕐${queueTime}",
 		queue_position_without_priority = "🐌 You are ${queueEntryId}/${queueLength} in the queue. 🕐${queueTime}\nTired of queueing? Support us for queue priority!",
 		server_is_starting = "Waiting for the server to start...",
-		cancelled_before_server_start = "The connection was aborted before the server had started."
+		cancelled_before_server_start = "The connection was aborted before the server had started.",
+		kicked_from_queue = "You have been kicked from the queue for reason `${reason}`.",
+		kicked_from_queue_no_reason = "You have been kicked from the queue for no specified reason.",
+		missing_slots_parameter = "Missing `slots` parameter.",
+		invalid_slots_parameter = "Invalid `slots` parameter",
+		slots_parameter_out_of_range = "The `slots` parameter has to be between `0` and `1025`.",
+		slots_already_set_to = "The server slots are already set to `${slots}`.",
+		slots_set_to = "The server slots have now been set to `${slots}`."
 	},
 
 	restart = {
@@ -1038,7 +1070,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		restart_3_minutes = "The server will restart in 3 minutes!",
 		restart_2_minutes = "The server will restart in 2 minutes!",
 		restart_1_minute = "The server will restart in 1 minute!",
-		server_restarting = "The server is restarting. You may rejoin in a few minutes."
+		server_restarting = "The server is restarting. You may rejoin in a few minutes.",
+		executed_restart_command = "Executed the restart command.",
+		already_executed_restart_command = "The restart command has already been executed."
 	},
 
 	users = {
@@ -1065,8 +1099,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		you_timed_out = "You timed out!",
 		kicked_for_no_specified_reason = "You were kicked for no specified reason.",
 		kicked_player = "Kicked player.",
+		removed_player_from_queue = "Removed player from queue.",
 		player_not_found = "Player not found.",
-		missing_steam_identifier = "Missing `steamIdentifier`."
+		missing_steam_identifier = "Missing `steamIdentifier`.",
+		package = "Package",
+		package_updated = "Your package has been updated to `${packageName}`.",
+		package_expired = "Your package has expired.",
+		package_same = "Your package is `${packageName}`.",
+		no_package = "You do not have a package.",
+		fetching_package_error = "An error occurred while trying to fetch your package data."
 	},
 
 	-- game/*
@@ -1082,7 +1123,9 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	blips = {
-		church = "Church"
+		church = "Church",
+		comedy_club = "Comedy Club",
+		bean_machine = "Bean Machine"
 	},
 
 	blockage = {
@@ -1102,7 +1145,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		skip_song = "Skip Song",
 		volume = "Volume",
 		logs_attempted_to_add_song_title = "Attempted To Add Song",
-		logs_attempted_to_add_song_details = "${consoleName} attempted to add a song with video ID `${videoId}` to boombox with ID `${boomboxId}`."
+		logs_attempted_to_add_song_details = "${consoleName} attempted to add a song with video ID `${videoId}` to boombox with ID `${boomboxId}`.",
+		wipe_boomboxes_not_staff = "Player attempted to wipe boomboxes, but didn't have correct permissions to do so.",
+		logs_wiped_all_boomboxes_title = "Wiped All Boomboxes",
+		logs_wiped_all_boomboxes_details = "${consoleName} wiped all boomboxes.",
+		logs_wiped_nearby_boomboxes_title = "Wiped Nearby Boomboxes",
+		logs_wiped_nearby_boomboxes_details = "${consoleName} wiped all boomboxes within a radius of `${radius}`.",
+		radius_invalid = "A radius of `${radius}` is not a valid value.",
+		wiped_all_boomboxes = "Wiped ${boomboxesWiped} boomboxes.",
+		wiped_nearby_boomboxes = "Wiped ${boomboxesWiped} boomboxes within a radius of `${radius}`.",
+		failed_to_wipe_boomboxes = "Failed to wipe boomboxes.",
+		no_boomboxes = "There were no boomboxes to wipe.",
+		no_boomboxes_within_radius = "There were no boomboxes to wipe within a radius of `${radius}`."
 	},
 
 	calibrate = {
@@ -2215,6 +2269,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		flywheels_garage = "Flywheels Garage",
 		sandy_shores_pd = "Sandy Shores PD",
 		sandy_shores_hospital = "Sandy Shores Hospital",
+		davis_sheriffs_station = "Davis Sheriff's Station",
 		bank_1 = "Legion Square Bank",
 		bank_2 = "Rockford Hills Bank",
 		bank_3 = "Alta Bank",
@@ -2696,7 +2751,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		no_keys_for_vehicle = "You do not have the keys to this vehicle.",
 		vehicle_locked = "Vehicle Locked",
 		vehicle_unlocked = "Vehicle Unlocked",
-		h_to_hotwire = "[H] Hotwire"
+		h_to_hotwire = "[H] Hotwire",
+		received_keys = "Received keys for vehicle with plate ${plate}."
 	},
 
 	modifications = {
@@ -2744,8 +2800,8 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	-- weapons/*
 	weapons = {
-		pick_up_fire_extinguisher = "Press ~INPUT_CONTEXT~ to pick up the Fire Extinguisher.",
-		press_to_drop_fire_extinguisher = "Press ~INPUT_CONTEXT~ to drop the Fire Extinguisher.",
+		pick_up_fire_extinguisher = "Hold ~INPUT_CONTEXT~ to pick up the Fire Extinguisher.",
+		press_to_drop_fire_extinguisher = "Press ~INPUT_FRONTEND_RRIGHT~ to drop the Fire Extinguisher.",
 		illegal_fire_extinguisher_model = "Attempted to delete a fire extinguisher on all clients with a model that wasn't a fire extinguisher."
 	},
 
