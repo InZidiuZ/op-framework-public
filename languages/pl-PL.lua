@@ -100,6 +100,15 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		announcement_logs_details = "${consoleName} Ogłosił dla całego serwera: `${announcementMessage}`",
 		announcement_not_admin = "Sprobowano napisać ogłoszenie admnistracyjne.",
 
+		announcement_maintenance = "Serwer zostanie zrestartowany za ${minutes} minut for maintenance.",
+		announcement_update = "Serwer zrestartuje sie za ${minutes} minuty w celu wprowadzenia zmian.",
+		announcement_restart = "Serwer zostanie wyłączony za ${minutes} minut.",
+
+		posted_announcement = "Wysłano ogłoszenie.",
+		posted_announcement_locale = "Wysłano ogłoszenie.",
+		failed_to_post_announcement = "Nie udało się dodac ogłoszenia ze względu na brak treści.",
+		failed_to_post_announcement_locale = "Nie udało dodać się ogłoszenia.",
+
 		staff_title = "Administrator ${staffName}",
 		staff_message_logs_title = "Wiadomość Administratora",
 		staff_message_logs_details = "${consoleName} wysłał wiadomość na czacie administracji: `${staffMessage}`",
@@ -535,10 +544,21 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		leaderboard_command_help = "Sprawdz tablice przegranych godzin na serwerze.",
 		leaderboard_command_substitutes = "/topka",
 
+		refresh_package_command = "/refresh_package",
+		refresh_package_command_help = "Odświez swoje pakiety.",
+		refresh_package_command_substitutes = "",
+
 		-- game/audio
 		audio_debug_command = "/audio_debug",
 		audio_debug_command_help = "Włącz debuger audio.",
 		audio_debug_command_substitutes = "",
+
+		-- game/boomboxes
+		wipe_boomboxes_command = "/wipe_boomboxes",
+		wipe_boomboxes_command_help = "Wyczyść boomboxy.",
+		wipe_boomboxes_command_parameter_radius = "radius",
+		wipe_boomboxes_command_parameter_radius_help = "Promień wyczyszczenia boomboxów. Pusta wartość pozostawiona wyniesie 100.",
+		wipe_boomboxes_command_substitutes = "",
 
 		-- game/calibrate
 		calibrate_command = "/calibrate",
@@ -902,6 +922,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		voice_debug_command_help = "Włącz voice debug.",
 		voice_debug_command_substitutes = "",
 
+		-- global/entities
+		local_entities_debug_command = "/local_entities_debug",
+		local_entities_debug_command_help = "Włącz debuger dla lokalnych jednostek.",
+		local_entities_debug_command_substitutes = "/lentities",
+
 		-- illegal/corner
 		corner_command = "/corner",
 		corner_command_help = "Sprzedaj narkotyki pobliskiej osobie. Narkotyk który sprzedajesz bazowany jest na twoim położeniu.",
@@ -1027,7 +1052,14 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		queue_position_with_priority = "🐌 Jesteś ${queueEntryId}/${queueLength} w kolejce z priorytetem: ${priorityName} 🕐${queueTime}",
 		queue_position_without_priority = "🐌 Jesteś ${queueEntryId}/${queueLength} w kolejce. 🕐${queueTime}\nZmęczony kolejkami? Wesprzyj serwer aby zyskać priorytet!",
 		server_is_starting = "Czekanie na uruchomienie serwera...",
-		cancelled_before_server_start = "Połączenie zostało przerwane przed uruchomieniem serwera."
+		cancelled_before_server_start = "Połączenie zostało przerwane przed uruchomieniem serwera.",
+		kicked_from_queue = "Zostałeś wyrzucony z kolejki z powodem `${reason}`.",
+		kicked_from_queue_no_reason = "Zostałes wyrzucony z kolejki bez podanego powodu.",
+		missing_slots_parameter = "Brakuje parametru `slots`.",
+		invalid_slots_parameter = "Błędny parametr `slots`.",
+		slots_parameter_out_of_range = "Parametr `slots` musi mieć wartość pomiędzy `0` i `1025`.",
+		slots_already_set_to = "Ilość slotów na serwerze zostały ustawione na `${slots}`.",
+		slots_set_to = "Ilość slotów została ustawiona na `${slots}`."
 	},
 
 	restart = {
@@ -1038,7 +1070,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		restart_3_minutes = "Serwer zrestartuje się za: 3 minuty!",
 		restart_2_minutes = "Serwer zrestartuje się za: 2 minuty!",
 		restart_1_minute = "Serwer zrestartuje się za: 1 minute!!!",
-		server_restarting = "Serwer się restartuje. Będziesz mógł dołączyć za kilka minut."
+		server_restarting = "Serwer się restartuje. Będziesz mógł dołączyć za kilka minut.",
+		executed_restart_command = "Uzytko komendy restartu.",
+		already_executed_restart_command = "Komenda restartu została już wcześniej użyta."
 	},
 
 	users = {
@@ -1065,8 +1099,15 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		you_timed_out = "Za długie oczekiwanie!",
 		kicked_for_no_specified_reason = "Zostałeś wyrzucony bez podanego powodu.",
 		kicked_player = "Wyrzucono gracza.",
+		removed_player_from_queue = "Usunięto gracza z kolejki.",
 		player_not_found = "Gracz nie został odnaleziony.",
-		missing_steam_identifier = "Brak Idealne`."
+		missing_steam_identifier = "Brak Idealne`.",
+		package = "Package",
+		package_updated = "Twój pakiet został zaktualizowany do `${packageName}`.",
+		package_expired = "Czas trwania Twojego pakietu dobiegł końca.",
+		package_same = "Twój obecny pakiet to `${packageName}`.",
+		no_package = "Nie masz aktywnego pakietu.",
+		fetching_package_error = "Wystąpił błąd podczas ładowania danych odnośnie pakietu."
 	},
 
 	-- game/*
@@ -1082,7 +1123,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	blips = {
-		church = "Kościół"
+		church = "Kościół",
+		comedy_club = "Comedy Club",
+		bean_machine = "Bean Machine"
 	},
 
 	blockage = {
@@ -1102,7 +1145,18 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		skip_song = "Pomiń utwór",
 		volume = "Głośność",
 		logs_attempted_to_add_song_title = "Próba dodania piosenki do kolejki",
-		logs_attempted_to_add_song_details = "${consoleName} Próba dodania piosenki do kolejki z wideoID `${videoId}` do Boomboxa z ID `${boomboxId}`."
+		logs_attempted_to_add_song_details = "${consoleName} Próba dodania piosenki do kolejki z wideoID `${videoId}` do Boomboxa z ID `${boomboxId}`.",
+		wipe_boomboxes_not_staff = "Gracz próbował usunąć boomboxy, ale nie posiadał odpowiednich permisji.",
+		logs_wiped_all_boomboxes_title = "Wyczyszczono wszystkie boomboxy",
+		logs_wiped_all_boomboxes_details = "${consoleName} wyczyścił wszystkie boomboxy.",
+		logs_wiped_nearby_boomboxes_title = "Wyczyszczono pobliskie boomboxy",
+		logs_wiped_nearby_boomboxes_details = "${consoleName} wyczyścił pobliskie boomboxy w podanym zasięgu `${radius}`.",
+		radius_invalid = "Wartość promienia `${radius}` jest niewłaściwa.",
+		wiped_all_boomboxes = "Wyczyszczono ${boomboxesWiped} boomboxy.",
+		wiped_nearby_boomboxes = "Wyczyszczono ${boomboxesWiped} boomboxy w promieniu `${radius}`.",
+		failed_to_wipe_boomboxes = "Nie udało się usunąć boomboxów.",
+		no_boomboxes = "Brak boomboxów do usunięcia.",
+		no_boomboxes_within_radius = "Brak boomboxów do usunięcia w podanym promieniu `${radius}`."
 	},
 
 	calibrate = {
@@ -2215,6 +2269,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		flywheels_garage = "Flywheels Garage",
 		sandy_shores_pd = "Sandy Shores PD",
 		sandy_shores_hospital = "Sandy Shores Hospital",
+		davis_sheriffs_station = "Davis Sheriff's Station",
 		bank_1 = "Legion Square Bank",
 		bank_2 = "Rockford Hills Bank",
 		bank_3 = "Alta Bank",
@@ -2696,7 +2751,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		no_keys_for_vehicle = "Nie masz kluczyków do tego pojazdu.",
 		vehicle_locked = "Pojazd Zamknięty",
 		vehicle_unlocked = "Pojazd Otwarty",
-		h_to_hotwire = "[H] Kabelki"
+		h_to_hotwire = "[H] Kabelki",
+		received_keys = "Otrzymano klucze do pojazdu o numerze rejestracji ${plate}."
 	},
 
 	modifications = {
