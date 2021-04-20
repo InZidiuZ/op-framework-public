@@ -560,11 +560,6 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		wipe_boomboxes_command_parameter_radius_help = "Promień wyczyszczenia boomboxów. Pusta wartość pozostawiona wyniesie 100.",
 		wipe_boomboxes_command_substitutes = "",
 
-		-- game/calibrate
-		calibrate_command = "/calibrate",
-		calibrate_command_help = "Skalibruj swoje UI.",
-		calibrate_command_substitutes = "",
-
 		-- game/cayo_perico
 		toggle_cayo_perico = "/toggle_cayo_perico",
 		toggle_cayo_perico_help = "Włącza podgląd Cayo Perico.",
@@ -1111,6 +1106,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	-- game/*
+		arcade = {
+		use_arcade_machine = "Użyj ~INPUT_CONTEXT~ na Arcade Machine. Cena usługi $${cost}.",
+		finished_arcade_logs_title = "Zakończona kolejka",
+		finished_arcade_logs_details = "${consoleName} zakończono grę z wynikiem `${score}`."
+	},
+
 	audio = {
 		audio_id = "Audio ${audioId}"
 	},
@@ -1125,7 +1126,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	blips = {
 		church = "Kościół",
 		comedy_club = "Comedy Club",
-		bean_machine = "Bean Machine"
+		bean_machine = "Bean Machine",
+		cinema = "Kino",
+		arcade_bar = "Arcade Bar"
 	},
 
 	blockage = {
@@ -1157,26 +1160,6 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		failed_to_wipe_boomboxes = "Nie udało się usunąć boomboxów.",
 		no_boomboxes = "Brak boomboxów do usunięcia.",
 		no_boomboxes_within_radius = "Brak boomboxów do usunięcia w podanym promieniu `${radius}`."
-	},
-
-	calibrate = {
-		none = "Żaden",
-		mouse_button = "Przycisk myszy ${mouseButton}",
-		keyboard = "Klawiatura",
-		mouse = "Mysz",
-		header_title = "Skalibruj przycisk mówienia",
-		about_title = "Co to jest?",
-
-		header_text = [[
-			Domyślnie FiveM wyłącza możliwość wprowadzania danych GTA wewnątrz UI. Uniemożliwia to prowadzenie rozmów w grze.
-			<br><br>
-			W ramach obejścia stworzyliśmy ten kalibrator 'talk button', dzięki czemu można ręcznie ustawić, którego przycisku używasz do mówienia w grze, co pozwala nam na obejście tego.
-			<br><br>
-			Po prostu naciśnij przycisk, z którym rozmawiasz, i naciśnij 'Zapisz'! Możesz wyczyścić ten przycisk naciskając backspace.
-		]],
-
-		save = "Zapisz",
-		cancel = "Anuluj"
 	},
 
 	christmas = {
@@ -1236,7 +1219,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		not_networked = "Brak sieci",
 		model_hash = "Numer modelu",
 		model_name = "Nazwa modelu",
-		touching = "Dotyka"
+		touching = "Dotyka",
+		addon = "Addon"
 	},
 
 	doors = {
@@ -2266,10 +2250,18 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		jewelry_store = "Rockford Hills Jewelry Store",
 		principal_bank = "Principal Bank",
 		boilingbroke_penitentiary = "Zakład karny Boilingbroke",
+		fort_zancudo = "Fort Zancudo",
+		del_perro_pier = "Del Perro Pier",
 		flywheels_garage = "Flywheels Garage",
 		sandy_shores_pd = "Sandy Shores PD",
 		sandy_shores_hospital = "Sandy Shores Hospital",
 		davis_sheriffs_station = "Davis Sheriff's Station",
+		vespucci_pd = "Vespucci Police Station",
+		rockford_hills_pd = "Rockford Hills PD",
+		la_mesa_pd = "La Mesa PD",
+		beaver_bush_ranger_station = "Beaver Bush Ranger Station",
+		cinema = "Kino",
+		st_fiacre_hospital = "St. Fiacre Hospital",
 		bank_1 = "Legion Square Bank",
 		bank_2 = "Rockford Hills Bank",
 		bank_3 = "Alta Bank",
@@ -2507,7 +2499,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		enter_pillbox_roof_interact = "[${InteractionKey}] Wejdż na dach Pillbox",
 
 		exit_pillbox_roof = "Zejdż z dachu Pillbox",
-		exit_pillbox_roof_interact = "[${InteractionKey}] Zejdż z dachu Pillbox"
+		exit_pillbox_roof_interact = "[${InteractionKey}] Zejdż z dachu Pillbox",
+
+		enter_night_club = "Wejdź do Night Club",
+		enter_night_club_interact = "[${InteractionKey}] Enter Night Club",
+
+		exit_night_club = "Wyjdź z Night Club",
+		exit_night_club_interact = "[${InteractionKey}] Exit Night Club"
 	},
 
 	trackers = {
