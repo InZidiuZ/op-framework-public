@@ -560,11 +560,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		wipe_boomboxes_command_parameter_radius_help = "The wipe radius. Leaving this as blank will auto-select `100`. Valid values are above `0`, as well as `0` and `-1` which will select all inventories.",
 		wipe_boomboxes_command_substitutes = "",
 
-		-- game/calibrate
-		calibrate_command = "/calibrate",
-		calibrate_command_help = "Toggle the calibrate UI.",
-		calibrate_command_substitutes = "",
-
 		-- game/cayo_perico
 		toggle_cayo_perico = "/toggle_cayo_perico",
 		toggle_cayo_perico_help = "Toggle the Cayo Perico island.",
@@ -704,11 +699,11 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		clear_chat_command = "/clear_chat",
 		clear_chat_command_help = "Clear the chat.",
-		clear_chat_command_substitutes = "/cls",
+		clear_chat_command_substitutes = "/cls, /clear",
 
 		clear_chat_all_command = "/clear_chat_all",
 		clear_chat_all_command_help = "Clear the chat for everyone.",
-		clear_chat_all_command_substitutes = "/clsall",
+		clear_chat_all_command_substitutes = "/clsall, /clearall",
 
 		mute_command = "/mute",
 		mute_command_help = "Mute a player from the OOC chat and the report command.",
@@ -1111,6 +1106,12 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	-- game/*
+	arcade = {
+		use_arcade_machine = "Press ~INPUT_CONTEXT~ to use the Arcade Machine. The cost is $${cost}.",
+		finished_arcade_logs_title = "Finished Arcade",
+		finished_arcade_logs_details = "${consoleName} finished an arcade game with a score of `${score}`."
+	},
+
 	audio = {
 		audio_id = "Audio ${audioId}"
 	},
@@ -1125,7 +1126,9 @@ OP.Global.Locales.Languages["en-US"] = {
 	blips = {
 		church = "Church",
 		comedy_club = "Comedy Club",
-		bean_machine = "Bean Machine"
+		bean_machine = "Bean Machine",
+		cinema = "Cinema",
+		arcade_bar = "Arcade Bar"
 	},
 
 	blockage = {
@@ -1157,26 +1160,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		failed_to_wipe_boomboxes = "Failed to wipe boomboxes.",
 		no_boomboxes = "There were no boomboxes to wipe.",
 		no_boomboxes_within_radius = "There were no boomboxes to wipe within a radius of `${radius}`."
-	},
-
-	calibrate = {
-		none = "None",
-		mouse_button = "Mouse Button ${mouseButton}",
-		keyboard = "Keyboard",
-		mouse = "Mouse",
-		header_title = "Calibrate Talk Button",
-		about_title = "What is this?",
-
-		header_text = [[
-			By default, FiveM disables GTA input when inside UIs. This prevents you from talking in-game.
-			<br><br>
-			As a workaround, we've created this 'talk button' calibrator so you can manually set which button you use to talk in-game, allowing us to work around this behavior for you.
-			<br><br>
-			Simply press the button you talk with, and hit 'Save'! You can clear the button by pressing backspace.
-		]],
-
-		save = "Save",
-		cancel = "Cancel"
 	},
 
 	christmas = {
@@ -1236,7 +1219,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		not_networked = "Not Networked",
 		model_hash = "Model Hash",
 		model_name = "Model Name",
-		touching = "Touching"
+		touching = "Touching",
+		addon = "Addon"
 	},
 
 	doors = {
@@ -2266,10 +2250,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		jewelry_store = "Rockford Hills Jewelry Store",
 		principal_bank = "Principal Bank",
 		boilingbroke_penitentiary = "Boilingbroke Penitentiary",
+		fort_zancudo = "Fort Zancudo",
+		del_perro_pier = "Del Perro Pier",
 		flywheels_garage = "Flywheels Garage",
 		sandy_shores_pd = "Sandy Shores PD",
 		sandy_shores_hospital = "Sandy Shores Hospital",
 		davis_sheriffs_station = "Davis Sheriff's Station",
+		vespucci_pd = "Vespucci Police Station",
+		rockford_hills_pd = "Rockford Hills PD",
+		la_mesa_pd = "La Mesa PD",
+		beaver_bush_ranger_station = "Beaver Bush Ranger Station",
+		cinema = "Cinema",
+		st_fiacre_hospital = "St. Fiacre Hospital",
 		bank_1 = "Legion Square Bank",
 		bank_2 = "Rockford Hills Bank",
 		bank_3 = "Alta Bank",
@@ -2507,7 +2499,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		enter_pillbox_roof_interact = "[${InteractionKey}] Enter Pillbox Roof",
 
 		exit_pillbox_roof = "Exit Pillbox Roof",
-		exit_pillbox_roof_interact = "[${InteractionKey}] Exit Pillbox Roof"
+		exit_pillbox_roof_interact = "[${InteractionKey}] Exit Pillbox Roof",
+
+		enter_night_club = "Enter Night Club",
+		enter_night_club_interact = "[${InteractionKey}] Enter Night Club",
+
+		exit_night_club = "Exit Night Club",
+		exit_night_club_interact = "[${InteractionKey}] Exit Night Club",
 	},
 
 	trackers = {
