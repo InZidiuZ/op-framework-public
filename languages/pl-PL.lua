@@ -1126,7 +1126,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	blips = {
 		church = "Kościół",
 		comedy_club = "Comedy Club",
-		bean_machine = "Bean Machine"
+		bean_machine = "Bean Machine",
 		cinema = "Kino",
 		arcade_bar = "Arcade Bar"
 	},
@@ -1219,7 +1219,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		not_networked = "Brak sieci",
 		model_hash = "Numer modelu",
 		model_name = "Nazwa modelu",
-		touching = "Dotyka"
+		touching = "Dotyka",
 		addon = "Addon"
 	},
 
@@ -2499,13 +2499,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		enter_pillbox_roof_interact = "[${InteractionKey}] Wejdż na dach Pillbox",
 
 		exit_pillbox_roof = "Zejdż z dachu Pillbox",
-		exit_pillbox_roof_interact = "[${InteractionKey}] Zejdż z dachu Pillbox"
+		exit_pillbox_roof_interact = "[${InteractionKey}] Zejdż z dachu Pillbox",
 
 		enter_night_club = "Wejdź do Night Club",
 		enter_night_club_interact = "[${InteractionKey}] Enter Night Club",
 
 		exit_night_club = "Wyjdź z Night Club",
-		exit_night_club_interact = "[${InteractionKey}] Exit Night Club",
+		exit_night_club_interact = "[${InteractionKey}] Exit Night Club"
 	},
 
 	trackers = {
