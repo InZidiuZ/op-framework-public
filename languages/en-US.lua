@@ -537,7 +537,9 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		-- base/users
 		playtime_command = "/playtime",
-		playtime_command_help = "Check your total playtime on the server as well as your playtime this session.",
+		playtime_command_help = "Check total playtime on the server as well as playtime this session.",
+		playtime_command_parameter_server_id = "server id",
+		playtime_command_parameter_server_id_help = "The player's server ID you want to get the playtime for. You can leave this blank or at `0` to select yourself.",
 		playtime_command_substitutes = "",
 
 		leaderboard_command = "/leaderboard",
@@ -915,6 +917,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		-- game/voice
 		voice_debug_command = "/voice_debug",
 		voice_debug_command_help = "Toggle the voice debug.",
+		voice_debug_command_parameter_server_id = "server id",
+		voice_debug_command_parameter_server_id_help = "If you're wanting to toggle the 'voice debug' for someone else, insert their server id here.",
 		voice_debug_command_substitutes = "",
 
 		-- global/entities
@@ -1102,7 +1106,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		package_expired = "Your package has expired.",
 		package_same = "Your package is `${packageName}`.",
 		no_package = "You do not have a package.",
-		fetching_package_error = "An error occurred while trying to fetch your package data."
+		fetching_package_error = "An error occurred while trying to fetch your package data.",
+		
 	},
 
 	-- game/*
@@ -1598,6 +1603,19 @@ OP.Global.Locales.Languages["en-US"] = {
 		disposable_grill_description = "Can be placed anywhere in the world. Perfect for camping, hunting and fishing!",
 		grill = "Grill",
 		grill_description = "Can be placed anywhere in the world. Perfect for camping, hunting and fishing!",
+
+		bean_coffee = "Bean Coffee",
+		bean_coffee_description = "Generic description.",
+		cappuccino = "Cappuccino",
+		cappuccino_description = "Generic description.",
+		espresso = "Espresso",
+		espresso_description = "Generic description.",
+		cream_cookie = "Cream Cookie",
+		cream_cookie_description = "Generic description.",
+		cheesecake = "Cheesecake",
+		cheesecake_description = "Generic description.",
+		chocolate_cake = "Chocolate Cake",
+		chocolate_cake_description = "Generic description.",
 
 		weapon_dagger = "Antique Cavalry Dagger",
 		weapon_bat = "Baseball Bat",
