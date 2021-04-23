@@ -538,6 +538,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		-- base/users
 		playtime_command = "/playtime",
 		playtime_command_help = "Sprawdza ilość przegranych godzin na serwerze oraz na aktualnej sesji.",
+		playtime_command_parameter_server_id = "server id",
+		playtime_command_parameter_server_id_help = "ID gracza, którego czas gry chcesz sprawdzić. Zostaw '0' jeżeli chcesz sprawdzić swój czas.",
 		playtime_command_substitutes = "/czasgry",
 
 		leaderboard_command = "/leaderboard",
@@ -915,6 +917,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		-- game/voice
 		voice_debug_command = "/voice_debug",
 		voice_debug_command_help = "Włącz voice debug.",
+		voice_debug_command_parameter_server_id = "server id",
+		voice_debug_command_parameter_server_id_help = "Jeżeli chcesz włączyć voice_debuga dla kogoś innego wpisz jego ID.",
 		voice_debug_command_substitutes = "",
 
 		-- global/entities
@@ -1103,6 +1107,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		package_same = "Twój obecny pakiet to `${packageName}`.",
 		no_package = "Nie masz aktywnego pakietu.",
 		fetching_package_error = "Wystąpił błąd podczas ładowania danych odnośnie pakietu."
+		
 	},
 
 	-- game/*
@@ -1125,7 +1130,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 	blips = {
 		church = "Kościół",
-		comedy_club = "Comedy Club",
+		comedy_club = "SPLIT SIDES CLUB",
 		bean_machine = "Bean Machine",
 		cinema = "Kino",
 		arcade_bar = "Arcade Bar"
@@ -1598,6 +1603,19 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		disposable_grill_description = "Część asortymentu do rozłożenia biwaku.",
 		grill = "Grill",
 		grill_description = "Część asortymentu do rozłożenia biwaku.",
+
+		bean_coffee = "Bean Coffee",
+		bean_coffee_description = "Specjalność kawiarni, idealny balans smaku palonych ziaren Arabici i Robusty.",
+		cappuccino = "Cappuccino",
+		cappuccino_description = "Włoski napój kawowy z dodatkiem spienionego mleka i szczyptą sypkiej czekolady lub kakao dla ozdoby.",
+		espresso = "Espresso",
+		espresso_description = "Espresso parzy się zazwyczaj z mieszanek kilku gatunków kaw. Powstała w ten sposób kawa ma (po prawidłowym przygotowaniu) gęstą, orzechowobrązową piankę zwaną z wł. crema.",
+		cream_cookie = "Kremówka",
+		cream_cookie_description = "Słodka propozycja, która bezsprzecznie kojarzy się z kuchnią polską. Kremówka ta jest związana z miejscem narodzin papieża Jana Pawła II.",
+		cheesecake = "Cheesecake",
+		cheesecake_description = "Rodzaj ciasta deserowego lub deseru uformowanego na kształt ciasta, którego głównym składnikiem jest biały ser.",
+		chocolate_cake = "Chocolate Cake",
+		chocolate_cake_description = "Ciasto czekoladowe lub czekoladowe gateau to ciasto o smaku rozpuszczonej czekolady, proszku kakaowego lub obu tych składników.",
 
 		weapon_dagger = "Antyczny sztylet",
 		weapon_bat = "Kij baseball'owy",
