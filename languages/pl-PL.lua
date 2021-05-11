@@ -562,6 +562,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		wipe_boomboxes_command_parameter_radius_help = "Promień wyczyszczenia boomboxów. Pusta wartość pozostawiona wyniesie 100.",
 		wipe_boomboxes_command_substitutes = "",
 
+		-- game/casino
+		set_casino_screens_command = "/set_casino_screens",
+		set_casino_screens_command_help = "Ustaw scene kasyna.",
+		set_casino_screens_command_parameter_screen_label = "Etykieta sceny",
+		set_casino_screens_command_parameter_screen_label_help = "Etykieta sceny, którą chcesz ustawić. Dostępne sceny to `diamonds`, `skulls`, `snowflakes` and `winner`.",
+		set_casino_screens_command_substitutes = "/ksyno_scena",
+
 		-- game/cayo_perico
 		toggle_cayo_perico = "/toggle_cayo_perico",
 		toggle_cayo_perico_help = "Włącza podgląd Cayo Perico.",
@@ -604,6 +611,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		position_command_parameter_label = "label",
 		position_command_parameter_label_help = "An optional label to be stored with the position.",
 		position_command_substitutes = "/pos, /coords, /pozycja",
+
+		draw_radius_command = "/draw_radius",
+		draw_radius_command_help = "Wyznacz promień.",
+		draw_radius_command_parameter_radius = "Promień",
+		draw_radius_command_parameter_radius_help = "Promień, który ustaliłeś",
+		draw_radius_command_substitutes = "/promien",
 
 		-- game/doors
 		door_offset_command = "/door_offset",
@@ -733,6 +746,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		no_copyright_command_help = "Ta komenda pomoże w blokowaniu treści objętymi prawami autorskimi, komenda dla streamerów.",
 		no_copyright_command_substitutes = "",
 
+		tps_command = "/tps",
+		tps_command_help = "Wyznaczony aktualny TPS serwera.",
+		tps_command_substitutes = "",
+
 		-- game/money
 		cash_command = "/kasa",
 		cash_command_help = "Pokazuje ilość gotówki.",
@@ -801,6 +818,14 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		props_manage_command = "/props_manage",
 		props_manage_command_help = "Zarządzaj przedmiotami w pobliżu.",
 		props_manage_command_substitutes = "/przedmioty",
+
+		spawn_prop_command = "/spawn_prop",
+		spawn_prop_command_help = "Zresp propa.",
+		spawn_prop_command_parameter_model_hash = "Motel",
+		spawn_prop_command_parameter_model_hash_help = "Model propa, który chcesz zrespić.",
+		spawn_prop_command_parameter_network = "Sieć",
+		spawn_prop_command_parameter_network_help = "Jeżeli chcesz połączyć te propy to zaleca się żeby sieciowe były animowane.",
+		spawn_prop_command_substitutes = "",
 
 		-- game/radio
 		radio_command = "/radio",
@@ -1076,8 +1101,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 	users = {
 		playtime = "Czas gry",
-		total_playtime = "Łączny czas gry: ${totalPlaytime}",
-		session_playtime = "Aktualny czas gry: ${sessionPlaytime}",
+		player_playtime = "${playerName} (Position ${position})\nTotal Playtime: ${totalPlaytime}\nSession Playtime: ${sessionPlaytime}",
 		leaderboard = "Topka czasu spędzonego na serwerze",
 		your_position = "Twoja pozycja w topce czasu spędzonego na serwerze",
 		logs_user_connected_title = "Gracz połączony",
@@ -1098,6 +1122,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		you_timed_out = "Za długie oczekiwanie!",
 		kicked_for_no_specified_reason = "Zostałeś wyrzucony bez podanego powodu.",
 		kicked_player = "Wyrzucono gracza.",
+		kicked_player_and_removed_reconnect_priority = "Wyrzucono gracza i zresetowano priorytet kolejki.",
+		kicked_player_and_failed_to_remove_reconnect_priority = "Wyrzucono gracza i nie udało się zresetowac priorytetu kolejki.",
 		removed_player_from_queue = "Usunięto gracza z kolejki.",
 		player_not_found = "Gracz nie został odnaleziony.",
 		missing_steam_identifier = "Brak Idealne`.",
@@ -1106,8 +1132,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		package_expired = "Czas trwania Twojego pakietu dobiegł końca.",
 		package_same = "Twój obecny pakiet to `${packageName}`.",
 		no_package = "Nie masz aktywnego pakietu.",
-		fetching_package_error = "Wystąpił błąd podczas ładowania danych odnośnie pakietu."
-		
+		fetching_package_error = "Wystąpił błąd podczas ładowania danych odnośnie pakietu.",
+		check_playtime_not_staff = "Gracz próbował sprawdzić czas gry innego nie posiadając do tego uprawnień.",
+		reason_unknown = "Powód nieznany."
 	},
 
 	-- game/*
@@ -1119,6 +1146,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 	audio = {
 		audio_id = "Audio ${audioId}"
+	},
+
+	blackjack = {
+		play_blackjack = "Wciśnij ~INPUT_CONTEXT~ aby zagrać w Blackjack.",
+		play_blackjack_high_limit = "Wciśnij ~INPUT_CONTEXT~ aby zagrać w High-Limit Blackjack."
 	},
 
 	blindfold = {
@@ -1165,6 +1197,17 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		failed_to_wipe_boomboxes = "Nie udało się usunąć boomboxów.",
 		no_boomboxes = "Brak boomboxów do usunięcia.",
 		no_boomboxes_within_radius = "Brak boomboxów do usunięcia w podanym promieniu `${radius}`."
+	},
+
+	casino = {
+		set_casino_screen_id_not_staff = "Player attempted to set the casino screen id, but didn't have correct permissions to do so.",
+		successfully_set_screen_label = "Successfully set the screens to screen with label `${screenLabel}`.",
+		successfully_queued_screen_label = "Successfully queued up the screen with label `${screenLabel}`.",
+		failed_to_set_screen_label = "Failed to set the screens to screen with label `${screenLabel}`.",
+		invalid_screen_label = "The screen label `${screenLabel}` is invalid.",
+		missing_screen_label = "Missing the `screen label` parameter.",
+		set_screen_label_already_set_to = "The screen label is already set to `${screenLabel}`.",
+		only_available_in_the_casino = "You can only do this while inside the casino."
 	},
 
 	christmas = {
@@ -1225,7 +1268,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		model_hash = "Numer modelu",
 		model_name = "Nazwa modelu",
 		touching = "Dotyka",
-		addon = "Addon"
+		addon = "Addon",
+		invalid_radius_parameter = "Niepoprawny parametr promienia."
 	},
 
 	doors = {
@@ -1237,7 +1281,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		unlocking = "Otwieranie",
 		jewelry_store_closed = "Sklep z biżuterią jest obecnie zamknięty. Proszę wrócić później.",
 		bank_closed = "Bank jest obecnie zamknięty. Proszę wrócić później.",
-		store_closed = "Sklep jest obecnie zamknięty. Proszę wrócić później."
+		store_closed = "Sklep jest obecnie zamknięty. Proszę wrócić później.",
+		failed_to_sync_doors = "Błąd podczas otwierania drzwi. Spróbuj jeszcze raz."
 	},
 
 	health = {
@@ -1320,6 +1365,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		chop_shop = "Chop Shop",
 		courthouse = "Sąd",
 		burger_shot = "Burger Shot",
+		bean_machine = "Bean Machine",
+		hunting_store = "Sklep myśliwski",
+		fishing_store = "Sklep wędkarski",
 		pd_prefix = "PD",
 		ems_prefix = "EMS",
 		inventory_overweight = "Twój ekwipunek jest przeciążony!",
@@ -1603,6 +1651,28 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		disposable_grill_description = "Część asortymentu do rozłożenia biwaku.",
 		grill = "Grill",
 		grill_description = "Część asortymentu do rozłożenia biwaku.",
+		barrier = "Barierki",
+		barrier_description = "Przedmiot możliwy do rozstawienia na podłożu.",
+		dummy = "Manekin",
+		dummy_description = "Przedmiot możliwy do rozstawienia na podłożu",
+		target = "Tarcza typu cel",
+		target_description = "Przedmiot możliwy do rozstawienia na podłożu.",
+		large_target = "Duża tarcza typu cel",
+		large_target_description = "Przedmiot możliwy do rozstawienia na podłożu",
+		cone = "Pachołek",
+		cone_description = "Przedmiot możliwy do rozstawienia na podłożu",
+		spike_strips = "Kolczatki",
+		spike_strips_description = "Przedmiot możliwy do rozstawienia na podłożu",
+		floodlight = "Światła",
+		floodlight_description = "Przedmiot możliwy do rozstawienia na podłożu",
+		left_diversion_sign = "Lewy kierunkowskaz",
+		left_diversion_sign_description = "Przedmiot możliwy do rozstawienia na podłożu",
+		right_diversion_sign = "Prawy kierunkowskaz",
+		right_diversion_sign_description = "Przedmiot możliwy do rozstawienia na podłożu",
+		stop_sign = "Znak STOP",
+		stop_sign_description = "Przedmiot możliwy do rozstawienia na podłożu",
+		bear_trap = "Pułapka",
+		bear_trap_description = "Przedmiot możliwy do rozstawienia na podłożu",
 
 		bean_coffee = "Bean Coffee",
 		bean_coffee_description = "Specjalność kawiarni, idealny balans smaku palonych ziaren Arabici i Robusty.",
@@ -1616,6 +1686,30 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		cheesecake_description = "Rodzaj ciasta deserowego lub deseru uformowanego na kształt ciasta, którego głównym składnikiem jest biały ser.",
 		chocolate_cake = "Chocolate Cake",
 		chocolate_cake_description = "Ciasto czekoladowe lub czekoladowe gateau to ciasto o smaku rozpuszczonej czekolady, proszku kakaowego lub obu tych składników.",
+
+		chip_10 = "$10 Żeton",
+		chip_10_description = "Żetony, którymi grasz w kasynie, możesz je wymieniać na pieniądze.",
+		chip_50 = "$50 Żeton",
+		chip_50_description = "Żetony, którymi grasz w kasynie, możesz je wymieniać na pieniądze.",
+		chip_100 = "$100 Żeton",
+		chip_100_description = "Żetony, którymi grasz w kasynie, możesz je wymieniać na pieniądze.",
+		chip_500 = "$500 Żeton",
+		chip_500_description = "Żetony, którymi grasz w kasynie, możesz je wymieniać na pieniądze.",
+		chip_1000 = "$1000 Żeton",
+		chip_1000_description = "Żetony, którymi grasz w kasynie, możesz je wymieniać na pieniądze.",
+		chip_5000 = "$5000 Żeton",
+		chip_5000_description = "Żetony, którymi grasz w kasynie, możesz je wymieniać na pieniądze.",
+		chip_10000 = "$10000 Żeton",
+		chip_10000_description = "Żetony, którymi grasz w kasynie, możesz je wymieniać na pieniądze.",
+
+		grubs = "Larwy",
+		grubs_description = "Asortyment rybaka.",
+		leeches = "Pijawki",
+		leeches_description = "Asortyment rybaka.",
+		earthworms = "Robaki",
+		earthworms_description = "Asortyment rybaka.",
+		fishing_rod = "Fishing Rod",
+		fishing_rod_description = "Asortyment rybaka.",
 
 		weapon_dagger = "Antyczny sztylet",
 		weapon_bat = "Kij baseball'owy",
@@ -1897,7 +1991,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		missing_character_creation_data = "Brakujące dane dotyczące tworzenia postaci.",
 		character_already_loaded = "Masz już załadowaną postać.",
 		bad_words = "Próbowano stworzyć postać z potencjalnie brzydkim słowem w nazwie lub historii: `${badWords}`",
-		discord = "Discord"
+		discord = "Discord",
+		you_have_disconnected_from_the_server = "Rozłączyłes się z serwerem."
 	},
 
 	miscellaneous = {
@@ -1962,7 +2057,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		no_copyright = "Brak praw autorskich",
 		no_copyright_warning = "Jesteś streamerem i obowiązują Cię umowy o szanowaniu praw autorkisch utworów muzycznych? Jeżeli tak to sugeruję użycie komendy: `${noCopyrightCommand}`.",
 		no_copyright_enabled = "Komenda 'No Copyright' jest włączona.",
-		no_copyright_disabled = "Komenda 'No Copyright' jest wyłączona."
+		no_copyright_disabled = "Komenda 'No Copyright' jest wyłączona.",
+		server_tps = "Serwer TPS",
+		server_tps_response = "${tps}"
 	},
 
 	notepads = {
@@ -2217,7 +2314,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	peds = {
-		ped_robbing_injection = "Nadmierne rabowanie pedów!",
+		ped_robbing_injection = "Nadmierne rabowanie obywateli!",
+		robbed_ped_logs_title = "Okradany obywatel",
+		robbed_ped_logs_details = "${consoleName} okradziono obywatela i otrzymano $${payout}."
 	},
 
 		phone = {
@@ -2228,12 +2327,32 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		
 	},
 
-		players = {
-		player_left = "Gracz opuścił serwer [${serverId}]"
+	players = {
+		player_left = "Player Left [${serverId}]",
+		too_many_people_nearby = "Za dużo graczy w okolicy."
 	},
 
 	props = {
-		illegal_prop_item_id = "Niewłaścia próba użycia przedmiotu z innym."
+		illegal_prop_item_id = "Niewłaścia próba użycia przedmiotu z innym.",
+		spawn_prop_not_staff = "Gracz próbował zrespić propy nie posiadając do tego uprawnień.",
+		managing_props_help = "W tej chwili włączyłeś menu propów. Podejdź do propu i wciśnij ~INPUT_CONTEXT~ żeby go podnieść.",
+		press_to_pick_up = "[${InteractionKey}] Podnieś",
+		pick_up = "Podnieś",
+		picking_up = "Podnosisz",
+		press_to_destroy = "[${InteractionKey}] Zniszcz",
+		destroy = "Zniszcz",
+		destroying = "Niszczenie",
+		prop = "Prop",
+		model_parameter_missing = "Brakuje parametru model",
+		model_parameter_invalid = "Model `${model}` jest nieprawidłowy.",
+		model_parameter_is_not_an_object = "Model `${model}` nie jest przedmiotem.",
+		spawned_prop_non_networked = "Zrespiono niesieciowy model propu `${model}`.",
+		spawned_prop_networked = "Zrespiono sieciowy model propu. `${model}`.",
+		failed_to_spawn_prop = "Nie udało się zrespić propa o modelu `${model}`.",
+		not_able_to_spawn_in_vehicle = "Nie możesz być w pojeździe żeby zrespić propy.",
+		not_able_to_spawn_while_dead = "Nie możesz być martwy żeby zrepić propy.",
+		not_able_to_spawn_while_moving = "Zatrzymaj się żeby zrespić propy.",
+		stand_still_to_place_prop = "Musisz stać w miejscu żeby zrespić propy."
 	},
 
 	radio = {
@@ -2557,6 +2676,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		attackers_won = "Napastnicy wygrali!",
 		defenders_won = "Obrońcy wygrali!",
 		training_blip = "Trening"
+	},
+
+	traps = {
+		rearming = "Uzbrajanie",
+		press_to_rearm = "[${InteractionKey}] Uzbrój",
+		rearm = "Uzrój",
+		e = "E"
 	},
 
 	vending_machines = {
