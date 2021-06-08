@@ -28,7 +28,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		put_boombox_in_trunk = "Naciśnij ~INPUT_ENTER~ aby włożyć boombox do bagażnik",
 		put_player_in_trunk = "Naciśnij ~INPUT_ENTER~ aby włożyć osobe do bagażnika",
 		trunk_interaction_display = "[${VehicleEnterKey}] Wydostań się [${InteractionKey}] Otwórz/Zamknij Bagażnik",
-		boombox_already_in_trunk = "Boombox już znajduje się w bagażniku."
+		boombox_already_in_trunk = "Boombox już znajduje się w bagażniku.",
+		the_trunk_is_occupied = "Bagażnik jest pełny.",
+		unable_to_toggle_carry = "Prosze odczekaj chwilę zanim spróbujesz podnieść kogoś."
 	},
 
 	-- base/*
@@ -546,9 +548,14 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		leaderboard_command_help = "Sprawdz tablice przegranych godzin na serwerze.",
 		leaderboard_command_substitutes = "/topka",
 
-		refresh_package_command = "/refresh_package",
-		refresh_package_command_help = "Odświez swoje pakiety.",
-		refresh_package_command_substitutes = "",
+		package_command = "/package",
+		package_command_help = "Check and refresh your package.",
+		package_command_substitutes = "/refresh_package",
+
+		-- game/atc
+		atc_debug_command = "/atc_debug",
+		atc_debug_command_help = "włącz ATC debug.",
+		atc_debug_command_substitutes = "",
 
 		-- game/audio
 		audio_debug_command = "/audio_debug",
@@ -567,7 +574,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		set_casino_screens_command_help = "Ustaw scene kasyna.",
 		set_casino_screens_command_parameter_screen_label = "Etykieta sceny",
 		set_casino_screens_command_parameter_screen_label_help = "Etykieta sceny, którą chcesz ustawić. Dostępne sceny to `diamonds`, `skulls`, `snowflakes` and `winner`.",
-		set_casino_screens_command_substitutes = "/ksyno_scena",
+		set_casino_screens_command_substitutes = "/kasyno_scena",
 
 		-- game/cayo_perico
 		toggle_cayo_perico = "/toggle_cayo_perico",
@@ -951,6 +958,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		local_entities_debug_command_help = "Włącz debuger dla lokalnych jednostek.",
 		local_entities_debug_command_substitutes = "/lentities",
 
+		-- global/states
+		entity_states_debug_command = "/entity_states_debug",
+		entity_states_debug_command_help = "Włącz debuger dla entity states.",
+		entity_states_debug_command_substitutes = "/states",
+
 		-- illegal/corner
 		corner_command = "/corner",
 		corner_command_help = "Sprzedaj narkotyki pobliskiej osobie. Narkotyk który sprzedajesz bazowany jest na twoim położeniu.",
@@ -964,6 +976,33 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		clear_uis_command = "/clear_uis",
 		clear_uis_command_help = "Czyści wszystkie UI focuses.",
 		clear_uis_command_substitutes = "",
+
+		-- jobs/state
+		license_give_command = "/license_give",
+		license_give_command_help = "Nadaj licencje.",
+		license_give_command_parameter_character_id = "ID postaci",
+		license_give_command_parameter_character_id_help = "ID postaci, której chcesz nadać licencje.",
+		license_give_command_parameter_license = "Licencja",
+		license_give_command_parameter_license_help = "Rodzaj licencji, którą chcesz nadać. Dostępne: `heli`, `fw`, `cfi`, `hw`, `perf`, `management` and `military`.",
+		license_give_command_substitutes = "/give_license",
+
+		license_remove_command = "/license_remove",
+		license_remove_command_help = "Zabierz licencje.",
+		license_remove_command_parameter_character_id = "ID postaci",
+		license_remove_command_parameter_character_id_help = "ID postaci, której licencje chesz zabrać.",
+		license_remove_command_parameter_license = "Licencja",
+		license_remove_command_parameter_license_help = "Lista licencji, które możesz zabrać `heli`, `fw`, `cfi`, `hw`, `perf`, `management` and `military`.",
+		license_remove_command_substitutes = "/remove_license",
+
+		licenses_check_command = "/licenses_check",
+		licenses_check_command_help = "Sprawdź czyjeś licencje.",
+		licenses_check_command_parameter_character_id = "ID postaci",
+		licenses_check_command_parameter_character_id_help = "ID postaci, której licencje chcesz sprawdzić.",
+		licenses_check_command_substitutes = "/license_check, /check_licenses, /check_license",
+
+		licenses_command = "/licenses",
+		licenses_command_help = "Wybierz swoją licencję.",
+		licenses_command_substitutes = "",
 
 		-- vehicles/keys
 		give_key_command = "/give_key",
@@ -1129,8 +1168,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		missing_steam_identifier = "Brak Idealne`.",
 		package = "Package",
 		package_updated = "Twój pakiet został zaktualizowany do `${packageName}`.",
+		package_updated_remaining_time = "Twój pakiet został zaktualizowany do `${packageName}`. Skończy się za ${remainingTime}.",
 		package_expired = "Czas trwania Twojego pakietu dobiegł końca.",
 		package_same = "Twój obecny pakiet to `${packageName}`.",
+		package_same_remaining_time = "Twój pakiet to `${packageName}`. Skończy się za ${remainingTime}.",
 		no_package = "Nie masz aktywnego pakietu.",
 		fetching_package_error = "Wystąpił błąd podczas ładowania danych odnośnie pakietu.",
 		check_playtime_not_staff = "Gracz próbował sprawdzić czas gry innego nie posiadając do tego uprawnień.",
@@ -1138,6 +1179,23 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	-- game/*
+		airports = {
+		airport = "Lotnisko",
+		press_to_access_spawner = "Wciśnij ~INPUT_CONTEXT~ aby otworzyć listę dostępnych pojazdów.",
+		no_spawner_licenses = "Nie posiadasz licencji do używania tego pojazdu.",
+		vehicle_lists = "Lista pojazdów",
+		parked_vehicle = "Zaparkowane pojazdy.",
+		no_vehicle_to_park = "Nie ma pojazdu w pobliżu żeby go zaparkować.",
+		something_went_wrong = "Spróbuj jeszcze raz.",
+		park_vehicle = "Zaparkuj pojazd.",
+		park_vehicle_outside = "Pojazd jest na zewnątrz",
+		close_menu = "Zamknij menu",
+		spawned_vehicle = "Pojazd wyjęty.",
+		spawner_on_timeout = "Spróbuj jeszcze raz.",
+		spawn_area_not_clear = "Droga jest zablokowana, oczyść tor.",
+		return_button = "Powrót",
+	},
+
 		arcade = {
 		use_arcade_machine = "Użyj ~INPUT_CONTEXT~ na Arcade Machine. Cena usługi $${cost}.",
 		finished_arcade_logs_title = "Zakończona kolejka",
@@ -1200,14 +1258,14 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	casino = {
-		set_casino_screen_id_not_staff = "Player attempted to set the casino screen id, but didn't have correct permissions to do so.",
-		successfully_set_screen_label = "Successfully set the screens to screen with label `${screenLabel}`.",
-		successfully_queued_screen_label = "Successfully queued up the screen with label `${screenLabel}`.",
-		failed_to_set_screen_label = "Failed to set the screens to screen with label `${screenLabel}`.",
-		invalid_screen_label = "The screen label `${screenLabel}` is invalid.",
-		missing_screen_label = "Missing the `screen label` parameter.",
-		set_screen_label_already_set_to = "The screen label is already set to `${screenLabel}`.",
-		only_available_in_the_casino = "You can only do this while inside the casino."
+		set_casino_screen_id_not_staff = "Brak permisji do ustawiania ekranu.",
+		successfully_set_screen_label = "Udało się ustawić ekran kasyna na `${screenLabel}`.",
+		successfully_queued_screen_label = "Dodano do kolejki opcję ustawienia ekranu `${screenLabel}`.",
+		failed_to_set_screen_label = "Nie udało się zmienić ekranu `${screenLabel}`.",
+		invalid_screen_label = "Nazwa ekranu `${screenLabel}` jest nieprawidłowa.",
+		missing_screen_label = "Brakuje parametru `screen label`.",
+		set_screen_label_already_set_to = "Ekran jest ustawiony w tej chwili na `${screenLabel}`.",
+		only_available_in_the_casino = "Możesz tego używać tylko w obrębie kasyna."
 	},
 
 	christmas = {
@@ -1255,6 +1313,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		bottom_part_1 = "Ten pojazd należy do",
 		bottom_part_2 = "State of San Andreas",
 		bottom_part_3 = "Każde nieuprawnione użycie podlega surowej karze w ramach 13 S.A. Pen. Kod 502(a).",
+		set_unit_id_to = "Twój UNITID został ustalony jako ${unitId}.",
+		reset_unit_id = "Zresetowałeś swój UNITID.",
+		failed_to_set_unit_id = "Błąd podczas ustawiania UNITID.",
+		unit_id_already_set_to = "Ustawiłeś swój UNITID na ${unitId}.",
+		unit_id_already_reset = "Twój UNITID został już zresetowany wcześniej."
 	},
 
 	debug = {
@@ -1496,6 +1559,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		taco_description = "Specjalność El Brayana.",
 		banana = "Banana",
 		banana_description = "sopa de macaco",
+		smores = "S'mores",
+		smores_description = "Pyszne wafle, rozpływają się w ustach tak, że pitok sam wstaje",
 
 		beer = "Piwo",
 		beer_description = "Napój o niskim stężeniu alkoholowym, 18+",
@@ -1945,7 +2010,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		equipping_body_armor = "Zakładasz nową kamizelkę",
 		illegal_burger_shot_delivery_item_id = "Próba nieprawidłowego użycia itemu burgher shot dostawa.",
 		illegal_lighter_item_id = "Próba nieprawidłowego użycia zapalniczki z innym przedmiotem.",
-		unable_to_use_lighter_in_vehicle = "Nie możesz użyć zapalniczki podczas podróży pojazdem."
+		unable_to_use_lighter_in_vehicle = "Nie możesz użyć zapalniczki podczas podróży pojazdem.",
+		not_possible_in_a_vehicle = "Nie możesz tego zrobić w pojeździe."
 	},
 
 	login = {
@@ -2399,6 +2465,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		beaver_bush_ranger_station = "Beaver Bush Ranger Station",
 		cinema = "Kino",
 		st_fiacre_hospital = "St. Fiacre Hospital",
+		weazel_news = "Weazel News",
 		bank_1 = "Legion Square Bank",
 		bank_2 = "Rockford Hills Bank",
 		bank_3 = "Alta Bank",
@@ -2747,7 +2814,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		minute = "minuta",
 		minutes = "minuty",
 		second = "sekunda",
-		seconds = "sekundy"
+		seconds = "sekundy",
+		unknown = "Nieznany"
 	},
 
 	-- illegal/*
@@ -2809,6 +2877,45 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		changed_job_failure = "Wystąpił błąd podczas aplikowania do pracy ${jobName}.",
 		changed_job_title = "Zmieniono pracę",
 		changed_job_details = "${consoleName} zmienił pracę na `${jobName}`."
+	},
+
+	state = {
+		license_heli = "Helicopter",
+		license_fw = "Fixed Wing",
+		license_cfi = "Certified Flight Instructor",
+		license_hw = "Heavyweight",
+		license_perf = "Performance",
+		license_management = "Management",
+		gave_character_license = "Dodano ${characterName} licencje `${licenseLabel}`.",
+		character_already_has_license = "${characterName} posiada już licencje `${licenseLabel}`",
+		removed_character_license = "Usunięto licencje `${licenseLabel}` dla ${characterName}.",
+		character_does_not_have_license = "${characterName} nie posiada licencji `${licenseLabel}`",
+		license_not_found = "Licencja `${licenseLabel}` nie została znaleziona.",
+		user_not_found_with_character_id = "Nie znaleziono gracza z ID `${characterId}`.",
+		something_went_wrong = "Spróbuj jeszcze raz.",
+		no_license_added = "Licencja nie została nadana.",
+		invalid_character_id = "Podane ID postaci jest nieprawidłowe.",
+		no_character_id_added = "Nie podano ID postaci.",
+		your_licenses_are = "Posiadasz następujące licencje: ${licenses}",
+		player_licenses_are = "${characterName} posiada następujące licencje: ${licenses}",
+		you_have_no_licenses = "Nie posiadasz licencji.",
+		player_has_no_licenses = "${characterName} nie posiada licencji.",
+		failed_to_get_licenses = "Nie udało się nadać licencji."
+	},
+
+	weazel_news = {
+		press_to_access_spawner = "Press ~INPUT_CONTEXT~ to access the vehicle spawner.",
+		weazel_news = "Weazel News",
+		vehicle_list = "Vehicle List",
+		close_menu = "Close Menu",
+		return_button = "Return",
+		park_vehicle = "Park Vehicle",
+		parked_vehicle = "Parked vehicle.",
+		no_vehicle_to_park = "There is no vehicle to park.",
+		something_went_wrong = "Something went wrong. Please try again.",
+		spawned_vehicle = "Spawned veicle.",
+		spawner_on_timeout = "The vehicle spawner is on a timeout. Please try again.",
+		spawn_area_not_clear = "The spawn area is not clear."
 	},
 
 	-- menus/*
@@ -3096,7 +3203,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		weapon_name = "Nazwa broni:",
 		casings_picked_up = "Ilość odebranych łusek:",
 		bullet_label = "Etykieta z kulą:",
-		impacts_found = "Ilość Impaktów znalezionych na miejscu:",
+		impacts_found = "Ilość impaktów znalezionych na miejscu:",
 		right_foot = "Prawa Stopa",
 		left_foot = "Lewa Stopa",
 		right_hand = "Prawa Ręka",
