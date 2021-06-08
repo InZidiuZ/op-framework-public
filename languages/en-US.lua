@@ -28,7 +28,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		put_boombox_in_trunk = "Press ~INPUT_ENTER~ to put boombox in the trunk",
 		put_player_in_trunk = "Press ~INPUT_ENTER~ to put the player in the trunk",
 		trunk_interaction_display = "[${VehicleEnterKey}] Climb Out [${InteractionKey}] Open/Close Trunk",
-		boombox_already_in_trunk = "There is already a boombox in the trunk."
+		boombox_already_in_trunk = "There is already a boombox in the trunk.",
+		the_trunk_is_occupied = "The trunk is occupied.",
+		unable_to_toggle_carry = "Please wait a bit before toggling the carry."
 	},
 
 	-- base/*
@@ -546,9 +548,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		leaderboard_command_help = "Check the playtime leaderboard.",
 		leaderboard_command_substitutes = "",
 
-		refresh_package_command = "/refresh_package",
-		refresh_package_command_help = "Refresh your package.",
-		refresh_package_command_substitutes = "",
+		package_command = "/package",
+		package_command_help = "Check and refresh your package.",
+		package_command_substitutes = "/refresh_package",
+
+		-- game/atc
+		atc_debug_command = "/atc_debug",
+		atc_debug_command_help = "Toggle the ATC debug.",
+		atc_debug_command_substitutes = "",
 
 		-- game/audio
 		audio_debug_command = "/audio_debug",
@@ -951,6 +958,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		local_entities_debug_command_help = "Toggle the debug for local entities.",
 		local_entities_debug_command_substitutes = "/lentities",
 
+		-- global/states
+		entity_states_debug_command = "/entity_states_debug",
+		entity_states_debug_command_help = "Toggle the debug for the entity states.",
+		entity_states_debug_command_substitutes = "/states",
+
 		-- illegal/corner
 		corner_command = "/corner",
 		corner_command_help = "Sell drugs to a nearby person. The drug you sell is based on the location you are in.",
@@ -964,6 +976,33 @@ OP.Global.Locales.Languages["en-US"] = {
 		clear_uis_command = "/clear_uis",
 		clear_uis_command_help = "Clear all UI focuses.",
 		clear_uis_command_substitutes = "",
+
+		-- jobs/state
+		license_give_command = "/license_give",
+		license_give_command_help = "Give a license.",
+		license_give_command_parameter_character_id = "character id",
+		license_give_command_parameter_character_id_help = "The ID of the character you want to give the license to.",
+		license_give_command_parameter_license = "license",
+		license_give_command_parameter_license_help = "The license you wish to give. The available licenses are `heli`, `fw`, `cfi`, `hw`, `perf`, `management` and `military`.",
+		license_give_command_substitutes = "/give_license",
+
+		license_remove_command = "/license_remove",
+		license_remove_command_help = "Remove a license.",
+		license_remove_command_parameter_character_id = "character id",
+		license_remove_command_parameter_character_id_help = "The ID of the character you want to remove the license from.",
+		license_remove_command_parameter_license = "license",
+		license_remove_command_parameter_license_help = "The license you wish to remove. The available licenses are `heli`, `fw`, `cfi`, `hw`, `perf`, `management` and `military`.",
+		license_remove_command_substitutes = "/remove_license",
+
+		licenses_check_command = "/licenses_check",
+		licenses_check_command_help = "Check someone's licenses.",
+		licenses_check_command_parameter_character_id = "character id",
+		licenses_check_command_parameter_character_id_help = "The ID of the character you want to check the licenses for.",
+		licenses_check_command_substitutes = "/license_check, /check_licenses, /check_license",
+
+		licenses_command = "/licenses",
+		licenses_command_help = "Get your licenses.",
+		licenses_command_substitutes = "",
 
 		-- vehicles/keys
 		give_key_command = "/give_key",
@@ -1129,8 +1168,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		missing_steam_identifier = "Missing `steamIdentifier`.",
 		package = "Package",
 		package_updated = "Your package has been updated to `${packageName}`.",
+		package_updated_remaining_time = "Your package has been updated to `${packageName}`. It will expire in ${remainingTime}.",
 		package_expired = "Your package has expired.",
 		package_same = "Your package is `${packageName}`.",
+		package_same_remaining_time = "Your package is `${packageName}`. It will expire in ${remainingTime}.",
 		no_package = "You do not have a package.",
 		fetching_package_error = "An error occurred while trying to fetch your package data.",
 		check_playtime_not_staff = "Player attempted to check someone else's playtime, but didn't have correct permissions to do so.",
@@ -1138,6 +1179,23 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	-- game/*
+	airports = {
+		airport = "Airport",
+		press_to_access_spawner = "Press ~INPUT_CONTEXT~ to access the vehicle spawner.",
+		no_spawner_licenses = "You do not have any licenses for this vehicle spawner.",
+		vehicle_lists = "Vehicle Lists",
+		parked_vehicle = "Parked vehicle.",
+		no_vehicle_to_park = "There is no vehicle to park.",
+		something_went_wrong = "Something went wrong. Please try again.",
+		park_vehicle = "Park Vehicle",
+		park_vehicle_outside = "Park Vehicle Outside",
+		close_menu = "Close Menu",
+		spawned_vehicle = "Spawned veicle.",
+		spawner_on_timeout = "The vehicle spawner is on a timeout. Please try again.",
+		spawn_area_not_clear = "The spawn area is not clear.",
+		return_button = "Return",
+	},
+
 	arcade = {
 		use_arcade_machine = "Press ~INPUT_CONTEXT~ to use the Arcade Machine. The cost is $${cost}.",
 		finished_arcade_logs_title = "Finished Arcade",
@@ -1255,6 +1313,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		bottom_part_1 = "This vehicle is licensesd to the",
 		bottom_part_2 = "State of San Andreas",
 		bottom_part_3 = "Any unauthorized use is subject to heavy penalty under 13 S.A. Pen. Code 502(a).",
+		set_unit_id_to = "Your unit ID has now been set to ${unitId}.",
+		reset_unit_id = "Your unit ID has now been reset.",
+		failed_to_set_unit_id = "Failed to set your unit ID.",
+		unit_id_already_set_to = "Your unit ID is already set to ${unitId}.",
+		unit_id_already_reset = "Your unit ID has already been reset."
 	},
 
 	debug = {
@@ -1496,6 +1559,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		taco_description = "El Brayan's speciality.",
 		banana = "Banana",
 		banana_description = "sus",
+		smores = "Smores",
+		smores_description = "yes",
 
 		beer = "Beer",
 		beer_description = "Angry water.",
@@ -1945,7 +2010,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		equipping_body_armor = "Equipping Body Armor",
 		illegal_burger_shot_delivery_item_id = "Attempting to use a burger shot delivery item with with an illegal item id.",
 		illegal_lighter_item_id = "Attempting to use a lighter item with with an illegal item id.",
-		unable_to_use_lighter_in_vehicle = "You are not able to use a lighter in a vehicle."
+		unable_to_use_lighter_in_vehicle = "You are not able to use a lighter in a vehicle.",
+		not_possible_in_a_vehicle = "This action is not possible in a vehicle."
 	},
 
 	login = {
@@ -2329,7 +2395,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	players = {
 		player_left = "Player Left [${serverId}]",
-		too_many_people_nearby = "There are too many people nearby. Strange this might start to happen."
+		too_many_people_nearby = "There are too many people nearby. Strange things might start to happen."
 	},
 
 	props = {
@@ -2399,6 +2465,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		beaver_bush_ranger_station = "Beaver Bush Ranger Station",
 		cinema = "Cinema",
 		st_fiacre_hospital = "St. Fiacre Hospital",
+		weazel_news = "Weazel News",
 		bank_1 = "Legion Square Bank",
 		bank_2 = "Rockford Hills Bank",
 		bank_3 = "Alta Bank",
@@ -2747,7 +2814,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		minute = "minute",
 		minutes = "minutes",
 		second = "second",
-		seconds = "seconds"
+		seconds = "seconds",
+		unknown = "Unknown"
 	},
 
 	-- illegal/*
@@ -2809,6 +2877,45 @@ OP.Global.Locales.Languages["en-US"] = {
 		changed_job_failure = "An error occurred while trying to set your job to ${jobName}.",
 		changed_job_title = "Changed Job",
 		changed_job_details = "${consoleName} changed their job to `${jobName}`."
+	},
+
+	state = {
+		license_heli = "Helicopter",
+		license_fw = "Fixed Wing",
+		license_cfi = "Certified Flight Instructor",
+		license_hw = "Heavyweight",
+		license_perf = "Performance",
+		license_management = "Management",
+		gave_character_license = "Gave ${characterName} license `${licenseLabel}`.",
+		character_already_has_license = "${characterName} already has license `${licenseLabel}`",
+		removed_character_license = "Removed license `${licenseLabel}` from ${characterName}.",
+		character_does_not_have_license = "${characterName} does not have license `${licenseLabel}`",
+		license_not_found = "License `${licenseLabel}` was not found.",
+		user_not_found_with_character_id = "User not found with character id `${characterId}`.",
+		something_went_wrong = "Something went wrong. Please try again.",
+		no_license_added = "No license added.",
+		invalid_character_id = "The character ID that was added is invalid.",
+		no_character_id_added = "No character ID added.",
+		your_licenses_are = "Your licenses are as following: ${licenses}",
+		player_licenses_are = "${characterName} has the following licenses: ${licenses}",
+		you_have_no_licenses = "You have no licenses.",
+		player_has_no_licenses = "${characterName} has no licenses.",
+		failed_to_get_licenses = "Failed to get licenses."
+	},
+
+	weazel_news = {
+		press_to_access_spawner = "Press ~INPUT_CONTEXT~ to access the vehicle spawner.",
+		weazel_news = "Weazel News",
+		vehicle_list = "Vehicle List",
+		close_menu = "Close Menu",
+		return_button = "Return",
+		park_vehicle = "Park Vehicle",
+		parked_vehicle = "Parked vehicle.",
+		no_vehicle_to_park = "There is no vehicle to park.",
+		something_went_wrong = "Something went wrong. Please try again.",
+		spawned_vehicle = "Spawned veicle.",
+		spawner_on_timeout = "The vehicle spawner is on a timeout. Please try again.",
+		spawn_area_not_clear = "The spawn area is not clear."
 	},
 
 	-- menus/*
