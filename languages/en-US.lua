@@ -15,7 +15,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		warning = "Warning",
 		invalid_input = "Invalid Input.",
 		missing_input = "Missing Input.",
-		player_not_found = "Could not find player with server ID `${serverId}`."
+		player_not_found = "Could not find player with server ID `${serverId}`.",
+		something_went_wrong = "Something went wrong. Please try again."
 	},
 
 	-- animations/*
@@ -65,17 +66,49 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		invalid_amount = "Invalid amount.",
 
-		added_cash = "Added Cash",
-		added_cash_to_player = "Added $${amount} cash to ${consoleName}.",
+		added_cash_title = "Added Cash",
+		added_cash_details = "${consoleName} added $${amount} cash.",
+		added_cash_to_player_title = "Added Cash To Player",
+		added_cash_to_player_details = "${consoleName} added $${amount} cash to ${targetConsoleName}.",
+		added_cash_to_everyone_title = "Added Cash To Everyone",
+		added_cash_to_everyone_details = "${consoleName} added $${amount} cash to everyone.",
 
-		removed_cash = "Removed Cash",
-		removed_cash_from_player = "Removed $${amount} cash from ${consoleName}.",
+		removed_cash_title = "Removed Cash",
+		removed_cash_details = "${consoleName} removed $${amount} cash.",
+		removed_cash_from_player_title = "Removed Cash From Player",
+		removed_cash_from_player_details = "${consoleName} removed $${amount} cash from ${targetConsoleName}.",
+		removed_cash_from_everyone_title = "Removed Cash To Everyone",
+		removed_cash_from_everyone_details = "${consoleName} removed $${amount} cash from everyone.",
 
-		added_bank = "Added Bank",
-		added_bank_balance_to_player = "Added $${amount} bank balance to ${consoleName}.",
+		added_bank_title = "Added Bank",
+		added_bank_details = "${consoleName} added $${amount} bank.",
+		added_bank_to_player_title = "Added Bank To Player",
+		added_bank_to_player_details = "${consoleName} added $${amount} bank to ${targetConsoleName}.",
+		added_bank_to_everyone_title = "Added Bank To Everyone",
+		added_bank_to_everyone_details = "${consoleName} added $${amount} bank to everyone.",
 
-		removed_bank = "Removed Bank",
-		removed_bank_balance_from_player = "Removed $${amount} bank balance from ${consoleName}.",
+		removed_bank_title = "Removed Bank",
+		removed_bank_details = "${consoleName} removed $${amount} bank.",
+		removed_bank_from_player_title = "Removed Bank From Player",
+		removed_bank_from_player_details = "${consoleName} removed $${amount} bank from ${targetConsoleName}.",
+		removed_bank_from_everyone_title = "Removed Bank From Everyone",
+		removed_bank_from_everyone_details = "${consoleName} removed $${amount} bank from everyone.",
+
+		added_cash = "Added $${amount} cash.",
+		added_cash_to_player = "Added $${amount} cash to ${targetConsoleName}.",
+		added_cash_to_everyone = "Added $${amount} cash to everyone.",
+
+		removed_cash = "Removed $${amount} cash.",
+		removed_cash_from_player = "Removed $${amount} cash from ${targetConsoleName}.",
+		removed_cash_from_everyone = "Removed $${amount} cash from everyone.",
+
+		added_bank = "Added $${amount} bank.",
+		added_bank_to_player = "Added $${amount} bank to ${targetConsoleName}.",
+		added_bank_to_everyone = "Added $${amount} bank to everyone.",
+
+		removed_bank = "Removed $${amount} bank.",
+		removed_bank_from_player = "Removed $${amount} bank from ${targetConsoleName}.",
+		removed_bank_from_everyone = "Removed $${amount} bank from everyone.",
 
 		money_event_not_admin = "Attempted to toggle money event `${moneyEvent}`.",
 
@@ -1185,12 +1218,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		no_spawner_licenses = "You do not have any licenses for this vehicle spawner.",
 		vehicle_lists = "Vehicle Lists",
 		parked_vehicle = "Parked vehicle.",
+		press_to_park_vehicle = "Press ~INPUT_CONTEXT~ to park the vehicle.",
 		no_vehicle_to_park = "There is no vehicle to park.",
-		something_went_wrong = "Something went wrong. Please try again.",
 		park_vehicle = "Park Vehicle",
 		park_vehicle_outside = "Park Vehicle Outside",
 		close_menu = "Close Menu",
-		spawned_vehicle = "Spawned veicle.",
+		spawned_vehicle = "Spawned vehicle.",
 		spawner_on_timeout = "The vehicle spawner is on a timeout. Please try again.",
 		spawn_area_not_clear = "The spawn area is not clear.",
 		return_button = "Return",
@@ -2886,13 +2919,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		license_hw = "Heavyweight",
 		license_perf = "Performance",
 		license_management = "Management",
+		license_military = "Military",
 		gave_character_license = "Gave ${characterName} license `${licenseLabel}`.",
 		character_already_has_license = "${characterName} already has license `${licenseLabel}`",
 		removed_character_license = "Removed license `${licenseLabel}` from ${characterName}.",
 		character_does_not_have_license = "${characterName} does not have license `${licenseLabel}`",
 		license_not_found = "License `${licenseLabel}` was not found.",
 		user_not_found_with_character_id = "User not found with character id `${characterId}`.",
-		something_went_wrong = "Something went wrong. Please try again.",
 		no_license_added = "No license added.",
 		invalid_character_id = "The character ID that was added is invalid.",
 		no_character_id_added = "No character ID added.",
@@ -2912,8 +2945,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		park_vehicle = "Park Vehicle",
 		parked_vehicle = "Parked vehicle.",
 		no_vehicle_to_park = "There is no vehicle to park.",
-		something_went_wrong = "Something went wrong. Please try again.",
-		spawned_vehicle = "Spawned veicle.",
+		spawned_vehicle = "Spawned vehicle.",
 		spawner_on_timeout = "The vehicle spawner is on a timeout. Please try again.",
 		spawn_area_not_clear = "The spawn area is not clear."
 	},
