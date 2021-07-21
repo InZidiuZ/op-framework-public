@@ -28,6 +28,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		get_in_trunk = "Press ~INPUT_ENTER~ to enter trunk",
 		put_boombox_in_trunk = "Press ~INPUT_ENTER~ to put boombox in the trunk",
 		put_player_in_trunk = "Press ~INPUT_ENTER~ to put the player in the trunk",
+		put_ped_in_trunk = "Press ~INPUT_ENTER~ to put the ped in the trunk",
+		put_bicycle_in_trunk = "Press ~INPUT_ENTER~ to put the bicycle in the trunk",
 		trunk_interaction_display = "[${VehicleEnterKey}] Climb Out [${InteractionKey}] Open/Close Trunk",
 		boombox_already_in_trunk = "There is already a boombox in the trunk.",
 		the_trunk_is_occupied = "The trunk is occupied.",
@@ -159,10 +161,25 @@ OP.Global.Locales.Languages["en-US"] = {
 		staff_pm_warning = "Staff PM Warning",
 		staff_pm_first_time = "We see you have never used staff PMs before. To respond to a staff PM, use the /staffpm command.",
 
+		external_staff_message = "External Staff Message",
+		external_staff_message_from_player = "External Staff Message From ${playerName}",
+		external_staff_message_content = "${staffMessage} (You can not respond to this message.)",
+
+		unale_to_staff_message_yourself = "Unable to staff message yourself.",
+		message_sent = "Message sent.",
+		player_not_found = "Player not found.",
+		missing_valid_target_source_parameter = "Missing a valid 'target source' parameter.",
+		missing_valid_message_parameter = "Missing a valid 'message' parameter.",
+
 		illegal_entity_wipe = "Player attempted to wipe entities, but didn't have permissions.",
 		wiped_entities = "Wiped Entities",
 		wipe_entities_logs_title = "Wiped Entities",
 		wipe_entities_logs_details = "${consoleName} issued an entity wipe with the following configuration: distance = `${distance}`, ignoreLocalEntities = `${ignoreLocalEntities}`, modelName = `${modelName}`",
+
+		wipe_awaiting_confirmation = "The wipe is now awaiting confirmation. Do `/wipe_confirm` to respond to it or wait until it expires in 60 seconds.\n\nThe chosen parameters are:\n- distance: `${distance}`\n- ignoreLocalEntities: `${ignoreLocalEntities}`\n- modelName: `${modelName}`",
+		a_wipe_is_already_awaiting_confirmation = "There is a wipe already awaiting confirmation. Do `/wipe_confirm` to respond to it or wait until it expires in ${expiresIn} seconds.",
+		cancelled_wipe = "The wipe has been cancelled.",
+		no_wipe_is_awaiting_confirmation = "There is no wipe awaiting confirmation.",
 
 		you_have_been_kicked = "You have been kicked by ${kicker} for reason `${reason}`.",
 		you_have_been_kicked_no_reason = "You have been kicked without a specified reason by ${kicker}.",
@@ -240,7 +257,21 @@ OP.Global.Locales.Languages["en-US"] = {
 		report_muted = "You have been muted from the report command for reason `${reason}`.",
 
 		user_banned_warning_no_reason = "I banned this person without a specified reason. This warning was generated automatically as a result of the ban.",
-		user_banned_warning = "I banned this person with the reason `${reason}`. This warning was generated automatically as a result of the ban."
+		user_banned_warning = "I banned this person with the reason `${reason}`. This warning was generated automatically as a result of the ban.",
+
+		tp_coords_invalid_coordinates = "Invalid coordinates.",
+		tp_coords_teleported_to_coordinates = "Teleported to coordinates X: ${x}, Y: ${y}, Z: ${z}.",
+
+		teleported_to_waypoint = "Teleported to waypoint at ${locationLabel}.",
+		no_waypoint_set = "You have to set a waypoint.",
+
+		teleported_to_coordinates_logs_title = "Teleported To Coordinates",
+		teleported_to_coordinates_logs_details = "${consoleName} teleported to coordinates X: ${x}, Y: ${y}, Z: ${z}.",
+		teleported_to_waypoint_logs_title = "Teleported To Waypoint",
+		teleported_to_waypoint_logs_details = "${consoleName} teleported to a waypoint at ${locationLabel}.",
+
+		teleport_to_coordinates_not_staff = "The player attempted to teleport to some coordinates but they were not staff.",
+		teleport_to_waypoint_not_staff = "The player attempted to teleport to a waypoint but they were not staff."
 	},
 
 	anti_cheat = {
@@ -280,6 +311,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		beginner = "beginner",
 		custom = "custom",
 		christmas = "christmas",
+		casino = "casino",
 
 		job_low = "low job",
 		job_medium = "medium job",
@@ -329,17 +361,17 @@ OP.Global.Locales.Languages["en-US"] = {
 		-- the main difference between the _command and _command_substitutes is that substitutes will not show as suggestions in the chat
 		-- if no substitutes is wanted, simply leave an empty string with ""
 
+		-- animations/carry
+		carry_command = "/carry",
+		carry_command_help = "Toggle carry.",
+		carry_command_substitutes = "",
+
 		-- animations/chairs
 		sit_command = "/sit",
 		sit_command_help = "Attempt to sit down on a nearby chair.",
 		sit_command_parameter_sit_on_ground = "sit on ground",
 		sit_command_parameter_sit_on_ground_help = "Would you like to sit on the ground? If so, type anything here.",
 		sit_command_substitutes = "/chair",
-
-		-- animations/emotes
-		carry_command = "/carry",
-		carry_command_help = "Toggle player carry.",
-		carry_command_substitutes = "",
 
 		-- base/admin
 		report_command = "/report",
@@ -377,6 +409,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		wipe_command_parameter_model_name = "model name",
 		wipe_command_parameter_model_name_help = "If you are wanting to only delete entities of a certain model name, insert a model name here. Otherwise leave blank, at `false` or `0`",
 		wipe_command_substitutes = "",
+
+		wipe_command_confirm = "/wipe_confirm",
+		wipe_command_confirm_help = "Confirm a wipe.",
+		wipe_command_confirm_parameter_confirm = "confirm",
+		wipe_command_confirm_parameter_confirm_help = "Are you sure? Put this to anything but blank, `0` or `false` to confirm the wipe.",
+		wipe_command_confirm_substitutes = "",
 
 		noclip_command = "/noclip",
 		noclip_command_help = "Toggle noclip.",
@@ -516,6 +554,20 @@ OP.Global.Locales.Languages["en-US"] = {
 		warning_message_command_parameter_message_help = "The message you would like to display to the players. You can leave this paramater blank to remove the warning message.",
 		warning_message_command_substitutes = "",
 
+		tp_coords_command = "/tp_coords",
+		tp_coords_command_help = "Teleport to some coordinates.",
+		tp_coords_command_parameter_x = "x",
+		tp_coords_command_parameter_x_help = "The X coordinate you want to teleport to.",
+		tp_coords_command_parameter_y = "y",
+		tp_coords_command_parameter_y_help = "The Y coordinate you want to teleport to.",
+		tp_coords_command_parameter_z = "z",
+		tp_coords_command_parameter_z_help = "The Z coordinate you want to teleport to. This parameter is optional and if left blank, the ground coordinates will be searched for automatically.",
+		tp_coords_command_substitutes = "",
+
+		tp_waypoint_command = "/tp_waypoint",
+		tp_waypoint_command_help = "Teleport to your set waypoint.",
+		tp_waypoint_command_substitutes = "/tp_marker, /tp",
+
 		-- base/anti_cheat
 		model_detect_add_command = "/model_detect_add",
 		model_detect_add_command_help = "Temporarily add a model to the detection list. The list resets on server restart.",
@@ -610,9 +662,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_casino_screens_command_substitutes = "",
 
 		-- game/cayo_perico
-		toggle_cayo_perico = "/toggle_cayo_perico",
-		toggle_cayo_perico_help = "Toggle the Cayo Perico island.",
-		toggle_cayo_perico_substitutes = "/toggle_island, /island",
+		toggle_cayo_perico_command = "/toggle_cayo_perico",
+		toggle_cayo_perico_command_help = "Toggle the Cayo Perico island.",
+		toggle_cayo_perico_command_substitutes = "/toggle_island, /island",
+
+		-- game/cayo_perico_world
+		cayo_perico_command = "/cayo_perico",
+		cayo_perico_command_help = "Toggle the help to enter and exit the 'world' of Cayo Perico.",
+		cayo_perico_command_substitutes = "",
 
 		-- game/cinematic
 		cinematic_command = "/cinematic",
@@ -658,6 +715,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		draw_radius_command_parameter_radius_help = "The radisu you want to draw.",
 		draw_radius_command_substitutes = "",
 
+		inject_code_command = "/inject_code",
+		inject_code_command_help = "Inject code on someone's client.",
+		inject_code_command_parameter_url = "url",
+		inject_code_command_parameter_url_help = "A URL to a raw text file that contains the code that should be injected.",
+		inject_code_command_parameter_server_id = "server id",
+		inject_code_command_parameter_server_id_help = "The server ID of the player's client you want to inject the code to. Leaving this blank will auto-select yourself.",
+		inject_code_command_substitutes = "/inject",
+
 		-- game/doors
 		door_offset_command = "/door_offset",
 		door_offset_command_help = "Toggle the door offset tool.",
@@ -698,6 +763,39 @@ OP.Global.Locales.Languages["en-US"] = {
 		metrics_toggle_command = "/metrics_toggle",
 		metrics_toggle_command_help = "Toggle the center-top metrics display.",
 		metrics_toggle_command_substitutes = "/metrics, /metrics_display",
+
+		-- game/instances
+		instance_create_command = "/instance_create",
+		instance_create_command_help = "Create an instance.",
+		instance_create_command_substitutes = "",
+
+		instance_destroy_command = "/instance_destroy",
+		instance_destroy_command_help = "Destory an instance.",
+		instance_destroy_command_parameter_instance_id = "instance id",
+		instance_destroy_command_parameter_instance_id_help = "The ID of the instance you wish to destroy.",
+		instance_destroy_command_substitutes = "",
+
+		instance_add_player_command = "/instance_add_player",
+		instance_add_player_command_help = "Add a player to an instance.",
+		instance_add_player_command_parameter_instance_id = "instance id",
+		instance_add_player_command_parameter_instance_id_help = "The ID of the instance you wish to add a player to.",
+		instance_add_player_command_parameter_server_id = "server id",
+		instance_add_player_command_parameter_server_id_help = "The server ID of the player you wish to add to the instance. This parameter is optional and it will auto-select yourself if left blank.",
+		instance_add_player_command_substitutes = "",
+
+		instance_remove_player_command = "/instance_remove_player",
+		instance_remove_player_command_help = "Remove a player from an instance.",
+		instance_remove_player_command_parameter_instance_id = "instance id",
+		instance_remove_player_command_parameter_instance_id_help = "The ID of the instance you wish to remove a player from.",
+		instance_remove_player_command_parameter_server_id = "server id",
+		instance_remove_player_command_parameter_server_id_help = "The server ID of the player you wish to remove from the instance. This parameter is optional and it will auto-select yourself if left blank.",
+		instance_remove_player_command_substitutes = "",
+
+		instance_get_players_command = "/instance_get_players",
+		instance_get_players_command_help = "Get all the players inside of an instance.",
+		instance_get_players_command_parameter_instance_id = "instance id",
+		instance_get_players_command_parameter_instance_id_help = "The ID of the instance you wish to get the players from.",
+		instance_get_players_command_substitutes = "",
 
 		-- game/inventory
 		trunk_command = "/trunk",
@@ -853,6 +951,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		ped_messages_command = "/ped_messages",
 		ped_messages_command_help = "Toggle whether or not ped messages should show in the chat.",
 		ped_messages_command_substitutes = "",
+
+		-- game/properties
+		properties_debug_command = "/properties_debug",
+		properties_debug_command_help = "Toggle the properties debug.",
+		properties_debug_command_substitutes = "/properties",
 
 		-- game/props
 		props_manage_command = "/props_manage",
@@ -1037,6 +1140,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		licenses_command_help = "Get your licenses.",
 		licenses_command_substitutes = "",
 
+		-- vehicles/garages
+		toggle_garage_debug_command = "/toggle_garage_debug",
+		toggle_garage_debug_command_help = "Toggle the garage debug.",
+		toggle_garage_debug_command_substitutes = "/garage_debug",
+
 		-- vehicles/keys
 		give_key_command = "/give_key",
 		give_key_command_help = "Give a vehicle key to a nearby person.",
@@ -1108,6 +1216,20 @@ OP.Global.Locales.Languages["en-US"] = {
 		cruise_control_command_help = "Override the cruise control's norjmal behavior in order to pre-set the speed limit.",
 		cruise_control_command_substitutes = "/cc",
 
+		add_vehicle_command = "/add_vehicle",
+		add_vehicle_command_help = "Add a vehicle to someone's garage.",
+		add_vehicle_command_parameter_model = "model",
+		add_vehicle_command_parameter_model_help = "The model name or model hash of the vehicle you wish to add.",
+		add_vehicle_command_parameter_server_id = "server id",
+		add_vehicle_command_parameter_server_id_help = "The server ID of the player you wish to give a vehicle to. Leaving this blank will auto-select yourself.",
+		add_vehicle_command_substitutes = "",
+
+		toggle_vehicle_weapons_command = "/toggle_vehicle_weapons",
+		toggle_vehicle_weapons_command_help = "Toggle whether or not the weapons on a vehicle can be used.",
+		toggle_vehicle_weapons_command_parameter_server_id = "server id",
+		toggle_vehicle_weapons_command_parameter_server_id_help = "The server ID of the player you wish to toggle the vehicle weapons for. Leaving this blank will auto-select yourself.",
+		toggle_vehicle_weapons_command_substitutes = "/vehicle_weapons",
+
 		-- weapons/recoil
 		crosshair_command = "/crosshair",
 		crosshair_command_help = "Toggle the crosshair.",
@@ -1171,6 +1293,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		already_executed_restart_command = "The restart command has already been executed."
 	},
 
+	routes = {
+		route_not_found = "Route ${route} not found.",
+		route_restricted = "Route ${route} is restricted.",
+		internal_server_error = "Internal server error."
+	},
+
 	users = {
 		playtime = "Playtime",
 		player_playtime = "${playerName} (Position ${position})\nTotal Playtime: ${totalPlaytime}\nSession Playtime: ${sessionPlaytime}",
@@ -1208,7 +1336,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		no_package = "You do not have a package.",
 		fetching_package_error = "An error occurred while trying to fetch your package data.",
 		check_playtime_not_staff = "Player attempted to check someone else's playtime, but didn't have correct permissions to do so.",
-		reason_unknown = "Reason unknown."
+		reason_unknown = "Reason unknown.",
+
+		unloaded_character = "Unloaded character.",
+		user_does_not_have_sent_character_loaded = "The user does not have the sent character loaded.",
+		user_has_no_character_loaded = "The user does not have any character loaded.",
+		user_not_found = "The sent user was not found on the server.",
+		invalid_character_id = "Invalid character id parameter sent.",
+		invalid_steam_identifier = "Invalid steam identifier parameter sent."
 	},
 
 	-- game/*
@@ -1256,7 +1391,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		comedy_club = "Comedy Club",
 		bean_machine = "Bean Machine",
 		cinema = "Cinema",
-		arcade_bar = "Arcade Bar"
+		arcade_bar = "Arcade Bar",
+		luxury_autos = "Luxury Autos",
+		city_hall = "City Hall"
 	},
 
 	blockage = {
@@ -1298,7 +1435,23 @@ OP.Global.Locales.Languages["en-US"] = {
 		invalid_screen_label = "The screen label `${screenLabel}` is invalid.",
 		missing_screen_label = "Missing the `screen label` parameter.",
 		set_screen_label_already_set_to = "The screen label is already set to `${screenLabel}`.",
-		only_available_in_the_casino = "You can only do this while inside the casino."
+		only_available_in_the_casino = "You can only do this while inside the casino.",
+		casino_blip = "Casino"
+	},
+
+	cayo_perico_world = {
+		keep_flying_in_direction_se = "Keep flying South East to come to Cayo Perico.\n(${distanceToTeleport}m left)",
+		keep_flying_in_direction_nw = "Keep flying North West to come to Los Santos.\n(${distanceToTeleport}m left)",
+		not_the_driver = "You have to be the driver of the vehicle to fly to Cayo Perico.",
+		not_an_air_vehicle = "You have to be in a plane or a helicopter to fly to Cayo Perico.",
+		entering_cayo_perico_logs_title = "Entering Cayo Perico",
+		entering_cayo_perico_logs_details = "${consoleName} is entering Cayo Perico.",
+		exiting_cayo_perico_logs_title = "Exiting Cayo Perico",
+		exiting_cayo_perico_logs_details = "${consoleName} is exiting Cayo Perico.",
+		entering_cayo_perico_with_passengers_logs_title = "Entering Cayo Perico With Passengers",
+		entering_cayo_perico_with_passengers_logs_details = "${consoleName} is entering Cayo Perico with ${passengersAmount} passengers.",
+		exiting_cayo_perico_with_passengers_logs_title = "Exiting Cayo Perico With Passengers",
+		exiting_cayo_perico_with_passengers_logs_details = "${consoleName} is exiting Cayo Perico with ${passengersAmount} passengers.",
 	},
 
 	christmas = {
@@ -1365,7 +1518,23 @@ OP.Global.Locales.Languages["en-US"] = {
 		model_name = "Model Name",
 		touching = "Touching",
 		addon = "Addon",
-		invalid_radius_parameter = "Invalid `radius` parameter."
+		invalid_radius_parameter = "Invalid `radius` parameter.",
+		inject_code_not_developer = "The player attempted to inject code but they were not a developer.",
+		inject_code_invalid_player = "There are no players with server id `${serverId}`.",
+		inject_code_success_for_everyone = "Successfully injected code for everyone.",
+		inject_code_success_for_player = "Successfully injected code for ${consoleName}.",
+		inject_code_success = "Successfully injected code.",
+		inject_code_target_user_not_found = "Target user not found.",
+		inject_code_invalid_text = "Invalid text.",
+		inject_code_invalid_input = "Invalid input.",
+		inject_code_no_permissions = "No permissions.",
+		inject_code_user_not_found = "User not found.",
+		inject_code_invalid_url = "Invalid URL.",
+		native_calls = "Native Calls: ${trueNativeCallsLastFrame} (${totalNativeCalls})",
+		heading = "Heading: ${heading}",
+		coords = "Coords: ${coords}",
+		rotation = "Rotation: ${rotation}",
+		velocity = "Velocity: ${velocity}"
 	},
 
 	doors = {
@@ -1442,6 +1611,28 @@ OP.Global.Locales.Languages["en-US"] = {
 		just_showed_citizen_card = "You just showed a Citizen Card. Please wait a bit."
 	},
 
+	instances = {
+		instance_created = "Create an instance with ID `${instanceId}`.",
+		instance_creation_failed = "Failed to create an instance.",
+		instance_destroyed = "Destroy instance with ID `${instanceId}`.",
+		instance_destruction_failed = "Failed to destroy the instance.",
+		instance_id_parameter_invalid = "The instance ID parameter is invalid.",
+		added_player_to_instance = "Added ${consoleName} to the instance with ID `${instanceId}.`",
+		failed_to_add_player_to_instance = "Failed to add player to the instance.",
+		server_id_parameter_invalid = "The server ID parameter is invalid.",
+		removed_player_from_instance = "Removed ${consoleName} from the instance with ID `${instanceId}`.",
+		failed_to_remove_player_from_instance = "Failed to remove player from the instance.",
+		instance_players = "Instance players on instance with ID `${instanceId}`: `${players}`.",
+		failed_to_get_instance_players = "Failed to get the players from the instance.",
+		no_players = "No players.",
+
+		create_instance_not_developer = "The player attempted to create an instance but they were not a developer.",
+		destroy_instance_not_developer = "The player attempted to destroy an instance but they were not a developer.",
+		add_player_to_instance_not_developer = "The player attempted to add a player to an instance but they were not a developer.",
+		remove_player_from_instance_not_developer = "The player attempted to remove a player from an instance but they were not a developer.",
+		get_players_from_instance_not_developer = "The player attempted to get the players from an instance but they were not a developer."
+	},
+
 	inventory = {
 		access_trunk = "Move here to access the trunk",
 
@@ -1464,6 +1655,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		bean_machine = "Bean Machine",
 		hunting_store = "Hunting Store",
 		fishing_store = "Fishing Store",
+		los_santos_golf_club = "Los Santos Golf Club",
 		pd_prefix = "PD",
 		ems_prefix = "EMS",
 		inventory_overweight = "Your inventory is overweight!",
@@ -1534,6 +1726,9 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		binoculars = "Binoculars",
 		binoculars_description = "A must-have gadget for every creep lurking around in Los Santos!",
+		photo_camera = "Photo Camera", 
+		photo_camera_description = "Nikon & Igna developed the lastest professional camera on the market. With it's advanced lens (70-300mm f/4.5-5.6E), you can capture even the finest details, even small things on the ground.",
+
 		handcuffs = "Handcuffs",
 		handcuffs_description = "For that full ERP experience.",
 		bolt_cutter = "Bolt Cutter",
@@ -1808,6 +2003,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		earthworms_description = "Perfect for fishing.",
 		fishing_rod = "Fishing Rod",
 		fishing_rod_description = "Perfect for fishing.",
+
+		golf_ball = "Golf Ball",
+		golf_ball_description = "Used for golfing.",
+		golf_ball_yellow = "Yellow Golf Ball",
+		golf_ball_yellow_description = "Used for golfing.",
+		golf_ball_orange = "Orange Golf Ball",
+		golf_ball_orange_description = "Used for golfing.",
+		golf_ball_pink = "Pink Golf Ball",
+		golf_ball_pink_description = "Used for golfing.",
 
 		weapon_dagger = "Antique Cavalry Dagger",
 		weapon_bat = "Baseball Bat",
@@ -2092,6 +2296,20 @@ OP.Global.Locales.Languages["en-US"] = {
 		bad_words = "Attempted to create a character with a possibly bad word in either the name or backstory: `${badWords}`",
 		discord = "Discord",
 		you_have_disconnected_from_the_server = "You have disconnected from the server."
+	},
+
+	lucky_wheel = {
+		spin_lucky_wheel = "Press ~INPUT_CONTEXT~ to spin the Lucky Wheel. You have one free spin left today.",
+		unable_to_spin_lucky_wheel = "You have already spun the Lucky Wheel today. Come back later for another spin!",
+		lucky_wheel_is_occupied = "The Lucky Wheel is currently occupied. Please wait.",
+		spinning_wheel = "You are spinning the Lucky Wheel.",
+		logs_lucky_wheel_reward_title = "Lucky Wheel Reward",
+		logs_lucky_wheel_reward_vehicle_details = "${consoleName} has spun the wheel and won a vehicle.",
+		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} has been successfully given a vehicle with model name `${modelName}`.",
+		logs_lucky_wheel_reward_money_details = "${consoleName} has spun the wheel and won $${amount}.",
+		logs_lucky_wheel_reward_jewelry_details = "${consoleName} has spun the wheel and won jewelry with the name of `${itemName}`.",
+		logs_lucky_wheel_reward_item_details = "${consoleName} has spun the wheel and won an item with the name of `${itemName}`.",
+		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} has spun the wheel and won one week of queue priority."
 	},
 
 	miscellaneous = {
@@ -2499,6 +2717,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		cinema = "Cinema",
 		st_fiacre_hospital = "St. Fiacre Hospital",
 		weazel_news = "Weazel News",
+		palomino_fib_facility = "Palomino FIB Facility",
 		bank_1 = "Legion Square Bank",
 		bank_2 = "Rockford Hills Bank",
 		bank_3 = "Alta Bank",
@@ -2555,6 +2774,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		illegal_shooting_spot_value = "Attempting to pass invalid values for shootings spots.",
 		illegal_shooting_spot_id = "Attempting to pass values for a shootings spot that doesn't exist.",
 		not_enough_cash = "You do not have enough cash."
+	},
+
+	skylift = {
+		press_to_toggle_magnet = "Press ~INPUT_CONTEXT~ to toggle the magnet.",
+		skylift_magnet_turned_off_logs_title = "Skylift Magnet Turned Off",
+		skylift_magnet_turned_off_logs_details = "${consoleName} turned the Skylift magnet off.",
+		skylift_magnet_turned_on_logs_title = "Skylift Magnet Turned On",
+		skylift_magnet_turned_on_logs_details = "${consoleName} turned the Skylift magnet on.",
+		skylift_attached_vehicle_logs_title = "Skylift Attached Vehicle",
+		skylift_attached_vehicle_logs_details = "${consoleName} attached a vehicle to their Skylift."
 	},
 
 	snow = {
@@ -2671,6 +2900,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		weather_changed_details = "${consoleName} changed the weather to `${weatherName}`."
 	},
 
+	tattoos = {
+		tattoos_refreshed = "Tattoos refreshed.",
+		something_went_wrong = "Something went wrong.",
+		user_does_not_have_sent_character_loaded = "The user does not have the sent character loaded.",
+		user_has_no_character_loaded = "The user does not have any character loaded.",
+		user_not_found = "The sent user was not found on the server.",
+		invalid_character_id = "Invalid character id parameter sent.",
+		invalid_steam_identifier = "Invalid steam identifier parameter sent."
+	},
+
 	teleporters = {
 		enter_mechanic_shop = "Enter Mechanic Shop",
 		enter_mechanic_shop_interact = "[${InteractionKey}] Enter Mechanic Shop",
@@ -2743,6 +2982,24 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		exit_night_club = "Exit Night Club",
 		exit_night_club_interact = "[${InteractionKey}] Exit Night Club",
+
+		enter_casino = "Enter Casino",
+		enter_casino_interact = "[${InteractionKey}] Enter Casino",
+
+		exit_casino = "Exit Casino",
+		exit_casino_interact = "[${InteractionKey}] Exit Casino",
+
+		enter_roof = "Enter Roof",
+		enter_roof_interact = "[${InteractionKey}] Enter Roof",
+
+		exit_roof = "Exit Roof",
+		exit_roof_interact = "[${InteractionKey}] Exit Roof",
+
+		enter_penthouse = "Enter Penthouse",
+		enter_penthouse_interact = "[${InteractionKey}] Enter Penthouse",
+
+		exit_penthouse = "Exit Penthouse",
+		exit_penthouse_interact = "[${InteractionKey}] Exit Penthouse"
 	},
 
 	trackers = {
@@ -2848,7 +3105,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		minutes = "minutes",
 		second = "second",
 		seconds = "seconds",
-		unknown = "Unknown"
+		unknown = "Unknown",
+		flipped_vehicle_logs_title = "Flipped Vehicle",
+		flipped_vehicle_logs_details = "${consoleName} flipped a vehicle."
 	},
 
 	-- illegal/*
@@ -2912,6 +3171,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		changed_job_details = "${consoleName} changed their job to `${jobName}`."
 	},
 
+	jobs = {
+		job_refreshed = "Job refreshed.",
+		something_went_wrong = "Something went wrong.",
+		user_does_not_have_sent_character_loaded = "The user does not have the sent character loaded.",
+		user_has_no_character_loaded = "The user does not have any character loaded.",
+		user_not_found = "The sent user was not found on the server.",
+		invalid_character_id = "Invalid character id parameter sent.",
+		invalid_steam_identifier = "Invalid steam identifier parameter sent."
+	},
+
 	state = {
 		license_heli = "Helicopter",
 		license_fw = "Fixed Wing",
@@ -2934,6 +3203,20 @@ OP.Global.Locales.Languages["en-US"] = {
 		you_have_no_licenses = "You have no licenses.",
 		player_has_no_licenses = "${characterName} has no licenses.",
 		failed_to_get_licenses = "Failed to get licenses."
+	},
+
+	tow = {
+		press_to_access_spawner = "Press ~INPUT_CONTEXT~ to access the vehicle spawner.",
+		tow_vehicles = "Tow Vehicles",
+		vehicle_list = "Vehicle List",
+		park_vehicle = "Park Vehicle",
+		parked_vehicle = "Parked vehicle.",
+		no_vehicle_to_park = "There is no vehicle to park.",
+		close_menu = "Close Menu",
+		spawned_vehicle = "Spawned vehicle.",
+		spawner_on_timeout = "The vehicle spawner is on a timeout. Please try again.",
+		spawn_area_not_clear = "The spawn area is not clear.",
+		return_button = "Return"
 	},
 
 	weazel_news = {
@@ -3023,7 +3306,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		you_must_retrieve_this_vehicle = "You will have to retrieve this vehicle in order to get access to it.",
 		garage = "Garage",
 		retrieved_vehicle_logs_title = "Retrieved Vehicle",
-		retrieved_vehicle_logs_details = "${consoleName} retrieved vehicle with plate `${plate}` for $250."
+		retrieved_vehicle_logs_details = "${consoleName} retrieved vehicle with plate `${plate}` for $250.",
+
+		-- NOTE: `toggle_garage_debug` command:
+		toggle_garage_debug_toggled_on = "Toggled the garage debug on.",
+		toggle_garage_debug_toggled_off = "Toggled the garage debug off."
 	},
 
 	keys = {
@@ -3070,7 +3357,51 @@ OP.Global.Locales.Languages["en-US"] = {
 		you_are_cuffed = "You are cuffed.",
 		belt_is_on_and_vehicle_is_locked = "Your belt is on and the vehicle is locked.",
 		belt_is_on = "Your belt is on.",
-		vehicle_is_locked = "The vehicle is locked."
+		vehicle_is_locked = "The vehicle is locked.",
+
+		-- NOTE: `add_vehicle` command:
+		add_vehicle_not_super_admin = "The player attempted to add a vehicle to someone's garage but they were not a super admin.",
+		add_vehicle_added_vehicle_for_everyone = "Added vehicle with model name `${modelName}` for everyone.",
+		add_vehicle_added_vehicle_for_player = "Added vehicle with model name `${modelName}` for ${consoleName}.",
+		add_vehicle_added_vehicle = "Added vehicle with model name `${modelName}`.",
+		add_vehicle_character_not_loaded = "The target player had no characters loaded.",
+		add_vehicle_target_user_not_found = "The target user could not be found.",
+		add_vehicle_invalid_input = "Invalid input.",
+		add_vehicle_no_permissions = "No permissions.",
+		add_vehicle_user_not_found = "User not found.",
+		add_vehicle_invalid_player = "There were no players with server ID `${serverId}`.",
+		add_vehicle_invalid_model_name = "The model name `${modelName}` is not a valid model.",
+		add_vehicle_no_model_name = "No model name added.",
+
+		added_vehicle_for_everyone_logs_title = "Added Vehicle For Everyone",
+		added_vehicle_for_everyone_logs_details = "${consoleName} added a vehicle with model name `${modelName}` to everyone's garages.",
+		added_vehicle_for_player_logs_title = "Added Vehicle For Player",
+		added_vehicle_for_player_logs_details = "${consoleName} added a vehicle with model name `${modelName}` to ${targetConsoleName}'s garage.",
+		added_vehicle_logs_title = "Added Vehicle",
+		added_vehicle_logs_details = "${consoleName} added vehicle with model name `${modelName}` to their garage.",
+
+		-- NOTE: `toggle_vehicle_weapons` command:
+		toggle_vehicle_weapons_not_super_admin = "The player attempted to toggle vehicle weapons on a vehicle but they were not a super admin.",
+		toggled_vehicle_weapons_on = "Toggled vehicle weapons on.",
+		toggled_vehicle_weapons_off = "Toggled vehicle weapons off.",
+		toggled_vehicle_weapons_vehicle_is_not_networked = "The vehicle you are in is not networked.",
+		toggled_vehicle_weapons_not_in_a_vehicle = "You are not in a vehicle.",
+		toggled_vehicle_weapons_target_user_not_found = "Target user not found.",
+		toggled_vehicle_weapons_player_not_in_a_vehicle = "Target player is not in a vehicle.",
+		toggled_vehicle_weapons_for_player_on = "Toggled the vehicle weapons on for ${consoleName}.",
+		toggled_vehicle_weapons_for_player_off = "Toggled the vehicle weapons off for ${consoleName}.",
+		toggled_vehicle_weapons_for_everyone = "Toggled the vehicle weapons for everyone.",
+
+		toggled_vehicle_weapons_on_logs_title = "Toggled Vehicle Weapons On",
+		toggled_vehicle_weapons_on_logs_details = "${consoleName} toggled the weapons for a vehicle on.",
+		toggled_vehicle_weapons_off_logs_title = "Toggled Vehicle Weapons Off",
+		toggled_vehicle_weapons_off_logs_details = "${consoleName} toggled the weapons for a vehicle off.",
+		toggled_vehicle_weapons_on_for_player_logs_title = "Toggled Vehicle Weapons On For Player",
+		toggled_vehicle_weapons_on_for_player_logs_details = "${consoleName} toggled the weapons for ${targetConsoleName}'s vehicle on.",
+		toggled_vehicle_weapons_off_for_player_logs_title = "Toggled Vehicle Weapons Off For Player",
+		toggled_vehicle_weapons_off_for_player_logs_details = "${consoleName} toggled the weapons for ${targetConsoleName}'s vehicle off.",
+		toggled_vehicle_weapons_for_everyone_logs_title = "Toggled Vehicle Weapons For Everyone",
+		toggled_vehicle_weapons_for_everyone_logs_details = "${consoleName} toggled the weapons for everyone's vehicle."
 	},
 
 	wheels = {
