@@ -168,7 +168,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		unale_to_staff_message_yourself = "No puedes mandarte un mensaje a ti mismo.",
 		message_sent = "Mensaje enviado.",
 		player_not_found = "Jugador no encontrado.",
-		missing_valid_target_source_parameter = "Falta un parámetro de "fuente de destino" válido.",
+		missing_valid_target_source_parameter = "Falta un parámetro de fuente de destino válido.",
 		missing_valid_message_parameter = "Falta un parámetro de 'mensaje' válido.",
 
 		illegal_entity_wipe = "El jugador intentó borrar entidades, pero no tenía permisos para hacerlo.",
@@ -257,7 +257,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		report_muted = "Ha sido silenciado del comando de reporte por razón `${reason}`.",
 
 		user_banned_warning_no_reason = "Banee a esta persona sin una razón específica. Esta advertencia se generó automáticamente como resultado del baneo.",
-		user_banned_warning = "Banee a esta persona por la razón `${reason}`. Esta advertencia se generó automáticamente como resultado de la prohibición."
+		user_banned_warning = "Banee a esta persona por la razón `${reason}`. Esta advertencia se generó automáticamente como resultado de la prohibición.",
 
 		tp_coords_invalid_coordinates = "Coordenadas inválidas.",
 		tp_coords_teleported_to_coordinates = "Teletransportado a coordenadas X: ${x}, Y: ${y}, Z: ${z}.",
@@ -413,7 +413,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		wipe_command_confirm = "/wipe_confirmar",
 		wipe_command_confirm_help = "Confirmar el wipe.",
 		wipe_command_confirm_parameter_confirm = "confirmar",
-		wipe_command_confirm_parameter_confirm_help = "¿Está seguro? Pon lo que sea que no quede en blanco, "0" o "falso" para confirmar el borrado.",
+		wipe_command_confirm_parameter_confirm_help = "¿Está seguro? Pon lo que sea que no quede en blanco, `0` o `falso` para confirmar el borrado.",
 		wipe_command_confirm_substitutes = "",
 
 		noclip_command = "/noclip",
@@ -467,7 +467,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		spawn_vehicle_command_parameter_model_name = "nombre del modelo",
 		spawn_vehicle_command_parameter_model_name_help = "El nombre del modelo del vehículo que desea generar.",
 		spawn_vehicle_command_parameter_server_id = "ID del servidor",
-		spawn_vehicle_command_parameter_server_id_help = "El ID del servidor del jugador para el que desea generar este vehículo. Puede dejarlo en blanco o en` 0` para seleccionarlo usted mismo. ",
+		spawn_vehicle_command_parameter_server_id_help = "El ID del servidor del jugador para el que desea generar este vehículo. Puede dejarlo en blanco o en `0` para seleccionarlo usted mismo. ",
 		spawn_vehicle_command_substitutes = "/sv",
 
 		aimbot_command = "/aimbot",
@@ -584,7 +584,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		detection_area_add_command = "/agregar_area_deteccion",
 		detection_area_add_command_help = "Crea un área donde se le enviarán todas las entidades generadas dentro de esa área con alguna información. La información se puede encontrar en la interfaz de usuario general.",
 		detection_area_add_command_parameter_radius = "radio",
-		detection_area_add_command_parameter_radius_help = "El radio del círculo en el que se detectarán las entidades. El valor mínimo es` 10` y el máximo es `5000`. Si lo deja en blanco, el valor predeterminado será` 100`. ",
+		detection_area_add_command_parameter_radius_help = "El radio del círculo en el que se detectarán las entidades. El valor mínimo es `10` y el máximo es `5000`. Si lo deja en blanco, el valor predeterminado será `100`. ",
 		detection_area_add_command_substitutes = "/area_add",
 
 		detection_area_remove_command = "/remover_area_deteccion",
@@ -626,7 +626,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		playtime_command = "/tiempo_jugado",
 		playtime_command_help = "Verifique el tiempo total de reproducción en el servidor, así como el tiempo de reproducción de esta sesión.",
 		playtime_command_parameter_server_id = "ID del servidor",
-		playtime_command_parameter_server_id_help = "El ID del servidor del jugador para el que desea obtener el tiempo de reproducción. Puede dejar este espacio en blanco o en` 0` para seleccionarlo usted mismo. ",
+		playtime_command_parameter_server_id_help = "El ID del servidor del jugador para el que desea obtener el tiempo de reproducción. Puede dejar este espacio en blanco o en `0` para seleccionarlo usted mismo. ",
 		playtime_command_substitutes = "",
 
 		leaderboard_command = "/posiciones",
@@ -651,7 +651,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		wipe_boomboxes_command = "/wipe_boomboxes",
 		wipe_boomboxes_command_help = "Limpiar boomboxes.",
 		wipe_boomboxes_command_parameter_radius = "radio",
-		wipe_boomboxes_command_parameter_radius_help = "El radio de barrido. Si lo deja en blanco, se seleccionará automáticamente` 100`. Los valores válidos están por encima de `0`, así como` 0` y `-1`, que seleccionarán todos los inventarios.",
+		wipe_boomboxes_command_parameter_radius_help = "El radio de barrido. Si lo deja en blanco, se seleccionará automáticamente `100`. Los valores válidos están por encima de `0`, así como `0` y `-1`, que seleccionarán todos los inventarios.",
 		wipe_boomboxes_command_substitutes = "",
 
 		-- game/casino
@@ -738,15 +738,15 @@ OP.Global.Locales.Languages["es-MX"] = {
 		revive_command = "/revivir",
 		revive_command_help = "Revivir a alguien de entre los muertos.",
 		revive_command_parameter_server_id = "ID del servidor",
-		revive_command_parameter_server_id_help = "El ID del servidor del jugador que quieres revivir. Puede dejar este espacio en blanco o en "0" para seleccionarlo usted mismo. También puedes hacer `-1` para revivir a todos.",
+		revive_command_parameter_server_id_help = "El ID del servidor del jugador que quieres revivir. Puede dejar este espacio en blanco o en `0` para seleccionarlo usted mismo. También puedes hacer `-1` para revivir a todos.",
 		revive_command_parameter_remove_injuries = "remover lesiones",
-		revive_command_parameter_remove_injuries_help = "Ajústelo a cualquier valor excepto "0" o "falso" para eliminar también todas las lesiones.",
+		revive_command_parameter_remove_injuries_help = "Ajústelo a cualquier valor excepto `0` o `falso` para eliminar también todas las lesiones.",
 		revive_command_substitutes = "/revive",
 
 		recent_deaths_command = "/muertes_recientes",
 		recent_deaths_command_help = "Obtenga las muertes más recientes.",
 		recent_deaths_command_parameter_amount = "cantidad",
-		recent_deaths_command_parameter_amount_help = "La cantidad de muertes que le gustaría recibir. Los valores válidos están entre "1" y "100". Si lo deja en blanco, se seleccionará automáticamente `20`.",
+		recent_deaths_command_parameter_amount_help = "La cantidad de muertes que le gustaría recibir. Los valores válidos están entre `1` y `100`. Si lo deja en blanco, se seleccionará automáticamente `20`.",
 		recent_deaths_command_substitutes = "/check_deaths",
 
 		player_death_command = "/muertes_jugador",
@@ -805,7 +805,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		wipe_ground_inventories_command = "/wipe_inventarios_suelo",
 		wipe_ground_inventories_command_help = "Wipe los inventarios en el suelo.",
 		wipe_ground_inventories_command_parameter_radius = "radio",
-		wipe_ground_inventories_command_parameter_radius_help = "El radio de wipe. Si lo deja en blanco, se seleccionará automáticamente "100". Los valores válidos están por encima de "0", así como "0" y "-1", que seleccionarán todos los inventarios..",
+		wipe_ground_inventories_command_parameter_radius_help = "El radio de wipe. Si lo deja en blanco, se seleccionará automáticamente `100`. Los valores válidos están por encima de `0`, así como `0` y `-1`, que seleccionarán todos los inventarios..",
 		wipe_ground_inventories_command_substitutes = "/wipeinvs, /wipe_inventories, /wipe_ground",
 
 		-- game/mdt
@@ -863,7 +863,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		mute_command_parameter_server_id = "server id",
 		mute_command_parameter_server_id_help = "El ID del servidor del jugador que desea silenciar.",
 		mute_command_parameter_expire = "expirar",
-		mute_command_parameter_expire_help = "La duración del silencio del jugador. Esto se puede dejar en blanco, en` 0` o en `false` para un silencio indefinido. Puede usar w / d / h para la duración. (p. ej.,` 3d2h` -> 3 días, 2 horas) ",
+		mute_command_parameter_expire_help = "La duración del silencio del jugador. Esto se puede dejar en blanco, en `0` o en `false` para un silencio indefinido. Puede usar w / d / h para la duración. (p. ej.,` 3d2h` -> 3 días, 2 horas) ",
 		mute_command_parameter_reason = "motivo",
 		mute_command_parameter_reason_help = "La razón detrás del silencio del jugador.",
 		mute_command_substitutes = "",
@@ -1336,14 +1336,14 @@ OP.Global.Locales.Languages["es-MX"] = {
         no_package = "No tienes un paquete.",
         fetching_package_error = "Se produjo un error al intentar recuperar los datos de su paquete",
         check_playtime_not_staff = "El jugador intento verificar el tiempo de juego de otra persona, pero no tiene permisos para hacerlo.",
-        reason_unknown = "Razon desconocido."
+        reason_unknown = "Razon desconocido.",
 
         unloaded_character = "Personaje descargado.",
 		user_does_not_have_sent_character_loaded = "El usuario no tiene cargado el personaje enviado.",
 		user_has_no_character_loaded = "El usuario no tiene ningún personaje cargado.",
 		user_not_found = "El usuario enviado no se encontró en el servidor.",
 		invalid_character_id = "Parámetro de identificación de personaje no válido enviado.",
-		invalid_steam_identifier = "Parámetro de identificador de steam no válido enviado."
+		invalid_steam_identifier = "Parámetro de identificador de steam no válido enviado.",
     },
 
 	-- game/*
@@ -1391,13 +1391,13 @@ OP.Global.Locales.Languages["es-MX"] = {
 		comedy_club = "Comedy Club",
 		bean_machine = "Bean Machine",
 		cinema = "Cine",
-		arcade_bar = "Arcade Bar"
+		arcade_bar = "Arcade Bar",
 		luxury_autos = "Autos de lujo",
-		city_hall = "Ayuntamiento"
+		city_hall = "Ayuntamiento",
 	},
 
 	blockage = {
-		restricted_area = "Esta es un área restringida. ¡Por favor retirate!"
+		restricted_area = "Esta es un área restringida. ¡Por favor retirate!",
 	},
 
 	boomboxes = {
@@ -1435,8 +1435,8 @@ OP.Global.Locales.Languages["es-MX"] = {
         invalid_screen_label = "The screen label ${screenLabel} is invalid.",
         missing_screen_label = "Falta el parametro de Etiqueta de Pantalla",
         set_screen_label_already_set_to = "La etiqueta de la pantalla ya esta configurada en ${screenLabel}`.",
-        only_available_in_the_casino = "Solo puedes hacer esto mientras estas dentro del casino."
-        casino_blip = "Casino"
+        only_available_in_the_casino = "Solo puedes hacer esto mientras estas dentro del casino.",
+        casino_blip = "Casino",
     },
     
     cayo_perico_world = {
@@ -1503,7 +1503,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		reset_unit_id = "Su ID de unidad ahora se ha restablecido.",
 		failed_to_set_unit_id = "No se pudo configurar el ID de su unidad.",
 		unit_id_already_set_to = "Su ID de unidad ya está configurada en ${unitId}.",
-		unit_id_already_reset = "Su ID de unidad ya se ha restablecido."
+		unit_id_already_reset = "Su ID de unidad ya se ha restablecido.",
 	},
 
 	debug = {
@@ -1518,7 +1518,7 @@ OP.Global.Locales.Languages["es-MX"] = {
         model_name = "Nombre del modelo",
         touching = "Tocando",
         addon = "Añadir",
-        invalid_radius_parameter = "Parametro de Radio no valido."
+        invalid_radius_parameter = "Parametro de Radio no valido.",
         inject_code_not_developer = "El jugador intentó inyectar código pero no era un desarrollador.",
 		inject_code_invalid_player = "No hay jugadores con ID de servidor `${serverId}`.",
 		inject_code_success_for_everyone = "Código inyectado con éxito para todos.",
@@ -1534,7 +1534,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		heading = "Heading: ${heading}",
 		coords = "Coords: ${coords}",
 		rotation = "Rotación: ${rotation}",
-		velocity = "Velocidad: ${velocity}"
+		velocity = "Velocidad: ${velocity}",
     },
 
 	doors = {
@@ -3013,7 +3013,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		tracker_character = "${firstName} ${lastName}",
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName}",
 		trackers_in_category = "Los rastreadores ahora se almacenarán dentro de una categoría en el mapa",
-		trackers_split = "Los rastreadores ahora se dividirán en señales individuales"
+		trackers_split = "Los rastreadores ahora se dividirán en señales individuales",
 	},
 
 	training = {
@@ -3032,14 +3032,14 @@ OP.Global.Locales.Languages["es-MX"] = {
 		defender = "Defensa",
 		attackers_won = "¡Los atacantes ganaron!",
 		defenders_won = "¡Los defensores ganaron!",
-		training_blip = "Entrenamiento"
+		training_blip = "Entrenamiento",
 	},
 
 	traps = {
 		rearming = "Rearmando",
 		press_to_rearm = "[${InteractionKey}] para rearmar",
 		rearm = "Rearmar",
-		e = "E"
+		e = "E",
 	},
 
 	vending_machines = {
@@ -3074,26 +3074,26 @@ OP.Global.Locales.Languages["es-MX"] = {
 		target_channel = "Canal objetivo: ${targetChannel}",
 		actual_channel = "Canal actual: ${actualChannel}",
 		target_radius = "Radio objetivo: ${targetRadius}",
-		actual_radius = "Radio actual: ${actualRadius}"
+		actual_radius = "Radio actual: ${actualRadius}",
 	},
 
 	yoga = {
 		yoga_blip = "Yoga",
 		yoga_mat_use = "[${InteractionKey}] Tapete de yoga",
 		yoga_mat = "Tapete para yoga",
-		press_to_stop_yoga = "Presiona ~INPUT_CONTEXT~ para dejar de hacer yoga."	
+		press_to_stop_yoga = "Presiona ~INPUT_CONTEXT~ para dejar de hacer yoga.",
 	},
 
 	zombies = {
 		hold_to_continue_looting_zombie = "[${InteractionKey}] Saqueo de Zombies",
 		press_to_loot_zombie = "[${InteractionKey}] Saqueo de Zombies",
 		looting_zombie = "Saqueo de Zombies",
-		zombie_looting_injection = "Saqueo excesivo de zombies! (Bypassed server-timeout, most likely using an injector to accomplish this.)"
+		zombie_looting_injection = "Saqueo excesivo de zombies! (Bypassed server-timeout, most likely using an injector to accomplish this.)",
 	},
 
 	-- global/*
 	decors = {
-		illegal_decor_type = "Sincronizando tipos de valores de decoración no válidos"
+		illegal_decor_type = "Sincronizando tipos de valores de decoración no válidos",
 	},
 
 	functions = {
@@ -3105,9 +3105,9 @@ OP.Global.Locales.Languages["es-MX"] = {
 		minutes = "minutos",
 		second = "segundo",
 		seconds = "segundos",
-		unknown = "desconocido"
+		unknown = "desconocido",
 		flipped_vehicle_logs_title = "Vehículo volteado",
-		flipped_vehicle_logs_details = "${consoleName} volteo un vehículo."
+		flipped_vehicle_logs_details = "${consoleName} volteo un vehículo.",
 	},
 
 	-- illegal/*
@@ -3306,11 +3306,11 @@ OP.Global.Locales.Languages["es-MX"] = {
 		you_must_retrieve_this_vehicle = "Deberas recuperar este vehiculo para poder acceder a el.",
 		garage = "Garaje",
 		retrieved_vehicle_logs_title = "Vehiculo Recuperado",
-		retrieved_vehicle_logs_details = "${consoleName} vehiculo recuperado con placas `${plate}` por $250."
+		retrieved_vehicle_logs_details = "${consoleName} vehiculo recuperado con placas `${plate}` por $250.",
 
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "Activó la depuración del garaje..",
-		toggle_garage_debug_toggled_off = "Desactivó la depuración del garaje."
+		toggle_garage_debug_toggled_off = "Desactivó la depuración del garaje.",
 	},
 
 	keys = {
@@ -3320,7 +3320,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		vehicle_locked = "Vehiculo cerrado",
 		vehicle_unlocked = "Vehiculo abierto",
 		h_to_hotwire = "[H] Cruzar cables",
-		received_keys = "Recibio llaves para el vehiculo con placas ${plate}."
+		received_keys = "Recibio llaves para el vehiculo con placas ${plate}.",
 	},
 
 	modifications = {
@@ -3357,7 +3357,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		you_are_cuffed = "Estas esposado.",
 		belt_is_on_and_vehicle_is_locked = "Tu cinturon esta puesto y el vehiculo esta cerrado.",
 		belt_is_on = "El cinturon esta puesto.",
-		vehicle_is_locked = "Este vehiculo esta cerrado."
+		vehicle_is_locked = "Este vehiculo esta cerrado.",
 
 		-- NOTE: `add_vehicle` command:
 		add_vehicle_not_super_admin = "El jugador intentó agregar un vehículo al garaje de alguien, pero no era un superadministrador..",
