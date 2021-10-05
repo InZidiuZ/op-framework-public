@@ -252,12 +252,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		no_nearby_vehicles_off = "Toggled 'No Nearby Vehicles' Off.",
 		speed_up_progres_bar_on = "Toggled 'Speed Up Progress Bar' On.",
 		speed_up_progres_bar_off = "Toggled 'Speed Up Progress Bar' Off.",
+		invisibility_on = "Toggled 'Invisiblity' On.",
+		invisibility_off = "Toggled 'Invisiblity' Off.",
 
 		report_muted_no_reason = "You have been muted from the report command without a specified reason.",
 		report_muted = "You have been muted from the report command for reason `${reason}`.",
 
-		user_banned_warning_no_reason = "I banned this person without a specified reason. This warning was generated automatically as a result of the ban.",
-		user_banned_warning = "I banned this person with the reason `${reason}`. This warning was generated automatically as a result of the ban.",
+		user_indefinitely_banned_warning_no_reason = "I indefinitely banned this person without a specified reason. This warning was generated automatically as a result of the ban.",
+		user_indefinitely_banned_warning = "I indefinitely banned this person with the reason `${reason}`. This warning was generated automatically as a result of the ban.",
+		user_temporarily_banned_warning_no_reason = "I banned this person without a specified reason for ${displayTime}. This warning was generated automatically as a result of the ban.",
+		user_temporarily_banned_warning = "I banned this person with the reason `${reason}` for ${displayTime}. This warning was generated automatically as a result of the ban.",
 
 		tp_coords_invalid_coordinates = "Invalid coordinates.",
 		tp_coords_teleported_to_coordinates = "Teleported to coordinates X: ${x}, Y: ${y}, Z: ${z}.",
@@ -271,7 +275,22 @@ OP.Global.Locales.Languages["en-US"] = {
 		teleported_to_waypoint_logs_details = "${consoleName} teleported to a waypoint at ${locationLabel}.",
 
 		teleport_to_coordinates_not_staff = "The player attempted to teleport to some coordinates but they were not staff.",
-		teleport_to_waypoint_not_staff = "The player attempted to teleport to a waypoint but they were not staff."
+		teleport_to_waypoint_not_staff = "The player attempted to teleport to a waypoint but they were not staff.",
+
+		population_density_set_to = "The population density multiplier override has been set to ${multiplierLabel}%.",
+		population_density_set_off = "The population density multiplier override has been turned off.",
+		population_density_is_not_on = "The population density multiplier override is not on.",
+		population_density_already_set_to = "The population density multiplier override is already set to ${multiplierLabel}%.",
+
+		indestructibility_activated = "Indestructibility Activated",
+
+		you_are_not_in_a_vehicle = "You are not in a vehicle.",
+		repaired_vehicle = "Repaired vehicle.",
+
+		repair_vehicle_not_super_admin = "Player attempted to repair a vehicle but they were not a super admin.",
+
+		repaired_vehicle_logs_title = "Repaired Vehicle",
+		repaired_vehicle_logs_details = "${consoleName} repaired the vehicle they were in."
 	},
 
 	anti_cheat = {
@@ -506,6 +525,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		speed_up_progress_bar_command_parameter_server_id_help = "If you're wanting to toggle the 'speed up progress bar' for someone else, insert their server id here.",
 		speed_up_progress_bar_command_substitutes = "/speed_up",
 
+		invisibility_command = "/invisibility",
+		invisibility_command_help = "Toggle 'invisiblity'.",
+		invisibility_command_parameter_server_id = "server id",
+		invisibility_command_parameter_server_id_help = "If you're wanting to toggle the 'invisiblity' for someone else, insert their server id here.",
+		invisibility_command_substitutes = "/inv, /invis, /invisible",
+
 		add_cash_command = "/add_cash",
 		add_cash_command_help = "Add cash to someone's character.",
 		add_cash_command_parameter_amount = "amount",
@@ -567,6 +592,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		tp_waypoint_command = "/tp_waypoint",
 		tp_waypoint_command_help = "Teleport to your set waypoint.",
 		tp_waypoint_command_substitutes = "/tp_marker, /tp",
+
+		population_density_command = "/population_density",
+		population_density_command_help = "Override the global population density multiplier.",
+		population_density_command_parameter_multiplier = "multiplier",
+		population_density_command_parameter_multiplier_help = "The population density multiplier you would like to set. Leaving this blank will turn it off. Valid values are from 0.0 to 1.0.",
+		population_density_command_substitutes = "/population, /density",
+
+		repair_vehicle_command = "/repair_vehicle",
+		repair_vehicle_command_help = "Repair the vehicle you are in.",
+		repair_vehicle_command_substitutes = "/fix, /repair",
 
 		-- base/anti_cheat
 		model_detect_add_command = "/model_detect_add",
@@ -636,6 +671,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		package_command = "/package",
 		package_command_help = "Check and refresh your package.",
 		package_command_substitutes = "/refresh_package",
+
+		unload_character_command = "/unload_character",
+		unload_character_command_help = "Unload a player's character.",
+		unload_character_command_parameter_server_id = "server id",
+		unload_character_command_parameter_server_id_help = "The player's server ID you want to unload the character for. You can leave this blank or at `0` to select yourself.",
+		unload_character_command_parameter_message = "message",
+		unload_character_command_parameter_message_help = "If you would like to display a message for the player to see in the login menu, type it here.",
+		unload_character_command_substitutes = "",
 
 		-- game/atc
 		atc_debug_command = "/atc_debug",
@@ -733,6 +776,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		doors_scan_command = "/doors_scan",
 		doors_scan_command_help = "Scan for nearby doors and save them to a text file.",
 		doors_scan_command_substitutes = "",
+
+		-- game/gas_masks
+		gas_debug_command = "/gas_debug",
+		gas_debug_command_help = "Toggle the gas debug.",
+		gas_debug_command_substitutes = "",
 
 		-- game/health
 		revive_command = "/revive",
@@ -1343,7 +1391,19 @@ OP.Global.Locales.Languages["en-US"] = {
 		user_has_no_character_loaded = "The user does not have any character loaded.",
 		user_not_found = "The sent user was not found on the server.",
 		invalid_character_id = "Invalid character id parameter sent.",
-		invalid_steam_identifier = "Invalid steam identifier parameter sent."
+		invalid_steam_identifier = "Invalid steam identifier parameter sent.",
+
+		unload_character_not_staff = "The player attempted to unload a player's character but they were not staff.",
+
+		unloaded_character_for_player_logs_title = "Unloaded Character For Player",
+		unloaded_character_for_player_logs_details = "${consoleName} unloaded ${targetConsoleName}'s character (`${characterFullName}` - ${characterId}) with the reason `${message}`.",
+		unloaded_character_for_player_no_reason_logs_details = "${consoleName} unloaded ${targetConsoleName}'s character (`${characterFullName}` - ${characterId}) without any specified reason.",
+		unloaded_character_self_logs_title = "Unloaded Character",
+		unloaded_character_self_logs_details = "${consoleName} unloaded their own character (`${characterFullName}` - ${characterId}) with the reason `${message}`.",
+		unloaded_character_self_no_reason_logs_details = "${consoleName} unloaded their own character (`${characterFullName}` - ${characterId}) without any specified reason.",
+
+		user_with_server_id_has_no_character_loaded = "The user with server id `${serverId}` does not have a character loaded.",
+		user_with_server_id_not_found = "The user with server id `${serverId}` could not be found on the server."
 	},
 
 	-- game/*
@@ -1393,7 +1453,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		cinema = "Cinema",
 		arcade_bar = "Arcade Bar",
 		luxury_autos = "Luxury Autos",
-		city_hall = "City Hall"
+		city_hall = "City Hall",
+		rockford_records = "Rockford Records",
+		dispensary = "Dispensary"
 	},
 
 	blockage = {
@@ -1548,6 +1610,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		bank_closed = "The Bank is currently closed. Please come back later.",
 		store_closed = "The Store is currently closed. Please come back later.",
 		failed_to_sync_doors = "Failed to sync doors. Something most likely corrupted. Please try again."
+	},
+
+	gas_masks = {
+		gas_grenade = "Gas Grenade",
+		in_gas_circle = "In a gas circle!",
+		not_in_gas_circle = "Not in a gas circle.",
+		gas_time_left = "You have ${gasTime} seconds left of the gas mask.",
+		hold_to_take_gas_mask_off = "Hold ~INPUT_VEH_HEADLIGHT~ to take off the Gas Mask.",
+		hold_to_take_gas_mask_off_holding = "Keep holding to take off the Gas Mask."
 	},
 
 	health = {
@@ -2013,6 +2084,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		golf_ball_pink = "Pink Golf Ball",
 		golf_ball_pink_description = "Used for golfing.",
 
+		gas_mask = "Gas Mask",
+		gas_mask_description = "will save you from all types of gas, even grandmas farts",
+
 		weapon_dagger = "Antique Cavalry Dagger",
 		weapon_bat = "Baseball Bat",
 		weapon_bottle = "Broken Bottle",
@@ -2110,7 +2184,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_snowball = "Snowballs",
 		weapon_pipebomb = "Pipe Bombs",
 		weapon_ball = "Baseball",
-		weapon_smokegrenade = "Tear Gas",
+		weapon_smokegrenade = "Smoke Grenade", -- NOTE: this is called "Tear Gas" in the native game for some reason
 		weapon_flare = "Flare",
 
 		weapon_petrolcan = "Jerry Can",
@@ -2295,14 +2369,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		character_already_loaded = "You already have a character loaded.",
 		bad_words = "Attempted to create a character with a possibly bad word in either the name or backstory: `${badWords}`",
 		discord = "Discord",
-		you_have_disconnected_from_the_server = "You have disconnected from the server."
+		you_have_disconnected_from_the_server = "You have disconnected from the server.",
+		notice = "Notice"
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Press ~INPUT_CONTEXT~ to spin the Lucky Wheel. You have one free spin left today.",
-		unable_to_spin_lucky_wheel = "You have already spun the Lucky Wheel today. Come back later for another spin!",
+		spin_lucky_wheel = "Press ~INPUT_CONTEXT~ to spin the Lucky Wheel. The cost is $${cost}.",
+		spin_lucky_wheel_for_free = "Press ~INPUT_CONTEXT~ to spin the Lucky Wheel. You have one free spin left today.",
+		unable_to_spin_lucky_wheel = "You have already spun the Lucky Wheel as much as permitted today. Come back later for another spin!",
 		lucky_wheel_is_occupied = "The Lucky Wheel is currently occupied. Please wait.",
-		spinning_wheel = "You are spinning the Lucky Wheel.",
+		not_enough_balance_to_spin = "You do not have enough money to spin the wheel. The cost is $${cost}.",
 		logs_lucky_wheel_reward_title = "Lucky Wheel Reward",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} has spun the wheel and won a vehicle.",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} has been successfully given a vehicle with model name `${modelName}`.",
@@ -2647,6 +2723,10 @@ OP.Global.Locales.Languages["en-US"] = {
 	players = {
 		player_left = "Player Left [${serverId}]",
 		too_many_people_nearby = "There are too many people nearby. Strange things might start to happen."
+	},
+
+	prop_hunt = {
+		prop_hunt_blip = "Prop Hunt"
 	},
 
 	props = {
@@ -3193,7 +3273,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		character_already_has_license = "${characterName} already has license `${licenseLabel}`",
 		removed_character_license = "Removed license `${licenseLabel}` from ${characterName}.",
 		character_does_not_have_license = "${characterName} does not have license `${licenseLabel}`",
-		license_not_found = "License `${licenseLabel}` was not found.",
+		license_not_found = "License `${licenseName}` was not found.",
 		user_not_found_with_character_id = "User not found with character id `${characterId}`.",
 		no_license_added = "No license added.",
 		invalid_character_id = "The character ID that was added is invalid.",
