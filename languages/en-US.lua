@@ -16,7 +16,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		invalid_input = "Invalid Input.",
 		missing_input = "Missing Input.",
 		player_not_found = "Could not find player with server ID `${serverId}`.",
-		something_went_wrong = "Something went wrong. Please try again."
+		something_went_wrong = "Something went wrong. Please try again.",
+		yes = "Yes",
+		no = "No"
 	},
 
 	-- animations/*
@@ -43,6 +45,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		feature_toggle_not_admin = "Attempted to toggle their own or someone else's `${featureName}`, but didn't have proper permissions to do so.",
 		feature_toggle_activated_logs_title = "Remotely Toggled Feature",
 		feature_toggle_activated_logs_details = "${consoleName} toggled `${featureName}` for player ${targetConsoleName}.",
+		feature_toggle_activated_logs_details_state = "${consoleName} toggled `${featureName}` ${newState} for player ${targetConsoleName}.",
 		feature_toggle_activated_all_logs_title = "Remotely Toggled Feature For Everyone",
 		feature_toggle_activated_all_logs_details = "${consoleName} toggled `${featureName}` for everyone.",
 		feature_toggle_activated_self_logs_title = "Toggled Feature",
@@ -51,6 +54,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		feature_toggle_success = "Toggled `${featureName}` for ${consoleName}.",
 		feature_toggle_success_all = "Toggled `${featureName}` for everyone.",
 		feature_toggle_failed = "Failed to toggle `${featureName}` for server ID ${serverId}.",
+		feature_toggle_success_on = "Toggled `${featureName}` on for ${consoleName}.",
+		feature_toggle_success_off = "Toggled `${featureName}` off for ${consoleName}.",
+
+		noclip_toggle_activated_self_logs_title = "Noclip Toggled",
+		noclip_toggle_activated_self_on_logs_details = "${consoleName} toggled noclip on at position `x: ${xCoord}, y: ${yCoord}, z: ${zCoord}`. (In vehicle: ${inVehicle})",
+		noclip_toggle_activated_self_off_logs_details = "${consoleName} toggled noclip off at position `x: ${xCoord}, y: ${yCoord}, z: ${zCoord}`.",
 
 		model_name_not_provided = "No model name passed.",
 		model_name_invalid = "Model name `${modelName}` is invalid.",
@@ -171,6 +180,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		missing_valid_target_source_parameter = "Missing a valid 'target source' parameter.",
 		missing_valid_message_parameter = "Missing a valid 'message' parameter.",
 
+		player_revived_success = "Revived player successfully.",
+		
+		missing_valid_steam_identifier_parameter = "Missing a valid 'steamIdentifier' parameter.",
+
 		illegal_entity_wipe = "Player attempted to wipe entities, but didn't have permissions.",
 		wiped_entities = "Wiped Entities",
 		wipe_entities_logs_title = "Wiped Entities",
@@ -258,6 +271,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		report_muted_no_reason = "You have been muted from the report command without a specified reason.",
 		report_muted = "You have been muted from the report command for reason `${reason}`.",
 
+		already_sending_report = "You are already sending a report. Please wait.",
+		unable_to_send_identicial_report = "You are unable to send two identical reports after each other.",
+
+		already_sending_staff_message = "You are already sending a staff message. Please wait.",
+		unable_to_send_identicial_staff_message = "You are unable to send two identical staff messages after each other.",
+
 		user_indefinitely_banned_warning_no_reason = "I indefinitely banned this person without a specified reason. This warning was generated automatically as a result of the ban.",
 		user_indefinitely_banned_warning = "I indefinitely banned this person with the reason `${reason}`. This warning was generated automatically as a result of the ban.",
 		user_temporarily_banned_warning_no_reason = "I banned this person without a specified reason for ${displayTime}. This warning was generated automatically as a result of the ban.",
@@ -282,6 +301,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		population_density_is_not_on = "The population density multiplier override is not on.",
 		population_density_already_set_to = "The population density multiplier override is already set to ${multiplierLabel}%.",
 
+		population_density_not_super_admin = "Player attempted to set the population density but they were not a super admin.",
+
 		indestructibility_activated = "Indestructibility Activated",
 
 		you_are_not_in_a_vehicle = "You are not in a vehicle.",
@@ -290,7 +311,37 @@ OP.Global.Locales.Languages["en-US"] = {
 		repair_vehicle_not_super_admin = "Player attempted to repair a vehicle but they were not a super admin.",
 
 		repaired_vehicle_logs_title = "Repaired Vehicle",
-		repaired_vehicle_logs_details = "${consoleName} repaired the vehicle they were in."
+		repaired_vehicle_logs_details = "${consoleName} repaired the vehicle they were in.",
+
+		unable_to_enter_vehicle_while_dead = "You are unable to enter a vehicle while dead.",
+		you_are_already_in_a_vehicle = "You are already in a vehicle.",
+		the_closest_vehicle_had_no_free_seats = "The closest vehicle had no free seats.",
+		there_are_no_nearby_vehicles = "There are no nearby vehicles.",
+		entered_vehicle = "Attempted to enter nearby ${vehicleName}.",
+
+		set_vehicle_modifications_logs_title = "Set Vehicle Modifications",
+		set_vehicle_modifications_logs_details = "${consoleName} set vehicle modificatiosn for a vehicle with the plate `${vehiclePlate}`. The set modifications were: modType-${modType}, modIndex-${modIndex}, customTires-${customTires}.",
+
+		set_vehicle_modification = "Set vehicle modification for vehicle for mod type `${modType}` to index `${modIndex}`. (Custom Tires: ${customTires})",
+		mod_index_invalid_for_type = "Mod index `${modIndex}` is invalid for mod type `${modType}`.",
+		mod_type_invalid = "Mod type `${modType}` is invalid.",
+		no_mod_type_set = "No mod type set.",
+
+		invalid_plate_number = "Invalid plate number.",
+		set_fake_plate_number = "Set plate number for vehicle to `${plateNumber}`.",
+
+		invalid_dirt_level = "Invalid dirt level.",
+		set_dirt_level = "Vehicle's dirt level was set to `${dirtLevel}`.",
+
+		set_dirt_level_not_super_admin = "Player attempted to set the dirt level of a vehicle but they were not a super admin.",
+
+		set_fake_plate_not_super_admin = "Player attempted to set the fake plate of a vehicle but they were not a super admin.",
+
+		already_fake_disconnecting = "You are already atempting to fake disconnect. Please wait.",
+		started_fake_disconnect = "Started fake disconnect. Repeat the command to stop.",
+		stopped_fake_disconnect = "Stopped fake disconnect.",
+
+		fake_disconnect_not_super_admin = "Player attempted to fake disconnect but they were not a super admin."
 	},
 
 	anti_cheat = {
@@ -354,6 +405,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		connection_cancelled = "This connection was cancelled as another one is already active.",
 		no_reason_provided = "No reason provided.",
 		discord_whitelist_id_not_found = "We were unable to find your discord id. Make sure you have discord open in the background and that you have allowed FiveM to fetch data from your discord client.\n\n${communityDiscord}"
+	},
+
+	characters = {
+		character_id_available = "Character ID `${characterId}` is available.",
+		character_id_not_available = "Character ID `${characterId}` is not available.",
+		character_id_invalid = "Character ID `${characterId}` is not a valid character ID.",
+		character_id_missing = "You did not enter a character ID.",
+
+		lowest_character_id_available_is = "The lowest character ID available is `${characterId}`.",
+		there_are_no_available_character_ids = "There are no available character IDs.",
 	},
 
 	commands = {
@@ -429,11 +490,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		wipe_command_parameter_model_name_help = "If you are wanting to only delete entities of a certain model name, insert a model name here. Otherwise leave blank, at `false` or `0`",
 		wipe_command_substitutes = "",
 
-		wipe_command_confirm = "/wipe_confirm",
-		wipe_command_confirm_help = "Confirm a wipe.",
-		wipe_command_confirm_parameter_confirm = "confirm",
-		wipe_command_confirm_parameter_confirm_help = "Are you sure? Put this to anything but blank, `0` or `false` to confirm the wipe.",
-		wipe_command_confirm_substitutes = "",
+		wipe_confirm_command = "/wipe_confirm",
+		wipe_confirm_command_help = "Confirm a wipe.",
+		wipe_confirm_command_parameter_confirm = "confirm",
+		wipe_confirm_command_parameter_confirm_help = "Are you sure? Put this to anything but blank, `0` or `false` to confirm the wipe.",
+		wipe_confirm_command_substitutes = "",
 
 		noclip_command = "/noclip",
 		noclip_command_help = "Toggle noclip.",
@@ -601,7 +662,37 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		repair_vehicle_command = "/repair_vehicle",
 		repair_vehicle_command_help = "Repair the vehicle you are in.",
-		repair_vehicle_command_substitutes = "/fix, /repair",
+		repair_vehicle_command_substitutes = "/fix",
+
+		enter_vehicle_command = "/enter_vehicle",
+		enter_vehicle_command_help = "Force your player ped to enter the vehicle you are closest to.",
+		enter_vehicle_command_substitutes = "/ev",
+
+		set_modification_command = "/set_modification",
+		set_modification_command_help = "Set vehicle modifications on the vehicle you are in.",
+		set_modification_command_parameter_mod_type = "mod type",
+		set_modification_command_parameter_mod_type_help = "The ID of the mod type you wish to set.",
+		set_modification_command_parameter_mod_index = "mod index",
+		set_modification_command_parameter_mod_index_help = "The ID of the mod you wish to set.",
+		set_modification_command_parameter_custom_tires = "custom tires",
+		set_modification_command_parameter_custom_tires_help = "Custom tires?",
+		set_modification_command_substitutes = "/sm",
+
+		set_fake_plate_command = "/set_fake_plate",
+		set_fake_plate_command_help = "Set the fake plate number on the vehicle you are in.",
+		set_fake_plate_command_parameter_plate_number = "plate number",
+		set_fake_plate_command_parameter_plate_number_help = "The plate number you wish to set.",
+		set_fake_plate_command_substitutes = "/plate",
+		
+		set_dirt_level_command = "/set_dirt_level",
+		set_dirt_level_command_help = "Cleans the vehicle you are in.",
+		set_dirt_level_command_parameter_dirt_level = "dirt level",
+		set_dirt_level_command_parameter_dirt_level_help = "The level of dirt you want to set (between 0 and 15)",
+		set_dirt_level_command_substitutes = "/sd",
+
+		fake_disconnect_command = "/fake_disconnect",
+		fake_disconnect_command_help = "Triggers a series of events to make it seem as you disconnected from the server. This will also enable your noclip if it isn't on already.",
+		fake_disconnect_command_substitutes = "/fake_leave, /dc",
 
 		-- base/anti_cheat
 		model_detect_add_command = "/model_detect_add",
@@ -627,6 +718,17 @@ OP.Global.Locales.Languages["en-US"] = {
 		detection_area_remove_command_parameter_area_id = "deteciton area id",
 		detection_area_remove_command_parameter_area_id_help = "The ID of the detection area you are wanting to remove.",
 		detection_area_remove_command_substitutes = "/area_remove",
+
+		-- base/characters
+		cid_available_command = "/cid_available",
+		cid_available_command_help = "Check if a character ID is available for the `/claim_cid` command.",
+		cid_available_command_parameter_character_id = "character id",
+		cid_available_command_parameter_character_id_help = "The character ID you would like to check.",
+		cid_available_command_substitutes = "",
+
+		lowest_cid_available_command = "/lowest_cid_available",
+		lowest_cid_available_command_help = "Get the lowest character ID available for the `/claim_cid` command.",
+		lowest_cid_available_command_substitutes = "",
 
 		-- base/commands
 		help_command = "/help",
@@ -671,6 +773,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		package_command = "/package",
 		package_command_help = "Check and refresh your package.",
 		package_command_substitutes = "/refresh_package",
+
+		player_packages_command = "/player_packages",
+		player_packages_command_help = "Get all your unused 'player packages'.",
+		player_packages_command_substitutes = "",
 
 		unload_character_command = "/unload_character",
 		unload_character_command_help = "Unload a player's character.",
@@ -1046,7 +1152,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		security_cameras_command_help = "Toggle the security cameras.",
 		security_cameras_command_substitutes = "/sec, /sec_cam, /seccam, /sec_cams, /seccams, /security_cams, /securitycams, /security_camera, /securitycamera, /securitycameras", -- substitutes!!!
 
-		security_cameras_command_scan = "/security_cameras_scan",
+		security_cameras_scan_command = "/security_cameras_scan",
 		security_cameras_scan_command_help = "Get all known security camera objects and store them in a text file.",
 		security_cameras_scan_command_substitutes = "/scan, /scan_cams, /scancams",
 
@@ -1219,6 +1325,21 @@ OP.Global.Locales.Languages["en-US"] = {
 		wheel_rotation_command_parameter_value_help = "The amount you would like it to be modified. This can be anywhere from -0.5 to 0.5, 0 being default.",
 		wheel_rotation_command_substitutes = "",
 
+		-- vehicles/plates
+		plate_available_command = "/plate_available",
+		plate_available_command_help = "Check to see if a plate number is available for the `/custom_plate` command.",
+		plate_available_command_parameter_plate_number = "plate number",
+		plate_available_command_parameter_plate_number_help = "The plate number you would like to check. Plate numbers can only be up to 8 characters long and can only consist of captial letters and numbers.",
+		plate_available_command_substitutes = "",
+
+		custom_plate_command = "/custom_plate",
+		custom_plate_command_help = "Check to see if a plate number is available for the `/custom_plate` command.",
+		custom_plate_command_parameter_vehicle_id = "vehicle id",
+		custom_plate_command_parameter_vehicle_id_help = "The vehicle ID you would like to have this custom plate on.",
+		custom_plate_command_parameter_plate_number = "plate number",
+		custom_plate_command_parameter_plate_number_help = "The plate number you would like to check. Plate numbers can only be up to 8 characters long and can only consist of captial letters and numbers.",
+		custom_plate_command_substitutes = "",
+
 		-- vehicles/vehicles
 		flip_command = "/flip",
 		flip_command_help = "Roll over a flipped vehicle.",
@@ -1325,7 +1446,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		invalid_slots_parameter = "Invalid `slots` parameter",
 		slots_parameter_out_of_range = "The `slots` parameter has to be between `0` and `1025`.",
 		slots_already_set_to = "The server slots are already set to `${slots}`.",
-		slots_set_to = "The server slots have now been set to `${slots}`."
+		slots_set_to = "The server slots have now been set to `${slots}`.",
+
+		invalid_steam_identifier_parameter = "Missing or invalid 'steamIdentifier' parameter.",
+		invalid_target_position_parameter = "Missing or invalid 'targetPosition' parameter.",
+		player_not_found_in_queue = "The player was not found in the queue.",
+		player_queue_moved_success = "The player's position in the queue has been updated.",
+		player_queue_skipped_success = "The player has skipped the queue successfully.",
+		queue_is_not_ready = "The queue is not ready, so it can not be skipped."
 	},
 
 	restart = {
@@ -1402,8 +1530,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		unloaded_character_self_logs_details = "${consoleName} unloaded their own character (`${characterFullName}` - ${characterId}) with the reason `${message}`.",
 		unloaded_character_self_no_reason_logs_details = "${consoleName} unloaded their own character (`${characterFullName}` - ${characterId}) without any specified reason.",
 
+		unloaded_character_for_user = "Unloaded character ${characterName} (${characterId}) for ${consoleName}.",
 		user_with_server_id_has_no_character_loaded = "The user with server id `${serverId}` does not have a character loaded.",
-		user_with_server_id_not_found = "The user with server id `${serverId}` could not be found on the server."
+		user_with_server_id_not_found = "The user with server id `${serverId}` could not be found on the server.",
+
+		custom_plate = "Custom Plate",
+		custom_character_id = "Custom Character ID",
+
+		no_player_packages = "You do not have any player packages.",
+		player_packages = "Player Packages:\n${playerPackages}",
+		player_package = "- ${label}: ${amount}x"
 	},
 
 	-- game/*
@@ -2401,8 +2537,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		ooc_timed_out = "You are currently timed out from the OOC chat. Please wait.",
 		ooc_muted_no_reason = "You have been muted from the global OOC chat without a specified reason.",
 		ooc_muted = "You have been muted from the global OOC chat for reason `${reason}`.",
-		global_ooc_title = "OOC ${playerName}",
-		local_ooc_title = "LOCAL OOC ${playerName}",
+		global_ooc_title = "OOC ${playerDescriptor}",
+		local_ooc_title = "LOCAL OOC ${playerDescriptor}",
 		ooc_is_disabled = "You have disabled the global OOC chat.",
 		ooc_enabled = "Global OOC has now been enabled.",
 		ooc_already_enabled = "Global OOC is already enabled.",
@@ -2773,6 +2909,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		radio_sound_effects_current_default = "The volume of the radio sound effects is currently default."
 	},
 
+	screenshots = {
+		screenshot_created = "A screenshot has been successfully created.",
+		screenshot_failed = "Failed to obtain a screenshot from the given user.",
+		user_not_found_with_server_id = "Could not find a user with the given server ID.",
+		invalid_lifespan_parameter = "The lifespan parameter is invalid.",
+		invalid_server_id_parameter = "The server ID parameter is invalid.",
+		missing_server_id_parameter = "The server ID parameter is missing."
+	},
+
 	security_cameras = {
 		illegal_security_camera = "Attempting to tamper with illegal security cameras.",
 		no_city_ping = "Failed to ping the city cameras.",
@@ -2831,6 +2976,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		not_driving_a_vehicle = "You are not currently operating a vehicle.",
 		not_a_self_driving_vehicle = "The vehicle you are operating does not support autopilot.",
 		no_waypoint_set = "Please set a waypoint to mark your destination.",
+		invalid_waypoint_set = "The waypoint you set cannot be driven to automatically.",
 		self_driving_engaged = "The autopilot has been engaged. Press ~INPUT_SPRINT~ and ~INPUT_DUCK~ to control the crusie speed.",
 		self_driving_disengaged = "The autopilot has been disengaged.",
 		destination_too_close = "The marked destination is too close.",
@@ -3410,6 +3556,21 @@ OP.Global.Locales.Languages["en-US"] = {
 		wheels_none_specified = "No wheels specified.",
 		wheels_none_valid_specified = "No valid wheels specified.",
 		not_in_a_car = "You are not in a car.",
+	},
+
+	plates = {
+		plate_number_is_available = "Plate number `${plateNumber}` is available.",
+		plate_number_is_not_available = "Plate number `${plateNumber}` is not available.",
+		missing_valid_plate_number = "Missing a valid 'plate number' parameter.",
+		missing_valid_vehicle_id = "Missing a valid 'vehicle id' parameter.",
+		database_error = "A back-end database error occurred.",
+		no_custom_plate_package = "You do not have a custom plate package. Check out our webstore for more information!",
+		api_error = "Our back-end API returned an error.",
+		api_not_available = "Our back-end API is not available.",
+		vehicle_does_not_belong_to_player = "Vehicle ID `${vehicleId}` does not belong to you.",
+		vehicle_id_does_not_exist = "Vehicle ID `${vehicleId}` does not exist.",
+		you_have_no_character_loaded = "You do not have a character loaded.",
+		vehicle_plate_changed = "Changed the plate number of vehicle with ID `${vehicleId}` to `${plateNumber}`."
 	},
 
 	vehicles = {
