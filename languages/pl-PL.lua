@@ -16,7 +16,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		invalid_input = "Niewłaściwa wartość.",
 		missing_input = "Brakuje wartości.",
 		player_not_found = "Nie znaleziono gracza z podanym ID `${serverId}`.",
-		something_went_wrong = "Coś poszło nie tak, spróbuj ponownie."
+		something_went_wrong = "Coś poszło nie tak. Spróbuj ponownie.",
+		yes = "Tak",
+        	no = "Nie"
 	},
 
 	-- animations/*
@@ -43,6 +45,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		feature_toggle_not_admin = "Attempted to toggle their own or someone else's `${featureName}`, brak odpowiednich permisji.",
 		feature_toggle_activated_logs_title = "Zdalnie przełączono",
 		feature_toggle_activated_logs_details = "${consoleName} przełączył `${featureName}` dla gracza ${targetConsoleName}.",
+		feature_toggle_activated_logs_details_state = "${consoleName} przełączono `${featureName}` ${newState} dla gracza ${targetConsoleName}.",
 		feature_toggle_activated_all_logs_title = "Zdalnie przełączono dla wszystkich",
 		feature_toggle_activated_all_logs_details = "${consoleName} przełączono `${featureName}` dla wszystkich.",
 		feature_toggle_activated_self_logs_title = "Funkcja przełączana",
@@ -51,7 +54,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		feature_toggle_success = "Włączono `${featureName}` dla ${consoleName}.",
 		feature_toggle_success_all = "Włączono `${featureName}` dla wszystkich.",
 		feature_toggle_failed = "Nieudało się włączyć `${featureName}` dla ID ${serverId}.",
+        	feature_toggle_success_on = "Włączono `${featureName}` dla ${consoleName}.",
+		feature_toggle_success_off = "Wyłączono `${featureName}` dla ${consoleName}.",
 
+		noclip_toggle_activated_self_logs_title = "Włączono Noclipa",
+		noclip_toggle_activated_self_on_logs_details = "${consoleName} włączono noclipa na pozycji `x: ${xCoord}, y: ${yCoord}, z: ${zCoord}`. (In vehicle: ${inVehicle})",
+		noclip_toggle_activated_self_off_logs_details = "${consoleName} wyłączono noclipa na pozycji `x: ${xCoord}, y: ${yCoord}, z: ${zCoord}`.",
+		
 		model_name_not_provided = "Nie podano modelu auta.",
 		model_name_invalid = "Model auta `${modelName}` jest nieprawidłowy.",
 		failed_to_spawn_vehicle = "Nie udało się użyć komendy `/spawn_vehicle` poprawnie.",
@@ -171,7 +180,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		logs_player_kicked_title = "Gracz wyrzucony",
 		logs_player_kicked_details = "${consoleName} został wyrzucony z serwera przez ${kicker} z powodem `${reason}`.",
 		logs_player_kicked_no_reason_details = "${consoleName} został wyrzucony z serwera przez ${kicker} bez podanego.",
+        
+		player_revived_success = "Gracz został uleczony pomyślnie.",
 
+		missing_valid_steam_identifier_parameter = "Nie znaleziono 'steamIdentifier' gracza.",
+		
 		you_have_been_banned = "Zostałeś zbanowany przez ${banner} za `${reason}`.",
 		you_have_been_banned_no_reason = "Zostałeś zbanowany z serwera beż nadanego powodu przez ${banner}.",
 
@@ -239,6 +252,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		report_muted_no_reason = "Zostałeś wyciszony bez okreslonego powodu.",
 		report_muted = "Zostałeś wyciszony z powodu `${reason}`.",
+       
+		already_sending_report = "Już wysłałeś report o tej samej treści.",
+		unable_to_send_identicial_report = "Nie możesz wysyłać takiego samego reporta.",
 
 		user_banned_warning_no_reason = "Ta osoba została zbanowana bez podanego powodu. Automatycznie wygenerowane powiadomienie.",
 		user_banned_warning = "Zbanowałeś te osobę z powodem `${reason}`. Automatycznie wygenerowane powiadomienie.",
@@ -255,7 +271,54 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		teleported_to_waypoint_logs_details = "${consoleName} Przeteleprotował się na ${locationLabel}.",
 
 		teleport_to_coordinates_not_staff = "Gracz próbował przeteleportować się, lecz nie posiadał permisji.",
-		teleport_to_waypoint_not_staff = "Gracz próbował przeteleportować się do znacznika, lecz nie posiadał permisji."
+		teleport_to_waypoint_not_staff = "Gracz próbował przeteleportować się do znacznika, lecz nie posiadał permisji.",
+        
+        population_density_set_to = "Populacja na serwerze została zmeiniona na ${multiplierLabel}%.",
+		population_density_set_off = "Zmienianie populacji na serwerze zostało wyłączone.",
+		population_density_is_not_on = "Dostęp do zmiany populacji został wyłączony.",
+		population_density_already_set_to = "Populacja na serwerze już jest ustawiona na ${multiplierLabel}%.",
+
+		population_density_not_super_admin = "Gracz chciał zmienić populacje na serwerze ale nie Super Admina.",
+
+		indestructibility_activated = "Włączono niezniszczalność",
+
+		you_are_not_in_a_vehicle = "Nie jesteś w pojezdzie.",
+		repaired_vehicle = "Naprawiono Pojazd.",
+		repair_vehicle_not_super_admin = "Gracz chciał naprawić pojazd ale nie ma permisji Super Admina.",
+
+		repaired_vehicle_logs_title = "Naprawiono pojazd",
+        
+        repaired_vehicle_logs_details = "${consoleName} Naprawił pojazd w którym się znajduje.",
+
+		unable_to_enter_vehicle_while_dead = "Nie można wejść do pojazdu jak jest się na BW.",
+		you_are_already_in_a_vehicle = "Już znajdujesz sie pojezdzie.",
+		the_closest_vehicle_had_no_free_seats = "Najbliższy pojazd nie miał wolnych miejsc.",
+		there_are_no_nearby_vehicles = "Nie ma w pobliżu aut.",
+		entered_vehicle = "Próbował wejść do pojazdu ${vehicleName}.",
+
+		set_vehicle_modifications_logs_title = "Modyfikacje Pojazdu",
+		set_vehicle_modifications_logs_details = "${consoleName} zmieniono modyfikacje pojazdu dla rejestracji `${vehiclePlate}`. Zmieniono modyfikacje: modType-${modType}, modIndex-${modIndex}, customTires-${customTires}.",
+
+		set_vehicle_modification = "Zmieniono modyfikacje pojazdu `${modType}` do `${modIndex}`. (Custom Tires: ${customTires})",
+		mod_index_invalid_for_type = "Modyfikacja `${modIndex}` jest ne poprawną zmianą `${modType}`.",
+		mod_type_invalid = "Modyfikacja `${modType}` Jest nie poprawna.",
+		no_mod_type_set = "Nie zmieniono modyfikacji.",
+
+		invalid_plate_number = "Nieznany numer rejestracyjny.",
+		set_fake_plate_number = "Zmieniono numer rejestracyjny dla pojazdu `${plateNumber}`.",
+
+		invalid_dirt_level = "Nieprawidłowy poziom brudu.",
+		set_dirt_level = "Zmieniono brud pojazdu na `${dirtLevel}`.",
+
+		set_dirt_level_not_super_admin = "Gracz próbował zmeinić brud pojazdu ale nie miał permisji Super Admina.",
+
+		set_fake_plate_not_super_admin = "Gracz próbował zmeinić rejestracje pojazdu ale nie miał permisji Super Admina.",
+
+		already_fake_disconnecting = "Już próbowałeś wyjść. proszę czekać.",
+		started_fake_disconnect = "Rozpoczęto wyjśćie. Nacisnij stop aby zatrzymać",
+		stopped_fake_disconnect = "Zatrzymano wyjscie.",
+
+		fake_disconnect_not_super_admin = "Gracz próbował wyjść ale nei miał permisji Super Admina."
 	},
 
 	anticheat = {
@@ -344,7 +407,17 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		-- you can put as many substitutes as you'd like by doing "/lang, /lang2, /lang3", all these 3 commands will be valid substitutes
 		-- the main difference between the _command and _command_substitutes is that substitutes will not show as suggestions in the chat
 		-- if no substitutes is wanted, simply leave an empty string with ""
+        
+	characters = {
+		character_id_available = "Character ID `${characterId}` Jest dostępny.",
+		character_id_not_available = "Character ID `${characterId}` Jest niedostępny.",
+		character_id_invalid = "Character ID `${characterId}` Nie ma takiego ID na serwerze.",
+		character_id_missing = "Nie wpisałeś ID.",
 
+		lowest_character_id_available_is = "Najmniejszym ID na serwerze jest `${characterId}`.",
+		there_are_no_available_character_ids = "Nie ma dostępnych CID na serwerze.",
+	},
+		
 		-- animations/carry
 		carry_command = "/podnies",
 		carry_command_help = "Pozwala na podnoszenie gracza.",
@@ -553,6 +626,40 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		tp_waypoint_command = "/tp_waypoint",
 		tp_waypoint_command_help = "Teleportuj to ustawionego znacznika.",
 		tp_waypoint_command_substitutes = "/tp_marker, /tp",
+		        
+        	repair_vehicle_command = "/repair_vehicle",
+		repair_vehicle_command_help = "Napraw pojazd w którym się znajdujesz.",
+		repair_vehicle_command_substitutes = "/fix",
+
+		enter_vehicle_command = "/enter_vehicle",
+		enter_vehicle_command_help = "Wchodzisz do pojazdu najbliżej ciebie .",
+		enter_vehicle_command_substitutes = "/ev",
+
+		set_modification_command = "/set_modification",
+		set_modification_command_help = "Ustawiasz modyfikacje do pojazdu w którym się znajdujesz.",
+		set_modification_command_parameter_mod_type = "Typ Modyfikacji",
+		set_modification_command_parameter_mod_type_help = "ID modyfikacji którą chcesz zmienić.",
+		set_modification_command_parameter_mod_index = "mod index",
+		set_modification_command_parameter_mod_index_help = "ID modyfikacji którą chcesz ustawić.",
+		set_modification_command_parameter_custom_tires = "custom tires",
+		set_modification_command_parameter_custom_tires_help = "Custom tires?",
+		set_modification_command_substitutes = "/sm",
+
+		set_fake_plate_command = "/set_fake_plate",
+		set_fake_plate_command_help = "Ustawiasz rejestracje pojazdu w którym się znajdujesz.",
+		set_fake_plate_command_parameter_plate_number = "Numer Rejestracji",
+		set_fake_plate_command_parameter_plate_number_help = "Numer rejestracji którą chcesz zmienić.",
+		set_fake_plate_command_substitutes = "/plate",
+
+		set_dirt_level_command = "/set_dirt_level",
+		set_dirt_level_command_help = "Myje pojazd w któtym się znajdujesz.",
+		set_dirt_level_command_parameter_dirt_level = "Poziom brudu twojego pojazdu",
+		set_dirt_level_command_parameter_dirt_level_help = "Poziom brudu na który chcesz zmienić (pomiędzy 0 and 15)",
+		set_dirt_level_command_substitutes = "/sd",
+
+		fake_disconnect_command = "/fake_disconnect",
+		fake_disconnect_command_help = "Symuluje twoje wyjscie z serwera. Automatycznie odpala noclipa.",
+		fake_disconnect_command_substitutes = "/fake_leave, /dc",
 
 		-- base/anticheat
 		model_detect_add_command = "/model_detect_add",
@@ -620,8 +727,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		leaderboard_command_substitutes = "/topka",
 
 		package_command = "/package",
-		package_command_help = "Check and refresh your package.",
+		package_command_help = "Sprawdź swój pakiet.",
 		package_command_substitutes = "/refresh_package",
+        
+        	player_packages_command = "/player_packages",
+		player_packages_command_help = "Użyj swoich nie zużytych 'pakiet gracza'.",
+		player_packages_command_substitutes = "",
 
 		-- game/atc
 		atc_debug_command = "/atc_debug",
@@ -1156,6 +1267,21 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		wheel_rotation_command_parameter_value = "value",
 		wheel_rotation_command_parameter_value_help = "Ilość, na jaką ba zostać zmodyfikowane. Wartości to od -0.5 do 0.5, 0 jest domyślną wartością",
 		wheel_rotation_command_substitutes = "",
+		
+		-- vehicles/plates
+		plate_available_command = "/plate_available",
+		plate_available_command_help = "sprawdzasz czy dostępna jest rejestracja pojazdu za pomocą komendy `/custom_plate` .",
+		plate_available_command_parameter_plate_number = "Numer rejestracyjny",
+		plate_available_command_parameter_plate_number_help = "Numer rejestracyjny który chcesz sprawdzić. Rejestracje mogą się składać tylko z maksymalnie 8 drukowanych liter oraz cyfr.",
+		plate_available_command_substitutes = "",
+
+		custom_plate_command = "/custom_plate",
+		custom_plate_command_help = "Sprawdzasz czy dostępna jest rejestracja za pomocą komendy `/custom_plate` .",
+		custom_plate_command_parameter_vehicle_id = "ID Pojazdu",
+		custom_plate_command_parameter_vehicle_id_help = "ID pojazdu dla którego chciał/a byś zmienić rejestracje pojazdu.",
+		custom_plate_command_parameter_plate_number = "plate number",
+		custom_plate_command_parameter_plate_number_help = "Numer rejestracyjny który chciał/a byś sprawdzić. Rejestracje mogą się składać tylko z maksymalnie 8 drukowanych liter oraz cyfr.",
+		custom_plate_command_substitutes = "",
 
 		-- vehicles/vehicles
 		flip_command = "/flip",
@@ -1264,6 +1390,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		slots_parameter_out_of_range = "Parametr `slots` musi mieć wartość pomiędzy `0` i `1025`.",
 		slots_already_set_to = "Ilość slotów na serwerze zostały ustawione na `${slots}`.",
 		slots_set_to = "Ilość slotów została ustawiona na `${slots}`."
+			
+		invalid_steam_identifier_parameter = "Missing or invalid 'steamIdentifier' parameter.",
+		invalid_target_position_parameter = "Missing or invalid 'targetPosition' parameter.",
+		player_not_found_in_queue = "Nie znaleziono gracza w kolejce.",
+		player_queue_moved_success = "Miejsce w kolejce zostało zmienione.",
+		player_queue_skipped_success = "Gracz przeskoczył kolejke pomyślnie.",
+		queue_is_not_ready = "Kolejka jest nie gotowa więc nie moźna przeskoczyć kolejki."
 	},
 
 	restart = {
@@ -1329,6 +1462,24 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		user_not_found = "Gracz nie odnaleziony na serwerze.",
 		invalid_character_id = "Nieprawidłowe ID postaci.",
 		invalid_steam_identifier = "Nieprawidłowy parametr identyfikatora Steam."
+		
+		unloaded_character_for_player_logs_title = "Załadowano postać gracza",
+		unloaded_character_for_player_logs_details = "${consoleName} Załadowano ${targetConsoleName}'s postać (`${characterFullName}` - ${characterId}) z powodem `${message}`.",
+		unloaded_character_for_player_no_reason_logs_details = "${consoleName} załadowano ${targetConsoleName}'s postać (`${characterFullName}` - ${characterId}) bez żadnego powodu.",
+		unloaded_character_self_logs_title = "Załadowano Postać",
+		unloaded_character_self_logs_details = "${consoleName} załadowano postać (`${characterFullName}` - ${characterId}) z powodem `${message}`.",
+		unloaded_character_self_no_reason_logs_details = "${consoleName} załadowano postać (`${characterFullName}` - ${characterId}) bez żadnego powodu.",
+
+		unloaded_character_for_user = "załadowano postać ${characterName} (${characterId}) dla ${consoleName}.",
+        	user_with_server_id_has_no_character_loaded = "Gracz z ID na serwerze `${serverId}` nie am załadowanej postaci.",
+        	user_with_server_id_not_found = "Gracz z numerem ID `${serverId}` nie został znaleziony na serwerze.",
+
+		custom_plate = "Własna rejestracja",
+		custom_character_id = "Własne ID postaci",
+
+		no_player_packages = "Nie posiadasz żadnych pakietów.",
+		player_packages = "Player Packages:\n${playerPackages}",
+		player_package = "- ${label}: ${amount}x"
 	},
 	
 
@@ -2311,8 +2462,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		ooc_timed_out = "W tej chwili nie możesz korzystać z czatu OOC. Proszę zaczekać.",
 		ooc_muted_no_reason = "Zostałeś wyciszony z czatu OOC bez określonego powodu.",
 		ooc_muted = "Zostałeś wyciszony z czatu OOC z powodu `${reason}`.",
-		global_ooc_title = "OOC ${playerName}",
-		local_ooc_title = "LOCAL OOC ${playerName}",
+		global_ooc_title = "OOC ${playerDescriptor}",
+		local_ooc_title = "LOCAL OOC ${playerDescriptor}",
 		ooc_is_disabled = "Wyłączyłeś czat OOC.",
 		ooc_enabled = "Czat OOC został włączony.",
 		ooc_already_enabled = "Czat OOC jest już włączony.",
@@ -2678,6 +2829,15 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		radio_sound_effects_current = "Głośność efektów dźwiękowych radia jest obecnie ustawiona na `${radioSoundEffects}`.",
 		radio_sound_effects_current_default = "Głośność efektów dźwiękowych radia jest obecnie ustawiona domyślnie."
 	},
+		  
+	screenshots = {
+		screenshot_created = "Pomyślnie zrobiono screenshota.",
+		screenshot_failed = "nie dało się odebrać screenshota od gracza.",
+		user_not_found_with_server_id = "Nie można znaleść gracza o takim ID.",
+		invalid_lifespan_parameter = "ifespan parameter jest niepoprawny.",
+		invalid_server_id_parameter = "ID Serwera parameter jest niepoprawne.",
+		missing_server_id_parameter = "ID Serwera parameter jest brakujące."
+	},
 
 	security_cameras = {
 		illegal_security_camera = "Próba ingerencji w kamery bezpieczeństwa.",
@@ -2737,6 +2897,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		not_driving_a_vehicle = "Obecnie nie prowadzisz pojazdu.",
 		not_a_self_driving_vehicle = "Pojazd, którym się poruszasz nie sprzyja temu oprogramowaniu.",
 		no_waypoint_set = "Proszę zaznaczyć lokalizację docelową.",
+		invalid_waypoint_set = "Na lokalizację którą zaznaczyłeś nie da się dojechać automatycznie.",
 		self_driving_engaged = "Autopilot uruchomiony. Wciśnij ~INPUT_SPRINT~ oraz ~INPUT_DUCK~ by kontrolować prędkość.",
 		self_driving_disengaged = "Autopilot został wyłączony.",
 		destination_too_close = "Zaznaczona lokalizacja jest za blisko, wybierz dalszą podróż.",
@@ -3321,6 +3482,21 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		not_in_a_car = "Nie jesteś w samochodzie.",
 	},
 
+		plates = {
+		plate_number_is_available = "Numer rejestracyjny `${plateNumber}` Jest dostępny.",
+		plate_number_is_not_available = "Numer rejestracyjny `${plateNumber}` jest niedostępny.",
+		missing_valid_plate_number = "Nie wprowadzono 'plate number' Numeru rejstracyjnego.",
+		missing_valid_vehicle_id = "Nie wprowadzono 'vehicle id' ID pojazdu.",
+		database_error = "Wyszedł problem w bazie danych.",
+		no_custom_plate_package = "Nie posiadasz pakietu prywatnej rejestracji. Sprawdz naszą stronę po więcej informacji!",
+		api_error = "Wyskoczył problem z naszym API.",
+		api_not_available = "Nasze API jest niedostępne.",
+		vehicle_does_not_belong_to_player = "ID Pojazdu `${vehicleId}` nie należy do ciebie.",
+		vehicle_id_does_not_exist = "ID Pojazdu `${vehicleId}` nie istnieje.",
+		you_have_no_character_loaded = "nie masz załadowanej postaci.",
+		vehicle_plate_changed = "Pomyślnie zmieniono rejestracje pojazdu o numerze ID `${vehicleId}` na `${plateNumber}`."
+	},
+	
 	vehicles = {
 		flip_flipping = "Odwracanie pojazdu",
 		flip_unable = "Nie mogłeś odwrócić pojazdu ponieważ w pojezdzie ktoś się znajduje.",
