@@ -18,7 +18,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		player_not_found = "Nie znaleziono gracza z podanym ID `${serverId}`.",
 		something_went_wrong = "Coś poszło nie tak. Spróbuj ponownie.",
 		yes = "Tak",
-        	no = "Nie"
+		no = "Nie"
 	},
 
 	-- animations/*
@@ -54,7 +54,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		feature_toggle_success = "Włączono `${featureName}` dla ${consoleName}.",
 		feature_toggle_success_all = "Włączono `${featureName}` dla wszystkich.",
 		feature_toggle_failed = "Nieudało się włączyć `${featureName}` dla ID ${serverId}.",
-        	feature_toggle_success_on = "Włączono `${featureName}` dla ${consoleName}.",
+		feature_toggle_success_on = "Włączono `${featureName}` dla ${consoleName}.",
 		feature_toggle_success_off = "Wyłączono `${featureName}` dla ${consoleName}.",
 
 		noclip_toggle_activated_self_logs_title = "Włączono Noclipa",
@@ -273,7 +273,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		teleport_to_coordinates_not_staff = "Gracz próbował przeteleportować się, lecz nie posiadał permisji.",
 		teleport_to_waypoint_not_staff = "Gracz próbował przeteleportować się do znacznika, lecz nie posiadał permisji.",
         
-        population_density_set_to = "Populacja na serwerze została zmeiniona na ${multiplierLabel}%.",
+		population_density_set_to = "Populacja na serwerze została zmeiniona na ${multiplierLabel}%.",
 		population_density_set_off = "Zmienianie populacji na serwerze zostało wyłączone.",
 		population_density_is_not_on = "Dostęp do zmiany populacji został wyłączony.",
 		population_density_already_set_to = "Populacja na serwerze już jest ustawiona na ${multiplierLabel}%.",
@@ -288,7 +288,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		repaired_vehicle_logs_title = "Naprawiono pojazd",
         
-        repaired_vehicle_logs_details = "${consoleName} Naprawił pojazd w którym się znajduje.",
+		repaired_vehicle_logs_details = "${consoleName} Naprawił pojazd w którym się znajduje.",
 
 		unable_to_enter_vehicle_while_dead = "Nie można wejść do pojazdu jak jest się na BW.",
 		you_are_already_in_a_vehicle = "Już znajdujesz sie pojezdzie.",
@@ -627,7 +627,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		tp_waypoint_command_help = "Teleportuj to ustawionego znacznika.",
 		tp_waypoint_command_substitutes = "/tp_marker, /tp",
 		        
-        	repair_vehicle_command = "/repair_vehicle",
+		repair_vehicle_command = "/repair_vehicle",
 		repair_vehicle_command_help = "Napraw pojazd w którym się znajdujesz.",
 		repair_vehicle_command_substitutes = "/fix",
 
@@ -730,7 +730,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		package_command_help = "Sprawdź swój pakiet.",
 		package_command_substitutes = "/refresh_package",
         
-        	player_packages_command = "/player_packages",
+		player_packages_command = "/player_packages",
 		player_packages_command_help = "Użyj swoich nie zużytych 'pakiet gracza'.",
 		player_packages_command_substitutes = "",
 
@@ -1389,7 +1389,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		invalid_slots_parameter = "Błędny parametr `slots`.",
 		slots_parameter_out_of_range = "Parametr `slots` musi mieć wartość pomiędzy `0` i `1025`.",
 		slots_already_set_to = "Ilość slotów na serwerze zostały ustawione na `${slots}`.",
-		slots_set_to = "Ilość slotów została ustawiona na `${slots}`."
+		slots_set_to = "Ilość slotów została ustawiona na `${slots}`.",
 			
 		invalid_steam_identifier_parameter = "Missing or invalid 'steamIdentifier' parameter.",
 		invalid_target_position_parameter = "Missing or invalid 'targetPosition' parameter.",
@@ -1471,8 +1471,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		unloaded_character_self_no_reason_logs_details = "${consoleName} załadowano postać (`${characterFullName}` - ${characterId}) bez żadnego powodu.",
 
 		unloaded_character_for_user = "załadowano postać ${characterName} (${characterId}) dla ${consoleName}.",
-        	user_with_server_id_has_no_character_loaded = "Gracz z ID na serwerze `${serverId}` nie am załadowanej postaci.",
-        	user_with_server_id_not_found = "Gracz z numerem ID `${serverId}` nie został znaleziony na serwerze.",
+		user_with_server_id_has_no_character_loaded = "Gracz z ID na serwerze `${serverId}` nie am załadowanej postaci.",
+		user_with_server_id_not_found = "Gracz z numerem ID `${serverId}` nie został znaleziony na serwerze.",
 
 		custom_plate = "Własna rejestracja",
 		custom_character_id = "Własne ID postaci",
@@ -3482,7 +3482,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		not_in_a_car = "Nie jesteś w samochodzie.",
 	},
 
-		plates = {
+	plates = {
 		plate_number_is_available = "Numer rejestracyjny `${plateNumber}` Jest dostępny.",
 		plate_number_is_not_available = "Numer rejestracyjny `${plateNumber}` jest niedostępny.",
 		missing_valid_plate_number = "Nie wprowadzono 'plate number' Numeru rejstracyjnego.",
