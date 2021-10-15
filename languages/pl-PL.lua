@@ -1461,7 +1461,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		user_has_no_character_loaded = "Gracz nie posiada załadowanych postaci.",
 		user_not_found = "Gracz nie odnaleziony na serwerze.",
 		invalid_character_id = "Nieprawidłowe ID postaci.",
-		invalid_steam_identifier = "Nieprawidłowy parametr identyfikatora Steam."
+		invalid_steam_identifier = "Nieprawidłowy parametr identyfikatora Steam.",
 		
 		unloaded_character_for_player_logs_title = "Załadowano postać gracza",
 		unloaded_character_for_player_logs_details = "${consoleName} Załadowano ${targetConsoleName}'s postać (`${characterFullName}` - ${characterId}) z powodem `${message}`.",
