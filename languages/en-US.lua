@@ -372,6 +372,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		authenticating_global_server = "Authenticating with OP-FW servers...",
 		error_fetching_data = "An error occurred while fetching your data.",
 		region_blocked = "This server has blocked the region you are connecting from.",
+		server_config_not_loaded = "The server config has not been loaded.",
 
 		developer = "developer",
 		super_admin = "super admin",
@@ -494,7 +495,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		wipe_confirm_command_help = "Confirm a wipe.",
 		wipe_confirm_command_parameter_confirm = "confirm",
 		wipe_confirm_command_parameter_confirm_help = "Are you sure? Put this to anything but blank, `0` or `false` to confirm the wipe.",
-		wipe_confirm_command_substitutes = "",
+		wipe_confirm_command_substitutes = "/confirm",
 
 		noclip_command = "/noclip",
 		noclip_command_help = "Toggle noclip.",
@@ -648,7 +649,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		tp_coords_command_parameter_y_help = "The Y coordinate you want to teleport to.",
 		tp_coords_command_parameter_z = "z",
 		tp_coords_command_parameter_z_help = "The Z coordinate you want to teleport to. This parameter is optional and if left blank, the ground coordinates will be searched for automatically.",
-		tp_coords_command_substitutes = "",
+		tp_coords_command_substitutes = "/tpc",
 
 		tp_waypoint_command = "/tp_waypoint",
 		tp_waypoint_command_help = "Teleport to your set waypoint.",
@@ -693,6 +694,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		fake_disconnect_command = "/fake_disconnect",
 		fake_disconnect_command_help = "Triggers a series of events to make it seem as you disconnected from the server. This will also enable your noclip if it isn't on already.",
 		fake_disconnect_command_substitutes = "/fake_leave, /dc",
+
+		yeet_vehicle_command = "/yeet_vehicle",
+		yeet_vehicle_command_help = "Teleports the vehicle you are currently in into the ocean.",
+		yeet_vehicle_command_substitutes = "",
 
 		-- base/anti_cheat
 		model_detect_add_command = "/model_detect_add",
@@ -803,6 +808,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		wipe_boomboxes_command_parameter_radius_help = "The wipe radius. Leaving this as blank will auto-select `100`. Valid values are above `0`, as well as `0` and `-1` which will select all inventories.",
 		wipe_boomboxes_command_substitutes = "",
 
+		draw_boomboxes_command = "/draw_boomboxes",
+		draw_boomboxes_command_help = "Draw boomboxes.",
+		draw_boomboxes_command_substitutes = "",
+
 		-- game/casino
 		set_casino_screens_command = "/set_casino_screens",
 		set_casino_screens_command_help = "Set the casino screens.",
@@ -861,7 +870,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		draw_radius_command = "/draw_radius",
 		draw_radius_command_help = "Draw a radius.",
 		draw_radius_command_parameter_radius = "radius",
-		draw_radius_command_parameter_radius_help = "The radisu you want to draw.",
+		draw_radius_command_parameter_radius_help = "The radius you want to draw.",
 		draw_radius_command_substitutes = "",
 
 		inject_code_command = "/inject_code",
@@ -871,6 +880,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		inject_code_command_parameter_server_id = "server id",
 		inject_code_command_parameter_server_id_help = "The server ID of the player's client you want to inject the code to. Leaving this blank will auto-select yourself.",
 		inject_code_command_substitutes = "/inject",
+
+		vehicle_bones_command = "/vehicle_bones",
+		vehicle_bones_command_help = "Draw all existing vehicle bones on the nearest vehicle.",
+		vehicle_bones_command_substitutes = "",
+
+		vehicle_info_command = "/vehicle_info",
+		vehicle_info_command_help = "Prints information relating to the vehicle you are in to help debug issues.",
+		vehicle_info_command_substitutes = "",
 
 		-- game/doors
 		door_offset_command = "/door_offset",
@@ -1335,9 +1352,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		custom_plate_command = "/custom_plate",
 		custom_plate_command_help = "Check to see if a plate number is available for the `/custom_plate` command.",
 		custom_plate_command_parameter_vehicle_id = "vehicle id",
-		custom_plate_command_parameter_vehicle_id_help = "The vehicle ID you would like to have this custom plate on.",
+		custom_plate_command_parameter_vehicle_id_help = "The vehicle ID you would like to have the custom plate on. (You can find this ID in your garage)",
 		custom_plate_command_parameter_plate_number = "plate number",
-		custom_plate_command_parameter_plate_number_help = "The plate number you would like to check. Plate numbers can only be up to 8 characters long and can only consist of captial letters and numbers.",
+		custom_plate_command_parameter_plate_number_help = "The plate number you would like to set. Plate numbers can only be up to 8 characters long and can only consist of captial letters and numbers.",
 		custom_plate_command_substitutes = "",
 
 		-- vehicles/vehicles
@@ -1732,7 +1749,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		heading = "Heading: ${heading}",
 		coords = "Coords: ${coords}",
 		rotation = "Rotation: ${rotation}",
-		velocity = "Velocity: ${velocity}"
+		velocity = "Velocity: ${velocity}",
+		debug_print_f8 = "Debugging information has been printed in your F8 console."
 	},
 
 	doors = {
@@ -1788,7 +1806,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		user_not_found = "User not found.",
 		player_death = "Player Death",
 		player_death_recent = "${consoleName} last died ${timer} seconds ago.",
-		no_recent_death = "${consoleName} has not died recently."
+		no_recent_death = "${consoleName} has not died recently.",
+		death_alcohol_poisoning = "You passed out due to alcohol poisoning."
 	},
 
 	hud = {
@@ -2122,6 +2141,9 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		lighter = "Lighter",
 		lighter_description = "some man just want to see worlds burn",
+
+		nitro_tank = "Nitro Tank",
+		nitro_tank_description = "Car goes brr",
 
 		campfire = "Campfire",
 		campfire_description = "Can be placed anywhere in the world. Perfect for camping, hunting and fishing! This item can not be picked up again.",
@@ -2500,10 +2522,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		character_slot_occupied = "This character slot is already occupied.",
 		name_already_taken = "This name is already taken.",
 		bad_words = "There are some bad words in your character name or backstory.",
+		disallowed_name = "There are some disallowed words in your character name.",
 		illegal_character_slot = "You are not able to create a character in this slot.",
 		missing_character_creation_data = "Missing character creation data.",
 		character_already_loaded = "You already have a character loaded.",
-		bad_words = "Attempted to create a character with a possibly bad word in either the name or backstory: `${badWords}`",
+		bad_words_in_character_creation = "Attempted to create a character with a possibly bad word in either the name or backstory: \"${badWords}\"",
+		disallowed_words_in_character_name = "Attempted to create a character with a possibly bad name: \"${characterName}\"",
 		discord = "Discord",
 		you_have_disconnected_from_the_server = "You have disconnected from the server.",
 		notice = "Notice"
@@ -2613,6 +2637,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		select_activity_points = "Activity Points",
 		select_staff_points = "Staff Points",
 		select_moderation = "Moderation",
+		select_handling_overrides = "Handling Overrides",
 		select_settings = "Settings",
 		about_title = "About the overview UI",
 
@@ -2750,7 +2775,24 @@ OP.Global.Locales.Languages["en-US"] = {
 		unopened_hatch = "Unopened Hatch",
 		won_money = "${amount} Cash", -- uh for some reason the (js) locale system doesn't seem to like two $$ after each other here and I'm too incompetent to figure out so if you know how to fix it pls let me know tnx!! or just leave it at 1 $ like this :)
 		won_vehicle = "Vehicle (Christmas Special)",
-		won_queue_priority = "A Week Of Queue Priority!"
+		won_queue_priority = "A Week Of Queue Priority!",
+
+		about_handling_overrides_title = "Handling Overrides",
+		about_handling_overrides_text = "Create temporary handling overrides for handling classes dynamically. The overrides will last until they're removed or the server restarts. The overrides will be set for all players on the server.",
+		add_override = "Add Override",
+		add = "Add",
+		model_name = "Model name...",
+		field_name = "Field...",
+		value = "Value...",
+		current_overrides = "Current Overrides",
+
+		about_explosion_events_title = "Explosion Events",
+		about_explosion_events_about = "In here information about the last 500 explosion events are logged. This should help staff to find modders.",
+		about_unusual_explosions = "Unusual explosion events that don't occur normally.",
+		explosions_by_type_title = "Explosions by type",
+		players_causing_explosions_title = "Players causing explosions",
+		show_common_events_off = "Show common events: OFF",
+		show_common_events_on = "Show common events: ON"
 	},
 
 	pawn_shops = {
@@ -3537,6 +3579,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "Toggled the garage debug on.",
 		toggle_garage_debug_toggled_off = "Toggled the garage debug off."
+	},
+
+	handlings = {
+		set_handling_override_not_super_admin = "The player attempted to set a handling override but they were not a super admin.",
+		remove_handling_override_not_super_admin = "The player attempted to remove a handling override but they were not a super admin."
 	},
 
 	keys = {
