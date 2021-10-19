@@ -41,6 +41,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	-- base/*
 	admin = {
 		aimbot_activated = "Aimbot włączony",
+		wallhack_activated = "Wallhack włączony",
 
 		feature_toggle_not_admin = "Attempted to toggle their own or someone else's `${featureName}`, brak odpowiednich permisji.",
 		feature_toggle_activated_logs_title = "Zdalnie przełączono",
@@ -287,9 +288,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		repair_vehicle_not_super_admin = "Gracz chciał naprawić pojazd ale nie ma permisji Super Admina.",
 
 		repaired_vehicle_logs_title = "Naprawiono pojazd",
-        
 		repaired_vehicle_logs_details = "${consoleName} Naprawił pojazd w którym się znajduje.",
-
+		
+		vehicle_smoke_invalid_class = "Dym z pojazdu nie może zosać użyty w tej klasie pojazdu.",
+		
 		unable_to_enter_vehicle_while_dead = "Nie można wejść do pojazdu jak jest się na BW.",
 		you_are_already_in_a_vehicle = "Już znajdujesz sie pojezdzie.",
 		the_closest_vehicle_had_no_free_seats = "Najbliższy pojazd nie miał wolnych miejsc.",
@@ -318,12 +320,15 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		started_fake_disconnect = "Rozpoczęto wyjśćie. Nacisnij stop aby zatrzymać",
 		stopped_fake_disconnect = "Zatrzymano wyjscie.",
 
-		fake_disconnect_not_super_admin = "Gracz próbował wyjść ale nei miał permisji Super Admina."
+		fake_disconnect_not_super_admin = "Gracz próbował wyjść ale nei miał permisji Super Admina.",
+		created_vehicle_smoke_for_player_logs_title = "Utworzono dym pojazdu",
+		created_vehicle_smoke_for_player_logs_details = "${consoleName} Utworzono dym pojazdu."
 	},
 
 	anticheat = {
-		illegal_client_event = "Wywołał niepoprawne zdarzenie o nazwie `${eventName}`.",
-		illegal_server_event = "Wywołał niepoprawne zdarzenie serwera o nazwie `${eventName}`.",
+		illegal_client_event = "Włączono event clienta z nazwą '${eventName}'.",
+		illegal_server_event = "Włączono event serwerowy z nazwą '${eventName}'.",
+		illegal_weapon = "Zrespiono nie dozwoloną broń '${weaponLabel}'.",
 		bad_entity_spawn = "Zespawnował istotę z modelem `${modelName}`.",
 		bad_entity_title = "Zły Obiekt Zrespiony",
 		bad_entity_message = "${consoleName} Zrespił obiekt o nazwie ${modelName}.",
@@ -535,6 +540,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		aimbot_command_parameter_server_id = "server id",
 		aimbot_command_parameter_server_id_help = "Przełącza aimbota dla kogoś innego, wstaw tutaj jego identyfikator ID.",
 		aimbot_command_substitutes = "",
+		
+		player_bones_debug_command = "/player_bones_debug",
+		player_bones_debug_command_help = "Włączono debbuger player bones.",
+		player_bones_debug_command_parameter_server_id = "server id",
+		player_bones_debug_command_parameter_server_id_help = "jeśli chcesz włączyć debugger dla kogoś innego, Tutaj podaj ID.",
+		player_bones_debug_command_substitutes = "/player_bones",
 
 		wallhack_command = "/wallhack",
 		wallhack_command_help = "Przełącz wallhack.",
@@ -559,12 +570,37 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		no_nearby_vehicles_command_parameter_server_id = "server id",
 		no_nearby_vehicles_command_parameter_server_id_help = "Jeżeli chcesz przełączyć 'no nearby vehicles' dla innego gracza, wpisz po tym jego ID.",
 		no_nearby_vehicles_command_substitutes = "/brakpojazdow",
+		
+		vehicle_smoke_command = "/toggle_vehicle_smoke",
+		vehicle_smoke_command_help = "Włącz 'vehicle smoke'.",
+		vehicle_smoke_command_parameter_server_id = "server id",
+		vehicle_smoke_command_parameter_server_id_help = "Jeśli chcesz odpalić 'vehicle smoke' dla kogoś innego, Tutaj podaj jego ID.",
+		vehicle_smoke_command_parameter_color_r = "color r",
+		vehicle_smoke_command_parameter_color_r_help = "The red value of the smoke color (0 - 255).",
+		vehicle_smoke_command_parameter_color_g = "color g",
+		vehicle_smoke_command_parameter_color_g_help = "The green value of the smoke color (0 - 255).",
+		vehicle_smoke_command_parameter_color_b = "color b",
+		vehicle_smoke_command_parameter_color_b_help = "The blue value of the smoke color (0 - 255).",
+		vehicle_smoke_command_substitutes = "/vehicle_smoke, /smoke",
 
 		speed_up_progress_bar_command = "/speed_up_progress_bar",
 		speed_up_progress_bar_command_help = "Przełącz 'speed up progress bar'.",
 		speed_up_progress_bar_command_parameter_server_id = "server id",
 		speed_up_progress_bar_command_parameter_server_id_help = "Jeżeli chcesz przełączyć 'speed up progress bar' dla innego gracza, wpisz po tym jego ID.",
 		speed_up_progress_bar_command_substitutes = "/speed_up",
+		speed_up_progress_bar_command = "/speed_up_progress_bar",
+		speed_up_progress_bar_command_help = "Przełącz 'speed up progress bar'.",
+		speed_up_progress_bar_command_parameter_server_id = "server id",
+		speed_up_progress_bar_command_parameter_server_id_help = "Jeżeli chcesz przełączyć 'speed up progress bar' dla innego gracza, wpisz po tym jego ID.",
+		speed_up_progress_bar_command_substitutes = "/speed_up",
+		wallhack_on = "Włączono 'Wallhack'",
+		wallhack_off = "Wyłączono 'Wallhack'.",
+		aimbot_on = "Włączono 'Aimbot'.",
+		aimbot_off = "Wyłączono 'Aimbot'.",
+		player_bones_on = "Włączono 'Player Bones'",
+		player_bones_off = "Wyłączono 'Player Bones'.",
+		vehicle_smoke_on = "Włączono 'Vehicle Smoke'",
+		vehicle_smoke_off = "Wyłączono 'Vehicle Smoke'",
 
 		add_cash_command = "/add_cash",
 		add_cash_command_help = "Dodaje komuś pieniądze.",
@@ -877,6 +913,21 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		metrics_toggle = "/metrics_toggle",
 		metrics_toggle_help = "Przełącz na środek.",
 		metrics_toggle_substitutes = "/metrics, /metrics_display",
+		
+		-- game/hunting
+		animal_debug_command = "/animal_debug",
+		animal_debug_command_help = "Włącz debug zwierząt.",
+		animal_debug_command_substitutes = "",
+
+		spawn_ped_command = "/spawn_ped",
+		spawn_ped_command_help = "Spawns a ped.",
+		spawn_ped_command_parameter_model = "model",
+		spawn_ped_command_parameter_model_help = "Model peda jakiego chcesz spawnować.",
+		spawn_ped_command_parameter_wander = "ai",
+		spawn_ped_command_parameter_wander_help = "Czy ped ma wędrować (Tak/Nie).",
+		spawn_ped_command_parameter_target = "target",
+		spawn_ped_command_parameter_target_help = "Czy ped ma być agresywny dla innych.",
+		spawn_ped_command_substitutes = "",
 		
 		-- game/instances
 		instance_create_command = "/instance_create",
@@ -1705,6 +1756,22 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		store_closed = "Sklep jest obecnie zamknięty. Proszę wrócić później.",
 		failed_to_sync_doors = "Błąd podczas otwierania drzwi. Spróbuj jeszcze raz."
 	},
+	
+	gas_masks = {
+		gas_grenade = "Gas Grenade",
+		in_gas_circle = "W kółku Gazowym!",
+		not_in_gas_circle = "Nie w kółku Gazowym.",
+		gas_time_left = "Masz ${gasTime} Tlenu maski gazowej.",
+		hold_to_take_gas_mask_off = "Przytrzymaj ~INPUT_VEH_HEADLIGHT~ Aby zdjąć Maskę Gazową.",
+		hold_to_take_gas_mask_off_holding = "Przytrzymuj aby zdjąć maske gazową."
+	},
+	
+	grills = {
+		campfire = "Ognisko",
+		use_campfire = "[E] Aby użyć ogniska",
+		grill = "Grill",
+		use_grill = "[E] Aby użyć Grila"
+	},
 
 	health = {
 		successfully_revived_player = "Successfully revived ${consoleName}.",
@@ -1753,6 +1820,16 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		ping = "PING",
 		autopilot = "autopilot"
 	},
+	
+	hunting = {
+		hold_to_skin = "[${InteractionKey}] Hold to skin",
+		skinning_animal = "Skinning dead animal",
+		hit_by_vehicle = "Mięso ze zwierzaka jest zgniłe.",
+
+		ped_failed_spawn = "Nie udało się zespawnować peda.",
+		ped_missing_model = "Brakuje parametru modelu.",
+		invalid_server_id = "Niepoprawne ID Serwerowe."
+	},
 
 	identification = {
 		los_santos = "Los Santos",
@@ -1765,7 +1842,35 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		date_of_birth = "Data urodzenia",
 		citizen_id = "ID obywatela",
 		citizen_card_details = "${firstName} ${lastName} | Data urodzenia: ${dateOfBirth} | Płeć: ${gender} | ID obywatela: ${characterId}",
-		just_showed_citizen_card = "Właśnie pokazałeś swoją kartę obywatela. Poczekaj chwilę."
+		just_showed_citizen_card = "Właśnie pokazałeś swoją kartę obywatela. Poczekaj chwilę.",
+       
+		just_showed_badge = "Właśnie pokazałeś swoją odznakę. Poczekaj chwilę.",
+		sasp_badge = "Odznaka SASP",
+		sasp_badge_details = "SASP | ${firstName} ${lastName} | Position: ${positionName}",
+		bcso_badge = "Odznaka BCSO",
+		bcso_badge_details = "BCSO | ${firstName} ${lastName} | Position: ${positionName}",
+		iaa_badge = "Odznaka IAA",
+		iaa_badge_details = "IAA | ${firstName} ${lastName} | Position: ${positionName}",
+		fib_badge = "Odznaka FIB",
+		fib_badge_details = "FIB | ${firstName} ${lastName} | Position: ${positionName}",
+		swat_badge = "Odznaka SWAT",
+		swat_badge_details = "SWAT | ${firstName} ${lastName} | Position: ${positionName}",
+		management_badge = "Odznaka Management",
+		management_badge_details = "Management | ${firstName} ${lastName} | Position: ${positionName}",
+
+		badge_type_sasp = "San Andreas State Police",
+		badge_type_bcso = "Blaine County Sheriff's Office",
+		badge_type_iaa = "Internal Affairs Agency",
+		badge_type_fib = "Federal Investigation Bureau",
+		badge_type_swat = "Special Weapons And Tactics",
+		badge_type_management = "SASP Management",
+
+		badge_type_short_sasp = "SASP",
+		badge_type_short_bcso = "BCSO",
+		badge_type_short_iaa = "IAA",
+		badge_type_short_fib = "FIB",
+		badge_type_short_swat = "SWAT",
+		badge_type_short_management = "Management"
 	},
 	
 		instances = {
@@ -1805,6 +1910,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		bar = "Bar",
 		strip_club = "Klub ze striptizem",
 		police_armory = "Zbrojownia policyjna",
+		police_badge_store = "Biurko z odznakami",
 		ems_store = "Sklep EMS",
 		chop_shop = "Chop Shop",
 		courthouse = "Sąd",
@@ -1828,6 +1934,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		amount = "Ilość",
 		use = "Użyj",
 		close = "Zamknij",
+		
+		done = "Zakończono",
+		burnt = "Spalone",
+		fuel = "Paliwo: ${fuel}",
 
 		item_does_stack = "Ten przedmiot się stackuje",
 		item_does_not_stack = "Ten przedmiot się nie stackuje.",
@@ -1860,6 +1970,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		logs_wiped_nearby_ground_inventories_title = "wyczyszczono wszystkie przedmioty na ziemi.",
 		logs_wiped_nearby_ground_inventories_details = "${consoleName} wyczyścił wszystkie przedmioty na ziemi w promieniu `${radius}`.",
+		
+		press_use_campfire = "[E] Użyj Ogniska",
+		use_campfire = "Użyj ogniska",
 
 		-- items & item descriptions
 		body_armour = "Pancerz",
@@ -1880,6 +1993,19 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		radio_chop_shop = "Radio Chop Shop",
 		radio_chop_shop_description = "Używane do otrzymywania zleceń o pojazdach do kradzieży",
+		
+		asp_badge = "Odznaka SASP",
+		sasp_badge_description = "Odznaka dla członków San Andreas Police Department.",
+		bcso_badge = "Odznaka BCSO",
+		bcso_badge_description = "Odznaka dla członków Blaine County Sheriff's Office.",
+		iaa_badge = "Odznaka IAA",
+		iaa_badge_description = "Odznaka dla członków Internal Affairs Agency.",
+		fib_badge = "Odznaka FIB",
+		fib_badge_description = "Odznaka dla członków Federal Investigation Bureau.",
+		swat_badge = "Odznaka SWAT",
+		swat_badge_description = "Odznaka dla członków Special Weapons and Tactics department.",
+		management_badge = "Odznaka Management",
+		management_badge_description = "Odznaka dla członków SASP Management division.",
 
 		binoculars = "Lornetka",
 		binoculars_description = "Przyrząd optyczny ułatwiający oglądanie obojgiem oczu oddalonych przedmiotów.",
@@ -2162,6 +2288,18 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		earthworms_description = "Asortyment rybaka.",
 		fishing_rod = "Fishing Rod",
 		fishing_rod_description = "Asortyment rybaka.",
+		raw_meat = "Surowe Mięso",
+		raw_meat_description = "Surowe Mięso.",
+		cooked_meat = "Upieczone Mięso",
+		cooked_meat_description = "Upieczone Mięso.",
+		burnt_meat = "Spalone Mięso",
+		burnt_meat_description = "Spalone Mięso.",
+		leather = "Skóra",
+		leather_description = "Skóra od jelenia.",
+		wood = "Drewno",
+		wood_description = "Kawałek drewna.",
+		charcoal = "Węgiel",
+		charcoal_description = "Węgiel na grila/ognisko.",
 		
 		golf_ball = "Piłka golfowa",
 		golf_ball_description = "Używana w Golfie.",
@@ -2447,6 +2585,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		exit_city = "Wyjdź z miasta.",
 		press_to_exit_city = "Naciśnij ~g~${InteractionKey} ~w~aby przełączyć się miedzy postaciami.",
 		character_slot_occupied = "Ten slot postaci jest już używany!",
+		something_went_wrong = "O nie! Coś poszło nie tak przy tworzeniu postaci.",
 		name_already_taken = "Te dane są juz zajęte",
 		bad_words = "W twoim imieniu i nazwisku bohatera lub jego historii jest kilka brzydkich słów.",
 		disallowed_name = "Masz niedozwolone słowa w swoim nicku.",
@@ -2737,6 +2876,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		roll_message = "Rzucił kostką z ustawieniami ${rolls}d${max} i dostał ${totalValue}",
 		card_message = "Wyciągnął kartę i dostał ${cardLabel}",
 		citizen_card_message = "Pokazujesz dowód osobisty (${characterId})",
+		badge_message = "Pokazujesz swoją odznake (${characterId})",
 		ped_message_logs_title = "Wiadomość do peda",
 		ped_message_logs_details = "${consoleName} Wysłał wiadomość do peda z treścią: `${pedMessage}`",
 		attached_ped_message_logs_title = "Attached Ped Message",
@@ -3766,6 +3906,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		multiplayer_models = "Modele MultiPlayer",
 		serial_number = "Numer Seryjny: ${serialNumber}<br>Ta broń jest zarejestrowana na ${fullName} (${characterId}).",
 		serial_number_unknown = "Numer Seryjny: Nieznany.",
+		badge_owner = "Odznaka należy do ${fullName} (${positionName}).",
+		badge_owner_unknown = "Nieznany Właściciel odznaki.",
 		evidence_incomplete = "Dowody te są niekompletne i nie mogą być zweryfikowane.",
 		evidence_type = "Rodzaj dowodu",
 		evidence_casings = "Łuski miały numer seryjny ${serialNumber} który należał do ${buyerName} (${buyerCid}) w momencie użycia.",
