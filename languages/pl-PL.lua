@@ -349,7 +349,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		authenticating_global_server = "Uwierzytelnianie za pomocą serwerów OP-FW...",
 		error_fetching_data = "Podczas pobierania twoich danych wystąpił błąd.",
 		region_blocked = "Ten serwer zablokował region, z którego się łączysz.",
-
+		server_config_not_loaded = "Błąd w załadowaniu Configu.",
+		
 		developer = "deweloper",
 		super_admin = "super admin",
 		staff = "moderator",
@@ -473,7 +474,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		wipe_command_confirm_help = "Potwierdź wipe.",
 		wipe_command_confirm_parameter_confirm = "potwierdz",
 		wipe_command_confirm_parameter_confirm_help = "Jesteś pewny? Wpisz cokolwiek oprócz, `0` lub `false` , aby potwierdzić wipe.",
-		wipe_command_confirm_substitutes = "",
+		wipe_confirm_command_substitutes = "/zatwierdź",
 
 		noclip_command = "/noclip",
 		noclip_command_help = "Przełącz noclip.",
@@ -621,7 +622,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		tp_coords_command_parameter_y_help = "Współrzędna Y, do której chcesz sie przeteleportować.",
 		tp_coords_command_parameter_z = "z",
 		tp_coords_command_parameter_z_help = "Współrzędna Z, do której chcesz sie przeteleportować. Ten parametr jest opcjonalny i jeśli pozostanie pusty, współrzędne Z zostaną wyszukane automatycznie.",
-		tp_coords_command_substitutes = "",
+		tp_coords_command_substitutes = "/tpc",
 
 		tp_waypoint_command = "/tp_waypoint",
 		tp_waypoint_command_help = "Teleportuj to ustawionego znacznika.",
@@ -660,6 +661,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		fake_disconnect_command = "/fake_disconnect",
 		fake_disconnect_command_help = "Symuluje twoje wyjscie z serwera. Automatycznie odpala noclipa.",
 		fake_disconnect_command_substitutes = "/fake_leave, /dc",
+		
+		yeet_vehicle_command = "/yeet_vehicle",
+		yeet_vehicle_command_help = "Teleportuje pojazd w którym się znajdujesz do oceanu.",
+		yeet_vehicle_command_substitutes = "",
 
 		-- base/anticheat
 		model_detect_add_command = "/model_detect_add",
@@ -750,6 +755,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		wipe_boomboxes_command_parameter_radius = "radius",
 		wipe_boomboxes_command_parameter_radius_help = "Promień wyczyszczenia boomboxów. Pusta wartość pozostawiona wyniesie 100.",
 		wipe_boomboxes_command_substitutes = "",
+		
+		draw_boomboxes_command = "/draw_boomboxes",
+		draw_boomboxes_command_help = "Pokazuje Boomboxy.",
+		draw_boomboxes_command_substitutes = "",
 
 		-- game/casino
 		set_casino_screens_command = "/set_casino_screens",
@@ -819,7 +828,15 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		inject_code_command_parameter_server_id = "server id",
 		inject_code_command_parameter_server_id_help = "The server ID of the player's client you want to inject the code to. Leaving this blank will auto-select yourself.",
 		inject_code_command_substitutes = "/inject",
+		
+		vehicle_bones_command = "/vehicle_bones",
+		vehicle_bones_command_help = "Pokazuje rysy pojazdu znajdującego się obok.",
+		vehicle_bones_command_substitutes = "",
 
+		vehicle_info_command = "/vehicle_info",
+		vehicle_info_command_help = "Pokazuje informacje pojazdu aby pokazać i naprawić błędy pojazdu.",
+		vehicle_info_command_substitutes = "",
+		
 		-- game/doors
 		door_offset_command = "/door_offset",
 		door_offset_command_help = "Włącza specjalnie narzędzie pod drzwi.",
@@ -1278,7 +1295,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		custom_plate_command = "/custom_plate",
 		custom_plate_command_help = "Sprawdzasz czy dostępna jest rejestracja za pomocą komendy `/custom_plate` .",
 		custom_plate_command_parameter_vehicle_id = "ID Pojazdu",
-		custom_plate_command_parameter_vehicle_id_help = "ID pojazdu dla którego chciał/a byś zmienić rejestracje pojazdu.",
+		custom_plate_command_parameter_vehicle_id_help = "ID pojazdu dla którego chciał/a byś zmienić rejestracje pojazdu. (ID pojazdu możesz znaleźć w garażu)",
 		custom_plate_command_parameter_plate_number = "plate number",
 		custom_plate_command_parameter_plate_number_help = "Numer rejestracyjny który chciał/a byś sprawdzić. Rejestracje mogą się składać tylko z maksymalnie 8 drukowanych liter oraz cyfr.",
 		custom_plate_command_substitutes = "",
@@ -1672,7 +1689,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		heading = "Heading: ${heading}",
 		coords = "Coords: ${coords}",
 		rotation = "Rotation: ${rotation}",
-		velocity = "Velocity: ${velocity}"
+		velocity = "Velocity: ${velocity}",
+		debug_print_f8 = "Błędy zostaną pokazane w panelu F8."
 	},
 
 	doors = {
@@ -1719,7 +1737,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		user_not_found = "Gracz nieznaleziony.",
 		player_death = "Zgon gracza",
 		player_death_recent = "${consoleName} zginał ${timer} sekund temu.",
-		no_recent_death = "${consoleName} nie zginał w ostatnim czasie."
+		no_recent_death = "${consoleName} nie zginał w ostatnim czasie.",
+		death_alcohol_poisoning = "Zgonowałeś po wypiciu większej ilości alkoholu."
 	},
 
 	hud = {
@@ -2052,6 +2071,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		lighter = "Zapalniczka",
 		lighter_description = "Mały przenośny przedmiot służący do wytwarzania ognia, najczęściej w celu zapalenia papierosa, człowieka lub cygara",
+		
+		nitro_tank = "Butla z Nitro",
+		nitro_tank_description = "Auto robi Wrummm",
 
 		campfire = "Ognisko",
 		campfire_description = "Część asortymentu do rozłożenia biwaku.",
@@ -2427,10 +2449,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		character_slot_occupied = "Ten slot postaci jest już używany!",
 		name_already_taken = "Te dane są juz zajęte",
 		bad_words = "W twoim imieniu i nazwisku bohatera lub jego historii jest kilka brzydkich słów.",
+		disallowed_name = "Masz niedozwolone słowa w swoim nicku.",
 		illegal_character_slot = "Nie jesteś w stanie utworzyć postaci na tym slocie.",
 		missing_character_creation_data = "Brakujące dane dotyczące tworzenia postaci.",
 		character_already_loaded = "Masz już załadowaną postać.",
-		bad_words = "Próbowano stworzyć postać z potencjalnie brzydkim słowem w nazwie lub historii: `${badWords}`",
+		bad_words_in_character_creation = "Grasz próbował zrobić postać używając niedozwolone słowa: \"${badWords}\"",
+		disallowed_words_in_character_name = "gracz próbował stworzyć postać z najprawdopodobnie niedzwolonym imieniem: \"${characterName}\"",
 		discord = "Discord",
 		you_have_disconnected_from_the_server = "Rozłączyłes się z serwerem."
 	},
@@ -2538,6 +2562,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		select_activity_points = "Punkty aktywności",
 		select_staff_points = "Staff points",
 		select_moderation = "Moderacja",
+		select_handling_overrides = "Zmiany z Handlingiem",
 		select_settings = "Ustawienia",
 		about_title = "O ogólnym zarysie Overview UI",
 
@@ -2675,7 +2700,24 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		unopened_hatch = "Nieotwarta szansa",
 		won_money = "${amount} Pieniądze", -- uh for some reason the (js) locale system doesn't seem to like two $$ after each other here and I'm too incompetent to figure out so if you know how to fix it pls let me know tnx!! or just leave it at 1 $ like this :)
 		won_vehicle = "Pojazd świateczny",
-		won_queue_priority = "Tydzień priorytetu w kolejce!"
+		won_queue_priority = "Tydzień priorytetu w kolejce!",
+		
+		about_handling_overrides_title = "Zmiany w handlingach",
+		about_handling_overrides_text = "Zmiany w handlingu na czas określony. Zmiany zostaną usunięte po restarcie serwera lub jak pojazd zostanie usunięty. Zmiany są dla wszystkich graczy an serwerze",
+		add_override = "Doddaj zmianę",
+		add = "Dodaj",
+		model_name = "Nazwa Modelu...",
+		field_name = "Pole...",
+		value = "Value...",
+		current_overrides = "Aktualne Zmiany",
+
+		about_explosion_events_title = "Event wybuchu",
+		about_explosion_events_about = "Tutaj są ostatnie 500 explozji. Powinno pomóc to adminsitracji wyszukać cheatera",
+		about_unusual_explosions = "Nietypowe explozje którę nie zdażają się.",
+		explosions_by_type_title = "Typy explozji",
+		players_causing_explosions_title = "Gracze powodujące explozję",
+		show_common_events_off = "Pokaż częste eventy: Wyłaczone",
+		show_common_events_on = "Pokaż częste eventy: Włączone"
 	},
 
 	pawn_shops = {
@@ -3461,6 +3503,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "Włączono debugowanie garażu.",
 		toggle_garage_debug_toggled_off = "Wyłączono debugowanie garażu."
+	},
+	
+	handlings = {
+		set_handling_override_not_super_admin = "Gracz próbował zmienić handling ale nie miał roli Super Admina",
+		remove_handling_override_not_super_admin = "Gracz próbował wyłączyć handling ale nie miał roli Sper Admina"
 	},
 
 	keys = {
