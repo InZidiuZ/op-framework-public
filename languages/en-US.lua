@@ -126,7 +126,6 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		event_not_admin = "Attempted to ${eventName}, but user didn't have proper permissions to do so.",
 
-		removed_bank = "Spawn",
 		removed_bank_balance_from_player = "Removed $${amount} bank balance from ${consoleName}.",
 
 		spawned_item_title = "Spawned Item",
@@ -182,7 +181,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		missing_valid_message_parameter = "Missing a valid 'message' parameter.",
 
 		player_revived_success = "Revived player successfully.",
-		
+
 		missing_valid_steam_identifier_parameter = "Missing a valid 'steamIdentifier' parameter.",
 
 		illegal_entity_wipe = "Player attempted to wipe entities, but didn't have permissions.",
@@ -262,6 +261,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		indestructibility_off = "Toggled 'Indestructibility' Off.",
 		speed_boost_on = "Toggled 'Speed Boost' On.",
 		speed_boost_off = "Toggled 'Speed Boost' Off.",
+		nitro_boost_on = "Toggled 'Nitro Boost' On.",
+		nitro_boost_off = "Toggled 'Nitro Boost' Off.",
 		no_nearby_vehicles_on = "Toggled 'No Nearby Vehicles' On.",
 		no_nearby_vehicles_off = "Toggled 'No Nearby Vehicles' Off.",
 		speed_up_progres_bar_on = "Toggled 'Speed Up Progress Bar' On.",
@@ -355,7 +356,65 @@ OP.Global.Locales.Languages["en-US"] = {
 		fake_disconnect_not_super_admin = "Player attempted to fake disconnect but they were not a super admin.",
 
 		created_vehicle_smoke_for_player_logs_title = "Created Vehicle Smoke",
-		created_vehicle_smoke_for_player_logs_details = "${consoleName} created vehicle smoke."
+		created_vehicle_smoke_for_player_logs_details = "${consoleName} created vehicle smoke.",
+
+		player_info_not_staff = "Attempted to get a player's character information without proper permission.",
+		player_info_title = "${consoleName}",
+		player_info = "${fullName} (#${characterId})\n${jobName}, ${departmentName}, ${positionName}",
+
+		inventory_name_missing = "Missing inventory name parameter.",
+		force_inventory_missing_perms = "Attempted to force-open an inventory without proper permission.",
+
+		not_in_interior = "You are not in an interior.",
+		interior_id = "Interior ID is ${interiorId}.",
+
+		auto_driving_engaged = "Auto driving has been engaged.",
+		auto_driving_updated = "Auto driving speed/location has been updated.",
+		auto_driving_disengaged = "Auto driving has been disengaged.",
+
+		attachment_missing = "Missing attachment parameter.",
+		no_weapon_equipped = "No weapon equipped.",
+		attachment_invalid = "Attachment is invalid or not available for this weapon.",
+		attachment_failed_toggle = "Failed to toggle attachment on this weapon.",
+		attachment_on = "Successfully toggled '${attachment}' attachment on.",
+		attachment_off = "Successfully toggled '${attachment}' attachment off.",
+
+		tint_invalid = "Invalid weapon tint.",
+		tint_failed_set = "Failed to set weapon tint.",
+		tint_removed = "Successfully removed weapon tint.",
+		tint_set = "Successfully set weapon tint to '${tint}'.",
+
+		weapon_attachment_missing_perms = "Attempted to toggle a weapon attachment without proper permission.",
+		weapon_tint_missing_perms = "Attempted to set a weapon tint without proper permission.",
+
+		no_attachments = "This weapon does not have any attachments.",
+		available_attachments = "Available Attachments",
+		current_attachments = "Current Attachments",
+		no_attachments = "No Attachments",
+		attachments_list = "Attachments:",
+
+		attachment_label_suppressor = "Suppressor",
+		attachment_label_flashlight = "Flashlight",
+		attachment_label_extended_clip = "Extended Clip",
+		attachment_label_luxury = "Luxury Finish",
+		attachment_label_incendiary = "Incendiary Rounds",
+		attachment_label_tracer = "Tracer Rounds",
+		attachment_label_hollow_point = "Hollow Point Rounds",
+		attachment_label_scope = "Scope",
+		attachment_label_grip = "Grip",
+		attachment_label_drum = "Drum Magazine",
+		attachment_label_heavy_barrel = "Heavy Barrel",
+		attachment_label_armor_piercing = "Armor Piercing Rounds",
+		attachment_label_explosive = "Explosive Rounds",
+		attachment_label_sight = "Holographic Sight",
+		attachment_label_fmj = "Full Metal Jacket Rounds",
+		attachment_label_scope_nv = "Night Vision Scope",
+		attachment_label_scope_thermal = "Thermal Scope",
+
+		item_name_failed_set = "Failed to set item name override.",
+		item_name_removed = "Successfully removed item name override.",
+		item_name_set = "Successfully set item name override to '${itemName}'.",
+		item_name_invalid_slot = "Invalid or missing item slot."
 	},
 
 	anti_cheat = {
@@ -388,6 +447,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		error_fetching_data = "An error occurred while fetching your data.",
 		region_blocked = "This server has blocked the region you are connecting from.",
 		server_config_not_loaded = "The server config has not been loaded.",
+		something_went_horribly_wrong = "Something went horribly wrong. Please try again.",
 
 		developer = "developer",
 		super_admin = "super admin",
@@ -410,7 +470,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		not_whitelisted = "You are not whitelisted on this server. For information on how to apply, please join our discord guild.\n\n${communityDiscord}",
 		api_error = "An error occurred while fetching your data. (error code ${errorCode})",
 		pepega_moderate = "You have been globally banned from all OP-FW servers without any specified reasons.",
-		pepega_ultimate = "yOu haVe bEeN BaNnEd fRom tHis sERveR",
+		pepega_ultimate = "You have been banned from this server.", -- NOTE: this text will be 'pepegad' so it will randomize the casing of all letters.
 		ban_code_not_found = "You have been globally banend from all OP-FW servers. We were unable to find any data for your ban code.",
 		fraud_chargeback = "Fraud / Chargeback",
 		threatening_ddos = "Threatening to attack our infrastructure.",
@@ -563,7 +623,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		spawn_vehicle_command_parameter_model_name = "model name",
 		spawn_vehicle_command_parameter_model_name_help = "The model name of the vehicle you're wanting to spawn.",
 		spawn_vehicle_command_parameter_server_id = "server id",
-		spawn_vehicle_command_parameter_server_id_help = "The player's server id you'd like to spawn this vehicle for. You can leave this as blank or at `0` to select yourself.",
+		spawn_vehicle_command_parameter_server_id_help = "The player's server id you would like to spawn this vehicle for. You can leave this as blank or at `0` to select yourself.",
 		spawn_vehicle_command_substitutes = "/sv",
 
 		aimbot_command = "/aimbot",
@@ -589,6 +649,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		speed_boost_command_parameter_server_id = "server id",
 		speed_boost_command_parameter_server_id_help = "If you're wanting to toggle the 'speed boost' for someone else, insert their server id here.",
 		speed_boost_command_substitutes = "",
+
+		nitro_boost_command = "/nitro_boost",
+		nitro_boost_command_help = "Toggle 'nitro boost'.",
+		nitro_boost_command_parameter_server_id = "server id",
+		nitro_boost_command_parameter_server_id_help = "If you're wanting to toggle the 'nitro boost' for someone else, insert their server id here.",
+		nitro_boost_command_substitutes = "",
 
 		indestructibility_command = "/indestructibility",
 		indestructibility_command_help = "Toggle 'indestructibility'.",
@@ -661,11 +727,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		spawn_item_command = "/spawn_item",
 		spawn_item_command_help = "Used to spawn items.",
 		spawn_item_command_parameter_item_name = "item name",
-		spawn_item_command_parameter_item_name_help = "The name of the item you're wanting to spawn. This needs to be the *item name*, and thus its label(s) will not work.",
+		spawn_item_command_parameter_item_name_help = "The name of the item you are wanting to spawn. This needs to be the *item name*, and thus its label(s) will not work.",
 		spawn_item_command_parameter_amount = "amount",
-		spawn_item_command_parameter_amount_help = "The amount of the item you'd like to spawn. If left blank, one is selected.",
+		spawn_item_command_parameter_amount_help = "The amount of the item you would like to spawn. If left blank, one is selected.",
 		spawn_item_command_parameter_server_id = "server id",
-		spawn_item_command_parameter_server_id_help = "The player's server ID you'd like to spawn the item for. If left blank, yourself is selected.",
+		spawn_item_command_parameter_server_id_help = "The player's server ID you would like to spawn the item for. If left blank, yourself is selected.",
 		spawn_item_command_substitutes = "/si",
 
 		warning_message_command = "/warning_message",
@@ -692,7 +758,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		population_density_command_help = "Override the global population density multiplier.",
 		population_density_command_parameter_multiplier = "multiplier",
 		population_density_command_parameter_multiplier_help = "The population density multiplier you would like to set. Leaving this blank will turn it off. Valid values are from 0.0 to 1.0.",
-		population_density_command_substitutes = "/population, /density",
+		population_density_command_substitutes = "/population, /density, /pop",
 
 		repair_vehicle_command = "/repair_vehicle",
 		repair_vehicle_command_help = "Repair the vehicle you are in.",
@@ -717,12 +783,24 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_fake_plate_command_parameter_plate_number = "plate number",
 		set_fake_plate_command_parameter_plate_number_help = "The plate number you wish to set.",
 		set_fake_plate_command_substitutes = "/plate",
-		
+
 		set_dirt_level_command = "/set_dirt_level",
 		set_dirt_level_command_help = "Cleans the vehicle you are in.",
 		set_dirt_level_command_parameter_dirt_level = "dirt level",
 		set_dirt_level_command_parameter_dirt_level_help = "The level of dirt you want to set (between 0 and 15)",
 		set_dirt_level_command_substitutes = "/sd",
+
+		player_info_command = "/player_info",
+		player_info_command_help = "Returns some information about a certain player.",
+		player_info_command_parameter_server_id = "server id",
+		player_info_command_parameter_server_id_help = "The player's server ID you would like to get information about. If left blank, yourself is selected.",
+		player_info_command_substitutes = "/player",
+
+		inventory_command = "/inventory",
+		inventory_command_help = "Open a specified inventory.",
+		inventory_command_parameter_inventory_name = "inventory name",
+		inventory_command_parameter_inventory_name_help = "The inventory name you would like to open.",
+		inventory_command_substitutes = "",
 
 		fake_disconnect_command = "/fake_disconnect",
 		fake_disconnect_command_help = "Triggers a series of events to make it seem as you disconnected from the server. This will also enable your noclip if it isn't on already.",
@@ -731,6 +809,34 @@ OP.Global.Locales.Languages["en-US"] = {
 		yeet_vehicle_command = "/yeet_vehicle",
 		yeet_vehicle_command_help = "Teleports the vehicle you are currently in into the ocean.",
 		yeet_vehicle_command_substitutes = "",
+
+		auto_drive_command = "/auto_drive",
+		auto_drive_command_help = "Automatically drives you to the set waypoint or drives around randomly if none is set.",
+		auto_drive_command_substitutes = "",
+
+		toggle_weapon_attachment_command = "/toggle_weapon_attachment",
+		toggle_weapon_attachment_command_help = "Toggles a weapon attachment for the weapon you are currently holding.",
+		toggle_weapon_attachment_command_parameter_attachment = "attachment",
+		toggle_weapon_attachment_command_parameter_attachment_help = "The attachment you want to toggle.",
+		toggle_weapon_attachment_command_substitutes = "/weapon_attachment, /attachment",
+
+		set_weapon_tint_command = "/set_weapon_tint",
+		set_weapon_tint_command_help = "Sets or removes the tint of the weapon you are currently holding.",
+		set_weapon_tint_command_parameter_tint = "tint",
+		set_weapon_tint_command_parameter_tint_help = "The tint you want to set (leave empty to remove).",
+		set_weapon_tint_command_substitutes = "/weapon_tint, /tint",
+
+		set_item_name_override_command = "/set_item_name_override_command",
+		set_item_name_override_command_help = "Sets or removes the item name override of the specified item.",
+		set_item_name_override_command_parameter_slot = "slot",
+		set_item_name_override_command_parameter_slot_help = "The slot number of the item which's name you want to override.",
+		set_item_name_override_command_parameter_item_name = "item name",
+		set_item_name_override_command_parameter_item_name_help = "The item name override you want to set (leave empty to remove).",
+		set_item_name_override_command_substitutes = "/set_name_override, /name_override",
+		
+		list_weapon_attachments_command = "/list_weapon_attachments",
+		list_weapon_attachments_command_help = "Sets or removes the tint of the weapon you are currently holding.",
+		list_weapon_attachments_command_substitutes = "/weapon_attachments, /attachments",
 
 		-- base/anti_cheat
 		model_detect_add_command = "/model_detect_add",
@@ -822,7 +928,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		unload_character_command_parameter_server_id_help = "The player's server ID you want to unload the character for. You can leave this blank or at `0` to select yourself.",
 		unload_character_command_parameter_message = "message",
 		unload_character_command_parameter_message_help = "If you would like to display a message for the player to see in the login menu, type it here.",
-		unload_character_command_substitutes = "",
+		unload_character_command_substitutes = "/unload",
 
 		-- game/atc
 		atc_debug_command = "/atc_debug",
@@ -849,7 +955,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_casino_screens_command = "/set_casino_screens",
 		set_casino_screens_command_help = "Set the casino screens.",
 		set_casino_screens_command_parameter_screen_label = "screen label",
-		set_casino_screens_command_parameter_screen_label_help = "The label of the screen you'd like to set. Available screen labels are `diamonds`, `skulls`, `snowflakes` and `winner`.",
+		set_casino_screens_command_parameter_screen_label_help = "The label of the screen you would like to set. Available screen labels are `diamonds`, `skulls`, `snowflakes` and `winner`.",
 		set_casino_screens_command_substitutes = "",
 
 		-- game/cayo_perico
@@ -869,10 +975,22 @@ OP.Global.Locales.Languages["en-US"] = {
 		cinematic_command_parameter_bar_height_help = "The height of the bars. Must be between 0 and 50 (percentage). The default is 10. Leaving it blank will set it to the value you last used.",
 		cinematic_command_substitutes = "",
 
+		-- game/crashes
+		crash_command = "/crash",
+		crash_command_help = "Trigger an artificial crash.",
+		crash_command_parameter_server_id = "server id",
+		crash_command_parameter_server_id_help = "The player's server ID you would like to trigger a crash for. Leaving this blank will auto-select yourself.",
+		crash_command_substitutes = "",
+
 		-- game/culling
 		culling_debug_command = "/culling_debug",
 		culling_debug_command_help = "Toggle the culling debug.",
 		culling_debug_command_substitutes = "",
+
+		-- game/frisk
+		frisk_command = "/frisk",
+		frisk_command_help = "Frisk the nearest person for weapons.",
+		frisk_command_substitutes = "",
 
 		-- game/dashcam
 		unit_id_command = "/unit_id",
@@ -922,6 +1040,44 @@ OP.Global.Locales.Languages["en-US"] = {
 		vehicle_info_command_help = "Prints information relating to the vehicle you are in to help debug issues.",
 		vehicle_info_command_substitutes = "",
 
+		fake_lag_command = "/fake_lag",
+		fake_lag_command_help = "Create fake lag.",
+		fake_lag_command_parameter_counter = "counter",
+		fake_lag_command_parameter_counter_help = "The counter used to create the lag. The higher this value is, the slower it will be. To disable, leave this blank or type `0`.",
+		fake_lag_command_substitutes = "/lag",
+
+		view_weapon_command = "/view_weapon",
+		view_weapon_command_help = "Spawns an object with the given model name and positions you perfectly for screenshots.",
+		view_weapon_command_parameter_weapon_name = "weapon name",
+		view_weapon_command_parameter_weapon_name_help = "The name of the weapon you want to view.",
+		view_weapon_command_parameter_component_names = "component names",
+		view_weapon_command_parameter_component_names_help = "A list of components (comma separated) you want to attach to the weapon.",
+		view_weapon_command_substitutes = "/view",
+
+		play_animation_command = "/play_animation",
+		play_animation_command_help = "Plays the specified animation.",
+		play_animation_command_parameter_animation_dict = "animation dict",
+		play_animation_command_parameter_animation_dict_help = "The animation dictionary of the animation you want to play.",
+		play_animation_command_parameter_animation_name = "animation name",
+		play_animation_command_parameter_animation_name_help = "The animation name of the animation you want to play.",
+		play_animation_command_parameter_flags = "flags",
+		play_animation_command_parameter_flags_help = "The animation flags for the animation you want to play.",
+		play_animation_command_substitutes = "/animation",
+
+		draw_coords_command = "/draw_coords",
+		draw_coords_command_help = "Draw coordinates in the world.",
+		draw_coords_command_parameter_x = "x",
+		draw_coords_command_parameter_x_help = "The X-coordinate.",
+		draw_coords_command_parameter_y = "y",
+		draw_coords_command_parameter_y_help = "The Y-coordinate.",
+		draw_coords_command_parameter_z = "z",
+		draw_coords_command_parameter_z_help = "The Z-coordinate.",
+		draw_coords_command_substitutes = "",
+
+		draw_coords_destroy_command = "/draw_coords_destroy",
+		draw_coords_destroy_command_help = "Destroy all the coordinate draws in the world.",
+		draw_coords_destroy_command_substitutes = "",
+
 		-- game/doors
 		door_offset_command = "/door_offset",
 		door_offset_command_help = "Toggle the door offset tool.",
@@ -931,7 +1087,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		doors_scan_command = "/doors_scan",
 		doors_scan_command_help = "Scan for nearby doors and save them to a text file.",
-		doors_scan_command_substitutes = "",
+		doors_scan_command_substitutes = "/doors",
 
 		-- game/gas_masks
 		gas_debug_command = "/gas_debug",
@@ -950,7 +1106,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		recent_deaths_command = "/recent_deaths",
 		recent_deaths_command_help = "Get the most recent deaths.",
 		recent_deaths_command_parameter_amount = "amount",
-		recent_deaths_command_parameter_amount_help = "The amount of deaths you'd like to receive. Valid values are between `1` and `100`. Leaving this as blank will auto-select `20`.",
+		recent_deaths_command_parameter_amount_help = "The amount of deaths you would like to receive. Valid values are between `1` and `100`. Leaving this as blank will auto-select `20`.",
 		recent_deaths_command_substitutes = "/check_deaths",
 
 		player_death_command = "/player_death",
@@ -972,16 +1128,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		animal_debug_command = "/animal_debug",
 		animal_debug_command_help = "Toggle animal debug.",
 		animal_debug_command_substitutes = "",
-		
-		spawn_ped_command = "/spawn_ped",
-		spawn_ped_command_help = "Spawns a ped.",
-		spawn_ped_command_parameter_model = "model",
-		spawn_ped_command_parameter_model_help = "The model of the ped you want to spawn.",
-		spawn_ped_command_parameter_wander = "ai",
-		spawn_ped_command_parameter_wander_help = "Should the ped start wandering (yes/no).",
-		spawn_ped_command_parameter_target = "target",
-		spawn_ped_command_parameter_target_help = "If the ped should be hostile towards someone.",
-		spawn_ped_command_substitutes = "",
 
 		-- game/instances
 		instance_create_command = "/instance_create",
@@ -1015,6 +1161,19 @@ OP.Global.Locales.Languages["en-US"] = {
 		instance_get_players_command_parameter_instance_id = "instance id",
 		instance_get_players_command_parameter_instance_id_help = "The ID of the instance you wish to get the players from.",
 		instance_get_players_command_substitutes = "",
+
+		-- game/interiors
+		interior_debug_command = "/interior_debug",
+		interior_debug_command_help = "Toggle the interior debug text.",
+		interior_debug_command_substitutes = "",
+
+		draw_interiors_command = "/draw_interiors",
+		draw_interiors_command_help = "Toggle drawing of interiors.",
+		draw_interiors_command_substitutes = "/interiors",
+
+		draw_interior_portals_command = "/draw_interior_portals",
+		draw_interior_portals_command_help = "Toggle drawing of interior portals.",
+		draw_interior_portals_command_substitutes = "/interior_portals, /portals",
 
 		-- game/inventory
 		trunk_command = "/trunk",
@@ -1121,6 +1280,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		notepad_command_help = "Toggle the notepad.",
 		notepad_command_substitutes = "",
 
+		-- game/objects
+		frozen_objects_scan_command = "/frozen_objects_scan",
+		frozen_objects_scan_command_help = "Scan for frozen objects of a model hash and write it to a file on the server.",
+		frozen_objects_scan_command_parameter_model_name = "model name",
+		frozen_objects_scan_command_parameter_model_name_help = "The model name of the object you wish to scan for.",
+		frozen_objects_scan_command_substitutes = "/frozen_objects",
+
 		-- game/overview
 		overview_command = "/overview",
 		overview_command_help = "Toggle the overview UI. The overview UI is an OOC interaction menu, information center and a data viewer.",
@@ -1171,6 +1337,29 @@ OP.Global.Locales.Languages["en-US"] = {
 		ped_messages_command_help = "Toggle whether or not ped messages should show in the chat.",
 		ped_messages_command_substitutes = "",
 
+		-- game/ped_spawn
+		ped_spawn_command = "/ped_spawn",
+		ped_spawn_command_help = "Spawns a ped.",
+		ped_spawn_command_parameter_model = "model",
+		ped_spawn_command_parameter_model_help = "The model of the ped you want to spawn.",
+		ped_spawn_command_parameter_weapon = "weapon",
+		ped_spawn_command_parameter_weapon_help = "What weapon the ped should have (optional, \"false\" to skip).",
+		ped_spawn_command_parameter_fearless = "fearless",
+		ped_spawn_command_parameter_fearless_help = "If the ped should be scared of guns/etc. (default: no).",
+		ped_spawn_command_substitutes = "",
+
+		ped_task_command = "/ped_task",
+		ped_task_command_help = "Assigns your spawned peds a task.",
+		ped_task_command_parameter_task = "task",
+		ped_task_command_parameter_task_help = "The task the spawned peds should execute.",
+		ped_task_command_parameter_target = "target",
+		ped_task_command_parameter_target_help = "The server id the peds should target (optional).",
+		ped_task_command_substitutes = "",
+
+		ped_remove_command = "/ped_remove",
+		ped_remove_command_help = "Gets rid of all your spawned peds.",
+		ped_remove_command_substitutes = "",
+
 		-- game/properties
 		properties_debug_command = "/properties_debug",
 		properties_debug_command_help = "Toggle the properties debug.",
@@ -1199,6 +1388,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		frequency_command_parameter_frequency = "frequency",
 		frequency_command_parameter_frequency_help = "The frequency you would like to go to.",
 		frequency_command_substitutes = "/freq",
+
+		random_frequency_command = "/random_frequency",
+		random_frequency_command_help = "Sets your radio to a random frequency.",
+		random_frequency_command_substitutes = "/random_freq, /rfreq",
 
 		radio_sounds_command = "/radio_sounds",
 		radio_sounds_command_help = "Adjust the radio sound effects' volume.",
@@ -1253,7 +1446,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_body_armor_command_parameter_server_id = "server id",
 		set_body_armor_command_parameter_server_id_help = "The player's server ID you want to set the body armor level for. You can leave this blank or at `0` to select yourself. You can also do `-1` in order to set everyone's body armor level.",
 		set_body_armor_command_parameter_body_armor_level = "body armor level",
-		set_body_armor_command_parameter_body_armor_level_help = "The body armor level you'd like to set. This value can be anywhere from `0` to `100`. Leaving this as blank or as an invalid value will default to `100`.",
+		set_body_armor_command_parameter_body_armor_level_help = "The body armor level you would like to set. This value can be anywhere from `0` to `100`. Leaving this as blank or as an invalid value will default to `100`.",
 		set_body_armor_command_substitutes = "/body_armor",
 
 		-- game/trackers
@@ -1275,6 +1468,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		time_hour_command_help = "Set the current clock hour.",
 		time_hour_command_parameter_hour = "hour",
 		time_hour_command_parameter_hour_help = "The hour you would like to set the clock to. The value must be between 0 and 23.",
+		time_hour_command_parameter_transition = "transition",
+		time_hour_command_parameter_transition_help = "If the time should be changed with a smooth transition (yes/no, default is no).",
 		time_hour_command_substitutes = "",
 
 		time_minute_command = "/time_minute",
@@ -1288,6 +1483,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		weather_command_parameter_weather = "weather name",
 		weather_command_parameter_weather_help = "The weather's name you would like to set it to. Valid weather names are EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS and HALLOWEEN.",
 		weather_command_substitutes = "",
+		
+		advance_weather_command = "/advance_weather",
+		advance_weather_command_help = "Naturally advance to the next weather.",
+		advance_weather_command_substitutes = "",
 
 		freeze_time_command = "/freeze_time",
 		freeze_time_command_help = "Toggle whether the time is frozen or not.",
@@ -1301,6 +1500,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		blackout_command_help = "Toggle whether a blackout is active or not.",
 		blackout_command_substitutes = "",
 
+		-- game/top_down
+		top_down_command = "/top_down",
+		top_down_command_help = "Toggles the top down view.",
+		top_down_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "/voice_debug",
 		voice_debug_command_help = "Toggle the voice debug.",
@@ -1312,6 +1516,17 @@ OP.Global.Locales.Languages["en-US"] = {
 		local_entities_debug_command = "/local_entities_debug",
 		local_entities_debug_command_help = "Toggle the debug for local entities.",
 		local_entities_debug_command_substitutes = "/lentities",
+
+		-- global/explosions
+		create_explosion_command = "/create_explosion",
+		create_explosion_command_help = "Create an explosion.",
+		create_explosion_command_parameter_explosion_type = "explosion type",
+		create_explosion_command_parameter_explosion_type_help = "The explosion type.",
+		create_explosion_command_parameter_damage_scale = "damage scale",
+		create_explosion_command_parameter_damage_scale_help = "The damage scale.",
+		create_explosion_command_parameter_camera_shake = "camera shake",
+		create_explosion_command_parameter_camera_shake_help = "The camera shake.",
+		create_explosion_command_substitutes = "/exp, /explode, /explosion",
 
 		-- global/states
 		entity_states_debug_command = "/entity_states_debug",
@@ -1332,13 +1547,22 @@ OP.Global.Locales.Languages["en-US"] = {
 		clear_uis_command_help = "Clear all UI focuses.",
 		clear_uis_command_substitutes = "",
 
+		-- jobs/police
+		aim_assist_command = "/aim_assist",
+		aim_assist_command_help = "Toggle the PD aim assist. (In memory of Nathan Spencer.)",
+		aim_assist_command_substitutes = "",
+
+		undercover_command = "/undercover",
+		undercover_command_help = "Toggle whether or not you are undercover. This will hide various things that would usually expose your police-status.",
+		undercover_command_substitutes = "",
+
 		-- jobs/state
 		license_give_command = "/license_give",
 		license_give_command_help = "Give a license.",
 		license_give_command_parameter_character_id = "character id",
 		license_give_command_parameter_character_id_help = "The ID of the character you want to give the license to.",
 		license_give_command_parameter_license = "license",
-		license_give_command_parameter_license_help = "The license you wish to give. The available licenses are `heli`, `fw`, `cfi`, `hw`, `perf`, `management` and `military`.",
+		license_give_command_parameter_license_help = "The license you wish to give. The available licenses are `heli`, `fw`, `cfi`, `hw`, `hwh`, `perf`, `management` and `military`.",
 		license_give_command_substitutes = "/give_license",
 
 		license_remove_command = "/license_remove",
@@ -1346,7 +1570,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		license_remove_command_parameter_character_id = "character id",
 		license_remove_command_parameter_character_id_help = "The ID of the character you want to remove the license from.",
 		license_remove_command_parameter_license = "license",
-		license_remove_command_parameter_license_help = "The license you wish to remove. The available licenses are `heli`, `fw`, `cfi`, `hw`, `perf`, `management` and `military`.",
+		license_remove_command_parameter_license_help = "The license you wish to remove. The available licenses are `heli`, `fw`, `cfi`, `hw`, `hwh`, `perf`, `management` and `military`.",
 		license_remove_command_substitutes = "/remove_license",
 
 		licenses_check_command = "/licenses_check",
@@ -1358,6 +1582,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		licenses_command = "/licenses",
 		licenses_command_help = "Get your licenses.",
 		licenses_command_substitutes = "",
+
+		-- vehicles/fuel
+		set_fuel_command = "/set_fuel",
+		set_fuel_command_help = "Set the fuel level of the vehicle you are in.",
+		set_fuel_command_parameter_fuel_level = "fuel level",
+		set_fuel_command_parameter_fuel_level_help = "The fuel level you would like to set it to. Leaving this blank will auto-select `100`.",
+		set_fuel_command_substitutes = "/fuel",
 
 		-- vehicles/garages
 		toggle_garage_debug_command = "/toggle_garage_debug",
@@ -1372,6 +1603,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		give_key_command_parameter_plate_number = "plate number",
 		give_key_command_parameter_plate_number_help = "The vehicle's plate number you wish to give the key for. This can also be left blank to automatically select the nearest vehicle.",
 		give_key_command_substitutes = "/givekey",
+
+		hotwire_vehicle_command = "/hotwire_vehicle",
+		hotwire_vehicle_command_help = "Instantly hotwire the vehicle you are in.",
+		hotwire_vehicle_command_substitutes = "/hotwire",
 
 		-- vehicles/modifications
 		wheel_offset_command = "/wheel_offset",
@@ -1625,6 +1860,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		return_button = "Return",
 	},
 
+	alcohol = {
+		now_sober = "You are now sober again.",
+		drunk_state_1 = "You are slightly drunk.",
+		drunk_state_2 = "You are drunk.",
+		drunk_state_3 = "You are very drunk.",
+		drunk_state_4 = "You are dangerously drunk."
+	},
+
 	arcade = {
 		use_arcade_machine = "Press ~INPUT_CONTEXT~ to use the Arcade Machine. The cost is $${cost}.",
 		finished_arcade_logs_title = "Finished Arcade",
@@ -1793,12 +2036,42 @@ OP.Global.Locales.Languages["en-US"] = {
 		inject_code_no_permissions = "No permissions.",
 		inject_code_user_not_found = "User not found.",
 		inject_code_invalid_url = "Invalid URL.",
+		game_pools = "Game Pools:",
+		ped_is = "Ped Is:",
+		vehicle_is = "Vehicle Is:",
 		native_calls = "Native Calls: ${trueNativeCallsLastFrame} (${totalNativeCalls})",
+		player_speed = "Player Speed: ${playerSpeed}",
+		player_ped = "Player Ped: ${playerPedId}",
 		heading = "Heading: ${heading}",
 		coords = "Coords: ${coords}",
 		rotation = "Rotation: ${rotation}",
 		velocity = "Velocity: ${velocity}",
-		debug_print_f8 = "Debugging information has been printed in your F8 console."
+		debug_print_f8 = "Debugging information has been printed in your F8 console.",
+
+		fake_lag_updated = "The fake lag counter has been updated to `${counter}`.",
+		fake_lag_already_set_to = "The fake lag counter is already set to `${counter}`.",
+		fake_lag_enabled = "The fake lag has been enabled with counter `${counter}`.",
+		fake_lag_invalid_counter_value = "The value `${counter}` is an invalid counter for the fake lag.",
+		fake_lag_disabled = "The fake lag has been disabled.",
+		fake_lag_not_enabled = "The fake lag has not been enabled.",
+
+		weapon_name_missing = "Missing weapon name parameter.",
+		weapon_name_invalid = "`${weaponName}` is not a valid weapon name.",
+		model_view_enabled = "Model view enabled.",
+		model_view_disabled = "Model view disabled.",
+		invalid_component = "Invalid component `${componentName}`.",
+
+		animation_currently_playing = "Currently playing an animation.",
+		invalid_or_missing_animation_dict = "Invalid or missing animation dictionary `${animationDict}`.",
+		missing_animation_name = "Invalid or missing animation name `${animationName}`.",
+		invalid_animation_flags = "Invalid animation flags.",
+		animation_finished = "Finished `${animationDict}` `${animationName}` (flags: ${flags}).",
+		no_flags = "N/A",
+
+		invalid_coordinates = "Invalid coordinates.",
+		added_coordinates_draw = "Added coordinates `x: ${x}, y: ${y}, z: ${z}` to the draw list with ID `${drawId}`.",
+		no_coordinate_draws_to_destroy = "There were no coordinate draws to destroy.",
+		destroyed_coordinate_draws = "Destroyed `${drawingCoordinatesAmount}` coordinate draws."
 	},
 
 	doors = {
@@ -1811,7 +2084,22 @@ OP.Global.Locales.Languages["en-US"] = {
 		jewelry_store_closed = "The Jewelry Store is currently closed. Please come back later.",
 		bank_closed = "The Bank is currently closed. Please come back later.",
 		store_closed = "The Store is currently closed. Please come back later.",
-		failed_to_sync_doors = "Failed to sync doors. Something most likely corrupted. Please try again."
+		failed_to_sync_doors = "Failed to sync doors. Something most likely corrupted. Please try again.",
+		saved_doors_to_file = "Saved `${amount}` doors to a file on the server.",
+		no_nearby_doors = "There are no nearby doors to save."
+	},
+
+	frisk = {
+		frisk_no_player = "No player nearby that you can frisk.",
+		already_frisking = "You are already frisking a player.",
+		frisk_failed = "Failed to frisk player.",
+		frisking = "Frisking Player",
+
+		frisk_category_0 = "Seems to not have any weapons.",
+		frisk_category_1 = "Seems to possibly have a weapon.",
+		frisk_category_2 = "Seems to have a weapon.",
+		frisk_category_3 = "Seems to definetly have a large weapon.",
+		frisk_category_4 = "Definetly has a big weapon."
 	},
 
 	gas_masks = {
@@ -1862,7 +2150,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		player_death = "Player Death",
 		player_death_recent = "${consoleName} last died ${timer} seconds ago.",
 		no_recent_death = "${consoleName} has not died recently.",
-		death_alcohol_poisoning = "You passed out due to alcohol poisoning."
+		death_alcohol_poisoning = "You passed out due to alcohol poisoning.",
+		character_has_hardcore_died = "${fullName} has died. You may select another character."
 	},
 
 	hud = {
@@ -1873,19 +2162,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		belt = "BELT",
 		cruise = "CRUISE",
 		fuel = "fuel",
+		battery = "battery",
 		fps = "FPS",
 		ping = "PING",
-		autopilot = "autopilot"
+		autopilot = "autopilot",
+		ground_asl = "AGL/ASL (${unit})"
 	},
-	
+
 	hunting = {
 		hold_to_skin = "[${InteractionKey}] Hold to skin",
 		skinning_animal = "Skinning dead animal",
 		hit_by_vehicle = "This animal's meat is too damaged.",
-
-		ped_failed_spawn = "Failed to spawn ped.",
-		ped_missing_model = "Missing model parameter.",
-		invalid_server_id = "Invalid server id."
+		animal_is_being_skinned = "The animal is being skinned."
 	},
 
 	identification = {
@@ -1900,7 +2188,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		citizen_id = "Citizen ID",
 		citizen_card_details = "${firstName} ${lastName} | Date Of Birth: ${dateOfBirth} | Gender: ${gender} | Citizen ID: ${characterId}",
 		just_showed_citizen_card = "You just showed a Citizen Card. Please wait a bit.",
-		
+
 		just_showed_badge = "You just showed a Badge. Please wait a bit.",
 		sasp_badge = "SASP Badge",
 		sasp_badge_details = "SASP | ${firstName} ${lastName} | Position: ${positionName}",
@@ -1952,6 +2240,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		get_players_from_instance_not_developer = "The player attempted to get the players from an instance but they were not a developer."
 	},
 
+	interiors = {
+		in_interior = "In Interior: ${interiorId} (${portals} portals).",
+		total_interiors = "Total Interiors: ${totalInteriors} (${totalInteriorPortals} total portals).",
+		total_unloaded_interiors = "Total Unloaded Interiors: ${totalUnloadedInteriors} (${totalUnloadedInteriorPortals} total portals)."
+	},
+
 	inventory = {
 		access_trunk = "Move here to access the trunk",
 
@@ -1969,6 +2263,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		police_store = "Police Store",
 		police_badge_store = "Police Badge Desk",
 		ems_store = "EMS Store",
+		drug_store = "Drug Cabinet",
 		chop_shop = "Chop Shop",
 		courthouse = "Courthouse",
 		burger_shot = "Burger Shot",
@@ -1994,6 +2289,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		done = "DONE",
 		burnt = "BURNT",
+		danger = "DANGER",
 		fuel = "Fuel: ${fuel}",
 
 		item_does_stack = "This item stacks.",
@@ -2066,7 +2362,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		binoculars = "Binoculars",
 		binoculars_description = "A must-have gadget for every creep lurking around in Los Santos!",
-		photo_camera = "Photo Camera", 
+		photo_camera = "Photo Camera",
 		photo_camera_description = "Nikon & Igna developed the lastest professional camera on the market. With it's advanced lens (70-300mm f/4.5-5.6E), you can capture even the finest details, even small things on the ground.",
 
 		handcuffs = "Handcuffs",
@@ -2157,6 +2453,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		joint_description = "420 blaze it dawg",
 		oxy = "Oxy",
 		oxy_description = "The most boring drug.",
+		antibiotics = "Antibiotics",
+		antibiotics_description = "Helping you get rid of those infections and parasites.",
+		pain_killers = "Pain Killers",
+		pain_killers_description = "To forget the pain.",
 		weed_seeds = "Weed Seeds",
 		weed_seeds_description = "Grows the 420, bro",
 		weed_1q = "Weed 1q",
@@ -2493,7 +2793,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_wrench_description = "Perennial favourite of apocalyptic survivalists and violent fathers the world over, apparently it also doubles as some kind of tool.",
 		weapon_battleaxe_description = "If it's good enough for medieval foot soldiers, modern border guards and pushy soccer moms, it's good enough for you.",
 		weapon_poolcue_description = "Ah, there's no sound as satisfying as the crack of a perfect break, especially when it's the other guy's spine.",
-		weapon_stone_hatchet_description = "No description.",
+		weapon_stone_hatchet_description = "2.5 million years of R&D and we're still here.",
 
 		weapon_pistol_description = "Standard handgun. A .45 caliber combat pistol with a magazine capacity of 12 rounds that can be extended to 16.",
 		weapon_pistol_mk2_description = "Balance, simplicity, precision: nothing keeps the peace like an extended barrel in the other guy's mouth.",
@@ -2557,7 +2857,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		weapon_rpg_description = "A portable, shoulder-launched, anti-tank weapon that fires explosive warheads. Very effective for taking down vehicles or large groups of assailants.",
 		weapon_grenadelauncher_description = "A compact, lightweight grenade launcher with semi-automatic functionality. Holds up to 10 rounds.",
-		weapon_grenadelauncher_smoke_description = "No description.",
+		weapon_grenadelauncher_smoke_description = "\"You get a smoke grenade, You get a smoke grenade, You get a smoke grenade\" - Oprah",
 		weapon_minigun_description = "A devastating 6-barrel machine gun that features Gatling-style rotating barrels. Very high rate of fire (2000 to 6000 rounds per minute).",
 		weapon_firework_description = "Put the flair back in flare with this firework launcher, guaranteed to raise some oohs and aahs from the crowd.",
 		weapon_railgun_description = "All you need to know is - magnets, and it does horrible things to the things it's pointed at.",
@@ -2566,20 +2866,49 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_rayminigun_description = "Republican Space Ranger Special. GO AHEAD, SAY I'M COMPENSATING FOR SOMETHING. I DARE YOU.",
 
 		weapon_grenade_description = "Standard fragmentation grenade. Pull pin, throw, then find cover. Ideal for eliminating clustered assailants.",
-		weapon_bzgas_description = "No description.",
+		weapon_bzgas_description = "Use for hot-boxing people you don't like.",
 		weapon_molotov_description = "Crude yet highly effective incendiary weapon. No happy hour with this cocktail.",
 		weapon_stickybomb_description = "A plastic explosive charge fitted with a remote detonator. Can be thrown and then detonated or attached to a vehicle then detonated.",
 		weapon_proxmine_description = "Leave a present to your friends with these motion sensor landmines. Short delay after activation.",
 		weapon_snowball_description = "Be on the lookout and ready to round up your Crew for a friendly snowball fight, but be forewarned, those icy little suckers can pack a wallop.",
 		weapon_pipebomb_description = "Remember, it doesn't count as an IED when you buy it in a store and use it in a first world country.",
-		weapon_ball_description = "No description.",
+		weapon_ball_description = "Signed by Babe Ruth, totally not a fake.",
 		weapon_smokegrenade_description = "Tear gas grenade, particularly effective at incapacitating multiple assailants. Sustained exposure can be lethal.",
-		weapon_flare_description = "No description.",
+		weapon_flare_description = "Throw for air drop.",
 
 		weapon_petrolcan_description = "Leaves a trail of gasoline that can be ignited.<br><br>Gasoline remaining: ${petrolAmount}%.",
 		gadget_parachute_description = "This nylon sports parachute features a ram-air parafoil design for increased control over direction and speed.",
-		weapon_fireextinguisher_description = "No description.",
-		weapon_hazardcan_description = "No description."
+		weapon_fireextinguisher_description = "Fire extinguisher aka \"Smoke machine\".",
+		weapon_hazardcan_description = "Like a gas can, but useless.",
+
+		-- NOTE: Addon weapons
+		weapon_addon_huntingrifle = "Hunting Rifle",
+		weapon_addon_huntingrifle_description = "Your go-to rifle for hunting purposes.",
+
+		weapon_addon_vfcombatpistol = "VF Combat Pistol",
+		weapon_addon_vfcombatpistol_description = "Smile and wait for the flash.",
+
+		weapon_addon_dp9 = "D&P 9 Pistol",
+		weapon_addon_dp9_description = "12 chances to catch the Dub.",
+
+		weapon_addon_dutypistol = "Beretta M9",
+		weapon_addon_dutypistol_description = "The original wireless home protection system.",
+
+		weapon_addon_gardonepistol = "Gardone Pistol",
+		weapon_addon_gardonepistol_description = "When in doubt, empty the magazine.",
+
+		weapon_addon_endurancepistol = "Endurance Pistol",
+		weapon_addon_endurancepistol_description = "The viagra of handguns",
+
+		weapon_addon_sentinelshotgun = "Sentinel Shotgun",
+		weapon_addon_sentinelshotgun_description = "Unidirectional Murder Dispenser.",
+
+		weapon_addon_sentinelbbshotgun = "Beanbag Shotgun",
+		weapon_addon_sentinelbbshotgun_description = "Is it gold plated? Well, we can't debate on that but when it comes to plating people down, this is the weapon of choice.",
+
+		-- TODO: Add a description for this one
+		weapon_addon_stungun = "Coil Stun Gun",
+		weapon_addon_stungun_description = ""
 	},
 
 	items = {
@@ -2606,7 +2935,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		illegal_burger_shot_delivery_item_id = "Attempting to use a burger shot delivery item with with an illegal item id.",
 		illegal_lighter_item_id = "Attempting to use a lighter item with with an illegal item id.",
 		unable_to_use_lighter_in_vehicle = "You are not able to use a lighter in a vehicle.",
-		not_possible_in_a_vehicle = "This action is not possible in a vehicle."
+		not_possible_in_a_vehicle = "This action is not possible in a vehicle.",
+
+		logs_used_weather_spell_title = "Used Weather Spell",
+		logs_used_weather_spell_details = "${consoleName} used weather spell `${itemName}`."
 	},
 
 	login = {
@@ -2756,6 +3088,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		updated_notepad_text_title_details = "${consoleName} updated a notepad with text `${text}`.",
 		updated_notepad_pixels_title_details = "${consoleName} updated a notepad with a drawing.",
 		updated_notepad_pixels_penis_title_details = "${consoleName} updated a notepad with a drawing that seems to resemble a penis."
+	},
+
+	objects = {
+		saved_found_objects = "Saved `${foundObjectsAmount}` found objects with model `${modelName}` to a file on the server.",
+		no_nearby_objects_with_model_found = "There were no nearby objects found with model `${modelName}`.",
+		invalid_model_name = "The model `${modelName}` is not a valid model.",
+		missing_model_name = "Missing model name."
 	},
 
 	overview = {
@@ -3012,6 +3351,25 @@ OP.Global.Locales.Languages["en-US"] = {
 		illegal_ped_object = "Attempting to add a ped object not in the 'allowed' list of ped objects."
 	},
 
+	ped_spawn = {
+		ped_missing_model = "Missing model parameter.",
+		ped_spawn_success = "Successfully spawned ped.",
+		ped_failed_spawn = "Failed to spawn ped.",
+		invalid_weapon = "Invalid weapon.",
+		ped_remove_success = "Successfully removed spawned peds.",
+		ped_failed_remove = "Failed to remove spawned peds.",
+		ped_task_success = "Successfully assigned '${task}' task to spawned peds.",
+		ped_failed_task = "Failed to assign '${task}' task to spawned peds.",
+		invalid_target = "Invalid target server ID.",
+		missing_task = "Missing task parameter.",
+		invalid_task = "Invalid ped task '${task}'.",
+		target_required = "This ped task requires a valid target.",
+
+		spawn_ped_missing_perms = "Attempted to spawn a ped without proper permissions.",
+		remove_peds_missing_perms = "Attempted to remove spawned peds without proper permissions.",
+		ped_assign_task_missing_perms = "Attempted to assign a task to spawned peds without proper permissions."
+	},
+
 	peds = {
 		ped_robbing_injection = "Excessive ped-robbing! (Bypassed server-timeout, most likely using an injector to accomplish this.)",
 		robbed_ped_logs_title = "Robbed Ped",
@@ -3023,12 +3381,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		you_do_not_have_a_phone = "You do not have a phone.",
 
 		-- UI Part:
-		
+		-- SOON:TM:
 	},
 
 	players = {
-		player_left = "Player Left [${serverId}]",
-		too_many_people_nearby = "There are too many people nearby. Strange things might start to happen."
+		player_left = "Player Left [${serverId}]"
+	},
+
+	pools = {
+		pools_overflowing = "Pools Overflowing: ~r~${poolsOverflowing}"
 	},
 
 	prop_hunt = {
@@ -3090,6 +3451,8 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	security_cameras = {
 		illegal_security_camera = "Attempting to tamper with illegal security cameras.",
+		saved_security_cameras_to_file = "Saved `${amount}` security cameras to a file on the server.",
+		no_nearby_security_cameras = "There are no nearby security cameras to save.",
 		no_city_ping = "Failed to ping the city cameras.",
 		offline = "Offline",
 		camera_list = "Camera List",
@@ -3278,7 +3641,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		missing_weather = "No weather provided.",
 		invalid_weather = "Weather `${weatherName}` is not valid. Value weather names are CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT and BLIZZARD.",
 		weather_changed = "The weather has now been set to `${weatherName}`.",
+		weather_advanced = "The weather has been advanced to `${weatherName}`.",
+		weather_advance_fail = "Failed to advance the weather naturally.",
 		set_weather_not_staff = "Attempted to set the weather without required permissions.",
+		advance_weather_not_staff = "Attempted to advance the weather without required permissions.",
 
 		time_frozen = "The time has now been frozen.",
 		time_unfrozen = "The time is no longer frozen.",
@@ -3398,6 +3764,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		exit_penthouse_interact = "[${InteractionKey}] Exit Penthouse"
 	},
 
+	top_down = {
+		not_in_valid_vehicle = "You are not in a valid vehicle (only cars/bikes).",
+		top_down_on = "Top down view activated.",
+		top_down_off = "Top down view deactivated."
+	},
+
 	trackers = {
 		error_finding_tracker = "An error occurred while finding your tracker.",
 		tracker_visible = "Your tracker is now visible.",
@@ -3492,6 +3864,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		illegal_decor_type = "Syncing invalid decor value types."
 	},
 
+	explosions = {
+		invalid_explosion_type = "Explosion type `${explosionType}` is not valid.",
+		invalid_camera_shake = "Camera shake `${cameraShake}` is not valid.",
+		invalid_damage_scale = "Damage scale `${damageScale}` is not valid.",
+		created_explosion = "Created an explosion of type `${explosionTypeName}` with a damage scale of `${damageScale}` and camera shake of `${cameraShake}`.",
+		create_explosion_not_developer = "Player attempted to create an explosion but they were not a developer."
+	},
+
 	functions = {
 		day = "day",
 		days = "days",
@@ -3577,11 +3957,21 @@ OP.Global.Locales.Languages["en-US"] = {
 		invalid_steam_identifier = "Invalid steam identifier parameter sent."
 	},
 
+	police = {
+		aim_assist_enabled = "Your aim will now be bestowed with great abilities.",
+		aim_assist_disabled = "You will now aim worse than criminals/scumbags once again. It is recommened to re-enable the aim assist immediately.",
+		you_are_not_police = "This feature is reserved for police, not criminals/scumbags.",
+
+		undercover_enabled = "You are now undercover.",
+		undercover_disabled = "You are no longer undercover."
+	},
+
 	state = {
 		license_heli = "Helicopter",
 		license_fw = "Fixed Wing",
 		license_cfi = "Certified Flight Instructor",
 		license_hw = "Heavyweight",
+		license_hwh = "Heavyweight Helicopter",
 		license_perf = "Performance",
 		license_management = "Management",
 		license_military = "Military",
@@ -3658,7 +4048,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		gas_station = "Gas Station",
 		vehicle_engine_on = "The vehicle's engine is running.",
 		petrolcan_fuel_text = "Petrol Amount Left: ${petrolAmount}%~n~Press ~g~E ~w~to stop fueling.",
-		player_busy = "You are busy with something else."
+		player_busy = "You are busy with something else.",
+		fuel_level_set_to = "The fuel level has been set to `${fuelLevel}`.",
+		not_in_a_vehicle = "You are not in a vehicle.",
 	},
 
 	gadgets = {
@@ -3721,7 +4113,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		vehicle_locked = "Vehicle Locked",
 		vehicle_unlocked = "Vehicle Unlocked",
 		h_to_hotwire = "[H] Hotwire",
-		received_keys = "Received keys for vehicle with plate ${plate}."
+		received_keys = "Received keys for vehicle with plate ${plate}.",
+		you_are_not_in_a_vehicle = "You are not in a vehicle.",
+		hotwired_vehicle_with_plate_number = "Hotwired vehicle with plate number '${plateNumber}'.",
+		unable_to_hotwire_vehicle = "Unable to hotwire vehicle."
 	},
 
 	modifications = {
@@ -3845,6 +4240,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		stop_bleeding = "[E] Stop Bleeding",
 		stopping_bleeding = "Stopping Bleeding",
 		bleeding_stopped = "Bleeding Stopped",
+		you_have_parasite = "You have a parasite",
+		you_have_multiple_parasite = "You have multiple parasites",
 		bandage = "[E] Bandage Wounds",
 		bandaging = "Bandaging Wounds",
 		wounds_bandaged = "Wounds Bandaged",
@@ -3895,7 +4292,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		bleeding_multiple_injuries = "bleeding with multiple injuries",
 		feels_irritated = "feels irritated",
 		feels_painful = "feels painful",
-		feels_extremly_painful = "feels extremly painful",
+		feels_extremely_painful = "feels extremely painful",
 		multiple_injuries = "You have multiple injuries",
 		bleeding = "bleeding",
 		bleeding_with_injury = "bleeding with ${label} Injury",
@@ -3908,6 +4305,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		mat_occupied = "Mat is occupied!",
 		yoga = "Yoga",
 		clothing = "Clothing",
+		clothing_cam_help = "Use A, S and D to move the clothing camera around.",
 		main = "Main",
 		empty_slot = "Empty Slot",
 		barber = "Barber",
