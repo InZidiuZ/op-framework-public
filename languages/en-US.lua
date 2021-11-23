@@ -380,9 +380,61 @@ OP.Global.Locales.Languages["en-US"] = {
 		attachment_off = "Successfully toggled '${attachment}' attachment off.",
 
 		tint_invalid = "Invalid weapon tint.",
+		tint_range_invalid = "Invalid weapon tint range (has to be between 0 and ${max}).",
 		tint_failed_set = "Failed to set weapon tint.",
 		tint_removed = "Successfully removed weapon tint.",
-		tint_set = "Successfully set weapon tint to '${tint}'.",
+		tint_set = "Successfully set weapon tint to `${tint}` (${tintIndex}).",
+		no_weapon_tint = "This weapon doesn not have tints.",
+
+		tint_normal_0 = "Black tint",
+		tint_normal_1 = "Green tint",
+		tint_normal_2 = "Gold tint",
+		tint_normal_3 = "Pink tint",
+		tint_normal_4 = "Army tint",
+		tint_normal_5 = "LSPD tint",
+		tint_normal_6 = "Orange tint",
+		tint_normal_7 = "Platinum tint",
+
+		tint_mk2_0 = "Classic Black",
+		tint_mk2_1 = "Classic Gray",
+		tint_mk2_2 = "Classic Two-Tone",
+		tint_mk2_3 = "Classic White",
+		tint_mk2_4 = "Classic Beige",
+		tint_mk2_5 = "Classic Green",
+		tint_mk2_6 = "Classic Blue",
+		tint_mk2_7 = "Classic Earth",
+		tint_mk2_8 = "Classic Brown & Black",
+		tint_mk2_9 = "Red Contrast",
+		tint_mk2_10 = "Blue Contrast",
+		tint_mk2_11 = "Yellow Contrast",
+		tint_mk2_12 = "Orange Contrast",
+		tint_mk2_13 = "Bold Pink",
+		tint_mk2_14 = "Bold Purple & Yellow",
+		tint_mk2_15 = "Bold Orange",
+		tint_mk2_16 = "Bold Green & Purple",
+		tint_mk2_17 = "Bold Red Features",
+		tint_mk2_18 = "Bold Green Features",
+		tint_mk2_19 = "Bold Cyan Features",
+		tint_mk2_20 = "Bold Yellow Features",
+		tint_mk2_21 = "Bold Red & White",
+		tint_mk2_22 = "Bold Blue & White",
+		tint_mk2_23 = "Metallic Gold",
+		tint_mk2_24 = "Metallic Platinum",
+		tint_mk2_25 = "Metallic Gray & Lilac",
+		tint_mk2_26 = "Metallic Purple & Lime",
+		tint_mk2_27 = "Metallic Red",
+		tint_mk2_28 = "Metallic Green",
+		tint_mk2_29 = "Metallic Blue",
+		tint_mk2_30 = "Metallic White & Aqua",
+		tint_mk2_31 = "Metallic Red & Yellow",
+
+		tint_ray_0 = "Space Ranger tint",
+		tint_ray_1 = "Purple tint",
+		tint_ray_2 = "Green tint",
+		tint_ray_3 = "Orange tint",
+		tint_ray_4 = "Pink tint",
+		tint_ray_5 = "Gold tint",
+		tint_ray_6 = "Platinum tint",
 
 		weapon_attachment_missing_perms = "Attempted to toggle a weapon attachment without proper permission.",
 		weapon_tint_missing_perms = "Attempted to set a weapon tint without proper permission.",
@@ -967,6 +1019,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		cayo_perico_command = "/cayo_perico",
 		cayo_perico_command_help = "Toggle the help to enter and exit the 'world' of Cayo Perico.",
 		cayo_perico_command_substitutes = "",
+
+		-- game/chat_emotes
+		chat_emotes_command = "/chat_emotes",
+		chat_emotes_command_help = "Lists all available emotes usable in the chat.",
+		chat_emotes_command_substitutes = "",
 
 		-- game/cinematic
 		cinematic_command = "/cinematic",
@@ -1960,6 +2017,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		exiting_cayo_perico_with_passengers_logs_details = "${consoleName} is exiting Cayo Perico with ${passengersAmount} passengers.",
 	},
 
+	chat_emotes = {
+		list_emotes = "Available Chat Emotes"
+	},
+
 	christmas = {
 		claimed_advent_calendar_hatch_title = "Claimed Advent Calendar Hatch",
 		claimed_money = "${consoleName} claimed $${amount}.",
@@ -2251,6 +2312,8 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		used = "Used",
 		added = "Added",
+
+		pounds = "lb",
 
 		store = "Store",
 		gas_station = "Gas Station",
@@ -2708,6 +2771,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_raypistol = "Up-n-Atomizer",
 		weapon_ceramicpistol = "Ceramic Pistol",
 		weapon_navyrevolver = "Navy Revolver",
+		weapon_gadgetpistol = "Perico Pistol",
 
 		weapon_microsmg = "Micro SMG",
 		weapon_smg = "SMG",
@@ -2727,6 +2791,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_heavyshotgun = "Heavy Shotgun",
 		weapon_dbshotgun = "Double Barrel Shotgun",
 		weapon_autoshotgun = "Sweeper Shotgun",
+		weapon_combatshotgun = "Combat Shotgun",
 
 		weapon_assaultrifle = "Assault Rifle",
 		weapon_assaultrifle_mk2 = "Assault Rifle Mk II",
@@ -2738,6 +2803,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_bullpuprifle = "Bullpup Rifle",
 		weapon_bullpuprifle_mk2 = "Bullpup Rifle Mk II",
 		weapon_compactrifle = "Compact Rifle",
+		weapon_militaryrifle = "Military Rifle",
 
 		weapon_mg = "MG",
 		weapon_combatmg = "Combat MG",
@@ -2813,6 +2879,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_raypistol_description = "Republican Space Ranger Special, fresh from the galactic war on socialism: no ammo, no mag, just one brutal energy pulse after another.",
 		weapon_ceramicpistol_description = "Not your grandma's ceramics. Although this pint-sized pistol is small enough to fit into her purse and won't set off a metal detector.",
 		weapon_navyrevolver_description = "A true museum piece. You want to know how the West was won - slow reload speeds and a whole heap of bloodshed.",
+		weapon_gadgetpistol_description = "A deadly shot. Don't be precious. You won't scuff the titanium nitride finish.",
 
 		weapon_microsmg_description = "Combines compact design with a high rate of fire at approximately 700-900 rounds per minute.",
 		weapon_smg_description = "This is known as a good all-around submachine gun. Lightweight with an accurate sight and 30-round magazine capacity.",
@@ -2832,6 +2899,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_heavyshotgun_description = "The weapon to reach for when you absolutely need to make a horrible mess of the room. Best used near easy-wipe surfaces only.",
 		weapon_dbshotgun_description = "Do one thing, do it well. Who needs a high fire rate when your first shot turns the other guy into a fine mist?",
 		weapon_autoshotgun_description = "How many effective tools for riot control can you tuck into your pants? OK, two. But this is the other one.",
+		weapon_combatshotgun_description = "There's only one semi-automatic shotgun with a fire rate that sets the LSFD alarm bells ringing, and you're looking at it.",
 
 		weapon_assaultrifle_description = "This standard assault rifle boasts a large capacity magazine and long distance accuracy.",
 		weapon_assaultrifle_mk2_description = "The definitive revision of an all-time classic: all it takes is a little work, and looks can kill after all.",
@@ -2843,6 +2911,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_bullpuprifle_description = "The latest Chinese import taking America by storm, this rifle is known for its balanced handling. Lightweight and very controllable in automatic fire.",
 		weapon_bullpuprifle_mk2_description = "So precise, so exquisite, it's not so much a hail of bullets as a symphony.",
 		weapon_compactrifle_description = "Half the size, all the power, double the recoil: there's no riskier way to say \"I'm compensating for something\".",
+		weapon_militaryrifle_description = "This immensely powerful assault rifle was designed for highly qualified, exceptionally skilled soldiers. Yes, you can buy it.",
 
 		weapon_mg_description = "General purpose machine gun that combines rugged design with dependable performance. Long range penetrative power. Very effective against large groups.",
 		weapon_combatmg_description = "Lightweight, compact machine gun that combines excellent maneuverability with a high rate of fire to devastating effect.",
@@ -3258,7 +3327,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		explosions_by_type_title = "Explosions by type",
 		players_causing_explosions_title = "Players causing explosions",
 		show_common_events_off = "Show common events: OFF",
-		show_common_events_on = "Show common events: ON"
+		show_common_events_on = "Show common events: ON",
+
+		illegal_weapons_title = "Spawned weapons",
+		illegal_weapons_about = "In here the last 500 occurences of spawned in weapons detected by the system are logged. When someone has a spawned in weapon, it doesn't necessarily mean they are modding, as modders can spawn weapons into other players hands and therefore other players would show up on here too.",
+		illegal_weapons_by_type = "Weapons by type",
+		players_with_spawned_weapons = "Players with spawned weapons"
 	},
 
 	pawn_shops = {
