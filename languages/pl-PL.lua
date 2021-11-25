@@ -380,13 +380,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		attachment_off = "Pomyślnie ściągnięto '${attachment}' .",
 
 		tint_invalid = "Nieprawidłowe wykończenie broni.",
-        tint_range_invalid = "Nieprawidłowe wykończenie broni (musi być pomiędzy 0 a ${max}).",
+		tint_range_invalid = "Nieprawidłowe wykończenie broni (musi być pomiędzy 0 a ${max}).",
 		tint_failed_set = "Nie udało się zmienić wykończenia broni.",
 		tint_removed = "Pomyślnie usunięto wykończenie broni.",
-        tint_set = "Pomyślnie zmieniono wykończenie broni na `${tint}` (${tintIndex}).",
-        no_weapon_tint = "W tej broni nie ma żadnego możliwego wykończenia.",
+		tint_set = "Pomyślnie zmieniono wykończenie broni na `${tint}` (${tintIndex}).",
+		no_weapon_tint = "W tej broni nie ma żadnego możliwego wykończenia.",
 
-        tint_normal_0 = "Czarne wykończenie",
+		tint_normal_0 = "Czarne wykończenie",
 		tint_normal_1 = "Zielone wykończenie",
 		tint_normal_2 = "Złote wykończenie",
 		tint_normal_3 = "Różowe wykończenie",
@@ -1020,7 +1020,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		cayo_perico_command_help = "Przełącz, aby wejść i wyjść ze 'świata' Cayo Perico",
 		cayo_perico_command_substitutes = "",
 
-        -- game/chat_emotes
+		-- game/chat_emotes
 		chat_emotes_command = "/emotki",
 		chat_emotes_command_help = "Wszystkie dostępne emotki.",
 		chat_emotes_command_substitutes = "",
@@ -2018,7 +2018,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		exiting_cayo_perico_with_passengers_logs_details = "${consoleName} opuszcza Cayo Perico z ${passengersAmount} pasażerami.",
 	},
 
-    chat_emotes = {
+	chat_emotes = {
 		list_emotes = "Dostępne emotki"
 	},
 
@@ -2314,7 +2314,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		used = "Użyte",
 		added = "Dodane",
 
-        pounds = "lb",
+		pounds = "lb",
 
 		store = "Sklep",
 		gas_station = "Stacja paliw",
@@ -2767,7 +2767,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		weapon_raypistol = "Up-n-Atomizer",
 		weapon_ceramicpistol = "Pistolet ceramiczny",
 		weapon_navyrevolver = "Rewolwer granatowy",
-        weapon_gadgetpistol = "Perico Pistol",
+		weapon_gadgetpistol = "Perico Pistol",
 
 		weapon_microsmg = "Micro SMG",
 		weapon_smg = "SMG",
@@ -2787,7 +2787,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		weapon_heavyshotgun = "Ciężka Strzelba",
 		weapon_dbshotgun = "Strzelba z Podwójną Lufą",
 		weapon_autoshotgun = "Strzelba Automatyczna",
-        weapon_combatshotgun = "Combat Shotgun",
+		weapon_combatshotgun = "Combat Shotgun",
 
 		weapon_assaultrifle = "Karabin",
 		weapon_assaultrifle_mk2 = "Karabin Mk II",
@@ -2799,7 +2799,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		weapon_bullpuprifle = "Karabin Bullpup",
 		weapon_bullpuprifle_mk2 = "Karabin Bullpup Mk II",
 		weapon_compactrifle = "Karabin Kompaktowy",
-        weapon_militaryrifle = "Military Rifle",
+		weapon_militaryrifle = "Military Rifle",
 
 		weapon_mg = "MG",
 		weapon_combatmg = "Bojowy MG",
@@ -2875,7 +2875,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		weapon_raypistol_description = "Republican Space Ranger Special, świeżo po galaktycznej wojnie z socjalizmem: bez amunicji, bez magazynka, tylko jeden brutalny puls energii po drugim.",
 		weapon_ceramicpistol_description = "Nie ceramika twojej babci. Chociaż ten pistolet wielkości kufla jest wystarczająco mały, aby zmieścił się w jej torebce i nie uruchomi wykrywacza metalu.",
 		weapon_navyrevolver_description = "Prawdziwy kawałek muzeum. Chcesz wiedzieć, jak wygrał Zachód - wolne prędkości przeładowywania i cała kupa rozlewu krwi.",
-        weapon_gadgetpistol_description = "Broń prawdziwego zabójcy.",
+		weapon_gadgetpistol_description = "Broń prawdziwego zabójcy.",
 
 		weapon_microsmg_description = "Łączy kompaktową konstrukcję z wysoką szybkostrzelnością przy około 700-900 pocisków na minutę.",
 		weapon_smg_description = "Jest to znane jako dobry pistolet maszynowy. Lekki z celownikiem i pojemnością magazynka na 30 naboi.",
@@ -2895,7 +2895,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		weapon_heavyshotgun_description = "Broń, do której możesz sięgnąć, gdy absolutnie musisz zrobić okropny bałagan w pokoju. Najlepiej stosować tylko w pobliżu łatwych do wycierania powierzchni.",
 		weapon_dbshotgun_description = "Zrób jedną rzecz, zrób to dobrze. Kto potrzebuje dużej szybkostrzelności, gdy pierwszy strzał zamienia drugiego faceta w drobną mgłę?",
 		weapon_autoshotgun_description = "Ile skutecznych narzędzi do kontrolowania zamieszek można wsunąć w spodnie? OK, dwa. Ale to jest drugi.",
-        weapon_combatshotgun_description = "Jest tylko jedna pół automatyczna strzelba i jest to właśnie ona.",
+		weapon_combatshotgun_description = "Jest tylko jedna pół automatyczna strzelba i jest to właśnie ona.",
 
 		weapon_assaultrifle_description = "Ten standardowy karabin szturmowy ma magazynek o dużej pojemności i dokładność na duże odległości.",
 		weapon_assaultrifle_mk2_description = "Ostateczna wersja wszechczasów: wszystko, czego potrzeba, to trochę pracy, a wygląd może zabić.",
@@ -2907,7 +2907,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		weapon_bullpuprifle_description = "Ten najnowszy chiński import, który szturmem podbił Amerykę, jest znany z wyważonego prowadzenia. Lekki i bardzo kontrolowany w automatycznym ostrzale.",
 		weapon_bullpuprifle_mk2_description = "Tak precyzyjne, tak wykwintne, że to nie tyle co grad kul, a symfonia.",
 		weapon_compactrifle_description = "Połowa wielkości, cała moc, podwójny odrzut: nie ma bardziej ryzykownego sposobu na powiedzenie: \"Coś kompensuję\".",
-        weapon_militaryrifle_description = "Bardzo potężna broń zaprojektowana dla służby wojskowej.",
+		weapon_militaryrifle_description = "Bardzo potężna broń zaprojektowana dla służby wojskowej.",
 
 		weapon_mg_description = "Karabin maszynowy ogólnego zastosowania, który łączy w sobie wytrzymałą konstrukcję z niezawodną wydajnością. Moc penetracyjna dalekiego zasięgu. Bardzo skuteczny przeciwko dużym grupom.",
 		weapon_combatmg_description = "Lekki, kompaktowy karabin maszynowy, który łączy doskonałą zwrotność z dużą szybkostrzelnością i niszczycielskim efektem.",
@@ -3325,7 +3325,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		show_common_events_off = "Pokaż częste eventy: Wyłaczone",
 		show_common_events_on = "Pokaż częste eventy: Włączone",
 
-        illegal_weapons_title = "Zrespiono broń",
+		illegal_weapons_title = "Zrespiono broń",
 		illegal_weapons_about = "Logi które będą się pokazywać w systemie aczkolwiek jak zobaczymy takową rzecz nie do końca musi być cheater z racji tego że oni mogą dawać broń ludzią do ręki.",
 		illegal_weapons_by_type = "Typy broni",
 		players_with_spawned_weapons = "Gracze którzy posiadają zrespioną broń"
