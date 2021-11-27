@@ -17,7 +17,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		missing_input = "Missing Input.",
 		player_not_found = "Non è stato trovato nessun giocatore con questo ID `${serverId}`.",
 		something_went_wrong = "Qualcosa è andato storto. Per favore prova di nuovo.",
-		yes = "Yes",
+		yes = "Si",
 		no = "No"
 	},
 
@@ -1793,7 +1793,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		took_too_long_to_connect = "Ci hai impiegato troppo a conneterti!",
 		queue_position_with_priority = "🐌 Sei ${queueEntryId}/${queueLength} nella coda con priorità ${priorityName}. 🕐${queueTime}",
 		queue_position_without_priority = "🐌 Sei ${queueEntryId}/${queueLength} in coda. 🕐${queueTime}\nStanco della coda? Sostienici per avere la priorità in coda!",
-		server_is_starting = "In attesa dell'avvio del server    ...",
+		server_is_starting = "In attesa dell'avvio del server...",
 		cancelled_before_server_start = "La connessione è stata interrotta prima dell'avvio del server.",
 		kicked_from_queue = "Sei stato espulso dalla coda per il motivo `${reason}`.",
 		kicked_from_queue_no_reason = "Sei stato espulso dalla coda per nessuna ragione apparente.",
