@@ -1957,7 +1957,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		luxury_autos = "Luxury Autos",
 		city_hall = "Urząd miasta",
 		rockford_records = "Rockford Records",
-		dispensary = "Szpital"
+		dispensary = "Sklep Konopny"
 	},
 
 	blockage = {
@@ -2515,7 +2515,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		joint = "Joint",
 		joint_description = "Mieszanka zioła z tytoniem.",
 		oxy = "Oxy",
-		oxy_description = "Innowacyjny narkotyk.",
+		oxy_description = "Lek na recepte.",
+		antibiotics = "Antybiotyk",	
+		antibiotics_description = "Działa przeciw infekcji.",	
+		pain_killers = "Pain Killers",	
+		pain_killers_description = "Boli mnie głowa i nie mogę spać.",
 		weed_seeds = "Weed Seeds",
 		weed_seeds_description = "Nasiona konopii",
 		weed_1q = "Weed 1q",
@@ -2951,29 +2955,29 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		weapon_addon_huntingrifle_description = "Podstawowe wyposażenie każdego myśliwego .",
 
 		weapon_addon_vfcombatpistol = "VF Combat Pistol",
-		weapon_addon_vfcombatpistol_description = "usmiechnij się i czekaj na zdjęcie.",
+		weapon_addon_vfcombatpistol_description = "Druga wersja popularnego wśród stróżów prawa Combat Pistol'a. Oprócz nowego wyglądu ma również większe zastosowanie na służbie",
 
 		weapon_addon_dp9 = "D&P 9 Pistol",
-		weapon_addon_dp9_description = "12 szans na wygraną.",
+		weapon_addon_dp9_description = "Podstawowa broń 9mm.",
 
 		weapon_addon_dutypistol = "Beretta M9",
-		weapon_addon_dutypistol_description = "Najlepsza bez przewodowa broń domowa.",
+		weapon_addon_dutypistol_description = "Jeden z najlepiej sprzedających się broni ręcznych na rynku.",
 
 		weapon_addon_gardonepistol = "Gardone Pistol",
-		weapon_addon_gardonepistol_description = "Jeśli wątpisz opróżnij magazynek.",
+		weapon_addon_gardonepistol_description = "Broń włosko-amerykańskiego pochodzenia o kalibrze 9mm. Weteran każdej wojny o zasoby naturalne gdzieś na bliskim wschodzie.",
 
 		weapon_addon_endurancepistol = "Endurance Pistol",
-		weapon_addon_endurancepistol_description = "Jedno z najelpszych pistoletów na rynku",
+		weapon_addon_endurancepistol_description = "Powstały w 1930r. pistolet który jest uważany za najlepsze co mogło powstać, służył w drugiej wojnie światowej jak i w wietnamie.",
 
 		weapon_addon_sentinelshotgun = "Sentinel Shotgun",
-		weapon_addon_sentinelshotgun_description = "Zabójstwa tą bronią to żadnen problem.",
+		weapon_addon_sentinelshotgun_description = "Shotgun który sprosta każdemu zadaniu, podstawowe wyposażenie każdego radiowozu zaraz obok Carbine Rifle AR-15.",
 
 		weapon_addon_sentinelbbshotgun = "Beanbag Shotgun",
-		weapon_addon_sentinelbbshotgun_description = "Czy jest one złote? Może nie ale napewno jest potężnie śmiertelne.",
+		weapon_addon_sentinelbbshotgun_description = "Ktoś nie słucha twoich poleceń? Pokaż mu co to znaczy dostać 12mm gumowym misiaczkiem.",
 
 		-- TODO: Add a description for this one
 		weapon_addon_stungun = "Coil Stun Gun",
-		weapon_addon_stungun_description = ""
+		weapon_addon_stungun_description = "240V czystej przyjemności dla odbiorcy na końcu obwodu."
 	},
 
 	items = {
@@ -4037,13 +4041,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	state = {
-		license_heli = "Helicopter",
-		license_fw = "Fixed Wing",
-		license_cfi = "Certified Flight Instructor",
-		license_hw = "Heavyweight",
-		license_perf = "Performance",
-		license_military = "Wojskowa",
-		license_management = "Management",
+		license_heli = "Licencja na Helikopter",
+		license_fw = "Licencja na Samolot",
+		license_cfi = "Licencja Instruktorska",
+		license_hw = "Licencja Heavy Weight",
+		license_perf = "Licencja Sportowa",
+		license_military = "Licencja Militarna",
+		license_management = "Licencja Zarządu",
 		gave_character_license = "Dodano ${characterName} licencje `${licenseLabel}`.",
 		character_already_has_license = "${characterName} posiada już licencje `${licenseLabel}`",
 		removed_character_license = "Usunięto licencje `${licenseLabel}` dla ${characterName}.",
@@ -4070,24 +4074,24 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		no_vehicle_to_park = "Nie ma pojazdu do zaparkowania.",
 		close_menu = "Zamknij Menu",
 		spawned_vehicle = "Wyjęto Pojazd.",
-		spawner_on_timeout = "wyciąganie pojazdu ma limit czasowy. Proszę spróbuj ponownie.",
-		spawn_area_not_clear = "Obszar wyciągania jest zajęty.",
-		return_button = "Powrót"
+		spawner_on_timeout = "Odczekaj chwile przed następną próbą wyciągnięcia pojazdu.",
+		spawn_area_not_clear = "Miejsce parkingowe jest zajęte!",
+		return_button = "Wróć"
 	},
 
 	weazel_news = {
-		press_to_access_spawner = "Press ~INPUT_CONTEXT~ to access the vehicle spawner.",
+		press_to_access_spawner = "Naciśnij ~INPUT_CONTEXT~ żeby wyciągnąć pojazd.",
 		weazel_news = "Weazel News",
-		vehicle_list = "Vehicle List",
-		close_menu = "Close Menu",
-		return_button = "Return",
-		park_vehicle = "Park Vehicle",
-		parked_vehicle = "Parked vehicle.",
-		no_vehicle_to_park = "There is no vehicle to park.",
-		something_went_wrong = "Something went wrong. Please try again.",
-		spawned_vehicle = "Spawned veicle.",
-		spawner_on_timeout = "The vehicle spawner is on a timeout. Please try again.",
-		spawn_area_not_clear = "The spawn area is not clear."
+		vehicle_list = "Lista Pojazdów",
+		close_menu = "Zamknij Menu",
+		return_button = "Wróć",
+		park_vehicle = "Zaparkuj Pojazd",
+		parked_vehicle = "Zaparkowano Pojazd",
+		no_vehicle_to_park = "Nie ma pojazdu do zaparkowania.",
+		something_went_wrong = "Coś poszło nie tak. Spróbuj jeszcze raz.",
+		spawned_vehicle = "Wyciągnięto pojazd.",
+		spawner_on_timeout = "Odczekaj chwile przed następną próbą wyciągnięcia pojazdu.",
+		spawn_area_not_clear = "Miejsce parkingowe jest zajęte!"
 	},
 
 	-- menus/*
@@ -4238,6 +4242,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		cruise_control_on_plane_imperial = "Tempomat ustawiony na ${speed} mp/h i ${altitude} ft.",
 		you_are_cuffed = "Jesteś zakuty.",
 		belt_is_on_and_vehicle_is_locked = "Twój pas jest zapięty, a pojazd zamknięty.",
+		belt_is_on = "Masz zapięte pasy!",
 		vehicle_is_locked = "Pojazd jest zamknięty.",
 
 		-- NOTE: `add_vehicle` command:
@@ -4335,27 +4340,27 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		unable_to_extra = "Nie można modyfikować 'dodatków' w tym pojeździe!",
 		warning = "Uwaga",
 		invalid_input = "Zły klawisz.",
-		unable_to_extra_on_vehicle = "Unable to modify 'extras' on this vehicle!",
+		unable_to_extra_on_vehicle = "Nie możesz modyfikować 'extras' w tym pojeźzie!",
 		heli_here_already = "Helikopter jest już na helipadzie",
 		ems_air_hq = "Baza Powietrzna EMS",
 		ems_garage = "Garaż EMS",
-		e_to_get_treated = "[E] Ulecz się - $2500",
-		get_treated = "Ulecz się - $2500",
+		e_to_get_treated = "[E] Zarejestruj się - $2500",
+		get_treated = "Zarejestruj się - $2500",
 		you_are_being_treated = "Jesteś w trakcie leczenia",
-		being_treated = "Leczysz się",
+		being_treated = "Trwa leczenie.",
 		minute = "Minuta",
 		minutes = "Minuty",
 		second = "Sekunda",
 		seconds = "Sekundy",
 		kurwa_and = "i",
-		wait_for_paramedic = "Poczekaj na przyjazd lokalnych medyków ${time}, by zostać przetransportowanym do szpitala",
-		hold_to_respawn = "Przytrzymaj ~b~ENTER ~w~by przenieść się na szpital bądź oczekuj na medyków",
-		hold_to_respawn_secondslol = "Przytrzymaj ~b~ENTER (${seconds}) ~w~by przenieść się na szpital bądź oczekuj na medyków",
+		wait_for_paramedic = "Poczekaj na przyjazd EMS ${time}, by zostać przetransportowanym do szpitala",
+		hold_to_respawn = "Przytrzymaj ~b~ENTER ~w~by przenieść się na szpital bądź oczekuj na EMS",
+		hold_to_respawn_secondslol = "Przytrzymaj ~b~ENTER (${seconds}) ~w~by przenieść się na szpital bądź oczekuj na EMS",
 		light = "Lekko",
 		moderate = "Umiarkowane",
 		heavy = "Ciężke",
 		severe = "Poważne",
-		arms_injured = "Ręce są kontuzjowane, nie możesz strzelać",
+		arms_injured = "Mam kontuzje, czy na pewno chcę to robić ?",
 		injuryb = "Kontuzja",
 		bleeding_multiple_injuries = "Krwawienie z wielu ran",
 		feels_irritated = "Czujesz się ziriytowany",
@@ -4442,14 +4447,14 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		evidence_type = "Rodzaj dowodu",
 		evidence_casings = "Łuski miały numer seryjny ${serialNumber} który należał do ${buyerName} (${buyerCid}) w momencie użycia.",
 		evidence_bullets = "Wydaje się, że uderzenia pocisków zostały spowodowane przez ${bulletLabel}.",
-		evidence_dna = "DNA zostało pobrane z pojazdu z płytką ${plateNumber} i nalezą do ${DNAOwnerName} (${DNAOwner}).",
+		evidence_dna = "DNA zostało pobrane z pojazdu o rejestracji ${plateNumber} i należy do ${DNAOwnerName} (${DNAOwner}).",
 		additional_information = "Informacje dodatkowe:",
 		picked_up_at_location = "Odebrane na miejscu:",
 		timestamp_of_pickup = "Czas wzięcia na miejscu.",
 		weapon_name = "Nazwa broni:",
 		casings_picked_up = "Ilość odebranych łusek:",
 		bullet_label = "Etykieta z kulą:",
-		impacts_found = "Ilość impaktów znalezionych na miejscu:",
+		impacts_found = "Ilość śladów po kulach znalezionych na miejscu:",
 		right_foot = "Prawa Stopa",
 		left_foot = "Lewa Stopa",
 		right_hand = "Prawa Ręka",
