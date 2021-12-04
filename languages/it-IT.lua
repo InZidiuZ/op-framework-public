@@ -2610,7 +2610,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		raspberry_description = "https://i.redd.it/jbcj0uqbihg41.jpg",
 
 		pigeon_milk = "Latte di piccione",
-		pigeon_milk_description = "\"Dovresti bere latte di piccione quella roba ti metterà KO\"\Latte estratto da Vedder con amore.",
+		pigeon_milk_description = "\"Dovresti bere latte di piccione quella roba ti metterà KO\"\nLatte estratto da Vedder con amore.",
 
 		boombox = "Stereo",
 		boombox_description = "Riproduci musica e sii odioso ovunque e in qualsiasi momento!",
