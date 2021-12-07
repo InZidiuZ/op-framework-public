@@ -233,7 +233,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		staff_feature_unavailable = "Questa feature non è disponibile quando non sei attivo come staff.",
 
 		protective_mode_not_staff = "Tentativo di attivare la modalità protetta dal server senza le autorizzazioni appropriate.",
-		protective_mode_toggled_on = "La modalità protezione del server è attivata. Il tempo di gioco richiesto per connettersi è settato su  `${playtime}`.",
+		protective_mode_toggled_on = "La modalità protezione del server è attivata. Il tempo di gioco richiesto per connettersi è settato su `${playtime}`.",
 		protective_mode_toggled_off = "La modalità protezione del server è disattivata.",
 		protective_mode_already_on = "Server protective mode has already been enabled with required playtime at `${playtime}`.",
 		protective_mode_already_off = "Server protective mode is already disabled.",
@@ -309,7 +309,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		population_density_set_to = "Il bypass del moltiplicatore di densità di popolazione è settato a ${multiplierLabel}%.",
 		population_density_set_off = "Il bypass del moltiplicatore di densità di popolazione è disattivato.",
 		population_density_is_not_on = "Il bypass del moltiplicatore di densità di popolazione è attivato..",
-		population_density_already_set_to = "Il bypass del moltiplicatore di densità di popolazione è  già settato a ${multiplierLabel}%.",
+		population_density_already_set_to = "Il bypass del moltiplicatore di densità di popolazione è già settato a ${multiplierLabel}%.",
 
 		population_density_not_super_admin = "Un giocatore ha provato a modificare la densità di popolazione senza i permessi da super amdin.",
 
@@ -1498,7 +1498,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		set_body_armor_command = "/set_body_armor",
 		set_body_armor_command_help = "Imposta il giubbotto ad un player.",
 		set_body_armor_command_parameter_server_id = "server id",
-		set_body_armor_command_parameter_server_id_help = "L'ID  del giocatore per cui vuoi impostare il livello di armatura. Puoi lasciare questo campo vuoto o su '0' per selezionarti. Puoi anche fare `-1` per impostare il livello di armatura di tutti.",
+		set_body_armor_command_parameter_server_id_help = "L'ID del giocatore per cui vuoi impostare il livello di armatura. Puoi lasciare questo campo vuoto o su '0' per selezionarti. Puoi anche fare `-1` per impostare il livello di armatura di tutti.",
 		set_body_armor_command_parameter_body_armor_level = "Livello del giubbotto",
 		set_body_armor_command_parameter_body_armor_level_help = "Il livello di armatura che desideri impostare. Questo valore può essere compreso tra '0' e '100'. Lasciandolo vuoto o come valore non valido, il valore predefinito sarà `100`.",
 		set_body_armor_command_substitutes = "/body_armor",
@@ -1885,11 +1885,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		unloaded_character_self_no_reason_logs_details = "${consoleName} ha scaricato il proprio personaggio (`${characterFullName}` - ${characterId}) senza alcun motivo specificato.",
 
 		unloaded_character_for_user = "Personaggio scaricato ${characterName} (${characterId}) per ${consoleName}.",
-		user_with_server_id_has_no_character_loaded = "L'utente con ID  `${serverId}` non ha un personaggio caricato.",
-		user_with_server_id_not_found = "Impossibile trovare l'utente con ID  `${serverId}` sul server.",
+		user_with_server_id_has_no_character_loaded = "L'utente con ID `${serverId}` non ha un personaggio caricato.",
+		user_with_server_id_not_found = "Impossibile trovare l'utente con ID `${serverId}` sul server.",
 
 		custom_plate = "Targa custom",
-		custom_character_id = " ID personaggio  custom",
+		custom_character_id = " ID personaggio custom",
 
 		no_player_packages = "Non hai alcun pacchetto giocatore.",
 		player_packages = "Pacchetti del player:\n${playerPackages}",
@@ -2068,7 +2068,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		set_unit_id_to = "Il tuo ID unità è stato ora impostato su ${unitId}.",
 		reset_unit_id = "Il tuo ID unità è stato ripristinato.",
 		failed_to_set_unit_id = "Errore a impostare il tuo ID unità.",
-		unit_id_already_set_to = "Il tuo ID unità è già impostato a  ${unitId}.",
+		unit_id_already_set_to = "Il tuo ID unità è già impostato a ${unitId}.",
 		unit_id_already_reset = "Il tuo ID unità è già stato ripristinato."
 	},
 
@@ -2369,7 +2369,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		logs_item_purchased_title = "Articolo(s) aquistato",
 		logs_item_purchased_no_tax_details = "${consoleName} ha comprato ${purchaseAmount}x `${itemLabel}` a $${purchaseCost}.",
-		logs_item_purchased_tax_details = "${consoleName} ha comprato ${purchaseAmount}x `${itemLabel}` a $${purchaseCost} pagando  $${taxCost} dovuto a ${salesTaxPercentage}% tasse di vendita.",
+		logs_item_purchased_tax_details = "${consoleName} ha comprato ${purchaseAmount}x `${itemLabel}` a $${purchaseCost} pagando $${taxCost} dovuto a ${salesTaxPercentage}% tasse di vendita.",
 
 		radius_invalid = "Un raggio di `${radius}` non è un valore valido.",
 		wiped_all_ground_inventories = "Wiped ${inventoriesWiped} ground inventories.",
@@ -3084,7 +3084,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		available_language_codes = "Lingue disponibili",
 		ping_pong = "Pong!",
 		ping_response = "${ping}ms (callback time: ${callbackTime}ms)",
-		ooc_first_time = "Non hai ancora usato /ooc! Prima di usarlo, vorremmo spiegarti una cosa. Il comando /ooc  e' da usare solo in situazioni immediate, e tutte le questioni non immediate dovrebbero essere inviate su discord ${communityDiscord}. E' tutto! Per iniziare ad usare /ooc, scrivi /ooc_on. Potrai disattivarlo scrivendo /ooc_off.",
+		ooc_first_time = "Non hai ancora usato /ooc! Prima di usarlo, vorremmo spiegarti una cosa. Il comando /ooc e' da usare solo in situazioni immediate, e tutte le questioni non immediate dovrebbero essere inviate su discord ${communityDiscord}. E' tutto! Per iniziare ad usare /ooc, scrivi /ooc_on. Potrai disattivarlo scrivendo /ooc_off.",
 		ooc_not_logged_in = "Non sei loggato.",
 		ooc_timed_out = "Sei stato sospeso dalla chat OOC. Attendi.",
 		ooc_muted_no_reason = "Sei stato mutato dalla chat OOC globale senza una motivazione.",
@@ -3349,7 +3349,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		attempt_succeeded = "ha tentato ${attemptMessage} con successo",
 		attempt_failed = "ha tentato ${attemptMessage} ma ha fallito",
 		dice_message = "ha lanciato un dado e ha ottenuto ${diceNumber}",
-		roll_message = "ha lanciato un dado custom impostato con  ${rolls}d${max} e ha ottenuto ${totalValue}",
+		roll_message = "ha lanciato un dado custom impostato con ${rolls}d${max} e ha ottenuto ${totalValue}",
 		card_message = "ha estratto una carta e ha trovato ${cardLabel}",
 		citizen_card_message = "ha mostrato un documento di cittadinanza (${characterId})",
 		badge_message = "ha mostrato un badge (${characterId})",
@@ -3485,7 +3485,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		model_parameter_invalid = "Il modello `${model}` non e' un modello valido.",
 		model_parameter_is_not_an_object = "Il modello `${model}` non e' un oggetto.",
 		spawned_prop_non_networked = "Spawnato un prop non connesso in rete con modello `${model}`.",
-		spawned_prop_networked = "Spawnato un prop connesso in rete con modello  `${model}`.",
+		spawned_prop_networked = "Spawnato un prop connesso in rete con modello `${model}`.",
 		failed_to_spawn_prop = "Impossibile spawnare il prop con modello`${model}`.",
 		not_able_to_spawn_in_vehicle = "Non puoi essere in un veicolo mentre spawni un prop.",
 		not_able_to_spawn_while_dead = "Non puoi essere morto mentre spawni un prop.",
@@ -3977,7 +3977,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		status_1b = "10-78, E' stato premuto un pulsante di emergenza per richiesta d'aiuto a ${streetName} vicino ${crossingRoad}.",
 		status_2a = "10-78, Un sistema di allarme ha rilevato che una barriera e' stata scassinata ed e' richiesto aiuto a ${streetName}.",
 		status_2b = "10-78, Un sistema di allarme ha rilevato che una barriera e' stata scassinata ed e' richiesto aiuto a ${streetName} vicino a ${crossingRoad}.",
-		status_3a = "10-78, Un sistema di allarme ha rilevato che una barriera ha le sue porte aperte in modo anomalo ed e' richiesto aiuto a  ${streetName}.",
+		status_3a = "10-78, Un sistema di allarme ha rilevato che una barriera ha le sue porte aperte in modo anomalo ed e' richiesto aiuto a ${streetName}.",
 		status_3b = "10-78, An alarm system has detected that a Stockade has had its doors improperly opened and is requesting backup at ${streetName} near ${crossingRoad}.",
 		grab_gold_bar = "[${InteractionKey}] Prendi lingotto d'oro (${barsRemaining} left)",
 		grabbing_gold_bar = "Prendendo lingotto d'oro",
@@ -4254,7 +4254,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		add_vehicle_no_permissions = "Non hai i permessi.",
 		add_vehicle_user_not_found = "User non trovato.",
 		add_vehicle_invalid_player = "Non ci sono giocatori con ID `${serverId}`.",
-		add_vehicle_invalid_model_name = "Il nome  `${modelName}` non e' un modello valido.",
+		add_vehicle_invalid_model_name = "Il nome `${modelName}` non e' un modello valido.",
 		add_vehicle_no_model_name = "Nessun nome modello aggiunto.",
 
 		added_vehicle_for_everyone_logs_title = "Aggiunto veicolo per tutti",
