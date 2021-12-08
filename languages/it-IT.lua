@@ -2180,7 +2180,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		dna_evidence_bag = "Campione di DNA",
 		evidence_failed = "Non sei riuscito a prendere il campione di DNA.",
 		evidence_text = ": Campione di DNA\nDNA prelevato da ${fullName} #${characterId}\n\nInformazioni aggiuntive:\n • E' stato raccolto alle: ${time}"
-	
 	},
 
 	doors = {
@@ -2206,7 +2205,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		fingerprint_evidence = "Impronta digitale",
 		evidence_failed = "Non sei riuscito a prendere l'impronta digitale del giocatore.",
 		evidence_text = "Tipo di prova: Fingerprint\nFingerprint di ${fullName} #${characterId}\n\nInformazioni aggiuntive:\n • E' stato raccolto alle: ${time}"
-
 	},
 
 	frisk = {
@@ -3690,7 +3688,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 	snow = {
 		hold_to_pick_up_snowballs = "Tieni premuto ~INPUT_CONTEXT~ per prendere una palla di neve."
-
 	},
 
 	sound_effects = {
