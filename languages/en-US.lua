@@ -1634,6 +1634,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		clear_uis_command_help = "Clear all UI focuses.",
 		clear_uis_command_substitutes = "",
 
+		--jobs/duty
+		toggle_duty_status_command = "/toggle_duty_status",
+		toggle_duty_status_command_help = "Toggles your on duty status.",
+		toggle_duty_status_command_substitutes = "/duty_status, /duty",
+
 		-- jobs/police
 		aim_assist_command = "/aim_assist",
 		aim_assist_command_help = "Toggle the PD aim assist. (In memory of Nathan Spencer.)",
@@ -4091,6 +4096,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		finished_delivery_title = "Finished Burger Shot Delivery",
 		finished_delivery_details = "${consoleName} finished a Burger Shot delivery and received $${deliveryPrice} and $${distanceBonus} in tip, totalling $${totalPrice}.",
 		delivery_blip = "Burger Shot Delivery"
+	},
+
+	duty = {
+		toggle_duty_status_no_permissions = "Player attempter to toggle on duty status via command without proper permissions.",
+
+		duty_status_on = "Successfully went on duty.",
+		duty_status_off = "Successfully went off duty.",
+		duty_status_failed = "Failed to toggle on duty status."
 	},
 
 	job_center = {
