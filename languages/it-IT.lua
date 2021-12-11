@@ -2462,7 +2462,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		citizen_card = "Documento Cittadino",
 		citizen_card_description = "Agisce come identificazione, patente di arma da fuoco e patente di guida",
 		phone = "Telefono",
-		phone_description = "Usalo per chiamare qualche tuo amico",
+		phone_description = "mai:tm:",
 		radio = "Radio",
 		radio_description = "Risorsa utile per tutti i figli di puttana metagamers là fuori!",
 
