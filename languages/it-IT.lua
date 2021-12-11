@@ -2462,7 +2462,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		citizen_card = "Documento Cittadino",
 		citizen_card_description = "Agisce come identificazione, patente di arma da fuoco e patente di guida",
 		phone = "Telefono",
-		phone_description = "never:tm:",
+		phone_description = "Usalo per chiamare qualche tuo amico",
 		radio = "Radio",
 		radio_description = "Risorsa utile per tutti i figli di puttana metagamers là fuori!",
 
@@ -2498,7 +2498,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		watch = "Orologio",
 		watch_description = "Non c'è tempo per la prudenza.",
 		compass = "Bussola",
-		compass_description = "Bella cazzata questa dio maiale!",
+		compass_description = "Bella cazzata!",
 
 		basic_repair_kit = "Kit di riparazione base",
 		basic_repair_kit_description = "Fa funzionare le cose, ma a malapena.",
