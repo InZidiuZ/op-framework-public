@@ -1134,6 +1134,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 		draw_coords_destroy_command_help = "Cancella tutte le coordinate disegnate nel mondo di gioco.",
 		draw_coords_destroy_command_substitutes = "",
 
+		debug_damage_command = "/debug_damage",
+		debug_damage_command_help = "Effettua il debug dei danni ricevuti ad ogni fotogramma nella tua console F8.",
+		debug_damage_command_substitutes = "",
+
+		-- game/dna_evidence
+		take_dna_sample_command = "/take_dna_sample",
+		take_dna_sample_command_help = "Prendi il dna di un giocatore nelle vicinanze.",
+		take_dna_sample_command_substitutes = "/dna_sample, /dna",
+			
 		-- game/doors
 		door_offset_command = "/door_offset",
 		door_offset_command_help = "Attiva lo strumento deviazione porte.",
@@ -1144,6 +1153,16 @@ OP.Global.Locales.Languages["it-IT"] = {
 		doors_scan_command = "/doors_scan",
 		doors_scan_command_help = "Cerca porte vicine e le salva su un file text.",
 		doors_scan_command_substitutes = "/doors",
+
+		-- game/evidence
+		fingerprint_command = "/fingerprint",
+		fingerprint_command_help = "Prendi l'impronta digitale della persona più vicinas.",
+		fingerprint_command_substitutes = "",
+
+		-- game/frisk
+		frisk_command = "/frisk",
+		frisk_command_help = "Perquisisci la persona più vicina e cerca solo le sue armi.",
+		frisk_command_substitutes = "",	
 
 		-- game/gas_masks
 		gas_debug_command = "/gas_debug",
@@ -1517,6 +1536,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		shield_command_help = "Abilita lo scudo balistico.",
 		shield_command_substitutes = "",
 
+		-- game/slow_motion
+		toggle_slow_motion_command = "/slow_motion",
+		toggle_slow_motion_command_help = "Toggles slow motion mode for every player.",
+		toggle_slow_motion_command_substitutes = "",
+
 		-- game/sync
 		time_hour_command = "/time_hour",
 		time_hour_command_help = "setta l'ora del giorno.",
@@ -1565,6 +1589,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 		voice_debug_command_parameter_server_id = "server id",
 		voice_debug_command_parameter_server_id_help = "Se sei in attese per il voice debug, puoi insere l'id del player qui.",
 		voice_debug_command_substitutes = "",
+
+		-- game/wizard
+		ragdoll_command = "/ragdoll",
+		ragdoll_command_help = "Makes a player ragdoll.",
+		ragdoll_command_parameter_server_id = "server id",
+		ragdoll_command_parameter_server_id_help = "Server ID of the player you want to ragdoll.",
+		ragdoll_command_parameter_force = "force",
+		ragdoll_command_parameter_force_help = "Apply a random force to the player after making them ragdoll.",
+		ragdoll_command_substitutes = "",
 
 		-- global/entities
 		local_entities_debug_command = "/local_entities_debug",
@@ -2025,7 +2058,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		claimed_money = "${consoleName} riscossi $${amount}.",
 		claimed_item = "${consoleName} riscossi`${itemLabel}`.",
 		claimed_vehicle = "${consoleName} ha riscosso un veicolo Natalizio.",
-		claimed_queue_priority = "${consoleName} ha riscosso una priorità di coda grazie all'evento Natalizio."
+		claimed_queue_priority = "${consoleName} ha riscosso una priorità di coda grazie all'evento Natalizio.",
+
+		claimed_advent_calendar_bonus_title = "Claimed Advent Calendar Bonus",
+		claimed_advent_calendar_bonus_details = "${consoleName} claimed the advent calendar bonus, that being a vehicle with model name `${modelName}`."
 	},
 
 	cinematic = {
@@ -2131,12 +2167,24 @@ OP.Global.Locales.Languages["it-IT"] = {
 		invalid_coordinates = "Coordinate non valide.",
 		added_coordinates_draw = "Aggiunte Coordinate `x: ${x}, y: ${y}, z: ${z}` to the draw list with ID `${drawId}`.",
 		no_coordinate_draws_to_destroy = "Non c'erano estrazioni di Coordinate da distruggere.",
-		destroyed_coordinate_draws = "Disrutto `${drawingCoordinatesAmount}` Coordinate."
+		destroyed_coordinate_draws = "Disrutto `${drawingCoordinatesAmount}` Coordinate.",
+		debug_damage_enabled = "Damage debugging enabled.",
+		debug_damage_disabled = "Damage debugging disabled."
+	},
+	
+	dna_evidence = {
+		taking_sample = "Prelevando campioni di DNA",
+		already_taking_sample = "Hai già preso un campione di DNA di questo giocatore.",
+		sample_no_player = "Non ci sono giocatori vicini per prendere campioni di DNA.",
+		sample_no_bags = "Non hai un sacchetto delle prove.",
+		dna_evidence_bag = "Campione di DNA",
+		evidence_failed = "Non sei riuscito a prendere il campione di DNA.",
+		evidence_text = ": Campione di DNA\nDNA prelevato da ${fullName} #${characterId}\n\nInformazioni aggiuntive:\n • E' stato raccolto alle: ${time}"
 	},
 
 	doors = {
-		locked = "Chiudendo",
-		unlocked = "Aprendo",
+		locked = "Chiusa",
+		unlocked = "Aperta",
 		locked_press_to_unlock = "[${InteractionKey}] Aperta",
 		unlocked_press_to_lock = "[${InteractionKey}] Chiusa",
 		locking = "Chiudendo",
@@ -2147,6 +2195,16 @@ OP.Global.Locales.Languages["it-IT"] = {
 		failed_to_sync_doors = "Impossibile sincronizzare le porte. Something most likely corrupted. Riprovate perfavore.",
 		saved_doors_to_file = "Salvato `${amount}` porte a un file sul server.",
 		no_nearby_doors = "Non ci sono porte vicine da salvare."
+	},
+
+	fingerprint = {
+		taking_fingerprint = "Prendendo impronta digitale",
+		already_fingerprinting = "Stai già prendendo l'impronta digitale di un giocatore.",
+		sample_no_player = "Non ci sono giocatori vicini a cui puoi prendere l'impronta digitale.",
+		sample_no_bags = "Non hai un sacchetto delle prove.",
+		fingerprint_evidence = "Impronta digitale",
+		evidence_failed = "Non sei riuscito a prendere l'impronta digitale del giocatore.",
+		evidence_text = "Tipo di prova: Fingerprint\nFingerprint di ${fullName} #${characterId}\n\nInformazioni aggiuntive:\n • E' stato raccolto alle: ${time}"
 	},
 
 	frisk = {
@@ -2221,11 +2279,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		m = "m",
 		belt = "CINTURA",
 		cruise = "CRUISE",
-		fuel = "carburante",
-		battery = "batteria",
+		fuel = "Benzina",
+		battery = "Batteria",
 		fps = "FPS",
 		ping = "PING",
-		autopilot = "autopilota",
+		autopilot = "Autopilota",
 		ground_asl = "AGL/ASL (${unit})"
 	},
 
@@ -2402,7 +2460,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		citizen_card = "Documento Cittadino",
 		citizen_card_description = "Agisce come identificazione, patente di arma da fuoco e patente di guida",
 		phone = "Telefono",
-		phone_description = "never:tm:",
+		phone_description = "Mai:tm:",
 		radio = "Radio",
 		radio_description = "Risorsa utile per tutti i figli di puttana metagamers là fuori!",
 
@@ -2438,7 +2496,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		watch = "Orologio",
 		watch_description = "Non c'è tempo per la prudenza.",
 		compass = "Bussola",
-		compass_description = "Bella cazzata questa dio maiale!",
+		compass_description = "Bella cazzata!",
 
 		basic_repair_kit = "Kit di riparazione base",
 		basic_repair_kit_description = "Fa funzionare le cose, ma a malapena.",
@@ -2528,7 +2586,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		ejector_seat = "Sedile espulsore",
 		ejector_seat_description = "Bannato (twice) idea del kebbabbaro.",
-		tuner_chip = "Chip di sintonizzazione",
+		tuner_chip = "Tuning Chip",
 		tuner_chip_description = "Io SONO la velocità.",
 
 		chip = "Chip",
@@ -2567,7 +2625,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		fake_plate_description = "Hehe Vaffanculo gli sbirri, non mi prenderanno.",
 		evidence_bag_empty = "Borsa delle prove vuota",
 		evidence_bag_empty_description = "Puoi migliorarlo?",
-		evidence_bag = "Busta delle prove",
+		evidence_bag = "Sacchetto delle prove",
 		evidence_bag_description = "Crimine sigillato in un sacchetto per un uso successivo.",
 
 		pistol_ammo = "Munizioni pistola",
@@ -2989,7 +3047,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		unable_to_repair = "Non puoi riparare il veicolo con giocatori all'interno.",
 		failed_lockpicking = "Scasso fallito",
 		lockpicking_succeeded = "Scasso riuscito.",
-		hotwiring_vehicle = "Forzando veicolo",
+		hotwiring_vehicle = "Scassinando veicolo",
 		lockpick_broke = "Grimaldello rotto",
 		failed_hotwire = "Scasso non riuscito",
 		rolling_joint = "Montando un joint",
@@ -3619,6 +3677,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 		skylift_attached_vehicle_logs_details = "${consoleName} veicolo attaccato alla piattaforma aerea."
 	},
 
+	slow_motion = {
+		slow_motion_enabled = "Abilitata con successo la modalità slow motion.",
+		slow_motion_disabled = "Disattivata con successo la modalità slow motion.",
+		slow_motion_failed = "Impossibile attivare la modalità slow motion.",
+		slow_motion_missing_perms = "Tentativo di attivare la modalità slow motion senza il permesso appropriato.",
+		slow_motion_enabled_help = "Slow motion mode has been enabled.",
+		slow_motion_disabled_help = "Slow motion mode has been disabled."
+	},
+
 	snow = {
 		hold_to_pick_up_snowballs = "Tieni premuto ~INPUT_CONTEXT~ per prendere una palla di neve."
 	},
@@ -4114,7 +4181,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		exit_to_fuel = "Esci dal veicolo per rifornire.",
 		press_to_fuel = "Premi ~g~${InteractionKey} ~w~per rifornire il veicolo.",
 		fuel_pump_text = "Costo benzina: $${fuelCost}~n~Premi ~g~E ~w~per smettere di rifornire.",
-		vehicle_text = "Livello di carburante: ${fuelLevel}%",
+		vehicle_text = "Livello di Benzina: ${fuelLevel}%",
 		tank_full = "La tanica e' piena.",
 		vehicle_busy = "Il veicolo vicino e' occupato.",
 		purchase_jerry_can = "Premi ~g~${InventoryKey} ~w~per comprare una tanica.",
