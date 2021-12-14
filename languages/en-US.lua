@@ -488,7 +488,32 @@ OP.Global.Locales.Languages["en-US"] = {
 		add_detection_area_not_staff = "Player attempted to add a detection area, but didn't have correct permissions to do so.",
 		remove_detection_area_not_staff = "Player attempted to remove a detection area, but didn't have correct permissions to do so.",
 		detection_area_close = "[${InteractionKey}] Remove Detection Area (${areaId})",
-		detection_area = "Detection Area (${areaId})"
+		detection_area = "Detection Area (${areaId})",
+
+		mp_f_freemode_01_label = "Freemode (female)",
+		mp_m_freemode_01_label = "Freemode (male)",
+		player_one_label = "Franklin",
+		player_two_label = "Trevor",
+		player_zero_label = "Michael",
+
+		ig_orleans_label = "Sasquatch",
+		u_m_m_jesus_01_label = "Jesus",
+		u_m_y_babyd_label = "Bodybuilder",
+		u_m_y_imporage_label = "Superhero",
+		a_m_m_bevhills_02_label = "White guy",
+		a_m_m_fatlatin_01_label = "Fat guy",
+		a_m_m_hasjew_01_label = "Jewish ped",
+		a_m_m_beach_01_label = "Topless ped (black, male)",
+		a_m_m_beach_02_label = "Topless ped (white, male)",
+		a_m_m_afriamer_01_label = "Fat black guy",
+		ig_jimmydisanto_label = "Jimmy",
+		ig_jimmydisanto2_label = "Jimmy 2",
+		a_m_y_musclbeac_01_label = "",
+		csb_ramp_marine_label = "Marine guy",
+		s_f_y_stripperlite_label = "Stripper ped",
+		mp_f_stripperlite_label = "Stripper ped 2",
+		mp_m_marston_01_label = "Missing arms and legs",
+		mp_m_niko_01_label = "Niko (GTA IV)"
 	},
 
 	authentication = {
@@ -886,7 +911,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_item_name_override_command_parameter_item_name = "item name",
 		set_item_name_override_command_parameter_item_name_help = "The item name override you want to set (leave empty to remove).",
 		set_item_name_override_command_substitutes = "/set_name_override, /name_override",
-		
+
 		list_weapon_attachments_command = "/list_weapon_attachments",
 		list_weapon_attachments_command_help = "Sets or removes the tint of the weapon you are currently holding.",
 		list_weapon_attachments_command_substitutes = "/weapon_attachments, /attachments",
@@ -1187,6 +1212,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		player_death_command_parameter_server_id_help = "The player's server ID. Leaving this as blank will auto-select your own ID.",
 		player_death_command_substitutes = "/check_death",
 
+		death_timer_command = "/death_timer",
+		death_timer_command_help = "Override the time for the death respawn timer.",
+		death_timer_command_parameter_time = "time",
+		death_timer_command_parameter_time_help = "The amount of time in seconds you want to set the timer to. To remove the override, leave this blank.",
+		death_timer_command_substitutes = "",
+
 		-- game/hud
 		watermark_command = "/watermark",
 		watermark_command_help = "Toggle the center-top watermark.",
@@ -1477,6 +1508,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		radio_volume_command_parameter_volume_help = "The volume level of the radio. The value must be between 0 and 1. The default is 0.5. Leaving this blank will return your current volume level.",
 		radio_volume_command_substitutes = "",
 
+		-- game/riot_mode
+		toggle_riot_mode_command = "/riot_mode",
+		toggle_riot_mode_command_help = "Toggles riot mode for all players.",
+		toggle_riot_mode_command_substitutes = "",
+
 		-- game/security_cameras
 		security_cameras_command = "/security_cameras",
 		security_cameras_command_help = "Toggle the security cameras.",
@@ -1521,24 +1557,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_body_armor_command_parameter_body_armor_level_help = "The body armor level you would like to set. This value can be anywhere from `0` to `100`. Leaving this as blank or as an invalid value will default to `100`.",
 		set_body_armor_command_substitutes = "/body_armor",
 
-		-- game/trackers
-		tracker_command = "/tracker",
-		tracker_command_help = "Toggle your tracker's visibility.",
-		tracker_command_substitutes = "",
-
-		trackers_split_command = "/trackers_split",
-		trackers_split_command_help = "Toggle between having trackers stored inside of a category on the map and having them split.",
-		trackers_split_command_substitutes = "",
-
 		-- game/shield
 		shield_command = "/shield",
 		shield_command_help = "Toggle the ballistic shield.",
 		shield_command_substitutes = "",
 
 		-- game/slow_motion
-
 		toggle_slow_motion_command = "/slow_motion",
-		toggle_slow_motion_command_help = "Toggles slow motion mode for every player.",
+		toggle_slow_motion_command_help = "Toggles slow motion mode for all players.",
 		toggle_slow_motion_command_substitutes = "",
 
 		-- game/sync
@@ -1561,7 +1587,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weather_command_parameter_weather = "weather name",
 		weather_command_parameter_weather_help = "The weather's name you would like to set it to. Valid weather names are EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS and HALLOWEEN.",
 		weather_command_substitutes = "",
-		
+
 		advance_weather_command = "/advance_weather",
 		advance_weather_command_help = "Naturally advance to the next weather.",
 		advance_weather_command_substitutes = "",
@@ -1582,6 +1608,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		top_down_command = "/top_down",
 		top_down_command_help = "Toggles the top down view.",
 		top_down_command_substitutes = "",
+
+		-- game/trackers
+		tracker_command = "/tracker",
+		tracker_command_help = "Toggle your tracker's visibility.",
+		tracker_command_substitutes = "",
+
+		trackers_split_command = "/trackers_split",
+		trackers_split_command_help = "Toggle between having trackers stored inside of a category on the map and having them split.",
+		trackers_split_command_substitutes = "",
 
 		-- game/voice
 		voice_debug_command = "/voice_debug",
@@ -2040,8 +2075,10 @@ OP.Global.Locales.Languages["en-US"] = {
 	cayo_perico_world = {
 		keep_flying_in_direction_se = "Keep flying south-east to come to Cayo Perico.\n(${distanceToTeleport}m left)",
 		keep_flying_in_direction_nw = "Keep flying north-west to come to Los Santos.\n(${distanceToTeleport}m left)",
+		keep_flying_in_direction_se_boat = "Keep driving south-east to come to Cayo Perico.\n(${distanceToTeleport}m left)",
+		keep_flying_in_direction_nw_boat = "Keep driving north-west to come to Los Santos.\n(${distanceToTeleport}m left)",
 		not_the_driver = "You have to be the driver of the vehicle to fly to Cayo Perico.",
-		not_an_air_vehicle = "You have to be in a plane or a helicopter to fly to Cayo Perico.",
+		not_a_cayo_vehicle = "You have to be in a boat, plane or a helicopter to get to Cayo Perico.",
 		entering_cayo_perico_logs_title = "Entering Cayo Perico",
 		entering_cayo_perico_logs_details = "${consoleName} is entering Cayo Perico.",
 		exiting_cayo_perico_logs_title = "Exiting Cayo Perico",
@@ -2278,7 +2315,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		player_death_recent = "${consoleName} last died ${timer} seconds ago.",
 		no_recent_death = "${consoleName} has not died recently.",
 		death_alcohol_poisoning = "You passed out due to alcohol poisoning.",
-		character_has_hardcore_died = "${fullName} has died. You may select another character."
+		character_has_hardcore_died = "${fullName} has died. You may select another character.",
+
+		death_timer_overrride_already_set_to = "The death timer override is already set to `${time}`.",
+		set_death_timer_overrride = "The death timer override has been set to `${time}`",
+		time_paramter_is_invalid = "The 'time' parameter is invalid.",
+		death_timer_override_removed = "The death timer override has been removed.",
+		no_death_timer_override_set = "There is no death timer override set.",
 	},
 
 	hud = {
@@ -2384,6 +2427,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		store = "Store",
 		gas_station = "Gas Station",
 		grocery_store = "Grocery Store",
+		island_store = "Island Store",
+		island_bar = "Island Bar",
+		burger_bar = "Burger Bar",
 		tool_store = "Tool Store",
 		gun_store = "Ammu-Nation",
 		gun_store_with_shooting_range = "Ammu-Nation with Range",
@@ -2410,6 +2456,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		store_help = "To purchase something, drag an item from the secondary inventory into your own.",
 		store_tax = "Store Tax",
 		store_tax_percentage = "${tax}%",
+
+		missing_job = "You don't have the required job to use this inventory.",
 
 		search = "Search",
 		amount = "Amount",
@@ -3411,7 +3459,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		illegal_weapons_title = "Spawned weapons",
 		illegal_weapons_about = "In here the last 500 occurrences of spawned in weapons detected by the system are logged. When someone has a spawned in weapon, it doesn't necessarily mean they are modding, as modders can spawn weapons into other players hands and therefore other players would show up on here too.",
 		illegal_weapons_by_type = "Weapons by type",
-		players_with_spawned_weapons = "Players with spawned weapons"
+		players_with_spawned_weapons = "Players with spawned weapons",
+
+		ped_models_title = "Player Ped models",
+		ped_models_about = "In here every player who is not using a freemode character model is listed. This should help in finding players who are here just to troll or potential modders.",
+		local_ped_models_title = "Local Ped models",
+		animal_ped_models_title = "Animal Ped models",
+
+		no_entries = "No entries"
 	},
 
 	pawn_shops = {
@@ -3591,6 +3646,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		radio_sound_effects_set = "The volume of the radio sound effects has now been set to `${radioSoundEffects}`.",
 		radio_sound_effects_current = "The volume of the radio sound effects is currently set to `${radioSoundEffects}`.",
 		radio_sound_effects_current_default = "The volume of the radio sound effects is currently default."
+	},
+
+	riot_mode = {
+		riot_mode_enabled = "Successfully enabled riot mode.",
+		riot_mode_disabled = "Successfully disabled riot mode. Already agressive peds will continue fighting until they are dead.",
+		riot_mode_failed = "Failed to toggle riot mode.",
+		riot_mode_missing_perms = "Attempted to toggle riot mode without proper permission.",
+
+		riot_mode_enabled_help = "Riot mode has been enabled.",
+		riot_mode_disabled_help = "Riot mode has been disabled."
 	},
 
 	screenshots = {
@@ -4272,7 +4337,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		you_must_retrieve_this_vehicle = "You will have to retrieve this vehicle in order to get access to it.",
 		garage = "Garage",
 		retrieved_vehicle_logs_title = "Retrieved Vehicle",
-		retrieved_vehicle_logs_details = "${consoleName} retrieved vehicle with plate `${plate}` for $250.",
+		retrieved_vehicle_logs_details = "${consoleName} retrieved vehicle with plate `${plate}` for ${price}.",
+
+		vehicle_weight = "Weight: ${weight}",
+		last_garage_letter = "Last - Garage ${letter}",
+		last_garage_impound = "Last - Impound Lot",
+		no_last_garage_letter = "No Last Garage",
 
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "Toggled the garage debug on.",
