@@ -487,7 +487,31 @@ OP.Global.Locales.Languages["it-IT"] = {
 		add_detection_area_not_staff = "Player attempted to add a detection area, but didn't have correct permissions to do so.",
 		remove_detection_area_not_staff = "Player attempted to remove a detection area, but didn't have correct permissions to do so.",
 		detection_area_close = "[${InteractionKey}] Remove Detection Area (${areaId})",
-		detection_area = "Detection Area (${areaId})"
+		detection_area = "Detection Area (${areaId})",
+	
+		mp_f_freemode_01_label = "Freemode (female)",
+		mp_m_freemode_01_label = "Freemode (male)",
+		player_one_label = "Franklin",
+		player_two_label = "Trevor",
+		player_zero_label = "Michael",
+		ig_orleans_label = "Sasquatch",
+		u_m_m_jesus_01_label = "Jesus",
+		u_m_y_babyd_label = "Bodybuilder",
+		u_m_y_imporage_label = "Superhero",
+		a_m_m_bevhills_02_label = "White guy",
+		a_m_m_fatlatin_01_label = "Fat guy",
+		a_m_m_hasjew_01_label = "Jewish ped",
+		a_m_m_beach_01_label = "Topless ped (black, male)",
+		a_m_m_beach_02_label = "Topless ped (white, male)",
+		a_m_m_afriamer_01_label = "Fat black guy",
+		ig_jimmydisanto_label = "Jimmy",
+		ig_jimmydisanto2_label = "Jimmy 2",
+		a_m_y_musclbeac_01_label = "",
+		csb_ramp_marine_label = "Marine guy",
+		s_f_y_stripperlite_label = "Stripper ped",
+		mp_f_stripperlite_label = "Stripper ped 2",
+		mp_m_marston_01_label = "Missing arms and legs",
+		mp_m_niko_01_label = "Niko (GTA IV)"
 	},
 
 	authentication = {
@@ -1478,6 +1502,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		radio_volume_command_parameter_volume_help = "Il volume della radio. I valori possono andare da 0 a 1. La default è 0.1..",
 		radio_volume_command_substitutes = "",
 
+		-- game/riot_mode
+		toggle_riot_mode_command = "/riot_mode",
+		toggle_riot_mode_command_help = "Attiva la riot mode per tutti i giocatori.",
+		toggle_riot_mode_command_substitutes = "",
+
 		-- game/security_cameras
 		security_cameras_command = "/security_cameras",
 		security_cameras_command_help = "Attiva le camere di sicurezza.",
@@ -1634,6 +1663,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		clear_uis_command_help = "Cancella tutti i focus dell'interfaccia utente.",
 		clear_uis_command_substitutes = "",
 
+		--jobs/duty
+		toggle_duty_status_command = "/toggle_duty_status",
+		toggle_duty_status_command_help = "Vai in servizio.",
+		toggle_duty_status_command_substitutes = "/duty_status, /duty",
+	
 		-- jobs/police
 		aim_assist_command = "/aim_assist",
 		aim_assist_command_help = "Attiva e disattiva le aim per i PD. (In memoria di Nathan Spencer.)",
@@ -2375,6 +2409,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 		store = "Negozio",
 		gas_station = "Stazione di benzina",
 		grocery_store = "Alimentari",
+		island_store = "Island Store",
+		island_bar = "Island Bar",
+		burger_bar = "Burger Bar",
 		tool_store = "Negozio di attrezzi",
 		gun_store = "Armeria",
 		gun_store_with_shooting_range = "Armeria con poligono",
@@ -2460,7 +2497,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		citizen_card = "Documento Cittadino",
 		citizen_card_description = "Agisce come identificazione, patente di arma da fuoco e patente di guida",
 		phone = "Telefono",
-		phone_description = "Mai:tm:",
+		phone_description = "Usalo per chiamare qualche tuo amico",
 		radio = "Radio",
 		radio_description = "Risorsa utile per tutti i figli di puttana metagamers là fuori!",
 
@@ -3517,7 +3554,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	players = {
-		player_left = "Player rimasti [${serverId}]"
+		player_left = "Player uscito [${serverId}]"
 	},
 
 	pools = {
