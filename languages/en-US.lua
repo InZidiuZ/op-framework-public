@@ -35,14 +35,19 @@ OP.Global.Locales.Languages["en-US"] = {
 		trunk_interaction_display = "[${VehicleEnterKey}] Climb Out [${InteractionKey}] Open/Close Trunk",
 		boombox_already_in_trunk = "There is already a boombox in the trunk.",
 		the_trunk_is_occupied = "The trunk is occupied.",
-		unable_to_toggle_carry = "Please wait a bit before toggling the carry."
+		unable_to_toggle_carry = "Please wait a bit before toggling the carry.",
+
+		you_are_not_being_carried = "You are currently not being carried.",
+		successfully_uncarried = "Force stopped carry successfully.",
+		failed_uncarried = "Failed to force stop carry.",
+		uncarry_missing_permissions = "Attempted to force stop carry without proper permission.",
+
+		uncarry_logs_title = "Force Uncarry",
+		uncarry_logs_details = "${consoleName} forced ${targetName} to stop carrying them."
 	},
 
 	-- base/*
 	admin = {
-		aimbot_activated = "Aimbot Activated",
-		wallhack_activated = "Wallhack Activated",
-
 		feature_toggle_not_admin = "Attempted to toggle their own or someone else's `${featureName}`, but didn't have proper permissions to do so.",
 		feature_toggle_activated_logs_title = "Remotely Toggled Feature",
 		feature_toggle_activated_logs_details = "${consoleName} toggled `${featureName}` for player ${targetConsoleName}.",
@@ -314,7 +319,17 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		population_density_not_super_admin = "Player attempted to set the population density but they were not a super admin.",
 
-		indestructibility_activated = "Indestructibility Activated",
+		enabled_features_list = "Enabled Features:",
+		aimbot_feature = "Aimbot",
+		disabled_collisions_feature = "Disabled Collisions",
+		disabled_recoil_feature = "Disabled Recoil",
+		indestructibility_feature = "Indestructibility",
+		invisibility_feature = "Invisibility",
+		nitro_boost_feature = "Nitro Boost",
+		no_nearby_vehicles_feature = "No Nearby Vehicles",
+		speed_boost_feature = "Speed Boost",
+		speed_up_progress_bar_feature = "Speed Up Progress Bar",
+		wallhack_feature = "Wallhack",
 
 		you_are_not_in_a_vehicle = "You are not in a vehicle.",
 		repaired_vehicle = "Repaired vehicle.",
@@ -356,6 +371,9 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		fake_disconnect_not_super_admin = "Player attempted to fake disconnect but they were not a super admin.",
 
+		disabled_idle_cam = "Disabled the idle cam.",
+		enabled_idle_cam = "Re-enabled the idle cam.",
+
 		created_vehicle_smoke_for_player_logs_title = "Created Vehicle Smoke",
 		created_vehicle_smoke_for_player_logs_details = "${consoleName} created vehicle smoke.",
 
@@ -373,6 +391,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		auto_driving_updated = "Auto driving speed/location has been updated.",
 		auto_driving_disengaged = "Auto driving has been disengaged.",
 
+		disable_collisions_on = "Your collisions are now disabled.",
+		disable_collisions_off = "Your collisions are now enabled.",
+
+		disabled_recoil_on = "Disabled recoil.",
+		disabled_recoil_off = "Enabled recoil.",
+
 		attachment_missing = "Missing attachment parameter.",
 		no_weapon_equipped = "No weapon equipped.",
 		attachment_invalid = "Attachment is invalid or not available for this weapon.",
@@ -387,14 +411,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		tint_set = "Successfully set weapon tint to `${tint}` (${tintIndex}).",
 		no_weapon_tint = "This weapon does not have tints.",
 
-		tint_normal_0 = "Black tint",
-		tint_normal_1 = "Green tint",
-		tint_normal_2 = "Gold tint",
-		tint_normal_3 = "Pink tint",
-		tint_normal_4 = "Army tint",
-		tint_normal_5 = "LSPD tint",
-		tint_normal_6 = "Orange tint",
-		tint_normal_7 = "Platinum tint",
+		tint_normal_0 = "Black",
+		tint_normal_1 = "Green",
+		tint_normal_2 = "Gold",
+		tint_normal_3 = "Pink",
+		tint_normal_4 = "Army",
+		tint_normal_5 = "LSPD",
+		tint_normal_6 = "Orange",
+		tint_normal_7 = "Platinum",
 
 		tint_mk2_0 = "Classic Black",
 		tint_mk2_1 = "Classic Gray",
@@ -429,13 +453,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		tint_mk2_30 = "Metallic White & Aqua",
 		tint_mk2_31 = "Metallic Red & Yellow",
 
-		tint_ray_0 = "Space Ranger tint",
-		tint_ray_1 = "Purple tint",
-		tint_ray_2 = "Green tint",
-		tint_ray_3 = "Orange tint",
-		tint_ray_4 = "Pink tint",
-		tint_ray_5 = "Gold tint",
-		tint_ray_6 = "Platinum tint",
+		tint_ray_0 = "Space Ranger",
+		tint_ray_1 = "Purple",
+		tint_ray_2 = "Green",
+		tint_ray_3 = "Orange",
+		tint_ray_4 = "Pink",
+		tint_ray_5 = "Gold",
+		tint_ray_6 = "Platinum",
 
 		weapon_attachment_missing_perms = "Attempted to toggle a weapon attachment without proper permission.",
 		weapon_tint_missing_perms = "Attempted to set a weapon tint without proper permission.",
@@ -445,6 +469,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		current_attachments = "Current Attachments",
 		no_attachments = "No Attachments",
 		attachments_list = "Attachments:",
+		tint_label = "Tint: \"${tintLabel}\" (${tintIndex})",
 
 		attachment_label_suppressor = "Suppressor",
 		attachment_label_flashlight = "Flashlight",
@@ -467,13 +492,21 @@ OP.Global.Locales.Languages["en-US"] = {
 		item_name_failed_set = "Failed to set item name override.",
 		item_name_removed = "Successfully removed item name override.",
 		item_name_set = "Successfully set item name override to '${itemName}'.",
-		item_name_invalid_slot = "Invalid or missing item slot."
+		item_name_invalid_slot = "Invalid or missing item slot.",
+
+		cleaned_ped = "Successfully cleaned the ped of ${consoleName}.",
+		cleaned_ped_self = "Successfully cleaned your ped.",
+		clean_ped_failed = "Failed to clean ped.",
+		cleaned_ped_for_all = "Successfully cleaned everyones peds.",
+		clean_ped_no_permission = "Attempted to clean a player's ped without required permissions."
 	},
 
 	anti_cheat = {
 		illegal_client_event = "Triggered an illegal client event with name '${eventName}'.",
 		illegal_server_event = "Triggered an illegal server event with name '${eventName}'.",
 		illegal_weapon = "Spawned an illegal weapon with the name '${weaponLabel}'.",
+		illegal_alpha = "Modified the player peds alpha value (${alphaValue}).",
+		semi_god_mode = "Detected semi god mode.",
 		bad_entity_spawn = "Spawned in an entity with model name `${modelName}`.",
 		bad_entity_title = "Bad Entity Spawned",
 		bad_entity_message = "${consoleName} spawned entity with model name `${modelName}`.",
@@ -599,6 +632,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		carry_command = "/carry",
 		carry_command_help = "Toggle carry.",
 		carry_command_substitutes = "",
+
+		uncarry_command = "/uncarry",
+		uncarry_command_help = "Force the player who is carrying you to stop carrying you.",
+		uncarry_command_substitutes = "",
 
 		-- animations/chairs
 		sit_command = "/sit",
@@ -746,6 +783,20 @@ OP.Global.Locales.Languages["en-US"] = {
 		no_nearby_vehicles_command_parameter_server_id_help = "If you're wanting to toggle the 'no nearby vehicles' for someone else, insert their server id here.",
 		no_nearby_vehicles_command_substitutes = "",
 
+		disable_collisions_command = "/disable_collisions",
+		disable_collisions_command_help = "Disable collisions with vehicles and peds in a 10 meter radius.",
+		disable_collisions_command_substitutes = "/collisions",
+
+		disable_recoil_command = "/disable_recoil",
+		disable_recoil_command_help = "Disables all weapon recoil.",
+		disable_recoil_command_substitutes = "",
+
+		clean_ped_command = "/clean_ped",
+		clean_ped_command_help = "Cleans a characters blood, bullet impacts, dirt, etc.",
+		clean_ped_command_parameter_server_id = "server id",
+		clean_ped_command_parameter_server_id_help = "The player's server ID you are wanting to clean the ped of. If left at blank, yourself will automatically be selected.",
+		clean_ped_command_substitutes = "",
+
 		vehicle_smoke_command = "/toggle_vehicle_smoke",
 		vehicle_smoke_command_help = "Toggle 'vehicle smoke'.",
 		vehicle_smoke_command_parameter_server_id = "server id",
@@ -883,6 +934,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		fake_disconnect_command = "/fake_disconnect",
 		fake_disconnect_command_help = "Triggers a series of events to make it seem as you disconnected from the server. This will also enable your noclip if it isn't on already.",
 		fake_disconnect_command_substitutes = "/fake_leave, /dc",
+
+		disable_idle_cam_command = "/disable_idle_cam",
+		disable_idle_cam_command_help = "Disables the idle camera from activating.",
+		disable_idle_cam_command_substitutes = "/disable_idle, /idle",
 
 		yeet_vehicle_command = "/yeet_vehicle",
 		yeet_vehicle_command_help = "Teleports the vehicle you are currently in into the ocean.",
@@ -1082,6 +1137,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		debug_command_help = "Toggle the entity-debugger. This will show some general information about nearby entities.",
 		debug_command_substitutes = "",
 
+		network_debug_command = "/network_debug",
+		network_debug_command_help = "Toggle the entity-network-debugger. This will show some network information about nearby entities.",
+		network_debug_command_substitutes = "/net_debug, /ndebug",
+
 		attach_command = "/attach",
 		attach_command_help = "Toggle the object-attacher tool. This will help you position an attached object on your ped.",
 		attach_command_parameter_model_name = "model name",
@@ -1117,6 +1176,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		vehicle_info_command = "/vehicle_info",
 		vehicle_info_command_help = "Prints information relating to the vehicle you are in to help debug issues.",
 		vehicle_info_command_substitutes = "",
+
+		delete_entity_command = "/delete_entity",
+		delete_entity_command_help = "Deletes an entity with a certain network id.",
+		delete_entity_command_parameter_network_id = "network id",
+		delete_entity_command_parameter_network_id_help = "The network id of the entity you want to delete.",
+		delete_entity_command_substitutes = "/de",
 
 		fake_lag_command = "/fake_lag",
 		fake_lag_command_help = "Create fake lag.",
@@ -1174,6 +1239,8 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		doors_scan_command = "/doors_scan",
 		doors_scan_command_help = "Scan for nearby doors and save them to a text file.",
+		doors_scan_command_parameter_clear_file = "clear file",
+		doors_scan_command_parameter_clear_file_help = "Do you wish to clear the file contents before writing to it?",
 		doors_scan_command_substitutes = "/doors",
 
 		-- game/evidence
@@ -1199,6 +1266,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		revive_command_parameter_remove_injuries = "remove injuries",
 		revive_command_parameter_remove_injuries_help = "Set this to any value except for `0` or `false` to remove all injuries as well.",
 		revive_command_substitutes = "",
+
+		range_revive_command = "/range_revive",
+		range_revive_command_help = "Revive all players in a certain range.",
+		range_revive_command_parameter_distance = "distance",
+		range_revive_command_parameter_distance_help = "Range you want to revive players in (between 1 and 50).",
+		range_revive_command_substitutes = "/revive_range",
 
 		recent_deaths_command = "/recent_deaths",
 		recent_deaths_command_help = "Get the most recent deaths.",
@@ -1231,6 +1304,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		animal_debug_command = "/animal_debug",
 		animal_debug_command_help = "Toggle animal debug.",
 		animal_debug_command_substitutes = "",
+
+		-- game/injuries
+		inspect_command = "/inspect",
+		inspect_command_help = "Inspects the closest player for injuries.",
+		inspect_command_substitutes = "",
 
 		-- game/instances
 		instance_create_command = "/instance_create",
@@ -1486,6 +1564,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		radio_command_help = "Toggle the radio UI.",
 		radio_command_substitutes = "",
 
+		radio_debug_command = "/radio_debug",
+		radio_debug_command_help = "Toggle the radio debug.",
+		radio_debug_command_substitutes = "",
+
 		frequency_command = "/frequency",
 		frequency_command_help = "Set what frequency your radio is on.",
 		frequency_command_parameter_frequency = "frequency",
@@ -1513,6 +1595,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		toggle_riot_mode_command_help = "Toggles riot mode for all players.",
 		toggle_riot_mode_command_substitutes = "",
 
+		add_riot_player_command = "/add_riot_player",
+		add_riot_player_command_help = "Add a player to the 'riot list' which will have ambient peds attack that players.",
+		add_riot_player_command_parameter_server_id = "server id",
+		add_riot_player_command_parameter_server_id_help = "The server ID of the player you would like to add. Leave this blank to auto-select yourself.",
+		add_riot_player_command_substitutes = "",
+
+		remove_riot_player_command = "/remove_riot_player",
+		remove_riot_player_command_help = "Remove a player from the 'riot list'.",
+		remove_riot_player_command_parameter_server_id = "server id",
+		remove_riot_player_command_parameter_server_id_help = "The server ID of the player you would like to remove. Leave this blank to auto-select yourself.",
+		remove_riot_player_command_substitutes = "",
+
 		-- game/security_cameras
 		security_cameras_command = "/security_cameras",
 		security_cameras_command_help = "Toggle the security cameras.",
@@ -1525,6 +1619,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		security_cameras_health_command = "/security_cameras_health",
 		security_cameras_health_command_help = "Toggle the security cameras health debug tool.",
 		security_cameras_health_command_substitutes = "/cam_health",
+
+		-- game/shield
+		shield_command = "/shield",
+		shield_command_help = "Toggle the ballistic shield.",
+		shield_command_substitutes = "",
 
 		-- game/sound_effects
 		play_sound_command = "/play_sound",
@@ -1557,10 +1656,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_body_armor_command_parameter_body_armor_level_help = "The body armor level you would like to set. This value can be anywhere from `0` to `100`. Leaving this as blank or as an invalid value will default to `100`.",
 		set_body_armor_command_substitutes = "/body_armor",
 
-		-- game/shield
-		shield_command = "/shield",
-		shield_command_help = "Toggle the ballistic shield.",
-		shield_command_substitutes = "",
+		-- game/streamer_mode
+		toggle_streamer_mode_command = "/toggle_streamer_mode",
+		toggle_streamer_mode_command_help = "Toggle the streamer mode. This will prevent players from doing the '18+' emotes when you're nearby and such.",
+		toggle_streamer_mode_command_substitutes = "/streamer_mode, /streamer",
 
 		-- game/slow_motion
 		toggle_slow_motion_command = "/slow_motion",
@@ -1833,7 +1932,12 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		aim_down_sight_command = "/aim_down_sight",
 		aim_down_sight_command_help = "Automatically aim down sight when right-clicking even if you're in third person.",
-		aim_down_sight_command_substitutes = "/ads"
+		aim_down_sight_command_substitutes = "/ads",
+
+		-- weapons/weapons
+		check_ammo_command = "/check_ammo",
+		check_ammo_command_help = "Checks how much ammo you have in total for the weapon you are currently holding.",
+		check_ammo_command_substitutes = "/ammo"
 	},
 
 	core = {
@@ -2026,7 +2130,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		luxury_autos = "Luxury Autos",
 		city_hall = "City Hall",
 		rockford_records = "Rockford Records",
-		dispensary = "Dispensary"
+		dispensary = "Dispensary",
+		vineyard = "Vineyard"
 	},
 
 	blockage = {
@@ -2109,6 +2214,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		black_bars_set_to = "The cinematic black bars has now been set to ${blackBarsHeight}%."
 	},
 
+	crashes = {
+		crash_failed = "Failed to trigger crash for ${consoleName}.",
+		crash_success = "Successfully triggered crash for ${consoleName}.",
+		server_id_invalid = "Invalid server id."
+	},
+
 	clip_saver = {
 		start_recording = "Start Recording",
 		clip_save = "Save Clip",
@@ -2155,6 +2266,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		network_id = "Network Id",
 		owned_by_us = "Owned By Us",
 		owned_by = "Owned By",
+		first_owned_by_us = "First Owned By Us",
+		first_owned_by = "First Owned By",
+		first_owned_unknown = "First Owner Unknown",
 		not_networked = "Not Networked",
 		model_hash = "Model Hash",
 		model_name = "Model Name",
@@ -2183,7 +2297,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		coords = "Coords: ${coords}",
 		rotation = "Rotation: ${rotation}",
 		velocity = "Velocity: ${velocity}",
+		g_force = "G-Force: ${force}",
 		debug_print_f8 = "Debugging information has been printed in your F8 console.",
+
+		invalid_network_id = "Invalid network ID.",
+		delete_entity_success = "Successfully deleted entity with network id ${networkId}.",
+		delete_entity_failed = "Failed to delete entity.",
+		delete_entity_no_permissions = "The player attempted to delete an entity without proper permission.",
 
 		fake_lag_updated = "The fake lag counter has been updated to `${counter}`.",
 		fake_lag_already_set_to = "The fake lag counter is already set to `${counter}`.",
@@ -2211,7 +2331,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		destroyed_coordinate_draws = "Destroyed `${drawingCoordinatesAmount}` coordinate draws.",
 
 		debug_damage_enabled = "Damage debugging enabled.",
-		debug_damage_disabled = "Damage debugging disabled."
+		debug_damage_disabled = "Damage debugging disabled.",
+
+		enabled_network_debug = "Entity network debugging enabled.",
+		disabled_network_debug = "Entity network debugging disabled.",
+		failed_network_debug = "Failed to enable entity network debugging.",
+
+		network_owner_subscription_no_permissions = "Attempted to subscribe to entity network owners without proper permission."
 	},
 
 	dna_evidence = {
@@ -2322,6 +2448,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		time_paramter_is_invalid = "The 'time' parameter is invalid.",
 		death_timer_override_removed = "The death timer override has been removed.",
 		no_death_timer_override_set = "There is no death timer override set.",
+
+		invalid_distance = "Invalid revive range (Has to be between 1 and 50).",
+		no_players_in_range = "There are no players within a ${distance}m radius.",
+		successfully_revived_range = "Successfully revived ${amount} player(s) in a ${distance}m radius.",
+		failed_revive_range = "Failed to revive players.",
+		range_revive_not_staff = "Player attempted to revive players in a certain range, but didn't have correct permissions to do so."
 	},
 
 	hud = {
@@ -2388,6 +2520,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		badge_type_short_management = "Management"
 	},
 
+	injuries = {
+		inspect_no_player = "No player nearby that you can inspect.",
+		already_inspecting = "You are already inspecting a player.",
+		inspect_failed = "Failed to inspect player.",
+		inspecting = "Inspecting Player",
+		no_injuries = "No injuries or bleeding"
+	},
+
 	instances = {
 		instance_created = "Create an instance with ID `${instanceId}`.",
 		instance_creation_failed = "Failed to create an instance.",
@@ -2427,6 +2567,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		store = "Store",
 		gas_station = "Gas Station",
 		grocery_store = "Grocery Store",
+		prison_store = "Prison Store",
+		fruit_vendor = "Fruit Vendor",
 		island_store = "Island Store",
 		island_bar = "Island Bar",
 		burger_bar = "Burger Bar",
@@ -2587,7 +2729,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		coke = "Coke",
 		coke_description = "Pablo?",
 		wonder_waffle = "Wonder Waffle",
-		wonder_waffle_description = "The Red Mafia, notoriously known for chain-robbing banks, are said to have had a diet strictly consisting of this very wonder. This was allegedly required by their leader, a Legion-Square-police-murdering psychopath.",
+		wonder_waffle_description = "Vegan, lactose free, dairy free, egg free, gluten free, organic, antibiotic free, soy free, no fructose, nut free, non GMA, sugar free, fat free and low carb",
 		cheeseburger = "Cheeseburger",
 		cheeseburger_description = "fatty damn, greasy, rubbery, double deluxe, soggy double, greasy double, damn decent, big, greasy, cold and greasy, usual double, big fat, juiciest, king-sized, deluxe, damn fine, double, greasy, plain old, triple, rubbery, juicy, sinful, mediocre, soggy, fat, great big, free",
 		donut = "Donut",
@@ -2597,11 +2739,36 @@ OP.Global.Locales.Languages["en-US"] = {
 		sandwich = "Sandwich",
 		sandwich_description = "It's vegan.",
 		taco = "Taco",
-		taco_description = "El Brayan's specialty.",
+		taco_description = "El Brayan's speciality.",
 		banana = "Banana",
 		banana_description = "sus",
 		smores = "Smores",
 		smores_description = "yes",
+		tic_tac = "Tic Tac",
+		tic_tac_description = "Oxy? No officer, I'm just eating tic tacs!",
+
+		apple = "Apple",
+		apple_description = "Keep The Evil Doctors At Bay!",
+		banana = "Banana",
+		banana_description = "sus",
+		cherry = "Cherry",
+		cherry_description = "On Top (If that's your preference).",
+		kiwi = "Kiwi",
+		kiwi_description = "The fruit not the animal. (Not to be confused with A-32)",
+		mango = "Mango",
+		mango_description = "Please don't shoot! Just let the mango...",
+		orange = "Orange",
+		orange_description = "You're glad I didn't say banana.",
+		peach = "Peach",
+		peach_description = "Not a butt.",
+		pineapple = "Pineapple",
+		pineapple_description = "Pen pineapple apple pen.",
+		pomegranate = "Pomegranate",
+		pomegranate_description = "Just be glad we spelled it right.",
+		strawberry = "Strawberry",
+		strawberry_description = "Usually found in fields... forever.",
+		watermelon = "Watermelon",
+		watermelon_description = "Is it water or is it a melon? We may never know.",
 
 		beer = "Beer",
 		beer_description = "Angry water.",
@@ -3076,7 +3243,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_addon_dp9 = "D&P 9 Pistol",
 		weapon_addon_dp9_description = "12 chances to catch the Dub.",
 
-		weapon_addon_dutypistol = "Beretta M9",
+		weapon_addon_dutypistol = "SIG Sauer P226",
 		weapon_addon_dutypistol_description = "The original wireless home protection system.",
 
 		weapon_addon_gardonepistol = "Gardone Pistol",
@@ -3093,7 +3260,31 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		-- TODO: Add a description for this one
 		weapon_addon_stungun = "Coil Stun Gun",
-		weapon_addon_stungun_description = ""
+		weapon_addon_stungun_description = "",
+
+		weapon_addon_m4 = "M4 Carbine",
+		weapon_addon_m4_description = "\"Military Grade\" Exactly why it was given to the Police Department.",
+
+		weapon_addon_mp9 = "B&T MP9",
+		weapon_addon_mp9_description = "Small and Quick, kinda like the person holding this...",
+
+		weapon_addon_rc4 = "Remington R4-C",
+		weapon_addon_rc4_description = "Feisty and quick, the perfect partner to have in your squad. As long as the red head isn't holding it.",
+
+		weapon_addon_pp19 = "PP-19 Vityaz",
+		weapon_addon_pp19_description = "The pinnacle of Russian excellence, perfect for any kind of \"Raid\".",
+
+		weapon_addon_m9a3 = "Beretta M9A3",
+		weapon_addon_m9a3_description = "Everything you need to get your dirty deeds done dirt cheap.",
+
+		weapon_addon_357mag = "357 Magnum",
+		weapon_addon_357mag_description = "From traffic stops to zombies, this revolver is a sheriffs best friend.",
+
+		weapon_addon_hk416b = "H&K 416",
+		weapon_addon_hk416b_description = "Like the AMG, this gun is customizable and ready for war, just don't reverse it...",
+
+		weapon_addon_m870 = "Remington M870",
+		weapon_addon_m870_description = "Perfect sport and hunting shotgun, although shooting dannys isn't really a sport... is it?"
 	},
 
 	items = {
@@ -3181,6 +3372,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		spin_lucky_wheel = "Press ~INPUT_CONTEXT~ to spin the Lucky Wheel. The cost is $${cost}.",
 		spin_lucky_wheel_for_free = "Press ~INPUT_CONTEXT~ to spin the Lucky Wheel. You have one free spin left today.",
 		unable_to_spin_lucky_wheel = "You have already spun the Lucky Wheel as much as permitted today. Come back later for another spin!",
+		unable_to_spin_lucky_wheel_time = "You have already spun the Lucky Wheel as much as permitted today. Next spin available in ${displayTime}.",
 		lucky_wheel_is_occupied = "The Lucky Wheel is currently occupied. Please wait.",
 		not_enough_balance_to_spin = "You do not have enough money to spin the wheel. The cost is $${cost}.",
 		logs_lucky_wheel_reward_title = "Lucky Wheel Reward",
@@ -3421,9 +3613,9 @@ OP.Global.Locales.Languages["en-US"] = {
 			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 26th.)
 			<br><br>
 			<div class="bonusPoints">
-				<div>Bonus Points: ${bonusPoints}/24</div>
+				<div>Bonus Points: ${bonusPoints}/22</div>
 				<div>
-					<button class="button" style="${buttonStyle}" onclick="claimBonus();">${buttonText}</button>
+					<button class="button" style="${buttonStyle}" id="claimBonusButton">${buttonText}</button>
 				</div>
 			</div>
 		]],
@@ -3556,7 +3748,8 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	ped_objects = {
-		illegal_ped_object = "Attempting to add a ped object not in the 'allowed' list of ped objects."
+		illegal_ped_object = "Attempting to add a ped object not in the 'allowed' list of ped objects.",
+		illegal_ped_weapon_object = "Attempting to add a ped weapon object not in the weapon list."
 	},
 
 	ped_spawn = {
@@ -3634,6 +3827,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		radio_removed = "You have lost your radio.",
 		no_radio = "You don't have a radio.",
 		unable_to_use_radio_while_cuffed = "You can not use the radio while you are cuffed.",
+		unable_to_use_radio_while_down = "You can not use the radio while you are down.",
 		frequency_set_to = "The frequency has been set to ${frequency}.",
 		frequency_already_set_to = "The frequency is already set to ${frequency}.",
 		radio_volume_same = "The radio volume is already set to `${radioVolume}`.",
@@ -3645,7 +3839,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		radio_sound_effects_reset = "The volume of the radio sound effects has now been reset.",
 		radio_sound_effects_set = "The volume of the radio sound effects has now been set to `${radioSoundEffects}`.",
 		radio_sound_effects_current = "The volume of the radio sound effects is currently set to `${radioSoundEffects}`.",
-		radio_sound_effects_current_default = "The volume of the radio sound effects is currently default."
+		radio_sound_effects_current_default = "The volume of the radio sound effects is currently default.",
+
+		radio_debug_failed = "Failed to toggle radio debug.",
+		radio_debug_off = "Successfully toggled radio debug off.",
+		radio_debug_on = "Successfully toggled radio debug on.",
+
+		radio_debug_no_permissions = "Attempted to toggle the radio debug without proper permission."
 	},
 
 	riot_mode = {
@@ -3655,7 +3855,17 @@ OP.Global.Locales.Languages["en-US"] = {
 		riot_mode_missing_perms = "Attempted to toggle riot mode without proper permission.",
 
 		riot_mode_enabled_help = "Riot mode has been enabled.",
-		riot_mode_disabled_help = "Riot mode has been disabled."
+		riot_mode_disabled_help = "Riot mode has been disabled.",
+
+		add_riot_player_no_permissions = "Attempted to add a player to the riot list without proper permission.",
+		remove_riot_player_no_permissions = "Attempted to add a player to the riot list without proper permission.",
+
+		player_already_in_riot_list = "${consoleName} is already in the riot list.",
+		player_not_in_riot_list = "${consoleName} is not in the riot list.",
+		added_riot_player = "Added ${consoleName} to the riot list.",
+		failed_to_add_riot_player = "Failed to add ${consoleName} to the riot list.",
+		removed_riot_player = "Removed ${consoleName} from the riot list.",
+		failed_to_remove_riot_player = "Failed to remove ${consoleName} from the riot list"
 	},
 
 	screenshots = {
@@ -3855,6 +4065,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		stress_level_warning = "You are stressed! Lower you stress by smoking Cigarettes, Joints or doing activities like Yoga."
 	},
 
+	streamer_mode = {
+		enabled_streamer_mode = "Enabled streamer mode.",
+		disabled_streamer_mode = "Disabled streamer mode."
+	},
+
 	sync = {
 		missing_hour = "No hour provided.",
 		invalid_hour = "Hour `${hour}`is invalid. The value should be between 0 and 23.",
@@ -3887,7 +4102,17 @@ OP.Global.Locales.Languages["en-US"] = {
 		blackout_not_staff = "Attempted to toggle a blackout without required permissions.",
 
 		weather_changed_title = "Weather Changed",
-		weather_changed_details = "${consoleName} changed the weather to `${weatherName}`."
+		weather_changed_details = "${consoleName} changed the weather to `${weatherName}`.",
+
+		weather_changed_success = "Successfully changed weather to `${weatherName}`.",
+		weather_change_failed = "Failed to change weather.",
+		weather_parameter_invalid = "Invalid weatherName parameter.",
+		weather_parameter_missing = "Missing weatherName parameter.",
+
+		time_parameters_invalid = "Invalid hour or minute parameter.",
+		time_currently_transitioning = "The time is currently transitioning, please wait.",
+		time_successfully_transitioned = "Successfully transitioned the time to `${hour}:${minute}`.",
+		time_successfully_set = "Successfully set the time to `${hour}:${minute}`."
 	},
 
 	tattoos = {
@@ -4095,10 +4320,6 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	-- global/*
-	decors = {
-		illegal_decor_type = "Syncing invalid decor value types."
-	},
-
 	explosions = {
 		invalid_explosion_type = "Explosion type `${explosionType}` is not valid.",
 		invalid_camera_shake = "Camera shake `${cameraShake}` is not valid.",
@@ -4141,10 +4362,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		status_2b = "10-78, An alarm system has detected that a Stockade is currently having its doors tinkered with and is requesting backup at ${streetName} near ${crossingRoad}.",
 		status_3a = "10-78, An alarm system has detected that a Stockade has had its doors improperly opened and is requesting backup at ${streetName}.",
 		status_3b = "10-78, An alarm system has detected that a Stockade has had its doors improperly opened and is requesting backup at ${streetName} near ${crossingRoad}.",
-		grab_gold_bar = "[${InteractionKey}] Grab Gold Bar (${barsRemaining} left)",
-		grabbing_gold_bar = "Grabbing Gold Bar",
+		grab_valuables = "[${InteractionKey}] Grab Valuables (${valuablesRemaining} left)",
+		grabbing_valuables = "Grabbing Valuables",
 		use_advanced_lockpick = "[${InteractionKey}] Use Advanced Lockpick",
-		lockpicking_stockade = "Lockpicking Stockade"
+		lockpicking_stockade = "Lockpicking Stockade",
+
+		reward_diamond = "You grabbed a diamond.",
+		reward_gold_bar = "You grabbed a gold bar.",
+		reward_cash = "You grabbed some cash."
 	},
 
 	-- jobs/*
@@ -4319,7 +4544,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		vehicle_in_the_way = "There is a vehicle blocking the spawn point.",
 		vehicle_is_out = "Your vehicle is already out.",
 		vehicle_stored = "Your vehicle has been stored.",
-		error_storing = "An error occurred while trying to store the vehicle.",
+		error_storing = "Failed to store the vehicle. Is the vehicle yours?",
 		vehicle_not_owned = "You do not own this vehicle!",
 		no_nearby_vehicle = "No nearby vehicles found.",
 		no_vehicles_to_retrieve = "You have no vehicles to retrieve!",
@@ -4473,7 +4698,13 @@ OP.Global.Locales.Languages["en-US"] = {
 	weapons = {
 		pick_up_fire_extinguisher = "Hold ~INPUT_CONTEXT~ to pick up the Fire Extinguisher.",
 		press_to_drop_fire_extinguisher = "Press ~INPUT_FRONTEND_RRIGHT~ to drop the Fire Extinguisher.",
-		illegal_fire_extinguisher_model = "Attempted to delete a fire extinguisher on all clients with a model that wasn't a fire extinguisher."
+		illegal_fire_extinguisher_model = "Attempted to delete a fire extinguisher on all clients with a model that wasn't a fire extinguisher.",
+
+		no_weapon_equipped = "No weapon equipped.",
+		no_ammo = "No ammo for this weapon.",
+		infinite_ammo = "You have infinite ammo for this weapon.",
+		ammo_count = "You have ${clips} full clips (${total} rounds in total).",
+		ammo_count_loose = "You have ${clips} full clips and 1 clip with ${loose} rounds (${total} rounds in total)."
 	},
 
 	-- a shared "alpha" locale category uwu - also know, some features such as the ${InteractionKey} will be missing here, so don't try to use it
