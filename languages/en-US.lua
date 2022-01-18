@@ -170,7 +170,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		staff_pm_logs_details = "${senderConsoleName} sent the following message to ${recipientConsoleName}: `${staffPrivateMessage}`",
 		staff_pm_not_logged_in = "You are not logged in.",
 		staff_pm_not_user_not_found = "User with server ID ${serverId} was not found.",
-		staff_pm_not_recipient_not_staff = "The player you are attepting to send a message to is not a staff member.",
+		staff_pm_not_recipient_not_staff = "The player you are attempting to send a message to is not a staff member.",
 		staff_pm_unable_to_message_self = "You are not able to message yourself.",
 		staff_pm_warning = "Staff PM Warning",
 		staff_pm_first_time = "We see you have never used staff PMs before. To respond to a staff PM, use the /staffpm command.",
@@ -179,7 +179,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		external_staff_message_from_player = "External Staff Message From ${playerName}",
 		external_staff_message_content = "${staffMessage} (You can not respond to this message.)",
 
-		unale_to_staff_message_yourself = "Unable to staff message yourself.",
+		unable_to_staff_message_yourself = "Unable to staff message yourself.",
 		message_sent = "Message sent.",
 		player_not_found = "Player not found.",
 		missing_valid_target_source_parameter = "Missing a valid 'target source' parameter.",
@@ -271,8 +271,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		nitro_boost_off = "Toggled 'Nitro Boost' Off.",
 		no_nearby_vehicles_on = "Toggled 'No Nearby Vehicles' On.",
 		no_nearby_vehicles_off = "Toggled 'No Nearby Vehicles' Off.",
-		speed_up_progres_bar_on = "Toggled 'Speed Up Progress Bar' On.",
-		speed_up_progres_bar_off = "Toggled 'Speed Up Progress Bar' Off.",
+		speed_up_progress_bar_on = "Toggled 'Speed Up Progress Bar' On.",
+		speed_up_progress_bar_off = "Toggled 'Speed Up Progress Bar' Off.",
 		invisibility_on = "Toggled 'Invisibility' On.",
 		invisibility_off = "Toggled 'Invisibility' Off.",
 		wallhack_on = "Toggled 'Wallhack' On.",
@@ -288,10 +288,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		report_muted = "You have been muted from the report command for reason `${reason}`.",
 
 		already_sending_report = "You are already sending a report. Please wait.",
-		unable_to_send_identicial_report = "You are unable to send two identical reports after each other.",
+		unable_to_send_identical_report = "You are unable to send two identical reports after each other.",
 
 		already_sending_staff_message = "You are already sending a staff message. Please wait.",
-		unable_to_send_identicial_staff_message = "You are unable to send two identical staff messages after each other.",
+		unable_to_send_identical_staff_message = "You are unable to send two identical staff messages after each other.",
 
 		user_indefinitely_banned_warning_no_reason = "I indefinitely banned this person without a specified reason. This warning was generated automatically as a result of the ban.",
 		user_indefinitely_banned_warning = "I indefinitely banned this person with the reason `${reason}`. This warning was generated automatically as a result of the ban.",
@@ -497,7 +497,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		cleaned_ped = "Successfully cleaned the ped of ${consoleName}.",
 		cleaned_ped_self = "Successfully cleaned your ped.",
 		clean_ped_failed = "Failed to clean ped.",
-		cleaned_ped_for_all = "Successfully cleaned everyones peds.",
+		cleaned_ped_for_all = "Successfully cleaned everyone's peds.",
 		clean_ped_no_permission = "Attempted to clean a player's ped without required permissions."
 	},
 
@@ -559,6 +559,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		region_blocked = "This server has blocked the region you are connecting from.",
 		server_config_not_loaded = "The server config has not been loaded.",
 		something_went_horribly_wrong = "Something went horribly wrong. Please try again.",
+		local_firewall_enabled = "The local firewall is enabled.",
+
+		local_firewall_on = "Enabled the local firewall with the block message `${blockMessage}`.",
+		local_firewall_re_enabled = "Re-enabled the local firewall with the block message `${blockMessage}`.",
+		local_firewall_off = "Disabled the local firewall.",
+		local_firewall_blocked = "Local Firewall: Blocked ${ipIdentifier} (${playerName})",
 
 		developer = "developer",
 		super_admin = "super admin",
@@ -623,7 +629,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		substitute_command_for = "This is a substitute command for `${command}`.",
 
-		-- the "substitues" is basically just a shortcut command, so if you do /lang, it'll execute /language.
+		-- the "substitutes" is basically just a shortcut command, so if you do /lang, it'll execute /language.
 		-- you can put as many substitutes as you'd like by doing "/lang, /lang2, /lang3", all these 3 commands will be valid substitutes
 		-- the main difference between the _command and _command_substitutes is substitutes will not show as suggestions in the chat
 		-- if no substitutes are wanted, simply leave an empty string with ""
@@ -655,7 +661,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		announce_command_help = "Broadcast an announcement to all players.",
 		announce_command_parameter_message = "message",
 		announce_command_parameter_message_help = "The message you would like to broadcast.",
-		announce_command_help = "",
+		announce_command_substitutes = "",
 
 		staff_pm_command = "/staff_pm",
 		staff_pm_command_help = "Send a message to either a staff member, or to a player as a staff member.",
@@ -698,6 +704,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		delete_vehicle_command_parameter_ignore_heading = "yes",
 		delete_vehicle_command_parameter_ignore_heading_help = "Would you like to ignore your player's heading? Leaving this empty will act as a `no`.",
 		delete_vehicle_command_substitutes = "/dv",
+
+		delete_vehicle_interactively_command = "/delete_vehicle_interactively",
+		delete_vehicle_interactively_command_help = "Toggles the interactive vehicle deletion.",
+		delete_vehicle_interactively_command_substitutes = "/dvi",
 
 		kick_command = "/kick",
 		kick_command_help = "Kick a player from the server.",
@@ -962,7 +972,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_item_name_override_command = "/set_item_name_override_command",
 		set_item_name_override_command_help = "Sets or removes the item name override of the specified item.",
 		set_item_name_override_command_parameter_slot = "slot",
-		set_item_name_override_command_parameter_slot_help = "The slot number of the item which's name you want to override.",
+		set_item_name_override_command_parameter_slot_help = "The slot number of the item which name you want to override.",
 		set_item_name_override_command_parameter_item_name = "item name",
 		set_item_name_override_command_parameter_item_name_help = "The item name override you want to set (leave empty to remove).",
 		set_item_name_override_command_substitutes = "/set_name_override, /name_override",
@@ -1316,7 +1326,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		instance_create_command_substitutes = "",
 
 		instance_destroy_command = "/instance_destroy",
-		instance_destroy_command_help = "Destory an instance.",
+		instance_destroy_command_help = "Destroy an instance.",
 		instance_destroy_command_parameter_instance_id = "instance id",
 		instance_destroy_command_parameter_instance_id_help = "The ID of the instance you wish to destroy.",
 		instance_destroy_command_substitutes = "",
@@ -1366,6 +1376,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		wipe_ground_inventories_command_parameter_radius = "radius",
 		wipe_ground_inventories_command_parameter_radius_help = "The wipe radius. Leaving this as blank will auto-select `100`. Valid values are above `0`, as well as `0` and `-1` which will select all inventories.",
 		wipe_ground_inventories_command_substitutes = "/wipeinvs, /wipe_inventories, /wipe_ground",
+
+		-- game/locate
+		locate_entity_command = "/locate_entity",
+		locate_entity_command_help = "Locate a certain entity on the map.",
+		locate_entity_command_parameter_filter = "filter",
+		locate_entity_command_parameter_filter_help = "What filter the entity should match (id:12345, plate:90FMK072, etc.)",
+		locate_entity_command_substitutes = "/le",
 
 		-- game/mdt
 		mdt_command = "/mdt",
@@ -1648,6 +1665,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		status_reset_command_parameter_server_id_help = "The player's server ID you are wanting to reset the status for. If left at blank, yourself will automatically be selected.",
 		status_reset_command_substitutes = "",
 
+		toggle_status_command = "/toggle_status",
+		toggle_status_command_help = "Disables (or enables) certain statuses like hunger, thirst and stress.",
+		toggle_status_command_substitutes = "",
+
 		set_body_armor_command = "/set_body_armor",
 		set_body_armor_command_help = "Set someone's body armor level.",
 		set_body_armor_command_parameter_server_id = "server id",
@@ -1702,6 +1723,19 @@ OP.Global.Locales.Languages["en-US"] = {
 		blackout_command = "/blackout",
 		blackout_command_help = "Toggle whether a blackout is active or not.",
 		blackout_command_substitutes = "",
+
+		-- game/test_server
+		detach_all_doors_command = "/detach_all_doors",
+		detach_all_doors_command_help = "Detaches all doors of the vehicle you are currently in.",
+		detach_all_doors_command_substitutes = "",
+
+		pop_all_tires_command = "/pop_all_tires",
+		pop_all_tires_command_help = "Pops all tires of the vehicle you are currently in.",
+		pop_all_tires_command_substitutes = "",
+
+		upgrade_vehicle_fully_command = "/upgrade_vehicle_fully",
+		upgrade_vehicle_fully_command_help = "Upgrades the vehicle you are currently in fully.",
+		upgrade_vehicle_fully_command_substitutes = "",
 
 		-- game/top_down
 		top_down_command = "/top_down",
@@ -2443,9 +2477,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		death_alcohol_poisoning = "You passed out due to alcohol poisoning.",
 		character_has_hardcore_died = "${fullName} has died. You may select another character.",
 
-		death_timer_overrride_already_set_to = "The death timer override is already set to `${time}`.",
-		set_death_timer_overrride = "The death timer override has been set to `${time}`",
-		time_paramter_is_invalid = "The 'time' parameter is invalid.",
+		death_timer_override_already_set_to = "The death timer override is already set to `${time}`.",
+		set_death_timer_override = "The death timer override has been set to `${time}`",
+		time_parameter_is_invalid = "The 'time' parameter is invalid.",
 		death_timer_override_removed = "The death timer override has been removed.",
 		no_death_timer_override_set = "There is no death timer override set.",
 
@@ -2468,7 +2502,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		fps = "FPS",
 		ping = "PING",
 		autopilot = "autopilot",
-		ground_asl = "AGL/ASL (${unit})"
+		ground_asl = "AGL/ASL (${unit})",
+		gear = "gear"
 	},
 
 	hunting = {
@@ -2742,7 +2777,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		taco_description = "El Brayan's speciality.",
 		banana = "Banana",
 		banana_description = "sus",
-		smores = "Smores",
+		smores = "S'mores",
 		smores_description = "yes",
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? No officer, I'm just eating tic tacs!",
@@ -3138,7 +3173,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_knife_description = "This carbon steel 7\" bladed knife is dual edged with a serrated spine to provide improved stabbing and thrusting capabilities.",
 		weapon_machete_description = "America's West African arms trade isn't just about giving. Rediscover the simple life with this rusty cleaver.",
 		weapon_switchblade_description = "From your pocket to hilt-deep in the other guy's ribs in under a second: folding knives will never go out of style.",
-		weapon_nightstick_description = "24\" polycarbonated side-handled nightstick.",
+		weapon_nightstick_description = "24\" polycarbonate side-handled nightstick.",
 		weapon_wrench_description = "Perennial favorite of apocalyptic survivalists and violent fathers the world over, apparently it also doubles as some kind of tool.",
 		weapon_battleaxe_description = "If it's good enough for medieval foot soldiers, modern border guards and pushy soccer moms, it's good enough for you.",
 		weapon_poolcue_description = "Ah, there's no sound as satisfying as the crack of a perfect break, especially when it's the other guy's spine.",
@@ -3284,7 +3319,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_addon_hk416b_description = "Like the AMG, this gun is customizable and ready for war, just don't reverse it...",
 
 		weapon_addon_m870 = "Remington M870",
-		weapon_addon_m870_description = "Perfect sport and hunting shotgun, although shooting dannys isn't really a sport... is it?"
+		weapon_addon_m870_description = "Perfect sport and hunting shotgun, although shooting dannys isn't really a sport... is it?",
+
+		weapon_addon_rpk16 = "RPK-16",
+		weapon_addon_rpk16_description = "The most perfect machine gun to ever exist, just don't forget the tracksuit."
 	},
 
 	items = {
@@ -3315,6 +3353,15 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		logs_used_weather_spell_title = "Used Weather Spell",
 		logs_used_weather_spell_details = "${consoleName} used weather spell `${itemName}`."
+	},
+
+	locate = {
+		invalid_filter_value = "Invalid filter value.",
+		locate_failed = "Failed to locate entity matching `${filter}`.",
+		something_went_wrong = "Failed to locate entity.",
+		locate_success = "Successfully located entity matching `${filter}` at (${x}, ${y}, ${z}).",
+
+		locate_entity_no_permissions = "The player attempted to locate an entity without proper permission."
 	},
 
 	login = {
@@ -3369,8 +3416,8 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Press ~INPUT_CONTEXT~ to spin the Lucky Wheel. The cost is $${cost}.",
-		spin_lucky_wheel_for_free = "Press ~INPUT_CONTEXT~ to spin the Lucky Wheel. You have one free spin left today.",
+		spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. The cost is $${cost}.",
+		spin_lucky_wheel_for_free = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. You have one free spin left today.",
 		unable_to_spin_lucky_wheel = "You have already spun the Lucky Wheel as much as permitted today. Come back later for another spin!",
 		unable_to_spin_lucky_wheel_time = "You have already spun the Lucky Wheel as much as permitted today. Next spin available in ${displayTime}.",
 		lucky_wheel_is_occupied = "The Lucky Wheel is currently occupied. Please wait.",
@@ -3738,6 +3785,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		chat_ped_messages_enabled = "Ped messages will now show in the chat.",
 		chat_ped_messages_disabled = "Ped messages will no longer show in the chat.",
 		me_message_chat_title = "/me [${serverId}]",
+		inspect_chat_title = "/inspect [${serverId}]",
+		frisk_chat_title = "/frisk [${serverId}]",
 		do_message_chat_title = "/do [${serverId}]",
 		attempt_message_chat_title = "/attempt [${serverId}]",
 		dice_message_chat_title = "/dice [${serverId}]",
@@ -3850,7 +3899,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	riot_mode = {
 		riot_mode_enabled = "Successfully enabled riot mode.",
-		riot_mode_disabled = "Successfully disabled riot mode. Already agressive peds will continue fighting until they are dead.",
+		riot_mode_disabled = "Successfully disabled riot mode. Already aggressive peds will continue fighting until they are dead.",
 		riot_mode_failed = "Failed to toggle riot mode.",
 		riot_mode_missing_perms = "Attempted to toggle riot mode without proper permission.",
 
@@ -3889,7 +3938,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		pillbox_hospital = "Pillbox Hospital",
 		jewelry_store = "Rockford Hills Jewelry Store",
 		principal_bank = "Principal Bank",
-		boilingbroke_penitentiary = "Boilingbroke Penitentiary",
+		bolingbroke_penitentiary = "Bolingbroke Penitentiary",
 		fort_zancudo = "Fort Zancudo",
 		del_perro_pier = "Del Perro Pier",
 		flywheels_garage = "Flywheels Garage",
@@ -3918,7 +3967,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		grocery_store_5 = "Vespucci Canals Rob's Liquor",
 		grocery_store_6 = "Morningwood Rob's Liquor",
 		grocery_store_7 = "Mirror Park LTD Gasoline",
-		grocery_store_8 = "Downtown Vinewwood 24/7",
+		grocery_store_8 = "Downtown Vinewood 24/7",
 		grocery_store_9 = "Tataviam Mountains 24/7",
 		grocery_store_10 = "Banham Canyon Rob's Liquor",
 		grocery_store_11 = "Banham Canyon 24/7",
@@ -4051,6 +4100,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		status_reset_failed = "No user with server ID `${serverId}` was found.",
 		reset_status_not_staff = "Attempted to reset a player's status without required permissions.",
 		status_reset_for_all = "Successfully reset the status for everyone.",
+		status_disabled = "Disabled statuses (stress, hunger and thirst).",
+		status_enabled = "Enabled statuses (stress, hunger and thirst).",
 		failed_to_set_body_armor_level = "Failed to execute the `/set_body_armor` command correctly.",
 		set_body_armor_level_player = "Successfully set the body armor level for ${consoleName} to `${bodyArmorLevel}`.",
 		set_body_armor_level_everyone = "Successfully set everyone's body armor level to `${bodyArmorLevel}`.",
@@ -4217,6 +4268,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		exit_penthouse_interact = "[${InteractionKey}] Exit Penthouse"
 	},
 
+	test_server = {
+		fully_upgraded = "Successfully upgraded vehicle."
+	},
+
 	top_down = {
 		not_in_valid_vehicle = "You are not in a valid vehicle (only cars/bikes).",
 		top_down_on = "Top-down view activated.",
@@ -4231,10 +4286,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		trackers = "Trackers",
 		stockade_robbery_tracker = "Stockade Truck (10-78)",
 		tracked_vehicle = "Tracked Vehicle (${trackerId})",
-		tracker_character = "${firstName} ${lastName}",
-		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName}",
-		trackers_in_category = "Trackers will now be stored inside of a category on the map.",
-		trackers_split = "Trackers will now be split into individual blips."
+		tracker_character = "${departmentLabel} ${firstName} ${lastName}",
+		tracker_character_unit_id = "${departmentLabel} ${unitId}: ${firstName} ${lastName}",
+		trackers_in_category = "Trackers will now be stored inside of their categories on the map.",
+		trackers_split = "Trackers will now be split into individual blips.",
+
+		department_sasp = "SASP:",
+		department_bcso = "BCSO:",
+		department_doc = "DOC:",
+		department_park_rangers = "Ranger:",
+		department_medical = "EMS:"
 	},
 
 	training = {
@@ -4376,7 +4437,7 @@ OP.Global.Locales.Languages["en-US"] = {
 	burger_shot = {
 		start_delivery = "Start a delivery.",
 		press_to_start_delivery = "Press ~g~${InteractionKey} ~w~to start a delivery.",
-		alerady_in_delivery = "You already have an active delivery.",
+		already_in_delivery = "You already have an active delivery.",
 		not_burger_shot_employee = "You must be a Burger Shot employee to start a delivery.",
 		finish_delivery = "Finish the delivery.",
 		press_to_finish_delivery = "Press ~g~${InteractionKey} ~w~to finish the delivery.",
@@ -4389,7 +4450,7 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	duty = {
-		toggle_duty_status_no_permissions = "Player attempter to toggle on duty status via command without proper permissions.",
+		toggle_duty_status_no_permissions = "Player attempted to toggle on duty status via command without proper permissions.",
 
 		duty_status_on = "Successfully went on duty.",
 		duty_status_off = "Successfully went off duty.",
@@ -4833,6 +4894,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		opacity = "Opacity",
 		colours = "Colors",
 		press_to_access_clotheshop = "Press ~INPUT_CONTEXT~ to customize your character.",
+		changing_only_clotheshop = "Do /outfit to change your outfit.",
 		clothing_store = "Clothing Store",
 		finish_creation = "Press ~g~G ~w~to complete the customization of your character. You can't undo this action.",
 		press_to_customize = "Press ~INPUT_CONTEXT~ to customize your character.",
