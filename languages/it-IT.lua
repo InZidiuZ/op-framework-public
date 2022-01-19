@@ -37,10 +37,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		the_trunk_is_occupied = "Il bagliaio è occupato.",
 		unable_to_toggle_carry = "Aspetta un attimo prima di fare /carry.",
 
-		you_are_not_being_carried = "You are currently not being carried.",
-		successfully_uncarried = "Force stopped carry successfully.",
-		failed_uncarried = "Failed to force stop carry.",
-		uncarry_missing_permissions = "Attempted to force stop carry without proper permission.",
+		you_are_not_being_carried = "Attualmente non sei preso in braccio da nessuno.",
+		successfully_uncarried = "Ti sei liberato dallo /carry con successo.",
+		failed_uncarried = "Non sei riuscito a liberarti.",
+		uncarry_missing_permissions = "Tentativo di liberarsi dallo /Carry senza i permessi sufficenti.",
 
 		uncarry_logs_title = "Force Uncarry",
 		uncarry_logs_details = "${consoleName} forced ${targetName} to stop carrying them."
@@ -322,12 +322,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		population_density_not_super_admin = "Un giocatore ha provato a modificare la densità di popolazione senza i permessi da super amdin.",
 
-		enabled_features_list = "Enabled Features:",
+		enabled_features_list = "Features abilitate:",
 		aimbot_feature = "Aimbot",
-		disabled_collisions_feature = "Disabled Collisions",
-		disabled_recoil_feature = "Disabled Recoil",
-		indestructibility_feature = "Indestructibility",
-		invisibility_feature = "Invisibility",
+		disabled_collisions_feature = "Disabilità Collisioni",
+		disabled_recoil_feature = "Disabilitato il Rinculo",
+		indestructibility_feature = "Indistruttibilità",
+		invisibility_feature = "Invisibilità",
 		nitro_boost_feature = "Nitro Boost",
 		no_nearby_vehicles_feature = "No Nearby Vehicles",
 		speed_boost_feature = "Speed Boost",
@@ -496,11 +496,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		item_name_set = "Impostato bypass item per '${itemName}'.",
 		item_name_invalid_slot = "Item non trovato.",
 	
-		cleaned_ped = "Successfully cleaned the ped of ${consoleName}.",
-		cleaned_ped_self = "Successfully cleaned your ped.",
-		clean_ped_failed = "Failed to clean ped.",
-		cleaned_ped_for_all = "Successfully cleaned everyones peds.",
-		clean_ped_no_permission = "Attempted to clean a player's ped without required permissions."
+		cleaned_ped = "Ped pulito con successo ${consoleName}.",
+		cleaned_ped_self = "Hai pulito il tuo ped con successo.",
+		clean_ped_failed = "Non sei riuscito a pulire il tuo ped.",
+		cleaned_ped_for_all = "Puliti i ped di tutti con successo.",
+		clean_ped_no_permission = "Tentativo di pulire i ped senza permesso."
 	},
 
 	anti_cheat = {
@@ -545,7 +545,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		csb_ramp_marine_label = "Marine guy",
 		s_f_y_stripperlite_label = "Stripper ped",
 		mp_f_stripperlite_label = "Stripper ped 2",
-		mp_m_marston_01_label = "Missing arms and legs",
+		mp_m_marston_01_label = "Gli mancano braccia e gambe",
 		mp_m_niko_01_label = "Niko (GTA IV)"
 	},
 
@@ -1174,9 +1174,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 		vehicle_info_command_substitutes = "",
 
 		delete_entity_command = "/delete_entity",
-		delete_entity_command_help = "Deletes an entity with a certain network id.",
+		delete_entity_command_help = "Elimina un'entità con un certo id network.",
 		delete_entity_command_parameter_network_id = "network id",
-		delete_entity_command_parameter_network_id_help = "The network id of the entity you want to delete.",
+		delete_entity_command_parameter_network_id_help = "L'id di rete dell'entità che vuoi cancellare.",
 		delete_entity_command_substitutes = "/de",
 
 		fake_lag_command = "/fake_lag",
@@ -2169,8 +2169,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 	cayo_perico_world = {
 		keep_flying_in_direction_se = "Continua ad volare a sud est per andare a Cayo Perico.\n(${distanceToTeleport}m left)",
 		keep_flying_in_direction_nw = "Continua a volare a nord est per andare a Los Santos .\n(${distanceToTeleport}m left)",
-		keep_flying_in_direction_se_boat = "Keep driving south-east to come to Cayo Perico.\n(${distanceToTeleport}m left)",
-		keep_flying_in_direction_nw_boat = "Keep driving north-west to come to Los Santos.\n(${distanceToTeleport}m left)",
+		keep_flying_in_direction_se_boat = "Continua a guidare verso sud-east per andare a Cayo Perico.\n(${distanceToTeleport}m left)",
+		keep_flying_in_direction_nw_boat = "Continua a guidare verso nord-west per andare a Los Santos.\n(${distanceToTeleport}m left)",
 		not_the_driver = "Devi essere il guidatore del veicolo per andare a Cayo Perico.",
 		not_a_cayo_vehicle = "Devi essere su un aereo o su un elicottero per andare a Cayo Perico.",
 		entering_cayo_perico_logs_title = "Entrando in Cayo perico",
@@ -2638,7 +2638,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		citizen_card = "Documento Cittadino",
 		citizen_card_description = "Agisce come identificazione, patente di arma da fuoco e patente di guida",
 		phone = "Telefono",
-		phone_description = "Usalo per chiamare qualche tuo amico",
+		phone_description = "Mai:tm:",
 		radio = "Radio",
 		radio_description = "Risorsa utile per tutti i figli di puttana metagamers là fuori!",
 
