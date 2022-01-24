@@ -90,13 +90,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		added_cash_to_everyone_title = "aggiunti contante a tutti",
 		added_cash_to_everyone_details = "${consoleName} aggiunti $${amount} contante a tutti.",
 
-		added_cash_title = "Soldi in contanti aggiunti",
-		added_cash_details = "${consoleName} ha aggiunto $${amount} Soldi in contanti.",
-		added_cash_to_player_title = "Soldi in contanti aggiunti al giocatore",
-		added_cash_to_player_details = "${consoleName} ha aggiunto $${amount} soldi in contanti a ${targetConsoleName}.",
-		added_cash_to_everyone_title = "Aggiunti soldi in contnti a tutti",
-		added_cash_to_everyone_details = "${consoleName} ha aggiunto $${amount} soldi in contanti a tutti.",
-
 		removed_cash_title = "Soldi in contanti rimossi",
 		removed_cash_details = "${consoleName} ha rimosso $${amount} soldi in contanti.",
 		removed_cash_from_player_title = "ReSoldi in contanti rimossi al giocatore",
@@ -110,18 +103,25 @@ OP.Global.Locales.Languages["it-IT"] = {
 		added_bank_to_player_details = "${consoleName} ha aggiunti $${amount} in banca ${targetConsoleName}.",
 		added_bank_to_everyone_title = "Aggiunti soldi in banca a tutti",
 		added_bank_to_everyone_details = "${consoleName} ha aggiunto $${amount} in banca a tutti.",																		
+		
+		removed_bank_title = "Removed Bank",
+		removed_bank_details = "${consoleName} rimossi $${amount} dalla banca.",
+		removed_bank_from_player_title = "Rimossi soldi dalla banca al giocatore",
+		removed_bank_from_player_details = "${consoleName} rimossi $${amount} dalla banca da ${targetConsoleName}.",
+		removed_bank_from_everyone_title = "Rimossi soldi dalla banca a tutti",
+		removed_bank_from_everyone_details = "${consoleName} rimossi $${amount} soldi dalla banca a tutti.",
 
-		added_cash = "Aggiunti $${amount} soldi in contanti.",
-		added_cash_to_player = "Aggiunti $${amount} soldi in contanti a ${targetConsoleName}.",
+		added_cash = "Aggiunti $${amount} in contanti.",
+		added_cash_to_player = "Aggiunti $${amount} in contanti a ${targetConsoleName}.",
 		added_cash_to_everyone = "Aggiunti $${amount} soldi in contanti a tutti.",
 
-		removed_cash = "Rimossi $${amount} soldi in contanti.",
-		removed_cash_from_player = "Rimossi $${amount} soldi in contanti a ${targetConsoleName}.",
-		removed_cash_from_everyone = "Rimossi $${amount} soldi in contanti a tutti.",
+		removed_cash = "Rimossi $${amount} soldi.",
+		removed_cash_from_player = "Rimossi $${amount} soldi da ${targetConsoleName}.",
+		removed_cash_from_everyone = "Rimossi $${amount} soldi a tutti.",
 
 		added_bank = "Aggiunti $${amount} bank.",
 		added_bank_to_player = "Aggiunti $${amount} soldi in banca a ${targetConsoleName}.",
-		added_bank_to_everyone = "Aggiunti $${amount} bsoldi in banca a tutti.",
+		added_bank_to_everyone = "Aggiunti $${amount} soldi in banca a tutti.",
 
 		removed_bank = "Rimossi $${amount} dalla banca.",
 		removed_bank_from_player = "Rimossi $${amount} soldi in banca a ${targetConsoleName}.",
@@ -493,17 +493,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		item_name_removed = "Bypass Item impostato con successo.",
 		item_name_set = "Impostato bypass item per '${itemName}'.",
 		item_name_invalid_slot = "Item non trovato.",
-	
-	
-	
-	
-	
-	
-		cleaned_ped = "Successfully cleaned the ped of ${consoleName}.",
-		cleaned_ped_self = "Successfully cleaned your ped.",
-		clean_ped_failed = "Failed to clean ped.",
-		cleaned_ped_for_all = "Successfully cleaned everyones peds.",
-		clean_ped_no_permission = "Attempted to clean a player's ped without required permissions."
+
+		cleaned_ped = "Pulito il ped con successo di ${consoleName}.",
+		cleaned_ped_self = "Pulito il tuo ped con successo.",
+		clean_ped_failed = "Non sei riuscito a pulire il ped.",
+		cleaned_ped_for_all = "Puliti i ped di tutti con successo.",
+		clean_ped_no_permission = "Tentativo di pulire un ped senza permessi."
 	},
 
 	anti_cheat = {
@@ -527,13 +522,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		remove_detection_area_not_staff = "Player attempted to remove a detection area, but didn't have correct permissions to do so.",
 		detection_area_close = "[${InteractionKey}] Remove Detection Area (${areaId})",
 		detection_area = "Detection Area (${areaId})",
-	
 		mp_f_freemode_01_label = "Freemode (female)",
 		mp_m_freemode_01_label = "Freemode (male)",
 		player_one_label = "Franklin",
 		player_two_label = "Trevor",
 		player_zero_label = "Michael",
-		
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus",
 		u_m_y_babyd_label = "Bodybuilder",
@@ -1972,10 +1965,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		aim_down_sight_command_help = "Punta automaticamente verso il basso quando fai clic con il pulsante destro del mouse anche se sei in terza persona.",
 		aim_down_sight_command_substitutes = "/ads",
 
-			-- weapons/weapons
-			check_ammo_command = "/check_ammo",
-			check_ammo_command_help = "Checks how much ammo you have in total for the weapon you are currently holding.",
-			check_ammo_command_substitutes = "/ammo"
+		-- weapons/weapons
+		check_ammo_command = "/check_ammo",
+		check_ammo_command_help = "Checks how much ammo you have in total for the weapon you are currently holding.",
+		check_ammo_command_substitutes = "/ammo"
 	},
 
 	core = {
@@ -2506,7 +2499,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		ping = "PING",
 		autopilot = "Autopilota",
 		ground_asl = "AGL/ASL (${unit})",
-		gear = "marcia"
+		gear = "Marcia"
 	},
 
 	hunting = {
@@ -3801,7 +3794,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 	ped_objects = {
 		illegal_ped_object = "Tentativo di aggiungere un oggetto ped alla lista degli oggetti ped 'ammessi'.",
-		illegal_ped_weapon_object = "Tentativo di aggiungere un oggetto arma ped non presente nell'elenco delle armi.",
+		illegal_ped_weapon_object = "Tentativo di aggiungere un oggetto arma ped non presente nell'elenco delle armi."
 	},
 
 	ped_spawn = {
@@ -4159,36 +4152,17 @@ OP.Global.Locales.Languages["it-IT"] = {
 		weather_unfrozen = "Il meteo non e' piu' freezato.",
 		freeze_weather_not_staff = "Tentativo di freezare il meteo senza i permessi.",
 
-
-
-
-
-
 		blackout_enabled = "E' iniziato un blackout in tutta la citta'.",
 		blackout_disabled = "Il blackout e' terminato.",
 		blackout_not_staff = "Tentativo di fare un blackout senza i permessi.",
-
-					
 					
 		weather_changed_title = "Meteo cambiato",
 		weather_changed_details = "${consoleName} ha cambiato il meteo a `${weatherName}`.",
-		
-		
+			
 		weather_changed_success = "Cambiato con successo il tempo in `${weatherName}`.",
 		weather_change_failed = "Non è riuscito a cambiare il tempo.",
 		weather_parameter_invalid = "Parametro weatherName non valido.",
 		weather_parameter_missing = "Parametro weatherName mancante.",
-
-
-
-
-
-
-
-
-
-
-
 
 		time_parameters_invalid = "Parametro ora o minuto non valido.",
 		time_currently_transitioning = "Il tempo è attualmente in fase di transizione, si prega di attendere.",
