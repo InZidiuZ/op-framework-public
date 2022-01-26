@@ -60,7 +60,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		feature_toggle_success = "Alteró `${featureName}` para ${consoleName}.",
 		feature_toggle_success_all = "Alteró `${featureName}` para todos.",
 		feature_toggle_failed = "No se pudo alternar `${featureName}` para ID del servidor ${serverId}.",
-        feature_toggle_success_on = "Activó `${featureName}` para ${consoleName}.",
+		feature_toggle_success_on = "Activó `${featureName}` para ${consoleName}.",
 		feature_toggle_success_off = "Desactivó `${featureName}` para ${consoleName}.",
 
 		noclip_toggle_activated_self_logs_title = "Noclip Alternado",
@@ -600,7 +600,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		discord_whitelist_id_not_found = "No pudimos encontrar su ID de discord. Asegúrese de tener Discord abierto en segundo plano y de haber permitido que FiveM obtenga datos de su cliente de discord.\n\n${communityDiscord}",
 	},
 
-    characters = {
+	characters = {
 		character_id_available = "ID de personaje `${characterId}` está disponible.",
 		character_id_not_available = "ID de personaje `${characterId}` no está disponible.",
 		character_id_invalid = "ID de personaje `${characterId}` no es un ID de personaje válido.",
@@ -1986,52 +1986,52 @@ OP.Global.Locales.Languages["es-MX"] = {
 	},
 
 	errors = {
-        error_report = "Reporte de Error",
-        error_report_info = "Oh no, <b>¡Se ha producido un error!</b> Esto indica que algo no esta funcionando correctament o segun lo previmos. Te pedimos amablemente que nos ayudes a resolver este problema proporcionando algunos detalles adicionales sobre lo que estabas haciendo cuando se produjo este error.",
-        script_location = "Script Location:",
-        error_report_feedback_title = "Informacion Adicional",
-        error_report_feedback_placeholder = "Haznos saber que estabas haciendo cuando se produjo el error.",
-        error_report_send = "Enviar Reporte.",
-        error_report_abort = "Cancelar Informe."
-    },
+		error_report = "Reporte de Error",
+		error_report_info = "Oh no, <b>¡Se ha producido un error!</b> Esto indica que algo no esta funcionando correctament o segun lo previmos. Te pedimos amablemente que nos ayudes a resolver este problema proporcionando algunos detalles adicionales sobre lo que estabas haciendo cuando se produjo este error.",
+		script_location = "Script Location:",
+		error_report_feedback_title = "Informacion Adicional",
+		error_report_feedback_placeholder = "Haznos saber que estabas haciendo cuando se produjo el error.",
+		error_report_send = "Enviar Reporte.",
+		error_report_abort = "Cancelar Informe."
+	},
 
 	 queue = {
-        joining_the_queue = "Entrando a la cola...",
-        timed_out_before_joining = "Se agoto el tiempo de espera antes de poder comenzar a unirse al servidor.",
-        server_reload_while_in_loading = "El nucleo del servidor se esta reiniciando y como no se cargo correctamente, se te expulso automaticamente.",
-        server_reload_while_in_queue = "Se esta reiniciando el nucleo del servidor, Vuelva a conectarse a la cola.",
-        took_too_long_to_connect = "¡Tardaste demasiado en conectarte!",
-        queue_position_with_priority = "🐌 Estas ${queueEntryId}/${queueLength} en la cola con ${priorityName} prioridad. 🕐${queueTime}",
-        queue_position_without_priority = "🐌 Estas ${queueEntryId}/${queueLength} en la cola. 🕐${queueTime}\n¿Estas cansado de hacer cola? !Apoya al servidor para tener prioridad en la cola!",
-        server_is_starting = "Esperando a que inicie el servidor...",
-        cancelled_before_server_start = "La conexion se cancelo antes de que se iniciara el servidor.",
-        kicked_from_queue = "Has sido expulsado de la cola por ${reason}.",
-        kicked_from_queue_no_reason = "Has sido expulsado del servidor sin motivo.",
-        missing_slots_parameter = "Faltan parametros de los Espacios.",
-        invalid_slots_parameter = "Parametro de Espacios No valido.",
-        slots_parameter_out_of_range = "El parametro de Espacios debe de estar entre 0 y 1025",
-        slots_already_set_to = "Los espacios del servidor ya estan configuradas en ${slots}.",
-        slots_set_to = "Los espacios del servidor han sido configurados a${slots}.",
+		joining_the_queue = "Entrando a la cola...",
+		timed_out_before_joining = "Se agoto el tiempo de espera antes de poder comenzar a unirse al servidor.",
+		server_reload_while_in_loading = "El nucleo del servidor se esta reiniciando y como no se cargo correctamente, se te expulso automaticamente.",
+		server_reload_while_in_queue = "Se esta reiniciando el nucleo del servidor, Vuelva a conectarse a la cola.",
+		took_too_long_to_connect = "¡Tardaste demasiado en conectarte!",
+		queue_position_with_priority = "🐌 Estas ${queueEntryId}/${queueLength} en la cola con ${priorityName} prioridad. 🕐${queueTime}",
+		queue_position_without_priority = "🐌 Estas ${queueEntryId}/${queueLength} en la cola. 🕐${queueTime}\n¿Estas cansado de hacer cola? !Apoya al servidor para tener prioridad en la cola!",
+		server_is_starting = "Esperando a que inicie el servidor...",
+		cancelled_before_server_start = "La conexion se cancelo antes de que se iniciara el servidor.",
+		kicked_from_queue = "Has sido expulsado de la cola por ${reason}.",
+		kicked_from_queue_no_reason = "Has sido expulsado del servidor sin motivo.",
+		missing_slots_parameter = "Faltan parametros de los Espacios.",
+		invalid_slots_parameter = "Parametro de Espacios No valido.",
+		slots_parameter_out_of_range = "El parametro de Espacios debe de estar entre 0 y 1025",
+		slots_already_set_to = "Los espacios del servidor ya estan configuradas en ${slots}.",
+		slots_set_to = "Los espacios del servidor han sido configurados a${slots}.",
 
-        invalid_steam_identifier_parameter = "Falta el parámetro 'steamIdentifier' o no es válido.",
+		invalid_steam_identifier_parameter = "Falta el parámetro 'steamIdentifier' o no es válido.",
 		invalid_target_position_parameter = "Falta el parámetro 'targetPosition' o no es válido.",
 		player_not_found_in_queue = "El jugador no fue encontrado en la cola.",
 		player_queue_moved_success = "Se ha actualizado la posición del jugador en la cola..",
 		player_queue_skipped_success = "El jugador ha saltado la cola con éxito.",
 		queue_is_not_ready = "La cola no está lista, por lo que no se puede omitir.."
-    },
+	},
 
 	restart = {
-        restart_30_minutes = "¡El servidor se va a reiniciar en 30 minutos!",
-        restart_15_minutes = "¡El servidor se va a reiniciar en 15 minutos!",
-        restart_10_minutes = "¡El servidor se va a reiniciar en 10 minutos!",
-        restart_5_minutes = "¡El servidor se va a reiniciar en 5 minutos!",
-        restart_3_minutes = "¡El servidor se va a reiniciar en 3 minutos!",
-        restart_2_minutes = "¡El servidor se va a reiniciar en 2 minutos!",
-        restart_1_minute = "¡El servidor se va a reiniciar en 1 minuto!",
-        server_restarting = "El servidor se esta reiniciando, Puede volver a unirse en unos minutos.",
-        executed_restart_command = "Se ejecuto el comando de reinicio.",
-        already_executed_restart_command = "El comando de reinicio ya se ha ejecutado."
+		restart_30_minutes = "¡El servidor se va a reiniciar en 30 minutos!",
+		restart_15_minutes = "¡El servidor se va a reiniciar en 15 minutos!",
+		restart_10_minutes = "¡El servidor se va a reiniciar en 10 minutos!",
+		restart_5_minutes = "¡El servidor se va a reiniciar en 5 minutos!",
+		restart_3_minutes = "¡El servidor se va a reiniciar en 3 minutos!",
+		restart_2_minutes = "¡El servidor se va a reiniciar en 2 minutos!",
+		restart_1_minute = "¡El servidor se va a reiniciar en 1 minuto!",
+		server_restarting = "El servidor se esta reiniciando, Puede volver a unirse en unos minutos.",
+		executed_restart_command = "Se ejecuto el comando de reinicio.",
+		already_executed_restart_command = "El comando de reinicio ya se ha ejecutado."
 	},
 
 	routes = {
@@ -2041,45 +2041,45 @@ OP.Global.Locales.Languages["es-MX"] = {
 	},
 
 	users = {
-        playtime = "Tiempo de Juego",
-        player_playtime = "${playerName} (Position ${position})\nTiempo total de juego: ${totalPlaytime}\nTiempo de juego de la Sesion: ${sessionPlaytime}",
-        leaderboard = "Tabla de Clasificacion",
-        your_position = "Tu Posicion",
-        logs_user_connected_title = "Usuario Conectado",
-        logs_user_connected_details = "${consoleName} se ha conectado al Servidor.",
-        logs_user_joined_title = "El usuario se unio.",
-        logs_user_joined_details = "${consoleName} se ha unido al Servidor.",
-        logs_user_dropped_title = "Usuario desconectado",
-        logs_user_dropped_details = "${consoleName} se ha desconectado del servidor, despues de haber jugado ${playtime} Razon: ${reason}.",
-        logs_character_loaded_title = "Personaje cargado",
-        logs_character_loaded_details = "${consoleName} ha cargado su personaje ${fullName} (${characterId}).",
-        logs_character_unloaded_title = "Personaje sin cargar",
-        logs_character_unloaded_details = "${consoleName} ha descargado su personaje ${fullName} (${characterId}).",
-        logs_character_created_title = "Character Created",
-        logs_character_created_details = "${consoleName} ha creado su personaje ${fullName} (${characterId}).",
-        logs_character_deleted_title = "Personaje Eliminado",
-        logs_character_deleted_details = "${consoleName} ha borrado su personaje ${fullName} (${characterId}).",
-        server_core_is_restarting = "El Nucleo del Servidor se esta Reiniciando.",
-        you_timed_out = "¡Se te agoto el tiempo de espera!",
-        kicked_for_no_specified_reason = "Ha sido expulsado sin motivo en especifico",
-        kicked_player = "Jugador Expulsado.",
-        kicked_player_and_removed_reconnect_priority = "Jugador expulsado y eliminado de la prioridad de re-conexion.",
-        kicked_player_and_failed_to_remove_reconnect_priority = "Jugador expulsado y no se pudo eliminar de la prioridad de re-conexion",
-        removed_player_from_queue = "Jugador expulsado de la cola.",
-        player_not_found = "Jugador no encontrado.",
-        missing_steam_identifier = "Falta el Identificador de Steam.",
-        package = "Paquete",
-        package_updated = "Su paquete ha sido actualizado a ${packageName}.",
-        package_updated_remaining_time = "Su paquete ha sido actualizado a ${packageName}. Va a Expirar ${remainingTime}.",
-        package_expired = "Su paquete ha expirado.",
-        package_same = "Tu paquete es ${packageName}.",
-        package_same_remaining_time = "Tu paquete es ${packageName}. Va a expirar en ${remainingTime}.",
-        no_package = "No tienes un paquete.",
-        fetching_package_error = "Se produjo un error al intentar recuperar los datos de su paquete",
-        check_playtime_not_staff = "El jugador intento verificar el tiempo de juego de otra persona, pero no tiene permisos para hacerlo.",
-        reason_unknown = "Razon desconocido.",
+		playtime = "Tiempo de Juego",
+		player_playtime = "${playerName} (Position ${position})\nTiempo total de juego: ${totalPlaytime}\nTiempo de juego de la Sesion: ${sessionPlaytime}",
+		leaderboard = "Tabla de Clasificacion",
+		your_position = "Tu Posicion",
+		logs_user_connected_title = "Usuario Conectado",
+		logs_user_connected_details = "${consoleName} se ha conectado al Servidor.",
+		logs_user_joined_title = "El usuario se unio.",
+		logs_user_joined_details = "${consoleName} se ha unido al Servidor.",
+		logs_user_dropped_title = "Usuario desconectado",
+		logs_user_dropped_details = "${consoleName} se ha desconectado del servidor, despues de haber jugado ${playtime} Razon: ${reason}.",
+		logs_character_loaded_title = "Personaje cargado",
+		logs_character_loaded_details = "${consoleName} ha cargado su personaje ${fullName} (${characterId}).",
+		logs_character_unloaded_title = "Personaje sin cargar",
+		logs_character_unloaded_details = "${consoleName} ha descargado su personaje ${fullName} (${characterId}).",
+		logs_character_created_title = "Character Created",
+		logs_character_created_details = "${consoleName} ha creado su personaje ${fullName} (${characterId}).",
+		logs_character_deleted_title = "Personaje Eliminado",
+		logs_character_deleted_details = "${consoleName} ha borrado su personaje ${fullName} (${characterId}).",
+		server_core_is_restarting = "El Nucleo del Servidor se esta Reiniciando.",
+		you_timed_out = "¡Se te agoto el tiempo de espera!",
+		kicked_for_no_specified_reason = "Ha sido expulsado sin motivo en especifico",
+		kicked_player = "Jugador Expulsado.",
+		kicked_player_and_removed_reconnect_priority = "Jugador expulsado y eliminado de la prioridad de re-conexion.",
+		kicked_player_and_failed_to_remove_reconnect_priority = "Jugador expulsado y no se pudo eliminar de la prioridad de re-conexion",
+		removed_player_from_queue = "Jugador expulsado de la cola.",
+		player_not_found = "Jugador no encontrado.",
+		missing_steam_identifier = "Falta el Identificador de Steam.",
+		package = "Paquete",
+		package_updated = "Su paquete ha sido actualizado a ${packageName}.",
+		package_updated_remaining_time = "Su paquete ha sido actualizado a ${packageName}. Va a Expirar ${remainingTime}.",
+		package_expired = "Su paquete ha expirado.",
+		package_same = "Tu paquete es ${packageName}.",
+		package_same_remaining_time = "Tu paquete es ${packageName}. Va a expirar en ${remainingTime}.",
+		no_package = "No tienes un paquete.",
+		fetching_package_error = "Se produjo un error al intentar recuperar los datos de su paquete",
+		check_playtime_not_staff = "El jugador intento verificar el tiempo de juego de otra persona, pero no tiene permisos para hacerlo.",
+		reason_unknown = "Razon desconocido.",
 
-        unloaded_character = "Personaje descargado.",
+		unloaded_character = "Personaje descargado.",
 		user_does_not_have_sent_character_loaded = "El usuario no tiene cargado el personaje enviado.",
 		user_has_no_character_loaded = "El usuario no tiene ningún personaje cargado.",
 		user_not_found = "El usuario enviado no se encontró en el servidor.",
@@ -2105,7 +2105,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		no_player_packages = "No tienes ningún paquete de jugador.",
 		player_packages = "Paquetes de jugador:\n${playerPackages}",
 		player_package = "- ${label}: ${amount}x"
-    },
+	},
 
 	-- game/*
 	airports = {
@@ -2125,7 +2125,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		return_button = "Regresar",
 	},
 
-    alcohol = {
+			alcohol = {
 		now_sober = "Ahora estás sobrio de nuevo.",
 		drunk_state_1 = "estas un poco borracho.",
 		drunk_state_2 = "Estas borracho.",
@@ -2200,18 +2200,18 @@ OP.Global.Locales.Languages["es-MX"] = {
 	},
 
 	casino = {
-        set_casino_screen_id_not_staff = "El jugador intento establecer la identificacion de la pantalla del casino, pero no tiene los permisos necesarios para hacerlo.",
-        successfully_set_screen_label = "Se configuro correctamente la pantalla del casino a pantalla sin identificacion ${screenLabel}.",
-        successfully_queued_screen_label = "Puso en cola la pantalla con la etiqueta ${screenLabel} exitosamente.",
-        failed_to_set_screen_label = "No se pudo configurar las pantallas a pantallas con etiqueta. ${screenLabel}.",
-        invalid_screen_label = "The screen label ${screenLabel} is invalid.",
-        missing_screen_label = "Falta el parametro de Etiqueta de Pantalla",
-        set_screen_label_already_set_to = "La etiqueta de la pantalla ya esta configurada en ${screenLabel}`.",
-        only_available_in_the_casino = "Solo puedes hacer esto mientras estas dentro del casino.",
-        casino_blip = "Casino"
-    },
-    
-    cayo_perico_world = {
+		set_casino_screen_id_not_staff = "El jugador intento establecer la identificacion de la pantalla del casino, pero no tiene los permisos necesarios para hacerlo.",
+		successfully_set_screen_label = "Se configuro correctamente la pantalla del casino a pantalla sin identificacion ${screenLabel}.",
+		successfully_queued_screen_label = "Puso en cola la pantalla con la etiqueta ${screenLabel} exitosamente.",
+		failed_to_set_screen_label = "No se pudo configurar las pantallas a pantallas con etiqueta. ${screenLabel}.",
+		invalid_screen_label = "The screen label ${screenLabel} is invalid.",
+		missing_screen_label = "Falta el parametro de Etiqueta de Pantalla",
+		set_screen_label_already_set_to = "La etiqueta de la pantalla ya esta configurada en ${screenLabel}`.",
+		only_available_in_the_casino = "Solo puedes hacer esto mientras estas dentro del casino.",
+		casino_blip = "Casino"
+	},
+	
+	cayo_perico_world = {
 		keep_flying_in_direction_se = "Sigue volando hacia el sudeste para llegar a Cayo Perico.\n(${distanceToTeleport}m left)",
 		keep_flying_in_direction_nw = "Sigue volando hacia el noroeste para llegar a Los Santos.\n(${distanceToTeleport}m left)",
 		keep_flying_in_direction_se_boat = "Siga conduciendo hacia el sureste para llegar a Cayo Perico.\n(${distanceToTeleport}m left)",
@@ -2228,48 +2228,48 @@ OP.Global.Locales.Languages["es-MX"] = {
 		exiting_cayo_perico_with_passengers_logs_details = "${consoleName} Saliendo de Cayo Perico con ${passengersAmount} Pasajeros.",
 	},
 
-    chat_emotes = {
+	chat_emotes = {
 		list_emotes = "Emotes de chat disponibles"
 	},
 
-    christmas = {
-        claimed_advent_calendar_hatch_title = "Recuadro reclamado de Calendario de adviento.",
-        claimed_money = "${consoleName} Reclamo $${amount}.",
-        claimed_item = "${consoleName} Reclamo ${itemLabel}.",
-        claimed_vehicle = "${consoleName} Reclamo un vehiculo especial de Navidad.",
-        claimed_queue_priority = "${consoleName} Reclamo una semana de Prioridad en la cola por Navidad.",
+	christmas = {
+		claimed_advent_calendar_hatch_title = "Recuadro reclamado de Calendario de adviento.",
+		claimed_money = "${consoleName} Reclamo $${amount}.",
+		claimed_item = "${consoleName} Reclamo ${itemLabel}.",
+		claimed_vehicle = "${consoleName} Reclamo un vehiculo especial de Navidad.",
+		claimed_queue_priority = "${consoleName} Reclamo una semana de Prioridad en la cola por Navidad.",
 
-        claimed_advent_calendar_bonus_title = "Bono de Calendario de Adviento reclamado",
+		claimed_advent_calendar_bonus_title = "Bono de Calendario de Adviento reclamado",
 		claimed_advent_calendar_bonus_details = "${consoleName} reclamó la bonificación del calendario de adviento, que es un vehículo con nombre de modelo `${modelName}`."
-    },
+	},
 
 	cinematic = {
-        cinematic = "Cinematica",
-        black_bars_set_to = "Las barras negras cinematográficas se han configurado a ${blackBarsHeight}%."
-    },
+		cinematic = "Cinematica",
+		black_bars_set_to = "Las barras negras cinematográficas se han configurado a ${blackBarsHeight}%."
+	},
 
-    crashes = {
+	crashes = {
 		crash_failed = "No se pudo desencadenar el crash para ${consoleName}.",
 		crash_success = "Crash desencadenado con éxito para ${consoleName}.",
 		server_id_invalid = "ID de servidor no válido."
-    },
+	},
 
-    clip_saver = {
-        start_recording = "Iniciar Grabacion",
-        clip_save = "Guardar Clip",
-        clip_discard = "Descartar Clip"
-    },
+	clip_saver = {
+		start_recording = "Iniciar Grabacion",
+		clip_save = "Guardar Clip",
+		clip_discard = "Descartar Clip"
+	},
 
 	compass = {
-        north = "N",
-        north_east = "NE",
-        east = "E",
-        south_east = "SE",
-        south = "S",
-        south_West = "SO",
-        west = "O",
-        north_west = "NO"
-    },
+		north = "N",
+		north_east = "NE",
+		east = "E",
+		south_east = "SE",
+		south = "S",
+		south_West = "SO",
+		west = "O",
+		north_west = "NO"
+	},
 
 	courthouse = {
 		press_to_use_gavel = "Presione ~INPUT_CONTEXT~ para usar el mazo."
@@ -2294,22 +2294,22 @@ OP.Global.Locales.Languages["es-MX"] = {
 	},
 
 	debug = {
-        ped = "Ped",
-        vehicle = "Vehiculo",
-        object = "Objeto",
-        network_id = "Identificacion de Red",
-        owned_by_us = "Propiedad de nosotros",
-        owned_by = "Propiedad",
-        first_owned_by_us = "First Owned By Us",
+		ped = "Ped",
+		vehicle = "Vehiculo",
+		object = "Objeto",
+		network_id = "Identificacion de Red",
+		owned_by_us = "Propiedad de nosotros",
+		owned_by = "Propiedad",
+		first_owned_by_us = "First Owned By Us",
 		first_owned_by = "First Owned By",
 		first_owned_unknown = "First Owner Unknown",
-        not_networked = "No conectado",
-        model_hash = "Modelo del Hash",
-        model_name = "Nombre del modelo",
-        touching = "Tocando",
-        addon = "Añadir",
-        invalid_radius_parameter = "Parametro de Radio no valido.",
-        inject_code_not_developer = "El jugador intentó inyectar código pero no era un desarrollador.",
+		not_networked = "No conectado",
+		model_hash = "Modelo del Hash",
+		model_name = "Nombre del modelo",
+		touching = "Tocando",
+		addon = "Añadir",
+		invalid_radius_parameter = "Parametro de Radio no valido.",
+		inject_code_not_developer = "El jugador intentó inyectar código pero no era un desarrollador.",
 		inject_code_invalid_player = "No hay jugadores con ID de servidor `${serverId}`.",
 		inject_code_success_for_everyone = "Código inyectado con éxito para todos.",
 		inject_code_success_for_player = "Código inyectado con éxito para ${consoleName}.",
@@ -2372,9 +2372,9 @@ OP.Global.Locales.Languages["es-MX"] = {
 		failed_network_debug = "No se pudo habilitar la depuración de la red de la entidad.",
 
 		network_owner_subscription_no_permissions = "Intentó suscribirse a los propietarios de la red de la entidad sin el permiso adecuado."
-    },
+	},
 
-    dna_evidence = {
+	dna_evidence = {
 		taking_sample = "Tomando muestra de ADN",
 		already_taking_sample = "Ya estás tomando una muestra de ADN de un jugador..",
 		sample_no_player = "Ningún jugador cercano del que puedas tomar una muestra de ADN.",
@@ -2384,7 +2384,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		evidence_failed = "No se pudo tomar evidencia de ADN.",
 
 		evidence_text = "Tipo de evidencia: Evidencia de ADN\nDNA recolectado de ${fullName} #${characterId}\n\nInformación Adicional:\n • Marca de tiempo de Recolección: ${time}"
-    },
+	},
 
 	doors = {
 		locked = "Cerrado",
@@ -2440,41 +2440,41 @@ OP.Global.Locales.Languages["es-MX"] = {
 		use_campfire = "[E] usar fogata",
 		grill = "parrilla",
 		use_grill = "[E] Usar parrilla"
-    },
+	},
 
 	health = {
-        successfully_revived_player = "Reviviste con exito a ${consoleName}.",
-        successfully_revived_player_removed_injuries = "Reviviste con exito a ${consoleName} y se curaron sus heridas",
-        successfully_revived_everyone = "Reviviste a todos exitosamente.",
-        successfully_revived_everyone_removed_injuries = "Reviviste a todos y curaste sus heridas exitosamente.",
-        failed_to_revive = "No se pudo ejecutar el comando /revivir correctamente.",
-        revive_player_not_staff = "Un jugador intento revivir a otro jugador, pero no tenia los permisos necesarios para hacerlo.",
-        revive_self_not_staff = "Un jugador se intento revivir pero no tiene los permisos necesarios.",
-        revived_self_removed_injuries_title = "Te reviviste y te curaste las heridas.",
-        revived_self_removed_injuries_details = "${consoleName} Se revivio y se quito las heridas.",
-        revived_self_title = "Te reviviste",
-        revived_self_details = "${consoleName} Se revivio.",
-        revived_everyone_removed_injuries_title = "Revivio a todos y curo sus heridas.",
-        revived_everyone_removed_injuries_details = "${consoleName} Revivio a todos y quito sus heridas.",
-        revived_everyone_title = "Revivio a todos.",
-        revived_everyone_details = "${consoleName} Revivio a todos.",
-        revived_player_removed_injuries_title = "Jugador revivido y curado de sus heridas.",
-        revived_player_removed_injuries_details = "${consoleName} revivio a ${targetConsoleName} y curo sus heridas.",
-        revived_player_title = "Jugador revivido",
-        revived_player_details = "${consoleName} revivio a ${targetConsoleName}.",
-        get_recent_deaths_not_staff = "Un jugador intento ver las muertes recientes, pero no tenia los permisos necesarios para hacerlo.",
-        get_player_last_death_not_staff = "Un jugador intento ver la ultima muerte de otro jugador, pero no tenia los permisos necesarios.",
-        recent_deaths = "Muertes recientes.",
-        no_recent_deaths = "No hay muertes recientes.",
-        recent_deaths_list_entry = "${recentDeathId}. ${consoleName} Murio hace ${timer} segundos.",
-        target_user_not_found = "Usuario destinado no encontrado.",
-        no_server_id_sent = "No se envio ningun ID de servidor.",
-        no_permissions = "Sin permisos.",
-        user_not_found = "Usuario no encontrado.",
-        player_death = "Muerte de un jugador.",
-        player_death_recent = "${consoleName} murio hace ${timer} segundos.",
-        no_recent_death = "${consoleName} No ha muerto recientemente.",
-        death_alcohol_poisoning = "Te desmayaste debido a una intoxicación por alcohol.",
+		successfully_revived_player = "Reviviste con exito a ${consoleName}.",
+		successfully_revived_player_removed_injuries = "Reviviste con exito a ${consoleName} y se curaron sus heridas",
+		successfully_revived_everyone = "Reviviste a todos exitosamente.",
+		successfully_revived_everyone_removed_injuries = "Reviviste a todos y curaste sus heridas exitosamente.",
+		failed_to_revive = "No se pudo ejecutar el comando /revivir correctamente.",
+		revive_player_not_staff = "Un jugador intento revivir a otro jugador, pero no tenia los permisos necesarios para hacerlo.",
+		revive_self_not_staff = "Un jugador se intento revivir pero no tiene los permisos necesarios.",
+		revived_self_removed_injuries_title = "Te reviviste y te curaste las heridas.",
+		revived_self_removed_injuries_details = "${consoleName} Se revivio y se quito las heridas.",
+		revived_self_title = "Te reviviste",
+		revived_self_details = "${consoleName} Se revivio.",
+		revived_everyone_removed_injuries_title = "Revivio a todos y curo sus heridas.",
+		revived_everyone_removed_injuries_details = "${consoleName} Revivio a todos y quito sus heridas.",
+		revived_everyone_title = "Revivio a todos.",
+		revived_everyone_details = "${consoleName} Revivio a todos.",
+		revived_player_removed_injuries_title = "Jugador revivido y curado de sus heridas.",
+		revived_player_removed_injuries_details = "${consoleName} revivio a ${targetConsoleName} y curo sus heridas.",
+		revived_player_title = "Jugador revivido",
+		revived_player_details = "${consoleName} revivio a ${targetConsoleName}.",
+		get_recent_deaths_not_staff = "Un jugador intento ver las muertes recientes, pero no tenia los permisos necesarios para hacerlo.",
+		get_player_last_death_not_staff = "Un jugador intento ver la ultima muerte de otro jugador, pero no tenia los permisos necesarios.",
+		recent_deaths = "Muertes recientes.",
+		no_recent_deaths = "No hay muertes recientes.",
+		recent_deaths_list_entry = "${recentDeathId}. ${consoleName} Murio hace ${timer} segundos.",
+		target_user_not_found = "Usuario destinado no encontrado.",
+		no_server_id_sent = "No se envio ningun ID de servidor.",
+		no_permissions = "Sin permisos.",
+		user_not_found = "Usuario no encontrado.",
+		player_death = "Muerte de un jugador.",
+		player_death_recent = "${consoleName} murio hace ${timer} segundos.",
+		no_recent_death = "${consoleName} No ha muerto recientemente.",
+		death_alcohol_poisoning = "Te desmayaste debido a una intoxicación por alcohol.",
 		character_has_hardcore_died = "${fullName} ha muerto. Puedes seleccionar otro personaje.",
 
 		death_timer_override_already_set_to = "La anulación del temporizador de muerte ya está configurada para `${time}`.",
@@ -2488,7 +2488,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		successfully_revived_range = "Revivido con éxito a ${amount} jugador(es) en un rango de ${distance}m.",
 		failed_revive_range = "No se pudo revivir a los jugadores.",
 		range_revive_not_staff = "El jugador intentó revivir jugadores en un cierto rango, pero no tenía los permisos correctos para hacerlo."
-    },
+	},
 
 	hud = {
 		mph = "mp/h",
@@ -2506,7 +2506,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		gear = "Marcha"
 	},
 
-    hunting = {
+	hunting = {
 		hold_to_skin = "[${InteractionKey}] Manten para destazar",
 		skinning_animal = "Destazando el animal",
 		hit_by_vehicle = "La carne de este animal está demasiado dañada.",
@@ -2585,7 +2585,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		get_players_from_instance_not_developer = "El jugador intentó obtener los jugadores de una instancia, pero no era un desarrollador."
 	},
 
-    interiors = {
+	interiors = {
 		in_interior = "En interiores: ${interiorId} (${portals} portals).",
 		total_interiors = "Interiores Totales: ${totalInteriors} (${totalInteriorPortals} portales totales).",
 		total_unloaded_interiors = "Total de interiores descargados: ${totalUnloadedInteriors} (${totalUnloadedInteriorPortals} total portals)."
@@ -3355,7 +3355,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		logs_used_weather_spell_details = "${consoleName} uso el hechizo `${itemName}`."
 	},
 
-    locate = {
+	locate = {
 		invalid_filter_value = "Valor de filtro no válido.",
 		locate_failed = "No se pudo localizar la coincidencia de entidad `${filter}`.",
 		something_went_wrong = "No se pudo ubicar la entidad.",
@@ -3365,27 +3365,27 @@ OP.Global.Locales.Languages["es-MX"] = {
 	},
 
 	login = {
-        loading_character = "Cargando Personaje...",
-        deleting_character = "Borrando Personaje...",
-        fetching_character_data = "Obteniendo datos del Personaje...",
-        complete = "Completar",
-        welcome_to = "Bienvenido a",
-        press = "Presione",
-        enter = "ENTER",
-        to_join = "para unirse.",
-        main_menu = "Menu Principal",
-        disconnect = "Desconectarse",
-        disconnect_confirm = "¿Estas seguro que deseas desconectarte del Servidor?",
-        yes = "Si",
-        no = "No",
-        name = "Nombre",
-        dob = "Fecha de Nacimiento",
-        gender = "Genero",
-        cash = "Dinero en Efectivo",
-        bank = "Banco",
-        story = "Historia",
-        empty_slot = "Espacio Vacio",
-        new_character = "Nuevo Personaje",
+		loading_character = "Cargando Personaje...",
+		deleting_character = "Borrando Personaje...",
+		fetching_character_data = "Obteniendo datos del Personaje...",
+		complete = "Completar",
+		welcome_to = "Bienvenido a",
+		press = "Presione",
+		enter = "ENTER",
+		to_join = "para unirse.",
+		main_menu = "Menu Principal",
+		disconnect = "Desconectarse",
+		disconnect_confirm = "¿Estas seguro que deseas desconectarte del Servidor?",
+		yes = "Si",
+		no = "No",
+		name = "Nombre",
+		dob = "Fecha de Nacimiento",
+		gender = "Genero",
+		cash = "Dinero en Efectivo",
+		bank = "Banco",
+		story = "Historia",
+		empty_slot = "Espacio Vacio",
+		new_character = "Nuevo Personaje",
 		select_character = "Seleccionar Personaje",
 		delete_character = "Eliminar Personaje",
 		delete_character_confirm = "¿Estás seguro de que deseas eliminar este personaje?",
@@ -3416,7 +3416,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 	},
 
 	lucky_wheel = {
-	    spin_lucky_wheel = "Presiona ~INPUT_CONTEXT~ para girar la Rueda de la Suerte. El precio es $${cost}.",
+		spin_lucky_wheel = "Presiona ~INPUT_CONTEXT~ para girar la Rueda de la Suerte. El precio es $${cost}.",
 		spin_lucky_wheel_for_free = "Presiona ~INPUT_CONTEXT~ para girar la Rueda de la Suerte. Te queda un giro gratis hoy.",
 		unable_to_spin_lucky_wheel = "Ya has hecho girar la Rueda de la Suerte tanto como te está permitido hoy. Vuelve más tarde para dar otra vuelta!",
 		unable_to_spin_lucky_wheel_time = "Ya has hecho girar la Rueda de la Suerte tanto como te está permitido hoy. Próximo giro disponible en ${displayTime}.",
@@ -3440,7 +3440,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		ping_pong = "Pong!",
 		ping_response = "${ping}ms (tiempo de respuesta: ${callbackTime}ms)",
 		ooc_first_time = "Vemos que aun no ha utilizado /ooc! Antes de permitirte usarlo, nos gustaría darte una pequeña advertencia.. El comando / ooc solo debe usarse en situaciones inmediatas, y todas y cada una de las preguntas o mensajes no inmediatos deben ser redirigidos a nuestro gremio de discordia en ${communityDiscord}. ¡Eso es todo! Para comenzar a usar / ooc, escriba / ooc_on. Podrás volver a apagarlo con / ooc_off. ",
-        ooc_not_logged_in = "Usted no se ha identificado.",
+		ooc_not_logged_in = "Usted no se ha identificado.",
 		ooc_timed_out = "Actualmente se ha agotado el tiempo de espera del chat OOC. Espere por favor.",
 		ooc_muted_no_reason = "Ha sido silenciado del chat global de OOC sin un motivo específico.",
 		ooc_muted = "Has sido silenciado del chat global de OOC por el motivo de `${reason}`.",
@@ -3514,7 +3514,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		updated_notepad_pixels_penis_title_details = "${consoleName} actualizo un bloc de notas con un dibujo que parece parecerse a un pene."
 	},
 
-    objects = {
+	objects = {
 		saved_found_objects = "Se guardo `${foundObjectsAmount}` objetos encontrados con modelo `${modelName}` a un archivo en el servidor.",
 		no_nearby_objects_with_model_found = "No se encontraron objetos cercanos con el modelo `${modelName}`.",
 		invalid_model_name = "El modelo `${modelName}` no es un modelo valido.",
@@ -3606,7 +3606,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		previous_weeks_average = "Promedio de las semanas anteriores",
 
 		about_detection_areas_title = "Detección de Áreas",
-		about_detection_areas_text = "Las áreas de detección pueden ser una herramienta útil para los miembros de staff cuando intentan identificar a un hacker que spawnea  vehículos y/o peatones no deseados. Para crear un área de detección, utilice `/agregar_area_deteccion`. Una vez que haya creado un área, aparecerá aquí. Solo se registrarán las últimas 100 entidades en cada área.",
+		about_detection_areas_text = "Las áreas de detección pueden ser una herramienta útil para los miembros de staff cuando intentan identificar a un hacker que spawnea vehículos y/o peatones no deseados. Para crear un área de detección, utilice `/agregar_area_deteccion`. Una vez que haya creado un área, aparecerá aquí. Solo se registrarán las últimas 100 entidades en cada área.",
 		detection_area_title = "Detección de Área #${detectionAreaId}",
 
 		about_sound_effects_title = "Efectos de Sonido",
@@ -3801,7 +3801,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		illegal_ped_weapon_object = "Intentando agregar un objeto de arma ped que no está en la lista de armas."
 	},
 
-    ped_spawn = {
+	ped_spawn = {
 		ped_missing_model = "Falta el parámetro del modelo.",
 		ped_spawn_success = "Ped generado con éxito.",
 		ped_failed_spawn = "No se pudo generar ped.",
@@ -3897,7 +3897,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		radio_debug_no_permissions = "Se intentó alternar la depuración de radio sin el permiso adecuado."
 	},
 
-    riot_mode = {
+	riot_mode = {
 		riot_mode_enabled = "Modo antidisturbios habilitado con éxito.",
 		riot_mode_disabled = "Modo antidisturbios deshabilitado con éxito. Los pedantes ya agresivos seguirán luchando hasta que mueran..",
 		riot_mode_failed = "No se pudo alternar el modo antidisturbios.",
@@ -4022,7 +4022,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		skylift_attached_vehicle_logs_details = "${consoleName} conecto un vehículo a su Skylift."
 	},
 
-    slow_motion = {
+	slow_motion = {
 		slow_motion_enabled = "Habilitado con éxito el modo de cámara lenta.",
 		slow_motion_disabled = "Modo de cámara lenta desactivado con éxito.",
 		slow_motion_failed = "Error al alternar el modo de cámara lenta.",
@@ -4116,7 +4116,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		stress_level_warning = "¡Estás estresado! Disminuye tu estrés fumando cigarrillos, articulaciones o haciendo actividades como el yoga."
 	},
 
-    streamer_mode = {
+	streamer_mode = {
 		enabled_streamer_mode = "Modo streamer habilitado.",
 		disabled_streamer_mode = "Modo streamer deshabilitado."
 	},
@@ -4268,7 +4268,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		exit_penthouse_interact = "[${InteractionKey}] Salir del Penthouse"
 	},
 
-    test_server = {
+	test_server = {
 		fully_upgraded = "Vehículo actualizado con éxito."
 	},
 
@@ -4359,7 +4359,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		actual_radius = "Radio actual: ${actualRadius}"
 	},
 
-    wizard = {
+	wizard = {
 		ragdoll_missing_permissions = "Attempted to make a player ragdoll without proper permissions.",
 
 		ragdoll_failed = "Failed to make player ragdoll.",
