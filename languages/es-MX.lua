@@ -134,11 +134,11 @@ OP.Global.Locales.Languages["es-MX"] = {
         removed_bank_balance_from_player = "Retiro $${amount} en saldo bancario de ${consoleName}.",
 
         spawned_item_title = "Objeto generado",
-        spawned_item_details = "${consoleName} Genero  ${amount}x `${itemName}` para si mismo.",
+        spawned_item_details = "${consoleName} Genero ${amount}x `${itemName}` para si mismo.",
         spawned_item_for_player_title = "Objeto generado para jugador",
-        spawned_item_for_player_details = "${consoleName} Genero  ${amount}x `${itemName}` para ${targetConsoleName}.",
+        spawned_item_for_player_details = "${consoleName} Genero ${amount}x `${itemName}` para ${targetConsoleName}.",
         spawned_item_for_everyone_title = "Objeto generado para todos",
-        spawned_item_for_everyone_details = "${consoleName} Genero  ${amount}x `${itemName}` para todos.",
+        spawned_item_for_everyone_details = "${consoleName} Genero ${amount}x `${itemName}` para todos.",
 
         report_title = "REPORT ${reporterName}",
         report_logs_title = "Report",
@@ -200,7 +200,7 @@ OP.Global.Locales.Languages["es-MX"] = {
         cancelled_wipe = "El wipe ha sido cancelado.",
         no_wipe_is_awaiting_confirmation = "No hay wipe esperando confirmación.",
 
-        you_have_been_kicked = "Has sido expulsado por ${kicker} por la siguiente razón `${reason}`.",      
+        you_have_been_kicked = "Has sido expulsado por ${kicker} por la siguiente razón `${reason}`.",
         you_have_been_kicked_no_reason = "Has sido expulsado sin una razón especificada por ${kicker}.",
 
         logs_player_kicked_title = "Jugador expulsado",
@@ -664,15 +664,15 @@ OP.Global.Locales.Languages["es-MX"] = {
         announce_command_help = "",
 
         staff_pm_command = "/staff_pm",
-        staff_pm_command_help = "Mensaje directo a un miembro del staff específico (o jugador como miembro de staff).",     
+        staff_pm_command_help = "Mensaje directo a un miembro del staff específico (o jugador como miembro de staff).",
         staff_pm_command_parameter_server_id = "ID del servidor",
-        staff_pm_command_parameter_server_id_help = "La id del jugador al que le quieres enviar un mensaje.",       
+        staff_pm_command_parameter_server_id_help = "La id del jugador al que le quieres enviar un mensaje.",
         staff_pm_command_parameter_message = "mensaje",
         staff_pm_command_parameter_message_help = "El mensaje que le gustaría enviar.",
         staff_pm_command_substitutes = "/staffpm",
 
         staff_command = "/staff",
-        staff_command_help = "Transmitir un mensaje a todos los miembros del staff conectados.",        
+        staff_command_help = "Transmitir un mensaje a todos los miembros del staff conectados.",
         staff_command_parameter_message = "mensaje",
         staff_command_parameter_message_help = "El mensaje que le gustaría enviar.",
         staff_command_substitutes = "",
@@ -702,7 +702,7 @@ OP.Global.Locales.Languages["es-MX"] = {
         delete_vehicle_command = "/eliminar_carro",
         delete_vehicle_command_help = "Eliminar un vehículo cercano.",
         delete_vehicle_command_parameter_ignore_heading = "sí",
-        delete_vehicle_command_parameter_ignore_heading_help = "¿Te gustaría ignorar la direccion de tu jugador? Dejar esto vacío actuará como un `no`.",       
+        delete_vehicle_command_parameter_ignore_heading_help = "¿Te gustaría ignorar la direccion de tu jugador? Dejar esto vacío actuará como un `no`.",
         delete_vehicle_command_substitutes = "/dv",
 
         delete_vehicle_interactively_command = "/eliminar_vehiculo_interactivamente",
@@ -776,7 +776,7 @@ OP.Global.Locales.Languages["es-MX"] = {
         speed_boost_command_substitutes = "",
 
         nitro_boost_command = "/nitro_boost",
-        nitro_boost_command_help = "Alternar  'nitro boost'.",
+        nitro_boost_command_help = "Alternar 'nitro boost'.",
         nitro_boost_command_parameter_server_id = "ID del servidor",
         nitro_boost_command_parameter_server_id_help = "Si desea alternar el 'nitro boost' para otra persona, inserte su ID de servidor aquí.",
         nitro_boost_command_substitutes = "",
@@ -972,7 +972,7 @@ OP.Global.Locales.Languages["es-MX"] = {
         set_item_name_override_command = "/set_item_name_override_command",
         set_item_name_override_command_help = "Establece o elimina la anulación del nombre del elemento del elemento especificado.",
         set_item_name_override_command_parameter_slot = "slot",
-        set_item_name_override_command_parameter_slot_help = "El número de ranura del item  cuyo nombre desea anular.",
+        set_item_name_override_command_parameter_slot_help = "El número de ranura del item cuyo nombre desea anular.",
         set_item_name_override_command_parameter_item_name = "item name",
         set_item_name_override_command_parameter_item_name_help = "La anulación del nombre del item que desea establecer (Dejar vacío para eliminar).",
         set_item_name_override_command_substitutes = "/set_name_override, /name_override, /set_item_name_override_command",
@@ -1857,7 +1857,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 
         -- vehicles/keys
         give_key_command = "/dar_llaves",
-        givekey_command_help = "Entregue la llave del vehículo a una persona cercana.",     
+        givekey_command_help = "Entregue la llave del vehículo a una persona cercana.",
         give_key_command_parameter_server_id = "id del servidor",
         give_key_command_parameter_server_id_help = "El ID del servidor del jugador al que le gustaría dar la clave. Puede dejarlo en blanco (o en 0) para dárselo a la persona más cercana.",
         give_key_command_parameter_plate_number = "número de placa",
@@ -1906,7 +1906,7 @@ OP.Global.Locales.Languages["es-MX"] = {
         flip_command_substitutes = "/flip",
 
         door_command = "/puerta",
-        door_command_help = "Alternar la puerta de un vehículo.",       
+        door_command_help = "Alternar la puerta de un vehículo.",
         door_command_parameter_door_id = "id puerta (1-6)",
         door_command_parameter_door_id_help = "¿Qué puerta del vehículo le gustaría abrir? Este parámetro se sobrescribe si es un pasajero. También puede usar este comando fuera de un vehículo.",
         door_command_substitutes = "/door",
@@ -1928,11 +1928,11 @@ OP.Global.Locales.Languages["es-MX"] = {
         seat_command_substitutes = "",
 
         engine_command = "/motor",
-        engine_command_help = "Alternar el motor de un vehículo.",      
+        engine_command_help = "Alternar el motor de un vehículo.",
         engine_command_substitutes = "/m",
 
         mileage_command = "/kilometraje",
-        mileage_command_help = "Verifique el kilometraje de un vehículo.",      
+        mileage_command_help = "Verifique el kilometraje de un vehículo.",
         mileage_command_substitutes = "",
 
         manual_toggle_command = "/carro_manual",
@@ -1961,7 +1961,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 
         -- weapons/recoil
         crosshair_command = "/mira",
-        crosshair_command_help = "Alternar el punto de mira.",      
+        crosshair_command_help = "Alternar el punto de mira.",
         crosshair_command_substitutes = "/punto",
 
         aim_down_sight_command = "/apuntar_primera_persona",
@@ -2121,7 +2121,7 @@ OP.Global.Locales.Languages["es-MX"] = {
         close_menu = "Cerrar menu",
         spawned_vehicle = "Vehiculo Generado.",
         spawner_on_timeout = "El generador de vehículos está en tiempo de espera. Inténtalo de nuevo.",
-        spawn_area_not_clear = "El area de generacion esta ocupada.",
+        spawn_area_not_clear = "El area de spawn esta ocupada.",
         return_button = "Regresar",
     },
 
@@ -2210,7 +2210,7 @@ OP.Global.Locales.Languages["es-MX"] = {
         only_available_in_the_casino = "Solo puedes hacer esto mientras estas dentro del casino.",
         casino_blip = "Casino"
     },
-    
+
     cayo_perico_world = {
         keep_flying_in_direction_se = "Sigue volando hacia el sudeste para llegar a Cayo Perico.\n(${distanceToTeleport}m left)",
         keep_flying_in_direction_nw = "Sigue volando hacia el noroeste para llegar a Los Santos.\n(${distanceToTeleport}m left)",
@@ -2396,7 +2396,7 @@ OP.Global.Locales.Languages["es-MX"] = {
         jewelry_store_closed = "La Joyeria se encuentra cerrada. Vuelva despues.",
         bank_closed = "El Banco se encuentra cerrado. Vuelva despues.",
         store_closed = "La Tienda se encuentra cerrada. Vuelva despues.",
-        failed_to_sync_doors = "No se pudieron sincronizar las puertas. Algo  probablemente este corrupto. Inténtalo de nuevo.",
+        failed_to_sync_doors = "No se pudieron sincronizar las puertas. Algo probablemente este corrupto. Inténtalo de nuevo.",
         saved_doors_to_file = "Se guardo `${amount}` puertas a un archivo en el servidor.",
         no_nearby_doors = "No hay puertas cercanas para guardar."
     },
@@ -2537,22 +2537,22 @@ OP.Global.Locales.Languages["es-MX"] = {
         fib_badge_details = "FIB | ${firstName} ${lastName} | Posición: ${positionName}",
         swat_badge = "Placa de SWAT",
         swat_badge_details = "SWAT | ${firstName} ${lastName} | Posición: ${positionName}",
-        management_badge = "Placa de Gerencia",
-        management_badge_details = "Gerencia | ${firstName} ${lastName} | Posición: ${positionName}",
+        management_badge = "Placa de Administracion",
+        management_badge_details = "Administracion | ${firstName} ${lastName} | Posición: ${positionName}",
 
         badge_type_sasp = "Policía Estatal de San Andrés",
         badge_type_bcso = "Oficina del Sheriff del Condado de Blaine",
         badge_type_iaa = "Agencia de Asuntos Internos",
         badge_type_fib = "Oficina Federal de Investigaciones",
         badge_type_swat = "armas y tacticas especiales",
-        badge_type_management = "Gerencia de SASP",
+        badge_type_management = "Administracion de SASP",
 
         badge_type_short_sasp = "SASP",
         badge_type_short_bcso = "BCSO",
         badge_type_short_iaa = "IAA",
         badge_type_short_fib = "FIB",
         badge_type_short_swat = "SWAT",
-        badge_type_short_management = "Gerencia"
+        badge_type_short_management = "Administracion"
     },
 
     injuries = {
@@ -2590,7 +2590,7 @@ OP.Global.Locales.Languages["es-MX"] = {
         total_interiors = "Interiores Totales: ${totalInteriors} (${totalInteriorPortals} portales totales).",
         total_unloaded_interiors = "Total de interiores descargados: ${totalUnloadedInteriors} (${totalUnloadedInteriorPortals} total portals)."
     },
-        
+
     inventory = {
         access_trunk = "Muevete aqui para acceder a la cajuela",
 
@@ -2708,15 +2708,15 @@ OP.Global.Locales.Languages["es-MX"] = {
         fib_badge_description = "Una placa para los agentes de la Oficina Federal de Investigaciones.",
         swat_badge = "Placa de SWAT",
         swat_badge_description = "Una placa para los oficiales del departamento de Armas y Tácticas Especiales.",
-        management_badge = "Placa de Gerencia",
-        management_badge_description = "Una placa para los agentes de la división de gerencia de SASP.",
+        management_badge = "Placa de Administracion",
+        management_badge_description = "Una placa para los agentes de la división de administracion de SASP.",
 
         radio_chop_shop = "Radio Chop Shop",
         radio_chop_shop_description = "Se utiliza para recibir información sobre vehículos 'calientes' de personas inexistentes que operan la tienda de chop.",
 
         binoculars = "Binoculares",
         binoculars_description = "Un artículo que todos los acosadores de Los Santos deben tener!",
-        photo_camera = "Cámara fotográfica", 
+        photo_camera = "Cámara fotográfica",
         photo_camera_description = "Nikon e Igna desarrollaron la última cámara profesional del mercado. Con su lente avanzada (70-300 mm f / 4.5-5.6E), puede capturar incluso los detalles más finos, incluso las cosas pequeñas en el suelo.",
 
         handcuffs = "Esposas",
@@ -3648,7 +3648,7 @@ OP.Global.Locales.Languages["es-MX"] = {
         hatch_waiting = "ESPERANDO",
 
         about_advent_calendar_title = "Acerca del calendario de adviento",
-        
+
         -- NOTE: this is the most aids shit ever, please ignore the HTML stuff in here
         about_advent_calendar_text = [[
             The advent calendar is a holiday feature meant to bring some more joy to the players of ${communityName} throughout the month of December!
@@ -3892,7 +3892,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 
         radio_debug_failed = "No se pudo alternar la depuración de radio.",
         radio_debug_off = "Desactivó con éxito la depuración de radio.",
-        radio_debug_on = "Activó  con éxito la depuración de radio.",
+        radio_debug_on = "Activó con éxito la depuración de radio.",
 
         radio_debug_no_permissions = "Se intentó alternar la depuración de radio sin el permiso adecuado."
     },
@@ -4091,7 +4091,7 @@ OP.Global.Locales.Languages["es-MX"] = {
         spy_ui_exit = "Presione ESC para salir del micrófono espia",
         spy_ui_connecting = "Conectando al micrófono espia (#${deviceId})",
         spy_ui_connection_failed = "Error al conectar con el micrófono espia (#${deviceId})",
-        spy_ui_awaiting_data = "Esperando datos ...",
+        spy_ui_awaiting_data = "Esperando datos...",
         spy_ui_data_failed = "Error de datos"
     },
 
@@ -4360,7 +4360,7 @@ OP.Global.Locales.Languages["es-MX"] = {
     },
 
     wizard = {
-        ragdoll_missing_permissions = "Attempted to make a player ragdoll without proper permissions.",
+        ragdoll_missing_permissions = "Se intentó hacerle ragdoll a un jugador sin los permisos adecuados.",
 
         ragdoll_failed = "Failed to make player ragdoll.",
         ragdoll_success = "Successfully made ${consoleName} ragdoll."
@@ -4370,7 +4370,7 @@ OP.Global.Locales.Languages["es-MX"] = {
         yoga_blip = "Yoga",
         yoga_mat_use = "[${InteractionKey}] Tapete de yoga",
         yoga_mat = "Tapete para yoga",
-        press_to_stop_yoga = "Presiona ~INPUT_CONTEXT~ para dejar de hacer yoga."   
+        press_to_stop_yoga = "Presiona ~INPUT_CONTEXT~ para dejar de hacer yoga."
     },
 
     zombies = {
@@ -4487,9 +4487,9 @@ OP.Global.Locales.Languages["es-MX"] = {
     },
 
     police = {
-        aim_assist_enabled = "Your aim will now be bestowed with great abilities.",
-        aim_assist_disabled = "You will now aim worse than criminals/scumbags once again. It is recommended to re-enable the aim assist immediately.",
-        you_are_not_police = "This feature is reserved for police, not criminals/scumbags.",
+        aim_assist_enabled = "Tu nivel de punteria ahora será otorgado con grandes habilidades.",
+        aim_assist_disabled = "Ahora apuntarás peor que los criminales/basura una vez más. Se recomienda volver a habilitar la asistencia de puntería inmediatamente.",
+        you_are_not_police = "Esta función está reservada para la policía, no para los criminales/basura.",
 
         undercover_enabled = "Ahora estas encubierto.",
         undercover_disabled = "Ya no estás encubierto."
@@ -4540,12 +4540,12 @@ OP.Global.Locales.Languages["es-MX"] = {
         vehicle_list = "Lista de vehiculos",
         close_menu = "Cerrar Menu",
         return_button = "Regresar",
-        park_vehicle = "Aarcar Vehiculo",
+        park_vehicle = "Aparcar Vehiculo",
         parked_vehicle = "Vehiculo Aparcado.",
         no_vehicle_to_park = "No hay vehiculos para aparcar.",
         spawned_vehicle = "Vehiculo Generado.",
-        spawner_on_timeout = "The vehicle spawner is on a timeout. Please try again.",
-        spawn_area_not_clear = "The spawn area is not clear."
+        spawner_on_timeout = "El spawn de vehículos está en un tiempo de espera. Inténtalo de nuevo.",
+        spawn_area_not_clear = "El area de spawn de vehiculos no esta limpia."
     },
 
     -- menus/*
@@ -4602,7 +4602,7 @@ OP.Global.Locales.Languages["es-MX"] = {
         vehicle_in_garage = "Si vehiculo se encuentra en ${garageName}.",
         vehicle_withdrawn = "Su vehiculo ha sido retirado.",
         error_withdrawing = "Ocurrio un error al intentar retirar su vehiculo.",
-        vehicle_in_the_way = "Hay un vehiculo bloqueando el punto de generacion.",
+        vehicle_in_the_way = "Hay un vehiculo bloqueando el punto de spawn.",
         vehicle_is_out = "Tu vehiculo ya esta fuera.",
         vehicle_stored = "Su vehiculo se ah almacenado.",
         error_storing = "Un error sucedio al momento de almacenar el vehiculo.",
