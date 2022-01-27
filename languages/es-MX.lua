@@ -2121,11 +2121,11 @@ OP.Global.Locales.Languages["es-MX"] = {
 		close_menu = "Cerrar menu",
 		spawned_vehicle = "Vehiculo Generado.",
 		spawner_on_timeout = "El generador de vehículos está en tiempo de espera. Inténtalo de nuevo.",
-		spawn_area_not_clear = "El area de generacion esta ocupada.",
+		spawn_area_not_clear = "El area de spawn esta ocupada.",
 		return_button = "Regresar",
 	},
 
-			alcohol = {
+	alcohol = {
 		now_sober = "Ahora estás sobrio de nuevo.",
 		drunk_state_1 = "estas un poco borracho.",
 		drunk_state_2 = "Estas borracho.",
@@ -4602,7 +4602,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		vehicle_in_garage = "Si vehiculo se encuentra en ${garageName}.",
 		vehicle_withdrawn = "Su vehiculo ha sido retirado.",
 		error_withdrawing = "Ocurrio un error al intentar retirar su vehiculo.",
-		vehicle_in_the_way = "Hay un vehiculo bloqueando el punto de generacion.",
+		vehicle_in_the_way = "Hay un vehiculo bloqueando el punto de spawn.",
 		vehicle_is_out = "Tu vehiculo ya esta fuera.",
 		vehicle_stored = "Su vehiculo se ah almacenado.",
 		error_storing = "Un error sucedio al momento de almacenar el vehiculo.",
