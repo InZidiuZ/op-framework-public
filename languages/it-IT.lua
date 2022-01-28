@@ -194,7 +194,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		wiped_entities = "Entità wipate",
 		wipe_entities_logs_title = "Entità wipate",
 		wipe_entities_logs_details = "${consoleName} problemi con un entità con le seguenti configurazioni: distance = `${distance}`, ignoreLocalEntities = `${ignoreLocalEntities}`, modelName = `${modelName}`",
-																																																																					   
+ 
 		wipe_awaiting_confirmation = "C'è un wipe inattesa di conferma. Fai `/wipe_confirm` per confermare o aspoetta che scada tra 60 secondi.\n\nI parametri scelti sono:\n- distance: `${distance}`\n- ignoreLocalEntities: `${ignoreLocalEntities}`\n- modelName: `${modelName}`",
 		a_wipe_is_already_awaiting_confirmation = "C'è un wipe inattesa di conferma. Fai `/wipe_confirm` per confermare, oppure attendi ${expiresIn} secondi.",
 		cancelled_wipe = "Il wipe è stato cancellato.",
@@ -393,7 +393,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		disable_collisions_on = "Le tuo collisioni sono ora abilitate.",
 		disable_collisions_off = "Le tue collisioni sono ora disabilitate.",
-																				  
+
 		disabled_recoil_on = "Rinculo disattivato.",
 		disabled_recoil_off = "Rinculo attivato.",
 														 
@@ -463,7 +463,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 							 
 		weapon_attachment_missing_perms = "Tentativo di associare accessorio all' arma senza permessi.",
 		weapon_tint_missing_perms = "Tentativo di cambiare colore all' arma senza permessi.",
-								  
+
 		no_attachments = "Quest' arma non ha accessori.",
 		available_attachments = "Accessori disponibile",
 		current_attachments = "Accessorio Attuale",
@@ -1133,7 +1133,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		culling_debug_command = "/culling_debug",
 		culling_debug_command_help = "Attiva il debug dei crolli.",
 		culling_debug_command_substitutes = "",
-			   
+ 
 		-- game/dashcam
 		unit_id_command = "/unit_id",
 		unit_id_command_help = "Imposta la tua Unit ID.",
@@ -1588,7 +1588,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		frequency_command_help = "Imposta la frequenza radio.",
 		frequency_command_parameter_frequency = "frequenza",
 		frequency_command_parameter_frequency_help = "La frequenza che vuoi impostare",
-										  
 
 		random_frequency_command = "/random_frequency",
 		random_frequency_command_help = "Imposta una frequenza radio standard.",
@@ -1806,7 +1805,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		toggle_duty_status_command_help = "Vai/Esci dal servizio.",
 		toggle_duty_status_command_substitutes = "/duty_status, /duty",
 
-		-- jobs/police
+	-- jobs/police
 		aim_assist_command = "/aim_assist",
 		aim_assist_command_help = "Attiva e disattiva le aim per i PD. (In memoria di Nathan Spencer.)",
 		aim_assist_command_substitutes = "",
@@ -1964,7 +1963,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		crosshair_command_substitutes = "",
 
 		aim_down_sight_command = "/aim_down_sight",
-		aim_down_sight_command_help = "Punta automaticamente verso il basso quando fai clic con il pulsante destro del mouse anche se sei in terza persona.",																   
+		aim_down_sight_command_help = "Punta automaticamente verso il basso quando fai clic con il pulsante destro del mouse anche se sei in terza persona.",																
 		aim_down_sight_command_substitutes = "/ads",
 
 		-- weapons/weapons
@@ -2301,7 +2300,7 @@ core = {
 		network_id = "Network Id",
 		owned_by_us = "Di nostra proprietà",
 		owned_by = "Posseduto da",
-																		  
+																		
 		not_networked = "Non in rete",
 		model_hash = "Model Hash",
 		model_name = "Nome Modello",
@@ -2644,7 +2643,7 @@ core = {
 		store_tax_percentage = "${tax}%",
 
 		missing_job = "Non hai il lavoro richiesto per usare questo inventario.",
-					   
+					 
 		search = "Cerca",
 		amount = "Quantità",
 		use = "Usa",
@@ -3427,7 +3426,7 @@ core = {
 		spin_lucky_wheel_for_free = "Premi ~INPUT_CONTEXT~ per girare la Ruota della fortuna. Hai 1 tentativo gratuito! ",
 		unable_to_spin_lucky_wheel = "Hai gia' girato la Ruota della fortuna oggi. Torna piu' tardi!",
 		lucky_wheel_is_occupied = "La Ruota della fortuna e' occupata. Attendi.",
-																				  
+																				
 		not_enough_balance_to_spin = "Non hai abbastanza soldi per girare la ruota. Il costo e' di $${cost}.",
 		logs_lucky_wheel_reward_title = "Premio Ruota della fortuna",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} ha girato la ruota e ha vinto un veicolo.",
@@ -3883,7 +3882,7 @@ core = {
 		radio_removed = "Hai perso la radio.",
 		no_radio = "Non hai una radio.",
 		unable_to_use_radio_while_cuffed = "Non puoi usare la radio da ammanettato.",
-																				   
+
 		frequency_set_to = "La frequenza e' ${frequency}.",
 		frequency_already_set_to = "La frequenza e' gia' ${frequency}.",
 		radio_volume_same = "Il volume della radio e' gia' `${radioVolume}`.",
@@ -4107,7 +4106,7 @@ core = {
 		status_reset_failed = "Nessun user con id `${serverId}` trovato.",
 		reset_status_not_staff = "Tentativo di resettare lo status di un player senza permessi.",
 		status_reset_for_all = "Resettato status per tutti.",
-																	 												   
+	
 		failed_to_set_body_armor_level = "Fallita esecuzione del comando `/set_body_armor`.",
 		set_body_armor_level_player = "Settato il livello di armatura per ${consoleName} a `${bodyArmorLevel}`.",
 		set_body_armor_level_everyone = "Settato il livello di armatura di tutti a `${bodyArmorLevel}`.",
@@ -4137,7 +4136,7 @@ core = {
 		invalid_minute = "Il minuto `${minute}` non e' valido. Il valore dovrebbe essere tra 0 e 59.",
 		minute_changed = "I minuti sono stati impostati a `${minute}`.",
 		set_minute_not_staff = "Tentativo di cambiare i minuti senza permessi.",
-																		   
+	
 		missing_weather = "Nessun meteo fornito.",
 		invalid_weather = "Il meteo `${weatherName}` non e' valido. Nomi meteo validi sono CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT and BLIZZARD.",
 		weather_changed = "Il meteo e' stato settato a `${weatherName}`.",
@@ -4387,7 +4386,7 @@ core = {
 	},
 
 	-- global/*
-		   
+
 	explosions = {
 		invalid_explosion_type = "Tipo di esplosione `${explosionType}` non e' valido.",
 		invalid_camera_shake = "Movimento di camera `${cameraShake}` non e' valido .",
