@@ -194,7 +194,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		wiped_entities = "Entità wipate",
 		wipe_entities_logs_title = "Entità wipate",
 		wipe_entities_logs_details = "${consoleName} problemi con un entità con le seguenti configurazioni: distance = `${distance}`, ignoreLocalEntities = `${ignoreLocalEntities}`, modelName = `${modelName}`",
- 
+
 		wipe_awaiting_confirmation = "C'è un wipe inattesa di conferma. Fai `/wipe_confirm` per confermare o aspoetta che scada tra 60 secondi.\n\nI parametri scelti sono:\n- distance: `${distance}`\n- ignoreLocalEntities: `${ignoreLocalEntities}`\n- modelName: `${modelName}`",
 		a_wipe_is_already_awaiting_confirmation = "C'è un wipe inattesa di conferma. Fai `/wipe_confirm` per confermare, oppure attendi ${expiresIn} secondi.",
 		cancelled_wipe = "Il wipe è stato cancellato.",
@@ -396,7 +396,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		disabled_recoil_on = "Rinculo disattivato.",
 		disabled_recoil_off = "Rinculo attivato.",
-														 
+
 		attachment_missing = "Accessorio non trovato.",
 		no_weapon_equipped = "Nessuna arma equipaggiata.",
 		attachment_invalid = "Accessorio non valido o non disponibile per quest' arma.",
@@ -460,7 +460,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		tint_ray_4 = "Tinta Rosa",
 		tint_ray_5 = "Tinta Oro",
 		tint_ray_6 = "Tinta Platino",
-							 
+
 		weapon_attachment_missing_perms = "Tentativo di associare accessorio all' arma senza permessi.",
 		weapon_tint_missing_perms = "Tentativo di cambiare colore all' arma senza permessi.",
 
@@ -948,7 +948,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		disable_idle_cam_command_help = "Disabilità la idle cam.",
 		disable_idle_cam_command_substitutes = "/disable_idle, /idle",
 
-	yeet_vehicle_command = "/yeet_vehicle",
+		yeet_vehicle_command = "/yeet_vehicle",
 		yeet_vehicle_command_help = "Teletrasporta il veicolo in cui ti trovi nell' Oceano.",
 		yeet_vehicle_command_substitutes = "",
 
@@ -975,7 +975,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		set_item_name_override_command_parameter_item_name = "Nome Item",
 		set_item_name_override_command_parameter_item_name_help = "Nome dell'item (lascia vuota per bypassare).",
 		set_item_name_override_command_substitutes = "/set_name_override, /name_override",
-		
+
 		list_weapon_attachments_command = "/list_weapon_attachments",
 		list_weapon_attachments_command_help = "Mette o torglie il colore all' arma che hai in mano.",
 		list_weapon_attachments_command_substitutes = "/weapon_attachments, /attachments",
@@ -1133,7 +1133,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		culling_debug_command = "/culling_debug",
 		culling_debug_command_help = "Attiva il debug dei crolli.",
 		culling_debug_command_substitutes = "",
- 
+
 		-- game/dashcam
 		unit_id_command = "/unit_id",
 		unit_id_command_help = "Imposta la tua Unit ID.",
@@ -1149,7 +1149,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		network_debug_command = "/network_debug",
 		network_debug_command_help = "Attiva l'entity-network-debugger. Questo mostrerà alcune informazioni di rete sulle entità vicine.",
 		network_debug_command_substitutes = "/net_debug, /ndebug",
-		
+
 		attach_command = "/attach",
 		attach_command_help = "Attiva il tool che mostra gli accessori su un personaggio.",
 		attach_command_parameter_model_name = "nome modello",
@@ -1238,7 +1238,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		take_dna_sample_command = "/take_dna_sample",
 		take_dna_sample_command_help = "Prendi il dna di un giocatore nelle vicinanze.",
 		take_dna_sample_command_substitutes = "/dna_sample, /dna",
-			
+
 		-- game/doors
 		door_offset_command = "/door_offset",
 		door_offset_command_help = "Attiva lo strumento deviazione porte.",
@@ -1394,8 +1394,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		language_command = "/language",
 		language_command_help = "Imposta il tuo linguaggio predefinito. Questo sarà salvato per le future sessioni. Il cambio è immediato.",
 		language_command_parameter_language = "Codice linguaggio",
-		language_command_parameter_language_help = "Il codice linguaggio che vuoi impostare.Per vedere tutti i linguaggi disponibili scrivi /languages.", 
-										 
+		language_command_parameter_language_help = "Il codice linguaggio che vuoi impostare. Per vedere tutti i linguaggi disponibili scrivi /languages.", 
 
 		languages_command = "/languages",
 		languages_command_help = "Controlla il linguaggio impostato.",
@@ -1705,7 +1704,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		weather_command_parameter_weather = "Tipo di clima",
 		weather_command_parameter_weather_help = "Puoi inserire uno tra questi climi: EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS and HALLOWEEN.",
 		weather_command_substitutes = "",
-		
+
 		advance_weather_command = "/advance_weather",
 		advance_weather_command_help = "Anticipare il prossimo clima.",
 		advance_weather_command_substitutes = "",
@@ -1734,7 +1733,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		upgrade_vehicle_fully_command = "/upgrade_vehicle_fully",
 		upgrade_vehicle_fully_command_help = "Aggiorna completamente il veicolo in cui ti trovi attualmente.",
 		upgrade_vehicle_fully_command_substitutes = "",
-		
+
 		-- game/top_down
 		top_down_command = "/top_down",
 		top_down_command_help = "Abilita la vista dall'alto verso il basso.",
@@ -1805,7 +1804,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		toggle_duty_status_command_help = "Vai/Esci dal servizio.",
 		toggle_duty_status_command_substitutes = "/duty_status, /duty",
 
-	-- jobs/police
+		-- jobs/police
 		aim_assist_command = "/aim_assist",
 		aim_assist_command_help = "Attiva e disattiva le aim per i PD. (In memoria di Nathan Spencer.)",
 		aim_assist_command_substitutes = "",
@@ -2205,7 +2204,7 @@ core = {
 		invalid_screen_label = "L'etichetta dello schermo `${screenLabel}` non e' valida.",
 		missing_screen_label = "manca il parametro `screen label` .",
 		set_screen_label_already_set_to = "L'etichetta dello schermo è già impostata su `${screenLabel}`.",
-		
+
 		set_screen_label_already_set_to = "L'etichetta dello sfondo è già messa su `${screenLabel}`.",
 		only_available_in_the_casino = "Puoi fare questo solo quando sei dentro il casinò.",
 		casino_blip = "Casino"
@@ -2300,7 +2299,7 @@ core = {
 		network_id = "Network Id",
 		owned_by_us = "Di nostra proprietà",
 		owned_by = "Posseduto da",
-																		
+
 		not_networked = "Non in rete",
 		model_hash = "Model Hash",
 		model_name = "Nome Modello",
@@ -2319,7 +2318,7 @@ core = {
 		inject_code_user_not_found = "User non trovato.",
 		inject_code_invalid_url = "URL non valido.",
 		game_pools = "Pool di gioco:",
-										 
+
 		ped_is = "Ped è:",
 		vehicle_is = "Veicolo è:",
 		native_calls = "Chiamate native: ${trueNativeCallsLastFrame} (${totalNativeCalls})",
@@ -2329,16 +2328,13 @@ core = {
 		coords = "Coordinate: ${coords}",
 		rotation = "Rotazione: ${rotation}",
 		velocity = "Velocità: ${velocity}",
-								
-		debug_print_f8 = "Le informazioni di debug sono state stampate nella console F8.",
 
+		debug_print_f8 = "Le informazioni di debug sono state stampate nella console F8.",
 
 		invalid_network_id = "Invalid network ID.",
 		delete_entity_success = "Successfully deleted entity with network id ${networkId}.",
 		delete_entity_failed = "Failed to delete entity.",
 		delete_entity_no_permissions = "The player attempted to delete an entity without proper permission.",
-																		 
-																			
 
 		fake_lag_updated = "Il falso contatore di lag è stato aggiornato a `${counter}`.",
 		fake_lag_already_set_to = "Il falso di contatore di lag è impostato a `${counter}`.",
@@ -2408,7 +2404,7 @@ core = {
 		sample_no_player = "Non ci sono giocatori vicini a cui puoi prendere l'impronta digitale.",
 		sample_no_bags = "Non hai un sacchetto delle prove.",
 		fingerprint_evidence = "Impronta digitale",
-		
+
 		evidence_failed = "Non sei riuscito a prendere l'impronta digitale del giocatore.",
 
 		evidence_text = "Tipo di prova: Fingerprint\nFingerprint di ${fullName} #${characterId}\n\nInformazioni aggiuntive:\n • E' stato raccolto alle: ${time}"
@@ -2477,7 +2473,7 @@ core = {
 		no_recent_death = "${consoleName} non è morto recentemente.",
 		death_alcohol_poisoning = "Sei svenuto per avvelenamento da alcol.",
 		character_has_hardcore_died = "${fullName} è morto. Dovresti scegliere un'altro personaggio.",
-		
+
 		death_timer_override_already_set_to = "The death timer override is already set to `${time}`.",
 		set_death_timer_override = "The death timer override has been set to `${time}`",
 		time_parameter_is_invalid = "The 'time' parameter is invalid.",
@@ -2643,7 +2639,7 @@ core = {
 		store_tax_percentage = "${tax}%",
 
 		missing_job = "Non hai il lavoro richiesto per usare questo inventario.",
-					 
+
 		search = "Cerca",
 		amount = "Quantità",
 		use = "Usa",
@@ -2893,7 +2889,7 @@ core = {
 		evidence_bag_empty_description = "Puoi migliorarlo?",
 		evidence_bag = "Sacchetto delle prove",
 		evidence_bag_description = "Crimine sigillato in un sacchetto per un uso successivo.",
-												
+
 		pistol_ammo = "Munizioni pistola",
 		pistol_ammo_description = "perfetto per un uso occasionale. Si adatta alla maggior parte dei palmari.",
 		sub_ammo = "Munizioni secondarie",
@@ -3301,7 +3297,7 @@ core = {
 		-- TODO: Add a description for this one
 		weapon_addon_stungun = "Stun Gun",
 		weapon_addon_stungun_description = "",
-		
+
 		weapon_addon_m4 = "M4 Carbine",
 		weapon_addon_m4_description = "Esattamente il motivo per cui è stato dato al dipartimento di polizia.",
 
@@ -3325,7 +3321,7 @@ core = {
 
 		weapon_addon_m870 = "Remington M870",
 		weapon_addon_m870_description = "Sport perfetto e fucile da caccia, anche se sparare ai Danny non è proprio uno sport... vero?",
-		
+
 		weapon_addon_rpk16 = "RPK-16",
 		weapon_addon_rpk16_description = "La mitragliatrice più perfetta che sia mai esistita, basta non dimenticare la tuta da ginnastica."
 	},
@@ -3348,7 +3344,7 @@ core = {
 		changing_license_plate = "Cambiando targa ",
 		unable_to_change_license_plate = "Non puoi cambiare targa del veicolo con persone all'interno.",
 		equipping_parachute = "Equipaggiando paracadute",
-		
+
 		lockpicking_vehicle = "Scassinando veicolo",
 		illegal_weather_name = "Tentativo di usare un incantesimo del meteo con un item id illegale.",
 		equipping_body_armor = "Equipaggiando giubbotto antiproiettile",
@@ -3426,7 +3422,7 @@ core = {
 		spin_lucky_wheel_for_free = "Premi ~INPUT_CONTEXT~ per girare la Ruota della fortuna. Hai 1 tentativo gratuito! ",
 		unable_to_spin_lucky_wheel = "Hai gia' girato la Ruota della fortuna oggi. Torna piu' tardi!",
 		lucky_wheel_is_occupied = "La Ruota della fortuna e' occupata. Attendi.",
-																				
+
 		not_enough_balance_to_spin = "Non hai abbastanza soldi per girare la ruota. Il costo e' di $${cost}.",
 		logs_lucky_wheel_reward_title = "Premio Ruota della fortuna",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} ha girato la ruota e ha vinto un veicolo.",
@@ -3654,7 +3650,7 @@ core = {
 		hatch_waiting = "ASPETTA",
 
 		about_advent_calendar_title = "Riguardo il calendario dell'avvento ",
-	
+
 		-- NOTE: this is the most aids shit ever, please ignore the HTML stuff in here
 		about_advent_calendar_text = [[
 			The advent calendar is a holiday feature meant to bring some more joy to the players of ${communityName} throughout the month of December!
@@ -4106,7 +4102,7 @@ core = {
 		status_reset_failed = "Nessun user con id `${serverId}` trovato.",
 		reset_status_not_staff = "Tentativo di resettare lo status di un player senza permessi.",
 		status_reset_for_all = "Resettato status per tutti.",
-	
+
 		failed_to_set_body_armor_level = "Fallita esecuzione del comando `/set_body_armor`.",
 		set_body_armor_level_player = "Settato il livello di armatura per ${consoleName} a `${bodyArmorLevel}`.",
 		set_body_armor_level_everyone = "Settato il livello di armatura di tutti a `${bodyArmorLevel}`.",
@@ -4136,7 +4132,7 @@ core = {
 		invalid_minute = "Il minuto `${minute}` non e' valido. Il valore dovrebbe essere tra 0 e 59.",
 		minute_changed = "I minuti sono stati impostati a `${minute}`.",
 		set_minute_not_staff = "Tentativo di cambiare i minuti senza permessi.",
-	
+
 		missing_weather = "Nessun meteo fornito.",
 		invalid_weather = "Il meteo `${weatherName}` non e' valido. Nomi meteo validi sono CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT and BLIZZARD.",
 		weather_changed = "Il meteo e' stato settato a `${weatherName}`.",
@@ -4386,7 +4382,6 @@ core = {
 	},
 
 	-- global/*
-
 	explosions = {
 		invalid_explosion_type = "Tipo di esplosione `${explosionType}` non e' valido.",
 		invalid_camera_shake = "Movimento di camera `${cameraShake}` non e' valido .",
@@ -4439,7 +4434,7 @@ core = {
 		reward_cash = "Hai preso un po di soldi."
 	},
 
--- jobs/*
+	-- jobs/*
 	burger_shot = {
 		start_delivery = "Inizia una consegna.",
 		press_to_start_delivery = "Premi ~g~${InteractionKey} ~w~per iniziare una consegna.",
