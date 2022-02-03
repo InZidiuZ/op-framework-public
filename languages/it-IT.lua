@@ -652,7 +652,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		-- base/admin
 		report_command = "/report",
-		report_command_help = "Rompi i coglioni allo staff.",
+		report_command_help = "Effettua una segnalazione player/bug ad uno staffer.",
 		report_command_parameter_message = "messaggi",
 		report_command_parameter_message_help = "Il messaggio che vorresti mandare.",
 		report_command_substitutes = "",
@@ -664,11 +664,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		announce_command_help = "",
 
 		staff_pm_command = "/staff_pm",
-		staff_pm_command_help = "Rompi i coglioni allo Staff in privato.",
+		staff_pm_command_help = "Scrivi ad uno staffer in privato.",
 		staff_pm_command_parameter_server_id = "server id",
-		staff_pm_command_parameter_server_id_help = "L'ID del poveraccio a cui vuoi rompere i coglioni.",
+		staff_pm_command_parameter_server_id_help = "L'ID dello staffer che ti ha contattato in /report.",
 		staff_pm_command_parameter_message = "messaggio",
-		staff_pm_command_parameter_message_help = "Dicci che cazzo vuoi.",
+		staff_pm_command_parameter_message_help = "Inserisci il messaggio da mandare allo staffer.",
 		staff_pm_command_substitutes = "/staffpm",
 
 		staff_command = "/staff",
@@ -1757,11 +1757,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		-- game/wizard
 		ragdoll_command = "/ragdoll",
-		ragdoll_command_help = "Makes a player ragdoll.",
+		ragdoll_command_help = "Rende un giocatore ragdoll.",
 		ragdoll_command_parameter_server_id = "server id",
-		ragdoll_command_parameter_server_id_help = "Server ID of the player you want to ragdoll.",
-		ragdoll_command_parameter_force = "force",
-		ragdoll_command_parameter_force_help = "Apply a random force to the player after making them ragdoll.",
+		ragdoll_command_parameter_server_id_help = "ID del giocatore che vuoi far diventare ragdoll.",
+		ragdoll_command_parameter_force = "forza",
+		ragdoll_command_parameter_force_help = "Applica una forza casuale al giocatore dopo averlo reso ragdoll.",
 		ragdoll_command_substitutes = "",
 
 		-- global/entities
@@ -2667,19 +2667,19 @@ core = {
 		logs_item_purchased_tax_details = "${consoleName} ha comprato ${purchaseAmount}x `${itemLabel}` a $${purchaseCost} pagando $${taxCost} dovuto a ${salesTaxPercentage}% tasse di vendita.",
 
 		radius_invalid = "Un raggio di `${radius}` non è un valore valido.",
-		wiped_all_ground_inventories = "Wiped ${inventoriesWiped} ground inventories.",
-		wiped_nearby_ground_inventories = "Wiped ${inventoriesWiped} ground inventories within a radius of `${radius}`.",
-		failed_to_wipe_ground_inventories = "Failed to wipe ground inventories.",
-		no_ground_inventories = "There were no ground inventories to wipe.",
-		no_ground_inventories_within_radius = "There were no ground inventories to wipe within a radius of `${radius}`.",
+		wiped_all_ground_inventories = "Wiped ${inventoriesWiped} inventari nel pavimento.",
+		wiped_nearby_ground_inventories = "Wiped ${inventoriesWiped} inventari nel pavimento nel raggio di `${radius}`.",
+		failed_to_wipe_ground_inventories = "Errore nel wipe degli inventari nel pavimento.",
+		no_ground_inventories = "Non c'erano inventari di terra da pulire.",
+		no_ground_inventories_within_radius = "Non c'erano inventari di terra da pulire in un raggio di `${radius}`.",
 
-		wipe_inventories_not_staff = "Player attempted to wipe inventories, but didn't have correct permissions to do so.",
+		wipe_inventories_not_staff = "Il giocatore ha tentato di cancellare gli inventari, ma non aveva i permessi corretti per farlo.",
 
-		logs_wiped_all_ground_inventories_title = "Wiped All Ground Inventories",
-		logs_wiped_all_ground_inventories_details = "${consoleName} wiped all ground inventories.",
+		logs_wiped_all_ground_inventories_title = "Wipati tutti gli inventari di terra",
+		logs_wiped_all_ground_inventories_details = "${consoleName} wipato tutti gli inventari di terra.",
 
-		logs_wiped_nearby_ground_inventories_title = "Wiped Nearby Ground Inventories",
-		logs_wiped_nearby_ground_inventories_details = "${consoleName} wiped all ground inventories within a radius of `${radius}`.",
+		logs_wiped_nearby_ground_inventories_title = "Inventari di terra vicini cancellati",
+		logs_wiped_nearby_ground_inventories_details = "${consoleName} ha cancellato tutti gli inventari di terra in un raggio di `${radius}`.",
 
 		press_use_campfire = "[E] Usa falò",
 		use_campfire = "Usa falò",
@@ -2725,7 +2725,7 @@ core = {
 		handcuffs = "Manette",
 		handcuffs_description = "Per un'esperienza ERP completa.",
 		bolt_cutter = "Tagliabulloni",
-		bolt_cutter_description = "The ERP wasn't as fun as expected...",
+		bolt_cutter_description = "L'ERP non è stato così divertente come ci si aspettava...",
 		drill = "Trapano",
 		drill_description = "Scommetto che molte persone qui intorno avrebbero bisogno di questo... considerando che alcuni sembrano avere qualche vite allentata.",
 		umbrella = "Ombrello",
@@ -2854,7 +2854,7 @@ core = {
 		chip = "Chip",
 		chip_description = "Chip di hacker dall'aspetto fantastico.",
 		decryption_key_red = "Chiave di decrittazione rossa",
-		decryption_key_red_description = "LO SAPEVATE? I mafiosi rossi in realtà sono solo un mucchio di fighe.",
+		decryption_key_red_description = "LO SAPEVATE? i Bloods in realtà sono solo un mucchio di fighe.",
 		decryption_key_green = "Chiave di decrittazione verde",
 		decryption_key_green_description = "LO SAPEVATE? La coca cola originariamente era di colore verde.",
 		decryption_key_blue = "Chiave di decrittazione blu",
@@ -3795,12 +3795,11 @@ core = {
 		roll_message_chat_title = "/roll [${serverId}]",
 		card_message_chat_title = "/card [${serverId}]",
 		description_message_chat_title = "/description [${serverId}]",
-		message_too_long = "The message contains too many characters or lines!"
+		message_too_long = "Il messaggio contiene troppi caratteri o linee!"
 	},
 
 	ped_objects = {
-		illegal_ped_object = "Tentativo di aggiungere un oggetto ped alla lista degli oggetti ped 'ammessi'."
-																							 
+		illegal_ped_object = "Tentativo di aggiungere un oggetto ped alla lista degli oggetti ped 'ammessi'."																				 
 	},
 
 	ped_spawn = {
@@ -3920,7 +3919,7 @@ core = {
 	},
 
 	screenshots = {
-	screenshot_created = "E' stato creato uno screenshot.",
+		screenshot_created = "E' stato creato uno screenshot.",
 		screenshot_failed = "Impossibile ottenenere uno screenshot dal player indicato.",
 		user_not_found_with_server_id = "Impossibile trovare un utente con quell' id.",
 		invalid_lifespan_parameter = "Il parametro di longevita' non e' valido.",
@@ -4453,9 +4452,9 @@ core = {
 	duty = {
 		toggle_duty_status_no_permissions = "Player attempted to toggle on duty status via command without proper permissions.",
 
-		duty_status_on = "Successfully went on duty.",
-		duty_status_off = "Successfully went off duty.",
-		duty_status_failed = "Failed to toggle on duty status."
+		duty_status_on = "Sei entrato in servizio.",
+		duty_status_off = "Sei uscito dal servizio.",
+		duty_status_failed = "Impossibile andare in servizio."
 	},
 
 	job_center = {
@@ -4626,10 +4625,10 @@ core = {
 		retrieved_vehicle_logs_title = "Veicolo recuperato",
 		retrieved_vehicle_logs_details = "${consoleName} recuperato veicolo con targa `${plate}` per $250.",
 
-		vehicle_weight = "Weight: ${weight}",
-		last_garage_letter = "Last - Garage ${letter}",
-		last_garage_impound = "Last - Impound Lot",
-		no_last_garage_letter = "No Last Garage",
+		vehicle_weight = "Peso: ${weight}",
+		last_garage_letter = "Ultimo - Garage ${letter}",
+		last_garage_impound = "Ultimo - Impound Lot",
+		no_last_garage_letter = "Nessun ultimo garage",
 
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "Attivato debug garage.",
@@ -4761,13 +4760,13 @@ core = {
 		pick_up_fire_extinguisher = "Tieni premuto ~INPUT_CONTEXT~ per prendere l'estintore.",
 		press_to_drop_fire_extinguisher = "Premi ~INPUT_FRONTEND_RRIGHT~ per lasciare a terra l'estintore.",
 		illegal_fire_extinguisher_model = "Provato ad eliminare un estintore su tutti i client con un modello che non era un estintore.",
-		illegal_fire_extinguisher_model = "Attempted to delete a fire extinguisher on all clients with a model that wasn't a fire extinguisher.",
+		illegal_fire_extinguisher_model = "Tentativo di eliminare un estintore su tutti i clienti con un modello che non era un estintore.",
 
 		no_weapon_equipped = "Nessun arma equipaggiata.",
 		no_ammo = "Nessuna munizioni per quest'arma.",
-		infinite_ammo = "You have infinite ammo for this weapon.",
-		ammo_count = "You have ${clips} full clips (${total} rounds in total).",
-		ammo_count_loose = "You have ${clips} full clips and 1 clip with ${loose} rounds (${total} rounds in total)."
+		infinite_ammo = "Hai munizioni infinite per quest'arma.",
+		ammo_count = "Tu hai ${clips} caricatori pieni (${total} rounds in total).",
+		ammo_count_loose = "Tu hai ${clips} caricatori pieni e 1 caricatore con ${loose} rounds (${total} rounds in totale)."
 	},
 
 	-- a shared "alpha" locale category uwu - also know, some features such as the ${InteractionKey} will be missing here, so don't try to use it
@@ -4897,7 +4896,7 @@ core = {
 		colours = "Colori",
 		press_to_access_clotheshop = "Premi ~INPUT_CONTEXT~ per personalizzare il personaggio.",
 		changing_only_clotheshop = "Fai /outfit per cambiare il tuo outfit.",
-		clothing_store = "Clothing Store",
+		clothing_store = "Negozio di vestiti",
 		finish_creation = "Premi ~g~G ~w~per completare la personalizzazione del tuo personaggio. Non puoi annullare questa azione.",
 		press_to_customize = "Premi ~INPUT_CONTEXT~ per personalizzare il personaggio.",
 		barbershop = "Barbiere",
@@ -4919,9 +4918,9 @@ core = {
 		evidence_casings = "Gli involucri sono tornati al numero seriale ${serialNumber} che era tenuto da ${buyerName} (${buyerCid}) al momento dell'uso.",
 		evidence_bullets = "I danni del proiettile sembrano essere stati creati da ${bulletLabel}.",
 		evidence_car_dna = "Il DNA e' stato preso dal veicolo con targa ${plateNumber} e tornato indietro a ${DNAOwnerName} (${DNAOwner}).",
-		evidence_dna = "DNA collected from ${fullName} #${characterId}.",
+		evidence_dna = "DNA preso da ${fullName} #${characterId}.",
 		evidence_fingerprint = "Fingerprint di ${fullName} #${characterId}.",
-		evidence_not_processed = "This evidence bag has not been processed yet.",
+		evidence_not_processed = "Questa borsa delle prove non è stata ancora esaminata.",
 		additional_information = "Informazioni aggiuntive:",
 		picked_up_at_location = "Preso al posto:",
 		timestamp_of_pickup = "Momento di raccolta:",
