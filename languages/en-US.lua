@@ -43,7 +43,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		uncarry_missing_permissions = "Attempted to force stop carry without proper permission.",
 
 		uncarry_logs_title = "Force Uncarry",
-		uncarry_logs_details = "${consoleName} forced ${targetName} to stop carrying them."
+		uncarry_logs_details = "${consoleName} forced ${targetName} to stop carrying them.",
+
+		failed_carry_npc = "Failed to carry NPC.",
+		carry_npc_something_wrong = "Something went wrong while trying to carry the ped.",
+		throwing_force = "Throwing Force"
 	},
 
 	-- base/*
@@ -498,7 +502,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		cleaned_ped_self = "Successfully cleaned your ped.",
 		clean_ped_failed = "Failed to clean ped.",
 		cleaned_ped_for_all = "Successfully cleaned everyone's peds.",
-		clean_ped_no_permission = "Attempted to clean a player's ped without required permissions."
+		clean_ped_no_permission = "Attempted to clean a player's ped without required permissions.",
+
+		item_durability_repair_success = "Successfully repaired durability for items in slot ${slotId}.",
+		item_durability_repair_failed = "Failed to repair durability.",
+		item_durability_repair_no_permission = "Attempted to repair an items durability without required permissions."
 	},
 
 	anti_cheat = {
@@ -564,7 +572,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		local_firewall_on = "Enabled the local firewall with the block message `${blockMessage}`.",
 		local_firewall_re_enabled = "Re-enabled the local firewall with the block message `${blockMessage}`.",
 		local_firewall_off = "Disabled the local firewall.",
-		local_firewall_blocked = "Local Firewall: Blocked ${ipIdentifier} (${playerName})",
+		local_firewall_blocked = "Local Firewall: Blocked ${playerName} (${steamIdentifier})",
 
 		developer = "developer",
 		super_admin = "super admin",
@@ -607,7 +615,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		character_id_missing = "You did not enter a character ID.",
 
 		lowest_character_id_available_is = "The lowest character ID available is `${characterId}`.",
-		there_are_no_available_character_ids = "There are no available character IDs.",
+		there_are_no_available_character_ids = "There are no available character IDs."
 	},
 
 	commands = {
@@ -615,17 +623,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		command_unavailable = "This command is not available!",
 		available_commands = "Available Commands",
 		available_substitutes = "Available Substitutes",
-
-		bind_already_exists = "A command bind with this name already exists.",
-		command_does_not_exist = "Not able to bind as this command is unavailable.",
-		control_invalid = "This control id is invalid.",
-		bind_does_not_exist = "You do not have a bind with this name.",
-		active_binds = "Active Binds",
-		no_binds = "You do not have any active binds.",
-		bind_added = "Added bind with name `${bindName}` which will execute command `${command}` when control id `${control}` is pressed.",
-		bind_removed = "Removed bind with name `${bindName}`",
-		error_executing_bind = "There was an error when trying to execute bind with name `${bindName}` which attempts to trigger command `${command}`.",
-		command_binds_limit_reached = "You've reached the command binds limit of ${maxCommandBinds}.",
 
 		substitute_command_for = "This is a substitute command for `${command}`.",
 
@@ -638,6 +635,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		carry_command = "/carry",
 		carry_command_help = "Toggle carry.",
 		carry_command_substitutes = "",
+
+		carry_npc_command = "/carry_npc",
+		carry_npc_command_help = "Toggle carrying the nearest dead npc.",
+		carry_npc_command_substitutes = "",
 
 		uncarry_command = "/uncarry",
 		uncarry_command_help = "Force the player who is carrying you to stop carrying you.",
@@ -698,6 +699,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		noclip_command_parameter_server_id = "server id",
 		noclip_command_parameter_server_id_help = "If you're wanting to toggle the noclip for someone else, insert their server id here.",
 		noclip_command_substitutes = "",
+
+		freecam_command = "/freecam",
+		freecam_command_help = "Toggle the freecam.",
+		freecam_command_substitutes = "",
 
 		delete_vehicle_command = "/delete_vehicle",
 		delete_vehicle_command_help = "Delete a nearby vehicle.",
@@ -779,7 +784,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		nitro_boost_command_help = "Toggle 'nitro boost'.",
 		nitro_boost_command_parameter_server_id = "server id",
 		nitro_boost_command_parameter_server_id_help = "If you're wanting to toggle the 'nitro boost' for someone else, insert their server id here.",
-		nitro_boost_command_substitutes = "",
+		nitro_boost_command_substitutes = "/nitro",
 
 		indestructibility_command = "/indestructibility",
 		indestructibility_command_help = "Toggle 'indestructibility'.",
@@ -977,6 +982,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_item_name_override_command_parameter_item_name_help = "The item name override you want to set (leave empty to remove).",
 		set_item_name_override_command_substitutes = "/set_name_override, /name_override",
 
+		repair_durability_command = "/repair_durability",
+		repair_durability_command_help = "Repairs all items durabilities in a certain slot.",
+		repair_durability_command_parameter_slot = "slot",
+		repair_durability_command_parameter_slot_help = "Which slot to repair items in.",
+		repair_durability_command_substitutes = "",
+
 		list_weapon_attachments_command = "/list_weapon_attachments",
 		list_weapon_attachments_command_help = "Sets or removes the tint of the weapon you are currently holding.",
 		list_weapon_attachments_command_substitutes = "/weapon_attachments, /attachments",
@@ -1025,26 +1036,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		substitutes_command = "/substitutes",
 		substitutes_command_help = "Show all available substitutes.",
 		substitutes_command_substitutes = "",
-
-		command_bind_add_command = "/command_bind_add",
-		command_bind_add_command_help = "Bind a command to a control.",
-		command_bind_add_command_parameter_bind_name = "bind name",
-		command_bind_add_command_parameter_bind_name_help = "The 'name' of the bind. This name must be one word and less than 20 characters and will later be used to identify and remove this bind.",
-		command_bind_add_command_parameter_control = "control",
-		command_bind_add_command_parameter_control_help = "The control id you want to bind this command to. Here's a list of all the controls: `https://docs.fivem.net/docs/game-references/controls/`",
-		command_bind_add_command_parameter_command = "command",
-		command_bind_add_command_parameter_command_help = "The command you are wanting to bind. The '/' does not have to be included, though it can. You can also add in parameters.",
-		command_bind_add_command_substitutes = "/command_bind, /bind_add, /bindadd, /add_bind, /addbind",
-
-		command_bind_remove_command = "/command_bind_remove",
-		command_bind_remove_command_help = "Remove a command bind.",
-		command_bind_remove_command_parameter_bind_name = "bind name",
-		command_bind_remove_command_parameter_bind_name_help = "The name of the bind you would like to remove.",
-		command_bind_remove_command_substitutes = "/unbind",
-
-		command_binds_command = "/command_binds",
-		command_binds_command_help = "List all command binds.",
-		command_binds_command_substitutes = "/binds",
 
 		-- base/users
 		playtime_command = "/playtime",
@@ -1181,6 +1172,8 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		vehicle_bones_command = "/vehicle_bones",
 		vehicle_bones_command_help = "Draw all existing vehicle bones on the nearest vehicle.",
+		vehicle_bones_command_parameter_bone_name = "bone name",
+		vehicle_bones_command_parameter_bone_name_help = "Just show a single bones location.",
 		vehicle_bones_command_substitutes = "",
 
 		vehicle_info_command = "/vehicle_info",
@@ -1200,12 +1193,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		fake_lag_command_substitutes = "/lag",
 
 		view_weapon_command = "/view_weapon",
-		view_weapon_command_help = "Spawns an object with the given model name and positions you perfectly for screenshots.",
+		view_weapon_command_help = "Spawns an object with the given model name and positions it perfectly for screenshots.",
 		view_weapon_command_parameter_weapon_name = "weapon name",
 		view_weapon_command_parameter_weapon_name_help = "The name of the weapon you want to view.",
 		view_weapon_command_parameter_component_names = "component names",
 		view_weapon_command_parameter_component_names_help = "A list of components (comma separated) you want to attach to the weapon.",
 		view_weapon_command_substitutes = "/view",
+
+		view_model_command = "/view_model",
+		view_model_command_help = "Spawns an object with the given model name and positions it perfectly for screenshots.",
+		view_model_command_parameter_model_name = "model name",
+		view_model_command_parameter_model_name_help = "The name of the model you want to view.",
+		view_model_command_substitutes = "",
 
 		play_animation_command = "/play_animation",
 		play_animation_command_help = "Plays the specified animation.",
@@ -1252,6 +1251,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		doors_scan_command_parameter_clear_file = "clear file",
 		doors_scan_command_parameter_clear_file_help = "Do you wish to clear the file contents before writing to it?",
 		doors_scan_command_substitutes = "/doors",
+
+		debug_doors_command = "/debug_doors",
+		debug_doors_command_help = "Debugs information about nearby doors.",
+		debug_doors_command_substitutes = "",
 
 		-- game/evidence
 		fingerprint_command = "/fingerprint",
@@ -1309,6 +1312,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		metrics_toggle_command = "/metrics_toggle",
 		metrics_toggle_command_help = "Toggle the center-top metrics display.",
 		metrics_toggle_command_substitutes = "/metrics, /metrics_display",
+
+		toggle_advanced_hud_command = "/toggle_advanced_hud",
+		toggle_advanced_hud_command_help = "Toggles the advanced vehicle hud. (RPM, gears, etc.)",
+		toggle_advanced_hud_command_substitutes = "/advanced_hud",
 
 		-- game/hunting
 		animal_debug_command = "/animal_debug",
@@ -1535,6 +1542,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		ped_messages_command_help = "Toggle whether or not ped messages should show in the chat.",
 		ped_messages_command_substitutes = "",
 
+		-- game/ped_tasks
+		debug_ped_command = "/debug_ped",
+		debug_ped_command_help = "Debugs information about a ped.",
+		debug_ped_command_parameter_network_id = "network id",
+		debug_ped_command_parameter_network_id_help = "The peds network id.",
+		debug_ped_command_substitutes = "",
+
 		-- game/ped_spawn
 		ped_spawn_command = "/ped_spawn",
 		ped_spawn_command_help = "Spawns a ped.",
@@ -1557,6 +1571,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		ped_remove_command = "/ped_remove",
 		ped_remove_command_help = "Gets rid of all your spawned peds.",
 		ped_remove_command_substitutes = "",
+
+		-- game/player_scales
+		set_player_scale_command = "/set_player_scale",
+		set_player_scale_command_help = "Set a player's scale.",
+		set_player_scale_command_parameter_scale = "scale",
+		set_player_scale_command_parameter_scale_help = "The scale you would like to set them to.",
+		set_player_scale_command_parameter_server_id = "server id",
+		set_player_scale_command_parameter_server_id_help = "The server ID you would like to set the scale for. Leaving this blank will auto-select yourself.",
+		set_player_scale_command_substitutes = "/player_scale, /set_player_size, /player_size",
 
 		-- game/properties
 		properties_debug_command = "/properties_debug",
@@ -1751,6 +1774,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		trackers_split_command_help = "Toggle between having trackers stored inside of a category on the map and having them split.",
 		trackers_split_command_substitutes = "",
 
+		-- game/tsunami
+		set_ocean_scaler_command = "/set_ocean_scaler",
+		set_ocean_scaler_command_help = "Globally modify the ocean scaler.",
+		set_ocean_scaler_command_parameter_intensity = "intensity",
+		set_ocean_scaler_command_parameter_intensity_help = "The intensity you would like to set it to.",
+		set_ocean_scaler_command_substitutes = "/ocean_scaler, /set_waves_intensity, /waves_intensity",
+
 		-- game/voice
 		voice_debug_command = "/voice_debug",
 		voice_debug_command_help = "Toggle the voice debug.",
@@ -1766,6 +1796,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		ragdoll_command_parameter_force = "force",
 		ragdoll_command_parameter_force_help = "Apply a random force to the player after making them ragdoll.",
 		ragdoll_command_substitutes = "",
+
+		punch_radius_command = "/punch_radius",
+		punch_radius_command_help = "Forces every player in a given radius to punch randomly.",
+		punch_radius_command_parameter_radius = "radius",
+		punch_radius_command_parameter_radius_help = "The radius in which players will punch randomly.",
+		punch_radius_command_substitutes = "",
+
+		punch_command = "/punch",
+		punch_command_help = "Forces a certain player to punch randomly.",
+		punch_command_parameter_server_id = "server id",
+		punch_command_parameter_server_id_help = "Server ID of the target player.",
+		punch_command_substitutes = "",
 
 		-- global/entities
 		local_entities_debug_command = "/local_entities_debug",
@@ -1842,6 +1884,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		licenses_command = "/licenses",
 		licenses_command_help = "Get your licenses.",
 		licenses_command_substitutes = "",
+
+		-- vehicles/damage
+		debug_vehicle_command = "/debug_vehicle",
+		debug_vehicle_command_help = "Debugs the vehicles current damage values.",
+		debug_vehicle_command_substitutes = "",
 
 		-- vehicles/fuel
 		set_fuel_command = "/set_fuel",
@@ -2122,7 +2169,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		spawned_vehicle = "Spawned vehicle.",
 		spawner_on_timeout = "The vehicle spawner is on a timeout. Please try again.",
 		spawn_area_not_clear = "The spawn area is not clear.",
-		return_button = "Return",
+		return_button = "Return"
 	},
 
 	alcohol = {
@@ -2225,7 +2272,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		entering_cayo_perico_with_passengers_logs_title = "Entering Cayo Perico With Passengers",
 		entering_cayo_perico_with_passengers_logs_details = "${consoleName} is entering Cayo Perico with ${passengersAmount} passengers.",
 		exiting_cayo_perico_with_passengers_logs_title = "Exiting Cayo Perico With Passengers",
-		exiting_cayo_perico_with_passengers_logs_details = "${consoleName} is exiting Cayo Perico with ${passengersAmount} passengers.",
+		exiting_cayo_perico_with_passengers_logs_details = "${consoleName} is exiting Cayo Perico with ${passengersAmount} passengers."
 	},
 
 	chat_emotes = {
@@ -2246,6 +2293,32 @@ OP.Global.Locales.Languages["en-US"] = {
 	cinematic = {
 		cinematic = "Cinematic",
 		black_bars_set_to = "The cinematic black bars has now been set to ${blackBarsHeight}%."
+	},
+
+	crafting = {
+		smelt_glass = "[E] Smelt Broken Bottles",
+		smelting_glass = "Smelting ${usedItems}",
+		smelted_glass = "Smelted ${usedItems} into glass.",
+		failed_smelt_glass = "Failed to smelt glass.",
+
+		craft_steel = "[E] Craft Steel",
+		crafting_steel = "Molding ${usedItems}",
+		crafted_steel = "Crafted ${usedItems} into steel.",
+		failed_craft_steel = "Failed to craft steel.",
+
+		scrapping_item = "Scrapping ${usedItems}",
+		scrapped_item = "Extracted scrap metal from ${usedItems}.",
+
+		scrap_knife = "[E] Scrap Knifes",
+		failed_scrap_knife = "Failed to scrap knife.",
+
+		scrap_item = "[E] Scrap Items",
+		failed_scrap_item = "Failed to scrap item.",
+
+		no_required_items = "You don't have all the required items.",
+
+		used_crafting_station_title = "Crafting Station",
+		used_crafting_station_details = "${consoleName} used a crafting station to craft ${items}."
 	},
 
 	crashes = {
@@ -2333,6 +2406,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		velocity = "Velocity: ${velocity}",
 		g_force = "G-Force: ${force}",
 		debug_print_f8 = "Debugging information has been printed in your F8 console.",
+		no_vehicle_bone = "No \"${boneName}\" bone",
 
 		invalid_network_id = "Invalid network ID.",
 		delete_entity_success = "Successfully deleted entity with network id ${networkId}.",
@@ -2348,6 +2422,8 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		weapon_name_missing = "Missing weapon name parameter.",
 		weapon_name_invalid = "`${weaponName}` is not a valid weapon name.",
+		model_name_missing = "Missing model name parameter.",
+		model_name_invalid = "`${modelName}` is not a valid model name.",
 		model_view_enabled = "Model view enabled.",
 		model_view_disabled = "Model view disabled.",
 		invalid_component = "Invalid component `${componentName}`.",
@@ -2398,7 +2474,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		store_closed = "The Store is currently closed. Please come back later.",
 		failed_to_sync_doors = "Failed to sync doors. Something most likely corrupted. Please try again.",
 		saved_doors_to_file = "Saved `${amount}` doors to a file on the server.",
-		no_nearby_doors = "There are no nearby doors to save."
+		no_nearby_doors = "There are no nearby doors to save.",
+
+		debug_doors_on = "Door debugging turned on.",
+		debug_doors_off = "Door debugging turned off.",
+		doors_no_job = "N/A"
+	},
+
+	emote_items = {
+		give_item = "[E] Give ${itemName}",
+		received_item = "${firstName} gave you a ${itemName}.",
+		give_item_success = "Successfully gave ${itemName} to player.",
+		give_item_failed = "Failed to give ${itemName} to player."
 	},
 
 	fingerprint = {
@@ -2411,6 +2498,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		evidence_failed = "Failed to take fingerprint.",
 
 		evidence_text = "Evidence Type: Fingerprint\nFingerprint of ${fullName} #${characterId}\n\nAdditional Information:\n • Timestamp of pickup: ${time}"
+	},
+
+	freecam = {
+		enabled_freecam = "Enabled freecam.",
+		disabled_freecam = "Disabled freecam",
+		freecam_failed = "Failed to enable the freecam. Do you have noclip or similar enabled?",
+
+		freecam_logs_title = "Toggled Freecam",
+		freecam_on_logs_details = "${consoleName} toggled their freecam on.",
+		freecam_off_logs_details = "${consoleName} toggled their freecam off.",
+
+		freecam_no_permission = "Attempted to toggle their freecam without required permissions."
 	},
 
 	frisk = {
@@ -2503,7 +2602,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		ping = "PING",
 		autopilot = "autopilot",
 		ground_asl = "AGL/ASL (${unit})",
-		gear = "gear"
+		gear = "gear",
+		rpm = "rpm",
+
+		advanced_hud_on = "Toggled the advanced hud on.",
+		advanced_hud_off = "Toggled the advanced hud off."
 	},
 
 	hunting = {
@@ -2613,7 +2716,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		bar = "Bar",
 		strip_club = "Strip Club",
 		police_store = "Police Store",
+		fib_store = "FIB Store",
 		police_badge_store = "Police Badge Desk",
+		flower_store = "Stacey's Flower Emporium",
+		gift_store = "Del Perro Gifts",
 		ems_store = "EMS Store",
 		drug_store = "Drug Cabinet",
 		chop_shop = "Chop Shop",
@@ -2629,12 +2735,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		vehicle_locked = "The vehicle is locked.",
 		press_to_access_store = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to access the store.",
 		press_to_access_locker = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to access your private locker.",
+		press_to_access_shared_storage = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to access the shared storage.",
 
 		store_help = "To purchase something, drag an item from the secondary inventory into your own.",
 		store_tax = "Store Tax",
 		store_tax_percentage = "${tax}%",
 
 		missing_job = "You don't have the required job to use this inventory.",
+
+		item_is_broken = "This item is broken.",
+
+		broken_food = "This item is spoiled.",
+		broken_drugs = "This item is expired.",
 
 		search = "Search",
 		amount = "Amount",
@@ -2680,6 +2792,10 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		press_use_campfire = "[E] Use Campfire",
 		use_campfire = "Use Campfire",
+
+		dumpster_sandwich = "Trash Sandwich",
+		dumpster_beer = "Trash Beer",
+		dumpster_milk = "Expired Pigeon Milk",
 
 		-- items & item descriptions
 		body_armour = "Body Armor",
@@ -2860,6 +2976,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		ballistic_shield = "Ballistic Shield",
 		ballistic_shield_description = "This shield should be used when venturing into the ganglands of RP.",
 
+		boxing_glove = "Boxing Glove",
+		boxing_glove_description = "haha, yes. (djmeowzle pls help)",
+
 		bucket = "Bucket",
 		bucket_description = "Can be used as a makeshift helmet.",
 		fertilizer = "Fertilizer",
@@ -2922,6 +3041,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		acid = "Acid",
 		acid_description = "Makes you high permanently. There's no escaping it.",
 
+		rose = "Rose",
+		rose_description = "idk man erp i guess",
+
+		teddy_bear = "Teddy Bear",
+		teddy_bear_description = "A friend that will actually listen to you.",
+
 		self_driving_chip = "Self-Driving Chip",
 		self_driving_chip_description = "Dead deer everywhere... fucking hilarious.",
 
@@ -2930,6 +3055,9 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		pigeon_milk = "Pigeon Milk",
 		pigeon_milk_description = "\"Shoulda drank pigeon milk that stuff will knock you right out\"\nMilk extracted by Vedder with love.",
+
+		battering_ram = "Battering Ram",
+		battering_ram_description = "Smacks the closest door wide open for you and anyone nearby.",
 
 		boombox = "Boombox",
 		boombox_description = "Play music and be obnoxious anywhere, any time!",
@@ -3291,7 +3419,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_addon_sentinelshotgun_description = "Unidirectional Murder Dispenser.",
 
 		weapon_addon_sentinelbbshotgun = "Beanbag Shotgun",
-		weapon_addon_sentinelbbshotgun_description = "Is it gold plated? Well, we can't debate on that but when it comes to plating people down, this is the weapon of choice.",
+		weapon_addon_sentinelbbshotgun_description = "Bags of fun.",
 
 		-- TODO: Add a description for this one
 		weapon_addon_stungun = "Coil Stun Gun",
@@ -3350,6 +3478,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		illegal_lighter_item_id = "Attempting to use a lighter item with an illegal item id.",
 		unable_to_use_lighter_in_vehicle = "You are not able to use a lighter in a vehicle.",
 		not_possible_in_a_vehicle = "This action is not possible in a vehicle.",
+		just_used_bandage = "You just used a first aid kit, wait a bit before using another one.",
 
 		logs_used_weather_spell_title = "Used Weather Spell",
 		logs_used_weather_spell_details = "${consoleName} used weather spell `${itemName}`."
@@ -3801,6 +3930,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		illegal_ped_weapon_object = "Attempting to add a ped weapon object not in the weapon list."
 	},
 
+	ped_task = {
+		network_id_invalid = "Invalid network id.",
+		ped_not_found = "Ped with network id `${networkId}` not found.",
+		tracked_ped = "Tracked Ped",
+		tracked_ped_is = "Ped (${entity}) is:"
+	},
+
 	ped_spawn = {
 		ped_missing_model = "Missing model parameter.",
 		ped_spawn_success = "Successfully spawned ped.",
@@ -3832,6 +3968,14 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		-- UI Part:
 		-- SOON:TM:
+	},
+
+	player_scales = {
+		reset_player_scale_for = "Reset the player scale for ${consoleName}.",
+		set_player_scale_to_for = "Set the player scale to `${scale}` for ${consoleName}",
+		reset_player_scale = "Reset the player scale.",
+		set_player_scale_to = "Set the player scale to `${scale}`.",
+		set_player_scale_no_permission = "The player did not have the required permission to set a player's scale."
 	},
 
 	players = {
@@ -4286,16 +4430,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		trackers = "Trackers",
 		stockade_robbery_tracker = "Stockade Truck (10-78)",
 		tracked_vehicle = "Tracked Vehicle (${trackerId})",
-		tracker_character = "${departmentLabel} ${firstName} ${lastName}",
-		tracker_character_unit_id = "${departmentLabel} ${unitId}: ${firstName} ${lastName}",
+		tracker_character = "${firstName} ${lastName} (${departmentLabel})",
+		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Trackers will now be stored inside of their categories on the map.",
 		trackers_split = "Trackers will now be split into individual blips.",
 
-		department_sasp = "SASP:",
-		department_bcso = "BCSO:",
-		department_doc = "DOC:",
-		department_park_rangers = "Ranger:",
-		department_medical = "EMS:"
+		department_sasp = "SASP",
+		department_bcso = "BCSO",
+		department_doc = "DOC",
+		department_park_rangers = "Ranger",
+		department_medical = "EMS"
 	},
 
 	training = {
@@ -4322,6 +4466,28 @@ OP.Global.Locales.Languages["en-US"] = {
 		press_to_rearm = "[${InteractionKey}] Rearm",
 		rearm = "Rearm",
 		e = "E"
+	},
+
+	tsunami = {
+		the_ocean_scaler_intensity_already_set_to = "The ocean scaler intensity is already set to `${intensity}`.",
+		no_ocean_scaler_intensity_set = "There is already no ocean scaler intensity set.",
+		set_ocean_scaler_to = "Set the ocean scaler intensity to `${intensity}`.",
+		reset_ocean_scaler = "Reset the ocean scaler intenisty.",
+		set_ocean_scaler_no_permission = "The player did not have the required permission to set the ocean scaler."
+	},
+
+	tuner_shop = {
+		purchase_label = "[8] Purchase ${label} for $${price}",
+		purchase_label_far = "${label} | $${price}",
+
+		failed_vehicle_spawn = "Failed to spawn the vehicle.",
+		not_enough_funds = "Not enough funds to complete the purchase.",
+		area_not_clear = "The spawn area is not clear.",
+		something_went_wrong = "Something went wrong while attempting to purchase the vehicle.",
+
+		purchased_vehicle = "Purchased ${label} for $${price}.",
+
+		tuner_shop_blip = "Midnight Tunershop"
 	},
 
 	vending_machines = {
@@ -4361,9 +4527,19 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	wizard = {
 		ragdoll_missing_permissions = "Attempted to make a player ragdoll without proper permissions.",
+		punch_radius_missing_permissions = "Attempted to make players in a certain radius punch without proper permissions.",
+		punch_missing_permissions = "Attempted to make a players punch without proper permissions.",
 
 		ragdoll_failed = "Failed to make player ragdoll.",
-		ragdoll_success = "Successfully made ${consoleName} ragdoll."
+		ragdoll_success = "Successfully made ${consoleName} ragdoll.",
+
+		invalid_server_id = "Invalid server id.",
+		punch_success = "Successfully made ${consoleName} punch.",
+		punch_failed = "Failed to make player punch.",
+
+		invalid_radius = "Invalid radius",
+		punch_radius_failed = "Failed to make players in radius punch.",
+		punch_radius_success = "Successfully made players in a ${radius} radius punch."
 	},
 
 	yoga = {
@@ -4428,7 +4604,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		use_advanced_lockpick = "[${InteractionKey}] Use Advanced Lockpick",
 		lockpicking_stockade = "Lockpicking Stockade",
 
-		reward_diamond = "You grabbed a diamond.",
+		stockade_reward_logs_title = "Stockade Reward",
+		cash_pickup_logs_details = "${consoleName} picked up $${cashAmount} in cash.",
+		item_pickup_logs_details = "${consoleName} picked up 1x ${itemName}.",
+
+		reward_diamonds = "You grabbed a diamond.",
 		reward_gold_bar = "You grabbed a gold bar.",
 		reward_cash = "You grabbed some cash."
 	},
@@ -4528,9 +4708,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		parked_vehicle = "Parked vehicle.",
 		no_vehicle_to_park = "There is no vehicle to park.",
 		close_menu = "Close Menu",
-		spawned_vehicle = "Spawned vehicle.",
-		spawner_on_timeout = "The vehicle spawner is on a timeout. Please try again.",
+		purchased_vehicle = "Purchased vehicle.",
+		shop_on_timeout = "The vehicle shop is on a timeout. Please try again.",
 		spawn_area_not_clear = "The spawn area is not clear.",
+		purchase_funds = "Insufficient funds.",
 		return_button = "Return"
 	},
 
@@ -4566,6 +4747,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		air_unit_no_vehicle_nearby = "There are no nearby vehicles."
 	},
 
+	damage = {
+		vehicle = "Vehicle-ID: ${entity}",
+		general = "General: ${value}",
+		body = "Body: ${value}",
+		engine = "Engine: ${value}",
+		petrol_tank = "Tank: ${value}",
+		tracked_vehicle = "Tracked Vehicle",
+
+		debug_vehicle_on = "Toggled vehicle debug on.",
+		debug_vehicle_off = "Toggled vehicle debug off."
+	},
+
 	fuel = {
 		exit_to_fuel = "Exit the vehicle to refuel.",
 		press_to_fuel = "Press ~g~${InteractionKey} ~w~to refuel the vehicle.",
@@ -4579,12 +4772,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		petrolcan_fuel_text = "Petrol Amount Left: ${petrolAmount}%~n~Press ~g~E ~w~to stop fueling.",
 		player_busy = "You are busy with something else.",
 		fuel_level_set_to = "The fuel level has been set to `${fuelLevel}`.",
-		not_in_a_vehicle = "You are not in a vehicle.",
+		not_in_a_vehicle = "You are not in a vehicle."
 	},
 
 	gadgets = {
 		helicopter_camera_vehicle_info_metric = "Speed: ${speed} km/h\nModel: ${model}\nPlate: ${plate}",
-		helicopter_camera_vehicle_info_imperial = "Speed: ${speed} mp/h\nModel: ${model}\nPlate: ${plate}",
+		helicopter_camera_vehicle_info_imperial = "Speed: ${speed} mp/h\nModel: ${model}\nPlate: ${plate}"
 	},
 
 	garages = {
@@ -4602,6 +4795,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		vehicle_in_garage = "Your vehicle is located in ${garageName}.",
 		vehicle_withdrawn = "Your vehicle has been withdrawn.",
 		error_withdrawing = "An error occurred while trying to withdraw your vehicle.",
+		withdraw_success = "Successfully withdrew your vehicle.",
 		vehicle_in_the_way = "There is a vehicle blocking the spawn point.",
 		vehicle_is_out = "Your vehicle is already out.",
 		vehicle_stored = "Your vehicle has been stored.",
@@ -4659,7 +4853,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		wheels_modified = "The wheels have been modified.",
 		wheels_none_specified = "No wheels specified.",
 		wheels_none_valid_specified = "No valid wheels specified.",
-		not_in_a_car = "You are not in a car.",
+		not_in_a_car = "You are not in a car."
 	},
 
 	plates = {
@@ -4780,6 +4974,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		stop_bleeding = "[E] Stop Bleeding",
 		stopping_bleeding = "Stopping Bleeding",
 		bleeding_stopped = "Bleeding Stopped",
+		overdose_effects = "You are experiancing overdose effects.",
 		you_have_parasite = "You have a parasite",
 		you_have_multiple_parasite = "You have multiple parasites",
 		bandage = "[E] Bandage Wounds",
@@ -4912,6 +5107,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		serial_number_unknown = "Serial Number: Unknown.",
 		badge_owner = "This badge belongs to ${fullName} (${positionName}).",
 		badge_owner_unknown = "Badge Owner is unknown.",
+		bought_by = "Bought by ${buyerName} (${buyerCid}).",
+		bought_by_unknown = "The buyer of this item is unknown.",
 		evidence_incomplete = "This evidence is incomplete, and can not be reviewed.",
 		evidence_type = "Evidence Type",
 		evidence_casings = "Casings came back to serial number ${serialNumber} which was held by ${buyerName} (${buyerCid}) at the time of use.",
