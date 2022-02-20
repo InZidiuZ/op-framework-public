@@ -35,14 +35,19 @@ OP.Global.Locales.Languages["it-IT"] = {
 		trunk_interaction_display = "[${VehicleEnterKey}] esci [${InteractionKey}] Apri/Chiudi bagagliaio",
 		boombox_already_in_trunk = "C'è già uno stereo nel bagagliaio.",
 		the_trunk_is_occupied = "Il bagliaio è occupato.",
-		unable_to_toggle_carry = "Aspetta un attimo prima di fare /carry."
+		unable_to_toggle_carry = "Aspetta un attimo prima di fare /carry.",
+
+		you_are_not_being_carried = "Attualmente non ti stanno prendendo in braccio.",
+		successfully_uncarried = "Hai forzato lo /carry con successo.",
+		failed_uncarried = "Fallimento nel forzare lo /carrt.",
+		uncarry_missing_permissions = "Tentativo di forzare lo /carry senza permessi.",
+
+		uncarry_logs_title = "Force Uncarry",
+		uncarry_logs_details = "${consoleName} forced ${targetName} to stop carrying them."
 	},
 
 	-- base/*
-	admin = {
-		aimbot_activated = "Aimbot Attivato",
-		wallhack_activated = "Wallhack Attivato",
-
+	admin = {	
 		feature_toggle_not_admin = "Tentativo di attivare per se o per qualcun altro `${featureName}`, ma non ha i permessi per farlo.",
 		feature_toggle_activated_logs_title = "Feature attivata a distanza",
 		feature_toggle_activated_logs_details = "${consoleName} ha atttivato`${featureName}` per il giocatore ${targetConsoleName}.",
@@ -281,7 +286,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		report_muted_no_reason = "Sei stato mutato dal comando report senza un motivo specificato.",
 		report_muted = "Sei stato mutato dal comando report per `${reason}`.",
 
-		already_sending_report = "HAi già inviato un report, attendi per favore.",
+		already_sending_report = "Hai già inviato un report, attendi per favore.",
 		unable_to_send_identicial_report = "Non puoi inviare due report identici.",
 
 		already_sending_staff_message = "Hai già inviato un messaggio allo staff, attendi per favore.",
@@ -313,7 +318,17 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		population_density_not_super_admin = "Un giocatore ha provato a modificare la densità di popolazione senza i permessi da super amdin.",
 
-		indestructibility_activated = "Indistruttibilità Attivata",
+		enabled_features_list = "Feature abilitate:",
+		aimbot_feature = "Aimbot",
+		disabled_collisions_feature = "Disabilitate Collisioni",
+		disabled_recoil_feature = "Disabilità rinculo",
+		indestructibility_feature = "Indistruttibilità",
+		invisibility_feature = "Invisibilità",
+		nitro_boost_feature = "Nitro Boost",
+		no_nearby_vehicles_feature = "No Nearby Vehicles",
+		speed_boost_feature = "Speed Boost",
+		speed_up_progress_bar_feature = "Speed Up Progress Bar",
+		wallhack_feature = "Wallhack",
 
 		you_are_not_in_a_vehicle = "Non sei nel veicolo.",
 		repaired_vehicle = "Veicolo riparato.",
@@ -353,7 +368,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		started_fake_disconnect = "Fake disconnecting inziata. Ripeti il comando per fermarla.",
 		stopped_fake_disconnect = "Fake disconnecting interrotta.",
 
-		fake_disconnect_not_super_admin = "Un giocatore ha provato a fare un fake disconnecting senza i poteri da super admin.",
+		fake_disconnect_not_super_admin = "Un giocatore ha provato a fare un fake disconnecting",
+
+		disabled_idle_cam = "Disablitata la idle cam.",
+		enabled_idle_cam = "Abilitata la idle cam.",
 
 		created_vehicle_smoke_for_player_logs_title = "Fumo veicolo creato",
 		created_vehicle_smoke_for_player_logs_details = "${consoleName} ha creato il fumo veicolo.",
@@ -371,6 +389,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		auto_driving_engaged = "Auto guida impostata.",
 		auto_driving_updated = "La velocità dell'ì auto guida è stata aggiornata.",
 		auto_driving_disengaged = "Auto Guida disattivata.",
+
+		disable_collisions_on = "Le tuo collisioni sono ora abilitate.",
+		disable_collisions_off = "Le tue collisioni sono ora disabilitate.",
+
+		disabled_recoil_on = "Rinculo disattivato.",
+		disabled_recoil_off = "Rinculo attivato.",
 
 		attachment_missing = "Accessorio non trovato.",
 		no_weapon_equipped = "Nessuna arma equipaggiata.",
@@ -444,6 +468,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		current_attachments = "Accessorio Attuale",
 		no_attachments = "Nessun Acessorio",
 		attachments_list = "Accessori:",
+		tint_label = "Tint: \"${tintLabel}\" (${tintIndex})",
 
 		attachment_label_suppressor = "Soppressore",
 		attachment_label_flashlight = "Torcia",
@@ -466,13 +491,21 @@ OP.Global.Locales.Languages["it-IT"] = {
 		item_name_failed_set = "Impossibile impostare bypass item.",
 		item_name_removed = "Bypass Item impostato con successo.",
 		item_name_set = "Impostato bypass item per '${itemName}'.",
-		item_name_invalid_slot = "Item non trovato."
+		item_name_invalid_slot = "Item non trovato.",
+
+		cleaned_ped = "Pulito con successo il ped di ${consoleName}.",
+		cleaned_ped_self = "Pulito con successo il tuo ped.",
+		clean_ped_failed = "Fallimento nel pulire il ped.",
+		cleaned_ped_for_all = "Puliti tutti i ped con successo.",
+		clean_ped_no_permission = "Tentativo di pulire un ped senza permesso."
 	},
 
 	anti_cheat = {
 		illegal_client_event = "Triggered an illegal client event with name '${eventName}'.",
 		illegal_server_event = "Triggered an illegal server event with name '${eventName}'.",
 		illegal_weapon = "Spawned an illegal weapon with the name '${weaponLabel}'.",
+		illegal_alpha = "Modified the player peds alpha value (${alphaValue}).",
+		semi_god_mode = "Detected semi god mode.",
 		bad_entity_spawn = "Spawned in an entity with model name `${modelName}`.",
 		bad_entity_title = "Bad Entity Spawned",
 		bad_entity_message = "${consoleName} spawned entity with model name `${modelName}`.",
@@ -487,11 +520,36 @@ OP.Global.Locales.Languages["it-IT"] = {
 		add_detection_area_not_staff = "Player attempted to add a detection area, but didn't have correct permissions to do so.",
 		remove_detection_area_not_staff = "Player attempted to remove a detection area, but didn't have correct permissions to do so.",
 		detection_area_close = "[${InteractionKey}] Remove Detection Area (${areaId})",
-		detection_area = "Detection Area (${areaId})"
+		detection_area = "Detection Area (${areaId})",
+
+		mp_f_freemode_01_label = "Freemode (female)",
+		mp_m_freemode_01_label = "Freemode (male)",
+		player_one_label = "Franklin",
+		player_two_label = "Trevor",
+		player_zero_label = "Michael",
+
+		ig_orleans_label = "Sasquatch",
+		u_m_m_jesus_01_label = "Jesus",
+		u_m_y_babyd_label = "Bodybuilder",
+		u_m_y_imporage_label = "Superhero",
+		a_m_m_bevhills_02_label = "White guy",
+		a_m_m_fatlatin_01_label = "Fat guy",
+		a_m_m_hasjew_01_label = "Jewish ped",
+		a_m_m_beach_01_label = "Topless ped (black, male)",
+		a_m_m_beach_02_label = "Topless ped (white, male)",
+		a_m_m_afriamer_01_label = "Fat black guy",
+		ig_jimmydisanto_label = "Jimmy",
+		ig_jimmydisanto2_label = "Jimmy 2",
+		a_m_y_musclbeac_01_label = "",
+		csb_ramp_marine_label = "Marine guy",
+		s_f_y_stripperlite_label = "Stripper ped",
+		mp_f_stripperlite_label = "Stripper ped 2",
+		mp_m_marston_01_label = "Missing arms and legs",
+		mp_m_niko_01_label = "Niko (GTA IV)"
 	},
 
 	authentication = {
-		ip_not_found = "Non è stato possibile riconoscere il tuo ID.",
+		p_not_found = "Non è stato possibile riconoscere il tuo ID.",
 		checking_steam_account = "Controllando il tuo ID steam...",
 		steam_account_not_found = "Non sei connesso a Steam. Riapri FiveM quando avrai Steam aperto e sarai loggato al tuo account.",
 		authenticating_local_server = "Autenticazione con il local server...",
@@ -500,6 +558,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		region_blocked = "Questo server non è disponibile nella tua regione.",
 		server_config_not_loaded = "Il server config non è stato caricato.",
 		something_went_horribly_wrong = "Qualcosa non ha funzionato, attendi un attimo mentre proviamo a risolvere.",
+		local_firewall_enabled = "Il local firewall è abilitato.",
+
+		local_firewall_on = "Abilitato il firewall locale con il messaggio di blocco `${blockMessage}`.",
+		local_firewall_re_enabled = "Riattivato il firewall locale con il messaggio di blocco `${blockMessage}`.",
+		local_firewall_off = "Disabilitato il firewall locale.",
+		local_firewall_blocked = "Local Firewall: Blocked ${ipIdentifier} (${playerName})",
 
 		developer = "developer",
 		super_admin = "super admin",
@@ -548,6 +612,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 	commands = {
 		only_commands = "La chat è solamente per i comandi. Scrivi /help per vedere tutti i comandi.",
 		command_unavailable = "Comando disponibile",
+											
 		available_substitutes = "Sottotitoli disponibili",
 
 		bind_already_exists = "C'è già un comando con questo nome.",
@@ -573,6 +638,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		carry_command_help = "Toggle carry.",
 		carry_command_substitutes = "",
 
+		uncarry_command = "/uncarry",
+		uncarry_command_help = "Forza lo /carry della persona che ti sta prendendo in braccio.",
+		uncarry_command_substitutes = "",
+
 		-- animations/chairs
 		sit_command = "/sit",
 		sit_command_help = "Poggia il culo su una sedia.",
@@ -582,7 +651,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		-- base/admin
 		report_command = "/report",
-		report_command_help = "Rompi i coglioni allo staff.",
+		report_command_help = "Effettua una segnalazione player/bug ad uno staffer.",
 		report_command_parameter_message = "messaggi",
 		report_command_parameter_message_help = "Il messaggio che vorresti mandare.",
 		report_command_substitutes = "",
@@ -594,11 +663,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		announce_command_help = "",
 
 		staff_pm_command = "/staff_pm",
-		staff_pm_command_help = "Rompi i coglioni allo Staff in privato.",
+		staff_pm_command_help = "Scrivi ad uno staffer in privato.",
 		staff_pm_command_parameter_server_id = "server id",
-		staff_pm_command_parameter_server_id_help = "L'ID del poveraccio a cui vuoi rompere i coglioni.",
+		staff_pm_command_parameter_server_id_help = "L'ID dello staffer che ti ha contattato in /report.",
 		staff_pm_command_parameter_message = "messaggio",
-		staff_pm_command_parameter_message_help = "Dicci che cazzo vuoi.",
+		staff_pm_command_parameter_message_help = "Inserisci il messaggio da mandare allo staffer.",
 		staff_pm_command_substitutes = "/staffpm",
 
 		staff_command = "/staff",
@@ -634,6 +703,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		delete_vehicle_command_parameter_ignore_heading = "yes",
 		delete_vehicle_command_parameter_ignore_heading_help = "Vuoi ignorare l'intestazione del tuo giocatore? Lasciare questo vuoto agirà come un 'no'.",
 		delete_vehicle_command_substitutes = "/dv",
+
+		delete_vehicle_interactively_command = "/delete_vehicle_interactively",
+		delete_vehicle_interactively_command_help = "Attiva/Disattiva per cancellare i veicoli con un cursore.",
+		delete_vehicle_interactively_command_substitutes = "/dvi",
 
 		kick_command = "/kick",
 		kick_command_help = "Kicka un player dal server.",
@@ -718,6 +791,19 @@ OP.Global.Locales.Languages["it-IT"] = {
 		no_nearby_vehicles_command_parameter_server_id = "server id",
 		no_nearby_vehicles_command_parameter_server_id_help = "ID della persone che vuole attivare il no nearby vehicles.",
 		no_nearby_vehicles_command_substitutes = "",
+		disable_collisions_command = "/disable_collisions",
+		disable_collisions_command_help = "Disabilita le collisioni con veicoli e pedoni in un raggio di 10 metri.",
+		disable_collisions_command_substitutes = "/collisions",
+
+		disable_recoil_command = "/disable_recoil",
+		disable_recoil_command_help = "Disabilità il rinculo delle armi.",
+		disable_recoil_command_substitutes = "",
+
+		clean_ped_command = "/clean_ped",
+		clean_ped_command_help = "Pulisci i personaggi da terra,sangue etc.. .",
+		clean_ped_command_parameter_server_id = "server id",
+		clean_ped_command_parameter_server_id_help = "The player's server ID you are wanting to clean the ped of. If left at blank, yourself will automatically be selected.",
+		clean_ped_command_substitutes = "",
 
 		vehicle_smoke_command = "/toggle_vehicle_smoke",
 		vehicle_smoke_command_help = "Attiva 'vehicle smoke'.",
@@ -857,6 +943,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		fake_disconnect_command_help = "Simula la disconnessione dal server. Inoltre abilita la noclip se ancora non abilitata.",
 		fake_disconnect_command_substitutes = "/fake_leave, /dc",
 
+		disable_idle_cam_command = "/disable_idle_cam",
+		disable_idle_cam_command_help = "Disabilità la idle cam.",
+		disable_idle_cam_command_substitutes = "/disable_idle, /idle",
+
 		yeet_vehicle_command = "/yeet_vehicle",
 		yeet_vehicle_command_help = "Teletrasporta il veicolo in cui ti trovi nell' Oceano.",
 		yeet_vehicle_command_substitutes = "",
@@ -884,7 +974,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		set_item_name_override_command_parameter_item_name = "Nome Item",
 		set_item_name_override_command_parameter_item_name_help = "Nome dell'item (lascia vuota per bypassare).",
 		set_item_name_override_command_substitutes = "/set_name_override, /name_override",
-		
+
 		list_weapon_attachments_command = "/list_weapon_attachments",
 		list_weapon_attachments_command_help = "Mette o torglie il colore all' arma che hai in mano.",
 		list_weapon_attachments_command_substitutes = "/weapon_attachments, /attachments",
@@ -1043,11 +1133,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		culling_debug_command_help = "Attiva il debug dei crolli.",
 		culling_debug_command_substitutes = "",
 
-		-- game/frisk
-		frisk_command = "/frisk",
-		frisk_command_help = "Perquisisce la persona vicina in cerca di un arma.",
-		frisk_command_substitutes = "",
-
 		-- game/dashcam
 		unit_id_command = "/unit_id",
 		unit_id_command_help = "Imposta la tua Unit ID.",
@@ -1059,6 +1144,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		debug_command = "/debug",
 		debug_command_help = "Attiva il debug entità. Verranno mostarte some le informazioni generali delle entità vicine.",
 		debug_command_substitutes = "",
+
+		network_debug_command = "/network_debug",
+		network_debug_command_help = "Attiva l'entity-network-debugger. Questo mostrerà alcune informazioni di rete sulle entità vicine.",
+		network_debug_command_substitutes = "/net_debug, /ndebug",
 
 		attach_command = "/attach",
 		attach_command_help = "Attiva il tool che mostra gli accessori su un personaggio.",
@@ -1095,6 +1184,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		vehicle_info_command = "/vehicle_info",
 		vehicle_info_command_help = "Stampa informazioni riguardanti il veicolo in cui sei per aiutare il debug dei problemi.",
 		vehicle_info_command_substitutes = "",
+
+		delete_entity_command = "/delete_entity",
+		delete_entity_command_help = "Deletes an entity with a certain network id.",
+		delete_entity_command_parameter_network_id = "network id",
+		delete_entity_command_parameter_network_id_help = "The network id of the entity you want to delete.",
+		delete_entity_command_substitutes = "/de",
 
 		fake_lag_command = "/fake_lag",
 		fake_lag_command_help = "Crea finto lag.",
@@ -1142,7 +1237,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		take_dna_sample_command = "/take_dna_sample",
 		take_dna_sample_command_help = "Prendi il dna di un giocatore nelle vicinanze.",
 		take_dna_sample_command_substitutes = "/dna_sample, /dna",
-			
+
 		-- game/doors
 		door_offset_command = "/door_offset",
 		door_offset_command_help = "Attiva lo strumento deviazione porte.",
@@ -1152,6 +1247,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		doors_scan_command = "/doors_scan",
 		doors_scan_command_help = "Cerca porte vicine e le salva su un file text.",
+		doors_scan_command_parameter_clear_file = "clear file",
+		doors_scan_command_parameter_clear_file_help = "Desiderate cancellare il contenuto del file prima di scriverci?",
 		doors_scan_command_substitutes = "/doors",
 
 		-- game/evidence
@@ -1178,6 +1275,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		revive_command_parameter_remove_injuries_help = "Imposta un valore superiore a 0.",
 		revive_command_substitutes = "",
 
+		range_revive_command = "/range_revive",
+		range_revive_command_help = "Reviva i player nelle vicinanze.",
+		range_revive_command_parameter_distance = "distance",
+		range_revive_command_parameter_distance_help = "Il range delle persone che vuoi rianimare (between 1 and 50).",
+		range_revive_command_substitutes = "/revive_range",
+
 		recent_deaths_command = "/recent_deaths",
 		recent_deaths_command_help = "Mostra le morti più recenti.",
 		recent_deaths_command_parameter_amount = "Quantità",
@@ -1189,6 +1292,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		player_death_command_parameter_server_id = "ID server",
 		player_death_command_parameter_server_id_help = "L'ID del server.",
 		player_death_command_substitutes = "/check_death",
+
+		death_timer_command = "/death_timer",
+		death_timer_command_help = "Sovrascrivere il tempo per il timer di respawn della morte.",
+		death_timer_command_parameter_time = "time",
+		death_timer_command_parameter_time_help = "La quantità di tempo in secondi a cui volete impostare il timer. Per rimuovere l'override, lascia questo spazio vuoto.",
+		death_timer_command_substitutes = "",
 
 		-- game/hud
 		watermark_command = "/watermark",
@@ -1203,6 +1312,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		animal_debug_command = "/animal_debug",
 		animal_debug_command_help = "Attiva il dabug animali.",
 		animal_debug_command_substitutes = "",
+
+		-- game/injuries
+		inspect_command = "/inspect",
+		inspect_command_help = "Ispeziona le ferite dei giocatori.",
+		inspect_command_substitutes = "",
 
 		-- game/instances
 		instance_create_command = "/instance_create",
@@ -1261,6 +1375,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 		wipe_ground_inventories_command_parameter_radius_help = "Il raggio del wipe. ",
 		wipe_ground_inventories_command_substitutes = "/wipeinvs, /wipe_inventories, /wipe_ground",
 
+		-- game/locate
+		locate_entity_command = "/locate_entity",
+		locate_entity_command_help = "Locate a certain entity on the map.",
+		locate_entity_command_parameter_filter = "filter",
+		locate_entity_command_parameter_filter_help = "What filter the entity should match (id:12345, plate:90FMK072, etc.)",
+		locate_entity_command_substitutes = "/le",
+
 		-- game/mdt
 		mdt_command = "/mdt",
 		mdt_command_help = "Accedi all' MDT.",
@@ -1272,7 +1393,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		language_command = "/language",
 		language_command_help = "Imposta il tuo linguaggio predefinito. Questo sarà salvato per le future sessioni. Il cambio è immediato.",
 		language_command_parameter_language = "Codice linguaggio",
-		language_command_parameter_language_help = "Il codice linguaggio che vuoi impostare.Per vedere tutti i linguaggi disponibili scrivi /languages.", 
+		language_command_parameter_language_help = "Il codice linguaggio che vuoi impostare. Per vedere tutti i linguaggi disponibili scrivi /languages.", 
 
 		languages_command = "/languages",
 		languages_command_help = "Controlla il linguaggio impostato.",
@@ -1457,6 +1578,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		radio_command_help = "Attiva la radio UI.",
 		radio_command_substitutes = "",
 
+		radio_debug_command = "/radio_debug",
+		radio_debug_command_help = "Attiva/Disattiva la radio debug.",
+		radio_debug_command_substitutes = "",
+
 		frequency_command = "/frequency",
 		frequency_command_help = "Imposta la frequenza radio.",
 		frequency_command_parameter_frequency = "frequenza",
@@ -1478,6 +1603,23 @@ OP.Global.Locales.Languages["it-IT"] = {
 		radio_volume_command_parameter_volume_help = "Il volume della radio. I valori possono andare da 0 a 1. La default è 0.1..",
 		radio_volume_command_substitutes = "",
 
+		-- game/riot_mode
+		toggle_riot_mode_command = "/riot_mode",
+		toggle_riot_mode_command_help = "Attiva la modalità riot per tutti i giocatori..",
+		toggle_riot_mode_command_substitutes = "",
+
+		add_riot_player_command = "/add_riot_player",
+		add_riot_player_command_help = "Aggiungere un giocatore al 'riot list' che avrà ambient peds.",
+		add_riot_player_command_parameter_server_id = "server id",
+		add_riot_player_command_parameter_server_id_help = "L'ID del giocatore che vuoi aggiungere. Lascialo vuoto per autoselezionare te stesso.",
+		add_riot_player_command_substitutes = "",
+
+		remove_riot_player_command = "/remove_riot_player",
+		remove_riot_player_command_help = "Rimuovere un giocatore dalla 'lista riot'.",
+		remove_riot_player_command_parameter_server_id = "server id",
+		remove_riot_player_command_parameter_server_id_help = "The server ID of the player you would like to remove. Leave this blank to auto-select yourself.",
+		remove_riot_player_command_substitutes = "",
+
 		-- game/security_cameras
 		security_cameras_command = "/security_cameras",
 		security_cameras_command_help = "Attiva le camere di sicurezza.",
@@ -1490,6 +1632,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		security_cameras_health_command = "/security_cameras_health",
 		security_cameras_health_command_help = "Attiva lo strumento di debug della resistenza delle camere di sicurezza .",
 		security_cameras_health_command_substitutes = "/cam_health",
+
+		-- game/shield
+		shield_command = "/shield",
+		shield_command_help = "Attiva lo scudo balistico.",
+		shield_command_substitutes = "",
 
 		-- game/sound_effects
 		play_sound_command = "/play_sound",
@@ -1514,6 +1661,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		status_reset_command_parameter_server_id_help = "L' ID del giocature di cui si vuole resettare lo status server.",
 		status_reset_command_substitutes = "",
 
+		toggle_status_command = "/toggle_status",
+		toggle_status_command_help = "Disabilita (o abilita) alcuni stati come la fame, la sete e lo stress.",
+		toggle_status_command_substitutes = "",
+
 		set_body_armor_command = "/set_body_armor",
 		set_body_armor_command_help = "Imposta il giubbotto ad un player.",
 		set_body_armor_command_parameter_server_id = "server id",
@@ -1522,19 +1673,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		set_body_armor_command_parameter_body_armor_level_help = "Il livello di armatura che desideri impostare. Questo valore può essere compreso tra '0' e '100'. Lasciandolo vuoto o come valore non valido, il valore predefinito sarà `100`.",
 		set_body_armor_command_substitutes = "/body_armor",
 
-		-- game/trackers
-		tracker_command = "/tracker",
-		tracker_command_help = "Abilita il tracker.",
-		tracker_command_substitutes = "",
-
-		trackers_split_command = "/trackers_split",
-		trackers_split_command_help = "Alterna tra avere i tracker memorizzati all'interno di una categoria sulla mappa e averli divisi.",
-		trackers_split_command_substitutes = "",
-
-		-- game/shield
-		shield_command = "/shield",
-		shield_command_help = "Abilita lo scudo balistico.",
-		shield_command_substitutes = "",
+		-- game/streamer_mode
+		toggle_streamer_mode_command = "/toggle_streamer_mode",
+		toggle_streamer_mode_command_help = "Attiva la modalità streamer. Questo impedirà ai giocatori di fare le emotes '18+' quando sei nelle vicinanze e così via.",
+		toggle_streamer_mode_command_substitutes = "/streamer_mode, /streamer",
 
 		-- game/slow_motion
 		toggle_slow_motion_command = "/slow_motion",
@@ -1561,7 +1703,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		weather_command_parameter_weather = "Tipo di clima",
 		weather_command_parameter_weather_help = "Puoi inserire uno tra questi climi: EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS and HALLOWEEN.",
 		weather_command_substitutes = "",
-		
+
 		advance_weather_command = "/advance_weather",
 		advance_weather_command_help = "Anticipare il prossimo clima.",
 		advance_weather_command_substitutes = "",
@@ -1578,10 +1720,32 @@ OP.Global.Locales.Languages["it-IT"] = {
 		blackout_command_help = "Attivare o disattivare un blackout.",
 		blackout_command_substitutes = "",
 
+		-- game/test_server
+		detach_all_doors_command = "/detach_all_doors",
+		detach_all_doors_command_help = "Stacca tutte le porte del veicolo in cui si trova attualmente.",
+		detach_all_doors_command_substitutes = "",
+
+		pop_all_tires_command = "/pop_all_tires",
+		pop_all_tires_command_help = "Fa scoppiare tutte le gomme del veicolo in cui ti trovi attualmente.",
+		pop_all_tires_command_substitutes = "",
+
+		upgrade_vehicle_fully_command = "/upgrade_vehicle_fully",
+		upgrade_vehicle_fully_command_help = "Aggiorna completamente il veicolo in cui ti trovi attualmente.",
+		upgrade_vehicle_fully_command_substitutes = "",
+
 		-- game/top_down
 		top_down_command = "/top_down",
 		top_down_command_help = "Abilita la vista dall'alto verso il basso.",
 		top_down_command_substitutes = "",
+
+		-- game/trackers
+		tracker_command = "/tracker",
+		tracker_command_help = "Attiva il tuo tracker.",
+		tracker_command_substitutes = "",
+
+		trackers_split_command = "/trackers_split",
+		trackers_split_command_help = "Alterna l'avere tracker memorizzati all'interno di una categoria sulla mappa e averli divisi.",
+		trackers_split_command_substitutes = "",
 
 		-- game/voice
 		voice_debug_command = "/voice_debug",
@@ -1592,11 +1756,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		-- game/wizard
 		ragdoll_command = "/ragdoll",
-		ragdoll_command_help = "Makes a player ragdoll.",
+		ragdoll_command_help = "Rende un giocatore ragdoll.",
 		ragdoll_command_parameter_server_id = "server id",
-		ragdoll_command_parameter_server_id_help = "Server ID of the player you want to ragdoll.",
-		ragdoll_command_parameter_force = "force",
-		ragdoll_command_parameter_force_help = "Apply a random force to the player after making them ragdoll.",
+		ragdoll_command_parameter_server_id_help = "ID del giocatore che vuoi far diventare ragdoll.",
+		ragdoll_command_parameter_force = "forza",
+		ragdoll_command_parameter_force_help = "Applica una forza casuale al giocatore dopo averlo reso ragdoll.",
 		ragdoll_command_substitutes = "",
 
 		-- global/entities
@@ -1633,6 +1797,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		clear_uis_command = "/clear_uis",
 		clear_uis_command_help = "Cancella tutti i focus dell'interfaccia utente.",
 		clear_uis_command_substitutes = "",
+
+		--jobs/duty
+		toggle_duty_status_command = "/toggle_duty_status",
+		toggle_duty_status_command_help = "Vai/Esci dal servizio.",
+		toggle_duty_status_command_substitutes = "/duty_status, /duty",
 
 		-- jobs/police
 		aim_assist_command = "/aim_assist",
@@ -1792,11 +1961,16 @@ OP.Global.Locales.Languages["it-IT"] = {
 		crosshair_command_substitutes = "",
 
 		aim_down_sight_command = "/aim_down_sight",
-		aim_down_sight_command_help = "Punta automaticamente verso il basso quando fai clic con il pulsante destro del mouse anche se sei in terza persona.",
-		aim_down_sight_command_substitutes = "/ads"
+		aim_down_sight_command_help = "Punta automaticamente verso il basso quando fai clic con il pulsante destro del mouse anche se sei in terza persona.",																
+		aim_down_sight_command_substitutes = "/ads",
+
+		-- weapons/weapons
+		check_ammo_command = "/check_ammo",
+		check_ammo_command_help = "Controlla quante munizioni hai in totale per l'arma che stai tenendo al momento.",
+		check_ammo_command_substitutes = "/ammo"
 	},
 
-	core = {
+core = {
 		version = "Version"
 	},
 
@@ -1986,7 +2160,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		luxury_autos = "Luxury Autos",
 		city_hall = "City Hall",
 		rockford_records = "Rockford Records",
-		dispensary = "Dispensario"
+		dispensary = "Dispensario",
+		vineyard = "Vigneto"
 	},
 
 	blockage = {
@@ -2028,7 +2203,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		invalid_screen_label = "L'etichetta dello schermo `${screenLabel}` non e' valida.",
 		missing_screen_label = "manca il parametro `screen label` .",
 		set_screen_label_already_set_to = "L'etichetta dello schermo è già impostata su `${screenLabel}`.",
-		
+
 		set_screen_label_already_set_to = "L'etichetta dello sfondo è già messa su `${screenLabel}`.",
 		only_available_in_the_casino = "Puoi fare questo solo quando sei dentro il casinò.",
 		casino_blip = "Casino"
@@ -2036,9 +2211,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 	cayo_perico_world = {
 		keep_flying_in_direction_se = "Continua ad volare a sud est per andare a Cayo Perico.\n(${distanceToTeleport}m left)",
-		keep_flying_in_direction_nw = "Continua a volare a nord est per andare a Los Santos .\n(${distanceToTeleport}m left)",
-		not_the_driver = "Devi essere il guidatore del veicolo per andare a Cayo Perico.",
-		not_an_air_vehicle = "Devi essere su un aereo o su un elicottero per andare a Cayo Perico.",
+		keep_flying_in_direction_nw = "Continua a volare verso nord-ovest per arrivare a Los Santos.\n(${distanceToTeleport}m left)",
+		keep_flying_in_direction_se_boat = "Continua a guidare verso sud-est per arrivare a Cayo Perico.\n(${distanceToTeleport}m left)",
+		keep_flying_in_direction_nw_boat = "Continua a guidare verso nord est per arrivare a Los Santos.\n(${distanceToTeleport}m left)",
+		not_the_driver = "Devi essere il conducente del veicolo per volare a Cayo Perico.",
+		not_a_cayo_vehicle = "Bisogna essere in barca, in aereo o in elicottero per arrivare a Cayo Perico.",
 		entering_cayo_perico_logs_title = "Entrando in Cayo perico",
 		entering_cayo_perico_logs_details = "${consoleName} sta entrando a Cayo Perico.",
 		exiting_cayo_perico_logs_title = "Uscendo da Cayo Perico",
@@ -2067,6 +2244,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 	cinematic = {
 		cinematic = "Cinematica",
 		black_bars_set_to = "Le barre nere cinematografiche ora sono state impostate su ${blackBarsHeight}%."
+	},
+
+	crashes = {
+		crash_failed = "Impossibile attivare il crash per ${consoleName}.",
+		crash_success = "Crash innescato con successo per ${consoleName}.",
+		server_id_invalid = "Server ID non valido."
 	},
 
 	clip_saver = {
@@ -2115,6 +2298,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		network_id = "Network Id",
 		owned_by_us = "Di nostra proprietà",
 		owned_by = "Posseduto da",
+
 		not_networked = "Non in rete",
 		model_hash = "Model Hash",
 		model_name = "Nome Modello",
@@ -2133,6 +2317,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		inject_code_user_not_found = "User non trovato.",
 		inject_code_invalid_url = "URL non valido.",
 		game_pools = "Pool di gioco:",
+
 		ped_is = "Ped è:",
 		vehicle_is = "Veicolo è:",
 		native_calls = "Chiamate native: ${trueNativeCallsLastFrame} (${totalNativeCalls})",
@@ -2142,7 +2327,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 		coords = "Coordinate: ${coords}",
 		rotation = "Rotazione: ${rotation}",
 		velocity = "Velocità: ${velocity}",
+
 		debug_print_f8 = "Le informazioni di debug sono state stampate nella console F8.",
+
+		invalid_network_id = "Invalid network ID.",
+		delete_entity_success = "Successfully deleted entity with network id ${networkId}.",
+		delete_entity_failed = "Failed to delete entity.",
+		delete_entity_no_permissions = "The player attempted to delete an entity without proper permission.",
 
 		fake_lag_updated = "Il falso contatore di lag è stato aggiornato a `${counter}`.",
 		fake_lag_already_set_to = "Il falso di contatore di lag è impostato a `${counter}`.",
@@ -2168,25 +2359,34 @@ OP.Global.Locales.Languages["it-IT"] = {
 		added_coordinates_draw = "Aggiunte Coordinate `x: ${x}, y: ${y}, z: ${z}` to the draw list with ID `${drawId}`.",
 		no_coordinate_draws_to_destroy = "Non c'erano estrazioni di Coordinate da distruggere.",
 		destroyed_coordinate_draws = "Disrutto `${drawingCoordinatesAmount}` Coordinate.",
+
 		debug_damage_enabled = "Damage debugging enabled.",
-		debug_damage_disabled = "Damage debugging disabled."
+		debug_damage_disabled = "Damage debugging disabled.",
+
+		enabled_network_debug = "Entity network debugging enabled.",
+		disabled_network_debug = "Entity network debugging disabled.",
+		failed_network_debug = "Failed to enable entity network debugging.",
+
+		network_owner_subscription_no_permissions = "Attempted to subscribe to entity network owners without proper permission."
 	},
-	
+
 	dna_evidence = {
 		taking_sample = "Prelevando campioni di DNA",
 		already_taking_sample = "Hai già preso un campione di DNA di questo giocatore.",
 		sample_no_player = "Non ci sono giocatori vicini per prendere campioni di DNA.",
 		sample_no_bags = "Non hai un sacchetto delle prove.",
 		dna_evidence_bag = "Campione di DNA",
+
 		evidence_failed = "Non sei riuscito a prendere il campione di DNA.",
+
 		evidence_text = ": Campione di DNA\nDNA prelevato da ${fullName} #${characterId}\n\nInformazioni aggiuntive:\n • E' stato raccolto alle: ${time}"
 	},
 
 	doors = {
 		locked = "Chiusa",
 		unlocked = "Aperta",
-		locked_press_to_unlock = "[${InteractionKey}] Aperta",
-		unlocked_press_to_lock = "[${InteractionKey}] Chiusa",
+		locked_press_to_unlock = "[${InteractionKey}] Per aprire",
+		unlocked_press_to_lock = "[${InteractionKey}] Per chiudere",
 		locking = "Chiudendo",
 		unlocking = "Aprendo",
 		jewelry_store_closed = "La Gioielleria è attualmente chiusa. Tornate più tardi perfavore.",
@@ -2203,7 +2403,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 		sample_no_player = "Non ci sono giocatori vicini a cui puoi prendere l'impronta digitale.",
 		sample_no_bags = "Non hai un sacchetto delle prove.",
 		fingerprint_evidence = "Impronta digitale",
+
 		evidence_failed = "Non sei riuscito a prendere l'impronta digitale del giocatore.",
+
 		evidence_text = "Tipo di prova: Fingerprint\nFingerprint di ${fullName} #${characterId}\n\nInformazioni aggiuntive:\n • E' stato raccolto alle: ${time}"
 	},
 
@@ -2269,7 +2471,19 @@ OP.Global.Locales.Languages["it-IT"] = {
 		player_death_recent = "${consoleName} è morto l'ultima volta ${timer} secondi fa.",
 		no_recent_death = "${consoleName} non è morto recentemente.",
 		death_alcohol_poisoning = "Sei svenuto per avvelenamento da alcol.",
-		character_has_hardcore_died = "${fullName} è morto. Dovresti scegliere un'altro personaggio."
+		character_has_hardcore_died = "${fullName} è morto. Dovresti scegliere un'altro personaggio.",
+
+		death_timer_override_already_set_to = "The death timer override is already set to `${time}`.",
+		set_death_timer_override = "The death timer override has been set to `${time}`",
+		time_parameter_is_invalid = "The 'time' parameter is invalid.",
+		death_timer_override_removed = "The death timer override has been removed.",
+		no_death_timer_override_set = "There is no death timer override set.",
+
+		invalid_distance = "Invalid revive range (Has to be between 1 and 50).",
+		no_players_in_range = "There are no players within a ${distance}m radius.",
+		successfully_revived_range = "Successfully revived ${amount} player(s) in a ${distance}m radius.",
+		failed_revive_range = "Failed to revive players.",
+		range_revive_not_staff = "Player attempted to revive players in a certain range, but didn't have correct permissions to do so."
 	},
 
 	hud = {
@@ -2284,7 +2498,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 		fps = "FPS",
 		ping = "PING",
 		autopilot = "Autopilota",
-		ground_asl = "AGL/ASL (${unit})"
+		ground_asl = "AGL/ASL (${unit})",
+		gear = "Marce"
+	},
+
+	hunting = {
+		hold_to_skin = "[${InteractionKey}] Hold to skin",
+		skinning_animal = "Skinning dead animal",
+		hit_by_vehicle = "This animal's meat is too damaged.",
+		animal_is_being_skinned = "The animal is being skinned."
 	},
 
 	hunting = {
@@ -2336,6 +2558,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 		badge_type_short_management = "Management"
 	},
 
+	injuries = {
+		inspect_no_player = "Nessun giocatore nelle vicinanze che tu possa ispezionare.",
+		already_inspecting = "Stai già ispezionando un giocatore.",
+		inspect_failed = "Mancata ispezione del giocatore.",
+		inspecting = "Ispezionando il giocatore",
+		no_injuries = "Nessuna ferita o sanguinamento"
+	},
+
 	instances = {
 		instance_created = "Create an instance with ID `${instanceId}`.",
 		instance_creation_failed = "Failed to create an instance.",
@@ -2375,9 +2605,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 		store = "Negozio",
 		gas_station = "Stazione di benzina",
 		grocery_store = "Alimentari",
-		tool_store = "Negozio di attrezzi",
-		gun_store = "Armeria",
-		gun_store_with_shooting_range = "Armeria con poligono",
+		prison_store = "Prison Store",
+		fruit_vendor = "Venditore di frutta",
+		island_store = "Island Store",
+		island_bar = "Island Bar",
+		burger_bar = "Burger Bar",
+		tool_store = "Tool Store",
+		gun_store = "Ammu-Nation",
+		gun_store_with_shooting_range = "Ammu-Nation with Range",
 		bar = "Bar",
 		strip_club = "Strip Club",
 		police_store = "Police Store",
@@ -2402,6 +2637,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		store_tax = "Tasse del negozio",
 		store_tax_percentage = "${tax}%",
 
+		missing_job = "Non hai il lavoro richiesto per usare questo inventario.",
+
 		search = "Cerca",
 		amount = "Quantità",
 		use = "Usa",
@@ -2411,7 +2648,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		burnt = "BRUCIATO",
 		danger = "PERICOLOSO",
 		fuel = "Carburante: ${fuel}",
-
 		item_does_stack = "Questo articolo si accumula.",
 		item_does_not_stack = "Questo articolo non si accumula.",
 		individual_weight = "Peso individuale",
@@ -2430,19 +2666,19 @@ OP.Global.Locales.Languages["it-IT"] = {
 		logs_item_purchased_tax_details = "${consoleName} ha comprato ${purchaseAmount}x `${itemLabel}` a $${purchaseCost} pagando $${taxCost} dovuto a ${salesTaxPercentage}% tasse di vendita.",
 
 		radius_invalid = "Un raggio di `${radius}` non è un valore valido.",
-		wiped_all_ground_inventories = "Wiped ${inventoriesWiped} ground inventories.",
-		wiped_nearby_ground_inventories = "Wiped ${inventoriesWiped} ground inventories within a radius of `${radius}`.",
-		failed_to_wipe_ground_inventories = "Failed to wipe ground inventories.",
-		no_ground_inventories = "There were no ground inventories to wipe.",
-		no_ground_inventories_within_radius = "There were no ground inventories to wipe within a radius of `${radius}`.",
+		wiped_all_ground_inventories = "Wiped ${inventoriesWiped} inventari nel pavimento.",
+		wiped_nearby_ground_inventories = "Wiped ${inventoriesWiped} inventari nel pavimento nel raggio di `${radius}`.",
+		failed_to_wipe_ground_inventories = "Errore nel wipe degli inventari nel pavimento.",
+		no_ground_inventories = "Non c'erano inventari di terra da pulire.",
+		no_ground_inventories_within_radius = "Non c'erano inventari di terra da pulire in un raggio di `${radius}`.",
 
-		wipe_inventories_not_staff = "Player attempted to wipe inventories, but didn't have correct permissions to do so.",
+		wipe_inventories_not_staff = "Il giocatore ha tentato di cancellare gli inventari, ma non aveva i permessi corretti per farlo.",
 
-		logs_wiped_all_ground_inventories_title = "Wiped All Ground Inventories",
-		logs_wiped_all_ground_inventories_details = "${consoleName} wiped all ground inventories.",
+		logs_wiped_all_ground_inventories_title = "Wipati tutti gli inventari di terra",
+		logs_wiped_all_ground_inventories_details = "${consoleName} wipato tutti gli inventari di terra.",
 
-		logs_wiped_nearby_ground_inventories_title = "Wiped Nearby Ground Inventories",
-		logs_wiped_nearby_ground_inventories_details = "${consoleName} wiped all ground inventories within a radius of `${radius}`.",
+		logs_wiped_nearby_ground_inventories_title = "Inventari di terra vicini cancellati",
+		logs_wiped_nearby_ground_inventories_details = "${consoleName} ha cancellato tutti gli inventari di terra in un raggio di `${radius}`.",
 
 		press_use_campfire = "[E] Usa falò",
 		use_campfire = "Usa falò",
@@ -2488,7 +2724,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		handcuffs = "Manette",
 		handcuffs_description = "Per un'esperienza ERP completa.",
 		bolt_cutter = "Tagliabulloni",
-		bolt_cutter_description = "The ERP wasn't as fun as expected...",
+		bolt_cutter_description = "L'ERP non è stato così divertente come ci si aspettava...",
 		drill = "Trapano",
 		drill_description = "Scommetto che molte persone qui intorno avrebbero bisogno di questo... considerando che alcuni sembrano avere qualche vite allentata.",
 		umbrella = "Ombrello",
@@ -2545,6 +2781,31 @@ OP.Global.Locales.Languages["it-IT"] = {
 		banana_description = "sus",
 		smores = "Smores",
 		smores_description = "yes",
+		tic_tac = "Tic Tac",
+		tic_tac_description = "Ossicodone? No agente, sto solo mangiando tic tac!",
+
+		apple = "Mela",
+		apple_description = "Tenere a bada i dottori malvagi!",
+		banana = "Banana",
+		banana_description = "sus",
+		cherry = "Ciliegia",
+		cherry_description = "On Top (se è la tua preferenza)",
+		kiwi = "Kiwi",
+		kiwi_description = "Il frutto, non l'animale. (Da non confondere con A-32)",
+		mango = "Mango",
+		mango_description = "Per favore, non sparate! Lascia solo che il mango...",
+		orange = "Arancia",
+		orange_description = "Sei contento che non ho detto banana.",
+		peach = "Pesca",
+		peach_description = "Non un sedere.",
+		pineapple = "Ananas",
+		pineapple_description = "Pen pineapple apple pen.",
+		pomegranate = "Melograno",
+		pomegranate_description = "Sii contento che l'abbiamo scritto bene.",
+		strawberry = "Fragola",
+		strawberry_description = "Di solito si trovano nei campi... per sempre.",
+		watermelon = "Anguria",
+		watermelon_description = "È acqua o è un melone? Forse non lo sapremo mai.",
 
 		beer = "Birra",
 		beer_description = "Acqua incazzata.",
@@ -2592,7 +2853,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		chip = "Chip",
 		chip_description = "Chip di hacker dall'aspetto fantastico.",
 		decryption_key_red = "Chiave di decrittazione rossa",
-		decryption_key_red_description = "LO SAPEVATE? I mafiosi rossi in realtà sono solo un mucchio di fighe.",
+		decryption_key_red_description = "LO SAPEVATE? i Bloods in realtà sono solo un mucchio di fighe.",
 		decryption_key_green = "Chiave di decrittazione verde",
 		decryption_key_green_description = "LO SAPEVATE? La coca cola originariamente era di colore verde.",
 		decryption_key_blue = "Chiave di decrittazione blu",
@@ -2664,7 +2925,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		self_driving_chip = "Chip per la guida autonoma",
 		self_driving_chip_description = "Dead deers everywhere... fucking hilarious.",
 
-		raspberry = "Lampone",
+		raspberry = "Raspberry",
 		raspberry_description = "https://i.redd.it/jbcj0uqbihg41.jpg",
 
 		pigeon_milk = "Latte di piccione",
@@ -3034,7 +3295,34 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		-- TODO: Add a description for this one
 		weapon_addon_stungun = "Stun Gun",
-		weapon_addon_stungun_description = ""
+		weapon_addon_stungun_description = "",
+
+		weapon_addon_m4 = "M4 Carbine",
+		weapon_addon_m4_description = "Esattamente il motivo per cui è stato dato al dipartimento di polizia.",
+
+		weapon_addon_mp9 = "B&T MP9",
+		weapon_addon_mp9_description = "Piccolo e veloce, un po' come la persona che lo tiene in mano...",
+
+		weapon_addon_rc4 = "Remington R4-C",
+		weapon_addon_rc4_description = "Esuberante e veloce, il partner perfetto da avere nella tua squadra. A patto che la testa rossa non la tenga.",
+
+		weapon_addon_pp19 = "PP-19 Vityaz",
+		weapon_addon_pp19_description = "L'apice dell'eccellenza russa, perfetto per qualsiasi tipo di 'Raid'. ",
+
+		weapon_addon_m9a3 = "Beretta M9A3",
+		weapon_addon_m9a3_description = "Tutto ciò di cui hai bisogno per fare le tue sporche azioni a basso costo.",
+
+		weapon_addon_357mag = "357 Magnum",
+		weapon_addon_357mag_description = "Dagli arresti stradali agli zombie, questo revolver è il migliore amico degli sceriffi.",
+
+		weapon_addon_hk416b = "H&K 416",
+		weapon_addon_hk416b_description = "Come l'AMG, questa pistola è personalizzabile e pronta per la guerra, basta non invertirla...",
+
+		weapon_addon_m870 = "Remington M870",
+		weapon_addon_m870_description = "Sport perfetto e fucile da caccia, anche se sparare ai Danny non è proprio uno sport... vero?",
+
+		weapon_addon_rpk16 = "RPK-16",
+		weapon_addon_rpk16_description = "La mitragliatrice più perfetta che sia mai esistita, basta non dimenticare la tuta da ginnastica."
 	},
 
 	items = {
@@ -3055,7 +3343,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		changing_license_plate = "Cambiando targa ",
 		unable_to_change_license_plate = "Non puoi cambiare targa del veicolo con persone all'interno.",
 		equipping_parachute = "Equipaggiando paracadute",
-		
+
 		lockpicking_vehicle = "Scassinando veicolo",
 		illegal_weather_name = "Tentativo di usare un incantesimo del meteo con un item id illegale.",
 		equipping_body_armor = "Equipaggiando giubbotto antiproiettile",
@@ -3066,6 +3354,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		logs_used_weather_spell_title = "Incantesimo del meteo usato",
 		logs_used_weather_spell_details = "${consoleName} ha usato l' incantesimo del meteo `${itemName}`."
+	},
+
+	locate = {
+		invalid_filter_value = "Invalid filter value.",
+		locate_failed = "Failed to locate entity matching `${filter}`.",
+		something_went_wrong = "Failed to locate entity.",
+		locate_success = "Successfully located entity matching `${filter}` at (${x}, ${y}, ${z}).",
+
+		locate_entity_no_permissions = "The player attempted to locate an entity without proper permission."
 	},
 
 	login = {
@@ -3124,6 +3421,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		spin_lucky_wheel_for_free = "Premi ~INPUT_CONTEXT~ per girare la Ruota della fortuna. Hai 1 tentativo gratuito! ",
 		unable_to_spin_lucky_wheel = "Hai gia' girato la Ruota della fortuna oggi. Torna piu' tardi!",
 		lucky_wheel_is_occupied = "La Ruota della fortuna e' occupata. Attendi.",
+
 		not_enough_balance_to_spin = "Non hai abbastanza soldi per girare la ruota. Il costo e' di $${cost}.",
 		logs_lucky_wheel_reward_title = "Premio Ruota della fortuna",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} ha girato la ruota e ha vinto un veicolo.",
@@ -3351,12 +3649,23 @@ OP.Global.Locales.Languages["it-IT"] = {
 		hatch_waiting = "ASPETTA",
 
 		about_advent_calendar_title = "Riguardo il calendario dell'avvento ",
+
+		-- NOTE: this is the most aids shit ever, please ignore the HTML stuff in here
 		about_advent_calendar_text = [[
-			Il calendario dell' avvento cerca di portare felicita' tra i player di ${communityName} durante il mese di Dicembre!
+			The advent calendar is a holiday feature meant to bring some more joy to the players of ${communityName} throughout the month of December!
 			<br><br>
-			Ogni giorno, un premio sara' disponibile, contenente un veicolo, soldi, oggetti o altro. Ogni volta che un premio sara' disponibile, dovrai riscattarlo per poterlo ottenere. Opening and collecting will become impossible after the 25th of December.
+			Every day, another hatch will become available, containing money, an item, a vehicle or something else. All hatches belonging to a previous date will be available. Once a hatch has been opened, you must claim it in order to receive it. Opening and collecting will become impossible after the 25th of December.
 			<br><br>
-			Prossimo premio si sblocca in ${time}.
+			Next hatch unlocks in ${time}.
+			<br><br>
+			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 26th.)
+			<br><br>
+			<div class="bonusPoints">
+				<div>Bonus Points: ${bonusPoints}/22</div>
+				<div>
+					<button class="button" style="${buttonStyle}" id="claimBonusButton">${buttonText}</button>
+				</div>
+			</div>
 		]],
 
 		unlocks_in_days_hours_minutes_seconds = "${days} giorni, ${hours} ore, ${minutes} minuti and ${seconds} secondi",
@@ -3390,7 +3699,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 		illegal_weapons_title = "Armi spawnate",
 		illegal_weapons_about = "Gli ultimi 500 log delle armi spawnate. Quando qualcuno ha un' arma spawnata. non per forza e' lui stesso il modder. I modder possono anche spawnare armi negli inventari di player normali",
 		illegal_weapons_by_type = "Armi secondo il tipo",
-		players_with_spawned_weapons = "Giocatori con armi spawnate"
+		players_with_spawned_weapons = "Giocatori con armi spawnate",
+
+		ped_models_title = "Player Ped models",
+		ped_models_about = "In here every player who is not using a freemode character model is listed. This should help in finding players who are here just to troll or potential modders.",
+		local_ped_models_title = "Local Ped models",
+		animal_ped_models_title = "Animal Ped models",
+
+		no_entries = "No entries"
 	},
 
 	pawn_shops = {
@@ -3470,17 +3786,19 @@ OP.Global.Locales.Languages["it-IT"] = {
 		chat_ped_messages_enabled = "I messaggi dei ped sono visibili in chat.",
 		chat_ped_messages_disabled = "I messaggi dei ped non saranno visibili in chat.",
 		me_message_chat_title = "/me [${serverId}]",
+		inspect_chat_title = "/inspect [${serverId}]",
+		frisk_chat_title = "/frisk [${serverId}]",
 		do_message_chat_title = "/do [${serverId}]",
-		attempt_message_chat_title = "/tentativo [${serverId}]",
-		dice_message_chat_title = "/dado [${serverId}]",
-		roll_message_chat_title = "/lanciadado [${serverId}]",
-		card_message_chat_title = "/carta [${serverId}]",
-		description_message_chat_title = "/descrizione [${serverId}]",
+		attempt_message_chat_title = "/attempt [${serverId}]",
+		dice_message_chat_title = "/dice [${serverId}]",
+		roll_message_chat_title = "/roll [${serverId}]",
+		card_message_chat_title = "/card [${serverId}]",
+		description_message_chat_title = "/description [${serverId}]",
 		message_too_long = "Il messaggio contiene troppi caratteri o linee!"
 	},
 
 	ped_objects = {
-		illegal_ped_object = "Tentativo di aggiungere un oggetto ped alla lista degli oggetti ped 'ammessi'."
+		illegal_ped_object = "Tentativo di aggiungere un oggetto ped alla lista degli oggetti ped 'ammessi'."																				 
 	},
 
 	ped_spawn = {
@@ -3558,6 +3876,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		radio_removed = "Hai perso la radio.",
 		no_radio = "Non hai una radio.",
 		unable_to_use_radio_while_cuffed = "Non puoi usare la radio da ammanettato.",
+
 		frequency_set_to = "La frequenza e' ${frequency}.",
 		frequency_already_set_to = "La frequenza e' gia' ${frequency}.",
 		radio_volume_same = "Il volume della radio e' gia' `${radioVolume}`.",
@@ -3569,7 +3888,33 @@ OP.Global.Locales.Languages["it-IT"] = {
 		radio_sound_effects_reset = "Il volume degli effetti sonori della radio e' stato resettato.",
 		radio_sound_effects_set = "Il volume degli effetti sonori della radio e' stato messo a `${radioSoundEffects}`.",
 		radio_sound_effects_current = "Il volume degli effetti sonori della radio e' `${radioSoundEffects}`.",
-		radio_sound_effects_current_default = "Il volume degli effetti sonori della radio e' default."
+		radio_sound_effects_current_default = "Il volume degli effetti sonori della radio e' default.",
+
+		radio_debug_failed = "Impossibile attivare il debug della radio.",
+		radio_debug_off = "Disattivato con successo il debug della radio.",
+		radio_debug_on = "Attivato con successo il debug della radio.",
+
+		radio_debug_no_permissions = "Ha tentato di attivare il debug della radio senza il permesso appropriato."
+	},
+
+	riot_mode = {
+		riot_mode_enabled = "Abilitata con successo la modalità antisommossa.",
+		riot_mode_disabled = "Disattivata con successo la modalità antisommossa. I pedoni già aggressivi continueranno a combattere fino alla morte.",
+		riot_mode_failed = "Impossibile attivare la modalità riot.",
+		riot_mode_missing_perms = "Tentativo di attivare la modalità antisommossa senza il permesso appropriato.",
+
+		riot_mode_enabled_help = "La modalità Riot è stata attivata.",
+		riot_mode_disabled_help = "La modalità Riot è stata disabilitata.",
+
+		add_riot_player_no_permissions = "Ha tentato di aggiungere un giocatore alla lista dei disordini senza il permesso appropriato.",
+		remove_riot_player_no_permissions = "Ha tentato di aggiungere un giocatore alla lista dei disordini senza il permesso appropriato.",
+
+		player_already_in_riot_list = "${consoleName} è già nella lista delle rivolte.",
+		player_not_in_riot_list = "${consoleName} non è nella lista delle rivolte.",
+		added_riot_player = "Aggiunto ${consoleName} alla lista delle rivolte.",
+		failed_to_add_riot_player = "Impossibile aggiungere ${consoleName} alla lista delle rivolte.",
+		removed_riot_player = "Rimosso ${consoleName} alla lista delle rivolte.",
+		failed_to_remove_riot_player = "Impossibile rimuovere ${consoleName} alla lista delle rivolte"
 	},
 
 	screenshots = {
@@ -3682,6 +4027,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		slow_motion_disabled = "Disattivata con successo la modalità slow motion.",
 		slow_motion_failed = "Impossibile attivare la modalità slow motion.",
 		slow_motion_missing_perms = "Tentativo di attivare la modalità slow motion senza il permesso appropriato.",
+
 		slow_motion_enabled_help = "Slow motion mode has been enabled.",
 		slow_motion_disabled_help = "Slow motion mode has been disabled."
 	},
@@ -3754,6 +4100,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		status_reset_failed = "Nessun user con id `${serverId}` trovato.",
 		reset_status_not_staff = "Tentativo di resettare lo status di un player senza permessi.",
 		status_reset_for_all = "Resettato status per tutti.",
+
 		failed_to_set_body_armor_level = "Fallita esecuzione del comando `/set_body_armor`.",
 		set_body_armor_level_player = "Settato il livello di armatura per ${consoleName} a `${bodyArmorLevel}`.",
 		set_body_armor_level_everyone = "Settato il livello di armatura di tutti a `${bodyArmorLevel}`.",
@@ -3768,11 +4115,17 @@ OP.Global.Locales.Languages["it-IT"] = {
 		stress_level_warning = "Sei stressato! Abbassa lo stress fumando sigarette, canne o facendo attivita' come lo Yoga."
 	},
 
+	streamer_mode = {
+		enabled_streamer_mode = "Abilitata streamer mode.",
+		disabled_streamer_mode = "Disabilitata streamer mode."
+	},
+
 	sync = {
 		missing_hour = "Nessun ora fornita.",
 		invalid_hour = "L'ora `${hour}`non e' valida. Il valore dovrebbe essere tra 0 e 23.",
 		hour_changed = "L'ora e' stata impostata a `${hour}`.",
 		set_hour_not_staff = "Tentativo di cambiare ora senza i permessi.",
+												
 		missing_minute = "Nessun minutaggio fornito.",
 		invalid_minute = "Il minuto `${minute}` non e' valido. Il valore dovrebbe essere tra 0 e 59.",
 		minute_changed = "I minuti sono stati impostati a `${minute}`.",
@@ -3799,7 +4152,17 @@ OP.Global.Locales.Languages["it-IT"] = {
 		blackout_not_staff = "Tentativo di fare un blackout senza i permessi.",
 
 		weather_changed_title = "Meteo cambiato",
-		weather_changed_details = "${consoleName} ha cambiato il meteo a `${weatherName}`."
+		weather_changed_details = "${consoleName} ha cambiato il meteo a `${weatherName}`.",
+
+		weather_changed_success = "Successfully changed weather to `${weatherName}`.",
+		weather_change_failed = "Failed to change weather.",
+		weather_parameter_invalid = "Invalid weatherName parameter.",
+		weather_parameter_missing = "Missing weatherName parameter.",
+
+		time_parameters_invalid = "Invalid hour or minute parameter.",
+		time_currently_transitioning = "The time is currently transitioning, please wait.",
+		time_successfully_transitioned = "Successfully transitioned the time to `${hour}:${minute}`.",
+		time_successfully_set = "Successfully set the time to `${hour}:${minute}`."
 	},
 
 	tattoos = {
@@ -3904,6 +4267,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		exit_penthouse_interact = "[${InteractionKey}] Exit Penthouse"
 	},
 
+	test_server = {
+		fully_upgraded = "Successfully upgraded vehicle."
+	},
+
 	top_down = {
 		not_in_valid_vehicle = "You are not in a valid vehicle (only cars/bikes).",
 		top_down_on = "Top down view activated.",
@@ -3921,7 +4288,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 		tracker_character = "${firstName} ${lastName}",
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName}",
 		trackers_in_category = "I localizzatori saranno conservati all'interno di una categoria sulla mappa.",
-		trackers_split = "I localizzatori saranno divisi in blip singoli."
+		trackers_split = "I localizzatori saranno divisi in blip singoli.",
+
+		department_sasp = "SASP:",
+		department_bcso = "BCSO:",
+		department_doc = "DOC:",
+		department_park_rangers = "Ranger:",
+		department_medical = "EMS:"
 	},
 
 	training = {
@@ -3985,6 +4358,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 		actual_radius = "Raggio attuale: ${actualRadius}"
 	},
 
+	wizard = {
+		ragdoll_missing_permissions = "Tentativo di rendere un giocatore ragdoll senza i permessi appropriati.",
+
+		ragdoll_failed = "Non è riuscito a rendere il giocatore ragdoll.",
+		ragdoll_success = "Hai reso ${consoleName} ragdoll."
+	},
+
 	yoga = {
 		yoga_blip = "Yoga",
 		yoga_mat_use = "[${InteractionKey}] Tappetino yoga",
@@ -4000,10 +4380,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	-- global/*
-	decors = {
-		illegal_decor_type = "Sincronizzando tipi di valori di arredamento non validi." 
-	},
-
 	explosions = {
 		invalid_explosion_type = "Tipo di esplosione `${explosionType}` non e' valido.",
 		invalid_camera_shake = "Movimento di camera `${cameraShake}` non e' valido .",
@@ -4049,7 +4425,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		grab_gold_bar = "[${InteractionKey}] Prendi lingotto d'oro (${barsRemaining} left)",
 		grabbing_gold_bar = "Prendendo lingotto d'oro",
 		use_advanced_lockpick = "[${InteractionKey}] Usa grimaldello avanzato",
-		lockpicking_stockade = "Scassinando barriera"
+		lockpicking_stockade = "Scassinando barriera",
+
+		reward_diamond = "Hai rubato un diamante.",
+		reward_gold_bar = "Hai rubato un lingotto d'oro.",
+		reward_cash = "Hai preso un po di soldi."
 	},
 
 	-- jobs/*
@@ -4066,6 +4446,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 		finished_delivery_title = "Finita consegna Burger Shot ",
 		finished_delivery_details = "${consoleName} finita consegna Burger Shot e hai ricevuto $${deliveryPrice} e $${distanceBonus} in mancia, ammontando a $${totalPrice}.",
 		delivery_blip = "Consegna Burger Shot"
+	},
+
+	duty = {
+		toggle_duty_status_no_permissions = "Player attempted to toggle on duty status via command without proper permissions.",
+
+		duty_status_on = "Sei entrato in servizio.",
+		duty_status_off = "Sei uscito dal servizio.",
+		duty_status_failed = "Impossibile andare in servizio."
 	},
 
 	job_center = {
@@ -4236,6 +4624,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		retrieved_vehicle_logs_title = "Veicolo recuperato",
 		retrieved_vehicle_logs_details = "${consoleName} recuperato veicolo con targa `${plate}` per $250.",
 
+		vehicle_weight = "Peso: ${weight}",
+		last_garage_letter = "Ultimo - Garage ${letter}",
+		last_garage_impound = "Ultimo - Impound Lot",
+		no_last_garage_letter = "Nessun ultimo garage",
+
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "Attivato debug garage.",
 		toggle_garage_debug_toggled_off = "Disattivato debug garage."
@@ -4365,7 +4758,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 	weapons = {
 		pick_up_fire_extinguisher = "Tieni premuto ~INPUT_CONTEXT~ per prendere l'estintore.",
 		press_to_drop_fire_extinguisher = "Premi ~INPUT_FRONTEND_RRIGHT~ per lasciare a terra l'estintore.",
-		illegal_fire_extinguisher_model = "Provato ad eliminare un estintore su tutti i client con un modello che non era un estintore." 
+		illegal_fire_extinguisher_model = "Provato ad eliminare un estintore su tutti i client con un modello che non era un estintore.",
+		illegal_fire_extinguisher_model = "Tentativo di eliminare un estintore su tutti i clienti con un modello che non era un estintore.",
+
+		no_weapon_equipped = "Nessun arma equipaggiata.",
+		no_ammo = "Nessuna munizioni per quest'arma.",
+		infinite_ammo = "Hai munizioni infinite per quest'arma.",
+		ammo_count = "Tu hai ${clips} caricatori pieni (${total} rounds in total).",
+		ammo_count_loose = "Tu hai ${clips} caricatori pieni e 1 caricatore con ${loose} rounds (${total} rounds in totale)."
 	},
 
 	-- a shared "alpha" locale category uwu - also know, some features such as the ${InteractionKey} will be missing here, so don't try to use it
@@ -4494,8 +4894,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 		opacity = "Opacita'",
 		colours = "Colori",
 		press_to_access_clotheshop = "Premi ~INPUT_CONTEXT~ per personalizzare il personaggio.",
-		clothing_store = "Negozio Vestiti",
-		finish_creation = "Premi ~g~G ~w~ per completare la personalizzazione del personaggio. Non puoi annullare questa azione.",
+		changing_only_clotheshop = "Fai /outfit per cambiare il tuo outfit.",
+		clothing_store = "Negozio di vestiti",
+		finish_creation = "Premi ~g~G ~w~per completare la personalizzazione del tuo personaggio. Non puoi annullare questa azione.",
 		press_to_customize = "Premi ~INPUT_CONTEXT~ per personalizzare il personaggio.",
 		barbershop = "Barbiere",
 		not_a_clothing_spot = "Devi essere vicino ad uno scaffale per poter usarlo!",
@@ -4515,7 +4916,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		evidence_type = "Tipo di prova",
 		evidence_casings = "Gli involucri sono tornati al numero seriale ${serialNumber} che era tenuto da ${buyerName} (${buyerCid}) al momento dell'uso.",
 		evidence_bullets = "I danni del proiettile sembrano essere stati creati da ${bulletLabel}.",
-		evidence_dna = "Il DNA e' stato preso dal veicolo con targa ${plateNumber} e tornato indietro a ${DNAOwnerName} (${DNAOwner}).",
+		evidence_car_dna = "Il DNA e' stato preso dal veicolo con targa ${plateNumber} e tornato indietro a ${DNAOwnerName} (${DNAOwner}).",
+		evidence_dna = "DNA preso da ${fullName} #${characterId}.",
+		evidence_fingerprint = "Fingerprint di ${fullName} #${characterId}.",
+		evidence_not_processed = "Questa borsa delle prove non è stata ancora esaminata.",
 		additional_information = "Informazioni aggiuntive:",
 		picked_up_at_location = "Preso al posto:",
 		timestamp_of_pickup = "Momento di raccolta:",
