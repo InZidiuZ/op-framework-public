@@ -506,7 +506,14 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		item_durability_repair_success = "Successfully repaired durability for items in slot ${slotId}.",
 		item_durability_repair_failed = "Failed to repair durability.",
-		item_durability_repair_no_permission = "Attempted to repair an items durability without required permissions."
+		item_durability_repair_no_permission = "Attempted to repair an items durability without required permissions.",
+
+		identity_set = "Successfully set your identity to `${name}`.",
+		identity_reset = "Successfully reset your identity.",
+		identity_set_failed = "Failed to set your identity.",
+		identity_hud = "Identity: ${playerName}",
+
+		set_identity_no_permission = "Player attempted to set their player name without proper permissions."
 	},
 
 	anti_cheat = {
@@ -950,13 +957,19 @@ OP.Global.Locales.Languages["en-US"] = {
 		fake_disconnect_command_help = "Triggers a series of events to make it seem as you disconnected from the server. This will also enable your noclip if it isn't on already.",
 		fake_disconnect_command_substitutes = "/fake_leave, /dc",
 
+		set_identity_command = "/set_identity",
+		set_identity_command_help = "Overrides your player name.",
+		set_identity_command_parameter_player_name = "player name",
+		set_identity_command_parameter_player_name_help = "The name you want to set or empty to reset.",
+		set_identity_command_substitutes = "/identity",
+
 		disable_idle_cam_command = "/disable_idle_cam",
 		disable_idle_cam_command_help = "Disables the idle camera from activating.",
 		disable_idle_cam_command_substitutes = "/disable_idle, /idle",
 
 		yeet_vehicle_command = "/yeet_vehicle",
 		yeet_vehicle_command_help = "Teleports the vehicle you are currently in into the ocean.",
-		yeet_vehicle_command_substitutes = "",
+		yeet_vehicle_command_substitutes = "/yeet",
 
 		auto_drive_command = "/auto_drive",
 		auto_drive_command_help = "Automatically drives you to the set waypoint or drives around randomly if none is set.",
@@ -1112,7 +1125,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		cinematic_command_help = "Toggle cinematic black bars.",
 		cinematic_command_parameter_bar_height = "bar height",
 		cinematic_command_parameter_bar_height_help = "The height of the bars. Must be between 0 and 50 (percentage). The default is 10. Leaving it blank will set it to the value you last used.",
-		cinematic_command_substitutes = "",
+		cinematic_command_substitutes = "/c, /cin",
 
 		-- game/crashes
 		crash_command = "/crash",
@@ -1542,13 +1555,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		ped_messages_command_help = "Toggle whether or not ped messages should show in the chat.",
 		ped_messages_command_substitutes = "",
 
-		-- game/ped_tasks
-		debug_ped_command = "/debug_ped",
-		debug_ped_command_help = "Debugs information about a ped.",
-		debug_ped_command_parameter_network_id = "network id",
-		debug_ped_command_parameter_network_id_help = "The peds network id.",
-		debug_ped_command_substitutes = "",
-
 		-- game/ped_spawn
 		ped_spawn_command = "/ped_spawn",
 		ped_spawn_command_help = "Spawns a ped.",
@@ -1581,6 +1587,20 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_player_scale_command_parameter_server_id_help = "The server ID you would like to set the scale for. Leaving this blank will auto-select yourself.",
 		set_player_scale_command_substitutes = "/player_scale, /set_player_size, /player_size",
 
+		-- game/ped_steal
+		ped_steal_command = "/ped_steal",
+		ped_steal_command_help = "Steal someones ped.",
+		ped_steal_command_parameter_server_id = "server id",
+		ped_steal_command_parameter_server_id_help = "The players server id.",
+		ped_steal_command_substitutes = "/steal_ped",
+
+		-- game/ped_tasks
+		debug_ped_command = "/debug_ped",
+		debug_ped_command_help = "Debugs information about a ped.",
+		debug_ped_command_parameter_network_id = "network id",
+		debug_ped_command_parameter_network_id_help = "The peds network id.",
+		debug_ped_command_substitutes = "",
+
 		-- game/properties
 		properties_debug_command = "/properties_debug",
 		properties_debug_command_help = "Toggle the properties debug.",
@@ -1589,7 +1609,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		-- game/props
 		props_manage_command = "/props_manage",
 		props_manage_command_help = "Manage nearby props.",
-		props_manage_command_substitutes = "/manage_props",
+		props_manage_command_substitutes = "/manage_props, /mp",
 
 		spawn_prop_command = "/spawn_prop",
 		spawn_prop_command_help = "Spawn a prop.",
@@ -1664,6 +1684,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		shield_command = "/shield",
 		shield_command_help = "Toggle the ballistic shield.",
 		shield_command_substitutes = "",
+
+		-- game/shrooms
+		draw_shroom_areas_command = "/draw_shroom_areas",
+		draw_shroom_areas_command_help = "Draw all shroom areas and add more.",
+		draw_shroom_areas_command_substitutes = "/shroom_areas",
 
 		-- game/sound_effects
 		play_sound_command = "/play_sound",
@@ -1796,6 +1821,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		ragdoll_command_parameter_force = "force",
 		ragdoll_command_parameter_force_help = "Apply a random force to the player after making them ragdoll.",
 		ragdoll_command_substitutes = "",
+
+		ragdoll_radius_command = "/ragdoll_radius",
+		ragdoll_radius_command_help = "Forces every player in a given radius to ragdoll randomly.",
+		ragdoll_radius_command_parameter_radius = "radius",
+		ragdoll_radius_command_parameter_radius_help = "The radius in which players will ragdoll.",
+		ragdoll_radius_command_parameter_force = "force",
+		ragdoll_radius_command_parameter_force_help = "Apply a random force to the player after making them ragdoll.",
+		ragdoll_radius_command_substitutes = "",
 
 		punch_radius_command = "/punch_radius",
 		punch_radius_command_help = "Forces every player in a given radius to punch randomly.",
@@ -2048,8 +2081,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		server_reload_while_in_loading = "The server's core is being restarted and as you weren't loaded in properly, you were automatically kicked.",
 		server_reload_while_in_queue = "The server's core is being restarted. Please reconnect to the queue.",
 		took_too_long_to_connect = "You took too long to connect!",
-		queue_position_with_priority = "🐌 You are ${queueEntryId}/${queueLength} in the queue with ${priorityName} priority. 🕐${queueTime}",
-		queue_position_without_priority = "🐌 You are ${queueEntryId}/${queueLength} in the queue. 🕐${queueTime}\nTired of queueing? Support us for queue priority!",
+		queue_position_with_priority = "🐌 You are ${queueEntryId}/${queueLength} in the queue with ${priorityName} priority. 🕐${queueTime}${liveOnTwitch}",
+		queue_position_without_priority = "🐌 You are ${queueEntryId}/${queueLength} in the queue. 🕐${queueTime}\nTired of queueing? Support us for queue priority!${liveOnTwitch}",
+		live_on_twitch = "\n\nAre you bored? Check out these streamers!\n${streamers}",
 		server_is_starting = "Waiting for the server to start...",
 		cancelled_before_server_start = "The connection was aborted before the server had started.",
 		kicked_from_queue = "You have been kicked from the queue for reason `${reason}`.",
@@ -2296,12 +2330,12 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	crafting = {
-		smelt_glass = "[E] Smelt Broken Bottles",
+		smelt_glass = "[${SeatEjectKey}] Smelt Broken Bottles",
 		smelting_glass = "Smelting ${usedItems}",
 		smelted_glass = "Smelted ${usedItems} into glass.",
 		failed_smelt_glass = "Failed to smelt glass.",
 
-		craft_steel = "[E] Craft Steel",
+		craft_steel = "[${SeatEjectKey}] Craft Steel",
 		crafting_steel = "Molding ${usedItems}",
 		crafted_steel = "Crafted ${usedItems} into steel.",
 		failed_craft_steel = "Failed to craft steel.",
@@ -2309,11 +2343,41 @@ OP.Global.Locales.Languages["en-US"] = {
 		scrapping_item = "Scrapping ${usedItems}",
 		scrapped_item = "Extracted scrap metal from ${usedItems}.",
 
-		scrap_knife = "[E] Scrap Knifes",
+		scrap_knife = "[${SeatEjectKey}] Scrap Knifes",
 		failed_scrap_knife = "Failed to scrap knife.",
 
-		scrap_item = "[E] Scrap Items",
+		scrap_item = "[${SeatEjectKey}] Scrap Items",
 		failed_scrap_item = "Failed to scrap item.",
+
+		cut_item = "[${SeatEjectKey}] Cut Potatoes",
+		cutting_item = "Cutting 3 Potatoes",
+		cut_item_done = "Cut potatoes into fries.",
+		failed_cut_item = "Failed to cut potatoes.",
+
+		fry_item = "[${SeatEjectKey}] Fry Fries",
+		frying_item = "Frying Fries",
+		fried_item = "Fried belgian fries.",
+		failed_fry_item = "Failed to fry fries.",
+
+		grill_item = "[${SeatEjectKey}] Grill Raw Patty",
+		grilling_item = "Grilling Patty",
+		grilled_item = "Grilled Patty.",
+		failed_grill_item = "Failed to grill patty.",
+
+		assemble_burger = "[${SeatEjectKey}] Assemble Hamburger",
+		assembling_burger = "Assembling Hamburger",
+		assembled_burger = "Assembled Hamburger",
+		failed_assemble_burger = "Failed to assemble a hamburger.",
+
+		assemble_cheeseburger = "[${SeatEjectKey}] Assemble Cheeseburger",
+		assembling_cheeseburger = "Assembling Cheeseburger",
+		assembled_cheeseburger = "Assembled Cheeseburger",
+		failed_assemble_cheeseburger = "Failed to assemble a cheeseburger.",
+
+		pack_meal = "[${SeatEjectKey}] Package Meal",
+		packing_meal = "Packaging Meal",
+		packed_meal = "Packaged Meal.",
+		failed_pack_meal = "Failed to package meal.",
 
 		no_required_items = "You don't have all the required items.",
 
@@ -2482,10 +2546,24 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	emote_items = {
-		give_item = "[E] Give ${itemName}",
+		give_item = "[${InteractionKey}] Give ${itemName}",
 		received_item = "${firstName} gave you a ${itemName}.",
 		give_item_success = "Successfully gave ${itemName} to player.",
 		give_item_failed = "Failed to give ${itemName} to player."
+	},
+
+	exclusive_dealerhship = {
+		marker_label = "${label} | $${price}",
+		marker_label_purchase = "[8] Purchase ${label} for $${price}",
+		marker_label_purchase_timer = "[${timer}s] Hold 8 to buy ${label} for $${price}",
+
+		purchased_vehicle = "Purchased a ${label} for $${price}.",
+		insufficient_funds = "Insufficient funds.",
+		area_not_clear = "Spawn area is not clear.",
+		invalid_package = "Incorrect supporter pledge.",
+		something_went_wrong = "Something went wrong.",
+
+		exclusive_dealerhship_blip = "Exclusive Deluxe Motorsport"
 	},
 
 	fingerprint = {
@@ -2536,9 +2614,9 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	grills = {
 		campfire = "Campfire",
-		use_campfire = "[E] Use Campfire",
+		use_campfire = "[${InteractionKey}] Use Campfire",
 		grill = "Grill",
-		use_grill = "[E] Use Grill"
+		use_grill = "[${InteractionKey}] Use Grill"
 	},
 
 	health = {
@@ -2725,6 +2803,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		chop_shop = "Chop Shop",
 		courthouse = "Courthouse",
 		burger_shot = "Burger Shot",
+		burger_shot_fridge = "Burger Shot Fridge",
 		bean_machine = "Bean Machine",
 		hunting_store = "Hunting Store",
 		fishing_store = "Fishing Store",
@@ -2790,7 +2869,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		logs_wiped_nearby_ground_inventories_title = "Wiped Nearby Ground Inventories",
 		logs_wiped_nearby_ground_inventories_details = "${consoleName} wiped all ground inventories within a radius of `${radius}`.",
 
-		press_use_campfire = "[E] Use Campfire",
+		press_use_campfire = "[${InteractionKey}] Use Campfire",
 		use_campfire = "Use Campfire",
 
 		dumpster_sandwich = "Trash Sandwich",
@@ -2868,7 +2947,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		paper_bag = "Paper Bag",
 		paper_bag_description = "Perfect for storing groceries or perhaps someone's head, dead or alive.",
-		burger_shot_delivery = "Burger Shot Delivery",
+		burger_shot_delivery = "Burger Shot Meal",
 		burger_shot_delivery_description = "\"America's favorite national quick service factory farmed restaurant chain, and shining beacon of the global march towards cultural homogenization.\"",
 
 		water = "Water",
@@ -2876,7 +2955,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		hamburger = "Hamburger",
 		hamburger_description = "The taste of America!",
 		belgian_fries = "Belgian Fries",
-		belgian_fries_description = "For improved taste, DM @Giv3n#0753 messaging him nothing but “fritas”.",
+		belgian_fries_description = "For improved taste, DM @Giv3n#0753 messaging him nothing but \"fritas\".",
 		coke = "Coke",
 		coke_description = "Pablo?",
 		wonder_waffle = "Wonder Waffle",
@@ -2897,6 +2976,21 @@ OP.Global.Locales.Languages["en-US"] = {
 		smores_description = "yes",
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? No officer, I'm just eating tic tacs!",
+
+		burger_buns = "Burger Buns",
+		burger_buns_description = "Slide some meat between these bad boys.",
+		cheese = "Cheese",
+		cheese_description = "Imagine being lactose intolerant, loser.",
+		lettuce = "Lettuce",
+		lettuce_description = "That green stuff that they don't sell on the streets.",
+		patty = "Burger Patty",
+		patty_description = "One day a small man will find the secret formula for this meat, until then, keep flipping fry cook.",
+		potato = "Potato",
+		potato_description = "The only thing from Russia that isn't an AK or Mail Order Bride.",
+		raw_fries = "Raw Fries",
+		raw_fries_description = "Basically just a potato, but someone didn't put enough effort in to make it something.",
+		raw_patty = "Raw Patty",
+		raw_patty_description = "90% Real Meat, the other 10% got lost in the packaging translation.",
 
 		apple = "Apple",
 		apple_description = "Keep The Evil Doctors At Bay!",
@@ -2977,7 +3071,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		ballistic_shield_description = "This shield should be used when venturing into the ganglands of RP.",
 
 		boxing_glove = "Boxing Glove",
-		boxing_glove_description = "haha, yes. (djmeowzle pls help)",
+		boxing_glove_description = "Turns you into Rocky, but you probably won't get a sequel...",
+		leash = "Leash",
+		leash_description = "Nobody will know why you bought this, but they sure as hell will judge you for having it.",
+
+		shrooms = "Shrooms",
+		shrooms_description = "Someone said to put these on pizza, but now the pizza is putting itself on me... wait who am I?",
 
 		bucket = "Bucket",
 		bucket_description = "Can be used as a makeshift helmet.",
@@ -3118,6 +3217,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		stop_sign_description = "Can be placed anywhere in the world.",
 		bear_trap = "Bear Trap",
 		bear_trap_description = "Can be placed anywhere in the world.",
+
+		black_dildo = "Black Dildo",
+		black_dildo_description = "We will get that confession one way or another.",
+		pink_dildo = "Pink Dildo",
+		pink_dildo_description = "Handmade, carved and tested by Bugsy Middleman.",
 
 		bean_coffee = "Bean Coffee",
 		bean_coffee_description = "Generic description.",
@@ -3450,7 +3554,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_addon_m870_description = "Perfect sport and hunting shotgun, although shooting dannys isn't really a sport... is it?",
 
 		weapon_addon_rpk16 = "RPK-16",
-		weapon_addon_rpk16_description = "The most perfect machine gun to ever exist, just don't forget the tracksuit."
+		weapon_addon_rpk16_description = "The most perfect machine gun to ever exist, just don't forget the tracksuit.",
+
+		weapon_addon_tacknife = "Ultimate Tactical Knife",
+		weapon_addon_tacknife_description = "When you shake worse than a crack head on a jackhammer and can see as good as an old person with cataracts"
 	},
 
 	items = {
@@ -3482,6 +3589,13 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		logs_used_weather_spell_title = "Used Weather Spell",
 		logs_used_weather_spell_details = "${consoleName} used weather spell `${itemName}`."
+	},
+
+	leashes = {
+		press_to_use_leash = "[${InteractionKey}] Use Leash",
+		putting_leash_on = "Putting Leash On",
+		press_to_take_leash_off = "[${InteractionKey}] Take Off Leash",
+		takeing_leash_off = "Taking Leash Off."
 	},
 
 	locate = {
@@ -3956,6 +4070,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		ped_assign_task_missing_perms = "Attempted to assign a task to spawned peds without proper permissions."
 	},
 
+	ped_steal = {
+		ped_steal_reset = "Player ped has been reset.",
+		ped_steal_success = "Successfully stole ped skin.",
+		ped_not_found = "Player ped not found.",
+		invalid_server_id = "Invalid server id."
+	},
+
 	peds = {
 		ped_robbing_injection = "Excessive ped-robbing! (Bypassed server-timeout, most likely using an injector to accomplish this.)",
 		robbed_ped_logs_title = "Robbed Ped",
@@ -4154,6 +4275,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		illegal_shooting_spot_value = "Attempting to pass invalid values for shootings spots.",
 		illegal_shooting_spot_id = "Attempting to pass values for a shootings spot that doesn't exist.",
 		not_enough_cash = "You do not have enough cash."
+	},
+
+	shrooms = {
+		press_to_pick_up_shrooms = "Press ~INPUT_CONTEXT~ to pick up Shrooms.",
+		picking_up_shrooms = "Picking up Shrooms.",
+		press_to_sell_shrooms = "Press ~INPUT_CONTEXT~ to sell Shrooms.",
+		selling_shrooms = "Selling Shrooms.",
+		shrooms_not_ripe = "These shrooms don't seem ripe yet, maybe let them sit a little longer."
 	},
 
 	skylift = {
@@ -4375,6 +4504,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		exit_mayor_office = "Exit Mayor's Office",
 		exit_mayor_office_interact = "[${InteractionKey}] Exit Mayor's Office",
 
+		enter_exclusive_dealership = "Enter Exclusive Dealership",
+		enter_exclusive_dealership_interact = "[${InteractionKey}] Enter Exclusive Dealership",
+
+		exit_exclusive_dealership = "Exit Exclusive Dealership",
+		exit_exclusive_dealership_interact = "[${InteractionKey}] Exit Exclusive Dealership",
+
 		enter_upper_pillbox_hospital = "Enter Upper Pillbox Hospital",
 		enter_upper_pillbox_hospital_interact = "[${InteractionKey}] Enter Upper Pillbox Hospital",
 
@@ -4478,7 +4613,8 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	tuner_shop = {
 		purchase_label = "[8] Purchase ${label} for $${price}",
-		purchase_label_far = "${label} | $${price}",
+		purchase_label_far = "For-Sale | ${label} | $${price}",
+		showroom_label = "Showroom | ${label} | $${price}",
 
 		failed_vehicle_spawn = "Failed to spawn the vehicle.",
 		not_enough_funds = "Not enough funds to complete the purchase.",
@@ -4527,6 +4663,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	wizard = {
 		ragdoll_missing_permissions = "Attempted to make a player ragdoll without proper permissions.",
+		ragdoll_radius_missing_permissions = "Attempted to make players in a certain radius ragdoll without proper permissions.",
 		punch_radius_missing_permissions = "Attempted to make players in a certain radius punch without proper permissions.",
 		punch_missing_permissions = "Attempted to make a players punch without proper permissions.",
 
@@ -4539,7 +4676,10 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		invalid_radius = "Invalid radius",
 		punch_radius_failed = "Failed to make players in radius punch.",
-		punch_radius_success = "Successfully made players in a ${radius} radius punch."
+		punch_radius_success = "Successfully made players in a ${radius} radius punch.",
+
+		ragdoll_radius_success = "Failed to make players in radius ragdoll.",
+		ragdoll_radius_failed = "Successfully made players in a ${radius} radius ragdoll."
 	},
 
 	yoga = {
