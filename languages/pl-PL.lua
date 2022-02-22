@@ -22,7 +22,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	-- animations/*
-        chairs = {
+chairs = {
 	chair_is_occupied = "To miejsce jest zajęte."
 	},
 
