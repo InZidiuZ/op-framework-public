@@ -23,7 +23,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 	-- animations/*
     chairs = {
-		chair_is_occupied = "To miejsce jest zajęte."
+	chair_is_occupied = "To miejsce jest zajęte."
 	},
 
 	emotes = {
