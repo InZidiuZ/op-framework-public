@@ -22,9 +22,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	-- animations/*
-            chairs = {
-	chair_is_occupied = "To miejsce jest zajęte."
-	},
+        chairs = {
+	chair_is_occupied = "To miejsce jest zajęte."},
 
 	emotes = {
 		get_in_trunk = "Naciśnij ~INPUT_ENTER~ aby wejść do bagażnika",
