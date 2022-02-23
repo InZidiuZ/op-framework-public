@@ -22,7 +22,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	-- animations/*
-    chairs = {
+	chairs = {
 		chair_is_occupied = "To miejsce jest zajęte."
 	},
 
@@ -105,11 +105,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		removed_cash_from_everyone_details = "${consoleName} usunięto $${amount} gotówki od wszystkich graczy.",
 
 		added_bank_title = "Dodano pieniądze do banku",
-        added_bank_details = "${consoleName} dodał $${amount} do konta w banku.",
-        added_bank_to_player_title = "Dodano gotówkę na konto gracza",
-        added_bank_to_player_details = "${consoleName} dodał $${amount} do konta w banku gracza ${targetConsoleName}.",
-        added_bank_to_everyone_title = "Dodano gotówkę na konto wszystkich graczy",
-        added_bank_to_everyone_details = "${consoleName} dodał $${amount} gotówki na konto wszystkich graczy.",
+		added_bank_details = "${consoleName} dodał $${amount} do konta w banku.",
+		added_bank_to_player_title = "Dodano gotówkę na konto gracza",
+		added_bank_to_player_details = "${consoleName} dodał $${amount} do konta w banku gracza ${targetConsoleName}.",
+		added_bank_to_everyone_title = "Dodano gotówkę na konto wszystkich graczy",
+		added_bank_to_everyone_details = "${consoleName} dodał $${amount} gotówki na konto wszystkich graczy.",
 
 		removed_bank_title = "Usunięto pieniądze z konta w banku",
 		removed_bank_details = "${consoleName} usunął $${amount} z konta w banku.",
@@ -130,9 +130,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		added_bank_to_player = "Dodano $${amount} do konta gracza ${targetConsoleName}.",
 		added_bank_to_everyone = "Dodano $${amount} do konta wszystkich graczy.",
 
-        removed_bank = "Usunięto $${amount} z konta.",
-        removed_bank_from_player = "Usunięto $${amount} z konta gracza ${targetConsoleName}.",
-        removed_bank_from_everyone = "Usunięto $${amount} z konta wszystkich graczy.",
+		removed_bank = "Usunięto $${amount} z konta.",
+		removed_bank_from_player = "Usunięto $${amount} z konta gracza ${targetConsoleName}.",
+		removed_bank_from_everyone = "Usunięto $${amount} z konta wszystkich graczy.",
 
 		money_event_not_admin = "Próbowano dodać pieniądze `${moneyEvent}`.",
 
@@ -1070,9 +1070,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		set_casino_screens_command_substitutes = "/kasyno_scena",
 
 		-- game/cayo_perico
-		cayo_perico_command = "/cayo_perico",
-		cayo_perico_command_help = "Przełącz, aby wejść i wyjść ze 'świata' Cayo Perico",
-		cayo_perico_command_substitutes = "",
+		toggle_cayo_perico_command = "/toggle_cayo_perico",
+		toggle_cayo_perico_command_help = "Włącza wyspe Cayo Perico.",
+		toggle_cayo_perico_command_substitutes = "/toggle_island, /island",
 
 		-- game/cayo_perico_world
 		cayo_perico_command = "/cayo_perico",
@@ -1429,7 +1429,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		tps_command_substitutes = "",
 
 		-- game/money
-        cash_command = "/kasa",
+		cash_command = "/kasa",
 		cash_command_help = "Pokazuje ilość gotówki przy sobie.",
 		cash_command_substitutes = "/gotówka, /cash",
 
@@ -1462,10 +1462,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		me_command_substitutes = "",
 
 		do_command = "/do",
-        do_command_help = "Opis otoczenia.",
-        do_command_parameter_message = "message",
-        do_command_parameter_message_help = "Wiadomośc, którą chciałbyś wysłać opisująca wydarzenia w otoczeniu.",
-        do_command_substitutes = "",
+		do_command_help = "Opis otoczenia.",
+		do_command_parameter_message = "message",
+		do_command_parameter_message_help = "Wiadomośc, którą chciałbyś wysłać opisująca wydarzenia w otoczeniu.",
+		do_command_substitutes = "",
 
 		description_command = "/description",
 		description_command_help = "Dodaje tekst 3d do twojej postaci, gdzie mozesz dać opis [przykład : /opis Ręka w gipsie]",
@@ -1500,7 +1500,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		ped_messages_command_substitutes = "/chatnarration",
 
 		-- game/ped_spawn
-        ped_spawn_command = "/ped_spawn",
+		ped_spawn_command = "/ped_spawn",
 		ped_spawn_command_help = "Spawnuje peda.",
 		ped_spawn_command_parameter_model = "model",
 		ped_spawn_command_parameter_model_help = "Model peda którego chcesz zespawnować.",
@@ -1919,7 +1919,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		custom_plate_command_substitutes = "",
 
 		-- vehicles/vehicles
-        flip_command = "/flip",
+		flip_command = "/flip",
 		flip_command_help = "Stawia pojazd na koła.",
 		flip_command_substitutes = "/obroc",
 
@@ -2015,28 +2015,28 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 	queue = {
 		joining_the_queue = "Dołączanie do kolejki...",
-            timed_out_before_joining = "Przekroczyłeś limit czasu zanim zacząłeś dołączanie na serwer.",
-            server_reload_while_in_loading = "Serwer jest restartowany. Zostałeś wyrzucony automatycznie.",
-            server_reload_while_in_queue = "Serwer jest restartowany. Dołącz do kolejki ponownie.",
-            took_too_long_to_connect = "Przekroczono limit oczekiwania!",
-            queue_position_with_priority = "🐌 Jesteś ${queueEntryId}/${queueLength} w kolejce z priorytetem: ${priorityName} 🕐${queueTime}",
-            queue_position_without_priority = "🐌 Jesteś ${queueEntryId}/${queueLength} w kolejce. 🕐${queueTime}\nZmęczony czekaniem w kolejce? Wesprzyj serwer aby zyskać priorytet!",
-            server_is_starting = "Czekanie na uruchomienie serwera...",
-            cancelled_before_server_start = "Połączenie zostało przerwane przed uruchomieniem serwera.",
-            kicked_from_queue = "Zostałeś wyrzucony z kolejki z powodem `${reason}`.",
-            kicked_from_queue_no_reason = "Zostałeś wyrzucony z kolejki bez podanego powodu.",
-            missing_slots_parameter = "Brakuje parametru `slots`.",
-            invalid_slots_parameter = "Błędny parametr `slots`.",
-            slots_parameter_out_of_range = "Parametr `slots` musi mieć wartość pomiędzy `0` i `1025`.",
-            slots_already_set_to = "Ilość slotów na serwerze zostały ustawione na `${slots}`.",
-            slots_set_to = "Ilość slotów została ustawiona na `${slots}`.",
-                
-            invalid_steam_identifier_parameter = "Nieprawidłowy 'steamIdentifier', sprawdź czy masz włączonego steama i spróbuj ponownie.",
-            invalid_target_position_parameter = "Missing or invalid 'targetPosition' parameter.",
-            player_not_found_in_queue = "Nie znaleziono gracza w kolejce.",
-            player_queue_moved_success = "Miejsce w kolejce zostało zmienione.",
-            player_queue_skipped_success = "Gracz przeskoczył kolejke pomyślnie.",
-            queue_is_not_ready = "Kolejka nie jest gotowa, proszę czekać."
+		timed_out_before_joining = "Przekroczyłeś limit czasu zanim zacząłeś dołączanie na serwer.",
+		server_reload_while_in_loading = "Serwer jest restartowany. Zostałeś wyrzucony automatycznie.",
+		server_reload_while_in_queue = "Serwer jest restartowany. Dołącz do kolejki ponownie.",
+		took_too_long_to_connect = "Przekroczono limit oczekiwania!",
+		queue_position_with_priority = "🐌 Jesteś ${queueEntryId}/${queueLength} w kolejce z priorytetem: ${priorityName} 🕐${queueTime}",
+		queue_position_without_priority = "🐌 Jesteś ${queueEntryId}/${queueLength} w kolejce. 🕐${queueTime}\nZmęczony czekaniem w kolejce? Wesprzyj serwer aby zyskać priorytet!",
+		server_is_starting = "Czekanie na uruchomienie serwera...",
+		cancelled_before_server_start = "Połączenie zostało przerwane przed uruchomieniem serwera.",
+		kicked_from_queue = "Zostałeś wyrzucony z kolejki z powodem `${reason}`.",
+		kicked_from_queue_no_reason = "Zostałeś wyrzucony z kolejki bez podanego powodu.",
+		missing_slots_parameter = "Brakuje parametru `slots`.",
+		invalid_slots_parameter = "Błędny parametr `slots`.",
+		slots_parameter_out_of_range = "Parametr `slots` musi mieć wartość pomiędzy `0` i `1025`.",
+		slots_already_set_to = "Ilość slotów na serwerze zostały ustawione na `${slots}`.",
+		slots_set_to = "Ilość slotów została ustawiona na `${slots}`.",
+
+		invalid_steam_identifier_parameter = "Nieprawidłowy 'steamIdentifier', sprawdź czy masz włączonego steama i spróbuj ponownie.",
+		invalid_target_position_parameter = "Missing or invalid 'targetPosition' parameter.",
+		player_not_found_in_queue = "Nie znaleziono gracza w kolejce.",
+		player_queue_moved_success = "Miejsce w kolejce zostało zmienione.",
+		player_queue_skipped_success = "Gracz przeskoczył kolejke pomyślnie.",
+		queue_is_not_ready = "Kolejka nie jest gotowa, proszę czekać."
 	},
 
 	restart = {
@@ -2219,29 +2219,29 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 	casino = {
 		set_casino_screen_id_not_staff = "Brak permisji do ustawiania ekranu.",
-            successfully_set_screen_label = "Udało się ustawić ekran kasyna na `${screenLabel}`.",
-            successfully_queued_screen_label = "Dodano do kolejki opcję ustawienia ekranu `${screenLabel}`.",
-            failed_to_set_screen_label = "Nie udało się zmienić ekranu `${screenLabel}`.",
-            invalid_screen_label = "Nazwa ekranu `${screenLabel}` jest nieprawidłowa.",
-            missing_screen_label = "Brakuje parametru `screen label`.",
-            set_screen_label_already_set_to = "Ekran jest ustawiony w tej chwili na `${screenLabel}`.",
-            only_available_in_the_casino = "Możesz tego używać tylko w obrębie kasyna.",
-            casino_blip = "Kasyno"
+		successfully_set_screen_label = "Udało się ustawić ekran kasyna na `${screenLabel}`.",
+		successfully_queued_screen_label = "Dodano do kolejki opcję ustawienia ekranu `${screenLabel}`.",
+		failed_to_set_screen_label = "Nie udało się zmienić ekranu `${screenLabel}`.",
+		invalid_screen_label = "Nazwa ekranu `${screenLabel}` jest nieprawidłowa.",
+		missing_screen_label = "Brakuje parametru `screen label`.",
+		set_screen_label_already_set_to = "Ekran jest ustawiony w tej chwili na `${screenLabel}`.",
+		only_available_in_the_casino = "Możesz tego używać tylko w obrębie kasyna.",
+		casino_blip = "Kasyno"
 	},
 
 	cayo_perico_world = {
 		keep_flying_in_direction_se = "Leć na południowy wschód, aby dotrzeć do Cayo Perico.\n(${distanceToTeleport}m left)",
-            keep_flying_in_direction_nw = "Leć na północny zachód, aby dotrzeć do Los Santos.\n(${distanceToTeleport}m left)",
-            not_the_driver = "Musisz być kierowcą pojazdu, aby dotrzeć na Cayo Perico.",
-            not_an_air_vehicle = "Musisz być w śmigłowcu lub samolocie, aby polecieć na Cayo Perico.",
-            entering_cayo_perico_logs_title = "Lecisz na Cayo Perico",
-            entering_cayo_perico_logs_details = "${consoleName} leci na Cayo Perico.",
-            exiting_cayo_perico_logs_title = "Opuszcza Cayo Perico",
-            exiting_cayo_perico_logs_details = "${consoleName} opuszcza Cayo Perico.",
-            entering_cayo_perico_with_passengers_logs_title = "Lecisz na Cayo Perico z pasażerami",
-            entering_cayo_perico_with_passengers_logs_details = "${consoleName} leci na Cayo perico z ${passengersAmount} pasażerami.",
-            exiting_cayo_perico_with_passengers_logs_title = "Opuszcza Cayo Perico z pasażerami",
-            exiting_cayo_perico_with_passengers_logs_details = "${consoleName} opuszcza Cayo Perico z ${passengersAmount} pasażerami.",
+		keep_flying_in_direction_nw = "Leć na północny zachód, aby dotrzeć do Los Santos.\n(${distanceToTeleport}m left)",
+		not_the_driver = "Musisz być kierowcą pojazdu, aby dotrzeć na Cayo Perico.",
+		not_an_air_vehicle = "Musisz być w śmigłowcu lub samolocie, aby polecieć na Cayo Perico.",
+		entering_cayo_perico_logs_title = "Lecisz na Cayo Perico",
+		entering_cayo_perico_logs_details = "${consoleName} leci na Cayo Perico.",
+		exiting_cayo_perico_logs_title = "Opuszcza Cayo Perico",
+		exiting_cayo_perico_logs_details = "${consoleName} opuszcza Cayo Perico.",
+		entering_cayo_perico_with_passengers_logs_title = "Lecisz na Cayo Perico z pasażerami",
+		entering_cayo_perico_with_passengers_logs_details = "${consoleName} leci na Cayo perico z ${passengersAmount} pasażerami.",
+		exiting_cayo_perico_with_passengers_logs_title = "Opuszcza Cayo Perico z pasażerami",
+		exiting_cayo_perico_with_passengers_logs_details = "${consoleName} opuszcza Cayo Perico z ${passengersAmount} pasażerami.",
 	},
 
 	chat_emotes = {
@@ -2249,7 +2249,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	christmas = {
-        claimed_advent_calendar_hatch_details = "Zatwierdzony kalendarz świąteczny",
+		claimed_advent_calendar_hatch_details = "Zatwierdzony kalendarz świąteczny",
 		claimed_money = "${consoleName} zatwierdzone $${amount}.",
 		claimed_item = "${consoleName} zatwierdzony `${itemLabel}`.",
 		claimed_vehicle = "${consoleName} zatwierdzony specjalny świąteczny pojazd.",
@@ -2344,7 +2344,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	courthouse = {
-        press_to_use_gavel = "Naciśnij ~INPUT_CONTEXT~ używać młotka."
+		press_to_use_gavel = "Naciśnij ~INPUT_CONTEXT~ używać młotka."
 	},
 
 	dashcam = {
@@ -2768,14 +2768,14 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		logs_ground_inventory_created_title = "Ekwipunek na ziemi stworzony",
 		logs_ground_inventory_created_details = "${consoleName} Stworzył ekwipunek na ziemi o nazwie `${inventoryName}`.",
 
-        logs_item_moved_title = "Przedmiot Przeniesiony",
+		logs_item_moved_title = "Przedmiot Przeniesiony",
 		logs_item_moved_details = "${consoleName} Przeniósł ${moveAmount}x ${itemLabel} Do ${endInventory}:${endSlot} z Ekwipunku ${startInventory}:${startSlot}.",
 
 		logs_item_purchased_title = "Przedmiot kupiony",
 		logs_item_purchased_no_tax_details = "${consoleName} kupiony ${purchaseAmount}x `${itemLabel}` za $${purchaseCost}.",
 		logs_item_purchased_tax_details = "${consoleName} kupiony ${purchaseAmount}x `${itemLabel}` za $${purchaseCost} z dodatkowym $${taxCost} ze wzgledu na ${salesTaxPercentage}% podatek.",
 
-        radius_invalid = "Podany promień `${radius}` to nieprawidłowa wartość.",
+		radius_invalid = "Podany promień `${radius}` to nieprawidłowa wartość.",
 		wiped_all_ground_inventories = "Wyczyszczono ${inventoriesWiped} przedmioty na ziemi.",
 		wiped_nearby_ground_inventories = "Wyczyszczono ${inventoriesWiped} przedmioty na ziemi w promieniu `${radius}`.",
 		failed_to_wipe_ground_inventories = "Nie udało się usunąć przedmiotów na ziemi.",
@@ -2798,7 +2798,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		dumpster_milk = "Przeterminowane ptasie mleczko",
 
 		-- items & item descriptions
-        body_armour = "Pancerz",
+		body_armour = "Pancerz",
 		body_armour_description = "Twarda powłoka mająca ochraniać ciało osoby noszacej.",
 		first_aid_kit = "Zestaw pierwszej pomocy",
 		first_aid_kit_description = "Zestaw najpotrzebniejszych medykamentów medycznych.",
@@ -3357,7 +3357,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		weapon_hazardcan_description = "",
 
 		-- NOTE: Addon weapons
-        weapon_addon_huntingrifle = "Broń Myśliwska",
+		weapon_addon_huntingrifle = "Broń Myśliwska",
 		weapon_addon_huntingrifle_description = "Podstawowe wyposażenie każdego myśliwego .",
 
 		weapon_addon_vfcombatpistol = "VF Combat Pistol",
@@ -4895,7 +4895,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		add_vehicle_invalid_player = "Nie było graczy z server ID ${serverId}.",
 		add_vehicle_invalid_model_name = "Nazwa modelu${modelName} nie jest prawidłowym modelem.",
 		add_vehicle_no_model_name = "Nie dodano nazwy modelu.",
-	
+		
 		added_vehicle_for_everyone_logs_title = "Dodano pojazd dla wszystkich",
 		added_vehicle_for_everyone_logs_details = "${consoleName} dodano pojazd z nazwą modelu ${modelName} do wszystkich garaży",
 		added_vehicle_for_player_logs_title = "Dodano Pojazd dla Gracza",
