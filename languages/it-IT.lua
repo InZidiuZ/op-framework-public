@@ -612,19 +612,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 	commands = {
 		only_commands = "La chat è solamente per i comandi. Scrivi /help per vedere tutti i comandi.",
 		command_unavailable = "Comando disponibile",
-											
-		available_substitutes = "Sottotitoli disponibili",
-
-		bind_already_exists = "C'è già un comando con questo nome.",
-		command_does_not_exist = "Non è possibile attivare il Bind quando questo comando è attivo.",
-		control_invalid = "Questo controllo non è valido.",
-		bind_does_not_exist = "Non hai nessun Bind con questo nome.",
-		active_binds = "Bind Attivo",
-		no_binds = "Non hai nessun bind attivo.",
-		bind_added = "Aggiunto bind col nome`${bindName}` che verrà eseguito col comando `${command}` quando il tato `${control}` viene premuto.",
-		bind_removed = "Rimosso il bind col nome `${bindName}`",
-		error_executing_bind = "C' è stato un errore nell' esecuzone del bind `${bindName}` che ferma il comando `${command}`.",
-		command_binds_limit_reached = "Hai raggiunto il limeti massimo di ${maxCommandBinds} Bind.",
+		available_commands = "Comandi avviabili",
+		available_substitutes = "Sostituti disponibili",
 
 		substitute_command_for = "Questo è un comando sostitutivo per `${command}`.",
 
@@ -637,6 +626,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		carry_command = "/carry",
 		carry_command_help = "Toggle carry.",
 		carry_command_substitutes = "",
+
+		carry_npc_command = "/carry_npc",
+		carry_npc_command_help = "Prendi in braccio un NPC.",
+		carry_npc_command_substitutes = "",
 
 		uncarry_command = "/uncarry",
 		uncarry_command_help = "Forza lo /carry della persona che ti sta prendendo in braccio.",
@@ -697,6 +690,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		noclip_command_parameter_server_id = "server id",
 		noclip_command_parameter_server_id_help = "Ie vuoi attivare o disattivare il noclip per qualcun altro, inserisci qui il loro ID server.",
 		noclip_command_substitutes = "",
+
+		freecam_command = "/freecam",
+		freecam_command_help = "Attiva/Disattiva la freecam.",
+		freecam_command_substitutes = "",
 
 		delete_vehicle_command = "/delete_vehicle",
 		delete_vehicle_command_help = "Elimina un veicolo nelle vicinanze.",
@@ -943,6 +940,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		fake_disconnect_command_help = "Simula la disconnessione dal server. Inoltre abilita la noclip se ancora non abilitata.",
 		fake_disconnect_command_substitutes = "/fake_leave, /dc",
 
+		set_identity_command = "/set_identity",
+		set_identity_command_help = "Cambia il tuo nome steam temporaneamente.",
+		set_identity_command_parameter_player_name = "player name",
+		set_identity_command_parameter_player_name_help = "Il nome che vorresti settarti, lascia vuoto se vuoi resettare il tutto.",
+		set_identity_command_substitutes = "/identity",
+
 		disable_idle_cam_command = "/disable_idle_cam",
 		disable_idle_cam_command_help = "Disabilità la idle cam.",
 		disable_idle_cam_command_substitutes = "/disable_idle, /idle",
@@ -974,6 +977,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		set_item_name_override_command_parameter_item_name = "Nome Item",
 		set_item_name_override_command_parameter_item_name_help = "Nome dell'item (lascia vuota per bypassare).",
 		set_item_name_override_command_substitutes = "/set_name_override, /name_override",
+
+		repair_durability_command = "/repair_durability",
+		repair_durability_command_help = "Ripara la durabilità di alcuni item.",
+		repair_durability_command_parameter_slot = "slot",
+		repair_durability_command_parameter_slot_help = "Quale slot vorresti riparare?.",
+		repair_durability_command_substitutes = "",
 
 		list_weapon_attachments_command = "/list_weapon_attachments",
 		list_weapon_attachments_command_help = "Mette o torglie il colore all' arma che hai in mano.",
@@ -1023,26 +1032,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		substitutes_command = "/substitutes",
 		substitutes_command_help = "Mostra tutti i sottotitoli.",
 		substitutes_command_substitutes = "",
-
-		command_bind_add_command = "/command_bind_add",
-		command_bind_add_command_help = "Associa un comando ad un controllo.",
-		command_bind_add_command_parameter_bind_name = "Nome Bind",
-		command_bind_add_command_parameter_bind_name_help = "Il nome del bind. Deve essere una parola con meno di 20 caratteri, sarà usato per identificare o rimuovere questa associazione.",
-		command_bind_add_command_parameter_control = "Controllo",
-		command_bind_add_command_parameter_control_help = "TIl controllo che vuoi associare a questo comando. Qui c'è la lista di tutti i comandi: `https://docs.fivem.net/docs/game-references/controls/`",
-		command_bind_add_command_parameter_command = "Comando",
-		command_bind_add_command_parameter_command_help = "Il comando che vuoi associare. Il '/' non deve essere incluso, quando si può. Lo puoi aggiungere dai comandi.",
-		command_bind_add_command_substitutes = "/command_bind, /bind_add, /bindadd, /add_bind, /addbind",
-
-		command_bind_remove_command = "/command_bind_remove",
-		command_bind_remove_command_help = "Rimuove associazione comando.",
-		command_bind_remove_command_parameter_bind_name = "nome associazione",
-		command_bind_remove_command_parameter_bind_name_help = "Il nome dell' associazione che vuoi rimuovere.",
-		command_bind_remove_command_substitutes = "/unbind",
-
-		command_binds_command = "/command_binds",
-		command_binds_command_help = "Lista di tutti i comandi associati.",
-		command_binds_command_substitutes = "/binds",
 
 		-- base/users
 		playtime_command = "/playtime",
@@ -1205,6 +1194,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		view_weapon_command_parameter_component_names_help = "Una lista di componenti (separati dal comma) che vuoi attaccare all' arma.",
 		view_weapon_command_substitutes = "/view",
 
+		view_model_command = "/view_model",
+		view_model_command_help = "Genera un oggetto con il nome del modello dato e lo posiziona perfettamente per gli screenshot.",
+		view_model_command_parameter_model_name = "nome del modello",
+		view_model_command_parameter_model_name_help = "The name of the model you want to view.",
+		view_model_command_substitutes = "Il nome del modello che vuoi visualizzare",
+
 		play_animation_command = "/play_animation",
 		play_animation_command_help = "Riproduce un animazione specifica.",
 		play_animation_command_parameter_animation_dict = "dict animazione",
@@ -1250,6 +1245,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		doors_scan_command_parameter_clear_file = "clear file",
 		doors_scan_command_parameter_clear_file_help = "Desiderate cancellare il contenuto del file prima di scriverci?",
 		doors_scan_command_substitutes = "/doors",
+
+		debug_doors_command = "/debug_doors",
+		debug_doors_command_help = "Esegue il debug delle informazioni sulle porte vicine.",
+		debug_doors_command_substitutes = "",
 
 		-- game/evidence
 		fingerprint_command = "/fingerprint",
@@ -1307,6 +1306,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		metrics_toggle_command = "/metrics_toggle",
 		metrics_toggle_command_help = "TAttiva le metric a schermo.",
 		metrics_toggle_command_substitutes = "/metrics, /metrics_display",
+
+		toggle_advanced_hud_command = "/toggle_advanced_hud",
+		toggle_advanced_hud_command_help = "Disattiva l'HUD avanzato. (RPM, gears, etc.)",
+		toggle_advanced_hud_command_substitutes = "/advanced_hud",
 
 		-- game/hunting
 		animal_debug_command = "/animal_debug",
@@ -1555,6 +1558,29 @@ OP.Global.Locales.Languages["it-IT"] = {
 		ped_remove_command_help = "Sbarazzati di tutti i ped spawnati.",
 		ped_remove_command_substitutes = "",
 
+		-- game/player_scales
+		set_player_scale_command = "/set_player_scale",
+		set_player_scale_command_help = "Imposta l'altezza di un giocatore.",
+		set_player_scale_command_parameter_scale = "altezza",
+		set_player_scale_command_parameter_scale_help = "L'altezza che gli vorresti impostare.",
+		set_player_scale_command_parameter_server_id = "server id",
+		set_player_scale_command_parameter_server_id_help = "L'ID del giocatore per il quale vorresti impostare l'altezza. Lasciando questo campo vuoto si auto-selezionerà.",
+		set_player_scale_command_substitutes = "/player_scale, /set_player_size, /player_size",
+
+		-- game/ped_steal
+		ped_steal_command = "/ped_steal",
+		ped_steal_command_help = "Ruba il ped di qualcuno.",
+		ped_steal_command_parameter_server_id = "server id",
+		ped_steal_command_parameter_server_id_help = "The players server id.",
+		ped_steal_command_substitutes = "/steal_ped",
+
+		-- game/ped_tasks
+		debug_ped_command = "/debug_ped",
+		debug_ped_command_help = "Debugs information about a ped.",
+		debug_ped_command_parameter_network_id = "network id",
+		debug_ped_command_parameter_network_id_help = "The peds network id.",
+		debug_ped_command_substitutes = "",
+
 		-- game/properties
 		properties_debug_command = "/properties_debug",
 		properties_debug_command_help = "Attiva il debug delle proprietà.",
@@ -1637,6 +1663,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		shield_command = "/shield",
 		shield_command_help = "Attiva lo scudo balistico.",
 		shield_command_substitutes = "",
+
+		draw_shroom_areas_command = "/draw_shroom_areas",
+		draw_shroom_areas_command_help = "Disegna tutti i funghi presenti in giro.",
+		draw_shroom_areas_command_substitutes = "/shroom_areas",
 
 		-- game/sound_effects
 		play_sound_command = "/play_sound",
@@ -1747,6 +1777,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 		trackers_split_command_help = "Alterna l'avere tracker memorizzati all'interno di una categoria sulla mappa e averli divisi.",
 		trackers_split_command_substitutes = "",
 
+		-- game/tsunami
+		set_ocean_scaler_command = "/set_ocean_scaler",
+		set_ocean_scaler_command_help = "Modificare globalmente lo scaler dell'oceano.",
+		set_ocean_scaler_command_parameter_intensity = "intensità",
+		set_ocean_scaler_command_parameter_intensity_help = "L'intensità che vorresti impostare.",
+		set_ocean_scaler_command_substitutes = "/ocean_scaler, /set_waves_intensity, /waves_intensity",
+
 		-- game/voice
 		voice_debug_command = "/voice_debug",
 		voice_debug_command_help = "Abilita il voice debug.",
@@ -1762,6 +1799,26 @@ OP.Global.Locales.Languages["it-IT"] = {
 		ragdoll_command_parameter_force = "forza",
 		ragdoll_command_parameter_force_help = "Applica una forza casuale al giocatore dopo averlo reso ragdoll.",
 		ragdoll_command_substitutes = "",
+
+		ragdoll_radius_command = "/ragdoll_radius",
+		ragdoll_radius_command_help = "Costringe ogni giocatore in un dato raggio a ragdollare in modo casuale.",
+		ragdoll_radius_command_parameter_radius = "radius",
+		ragdoll_radius_command_parameter_radius_help = "The radius in which players will ragdoll.",
+		ragdoll_radius_command_parameter_force = "force",
+		ragdoll_radius_command_parameter_force_help = "Apply a random force to the player after making them ragdoll.",
+		ragdoll_radius_command_substitutes = "",
+
+		punch_radius_command = "/punch_radius",
+		punch_radius_command_help = "Costringe ogni giocatore in un dato raggio a colpire in modo casuale.",
+		punch_radius_command_parameter_radius = "radius",
+		punch_radius_command_parameter_radius_help = "The radius in which players will punch randomly.",
+		punch_radius_command_substitutes = "",
+
+		punch_command = "/punch",
+		punch_command_help = "Fai tirare pugni ai giocatori.",
+		punch_command_parameter_server_id = "server id",
+		punch_command_parameter_server_id_help = "Server ID of the target player.",
+		punch_command_substitutes = "",
 
 		-- global/entities
 		local_entities_debug_command = "/local_entities_debug",
@@ -1838,6 +1895,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		licenses_command = "/licenses",
 		licenses_command_help = "Prendi le tue licenze.",
 		licenses_command_substitutes = "",
+
+		-- vehicles/damage
+		debug_vehicle_command = "/debug_vehicle",
+		debug_vehicle_command_help = "Debugs the vehicles current damage values.",
+		debug_vehicle_command_substitutes = "",
 
 		-- vehicles/fuel
 		set_fuel_command = "/set_fuel",
@@ -2246,6 +2308,50 @@ core = {
 		black_bars_set_to = "Le barre nere cinematografiche ora sono state impostate su ${blackBarsHeight}%."
 	},
 
+	crafting = {
+		smelt_glass = "[${SeatEjectKey}] Smaltisci bottiglie rotte",
+		smelting_glass = "Smaltendo ${usedItems}",
+		smelted_glass = "Smeltite ${usedItems} in vetro.",
+		failed_smelt_glass = "Fallimento nel smaltire il vetro.",
+		craft_steel = "[${SeatEjectKey}] Crafta Acciaio",
+		crafting_steel = "Molding ${usedItems}",
+		crafted_steel = "Craftato ${usedItems} in acciaio.",
+		failed_craft_steel = "Failed to craft steel.",
+		scrapping_item = "Rottamazione ${usedItems}",
+		scrapped_item = "Rottami di metallo estratti da ${usedItems}.",
+		scrap_knife = "[${SeatEjectKey}] Scrap Knifes",
+		failed_scrap_knife = "Failed to scrap knife.",
+		scrap_item = "[${SeatEjectKey}] Scrap Items",
+		failed_scrap_item = "Failed to scrap item.",
+		cut_item = "[${SeatEjectKey}] Taglia patate",
+		cutting_item = "Tagliando 3 patate",
+		cut_item_done = "Tagliando le patate in patatine fritte.",
+		failed_cut_item = "Fallimento nel tagliare le patatine.",
+		fry_item = "[${SeatEjectKey}] Friggi le patatine fritte",
+		frying_item = "Friggendo patatine fritte",
+		fried_item = "Friggendo patatine belghe.",
+		failed_fry_item = "Fallimento nel friggere le patatine.",
+		grill_item = "[${SeatEjectKey}] Griglia la fetta di pane",
+		grilling_item = "Grigliando la fetta di pane",
+		grilled_item = "Fetta di pane grigliata.",
+		failed_grill_item = "Fallimento nel grigliare la fetta di pane.",
+		assemble_burger = "[${SeatEjectKey}] Assembla l'hamburger",
+		assembling_burger = "Assemblando l'hamburger",
+		assembled_burger = "Hamburger assemblato",
+		failed_assemble_burger = "Fallimento nel assemblare l'hamburger.",
+		assemble_cheeseburger = "[${SeatEjectKey}] Assembla cheesburger",
+		assembling_cheeseburger = "Assemblando cheeseburger",
+		assembled_cheeseburger = "Cheeseburger assemblato",
+		failed_assemble_cheeseburger = "Failed to assemble a cheeseburger.",
+		pack_meal = "[${SeatEjectKey}] Package Meal",
+		packing_meal = "Imballaggio del menu",
+		packed_meal = "Packaged Meal.",
+		failed_pack_meal = "Failed to package meal.",
+		no_required_items = "Non hai tutti gli item richiesti.",
+		used_crafting_station_title = "Crafting Station",
+		used_crafting_station_details = "${consoleName} used a crafting station to craft ${items}."
+	},
+
 	crashes = {
 		crash_failed = "Impossibile attivare il crash per ${consoleName}.",
 		crash_success = "Crash innescato con successo per ${consoleName}.",
@@ -2382,6 +2488,16 @@ core = {
 		evidence_text = ": Campione di DNA\nDNA prelevato da ${fullName} #${characterId}\n\nInformazioni aggiuntive:\n • E' stato raccolto alle: ${time}"
 	},
 
+	freecam = {
+		enabled_freecam = "Freecam abilitata.",
+		disabled_freecam = "Freecam disabilitata",
+		freecam_failed = "Non sei riuscito ad abilitare la freecam. Hai abilitato noclip o simili?",
+		freecam_logs_title = "Attiva/Disattiva Freecam",
+		freecam_on_logs_details = "${consoleName} ha acceso la sua freecam.",
+		freecam_off_logs_details = "${consoleName} ha spento la sua freecam.",
+		freecam_no_permission = "Attempted to toggle their freecam without required permissions."
+	},
+
 	doors = {
 		locked = "Chiusa",
 		unlocked = "Aperta",
@@ -2499,7 +2615,10 @@ core = {
 		ping = "PING",
 		autopilot = "Autopilota",
 		ground_asl = "AGL/ASL (${unit})",
-		gear = "Marce"
+		gear = "Marcia",
+		rpm = "RPM",
+		advanced_hud_on = "Toggled the advanced hud on.",
+		advanced_hud_off = "Toggled the advanced hud off."
 	},
 
 	hunting = {
@@ -2507,13 +2626,6 @@ core = {
 		skinning_animal = "Skinning dead animal",
 		hit_by_vehicle = "This animal's meat is too damaged.",
 		animal_is_being_skinned = "The animal is being skinned."
-	},
-
-	hunting = {
-		hold_to_skin = "[${InteractionKey}] Mantieni per scuoiare",
-		skinning_animal = "Scuoiando un animale morto",
-		hit_by_vehicle = "La carne di questo animale è troppo dannaggiata.",
-		animal_is_being_skinned = "L'animale sta venendo scuoiato."
 	},
 
 	identification = {
@@ -2616,7 +2728,10 @@ core = {
 		bar = "Bar",
 		strip_club = "Strip Club",
 		police_store = "Police Store",
+		fib_store = "FIB Store",
 		police_badge_store = "Police Badge Desk",
+		flower_store = "Stacey's Flower Emporium",
+		gift_store = "Del Perro Gifts",
 		ems_store = "EMS Store",
 		drug_store = "Drug Cabinet",
 		chop_shop = "Chop Shop",
@@ -2638,6 +2753,11 @@ core = {
 		store_tax_percentage = "${tax}%",
 
 		missing_job = "Non hai il lavoro richiesto per usare questo inventario.",
+
+		item_is_broken = "Questo oggetto è rotto.",
+
+		broken_food = "Questo oggetto è rovinato.",
+		broken_drugs = "Questo oggetto è scaduto.",
 
 		search = "Cerca",
 		amount = "Quantità",
@@ -2784,6 +2904,21 @@ core = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Ossicodone? No agente, sto solo mangiando tic tac!",
 
+		burger_buns = "Fetta di pane",
+		burger_buns_description = "Fai scorrere un po' di carne tra questi ragazzi cattivi.",
+		cheese = "Formaggio",
+		cheese_description = "Immagina di essere intollerante al lattosio, sfigato.",
+		lettuce = "Lattuga",
+		lettuce_description = "Quella roba verde che non vendono per strada.",
+		patty = "Carne cotta",
+		patty_description = "Un giorno un piccolo uomo troverà la formula segreta per questa carne, fino ad allora, continuate a friggere cuocendo.",
+		potato = "Patata",
+		potato_description = "L'unica cosa proveniente dalla Russia che non sia un AK o una sposa per corrispondenza.",
+		raw_fries = "Patatine fritte",
+		raw_fries_description = "Fondamentalmente solo una patata, ma qualcuno non ha messo abbastanza impegno per renderla qualcosa.",
+		raw_patty = "Carne cruda",
+		raw_patty_description = "90% carne vera, l'altro 10% si è perso nella traduzione dell'imballaggio.",
+
 		apple = "Mela",
 		apple_description = "Tenere a bada i dottori malvagi!",
 		banana = "Banana",
@@ -2861,6 +2996,14 @@ core = {
 
 		ballistic_shield = "Scudo Balistico",
 		ballistic_shield_description = "Questo scudo dovrebbe essere usato quando ti avventuri nelle gang di RP.",
+
+		boxing_glove = "Guanti da box",
+		boxing_glove_description = "Ti fa diventare Rocky, ma probabilmente non avrai un seguito...",
+		leash = "Leash",
+		leash_description = "Nessuno saprà perché l'hai comprato, ma di sicuro ti giudicheranno per averlo.",
+
+		shrooms = "Funghi",
+		shrooms_description = "Qualcuno ha detto di metterli sulla pizza, ma ora la pizza si sta mettendo su di me... aspetta chi sono io?",
 
 		bucket = "Secchio",
 		bucket_description = "Può essere usato come un casco di fortuna.",
@@ -2991,7 +3134,12 @@ core = {
 		bear_trap = "Trappola per orsi",
 		bear_trap_description = "Può essere posizionato ovunque nel mondo.",
 
-		bean_coffee = "Chicchi di caffè",
+		black_dildo = "Dildo Nero",
+		black_dildo_description = "Otterremo quella confessione in un modo o nell'altro.",
+		pink_dildo = "Dildo Rosa",
+		pink_dildo_description = "Fatto a mano, scolpito e testato da Bugsy Middleman.",
+
+		bean_coffee = "Caffè",
 		bean_coffee_description = "Descrizione generale.",
 		cappuccino = "Cappuccino",
 		cappuccino_description = "Descrizione generale.",
@@ -3322,7 +3470,10 @@ core = {
 		weapon_addon_m870_description = "Sport perfetto e fucile da caccia, anche se sparare ai Danny non è proprio uno sport... vero?",
 
 		weapon_addon_rpk16 = "RPK-16",
-		weapon_addon_rpk16_description = "La mitragliatrice più perfetta che sia mai esistita, basta non dimenticare la tuta da ginnastica."
+		weapon_addon_rpk16_description = "La mitragliatrice più perfetta che sia mai esistita, basta non dimenticare la tuta da ginnastica.",
+
+		weapon_addon_tacknife = "Ultimate Coltello Tattico",
+		weapon_addon_tacknife_description = "Quando si scuote peggio di un drogato su un martello pneumatico e si vede bene come un vecchio con la cataratta"
 	},
 
 	items = {
@@ -3834,6 +3985,14 @@ core = {
 		-- SOON:TM:
 	},
 
+	player_scales = {
+		reset_player_scale_for = "Reset the player scale for ${consoleName}.",
+		set_player_scale_to_for = "Set the player scale to `${scale}` for ${consoleName}",
+		reset_player_scale = "Reset the player scale.",
+		set_player_scale_to = "Set the player scale to `${scale}`.",
+		set_player_scale_no_permission = "The player did not have the required permission to set a player's scale."
+	},
+
 	players = {
 		player_left = "Player rimasti [${serverId}]"
 	},
@@ -4182,6 +4341,10 @@ core = {
 		exit_mechanic_shop = "Esci dall' officina",
 		exit_mechanic_shop_interact = "[${InteractionKey}] Esci dall'officina",
 
+		enter_coroner = "Entra nel Coroner",
+		enter_coroner_interact = "[${InteractionKey}] Entra nel Coroner",
+
+		exit_coroner = "Esci dal Coroner",
 		enter_coroner = "Entra dal medico legale",
 		enter_coroner_interact = "[${InteractionKey}] Entra dal medico legale",
 
@@ -4321,6 +4484,26 @@ core = {
 		press_to_rearm = "[${InteractionKey}] Riarma",
 		rearm = "Riarma",
 		e = "E"
+	},
+
+	tsunami = {
+		the_ocean_scaler_intensity_already_set_to = "L'intensità dello scaler dell'oceano è già impostata a `${intensity}`.",
+		no_ocean_scaler_intensity_set = "Non c'è già un set di intensità scaler dell'oceano.",
+		set_ocean_scaler_to = "Impostare l'intensità dello scaler dell'oceano su `${intensity}`.",
+		reset_ocean_scaler = "Ripristinare l'intenzionalità dello scaler dell'oceano.",
+		set_ocean_scaler_no_permission = "Il giocatore non aveva il permesso necessario per impostare lo scaler dell'oceano."
+	},
+
+	tuner_shop = {
+		purchase_label = "[8] Compra ${label} per $${price}",
+		purchase_label_far = "In vendita | ${label} | $${price}",
+		showroom_label = "Showroom | ${label} | $${price}",
+		failed_vehicle_spawn = "Fallimento nel spawnare il veicolo.",
+		not_enough_funds = "Non ci sono abbastanza fondi per completare l'acquisto.",
+		area_not_clear = "La zona di spawn è occupata.",
+		something_went_wrong = "Qualcosa è andato storto durante il tentativo di acquistare il veicolo.",
+		purchased_vehicle = "Comprato ${label} per $${price}.",
+		tuner_shop_blip = "Midnight Tunershop"
 	},
 
 	vending_machines = {
@@ -4563,6 +4746,17 @@ core = {
 		air_unit_exit_vehicle = "Esci dal veicolo per usare Unita' Aerea.",
 		air_unit_press_to_use = "Premi ~g~E ~w~per usare Unita' Aerea per $${cost}.",
 		air_unit_no_vehicle_nearby = "Non ci sono veicoli vicini."
+	},
+
+	damage = {
+		vehicle = "Vehicle-ID: ${entity}",
+		general = "Generale: ${value}",
+		body = "Body: ${value}",
+		engine = "Motore: ${value}",
+		petrol_tank = "Tanica: ${value}",
+		tracked_vehicle = "Tracked Vehicle",
+		debug_vehicle_on = "Toggled vehicle debug on.",
+		debug_vehicle_off = "Toggled vehicle debug off."
 	},
 
 	fuel = {
