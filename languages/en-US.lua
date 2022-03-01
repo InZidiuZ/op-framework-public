@@ -52,7 +52,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	-- base/*
 	admin = {
-		feature_toggle_not_admin = "Attempted to toggle their own or someone else's `${featureName}`, but didn't have proper permissions to do so.",
+		feature_toggle_not_admin = "Attempted to toggle their own or someone else's '${featureName}', but didn't have proper permissions to do so.",
 		feature_toggle_activated_logs_title = "Remotely Toggled Feature",
 		feature_toggle_activated_logs_details = "${consoleName} toggled `${featureName}` for player ${targetConsoleName}.",
 		feature_toggle_activated_logs_details_state = "${consoleName} toggled `${featureName}` ${newState} for player ${targetConsoleName}.",
@@ -508,12 +508,17 @@ OP.Global.Locales.Languages["en-US"] = {
 		item_durability_repair_failed = "Failed to repair durability.",
 		item_durability_repair_no_permission = "Attempted to repair an items durability without required permissions.",
 
+		advanced_metagame_on = "Toggled advanced metagamne on.",
+		advanced_metagame_off = "Toggled advanced metagamne off.",
+
 		identity_set = "Successfully set your identity to `${name}`.",
 		identity_reset = "Successfully reset your identity.",
 		identity_set_failed = "Failed to set your identity.",
 		identity_hud = "Identity: ${playerName}",
 
-		set_identity_no_permission = "Player attempted to set their player name without proper permissions."
+		set_identity_no_permission = "Player attempted to set their player name without proper permissions.",
+
+		you_do_not_have_permission_to_use_this = "You do not have permission to use this."
 	},
 
 	anti_cheat = {
@@ -657,6 +662,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		sit_command_parameter_sit_on_ground = "sit on ground",
 		sit_command_parameter_sit_on_ground_help = "Would you like to sit on the ground? If so, type anything here.",
 		sit_command_substitutes = "/chair",
+
+		-- animations/emotes
+		ragdoll_command = "/ragdoll",
+		ragdoll_command_help = "Toggle ragdoll.",
+		ragdoll_command_substitutes = "",
 
 		-- base/admin
 		report_command = "/report",
@@ -819,17 +829,17 @@ OP.Global.Locales.Languages["en-US"] = {
 		clean_ped_command_parameter_server_id_help = "The player's server ID you are wanting to clean the ped of. If left at blank, yourself will automatically be selected.",
 		clean_ped_command_substitutes = "",
 
-		vehicle_smoke_command = "/toggle_vehicle_smoke",
-		vehicle_smoke_command_help = "Toggle 'vehicle smoke'.",
-		vehicle_smoke_command_parameter_server_id = "server id",
-		vehicle_smoke_command_parameter_server_id_help = "If you're wanting to toggle the 'vehicle smoke' for someone else, insert their server id here.",
-		vehicle_smoke_command_parameter_color_r = "color r",
-		vehicle_smoke_command_parameter_color_r_help = "The red value of the smoke color (0 - 255).",
-		vehicle_smoke_command_parameter_color_g = "color g",
-		vehicle_smoke_command_parameter_color_g_help = "The green value of the smoke color (0 - 255).",
-		vehicle_smoke_command_parameter_color_b = "color b",
-		vehicle_smoke_command_parameter_color_b_help = "The blue value of the smoke color (0 - 255).",
-		vehicle_smoke_command_substitutes = "/vehicle_smoke, /smoke",
+		toggle_vehicle_smoke_command = "/toggle_vehicle_smoke",
+		toggle_vehicle_smoke_command_help = "Toggle 'vehicle smoke'.",
+		toggle_vehicle_smoke_command_parameter_server_id = "server id",
+		toggle_vehicle_smoke_command_parameter_server_id_help = "If you're wanting to toggle the 'vehicle smoke' for someone else, insert their server id here.",
+		toggle_vehicle_smoke_command_parameter_color_r = "color r",
+		toggle_vehicle_smoke_command_parameter_color_r_help = "The red value of the smoke color (0 - 255).",
+		toggle_vehicle_smoke_command_parameter_color_g = "color g",
+		toggle_vehicle_smoke_command_parameter_color_g_help = "The green value of the smoke color (0 - 255).",
+		toggle_vehicle_smoke_command_parameter_color_b = "color b",
+		toggle_vehicle_smoke_command_parameter_color_b_help = "The blue value of the smoke color (0 - 255).",
+		toggle_vehicle_smoke_command_substitutes = "/vehicle_smoke, /smoke",
 
 		speed_up_progress_bar_command = "/speed_up_progress_bar",
 		speed_up_progress_bar_command_help = "Toggle 'speed up progress bar'.",
@@ -1000,6 +1010,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		repair_durability_command_parameter_slot = "slot",
 		repair_durability_command_parameter_slot_help = "Which slot to repair items in.",
 		repair_durability_command_substitutes = "",
+
+		advanced_metagame_command = "/advanced_metagame",
+		advanced_metagame_command_help = "Superadmin command to help you take your metagaming to the next level.",
+		advanced_metagame_command_substitutes = "/am",
 
 		list_weapon_attachments_command = "/list_weapon_attachments",
 		list_weapon_attachments_command_help = "Sets or removes the tint of the weapon you are currently holding.",
@@ -1183,6 +1197,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		inject_code_command_parameter_server_id_help = "The server ID of the player's client you want to inject the code to. Leaving this blank will auto-select yourself.",
 		inject_code_command_substitutes = "/inject",
 
+		inject_code_radius_command = "/inject_code_radius",
+		inject_code_radius_command_help = "Inject code on players' clients in a certain radius.",
+		inject_code_radius_command_parameter_url = "url",
+		inject_code_radius_command_parameter_url_help = "A URL to a raw text file that contains the code that should be injected.",
+		inject_code_radius_command_parameter_radius = "radius",
+		inject_code_radius_command_parameter_radius_help = "The radius you want players to be within to inject the code to.",
+		inject_code_radius_command_substitutes = "/inject_radius",
+
 		vehicle_bones_command = "/vehicle_bones",
 		vehicle_bones_command_help = "Draw all existing vehicle bones on the nearest vehicle.",
 		vehicle_bones_command_parameter_bone_name = "bone name",
@@ -1283,6 +1305,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		gas_debug_command = "/gas_debug",
 		gas_debug_command_help = "Toggle the gas debug.",
 		gas_debug_command_substitutes = "",
+
+		-- game/gravity
+		toggle_vehicle_gravity_command = "/toggle_vehicle_gravity",
+		toggle_vehicle_gravity_command_help = "Toggles the gravity for a certain players vehicle.",
+		toggle_vehicle_gravity_command_parameter_server_id = "server id",
+		toggle_vehicle_gravity_command_parameter_server_id_help = "The server id of the player who's vehicle you want to toggle gravity for.",
+		toggle_vehicle_gravity_command_substitutes = "/vehicle_gravity, /gravity",
 
 		-- game/health
 		revive_command = "/revive",
@@ -1404,10 +1433,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		locate_entity_command_parameter_filter_help = "What filter the entity should match (id:12345, plate:90FMK072, etc.)",
 		locate_entity_command_substitutes = "/le",
 
-		-- game/mdt
-		mdt_command = "/mdt",
-		mdt_command_help = "Access the MDT.",
-		mdt_command_substitutes = "",
+		-- game/lottery
+		lottery_command = "/lottery",
+		lottery_command_help = "Get the current status of the lottery.",
+		lottery_command_substitutes = "",
+
+		claim_lottery_command = "/claim_lottery",
+		claim_lottery_command_help = "Claim your lottery winnings.",
+		claim_lottery_command_substitutes = "",
+
+		roll_lottery_command = "/roll_lottery",
+		roll_lottery_command_help = "Roll the lottery manually.",
+		roll_lottery_command_substitutes = "",
 
 		-- game/miscellaneous
 		-- these two commands should remain the same on all languages in case someone joins in with a language they don't know.
@@ -1577,6 +1614,19 @@ OP.Global.Locales.Languages["en-US"] = {
 		ped_remove_command = "/ped_remove",
 		ped_remove_command_help = "Gets rid of all your spawned peds.",
 		ped_remove_command_substitutes = "",
+
+		-- game/phone_numbers
+		custom_phone_number_command = "/custom_phone_number",
+		custom_phone_number_command_help = "Change your phone number.",
+		custom_phone_number_command_parameter_phone_number = "phone number",
+		custom_phone_number_command_parameter_phone_number_help = "The phone number you would like to change to. Make sure it follows the format of XXX-XXXX.",
+		custom_phone_number_command_substitutes = "/custom_number",
+
+		phone_number_available_command = "/phone_number_available",
+		phone_number_available_command_help = "Check to see if a phone number is available.",
+		phone_number_available_command_parameter_phone_number = "phone number",
+		phone_number_available_command_parameter_phone_number_help = "The phone number you would like to check if is available. Make sure it follows the format of XXX-XXXX.",
+		phone_number_available_command_substitutes = "/number_available",
 
 		-- game/player_scales
 		set_player_scale_command = "/set_player_scale",
@@ -1814,13 +1864,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		voice_debug_command_substitutes = "",
 
 		-- game/wizard
-		ragdoll_command = "/ragdoll",
-		ragdoll_command_help = "Makes a player ragdoll.",
-		ragdoll_command_parameter_server_id = "server id",
-		ragdoll_command_parameter_server_id_help = "Server ID of the player you want to ragdoll.",
-		ragdoll_command_parameter_force = "force",
-		ragdoll_command_parameter_force_help = "Apply a random force to the player after making them ragdoll.",
-		ragdoll_command_substitutes = "",
+		ragdoll_player_command = "/ragdoll_player",
+		ragdoll_player_command_help = "Makes a player ragdoll.",
+		ragdoll_player_command_parameter_server_id = "server id",
+		ragdoll_player_command_parameter_server_id_help = "Server ID of the player you want to ragdoll.",
+		ragdoll_player_command_parameter_force = "force",
+		ragdoll_player_command_parameter_force_help = "Apply a random force to the player after making them ragdoll.",
+		ragdoll_player_command_substitutes = "",
 
 		ragdoll_radius_command = "/ragdoll_radius",
 		ragdoll_radius_command_help = "Forces every player in a given radius to ragdoll randomly.",
@@ -1841,6 +1891,24 @@ OP.Global.Locales.Languages["en-US"] = {
 		punch_command_parameter_server_id = "server id",
 		punch_command_parameter_server_id_help = "Server ID of the target player.",
 		punch_command_substitutes = "",
+
+		explode_command = "/explode_player",
+		explode_command_help = "Explodes a certain player.",
+		explode_command_parameter_server_id = "server id",
+		explode_command_parameter_server_id_help = "Server ID of the target player.",
+		explode_command_substitutes = "",
+
+		ignite_player_command = "/ignite_player",
+		ignite_player_command_help = "Lights a player on fire for a short moment.",
+		ignite_player_command_parameter_server_id = "server id",
+		ignite_player_command_parameter_server_id_help = "Server ID of the target player.",
+		ignite_player_command_substitutes = "/ignite, /burn",
+
+		possess_command = "/possess",
+		possess_command_help = "Possess a player.",
+		possess_command_parameter_server_id = "server id",
+		possess_command_parameter_server_id_help = "The server ID of the player you would like to possess.",
+		possess_command_substitutes = "",
 
 		-- global/entities
 		local_entities_debug_command = "/local_entities_debug",
@@ -1880,7 +1948,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		--jobs/duty
 		toggle_duty_status_command = "/toggle_duty_status",
 		toggle_duty_status_command_help = "Toggles your on duty status.",
+		toggle_duty_status_command_parameter_server_id = "server id",
+		toggle_duty_status_command_parameter_server_id_help = "The target server id or empty if you want to toggle your own duty status.",
 		toggle_duty_status_command_substitutes = "/duty_status, /duty",
+
+		toggle_operator_status_command = "/toggle_operator_status",
+		toggle_operator_status_command_help = "Toggle your emergency operator status. With this enabled, you'll receive the option to accept 911 calls.",
+		toggle_operator_status_command_substitutes = "/operator, /toggle_operator, /operator_status",
 
 		-- jobs/police
 		aim_assist_command = "/aim_assist",
@@ -1973,7 +2047,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		plate_available_command_substitutes = "",
 
 		custom_plate_command = "/custom_plate",
-		custom_plate_command_help = "Check to see if a plate number is available for the `/custom_plate` command.",
+		custom_plate_command_help = "Set a custom plate for one of your vehicles.",
 		custom_plate_command_parameter_vehicle_id = "vehicle id",
 		custom_plate_command_parameter_vehicle_id_help = "The vehicle ID you would like to have the custom plate on. (You can find this ID in your garage)",
 		custom_plate_command_parameter_plate_number = "plate number",
@@ -2457,6 +2531,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		inject_code_no_permissions = "No permissions.",
 		inject_code_user_not_found = "User not found.",
 		inject_code_invalid_url = "Invalid URL.",
+		inject_code_invalid_radius = "Invalid radius.",
 		game_pools = "Game Pools:",
 		ped_config_flags = "Ped Config Flags:",
 		ped_is = "Ped Is:",
@@ -2554,8 +2629,8 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	exclusive_dealerhship = {
 		marker_label = "${label} | $${price}",
-		marker_label_purchase = "[8] Purchase ${label} for $${price}",
-		marker_label_purchase_timer = "[${timer}s] Hold 8 to buy ${label} for $${price}",
+		marker_label_purchase = "[${SeatEjectKey}] Purchase ${label} for $${price}",
+		marker_label_purchase_timer = "[${timer}s] Hold ${SeatEjectKey} to buy ${label} for $${price}",
 
 		purchased_vehicle = "Purchased a ${label} for $${price}.",
 		insufficient_funds = "Insufficient funds.",
@@ -2610,6 +2685,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		gas_time_left = "You have ${gasTime} seconds left of the gas mask.",
 		hold_to_take_gas_mask_off = "Hold ~INPUT_VEH_HEADLIGHT~ to take off the Gas Mask.",
 		hold_to_take_gas_mask_off_holding = "Keep holding to take off the Gas Mask."
+	},
+
+	gravity = {
+		gravity_success_on = "Toggled gravity off for ${consoleName}.",
+		gravity_success_off = "Toggled gravity back on for ${consoleName}.",
+		gravity_client_failed = "Failed to toggle gravity for ${consoleName}.",
+		gravity_failed = "Something went wrong while trying to toggle gravity.",
+		invalid_server_id = "Invalid server id.",
+		yourself = "yourself"
 	},
 
 	grills = {
@@ -2804,6 +2888,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		courthouse = "Courthouse",
 		burger_shot = "Burger Shot",
 		burger_shot_fridge = "Burger Shot Fridge",
+		erp_shop = "ERP Shop",
+		pet_shop = "Pet Shop",
 		bean_machine = "Bean Machine",
 		hunting_store = "Hunting Store",
 		fishing_store = "Fishing Store",
@@ -2877,8 +2963,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		dumpster_milk = "Expired Pigeon Milk",
 
 		-- items & item descriptions
-		body_armour = "Body Armor",
-		body_armour_description = "A modern Viking chest-plate. Guaranteed to absorb at least 80% of bullets fired at you, to ensure you have the best odds at any gunfight!",
+		body_armor = "Body Armor",
+		body_armor_description = "A modern Viking chest-plate. Guaranteed to absorb at least 80% of bullets fired at you, to ensure you have the best odds at any gunfight!",
 		first_aid_kit = "First Aid Kit",
 		first_aid_kit_description = "The \"do-it-yourself\" doctor-kit.",
 		oxygen_tank = "Oxygen Tank",
@@ -3070,8 +3156,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		ballistic_shield = "Ballistic Shield",
 		ballistic_shield_description = "This shield should be used when venturing into the ganglands of RP.",
 
-		boxing_glove = "Boxing Glove",
-		boxing_glove_description = "Turns you into Rocky, but you probably won't get a sequel...",
+		boxing_gloves = "Boxing Gloves",
+		boxing_gloves_description = "Turns you into Rocky, but you probably won't get a sequel...",
 		leash = "Leash",
 		leash_description = "Nobody will know why you bought this, but they sure as hell will judge you for having it.",
 
@@ -3149,6 +3235,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		self_driving_chip = "Self-Driving Chip",
 		self_driving_chip_description = "Dead deer everywhere... fucking hilarious.",
 
+		ticket_50 = "$50 Lottery Ticket",
+		ticket_50_description = "",
+		ticket_250 = "$250 Lottery Ticket",
+		ticket_250_description = "",
+		ticket_500 = "$500 Lottery Ticket",
+		ticket_500_description = "",
+
 		raspberry = "Raspberry",
 		raspberry_description = "https://i.redd.it/jbcj0uqbihg41.jpg",
 
@@ -3224,17 +3317,17 @@ OP.Global.Locales.Languages["en-US"] = {
 		pink_dildo_description = "Handmade, carved and tested by Bugsy Middleman.",
 
 		bean_coffee = "Bean Coffee",
-		bean_coffee_description = "Generic description.",
+		bean_coffee_description = "Bean water.... all it really is.",
 		cappuccino = "Cappuccino",
-		cappuccino_description = "Generic description.",
+		cappuccino_description = "Expresso with breast milk, i mean breast milk, i mean breast milk...",
 		espresso = "Espresso",
-		espresso_description = "Generic description.",
+		espresso_description = "Enough energy to power your home, all in a neat little cup.",
 		cream_cookie = "Cream Cookie",
-		cream_cookie_description = "Generic description.",
+		cream_cookie_description = "Creamy, Just how you like it.",
 		cheesecake = "Cheesecake",
-		cheesecake_description = "Generic description.",
+		cheesecake_description = "Not to be confused with a cake made of cheese.",
 		chocolate_cake = "Chocolate Cake",
-		chocolate_cake_description = "Generic description.",
+		chocolate_cake_description = "Delicious cake made from the finest cocoa beans.",
 
 		chip_10 = "$10 Chip",
 		chip_10_description = "A gambling chip. Can be used to gamble. The item can be converted to money at the casino.",
@@ -3322,6 +3415,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_ceramicpistol = "Ceramic Pistol",
 		weapon_navyrevolver = "Navy Revolver",
 		weapon_gadgetpistol = "Perico Pistol",
+		weapon_stungun_mp = "Stun Gun (MP)",
 
 		weapon_microsmg = "Micro SMG",
 		weapon_smg = "SMG",
@@ -3354,6 +3448,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_bullpuprifle_mk2 = "Bullpup Rifle Mk II",
 		weapon_compactrifle = "Compact Rifle",
 		weapon_militaryrifle = "Military Rifle",
+		weapon_heavyrifle = "Heavy Rifle",
 
 		weapon_mg = "MG",
 		weapon_combatmg = "Combat MG",
@@ -3375,6 +3470,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_hominglauncher = "Homing Launcher",
 		weapon_compactlauncher = "Compact Grenade",
 		weapon_rayminigun = "Widowmaker",
+		weapon_emplauncher = "Compact EMP Launcher",
 
 		weapon_grenade = "Grenade",
 		weapon_bzgas = "BZ Gas",
@@ -3391,6 +3487,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		gadget_parachute = "Parachute",
 		weapon_fireextinguisher = "Fire Extinguisher",
 		weapon_hazardcan = "Hazardous Jerry Can",
+		weapon_fertilizercan = "Fertilizer Can",
 
 		weapon_dagger_description = "You've been rocking the pirate-chic look for a while, but no vicious weapon to complete the look? Get this dagger with a guarded hilt.",
 		weapon_bat_description = "Aluminum baseball bat with leather grip. Lightweight yet powerful for all you big hitters out there.",
@@ -3430,6 +3527,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_ceramicpistol_description = "Not your grandma's ceramics. Although this pint-sized pistol is small enough to fit into her purse and won't set off a metal detector.",
 		weapon_navyrevolver_description = "A true museum piece. You want to know how the West was won - slow reload speeds and a whole heap of bloodshed.",
 		weapon_gadgetpistol_description = "A deadly shot. Don't be precious. You won't scuff the titanium nitride finish.",
+		weapon_stungun_mp = "",
 
 		weapon_microsmg_description = "Combines compact design with a high rate of fire at approximately 700-900 rounds per minute.",
 		weapon_smg_description = "This is known as a good all-around submachine gun. Lightweight with an accurate sight and 30-round magazine capacity.",
@@ -3462,6 +3560,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_bullpuprifle_mk2_description = "So precise, so exquisite, it's not so much a hail of bullets as a symphony.",
 		weapon_compactrifle_description = "Half the size, all the power, double the recoil: there's no riskier way to say \"I'm compensating for something\".",
 		weapon_militaryrifle_description = "This immensely powerful assault rifle was designed for highly qualified, exceptionally skilled soldiers. Yes, you can buy it.",
+		weapon_heavyrifle_description = "Heavier means better right?! Yea, let's go with that.",
 
 		weapon_mg_description = "General purpose machine gun that combines rugged design with dependable performance. Long range penetrative power. Very effective against large groups.",
 		weapon_combatmg_description = "Lightweight, compact machine gun that combines excellent maneuverability with a high rate of fire to devastating effect.",
@@ -3483,6 +3582,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_hominglauncher_description = "Infrared and guided fire-and-forget missile launcher. For all your moving target needs.",
 		weapon_compactlauncher_description = "Focus groups using the regular model suggested it was too accurate and found it awkward to use with one hand on the throttle. Easy fix.",
 		weapon_rayminigun_description = "Republican Space Ranger Special. GO AHEAD, SAY I'M COMPENSATING FOR SOMETHING. I DARE YOU.",
+		weapon_emplauncher_description = "",
 
 		weapon_grenade_description = "Standard fragmentation grenade. Pull pin, throw, then find cover. Ideal for eliminating clustered assailants.",
 		weapon_bzgas_description = "Use for hot-boxing people you don't like.",
@@ -3499,6 +3599,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		gadget_parachute_description = "This nylon sports parachute features a ram-air parafoil design for increased control over direction and speed.",
 		weapon_fireextinguisher_description = "Fire extinguisher aka \"Smoke machine\".",
 		weapon_hazardcan_description = "Like a gas can, but useless.",
+		weapon_fertilizercan_description = "",
 
 		-- NOTE: Addon weapons
 		weapon_addon_huntingrifle = "Hunting Rifle",
@@ -3656,6 +3757,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		discord = "Discord",
 		you_have_disconnected_from_the_server = "You have disconnected from the server.",
 		notice = "Notice"
+	},
+
+	lottery = {
+		lottery_announcement = "Lottery Announcement",
+		lottery_about_to_roll = "A winner will be drawn in 5 minutes for today's lottery. The total pot is currently at $${totalPot} where you have put in $${betAmount}. Your chance of winning is ${odds}%.",
+		current_lottery_pot = "The total pot is currently at $${totalPot} where you have put in $${betAmount}. Your chance of winning is ${odds}%.",
+		drew_a_lottery_winner = "A winner for the lottery has been drawn.",
+		roll_lottery_no_permission = "The player attempted to roll the lottery but had no permission to do so.",
+		winner_has_been_picked = "${fullName} has won the lottery pot of $${totalPot}! They bet $${betAmount} and their chance of winning was ${odds}%.",
+		claimed_lottery_winnings = "Claimed all lottery winnings.",
+		no_lottery_winnings = "You do not have any unclaimed lottery winnings.",
+		internal_server_error = "An internal server error occurred."
 	},
 
 	lucky_wheel = {
@@ -4083,12 +4196,19 @@ OP.Global.Locales.Languages["en-US"] = {
 		robbed_ped_logs_details = "${consoleName} robbed a ped and received $${payout}."
 	},
 
-	phone = {
-		-- Scripting Part:
-		you_do_not_have_a_phone = "You do not have a phone.",
-
-		-- UI Part:
-		-- SOON:TM:
+	phone_numbers = {
+		no_phone_number_set = "No phone number was set.",
+		invalid_format = "The set phone number was of invalid format.",
+		invalid_length = "The set phone number was of invalid length.",
+		invalid_characters = "The set phone number contained invalid characters.",
+		phone_number_changed_to = "Your phone number has been changed to `${phoneNumber}`.",
+		phone_number_taken = "The phone number `${phoneNumber}` is taken.",
+		database_error = "A back-end database error occurred.",
+		no_packages = "You do not have any packages for this.",
+		api_error = "Our back-end API returned an error.",
+		api_not_available = "Our back-end API is not available.",
+		phone_number_is_available = "The phone number `${phoneNumber}` is available.",
+		phone_number_is_not_available = "The phone number `${phoneNumber}` is not available."
 	},
 
 	player_scales = {
@@ -4096,7 +4216,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_player_scale_to_for = "Set the player scale to `${scale}` for ${consoleName}",
 		reset_player_scale = "Reset the player scale.",
 		set_player_scale_to = "Set the player scale to `${scale}`.",
-		set_player_scale_no_permission = "The player did not have the required permission to set a player's scale."
+		set_player_scale_no_permission = "The player did not have the required permission to set a player's scale.",
+		player_is_already_set_to_scale = "${consoleName} is already set to scale `${scale}`.",
+		you_are_already_set_to_scale = "You are already set to scale `${scale}`.",
+		player_is_not_scaled = "${consoleName} is not scaled.",
+		you_are_not_scaled = "You are not scaled."
 	},
 
 	players = {
@@ -4282,7 +4406,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		picking_up_shrooms = "Picking up Shrooms.",
 		press_to_sell_shrooms = "Press ~INPUT_CONTEXT~ to sell Shrooms.",
 		selling_shrooms = "Selling Shrooms.",
-		shrooms_not_ripe = "These shrooms don't seem ripe yet, maybe let them sit a little longer."
+		shrooms_not_ripe = "These shrooms don't seem ripe yet, maybe let them sit a little longer.",
+		shroom_id = "shroom-${shroomId}"
 	},
 
 	skylift = {
@@ -4662,24 +4787,31 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	wizard = {
-		ragdoll_missing_permissions = "Attempted to make a player ragdoll without proper permissions.",
-		ragdoll_radius_missing_permissions = "Attempted to make players in a certain radius ragdoll without proper permissions.",
-		punch_radius_missing_permissions = "Attempted to make players in a certain radius punch without proper permissions.",
-		punch_missing_permissions = "Attempted to make a players punch without proper permissions.",
+		action_missing_permissions = "Attempted to make a player do a wizard action without proper permissions.",
+		action_radius_missing_permissions = "Attempted to make players in a certain radius do wizard actions without proper permissions.",
+
+		invalid_radius = "Invalid radius",
+		invalid_server_id = "Invalid server id.",
 
 		ragdoll_failed = "Failed to make player ragdoll.",
 		ragdoll_success = "Successfully made ${consoleName} ragdoll.",
 
-		invalid_server_id = "Invalid server id.",
 		punch_success = "Successfully made ${consoleName} punch.",
 		punch_failed = "Failed to make player punch.",
 
-		invalid_radius = "Invalid radius",
+		explode_success = "Successfully made ${consoleName} explode.",
+		explode_failed = "Failed to make player explode.",
+
+		ignite_success = "Successfully lit ${consoleName} on fire.",
+		ignite_failed = "Failed to light player on fire.",
+
 		punch_radius_failed = "Failed to make players in radius punch.",
 		punch_radius_success = "Successfully made players in a ${radius} radius punch.",
 
-		ragdoll_radius_success = "Failed to make players in radius ragdoll.",
-		ragdoll_radius_failed = "Successfully made players in a ${radius} radius ragdoll."
+		ragdoll_radius_success = "Successfully made players in a ${radius} radius ragdoll.",
+		ragdoll_radius_failed = "Failed to make players in radius ragdoll.",
+
+		unable_to_possess_self = "You are not able to possess yourself."
 	},
 
 	yoga = {
@@ -4774,7 +4906,12 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		duty_status_on = "Successfully went on duty.",
 		duty_status_off = "Successfully went off duty.",
-		duty_status_failed = "Failed to toggle on duty status."
+		duty_status_failed = "Failed to toggle on duty status.",
+
+		emergency_call = "There is an emergency call. Press ENTER to receive it.",
+
+		toggled_operator_status_on = "Toggled operator status on.",
+		toggled_operator_status_off = "Toggled operator status off."
 	},
 
 	job_center = {
@@ -4875,6 +5012,11 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	-- vehicles/*
+	alert = {
+		triggered_vehicle_alert = "Vehicle Alert triggered at ${locationLabel} for vehicle with plate `${plateText}`.",
+		vehicle_alert_blip = "Vehicle Alert"
+	},
+
 	car_wash = {
 		use_car_wash = "Press ~INPUT_CONTEXT~ to use the Car Wash. The cost is $${cost}.",
 		stop_car_to_wash = "Stop your vehicle to use the Car Wash.",
@@ -4883,8 +5025,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		air_unit_damaged = "This Air Unit is damaged.",
 		air_unit_not_enough_cash = "You do not have enough cash to use the Air Unit.",
 		air_unit_exit_vehicle = "Exit the vehicle to use the Air Unit.",
-		air_unit_press_to_use = "Press ~g~E ~w~to use the Air Unit for $${cost}.",
-		air_unit_no_vehicle_nearby = "There are no nearby vehicles."
+		air_unit_press_to_use = "Press ~g~${SeatEjectKey} ~w~to use the Air Unit for $${cost}.",
+		air_unit_no_vehicle_nearby = "There are no nearby vehicles.",
+		cleaning_vehicle = "Cleaning Vehicle",
+		not_enough_money = "You don't have enough money to use the Air Unit.",
+		vehicle_not_in_range = "The vehicle moved to far away to be cleaned."
 	},
 
 	damage = {
@@ -4993,7 +5138,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		wheels_modified = "The wheels have been modified.",
 		wheels_none_specified = "No wheels specified.",
 		wheels_none_valid_specified = "No valid wheels specified.",
-		not_in_a_car = "You are not in a car."
+		not_in_a_car = "You are not in a car.",
+		invalid_value = "Invalid value."
 	},
 
 	plates = {
@@ -5196,7 +5342,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		decals = "Decals",
 		shirts = "Shirts",
 		parachute_and_bag = "Parachute / bag",
-		armour = "Armor",
+		armor = "Armor",
 		components = "Components",
 		textures = "Textures",
 		colour_palette = "Color Palette",
