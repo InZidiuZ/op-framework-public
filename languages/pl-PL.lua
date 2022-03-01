@@ -2485,7 +2485,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		invalid_package = "Nieprawidłowe przyrzeczenie kibica.",
 		something_went_wrong = "Coś poszło nie tak.",
 
-		exclusive_dealerhship_blip = "Ekskluzywny Deluxe Motorsport"
+		exclusive_dealerhship_blip = "Exclusive Deluxe Motorsport"
 	},
 
 	fingerprint = {
@@ -2596,15 +2596,17 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		m = "m",
 		belt = "PASY",
 		cruise = "TEMPOMAT",
-		fuel = "paliwo",
-		battery = "akumulator",
+		fuel = "Paliwo",
+		battery = "Akumulator",
 		fps = "FPS",
 		ping = "PING",
-		autopilot = "autopilot",
+		autopilot = "Autopilot",
 		ground_asl = "AGL/ASL (${unit})",
+		gear = "Bieg",
+		rpm = "RPM",
 
 		advanced_hud_on = "Włączyłeś zaawansowany hud.",
-		advanced_hud_off = "Wyłączyłęś zaawansowany hud"
+		advanced_hud_off = "Wyłączyłeś zaawansowany hud"
 	},
 
 	hunting = {
@@ -2702,22 +2704,22 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		store = "Sklep",
 		gas_station = "Stacja Paliw",
-		grocery_store = "Sklep spożywczy",
+		grocery_store = "Sklep Spożywczy",
 		prison_store = "Kantyna",
 		fruit_vendor = "Warzywniak",
-		island_store = "Sklep na wyspie Cayo",
-		island_bar = "Bar na wyspie",
-		burger_bar = "Bar z burgerami",
-		tool_store = "Sklep z narzędziami",
+		island_store = "Sklep na wyspie Cayo Perico",
+		island_bar = "Bar na wyspie Cayo Perico",
+		burger_bar = "Bar z Burgerami",
+		tool_store = "Sklep z Narzędziami",
 		gun_store = "Ammu-Nation",
 		gun_store_with_shooting_range = "Ammu-Nation z strzelnicą",
 		bar = "Bar",
 		strip_club = "Vanilla Unicorn",
 		police_store = "Zbrojownia Policyjna",
 		fib_store = "Zbrojownia FIB",
-		police_badge_store = "Biurko z odznakami",
+		police_badge_store = "Biurko z Odznakami",
 		flower_store = "Kwiacarnia",
-		gift_store = "Sklep z pamiątkami",
+		gift_store = "Sklep z Pamiątkami",
 		ems_store = "Sprzęt Medyczny",
 		drug_store = "Apteka",
 		chop_shop = "Chop Shop",
@@ -2725,8 +2727,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		burger_shot = "Burger Shot",
 		burger_shot_fridge = "Lodówka Burger Shot",
 		bean_machine = "Bean Machine - Kawiarnia",
-		hunting_store = "Sklep myśliwski",
-		fishing_store = "Sklep rybacki",
+		hunting_store = "Sklep Myśliwski",
+		fishing_store = "Sklep Rybacki",
+		vineyard = "Winiarnia",
 		los_santos_golf_club = "Los Santos Golf Club",
 		pd_prefix = "PD",
 		ems_prefix = "EMS",
@@ -2949,6 +2952,14 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		ballistic_shield = "Tarcza balistyczna",
 		ballistic_shield_description = "Tarcza balistyczna stosowana przez policję.",
+
+		black_dildo = "Czarne dildo",
+		black_dildo_description = "Czarne gumowe jebadło używanie w celu onanizacji",
+		pink_dildo = "Różowe dildo",
+		pink_dildo_description = "Różowe gumowe jebadło używanie w celu onanizacji",
+
+		boxing_glove = "Rękawica bokserska",
+		boxing_glove_description = "Czerwona rękawica bokserksa stosowana w w boksie",
 
 		bucket = "Wiadro",
 		bucket_description = "50l pojemne wiadro.",
@@ -4468,7 +4479,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		purchased_vehicle = "Zakupiono ${label} za $${price}.",
 
-		tuner_shop_blip = "Sklep z tunerami"
+		tuner_shop_blip = "Sklep z Tunerami"
 	},
 
 	vending_machines = {
@@ -4628,7 +4639,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		press_to_browse_jobs = "Wciśnij ~INPUT_CONTEXT~ by zobaczyć oferty pracy.",
 		change_job = "Zmień pracę: ${jobName}",
 		job_unemployed = "Bezrobotny",
-		job_transportation = "Kierowca ciężarowy",
+		job_transportation = "Kierowca Ciężarówki",
 		job_taxi = "Taksówkarz",
 		job_journalist = "Dziennikarz",
 		job_government = "Śmieciarz",
@@ -5021,6 +5032,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		mat_occupied = "Mat jest zajęty!",
 		yoga = "Yoga",
 		clothing = "Ciuchy",
+		clothing_cam_help = "Używaj A, S oraz D aby obracać kamerą w menu ubrań.",
 		main = "Główne",
 		empty_slot = "Pusty slot",
 		barber = "Fryzjer",
