@@ -2274,8 +2274,8 @@ core = {
 		church = "Chiesa",
 		comedy_club = "Comedy Club",
 		bean_machine = "Bean Machine",
-		erp_shop = "ERP Shop",
-		pet_shop = "Pet Shop",
+		erp_shop = "Negozio ERP",
+		pet_shop = "Negozio di animali",
 		cinema = "Cinema",
 		arcade_bar = "Arcade Bar",
 		luxury_autos = "Luxury Autos",
@@ -4733,10 +4733,10 @@ core = {
 		duty_status_off = "Sei uscito dal servizio.",
 		duty_status_failed = "Impossibile andare in servizio.",
 
-		emergency_call = "There is an emergency call. Press ENTER to receive it.",
+		emergency_call = "C'è una chiamata di emergenza in corso, premi ENTER per rispondere.",
 
-		toggled_operator_status_on = "Toggled operator status on.",
-		toggled_operator_status_off = "Toggled operator status off."
+		toggled_operator_status_on = "Status operatore attivato.",
+		toggled_operator_status_off = "Status Operatore disattivato."
 	},
 
 	job_center = {
