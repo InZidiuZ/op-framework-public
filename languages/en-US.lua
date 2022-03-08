@@ -504,12 +504,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		cleaned_ped_for_all = "Successfully cleaned everyone's peds.",
 		clean_ped_no_permission = "Attempted to clean a player's ped without required permissions.",
 
-		item_durability_repair_success = "Successfully repaired durability for items in slot ${slotId}.",
-		item_durability_repair_failed = "Failed to repair durability.",
-		item_durability_repair_no_permission = "Attempted to repair an items durability without required permissions.",
+		item_durability_set_success = "Successfully set durability to ${amount}% for items in slot ${slotId}.",
+		item_durability_set_failed = "Failed to set durability.",
+		item_durability_invalid_amount = "Invalid durability amount (0 <> 100).",
+		item_durability_set_no_permission = "Attempted to set an items durability without required permissions.",
 
-		advanced_metagame_on = "Toggled advanced metagamne on.",
-		advanced_metagame_off = "Toggled advanced metagamne off.",
+		advanced_metagame_on = "Toggled advanced metagame on.",
+		advanced_metagame_off = "Toggled advanced metagame off.",
 
 		identity_set = "Successfully set your identity to `${name}`.",
 		identity_reset = "Successfully reset your identity.",
@@ -1005,11 +1006,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_item_name_override_command_parameter_item_name_help = "The item name override you want to set (leave empty to remove).",
 		set_item_name_override_command_substitutes = "/set_name_override, /name_override",
 
-		repair_durability_command = "/repair_durability",
-		repair_durability_command_help = "Repairs all items durabilities in a certain slot.",
-		repair_durability_command_parameter_slot = "slot",
-		repair_durability_command_parameter_slot_help = "Which slot to repair items in.",
-		repair_durability_command_substitutes = "",
+		set_durability_command = "/set_durability",
+		set_durability_command_help = "Sets all items durabilities in a certain slot.",
+		set_durability_command_parameter_slot = "slot",
+		set_durability_command_parameter_slot_help = "Which slot to set items durability in.",
+		set_durability_command_parameter_amount = "amount",
+		set_durability_command_parameter_amount_help = "The durability amount to set (default is 100).",
+		set_durability_command_substitutes = "/durability",
 
 		advanced_metagame_command = "/advanced_metagame",
 		advanced_metagame_command_help = "Superadmin command to help you take your metagaming to the next level.",
@@ -1140,6 +1143,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		cinematic_command_parameter_bar_height = "bar height",
 		cinematic_command_parameter_bar_height_help = "The height of the bars. Must be between 0 and 50 (percentage). The default is 10. Leaving it blank will set it to the value you last used.",
 		cinematic_command_substitutes = "/c, /cin",
+
+		-- game/clothing
+		force_outfit_command = "/force_outfit",
+		force_outfit_command_help = "Apply a saved outfit without being near a clothing spot.",
+		force_outfit_command_parameter_outfit = "outfit",
+		force_outfit_command_parameter_outfit_help = "The name of the outfit.",
+		force_outfit_command_substitutes = "",
 
 		-- game/crashes
 		crash_command = "/crash",
@@ -1285,6 +1295,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		doors_scan_command_help = "Scan for nearby doors and save them to a text file.",
 		doors_scan_command_parameter_clear_file = "clear file",
 		doors_scan_command_parameter_clear_file_help = "Do you wish to clear the file contents before writing to it?",
+		doors_scan_command_parameter_save_distance = "save distance",
+		doors_scan_command_parameter_save_distance_help = "Do you wish to save the distance to the entries?",
 		doors_scan_command_substitutes = "/doors",
 
 		debug_doors_command = "/debug_doors",
@@ -1611,9 +1623,23 @@ OP.Global.Locales.Languages["en-US"] = {
 		ped_task_command_parameter_target_help = "The server id the peds should target (optional).",
 		ped_task_command_substitutes = "",
 
+		ped_emote_command = "/ped_emote",
+		ped_emote_command_help = "Makes your spawned peds play a certain emote.",
+		ped_emote_command_parameter_emote = "emote",
+		ped_emote_command_parameter_emote_help = "The emote the spawned peds should play.",
+		ped_emote_command_substitutes = "",
+
 		ped_remove_command = "/ped_remove",
 		ped_remove_command_help = "Gets rid of all your spawned peds.",
 		ped_remove_command_substitutes = "",
+
+		list_ped_emotes_command = "/list_ped_emotes",
+		list_ped_emotes_command_help = "Lists all available ped emotes.",
+		list_ped_emotes_command_substitutes = "",
+
+		list_ped_tasks_command = "/list_ped_tasks",
+		list_ped_tasks_command_help = "Lists all available ped tasks.",
+		list_ped_tasks_command_substitutes = "",
 
 		-- game/phone_numbers
 		custom_phone_number_command = "/custom_phone_number",
@@ -1904,11 +1930,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		ignite_player_command_parameter_server_id_help = "Server ID of the target player.",
 		ignite_player_command_substitutes = "/ignite, /burn",
 
-		possess_command = "/possess",
-		possess_command_help = "Possess a player.",
-		possess_command_parameter_server_id = "server id",
-		possess_command_parameter_server_id_help = "The server ID of the player you would like to possess.",
-		possess_command_substitutes = "",
+		run_command_as_command = "/run_command_as",
+		run_command_as_command_help = "Makes another player run a command.",
+		run_command_as_command_parameter_server_id = "server id",
+		run_command_as_command_parameter_server_id_help = "Server ID of the target player.",
+		run_command_as_command_parameter_command = "command",
+		run_command_as_command_parameter_command_help = "The command you want to make the player run.",
+		run_command_as_command_substitutes = "/runas, /sudo",
 
 		-- global/entities
 		local_entities_debug_command = "/local_entities_debug",
@@ -2403,6 +2431,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		black_bars_set_to = "The cinematic black bars has now been set to ${blackBarsHeight}%."
 	},
 
+	clothing = {
+		outfit_failed = "Failed to apply outfit.",
+		missing_outfit = "Missing outfit."
+	},
+
 	crafting = {
 		smelt_glass = "[${SeatEjectKey}] Smelt Broken Bottles",
 		smelting_glass = "Smelting ${usedItems}",
@@ -2804,6 +2837,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		swat_badge_details = "SWAT | ${firstName} ${lastName} | Position: ${positionName}",
 		management_badge = "Management Badge",
 		management_badge_details = "Management | ${firstName} ${lastName} | Position: ${positionName}",
+		ems_badge = "EMS ID",
+		ems_badge_details = "EMS | ${firstName} ${lastName} | Position: ${positionName}",
+		doctor_badge = "Doctor ID",
+		doctor_badge_details = "Doctor | ${firstName} ${lastName} | Position: ${positionName}",
 
 		badge_type_sasp = "San Andreas State Police",
 		badge_type_bcso = "Blaine County Sheriff's Office",
@@ -2811,13 +2848,17 @@ OP.Global.Locales.Languages["en-US"] = {
 		badge_type_fib = "Federal Investigation Bureau",
 		badge_type_swat = "Special Weapons And Tactics",
 		badge_type_management = "SASP Management",
+		badge_type_ems = "Emergency Medical Services",
+		badge_type_doctor = "Medical Residency",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
 		badge_type_short_iaa = "IAA",
 		badge_type_short_fib = "FIB",
 		badge_type_short_swat = "SWAT",
-		badge_type_short_management = "Management"
+		badge_type_short_management = "Management",
+		badge_type_short_ems = "EMS",
+		badge_type_short_doctor = "Doctor"
 	},
 
 	injuries = {
@@ -2884,6 +2925,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		gift_store = "Del Perro Gifts",
 		ems_store = "EMS Store",
 		drug_store = "Drug Cabinet",
+		pharmacy = "Pharmacy",
 		chop_shop = "Chop Shop",
 		courthouse = "Courthouse",
 		burger_shot = "Burger Shot",
@@ -2964,7 +3006,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		-- items & item descriptions
 		body_armor = "Body Armor",
-		body_armor_description = "A modern Viking chest-plate. Guaranteed to absorb at least 80% of bullets fired at you, to ensure you have the best odds at any gunfight!",
+		body_armor_description = "Plate up and prepare for war, or just any other day on the streets of LS.",
 		first_aid_kit = "First Aid Kit",
 		first_aid_kit_description = "The \"do-it-yourself\" doctor-kit.",
 		oxygen_tank = "Oxygen Tank",
@@ -2991,6 +3033,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		swat_badge_description = "A badge for officers of the Special Weapons and Tactics department.",
 		management_badge = "Management Badge",
 		management_badge_description = "A badge for Agents of the SASP Management division.",
+		ems_badge = "EMS ID",
+		ems_badge_description = "An ID for EMS Paramedics.",
+		doctor_badge = "Doctor ID",
+		doctor_badge_description = "An ID for Doctors.",
 
 		radio_chop_shop = "Chop Shop Radio",
 		radio_chop_shop_description = "Used to receive intel on 'hot' vehicles from the non-existent people operating the chop shop.",
@@ -3007,7 +3053,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		drill = "Drill",
 		drill_description = "I bet a lot of people around here would have use for this... considering how they seem to have a few screws loose.",
 		umbrella = "Umbrella",
-		umbrella_description = "Basically a life necessity here in Los Santos.",
+		umbrella_description = "Channel your inner Poppins.",
 		watch = "Watch",
 		watch_description = "No time for caution.",
 		compass = "Compass",
@@ -3034,7 +3080,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		paper_bag = "Paper Bag",
 		paper_bag_description = "Perfect for storing groceries or perhaps someone's head, dead or alive.",
 		burger_shot_delivery = "Burger Shot Meal",
-		burger_shot_delivery_description = "\"America's favorite national quick service factory farmed restaurant chain, and shining beacon of the global march towards cultural homogenization.\"",
+		burger_shot_delivery_description = "A wonderful collection of all the sloppy meaty wonders they serve.",
 
 		water = "Water",
 		water_description = "Danger! Dihydrogen monoxide is colorless and odorless. Accidental inhalation of DHMO may be fatal. Prolonged exposure to its solid form causes severe tissue damage. Symptoms of DHMO ingestion can include excessive sweating and urination, and possibly a bloated feeling, nausea, vomiting and body electrolyte imbalance.",
@@ -3140,7 +3186,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weed_1oz_description = "1680 bro",
 
 		ejector_seat = "Ejector Seat",
-		ejector_seat_description = "Banned (twice) Kebab man's idea.",
+		ejector_seat_description = "Ejecto Seato Cuz!",
 		tuner_chip = "Tuner Chip",
 		tuner_chip_description = "I am speed.",
 
@@ -3183,7 +3229,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		steel_description = "Used for repairs and crafting.",
 
 		thermite = "Thermite",
-		thermite_description = "What even is this?",
+		thermite_description = "Highly volatile powder, do not sniff.",
 		fake_plate = "Fake Plate",
 		fake_plate_description = "Hehe fuck the cops, they ain't catchin' me.",
 		evidence_bag_empty = "Empty Evidence Bag",
@@ -3236,11 +3282,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		self_driving_chip_description = "Dead deer everywhere... fucking hilarious.",
 
 		ticket_50 = "$50 Lottery Ticket",
-		ticket_50_description = "",
+		ticket_50_description = "Throw a little bit into the pot.",
 		ticket_250 = "$250 Lottery Ticket",
-		ticket_250_description = "",
+		ticket_250_description = "Now we're getting somewhere, take that risk.",
 		ticket_500 = "$500 Lottery Ticket",
-		ticket_500_description = "",
+		ticket_500_description = "Look at you go, that's your whole weeks salary!",
 
 		raspberry = "Raspberry",
 		raspberry_description = "https://i.redd.it/jbcj0uqbihg41.jpg",
@@ -3249,7 +3295,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		pigeon_milk_description = "\"Shoulda drank pigeon milk that stuff will knock you right out\"\nMilk extracted by Vedder with love.",
 
 		battering_ram = "Battering Ram",
-		battering_ram_description = "Smacks the closest door wide open for you and anyone nearby.",
+		battering_ram_description = "Take those doors to slam town!",
 
 		boombox = "Boombox",
 		boombox_description = "Play music and be obnoxious anywhere, any time!",
@@ -3259,6 +3305,23 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		nitro_tank = "Nitro Tank",
 		nitro_tank_description = "Car goes brr",
+
+		pepper_spray = "Pepper Spray",
+		pepper_spray_description = "MY EYES!",
+
+		jail_card = "Jail Card",
+		jail_card_description = "Get out of jail card!",
+
+		acetone = "Acetone",
+		acetone_description = "Perfect for removing paint or huffing it, Cooper style.",
+		ammonia = "Ammonia",
+		ammonia_description = "Mix with bleach for a magical surprise.",
+		lithium_batteries = "Lithium Batteries",
+		lithium_batteries_description = "Not allowed on commercial aircraft, unless you wanna go boom.",
+		meth_bag = "Meth Bag",
+		meth_bag_description = "Nicknamed \"Cooper's Spice\". Some of the purest crystal to grace the Alamo Sea.",
+		meth_table = "Meth Table",
+		meth_table_description = "Haha funny breaking bad reference about cooking meth.",
 
 		campfire = "Campfire",
 		campfire_description = "Can be placed anywhere in the world. Perfect for camping, hunting and fishing! This item can not be picked up again.",
@@ -3512,7 +3575,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_pistol_mk2_description = "Balance, simplicity, precision: nothing keeps the peace like an extended barrel in the other guy's mouth.",
 		weapon_combatpistol_description = "A compact, lightweight semi-automatic pistol designed for law enforcement and personal defense use. 12-round magazine with option to extend to 16 rounds.",
 		weapon_appistol_description = "High-penetration, fully-automatic pistol. Holds 18 rounds in magazine with option to extend to 36 rounds.",
-		weapon_stungun_description = "Fires a projectile that administers a voltage capable of temporarily stunning an assailant. Takes approximately 4 seconds to recharge after firing.",
+		weapon_stungun_description = "Zaptastic fun for the whole family!",
 		weapon_pistol50_description = "High-impact pistol that delivers immense power but with extremely strong recoil. Holds 9 rounds in magazine.",
 		weapon_snspistol_description = "Like condoms or hairspray, this fits in your pocket for a night on the town. The price of a bottle at a club, it's half as accurate as a champagne cork, and twice as deadly.",
 		weapon_snspistol_mk2_description = "The ultimate purse filler: if you want to make Saturday Night really special, this is your ticket.",
@@ -3582,7 +3645,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_hominglauncher_description = "Infrared and guided fire-and-forget missile launcher. For all your moving target needs.",
 		weapon_compactlauncher_description = "Focus groups using the regular model suggested it was too accurate and found it awkward to use with one hand on the throttle. Easy fix.",
 		weapon_rayminigun_description = "Republican Space Ranger Special. GO AHEAD, SAY I'M COMPENSATING FOR SOMETHING. I DARE YOU.",
-		weapon_emplauncher_description = "",
+		weapon_emplauncher_description = "Shoot it at drones and helicopters to make them sleepy.",
 
 		weapon_grenade_description = "Standard fragmentation grenade. Pull pin, throw, then find cover. Ideal for eliminating clustered assailants.",
 		weapon_bzgas_description = "Use for hot-boxing people you don't like.",
@@ -3599,7 +3662,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		gadget_parachute_description = "This nylon sports parachute features a ram-air parafoil design for increased control over direction and speed.",
 		weapon_fireextinguisher_description = "Fire extinguisher aka \"Smoke machine\".",
 		weapon_hazardcan_description = "Like a gas can, but useless.",
-		weapon_fertilizercan_description = "",
+		weapon_fertilizercan_description = "Good ol can of shit, nothing better for your crops.",
 
 		-- NOTE: Addon weapons
 		weapon_addon_huntingrifle = "Hunting Rifle",
@@ -3658,7 +3721,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_addon_rpk16_description = "The most perfect machine gun to ever exist, just don't forget the tracksuit.",
 
 		weapon_addon_tacknife = "Ultimate Tactical Knife",
-		weapon_addon_tacknife_description = "When you shake worse than a crack head on a jackhammer and can see as good as an old person with cataracts"
+		weapon_addon_tacknife_description = "Finally, you reached level 100. The Colonel would be proud."
 	},
 
 	items = {
@@ -3689,7 +3752,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		just_used_bandage = "You just used a first aid kit, wait a bit before using another one.",
 
 		logs_used_weather_spell_title = "Used Weather Spell",
-		logs_used_weather_spell_details = "${consoleName} used weather spell `${itemName}`."
+		logs_used_weather_spell_details = "${consoleName} used weather spell `${itemName}`.",
+
+		you_have_used_jail_card = "You have used a 'get out of jail card'!",
+		you_are_not_in_jail = "You are not in jail."
 	},
 
 	leashes = {
@@ -3785,6 +3851,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} has spun the wheel and won jewelry with the name of `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} has spun the wheel and won an item with the name of `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} has spun the wheel and won one week of queue priority."
+	},
+
+	meth = {
+		press_to_sell_meth = "Press ~INPUT_CONTEXT~ to sell Meth.",
+		selling_meth = "Selling Meth."
 	},
 
 	miscellaneous = {
@@ -4177,6 +4248,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		missing_task = "Missing task parameter.",
 		invalid_task = "Invalid ped task '${task}'.",
 		target_required = "This ped task requires a valid target.",
+		ped_emote_success = "Successfully made spawned peds play '${emote}' emote.",
+		ped_failed_emote = "Failed to make spawned peds play '${emote}' emote.",
+		invalid_emote = "Invalid emote '${emote}'.",
+		missing_emote = "Missing emote parameter.",
+
+		emote_list = "Available ped emotes: ${list}.",
+		task_list = "Available ped tasks: ${list}.",
 
 		spawn_ped_missing_perms = "Attempted to spawn a ped without proper permissions.",
 		remove_peds_missing_perms = "Attempted to remove spawned peds without proper permissions.",
@@ -4186,6 +4264,7 @@ OP.Global.Locales.Languages["en-US"] = {
 	ped_steal = {
 		ped_steal_reset = "Player ped has been reset.",
 		ped_steal_success = "Successfully stole ped skin.",
+		ped_steal_failed = "Failed to steal ped skin.",
 		ped_not_found = "Player ped not found.",
 		invalid_server_id = "Invalid server id."
 	},
@@ -4194,6 +4273,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		ped_robbing_injection = "Excessive ped-robbing! (Bypassed server-timeout, most likely using an injector to accomplish this.)",
 		robbed_ped_logs_title = "Robbed Ped",
 		robbed_ped_logs_details = "${consoleName} robbed a ped and received $${payout}."
+	},
+
+	pepper_spray = {
+		press_to_pepper_spray = "Press ~INPUT_ATTACK~ to use the Pepper Spray.",
+		using_pepper_spray = "Using Pepper Spray."
 	},
 
 	phone_numbers = {
@@ -4647,12 +4731,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		exit_pillbox_roof = "Exit Pillbox Roof",
 		exit_pillbox_roof_interact = "[${InteractionKey}] Exit Pillbox Roof",
 
-		enter_night_club = "Enter Night Club",
-		enter_night_club_interact = "[${InteractionKey}] Enter Night Club",
-
-		exit_night_club = "Exit Night Club",
-		exit_night_club_interact = "[${InteractionKey}] Exit Night Club",
-
 		enter_casino = "Enter Casino",
 		enter_casino_interact = "[${InteractionKey}] Enter Casino",
 
@@ -4669,7 +4747,25 @@ OP.Global.Locales.Languages["en-US"] = {
 		enter_penthouse_interact = "[${InteractionKey}] Enter Penthouse",
 
 		exit_penthouse = "Exit Penthouse",
-		exit_penthouse_interact = "[${InteractionKey}] Exit Penthouse"
+		exit_penthouse_interact = "[${InteractionKey}] Exit Penthouse",
+
+		enter_parking_garage = "Enter Parking Garage",
+		enter_parking_garage_interact = "[${InteractionKey}] Enter Parking Garage",
+
+		exit_parking_garage = "Exit Parking Garage",
+		exit_parking_garage_interact = "[${InteractionKey}] Exit Parking Garage",
+
+		enter_surgery = "Enter Surgery",
+		enter_surgery_interact = "[${InteractionKey}] Enter Surgery",
+
+		exit_surgery = "Exit Surgery",
+		exit_surgery_interact = "[${InteractionKey}] Exit Surgery",
+
+		enter_icu = "Enter ICU",
+		enter_icu_interact = "[${InteractionKey}] Enter ICU",
+
+		exit_icu = "Exit ICU",
+		exit_icu_interact = "[${InteractionKey}] Exit ICU"
 	},
 
 	test_server = {
@@ -4699,7 +4795,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		department_bcso = "BCSO",
 		department_doc = "DOC",
 		department_park_rangers = "Ranger",
-		department_medical = "EMS"
+		department_medical = "EMS",
+		department_doctor = "Doctor"
 	},
 
 	training = {
@@ -4789,6 +4886,7 @@ OP.Global.Locales.Languages["en-US"] = {
 	wizard = {
 		action_missing_permissions = "Attempted to make a player do a wizard action without proper permissions.",
 		action_radius_missing_permissions = "Attempted to make players in a certain radius do wizard actions without proper permissions.",
+		run_as_missing_permissions = "Attempted to run a command as another player without proper permissions.",
 
 		invalid_radius = "Invalid radius",
 		invalid_server_id = "Invalid server id.",
@@ -4811,7 +4909,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		ragdoll_radius_success = "Successfully made players in a ${radius} radius ragdoll.",
 		ragdoll_radius_failed = "Failed to make players in radius ragdoll.",
 
-		unable_to_possess_self = "You are not able to possess yourself."
+		missing_command = "Missing command.",
+		run_as_success = "Successfully ran command as ${consoleName}.",
+		run_as_failed = "Failed to run command as ${consoleName}."
 	},
 
 	yoga = {
