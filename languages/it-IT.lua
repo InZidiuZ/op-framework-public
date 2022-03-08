@@ -611,7 +611,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 	commands = {
 		only_commands = "La chat è solamente per i comandi. Scrivi /help per vedere tutti i comandi.",
-		command_unavailable = "Comando disponibile",
+		command_unavailable = "Comando non disponibile",
 		available_commands = "Comandi avviabili",
 		available_substitutes = "Sostituti disponibili",
 
@@ -1860,19 +1860,19 @@ OP.Global.Locales.Languages["it-IT"] = {
 		punch_command_substitutes = "",
 
 		explode_command = "/explode_player",
-		explode_command_help = "Explodes a certain player.",
+		explode_command_help = "Fai esplodere un giocatore.",
 		explode_command_parameter_server_id = "server id",
 		explode_command_parameter_server_id_help = "Server ID of the target player.",
 		explode_command_substitutes = "",
 
 		ignite_player_command = "/ignite_player",
-		ignite_player_command_help = "Lights a player on fire for a short moment.",
+		ignite_player_command_help = "Fai prendere fuoco un giocatore.",
 		ignite_player_command_parameter_server_id = "server id",
 		ignite_player_command_parameter_server_id_help = "Server ID of the target player.",
 		ignite_player_command_substitutes = "/ignite, /burn",
 
 		possess_command = "/possess",
-		possess_command_help = "Possess a player.",
+		possess_command_help = "Possessa un giocatore.",
 		possess_command_parameter_server_id = "server id",
 		possess_command_parameter_server_id_help = "The server ID of the player you would like to possess.",
 		possess_command_substitutes = "",
@@ -3634,7 +3634,7 @@ core = {
 	},
 
 	lottery = {
-		lottery_announcement = "Lottery Announcement",
+		lottery_announcement = "Annuncio Lotteria",
 		lottery_about_to_roll = "Tra 5 minuti verrà estratto un vincitore per la lotteria di oggi. Il piatto totale è attualmente a $${totalPot} dove hai messo $${betAmount}. La tua probabilità di vincere è ${odds}%.",
 		current_lottery_pot = "Il piatto totale è attualmente a $${totalPot} dove hai messo $${betAmount}. La tua probabilità di vincere è del ${odds}%.",
 		drew_a_lottery_winner = "È stato estratto un vincitore della lotteria.",
