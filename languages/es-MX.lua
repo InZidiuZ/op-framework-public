@@ -504,9 +504,10 @@ OP.Global.Locales.Languages["es-MX"] = {
 		cleaned_ped_for_all = "Limpió con éxito los peds de todos.",
 		clean_ped_no_permission = "Intentó limpiar el ped de un jugador sin los permisos requeridos.",
 
-		item_durability_repair_success = "Se reparó con éxito la durabilidad de los artículos en la ranura ${slotId}.",
-		item_durability_repair_failed = "No se pudo reparar la durabilidad.",
-		item_durability_repair_no_permission = "Se intentó reparar la durabilidad de un artículo sin los permisos necesarios.",
+		item_durability_set_success = "Durabilidad establecida con éxito en ${amount}% para los items en la ranura ${slotId}.",
+		item_durability_set_failed = "No se pudo establecer la durabilidad.",
+		item_durability_invalid_amount = "Cantidad de durabilidad no válida (0 <> 100).",
+		item_durability_set_no_permission = "Intentó establecer la durabilidad de un item sin los permisos necesarios.",
 
 		advanced_metagame_on = "Metagame avanzado activado.",
 		advanced_metagame_off = "Metagame avanzado desactivado.",
@@ -1005,11 +1006,13 @@ OP.Global.Locales.Languages["es-MX"] = {
 		set_item_name_override_command_parameter_item_name_help = "La anulación del nombre del item que desea establecer (Dejar vacío para eliminar).",
 		set_item_name_override_command_substitutes = "/set_name_override, /name_override, /set_item_name_override_command",
 
-		repair_durability_command = "/reparar_durabilidad",
-		repair_durability_command_help = "Repara todas las durabilidades de los artículos en una determinada ranura.",
-		repair_durability_command_parameter_slot = "ranura",
-		repair_durability_command_parameter_slot_help = "En qué ranura reparar artículos.",
-		repair_durability_command_substitutes = "/repair_durability",
+		set_durability_command = "/editar_durabilidad",
+		set_durability_command_help = "Establece todas las durabilidades de los items en una determinada ranura.",
+		set_durability_command_parameter_slot = "ranura",
+		set_durability_command_parameter_slot_help = "En qué ranura establecer la durabilidad de los items.",
+		set_durability_command_parameter_amount = "cantidad",
+		set_durability_command_parameter_amount_help = "La cantidad de durabilidad a establecer (default es 100).",
+		set_durability_command_substitutes = "/durability, /set_durability",
 
 		advanced_metagame_command = "/metagame_avanzado",
 		advanced_metagame_command_help = "Comando de superadministrador para ayudarte a llevar tu metajuego al siguiente nivel.",
@@ -1140,6 +1143,13 @@ OP.Global.Locales.Languages["es-MX"] = {
 		cinematic_command_parameter_bar_height = "altura de la barra",
 		cinematic_command_parameter_bar_height_help = "La altura de las barras. Debe estar entre 0 y 50 (porcentaje). El valor predeterminado es 10. Si lo deja en blanco, se establecerá en el valor que utilizó por última vez.",
 		cinematic_command_substitutes = "",
+
+		-- game/clothing
+		force_outfit_command = "/forzar_atuendo",
+		force_outfit_command_help = "Aplicar un atuendo guardado sin estar cerca de un lugar de ropa.",
+		force_outfit_command_parameter_outfit = "atuendo",
+		force_outfit_command_parameter_outfit_help = "El nombre del atuendo.",
+		force_outfit_command_substitutes = "/force_outfit",
 
 		-- game/crashes
 		crash_command = "/crash",
@@ -1285,6 +1295,8 @@ OP.Global.Locales.Languages["es-MX"] = {
 		doors_scan_command_help = "Busque puertas cercanas y guárdelas en un archivo de texto.",
 		doors_scan_command_parameter_clear_file = "archivo vacio",
 		doors_scan_command_parameter_clear_file_help = "Desea borrar el contenido del archivo antes de escribirlo?",
+		doors_scan_command_parameter_save_distance = "guardar distancia",
+		doors_scan_command_parameter_save_distance_help = "¿Desea guardar la distancia a las entradas?",
 		doors_scan_command_substitutes = "/doors_scan",
 
 		debug_doors_command = "/depurar_puertas",
@@ -1611,9 +1623,23 @@ OP.Global.Locales.Languages["es-MX"] = {
 		ped_task_command_parameter_target_help = "La identificación del servidor a la que deben apuntar los peds (opcional).",
 		ped_task_command_substitutes = "/ped_task",
 
+		ped_emote_command = "/ped_emote",
+		ped_emote_command_help = "Hace que tus peds generados hagan un cierto emote.",
+		ped_emote_command_parameter_emote = "emote",
+		ped_emote_command_parameter_emote_help = "El emote que deben hacer los peds.",
+		ped_emote_command_substitutes = "",
+
 		ped_remove_command = "/remover_ped",
 		ped_remove_command_help = "Se deshace de todos sus peds generados.",
 		ped_remove_command_substitutes = "/ped_remove",
+
+		list_ped_emotes_command = "/lista_emotes_ped",
+		list_ped_emotes_command_help = "Lista de todos los emotes de ped disponibles.",
+		list_ped_emotes_command_substitutes = "/list_ped_emotes",
+
+		list_ped_tasks_command = "/lista_tareas_ped",
+		list_ped_tasks_command_help = "Lista de todas las tareas de ped disponibles.",
+		list_ped_tasks_command_substitutes = "/list_ped_tasks",
 
 		-- game/phone_numbers
 		custom_phone_number_command = "/numero_telefono_personalizado",
@@ -1864,13 +1890,13 @@ OP.Global.Locales.Languages["es-MX"] = {
 		voice_debug_command_substitutes = "/voice_debug",
 
 		-- game/wizard
-		ragdoll_command = "/ragdoll",
-		ragdoll_command_help = "Hace que un jugador sea un muñeco de trapo.",
-		ragdoll_command_parameter_server_id = "ID del servidor",
-		ragdoll_command_parameter_server_id_help = "ID de servidor del jugador al que quieres hacer ragdoll.",
-		ragdoll_command_parameter_force = "fuerza",
-		ragdoll_command_parameter_force_help = "Aplica una fuerza aleatoria al jugador después de convertirlo en un muñeco de trapo.",
-		ragdoll_command_substitutes = "",
+		ragdoll_player_command = "/ragdoll_jugador",
+		ragdoll_player_command_help = "Hace que un jugador sea un muñeco de trapo.",
+		ragdoll_player_command_parameter_server_id = "ID del servidor",
+		ragdoll_player_command_parameter_server_id_help = "ID de servidor del jugador al que quieres hacer ragdoll.",
+		ragdoll_player_command_parameter_force = "fuerza",
+		ragdoll_player_command_parameter_force_help = "Aplica una fuerza aleatoria al jugador después de convertirlo en un muñeco de trapo.",
+		ragdoll_player_command_substitutes = "/ragdoll_player",
 
 		ragdoll_radius_command = "/ragdoll_radius",
 		ragdoll_radius_command_help = "Obliga a todos los jugadores en un radio determinado a hacer ragdoll al azar.",
@@ -1904,11 +1930,13 @@ OP.Global.Locales.Languages["es-MX"] = {
 		ignite_player_command_parameter_server_id_help = "ID del servidor del jugador objetivo.",
 		ignite_player_command_substitutes = "/ignite, /burn, /ignite_player",
 
-		possess_command = "/poseer",
-		possess_command_help = "Poseer un jugador.",
-		possess_command_parameter_server_id = "Id del servidor",
-		possess_command_parameter_server_id_help = "El ID del servidor del jugador que le gustaría poseer.",
-		possess_command_substitutes = "/possess",
+		run_command_as_command = "/ejecutar_comando_como",
+		run_command_as_command_help = "Hace que otro jugador ejecute un comando.",
+		run_command_as_command_parameter_server_id = "Id de servidor",
+		run_command_as_command_parameter_server_id_help = "ID del servidor del jugador objetivo.",
+		run_command_as_command_parameter_command = "comando",
+		run_command_as_command_parameter_command_help = "El comando que quieres que haga el jugador.",
+		run_command_as_command_substitutes = "/runas, /sudo, /run_command_as",
 
 		-- global/entities
 		local_entities_debug_command = "/entidades_locales_debug",
@@ -2403,6 +2431,11 @@ OP.Global.Locales.Languages["es-MX"] = {
 		black_bars_set_to = "Las barras negras cinematográficas se han configurado a ${blackBarsHeight}%."
 	},
 
+	clothing = {
+		outfit_failed = "No se pudo aplicar el atuendo.",
+		missing_outfit = "Atuendo faltante."
+	},
+
 	crafting = {
 		smelt_glass = "[${SeatEjectKey}] Fundir botellas rotas",
 		smelting_glass = "Fundiendo ${usedItems}",
@@ -2804,6 +2837,10 @@ OP.Global.Locales.Languages["es-MX"] = {
 		swat_badge_details = "SWAT | ${firstName} ${lastName} | Posición: ${positionName}",
 		management_badge = "Placa de Gerencia",
 		management_badge_details = "Gerencia | ${firstName} ${lastName} | Posición: ${positionName}",
+		ems_badge = "ID de EMS",
+		ems_badge_details = "EMS | ${firstName} ${lastName} | Posición: ${positionName}",
+		doctor_badge = "ID de Doctor",
+		doctor_badge_details = "Doctor | ${firstName} ${lastName} | Posición: ${positionName}",
 
 		badge_type_sasp = "Policía Estatal de San Andrés",
 		badge_type_bcso = "Oficina del Sheriff del Condado de Blaine",
@@ -2811,13 +2848,17 @@ OP.Global.Locales.Languages["es-MX"] = {
 		badge_type_fib = "Oficina Federal de Investigaciones",
 		badge_type_swat = "armas y tacticas especiales",
 		badge_type_management = "Gerencia de SASP",
+		badge_type_ems = "Servicios médicos de emergencia",
+		badge_type_doctor = "Residencia Médica",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
 		badge_type_short_iaa = "IAA",
 		badge_type_short_fib = "FIB",
 		badge_type_short_swat = "SWAT",
-		badge_type_short_management = "Gerencia"
+		badge_type_short_management = "Gerencia",
+		badge_type_short_ems = "EMS",
+		badge_type_short_doctor = "Doctor"
 	},
 
 	injuries = {
@@ -2884,6 +2925,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		gift_store = "Tienda de regalos",
 		ems_store = "Tienda de EMS",
 		drug_store = "Gabinete de Drogas",
+		pharmacy = "Farmacia",
 		chop_shop = "Deshuesadero",
 		courthouse = "Palacio de justicia",
 		burger_shot = "Burger Shot",
@@ -2963,8 +3005,8 @@ OP.Global.Locales.Languages["es-MX"] = {
 		dumpster_milk = "Leche de paloma caducada",
 
 		-- items & item descriptions
-		body_armour = "Chaleco Antibalas",
-		body_armour_description = "Un chaleco vikingo moderno. ¡Garantizado para absorber al menos el 80% de las balas disparadas contra usted, para garantizar que tenga las mejores probabilidades en cualquier tiroteo!",
+		body_armor = "Chaleco Antibalas",
+		body_armor_description = "Un chaleco vikingo moderno. ¡Garantizado para absorber al menos el 80% de las balas disparadas contra usted, para garantizar que tenga las mejores probabilidades en cualquier tiroteo!",
 		first_aid_kit = "Kit de primeros auxilios",
 		first_aid_kit_description = "El kit médico hágalo usted mismo.",
 		oxygen_tank = "Tanque de Oxigeno",
@@ -2991,6 +3033,10 @@ OP.Global.Locales.Languages["es-MX"] = {
 		swat_badge_description = "Una placa para los oficiales del departamento de Armas y Tácticas Especiales.",
 		management_badge = "Placa de Gerencia",
 		management_badge_description = "Una placa para los agentes de la división de gerencia de SASP.",
+		ems_badge = "ID de EMS",
+		ems_badge_description = "Una ID para paramédicos de EMS.",
+		doctor_badge = "ID de Doctor",
+		doctor_badge_description = "Una ID para Doctores.",
 
 		radio_chop_shop = "Radio Chop Shop",
 		radio_chop_shop_description = "Se utiliza para recibir información sobre vehículos 'calientes' de personas inexistentes que operan la tienda de chop.",
@@ -3238,9 +3284,9 @@ OP.Global.Locales.Languages["es-MX"] = {
 		ticket_50 = "Ticket de lotería de $50",
 		ticket_50_description = "Suerte pa",
 		ticket_250 = "Ticket de lotería de $250",
-		ticket_250_description = "Suerte pa",
+		ticket_250_description = "Suerte pa x2",
 		ticket_500 = "Ticket de lotería de $500",
-		ticket_500_description = "Suerte pa",
+		ticket_500_description = "Suerte pa x3",
 
 		raspberry = "Raspberry",
 		raspberry_description = "https://i.redd.it/jbcj0uqbihg41.jpg",
@@ -3259,6 +3305,23 @@ OP.Global.Locales.Languages["es-MX"] = {
 
 		nitro_tank = "Tanque de nitro",
 		nitro_tank_description = "El coche hace brr",
+
+		pepper_spray = "Gas pimienta",
+		pepper_spray_description = "¡MIS OJOS!",
+
+		jail_card = "Tarjeta de la cárcel",
+		jail_card_description = "Tarjeta para salir de la cárcel",
+
+		acetone = "Acetona",
+		acetone_description = "Perfecto para eliminar pintura o hacerte una mona al estilo del chilango Carloski..",
+		ammonia = "Amoníaco",
+		ammonia_description = "Mezclar con cloro para una sorpresa mágica..",
+		lithium_batteries = "Baterías de litio",
+		lithium_batteries_description = "No permitido en aviones comerciales, a menos que quieras explotar.",
+		meth_bag = "Bolsa de metanfetamina",
+		meth_bag_description = "La del breaking bad wey!!",
+		meth_table = "Mesa de metanfetamina",
+		meth_table_description = "Pa cocianr como el Gualter Guait.",
 
 		campfire = "Fogata",
 		campfire_description = "Se puede poner en cualquier parte del mapa. Perfecta para acampar, cazar o pescar. Este objeto no se puede recoger.",
@@ -3582,7 +3645,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		weapon_hominglauncher_description = "Lanzador de misiles infrarrojos y guiados para disparar y olvidar. Para todas sus necesidades de objetivos móviles.",
 		weapon_compactlauncher_description = "Los grupos que usaron el modelo regular sugirieron que era demasiado preciso y les resultó incómodo usarlo con una mano en el acelerador. Solución fácil",
 		weapon_rayminigun_description = "Especial republicano de guardabosques. VAYA ADELANTE, DIGA QUE COMPENSO POR ALGO. TE RETO.",
-		weapon_emplauncher_description = "",
+		weapon_emplauncher_description = "Dispara a drones y helicópteros para que se duerman.",
 
 		weapon_grenade_description = "Granada de fragmentación estándar.",
 		weapon_bzgas_description = "",
@@ -3599,7 +3662,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		gadget_parachute_description = "Este paracaídas deportivo de nylon presenta un diseño de parafoil ram-air para un mayor control sobre la dirección y la velocidad.",
 		weapon_fireextinguisher_description = "",
 		weapon_hazardcan_description = "Como un bidon de gasolina, pero inútil.",
-		weapon_hazardcan_description = "",
+		weapon_fertilizercan_description = "Buen bote de mierda, nada mejor para tus cultivos.",
 
 		-- NOTE: Addon weapons
 		weapon_addon_huntingrifle = "Rifle de caza",
@@ -3689,7 +3752,10 @@ OP.Global.Locales.Languages["es-MX"] = {
 		just_used_bandage = "Acabas de usar un botiquín de primeros auxilios, espera un poco antes de usar otro.",
 
 		logs_used_weather_spell_title = "Hechizo de clima usado",
-		logs_used_weather_spell_details = "${consoleName} uso el hechizo `${itemName}`."
+		logs_used_weather_spell_details = "${consoleName} uso el hechizo `${itemName}`.",
+
+		you_have_used_jail_card = "¡Ha utilizado una 'tarjeta para salir de la cárcel'!",
+		you_are_not_in_jail = "Ya no estas en la carcel."
 	},
 
 	leashes = {
@@ -3785,6 +3851,11 @@ OP.Global.Locales.Languages["es-MX"] = {
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} ha hecho girar la rueda y ganado joyas con el nombre de `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} ha hecho girar la rueda y ha ganado un artículo con el nombre de `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} ha hecho girar la rueda y ha ganado una semana de prioridad en la cola."
+	},
+
+	meth = {
+		press_to_sell_meth = "Presiona ~INPUT_CONTEXT~ para vender metanfetamina.",
+		selling_meth = "Vendiendo metanfetamina."
 	},
 
 	miscellaneous = {
@@ -4177,6 +4248,13 @@ OP.Global.Locales.Languages["es-MX"] = {
 		missing_task = "Parámetro de tarea faltante.",
 		invalid_task = "Tarea de ped inválida '${task}'.",
 		target_required = "Esta tarea de ped requiere un destino válido.",
+		ped_emote_success = "Hiciste al ped hacer el emote '${emote}' con exito.",
+		ped_failed_emote = "No se pudo hacer al ped hacer el emote '${emote}'.",
+		invalid_emote = "Emote invalido '${emote}'.",
+		missing_emote = "Parámetro de emote faltante.",
+
+		emote_list = "Emotes de ped disponibles: ${list}.",
+		task_list = "Tareas de ped disponibles: ${list}.",
 
 		spawn_ped_missing_perms = "Intentó generar un ped sin los permisos adecuados.",
 		remove_peds_missing_perms = "Se intentó eliminar los peds generados sin los permisos adecuados.",
@@ -4185,7 +4263,8 @@ OP.Global.Locales.Languages["es-MX"] = {
 
 	ped_steal = {
 		ped_steal_reset = "Se ha reiniciado el ped del jugador.",
-		ped_steal_success = "Robó con éxito al ped.",
+		ped_steal_success = "Robó con éxito la skin del ped.",
+		ped_steal_failed = "No se puedo robar la skin del ped.",
 		ped_not_found = "Player ped no encontrado.",
 		invalid_server_id = "ID de servidor no válido."
 	},
@@ -4194,6 +4273,11 @@ OP.Global.Locales.Languages["es-MX"] = {
 		ped_robbing_injection = "Robo de Peds excesivo! (Bypassed server-timeout, most likely using an injector to accomplish this.)",
 		robbed_ped_logs_title = "Ped Robado",
 		robbed_ped_logs_details = "${consoleName} robo a un ped y recibio $${payout}."
+	},
+
+	pepper_spray = {
+		press_to_pepper_spray = "Presiona ~INPUT_ATTACK~ para usar el gas pimienta.",
+		using_pepper_spray = "Usando gas pimienta."
 	},
 
 	phone_numbers = {
@@ -4647,12 +4731,6 @@ OP.Global.Locales.Languages["es-MX"] = {
 		exit_pillbox_roof = "Salir de techo Pillbox",
 		exit_pillbox_roof_interact = "[${InteractionKey}] Salir de techo Pillbox",
 
-		enter_night_club = "Entrar al club nocturno",
-		enter_night_club_interact = "[${InteractionKey}] Entrar al club nocturno",
-
-		exit_night_club = "Salir del club nocturno",
-		exit_night_club_interact = "[${InteractionKey}] Salir del club nocturno",
-
 		enter_casino = "Entrar al Casino",
 		enter_casino_interact = "[${InteractionKey}] Entrar al Casino",
 
@@ -4669,7 +4747,25 @@ OP.Global.Locales.Languages["es-MX"] = {
 		enter_penthouse_interact = "[${InteractionKey}] Entrar al Penthouse",
 
 		exit_penthouse = "Salir del Penthouse",
-		exit_penthouse_interact = "[${InteractionKey}] Salir del Penthouse"
+		exit_penthouse_interact = "[${InteractionKey}] Salir del Penthouse",
+
+		enter_parking_garage = "Entrar al garaje",
+		enter_parking_garage_interact = "[${InteractionKey}] Entrar al garaje",
+
+		exit_parking_garage = "Salir del garaje",
+		exit_parking_garage_interact = "[${InteractionKey}] Salir del garaje",
+
+		enter_surgery = "Entrar en Cirugía",
+		enter_surgery_interact = "[${InteractionKey}] Entrar en Cirugía",
+
+		exit_surgery = "Salir de Cirugía",
+		exit_surgery_interact = "[${InteractionKey}] Salir de Cirugía",
+
+		enter_icu = "Entrar en la UCI",
+		enter_icu_interact = "[${InteractionKey}] Entrar en la UCI",
+
+		exit_icu = "Salir de la UCI",
+		exit_icu_interact = "[${InteractionKey}] Salir de la UCI"
 	},
 
 	test_server = {
@@ -4699,7 +4795,8 @@ OP.Global.Locales.Languages["es-MX"] = {
 		department_bcso = "BCSO:",
 		department_doc = "DOC:",
 		department_park_rangers = "Guardabosque:",
-		department_medical = "EMS:"
+		department_medical = "EMS",
+		department_doctor = "Doctor"
 	},
 
 	training = {
@@ -4789,6 +4886,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 	wizard = {
 		action_missing_permissions = "Intentó hacer que un jugador realizara una acción de mago sin los permisos adecuados.",
 		action_radius_missing_permissions = "Intentó hacer que los jugadores en un cierto radio realicen acciones de mago sin los permisos adecuados.",
+		run_as_missing_permissions = "Intentó ejecutar un comando como otro jugador sin los permisos adecuados.",
 
 		invalid_radius = "Radio no válido",
 		invalid_server_id = "ID de servidor no válido.",
@@ -4811,7 +4909,9 @@ OP.Global.Locales.Languages["es-MX"] = {
 		ragdoll_radius_success = "Hiciste que los jugadores en un radio de ${radius} hicieran ragdoll.",
 		ragdoll_radius_failed = "No se pudo hacer jugadores en radio ragdoll.",
 
-		unable_to_possess_self = "No eres capaz de poseerte a ti mismo."
+		missing_command = "Comando faltante.",
+		run_as_success = "Ejecutó correctamente el comando como ${consoleName}.",
+		run_as_failed = "No se pudo ejecutar el comando como ${consoleName}."
 	},
 
 	yoga = {
@@ -4871,9 +4971,9 @@ OP.Global.Locales.Languages["es-MX"] = {
 		status_2b = "10-78, El sistema de alarma ha detectado que a un blindado le están forzando las puertas y solicita respaldo en ${streetName} cerca de ${crossingRoad}.",
 		status_3a = "10-78, El sistema de alarma ha detectado que a un blindado le han abierto las puertas incorrectamente y está solicitando respaldo en ${streetName}.",
 		status_3b = "10-78, El sistema de alarma ha detectado que a un blindado le han abierto las puertas incorrectamente y está solicitando respaldo en ${streetName} cerca de ${crossingRoad}.",
-		grab_gold_bar = "[${InteractionKey}] Agarra la barra de oro (${barsRemaining} restantes)",
-		grabbing_gold_bar = "Agarrando barra de oro",
-		use_advanced_lockpick = "[${InteractionKey}] utilizar la ganzúa avanzada",
+		grab_valuables = "[${InteractionKey}] Tomar objetos de valor, faltan (${valuablesRemaining})",
+		grabbing_valuables = "Tomando objetos de valor",
+		use_advanced_lockpick = "[${InteractionKey}] Utilizar la ganzúa avanzada",
 		lockpicking_stockade = "Forzando Blindado",
 
 		stockade_reward_logs_title = "Recompensa del blindado",
@@ -5027,7 +5127,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		air_unit_exit_vehicle = "Salga del vehículo para usar la unidad de aire.",
 		air_unit_press_to_use = "Presiona ~g~${SeatEjectKey} ~w~utilizar la unidad de aire por $${cost}.",
 		air_unit_no_vehicle_nearby = "No hay vehículos cerca.",
-		cleaning_vehicle = "Vehículo de limpieza",
+		cleaning_vehicle = "Lavando el vehículo",
 		not_enough_money = "No tienes suficiente dinero para usar la Unidad de aire.",
 		vehicle_not_in_range = "El vehículo se movió muy lejos para ser limpiado."
 	},
