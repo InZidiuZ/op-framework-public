@@ -1112,7 +1112,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 		cinematic_command_help = "Attiva le barre nere della cinematica.",
 		cinematic_command_parameter_bar_height = "Altezza barre",
 		cinematic_command_parameter_bar_height_help = "Altezza delle barre. Deve essere tra 0 e 50 (percentuale). La default è 10.",
-		cinematic_command_substitutes = "",
+		cinematic_command_substitutes = "/c, /cin",
+
+		-- game/clothing
+		force_outfit_command = "/force_outfit",
+		force_outfit_command_help = "Applica un abito salvato senza essere vicino a un punto di abbigliamento.",
+		force_outfit_command_parameter_outfit = "outfit",
+		force_outfit_command_parameter_outfit_help = "Nome dell'outfit.",
+		force_outfit_command_substitutes = "",
 
 		-- game/crashes
 		crash_command = "/crash",
@@ -1580,9 +1587,23 @@ OP.Global.Locales.Languages["it-IT"] = {
 		ped_task_command_parameter_target_help = "Il target del ped (optional).",
 		ped_task_command_substitutes = "",
 
+		ped_emote_command = "/ped_emote",
+		ped_emote_command_help = "Fai che i ped spawnati riproducano una emote scelta da te.",
+		ped_emote_command_parameter_emote = "emote",
+		ped_emote_command_parameter_emote_help = "L'emote che dovrebbe riprodurre.",
+		ped_emote_command_substitutes = "",
+
 		ped_remove_command = "/ped_remove",
 		ped_remove_command_help = "Sbarazzati di tutti i ped spawnati.",
 		ped_remove_command_substitutes = "",
+
+		list_ped_emotes_command = "/list_ped_emotes",
+		list_ped_emotes_command_help = "Lista delle emote avviabili.",
+		list_ped_emotes_command_substitutes = "",
+
+		list_ped_tasks_command = "/list_ped_tasks",
+		list_ped_tasks_command_help = "Lista di tutte i compiti assegnabili disponibili.",
+		list_ped_tasks_command_substitutes = "",
 
 		-- game/phone_numbers
 		custom_phone_number_command = "/custom_phone_number",
@@ -1871,11 +1892,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 		ignite_player_command_parameter_server_id_help = "Server ID of the target player.",
 		ignite_player_command_substitutes = "/ignite, /burn",
 
-		possess_command = "/possess",
-		possess_command_help = "Possessa un giocatore.",
-		possess_command_parameter_server_id = "server id",
-		possess_command_parameter_server_id_help = "The server ID of the player you would like to possess.",
-		possess_command_substitutes = "",
+		run_command_as_command = "/run_command_as",
+		run_command_as_command_help = "Fa eseguire un comando a un altro giocatore.",
+		run_command_as_command_parameter_server_id = "server id",
+		run_command_as_command_parameter_server_id_help = "ID del giocatore.",
+		run_command_as_command_parameter_command = "comando",
+		run_command_as_command_parameter_command_help = "Il comando che vuoi far fare al giocatore.",
+		run_command_as_command_substitutes = "/runas, /sudo",
 
 		-- global/entities
 		local_entities_debug_command = "/local_entities_debug",
@@ -2367,6 +2390,11 @@ core = {
 		black_bars_set_to = "Le barre nere cinematografiche ora sono state impostate su ${blackBarsHeight}%."
 	},
 
+	clothing = {
+		outfit_failed = "Non sei riuscito a mettere l'outfit.",
+		missing_outfit = "Outfit mancante."
+	},
+
 	crafting = {
 		smelt_glass = "[${SeatEjectKey}] Smaltisci bottiglie rotte",
 		smelting_glass = "Smaltendo ${usedItems}",
@@ -2713,6 +2741,11 @@ core = {
 		swat_badge_details = "SWAT | ${firstName} ${lastName} | Grado: ${positionName}",
 		management_badge = "Management Badge",
 		management_badge_details = "Management | ${firstName} ${lastName} | Grado: ${positionName}",
+		ems_badge = "EMS ID",
+		ems_badge_details = "EMS | ${firstName} ${lastName} | Grado: ${positionName}",
+		doctor_badge = "Dottore ID",
+		doctor_badge_details = "Dottore | ${firstName} ${lastName} | Grado: ${positionName}",
+
 
 		badge_type_sasp = "San Andreas State Police",
 		badge_type_bcso = "Blaine County Sheriff's Office",
@@ -2720,13 +2753,17 @@ core = {
 		badge_type_fib = "Federal Investigation Bureau",
 		badge_type_swat = "Special Weapons And Tactics",
 		badge_type_management = "SASP Management",
+		badge_type_ems = "Emergency Medical Services",
+		badge_type_doctor = "Medical Residency",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
 		badge_type_short_iaa = "IAA",
 		badge_type_short_fib = "FIB",
 		badge_type_short_swat = "SWAT",
-		badge_type_short_management = "Management"
+		badge_type_short_management = "Management",
+		badge_type_short_ems = "EMS",
+		badge_type_short_doctor = "Dottore"
 	},
 
 	injuries = {
@@ -2793,6 +2830,7 @@ core = {
 		gift_store = "Del Perro Gifts",
 		ems_store = "EMS Store",
 		drug_store = "Drug Cabinet",
+		pharmacy = "Pharmacy",
 		chop_shop = "Chop Shop",
 		courthouse = "Tribunale",
 		burger_shot = "Burger Shot",
@@ -3141,6 +3179,23 @@ core = {
 
 		nitro_tank = "Bombola di Nitro",
 		nitro_tank_description = "La macchina vola dopo siuuuuuuummmmmmmmmmmmmmmmmm",
+
+		pepper_spray = "Spray al peperoncino",
+		pepper_spray_description = "I MIEI OCCHI!",
+
+		jail_card = "Jail Card",
+		jail_card_description = "Esci di prigione grazie alla jail card!",
+
+		acetone = "Acetone",
+		acetone_description = "Perfetto per rimuovere la vernice o sniffarla, stile Cooper.",
+		ammonia = "Ammoniaca",
+		ammonia_description = "Mescolare con la candeggina per una sorpresa magica.",
+		lithium_batteries = "Lithium Batteries",
+		lithium_batteries_description = "Non è permesso sugli aerei commerciali, a meno che non vogliate fare boom.",
+		meth_bag = "Bustina di Meth",
+		meth_bag_description = "Princiipalmente chiamata \"Cooper's Spice\". Alcuni dei cristalli più puri per abbellire il mare di Alamo.",
+		meth_table = "Tavolo di meth",
+		meth_table_description = "Haha divertente riferimento breaking bad sulla cottura della metanfetamina.",
 
 		campfire = "Falò",
 		campfire_description = "Può essere posizionato ovunque nel mondo. Perfetto per il campeggio, la caccia e la pesca! Questo articolo non può essere ritirato di nuovo.",
@@ -3662,6 +3717,11 @@ core = {
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} ha girato la ruota e ha vinto una settimana di salta coda."
 	},
 
+	meth = {
+		press_to_sell_meth = "Premi ~INPUT_CONTEXT~ per vendere la meth.",
+		selling_meth = "Vendendo la meth."
+	},
+
 	miscellaneous = {
 		language_unavailable = "La lingua `${languageCode}` non e' disponibile. ",
 		same_language = "Hai gia' ${languageCode} come lingua impostata.",
@@ -4044,6 +4104,13 @@ core = {
 		missing_task = "Parametro compito mancante.",
 		invalid_task = "Compito del ped non valido '${task}'.",
 		target_required = "Questo compito del ped richiede un target.",
+		ped_emote_success = "Eseguito emote con successo per i pedoni spawnati '${emote}' emote.",
+		ped_failed_emote = "Non sei riuscito a far eseguire la emote ai pedoni generati '${emote}' emote.",
+		invalid_emote = "Emote non valida '${emote}'.",
+		missing_emote = "Parametro emote mancante.",
+
+		emote_list = "Ped emote disponibili: ${list}.",
+		task_list = "Compiti per i ped disponibili: ${list}.",
 
 		spawn_ped_missing_perms = "Tentativo di spawnare un ped senza permessi.",
 		remove_peds_missing_perms = "Tentativo di rimuovere un ped spawnato senza permessi.",
@@ -4054,6 +4121,11 @@ core = {
 		ped_robbing_injection = "Abuso di Passanti derubati! (Bypassato server-timeout, probabilmente tramite un injector.)",
 		robbed_ped_logs_title = "Passante derubato",
 		robbed_ped_logs_details = "${consoleName} ha derubato un passante e ha ricevuto $${payout}."
+	},
+
+	pepper_spray = {
+		press_to_pepper_spray = "Premi ~INPUT_ATTACK~ per usare lo spray al peperoncino.",
+		using_pepper_spray = "Usando spray al peperoncino."
 	},
 
 	phone_numbers = {
@@ -4500,12 +4572,6 @@ core = {
 		exit_pillbox_roof = "Scendi dal tetto dell' ospedale",
 		exit_pillbox_roof_interact = "[${InteractionKey}] Scendi dal tetto dell' ospedale",
 
-		enter_night_club = "Entra al Night Club",
-		enter_night_club_interact = "[${InteractionKey}] Entra al Night Club",
-
-		exit_night_club = "Esci dal Night Club",
-		exit_night_club_interact = "[${InteractionKey}] Esci dal Night Club",
-
 		enter_casino = "Entra al Casino",
 		enter_casino_interact = "[${InteractionKey}] Entra al Casino",
 
@@ -4522,7 +4588,25 @@ core = {
 		enter_penthouse_interact = "[${InteractionKey}] Enter Penthouse",
 
 		exit_penthouse = "Exit Penthouse",
-		exit_penthouse_interact = "[${InteractionKey}] Exit Penthouse"
+		exit_penthouse_interact = "[${InteractionKey}] Exit Penthouse",
+
+		enter_parking_garage = "Entrare nel parcheggio",
+		enter_parking_garage_interact = "[${InteractionKey}] Entra nel parcheggio",
+
+		exit_parking_garage = "Esci dal parcheggio",
+		exit_parking_garage_interact = "[${InteractionKey}] Esci dal parcheggio",
+
+		enter_surgery = "Entra in chirurgia",
+		enter_surgery_interact = "[${InteractionKey}] Entra in chirurgia",
+
+		exit_surgery = "Esci dalla chirurgia",
+		exit_surgery_interact = "[${InteractionKey}] Esci dalla chirurgia",
+
+		enter_icu = "Entra ICU",
+		enter_icu_interact = "[${InteractionKey}] Entra ICU",
+
+		exit_icu = "Esci ICU",
+		exit_icu_interact = "[${InteractionKey}] Esci ICU"
 	},
 
 	test_server = {
