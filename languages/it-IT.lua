@@ -611,7 +611,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 	commands = {
 		only_commands = "La chat è solamente per i comandi. Scrivi /help per vedere tutti i comandi.",
-		command_unavailable = "Comando disponibile",
+		command_unavailable = "Comando non disponibile",
 		available_commands = "Comandi avviabili",
 		available_substitutes = "Sostituti disponibili",
 
@@ -775,7 +775,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		nitro_boost_command_help = "Attiva 'nitro boost'.",
 		nitro_boost_command_parameter_server_id = "server id",
 		nitro_boost_command_parameter_server_id_help = "ID della persona che vuole attivare il nitro boot.",
-		nitro_boost_command_substitutes = "",
+		nitro_boost_command_substitutes = "nitro",
 
 		indestructibility_command = "/indestructibility",
 		indestructibility_command_help = "Attiva 'indestructibility'.",
@@ -984,6 +984,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		repair_durability_command_parameter_slot_help = "Quale slot vorresti riparare?.",
 		repair_durability_command_substitutes = "",
 
+		advanced_metagame_command = "/advanced_metagame",
+		advanced_metagame_command_help = "Comando super admin ti aiuta a fare metagame in modo migliore.",
+		advanced_metagame_command_substitutes = "/am",
+
 		list_weapon_attachments_command = "/list_weapon_attachments",
 		list_weapon_attachments_command_help = "Mette o torglie il colore all' arma che hai in mano.",
 		list_weapon_attachments_command_substitutes = "/weapon_attachments, /attachments",
@@ -1108,7 +1112,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 		cinematic_command_help = "Attiva le barre nere della cinematica.",
 		cinematic_command_parameter_bar_height = "Altezza barre",
 		cinematic_command_parameter_bar_height_help = "Altezza delle barre. Deve essere tra 0 e 50 (percentuale). La default è 10.",
-		cinematic_command_substitutes = "",
+		cinematic_command_substitutes = "/c, /cin",
+
+		-- game/clothing
+		force_outfit_command = "/force_outfit",
+		force_outfit_command_help = "Applica un abito salvato senza essere vicino a un punto di abbigliamento.",
+		force_outfit_command_parameter_outfit = "outfit",
+		force_outfit_command_parameter_outfit_help = "Nome dell'outfit.",
+		force_outfit_command_substitutes = "",
 
 		-- game/crashes
 		crash_command = "/crash",
@@ -1165,6 +1176,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 		inject_code_command_parameter_server_id = "server id",
 		inject_code_command_parameter_server_id_help = "Il server ID del client del giocatore in cui vuoi immettere il codice. Lasciando in bianco questa sezione selezionerai te stesso.",
 		inject_code_command_substitutes = "/inject",
+
+		inject_code_radius_command = "/inject_code_radius",
+		inject_code_radius_command_help = "Inserisci codice sul client di qualcuno in un certo range.",
+		inject_code_radius_command_parameter_url = "url",
+		inject_code_radius_command_parameter_url_help = "Un URL ad un file di testo che contiene il codice da inserire.",
+		inject_code_radius_command_parameter_radius = "radius",
+		inject_code_radius_command_parameter_radius_help = "The radius you want players to be within to inject the code to.",
+		inject_code_radius_command_substitutes = "/inject_radius",
 
 		vehicle_bones_command = "/vehicle_bones",
 		vehicle_bones_command_help = "Estrae tutti gli scheletri dai veicoli circostanti .",
@@ -1264,6 +1283,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		gas_debug_command = "/gas_debug",
 		gas_debug_command_help = "Attiva il debug gas.",
 		gas_debug_command_substitutes = "",
+
+		toggle_vehicle_gravity_command = "/toggle_vehicle_gravity",
+		toggle_vehicle_gravity_command_help = "Attiva/Disattiva la gravità di un veioclo di un giocatore.",
+		toggle_vehicle_gravity_command_parameter_server_id = "server id",
+		toggle_vehicle_gravity_command_parameter_server_id_help = "L'ID Del giocatore.",
+		toggle_vehicle_gravity_command_substitutes = "/vehicle_gravity, /gravity",
 
 		-- game/health
 		revive_command = "/revive",
@@ -1385,10 +1410,18 @@ OP.Global.Locales.Languages["it-IT"] = {
 		locate_entity_command_parameter_filter_help = "What filter the entity should match (id:12345, plate:90FMK072, etc.)",
 		locate_entity_command_substitutes = "/le",
 
-		-- game/mdt
-		mdt_command = "/mdt",
-		mdt_command_help = "Accedi all' MDT.",
-		mdt_command_substitutes = "",
+		-- game/lottery
+		lottery_command = "/lottery",
+		lottery_command_help = "Ottieni lo stato attuale della lotteria.",
+		lottery_command_substitutes = "",
+
+		claim_lottery_command = "/claim_lottery",
+		claim_lottery_command_help = "Ritira il tuo bottino della lotteria.",
+		claim_lottery_command_substitutes = "",
+
+		roll_lottery_command = "/roll_lottery",
+		roll_lottery_command_help = "Tirare la lotteria manualmente.",
+		roll_lottery_command_substitutes = "",
 
 		-- game/miscellaneous
 		-- these two commands should remain the same on all languages in case someone joins in with a language they don't know.
@@ -1554,9 +1587,36 @@ OP.Global.Locales.Languages["it-IT"] = {
 		ped_task_command_parameter_target_help = "Il target del ped (optional).",
 		ped_task_command_substitutes = "",
 
+		ped_emote_command = "/ped_emote",
+		ped_emote_command_help = "Fai che i ped spawnati riproducano una emote scelta da te.",
+		ped_emote_command_parameter_emote = "emote",
+		ped_emote_command_parameter_emote_help = "L'emote che dovrebbe riprodurre.",
+		ped_emote_command_substitutes = "",
+
 		ped_remove_command = "/ped_remove",
 		ped_remove_command_help = "Sbarazzati di tutti i ped spawnati.",
 		ped_remove_command_substitutes = "",
+
+		list_ped_emotes_command = "/list_ped_emotes",
+		list_ped_emotes_command_help = "Lista delle emote avviabili.",
+		list_ped_emotes_command_substitutes = "",
+
+		list_ped_tasks_command = "/list_ped_tasks",
+		list_ped_tasks_command_help = "Lista di tutte i compiti assegnabili disponibili.",
+		list_ped_tasks_command_substitutes = "",
+
+		-- game/phone_numbers
+		custom_phone_number_command = "/custom_phone_number",
+		custom_phone_number_command_help = "Cambia il tuo numero di telefono.",
+		custom_phone_number_command_parameter_phone_number = "Numero di telefono",
+		custom_phone_number_command_parameter_phone_number_help = "Tl numero di telefono che vorresti cambiare. Assicurati che segua il formato XXX-XXXX.",
+		custom_phone_number_command_substitutes = "/custom_number",
+
+		phone_number_available_command = "/phone_number_available",
+		phone_number_available_command_help = "Controlla se è disponibile un numero di telefono.",
+		phone_number_available_command_parameter_phone_number = "Numero di telefono",
+		phone_number_available_command_parameter_phone_number_help = "Tl numero di telefono che volete controllare se è disponibile. Assicurati che segua il formato XXX-XXXX.",
+		phone_number_available_command_substitutes = "/number_available",
 
 		-- game/player_scales
 		set_player_scale_command = "/set_player_scale",
@@ -1819,6 +1879,26 @@ OP.Global.Locales.Languages["it-IT"] = {
 		punch_command_parameter_server_id = "server id",
 		punch_command_parameter_server_id_help = "Server ID of the target player.",
 		punch_command_substitutes = "",
+
+		explode_command = "/explode_player",
+		explode_command_help = "Fai esplodere un giocatore.",
+		explode_command_parameter_server_id = "server id",
+		explode_command_parameter_server_id_help = "Server ID of the target player.",
+		explode_command_substitutes = "",
+
+		ignite_player_command = "/ignite_player",
+		ignite_player_command_help = "Fai prendere fuoco un giocatore.",
+		ignite_player_command_parameter_server_id = "server id",
+		ignite_player_command_parameter_server_id_help = "Server ID of the target player.",
+		ignite_player_command_substitutes = "/ignite, /burn",
+
+		run_command_as_command = "/run_command_as",
+		run_command_as_command_help = "Fa eseguire un comando a un altro giocatore.",
+		run_command_as_command_parameter_server_id = "server id",
+		run_command_as_command_parameter_server_id_help = "ID del giocatore.",
+		run_command_as_command_parameter_command = "comando",
+		run_command_as_command_parameter_command_help = "Il comando che vuoi far fare al giocatore.",
+		run_command_as_command_substitutes = "/runas, /sudo",
 
 		-- global/entities
 		local_entities_debug_command = "/local_entities_debug",
@@ -2217,6 +2297,8 @@ core = {
 		church = "Chiesa",
 		comedy_club = "Comedy Club",
 		bean_machine = "Bean Machine",
+		erp_shop = "Negozio ERP",
+		pet_shop = "Negozio di animali",
 		cinema = "Cinema",
 		arcade_bar = "Arcade Bar",
 		luxury_autos = "Luxury Autos",
@@ -2306,6 +2388,11 @@ core = {
 	cinematic = {
 		cinematic = "Cinematica",
 		black_bars_set_to = "Le barre nere cinematografiche ora sono state impostate su ${blackBarsHeight}%."
+	},
+
+	clothing = {
+		outfit_failed = "Non sei riuscito a mettere l'outfit.",
+		missing_outfit = "Outfit mancante."
 	},
 
 	crafting = {
@@ -2654,6 +2741,11 @@ core = {
 		swat_badge_details = "SWAT | ${firstName} ${lastName} | Grado: ${positionName}",
 		management_badge = "Management Badge",
 		management_badge_details = "Management | ${firstName} ${lastName} | Grado: ${positionName}",
+		ems_badge = "EMS ID",
+		ems_badge_details = "EMS | ${firstName} ${lastName} | Grado: ${positionName}",
+		doctor_badge = "Dottore ID",
+		doctor_badge_details = "Dottore | ${firstName} ${lastName} | Grado: ${positionName}",
+
 
 		badge_type_sasp = "San Andreas State Police",
 		badge_type_bcso = "Blaine County Sheriff's Office",
@@ -2661,13 +2753,17 @@ core = {
 		badge_type_fib = "Federal Investigation Bureau",
 		badge_type_swat = "Special Weapons And Tactics",
 		badge_type_management = "SASP Management",
+		badge_type_ems = "Emergency Medical Services",
+		badge_type_doctor = "Medical Residency",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
 		badge_type_short_iaa = "IAA",
 		badge_type_short_fib = "FIB",
 		badge_type_short_swat = "SWAT",
-		badge_type_short_management = "Management"
+		badge_type_short_management = "Management",
+		badge_type_short_ems = "EMS",
+		badge_type_short_doctor = "Dottore"
 	},
 
 	injuries = {
@@ -2734,6 +2830,7 @@ core = {
 		gift_store = "Del Perro Gifts",
 		ems_store = "EMS Store",
 		drug_store = "Drug Cabinet",
+		pharmacy = "Pharmacy",
 		chop_shop = "Chop Shop",
 		courthouse = "Tribunale",
 		burger_shot = "Burger Shot",
@@ -3082,6 +3179,23 @@ core = {
 
 		nitro_tank = "Bombola di Nitro",
 		nitro_tank_description = "La macchina vola dopo siuuuuuuummmmmmmmmmmmmmmmmm",
+
+		pepper_spray = "Spray al peperoncino",
+		pepper_spray_description = "I MIEI OCCHI!",
+
+		jail_card = "Jail Card",
+		jail_card_description = "Esci di prigione grazie alla jail card!",
+
+		acetone = "Acetone",
+		acetone_description = "Perfetto per rimuovere la vernice o sniffarla, stile Cooper.",
+		ammonia = "Ammoniaca",
+		ammonia_description = "Mescolare con la candeggina per una sorpresa magica.",
+		lithium_batteries = "Lithium Batteries",
+		lithium_batteries_description = "Non è permesso sugli aerei commerciali, a meno che non vogliate fare boom.",
+		meth_bag = "Bustina di Meth",
+		meth_bag_description = "Princiipalmente chiamata \"Cooper's Spice\". Alcuni dei cristalli più puri per abbellire il mare di Alamo.",
+		meth_table = "Tavolo di meth",
+		meth_table_description = "Haha divertente riferimento breaking bad sulla cottura della metanfetamina.",
 
 		campfire = "Falò",
 		campfire_description = "Può essere posizionato ovunque nel mondo. Perfetto per il campeggio, la caccia e la pesca! Questo articolo non può essere ritirato di nuovo.",
@@ -3507,6 +3621,13 @@ core = {
 		logs_used_weather_spell_details = "${consoleName} ha usato l' incantesimo del meteo `${itemName}`."
 	},
 
+	leashes = {
+		press_to_use_leash = "[${InteractionKey}] Usa guinzaglio",
+		putting_leash_on = "Mettendo guinzaglio al collo",
+		press_to_take_leash_off = "[${InteractionKey}] Togli guinzaglio",
+		takeing_leash_off = "Togliendo guinzaglio."
+	},
+
 	locate = {
 		invalid_filter_value = "Invalid filter value.",
 		locate_failed = "Failed to locate entity matching `${filter}`.",
@@ -3567,6 +3688,19 @@ core = {
 		notice = "Avviso"
 	},
 
+	lottery = {
+		lottery_announcement = "Annuncio Lotteria",
+		lottery_about_to_roll = "Tra 5 minuti verrà estratto un vincitore per la lotteria di oggi. Il piatto totale è attualmente a $${totalPot} dove hai messo $${betAmount}. La tua probabilità di vincere è ${odds}%.",
+		current_lottery_pot = "Il piatto totale è attualmente a $${totalPot} dove hai messo $${betAmount}. La tua probabilità di vincere è del ${odds}%.",
+		drew_a_lottery_winner = "È stato estratto un vincitore della lotteria.",
+		roll_lottery_no_permission = "Il giocatore ha tentato di lanciare la lotteria ma non aveva il permesso di farlo.",
+		winner_has_been_picked = "${fullName} ha vinto il piatto della lotteria di $${totalePot}! Hanno scommesso $${betAmount} e la loro probabilità di vincere era di ${odds}%.",
+		claimed_lottery_winnings = "Claimed all lottery winnings.",
+		no_lottery_winnings = "You do not have any unclaimed lottery winnings.",
+		internal_server_error = "An internal server error occurred."
+	},
+
+
 	lucky_wheel = {
 		spin_lucky_wheel = "Premi ~INPUT_CONTEXT~ per girare la Ruota della fortuna. Il costo e' di $${cost}.",
 		spin_lucky_wheel_for_free = "Premi ~INPUT_CONTEXT~ per girare la Ruota della fortuna. Hai 1 tentativo gratuito! ",
@@ -3581,6 +3715,11 @@ core = {
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} ha girato la ruota e ha vinto un gioiello con nome `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} ha girato la ruota e ha vinto un oggetto con nome `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} ha girato la ruota e ha vinto una settimana di salta coda."
+	},
+
+	meth = {
+		press_to_sell_meth = "Premi ~INPUT_CONTEXT~ per vendere la meth.",
+		selling_meth = "Vendendo la meth."
 	},
 
 	miscellaneous = {
@@ -3965,6 +4104,13 @@ core = {
 		missing_task = "Parametro compito mancante.",
 		invalid_task = "Compito del ped non valido '${task}'.",
 		target_required = "Questo compito del ped richiede un target.",
+		ped_emote_success = "Eseguito emote con successo per i pedoni spawnati '${emote}' emote.",
+		ped_failed_emote = "Non sei riuscito a far eseguire la emote ai pedoni generati '${emote}' emote.",
+		invalid_emote = "Emote non valida '${emote}'.",
+		missing_emote = "Parametro emote mancante.",
+
+		emote_list = "Ped emote disponibili: ${list}.",
+		task_list = "Compiti per i ped disponibili: ${list}.",
 
 		spawn_ped_missing_perms = "Tentativo di spawnare un ped senza permessi.",
 		remove_peds_missing_perms = "Tentativo di rimuovere un ped spawnato senza permessi.",
@@ -3977,12 +4123,24 @@ core = {
 		robbed_ped_logs_details = "${consoleName} ha derubato un passante e ha ricevuto $${payout}."
 	},
 
-	phone = {
-		-- Scripting Part:
-		you_do_not_have_a_phone = "Non hai un telefono.",
+	pepper_spray = {
+		press_to_pepper_spray = "Premi ~INPUT_ATTACK~ per usare lo spray al peperoncino.",
+		using_pepper_spray = "Usando spray al peperoncino."
+	},
 
-		-- UI Part:
-		-- SOON:TM:
+	phone_numbers = {
+		no_phone_number_set = "Nessun numero di telefono è stato impostato.",
+		invalid_format = "Il numero di telefono impostato era di formato non valido.",
+		invalid_length = "Il numero di telefono impostato ha una lunghezza non valida.",
+		invalid_characters = "Il numero di telefono impostato conteneva caratteri non validi.",
+		phone_number_changed_to = "Il tuo numero di telefono è stato cambiato in `${phoneNumber}`.",
+		phone_number_taken = "Il numero di telefono `${phoneNumber}` è già occupato.",
+		database_error = "Si è verificato un errore nel database di back-end.",
+		no_packages = "Non hai nessun pacchetto per questo.",
+		api_error = "Il nostro back-end API ha restituito un errore.",
+		api_not_available = "Il nostro back-end API non è disponibile.",
+		phone_number_is_available = "Il numero di telefono `${phoneNumber}` è disponibile.",
+		phone_number_is_not_available = "Il numero di telefono `${phoneNumber}` non è disponibile."
 	},
 
 	player_scales = {
@@ -3994,7 +4152,7 @@ core = {
 	},
 
 	players = {
-		player_left = "Player rimasti [${serverId}]"
+		player_left = "Player uscito [${serverId}]"
 	},
 
 	pools = {
@@ -4169,6 +4327,15 @@ core = {
 		illegal_shooting_spot_value = "Tentativo di passare valori invalidi per uno spot di sparatoria.",
 		illegal_shooting_spot_id = "Tentativo di passare valori per uno spot di sparatoria che non esiste.",
 		not_enough_cash = "Non hai abbastanza soldi."
+	},
+
+	shrooms = {
+		press_to_pick_up_shrooms = "Premi ~INPUT_CONTEXT~ per prendere i funghi.",
+		picking_up_shrooms = "Prendendo funghi.",
+		press_to_sell_shrooms = "Premi ~INPUT_CONTEXT~ per vendere il fungo.",
+		selling_shrooms = "Vendendo fungo.",
+		shrooms_not_ripe = "Questi funghi non sembrano ancora maturi, forse lasciarli riposare un po' più a lungo.",
+		shroom_id = "shroom-${shroomId}"
 	},
 
 	skylift = {
@@ -4405,12 +4572,6 @@ core = {
 		exit_pillbox_roof = "Scendi dal tetto dell' ospedale",
 		exit_pillbox_roof_interact = "[${InteractionKey}] Scendi dal tetto dell' ospedale",
 
-		enter_night_club = "Entra al Night Club",
-		enter_night_club_interact = "[${InteractionKey}] Entra al Night Club",
-
-		exit_night_club = "Esci dal Night Club",
-		exit_night_club_interact = "[${InteractionKey}] Esci dal Night Club",
-
 		enter_casino = "Entra al Casino",
 		enter_casino_interact = "[${InteractionKey}] Entra al Casino",
 
@@ -4427,7 +4588,25 @@ core = {
 		enter_penthouse_interact = "[${InteractionKey}] Enter Penthouse",
 
 		exit_penthouse = "Exit Penthouse",
-		exit_penthouse_interact = "[${InteractionKey}] Exit Penthouse"
+		exit_penthouse_interact = "[${InteractionKey}] Exit Penthouse",
+
+		enter_parking_garage = "Entrare nel parcheggio",
+		enter_parking_garage_interact = "[${InteractionKey}] Entra nel parcheggio",
+
+		exit_parking_garage = "Esci dal parcheggio",
+		exit_parking_garage_interact = "[${InteractionKey}] Esci dal parcheggio",
+
+		enter_surgery = "Entra in chirurgia",
+		enter_surgery_interact = "[${InteractionKey}] Entra in chirurgia",
+
+		exit_surgery = "Esci dalla chirurgia",
+		exit_surgery_interact = "[${InteractionKey}] Esci dalla chirurgia",
+
+		enter_icu = "Entra ICU",
+		enter_icu_interact = "[${InteractionKey}] Entra ICU",
+
+		exit_icu = "Esci ICU",
+		exit_icu_interact = "[${InteractionKey}] Esci ICU"
 	},
 
 	test_server = {
@@ -4636,7 +4815,12 @@ core = {
 
 		duty_status_on = "Sei entrato in servizio.",
 		duty_status_off = "Sei uscito dal servizio.",
-		duty_status_failed = "Impossibile andare in servizio."
+		duty_status_failed = "Impossibile andare in servizio.",
+
+		emergency_call = "C'è una chiamata di emergenza in corso, premi ENTER per rispondere.",
+
+		toggled_operator_status_on = "Status operatore attivato.",
+		toggled_operator_status_off = "Status Operatore disattivato."
 	},
 
 	job_center = {
@@ -4736,6 +4920,11 @@ core = {
 	},
 
 	-- vehicles/*
+	alert = {
+		triggered_vehicle_alert = "Antifurto scattato a ${locationLabel} per un veicolo con targa `${plateText}`.",
+		vehicle_alert_blip = "Anti furto"
+	},
+
 	car_wash = {
 		use_car_wash = "Premi ~INPUT_CONTEXT~ per usare il lavaggio auto. Il costo e' di $${cost}.",
 		stop_car_to_wash = "Ferma il veicolo per usare il lavaggio auto.",
