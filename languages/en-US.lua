@@ -27,12 +27,13 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	emotes = {
-		get_in_trunk = "Press ~INPUT_ENTER~ to enter trunk",
-		put_boombox_in_trunk = "Press ~INPUT_ENTER~ to put boombox in the trunk",
-		put_player_in_trunk = "Press ~INPUT_ENTER~ to put the player in the trunk",
-		put_ped_in_trunk = "Press ~INPUT_ENTER~ to put the ped in the trunk",
-		put_bicycle_in_trunk = "Press ~INPUT_ENTER~ to put the bicycle in the trunk",
+		get_in_trunk = "Press ~INPUT_ENTER~ to enter trunk.",
+		put_boombox_in_trunk = "Press ~INPUT_ENTER~ to put boombox in the trunk.",
+		put_player_in_trunk = "Press ~INPUT_ENTER~ to put the player in the trunk.",
+		put_ped_in_trunk = "Press ~INPUT_ENTER~ to put the ped in the trunk.",
+		put_bicycle_in_trunk = "Press ~INPUT_ENTER~ to put the bicycle in the trunk.",
 		trunk_interaction_display = "[${VehicleEnterKey}] Climb Out [${InteractionKey}] Open/Close Trunk",
+		trunk_open_close_display = "[${InteractionKey}] Open/Close Trunk",
 		boombox_already_in_trunk = "There is already a boombox in the trunk.",
 		the_trunk_is_occupied = "The trunk is occupied.",
 		unable_to_toggle_carry = "Please wait a bit before toggling the carry.",
@@ -660,8 +661,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		-- animations/chairs
 		sit_command = "/sit",
 		sit_command_help = "Attempt to sit down on a nearby chair.",
-		sit_command_parameter_sit_on_ground = "sit on ground",
-		sit_command_parameter_sit_on_ground_help = "Would you like to sit on the ground? If so, type anything here.",
+		sit_command_parameter_variation = "variation",
+		sit_command_parameter_variation_help = "What sit animation to play (1 - 6)",
 		sit_command_substitutes = "/chair",
 
 		-- animations/emotes
@@ -1150,6 +1151,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		force_outfit_command_parameter_outfit = "outfit",
 		force_outfit_command_parameter_outfit_help = "The name of the outfit.",
 		force_outfit_command_substitutes = "",
+
+		outfit_command = "/outfit",
+		outfit_command_help = "Change into a different outfit when near a clothing spot.",
+		outfit_command_parameter_outfit = "outfit",
+		outfit_command_parameter_outfit_help = "The name of the outfit.",
+		outfit_command_substitutes = "",
+
+		outfits_command = "/outfits",
+		outfits_command_help = "List all your saved outfits.",
+		outfits_command_substitutes = "",
 
 		-- game/crashes
 		crash_command = "/crash",
@@ -2278,7 +2289,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		unloaded_character_self_logs_details = "${consoleName} unloaded their own character (`${characterFullName}` - ${characterId}) with the reason `${message}`.",
 		unloaded_character_self_no_reason_logs_details = "${consoleName} unloaded their own character (`${characterFullName}` - ${characterId}) without any specified reason.",
 
-		unloaded_character_for_user = "Unloaded character ${characterName} (${characterId}) for ${consoleName}.",
+		unloaded_character_for_user = "Unloaded character ${characterFullName} (${characterId}) for ${consoleName}.",
 		user_with_server_id_has_no_character_loaded = "The user with server id `${serverId}` does not have a character loaded.",
 		user_with_server_id_not_found = "The user with server id `${serverId}` could not be found on the server.",
 
@@ -2433,16 +2444,23 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	clothing = {
 		outfit_failed = "Failed to apply outfit.",
-		missing_outfit = "Missing outfit."
+		missing_outfit = "Missing outfit.",
+		no_nearby_clothing_spot = "No clothing spot nearby.",
+		invalid_job = "You don't have the required job to use this clothing spot.",
+		outfit_list = "Outfits",
+		no_saved_outfits = "You don't have any saved outfits.",
+		failed_get_outfits = "Failed to get saved outfits."
 	},
 
 	crafting = {
-		smelt_glass = "[${SeatEjectKey}] Smelt Broken Bottles",
+		smelt_glass = "Smelt Broken Bottles",
+		press_to_smelt_glass = "[${SeatEjectKey}] Smelt Broken Bottles",
 		smelting_glass = "Smelting ${usedItems}",
 		smelted_glass = "Smelted ${usedItems} into glass.",
 		failed_smelt_glass = "Failed to smelt glass.",
 
-		craft_steel = "[${SeatEjectKey}] Craft Steel",
+		craft_steel = "Craft Steel",
+		press_to_craft_steel = "[${SeatEjectKey}] Craft Steel",
 		crafting_steel = "Molding ${usedItems}",
 		crafted_steel = "Crafted ${usedItems} into steel.",
 		failed_craft_steel = "Failed to craft steel.",
@@ -2450,41 +2468,61 @@ OP.Global.Locales.Languages["en-US"] = {
 		scrapping_item = "Scrapping ${usedItems}",
 		scrapped_item = "Extracted scrap metal from ${usedItems}.",
 
-		scrap_knife = "[${SeatEjectKey}] Scrap Knifes",
+		scrap_knife = "Scrap Knifes",
+		press_to_scrap_knife = "[${SeatEjectKey}] Scrap Knifes",
 		failed_scrap_knife = "Failed to scrap knife.",
 
-		scrap_item = "[${SeatEjectKey}] Scrap Items",
+		scrap_item = "Scrap Items",
+		press_to_scrap_item = "[${SeatEjectKey}] Scrap Items",
 		failed_scrap_item = "Failed to scrap item.",
 
-		cut_item = "[${SeatEjectKey}] Cut Potatoes",
+		cut_item = "Cut Potatoes",
+		press_to_cut_item = "[${SeatEjectKey}] Cut Potatoes",
 		cutting_item = "Cutting 3 Potatoes",
 		cut_item_done = "Cut potatoes into fries.",
 		failed_cut_item = "Failed to cut potatoes.",
 
-		fry_item = "[${SeatEjectKey}] Fry Fries",
+		fry_item = "Fry Fries",
+		press_to_fry_item = "[${SeatEjectKey}] Fry Fries",
 		frying_item = "Frying Fries",
 		fried_item = "Fried belgian fries.",
 		failed_fry_item = "Failed to fry fries.",
 
-		grill_item = "[${SeatEjectKey}] Grill Raw Patty",
+		grill_item = "Grill Raw Patty",
+		press_to_grill_item = "[${SeatEjectKey}] Grill Raw Patty",
 		grilling_item = "Grilling Patty",
 		grilled_item = "Grilled Patty.",
 		failed_grill_item = "Failed to grill patty.",
 
-		assemble_burger = "[${SeatEjectKey}] Assemble Hamburger",
+		assemble_burger = "Assemble Hamburger",
+		press_to_assemble_burger = "[${SeatEjectKey}] Assemble Hamburger",
 		assembling_burger = "Assembling Hamburger",
 		assembled_burger = "Assembled Hamburger",
 		failed_assemble_burger = "Failed to assemble a hamburger.",
 
-		assemble_cheeseburger = "[${SeatEjectKey}] Assemble Cheeseburger",
+		assemble_cheeseburger = "Assemble Cheeseburger",
+		press_to_assemble_cheeseburger = "[${SeatEjectKey}] Assemble Cheeseburger",
 		assembling_cheeseburger = "Assembling Cheeseburger",
 		assembled_cheeseburger = "Assembled Cheeseburger",
 		failed_assemble_cheeseburger = "Failed to assemble a cheeseburger.",
 
-		pack_meal = "[${SeatEjectKey}] Package Meal",
+		pack_meal = "Package Meal",
+		press_to_pack_meal = "[${SeatEjectKey}] Package Meal",
 		packing_meal = "Packaging Meal",
 		packed_meal = "Packaged Meal.",
 		failed_pack_meal = "Failed to package meal.",
+
+		mix_avocado_smoothie = "Mix Avocado Smoothie",
+		press_to_mix_avocado_smoothie = "[${SeatEjectKey}] Mix Avocado Smoothie",
+		mixing_avocado_smoothie = "Mixing Avocado Smoothie",
+		mixed_avocado_smoothie = "Mixed Avocado Smoothie",
+		failed_mix_avocado_smoothie = "Failed to mix avocado smoothie.",
+
+		fill_nitro_tank = "Fill Nitro Tank",
+		press_to_fill_nitro_tank = "[${SeatEjectKey}] Fill Nitro Tank",
+		filling_nitro_tank = "Filling Nitro Tank",
+		filled_nitro_tank = "Filled Nitro Tank",
+		failed_fill_nitro_tank = "Failed to fill nitro tank.",
 
 		no_required_items = "You don't have all the required items.",
 
@@ -2787,11 +2825,13 @@ OP.Global.Locales.Languages["en-US"] = {
 	hud = {
 		mph = "mp/h",
 		kmh = "km/h",
+		knots = "knots",
 		ft = "ft",
 		m = "m",
 		belt = "BELT",
 		cruise = "CRUISE",
 		fuel = "fuel",
+		nitro = "nitro",
 		battery = "battery",
 		fps = "FPS",
 		ping = "PING",
@@ -3288,6 +3328,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		ticket_500 = "$500 Lottery Ticket",
 		ticket_500_description = "Look at you go, that's your whole weeks salary!",
 
+		avocado = "Avocado",
+		avocado_description = "Small green bulbus object, would be great to make a dip out of.",
+		avocado_smoothie = "Avocado Smoothie",
+		avocado_smoothie_description = "Healthy green juice, ignore the chunks.",
+
 		raspberry = "Raspberry",
 		raspberry_description = "https://i.redd.it/jbcj0uqbihg41.jpg",
 
@@ -3304,7 +3349,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		lighter_description = "some man just want to see worlds burn",
 
 		nitro_tank = "Nitro Tank",
-		nitro_tank_description = "Car goes brr",
+		nitro_tank_description = "Perfect for when you have the speed for need.",
+
+		empty_nitro_tank = "Empty Nitro Tank",
+		empty_nitro_tank_description = "About as useful as an empty can of beans.",
 
 		pepper_spray = "Pepper Spray",
 		pepper_spray_description = "MY EYES!",
@@ -3925,6 +3973,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		server_tps_response = "${tps}"
 	},
 
+	nos = {
+		press_to_install_nitro_tank = "Press ~INPUT_CONTEXT~ to install Nitro Tank.",
+		installing_nitro_tank = "Installing Nitro Tank",
+		press_to_remove_nitro_tank = "Press ~INPUT_CONTEXT~ to remove Nitro Tank.",
+		removing_nitro_tank = "Removing Nitro Tank"
+	},
+
 	notepads = {
 		placeholder = "Take notes...",
 		press_to_open = "Press ~INPUT_CONTEXT~ to open this Notepad.",
@@ -4399,6 +4454,22 @@ OP.Global.Locales.Languages["en-US"] = {
 		missing_server_id_parameter = "The server ID parameter is missing."
 	},
 
+	scuba = {
+		sunken_ship = "Sunken Ship",
+		gather_item = "Gather Item (${distance}m)",
+
+		collected_junk = "Collected Junk.",
+		collected_item = "Collected ${itemLabel}.",
+
+		collected_scuba_item_logs_title = "Collected Scuba Item",
+		collected_scuba_item_logs_details = "${consoleName} collected a scuba item and received `${itemName}`."
+	},
+
+	scuba_gear = {
+		equipping_scuba_tank = "Equipping Scuba Tank",
+		equipping_scuba_mask = "Equipping Scuba Mask"
+	},
+
 	security_cameras = {
 		illegal_security_camera = "Attempting to tamper with illegal security cameras.",
 		saved_security_cameras_to_file = "Saved `${amount}` security cameras to a file on the server.",
@@ -4718,18 +4789,6 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		exit_exclusive_dealership = "Exit Exclusive Dealership",
 		exit_exclusive_dealership_interact = "[${InteractionKey}] Exit Exclusive Dealership",
-
-		enter_upper_pillbox_hospital = "Enter Upper Pillbox Hospital",
-		enter_upper_pillbox_hospital_interact = "[${InteractionKey}] Enter Upper Pillbox Hospital",
-
-		enter_lower_pillbox = "Enter Lower Pillbox Hospital",
-		enter_lower_pillbox_interact = "[${InteractionKey}] Enter Lower Pillbox Hospital",
-
-		enter_pillbox_roof = "Enter Pillbox Roof",
-		enter_pillbox_roof_interact = "[${InteractionKey}] Enter Pillbox Roof",
-
-		exit_pillbox_roof = "Exit Pillbox Roof",
-		exit_pillbox_roof_interact = "[${InteractionKey}] Exit Pillbox Roof",
 
 		enter_casino = "Enter Casino",
 		enter_casino_interact = "[${InteractionKey}] Enter Casino",
@@ -5153,11 +5212,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		vehicle_busy = "The nearby vehicle is busy.",
 		purchase_jerry_can = "Press ~g~${InventoryKey} ~w~to purchase a Jerry Can.",
 		gas_station = "Gas Station",
-		vehicle_engine_on = "The vehicle's engine is running.",
 		petrolcan_fuel_text = "Petrol Amount Left: ${petrolAmount}%~n~Press ~g~E ~w~to stop fueling.",
 		player_busy = "You are busy with something else.",
 		fuel_level_set_to = "The fuel level has been set to `${fuelLevel}`.",
-		not_in_a_vehicle = "You are not in a vehicle."
+		not_in_a_vehicle = "You are not in a vehicle.",
+
+		vehicle_exploded_logs_title = "Vehicle Exploded",
+		vehicle_exploded_logs_details = "${consoleName} refueled a vehicle and triggered an explosion due to a running engine."
 	},
 
 	gadgets = {
@@ -5378,6 +5439,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		press_to_sign = "Press ~g~E ~w~to sign ",
 		open_vehicle_spawner = "Press ~g~E ~w~to open the vehicle spawner",
 		open_heli_spawner = "Press ~g~E ~w~to open the helicopter menu",
+		open_boat_spawner = "Press ~g~E ~w~to open the boat menu",
 		on = "on",
 		off = "off",
 		sign_as_doctor = "Press ~g~E ~w~to sign ${status} as a doctor",
@@ -5391,6 +5453,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		unable_to_extra_on_vehicle = "Unable to modify 'extras' on this vehicle!",
 		heli_here_already = "Already a helicopter on the helipad",
 		ems_air_hq = "EMS Air HQ",
+		ems_boat_hq = "EMS Boat HQ",
 		ems_garage = "EMS Garage",
 		e_to_get_treated = "[E] Get Treated - $2500",
 		get_treated = "Get Treated - $2500",
@@ -5426,7 +5489,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		mat_occupied = "Mat is occupied!",
 		yoga = "Yoga",
 		clothing = "Clothing",
-		clothing_cam_help = "Use A, S and D to move the clothing camera around.",
+		clothing_cam_help = "Use A, S and D to move the clothing camera around and W to zoom in.",
 		main = "Main",
 		empty_slot = "Empty Slot",
 		barber = "Barber",
@@ -5474,11 +5537,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		add_body_blemishes = "Add Body blemishes",
 		opacity = "Opacity",
 		colours = "Colors",
-		press_to_access_clotheshop = "Press ~INPUT_CONTEXT~ to customize your character.",
+		press_to_access_clotheshop = "Press ~INPUT_CONTEXT~ to access the clothing spot.",
 		changing_only_clotheshop = "Do /outfit to change your outfit.",
 		clothing_store = "Clothing Store",
 		finish_creation = "Press ~g~G ~w~to complete the customization of your character. You can't undo this action.",
-		press_to_customize = "Press ~INPUT_CONTEXT~ to customize your character.",
+		press_to_access_barbershop = "Press ~INPUT_CONTEXT~ to access the barber shop.",
 		barbershop = "Barbershop",
 		not_a_clothing_spot = "You must be near a clothing spot to use this command!",
 		customization = "Customization",
