@@ -3213,6 +3213,12 @@ core = {
 		acid = "Acidi",
 		acid_description = ".",
 
+		rose = "Rosa",
+		rose_description = "Non lo so... credo serva per fare ERP",
+
+		teddy_bear = "Orsacchiotto",
+		teddy_bear_description = "Un amico che ci sarà sempre per ascoltarti.",
+
 		self_driving_chip = "Chip per la guida autonoma",
 		self_driving_chip_description = "Dead deers everywhere... fucking hilarious.",
 
