@@ -611,7 +611,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 	commands = {
 		only_commands = "La chat è solamente per i comandi. Scrivi /help per vedere tutti i comandi.",
-		command_unavailable = "Comando disponibile",
+		command_unavailable = "Comando non disponibile",
 		available_commands = "Comandi avviabili",
 		available_substitutes = "Sostituti disponibili",
 
@@ -638,8 +638,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		-- animations/chairs
 		sit_command = "/sit",
 		sit_command_help = "Poggia il culo su una sedia.",
-		sit_command_parameter_sit_on_ground = "Poggia il culo a terra",
-		sit_command_parameter_sit_on_ground_help = "Sei stanco? Poggia il culo a terra.",
+		sit_command_parameter_variation = "variazioni",
+		sit_command_parameter_variation_help = "Quale animazione vorresti fare? (1 - 6)",
 		sit_command_substitutes = "/chair",
 
 		-- base/admin
@@ -775,7 +775,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		nitro_boost_command_help = "Attiva 'nitro boost'.",
 		nitro_boost_command_parameter_server_id = "server id",
 		nitro_boost_command_parameter_server_id_help = "ID della persona che vuole attivare il nitro boot.",
-		nitro_boost_command_substitutes = "",
+		nitro_boost_command_substitutes = "nitro",
 
 		indestructibility_command = "/indestructibility",
 		indestructibility_command_help = "Attiva 'indestructibility'.",
@@ -984,6 +984,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		repair_durability_command_parameter_slot_help = "Quale slot vorresti riparare?.",
 		repair_durability_command_substitutes = "",
 
+		advanced_metagame_command = "/advanced_metagame",
+		advanced_metagame_command_help = "Comando super admin ti aiuta a fare metagame in modo migliore.",
+		advanced_metagame_command_substitutes = "/am",
+
 		list_weapon_attachments_command = "/list_weapon_attachments",
 		list_weapon_attachments_command_help = "Mette o torglie il colore all' arma che hai in mano.",
 		list_weapon_attachments_command_substitutes = "/weapon_attachments, /attachments",
@@ -1108,7 +1112,24 @@ OP.Global.Locales.Languages["it-IT"] = {
 		cinematic_command_help = "Attiva le barre nere della cinematica.",
 		cinematic_command_parameter_bar_height = "Altezza barre",
 		cinematic_command_parameter_bar_height_help = "Altezza delle barre. Deve essere tra 0 e 50 (percentuale). La default è 10.",
-		cinematic_command_substitutes = "",
+		cinematic_command_substitutes = "/c, /cin",
+
+		-- game/clothing
+		force_outfit_command = "/force_outfit",
+		force_outfit_command_help = "Applica un abito salvato senza essere vicino a un punto di abbigliamento.",
+		force_outfit_command_parameter_outfit = "outfit",
+		force_outfit_command_parameter_outfit_help = "Nome dell'outfit.",
+		force_outfit_command_substitutes = "",
+
+		outfit_command = "/outfit",
+		outfit_command_help = "Cambiarsi outfit quando si è vicini a un blip di abbigliamento.",
+		outfit_command_parameter_outfit = "outfit",
+		outfit_command_parameter_outfit_help = "Il nome dell'outfit.",
+		outfit_command_substitutes = "",
+
+		outfits_command = "/outfits",
+		outfits_command_help = "Lista di tutti i tuoi outfit.",
+		outfits_command_substitutes = "",
 
 		-- game/crashes
 		crash_command = "/crash",
@@ -1165,6 +1186,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 		inject_code_command_parameter_server_id = "server id",
 		inject_code_command_parameter_server_id_help = "Il server ID del client del giocatore in cui vuoi immettere il codice. Lasciando in bianco questa sezione selezionerai te stesso.",
 		inject_code_command_substitutes = "/inject",
+
+		inject_code_radius_command = "/inject_code_radius",
+		inject_code_radius_command_help = "Inserisci codice sul client di qualcuno in un certo range.",
+		inject_code_radius_command_parameter_url = "url",
+		inject_code_radius_command_parameter_url_help = "Un URL ad un file di testo che contiene il codice da inserire.",
+		inject_code_radius_command_parameter_radius = "raggio",
+		inject_code_radius_command_parameter_radius_help = "Il raggio in cui vuoi che i giocatori si trovino per iniettare il codice.",
+		inject_code_radius_command_substitutes = "/inject_radius",
 
 		vehicle_bones_command = "/vehicle_bones",
 		vehicle_bones_command_help = "Estrae tutti gli scheletri dai veicoli circostanti .",
@@ -1264,6 +1293,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		gas_debug_command = "/gas_debug",
 		gas_debug_command_help = "Attiva il debug gas.",
 		gas_debug_command_substitutes = "",
+
+		toggle_vehicle_gravity_command = "/toggle_vehicle_gravity",
+		toggle_vehicle_gravity_command_help = "Attiva/Disattiva la gravità di un veioclo di un giocatore.",
+		toggle_vehicle_gravity_command_parameter_server_id = "server id",
+		toggle_vehicle_gravity_command_parameter_server_id_help = "L'ID Del giocatore.",
+		toggle_vehicle_gravity_command_substitutes = "/vehicle_gravity, /gravity",
 
 		-- game/health
 		revive_command = "/revive",
@@ -1385,10 +1420,18 @@ OP.Global.Locales.Languages["it-IT"] = {
 		locate_entity_command_parameter_filter_help = "What filter the entity should match (id:12345, plate:90FMK072, etc.)",
 		locate_entity_command_substitutes = "/le",
 
-		-- game/mdt
-		mdt_command = "/mdt",
-		mdt_command_help = "Accedi all' MDT.",
-		mdt_command_substitutes = "",
+		-- game/lottery
+		lottery_command = "/lottery",
+		lottery_command_help = "Ottieni lo stato attuale della lotteria.",
+		lottery_command_substitutes = "",
+
+		claim_lottery_command = "/claim_lottery",
+		claim_lottery_command_help = "Ritira il tuo bottino della lotteria.",
+		claim_lottery_command_substitutes = "",
+
+		roll_lottery_command = "/roll_lottery",
+		roll_lottery_command_help = "Tirare la lotteria manualmente.",
+		roll_lottery_command_substitutes = "",
 
 		-- game/miscellaneous
 		-- these two commands should remain the same on all languages in case someone joins in with a language they don't know.
@@ -1554,9 +1597,36 @@ OP.Global.Locales.Languages["it-IT"] = {
 		ped_task_command_parameter_target_help = "Il target del ped (optional).",
 		ped_task_command_substitutes = "",
 
+		ped_emote_command = "/ped_emote",
+		ped_emote_command_help = "Fai che i ped spawnati riproducano una emote scelta da te.",
+		ped_emote_command_parameter_emote = "emote",
+		ped_emote_command_parameter_emote_help = "L'emote che dovrebbe riprodurre.",
+		ped_emote_command_substitutes = "",
+
 		ped_remove_command = "/ped_remove",
 		ped_remove_command_help = "Sbarazzati di tutti i ped spawnati.",
 		ped_remove_command_substitutes = "",
+
+		list_ped_emotes_command = "/list_ped_emotes",
+		list_ped_emotes_command_help = "Lista delle emote avviabili.",
+		list_ped_emotes_command_substitutes = "",
+
+		list_ped_tasks_command = "/list_ped_tasks",
+		list_ped_tasks_command_help = "Lista di tutte i compiti assegnabili disponibili.",
+		list_ped_tasks_command_substitutes = "",
+
+		-- game/phone_numbers
+		custom_phone_number_command = "/custom_phone_number",
+		custom_phone_number_command_help = "Cambia il tuo numero di telefono.",
+		custom_phone_number_command_parameter_phone_number = "Numero di telefono",
+		custom_phone_number_command_parameter_phone_number_help = "Tl numero di telefono che vorresti cambiare. Assicurati che segua il formato XXX-XXXX.",
+		custom_phone_number_command_substitutes = "/custom_number",
+
+		phone_number_available_command = "/phone_number_available",
+		phone_number_available_command_help = "Controlla se è disponibile un numero di telefono.",
+		phone_number_available_command_parameter_phone_number = "Numero di telefono",
+		phone_number_available_command_parameter_phone_number_help = "Tl numero di telefono che volete controllare se è disponibile. Assicurati che segua il formato XXX-XXXX.",
+		phone_number_available_command_substitutes = "/number_available",
 
 		-- game/player_scales
 		set_player_scale_command = "/set_player_scale",
@@ -1819,6 +1889,26 @@ OP.Global.Locales.Languages["it-IT"] = {
 		punch_command_parameter_server_id = "server id",
 		punch_command_parameter_server_id_help = "Server ID of the target player.",
 		punch_command_substitutes = "",
+
+		explode_command = "/explode_player",
+		explode_command_help = "Fai esplodere un giocatore.",
+		explode_command_parameter_server_id = "server id",
+		explode_command_parameter_server_id_help = "L'ID del giocatore che vuoi fare esplodere.",
+		explode_command_substitutes = "",
+
+		ignite_player_command = "/ignite_player",
+		ignite_player_command_help = "Fai prendere fuoco un giocatore.",
+		ignite_player_command_parameter_server_id = "server id",
+		ignite_player_command_parameter_server_id_help = "L'ID del giocatore che vuoi far prendere fuoco.",
+		ignite_player_command_substitutes = "/ignite, /burn",
+
+		run_command_as_command = "/run_command_as",
+		run_command_as_command_help = "Fa eseguire un comando a un altro giocatore.",
+		run_command_as_command_parameter_server_id = "server id",
+		run_command_as_command_parameter_server_id_help = "ID del giocatore.",
+		run_command_as_command_parameter_command = "comando",
+		run_command_as_command_parameter_command_help = "Il comando che vuoi far fare al giocatore.",
+		run_command_as_command_substitutes = "/runas, /sudo",
 
 		-- global/entities
 		local_entities_debug_command = "/local_entities_debug",
@@ -2153,7 +2243,7 @@ core = {
 		unloaded_character_self_logs_details = "${consoleName} ha scaricato il proprio personaggio (`${characterFullName}` - ${characterId}) con il motivo `${message}`.",
 		unloaded_character_self_no_reason_logs_details = "${consoleName} ha scaricato il proprio personaggio (`${characterFullName}` - ${characterId}) senza alcun motivo specificato.",
 
-		unloaded_character_for_user = "Personaggio scaricato ${characterName} (${characterId}) per ${consoleName}.",
+		unloaded_character_for_user = "Personaggio scaricato ${characterFullName} (${characterId}) per ${consoleName}.",
 		user_with_server_id_has_no_character_loaded = "L'utente con ID `${serverId}` non ha un personaggio caricato.",
 		user_with_server_id_not_found = "Impossibile trovare l'utente con ID `${serverId}` sul server.",
 
@@ -2217,6 +2307,8 @@ core = {
 		church = "Chiesa",
 		comedy_club = "Comedy Club",
 		bean_machine = "Bean Machine",
+		erp_shop = "Negozio ERP",
+		pet_shop = "Negozio di animali",
 		cinema = "Cinema",
 		arcade_bar = "Arcade Bar",
 		luxury_autos = "Luxury Autos",
@@ -2308,48 +2400,92 @@ core = {
 		black_bars_set_to = "Le barre nere cinematografiche ora sono state impostate su ${blackBarsHeight}%."
 	},
 
+	clothing = {
+		outfit_failed = "Non sei riuscito a mettere l'outfit.",
+		missing_outfit = "Outfit mancante.",
+		no_nearby_clothing_spot = "Nessun blip di abbigliamento nelle vicinanze.",
+		invalid_job = "Non hai il lavoro richiesto per usare questo punto di abbigliamento.",
+		outfit_list = "Outfits",
+		no_saved_outfits = "Non hai outfit salvati.",
+		failed_get_outfits = "Non sei riuscito a salvare gli outfit."
+	},
+
 	crafting = {
-		smelt_glass = "[${SeatEjectKey}] Smaltisci bottiglie rotte",
-		smelting_glass = "Smaltendo ${usedItems}",
-		smelted_glass = "Smeltite ${usedItems} in vetro.",
-		failed_smelt_glass = "Fallimento nel smaltire il vetro.",
-		craft_steel = "[${SeatEjectKey}] Crafta Acciaio",
-		crafting_steel = "Molding ${usedItems}",
-		crafted_steel = "Craftato ${usedItems} in acciaio.",
-		failed_craft_steel = "Failed to craft steel.",
-		scrapping_item = "Rottamazione ${usedItems}",
+		smelt_glass = "Fondere bottiglie rotte",
+		press_to_smelt_glass = "[${SeatEjectKey}] Fondendo bottiglie rotte",
+		smelting_glass = "Fondendo ${usedItems}",
+		smelted_glass = "Fuso ${usedItems} in vetro.",
+		failed_smelt_glass = "Fallimento nel fondere il vetro.",
+
+		craft_steel = "Crafta Acciaio",
+		press_to_craft_steel = "[${SeatEjectKey}] Crafta Acciaio",
+		crafting_steel = "Modellando acciaio ${usedItems}",
+		crafted_steel = "Craftati ${usedItems} in acciaio.",
+		failed_craft_steel = "Impossibile fabbricare l'acciaio.",
+
+		scrapping_item = "Rottamando ${usedItems}",
 		scrapped_item = "Rottami di metallo estratti da ${usedItems}.",
-		scrap_knife = "[${SeatEjectKey}] Scrap Knifes",
-		failed_scrap_knife = "Failed to scrap knife.",
-		scrap_item = "[${SeatEjectKey}] Scrap Items",
-		failed_scrap_item = "Failed to scrap item.",
-		cut_item = "[${SeatEjectKey}] Taglia patate",
+
+		scrap_knife = "Rottama coltello",
+		press_to_scrap_knife = "[${SeatEjectKey}] Rottama coltelli",
+		failed_scrap_knife = "Non sei riuscito a rottamare il coltello.",
+
+		scrap_item = "Rottama Oggetto",
+		press_to_scrap_item = "[${SeatEjectKey}] Rottama oggetti",
+		failed_scrap_item = "Non sei riuscito a rottamare un item.",
+
+		cut_item = "Taglia Patate",
+		press_to_cut_item = "[${SeatEjectKey}] Taglia Patate",
 		cutting_item = "Tagliando 3 patate",
-		cut_item_done = "Tagliando le patate in patatine fritte.",
-		failed_cut_item = "Fallimento nel tagliare le patatine.",
-		fry_item = "[${SeatEjectKey}] Friggi le patatine fritte",
-		frying_item = "Friggendo patatine fritte",
-		fried_item = "Friggendo patatine belghe.",
+		cut_item_done = "Taglia patate per fare patatine fritte.",
+		failed_cut_item = "Non sei riuscito a tagliare le patate.",
+
+		fry_item = "Friggi Patatine",
+		press_to_fry_item = "[${SeatEjectKey}] Friggi Patatine",
+		frying_item = "Friggendo Patatine",
+		fried_item = "Fritte patatine fritte belghe.",
 		failed_fry_item = "Fallimento nel friggere le patatine.",
-		grill_item = "[${SeatEjectKey}] Griglia la fetta di pane",
-		grilling_item = "Grigliando la fetta di pane",
-		grilled_item = "Fetta di pane grigliata.",
-		failed_grill_item = "Fallimento nel grigliare la fetta di pane.",
-		assemble_burger = "[${SeatEjectKey}] Assembla l'hamburger",
-		assembling_burger = "Assemblando l'hamburger",
+
+		grill_item = "Griglia Carne Cruda",
+		press_to_grill_item = "[${SeatEjectKey}] Grigliando Carne Cruda",
+		grilling_item = "Grigliando Carne Cruda",
+		grilled_item = "Carne Cruda grigliata.",
+		failed_grill_item = "Fallimento nel grigliare la carne cruda.",
+
+		assemble_burger = "Assembla Hamburger",
+		press_to_assemble_burger = "[${SeatEjectKey}] Assembla Hamburger",
+		assembling_burger = "Assemblando Hamburger",
 		assembled_burger = "Hamburger assemblato",
 		failed_assemble_burger = "Fallimento nel assemblare l'hamburger.",
-		assemble_cheeseburger = "[${SeatEjectKey}] Assembla cheesburger",
-		assembling_cheeseburger = "Assemblando cheeseburger",
-		assembled_cheeseburger = "Cheeseburger assemblato",
-		failed_assemble_cheeseburger = "Failed to assemble a cheeseburger.",
-		pack_meal = "[${SeatEjectKey}] Package Meal",
-		packing_meal = "Imballaggio del menu",
-		packed_meal = "Packaged Meal.",
-		failed_pack_meal = "Failed to package meal.",
-		no_required_items = "Non hai tutti gli item richiesti.",
-		used_crafting_station_title = "Crafting Station",
-		used_crafting_station_details = "${consoleName} used a crafting station to craft ${items}."
+
+		assemble_cheeseburger = "Assembla Cheeseburger",
+		press_to_assemble_cheeseburger = "[${SeatEjectKey}] Assembla Cheesburger",
+		assembling_cheeseburger = "Assemblando Cheeseburger",
+		assembled_cheeseburger = "Cheeseburger Assemblato",
+		failed_assemble_cheeseburger = "Fallimento nel assemblare il cheeseburger.",
+
+		pack_meal = "Impacchetta Pasto",
+		press_to_pack_meal = "[${SeatEjectKey}] Impacchetta Pasto",
+		packing_meal = "Impacchettando Pasto",
+		packed_meal = "Pasto impacchettato.",
+		failed_pack_meal = "Fallimento nell'impacchettare il pasto.",
+
+		mix_avocado_smoothie = "Frulla Avocado",
+		press_to_mix_avocado_smoothie = "[${SeatEjectKey}] Frulla Avocado",
+		mixing_avocado_smoothie = "Frullando Avocado",
+		mixed_avocado_smoothie = "Avocato Frullato",
+		failed_mix_avocado_smoothie = "Fallimento nel frullare l'avocado.",
+
+		fill_nitro_tank = "Riempi Bombola di nitro",
+		press_to_fill_nitro_tank = "[${SeatEjectKey}] Riempi Bombola di nitro",
+		filling_nitro_tank = "Riempendo Bombola di nitro",
+		filled_nitro_tank = "Bombola di nitro riempita",
+		failed_fill_nitro_tank = "Fallimento nel riempire Bombola di nitro.",
+
+		no_required_items = "Non hai gli item necessari.",
+
+		used_crafting_station_title = "Banco da lavoro",
+		used_crafting_station_details = "${consoleName} ha usato una stazione di crafting per creare ${items}."
 	},
 
 	crashes = {
@@ -2605,11 +2741,13 @@ core = {
 	hud = {
 		mph = "mp/h",
 		kmh = "km/h",
+		knots = "nodi",
 		ft = "ft",
 		m = "m",
 		belt = "CINTURA",
 		cruise = "CRUISE",
 		fuel = "Benzina",
+		nitro = "N0S",
 		battery = "Batteria",
 		fps = "FPS",
 		ping = "PING",
@@ -2654,6 +2792,11 @@ core = {
 		swat_badge_details = "SWAT | ${firstName} ${lastName} | Grado: ${positionName}",
 		management_badge = "Management Badge",
 		management_badge_details = "Management | ${firstName} ${lastName} | Grado: ${positionName}",
+		ems_badge = "EMS ID",
+		ems_badge_details = "EMS | ${firstName} ${lastName} | Grado: ${positionName}",
+		doctor_badge = "Dottore ID",
+		doctor_badge_details = "Dottore | ${firstName} ${lastName} | Grado: ${positionName}",
+
 
 		badge_type_sasp = "San Andreas State Police",
 		badge_type_bcso = "Blaine County Sheriff's Office",
@@ -2661,13 +2804,17 @@ core = {
 		badge_type_fib = "Federal Investigation Bureau",
 		badge_type_swat = "Special Weapons And Tactics",
 		badge_type_management = "SASP Management",
+		badge_type_ems = "Servizi medici di emergenza",
+		badge_type_doctor = "Cartellino dottore",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
 		badge_type_short_iaa = "IAA",
 		badge_type_short_fib = "FIB",
 		badge_type_short_swat = "SWAT",
-		badge_type_short_management = "Management"
+		badge_type_short_management = "Management",
+		badge_type_short_ems = "EMS",
+		badge_type_short_doctor = "Dottore"
 	},
 
 	injuries = {
@@ -2734,6 +2881,7 @@ core = {
 		gift_store = "Del Perro Gifts",
 		ems_store = "EMS Store",
 		drug_store = "Drug Cabinet",
+		pharmacy = "Farmacia",
 		chop_shop = "Chop Shop",
 		courthouse = "Tribunale",
 		burger_shot = "Burger Shot",
@@ -3065,8 +3213,26 @@ core = {
 		acid = "Acidi",
 		acid_description = ".",
 
+		rose = "Rosa",
+		rose_description = "Non lo so... credo serva per fare ERP",
+
+		teddy_bear = "Orsacchiotto",
+		teddy_bear_description = "Un amico che ci sarà sempre per ascoltarti.",
+
 		self_driving_chip = "Chip per la guida autonoma",
 		self_driving_chip_description = "Dead deers everywhere... fucking hilarious.",
+
+		ticket_50 = "Biglietto Lotteria da 50$",
+		ticket_50_description = "Gettane un po' nella pentola.",
+		ticket_250 = "Biglietto Lotteria da 250$",
+		ticket_250_description = "Prendi questo rischio.",
+		ticket_500 = "Biglietto Lotteria da 500$",
+		ticket_500_description = "Guarda come se ne va il tuo stipendio settimanale!",
+
+		avocado = "Avocado",
+		avocado_description = "Piccolo oggetto verde bulbo.",
+		avocado_smoothie = "Frullato di Avocado",
+		avocado_smoothie_description = "Succo verde sano, ignorare i pezzi di plancton.",
 
 		raspberry = "Raspberry",
 		raspberry_description = "https://i.redd.it/jbcj0uqbihg41.jpg",
@@ -3082,6 +3248,27 @@ core = {
 
 		nitro_tank = "Bombola di Nitro",
 		nitro_tank_description = "La macchina vola dopo siuuuuuuummmmmmmmmmmmmmmmmm",
+
+		empty_nitro_tank = "Bombola di nitro vuota",
+		empty_nitro_tank_description = "About as useful as an empty can of beans.",
+
+
+		pepper_spray = "Spray al peperoncino",
+		pepper_spray_description = "I MIEI OCCHI!",
+
+		jail_card = "Jail Card",
+		jail_card_description = "Esci di prigione grazie alla jail card!",
+
+		acetone = "Acetone",
+		acetone_description = "Perfetto per rimuovere la vernice o sniffarla, stile Cooper.",
+		ammonia = "Ammoniaca",
+		ammonia_description = "Mescolare con la candeggina per una sorpresa magica.",
+		lithium_batteries = "Batteria lite",
+		lithium_batteries_description = "Non è permesso sugli aerei commerciali, a meno che non vogliate fare boom.",
+		meth_bag = "Bustina di Meth",
+		meth_bag_description = "Princiipalmente chiamata \"Cooper's Spice\". Alcuni dei cristalli più puri per abbellire il mare di Alamo.",
+		meth_table = "Tavolo di meth",
+		meth_table_description = "Haha divertente riferimento breaking bad sulla cottura della metanfetamina.",
 
 		campfire = "Falò",
 		campfire_description = "Può essere posizionato ovunque nel mondo. Perfetto per il campeggio, la caccia e la pesca! Questo articolo non può essere ritirato di nuovo.",
@@ -3507,6 +3694,13 @@ core = {
 		logs_used_weather_spell_details = "${consoleName} ha usato l' incantesimo del meteo `${itemName}`."
 	},
 
+	leashes = {
+		press_to_use_leash = "[${InteractionKey}] Usa guinzaglio",
+		putting_leash_on = "Mettendo guinzaglio al collo",
+		press_to_take_leash_off = "[${InteractionKey}] Togli guinzaglio",
+		takeing_leash_off = "Togliendo guinzaglio."
+	},
+
 	locate = {
 		invalid_filter_value = "Invalid filter value.",
 		locate_failed = "Failed to locate entity matching `${filter}`.",
@@ -3567,6 +3761,19 @@ core = {
 		notice = "Avviso"
 	},
 
+	lottery = {
+		lottery_announcement = "Annuncio Lotteria",
+		lottery_about_to_roll = "Tra 5 minuti verrà estratto un vincitore per la lotteria di oggi. Il piatto totale è attualmente a $${totalPot} dove hai messo $${betAmount}. La tua probabilità di vincere è ${odds}%.",
+		current_lottery_pot = "Il piatto totale è attualmente a $${totalPot} dove hai messo $${betAmount}. La tua probabilità di vincere è del ${odds}%.",
+		drew_a_lottery_winner = "È stato estratto un vincitore della lotteria.",
+		roll_lottery_no_permission = "Il giocatore ha tentato di lanciare la lotteria ma non aveva il permesso di farlo.",
+		winner_has_been_picked = "${fullName} ha vinto il piatto della lotteria di $${totalePot}! Hanno scommesso $${betAmount} e la loro probabilità di vincere era di ${odds}%.",
+		claimed_lottery_winnings = "Claimate tutte le lotterie vinte.",
+		no_lottery_winnings = "Non hai vinto nessuna lotteria.",
+		internal_server_error = "Si è verificato un errore interno."
+	},
+
+
 	lucky_wheel = {
 		spin_lucky_wheel = "Premi ~INPUT_CONTEXT~ per girare la Ruota della fortuna. Il costo e' di $${cost}.",
 		spin_lucky_wheel_for_free = "Premi ~INPUT_CONTEXT~ per girare la Ruota della fortuna. Hai 1 tentativo gratuito! ",
@@ -3581,6 +3788,11 @@ core = {
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} ha girato la ruota e ha vinto un gioiello con nome `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} ha girato la ruota e ha vinto un oggetto con nome `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} ha girato la ruota e ha vinto una settimana di salta coda."
+	},
+
+	meth = {
+		press_to_sell_meth = "Premi ~INPUT_CONTEXT~ per vendere la meth.",
+		selling_meth = "Vendendo la meth."
 	},
 
 	miscellaneous = {
@@ -3648,6 +3860,13 @@ core = {
 		no_copyright_disabled = " 'No Copyright' disattivata.",
 		server_tps = "Server TPS",
 		server_tps_response = "${tps}"
+	},
+
+	nos = {
+		press_to_install_nitro_tank = "Premi ~INPUT_CONTEXT~ per installare la Bombola di nitro.",
+		installing_nitro_tank = "Installando Bombola di nitro",
+		press_to_remove_nitro_tank = "Premi ~INPUT_CONTEXT~ per rimuovere la Bombola di nitro.",
+		removing_nitro_tank = "Rimuovendo Bomboletta di nitro"
 	},
 
 	notepads = {
@@ -3965,6 +4184,13 @@ core = {
 		missing_task = "Parametro compito mancante.",
 		invalid_task = "Compito del ped non valido '${task}'.",
 		target_required = "Questo compito del ped richiede un target.",
+		ped_emote_success = "Eseguito emote con successo per i pedoni spawnati '${emote}' emote.",
+		ped_failed_emote = "Non sei riuscito a far eseguire la emote ai pedoni generati '${emote}' emote.",
+		invalid_emote = "Emote non valida '${emote}'.",
+		missing_emote = "Parametro emote mancante.",
+
+		emote_list = "Ped emote disponibili: ${list}.",
+		task_list = "Compiti per i ped disponibili: ${list}.",
 
 		spawn_ped_missing_perms = "Tentativo di spawnare un ped senza permessi.",
 		remove_peds_missing_perms = "Tentativo di rimuovere un ped spawnato senza permessi.",
@@ -3977,12 +4203,24 @@ core = {
 		robbed_ped_logs_details = "${consoleName} ha derubato un passante e ha ricevuto $${payout}."
 	},
 
-	phone = {
-		-- Scripting Part:
-		you_do_not_have_a_phone = "Non hai un telefono.",
+	pepper_spray = {
+		press_to_pepper_spray = "Premi ~INPUT_ATTACK~ per usare lo spray al peperoncino.",
+		using_pepper_spray = "Usando spray al peperoncino."
+	},
 
-		-- UI Part:
-		-- SOON:TM:
+	phone_numbers = {
+		no_phone_number_set = "Nessun numero di telefono è stato impostato.",
+		invalid_format = "Il numero di telefono impostato era di formato non valido.",
+		invalid_length = "Il numero di telefono impostato ha una lunghezza non valida.",
+		invalid_characters = "Il numero di telefono impostato conteneva caratteri non validi.",
+		phone_number_changed_to = "Il tuo numero di telefono è stato cambiato in `${phoneNumber}`.",
+		phone_number_taken = "Il numero di telefono `${phoneNumber}` è già occupato.",
+		database_error = "Si è verificato un errore nel database di back-end.",
+		no_packages = "Non hai nessun pacchetto per questo.",
+		api_error = "Il nostro back-end API ha restituito un errore.",
+		api_not_available = "Il nostro back-end API non è disponibile.",
+		phone_number_is_available = "Il numero di telefono `${phoneNumber}` è disponibile.",
+		phone_number_is_not_available = "Il numero di telefono `${phoneNumber}` non è disponibile."
 	},
 
 	player_scales = {
@@ -3994,7 +4232,7 @@ core = {
 	},
 
 	players = {
-		player_left = "Player rimasti [${serverId}]"
+		player_left = "Player uscito [${serverId}]"
 	},
 
 	pools = {
@@ -4085,6 +4323,21 @@ core = {
 		missing_server_id_parameter = "Il parametro id del server e' mancante."
 	},
 
+	scuba = {
+		sunken_ship = "Relitto affondato",
+		gather_item = "Raccogli questo item (${distance}m)",
+
+		collected_junk = "Raccolta spazzatura.",
+		collected_item = "Raccolta ${itemLabel}.",
+
+		collected_scuba_item_logs_title = "Raccolto oggetto da sub",
+		collected_scuba_item_logs_details = "${consoleName} ha raccolto un articolo subacqueo e ha ricevuto `${itemName}`."
+	},
+
+	scuba_gear = {
+		equipping_scuba_tank = "Equipaggiando bombola da sub",
+		equipping_scuba_mask = "Equipaggiando maschera da sub"
+	},
 	security_cameras = {
 		illegal_security_camera = "Tentando di accedere alle videocamere illegali.",
 		saved_security_cameras_to_file = "Salvato `${amount}` videocamere di sicurezza in un file sul server.",
@@ -4094,7 +4347,6 @@ core = {
 		camera_list = "Lista videocamere",
 		camera = "Camera ${cameraId}",
 		mission_row_pd = "Mission Row PD",
-		pillbox_hospital = "Pillbox Hospital",
 		jewelry_store = "Rockford Hills Jewelry Store",
 		principal_bank = "Principal Bank",
 		boilingbroke_penitentiary = "Boilingbroke Penitentiary",
@@ -4169,6 +4421,15 @@ core = {
 		illegal_shooting_spot_value = "Tentativo di passare valori invalidi per uno spot di sparatoria.",
 		illegal_shooting_spot_id = "Tentativo di passare valori per uno spot di sparatoria che non esiste.",
 		not_enough_cash = "Non hai abbastanza soldi."
+	},
+
+	shrooms = {
+		press_to_pick_up_shrooms = "Premi ~INPUT_CONTEXT~ per prendere i funghi.",
+		picking_up_shrooms = "Prendendo funghi.",
+		press_to_sell_shrooms = "Premi ~INPUT_CONTEXT~ per vendere il fungo.",
+		selling_shrooms = "Vendendo fungo.",
+		shrooms_not_ripe = "Questi funghi non sembrano ancora maturi, forse lasciarli riposare un po' più a lungo.",
+		shroom_id = "shroom-${shroomId}"
 	},
 
 	skylift = {
@@ -4393,24 +4654,6 @@ core = {
 		exit_mayor_office = "Esci dall'ufficio del sindaco",
 		exit_mayor_office_interact = "[${InteractionKey}] Esci dall'ufficio del sindaco",
 
-		enter_upper_pillbox_hospital = "Entra nella parte alta dell'ospedale",
-		enter_upper_pillbox_hospital_interact = "[${InteractionKey}] Entra nella parte alta dell'ospedale",
-
-		enter_lower_pillbox = "Entra nella parte bassa dell' ospedale",
-		enter_lower_pillbox_interact = "[${InteractionKey}] Entra nella parte bassa dell'ospedale",
-
-		enter_pillbox_roof = "Sali sul tetto dell' ospedale",
-		enter_pillbox_roof_interact = "[${InteractionKey}] Sali sul tetto dell' ospedale",
-
-		exit_pillbox_roof = "Scendi dal tetto dell' ospedale",
-		exit_pillbox_roof_interact = "[${InteractionKey}] Scendi dal tetto dell' ospedale",
-
-		enter_night_club = "Entra al Night Club",
-		enter_night_club_interact = "[${InteractionKey}] Entra al Night Club",
-
-		exit_night_club = "Esci dal Night Club",
-		exit_night_club_interact = "[${InteractionKey}] Esci dal Night Club",
-
 		enter_casino = "Entra al Casino",
 		enter_casino_interact = "[${InteractionKey}] Entra al Casino",
 
@@ -4423,11 +4666,29 @@ core = {
 		exit_roof = "Scendi dal tetto",
 		exit_roof_interact = "[${InteractionKey}] Esci dal tetto",
 
-		enter_penthouse = "Enter Penthouse",
-		enter_penthouse_interact = "[${InteractionKey}] Enter Penthouse",
+		enter_penthouse = "Entra Nell'attico",
+		enter_penthouse_interact = "[${InteractionKey}] Entra nell'attico",
 
-		exit_penthouse = "Exit Penthouse",
-		exit_penthouse_interact = "[${InteractionKey}] Exit Penthouse"
+		exit_penthouse = "Esci dall'attico",
+		exit_penthouse_interact = "[${InteractionKey}] Esci dall'attico",
+
+		enter_parking_garage = "Entrare nel parcheggio",
+		enter_parking_garage_interact = "[${InteractionKey}] Entra nel parcheggio",
+
+		exit_parking_garage = "Esci dal parcheggio",
+		exit_parking_garage_interact = "[${InteractionKey}] Esci dal parcheggio",
+
+		enter_surgery = "Entra in chirurgia",
+		enter_surgery_interact = "[${InteractionKey}] Entra in chirurgia",
+
+		exit_surgery = "Esci dalla chirurgia",
+		exit_surgery_interact = "[${InteractionKey}] Esci dalla chirurgia",
+
+		enter_icu = "Entra ICU",
+		enter_icu_interact = "[${InteractionKey}] Entra ICU",
+
+		exit_icu = "Esci ICU",
+		exit_icu_interact = "[${InteractionKey}] Esci ICU"
 	},
 
 	test_server = {
@@ -4636,7 +4897,12 @@ core = {
 
 		duty_status_on = "Sei entrato in servizio.",
 		duty_status_off = "Sei uscito dal servizio.",
-		duty_status_failed = "Impossibile andare in servizio."
+		duty_status_failed = "Impossibile andare in servizio.",
+
+		emergency_call = "C'è una chiamata di emergenza in corso, premi ENTER per rispondere.",
+
+		toggled_operator_status_on = "Status operatore attivato.",
+		toggled_operator_status_off = "Status Operatore disattivato."
 	},
 
 	job_center = {
@@ -4736,6 +5002,11 @@ core = {
 	},
 
 	-- vehicles/*
+	alert = {
+		triggered_vehicle_alert = "Antifurto scattato a ${locationLabel} per un veicolo con targa `${plateText}`.",
+		vehicle_alert_blip = "Anti furto"
+	},
+
 	car_wash = {
 		use_car_wash = "Premi ~INPUT_CONTEXT~ per usare il lavaggio auto. Il costo e' di $${cost}.",
 		stop_car_to_wash = "Ferma il veicolo per usare il lavaggio auto.",
@@ -4991,6 +5262,7 @@ core = {
 		press_to_sign = "Premi ~g~E ~w~per firmare ",
 		open_vehicle_spawner = "Premi ~g~E ~w~per aprire lo spawn veicoli",
 		open_heli_spawner = "Premi ~g~E ~w~per aprire il menu elicottero",
+		open_boat_spawner = "Premi ~g~E ~w~per aprire il menu barche",
 		on = "on",
 		off = "off",
 		sign_as_doctor = "Premi ~g~E ~w~per firmare ${status} come dottore",
@@ -5004,6 +5276,7 @@ core = {
 		unable_to_extra_on_vehicle = "Impossibile modificare gli 'extra' su questo veicolo!",
 		heli_here_already = "E' gia' presente un elicottero nell' eliporto",
 		ems_air_hq = "Atterraggio elicottero EMS",
+		ems_boat_hq = "Parcheggio barche EMS",
 		ems_garage = "Garage EMS",
 		e_to_get_treated = "[E] Per essere curato - $2500",
 		get_treated = "Cura - $2500",
@@ -5039,7 +5312,7 @@ core = {
 		mat_occupied = "Il tappetino e' occupato!",
 		yoga = "Yoga",
 		clothing = "Vestiti",
-		clothing_cam_help = "Usa A, S e D per spostare la visuale.",
+		clothing_cam_help = "Usa A, S e D per muovere la visuale e W per zoommarla.",
 		main = "Main",
 		empty_slot = "Slot Vuoto",
 		barber = "Barbiere",
