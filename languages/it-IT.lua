@@ -775,7 +775,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		nitro_boost_command_help = "Attiva 'nitro boost'.",
 		nitro_boost_command_parameter_server_id = "server id",
 		nitro_boost_command_parameter_server_id_help = "ID della persona che vuole attivare il nitro boot.",
-		nitro_boost_command_substitutes = "nitro",
+		nitro_boost_command_substitutes = "",
 
 		indestructibility_command = "/indestructibility",
 		indestructibility_command_help = "Attiva 'indestructibility'.",
@@ -3147,7 +3147,8 @@ core = {
 
 		boxing_glove = "Guanti da box",
 		boxing_glove_description = "Ti fa diventare Rocky, ma probabilmente non avrai un seguito...",
-		leash = "Leash",
+
+		leash = "Guinzaglio",
 		leash_description = "Nessuno saprà perché l'hai comprato, ma di sicuro ti giudicheranno per averlo.",
 
 		shrooms = "Funghi",
@@ -3173,7 +3174,8 @@ core = {
 
 		thermite = "Termite",
 		thermite_description = "Cos'è questo?",
-		fake_plate = "Piatto falso",
+
+		fake_plate = "Targa Falsa",
 		fake_plate_description = "Hehe Vaffanculo gli sbirri, non mi prenderanno.",
 		evidence_bag_empty = "Borsa delle prove vuota",
 		evidence_bag_empty_description = "Puoi migliorarlo?",
@@ -3207,7 +3209,7 @@ core = {
 		weather_spell_thunder = "Weather Spell (Thunder)",
 		weather_spell_thunder_description = "Using this item will let you temporarily control the weather and make a thunderstorm! It is a one-time use, so use with care. If you use two weather spells at once, they second one will simply queue up.",
 
-		zombie_pill = "Pillola zombie",
+		zombie_pill = "Pillola sconsciuta",
 		zombie_pill_description = "Una pillola strana che fa anche cose strane....",
 
 		acid = "Acidi",
