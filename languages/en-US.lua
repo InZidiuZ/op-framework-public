@@ -37,6 +37,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		boombox_already_in_trunk = "There is already a boombox in the trunk.",
 		the_trunk_is_occupied = "The trunk is occupied.",
 		unable_to_toggle_carry = "Please wait a bit before toggling the carry.",
+		carry_disabled_animal = "Animal Peds cannot carry.",
 
 		you_are_not_being_carried = "You are currently not being carried.",
 		successfully_uncarried = "Force stopped carry successfully.",
@@ -317,6 +318,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		teleport_to_coordinates_not_staff = "The player attempted to teleport to some coordinates but they were not staff.",
 		teleport_to_waypoint_not_staff = "The player attempted to teleport to a waypoint but they were not staff.",
 
+		failed_isolate = "Failed to isolate player.",
+		invalid_server_id = "Invalid server id.",
+		isolate_success_on = "Successfully isolated ${consoleName}.",
+		isolate_success_off = "Successfully stopped isolating ${consoleName}.",
+
+		isolate_missing_permissions = "Player attempted to isolate another player without proper permissions.",
+
 		population_density_set_to = "The population density multiplier override has been set to ${multiplierLabel}%.",
 		population_density_set_off = "The population density multiplier override has been turned off.",
 		population_density_is_not_on = "The population density multiplier override is not on.",
@@ -338,6 +346,11 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		you_are_not_in_a_vehicle = "You are not in a vehicle.",
 		repaired_vehicle = "Repaired vehicle.",
+
+		success_nos_refill = "Successfully refilled NOS.",
+		failed_nos_refill = "Failed to refill NOS.",
+
+		refill_nitro_missing_permissions = "Player attempted to refill their NOS but they were not a super admin.",
 
 		vehicle_smoke_invalid_class = "Vehicle smoke cannot be enabled for this vehicle class.",
 
@@ -392,7 +405,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		not_in_interior = "You are not in an interior.",
 		interior_id = "Interior ID is ${interiorId}.",
 
-		auto_driving_engaged = "Auto driving has been engaged.",
+		auto_driving_engaged = "Auto driving has been engaged (Style: ${style}).",
 		auto_driving_updated = "Auto driving speed/location has been updated.",
 		auto_driving_disengaged = "Auto driving has been disengaged.",
 
@@ -917,6 +930,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		tp_waypoint_command_help = "Teleport to your set waypoint.",
 		tp_waypoint_command_substitutes = "/tp_marker, /tp",
 
+		isolate_player_command = "/isolate_player",
+		isolate_player_command_help = "Isolates a player, rejecting anything they try to do.",
+		isolate_player_command_parameter_server_id = "server id",
+		isolate_player_command_parameter_server_id_help = "The target player.",
+		isolate_player_command_substitutes = "/isolate",
+
 		population_density_command = "/population_density",
 		population_density_command_help = "Override the global population density multiplier.",
 		population_density_command_parameter_multiplier = "multiplier",
@@ -985,6 +1004,8 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		auto_drive_command = "/auto_drive",
 		auto_drive_command_help = "Automatically drives you to the set waypoint or drives around randomly if none is set.",
+		auto_drive_command_parameter_style = "style",
+		auto_drive_command_parameter_style_help = "Driving style (normal, rushed, reckless, reverse).",
 		auto_drive_command_substitutes = "",
 
 		toggle_weapon_attachment_command = "/toggle_weapon_attachment",
@@ -1014,6 +1035,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_durability_command_parameter_amount = "amount",
 		set_durability_command_parameter_amount_help = "The durability amount to set (default is 100).",
 		set_durability_command_substitutes = "/durability",
+
+		refill_nitro_command = "/refill_nitro",
+		refill_nitro_command_help = "Refills your cars nitro tank.",
+		refill_nitro_command_substitutes = "",
 
 		advanced_metagame_command = "/advanced_metagame",
 		advanced_metagame_command_help = "Superadmin command to help you take your metagaming to the next level.",
@@ -1468,6 +1493,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		roll_lottery_command = "/roll_lottery",
 		roll_lottery_command_help = "Roll the lottery manually.",
 		roll_lottery_command_substitutes = "",
+
+		-- game/mechanics
+		check_vehicle_upgrades_command = "/check_vehicle_upgrades",
+		check_vehicle_upgrades_command_help = "Checks if the nearby vehicle has an engine 5 upgrade.",
+		check_vehicle_upgrades_command_substitutes = "/check_upgrades, /upgrades",
 
 		-- game/miscellaneous
 		-- these two commands should remain the same on all languages in case someone joins in with a language they don't know.
@@ -2524,6 +2554,30 @@ OP.Global.Locales.Languages["en-US"] = {
 		filled_nitro_tank = "Filled Nitro Tank",
 		failed_fill_nitro_tank = "Failed to fill nitro tank.",
 
+		craft_sheet_metal = "Craft Sheet Metal",
+		press_to_craft_sheet_metal = "[${SeatEjectKey}] Craft Sheet Metal",
+		crafting_sheet_metal = "Crafting Sheet Metal",
+		crafted_sheet_metal = "Crafted sheet metal.",
+		failed_craft_sheet_metal = "Failed to craft sheet metal.",
+
+		craft_empty_tank = "Assemble Empty Tank",
+		press_to_craft_empty_tank = "[${SeatEjectKey}] Assemble Empty Tank",
+		crafting_empty_tank = "Assembling Empty Tank",
+		crafted_empty_tank = "Assembled empty tank.",
+		failed_craft_empty_tank = "Failed to assemble empty tank.",
+
+		craft_valve = "Assemble Valve",
+		press_to_craft_valve = "[${SeatEjectKey}] Assemble Valve",
+		crafting_valve = "Assembling Valve",
+		crafted_valve = "Assembled valve.",
+		failed_craft_valve = "Failed to assemble valve.",
+
+		craft_nitro_tank = "Assemble Nitro Tank",
+		press_to_craft_nitro_tank = "[${SeatEjectKey}] Assemble Nitro Tank",
+		crafting_nitro_tank = "Assembling Nitro Tank",
+		crafted_nitro_tank = "Assembled nitro tank.",
+		failed_craft_nitro_tank = "Failed to assemble nitro tank.",
+
 		no_required_items = "You don't have all the required items.",
 
 		used_crafting_station_title = "Crafting Station",
@@ -2839,6 +2893,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		ground_asl = "AGL/ASL (${unit})",
 		gear = "gear",
 		rpm = "rpm",
+		degrees = "°C",
 
 		advanced_hud_on = "Toggled the advanced hud on.",
 		advanced_hud_off = "Toggled the advanced hud off."
@@ -2956,6 +3011,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		tool_store = "Tool Store",
 		gun_store = "Ammu-Nation",
 		gun_store_with_shooting_range = "Ammu-Nation with Range",
+		green_wonderland = "Green Wonderland",
 		bar = "Bar",
 		strip_club = "Strip Club",
 		police_store = "Police Store",
@@ -2965,6 +3021,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		gift_store = "Del Perro Gifts",
 		ems_store = "EMS Store",
 		drug_store = "Drug Cabinet",
+		ems_badge_store = "EMS Badge Desk",
 		pharmacy = "Pharmacy",
 		chop_shop = "Chop Shop",
 		courthouse = "Courthouse",
@@ -3097,7 +3154,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		watch = "Watch",
 		watch_description = "No time for caution.",
 		compass = "Compass",
-		compass_description = "He's left! Left, left, left you idiot!",
+		compass_description = "43.3068 N 0.7668 W",
 
 		basic_repair_kit = "Basic Repair Kit",
 		basic_repair_kit_description = "It makes stuff work, but just barely.",
@@ -3342,6 +3399,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		battering_ram = "Battering Ram",
 		battering_ram_description = "Take those doors to slam town!",
 
+		trading_card = "Trading Card",
+		trading_card_description = "A collectible trading card, gotta get em all!",
+
+		trading_card_pack = "Trading Cards Pack",
+		trading_card_pack_description = "A pack of 3 random trading cards, let's get some good pulls.",
+
 		boombox = "Boombox",
 		boombox_description = "Play music and be obnoxious anywhere, any time!",
 
@@ -3354,20 +3417,36 @@ OP.Global.Locales.Languages["en-US"] = {
 		empty_nitro_tank = "Empty Nitro Tank",
 		empty_nitro_tank_description = "About as useful as an empty can of beans.",
 
+		sheet_metal = "Sheet Metal",
+		sheet_metal_description = "Perfect for upgrading your 2x2.",
+
+		valve = "Valve",
+		valve_description = "Half Life 3 When?",
+
+		empty_tank = "Empty Tank",
+		empty_tank_description = "No longer contains propane or propane accessories.",
+
 		pepper_spray = "Pepper Spray",
 		pepper_spray_description = "MY EYES!",
 
 		jail_card = "Jail Card",
 		jail_card_description = "Get out of jail card!",
 
+		vape = "Geek Bar",
+		vape_description = "Trying to look cool? Tired of being a pussy? Take a hit bwo!",
+
 		acetone = "Acetone",
 		acetone_description = "Perfect for removing paint or huffing it, Cooper style.",
+
 		ammonia = "Ammonia",
 		ammonia_description = "Mix with bleach for a magical surprise.",
+
 		lithium_batteries = "Lithium Batteries",
 		lithium_batteries_description = "Not allowed on commercial aircraft, unless you wanna go boom.",
+
 		meth_bag = "Meth Bag",
 		meth_bag_description = "Nicknamed \"Cooper's Spice\". Some of the purest crystal to grace the Alamo Sea.",
+
 		meth_table = "Meth Table",
 		meth_table_description = "Haha funny breaking bad reference about cooking meth.",
 
@@ -3899,6 +3978,35 @@ OP.Global.Locales.Languages["en-US"] = {
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} has spun the wheel and won jewelry with the name of `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} has spun the wheel and won an item with the name of `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} has spun the wheel and won one week of queue priority."
+	},
+
+	mechanics = {
+		move_here_check = "Move here to check for upgrades",
+		checking_upgrades = "Checking Vehicle Upgrades",
+		upgrades_list = "${engine}, ${breaks}, ${transmission} and ${turbo}.",
+
+		has_no_turbo = "has no turbo installed",
+		has_turbo = "has a turbo installed",
+
+		breaks_0 = "Stock Brakes",
+		breaks_1 = "Street Brakes",
+		breaks_2 = "Sport Brakes",
+		breaks_3 = "Race Brakes",
+
+		transmission_0 = "Stock Transmission",
+		transmission_1 = "Street Transmission",
+		transmission_2 = "Sport Transmission",
+		transmission_3 = "Race Transmission",
+
+		engine_0 = "Stock Engine",
+		engine_1 = "Engine EMS Level 2",
+		engine_2 = "Engine EMS Level 3",
+		engine_3 = "Engine EMS Level 4",
+		engine_4 = "Engine EMS Level 5",
+
+		no_nearby_vehicle = "No nearby vehicle.",
+		already_checking_upgrades = "You are already checking a vehicles tunes.",
+		engine_is_running = "The vehicles engine is running."
 	},
 
 	meth = {
@@ -4824,7 +4932,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		enter_icu_interact = "[${InteractionKey}] Enter ICU",
 
 		exit_icu = "Exit ICU",
-		exit_icu_interact = "[${InteractionKey}] Exit ICU"
+		exit_icu_interact = "[${InteractionKey}] Exit ICU",
+
+		enter_second_floor = "Enter Second Floor",
+		enter_second_floor = "[${InteractionKey}] Enter Second Floor",
+
+		exit_second_floor = "Exit Second Floor",
+		exit_second_floor_interact = "[${InteractionKey}] Exit Second Floor"
 	},
 
 	test_server = {
@@ -4856,6 +4970,49 @@ OP.Global.Locales.Languages["en-US"] = {
 		department_park_rangers = "Ranger",
 		department_medical = "EMS",
 		department_doctor = "Doctor"
+	},
+
+	trading_cards = {
+		access_store = "[${InteractionKey}] Access Store",
+
+		buy_pack = "Buy ${packName}",
+		store_title = "Card Store",
+
+		successfully_bought_pack = "Successfully bought trading card pack",
+		failed_buy_pack = "Failed to buy pack. Do you have enough money?",
+
+		just_showed_trading_cards = "You just showed a Trading Card. Please wait a bit.",
+
+		unpack_successfull = "Successfully open this pack.",
+		failed_unpack = "Failed to open this pack.",
+		failed_unpack_no_cards = "Failed to open this pack. There are no available trading cards.",
+
+		edition = "Edition",
+		rarity = "Rarity",
+
+		rarity_bronze = "Bronze",
+		rarity_silver = "Silver",
+		rarity_gold = "Gold",
+		rarity_holo = "Holo",
+		rarity_foil = "Foil",
+		rarity_relic = "Relic",
+		rarity_headache = "Headache",
+		rarity_missprint = "Missprint",
+		rarity_ethereal = "Ethereal",
+		rarity_promotional = "Promotional",
+
+		rarity_custom = "Custom",
+
+		press_to_access_buyback = "Press ~INPUT_CONTEXT~ to access the card buyback.",
+		buyback_title = "Trading Card Buyback",
+		close_menu = "Close Menu",
+		sell_cards = "Sell all ${rarity} cards",
+
+		failed_selling = "Failed to sell cards.",
+		no_cards_of_type = "You don't have any ${rarity} cards.",
+		successfully_sold_cards = "Sold ${amount} ${rarity} card(s) for $${earned}.",
+
+		studio_blip = "945 Studios"
 	},
 
 	training = {
@@ -4905,6 +5062,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		purchased_vehicle = "Purchased ${label} for $${price}.",
 
 		tuner_shop_blip = "Midnight Tunershop"
+	},
+
+	vape = {
+		press_to_use = "Press ~INPUT_CONTEXT~ to take a hit. Press ~INPUT_FRONTEND_CANCEL~ to put vape away."
 	},
 
 	vending_machines = {
@@ -5197,6 +5358,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		body = "Body: ${value}",
 		engine = "Engine: ${value}",
 		petrol_tank = "Tank: ${value}",
+		temperature = "Temperature: ${value}",
 		tracked_vehicle = "Tracked Vehicle",
 
 		debug_vehicle_on = "Toggled vehicle debug on.",
@@ -5316,6 +5478,23 @@ OP.Global.Locales.Languages["en-US"] = {
 		vehicle_id_does_not_exist = "Vehicle ID `${vehicleId}` does not exist.",
 		you_have_no_character_loaded = "You do not have a character loaded.",
 		vehicle_plate_changed = "Changed the plate number of vehicle with ID `${vehicleId}` to `${plateNumber}`."
+	},
+
+	spawner = {
+		press_to_access_spawner = "Press ~INPUT_CONTEXT~ to access the vehicle spawner.",
+
+		parked_vehicle = "Successfully parked vehicle.",
+
+		spawner_burger_shot = "Burgershot Delivery Vehicles",
+		close_menu = "Close Menu",
+		vehicle_list = "Vehicle List",
+		park_vehicle = "Park Vehicle",
+		return_button = "Return",
+
+		failed_spawn = "Failed to spawn vehicle.",
+		failed_area = "Area is not clear.",
+		failed_job = "You don't have the correct job.",
+		failed_generic = "Something went wrong."
 	},
 
 	vehicles = {
@@ -5509,6 +5688,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		components = "Components",
 		textures = "Textures",
 		colour_palette = "Color Palette",
+		hair = "Hair",
+		hair_color = "Hair Color",
+		hair_highlight_color = "Highlight Color",
 		remove_undershirt = "Remove Undershirt",
 		no_idea = "No idea",
 		head = "Head",
@@ -5540,7 +5722,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		press_to_access_clotheshop = "Press ~INPUT_CONTEXT~ to access the clothing spot.",
 		changing_only_clotheshop = "Do /outfit to change your outfit.",
 		clothing_store = "Clothing Store",
-		finish_creation = "Press ~g~G ~w~to complete the customization of your character. You can't undo this action.",
+		finish_creation = "Hold ~g~G ~w~to complete the customization of your character. You can't undo this action.",
+		finish_creation_timer = "[${timer}s] Hold ~g~G ~w~to complete the customization of your character. You can't undo this action.",
 		press_to_access_barbershop = "Press ~INPUT_CONTEXT~ to access the barber shop.",
 		barbershop = "Barbershop",
 		not_a_clothing_spot = "You must be near a clothing spot to use this command!",
