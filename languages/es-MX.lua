@@ -27,15 +27,17 @@ OP.Global.Locales.Languages["es-MX"] = {
 	},
 
 	emotes = {
-		get_in_trunk = "Presione ~INPUT_ENTER~ para ingresar a la maletero",
-		put_boombox_in_trunk = "Presione ~INPUT_ENTER~ para colocar el boombox en el maletero",
-		put_player_in_trunk = "Presione ~INPUT_ENTER~ para poner a la persona en el maletero",
-		put_ped_in_trunk = "Presione ~INPUT_ENTER~ para poner a la mascota en el maletero",
-		put_bicycle_in_trunk = "Presione ~INPUT_ENTER~ para poner la bici en el maletero",
-		trunk_interaction_display = "[${VehicleEnterKey}] Salida del maletero [${InteractionKey}] Abrir/Cerrar maletero",
+		get_in_trunk = "Presione ~INPUT_ENTER~ para ingresar a la maletero.",
+		put_boombox_in_trunk = "Presione ~INPUT_ENTER~ para colocar el boombox en el maletero.",
+		put_player_in_trunk = "Presione ~INPUT_ENTER~ para poner a la persona en el maletero.",
+		put_ped_in_trunk = "Presione ~INPUT_ENTER~ para poner a la mascota en el maletero.",
+		put_bicycle_in_trunk = "Presione ~INPUT_ENTER~ para poner la bici en el maletero.",
+		trunk_interaction_display = "[${VehicleEnterKey}] Salida del maletero [${InteractionKey}] Abrir/Cerrar maletero.",
+		trunk_open_close_display = "[${InteractionKey}] Abrir/Cerrar Cajuela",
 		boombox_already_in_trunk = "Ya hay un boombox en el maletero.",
 		the_trunk_is_occupied = "El maletero está ocupado.",
 		unable_to_toggle_carry = "Espere un poco antes de poder cargar a un jugador.",
+		carry_disabled_animal = "Los peds de animales no pueden cargar.",
 
 		you_are_not_being_carried = "Actualmente no está siendo cargado.",
 		successfully_uncarried = "Forzar detener ser cargado con éxito.",
@@ -316,6 +318,13 @@ OP.Global.Locales.Languages["es-MX"] = {
 		teleport_to_coordinates_not_staff = "El jugador intentó teletransportarse a algunas coordenadas pero no eran staff.",
 		teleport_to_waypoint_not_staff = "El jugador intentó teletransportarse a un punto de referencia pero no era staff.",
 
+		failed_isolate = "No se pudo aislar al jugador.",
+		invalid_server_id = "ID de servidor no válido.",
+		isolate_success_on = "Aislado con éxito a ${consoleName}.",
+		isolate_success_off = "Dejó de aislar correctamente a ${consoleName}.",
+
+		isolate_missing_permissions = "El jugador intentó aislar a otro jugador sin los permisos adecuados.",
+
 		population_density_set_to = "El multiplicador de densidad de población se ha fijado en ${multiplierLabel}%.",
 		population_density_set_off = "El multiplicador de densidad de población se ha desactivado.",
 		population_density_is_not_on = "El multiplicador de densidad de población no está encendido.",
@@ -337,6 +346,11 @@ OP.Global.Locales.Languages["es-MX"] = {
 
 		you_are_not_in_a_vehicle = "no estas en un vehiculo.",
 		repaired_vehicle = "vehículo reparado.",
+
+		success_nos_refill = "NOS rellenado con éxito.",
+		failed_nos_refill = "Error al rellenar NOS.",
+
+		refill_nitro_missing_permissions = "El jugador intentó rellenar su NOS pero no era un superadministrador.",
 
 		vehicle_smoke_invalid_class = "El humo del vehículo no se puede habilitar para esta clase de vehículo.",
 
@@ -391,7 +405,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		not_in_interior = "no estas en un interior.",
 		interior_id = "La identificación del interior es ${interiorId}.",
 
-		auto_driving_engaged = "Se ha activado la conducción automática.",
+		auto_driving_engaged = "Se ha activado la conducción automática (Estilo: ${style}).",
 		auto_driving_updated = "Se ha actualizado la ubicación/velocidad de conducción automática.",
 		auto_driving_disengaged = "La conducción automática se ha desactivado.",
 
@@ -660,9 +674,9 @@ OP.Global.Locales.Languages["es-MX"] = {
 		-- animations/chairs
 		sit_command = "/sentarse",
 		sit_command_help = "Intente sentarse en una silla cercana.",
-		sit_command_parameter_sit_on_ground = "sentarse en el suelo",
-		sit_command_parameter_sit_on_ground_help = "¿Le gustaría sentarse en el suelo? Si es así, escriba algo aquí.",
-		sit_command_substitutes = "/silla",
+		sit_command_parameter_variation = "variación",
+		sit_command_parameter_variation_help = "Qué animación usar para sentarse (1 - 6)",
+		sit_command_substitutes = "/silla, /chair, /sit",
 
 		-- animations/emotes
 		ragdoll_command = "/ragdoll",
@@ -916,6 +930,12 @@ OP.Global.Locales.Languages["es-MX"] = {
 		tp_waypoint_command_help = "Teletransportarse a su punto establecido.",
 		tp_waypoint_command_substitutes = "/tp_marker, /tp",
 
+		isolate_player_command = "/aislar_jugador",
+		isolate_player_command_help = "Aísla a un jugador, rechazando cualquier cosa que intente hacer.",
+		isolate_player_command_parameter_server_id = "Id del servidor",
+		isolate_player_command_parameter_server_id_help = "El jugador objetivo.",
+		isolate_player_command_substitutes = "/isolate, /isolate_player",
+
 		population_density_command = "/densidad_de_población",
 		population_density_command_help = "Modificar el multiplicador de densidad de población global.",
 		population_density_command_parameter_multiplier = "multiplicador",
@@ -982,8 +1002,10 @@ OP.Global.Locales.Languages["es-MX"] = {
 		yeet_vehicle_command_help = "Teletransporta el vehículo en el que te encuentras actualmente al océano.",
 		yeet_vehicle_command_substitutes = "",
 
-		auto_drive_command = "/conducción_automática",
+		auto_drive_command = "/conduccion_automática",
 		auto_drive_command_help = "Lo lleva automáticamente al punto de referencia establecido o conduce al azar si no hay ninguno establecido.",
+		auto_drive_command_parameter_style = "Estilo",
+		auto_drive_command_parameter_style_help = "Estilo de conducción (normal, apresurado, imprudente, reversa).",
 		auto_drive_command_substitutes = "/auto_drive",
 
 		toggle_weapon_attachment_command = "/alternar_accesorios_arma",
@@ -1013,6 +1035,10 @@ OP.Global.Locales.Languages["es-MX"] = {
 		set_durability_command_parameter_amount = "cantidad",
 		set_durability_command_parameter_amount_help = "La cantidad de durabilidad a establecer (default es 100).",
 		set_durability_command_substitutes = "/durability, /set_durability",
+
+		refill_nitro_command = "/rellenar_nitro",
+		refill_nitro_command_help = "Recarga el tanque de nitro de tu auto.",
+		refill_nitro_command_substitutes = "/refill_nitro",
 
 		advanced_metagame_command = "/metagame_avanzado",
 		advanced_metagame_command_help = "Comando de superadministrador para ayudarte a llevar tu metajuego al siguiente nivel.",
@@ -1150,6 +1176,16 @@ OP.Global.Locales.Languages["es-MX"] = {
 		force_outfit_command_parameter_outfit = "atuendo",
 		force_outfit_command_parameter_outfit_help = "El nombre del atuendo.",
 		force_outfit_command_substitutes = "/force_outfit",
+
+		outfit_command = "/atuendo",
+		outfit_command_help = "Cambiate a un atuendo diferente cuando estas cerca de un lugar de ropa.",
+		outfit_command_parameter_outfit = "atuendo",
+		outfit_command_parameter_outfit_help = "El nombre del atuendo.",
+		outfit_command_substitutes = "/outfit",
+
+		outfits_command = "/atuendos",
+		outfits_command_help = "Lista de todos tus atuendos guardados.",
+		outfits_command_substitutes = "/outfits",
 
 		-- game/crashes
 		crash_command = "/crash",
@@ -1457,6 +1493,11 @@ OP.Global.Locales.Languages["es-MX"] = {
 		roll_lottery_command = "/rodar_loteria",
 		roll_lottery_command_help = "Rodar la lotería manualmente.",
 		roll_lottery_command_substitutes = "/roll_lottery",
+
+		-- game/mechanics
+		check_vehicle_upgrades_command = "/revisar_mejoras_vehiculo",
+		check_vehicle_upgrades_command_help = "Comprueba si el vehículo cercano tiene una mejora de motor 5.",
+		check_vehicle_upgrades_command_substitutes = "/check_upgrades, /upgrades, /check_vehicle_upgrades",
 
 		-- game/miscellaneous
 		-- these two commands should remain the same on all languages in case someone joins in with a language they don't know.
@@ -2278,7 +2319,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		unloaded_character_self_logs_details = "${consoleName} descargado su propio personaje (`${characterFullName}` - ${characterId}) con la razon `${message}`.",
 		unloaded_character_self_no_reason_logs_details = "${consoleName} descargado su propio personaje (`${characterFullName}` - ${characterId}) sin ningún motivo especificado.",
 
-		unloaded_character_for_user = "Personaje descargado ${characterName} (${characterId}) para ${consoleName}.",
+		unloaded_character_for_user = "Personaje descargado ${characterFullName} (${characterId}) para ${consoleName}.",
 		user_with_server_id_has_no_character_loaded = "El usuario con ID `${serverId}` no tiene un personaje cargado.",
 		user_with_server_id_not_found = "El usuario con ID `${serverId}` no se pudo encontrar en el servidor.",
 
@@ -2433,58 +2474,109 @@ OP.Global.Locales.Languages["es-MX"] = {
 
 	clothing = {
 		outfit_failed = "No se pudo aplicar el atuendo.",
-		missing_outfit = "Atuendo faltante."
+		missing_outfit = "Atuendo faltante.",
+		no_nearby_clothing_spot = "No hay lugar de ropa cerca.",
+		invalid_job = "No tienes el trabajo requerido para usar este lugar de ropa.",
+		outfit_list = "Atuendos",
+		no_saved_outfits = "No tienes ningún atuendo guardado.",
+		failed_get_outfits = "Error al obtener atuendos guardados."
 	},
 
 	crafting = {
-		smelt_glass = "[${SeatEjectKey}] Fundir botellas rotas",
+		smelt_glass = "Fundir botellas rotas",
+		press_to_smelt_glass = "[${SeatEjectKey}] Fundir botellas rotas",
 		smelting_glass = "Fundiendo ${usedItems}",
 		smelted_glass = "Fundido ${usedItems} a vidrio.",
 		failed_smelt_glass = "No se pudo fundir el vidrio.",
 
-		craft_steel = "[${SeatEjectKey}] Fabrica acero",
-		crafting_steel = "Moldeando ${usedItems}",
+		craft_steel = "Fabricar acero",
+		press_to_craft_steel = "[${SeatEjectKey}] Fabricar acero",
+		crafting_steel = "Fabricando ${usedItems}",
 		crafted_steel = "Se fabrico ${usedItems} en acero.",
 		failed_craft_steel = "No se pudo fabricar acero.",
 
 		scrapping_item = "Desechando ${usedItems}",
 		scrapped_item = "Chatarra extraída de ${usedItems}.",
 
-		scrap_knife = "[${SeatEjectKey}] Desechar cuchillos",
-		failed_scrap_knife = "Failed to scrap knife.",
+		scrap_knife = "Reciclar cuchillos",
+		press_to_scrap_knife = "[${SeatEjectKey}] Reciclar cuchillos",
+		failed_scrap_knife = "No se puedo reciclar los cuchillos.",
 
-		scrap_item = "[${SeatEjectKey}] Desechar artículos",
-		failed_scrap_item = "No se pudo desechar el artículo.",
+		scrap_item = "Reciclar artículos",
+		press_to_scrap_item = "[${SeatEjectKey}] Reciclar artículos",
+		failed_scrap_item = "No se pudo reciclar el artículo.",
 
-		cut_item = "[${SeatEjectKey}] Cortar Patatas",
+		cut_item = "Cortar patatas",
+		press_to_cut_item = "[${SeatEjectKey}] Cortar patatas",
 		cutting_item = "Cortar 3 Patatas",
 		cut_item_done = "Se cortaron patatas en tiras.",
 		failed_cut_item = "No se pudo cortar las patatas.",
 
-		fry_item = "[${SeatEjectKey}] Freír patatas",
+		fry_item = "Freir patatas",
+		press_to_fry_item = "[${SeatEjectKey}] Freir patatas",
 		frying_item = "friendo patatas",
 		fried_item = "Papas fritas belgas.",
 		failed_fry_item = "Error al freír patatas.",
 
-		grill_item = "[${SeatEjectKey}] Cocinar carne",
+		grill_item = "Cocinar carne",
+		press_to_grill_item = "[${SeatEjectKey}] Cocinar carne",
 		grilling_item = "Cocinando carne",
 		grilled_item = "Carne cocinada.",
 		failed_grill_item = "No se pudo cocinar la carne.",
 
-		assemble_burger = "[${SeatEjectKey}] Hacer hamburguesa",
+		assemble_burger = "Hacer hamburguesa",
+		press_to_assemble_burger = "[${SeatEjectKey}] Hacer hamburguesa",
 		assembling_burger = "Haciendo hamburguesa",
 		assembled_burger = "Hamburguesa hecha",
 		failed_assemble_burger = "Error al hacer una hamburguesa.",
 
-		assemble_cheeseburger = "[${SeatEjectKey}] Hacer hamburguesa",
+		assemble_cheeseburger = "Hacer hamburguesa de queso",
+		press_to_assemble_cheeseburger = "[${SeatEjectKey}] Hacer hamburguesa de queso",
 		assembling_cheeseburger = "Haciendo hamburguesa",
 		assembled_cheeseburger = "Hamburguesa hecha",
 		failed_assemble_cheeseburger = "Error al hacer una hamburguesa.",
 
-		pack_meal = "[${SeatEjectKey}] Empaquetar comida",
+		pack_meal = "Empaquetar comida",
+		press_to_pack_meal = "[${SeatEjectKey}] Empaquetar comida",
 		packing_meal = "Empaquetando comida",
 		packed_meal = "Comida empaquetada.",
 		failed_pack_meal = "No se pudo empaquetar la comida.",
+
+		mix_avocado_smoothie = "Licuado de aguacate",
+		press_to_mix_avocado_smoothie = "[${SeatEjectKey}] Licuado de aguacate",
+		mixing_avocado_smoothie = "Licuando el batido de aguacate",
+		mixed_avocado_smoothie = "Licuado de aguacate listo",
+		failed_mix_avocado_smoothie = "No se pudo hacer el licuado de aguacate.",
+
+		fill_nitro_tank = "Llene el tanque de nitro",
+		press_to_fill_nitro_tank = "[${SeatEjectKey}] Llene el tanque de nitro",
+		filling_nitro_tank = "Llenando el tanque de nitro",
+		filled_nitro_tank = "Tanque de nitro lleno",
+		failed_fill_nitro_tank = "No se pudo llenar el tanque de nitro.",
+
+		craft_sheet_metal = "Fabricar hoja de metal",
+		press_to_craft_sheet_metal = "[${SeatEjectKey}] Fabricar hoja de metal",
+		crafting_sheet_metal = "Fabricando hoja de metal",
+		crafted_sheet_metal = "Hoja de metal hecha.",
+		failed_craft_sheet_metal = "No se pudo fabricar hoja de metal.",
+
+		craft_empty_tank = "Fabricar tanque vacío",
+		press_to_craft_empty_tank = "[${SeatEjectKey}] Fabricar tanque vacío",
+		crafting_empty_tank = "Fabricando tanque vacío",
+		crafted_empty_tank = "Tanque vacío hecho.",
+		failed_craft_empty_tank = "No se pudo fabricar el tanque vacío.",
+
+		craft_valve = "Fabricar válvula",
+		press_to_craft_valve = "[${SeatEjectKey}] Fabricar válvula",
+		crafting_valve = "Fabricando válvula",
+		crafted_valve = "Válvula hecha.",
+		failed_craft_valve = "No se pudo fabricar la válvula.",
+
+		craft_nitro_tank = "Fabricar tanque de nitro",
+		press_to_craft_nitro_tank = "[${SeatEjectKey}] Fabricar tanque de nitro",
+		crafting_nitro_tank = "Fabricando tanque de nitro",
+		crafted_nitro_tank = "Tanque de nitro hecho.",
+		failed_craft_nitro_tank = "No se puedo fabricar tanque de nitro.",
 
 		no_required_items = "No tienes todos los items necesarios.",
 
@@ -2787,11 +2879,13 @@ OP.Global.Locales.Languages["es-MX"] = {
 	hud = {
 		mph = "mp/h",
 		kmh = "km/h",
+		knots = "nudos",
 		ft = "ft",
 		m = "m",
 		belt = "CINTURON",
 		cruise = "CRUSERO",
 		fuel = "GAS",
+		nitro = "nitro",
 		battery = "Batería",
 		fps = "FPS",
 		ping = "PING",
@@ -2799,6 +2893,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		ground_asl = "AGL/ASL (${unit})",
 		gear = "Marcha",
 		rpm = "rpm",
+		degrees = "°C",
 
 		advanced_hud_on = "Activó el hud avanzado.",
 		advanced_hud_off = "Desactivó el hud avanzado."
@@ -2916,6 +3011,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		tool_store = "Tienda de Herramientas",
 		gun_store = "Ammu-Nation",
 		gun_store_with_shooting_range = "Ammu-Nation con campo de tiro",
+		green_wonderland = "Green Wonderland",
 		bar = "Bar",
 		strip_club = "Strip Club",
 		police_store = "Tienda de Policia",
@@ -2925,6 +3021,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		gift_store = "Tienda de regalos",
 		ems_store = "Tienda de EMS",
 		drug_store = "Gabinete de Drogas",
+		ems_badge_store = "Escritorio para placas de EMS",
 		pharmacy = "Farmacia",
 		chop_shop = "Deshuesadero",
 		courthouse = "Palacio de justicia",
@@ -3057,7 +3154,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		watch = "Reloj",
 		watch_description = "El Rouletz.",
 		compass = "Brujula",
-		compass_description = "Esta a la derecha, a la derecha, a la derecha, idiota!",
+		compass_description = "43.3068 N 0.7668 W",
 
 		basic_repair_kit = "Kit de reparación básico",
 		basic_repair_kit_description = "Hace que las cosas funcionen, pero muy apenas.",
@@ -3288,6 +3385,11 @@ OP.Global.Locales.Languages["es-MX"] = {
 		ticket_500 = "Ticket de lotería de $500",
 		ticket_500_description = "Suerte pa x3",
 
+		avocado = "Aguacate",
+		avocado_description = "El guacamole wey.",
+		avocado_smoothie = "Licuado de aguacate",
+		avocado_smoothie_description = "Jugo verde saludable, ignora los trozos.",
+
 		raspberry = "Raspberry",
 		raspberry_description = "https://i.redd.it/jbcj0uqbihg41.jpg",
 
@@ -3297,6 +3399,12 @@ OP.Global.Locales.Languages["es-MX"] = {
 		battering_ram = "Ariete rompepuertas",
 		battering_ram_description = "Golpea la puerta más cercana abierta de par en par para ti y cualquier persona cercana.",
 
+		trading_card = "Carta coleccionable",
+		trading_card_description = "Una carta de intercambio coleccionable, tienes que conseguirlas todas!!",
+
+		trading_card_pack = "Paquete de cartas coleccionables",
+		trading_card_pack_description = "Un paquete de 3 cartas coleccionables.",
+
 		boombox = "Estereo portatil",
 		boombox_description = "Como el iPod pero 20 veces mas grande",
 
@@ -3304,7 +3412,19 @@ OP.Global.Locales.Languages["es-MX"] = {
 		lighter_description = "El mejor amigo del Axel.",
 
 		nitro_tank = "Tanque de nitro",
-		nitro_tank_description = "El coche hace brr",
+		nitro_tank_description = "Perfecto para cuando tienes la necesidad de velocidad..",
+
+		empty_nitro_tank = "Tanque de nitro vacío",
+		empty_nitro_tank_description = "Casi tan útil como una lata vacía de frijoles.",
+
+		sheet_metal = "Hoja de metal",
+		sheet_metal_description = "Perfecto para actualizar tu 2x2.",
+
+		valve = "Válvula",
+		valve_description = "Half Life 3 ¿Cuándo?",
+
+		empty_tank = "Tanque vacio",
+		empty_tank_description = "Ya no contiene propano ni accesorios para propano.",
 
 		pepper_spray = "Gas pimienta",
 		pepper_spray_description = "¡MIS OJOS!",
@@ -3312,14 +3432,21 @@ OP.Global.Locales.Languages["es-MX"] = {
 		jail_card = "Tarjeta de la cárcel",
 		jail_card_description = "Tarjeta para salir de la cárcel",
 
+		vape = "Shisha Sticks",
+		vape_description = "Compra todos tus vapes en Vapes Castillo, desde el Estado de Mexico con el compa Axel!",
+
 		acetone = "Acetona",
-		acetone_description = "Perfecto para eliminar pintura o hacerte una mona al estilo del chilango Carloski..",
+		acetone_description = "Perfecto para eliminar pintura o hacerte una mona como el chilango Carloski..",
+
 		ammonia = "Amoníaco",
 		ammonia_description = "Mezclar con cloro para una sorpresa mágica..",
+
 		lithium_batteries = "Baterías de litio",
 		lithium_batteries_description = "No permitido en aviones comerciales, a menos que quieras explotar.",
+
 		meth_bag = "Bolsa de metanfetamina",
 		meth_bag_description = "La del breaking bad wey!!",
+
 		meth_table = "Mesa de metanfetamina",
 		meth_table_description = "Pa cocianr como el Gualter Guait.",
 
@@ -3853,6 +3980,35 @@ OP.Global.Locales.Languages["es-MX"] = {
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} ha hecho girar la rueda y ha ganado una semana de prioridad en la cola."
 	},
 
+	mechanics = {
+		move_here_check = "Múdate aquí para ver mejoras",
+		checking_upgrades = "Revisando mejoras del vehículo",
+		upgrades_list = "${engine}, ${breaks}, ${transmission} y ${turbo}.",
+
+		has_no_turbo = "no tiene turbo instalado",
+		has_turbo = "tiene un turbo instalado",
+
+		breaks_0 = "Frenos de serie",
+		breaks_1 = "Frenos de calle",
+		breaks_2 = "Frenos deportivos",
+		breaks_3 = "Frenos de carrera",
+
+		transmission_0 = "Transmisión de serie",
+		transmission_1 = "Transmisión de calle",
+		transmission_2 = "Transmisión deportiva",
+		transmission_3 = "Transmisión de carreras",
+
+		engine_0 = "Motor de serie",
+		engine_1 = "Motor EMS Nivel 2",
+		engine_2 = "Motor EMS Nivel 3",
+		engine_3 = "Motor EMS Nivel 4",
+		engine_4 = "Motor EMS Nivel 5",
+
+		no_nearby_vehicle = "Ningún vehículo cercano.",
+		already_checking_upgrades = "Ya estás revisando las mejoras de un vehículo.",
+		engine_is_running = "El motor del vehículo esta encendido."
+	},
+
 	meth = {
 		press_to_sell_meth = "Presiona ~INPUT_CONTEXT~ para vender metanfetamina.",
 		selling_meth = "Vendiendo metanfetamina."
@@ -3923,6 +4079,13 @@ OP.Global.Locales.Languages["es-MX"] = {
 		no_copyright_disabled = "La funcion 'Sin derechos de autor' ha sido deshabilitada.",
 		server_tps = "Servidor TPS",
 		server_tps_response = "${tps}"
+	},
+
+	nos = {
+		press_to_install_nitro_tank = "Presiona ~INPUT_CONTEXT~ para instalar el tanque de nitro.",
+		installing_nitro_tank = "Instalando tanque de nitro",
+		press_to_remove_nitro_tank = "Presiona ~INPUT_CONTEXT~ para remover el tanque de nitro.",
+		removing_nitro_tank = "Removiendo el tanque de nitro"
 	},
 
 	notepads = {
@@ -4399,6 +4562,22 @@ OP.Global.Locales.Languages["es-MX"] = {
 		missing_server_id_parameter = "Falta el parámetro de ID del servidor."
 	},
 
+	scuba = {
+		sunken_ship = "Barco hundido",
+		gather_item = "Recoger artículo (${distance}m)",
+
+		collected_junk = "Basura recolectada.",
+		collected_item = "Recibió ${itemLabel}.",
+
+		collected_scuba_item_logs_title = "Objeto de buceo recogido",
+		collected_scuba_item_logs_details = "${consoleName} recogió un artículo de buceo y recibió `${itemName}`."
+	},
+
+	scuba_gear = {
+		equipping_scuba_tank = "Equipando tanque de buceo",
+		equipping_scuba_mask = "Equipando máscara de buceo"
+	},
+
 	security_cameras = {
 		illegal_security_camera = "Intentando manipular ilegalmente las cámaras de seguridad.",
 		saved_security_cameras_to_file = "Saved `${amount}` security cameras to a file on the server.",
@@ -4719,18 +4898,6 @@ OP.Global.Locales.Languages["es-MX"] = {
 		exit_exclusive_dealership = "Salir del concesionario exclusivo",
 		exit_exclusive_dealership_interact = "[${InteractionKey}] Salir del concesionario exclusivo",
 
-		enter_upper_pillbox_hospital = "Enter Upper Pillbox Hospital",
-		enter_upper_pillbox_hospital_interact = "[${InteractionKey}] Enter Upper Pillbox Hospital",
-
-		enter_lower_pillbox = "Entrar a Lower Pillbox Hospital",
-		enter_lower_pillbox_interact = "[${InteractionKey}] Entrar a Lower Pillbox Hospital",
-
-		enter_pillbox_roof = "Subir a techo de Pillbox",
-		enter_pillbox_roof_interact = "[${InteractionKey}] Subir a techo de Pillbox",
-
-		exit_pillbox_roof = "Salir de techo Pillbox",
-		exit_pillbox_roof_interact = "[${InteractionKey}] Salir de techo Pillbox",
-
 		enter_casino = "Entrar al Casino",
 		enter_casino_interact = "[${InteractionKey}] Entrar al Casino",
 
@@ -4765,7 +4932,13 @@ OP.Global.Locales.Languages["es-MX"] = {
 		enter_icu_interact = "[${InteractionKey}] Entrar en la UCI",
 
 		exit_icu = "Salir de la UCI",
-		exit_icu_interact = "[${InteractionKey}] Salir de la UCI"
+		exit_icu_interact = "[${InteractionKey}] Salir de la UCI",
+
+		enter_second_floor = "Entrar al segundo piso",
+		enter_second_floor = "[${InteractionKey}] Entrar al segundo piso",
+
+		exit_second_floor = "Salir del segundo piso",
+		exit_second_floor_interact = "[${InteractionKey}] Salir del segundo piso"
 	},
 
 	test_server = {
@@ -4797,6 +4970,49 @@ OP.Global.Locales.Languages["es-MX"] = {
 		department_park_rangers = "Guardabosque:",
 		department_medical = "EMS",
 		department_doctor = "Doctor"
+	},
+
+	trading_cards = {
+		access_store = "[${InteractionKey}] Acceder tienda",
+
+		buy_pack = "Comprar ${packName}",
+		store_title = "Tienda de cartas",
+
+		successfully_bought_pack = "Paquete de cartas comprado con éxito",
+		failed_buy_pack = "No se pudo comprar el paquete. ¿Tienes suficiente dinero?",
+
+		just_showed_trading_cards = "Acabas de mostrar una tarjeta coleccionable. Por favor espere un poco.",
+
+		unpack_successfull = "Se abrió con éxito este paquete.",
+		failed_unpack = "Error al abrir este paquete.",
+		failed_unpack_no_cards = "Error al abrir este paquete. No hay cartas disponibles.",
+
+		edition = "Edición",
+		rarity = "Rareza",
+
+		rarity_bronze = "Bronce",
+		rarity_silver = "Plata",
+		rarity_gold = "Oro",
+		rarity_holo = "Holo",
+		rarity_foil = "Aluminio",
+		rarity_relic = "Reliquia",
+		rarity_headache = "Dolor de cabeza",
+		rarity_missprint = "Error tipográfico",
+		rarity_ethereal = "Etérea",
+		rarity_promotional = "Promocional",
+
+		rarity_custom = "Personalizado",
+
+		press_to_access_buyback = "Presiona ~INPUT_CONTEXT~ para acceder a la recompra de cartas.",
+		buyback_title = "Recompra de tarjetas",
+		close_menu = "Cerrar Menu",
+		sell_cards = "Vender todas las cartas ${rarity}",
+
+		failed_selling = "Error al vender cartas.",
+		no_cards_of_type = "No tienes ninguna carta ${rarity}.",
+		successfully_sold_cards = "Vendiste ${amount} ${rarity} carta(s) por $${earned}.",
+
+		studio_blip = "945 Studios"
 	},
 
 	training = {
@@ -4846,6 +5062,10 @@ OP.Global.Locales.Languages["es-MX"] = {
 		purchased_vehicle = "Comprado ${label} por $${price}.",
 
 		tuner_shop_blip = "Midnight Tunershop"
+	},
+
+	vape = {
+		press_to_use = "Presiona ~INPUT_CONTEXT~ para usarlo. Presiona ~INPUT_FRONTEND_CANCEL~ para guardar el vape."
 	},
 
 	vending_machines = {
@@ -5138,6 +5358,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		body = "Cuerpo: ${value}",
 		engine = "Motor: ${value}",
 		petrol_tank = "Tanque: ${value}",
+		temperature = "Temperatura: ${value}",
 		tracked_vehicle = "Vehículo rastreado",
 
 		debug_vehicle_on = "Toggled vehicle debug on.",
@@ -5153,11 +5374,13 @@ OP.Global.Locales.Languages["es-MX"] = {
 		vehicle_busy = "The nearby vehicle is busy.",
 		purchase_jerry_can = "Presione ~g~${InventoryKey} ~w~para comprar un Bidon.",
 		gas_station = "Gasolinera",
-		vehicle_engine_on = "El motor de este vehiculo se encuentra encendido.",
 		petrolcan_fuel_text = "Cantidad de gasolina restante: ${petrolAmount}%~n~Presione ~g~E ~w~para dejar de abastecer.",
 		player_busy = "Estas ocupado con algo mas.",
 		fuel_level_set_to = "El nivel de combustible se ha ajustado a `${fuelLevel}`.",
-		not_in_a_vehicle = "no estas en un vehiculo.",
+		not_in_a_vehicle = "No estas en un vehiculo.",
+
+		vehicle_exploded_logs_title = "Vehículo explotado",
+		vehicle_exploded_logs_details = "${consoleName} estaba llenando el tanque de gas de un vehículo y provocó una explosión debido a un motor en marcha."
 	},
 
 	gadgets = {
@@ -5255,6 +5478,23 @@ OP.Global.Locales.Languages["es-MX"] = {
 		vehicle_id_does_not_exist = "ID del vehículo `${vehicleId}` no existe.",
 		you_have_no_character_loaded = "No tienes un personaje cargado.",
 		vehicle_plate_changed = "Cambió el número de placa del vehículo con identificación `${vehicleId}` a `${plateNumber}`."
+	},
+
+	spawner = {
+		press_to_access_spawner = "Presiona ~INPUT_CONTEXT~ para acceder al spawner de vehículos.",
+
+		parked_vehicle = "Vehículo guardado con éxito.",
+
+		spawner_burger_shot = "Vehículos de reparto Burgershot",
+		close_menu = "Cerrar Menú",
+		vehicle_list = "Lista de vehículos",
+		park_vehicle = "Estacionar vehículo",
+		return_button = "Regresar",
+
+		failed_spawn = "No se pudo sacar el vehículo.",
+		failed_area = "El área no está libre.",
+		failed_job = "No tienes el trabajo correcto.",
+		failed_generic = "Algo salió mal."
 	},
 
 	vehicles = {
@@ -5378,6 +5618,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		press_to_sign = "Presione ~g~E ~w~para firmar ",
 		open_vehicle_spawner = "Presione ~g~E ~w~para abrir el generador de vehiculos",
 		open_heli_spawner = "Presione ~g~E ~w~para abrir el menu de helicopteros",
+		open_boat_spawner = "Presiona ~g~E ~w~para abrir el menú de barcos",
 		on = "on",
 		off = "off",
 		sign_as_doctor = "Presione ~g~E ~w~para firmarse ${status} como un doctor",
@@ -5390,7 +5631,8 @@ OP.Global.Locales.Languages["es-MX"] = {
 		invalid_input = "Aporte invalido.",
 		unable_to_extra_on_vehicle = "No es posible modificar 'extras' en este vehiculo!",
 		heli_here_already = "Un helicoptero se encuentra en la plataforma",
-		ems_air_hq = "EMS Air HQ",
+		ems_air_hq = "Sede aérea de EMS",
+		ems_boat_hq = "Sede de barcos EMS",
 		ems_garage = "Garage de EMS",
 		e_to_get_treated = "[E] Para ser atendido - $2500",
 		get_treated = "Se tratado - $2500",
@@ -5426,7 +5668,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		mat_occupied = "Tapete ocupado!",
 		yoga = "Yoga",
 		clothing = "Ropa",
-		clothing_cam_help = "Usa A, S y D para mover la cámara de ropa.",
+		clothing_cam_help = "Usa A, S y D para mover la cámara de ropa y W para acercar.",
 		main = "Main",
 		empty_slot = "Ranura vacia",
 		barber = "Barbero",
@@ -5446,6 +5688,9 @@ OP.Global.Locales.Languages["es-MX"] = {
 		components = "Componentes",
 		textures = "Texturas",
 		colour_palette = "Paleta de colores",
+		hair = "Cabello",
+		hair_color = "Color de cabello",
+		hair_highlight_color = "Color del resaltado",
 		remove_undershirt = "Remover Camiseta",
 		no_idea = "No idea",
 		head = "Cabeza",
@@ -5474,11 +5719,12 @@ OP.Global.Locales.Languages["es-MX"] = {
 		add_body_blemishes = "Añadir Imperfecciones Corporales",
 		opacity = "Opacidad",
 		colours = "Colores",
-		press_to_access_clotheshop = "Presione ~INPUT_CONTEXT~ para personalizar tu personaje.",
+		press_to_access_clotheshop = "Presione ~INPUT_CONTEXT~ para acceder al punto de ropa.",
 		changing_only_clotheshop = "Pon /outfit para cambiar tu outfit.",
 		clothing_store = "Tienda de Ropa",
-		finish_creation = "Presione ~g~G ~w~para completar la modificacion a tu personaje. No podras deshacer esta accion.",
-		press_to_customize = "Presione ~INPUT_CONTEXT~ para modificar tu personaje.",
+		finish_creation = "Manten presionado ~g~G ~w~para completar la modificacion a tu personaje. No podras deshacer esta accion.",
+		finish_creation_timer = "[${timer}s] Manten presionado ~g~G ~w~para completar la modificacion a tu personaje. No podras deshacer esta accion.",
+		press_to_access_barbershop = "Presiona ~INPUT_CONTEXT~ para acceder a la peluquería.",
 		barbershop = "Barberia",
 		not_a_clothing_spot = "Debes estar cerca de una tienda de ropa para utilizar este comando!",
 		customization = "Personalizacion",
