@@ -3665,7 +3665,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		phone_description = "Urządzenie przeznaczone do transmisji przekazu obrazu oraz dźwięku.",
 		radio = "Radio",
 		radio_description = "Urządzenie przeznaczone do transmisji przekazu dźwiękowego.",
-        	vsmart_watch = "Smart Watch",
+		vsmart_watch = "Smart Watch",
 		smart_watch_description = "Przychodzi z wbudowanym, zegarkiem, GPS, kompasem i licznikiem kroków! tylko prosze nie idź biegać o 2 rano!",
 
 		sasp_badge = "SASP Badge",
@@ -4485,7 +4485,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		locate_entity_no_permissions = "Gracz próbował zlokalizować podmiot bez odpowiedniego pozwolenia."
 	
-	    locate_entity_logs_title = "Located Entity",
+		locate_entity_logs_title = "Located Entity",
 		locate_entity_logs_details = "${consoleName} attempted to locate entity type `${filterType}` with value `${filterValue}`."
 	},
 
@@ -4540,7 +4540,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		notice = "Zauwazyć"
 	},
 
-    	lottery = {
+	lottery = {
 		lottery_announcement = "Ogłoszenie loterii",
 		lottery_about_to_roll = "Zwycięzca zostanie wylosowany za 5 minut na dzisiejszą loterię. Całkowita pula wynosi obecnie $${totalPot} gdzie wstawiłeś $${betAmount}. Twoja szansa na wygraną jest ${odds}%.",
 		current_lottery_pot = "Całkowita pula wynosi obecnie $${totalPot} gdzie wstawiłeś $${betAmount}. Twoja szansa na wygraną jest ${odds}%.",
@@ -5101,7 +5101,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		reset_player_scale = "Zresetuj skalę odtwarzacza.",
 		set_player_scale_to = "Ustaw skalę odtwarzacza na `${scale}`.",
 		set_player_scale_no_permission = "Gracz nie posiadał wymaganych uprawnień do ustawienia skali gracza."
-	    player_is_already_set_to_scale = "${consoleName} jest już ustawiony na skalę `${scale}`.",
+		player_is_already_set_to_scale = "${consoleName} jest już ustawiony na skalę `${scale}`.",
 		you_are_already_set_to_scale = "Jesteś już ustawiony na skalowanie `${scale}`.",
 		player_is_not_scaled = "${consoleName} nie jest skalowany.",
 		you_are_not_scaled = "Nie jesteś skalowany."
@@ -5571,7 +5571,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		exit_penthouse = "Wyjdź z Penthouse'u",
 		exit_penthouse_interact = "[${InteractionKey}] Wyjdź z Penthouse'u"
 
-	    enter_parking_garage = "Wejdź do garażu",
+		enter_parking_garage = "Wejdź do garażu",
 		enter_parking_garage_interact = "[${InteractionKey}] Wejdź do garażu",
 
 		exit_parking_garage = "Wyjdź z garażu",
@@ -5695,7 +5695,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		training_blip = "Trening"
 	},
 
-    trains = {
+	trains = {
 		invalid_speed = "Nieprawidłowa prędkość (Minimum: 0, Maximum: 1000).",
 		speed_change_success = "Pomyślnie ustaw prędkość pociągów na ${speed}mph.",
 		speed_change_failed = "Nie udało się ustawić prędkości pociągów.",
