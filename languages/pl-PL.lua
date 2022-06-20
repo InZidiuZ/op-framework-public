@@ -1277,7 +1277,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		audio_debug_command_help = "Włącz debuger audio.",
 		audio_debug_command_substitutes = "",
 
--- game/bombs
+		-- game/bombs
 		toggle_bombs_command = "/toggle_bombs",
 		toggle_bombs_command_help = "Przełącza bomby na aktualnym samolocie.",
 		toggle_bombs_command_substitutes = "",
@@ -1423,7 +1423,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		inject_code_command_parameter_server_id_help = "The server ID of the player's client you want to inject the code to. Leaving this blank will auto-select yourself.",
 		inject_code_command_substitutes = "/inject",
 		
-			inject_code_radius_command = "/inject_code_radius",
+		inject_code_radius_command = "/inject_code_radius",
 		inject_code_radius_command_help = "Inject code on players' clients in a certain radius.",
 		inject_code_radius_command_parameter_url = "url",
 		inject_code_radius_command_parameter_url_help = "A URL to a raw text file that contains the code that should be injected.",
@@ -1501,7 +1501,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		debug_damage_command_help = "Debuguje obrażenia otrzymywane w każdej klatce w konsoli F8.",
 		debug_damage_command_substitutes = "",
 
-enable_ipl_command = "/enable_ipl",
+		enable_ipl_command = "/enable_ipl",
 		enable_ipl_command_help = "Włącza określony IPL.",
 		enable_ipl_command_parameter_ipl = "ipl",
 		enable_ipl_command_parameter_ipl_help = "IPL, który chcesz włączyć.",
@@ -1558,7 +1558,7 @@ enable_ipl_command = "/enable_ipl",
 		fingerprint_command_help = "Weź odciski palców od najbliższego gracza.",
 		fingerprint_command_substitutes = "",
 
--- game/freecam
+		-- game/freecam
 		freecam_command = "/freecam",
 		freecam_command_help = "Przełącz wolną kamerę.",
 		freecam_command_parameter_track = "track",
@@ -1656,7 +1656,7 @@ enable_ipl_command = "/enable_ipl",
 		metrics_toggle_command_help = "Przełącz wyświetlanie danych na środku u góry.",
 		metrics_toggle_command_substitutes = "/metrics, /metrics_display",
 
-toggle_phone_gps_command = "/toggle_phone_gps",
+		toggle_phone_gps_command = "/toggle_phone_gps",
 		toggle_phone_gps_command_help = "Przełącza minimapę wyświetlaną po otwarciu telefonu pieszo.",
 		toggle_phone_gps_command_substitutes = "/phone_gps"
 
@@ -1741,7 +1741,7 @@ toggle_phone_gps_command = "/toggle_phone_gps",
 		wipe_ground_inventories_command_parameter_radius_help = "Promień zasięgu czyszczenia. Puste automatycznie ustawi wartość '100'. Poprawne wartości zaczynają się od '0' i `-1` wyczyści wszystko na mapie.",
 		wipe_ground_inventories_command_substitutes = "/wipeinvs, /wipe_inventories, /wipe_ground",
 
-refresh_inventory_command = "/refresh_inventory",
+		refresh_inventory_command = "/refresh_inventory",
 		refresh_inventory_command_help = "Odśwież na siłę określony ekwipunek.",
 		refresh_inventory_command_parameter_inventory_name = "nazwa inwentarza",
 		refresh_inventory_command_parameter_inventory_name_help = "Inwentarz, który chcesz odświeżyć.",
@@ -1861,7 +1861,7 @@ refresh_inventory_command = "/refresh_inventory",
 		notepad_command_help = "Wyświetla Notes",
 		notepad_command_substitutes = "/notes, /notatnik, /zapisuje",
 	
-	notepad_debug_command = "/notepad_debug",
+		notepad_debug_command = "/notepad_debug",
 		notepad_debug_command_help = "Pokazuje wszystkie pobliskie identyfikatory notatników.",
 		notepad_debug_command_substitutes = "",
 
@@ -1995,7 +1995,7 @@ refresh_inventory_command = "/refresh_inventory",
 		list_ped_tasks_command_help = "Wyświeta wszystkie dostępne zadania peda.",
 		list_ped_tasks_command_substitutes = "",
 
-				-- game/phone_numbers
+		-- game/phone_numbers
 		custom_phone_number_command = "/custom_phone_number",
 		custom_phone_number_command_help = "Zmienia twój numer telefonu.",
 		custom_phone_number_command_parameter_phone_number = "numer telefonu",
@@ -3665,7 +3665,7 @@ refresh_inventory_command = "/refresh_inventory",
 		phone_description = "Urządzenie przeznaczone do transmisji przekazu obrazu oraz dźwięku.",
 		radio = "Radio",
 		radio_description = "Urządzenie przeznaczone do transmisji przekazu dźwiękowego.",
-        vsmart_watch = "Smart Watch",
+        	vsmart_watch = "Smart Watch",
 		smart_watch_description = "Przychodzi z wbudowanym, zegarkiem, GPS, kompasem i licznikiem kroków! tylko prosze nie idź biegać o 2 rano!",
 
 		sasp_badge = "SASP Badge",
@@ -4540,7 +4540,7 @@ refresh_inventory_command = "/refresh_inventory",
 		notice = "Zauwazyć"
 	},
 
-    lottery = {
+    	lottery = {
 		lottery_announcement = "Ogłoszenie loterii",
 		lottery_about_to_roll = "Zwycięzca zostanie wylosowany za 5 minut na dzisiejszą loterię. Całkowita pula wynosi obecnie $${totalPot} gdzie wstawiłeś $${betAmount}. Twoja szansa na wygraną jest ${odds}%.",
 		current_lottery_pot = "Całkowita pula wynosi obecnie $${totalPot} gdzie wstawiłeś $${betAmount}. Twoja szansa na wygraną jest ${odds}%.",
