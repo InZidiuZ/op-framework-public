@@ -2367,7 +2367,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		--jobs/duty
 		toggle_duty_status_command = "/toggle_duty_status",
 		toggle_duty_status_command_help = "Zmienia twój status służby.",
-				toggle_duty_status_command_parameter_server_id = "server id",
+		toggle_duty_status_command_parameter_server_id = "server id",
 		toggle_duty_status_command_parameter_server_id_help = "Id gracza którego status służby chcesz zmienić, lub zostaw puste jeśli chodzi o ciebie",
 		toggle_duty_status_command_substitutes = "/duty_status, /duty",
 
@@ -4907,7 +4907,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		field_name = "Pole...",
 		value = "Value...",
 		current_overrides = "Aktualne Zmiany",
-			
+		
 		about_explosion_events_title = "Event wybuchu",
 		about_explosion_events_about = "Tutaj są ostatnie 500 explozji. Powinno pomóc to adminsitracji wyszukać cheatera",
 		about_unusual_explosions = "Nietypowe explozje którę nie zdażają się.",
