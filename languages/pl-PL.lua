@@ -44,7 +44,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		success_lockpick_cuffs = "Udało ci się zdjąć kajdanki.",
 		failed_lockpick_cuffs = "Nieudało ci się zdjąć kajdanek.",
 		lockpick_lost = "Zniszczyłeś wytrych.",
-		
+
 		lockpick_cuffs_logs_title = "Wyłamane kajdanki",
 		lockpick_cuffs_logs_details = "${consoleName} pomyślnie otwarto kajdanki tej osoby przy użyciu `${itemName}`.",
 
@@ -242,7 +242,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		logs_player_banned_title = "Zbanowano gracza",
 		logs_player_banned_details = "${consoleName} został zbanowany przez ${banner} z powodem `${reason}`.",
 		logs_player_banned_no_reason_details = "${consoleName} został zbanowany przez ${banner} bez podanego powodu.",
-		
+
 		player_kicked = "${consoleName} został wyrzucony z serwera.",
 		player_banned = "${consoleName} został zbanowany z serwera.",
 
@@ -3280,13 +3280,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		freecam_logs_title = "Włączono kamerę wolną",
 		freecam_on_logs_details = "${consoleName} włączył ich wolną kamerę.",
 		freecam_off_logs_details = "${consoleName} wyłączył ich wolną kamerę.",
-		
+
 		track_player_logs_title = "Śledzono wolną kamerę",
 		track_player_logs_details = "${consoleName} śledzono gracza ${targetName} używającego wolnej kamery.",
 
 		freecam_no_permission = "Próbowano przełączyć kamerę wolną bez wymaganych uprawnień."
 		track_player_no_permission = "Próbowano śledzić gracza za pomocą wolnej kamery bez wymaganych uprawnień.",
-		
+
 		freecam_inactive = "Nie używasz aktualnie wolnej kamery",
 		added_point = "Added camera point at index ${index} (Transition: ${transition}ms).",
 		disable_freecam = "Disable freecam to replay points.",
@@ -3587,7 +3587,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		shredder_title = "Shredder",
 		shredder_description = "Uwaga: wszystki przedmioty poruszone w tym obszarze zostaną usunięte bez mozliwości pozyskania ich.",
-		
+
 		store_help = "Aby zakupić przedmiot przeciągnij go z prawego okna do lewego.",
 		store_tax = "Podatek obowiazujący w sklepie",
 		store_tax_percentage = "${tax}%",
@@ -3696,7 +3696,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		binoculars_description = "Przyrząd optyczny ułatwiający oglądanie obojgiem oczu oddalonych przedmiotów.",
 		photo_camera = "Aparat", 
 		photo_camera_description = "Nikon i Igna opracowali najnowszy profesjonalny aparat na rynku. Dzięki zaawansowanemu obiektywowi (70-300mm f/4.5-5.6E) możesz uchwycić nawet najdrobniejsze szczegóły.",
-		
+
 		handcuffs = "Kajdanki",
 		handcuffs_description = "Para metalowych obręczy z zatrzaskiem, połączonych ze sobą, zakładanych na przeguby rąk.",
 		bolt_cutter = "Nóż do śrub",
@@ -3761,7 +3761,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		smores_description = "Pyszne wafle, rozpływają się w ustach",
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? Nie oficerze, ja tylko jem pieczone pianki!",
-		
+
 		burger_buns = "Bułki do burgerów",
 		burger_buns_description = "Możesz wsunąc troche mięska między te bułeczki.",
 		cheese = "Cheese",
@@ -3799,7 +3799,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		strawberry_description = "Przewaznie znajdujesz je między krzakami",
 		watermelon = "Arbuz",
 		watermelon_description = "Tylko go nie zgnieć udami.",
-		
+
 		beer = "Piwo",
 		beer_description = "Napój o niskim stężeniu alkoholowym, 21+",
 		vodka = "Vodka",
@@ -3827,9 +3827,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		joint_description = "Mieszanka zioła z tytoniem.",
 		oxy = "Oksykodon",
 		oxy_description = "Lek na recepte.",
-		antibiotics = "Antybiotyk",	
-		antibiotics_description = "Działa przeciw infekcji.",	
-		pain_killers = "Leki przeciwbólowe",	
+		antibiotics = "Antybiotyk",
+		antibiotics_description = "Działa przeciw infekcji.",
+		pain_killers = "Leki przeciwbólowe",
 		pain_killers_description = "Boli mnie głowa i nie mogę spać.",
 		weed_seeds = "Nasiona Marihuany",
 		weed_seeds_description = "Nasiona konopii",
@@ -4435,7 +4435,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		weapon_addon_g36c = "Heckler & Koch G36C",
 		weapon_addon_g36c_description = "Karabinek automatyczny produkowany przez niemieckie przedsiębiorstwo Heckler und Koch Gmbh."
 	},
-	
+
 	items = {
 		move_to_repair = "Stań tutaj aby naprawić pojazd.",
 		repairing_vehicle = "Naprawianie pojazdu",
@@ -4484,7 +4484,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		locate_success = "Pomyślnie zlokalizowano pasujący podmiot `${filter}` at (${x}, ${y}, ${z}).",
 
 		locate_entity_no_permissions = "Gracz próbował zlokalizować podmiot bez odpowiedniego pozwolenia."
-	
+
 		locate_entity_logs_title = "Located Entity",
 		locate_entity_logs_details = "${consoleName} attempted to locate entity type `${filterType}` with value `${filterValue}`."
 	},
@@ -4907,7 +4907,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		field_name = "Pole...",
 		value = "Value...",
 		current_overrides = "Aktualne Zmiany",
-		
+
 		about_explosion_events_title = "Event wybuchu",
 		about_explosion_events_about = "Tutaj są ostatnie 500 explozji. Powinno pomóc to adminsitracji wyszukać cheatera",
 		about_unusual_explosions = "Nietypowe explozje którę nie zdażają się.",
@@ -5495,10 +5495,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	teleporters = {
 		enter_mechanic_shop = "Wejdź do warsztatu mechanicznego",
 		enter_mechanic_shop_interact = "[${InteractionKey}] Wejdź do warsztatu mechanicznego",
-	
+
 		exit_mechanic_shop = "Wyjdź z warsztatu mechanicznego",
 		exit_mechanic_shop_interact = "[${InteractionKey}] Wyjdź z warsztatu mechanicznego",
-	
+
 		enter_coroner = "Wejdź do Koronera",
 		enter_coroner_interact = "[${InteractionKey}] Wejdź do Koronera",
 
@@ -5534,7 +5534,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		exit_office_shop = "Wyjdż z Biura",
 		exit_office_shop_interact = "[${InteractionKey}] Wejdż z Biura",
-	
+
 		enter_cocaine_lab = "Wejdż",
 		enter_cocaine_lab_interact = "[${InteractionKey}] Wejdż",
 
@@ -5555,19 +5555,19 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		enter_casino = "Wejdź do kasyna",
 		enter_casino_interact = "[${InteractionKey}] Wejdź do kasyna",
-	
+
 		exit_casino = "Wyjdź z kasyna",
 		exit_casino_interact = "[${InteractionKey}] Wyjdź z kasyna",
-	
+
 		enter_roof = "Wejdź na dach",
 		enter_roof_interact = "[${InteractionKey}] Wejdź na dach",
-	
+
 		exit_roof = "Zejdź z dachu",
 		exit_roof_interact = "[${InteractionKey}] Zejdź z dachu",
-	
+
 		enter_penthouse = "Wejdź do Penthouse'u",
 		enter_penthouse_interact = "[${InteractionKey}] Wejdź do Penthouse'u",
-	
+
 		exit_penthouse = "Wyjdź z Penthouse'u",
 		exit_penthouse_interact = "[${InteractionKey}] Wyjdź z Penthouse'u"
 
@@ -5668,7 +5668,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		buyback_title = "Odkup kart kolekcjonerskich",
 		close_menu = "Zamknij menu",
 		sell_cards = "Sprzedaj wszystkie ${rarity} karty kolekcjonerskie",
-		
+
 		failed_selling = "Nie udało się sprzedać kart.",
 		no_cards_of_type = "Nie masz żadnych ${rarity} kart.",
 		successfully_sold_cards = "Sprzedano karte ${amount} ${rarity} za $${earned}.",
@@ -6291,7 +6291,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		add_vehicle_invalid_player = "Nie było graczy z server ID ${serverId}.",
 		add_vehicle_invalid_model_name = "Nazwa modelu${modelName} nie jest prawidłowym modelem.",
 		add_vehicle_no_model_name = "Nie dodano nazwy modelu.",
-		
+
 		added_vehicle_for_everyone_logs_title = "Dodano pojazd dla wszystkich",
 		added_vehicle_for_everyone_logs_details = "${consoleName} dodano pojazd z nazwą modelu ${modelName} do wszystkich garaży",
 		added_vehicle_for_player_logs_title = "Dodano Pojazd dla Gracza",
