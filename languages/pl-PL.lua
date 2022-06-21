@@ -60,7 +60,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		carry_npc_something_wrong = "Coś poszło nie tak gdy probowałeś przenieść NPC.",
 		throwing_force = "Siła rzutu"
 
-				e_to_struggle = "Naciśnij E aby się wyrwać",
+		e_to_struggle = "Naciśnij E aby się wyrwać",
 		cant_struggle_dead = "Nie możesz się wyrwać kiedy nie żyjesz.",
 		struggle_to_quick = "Czujesz zmęczenie po wyrwaniu się, odpocznij trochę i spróbuj ponownie",
 		struggle_logs_title = "Wyrywanie się",
