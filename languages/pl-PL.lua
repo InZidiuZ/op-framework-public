@@ -4118,7 +4118,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		wood = "Drewno",
 		wood_description = "Kawałek drewna.",
 		charcoal = "Węgiel",
-		charcoal_description = "Węgiel na grila/ognisko.",
+		charcoal_description = "Ulubiony przysmak Ślązaków.",
 
 		golf_ball = "Piłka golfowa",
 		golf_ball_description = "Używana w Golfie.",
@@ -4356,8 +4356,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		weapon_petrolcan_description = "Pozostawia ślad benzyny, którą można zapalić.",
 		gadget_parachute_description = "Ten nylonowy spadochron sportowy ma konstrukcję parafoilową z ram-air, która zwiększa kontrolę nad kierunkiem i prędkością.",
-		weapon_fireextinguisher_description = "",
-		weapon_hazardcan_description = "",
+		weapon_fireextinguisher_description = "Strażak SAM!",
+		weapon_hazardcan_description = "Nie wiem, nie wiem, nie wiem jak to będzie ziom ale ja bym nie używał tego karnistra do podlania kwiatków.",
 		weapon_fertilizercan_description = "Troche odchodów, idealnych dla twoich roślinek.",
 
 		red_parachute_description = "Zupełnie jak zwykły spadochron tylko w kolorze czerwonym.",
@@ -4391,7 +4391,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		-- TODO: Add a description for this one
 		weapon_addon_stungun = "Coil Stun Gun",
-		weapon_addon_stungun_description = "",
+		weapon_addon_stungun_description = "Podobno ulubiona zabawka dla medyków nudzących się ale jak jebnie to poczujesz.",
 
 		weapon_addon_m4 = "M4 Carbine",
 		weapon_addon_m4_description = "\"Military Grade\" Właśnie dlatego został przekazany do Departamentu Policji.",
@@ -4423,7 +4423,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		weapon_addon_tacknife = "Nóż Taktyczny",
 		weapon_addon_tacknife_description = "Nóż prawdziwego fana Rambo jak i survivalowców"
 
-		weapon_addon_reaper = "Żniwiasz",
+		weapon_addon_reaper = "Żniwiarz",
 		weapon_addon_reaper_description = "Maczeta ale bardziej fancy.",
 
 		weapon_addon_berserker = "Berserk",
@@ -4461,7 +4461,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		illegal_lighter_item_id = "Próba nieprawidłowego użycia zapalniczki z innym przedmiotem.",
 		unable_to_use_lighter_in_vehicle = "Nie możesz użyć zapalniczki podczas podróży pojazdem.",
 		not_possible_in_a_vehicle = "Nie możesz tego zrobić w pojeździe.",
-		just_used_bandage = "Poczekaj chwilę, zanim użyesz następnej apteczki",
+		just_used_bandage = "Poczekaj chwilę, zanim użyjesz następnej apteczki",
 
 		logs_used_weather_spell_title = "Użyłeś zaklęcia z pogodą",
 		logs_used_weather_spell_details = "${consoleName} użyto zaklęcia z pogodą `${itemName}`."
