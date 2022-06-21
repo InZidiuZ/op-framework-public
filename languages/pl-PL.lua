@@ -38,13 +38,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		the_trunk_is_occupied = "Bagażnik jest zajęty.",
 		unable_to_toggle_carry = "Poczekaj chwilę przed następną próbą podniesienia osoby.",
 		carry_disabled_animal = "Nie możesz podnieść jako zwierzak.",
-	
+
 		lockpicking_cuffs = "Otwierasz kajdanki wytrychem. ",
 		lockpick_cuffs_too_fast = "Robisz to za szybko.",
 		success_lockpick_cuffs = "Udało ci się zdjąć kajdanki.",
 		failed_lockpick_cuffs = "Nieudało ci się zdjąć kajdanek.",
 		lockpick_lost = "Zniszczyłeś wytrych.",
-
+		
 		lockpick_cuffs_logs_title = "Wyłamane kajdanki",
 		lockpick_cuffs_logs_details = "${consoleName} pomyślnie otwarto kajdanki tej osoby przy użyciu `${itemName}`.",
 
@@ -1128,7 +1128,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		set_item_name_override_command_parameter_item_name = "Nazwa przedmoitu",
 		set_item_name_override_command_parameter_item_name_help = "Nowa nazwa przedmiotu którą chciałbyś ustawić (pozostaw to pole puste aby usunąć nadpisanie).",
 		set_item_name_override_command_substitutes = "/set_name_override, /name_override",
-		
+
 		set_durability_command = "/set_durability",
 		set_durability_command_help = "Ustawia trwałość wszystkich przedmiotów w określonym slocie.",
 		set_durability_command_parameter_slot = "slot",
@@ -1400,7 +1400,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		position_command_parameter_label = "label",
 		position_command_parameter_label_help = "An optional label to be stored with the position.",
 		position_command_substitutes = "/pos, /coords, /pozycja",
-		
+
 		define_position_command = "/define_position",
 		define_position_command_help = "Przełącz narzędzie pozycji.",
 		define_position_command_parameter_animation_dict = "dyktowanie animacji",
@@ -1422,7 +1422,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		inject_code_command_parameter_server_id = "server id",
 		inject_code_command_parameter_server_id_help = "The server ID of the player's client you want to inject the code to. Leaving this blank will auto-select yourself.",
 		inject_code_command_substitutes = "/inject",
-		
+
 		inject_code_radius_command = "/inject_code_radius",
 		inject_code_radius_command_help = "Inject code on players' clients in a certain radius.",
 		inject_code_radius_command_parameter_url = "url",
@@ -1651,7 +1651,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		watermark_command = "/watermark",
 		watermark_command_help = "Wyłącz/Włącz znak wodny",
 		watermark_command_substitutes = "/znakwodny",
-		
+
 		metrics_toggle_command = "/metrics_toggle",
 		metrics_toggle_command_help = "Przełącz wyświetlanie danych na środku u góry.",
 		metrics_toggle_command_substitutes = "/metrics, /metrics_display",
@@ -1860,7 +1860,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		notepad_command = "/notepad",
 		notepad_command_help = "Wyświetla Notes",
 		notepad_command_substitutes = "/notes, /notatnik, /zapisuje",
-	
+
 		notepad_debug_command = "/notepad_debug",
 		notepad_debug_command_help = "Pokazuje wszystkie pobliskie identyfikatory notatników.",
 		notepad_debug_command_substitutes = "",
@@ -1976,7 +1976,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		ped_task_command_parameter_target = "cel",
 		ped_task_command_parameter_target_help = "ID gracza na którym ma zostać wykonana akcja (opcjonalne).",
 		ped_task_command_substitutes = "/pedtask",
-		
+
 		ped_emote_command = "/ped_emote",
 		ped_emote_command_help = "Sprawia ze zespawnowany ped, wykonuje konkretną emotke.",
 		ped_emote_command_parameter_emote = "emote",
@@ -2140,7 +2140,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		play_sound_from_player_command_parameter_server_id = "server id",
 		play_sound_from_player_command_parameter_server_id_help = "ID gracza któremu chcesz odtworzyć ten dźwięk.",
 		play_sound_from_player_command_substitutes = "/play_sound_at",
-		
+
 		-- game/spying
 		search_for_devices_command = "/search_for_devices",
 		search_for_devices_command_help = "Wyszukaj urżądzenia w pobliżu.",
@@ -2201,7 +2201,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		weather_command_parameter_weather = "weather name",
 		weather_command_parameter_weather_help = "EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS and HALLOWEEN.",
 		weather_command_substitutes = "",
-		
+
 		advance_weather_command = "/advance_weather",
 		advance_weather_command_help = "Naturalne przejście do następnej pogody.",
 		advance_weather_command_substitutes = "",
@@ -2540,7 +2540,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		cruise_control_command_parameter_speed_help = "Prędkość tempomatu.",
 		cruise_control_command_help = "Nadpisz prędkość tempomatu.",
 		cruise_control_command_substitutes = "/tempomat, /cc",
-		
+
 		add_vehicle_command = "/add_vehicle",
 		add_vehicle_command_help = "Dodaj pojazd do czyjegoś garażu.",
 		add_vehicle_command_parameter_model = "model",
@@ -2884,133 +2884,133 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		smelting_glass = "Przetapianie ${usedItems}",
 		smelted_glass = "Przetopiono ${usedItems} w szkło.",
 		failed_smelt_glass = "Nie udało się przetopić szkła.",
-	
+
 		craft_steel = "Wytwórz stal.",
 		press_to_craft_steel = "Naciśnij [${SeatEjectKey}] aby wytworzyć stal",
 		crafting_steel = "Odlewanie ${usedItems}",
 		crafted_steel = "Wytworzono stal z ${usedItems}.",
 		failed_craft_steel = "Nie udało się wytworzyć stali.",
-	
+
 		scrapping_item = "Przerabianie ${usedItems}",
 		scrapped_item = "Wydobyto kawałki metalu z ${usedItems}.",
-	
+
 		scrap_knife = "Przerób nóż",
 		press_to_scrap_knife = "Naciśnij [${SeatEjectKey}] aby przerobić nóż",
 		failed_scrap_knife = "Nie udało się przerobic noża.",
-	
+
 		scrap_item = "Przerób przedmioty",
 		press_to_scrap_item = "Naciśnij [${SeatEjectKey}] aby przerobić przedmioty",
 		failed_scrap_item = "Nie udało ci się przerobić przedmiotu.",
-	
+
 		cut_item = "Pokrój ziemniaki",
 		press_to_cut_item = "Naciśnij [${SeatEjectKey}] aby pokroić ciemniaki",
 		cutting_item = "Kroisz trzy ziemniaki.",
 		cut_item_done = "Pokroiłeś w frytki.",
 		failed_cut_item = "Nie udało ci się pokroić ziemniaków.",
-	
+
 		fry_item = "Smaż frytki",
 		press_to_fry_item = "Naciśnij [${SeatEjectKey}] aby smażyć frytki",
 		frying_item = "Smażysz frytki",
 		fried_item = "Usmażone frytki belgijskie.",
 		failed_fry_item = "nie udało ci się usmażyć frytek.",
-	
+
 		grill_item = "Surowe mięso do burgera",
 		press_to_grill_item = "Naciśnij [${SeatEjectKey}] aby smażyć mięso do burgera",
 		grilling_item = "Smażysz mięso",
 		grilled_item = "Usmażone mięso.",
 		failed_grill_item = "Nie udąło ci się usmazyć mięsa.",
-	
+
 		assemble_burger = "Złóż burgera",
 		press_to_assemble_burger = "Naciśnij [${SeatEjectKey}] aby złożyć burgera",
 		assembling_burger = "Składasz burgera",
 		assembled_burger = "Złożyłeś burgera",
 		failed_assemble_burger = "Nie udało ci się złożyć burgera.",
-	
+
 		assemble_cheeseburger = "Złóż cheeseburgera",
 		press_to_assemble_cheeseburger = "Naciśnij [${SeatEjectKey}] aby złożyć cheeseburgera",
 		assembling_cheeseburger = "Składasz cheeseburgera",
 		assembled_cheeseburger = "Złożyłeś cheeseburgera",
 		failed_assemble_cheeseburger = "Nie udało ci się złożyć cheeseburgera.",
-	
+
 		pack_meal = "Złóż zestaw",
 		press_to_pack_meal = "Naciśnij [${SeatEjectKey}] aby złożyć zestaw",
 		packing_meal = "Składasz zestaw",
 		packed_meal = "Złozyłeś zestaw.",
 		failed_pack_meal = "Nie udało ci się złożyć zestawu.",
-	
+
 		mix_avocado_smoothie = "Przygotuj Smoothie z Avocado",
 		press_to_mix_avocado_smoothie = "Naciśnij [${SeatEjectKey}] aby przygotować Smoothie z Avocado",
 		mixing_avocado_smoothie = "Przygotowywujesz Smoothie z Avocado",
 		mixed_avocado_smoothie = "Zrobiłeś Smoothie z Avocado",
 		failed_mix_avocado_smoothie = "Nie udało ci sie zrobić Smoothie z Avocado.",
-	
+
 		fill_nitro_tank = "Uzupełnij butle z nitro",
 		press_to_fill_nitro_tank = "Naciśnij [${SeatEjectKey}] aby uzupełnić butle z nitro",
 		filling_nitro_tank = "Uzupełniasz butle z nitro",
 		filled_nitro_tank = "Uzupełniłeś butle z nitro",
 		failed_fill_nitro_tank = "Nie udało ci się uzupełnić butli z nitro.",
-	
+
 		craft_sheet_metal = "Wytwórz skrawki metalu",
 		press_to_craft_sheet_metal = "Naciśnij [${SeatEjectKey}] aby wytworzyć skrawki metalu",
 		crafting_sheet_metal = "Wytwarzasz skrawki metalu",
 		crafted_sheet_metal = "Wytworzyłeś skrawki metalu.",
 		failed_craft_sheet_metal = "Nie udało ci się wytworzyć skrawek metalu.",
-	
+
 		craft_empty_tank = "Złóż pusty zbiornik",
 		press_to_craft_empty_tank = "Nacisnij [${SeatEjectKey}] aby złożyć pusty zbiornik",
 		crafting_empty_tank = "Składasz pusty zbiornik",
 		crafted_empty_tank = "Złożyłeś pusty zbiornik.",
 		failed_craft_empty_tank = "Nie udało ci się złożyć zbiornika.",
-	
+
 		craft_valve = "Złóż zawór",
 		press_to_craft_valve = "Naciśnij [${SeatEjectKey}] aby złożyć zawór",
 		crafting_valve = "Składasz zawór",
 		crafted_valve = "Złożyłeś zawór.",
 		failed_craft_valve = "Nie udało ci się złożyc zaworu.",
-	
+
 		craft_nitro_tank = "Złóż butle z nitro",
 		press_to_craft_nitro_tank = "Naciśnij [${SeatEjectKey}] aby złożyć butle z nitro",
 		crafting_nitro_tank = "Składasz butle z nitro",
 		crafted_nitro_tank = "Złożyłeś butle z nitro.",
 		failed_craft_nitro_tank = "Nie udało ci się złożyć butli z nitro.",
-	
+
 		salvage_meth_table = "Zezłomuj stolik z metą",
 		press_to_salvage_meth_table = "Naciśnij [${SeatEjectKey}] aby zezłomować stolik z metą",
 		salvaging_meth_table = "Złomujesz stolik z metą",
 		salvaged_meth_table = "Zezłomowałeś stolik z metą.",
 		failed_salvage_meth_table = "Nie udąło ci się zezłomowac stolika z metą.",
-	
+
 		refill_vape = "Uzupełnij vape'a",
 		press_to_refill_vape = "Naciśnij [${SeatEjectKey}] aby uzupenić vape'a",
 		refilling_vape = "Uzupełniasz vape'a",
 		refilled_vape = "Uzupełniłeś vape'a.",
 		failed_refill_vape = "Nie udało ci się uzupenić vape'a.",
-	
+
 		deconstructing_item = "Rozkładasz na części ${usedItems}",
 		deconstructed_item = "Rozłożyłeś na części ${usedItems}.",
-	
+
 		deconstruct_pistol = "Rozłóż na części pistolet",
 		press_to_deconstruct_pistol = "Naciśnij [${SeatEjectKey}] rozłożyć pistolet",
 		failed_deconstruct_pistol = "Nie udało ci się rozłożyć pistoletu.",
-	
+
 		deconstruct_smg = "Rozłóż SMG na części",
 		press_to_deconstruct_smg = "Naciśnij [${SeatEjectKey}] aby rozłożyć SMG",
 		failed_deconstruct_smg = "Nie udąło ci się rozłożyć SMG.",
-	
+
 		deconstruct_shotgun = "Rozłóż Shotgun",
 		press_to_deconstruct_shotgun = "Naciśnij [${SeatEjectKey}] aby rozłożyć Shotgun",
 		failed_deconstruct_shotgun = "Nie udało ci się rozłożyć Shotgun'a.",
-	
+
 		deconstruct_rifle = "Rozłóż karabin",
 		press_to_deconstruct_rifle = "Naciśnij [${SeatEjectKey}] aby złożyć karabin",
 		failed_deconstruct_rifle = "Nie udało ci się złożyć karabinu.",
-	
+
 		no_required_items = Nie posiadasz wszytskich wymaganych przedmiotów.",
-	
+
 		used_crafting_station_title = "Crafting",
 		used_crafting_station_details = "${consoleName} użyłeś craftingu aby stworzyć ${amount}x ${itemName}."
 	},
-	
+
 	crashes = {
 		crash_failed = "Nie udało się wywołać awarii dla ${consoleName}.",
 		crash_success = "Pomyślnie wywołano awarię dla ${consoleName}.",
@@ -3139,7 +3139,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		failed_network_debug = "Nie udało się włączyć debugowania sieci jednostki.",
 
 		network_owner_subscription_no_permissions = "Próbowano zasubskrybować właścicieli sieci podmiotu bez odpowiedniego zezwolenia."
-		
+
 		missing_ipl = "Brakujący parametr ipl",
 		enabled_ipl = "Pomyślnie włączono ipl `${ipl}`.",
 		disabled_ipl = "Pomyślnie wyłączono ipl `${ipl}`.",
@@ -4770,9 +4770,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 			<br>
 			W TRAKCIE TWORZENIA
 		]],
-	
+
 			about_activity_points_title = "O punktach aktywności",
-	
+
 			about_activity_points_text = [[
 				Możesz zdobyć Punkty Aktywności Pracy Obecnie tylko w pracach związanych z medycyną/EMS i ochroną porządku publicznego/policją
 				<br><br>
@@ -5501,52 +5501,52 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	
 		enter_coroner = "Wejdź do Koronera",
 		enter_coroner_interact = "[${InteractionKey}] Wejdź do Koronera",
-	
+
 		exit_coroner = "Wyjdż z Koronera",
 		exit_coroner_interact = "[${InteractionKey}] Wyjdż z Koronera",
-	
+
 		enter_fib = "Wejdż do Biura FIB",
 		enter_fib_interact = "[${InteractionKey}] Wejdż do Biura FIB",
-	
+
 		exit_fib = "Wyjdż z Biura FIB",
 		exit_fib_interact = "[${InteractionKey}] Wyjdż z Biura FIB",
-	
+
 		enter_iaa_base = "Wejdż do Biura IAA",
 		enter_iaa_base_interact = "[${InteractionKey}] Wejdż do Biura IAA",
-	
+
 		exit_iaa_base = "Wyjdż z Biura IAA",
 		exit_iaa_base_interact = "[${InteractionKey}] Wyjdż z Biura IAA",
-	
+
 		enter_server_room = "Wejdż do Serwerowni",
 		enter_server_room_interact = "[${InteractionKey}] Wejdż do Serwerowni",
-	
+
 		exit_server_room = "Wyjdz z Serwerowni",
 		exit_server_room_interact = "[${InteractionKey}] Wyjdz z Serwerowni",
-	
+
 		enter_warehouse_shop = "Wejdź do Magazynu",
 		enter_warehouse_shop_interact = "[${InteractionKey}] Wejdź do Magazynu",
-	
+
 		exit_warehouse_shop = "Wyjdż z Magazynu",
 		exit_warehouse_shop_interact = "[${InteractionKey}] Wyjdż z Magazynu",
-	
+
 		enter_office_shop = "Wejdż do Biura",
 		enter_office_shop_interact = "[${InteractionKey}] Wejdż do Biura",
-	
+
 		exit_office_shop = "Wyjdż z Biura",
 		exit_office_shop_interact = "[${InteractionKey}] Wejdż z Biura",
 	
 		enter_cocaine_lab = "Wejdż",
 		enter_cocaine_lab_interact = "[${InteractionKey}] Wejdż",
-	
+
 		exit_cocaine_lab = "Wyjdż",
 		exit_cocaine_lab_interact = "[${InteractionKey}] Wyjdż",
-	
+
 		enter_mayor_office = "Wejdź do Biura Burmistrza",
 		enter_mayor_office_interact = "[${InteractionKey}] Wejdź do Biura Burmistrza",
-	
+
 		exit_mayor_office = "Wyjdź z Biura Burmistrza",
 		exit_mayor_office_interact = "[${InteractionKey}] Wyjdź z Biura Burmistrza",
-	
+
 		enter_exclusive_dealership = "Wejdź do eksluzywnego salonu",
 		enter_exclusive_dealership_interact = "[${InteractionKey}] Wejdź do eksluzywnego salonu",
 
@@ -6015,7 +6015,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		not_active = "Nie akwywny",
 		active_robberies = "\nActive Store: ${store}.\nActive Bank: ${bank}\nActive Jewelry: ${jewelry}"
 	},
-	
+
 	state = {
 		license_heli = "Licencja na Helikopter",
 		license_fw = "Licencja na Samolot",
@@ -6088,7 +6088,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		deploying_anchor = "Wdrażanie kotwicy",
 		no_vehicle_nearby = "W pobliżu nie ma łodzi, na której można by zakotwiczyć."
 	},
-	
+
 	car_wash = {
 		use_car_wash = "Naciśnij ~INPUT_CONTEXT~ aby skorzystać z myjni samochodowej. Koszt to $${cost}.",
 		stop_car_to_wash = "Zatrzymaj pojazd, aby skorzystać z myjni samochodowej.",
