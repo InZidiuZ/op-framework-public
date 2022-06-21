@@ -46,7 +46,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		lockpick_lost = "Zniszczyłeś wytrych.",
 
 		lockpick_cuffs_logs_title = "Wyłamane kajdanki",
-		lockpick_cuffs_logs_details = "${consoleName} pomyślnie otwarto kajdanki tej osoby przy użyciu `${itemName}`.",
+		lockpick_cuffs_logs_details = "${consoleName} pomyślnie otworzono kajdanki tej osoby przy użyciu `${itemName}`.",
 
 		you_are_not_being_carried = "Obecnie nikt cię nie przenosi.",
 		successfully_uncarried = "Pomyślnie wyrwałeś się z rąk osoby przenoszącej.",
@@ -608,7 +608,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		damage_player_failed = "Nie udało się zadać obrażeń graczowi.",
 		damage_player_logs_title = "Obrażenia zadane graczu",
 		damage_player_logs_details = "${consoleName} zadał obrażenia ${targetConsoleName} za ${damage} obrażeń.",
-		damage_player_missing_permissions = "Player attempted to damage another player without proper permissions."
+		damage_player_missing_permissions = "Gracz próbował zranić innego gracza bez odpowiednich uprawnień."
 	},
 
 	anti_cheat = {
@@ -2427,7 +2427,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		licenses_command = "/licenses",
 		licenses_command_help = "Sprawdź swoje licencje.",
-		licenses_command_substitutes = "",
+		licenses_command_substitutes = "/licencja",
 
 		-- vehicles/boats
 		toggle_anchor_command = "/toggle_anchor",
@@ -2766,7 +2766,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		luxury_autos = "Luxury Autos",
 		city_hall = "Urząd miasta",
 		rockford_records = "Rockford Records",
-		dispensary = "Sklep Konopny"
+		dispensary = "Coffee Shop"
 		vineyard = "Winnica"
 	},
 
