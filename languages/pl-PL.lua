@@ -5367,7 +5367,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		microphone_bug_active_with_battery = "Ta pluskwa jest aktualnie dostępna. Poziom naładowania baterii jest na ${batteryPercentage}%. You can \"Use\" it to listen in on any conversations it may pick up.<br><br>Device Id: ${deviceId}.",
 		microphone_bug_ran_out_of_battery = "Bateria tej pluskwy się wyczerpała. Urządzenie samoistnie po tygodniu zostanie usunięte.<br><br>Device Id: ${deviceId}.",
 		vehicle_tracker_active_with_battery = "Ten tracker pojazdów jest aktualnie dostępny. Poziom naładowania baterii jest na ${batteryPercentage}%. ATak długo jak pojazd jest w zakresie GPS będziesz widział ten pojazd.<br><br>Device Id: ${deviceId}.",
-		vehicle_tracker_ran_out_of_battery = "Batera tego trackera pojazdów się wyczerpala. Urządzenie samoistnie po tygodniu zostanie usunięte.<br><br>Device Id: ${deviceId}",
+		vehicle_tracker_ran_out_of_battery = "Bateria tego trackera pojazdów się wyczerpala. Urządzenie samoistnie po tygodniu zostanie usunięte.<br><br>Device Id: ${deviceId}",
 		scanning_for_devices = "Skanowanie urzadzeń",
 		searching_for_devices = "Poszukiwanie urządzeń",
 		no_nearby_vehicle = "Nie ma w pobliżu pojazdu.",
@@ -5502,44 +5502,44 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		enter_coroner = "Wejdź do Koronera",
 		enter_coroner_interact = "[${InteractionKey}] Wejdź do Koronera",
 
-		exit_coroner = "Wyjdż z Koronera",
-		exit_coroner_interact = "[${InteractionKey}] Wyjdż z Koronera",
+		exit_coroner = "Wyjdź z Koronera",
+		exit_coroner_interact = "[${InteractionKey}] Wyjdź z Koronera",
 
-		enter_fib = "Wejdż do Biura FIB",
-		enter_fib_interact = "[${InteractionKey}] Wejdż do Biura FIB",
+		enter_fib = "Wejdź do Biura FIB",
+		enter_fib_interact = "[${InteractionKey}] Wejdź do Biura FIB",
 
-		exit_fib = "Wyjdż z Biura FIB",
-		exit_fib_interact = "[${InteractionKey}] Wyjdż z Biura FIB",
+		exit_fib = "Wyjdź z Biura FIB",
+		exit_fib_interact = "[${InteractionKey}] Wyjdź z Biura FIB",
 
-		enter_iaa_base = "Wejdż do Biura IAA",
-		enter_iaa_base_interact = "[${InteractionKey}] Wejdż do Biura IAA",
+		enter_iaa_base = "Wejdź do Biura IAA",
+		enter_iaa_base_interact = "[${InteractionKey}] Wejdź do Biura IAA",
 
-		exit_iaa_base = "Wyjdż z Biura IAA",
-		exit_iaa_base_interact = "[${InteractionKey}] Wyjdż z Biura IAA",
+		exit_iaa_base = "Wyjdź z Biura IAA",
+		exit_iaa_base_interact = "[${InteractionKey}] Wyjdź z Biura IAA",
 
-		enter_server_room = "Wejdż do Serwerowni",
-		enter_server_room_interact = "[${InteractionKey}] Wejdż do Serwerowni",
+		enter_server_room = "Wejdź do Serwerowni",
+		enter_server_room_interact = "[${InteractionKey}] Wejdź do Serwerowni",
 
-		exit_server_room = "Wyjdz z Serwerowni",
-		exit_server_room_interact = "[${InteractionKey}] Wyjdz z Serwerowni",
+		exit_server_room = "Wyjdź z Serwerowni",
+		exit_server_room_interact = "[${InteractionKey}] Wyjdź z Serwerowni",
 
 		enter_warehouse_shop = "Wejdź do Magazynu",
 		enter_warehouse_shop_interact = "[${InteractionKey}] Wejdź do Magazynu",
 
-		exit_warehouse_shop = "Wyjdż z Magazynu",
+		exit_warehouse_shop = "Wyjdź z Magazynu",
 		exit_warehouse_shop_interact = "[${InteractionKey}] Wyjdż z Magazynu",
 
-		enter_office_shop = "Wejdż do Biura",
+		enter_office_shop = "Wejdź do Biura",
 		enter_office_shop_interact = "[${InteractionKey}] Wejdż do Biura",
 
-		exit_office_shop = "Wyjdż z Biura",
-		exit_office_shop_interact = "[${InteractionKey}] Wejdż z Biura",
+		exit_office_shop = "Wyjdź z Biura",
+		exit_office_shop_interact = "[${InteractionKey}] Wyjdź z Biura",
 
-		enter_cocaine_lab = "Wejdż",
-		enter_cocaine_lab_interact = "[${InteractionKey}] Wejdż",
+		enter_cocaine_lab = "Wejdź",
+		enter_cocaine_lab_interact = "[${InteractionKey}] Wejdź",
 
-		exit_cocaine_lab = "Wyjdż",
-		exit_cocaine_lab_interact = "[${InteractionKey}] Wyjdż",
+		exit_cocaine_lab = "Wyjdź",
+		exit_cocaine_lab_interact = "[${InteractionKey}] Wyjdź",
 
 		enter_mayor_office = "Wejdź do Biura Burmistrza",
 		enter_mayor_office_interact = "[${InteractionKey}] Wejdź do Biura Burmistrza",
@@ -5551,7 +5551,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		enter_exclusive_dealership_interact = "[${InteractionKey}] Wejdź do eksluzywnego salonu",
 
 		exit_exclusive_dealership = "Wyjdź z eksluzywnego salonu",
-		exit_exclusive_dealership_interact = "[${InteractionKey}] Wyjdź z eksluzywnego salonup",
+		exit_exclusive_dealership_interact = "[${InteractionKey}] Wyjdź z eksluzywnego salonu",
 
 		enter_casino = "Wejdź do kasyna",
 		enter_casino_interact = "[${InteractionKey}] Wejdź do kasyna",
