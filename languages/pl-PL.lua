@@ -2043,7 +2043,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		spawn_prop_command = "/spawn_prop",
 		spawn_prop_command_help = "Zresp propa.",
-		spawn_prop_command_parameter_model_hash = "Motel",
+		spawn_prop_command_parameter_model_hash = "Model",
 		spawn_prop_command_parameter_model_hash_help = "Model propa, który chcesz zrespić.",
 		spawn_prop_command_parameter_network = "Sieć",
 		spawn_prop_command_parameter_network_help = "Jeżeli chcesz połączyć te propy to zaleca się żeby sieciowe były animowane.",
@@ -2583,7 +2583,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 	errors = {
 		error_report = "Zgłoś błąd",
-		error_report_info = "Uwaga, <b>Pojawił się błąd!</b> TOznacza to, że coś nie działa prawidłowo lub zgodnie z przeznaczeniem. Uprzejmie prosimy o pomoc w rozwiązaniu tego problemu, podając kilka dodatkowych szczegółów dotyczących tego, co robiłeś, gdy ten błąd się pojawił.",
+		error_report_info = "Uwaga, <b>Pojawił się błąd!</b> To oznacza, że coś nie działa prawidłowo lub zgodnie z przeznaczeniem. Uprzejmie prosimy o pomoc w rozwiązaniu tego problemu, podając kilka dodatkowych szczegółów dotyczących tego, co robiłeś, gdy ten błąd się pojawił.",
 		script_location = "Lokacja skryptu:",
 		error_report_feedback_title = "Dodatkowe informacje",
 		error_report_feedback_placeholder = "Proszę daj nam znać, co robiłeś/aś, gdy ten błąd został się pojawił...",
@@ -4578,7 +4578,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		upgrades_list = "${engine}, ${breaks}, ${transmission} i ${turbo}.",
 
 		has_no_turbo = "turbo nie jest zainstalowane",
-		has_turbo = "torbo jest zainstalowane",
+		has_turbo = "turbo jest zainstalowane",
 
 		breaks_0 = "Podsawowe hamulce",
 		breaks_1 = "Uliczne hamulce",
@@ -4642,7 +4642,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		player_not_muted = "${consoleName} nie jest zmutowany.",
 		player_has_been_unmuted = "${consoleName} Został odmutowany.",
 		clear_chat_not_admin = "Gracz próbował wyczyścić czat dla wszystkich graczy, ale nie miał do tego odpowiednich uprawnień.",
-		yes = "yes",
+		yes = "tak",
 		ooc_clear_chat_title = "Czat wyczyszczony",
 		ooc_clear_chat_details = "${consoleName} Czat wyczyszczony dla wszystkich graczy.",
 		muted_player = "Zmutowany gracz",
