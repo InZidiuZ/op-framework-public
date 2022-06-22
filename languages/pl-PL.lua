@@ -665,7 +665,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		s_f_y_stripperlite_label = "Striptizerka",
 		mp_f_stripperlite_label = "Striptizerka ped 2",
 		mp_m_marston_01_label = "Brakujące ręce i nogi",
-		mp_m_niko_01_label = "Niko (GTA IV),"
+		mp_m_niko_01_label = "Niko (GTA IV)",
 
 		illegal_oxy_run = "Gracz ukończył kurs z oxy szybciej, niż jest to możliwe."
 	},
