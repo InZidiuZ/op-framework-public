@@ -316,6 +316,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		peeking_on = "Toggled peeking mode on.",
 		peeking_off = "Toggled peeking mode off.",
 
+		watching_on = "Toggled watching mode on.",
+		watching_off = "Toggled watching mode off.",
+		watching_label = "Watching: ${nearby}",
+
 		evidence_view_on = "Toggled evidence view on.",
 		evidence_view_off = "Toggled evidence view off.",
 		evidence_view_title = "Toggled Evidence View",
@@ -377,6 +381,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		speed_boost_feature = "Speed Boost",
 		speed_up_progress_bar_feature = "Speed Up Progress Bar",
 		wallhack_feature = "Wallhack",
+		watching_feature = "Watching",
 
 		you_are_not_in_a_vehicle = "You are not in a vehicle.",
 		repaired_vehicle = "Repaired vehicle.",
@@ -471,56 +476,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		tint_set = "Successfully set weapon tint to `${tint}` (${tintIndex}).",
 		no_weapon_tint = "This weapon does not have tints.",
 
-		tint_normal_0 = "Black",
-		tint_normal_1 = "Green",
-		tint_normal_2 = "Gold",
-		tint_normal_3 = "Pink",
-		tint_normal_4 = "Army",
-		tint_normal_5 = "LSPD",
-		tint_normal_6 = "Orange",
-		tint_normal_7 = "Platinum",
-
-		tint_mk2_0 = "Classic Black",
-		tint_mk2_1 = "Classic Gray",
-		tint_mk2_2 = "Classic Two-Tone",
-		tint_mk2_3 = "Classic White",
-		tint_mk2_4 = "Classic Beige",
-		tint_mk2_5 = "Classic Green",
-		tint_mk2_6 = "Classic Blue",
-		tint_mk2_7 = "Classic Earth",
-		tint_mk2_8 = "Classic Brown & Black",
-		tint_mk2_9 = "Red Contrast",
-		tint_mk2_10 = "Blue Contrast",
-		tint_mk2_11 = "Yellow Contrast",
-		tint_mk2_12 = "Orange Contrast",
-		tint_mk2_13 = "Bold Pink",
-		tint_mk2_14 = "Bold Purple & Yellow",
-		tint_mk2_15 = "Bold Orange",
-		tint_mk2_16 = "Bold Green & Purple",
-		tint_mk2_17 = "Bold Red Features",
-		tint_mk2_18 = "Bold Green Features",
-		tint_mk2_19 = "Bold Cyan Features",
-		tint_mk2_20 = "Bold Yellow Features",
-		tint_mk2_21 = "Bold Red & White",
-		tint_mk2_22 = "Bold Blue & White",
-		tint_mk2_23 = "Metallic Gold",
-		tint_mk2_24 = "Metallic Platinum",
-		tint_mk2_25 = "Metallic Gray & Lilac",
-		tint_mk2_26 = "Metallic Purple & Lime",
-		tint_mk2_27 = "Metallic Red",
-		tint_mk2_28 = "Metallic Green",
-		tint_mk2_29 = "Metallic Blue",
-		tint_mk2_30 = "Metallic White & Aqua",
-		tint_mk2_31 = "Metallic Red & Yellow",
-
-		tint_ray_0 = "Space Ranger",
-		tint_ray_1 = "Purple",
-		tint_ray_2 = "Green",
-		tint_ray_3 = "Orange",
-		tint_ray_4 = "Pink",
-		tint_ray_5 = "Gold",
-		tint_ray_6 = "Platinum",
-
 		weapon_attachment_missing_perms = "Attempted to toggle a weapon attachment without proper permission.",
 		weapon_tint_missing_perms = "Attempted to set a weapon tint without proper permission.",
 
@@ -530,24 +485,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		no_attachments = "No Attachments",
 		attachments_list = "Attachments:",
 		tint_label = "Tint: \"${tintLabel}\" (${tintIndex})",
-
-		attachment_label_suppressor = "Suppressor",
-		attachment_label_flashlight = "Flashlight",
-		attachment_label_extended_clip = "Extended Clip",
-		attachment_label_luxury = "Luxury Finish",
-		attachment_label_incendiary = "Incendiary Rounds",
-		attachment_label_tracer = "Tracer Rounds",
-		attachment_label_hollow_point = "Hollow Point Rounds",
-		attachment_label_scope = "Scope",
-		attachment_label_grip = "Grip",
-		attachment_label_drum = "Drum Magazine",
-		attachment_label_heavy_barrel = "Heavy Barrel",
-		attachment_label_armor_piercing = "Armor Piercing Rounds",
-		attachment_label_explosive = "Explosive Rounds",
-		attachment_label_sight = "Holographic Sight",
-		attachment_label_fmj = "Full Metal Jacket Rounds",
-		attachment_label_scope_nv = "Night Vision Scope",
-		attachment_label_scope_thermal = "Thermal Scope",
 
 		item_name_failed_set = "Failed to set item name override.",
 		item_name_removed = "Successfully removed item name override.",
@@ -620,7 +557,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		semi_god_mode = "Detected semi god mode.",
 		seeing_invisible_players = "Player was able to invisible players when they shouldn't have been able to.",
 		bad_entity_spawn = "Spawned in an entity with model name `${modelName}`.",
-		mass_entity_spawn = "Spawned in a lot of entities very quickly (model name `${modelName}` at `${coords}`).",
 		bad_entity_title = "Bad Entity Spawned",
 		bad_entity_message = "${consoleName} spawned entity with model name `${modelName}`.",
 		detected_entity_title = "Detected Entity Spawned",
@@ -667,7 +603,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		mp_m_marston_01_label = "Missing arms and legs",
 		mp_m_niko_01_label = "Niko (GTA IV)",
 
-		illegal_oxy_run = "Player completed an oxy run faster than humanly possible."
+		illegal_oxy_run = "Player completed an oxy run faster than humanly possible.",
+
+		fast_movement_warning = "You have been flagged for moving too fast! Please let a developer know and tell them what you were doing to make this happen as you should not be recieving this chat message."
 	},
 
 	authentication = {
@@ -925,6 +863,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		ghost_command_help = "This command will enable /peek, /invisibility and /disable_collisions.",
 		ghost_command_substitutes = "",
 
+		watching_command = "/watching",
+		watching_command_help = "Shows you all players who are spectating nearby.",
+		watching_command_substitutes = "",
+
 		disable_recoil_command = "/disable_recoil",
 		disable_recoil_command_help = "Disables all weapon recoil.",
 		disable_recoil_command_substitutes = "",
@@ -999,6 +941,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		spawn_item_command_parameter_amount_help = "The amount of the item you would like to spawn. If left blank, one is selected.",
 		spawn_item_command_parameter_server_id = "server id",
 		spawn_item_command_parameter_server_id_help = "The player's server ID you would like to spawn the item for. If left blank, yourself is selected.",
+		spawn_item_command_parameter_battle_royale_only = "battle royale only",
+		spawn_item_command_parameter_battle_royale_only_help = "Make this item a Battle Royale only item.",
 		spawn_item_command_substitutes = "/si",
 
 		warning_message_command = "/warning_message",
@@ -1098,10 +1042,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		disable_idle_cam_command = "/disable_idle_cam",
 		disable_idle_cam_command_help = "Disables the idle camera from activating.",
 		disable_idle_cam_command_substitutes = "/disable_idle, /idle",
-
-		yeet_vehicle_command = "/yeet_vehicle",
-		yeet_vehicle_command_help = "Teleports the vehicle you are currently in into the ocean.",
-		yeet_vehicle_command_substitutes = "/yeet",
 
 		auto_drive_command = "/auto_drive",
 		auto_drive_command_help = "Automatically drives you to the set waypoint or drives around randomly if none is set.",
@@ -1220,17 +1160,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		detection_area_remove_command_parameter_area_id_help = "The ID of the detection area you are wanting to remove.",
 		detection_area_remove_command_substitutes = "/area_remove",
 
-		-- base/characters
-		cid_available_command = "/cid_available",
-		cid_available_command_help = "Check if a character ID is available for the `/claim_cid` command.",
-		cid_available_command_parameter_character_id = "character id",
-		cid_available_command_parameter_character_id_help = "The character ID you would like to check.",
-		cid_available_command_substitutes = "",
-
-		lowest_cid_available_command = "/lowest_cid_available",
-		lowest_cid_available_command_help = "Get the lowest character ID available for the `/claim_cid` command.",
-		lowest_cid_available_command_substitutes = "",
-
 		-- base/commands
 		help_command = "/help",
 		help_command_help = "Show all available commands.",
@@ -1239,6 +1168,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		substitutes_command = "/substitutes",
 		substitutes_command_help = "Show all available substitutes.",
 		substitutes_command_substitutes = "",
+
+		-- base/discord
+		richer_presence_command = "/richer_presence",
+		richer_presence_command_help = "Toggle the 'richer presence' which adds more information to the rich presence, such as loaded character.",
+		richer_presence_command_substitutes = "",
 
 		-- base/users
 		playtime_command = "/playtime",
@@ -1277,6 +1211,43 @@ OP.Global.Locales.Languages["en-US"] = {
 		audio_debug_command_help = "Toggle the audio debug.",
 		audio_debug_command_substitutes = "",
 
+		-- game/battle_royale
+		battle_royale_toggle_command = "/battle_royale_toggle",
+		battle_royale_toggle_command_help = "Toggle the Battle Royale feature.",
+		battle_royale_toggle_command_substitutes = "/br_toggle",
+
+		battle_royale_start_command = "/battle_royale_start",
+		battle_royale_start_command_help = "Start a Battle Royale match.",
+		battle_royale_start_command_parameter_no_vehicles = "no vehicles",
+		battle_royale_start_command_parameter_no_vehicles_help = "Create a match with no vehicles.",
+		battle_royale_start_command_substitutes = "/br_start",
+
+		battle_royale_invite_command = "/battle_royale_invite",
+		battle_royale_invite_command_help = "Invite a player to your Battle Royale lobby.",
+		battle_royale_invite_command_parameter_server_id = "server id",
+		battle_royale_invite_command_parameter_server_id_help = "The server ID of the player you would like to invite.",
+		battle_royale_invite_command_substitutes = "/br_invite",
+
+		battle_royale_join_command = "/battle_royale_join",
+		battle_royale_join_command_help = "Join a player's Battle Royale lobby.",
+		battle_royale_join_command_parameter_server_id = "server id",
+		battle_royale_join_command_parameter_server_id_help = "The server ID of the player you would like to join.",
+		battle_royale_join_command_substitutes = "/br_join",
+
+		battle_royale_leave_command = "/battle_royale_leave",
+		battle_royale_leave_command_help = "Leave the Battle Royale lobby you are in.",
+		battle_royale_leave_command_substitutes = "/br_leave",
+
+		battle_royale_join_instance_command = "/battle_royale_join_instance",
+		battle_royale_join_instance_command_help = "Join a player's Battle Royale instance.",
+		battle_royale_join_instance_command_parameter_server_id = "server id",
+		battle_royale_join_instance_command_parameter_server_id_help = "The player's server ID you want to join the instance of.",
+		battle_royale_join_instance_command_substitutes = "/br_join_instance",
+
+		battle_royale_leave_instance_command = "/battle_royale_leave_instance",
+		battle_royale_leave_instance_command_help = "Leave the instance you have joined.",
+		battle_royale_leave_instance_command_substitutes = "/br_leave_instance",
+
 		-- game/bombs
 		toggle_bombs_command = "/toggle_bombs",
 		toggle_bombs_command_help = "Toggles the bombs on your current aircraft.",
@@ -1285,6 +1256,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		plant_bomb_command = "/plant_bomb",
 		plant_bomb_command_help = "Plants a sticky bomb at your current position.",
 		plant_bomb_command_substitutes = "",
+
+		toggle_ignition_bomb_command = "/toggle_ignition_bomb",
+		toggle_ignition_bomb_command_help = "Toggles the ignition bomb for the vehicle you are currently in (vehicle will explode when engine is turned on).",
+		toggle_ignition_bomb_command_substitutes = "/ignition_bomb",
 
 		-- game/boomboxes
 		wipe_boomboxes_command = "/wipe_boomboxes",
@@ -1349,6 +1324,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		delete_outfit_command_parameter_name_help = "The name of the outfit.",
 		delete_outfit_command_substitutes = "",
 
+		reload_player_ped_data_command = "/reload_player_ped_data",
+		reload_player_ped_data_command_help = "Resets your or someones player ped. (Fixes invisible peds)",
+		reload_player_ped_data_command_parameter_server_id = "server id",
+		reload_player_ped_data_command_parameter_server_id_help = "Leave empty if you want to do it to yourself.",
+		reload_player_ped_data_command_substitutes = "/reload_player_ped, /reload_ped_data, /reload_player",
+
 		outfit_command = "/outfit",
 		outfit_command_help = "Change into a different outfit when near a clothing spot.",
 		outfit_command_parameter_outfit = "outfit",
@@ -1358,6 +1339,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		outfits_command = "/outfits",
 		outfits_command_help = "List all your saved outfits.",
 		outfits_command_substitutes = "",
+
+		-- game/command_socket
+		reconnect_command_socket_command = "/reconnect_command_socket",
+		reconnect_command_socket_command_help = "Attempts to reconnect to the command socket.",
+		reconnect_command_socket_command_substitutes = "",
+
+		-- game/crafting
+		crafting_debug_command = "/crafting_debug",
+		crafting_debug_command_help = "Debugs all crafting locations.",
+		crafting_debug_command_substitutes = "",
 
 		-- game/crashes
 		crash_command = "/crash",
@@ -1375,7 +1366,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		unit_id_command = "/unit_id",
 		unit_id_command_help = "Set your Unit ID.",
 		unit_id_command_parameter_unit_id = "unit id",
-		unit_id_command_parameter_unit_id_help = "Your Unit ID. This can be left blank for the default value, which is your server ID.",
+		unit_id_command_parameter_unit_id_help = "Your Unit ID. This has to be an integer between 1 and 999.",
 		unit_id_command_substitutes = "",
 
 		-- game/debug
@@ -1528,6 +1519,20 @@ OP.Global.Locales.Languages["en-US"] = {
 		disable_ipl_globally_command_parameter_ipl = "ipl",
 		disable_ipl_globally_command_parameter_ipl_help = "The IPL you want to disable.",
 		disable_ipl_globally_command_substitutes = "",
+
+		selfie_command = "/selfie",
+		selfie_command_help = "Toggles the selfie camera.",
+		selfie_command_substitutes = "",
+
+		search_world_command = "/search_world",
+		search_world_command_help = "Search the world for certain models.",
+		search_world_command_parameter_model_name = "model name",
+		search_world_command_parameter_model_name_help = "The model name you would like to search for.",
+		search_world_command_substitutes = "",
+
+		copy_coords_command = "/copy_coords",
+		copy_coords_command_help = "Copies your current coordinates to the clipboard.",
+		copy_coords_command_substitutes = "",
 
 		-- game/dna_evidence
 		take_dna_sample_command = "/take_dna_sample",
@@ -1746,6 +1751,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		refresh_inventory_command_parameter_inventory_name = "inventory name",
 		refresh_inventory_command_parameter_inventory_name_help = "The inventory you want to refresh.",
 		refresh_inventory_command_substitutes = "",
+
+		-- game/items
+		clear_map_command = "/clear_map",
+		clear_map_command_help = "Clears the stored location of a map.",
+		clear_map_command_parameter_slot = "slot",
+		clear_map_command_parameter_slot_help = "The inventory slot the map is in.",
+		clear_map_command_substitutes = "",
 
 		-- game/locate
 		locate_entity_command = "/locate_entity",
@@ -2115,6 +2127,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		shield_command_help = "Toggle the ballistic shield.",
 		shield_command_substitutes = "",
 
+		-- game/shockwaves
+		create_shockwave_command = "/create_shockwave",
+		create_shockwave_command_help = "Creates a shockwave at your current position.",
+		create_shockwave_command_parameter_force = "force",
+		create_shockwave_command_parameter_force_help = "The force of the shockwave (1 - 1000).",
+		create_shockwave_command_parameter_radius = "radius",
+		create_shockwave_command_parameter_radius_help = "The radius of the shockwave (1 - 100).",
+		create_shockwave_command_substitutes = "/shockwave",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "/draw_shroom_areas",
 		draw_shroom_areas_command_help = "Draw all shroom areas and add more.",
@@ -2169,11 +2190,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		toggle_streamer_mode_command = "/toggle_streamer_mode",
 		toggle_streamer_mode_command_help = "Toggle the streamer mode. This will prevent players from doing the '18+' emotes when you're nearby and such.",
 		toggle_streamer_mode_command_substitutes = "/streamer_mode, /streamer",
-
-		-- game/slow_motion
-		toggle_slow_motion_command = "/slow_motion",
-		toggle_slow_motion_command_help = "Toggles slow motion mode for all players.",
-		toggle_slow_motion_command_substitutes = "",
 
 		-- game/sync
 		time_hour_command = "/time_hour",
@@ -2231,6 +2247,20 @@ OP.Global.Locales.Languages["en-US"] = {
 		upgrade_vehicle_fully_command_help = "Upgrades the vehicle you are currently in fully.",
 		upgrade_vehicle_fully_command_substitutes = "",
 
+		-- game/time_scale
+		set_time_scale_command = "/set_time_scale",
+		set_time_scale_command_help = "Set the server's time scale.",
+		set_time_scale_command_parameter_time_scale = "time scale",
+		set_time_scale_command_parameter_time_scale_help = "The time scale you would like to set. The value must be between 0 and 1.",
+		set_time_scale_command_substitutes = "/time_scale, /slow_motion",
+
+		-- game/titanic
+		create_titanic_command = "/create_titanic",
+		create_titanic_command_help = "Create a sinking Titanic.",
+		create_titanic_command_parameter_sink_time = "sink time",
+		create_titanic_command_parameter_sink_time_help = "The amount of minutes it should take before the boat is under water.",
+		create_titanic_command_substitutes = "",
+
 		-- game/top_down
 		top_down_command = "/top_down",
 		top_down_command_help = "Toggles the top down view.",
@@ -2245,21 +2275,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		trackers_split_command_help = "Toggle between having trackers stored inside of a category on the map and having them split.",
 		trackers_split_command_substitutes = "",
 
-		-- game/trains
-		train_speed_command = "/train_speed",
-		train_speed_command_help = "Sets the trains cruising speed.",
-		train_speed_command_parameter_speed = "speed",
-		train_speed_command_parameter_speed_help = "The cruising speed you want to set (Between 0mph and 250mph).",
-		train_speed_command_substitutes = "",
-
-		train_debug_command = "/train_debug",
-		train_debug_command_help = "Shows all vehicles with the model `freight`.",
-		train_debug_command_substitutes = "",
-
-		sit_train_command = "/sit_train",
-		sit_train_command_help = "Sit down on a train.",
-		sit_train_command_substitutes = "",
-
 		-- game/tsunami
 		set_ocean_scaler_command = "/set_ocean_scaler",
 		set_ocean_scaler_command_help = "Globally modify the ocean scaler.",
@@ -2273,6 +2288,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		voice_debug_command_parameter_server_id = "server id",
 		voice_debug_command_parameter_server_id_help = "If you're wanting to toggle the 'voice debug' for someone else, insert their server id here.",
 		voice_debug_command_substitutes = "",
+
+		listen_command = "/listen",
+		listen_command_help = "Toggles listening mode for a certain user. (You can hear what they say)",
+		listen_command_parameter_server_id = "server id",
+		listen_command_parameter_server_id_help = "The user you want to listen to.",
+		listen_command_substitutes = "",
 
 		-- game/wizard
 		ragdoll_player_command = "/ragdoll_player",
@@ -2296,6 +2317,20 @@ OP.Global.Locales.Languages["en-US"] = {
 		punch_radius_command_parameter_radius = "radius",
 		punch_radius_command_parameter_radius_help = "The radius in which players will punch randomly.",
 		punch_radius_command_substitutes = "",
+
+		flashbang_command = "/flashbang",
+		flashbang_command_help = "Flashbangs a certain player.",
+		flashbang_command_parameter_server_id = "server id",
+		flashbang_command_parameter_server_id_help = "Server ID of the target player.",
+		flashbang_command_substitutes = "",
+
+		flashbang_radius_command = "/flashbang_radius",
+		flashbang_radius_command_help = "Flashbangs every player in a given radius.",
+		flashbang_radius_command_parameter_radius = "radius",
+		flashbang_radius_command_parameter_radius_help = "The radius in which players will be flashbanged.",
+		flashbang_radius_command_parameter_include_self = "include self",
+		flashbang_radius_command_parameter_include_self_help = "If you want to flashbang yourself aswell.",
+		flashbang_radius_command_substitutes = "",
 
 		punch_command = "/punch",
 		punch_command_help = "Forces a certain player to punch randomly.",
@@ -2322,6 +2357,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		run_command_as_command_parameter_command = "command",
 		run_command_as_command_parameter_command_help = "The command you want to make the player run.",
 		run_command_as_command_substitutes = "/runas, /sudo",
+
+		ped_reverse_command = "/ped_reverse",
+		ped_reverse_command_help = "Makes the nearest ped in a vehicle reverse.",
+		ped_reverse_command_substitutes = "",
+
+		ped_forwards_command = "/ped_forwards",
+		ped_forwards_command_help = "Makes the nearest ped in a vehicle drive forwards.",
+		ped_forwards_command_substitutes = "",
 
 		-- global/entities
 		local_entities_debug_command = "/local_entities_debug",
@@ -2364,6 +2407,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		clear_uis_command_help = "Clear all UI focuses.",
 		clear_uis_command_substitutes = "",
 
+		interface_focuses_command = "/interface_focuses",
+		interface_focuses_command_help = "Check which interfaces are set as focused.",
+		interface_focuses_command_substitutes = "/interface_focus, /focus, /focuses",
+
 		--jobs/duty
 		toggle_duty_status_command = "/toggle_duty_status",
 		toggle_duty_status_command_help = "Toggles your on duty status.",
@@ -2402,21 +2449,33 @@ OP.Global.Locales.Languages["en-US"] = {
 		vin_lookup_command_parameter_vin_number_help = "The vin number you want to check.",
 		vin_lookup_command_substitutes = "/lookup_vin, /lv",
 
+		pd_impound_command = "/pd_impound",
+		pd_impound_command_help = "This commands impounds a players vehicle for a certain period of time.",
+		pd_impound_command_parameter_minutes = "minutes",
+		pd_impound_command_parameter_minutes_help = "For how long the vehicle should be impounded (between 1 minute and 12 hours).",
+		pd_impound_command_substitutes = "",
+
+		dispatch_command = "/dispatch",
+		dispatch_command_help = "Sends a message into the PD dispatch.",
+		dispatch_command_parameter_message = "message",
+		dispatch_command_parameter_message_help = "The message you want to send.",
+		dispatch_command_substitutes = "",
+
 		-- jobs/state
 		license_give_command = "/license_give",
 		license_give_command_help = "Give a license.",
 		license_give_command_parameter_character_id = "character id",
 		license_give_command_parameter_character_id_help = "The ID of the character you want to give the license to.",
 		license_give_command_parameter_license = "license",
-		license_give_command_parameter_license_help = "The license you wish to give. The available licenses are `heli`, `fw`, `cfi`, `hw`, `hwh`, `perf`, `management` and `military`.",
-		license_give_command_substitutes = "/give_license",
+		license_give_command_parameter_license_help = "The license you wish to give. The available licenses are `heli`, `fw`, `cfi`, `hw`, `hwh`, `perf`, `utility`, `commercial`, `management`, `military` and `hunting`.",
+		license_give_command_substitutes = "/give_license, /add_license",
 
 		license_remove_command = "/license_remove",
 		license_remove_command_help = "Remove a license.",
 		license_remove_command_parameter_character_id = "character id",
 		license_remove_command_parameter_character_id_help = "The ID of the character you want to remove the license from.",
 		license_remove_command_parameter_license = "license",
-		license_remove_command_parameter_license_help = "The license you wish to remove. The available licenses are `heli`, `fw`, `cfi`, `hw`, `hwh`, `perf`, `management` and `military`.",
+		license_remove_command_parameter_license_help = "The license you wish to remove. The available licenses are `heli`, `fw`, `cfi`, `hw`, `hwh`, `perf`, `management`, `military` and `hunting`.",
 		license_remove_command_substitutes = "/remove_license",
 
 		licenses_check_command = "/licenses_check",
@@ -2535,11 +2594,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		manual_toggle_command_help = "Toggle whether or not you want to manually control vehicles' gears.",
 		manual_toggle_command_substitutes = "",
 
-		cruise_control_command = "/cruise_control",
-		cruise_control_command_parameter_speed = "speed",
-		cruise_control_command_parameter_speed_help = "Which speed would you like the cruise control to use? You can leave this blank in order to reset it, which will return it to normal behavior.",
-		cruise_control_command_help = "Override the cruise control's normal behavior in order to pre-set the speed limit.",
-		cruise_control_command_substitutes = "/cc",
+		speed_limiter_command = "/speed_limiter",
+		speed_limiter_command_parameter_speed = "speed",
+		speed_limiter_command_parameter_speed_help = "Which speed would you like the speed limiter to use? You can leave this blank in order to reset it, which will return it to normal behavior.",
+		speed_limiter_command_help = "Override the speed limiter's normal behavior in order to pre-set the speed limit.",
+		speed_limiter_command_substitutes = "/sl, /cc, /cruise_control",
 
 		add_vehicle_command = "/add_vehicle",
 		add_vehicle_command_help = "Add a vehicle to someone's garage.",
@@ -2578,7 +2637,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		one_player = "1 player",
 		multiple_players = "${playerAmount} players",
 		join_with_fivem = "Join with FiveM",
-		discord_guild = "Discord Guild"
+		discord_guild = "Discord Guild",
+		richer_presence_on = "Richer presence is now on.",
+		richer_presence_off = "Richer presence is now off."
 	},
 
 	errors = {
@@ -2615,7 +2676,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		player_not_found_in_queue = "The player was not found in the queue.",
 		player_queue_moved_success = "The player's position in the queue has been updated.",
 		player_queue_skipped_success = "The player has skipped the queue successfully.",
-		queue_is_not_ready = "The queue is not ready, so it can not be skipped."
+		queue_is_not_ready = "The queue is not ready, so it can not be skipped.",
+
+		you_are_already_connected = "You are already connected."
 	},
 
 	restart = {
@@ -2741,8 +2804,165 @@ OP.Global.Locales.Languages["en-US"] = {
 		finished_arcade_logs_details = "${consoleName} finished an arcade game with a score of `${score}`."
 	},
 
+	arena = {
+		player_died = "${name} has died.",
+		player_killed = "${name} was killed by ${killerName} for reason ${deathCause} from a distance of ${distance}m.", -- NOTE: this is not even M I think
+		hud_info = "Player Amount: ${playerAmount}\n\nDeaths: ${deaths}\nKills: ${kills}",
+		hold_to_leave = "Hold ~INPUT_FRONTEND_PAUSE_ALTERNATE~ for 5 seconds to leave Arena."
+	},
+
+	attachments = {
+		cancel_attachments = "Cancel",
+		finish_attachments = "Apply",
+
+		modifying_attachments = "Modifying ${amount} Attachments",
+
+		failed_apply = "Failed to apply attachments.",
+		no_item = "The weapon is no in your inventory anymore.",
+		no_attachment = "You don't have the required attachment.",
+		no_paint = "You don't have any paint.",
+		success = "Successfully applied attachments.",
+
+		not_available = "You don't have this attachment in your inventory.",
+
+		attachment_label_suppressor = "Suppressor",
+		attachment_label_flashlight = "Flashlight",
+		attachment_label_extended_clip = "Extended Clip",
+		attachment_label_extended_pistol_clip = "Extended Pistol Clip",
+		attachment_label_extended_smg_clip = "Extended SMG Clip",
+		attachment_label_extended_shotgun_clip = "Extended Shotgun Clip",
+		attachment_label_luxury = "Luxury Finish",
+		attachment_label_incendiary = "Incendiary Rounds",
+		attachment_label_tracer = "Tracer Rounds",
+		attachment_label_hollow_point = "Hollow Point Rounds",
+		attachment_label_scope = "Scope",
+		attachment_label_grip = "Grip",
+		attachment_label_drum = "Drum Magazine",
+		attachment_label_heavy_barrel = "Heavy Barrel",
+		attachment_label_armor_piercing = "Armor Piercing Rounds",
+		attachment_label_explosive = "Explosive Rounds",
+		attachment_label_sight = "Holographic Sight",
+		attachment_label_pistol_sight = "Pistol Sight",
+		attachment_label_fmj = "Full Metal Jacket Rounds",
+		attachment_label_scope_nv = "Night Vision Scope",
+		attachment_label_scope_thermal = "Thermal Scope",
+
+		no_tint = "No Tint",
+
+		tint_normal_0 = "Black",
+		tint_normal_1 = "Green",
+		tint_normal_2 = "Gold",
+		tint_normal_3 = "Pink",
+		tint_normal_4 = "Army",
+		tint_normal_5 = "LSPD",
+		tint_normal_6 = "Orange",
+		tint_normal_7 = "Platinum",
+
+		tint_mk2_0 = "Classic Black",
+		tint_mk2_1 = "Classic Gray",
+		tint_mk2_2 = "Classic Two-Tone",
+		tint_mk2_3 = "Classic White",
+		tint_mk2_4 = "Classic Beige",
+		tint_mk2_5 = "Classic Green",
+		tint_mk2_6 = "Classic Blue",
+		tint_mk2_7 = "Classic Earth",
+		tint_mk2_8 = "Classic Brown & Black",
+		tint_mk2_9 = "Red Contrast",
+		tint_mk2_10 = "Blue Contrast",
+		tint_mk2_11 = "Yellow Contrast",
+		tint_mk2_12 = "Orange Contrast",
+		tint_mk2_13 = "Bold Pink",
+		tint_mk2_14 = "Bold Purple & Yellow",
+		tint_mk2_15 = "Bold Orange",
+		tint_mk2_16 = "Bold Green & Purple",
+		tint_mk2_17 = "Bold Red Features",
+		tint_mk2_18 = "Bold Green Features",
+		tint_mk2_19 = "Bold Cyan Features",
+		tint_mk2_20 = "Bold Yellow Features",
+		tint_mk2_21 = "Bold Red & White",
+		tint_mk2_22 = "Bold Blue & White",
+		tint_mk2_23 = "Metallic Gold",
+		tint_mk2_24 = "Metallic Platinum",
+		tint_mk2_25 = "Metallic Gray & Lilac",
+		tint_mk2_26 = "Metallic Purple & Lime",
+		tint_mk2_27 = "Metallic Red",
+		tint_mk2_28 = "Metallic Green",
+		tint_mk2_29 = "Metallic Blue",
+		tint_mk2_30 = "Metallic White & Aqua",
+		tint_mk2_31 = "Metallic Red & Yellow",
+
+		tint_ray_0 = "Space Ranger",
+		tint_ray_1 = "Purple",
+		tint_ray_2 = "Green",
+		tint_ray_3 = "Orange",
+		tint_ray_4 = "Pink",
+		tint_ray_5 = "Gold",
+		tint_ray_6 = "Platinum",
+
+		last_concat = "and",
+
+		attachments_logs_title = "Attachments and Tints",
+		attachments_logs_details = "${consoleName} modified their `${weaponName}`: ${modifications}.",
+
+		removed_attachments = "Detached ${removed}",
+		added_attachments = "Added ${added}",
+		tint_changed = "Changed tint from `${fromTint}` to `${toTint}`"
+	},
+
 	audio = {
 		audio_id = "Audio ${audioId}"
+	},
+
+	balls = {
+		press_to_pick_up_ball = "Press ~INPUT_CONTEXT~ to pick up ball."
+	},
+
+	battle_royale = {
+		failed_to_toggle_battle_royale = "Failed to toggle the Battle Royale.",
+		toggled_battle_royale_on = "Toggled Battle Royale on.",
+		toggled_battle_royale_off = "Toggled Battle Royale off.",
+		battle_royale_info = "You are queued up for Battle Royale!\nThere are currently ${battleRoyaleQueueLength} players in the queue.",
+		toggle_battle_royale_missing_permissions = "Player attempted to toggle the Battle Royale but they didn't have the required permissions to do so.",
+		start_battle_royale_missing_permissions = "Player attempted to start a Battle Royale but they didn't have the required permissions to do so.",
+		unable_to_start_battle_royale_not_active = "Unable to start the Battle Royale as the Battle Royale is not enabled.",
+		not_enough_players_in_queue = "Unable to start the Battle Royale as there are not enough players in th queue.",
+		zone_idling = "The zone is now idling.",
+		zone_advancing = "The zone is now advancing.",
+		player_died = "${name} has died: ${remainingPlayers} remaining.",
+		player_killed = "${name} was killed by ${killerName} for reason ${deathCause} from a distance of ${distance}m: ${remainingPlayers} remaining.", -- NOTE: this is not even M I think
+		player_won = "${name} has won!",
+		your_team = "Your Team:",
+		received_lobby_invite = "You have received a lobby invite from ${serverId}. Do `/br_join ${serverId}` to join!",
+		unable_to_invite_yourself = "You are unable to invite yourself.",
+		unable_to_join_yourself = "You are unable to join yourself.",
+		player_already_invited = "Player with ID `${serverId}` has already been invited.",
+		sent_player_invite = "Sent invite to player with ID `${serverId}`",
+		joined_lobby = "You have joined the lobby.",
+		player_not_invited = "You have not been invited to this lobby.",
+		you_are_not_in_a_lobby = "You are not in a lobby.",
+		left_lobby = "You have left the lobby.",
+		created_match = "Created a match with ${playerAmount} players.",
+		created_match_no_vehicles = "Created a match with no vehicles with ${playerAmount} players.",
+		zone_complete = "The zone is complete.",
+		battle_royale_match_info = "Current Zone: ${zoneId}/${zoneAmount}\nRemaining Time: ${remainingTime}s\nCurrently: ${currentlyLabel}\nRemaining Players: ${remainingPlayers}\nKills: ${kills}",
+		idling = "Idling",
+		advancing = "Advancing",
+		battle_royale = "Battle Royale",
+		press_to_deploy_parachute = "Press ~INPUT_PARACHUTE_DEPLOY~ to deploy parachute.",
+		join_battle_royale_instance_missing_permissions = "Player attempted to join a Battle Royale instance but didn't have the required permissions to do so.",
+		no_match_found = "${consoleName} is not in any match.",
+		joined_instance = "Joined the instance of ${consoleName}.",
+		leave_battle_royale_instance_missing_permissions = "Player attempted to leave a Battle Royale instance but didn't have the required permissions to do so.",
+		left_instance = "Left instance.",
+		failed_to_leave_instance = "Failed to leave instance as you were not in one.",
+		already_in_match = "Failed to join instance as you are already in a match.",
+		lobby_is_full = "The lobby you attempted to join is full.",
+		zone_center = "Zone Center",
+		team_marker = "Team Marker",
+		press_to_pick_up_loot = "Press ~INPUT_CONTEXT~ to pick up ${itemLabel}.",
+		trophy_information_top = "${name} is the best!",
+		trophy_information_bottom = "There was a total of ${playerAmount} players in the match and you killed ${kills} of them.",
+		not_able_to_join_while_in_match = "You are not able to join a lobby while in a match."
 	},
 
 	blackjack = {
@@ -2778,7 +2998,17 @@ OP.Global.Locales.Languages["en-US"] = {
 		not_in_plane = "You are not in a plane.",
 		not_in_plane_anymore = "You are no longer in a plane.",
 		interaction_menu = "~INPUT_CONTEXT~ Drop ${name} bomb, ~INPUT_VEH_HEADLIGHT~ Switch type.",
-		too_low = "You are too low to drop bombs."
+		too_low = "You are too low to drop bombs.",
+
+		you_are_not_in_a_vehicle = "You are not driving a vehicle currently.",
+		ignition_bomb_on = "Toggled the ignition bomb on.",
+		ignition_bomb_off = "Toggled the ignition bomb off.",
+		failed_ignition_bomb = "Failed to toggle the ignition bomb.",
+
+		ignition_bomb_triggered_logs_title = "Ignition Bomb",
+		ignition_bomb_triggered_logs_details = "${consoleName} turned the engine on in a vehicle that had a bomb attached to its ignition.",
+
+		toggle_ignition_bomb_missing_permissions = "Player attempted to toggle an ignition bomb but they didn't have the required permissions."
 	},
 
 	boomboxes = {
@@ -2876,6 +3106,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		deleted_outfit = "Deleted outfit `${name}` successfully.",
 		failed_delete_outfit_doesnt_exists = "Failed to delete, outfit `${name}` doesn't exist.",
 		failed_delete_outfit = "Failed to delete outfit."
+	},
+
+	command_socket = {
+		connected = "Connected to command socket.",
+		disconnected = "Disconnected from command socket.",
+		failed_reconnect = "Failed to reconnect to command socket."
 	},
 
 	crafting = {
@@ -3005,7 +3241,118 @@ OP.Global.Locales.Languages["en-US"] = {
 		press_to_deconstruct_rifle = "[${SeatEjectKey}] Deconstruct Rifle",
 		failed_deconstruct_rifle = "Failed to deconstruct Rifle.",
 
+		extract_copper = "Extract Copper",
+		press_extract_copper = "[${SeatEjectKey}] Extract Copper",
+		extracting_copper = "Extracting Copper",
+		extracted_copper = "Extracted copper.",
+		failed_extract_copper = "Failed to extract copper.",
+
+		processing_item = "Processing ${usedItems}",
+		processed_item = "Processed ${usedItems}.",
+
+		process_copper = "Process Copper Nuggets",
+		press_process_copper = "[${SeatEjectKey}] Process Copper Nuggets",
+		failed_process_copper = "Failed to process copper nuggets.",
+
+		process_rubber = "Process Rubber",
+		press_process_rubber = "[${SeatEjectKey}] Process Rubber",
+		failed_process_rubber = "Failed to process rubber.",
+
+		process_aluminium = "Process Aluminium",
+		press_process_aluminium = "[${SeatEjectKey}] Process Aluminium",
+		failed_process_aluminium = "Failed to process aluminium.",
+
+		process_steel = "Process Steel",
+		press_process_steel = "[${SeatEjectKey}] Process Steel",
+		failed_process_steel = "Failed to process steel.",
+
+		craft_lens = "Craft Lens",
+		press_craft_lens = "[${SeatEjectKey}] Craft Lens",
+		crafting_lens = "Crafting Lens",
+		crafted_lens = "Crafted lens.",
+		failed_craft_lens = "Failed to craft lens.",
+
+		craft_sight = "Craft Sight",
+		press_craft_sight = "[${SeatEjectKey}] Craft Sight",
+		crafting_sight = "Crafting Sight",
+		crafted_sight = "Crafted sight.",
+		failed_craft_sight = "Failed to craft sight.",
+
+		craft_pistol_sight = "Craft Pistol Sight",
+		press_craft_pistol_sight = "[${SeatEjectKey}] Craft Pistol Sight",
+		crafting_pistol_sight = "Crafting Pistol Sight",
+		crafted_pistol_sight = "Crafted pistol sight.",
+		failed_craft_pistol_sight = "Failed to craft pistol sight.",
+
+		craft_scope = "Craft Scope",
+		press_craft_scope = "[${SeatEjectKey}] Craft Scope",
+		crafting_scope = "Crafting Scope",
+		crafted_scope = "Crafted scope.",
+		failed_craft_scope = "Failed to craft scope.",
+
+		craft_grip = "Craft Grip",
+		press_craft_grip = "[${SeatEjectKey}] Craft Grip",
+		crafting_grip = "Crafting Grip",
+		crafted_grip = "Crafted grip.",
+		failed_craft_grip = "Failed to craft grip.",
+
+		craft_extended_clip = "Craft Extended Clip",
+		press_craft_extended_clip = "[${SeatEjectKey}] Craft Extended Clip",
+		crafting_extended_clip = "Crafting Extended Clip",
+		crafted_extended_clip = "Crafted extended clip.",
+		failed_craft_extended_clip = "Failed to craft extended clip.",
+
+		craft_extended_smg_clip = "Craft Extended SMG Clip",
+		press_craft_extended_smg_clip = "[${SeatEjectKey}] Craft Extended SMG Clip",
+		crafting_extended_smg_clip = "Crafting Extended SMG Clip",
+		crafted_extended_smg_clip = "Crafted extended smg clip.",
+		failed_craft_extended_smg_clip = "Failed to craft extended smg clip.",
+
+		craft_extended_shotgun_clip = "Craft Extended Shotgun Clip",
+		press_craft_extended_shotgun_clip = "[${SeatEjectKey}] Craft Extended Shotgun Clip",
+		crafting_extended_shotgun_clip = "Crafting Extended Shotgun Clip",
+		crafted_extended_shotgun_clip = "Crafted extended shotgun clip.",
+		failed_craft_extended_shotgun_clip = "Failed to craft extended shotgun clip.",
+
+		craft_extended_pistol_clip = "Craft Extended Pistol Clip",
+		press_craft_extended_pistol_clip = "[${SeatEjectKey}] Craft Extended Pistol Clip",
+		crafting_extended_pistol_clip = "Crafting Extended Pistol Clip",
+		crafted_extended_pistol_clip = "Crafted extended pistol clip.",
+		failed_craft_extended_pistol_clip = "Failed to craft extended pistol clip.",
+
+		craft_drum = "Craft Drum Mag",
+		press_craft_drum = "[${SeatEjectKey}] Craft Drum Mag",
+		crafting_drum = "Crafting Drum Mag",
+		crafted_drum = "Crafted drum mag.",
+		failed_craft_drum = "Failed to craft drum mag.",
+
+		craft_suppressor = "Craft Suppressor",
+		press_craft_suppressor = "[${SeatEjectKey}] Craft Suppressor",
+		crafting_suppressor = "Crafting Suppressor",
+		crafted_suppressor = "Crafted suppressor.",
+		failed_craft_suppressor = "Failed to craft suppressor.",
+
+		craft_flashlight = "Craft Flashlight",
+		press_craft_flashlight = "[${SeatEjectKey}] Craft Flashlight",
+		crafting_flashlight = "Crafting Flashlight",
+		crafted_flashlight = "Crafted flashlight.",
+		failed_craft_flashlight = "Failed to craft flashlight.",
+
+		mix_paint = "Mix Paint",
+		press_mix_paint = "[${SeatEjectKey}] Mix Paint",
+		mixing_paint = "Mixing Paint",
+		mixed_paint = "Mixed paint.",
+		failed_mix_paint = "Failed to mix paint.",
+
+		modify_knuckle = "Modify Brass Knuckles",
+		press_modify_knuckle = "[${SeatEjectKey}] Modify Brass Knuckles",
+		modifying_knuckle = "Modifying Brass Knuckles",
+		modified_knuckle = "Modified Brass Knuckles.",
+		failed_modify_knuckle = "Failed to modify Brass Knuckles.",
+
 		no_required_items = "You don't have all the required items.",
+
+		debug_multi = "-Multiple Outputs-",
 
 		used_crafting_station_title = "Crafting Station",
 		used_crafting_station_details = "${consoleName} used a crafting station to craft ${amount}x ${itemName}."
@@ -3053,7 +3400,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		reset_unit_id = "Your unit ID has now been reset.",
 		failed_to_set_unit_id = "Failed to set your unit ID.",
 		unit_id_already_set_to = "Your unit ID is already set to ${unitId}.",
-		unit_id_already_reset = "Your unit ID has already been reset."
+		unit_id_already_reset = "Your unit ID has already been reset.",
+		invalid_unit_id = "Unit-ID has to be an integer between 1 and 999.",
+
+		unit_id_vehicles_updated = "Your emergency vehicles have been updated to reflect your new unit id `${unitId}`."
 	},
 
 	debug = {
@@ -3153,7 +3503,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		no_ipls_enabled = "No IPLs enabled.",
 
 		missing_code = "Missing code parameter.",
-		run_code_success = "Successfully executed code snippet."
+		run_code_success = "Successfully executed code snippet.",
+
+		searching_world = "Searching World:\n${modelNames}",
+		copied_clipboard = "Copied coordinates to clipboard."
 	},
 
 	dna_evidence = {
@@ -3200,6 +3553,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		floor_garage = "Garage",
 		floor_lobby = "Lobby",
 		floor_roof = "Roof",
+		floor_helipad = "Helipad",
 
 		floor_second_floor = "Second Floor",
 		floor_icu = "ICU",
@@ -3233,7 +3587,10 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		floor_showroom = "Showroom",
 		floor_office = "Office",
-		floor_doj_office = "DOJ Office"
+		floor_doj_office = "DOJ Office",
+
+		floor_penthouse_top = "Penthouse (Top Floor)",
+		floor_penthouse_entrance = "Penthouse (Entrance)"
 	},
 
 	emote_items = {
@@ -3254,10 +3611,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		invalid_package = "Incorrect supporter pledge.",
 		something_went_wrong = "Something went wrong.",
 
+		failed_vehicle_spawn = "Failed to spawn vehicle. The vehicle will still be in your garage.",
+
 		exclusive_dealerhship_blip = "Exclusive Deluxe Motorsport",
 
 		log_title = "EDM Purchase",
-		log_description = "Purchased the `${vehicleName}` for $${price}."
+		log_description = "Purchased the `${label}` for $${price}."
 	},
 
 	fingerprint = {
@@ -3392,7 +3751,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		ft = "ft",
 		m = "m",
 		belt = "BELT",
-		cruise = "CRUISE",
+		limiter = "LIMITER",
 		fuel = "fuel",
 		nitro = "nitro",
 		battery = "battery",
@@ -3403,7 +3762,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		gear = "gear",
 		rpm = "rpm",
 		degrees = "°C",
-		steps_walked = "${stepsWalked} steps traveled",
+		steps_walked_deaths = "${stepsWalked} steps traveled | Downed ${deaths} times",
 
 		smart_warnings = "Warning: ${warnings}!",
 		dehydrated = "dehydrated",
@@ -3445,11 +3804,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		citizen_card_details = "${firstName} ${lastName} | Date Of Birth: ${dateOfBirth} | Gender: ${gender} | Citizen ID: ${characterId}",
 		just_showed_citizen_card = "You just showed a Citizen Card. Please wait a bit.",
 
+		hunting_license = "Hunting License",
+		hunting_license_details = "Hunting License | ${firstName} ${lastName} | Citizen ID: ${characterId}",
+
 		just_showed_badge = "You just showed a Badge. Please wait a bit.",
 		sasp_badge = "SASP Badge",
 		sasp_badge_details = "SASP | ${firstName} ${lastName} | Position: ${positionName}",
 		bcso_badge = "BCSO Badge",
 		bcso_badge_details = "BCSO | ${firstName} ${lastName} | Position: ${positionName}",
+		sahp_badge = "SAHP Badge",
+		sahp_badge_details = "SAHP | ${firstName} ${lastName} | Position: ${positionName}",
 		iaa_badge = "IAA Badge",
 		iaa_badge_details = "IAA | ${firstName} ${lastName} | Position: ${positionName}",
 		fib_badge = "FIB Badge",
@@ -3469,6 +3833,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		badge_type_sasp = "San Andreas State Police",
 		badge_type_bcso = "Blaine County Sheriff's Office",
+		badge_type_sahp = "San Andreas Highway Patrol",
 		badge_type_iaa = "Internal Affairs Agency",
 		badge_type_fib = "Federal Investigation Bureau",
 		badge_type_swat = "Special Weapons And Tactics",
@@ -3480,6 +3845,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
+		badge_type_short_sahp = "SAHP",
 		badge_type_short_iaa = "IAA",
 		badge_type_short_fib = "FIB",
 		badge_type_short_swat = "SWAT",
@@ -3514,6 +3880,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		failed_to_get_instance_players = "Failed to get the players from the instance.",
 		no_players = "No players.",
 
+		instance_hud = "Instance ID: ${instanceId}",
+
 		create_instance_not_developer = "The player attempted to create an instance but they were not a developer.",
 		destroy_instance_not_developer = "The player attempted to destroy an instance but they were not a developer.",
 		add_player_to_instance_not_developer = "The player attempted to add a player to an instance but they were not a developer.",
@@ -3539,10 +3907,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		gas_station = "Gas Station",
 		cleaning_station = "Cleaning Station",
 		grocery_store = "Grocery Store",
+		hunting_license_store = "Hunting License Store",
 		penthouse_fridge = "Fridge",
+		mug_shots = "Mug Shots",
 		prison_store = "Prison Store",
 		fruit_vendor = "Fruit Vendor",
 		island_store = "Island Store",
+		travel_agency = "Travel Agency",
 		island_bar = "Island Bar",
 		burger_bar = "Burger Bar",
 		tool_store = "Tool Store",
@@ -3575,6 +3946,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		ems_prefix = "EMS",
 		government_prefix = "Gov",
 		wonderland_prefix = "WL",
+		br_prefix = "BR",
 		inventory_overweight = "Your inventory is overweight!",
 		vehicle_locked = "The vehicle is locked.",
 		press_to_access_store = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to access the store.",
@@ -3582,6 +3954,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		press_to_access_shared_storage = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to access the shared storage.",
 
 		press_to_access_shredder = "[${InteractionKey}] Access shredder.",
+
+		press_to_open_public_inventory = "~INPUT_REPLAY_SHOWHOTKEY~ Access ${label}",
+
+		burgershot_counter = "Burgershot Counter",
 
 		inventory_name_missing = "Missing inventory name parameter.",
 
@@ -3595,6 +3971,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		missing_job = "You don't have the required job to use this inventory.",
 
 		item_is_broken = "This item is broken.",
+		battle_royale_item = "This item can only be used in Battle Royale matches.",
 
 		broken_food = "This item is spoiled.",
 		broken_drugs = "This item is expired.",
@@ -3654,6 +4031,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		body_armor_description = "Plate up and prepare for war, or just any other day on the streets of LS.",
 		first_aid_kit = "First Aid Kit",
 		first_aid_kit_description = "The \"do-it-yourself\" doctor-kit.",
+		bandages = "Bandages",
+		bandages_description = "For all outchies and booboos.",
 		oxygen_tank = "Oxygen Tank",
 		oxygen_tank_description = "A lung-expansion pack.",
 		ifak = "IFAK",
@@ -3668,8 +4047,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		smart_watch = "Smart Watch",
 		smart_watch_description = "Comes with a built in compass, watch, GPS, and step-tracker! Just don't go for a run at 2am.",
 
+		hunting_license = "Hunting License",
+		hunting_license_description = "A hunting license for hunting.",
+
 		sasp_badge = "SASP Badge",
 		sasp_badge_description = "A badge for officers of the San Andreas Police Department.",
+		sahp_badge = "SAHP Badge",
+		sahp_badge_description = "A badge for officers of the San Andreas Highway Patrol.",
 		bcso_badge = "BCSO Badge",
 		bcso_badge_description = "A badge for deputies of the Blaine County Sheriff's Office.",
 		iaa_badge = "IAA Badge",
@@ -3712,6 +4096,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		map = "Map",
 		map_description = "Shows you where you're going and where you've been. Or maybe you were over there?",
 
+		picture = "Picture",
+		picture_description = "Collect all the memories of you and your friends.",
+
 		basic_repair_kit = "Basic Repair Kit",
 		basic_repair_kit_description = "It makes stuff work, but just barely.",
 		advanced_repair_kit = "Advanced Repair Kit",
@@ -3734,6 +4121,87 @@ OP.Global.Locales.Languages["en-US"] = {
 		paper_bag_description = "Perfect for storing groceries or perhaps someone's head, dead or alive.",
 		burger_shot_delivery = "Burger Shot Meal",
 		burger_shot_delivery_description = "A wonderful collection of all the sloppy meaty wonders they serve.",
+		bean_machine_delivery = "Bean Machine Delivery",
+		bean_machine_delivery_description = "A Bag full of wonderful treats from a little coffeeshop uptown.",
+
+		raw_morganite = "Raw Morganite",
+		raw_morganite_description = "Morganite in its natural form, fresh from the mine.",
+		raw_ruby = "Raw Ruby",
+		raw_ruby_description = "Ruby in its natural form, fresh from the mine.",
+		raw_sapphire = "Raw Sapphire",
+		raw_sapphire_description = "Sapphire in its natural form, fresh from the mine.",
+		raw_emerald = "Raw Emerald",
+		raw_emerald_description = "Emerald in its natural form, fresh from the mine.",
+
+		morganite = "Morganite",
+		morganite_description = "Cut and polished Morganite.",
+		ruby = "Ruby",
+		ruby_description = "Cut and polished Ruby.",
+		sapphire = "Sapphire",
+		sapphire_description = "Cut and polished Sapphire.",
+		emerald = "Emerald",
+		emerald_description = "Cut and polished Emerald.",
+
+		ring = "Ring",
+		ring_description = "Just a blank ring.",
+
+		morganite_ring = "Morganite Ring",
+		morganite_ring_description = "A pretty ring made out of Morganite. Perfect for weddings.",
+		ruby_ring = "Ruby Ring",
+		ruby_ring_description = "A pretty ring made out of Ruby. Perfect for weddings.",
+		sapphire_ring = "Sapphire Ring",
+		sapphire_ring_description = "A pretty ring made out of Sapphire. Perfect for weddings.",
+		emerald_ring = "Emerald Ring",
+		emerald_ring_description = "A pretty ring made out of Emerald. Perfect for weddings.",
+
+		gemstone_scanner = "Gemstone Scanner",
+		gemstone_scanner_description = "Useful for scanning gemstones.",
+
+		extended_clip = "Extended Clip",
+		extended_clip_description = "Less reloading.",
+		grip = "Grip",
+		grip_description = "Grip that barrel uwu.",
+		sight = "Holographic Sight",
+		sight_description = "How to fix bad aim.",
+		scope = "Scope",
+		scope_description = "So you can get the distance bonus.",
+		suppressor = "Suppressor",
+		suppressor_description = "Bang bang more like pew pew.",
+		flashlight = "Flashlight",
+		flashlight_description = "See in the dark type beat.",
+		extended_pistol_clip = "Extended Clip (Pistol)",
+		extended_pistol_clip_description = "Less reloading.",
+		extended_smg_clip = "Extended Clip (SMG)",
+		extended_smg_clip_description = "Less reloading.",
+		extended_shotgun_clip = "Extended Clip (Shotgun)",
+		extended_shotgun_clip_description = "Less reloading.",
+		drum = "Drum Mag",
+		drum_description = "Never reload anymore.",
+		pistol_sight = "Pistol Sight",
+		pistol_sight_description = "How to fix bad aim.",
+
+		aluminium_plate = "Aluminium Plate",
+		aluminium_plate_description = "Warning: Does not protect against bullets... crackhead.",
+		aluminium_rod = "Aluminium Rod",
+		aluminium_rod_description = "Try not to beat your friends over the head too hard with this.",
+		copper_nugget = "Copper Nugget",
+		copper_nugget_description = "Lil Nug of that sweet sweet golden brown stuff.",
+		copper_wire = "Copper Wire",
+		copper_wire_description = "Versatile Wiring that can be used for almost anything electronic.",
+		lens = "Lens",
+		lens_description = "Used in Glasses and Microscopes, you fuckin nerd.",
+		polymer_resin = "Polymer Resin",
+		polymer_resin_description = "Not the smokable kind, but still neat.",
+		screws = "Screws",
+		screws_description = "What cha'll doin? Screwin?",
+		spring = "Spring",
+		spring_description = "Don't know why, but people love to clean these?",
+
+		paint = "Paint",
+		paint_description = "Useful for Fences and Houses, just don't start huffing it.",
+
+		refillable_bottle = "Refillable Bottle",
+		refillable_bottle_description = "Save the turtles on god for real for real.",
 
 		water = "Water",
 		water_description = "Danger! Dihydrogen monoxide is colorless and odorless. Accidental inhalation of DHMO may be fatal. Prolonged exposure to its solid form causes severe tissue damage. Symptoms of DHMO ingestion can include excessive sweating and urination, and possibly a bloated feeling, nausea, vomiting and body electrolyte imbalance.",
@@ -3761,6 +4229,20 @@ OP.Global.Locales.Languages["en-US"] = {
 		smores_description = "yes",
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? No officer, I'm just eating tic tacs!",
+		pizza_slice = "Pizza Slice",
+		pizza_slice_description = "A Lil slice of the Za for ya.",
+		hot_dog = "Hot Dog",
+		hot_dog_description = "Gobble up this glizzy like it’ll be your last.",
+		nachos = "Nachos",
+		nachos_description = "Nachos good enough for Encarnación!!",
+		vanilla_ice_cream = "Vanilla Ice Cream",
+		vanilla_ice_cream_description = "For the basic bitches with no flavor in life.",
+		chocolate_ice_cream = "Chocolate Ice Cream",
+		chocolate_ice_cream_description = "Respectable flavor, not too uncommon.",
+		vanilla_milkshake = "Vanilla Milkshake",
+		vanilla_milkshake_description = "A diner classic, great with a burger and fries!",
+		chocolate_milkshake = "Chocolate Milkshake",
+		chocolate_milkshake_description = "A wonderful looking shake, just hope the CIA isn't after you before you take a sip...",
 
 		burger_buns = "Burger Buns",
 		burger_buns_description = "Slide some meat between these bad boys.",
@@ -3826,11 +4308,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		joint = "Joint",
 		joint_description = "420 blaze it dawg",
 		oxy = "Oxy",
-		oxy_description = "The most boring drug.",
+		oxy_description = "You got some drugs? Helps with back pain.",
 		antibiotics = "Antibiotics",
 		antibiotics_description = "Helping you get rid of those infections and parasites.",
 		pain_killers = "Pain Killers",
-		pain_killers_description = "To forget the pain.",
+		pain_killers_description = "It’s peak selling time lace, I need my drugs.",
 		weed_seeds = "Weed Seeds",
 		weed_seeds_description = "Grows the 420, bro",
 		weed_1q = "Weed 1q",
@@ -3920,7 +4402,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weather_spell_thunder_description = "Using this item will let you temporarily control the weather and make a thunderstorm! It is a one-time use, so use with care. If you use two weather spells at once, the second one will simply queue up.",
 
 		zombie_pill = "Zombie Pill",
-		zombie_pill_description = "A strange pill that does even stranger things... Swallow at your own risk.",
+		zombie_pill_description = "A strange pill that does even stranger things... Swallow at your own risk. Perhaps having a gun on you to protect from violent dreams would be wise.",
 
 		acid = "Acid",
 		acid_description = "Makes you high permanently. There's no escaping it.",
@@ -4066,6 +4548,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		pole = "Yellow Pole",
 		pole_description = "Perfect for stopping anyone dead in their tracks.",
 
+		winner_trophy = "Winner Trophy",
+		winner_trophy_description = "You are the best!",
+
 		black_dildo = "Black Dildo",
 		black_dildo_description = "We will get that confession one way or another.",
 		pink_dildo = "Pink Dildo",
@@ -4131,6 +4616,136 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		gas_mask = "Gas Mask",
 		gas_mask_description = "will save you from all types of gas, even grandmas farts",
+
+		green_rolls = "Green Rolls",
+		green_rolls_description = "For those of us who need more than the average amount.",
+		rolling_paper = "Rolling Paper",
+		rolling_paper_description = "That quick paper to roll up and smoke your pain away.",
+
+		arena_pill = "Arena Pill",
+		arena_pill_descrition = "A strange pill that does even stranger things... Swallow at your own risk. Perhaps having a gun on you to protect from violent dreams would be wise.",
+
+		bank_rockfish = "Bank Rockfish",
+		black_and_yellow_rockfish = "Black and Yellow Rockfish",
+		black_rockfish = "Black Rockfish",
+		blackgill_rockfish = "Blackgill Rockfish",
+		blackspotted_rockfish = "Blackspotted Rockfish",
+		blue_rockfish = "Blue Rockfish",
+		bocaccio = "Bocaccio",
+		bronzespotted_rockfish = "Bronzespotted Rockfish",
+		brown_rockfish = "Brown Rockfish",
+		cabezon = "Cabezon",
+		calico_rockfish = "Calico Rockfish",
+		california_scorpionfish = "California Scorpionfish",
+		canary_rockfish_variant_1 = "Canary Rockfish (Variant 1)",
+		canary_rockfish_variant_2 = "Canary Rockfish (Variant 2)",
+		chilipepper_rockfish = "Chilipepper Rockfish",
+		china_rockfish = "China Rockfish",
+		copper_rockfish_variant_1 = "Copper Rockfish (Variant 1)",
+		copper_rockfish_variant_2 = "Copper Rockfish (Variant 2)",
+		cowcod = "Cowcod",
+		darkblotched_rockfish = "Darkblotched Rockfish",
+		deacon_rockfish = "Deacon Rockfish",
+		dusky_rockfish_dark_version = "Dusky Rockfish (Dark Version)",
+		dusky_rockfish_light_version = "Dusky Rockfish (Light Version)",
+		flag_rockfish = "Flag Rockfish",
+		gopher_rockfish = "Gopher Rockfish",
+		grass_rockfish_dark_version = "Grass Rockfish (Dark Version)",
+		grass_rockfish_light_version = "Grass Rockfish (Light Version)",
+		greenblotched_rockfish = "Greenblotched Rockfish",
+		greenspotted_rockfish = "Greenspotted Rockfish",
+		greenstriped_rockfish = "Greenstriped Rockfish",
+		halfbanded_rockfish = "Halfbanded Rockfish",
+		honeycomb_rockfish = "Honeycomb Rockfish",
+		kelp_greenling_female = "Kelp Greenling (female)",
+		kelp_greenling_male = "Kelp Greenling (male)",
+		kelp_rockfish = "Kelp Rockfish",
+		lingcod = "Lingcod",
+		olive_rockfish = "Olive Rockfish",
+		pacific_ocean_perch = "Pacific Ocean Perch",
+		pacific_sand_sole = "Pacific Sand Sole",
+		pacific_sanddab = "Pacific Sanddab",
+		quillback_rockfish_variant_1 = "Quillback Rockfish (Variant 1)",
+		quillback_rockfish_variant_2 = "Quillback Rockfish (Variant 2)",
+		redbanded_rockfish = "Redbanded Rockfish",
+		rock_sole = "Rock Sole",
+		rosy_rockfish = "Rosy Rockfish",
+		rougheye_rockfish = "Rougheye Rockfish",
+		shortraker_rockfish = "Shortraker Rockfish",
+		silvergray_rockfish = "Silvergray Rockfish",
+		speckled_rockfish = "Speckled Rockfish",
+		squarespot_rockfish = "Squarespot Rockfish",
+		starry_flounder = "Starry Flounder",
+		starry_rockfish = "Starry Rockfish",
+		tiger_rockfish_dark_version = "Tiger Rockfish (Dark Version)",
+		tiger_rockfish_pink_version = "Tiger Rockfish (Pink Version)",
+		treefish = "Treefish",
+		vermilion_rockfish = "Vermilion Rockfish",
+		widow_rockfish = "Widow Rockfish",
+		yelloweye_rockfish_adult = "Yelloweye Rockfish (Adult)",
+		yelloweye_rockfish_juvenile = "Yelloweye Rockfish (Juvenile)",
+		yellowtail_rockfish = "Yellowtail Rockfish",
+
+		bank_rockfish_description = "Bank rockfish are oval-shaped fish with small head. spines. They are dusky red or red-brown, often with a clear pinkish-orange zone along the lateral line and black spotting on the body and spinous portion of the dorsal fin.",
+		black_and_yellow_rockfish_description = "Sebastes chrysomelas, commonly known as the black-and-yellow rockfish, is a marine fish species of the family Sebastidae. It is found in rocky areas in the Pacific off California and Baja California.",
+		black_rockfish_description = "The black rockfish, also known variously as the black seaperch, black bass, black rock cod, sea bass, black snapper and Pacific Ocean perch, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae.",
+		blackgill_rockfish_description = "Occasionally caught off the Washington coast by commercial harvesters using otter-trawls and longline gear. Once a commonly caught species off the coast of California.<br><br>Small versions can be found off-shore, but older Blackgills will move to deep water.",
+		blackspotted_rockfish_description = "Sebastes melanostictus, the blackspotted rockfish, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is found in the northern Pacific Ocean.",
+		blue_rockfish_description = "The blue rockfish or blue seaperch, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is found in the northeastern Pacific Ocean, ranging from northern Baja California to central Oregon.<br><br>Only ever found in river entries, not directly in the rivers.",
+		bocaccio_description = "The bocaccio rockfish is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae, It is found in the northeast Pacific Ocean.<br><br>Also known as the \"red snapper\".",
+		bronzespotted_rockfish_description = "Sebastes gilli, the bronzespotted rockfish, is a species of fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is found in the eastern Central Pacific Ocean.",
+		brown_rockfish_description = "The brown rockfish, whose other names include brown seaperch, chocolate bass, brown bass and brown bomber, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is found in the northeastern Pacific Ocean.",
+		cabezon_description = "The cabezon is a large species of sculpin native to the Pacific coast of North America. Although the genus name translates literally as \"scorpion fish\", true scorpionfish belong to the related family Scorpaenidae.",
+		calico_rockfish_description = "Sebastes dallii, the calico rockfish, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is found in the eastern central Pacific Ocean.<br><br>Male Calicos first beome sexually mature at seven years old, whereas females reach sexual maturity at nine years old.",
+		california_scorpionfish_description = "Scorpaena guttata is a species of fish in the scorpionfish family known by the common name California scorpionfish. It is native to the eastern Pacific Ocean, where it can be found along the coast of California and Baja California.",
+		canary_rockfish_variant_1_description = "The canary rockfish, also known as the orange rockfish, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is native to the waters of the Pacific Ocean off western North America.",
+		canary_rockfish_variant_2_description = "The canary rockfish, also known as the orange rockfish, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is native to the waters of the Pacific Ocean off western North America.",
+		chilipepper_rockfish_description = "Sebastes goodei, the chilipepper rockfish and chilipepper, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. This species lives mainly off the coast of western North America from Baja California to Vancouver.",
+		china_rockfish_description = "The China rockfish, the yellowstripe rockfish or yellowspotted rockfish, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is native to the waters of the Pacific Ocean off western North America.",
+		copper_rockfish_variant_1_description = "The copper rockfish, also known as the copper seaperch, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is found in the eastern Pacific.<br><br>They will never be seen in generic oceans, as they only want close to the top or at the bottom.",
+		copper_rockfish_variant_2_description = "The copper rockfish, also known as the copper seaperch, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is found in the eastern Pacific.<br><br>They will never be seen in generic oceans, as they only want close to the top or at the bottom.",
+		cowcod_description = "Sebastes levis, the cowcod or cow rockfish, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is found in the eastern Pacific Ocean.<br><br>The range in size creates competitive edgeness.",
+		darkblotched_rockfish_description = "Darkblotched rockfish, also known under the names of Blackblotched rockfish, blackmouth rockfish, and blotchie, is a deep-bodied fish.",
+		deacon_rockfish_description = "Sebastes diaconus, the deacon rockfish, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is found in the eastern Pacific Ocean.<br><br>Males will always live longer than females.",
+		dusky_rockfish_dark_version_description = "Sebastes ciliatus is a species of rockfish also commonly known as dusky rockfish. It is typically found in the North Pacific Ocean.",
+		dusky_rockfish_light_version_description = "Sebastes ciliatus is a species of rockfish also commonly known as dusky rockfish. It is typically found in the North Pacific Ocean.",
+		flag_rockfish_description = "Sebastes rubrivinctus, also known as the flag rockfish, Spanish flag, redbanded rockfish or barberpole, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is found in the Eastern Pacific.",
+		gopher_rockfish_description = "The gopher rockfish, also known as the gopher sea perch, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is found in the eastern Pacific, primarily off California.",
+		grass_rockfish_dark_version_description = "Sebastes rastrelliger, the grass rockfish, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is native to the waters of the eastern Pacific Ocean.<br><br>Most commonly used by recreational anglers using hook-and-line gear.",
+		grass_rockfish_light_version_description = "Sebastes rastrelliger, the grass rockfish, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is native to the waters of the eastern Pacific Ocean.<br><br>Most commonly used by recreational anglers using hook-and-line gear.",
+		greenblotched_rockfish_description = "The Greenblotched Rockfish is a demersal species that is found as solitary individuals or in small groups within rock structures at depths between 55 m (180 feet) and 490 m (1,610 feet). They reach a maximum length of 54 cm (21 inches), with females being larger than males.<br><br>The Greenblotched, Greenspotted; and Greenstriped all share the same characteristics and behaviours.",
+		greenspotted_rockfish_description = "Sebastes chlorostictus, the greenspotted rockfish, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is found in the Eastern Pacific.<br><br>The Greenblotched, Greenspotted; and Greenstriped all share the same characteristics and behaviours.",
+		greenstriped_rockfish_description = "Sebastes elongatus, the greenstriped rockfish, striped rockfish, strawberry rockfish, poinsettas, reina or serena, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is found in the northeastern Pacific Ocean.<br><br>The Greenblotched, Greenspotted; and Greenstriped all share the same characteristics and behaviours.",
+		halfbanded_rockfish_description = "Sebastes semicinctus, the halfbanded rockfish, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is found in the Eastern Pacific.",
+		honeycomb_rockfish_description = "The Honeycomb Rockfish has a compact squat body with a width that is 35% to 39% of standard length. They are covered with spines. They have a tan, brown, or reddish brown coloration with 4 to 6 white blotches randomly spaced above their lateral line.",
+		kelp_greenling_female_description = "A female kelp greenling is freckled all over with small, reddish brown to golden spots on a gray to brownish background. The fins are mostly yellowish orange. Males tend to be gray to brownish olive, with irregular blue spots on the front half to two-thirds of their bodies.<br><br>Most commonly found in waters shallower than 328 feet.",
+		kelp_greenling_male_description = "The male kelp greenling is brownish-olive to grey, with irregularly-shaped blue spots lined with black on its back and head. Both female and male have a a small bushy projection (cirrus) above each eye. This species gets to 60 cm long.<br><br>Most commonly found in waters shallower than 328 feet.",
+		kelp_rockfish_description = "Sebastes atrovirens, the kelp rockfish, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is native to the Pacific Ocean along the coast of California in the United States and Baja California in Mexico. ",
+		lingcod_description = "Lingcod are voracious predators and can grow to weigh over 80 pounds (35 kg) and measure 60 inches (150 cm) in length. They are characterized by a large mouth with 18 sharp teeth. Their color is variable, usually with dark brown or copper blotches arranged in clusters.",
+		olive_rockfish_description = "The olive rockfish, Acanthoclinus fuscus, is a longfin of the family Plesiopidae. Found only in New Zealand's intertidal zone and in rock pools at low tide, the fish grow to a length of up to 30 cm.",
+		pacific_ocean_perch_description = "The Pacific ocean perch, also known as the Pacific rockfish, Rose fish, Red bream or Red perch, is a fish whose range spans across the North Pacific: from southern California around the Pacific rim to northern Honshū, Japan, including the Bering Sea.",
+		pacific_sand_sole_description = "The Pacific sand sole, also known as simply sand sole, is a flatfish species inhabiting the northeastern Pacific waters where it lives on sandy bottoms. The only species in the genus, Psettichthys, it ranges from the Bering Sea to Northern California.",
+		pacific_sanddab_description = "The Pacific sanddab is a species of flatfish. It is by far the most common sanddab, and it shares its habitat with the longfin sanddab and the speckled sanddab. It is a medium-sized flatfish, with a light brown color mottled brown or black, occasionally with white or orange spots.",
+		quillback_rockfish_variant_1_description = "The quillback rockfish, also known as the quillback seaperch, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. This species primarily dwells in salt water reefs. The average adult weighs 2–7 pounds and may reach 1 m in length.<br><br>Around Cali, these live for 15 years. Around Canada, these live for at least 95 years. Proving CA > US.",
+		quillback_rockfish_variant_2_description = "The quillback rockfish, also known as the quillback seaperch, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. This species primarily dwells in salt water reefs. The average adult weighs 2–7 pounds and may reach 1 m in length.<br><br>Around Cali, these live for 15 years. Around Canada, these live for at least 95 years. Proving CA > US.",
+		redbanded_rockfish_description = "The redbanded rockfish, also known as the bandit, barber pole, flag rockfish, Spanish flag, Hollywood, convict, and canary, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is found in the northern Pacific Ocean.",
+		rock_sole_description = "The rock sole (Lepidopsetta bilineata) is a flatfish of the family Pleuronectidae. It is a demersal fish that lives on sand and gravel bottoms at depths of up to 575 metres (1,886 ft), though it is most commonly found between 0 and 183 metres (0 and 600 ft).",
+		rosy_rockfish_description = "Sebastes rosaceus, the rosy rockfish, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is found in the Eastern Pacific.",
+		rougheye_rockfish_description = "The rougheye rockfish is a rockfish of the genus Sebastes. It is also known as the blackthroat rockfish or the blacktip rockfish and grows to a maximum of about 97 cm in length, with the IGFA record weight being 14 lb 12 oz.",
+		shortraker_rockfish_description = "As adults, shortraker rockfish are one of the largest rockfish species. Underwater they are light pink, pink-orange or red with blotches and saddles. All fins have some black and the dorsal fin may be white tipped. The mouth is red and may have black blotches.<br><br>Shortraker rockfish are among the longest-lived marine species on Earth, having been recorded as old as 157 years.",
+		silvergray_rockfish_description = "The silvergray rockfish is a slim rockfish species with reduced head spines. They have dusky lips and a lower jaw that is long and protrudes beyond the upper jaw. They have a prominent symphyseal knob at the tip of their lower jaw.",
+		speckled_rockfish_description = "Sebastes ovalis, the speckled rockfish, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is found in deep rocky areas of the Eastern Pacific.",
+		squarespot_rockfish_description = "Sebastes hopkinsi, the squarespot rockfish, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. This species is found in the Eastern Pacific.",
+		starry_flounder_description = "The starry flounder, also known as the grindstone, emery wheel and long-nosed flounder, is a common flatfish found around the margins of the North Pacific.",
+		starry_rockfish_description = "The starry rockfish, also known as the spotted corsair, spotted rockfish, chinafish, and red rock cod, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is found in the eastern Pacific Ocean.",
+		tiger_rockfish_dark_version_description = "The tiger rockfish, also called tiger seaperch, banded rockfish and black-banded rockfish, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is native to the waters of the Pacific Ocean off western North America.",
+		tiger_rockfish_pink_version_description = "The tiger rockfish, also called tiger seaperch, banded rockfish and black-banded rockfish, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is native to the waters of the Pacific Ocean off western North America.",
+		treefish_description = "The treefish is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is native to the eastern Pacific Ocean.",
+		vermilion_rockfish_description = "Sebastes miniatus, the vermilion rockfish, vermilion seaperch, red snapper, red rock cod, and rasher, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae.",
+		widow_rockfish_description = "The widow rockfish, or brown bomber, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is found in the northeastern Pacific Ocean.",
+		yelloweye_rockfish_adult_description = "The yelloweye rockfish is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. and one of the biggest members of the genus Sebastes. Its name derives from its coloration.",
+		yelloweye_rockfish_juvenile_description = "The yelloweye rockfish is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. and one of the biggest members of the genus Sebastes. Its name derives from its coloration.",
+		yellowtail_rockfish_description = "Sebastes flavidus, the yellowtail rockfish or yellowtail seaperch is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. This species lives mainly off the coast of western North America from California to Alaska.<br><br>Larvae and juveniles live near the surface, while adults live in deeper water over rocky reefs.",
 
 		weapon_dagger = "Antique Cavalry Dagger",
 		weapon_bat = "Baseball Bat",
@@ -4272,7 +4887,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_combatpistol_description = "A compact, lightweight semi-automatic pistol designed for law enforcement and personal defense use. 12-round magazine with option to extend to 16 rounds.",
 		weapon_appistol_description = "High-penetration, fully-automatic pistol. Holds 18 rounds in magazine with option to extend to 36 rounds.",
 		weapon_stungun_description = "Zaptastic fun for the whole family!",
-		weapon_pistol50_description = "High-impact pistol that delivers immense power but with extremely strong recoil. Holds 9 rounds in magazine.",
+		weapon_pistol50_description = "Never shoot a large caliber man with a small caliber bullet.",
 		weapon_snspistol_description = "Like condoms or hairspray, this fits in your pocket for a night on the town. The price of a bottle at a club, it's half as accurate as a champagne cork, and twice as deadly.",
 		weapon_snspistol_mk2_description = "The ultimate purse filler: if you want to make Saturday Night really special, this is your ticket.",
 		weapon_heavypistol_description = "The heavyweight champion of the magazine fed, semi-automatic handgun world. Delivers accuracy and a serious forearm workout every time.",
@@ -4286,7 +4901,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_ceramicpistol_description = "Not your grandma's ceramics. Although this pint-sized pistol is small enough to fit into her purse and won't set off a metal detector.",
 		weapon_navyrevolver_description = "A true museum piece. You want to know how the West was won - slow reload speeds and a whole heap of bloodshed.",
 		weapon_gadgetpistol_description = "A deadly shot. Don't be precious. You won't scuff the titanium nitride finish.",
-		weapon_stungun_mp = "",
+		weapon_stungun_mp_description = "",
 
 		weapon_microsmg_description = "Combines compact design with a high rate of fire at approximately 700-900 rounds per minute.",
 		weapon_smg_description = "This is known as a good all-around submachine gun. Lightweight with an accurate sight and 30-round magazine capacity.",
@@ -4433,13 +5048,20 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_addon_stidvc_description = "The future is now old man, just in a smaller caliber...",
 
 		weapon_addon_g36c = "Heckler & Koch G36C",
-		weapon_addon_g36c_description = "The dimensions of a submachine gun with the terminal ballistics of the 5.56 mm NATO round. Developed for special tactical applications by police and military special forces."
+		weapon_addon_g36c_description = "The dimensions of a submachine gun with the terminal ballistics of the 5.56 mm NATO round. Developed for special tactical applications by police and military special forces.",
+
+		weapon_addon_vandal = "RGX Vandal",
+		weapon_addon_vandal_description = "Valorant pog.",
+
+		weapon_addon_ak74 = "AK-74",
+		weapon_addon_ak74_description = "оставайся привязанным или хлопай в ладоши."
 	},
 
 	items = {
 		move_to_repair = "Move here to repair the vehicle.",
 		repairing_vehicle = "Repairing Vehicle",
 		using_first_aid_kit = "Using First Aid Kit",
+		using_bandages = "Using Bandages",
 		using_ifak = "Using IFAK",
 		move_to_wash = "Move here to wash the vehicle",
 		move_to_put_fake_plate = "Move here to put on a fake license plate.",
@@ -4449,6 +5071,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		hotwiring_vehicle = "Hotwiring Vehicle",
 		lockpick_broke = "Lockpick Broke",
 		failed_hotwire = "Failed Hotwire",
+		unpacking_green_rolls = "Unpacking Green Rolls",
+		you_do_not_have_enough_rolling_paper = "You do not have enough Rolling Paper.",
 		rolling_joint = "Rolling Joint",
 		rolling_joints = "Rolling Joints",
 		changing_license_plate = "Changing License Plate",
@@ -4463,11 +5087,22 @@ OP.Global.Locales.Languages["en-US"] = {
 		not_possible_in_a_vehicle = "This action is not possible in a vehicle.",
 		just_used_bandage = "You just used a first aid kit, wait a bit before using another one.",
 
+		failed_burger_shot_delivery = "Failed to open burgershot meal.",
+		failed_bean_machine_delivery = "Failed to open bean machine delivery.",
+
 		logs_used_weather_spell_title = "Used Weather Spell",
 		logs_used_weather_spell_details = "${consoleName} used weather spell `${itemName}`.",
 
 		you_have_used_jail_card = "You have used a 'get out of jail card'!",
-		you_are_not_in_jail = "You are not in jail."
+		you_are_not_in_jail = "You are not in jail.",
+
+		stored_map_location = "Successfully updated map location.",
+		failed_location_map = "Failed to update map location.",
+		updated_waypoint = "Set waypoint to map location.",
+
+		cleared_map = "Cleared stored map location.",
+		failed_clear_map = "Failed to clear stored map location.",
+		clear_map_invalid_slot = "Invalid inventory slot."
 	},
 
 	leashes = {
@@ -4530,6 +5165,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		name_already_taken = "This name is already taken.",
 		bad_words = "There are some bad words in your character name or backstory.",
 		disallowed_name = "There are some disallowed words in your character name.",
+		numbers_not_allowed = "Numbers are not allowed in character name.",
 		illegal_character_slot = "You are not able to create a character in this slot.",
 		missing_character_creation_data = "Missing character creation data.",
 		character_already_loaded = "You already have a character loaded.",
@@ -4604,6 +5240,72 @@ OP.Global.Locales.Languages["en-US"] = {
 	meth = {
 		press_to_sell_meth = "Press ~INPUT_CONTEXT~ to sell Meth.",
 		selling_meth = "Selling Meth."
+	},
+
+	mining = {
+		drill_scan_stone = "[${InteractionKey}] Drill Stone, [${SeatEjectKey}] Scan Stone",
+		scan_stone = "[${SeatEjectKey}] Scan Stone",
+		drill_stone = "[${InteractionKey}] Drill Stone",
+		scanning = "Scanning (${percentage}%)",
+		drilling = "Drilling (${percentage}%)",
+		failed_drill_stone = "Failed to drill stone.",
+		drill_no_drops = "You found no gems in this stone.",
+		drill_drops = "You found some gems in this stone.",
+		used_drill = "Your drill broke.",
+		still_shook = "You are still shaken up from the last explosion and didn't find any gems in this stone.",
+
+		recharging_scanner = "Recharging Scanner ${percentage}%",
+		scanning = "Scanning ${percentage}%",
+
+		refine_gemstones = "[${InteractionKey}] Refine Gemstones",
+		refinery = "Refinery Table",
+		exit_refinery = "Exit Refinery",
+		no_gemstones = "You don't have any raw gemstones.",
+		refining = "Refining 1x ${gemstone}",
+		refine_success = "Refined 1x ${gemstone}.",
+		failed_refine = "Failed refining gemstone.",
+
+		craft_rings = "[${InteractionKey}] Craft Rings",
+		no_crafting_items = "You don't have enough items to craft something here.",
+		crafting = "Crafting 1x ${item}",
+		crafting_table = "Crafting Table",
+		crafting_success = "Crafted 1x ${gemstone}.",
+		failed_crafting = "Failed crafting item.",
+		exit_crafting = "Exit Crafting Table",
+
+		no_sellable_items = "You have nothing that you can sell here.",
+		exit_shop = "Exit Shop",
+		shop = "Gemstone Shop",
+		sell_gemstones = "[${InteractionKey}] Sell Gemstones",
+		local_price = "Local Price: $${price}",
+
+		sold_gemstone = "Sold 1x ${gemstone} for $${price}.",
+		failed_sell_gemstone = "Failed to sell gemstone.",
+		failed_sell_no_item = "You don't have the item you tried to sell.",
+		failed_sell_cap = "The vendor doesn't want to buy any more of that item from you.",
+
+		mining_sold_item_title = "Sold Gems",
+		mining_sold_item_details = "${concoleName} sold 1x ${itemName} for $${price}.",
+
+		mining_crafted_item_title = "Crafted Item",
+		mining_crafted_item_details = "${consoleName} crafted 1x ${itemName}.",
+
+		mining_refined_item_title = "Refined Gem",
+		mining_refined_item_details = "${consoleName} refined 1x ${itemName}.",
+
+		mining_mined_title = "Mined Gem",
+		mining_mined_details = "${consoleName} mined ${output}.",
+
+		mining_exploded_title = "Mining Explosion",
+		mining_exploded_details = "${consoleName} blew up while attempting to mine a gem.",
+
+		instability_0 = "This gemstone is stable.",
+		instability_1 = "This gemstone is slightly unstable.",
+		instability_2 = "This gemstone is unstable.",
+		instability_3 = "This gemstone is very unstable.",
+
+		exhausted = "You are feeling exhausted from being in the mine for so long.",
+		very_exhausted = "You are feeling very exhausted from being in the mine for so long."
 	},
 
 	miscellaneous = {
@@ -4934,6 +5636,17 @@ OP.Global.Locales.Languages["en-US"] = {
 		no_entries = "No entries"
 	},
 
+	paper_bags = {
+		fill_bag = "[${SeatEjectKey}] Fill Paper Bag",
+		no_bags = "You don't have any paper bags.",
+		no_bag_items = "You don't have any items that you could put in a paper bag.",
+		close_bag = "Close Bag",
+		cancel_bag = "Cancel",
+		title = "Paper Bag",
+		failed_fill = "Failed to fill paper bag.",
+		filled_bag = "Successfully filled paper bag."
+	},
+
 	pawn_shops = {
 		sell_items = "Sell ${itemLabel}",
 		press_to_sell_items = "[${InteractionKey}] Sell ${itemLabel}",
@@ -4953,6 +5666,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		card_message = "drew a card and got ${cardLabel}",
 		citizen_card_message = "showed a citizen card (${characterId})",
 		badge_message = "showed a badge (${characterId})",
+		license_message = "showed a license (${characterId})",
 		ped_message_logs_title = "Ped Message",
 		ped_message_logs_details = "${consoleName} sent a ped message with the following message: `${pedMessage}`",
 		attached_ped_message_logs_title = "Attached Ped Message",
@@ -5095,6 +5809,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		phone_number_is_not_available = "The phone number `${phoneNumber}` is not available."
 	},
 
+	pictures = {
+		selfie_description = "Picture of ${firstName} ${lastName}."
+	},
+
 	player_scales = {
 		reset_player_scale_for = "Reset the player scale for ${consoleName}.",
 		set_player_scale_to_for = "Set the player scale to `${scale}` for ${consoleName}",
@@ -5205,6 +5923,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		collected_junk = "Collected Junk.",
 		collected_item = "Collected ${itemLabel}.",
+		collected_broken_item = "Collected Broken ${itemLabel}.",
 
 		collected_scuba_item_logs_title = "Collected Scuba Item",
 		collected_scuba_item_logs_details = "${consoleName} collected a scuba item and received `${itemName}`."
@@ -5287,6 +6006,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		no_shield = "You do not have a ballistic shield in your inventory."
 	},
 
+	shockwaves = {
+		create_shockwave_missing_permissions = "Player attempted to create a shockwave but they didn't have the required permissions.",
+		shockwave_success = "Successfully created shockwave.",
+		shockwave_failed = "Failed to create shockwave."
+	},
+
 	shooting_ranges = {
 		turn_on = "Turn On ($${cost})",
 		turn_off = "Turn Off",
@@ -5319,16 +6044,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		skylift_magnet_turned_on_logs_details = "${consoleName} turned the Skylift magnet on.",
 		skylift_attached_vehicle_logs_title = "Skylift Attached Vehicle",
 		skylift_attached_vehicle_logs_details = "${consoleName} attached a vehicle to their Skylift."
-	},
-
-	slow_motion = {
-		slow_motion_enabled = "Successfully enabled slow motion mode.",
-		slow_motion_disabled = "Successfully disabled slow motion mode.",
-		slow_motion_failed = "Failed to toggle slow motion mode.",
-		slow_motion_missing_perms = "Attempted to toggle slow motion mode without proper permission.",
-
-		slow_motion_enabled_help = "Slow motion mode has been enabled.",
-		slow_motion_disabled_help = "Slow motion mode has been disabled."
 	},
 
 	snow = {
@@ -5600,6 +6315,21 @@ OP.Global.Locales.Languages["en-US"] = {
 		fully_upgraded = "Successfully upgraded vehicle."
 	},
 
+	time_scale = {
+		invalid_time_scale = "The value ${timeScale} is an invalid time scale.",
+		set_time_scale_missing_permissions = "Player attempted to set the time scale but they didn't have the required permissions.",
+		time_scale_set_to = "The time scale has been set to ${timeScale}.",
+		time_scale_disabled = "The time scale override has been disabled.",
+		time_scale_already_set_to = "The time scale is already set to ${timeScale}.",
+		time_scale_is_already_disabled = "The time scale override is already disabled."
+	},
+
+	titanic = {
+		created_titanic = "Created a Titanic with the sink time of ${sinkTime} minute(s).",
+		failed_to_create_titanic = "Failed to create Titanic.",
+		create_titanic_missing_permissions = "Player attempted to create a Titanic but they didn't have the required permissions."
+	},
+
 	top_down = {
 		not_in_valid_vehicle = "You are not in a valid vehicle (only cars/bikes).",
 		top_down_on = "Top-down view activated.",
@@ -5614,6 +6344,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		trackers = "Trackers",
 		stockade_robbery_tracker = "Stockade Truck (10-78)",
 		tracked_vehicle = "Tracked Vehicle (${trackerId})",
+		battle_royale_teammate = "${name}",
 		tracker_character = "${firstName} ${lastName} (${departmentLabel})",
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Trackers will now be stored inside of their categories on the map.",
@@ -5621,6 +6352,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",
+		department_sahp = "SAHP",
 		department_doc = "DOC",
 		department_park_rangers = "Ranger",
 		department_medical = "EMS",
@@ -5695,28 +6427,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		training_blip = "Training"
 	},
 
-	trains = {
-		invalid_speed = "Invalid speed (Minimum: 0, Maximum: 1000).",
-		speed_change_success = "Successfully set the trains speed to ${speed}mph.",
-		speed_change_failed = "Failed to set the trains speed.",
-
-		stop_sitting_train = "Press ~INPUT_CONTEXT~ to stop sitting.",
-
-		train_speed_missing_permissions = "Player attempted to set the trains speed without proper permissions.",
-
-		start_train_interact = "[${InteractionKey}] Start Train",
-		stop_train_interact = "[${InteractionKey}] Stop Train",
-		start_train = "Start Train",
-		stop_train = "Stop Train",
-		train_out_of_range = "No nearby Train",
-
-		no_train_nearby = "There is no train nearby.",
-		failed_use_station = "Failed to start/stop the train.",
-		stopped_train = "Stopped the train.",
-		started_train = "Started the train.",
-		restarted_train = "The train has restarted."
-	},
-
 	traps = {
 		rearming = "Rearming",
 		press_to_rearm = "[${InteractionKey}] Rearm",
@@ -5768,7 +6478,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		vending_water = "Press ~INPUT_CONTEXT~ to purchase a Water Bottle. The cost is $${cost}.",
 		vending_water_not_enough_cash = "You do not have enough cash to purchase a Water Bottle. The cost is $${cost}.",
 		vending_machine_damaged = "This Vending Machine is damaged. Please check again later.",
-		vending_water_cooler = "Press ~INPUT_CONTEXT~ to get a Cup Of Water."
+		vending_water_cooler = "Press ~INPUT_CONTEXT~ to get a Cup Of Water.",
+
+		refill_bottle = "Press ~INPUT_CONTEXT~ to refill bottle.",
+		refilling_bottle = "Refilling Bottle"
 	},
 
 	voice = {
@@ -5790,7 +6503,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		target_channel = "Target Channel: ${targetChannel}",
 		actual_channel = "Actual Channel: ${actualChannel}",
 		target_radius = "Target Radius: ${targetRadius}",
-		actual_radius = "Actual Radius: ${actualRadius}"
+		actual_radius = "Actual Radius: ${actualRadius}",
+
+		invalid_server_id = "Invalid server id.",
+		failed_toggle_listen = "Failed to toggle listening status.",
+		listeners = "Listeners:",
+		listening_to = "Listening To:",
+
+		listening_missing_permissions = "Player attempted to toggle their listening status but they didn't have the required permissions."
 	},
 
 	washrooms = {
@@ -5824,9 +6544,21 @@ OP.Global.Locales.Languages["en-US"] = {
 		ragdoll_radius_success = "Successfully made players in a ${radius} radius ragdoll.",
 		ragdoll_radius_failed = "Failed to make players in radius ragdoll.",
 
+		flashbang_success = "Successfully flashbanged ${consoleName}.",
+		flashbang_failed = "Failed to flashbang player.",
+
+		flashbang_radius_success = "Successfully flashbanged players in a ${radius} radius.",
+		flashbang_radius_failed = "Failed to flashbang players in radius.",
+
 		missing_command = "Missing command.",
 		run_as_success = "Successfully ran command as ${consoleName}.",
-		run_as_failed = "Failed to run command as ${consoleName}."
+		run_as_failed = "Failed to run command as ${consoleName}.",
+
+		no_nearby_vehicle = "No vehicle nearby.",
+		reversing_failed = "Failed to make ped reverse.",
+		driving_forwards_failed = "Failed to make ped drive forwards.",
+		reversing_success = "Successfully made ped reverse.",
+		driving_forwards_success = "Successfully made ped drive forwards."
 	},
 
 	yoga = {
@@ -5911,6 +6643,12 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		stockade_logs_title = "Stockade Activated",
 		stockade_logs_details = "${consoleName} activated a stockade."
+	},
+
+	-- interfaces/*
+	interface = {
+		no_interfaces_are_focused = "No interfaces are set as focused.",
+		interfaces_focused = "Focused Interfaces:\n${interfacesFocused}"
 	},
 
 	-- jobs/*
@@ -6010,10 +6748,45 @@ OP.Global.Locales.Languages["en-US"] = {
 		failed_vin_lookup = "Failed to lookup VIN number.",
 		vin_lookup_details = "VIN ${vin} came back to vehicle with plate `${plate}` owned by `${fullName}`.",
 
+		npc_vehicle = "This vehicle is not a player owned vehicle.",
+		not_in_a_vehicle = "You are not currently driving a vehicle.",
+		invalid_minutes = "Invalid time (between 1 minute and 12 hours).",
+
+		not_on_duty = "You are not on duty.",
+		failed_impound = "Failed to impound vehicle.",
+		not_near_impound = "You are not near the PD impound.",
+		impound_success = "Successfully impounded vehicle with plate `${plate}` for ${minutes} minutes.",
+
+		access_impound = "[${InteractionKey}] Access Impound",
+		impound_lot = "Impound Lot",
+		exit_impound = "Exit Impound",
+		no_impounded_vehicles = "There are no vehicles currently on hold.",
+		failed_impound_list = "Failed to get impounded vehicles.",
+		impound_owner = "Owner: #${cid}",
+		withdraw_success = "Successfully withdrew vehicle.",
+		failed_withdraw = "Failed to withdraw vehicle.",
+		vehicle_not_impounded = "Vehicle id not currently on hold.",
+
+		impound_logs_title = "PD Impound",
+		impound_logs_details = "${consoleName} put a vehicle with the plate ${plate} on police hold for ${minutes} minutes.",
+
+		impound_withdraw_logs_title = "PD Withdraw",
+		impound_withdraw_logs_details = "${consoleName} withdrew a vehicle with the plate ${plate} from the PD impound (Time left: ${timeLeft}).",
+
 		none = "None",
 		active = "Active",
 		not_active = "Not active",
-		active_robberies = "\nActive Store: ${store}.\nActive Bank: ${bank}\nActive Jewelry: ${jewelry}"
+		active_robberies = "\nActive Store: ${store}.\nActive Bank: ${bank}\nActive Jewelry: ${jewelry}",
+
+		failed_dispatch = "Failed to send dispatch message.",
+		dispatch_title = "[Dispatch]",
+		dispatch_message = "${author}: ${message}",
+		invalid_dispatch_message = "Invalid dispatch message (Maximum 255 characters).",
+		in_training = "You are currently in training mode.",
+		cannot_use_dispatch = "You cannot use dispatch right now.",
+
+		dispatch_message_logs_title = "Dispatch Message",
+		dispatch_message_logs_details = "${consoleName} sent a dispatch message: `${message}`."
 	},
 
 	state = {
@@ -6023,8 +6796,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		license_hw = "Heavyweight",
 		license_hwh = "Heavyweight Helicopter",
 		license_perf = "Performance",
+		license_utility = "Utility",
+		license_commercial = "Commercial",
 		license_management = "Management",
 		license_military = "Military",
+		license_hunting = "Hunting License",
 		gave_character_license = "Gave ${characterName} license `${licenseLabel}`.",
 		character_already_has_license = "${characterName} already has license `${licenseLabel}`",
 		removed_character_license = "Removed license `${licenseLabel}` from ${characterName}.",
@@ -6138,16 +6914,20 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	gadgets = {
 		helicopter_camera_vehicle_info_metric = "Speed: ${speed} km/h\nModel: ${model}\nPlate: ${plate}",
-		helicopter_camera_vehicle_info_imperial = "Speed: ${speed} mp/h\nModel: ${model}\nPlate: ${plate}"
+		helicopter_camera_vehicle_info_imperial = "Speed: ${speed} mp/h\nModel: ${model}\nPlate: ${plate}",
+		helicopter_camera_location_info = "${locationLabelHere}\n${locationLabelInDirection}",
+		unknown = "Unknown"
 	},
 
 	garages = {
 		garage_empty = "Your garage is empty!",
 		impound_lot = "Impound Lot",
+		police_impound = "Police Impound",
 		engine = "Engine",
 		body = "Body",
 		vehicle_in = "In",
 		vehicle_out = "Out",
+		vehicle_at_police_impound = "Your vehicle is currently on police hold.",
 		vehicle_at_impound = "Your vehicle is located at the Impound Lot.",
 		waypoint_to_impound = "A waypoint to the Impound Lot has been marked on your GPS.",
 		unable_to_withdraw = "Unable to withdraw vehicle as it can currently be found at ${location}.",
@@ -6171,9 +6951,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		ui_return = "Return",
 		ui_vehicle_list = "Vehicle List",
 		ui_store_vehicle = "Store Vehicle",
+		ui_vehicle_sell = "Sell Vehicles",
 		ui_retrieve_vehicle = "Retrieve Vehicle",
 		ui_close_menu = "Close Menu",
 		garage_letter = "Garage ${letter}",
+		garage_emergency = "${type} Garage",
+		emergency_type_1 = "PD",
+		emergency_type_2 = "EMS",
 		no_vehicles_impounded = "None of your vehicles are impounded!",
 		you_must_retrieve_this_vehicle = "You will have to retrieve this vehicle in order to get access to it.",
 		garage = "Garage",
@@ -6184,6 +6968,24 @@ OP.Global.Locales.Languages["en-US"] = {
 		last_garage_letter = "Last - Garage ${letter}",
 		last_garage_impound = "Last - Impound Lot",
 		no_last_garage_letter = "No Last Garage",
+
+		purchase_vehicle = "Press ~INPUT_CONTEXT~ to access the shop",
+		emergency_shop = "Vehicle Shop",
+		exit_shop = "Exit Shop",
+		purchase_success = "The ${label} you just purchased has been added to your garage.",
+		purchase_failed = "Failed to purchase vehicle.",
+		already_owned = "You already own this vehicle model.",
+		maximum_owned = "You cannot own more than 4 vehicles.",
+		not_enough_money = "You don't have enouch money to purchase this vehicle.",
+
+		sold_vehicle = "Sold ${label} for $${price}.",
+		failed_sell_vehicle = "Failed to sell vehicle.",
+
+		sold_vehicle_logs_title = "Sold Vehicle",
+		sold_vehicle_logs_details = "${consoleName} sold a `${modelName}` emergency vehicle with plate `${plate}` for ${price}.",
+
+		purchased_vehicle_logs_title = "Purchased Vehicle",
+		purchased_vehicle_logs_details = "${consoleName} purchased a `${modelName}` emergency vehicle for ${price} (Plate: `${plate}`).",
 
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "Toggled the garage debug on.",
@@ -6266,13 +7068,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		manual_gears_enabled = "Manual gearing has now been enabled.",
 		manual_gears_disabled = "Manual gearing has now been disabled.",
 		manual_gear_set_to = "Gear set to ${gearId}.",
-		cruise_control_set_to_metric = "The cruise control will now limit the speed at ${speed} km/h.",
-		cruise_control_set_to_imperial = "The cruise control will now limit the speed at ${speed} mp/h.",
-		cruise_control_reset = "The cruise control will now limit the speed at the speed the vehicle was at when toggled.",
-		cruise_control_on_metric = "Cruise control set to ${speed} km/h.",
-		cruise_control_on_imperial = "Cruise control set to ${speed} mp/h.",
-		cruise_control_on_plane_metric = "Cruise control set to ${speed} km/h and ${altitude} meters.",
-		cruise_control_on_plane_imperial = "Cruise control set to ${speed} mp/h and ${altitude} ft.",
+		speed_limiter_set_to_metric = "The speed limiter will now limit the speed at ${speed} km/h.",
+		speed_limiter_set_to_imperial = "The speed limiter will now limit the speed at ${speed} mp/h.",
+		speed_limiter_reset = "The speed limiter will now limit the speed at the speed the vehicle was at when toggled.",
+		speed_limiter_on_metric = "Speed limiter set to ${speed} km/h.",
+		speed_limiter_on_imperial = "Speed limiter set to ${speed} mp/h.",
+		speed_limiter_on_plane_metric = "Speed limiter set to ${speed} km/h and ${altitude} meters.",
+		speed_limiter_on_plane_imperial = "Speed limiter set to ${speed} mp/h and ${altitude} ft.",
+		speed_limiter_on_helicopter_metric = "Speed limiter set to ${altitude} meters (hover).",
+		speed_limiter_on_helicopter_imperial = "Speed limiter set to ${altitude} ft (hover).",
 		you_are_cuffed = "You are cuffed.",
 		belt_is_on_and_vehicle_is_locked = "Your belt is on and the vehicle is locked.",
 		belt_is_on = "Your belt is on.",
@@ -6345,6 +7149,7 @@ OP.Global.Locales.Languages["en-US"] = {
 	-- a shared "alpha" locale category uwu - also know, some features such as the ${InteractionKey} will be missing here, so don't try to use it
 	alpha = {
 		check_in = "[E] Check In",
+		check_in_timer = "[${remaining}s] Check In",
 		check_in_escorted = "You are being escorted",
 		checking_in = "Checking In",
 		doctor_notified = "A doctor has been notified, please wait",
@@ -6493,14 +7298,19 @@ OP.Global.Locales.Languages["en-US"] = {
 		ems_models = "EMS Models",
 		animal_models = "Animal Models",
 		multiplayer_models = "Multiplayer Models",
-		serial_number = "Serial Number: ${serialNumber}<br>This weapon is registered to ${fullName} (${characterId}).",
+		serial_number = "Serial Number: ${serialNumber}<br>This weapon is registered to ${fullName} (#${characterId}).",
 		serial_number_unknown = "Serial Number: Unknown.",
-		badge_owner = "This badge belongs to ${fullName} (${positionName}).",
+		badge_owner = "<i>This badge belongs to <b>${fullName} (${positionName})</b>.</i>",
 		badge_owner_unknown = "Badge Owner is unknown.",
+		citizen_card_owner = "<i>This citizen card belongs to <b>${fullName} (#${characterId})</b>.</i>",
+		picture_selfie_owner = "<i>This is a picture of <b>${fullName}</b>.</i>",
 		bought_by = "Bought by ${buyerName} (${buyerCid}).",
 		bought_by_unknown = "The buyer of this item is unknown.",
 		evidence_incomplete = "This evidence is incomplete, and can not be reviewed.",
 		evidence_type = "Evidence Type",
+		processed_picked_up = "<i>Picked up by ${pickupName} and processed by ${processName}.</i>",
+		picked_up = "<i>Picked up by ${pickupName}.</i>",
+		processed_by = "<i>Processed by ${processName}.</i>",
 		evidence_casings = "Casings came back to serial number ${serialNumber} which was held by ${buyerName} (${buyerCid}) at the time of use.",
 		evidence_bullets = "Bullet impacts seems to have been created by ${bulletLabel}.",
 		evidence_clothing = "A piece of clothing (${clothingType}).",
@@ -6545,6 +7355,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		right_clavicle = "Right Clavicle",
 		left_clavicle = "Left Clavicle",
 		note_signed_by = "<b>Signed by:</b> <i>${name} (#${cid})</i>",
-		smart_watch_hover = "<i>This smart watch belongs to <b>${name} (#${cid})</b>. It has tracked <b>${stepsWalked}</b> steps."
+		map_location = "<b>Marked location:</b> <i>${x}, ${y}</i>",
+		smart_watch_hover = "<i>This smart watch belongs to <b>${name} (#${cid})</b>. It has tracked <b>${stepsWalked}</b> steps.</i>",
+		item_contains = "<b>Contains:</b> <i>${contents}</i>.",
+		evidence_incomplete = "This evidence bag is incomplete."
 	}
 }
