@@ -1798,7 +1798,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		-- game/mdt
 		mdt_command = "/mdt",
-		mdt_command_help = "Toggle the MDT iframe.",
+		mdt_command_help = "Przełącz iframe MDT.",
 		mdt_command_substitutes = "",
 
 		-- game/mechanics
