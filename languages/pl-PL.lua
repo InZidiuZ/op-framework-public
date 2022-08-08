@@ -6525,20 +6525,20 @@ balls = {
 		fully_upgraded = "Pomyślnie zmodernizowany pojazd."
 	},
 
-    time_scale = {
-        invalid_time_scale = "Wartość ${timeScale} jest nieprawidłową skalą czasu.",
-        set_time_scale_missing_permissions = "Gracz próbował ustawić skalę czasu, ale nie miał wymaganych uprawnień.",
-        time_scale_set_to = "Skala czasu została ustawiona na ${timeScale}.",
-        time_scale_disabled = "Nadpisanie skali czasu zostało wyłączone.",
-        time_scale_already_set_to = "Skala czasu jest już ustawiona na ${timeScale}.",
-        time_scale_is_already_disabled = "Pomijanie skali czasu jest już wyłączone."
-    },
+	time_scale = {
+		invalid_time_scale = "Wartość ${timeScale} jest nieprawidłową skalą czasu.",
+		set_time_scale_missing_permissions = "Gracz próbował ustawić skalę czasu, ale nie miał wymaganych uprawnień.",
+		time_scale_set_to = "Skala czasu została ustawiona na ${timeScale}.",
+		time_scale_disabled = "Nadpisanie skali czasu zostało wyłączone.",
+		time_scale_already_set_to = "Skala czasu jest już ustawiona na ${timeScale}.",
+		time_scale_is_already_disabled = "Pomijanie skali czasu jest już wyłączone."
+	},
 
-    titanic = {
-        created_titanic = "Stworzył Titanica, który zatonie za ${sinkTime} minut(y).",
-        failed_to_create_titanic = "Nie udało się stworzyc Titanica.",
-        create_titanic_missing_permissions = "Gracz próbował stworzyć Titanica, ale nie miał wymaganych uprawnień."
-    },
+		titanic = {
+		created_titanic = "Stworzył Titanica, który zatonie za ${sinkTime} minut(y).",
+		failed_to_create_titanic = "Nie udało się stworzyc Titanica.",
+		create_titanic_missing_permissions = "Gracz próbował stworzyć Titanica, ale nie miał wymaganych uprawnień."
+	},
 
 	top_down = {
 		not_in_valid_vehicle = "Znajdujesz się w nie dozwolonym pojezdzie (only cars/bikes).",
