@@ -5228,7 +5228,7 @@ balls = {
 		weapon_addon_stidvc_description = "Mały ale wariat.",
 
 		weapon_addon_g36c = "Heckler & Koch G36C",
-		weapon_addon_g36c_description = "Karabinek automatyczny produkowany przez niemieckie przedsiębiorstwo Heckler und Koch Gmbh."
+		weapon_addon_g36c_description = "Karabinek automatyczny produkowany przez niemieckie przedsiębiorstwo Heckler und Koch Gmbh.",
 
 		weapon_addon_vandal = "RGX Vandal",
 		weapon_addon_vandal_description = "Valorant pog.",
