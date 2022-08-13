@@ -5983,14 +5983,14 @@ OP.Global.Locales.Languages["et-EE"] = {
 	},
 
 	self_driving = {
-		not_driving_a_vehicle = "You are not currently operating a vehicle.",
-		not_a_self_driving_vehicle = "The vehicle you are operating does not support autopilot.",
-		no_waypoint_set = "Please set a waypoint to mark your destination.",
-		invalid_waypoint_set = "The waypoint you set cannot be driven to automatically.",
-		self_driving_engaged = "The autopilot has been engaged. Vajuta ~INPUT_SPRINT~ and ~INPUT_DUCK~ to control the cruise speed.",
-		self_driving_disengaged = "The autopilot has been disengaged.",
-		destination_too_close = "The marked destination is too close.",
-		self_driving_could_not_be_engaged = "The autopilot could not be engaged."
+		not_driving_a_vehicle = "Pead sõidukis sees olema.",
+		not_a_self_driving_vehicle = "See sõiduk ei toeta auto-pilooti.",
+		no_waypoint_set = "Palun märgi GPS oma sihtkoha märkimiseks.",
+		invalid_waypoint_set = "Teie määratud sihtpunkti ei saa automaatselt sõita.",
+		self_driving_engaged = "Autopiloot on sisse lülitatud. Vajuta ~INPUT_SPRINT~ ja ~INPUT_DUCK~ et kontrollida sõidukiirust.",
+		self_driving_disengaged = "Autopiloot on välja lülitatud.",
+		destination_too_close = "Märgitud sihtkoht on liiga lähedal.",
+		self_driving_could_not_be_engaged = "Autopilooti ei saanud sisse lülitada."
 	},
 
 	shield = {
@@ -6005,27 +6005,27 @@ OP.Global.Locales.Languages["et-EE"] = {
 	},
 
 	shooting_ranges = {
-		turn_on = "Turn On ($${cost})",
-		turn_off = "Turn Off",
-		toggle_through_targets = "Toggle Through Targets (${modelId})",
-		increase_speed = "Increase Speed (${speedLevel})",
-		decrease_speed = "Decrease Speed (${speedLevel})",
-		increase_rotation = "Increase Rotation (${rotationLevel})",
-		decrease_rotation = "Decrease Rotation (${rotationLevel})",
-		clear_bullet_impacts = "Clear Bullet Impacts",
+		turn_on = "Lülita tööle ($${cost})",
+		turn_off = "Lülita välja",
+		toggle_through_targets = "Vali sihtmärgid  (${modelId})",
+		increase_speed = "Tõsta kiirust (${speedLevel})",
+		decrease_speed = "Madalda kiirust (${speedLevel})",
+		increase_rotation = "Pööra (${rotationLevel})",
+		decrease_rotation = "Pööra tagasi (${rotationLevel})",
+		clear_bullet_impacts = "Puhasta märklauda",
 		illegal_shooting_spot_value = "Attempting to pass invalid values for shootings spots.",
 		illegal_shooting_spot_id = "Attempting to pass values for a shootings spot that doesn't exist.",
-		not_enough_cash = "You do not have enough cash."
+		not_enough_cash = "Pole piisavalt sularaha."
 	},
 
 	shrooms = {
-		press_to_pick_up_shrooms = "Vajuta ~INPUT_CONTEXT~ to pick up Shrooms.",
-		picking_up_shrooms = "Picking up Shrooms.",
-		press_to_sell_shrooms = "Vajuta ~INPUT_CONTEXT~ to sell Shrooms.",
-		not_interested = "This local doesn't seem to be interested in your shrooms.",
-		selling_shrooms = "Selling Shrooms.",
-		shrooms_not_ripe = "These shrooms don't seem ripe yet, maybe let them sit a little longer.",
-		shroom_id = "shroom-${shroomId}"
+		press_to_pick_up_shrooms = "Vajuta ~INPUT_CONTEXT~ et korjata seeni.",
+		picking_up_shrooms = "Korjad seeni.",
+		press_to_sell_shrooms = "Vajuta ~INPUT_CONTEXT~ et müüa seeni.",
+		not_interested = "See inimene ei soovi su seeni.",
+		selling_shrooms = "Müüd seeni.",
+		shrooms_not_ripe = "Need seened ei tundu veel küpsed, võib-olla lase neil seista veel veidi..",
+		shroom_id = "seen-${shroomId}"
 	},
 
 	skylift = {
@@ -6106,12 +6106,12 @@ OP.Global.Locales.Languages["et-EE"] = {
 	},
 
 	starter_car = {
-		your_vehicle_is_nearby = "Your personal vehicle is parked nearby.",
-		would_you_like_directions = "Would you like directions to get to it?",
-		press_to_respond = "Vajuta ~INPUT_FRONTEND_ACCEPT~ to accept or ~INPUT_FRONTEND_CANCEL~ to decline.",
-		follow_the_checkpoints = "Follow the checkpoints.",
+		your_vehicle_is_nearby = "Teie isiklik sõiduk on pargitud lähedusse.",
+		would_you_like_directions = "Kas soovite juhiseid selleni jõudmiseks?",
+		press_to_respond = "Vajuta ~INPUT_FRONTEND_ACCEPT~ et saada juhiseid või ~INPUT_FRONTEND_CANCEL~ et keelduda.",
+		follow_the_checkpoints = "Liigu pallide suunas.",
 
-		received_logs_title = "Received Started Car",
+		received_logs_title = "Said oma esimese auto",
 		received_logs_details = "${consoleName} received a started car (Model: ${modelName})."
 	},
 
@@ -6645,33 +6645,33 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 	-- jobs/*
 	bean_machine = {
-		start_delivery = "Start a delivery.",
-		press_to_start_delivery = "Vajuta ~g~${InteractionKey} ~w~to start a delivery.",
-		already_in_delivery = "You already have an active delivery.",
-		not_bean_machine_employee = "You must be a Bean Machine employee to start a delivery.",
-		finish_delivery = "Finish the delivery.",
-		press_to_finish_delivery = "Vajuta ~g~${InteractionKey} ~w~to finish the delivery.",
-		started_delivery = "Started a delivery to ${deliveryName}. The location has been marked on your map.",
-		finished_delivery = "The delivery to ${deliveryName} has been completed. You received $${deliveryPrice} and $${distanceBonus} in tip, totalling $${totalPrice}.",
-		error_finishing_delivery = "An error occurred while trying to finish your delivery.",
-		finished_delivery_title = "Finished Bean Machine Delivery",
-		finished_delivery_details = "${consoleName} finished a Bean Machine delivery and received $${deliveryPrice} and $${distanceBonus} in tip, totalling $${totalPrice}.",
-		delivery_blip = "Bean Machine Delivery"
+		start_delivery = "Alusta kohaletoimetamist.",
+		press_to_start_delivery = "Vajuta ~g~${InteractionKey} ~w~kohaletoimetamise alustamiseks.",
+		already_in_delivery = "Sul on juba aktiivne tellimus.",
+		not_bean_machine_employee = "Töö alustamiseks peate olema Bean Machinei töötaja.",
+		finish_delivery = "Viige kohaletoimetamine lõpuni.",
+		press_to_finish_delivery = "Vajuta ~g~${InteractionKey} ~w~kohaletoimetamise lõpetamiseks.",
+		started_delivery = "Alustas kohaletoimetamist aadressile ${deliveryName}. Asukoht on teie kaardile märgitud.",
+		finished_delivery = "Kohaletoimetamine ${deliveryName} on täidetud. Olete saanud $${deliveryPrice} ja $${distanceBonus} tipi, kogusummas $${totalPrice}.",
+		error_finishing_delivery = "Teie kohaletoimetamise lõpetamisel ilmnes viga.",
+		finished_delivery_title = "Lõpetasid Bean Machine töö",
+		finished_delivery_details = "${consoleName} lõpetas Bean Machine tellimused ja sai kätte $${deliveryPrice} ja $${distanceBonus} tipi, kogusummas $${totalPrice}.",
+		delivery_blip = "Bean Machine Tellimus"
 	},
 
 	burger_shot = {
-		start_delivery = "Start a delivery.",
-		press_to_start_delivery = "Vajuta ~g~${InteractionKey} ~w~to start a delivery.",
-		already_in_delivery = "You already have an active delivery.",
-		not_burger_shot_employee = "You must be a Burger Shot employee to start a delivery.",
-		finish_delivery = "Finish the delivery.",
-		press_to_finish_delivery = "Vajuta ~g~${InteractionKey} ~w~to finish the delivery.",
-		started_delivery = "Started a delivery to ${deliveryName}. The location has been marked on your map.",
-		finished_delivery = "The delivery to ${deliveryName} has been completed. You received $${deliveryPrice} and $${distanceBonus} in tip, totalling $${totalPrice}.",
-		error_finishing_delivery = "An error occurred while trying to finish your delivery.",
-		finished_delivery_title = "Finished Burger Shot Delivery",
-		finished_delivery_details = "${consoleName} finished a Burger Shot delivery and received $${deliveryPrice} and $${distanceBonus} in tip, totalling $${totalPrice}.",
-		delivery_blip = "Burger Shot Delivery"
+		start_delivery = "Alusta kohaletoimetamist.",
+		press_to_start_delivery = "Vajuta ~g~${InteractionKey} ~w~kohaletoimetamise alustamiseks.",
+		already_in_delivery = "Sul on juba aktiivne tellimus.",
+		not_burger_shot_employee = "Töö alustamiseks peate olema Burgershoti töötaja..",
+		finish_delivery = "Viige kohaletoimetamine lõpuni.",
+		press_to_finish_delivery = "Vajuta ~g~${InteractionKey} ~w~kohaletoimetamise lõpetamiseks.",
+		started_delivery = "Alustas kohaletoimetamist aadressile ${deliveryName}. Asukoht on teie kaardile märgitud.",
+		finished_delivery = "Kohaletoimetamine ${deliveryName} on täidetud. Olete saanud $${deliveryPrice} ja $${distanceBonus} tipi, kogusummas $${totalPrice}.",
+		error_finishing_delivery = "Teie kohaletoimetamise lõpetamisel ilmnes viga.",
+		finished_delivery_title = "Lõpetasid Burger Shoti töö",
+		finished_delivery_details = "${consoleName} lõpetas Burger Shoti tellimused ja sai kätte $${deliveryPrice} ja $${distanceBonus} tipi, kogusummas $${totalPrice}.",
+		delivery_blip = "Burger Shot Tellimus"
 	},
 
 	duty = {
