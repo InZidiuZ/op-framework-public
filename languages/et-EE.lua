@@ -326,8 +326,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		evidence_view_details_on = "${consoleName} toggled the advanced evidence view on.",
 		evidence_view_details_off = "${consoleName} toggled the advanced evidence view off.",
 
-		report_muted_no_reason = "You have been muted from the report command without a specified reason.",
-		report_muted = "You have been muted from the report command for reason `${reason}`.",
+		report_muted_no_reason = "Admin keelustas sind kasutamast /report commandit.",
+		report_muted = "Admin keelustas sul /report kasutamise põhjusega `${reason}`.",
 
 		already_sending_report = "You are already sending a report. Please wait.",
 		unable_to_send_identical_report = "You are unable to send two identical reports after each other.",
@@ -383,13 +383,13 @@ OP.Global.Locales.Languages["et-EE"] = {
 		wallhack_feature = "Wallhack",
 		watching_feature = "Watching",
 
-		you_are_not_in_a_vehicle = "You are not in a vehicle.",
-		repaired_vehicle = "Repaired vehicle.",
+		you_are_not_in_a_vehicle = "Sa pole sõidukis.",
+		repaired_vehicle = "Sõiduk parandatud.",
 
-		success_nos_refill = "Successfully refilled NOS.",
-		failed_nos_refill = "Failed to refill NOS.",
+		success_nos_refill = "NOSi täitmine õnnestus.",
+		failed_nos_refill = "NOSi täitmine ebaõnnestus.",
 
-		refill_nitro_missing_permissions = "Player attempted to refill their NOS but they were not a super admin.",
+		refill_nitro_missing_permissions = "Mängija üritas NOSi täiendada, kuid polnud admin.",
 
 		register_invalid_character_id = "Invalid character id.",
 		register_invalid_slot = "Invalid inventory slot.",
@@ -605,15 +605,15 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		illegal_oxy_run = "Player completed an oxy run faster than humanly possible.",
 
-		fast_movement_warning = "You have been flagged for moving too fast! Please let a developer know and tell them what you were doing to make this happen as you should not be recieving this chat message."
+		fast_movement_warning = "Sa liigud liiga kiiresti! Anna serveri omanikule teada, mida sa hetkel teed, kuna sa ei tohiks seda kirja saada."
 	},
 
 	authentication = {
-		ip_not_found = "We were unable to fetch your IP address.",
-		checking_steam_account = "Checking if a steam account is present...",
-		steam_account_not_found = "You are not connected to steam. Please relaunch FiveM while steam is open and logged in.",
-		authenticating_local_server = "Authenticating with local server...",
-		authenticating_global_server = "Authenticating with OP-FW servers...",
+		ip_not_found = "Teie IP otsimisel tekkis viga.",
+		checking_steam_account = "Steami olemasolu kontrollimine...",
+		steam_account_not_found = "Sa pole steamis sees. Restarti FiveM samal ajal kui sul on steam lahti!",
+		authenticating_local_server = "Serveriga ühenduse loomine...",
+		authenticating_global_server = "OP FW-ga ühenduse loomine...",
 		error_fetching_data = "An error occurred while fetching your data.",
 		region_blocked = "This server has blocked the region you are connecting from.",
 		server_config_not_loaded = "The server config has not been loaded.",
@@ -640,24 +640,24 @@ OP.Global.Locales.Languages["et-EE"] = {
 		job_high = "high job",
 
 		banned_globally = "You have been globally banned from all OP-FW servers.\n\nBan Hash: ${banHash}\nBan Reason: ${banReason}\n\nIf you believe this to be a false ban, please join the OP-FW discord guild for information on how to appeal at ${frameworkDiscord}",
-		banned_locally = "You have been banned from ${communityName}.\n\nBan Hash: ${banHash}\nBanned By: ${creatorName}\nBan Reason: ${banReason}\nTimestamp: ${timestamp}\n\n${indefiniteOrExpires}\n\nJoin our discord guild for information on how to appeal at ${communityDiscord}.",
-		banned_locally_no_creator = "You have been banned from ${communityName}.\n\nBan Hash: ${banHash}\nBan Reason: ${banReason}\nTimestamp: ${timestamp}\n\n${indefiniteOrExpires}\n\nJoin our discord guild for information on how to appeal at ${communityDiscord}.",
-		ban_indefinite = "This ban is indefinite.",
-		ban_expires = "This ban will expire in ${timeLeft}.",
-		not_whitelisted = "You are not whitelisted on this server. For information on how to apply, please join our discord guild.\n\n${communityDiscord}",
+		banned_locally = "Sa oled bannitud serverist ${communityName}.\n\nBan Hash: ${banHash}\nBannitud admini poolt: ${creatorName}\nBan Põhjus: ${banReason}\nKuupäev: ${timestamp}\n\n${indefiniteOrExpires}\n\nLiitu meie foorumiga, et rohkem infot saada ${legacyrp.ee}.",
+		banned_locally_no_creator = "Sa oled bannitud serverist ${communityName}.\n\nBan Hash: ${banHash}\nBan Põhjus: ${banReason}\nKuupäev: ${timestamp}\n\n${indefiniteOrExpires}\n\nLiitu meie foorumiga, et rohkem infot saada ${legacyrp.ee}.",
+		ban_indefinite = "Sinu ban ei aegu.",
+		ban_expires = "Sinu karistus aegub ${timeLeft}.",
+		not_whitelisted = "Sa pole whitelisted. Rohkema informatsiooni saamiseks, liitu meie Forumiga.\n\n${legacyrp.ee}",
 		api_error = "An error occurred while fetching your data. (error code ${errorCode})",
 		pepega_moderate = "You have been globally banned from all OP-FW servers without any specified reasons.",
-		pepega_ultimate = "You have been banned from this server.", -- NOTE: this text will be 'pepegad' so it will randomize the casing of all letters.
+		pepega_ultimate = "Sa oled serverist banned.", -- NOTE: this text will be 'pepegad' so it will randomize the casing of all letters.
 		ban_code_not_found = "You have been globally banned from all OP-FW servers. We were unable to find any data for your ban code.",
 		fraud_chargeback = "Fraud / Chargeback",
 		threatening_ddos = "Threatening to attack our infrastructure.",
 		unknown = "Unknown",
 		api_offline = "Our back-end service is currently unavailable and thereby not able to fetch your data. Please try again soon.",
 		protective_mode_on = "Server Protective Mode is currently enabled on this server, meaning only players with a certain amount of playtime may connect to the server. This is only momentary, and the server should resume to normal soon.\n\nJoin our discord for more information on this occurrence at ${communityDiscord}.",
-		server_restarting = "The server is currently restarting. Please try again in a few minutes.",
+		server_restarting = "Server restartib hetkel. Proovi hiljem uuesti!",
 		connection_cancelled = "This connection was cancelled as another one is already active.",
 		no_reason_provided = "No reason provided.",
-		discord_whitelist_id_not_found = "We were unable to find your discord id. Make sure you have discord open in the background and that you have allowed FiveM to fetch data from your discord client.\n\n${communityDiscord}"
+		discord_whitelist_id_not_found = "Sinu Discordi ei suudetud tuvastada. Proovi relogida ja hoia discord lahti!\n\n${discord.gg/YkCmzTxjvT}"
 	},
 
 	characters = {
@@ -685,7 +685,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		-- animations/carry
 		carry_command = "/carry",
-		carry_command_help = "Toggle carry.",
+		carry_command_help = "Tassi mängijat.",
 		carry_command_substitutes = "",
 
 		uncarry_command = "/uncarry",
@@ -693,19 +693,19 @@ OP.Global.Locales.Languages["et-EE"] = {
 		uncarry_command_substitutes = "",
 
 		struggle_command = "/struggle",
-		struggle_command_help = "Attempt to struggle out of someone carrying you.",
-		struggle_command_substitutes = "",
+		struggle_command_help = "Proovi lahti rabeleda kui keegi sind tassib.",
+		struggle_command_substitutes = "/rabele",
 
 		-- animations/chairs
 		sit_command = "/sit",
-		sit_command_help = "Attempt to sit down on a nearby chair.",
+		sit_command_help = "Istu lähimale toolile.",
 		sit_command_parameter_variation = "variation",
-		sit_command_parameter_variation_help = "What sit animation to play (1 - 6)",
+		sit_command_parameter_variation_help = "Sisesta animationi number (1 - 6)",
 		sit_command_substitutes = "/chair",
 
 		-- animations/emotes
 		ragdoll_command = "/ragdoll",
-		ragdoll_command_help = "Toggle ragdoll.",
+		ragdoll_command_help = "Karakter muutub vedelaks.",
 		ragdoll_command_substitutes = "",
 
 		-- base/admin
@@ -1303,25 +1303,25 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		-- game/clothing
 		force_outfit_command = "/force_outfit",
-		force_outfit_command_help = "Apply a saved outfit without being near a clothing spot.",
+		force_outfit_command_help = "Force endale outfit ilma riidepoodi minnes.",
 		force_outfit_command_parameter_outfit = "outfit",
-		force_outfit_command_parameter_outfit_help = "The name of the outfit.",
+		force_outfit_command_parameter_outfit_help = "Outfiti nimi.",
 		force_outfit_command_substitutes = "",
 
 		export_outfit_command = "/export_outfit",
-		export_outfit_command_help = "Export your current outfit to a notepad.",
+		export_outfit_command_help = "Kirjutab sinu riietuse üles märkmikusse.",
 		export_outfit_command_substitutes = "",
 
 		save_outfit_command = "/save_outfit",
-		save_outfit_command_help = "Saves your current clothes as an outfit.",
+		save_outfit_command_help = "Salvesta oma praegune outfit.",
 		save_outfit_command_parameter_name = "name",
-		save_outfit_command_parameter_name_help = "The name of the outfit.",
+		save_outfit_command_parameter_name_help = "Outfiti nimi.",
 		save_outfit_command_substitutes = "",
 
 		delete_outfit_command = "/delete_outfit",
-		delete_outfit_command_help = "Deletes the specified outfit.",
+		delete_outfit_command_help = "Kustuta kindel outfit.",
 		delete_outfit_command_parameter_name = "name",
-		delete_outfit_command_parameter_name_help = "The name of the outfit.",
+		delete_outfit_command_parameter_name_help = "Outfiti nimi.",
 		delete_outfit_command_substitutes = "",
 
 		reload_player_ped_data_command = "/reload_player_ped_data",
@@ -1337,7 +1337,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		outfit_command_substitutes = "",
 
 		outfits_command = "/outfits",
-		outfits_command_help = "List all your saved outfits.",
+		outfits_command_help = "Vaata oma praeguseid outfite.",
 		outfits_command_substitutes = "",
 
 		-- game/command_socket
@@ -1680,8 +1680,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		-- game/injuries
 		inspect_command = "/inspect",
-		inspect_command_help = "Inspects the closest player for injuries.",
-		inspect_command_substitutes = "",
+		inspect_command_help = "Uuri mängija vigastusi.",
+		inspect_command_substitutes = "/vigastused",
 
 		-- game/instances
 		instance_create_command = "/instance_create",
@@ -1811,7 +1811,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		ooc_local_command_help = "Broadcast an out of character message to the nearby players.",
 		ooc_local_command_parameter_message = "ooc message",
 		ooc_local_command_parameter_message_help = "The message you would like to send.",
-		ooc_local_command_substitutes = "/looc, /oocl, /ooclocal",
+		ooc_local_command_substitutes = "/looc, /oocl, /ooclocal, /b",
 
 		ooc_on_command = "/ooc_on",
 		ooc_on_command_help = "Enable the OOC chat if disabled.",
@@ -2395,8 +2395,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		-- illegal/corner
 		corner_command = "/corner",
-		corner_command_help = "Sell drugs to a nearby person. The drug you sell is based on the location you are in.",
-		corner_command_substitutes = "",
+		corner_command_help = "Müü narkootikume kohalikutele. Hind varieerub müügi asukohast.",
+		corner_command_substitutes = "/narko",
 
 		corner_debug_command = "/corner_debug",
 		corner_debug_command_help = "Show all the sell areas.",
@@ -2633,12 +2633,12 @@ OP.Global.Locales.Languages["et-EE"] = {
 	},
 
 	discord = {
-		one_player = "1 player",
-		multiple_players = "${playerAmount} players",
-		join_with_fivem = "Join with FiveM",
-		discord_guild = "Discord Guild",
-		richer_presence_on = "Richer presence is now on.",
-		richer_presence_off = "Richer presence is now off."
+		one_player = "1 mängija",
+		multiple_players = "${playerAmount} mängijat",
+		join_with_fivem = "Liitu FiveMiga",
+		discord_guild = "Discord",
+		richer_presence_on = "Richer presence aktiveeritud.",
+		richer_presence_off = "Richer presence deaktiveeritud."
 	},
 
 	errors = {
@@ -5310,16 +5310,16 @@ OP.Global.Locales.Languages["et-EE"] = {
 		ping_response = "${ping}ms (callback time: ${callbackTime}ms)",
 		ooc_first_time = "Tundub, et kasutad /ooc esimest korda! Enne kui saad seda kasutada, anname sulle väikse juhise. /ooc commandit tuleks kasutada ainult erilistel juhtumitel ja kõik küsimused millega pole kiire, tuleb küsida discordist või foorumist. Et rääkida OOC lähedal olevate mängijatega, tuleb kasutada /oocl! Et kasutada /ooc, pane see tööle kasutades /ooc_on. Sul on hiljem võimalus see välja ka lülitada, /ooc_off",
 		ooc_not_logged_in = "You are not logged in.",
-		ooc_timed_out = "You are currently timed out from the OOC chat. Please wait.",
-		ooc_muted_no_reason = "You have been muted from the global OOC chat without a specified reason.",
-		ooc_muted = "You have been muted from the global OOC chat for reason `${reason}`.",
+		ooc_timed_out = "Sul on OOC chatis cooldown. Oota natukene.",
+		ooc_muted_no_reason = "Admin keelustas sind OOC chatist.",
+		ooc_muted = "Sind on OOC chatist keelustatud põhjusega `${reason}`.",
 		global_ooc_title = "OOC ${playerDescriptor}",
 		local_ooc_title = "LOCAL OOC ${playerDescriptor}",
-		ooc_is_disabled = "You have disabled the global OOC chat.",
-		ooc_enabled = "Global OOC has now been enabled.",
-		ooc_already_enabled = "Global OOC is already enabled.",
-		ooc_disabled = "Global OOC has now been disabled.",
-		ooc_already_disabled = "Global OOC is already disabled.",
+		ooc_is_disabled = "Deaktiveerisid OOC chati",
+		ooc_enabled = "Global OOC on juba aktiveeritud.",
+		ooc_already_enabled = "Global OOC on juba aktiveeritud.",
+		ooc_disabled = "Global OOC on nüüd deaktiveeritud.",
+		ooc_already_disabled = "Global OOC on juba deaktiveeritud.",
 		ooc_local_logs_title = "Local OOC message",
 		ooc_local_logs_details = "${consoleName} sent the following message in the local OOC chat: `${oocMessage}`.",
 		ooc_global_logs_title = "Global OOC message",
@@ -5354,7 +5354,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		unmuted_player_details = "${consoleName} unmuted ${targetConsoleName}.",
 		player_unmuted = "Player Unmuted",
 		player_unmuted_details = "${targetConsoleName} has been unmuted by ${consoleName}.",
-		ooc_cancelled_same_as_last = "Your OOC message was cancelled as you attempted to send two identical messages in a row.",
+		ooc_cancelled_same_as_last = "Sa ei saa kaks korda sama asja kirjutada!",
 		use_measurement_metric = "You have set your preferred system of measurement to metric.",
 		use_measurement_imperial = "You have set your preferred system of measurement to imperial.",
 		use_measurement_default = "You will now be using the locale's default system of measurement.",
@@ -5370,10 +5370,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 	},
 
 	nos = {
-		press_to_install_nitro_tank = "Vajuta ~INPUT_CONTEXT~ to install Nitro Tank.",
-		installing_nitro_tank = "Installing Nitro Tank",
-		press_to_remove_nitro_tank = "Vajuta ~INPUT_CONTEXT~ to remove Nitro Tank.",
-		removing_nitro_tank = "Removing Nitro Tank"
+		press_to_install_nitro_tank = "Vajuta ~INPUT_CONTEXT~ et paigaldada sõidukile nitro.",
+		installing_nitro_tank = "Paigaldad nitrot",
+		press_to_remove_nitro_tank = "Vajuta ~INPUT_CONTEXT~ et eemaldada nitro.",
+		removing_nitro_tank = "Eemaldad nitrot"
 	},
 
 	notepads = {
@@ -5629,23 +5629,23 @@ OP.Global.Locales.Languages["et-EE"] = {
 	},
 
 	paper_bags = {
-		fill_bag = "[${SeatEjectKey}] Fill Paper Bag",
-		no_bags = "You don't have any paper bags.",
-		no_bag_items = "You don't have any items that you could put in a paper bag.",
-		close_bag = "Close Bag",
-		cancel_bag = "Cancel",
-		title = "Paper Bag",
-		failed_fill = "Failed to fill paper bag.",
-		filled_bag = "Successfully filled paper bag."
+		fill_bag = "[${SeatEjectKey}] Täida paberkott",
+		no_bags = "Sul pole ühtegi paberkotti.",
+		no_bag_items = "Sul pole midagi mida paberkotti panna.",
+		close_bag = "Sulge kott",
+		cancel_bag = "Tühista",
+		title = "Paberkott",
+		failed_fill = "Paberkoti täitmine ebaõnnestus.",
+		filled_bag = "Paberkott on täidetud."
 	},
 
 	pawn_shops = {
-		sell_items = "Sell ${itemLabel}",
-		press_to_sell_items = "[${InteractionKey}] Sell ${itemLabel}",
-		sold_items = "Sold ${sellAmount}x ${itemLabel} for $${sellPrice}.",
-		no_items_to_sell = "You have no ${itemLabel} to sell.",
-		daily_limit_reached = "You've reached your daily limit, the vendor is not buying any more items.",
-		illegal_pawn_shop_id = "Attempting to pass values for a pawn shop that doesn't exist.",
+		sell_items = "Müü ${itemLabel}",
+		press_to_sell_items = "[${InteractionKey}] Müü ${itemLabel}",
+		sold_items = "Müüsid ${sellAmount}x ${itemLabel} $${sellPrice} eest.",
+		no_items_to_sell = "Sul pole ühtegi ${itemLabel} mida müüa.",
+		daily_limit_reached = "Sinu päevane limiit on täis. Tule hiljem tagasi!",
+		illegal_pawn_shop_id = "Kehtetud numbrid.",
 		used_pawn_shop_title = "Used Pawn Shop",
 		used_pawn_shop_details = "${consoleName} used a pawn shop and sold ${sellAmount} `${itemLabel}` and received $${sellPrice}."
 	},
