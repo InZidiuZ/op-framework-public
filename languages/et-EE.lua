@@ -6461,18 +6461,18 @@ OP.Global.Locales.Languages["et-EE"] = {
 	},
 
 	vending_machines = {
-		vending_coffee = "Vajuta ~INPUT_CONTEXT~ ,et osta kohvit. Kohv maksab $${cost}.",
-		vending_coffee_not_enough_cash = "Sul pole piisavalt raha kohvi jaoks. See maksab $${cost}.",
-		vending_snack = "Vajuta ~INPUT_CONTEXT~ ,et osta batooni. Batoon maksab  $${cost}.",
-		vending_snack_not_enough_cash = "Sul pole piisavalt raha batooni jaoks. See maksab $${cost}.",
-		vending_soda = "Vajuta ~INPUT_CONTEXT~ ,et osta limonaadi. Limonaad maksab  $${cost}.",
+		vending_coffee = "Vajuta ~INPUT_CONTEXT~ et kohvi osta. See maksab  $${cost}.",
+		vending_coffee_not_enough_cash = "Sul pole kohvi jaoks piisavalt raha. See maksab  $${cost}.",
+		vending_snack = "Vajuta ~INPUT_CONTEXT~ et snäkk osta. See maksab  $${cost}.",
+		vending_snack_not_enough_cash = "Sul pole snäki jaoks piisavalt raha. See maksab  $${cost}.",
+		vending_soda = "Vajuta ~INPUT_CONTEXT~ et osta limonaadi. See maksab  $${cost}.",
 		vending_soda_not_enough_cash = "Sul pole piisavalt raha limonaadi jaoks. See maksab $${cost}.",
-		vending_water = "Vajuta ~INPUT_CONTEXT~ ,et osta vett. Vesi maksab  $${cost}.",
-		vending_water_not_enough_cash = "Sul pole piisavalt raha vee jaoks. See maksab $${cost}.",
-		vending_machine_damaged = "See masin on katki..",
-		vending_water_cooler = "Vajuta ~INPUT_CONTEXT~ ,et endale vett lasta topsi."
+		vending_water = "Vajuta ~INPUT_CONTEXT~ et osta veepudel. See maksab $${cost}.",
+		vending_water_not_enough_cash = "Sul pole veepudeli jaoks piisavalt raha. See maksab $${cost}.",
+		vending_machine_damaged = "See masin on katki. Tule hiljem tagasi.",
+		vending_water_cooler = "Vajuta ~INPUT_CONTEXT~ et tops vett juua.",
 
-		refill_bottle = "Vajuta ~INPUT_CONTEXT~ et täita pudel.",
+		refill_bottle = "Vajuta ~INPUT_CONTEXT~ et veepudelit täita.",
 		refilling_bottle = "Täidad pudelit"
 	},
 
@@ -6614,26 +6614,26 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 	stockade = {
 		dispatch = "[Keskus]",
-		status_1a = "10-31, Rahaauto röövi alarm käivitus hädaabi nupuga ${streetName}.",
-		status_1b = "10-31, Rahaauto röövi alarm käivitus hädaabi nupuga tänaval ${streetName} near ${crossingRoad}.",
-		status_2a = "10-31, Rahaauto röövi alarm käivitus tänaval kuna keegi näppis uksi tänaval ${streetName}.",
-		status_2b = "10-31, Rahaauto röövi alarm käivitus tänaval kuna keegi näppis uksi tänaval ${streetName} ${crossingRoad}.",
-		status_3a = "10-31, Rahaauto röövi alarm käivitus tänaval, Vabad üksused reageerige ${streetName} tänavale.",
-		status_3b = "10-31, Rahaauto röövi alarm käivitus tänaval ${streetName} ${crossingRoad}.",
-		grab_gold_bar = "[${InteractionKey}] Võta kullakangid (${barsRemaining} jäänud)",
-		grabbing_gold_bar = "Kullakangi haaramine",
-		use_advanced_lockpick = "[${InteractionKey}] Kasuta kallimaid tööriistu",
-		lockpicking_stockade = "Veoki muukimine"
+		status_1a = "10-78, Rahaauto vajutas paanikanuppu ja nad asuvad tänaval ${streetName}.",
+		status_1b = "10-78, Rahaauto vajutas paanikanuppu ja nad vajavad abi tänavale ${streetName} ${crossingRoad} läheduses.",
+		status_2a = "10-78, Rahaauto alarm läks tööle ja keegi üritab autouksi avada tänaval ${streetName}.",
+		status_2b = "10-78, Rahaauto alarm läks tööle ja keegi üritab autouksi avada tänaval ${streetName} ${crossingRoad} läheduses.",
+		status_3a = "10-78, Rahaauto alarm läks tööle, kuna autouksed avati tänaval ${streetName}.",
+		status_3b = "10-78, Rahaauto alarm läks tööle, kuna autouksed avati tänaval ${streetName} ${crossingRoad} läheduses.",
+		grab_valuables = "[${InteractionKey}] Haara väärisesemeid (${valuablesRemaining} jäänud)",
+		grabbing_valuables = "Haarad väärisesemeid",
+		use_advanced_lockpick = "[${InteractionKey}] Kasuta paremat muukrauda",
+		lockpicking_stockade = "Muugid rahaautot",
 
 		stockade_reward_logs_title = "Rahaauto tasu",
-		cash_pickup_logs_details = "${consoleName} korjas $${cashAmount} sularahas.",
+		cash_pickup_logs_details = "${consoleName} korjas $${cashAmount} sularaha.",
 		item_pickup_logs_details = "${consoleName} korjas 1x ${itemName}.",
 
 		reward_diamonds = "Haarasid teemanti.",
 		reward_gold_bar = "Haarasid kullakangi.",
 		reward_cash = "Haarasid sularaha.",
 
-		stockade_logs_title = "Rahaauto aktiveeritud",
+		stockade_logs_title = "Rahaauto alarm",
 		stockade_logs_details = "${consoleName} aktiveeris rahaauto."
 	},
 
@@ -7345,7 +7345,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		upper_spine = "Ülemine selgroog",
 		root_spine = "Ala selgroog",
 		right_clavicle = "Parem rangluu",
-		left_clavicle = "Vasak rangluu"
+		left_clavicle = "Vasak rangluu",
 		note_signed_by = "<b>Signed by:</b> <i>${name} (#${cid})</i>",
 		map_location = "<b>Marked location:</b> <i>${x}, ${y}</i>",
 		smart_watch_hover = "<i>See nutikell kuulub isikule <b>${name} (#${cid})</b>. See on lugenud kokku <b>${stepsWalked}</b> sammu.</i>",
