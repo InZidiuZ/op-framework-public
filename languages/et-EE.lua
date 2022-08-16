@@ -93,8 +93,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		failed_to_spawn_vehicle = "Ebaõnnestus kasutada commandit `/spawn_vehicle` õigesti.",
 		spawned_vehicle_for_player = "Edukalt spawnis `${modelName}` mängijale ${consoleName}.",
 		spawned_vehicle_for_everyone = "Edukalt spawnis `${modelName}` kõikidele.",
-		spawn_vehicle_for_player_not_staff = "Mängija Üritasid spawnida sõidukit kellegile teisele, kuid polnud piisavalt õiguseid.",
-		spawn_vehicle_for_self_not_staff = "Mängija Üritasid endale sõidukit spawnida, kuid polnud piisavalt õiguseid.",
+		spawn_vehicle_for_player_not_staff = "Mängija üritas spawnida sõidukit kellegile teisele, kuid polnud piisavalt õiguseid.",
+		spawn_vehicle_for_self_not_staff = "Mängija üritas endale sõidukit spawnida, kuid polnud piisavalt õiguseid.",
 		spawned_vehicle_for_self_title = "Spawnis sõiduki",
 		spawned_vehicle_for_self_details = "${consoleName} spawnis sõiduki nimega `${modelName}`.",
 		spawned_vehicle_for_player_title = "Spawnis sõiduki mängijale",
@@ -184,7 +184,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		staff_title = "STAFF ${staffName}",
 		staff_message_logs_title = "Staff Sõnum",
 		staff_message_logs_details = "${consoleName} saatis staff chati sõnumi kirjaga: `${staffMessage}`",
-		staff_message_illegal = "Mängija Üritasid staff chati sõnumit saata, kuid polnud piisavalt õiguseid.",
+		staff_message_illegal = "Mängija üritas staff chati sõnumit saata, kuid polnud piisavalt õiguseid.",
 
 		staff_pm_title = "STAFF PM ${transmissionTitle}",
 		staff_pm_logs_title = "Staff PM",
@@ -214,7 +214,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		missing_valid_steam_identifier_parameter = "Puudub kehtiv 'steamIdentifier' parameeter.",
 
-		illegal_entity_wipe = "Mängija Üritasid entitied kustutada, kuid polnud piisavalt õiguseid.",
+		illegal_entity_wipe = "Mängija üritas entitied kustutada, kuid polnud piisavalt õiguseid.",
 		wiped_entities = "Wiped Entities",
 		wipe_entities_logs_title = "Wiped Entities",
 		wipe_entities_logs_details = "${consoleName} tegi entity wipe järgneva konfiguratsiooniga: distants = `${distance}`, ignoreLocalEntities = `${ignoreLocalEntities}`, modelName = `${modelName}`",
@@ -351,22 +351,22 @@ OP.Global.Locales.Languages["et-EE"] = {
 		teleported_to_waypoint_logs_title = "Teleportis waypointile",
 		teleported_to_waypoint_logs_details = "${consoleName} teleportis waypointile ${locationLabel}.",
 
-		teleport_to_coordinates_not_staff = "Mängija Üritasid teleportida ennast koordinaatidele, kuid polnud õiguseid.",
-		teleport_to_waypoint_not_staff = "Mängija Üritasid teleportida ennast waypointile, kuid polnud õiguseid.",
+		teleport_to_coordinates_not_staff = "Mängija üritas teleportida ennast koordinaatidele, kuid polnud õiguseid.",
+		teleport_to_waypoint_not_staff = "Mängija üritas teleportida ennast waypointile, kuid polnud õiguseid.",
 
 		failed_isolate = "Mängija isoleerimine ebaõnnestus.",
 		invalid_server_id = "Kehtetu serveri ID.",
 		isolate_success_on = "Isoleerisid edukalt mängija ${consoleName}.",
 		isolate_success_off = "Lõpetasid mängija isoleerimise ${consoleName}.",
 
-		isolate_missing_permissions = "Mängija Üritasid teist mängijat isoleerida, kuid polnud piisavalt õiguseid.",
+		isolate_missing_permissions = "Mängija üritas teist mängijat isoleerida, kuid polnud piisavalt õiguseid.",
 
 		population_density_set_to = "Rahvastikuarv on tõstetud ${multiplierLabel}%.",
 		population_density_set_off = "Rahvastikuarvu boost on deaktiveeritud.",
 		population_density_is_not_on = "Rahvastikuarvu boost on juba väljas.",
 		population_density_already_set_to = "Rahvastikuarvu boost on juba ${multiplierLabel}%.",
 
-		population_density_not_super_admin = "Mängija Üritasid rahvastikuarvu muuta, kuid polnud super-admin.",
+		population_density_not_super_admin = "Mängija üritas rahvastikuarvu muuta, kuid polnud super-admin.",
 
 		enabled_features_list = "Aktiveeris funktsiooni:",
 		aimbot_feature = "Aimbot",
@@ -389,18 +389,18 @@ OP.Global.Locales.Languages["et-EE"] = {
 		success_nos_refill = "NOSi täitmine õnnestus.",
 		failed_nos_refill = "NOSi täitmine ebaõnnestus.",
 
-		refill_nitro_missing_permissions = "Mängija Üritasid NOSi täiendada, kuid polnud admin.",
+		refill_nitro_missing_permissions = "Mängija üritas NOSi täiendada, kuid polnud admin.",
 
 		register_invalid_character_id = "Kehtetu karakteri ID.",
 		register_invalid_slot = "Kehtetu inv slot.",
 		register_weapon_success = "Registreerisid relva edukalt slotile ${slotId} karakterile CID ${cid}.",
 		register_weapon_failed = "Relva registreerimine ebaõnnestus.",
 
-		register_weapon_missing_permissions = "Mängija Üritasid relva registreerida, kuid polnud õiguseid.",
+		register_weapon_missing_permissions = "Mängija üritas relva registreerida, kuid polnud õiguseid.",
 
 		vehicle_smoke_invalid_class = "Sõiduki tossu ei saa sellel autol muuta.",
 
-		repair_vehicle_not_super_admin = "Mängija Üritasid autot parandada, kuid polnud õiguseid.",
+		repair_vehicle_not_super_admin = "Mängija üritas autot parandada, kuid polnud õiguseid.",
 
 		repaired_vehicle_logs_title = "Sõiduk parandatud",
 		repaired_vehicle_logs_details = "${consoleName} parandas sõiduki kus ta sees istus.",
@@ -425,15 +425,15 @@ OP.Global.Locales.Languages["et-EE"] = {
 		invalid_dirt_level = "Kehtetu mustus.",
 		set_dirt_level = "Sõiduki mustust muudeti `${dirtLevel}`.",
 
-		set_dirt_level_not_super_admin = "Mängija Üritasid auto mustust muuta, kuid polnud õiguseid.",
+		set_dirt_level_not_super_admin = "Mängija üritas auto mustust muuta, kuid polnud õiguseid.",
 
-		set_fake_plate_not_super_admin = "Mängija Üritasid autol numbrimärki muuta, kuid polnud super admin.",
+		set_fake_plate_not_super_admin = "Mängija üritas autol numbrimärki muuta, kuid polnud super admin.",
 
 		already_fake_disconnecting = "Sa juba üritad fake disconnectida. Palun oota.",
 		started_fake_disconnect = "Alustasid fake connecti. Korda commandit, et lõpetada.",
 		stopped_fake_disconnect = "Lõpetas fake disconnecti.",
 
-		fake_disconnect_not_super_admin = "Mängija Üritasid fake disconnectida, kuid polnud õiguseid.",
+		fake_disconnect_not_super_admin = "Mängija üritas fake disconnectida, kuid polnud õiguseid.",
 
 		disabled_idle_cam = "Deaktiveeris idle cami.",
 		enabled_idle_cam = "Aktiveeris idle cami.",
@@ -510,7 +510,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		identity_set_failed = "Nime muutmine ebaõnnestus.",
 		identity_hud = "Nimi: ${playerName}",
 
-		set_identity_no_permission = "Mängija Üritasid oma nime muuta ilma õigusteta.",
+		set_identity_no_permission = "Mängija üritas oma nime muuta ilma õigusteta.",
 
 		you_do_not_have_permission_to_use_this = "Sul pole piisavalt õiguseid.",
 
@@ -519,10 +519,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		wipe_first_owned_success_range = "Kustutas edukalt kõik ${amount} olemused mida mängija omas ID-ga `${serverId}` raadiuses ${range}m.",
 		wipe_first_owned_failed = "Ebaõnnestus kustutada olemusi mida omas mängija `${serverId}`.",
 
-		toggle_collisions_missing_permissions = "Mängija Üritasid oma collisioneid muuta ilma õigusteta.",
-		wipe_first_owned_missing_permissions = "Mängija Üritasid wipe-da olemusi ilma õigusteta.",
+		toggle_collisions_missing_permissions = "Mängija üritas oma collisioneid muuta ilma õigusteta.",
+		wipe_first_owned_missing_permissions = "Mängija üritas wipe-da olemusi ilma õigusteta.",
 
-		freeze_missing_permissions = "Mängija Üritasid freezeda teist mängijat ilma õigusteta.",
+		freeze_missing_permissions = "Mängija üritas freezeda teist mängijat ilma õigusteta.",
 
 		freeze_success = "Külmutasid ${consoleName}.",
 		failed_freeze = "Mängija külmutamine ebaõnnestus.",
@@ -539,13 +539,13 @@ OP.Global.Locales.Languages["et-EE"] = {
 		slap_failed = "Mängija slappimine ebaõnnestus.",
 		slap_logs_title = "Slappisid mängija",
 		slap_logs_details = "${consoleName} slappis ${targetName}.",
-		slap_missing_permissions = "Mängija Üritasid teist mängijat slappida ilma õigusteta.",
+		slap_missing_permissions = "Mängija üritas teist mängijat slappida ilma õigusteta.",
 
 		damaged_player = "Vigastas mängijat ${consoleName} suuruses ${damage} damaget.",
 		damage_player_failed = "Mängija vigastamine ebaõnnestus.",
 		damage_player_logs_title = "Vigastasid mängijat",
 		damage_player_logs_details = "${consoleName} vigastas ${targetConsoleName} suuruses ${damage} damaget.",
-		damage_player_missing_permissions = "Mängija Üritasid teist mängijat vigastada ilma õigusteta."
+		damage_player_missing_permissions = "Mängija üritas teist mängijat vigastada ilma õigusteta."
 	},
 
 	anti_cheat = {
@@ -567,8 +567,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		model_not_in_list = "Mudel `${modelName}` (${modelHash}) pole tuvastus alasse lisatud.",
 		set_model_detected_not_staff = "Mängija lisada mudelit tuvastus alasse, kuid polnud piisavalt õiguseid.",
 		set_model_undetected_not_staff = "Mängija eemaldada mudelit tuvastus alasse, kuid polnud piisavalt õiguseid.",
-		add_detection_area_not_staff = "Mängija Üritasid lisada tuvastus ala, kuid polnud piisavalt õiguseid.",
-		remove_detection_area_not_staff = "Mängija Üritasid eemaldada tuvastus ala, kuid polnud piisavalt õiguseid.",
+		add_detection_area_not_staff = "Mängija üritas lisada tuvastus ala, kuid polnud piisavalt õiguseid.",
+		remove_detection_area_not_staff = "Mängija üritas eemaldada tuvastus ala, kuid polnud piisavalt õiguseid.",
 		detection_area_close = "[${InteractionKey}] Eemalda tuvastus ala (${areaId})",
 		detection_area = "Tuvastus ala (${areaId})",
 
@@ -2752,7 +2752,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		invalid_character_id = "Invalid character id parameter sent.",
 		invalid_steam_identifier = "Invalid steam identifier parameter sent.",
 
-		unload_character_not_staff = "Mängija Üritasid teist mängijat unloadida ilma õigusteta.",
+		unload_character_not_staff = "Mängija Üritas teist mängijat unloadida ilma õigusteta.",
 
 		unloaded_character_for_player_logs_title = "Karakteri valik",
 		unloaded_character_for_player_logs_details = "${consoleName} unloadis ${targetConsoleName} karakteri (`${characterFullName}` - ${characterId}) põhjusega `${message}`.",
@@ -2971,8 +2971,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		toggled_battle_royale_on = "Aktiveeris Battle Royale on.",
 		toggled_battle_royale_off = "Aktiveeris Battle Royale off.",
 		battle_royale_info = "You are queued up for Battle Royale!\nThere are currently ${battleRoyaleQueueLength} players in the queue.",
-		toggle_battle_royale_missing_permissions = "Mängija Üritasid to toggle the Battle Royale but they didn't have the required permissions to do so.",
-		start_battle_royale_missing_permissions = "Mängija Üritasid to start a Battle Royale but they didn't have the required permissions to do so.",
+		toggle_battle_royale_missing_permissions = "Mängija üritas to toggle the Battle Royale but they didn't have the required permissions to do so.",
+		start_battle_royale_missing_permissions = "Mängija üritas to start a Battle Royale but they didn't have the required permissions to do so.",
 		unable_to_start_battle_royale_not_active = "Unable to start the Battle Royale as the Battle Royale is not enabled.",
 		not_enough_players_in_queue = "Unable to start the Battle Royale as there are not enough players in th queue.",
 		zone_idling = "The zone is now idling.",
@@ -2998,10 +2998,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		advancing = "Advancing",
 		battle_royale = "Battle Royale",
 		press_to_deploy_parachute = "Vajuta ~INPUT_PARACHUTE_DEPLOY~ to deploy parachute.",
-		join_battle_royale_instance_missing_permissions = "Mängija Üritasid to join a Battle Royale instance but didn't have the required permissions to do so.",
+		join_battle_royale_instance_missing_permissions = "Mängija üritas to join a Battle Royale instance but didn't have the required permissions to do so.",
 		no_match_found = "${consoleName} is not in any match.",
 		joined_instance = "Joined the instance of ${consoleName}.",
-		leave_battle_royale_instance_missing_permissions = "Mängija Üritasid to leave a Battle Royale instance but didn't have the required permissions to do so.",
+		leave_battle_royale_instance_missing_permissions = "Mängija üritas to leave a Battle Royale instance but didn't have the required permissions to do so.",
 		left_instance = "Left instance.",
 		failed_to_leave_instance = "Ebaõnnestus leave instance as you were not in one.",
 		already_in_match = "Ebaõnnestus join instance as you are already in a match.",
@@ -5320,8 +5320,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		illegal_character_slot = "Pole võimalik sellesse sloti karakterit tekitada.",
 		missing_character_creation_data = "Karakteri tegemis andmed puuduvad.",
 		character_already_loaded = "Su karakter on juba sees.",
-		bad_words_in_character_creation = "Üritasidid karakterit teha kasutades keelatud sõnu: \"${badWords}\"",
-		disallowed_words_in_character_name = "Üritasidid karakterit teha keelatud nimega: \"${characterName}\"",
+		bad_words_in_character_creation = "Üritasid karakterit teha kasutades keelatud sõnu: \"${badWords}\"",
+		disallowed_words_in_character_name = "Üritasid karakterit teha keelatud nimega: \"${characterName}\"",
 		discord = "Discord",
 		you_have_disconnected_from_the_server = "Lahkusid serverist.",
 		notice = "Märge"
@@ -5332,7 +5332,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		lottery_about_to_roll = "Tänase loterii võitja saab teada 5 minuti pärast. Kogunenud jackpot on praegu $${totalPot} kuhu sina oled pannud $${betAmount}. Sinu võiduprotsent on ${odds}%.",
 		current_lottery_pot = "Praegune jackpot $${totalPot} kuhu sina oled panustanud $${betAmount}. Sinu võiduprotsent on ${odds}%.",
 		drew_a_lottery_winner = "Loterii võitja on selgunud.",
-		roll_lottery_no_permission = "Mängija Üritasid loteriid lõpetada, kuid pole piisavalt õiguseid.",
+		roll_lottery_no_permission = "Mängija Üritas loteriid lõpetada, kuid pole piisavalt õiguseid.",
 		winner_has_been_picked = "${fullName} on võitnud loterii kogusummas $${totalPot}! Ta panustas $${betAmount} ja tema võiduprotsent oli ${odds}%.",
 		claimed_lottery_winnings = "Võttis kogu jackpoti.",
 		no_lottery_winnings = "Sul pole ühtegi aktiivset võidusummat .",
@@ -5499,15 +5499,15 @@ OP.Global.Locales.Languages["et-EE"] = {
 		bad_ooc_message = "Üritasid halba sõna kirjutada OOC chati: `${oocMessage}`",
 		bad_ped_message = "Attempted to create a possibly bad ped message: `${pedMessage}`",
 		bad_twitter_post = "Üritasid halba sõna kasutada twitteris: `${twitterPost}`",
-		mute_toggle_not_staff = "Mängija Üritasid teist mängijat muteda, kuid polnud õiguseid.",
-		unmute_toggle_not_staff = "Mängija Üritasid teist mängijat unmuteda, kuid polnud õiguseid.",
+		mute_toggle_not_staff = "Mängija Üritas teist mängijat muteda, kuid polnud õiguseid.",
+		unmute_toggle_not_staff = "Mängija Üritas teist mängijat unmuteda, kuid polnud õiguseid.",
 		user_not_found = "Mängijat pole serveris ID-ga `${serverId}`.",
 		player_already_muted = "${consoleName} on juba muted.",
 		player_has_been_muted_no_reason = "${consoleName} on muted ilma antud põhjuseta.",
 		player_has_been_muted = "${consoleName} on muted põhjusega: `${reason}`.",
 		player_not_muted = "${consoleName} pole muted.",
 		player_has_been_unmuted = "${consoleName} on nüüd unmuted.",
-		clear_chat_not_admin = "Mängija Üritasid server chati kustutada, kuid polnud õiguseid.",
+		clear_chat_not_admin = "Mängija Üritas server chati kustutada, kuid polnud õiguseid.",
 		yes = "jah",
 		ooc_clear_chat_title = "Chat Puhastatud",
 		ooc_clear_chat_details = "${consoleName} puhastas kõigi chati.",
@@ -5575,8 +5575,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		failed_sign_notepad = "Allkirjastamine ebaõnnestus.",
 		sign_already_signed = "Sa ei saa seda kirja allkirjastada.",
 
-		notepad_info_missing_permissions = "Mängija Üritasid näha märkmiku infot ilma õigusteta.",
-		wipe_notepads_missing_permissions = "Mängija Üritasid kustutada märkmike ilma õigusteta."
+		notepad_info_missing_permissions = "Mängija Üritas näha märkmiku infot ilma õigusteta.",
+		wipe_notepads_missing_permissions = "Mängija Üritas kustutada märkmike ilma õigusteta."
 	},
 
 	notices = {
@@ -5585,8 +5585,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		successfully_removed_notice = "Eemaldasid edukalt märke.",
 		failed_remove_notice = "Märke eemaldamine ebaõnnestus.",
 
-		add_notice_missing_permissions = "Mängija Üritasid lisada teksti ilma õigusteta.",
-		remove_notice_missing_permissions = "Mängija Üritasid eemaldada teksti ilma õigusteta."
+		add_notice_missing_permissions = "Mängija üritas lisada teksti ilma õigusteta.",
+		remove_notice_missing_permissions = "Mängija üritas eemaldada teksti ilma õigusteta."
 	},
 
 	objects = {
@@ -6187,7 +6187,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 	},
 
 	shockwaves = {
-		create_shockwave_missing_permissions = "Mängija Üritasid lööklainet tekitada, kuid polnud piisavalt õigusi.",
+		create_shockwave_missing_permissions = "Mängija üritas lööklainet tekitada, kuid polnud piisavalt õigusi.",
 		shockwave_success = "Tekitasid edukalt lööklaine.",
 		shockwave_failed = "Lööklaine tekitamine ebaõnnestus."
 	},
@@ -6497,7 +6497,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 	time_scale = {
 		invalid_time_scale = "Väärtus ${timeScale} on kehtetu.",
-		set_time_scale_missing_permissions = "Mängija Üritasid aja väärtus muuta ilma õigusteta.",
+		set_time_scale_missing_permissions = "Mängija üritas aja väärtus muuta ilma õigusteta.",
 		time_scale_set_to = "Aja väärtus muudetud ${timeScale}.",
 		time_scale_disabled = "Aja väärtus eemaldatud.",
 		time_scale_already_set_to = "Aja väärtus on juba ${timeScale}.",
@@ -6507,7 +6507,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 	titanic = {
 		created_titanic = "Tekitas titanicu uppumisajaga ${sinkTime} minut(it).",
 		failed_to_create_titanic = "Titanicu tekitamine ebaõnnestus.",
-		create_titanic_missing_permissions = "Mängija Üritasid titanicut teha, kuid polnud õiguseid."
+		create_titanic_missing_permissions = "Mängija üritas titanicut teha, kuid polnud õiguseid."
 	},
 
 	top_down = {
@@ -6692,7 +6692,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		affected_by_jammer = "Su raadio hakkas imelikul kombel hakkima...",
 
-		listening_missing_permissions = "Mängija Üritasid admin kuulamis commandit kasutada ilma õigusteta."
+		listening_missing_permissions = "Mängija üritas admin kuulamis commandit kasutada ilma õigusteta."
 	},
 
 	washrooms = {
@@ -6763,7 +6763,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		invalid_camera_shake = "Värisevus `${cameraShake}` on kehtetu.",
 		invalid_damage_scale = "Damage skaal `${damageScale}` on kehtetu.",
 		created_explosion = "Tekitas plahvatuse `${explosionTypeName}` damagega `${damageScale}` ja kaamera värisevusega `${cameraShake}`.",
-		create_explosion_not_developer = "Mängija Üritasid tekitada plahvatust, kuid polnud developer."
+		create_explosion_not_developer = "Mängija üritas tekitada plahvatust, kuid polnud developer."
 	},
 
 	functions = {
@@ -6787,7 +6787,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		no_states = "Sellel entiteedil pole midagi märgitud.",
 		printed_states = "Entiteedid prinditud ${networkId}.",
 
-		get_entity_states_missing_permissions = "Mängija Üritasid olemusi saada ilma õigusteta."
+		get_entity_states_missing_permissions = "Mängija üritas olemusi saada ilma õigusteta."
 	},
 
 	-- illegal/*
@@ -6865,7 +6865,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 	},
 
 	duty = {
-		toggle_duty_status_no_permissions = "Mängija Üritasid on duty minna ilma õigusteta.",
+		toggle_duty_status_no_permissions = "Mängija üritas on duty minna ilma õigusteta.",
 
 		duty_status_on = "Läksid On Duty.",
 		duty_status_off = "Läksid Off Duty.",
@@ -7280,7 +7280,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		failed_modify_breaks = "Modifitseerimine ebaõnnestus.",
 
 		-- NOTE: `add_vehicle` command:
-		add_vehicle_not_super_admin = "Mängija Üritasid sõidukit garaazi lisada, kuid polnud super admin.",
+		add_vehicle_not_super_admin = "Mängija üritas sõidukit garaazi lisada, kuid polnud super admin.",
 		add_vehicle_added_vehicle_for_everyone = "Andis sõiduki nimega `${modelName}` kõikidele.",
 		add_vehicle_added_vehicle_for_player = "Lisas sõiduki nimega `${modelName}` mängijale ${consoleName}.",
 		add_vehicle_added_vehicle = "Lisas sõiduki nimega `${modelName}`.",
@@ -7301,7 +7301,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		added_vehicle_logs_details = "${consoleName} lisas sõiduki nimega `${modelName}` endale garaazi.",
 
 		-- NOTE: `toggle_vehicle_weapons` command:
-		toggle_vehicle_weapons_not_super_admin = "Mängija Üritasid sõiduki relvi aktiveerida, kuid polnud super admin.",
+		toggle_vehicle_weapons_not_super_admin = "Mängija üritas sõiduki relvi aktiveerida, kuid polnud super admin.",
 		toggled_vehicle_weapons_on = "Aktiveeris sõiduki relvad.",
 		toggled_vehicle_weapons_off = "Deaktiveeris sõiduki relvad.",
 		toggled_vehicle_weapons_vehicle_is_not_networked = "Sõidukis milles oled pole networked",
