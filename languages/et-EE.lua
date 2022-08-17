@@ -234,8 +234,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		logs_player_kicked_details = "${consoleName} sai serverist kicki ${kicker} poolt, põhjusega `${reason}`.",
 		logs_player_kicked_no_reason_details = "${consoleName} sai serverist kicki ${kicker} poolt.",
 
-		you_have_been_banned = "You have been banned by ${banner} for reason `${reason}`.",
-		you_have_been_banned_no_reason = "You have been banned without a specified reason by ${banner}.",
+		you_have_been_banned = "Sa oled bannitud admini ${banner} poolt, põhjusega `${reason}`.",
+		you_have_been_banned_no_reason = "Sa oled banned admini ${banner} poolt.",
 
 		banner_name_generic = "Staff Member",
 
@@ -1139,27 +1139,27 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		-- base/anti_cheat
 		model_detect_add_command = "/model_detect_add",
-		model_detect_add_command_help = "Temporarily add a model to the detection list. The list resets on server restart.",
+		model_detect_add_command_help = "Lisa ajutiselt mudel tuvastus nimekirja. Nimekiri resetib restarti ajal.",
 		model_detect_add_command_parameter_model = "model",
-		model_detect_add_command_parameter_model_help = "The model you would like to detect. Can be both a model name and a model hash.",
+		model_detect_add_command_parameter_model_help = "Mudeli nimi. Võib olla nimi või hash.",
 		model_detect_add_command_substitutes = "/detect",
 
 		model_detect_remove_command = "/model_detect_remove",
-		model_detect_remove_command_help = "Remove a model from the detection list.",
+		model_detect_remove_command_help = "Eemalda mudel tuvastus nimekirjast.",
 		model_detect_remove_command_parameter_model = "model",
-		model_detect_remove_command_parameter_model_help = "The model you would like to remove. Can be both a model name and a model hash.",
+		model_detect_remove_command_parameter_model_help = "Mudeli nimi. Võib olla nimi või hash.",
 		model_detect_remove_command_substitutes = "/undetect",
 
 		detection_area_add_command = "/detection_area_add",
-		detection_area_add_command_help = "Create an area where all spawned entities within that area will be sent to you with some information. The information can be found in the Overview UI.",
+		detection_area_add_command_help = "Looge ala, kus kõik sellel alal tekkinud entityd saadetakse teile koos teabega. Overview UI-st näeb informatsiooni.",
 		detection_area_add_command_parameter_radius = "radius",
-		detection_area_add_command_parameter_radius_help = "The radius of the circle in which entities will be detected. The minimum value is `10` and the maximum is `5000`. Leaving this as blank will default to `100`.",
+		detection_area_add_command_parameter_radius_help = "Raadius. Miinimum väärtus on `10` ja maksimum `5000`. Jättes tühjaks valib see `100`.",
 		detection_area_add_command_substitutes = "/area_add",
 
 		detection_area_remove_command = "/detection_area_remove",
-		detection_area_remove_command_help = "Remove a detection area.",
+		detection_area_remove_command_help = "Eemalda tuvastusala.",
 		detection_area_remove_command_parameter_area_id = "detection area id",
-		detection_area_remove_command_parameter_area_id_help = "The ID of the detection area you are wanting to remove.",
+		detection_area_remove_command_parameter_area_id_help = "Tuvastusala ID.",
 		detection_area_remove_command_substitutes = "/area_remove",
 
 		-- base/commands
@@ -1265,15 +1265,15 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		-- game/bombs
 		toggle_bombs_command = "/toggle_bombs",
-		toggle_bombs_command_help = "Toggles the bombs on your current aircraft.",
+		toggle_bombs_command_help = "Aktiveerib lennuki pommid.",
 		toggle_bombs_command_substitutes = "",
 
 		plant_bomb_command = "/plant_bomb",
-		plant_bomb_command_help = "Plants a sticky bomb at your current position.",
+		plant_bomb_command_help = "Paigaldab sticky pommi sinu alla.",
 		plant_bomb_command_substitutes = "",
 
 		toggle_ignition_bomb_command = "/toggle_ignition_bomb",
-		toggle_ignition_bomb_command_help = "Toggles the ignition bomb for the vehicle you are currently in (vehicle will explode when engine is turned on).",
+		toggle_ignition_bomb_command_help = "Aktiveeri süüte pomm (sõiduk plahvatab kui mootor käivitub).",
 		toggle_ignition_bomb_command_substitutes = "/ignition_bomb",
 
 		-- game/boomboxes
@@ -1357,24 +1357,24 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		-- game/command_socket
 		reconnect_command_socket_command = "/reconnect_command_socket",
-		reconnect_command_socket_command_help = "Attempts to reconnect to the command socket.",
+		reconnect_command_socket_command_help = "Reconnecti command socketisse.",
 		reconnect_command_socket_command_substitutes = "",
 
 		-- game/crafting
 		crafting_debug_command = "/crafting_debug",
-		crafting_debug_command_help = "Debugs all crafting locations.",
+		crafting_debug_command_help = "Debugi kõik crafting asukohad.",
 		crafting_debug_command_substitutes = "",
 
 		-- game/crashes
 		crash_command = "/crash",
-		crash_command_help = "Trigger an artificial crash.",
+		crash_command_help = "Crashi kellegi mäng.",
 		crash_command_parameter_server_id = "server id",
-		crash_command_parameter_server_id_help = "Mängija ID you would like to trigger a crash for. Leaving this blank will auto-select yourself.",
+		crash_command_parameter_server_id_help = "Mängija ID keda soovid crashida. Jättes tühjaks valib see iseenda.",
 		crash_command_substitutes = "",
 
 		-- game/culling
 		culling_debug_command = "/culling_debug",
-		culling_debug_command_help = "Aktiveeri the culling debug.",
+		culling_debug_command_help = "Aktiveeri culling debug.",
 		culling_debug_command_substitutes = "",
 
 		-- game/dashcam
@@ -2175,13 +2175,13 @@ OP.Global.Locales.Languages["et-EE"] = {
 		play_sound_command_substitutes = "",
 
 		play_sound_from_player_command = "/play_sound_from_player",
-		play_sound_from_player_command_help = "Play a sound for at a players position.",
+		play_sound_from_player_command_help = "Mängi heliefekti mängija asukohal.",
 		play_sound_from_player_command_parameter_url = "url",
-		play_sound_from_player_command_parameter_url_help = "The sound's download URL.",
+		play_sound_from_player_command_parameter_url_help = "Heliefekti URL.",
 		play_sound_from_player_command_parameter_volume = "volume",
-		play_sound_from_player_command_parameter_volume_help = "The volume level the sound should play at. Valid values range from `0` to `1`. This value will default to `0.1`.",
+		play_sound_from_player_command_parameter_volume_help = "Volüüm. Kehtivad sisestused on `0` kuni `1`. Default sisestus on `0.1`.",
 		play_sound_from_player_command_parameter_server_id = "server id",
-		play_sound_from_player_command_parameter_server_id_help = "Mängija ID you want to play this sound at.",
+		play_sound_from_player_command_parameter_server_id_help = "Mängija ID.",
 		play_sound_from_player_command_substitutes = "/play_sound_at",
 
 		-- game/spying
@@ -2191,9 +2191,9 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		-- game/status
 		status_reset_command = "/status_reset",
-		status_reset_command_help = "Reset status levels.",
+		status_reset_command_help = "Reseti staatused. Nälg, janu ja stress",
 		status_reset_command_parameter_server_id = "server id",
-		status_reset_command_parameter_server_id_help = "Mängija ID you are wanting to reset the status for. If left at blank, yourself will automatically be selected.",
+		status_reset_command_parameter_server_id_help = "Mängija ID. Jäta tühjaks kui iseennast.",
 		status_reset_command_substitutes = "/sr",
 
 		toggle_status_command = "/toggle_status",
@@ -2215,100 +2215,100 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		-- game/sync
 		time_hour_command = "/time_hour",
-		time_hour_command_help = "Set the current clock hour.",
+		time_hour_command_help = "Määra aeg.",
 		time_hour_command_parameter_hour = "hour",
-		time_hour_command_parameter_hour_help = "The hour you would like to set the clock to. The value must be between 0 and 23.",
+		time_hour_command_parameter_hour_help = "Tund mida soovid panna. Väärtus peab olema vahemikus 0 kuni 23.",
 		time_hour_command_parameter_transition = "transition",
-		time_hour_command_parameter_transition_help = "If the time should be changed with a smooth transition (yes/no, default is no).",
+		time_hour_command_parameter_transition_help = "Kas aeg peaks minema smooth transitioniga (jah/ei, default on ei).",
 		time_hour_command_substitutes = "/hour",
 
 		time_minute_command = "/time_minute",
-		time_minute_command_help = "Set the current clock minute.",
+		time_minute_command_help = "Määra minut.",
 		time_minute_command_parameter_minute = "minute",
-		time_minute_command_parameter_minute_help = "The minute you would like to set the clock to. The value must be between 0 and 59.",
+		time_minute_command_parameter_minute_help = "Minut mida soovid panna. Väärtus peab olema vahemikus 0 kuni 59.",
 		time_minute_command_substitutes = "/minute",
 
 		local_time_command = "/local_time",
-		local_time_command_help = "Sets the time, but only for you.",
+		local_time_command_help = "Määrab iseendale aja.",
 		local_time_command_parameter_hour = "hour",
-		local_time_command_parameter_hour_help = "The hour you would like to set the local clock to. The value must be between 0 and 23.",
+		local_time_command_parameter_hour_help = "Tund mida soovid panna. Väärtus peab olema vahemikus 0 kuni 23.",
 		local_time_command_substitutes = "",
 
 		weather_command = "/weather",
-		weather_command_help = "Change the weather.",
+		weather_command_help = "Muuda ilma.",
 		weather_command_parameter_weather = "weather name",
-		weather_command_parameter_weather_help = "The weather's name you would like to set it to. Valid weather names are EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS and HALLOWEEN.",
+		weather_command_parameter_weather_help = "Ilma nimi. Kehtivad sisestused on EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS ja HALLOWEEN.",
 		weather_command_substitutes = "",
 
 		advance_weather_command = "/advance_weather",
-		advance_weather_command_help = "Naturally advance to the next weather.",
+		advance_weather_command_help = "Naturaalselt mine üle teisele ilmale.",
 		advance_weather_command_substitutes = "",
 
 		freeze_time_command = "/freeze_time",
-		freeze_time_command_help = "Aktiveeri whether the time is frozen or not.",
+		freeze_time_command_help = "Aktiveeri kas aeg on kinni või mitte.",
 		freeze_time_command_substitutes = "",
 
 		freeze_weather_command = "/freeze_weather",
-		freeze_weather_command_help = "Aktiveeri whether the weather is frozen or not.",
+		freeze_weather_command_help = "Aktiveeri kas ilm on kinni või mitte.",
 		freeze_weather_command_substitutes = "",
 
 		blackout_command = "/blackout",
-		blackout_command_help = "Aktiveeri whether a blackout is active or not.",
+		blackout_command_help = "Elektrikatkestus.",
 		blackout_command_substitutes = "",
 
 		-- game/test_server
 		detach_all_doors_command = "/detach_all_doors",
-		detach_all_doors_command_help = "Detaches all doors of the vehicle you are currently in.",
+		detach_all_doors_command_help = "Kukutab kõik uksed sinu auto küljest.",
 		detach_all_doors_command_substitutes = "",
 
 		pop_all_tires_command = "/pop_all_tires",
-		pop_all_tires_command_help = "Pops all tires of the vehicle you are currently in.",
+		pop_all_tires_command_help = "Lõhub kõik rehvid sinu autol.",
 		pop_all_tires_command_substitutes = "",
 
 		upgrade_vehicle_fully_command = "/upgrade_vehicle_fully",
-		upgrade_vehicle_fully_command_help = "Upgrades the vehicle you are currently in fully.",
+		upgrade_vehicle_fully_command_help = "Tuunib auto põhja.",
 		upgrade_vehicle_fully_command_substitutes = "",
 
 		-- game/time_scale
 		set_time_scale_command = "/set_time_scale",
-		set_time_scale_command_help = "Set the server's time scale.",
+		set_time_scale_command_help = "Muuda aja skaalat.",
 		set_time_scale_command_parameter_time_scale = "time scale",
-		set_time_scale_command_parameter_time_scale_help = "The time scale you would like to set. The value must be between 0 and 1.",
+		set_time_scale_command_parameter_time_scale_help = "Aeg. Kehtivad sisestused on 0 ja 1.",
 		set_time_scale_command_substitutes = "/time_scale, /slow_motion",
 
 		-- game/titanic
 		create_titanic_command = "/create_titanic",
-		create_titanic_command_help = "Create a sinking Titanic.",
+		create_titanic_command_help = "Tekita uppuv titanic.",
 		create_titanic_command_parameter_sink_time = "sink time",
-		create_titanic_command_parameter_sink_time_help = "The amount of minutes it should take before the boat is under water.",
+		create_titanic_command_parameter_sink_time_help = "Mitme minuti pärast peaks titanic uppuma.",
 		create_titanic_command_substitutes = "",
 
 		-- game/top_down
 		top_down_command = "/top_down",
-		top_down_command_help = "Toggles the top down view.",
+		top_down_command_help = "Aktiveerib top down vaate.",
 		top_down_command_substitutes = "",
 
 		-- game/trackers
 		tracker_command = "/tracker",
-		tracker_command_help = "Aktiveeri your tracker's visibility.",
+		tracker_command_help = "Lülita oma tracker sisse või välja.",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "/trackers_split",
-		trackers_split_command_help = "Aktiveeri between having trackers stored inside of a category on the map and having them split.",
+		trackers_split_command_help = "Vaheta oma trackerit kategooriasse või mitte.",
 		trackers_split_command_substitutes = "",
 
 		-- game/tsunami
 		set_ocean_scaler_command = "/set_ocean_scaler",
-		set_ocean_scaler_command_help = "Globally modify the ocean scaler.",
+		set_ocean_scaler_command_help = "Muuda globaalselt meretase.",
 		set_ocean_scaler_command_parameter_intensity = "intensity",
-		set_ocean_scaler_command_parameter_intensity_help = "The intensity you would like to set it to.",
+		set_ocean_scaler_command_parameter_intensity_help = "Suurus mida soovid sisestada.",
 		set_ocean_scaler_command_substitutes = "/ocean_scaler, /set_waves_intensity, /waves_intensity",
 
 		-- game/voice
 		voice_debug_command = "/voice_debug",
-		voice_debug_command_help = "Aktiveeri the voice debug.",
+		voice_debug_command_help = "Aktiveeri voice debug.",
 		voice_debug_command_parameter_server_id = "server id",
-		voice_debug_command_parameter_server_id_help = "If you're wanting to toggle the 'voice debug' for someone else, insert their server id here.",
+		voice_debug_command_parameter_server_id_help = "Kui tahad 'voice debug' aktiveerida kellegile teisele, siis sisesta tema ID siia.",
 		voice_debug_command_substitutes = "",
 
 		listen_command = "/listen",
@@ -2381,38 +2381,38 @@ OP.Global.Locales.Languages["et-EE"] = {
 		run_command_as_command_substitutes = "/runas, /sudo",
 
 		ped_reverse_command = "/ped_reverse",
-		ped_reverse_command_help = "Makes the nearest ped in a vehicle reverse.",
+		ped_reverse_command_help = "Sunnib lähimat NPCd tagurdama.",
 		ped_reverse_command_substitutes = "",
 
 		ped_forwards_command = "/ped_forwards",
-		ped_forwards_command_help = "Makes the nearest ped in a vehicle drive forwards.",
+		ped_forwards_command_help = "Sunnib lähimat NPCd edasi sõitma.",
 		ped_forwards_command_substitutes = "",
 
 		-- global/entities
 		local_entities_debug_command = "/local_entities_debug",
-		local_entities_debug_command_help = "Aktiveeri the debug for local entities.",
+		local_entities_debug_command_help = "Aktiveeri debug kohalikele olemustele.",
 		local_entities_debug_command_substitutes = "/lentities",
 
 		-- global/explosions
 		create_explosion_command = "/create_explosion",
-		create_explosion_command_help = "Create an explosion.",
+		create_explosion_command_help = "Tekita plahvatus.",
 		create_explosion_command_parameter_explosion_type = "explosion type",
-		create_explosion_command_parameter_explosion_type_help = "The explosion type.",
+		create_explosion_command_parameter_explosion_type_help = "Plahvatuse tüüp.",
 		create_explosion_command_parameter_damage_scale = "damage scale",
-		create_explosion_command_parameter_damage_scale_help = "The damage scale.",
+		create_explosion_command_parameter_damage_scale_help = "Damage.",
 		create_explosion_command_parameter_camera_shake = "camera shake",
-		create_explosion_command_parameter_camera_shake_help = "The camera shake.",
+		create_explosion_command_parameter_camera_shake_help = "Kaamera värisemine.",
 		create_explosion_command_substitutes = "/exp, /explode, /explosion",
 
 		-- global/states
 		entity_states_debug_command = "/entity_states_debug",
-		entity_states_debug_command_help = "Aktiveeri the debug for the entity states.",
+		entity_states_debug_command_help = "Aktiveeri debug entity statedele.",
 		entity_states_debug_command_substitutes = "/states",
 
 		debug_entity_states_command = "/debug_entity_states",
-		debug_entity_states_command_help = "Prints all states of a certain entity.",
+		debug_entity_states_command_help = "Prindib kõik entity stated",
 		debug_entity_states_command_parameter_network_id = "network id",
-		debug_entity_states_command_parameter_network_id_help = "The network id of the entity.",
+		debug_entity_states_command_parameter_network_id_help = "Networkd ID.",
 		debug_entity_states_command_substitutes = "/debug_states",
 
 		-- illegal/corner
@@ -2421,16 +2421,16 @@ OP.Global.Locales.Languages["et-EE"] = {
 		corner_command_substitutes = "/narko",
 
 		corner_debug_command = "/corner_debug",
-		corner_debug_command_help = "Show all the sell areas.",
-		corner_debug_command_substitutes = "",
+		corner_debug_command_help = "Näita kõiki narkomüügi kohti.",
+		corner_debug_command_substitutes = "/narkokohad",
 
 		-- interfaces/interfaces
 		clear_uis_command = "/clear_uis",
-		clear_uis_command_help = "Clear all UI focuses.",
+		clear_uis_command_help = "Puhasta kõik UI focused.",
 		clear_uis_command_substitutes = "",
 
 		interface_focuses_command = "/interface_focuses",
-		interface_focuses_command_help = "Check which interfaces are set as focused.",
+		interface_focuses_command_help = "Vaata mis interfaced on focuses.",
 		interface_focuses_command_substitutes = "/interface_focus, /focus, /focuses",
 
 		--jobs/duty
