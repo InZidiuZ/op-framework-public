@@ -1203,6 +1203,23 @@ OP.Global.Locales.Languages["en-US"] = {
 		unload_character_command_parameter_message_help = "If you would like to display a message for the player to see in the login menu, type it here.",
 		unload_character_command_substitutes = "/unload",
 
+		-- game/admin_menu
+		admin_command = "/admin",
+		admin_command_help = "Opens the admin menu.",
+		admin_command_substitutes = "",
+
+		tp_player_command = "/tp_player",
+		tp_player_command_help = "Teleports you to a player.",
+		tp_player_command_parameter_server_id = "server id",
+		tp_player_command_parameter_server_id_help = "The server id of the player you with to teleport to.",
+		tp_player_command_substitutes = "",
+
+		tp_here_command = "/tp_here",
+		tp_here_command_help = "Teleports a player to you.",
+		tp_here_command_parameter_server_id = "server id",
+		tp_here_command_parameter_server_id_help = "The server id of the player you wish to teleport.",
+		tp_here_command_substitutes = "",
+
 		-- game/archives
 		create_archive_command = "/create_archive",
 		create_archive_command_help = "Creates a new case in the archive you are currently standing nearest.",
@@ -1417,6 +1434,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		define_position_command_parameter_animation_name_help = "The animation name of the animation that should be enforced (leave empty for none).",
 		define_position_command_substitutes = "",
 
+		save_commands_list_command = "/save_commands_list",
+		save_commands_list_command_help = "Saves a list of all available op-fw commands.",
+		save_commands_list_command_substitutes = "",
+
 		draw_radius_command = "/draw_radius",
 		draw_radius_command_help = "Draw a radius.",
 		draw_radius_command_parameter_radius = "radius",
@@ -1551,6 +1572,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		copy_coords_command_help = "Copies your current coordinates to the clipboard.",
 		copy_coords_command_substitutes = "",
 
+		save_valid_ped_component_variations_command = "/save_valid_ped_component_variations",
+		save_valid_ped_component_variations_command_help = "Save all valid ped component variations for your current player model.",
+		save_valid_ped_component_variations_command_substitutes = "",
+
 		-- game/dna_evidence
 		take_dna_sample_command = "/take_dna_sample",
 		take_dna_sample_command_help = "Takes a DNA sample of the nearest player.",
@@ -1590,14 +1615,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		cinematic_freecam_command = "/cinematic_freecam",
 		cinematic_freecam_command_help = "Toggles /cinematic and /freecam.",
 		cinematic_freecam_command_substitutes = "/cf",
-
-		track_player_command = "/track_player",
-		track_player_command_help = "Toggle player tracking for freecam.",
-		track_player_command_parameter_server_id = "server id",
-		track_player_command_parameter_server_id_help = "The player you want to track (or false to select yourself).",
-		track_player_command_parameter_point_at = "point at",
-		track_player_command_parameter_point_at_help = "If you want to always point the camera at the tracked entity.",
-		track_player_command_substitutes = "/track",
 
 		cam_point_command = "/cam_point",
 		cam_point_help = "Record a camera point.",
@@ -1648,7 +1665,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		range_revive_command = "/range_revive",
 		range_revive_command_help = "Revive all players in a certain range.",
 		range_revive_command_parameter_distance = "distance",
-		range_revive_command_parameter_distance_help = "Range you want to revive players in (between 1 and 50).",
+		range_revive_command_parameter_distance_help = "Range you want to revive players in (between 1 and 200).",
 		range_revive_command_substitutes = "/revive_range",
 
 		recent_deaths_command = "/recent_deaths",
@@ -1942,6 +1959,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		orbitcam_command_help = "Toggle the orbitcam.",
 		orbitcam_command_substitutes = "/orbit",
 
+		track_player_command = "/track_player",
+		track_player_command_help = "Toggle player tracking for orbitcam.",
+		track_player_command_parameter_server_id = "server id",
+		track_player_command_parameter_server_id_help = "The player you want to track (or false to select yourself).",
+		track_player_command_substitutes = "/track",
+
 		-- game/overview
 		overview_command = "/overview",
 		overview_command_help = "Toggle the overview UI. The overview UI is an OOC interaction menu, information center and a data viewer.",
@@ -2058,6 +2081,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		ped_steal_command_parameter_server_id_help = "The players server id.",
 		ped_steal_command_substitutes = "/steal_ped",
 
+		-- game/ped_takeover
+		takeover_ped_command = "/takeover_ped",
+		takeover_ped_command_help = "Makes you control a certain ped.",
+		takeover_ped_command_parameter_network_id = "network id",
+		takeover_ped_command_parameter_network_id_help = "The network id of the ped you want to take over.",
+		takeover_ped_command_substitutes = "/takeover",
+
 		-- game/ped_tasks
 		debug_ped_command = "/debug_ped",
 		debug_ped_command_help = "Debugs information about a ped.",
@@ -2097,6 +2127,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		frequency_command_parameter_frequency = "frequency",
 		frequency_command_parameter_frequency_help = "The frequency you would like to go to.",
 		frequency_command_substitutes = "/freq",
+
+		force_frequency_command = "/force_frequency",
+		force_frequency_command_help = "Join a radio frequency without needing a radio or needing to be on duty.",
+		force_frequency_command_parameter_frequency = "frequency",
+		force_frequency_command_parameter_frequency_help = "The frequency you would like to go to.",
+		force_frequency_command_substitutes = "",
 
 		random_frequency_command = "/random_frequency",
 		random_frequency_command_help = "Sets your radio to a random frequency.",
@@ -2189,6 +2225,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		search_for_devices_command_help = "Search for nearby devices.",
 		search_for_devices_command_substitutes = "/search_devices, /searchdevices, /s4d",
 
+		-- game/spectating
+		spectate_command = "/spectate",
+		spectate_command_help = "Spectate a certain player.",
+		spectate_command_parameter_server_id = "server id",
+		spectate_command_parameter_server_id_help = "The server id of the player you wish to spectate.",
+		spectate_command_substitutes = "/spec",
+
 		-- game/status
 		status_reset_command = "/status_reset",
 		status_reset_command_help = "Reset status levels.",
@@ -2233,6 +2276,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		local_time_command_parameter_hour = "hour",
 		local_time_command_parameter_hour_help = "The hour you would like to set the local clock to. The value must be between 0 and 23.",
 		local_time_command_substitutes = "",
+
+		brighter_nights_command = "/brighter_nights",
+		brighter_nights_command_help = "Sets the time to 12pm and the weather to clear, but only for you.",
+		brighter_nights_command_substitutes = "",
 
 		weather_command = "/weather",
 		weather_command_help = "Change the weather.",
@@ -2297,6 +2344,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		trackers_split_command_help = "Toggle between having trackers stored inside of a category on the map and having them split.",
 		trackers_split_command_substitutes = "",
 
+		-- game/treasure_maps
+		spawn_map_piece_command = "/spawn_map_piece",
+		spawn_map_piece_command_help = "Spawn a treasure map piece.",
+		spawn_map_piece_command_parameter_map_tier = "map tier",
+		spawn_map_piece_command_parameter_map_tier_help = "The map tier you would like to spawn a piece for.",
+		spawn_map_piece_command_parameter_piece_number = "piece number",
+		spawn_map_piece_command_parameter_piece_number_help = "The piece number you would like to spawn.",
+		spawn_map_piece_command_substitutes = "",
+
 		-- game/tsunami
 		set_ocean_scaler_command = "/set_ocean_scaler",
 		set_ocean_scaler_command_help = "Globally modify the ocean scaler.",
@@ -2318,6 +2374,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		listen_command_substitutes = "",
 
 		-- game/wizard
+		wizard_command = "/wizard",
+		wizard_command_help = "Opens the wizard menu.",
+		wizard_command_parameter_server_id = "server id",
+		wizard_command_parameter_server_id_help = "Select a certain player in the menu (optional).",
+		wizard_command_substitutes = "",
+
 		ragdoll_player_command = "/ragdoll_player",
 		ragdoll_player_command_help = "Makes a player ragdoll.",
 		ragdoll_player_command_parameter_server_id = "server id",
@@ -2620,9 +2682,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		mileage_command_help = "Check a vehicle's mileage.",
 		mileage_command_substitutes = "",
 
-		toggle_disabled_breaks_command = "/toggle_disabled_breaks",
-		toggle_disabled_breaks_command_help = "Disables or enables the breaks of the nearest vehicle.",
-		toggle_disabled_breaks_command_substitutes = "/disable_breaks",
+		toggle_disabled_brakes_command = "/toggle_disabled_brakes",
+		toggle_disabled_brakes_command_help = "Disables or enables the brakes of the nearest vehicle.",
+		toggle_disabled_brakes_command_substitutes = "/disable_brakes",
 
 		manual_toggle_command = "/manual_toggle",
 		manual_toggle_command_help = "Toggle whether or not you want to manually control vehicles' gears.",
@@ -2802,6 +2864,16 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	-- game/*
+	admin_menu = {
+		menu_title = "Admin Menu",
+		spectate_player = "Spectate Player",
+		teleport_player = "Teleport To Player",
+		teleport_player_here = "Teleport Player To You",
+		failed_teleport_to_player = "Failed to teleport to player.",
+		failed_teleport_player_here = "Failed to teleport player to you.",
+		invalid_target_server_id = "Invalid target server id."
+	},
+
 	afk = {
 		you_are_afk = "You are AFK. You may be kicked to make room for other players.\nMove your mouse to stop being AFK.",
 		you_are_afk_unload = "You are AFK. You are going to be unloaded to prevent paycheck farming.\nMove your mouse to stop being AFK.",
@@ -3480,6 +3552,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		crafted_decryption_key = "Crafted decryption key.",
 		failed_craft_decryption_key = "Failed to craft decryption key.",
 
+		craft_tire_wall = "Craft Tire Wall",
+		press_craft_tire_wall = "[${SeatEjectKey}] Craft Tire Wall",
+		crafting_tire_wall = "Crafting Tire Wall",
+		crafted_tire_wall = "Crafted tire wall.",
+		failed_craft_tire_wall = "Failed to craft tire wall.",
+
+		fix_tire_wall = "Fix Tire Wall",
+		press_fix_tire_wall = "[${SeatEjectKey}] Fix Tire Wall",
+		fixing_tire_wall = "Fixing Tire Wall",
+		fixed_tire_wall = "Fixed tire wall.",
+		failed_fix_tire_wall = "Failed to fix tire wall.",
+
 		no_required_items = "You don't have all the required items.",
 
 		debug_multi = "-Multiple Outputs-",
@@ -3687,6 +3771,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		up = "Up",
 		down = "Down",
 
+		floor_tunnel_entrance = "Tunnel Entrance",
+		floor_underground_tunnel = "Underground Tunnel",
+
 		floor_garage = "Garage",
 		floor_lobby = "Lobby",
 		floor_roof = "Roof",
@@ -3791,8 +3878,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		cleared_points = "Cleared all camera points.",
 		replaced_point = "Replaced camera point at index ${index} (Transition: ${transition}ms).",
 		moved_to_point = "Moved freecam to camera point ${index} (Transition: ${transition}ms).",
-		invalid_point_index = "Invalid camera point index.",
-		failed_track_player = "Failed to track player."
+		invalid_point_index = "Invalid camera point index."
 	},
 
 	frisk = {
@@ -4097,6 +4183,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		press_to_access_locker = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to access your private locker.",
 		press_to_access_shared_storage = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to access the shared storage.",
 
+		locker_restricted = "This item doesn't seem to fit in your locker.",
+
 		press_to_access_shredder = "[${InteractionKey}] Access shredder.",
 
 		press_to_open_public_inventory = "~INPUT_REPLAY_SHOWHOTKEY~ Access ${label}",
@@ -4394,6 +4482,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		chocolate_milkshake = "Chocolate Milkshake",
 		chocolate_milkshake_description = "A wonderful looking shake, just hope the CIA isn't after you before you take a sip...",
 
+		dog_food = "Dog Food",
+		dog_food_description = "Dog food is food specifically formulated and intended for consumption by dogs and other related canines.",
+		cat_food = "Cat Food",
+		cat_food_description = "Cat food is food for consumption by cats. Cats have specific requirements for their dietary nutrients.",
+		dog_treats = "Dog Treats",
+		dog_treats_description = "Yummy treats for your favorite good boy.",
+		cat_treats = "Cat Treats",
+		cat_treats_description = "Delicious treats for your local pussy.",
+
 		burger_buns = "Burger Buns",
 		burger_buns_description = "Slide some meat between these bad boys.",
 		cheese = "Cheese",
@@ -4451,6 +4548,9 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		cigarette = "Cigarette",
 		cigarette_description = "If you don't smoke you're a pussy dawg",
+		cigarette_pack = "Cigarette Pack",
+		cigarette_pack_description = "For your dad who has a cigarette addiction (hopefully he comes back after leaving to get them).",
+
 		cocaine_bag = "Cocaine Bag",
 		cocaine_bag_description = "Smaller pieces of Colombian history.",
 		cocaine_brick = "Cocaine Brick",
@@ -4528,6 +4628,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		evidence_bag_description = "Sealed crime in a bag for later use.",
 		fingerprint_evidence = "Fingerprint Evidence",
 		fingerprint_evidence_description = "Helping you catch them criminal scumbags.",
+
+		ammo_box = "Big Ammo Box",
+		ammo_box_description = "Perfect for when you need to shoot a lot. Contains 60 rounds of each ammo type.",
 
 		stungun_ammo = "Taser Cartridge",
 		stungun_ammo_description = "Less than lethal.",
@@ -4696,8 +4799,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		disposable_grill_description = "Can be placed anywhere in the world. Perfect for camping, hunting and fishing! This item can not be picked up again.",
 		grill = "Grill",
 		grill_description = "Can be placed anywhere in the world. Perfect for camping, hunting and fishing!",
-		barrier = "Barrier",
-		barrier_description = "Can be placed anywhere in the world.",
+		police_barrier = "Police Barrier",
+		police_barrier_description = "Can be placed anywhere in the world.",
 		dummy = "Dummy",
 		dummy_description = "Can be placed anywhere in the world.",
 		target = "Target",
@@ -4718,6 +4821,28 @@ OP.Global.Locales.Languages["en-US"] = {
 		stop_sign_description = "Can be placed anywhere in the world.",
 		bear_trap = "Bear Trap",
 		bear_trap_description = "Can be placed anywhere in the world.",
+		barrier = "Barrier",
+		barrier_description = "Your standard construction barrier.",
+		traffic_barrier = "Traffic Barrier",
+		traffic_barrier_description = "A barrier to make sure traffic knows what the fuck is up.",
+		small_barrier = "Small Barrier",
+		small_barrier_description = "Shitty little baby barricade.",
+		traffic_barrel = "Traffic Barrel",
+		traffic_barrel_description = "It looks hittable, but don’t... unless?",
+		pedestrian_barrier = "Pedestrian Barrier",
+		pedestrian_barrier_description = "Great to have unless it’s a Travis Scott concert...",
+
+		director_chair = "Director Chair",
+		director_chair_description = "Can be placed anywhere in the world. Comfortable seating on the go.",
+		beach_chair = "Beach Chair",
+		beach_chair_description = "Can be placed anywhere in the world. Comfortable seating on the go.",
+		green_fishing_chair = "Green Fishing Chair",
+		green_fishing_chair_description = "Can be placed anywhere in the world. Comfortable seating on the go.",
+		blue_fishing_chair = "Blue Fishing Chair",
+		blue_fishing_chair_description = "Can be placed anywhere in the world. Comfortable seating on the go.",
+
+		tire_wall = "Tire Wall",
+		tire_wall_description = "When you need cover but there is none.",
 
 		pole = "Yellow Pole",
 		pole_description = "Perfect for stopping anyone dead in their tracks.",
@@ -4730,6 +4855,11 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		winner_trophy = "Winner Trophy",
 		winner_trophy_description = "You are the best!",
+
+		treasure_map = "Treasure Map",
+		treasure_map_description = "",
+		treasure_map_piece = "Treasure Map Piece",
+		treasure_map_piece_description = "",
 
 		black_dildo = "Black Dildo",
 		black_dildo_description = "We will get that confession one way or another.",
@@ -4900,7 +5030,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		honeycomb_rockfish_description = "The Honeycomb Rockfish has a compact squat body with a width that is 35% to 39% of standard length. They are covered with spines. They have a tan, brown, or reddish brown coloration with 4 to 6 white blotches randomly spaced above their lateral line.",
 		kelp_greenling_female_description = "A female kelp greenling is freckled all over with small, reddish brown to golden spots on a gray to brownish background. The fins are mostly yellowish orange. Males tend to be gray to brownish olive, with irregular blue spots on the front half to two-thirds of their bodies.<br><br>Most commonly found in waters shallower than 328 feet.",
 		kelp_greenling_male_description = "The male kelp greenling is brownish-olive to grey, with irregularly-shaped blue spots lined with black on its back and head. Both female and male have a a small bushy projection (cirrus) above each eye. This species gets to 60 cm long.<br><br>Most commonly found in waters shallower than 328 feet.",
-		kelp_rockfish_description = "Sebastes atrovirens, the kelp rockfish, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is native to the Pacific Ocean along the coast of California in the United States and Baja California in Mexico. ",
+		kelp_rockfish_description = "Sebastes atrovirens, the kelp rockfish, is a species of marine ray-finned fish belonging to the subfamily Sebastinae, the rockfishes, part of the family Scorpaenidae. It is native to the Pacific Ocean along the coast of California in the United States and Baja California in Mexico.",
 		lingcod_description = "Lingcod are voracious predators and can grow to weigh over 80 pounds (35 kg) and measure 60 inches (150 cm) in length. They are characterized by a large mouth with 18 sharp teeth. Their color is variable, usually with dark brown or copper blotches arranged in clusters.",
 		olive_rockfish_description = "The olive rockfish, Acanthoclinus fuscus, is a longfin of the family Plesiopidae. Found only in New Zealand's intertidal zone and in rock pools at low tide, the fish grow to a length of up to 30 cm.",
 		pacific_ocean_perch_description = "The Pacific ocean perch, also known as the Pacific rockfish, Rose fish, Red bream or Red perch, is a fish whose range spans across the North Pacific: from southern California around the Pacific rim to northern Honshū, Japan, including the Bering Sea.",
@@ -5186,7 +5316,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		-- TODO: Add a description for this one
 		weapon_addon_stungun = "Coil Stun Gun",
-		weapon_addon_stungun_description = "",
+		weapon_addon_stungun_description = "Zaptastic fun for the whole family!",
 
 		weapon_addon_m4 = "M4 Carbine",
 		weapon_addon_m4_description = "\"Military Grade\" Exactly why it was given to the Police Department.",
@@ -5234,7 +5364,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_addon_vandal_description = "Valorant pog.",
 
 		weapon_addon_ak74 = "AK-74",
-		weapon_addon_ak74_description = "оставайся привязанным или хлопай в ладоши."
+		weapon_addon_ak74_description = "оставайся привязанным или хлопай в ладоши.",
+
+		weapon_addon_p320b = "P320",
+		weapon_addon_p320b_description = "We're not in London anymore bruv.",
+
+		weapon_addon_mk18 = "MK18",
+		weapon_addon_mk18_description = "\"Stay strapped or get clapped\" - George Washington (Probably)"
 	},
 
 	items = {
@@ -5284,6 +5420,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		cleared_map = "Cleared stored map location.",
 		failed_clear_map = "Failed to clear stored map location.",
 		clear_map_invalid_slot = "Invalid inventory slot."
+	},
+
+	jail = {
+		press_to_leave_jail = "Press ~INPUT_CONTEXT~ to leave jail.",
+
+		menu_title = "Jail Menu",
+		check_remaining_time = "Check remaining time",
+		leave_city = "Leave the City",
+		leave_jail = "Leave the Jail",
+		close_menu = "Close Menu"
 	},
 
 	leashes = {
@@ -5396,15 +5542,22 @@ OP.Global.Locales.Languages["en-US"] = {
 	mechanics = {
 		move_here_check = "Move here to check for upgrades",
 		checking_upgrades = "Checking Vehicle Upgrades",
-		upgrades_list = "${engine}, ${breaks}, ${transmission} and ${turbo}.",
+		upgrades_list = "${armor}, ${engine}, ${brakes}, ${transmission} and ${turbo}.",
 
 		has_no_turbo = "has no turbo installed",
 		has_turbo = "has a turbo installed",
 
-		breaks_0 = "Stock Brakes",
-		breaks_1 = "Street Brakes",
-		breaks_2 = "Sport Brakes",
-		breaks_3 = "Race Brakes",
+		armor_0 = "No Armor",
+		armor_1 = "Armor Upgrade 20%",
+		armor_2 = "Armor Upgrade 40%",
+		armor_3 = "Armor Upgrade 60%",
+		armor_4 = "Armor Upgrade 80%",
+		armor_5 = "Armor Upgrade 100%",
+
+		brakes_0 = "Stock Brakes",
+		brakes_1 = "Street Brakes",
+		brakes_2 = "Sport Brakes",
+		brakes_3 = "Race Brakes",
 
 		transmission_0 = "Stock Transmission",
 		transmission_1 = "Street Transmission",
@@ -5424,6 +5577,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	meth = {
 		press_to_sell_meth = "Press ~INPUT_CONTEXT~ to sell Meth.",
+		local_not_interested = "The local doesn't seem to be interested right now.",
 		selling_meth = "Selling Meth."
 	},
 
@@ -5592,8 +5746,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		updated_notepad_text_title_details = "${consoleName} updated a notepad with text `${text}`.",
 		updated_notepad_pixels_title_details = "${consoleName} updated a notepad with a drawing.",
 		updated_notepad_pixels_penis_title_details = "${consoleName} updated a notepad with a drawing that seems to resemble a penis.",
-		picked_up_notepad_title = "${consoleName} picked up a notepad with text `${text}`.",
-		picked_up_notepad_text_title_details = "Notepad Picked Up",
+		picked_up_notepad_title = "Notepad Picked Up",
+		picked_up_notepad_text_title_details = "${consoleName} picked up a notepad with text `${text}`.",
 		invalid_notepad_id = "invalid notepad id.",
 		failed_notepad_info = "Failed to get notepad info.",
 		notepad_info = "Notepad ${notepadId} was dropped by ${droppedBy}.",
@@ -5635,7 +5789,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		orbitcam_on_logs_details = "${consoleName} toggled their orbitcam on.",
 		orbitcam_off_logs_details = "${consoleName} toggled their orbitcam off.",
 
-		orbitcam_no_permission = "Attempted to toggle their orbitcam without required permissions."
+		orbitcam_no_permission = "Attempted to toggle their orbitcam without required permissions.",
+
+		failed_track_player = "Failed to track player.",
+		orbitcam_inactive = "You are not curently in orbitcam."
 	},
 
 	overview = {
@@ -5993,6 +6150,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		invalid_server_id = "Invalid server id."
 	},
 
+	ped_takeover = {
+		failed_reset = "Failed to switch back to original ped.",
+		failed_reset_not_exist = "Your original ped doesn't exist or is not near you.",
+		failed_takeover = "Failed to takeover ped.",
+		invalid_network_id = "Invalid network id."
+	},
+
 	peds = {
 		ped_robbing_injection = "Excessive ped-robbing! (Bypassed server-timeout, most likely using an injector to accomplish this.)",
 		robbed_ped_logs_title = "Robbed Ped",
@@ -6067,7 +6231,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		not_able_to_spawn_in_vehicle = "You can not be in a vehicle when spawning a prop.",
 		not_able_to_spawn_while_dead = "You can not be dead when spawning a prop.",
 		not_able_to_spawn_while_moving = "You have to stand still when spawning a prop.",
-		stand_still_to_place_prop = "You have to stand still to place a prop."
+		stand_still_to_place_prop = "You have to stand still to place a prop.",
+
+		placing_prop = "Placing Prop",
+		pickup_prop = "Picking Up Prop",
+		setting_up_tire_wall = "Setting Up Tire Wall",
+		destroying_tire_wall = "Destroying Tire Wall"
 	},
 
 	radio = {
@@ -6240,6 +6409,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		press_to_pick_up_shrooms = "Press ~INPUT_CONTEXT~ to pick up Shrooms.",
 		picking_up_shrooms = "Picking up Shrooms.",
 		press_to_sell_shrooms = "Press ~INPUT_CONTEXT~ to sell Shrooms.",
+		local_not_interested = "The local doesn't seem to be interested right now.",
 		not_interested = "This local doesn't seem to be interested in your shrooms.",
 		selling_shrooms = "Selling Shrooms.",
 		shrooms_not_ripe = "These shrooms don't seem ripe yet, maybe let them sit a little longer.",
@@ -6284,6 +6454,27 @@ OP.Global.Locales.Languages["en-US"] = {
 	spawn = {
 		spawn_now = "Spawn Now",
 		last_position = "Last Position"
+	},
+
+	spectating = {
+		cannot_spectate_self = "You cannot spectate yourself.",
+		failed_spectate = "Failed to spectate player.",
+		no_character_loaded = "Player does not have a character loaded.",
+
+		invincibility_active = "Invincibility: ~r~Active~w~",
+		invincibility_inactive_dead = "Invincibility: ~g~Inactive~w~ (dead)",
+		invincibility_inactive = "Invincibility: ~g~Inactive~w~",
+
+		health_ok = "Health: ~g~${health} / ${maxHealth}~w~",
+		health_bad = "Health: ~r~${health} / ${maxHealth}~w~",
+
+		armor_ok = "Armor: ~g~${armor} / ${maxArmor}~w~",
+		armor_bad = "Armor: ~r~${armor} / ${maxArmor}~w~",
+
+		exit_spectate = "Press ~g~${InteractionKey}~w~ to exit spectator mode",
+
+		spectate_logs_title = "Spectated Player",
+		spectate_logs_details = "${consoleName} spectated ${targetUser}."
 	},
 
 	spying = {
@@ -6644,6 +6835,27 @@ OP.Global.Locales.Languages["en-US"] = {
 		e = "E"
 	},
 
+	treasure_maps = {
+		no_treasure_map_with_tier = "There is no treasure map with tier ${mapTier}.",
+		treasure_map_does_not_have_piece = "Treasure map with tier ${mapTier} does not have piece ${pieceNumber}.",
+		spawn_map_piece_missing_permissions = "Player attempted to spawn a map piece without proper permissions.",
+
+		sketchy_map = "Sketchy Map",
+		worn_map = "Worn Map",
+		fancy_map = "Fancy Map",
+		exquisite_map = "Exquisite Map",
+
+		map_piece_tier_1_description = "There looks to be writing underneath a nasty piece of gum.",
+		map_piece_tier_2_description = "A rather authentic looking shard of a map. Even if the ink is running a little.",
+		map_piece_tier_3_description = "This map piece sparkles a bit in the sunlight.",
+		map_piece_tier_4_description = "This intricate, beautiful map piece smells like money.",
+
+		map_tier_1_description = "Looks like it was hand sketched on a napkin. Ignore the curious stain.",
+		map_tier_2_description = "This map is quite worn but it looks like it might lead to something decent.",
+		map_tier_3_description = "Very nice \"sparkly\" map with a \"100% Real\" Seal in the lower right hand corner. ",
+		map_tier_4_description = "This map looks more expensive than most treasures. Let's Go!!!!"
+	},
+
 	tsunami = {
 		the_ocean_scaler_intensity_already_set_to = "The ocean scaler intensity is already set to `${intensity}`.",
 		no_ocean_scaler_intensity_set = "There is already no ocean scaler intensity set.",
@@ -6734,6 +6946,21 @@ OP.Global.Locales.Languages["en-US"] = {
 		action_missing_permissions = "Attempted to make a player do a wizard action without proper permissions.",
 		action_radius_missing_permissions = "Attempted to make players in a certain radius do wizard actions without proper permissions.",
 		run_as_missing_permissions = "Attempted to run a command as another player without proper permissions.",
+
+		menu_title = "Wizard",
+
+		ragdoll_player = "Ragdoll",
+		ragdoll_player_force = "Ragdoll (Force)",
+		punch_player = "Force Punch",
+		taze_player = "Taze",
+		exit_vehicle_player = "Exit Vehicle",
+		yank_steering_wheel_player = "Yank Steering Wheel",
+		flashbang_player = "Flashbang",
+		ignite_player = "Set On Fire",
+		explode_player = "Explode",
+		quietly_revive_player = "Quiet Revive",
+		steal_player_identity = "Steal Identity",
+		steal_player_ped = "Steal Ped",
 
 		invalid_radius = "Invalid radius",
 		invalid_server_id = "Invalid server id.",
@@ -7066,6 +7293,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		number1_of_number2 = "${number1} of ${number2}"
 	},
 
+	native = {
+		player_label = "[${source}] ${name}"
+	},
+
 	-- vehicles/*
 	alert = {
 		triggered_vehicle_alert = "Vehicle Alert triggered at ${locationLabel} for vehicle with plate `${plateText}`.",
@@ -7306,10 +7537,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		belt_is_on = "Your belt is on.",
 		vehicle_is_locked = "The vehicle is locked.",
 
-		modifying_breaks = "Modifying Breaks",
-		toggle_breaks_on = "Toggled breaks off.",
-		toggle_breaks_off = "Toggles breaks on.",
-		failed_modify_breaks = "Failed to modify breaks.",
+		modifying_brakes = "Modifying Brakes",
+		toggle_brakes_on = "Toggled brakes off.",
+		toggle_brakes_off = "Toggles brakes on.",
+		failed_modify_brakes = "Failed to modify brakes.",
 
 		-- NOTE: `add_vehicle` command:
 		add_vehicle_not_super_admin = "The player attempted to add a vehicle to someone's garage but they were not a super admin.",
@@ -7363,6 +7594,20 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	-- weapons/*
+	ammo = {
+		unboxing_ammo = "Unboxing Ammo",
+		failed_unbox = "Failed to unbox ammo.",
+		failed_unbox_full = "You cannot carry any more of this ammo.",
+		unbox_success = "Successfully unboxed ${amount}x ${ammoType}.",
+
+		type_pistol = "pistol ammo",
+		type_smg = "sub ammo",
+		type_rifle = "rifle ammo",
+		type_sniper = "sniper ammo",
+		type_shotgun = "12 gauge ammo",
+		type_stungun = "taser cartdiges"
+	},
+
 	weapons = {
 		pick_up_fire_extinguisher = "Hold ~INPUT_CONTEXT~ to pick up the Fire Extinguisher.",
 		press_to_drop_fire_extinguisher = "Press ~INPUT_FRONTEND_RRIGHT~ to drop the Fire Extinguisher.",
