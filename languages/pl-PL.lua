@@ -1616,12 +1616,6 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		cinematic_freecam_command_help = "Toggles /cinematic and /freecam.",
 		cinematic_freecam_command_substitutes = "/cf",
 
-		track_player_command = "/track_player",
-		track_player_command_help = "Przełącz śledzenie gracza dla kamery freecam.",
-		track_player_command_parameter_server_id = "server id",
-		track_player_command_parameter_server_id_help = "Gracz, którego chcesz śledzić (lub fałszywy, aby wybrać siebie).",
-		track_player_command_substitutes = "/track",
-
 		cam_point_command = "/cam_point",
 		cam_point_help = "Nagraj punkt kamery.",
 		cam_point_command_parameter_time = "time",
@@ -1964,6 +1958,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		orbitcam_command = "/orbitcam",
 		orbitcam_command_help = "Przełącza orbitcam.",
 		orbitcam_command_substitutes = "/orbit",
+
+		track_player_command = "/track_player",
+		track_player_command_help = "Przełącz śledzenie gracza dla kamery freecam.",
+		track_player_command_parameter_server_id = "server id",
+		track_player_command_parameter_server_id_help = "Gracz, którego chcesz śledzić (lub fałszywy, aby wybrać siebie).",
+		track_player_command_substitutes = "/track",
 
 		-- game/overview
 		overview_command = "/overview",
@@ -5422,13 +5422,6 @@ balls = {
 		clear_map_invalid_slot = "Nieprawidłowe miejsce w ekwipunku."
 	},
 
-	leashes = {
-		press_to_use_leash = "[${InteractionKey}] Użyj smyczy",
-		putting_leash_on = "Zakładanie smyczy",
-		press_to_take_leash_off = "[${InteractionKey}] Zdejmij smycz",
-		takeing_leash_off = "Zdejmowanie smyczy."
-	},
-
 	jail = {
 		press_to_leave_jail = "Naciśnij ~INPUT_CONTEXT~, aby opuścić więzienie.",
 
@@ -5437,6 +5430,13 @@ balls = {
 		leave_city = "Opuść miasto",
 		leave_jail = "Opuść więzienie",
 		close_menu = "Zamknij menu"
+	},
+
+	leashes = {
+		press_to_use_leash = "[${InteractionKey}] Użyj smyczy",
+		putting_leash_on = "Zakładanie smyczy",
+		press_to_take_leash_off = "[${InteractionKey}] Zdejmij smycz",
+		takeing_leash_off = "Zdejmowanie smyczy."
 	},
 
 	locate = {
