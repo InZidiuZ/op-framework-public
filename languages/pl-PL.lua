@@ -1203,6 +1203,23 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		unload_character_command_parameter_message_help = "Jeżeli chciałbyś zostawić wiadomość dla gracza, wpisz ją tutaj.",
 		unload_character_command_substitutes = "/logout",
 
+		-- game/admin_menu
+		admin_command = "/admin",
+		admin_command_help = "Otwiera menu administratora.",
+		admin_command_substitutes = "",
+
+		tp_player_command = "/tp_player",
+		tp_player_command_help = "Teleportuje cię do gracza.",
+		tp_player_command_parameter_server_id = "server id",
+		tp_player_command_parameter_server_id_help = "Identyfikator serwera gracza, do którego chcesz się teleportować.",
+		tp_player_command_substitutes = "",
+
+		tp_here_command = "/tp_here",
+		tp_here_command_help = "Teleports a player to you.",
+		tp_here_command_parameter_server_id = "server id",
+		tp_here_command_parameter_server_id_help = "Identyfikator serwera gracza, którego chcesz teleportować.",
+		tp_here_command_substitutes = "",
+
 		-- game/archives
 		create_archive_command = "/create_archive",
 		create_archive_command_help = "Tworzy nową sprawę w archiwum, w której aktualnie znajdujesz się najbliżej.",
@@ -1406,7 +1423,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		position_command = "/position",
 		position_command_help = "Zapisz swoją aktualną pozycje w pliku",
 		position_command_parameter_label = "label",
-		position_command_parameter_label_help = "An optional label to be stored with the position.",
+		position_command_parameter_label_help = "Opcjonalna etykieta do przechowywania z pozycją.",
 		position_command_substitutes = "/pos, /coords, /pozycja",
 
 		define_position_command = "/define_position",
@@ -1416,6 +1433,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		define_position_command_parameter_animation_name = "animation name",
 		define_position_command_parameter_animation_name_help = "Nazwa animacji, która ma być wymuszona (pozostaw puste dla żadnej).",
 		define_position_command_substitutes = "",
+
+		save_commands_list_command = "/save_commands_list",
+		save_commands_list_command_help = "Zapisuje listę wszystkich dostępnych poleceń op-fw.",
+		save_commands_list_command_substitutes = "",
 
 		draw_radius_command = "/draw_radius",
 		draw_radius_command_help = "Wyznacz promień.",
@@ -1551,6 +1572,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		copy_coords_command_help = "Kopiuje aktualne współrzędne do schowka.",
 		copy_coords_command_substitutes = "",
 
+		save_valid_ped_component_variations_command = "/save_valid_ped_component_variations",
+		save_valid_ped_component_variations_command_help = "Zapisz wszystkie prawidłowe warianty komponentów ped dla bieżącego modelu odtwarzacza.",
+		save_valid_ped_component_variations_command_substitutes = "",
+
 		-- game/dna_evidence
 		take_dna_sample_command = "/take_dna_sample",
 		take_dna_sample_command_help = "Zbierz próbkę DNA z najbliższego gracza.",
@@ -1590,14 +1615,6 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		cinematic_freecam_command = "/cinematic_freecam",
 		cinematic_freecam_command_help = "Toggles /cinematic and /freecam.",
 		cinematic_freecam_command_substitutes = "/cf",
-
-		track_player_command = "/track_player",
-		track_player_command_help = "Przełącz śledzenie gracza dla kamery freecam.",
-		track_player_command_parameter_server_id = "server id",
-		track_player_command_parameter_server_id_help = "Gracz, którego chcesz śledzić (lub fałszywy, aby wybrać siebie).",
-		track_player_command_parameter_point_at = "wskazywać na",
-		track_player_command_parameter_point_at_help = "Jeśli chcesz zawsze skierować kamerę na śledzony obiekt.",
-		track_player_command_substitutes = "/track",
 
 		cam_point_command = "/cam_point",
 		cam_point_help = "Nagraj punkt kamery.",
@@ -1942,6 +1959,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		orbitcam_command_help = "Przełącza orbitcam.",
 		orbitcam_command_substitutes = "/orbit",
 
+		track_player_command = "/track_player",
+		track_player_command_help = "Przełącz śledzenie gracza dla kamery freecam.",
+		track_player_command_parameter_server_id = "server id",
+		track_player_command_parameter_server_id_help = "Gracz, którego chcesz śledzić (lub fałszywy, aby wybrać siebie).",
+		track_player_command_substitutes = "/track",
+
 		-- game/overview
 		overview_command = "/overview",
 		overview_command_help = "Przełącz interfejs przeglądu. Interfejs użytkownika przeglądu to menu interakcji OOC, centrum informacyjne i przeglądarka danych.",
@@ -2058,6 +2081,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		ped_steal_command_parameter_server_id_help = "Identyfikator serwera graczy.",
 		ped_steal_command_substitutes = "/steal_ped",
 
+		-- game/ped_takeover
+		takeover_ped_command = "/takeover_ped",
+		takeover_ped_command_help = "Sprawia, że ​​kontrolujesz pewnego peda.",
+		takeover_ped_command_parameter_network_id = "id sieci",
+		takeover_ped_command_parameter_network_id_help = "Identyfikator sieci peda, który chcesz przejąć.",
+		takeover_ped_command_substitutes = "/takeover",
+
 		-- game/ped_tasks
 		debug_ped_command = "/debug_ped",
 		debug_ped_command_help = "Debuguje informacje o pedach.",
@@ -2097,6 +2127,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		frequency_command_parameter_frequency = "Częstotliwość",
 		frequency_command_parameter_frequency_help = "Częstotliwość, na którą chciałbyś się udać.",
 		frequency_command_substitutes = "/freq",
+
+		force_frequency_command = "/force_frequency",
+		force_frequency_command_help = "Dołącz do częstotliwości radiowej bez konieczności korzystania z radia lub konieczności dyżuru.",
+		force_frequency_command_parameter_frequency = "częstotliwość",
+		force_frequency_command_parameter_frequency_help = "Częstotliwość, na którą chciałbyś się udać.",
+		force_frequency_command_substitutes = "",
 
 		random_frequency_command = "/random_frequency",
 		random_frequency_command_help = "Ustawia losową częstotliwość.",
@@ -2189,6 +2225,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		search_for_devices_command_help = "Wyszukaj urżądzenia w pobliżu.",
 		search_for_devices_command_substitutes = "/search_devices, /searchdevices, /s4d",
 
+		-- game/spectating
+		spectate_command = "/spectate",
+		spectate_command_help = "Obserwuj danego gracza.",
+		spectate_command_parameter_server_id = "server id",
+		spectate_command_parameter_server_id_help = "ID gracza, którego chcesz oglądać.",
+		spectate_command_substitutes = "/spec",
+
 		-- game/status
 		status_reset_command = "/status_reset",
 		status_reset_command_help = "Resetuje status postaci.",
@@ -2233,6 +2276,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		local_time_command_parameter_hour = "godzina",
 		local_time_command_parameter_hour_help = "Godzina która chcesz ustawić, musi sie znajdować w prziedziale między 0 a 23.",
 		local_time_command_substitutes = "",
+
+		brighter_nights_command = "/brighter_nights",
+		brighter_nights_command_help = "Ustawia godzinę na 12:00 i pogodę, ale tylko dla Ciebie.",
+		brighter_nights_command_substitutes = "",
 
 		weather_command = "/weather",
 		weather_command_help = "Zmień pogode.",
@@ -2297,6 +2344,15 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		trackers_split_command_help = "Użyj do przełączenia GPS na rozdzielone pozycjonowanie.",
 		trackers_split_command_substitutes = "/gps_split",
 
+		-- game/treasure_maps
+		spawn_map_piece_command = "/spawn_map_piece",
+		spawn_map_piece_command_help = "Stwórz fragment mapy skarbów.",
+		spawn_map_piece_command_parameter_map_tier = "poziom mapy",
+		spawn_map_piece_command_parameter_map_tier_help = "Poziom mapy, dla którego chcesz odrodzić kawałek.",
+		spawn_map_piece_command_parameter_piece_number = "liczba sztuk",
+		spawn_map_piece_command_parameter_piece_number_help = "Liczba sztuk, którą chcesz odrodzić.",
+		spawn_map_piece_command_substitutes = "",
+
 		-- game/tsunami
 		set_ocean_scaler_command = "/set_ocean_scaler",
 		set_ocean_scaler_command_help = "Globalnie modyfikuj skaler oceanu.",
@@ -2318,6 +2374,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		listen_command_substitutes = "",
 
 		-- game/wizard
+		wizard_command = "/wizard",
+		wizard_command_help = "Otwiera menu kreatora.",
+		wizard_command_parameter_server_id = "server id",
+		wizard_command_parameter_server_id_help = "Wybierz określonego gracza w menu (opcjonalnie).",
+		wizard_command_substitutes = "",
+
 		ragdoll_player_command = "/ragdoll_player",
 		ragdoll_player_command_help = "Sprawia, że ​​gracz jest ragdoll.",
 		ragdoll_player_command_parameter_server_id = "identyfikator serwera",
@@ -2620,9 +2682,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		mileage_command_help = "Sprawdź przebieg pojazdu.",
 		mileage_command_substitutes = "/przebieg",
 
-		toggle_disabled_breaks_command = "/toggle_disabled_breaks",
-		toggle_disabled_breaks_command_help = "Wyłącza lub włącza hamulce najbliższego pojazdu.",
-		toggle_disabled_breaks_command_substitutes = "/disable_breaks",
+		toggle_disabled_brakes_command = "/toggle_disabled_brakes",
+		toggle_disabled_brakes_command_help = "Wyłącza lub włącza hamulce najbliższego pojazdu.",
+		toggle_disabled_brakes_command_substitutes = "/disable_brakes",
 
 		manual_toggle_command = "/manual_toggle",
 		manual_toggle_command_help = "Przełącz na manuala.",
@@ -2801,8 +2863,18 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		player_package = "- ${label}: ${amount}x"
 	},
 
-	-- game/*
-		afk = {
+	-- game/*	
+	admin_menu = {
+		menu_title = "Admin Menu",
+		spectate_player = "Obserwuj gracza.",
+		teleport_player = "Teleportuj się do gracza.",
+		teleport_player_here = "Teleportuj gracza do siebie.",
+		failed_teleport_to_player = "Nie udało się teleportować do gracza.",
+		failed_teleport_player_here = "Nie udało się teleportować gracza do Ciebie.",
+		invalid_target_server_id = "Nieprawidłowe ID serwera docelowego."
+	},
+
+	afk = {
 		you_are_afk = "Jesteś AFK?, Możesz zostać wyrzucony z serwera by zrobić miejsce dla innych graczy. \nPorusz myszlą by nie zostać wyrzuconym.",
 		you_are_afk_unload = "Zostałeś wyrzucony za AFK.",
 		you_have_been_kicked_for_being_afk = "You have been kicked for being AFK.",
@@ -3480,6 +3552,18 @@ balls = {
 		crafted_decryption_key = "Wytworzono klucz dekryptujacy.",
 		failed_craft_decryption_key = "Nie udało się wytworzyć klucza dekryptującego.",
 
+		craft_tire_wall = "Rzemieślnicza ściana z opon",
+		press_craft_tire_wall = "[${SeatEjectKey}] Rzemieślniczą ścianę z opon",
+		crafting_tire_wall = "Tworzenie ściany z opon",
+		crafted_tire_wall = "Wykonana ściana opony.",
+		failed_craft_tire_wall = "Nie udało się stworzyć ściany opony.",
+
+		fix_tire_wall = "Napraw ścianę opony",
+		press_fix_tire_wall = "[${SeatEjectKey}] Napraw ścianę opony",
+		fixing_tire_wall = "Mocowanie ściany opony.",
+		fixed_tire_wall = "Naprawiono ściankę opony.",
+		failed_fix_tire_wall = "Nie udało się naprawić ściany opony.",
+
 		no_required_items = "Nie posiadasz wszystkich wymaganych przedmiotów.",
 
 		debug_multi = "-Multiple Outputs-",
@@ -3687,6 +3771,9 @@ balls = {
 		up = "Wyżej",
 		down = "Niżej",
 
+		floor_tunnel_entrance = "Wejście do tunelu",
+		floor_underground_tunnel = "Podziemny tunel",
+
 		floor_garage = "Garaż",
 		floor_lobby = "Lobby",
 		floor_roof = "Dach",
@@ -3792,7 +3879,6 @@ balls = {
 		replaced_point = "Zamieniono punkt kamery na indeksie ${index} (Transition: ${transition}ms).",
 		moved_to_point = "Przeniesiono kamerę wolną do punktu kamery ${index} (Transition: ${transition}ms).",
 		invalid_point_index = "Nieprawidłowy indeks punktu kamery.",
-		failed_track_player = "Nie udało się śledzić gracza."
 	},
 
 	frisk = {
@@ -4097,6 +4183,8 @@ balls = {
 		press_to_access_locker = "Wciśnij ~INPUT_REPLAY_SHOWHOTKEY~ by użyć prywatnej szafki.",
 		press_to_access_shared_storage = "Wciśnij ~INPUT_REPLAY_SHOWHOTKEY~ by użyć ogólnego magazynu.",
 
+		locker_restricted = "Ten przedmiot nie pasuje do twojej szafki.",
+
 		press_to_access_shredder = "[${InteractionKey}] Dostęp do niszczarki.",
 
 		press_to_open_public_inventory = "~INPUT_REPLAY_SHOWHOTKEY~ Dostęp ${label}",
@@ -4394,6 +4482,15 @@ balls = {
 		chocolate_milkshake = "Czekoladowy shake",
 		chocolate_milkshake_description = "Cudownie wyglądający shake, tylko miej nadzieję, że CIA nie będzie cię ścigać, zanim weźmiesz łyk...",
 
+		dog_food = "Psia karma",
+		dog_food_description = "Karma dla psów to karma specjalnie opracowana i przeznaczona do spożycia przez psy i inne pokrewne zwięrzęta psowate.",
+		cat_food = "Kocia karma",
+		cat_food_description = "Karma dla kotów to pokarm przeznaczony do spożycia przez koty. Koty mają określone wymagania dotyczące składników odżywczych w diecie.",
+		dog_treats = "Przysmaki dla psa",
+		dog_treats_description = "Pyszne smakołyki dla twojego ulubionego dobrego chłopca.",
+		cat_treats = "Przysmaki dla kota",
+		cat_treats_description = "Pyszne smakołyki dla twojego kochanego kociaka.",
+
 		burger_buns = "Bułki do burgerów",
 		burger_buns_description = "Możesz wsunąc troche mięska między te bułeczki.",
 		cheese = "Ser",
@@ -4451,6 +4548,9 @@ balls = {
 
 		cigarette = "Papierosy",
 		cigarette_description = "Drobno pokrojony tytoń owinięty w bibułkę, służący do palenia przez wciąganie dymu.",
+		cigarette_pack = "Cigarette Pack",
+		cigarette_pack_description = "For your dad who has a cigarette addiction (hopefully he comes back after leaving to get them).",
+
 		cocaine_bag = "Paczka kokainy",
 		cocaine_bag_description = "Mniejsze porcje twardego narkotyku.",
 		cocaine_brick = "Blok kokainy",
@@ -4528,6 +4628,9 @@ balls = {
 		evidence_bag_description = "Torba dowodowa.",
 		fingerprint_evidence = "Odciski palców",
 		fingerprint_evidence_description = "Pomagą ci złapać tych drani.",
+
+		ammo_box = "Duża skrzynka z amunicją",
+		ammo_box_description = "Idealny, gdy trzeba dużo strzelać. Zawiera 60 pocisków każdego rodzaju amunicji.",
 
 		stungun_ammo = "Taser Cartridge",
 		stungun_ammo_description = "TASER! TASER! TASER!.",
@@ -4696,8 +4799,8 @@ balls = {
 		disposable_grill_description = "Część asortymentu do rozłożenia biwaku.",
 		grill = "Grill",
 		grill_description = "Część asortymentu do rozłożenia biwaku.",
-		barrier = "Barierki",
-		barrier_description = "Przedmiot możliwy do rozstawienia na podłożu.",
+		police_barrier = "Barierka policyjna",
+		police_barrier_description = "Można umieścić w dowolnym miejscu na świecie.",
 		dummy = "Manekin",
 		dummy_description = "Przedmiot możliwy do rozstawienia na podłożu",
 		target = "Tarcza typu cel",
@@ -4718,6 +4821,28 @@ balls = {
 		stop_sign_description = "Przedmiot możliwy do rozstawienia na podłożu",
 		bear_trap = "Pułapka",
 		bear_trap_description = "Przedmiot możliwy do rozstawienia na podłożu",
+		barrier = "Barierki",
+		barrier_description = "Przedmiot możliwy do rozstawienia na podłożu.",
+		traffic_barrier = "Bariera drogowa",
+		traffic_barrier_description = "Bariera, dzięki której ruch uliczny wie, co się dzieje.",
+		small_barrier = "Mała barierka",
+		small_barrier_description = "Gówniana mała barierka dla dzieci.",
+		traffic_barrel = "Baryłka ruchu",
+		traffic_barrel_description = "Wygląda na to, że można go trafić, ale nie… chyba że?",
+		pedestrian_barrier = "Barierka dla pieszych",
+		pedestrian_barrier_description = "Wspaniale mieć, chyba że jest to koncert Travisa Scotta...",
+
+		director_chair = "Krzesło dyrektora",
+		director_chair_description = "Można umieścić w dowolnym miejscu na świecie. Wygodne siedzenia w podróży.",
+		beach_chair = "Leżak",
+		beach_chair_description = "Można umieścić w dowolnym miejscu na świecie. Wygodne siedzenia w podróży.",
+		green_fishing_chair = "Zielone krzesło wędkarskie",
+		green_fishing_chair_description = "Można umieścić w dowolnym miejscu na świecie. Wygodne siedzenia w podróży.",
+		blue_fishing_chair = "Niebieskie krzesło wędkarskie",
+		blue_fishing_chair_description = "Można umieścić w dowolnym miejscu na świecie. Wygodne siedzenia w podróży.",
+
+		tire_wall = "Ściana opon",
+		tire_wall_description = "Kiedy potrzebujesz osłony, ale jej nie ma.",
 
 		pole = "Żółta rura",
 		pole_description = "Tłumacząc zastanawiamy się czy to służy do stripzizu.",
@@ -4735,6 +4860,11 @@ balls = {
 		black_dildo_description = "Ciekawe czy jest wieksze od białego.",
 		pink_dildo = "Różowe Dildo",
 		pink_dildo_description = "Ciekawe czy jest większe od czarnego dildo.",
+
+		treasure_map = "Mapa skarbów",
+		treasure_map_description = "Jedni grają rolę Jack Sparrow'a a drudzy płacą 15 mln za zniesławienie.",
+		treasure_map_piece = "Fragment mapy skarbów",
+		treasure_map_piece_description = "Czuję się jakbym zbierał dowody przeciwko żonie tego co grał Jack Sparrowa.",
 
 		bean_coffee = "Bean Coffee",
 		bean_coffee_description = "Specjalność kawiarni, idealny balans smaku palonych ziaren Arabici i Robusty.",
@@ -5234,7 +5364,13 @@ balls = {
 		weapon_addon_vandal_description = "Valorant pog.",
 
 		weapon_addon_ak74 = "AK-74",
-		weapon_addon_ak74_description = "оставайся привязанным или хлопай в ладоши."
+		weapon_addon_ak74_description = "оставайся привязанным или хлопай в ладоши.",
+
+		weapon_addon_p320b = "P320",
+		weapon_addon_p320b_description = "We're not in London anymore bruv",
+
+		weapon_addon_mk18 = "MK18",
+		weapon_addon_mk18_description = "\"Stay strapped or get clapped\" - George Washington (Probably)"
 	},
 
 	items = {
@@ -5284,6 +5420,16 @@ balls = {
 		cleared_map = "Wyczyszczono zapisaną lokalizację na mapie.",
 		failed_clear_map = "Nie udało się wyczyścić zapisanej lokalizacji na mapie.",
 		clear_map_invalid_slot = "Nieprawidłowe miejsce w ekwipunku."
+	},
+
+	jail = {
+		press_to_leave_jail = "Naciśnij ~INPUT_CONTEXT~, aby opuścić więzienie.",
+
+		menu_title = "Menu więzienia",
+		check_remaining_time = "Sprawdź pozostały czas",
+		leave_city = "Opuść miasto",
+		leave_jail = "Opuść więzienie",
+		close_menu = "Zamknij menu"
 	},
 
 	leashes = {
@@ -5401,10 +5547,17 @@ balls = {
 		has_no_turbo = "turbo nie jest zainstalowane",
 		has_turbo = "turbo jest zainstalowane",
 
-		breaks_0 = "Podstawowe hamulce",
-		breaks_1 = "Uliczne hamulce",
-		breaks_2 = "Sportowe hamulce",
-		breaks_3 = "Wyścigowe hamulce",
+		armor_0 = "No Armor",
+		armor_1 = "Ulepszenie pancerza 20%",
+		armor_2 = "Ulepszenie pancerza 40%",
+		armor_3 = "Ulepszenie pancerza 60%",
+		armor_4 = "Ulepszenie pancerza 80%",
+		armor_5 = "Ulepszenie pancerza 100%",
+
+		brakes_0 = "Podstawowe hamulce",
+		brakes_1 = "Uliczne hamulce",
+		brakes_2 = "Sportowe hamulce",
+		brakes_3 = "Wyścigowe hamulce",
 
 		transmission_0 = "Posdstawowoa skrzynia biegów",
 		transmission_1 = "Uliczna skrzynia biegów",
@@ -5424,6 +5577,7 @@ balls = {
 
 	meth = {
 		press_to_sell_meth = "Naciśnij ~INPUT_CONTEXT~ aby sprzedać metę.",
+		local_not_interested = "Miejscowy wydaje się teraz nie być zinteresowanym.",
 		selling_meth = "Sprzedajesz metę."
 	},
 
@@ -5635,7 +5789,10 @@ balls = {
 		orbitcam_on_logs_details = "${consoleName} włączyli kamerę orbitalną.",
 		orbitcam_off_logs_details = "${consoleName} wyłączyli kamerę orbitalną.",
 
-		orbitcam_no_permission = "Próbowano przełączyć kamerę orbitalną bez wymaganych uprawnień."
+		orbitcam_no_permission = "Próbowano przełączyć kamerę orbitalną bez wymaganych uprawnień.",
+
+		failed_track_player = "Nie udało się śledzić gracza.",
+		orbitcam_inactive = "Nie jesteś obecnie w kamerze orbitalnej."
 	},
 
 	overview = {
@@ -5993,6 +6150,13 @@ balls = {
 		invalid_server_id = "Nieprawidłowy identyfikator serwera."
 	},
 
+	ped_takeover = {
+		failed_reset = "Nie udało się przełączyć z powrotem na oryginalny ped.",
+		failed_reset_not_exist = "Twój oryginalny ped nie istnieje lub nie jest blisko ciebie.",
+		failed_takeover = "Nie udało się przejąć ped.",
+		invalid_network_id = "Nieprawidłowy identyfikator sieci.",
+	},
+
 	peds = {
 		ped_robbing_injection = "Nadmierne rabowanie obywateli!",
 		robbed_ped_logs_title = "Okradany obywatel",
@@ -6067,7 +6231,12 @@ balls = {
 		not_able_to_spawn_in_vehicle = "Nie możesz być w pojeździe żeby zrespić propy.",
 		not_able_to_spawn_while_dead = "Nie możesz być martwy żeby zrepić propy.",
 		not_able_to_spawn_while_moving = "Zatrzymaj się żeby zrespić propy.",
-		stand_still_to_place_prop = "Musisz stać w miejscu żeby zrespić propy."
+		stand_still_to_place_prop = "Musisz stać w miejscu żeby zrespić propy.",
+
+		placing_prop = "Umieszczanie rekwizytu",
+		pickup_prop = "Podnoszenie rekwizytu",
+		setting_up_tire_wall = "Konfigurowanie ściany opony",
+		destroying_tire_wall = "Niszczenie ściany opony"
 	},
 
 	radio = {
@@ -6240,6 +6409,7 @@ balls = {
 		press_to_pick_up_shrooms = "Naciśnij ~INPUT_CONTEXT~ zbierać Grzyby.",
 		picking_up_shrooms = "Zbieranie Grzybów.",
 		press_to_sell_shrooms = "Naciśnij ~INPUT_CONTEXT~ sprzedać grzyby.",
+		local_not_interested = "Miejscowy wydaje się teraz nie być zainteresowanym.",
 		not_interested = "Ten mieszkaniec nie jest zainteresowany twoimi grzybami.",
 		selling_shrooms = "Sprzedawanie Grzybów.",
 		shrooms_not_ripe = "Te grzyby nie wydają się jeszcze dojrzałe, może pozwól im posiedzieć trochę dłużej.",
@@ -6284,6 +6454,27 @@ balls = {
 	spawn = {
 		spawn_now = "Rozpocznij grę",
 		last_position = "Ostatnia pozycja"
+	},
+
+	spectating = {
+		cannot_spectate_self = "Nie możesz się przyglądać.",
+		failed_spectate = "Nie udało się obserwować gracza.",
+		no_character_loaded = "Gracz nie ma załadowanej postaci.",
+
+		invincibility_active = "Nieśmiertelność: ~r~Active~w~",
+		invincibility_inactive_dead = "Nieśmiertelność: ~g~Inactive~w~ (dead)",
+		invincibility_inactive = "Nieśmiertelność: ~g~Inactive~w~",
+
+		health_ok = "Zdrowie: ~g~${health} / ${maxHealth}~w~",
+		health_bad = "Zdrowie: ~r~${health} / ${maxHealth}~w~",
+
+		armor_ok = "Pancerz: ~g~${armor} / ${maxArmor}~w~",
+		armor_bad = "Pancerz: ~r~${armor} / ${maxArmor}~w~",
+
+		exit_spectate = "Naciśnij ~g~${InteractionKey}~w~, aby wyjść z trybu obserwatora",
+
+		spectate_logs_title = "Obserwowany gracz",
+		spectate_logs_details = "${consoleName} obserwowany ${targetUser}."
 	},
 
 	spying = {
@@ -6644,6 +6835,27 @@ balls = {
 		e = "E"
 	},
 
+	treasure_maps = {
+		no_treasure_map_with_tier = "Nie ma mapy skarbów z poziomem ${mapTier}.",
+		treasure_map_does_not_have_piece = "Mapa skarbów z poziomem ${mapTier} nie ma części ${pieceNumber}.",
+		spawn_map_piece_missing_permissions = "Gracz próbował odrodzić fragment mapy bez odpowiednich uprawnień.",
+
+		sketchy_map = "Szkicowa mapa",
+		worn_map = "Zużyta mapa",
+		fancy_map = "Fantazyjna mapa",
+		exquisite_map = "Znakomita mapa",
+
+		map_piece_tier_1_description = "Wygląda na to, że pod paskudnym kawałkiem gumy jest napis.",
+		map_piece_tier_2_description = "Dość autentycznie wyglądający fragment mapy. Nawet jeśli atrament trochę się spływa.",
+		map_piece_tier_3_description = "Ten fragment mapy trochę błyszczy w słońcu.",
+		map_piece_tier_4_description = "Ten misterny, piękny fragment mapy pachnie pieniędzmi.",
+
+		map_tier_1_description = "Wygląda na to, że został ręcznie naszkicowany na serwetce. Zignoruj ​​ciekawą plamę.",
+		map_tier_2_description = "Ta mapa jest dość zużyta, ale wygląda na to, że może doprowadzić do czegoś przyzwoitego.",
+		map_tier_3_description = "Bardzo ładna \"błysząca\" mapa z pieczęcią \"100% realna\" w prawym dolnym rogu. ",
+		map_tier_4_description = "Ta mapa wygląda na droższą niż większość skarbów. Chodźmy!!!!"
+	},
+
 	tsunami = {
 		the_ocean_scaler_intensity_already_set_to = "Intensywność skalera oceanu jest już ustawiona na `${intensity}`.",
 		no_ocean_scaler_intensity_set = "Nie ma już ustawionej intensywności skalera oceanu.",
@@ -6734,6 +6946,21 @@ balls = {
 		action_missing_permissions = "Próbowano zmusić gracza do wykonania akcji kreatora bez odpowiednich uprawnień.",
 		action_radius_missing_permissions = "Próbowano zmusić graczy w określonym promieniu do wykonywania działań czarodzieja bez odpowiednich uprawnień.",
 		run_as_missing_permissions = "Próbowano uruchomić polecenie jako inny gracz bez odpowiednich uprawnień.",
+
+		menu_title = "Wizard",
+
+		ragdoll_player = "Ragdoll",
+		ragdoll_player_force = "Ragdoll (Mocny)",
+		punch_player = "Uderz gracza",
+		taze_player = "Taze",
+		exit_vehicle_player = "Wyrzuć z samochodu",
+		yank_steering_wheel_player = "Zmuść do skręcenia pojazdem",
+		flashbang_player = "Flashbang",
+		ignite_player = "Podpal",
+		explode_player = "Wysadź",
+		quietly_revive_player = "Cichy revive",
+		steal_player_identity = "Ukradnij tożsamość",
+		steal_player_ped = "Ukradnij postać",
 
 		invalid_radius = "Nieprawidłowy promień",
 		invalid_server_id = "Nieprawidłowy identyfikator serwera.",
@@ -7066,6 +7293,10 @@ balls = {
 		number1_of_number2 = "${number1} z ${number2}"
 	},
 
+	native = {
+		player_label = "[${source}] ${name}"
+	},
+
 	-- vehicles/*
 	alert = {
 		triggered_vehicle_alert = "Alarm pojazdu wyzwolony o ${locationLabel} do pojazdu z tablicą `${plateText}`.",
@@ -7306,10 +7537,10 @@ balls = {
 		belt_is_on = "Masz zapięte pasy!",
 		vehicle_is_locked = "Pojazd jest zamknięty.",
 
-		modifying_breaks = "Modyfikowanie hamulców",
-		toggle_breaks_on = "Wyłącza hamulce.",
-		toggle_breaks_off = "Włącza hamulce.",
-		failed_modify_breaks = "Nie udało się zmodyfikować hamulców.",
+		modifying_brakes = "Modyfikowanie hamulców",
+		toggle_brakes_on = "Wyłączono hamulce.",
+		toggle_brakes_off = "Włącza hamulce.",
+		failed_modify_brakes = "Nie udało się zmodyfikować hamulców.",
 
 		-- NOTE: `add_vehicle` command:
 		add_vehicle_not_super_admin = "Gracz próbował dodać pojazd do czyjegoś garażu, ale nie ma uprawnień Super Administratora.",
@@ -7363,8 +7594,22 @@ balls = {
 	},
 
 	-- weapons/*
+	ammo = {
+		unboxing_ammo = "Rozpakowywanie amunicji",
+		failed_unbox = "Nie udało się rozpakować amunicji.",
+		failed_unbox_full = "Nie możesz nosić więcej tej amunicji.",
+		unbox_success = "Pomyślnie rozpakowano ${amount}x ${ammoType}.",
+
+		type_pistol = "amunicja pistoletowa",
+		type_smg = "amunicja maszynowa",
+		type_rifle = "amunicja do karabinu",
+		type_sniper = "amunicja snajperska",
+		type_shotgun = "Amunicja kalibru 12",
+		type_stungun = "taser cartdiges"
+	},
+
 	weapons = {
-		pick_up_fire_extinguisher = "Naciśnij ~INPUT_CONTEXT~ żeby wziąć gaśnicę.",
+		pick_up_fire_extinguisher = "Przytrzymaj ~INPUT_CONTEXT~ żeby wziąć gaśnicę.",
 		press_to_drop_fire_extinguisher = "Naciśnij ~INPUT_CONTEXT~ żeby upuścić gaśnicę.",
 		illegal_fire_extinguisher_model = "Próba usunięcia gaśnicy na wszystkich klientach z modelem, który nie był gaśnicą.",
 
