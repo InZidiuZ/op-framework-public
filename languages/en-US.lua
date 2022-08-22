@@ -443,7 +443,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		player_info_not_staff = "Attempted to get a player's character information without proper permission.",
 		player_info_title = "${consoleName}",
-		player_info = "${fullName} (#${characterId})\n${jobName}, ${departmentName}, ${positionName}",
+		player_info = "${fullName} #${characterId}\nHas ${playtime} played.\n${jobName}, ${departmentName}, ${positionName}\n\n${backstory}",
 
 		inventory_name_missing = "Missing inventory name parameter.",
 		force_inventory_missing_perms = "Attempted to force-open an inventory without proper permission.",
@@ -501,6 +501,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		item_durability_set_failed = "Failed to set durability.",
 		item_durability_invalid_amount = "Invalid durability amount (0 <> 100).",
 		item_durability_set_no_permission = "Attempted to set an items durability without required permissions.",
+
+		item_metadata_set_no_permission = "Attempted to set an items metadata without required permissions.",
+		item_metadata_invalid_metadata = "Invalid item metadata.",
+		item_metadata_set_success = "Successfully set metadata for items in slot ${slotId}.",
+		item_metadata_set_failed = "Failed to set metadata.",
 
 		advanced_metagame_on = "Toggled advanced metagame on.",
 		advanced_metagame_off = "Toggled advanced metagame off.",
@@ -813,6 +818,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		spawn_vehicle_command_parameter_server_id_help = "The player's server id you would like to spawn this vehicle for. You can leave this as blank or at `0` to select yourself.",
 		spawn_vehicle_command_substitutes = "/sv",
 
+		replace_vehicle_command = "/replace_vehicle",
+		replace_vehicle_command_help = "Replace your current vehicle with a different one.",
+		replace_vehicle_parameter_model_name = "model name",
+		replace_vehicle_parameter_model_name_help = "The model name of the vehicle you're wanting to spawn.",
+		replace_vehicle_command_substitutes = "/rv",
+
 		aimbot_command = "/aimbot",
 		aimbot_command_help = "Toggle 'aimbot'.",
 		aimbot_command_parameter_server_id = "server id",
@@ -1017,7 +1028,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		player_info_command_help = "Returns some information about a certain player.",
 		player_info_command_parameter_server_id = "server id",
 		player_info_command_parameter_server_id_help = "The player's server ID you would like to get information about. If left blank, yourself is selected.",
-		player_info_command_substitutes = "/player",
+		player_info_command_substitutes = "/player, /pi",
 
 		inventory_command = "/inventory",
 		inventory_command_help = "Open a specified inventory.",
@@ -1078,6 +1089,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_durability_command_parameter_amount = "amount",
 		set_durability_command_parameter_amount_help = "The durability amount to set (default is 100).",
 		set_durability_command_substitutes = "/durability",
+
+		set_metadata_command = "/set_metadata",
+		set_metadata_command_help = "Sets all items metadata in a certain slot.",
+		set_metadata_command_parameter_slot = "slot",
+		set_metadata_command_parameter_slot_help = "Which slot to set items durability in.",
+		set_metadata_command_parameter_metadata = "metadata",
+		set_metadata_command_parameter_metadata_help = "The metadata json to set.",
+		set_metadata_command_substitutes = "/metadata",
 
 		refill_nitro_command = "/refill_nitro",
 		refill_nitro_command_help = "Refills your cars nitro tank.",
@@ -1388,6 +1407,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		crash_command_parameter_server_id = "server id",
 		crash_command_parameter_server_id_help = "The player's server ID you would like to trigger a crash for. Leaving this blank will auto-select yourself.",
 		crash_command_substitutes = "",
+
+		-- game/creation
+		creation_command = "/creation",
+		creation_command_help = "Toggle creation.",
+		creation_command_substitutes = "",
 
 		-- game/culling
 		culling_debug_command = "/culling_debug",
@@ -2111,6 +2135,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		spawn_prop_command_parameter_model_hash_help = "The prop model you would like to spawn.",
 		spawn_prop_command_parameter_network = "network",
 		spawn_prop_command_parameter_network_help = "Would you like to network the prop? It is recommended you only enable this for props that should be able to move.",
+		spawn_prop_command_parameter_no_pickup = "no pickup",
+		spawn_prop_command_parameter_no_pickup_help = "Should this prop only be picked up by super admins?",
 		spawn_prop_command_substitutes = "",
 
 		-- game/radio
@@ -4441,6 +4467,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		refillable_bottle = "Refillable Bottle",
 		refillable_bottle_description = "Save the turtles on god for real for real.",
 
+		capri_sun = "Capri Sun",
+		capri_sun_description = "Delicious treat from your childhood.",
+
 		water = "Water",
 		water_description = "Danger! Dihydrogen monoxide is colorless and odorless. Accidental inhalation of DHMO may be fatal. Prolonged exposure to its solid form causes severe tissue damage. Symptoms of DHMO ingestion can include excessive sweating and urination, and possibly a bloated feeling, nausea, vomiting and body electrolyte imbalance.",
 		hamburger = "Hamburger",
@@ -4934,6 +4963,9 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		arena_pill = "Arena Pill",
 		arena_pill_descrition = "A strange pill that does even stranger things... Swallow at your own risk. Perhaps having a gun on you to protect from violent dreams would be wise.",
+
+		shovel = "Shovel",
+		shovel_description = "",
 
 		bank_rockfish = "Bank Rockfish",
 		black_and_yellow_rockfish = "Black and Yellow Rockfish",
@@ -6459,6 +6491,7 @@ OP.Global.Locales.Languages["en-US"] = {
 	spectating = {
 		cannot_spectate_self = "You cannot spectate yourself.",
 		failed_spectate = "Failed to spectate player.",
+		player_not_exist = "Player is offline.",
 		no_character_loaded = "Player does not have a character loaded.",
 
 		invincibility_active = "Invincibility: ~r~Active~w~",
@@ -6853,7 +6886,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		map_tier_1_description = "Looks like it was hand sketched on a napkin. Ignore the curious stain.",
 		map_tier_2_description = "This map is quite worn but it looks like it might lead to something decent.",
 		map_tier_3_description = "Very nice \"sparkly\" map with a \"100% Real\" Seal in the lower right hand corner. ",
-		map_tier_4_description = "This map looks more expensive than most treasures. Let's Go!!!!"
+		map_tier_4_description = "This map looks more expensive than most treasures. Let's Go!!!!",
+
+		press_to_combine_pieces = "Press ~INPUT_CONTEXT~ to combine pieces of map ${mapTier}.",
+
+		treasure_map = "Treasure Map (Tier ${mapTier})"
 	},
 
 	tsunami = {
