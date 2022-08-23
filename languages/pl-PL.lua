@@ -502,6 +502,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		item_durability_invalid_amount = "Nieprawidłowa trwałość (0 <> 100).",
 		item_durability_set_no_permission = "Próbowano naprawić trwałość przedmiotów bez wymaganych uprawnień.",
 
+		item_metadata_set_no_permission = "Próbowano ustawić metadane elementów bez wymaganych uprawnień.",
+		item_metadata_invalid_metadata = "Nieprawidłowe metadane elementu.",
+		item_metadata_set_success = "Pomyślnie ustawiłeś metadane dla elementów w gnieździe ${slotId}.",
+		item_metadata_set_failed = "Nie udało się ustawić metadanych.",
+
 		advanced_metagame_on = "Włączono zaawansowaną metagrę.",
 		advanced_metagame_off = "Wyłączono zaawansowaną metagrę..",
 
@@ -811,7 +816,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		spawn_vehicle_command_parameter_model_name_help = "Nazwa modelu pojazdu który próbujesz zespawnować.",
 		spawn_vehicle_command_parameter_server_id = "serwer id",
 		spawn_vehicle_command_parameter_server_id_help = "Serwer ID gracza dla którego chcesz zespawnować pojazd. Możesz zostawić `0` by zespawnować dla siebie.",
-		spawn_vehicle_command_substitutes = "/sv",
+		spawn_vehicle_command_substitutes = "/sv, /car",
+
+		replace_vehicle_command = "/replace_vehicle",
+		replace_vehicle_command_help = "Wymień obecny pojazd na inny.",
+		replace_vehicle_parameter_model_name = "nazwa modelu",
+		replace_vehicle_parameter_model_name_help = "Nazwa modelu pojazdu, który chcesz spawnować.",
+		replace_vehicle_command_substitutes = "/rv",
 
 		aimbot_command = "/aimbot",
 		aimbot_command_help = "Przełącz aimbota.",
@@ -1078,6 +1089,14 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		set_durability_command_parameter_amount = "ilość",
 		set_durability_command_parameter_amount_help = "Wartość trwałości do ustawienia (domyślnie 100).",
 		set_durability_command_substitutes = "/durability",
+
+		set_metadata_command = "/set_metadata",
+		set_metadata_command_help = "Ustawia metadane wszystkich przedmiotów w określonym slocie.",
+		set_metadata_command_parameter_slot = "slot",
+		set_metadata_command_parameter_slot_help = "W którym miejscu ustawić wytrzymałość przedmiotów.",
+		set_metadata_command_parameter_metadata = "metadata",
+		set_metadata_command_parameter_metadata_help = "Json metadanych do ustawienia.",
+		set_metadata_command_substitutes = "/metadata",
 
 		refill_nitro_command = "/refill_nitro",
 		refill_nitro_command_help = "Napełnia zbiornik nitro samochodów.",
@@ -1388,6 +1407,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		crash_command_parameter_server_id = "server id",
 		crash_command_parameter_server_id_help = "ID gracza.",
 		crash_command_substitutes = "",
+
+		-- game/creation
+		creation_command = "/creation",
+		creation_command_help = "Przełącz tworzenie.",
+		creation_command_substitutes = "",
 
 		-- game/culling
 		culling_debug_command = "/culling_debug",
@@ -2111,6 +2135,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		spawn_prop_command_parameter_model_hash_help = "Model propa, który chcesz zrespić.",
 		spawn_prop_command_parameter_network = "Sieć",
 		spawn_prop_command_parameter_network_help = "Jeżeli chcesz połączyć te propy to zaleca się żeby sieciowe były animowane.",
+		spawn_prop_command_parameter_no_pickup = "brak odbioru",
+		spawn_prop_command_parameter_no_pickup_help = "Czy ten rekwizyt powinien być wybierany tylko przez superadministratorów?",
 		spawn_prop_command_substitutes = "",
 
 		-- game/radio
@@ -3878,7 +3904,7 @@ balls = {
 		cleared_points = "Wyczyszczono wszystkie punkty kamery.",
 		replaced_point = "Zamieniono punkt kamery na indeksie ${index} (Transition: ${transition}ms).",
 		moved_to_point = "Przeniesiono kamerę wolną do punktu kamery ${index} (Transition: ${transition}ms).",
-		invalid_point_index = "Nieprawidłowy indeks punktu kamery.",
+		invalid_point_index = "Nieprawidłowy indeks punktu kamery."
 	},
 
 	frisk = {
@@ -4441,6 +4467,9 @@ balls = {
 		refillable_bottle = "Butelka wielokrotnego użytku",
 		refillable_bottle_description = "Ratuj żółwie, świat Ci podziękuje.",
 
+		capri_sun = "Capri Sun",
+		capri_sun_description = "Najlepszy soczek z dzieciństwa zaraz po Kubusiu.",
+
 		water = "Woda",
 		water_description = "Woda, po prostu woda",
 		hamburger = "Hamburger",
@@ -4934,6 +4963,9 @@ balls = {
 
 		arena_pill = "Pigułka Areny",
 		arena_pill_descrition = "Dziwna pigułka, która robi jeszcze dziwniejsze rzeczy... Połknij na własne ryzyko. Być może mądrze byłoby mieć przy sobie broń, aby chronić się przed gwałtownymi snami.",
+
+		shovel = "Shovel",
+		shovel_description = "Idealny przedmiot aby wykopać grób swojej żonie!",
 
 		bank_rockfish = "Bank Rockfish",
 		black_and_yellow_rockfish = "Black and Yellow Rockfish",
@@ -6154,7 +6186,7 @@ balls = {
 		failed_reset = "Nie udało się przełączyć z powrotem na oryginalny ped.",
 		failed_reset_not_exist = "Twój oryginalny ped nie istnieje lub nie jest blisko ciebie.",
 		failed_takeover = "Nie udało się przejąć ped.",
-		invalid_network_id = "Nieprawidłowy identyfikator sieci.",
+		invalid_network_id = "Nieprawidłowy identyfikator sieci."
 	},
 
 	peds = {
@@ -6459,6 +6491,7 @@ balls = {
 	spectating = {
 		cannot_spectate_self = "Nie możesz się przyglądać.",
 		failed_spectate = "Nie udało się obserwować gracza.",
+		player_not_exist = "Gracz jest offline.",
 		no_character_loaded = "Gracz nie ma załadowanej postaci.",
 
 		invincibility_active = "Nieśmiertelność: ~r~Active~w~",
@@ -6852,8 +6885,12 @@ balls = {
 
 		map_tier_1_description = "Wygląda na to, że został ręcznie naszkicowany na serwetce. Zignoruj ​​ciekawą plamę.",
 		map_tier_2_description = "Ta mapa jest dość zużyta, ale wygląda na to, że może doprowadzić do czegoś przyzwoitego.",
-		map_tier_3_description = "Bardzo ładna \"błysząca\" mapa z pieczęcią \"100% realna\" w prawym dolnym rogu. ",
-		map_tier_4_description = "Ta mapa wygląda na droższą niż większość skarbów. Chodźmy!!!!"
+		map_tier_3_description = "Bardzo ładna \"błysząca\" mapa z pieczęcią \"100% realna\" w prawym dolnym rogu.",
+		map_tier_4_description = "Ta mapa wygląda na droższą niż większość skarbów. Chodźmy!!!!",
+
+		press_to_combine_pieces = "Naciśnij ~INPUT_CONTEXT~ aby połączyć fragmenty mapy ${mapTier}.",
+
+		treasure_map = "Mapa skarbów (Tier ${mapTier})"
 	},
 
 	tsunami = {
