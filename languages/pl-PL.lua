@@ -2742,7 +2742,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		crosshair_command_substitutes = "",
 
 		aim_down_sight_command = "/aim_down_sight",
-		aim_down_sight_command_help = "Automatycznie zmienia na pierwszoosobowe strzelanie nawet jeśli kożytasz z trzecioosobowej kamery.",
+		aim_down_sight_command_help = "Automatycznie zmienia na pierwszoosobowe strzelanie nawet jeśli korzytasz z trzecioosobowej kamery.",
 		aim_down_sight_command_substitutes = "/ads",
 
 		-- weapons/weapons
@@ -4297,7 +4297,7 @@ balls = {
 		ifak_description = "Podręczna oraz pojemna apteczka IFAK (Individual First Aid Kit).",
 
 		citizen_card = "ID",
-		citizen_card_description = "Dowód osobisty, prawo jazdy i pozwolenie na broń.",
+		citizen_card_description = "Dowód osobisty oraz prawo jazdy.",
 		phone = "Telefon",
 		phone_description = "Urządzenie przeznaczone do transmisji przekazu obrazu oraz dźwięku.",
 		radio = "Radio",
