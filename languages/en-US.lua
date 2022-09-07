@@ -550,7 +550,44 @@ OP.Global.Locales.Languages["en-US"] = {
 		damage_player_failed = "Failed to damage player.",
 		damage_player_logs_title = "Damaged Player",
 		damage_player_logs_details = "${consoleName} damaged ${targetConsoleName} for ${damage} damage.",
-		damage_player_missing_permissions = "Player attempted to damage another player without proper permissions."
+		damage_player_missing_permissions = "Player attempted to damage another player without proper permissions.",
+
+		refill_nitro_logs_title = "Refilled Nitro",
+		refill_nitro_logs_details = "${consoleName} refilled their nitro.",
+
+		isolated_logs_title = "Player Isolation",
+		isolated_off_logs_details = "${consoleName} toggled ${targetName}'s isolation off.",
+		isolated_on_logs_details = "${consoleName} toggled ${targetName}'s isolation on.",
+
+		character_data_logs_title = "Character Data",
+		character_data_logs_details = "${consoleName} checked ${targetName}'s character data (CID: ${characterId}).",
+
+		item_name_logs_title = "Name Override",
+		item_name_logs_details = "${consoleName} renamed the items in slot ${slot} to `${nameOverride}`.",
+
+		toggle_attachment_logs_title = "Toggled Attachment",
+		toggle_attachment_logs_details = "${consoleName} toggled the `${attachment}` attachment.",
+
+		tint_logs_title = "Set Tint",
+		tint_logs_details = "${consoleName} set the tint index on their weapon to ${tintIndex}.",
+
+		population_multiplier_logs_title = "Population Multiplier",
+		population_multiplier_logs_details = "${consoleName} set the population multiplier to ${populationMultiplier}.",
+
+		fake_disconnect_logs_title = "Fake Disconnect",
+		fake_disconnect_on_logs_details = "${consoleName} toggled their fake disconnect on.",
+		fake_disconnect_off_logs_details = "${consoleName} toggled their fake disconnect off.",
+
+		identity_logs_title = "Identity Override",
+		identity_on_logs_details = "${consoleName} set their identity to `${playerName}`.",
+		identity_off_logs_details = "${consoleName} reset their identity.",
+
+		clean_ped_logs_title = "Cleaned Ped",
+		clean_ped_logs_details = "${consoleName} cleaned ${targetName]'s ped.",
+
+		collisions_logs_title = "Collisions",
+		collisions_off_logs_details = "${consoleName} toggled their disabled collisions off.",
+		collisions_on_logs_details = "${consoleName} toggled their disabled collisions on."
 	},
 
 	anti_cheat = {
@@ -610,7 +647,9 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		illegal_oxy_run = "Player completed an oxy run faster than humanly possible.",
 
-		fast_movement_warning = "You have been flagged for moving too fast! Please let a developer know and tell them what you were doing to make this happen as you should not be recieving this chat message."
+		fast_movement_warning = "You have been flagged for moving too fast! Please let a developer know and tell them what you were doing to make this happen as you should not be recieving this chat message.",
+
+		fast_movement_screenshot = "Fast Movement (${amount} total)"
 	},
 
 	authentication = {
@@ -1407,11 +1446,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		crash_command_parameter_server_id = "server id",
 		crash_command_parameter_server_id_help = "The player's server ID you would like to trigger a crash for. Leaving this blank will auto-select yourself.",
 		crash_command_substitutes = "",
-
-		-- game/creation
-		creation_command = "/creation",
-		creation_command_help = "Toggle creation.",
-		creation_command_substitutes = "",
 
 		-- game/culling
 		culling_debug_command = "/culling_debug",
@@ -3805,6 +3839,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		floor_roof = "Roof",
 		floor_helipad = "Helipad",
 
+		floor_vault = "Vault Room",
+
 		floor_second_floor = "Second Floor",
 		floor_icu = "ICU",
 		floor_surgery = "Surgery",
@@ -4198,6 +4234,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		hunting_store = "Hunting Store",
 		fishing_store = "Fishing Store",
 		los_santos_golf_club = "Los Santos Golf Club",
+		arcade_bar = "Arcade Bar",
 		pd_prefix = "PD",
 		ems_prefix = "EMS",
 		government_prefix = "Gov",
@@ -4303,7 +4340,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		radio = "Radio",
 		radio_description = "Useful asset for all the metagamers out there!",
 		smart_watch = "Smart Watch",
-		smart_watch_description = "Comes with a built in compass, watch, GPS, and step-tracker! Just don't go for a run at 2am.",
+		smart_watch_description = "Hate having to pay cash everywhere? Just use your smart watch! Also comes with a built in compass, watch, GPS, and step-tracker! Just don't go for a run at 2am.",
 
 		hunting_license = "Hunting License",
 		hunting_license_description = "A hunting license for hunting.",
@@ -4962,7 +4999,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		rolling_paper_description = "That quick paper to roll up and smoke your pain away.",
 
 		arena_pill = "Arena Pill",
-		arena_pill_descrition = "A strange pill that does even stranger things... Swallow at your own risk. Perhaps having a gun on you to protect from violent dreams would be wise.",
+		arena_pill_description = "A strange pill that does even stranger things... Swallow at your own risk. Perhaps having a gun on you to protect from violent dreams would be wise.",
 
 		shovel = "Shovel",
 		shovel_description = "",
@@ -6993,6 +7030,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		exit_vehicle_player = "Exit Vehicle",
 		yank_steering_wheel_player = "Yank Steering Wheel",
 		flashbang_player = "Flashbang",
+		paper_bag_player = "Paper Bag",
 		ignite_player = "Set On Fire",
 		explode_player = "Explode",
 		quietly_revive_player = "Quiet Revive",
@@ -7818,6 +7856,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		picture_selfie_owner = "<i>This is a picture of <b>${fullName}</b>.</i>",
 		bought_by = "Bought by ${buyerName} (${buyerCid}).",
 		bought_by_unknown = "The buyer of this item is unknown.",
+		cigarette_pack = "${cigarettes} cigarettes left.",
 		evidence_incomplete = "This evidence is incomplete, and can not be reviewed.",
 		evidence_type = "Evidence Type",
 		processed_picked_up = "<i>Picked up by ${pickupName} and processed by ${processName}.</i>",
