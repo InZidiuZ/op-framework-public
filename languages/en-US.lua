@@ -1430,12 +1430,36 @@ OP.Global.Locales.Languages["en-US"] = {
 		chat_emotes_command_help = "Lists all available emotes usable in the chat.",
 		chat_emotes_command_substitutes = "",
 
+		-- game/cinema
+		cinema_blacklist_add_command = "/cinema_blacklist_add",
+		cinema_blacklist_add_command_help = "Add a video to the local cinema blacklist.",
+		cinema_blacklist_add_command_parameter_video_key = "vidoe key",
+		cinema_blacklist_add_command_parameter_video_key_help = "The video key for the video you wish to blacklist. Example: 'youtube:dQw4w9WgXcQ'",
+		cinema_blacklist_add_command_substitutes = "",
+
+		cinema_screens_debug_command = "/cinema_screens_debug",
+		cinema_screens_debug_command_help = "Debug cinema screens.",
+		cinema_screens_debug_command_substitutes = "",
+
 		-- game/cinematic
 		cinematic_command = "/cinematic",
 		cinematic_command_help = "Toggle cinematic black bars.",
 		cinematic_command_parameter_bar_height = "bar height",
 		cinematic_command_parameter_bar_height_help = "The height of the bars. Must be between 0 and 50 (percentage). The default is 10. Leaving it blank will set it to the value you last used.",
 		cinematic_command_substitutes = "/c, /cin",
+
+		-- game/clothing_menu
+		clothing_command = "/clothing",
+		clothing_command_help = "Opens the clothing menu for you or for another player.",
+		clothing_command_parameter_server_id = "server id",
+		clothing_command_parameter_server_id_help = "The server ID of the player you would like to open the clothing menu for.",
+		clothing_command_substitutes = "",
+
+		barber_command = "/barber",
+		barber_command_help = "Opens the barber shop menu for you or for another player.",
+		barber_command_parameter_server_id = "server id",
+		barber_command_parameter_server_id_help = "The server ID of the player you would like to open the barber shop menu for.",
+		barber_command_substitutes = "",
 
 		-- game/clothing
 		force_outfit_command = "/force_outfit",
@@ -2870,7 +2894,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		-- weapons/weapons
 		check_ammo_command = "/check_ammo",
 		check_ammo_command_help = "Checks how much ammo you have in total for the weapon you are currently holding.",
-		check_ammo_command_substitutes = "/ammo"
+		check_ammo_command_substitutes = "/ammo",
+
+		toggle_airsoft_mode_command_command = "/toggle_airsoft_mode",
+		toggle_airsoft_mode_command_command_help = "Toggles airsoft mode (serverwide), which makes all guns to incredibly low damage.",
+		toggle_airsoft_mode_command_command_substitutes = "/airsoft_mode, /airsoft"
 	},
 
 	connections = {
@@ -3387,7 +3415,41 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	cinema = {
-		failed_to_find_cinema_identifier = "Failed to find cinema identifier."
+		failed_to_find_cinema_identifier = "Failed to find cinema identifier.",
+
+		screen_model_size = "Size: x: ${sizeX}, y: ${sizeY}",
+		screen_model_offset = "Offset: x: ${offsetX}, y: ${offsetY}, z: ${offsetZ}",
+		screen_model_rotation = "Rotation: ${rotation}",
+		screen_model_volume = "Volume: ${volumeRadius} (${volumeCutOffRadius})",
+		screen_model_model = "Model: ${modelName}",
+
+		locked = "Locked",
+
+		add_video_to_queue_title = "Add Video To Queue",
+		add_video_to_queue_details = "${consoleName} added a video to the queue in a cinema with the video key of `${videoType}:${videoId}`.",
+
+		blacklisted_video = "Blacklisted video with key `${videoKey}`.",
+		failed_to_blacklist_video = "Failed to blacklist video with key `${videoKey}`.",
+		video_is_already_blacklisted = "The video with key `${videoKey}` is already blacklisted.",
+
+		blacklist_video_missing_permissions = "Player attempted to blacklist a video but they didn't have the required permissions.",
+
+		cinema = "Cinema",
+		doppler_cinema = "Doppler Cinema",
+		tv = "TV",
+		monitor = "Monitor",
+		laptop = "Laptop",
+		projector = "Projector",
+
+		-- NOTE: UI locales
+		title = "Title",
+		length = "Length",
+		date = "Date",
+		author = "Author",
+		queue = "Queue",
+		early_access_feature = "This feature is in early access and is only available to players with a Godlike Tier pledge.",
+		search_through_library = "Search through library...",
+		add_to_library = "Add vido to library (URL)..."
 	},
 
 	cinematic = {
@@ -3414,6 +3476,68 @@ OP.Global.Locales.Languages["en-US"] = {
 		deleted_outfit = "Deleted outfit `${name}` successfully.",
 		failed_delete_outfit_doesnt_exists = "Failed to delete, outfit `${name}` doesn't exist.",
 		failed_delete_outfit = "Failed to delete outfit."
+	},
+
+	clothing_menu = {
+		component = "Component",
+		texture = "Texture",
+		palette = "Palette",
+
+		clothing = "Clothing",
+		accessories = "Accessories",
+		face = "Face",
+
+		variation = "Variation",
+		color = "Color",
+		secondary_color = "Secondary Color",
+		opacity = "Opacity",
+
+		press_to_access = "Press ~INPUT_CONTEXT~ to access the clothing store.",
+		press_to_access_barber = "Press ~INPUT_CONTEXT~ to access the barber shop.",
+
+		clothingstore = "Clothing Store",
+		barbershop = "Barbershop",
+
+		failed_toggle_clothing_menu = "Failed to toggle clothing menu.",
+		clothing_menu_success = "Opened clothing menu for ${consoleName}.",
+		barber_menu_success = "Failed to toggle barber shop menu.",
+		failed_toggle_barber_menu = "Opened barber shop menu for ${consoleName}.",
+		invalid_server_id = "Invalid server id.",
+
+		clothing_menu_missing_permissions = "Player attempted to open the clothing menu for another player but didn't have the required permissions.",
+
+		hats_and_helmets = "Hats/Helmets",
+		glasses = "Glasses",
+		earrings = "Earrings",
+		left_wrist = "Left Wrist",
+		right_wrist = "Right Wrist",
+
+		pants = "Pants",
+		shoes = "Shoes",
+		undershirt = "Undershirt",
+		necklaces_and_ties = "Necklaces & Ties",
+		decals = "Decals",
+		shirts = "Shirts",
+		arms = "Arms",
+		masks = "Masks",
+		armor = "Armor",
+		parachute_and_bag = "Parachute & Bag",
+
+		hair = "Hair",
+
+		blemishes = "Blemishes",
+		facial_hair = "Facial Hair",
+		eyebrows = "Eyebrows",
+		ageing = "Ageing",
+		makeup = "Makeup",
+		blush = "Blush",
+		complexion = "Complexion",
+		sun_damage = "Sun Damage",
+		lipstick = "Lipstick",
+		moles_and_freckles = "Moles & Freckles",
+		chest_hair = "Chest Hair",
+		body_blemishes = "Body Blemishes",
+		add_body_blemish = "Add Body Blemish"
 	},
 
 	command_socket = {
@@ -7974,6 +8098,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		press_to_drop_fire_extinguisher = "Press ~INPUT_FRONTEND_RRIGHT~ to drop the Fire Extinguisher.",
 		illegal_fire_extinguisher_model = "Attempted to delete a fire extinguisher on all clients with a model that wasn't a fire extinguisher.",
 
+		airsoft_mode_on = "Toggled airsoft mode on.",
+		airsoft_mode_off = "Toggled airsoft mode off.",
+		airsoft_mode_failed = "Failed to toggle airsoft mode.",
+
 		no_weapon_equipped = "No weapon equipped.",
 		no_ammo = "No ammo for this weapon.",
 		infinite_ammo = "You have infinite ammo for this weapon.",
@@ -8139,6 +8267,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		badge_owner = "<i>This badge belongs to <b>${fullName} (${positionName})</b>.</i>",
 		badge_owner_unknown = "Badge Owner is unknown.",
 		citizen_card_owner = "<i>This citizen card belongs to <b>${fullName} (#${characterId})</b>.</i>",
+		citizen_card_has_portrait = "<i>It has a picture.</i>",
+		picture_pending = "<i>The picture is still processing...</i>",
 		picture_selfie_owner = "<i>This is a picture of <b>${fullName}</b>.</i>",
 		bought_by = "Bought by ${buyerName} (${buyerCid}).",
 		bought_by_unknown = "The buyer of this item is unknown.",
