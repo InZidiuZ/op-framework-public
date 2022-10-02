@@ -1441,6 +1441,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		cinema_screens_debug_command_help = "Debug cinema screens.",
 		cinema_screens_debug_command_substitutes = "",
 
+		cinema_focus_command = "/cinema_focus",
+		cinema_focus_command_help = "Focus on the nearest cinema screen for a better viewing experience.",
+		cinema_focus_command_substitutes = "/focus_cinema",
+
 		-- game/cinematic
 		cinematic_command = "/cinematic",
 		cinematic_command_help = "Toggle cinematic black bars.",
@@ -3316,8 +3320,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		luxury_autos = "Luxury Autos",
 		city_hall = "City Hall",
 		rockford_records = "Rockford Records",
-		dispensary = "Dispensary",
-		vineyard = "Vineyard"
+		dispensary = "Dispensary"
 	},
 
 	blockage = {
@@ -3436,10 +3439,14 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		cinema = "Cinema",
 		doppler_cinema = "Doppler Cinema",
+		sandy_cinema = "Sanndy Cinema",
 		tv = "TV",
 		monitor = "Monitor",
 		laptop = "Laptop",
 		projector = "Projector",
+
+		zoom = "Move camera forward and backward",
+		exit = "Exit",
 
 		-- NOTE: UI locales
 		title = "Title",
@@ -3497,6 +3504,9 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		clothingstore = "Clothing Store",
 		barbershop = "Barbershop",
+
+		remove_button = "Remove ${label}",
+		menu_description = "Press \"V\" to toggle the camera. You can drag the sliders with your mouse or use the arrow keys. You can press \"A\" and \"D\" to adjust your position.",
 
 		failed_toggle_clothing_menu = "Failed to toggle clothing menu.",
 		clothing_menu_success = "Opened clothing menu for ${consoleName}.",
@@ -3847,6 +3857,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		fixing_tire_wall = "Fixing Tire Wall",
 		fixed_tire_wall = "Fixed tire wall.",
 		failed_fix_tire_wall = "Failed to fix tire wall.",
+
+		saw_shotgun = "Saw off Shotgun",
+		press_saw_shotgun = "[${SeatEjectKey}] Saw off Shotgun",
+		sawing_shotgun = "Sawing Off Shotgun",
+		sawed_shotgun = "Sawed off shotgun.",
+		failed_saw_shotgun = "Failed to saw off shotgun.",
 
 		no_required_items = "You don't have all the required items.",
 
@@ -4985,6 +5001,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		scrap_metal_description = "Used for repairs and crafting.",
 		steel = "Steel",
 		steel_description = "Used for repairs and crafting.",
+
+		power_saw = "Power Saw",
+		power_saw_description = "Used for sawing things.",
 
 		thermite = "Thermite",
 		thermite_description = "Highly volatile powder, do not sniff.",
@@ -7293,8 +7312,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		attacker = "ATTACKER",
 		defender = "DEFENDER",
 		attackers_won = "The attackers won!",
-		defenders_won = "The defenders won!",
-		training_blip = "Training"
+		defenders_won = "The defenders won!"
 	},
 
 	traps = {
@@ -7482,7 +7500,6 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	yoga = {
-		yoga_blip = "Yoga",
 		yoga_mat_use = "[${InteractionKey}] Yoga Mat",
 		yoga_mat = "Yoga Mat",
 		press_to_stop_yoga = "Press ~INPUT_CONTEXT~ to stop doing yoga."
@@ -7621,6 +7638,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	job_center = {
 		life_invader = "Life Invader",
+		life_invader_blip = "Apply for a Job",
 		ui_close_menu = "Close Menu",
 		press_to_browse_jobs = "Press ~INPUT_CONTEXT~ to browse jobs.",
 		change_job = "Change Job: ${jobName}",
@@ -7633,6 +7651,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		job_delivery = "Delivery Job",
 		changed_job_already_set_to_job = "Your job is already set to ${jobName}.",
 		changed_job_success = "Successfully set your job to ${jobName}.",
+		changed_job_success_go_to_coords = "Successfully set your job to ${jobName}. Follow the waypoint on your map to get started.",
 		changed_job_failure = "An error occurred while trying to set your job to ${jobName}.",
 		changed_job_title = "Changed Job",
 		changed_job_details = "${consoleName} changed their job to `${jobName}`."
