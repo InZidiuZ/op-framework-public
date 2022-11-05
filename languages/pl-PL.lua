@@ -8348,7 +8348,7 @@ balls = {
 		purchase_success = "Zakupiony przez Ciebie ${label} został dodany do Twojego garażu.",
 		purchase_failed = "Nie udało się kupić pojazdu.",
 		already_owned = "Masz już ten model pojazdu.",
-		maximum_owned = "Nie możesz posiadać więcej niż 4 pojazdów.",
+		maximum_owned = "Nie możesz posiadać więcej niż 6 pojazdów.",
 		not_enough_money = "Nie masz wystarczająco dużo pieniędzy na zakup tego pojazdu.",
 
 		sold_vehicle = "Sprzedano ${label} za $${price}.",
