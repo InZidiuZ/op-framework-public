@@ -8329,7 +8329,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		purchase_success = "The ${label} you just purchased has been added to your garage.",
 		purchase_failed = "Failed to purchase vehicle.",
 		already_owned = "You already own this vehicle model.",
-		maximum_owned = "You cannot own more than 4 vehicles.",
+		maximum_owned = "You cannot own more than 6 vehicles.",
 		not_enough_money = "You don't have enouch money to purchase this vehicle.",
 
 		sold_vehicle = "Sold ${label} for $${price}.",
