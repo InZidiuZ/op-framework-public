@@ -8334,7 +8334,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		purchase_success = "Sõiduk ${label} mille sa just ostsid on nüüd garaazis.",
 		purchase_failed = "Sõiduki ost ebaõnnestus.",
 		already_owned = "Sa juba omad sellist sõidukit.",
-		maximum_owned = "Sul ei saa rohkem kui 4 sõidukit olla.",
+		maximum_owned = "Sul ei saa rohkem kui 6 sõidukit olla.",
 		not_enough_money = "Sul pole piisavalt raha.",
 
 		sold_vehicle = "Müüs sõiduki ${label} hinnaga $${price}.",
