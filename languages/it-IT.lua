@@ -15,7 +15,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		warning = "Attenzione",
 		invalid_input = "Input invalido.",
 		missing_input = "Input mancante.",
-		player_not_found = "Could not find player with server ID `${serverId}`.",
+		player_not_found = "Impossibile trovare il giocatore con server ID `${serverId}`.",
 		something_went_wrong = "Qualcosa e andato storto. Perfavore riprova.",
 		yes = "Si",
 		no = "No"
@@ -166,7 +166,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		spawned_item_for_everyone_details = "${consoleName} generato in ${amount}x `${itemName}` per tutti.",
 
 		report_title = "REPORT-${reportId} ${reporterName}",
-		report_logs_title = "Report",
+		report_logs_title = "REPORT",
 		report_logs_details = "${consoleName} Rapporto creato ${reportId} Con il seguente messaggio: `${reportMessage}`",
 
 		announcement_staff_title = "Staff Annuncio",
@@ -587,7 +587,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		character_data_logs_title = "Character Data",
 		character_data_logs_details = "${consoleName} controllata ${targetName}'s character data (CID: ${characterId}).",
 
-		item_name_logs_title = "Nome Override ",
+		item_name_logs_title = "Nome Override",
 		item_name_logs_details = "${consoleName} rinominato gli articoli in slot ${slot} a `${nameOverride}`.",
 
 		toggle_attachment_logs_title = "Attivato Attachment",
@@ -6122,7 +6122,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		unable_to_repair = "Non sei in grado di riparare il veicolo mentre ci sono giocatori all'interno.",
 		failed_lockpicking = "Lockpicking non riuscito",
 		lockpicking_succeeded = "Lockpicking è riuscito.",
-		hotwiring_vehicle = "Veicolo a caldo ",
+		hotwiring_vehicle = "Scassinando Veicolo",
 		lockpick_broke = "Lockpick si è rotto",
 		failed_hotwire = "Hotwire fallito",
 		unpacking_green_rolls = "Disimballare i panini verdi",
@@ -6718,7 +6718,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		model_name = "Nome del modello...",
 		field_name = "Campo...",
 		value = "Valore...",
-		current_overrides = "Overra di corrente ",
+		current_overrides = "Sostituzioni correnti",
 
 		about_explosion_events_title = "Eventi di esplosione",
 		about_explosion_events_about = "In qui vengono registrate informazioni sugli ultimi 500 eventi di esplosione.Questo dovrebbe aiutare il personale a trovare modder.",
@@ -6744,7 +6744,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		illegal_invincibility_title = "Rilevamenti di invincibilità",
 		illegal_invincibility_about = "Qui ogni giocatore che è stato contrassegnato per essere invincibile è elencato.Questo dovrebbe aiutare a trovare giocatori che sono potenziali modder.",
 
-		damage_modifier_title = "Modificatori di danno ",
+		damage_modifier_title = "Modificatore di danno",
 		damage_modifier_about = "Qui ogni giocatore che è stato rilevato per avere un modificatore di danno modificato è elencato.Questo dovrebbe aiutare a trovare giocatori che sono potenziali modder.",
 
 		unknown_resources_title = "Risorse sconosciute",
@@ -6754,7 +6754,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		damage_modifier_expected = "Previsto",
 		damage_modifier_actual = "Effettiva",
 
-		no_entries = "Nessuna visione "
+		no_entries = "Nessuna entrata"
 	},
 
 	panic = {
@@ -7742,7 +7742,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		map_tier_1_description = "Sembra che sia stato disegnato a mano su un tovagliolo.Ignora la curiosa macchia.",
 		map_tier_2_description = "Questa mappa è abbastanza usurata ma sembra che potrebbe portare a qualcosa di decente.",
-		map_tier_3_description = "Molto bella \"sparkly\" mappa con a \"100% Real\" Sigillare nell'angolo in basso a destra. ",
+		map_tier_3_description = "Molto bella \"sparkly\" mappa con un \"100% Real\" Sigillare nell'angolo in basso a destra.",
 		map_tier_4_description = "Questa mappa sembra più costosa della maggior parte dei tesori.Andiamo!!!!",
 
 		press_to_combine_pieces = "Premi ~INPUT_CONTEXT~ Per combinare pezzi di mappa ${mapTier}.",
@@ -8223,7 +8223,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		air_unit_exit_vehicle = "Esci dal veicolo per utilizzare l'unità aerea.",
 		air_unit_press_to_use = "Premi ~g~${SeatEjectKey} ~w~Per utilizzare l'unità aerea per $${cost}.",
 		air_unit_purchase_cleaning_kit = "Premi ~g~${InventoryKey} ~w~Per acquistare un kit di pulizia.",
-		cleaning_vehicle = "Veicolo per la pulizia ",
+		cleaning_vehicle = "Pulendo il veicolo",
 		not_enough_money = "Non hai abbastanza soldi per usare l'unità aerea.",
 		vehicle_not_in_range = "Il veicolo si spostò lontano per essere pulito."
 	},
@@ -8404,7 +8404,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		spawner_burger_shot = "Burger Shot Delivery Veicoli",
 		spawner_bean_machine = "Bean Machine Delivery Veicoli",
-		close_menu = "Chiudi menu ",
+		close_menu = "Chiudi menu",
 		vehicle_list = "Elenco dei veicoli",
 		park_vehicle = "Park Vehicle",
 		return_button = "Return",
@@ -8561,17 +8561,17 @@ OP.Global.Locales.Languages["it-IT"] = {
 		injury = "${label} Lesione",
 		cpr_done = "CPR con successo",
 		cpr_fail = "Impossibile individuare la persona",
-		went_on_duty = "È andato in servizio ",
+		went_on_duty = "È andato in servizio",
 		went_off_duty = "È andato fuori servizio",
 		on_duty = "in servizio",
 		off_duty = "fuori servizio",
-		press_to_sign = "Premi ~g~E ~w~to sign ",
-		open_vehicle_spawner = "Premi ~g~E ~w~to open the vehicle spawner",
-		open_heli_spawner = "Premi ~g~E ~w~to open the helicopter menu",
-		open_boat_spawner = "Premi ~g~E ~w~to open the boat menu",
+		press_to_sign = "Premi ~g~E ~w~ per firmare",
+		open_vehicle_spawner = "Premi ~g~E ~w~ Per aprire il veicolo spawner",
+		open_heli_spawner = "Premi ~g~E ~w~ Per aprire il menu dell'elicottero",
+		open_boat_spawner = "Premi ~g~E ~w~ Per aprire il menu della barca",
 		on = "ON",
 		off = "OFF",
-		sign_as_doctor = "Premi ~g~E ~w~to sign ${status} as a doctor",
+		sign_as_doctor = "Premi ~g~E ~w~per firmare ${status} come dottore",
 		close_menu = "Chiudi menu",
 		vehicle_list = "Elenco dei veicoli",
 		park_vehicle = "parkVehicle",
@@ -8724,7 +8724,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		left_foot = "Piede sinistro",
 		right_hand = "Mano destra",
 		left_hand = "Mano sinistra",
-		right_knee = "Ginocchio destro ",
+		right_knee = "Ginocchio destro",
 		left_knee = "Ginocchio sinistro",
 		head = "Testa",
 		neck = "Collo",
