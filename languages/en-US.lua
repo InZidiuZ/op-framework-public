@@ -243,6 +243,12 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		banner_name_generic = "a Staff Member",
 
+		ban_alert_title = "Banned by System",
+		ban_alert_description = "You would have been automatically banned by the system for reason `${reason}`.",
+
+		ban_alert_globally_title = "Globally banned by System",
+		ban_alert_globally_description = "You would have been globally banned by the system for reason `${reason}`.",
+
 		logs_player_banned_title = "Player Banned",
 		logs_player_banned_details = "${consoleName} has been banned from the server by ${banner} for reason `${reason}`.",
 		logs_player_banned_no_reason_details = "${consoleName} has been banned from the server by ${banner} without a specified reason.",
@@ -638,18 +644,19 @@ OP.Global.Locales.Languages["en-US"] = {
 		detection_area = "Detection Area (${areaId})",
 
 		fast_movement_ban = "Flying is not enabled on this server.",
-		invincibility_ban = "Player attempted to use invincibility.",
-		runtime_texture_ban = "Player was trying to use a mod menu.",
-		vehicle_spawn_ban = "Player attempted to spawn a vehicle.",
+		invincibility_ban = "You are not the Black Knight, you may not be invincible.",
+		runtime_texture_ban = "Mod menu you have, use it you may not.",
+		vehicle_spawn_ban = "You tried to use redstone on a minecart but didn't have powered rails.",
+		vehicle_modification_ban = "You couldn't find the headlight fluid for your car.",
+		thermal_night_vision_ban = "Brighter Nights is not allowed.",
+		blacklisted_command_ban = "I'm sorry, but you do not have permissions to perform this command. Please contact the server administrators if you believe that this is an error.",
 
-		illegal_ped_change = "Player changed their ped model but didn't have correct permissions to do so.",
-		illegal_spectating = "Player was spectating another player but didn't have correct permissions to do so.",
-		spectating_screenshot = "Anti-Cheat: Spectating",
+		honeypot_ban = "You attempted to toggle your creative mode, but didn't have the permissions to do so.",
+
+		illegal_ped_change = "Its dangerous to perform plastic surgery on yourself.",
+		illegal_spectating = "You must be an FIB Agent to watch other players or use /gamemode spectator before spectating.",
 
 		anti_cheat_modding_title = "Anti-Cheat Log",
-		seeing_invisible_details = "${consoleName} is able to see invisible players when they shouldn't be able to. (Score: `${score}`)",
-		damage_modifier_details = "${consoleName} appears to have a modified damage multiplier. (Expected: `${expectedValue}`, Value: `${actualValue}`, Weapon: `${weaponName}`)",
-		detected_noclip_details = "${consoleName} appears to be noclipping.",
 		detected_semi_godmode_details = "${consoleName} appears to have some form of god-mode enabled.",
 
 		mp_f_freemode_01_label = "Freemode (female)",
@@ -657,6 +664,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		player_one_label = "Franklin",
 		player_two_label = "Trevor",
 		player_zero_label = "Michael",
+
+		notification_unknown_resource = "Anti-Cheat: Unknown resources",
+		notification_illegal_cheat_power = "Anti-Cheat: Cheat Power Increase",
+		notification_fast_movement = "Anti-Cheat: Fast movement",
+		notification_invincibility = "Anti-Cheat: Invincibility",
+		notification_vehicle_modification = "Anti-Cheat: Vehicle modification",
+		notification_damage_modifier = "Anti-Cheat: Damage modifier",
+		notification_illegal_weapon = "Anti-Cheat: Illegal weapon",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus",
@@ -683,12 +698,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		invincibility_warning = "You have been flagged for being invincible! Please let a developer know and tell them what you were doing to make this happen as you should not be recieving this chat message.",
 		damage_modifier_warning = "You have been flagged for having an invalid damage modifier! Please let a developer know and tell them what you were doing to make this happen as you should not be recieving this chat message.",
 
+		spectating_screenshot = "Anti-Cheat: Spectating",
 		fast_movement_screenshot = "Anti-Cheat: Fast Movement",
-		unknown_resource = "Anti-Cheat: Unknown Resources (${resources})",
+		unknown_resource_screenshot = "Anti-Cheat: Unknown Resources (${resources})",
+		illegal_cheat_power_screenshot = "Anti-Cheat: Cheat Power Increase (${cheatPower})",
 		damage_modifier_screenshot = "Anti-Cheat: Invalid Damage Modifier (${activeModifier}/${currentModifier})",
 		illegal_weapon_screenshot = "Anti-Cheat: Spawned Weapon (${weaponLabel})",
 		illegal_vehicle_spawn_screenshot = "Anti-Cheat: Spawned Vehicle (${modelName})",
 		vehicle_modification_screenshot = "Anti-Cheat: Modified Vehicle (${modType}: ${previousValue}->${modValue})",
+		thermal_night_vision_screenshot = "Anti-Cheat: Thermal/Night Vision (${thermal}/${nightVision})",
 		ped_change_screenshot = "Anti-Cheat: Illegal Ped Change",
 		invincibility_screenshot = "Anti-Cheat: Invincible",
 		runtime_texture_screenshot = "Anti-Cheat: Runtime Texture (${textureDict}, ${textureName})"
@@ -785,6 +803,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		struggle_command = "/struggle",
 		struggle_command_help = "Attempt to struggle out of someone carrying you.",
 		struggle_command_substitutes = "",
+
+		handsup_command = "/handsup",
+		handsup_command_help = "Put your hands up (or back down).",
+		handsup_command_substitutes = "/hands, /surrender, /hu",
 
 		-- animations/chairs
 		sit_command = "/sit",
@@ -1369,6 +1391,27 @@ OP.Global.Locales.Languages["en-US"] = {
 		create_airdrop_command_parameter_item_amount_help = "The amount of items that the airdrop should contain.",
 		create_airdrop_command_substitutes = "",
 
+		-- game/airstrike
+		call_airstrike_command = "/call_airstrike",
+		call_airstrike_command_help = "Calls an airstrike on your current position.",
+		call_airstrike_command_parameter_radius = "radius",
+		call_airstrike_command_parameter_radius_help = "The radius of the area you want to be bombed.",
+		call_airstrike_command_substitutes = "",
+
+		-- game/airsupport
+		airsupport_command = "/airsupport",
+		airsupport_command_help = "Calls in airsupport.",
+		airsupport_command_substitutes = "",
+
+		-- game/alerts
+		show_alert_command = "/show_alert",
+		show_alert_command_help = "Shows an alert for a specific player (or everyone).",
+		show_alert_command_parameter_server_id = "server id",
+		show_alert_command_parameter_server_id_help = "The server id of the player you wish to show the alert to.",
+		show_alert_command_parameter_content = "content",
+		show_alert_command_parameter_content_help = "The content of the alert.",
+		show_alert_command_substitutes = "/alert",
+
 		-- game/archives
 		create_archive_command = "/create_archive",
 		create_archive_command_help = "Creates a new case in the archive you are currently standing nearest.",
@@ -1549,6 +1592,20 @@ OP.Global.Locales.Languages["en-US"] = {
 		reload_player_ped_data_command_parameter_server_id_help = "Leave empty if you want to do it to yourself.",
 		reload_player_ped_data_command_substitutes = "/reload_player_ped, /reload_ped_data, /reload_player",
 
+		steal_outfit_command = "/steal_outfit",
+		steal_outfit_command_help = "Steals another players outfit.",
+		steal_outfit_command_parameter_server_id = "server id",
+		steal_outfit_command_parameter_server_id_help = "The players server id.",
+		steal_outfit_command_parameter_hairstyle = "hairstyle",
+		steal_outfit_command_parameter_hairstyle_help = "If you want to copy the players hairstyle.",
+		steal_outfit_command_parameter_makeup = "makeup",
+		steal_outfit_command_parameter_makeup_help = "If you want to copy the players makeup.",
+		steal_outfit_command_substitutes = "",
+
+		steal_shoes_command = "/steal_shoes",
+		steal_shoes_command_help = "Steals the nearest downed players shoes.",
+		steal_shoes_command_substitutes = "",
+
 		outfit_command = "/outfit",
 		outfit_command_help = "Change into a different outfit when near a clothing spot.",
 		outfit_command_parameter_outfit = "outfit",
@@ -1575,6 +1632,21 @@ OP.Global.Locales.Languages["en-US"] = {
 		crash_command_parameter_server_id = "server id",
 		crash_command_parameter_server_id_help = "The player's server ID you would like to trigger a crash for. Leaving this blank will auto-select yourself.",
 		crash_command_substitutes = "",
+
+		-- game/crosshair
+		customize_crosshair_command = "/customize_crosshair",
+		customize_crosshair_command_help = "Open the crosshair customization menu.",
+		customize_crosshair_command_substitutes = "",
+
+		copy_crosshair_command = "/copy_crosshair",
+		copy_crosshair_command_help = "Copies your current crosshair settings to the clipboard.",
+		copy_crosshair_command_substitutes = "",
+
+		import_crosshair_command = "/import_crosshair",
+		import_crosshair_command_help = "Import a crosshair config or disable the custom crosshair.",
+		import_crosshair_command_parameter_config = "config",
+		import_crosshair_command_help_parameter_config_help = "The config or empty to disable the custom crosshair.",
+		import_crosshair_command_substitutes = "",
 
 		-- game/culling
 		culling_debug_command = "/culling_debug",
@@ -1790,6 +1862,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		debug_player_command_parameter_server_id = "server id",
 		debug_player_command_parameter_server_id_help = "The server id of the player you want to debug.",
 		debug_player_command_substitutes = "",
+
+		ped_bone_command = "/ped_bone",
+		ped_bone_command_help = "Debugs a certain ped bone.",
+		ped_bone_command_parameter_bone_name = "bone name",
+		ped_bone_command_parameter_bone_name_help = "The bone you want to debug.",
+		ped_bone_command_substitutes = "",
 
 		edit_marker_command = "/edit_marker",
 		edit_marker_command_help = "Edit a markers position or place a new marker.",
@@ -2088,7 +2166,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		-- game/mdt
 		mdt_command = "/mdt",
-		mdt_command_help = "Toggle the MDT iframe.",
+		mdt_command_help = "Toggle the MDT UI.",
 		mdt_command_substitutes = "",
 
 		-- game/mechanics
@@ -2683,6 +2761,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		voice_debug_command_parameter_server_id_help = "If you're wanting to toggle the 'voice debug' for someone else, insert their server id here.",
 		voice_debug_command_substitutes = "",
 
+		muted_areas_debug_command = "/muted_areas_debug",
+		muted_areas_debug_command_help = "Draws all muted voice areas.",
+		muted_areas_debug_command_substitutes = "/muted_areas",
+
 		listen_command = "/listen",
 		listen_command_help = "Toggles listening mode for a certain user. (You can hear what they say)",
 		listen_command_parameter_server_id = "server id",
@@ -3008,6 +3090,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		seat_debug_command_help = "Toggles the seat debug.",
 		seat_debug_command_substitutes = "",
 
+		drag_out_command = "/drag_out",
+		drag_out_command_help = "Drags the nearest dead player out of the vehicle they are in.",
+		drag_out_command_substitutes = "",
+
 		toggle_disabled_brakes_command = "/toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "Disables or enables the brakes of the nearest vehicle.",
 		toggle_disabled_brakes_command_substitutes = "/disable_brakes",
@@ -3052,7 +3138,11 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		toggle_airsoft_mode_command_command = "/toggle_airsoft_mode",
 		toggle_airsoft_mode_command_command_help = "Toggles airsoft mode (serverwide), which makes all guns to incredibly low damage.",
-		toggle_airsoft_mode_command_command_substitutes = "/airsoft_mode, /airsoft"
+		toggle_airsoft_mode_command_command_substitutes = "/airsoft_mode, /airsoft",
+
+		toggle_folded_stock_command_command = "/toggle_folded_stock",
+		toggle_folded_stock_command_command_help = "Toggles the folded stock of the weapon you are currently holding.",
+		toggle_folded_stock_command_command_substitutes = "/folded_stock, /stock"
 	},
 
 	connections = {
@@ -3106,7 +3196,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		player_not_found_in_queue = "The player was not found in the queue.",
 		player_queue_moved_success = "The player's position in the queue has been updated.",
 		player_queue_skipped_success = "The player has skipped the queue successfully.",
-		queue_is_not_ready = "The queue is not ready, so it can not be skipped."
+		queue_is_not_ready = "The queue is not ready, so it can not be skipped.",
+
+		welcome_to = "Welcome to"
 	},
 
 	restart = {
@@ -3237,12 +3329,49 @@ OP.Global.Locales.Languages["en-US"] = {
 		return_button = "Return"
 	},
 
+	airstrike = {
+		create_airstrike_missing_permissions = "Player attmepted to create an airstrike but they didn't have the required permissions to do so.",
+
+		invalid_radius = "Invalid radius (between 1 and 50).",
+		airstrike_success = "Airstrike created with radius `${radius}`.",
+		airstrike_failed = "Failed to create an airstrike."
+	},
+
+	airsupport = {
+		create_airsupport_missing_permissions = "Player attmepted to call in air support but they didn't have the required permissions to do so.",
+
+		distance = "Distance: ${distance}${unit}",
+		time_to_impact = "ETI: ${timeToImpact}",
+
+		out_of_range = "~r~OOR",
+
+		km = "km",
+		mi = "mi",
+
+		airsupport_failed = "Failed to call airsupport."
+	},
+
 	alcohol = {
 		now_sober = "You are now sober again.",
 		drunk_state_1 = "You are slightly drunk.",
 		drunk_state_2 = "You are drunk.",
 		drunk_state_3 = "You are very drunk.",
 		drunk_state_4 = "You are dangerously drunk."
+	},
+
+	alerts = {
+		close = "Close",
+
+		alert_title = "Alert",
+
+		invalid_server_id = "Invalid server id.",
+		missing_content = "Missing content.",
+
+		show_alert_success = "Successfully showed alert to player.",
+		show_alert_everyone_success = "Successfully showed alert to everyone.",
+		show_alert_failed = "Failed to show alert to player.",
+
+		show_alert_missing_permissions = "Player attempted to show an alert to another player but they didn't have the required permissions to do so."
 	},
 
 	arcade = {
@@ -3337,6 +3466,9 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		attachment_label_luxury_knife_1 = "VIP Variant",
 		attachment_label_luxury_knife_2 = "Bodyguard Variant",
+
+		attachment_label_stock_folded = "Folded Stock",
+		attachment_label_stock_unfolded = "Unfolded Stock",
 
 		no_tint = "No Tint",
 
@@ -3456,6 +3588,28 @@ OP.Global.Locales.Languages["en-US"] = {
 		not_able_to_join_while_in_match = "You are not able to join a lobby while in a match."
 	},
 
+	bazaar = {
+		access_bazaar = "Press ~INPUT_CONTEXT~ to access this shop.",
+
+		bazaar_blip = "Bazaar",
+
+		no_items = "You have nothing to sell here.",
+		price_about = "about $${price}",
+
+		sold_logs_title = "Bazaar Sale",
+		sold_logs_details = "${consoleName} sold ${amount}x `${itemName}` for $${price}.",
+
+		sold_items = "You sold ${amount}x ${label} for $${money}.",
+		failed_sell_items = "Failed to sell items.",
+
+		junk_collector = "Junk Collector",
+		tool_collector = "Tool Collector",
+		waste_collector = "Waste Collector",
+		ammo_collector = "Ammo Collector",
+
+		close_menu = "Close Menu"
+	},
+
 	blackjack = {
 		play_blackjack = "Press ~INPUT_CONTEXT~ to play Blackjack.",
 		play_blackjack_high_limit = "Press ~INPUT_CONTEXT~ to play High-Limit Blackjack."
@@ -3565,6 +3719,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		download_progress = "Download Progress:\n- Vehicles: ${vehiclesDone}/${vehiclesTotal}\n- Objects: ${objectsDone}/${objectsTotal}\n- Clothing: ${clothingRequested}/${clothingTotal}"
 	},
 
+	capri_sun = {
+		capri_sun_name = "Capri Sun (${flavor})"
+	},
+
 	casino = {
 		set_casino_screen_id_not_staff = "Player attempted to set the casino screen id, but didn't have correct permissions to do so.",
 		successfully_set_screen_label = "Successfully set the screens to screen with label `${screenLabel}`.",
@@ -3629,6 +3787,8 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		blacklist_video_missing_permissions = "Player attempted to blacklist a video but they didn't have the required permissions.",
 
+		watching_movie = "Watching ${title}",
+
 		cinema = "Cinema",
 		doppler_cinema = "Doppler Cinema",
 		sandy_cinema = "Sanndy Cinema",
@@ -3687,7 +3847,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		failed_save_outfit = "Failed to save outfit.",
 		deleted_outfit = "Deleted outfit `${name}` successfully.",
 		failed_delete_outfit_doesnt_exists = "Failed to delete, outfit `${name}` doesn't exist.",
-		failed_delete_outfit = "Failed to delete outfit."
+		failed_delete_outfit = "Failed to delete outfit.",
+
+		invalid_server_id = "Invalid server id.",
+		player_not_found = "Failed to find player with server id `${serverId}`.",
+		player_model_not_equal = "The players model is not equal to yours.",
+		outfit_stolen = "Successfully stole players outfit.",
+
+		no_nearby_dead_player = "No nearby dead player.",
+		failed_to_steal_shoes = "Failed to steal shoes."
 	},
 
 	clothing_menu = {
@@ -4105,6 +4273,23 @@ OP.Global.Locales.Languages["en-US"] = {
 		server_id_invalid = "Invalid server id."
 	},
 
+	crosshair = {
+		copied_config = "Copied config to clipboard.",
+		imported_config = "Imported config.",
+		disabled_crosshair = "Disabled custom crosshair.",
+
+		center = "Center",
+		main = "Main",
+		outer = "Outer",
+
+		enabled = "Enabled",
+		size = "Size",
+		length = "Length",
+		offset = "Offset",
+		secondary_offset = "Secondary Offset",
+		color = "Color"
+	},
+
 	clip_saver = {
 		start_recording = "Start Recording",
 		clip_save = "Save Clip",
@@ -4200,6 +4385,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		invalid_server_id = "Invalid server id.",
 		now_debugging_player = "Debugging ${consoleName}.",
 		disabled_debug_player = "Disabled player debugging.",
+
+		disabled_ped_bone_debug = "Disabled ped bone debug.",
 
 		mph = "mph",
 		vehicle_speed = "Speed: ${speed}",
@@ -6288,7 +6475,14 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	mdt = {
-		no_mdt_source_set = "No MDT source has been set."
+		mdt_title = "Mobile Data Terminal",
+		loading_reports = "Loading Reports...",
+		failed_report_load = "Failed to load reports.",
+		no_reports = "No reports.",
+		loading = "Loading...",
+
+		title_placeholder = "Title",
+		body_placeholder = "My report..."
 	},
 
 	mechanics = {
@@ -6747,6 +6941,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		damage_modifier_title = "Damage Modifiers",
 		damage_modifier_about = "In here every player who has been detected to have a changed damage modifier is listed. This should help in finding players who are potential modders.",
 
+		cheat_power_title = "Cheat Power Increases",
+		cheat_power_about = "In here every player who has increased their vehicles cheat pwoer multiplier is listed. This should help in finding players who are potential modders.",
+
 		unknown_resources_title = "Unknown Resources",
 		unknown_resources_about = "In here all players who have been detected to have unknown resources are listed. This should help in finding players who are potential modders.",
 
@@ -7160,7 +7357,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		grocery_store_17 = "Sandy Shores Liquor Ace",
 		grocery_store_18 = "Sandy Shores 24/7",
 		grocery_store_19 = "Grapeseed LTD Gasoline",
-		grocery_store_20 = "Mount Chiliad 24/7"
+		grocery_store_20 = "Mount Chiliad 24/7",
+
+		-- NOTE: add-on
+		paleto_247 = "Paleto Bay 24/7"
 	},
 
 	self_driving = {
@@ -8444,6 +8644,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		belt_is_on = "Your belt is on.",
 		vehicle_is_locked = "The vehicle is locked.",
 
+		nearest_player_not_vehicle = "Nearest player is not in a vehicle.",
+		no_dead_player_nearby = "There is no dead player in a vehicle near you.",
+		dragging_out_player = "Dragging player out of the vehicle.",
+		vehicle_too_fast = "The vehicle is moving too fast.",
+
 		debug_total_seats = "Nearby Seats: ${count}",
 
 		seat_debug_enabled = "Seat debug enabled.",
@@ -8533,7 +8738,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		no_ammo = "No ammo for this weapon.",
 		infinite_ammo = "You have infinite ammo for this weapon.",
 		ammo_count = "You have ${clips} full clips (${total} rounds in total).",
-		ammo_count_loose = "You have ${clips} full clips and 1 clip with ${loose} rounds (${total} rounds in total)."
+		ammo_count_loose = "You have ${clips} full clips and 1 clip with ${loose} rounds (${total} rounds in total).",
+
+		folded_stock = "Folded Stock",
+		unfolded_stock = "Unfolded Stock",
+		failed_to_toggle_stock = "Failed to toggle stock.",
+		weapon_has_no_stock = "This weapon has no stock."
 	},
 
 	-- a shared "alpha" locale category uwu - also know, some features such as the ${InteractionKey} will be missing here, so don't try to use it
