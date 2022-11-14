@@ -388,6 +388,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		nitro_boost_feature = "Nitro Boost",
 		no_nearby_vehicles_feature = "No Nearby Vehicles",
 		peeking_feature = "Peeking",
+		roll_control_feature = "Roll Control",
 		speed_boost_feature = "Speed Boost",
 		speed_up_progress_bar_feature = "Speed Up Progress Bar",
 		sticky_feet_feature = "Sticky Feet",
@@ -622,8 +623,8 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	anti_cheat = {
-		illegal_client_event = "Triggered an illegal client event with name '${eventName}'.",
-		illegal_server_event = "Triggered an illegal server event with name '${eventName}'.",
+		illegal_client_event = "Go directly to jail. Do not pass go. Do not collect $200.",
+		illegal_server_event = "Go directly to jail. Do not pass go. Do not collect $200.",
 		illegal_weapon = "Spawned an illegal weapon with the name '${weaponLabel}'.",
 		illegal_alpha = "Modified the player peds alpha value (${alphaValue}).",
 		semi_god_mode = "Detected semi god mode.",
@@ -650,6 +651,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		vehicle_modification_ban = "You couldn't find the headlight fluid for your car.",
 		thermal_night_vision_ban = "Brighter Nights is not allowed.",
 		blacklisted_command_ban = "I'm sorry, but you do not have permissions to perform this command. Please contact the server administrators if you believe that this is an error.",
+		text_entry_ban = "Inspecting Element is not permitted on this browser.",
+		player_blips_ban = "Airspace is full, UAV unavailable.",
+		vehicle_spam_ban = "Counter terrorists win.",
+		damage_modifier_ban = "Your power level cannot be over 9000.",
 
 		honeypot_ban = "You attempted to toggle your creative mode, but didn't have the permissions to do so.",
 
@@ -707,6 +712,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		illegal_vehicle_spawn_screenshot = "Anti-Cheat: Spawned Vehicle (${modelName})",
 		vehicle_modification_screenshot = "Anti-Cheat: Modified Vehicle (${modType}: ${previousValue}->${modValue})",
 		thermal_night_vision_screenshot = "Anti-Cheat: Thermal/Night Vision (${thermal}/${nightVision})",
+		text_entry_screenshot = "Anti-Cheat: Text Entry (${textEntry})",
+		player_blips_screenshot = "Anti-Cheat: Player Blips",
 		ped_change_screenshot = "Anti-Cheat: Illegal Ped Change",
 		invincibility_screenshot = "Anti-Cheat: Invincible",
 		runtime_texture_screenshot = "Anti-Cheat: Runtime Texture (${textureDict}, ${textureName})"
@@ -1382,6 +1389,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		tp_here_command_parameter_server_id_help = "The server id of the player you wish to teleport.",
 		tp_here_command_substitutes = "",
 
+		tp_to_command = "/tp_to",
+		tp_to_command_help = "Teleports a player to another player.",
+		tp_to_command_parameter_source_id = "source id",
+		tp_to_command_parameter_source_id_help = "The player you want to teleport.",
+		tp_to_command_parameter_destination_id = "destination id",
+		tp_to_command_parameter_destination_id_help = "The player you want to teleport to.",
+		tp_to_command_substitutes = "",
+
 		-- game/airdrops
 		create_airdrop_command = "/create_airdrop",
 		create_airdrop_command_help = "Create an airdrop.",
@@ -1665,6 +1680,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		debug_command_help = "Toggle the entity-debugger. This will show some general information about nearby entities.",
 		debug_command_substitutes = "",
 
+		npc_debug_command = "/npc_debug",
+		npc_debug_command_help = "Debugs all non animal npc's around you.",
+		npc_debug_command_substitutes = "/npcs",
+
 		network_debug_command = "/network_debug",
 		network_debug_command_help = "Toggle the entity-network-debugger. This will show some network information about nearby entities.",
 		network_debug_parameter_minimal = "minimal",
@@ -1863,6 +1882,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		debug_player_command_parameter_server_id_help = "The server id of the player you want to debug.",
 		debug_player_command_substitutes = "",
 
+		distance_command = "/distance",
+		distance_command_help = "Calculate the distance between 2 points.",
+		distance_command_parameter_groundify = "groundify",
+		distance_command_parameter_groundify_help = "Groundify the point.",
+		distance_command_substitutes = "/dist",
+
+		get_command = "/get",
+		get_command_help = "Prints the result of getter natives matching your search.",
+		get_command_parameter_search = "search",
+		get_command_parameter_search_help = "The name or part of the name of the native.",
+		get_command_substitutes = "/native",
+
 		ped_bone_command = "/ped_bone",
 		ped_bone_command_help = "Debugs a certain ped bone.",
 		ped_bone_command_parameter_bone_name = "bone name",
@@ -1953,6 +1984,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		frisk_command = "/frisk",
 		frisk_command_help = "Frisk the nearest person for weapons.",
 		frisk_command_substitutes = "",
+
+		-- game/fruits
+		debug_trees_command = "/debug_trees",
+		debug_trees_command_help = "Debugs all trees in the world.",
+		debug_trees_command_substitutes = "",
 
 		-- game/gas_masks
 		gas_debug_command = "/gas_debug",
@@ -3056,6 +3092,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		flip_command_help = "Roll over a flipped vehicle.",
 		flip_command_substitutes = "",
 
+		toggle_roll_control_command = "/toggle_roll_control",
+		toggle_roll_control_command_help = "Toggle the roll and air control.",
+		toggle_roll_control_command_substitutes = "/roll_control",
+
 		door_command = "/door",
 		door_command_help = "Toggle a vehicle's door.",
 		door_command_parameter_door_id = "door id (1-6)",
@@ -3297,7 +3337,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		teleport_player_here = "Teleport Player To You",
 		failed_teleport_to_player = "Failed to teleport to player.",
 		failed_teleport_player_here = "Failed to teleport player to you.",
-		invalid_target_server_id = "Invalid target server id."
+		invalid_target_server_id = "Invalid target server id.",
+		invalid_destination_server_id = "Invalid destination server id.",
+		invalid_source_server_id = "Invalid source server id.",
+		failed_teleport_player_to_player = "Failed to teleport player to player.",
+		teleported_player_to_player = "Teleported player to player.",
+
+		teleport_player_missing_permissions = "Player attempted to teleport a player, but they did not have the correct permissions to do so."
 	},
 
 	afk = {
@@ -3733,6 +3779,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_screen_label_already_set_to = "The screen label is already set to `${screenLabel}`.",
 		only_available_in_the_casino = "You can only do this while inside the casino.",
 		casino_blip = "Casino"
+	},
+
+	cayo_perico = {
+		approaching_out_of_bounds = "You are approaching the map bounds",
+		turn_around_bounds = "Turn around to avoid breaking your vehicle and getting stuck.",
+		out_of_bounds = "You are out of bounds"
 	},
 
 	cayo_perico_world = {
@@ -4281,13 +4333,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		center = "Center",
 		main = "Main",
 		outer = "Outer",
+		kill = "Kill Flash",
 
 		enabled = "Enabled",
 		size = "Size",
 		length = "Length",
 		offset = "Offset",
 		secondary_offset = "Secondary Offset",
-		color = "Color"
+		rotation = "Rotation",
+		color = "Color",
+		duration = "Duration (ms)"
 	},
 
 	clip_saver = {
@@ -4385,6 +4440,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		invalid_server_id = "Invalid server id.",
 		now_debugging_player = "Debugging ${consoleName}.",
 		disabled_debug_player = "Disabled player debugging.",
+
+		distance = "Distance: ${distance}m",
+		distance_first = "Stored first position.",
+
+		get_search_invalid = "Invalid search (at least 2 characters).",
 
 		disabled_ped_bone_debug = "Disabled ped bone debug.",
 
@@ -4690,6 +4750,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		frisk_category_2 = "Seems to have a weapon.",
 		frisk_category_3 = "Seems to Definitely have a large weapon.",
 		frisk_category_4 = "Definitely has a big weapon."
+	},
+
+	fruits = {
+		pick_fruit = "[${InteractionKey}] Pick ${fruit}",
+		picking_fruit = "Picking ${fruit}",
+
+		shake_tree = "Press ~INPUT_CONTEXT~ to shake the tree.",
+		shaking_tree = "Shaking Tree",
+
+		tree_klonk = "Something fell from the tree and hit your head."
 	},
 
 	gas_masks = {
@@ -5038,6 +5108,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		fishing_store = "Fishing Store",
 		los_santos_golf_club = "Los Santos Golf Club",
 		arcade_bar = "Arcade Bar",
+		grain_mill = "Grain Mill",
 		pd_prefix = "PD",
 		ems_prefix = "EMS",
 		government_prefix = "Gov",
@@ -5065,6 +5136,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		shredder_title = "Shredder",
 		shredder_description = "Warning: Any item moved in here will be deleted instantly and cannot be retrieved.",
 
+		npc_vehicle_inventory = "NPC Inventory",
+
 		store_help = "To purchase something, drag an item from the secondary inventory into your own.",
 		store_tax = "Store Tax",
 		store_tax_percentage = "${tax}%",
@@ -5077,6 +5150,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		broken_food = "This item is spoiled.",
 		broken_drugs = "This item is expired.",
 		vape_empty = "This vape is empty.",
+
+		craft_combine = "Craft <i>${output}</i>",
+		combining = "Crafting",
+
+		carve_jack_o_lantern = "Carve <i>Jack-o-lantern</i>",
+		crush_cocoa_beans = "Crush <i>Cocoa Beans</i>",
+		mix_hot_chocolate = "Mix <i>Hot Chocolate</i>",
 
 		search = "Search",
 		amount = "Amount",
@@ -5428,6 +5508,31 @@ OP.Global.Locales.Languages["en-US"] = {
 		absinthe_description = "Warning: Contains alcohol. Let children only drink moderate amounts.",
 		wine = "Wine",
 		wine_description = "Grape juice.",
+
+		moonshine = "Moonshine",
+		moonshine_description = "The best way to get drunk without the government knowing.",
+		yeast_packet = "Yeast Packet",
+		yeast_packet_description = "A packet of yeast, used to make alcohol.",
+
+		kimchi = "Kimchi",
+		kimchi_description = "A spicy Korean side dish made from fermented vegetables.",
+		fish_sauce = "Fish Sauce",
+		fish_sauce_description = "A condiment made from fish that has been allowed to ferment.",
+
+		pumpkin = "Pumpkin",
+		pumpkin_description = "A large orange vegetable that is used for Halloween.",
+		cabbage = "Cabbage",
+		cabbage_description = "Perfect for making homemade kimchi.",
+
+		cocoa_beans = "Cocoa Beans",
+		cocoa_beans_description = "Small beans that are used to make chocolate.",
+		cocoa_powder = "Cocoa Powder",
+		cocoa_powder_description = "A powder made from cocoa beans.",
+		hot_chocolate = "Hot Chocolate",
+		hot_chocolate_description = "A warm drink made from cocoa powder and milk.",
+
+		jack_o_lantern = "Jack O' Lantern",
+		jack_o_lantern_description = "A pumpkin with a face carved into it.",
 
 		cigarette = "Cigarette",
 		cigarette_description = "If you don't smoke you're a pussy dawg",
@@ -6671,6 +6776,22 @@ OP.Global.Locales.Languages["en-US"] = {
 		server_tps_response = "${tps}"
 	},
 
+	moonshine = {
+		fill_chamber = "[${InteractionKey}] Fill Chamber",
+		collect_moonshine = "[${InteractionKey}] Collect Moonshine",
+		fermenting = "Fermenting ${percentage}%",
+		filling_chamber = "Filling Chamber",
+
+		not_enough_items = "You don't have enough items to fill the chamber.",
+		something_went_wrong = "Something went wrong.",
+		failed_fill = "Failed to fill the chamber.",
+		failed_empty = "Failed to collect moonshine.",
+
+		press_to_sell_moonshine = "Press ~INPUT_CONTEXT~ to sell Moonshine.",
+		local_not_interested = "The local doesn't seem to be interested right now.",
+		selling_moonshine = "Selling Moonshine."
+	},
+
 	nos = {
 		press_to_install_nitro_tank = "Press ~INPUT_CONTEXT~ to install Nitro Tank.",
 		installing_nitro_tank = "Installing Nitro Tank",
@@ -7236,6 +7357,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		radio_sound_effects_current = "The volume of the radio sound effects is currently set to `${radioSoundEffects}`.",
 		radio_sound_effects_current_default = "The volume of the radio sound effects is currently default.",
 
+		radio_missing_last_freq = "You don't have a radio to join the last frequency.",
+
 		radio_debug_failed = "Failed to toggle radio debug.",
 		radio_debug_off = "Successfully toggled radio debug off.",
 		radio_debug_on = "Successfully toggled radio debug on.",
@@ -7486,6 +7609,10 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		armor_ok = "Armor: ~g~${armor} / ${maxArmor}~w~",
 		armor_bad = "Armor: ~r~${armor} / ${maxArmor}~w~",
+
+		speed = "Speed: ${speed}${unit}",
+		speed_mph = "mph",
+		speed_kmh = "kmh",
 
 		exit_spectate = "Press ~g~${InteractionKey}~w~ to exit spectator mode",
 
