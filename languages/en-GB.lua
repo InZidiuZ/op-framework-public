@@ -423,8 +423,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		repaired_vehicle_logs_title = "Repaired Vehicle",
 		repaired_vehicle_logs_details = "${consoleName} repaired the vehicle they were in.",
 
-		unable_to_enter_vehicle_while_dead = "You are unable to enter a vehicle while dead.",
-		you_are_already_in_a_vehicle = "You are already in a vehicle.",
+		unable_to_enter_vehicle_while_dead = "You are unable to enter a vehicle while dead.",		
 		the_closest_vehicle_had_no_free_seats = "The closest vehicle had no free seats.",
 		there_are_no_nearby_vehicles = "There are no nearby vehicles.",
 		entered_vehicle = "Attempted to enter nearby ${vehicleName}.",
@@ -654,6 +653,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		remove_detection_area_not_staff = "Player attempted to remove a detection area, but didn't have correct permissions to do so.",
 		detection_area_close = "[${InteractionKey}] Remove Detection Area (${areaId})",
 		detection_area = "Detection Area (${areaId})",
+		
+		ban_notification_title = "Anti-Cheat",
+		ban_notification = "Banned ${consoleName} for `${banReason}`.",
 
 		fast_movement_ban = "Flying is not enabled on this server.",
 		invincibility_ban = "You are not the Black Knight, you may not be invincible.",
@@ -1827,6 +1829,14 @@ OP.Global.Locales.Languages["en-GB"] = {
 		delete_entity_command_parameter_network_id_help = "The network id of the entity you want to delete.",
 		delete_entity_command_substitutes = "/de",
 
+		move_entity_command = "/move_entity",
+		move_entity_command_help = "Moves an entity with a certain network id to your current position.",
+		move_entity_command_parameter_network_id = "network id",
+		move_entity_command_parameter_network_id_help = "The network id of the entity you want to move.",
+		move_entity_command_parameter_ground = "ground",
+		move_entity_command_parameter_ground_help = "If the entity should be placed on the ground properly (vehicles only).",
+		move_entity_command_substitutes = "/mv",
+
 		fake_lag_command = "/fake_lag",
 		fake_lag_command_help = "Create fake lag.",
 		fake_lag_command_parameter_counter = "counter",
@@ -2309,6 +2319,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		check_vehicle_upgrades_command = "/check_vehicle_upgrades",
 		check_vehicle_upgrades_command_help = "Checks if the nearby vehicle has an engine 5 upgrade.",
 		check_vehicle_upgrades_command_substitutes = "/check_upgrades, /upgrades",
+
+		-- game/mining
+		mining_debug_command = "/mining_debug",
+		mining_debug_command_help = "Toggle the mining debug.",
+		mining_debug_command_substitutes = "",
 
 		-- game/miscellaneous
 		-- these two commands should remain the same on all languages in case someone joins in with a language they don't know.
@@ -3492,7 +3507,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		spawned_vehicle = "Spawned vehicle.",
 		spawner_on_timeout = "The vehicle spawner is on a timeout. Please try again.",
 		spawn_area_not_clear = "The spawn area is not clear.",
-		return_button = "Return"
+		return_button = "Return",
+		deposit = "$${amount} Deposit",
+		no_deposit = "No Deposit",
+		deposit_not_enough_money = "You do not have enough money to pay the deposit."
 	},
 
 	airstrike = {
@@ -3699,6 +3717,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 	},
 
 	audio = {
+		audio_id = "Audio ${audioId}",
 		illegal_sound_effect = "Attempted to tell other clients to play an external audio.",
 		url_invalid = "The provided URL is not valid. It must be uploaded on a secure connection. (https://)",
 		url_missing = "Please add the URL to the audio you are trying to play.",
@@ -3859,7 +3878,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 	boomboxes = {
 		boombox = "Boombox",
 		play = "Play",
-		pause =" Pause",
+		pause ="Pause",
 		skip_song = "Skip Song",
 		volume = "Volume",
 		music = "Music",
@@ -4095,6 +4114,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		clothingstore = "Clothing Store",
 		barbershop = "Barbershop",
+		changing_area = "Changing Area",
 
 		switch_outfit = "Change into this outfit.",
 		replace_outfit = "Replace this outfit.",
@@ -4631,6 +4651,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		delete_entity_failed = "Failed to delete entity.",
 		delete_entity_no_permissions = "The player attempted to delete an entity without proper permission.",
 
+		move_entity_success = "Successfully moved entity with network id ${networkId}.",
+		move_entity_failed = "Failed to move entity.",
+		move_entity_no_permissions = "The player attempted to move an entity without proper permission.",
+
 		fake_lag_updated = "The fake lag counter has been updated to `${counter}`.",
 		fake_lag_already_set_to = "The fake lag counter is already set to `${counter}`.",
 		fake_lag_enabled = "The fake lag has been enabled with counter `${counter}`.",
@@ -5040,6 +5064,15 @@ OP.Global.Locales.Languages["en-GB"] = {
 		use_grill = "[${InteractionKey}] Use Grill"
 	},
 
+	gumballs = {
+		use_gumball_machine = "[${InteractionKey}] Insert Coin",
+		using_gumball_machine = "Inserting Coin",
+		not_enough_money = "You don't have enough cash to buy a gumball.",
+		something_went_wrong = "Something went wrong while trying to buy a gumball.",
+
+		flavor = "Gumball (${flavor})"
+	},
+
 	gun_running = {
 		insert_key = "Insert Key: ${key}",
 		wrong_key = "You used the wrong key.",
@@ -5330,7 +5363,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 	interiors = {
 		in_interior = "In Interior: ${interiorId} (${portals} portals).",
 		total_interiors = "Total Interiors: ${totalInteriors} (${totalInteriorPortals} total portals).",
-		total_unloaded_interiors = "Total Unloaded Interiors: ${totalUnloadedInteriors} (${totalUnloadedInteriorPortals} total portals)."
+		total_unloaded_interiors = "Total Unloaded Interiors: ${totalUnloadedInteriors} (${totalUnloadedInteriorPortals} total portals).",
+		portal_text = "id=${portalId} f=${flags}"
 	},
 
 	inventory = {
@@ -5600,6 +5634,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		bean_machine_delivery = "Bean Machine Delivery",
 		bean_machine_delivery_description = "A Bag full of wonderful treats from a little coffeeshop uptown.",
 
+		ear_defenders = "Ear Defenders",
+		ear_defenders_description = "Used to protect your ears from loud noises.",
+
 		raw_morganite = "Raw Morganite",
 		raw_morganite_description = "Morganite in its natural form, fresh from the mine.",
 		raw_ruby = "Raw Ruby",
@@ -5682,7 +5719,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		refillable_bottle_description = "Save the turtles on god for real for real.",
 
 		capri_sun = "Capri Sun",
-		capri_sun_description = "Delicious treat from your childhood.",
+		capri_sun_description = "Careful not to poke a hole through the back.",
+
+		gumball = "Gumball",
+		gumball_description = "A gumball, what else do you want me to say?",
 
 		water = "Water",
 		water_description = "Danger! Dihydrogen monoxide is colorless and odorless. Accidental inhalation of DHMO may be fatal. Prolonged exposure to its solid form causes severe tissue damage. Symptoms of DHMO ingestion can include excessive sweating and urination, and possibly a bloated feeling, nausea, vomiting and body electrolyte imbalance.",
@@ -5691,7 +5731,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		belgian_fries = "Belgian Fries",
 		belgian_fries_description = "For improved taste, DM @Giv3n#0753 messaging him nothing but \"fritas\".",
 		coke = "Coke",
-		coke_description = "Pablo?",
+		coke_description = "It's like Pepsi, but better!",
 		wonder_waffle = "Wonder Waffle",
 		wonder_waffle_description = "Vegan, lactose free, dairy free, egg free, gluten free, organic, antibiotic free, soy free, no fructose, nut free, non GMA, sugar free, fat free and low carb",
 		cheeseburger = "Cheeseburger",
@@ -5704,8 +5744,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		sandwich_description = "It's vegan.",
 		taco = "Taco",
 		taco_description = "El Brayan's speciality.",
-		banana = "Banana",
-		banana_description = "sus",
 		smores = "S'mores",
 		smores_description = "yes",
 		tic_tac = "Tic Tac",
@@ -5713,7 +5751,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		pizza_slice = "Pizza Slice",
 		pizza_slice_description = "A Lil slice of the Za for ya.",
 		hot_dog = "Hot Dog",
-		hot_dog_description = "Gobble up this glizzy like it’ll be your last.",
+		hot_dog_description = "Gobble up this glizzy like it'll be your last.",
 		nachos = "Nachos",
 		nachos_description = "Nachos good enough for Encarnación!!",
 		vanilla_ice_cream = "Vanilla Ice Cream",
@@ -5830,7 +5868,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		antibiotics = "Antibiotics",
 		antibiotics_description = "Helping you get rid of those infections and parasites.",
 		pain_killers = "Pain Killers",
-		pain_killers_description = "It’s peak selling time lace, I need my drugs.",
+		pain_killers_description = "It's peak selling time lace, I need my drugs.",
 		weed_seeds = "Weed Seeds",
 		weed_seeds_description = "Grows the 420, bro",
 		weed_1q = "Weed 1q",
@@ -5857,8 +5895,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		boxing_gloves = "Boxing Gloves",
 		boxing_gloves_description = "Turns you into Rocky, but you probably won't get a sequel...",
-		leash = "Leash",
-		leash_description = "Nobody will know why you bought this, but they sure as hell will judge you for having it.",
+		leash = "Lead",
+		leash_description = "It's for taking the dog for a walk... At least that what you tell yourself",
 
 		shrooms = "Shrooms",
 		shrooms_description = "Someone said to put these on pizza, but now the pizza is putting itself on me... wait who am I?",
@@ -5869,16 +5907,16 @@ OP.Global.Locales.Languages["en-GB"] = {
 		fertilizer_description = "For a greener world.",
 
 		aluminium_powder = "Aluminium Powder",
-		aluminium_powder_description = "",
+		aluminium_powder_description = "A light, silvery-white to gray, odourless powder. May ignite in air when moist",
 		iron_oxide = "Iron Oxide Powder",
-		iron_oxide_description = "",
+		iron_oxide_description = "Rust Dust... or Fe2O3 if you wanna be fancy",
 
 		aluminium = "Aluminium",
 		aluminium_description = "Used for repairs and crafting.",
 		glass = "Glass",
 		glass_description = "Used for repairs and crafting.",
 		gold_bar = "Gold Bar",
-		gold_bar_description = "Used for repairs and crafting.",
+		gold_bar_description = "I wonder if a Piglin will traid an Eye of Ender for this.",
 		rubber = "Rubber",
 		rubber_description = "Used for repairs and crafting.",
 		scrap_metal = "Scrap Metal",
@@ -5887,7 +5925,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		steel_description = "Used for repairs and crafting.",
 
 		power_saw = "Power Saw",
-		power_saw_description = "Used for sawing things.",
+		power_saw_description = "One time I saw a Saw saw Salsa",
 
 		thermite = "Thermite",
 		thermite_description = "Highly volatile powder, do not sniff.",
@@ -6091,7 +6129,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		stop_sign = "Stop Sign",
 		stop_sign_description = "Can be placed anywhere in the world.",
 		bear_trap = "Bear Trap",
-		bear_trap_description = "Can be placed anywhere in the world.",
+		bear_trap_description = "Don't forget were you placed it",
 		barrier = "Barrier",
 		barrier_description = "Your standard construction barrier.",
 		traffic_barrier = "Traffic Barrier",
@@ -6125,7 +6163,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		tire_wall_description = "When you need cover but there is none.",
 
 		claymore = "Claymore",
-		claymore_description = "The ultimate anti-personnel mine.",
+		claymore_description = "The ultimate anti-personnel mine. You might get a call from 140.48 on the codec when near it.",
 
 		tv_stand = "TV Stand",
 		tv_stand_description = "Use this to prop a TV up anywhere you want.",
@@ -6236,7 +6274,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		arena_pill_description = "A strange pill that does even stranger things... Swallow at your own risk. Perhaps having a gun on you to protect from violent dreams would be wise.",
 
 		shovel = "Shovel",
-		shovel_description = "",
+		shovel_description = "Diggy Diggy Hole",
 
 		bank_rockfish = "Bank Rockfish",
 		black_and_yellow_rockfish = "Black and Yellow Rockfish",
@@ -8319,7 +8357,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		map_tier_1_description = "Looks like it was hand sketched on a napkin. Ignore the curious stain.",
 		map_tier_2_description = "This map is quite worn but it looks like it might lead to something decent.",
-		map_tier_3_description = "Very nice \"sparkly\" map with a \"100% Real\" Seal in the lower right hand corner. ",
+		map_tier_3_description = "Very nice \"sparkly\" map with a \"100% Real\" Seal in the lower right hand corner.",
 		map_tier_4_description = "This map looks more expensive than most treasures. Let's Go!!!!",
 
 		press_to_combine_pieces = "Press ~INPUT_CONTEXT~ to combine pieces of map ${mapTier}.",
@@ -9193,7 +9231,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		went_off_duty = "Went off-duty",
 		on_duty = "on duty",
 		off_duty = "off duty",
-		press_to_sign = "Press ~g~E ~w~to sign ",
+		press_to_sign = "Press ~g~E ~w~to sign",
 		open_vehicle_spawner = "Press ~g~E ~w~to open the vehicle spawner",
 		open_heli_spawner = "Press ~g~E ~w~to open the helicopter menu",
 		open_boat_spawner = "Press ~g~E ~w~to open the boat menu",
