@@ -6676,7 +6676,7 @@ OP.Global.Locales.Languages["de-DE"] = {
 		weapon_addon_stungun_description = "Zaptastischer Spaß für die ganze Familie!",
 
 		weapon_addon_m4 = "M4 Karabiner",
-		weapon_addon_m4_description = "\Genau aus diesem Grund wurde es der Polizei übergeben.",
+		weapon_addon_m4_description = "Genau aus diesem Grund wurde es der Polizei übergeben.",
 
 		weapon_addon_mp9 = "B&T MP9",
 		weapon_addon_mp9_description = "Klein und schnell, so wie die Person, die das hier hält...",
