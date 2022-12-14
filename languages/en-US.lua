@@ -2830,6 +2830,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		upgrade_vehicle_fully_command_help = "Upgrades the vehicle you are currently in fully.",
 		upgrade_vehicle_fully_command_substitutes = "",
 
+		random_vehicle_colors_command = "/random_vehicle_colors",
+		random_vehicle_colors_command_help = "Randomizes the colors of the vehicle you are currently in.",
+		random_vehicle_colors_command_parameter_lights = "lights",
+		random_vehicle_colors_command_parameter_lights_help = "If the lights should be randomized as well (xenon and neon).",
+		random_vehicle_colors_command_substitutes = "",
+
 		starve_command = "/starve",
 		starve_command_help = "Sets your food and thirst to 0.",
 		starve_command_substitutes = "",
@@ -3878,7 +3884,7 @@ OP.Global.Locales.Languages["en-US"] = {
 	boomboxes = {
 		boombox = "Boombox",
 		play = "Play",
-		pause =" Pause",
+		pause = "Pause",
 		skip_song = "Skip Song",
 		volume = "Volume",
 		music = "Music",
@@ -4626,6 +4632,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		coords = "Coords: ${coords}",
 		rotation = "Rotation: ${rotation}",
 		velocity = "Velocity: ${velocity}",
+		ground_material = "Ground Material: ${material}",
 		g_force = "G-Force: ${force}",
 		debug_print_f8 = "Debugging information has been printed in your F8 console.",
 		no_vehicle_bone = "No \"${boneName}\" bone",
@@ -6880,7 +6887,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		discord = "Discord",
 		framework = "Framework",
 		notice = "Notice",
-		language = "Language (${selected})",
+		language = "Language",
 
 		missing_character_creation_data = "Missing character creation data.",
 		bad_words = "There are some bad words in your character name or backstory.",
@@ -7564,6 +7571,13 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	pictures = {
 		selfie_description = "Picture of ${firstName} ${lastName}."
+	},
+
+	plants = {
+		cannot_place = "You cannot plant a ${plant} plant here.",
+		failed_plant = "Failed to plant a ${plant} plant.",
+
+		type_weed_seeds = "Weed"
 	},
 
 	player_scales = {
@@ -8360,7 +8374,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		map_tier_1_description = "Looks like it was hand sketched on a napkin. Ignore the curious stain.",
 		map_tier_2_description = "This map is quite worn but it looks like it might lead to something decent.",
-		map_tier_3_description = "Very nice \"sparkly\" map with a \"100% Real\" Seal in the lower right hand corner. ",
+		map_tier_3_description = "Very nice \"sparkly\" map with a \"100% Real\" Seal in the lower right hand corner.",
 		map_tier_4_description = "This map looks more expensive than most treasures. Let's Go!!!!",
 
 		press_to_combine_pieces = "Press ~INPUT_CONTEXT~ to combine pieces of map ${mapTier}.",
@@ -8943,6 +8957,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		error_withdrawing = "An error occurred while trying to withdraw your vehicle.",
 		withdraw_timeout = "Please wait a bit before trying to withdraw another vehicle.",
 		garage_in_use = "This garage is currently in use, please wait a moment.",
+		invalid_model = "Invalid or unknown vehicle model.",
 		withdraw_success = "Successfully withdrew your vehicle.",
 		vehicle_in_the_way = "There is a vehicle blocking the spawn point.",
 		vehicle_is_out = "Your vehicle is already out.",
@@ -8970,6 +8985,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		garage = "Garage",
 		retrieved_vehicle_logs_title = "Retrieved Vehicle",
 		retrieved_vehicle_logs_details = "${consoleName} retrieved vehicle with plate `${plate}` for ${price}.",
+
+		state_loading_model = "Loading Model...",
+		state_withdrawing = "Withdrawing...",
+		state_spawning = "Spawning...",
+		state_finalizing = "Finalizing...",
+
+		state_retrieve_searching = "Searching...",
+		state_retrieving = "Retrieving...",
+
+		state_storing = "Storing...",
+
+		state_loading = "Loading...",
 
 		vehicle_weight = "Weight: ${weight}",
 		last_garage_letter = "Last - Garage ${letter}",
