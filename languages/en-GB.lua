@@ -7855,7 +7855,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 	spawn = {
 		spawn_now = "Spawn Now",
-		last_position = "Last Position"
+		last_position = "Last Position",
+		train_station = "Train Station",
+		city_bus_station = "City Bus Station",
+		paleto_bay_bus_station = "Paleto Bay Bus Station"
 	},
 
 	special_imports = {
