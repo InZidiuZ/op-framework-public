@@ -49,6 +49,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		failed_lockpick_cuffs = "Nieudało ci się zdjąć kajdanek.",
 		lockpick_lost = "Zniszczyłeś wytrych.",
 
+		not_cuffed = "Nie jesteś zakuty.",
+		unable_to_lockpick = "Nie możesz zdjąć kajdanek wytrychem.",
+
 		lockpick_cuffs_logs_title = "Wyłamane kajdanki",
 		lockpick_cuffs_logs_details = "${consoleName} pomyślnie otworzono kajdanki tej osoby przy użyciu `${itemName}`.",
 
@@ -385,7 +388,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		disabled_collisions_feature = "Wyłączone kolizje",
 		disabled_recoil_feature = "Wyłączony odrzut",
 		evidence_view_feature = "Widok dowodów",
+		hit_indicator_feature = "Wskaźnik trafienia (Hit Indicator)",
 		indestructibility_feature = "Niezniszczalność",
+		infinite_ammo_feature = "Nieskończona amunicja",
 		invisibility_feature = "Niewidzialność",
 		nitro_boost_feature = "Doładowanie Nitro",
 		no_nearby_vehicles_feature = "Brak pojazdów w pobliżu",
@@ -396,6 +401,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		sticky_feet_feature = "Lepkie stopy",
 		wallhack_feature = "Wallhack",
 		watching_feature = "Oglądanie",
+		fortnite_feature = "Fortnite",
 
 		you_are_not_in_a_vehicle = "Nie jesteś w pojeździe.",
 		repaired_vehicle = "Napraw Pojazd",
@@ -420,7 +426,6 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		repaired_vehicle_logs_details = "${consoleName} naprawili pojazd, w którym byli.",
 
 		unable_to_enter_vehicle_while_dead = "Nie możesz wejść do pojazdu, gdy jesteś martwy.",
-		you_are_already_in_a_vehicle = "Jesteś już w pojeździe.",
 		the_closest_vehicle_had_no_free_seats = "Najbliższy pojazd nie miał wolnych miejsc.",
 		there_are_no_nearby_vehicles = "W pobliżu nie ma pojazdów.",
 		entered_vehicle = "Próbowano wejść w pobliżu ${vehicleName}.",
@@ -620,7 +625,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		collisions_logs_title = "Kolizje",
 		collisions_off_logs_details = "${consoleName} wyłączył swoje nieaktywne kolizje.",
-		collisions_on_logs_details = "${consoleName} włączył swoje nieaktywne kolizje."
+		collisions_on_logs_details = "${consoleName} włączył swoje nieaktywne kolizje.",
+
+		invalid_job_search = "Niewłaściwe wyszukiwanie pracy (musi składać się z co najmniej 3 znaków).",
+		failed_job_search = "Nie udało się wyszukać pracy.",
+		job_search_no_results = "Nieznaleziono pracy.",
+		job_search_results = "Ustawiono prace ${consoleName} na \"${jobName}, ${departmentName}, ${positionName}\" (Wynik: ${score})."
 	},
 
 	anti_cheat = {
@@ -644,6 +654,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		remove_detection_area_not_staff = "Gracz próbował usunąć obszar wykrywania, ale nie miał do tego odpowiednich uprawnień.",
 		detection_area_close = "[${InteractionKey}] Usuń obszar wykrywania (${areaId})",
 		detection_area = "Obszar wykrywania (${areaId})",
+		ban_notification_title = "Anti-Cheat",
+		ban_notification = "Zbanowany ${consoleName} za `${banReason}`.",
 
 		fast_movement_ban = "Latanie nie jest włączone na tym serwerze.",
 		invincibility_ban = "Gracz próbował użyć niewidzialności.",
@@ -656,6 +668,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		player_blips_ban = "Próba teleportacji do innego gracza.",
 		vehicle_spam_ban = "Próba zrespienia samochodu z blacklisty",
 		damage_modifier_ban = "Zmodyfikowano obrażenia.",
+		ped_spawn_ban = "Co ty, co ty!",
 
 		honeypot_ban = "Próbowałeś przełączyć się na tryb kreatywny, ale nie miałeś do tego uprawnień XD",
 
@@ -808,6 +821,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		piggyback_command_help = "Wzięcie na barana innego gracza.",
 		piggyback_command_substitutes = "",
 
+		pick_cuffs_command = "/pick_cuffs",
+		pick_cuffs_command_help = "Wyrwanie z kajdanek.",
+		pick_cuffs_command_substitutes = "",
+
 		struggle_command = "/struggle",
 		struggle_command_help = "Spróbuj wydostać się z kogoś, kto cię niesie.",
 		struggle_command_substitutes = "",
@@ -864,16 +881,6 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		wipe_command_parameter_model_name = "Nazwa modelu",
 		wipe_command_parameter_model_name_help = "Jeżeli chcesz usunać dokładne obiekty, wpisz tu nazwe modelu. Inaczej zostaw pole puste, `false` lub `0`",
 		wipe_command_substitutes = "",
-
-		wipe_confirm_command = "/wipe_confirm",
-		wipe_confirm_command_help = "Potwierdź wipe.",
-		wipe_confirm_command_parameter_confirm = "potwierdz",
-		wipe_confirm_command_parameter_confirm_help = "Jesteś pewny? Wpisz cokolwiek oprócz, `0` lub `false` , aby potwierdzić wipe.",
-		wipe_confirm_command_substitutes = "/zatwierdź",
-
-		wipe_cancel_command = "/wipe_cancel",
-		wipe_cancel_command_help = "Anuluj czyszczenie.",
-		wipe_cancel_command_substitutes = "/cancel_wipe",
 
 		noclip_command = "/noclip",
 		noclip_command_help = "Przełącz noclip.",
@@ -995,6 +1002,14 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		ghost_command_help = "To polecenie włączy /peek, /invisibility i /disable_collisions.",
 		ghost_command_substitutes = "",
 
+		job_command = "/job",
+		job_command_help = "Zmiana pracy graczu.",
+		job_command_parameter_server_id = "server id",
+		job_command_parameter_server_id_help = "Id gracza lub 0, aby wybrać siebie.",
+		job_command_parameter_search = "search",
+		job_command_parameter_search_help = "Nazwa pracy/departamentu/stopnia lub jej część do wyszukania lub `none`, aby usunąć pracę.",
+		job_command_substitutes = "",
+
 		watching_command = "/watching",
 		watching_command_help = "Pokazuje wszystkich graczy, którzy obserwują w pobliżu.",
 		watching_command_substitutes = "",
@@ -1002,6 +1017,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		disable_recoil_command = "/disable_recoil",
 		disable_recoil_command_help = "Wyłącza odrzut wszystkich broni.",
 		disable_recoil_command_substitutes = "",
+
+		
+		infinite_ammo_command = "/infinite_ammo",
+		infinite_ammo_command_help = "Włącza nieskończoną amunicje.",
+		infinite_ammo_command_substitutes = "",
 
 		sticky_feet_command = "/sticky_feet",
 		sticky_feet_command_help = "Sprawia, że kleisz się każdego samochodu, przy którym stoisz.",
@@ -1303,6 +1323,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		peek_command_help = "Peek pokaże wszystkich niewidzialnych graczy wokół ciebie (w tym ciebie).",
 		peek_command_substitutes = "",
 
+		hit_indicator_command = "/hit_indicator",
+		hit_indicator_command_help = "Przełącza wskaźnik strzałów, jeśli używasz niestandardowego celownika.",
+		hit_indicator_command_substitutes = "",
+
 		trigger_ems_call_command = "/trigger_ems_call",
 		trigger_ems_call_command_help = "Wysyła lokalne wezwanie EMS z twojej lokalizacji.",
 		trigger_ems_call_command_substitutes = "",
@@ -1345,6 +1369,16 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		richer_presence_command = "/richer_presence",
 		richer_presence_command_help = "Toggle the 'richer presence' which adds more information to the rich presence, such as loaded character.",
 		richer_presence_command_substitutes = "",
+
+		-- base/ping
+		get_pings_command = "/get_pings",
+		get_pings_command_help = "Uzyskaj średni ping do różnych hostów na całym świecie, aby znaleźć najbardziej odpowiednią lokalizację hosta dla obecnych graczy tego serwera.",
+		get_pings_command_substitutes = "",
+
+		-- base/profile
+		profile_debug_command = "/profile_debug",
+		profile_debug_command_help = "Przełącza debugger profilera.",
+		profile_debug_command_substitutes = "",
 
 		-- base/users
 		playtime_command = "/playtime",
@@ -1456,6 +1490,28 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		audio_debug_command_help = "Włącz debuger audio.",
 		audio_debug_command_substitutes = "",
 
+		play_audio_command = "/play_audio",
+		play_audio_command_help = "Odtwarzanie dźwięku dla gracza lub wszystkich graczy.",
+		play_audio_command_parameter_url = "url",
+		play_audio_command_parameter_url_help = "Adres URL do pobrania dźwięku.",
+		play_audio_command_parameter_volume = "volume",
+		play_audio_command_parameter_volume_help = "Poziom głośności, przy którym dźwięk powinien być odtwarzany. Ważne wartości zawierają się w przedziale od `0` do `1`. Ta wartość będzie domyślnie ustawiona na `0.1`.",
+		play_audio_command_parameter_server_id = "server id",
+		play_audio_command_parameter_server_id_help = "ID gracza, dla którego chcesz odtworzyć ten dźwięk. Możesz zrobić `-1` dla wszystkich graczy.",
+		play_audio_command_substitutes = "",
+
+		
+		play_audio_from_player_command = "/play_audio_from_player",
+		play_audio_from_player_command_help = "Odtwarzaj dźwięk na pozycji gracza.",
+		play_audio_from_player_command_parameter_url = "url",
+		play_audio_from_player_command_parameter_url_help = "Adres URL do pobrania dźwięku.",
+		play_audio_from_player_command_parameter_volume = "volume",
+		play_audio_from_player_command_parameter_volume_help = "Poziom głośności, przy którym dźwięk powinien być odtwarzany. Ważne wartości zawierają się w przedziale od `0` do `1`. Ta wartość będzie domyślnie ustawiona na `0.1`.",
+		play_audio_from_player_command_parameter_server_id = "server id",
+		play_audio_from_player_command_parameter_server_id_help = "ID gracza, któremu chcesz odtworzyć ten dźwięk.",
+		play_audio_from_player_command_substitutes = "/play_audio_at",
+
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "/battle_royale_toggle",
 		battle_royale_toggle_command_help = "Przełącz funkcję Battle Royale.",
@@ -1497,6 +1553,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		toggle_bombs_command = "/toggle_bombs",
 		toggle_bombs_command_help = "Przełącza bomby na aktualnym samolocie.",
 		toggle_bombs_command_substitutes = "",
+
+		-- game/beds
+		bed_command = "/bed",
+		bed_command_help = "Spróbuj położyć się w najbliższym łóżku.",
+		bed_command_substitutes = "",
 
 		plant_bomb_command = "/plant_bomb",
 		plant_bomb_command_help = "Podkłada bombę samoprzylepną w twojej obecnej pozycji.",
@@ -1769,10 +1830,18 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		vehicle_info_command_substitutes = "",
 
 		delete_entity_command = "/delete_entity",
-		delete_entity_command_help = "Usuwa jednostkę o określonym identyfikatorze sieci.",
-		delete_entity_command_parameter_network_id = "id sieci",
-		delete_entity_command_parameter_network_id_help = "Identyfikator sieci podmiotu, który chcesz usunąć.",
+		delete_entity_command_help = "Usuwa jednostkę o określonym identyfikatorze.",
+		delete_entity_command_parameter_network_id = "id",
+		delete_entity_command_parameter_network_id_help = "Identyfikator obiektu, który chcesz usunąć.",
 		delete_entity_command_substitutes = "/de",
+
+		move_entity_command = "/move_entity",
+		move_entity_command_help = "Przenosi podmiot o określonym identyfikatorze do twojej aktualnej pozycji.",
+		move_entity_command_parameter_network_id = "id",
+		move_entity_command_parameter_network_id_help = "identyfikator obiektu, który chcesz przenieść.",
+		move_entity_command_parameter_ground = "ground",
+		move_entity_command_parameter_ground_help = "Jeśli jednostka powinna być prawidłowo umieszczona na podłożu (tylko pojazdy).",
+		move_entity_command_substitutes = "/mv",
 
 		fake_lag_command = "/fake_lag",
 		fake_lag_command_help = "Symuluj laga klienta.",
@@ -1922,6 +1991,19 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		door_offset_command_parameter_model_name_help = "Model",
 		door_offset_command_substitutes = "",
 
+		-- game/energy_assault
+		energy_assault_join_command = "/energy_assault_join",
+		energy_assault_join_command_help = "Dołącz do minigry Energy Assault.",
+		energy_assault_join_command_parameter_server_id = "server id",
+		energy_assault_join_command_parameter_server_id_help = "ID gracza, do którego chcesz dołączyć. Jeśli pozostawisz puste miejsce, automatycznie wybierze się sam.",
+		energy_assault_join_command_substitutes = "/ea_join",
+
+		energy_assault_leave_command = "/energy_assault_leave",
+		energy_assault_leave_command_help = "Opuść minigrę Energy Assault.",
+		energy_assault_leave_command_parameter_server_id = "server id",
+		energy_assault_leave_command_parameter_server_id_help = "ID gracza, z którego gry chcesz wyjść. Jeśli pozostawisz puste miejsce, zostanie ono wybrane automatycznie.",
+		energy_assault_leave_command_substitutes = "/ea_leave",
+
 		doors_scan_command = "/doors_scan",
 		doors_scan_command_help = "Wyszukaj pobliskie drzwi i zapisz je w pliku tekstowym.",
 		doors_scan_command_parameter_clear_file = "Wyczyść plik",
@@ -1953,6 +2035,36 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		fake_id_command_parameter_female = "kobieta",
 		fake_id_command_parameter_female_help = "Ustaw wartość true, jeśli chcesz mieć kartę obywatela płci żeńskiej zamiast męskiej..",
 		fake_id_command_substitutes = "",
+
+		-- game/forcefields
+		create_forcefield_command = "/create_forcefield",
+		create_forcefield_command_help = "Tworzy pole siłowe w miejscu, w którym się znajdujesz.",
+		create_forcefield_command_parameter_radius = "radius",
+		create_forcefield_command_parameter_radius_help = "Promień pola siłowego.",
+		create_forcefield_command_parameter_deny_players = "deny players",
+		create_forcefield_command_parameter_deny_players_help = "Czy pole siłowe powinno uniemożliwiać wejście graczom?",
+		create_forcefield_command_substitutes = "/forcefield",
+
+		destroy_forcefield_command = "/destroy_forcefield",
+		destroy_forcefield_command_help = "Niszczy określone pole siłowe.",
+		destroy_forcefield_command_parameter_id = "id",
+		destroy_forcefield_command_parameter_id_help = "ID pola siłowego, które chcesz zniszczyć.",
+		destroy_forcefield_command_substitutes = "",
+
+		-- game/fortnite
+		fortnite_command = "/fortnite",
+		fortnite_command_help = "Przełączanie funkcji budowania dosłownie jak w Fortnite.",
+		fortnite_command_substitutes = "/fn",
+
+		fortnite_debug_command = "/fortnite_debug",
+		fortnite_debug_command_help = "Włącz debugger budynków z trybu fortnite",
+		fortnite_debug_command_substitutes = "",
+
+		fortnite_wipe_command = "/fortnite_wipe",
+		fortnite_wipe_command_help = "Usuń budynki z trybu fortnite.",
+		fortnite_wipe_command_parameter_radius = "radius",
+		fortnite_wipe_command_parameter_radius_help = "Promień, dla którego chcesz wymazać wszystkie budynki zbudowane w trybie fortnite. Pozostawienie pustego pola lub ustawienie go na 0 spowoduje wymazanie wszystkiego..",
+		fortnite_wipe_command_substitutes = "",
 
 		-- game/freecam
 		freecam_command = "/freecam",
@@ -2216,6 +2328,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		check_vehicle_upgrades_command = "/check_vehicle_upgrades",
 		check_vehicle_upgrades_command_help = "Sprawdza, czy pobliski pojazd ma ulepszenie silnika 5.",
 		check_vehicle_upgrades_command_substitutes = "/check_upgrades, /upgrades",
+
+		
+		-- game/mining
+		mining_debug_command = "/mining_debug",
+		mining_debug_command_help = "Przełączanie debugowania pracy górnika/górnictwa.",
+		mining_debug_command_substitutes = "",
 
 		-- game/miscellaneous
 		-- these two commands should remain the same on all languages in case someone joins in with a language they don't know.
@@ -2582,7 +2700,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		-- game/safes
 		debug_safe_command = "/debug_safe",
 		debug_safe_command_help = "Debuje aktualne kombinacje sejfów",
-		debug_safe_command_substitutes = "",		
+		debug_safe_command_substitutes = "",
+
+
+		-- game/scoreboard
+		metagame_command = "/metagame",
+		metagame_command_help = "Przełącza na wydok ID graczy w grze.",
+		metagame_command_substitutes = "/meta, /m, /showid",
 
 		-- game/security_cameras
 		security_cameras_command = "/security_cameras",
@@ -2615,27 +2739,6 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		draw_shroom_areas_command = "/draw_shroom_areas",
 		draw_shroom_areas_command_help = "Narysuj wszystkie obszary grzybów i dodaj więcej.",
 		draw_shroom_areas_command_substitutes = "/shroom_areas",
-
-		-- game/sound_effects
-		play_sound_command = "/play_sound",
-		play_sound_command_help = "Odtwórz dźwięk dla gracza lub wszystkich graczy.",
-		play_sound_command_parameter_url = "url",
-		play_sound_command_parameter_url_help = "URL dźwięku.",
-		play_sound_command_parameter_volume = "głośność",
-		play_sound_command_parameter_volume_help = "Poziom głośności, na którym powinien być odtwarzany dźwięk. Prawidłowe wartości mieszczą się w zakresie od „0” do „1”. Wartość domyślna to `0.1.",
-		play_sound_command_parameter_server_id = "server id",
-		play_sound_command_parameter_server_id_help = "ID gracza, dla którego chcesz odtworzyć ten dźwięk. Możesz zrobić „-1” dla wszystkich graczy.",
-		play_sound_command_substitutes = "/graj_dzwiek",
-
-		play_sound_from_player_command = "/play_sound_from_player",
-		play_sound_from_player_command_help = "Odtwórz dźwięk na pozycji gracza.",
-		play_sound_from_player_command_parameter_url = "url",
-		play_sound_from_player_command_parameter_url_help = "Adres URL pobierania dźwięku.",
-		play_sound_from_player_command_parameter_volume = "głośność",
-		play_sound_from_player_command_parameter_volume_help = "Poziom głośności, przy którym powinien grać dźwięk. Prawidłowe wartości mieszczą się w zakresie od `0` do `1`. Ta wartość będzie domyślnie ustawiona na `0.1`.",
-		play_sound_from_player_command_parameter_server_id = "server id",
-		play_sound_from_player_command_parameter_server_id_help = "ID gracza któremu chcesz odtworzyć ten dźwięk.",
-		play_sound_from_player_command_substitutes = "/play_sound_at",
 
 		-- game/spying
 		search_for_devices_command = "/search_for_devices",
@@ -2741,6 +2844,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		starve_command = "/starve",
 		starve_command_help = "Ustawia jedzenie i pragnienie na 0.",
 		starve_command_substitutes = "",
+
+		random_vehicle_colors_command = "/random_vehicle_colors",
+		random_vehicle_colors_command_help = "Losowo zmienia kolory pojazdu, w którym aktualnie się znajdujesz.",
+		random_vehicle_colors_command_parameter_lights = "lights",
+		random_vehicle_colors_command_parameter_lights_help = "Jeśli światła to też powinny być losowane (xenon and neon).",
+		random_vehicle_colors_command_substitutes = "",
+
 
 		-- game/time_scale
 		set_time_scale_command = "/set_time_scale",
@@ -2905,6 +3015,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		local_entities_debug_command_help = "Włącz debuger dla lokalnych jednostek.",
 		local_entities_debug_command_substitutes = "/lentities",
 
+		no_ped_population_areas_debug_command = "/no_ped_population_asreas_debug",
+		no_ped_population_areas_debug_command_help = "Przełącz debugger obszarów miezamieszkałych przez pedów",
+		no_ped_population_areas_debug_command_substitutes = "",
+
 		-- global/explosions
 		create_explosion_command = "/create_explosion",
 		create_explosion_command_help = "Tworzy eksplozje.",
@@ -2915,6 +3029,17 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		create_explosion_command_parameter_camera_shake = "Trzęsienie się kamery",
 		create_explosion_command_parameter_camera_shake_help = "Trzęsienie się kamery.",
 		create_explosion_command_substitutes = "/exp, /explode, /explosion",
+
+		
+		-- global/functions
+		confirm_yes_command = "/yes",
+		confirm_yes_command_help = "Potwierdza aktualna czynność.",
+		confirm_yes_command_substitutes = "/confirm",
+
+		confirm_no_command = "/no",
+		confirm_no_command_help = "Anuluje aktualna czynność.",
+		confirm_no_command_substitutes = "/cancel, /abort",
+
 
 		-- global/states
 		entity_states_debug_command = "/entity_states_debug",
@@ -3012,6 +3137,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		license_remove_command_parameter_license_help = "Lista licencji, które możesz zabrać `heli`, `fw`, `cfi`, `hw`, `perf`, `management` and `military`.",
 		license_remove_command_substitutes = "/remove_license",
 
+		
+		license_list_command = "/license_list",
+		license_list_command_help = "Sprawdza wszystkie dostępne licencje.",
+		license_list_command_substitutes = "/list_licenses",
+
 		licenses_check_command = "/licenses_check",
 		licenses_check_command_help = "Sprawdź czyjeś licencje.",
 		licenses_check_command_parameter_character_id = "ID postaci",
@@ -3096,6 +3226,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		custom_plate_command_parameter_plate_number = "numer rejestracyjny",
 		custom_plate_command_parameter_plate_number_help = "Numer rejestracyjny który chciał/a byś sprawdzić. Rejestracje mogą się składać tylko z maksymalnie 8 drukowanych liter oraz cyfr.",
 		custom_plate_command_substitutes = "",
+
+		
+		-- vehicles/runways
+		ifr_command = "/ifr",
+		ifr_command_help = "Przełącz tryb IFR (Pokaż wspomaganie lądowania dla pobliskich pasów startowych).",
+		ifr_command_substitutes = "",
 
 		-- vehicles/vehicles
 		flip_command = "/flip",
@@ -3213,14 +3349,30 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		richer_presence_off = "Bogatsza obecność jest teraz wyłączona."
 	},
 
+
 	errors = {
-		error_report = "Zgłoś błąd",
-		error_report_info = "Uwaga, <b>Pojawił się błąd!</b> To oznacza, że coś nie działa prawidłowo lub zgodnie z przeznaczeniem. Uprzejmie prosimy o pomoc w rozwiązaniu tego problemu, podając kilka dodatkowych szczegółów dotyczących tego, co robiłeś, gdy ten błąd się pojawił.",
-		script_location = "Lokacja skryptu:",
-		error_report_feedback_title = "Dodatkowe informacje",
-		error_report_feedback_placeholder = "Proszę daj nam znać, co robiłeś/aś, gdy ten błąd został się pojawił...",
-		error_report_send = "Wyślij zgłoszenie",
-		error_report_abort = "Anuluj zgłoszenie"
+		script_location = "Lokalizacja skryptu",
+		additional_information = "Dodatkowe informacje",
+		error_report = "Raport o błędach",
+		send_report = "Wyślij raport",
+		abort_report = "Anuluj raport",
+		input_placeholder = "Proszę dać nam znać, co robiłeś, kiedy ten błąd został wywołany...",
+		oh_no = "Oj nie,",
+		an_error_has_occurred = "wystąpił błąd!",
+		error_occured_information = "Nasz system wskazuje, że coś nie działa prawidłowo lub zgodnie z przeznaczeniem. Uprzejmie prosimy o pomoc w rozwiązaniu tego problemu poprzez podanie dodatkowych szczegółów dotyczących tego, co robiłeś w momencie wystąpienia tego błędu."
+	},
+
+	
+	ping = {
+		get_pings_missing_permissions = "Gracz próbował uzyskać pingi, ale nie miał do tego wymaganych uprawnień.",
+		getting_pings = "Pobieranie pingów od wszystkich graczy. Może to potrwać kilka sekund..",
+		host_data = "${position}. ${location} - ${averagePing} Średni ping (bazowany na ${totalPings} clientach), 10% Niski: ${averagePingLow}, 10% Wysoki: ${averagePingHigh}",
+		list_hosts = "${listHosts}"
+	},
+
+	profile = {
+		profile_debug_enabled = "Debugger profilu został włączony. Sprawdź wyjście w konsoli F8.",
+		profile_debug_disabled = "Debugger profilu został wyłączony."
 	},
 
 	queue = {
@@ -3384,7 +3536,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		spawned_vehicle = "Pojazd wyjęty.",
 		spawner_on_timeout = "Spróbuj jeszcze raz.",
 		spawn_area_not_clear = "Miejsce jest zablokowane.",
-		return_button = "Powrót"
+		return_button = "Powrót",
+		deposit = "$${amount} Wpłata",
+		no_deposit = "Brak wpłaty",
+		deposit_not_enough_money = "Nie masz wystarczająco dużo pieniędzy, aby zapłacić."
 	},
 
 	airstrike = {
@@ -3593,7 +3748,18 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	audio = {
-		audio_id = "Audio ${audioId}"
+		audio_id = "Audio ${audioId}",
+		illegal_sound_effect = "Ktoś próbował odtworzyć dźwięk innym graczom",
+		url_invalid = "Podany adres URL jest nieprawidłowy. Musi zostać przesłany przy użyciu bezpiecznego połączenia. (https://)",
+		url_missing = "Proszę dodać adres URL do dźwięku, który próbujesz odtworzyć.",
+		play_audio_no_permissions = "Gracz próbował odtworzyć dźwięk, ale nie miał do tego wymaganych uprawnień.",
+		played_audio_for_self = "Odtwarzanie dźwięku dla siebie.",
+		played_audio_for_player = "Odtwarzane audio dla ${consoleName}.",
+		played_audio_for_everyone = "Odtwarzane audio dla wszystkich.",
+		played_audio_effect_for_everyone_title = "Odtwarzany efekt audio dla każdego",
+		played_audio_effect_for_everyone_details = "${consoleName} odtwarzał efekt dźwiękowy dla wszystkich. Efekt dźwiękowy miał adres URL `${url}` i był ustawiony na odtwarzanie przy poziomie głośności `${volume}`.",
+		played_audio_effect_for_player_title = "Odtwarzany efekt audio dla odtwarzacza",
+		played_audio_effect_for_player_details = "${consoleName} odtwarzał efekt dźwiękowy dla ${targetConsoleName}. Efekt dźwiękowy miał adres URL `${url}` i był ustawiony na odtwarzanie przy poziomie głośności `${volume}`."
 	},
 
 balls = {
@@ -3648,6 +3814,12 @@ balls = {
 		not_able_to_join_while_in_match = "Nie możesz dołączyć do lobby podczas meczu."
 	},
 
+	
+	beds = {
+		no_nearby_available_bed_found = "Nie znaleziono żadnego dostępnego łóżka w pobliżu.",
+		press_to_leave_bed = "Wciśnij ~INPUT_CONTEXT~ aby opuścić łóżko."
+	},
+
 	blackjack = {
 		play_blackjack = "Naciśnij ~INPUT_CONTEXT~ aby zagrać w Blackjacka.",
 		play_blackjack_high_limit = "Naciśnij ~INPUT_CONTEXT~ aby zagrać w Blackjacka (wysokie stawki)."
@@ -3692,7 +3864,24 @@ balls = {
 		city_hall = "Urząd miasta",
 		rockford_records = "Rockford Records",
 		dispensary = "Coffee Shop",
-		haunted_high_school = "Nawiedzone liceum"
+		haunted_high_school = "Nawiedzone liceum",
+
+		bank = "Bank",
+		hospital = "Szpital",
+		bolingbroke = "Zakład karny w Bolingbroke",
+		police_department = "Departament Policji",
+		motel = "Motel",
+		tattoo_parlor = "Salon Tatuażu",
+		repair_shop = "Sklep naprawczy",
+		material_vendor = "Sprzedawca materiałów",
+		pdm = "Premium Deluxe Motorsport",
+		ls_customs = "Los Santos Customs",
+		jewelry_store = "Biżuteria Vangelico",
+		pd_air_hq = "Police Siły powietrzne HQ",
+		pd_sea_hq = "Police Siły morskie HQ",
+		ems_air_hq = "EMS Siły powietrzne HQ",
+		ems_boat_hq = "EMS Siły morskie HQ",
+		ems_garage = "EMS Garaż"
 	},
 
 	blockage = {
@@ -3720,12 +3909,12 @@ balls = {
 	},
 
 	boomboxes = {
+		boombox = "Boombox",
 		store_boombox = "Przechowuj Boombox w swoim ekwipunku.",
 		put_boombox_down = "Połóż Boombox na ziemi.",
 		use_boombox = "Użyj Boomboxa.",
 		hold_to_pick_boombox_up = "Przytrzymaj by podnieść.",
 		illegal_boombox_item_id = "Próba użycia Boomboxa z niewłaściwym itemem.",
-		boombox_id = "Boombox #${boomboxId}",
 		music = "Muzyka",
 		play = "Graj",
 		pause = "Pauza",
@@ -3772,6 +3961,7 @@ balls = {
 
 		medical_care = "Opieka medyczna",
 		medical_care_1 = "Jeśli zostaniesz ranny, możesz udać się do szpitala, aby się zameldować i otrzymać leczenie. Szpital możesz znaleźć na mapie. Możesz również użyć bandaży lub apteczek, aby się wyleczyć.",
+		medical_care_2 = "Jeśli odrodzisz się bez zabrania do szpitala lub opuścisz grę, gdy jesteś martwy, możesz stracić część swoich przedmiotów. Restart serwera liczy się jako wyjście z gry.",
 
 		closing_sentence = "W mieście jest o wiele więcej do zrobienia! Popytaj i poznaj znajomych ;)"
 	},
@@ -3887,6 +4077,15 @@ balls = {
 		god_tier = "God Tier"
 	},
 
+	
+	claymores = {
+		arm_claymore = "[${InteractionKey}] Uzbrojenie",
+		disarm_claymore = "[${InteractionKey}] Rozbrojenie",
+
+		disarming = "Rozbrajanie",
+		arming = "Uzbrojanie"
+	},
+
 	cinematic = {
 		cinematic = "Tryb kinowy",
 		black_bars_set_to = "Paski trybu kinowego są teraz ustawione na ${blackBarsHeight}%."
@@ -3948,6 +4147,8 @@ balls = {
 
 		clothingstore = "Sklep z ubraniami",
 		barbershop = "Fryzjer",
+
+		changing_area = "Przebieralnia",
 
 		switch_outfit = "Przebierz się w ten strój.",
 		replace_outfit = "Zmień ten strój.",
@@ -4347,6 +4548,11 @@ balls = {
 		imported_config = "Zaimportowano konfiguracje.",
 		disabled_crosshair = "Wyłączenie niestandardowego celownika.",
 
+		
+		invalid_url_title = "Nieprawidłowy adres URL",
+		invalid_url_description = "Wprowadzony adres URL obrazu jest nieprawidłowy. Musi to być bezpośredni link do obrazu, a nie link do strony internetowej, która zawiera obraz. Musi zaczynać się od jednego z następujących urli:",
+		cancel_button = "Ok",
+
 		center = "Center",
 		main = "Main",
 		outer = "Outer",
@@ -4354,6 +4560,7 @@ balls = {
 
 		enabled = "Włączone",
 		size = "Wielkość",
+		image = "Obraz",
 		length = "Długość",
 		offset = "Przesunięcie",
 		secondary_offset = "Drugie przesunięcie",
@@ -4396,11 +4603,13 @@ balls = {
 		date = "Data: ${date}",
 		unit_id = "ID jednostki: ${unitId}",
 		unit_name = "Nazwa jednostki: ${unitName}",
-		unit_speed_metric = "Prędkość jednostki: ${unitSpeed} km/h",
-		unit_speed_imperial = "Prędkość jednostki: ${unitSpeed} mp/h",
-		bottom_part_1 = "Ten pojazd należy do",
-		bottom_part_2 = "Stanu San Andreas",
-		bottom_part_3 = "Każde nieuprawnione użycie podlega surowej karze w ramach 13 S.A. Pen. Kod 502(a).",
+		unit_speed = "Szybkość jednostki",
+
+		state_seal_one = "Ten pojazd jest licencjonowany na",
+		state_seal_two = "Stan San Andreas",
+		state_seal_three = "Każde nieuprawnione użycie podlega surowej karze zgodnie z 13 S.A. Pen. Code 502(a).",
+		kmh = "km/h",
+		mph = "mp/h",
 		set_unit_id_to = "Twój UNITID został ustalony jako ${unitId}.",
 		reset_unit_id = "Zresetowałeś swój UNITID.",
 		failed_to_set_unit_id = "Błąd podczas ustawiania UNITID.",
@@ -4450,6 +4659,7 @@ balls = {
 		coords = "Koordynaty: ${coords}",
 		rotation = "Obrót: ${rotation}",
 		velocity = "Prędkość: ${velocity}",
+		ground_material = "Materiał podłoża: ${material}",
 		g_force = "Grawitacja: ${force}",
 		debug_print_f8 = "Informacje o błedach będą pojawiać się w konsoli pod F8.",
 		no_vehicle_bone = "No \"${boneName}\" bone",
@@ -4472,9 +4682,13 @@ balls = {
 		vehicle_acceleration_force = "Siła startowa: ${force}",
 
 		invalid_network_id = "Niewłaściwe ID sieci",
-		delete_entity_success = "Pomyślnie usunięto jednostkę z ID sieci ${networkId}.",
-		delete_entity_failed = "Nie udało się usunąć podmiotu",
-		delete_entity_no_permissions = "Gracz próbował usunąć podmiot bez odpowiednich uprawnień.",
+		delete_entity_success = "Pomyślnie usunięto obiekt z ID ${networkId}.",
+		delete_entity_failed = "Nie udało się usunąć obiektu",
+		delete_entity_no_permissions = "Gracz próbował usunąć obiektu bez odpowiednich uprawnień.",
+
+		move_entity_success = "Udało się przenieść obiekt o ID ${networkId}.",
+		move_entity_failed = "Nie udało się przenieść obiektu.",
+		move_entity_no_permissions = "Gracz próbował przenieść obiekt bez odpowiednich uprawnień.",
 
 		fake_lag_updated = "Licznik symulacji laga został zmieniony na `${counter}`.",
 		fake_lag_already_set_to = "Licznik symulacji laga już jest ustawiony na `${counter}`.",
@@ -4623,7 +4837,8 @@ balls = {
 		floor_doj_office = "Biuro DOJ",
 
 		floor_penthouse_top = "Penthouse (Ostatnie piętro)",
-		floor_penthouse_entrance = "Penthouse (Wejście)"
+		floor_penthouse_entrance = "Penthouse (Wejście)",
+		doj_office = "Biuro DOJ"
 	},
 
 	emails = {
@@ -4669,6 +4884,44 @@ balls = {
 		received_item = "${firstName} dał ci ${itemName}.",
 		give_item_success = "Pomyślnie dał ${itemName} to graczowi.",
 		give_item_failed = "Nie udało się dać ${itemName} to graczowi."
+	},
+
+	energy_assault = {
+		join_energy_assault_on_behalf_of_player_no_permissions = "Gracz próbował dołączyć do gry Energy Assault innego gracza, ale nie miał wymaganych uprawnień.",
+
+		joined_energy_assault = "Dołączono na Energy Asssault.",
+		joined_energy_assault_on_behalf_of = "Gracz ${consoleName} dołączył do Energy Assault.",
+
+		player_is_already_in_energy_assault = "Gracz o ID ${serverId} jest już w Energy Assault.",
+
+		leave_energy_assault_on_behalf_of_player_no_permissions = "Gracz wyjść z gry Energy Assault innego gracza, ale nie miał wymaganych uprawnień.",
+
+		left_energy_assault = "Opuszczono Energy Asssault.",
+		left_energy_assault_on_behalf_of = "Gracz ${consoleName} opuścił Energy Assault.",
+
+		player_is_not_in_energy_assault = "Gracz z tym ID ${serverId} nie jest w grze Energy Assault.",
+
+		you_are_already_in_energy_assault = "Jesteś już w grze Energy Assault.",
+		you_are_not_in_energy_assault = "Nie jesteś w grze Energy Assault.",
+
+		no_match_active = "Nie ma żadnego aktywnego meczu.",
+
+		made_everyone_leave_energy_assault = "Zmuszono wszystkich do opuszczenia Energy Assault.",
+		made_everyone_join_energy_assault = "Zmuszono wszystkich do dołączenia na Energy Assault.",
+
+		aircraft_carrier = "Lotniskowiec",
+		grove_street = "Grove Street",
+		mission_row_pd = "Mission Row PD",
+		residential = "Residential",
+		scrapyard = "Złomowisko",
+		titanic = "Titanic",
+
+		team_deathmatch = "Zespołowy Deathmatch",
+		domination = "Dominacja",
+		capture_the_flag = "Przechwyć Flage",
+		hill_control = "Kontrola wzgórza",
+		artifact = "Artefakt",
+		free_for_all = "Free for All"
 	},
 
 	exclusive_dealerhship = {
@@ -4729,6 +4982,26 @@ balls = {
 	fireworks = {
 		fire_firework = "[${InteractionKey}] Odpal Fajerwerkę"
 	},
+
+	
+	forcefields = {
+		invalid_radius = "Niewłaściwy promień (musi być między 1 a 200).",
+		failed_create = "Nie udało się stworzyć pola siłowego..",
+		forcefield_marker = "ID: ${id}",
+		invalid_forcefield_id = "Nieprawidłowy identyfikator pola siłowego.",
+		failed_destroy = "Nie udało się zniszczyć pola siłowego.."
+	},
+
+	fortnite = {
+		add_building_no_permissions = "Gracz próbował dodać budynek w trybie Fortnite, ale nie miał do tego wymaganych uprawnień.",
+		wipe_buildings_no_permissions = "Gracz próbował wyczyścić wszystkie budynki w trybie Fortnite, ale nie miał do tego wymaganych uprawnień.",
+
+		no_buildings_in_radius = "Nie ma żadnych budynków w promieniu ${radius}.",
+		no_buildings = "Nie ma żadnych budynków.",
+		wiped_buildings_in_radius = "Wyczyszczono ${removedBuildings} budynków w promieniu ${radius}.",
+		wiped_buildings = "Wyczyszczono ${removedBuildings} budynków."
+	},
+
 
 	freecam = {
 		enabled_freecam = "Włączono wolną kamere.",
@@ -4829,6 +5102,54 @@ balls = {
 		use_grill = "[E] Aby użyć Grila"
 	},
 
+	gumballs = {
+		use_gumball_machine = "[${InteractionKey}] Wrzuć monete",
+		using_gumball_machine = "Wrzucasz monete",
+		not_enough_money = "Nie masz wystarczająco dużo gotówki, by kupić gumę do żucia..",
+		something_went_wrong = "Coś poszło nie tak, gdy próbowano kupić gumę do żucia.",
+
+		flavor = "Guma do żucia (${flavor})"
+	},
+
+	gun_running = {
+		insert_key = "Włóż klucz: ${key}",
+		wrong_key = "Użyłeś złego klucza.",
+		decrypting = "Odszyfrowywanie",
+		high_level_cooldown = "Nie udało się nawiązać połączenia z serwerem FIB, spróbuj ponownie później.",
+		failed_start_run = "Nie udało się rozpocząć.",
+		hack_timeout = "Utracono połączenie z serwerem, spróbuj ponownie.",
+
+		drop_blip = "Pojemnik na broń",
+
+		drill_container = "Wciśnij ~INPUT_CONTEXT~ aby otworzyć pojemnik za pomocą wiertła.",
+
+		drilling_container = "Pojemnik",
+		failed_drill = "Nie udało się otworzyć pojemnika.",
+		drill_success = "Udało się przewiercić pojemnik i znaleźć 1x ${item}.",
+
+		started_run_logs_title = "Zrzuty zaopatrzenia",
+		started_run_logs_details = "${consoleName} zaczął hackować miejsce zrzutu zaopatrzenia.",
+		finished_run_logs_title = "Zrzuty zaopatrzenia DROP",
+		finished_run_logs_details = "${consoleName} wywiercił pojemnik na broń i otrzymał 1x ${item}."
+	},
+
+	hacking = {
+		local_disk = "Lokalny dysk (C:)",
+		network = "Sieć",
+		external_device = "Urządzenie zewnętrzne (J:)",
+		hack_connect = "HackConnect.exe",
+		brute_force = "BruteForce.exe",
+
+		my_computer = "Mój komputer",
+		power_off = "Zamknij",
+
+		password_cracked = "Hasło złamane!",
+		brute_force_failed = "Brute Force nie powiodło się.!",
+
+		writing_data = "Zapisywanie danych do bufora...",
+		executing_code = "Wykonywanie złośliwego kodu...",
+		memory_leak_detected = "Wykryto błąd pamięci, wyłączanie..."
+	},
 	halloween = {
 		is_in_school = "Czy jest w szkole: ${isInSchool}",
 		yes = "Tak",
@@ -4985,6 +5306,8 @@ balls = {
 		fishing_license_details = "Licencja wędkarska | ${firstName} ${lastName} | Citizen ID: ${characterId}",
 		pilot_license = "Licencja pilota",
 		pilot_license_details = "Licencja pilota | ${firstName} ${lastName} | Citizen ID: ${characterId}",
+		weapon_license = "Licencja na broń",
+		weapon_license_details = "Licencja na broń | ${firstName} ${lastName} | Citizen ID: ${characterId}",
 		just_showed_license = "Właśnie pokazałeś licencję. proszę chwilę poczekać.",
 
 		just_showed_badge = "Pokazałeś już odznakę. Poczekaj chwilę przed następną próbą.",
@@ -5010,6 +5333,8 @@ balls = {
 		bcfd_badge_details = "BCFD | ${firstName} ${lastName} | Stopień: ${positionName}",
 		state_security_badge = "Identyfikator State Security",
 		state_security_badge_details = "State Security Department | ${firstName} ${lastName}",
+		doj_badge = "DOJ ID",
+		doj_badge_details = "DOJ | ${firstName} ${lastName} | Stopień: ${positionName}",
 
 		badge_type_sasp = "San Andreas State Police",
 		badge_type_bcso = "Blaine County Sheriff's Office",
@@ -5022,6 +5347,7 @@ balls = {
 		badge_type_doctor = "Medical Residency",
 		badge_type_bcfd = "Blaine County Fire Department",
 		badge_type_state_security = "State Security Department",
+		badge_type_doj = "Department Of Justice",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
@@ -5074,7 +5400,8 @@ balls = {
 	interiors = {
 		in_interior = "W Interiorze: ${interiorId} (${portals} portals).",
 		total_interiors = "Łączna liczba interiorów: ${totalInteriors} (${totalInteriorPortals} total portals).",
-		total_unloaded_interiors = "Łączna liczba nie załadowanych interiorów: ${totalUnloadedInteriors} (${totalUnloadedInteriorPortals} total portals)."
+		total_unloaded_interiors = "Łączna liczba nie załadowanych interiorów: ${totalUnloadedInteriors} (${totalUnloadedInteriorPortals} total portals).",
+		portal_text = "id=${portalId} f=${flags}"
 	},
 
 	inventory = {
@@ -5114,6 +5441,7 @@ balls = {
 		ems_store = "Sklep medyczny",
 		drug_store = "El narcoticos",
 		ems_badge_store = "Szpitalne biurko z odznakami medycznymi",
+		doj_badge_store = "Biurko z odznakami DOJ",
 		state_security_store = "Sklep stanowej ochrony",
 		pharmacy = "Apteka",
 		chop_shop = "Chop Shop",
@@ -5262,7 +5590,9 @@ balls = {
 		fishing_license = "Licencja wędkarska",
 		fishing_license_description = "Licencja wędkarska na wędkowanie.",
 		pilot_license = "Licencja pilota",
-		pilot_license_description = "A pilot license for flying planes and stuff.",
+		pilot_license_description = "Licencja pilota do latania samolotami i innymi rzeczami.",
+		weapon_license = "Licencja na broń",
+		weapon_license_description = "Pozwolenie na broń umożliwiające posiadanie i noszenie broni wyższej klasy.",
 
 		sasp_badge = "Odznaka SASP",
 		sasp_badge_description = "Odznaka dla członków San Andreas State Police.",
@@ -5286,6 +5616,8 @@ balls = {
 		bcfd_badge_description = "Odznaka dla członków Blaine County Fire Department.",
 		state_security_badge = "Identyfikator State Security",
 		state_security_badge_description = "Odznaka dla State Security.",
+		doj_badge = "Odznaka DOJ",
+		doj_badge_description = "Odznaka dla pracowników Departamentu Sprawiedliwości.",
 
 		radio_chop_shop = "Radio Chop Shop",
 		radio_chop_shop_description = "Używane do otrzymywania zleceń o pojazdach do kradzieży",
@@ -5341,6 +5673,8 @@ balls = {
 		burger_shot_delivery_description = "\"Ulubiona amerykańska sieć restauracji.\"",
 		bean_machine_delivery = "Dostawa maszyny do fasoli",
 		bean_machine_delivery_description = "Torba pełna wspaniałych smakołyków z małej kawiarni na przedmieściach.",
+		ear_defenders = "Zatyczki do uszu",
+		ear_defenders_description = "Używane do ochrony uszu przed głośnymi dźwiękami.",
 
 		raw_morganite = "Surowy morganit",
 		raw_morganite_description = "Morganit w postaci naturalnej, prosto z kopalni.",
@@ -5425,6 +5759,10 @@ balls = {
 
 		capri_sun = "Capri Sun",
 		capri_sun_description = "Najlepszy soczek z dzieciństwa zaraz po Kubusiu.",
+
+		
+		gumball = "Guma do żucia",
+		gumball_description = "Guma do żucia, co jeszcze mam powiedzieć?",
 
 		water = "Woda",
 		water_description = "Woda, po prostu woda",
@@ -5866,6 +6204,10 @@ balls = {
 
 		tire_wall = "Ściana opon",
 		tire_wall_description = "Kiedy potrzebujesz osłony, ale jej nie ma.",
+
+		
+		claymore = "Mina",
+		claymore_description = "Ostateczna mina przeciwpiechotna.",
 
 		tv_stand = "Stojak na telewizor",
 		tv_stand_description = "Użyj tego, aby postawić telewizor gdziekolwiek chcesz.",
@@ -6421,10 +6763,16 @@ balls = {
 		weapon_addon_ak74_description = "оставайся привязанным или хлопай в ладоши.",
 
 		weapon_addon_p320b = "P320",
-		weapon_addon_p320b_description = "We're not in London anymore bruv",
+		weapon_addon_p320b_description = "Nie jesteśmy już w Londynie bruv",
 
 		weapon_addon_mk18 = "MK18",
-		weapon_addon_mk18_description = "\"Stay strapped or get clapped\" - George Washington (Probably)"
+		weapon_addon_mk18_description = "\"Stay strapped or get clapped\" - George Washington",
+
+		weapon_addon_glock = "Glock 17",
+		weapon_addon_glock_description = "Najpopularniejszy pistolet na świeciex.",
+
+		weapon_addon_colt = "Colt 1851 Navy",
+		weapon_addon_colt_description = "Colt 1851 Navy to rewolwer single-action, który był używany przez marynarkę wojenną Stanów Zjednoczonych w XIX wieku."
 	},
 
 	items = {
@@ -6515,57 +6863,80 @@ balls = {
 	},
 
 	login = {
-		loading_character = "Wczytywanie postaci...",
-		deleting_character = "Usuwanie postaci...",
-		fetching_character_data = "Pobieranie danych postaci...",
-		complete = "Ukończono",
+		exit_city = "Wyjdź.",
+		press_to_exit_city = "Wciśnij ~g~${InteractionKey} ~w~by wyjść.",
+		bad_words_in_character_creation = "Próba stworzenia postaci z prawdopodobnie złym słowem w nazwie lub historii: \"${badWords}\"",
+		disallowed_words_in_character_name = "Próbowano stworzyć postać o prawdopodobnie złym imieniu: \"${characterName}\"",
+		disallowed_birthday_ban = "Próbowano stworzyć postać z prawdopodobnie złymi urodzinami: \"${birthday}\"",
+		you_have_disconnected_from_the_server = "Odłączyłeś się od serwera.",
+
 		welcome_to = "Witamy na",
 		press = "Wciśnij",
 		enter = "ENTER",
-		to_join = "Aby dołączyć",
-		main_menu = "Menu główne",
-		exit_game = "Rozłącz",
-		exit_game_confirm = "Czy jesteś pewny, że chcesz się rozłączyć z serwerem?",
+		to_join = "by dołączyć",
+		changelogs = "Changelog",
+		fetching_character_data = "Pobieranie danych postaci...",
 		yes = "Tak",
 		no = "Nie",
-		name = "Imię",
-		dob = "Data Urodzenia",
-		gender = "Płeć",
-		cash = "Gotówka",
-		bank = "Bank",
-		story = "Historia",
+		exit_game = "Rozłącz",
+		are_you_sure_you_want_to_exit = "Czy jesteś pewny, że chcesz się rozłączyć z serwerem??",
+		exiting_game = "Wychodzisz z gry...",
 		empty_slot = "Wolne miejsce",
 		new_character = "Nowa postać",
 		select_character = "Wybierz postać",
 		delete_character = "Skasuj postać",
-		delete_character_confirm = "Czy jesteś pewny, że chcesz skasować tą postać?",
+		male = "Mężczyzna",
+		female = "Kobieta",
+		name = "Imię",
+		dob = "Data Urodzenia",
+		born = "Urodzony ${dob}",
+		gender = "Płeć",
+		cash = "Gotówka",
+		bank = "Bank",
+		story = "Historia",
+		loading_character = "Ładuje postać...",
+		deleting_character = "Usuwanie postaci...",
 		create_character = "Stwórz postać",
 		first_name = "Imię",
 		last_name = "Nazwisko",
 		date_of_birth = "Data urodzenia",
-		male = "Mężczyzna",
-		female = "Kobieta",
 		character_backstory = "Historia postaci",
 		cancel = "Anuluj",
-		action_can_not_be_undone = "Tej akcji nie można cofnąć.",
-		exit_city = "Wyjdź z miasta.",
-		press_to_exit_city = "Naciśnij ~g~${InteractionKey} ~w~aby przełączyć się miedzy postaciami.",
-		character_slot_occupied = "Ten slot postaci jest już używany!",
-		something_went_wrong = "O nie! Coś poszło nie tak przy tworzeniu postaci.",
-		name_already_taken = "Te dane są juz zajęte",
-		bad_words = "W twoim imieniu i nazwisku bohatera lub jego historii jest kilka brzydkich słów.",
-		disallowed_name = "Masz niedozwolone słowa w swoim nicku.",
-		numbers_not_allowed = "Liczby nie są dozwolone w nazwie postaci.",
-		illegal_character_slot = "Nie jesteś w stanie utworzyć postaci na tym slocie.",
-		missing_character_creation_data = "Brakujące dane dotyczące tworzenia postaci.",
-		character_already_loaded = "Masz już załadowaną postać.",
-		bad_words_in_character_creation = "Grasz próbował zrobić postać używając niedozwolone słowa: \"${badWords}\"",
-		disallowed_words_in_character_name = "gracz próbował stworzyć postać z najprawdopodobnie niedzwolonym imieniem: \"${characterName}\"",
-		disallowed_birthday = "Próba stworzenia postaci o możliwie złym urodzeniu: \"${birthday}\"",
+		complete = "Gotowe",
+		creating_character = "Tworzenie postaci...",
+		are_you_sure_you_want_to_delete = "Czy jesteś pewny, że chcesz usunąć tą postać? Nie można tego cofnąć!",
+		stop_download = "Zatrzymaj pobieranie",
+		start_download = "Zacznij pobieranie",
+		back = "Wróć",
+		cache_assets = "Zasoby",
+		download_assets = "Czy chcesz pobierać i buforować większość zasobów serwera? Robienie tego doprowadzi do kilku rzeczy:",
+		cache_assets_less_lag = "Potencjalnie mniej lagów, mniej spadających klatek i mniej skoków pingu podczas gry. Zwłaszcza jeśli korzystasz z gorszej klasy sprzętu lub wolniejszego połączenia..",
+		cache_assets_crashes = "Może to spowodować crash gry podczas pobierania.",
+		cache_assets_restart = "Po zakończeniu zalecamy ponowne uruchomienie gry, ponieważ może to spowodować lagowanie przez resztę tej sesji.",
+		cache_assets_disk = "Zajmie to trochę miejsca na dysku, więc upewnij się, że jest tam wolne miejsce. Po aktualizacji może warto również wyczyścić stary cache, aby zwolnić miejsce.",
+		vehicles = "Pojazdy",
+		objects = "Obiekty",
+		peds = "Pedy",
+		clothing = "Ubrania",
+		main_menu = "Główne menu",
+		gta_settings = "Ustawienia GTA",
 		discord = "Discord",
-		you_have_disconnected_from_the_server = "Rozłączyłes się z serwerem.",
-		notice = "Zauważyć"
+		framework = "Framework",
+		notice = "Powiadomienia",
+		language = "Język",
+
+		missing_character_creation_data = "Brakujące danych do stworzenia postaci.",
+		bad_words = "W nazwie lub historii twojej postaci znajdują się brzydkie słowa.",
+		disallowed_name = "W nazwie postaci znajdują się niedozwolone słowa.",
+		disallowed_birthday = "Twoja data urodzenia nie jest dozwolona.",
+		numbers_not_allowed = "Cyfry nie są dozwolone w nazwie postaci.",
+		something_went_wrong = "Coś poszło nie tak podczas próby stworzenia Twojej postaci.",
+		character_slot_occupied = "Ten slot na postać jest już zajęty.",
+		name_already_taken = "To imię jest już zajęte.",
+		illegal_character_slot = "Nie jesteś w stanie stworzyć postaci w tym slocie.",
+		character_already_loaded = "Masz już załadowaną postać."
 	},
+
 	
 	loot = {
 		press_to_pick_up = "Naciśnij ~INPUT_CONTEXT~, aby odebrać ${itemLabel}."
@@ -6828,19 +7199,13 @@ balls = {
 	},
 
 	notepads = {
-		placeholder = "Zrób notatki",
+		take_notes = "Robi notatki...",
 		press_to_open = "Naciśnij ~INPUT_CONTEXT~ by otworzyć ten notatnik.",
 		notepad_busy = "Ktoś inny używa tego notatnika.",
 		dropped_notepad_title = "Notatnik upuszczony.",
-		dropped_notepad_text_and_pixels_title_details = "${consoleName} upuścił notatnik z rysunkiem i tekstem. `${text}`.",
 		dropped_notepad_text_title_details = "${consoleName} upuścił notatnik z tekstem. `${text}`.",
-		dropped_notepad_pixels_title_details = "${consoleName} upuścil notatnik z rysunkiem..",
-		dropped_notepad_pixels_penis_title_details = "${consoleName} upuścił notatnik z rysunkiem przypominającym kutasa.",
 		updated_notepad_title = "Notatnik zauktualizowany.",
-		updated_notepad_text_and_pixels_title_details = "${consoleName} zaktualizował notatnik rysunkiem i tekstem. `${text}`.",
 		updated_notepad_text_title_details = "${consoleName} zaktualizował notatnik tekstem `${text}`.",
-		updated_notepad_pixels_title_details = "${consoleName} zaktualizował notatnik rysunkiem.",
-		updated_notepad_pixels_penis_title_details = "${consoleName} zaktualizował notatnik z rysunkiem przypominającym kutasa.",
 		picked_up_notepad_title = "${consoleName} podniósł notatnik z tekstem: `${text}`.",
 		picked_up_notepad_text_title_details = "Podniosłeś notatnik",
 		invalid_notepad_id = "Nieprawidłowy identyfikator notatnika.",
@@ -7146,7 +7511,6 @@ balls = {
 		attempt_failed = "Spróbował ${attemptMessage} i nie udało się",
 		dice_message = "Rzucił kostką i wylosował ${diceNumber}",
 		roll_message = "Rzucił kostką z ustawieniami ${rolls}d${max} i dostał ${totalValue}",
-		card_message = "Wyciągnął kartę i dostał ${cardLabel}",
 		citizen_card_message = "Pokazujesz dowód osobisty (${characterId})",
 		badge_message = "Pokazujesz swoją odznake (${characterId})",
 		license_message = "Pokazujesz swoją licencje (${characterId})",
@@ -7154,58 +7518,6 @@ balls = {
 		ped_message_logs_details = "${consoleName} Wysłał wiadomość do peda z treścią: `${pedMessage}`",
 		attached_ped_message_logs_title = "Dołączona wiadomość Peda",
 		attached_ped_message_logs_details = "${consoleName} dołączył wiadomość ped z następującą wiadomością: `${pedMessage}`",
-		hearts_1 = "As Kier",
-		hearts_2 = "Dwójka Kier",
-		hearts_3 = "Trójka Kier",
-		hearts_4 = "Czwórka Kier",
-		hearts_5 = "Piątka Kier",
-		hearts_6 = "Szóstka Kier",
-		hearts_7 = "Siódemka Kier",
-		hearts_8 = "Ósemka Kier",
-		hearts_9 = "Dziewiątka Kier",
-		hearts_10 = "Dziesiątka Kier",
-		hearts_11 = "Walet Kier",
-		hearts_12 = "Dama Kier",
-		hearts_13 = "Król Kier",
-		diamonds_1 = "As Karo",
-		diamonds_2 = "Dwójka Karo",
-		diamonds_3 = "Trójka Karo",
-		diamonds_4 = "Czwórka Karo",
-		diamonds_5 = "Piątka Karo",
-		diamonds_6 = "Szóstka Karo",
-		diamonds_7 = "Siódemka Karo",
-		diamonds_8 = "Ósemka Karo",
-		diamonds_9 = "Dziewiątka Karo",
-		diamonds_10 = "Dziesiątka Karo",
-		diamonds_11 = "Walet Karo",
-		diamonds_12 = "Dama Karo",
-		diamonds_13 = "Król Karo",
-		spades_1 = "As Pik",
-		spades_2 = "Dwójka Pik",
-		spades_3 = "Trójka Pik",
-		spades_4 = "Czwórka Pik",
-		spades_5 = "Piątka Pik",
-		spades_6 = "Szóstka Pik",
-		spades_7 = "Siódemka Pik",
-		spades_8 = "Ósemka Pik",
-		spades_9 = "Dziewiątka Pik",
-		spades_10 = "Dziesiątka Pik",
-		spades_11 = "Walet Pik",
-		spades_12 = "Dama Pik",
-		spades_13 = "Król Pik",
-		clubs_1 = "As Trefl",
-		clubs_2 = "Dwójka Trefl",
-		clubs_3 = "Trójka Trefl",
-		clubs_4 = "Czwórka Trefl",
-		clubs_5 = "Piątka Trefl",
-		clubs_6 = "Szóstka Trefl",
-		clubs_7 = "Siódemka Trefl",
-		clubs_8 = "Ósemka Trefl",
-		clubs_9 = "Dziewiątka Trefl",
-		clubs_10 = "Dziesiątka Trefl",
-		clubs_11 = "Walet Trefl",
-		clubs_12 = "Dama Trefl",
-		clubs_13 = "Król Trefl",
 		chat_ped_messages_enabled = "Wiadomości narracyjne będą teraz wyświetlane na czacie.",
 		chat_ped_messages_disabled = "Wiadomości narracyjne nie będą już wyświetlane na czacie.",
 		me_message_chat_title = "/me [${serverId}]",
@@ -7215,9 +7527,9 @@ balls = {
 		attempt_message_chat_title = "/try [${serverId}]",
 		dice_message_chat_title = "/kostka [${serverId}]",
 		roll_message_chat_title = "/losuj [${serverId}]",
-		card_message_chat_title = "/karta [${serverId}]",
 		description_message_chat_title = "/opis [${serverId}]",
-		message_too_long = "Wiadomosc zawiera za duzo znaków!"
+		message_too_long = "Wiadomosc zawiera za duzo znaków!",
+		card_command_wait = "Właśnie dobrałeś kartę, poczekaj chwilę przed dobraniem kolejnej."
 	},
 
 	ped_objects = {
@@ -7301,6 +7613,13 @@ balls = {
 
 	pictures = {
 		selfie_description = "Zdjęcie ${firstName} ${lastName}."
+	},
+
+	plants = {
+		cannot_place = "Nie możesz zasadzić ${plant} rośliny tutaj.",
+		failed_plant = "Nie udało się zasadzić ${plant} rośliny.",
+
+		type_weed_seeds = "Zioło"
 	},
 
 	player_scales = {
@@ -7420,6 +7739,22 @@ balls = {
 		lock_open = "Odblokowane",
 		lock_closed = "Zablokowane"
 	},
+	
+	scoreboard = {
+		player_list = "Lista graczy",
+		players = "Gracze",
+		total = "Łącznie",
+		recent_disconnections = "Ostatnie odłączenia",
+		disconnected_player = "Rozłączony gracz",
+		id = "ID",
+		name = "Nazwa",
+		steam = "Steam",
+		reason = "Powód",
+		time_since_disconnection = "Czas od momentu rozłączenia",
+
+		you_are_now_metagaming = "Jesteś teraz wszechwiedzącym.",
+		you_are_no_longer_metagaming = "Nie jesteś już wszechwiedzącym."
+	},
 
 	screenshots = {
 		screenshot_created = "Pomyślnie zrobiono screenshota.",
@@ -7436,7 +7771,8 @@ balls = {
 		screenshot_error_black_screen = "Nie można odczytać ekranu klienta.",
 		screenshot_error_client_false = "Nie udało się utworzyć zrzutu ekranu",
 		screenshot_error_user_developer = "Użytkownik jest developerem.",
-		screenshot_error_no_token = "Nie udało się uzyskać tokena opfw."
+		screenshot_error_no_token = "Nie udało się uzyskać tokena opfw.",
+		screenshot_timeout = "Czas oczekiwania na zrzut ekranu upłynął."
 	},
 
 	scuba = {
@@ -7573,27 +7909,6 @@ balls = {
 
 	snow = {
 		hold_to_pick_up_snowballs = "Przytrzymaj ~INPUT_CONTEXT~ żeby ulepić śnieżkę."
-	},
-
-	sound_effects = {
-		illegal_sound_effect = "Próba odtworzenia dźwięku zewnętrznego.",
-		played_sound_effect_for_everyone_title = "Odtworzono efekt dźwiękowy dla każdego",
-		played_sound_effect_for_everyone_details = "${consoleName} odtworzono dla każdego. Dźwięk z URL `${url}` był ustawiony na głośność `${volume}`.",
-		played_sound_effect_for_player_title = "Odtworzono efekt dźwiękowy dla gracza",
-		played_sound_effect_for_player_details = "${consoleName} odtworzono dźwięk dla ${targetConsoleName}. Dźwięk z URL `${url}` był ustawiony na głośność `${volume}`.",
-		played_sound_effect_at_player_title = "Odtworzono efekt dźwiękowy na pozycji gracza",
-		played_sound_effect_at_player_details = "${consoleName} Odtworzono efekt dźwiękowy dla ${targetConsoleName}'s pozycji. Dźwięk z URL `${url}` był ustawiony na głośność `${volume}`.",
-		url_invalid = "Podany adres URL jest nieprawidłowy. Musi być przesłany na bezpiecznym połączeniu. (https://)",
-		url_missing = "Dodaj adres URL do dźwięku, który próbujesz odtworzyć.",
-		invalid_server_id = "Niepoprawne ID serwera.",
-		error_invalid_url = "Podany adres URL był nieprawidłowy. Musi być przesłany na bezpiecznym połączeniu. (https://)",
-		error_missing_url = "Nie podano adresu URL.",
-		error_no_permissions = "Nie masz wymaganych uprawnień, aby odtworzyć ten dźwięk.",
-		error_user_not_found = "Nie mogliśmy znaleźć Twoich danych użytkownika.",
-		error_not_found = "Wystapił nieznany błąd.",
-		played_sound_effect_at_player = "Odtworzono efekt dźwiękowy dla ${consoleName}'pozycji. Dźwięk z URL `${url}` był ustawiony na głośność `${volume}`.",
-		played_sound_effect_for_player = "Odtworzono efekt dźwiękowy dla gracza ${consoleName}. Dźwięk z URL `${url}` był ustawiony na głośność `${volume}`.",
-		played_sound_effect_for_everyone = "Odtworzono efekt dźwiękowy dla wszystkich. Dźwięk z URL `${url}` był ustawiony na głośność `${volume}`."
 	},
 
 	spawn = {
@@ -7948,7 +8263,10 @@ balls = {
 		enter_underground_tunnel_interact = "[${InteractionKey}] Wejdź do podziemnego tunelu",
 
 		exit_underground_tunnel = "Wyjdź z podziemnego tunelu",
-		exit_underground_tunnel_interact = "[${InteractionKey}] Wyjdź z podziemnego tunelu"
+		exit_underground_tunnel_interact = "[${InteractionKey}] Wyjdź z podziemnego tunelu",
+
+		use_secret_tunnel_exit = "Użyj tajnego wyjścia",
+		use_secret_tunnel_exit_interact = "[${InteractionKey}] Użyj tajnego wyjścia"
 	},
 
 	test_server = {
@@ -8197,6 +8515,23 @@ balls = {
 		using_sink = "Użyj zlewu"
 	},
 
+	welcome_screen = {
+		welcome_to = "Witaj na ${serverName}",
+		welcome_1 = "Właśnie stworzyłeś swoją pierwszą postać. Podstawowe cechy Twojej postaci, takie jak kształt twarzy, kolor skóry, starzenie się itp. mogą być zmienione tylko teraz i nie będziesz mógł ich zmienić w późniejszym czasie, więc upewnij się, że jesteś zadowolony ze swojej postaci przed zakończeniem procesu tworzenia.",
+
+		creation_title = "Menu tworzenia",
+		creation_1 = "Podczas tworzenia pierwszej postaci domyślnie zostanie wybrany model freemode. Męskie i żeńskie modele freemode zapewniają szeroki zakres opcji dostosowywania. Możesz zmienić wygląd swojej postaci poruszając się po menu za pomocą klawiszy strzałek w lewo, prawo, górę i dół. Bieżący wybór jest podświetlony.",
+		creation_2 = "W menu \"Customization\" możesz zmienić kształt twarzy, odcień skóry i ubranie swojej postaci.",
+		creation_3 = "Po zmianie podstawowego wyglądu i ubioru postaci użyj klawisza backspace, aby powrócić do głównego menu. Tutaj możesz użyć klawisza strzałki w dół, aby przejść do menu \"Face\" i wybierz go naciskając enter. W menu twarzy możesz zmienić cechy twarzy postaci, takie jak skazy, włosy na twarzy, brwi, makijaż itp.",
+		creation_4 = "Po zakończeniu pracy z menu twarzy możesz użyć klawisza backspace, aby ponownie powrócić do menu głównego. Tutaj możesz wybrać menu \"Accessories\" jeśli chcesz dodać akcesoria, takie jak okulary, kapelusze itp.",
+		creation_5 = "W każdej chwili można wrócić do poprzedniego menu, wybierając je ponownie w menu głównym.",
+		creation_6 = "Kiedy już jesteś zadowolony z wyglądu swojej postaci, możesz zakończyć proces tworzenia przytrzymując klawisz \"G\"",
+		creation_final = "Pamiętaj, że nie będziesz mógł zmienić odcienia skóry ani kształtu twarzy swojej postaci po zakończeniu procesu tworzenia. Upewnij się więc, że jesteś z nich zadowolony, zanim skończysz.",
+
+		exit_intro = "Wyjście z wprowadzenia",
+		exit_sure = "Jesteś pewny?"
+	},
+
 	wizard = {
 		action_missing_permissions = "Próbowano zmusić gracza do wykonania akcji kreatora bez odpowiednich uprawnień.",
 		action_radius_missing_permissions = "Próbowano zmusić graczy w określonym promieniu do wykonywania działań czarodzieja bez odpowiednich uprawnień.",
@@ -8215,8 +8550,10 @@ balls = {
 		ignite_player = "Podpal",
 		explode_player = "Wysadź",
 		quietly_revive_player = "Cichy revive",
-		steal_player_identity = "Ukradnij tożsamość",
-		steal_player_ped = "Ukradnij postać",
+		play_sound = "Zagraj dźwięk",
+
+		play_sound_knocking = "Pukanie",
+		play_sound_discord = "Discord",
 
 		invalid_radius = "Nieprawidłowy promień",
 		invalid_server_id = "Nieprawidłowy identyfikator serwera.",
@@ -8272,6 +8609,12 @@ balls = {
 	},
 
 	-- global/*
+
+	entities = {
+		in_no_ped_population_area = "Jesteś w 'obszarze nie zamieszkałym przez pedów'.",
+		not_in_no_ped_population_area = "Nie jesteś w 'obszarze nie zamieszkałym przez pedów'."
+	},
+
 	explosions = {
 		invalid_explosion_type = "Typ eksplozji `${explosionType}` jest niepoprawna.",
 		invalid_camera_shake = "Trzęsienie kamery `${cameraShake}` jest niepoprawna.",
@@ -8281,6 +8624,10 @@ balls = {
 	},
 
 	functions = {
+		year = "rok",
+		years = "lata",
+		month = "miesiąc",
+		months = "miesiące",
 		day = "dzień",
 		days = "dni",
 		hour = "godzina",
@@ -8292,7 +8639,9 @@ balls = {
 		unknown = "Nieznano",
 		flipped_vehicle_logs_title = "Obrócono pojazd",
 		flipped_vehicle_logs_details = "${consoleName} obrócił pojazd.",
-		failed_to_find_ground = "Nie znaleziono ziemi, przeteleportowano do najbliższej drogi."
+		failed_to_find_ground = "Nie znaleziono ziemi, przeteleportowano do najbliższej drogi.",
+		time_in = "w ${time} ${unit}",
+		time_ago = "${time} ${unit} temu"
 	},
 
 	states = {
@@ -8501,6 +8850,7 @@ balls = {
 		license_special = "Licencja Pilota",
 		license_hunting = "Licencja łowiecka",
 		license_fishing = "Licencja wędkarska",
+		license_weapon = "Licencja na broń",
 		gave_character_license = "Dodano ${characterName} licencje `${licenseLabel}`.",
 		character_already_has_license = "${characterName} posiada już licencje `${licenseLabel}`",
 		removed_character_license = "Usunięto licencje `${licenseLabel}` dla ${characterName}.",
@@ -8514,7 +8864,8 @@ balls = {
 		player_licenses_are = "${characterName} posiada następujące licencje: ${licenses}",
 		you_have_no_licenses = "Nie posiadasz licencji.",
 		player_has_no_licenses = "${characterName} nie posiada licencji.",
-		failed_to_get_licenses = "Nie udało się nadać licencji."
+		failed_to_get_licenses = "Nie udało się nadać licencji.",
+		license_list = "Dostępne licencje: ${licenseList}."
 	},
 
 	tow = {
@@ -8646,6 +8997,9 @@ balls = {
 		vehicle_in_garage = "Twój pojazd znajduje się w ${garageName}.",
 		vehicle_withdrawn = "Twój pojazd został odebrany.",
 		error_withdrawing = "Podczas próby odebrania pojazdu pojawił się błąd.",
+		withdraw_timeout = "Proszę poczekać trochę przed próbą wyciągnięcia innego pojazdu.",
+		garage_in_use = "Ten garaż jest obecnie w użyciu, proszę chwilę poczekać.",
+		invalid_model = "Nieprawidłowy lub nieznany model pojazdu.",
 		withdraw_success = "Pomyślnie odebrano twój pojazd.",
 		vehicle_in_the_way = "Inny pojazd blokuje punkt wyjmowania pojazdów",
 		vehicle_is_out = "Twój pojazd już został wyjety.",
@@ -8673,6 +9027,18 @@ balls = {
 		garage = "Garaż",
 		retrieved_vehicle_logs_title = "Odzyskany pojazd",
 		retrieved_vehicle_logs_details = "${consoleName} odzyskał pojazd z tablicą ${plate} za $250.",
+
+		state_loading_model = "Ładuje model...",
+		state_withdrawing = "Wyciągam...",
+		state_spawning = "Respie...",
+		state_finalizing = "Finalizowanie...",
+
+		state_retrieve_searching = "Szukam...",
+		state_retrieving = "Odświeżanie...",
+
+		state_storing = "Zapisuje..",
+
+		state_loading = "Ładuje...",
 
 		vehicle_weight = "Waga: ${weight}",
 		last_garage_letter = "Ostatni - Garaż ${letter}",
@@ -8751,6 +9117,13 @@ balls = {
 		fake_plate_inactive = "Zresetuj tablicę pojazdów z powrotem do oryginalnej.",
 
 		fake_plate_missing_permissions = "Gracz próbował ustawić fałszywą tablicę za pomocą komendy bez odpowiednich uprawnień."
+	},
+
+	
+	runways = {
+		you_are_not_in_a_plane = "Nie jesteś w samolocie.",
+		ifr_disabled = "IFR został wyłączony.",
+		ifr_enabled = "IFR został włączony."
 	},
 
 	spawner = {
