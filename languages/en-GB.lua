@@ -2284,6 +2284,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		clear_map_command_parameter_slot = "slot",
 		clear_map_command_parameter_slot_help = "The inventory slot the map is in.",
 		clear_map_command_substitutes = "",
+		
+		-- game/jackpot
+		jackpot_command = "/jackpot",
+		jackpot_command_help = "Toggle the jackpot UI.",
+		jackpot_command_substitutes = "",
 
 		-- game/locate
 		locate_entity_command = "/locate_entity",
@@ -2669,6 +2674,13 @@ OP.Global.Locales.Languages["en-GB"] = {
 		radio_volume_command_parameter_volume = "volume level",
 		radio_volume_command_parameter_volume_help = "The volume level of the radio. The value must be between 0 and 1. The default is 0.5. Leaving this blank will return your current volume level.",
 		radio_volume_command_substitutes = "",
+		
+		-- game/reskin
+		reskin_command = "/reskin",
+		reskin_command_help = "Trigger a reskin for a player.",
+		reskin_command_parameter_server_id = "server id",
+		reskin_command_parameter_server_id_help = "The server ID of the player you would like to trigger a reskin for. Leave this blank to auto-select yourself.",
+		reskin_command_substitutes = "",
 
 		-- game/riot_mode
 		toggle_riot_mode_command = "/riot_mode",
@@ -3314,6 +3326,18 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 	connections = {
 		your_account_is_connecting = "Your account is connecting from a new session."
+	},
+	
+	controls = {
+		menu_control_up = "Menu Up",
+		menu_control_down = "Menu Down",
+		menu_control_left = "Menu Left",
+		menu_control_right = "Menu Right",
+
+		menu_control_up_alternative = "Menu Up Alternative",
+		menu_control_down_alternative = "Menu Down Alternative",
+		menu_control_left_alternative = "Menu Left Alternative",
+		menu_control_right_alternative = "Menu Right Alternative"
 	},
 
 	core = {
@@ -5440,6 +5464,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		inspect_weapon = "The serial number of this ${itemName} appears to be `${itemId}`.",
 		inspect_weapon_broken = "The serial number of this ${itemName} appears to be `${itemId}`, is also appears to be completely broken.",
 
+		nameable_title = "Nameable Item Name:",
+
 		locker_restricted = "This item doesn't seem to fit in your locker.",
 
 		press_to_access_shredder = "[${InteractionKey}] Access shredder.",
@@ -5848,6 +5874,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		pumpkin_description = "A large orange vegetable that is used for Halloween.",
 		cabbage = "Cabbage",
 		cabbage_description = "Perfect for making homemade kimchi.",
+		
+		smoothie = "Smoothie",
+		smoothie_description = "The perfect blend of fruits, vegetables, and electrolytes to cure even the worst gaming-induced hangovers.",
+		blender = "Blender",
+		blender_description = "The Ultimate Smoothie Blender: because a well-balanced breakfast is the key to victory (and a tasty smoothie never hurt either).",
 
 		cocoa_beans = "Cocoa Beans",
 		cocoa_beans_description = "Small beans that are used to make chocolate.",
@@ -5899,6 +5930,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		ballistic_shield = "Ballistic Shield",
 		ballistic_shield_description = "This shield should be used when venturing into the ganglands of RP.",
+		
+		pet_porg = "Porg Pal",
+		pet_porg_description = "Adorable Porg Pal to perch on your shoulder and keep you company. Cute and cuddly, this little creature will bring a smile to your face wherever you go.",
 
 		boxing_gloves = "Boxing Gloves",
 		boxing_gloves_description = "Turns you into Rocky, but you probably won't get a sequel...",
@@ -6788,6 +6822,26 @@ OP.Global.Locales.Languages["en-GB"] = {
 		failed_clear_map = "Failed to clear stored map location.",
 		clear_map_invalid_slot = "Invalid inventory slot."
 	},
+	
+	jackpot = {
+		press_to_deposit = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to deposit items to the Online Jackpot.",
+		can_only_withdraw_at_casino = "You can only withdraw at the Casino.",
+
+		jackpot = "Jackpot",
+		inventory = "Inventory",
+		no_items_in_inventory = "Looks like you have no items in your virtual inventory.",
+		you_can_deposit_at_the_casino = "You can deposit items at the casino.",
+		close = "Close",
+		bet = "Bet",
+		your_chance = "Your Chance: ${chance}%",
+		character_bet = "${characterName} bet ${itemAmount} item(s) worth $${itemWorth}",
+		pot = "Pot: $${jackpotWorth}",
+		items = "Items: ${jackpotItemAmount}",
+		withdraw = "Withdraw (${withdrawAmount})",
+		quick_sell = "Quick Sell ($${quickSellWorth})",
+		inventory_value = "Value: $${inventoryWorth}",
+		inventory_total_items = "Total Items: ${inventoryTotalItems}"
+	},
 
 	jail = {
 		press_to_leave_jail = "Press ~INPUT_CONTEXT~ to leave jail.",
@@ -6896,6 +6950,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		name_already_taken = "This name is already taken.",
 		illegal_character_slot = "You are not able to create a character in this slot.",
 		character_already_loaded = "You already have a character loaded."
+		
+		new_citizen = "New Citizen",
+		los_santos_police_dept = "LOS SANTOS POLICE DEPT"
 	},
 
 	loot = {
@@ -7669,6 +7726,21 @@ OP.Global.Locales.Languages["en-GB"] = {
 		radio_debug_no_permissions = "Attempted to toggle the radio debug without proper permission."
 	},
 
+	reskin = {
+		plastic_surgery = "Plastic Surgery",
+		los_santos_police_dept = "LOS SANTOS POLICE DEPT",
+
+		reskin_player_no_permissions = "Player attempted to toggle the radio debug without proper permission.",
+
+		triggered_reskin_for_player = "Triggered reskin for ${consoleName}.",
+
+		triggered_reskin_for_player_logs_title = "Triggered Reskin For Player",
+		triggered_reskin_for_player_logs_details = "${consoleName} triggered a reskin for ${targetConsoleName}.",
+
+		triggered_reskin_for_self_logs_title = "Triggered Reskin For Self",
+		triggered_reskin_for_self_logs_details = "${consoleName} triggered a reskin for themselves."
+	},
+
 	riot_mode = {
 		riot_mode_enabled = "Successfully enabled riot mode.",
 		riot_mode_disabled = "Successfully disabled riot mode. Already aggressive peds will continue fighting until they are dead.",
@@ -7861,6 +7933,17 @@ OP.Global.Locales.Languages["en-GB"] = {
 		skylift_magnet_turned_on_logs_details = "${consoleName} turned the Skylift magnet on.",
 		skylift_attached_vehicle_logs_title = "Skylift Attached Vehicle",
 		skylift_attached_vehicle_logs_details = "${consoleName} attached a vehicle to their Skylift."
+	},
+	
+	smoothies = {
+		blend = "Blend",
+		close = "Close",
+
+		use_blender = "[${InteractionKey}] Use Blender",
+		blending = "Blending",
+
+		smoothie_label = "Smoothie (${flavors})",
+		seperator = "and"
 	},
 
 	snow = {
@@ -8472,6 +8555,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		use_sink = "[${InteractionKey}] Use Sink",
 		using_sink = "Using Sink"
 	},
+	
+	weed_field = {
+		pick_weed = "Press ~INPUT_CONTEXT~ to pick weed.",
+		picking_weed = "Picking Weed"
+	},
 
 	welcome_screen = {
 		welcome_to = "Welcome to ${serverName}",
@@ -8564,6 +8652,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		press_to_loot_zombie = "[${InteractionKey}] Loot Zombie",
 		looting_zombie = "Looting Zombie",
 		zombie_looting_injection = "Excessive zombie looting! (Bypassed server-timeout, most likely using an injector to accomplish this.)"
+		
+		zombie_trip_limit = "You feel too tired to continue looting zombies. Maybe try again tomorrow."
 	},
 
 	-- global/*
