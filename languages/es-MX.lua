@@ -1369,6 +1369,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		richer_presence_command_help = "Alterna la `presencia mas rica` que agrega más información a la presencia enriquecida, como el personaje cargado.",
 		richer_presence_command_substitutes = "",
 
+		-- base/ping
 		get_pings_command = "/obtener_pings",
 		get_pings_command_help = "Obtenga ping promedio a varios hosts en todo el mundo para encontrar la ubicación de host más adecuada para los jugadores actuales de este servidor.",
 		get_pings_command_substitutes = "",
@@ -2284,6 +2285,11 @@ OP.Global.Locales.Languages["es-MX"] = {
 		clear_map_command_parameter_slot_help = "La ranura de inventario en la que se encuentra el mapa.",
 		clear_map_command_substitutes = "/clear_map",
 
+		-- game/jackpot
+		jackpot_command = "/jackpot",
+		jackpot_command_help = "Alternar la interfaz de usuario del jackpot.",
+		jackpot_command_substitutes = "",
+
 		-- game/locate
 		locate_entity_command = "/localizar_entidad",
 		locate_entity_command_help = "Ubicar una determinada entidad en el mapa.",
@@ -2669,6 +2675,13 @@ OP.Global.Locales.Languages["es-MX"] = {
 		radio_volume_command_parameter_volume_help = "El nivel de volumen de la radio. El valor debe estar entre 0 y 1. El valor predeterminado es 0.5. Si deja este espacio en blanco, se devolverá su nivel de volumen actual.",
 		radio_volume_command_substitutes = "/rv",
 
+		-- game/reskin
+		reskin_command = "/reskin",
+		reskin_command_help = "Activar un reskin para un jugador.",
+		reskin_command_parameter_server_id = "ID de servidor",
+		reskin_command_parameter_server_id_help = "El ID del servidor del reproductor para el que desea activar un reskin. Deje esto en blanco para seleccionarse automáticamente.",
+		reskin_command_substitutes = "",
+
 		-- game/riot_mode
 		toggle_riot_mode_command = "/modo_riot",
 		toggle_riot_mode_command_help = "Alterna el modo antidisturbios para todos los jugadores.",
@@ -2828,6 +2841,12 @@ OP.Global.Locales.Languages["es-MX"] = {
 		upgrade_vehicle_fully_command = "/actualizar_vehiculo_completamente",
 		upgrade_vehicle_fully_command_help = "Mejora completamente el vehículo en el que se encuentra actualmente.",
 		upgrade_vehicle_fully_command_substitutes = "/upgrade_vehicle_fully",
+
+		random_vehicle_colors_command = "/color_aleatorio_vehiculo",
+		random_vehicle_colors_command_help = "Aleatoriza los colores del vehículo en el que te encuentras actualmente.",
+		random_vehicle_colors_command_parameter_lights = "Luces",
+		random_vehicle_colors_command_parameter_lights_help = "Si las luces también deben ser aleatorias (xenón y neón).",
+		random_vehicle_colors_command_substitutes = "",
 		
 		starve_command = "/morir_de_hambre",
 		starve_command_help = "Establece tu comida y sed a 0.",
@@ -3307,6 +3326,18 @@ OP.Global.Locales.Languages["es-MX"] = {
 
 	connections = {
 		your_account_is_connecting = "Su cuenta se está conectando desde una nueva sesión."
+	},
+
+	controls = {
+		menu_control_up = "Menú arriba",
+		menu_control_down = "Menú abajo",
+		menu_control_left = "Menú izquierda",
+		menu_control_right = "Menú derecho",
+
+		menu_control_up_alternative = "Menú arriba Alternativo",
+		menu_control_down_alternative = "Menú abajo Alternativo",
+		menu_control_left_alternative = "Menú izquierda Alternativo",
+		menu_control_right_alternative = "Menú derecho Alternativo"
 	},
 	
 	core = {
@@ -4507,7 +4538,215 @@ OP.Global.Locales.Languages["es-MX"] = {
 		server_id_invalid = "ID de servidor no válido."
 	},
 
-		crosshair = {
+	creation = {
+		turn_right = "Girar a la derecha",
+		turn_left = "Girar a la izquierda"
+	},
+
+	creation_menu = {
+		character_creation = "Creación de Personajes",
+		new_character = "NUEVO PERSONAJE",
+
+		select_a_model = "Seleccione un modelo.",
+
+		heritage = "Parentesco",
+		heritage_description = "Seleccione para elegir a sus padres.",
+		mom = "Mamá",
+		mom_description = "Selecciona a tu mamá.",
+		dad = "Papá",
+		dad_description = "Selecciona a tu papá.",
+		resemblance = "Parecido",
+		resemblance_description = "Seleccione si sus características están más influenciadas por su madre o padre.",
+		skin_tone = "Tono de piel",
+		skin_tone_description = "Seleccione si su tono de piel está más influenciado por su madre o padre.",
+		divorced = "Divorciados",
+		divorced_description = "Selecciona si tus padres están divorciados.",
+
+		["in"] = "dentro",
+		out = "fuera",
+		up = "arriba",
+		down = "abajo",
+		brow = "Frente",
+		brow_description = "Realizar cambios en tus funciones físicas.",
+
+		squint = "Estrabismo",
+		wide = "Ancho",
+		eyes = "Ojos",
+		eyes_description = "Realizar cambios en tus funciones físicas.",
+
+		narrow = "Estrecho",
+		wide = "Ancho",
+		nose = "Nariz",
+		nose_description = "Realizar cambios en tus funciones físicas.",
+
+		short = "Corto",
+		long = "Largo",
+		crooked = "Chueco",
+		curved = "Curveado",
+		nose_profile = "Perfil de nariz",
+		nose_profile_description = "Realizar cambios en tus funciones físicas.",
+
+		broken_left = "Izquierda rota",
+		broken_right = "Derecha rota",
+		tip_up = "Levantar",
+		tip_down = "Bajar",
+		nose_tip = "Punta de nariz",
+		nose_tip_description = "Realizar cambios en tus funciones físicas.",
+
+		cheekbones = "Pómulos",
+		cheekbones_description = "Realizar cambios en tus funciones físicas.",
+
+		gaunt = "Flaco",
+		puffed = "Inflado",
+		cheeks = "Cachetes",
+		cheeks_description = "Realizar cambios en tus funciones físicas.",
+
+		thin = "Delgado",
+		fat = "Gordo",
+		lips = "Labios",
+		lips_description = "Realizar cambios en tus funciones físicas.",
+
+		round = "Redondo",
+		square = "Cuadrado",
+		jaw = "Mandíbula",
+		jaw_description = "Realizar cambios en tus funciones físicas.",
+
+		chin_profile = "Perfil de barbilla",
+		chin_profile_description = "Realizar cambios en tus funciones físicas.",
+
+		pointed = "Puntiagudo",
+		rounded = "Redondeado",
+		bum = "Bum",
+		chin_shape = "Forma de barbilla",
+		chin_shape_description = "Realizar cambios en tus funciones físicas.",
+
+		thick = "Grueso",
+		neck_thickness = "Grosor del cuello",
+		neck_thickness_description = "Realizar cambios en tus funciones físicas.",
+
+		features = "Características",
+		appearance = "Apariencia",
+		save_and_continue = "Guardar y continuar",
+		components = "Componentes",
+		props = "Props",
+		ambient_females = "Mujer Ambiental",
+		ambient_male = "Hombre Ambiental",
+		animals = "Animales",
+		cutscene = "Escena",
+		gang_female = "Pandillera",
+		gang_male = "Pandillero",
+		multiplayer = "Multijugador",
+		scenario_female = "Escenario Femenino",
+		scenario_male = "Escenario Masculino",
+		story = "Historia",
+		story_scenario_female = "Historia Escenario Femenino",
+		story_scenario_male = "Historia Escenario Masculino",
+		models = "Modelos",
+
+		features_description = "Seleccione para modificar sus rasgos faciales.",
+
+		unknown_hair = "Cabello desconocido (${hairId})",
+		unknown_eyebrow = "Ceja desconocida (${eyebrowId})",
+		unknown_facial_hair = "Vello facial desconocido (${facialHairId})",
+		unknown_skin_blemish = "Mancha de piel desconocida (${skinBlemishId})",
+		unknown_skin_aging = "Envejecimiento de la piel desconocido (${skinAgingId})",
+		unknown_skin_complexion = "Tez de piel desconocida (${skinComplexionId})",
+		unknown_moles_and_freckles = "Lunares y pecas desconocidas (${molesAndFrecklesId})",
+		unknown_skin_damage = "Daño en la piel desconocido (${skinDamageId})",
+		unknown_eye_makeup = "Maquillaje de ojos desconocido (${eyeMakeupId})",
+		unknown_blusher = "Colorete desconocido (${blusherId})",
+		unknown_lipstick = "Lápiz labial desconocido (${lipstickId})",
+		unknown_chest_hair = "Pelo en el pecho desconocido (${chestHairId})",
+
+		color = "Color",
+		opacity = "Opacidad",
+
+		hair = "Cabello",
+		hair_description = "Realizar cambios en tu apariencia.",
+
+		eyebrows = "Cejas",
+		eyebrows_description = "Realizar cambios en tu apariencia.",
+
+		facial_hair = "Vello facial",
+		facial_hair_description = "Realizar cambios en tu apariencia.",
+
+		skin_blemishes = "Manchas en la piel",
+		skin_blemishes_description = "Realizar cambios en tu apariencia.",
+
+		skin_aging = "Envejecimiento de la piel",
+		skin_aging_description = "Realizar cambios en tu apariencia.",
+
+		skin_complexion = "Tez de la piel",
+		skin_complexion_description = "Realizar cambios en tu apariencia.",
+
+		moles_and_freckles = "Lunares y pecas",
+		moles_and_freckles_description = "Realizar cambios en tu apariencia.",
+
+		skin_damage = "Daño a la piel",
+		skin_damage_description = "Realizar cambios en tu apariencia.",
+
+		eye_color = "Color de ojos",
+		eye_color_description = "Realizar cambios en tu apariencia.",
+
+		eye_makeup = "Maquillaje de ojos",
+		eye_makeup_description = "Realizar cambios en tu apariencia.",
+
+		blusher = "Colorete",
+		blusher_description = "Realizar cambios en tu apariencia.",
+
+		lipstick = "Pintalabios",
+		lipstick_description = "Realizar cambios en tu apariencia.",
+
+		chesthair = "Pelo en pecho",
+		chesthair_description = "Realizar cambios en tu apariencia.",
+
+		ready_to_start_playing = "¿Listo para empezar a jugar?",
+		no = "No",
+		go_back = "Volver.",
+		yes = "Sí",
+		you_will_not_be_able_to_return = "No podrás volver.",
+
+		freemode = "Modo libre",
+		freemode_description = "Seleccione si desea utilizar un modelo freemode. Los modelos Freemode son altamente personalizables.",
+
+		sex = "Sexo",
+		sex_description = "Selecciona el género de tu personaje.",
+		male = "Hombre",
+		female = "Mujer",
+
+		props_description = "Selecciona tus accesorios preferidos.",
+
+		hat = "Sombrero",
+		glass = "Lentes",
+		ear = "Oreja",
+		watch = "Reloj",
+		bracelet = "Brazalete",
+
+		appearance_description = "Seleccione para cambiar su apariencia.",
+		components_description = "Seleccione sus componentes preferidos.",
+
+		none = "Ninguno",
+
+		texture = "Textura ${textureId}",
+		drawable = "Drawable ${drawableId}",
+
+		clean_shaven = "Afeitado limpio",
+
+		face = "Cara",
+		mask = "Máscara",
+		hair = "Cabello",
+		torso = "Torso",
+		leg = "Pierna",
+		parachute_and_bag = "Paracaídas / bolsa",
+		shoes = "Calzado",
+		accessory = "Accesorio",
+		undershirt = "Camiseta",
+		kevlar = "Chaleco",
+		badge = "Placa",
+		torso_two = "Torso 2"
+	},
+
+	crosshair = {
 		copied_config = "Configuracion copiada al portapapeles.",
 		imported_config = "Configuracion Importada.",
 		disabled_crosshair = "Desactivar Crosshair customizado.",
@@ -4551,13 +4790,6 @@ OP.Global.Locales.Languages["es-MX"] = {
 
 	courthouse = {
 		press_to_use_gavel = "Presione ~INPUT_CONTEXT~ para usar el mazo."
-	},
-
-	creation = {
-		male = "Hombre",
-		female = "Mujer",
-		city_registration = "Registro de la ciudad",
-		citizen_id = "ID de Ciudadano: ${characterId}"
 	},
 
 	dashcam = {
@@ -4625,6 +4857,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		coords = "Coords: ${coords}",
 		rotation = "Rotación: ${rotation}",
 		velocity = "Velocidad: ${velocity}",
+		ground_material = "Ground Material: ${material}",
 		g_force = "G-Force: ${force}",
 		debug_print_f8 = "La información de depuración se imprimió en su consola F8.",
 		no_vehicle_bone = "No \"${boneName}\" hueso",
@@ -5181,17 +5414,17 @@ OP.Global.Locales.Languages["es-MX"] = {
 	hud = {
 		mph = "mp/h",
 		kmh = "km/h",
-		knots = "nudos",
+		knots = "NUDOS",
 		ft = "ft",
 		m = "m",
-		belt = "cinturon",
+		belt = "CINTURÓN",
 		limiter = "LIMITADOR",
-		fuel = "Gas",
-		nitro = "nitro",
-		battery = "bateria",
+		fuel = "GAS",
+		nitro = "NITRO",
+		battery = "BATERÍA",
 		fps = "FPS",
 		ping = "PING",
-		autopilot = "piloto automatico",
+		autopilot = "Piloto Automático",
 		ground_asl = "AGL/ASL (${unit})",
 		heading = "Rumbo",
 		gear = "Marcha",
@@ -5204,7 +5437,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		ping_unit = "ms",
 
 		smart_warnings = "Advertencia: ${warnings}!",
-		dehydrated = "deshidratado",
+		dehydrated = "Deshidratado",
 		starving = "Hambriento",
 		injured = "Herido",
 		seriously_injured = "gravemente herido",
@@ -5433,6 +5666,8 @@ OP.Global.Locales.Languages["es-MX"] = {
 		inspect_weapon = "El número de serie de ${itemName} parece ser `${itemId}`.",
 		inspect_weapon_broken = "El número de serie de ${itemName} parece ser `${itemId}`, is also appears to be completely broken.",
 
+		nameable_title = "Nombre del item nombrable:",
+
 		locker_restricted = "Este artículo no parece caber en tu locker.",
 
 		press_to_access_shredder = "[${InteractionKey}] Acceso a trituradora.",
@@ -5456,6 +5691,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 
 		item_is_broken = "Este artículo está roto.",
 		battle_royale_item = "Este objeto solo se puede usar en partidas de Battle Royale",
+		battle_royale_item_disallowed = "Este artículo no está permitido en partidas de Battle Royale.",
 		
 		broken_food = "Este artículo está estropeado.",
 		broken_drugs = "Este artículo está vencido.",
@@ -5844,6 +6080,11 @@ OP.Global.Locales.Languages["es-MX"] = {
 		cabbage = "Col",
 		cabbage_description = "Perfecto para hacer kimchi casero.",
 
+		smoothie = "Licuado",
+		smoothie_description = "La mezcla perfecta de frutas, verduras y electrolitos para curar incluso las peores resacas inducidas por los videojuegos.",
+		blender = "Batidora",
+		blender_description = "The Ultimate Smoothie Blender: porque un desayuno bien equilibrado es la clave de la victoria (y un batido sabroso tampoco está de más).",
+
 		cocoa_beans = "Granos de cacao",
 		cocoa_beans_description = "Granos pequeños que se utilizan para hacer chocolate.",
 		cocoa_powder = "Cacao en polvo",
@@ -5894,6 +6135,9 @@ OP.Global.Locales.Languages["es-MX"] = {
 
 		ballistic_shield = "Escudo balístico",
 		ballistic_shield_description = "EL BLITZ WEY.",
+
+		pet_porg = "Porg Pal",
+		pet_porg_description = "Adorable Porg Pal para posarse sobre tu hombro y hacerte compañía. Linda y tierna, esta pequeña criatura traerá una sonrisa a tu cara donde quiera que vayas.",
 
 		boxing_gloves = "Guante de boxeo",
 		boxing_gloves_description = "Te convierte en Rocky, pero probablemente no obtendrás una secuela...",
@@ -6784,6 +7028,26 @@ OP.Global.Locales.Languages["es-MX"] = {
 		clear_map_invalid_slot = "Ranura de inventario inválida."
 	},
 
+	jackpot = {
+		press_to_deposit = "Presione ~INPUT_REPLAY_SHOWHOTKEY~ para depositar items al jackpot en línea.",
+		can_only_withdraw_at_casino = "Solo puedes retirar en el Casino.",
+
+		jackpot = "Jackpot",
+		inventory = "Inventario",
+		no_items_in_inventory = "Parece que no tienes items en tu inventario virtual.",
+		you_can_deposit_at_the_casino = "Puedes depositar artículos en el casino.",
+		close = "Cerrar",
+		bet = "Apostar",
+		your_chance = "Tu oportunidad: ${chance}%",
+		character_bet = "${characterName} apostó ${itemAmount} item(s) con valor $${itemWorth}",
+		pot = "Pot: $${jackpotWorth}",
+		items = "Items: ${jackpotItemAmount}",
+		withdraw = "Retirar (${withdrawAmount})",
+		quick_sell = "Venta rápida ($${quickSellWorth})",
+		inventory_value = "Valor: $${inventoryWorth}",
+		inventory_total_items = "Total de artículos: ${inventoryTotalItems}"
+	},
+
 	jail = {
 		press_to_leave_jail = "Presione ~INPUT_CONTEXT~ para salir de la cárcel.",
 
@@ -6810,7 +7074,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		invalid_filter_value = "Valor de filtro no válido.",
 		locate_failed = "No se pudo localizar la coincidencia de entidad `${filter}`.",
 		something_went_wrong = "No se pudo ubicar la entidad.",
-		locate_success = "Coincidencia de entidades ubicadas con éxito `${filter}` en (${x}, ${y}, ${z}).",
+		locate_success = "Coincidencia de entidades ubicadas con éxito `${filter}` en (${x}, ${y}, ${z}) (instance = ${instance}).",
 
 		locate_entity_no_permissions = "El jugador intentó localizar una entidad sin el permiso adecuado.",
 	
@@ -6890,7 +7154,10 @@ OP.Global.Locales.Languages["es-MX"] = {
 		character_slot_occupied = "Este slot de personaje ya está ocupado.",
 		name_already_taken = "Este nombre ya está tomado.",
 		illegal_character_slot = "No puedes crear un personaje en este espacio.",
-		character_already_loaded = "Ya tienes un personaje cargado."
+		character_already_loaded = "Ya tienes un personaje cargado.",
+
+		new_citizen = "Nuevo Ciudadano",
+		los_santos_police_dept = "DEPARTAMENTO DE POLICÍA DE LOS SANTOS"
 	},
 
 	loot = {
@@ -7564,6 +7831,13 @@ OP.Global.Locales.Languages["es-MX"] = {
 	pictures = {
 		selfie_description = "Foto de ${firstName} ${lastName}."
 	},
+
+	plants = {
+		cannot_place = "No se puede plantar una planta de ${plant} aquí.",
+		failed_plant = "Error al plantar una planta de ${plant}.",
+
+		type_weed_seeds = "Marihuana"
+	},
 	
 	player_scales = {
 		reset_player_scale_for = "Restablecer la escala del jugador para ${consoleName}.",
@@ -7574,7 +7848,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		player_is_already_set_to_scale = "${consoleName} ya está configurado a la escala `${scale}`.",
 		you_are_already_set_to_scale = "Ya estás configurado en esa escala `${scale}`.",
 		player_is_not_scaled = "${consoleName} no tiene escala.",
-		you_are_not_scaled = "You are not scaled."
+		you_are_not_scaled = "No estás escalado."
 	},
 
 	players = {
@@ -7655,6 +7929,21 @@ OP.Global.Locales.Languages["es-MX"] = {
 		radio_debug_on = "Activó con éxito la depuración de radio.",
 
 		radio_debug_no_permissions = "Se intentó alternar la depuración de radio sin el permiso adecuado."
+	},
+
+	reskin = {
+		plastic_surgery = "Cirugía plástica",
+		los_santos_police_dept = "DEPARTAMENTO DE POLICÍA DE LOS SANTOS",
+
+		reskin_player_no_permissions = "El jugador intentó alternar la depuración de radio sin el permiso adecuado.",
+
+		triggered_reskin_for_player = "Reskin activado para ${consoleName}.",
+
+		triggered_reskin_for_player_logs_title = "Reskin activado para el jugador",
+		triggered_reskin_for_player_logs_details = "${consoleName} activó un reskin para ${targetConsoleName}.",
+
+		triggered_reskin_for_self_logs_title = "Activado Reskin para sí mismo",
+		triggered_reskin_for_self_logs_details = "${consoleName} activó un reskin para sí mismos."
 	},
 
 	riot_mode = {
@@ -7851,13 +8140,30 @@ OP.Global.Locales.Languages["es-MX"] = {
 		skylift_attached_vehicle_logs_details = "${consoleName} conecto un vehículo a su Skylift."
 	},
 
+	smoothies = {
+		blend = "Batir",
+		close = "Cerrar",
+
+		use_blender = "[${InteractionKey}] Usar Batidora",
+		blending = "Batiendo",
+
+		smoothie_label = "Batido de (${flavors})",
+		seperator = "y"
+	},
+
 	snow = {
 		hold_to_pick_up_snowballs = "Mantén pulsado ~INPUT_CONTEXT~ para recoger bolas de nieve"
 	},
 
 	spawn = {
 		spawn_now = "Spawnear ahora",
-		last_position = "Última posición"
+		last_position = "Última posición",
+
+		train_station = "Estación de Tren",
+		city_bus_station = "Estación de Autobuses(Ciudad)",
+		paleto_bay_bus_station = "Estación de Autobuses(Paleto Bay)",
+
+		battle_royale = "Battle Royale"
 	},
 
 	special_imports = {
@@ -8457,6 +8763,11 @@ OP.Global.Locales.Languages["es-MX"] = {
 		use_sink = "[${InteractionKey}] Usar lavadero",
 		using_sink = "Usando lavadero"
 	},
+
+	weed_field = {
+		pick_weed = "Presione ~INPUT_CONTEXT~ para recoger marihuana.",
+		picking_weed = "Recogiendo marihuana"
+	},
 	
 	welcome_screen = {
 		welcome_to = "Bienvenidos a ${serverName}",
@@ -8465,7 +8776,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		creation_title = "El menú de creación",
 		creation_1 = "Al crear tu primer personaje, el modelo de modo libre se seleccionará por defecto. Los modelos de modo libre masculino y femenino ofrecen una amplia gama de opciones de personalización. Puedes cambiar la apariencia de tus personajes navegando por el menú con las teclas de flecha izquierda, derecha, arriba y abajo. Se resalta la selección actual.",
 		creation_2 = "En la \"Personalización\" del Menú Puedes cambiar la forma de la cara, el tono de piel y la ropa de tus personajes.",
-		creation_3 = "Una vez que hayas cambiado la apariencia básica y la ropa de tus personajes, usarás la tecla de retroceso para volver al menú principal. Aquí puede usar su tecla de flecha hacia abajo para navegar al menú  \"Cara\" y seleccionarlo presionando enter. En el menú de la cara puedes cambiar los rasgos faciales de tus personajes como manchas, vello facial, cejas, maquillaje, etc.",
+		creation_3 = "Una vez que hayas cambiado la apariencia básica y la ropa de tus personajes, usarás la tecla de retroceso para volver al menú principal. Aquí puede usar su tecla de flecha hacia abajo para navegar al menú \"Cara\" y seleccionarlo presionando enter. En el menú de la cara puedes cambiar los rasgos faciales de tus personajes como manchas, vello facial, cejas, maquillaje, etc.",
 		creation_4 = "Cuando haya terminado con el menú de caras, puede usar la tecla de retroceso para volver al menú principal nuevamente. Aquí puede seleccionar el menú \"Accesorios\" si desea agregar accesorios como gafas, sombreros, etc.",
 		creation_5 = "En cualquier momento puede volver al menú anterior seleccionándolos nuevamente en el menú principal.",
 		creation_6 = "Una vez que esté satisfecho con la apariencia de sus personajes, puede finalizar el proceso de creación manteniendo presionada la tecla \"G\".",
@@ -8548,7 +8859,9 @@ OP.Global.Locales.Languages["es-MX"] = {
 		hold_to_continue_looting_zombie = "[${InteractionKey}] Saqueo de Zombies",
 		press_to_loot_zombie = "[${InteractionKey}] Saqueo de Zombies",
 		looting_zombie = "Saqueo de Zombies",
-		zombie_looting_injection = "Saqueo excesivo de zombies! (Bypassed server-timeout, most likely using an injector to accomplish this.)"
+		zombie_looting_injection = "Saqueo excesivo de zombies! (Se omitió el tiempo de espera del servidor, lo más probable es que se use un inyector para lograr esto.)",
+
+		zombie_trip_limit = "Te sientes demasiado cansado para seguir saqueando zombis. Tal vez vuelve a intentarlo mañana."
 	},
 
 	-- global/*
@@ -8557,7 +8870,6 @@ OP.Global.Locales.Languages["es-MX"] = {
 		not_in_no_ped_population_area = "No estás en una `zona de población sin peds`."
 	},
 
-	-- global/*
 	explosions = {
 		invalid_explosion_type = "Tipo de explosión `${explosionType}` No es válido.",
 		invalid_camera_shake = "Vibración de la cámara `${cameraShake}` No es válido.",
@@ -8943,6 +9255,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		error_withdrawing = "Ocurrio un error al intentar retirar su vehiculo.",
 		withdraw_timeout = "Por favor, espere un poco antes de intentar retirar otro vehículo.",
 		garage_in_use = "Este garaje está actualmente en uso, por favor espere un momento.",
+		invalid_model = "Modelo de vehículo inválido o desconocido.",
 		withdraw_success = "Retiró con éxito su vehículo.",
 		vehicle_in_the_way = "Hay un vehiculo bloqueando el punto de spawn.",
 		vehicle_is_out = "Tu vehiculo ya esta fuera.",
@@ -8970,6 +9283,18 @@ OP.Global.Locales.Languages["es-MX"] = {
 		garage = "Garaje",
 		retrieved_vehicle_logs_title = "Vehiculo Recuperado",
 		retrieved_vehicle_logs_details = "${consoleName} vehiculo recuperado con placa `${plate}` por ${price}.",
+
+		state_loading_model = "Cargando Modelo...",
+		state_withdrawing = "Retirando...",
+		state_spawning = "Sacando...",
+		state_finalizing = "Finalizando...",
+
+		state_retrieve_searching = "Buscando...",
+		state_retrieving = "Recuperando...",
+
+		state_storing = "Guardando...",
+
+		state_loading = "Cargando...",
 
 		vehicle_weight = "Peso: ${weight}",
 		last_garage_letter = "Último - Garaje ${letter}",
