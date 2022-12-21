@@ -511,7 +511,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		no_attachments = "This weapon does not have any attachments.",
 		available_attachments = "Available Attachments",
 		current_attachments = "Current Attachments",
-		no_attachments = "No Attachments",
 		attachments_list = "Attachments:",
 		tint_label = "Tint: \"${tintLabel}\" (${tintIndex})",
 
@@ -4569,7 +4568,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		brow_description = "Make changes to your physical Features.",
 
 		squint = "Squint",
-		wide = "Wide",
 		eyes = "Eyes",
 		eyes_description = "Make changes to your physical Features.",
 
@@ -4660,7 +4658,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		color = "Color",
 		opacity = "Opacity",
 
-		hair = "Hair",
 		hair_description = "Make changes to your Appearance.",
 
 		eyebrows = "Eyebrows",
@@ -4738,7 +4735,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		leg = "Leg",
 		parachute_and_bag = "Parachute / bag",
 		shoes = "Shoes",
-	
+		accessory = "Accessory",
+		undershirt = "Undershirt",
+		kevlar = "Kevlar",
+		badge = "Badge",
+		torso_two = "Torso 2"
 	},
 	
 	crosshair = {
@@ -4785,13 +4786,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 	courthouse = {
 		press_to_use_gavel = "Press ~INPUT_CONTEXT~ to use the Gavel."
-	},
-
-	creation = {
-		male = "Male",
-		female = "Female",
-		city_registration = "City Registration",
-		citizen_id = "Citizen Id: ${characterId}"
 	},
 
 	dashcam = {
@@ -5693,6 +5687,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		item_is_broken = "This item is broken.",
 		battle_royale_item = "This item can only be used in Battle Royale matches.",
+		battle_royale_item_disallowed = "This item is not allowed in Battle Royale matches.",
 
 		broken_food = "This item is spoiled.",
 		broken_drugs = "This item is expired.",
@@ -7261,7 +7256,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		still_shook = "You are still shaken up from the last explosion and didn't find any gems in this stone.",
 
 		recharging_scanner = "Recharging Scanner ${percentage}%",
-		scanning = "Scanning ${percentage}%",
 
 		refine_gemstones = "[${InteractionKey}] Refine Gemstones",
 		refinery = "Refinery Table",
@@ -8159,7 +8153,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		last_position = "Last Position",
 		train_station = "Train Station",
 		city_bus_station = "City Bus Station",
-		paleto_bay_bus_station = "Paleto Bay Bus Station"
+		paleto_bay_bus_station = "Paleto Bay Bus Station",
+		battle_royale = "Battle Royale"
 	},
 
 	special_imports = {
@@ -9608,7 +9603,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		stop_doing_yoga = "Press ~INPUT_CONTEXT~ to stop doing yoga.",
 		mat_occupied = "Mat is occupied!",
 		yoga = "Yoga",
-		clothing = "Clothing",
 		clothing_cam_help = "Use A, S and D to move the clothing camera around and W to zoom in.",
 		main = "Main",
 		empty_slot = "Empty Slot",
@@ -9617,7 +9611,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		face = "Face",
 		skin_color = "Skin Color",
 		mask = "Mask",
-		hair = "Hair",
 		arms = "Arms",
 		shoes = "Shoes",
 		necklaces_and_ties = "Necklace & Ties",
@@ -9717,7 +9710,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		left_hand = "Left Hand",
 		right_knee = "Right Knee",
 		left_knee = "Left Knee",
-		head = "Head",
 		neck = "Neck",
 		right_arm = "Right Arm",
 		left_arm = "Left Arm",
@@ -9725,8 +9717,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		pelvis = "Pelvis",
 		right_shoulder = "Right Shoulder",
 		left_shoulder = "Left Shoulder",
-		right_wrist = "Right Wrist",
-		left_wrist = "Left Wrist",
 		tounge = "Tounge",
 		upper_lip = "Upper Lip",
 		lower_lip = "Lower Lip",
@@ -9742,7 +9732,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		map_location = "<b>Marked location:</b> <i>${x}, ${y}</i>",
 		smart_watch_hover = "<i>This smart watch belongs to <b>${name} (#${cid})</b>. It has tracked <b>${stepsWalked}</b> steps.</i>",
 		item_contains = "<b>Contains:</b> <i>${contents}</i>.",
-		item_engraving = "<b>Engraving:</b> <i>${message}</i>.",
-		evidence_incomplete = "This evidence bag is incomplete."
+		item_engraving = "<b>Engraving:</b> <i>${message}</i>."
 	}
 }
