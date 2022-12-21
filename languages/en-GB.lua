@@ -4536,7 +4536,211 @@ OP.Global.Locales.Languages["en-GB"] = {
 		crash_success = "Successfully triggered crash for ${consoleName}.",
 		server_id_invalid = "Invalid server id."
 	},
+	
+	creation = {
+		turn_right = "Turn Right",
+		turn_left = "Turn Left"
+	},
 
+	creation_menu = {
+		character_creation = "Character Creation",
+		new_character = "NEW CHARACTER",
+
+		select_a_model = "Select a Model.",
+
+		heritage = "Heritage",
+		heritage_description = "Select to choose your parents.",
+		mom = "Mom",
+		mom_description = "Select your Mom.",
+		dad = "Dad",
+		dad_description = "Select your Dad.",
+		resemblance = "Resemblance",
+		resemblance_description = "Select if your features are influenced more by your Mother or Father.",
+		skin_tone = "Skin Tone",
+		skin_tone_description = "Select if your skin tone is influenced more by your Mother or Father.",
+		divorced = "Divorced",
+		divorced_description = "Select if your parents are divorced.",
+
+		["in"] = "in",
+		out = "out",
+		up = "up",
+		down = "down",
+		brow = "Brow",
+		brow_description = "Make changes to your physical Features.",
+
+		squint = "Squint",
+		wide = "Wide",
+		eyes = "Eyes",
+		eyes_description = "Make changes to your physical Features.",
+
+		narrow = "Narrow",
+		wide = "Wide",
+		nose = "Nose",
+		nose_description = "Make changes to your physical Features.",
+
+		short = "Short",
+		long = "Long",
+		crooked = "Crooked",
+		curved = "Curved",
+		nose_profile = "Nose Profile",
+		nose_profile_description = "Make changes to your physical Features.",
+
+		broken_left = "Broken Left",
+		broken_right = "Broken Right",
+		tip_up = "Tip Up",
+		tip_down = "Tip Down",
+		nose_tip = "Nose Tip",
+		nose_tip_description = "Make changes to your physical Features.",
+
+		cheekbones = "Cheekbones",
+		cheekbones_description = "Make changes to your physical Features.",
+
+		gaunt = "Gaunt",
+		puffed = "Puffed",
+		cheeks = "Cheeks",
+		cheeks_description = "Make changes to your physical Features.",
+
+		thin = "Thin",
+		fat = "Fat",
+		lips = "Lips",
+		lips_description = "Make changes to your physical Features.",
+
+		round = "Round",
+		square = "Square",
+		jaw = "Jaw",
+		jaw_description = "Make changes to your physical Features.",
+
+		chin_profile = "Chin Profile",
+		chin_profile_description = "Make changes to your physical Features.",
+
+		pointed = "Pointed",
+		rounded = "Rounded",
+		bum = "Bum",
+		chin_shape = "Chin Shape",
+		chin_shape_description = "Make changes to your physical Features.",
+
+		thick = "Thick",
+		neck_thickness = "Neck Thickness",
+		neck_thickness_description = "Make changes to your physical Features.",
+
+		features = "Features",
+		appearance = "Appearance",
+		save_and_continue = "Save & Continue",
+		components = "Components",
+		props = "Props",
+		ambient_females = "Ambient Females",
+		ambient_male = "Ambient Male",
+		animals = "Animals",
+		cutscene = "Cutscene",
+		gang_female = "Gang Female",
+		gang_male = "Gang Male",
+		multiplayer = "Multiplayer",
+		scenario_female = "Scenario Female",
+		scenario_male = "Scenario Male",
+		story = "Story",
+		story_scenario_female = "Story Scenario Female",
+		story_scenario_male = "Story Scenario Male",
+		models = "Models",
+
+		features_description = "Select to alter your facial Features.",
+
+		unknown_hair = "Unknown Hair (${hairId})",
+		unknown_eyebrow = "Unknown Eyebrow (${eyebrowId})",
+		unknown_facial_hair = "Unknown Facial Hair (${facialHairId})",
+		unknown_skin_blemish = "Unknown Skin Blemish (${skinBlemishId})",
+		unknown_skin_aging = "Unknown Skin Aging (${skinAgingId})",
+		unknown_skin_complexion = "Unknown Skin Complexion (${skinComplexionId})",
+		unknown_moles_and_freckles = "Unknown Moles & Freckles (${molesAndFrecklesId})",
+		unknown_skin_damage = "Unknown Skin Damage (${skinDamageId})",
+		unknown_eye_makeup = "Unknown Eye Makeup (${eyeMakeupId})",
+		unknown_blusher = "Unknown Blusher (${blusherId})",
+		unknown_lipstick = "Unknown Lipstick (${lipstickId})",
+		unknown_chest_hair = "Unknown Chest Hair (${chestHairId})",
+
+		color = "Color",
+		opacity = "Opacity",
+
+		hair = "Hair",
+		hair_description = "Make changes to your Appearance.",
+
+		eyebrows = "Eyebrows",
+		eyebrows_description = "Make changes to your Appearance.",
+
+		facial_hair = "Facial Hair",
+		facial_hair_description = "Make changes to your Appearance.",
+
+		skin_blemishes = "Skin Blemishes",
+		skin_blemishes_description = "Make changes to your Appearance.",
+
+		skin_aging = "Skin Aging",
+		skin_aging_description = "Make changes to your Appearance.",
+
+		skin_complexion = "Skin Complexion",
+		skin_complexion_description = "Make changes to your Appearance.",
+
+		moles_and_freckles = "Moles & Freckles",
+		moles_and_freckles_description = "Make changes to your Appearance.",
+
+		skin_damage = "Skin Damage",
+		skin_damage_description = "Make changes to your Appearance.",
+
+		eye_color = "Eye Color",
+		eye_color_description = "Make changes to your Appearance.",
+
+		eye_makeup = "Eye Makeup",
+		eye_makeup_description = "Make changes to your Appearance.",
+
+		blusher = "Blusher",
+		blusher_description = "Make changes to your Appearance.",
+
+		lipstick = "Lipstick",
+		lipstick_description = "Make changes to your Appearance.",
+
+		chesthair = "Chesthair",
+		chesthair_description = "Make changes to your Appearance.",
+
+		ready_to_start_playing = "Ready to start playing?",
+		no = "No",
+		go_back = "Go back.",
+		yes = "Yes",
+		you_will_not_be_able_to_return = "You will not be able to return.",
+
+		freemode = "Freemode",
+		freemode_description = "Select if you would like to use a freemode model. Freemode models are highly customizable.",
+
+		sex = "Sex",
+		sex_description = "Select the gender of your Character.",
+		male = "Male",
+		female = "Female",
+
+		props_description = "Select your preferred props.",
+
+		hat = "Hat",
+		glass = "Glass",
+		ear = "Ear",
+		watch = "Watch",
+		bracelet = "Bracelet",
+
+		appearance_description = "Select to changed your Appearance.",
+		components_description = "Select your preferred components.",
+
+		none = "None",
+
+		texture = "Texture ${textureId}",
+		drawable = "Drawable ${drawableId}",
+
+		clean_shaven = "Clean Shaven",
+
+		face = "Face",
+		mask = "Mask",
+		hair = "Hair",
+		torso = "Torso",
+		leg = "Leg",
+		parachute_and_bag = "Parachute / bag",
+		shoes = "Shoes",
+	
+	},
+	
 	crosshair = {
 		copied_config = "Copied config to clipboard.",
 		imported_config = "Imported config.",
@@ -6949,7 +7153,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		character_slot_occupied = "This character slot is already occupied.",
 		name_already_taken = "This name is already taken.",
 		illegal_character_slot = "You are not able to create a character in this slot.",
-		character_already_loaded = "You already have a character loaded."
+		character_already_loaded = "You already have a character loaded.",
 		
 		new_citizen = "New Citizen",
 		los_santos_police_dept = "LOS SANTOS POLICE DEPT"
@@ -8651,7 +8855,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		hold_to_continue_looting_zombie = "[${InteractionKey}] Looting Zombie",
 		press_to_loot_zombie = "[${InteractionKey}] Loot Zombie",
 		looting_zombie = "Looting Zombie",
-		zombie_looting_injection = "Excessive zombie looting! (Bypassed server-timeout, most likely using an injector to accomplish this.)"
+		zombie_looting_injection = "Excessive zombie looting! (Bypassed server-timeout, most likely using an injector to accomplish this.)",
 		
 		zombie_trip_limit = "You feel too tired to continue looting zombies. Maybe try again tomorrow."
 	},
