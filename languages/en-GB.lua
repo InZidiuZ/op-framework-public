@@ -219,7 +219,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		player_revived_success = "Revived player successfully.",
 
-		missing_valid_steam_identifier_parameter = "Missing a valid 'steamIdentifier' parameter.",
+		missing_valid_license_identifier_parameter = "Missing a valid 'licenseIdentifier' parameter.",
 
 		illegal_entity_wipe = "Player attempted to wipe entities, but didn't have permissions.",
 		wiped_entities = "Wiped Entities",
@@ -733,9 +733,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 	},
 
 	authentication = {
-		ip_not_found = "We were unable to fetch your IP address.",
-		checking_steam_account = "Checking if a steam account is present...",
-		steam_account_not_found = "You are not connected to steam. Please relaunch FiveM while steam is open and logged in.",
+		ip_not_found = "We were unable to fetch your IP address.",		
 		authenticating_local_server = "Authenticating with local server...",
 		authenticating_global_server = "Authenticating with OP-FW servers...",
 		error_fetching_data = "An error occurred while fetching your data.",
@@ -3395,7 +3393,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		slots_already_set_to = "The server slots are already set to `${slots}`.",
 		slots_set_to = "The server slots have now been set to `${slots}`.",
 
-		invalid_steam_identifier_parameter = "Missing or invalid 'steamIdentifier' parameter.",
+		invalid_license_identifier_parameter = "Missing or invalid 'licenseIdentifier' parameter.",
 		invalid_target_position_parameter = "Missing or invalid 'targetPosition' parameter.",
 		player_not_found_in_queue = "The player was not found in the queue.",
 		player_queue_moved_success = "The player's position in the queue has been updated.",
@@ -3453,7 +3451,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		kicked_player_and_failed_to_remove_reconnect_priority = "Kicked player and failed to remove reconnect priority.",
 		removed_player_from_queue = "Removed player from queue.",
 		player_not_found = "Player not found.",
-		missing_steam_identifier = "Missing `steamIdentifier`.",
+		missing_license_identifier = "Missing `licenseIdentifier`.",
 		package = "Package",
 		package_updated = "Your package has been updated to `${packageName}`.",
 		package_updated_remaining_time = "Your package has been updated to `${packageName}`. It will expire in ${remainingTime}.",
@@ -3470,7 +3468,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		user_has_no_character_loaded = "The user does not have any character loaded.",
 		user_not_found = "The sent user was not found on the server.",
 		invalid_character_id = "Invalid character id parameter sent.",
-		invalid_steam_identifier = "Invalid steam identifier parameter sent.",
+		invalid_license_identifier = "Invalid license identifier parameter sent.",
 
 		unload_character_not_staff = "The player attempted to unload a player's character but they were not staff.",
 
@@ -5324,6 +5322,19 @@ OP.Global.Locales.Languages["en-GB"] = {
 		finished_run_logs_details = "${consoleName} drilled the gun container and received 1x ${item}."
 	},
 
+	gun_trader = {
+		press_e_to_talk = "Press ~INPUT_CONTEXT~ to talk to Jim.",
+		trader_closed = "Jim's shop is currently closed.",
+
+		purchase = "Purchase",
+		out_of_stock = "Out of Stock",
+
+		failed_trader_closed = "Failed to purchase weapon, the Jim's shop is closed.",
+		failed_no_stock = "Failed to purchase weapon, there is no stock left.",
+		failed_no_money = "Failed to purchase weapon, you don't have enough cash.",
+		failed_something_went_wrong = "Failed to purchase weapon, something went wrong."
+	},
+
 	hacking = {
 		local_disk = "Local Disk (C:)",
 		network = "Network",
@@ -6034,7 +6045,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		peach = "Peach",
 		peach_description = "Not a butt.",
 		pineapple = "Pineapple",
-		pineapple_description = "Pen pineapple apple pen.",
+		pineapple_description = "Should this be on a pizza?",
 		pomegranate = "Pomegranate",
 		pomegranate_description = "Just be glad we spelled it right.",
 		strawberry = "Strawberry",
@@ -6132,6 +6143,12 @@ OP.Global.Locales.Languages["en-GB"] = {
 		
 		pet_porg = "Porg Pal",
 		pet_porg_description = "Adorable Porg Pal to perch on your shoulder and keep you company. Cute and cuddly, this little creature will bring a smile to your face wherever you go.",
+		pet_duck = "Quacktastic Sidekick",
+		pet_duck_description = "With its cheerful quacks and fluffy feathers, this duck is the perfect sidekick for any journey. It'll happily perch on your shoulder, ready to explore the world with you.",
+		pet_cat = "Shoulder Snuggler",
+		pet_cat_description = "This fluffy feline is always ready for a nap, and what better place to snooze than on your shoulder? It'll happily curl up and purr as you go about your day.",
+		pet_cat_grey = "Lazy Gizmo",
+		pet_cat_grey_description = "This small, gray cat is the ultimate in laziness. It sits contentedly on your shoulder, barely moving except to occasionally give a lazy stretch.",
 
 		boxing_gloves = "Boxing Gloves",
 		boxing_gloves_description = "Turns you into Rocky, but you probably won't get a sequel...",
@@ -6190,7 +6207,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		rifle_ammo = "Rifle Ammo",
 		rifle_ammo_description = "This one is for all the hardcore bank robbers looking to slaughter some pigs along the way.",
 		sniper_ammo = "Sniper Ammo",
-		sniper_ammo_description = "Screw your initiation!",
+		sniper_ammo_description = "Hey.. Snipers May wear diapers but we get all the ladies eh hey hey!",
 		shotgun_ammo = "Shotgun Ammo",
 		shotgun_ammo_description = "People think there's gunpowder in these! Clowns... they're filled with love and joy.",
 
@@ -6210,14 +6227,14 @@ OP.Global.Locales.Languages["en-GB"] = {
 		weather_spell_thunder = "Weather Spell (Thunder)",
 		weather_spell_thunder_description = "Using this item will let you temporarily control the weather and make a thunderstorm! It is a one-time use, so use with care. If you use two weather spells at once, the second one will simply queue up.",
 
-		zombie_pill = "Zombie Pill",
-		zombie_pill_description = "A strange pill that does even stranger things... Swallow at your own risk. Perhaps having a gun on you to protect from violent dreams would be wise.",
+		zombie_pill = "Zombie VR Pill",
+		zombie_pill_description = "Oh shit, I forgot to introduce myself... I'm Doctor Monty. So nice to see you all.",
 
 		acid = "Acid",
 		acid_description = "Makes you high permanently. There's no escaping it.",
 
 		rose = "Rose",
-		rose_description = "idk man erp i guess",
+		rose_description = "Roses are red, Violets are violet, not blue. The clue is in the name, uh I love you?",
 
 		teddy_bear = "Teddy Bear",
 		teddy_bear_description = "A friend that will actually listen to you.",
@@ -6510,8 +6527,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		rolling_paper = "Rolling Paper",
 		rolling_paper_description = "That quick paper to roll up and smoke your pain away.",
 
-		arena_pill = "Arena Pill",
-		arena_pill_description = "A strange pill that does even stranger things... Swallow at your own risk. Perhaps having a gun on you to protect from violent dreams would be wise.",
+		arena_pill = "Arena VR Pill",
+		arena_pill_description = "Be the Arena Andy you always wanted to be.",
 
 		shovel = "Shovel",
 		shovel_description = "Diggy Diggy Hole",
@@ -7973,12 +7990,12 @@ OP.Global.Locales.Languages["en-GB"] = {
 		disconnected_player = "Disconnected Player",
 		id = "ID",
 		name = "Name",
-		steam = "Steam",
 		reason = "Reason",
 		time_since_disconnection = "Time since disconnection",
 
 		you_are_now_metagaming = "You are now Metagaming.",
-		you_are_no_longer_metagaming = "You are no longer Metagaming."
+		you_are_no_longer_metagaming = "You are no longer Metagaming.",
+		identifier = "Invalid license identifier parameter sent."
 	},
 
 	screenshots = {
@@ -8393,7 +8410,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		user_has_no_character_loaded = "The user does not have any character loaded.",
 		user_not_found = "The sent user was not found on the server.",
 		invalid_character_id = "Invalid character id parameter sent.",
-		invalid_steam_identifier = "Invalid steam identifier parameter sent."
+		invalid_license_identifier = "Invalid licence identifier parameter sent."
 	},
 
 	teleporters = {
@@ -8494,7 +8511,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		exit_icu_interact = "[${InteractionKey}] Exit ICU",
 
 		enter_second_floor = "Enter Second Floor",
-		enter_second_floor = "[${InteractionKey}] Enter Second Floor",
+		--This should be with "_interact" but might not even be needed anymore
+		-- enter_second_floor = "[${InteractionKey}] Enter Second Floor", 		
+		enter_second_floor_interact = "[${InteractionKey}] Enter Second Floor", 
 
 		exit_second_floor = "Exit Second Floor",
 		exit_second_floor_interact = "[${InteractionKey}] Exit Second Floor",
@@ -9019,7 +9038,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		user_has_no_character_loaded = "The user does not have any character loaded.",
 		user_not_found = "The sent user was not found on the server.",
 		invalid_character_id = "Invalid character id parameter sent.",
-		invalid_steam_identifier = "Invalid steam identifier parameter sent."
+		invalid_license_identifier = "Invalid license identifier parameter sent."	
 	},
 
 	police = {
