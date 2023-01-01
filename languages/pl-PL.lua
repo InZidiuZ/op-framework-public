@@ -219,7 +219,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		player_revived_success = "Pomyślnie wskrzeszono gracza.",
 
-		missing_valid_steam_identifier_parameter = "Brak parametru 'steamIdentifier'.",
+		missing_valid_license_identifier_parameter = "Brak parametru 'licenseIdentifier'.",
 
 		illegal_entity_wipe = "Gracz próbował usunąć obietky bez permisji administratora.",
 		wiped_entities = "Usunięto obiekty",
@@ -735,8 +735,6 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 	authentication = {
 		ip_not_found = "Nie mogliśmy pobrać Twojego adresu IP.",
-		checking_steam_account = "Sprawdzanie, czy konto Steam jest obecne...",
-		steam_account_not_found = "Nie masz połączenia ze Steam. Uruchom ponownie FiveM, gdy Steam jest otwarty i zalogowany.",
 		authenticating_local_server = "Uwierzytelnianie na serwerze lokalnym...",
 		authenticating_global_server = "Uwierzytelnianie na serwerach OP-FW...",
 		error_fetching_data = "Wystąpił błąd podczas pobierania danych.",
@@ -2294,6 +2292,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		clear_map_command_parameter_slot_help = "Miejsce w ekwipunku, w którym znajduje się mapa.",
 		clear_map_command_substitutes = "",
 
+
+		-- game/jackpot
+		jackpot_command = "/jackpot",
+		jackpot_command_help = "Włącza menu jackpotu.",
+		jackpot_command_substitutes = "",
+
+
 		-- game/locate
 		locate_entity_command = "/locate_entity",
 		locate_entity_command_help = "Zlokalizuj określoną jednostkę na mapie.",
@@ -2301,6 +2306,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		locate_entity_command_parameter_filter_help = "Jaki filtr powinien pasować encja (id:12345, plate:90FMK072, etc.)",
 		locate_entity_command_substitutes = "/le",
 
+
+		-- game/reskin
+		reskin_command = "/reskin",
+		reskin_command_help = "Wywołaj reskin dla gracza.",
+		reskin_command_parameter_server_id = "server id",
+		reskin_command_parameter_server_id_help = "ID gracza, dla którego chcesz uruchomić reskin. Zostaw to puste, aby automatycznie wybrać siebie.",
+		reskin_command_substitutes = "",
 		-- game/loot
 		loot_debug_command = "/loot_debug",
 		loot_debug_command_help = "Pokazuje wszystkie pobliskie zrzuty.",
@@ -3336,6 +3348,19 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		your_account_is_connecting = "Twoje konto łączy się z nowej sesji."
 	},
 
+	
+	controls = {
+		menu_control_up = "Menu w górę",
+		menu_control_down = "Menu w dół",
+		menu_control_left = "Menu w lewo",
+		menu_control_right = "Menu w prawo",
+
+		menu_control_up_alternative = "Menu w górę Alternatywne",
+		menu_control_down_alternative = "Menu w dół Alternatywne",
+		menu_control_left_alternative = "Menu w lewo Alternatywne",
+		menu_control_right_alternative = "Menu w prawo Alternatywne"
+	},
+
 	core = {
 		version = "Wersja"
 	},
@@ -3394,7 +3419,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		slots_already_set_to = "Ilość slotów na serwerze zostały ustawione na `${slots}`.",
 		slots_set_to = "Ilość slotów została ustawiona na `${slots}`.",
 
-		invalid_steam_identifier_parameter = "Nieprawidłowy 'steamIdentifier', sprawdź czy masz włączonego steama i spróbuj ponownie.",
+		invalid_license_identifier_parameter = "Nieprawidłowy 'licenseIdentifier', sprawdź czy masz włączonego steama i spróbuj ponownie.",
 		invalid_target_position_parameter = "Brakujące lub nieprawidłowe 'targetPosition' parametry.",
 		player_not_found_in_queue = "Nie znaleziono gracza w kolejce.",
 		player_queue_moved_success = "Miejsce w kolejce zostało zmienione.",
@@ -3452,7 +3477,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		kicked_player_and_failed_to_remove_reconnect_priority = "Wyrzucono gracza(nie udało się usunąć priorytetu w kolejce).",
 		removed_player_from_queue = "Usunięto gracza z kolejki.",
 		player_not_found = "Nieznaleziono gracza.",
-		missing_steam_identifier = "Nieznaleziono identyfikatora steam.",
+		missing_license_identifier = "Nieznaleziono `licenseIdentifier`.",
 		package = "Pakiet",
 		package_updated = "Twój pakiet został zaaktualizowany do: `${packageName}`.",
 		package_updated_remaining_time = "Twój pakiet został zaaktualizowany do `${packageName}`. Pakiet wygaśnie za ${remainingTime}.",
@@ -3469,7 +3494,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		user_has_no_character_loaded = "Ten gracz nie ma żadnej załadowanej postaci.",
 		user_not_found = "Nie ma takiego gracza na serwerze.",
 		invalid_character_id = "Nieprawidłowe id postaci.",
-		invalid_steam_identifier = "Nieprawidłowy identyfikator steam.",
+		invalid_license_identifier = "Nieprawidłowy identyfikator license.",
 
 		unload_character_not_staff = "Gracz próbował wylogować komuś postać.",
 
@@ -4590,11 +4615,213 @@ balls = {
 		press_to_use_gavel = "Naciśnij ~INPUT_CONTEXT~ używać młotka."
 	},
 
+
 	creation = {
+		turn_right = "Skręć w prawo",
+		turn_left = "Skręć w lewo"
+	},
+
+	creation_menu = {
+		character_creation = "Kreator Postaci",
+		new_character = "NOWA POSTAĆ",
+
+		select_a_model = "Wybierz model.",
+
+		heritage = "Dziedzictwo",
+		heritage_description = "Wybierz, aby wybrać swoich rodziców.",
+		mom = "Matka",
+		mom_description = "Wybierz swoją Matkę.",
+		dad = "Ojciec",
+		dad_description = "Wybierz swojego Ojca.",
+		resemblance = "Podobieństwo",
+		resemblance_description = "Wybierz, czy na twoje cechy wpływa bardziej Matka czy Ojciec.",
+		skin_tone = "Odcień skóry",
+		skin_tone_description = "Wybierz, czy na twój kolor skóry wpływa bardziej Matka czy Ojciec.",
+		divorced = "Rozwiedziony",
+		divorced_description = "Wybierz jeżeli twoi rodzice są rozwiedzeni.",
+
+		["in"] = "W",
+		out = "Zewnątrz",
+		up = "Góra",
+		down = "Dół",
+		brow = "Brew",
+		brow_description = "Dokonaj zmian w swoich cechach fizycznych.",
+
+		squint = "Mrużyć",
+		wide = "Szeroki",
+		eyes = "Oczy",
+		eyes_description = "Dokonaj zmian w swoich cechach fizycznych.",
+
+		narrow = "Wąski",
+		wide = "Szeroki",
+		nose = "Nos",
+		nose_description = "Dokonaj zmian w swoich cechach fizycznych.",
+
+		short = "Krótki",
+		long = "Długi",
+		crooked = "Krzywy",
+		curved = "Zakrzywiony",
+		nose_profile = "Profil nosa",
+		nose_profile_description = "Dokonaj zmian w swoich cechach fizycznych.",
+
+		broken_left = "Złamane lewo",
+		broken_right = "Złamane prawo",
+		tip_up = "Przechył w górę",
+		tip_down = "Przechył w dół",
+		nose_tip = "Czubek nosa",
+		nose_tip_description = "Dokonaj zmian w swoich cechach fizycznych.",
+
+		cheekbones = "Kości policzkowe",
+		cheekbones_description = "Dokonaj zmian w swoich cechach fizycznych.",
+
+		gaunt = "Wychudzony",
+		puffed = "Bufiasty",
+		cheeks = "Policzki",
+		cheeks_description = "Dokonaj zmian w swoich cechach fizycznych.",
+
+		thin = "Cienki",
+		fat = "Gruby",
+		lips = "Usta",
+		lips_description = "Dokonaj zmian w swoich cechach fizycznych.",
+
+		round = "Okrągły",
+		square = "Kwadratowy",
+		jaw = "Szczęka",
+		jaw_description = "Dokonaj zmian w swoich cechach fizycznych.",
+
+		chin_profile = "Profil podbródka",
+		chin_profile_description = "Dokonaj zmian w swoich cechach fizycznych.",
+
+		pointed = "Szpiczasty",
+		rounded = "Bułczasty",
+		bum = "Tyłek",
+		chin_shape = "Kształt podbródka",
+		chin_shape_description = "Dokonaj zmian w swoich cechach fizycznych.",
+
+		thick = "Gruby",
+		neck_thickness = "Grubość szyi",
+		neck_thickness_description = "Dokonaj zmian w swoich cechach fizycznych.",
+
+		features = "Cechy",
+		appearance = "Wygląd",
+		save_and_continue = "Zapisz i kontynuuj",
+		components = "Składniki",
+		props = "Propy",
+		ambient_females = "Ambientowa kobieta",
+		ambient_male = "Ambientowy mężczyzna",
+		animals = "Zwierzęta",
+		cutscene = "Cutscene",
+		gang_female = "Gangsterskie kobiety",
+		gang_male = "Gangsterscy mężczyźni",
+		multiplayer = "Multiplayer",
+		scenario_female = "Scenario Female",
+		scenario_male = "Scenario Male",
+		story = "Fabuła",
+		story_scenario_female = "Story Scenario Female",
+		story_scenario_male = "Story Scenario Male",
+		models = "Modele",
+
+		features_description = "Wybierz, aby zmienić rysy twarzy.",
+
+		unknown_hair = "Unknown Hair (${hairId})",
+		unknown_eyebrow = "Unknown Eyebrow (${eyebrowId})",
+		unknown_facial_hair = "Unknown Facial Hair (${facialHairId})",
+		unknown_skin_blemish = "Unknown Skin Blemish (${skinBlemishId})",
+		unknown_skin_aging = "Unknown Skin Aging (${skinAgingId})",
+		unknown_skin_complexion = "Unknown Skin Complexion (${skinComplexionId})",
+		unknown_moles_and_freckles = "Unknown Moles & Freckles (${molesAndFrecklesId})",
+		unknown_skin_damage = "Unknown Skin Damage (${skinDamageId})",
+		unknown_eye_makeup = "Unknown Eye Makeup (${eyeMakeupId})",
+		unknown_blusher = "Unknown Blusher (${blusherId})",
+		unknown_lipstick = "Unknown Lipstick (${lipstickId})",
+		unknown_chest_hair = "Unknown Chest Hair (${chestHairId})",
+
+		color = "Kolor",
+		opacity = "Nieprzezroczystość",
+
+		hair = "Włosy",
+		hair_description = "Dokonaj zmian w swoim wyglądzie.",
+
+		eyebrows = "Brwi",
+		eyebrows_description = "Dokonaj zmian w swoim wyglądzie.",
+
+		facial_hair = "Zarost",
+		facial_hair_description = "Dokonaj zmian w swoim wyglądzie.",
+
+		skin_blemishes = "Skazy skórne",
+		skin_blemishes_description = "Dokonaj zmian w swoim wyglądzie.",
+
+		skin_aging = "Starość",
+		skin_aging_description = "Dokonaj zmian w swoim wyglądzie.",
+
+		skin_complexion = "Karnacja skóry",
+		skin_complexion_description = "Dokonaj zmian w swoim wyglądzie.",
+
+		moles_and_freckles = "Pieprzyki i piegi",
+		moles_and_freckles_description = "Dokonaj zmian w swoim wyglądzie.",
+
+		skin_damage = "Obrażenia skóry",
+		skin_damage_description = "Dokonaj zmian w swoim wyglądzie.",
+
+		eye_color = "Kolor oczu",
+		eye_color_description = "Dokonaj zmian w swoim wyglądzie.",
+
+		eye_makeup = "Makijaż oczu",
+		eye_makeup_description = "Dokonaj zmian w swoim wyglądzie.",
+
+		blusher = "Rumieńce",
+		blusher_description = "Dokonaj zmian w swoim wyglądzie.",
+
+		lipstick = "Szminka",
+		lipstick_description = "Dokonaj zmian w swoim wyglądzie.",
+
+		chesthair = "Zarost klaty",
+		chesthair_description = "Dokonaj zmian w swoim wyglądzie.",
+
+		ready_to_start_playing = "Gotowy na grę?",
+		no = "Nie",
+		go_back = "Cofnij.",
+		yes = "Tak",
+		you_will_not_be_able_to_return = "Nie będziesz mógł wrócić.",
+
+		freemode = "Freemode",
+		freemode_description = "Wybierz, jeśli chcesz użyć freemodelu. Są one bardzo konfigurowalne.",
+
+		sex = "Płeć",
+		sex_description = "Wybierz płeć swojej postaci.",
 		male = "Mężczyzna",
 		female = "Kobieta",
-		city_registration = "Rejestracja miasta",
-		citizen_id = "ID obywatela: ${characterId}"
+
+		props_description = "Wybierz rekwizyty twojej postaci.",
+
+		hat = "Nakrycie głowy",
+		glass = "Okulary",
+		ear = "Uszy",
+		watch = "Zegarek",
+		bracelet = "Bransoletka",
+
+		appearance_description = "Wybierz, aby zmienić swój wygląd.",
+		components_description = "Wybierz komponenty twojej postaci.",
+
+		none = "Brak",
+
+		texture = "Tekstura ${textureId}",
+		drawable = "Rysowalne ${drawableId}",
+
+		clean_shaven = "Gładko ogolony",
+
+		face = "Twarz",
+		mask = "Maska",
+		hair = "Włosy",
+		torso = "Tułów",
+		leg = "Nogi",
+		parachute_and_bag = "Spadochron / plecak",
+		shoes = "Buty",
+		accessory = "Akcesoria",
+		undershirt = "Podkoszulek",
+		kevlar = "Kamizelka",
+		badge = "Dodatki",
+		torso_two = "Tułów 2"
 	},
 
 	dashcam = {
@@ -5133,6 +5360,19 @@ balls = {
 		finished_run_logs_details = "${consoleName} wywiercił pojemnik na broń i otrzymał 1x ${item}."
 	},
 
+	gun_trader = {
+		press_e_to_talk = "Naciśnij ~INPUT_CONTEXT~, aby porozmawiać z Jimem..",
+		trader_closed = "Sklep Jima jest obecnie zamknięty.",
+
+		purchase = "Zakup",
+		out_of_stock = "Braki w magazynie",
+
+		failed_trader_closed = "Nie udało się kupić broni, sklep Jima jest zamknięty.",
+		failed_no_stock = "Nie udało się kupić broni, nie ma już zapasów.",
+		failed_no_money = "Nie udało się kupić broni, nie masz wystarczającej ilości gotówki.",
+		failed_something_went_wrong = "Nie udało się kupić broni, coś poszło nie tak."
+	},
+
 	hacking = {
 		local_disk = "Lokalny dysk (C:)",
 		network = "Sieć",
@@ -5469,6 +5709,8 @@ balls = {
 
 		inspect_weapon = "Numer seryjny tego ${itemName} wydaje się być `${itemId}`.",
 		inspect_weapon_broken = "Numer seryjny tego ${itemName} wydaje się być `${itemId}`, jest również wydaje się być całkowicie uszkodzony.",
+		
+		nameable_title = "Nazwa przedmiotu, który można nazwać:",
 
 		locker_restricted = "Ten przedmiot nie pasuje do twojej szafki.",
 
@@ -5494,6 +5736,7 @@ balls = {
 
 		item_is_broken = "Ten przedmiot uległ zniszczeniu.",
 		battle_royale_item = "Ten przedmiot może być używany tylko w meczach Battle Royale.",
+		battle_royale_item_disallowed = "Ten przedmiot nie może być używany w meczach Battle Royale.",
 
 		broken_food = "To jedzenie jest już po terminie.",
 		broken_drugs = "Lepiej tego nie bierz, widzisz te robaki?.",
@@ -5884,6 +6127,11 @@ balls = {
 		pumpkin_description = "Po prostu dynia XD",
 		cabbage = "Kapusta",
 		cabbage_description = "Idealne do zrobienia domowego kimchi.",
+		
+		smoothie = "Smoothie",
+		smoothie_description = "Doskonała mieszanka owoców, warzyw i elektrolitów, która leczy nawet najgorsze kace.",
+		blender = "Blender",
+		blender_description = "Ultimate Smoothie Blender: ponieważ dobrze zbilansowane śniadanie jest kluczem do zwycięstwa (a smaczne smoothie nigdy nie zaszkodzi).",
 
 		cocoa_beans = "Ziarno kakaowe",
 		cocoa_beans_description = "Małe ziarenka, które są używane do produkcji czekolady.",
@@ -5935,6 +6183,15 @@ balls = {
 
 		ballistic_shield = "Tarcza balistyczna",
 		ballistic_shield_description = "Tarcza balistyczna stosowana przez policję.",
+
+		pet_porg = "Porg Pal",
+		pet_porg_description = "Uroczy Porg Pal, który usiądzie na Twoim ramieniu i dotrzyma Ci towarzystwa. Urocze i milutkie, to małe stworzonko wywoła uśmiech na Twojej twarzy gdziekolwiek będziesz..",
+		pet_duck = "Kaczuszka",
+		pet_duck_description = "Dzięki wesołemu kwaczeniu i puszystym piórom ta kaczka jest idealnym towarzyszem każdej podróży. Z radością usiądzie na Twoim ramieniu, gotowa odkrywać świat razem z Tobą.",
+		pet_cat = "Przytulanka",
+		pet_cat_description = "Ten puszysty kot jest zawsze gotowy na drzemkę, a jakie jest lepsze miejsce na drzemkę niż Twoje ramię? Z radością zwinie się w kłębek i będzie mruczeć, gdy ty będziesz robił swoje.",
+		pet_cat_grey = "Leniwy Gizmo",
+		pet_cat_grey_description = "Ten mały, szary kot jest szczytem lenistwa. Siedzi zadowolony na twoim ramieniu, ledwo się poruszając, z wyjątkiem okazjonalnego leniwego przeciągania się.",
 
 		boxing_gloves = "Rękawica bokserska",
 		boxing_gloves_description = "Czerwona rękawica bokserksa stosowana w w boksie",
@@ -6828,6 +7085,26 @@ balls = {
 		clear_map_invalid_slot = "Nieprawidłowe miejsce w ekwipunku."
 	},
 
+	jackpot = {
+		press_to_deposit = "Naciśnij ~INPUT_REPLAY_SHOWHOTKEY~ aby wpłacić przedmioty do Online Jackpot.",
+		can_only_withdraw_at_casino = "Wypłaty można dokonać tylko w kasynie.",
+
+		jackpot = "Jackpot",
+		inventory = "Ekwipunek",
+		no_items_in_inventory = "Wygląda na to, że nie masz żadnych przedmiotów w swoim wirtualnym ekwipunku.",
+		you_can_deposit_at_the_casino = "W kasynie można wpłacać przedmioty.",
+		close = "Zamknij",
+		bet = "Zakład",
+		your_chance = "Twoja szansa: ${chance}%",
+		character_bet = "${characterName} postawił ${itemAmount} przedmiotów wartych $${itemWorth}",
+		pot = "Pula: $${jackpotWorth}",
+		items = "Przedmioty: ${jackpotItemAmount}",
+		withdraw = "Wypłać (${withdrawAmount})",
+		quick_sell = "Szybka sprzedaż ($${quickSellWorth})",
+		inventory_value = "Wartość: $${inventoryWorth}",
+		inventory_total_items = "Wszystkie przedmioty: ${inventoryTotalItems}"
+	},
+
 	jail = {
 		press_to_leave_jail = "Naciśnij ~INPUT_CONTEXT~, aby opuścić więzienie.",
 
@@ -6934,7 +7211,10 @@ balls = {
 		character_slot_occupied = "Ten slot na postać jest już zajęty.",
 		name_already_taken = "To imię jest już zajęte.",
 		illegal_character_slot = "Nie jesteś w stanie stworzyć postaci w tym slocie.",
-		character_already_loaded = "Masz już załadowaną postać."
+		character_already_loaded = "Masz już załadowaną postać.",
+
+		new_citizen = "Nowy Obywatel",
+		los_santos_police_dept = "LOS SANTOS POLICE DEPT"
 	},
 
 	
@@ -7684,6 +7964,21 @@ balls = {
 		destroying_tire_wall = "Niszczenie ściany opony"
 	},
 
+	reskin = {
+		plastic_surgery = "Chirurgia plastyczna",
+		los_santos_police_dept = "LOS SANTOS POLICE DEPT",
+
+		reskin_player_no_permissions = "Gracz próbował włączyć debug radio bez odpowiedniego pozwolenia.",
+
+		triggered_reskin_for_player = "Włączono reskina dla ${consoleName}.",
+
+		triggered_reskin_for_player_logs_title = "Włączono reskina dla gracza",
+		triggered_reskin_for_player_logs_details = "${consoleName} włączył reskina dla ${targetConsoleName}.",
+
+		triggered_reskin_for_self_logs_title = "Włączono reskina dla siebie",
+		triggered_reskin_for_self_logs_details = "${consoleName} włączył reskina dla siebie."
+	},
+
 	radio = {
 		frequency = "Częstotliwość:",
 		switch = "Zmień",
@@ -7748,7 +8043,7 @@ balls = {
 		disconnected_player = "Rozłączony gracz",
 		id = "ID",
 		name = "Nazwa",
-		steam = "Steam",
+		identifier = "Identyfikator",
 		reason = "Powód",
 		time_since_disconnection = "Czas od momentu rozłączenia",
 
@@ -7907,13 +8202,29 @@ balls = {
 		skylift_attached_vehicle_logs_details = "${consoleName} złapał pojazd magnesem."
 	},
 
+	smoothies = {
+		blend = "Mieszaj",
+		close = "Zamknij",
+
+		use_blender = "[${InteractionKey}] Użyj blendera",
+		blending = "Mieszanie",
+
+		smoothie_label = "Smoothie (${flavors})",
+		seperator = "i"
+	},
+
 	snow = {
 		hold_to_pick_up_snowballs = "Przytrzymaj ~INPUT_CONTEXT~ żeby ulepić śnieżkę."
 	},
 
 	spawn = {
 		spawn_now = "Rozpocznij grę",
-		last_position = "Ostatnia pozycja"
+		last_position = "Ostatnia pozycja",
+		train_station = "Dworzec kolejowy",
+		city_bus_station = "Miejski Dworzec Autobusowy",
+		paleto_bay_bus_station = "Dworzec autobusowy w Paleto Bay",
+
+		battle_royale = "Battle Royale"
 	},
 
 	
@@ -8153,7 +8464,7 @@ balls = {
 		user_has_no_character_loaded = "Gracz nie posiada załadowanych postaci.",
 		user_not_found = "Gracz nie został odnaleziony na serwerze.",
 		invalid_character_id = "Nieprawidłowe ID.",
-		invalid_steam_identifier = "Nieprawidłowy identyfikator Steam."
+		invalid_license_identifier = "Nieprawidłowy identyfikator license."
 	},
 
 	teleporters = {
@@ -8510,6 +8821,12 @@ balls = {
 		voice_mute_missing_permissions = "Gracz próbował zmienić status wyciszenia innego gracza, ale nie miał wymaganych uprawnień."
 	},
 
+	weed_field = {
+		pick_weed = "Naciśnij ~INPUT_CONTEXT~, aby zebrać zioło.",
+		picking_weed = "Zbieranie zioła"
+	},
+
+
 	washrooms = {
 		use_sink = "[${InteractionKey}] Użyj zlewu",
 		using_sink = "Użyj zlewu"
@@ -8605,7 +8922,9 @@ balls = {
 		hold_to_continue_looting_zombie = "[${InteractionKey}] Przeszukaj zombie",
 		press_to_loot_zombie = "[${InteractionKey}] Przeszukaj zombie",
 		looting_zombie = "Przeszukujesz ciało zombie",
-		zombie_looting_injection = "Nadmierne grabieże zombie!"
+		zombie_looting_injection = "Nadmierne grabieże zombie!",
+		
+		zombie_trip_limit = "Czujesz się zbyt zmęczony, by kontynuować plądrowanie zombie. Może spróbuj jeszcze raz jutro."
 	},
 
 	-- global/*
@@ -8772,7 +9091,7 @@ balls = {
 		user_has_no_character_loaded = "Użytkownik nie ma załadowanych żadnych postaci",
 		user_not_found = "Użytkownik nie został znaleziony na serwerze.",
 		invalid_character_id = "Nieprawidłowe id postaci .",
-		invalid_steam_identifier = "Nieprawidłowy identyfikator steam."
+		invalid_license_identifier = "Nieprawidłowy identyfikator license."
 	},
 
 	police = {
