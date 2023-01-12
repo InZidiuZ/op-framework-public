@@ -669,15 +669,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		vehicle_spam_ban = "Próba zrespienia samochodu z blacklisty",
 		damage_modifier_ban = "Zmodyfikowano obrażenia.",
 		ped_spawn_ban = "Co ty, co ty!",
+		weapon_spawn_ban = "Próba zrespienia broni.",
 
 		honeypot_ban = "Próbowałeś przełączyć się na tryb kreatywny, ale nie miałeś do tego uprawnień XD",
 
 		illegal_ped_change = "Gracz zmienił swój model peda, ale nie miał do tego odpowiednich uprawnień.",
 		illegal_spectating = "Gracz obserwował innego gracza, ale nie miał do tego odpowiednich uprawnień.",
 		spectating_screenshot = "Anti-Cheat: Obserwacja",
-
-		anti_cheat_modding_title = "Anti-Cheat Log",
-		detected_semi_godmode_details = "${consoleName} wygląda na to, że może mieć włączony god-mode.",
 
 		mp_f_freemode_01_label = "Freemode (kobieta)",
 		mp_m_freemode_01_label = "Freemode (mężczyzna)",
@@ -692,6 +690,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		notification_vehicle_modification = "Anti-Cheat: Modyfikacja pojazdu",
 		notification_damage_modifier = "Anti-Cheat: Modyfikacja obrażeń",
 		notification_illegal_weapon = "Anti-Cheat: Niedozwolona broń",
+		notification_spawned_object = "Anti-Cheat: Zrespiono obiekt",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jezus",
@@ -712,6 +711,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		mp_m_marston_01_label = "Brakujące ręce i nogi",
 		mp_m_niko_01_label = "Niko (GTA IV)",
 
+		high_fov_warning = "Modyfikatory FOV nie są dozwolone.",
+		high_fov_debug = "Aktualny: ${fov}",
+
 		illegal_oxy_run = "Gracz ukończył kurs z oxy szybciej, niż jest to możliwe.",
 
 		fast_movement_warning = "Zostałeś oflagowany za zbyt szybki ruch! Poinformuj administracje w tickecie i powiedz mu, co robiłeś, aby tak się stało, ponieważ nie powinieneś otrzymywać tej wiadomości na czacie.",
@@ -728,6 +730,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		thermal_night_vision_screenshot = "Anti-Cheat: Niewidzialność (${thermal}/${nightVision})",
 		text_entry_screenshot = "Anti-Cheat: Słowo na blacklist (${textEntry})",
 		player_blips_screenshot = "Anti-Cheat: Próba teleportacji do gracza",
+		modified_fov_screenshot = "Anti-Cheat: Zmodyfikowany FOV (${fov})",
 		ped_change_screenshot = "Anti-Cheat: Niedozwolona zmiana peda",
 		invincibility_screenshot = "Anti-Cheat: Niewidzialność",
 		runtime_texture_screenshot = "Anti-Cheat: Tekstura w czasie rzeczywistym (${textureDict}, ${textureName})"
@@ -2105,6 +2108,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		debug_trees_command_help = "Włącza debugowanie drzew.",
 		debug_trees_command_substitutes = "",
 
+		-- game/gun_trader
+		gun_trader_debug_command = "/gun_trader_debug",
+		gun_trader_debug_command_help = "Pokazuje aktualna lokalizacje handlarzy z bronią.",
+		gun_trader_debug_command_substitutes = "",
+
 		-- game/gas_masks
 		gas_debug_command = "/gas_debug",
 		gas_debug_command_help = "Włącza 'debug maski gazowej'.",
@@ -2284,6 +2292,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		refresh_inventory_command_parameter_inventory_name = "nazwa inwentarza",
 		refresh_inventory_command_parameter_inventory_name_help = "Inwentarz, który chcesz odświeżyć.",
 		refresh_inventory_command_substitutes = "",
+
+		item_lookup_command = "/item_lookup",
+		item_lookup_command_help = "Wyszukaj item po jego ID.",
+		item_lookup_command_parameter_item_id = "item id",
+		item_lookup_command_parameter_item_id_help = "ID itemu, który chcesz sprawdzić.",
+		item_lookup_command_substitutes = "/item",
 
 		-- game/items
 		clear_map_command = "/clear_map",
@@ -2493,6 +2507,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		overview_command = "/overview",
 		overview_command_help = "Przełącz interfejs przeglądu. Interfejs użytkownika przeglądu to menu interakcji OOC, centrum informacyjne i przeglądarka danych.",
 		overview_command_substitutes = "",
+
+		-- game/panel
+		panel_command = "/panel",
+		panel_command_help = "Pokazuje mini panel administracyjny pozwalający na przeglądanie informacji na temat graczy i możliwość dodania nowych.",
+		panel_command_parameter_server_id = "server id",
+		panel_command_parameter_server_id_help = "ID gracza (musi być online lub niedawno rozłączony).",
+		panel_command_substitutes = "",
 
 		-- game/ped_messages
 		me_command = "/me",
@@ -2839,6 +2860,14 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		tablet_command = "/tablet",
 		tablet_command_help = "Otwiera interfejs tabletu (jeśli masz tablet).",
 		tablet_command_substitutes = "",
+
+		
+		-- game/test_server
+		set_vehicle_preset_command = "/set_vehicle_preset",
+		set_vehicle_preset_command_help = "W pełni ulepsza pojazd, w którym się znajdujesz i nakłada kolory z określonym presetem.",
+		set_vehicle_preset_command_parameter_preset = "preset",
+		set_vehicle_preset_command_parameter_preset_help = "Wstępny zestaw kolorów, który chcesz zastosować (czerwony, niebieski, zielony, żółty, pomarańczowy, biały, czarny).",
+		set_vehicle_preset_command_substitutes = "/vehicle_preset",
 
 		-- game/test_server
 		detach_all_doors_command = "/detach_all_doors",
@@ -3254,6 +3283,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		toggle_roll_control_command_help = "Przełączanie kontroli przechyłu i powietrza.",
 		toggle_roll_control_command_substitutes = "/roll_control",
 
+		
+		enable_ls_customs_command = "/enable_ls_customs",
+		enable_ls_customs_command_help = "Włącza menu LS CUSTOMS.",
+		enable_ls_customs_command_substitutes = "/ls_customs",
+
 		door_command = "/door",
 		door_command_help = "Otwiera drzwi pojazdu.",
 		door_command_parameter_door_id = "ID drzwi (1-6)",
@@ -3514,7 +3548,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		no_player_packages = "Nie posiadasz żadnych pakietów.",
 		player_packages = "Pakiety:\n${playerPackages}",
-		player_package = "- ${label}: ${amount}x"
+		player_package = "- ${label}: ${amount}x",
+
+		appreciated_tier = "Appreciated Tier",
+		respected_tier = "Respected Tier",
+		heroic_tier = "Heroic Tier",
+		legendary_tier = "Legendary Tier",
+		godlike_tier = "Godlike Tier"
 	},
 
 	-- game/*	
@@ -3709,6 +3749,16 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		
 		attachment_label_stock_folded = "Składany magazyn",
 		attachment_label_stock_unfolded = "Rozłożony magazyn",
+
+		
+		attachment_label_skin_patriotic = "Patriotic Skin",
+		attachment_label_skin_brushstroke = "Brushstroke Skin",
+		attachment_label_skin_skull = "Skull Skin",
+		attachment_label_skin_leopard = "Leopard Skin",
+		attachment_label_skin_zebra = "Zebra Skin",
+		attachment_label_skin_geometric = "Geometric Skin",
+
+		label_no_skin = "No Skin",
 
 		no_tint = "Brak malowania",
 
@@ -4169,6 +4219,7 @@ balls = {
 
 		press_to_access = "Wciśnij ~INPUT_CONTEXT~ by otworzyć menu sklepu z ubraniami.",
 		press_to_access_barber = "Wciśnij ~INPUT_CONTEXT~ by otworzyć menu fryzjera.",
+		press_to_change_outfit = "Naciśnij ~INPUT_CONTEXT~, aby zmienić swój strój..",
 
 		clothingstore = "Sklep z ubraniami",
 		barbershop = "Fryzjer",
@@ -4178,6 +4229,7 @@ balls = {
 		switch_outfit = "Przebierz się w ten strój.",
 		replace_outfit = "Zmień ten strój.",
 		new_outfit = "Zapisz strój",
+		no_saved_outfits = "Brak zapisanych strojów.",
 
 		save_outfit_title = "Zapisz nowy strój",
 		save_outfit_label = "Nazwa stroju:",
@@ -4523,6 +4575,10 @@ balls = {
 		press_deconstruct_raspberry = "[${SeatEjectKey}] Rozłóż raspberry",
 		failed_deconstruct_raspberry = "Nie udało się rozłożyć raspberry.",
 
+		deconstruct_chip = "Rozłóż chipa",
+		press_deconstruct_chip = "[${SeatEjectKey}] Rozłóż chipa",
+		failed_deconstruct_chip = "Nie udało się rozłożyć chipa.",
+
 		craft_device_scanner = "Wytwórz skaner pojazdów",
 		press_craft_device_scanner = "[${SeatEjectKey}] Wytwórz skaner pojazdów",
 		crafting_device_scanner = "Wytwarzanie skanera pojazdów",
@@ -4553,6 +4609,49 @@ balls = {
 		sawing_shotgun = "Sawing Off Shotgun",
 		sawed_shotgun = "Sawed off shotgun.",
 		failed_saw_shotgun = "Nie udało się przepiłować strzelby.",
+
+		
+		bake_brownies = "Ugotuj brownie",
+		press_bake_brownies = "[${SeatEjectKey}] Ugotuj brownie",
+		baking_brownies = "Gotujesz brownie",
+		baked_brownies = "Ugotowałeś brownie.",
+		failed_bake_brownies = "Nie udało się ugotować brownie.",
+
+		mix_brushstroke_paint = "Wymieszaj farbę z pędzlem",
+		press_mix_brushstroke_paint = "[${SeatEjectKey}] Wymieszaj farbę z pędzlem",
+		mixing_brushstroke_paint = "Mieszasz farbę z pędzlem",
+		mixed_brushstroke_paint = "Wymieszałeś farbę z pędzlem.",
+		failed_mix_brushstroke_paint = "Nie udało się wymieszać farby z pędzlem.",
+
+		mix_skull_paint = "Wymieszaj Skull Paint",
+		press_mix_skull_paint = "[${SeatEjectKey}] Wymieszaj Skull Paint",
+		mixing_skull_paint = "Mieszasz Skull Paint",
+		mixed_skull_paint = "Wymieszano Skull Paint.",
+		failed_mix_skull_paint = "Nie udało się wymieszać skull paint.",
+
+		mix_leopard_paint = "Wymieszaj Leopard Paint",
+		press_mix_leopard_paint = "[${SeatEjectKey}] Wymieszaj Leopard Paint",
+		mixing_leopard_paint = "Mieszasz Leopard Paint",
+		mixed_leopard_paint = "Wymieszano leopard paint.",
+		failed_mix_leopard_paint = "Nie udało się wymieszać leopard paint.",
+
+		mix_zebra_paint = "Wymieszaj Zebra Paint",
+		press_mix_zebra_paint = "[${SeatEjectKey}] Wymieszaj Zebra Paint",
+		mixing_zebra_paint = "Mieszasz Zebra Paint",
+		mixed_zebra_paint = "Wymieszano zebra paint.",
+		failed_mix_zebra_paint = "Nie udało się wymieszać zebra paint.",
+
+		mix_geometric_paint = "Wymieszaj Geometric Paint",
+		press_mix_geometric_paint = "[${SeatEjectKey}] Wymieszaj Geometric Paint",
+		mixing_geometric_paint = "Mieszasz Geometric Paint",
+		mixed_geometric_paint = "Wymieszano geometric paint.",
+		failed_mix_geometric_paint = "Nie udało się wymieszać geometric paint.",
+
+		mix_patriotic_paint = "Wymieszaj Patriotic Paint",
+		press_mix_patriotic_paint = "[${SeatEjectKey}] Wymieszaj Patriotic Paint",
+		mixing_patriotic_paint = "Mieszasz Patriotic Paint",
+		mixed_patriotic_paint = "Wymieszano patriotic paint.",
+		failed_mix_patriotic_paint = "Nie udało się wymieszać patriotic paint.",
 
 		no_required_items = "Nie posiadasz wszystkich wymaganych przedmiotów.",
 
@@ -4903,6 +5002,7 @@ balls = {
 		disabled_ped_bone_debug = "Wyłączenie debugowania kości peda.",
 
 		mph = "mph",
+		vehicle_average = "Średnia szybkość: ${speed}",
 		vehicle_speed = "Szybkość ${speed}",
 		vehicle_top_speed = "Najwyższa szybkość: ${speed}",
 		vehicle_acceleration = "0 do 60: ${time}",
@@ -5031,6 +5131,7 @@ balls = {
 
 		floor_second_floor = "Drugie piętro",
 		floor_icu = "ICU",
+		floor_ground = "Parter",
 		floor_surgery = "Sale operacyjne",
 
 		floor_entrance = "Wejście",
@@ -5362,6 +5463,8 @@ balls = {
 
 	gun_trader = {
 		press_e_to_talk = "Naciśnij ~INPUT_CONTEXT~, aby porozmawiać z Jimem..",
+		trader_locked = "Jim potrzebuje kilku rzeczy od ciebie, zanim będzie chciał otworzyć swój sklep.",
+		unlock_trader = "Przekaż przedmiot Jimowi.",
 		trader_closed = "Sklep Jima jest obecnie zamknięty.",
 
 		purchase = "Zakup",
@@ -5370,7 +5473,23 @@ balls = {
 		failed_trader_closed = "Nie udało się kupić broni, sklep Jima jest zamknięty.",
 		failed_no_stock = "Nie udało się kupić broni, nie ma już zapasów.",
 		failed_no_money = "Nie udało się kupić broni, nie masz wystarczającej ilości gotówki.",
-		failed_something_went_wrong = "Nie udało się kupić broni, coś poszło nie tak."
+		failed_something_went_wrong = "Nie udało się kupić broni, coś poszło nie tak.",
+		failed_trader_not_locked = "Nie udało się odblokować, sklep Jima jest już odblokowany.",
+		failed_no_item = "Nie udało się odblokować, Jim nie potrzebuje tego przedmiotu.",
+		failed_no_enough_items = "Nie udało się odblokować, nie masz wystarczającej ilości tego przedmiotu.",
+
+		bought_gun_logs_title = "Jim Sklep z bronią",
+		bought_gun_logs_details = "${consoleName} kupił 1x ${itemName} za $${price} od Jima.",
+
+		trader_active = "Handlowiec (otwarty)",
+		trader_inactive = "Handlowiec (zamknięty)",
+
+		slogan_1 = "Pamiętaj, że pierwsza zasada walki z bronią to... mieć broń!",
+		slogan_2 = "Pistolety mają tylko dwóch wrogów: Rdzę i polityków.",
+		slogan_3 = "Kiedy masz wątpliwości... wyrzuć to z siebie.!",
+		slogan_4 = "Pistolet w ręku jest lepszy niż policjant na telefonie.",
+
+		copyright = "Copyright © 2009-2016 Jim's Gun Shop NC. Wszystkie prawa zastrzeżone."
 	},
 
 	hacking = {
@@ -5639,6 +5758,7 @@ balls = {
 
 	interiors = {
 		in_interior = "W Interiorze: ${interiorId} (${portals} portals).",
+		in_room_id = "W pokoju: ${roomId} (${roomName}).",
 		total_interiors = "Łączna liczba interiorów: ${totalInteriors} (${totalInteriorPortals} total portals).",
 		total_unloaded_interiors = "Łączna liczba nie załadowanych interiorów: ${totalUnloadedInteriors} (${totalUnloadedInteriorPortals} total portals).",
 		portal_text = "id=${portalId} f=${flags}"
@@ -5716,6 +5836,10 @@ balls = {
 
 		press_to_access_shredder = "[${InteractionKey}] Dostęp do niszczarki.",
 
+		invalid_item_id = "Nieprawidłowy identyfikator przedmiotu.",
+		item_not_found = "Nie można znaleźć przedmiotu o ID `${itemId}`.",
+		item_lookup = "${label} (${itemId}) obecnie w ${inventoryName}:${inventorySlot}.",
+
 		press_to_open_public_inventory = "~INPUT_REPLAY_SHOWHOTKEY~ Dostęp ${label}",
 
 		burgershot_counter = "Licznik Burgershot",
@@ -5747,6 +5871,8 @@ balls = {
 		carve_jack_o_lantern = "Rzeźb <i>Jack-o-lantern</i>",
 		crush_cocoa_beans = "Zgnieć <i>Ziarno kakaowe</i>",
 		mix_hot_chocolate = "Miksuj <i>Gorącą Czekoladę</i>",
+		crush_raw_ruby = "Zmiażdż <i>Rubin</i>.",
+		crush_raw_sapphire = "Zmiażdż <i>Szafir</i>",
 
 		search = "Szukaj",
 		amount = "Ilość",
@@ -5927,6 +6053,10 @@ balls = {
 		raw_sapphire_description = "Szafir w postaci naturalnej, prosto z kopalni.",
 		raw_emerald = "Surowy szmaragd",
 		raw_emerald_description = "szmaragd w postaci naturalnej, prosto z kopalni.",
+		ruby_dust = "Rubinowy Pył",
+		ruby_dust_description = "Pył z rubinu.",
+		sapphire_dust = "Szafirowy Pył",
+		sapphire_dust_description = "Pył z szafiru.",
 
 		morganite = "Morganit",
 		morganite_description = "Bezbarwny kamyczek, podobno drogi.",
@@ -5996,6 +6126,21 @@ balls = {
 
 		paint = "Farba",
 		paint_description = "Satynowa, plamoodporna i ogólnie fajna.",
+		paint_brush = "Pędzel",
+		paint_brush_description = "Przydatny do malowania.",
+
+		skin_patriotic = "Patriotic Skin",
+		skin_patriotic_description = "Dla wszystkich czerwonokrwistych Amerykanów..",
+		skin_brushstroke = "Brushstroke Skin",
+		skin_brushstroke_description = "Dla wszystkich miłośników sztuki.",
+		skin_skull = "Skull Skin",
+		skin_skull_description = "Dla wszystkich młodych ludzi, którzy są na bakier z prawem.",
+		skin_leopard = "Leopard Skin",
+		skin_leopard_description = "Dla wszystkich miłośników zwierząt.",
+		skin_zebra = "Zebra Skin",
+		skin_zebra_description = "Dla wszystkich miłośników zwierząt.",
+		skin_geometric = "Geometric Skin",
+		skin_geometric_description = "Dla wszystkich matematycznych kujonów.",
 
 		refillable_bottle = "Butelka wielokrotnego użytku",
 		refillable_bottle_description = "Ratuj żółwie, świat Ci podziękuje.",
@@ -6169,6 +6314,8 @@ balls = {
 
 		ejector_seat = "Siedzenie odrzutowe.",
 		ejector_seat_description = "Wohoooooo.",
+		brownies = "Brownie",
+		brownies_description = "Gęsta i podwójnie czekoladowa z odrobiną dodatkowego kopa, który sprawi, że naprawdę usiądziesz i zakwestionujesz całe życie.",
 		tuner_chip = "Chip tunera",
 		tuner_chip_description = "Szybcy i wściekli",
 
@@ -6190,9 +6337,15 @@ balls = {
 		pet_duck_description = "Dzięki wesołemu kwaczeniu i puszystym piórom ta kaczka jest idealnym towarzyszem każdej podróży. Z radością usiądzie na Twoim ramieniu, gotowa odkrywać świat razem z Tobą.",
 		pet_cat = "Przytulanka",
 		pet_cat_description = "Ten puszysty kot jest zawsze gotowy na drzemkę, a jakie jest lepsze miejsce na drzemkę niż Twoje ramię? Z radością zwinie się w kłębek i będzie mruczeć, gdy ty będziesz robił swoje.",
+		pet_chicken = "Pierzasty przyjaciel",
+		pet_chicken_description = "Ten uroczy mały kurczak będzie z radością dziobał drogę wokół twojego ramienia, jego miękkie pióra i ciekawska osobowość czynią go idealnym towarzyszem każdej przygody..",
 		pet_cat_grey = "Leniwy Gizmo",
 		pet_cat_grey_description = "Ten mały, szary kot jest szczytem lenistwa. Siedzi zadowolony na twoim ramieniu, ledwo się poruszając, z wyjątkiem okazjonalnego leniwego przeciągania się.",
 
+		pet_shiba = "Psi patrol",
+		pet_shiba_description = "Dzięki swojej zabawnej osobowości i miękkiemu futru ten mały piesek shiba jest idealnym towarzyszem każdej przygody. Z radością podąży za Tobą, gdziekolwiek się udasz, a jego merdający ogon i radosny szczek dodadzą odrobinę radości do Twojej podróży.",
+		pet_mouse = "Gruby Kumpel",
+		pet_mouse_description = "Ta okrągła i puszysta szynszyla jest idealnym towarzyszem każdej przygody. Jej miękkie futerko i figlarna osobowość sprawiają, że jest idealnym kumplem do przytulania i z radością usiądzie na Twoim ramieniu, gdy Ty będziesz spędzać swój dzień.",
 		boxing_gloves = "Rękawica bokserska",
 		boxing_gloves_description = "Czerwona rękawica bokserksa stosowana w w boksie",
 		leash = "Smycz",
@@ -6226,6 +6379,18 @@ balls = {
 
 		power_saw = "Piła mechaniczna",
 		power_saw_description = "Używana do cięcia rzeczy.",
+
+			
+		purified_aluminium = "Oczyszczone aluminiumm",
+		purified_aluminium_description = "Używane do profesjonalnych napraw.",
+		tempered_glass = "Szkło hartowane",
+		tempered_glass_description = "Używane do profesjonalnych napraw.",
+		vulcanized_rubber = "Kauczuk wulkanizowany",
+		vulcanized_rubber_description = "Używane do profesjonalnych napraw.",
+		processed_metal = "Przetworzony metal",
+		processed_metal_description = "Używane do profesjonalnych napraw.",
+		refined_steel = "Stal rafinowana",
+		refined_steel_description = "Używane do profesjonalnych napraw.",
 
 		thermite = "Termit",
 		thermite_description = "Mieszanina drobno sproszkowanych tlenków niektórych metali, służąca m. in. jako składnik pocisków i bomb zapalających.",
@@ -7201,6 +7366,22 @@ balls = {
 		framework = "Framework",
 		notice = "Powiadomienia",
 		language = "Język",
+		support_the_server = "Wesprzyj serwer",
+		battle_royale = "Battle Royale",
+		arena = "Arena",
+		queue = "Poczekalnia",
+		queue_position_with_priority = "🐌 Jesteś ${queuePosition}/${queueTotal} w kolejce z ${queuePriorityName} priorytetem. 🕐${queueTime}",
+		queue_position_without_priority = "🐌 Jesteś ${queuePosition}/${queueTotal} w kolejce. 🕐${queueTime}",
+		tired_of_queueing = "Masz dość stania w kolejce? Wesprzyj nas, aby uzyskać priorytet kolejki!",
+		joining_battle_royale = "Dołączenie do Battle Royale",
+		joining_arena = "Dołączenie do Areny",
+		refresh = "Odśwież",
+		refreshing = "Odświeżam...",
+
+		invalid_first_name = "Brakujące lub nieprawidłowe imię (1 do 100 znaków).",
+		invalid_last_name = "Brakujące lub nieprawidłowe nazwisko (1 do 100 znaków)",
+		invalid_date_of_birth = "Brakująca lub nieprawidłowa data urodzenia.",
+		invalid_backstory = "Brakująca lub nieprawidłowa historia (od 1 do 5 tys. znaków).",
 
 		missing_character_creation_data = "Brakujące danych do stworzenia postaci.",
 		bad_words = "W nazwie lub historii twojej postaci znajdują się brzydkie słowa.",
@@ -7214,7 +7395,26 @@ balls = {
 		character_already_loaded = "Masz już załadowaną postać.",
 
 		new_citizen = "Nowy Obywatel",
-		los_santos_police_dept = "LOS SANTOS POLICE DEPT"
+		los_santos_police_dept = "LOS SANTOS POLICE DEPT",
+
+		press_to_go_back_to_menu = "Naciśnij ~g~${InteractionKey}~w~, aby wrócić do menu.",
+		go_back_to_menu = "Wróć do menu.",
+
+		developer = "Developer",
+		super_admin = "Super Admin",
+		staff = "Administrator",
+		reconnect = "Połącz ponownie",
+		christmas = "Boże Narodzenie",
+		casino = "Kasyno",
+		random = "Losowo",
+		beginner = "Początkujący",
+		custom = "Niestandardowe",
+
+		appreciated_tier = "Appreciated Tier",
+		respected_tier = "Respected Tier",
+		heroic_tier = "Heroic Tier",
+		legendary_tier = "Legendary Tier",
+		godlike_tier = "Godlike Tier"
 	},
 
 	
@@ -7764,6 +7964,34 @@ balls = {
 		label_paramedic = "medyk"
 	},
 
+	panel = {
+		loading_title = "Ładowanie",
+		error_title = "Coś poszło nie tak",
+
+		was_banned = "Zbanowany",
+		loading = "Ładowanie danych gracza...",
+		no_warnings = "Brak ostrzeżeń",
+		not_shown_warnings = "${count} więcej nie pokazano",
+		system_issuer = "System",
+		add_warning_title = "Dodaj ostrzeżenie",
+		message_placeholder = "${playerName} zrobił oopsie...",
+
+		type_note = "Notatka",
+		type_warning = "Ostrzeżenie",
+		type_strike = "Strike",
+		type_system = "System",
+
+		button_cancel = "Anuluj",
+		button_add = "Dodaj",
+		button_close = "Zamknij",
+		button_new = "Nowe",
+
+		invalid_server_id = "Nieprawidłowy identyfikator.",
+
+		failed_load_player = "Nie udało się załadować danych gracza. Czy wprowadziłeś prawidłowy identyfikator?",
+		failed_add_warning = "Nie udało się dodać ostrzeżenia."
+	},
+
 	paper_bags = {
 		fill_bag = "[${SeatEjectKey}] Wypełnij papierową torbę",
 		no_bags = "Nie masz żadnych papierowych toreb.",
@@ -7809,7 +8037,8 @@ balls = {
 		roll_message_chat_title = "/losuj [${serverId}]",
 		description_message_chat_title = "/opis [${serverId}]",
 		message_too_long = "Wiadomosc zawiera za duzo znaków!",
-		card_command_wait = "Właśnie dobrałeś kartę, poczekaj chwilę przed dobraniem kolejnej."
+		card_command_wait = "Właśnie dobrałeś kartę, poczekaj chwilę przed dobraniem kolejnej.",
+		ped_message_timeout = "Zwolnij, odczekaj trochę przed wysłaniem kolejnej wiadomości."
 	},
 
 	ped_objects = {
@@ -7869,6 +8098,14 @@ balls = {
 		ped_robbing_injection = "Nadmierne rabowanie obywateli!",
 		robbed_ped_logs_title = "Okradany obywatel",
 		robbed_ped_logs_details = "${consoleName} okradziono obywatela i otrzymano $${payout}."
+	},
+
+	
+	phone = {
+		app_settings = "Ustawienia",
+		app_contacts = "Kontakty",
+		app_calls = "Telefon",
+		app_messages = "Wiadomości"
 	},
 
 	pepper_spray = {
@@ -8563,12 +8800,6 @@ balls = {
 
 		exit_icu = "Wyjdź z sali OIOM",
 		exit_icu_interact = "[${InteractionKey}] Wyjdź z sali OIOM",
-
-		enter_second_floor = "Wejdź na drugie piętro",
-		enter_second_floor = "[${InteractionKey}] Wejdź na drugie piętro",
-
-		exit_second_floor = "Wyjdź z drugiego piętra",
-		exit_second_floor_interact = "[${InteractionKey}] Wyjdź z drugiego piętra",
 		
 		enter_underground_tunnel = "Wejdź do podziemnego tunelu",
 		enter_underground_tunnel_interact = "[${InteractionKey}] Wejdź do podziemnego tunelu",
@@ -8581,7 +8812,10 @@ balls = {
 	},
 
 	test_server = {
-		fully_upgraded = "Pomyślnie zmodernizowany pojazd."
+		fully_upgraded = "Pomyślnie zmodernizowany pojazd.",
+		you_are_not_in_a_vehicle = "Nie jesteś w pojeździe.",
+		invalid_vehicle_preset = "Niewłaściwe ustawienie pojazdu.",
+		applied_preset = "Pomyślnie zastosowano ustawienia."
 	},
 
 	time_scale = {
@@ -9474,6 +9708,7 @@ balls = {
 		mileage = "Przebieg",
 		vehicle_mileage_amount = "Pojazd z tablicą `${plateNumber}` ma ${miles} przebiegu.",
 		not_in_driver_seat = "Aby sprawdzić przebieg, musisz być na miejscu kierowcy.",
+		not_driving_vehicle = "Nie prowadzisz pojazdu.",
 		vehicle_locked = "Pojazd jest zamknięty.",
 		manual_gears_enabled = "Włączony manual",
 		manual_gears_disabled = "Wyłączony manual",
