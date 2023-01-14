@@ -259,6 +259,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		player_kicked = "${consoleName} has been kicked from the server.",
 		player_banned = "${consoleName} has been banned from the server.",
 
+		ban_double_kill = "Double Kill!",
+		ban_triple_kill = "😧 Triple Kill!!!",
+		ban_quadrouple_kill = "😨 QUADROUPLE KILL!!!!!!",
+		ban_killing_spree = "🤯 KILLING SPREE!!!!!!",
+
 		kick_player_not_staff = "Attempted to kick a player without proper permissions.",
 		ban_player_not_staff = "Attempted to ban a player without proper permissions.",
 
@@ -443,7 +448,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		no_mod_type_set = "No mod type set.",
 
 		set_vehicle_livery = "Set vehicle livery to `${liveryIndex}`.",
-		no_livery_index_set = "No livery index set.",
+		no_livery_index_set = "No livery index set (Min: 1).",
+		you_are_not_the_driver = "You are not the driver of the vehicle.",
+		vehicle_is_not_a_plane_or_heli = "The vehicle is not a plane or helicopter.",
+		livery_index_invalid = "Invalid livery index (Max: ${maxLiveries}).",
+		vehicle_has_no_liveries = "The vehicle has no liveries.",
 
 		invalid_plate_number = "Invalid plate number.",
 		set_fake_plate_number = "Set plate number for vehicle to `${plateNumber}`.",
@@ -710,7 +719,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		mp_m_marston_01_label = "Missing arms and legs",
 		mp_m_niko_01_label = "Niko (GTA IV)",
 
-		high_fov_warning = "FOV modifiers are not allowed.",
+		high_fov_warning = "Your FOV is unusually high",
+		high_fov_description = "This is most likely caused by a FOV Modifier.",
 		high_fov_debug = "Current: ${fov}",
 
 		illegal_oxy_run = "Player completed an oxy run faster than humanly possible.",
@@ -2379,6 +2389,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		ooc_off_command_help = "Disable the OOC chat if enabled.",
 		ooc_off_command_substitutes = "",
 
+		copy_license_command = "/copy_license",
+		copy_license_command_help = "Copies your own rockstar license identifier to your clipboard. (Used by staff to identify you)",
+		copy_license_command_substitutes = "",
+
 		clear_chat_command = "/clear_chat",
 		clear_chat_command_help = "Clear the chat.",
 		clear_chat_command_substitutes = "/cls, /clear",
@@ -3665,6 +3679,33 @@ OP.Global.Locales.Languages["en-US"] = {
 		stand_still_to_respawn = "Stand still for 5 seconds to respawn.",
 		respawn_cancelled = "The respawn has been cancelled as you moved.",
 		arena_suicide_reason = "Suicide"
+	},
+
+	atms = {
+		withdraw = "Withdraw",
+		deposit = "Deposit",
+		balance = "Balance",
+		transfer = "Transfer",
+		back = "Back",
+
+		amount = "Amount",
+		target = "Target",
+
+		failed_deposit = "Failed to deposit money",
+		failed_withdraw = "Failed to withdraw money",
+		failed_transfer = "Failed to transfer money",
+
+		something_went_wrong = "Something went wrong.",
+		error_not_online = "Your target is unavailable.",
+		error_not_enough_money = "Not enough money.",
+		deposit_amount_big = "ATM deposits are limited to $4,000.",
+		withdraw_amount_big = "ATM withdraws are limited to $6,000.",
+
+		retrieving_card = "Retrieving Card",
+		atm_damaged = "This ATM is damaged",
+
+		press_to_use = "Press ~g~${InteractionKey} ~w~to use the ATM",
+		press_to_interact_bank = "Press ~g~${InteractionKey} ~w~to interact with the Bank"
 	},
 
 	attachments = {
@@ -5957,6 +5998,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		photo_camera = "Photo Camera",
 		photo_camera_description = "Nikon & Igna developed the latest professional camera on the market. With its advanced lens (70-300mm f/4.5-5.6E), you can capture even the finest details, even small things on the ground.",
 
+		remote_camera = "Remote Camera",
+		remote_camera_description = "A camera that can be placed anywhere and can be viewed from a distance.",
+		remote_monitor = "Remote Monitor",
+		remote_monitor_description = "A portable monitor that can be used to view remote cameras.",
+
 		handcuffs = "Handcuffs",
 		handcuffs_description = "For that full ERP experience.",
 		bolt_cutter = "Bolt Cutter",
@@ -7214,6 +7260,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		jackpot = "Jackpot",
 		inventory = "Inventory",
+		history = "History",
 		no_items_in_inventory = "Looks like you have no items in your virtual inventory.",
 		you_can_deposit_at_the_casino = "You can deposit items at the casino.",
 		close = "Close",
@@ -7307,7 +7354,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		are_you_sure_you_want_to_delete = "Are you sure you want to delete this character? This action can not be undone.",
 		stop_download = "Stop Download",
 		start_download = "Start Download",
+		slow_download = "Slow Download",
+		regular_download = "Regular Download",
 		back = "Back",
+		copy_license = "License ID",
+		copy_license_success = "Copied!",
 		cache_assets = "Cache Assets",
 		download_assets = "Do you want to download and cache most of the server's assets? Doing so will lead to a few things:",
 		cache_assets_less_lag = "Potentially less lag spikes, less dropped frames and less ping spikes during gameplay. Especially if you're on lower-end hardware or a slower connection.",
@@ -7605,7 +7656,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		no_copyright_enabled = "The 'No Copyright' feature has been enabled.",
 		no_copyright_disabled = "The 'No Copyright' feature has been disabled.",
 		server_tps = "Server TPS",
-		server_tps_response = "${tps}"
+		server_tps_response = "${tps}",
+		license_copied = "Successfully copied license to clipboard."
 	},
 
 	moonshine = {
@@ -8180,6 +8232,30 @@ OP.Global.Locales.Languages["en-US"] = {
 		radio_debug_on = "Successfully toggled radio debug on.",
 
 		radio_debug_no_permissions = "Attempted to toggle the radio debug without proper permission."
+	},
+
+	remote_camera = {
+		connected_to_camera = "Connected to camera #${id}",
+
+		camera_distance = "Distance: ${distance}m",
+		out_of_range = "Out of range",
+
+		disconnect = "Disconnect",
+		view_feed = "View Feed",
+
+		no_nearby_cameras = "No nearby cameras",
+		nearby_cameras = "${amount} nearby camera(s)",
+		no_nearby_cameras_description = "There are no cameras near you.",
+
+		camera_operator = "Operator: ${fullName}",
+
+		camera_label = "Camera #${id}",
+		camera_distance = "Distance: ${distance}m",
+		connect = "Connect",
+
+		something_went_wrong = "Something went wrong.",
+		error_out_of_range = "The camera is out of range.",
+		error_not_found = "The camera was not found."
 	},
 
 	reskin = {
@@ -9827,8 +9903,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		ems_air_hq = "EMS Air HQ",
 		ems_boat_hq = "EMS Boat HQ",
 		ems_garage = "EMS Garage",
-		e_to_get_treated = "[E] Get Treated - $2500",
-		get_treated = "Get Treated - $2500",
+		e_to_get_treated = "[E] Get Treated - $1250",
+		get_treated = "Get Treated - $1250",
 		you_are_being_treated = "You are being treated",
 		being_treated = "Being Treated",
 		minute = "minute",
