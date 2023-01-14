@@ -261,6 +261,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		player_kicked = "${consoleName} został wyrzucony z serwera.",
 		player_banned = "${consoleName} został zbanowany z serwera.",
 
+		ban_double_kill = "Double Kill!",
+		ban_triple_kill = "😧 Triple Kill!!!",
+		ban_quadrouple_kill = "😨 QUADROUPLE KILL!!!!!!",
+		ban_killing_spree = "🤯 KILLING SPREE!!!!!!",
+
 		kick_player_not_staff = "Próbowałeś wyrzucić gracza bez permisji administratora.",
 		ban_player_not_staff = "Próbowałeś zbanować gracza bez permisji administratora.",
 
@@ -446,6 +451,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		set_vehicle_livery = "Ustaw wyposażenie pojazdu na `${liveryIndex}`.",
 		no_livery_index_set = "Nie ustawiono wyposażenia.",
+		you_are_not_the_driver = "Nie jesteś kierowcą pojazdu.",
+		vehicle_is_not_a_plane_or_heli = "Pojazd nie jest samolotem ani helikopterem.",
+		livery_index_invalid = "Nieprawidłowy livery index (Maksymalnie: ${maxLiveries}).",
+		vehicle_has_no_liveries = "Pojazd nie ma żadnego livery.",
 
 		invalid_plate_number = "Nieprawidłowy numer rejestracyjny.",
 		set_fake_plate_number = "Ustaw numer rejestracyjny pojazdu na `${plateNumber}`.",
@@ -712,6 +721,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		mp_m_niko_01_label = "Niko (GTA IV)",
 
 		high_fov_warning = "Modyfikatory FOV nie są dozwolone.",
+		high_fov_description = "Jest to najprawdopodobniej spowodowane przez modyfikator FOV.",
 		high_fov_debug = "Aktualny: ${fov}",
 
 		illegal_oxy_run = "Gracz ukończył kurs z oxy szybciej, niż jest to możliwe.",
@@ -2398,6 +2408,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		ooc_off_command_help = "Wyłącz czat OOC.",
 		ooc_off_command_substitutes = "",
 
+		copy_license_command = "/copy_license",
+		copy_license_command_help = "Kopiuje własny identyfikator licencji Rockstar do schowka. (Używane przez administracje do identyfikacji użytkownika)",
+		copy_license_command_substitutes = "",
+
 		clear_chat_command = "/clear_chat",
 		clear_chat_command_help = "Wyczyść czat.",
 		clear_chat_command_substitutes = "/cls, /clear",
@@ -3695,6 +3709,33 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		stand_still_to_respawn = "Stań w miejscu przez 5 sekund, aby się odrodzić.",
 		respawn_cancelled = "Respawn został anulowany, ponieważ poruszyłeś się.",
 		arena_suicide_reason = "Samobójstwo"
+	},
+
+	atms = {
+		withdraw = "Wypłać",
+		deposit = "Wpłać",
+		balance = "Stan konta",
+		transfer = "Przelew",
+		back = "Wróć",
+
+		amount = "Kwota",
+		target = "Cel",
+
+		failed_deposit = "Nie udało się wpłacić pieniędzy",
+		failed_withdraw = "Nie udało się wypłacić pieniędzy",
+		failed_transfer = "Nie udało się przelać pieniędzy",
+
+		something_went_wrong = "Coś poszło nie tak.",
+		error_not_online = "Twój cel jest niedostępny.",
+		error_not_enough_money = "Niewystarczająca ilość pieniędzy.",
+		deposit_amount_big = "Wpłaty w bankomatach są ograniczone do $4,000.",
+		withdraw_amount_big = "Wypłaty w bankomatach są ograniczone do $6,000.",
+
+		retrieving_card = "Pobieranie karty",
+		atm_damaged = "Ten bankomat jest uszkodzony",
+
+		press_to_use = "Wciśnij ~g~${InteractionKey} ~w~, aby użyć ATM.",
+		press_to_interact_bank = "Wciśnij ~g~${InteractionKey} ~w~, aby wejść w interakcję z bankiem."
 	},
 
 	attachments = {
@@ -5996,6 +6037,12 @@ balls = {
 		photo_camera = "Aparat",
 		photo_camera_description = "Nikon i Igna opracowali najnowszy profesjonalny aparat na rynku. Dzięki zaawansowanemu obiektywowi (70-300mm f/4.5-5.6E) możesz uchwycić nawet najdrobniejsze szczegóły.",
 
+		
+		remote_camera = "Zdalna kamera",
+		remote_camera_description = "Kamera, którą można umieścić w dowolnym miejscu i obserwować z daleka.",
+		remote_monitor = "Zdalny monitor",
+		remote_monitor_description = "Przenośny monitor, który może być używany do podglądu zdalnych kamer.",
+
 		handcuffs = "Kajdanki",
 		handcuffs_description = "Para metalowych obręczy z zatrzaskiem, połączonych ze sobą, zakładanych na przeguby rąk.",
 		bolt_cutter = "Nóż do śrub",
@@ -7256,6 +7303,7 @@ balls = {
 
 		jackpot = "Jackpot",
 		inventory = "Ekwipunek",
+		history = "Historia",
 		no_items_in_inventory = "Wygląda na to, że nie masz żadnych przedmiotów w swoim wirtualnym ekwipunku.",
 		you_can_deposit_at_the_casino = "W kasynie można wpłacać przedmioty.",
 		close = "Zamknij",
@@ -7349,7 +7397,11 @@ balls = {
 		are_you_sure_you_want_to_delete = "Czy jesteś pewny, że chcesz usunąć tą postać? Nie można tego cofnąć!",
 		stop_download = "Zatrzymaj pobieranie",
 		start_download = "Zacznij pobieranie",
+		slow_download = "Wolne pobieranie",
+		regular_download = "Normalne pobieranie",
 		back = "Wróć",
+		copy_license = "License ID",
+		copy_license_success = "Skopiowano!",
 		cache_assets = "Zasoby",
 		download_assets = "Czy chcesz pobierać i buforować większość zasobów serwera? Robienie tego doprowadzi do kilku rzeczy:",
 		cache_assets_less_lag = "Potencjalnie mniej lagów, mniej spadających klatek i mniej skoków pingu podczas gry. Zwłaszcza jeśli korzystasz z gorszej klasy sprzętu lub wolniejszego połączenia..",
@@ -7650,7 +7702,8 @@ balls = {
 		no_copyright_enabled = "Komenda 'No Copyright' jest włączona.",
 		no_copyright_disabled = "Komenda 'No Copyright' jest wyłączona.",
 		server_tps = "Serwer TPS",
-		server_tps_response = "${tps}"
+		server_tps_response = "${tps}",
+		license_copied = "Pomyślnie skopiowano licencję do schowka."
 	},
 
 	
@@ -8214,6 +8267,29 @@ balls = {
 
 		triggered_reskin_for_self_logs_title = "Włączono reskina dla siebie",
 		triggered_reskin_for_self_logs_details = "${consoleName} włączył reskina dla siebie."
+	},
+
+	remote_camera = {
+		connected_to_camera = "Podłączony do kamery #${id}",
+
+		out_of_range = "Poza zasięgiem",
+
+		disconnect = "Odłącz się",
+		view_feed = "Wyświetlanie kanału",
+
+		no_nearby_cameras = "Brak kamer w pobliżu",
+		nearby_cameras = "${amount} najbliższe kamery",
+		no_nearby_cameras_description = "W pobliżu nie ma żadnych kamer.",
+
+		camera_operator = "Operator: ${fullName}",
+
+		camera_label = "Kamera #${id}",
+		camera_distance = "Dystans: ${distance}m",
+		connect = "Połącz się",
+
+		something_went_wrong = "Coś poszło nie tak.",
+		error_out_of_range = "Kamera jest poza zasięgiem.",
+		error_not_found = "Nieznaleziono kamery."
 	},
 
 	radio = {
