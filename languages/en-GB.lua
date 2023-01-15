@@ -5593,7 +5593,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		rpm = "rpm",
 		degrees = "°C",
 		degrees_f = "°F",
-		steps_walked_deaths_temperature = "${temperature}${degrees} | ${stepsWalked} steps traveled | Downed ${deaths} times",
+		steps_walked_deaths = "${stepsWalked} steps | ${deaths} downs",
+		altitude_temperature = "${altitude} ${ft} / ${temperature}${degrees}",
 
 		fps_unit = "fps",
 		ping_unit = "ms",
