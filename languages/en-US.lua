@@ -32,6 +32,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		put_player_in_trunk = "Press ~INPUT_ENTER~ to put the player in the trunk.",
 		put_ped_in_trunk = "Press ~INPUT_ENTER~ to put the ped in the trunk.",
 		put_bicycle_in_trunk = "Press ~INPUT_ENTER~ to put the bicycle in the trunk.",
+		put_player_in_seat = "[${VehicleEnterKey}] Place in Seat",
 		trunk_interaction_display = "[${VehicleEnterKey}] Climb Out [${InteractionKey}] Open/Close Trunk",
 		trunk_open_close_display = "[${InteractionKey}] Open/Close Trunk",
 		boombox_already_in_trunk = "There is already a boombox in the trunk.",
@@ -102,12 +103,17 @@ OP.Global.Locales.Languages["en-US"] = {
 		spawned_vehicle_for_everyone = "Successfully spawned `${modelName}` for everyone.",
 		spawn_vehicle_for_player_not_staff = "Player attempted to spawn a vehicle for someone else but they didn't have the required permissions to do so.",
 		spawn_vehicle_for_self_not_staff = "Player attempted to spawn a vehicle for themselves but they didn't have the required permissions to do so.",
+		replace_vehicle_no_permissions = "Player attempted to replace their vehicle but they didn't have the required permissions to do so.",
+		create_vehicle_no_permissions = "Player attempted to create a vehicle but they didn't have the required permissions to do so.",
 		spawned_vehicle_for_self_title = "Spawned Vehicle",
 		spawned_vehicle_for_self_details = "${consoleName} spawned a vehicle with model name `${modelName}`.",
 		spawned_vehicle_for_player_title = "Spawned Vehicle For Player",
 		spawned_vehicle_for_player_details = "${consoleName} spawned a vehicle with model name `${modelName}` for player ${targetConsoleName}.",
 		spawned_vehicle_for_everyone_title = "Spawned Vehicle For Everyone",
 		spawned_vehicle_for_everyone_details = "${consoleName} spawned a vehicle with model name `${modelName}` for everyone.",
+
+		vehicle_created = "Successfully created vehicle.",
+		failed_vehicle_creation = "Failed to create vehicle.",
 
 		invalid_amount = "Invalid amount.",
 
@@ -262,7 +268,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		ban_double_kill = "Double Kill!",
 		ban_triple_kill = "😧 Triple Kill!!!",
 		ban_quadrouple_kill = "😨 QUADROUPLE KILL!!!!!!",
-		ban_killing_spree = "🤯 KILLING SPREE!!!!!!",
+		ban_killing_spree = "🤯 KILLING SPREE (${count})!!!!!!",
 
 		kick_player_not_staff = "Attempted to kick a player without proper permissions.",
 		ban_player_not_staff = "Attempted to ban a player without proper permissions.",
@@ -955,6 +961,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		spawn_vehicle_command_parameter_server_id_help = "The player's server id you would like to spawn this vehicle for. You can leave this as blank or at `0` to select yourself.",
 		spawn_vehicle_command_substitutes = "/sv",
 
+		create_vehicle_command = "/create_vehicle",
+		create_vehicle_command_help = "Spawns a vehicle on the ground at your current location without warping you into it.",
+		create_vehicle_command_parameter_model_name = "model name",
+		create_vehicle_command_parameter_model_name_help = "The model name of the vehicle you're wanting to spawn.",
+		create_vehicle_command_parameter_ground = "ground",
+		create_vehicle_command_parameter_ground_help = "Should the vehicle be spawned on the ground?",
+		create_vehicle_command_substitutes = "/cv",
+
 		replace_vehicle_command = "/replace_vehicle",
 		replace_vehicle_command_help = "Replace your current vehicle with a different one.",
 		replace_vehicle_parameter_model_name = "model name",
@@ -1589,6 +1603,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		-- game/cache
 		cache_assets_command = "/cache_assets",
 		cache_assets_command_help = "Forcefully request and download most streamed assets (vehicles, objects and clothing). This is not recommended unless you have a slow connection and assets don't download fast enough on demand to be seamless. This may also cause client crashes while it's in action.",
+		cache_assets_command_parameter_slow_download = "slow download",
+		cache_assets_command_parameter_slow_download_help = "Do you want to cache the assets slowly? Doing that will make it take much longer, but will also reduce the chance of crashing.",
 		cache_assets_command_substitutes = "/download_cache, /preload_cache, /load_cache",
 
 		-- game/casino
@@ -2946,6 +2962,19 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "The intensity you would like to set it to.",
 		set_ocean_scaler_command_substitutes = "/ocean_scaler, /set_waves_intensity, /waves_intensity",
 
+		-- game/vdm
+		vdm_command = "/vdm",
+		vdm_command_help = "Makes the specified npc attempt to vdm the target.",
+		vdm_command_parameter_target = "target",
+		vdm_command_parameter_target_help = "The target players server id.",
+		vdm_command_parameter_network_id = "network id",
+		vdm_command_parameter_network_id_help = "The locals network id (or its vehicle).",
+		vdm_command_substitutes = "",
+
+		vdm_clear_command = "/vdm_clear",
+		vdm_clear_command_help = "Clears all your vdm targets.",
+		vdm_clear_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "/voice_debug",
 		voice_debug_command_help = "Toggle the voice debug.",
@@ -3184,6 +3213,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		licenses_command = "/licenses",
 		licenses_command_help = "Get your licenses.",
 		licenses_command_substitutes = "",
+
+		-- jobs/tow
+		toggle_mechanic_messages_command = "/toggle_mechanic_messages",
+		toggle_mechanic_messages_command_help = "Toggles whether or not you receive mechanic messages.",
+		toggle_mechanic_messages_command_substitutes = "/mechanic_messages",
 
 		-- vehicles/boats
 		toggle_anchor_command = "/toggle_anchor",
@@ -3705,7 +3739,18 @@ OP.Global.Locales.Languages["en-US"] = {
 		atm_damaged = "This ATM is damaged",
 
 		press_to_use = "Press ~g~${InteractionKey} ~w~to use the ATM",
-		press_to_interact_bank = "Press ~g~${InteractionKey} ~w~to interact with the Bank"
+		press_to_interact_bank = "Press ~g~${InteractionKey} ~w~to interact with the Bank",
+
+		deposit_log_bank_title = "Bank Deposit",
+		deposit_log_atm_title = "ATM Deposit",
+		deposit_log = "${consoleName} deposited $${amount}.",
+
+		withdraw_log_bank_title = "Bank Withdraw",
+		withdraw_log_atm_title = "ATM Withdraw",
+		withdraw_log = "${consoleName} withdrew $${amount}.",
+
+		transfer_log_title = "Bank Transfer",
+		transfer_log = "${consoleName} (#${characterId}) transferred $${amount} to ${targetConsoleName} (#${targetCharacterId})."
 	},
 
 	attachments = {
@@ -4050,7 +4095,9 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	cache = {
-		download_progress = "Download Progress:\n- Vehicles: ${vehiclesDone}/${vehiclesTotal}\n- Objects: ${objectsDone}/${objectsTotal}\n- Peds: ${pedsDone}/${pedsTotal}\n- Clothing: ${clothingRequested}/${clothingTotal}"
+		download_progress = "Download Progress:\n- Vehicles: ${vehiclesDone}/${vehiclesTotal}\n- Objects: ${objectsDone}/${objectsTotal}\n- Peds: ${pedsDone}/${pedsTotal}\n- Clothing: ${clothingRequested}/${clothingTotal}",
+		slow_download_enabled = "Slow download has been enabled.",
+		slow_download_disabled = "Slow download has been disabled."
 	},
 
 	capri_sun = {
@@ -5598,7 +5645,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		rpm = "rpm",
 		degrees = "°C",
 		degrees_f = "°F",
-		steps_walked_deaths_temperature = "${temperature}${degrees} | ${stepsWalked} steps traveled | Downed ${deaths} times",
+		steps_walked_deaths = "${stepsWalked} steps ~t~/~w~ ${deaths} downs",
+		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
+		scuba_timer = "Oxygen left: ${timer}",
 
 		fps_unit = "fps",
 		ping_unit = "ms",
@@ -7362,7 +7411,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		cache_assets = "Cache Assets",
 		download_assets = "Do you want to download and cache most of the server's assets? Doing so will lead to a few things:",
 		cache_assets_less_lag = "Potentially less lag spikes, less dropped frames and less ping spikes during gameplay. Especially if you're on lower-end hardware or a slower connection.",
-		cache_assets_crashes = "It may crash your game during the process.",
+		cache_assets_crashes = "It may crash your game during the process. If this happens, use the 'slow download' option instead.",
 		cache_assets_restart = "Once completed, we recommend you restart your game as it may cause lag for the rest of this session.",
 		cache_assets_disk = "This will take up a bit of disk storage, so make sure there's available space. After an update it may also be worth to clear your old cache to free up space.",
 		vehicles = "Vehicles",
@@ -9031,6 +9080,17 @@ OP.Global.Locales.Languages["en-US"] = {
 		press_to_use = "Press ~INPUT_CONTEXT~ to take a hit. Press ~INPUT_FRONTEND_CANCEL~ to put vape away."
 	},
 
+	vdm = {
+		failed_vdm = "Failed to VDM the player.",
+		invalid_entity = "Could not find vehicle or driver.",
+		invalid_network_id = "Invalid network id.",
+		invalid_target = "Invalid target.",
+		cleared_vdm = "Cleared ${amount} vdm targets.",
+		failed_vdm_clear = "Failed to clear vdm targets.",
+
+		vdm_no_permissions = "Player attempted to run the vdm command without proper permission."
+	},
+
 	vending_machines = {
 		vending_coffee = "Press ~INPUT_CONTEXT~ to purchase a Coffee. The cost is $${cost}.",
 		vending_coffee_not_enough_cash = "You do not have enough cash to purchase a Coffee. The cost is $${cost}.",
@@ -9460,7 +9520,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		shop_on_timeout = "The vehicle shop is on a timeout. Please try again.",
 		spawn_area_not_clear = "The spawn area is not clear.",
 		purchase_funds = "Insufficient funds.",
-		return_button = "Return"
+		return_button = "Return",
+
+		toggled_messages_on = "Toggled messages on.",
+		toggled_messages_off = "Toggled messages off."
 	},
 
 	weazel_news = {
