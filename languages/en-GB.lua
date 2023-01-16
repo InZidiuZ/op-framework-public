@@ -1302,6 +1302,14 @@ OP.Global.Locales.Languages["en-GB"] = {
 		slap_command_parameter_server_id_help = "The server id of the player you want to slap.",
 		slap_command_substitutes = "",
 
+		vdm_command = "/vmd",
+		vdm_command_parameter_target = "target",
+		vdm_command_parameter_target_help = "The target players Server ID",
+		vdm_command_parameter_network_id = "network id",
+		vdm_command_parameter_network_id_help = "The locals Network ID (Or it's vehicle)",
+		vdm_command_substitutes = "",
+		vdm_command_help = "Makes the specified NPC attempt to VDM the target.",
+		  
 		damage_player_command = "/damage_player",
 		damage_player_command_help = "Damage a player's health.",
 		damage_player_command_parameter_server_id = "server id",
@@ -1589,6 +1597,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		cache_assets_command = "/cache_assets",
 		cache_assets_command_help = "Forcefully request and download most streamed assets (vehicles, objects and clothing). This is not recommended unless you have a slow connection and assets don't download fast enough on demand to be seamless. This may also cause client crashes while it's in action.",
 		cache_assets_command_substitutes = "/download_cache, /preload_cache, /load_cache",
+		cache_assets_command_parameter_slow_download = "Slow Mode",
+		cache_assets_command_parameter_slow_download_help = "Do you want to cahce the assets slowly? Doing that will make it take much longer, but will also resuce the chance of crashing",
 
 		-- game/casino
 		set_casino_screens_command = "/set_casino_screens",
@@ -1936,6 +1946,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		copy_coords_command = "/copy_coords",
 		copy_coords_command_help = "Copies your current coordinates to the clipboard.",
 		copy_coords_command_substitutes = "",
+
+		copy_license_command = "/copy_license",
+		copy_license_command_help = "Copies your Rockstar Licence Identifier to your clipboard. (Used by staff to identify you)",
+		copy_license_command_substitutes = "",
 
 		save_valid_ped_component_variations_command = "/save_valid_ped_component_variations",
 		save_valid_ped_component_variations_command_help = "Save all valid ped component variations for your current player model.",
@@ -3180,6 +3194,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		licenses_command = "/licenses",
 		licenses_command_help = "Get your licenses.",
 		licenses_command_substitutes = "",
+
+		-- jobs/mechanics
+		toggle_mechanic_messages_command = "/toggle_mechanic_messages",
+		toggle_mechanic_messages_command_help = "Toggles whether or not you receive mechanic messages.",
+		toggle_mechanic_messages_command_substitutes = "",
 
 		-- vehicles/boats
 		toggle_anchor_command = "/toggle_anchor",
