@@ -5613,7 +5613,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		degrees = "°C",
 		degrees_f = "°F",
 		steps_walked_deaths = "${stepsWalked} steps | ${deaths} downs",
-		altitude_temperature = "${altitude} ${ft} / ${temperature}${degrees}",
+		altitude_temperature = "${altitude} ft / ${temperature}${degrees}",
 
 		fps_unit = "fps",
 		ping_unit = "ms",
