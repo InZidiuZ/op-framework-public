@@ -8704,7 +8704,7 @@ balls = {
 		set_body_armor_level_player_details = "${consoleName} zaktualizował ${targetConsoleName} i ustawil poziom pancerza na `${bodyArmorLevel}`.",
 		set_body_armor_level_player_not_staff = "Inny gracz próbował ustawić komuś poziom pancerza nie posiadając odpowiednich uprawnień.",
 		set_body_armor_level_self_not_staff = "Gracz próbował ustawić swój poziom pancerza nie posiadając odpowiednich uprawnień.",
-		stress_level_warning = "Zapal szluga albo jointa byczku, jestes cały pospinany!"
+		stress_level_warning = "Zapal papierosa albo jointa, jesteś cały zestresowany!"
 	},
 
 	streamer_mode = {
