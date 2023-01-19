@@ -32,6 +32,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		put_player_in_trunk = "Naciśnij ~INPUT_ENTER~ aby włożyc osobę do bagażnika",
 		put_ped_in_trunk = "Naciśnij ~INPUT_ENTER~ aby włożyć peda do bagażnika",
 		put_bicycle_in_trunk = "Naciśnij ~INPUT_ENTER~ aby schować rower do bagażnika",
+		put_player_in_seat = "[${VehicleEnterKey}] Posadź na siedzeniu",
 		trunk_interaction_display = "[${VehicleEnterKey}] Aby wyjść [${InteractionKey}] Otwórz/Zamknij bagażnik",
 		trunk_open_close_display = "[${InteractionKey}] Otwórz/Zamknij bagażnik",
 		boombox_already_in_trunk = "W bagażniku już jest boombox.",
@@ -102,12 +103,17 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		spawned_vehicle_for_everyone = "Pomyślnie zespawnowano pojazd `${modelName}` dla wszystkich graczy.",
 		spawn_vehicle_for_player_not_staff = "Gracz próbował zespawnować pojazd nie posiadając permisji.",
 		spawn_vehicle_for_self_not_staff = "Gracz próbował zespawnować pojazd nie posiadając permisji.",
+		replace_vehicle_no_permissions = "Gracz próbował zamienić swój pojazd, ale nie miał do tego wymaganych uprawnień.",
+		create_vehicle_no_permissions = "Gracz próbował zrespić pojazd, ale nie miał do tego wymaganych uprawnień.",
 		spawned_vehicle_for_self_title = "Zespawnowano pojazd",
 		spawned_vehicle_for_self_details = "${consoleName} zespawnowano `${modelName}`.",
 		spawned_vehicle_for_player_title = "Zespawnowano pojazd dla gracza",
 		spawned_vehicle_for_player_details = "${consoleName} zespawnowano `${modelName}` dla gracza ${targetConsoleName}.",
 		spawned_vehicle_for_everyone_title = "Zespawnowano pojazd dla wszystkich graczy",
 		spawned_vehicle_for_everyone_details = "${consoleName} zespawnowano `${modelName}` dla wszystkich graczy.",
+
+		vehicle_created = "Pomyślnie zrespiono pojazd.",
+		failed_vehicle_creation = "Nie udało się zrespić pojazdu.",
 
 		invalid_amount = "Nieprawidłowa warotść.",
 
@@ -955,6 +961,15 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		spawn_vehicle_command_parameter_server_id_help = "Serwer ID gracza dla którego chcesz zespawnować pojazd. Możesz zostawić `0` by zespawnować dla siebie.",
 		spawn_vehicle_command_substitutes = "/sv, /car",
 
+		
+		create_vehicle_command = "/create_vehicle",
+		create_vehicle_command_help = "Pojazd pojawia się na ziemi w miejscu, w którym się znajdujesz, bez wchodzenia do niego.",
+		create_vehicle_command_parameter_model_name = "model name",
+		create_vehicle_command_parameter_model_name_help = "Nazwa modelu pojazdu, który ma być zrespiony.",
+		create_vehicle_command_parameter_ground = "ground",
+		create_vehicle_command_parameter_ground_help = "Czy pojazd ma się pojawić na ziemi?",
+		create_vehicle_command_substitutes = "/cv",
+
 		replace_vehicle_command = "/replace_vehicle",
 		replace_vehicle_command_help = "Wymień obecny pojazd na inny.",
 		replace_vehicle_parameter_model_name = "nazwa modelu",
@@ -1592,6 +1607,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		-- game/cache
 		cache_assets_command = "/cache_assets",
 		cache_assets_command_help = "Wymuszaj i pobieraj większość strumieniowanych zasobów (pojazdy, przedmioty i ubrania). Nie jest to zalecane, chyba że masz wolne łącze i zasoby nie pobierają się wystarczająco szybko na żądanie, aby były płynne. Może to również powodować awarie klienta w trakcie działania.",
+		cache_assets_command_parameter_slow_download = "slow download",
+		cache_assets_command_parameter_slow_download_help = "Czy chcesz pobierać zasoby powoli? Sprawi to, że będzie to trwało znacznie dłużej, ale zmniejszy też szansę na wystąpienie błędu.",
 		cache_assets_command_substitutes = "/download_cache, /preload_cache, /load_cache",
 
 		-- game/casino
@@ -2962,6 +2979,19 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "Intensywność, na jaką chcesz ją ustawić.",
 		set_ocean_scaler_command_substitutes = "/ocean_scaler, /set_waves_intensity, /waves_intensity",
 
+		-- game/vdm
+		vdm_command = "/vdm",
+		vdm_command_help = "Sprawia, że npc zrobi ci vdm.",
+		vdm_command_parameter_target = "target",
+		vdm_command_parameter_target_help = "Identyfikator serwera gracza.",
+		vdm_command_parameter_network_id = "network id",
+		vdm_command_parameter_network_id_help = "ID local network npc'ta (lub pojazd npc'ta).",
+		vdm_command_substitutes = "",
+
+		vdm_clear_command = "/vdm_clear",
+		vdm_clear_command_help = "Czyści wszystkie cele vdm.",
+		vdm_clear_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "/voice_debug",
 		voice_debug_command_help = "Włącz voice debug.",
@@ -3206,6 +3236,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		licenses_command = "/licenses",
 		licenses_command_help = "Sprawdź swoje licencje.",
 		licenses_command_substitutes = "/licencja",
+
+		
+		-- jobs/tow
+		toggle_mechanic_messages_command = "/toggle_mechanic_messages",
+		toggle_mechanic_messages_command_help = "Przełącza, czy użytkownik ma otrzymywać wiadomości związane z jobem mechanika.",
+		toggle_mechanic_messages_command_substitutes = "/mechanic_messages",
 
 		-- vehicles/boats
 		toggle_anchor_command = "/toggle_anchor",
@@ -3735,7 +3771,18 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		atm_damaged = "Ten bankomat jest uszkodzony",
 
 		press_to_use = "Wciśnij ~g~${InteractionKey} ~w~, aby użyć ATM.",
-		press_to_interact_bank = "Wciśnij ~g~${InteractionKey} ~w~, aby wejść w interakcję z bankiem."
+		press_to_interact_bank = "Wciśnij ~g~${InteractionKey} ~w~, aby wejść w interakcję z bankiem.",
+
+		deposit_log_bank_title = "Wpłata bank",
+		deposit_log_atm_title = "Wpłata z ATM",
+		deposit_log = "${consoleName} wpłacił $${amount}.",
+
+		withdraw_log_bank_title = "Wypłata bank",
+		withdraw_log_atm_title = "Wypłata z ATM",
+		withdraw_log = "${consoleName} wypłacić $${amount}.",
+
+		transfer_log_title = "Przelew bankowy",
+		transfer_log = "${consoleName} (#${characterId}) przelał $${amount} do ${targetConsoleName} (#${targetCharacterId})."
 	},
 
 	attachments = {
@@ -4083,7 +4130,9 @@ balls = {
 	},
 
 	cache = {
-		download_progress = "Pobieranie Postęp:\n- Pojazdy: ${vehiclesDone}/${vehiclesTotal}\n- Objekty: ${objectsDone}/${objectsTotal}\n- Ubrania: ${clothingRequested}/${clothingTotal}"
+		download_progress = "Pobieranie Postęp:\n- Pojazdy: ${vehiclesDone}/${vehiclesTotal}\n- Objekty: ${objectsDone}/${objectsTotal}\n- Ubrania: ${clothingRequested}/${clothingTotal}",
+		slow_download_enabled = "Włączono powolne pobieranie.",
+		slow_download_disabled = "Wyłączono powolne pobieranie."
 	},
 
 	capri_sun = {
@@ -5634,8 +5683,10 @@ balls = {
 		rpm = "RPM",
 		degrees = "°C",
 		degrees_f = "°F",
+		steps_walked_deaths = "${stepsWalked} kroki ~t~/~w~ ${deaths} powalony",
+		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
+		scuba_timer = "Pozostały tlen: ${timer}",
 		heading = "Heading",
-		steps_walked_deaths_temperature = "${temperature}${degrees} | ${stepsWalked} zrobione kroki | Powalony ${deaths} razy",
 
 		fps_unit = "fps",
 		ping_unit = "ms",
@@ -8653,7 +8704,7 @@ balls = {
 		set_body_armor_level_player_details = "${consoleName} zaktualizował ${targetConsoleName} i ustawil poziom pancerza na `${bodyArmorLevel}`.",
 		set_body_armor_level_player_not_staff = "Inny gracz próbował ustawić komuś poziom pancerza nie posiadając odpowiednich uprawnień.",
 		set_body_armor_level_self_not_staff = "Gracz próbował ustawić swój poziom pancerza nie posiadając odpowiednich uprawnień.",
-		stress_level_warning = "Zapal szluga albo jointa byczku, jestes cały pospinany!"
+		stress_level_warning = "Zapal papierosa albo jointa, jesteś cały zestresowany!"
 	},
 
 	streamer_mode = {
@@ -9078,6 +9129,19 @@ balls = {
 	vape = {
 		press_to_use = "Nacisnij ~INPUT_CONTEXT~ aby wziąść bucha. Naciśnij ~INPUT_FRONTEND_CANCEL~ aby odłożyć vape'a."
 	},
+
+	
+	vdm = {
+		failed_vdm = "Nie udało się VDM'OWAC gracza.",
+		invalid_entity = "Nieznaleziono pojazdu lub kierowcy.",
+		invalid_network_id = "Nieprawidłowy network id.",
+		invalid_target = "Nieprawidłowy cel.",
+		cleared_vdm = "Wyczyszczono ${amount} celów vdm.",
+		failed_vdm_clear = "Nie udało się wyczyścić celów vdm.",
+
+		vdm_no_permissions = "Gracz próbował uruchomić polecenie vdm bez odpowiednich uprawnień."
+	},
+
 
 	vending_machines = {
 		vending_coffee = "Naciśnij ~INPUT_CONTEXT~ żeby kupić kawę. Koszt to $${cost}.",
@@ -9509,7 +9573,9 @@ balls = {
 		shop_on_timeout = "Odczekaj chwile przed następną próbą wyciągnięcia pojazdu.",
 		spawn_area_not_clear = "Miejsce parkingowe jest zajęte!",
 		purchase_funds = "Niewystarczające środki.",
-		return_button = "Wróć"
+		return_button = "Wróć",
+		toggled_messages_on = "Włączono komunikaty.",
+		toggled_messages_off = "Wyłączono komunikaty."
 	},
 
 	weazel_news = {
