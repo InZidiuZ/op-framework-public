@@ -1523,16 +1523,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		play_audio_command_parameter_server_id_help = "The player's server ID you want to play this audio for. You can do `-1` for all players.",
 		play_audio_command_substitutes = "",
 
-		play_audio_from_player_command = "/play_audio_from_player",
-		play_audio_from_player_command_help = "Play an audio for at a players position.",
-		play_audio_from_player_command_parameter_url = "url",
-		play_audio_from_player_command_parameter_url_help = "The audio's download URL.",
-		play_audio_from_player_command_parameter_volume = "volume",
-		play_audio_from_player_command_parameter_volume_help = "The volume level the audio should play at. Valid values range from `0` to `1`. This value will default to `0.1`.",
-		play_audio_from_player_command_parameter_server_id = "server id",
-		play_audio_from_player_command_parameter_server_id_help = "The player's server ID you want to play this audio at.",
-		play_audio_from_player_command_substitutes = "/play_audio_at",
-
 		-- game/battle_royale
 		battle_royale_toggle_command = "/battle_royale_toggle",
 		battle_royale_toggle_command_help = "Toggle the Battle Royale feature.",
@@ -1605,6 +1595,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		cache_assets_command_substitutes = "/download_cache, /preload_cache, /load_cache",
 		cache_assets_command_parameter_slow_download = "Slow Mode",
 		cache_assets_command_parameter_slow_download_help = "Do you want to cahce the assets slowly? Doing that will make it take much longer, but will also resuce the chance of crashing",
+
+		-- game/cargo
+		start_cargo_command = "/start_cargo",
+		start_cargo_command_help = "Start a world-wide cargo heist.",
+		start_cargo_command_substitutes = "",
 
 		-- game/casino
 		set_casino_screens_command = "/set_casino_screens",
@@ -2446,6 +2441,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		tps_command_help = "Get the server's current TPS.",
 		tps_command_substitutes = "",
 
+		uptime_command = "/uptime",
+		uptime_command_help = "Check the uptime of the server.",
+		uptime_command_substitutes = "",
+
 		-- game/money
 		cash_command = "/cash",
 		cash_command_help = "Display your cash balance.",
@@ -2619,6 +2618,13 @@ OP.Global.Locales.Languages["en-GB"] = {
 		phone_number_available_command_parameter_phone_number = "phone number",
 		phone_number_available_command_parameter_phone_number_help = "The phone number you would like to check if is available. Make sure it follows the format of XXX-XXXX.",
 		phone_number_available_command_substitutes = "/number_available",
+
+		-- game/player_control
+		drive_for_command = "/drive_for",
+		drive_for_command_help = "Take over a player's vehicle and drive for them.",
+		drive_for_command_parameter_server_id = "server id",
+		drive_for_command_parameter_server_id_help = "The server ID of the player you would like to take over for.",
+		drive_for_command_substitutes = "",
 
 		-- game/player_scales
 		set_player_scale_command = "/set_player_scale",
@@ -3378,6 +3384,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		toggle_vehicle_weapons_command_parameter_server_id_help = "The server ID of the player you wish to toggle the vehicle weapons for. Leaving this blank will auto-select yourself.",
 		toggle_vehicle_weapons_command_substitutes = "/vehicle_weapons",
 
+		-- weapons/ammo
+		fill_ammo_command = "/fill_ammo",
+		fill_ammo_command_help = "Fills all of your weapons' ammo.",
+		fill_ammo_command_substitutes = "",
+
 		-- weapons/recoil
 		crosshair_command = "/crosshair",
 		crosshair_command_help = "Toggle the crosshair.",
@@ -3988,6 +3999,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		bean_machine = "Bean Machine",
 		cinema = "Cinema",
 		arcade_bar = "Arcade Bar",
+		japanese_restaurant = "Japanese Restaurant",
 		luxury_autos = "Luxury Autos",
 		city_hall = "City Hall",
 		rockford_records = "Rockford Records",
@@ -4063,6 +4075,63 @@ OP.Global.Locales.Languages["en-GB"] = {
 		no_boomboxes_within_radius = "There were no boomboxes to wipe within a radius of `${radius}`."
 	},
 
+	boosting = {
+		boosting_contracts = "Boosting Contracts",
+		join_queue = "Join Queue",
+		leave_queue = "Leave Queue",
+
+		transfer_crypt = "Transfer CRYPT",
+		transfer_crypt_info = "Enter the amount and server ID of the player you wish to transfer to.",
+
+		amount = "Amount",
+		server_id = "Server ID",
+
+		transfer = "Transfer",
+		cancel = "Cancel",
+
+		start_contract = "Start Contract",
+		start_contract_info = "Are you sure you want to start this contract?",
+
+		yes = "Yes",
+		no = "No",
+
+		transfer_contract = "Transfer Contract",
+		transfer_contract_info = "Enter the server ID of the person you want to transfer the contact to.",
+
+		decline_contract = "Decline Contract",
+		decline_contract_info = "Are you sure you want to decline this contract?",
+
+		cancel_contract = "Cancel Contract",
+		cancel_contract_info = "Are you sure you want to cancel this contract?",
+
+		no_contracts = "You have no contracts available. Join the queue to get some.",
+
+		model = "Model",
+		plate = "Plate",
+		buy_in = "Buy-in",
+		expires_in = "Expires In",
+
+		start_contract_type = "What do you want to do?",
+		start_contract_type_info = "Would you like to do a drop-off or VIN scratch? The VIN scratch costs an additional ${cost} CRYPT.",
+
+		vin_scratch = "VIN scratch",
+
+		mark_pickup = "Mark Pickup",
+
+		new_contract = "You have a new boosting contract. (Class: ${class})",
+		started_contract = "Started contract.",
+		failed_contract = "Failed contract.",
+		completed_contract = "Completed contract.",
+		marked_pickup = "Marked pickup.",
+
+		vehicle_tracker_is_being_hacked = "The vehicle tracker is being hacked. There is ${hacksRemaining} hacks remaining.",
+		use_chip_to_hack_vehicle_tracker = "Use a chip to hack the vehicle tracker. There is ${hacksRemaining} hacks remaining.",
+		vehicle_hacking_is_timed_out = "You have to wait a little before hacking again. There is ${hacksRemaining} hacks remaining.",
+		drop_the_vehicle_off = "Drop the vehicle off at the marked location.",
+		drop_off = "Drop-Off",
+		exit_the_vehicle = "Exit the vehicle to finish the mission."
+	},
+
 	brochure = {
 		welcome_to = "Welcome to",
 		san_andreas = "San Andreas",
@@ -4102,6 +4171,12 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 	capri_sun = {
 		capri_sun_name = "Capri Sun (${flavor})"
+	},
+
+	cargo = {
+		start_cargo_no_permissions = "Player attempted to start a cargo heist but they didn't have permissions to do so.",
+		cargo_already_active = "Cargo is already active.",
+		started_cargo = "Cargo has been started."
 	},
 
 	casino = {
@@ -4698,11 +4773,23 @@ OP.Global.Locales.Languages["en-GB"] = {
 		mixed_patriotic_paint = "Mixed patriotic paint.",
 		failed_mix_patriotic_paint = "Failed to mix patriotic paint.",
 
+		craft_radio_decryptor = "Craft Radio Decryptor",
+		press_craft_radio_decryptor = "[${SeatEjectKey}] Craft Radio Decryptor",
+		crafting_radio_decryptor = "Crafting Radio Decryptor",
+		crafted_radio_decryptor = "Crafted radio decryptor.",
+		failed_craft_radio_decryptor = "Failed to craft radio decryptor.",
+
 		bake_brownies = "Bake Brownies",
 		press_bake_brownies = "[${SeatEjectKey}] Bake Brownies",
 		baking_brownies = "Baking Brownies",
 		baked_brownies = "Baked brownies.",
 		failed_bake_brownies = "Failed to bake brownies.",
+
+		forge_katana = "Forge Katana",
+		press_forge_katana = "[${SeatEjectKey}] Forge Katana",
+		forging_katana = "Forging Katana",
+		forged_katana = "Forged katana.",
+		failed_forge_katana = "Failed to forge katana.",
 
 		no_required_items = "You don't have all the required items.",
 
@@ -5216,6 +5303,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		floor_penthouse_top = "Penthouse (Top Floor)",
 		floor_penthouse_entrance = "Penthouse (Entrance)",
+
+		floor_containment = "Containment Room",
 
 		doj_office = "DOJ Office"
 	},
@@ -6088,6 +6177,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		vehicle_tracker_description = "This tracker is exactly what Michael needs, who has for over seven years had suspicion his wife, Amanda, has been cheating on him with the tennis coach he got her.",
 		device_scanner = "Device Scanner",
 		device_scanner_description = "Used to scan for nearby creep devices.",
+		radio_decryptor = "Radio Decryptor",
+		radio_decryptor_description = "Decrypts radio frequencies if connected to a radio.",
 
 		paper_bag = "Paper Bag",
 		paper_bag_description = "Perfect for storing groceries or perhaps someone's head, dead or alive.",
@@ -7700,7 +7791,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		no_copyright_disabled = "The 'No Copyright' feature has been disabled.",
 		server_tps = "Server TPS",
 		server_tps_response = "${tps}",
-		license_copied = "Successfully copied license to clipboard."
+		license_copied = "Successfully copied license to clipboard.",
+		uptime = "Uptime: ${uptime}"
 	},
 
 	moonshine = {
@@ -8185,6 +8277,14 @@ OP.Global.Locales.Languages["en-GB"] = {
 		type_weed_seeds = "Weed"
 	},
 
+	player_control = {
+		unable_to_drive_for_yourself = "You are unable to take over for yourself.",
+		drive_for_player_no_permissions = "Player attempted to drive for player but they didn't have the required permissions to do so.",
+		player_is_not_nearby = "The player with server ID ${serverId} is not nearby.",
+		player_is_not_the_drive_of_a_vehicle = "The player with server ID ${serverId} is not the driver of a vehicle.",
+		press_to_stop_drive_for = "Press ~INPUT_FRONTEND_CANCEL~ to stop driving for player."
+	},
+
 	player_scales = {
 		reset_player_scale_for = "Reset the player scale for ${consoleName}.",
 		set_player_scale_to_for = "Set the player scale to `${scale}` for ${consoleName}",
@@ -8255,6 +8355,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		no_radio = "You don't have a radio.",
 		unable_to_use_radio_while_cuffed = "You can not use the radio while you are cuffed.",
 		unable_to_use_radio_while_down = "You can not use the radio while you are down.",
+		frequency_set_to_streamer = "The frequency has been set.",
 		frequency_set_to = "The frequency has been set to ${frequency}.",
 		frequency_already_set_to = "The frequency is already set to ${frequency}.",
 		radio_volume_same = "The radio volume is already set to `${radioVolume}`.",
@@ -8274,7 +8375,14 @@ OP.Global.Locales.Languages["en-GB"] = {
 		radio_debug_off = "Successfully toggled radio debug off.",
 		radio_debug_on = "Successfully toggled radio debug on.",
 
-		radio_debug_no_permissions = "Attempted to toggle the radio debug without proper permission."
+		radio_debug_no_permissions = "Attempted to toggle the radio debug without proper permission.",
+
+		decrypt_frequency = "[${InteractionKey}] Decrypt Frequency",
+		decrypting_frequency = "Decrypting Frequency",
+		decrypting_frequency_failed = "Failed to decrypt frequency.",
+		decryptor_jammed = "The decryptor appears to be jammed.",
+		decrypted_frequency = "Frequency appears to be around `${frequency}`.",
+		no_frequency_detected = "No frequency detected."
 	},
 
 	remote_camera = {
@@ -8876,7 +8984,13 @@ OP.Global.Locales.Languages["en-GB"] = {
 		exit_underground_tunnel_interact = "[${InteractionKey}] Exit Underground Tunnel",
 
 		use_secret_tunnel_exit = "Use Secret Exit",
-		use_secret_tunnel_exit_interact = "[${InteractionKey}] Use Secret Exit"
+		use_secret_tunnel_exit_interact = "[${InteractionKey}] Use Secret Exit",
+
+		enter_hangar = "Enter Hangar",
+		enter_hangar_interact = "[${InteractionKey}] Enter Hangar",
+
+		exit_hangar = "Exit Hangar",
+		exit_hangar_interact = "[${InteractionKey}] Exit Hangar"
 	},
 
 	test_server = {
@@ -9078,6 +9192,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		invalid_target = "Invalid target.",
 		cleared_vdm = "Cleared ${amount} vdm targets.",
 		failed_vdm_clear = "Failed to clear vdm targets.",
+		added_vdm_target = "NPC with network id ${networkId} is now targetting ${target}.",
 
 		vdm_no_permissions = "Player attempted to run the vdm command without proper permission."
 	},
@@ -9183,6 +9298,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		play_sound_knocking = "Knocking",
 		play_sound_discord = "Discord",
+		play_sound_phone_call = "Phone Call",
+		play_sound_twitter = "Twitter",
 
 		invalid_radius = "Invalid radius",
 		invalid_server_id = "Invalid server id.",
@@ -9885,7 +10002,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		type_rifle = "rifle ammo",
 		type_sniper = "sniper ammo",
 		type_shotgun = "12 gauge ammo",
-		type_stungun = "taser cartdiges"
+		type_stungun = "taser cartdiges",
+
+		fill_ammo_success = "Successfully filled ammo.",
+		fill_ammo_failed = "Failed to fill ammo."
 	},
 
 	weapons = {
