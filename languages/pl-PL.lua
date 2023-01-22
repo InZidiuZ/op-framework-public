@@ -1526,17 +1526,6 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		play_audio_command_parameter_server_id_help = "ID gracza, dla którego chcesz odtworzyć ten dźwięk. Możesz zrobić `-1` dla wszystkich graczy.",
 		play_audio_command_substitutes = "",
 
-		
-		play_audio_from_player_command = "/play_audio_from_player",
-		play_audio_from_player_command_help = "Odtwarzaj dźwięk na pozycji gracza.",
-		play_audio_from_player_command_parameter_url = "url",
-		play_audio_from_player_command_parameter_url_help = "Adres URL do pobrania dźwięku.",
-		play_audio_from_player_command_parameter_volume = "volume",
-		play_audio_from_player_command_parameter_volume_help = "Poziom głośności, przy którym dźwięk powinien być odtwarzany. Ważne wartości zawierają się w przedziale od `0` do `1`. Ta wartość będzie domyślnie ustawiona na `0.1`.",
-		play_audio_from_player_command_parameter_server_id = "server id",
-		play_audio_from_player_command_parameter_server_id_help = "ID gracza, któremu chcesz odtworzyć ten dźwięk.",
-		play_audio_from_player_command_substitutes = "/play_audio_at",
-
 
 		-- game/battle_royale
 		battle_royale_toggle_command = "/battle_royale_toggle",
@@ -1610,6 +1599,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		cache_assets_command_parameter_slow_download = "slow download",
 		cache_assets_command_parameter_slow_download_help = "Czy chcesz pobierać zasoby powoli? Sprawi to, że będzie to trwało znacznie dłużej, ale zmniejszy też szansę na wystąpienie błędu.",
 		cache_assets_command_substitutes = "/download_cache, /preload_cache, /load_cache",
+
+
+		-- game/cargo
+		start_cargo_command = "/start_cargo",
+		start_cargo_command_help = "Rozpocznij ogólnoświatowy napad na cargo",
+		start_cargo_command_substitutes = "",
 
 		-- game/casino
 		set_casino_screens_command = "/set_casino_screens",
@@ -2467,6 +2462,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		tps_command_help = "Wyznaczony aktualny TPS serwera.",
 		tps_command_substitutes = "",
 
+		
+		uptime_command = "/uptime",
+		uptime_command_help = "Sprawdź aktualny uptime serwera.",
+		uptime_command_substitutes = "",
+
 		-- game/money
 		cash_command = "/kasa",
 		cash_command_help = "Pokazuje ilość gotówki przy sobie.",
@@ -2640,6 +2640,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		phone_number_available_command_parameter_phone_number = "numer telefonu",
 		phone_number_available_command_parameter_phone_number_help = "Numer telefonu, który chcesz sprawdzić, jeśli jest dostępny. Upewnij się, że jest zgodny z formatem XXX-XXXX.",
 		phone_number_available_command_substitutes = "/number_available",
+
+		-- game/player_control
+		drive_for_command = "/drive_for",
+		drive_for_command_help = "Przejęcie kontroli nad pojazdem gracza i prowadzenie go za niego.",
+		drive_for_command_parameter_server_id = "server id",
+		drive_for_command_parameter_server_id_help = "ID gracza, nad którym chcesz przejąć kontrolę.",
+		drive_for_command_substitutes = "",
 
 		-- game/player_scales
 		set_player_scale_command = "/set_player_scale",
@@ -3404,6 +3411,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		toggle_vehicle_weapons_command_parameter_server_id_help = "ID gracz, któremu chcesz przełączyć możliwość używania broni w pojeździe. Jeśli pozostanie puste automatycznie wybierze ciebie.",
 		toggle_vehicle_weapons_command_substitutes = "/vehicle_weapons",
 
+		-- weapons/ammo
+		fill_ammo_command = "/fill_ammo",
+		fill_ammo_command_help = "Napełnia amunicję wszystkich broni.",
+		fill_ammo_command_substitutes = "",
+
 		-- weapons/recoil
 		crosshair_command = "/crosshair",
 		crosshair_command_help = "Przełącza widoczność kropki.",
@@ -4023,6 +4035,7 @@ balls = {
 		bean_machine = "Bean Machine - Kawiarnia",
 		cinema = "Kino",
 		arcade_bar = "Salon Gier",
+		japanese_restaurant = "Japońska Restauracja",
 		luxury_autos = "Luxury Autos",
 		city_hall = "Urząd miasta",
 		rockford_records = "Rockford Records",
@@ -4070,6 +4083,69 @@ balls = {
 
 		toggle_ignition_bomb_missing_permissions = "Gracz próbował przełączyć bombę zapłonową, ale nie miał wymaganych uprawnień."
 	},
+
+	boosting = {
+		boosting_contracts = "Boosting Contracts",
+		join_queue = "Dołącz do poczekalni",
+		leave_queue = "Wyjdź z poczekalni",
+
+		transfer_crypt = "Przesyłanie CRYPT",
+		transfer_crypt_info = "Wpisz kwotę i ID gracza, do którego chcesz dokonać transferu.",
+
+		amount = "Ilość",
+		server_id = "ID gracza",
+
+		transfer = "Transfer",
+		cancel = "Anuluj",
+
+		start_contract = "Rozpoczęcie kontraktu",
+		start_contract_info = "Czy na pewno chcesz rozpocząć ten kontrakt?",
+
+		yes = "Tak",
+		no = "Nie",
+
+		transfer_contract = "Przekazanie kontraktu",
+		transfer_contract_info = "Wprowadź identyfikator osoby, do której chcesz przenieść kontakt.",
+
+		decline_contract = "Odrzucenie kontraktu",
+		decline_contract_info = "Czy na pewno chcesz odrzucić ten kontrakt?",
+
+		cancel_contract = "Anulowanie kontraktu",
+		cancel_contract_info = "Czy na pewno chcesz anulować ten kontrakt?",
+
+		no_contracts = "Nie masz dostępnych umów. Dołącz do kolejki, aby otrzymać kilka.",
+
+		model = "Model",
+		plate = "Rejestracja",
+		buy_in = "Buy-in",
+		expires_in = "Wygasa za",
+
+		start_contract_type = "Co chcesz zrobić?",
+		start_contract_type_info = "Czy chciałbyś zrobić zrzutkę lub zdrapkę VIN? Zdrapka VIN kosztuje dodatkowo ${cost} CRYPT.",
+
+		drop_off = "Drop-off",
+		vin_scratch = "Zdrapka VIN",
+
+		start_contract = "Zacznij kontakt",
+		transfer_contract = "Przeniesienie kontraktu",
+		decline_contract = "Odrzucenie kontraktu",
+		mark_pickup = "Mark Pickup",
+		cancel_contract = "Anulowanie kontraktu",
+
+		new_contract = "Masz nowy kontrakt. (Klasa: ${class})",
+		started_contract = "Zacząłeś kontrakt.",
+		failed_contract = "Nieudany kontrakt.",
+		completed_contract = "Umowa zrealizowana.",
+		marked_pickup = "Odbiór oznaczony.",
+
+		vehicle_tracker_is_being_hacked = "Trwa hakowanie lokalizatora pojazdów. Pozostało ${hacksRemaining} bypassów do wykonania.",
+		use_chip_to_hack_vehicle_tracker = "Użyj chipa, aby zhakować lokalizator pojazdu. Pozostało ${hacksRemaining} bypassów do wykonania.",
+		vehicle_hacking_is_timed_out = "Musisz trochę poczekać, zanim znowu się złamiesz zabezpieczenia. Pozostało ${hacksRemaining} bypassów do wykonania.",
+		drop_the_vehicle_off = "Odstawienie pojazdu w oznaczonym miejscu.",
+		drop_off = "Drop-Off",
+		exit_the_vehicle = "Wyjdź z pojazdu, aby zakończyć misję."
+	},
+
 
 	boomboxes = {
 		boombox = "Boombox",
@@ -4138,6 +4214,14 @@ balls = {
 	capri_sun = {
 		capri_sun_name = "Capri Sun (${flavor})"
 	},
+
+	
+	cargo = {
+		start_cargo_no_permissions = "Gracz próbował rozpocząć napad na cargo, ale nie miał do tego uprawnień.",
+		cargo_already_active = "Napad na cargo jest już włączony",
+		started_cargo = "Napad został uruchomiony."
+	},
+
 
 
 	casino = {
@@ -4743,6 +4827,18 @@ balls = {
 		mixed_patriotic_paint = "Wymieszano patriotic paint.",
 		failed_mix_patriotic_paint = "Nie udało się wymieszać patriotic paint.",
 
+		craft_radio_decryptor = "Składanie Radio Decryptora",
+		press_craft_radio_decryptor = "[${SeatEjectKey}] Złóż Radio Decryptor",
+		crafting_radio_decryptor = "Składasz Radio Decryptora",
+		crafted_radio_decryptor = "Złożyłeś Radio Decryptora.",
+		failed_craft_radio_decryptor = "Nie udało się złożyć Radio Decryptora.",
+
+		forge_katana = "Stwórz Katane",
+		press_forge_katana = "[${SeatEjectKey}] Stwórz Katane",
+		forging_katana = "Składasz Katane",
+		forged_katana = "Złożono Katane.",
+		failed_forge_katana = "Nie udało się złożyć katany.",
+
 		no_required_items = "Nie posiadasz wszystkich wymaganych przedmiotów.",
 
 		debug_multi = "-Multiple Outputs-",
@@ -5256,6 +5352,9 @@ balls = {
 
 		floor_penthouse_top = "Penthouse (Ostatnie piętro)",
 		floor_penthouse_entrance = "Penthouse (Wejście)",
+
+		
+		floor_containment = "Pomieszczenie ochronne",
 		doj_office = "Biuro DOJ"
 	},
 
@@ -6134,6 +6233,8 @@ balls = {
 		device_scanner = "Skaner pojazdu",
 		device_scanner_description = "Przedmiot wykorzystywany do sprawdzania pobliskiego otoczenia w poszukiwaniu urządzeń szpiegowskich.",
 
+		radio_decryptor = "Radio Decryptor",
+		radio_decryptor_description = "Odszyfrowuje częstotliwości radiowe, jeśli jest podłączony do radia.",
 		paper_bag = "Papierowa torba",
 		paper_bag_description = "Papierowa torba o sporej pojemności.",
 		burger_shot_delivery = "Burger Shot dostawa",
@@ -7754,7 +7855,8 @@ balls = {
 		no_copyright_disabled = "Komenda 'No Copyright' jest wyłączona.",
 		server_tps = "Serwer TPS",
 		server_tps_response = "${tps}",
-		license_copied = "Pomyślnie skopiowano licencję do schowka."
+		license_copied = "Pomyślnie skopiowano licencję do schowka.",
+		uptime = "Uptime: ${uptime}"
 	},
 
 	
@@ -8243,6 +8345,15 @@ balls = {
 		type_weed_seeds = "Zioło"
 	},
 
+	
+	player_control = {
+		unable_to_drive_for_yourself = "Nie jesteś w stanie przejąć odpowiedzialności za siebie.",
+		drive_for_player_no_permissions = "Gracz próbował prowadzić samochód za gracza, ale nie miał do tego wymaganych uprawnień.",
+		player_is_not_nearby = "Gracza o ID ${serverId} nie ma w pobliżu.",
+		player_is_not_the_drive_of_a_vehicle = "Gracz o ID ${serverId} nie jest kierowcą pojazdu.",
+		press_to_stop_drive_for = "Naciśnij ~INPUT_FRONTEND_CANCEL~, aby przestać jeździć za gracza."
+	},
+
 	player_scales = {
 		reset_player_scale_for = "Zresetuj skalę odtwarzacza dla ${consoleName}.",
 		set_player_scale_to_for = "Ustaw skalę odtwarzacza na `${scale}` dla ${consoleName}",
@@ -8351,6 +8462,7 @@ balls = {
 		no_radio = "Nie masz radia.",
 		unable_to_use_radio_while_cuffed = "Nie jesteś w stanie używać radia w momencie jak jestes zakuty.",
 		unable_to_use_radio_while_down = "Nie jesteś w stanie używać radia, w momencie BW.",
+		frequency_set_to_streamer = "Częstotliwość została ustawiona.",
 		frequency_set_to = "częstotliwość została ustawiona na ${frequency}.",
 		frequency_already_set_to = "Częstotliwość jest już ustawiona na ${frequency}.",
 		radio_volume_same = "Głośność radia jest już ustawiona na `${radioVolume}`.",
@@ -8370,7 +8482,13 @@ balls = {
 		radio_debug_off = "Pomyślnie wyłączono debugowanie radia.",
 		radio_debug_on = "Pomyślnie włączono debugowanie radia.",
 
-		radio_debug_no_permissions = "Próbowano przełączyć debugowanie radia bez odpowiednich uprawnień."
+		radio_debug_no_permissions = "Próbowano przełączyć debugowanie radia bez odpowiednich uprawnień.",
+		decrypt_frequency = "[${InteractionKey}] Odszyfruj częstotliwość",
+		decrypting_frequency = "Odszyfrowywanie częstotliwości",
+		decrypting_frequency_failed = "Nie udało się odszyfrować częstotliwości.",
+		decryptor_jammed = "Deszyfrator wydaje się być niezdatny do użycia.",
+		decrypted_frequency = "Częstotliwość wydaje się wynosić ok. `${frequency}`.",
+		no_frequency_detected = "Nie wykryto żadnej częstotliwości."
 	},
 
 	riot_mode = {
@@ -8935,7 +9053,14 @@ balls = {
 		exit_underground_tunnel_interact = "[${InteractionKey}] Wyjdź z podziemnego tunelu",
 
 		use_secret_tunnel_exit = "Użyj tajnego wyjścia",
-		use_secret_tunnel_exit_interact = "[${InteractionKey}] Użyj tajnego wyjścia"
+		use_secret_tunnel_exit_interact = "[${InteractionKey}] Użyj tajnego wyjścia",
+
+		
+		enter_hangar = "Wejdź do hangaru",
+		enter_hangar_interact = "[${InteractionKey}] Wejdź do hangaru",
+
+		exit_hangar = "Wyjdź z hangaru",
+		exit_hangar_interact = "[${InteractionKey}] Wyjdź z hangaru"
 	},
 
 	test_server = {
@@ -9138,6 +9263,7 @@ balls = {
 		invalid_target = "Nieprawidłowy cel.",
 		cleared_vdm = "Wyczyszczono ${amount} celów vdm.",
 		failed_vdm_clear = "Nie udało się wyczyścić celów vdm.",
+		added_vdm_target = "NPC z identyfikatorem ${networkId} objął cel ${target}.",
 
 		vdm_no_permissions = "Gracz próbował uruchomić polecenie vdm bez odpowiednich uprawnień."
 	},
@@ -9245,6 +9371,8 @@ balls = {
 
 		play_sound_knocking = "Pukanie",
 		play_sound_discord = "Discord",
+		play_sound_phone_call = "Odgłos telefonu",
+		play_sound_twitter = "Odgłos twittera",
 
 		invalid_radius = "Nieprawidłowy promień",
 		invalid_server_id = "Nieprawidłowy identyfikator serwera.",
@@ -9946,7 +10074,9 @@ balls = {
 		type_rifle = "amunicja do karabinu",
 		type_sniper = "amunicja snajperska",
 		type_shotgun = "Amunicja kalibru 12",
-		type_stungun = "taser cartdiges"
+		type_stungun = "taser cartdiges",
+		fill_ammo_success = "Pomyślnie wypełniono amunicje.",
+		fill_ammo_failed = "Nie udało się wypełnić amunicji."
 	},
 
 	weapons = {
