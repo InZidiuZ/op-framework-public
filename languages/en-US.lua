@@ -390,7 +390,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		population_density_is_not_on = "The population density multiplier override is not on.",
 		population_density_already_set_to = "The population density multiplier override is already set to ${multiplierLabel}%.",
 
-		population_density_not_super_admin = "Player attempted to set the population density but they were not a super admin.",
+		population_density_not_super_admin = "Player attempted to set the population density without proper permissions.",
 
 		enabled_features_list = "Enabled Features:",
 		aimbot_feature = "Aimbot",
@@ -418,7 +418,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		success_nos_refill = "Successfully refilled NOS.",
 		failed_nos_refill = "Failed to refill NOS.",
 
-		refill_nitro_missing_permissions = "Player attempted to refill their NOS but they were not a super admin.",
+		refill_nitro_missing_permissions = "Player attempted to refill their NOS without proper permissions.",
 
 		register_invalid_character_id = "Invalid character id.",
 		register_invalid_slot = "Invalid inventory slot.",
@@ -429,7 +429,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		vehicle_smoke_invalid_class = "Vehicle smoke cannot be enabled for this vehicle class.",
 
-		repair_vehicle_not_super_admin = "Player attempted to repair a vehicle but they were not a super admin.",
+		repair_vehicle_not_super_admin = "Player attempted to repair a vehicle without proper permissions.",
 
 		repaired_vehicle_logs_title = "Repaired Vehicle",
 		repaired_vehicle_logs_details = "${consoleName} repaired the vehicle they were in.",
@@ -445,8 +445,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_vehicle_livery_logs_title = "Set Vehicle Livery",
 		set_vehicle_livery_logs_details = "${consoleName} set the livery of a vehicle with the plate `${vehiclePlate}` to `${liveryIndex}`.",
 
-		set_livery_missing_permissions = "Player attempted to set the livery of a vehicle but they were not a super admin.",
-		set_modifications_missing_permissions = "Player attempted to set a modification of a vehicle but they were not a super admin.",
+		set_livery_missing_permissions = "Player attempted to set the livery of a vehicle without proper permissions.",
+		set_modifications_missing_permissions = "Player attempted to set a modification of a vehicle without proper permissions.",
 
 		set_vehicle_modification = "Set vehicle modification for vehicle for mod type `${modType}` to index `${modIndex}`. (Custom Tires: ${customTires})",
 		mod_index_invalid_for_type = "Mod index `${modIndex}` is invalid for mod type `${modType}`.",
@@ -466,15 +466,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		invalid_dirt_level = "Invalid dirt level.",
 		set_dirt_level = "Vehicle's dirt level was set to `${dirtLevel}`.",
 
-		set_dirt_level_not_super_admin = "Player attempted to set the dirt level of a vehicle but they were not a super admin.",
+		set_dirt_level_not_super_admin = "Player attempted to set the dirt level of a vehicle without proper permissions.",
 
-		set_fake_plate_not_super_admin = "Player attempted to set the fake plate of a vehicle but they were not a super admin.",
+		set_fake_plate_not_super_admin = "Player attempted to set the fake plate of a vehicle without proper permissions.",
 
 		already_fake_disconnecting = "You are already attempting to fake disconnect. Please wait.",
 		started_fake_disconnect = "Started fake disconnect. Repeat the command to stop.",
 		stopped_fake_disconnect = "Stopped fake disconnect.",
 
-		fake_disconnect_not_super_admin = "Player attempted to fake disconnect but they were not a super admin.",
+		fake_disconnect_not_super_admin = "Player attempted to fake disconnect without proper permissions.",
 
 		disabled_idle_cam = "Disabled the idle cam.",
 		enabled_idle_cam = "Re-enabled the idle cam.",
@@ -673,6 +673,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		ban_notification = "Banned ${consoleName} for `${banReason}`.",
 
 		fast_movement_ban = "Flying is not enabled on this server.",
+		illegal_freeze_ban = "You know warm food is a lot better than frozen food?",
 		invincibility_ban = "You are not the Black Knight, you may not be invincible.",
 		runtime_texture_ban = "Mod menu you have, use it you may not.",
 		vehicle_spawn_ban = "You tried to use redstone on a minecart but didn't have powered rails.",
@@ -700,6 +701,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		notification_unknown_resource = "Anti-Cheat: Unknown resources",
 		notification_illegal_cheat_power = "Anti-Cheat: Cheat Power Increase",
 		notification_fast_movement = "Anti-Cheat: Fast movement",
+		notification_illegal_freeze = "Anti-Cheat: Illegal freeze",
 		notification_invincibility = "Anti-Cheat: Invincibility",
 		notification_vehicle_modification = "Anti-Cheat: Vehicle modification",
 		notification_damage_modifier = "Anti-Cheat: Damage modifier",
@@ -734,9 +736,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		fast_movement_warning = "You have been flagged for moving too fast! Please let a developer know and tell them what you were doing to make this happen as you should not be recieving this chat message.",
 		invincibility_warning = "You have been flagged for being invincible! Please let a developer know and tell them what you were doing to make this happen as you should not be recieving this chat message.",
 		damage_modifier_warning = "You have been flagged for having an invalid damage modifier! Please let a developer know and tell them what you were doing to make this happen as you should not be recieving this chat message.",
+		freeze_warning = "You have been flagged for being frozen while you are not supposed to be! Please let a developer know and tell them what you were doing to make this happen as you should not be recieving this chat message.",
 
 		spectating_screenshot = "Anti-Cheat: Spectating",
 		fast_movement_screenshot = "Anti-Cheat: Fast Movement",
+		illegal_freeze_screenshot = "Anti-Cheat: Illegal Freeze",
 		unknown_resource_screenshot = "Anti-Cheat: Unknown Resources (${resources})",
 		illegal_cheat_power_screenshot = "Anti-Cheat: Cheat Power Increase (${cheatPower})",
 		damage_modifier_screenshot = "Anti-Cheat: Invalid Damage Modifier (${activeModifier}/${currentModifier})",
@@ -1047,9 +1051,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		infinite_ammo_command_help = "Toggles infinite ammo.",
 		infinite_ammo_command_substitutes = "",
 
-		sticky_feet_command = "/sticky_feet",
-		sticky_feet_command_help = "Makes you stick to any car that you are standing on.",
-		sticky_feet_command_substitutes = "",
+		stick_command = "/stick",
+		stick_command_help = "Stick to the car you're ontop of.",
+		stick_command_substitutes = "",
+
+		unstick_command = "/unstick",
+		unstick_command_help = "Unstick to the car you're attached to.",
+		unstick_command_substitutes = "",
 
 		clean_ped_command = "/clean_ped",
 		clean_ped_command_help = "Cleans a characters blood, bullet impacts, dirt, etc.",
@@ -1598,9 +1606,21 @@ OP.Global.Locales.Languages["en-US"] = {
 		cache_assets_command_substitutes = "/download_cache, /preload_cache, /load_cache",
 
 		-- game/cargo
-		start_cargo_command = "/start_cargo",
-		start_cargo_command_help = "Start a world-wide cargo heist.",
-		start_cargo_command_substitutes = "",
+		cargo_start_command = "/cargo_start",
+		cargo_start_command_help = "Start the world-wide Cargo heist.",
+		cargo_start_command_substitutes = "/start_cargo",
+
+		cargo_end_command = "/cargo_end",
+		cargo_end_command_help = "End the world-wide Cargo heist.",
+		cargo_end_command_substitutes = "/end_cargo",
+
+		cargo_debug_command = "/cargo_debug",
+		cargo_debug_command_help = "Toggle the Cargo debug.",
+		cargo_debug_command_substitutes = "",
+
+		cargo_debug_peds_command = "/cargo_debug_peds",
+		cargo_debug_peds_command_help = "Toggle the Cargo Peds debug.",
+		cargo_debug_peds_command_substitutes = "",
 
 		-- game/casino
 		set_casino_screens_command = "/set_casino_screens",
@@ -2019,19 +2039,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		debug_doors_command_help = "Debugs information about nearby doors.",
 		debug_doors_command_substitutes = "",
 
-		-- game/energy_assault
-		energy_assault_join_command = "/energy_assault_join",
-		energy_assault_join_command_help = "Join the Energy Assault minigame.",
-		energy_assault_join_command_parameter_server_id = "server id",
-		energy_assault_join_command_parameter_server_id_help = "The server ID you would like to make join. If left blank, it will auto-select yourself.",
-		energy_assault_join_command_substitutes = "/ea_join",
-
-		energy_assault_leave_command = "/energy_assault_leave",
-		energy_assault_leave_command_help = "Leave the Energy Assault minigame.",
-		energy_assault_leave_command_parameter_server_id = "server id",
-		energy_assault_leave_command_parameter_server_id_help = "The server ID you would like to make leave. If left blank, it will auto-select yourself.",
-		energy_assault_leave_command_substitutes = "/ea_leave",
-
 		-- game/evidence
 		fingerprint_command = "/fingerprint",
 		fingerprint_command_help = "Take the nearest person's fingerprints.",
@@ -2196,6 +2203,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		death_timer_command_parameter_time = "time",
 		death_timer_command_parameter_time_help = "The amount of time in seconds you want to set the timer to. To remove the override, leave this blank.",
 		death_timer_command_substitutes = "",
+
+		-- game/hitmarkers
+		hitmarkers_command = "/hitmarkers",
+		hitmarkers_command_help = "Toggle hitmarker sounds.",
+		hitmarkers_command_substitutes = "",
 
 		-- game/hud
 		watermark_command = "/watermark",
@@ -2729,6 +2741,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		radio_volume_command_parameter_volume = "volume level",
 		radio_volume_command_parameter_volume_help = "The volume level of the radio. The value must be between 0 and 1. The default is 0.5. Leaving this blank will return your current volume level.",
 		radio_volume_command_substitutes = "",
+
+		-- game/relationships
+		relationships_debug_command = "/relationships_debug",
+		relationships_debug_command_help = "Toggle the ped relationships debug.",
+		relationships_debug_command_substitutes = "",
 
 		-- game/reskin
 		reskin_command = "/reskin",
@@ -4179,9 +4196,17 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	cargo = {
-		start_cargo_no_permissions = "Player attempted to start a cargo heist but they didn't have permissions to do so.",
+		start_cargo_no_permissions = "Player attempted to start the Cargo heist but they didn't have permissions to do so.",
+		end_cargo_no_permissions = "Player attempted to end the Cargo heist but they didn't have permissions to do so.",
 		cargo_already_active = "Cargo is already active.",
-		started_cargo = "Cargo has been started."
+		started_cargo = "Cargo has been started.",
+		cargo_not_active = "Cargo is not active.",
+		ended_cargo = "Cargo has been ended.",
+		cargo_crate = "Cargo Crate",
+		use_chip_to_hack_crate = "Use ~g~Chip ~w~to hack crate.",
+		crate_is_being_hacked = "The crate is being hacked.",
+		crate_will_unlock_in = "The crate will unlock in ~g~${time}~w~.",
+		press_k_to_access = "Press ~g~K ~w~ to access."
 	},
 
 	casino = {
@@ -4352,6 +4377,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		opacity = "Opacity",
 
 		press_to_access = "Press ~INPUT_CONTEXT~ to access the clothing store.",
+		press_no_freemode = "This ped model is unable to access the clothing store.",
+		press_no_freemode_barber = "This ped model is unable to access the barber shop.",
 		press_to_access_barber = "Press ~INPUT_CONTEXT~ to access the barber shop.",
 		press_to_change_outfit = "Press ~INPUT_CONTEXT~ to change your outfit.",
 
@@ -5293,6 +5320,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		floor_fourth_floor = "4th Floor",
 		floor_third_floor = "3rd Floor",
 
+		floor_obelisk = "Obelisk",
 		floor_hangout = "Hangout Spot",
 		floor_penthouse = "Penthouse",
 		floor_theatre_office = "Theatre Office",
@@ -5361,44 +5389,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		give_item_failed = "Failed to give ${itemName} to player."
 	},
 
-	energy_assault = {
-		join_energy_assault_on_behalf_of_player_no_permissions = "Player attempted to join Energy Assault on behalf of another player but they didn't have the required permissions to do so.",
-
-		joined_energy_assault = "Joined Energy Asssault.",
-		joined_energy_assault_on_behalf_of = "Made player ${consoleName} join Energy Assault.",
-
-		player_is_already_in_energy_assault = "The player with server ID ${serverId} is already in Energy Assault.",
-
-		leave_energy_assault_on_behalf_of_player_no_permissions = "Player attempted to leave Energy Assault on behalf of another player but they didn't have the required permissions to do so.",
-
-		left_energy_assault = "Left Energy Asssault.",
-		left_energy_assault_on_behalf_of = "Made player ${consoleName} leave Energy Assault.",
-
-		player_is_not_in_energy_assault = "The player with server ID ${serverId} is not in Energy Assault.",
-
-		you_are_already_in_energy_assault = "You are already in Energy Assault.",
-		you_are_not_in_energy_assault = "You are not in Energy Assault.",
-
-		no_match_active = "There was no match active.",
-
-		made_everyone_leave_energy_assault = "Made everyone leave Energy Assault.",
-		made_everyone_join_energy_assault = "Made everyone join Energy Assault.",
-
-		aircraft_carrier = "Aircraft Carrier",
-		grove_street = "Grove Street",
-		mission_row_pd = "Mission Row PD",
-		residential = "Residential",
-		scrapyard = "Scrapyard",
-		titanic = "Titanic",
-
-		team_deathmatch = "Team Deathmatch",
-		domination = "Domination",
-		capture_the_flag = "Capture the Flag",
-		hill_control = "Hill Control",
-		artifact = "Artifact",
-		free_for_all = "Free for All"
-	},
-
 	exclusive_dealerhship = {
 		marker_label = "${label} | $${price}",
 		marker_label_purchase = "[${SeatEjectKey}] Purchase ${label} for $${price}",
@@ -5463,7 +5453,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		failed_create = "Failed to create forcefield.",
 		forcefield_marker = "ID: ${id}",
 		invalid_forcefield_id = "Invalid forcefield ID.",
-		failed_destroy = "Failed to destroy forcefield."
+		failed_destroy = "Failed to destroy forcefield.",
+
+		create_forcefield_no_permissions = "Player attempted to create a forcefield but they didn't have the required permissions to do so.",
+		destroy_forcefield_no_permissions = "Player attempted to destroy a forcefield but they didn't have the required permissions to do so."
 	},
 
 	fortnite = {
@@ -5586,6 +5579,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		insert_key = "Insert Key: ${key}",
 		wrong_key = "You used the wrong key.",
 		decrypting = "Decrypting",
+		guns_disabled = "Gun running is currently disabled.",
 		high_level_cooldown = "Failed to establish link with FIB server, try again later.",
 		failed_start_run = "Failed to start gun run.",
 		hack_timeout = "Connection to server lost, try again.",
@@ -5717,6 +5711,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		successfully_revived_range = "Successfully revived ${amount} player(s) in a ${distance}m radius.",
 		failed_revive_range = "Failed to revive players.",
 		range_revive_not_staff = "Player attempted to revive players in a certain range, but didn't have correct permissions to do so."
+	},
+
+	hitmarkers = {
+		hitmarkers_enabled = "Hitmarkers Enabled.",
+		hitmarkers_disabled = "Hitmarkers Disabled."
 	},
 
 	hud = {
@@ -5868,6 +5867,50 @@ OP.Global.Locales.Languages["en-US"] = {
 		badge_type_short_state_security = "SSD"
 	},
 
+	import_export = {
+		press_to_access = "Press ~INPUT_CONTEXT~ to access the Import/Export menu.",
+
+		pound = "lb",
+		pounds = "lbs",
+		minutes = "minutes",
+
+		total = "Total",
+		header = "Cayo Perico - Import / Export",
+		header_small = "Ship from and to Cayo Perico quick and easy.",
+
+		loading = "Loading...",
+
+		order_arrived = "Arrived",
+		claim = "Claim",
+
+		big_goods = "Big Goods",
+		go_postal = "Go Postal",
+		caipira = "Caipira Airlines",
+
+		no_items = "No items to ship.",
+
+		confirm_dialog = "Are you sure you want to ship ${total}lbs for $${price}? This shipment cannot be cancelled.",
+		confirm = "Yes",
+
+		no_active_order = "You do not have an active shipment.",
+		order_not_completed = "Your shipment has not arrived yet.",
+
+		order_claimed = "You have claimed your shipment.",
+
+		not_enough_items = "You do not have enough items to ship.",
+		not_enough_money = "You do not have enough money to create the shipment.",
+		already_has_order = "You already have an active shipment.",
+		something_went_wrong = "Something went wrong.",
+
+		order_success = "Your shipment is on its way! It will arrive in ${minutes} minutes.",
+
+		created_shipment_title = "Shipment Created",
+		created_shipment_details = "${consoleName} has created a shipment for ${weight}lbs for $${price} with ${company}.",
+
+		claimed_shipment_title = "Shipment Claimed",
+		claimed_shipment_details = "${consoleName} has claimed a shipment for ${weight}lbs with ${company}."
+	},
+
 	injuries = {
 		inspect_no_player = "No player nearby that you can inspect.",
 		already_inspecting = "You are already inspecting a player.",
@@ -5962,6 +6005,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		fishing_store = "Fishing Store",
 		los_santos_golf_club = "Los Santos Golf Club",
 		arcade_bar = "Arcade Bar",
+		japanese_restaurant = "Japanese Restaurant",
 		grain_mill = "Grain Mill",
 		pd_prefix = "PD",
 		ems_prefix = "EMS",
@@ -6062,6 +6106,9 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		logs_wiped_nearby_ground_inventories_title = "Wiped Nearby Ground Inventories",
 		logs_wiped_nearby_ground_inventories_details = "${consoleName} wiped all ground inventories within a radius of `${radius}`.",
+
+		logs_combined_title = "Combined Items",
+		logs_combined_details = "${consoleName} combined ${inputs} to create 1x ${output}.",
 
 		press_use_campfire = "[${InteractionKey}] Use Campfire",
 		use_campfire = "Use Campfire",
@@ -6893,6 +6940,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		shovel = "Shovel",
 		shovel_description = "",
 
+		electric_fuse = "Electric Fuse",
+		electric_fuse_description = "The Electric Fuse is a required item for heist rooms. It must be placed in the fuse box in order to power the keycard lock.",
+		keycard_green = "Green Keycard",
+		keycard_green_description = "Used to open storages full of medical supplies.",
+		keycard_blue = "Blue Keycard",
+		keycard_blue_description = "Used to open storages full of technical supplies.",
+		keycard_red = "Red Keycard",
+		keycard_red_description = "Used to open an armory.",
+
 		bank_rockfish = "Bank Rockfish",
 		black_and_yellow_rockfish = "Black and Yellow Rockfish",
 		black_rockfish = "Black Rockfish",
@@ -7518,6 +7574,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		gta_settings = "GTA Settings",
 		discord = "Discord",
 		framework = "Framework",
+		rules = "Server Rules",
 		notice = "Notice",
 		language = "Language",
 		support_the_server = "Support The Server",
@@ -7762,6 +7819,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		bad_ooc_message = "Attempted to post a possibly bad message in the OOC chat: `${oocMessage}`",
 		bad_ped_message = "Attempted to create a possibly bad ped message: `${pedMessage}`",
 		bad_twitter_post = "Attempted to create a possibly bad twitter post: `${twitterPost}`",
+		bad_phone_message = "Attempted to create a possibly bad twitter post: `${message}`",
 		mute_toggle_not_staff = "Player attempted to mute a player, but didn't have correct permissions to do so.",
 		unmute_toggle_not_staff = "Player attempted to unmute a player, but didn't have correct permissions to do so.",
 		user_not_found = "We were unable to find a user with server ID `${serverId}`.",
@@ -8080,6 +8138,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		fast_movement_title = "Fast Movement",
 		fast_movement_about = "In here every player who has been flagged for moving too fast is listed. This should help in finding players who are potential modders.",
 
+		illegal_freeze_title = "Illegal Freezes",
+		illegal_freeze_about = "In here every player who is frozen without being supposed to for more then a second is listed. This should help in finding players who are potential modders.",
+
 		illegal_invincibility_title = "Invincibility Detections",
 		illegal_invincibility_about = "In here every player who has been flagged for being invincible is listed. This should help in finding players who are potential modders.",
 
@@ -8124,7 +8185,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		invalid_server_id = "Invalid server id.",
 
 		failed_load_player = "Failed to load player data. Did you enter a valid server id?",
-		failed_add_warning = "Failed to add warning."
+		failed_add_warning = "Failed to add warning.",
+
+		get_info_no_permissions = "Player attempted to get info about a player without proper permissions."
 	},
 
 	panic = {
@@ -9313,6 +9376,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		play_sound_knocking = "Knocking",
 		play_sound_discord = "Discord",
 		play_sound_phone_call = "Phone Call",
+		play_sound_message = "Message",
 		play_sound_twitter = "Twitter",
 
 		invalid_radius = "Invalid radius",
@@ -9447,6 +9511,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		reward_diamonds = "You grabbed a diamond.",
 		reward_gold_bar = "You grabbed a gold bar.",
 		reward_cash = "You grabbed some cash.",
+		reward_keycard_red = "You grabbed a Red Keycard.",
 
 		stockade_logs_title = "Stockade Activated",
 		stockade_logs_details = "${consoleName} activated a stockade."
@@ -9761,6 +9826,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		vehicle_currently_at = "Your vehicle can currently be found at ${location}.",
 		vehicle_in_garage = "Your vehicle is located in ${garageName}.",
 		vehicle_withdrawn = "Your vehicle has been withdrawn.",
+		insufficient_funds = "You do not have enough money to withdraw this vehicle.",
 		error_withdrawing = "An error occurred while trying to withdraw your vehicle.",
 		withdraw_timeout = "Please wait a bit before trying to withdraw another vehicle.",
 		garage_in_use = "This garage is currently in use, please wait a moment.",
@@ -9834,8 +9900,8 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	handlings = {
-		set_handling_override_not_super_admin = "The player attempted to set a handling override but they were not a super admin.",
-		remove_handling_override_not_super_admin = "The player attempted to remove a handling override but they were not a super admin."
+		set_handling_override_not_super_admin = "The player attempted to set a handling override without proper permissions.",
+		remove_handling_override_not_super_admin = "The player attempted to remove a handling override without proper permissions."
 	},
 
 	keys = {
@@ -9953,8 +10019,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		toggle_brakes_off = "Toggles brakes on.",
 		failed_modify_brakes = "Failed to modify brakes.",
 
+		toggle_disabled_brakes_no_permissions = "Player attempted to toggle disabled brakes via command without proper permissions.",
+
 		-- NOTE: `add_vehicle` command:
-		add_vehicle_not_super_admin = "The player attempted to add a vehicle to someone's garage but they were not a super admin.",
+		add_vehicle_not_super_admin = "The player attempted to add a vehicle to someone's garage without proper permissions.",
 		add_vehicle_added_vehicle_for_everyone = "Added vehicle with model name `${modelName}` for everyone.",
 		add_vehicle_added_vehicle_for_player = "Added vehicle with model name `${modelName}` for ${consoleName}.",
 		add_vehicle_added_vehicle = "Added vehicle with model name `${modelName}`.",
@@ -9975,7 +10043,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		added_vehicle_logs_details = "${consoleName} added vehicle with model name `${modelName}` to their garage.",
 
 		-- NOTE: `toggle_vehicle_weapons` command:
-		toggle_vehicle_weapons_not_super_admin = "The player attempted to toggle vehicle weapons on a vehicle but they were not a super admin.",
+		toggle_vehicle_weapons_not_super_admin = "The player attempted to toggle vehicle weapons on a vehicle without proper permissions.",
 		toggled_vehicle_weapons_on = "Toggled vehicle weapons on.",
 		toggled_vehicle_weapons_off = "Toggled vehicle weapons off.",
 		toggled_vehicle_weapons_vehicle_is_not_networked = "The vehicle you are in is not networked.",
