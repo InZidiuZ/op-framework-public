@@ -673,6 +673,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		ban_notification = "Zbanowany ${consoleName} za `${banReason}`.",
 
 		fast_movement_ban = "Latanie nie jest włączone na tym serwerze.",
+		illegal_freeze_ban = "Wiesz, że ciepłe jedzenie jest o wiele lepsze niż mrożone.?",
 		invincibility_ban = "Gracz próbował użyć niewidzialności.",
 		runtime_texture_ban = "Gracz próbował użyć mod menu.",
 		vehicle_spawn_ban = "Gracz próbował przywołać pojazd.",
@@ -700,6 +701,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		notification_unknown_resource = "Anti-Cheat: Nieznane zasoby",
 		notification_illegal_cheat_power = "Anti-Cheat: Nielegalne modyfikacje",
+		notification_illegal_freeze = "Anti-Cheat: Nielegalne zamrożenie",
 		notification_fast_movement = "Anti-Cheat: Szybkie przemieszczanie się",
 		notification_invincibility = "Anti-Cheat: Niewidzialność",
 		notification_vehicle_modification = "Anti-Cheat: Modyfikacja pojazdu",
@@ -732,11 +734,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		illegal_oxy_run = "Gracz ukończył kurs z oxy szybciej, niż jest to możliwe.",
 
-		fast_movement_warning = "Zostałeś oflagowany za zbyt szybki ruch! Poinformuj administracje w tickecie i powiedz mu, co robiłeś, aby tak się stało, ponieważ nie powinieneś otrzymywać tej wiadomości na czacie.",
-		invincibility_warning = "Zostałeś oflagowany za bycie niewidzialnym! Poinformuj administracje w tickecie i powiedz mu, co robiłeś, aby tak się stało, ponieważ nie powinieneś otrzymywać tej wiadomości na czacie.",
-		damage_modifier_warning = "Zostałeś oflagowany za posiadanie zmodyfikowanych obrażeń! Poinformuj administracje w tickecie i powiedz mu, co robiłeś, aby tak się stało, ponieważ nie powinieneś otrzymywać tej wiadomości na czacie.",
-
+		fast_movement_warning = "Zostałeś oflagowany za zbyt szybki ruch! Poinformuj administracje w tickecie i powiedz jej, co robiłeś, że tak się stało, ponieważ nie powinieneś otrzymywać tej wiadomości na czacie.",
+		invincibility_warning = "Zostałeś oflagowany za bycie niewidzialnym! Poinformuj administracje w tickecie i powiedz jej, co robiłeś, że tak się stało, ponieważ nie powinieneś otrzymywać tej wiadomości na czacie.",
+		damage_modifier_warning = "Zostałeś oflagowany za posiadanie zmodyfikowanych obrażeń! Poinformuj administracje w tickecie i powiedz jej, co robiłeś, że tak się stało, ponieważ nie powinieneś otrzymywać tej wiadomości na czacie.",
+		freeze_warning = "Zostałeś oflagowany za bycie zamrożonym! Poinformuj administracje w tickecie i powiedz jej, co robiłeś, że tak się stało, ponieważ nie powinieneś otrzymywać tej wiadomości na czacie.",
 		fast_movement_screenshot = "Anti-Cheat: Szybkie przemieszczanie się",
+		illegal_freeze_screenshot = "Anti-Cheat: Nielegalne zamrożenie",
 		unknown_resource_screenshot = "Anti-Cheat: Nieznane zasoby (${resources})",
 		illegal_cheat_power_screenshot = "Anti-Cheat: Cheat Power Increase (${cheatPower})",
 		damage_modifier_screenshot = "Anti-Cheat: Niewłaściwy modyfikator obrażeń (${activeModifier}/${currentModifier})",
@@ -1045,13 +1048,19 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		disable_recoil_command_substitutes = "",
 
 		
+		stick_command = "/stick",
+		stick_command_help = "Sprawia, że kleisz się do samochodu, w którym jesteś.",
+		stick_command_substitutes = "",
+
+		unstick_command = "/unstick",
+		unstick_command_help = "Odklej się od samochodu, do którego jesteś przywiązany.",
+		unstick_command_substitutes = "",
+
+		
 		infinite_ammo_command = "/infinite_ammo",
 		infinite_ammo_command_help = "Włącza nieskończoną amunicje.",
 		infinite_ammo_command_substitutes = "",
 
-		sticky_feet_command = "/sticky_feet",
-		sticky_feet_command_help = "Sprawia, że kleisz się każdego samochodu, przy którym stoisz.",
-		sticky_feet_command_substitutes = "",
 
 		clean_ped_command = "/clean_ped",
 		clean_ped_command_help = "Czyści krew postaci, uderzenia kul, brud itp.",
@@ -1601,10 +1610,23 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		cache_assets_command_substitutes = "/download_cache, /preload_cache, /load_cache",
 
 
+		
 		-- game/cargo
-		start_cargo_command = "/start_cargo",
-		start_cargo_command_help = "Rozpocznij ogólnoświatowy napad na cargo",
-		start_cargo_command_substitutes = "",
+		cargo_start_command = "/cargo_start",
+		cargo_start_command_help = "Rozpocznij ogólnoświatowy napad na cargo.",
+		cargo_start_command_substitutes = "/start_cargo",
+
+		cargo_end_command = "/cargo_end",
+		cargo_end_command_help = "Zakończ ogólnoświatowy napad na cargo.",
+		cargo_end_command_substitutes = "/end_cargo",
+
+		cargo_debug_command = "/cargo_debug",
+		cargo_debug_command_help = "Włącz debug cargo.",
+		cargo_debug_command_substitutes = "",
+
+		cargo_debug_peds_command = "/cargo_debug_peds",
+		cargo_debug_peds_command_help = "Włącza debug pedów uczestniczących w cargo",
+		cargo_debug_peds_command_substitutes = "",
 
 		-- game/casino
 		set_casino_screens_command = "/set_casino_screens",
@@ -2014,19 +2036,6 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		door_offset_command_parameter_model_name_help = "Model",
 		door_offset_command_substitutes = "",
 
-		-- game/energy_assault
-		energy_assault_join_command = "/energy_assault_join",
-		energy_assault_join_command_help = "Dołącz do minigry Energy Assault.",
-		energy_assault_join_command_parameter_server_id = "server id",
-		energy_assault_join_command_parameter_server_id_help = "ID gracza, do którego chcesz dołączyć. Jeśli pozostawisz puste miejsce, automatycznie wybierze się sam.",
-		energy_assault_join_command_substitutes = "/ea_join",
-
-		energy_assault_leave_command = "/energy_assault_leave",
-		energy_assault_leave_command_help = "Opuść minigrę Energy Assault.",
-		energy_assault_leave_command_parameter_server_id = "server id",
-		energy_assault_leave_command_parameter_server_id_help = "ID gracza, z którego gry chcesz wyjść. Jeśli pozostawisz puste miejsce, zostanie ono wybrane automatycznie.",
-		energy_assault_leave_command_substitutes = "/ea_leave",
-
 		doors_scan_command = "/doors_scan",
 		doors_scan_command_help = "Wyszukaj pobliskie drzwi i zapisz je w pliku tekstowym.",
 		doors_scan_command_parameter_clear_file = "Wyczyść plik",
@@ -2211,6 +2220,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		watermark_command_help = "Wyłącz/Włącz znak wodny",
 		watermark_command_substitutes = "/znakwodny",
 
+		
+		-- game/hitmarkers
+		hitmarkers_command = "/hitmarkers",
+		hitmarkers_command_help = "Przełączanie dźwięków znaczników trafień.",
+		hitmarkers_command_substitutes = "",
+
+
 		metrics_toggle_command = "/metrics_toggle",
 		metrics_toggle_command_help = "Przełącz wyświetlanie danych na środku u góry.",
 		metrics_toggle_command_substitutes = "/metrics, /metrics_display",
@@ -2341,6 +2357,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		locate_entity_command_parameter_filter = "filtr",
 		locate_entity_command_parameter_filter_help = "Jaki filtr powinien pasować encja (id:12345, plate:90FMK072, etc.)",
 		locate_entity_command_substitutes = "/le",
+
+
+		-- game/relationships
+		relationships_debug_command = "/relationships_debug",
+		relationships_debug_command_help = "Przełącza debugowanie relacji między pedami.",
+		relationships_debug_command_substitutes = "",
 
 
 		-- game/reskin
@@ -4218,8 +4240,16 @@ balls = {
 	
 	cargo = {
 		start_cargo_no_permissions = "Gracz próbował rozpocząć napad na cargo, ale nie miał do tego uprawnień.",
+		end_cargo_no_permissions = "Gracz próbował zakończyć napad na cargo, ale nie miał do tego uprawnień.",
 		cargo_already_active = "Napad na cargo jest już włączony",
-		started_cargo = "Napad został uruchomiony."
+		started_cargo = "Napad został uruchomiony.",
+		cargo_not_active = "Napad na cargo nie jest akktywny.",
+		ended_cargo = "Napad na cargo został zakończony.",
+		cargo_crate = "Skrzynia cargo",
+		use_chip_to_hack_crate = "Użyj ~g~Chipa ~w~by ominąć zabezpieczenia skrzyni.",
+		crate_is_being_hacked = "Skrzynia jest aktualnie hackowana.",
+		crate_will_unlock_in = "Skrzynia odblokuje się za ~g~${time}~w~.",
+		press_k_to_access = "Naciśnij ~g~K ~w~, aby uzyskać dostęp."
 	},
 
 
@@ -4392,6 +4422,8 @@ balls = {
 		opacity = "Krycie",
 
 		press_to_access = "Wciśnij ~INPUT_CONTEXT~ by otworzyć menu sklepu z ubraniami.",
+		press_no_freemode = "Ten model peda nie jest w stanie uzyskać dostępu do sklepu z ubraniami.",
+		press_no_freemode_barber = "Ten model peda nie jest w stanie uzyskać dostępu do menu fryzjera.",
 		press_to_access_barber = "Wciśnij ~INPUT_CONTEXT~ by otworzyć menu fryzjera.",
 		press_to_change_outfit = "Naciśnij ~INPUT_CONTEXT~, aby zmienić swój strój..",
 
@@ -5336,6 +5368,7 @@ balls = {
 		floor_third_floor = "Trzecie piętro",
 
 		floor_hangout = "Miejsce spotkań",
+		floor_obelisk = "Obelisk",
 		floor_penthouse = "Penthouse",
 		floor_theatre_office = "Biruo teatru",
 		floor_psychiatrists_office = "Gabinet psychiatryczny",
@@ -5403,44 +5436,6 @@ balls = {
 		give_item_failed = "Nie udało się dać ${itemName} to graczowi."
 	},
 
-	energy_assault = {
-		join_energy_assault_on_behalf_of_player_no_permissions = "Gracz próbował dołączyć do gry Energy Assault innego gracza, ale nie miał wymaganych uprawnień.",
-
-		joined_energy_assault = "Dołączono na Energy Asssault.",
-		joined_energy_assault_on_behalf_of = "Gracz ${consoleName} dołączył do Energy Assault.",
-
-		player_is_already_in_energy_assault = "Gracz o ID ${serverId} jest już w Energy Assault.",
-
-		leave_energy_assault_on_behalf_of_player_no_permissions = "Gracz wyjść z gry Energy Assault innego gracza, ale nie miał wymaganych uprawnień.",
-
-		left_energy_assault = "Opuszczono Energy Asssault.",
-		left_energy_assault_on_behalf_of = "Gracz ${consoleName} opuścił Energy Assault.",
-
-		player_is_not_in_energy_assault = "Gracz z tym ID ${serverId} nie jest w grze Energy Assault.",
-
-		you_are_already_in_energy_assault = "Jesteś już w grze Energy Assault.",
-		you_are_not_in_energy_assault = "Nie jesteś w grze Energy Assault.",
-
-		no_match_active = "Nie ma żadnego aktywnego meczu.",
-
-		made_everyone_leave_energy_assault = "Zmuszono wszystkich do opuszczenia Energy Assault.",
-		made_everyone_join_energy_assault = "Zmuszono wszystkich do dołączenia na Energy Assault.",
-
-		aircraft_carrier = "Lotniskowiec",
-		grove_street = "Grove Street",
-		mission_row_pd = "Mission Row PD",
-		residential = "Residential",
-		scrapyard = "Złomowisko",
-		titanic = "Titanic",
-
-		team_deathmatch = "Zespołowy Deathmatch",
-		domination = "Dominacja",
-		capture_the_flag = "Przechwyć Flage",
-		hill_control = "Kontrola wzgórza",
-		artifact = "Artefakt",
-		free_for_all = "Free for All"
-	},
-
 	exclusive_dealerhship = {
 		marker_label = "${label} | $${price}",
 		marker_label_purchase = "[8] Zakup ${label} dla $${price}",
@@ -5506,7 +5501,10 @@ balls = {
 		failed_create = "Nie udało się stworzyć pola siłowego..",
 		forcefield_marker = "ID: ${id}",
 		invalid_forcefield_id = "Nieprawidłowy identyfikator pola siłowego.",
-		failed_destroy = "Nie udało się zniszczyć pola siłowego.."
+		failed_destroy = "Nie udało się zniszczyć pola siłowego.",
+
+		create_forcefield_no_permissions = "Gracz próbował stworzyć pole siłowe, ale nie miał do tego wymaganych uprawnień.",
+		destroy_forcefield_no_permissions = "Gracz próbował zniszczyć pole siłowe, ale nie miał do tego wymaganych uprawnień."
 	},
 
 	fortnite = {
@@ -5632,6 +5630,7 @@ balls = {
 		insert_key = "Włóż klucz: ${key}",
 		wrong_key = "Użyłeś złego klucza.",
 		decrypting = "Odszyfrowywanie",
+		guns_disabled = "Napad na zrzut z bronią długą jest aktualnie wyłączony.",
 		high_level_cooldown = "Nie udało się nawiązać połączenia z serwerem FIB, spróbuj ponownie później.",
 		failed_start_run = "Nie udało się rozpocząć.",
 		hack_timeout = "Utracono połączenie z serwerem, spróbuj ponownie.",
@@ -5810,6 +5809,11 @@ balls = {
 		hud_gauges_off = "Wyłączono wskaźniki HUD."
 	},
 
+	hitmarkers = {
+		hitmarkers_enabled = "Znaczniki obrażeń zostały włączone.",
+		hitmarkers_disabled = "Znaczniki obrażeń zostały wyłączone."
+	},
+
 	hunting = {
 		hold_to_skin = "[${InteractionKey}] Przytrzymaj aby oskórować",
 		skinning_animal = "Skórowanie zwierzęcia",
@@ -5912,6 +5916,51 @@ balls = {
 		badge_type_short_state_security = "SSD"
 	},
 
+	
+	import_export = {
+		press_to_access = "Naciśnij ~INPUT_CONTEXT~, aby wejść do menu Import/Export.",
+
+		pound = "lb",
+		pounds = "lbs",
+		minutes = "minut",
+
+		total = "Wszystko",
+		header = "Cayo Perico - Import / Export",
+		header_small = "Szybka i łatwa wysyłka z i do Cayo Perico.",
+
+		loading = "Ładowanie...",
+
+		order_arrived = "Dostarczono",
+		claim = "Odbierz",
+
+		big_goods = "Big Goods",
+		go_postal = "Go Postal",
+		caipira = "Capibara Airlines",
+
+		no_items = "Brak przedmiotów do wysyłki.",
+
+		confirm_dialog = "Czy na pewno chcesz wysłać ${total}lbs za ${price}? Ta wysyłka nie może być anulowana.",
+		confirm = "Tak",
+
+		no_active_order = "Nie masz aktywnej przesyłki.",
+		order_not_completed = "Twoja przesyłka jeszcze nie dotarła.",
+
+		order_claimed = "Złożyłeś wniosek o rejestrację przesyłki.",
+
+		not_enough_items = "Nie masz wystarczającej ilości przedmiotów do wysyłki.",
+		not_enough_money = "Nie masz wystarczająco dużo pieniędzy, aby stworzyć przesyłkę.",
+		already_has_order = "Masz już aktywną wysyłkę.",
+		something_went_wrong = "Coś poszło nie tak.",
+
+		order_success = "Twoja przesyłka jest w drodze! Dotrze za ${minutes} minut.",
+
+		created_shipment_title = "Przesyłka utworzona",
+		created_shipment_details = "${consoleName} utworzył przesyłkę warzącą ${weight}lbs za kwotę ${price} z firmy ${company}.",
+
+		claimed_shipment_title = "Przesyłka odebrana",
+		claimed_shipment_details = "${consoleName} odebrał przeszyłkę warzącą ${weight}lbs z firmy ${company}."
+	},
+
 	injuries = {
 		inspect_no_player = "W pobliżu nie ma gracza, którego można by sprawdzić.",
 		already_inspecting = "Już sprawdzasz gracza.",
@@ -6006,6 +6055,7 @@ balls = {
 		fishing_store = "Fishing Store",
 		los_santos_golf_club = "Los Santos Golf Club",
 		arcade_bar = "Arcade Bar",
+		japanese_restaurant = "Japońska Restauracja",
 		grain_mill = "Grain Mill",
 		pd_prefix = "PD",
 		ems_prefix = "EMS",
@@ -6106,6 +6156,10 @@ balls = {
 
 		logs_wiped_nearby_ground_inventories_title = "wyczyszczono wszystkie przedmioty na ziemi.",
 		logs_wiped_nearby_ground_inventories_details = "${consoleName} wyczyścił wszystkie przedmioty na ziemi w promieniu `${radius}`.",
+
+		
+		logs_combined_title = "Crafting przedmiótów",
+		logs_combined_details = "${consoleName} połączył ${inputs} by stworzyć 1x ${output}.",
 
 		press_use_campfire = "[E] Użyj Ogniska",
 		use_campfire = "Użyj ogniska",
@@ -6942,6 +6996,16 @@ balls = {
 		shovel = "Shovel",
 		shovel_description = "Idealny przedmiot aby wykopać grób swojej żonie!",
 
+		
+		electric_fuse = "Elektryczny bezpiecznik",
+		electric_fuse_description = "Bezpiecznik elektryczny jest wymaganym przedmiotem w specjalnych pomieszczeniach do zrobienia napadu. Musi być umieszczony w skrzynce z bezpiecznikami, aby zasilić zamek z kluczem.",
+		keycard_green = "Zielona karta wstępu",
+		keycard_green_description = "Używany do otwierania magazynów pełnych materiałów medycznych.",
+		keycard_blue = "Niebieska karta wstępu",
+		keycard_blue_description = "Używane do otwierania magazynów pełnych materiałów technicznych.",
+		keycard_red = "Czerwona karta wstępu",
+		keycard_red_description = "Służy do otwierania zbrojowni.",
+
 		bank_rockfish = "Bank Rockfish",
 		black_and_yellow_rockfish = "Black and Yellow Rockfish",
 		black_rockfish = "Black Rockfish",
@@ -7568,6 +7632,7 @@ balls = {
 		gta_settings = "Ustawienia GTA",
 		discord = "Discord",
 		framework = "Framework",
+		rules = "Zasady serwera",
 		notice = "Powiadomienia",
 		language = "Język",
 		support_the_server = "Wesprzyj serwer",
@@ -7815,6 +7880,7 @@ balls = {
 		bad_ooc_message = "Próbował zamieścić prawdopodobnie złą wiadomość na czacie OOC: `${oocMessage}`",
 		bad_ped_message = "Próbował stworzyć prawdopodobnie niepoprawną wiadomość: `${pedMessage}`",
 		bad_twitter_post = "Próbował stworzyć prawdopodobnie niepoprawny post na twitterze: `${twitterPost}`",
+		bad_phone_message = "Próbował stworzyć prawdopodobnie zły post na telefonie: `${message}`",
 		mute_toggle_not_staff = "Gracz próbował zmutować gracza, ale nie miał do tego odpowiednich uprawnień.",
 		unmute_toggle_not_staff = "Gracz próbował odmutować gracza, ale nie miał do tego odpowiednich uprawnień.",
 		user_not_found = "Nie udało nam się znaleźć użytkownika z Server ID `${serverId}`.",
@@ -8136,6 +8202,9 @@ balls = {
 		fast_movement_title = "Szybkie przemieszczanie się",
 		fast_movement_about = "Jest tu wymieniony każdy gracz, który został oznaczony za zbyt szybkie poruszanie się. To powinno pomóc w znalezieniu graczy, którzy są potencjalnymi modderami.",
 
+		illegal_freeze_title = "Nielegalne zamrożenie",
+		illegal_freeze_about = "Jest tu wyszczególniony każdy gracz, który został zamrożony na dłużej niż sekundę. To powinno pomóc w znalezieniu graczy, którzy są potencjalnymi modderami.",
+
 		illegal_invincibility_title = "Wykrywanie niewidzialności",
 		illegal_invincibility_about = "Jest tu wymieniony każdy gracz, który został oznaczony jako niewidzialny. To powinno pomóc w znalezieniu graczy, którzy są potencjalnymi modderami.",
 
@@ -8195,7 +8264,9 @@ balls = {
 		invalid_server_id = "Nieprawidłowy identyfikator.",
 
 		failed_load_player = "Nie udało się załadować danych gracza. Czy wprowadziłeś prawidłowy identyfikator?",
-		failed_add_warning = "Nie udało się dodać ostrzeżenia."
+		failed_add_warning = "Nie udało się dodać ostrzeżenia.",
+
+		get_info_no_permissions = "Gracz próbował uzyskać informacje o graczu bez odpowiednich uprawnień."
 	},
 
 	paper_bags = {
@@ -9372,6 +9443,7 @@ balls = {
 		play_sound_knocking = "Pukanie",
 		play_sound_discord = "Discord",
 		play_sound_phone_call = "Odgłos telefonu",
+		play_sound_message = "Odgłos wiadomości",
 		play_sound_twitter = "Odgłos twittera",
 
 		invalid_radius = "Nieprawidłowy promień",
@@ -9506,6 +9578,7 @@ balls = {
 		reward_diamonds = "Ukradłeś diamenty.",
 		reward_gold_bar = "Ukradłeś sztabki złota.",
 		reward_cash = "Ukradłeś troszkę gotówki.",
+		reward_keycard_red = "Wziąłeś czerwoną kartę.",
 
 		stockade_logs_title = "Palisada aktywowana",
 		stockade_logs_details = "${consoleName} aktywował palisadę."
@@ -9819,6 +9892,7 @@ balls = {
 		vehicle_currently_at = "Twój pojazd można obecnie znaleźć ${location}.",
 		vehicle_in_garage = "Twój pojazd znajduje się w ${garageName}.",
 		vehicle_withdrawn = "Twój pojazd został odebrany.",
+		insufficient_funds = "Nie masz wystarczająco dużo pieniędzy, aby wyciagnąć ten pojazd.",
 		error_withdrawing = "Podczas próby odebrania pojazdu pojawił się błąd.",
 		withdraw_timeout = "Proszę poczekać trochę przed próbą wyciągnięcia innego pojazdu.",
 		garage_in_use = "Ten garaż jest obecnie w użyciu, proszę chwilę poczekać.",
@@ -10010,6 +10084,8 @@ balls = {
 		toggle_brakes_on = "Wyłączono hamulce.",
 		toggle_brakes_off = "Włącza hamulce.",
 		failed_modify_brakes = "Nie udało się zmodyfikować hamulców.",
+
+		toggle_disabled_brakes_no_permissions = "Gracz próbował przełączyć wyłączone hamulce za pomocą komendy bez odpowiednich uprawnień.",
 
 		-- NOTE: `add_vehicle` command:
 		add_vehicle_not_super_admin = "Gracz próbował dodać pojazd do czyjegoś garażu, ale nie ma uprawnień Super Administratora.",
