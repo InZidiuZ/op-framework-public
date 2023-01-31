@@ -2237,6 +2237,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		toggle_hud_gauges_command_help = "Toggles the hud gauges. (Speed and RPM)",
 		toggle_hud_gauges_command_substitutes = "/gauges",
 
+		toggle_gear_animation_command = '/toggle_gear_animation',
+		toggle_gear_animation_command_help = 'Toggles gear shift animation and sound in cars',
+		toggle_gear_animation_command_substitutes = '/gear_animation, /gear_sounds',
+
+
 		-- game/hunting
 		animal_debug_command = "/animal_debug",
 		animal_debug_command_help = "Toggle animal debug.",
@@ -4038,7 +4043,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		pd_sea_hq = "Police Sea HQ",
 		ems_air_hq = "EMS Air HQ",
 		ems_boat_hq = "EMS Boat HQ",
-		ems_garage = "EMS Garage"
+		ems_garage = "EMS Garage",
+		blip_label = "Import/Export"
 	},
 
 	blockage = {
@@ -10050,7 +10056,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		toggled_vehicle_weapons_off_for_player_logs_title = "Toggled Vehicle Weapons Off For Player",
 		toggled_vehicle_weapons_off_for_player_logs_details = "${consoleName} toggled the weapons for ${targetConsoleName}'s vehicle off.",
 		toggled_vehicle_weapons_for_everyone_logs_title = "Toggled Vehicle Weapons For Everyone",
-		toggled_vehicle_weapons_for_everyone_logs_details = "${consoleName} toggled the weapons for everyone's vehicle."
+		toggled_vehicle_weapons_for_everyone_logs_details = "${consoleName} toggled the weapons for everyone's vehicle.",
+		
+		toggled_gear_animation_on = "Gear animation (and sounds) have been enabled",
+		toggled_gear_animation_off = "Gear animation (and sounds) have been disabled"
 	},
 
 	wheels = {
