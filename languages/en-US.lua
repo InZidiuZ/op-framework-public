@@ -3335,6 +3335,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		enable_ls_customs_command_help = "Toggle the LS Customs menu.",
 		enable_ls_customs_command_substitutes = "/ls_customs",
 
+		toggle_gear_animation_command = "/toggle_gear_animation",
+		toggle_gear_animation_command_help = "Toggles the gear shift animation and sounds in cars.",
+		toggle_gear_animation_command_substitutes = "/gear_animation, /gear_sounds",
+
 		door_command = "/door",
 		door_command_help = "Toggle a vehicle's door.",
 		door_command_parameter_door_id = "door id (1-6)",
@@ -3547,6 +3551,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		logs_character_loaded_details = "${consoleName} has loaded character ${fullName} (${characterId}).",
 		logs_character_unloaded_title = "Character Unloaded",
 		logs_character_unloaded_details = "${consoleName} has unloaded character ${fullName} (${characterId}).",
+		logs_character_unloaded_details_reason = "${consoleName} has unloaded character ${fullName} (${characterId}) with reason `${reason}`.",
 		logs_character_created_title = "Character Created",
 		logs_character_created_details = "${consoleName} has created character ${fullName} (${characterId}).",
 		logs_character_deleted_title = "Character Deleted",
@@ -3581,11 +3586,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		unload_character_not_staff = "The player attempted to unload a player's character but they were not staff.",
 
 		unloaded_character_for_player_logs_title = "Unloaded Character For Player",
-		unloaded_character_for_player_logs_details = "${consoleName} unloaded ${targetConsoleName}'s character (`${characterFullName}` - ${characterId}) with the reason `${message}`.",
-		unloaded_character_for_player_no_reason_logs_details = "${consoleName} unloaded ${targetConsoleName}'s character (`${characterFullName}` - ${characterId}) without any specified reason.",
+		unloaded_character_for_player_logs_details = "${consoleName} unloaded ${targetConsoleName}'s character ${characterFullName} (${characterId}) with the reason `${message}`.",
+		unloaded_character_for_player_no_reason_logs_details = "${consoleName} unloaded ${targetConsoleName}'s character ${characterFullName} (${characterId}) without any specified reason.",
 		unloaded_character_self_logs_title = "Unloaded Character",
-		unloaded_character_self_logs_details = "${consoleName} unloaded their own character (`${characterFullName}` - ${characterId}) with the reason `${message}`.",
-		unloaded_character_self_no_reason_logs_details = "${consoleName} unloaded their own character (`${characterFullName}` - ${characterId}) without any specified reason.",
+		unloaded_character_self_logs_details = "${consoleName} unloaded their own character ${characterFullName} (${characterId}) with the reason `${message}`.",
+		unloaded_character_self_no_reason_logs_details = "${consoleName} unloaded their own character ${characterFullName} (${characterId}) without any specified reason.",
 
 		unloaded_character_for_user = "Unloaded character ${characterFullName} (${characterId}) for ${consoleName}.",
 		user_with_server_id_has_no_character_loaded = "The user with server id `${serverId}` does not have a character loaded.",
@@ -3623,9 +3628,8 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	afk = {
-		you_are_afk = "You are AFK. You may be kicked to make room for other players.\nMove your mouse to stop being AFK.",
-		you_are_afk_unload = "You are AFK. You are going to be unloaded to prevent paycheck farming.\nMove your mouse to stop being AFK.",
-		you_have_been_kicked_for_being_afk = "You have been kicked for being AFK.",
+		you_are_afk = "You are AFK. Your character will soon be unloaded.",
+		move_mouse = "Move your mouse to stop being AFK.",
 		you_have_been_unloaded_for_being_afk = "You have been AFK for an extended period of time, consider going to the character selection screen next time."
 	},
 
@@ -5883,6 +5887,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		order_arrived = "Arrived",
 		claim = "Claim",
 
+		claim_cayo = "Claim on Cayo",
+		claim_lsia = "Claim at LSIA",
+
 		big_goods = "Big Goods",
 		go_postal = "Go Postal",
 		caipira = "Caipira Airlines",
@@ -5908,7 +5915,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		created_shipment_details = "${consoleName} has created a shipment for ${weight}lbs for $${price} with ${company}.",
 
 		claimed_shipment_title = "Shipment Claimed",
-		claimed_shipment_details = "${consoleName} has claimed a shipment for ${weight}lbs with ${company}."
+		claimed_shipment_details = "${consoleName} has claimed a shipment for ${weight}lbs with ${company}.",
+
+		blip_label = "Import / Export"
 	},
 
 	injuries = {
@@ -9336,23 +9345,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		picking_weed = "Picking Weed"
 	},
 
-	welcome_screen = {
-		welcome_to = "Welcome to ${serverName}",
-		welcome_1 = "You have just created your very first character. The basic features of your character like its face shape, skin color, ageing, etc. can only be changed now and you wont be able to change them at a later time, so make sure you are happy with your character before you finish the creation process.",
-
-		creation_title = "The Creation Menu",
-		creation_1 = "When creating your first character the freemode model will be selected by default. The male and female freemode models provide a wide range of customization options. You can change your characters appearance by navigating the menu using your left, right, up and down arrow keys. The current selection is highlighted.",
-		creation_2 = "In the \"Customization\" menu you can change your characters face shape, skin tone and clothing.",
-		creation_3 = "Once you've changed your characters basic appearance and clothing you use your backspace key to return to the main menu. Here you can use your down arrow key do navigate to the \"Face\" menu and select it by pressing enter. In the face menu you can change your characters facial features like blemishes, facial hair, eyebrows, makeup, etc.",
-		creation_4 = "When you're done with the face menu you can use your backspace key to return to the main menu again. Here you can select the \"Accessories\" menu if you want to add accessories like glasses, hats, etc.",
-		creation_5 = "You can at any point in time go back to the previous menu by selecting them again in the main menu.",
-		creation_6 = "Once you are happy with your characters appearance you can finish the creation process by holding down your \"G\" key.",
-		creation_final = "Remember, you will not be able to change your characters skin tone or face shape once you've finished the creation process. So make sure you are happy with it before you finish.",
-
-		exit_intro = "Exit Introduction",
-		exit_sure = "Are you sure?"
-	},
-
 	wizard = {
 		action_missing_permissions = "Attempted to make a player do a wizard action without proper permissions.",
 		action_radius_missing_permissions = "Attempted to make players in a certain radius do wizard actions without proper permissions.",
@@ -9987,6 +9979,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		not_in_driver_seat = "To check the mileage, you must be at the driver seat.",
 		not_driving_vehicle = "You are not driving a vehicle.",
 		vehicle_locked = "The vehicle is locked.",
+		gear_animation_enabled = "Gear animation (and sounds) have now been enabled.",
+		gear_animation_disabled = "Gear animation (and sounds) have now been disabled.",
 		manual_gears_enabled = "Manual gearing has now been enabled.",
 		manual_gears_disabled = "Manual gearing has now been disabled.",
 		manual_gear_set_to = "Gear set to ${gearId}.",
