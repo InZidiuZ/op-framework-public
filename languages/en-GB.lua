@@ -2241,7 +2241,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		toggle_gear_animation_command_help = 'Toggles gear shift animation and sound in cars',
 		toggle_gear_animation_command_substitutes = '/gear_animation, /gear_sounds',
 
-
 		-- game/hunting
 		animal_debug_command = "/animal_debug",
 		animal_debug_command_help = "Toggle animal debug.",
@@ -3552,6 +3551,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		logs_character_loaded_details = "${consoleName} has loaded character ${fullName} (${characterId}).",
 		logs_character_unloaded_title = "Character Unloaded",
 		logs_character_unloaded_details = "${consoleName} has unloaded character ${fullName} (${characterId}).",
+		logs_character_unloaded_details_reason = "${consoleName} has unloaded character ${fullName} (${characterId}) with reason `${reason}`.",
 		logs_character_created_title = "Character Created",
 		logs_character_created_details = "${consoleName} has created character ${fullName} (${characterId}).",
 		logs_character_deleted_title = "Character Deleted",
@@ -3628,9 +3628,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 	},
 
 	afk = {
-		you_are_afk = "You are AFK. You may be kicked to make room for other players.\nMove your mouse to stop being AFK.",
-		you_are_afk_unload = "You are AFK. You are going to be unloaded to prevent paycheck farming.\nMove your mouse to stop being AFK.",
-		you_have_been_kicked_for_being_afk = "You have been kicked for being AFK.",
+		you_are_afk = "You are AFK. Your character will soon be unloaded.",
+		move_mouse = "Move your mouse to stop being AFK.",
 		you_have_been_unloaded_for_being_afk = "You have been AFK for an extended period of time, consider going to the character selection screen next time."
 	},
 
@@ -4043,8 +4042,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		pd_sea_hq = "Police Sea HQ",
 		ems_air_hq = "EMS Air HQ",
 		ems_boat_hq = "EMS Boat HQ",
-		ems_garage = "EMS Garage",
-		blip_label = "Import/Export"
+		ems_garage = "EMS Garage"
 	},
 
 	blockage = {
@@ -5882,6 +5880,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		order_arrived = "Arrived",
 		claim = "Claim",
 
+		claim_cayo = "Claim on Cayo",
+		claim_lsia = "Claim at LSIA",
+
 		big_goods = "Big Goods",
 		go_postal = "Go Postal",
 		caipira = "Caipira Airlines",
@@ -5907,7 +5908,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		created_shipment_details = "${consoleName} has created a shipment for ${weight}lbs for $${price} with ${company}.",
 
 		claimed_shipment_title = "Shipment Claimed",
-		claimed_shipment_details = "${consoleName} has claimed a shipment for ${weight}lbs with ${company}."
+		claimed_shipment_details = "${consoleName} has claimed a shipment for ${weight}lbs with ${company}.",
+
+		blip_label = "Import / Export"
 	},
 
 	injuries = {
@@ -9327,24 +9330,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 	weed_field = {
 		pick_weed = "Press ~INPUT_CONTEXT~ to pick weed.",
 		picking_weed = "Picking Weed"
-	},
-
-	welcome_screen = {
-		welcome_to = "Welcome to ${serverName}",
-		welcome_1 = "You have just created your very first character. The basic features of your character like its face shape, skin color, ageing, etc. can only be changed now and you wont be able to change them at a later time, so make sure you are happy with your character before you finish the creation process.",
-
-		creation_title = "The Creation Menu",
-		creation_1 = "When creating your first character the freemode model will be selected by default. The male and female freemode models provide a wide range of customization options. You can change your characters appearance by navigating the menu using your left, right, up and down arrow keys. The current selection is highlighted.",
-		creation_2 = "In the \"Customization\" menu you can change your characters face shape, skin tone and clothing.",
-		creation_3 = "Once you've changed your characters basic appearance and clothing you use your backspace key to return to the main menu. Here you can use your down arrow key do navigate to the \"Face\" menu and select it by pressing enter. In the face menu you can change your characters facial features like blemishes, facial hair, eyebrows, makeup, etc.",
-		creation_4 = "When you're done with the face menu you can use your backspace key to return to the main menu again. Here you can select the \"Accessories\" menu if you want to add accessories like glasses, hats, etc.",
-		creation_5 = "You can at any point in time go back to the previous menu by selecting them again in the main menu.",
-		creation_6 = "Once you are happy with your characters appearance you can finish the creation process by holding down your \"G\" key.",
-		creation_final = "Remember, you will not be able to change your characters skin tone or face shape once you've finished the creation process. So make sure you are happy with it before you finish.",
-
-		exit_intro = "Exit Introduction",
-		exit_sure = "Are you sure?"
-	},
+	},	
 
 	wizard = {
 		action_missing_permissions = "Attempted to make a player do a wizard action without proper permissions.",
@@ -10058,8 +10044,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		toggled_vehicle_weapons_for_everyone_logs_title = "Toggled Vehicle Weapons For Everyone",
 		toggled_vehicle_weapons_for_everyone_logs_details = "${consoleName} toggled the weapons for everyone's vehicle.",
 		
-		toggled_gear_animation_on = "Gear animation (and sounds) have been enabled",
-		toggled_gear_animation_off = "Gear animation (and sounds) have been disabled"
+		gear_animation_enabled = "Gear animation (and sounds) have been enabled",
+		gear_animation_disabled = "Gear animation (and sounds) have been disabled"
 	},
 
 	wheels = {
