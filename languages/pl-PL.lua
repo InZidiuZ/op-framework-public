@@ -3361,6 +3361,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		toggle_roll_control_command = "/toggle_roll_control",
 		toggle_roll_control_command_help = "Przełączanie kontroli przechyłu i powietrza.",
 		toggle_roll_control_command_substitutes = "/roll_control",
+		
+
+		toggle_gear_animation_command = "/toggle_gear_animation",
+		toggle_gear_animation_command_help = "Przełącza animację zmiany biegów i dźwięki w samochodach.",
+		toggle_gear_animation_command_substitutes = "/gear_animation, /gear_sounds",
 
 		
 		enable_ls_customs_command = "/enable_ls_customs",
@@ -3583,6 +3588,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		logs_character_loaded_details = "${consoleName} wczytał postać: ${fullName} (${characterId}).",
 		logs_character_unloaded_title = "Wylogowano z postaci",
 		logs_character_unloaded_details = "${consoleName} wylogował się z postaci: ${fullName} (${characterId}).",
+		logs_character_unloaded_details_reason = "${consoleName} wylogował się z postaci ${fullName} (${characterId}) z powodem `${reason}`.",
 		logs_character_created_title = "Postać utworzona",
 		logs_character_created_details = "${consoleName} stworzył postać: ${fullName} (${characterId}).",
 		logs_character_deleted_title = "Usunięto postać",
@@ -3660,9 +3666,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 	afk = {
 		you_are_afk = "Jesteś AFK?, Możesz zostać wyrzucony z serwera by zrobić miejsce dla innych graczy. \nPorusz myszlą by nie zostać wyrzuconym.",
-		you_are_afk_unload = "Zostałeś wyrzucony za AFK.",
-		you_have_been_kicked_for_being_afk = "You have been kicked for being AFK.",
-		you_have_been_unloaded_for_being_afk = "You have been AFK for an extended period of time, consider going to the character selection screen next time."
+		move_mouse = "Poruszaj myszką, aby przestać być AFK.",
+		you_have_been_unloaded_for_being_afk = "Byłeś AFK przez dłuższy czas, rozważ przejście do ekranu wyboru postaci następnym razem."
 	},
 
 	
@@ -5933,6 +5938,9 @@ balls = {
 		order_arrived = "Dostarczono",
 		claim = "Odbierz",
 
+		claim_cayo = "Odbierz na Cayo",
+		claim_lsia = "Odbierz na LSIA",
+
 		big_goods = "Big Goods",
 		go_postal = "Go Postal",
 		caipira = "Capibara Airlines",
@@ -5958,7 +5966,9 @@ balls = {
 		created_shipment_details = "${consoleName} utworzył przesyłkę warzącą ${weight}lbs za kwotę ${price} z firmy ${company}.",
 
 		claimed_shipment_title = "Przesyłka odebrana",
-		claimed_shipment_details = "${consoleName} odebrał przeszyłkę warzącą ${weight}lbs z firmy ${company}."
+		claimed_shipment_details = "${consoleName} odebrał przeszyłkę warzącą ${weight}lbs z firmy ${company}.",
+
+		blip_label = "Import / Export"
 	},
 
 	injuries = {
@@ -9403,23 +9413,6 @@ balls = {
 		using_sink = "Użyj zlewu"
 	},
 
-	welcome_screen = {
-		welcome_to = "Witaj na ${serverName}",
-		welcome_1 = "Właśnie stworzyłeś swoją pierwszą postać. Podstawowe cechy Twojej postaci, takie jak kształt twarzy, kolor skóry, starzenie się itp. mogą być zmienione tylko teraz i nie będziesz mógł ich zmienić w późniejszym czasie, więc upewnij się, że jesteś zadowolony ze swojej postaci przed zakończeniem procesu tworzenia.",
-
-		creation_title = "Menu tworzenia",
-		creation_1 = "Podczas tworzenia pierwszej postaci domyślnie zostanie wybrany model freemode. Męskie i żeńskie modele freemode zapewniają szeroki zakres opcji dostosowywania. Możesz zmienić wygląd swojej postaci poruszając się po menu za pomocą klawiszy strzałek w lewo, prawo, górę i dół. Bieżący wybór jest podświetlony.",
-		creation_2 = "W menu \"Customization\" możesz zmienić kształt twarzy, odcień skóry i ubranie swojej postaci.",
-		creation_3 = "Po zmianie podstawowego wyglądu i ubioru postaci użyj klawisza backspace, aby powrócić do głównego menu. Tutaj możesz użyć klawisza strzałki w dół, aby przejść do menu \"Face\" i wybierz go naciskając enter. W menu twarzy możesz zmienić cechy twarzy postaci, takie jak skazy, włosy na twarzy, brwi, makijaż itp.",
-		creation_4 = "Po zakończeniu pracy z menu twarzy możesz użyć klawisza backspace, aby ponownie powrócić do menu głównego. Tutaj możesz wybrać menu \"Accessories\" jeśli chcesz dodać akcesoria, takie jak okulary, kapelusze itp.",
-		creation_5 = "W każdej chwili można wrócić do poprzedniego menu, wybierając je ponownie w menu głównym.",
-		creation_6 = "Kiedy już jesteś zadowolony z wyglądu swojej postaci, możesz zakończyć proces tworzenia przytrzymując klawisz \"G\"",
-		creation_final = "Pamiętaj, że nie będziesz mógł zmienić odcienia skóry ani kształtu twarzy swojej postaci po zakończeniu procesu tworzenia. Upewnij się więc, że jesteś z nich zadowolony, zanim skończysz.",
-
-		exit_intro = "Wyjście z wprowadzenia",
-		exit_sure = "Jesteś pewny?"
-	},
-
 	wizard = {
 		action_missing_permissions = "Próbowano zmusić gracza do wykonania akcji kreatora bez odpowiednich uprawnień.",
 		action_radius_missing_permissions = "Próbowano zmusić graczy w określonym promieniu do wykonywania działań czarodzieja bez odpowiednich uprawnień.",
@@ -10054,6 +10047,8 @@ balls = {
 		not_in_driver_seat = "Aby sprawdzić przebieg, musisz być na miejscu kierowcy.",
 		not_driving_vehicle = "Nie prowadzisz pojazdu.",
 		vehicle_locked = "Pojazd jest zamknięty.",
+		gear_animation_enabled = "Animacja (i dźwięki) zostały włączone.",
+		gear_animation_disabled = "Animacja (i dźwięki) zostały wyłączone.",
 		manual_gears_enabled = "Włączony manual",
 		manual_gears_disabled = "Wyłączony manual",
 		manual_gear_set_to = "Bieg ustawiony na ${gearId}.",
