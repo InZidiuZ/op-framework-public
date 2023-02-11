@@ -1038,6 +1038,12 @@ OP.Global.Locales.Languages["en-GB"] = {
 		job_command_parameter_search_help = "The job/department/position name or part of it to search for or `none` to remove the job.",
 		job_command_substitutes = "",
 
+		resetjob_command = "/resetjob",
+		resetjob_command_parameter_server_id = "server id",
+		resetjob_command_parameter_server_id_help = "The players server id or 0 to select yourself",
+		resetjob_command_substitutes = "",
+		resetjob_command_help = "Resets someones job to unemployed",
+
 		watching_command = "/watching",
 		watching_command_help = "Shows you all players who are spectating nearby.",
 		watching_command_substitutes = "",
@@ -2469,6 +2475,15 @@ OP.Global.Locales.Languages["en-GB"] = {
 		bank_command = "/bank",
 		bank_command_help = "Display your bank balance.",
 		bank_command_substitutes = "",
+
+		givecash_command = "/give_cash",
+		givecash_command_parameter_server_id = "server id",
+		givecash_command_parameter_amoun = "amount",
+		givecash_command_help = "Give another player a certain amount of cash",
+		givecash_command_parameter_server_id_help = "The server id of the player you with to give cash to.",
+		givecash_command_parameter_amount_help = "The amount of cash you want to give to the player",
+		givecash_command_substitutes = "/givecash",
+
 
 		-- game/notepads
 		notepad_command = "/notepad",
