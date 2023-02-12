@@ -5,8 +5,8 @@ if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
 OP.Global.Locales.Languages["en-US"] = {
 	-- configuration settings for language
-	largeNumberSeperator = ",", -- with it set as ",", 1000000 -> 1,000,000 in a lot of labels
-	floatSeperator = ".", -- with it set as ".", (25 + (1/5)) -> 25.2
+	largeNumberSeparator = ",", -- with it set as ",", 1000000 -> 1,000,000 in a lot of labels
+	floatSeparator = ".", -- with it set as ".", (25 + (1/5)) -> 25.2
 	useMetric = false,
 
 	-- locales shared between all resources
@@ -644,7 +644,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		invalid_job_search = "Invalid job search (has to be at least 3 characters).",
 		failed_job_search = "Failed to search for jobs.",
 		job_search_no_results = "No jobs found.",
-		job_search_results = "Set ${consoleName}'s job to \"${jobName}, ${departmentName}, ${positionName}\" (Score: ${score})."
+		job_search_results = "Set ${consoleName}'s job to \"${jobName}, ${departmentName}, ${positionName}\" (Score: ${score}).",
+
+		job_reset_success = "Successfully reset job for ${consoleName}.",
+		failed_job_reset = "Failed to reset job."
 	},
 
 	anti_cheat = {
@@ -686,6 +689,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		damage_modifier_ban = "Your power level cannot be over 9000.",
 		ped_spawn_ban = "You tried to perform mitosis, but there was not enough sun for photosynthesis.",
 		weapon_spawn_ban = "You attempted the \"Pay to Win Route\" of FiveM where you now infact paid to get banned.",
+		illegal_vehicle_modifier_ban = "Unlike Dom Toretto from Fast and Furious, we are not family.",
 
 		honeypot_ban = "You attempted to toggle your creative mode, but didn't have the permissions to do so.",
 
@@ -699,7 +703,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		player_zero_label = "Michael",
 
 		notification_unknown_resource = "Anti-Cheat: Unknown resources",
-		notification_illegal_cheat_power = "Anti-Cheat: Cheat Power Increase",
+		notification_illegal_vehicle_modifier = "Anti-Cheat: Vehicle Modifier",
 		notification_fast_movement = "Anti-Cheat: Fast movement",
 		notification_illegal_freeze = "Anti-Cheat: Illegal freeze",
 		notification_invincibility = "Anti-Cheat: Invincibility",
@@ -742,11 +746,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		fast_movement_screenshot = "Anti-Cheat: Fast Movement",
 		illegal_freeze_screenshot = "Anti-Cheat: Illegal Freeze",
 		unknown_resource_screenshot = "Anti-Cheat: Unknown Resources (${resources})",
-		illegal_cheat_power_screenshot = "Anti-Cheat: Cheat Power Increase (${cheatPower})",
+		illegal_vehicle_modifier_screenshot = "Anti-Cheat: Vehicle Modifier (${modifierName} = ${modifierValue})",
 		damage_modifier_screenshot = "Anti-Cheat: Invalid Damage Modifier (${activeModifier}/${currentModifier})",
 		illegal_weapon_screenshot = "Anti-Cheat: Spawned Weapon (${weaponLabel})",
 		illegal_vehicle_spawn_screenshot = "Anti-Cheat: Spawned Vehicle (${modelName})",
-		vehicle_modification_screenshot = "Anti-Cheat: Modified Vehicle (${modType}: ${previousValue}->${modValue})",
+		vehicle_modification_screenshot = "Anti-Cheat: Modified Vehicle (${types})",
 		thermal_night_vision_screenshot = "Anti-Cheat: Thermal/Night Vision (${thermal}/${nightVision})",
 		text_entry_screenshot = "Anti-Cheat: Text Entry (${textEntry})",
 		player_blips_screenshot = "Anti-Cheat: Player Blips",
@@ -1038,6 +1042,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		job_command_parameter_search = "search",
 		job_command_parameter_search_help = "The job/department/position name or part of it to search for or `none` to remove the job.",
 		job_command_substitutes = "",
+
+		resetjob_command = "/resetjob",
+		resetjob_command_help = "Resets someones job to unemployed.",
+		resetjob_command_parameter_server_id = "server id",
+		resetjob_command_parameter_server_id_help = "The players server id or 0 to select yourself.",
+		resetjob_command_substitutes = "",
 
 		watching_command = "/watching",
 		watching_command_help = "Shows you all players who are spectating nearby.",
@@ -2015,6 +2025,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		edit_marker_command_parameter_marker_name_help = "The marker you want to edit (leave empty to place new marker).",
 		edit_marker_command_substitutes = "",
 
+		-- game/debug_menu
+		debug_menu_command = "/debug_menu",
+		debug_menu_command_help = "Toggles the debug menu.",
+		debug_menu_command_substitutes = "/dm",
+
 		-- game/dna_evidence
 		take_dna_sample_command = "/take_dna_sample",
 		take_dna_sample_command_help = "Takes a DNA sample of the nearest player.",
@@ -2467,6 +2482,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		bank_command_help = "Display your bank balance.",
 		bank_command_substitutes = "",
 
+		givecash_command = "/givecash",
+		givecash_command_help = "Give another player a certain amount of cash.",
+		givecash_command_parameter_server_id = "server id",
+		givecash_command_parameter_server_id_help = "The server id of the player you want to give cash to.",
+		givecash_command_parameter_amount = "amount",
+		givecash_command_parameter_amount_help = "The amount of cash you want to give to the player.",
+		givecash_command_substitutes = "",
+
 		-- game/notepads
 		notepad_command = "/notepad",
 		notepad_command_help = "Toggle the notepad.",
@@ -2688,6 +2711,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		spawn_prop_command_parameter_no_pickup = "no pickup",
 		spawn_prop_command_parameter_no_pickup_help = "Should this prop only be picked up by super admins?",
 		spawn_prop_command_substitutes = "",
+
+		spawn_exact_prop_command = "/spawn_exact_prop",
+		spawn_exact_prop_command_help = "Spawn a prop at your exact location.",
+		spawn_exact_prop_command_parameter_model_name = "model name",
+		spawn_exact_prop_command_parameter_model_name_help = "The prop model you would like to spawn.",
+		spawn_exact_prop_command_parameter_ground = "ground",
+		spawn_exact_prop_command_parameter_ground_help = "If the prop should be spawned on the ground or not.",
+		spawn_exact_prop_command_substitutes = "",
 
 		props_debug_command = "/props_debug",
 		props_debug_command_help = "Debugs all props around you.",
@@ -4359,7 +4390,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		outfit_stolen = "Successfully stole players outfit.",
 
 		no_nearby_dead_player = "No nearby dead player.",
-		failed_to_steal_shoes = "Failed to steal shoes."
+		failed_to_steal_shoes = "Failed to steal shoes.",
+
+		loading_model = "Loading ped model...",
+		loading_spawn = "Spawning player ped...",
+		loading_set_data = "Setting ped data...",
+		loading_tattoos = "Setting tattoos...",
+		loading_finalize = "Finalizing..."
 	},
 
 	clothing_menu = {
@@ -4815,17 +4852,29 @@ OP.Global.Locales.Languages["en-US"] = {
 		mixed_patriotic_paint = "Mixed patriotic paint.",
 		failed_mix_patriotic_paint = "Failed to mix patriotic paint.",
 
-		craft_radio_decryptor = "Craft Radio Decryptor",
-		press_craft_radio_decryptor = "[${SeatEjectKey}] Craft Radio Decryptor",
-		crafting_radio_decryptor = "Crafting Radio Decryptor",
-		crafted_radio_decryptor = "Crafted radio decryptor.",
-		failed_craft_radio_decryptor = "Failed to craft radio decryptor.",
+		craft_radio_decrypter = "Craft Radio Decrypter",
+		press_craft_radio_decrypter = "[${SeatEjectKey}] Craft Radio Decrypter",
+		crafting_radio_decrypter = "Crafting Radio Decrypter",
+		crafted_radio_decrypter = "Crafted radio decrypter.",
+		failed_craft_radio_decrypter = "Failed to craft radio decrypter.",
 
-		forge_katana = "Forge Katana",
-		press_forge_katana = "[${SeatEjectKey}] Forge Katana",
-		forging_katana = "Forging Katana",
-		forged_katana = "Forged katana.",
-		failed_forge_katana = "Failed to forge katana.",
+		craft_grenade_shell = "Craft Grenade Shell",
+		press_craft_grenade_shell = "[${SeatEjectKey}] Craft Grenade Shell",
+		crafting_grenade_shell = "Crafting Grenade Shell",
+		crafted_grenade_shell = "Crafted grenade shell.",
+		failed_craft_grenade_shell = "Failed to craft grenade shell.",
+
+		craft_grenade_pin = "Craft Grenade Pin",
+		press_craft_grenade_pin = "[${SeatEjectKey}] Craft Grenade Pin",
+		crafting_grenade_pin = "Crafting Grenade Pin",
+		crafted_grenade_pin = "Crafted grenade pin.",
+		failed_craft_grenade_pin = "Failed to craft grenade pin.",
+
+		craft_gas_grenade = "Craft Gas Grenade",
+		press_craft_gas_grenade = "[${SeatEjectKey}] Craft Gas Grenade",
+		crafting_gas_grenade = "Crafting Gas Grenade",
+		crafted_gas_grenade = "Crafted gas grenade.",
+		failed_craft_gas_grenade = "Failed to craft gas grenade.",
 
 		no_required_items = "You don't have all the required items.",
 
@@ -5249,6 +5298,20 @@ OP.Global.Locales.Languages["en-US"] = {
 		saved_vehicle_model_lists_to_file = "The vehicle model lists have been saved to a file on the server."
 	},
 
+	debug_menu = {
+		menu_title = "Debug Menu",
+
+		debug_on = "On",
+		debug_off = "Off",
+
+		debug = "Debug",
+		timecycles = "Timecycles",
+		reset_timecycles = "Reset Timecycles",
+		weather = "Weather",
+		reset_weather = "Reset Weather",
+		refresh_interior = "Refresh Interior"
+	},
+
 	dna_evidence = {
 		taking_sample = "Taking DNA Sample",
 		already_taking_sample = "You are already taking a dna sample of a player.",
@@ -5488,7 +5551,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		freecam_no_permission = "Attempted to toggle their freecam without required permissions.",
 		track_player_no_permission = "Attempted to track a player using the freecam without required permissions.",
 
-		freecam_inactive = "You are not curently in freecam.",
+		freecam_inactive = "You are not currently in freecam.",
 		added_point = "Added camera point at index ${index} (Transition: ${transition}ms).",
 		disable_freecam = "Disable freecam to replay points.",
 		not_enough_points = "You need at least 2 points to play.",
@@ -5745,6 +5808,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		steps_walked_deaths = "${stepsWalked} steps ~t~/~w~ ${deaths} downs",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Oxygen left: ${timer}",
+
+		muted = "Muted",
 
 		fps_unit = "fps",
 		ping_unit = "ms",
@@ -6240,7 +6305,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		vehicle_tracker_description = "This tracker is exactly what Michael needs, who has for over seven years had suspicion his wife, Amanda, has been cheating on him with the tennis coach he got her.",
 		device_scanner = "Device Scanner",
 		device_scanner_description = "Used to scan for nearby creep devices.",
-		radio_decryptor = "Radio Decryptor",
+		radio_decryptor = "Radio Decrypter",
 		radio_decryptor_description = "Decrypts radio frequencies if connected to a radio.",
 
 		paper_bag = "Paper Bag",
@@ -6332,6 +6397,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		screws_description = "What cha'll doin? Screwin?",
 		spring = "Spring",
 		spring_description = "Don't know why, but people love to clean these?",
+
+		grenade_shell = "Grenade Shell",
+		grenade_shell_description = "A shell for a grenade.",
+		grenade_pin = "Grenade Pin",
+		grenade_pin_description = "A pin for a grenade.",
 
 		paint = "Paint",
 		paint_description = "Useful for Fences and Houses, just don't start huffing it.",
@@ -6518,6 +6588,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		weed_1q_description = "420 bro",
 		weed_1oz = "Weed 1oz",
 		weed_1oz_description = "1680 bro",
+
+		oxy_prescription = "Oxy Prescription",
+		oxy_prescription_description = "Sketchy oxy prescription.",
 
 		brownies = "Brownies",
 		brownies_description = "Goey, Foamy, and double the amount of chocolate with just a hint of extra kick to really make you sit back and question all of life.",
@@ -6740,6 +6813,9 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		acetone = "Acetone",
 		acetone_description = "Perfect for removing paint or huffing it, Cooper style.",
+
+		bleach = "Bleach",
+		bleach_description = "Don't drink this.",
 
 		ammonia = "Ammonia",
 		ammonia_description = "Mix with bleach for a magical surprise.",
@@ -7442,6 +7518,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		not_possible_in_a_vehicle = "This action is not possible in a vehicle.",
 		just_used_bandage = "You just used a first aid kit, wait a bit before using another one.",
 		drank_gasoline_death = "Gasoline Poisoning",
+		drank_bleach_death = "Bleach Poisoning",
 
 		failed_burger_shot_delivery = "Failed to open burgershot meal.",
 		failed_bean_machine_delivery = "Failed to open bean machine delivery.",
@@ -7873,6 +7950,19 @@ OP.Global.Locales.Languages["en-US"] = {
 		uptime = "Uptime: ${uptime}"
 	},
 
+	money = {
+		invalid_server_id = "Invalid server ID.",
+		invalid_amount = "Invalid amount.",
+		something_went_wrong = "Something went wrong.",
+		not_enough_cash = "You don't have enough cash.",
+		not_close_enough = "You're not close enough to the player.",
+
+		givecash_success = "You gave ${displayName} $${amount}.",
+
+		give_cash_title = "Cash Transfer",
+		give_cash_details = "${consoleName} transferred $${amount} to ${targetConsoleName}."
+	},
+
 	moonshine = {
 		fill_chamber = "[${InteractionKey}] Fill Chamber",
 		collect_moonshine = "[${InteractionKey}] Collect Moonshine",
@@ -7950,7 +8040,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		orbitcam_no_permission = "Attempted to toggle their orbitcam without required permissions.",
 
 		failed_track_player = "Failed to track player.",
-		orbitcam_inactive = "You are not curently in orbitcam."
+		orbitcam_inactive = "You are not currently in orbitcam."
 	},
 
 	overview = {
@@ -8147,9 +8237,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		fast_movement_title = "Fast Movement",
 		fast_movement_about = "In here every player who has been flagged for moving too fast is listed. This should help in finding players who are potential modders.",
 
-		illegal_freeze_title = "Illegal Freezes",
-		illegal_freeze_about = "In here every player who is frozen without being supposed to for more then a second is listed. This should help in finding players who are potential modders.",
-
 		illegal_invincibility_title = "Invincibility Detections",
 		illegal_invincibility_about = "In here every player who has been flagged for being invincible is listed. This should help in finding players who are potential modders.",
 
@@ -8167,6 +8254,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		damage_modifier_actual = "Actual",
 
 		no_entries = "No entries"
+	},
+
+	oxy = {
+		press_to_pick_up_oxy = "Press ~g~${InteractionKey} ~w~to pick up oxy."
 	},
 
 	panel = {
@@ -8410,6 +8501,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		model_parameter_is_not_an_object = "The model `${model}` is not an object.",
 		spawned_prop_non_networked = "Spawned a non-networked prop with model `${model}`.",
 		spawned_prop_networked = "Spawned a networked prop with model `${model}`.",
+		spawned_exact_prop = "Spawned exact prop.",
 		failed_to_spawn_prop = "Failed to spawn prop with model `${model}`.",
 		not_able_to_spawn_in_vehicle = "You can not be in a vehicle when spawning a prop.",
 		not_able_to_spawn_while_dead = "You can not be dead when spawning a prop.",
@@ -8463,7 +8555,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		decrypt_frequency = "[${InteractionKey}] Decrypt Frequency",
 		decrypting_frequency = "Decrypting Frequency",
 		decrypting_frequency_failed = "Failed to decrypt frequency.",
-		decryptor_jammed = "The decryptor appears to be jammed.",
+		decrypter_jammed = "The decrypter appears to be jammed.",
 		decrypted_frequency = "Frequency appears to be around `${frequency}`.",
 		no_frequency_detected = "No frequency detected."
 	},
@@ -9355,7 +9447,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		ragdoll_player = "Ragdoll",
 		ragdoll_player_force = "Ragdoll (Force)",
 		punch_player = "Force Punch",
-		taze_player = "Taze",
+		taze_player = "Tase",
 		exit_vehicle_player = "Exit Vehicle",
 		yank_steering_wheel_player = "Yank Steering Wheel",
 		flashbang_player = "Flashbang",
@@ -9789,6 +9881,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		fuel_level_set_to = "The fuel level has been set to `${fuelLevel}`.",
 		not_in_a_vehicle = "You are not in a vehicle.",
 		vehicle_engine_on = "The engine is still running.",
+
+		set_fuel_no_permissions = "Player attempted to set a vehicles fuel level without proper permissions.",
 
 		vehicle_exploded_logs_title = "Vehicle Exploded",
 		vehicle_exploded_logs_details = "${consoleName} refueled a vehicle and triggered an explosion due to a running engine."
