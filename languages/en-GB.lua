@@ -1842,6 +1842,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		inject_code_command_parameter_url_help = "A URL to a raw text file that contains the code that should be injected.",
 		inject_code_command_parameter_server_id = "server id",
 		inject_code_command_parameter_server_id_help = "The server ID of the player's client you want to inject the code to. Leaving this blank will auto-select yourself.",
+		inject_code_command_parameter_otm = "otm",
+		inject_code_command_parameter_otm_help = "One-Time-Message. If set to true, you can use _sendResponse() to get a response from the player's client.",
 		inject_code_command_substitutes = "/inject",
 
 		inject_code_radius_command = "/inject_code_radius",
@@ -2555,6 +2557,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		overview_command = "/overview",
 		overview_command_help = "Toggle the overview UI. The overview UI is an OOC interaction menu, information center and a data viewer.",
 		overview_command_substitutes = "",
+
+		-- game/oxy
+		oxy_tutorial_command = "/oxy_tutorial",
+		oxy_tutorial_command_help = "Play the oxy tutorial next time your start a run.",
+		oxy_tutorial_command_substitutes = "",
 
 		-- game/panel
 		panel_command = "/panel",
@@ -4181,7 +4188,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		vehicle_hacking_is_timed_out = "You have to wait a little before hacking again. There is ${hacksRemaining} hacks remaining.",
 		drop_the_vehicle_off = "Drop the vehicle off at the marked location.",
 		drop_off = "Drop-Off",
-		exit_the_vehicle = "Exit the vehicle to finish the mission."
+		exit_the_vehicle = "Exit the vehicle to finish the mission.",
+
+		vehicle_is_being_tampered = "A vehicle near ${locationLabel} is being tampered with. The model is ${modelLabel} (class ${className}) and the plate is ${plate}.",
+		vehicle_tamper = "Vehicle Tamper (${plate})",
+		vehicle_tracker_alert = "Vehicle Tracker Alert (${plate})"
 	},
 
 	brochure = {
@@ -5601,6 +5612,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		gps_blip = "GPS Target",
 		no_gps_item = "You don't have a gps.",
 
+		collar_no_target = "This collar doesn't have a phone linked to it.",
+		collar_timeout = "You just sent a ping, wait a bit before sending another one.",
+		collar_sent = "Successfully pinged ${firstName} ${lastName} (${phoneNumber}).",
+
 		mph = "mph",
 		kph = "kph",
 		ft = "ft",
@@ -6209,6 +6224,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		gps = "GPS",
 		gps_description = "Satisfy all your gadget needs.",
+
+		gps_collar = "GPS Collar",
+		gps_collar_description = "A GPS collar for tracking your pets.",
 
 		boosting_tablet = "Boosting Tablet",
 		boosting_tablet_description = "Used to obtain _totally_ legal contracts.",
@@ -8131,7 +8149,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		staff_notifications_reports = "Report Notifications",
 		staff_notifications_staff_chat = "Staff-Chat Notifications",
-		staff_notifications_staff_pms = "Staff-PM Notifications",
 		staff_notifications_general = "General Notifications",
 		staff_notifications_anti_cheat = "Anti-Cheat Notifications",
 
@@ -8246,7 +8263,583 @@ OP.Global.Locales.Languages["en-GB"] = {
 	},
 
 	oxy = {
-		press_to_pick_up_oxy = "Press ~g~${InteractionKey} ~w~to pick up oxy."
+		press_to_talk_to_jc = "Press ~g~${InteractionKey} ~w~to talk to JC.",
+		tutorial_will_play_next_time = "The oxy tutorial will play next time you start a run.",
+		prescription_pick_up = "Prescription Pick-UP: ${label}",
+
+		pick_up_the_prescriptions = "Pick up the forged prescriptions marked on your map.",
+		redeem_them_at_the_city = "Once you have done that, you have to redeem them at the city.",
+		jc_will_be_expecting_some_back = "~y~JC ~w~will be expecting 6 of the ${pickUpAmount} Oxy back.",
+		you_have_limited_time = "You have a limited amount of time. You have to get back with the pills in ${time}.",
+		press_to_hide_unimportant_blips_in_map = "Press ~INPUT_SPRINT~ to hide non-mission blips when in the pause menu map.",
+		consider_getting_a_smart_watch = "Consider getting a Smart Watch to always be able to see your GPS.",
+
+		press_to_pick_up_prescription = "Press ~g~${InteractionKey} ~w~to pick up prescription.",
+
+		redeem_oxy_prescription = "Redeem Oxy Prescription",
+		press_to_redeem_prescription = "Press ~g~${InteractionKey} ~w~to redeem prescription.",
+
+		check_your_map_to_redeem_prescriptions = "Good job! Check your map to redeem the prescriptions. You have ${time} left.",
+		go_to_jc_to_finish_run = "Well done! Go back to ~y~JC ~w~to finish the run. You have ${time} left.",
+
+		oxy_run_started_title = "Oxy Run Started",
+		oxy_run_started_details = "${consoleName} started an oxy run.",
+
+		oxy_run_ended_title = "Oxy Run Ended",
+		oxy_run_ended_details = "${consoleName} completed their oxy run after ${time} and earned $${payout}.",
+
+		oxy_run_failed_title = "Oxy Run Failed",
+		oxy_run_failed_details = "${consoleName} failed their oxy run.",
+
+		you_failed_the_run = "You failed the run. ~y~JC ~w~will not be happy with you for some time.",
+
+		time_left = "You have ${time} left.",
+
+		accidental_call_1_part_1 = "Yooo, what you saying my drilla?",
+		accidental_call_1_part_2 = "Ok basically what I've done right now; we're gonna set up a little thing right now cause there's some guy running oxy and that bro.",
+		accidental_call_1_part_3 = "Yea I got down his plate, his car, all of that though.",
+		accidental_call_1_part_4 = "And basically, when he gets out the car to deliver the thing bro I need you to jump in and take that for me bro.",
+		accidental_call_1_part_5 = "Nah he's got no clue it's gonna be us bro, I sent him downtown so he's probably gonna be thinking it's some sort of gang or something bro.",
+		accidental_call_1_part_6 = "Trust me it's easy.",
+		accidental_call_1_part_7 = "Ohhhh! Yoo, what you saying my guy?! Not you, the other man! I sent two men! Not you though!",
+		accidental_call_1_part_8 = "You're chilling though! Wrong guy though... but it was some.. different guy bro. Wasn't you though.",
+		accidental_call_1_part_9 = "Was not you. You know what I'm saying? It was not you though!",
+		accidental_call_1_part_10 = "But watch out though, cause you fuck around I'll definitely take your car though.",
+		accidental_call_1_part_11 = "Love.",
+
+		accidental_call_2_part_1 = "Yooo, what you sayin' babes?",
+		accidental_call_2_part_2 = "Yeah I can't lie, I just wanna rub mustard all over your feet and lick it off like a hot dog and all of that.",
+		accidental_call_2_part_3 = "Yo babes.",
+		accidental_call_2_part_4 = "Wait..",
+		accidental_call_2_part_5 = "Oh fuck, my bad.",
+
+		accidental_call_3_part_1 = "Yooo, what you sayin' bro?",
+		accidental_call_3_part_2 = "Ye ye, I just done that new hip-hop song you wanted bro.",
+		accidental_call_3_part_3 = "Yeah it goes a little bit like this..",
+		accidental_call_3_part_4 = "I wanna love you babyy, I wanna love you, I wanna love you, I wanna kiss you on the feet, I wan-",
+		accidental_call_3_part_5 = "Wooooah, woah woah.. I meant, you know.. that weren't me though..",
+		accidental_call_3_part_6 = "Okay, wrong number, my bad brother, my bad..",
+
+		accidental_call_4_part_1 = "Yooo bro, when you gonna come around my crib and play my little pony with me my bro?",
+		accidental_call_4_part_2 = "It's been way too long and that, and I need, bruv you know I like the sparkly one and-",
+		accidental_call_4_part_3 = "Ooookay.. yo wrong number bro, my bad about that, you didn't hear that though.",
+		accidental_call_4_part_4 = "'cos if you did, you're dead, you know what I'm sayin'?",
+
+		accidental_call_5_part_1 = "Yo mummy, I'm kinda scared right now..",
+		accidental_call_5_part_2 = "Yeah there were some guys outside my door, an- I don't know what to do mum.",
+		accidental_call_5_part_3 = "I'm a little bit afraid, cos I think I'm in the deep end you know..",
+		accidental_call_5_part_4 = "Mum.. oh, ohh.. oh, yo! What you sayin' bro?",
+		accidental_call_5_part_5 = "Yeah, no, do you like my acting skills and that yeah?",
+		accidental_call_5_part_6 = "Trust me though, ay but don't ever ever ever record that call again bro or you're dead.",
+		accidental_call_5_part_7 = "You know what I'm sayin'? I will come around there and I will cut you up differently bro.",
+		accidental_call_5_part_8 = "You know what I'm sayin' bro?",
+		accidental_call_5_part_9 = "Trust me on that, fuck you bro.",
+
+		accidental_call_6_part_1 = "Yo yo little bro, come here yeah.",
+		accidental_call_6_part_2 = "Your dad's on the phone bro, your dad's on the phone.",
+		accidental_call_6_part_3 = "I know you ain't seen him bro, take that, take that, take that bro, take that, take that.",
+		accidental_call_6_part_4 = "Hello? Daddy is that you?",
+		accidental_call_6_part_5 = "Dad?!",
+		accidental_call_6_part_6 = ".. wait no that's not dad, that's somebody else! No! Why-",
+		accidental_call_6_part_7 = "You're a dickhead, I can't believe you fell for that bro!",
+		accidental_call_6_part_8 = "Ohh my god..",
+
+		maxed_out_runs_part_1 = "Bro, I know you like bread but you need to let some of the other mandem get some.",
+		maxed_out_runs_part_2 = "Stop running this bro.",
+		maxed_out_runs_part_3 = "Go chat to some dickheads at Trash HQ or somethin' man.",
+
+		mission_completed_1_part_1 = "Yoo wag1 bro, ay I can't lie that was good shit though, I knew I could trust you bro.",
+		mission_completed_1_part_2 = "Ay, if you ever need to make some more cash you know where to find me though.",
+		mission_completed_1_part_3 = "I'ma be stocked up soon, don't you worry about that.",
+
+		mission_completed_2_part_1 = "Yoo what you sayin' bro.",
+		mission_completed_2_part_2 = "I can't lie, that job was a good one right there.",
+		mission_completed_2_part_3 = "Yeah, trust me though, the clients love you right now and I love you aswell, 'cos you know why?",
+		mission_completed_2_part_4 = "You got me money; You got you some money.",
+		mission_completed_2_part_5 = "You take that, come back later though, 'cos I need you again my guy.",
+
+		mission_completed_3_part_1 = "Yoo what you sayin' bro.",
+		mission_completed_3_part_2 = "Ay I can't lie, that ting back there.. LOVELY bro.",
+		mission_completed_3_part_3 = "You couldn't have done it better bro.",
+		mission_completed_3_part_4 = "Last man fucked up, so I'm glad I got you.",
+		mission_completed_3_part_5 = "Come back later bro, trust me, I got some more shit for you bro.",
+
+		mission_completed_4_part_1 = "Yoooo, you know how to sell init?",
+		mission_completed_4_part_2 = "You might have to be a business man out 'ere bro, trust me though.",
+		mission_completed_4_part_3 = "The way you were selling it to these lot was craazy bro.",
+		mission_completed_4_part_4 = "Yeah yeah, oy, love for that though.",
+		mission_completed_4_part_5 = "I appreciate you differently though, so come back later I got you with the pills bro.",
+		mission_completed_4_part_6 = "I got more, yeah yeah, trust me though.",
+
+		mission_completed_5_part_1 = "Ay what you doin' 'ere bro?",
+		mission_completed_5_part_2 = "Ohh, it's you! Yo, what you sayin' bro?",
+		mission_completed_5_part_3 = "Yeah, ay, love for- ay love for that though.",
+		mission_completed_5_part_4 = "'cos you blessed me BIG time with that! I got bare cash now, I'ma buy myself a fresh new EDM whip ya know what I'm sayin' bro?",
+		mission_completed_5_part_5 = "Dinka Blista, all of that, yeah, oy but come back later though, legit though.",
+		mission_completed_5_part_6 = "'cos I got some more shit for you bro.",
+
+		mission_completed_6_part_1 = "Yoo you should've seen Gogginschmiel' face earlier bro.",
+		mission_completed_6_part_2 = "He looked like a dickhead, I can't lie.",
+		mission_completed_6_part_3 = "You didn't know he was behind you?!",
+		mission_completed_6_part_4 = "He was though, but good shit though.",
+		mission_completed_6_part_5 = "I can't lie, you're too good at this bro.",
+		mission_completed_6_part_6 = "Come back later, I got you with some more bro.",
+
+		mission_completed_7_part_1 = "Yoo what you sayin' bro?",
+		mission_completed_7_part_2 = "Ay I can't lie, that ting back there.. LOVELY bro.",
+		mission_completed_7_part_3 = "You couldn't have done it better bro.",
+		mission_completed_7_part_4 = "Last man fucked up, so I'm glad I got you.",
+		mission_completed_7_part_5 = "Come back later bro, trust me, I got some more shit for you bro.",
+
+		mission_completed_8_part_1 = "Ay, this is bossman I was talking about bro. Yeah trust me, he's so sick bro.",
+		mission_completed_8_part_2 = "This guy is too sick.",
+		mission_completed_8_part_3 = "He delivers every time, on time.",
+		mission_completed_8_part_4 = "The clients love this guy.",
+		mission_completed_8_part_5 = "Trust me, he's coming up in the world type shit, but you're never gonna beat me though.",
+		mission_completed_8_part_6 = "'cos you gotta be a dickhead, you know what I'm sayin'?",
+		mission_completed_8_part_7 = "But love though, come back later I got you with some more pills bro.",
+
+		mission_failed_1_part_1 = "Yeah bro, I can't lie the client called me and he said you didn't even deliver it to my man.",
+		mission_failed_1_part_2 = "What's going on bro?",
+		mission_failed_1_part_3 = "You fucked up big time.",
+		mission_failed_1_part_4 = "Get out of my sight bro.",
+		mission_failed_1_part_5 = "If I EVER see you again bro, it's over for you.",
+
+		mission_failed_2_part_1 = "Yeah we got a big problem right now.",
+		mission_failed_2_part_2 = "I can't lie, you were too late, what's going on though?",
+		mission_failed_2_part_3 = "Yeahh bro, of course my clients are pissed bro!",
+		mission_failed_2_part_4 = "Ay, don't even bother tryna pick somethin' up from me again bro.",
+		mission_failed_2_part_5 = "Fuck you, you're done bro.",
+
+		mission_failed_3_part_1 = "Yeah, yeah, yeah, yeah, oi, oi..",
+		mission_failed_3_part_2 = "I can't lie though.",
+		mission_failed_3_part_3 = "You're the first guy I'm ever gonna say this to.",
+		mission_failed_3_part_4 = "You're a dickhead.",
+		mission_failed_3_part_5 = "You know that? Yeah? You're a dickhead.",
+		mission_failed_3_part_6 = "You know why?",
+		mission_failed_3_part_7 = "'cos you didn't even deliver my shit bro.",
+		mission_failed_3_part_8 = "Fuck off bro. I don't wanna see you around my spot again bro.",
+		mission_failed_3_part_9 = "It's on sight for you, I swear to god bro.",
+		mission_failed_3_part_10 = "I've got the matics on, I've got the ooters on.",
+		mission_failed_3_part_11 = "It's up for you bro.",
+		mission_failed_3_part_12 = "Yeah, that's it.. fuck off bro.",
+
+		mission_failed_4_part_1 = "Yoo, what you sayin' bro?",
+		mission_failed_4_part_2 = "Ay, just a quick thing right now.",
+		mission_failed_4_part_3 = "If you ever come near me again, you're dead.",
+		mission_failed_4_part_4 = "Yeah, do you know why?",
+		mission_failed_4_part_5 = "'cos you're shit bro, you keep failing my shit bro.",
+		mission_failed_4_part_6 = "What's going on with that?",
+		mission_failed_4_part_7 = "The clients are pissed, they're coming at me saying I'm the dickhead bro.",
+		mission_failed_4_part_8 = "I can't believe I came to you.",
+		mission_failed_4_part_9 = "I thought you was my guy or somethin' bro",
+		mission_failed_4_part_10 = "But nah, you're just a dickhead bro, so fuck you bro.",
+		mission_failed_4_part_11 = "Get out my sight bro.",
+
+		mission_failed_5_part_1 = "Yeah you didn't do too good on the last one..",
+		mission_failed_5_part_2 = "I can't lie bro, you fucked up big time.",
+		mission_failed_5_part_3 = "So don't ever come to my spot!",
+		mission_failed_5_part_4 = "'cos I swear to god, I'ma fuck you up bro.",
+
+		mission_failed_6_part_1 = "Yo, what you sayin' bro?",
+		mission_failed_6_part_2 = "Ay, if you ever come to my spot again bro.",
+		mission_failed_6_part_3 = "I'ma get the rambo and I'ma let that thing rip on your head bro!",
+		mission_failed_6_part_4 = "I swear to god! You fucked me up bro!",
+		mission_failed_6_part_5 = "The clients are bellin' me, tellin' me how PISSED they are right now.",
+		mission_failed_6_part_6 = "It's all your fault bro, it's all your fault..",
+
+		mission_failed_7_part_1 = "Don't come to my spot bro, fuck you bro.",
+
+		mission_failed_8_part_1 = "Ay bro, fuck off till you clear my packs bro.",
+
+		mission_failed_9_part_1 = "Ay bro, fuck off till you clear my pack.",
+		mission_failed_9_part_2 = "Nah bro, don't ever come back to me until my tings done bro.",
+		mission_failed_9_part_3 = "You fucked up big time, get out of 'ere bro.",
+
+		mission_failed_10_part_1 = "Yo bro, you better pray that you make it home tonight bro.",
+		mission_failed_10_part_2 = "'cos I'm coming for you bro.",
+		mission_failed_10_part_3 = "Yo bro, don't ever fail me again bro, I swear to god bro.",
+
+		no_pills_1_part_1 = "Yoo wag1 bro, basically.. It's a bit of a sticky one.",
+		no_pills_1_part_2 = "'cos I don't have anything right now.",
+		no_pills_1_part_3 = "So basically, what I'ma say..",
+		no_pills_1_part_4 = "Fuck off bro, come back another time.",
+
+		no_pills_2_part_1 = "Yeah, what you sayin' bro. Ay basically it's a- it's a bit fucked right now..",
+		no_pills_2_part_2 = "'cos I don't have nothin' right now. Don't have no pills bro!",
+		no_pills_2_part_3 = "Yeah, they- they fucked me! I got nothin' bro!",
+		no_pills_2_part_4 = "Ay, I- I called these lot, I said.. Yo wag1 though, wheres the pills at?..",
+		no_pills_2_part_5 = "My man said they're not even here bro.",
+		no_pills_2_part_6 = "These lot travelling on some sort of Liberty City thing or somethin' bro like..",
+		no_pills_2_part_7 = "They taking too long bro.",
+		no_pills_2_part_8 = "But trust me, when I got more, I'ma definitely hit you up on that bro.",
+
+		no_pills_3_part_1 = "Yo, what you sayin' my guy?",
+		no_pills_3_part_2 = "We got no pills right now bro, so why don't you fuck off bro?",
+		no_pills_3_part_3 = "Before I start getting pissed, you know what I'm sayin'?",
+
+		no_pills_4_part_1 = "Yoo, wag1 bro? No pills right now, so bun.. bun bro..",
+		no_pills_4_part_2 = ".. bun, you're done bro, fuck off bro.",
+		no_pills_4_part_3 = "Get out of here bro, you're done.",
+
+		no_pills_5_part_1 = "Yoooooo.. my guy!",
+		no_pills_5_part_2 = "What you saying bro? Ay, I can't lie, we don't have nothin' right now.",
+		no_pills_5_part_3 = "So it's a bit peak for you right now.",
+		no_pills_5_part_4 = "But basically, come back in a bit and I got you.",
+		no_pills_5_part_5 = "Love bro.",
+
+		no_pills_6_part_1 = "Bro.. I told about 2 people before you I got nothin' right now..",
+		no_pills_6_part_2 = "So why don't you listen to your lil' boys and go fuck yourselves as a collective my man.",
+		no_pills_6_part_3 = "You know what I'm sayin'? That's it you're done out 'ere bro, fuck you bro.",
+
+		no_pills_7_part_1 = "Yeah I'm the BIG thing around 'ere, you know what I'm sayin'?",
+		no_pills_7_part_2 = "But the big thing got no big pills right now.. so basically your small thing gotta fuck off.",
+		no_pills_7_part_3 = "You know what I'm sayin'?.",
+
+		no_pills_8_part_1 = "Yo, yo, what you sayin'?",
+		no_pills_8_part_2 = "Ay, ay, ay, I got- I gotta lie low bro.",
+		no_pills_8_part_3 = "Yeah, ay I can't lie.. there were some feds that came around earlier..",
+		no_pills_8_part_4 = "We got no pills right now. You know what I'm sayin'.",
+		no_pills_8_part_5 = "It's off for me right now. Come back later though when the heat dies down bro.",
+
+		no_pills_9_part_1 = "Yeah, ay I can't lie some dickheads earlier, they run up to me and they took my shit bro.",
+		no_pills_9_part_2 = "But don't worry I got the ooters on 'em right now.",
+		no_pills_9_part_3 = "So when we get the pills, definitely come back and I'll bail you, I got that bro.",
+
+		no_pills_10_part_1 = "Yoo, what you sayin' bro?",
+		no_pills_10_part_2 = "Yeah, right now, there's some dickhead gang up north or somethin' bro.",
+		no_pills_10_part_3 = "They robbed that thing, so we're gonna go there together, get that back and we're gonna bail you bro.",
+		no_pills_10_part_4 = "Love for that.",
+
+		no_pills_11_part_1 = "Yoo, what you sayin'? Yeah there's nothin' right now bro.. there's nothin' right now.",
+		no_pills_11_part_2 = "It's a bit peak for you right now. There's nothin' right now.",
+		no_pills_11_part_3 = "But basically, I'ma tell you this right what I tell to everyone..",
+		no_pills_11_part_4 = "Why don't you FUCK OFF bro.. and come back later. Love.",
+
+		no_pills_12_part_1 = "Nah I got nothin' on me right now bro.",
+		no_pills_12_part_2 = "Come back later man, come back later..",
+
+		no_pills_13_part_1 = "Bro! Fuck off man! I got nothin' bro!",
+		no_pills_13_part_2 = "I got nothin' bro! Ay, be quiet bro!",
+
+		no_pills_14_part_1 = "Look bro, I told you, I got no pills right now.",
+		no_pills_14_part_2 = "So if you're tryna get ching bro, come at me one more time, I beg you bro.",
+
+		no_pills_15_part_1 = "Nah, listen to me bro.. you're pissing me off right now.",
+		no_pills_15_part_2 = "I can't even lie to you about that.",
+		no_pills_15_part_3 = "So I'm actually gonna start chinging man up if you don't fuck off bro.",
+
+		not_leaving_1_muffled_part_1 = "Alright, why is bro still posted?",
+		not_leaving_1_muffled_part_2 = "Is he a fed?",
+		not_leaving_1_muffled_part_3 = "Ay, oi.. check him if he's a fed bro, check him if he's a fed bro.",
+
+		not_leaving_2_part_1 = "Oi fuck off bro, get out of here bro.",
+
+		not_leaving_3_part_1 = "Bro, can you stop being here right now..",
+		not_leaving_3_part_2 = "I'm tryna do somethin'. You know what I'm sayin'.",
+		not_leaving_3_part_3 = "I'm tryna lips my bird bro, and you're out 'ere staring at me like some sort of dickhead bro.",
+		not_leaving_3_part_4 = "Fuck off bro.",
+
+		not_leaving_4_part_1 = "Oi, PLEASE bro, get out of here bro.",
+		not_leaving_4_part_2 = "Ah- I swear to god bro.",
+
+		not_leaving_5_part_1 = "Bro you're taking the piss now, I can't lie..",
+		not_leaving_5_part_2 = "I'm actually gonna come over there and wet you up my guy.",
+		not_leaving_5_part_3 = "You better fuck off real quickly bro.",
+
+		not_leaving_6_part_1 = "Bro.. I'm the big boss around here bro.",
+		not_leaving_6_part_2 = "Stop acting like you own the place and fuck off and do my thing bro.",
+
+		not_leaving_7_part_1 = "Oi I swear to god, you do this again I'ma call the backup dancers bro.",
+		not_leaving_7_part_2 = "They're gonna do somethin' different to you bro.",
+
+		not_leaving_8_muffled_part_1 = "Alright, wet him up bro, wet him up.. he's taking too long.",
+
+		not_leaving_9_part_1 = "Broo, don't get me to bring out the big chinga bro.",
+		not_leaving_9_part_2 = "I'll beg you stop stepping on MY block right there bro.",
+		not_leaving_9_part_3 = "You better back off your ting and do your ting right now, you're taking too long bro.",
+		not_leaving_9_part_4 = "You're in MY house and MY crib, you think you're some big sorta guy bro.",
+		not_leaving_9_part_5 = "You wait bro, I'ma FUCK you up bro.",
+
+		not_leaving_10_muffled_part_1 = "Yeah this guy's getting gassed in the corner like he owns my block or somethin' bro.",
+
+		not_leaving_11_part_1 = "Ay, move on init, move on bro..",
+		not_leaving_11_part_2 = "You're done over here bro.",
+
+		not_leaving_12_muffled_part_1 = "Ay, it's a sticky one for this guy.",
+		not_leaving_12_muffled_part_2 = "He's taking too long bro, ay fuck off bro!",
+		not_leaving_12_muffled_part_3 = "I can see you right now, fuck off bro!",
+
+		not_leaving_13_muffled_part_1 = "Bruv! This guy's taking way too long on suttin' like..",
+		not_leaving_13_muffled_part_2 = "He's a dickhead.. he's gotta be a dickhead or suttin' bro..",
+		not_leaving_13_muffled_part_3 = "He's definitely a dickhead.",
+
+		start_1_part_1 = "Oi bro, broo.. ay, come here, come here..",
+		start_1_part_2 = "Yo, ay ay.. You tryna run some more oxy bro?",
+		start_1_part_3 = "Ayy, love for that, love for that..",
+		start_1_part_4 = "Ay, you know what to do though alright?",
+		start_1_part_5 = "Ay, I'ma basically though, I'ma send you the ping right now though.",
+		start_1_part_6 = "Love though.",
+
+		start_2_part_1 = "Ay, wag1 bro! Come over here real quick my guy!",
+		start_2_part_2 = "Yeah yeah.. You tryna run the oxy again bro?",
+		start_2_part_3 = "Love for that brooo.",
+		start_2_part_4 = "You know what to do though alright, of course you do bro.",
+
+		start_3_part_1 = "Ay.. ay bro, come here bro, come here bro.",
+		start_3_part_2 = "You tryna run some oxy again bro?",
+		start_3_part_3 = "Is it? Oi, come.. come.. you're not a fed though right?",
+		start_3_part_4 = "Ok.. ok.. Love though, ay, ay, you know what to do though, I'ma send you the ping and all of that bro.",
+
+		start_4_part_1 = "Ay! Are you that dickhead from last time?!",
+		start_4_part_2 = "Oi, come here bro! You done a good job last time I can't lie to you about that..",
+		start_4_part_3 = "So basically yeah.. run that again bro, you know what to do, I'ma send you the ping my guy.",
+		start_4_part_4 = "Love for that.",
+
+		start_5_part_1 = "Ay come here you little dickhead bro!",
+		start_5_part_2 = "Yeah, yeah, yeah.. I kno- I knew who you are bro..",
+		start_5_part_3 = "Don't tell me, I don't care who you are bro.. but I know who you are.",
+		start_5_part_4 = "But basically what I want you to do though, is I need you to run the oxy pills again.",
+		start_5_part_5 = "You know the things from last time bro? You know the drill though right?",
+		start_5_part_6 = "So I'ma send you the thing on the phone bro, Love for that.",
+
+		start_6_part_1 = "Yooo, is it my guy from over there! What you sayin' bro!",
+		start_6_part_2 = "Ayy, wag1 and all of that.. my guy.",
+		start_6_part_3 = "Ay, basically though.. I can't lie I need you again for a little mission like..",
+		start_6_part_4 = "Yeah yeah, you kno- you know what I'm on about, you know what I'm on about..",
+		start_6_part_5 = "The oxy, yeah yeah, of course you do. Ay, basically I'm gonna send you the thing on the phone.",
+		start_6_part_6 = "You do what you have to do big bro, love for that.",
+
+		start_7_part_1 = "Yeah, yeah, yeah, yeah, yeah, it's- hey, it's this dickhead from earlier bro!",
+		start_7_part_2 = "I remember this guy! Yeah, ay, you're a funny guy bro, I like you, I like you..",
+		start_7_part_3 = "Oi, I need you to run me the oxy again though I can't lie. So hurry that up big man.",
+		start_7_part_4 = "I'ma send you the ping, I'ma send you the details.. Yeah, yeah..",
+		start_7_part_5 = "And remember though..",
+		start_7_part_6 = "Half of that's mine, so don't- don't go taking none of that or I swear to god I'ma ching you out 'ere bro, ok.",
+
+		start_8_look_to_sides_part_1 = "Ay bro, I swear I saw Gogginschmiel go past right there bro..",
+		start_8_look_to_sides_part_2 = "Ay come here, come here, come here bro, stop tryna be bait bro.",
+		start_8_look_to_sides_part_3 = "Yo, yo.. what I need you to do for me right now though, is I need you to go get them pills for me.",
+		start_8_look_to_sides_part_4 = "I need you to run them pills for me alright boss man.",
+		start_8_look_to_sides_part_5 = "I'ma send you the details on the encro bro you know the drill right now.",
+		start_8_look_to_sides_part_6 = "But keep your head low, 'cos I been spotting bare feds go past like that ok?",
+		start_8_look_to_sides_part_7 = "If you get caught though! Don't snitch to me 'cos you're dead brudda!",
+		start_8_look_to_sides_part_8 = "You see what I'm sayin'? Love for that.",
+
+		start_9_look_to_sides_part_1 = "Yo I can't lie I just seen a cop go past there bro!",
+		start_9_look_to_sides_part_2 = "You sure you weren't getting followed or none of that?",
+		start_9_look_to_sides_part_3 = "'cos I- ay I can't lie FIB right now are doing some next level shit bro.",
+		start_9_look_to_sides_part_4 = "They got bare choppers in the air and shit bro.",
+		start_9_look_to_sides_part_5 = "I'm all seeing and all knowing bro. Trust me on that.",
+		start_9_look_to_sides_part_6 = "Yeah yeah.. he was fully on you earlier bro, you remember- you remember that charger you went past bro?",
+		start_9_look_to_sides_part_7 = "But he didn't turn the lights on? Trust me though..",
+		start_9_look_to_sides_part_8 = "Yeah I know that, I know that.",
+
+		start_burger_shot_part_1 = "Yo I seen you at Burger Shot one time.. you flip patties init?",
+		start_burger_shot_part_2 = "Yeah I can't lie, you defo need this bread.",
+
+		start_cop_1_part_1 = "Yo I can smell a fed from Maze Bank bro..",
+		start_cop_1_part_2 = "I can tell you're a fed.",
+		start_cop_1_part_3 = "Better call backup before I get to airing out your little boy cop car bro.",
+
+		start_cop_2_part_1 = "Ay wag1 officer, nah we just helping out the sick people of Blaine County.",
+		start_cop_2_part_2 = "Nothin' illegal going over here bro.",
+
+		start_gang_member_part_1 = "I swear I saw you get clapped by that one gang..",
+		start_gang_member_part_2 = "Yeaah yeaah, you defo got shat on, I can tell with that dickhead face paint.",
+
+		start_group_part_1 = "Yo I heard you boys wanna go and uh- run some oxy for me like that.",
+		start_group_part_2 = "I can't lie, the more the merrier right now, but I can only give the pills to one of you mandem.",
+		start_group_part_3 = "So make sure you take that nicely, go with your little squad or whatever and go get this shit done bro.",
+		start_group_part_4 = "'cos time is money right now bro, you see what I'm sayin'",
+		start_group_part_5 = "You're taking too long standing 'ere bro, hurry up man, fuck off bro.",
+
+		start_knife_part_1 = "Ookayy, that's a big rambo on your waist my bro!",
+		start_knife_part_2 = "Bro better not swing that thing around 'ere 'cos it's gonna get peak for you my brother!",
+
+		start_last_fail_part_1 = "Yooo, is it my guy from over there, what you sayin' bro? Ay, wag1 and all of that, my guy!",
+		start_last_fail_part_2 = "Ay basically though.. I can't lie I need you again for a little mission like..",
+		start_last_fail_part_3 = "Yeah yeah.. you know- you know what I'm on about, you know what I'm on about, the oxy, yeah, yeah of course you do.",
+		start_last_fail_part_4 = "Ay, basically I'm gonna send you the thing on the phone.",
+		start_last_fail_part_5 = "You do what you have to do big bro, love for that.",
+
+		start_legendary_tier_part_1 = "Ohhh, so you're big ballin' like that?",
+		start_legendary_tier_part_2 = "Legendary tier, okayy, looks like you might have to buy the whole floor for EDM my brother!",
+		start_legendary_tier_part_3 = "Come on.",
+
+		start_mechanic_part_1 = "Yoo, you repair cars init?",
+		start_mechanic_part_2 = "Yo g, after this I'ma need you to tune up my Asbo 'cos the dinga got too many dents in it bro.",
+
+		start_mercedes_part_1 = "Yo I love that Mercedes you got bro!",
+		start_mercedes_part_2 = "I can't lie I'ma need that off you when you're finished 'ere with this little thing right 'ere bro.",
+
+		start_no_gun_part_1 = "Bro comin' here on a friendly visit like you're not gonna get robbed.",
+		start_no_gun_part_2 = "You're lucky the ooters are out right now but..",
+		start_no_gun_part_3 = "Stay strapped next time yo.",
+
+		start_on_timer_1_part_1 = "Ay I can't lie to you bro, you failed the last one so what you doin' over here bro?",
+		start_on_timer_1_part_2 = "Nahh bro, come back later when you decide to get your act together you DICKhead.",
+
+		start_on_timer_2_part_1 = "Nahh bro, last time you failed me bro..",
+		start_on_timer_2_part_2 = "Go fuck off and do somethin' else my man.",
+
+		start_on_timer_3_part_1 = "Is it? You think you can come around here after fucking up like that bro?",
+		start_on_timer_3_part_2 = "Nah you better fuck off before I get the ooters on you bro!",
+
+		start_on_timer_4_part_1 = "Yeah I can't lie last time you fucked up bare bro..",
+		start_on_timer_4_part_2 = "I can't lie it's gonna look a bit peak for you if you stay here for about 2 more seconds my boy..",
+
+		start_on_timer_5_part_1 = "Yoo, what you sayin' g?",
+		start_on_timer_5_part_2 = "I can't lie you fucked up last time bro, you didn't even get the pills bro.",
+		start_on_timer_5_part_3 = "Like you fucked up big time bro like..",
+		start_on_timer_5_part_4 = "Don't come down here ever again bro! You know what I'm sayin'?",
+		start_on_timer_5_part_5 = "I know your name, I seen your face bro. You're finished out here bro.",
+
+		start_on_timer_6_part_1 = "Yeah this guy thinks he's a bad boy init? Fuckin' up and comin' back to me and actin' all sorry like..",
+		start_on_timer_6_part_2 = "Nahh bro, it don't work like that around here bro.",
+		start_on_timer_6_part_3 = "You better fuck off right now my guy!",
+
+		start_on_timer_7_part_1 = "Yeah I can't lie, this guy FUCKED up..",
+		start_on_timer_7_part_2 = "You see this guy over here? You see this dickhead right here yeah?",
+		start_on_timer_7_part_3 = "He fucked up bro, ay bro come here bro!",
+		start_on_timer_7_part_4 = "Yeah I can't lie, you're a dickhead, get out of here bro, come back later man.",
+
+		start_on_timer_8_part_1 = "Yeah you're some typea guyy bro..",
+		start_on_timer_8_part_2 = "This guy goes around MY thing bro.. fucks up MY thing bro.. pisses off MY people bro.",
+		start_on_timer_8_part_3 = "Then comes back he expecting a re-up, expect to get PAID bro!",
+		start_on_timer_8_part_4 = "Expect to get the bread bro.. you ain't getting no bread bro..",
+		start_on_timer_8_part_5 = "You're getting crumbs bro.. get the FUCK off my block bro!",
+		start_on_timer_8_part_6 = "Get out of here bro, you are done and all of that.",
+		start_on_timer_8_part_7 = "The phone just pinged aswell bro, you're finished bro! I got someone else on this thing bro.",
+
+		start_over_31d_part_1 = "Yo I can't lie bro! You been here for too long..",
+		start_over_31d_part_2 = "I beg you go touch something quickly and come back bro.",
+
+		start_over_100k_part_1 = "Why you pushin' grub when you got over a 100 bags to your name?",
+		start_over_100k_part_2 = "That ain't in cash right? 'cos I'ma defo send the ooters to rob you bro.",
+
+		start_revving_part_1 = "Aite if you keep revving that piece of shit car bro, we finna have problems.",
+		start_revving_part_2 = "Relax your foot, before I relax you bro!",
+
+		start_staff_1_part_1 = "Ay yo bro.. ain't you meant to be like banning dickheads and other dickhead shit instead of talking to me?",
+		start_staff_1_part_2 = "Fuck it, I need the bread but I'm watching you admins.",
+
+		start_staff_2_part_1 = "Broo, you're like the second moderator to be running oxy today..",
+		start_staff_2_part_2 = "You lot need to be on job, not on this job though.",
+
+		start_streamer_part_1 = "Yoooo, that's that one guy who thinks he's some big streamer!",
+		start_streamer_part_2 = "Yo Ls in the chat, fuck this guy bro!",
+
+		start_stressed_part_1 = "Bro! Why your hands shaking?!",
+		start_stressed_part_2 = "Go take a smoke break or somethin' bro 'cos you're movin' too stress right now.",
+
+		start_subaru_part_1 = "Ay that Subaru better be good off-road g!",
+		start_subaru_part_2 = "'cos this trail I'ma take you on is a different one!",
+
+		start_under_10k_part_1 = "Broo, I know you got like under 10k to your name!",
+		start_under_10k_part_2 = "So why don't you go take your broke arse and these pills to the location.. quickly my brother.",
+
+		start_under_24h_part_1 = "You're a beast bro! Keep it pushin'.",
+
+		start_zombie_pills_part_1 = "Okay so you just banged out Z Pills and now you wanna bang out Oxy Pills..",
+		start_zombie_pills_part_2 = "Naah you're definitely a crackhead!",
+
+		still_pressing_e_1_part_1 = "Aite bro, why you bein' bait bro?",
+		still_pressing_e_1_part_2 = "Stop comin' back to the spot bro. Bro I sent you the ping, check your phone my guy.",
+		still_pressing_e_1_part_3 = "Yeah yeah, check that.. check that..",
+
+		still_pressing_e_2_part_1 = "Brooo, are you- are you some sorta stupid guy or somethin'?",
+		still_pressing_e_2_part_2 = "Bro I just sent you the ping bro, are you fuckin' blind or somethin' bro?",
+		still_pressing_e_2_part_3 = "Check that phone bro, fuck off bro!",
+
+		still_pressing_e_3_part_1 = "Ay I can't lie, you do this one more time to me again, I told you too many times my guy..",
+		still_pressing_e_3_part_2 = "If you do that again, I'ma definitely send the ooters after you bro.",
+
+		still_pressing_e_4_part_1 = "You're takin' the piss now, fuck off bro!",
+
+		still_pressing_e_5_part_1 = "Brooo, are you fuckin' stupid or somethin'?",
+		still_pressing_e_5_part_2 = "Keep comin' back to man chattin' to me like that with your big boy voice?",
+		still_pressing_e_5_part_3 = "Ay you better back off right now, I swear to god I'ma fuck you up bro!",
+
+		still_pressing_e_6_muffled_part_1 = "Ay this guy's a dickhead though..",
+
+		still_pressing_e_7_muffled_part_1 = "Ay init this guy's a dickhead bro.",
+		still_pressing_e_7_muffled_part_2 = "He definitely a dickhead, he keeps comin' back!",
+		still_pressing_e_7_muffled_part_3 = "He thinks I'm gonna get more pissed, I'm not getting more pissed bro!",
+
+		still_pressing_e_8_part_1 = "Oi I can't lie you're starting to real piss me off now..",
+		still_pressing_e_8_part_2 = "So stop pressing that bro.",
+
+		still_pressing_e_9_part_1 = "Oi I can't lie if you keep pressing fuckin' E bro.",
+		still_pressing_e_9_part_2 = "I'ma go meta and I'ma blow you up in this bitch bro, fuck you bro.",
+
+		taking_too_long_1_part_1 = "Ay bro, you're taking a bit too long my guy, you know what I'm sayin'..",
+		taking_too_long_1_part_2 = "You better hurry that thing up quickly though.",
+
+		taking_too_long_2_part_1 = "Ay, if you keep takin' long we're gonna have big boy problems for you, you know what I'm sayin'?",
+		taking_too_long_2_part_2 = "You're too late bro, you're too late right now.. hurry up bro.",
+
+		taking_too_long_3_part_1 = "Yoo bro, you're takin' way too long bro, you tryna steal my job or somethin' bro?",
+
+		taking_too_long_5_part_1 = "Yo you think you're bare funny init? You think this is some type of joke big man?",
+		taking_too_long_5_part_2 = "Ay, come.. I beg you come to me right now bro, see what happens to you bro.",
+
+		taking_too_long_6_part_1 = "Ay you BEST not be takin' the piss bro.. I want my shit NOW fam..",
+		taking_too_long_6_part_2 = "Hurry the fuck up bro.",
+
+		taking_too_long_7_part_1 = "Bro I know what car you're drivin'..",
+		taking_too_long_7_part_2 = "I see you when you left bro, don't think you're safe.",
+
+		taking_too_long_8_part_1 = "Aite, that's it though.. this is the last chance bro.",
+		taking_too_long_8_part_2 = "If you take long again, I'ma dial up the ooters and it's gonna get sticky for you my guy.",
+		taking_too_long_8_part_3 = "So you better hurry the fuck up quickly bro... clock's ticking bro.",
+
+		too_many_people_1_part_1 = "Oi I can't lie, there's bare people around me right now bro!",
+		too_many_people_1_part_2 = "Why are you all here? You tryna like take over the spot or somethin' bro?",
+		too_many_people_1_part_3 = "'cos I swear to god I got ooters and matics about ready to kill someone.",
+		too_many_people_1_part_4 = "You see what I'm sayin' bro..",
+		too_many_people_1_part_5 = "BACK off all of you bro, I said ALL of you bro, yeah that means you bro, fuck you bro!",
+
+		too_many_people_2_part_1 = "Yo I can't lie, there's too many people right now bro..",
+		too_many_people_2_part_2 = "You're movin' kinda bait right now with all these man next to you and all of that bro.",
+		too_many_people_2_part_3 = "You said there was only be 1 of you around these parts bro, not like 4 of you dickheads bro..",
+		too_many_people_2_part_4 = "I don't care if you're in some sort of gang bro, do I give a fuck bro? No bro..",
+		too_many_people_2_part_5 = "Back you and your people up right now before it gets serious brother.",
+
+		tutorial_1_part_1 = "Ay what's good bro? You tryna run some oxy for me bro?",
+		tutorial_1_part_2 = "Yoo that's good! Ay, I can't lie to you right now bro I been lookin' for some help on all of that bro.",
+		tutorial_1_part_3 = "Ay, ay listen here- listen here though..",
+		tutorial_1_part_4 = "I've got a bunch of forge prescriptions yeah.. made for me around up north bro.",
+		tutorial_1_part_5 = "Yeah but I can't lie I'ma need you to pick up these things though for me though-",
+		tutorial_1_part_6 = "And then what I need you to do- Oi listen to me bro when I'm speaking to you bro!",
+		tutorial_1_part_7 = "Take them down to the city right.. and redeem them!",
+		tutorial_1_part_8 = "Yeah.. yeah.. you need to redeem them bro.",
+		tutorial_1_part_9 = "Yeah I'ma send you the details on the phone though so just check your GPS and all of that bro I got you bro..",
+		tutorial_1_part_10 = "But oi.. you better not take too long.. otherwise I'ma have to get the ooters on you bro.",
+		tutorial_1_part_11 = "And trust me that's not lookin' good for you right there, I can't lie about that.",
+		tutorial_1_part_12 = "Yeah lets get going big bro.. stop speaking to me bro, stop looking at my face bro and hurry the fuck up bro.",
+
+		tutorial_2_part_1 = "Oi what's good bro? You tryna run some oxy for me bro?",
+		tutorial_2_part_2 = "Yoo, that's good! Ay, I can't lie to you right now bro I been lookin' for some help on all of that bro.",
+		tutorial_2_part_3 = "Yo bro, I got a bunch of forge prescriptions made for me around up north here bro.",
+		tutorial_2_part_4 = "Ay what I'll need you to do though, is run down and pick up these prescriptions for me bro-",
+		tutorial_2_part_5 = "Yeah, and then listen here though- listen here though, take them down to the city bro, and redeem it at the pharmacies.",
+		tutorial_2_part_6 = "Yeah, yeah, yeah, yeah..",
+		tutorial_2_part_7 = "Yeah I'ma send you the details on the phone though, so just check your GPS and all of that bro, I got you bro.",
+		tutorial_2_part_8 = "But oi.. you better not take too long.. otherwise I'ma have to get the ooters on you bro.",
+		tutorial_2_part_9 = "And trust me that's not lookin' good for you right there, I can't lie about that.",
+		tutorial_2_part_10 = "Yeah lets get going big bro, stop speaking to me bro, stop lookin' at my face bro and hurry the fuck up bro.",
+
+		tutorial_3_part_1 = "Yo what's good my brother? Basically, are you tryna run some oxy for me right now?",
+		tutorial_3_part_2 = "Yeah.. yeah.. that's good though, cos I can't lie I've been lookin' for some help on all of that.",
+		tutorial_3_part_3 = "Yeah, yeah, yeah.. I got a bunch of forge prescriptions made for me around here up north. Trust me on that though.",
+		tutorial_3_part_4 = "Yeah but I can't lie though, I'ma need YOU, to pick up the prescriptions for me yeah-",
+		tutorial_3_part_5 = "And then basically, take them down to the city and redeem them at all the different pharmacies and all of that bro.",
+		tutorial_3_part_6 = "Yeah I got you though, 'cos what I'ma do right now yeah..",
+		tutorial_3_part_7 = "You see the encro bro? I'ma send you the details on the encro, so check your GPS my brother.",
+		tutorial_3_part_8 = "You better not take too long though or definitely gonna get the ooters on you so hurry that up big man.",
+		tutorial_3_part_9 = "Yeah lets get going big bro, stop speaking to me bro, stop lookin' at my face bro and hurry the fuck up bro.",
+		tutorial_3_part_10 = "Love bro, love."
 	},
 
 	panel = {
@@ -8520,6 +9113,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		no_radio = "You don't have a radio.",
 		unable_to_use_radio_while_cuffed = "You can not use the radio while you are cuffed.",
 		unable_to_use_radio_while_down = "You can not use the radio while you are down.",
+		unable_to_use_radio_as_animal = "You can not use the radio as an animal.",
 		frequency_set_to_streamer = "The frequency has been set.",
 		frequency_set_to = "The frequency has been set to ${frequency}.",
 		frequency_already_set_to = "The frequency is already set to ${frequency}.",
@@ -10248,6 +10842,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		cannot_respawn_currently = "You cannot respawn currently",
 		hold_to_respawn = "Hold ~b~ENTER ~w~to respawn or wait for a paramedic to arrive",
 		hold_to_respawn_secondslol = "Hold ~b~ENTER (${seconds}) ~w~to respawn or wait for a paramedic to arrive",
+		passed_out = "You have passed out",
 		light = "Light",
 		moderate = "Moderate",
 		heavy = "Heavy",
