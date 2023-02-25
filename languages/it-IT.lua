@@ -32,16 +32,17 @@ OP.Global.Locales.Languages["it-IT"] = {
 		put_player_in_trunk = "Premi ~INPUT_ENTER~ per mettere un giocatore nel bagagliaio.",
 		put_ped_in_trunk = "Premi ~INPUT_ENTER~ per mettere un PED nel bagagliaio.",
 		put_bicycle_in_trunk = "Premi ~INPUT_ENTER~ per mettere la bici nel bagagliaio.",
+		put_player_in_seat = "[${VehicleEnterKey}] Colloca sul sedile",
 		trunk_interaction_display = "[${VehicleEnterKey}] Climb Out [${InteractionKey}] Apri/Chiudi Bagagliaio",
 		trunk_open_close_display = "[${InteractionKey}] Aperto/Chiuso Bagagliaio",
-		boombox_already_in_trunk = "Ci sta gia uno stereonel bagagliaio.",
+		boombox_already_in_trunk = "Ci sta già uno stereo nel bagagliaio.",
 		the_trunk_is_occupied = "Il bagagliaio e occupato.",
 		unable_to_toggle_carry = "Perfavore aspetta un po prima di Attivare/Disattivare il carry.",
 		carry_disabled_animal = "Animali non possono essere trasportati.",
 
-		cancel_piggyback = "Premi ~INPUT_FRONTEND_RRIGHT~ per cancellare piggyback.",
-		piggyback_hop_on = "[E] salta su",
-		stop_piggyback = "Premi ~INPUT_VEH_HEADLIGHT~ per stoppare piggybacking.",
+		cancel_piggyback = "Press ~INPUT_FRONTEND_RRIGHT~ to cancel piggyback.",
+		piggyback_hop_on = "[E] hop on",
+		stop_piggyback = "Press ~INPUT_VEH_HEADLIGHT~ to stop piggybacking.",
 
 		lockpicking_cuffs = "Scassinando Manette",
 		lockpick_cuffs_too_fast = "Ti sei mosso troppo velocemente..",
@@ -102,6 +103,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		spawned_vehicle_for_everyone = "Generato con successo `${modelName}` per tutti.",
 		spawn_vehicle_for_player_not_staff = "Il giocatore ha tentato di generare un veicolo per qualcun altro, ma non avevano le autorizzazioni richieste per farlo.",
 		spawn_vehicle_for_self_not_staff = "Il giocatore ha tentato di generare un veicolo per se stesso, ma non avevano le autorizzazioni richieste per farlo.",
+		replace_vehicle_no_permissions = "Player attempted to replace their vehicle but they didn't have the required permissions to do so.",
+		create_vehicle_no_permissions = "Player attempted to create a vehicle but they didn't have the required permissions to do so.",	
 		spawned_vehicle_for_self_title = "Veicolo generato",
 		spawned_vehicle_for_self_details = "${consoleName} ha generato un veicolo con il nome del modello `${modelName}`.",
 		spawned_vehicle_for_player_title = "Veicolo generato per il giocatore",
@@ -109,64 +112,67 @@ OP.Global.Locales.Languages["it-IT"] = {
 		spawned_vehicle_for_everyone_title = "Veicolo generato per tutti",
 		spawned_vehicle_for_everyone_details = "${consoleName} ha generato un veicolo con il nome del modello `${modelName}` for everyone.",
 
-		invalid_amount = "importo non valido.",
+		vehicle_created = "Successfully created vehicle.",
+		failed_vehicle_creation = "Failed to create vehicle.",
 
-		added_cash_title = "Aggiunti contanti",
-		added_cash_details = "${consoleName} aggiunti $${amount} Contanti.",
-		added_cash_to_player_title = "Aggiunti contanti al giocatore",
-		added_cash_to_player_details = "${consoleName} aggiunti $${amount} contanti a ${targetConsoleName}.",
-		added_cash_to_everyone_title = "Aggiunti contanti a tutti",
-		added_cash_to_everyone_details = "${consoleName} aggiunti $${amount} contanti a tutti.",
+		invalid_amount = "Invalid amount.",
 
-		removed_cash_title = "Rimosso contanti",
-		removed_cash_details = "${consoleName} rimossi $${amount} Contanti.",
-		removed_cash_from_player_title = "Rimosso contanti dal giocatore",
-		removed_cash_from_player_details = "${consoleName} rimossa $${amount} contanti da ${targetConsoleName}.",
-		removed_cash_from_everyone_title = "Rimosso contanti a tutti",
-		removed_cash_from_everyone_details = "${consoleName} rimossa $${amount} contanti da tutti.",
+		added_cash_title = "Cash aggiunto",
+		added_cash_details = "${consoleName} aggiunto $${amount} cash.",
+		added_cash_to_player_title = "Cash aggiunto al giocatore",
+		added_cash_to_player_details = "${consoleName} aggiunto $${amount} cash ${targetConsoleName}.",
+		added_cash_to_everyone_title = "aggiunto cash a tutti",
+		added_cash_to_everyone_details = "${consoleName} aggiunto $${amount} cash a tutti.",
+
+		removed_cash_title = "Cash rimosso",
+		removed_cash_details = "${consoleName} Rimosso $${amount} cash.",
+		removed_cash_from_player_title = "Rimosso cash da tutti i player",
+		removed_cash_from_player_details = "${consoleName} Rimosso $${amount} cash da ${targetConsoleName}.",
+		removed_cash_from_everyone_title = "Rimosso cash da tutti",
+		removed_cash_from_everyone_details = "${consoleName} Rimosso $${amount} cash da tutti.",
 
 		added_bank_title = "Banca aggiunta",
-		added_bank_details = "${consoleName} aggiunto $${amount} banca.",
-		added_bank_to_player_title = "Banca aggiunta al giocatore",
-		added_bank_to_player_details = "${consoleName} aggiunto $${amount} banca a ${targetConsoleName}.",
-		added_bank_to_everyone_title = "Banca aggiunta a tutti",
-		added_bank_to_everyone_details = "${consoleName} aggiunto $${amount} banca a tutti.",
+		added_bank_details = "${consoleName} Aggiunta $${amount} banca.",
+		added_bank_to_player_title = "Aggiunta banca al player",
+		added_bank_to_player_details = "${consoleName} aggiunta $${amount} banca a ${targetConsoleName}.",
+		added_bank_to_everyone_title = "aggiunta banca a tutti",
+		added_bank_to_everyone_details = "${consoleName} aggiunta $${amount} banca a tutti.",
 
-		removed_bank_title = "Banca rimossa",
-		removed_bank_details = "${consoleName} rimossa $${amount} banca.",
-		removed_bank_from_player_title = "Banca rimossa dal giocatore",
-		removed_bank_from_player_details = "${consoleName} Rimosso $${amount} Banca da ${targetConsoleName}.",
-		removed_bank_from_everyone_title = "Banca rimossa da tutti",
-		removed_bank_from_everyone_details = "${consoleName} Rimosso $${amount} banca di tutti.",
+		removed_bank_title = "Rimossa banca",
+		removed_bank_details = "${consoleName} Rimossa $${amount} banca.",
+		removed_bank_from_player_title = "Rimossa banca dal player",
+		removed_bank_from_player_details = "${consoleName} Rimossa $${amount} banca da ${targetConsoleName}.",
+		removed_bank_from_everyone_title = "Rimossa banca da tutti",
+		removed_bank_from_everyone_details = "${consoleName} Rimossa $${amount} banca da tutti.",
 
-		added_cash = "Aggiunto $${amount} Contanti.",
-		added_cash_to_player = "Aggiunto $${amount} contanti a ${targetConsoleName}.",
-		added_cash_to_everyone = "Aggiunto $${amount} contanti a tutti.",
+		added_cash = "Aggiunto $${amount} cash.",
+		added_cash_to_player = "Aggiunto $${amount} cash a ${targetConsoleName}.",
+		added_cash_to_everyone = "Aggiunto $${amount} cash a tutti.",
+		
+		removed_cash = "Rimosso $${amount} cash.",
+		removed_cash_from_player = "Rimosso $${amount} cash da ${targetConsoleName}.",
+		removed_cash_from_everyone = "Rimosso $${amount} cash cash da tutti.",
 
-		removed_cash = "Rimossa $${amount} Contanti.",
-		removed_cash_from_player = "Rimossa $${amount} contanti da ${targetConsoleName}.",
-		removed_cash_from_everyone = "Rimossa $${amount} contanti da tutti.",
-
-		added_bank = "Aggiunto $${amount} banca.",
-		added_bank_to_player = "Aggiunto $${amount} banca a ${targetConsoleName}.",
-		added_bank_to_everyone = "Aggiunto $${amount} banca a tutti.",
+		added_bank = "Aggiunta $${amount} banca.",
+		added_bank_to_player = "Aggiunta $${amount} banca a ${targetConsoleName}.",
+		added_bank_to_everyone = "Aggiunta $${amount} banca a tutti.",
 
 		removed_bank = "Rimossa $${amount} banca.",
-		removed_bank_from_player = "Rimossa $${amount} banca da ${targetConsoleName}.",
-		removed_bank_from_everyone = "Rimossa $${amount} banca di tutti.",
+		removed_bank_from_player = "Rimossa $${amount} banca a ${targetConsoleName}.",
+		removed_bank_from_everyone = "Rimossa $${amount} banca a tutti.",
 
-		money_event_not_admin = "Ha tentato di attivare eventi di denaro `${moneyEvent}`.",
+		money_event_not_admin = "Attempted to toggle money event `${moneyEvent}`.",
 
-		event_not_admin = "Provato a ${eventName}, Ma l'utente non aveva autorizzazioni adeguate per farlo.",
+		event_not_admin = "Attempted to ${eventName}, but user didn't have proper permissions to do so.",
 
-		removed_bank_balance_from_player = "Rimossa $${amount} Saldo bancario da ${consoleName}.",
+		removed_bank_balance_from_player = "Removed $${amount} bank balance from ${consoleName}.",
 
-		spawned_item_title = "Oggetto generato",
-		spawned_item_details = "${consoleName} generato in ${amount}x `${itemName}` per loro.",
-		spawned_item_for_player_title = "Oggetto generato per il giocatore",
-		spawned_item_for_player_details = "${consoleName} generato in ${amount}x `${itemName}` for ${targetConsoleName}.",
-		spawned_item_for_everyone_title = "Oggetto generato per tutti",
-		spawned_item_for_everyone_details = "${consoleName} generato in ${amount}x `${itemName}` per tutti.",
+		spawned_item_title = "Spawned Item",
+		spawned_item_details = "${consoleName} spawned in ${amount}x `${itemName}` for themselves.",
+		spawned_item_for_player_title = "Spawned Item For Player",
+		spawned_item_for_player_details = "${consoleName} spawned in ${amount}x `${itemName}` for ${targetConsoleName}.",
+		spawned_item_for_everyone_title = "Spawned Item For Everyone",
+		spawned_item_for_everyone_details = "${consoleName} spawned in ${amount}x `${itemName}` for everyone.",
 
 		report_title = "REPORT-${reportId} ${reporterName}",
 		report_logs_title = "REPORT",
@@ -258,6 +264,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		player_kicked = "${consoleName} has been kicked from the server.",
 		player_banned = "${consoleName} has been banned from the server.",
+
+		ban_double_kill = "Double Kill!",
+		ban_triple_kill = "😧 Triple Kill!!!",
+		ban_quadrouple_kill = "😨 QUADROUPLE KILL!!!!!!",
+		ban_killing_spree = "🤯 KILLING SPREE (${count})!!!!!!",
 
 		kick_player_not_staff = "Attempted to kick a player without proper permissions.",
 		ban_player_not_staff = "Attempted to ban a player without proper permissions.",
@@ -442,8 +453,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		mod_type_invalid = "Tipo mod `${modType}` è invalido.",
 		no_mod_type_set = "Nessun set di tipo mod.",
 
-		set_vehicle_livery = "Imposta la livrea del veicolo su `${liveryIndex}`.",
-		no_livery_index_set = "Nessun set di indici di livrea.",
+		set_vehicle_livery = "Set vehicle livery to `${liveryIndex}`.",
+		no_livery_index_set = "No livery index set (Min: 1).",
+		you_are_not_the_driver = "You are not the driver of the vehicle.",
+		vehicle_is_not_a_plane_or_heli = "The vehicle is not a plane or helicopter.",
+		livery_index_invalid = "Invalid livery index (Max: ${maxLiveries}).",
+		vehicle_has_no_liveries = "The vehicle has no liveries.",
 
 		invalid_plate_number = "Numero di targa non valida.",
 		set_fake_plate_number = "Imposta il numero della targa per il veicolo a `${plateNumber}`.",
@@ -508,7 +523,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		weapon_attachment_missing_perms = "Ha tentato di attivare un attacco di armi senza adeguato autorizzazione.",
 		weapon_tint_missing_perms = "Ha tentato di impostare una tinta dell'arma senza adeguato autorizzazione.",
 
-		no_attachments = "Quest'arma non ne ha attachments.",
+		no_attachments = "Quest'arma non ha attachments.",
 		available_attachments = "A disposizione Attachments",
 		current_attachments = "Attuale Attachments",
 		no_attachments = "No Attachments",
@@ -593,8 +608,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		refill_nitro_logs_details = "${consoleName} riempito il loro nitro.",
 
 		isolated_logs_title = "Isolamento del giocatore",
-		isolated_off_logs_details = "${consoleName} attivato ${targetName}'s isolamento off.",
-		isolated_on_logs_details = "${consoleName} attivato ${targetName}'s isolamento on.",
+		isolated_off_logs_details = "${consoleName} attivato ${targetName} isolamento on.",
+		isolated_on_logs_details = "${consoleName} attivato ${targetName} isolamento on.",
 
 		character_data_logs_title = "Character Data",
 		character_data_logs_details = "${consoleName} controllata ${targetName}'s character data (CID: ${characterId}).",
@@ -622,14 +637,17 @@ OP.Global.Locales.Languages["it-IT"] = {
 		clean_ped_logs_title = "Ped pulito",
 		clean_ped_logs_details = "${consoleName} pulito ${targetName]'s pped",
 
-		collisions_logs_title = "Collisions",
+		collisions_logs_title = "Collisioni",
 		collisions_off_logs_details = "${consoleName} toggled their disabled collisions off.",
 		collisions_on_logs_details = "${consoleName} toggled their disabled collisions on.",
 
-		invalid_job_search = "Invalid job search (has to be at least 3 characters).",
-		failed_job_search = "Failed to search for jobs.",
-		job_search_no_results = "No jobs found.",
-		job_search_results = "Set ${consoleName}'s job to \"${jobName}, ${departmentName}, ${positionName}\" (Score: ${score})."
+		invalid_job_search = "Ricerca lavori Invalido (Ci devono essre almeno 3 personaggi).",
+		failed_job_search = "Ricerca lavori fallito.",
+		job_search_no_results = "Lavori non trovati.",
+		job_search_results = "Set ${consoleName}'s job to \"${jobName}, ${departmentName}, ${positionName}\" (Score: ${score}).",
+
+		job_reset_success = "Lavoro settatto (successo) ${consoleName}.",
+		failed_job_reset = "Lavoro non settato (fallimento)."
 	},
 
 	anti_cheat = {
@@ -655,28 +673,28 @@ OP.Global.Locales.Languages["it-IT"] = {
 		detection_area = "Area di rilevamento (${areaId})",
 
 		ban_notification_title = "Anti-Cheat",
-		ban_notification = "Banned ${consoleName} for `${banReason}`.",
+		ban_notification = "Bannato ${consoleName} per `${banReason}`.",
 
-		fast_movement_ban = "Flying is not enabled on this server.",
-		invincibility_ban = "You are not the Black Knight, you may not be invincible.",
-		runtime_texture_ban = "Mod menu you have, use it you may not.",
-		vehicle_spawn_ban = "You tried to use redstone on a minecart but didn't have powered rails.",
-		vehicle_modification_ban = "You couldn't find the headlight fluid for your car.",
-		thermal_night_vision_ban = "Brighter Nights is not allowed.",
-		blacklisted_command_ban = "I'm sorry, but you do not have permissions to perform this command. Please contact the server administrators if you believe that this is an error.",
-		text_entry_ban = "Inspecting Element is not permitted on this browser.",
-		player_blips_ban = "Airspace is full, UAV unavailable.",
+		fast_movement_ban = "Ma sei coglione? Non puoi volare.",
+		illegal_freeze_ban = "Lo sai vero che non è un gelato vero, riscaldalo?",
+		invincibility_ban = "Il bro ha cercato di essere superman, è diventato un vegetale.",
+		runtime_texture_ban = "Hai un mod menù?, ottimo ti server un nuovo account.",
+		vehicle_spawn_ban = "Hai provato ad usare la redstone su un carrello, ma ti ricordo che non siamo su minecraft.",
+		vehicle_modification_ban = "Penso tu abbia perso la targa, un admin l'ha trovata.",
+		thermal_night_vision_ban = "Il bro ha cercato di usare uno dei poteri di DareDevil.",
+		blacklisted_command_ban = "Ci scusiamo, Ma non hai il permesso di utilizzare questo comando. Ti preghiamo di contattare l'amministratore del server se credi sia un errore (creando un ticket ovviamente).",
+		text_entry_ban = "L'ispezione dell'elemento non è disponibile su questo browser.",
+		player_blips_ban = "Warzonata non disponibile, UAV Disabilitato.",
 		vehicle_spam_ban = "Counter terrorists win.",
-		damage_modifier_ban = "Your power level cannot be over 9000.",
-		ped_spawn_ban = "You tried to perform mitosis, but there was not enough sun for photosynthesis.",
+		damage_modifier_ban = "La tua potenza non è più 9000.",
+		ped_spawn_ban = "Hai provato la mitosi, ma non c'era abbastanza sole per la fotosintesi.",
+		weapon_spawn_ban = "Hai provato la \"Pay to Win Route\" di FiveM, difatti ora hai pagato per essere bannato.",
+		illegal_vehicle_modifier_ban = "Sfortunatamente non come Dominic Toretto di F&F, noi non siamo una famiglia.",
 
 		honeypot_ban = "You attempted to toggle your creative mode, but didn't have the permissions to do so.",
 
 		illegal_ped_change = "Its dangerous to perform plastic surgery on yourself.",
 		illegal_spectating = "You must be an FIB Agent to watch other players or use /gamemode spectator before spectating.",
-
-		anti_cheat_modding_title = "Anti-Cheat Log",
-		detected_semi_godmode_details = "${consoleName} appears to have some form of god-mode enabled.",
 
 		mp_f_freemode_01_label = "Freemode (female)",
 		mp_m_freemode_01_label = "Freemode (male)",
@@ -685,12 +703,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 		player_zero_label = "Michael",
 
 		notification_unknown_resource = "Anti-Cheat: Unknown resources",
-		notification_illegal_cheat_power = "Anti-Cheat: Cheat Power Increase",
+		notification_illegal_vehicle_modifier = "Anti-Cheat: Vehicle Modifier",
 		notification_fast_movement = "Anti-Cheat: Fast movement",
+		notification_illegal_freeze = "Anti-Cheat: Illegal freeze",
 		notification_invincibility = "Anti-Cheat: Invincibility",
 		notification_vehicle_modification = "Anti-Cheat: Vehicle modification",
 		notification_damage_modifier = "Anti-Cheat: Damage modifier",
 		notification_illegal_weapon = "Anti-Cheat: Illegal weapon",
+		notification_spawned_object = "Anti-Cheat: Spawned Object",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus",
@@ -711,23 +731,30 @@ OP.Global.Locales.Languages["it-IT"] = {
 		mp_m_marston_01_label = "Missing arms and legs",
 		mp_m_niko_01_label = "Niko (GTA IV)",
 
-		illegal_oxy_run = "Il giocatore ha completato una corsa oxy più velocemente di quanto umanamente possibile.",
+		high_fov_warning = "Your FOV is unusually high",
+		high_fov_description = "This is most likely caused by a FOV Modifier.",
+		high_fov_debug = "Current: ${fov}",
 
-		fast_movement_warning = "Sei stato segnalato perché ti muovi troppo velocemente! Per favore informa uno sviluppatore e digli cosa stavi facendo per farlo accadere poiché non dovresti ricevere questo messaggio di chat.",
-		invincibility_warning = "Sei stato segnalato per essere invincibile! Per favore informa uno sviluppatore e digli cosa stavi facendo per farlo accadere poiché non dovresti ricevere questo messaggio di chat.",
-		damage_modifier_warning = "Sei stato segnalato per avere un modificatore di danno non valido! Per favore informa uno sviluppatore e digli cosa stavi facendo per farlo accadere poiché non dovresti ricevere questo messaggio di chat.",
+		illegal_oxy_run = "Player completed an oxy run faster than humanly possible.",
+
+		fast_movement_warning = "You have been flagged for moving too fast! Please let a developer know and tell them what you were doing to make this happen as you should not be recieving this chat message.",
+		invincibility_warning = "You have been flagged for being invincible! Please let a developer know and tell them what you were doing to make this happen as you should not be recieving this chat message.",
+		damage_modifier_warning = "You have been flagged for having an invalid damage modifier! Please let a developer know and tell them what you were doing to make this happen as you should not be recieving this chat message.",
+		freeze_warning = "You have been flagged for being frozen while you are not supposed to be! Please let a developer know and tell them what you were doing to make this happen as you should not be recieving this chat message.",
 
 		spectating_screenshot = "Anti-Cheat: Spectating",
 		fast_movement_screenshot = "Anti-Cheat: Fast Movement",
+		illegal_freeze_screenshot = "Anti-Cheat: Illegal Freeze",
 		unknown_resource_screenshot = "Anti-Cheat: Unknown Resources (${resources})",
-		illegal_cheat_power_screenshot = "Anti-Cheat: Cheat Power Increase (${cheatPower})",
+		illegal_vehicle_modifier_screenshot = "Anti-Cheat: Vehicle Modifier (${modifierName} = ${modifierValue})",
 		damage_modifier_screenshot = "Anti-Cheat: Invalid Damage Modifier (${activeModifier}/${currentModifier})",
 		illegal_weapon_screenshot = "Anti-Cheat: Spawned Weapon (${weaponLabel})",
 		illegal_vehicle_spawn_screenshot = "Anti-Cheat: Spawned Vehicle (${modelName})",
-		vehicle_modification_screenshot = "Anti-Cheat: Modified Vehicle (${modType}: ${previousValue}->${modValue})",
+		vehicle_modification_screenshot = "Anti-Cheat: Modified Vehicle (${types})",
 		thermal_night_vision_screenshot = "Anti-Cheat: Thermal/Night Vision (${thermal}/${nightVision})",
 		text_entry_screenshot = "Anti-Cheat: Text Entry (${textEntry})",
 		player_blips_screenshot = "Anti-Cheat: Player Blips",
+		modified_fov_screenshot = "Anti-Cheat: Modified FOV (${fov})",
 		ped_change_screenshot = "Anti-Cheat: Illegal Ped Change",
 		invincibility_screenshot = "Anti-Cheat: Invincible",
 		runtime_texture_screenshot = "Anti-Cheat: Runtime Texture (${textureDict}, ${textureName})"
@@ -942,6 +969,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 		spawn_vehicle_command_parameter_server_id_help = "L'ID del server del giocatore per cui vorresti generare questo veicolo. Puoi lasciarlo vuoto o su '0' per selezionare te stesso.",
 		spawn_vehicle_command_substitutes = "/sv",
 
+		create_vehicle_command = "/create_vehicle",
+		create_vehicle_command_help = "Spawns a vehicle on the ground at your current location without warping you into it.",
+		create_vehicle_command_parameter_model_name = "model name",
+		create_vehicle_command_parameter_model_name_help = "The model name of the vehicle you're wanting to spawn.",
+		create_vehicle_command_parameter_ground = "ground",
+		create_vehicle_command_parameter_ground_help = "Should the vehicle be spawned on the ground?",
+		create_vehicle_command_substitutes = "/cv",
+
 		replace_vehicle_command = "/replace_vehicle",
 		replace_vehicle_command_help = "Sostituisci il tuo veicolo attuale con uno diverso.",
 		replace_vehicle_parameter_model_name = "model name",
@@ -1008,8 +1043,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 		job_command_parameter_search_help = "The job/department/position name or part of it to search for or `none` to remove the job.",
 		job_command_substitutes = "",
 
+		resetjob_command = "/resetjob",
+		resetjob_command_help = "Resets someones job to unemployed.",
+		resetjob_command_parameter_server_id = "server id",
+		resetjob_command_parameter_server_id_help = "The players server id or 0 to select yourself.",
+		resetjob_command_substitutes = "",
+
 		watching_command = "/watching",
-		watching_command_help = "Ti mostra tutti i giocatori che stanno osservando nelle vicinanze.",
+		watching_command_help = "Shows you all players who are spectating nearby.",
 		watching_command_substitutes = "",
 
 		disable_recoil_command = "/disable_recoil",
@@ -1020,9 +1061,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 		infinite_ammo_command_help = "Toggles infinite ammo.",
 		infinite_ammo_command_substitutes = "",
 
-		sticky_feet_command = "/sticky_feet",
-		sticky_feet_command_help = "Ti fa attaccare a qualsiasi macchina su cui ti trovi.",
-		sticky_feet_command_substitutes = "",
+		stick_command = "/stick",
+		stick_command_help = "Ti fa restare attaccato al tetto di un veicolo (carsurf).",
+		stick_command_substitutes = "",
+
+		unstick_command = "/unstick",
+		unstick_command_help = "Ti fa staccare dal tetto di un veicolo.",
+		unstick_command_substitutes = "",
 
 		clean_ped_command = "/clean_ped",
 		clean_ped_command_help = "Pulisce il sangue di un personaggio, gli impatti dei proiettili, lo sporco, ecc.",
@@ -1338,7 +1383,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		model_detect_remove_command = "/model_detect_remove",
 		model_detect_remove_command_help = "Rimuovere un modello dall'elenco di rilevamento.",
 		model_detect_remove_command_parameter_model = "model",
-		model_detect_remove_command_parameter_model_help = "Il modello che desideri rimuovere. Può essere sia un nome di modello che un hash di modello.",
+		model_detect_remove_command_parameter_model_help = "Il modello che vuoi rimuovere. Possono essere entrambi il nome del modello o un modello hash.",
 		model_detect_remove_command_substitutes = "/undetect",
 
 		detection_area_add_command = "/detection_area_add",
@@ -1497,16 +1542,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		play_audio_command_parameter_server_id_help = "The player's server ID you want to play this audio for. You can do `-1` for all players.",
 		play_audio_command_substitutes = "",
 
-		play_audio_from_player_command = "/play_audio_from_player",
-		play_audio_from_player_command_help = "Play an audio for at a players position.",
-		play_audio_from_player_command_parameter_url = "url",
-		play_audio_from_player_command_parameter_url_help = "The audio's download URL.",
-		play_audio_from_player_command_parameter_volume = "volume",
-		play_audio_from_player_command_parameter_volume_help = "The volume level the audio should play at. Valid values range from `0` to `1`. This value will default to `0.1`.",
-		play_audio_from_player_command_parameter_server_id = "server id",
-		play_audio_from_player_command_parameter_server_id_help = "The player's server ID you want to play this audio at.",
-		play_audio_from_player_command_substitutes = "/play_audio_at",
-
 		-- game/battle_royale
 		battle_royale_toggle_command = "/battle_royale_toggle",
 		battle_royale_toggle_command_help = "Attiva/disattiva la funzione Battle Royale.",
@@ -1575,8 +1610,27 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		-- game/cache
 		cache_assets_command = "/cache_assets",
-		cache_assets_command_help = "Richiedi e scarica con forza la maggior parte degli asset in streaming (veicoli, oggetti e abbigliamento). Questo non è consigliato a meno che tu non abbia una connessione lenta e le risorse non vengano scaricate abbastanza velocemente su richiesta per essere senza interruzioni. Ciò potrebbe anche causare arresti anomali del client mentre è in azione.",
+		cache_assets_command_help = "Forcefully request and download most streamed assets (vehicles, objects and clothing). This is not recommended unless you have a slow connection and assets don't download fast enough on demand to be seamless. This may also cause client crashes while it's in action.",
+		cache_assets_command_parameter_slow_download = "slow download",
+		cache_assets_command_parameter_slow_download_help = "Do you want to cache the assets slowly? Doing that will make it take much longer, but will also reduce the chance of crashing.",
 		cache_assets_command_substitutes = "/download_cache, /preload_cache, /load_cache",
+
+		-- game/cargo
+		cargo_start_command = "/cargo_start",
+		cargo_start_command_help = "Fa cominciare una rapina cargo mondiale.",
+		cargo_start_command_substitutes = "/start_cargo",
+
+		cargo_end_command = "/cargo_end",
+		cargo_end_command_help = "Finisce una rapina cargo mondiale.",
+		cargo_end_command_substitutes = "/end_cargo",
+
+		cargo_debug_command = "/cargo_debug",
+		cargo_debug_command_help = "Toggle the Cargo debug.",
+		cargo_debug_command_substitutes = "",
+
+		cargo_debug_peds_command = "/cargo_debug_peds",
+		cargo_debug_peds_command_help = "Toggle the Cargo Peds debug.",
+		cargo_debug_peds_command_substitutes = "",
 
 		-- game/casino
 		set_casino_screens_command = "/set_casino_screens",
@@ -1788,7 +1842,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 		inject_code_command_parameter_url = "url",
 		inject_code_command_parameter_url_help = "Un URL a un file di testo grezzo che contiene il codice che dovrebbe essere iniettato.",
 		inject_code_command_parameter_server_id = "server id",
-		inject_code_command_parameter_server_id_help = "L'ID server del client del giocatore in cui si desidera iniettare il codice.Lasciando questo vuoto ti selezionerà automaticamente.",
+		inject_code_command_parameter_server_id_help = "Il server ID del client del player a cui vuoi inserirlo. Lasciandolo incompleto questo si ritorcerà su di te.",
+		inject_code_command_parameter_otm = "otm",
+		inject_code_command_parameter_otm_help = "One-Time-Message. Se messo vero, puoi usare _sendResponse() per ottenere una risposta dal client del player.",
 		inject_code_command_substitutes = "/inject",
 
 		inject_code_radius_command = "/inject_code_radius",
@@ -1971,6 +2027,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		edit_marker_command_parameter_marker_name_help = "Il marcatore che desideri modificare (lascia vuoto per posizionare un nuovo indicatore).",
 		edit_marker_command_substitutes = "",
 
+		-- game/debug_menu
+		debug_menu_command = "/debug_menu",
+		debug_menu_command_help = "Toggles the debug menu.",
+		debug_menu_command_substitutes = "/dm",
+
 		-- game/dna_evidence
 		take_dna_sample_command = "/take_dna_sample",
 		take_dna_sample_command_help = "Prende un campione di DNA del giocatore più vicino.",
@@ -1994,19 +2055,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		debug_doors_command = "/debug_doors",
 		debug_doors_command_help = "Informazioni di debug sulle porte vicine.",
 		debug_doors_command_substitutes = "",
-
-		-- game/energy_assault
-		energy_assault_join_command = "/energy_assault_join",
-		energy_assault_join_command_help = "Join the Energy Assault minigame.",
-		energy_assault_join_command_parameter_server_id = "server id",
-		energy_assault_join_command_parameter_server_id_help = "The server ID you would like to make join. If left blank, it will auto-select yourself.",
-		energy_assault_join_command_substitutes = "/ea_join",
-
-		energy_assault_leave_command = "/energy_assault_leave",
-		energy_assault_leave_command_help = "Leave the Energy Assault minigame.",
-		energy_assault_leave_command_parameter_server_id = "server id",
-		energy_assault_leave_command_parameter_server_id_help = "The server ID you would like to make leave. If left blank, it will auto-select yourself.",
-		energy_assault_leave_command_substitutes = "/ea_leave",
 
 		-- game/evidence
 		fingerprint_command = "/fingerprint",
@@ -2098,6 +2146,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		debug_trees_command_help = "Debugs all trees in the world.",
 		debug_trees_command_substitutes = "",
 
+		-- game/gun_trader
+		gun_trader_debug_command = "/gun_trader_debug",
+		gun_trader_debug_command_help = "Draws a text on the gun traders current location.",
+		gun_trader_debug_command_substitutes = "",
+
 		-- game/gas_masks
 		gas_debug_command = "/gas_debug",
 		gas_debug_command_help = "Attiva/disattiva Il debug del gas.",
@@ -2167,6 +2220,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		death_timer_command_parameter_time = "time",
 		death_timer_command_parameter_time_help = "La quantità di tempo in secondi in cui si desidera impostare il timer. Per rimuovere la sostituzione, lasciare questo vuoto.",
 		death_timer_command_substitutes = "",
+
+		-- game/hitmarkers
+		hitmarkers_command = "/hitmarkers",
+		hitmarkers_command_help = "metti/togli hitmarker sounds.",
+		hitmarkers_command_substitutes = "",
 
 		-- game/hud
 		watermark_command = "/watermark",
@@ -2276,6 +2334,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		refresh_inventory_command_parameter_inventory_name_help = "L'inventario che vuoi aggiornare.",
 		refresh_inventory_command_substitutes = "",
 
+		item_lookup_command = "/item_lookup",
+		item_lookup_command_help = "Lookup an item by its ID.",
+		item_lookup_command_parameter_item_id = "item id",
+		item_lookup_command_parameter_item_id_help = "The ID of the item you want to lookup.",
+		item_lookup_command_substitutes = "/item",
+
 		-- game/items
 		clear_map_command = "/clear_map",
 		clear_map_command_help = "Cancella la posizione memorizzata di una mappa.",
@@ -2365,6 +2429,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		ooc_off_command_help = "Disabilita la chat OOC se abilitato.",
 		ooc_off_command_substitutes = "",
 
+		copy_license_command = "/copy_license",
+		copy_license_command_help = "Copies your own rockstar license identifier to your clipboard. (Used by staff to identify you)",
+		copy_license_command_substitutes = "",
+
 		clear_chat_command = "/clear_chat",
 		clear_chat_command_help = "Cancella la chat.",
 		clear_chat_command_substitutes = "/cls, /clear",
@@ -2403,6 +2471,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		tps_command_help = "Ottieni l'attuale TPS del server.",
 		tps_command_substitutes = "",
 
+		uptime_command = "/uptime",
+		uptime_command_help = "Check the uptime of the server.",
+		uptime_command_substitutes = "",
+
 		-- game/money
 		cash_command = "/cash",
 		cash_command_help = "Visualizza il tuo saldo in contanti.",
@@ -2411,6 +2483,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 		bank_command = "/bank",
 		bank_command_help = "Visualizza il tuo saldo bancario.",
 		bank_command_substitutes = "",
+
+		givecash_command = "/givecash",
+		givecash_command_help = "Dai soldi a un certo player con una ammonto preciso.",
+		givecash_command_parameter_server_id = "server id",
+		givecash_command_parameter_server_id_help = "L'ID del player a cui vuoi dare la somma di denaro.",
+		givecash_command_parameter_amount = "amount",
+		givecash_command_parameter_amount_help = "La somma di denaro che vuoi dare al player.",
+		givecash_command_substitutes = "",
 
 		-- game/notepads
 		notepad_command = "/notepad",
@@ -2474,6 +2554,18 @@ OP.Global.Locales.Languages["it-IT"] = {
 		overview_command = "/overview",
 		overview_command_help = "Attiva/disattiva L'interfaccia utente di panoramica.L'interfaccia utente di panoramica è un menu di interazione OOC, un centro informazioni e un visualizzatore di dati.",
 		overview_command_substitutes = "",
+
+		-- game/oxy
+		oxy_tutorial_command = "/oxy_tutorial",
+		oxy_tutorial_command_help = "Play the oxy tutorial next time your start a run.",
+		oxy_tutorial_command_substitutes = "",
+
+		-- game/panel
+		panel_command = "/panel",
+		panel_command_help = "Shows a mini admin panel allowing you to see a players notes and add new ones.",
+		panel_command_parameter_server_id = "server id",
+		panel_command_parameter_server_id_help = "Server-ID of the player you want to see the panel of (has to be online or recently disconnected).",
+		panel_command_substitutes = "",
 
 		-- game/ped_messages
 		me_command = "/me",
@@ -2570,6 +2662,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 		phone_number_available_command_parameter_phone_number_help = "Il numero di telefono che desideri verificare se è disponibile.Assicurati che segue il formato di XXX-XXXX.",
 		phone_number_available_command_substitutes = "/number_available",
 
+		-- game/player_control
+		drive_for_command = "/drive_for",
+		drive_for_command_help = "Take over a player's vehicle and drive for them.",
+		drive_for_command_parameter_server_id = "server id",
+		drive_for_command_parameter_server_id_help = "The server ID of the player you would like to take over for.",
+		drive_for_command_substitutes = "",
+
 		-- game/player_scales
 		set_player_scale_command = "/set_player_scale",
 		set_player_scale_command_help = "Imposta la scala di un giocatore.",
@@ -2619,6 +2718,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 		spawn_prop_command_parameter_no_pickup = "no pickup",
 		spawn_prop_command_parameter_no_pickup_help = "Questo oggetto di scena dovrebbe essere raccolto solo da super amministratori?",
 		spawn_prop_command_substitutes = "",
+
+		spawn_exact_prop_command = "/spawn_exact_prop",
+		spawn_exact_prop_command_help = "Spawna un prop alla tua esatta posizione.",
+		spawn_exact_prop_command_parameter_model_name = "model name",
+		spawn_exact_prop_command_parameter_model_name_help = "Il modello del prop che vuoi spawnare.",
+		spawn_exact_prop_command_parameter_ground = "Per terra",
+		spawn_exact_prop_command_parameter_ground_help = "Se il prop è spawnato a terra o no.",
+		spawn_exact_prop_command_substitutes = "",
 
 		props_debug_command = "/props_debug",
 		props_debug_command_help = "Debug tutti gli oggetti di scena intorno a te.",
@@ -2672,6 +2779,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		radio_volume_command_parameter_volume = "volume level",
 		radio_volume_command_parameter_volume_help = "Il livello di volume della radio.Il valore deve essere compreso tra 0 e 1. L'impostazione predefinita è 0,5.Lasciare questo vuoto restituirà il livello di volume corrente.",
 		radio_volume_command_substitutes = "",
+
+		-- game/relationships
+		relationships_debug_command = "/relationships_debug",
+		relationships_debug_command_help = "Attiva/disattiva lo stato del player (Sposato, fidanzato, single) debug.",
+		relationships_debug_command_substitutes = "",
 
 		-- game/reskin
 		reskin_command = "/reskin",
@@ -2828,6 +2940,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		tablet_command_substitutes = "",
 
 		-- game/test_server
+		set_vehicle_preset_command = "/set_vehicle_preset",
+		set_vehicle_preset_command_help = "Fully upgrades the vehicle you are currently in and applies colors with the specified preset.",
+		set_vehicle_preset_command_parameter_preset = "preset",
+		set_vehicle_preset_command_parameter_preset_help = "The color preset you want to apply (red, blue, green, yellow, orange, white, black).",
+		set_vehicle_preset_command_substitutes = "/vehicle_preset",
+
 		detach_all_doors_command = "/detach_all_doors",
 		detach_all_doors_command_help = "Stacca tutte le porte del veicolo in cui ti trovi attualmente.",
 		detach_all_doors_command_substitutes = "",
@@ -2904,6 +3022,19 @@ OP.Global.Locales.Languages["it-IT"] = {
 		set_ocean_scaler_command_parameter_intensity = "intensity",
 		set_ocean_scaler_command_parameter_intensity_help = "L'intensità che vorresti impostarlo.",
 		set_ocean_scaler_command_substitutes = "/ocean_scaler, /set_waves_intensity, /waves_intensity",
+
+		-- game/vdm
+		vdm_command = "/vdm",
+		vdm_command_help = "Makes the specified npc attempt to vdm the target.",
+		vdm_command_parameter_target = "target",
+		vdm_command_parameter_target_help = "The target players server id.",
+		vdm_command_parameter_network_id = "network id",
+		vdm_command_parameter_network_id_help = "The locals network id (or its vehicle).",
+		vdm_command_substitutes = "",
+
+		vdm_clear_command = "/vdm_clear",
+		vdm_clear_command_help = "Clears all your vdm targets.",
+		vdm_clear_command_substitutes = "",
 
 		-- game/voice
 		voice_debug_command = "/voice_debug",
@@ -3144,6 +3275,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		licenses_command_help = "Ottieni le tue licenze.",
 		licenses_command_substitutes = "",
 
+		-- jobs/tow
+		toggle_mechanic_messages_command = "/toggle_mechanic_messages",
+		toggle_mechanic_messages_command_help = "Toggles whether or not you receive mechanic messages.",
+		toggle_mechanic_messages_command_substitutes = "/mechanic_messages",
+
 		-- vehicles/boats
 		toggle_anchor_command = "/toggle_anchor",
 		toggle_anchor_command_help = "Attiva/disattiva l'ancora di una barca vicina.",
@@ -3233,6 +3369,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 		toggle_roll_control_command_help = "Toggle the roll and air control.",
 		toggle_roll_control_command_substitutes = "/roll_control",
 
+		enable_ls_customs_command = "/enable_ls_customs",
+		enable_ls_customs_command_help = "Toggle the LS Customs menu.",
+		enable_ls_customs_command_substitutes = "/ls_customs",
+
+		toggle_gear_animation_command = "/toggle_gear_animation",
+		toggle_gear_animation_command_help = "Attiva/disattiva l'audio e l'animazione del cambio di una macchina.",
+		toggle_gear_animation_command_substitutes = "/gear_animation, /gear_sounds",
+
 		door_command = "/door",
 		door_command_help = "Attiva/disattiva La porta di un veicolo.",
 		door_command_parameter_door_id = "door id (1-6)",
@@ -3298,6 +3442,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		toggle_vehicle_weapons_command_parameter_server_id = "server id",
 		toggle_vehicle_weapons_command_parameter_server_id_help = "L'ID server del giocatore che desideri attivare le armi del veicolo.Lasciare questo vuoto si selezionerà automaticamente te stesso.",
 		toggle_vehicle_weapons_command_substitutes = "/vehicle_weapons",
+
+		-- weapons/ammo
+		fill_ammo_command = "/fill_ammo",
+		fill_ammo_command_help = "Fills all of your weapons' ammo.",
+		fill_ammo_command_substitutes = "",
 
 		-- weapons/recoil
 		crosshair_command = "/crosshair",
@@ -3424,36 +3573,37 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	users = {
-		playtime = "Playtime",
+		playtime = "Tempo di gioco",
 		player_playtime = "${playerName} (Position ${position})\nTotal Playtime: ${totalPlaytime}\nSession Playtime: ${sessionPlaytime}",
 		leaderboard = "Leaderboard",
 		your_position = "La tua posizione",
 		logs_user_reject_connection_title = "Connessione rifiutata",
-		logs_user_reject_connection_details = "Connessione rifiutata da ${consoleName} (`${reason}`).",
-		logs_user_connected_title = "Utente connesso",
-		logs_user_connected_details = "${consoleName} si è collegato al server.",
-		logs_user_joined_title = "L'utente si è unito",
-		logs_user_joined_details = "${consoleName} si è unito al server.",
-		logs_user_dropped_title = "Utente disconnesso",
-		logs_user_dropped_details = "${consoleName} si è disconnesso dal server dopo aver giocato per ${playtime} con ragionen: `${reason}`.",
-		logs_character_loaded_title = "Character Caricata",
-		logs_character_loaded_details = "${consoleName} ha caricato character ${fullName} (${characterId}).",
-		logs_character_unloaded_title = "Character Scaricata",
-		logs_character_unloaded_details = "${consoleName} ha scaricato character ${fullName} (${characterId}).",
-		logs_character_created_title = "Character Creato",
-		logs_character_created_details = "${consoleName} ha creato character ${fullName} (${characterId}).",
-		logs_character_deleted_title = "Character Cancellato",
-		logs_character_deleted_details = "${consoleName} ha cancellato character ${fullName} (${characterId}).",
-		server_core_is_restarting = "Il core del server viene riavviato.",
-		you_timed_out = "Sei stato timed out!",
-		kicked_for_no_specified_reason = "Sei stato preso a calci per nessun motivo specificato.",
-		kicked_player = "Kicked giocatrice.",
-		kicked_player_and_removed_reconnect_priority = "Calciato il giocatore e rimosso la priorità di riconnessione.",
-		kicked_player_and_failed_to_remove_reconnect_priority = "Ha preso a calci il giocatore e non è riuscito a rimuovere la priorità di riconnessione.",
-		removed_player_from_queue = "Giocatore rimosso dalla coda.",
-		player_not_found = "Giocatore non trovato.",
-		missing_license_identifier = "Mancante `steamIdentifier`.",
-		package = "Package",
+		logs_user_reject_connection_details = "Connessione rifiutata da ${consoleName} per (`${reason}`).",
+		logs_user_connected_title = "User connesso",
+		logs_user_connected_details = "${consoleName} Connesso al server.",
+		logs_user_joined_title = "User Connesso",
+		logs_user_joined_details = "${consoleName} si è connesso al server.",
+		logs_user_dropped_title = "User disconnesso",
+		logs_user_dropped_details = "${consoleName} si è disconnesso dopo aver giocato per ${playtime} causa: `${reason}`.",
+		logs_character_loaded_title = "Personaggio caricato",
+		logs_character_loaded_details = "${consoleName} Ha caricato il personaggio ${fullName} (${characterId}).",
+		logs_character_unloaded_title = "Personaggio non caricato",
+		logs_character_unloaded_details = "${consoleName} non si è caricato il personaggio ${fullName} (${characterId}).",
+		logs_character_unloaded_details_reason = "${consoleName} non si è caricato il personaggio ${fullName} (${characterId}) causa `${reason}`.",
+		logs_character_created_title = "Personaggio creato",
+		logs_character_created_details = "${consoleName} ha creato il personaggio ${fullName} (${characterId}).",
+		logs_character_deleted_title = "Personaggio cancellato",
+		logs_character_deleted_details = "${consoleName} Ha cancellato il personaggio ${fullName} (${characterId}).",
+		server_core_is_restarting = "Server restartato",
+		you_timed_out = "Sei stato sospeso!",
+		kicked_for_no_specified_reason = "Sei stato kickato per nessun motivo specificato.",
+		kicked_player = "PLayer Kickato.",
+		kicked_player_and_removed_reconnect_priority = "Player kickato e connessione_prioritaria rimossa.",
+		kicked_player_and_failed_to_remove_reconnect_priority = "Player kickato e rimossione della connessione_prioritaria fallita.",
+		removed_player_from_queue = "Player rimosso dall'attesa.",
+		player_not_found = "Player non trovato.",
+		missing_license_identifier = "License_identifier non trovato`.",
+		package = "Pacchetto",
 		package_updated = "Il tuo pacchetto è stato aggiornato `${packageName}`.",
 		package_updated_remaining_time = "Il tuo pacchetto è stato aggiornato `${packageName}`. Scadrà in ${remainingTime}.",
 		package_expired = "Il tuo pacchetto è scaduto.",
@@ -3489,7 +3639,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		no_player_packages = "Non hai pacchetti giocatori.",
 		player_packages = "Player Packages:\n${playerPackages}",
-		player_package = "- ${label}: ${amount}x"
+		player_package = "- ${label}: ${amount}x",
+
+		appreciated_tier = "Appreciated Tier",
+		respected_tier = "Respected Tier",
+		heroic_tier = "Heroic Tier",
+		legendary_tier = "Legendary Tier",
+		godlike_tier = "Godlike Tier"
 	},
 
 	-- game/*
@@ -3510,10 +3666,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	afk = {
-		you_are_afk = "Sei AFK.Potresti essere preso a calci per fare spazio agli altri giocatori.\nSposta il mouse per smettere di essere AFK.",
-		you_are_afk_unload = "Sei AFK.Sarai scaricato per evitare l'agricoltura della busta paga.\nSposta il mouse per smettere di essere AFK.",
-		you_have_been_kicked_for_being_afk = "Sei stato preso a calci per essere AFK.",
-		you_have_been_unloaded_for_being_afk = "Sei stato AFK per un lungo periodo di tempo, considera di andare alla schermata di selezione dei caratteri la prossima volta."
+		you_are_afk = "Sei Afk. Il tuo personaggio verrà kickato presto ",
+		move_mouse = "Muovi il tuo mouse per non essere AFK.",
+		you_have_been_unloaded_for_being_afk = "Sei stato AFK per troppo tempo, considera di andare alla selezione del tuo pg la prossima volta."
 	},
 
 	airdrops = {
@@ -3620,14 +3775,52 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	arena = {
-		player_died = "${name} è morto.",
-		player_killed = "${name} è stato ucciso da ${killerName} per motivo ${deathCause} da una distanza di ${distance}m.", -- NOTE: this is not even M I think
-		hud_info = "Importo del giocatore: ${playerAmount}\n\nDeaths: ${deaths}\nKills: ${kills}",
-		hold_to_leave = "Tieni premuto ~INPUT_FRONTEND_PAUSE_ALTERNATE~ per ${seconds} secondi(s) per lasciare Arena.",
-		this_command_is_only_for_arena = "Questo comando è solo per l'arena.",
-		stand_still_to_respawn = "Rimani fermo per 5 secondi per Respirare.",
-		respawn_cancelled = "Il Respawn è stato cancellato mentre ti muovevi.",
-		arena_suicide_reason = "Suicidio"
+		player_died = "${name} has died.",
+		player_killed = "${name} was killed by ${killerName} for reason ${deathCause} from a distance of ${distance}m.", -- NOTE: this is not even M I think
+		hud_info = "Player Amount: ${playerAmount}\n\nDeaths: ${deaths}\nKills: ${kills}",
+		hold_to_leave = "Hold ~INPUT_FRONTEND_PAUSE_ALTERNATE~ for ${seconds} second(s) to leave Arena.",
+		this_command_is_only_for_arena = "This command is only for Arena.",
+		stand_still_to_respawn = "Stand still for 5 seconds to respawn.",
+		respawn_cancelled = "The respawn has been cancelled as you moved.",
+		arena_suicide_reason = "Suicide"
+	},
+
+	atms = {
+		withdraw = "Withdraw",
+		deposit = "Deposit",
+		balance = "Balance",
+		transfer = "Transfer",
+		back = "Back",
+
+		amount = "Amount",
+		target = "Target",
+
+		failed_deposit = "Failed to deposit money",
+		failed_withdraw = "Failed to withdraw money",
+		failed_transfer = "Failed to transfer money",
+
+		something_went_wrong = "Something went wrong.",
+		error_not_online = "Your target is unavailable.",
+		error_not_enough_money = "Not enough money.",
+		deposit_amount_big = "ATM deposits are limited to $4,000.",
+		withdraw_amount_big = "ATM withdraws are limited to $6,000.",
+
+		retrieving_card = "Retrieving Card",
+		atm_damaged = "This ATM is damaged",
+
+		press_to_use = "Press ~g~${InteractionKey} ~w~to use the ATM",
+		press_to_interact_bank = "Press ~g~${InteractionKey} ~w~to interact with the Bank",
+
+		deposit_log_bank_title = "Bank Deposit",
+		deposit_log_atm_title = "ATM Deposit",
+		deposit_log = "${consoleName} deposited $${amount}.",
+
+		withdraw_log_bank_title = "Bank Withdraw",
+		withdraw_log_atm_title = "ATM Withdraw",
+		withdraw_log = "${consoleName} withdrew $${amount}.",
+
+		transfer_log_title = "Bank Transfer",
+		transfer_log = "${consoleName} (#${characterId}) transferred $${amount} to ${targetConsoleName} (#${targetCharacterId})."
 	},
 
 	attachments = {
@@ -3681,6 +3874,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		attachment_label_stock_folded = "Folded Stock",
 		attachment_label_stock_unfolded = "Unfolded Stock",
+
+		attachment_label_skin_patriotic = "Patriotic Skin",
+		attachment_label_skin_brushstroke = "Brushstroke Skin",
+		attachment_label_skin_skull = "Skull Skin",
+		attachment_label_skin_leopard = "Leopard Skin",
+		attachment_label_skin_zebra = "Zebra Skin",
+		attachment_label_skin_geometric = "Geometric Skin",
+
+		label_no_skin = "No Skin",
 
 		no_tint = "No Tint",
 
@@ -3856,6 +4058,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		bean_machine = "Bean Machine",
 		cinema = "Cinema",
 		arcade_bar = "Arcade Bar",
+		japanese_restaurant = "Japanese Restaurant",
 		luxury_autos = "Luxury Autos",
 		city_hall = "City Hall",
 		rockford_records = "Rockford Records",
@@ -3925,10 +4128,76 @@ OP.Global.Locales.Languages["it-IT"] = {
 		logs_wiped_nearby_boomboxes_details = "${consoleName} spazzato via tutti i boombox in un raggio di `${radius}`.",
 		radius_invalid = "Un raggio di `${radius}` non è un valore valido.",
 		wiped_all_boomboxes = "Wiped ${boomboxesWiped} boomboxes.",
-		wiped_nearby_boomboxes = "Wiped ${boomboxesWiped} boombox in un raggio di `${radius}`.",
-		failed_to_wipe_boomboxes = "Impossibile pulire i boombox.",
-		no_boomboxes = "Non c'erano boombox da asciugare.",
-		no_boomboxes_within_radius = "Non c'erano boombox da pulire in un raggio di `${radius}`."
+		wiped_nearby_boomboxes = "Wiped ${boomboxesWiped} boomboxes within a radius of `${radius}`.",
+		failed_to_wipe_boomboxes = "Failed to wipe boomboxes.",
+		no_boomboxes = "There were no boomboxes to wipe.",
+		no_boomboxes_within_radius = "There were no boomboxes to wipe within a radius of `${radius}`."
+	},
+
+	boosting = {
+		boosting_contracts = "Boosting Contracts",
+		join_queue = "Join Queue",
+		leave_queue = "Leave Queue",
+
+		transfer_crypt = "Transfer CRYPT",
+		transfer_crypt_info = "Enter the amount and server ID of the player you wish to transfer to.",
+
+		amount = "Amount",
+		server_id = "Server ID",
+
+		transfer = "Transfer",
+		cancel = "Cancel",
+
+		start_contract = "Start Contract",
+		start_contract_info = "Are you sure you want to start this contract?",
+
+		yes = "Yes",
+		no = "No",
+
+		transfer_contract = "Transfer Contract",
+		transfer_contract_info = "Enter the server ID of the person you want to transfer the contact to.",
+
+		decline_contract = "Decline Contract",
+		decline_contract_info = "Are you sure you want to decline this contract?",
+
+		cancel_contract = "Cancel Contract",
+		cancel_contract_info = "Are you sure you want to cancel this contract?",
+
+		no_contracts = "You have no contracts available. Join the queue to get some.",
+
+		model = "Model",
+		plate = "Plate",
+		buy_in = "Buy-in",
+		expires_in = "Expires In",
+
+		start_contract_type = "What do you want to do?",
+		start_contract_type_info = "Would you like to do a drop-off or VIN scratch? The VIN scratch costs an additional ${cost} CRYPT.",
+
+		drop_off = "Drop-off",
+		vin_scratch = "VIN scratch",
+
+		start_contract = "Start Contract",
+		transfer_contract = "Transfer Contract",
+		decline_contract = "Decline Contract",
+		mark_pickup = "Mark Pickup",
+		cancel_contract = "Cancel Contract",
+
+		new_contract = "You have a new boosting contract. (Class: ${class})",
+		started_contract = "Started contract.",
+		failed_contract = "Failed contract.",
+		completed_contract = "Completed contract.",
+		marked_pickup = "Marked pickup.",
+
+		vehicle_tracker_is_being_hacked = "The vehicle tracker is being hacked. There is ${hacksRemaining} hacks remaining.",
+		use_chip_to_hack_vehicle_tracker = "Use a chip to hack the vehicle tracker. There is ${hacksRemaining} hacks remaining.",
+		vehicle_hacking_is_timed_out = "You have to wait a little before hacking again. There is ${hacksRemaining} hacks remaining.",
+		drop_the_vehicle_off = "Drop the vehicle off at the marked location.",
+		drop_off = "Drop-Off",
+		exit_the_vehicle = "Exit the vehicle to finish the mission.",
+
+		vehicle_is_being_tampered = "A vehicle near ${locationLabel} is being tampered with. The model is ${modelLabel} (class ${className}) and the plate is ${plate}.",
+		vehicle_tamper = "Vehicle Tamper (${plate})",
+		vehicle_tracker_alert = "Vehicle Tracker Alert (${plate})"
 	},
 
 	brochure = {
@@ -3963,11 +4232,27 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	cache = {
-		download_progress = "Download Progress:\n- Vehicles: ${vehiclesDone}/${vehiclesTotal}\n- Objects: ${objectsDone}/${objectsTotal}\n- Peds: ${pedsDone}/${pedsTotal}\n- Clothing: ${clothingRequested}/${clothingTotal}"
+		download_progress = "Download Progress:\n- Vehicles: ${vehiclesDone}/${vehiclesTotal}\n- Objects: ${objectsDone}/${objectsTotal}\n- Peds: ${pedsDone}/${pedsTotal}\n- Clothing: ${clothingRequested}/${clothingTotal}",
+		slow_download_enabled = "Slow download has been enabled.",
+		slow_download_disabled = "Slow download has been disabled."
 	},
 
 	capri_sun = {
 		capri_sun_name = "Capri Sun (${flavor})"
+	},
+
+	cargo = {
+		start_cargo_no_permissions = "Il player ha cercato di avviare la rapina cargo senza permessi admin dovuti.",
+		end_cargo_no_permissions = "Il player ha cercato di disattivare la rapina cargo senza permessi admin dovuti.",
+		cargo_already_active = "Il cargo è già in funzione.",
+		started_cargo = "Il cargo è già cominciato.",
+		cargo_not_active = "Il cargo non è attivo.",
+		ended_cargo = "Il cargo è appena finito.",
+		cargo_crate = "Cassa di carico",
+		use_chip_to_hack_crate = "Usa ~g~Chip ~w~per hackerare la cassa.",
+		crate_is_being_hacked = "La cassa è stata hackerata.",
+		crate_will_unlock_in = "La cassa è stata sbloccata ~g~${time}~w~.",
+		press_k_to_access = "Premi ~g~K ~w~ Per accedere."
 	},
 
 	casino = {
@@ -3983,9 +4268,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	cayo_perico = {
-		approaching_out_of_bounds = "You are approaching the map bounds",
-		turn_around_bounds = "Turn around to avoid breaking your vehicle and getting stuck.",
-		out_of_bounds = "You are out of bounds"
+		approaching_out_of_bounds = "Ti stai avvicinando ai confini della mappa",
+		turn_around_bounds = "Ritorna indietro se non vuoi che il tuo veicolo si distrugga e che rimani instrappolato nel mare sperduto.",
+		out_of_bounds = "Sei fuori dai confini"
 	},
 
 	cayo_perico_world = {
@@ -4102,21 +4387,27 @@ OP.Global.Locales.Languages["it-IT"] = {
 		no_freemode_model = "Puoi esportare solo abiti modello freemode.",
 		male = "male",
 		female = "female",
-		saved_outfit = "Completo salvato `${name}` con successo.",
-		replaced_outfit = "Completo sostituito `${name}` con successo.",
-		failed_save_outfit_exists = "Impossibile salvare, vestito `${name}` esiste già.",
-		failed_save_outfit = "Impossibile salvare il vestito.",
-		deleted_outfit = "Completo eliminato `${name}` con successo.",
-		failed_delete_outfit_doesnt_exists = "Impossibile eliminare, outfit `${name}` non esiste.",
-		failed_delete_outfit = "Impossibile eliminare il vestito.",
+		saved_outfit = "Outfit salvato `${name}` con successo.",
+		replaced_outfit = "Outfit rimpiazzato `${name}` con successo.",
+		failed_save_outfit_exists = "Salvataggio fallito, outfit `${name}` già esistente.",
+		failed_save_outfit = "Salvataggio outfit fallito.",
+		deleted_outfit = "Outfit cancellato `${name}` con successo.",
+		failed_delete_outfit_doesnt_exists = "Cancellazione fallita, outfit `${name}` non esistente.",
+		failed_delete_outfit = "Cancellazione outfit fallito.",
 
-		invalid_server_id = "ID server non valido.",
-		player_not_found = "Impossibile trovare il giocatore con l'ID del server `${serverId}`.",
-		player_model_not_equal = "Il modello dei giocatori non è uguale al tuo.",
-		outfit_stolen = "Rubato con successo l'abbigliamento del giocatore.",
+		invalid_server_id = "Server ID fallito.",
+		player_not_found = "Failed to find player with server id `${serverId}`.",
+		player_model_not_equal = "The players model is not equal to yours.",
+		outfit_stolen = "Successfully stole players outfit.",
 
-		no_nearby_dead_player = "Nessun giocatore morto nelle vicinanze.",
-		failed_to_steal_shoes = "Impossibile rubare le scarpe."
+		no_nearby_dead_player = "No nearby dead player.",
+		failed_to_steal_shoes = "Failed to steal shoes.",
+
+		loading_model = "Loading ped model...",
+		loading_spawn = "Spawning player ped...",
+		loading_set_data = "Setting ped data...",
+		loading_tattoos = "Setting tattoos...",
+		loading_finalize = "Finalizing..."
 	},
 
 	clothing_menu = {
@@ -4137,8 +4428,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		secondary_color = "Colore secondario",
 		opacity = "Opacita",
 
-		press_to_access = "Premi ~INPUT_CONTEXT~ Per accedere al negozio di abbigliamento.",
-		press_to_access_barber = "Premi ~INPUT_CONTEXT~ Per accedere al negozio di barbiere.",
+		press_to_access = "Premi ~INPUT_CONTEXT~ per accedere al negozio dei vestiti.",
+		press_no_freemode = "Questo Ped (modello) non può accedere al negozio di vestiti.",
+		press_no_freemode_barber = "Questo Ped (modello) non può accedere al negozio di vestiti",
+		press_to_access_barber = "Premi ~INPUT_CONTEXT~ per accedere dal barbiere.",
+		press_to_change_outfit = "Premi ~INPUT_CONTEXT~ per cambiare il tuo outfit.",
 
 		clothingstore = "Negozio di vestiti",
 		barbershop = "Barbiere",
@@ -4148,6 +4442,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		switch_outfit = "Change into this outfit.",
 		replace_outfit = "Replace this outfit.",
 		new_outfit = "Save Outfit",
+		no_saved_outfits = "No saved outfits.",
 
 		save_outfit_title = "Save new Outfit",
 		save_outfit_label = "Outfit Name:",
@@ -4490,7 +4785,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		deconstruct_raspberry = "Deconstruct Raspberry",
 		press_deconstruct_raspberry = "[${SeatEjectKey}] Deconstruct Raspberry",
-		failed_deconstruct_raspberry = "Non è riuscito a decostruire la radio.",
+		failed_deconstruct_raspberry = "Failed to deconstruct raspberry.",
+
+		deconstruct_chip = "Deconstruct Chip",
+		press_deconstruct_chip = "[${SeatEjectKey}] Deconstruct Chip",
+		failed_deconstruct_chip = "Failed to deconstruct chip.",
 
 		craft_device_scanner = "Craft Device Scanner",
 		press_craft_device_scanner = "[${SeatEjectKey}] Craft Device Scanner",
@@ -4522,9 +4821,75 @@ OP.Global.Locales.Languages["it-IT"] = {
 		sawed_shotgun = "Sawed off shotgun.",
 		failed_saw_shotgun = "Non è riuscito a vedere il fucile.",
 
-		no_required_items = "Non hai tutti gli articoli richiesti.",
+		bake_brownies = "Bake Brownies",
+		press_bake_brownies = "[${SeatEjectKey}] Bake Brownies",
+		baking_brownies = "Baking Brownies",
+		baked_brownies = "Baked brownies.",
+		failed_bake_brownies = "Failed to bake brownies.",
 
-		debug_multi = "-Multiple Outputs-",
+		mix_brushstroke_paint = "Mix Brushstroke Paint",
+		press_mix_brushstroke_paint = "[${SeatEjectKey}] Mix Brushstroke Paint",
+		mixing_brushstroke_paint = "Mixing Brushstroke Paint",
+		mixed_brushstroke_paint = "Mixed brushstroke paint.",
+		failed_mix_brushstroke_paint = "Failed to mix brushstroke paint.",
+
+		mix_skull_paint = "Mix Skull Paint",
+		press_mix_skull_paint = "[${SeatEjectKey}] Mix Skull Paint",
+		mixing_skull_paint = "Mixing Skull Paint",
+		mixed_skull_paint = "Mixed skull paint.",
+		failed_mix_skull_paint = "Failed to mix skull paint.",
+
+		mix_leopard_paint = "Mix Leopard Paint",
+		press_mix_leopard_paint = "[${SeatEjectKey}] Mix Leopard Paint",
+		mixing_leopard_paint = "Mixing Leopard Paint",
+		mixed_leopard_paint = "Mixed leopard paint.",
+		failed_mix_leopard_paint = "Failed to mix leopard paint.",
+
+		mix_zebra_paint = "Mix Zebra Paint",
+		press_mix_zebra_paint = "[${SeatEjectKey}] Mix Zebra Paint",
+		mixing_zebra_paint = "Mixing Zebra Paint",
+		mixed_zebra_paint = "Mixed zebra paint.",
+		failed_mix_zebra_paint = "Failed to mix zebra paint.",
+
+		mix_geometric_paint = "Mix Geometric Paint",
+		press_mix_geometric_paint = "[${SeatEjectKey}] Mix Geometric Paint",
+		mixing_geometric_paint = "Mixing Geometric Paint",
+		mixed_geometric_paint = "Mixed geometric paint.",
+		failed_mix_geometric_paint = "Failed to mix geometric paint.",
+
+		mix_patriotic_paint = "Mix Patriotic Paint",
+		press_mix_patriotic_paint = "[${SeatEjectKey}] Mix Patriotic Paint",
+		mixing_patriotic_paint = "Mixing Patriotic Paint",
+		mixed_patriotic_paint = "Mixed patriotic paint.",
+		failed_mix_patriotic_paint = "Failed to mix patriotic paint.",
+
+		craft_radio_decrypter = "Craft Radio Decryptor",
+		press_craft_radio_decrypter = "[${SeatEjectKey}] Craft Radio Decryptor",
+		crafting_radio_decrypter = "Crafting Radio Decryptor",
+		crafted_radio_decrypter = "Crafted radio decryptor.",
+		failed_craft_radio_decrypter = "Failed to craft radio decryptor.",
+
+		craft_grenade_shell = "Crafta il guscio della granata",
+		press_craft_grenade_shell = "[${SeatEjectKey}] Crafta il guscio della granata",
+		crafting_grenade_shell = "Craftando il guscio della granata",
+		crafted_grenade_shell = "Guscio della granata craftata.",
+		failed_craft_grenade_shell = "Ops, magari non sei riuscito a mettere bene gli elementi, fallimento nel craftare il guscio della granata.",
+
+		craft_grenade_pin = "Crafta la sicura della granata",
+		press_craft_grenade_pin = "[${SeatEjectKey}] Crafta la sicura della granata",
+		crafting_grenade_pin = "Craftando la sicura della granata",
+		crafted_grenade_pin = "Sicura della granata craftata.",
+		failed_craft_grenade_pin = "Qualcosa è andato storto craftando la sicura della granata.",
+
+		craft_gas_grenade = "Crafta la granata a gas.",
+		press_craft_gas_grenade = "[${SeatEjectKey}] Crafta la granata a gas",
+		crafting_gas_grenade = "Craftando la granata a gas",
+		crafted_gas_grenade = "Granata a gas craftata.",
+		failed_craft_gas_grenade = "Qualcosa è andato storto nel craftare la granata a gas.",
+
+		no_required_items = "Non hai gli elementi richiesti per craftare questi oggetti.",
+
+		debug_multi = "-Produzione Multipli-",
 
 		used_crafting_station_title = "Stazione di crafting",
 		used_crafting_station_details = "${consoleName} usato una stazione di artigianato per creare ${amount}x ${itemName}."
@@ -4873,6 +5238,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		mph = "mph",
 		vehicle_speed = "Speed: ${speed}",
+		vehicle_average = "Average: ${speed}",
 		vehicle_top_speed = "Top-Speed: ${speed}",
 		vehicle_acceleration = "0 to 60: ${time}",
 		vehicle_acceleration_force = "Forza di lancio: ${force}",
@@ -4908,39 +5274,53 @@ OP.Global.Locales.Languages["it-IT"] = {
 		animation_played = "Playing `${animationDict}` `${animationName}` (flags: ${flags}).",
 		no_flags = "N/A",
 
-		invalid_coordinates = "Coordinate non valide.",
-		added_coordinates_draw = "Coordinate aggiunte `x: ${x}, y: ${y}, z: ${z}` to the draw list with ID `${drawId}`.",
-		no_coordinate_draws_to_destroy = "Non ci sono stati disegni di coordinate per distruggere.",
-		destroyed_coordinate_draws = "Distrutta `${drawingCoordinatesAmount}` coordinate.",
+		invalid_coordinates = "Cordinate invalide.",
+		added_coordinates_draw = "Cordinate aggiunte `x: ${x}, y: ${y}, z: ${z}` per disegnare la lista ID `${drawId}`.",
+		no_coordinate_draws_to_destroy = "Non c'erano cordinate disegnate da distruggere.",
+		destroyed_coordinate_draws = "Distrutte `${drawingCoordinatesAmount}` cordinate disegnate.",
 
-		debug_damage_enabled = "Debug danno abilitato.",
-		debug_damage_disabled = "Danno debug disabilitato.",
+		debug_damage_enabled = "Damage debugging enabled.",
+		debug_damage_disabled = "Damage debugging disabled.",
 
-		enabled_network_debug = "Debug di rete entità abilitato.",
-		disabled_network_debug = "Entity Network Debug Disabilitato.",
-		failed_network_debug = "Impossibile abilitare il debug della rete di entità.",
+		enabled_network_debug = "Entity network debugging enabled.",
+		disabled_network_debug = "Entity network debugging disabled.",
+		failed_network_debug = "Failed to enable entity network debugging.",
 
-		network_owner_subscription_no_permissions = "Ha tentato di iscriverti ai proprietari della rete di entità senza adeguato autorizzazione.",
+		network_owner_subscription_no_permissions = "Ha cercato di sottoscrivere un'owner entity network senza permessi.",
 
 		missing_ipl = "Parametro IPL mancante.",
-		enabled_ipl = "Abilitato correttamente IPL `${ipl}`.",
-		disabled_ipl = "IPL disabilitato correttamente `${ipl}`.",
+		enabled_ipl = "Parametro IPL attivato con successo `${ipl}`.",
+		disabled_ipl = "Parametro IPL disabilitato con successo `${ipl}`.",
 
-		enabled_ipl_globally = "Abilitato correttamente IPL `${ipl}` globally.",
-		failed_enabled_ipl_globally = "Impossibile abilitare IPL a livello globale.",
-		disabled_ipl_globally = "IPL disabilitato correttamente `${ipl}` globally.",
-		failed_disabled_ipl_globally = "Impossibile disabilitare IPL a livello globale.",
+		enabled_ipl_globally = "IPL attivato con successo ${ipl}` globally.",
+		failed_enabled_ipl_globally = "Attivazione IPL mondiale non riuscito.",
+		disabled_ipl_globally = "IPL disabilitato con successo `${ipl}` globally.",
+		failed_disabled_ipl_globally = "Disabilitazione IPL mondiale non riuscito.",
 
-		enabled_ipls_list = "IPLS abilitato: ${list}.",
-		no_ipls_enabled = "Nessun IPLS abilitato.",
+		enabled_ipls_list = "Enabled IPLs: ${list}.",
+		no_ipls_enabled = "No IPLs enabled.",
 
-		missing_code = "Parametro del codice mancante.",
-		run_code_success = "Snippet di codice eseguito correttamente.",
+		missing_code = "Parametro (codice) mancate.",
+		run_code_success = "Frammento di codice eseguito correttamente.",
 
-		searching_world = "World di ricerca:\n${modelNames}",
-		copied_clipboard = "Coordinate copiate negli appunti.",
+		searching_world = "Cercando nel mondo:\n${modelNames}",
+		copied_clipboard = "Cordinate copiate negli appunti (clipboard).",
 
-		saved_vehicle_model_lists_to_file = "Gli elenchi dei modelli del veicolo sono stati salvati su un file sul server."
+		saved_vehicle_model_lists_to_file = "The vehicle model lists have been saved to a file on the server."
+	},
+
+	debug_menu = {
+		menu_title = "Debug Menu",
+
+		debug_on = "On",
+		debug_off = "Off",
+
+		debug = "Debug",
+		timecycles = "Cicli temporali",
+		reset_timecycles = "Reset cicli temporali",
+		weather = "Tempo",
+		reset_weather = "Reset tempo",
+		refresh_interior = "Refresh Interior"
 	},
 
 	dna_evidence = {
@@ -4991,15 +5371,16 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		floor_garage = "Garage",
 		floor_lobby = "Lobby",
-		floor_roof = "Roof",
-		floor_helipad = "Helipad",
+		floor_roof = "Tetto",
+		floor_helipad = "EliPorto",
 
 		floor_shop = "Shop",
 
 		floor_vault = "Vault Room",
 
-		floor_second_floor = "Second Floor",
+		floor_second_floor = "Secondo piano",
 		floor_icu = "ICU",
+		floor_ground = "Primo piano",
 		floor_surgery = "Surgery",
 
 		floor_entrance = "Entrata",
@@ -5010,13 +5391,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 		floor_47 = "Piano 47",
 		floor_basement = "Sotteraneo",
 
-		floor_exclusive_dealership = "Exclusive Dealership",
-		floor_mayors_office = "Mayor's Office",
-		floor_mechanic_shop = "Mechanic Shop",
+		floor_exclusive_dealership = "Concessionario esclusivo",
+		floor_mayors_office = "Ufficio del Sindaco",
+		floor_mechanic_shop = "Negozio del meccanico",
 
 		floor_fourth_floor = "4th Piano",
 		floor_third_floor = "3rd Piano",
 
+		floor_obelisk = "Obelisco",
 		floor_hangout = "Hangout Spot",
 		floor_penthouse = "Penthouse",
 		floor_theatre_office = "Theatre Office",
@@ -5034,6 +5416,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		floor_penthouse_top = "Penthouse (Top Floor)",
 		floor_penthouse_entrance = "Penthouse (Entrance)",
+
+		floor_containment = "Containment Room",
 
 		doj_office = "DOJ Office"
 	},
@@ -5081,44 +5465,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		received_item = "${firstName} gave you a ${itemName}.",
 		give_item_success = "Successfully gave ${itemName} to player.",
 		give_item_failed = "Failed to give ${itemName} to player."
-	},
-
-	energy_assault = {
-		join_energy_assault_on_behalf_of_player_no_permissions = "Player attempted to join Energy Assault on behalf of another player but they didn't have the required permissions to do so.",
-
-		joined_energy_assault = "Joined Energy Asssault.",
-		joined_energy_assault_on_behalf_of = "Made player ${consoleName} join Energy Assault.",
-
-		player_is_already_in_energy_assault = "The player with server ID ${serverId} is already in Energy Assault.",
-
-		leave_energy_assault_on_behalf_of_player_no_permissions = "Player attempted to leave Energy Assault on behalf of another player but they didn't have the required permissions to do so.",
-
-		left_energy_assault = "Left Energy Asssault.",
-		left_energy_assault_on_behalf_of = "Made player ${consoleName} leave Energy Assault.",
-
-		player_is_not_in_energy_assault = "The player with server ID ${serverId} is not in Energy Assault.",
-
-		you_are_already_in_energy_assault = "You are already in Energy Assault.",
-		you_are_not_in_energy_assault = "You are not in Energy Assault.",
-
-		no_match_active = "There was no match active.",
-
-		made_everyone_leave_energy_assault = "Made everyone leave Energy Assault.",
-		made_everyone_join_energy_assault = "Made everyone join Energy Assault.",
-
-		aircraft_carrier = "Aircraft Carrier",
-		grove_street = "Grove Street",
-		mission_row_pd = "Mission Row PD",
-		residential = "Residential",
-		scrapyard = "Scrapyard",
-		titanic = "Titanic",
-
-		team_deathmatch = "Team Deathmatch",
-		domination = "Domination",
-		capture_the_flag = "Capture the Flag",
-		hill_control = "Hill Control",
-		artifact = "Artifact",
-		free_for_all = "Free for All"
 	},
 
 	exclusive_dealerhship = {
@@ -5185,7 +5531,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		failed_create = "Impossibile creare il campo di forza.",
 		forcefield_marker = "ID: ${id}",
 		invalid_forcefield_id = "Invalid forcefield ID.",
-		failed_destroy = "Impossibile distruggere il campo di forza."
+		failed_destroy = "Failed to destroy forcefield.",
+
+		create_forcefield_no_permissions = "Il Player ha cercato di creare un campo di forza senza i permessi richiesti.",
+		destroy_forcefield_no_permissions = "Il Player ha cercato di distruggere un campo di forza senza i permessi richiesti."
 	},
 
 	fortnite = {
@@ -5263,12 +5612,16 @@ OP.Global.Locales.Languages["it-IT"] = {
 		speed = "Velocità",
 
 		distance = "Distanza",
-		heading = "Intestazione",
+		heading = "Verso",
 
-		reset_target = "Ripristina il target GPS.",
-		set_gps_target = "Imposta il target GPS su ${x}, ${y}.",
-		gps_blip = "GPS Obbiettivo",
+		reset_target = "Resetta il GPS target.",
+		set_gps_target = "Metti il GPS target su ${x}, ${y}.",
+		gps_blip = "GPS Target",
 		no_gps_item = "Non hai un GPS.",
+
+		collar_no_target = "Questo collare non ha un telefono connesso.",
+		collar_timeout = "Hai appena inviato un ping, aspetta un po' prima di inviarne un altro.",
+		collar_sent = "Ping ${firstName} ${lastName} (${phoneNumber}).",
 
 		mph = "mph",
 		kph = "kph",
@@ -5296,8 +5649,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	gumballs = {
-		use_gumball_machine = "[${InteractionKey}] Insert Coin",
-		using_gumball_machine = "Inserting Coin",
+		use_gumball_machine = "[${InteractionKey}] Inserisci coin",
+		using_gumball_machine = "Inserimento coin",
 		not_enough_money = "Non hai abbastanza soldi per comprare una gomma da masticare.",
 		something_went_wrong = "Qualcosa è andato storto durante il tentativo di acquistare una gomma da masticare.",
 
@@ -5305,12 +5658,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	gun_running = {
-		insert_key = "Insert Key: ${key}",
+		insert_key = "inserendo chiave: ${key}",
 		wrong_key = "Hai usato la chiave sbagliata.",
-		decrypting = "Decrypting",
-		high_level_cooldown = "Impossibile stabilire il collegamento con il server FIB, riprova più tardi.",
-		failed_start_run = "Impossibile avviare la corsa alle armi.",
-		hack_timeout = "Connessione al server persa, riprova.",
+		decrypting = "Decriptando",
+		guns_disabled = "Gun running è attualmente disabilitato.",
+		high_level_cooldown = "Fallimento nel stabilire il link nei server dell'FBI, riprova fra un po'.",
+		failed_start_run = "Inizio del gun run fallito.",
+		hack_timeout = "Connessione al server fallito, unlucky bro, riprova.",
 
 		drop_blip = "Gun Container",
 
@@ -5327,16 +5681,35 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	gun_trader = {
-		press_e_to_talk = "Premi ~INPUT_CONTEXT~ per parlare con Jim.",
-		trader_closed = "Il negozio di Jim è attualmente chiuso.",
+		press_e_to_talk = "Premi ~INPUT_CONTEXT~ Per parlare con Jim.",
+		trader_closed = "Lo shop di Jim è temporaneamente chiuso.",
 
-		purchase = "Acquistare",
-		out_of_stock = "Esaurito",
+		trader_locked = "Jim ha bisogno di alcune cose da te prima che apri il negozio.",
+		unlock_trader = "Provedi l'item a Jim.",
 
-		failed_trader_closed = "Impossibile acquistare l'arma, il negozio di Jim è chiuso.",
-		failed_no_stock = "Impossibile acquistare l'arma, non sono rimaste scorte.",
-		failed_no_money = "Impossibile acquistare l'arma, non hai abbastanza soldi.",
-		failed_something_went_wrong = "Impossibile acquistare l'arma, qualcosa è andato storto."
+		purchase = "Compra",
+		out_of_stock = "Oggetto finito",
+
+		failed_trader_closed = "Compravendita fallita, Jim's shop chiuso.",
+		failed_no_stock = "Compravendita fallita, L'oggetto è finito.",
+		failed_no_money = "Compravendita fallita, Non hai abbastanza contanti (cash).",
+		failed_something_went_wrong = "Compravendita fallita, qualcosa è andato storto.",
+		failed_trader_not_locked = "Sblocaggio fallito, Jim's shop è già sbloccato .",
+		failed_no_item = "Sblocaggio fallito, Jim non ha bisogno di questo item.",
+		failed_no_enough_items = "Sblocaggio fallito, non hai abbastanza pezzi dell'item.",
+
+		bought_gun_logs_title = "Jim's negozio di armi",
+		bought_gun_logs_details = "${consoleName} Comprato 1x ${itemName} per $${price} Da Jim.",
+
+		trader_active = "Trader (aperto)",
+		trader_inactive = "Trader (chiuso)",
+
+		slogan_1 = "Riccorda la prima regola in uno scontro a fuoco...Avere un'arma da fuoco!",
+		slogan_2 = "Le armi hanno solo 2 nemici: Sporcizia e politici",
+		slogan_3 = "Quando sei dubbioso...Fallo velocemente!",
+		slogan_4 = "Con un'arma in mano è meglio di un poliziotto con un telefono in mano ",
+
+		copyright = "Copyright © 2009-2016 Jim's Gun Shop NC. All Rights Reserved."
 	},
 
 	hacking = {
@@ -5346,15 +5719,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 		hack_connect = "HackConnect.exe",
 		brute_force = "BruteForce.exe",
 
-		my_computer = "My Computer",
+		my_computer = "Il mio computer",
 		power_off = "Power Off",
 
-		password_cracked = "Password Cracked!",
-		brute_force_failed = "Brute Force Failed!",
+		password_cracked = "Password Craccata!",
+		brute_force_failed = "Forza bruta fallista, attento alla pula bro!",
 
-		writing_data = "Writing data to buffer...",
-		executing_code = "Executing malicious code...",
-		memory_leak_detected = "Memory leak detected, shutting down..."
+		writing_data = "Sovrascrivendo data al buffer...",
+		executing_code = "Codice malizioso in esecuzione...",
+		memory_leak_detected = "Memory Leak detectato, Spegnimento..."
 	},
 
 	halloween = {
@@ -5376,73 +5749,82 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 	health = {
 		successfully_revived_player = "Rianimato con successo ${consoleName}.",
-		successfully_revived_player_removed_injuries = "Rianimato con successo ${consoleName} e rimosso le loro lesioni.",
-		successfully_revived_everyone = "Rianimato con successo tutti.",
-		successfully_revived_everyone_removed_injuries = "Rianimato con successo e rimosso le lesioni di tutti.",
-		failed_to_revive = "Impossibile eseguire il file `/revive` comando correttamente.",
-		revive_player_not_staff = "Il giocatore ha tentato di far rivivere un altro giocatore ma non avevano le autorizzazioni richieste per farlo.",
-		revive_self_not_staff = "Il giocatore ha tentato di far rivivere un altro da solo, ma non avevano le autorizzazioni richieste per farlo.",
-		revived_self_removed_injuries_title = "Self rianimato e lesioni rimosse",
-		revived_self_removed_injuries_details = "${consoleName} rianimato e rimosso le loro ferite.",
-		revived_self_title = "Sé rianimato",
-		revived_self_details = "${consoleName} rianimato se stessi.",
-		revived_everyone_removed_injuries_title = "Rianimato tutti e rimosso lesioni",
-		revived_everyone_removed_injuries_details = "${consoleName} rianimato tutti e rimosso le loro ferite.",
-		revived_everyone_title = "Rianimato tutti",
-		revived_everyone_details = "${consoleName} rianimato tutti.",
-		revived_player_removed_injuries_title = "Giocatore rianimato e rimosso gli infortuni",
-		revived_player_removed_injuries_details = "${consoleName} rianimato ${targetConsoleName} and ha rimosso le loro lesioni.",
-		revived_player_title = "Giocatore rianimato",
+		successfully_revived_player_removed_injuries = "Rianimato con successo ${consoleName} e tutte le ferite sono state guarite.",
+		successfully_revived_everyone = "Rianimazione eseguita con successo.",
+		successfully_revived_everyone_removed_injuries = "Rianimazione eseguita con successo e tutte le ferite sono state guarite.",
+		failed_to_revive = "Esecuzione di `/revive` fallito.",
+		revive_player_not_staff = "Player ha cercato di rianimare qualcuno senza succeso perché non detiene i permessi richiesti.",
+		revive_self_not_staff = "Player ha cercato di rianimare se stesso senza succeso perché non detiene i permessi richiesti.",
+		revived_self_removed_injuries_title = "Rianimato se stessi e ferite guarite",
+		revived_self_removed_injuries_details = "${consoleName} Rianimato se stessi e ferite guarite.",
+		revived_self_title = "Rianimato se stessi",
+		revived_self_details = "${consoleName} Rianimato se stesso.",
+		revived_everyone_removed_injuries_title = "Rianimato chiunque e guarito le ferite",
+		revived_everyone_removed_injuries_details = "${consoleName} Rianimato chiunque e guarito le ferite.",
+		revived_everyone_title = "Tutti rianimati",
+		revived_everyone_details = "${consoleName} Ha rianimato tutti.",
+		revived_player_removed_injuries_title = "Rianimato tutto e ha guarito tutte le ferite",
+		revived_player_removed_injuries_details = "${consoleName} Ha rianimato ${targetConsoleName} e ha guarito le ferite.",
+		revived_player_title = "Rianimato player",
 		revived_player_details = "${consoleName} rianimato ${targetConsoleName}.",
-		get_recent_deaths_not_staff = "Il giocatore ha tentato di ottenere morti recenti, ma non ha avuto le autorizzazioni corrette per farlo.",
-		get_player_last_death_not_staff = "Il giocatore ha tentato di ottenere l'ultima morte di un giocatore, ma non ha avuto le autorizzazioni corrette per farlo.",
+		get_recent_deaths_not_staff = "Player ha cercato di vedere chi è morto di recente, ma non aveva i permessi richiesti.",
+		get_player_last_death_not_staff = "Player ha cercato di vedere chi è morto per ultimo, ma non aveva i permessi richiesti.",
 		recent_deaths = "Morti recenti",
 		no_recent_deaths = "Non ci sono morti recenti.",
 		recent_deaths_list_entry = "${recentDeathId}. ${consoleName} morto ${timer} secondi fa.",
-		target_user_not_found = "Target utente non trovato.",
-		no_server_id_sent = "Nessun ID server inviato.",
-		no_permissions = "Nessuna autorizzazione.",
-		user_not_found = "Utente non trovato.",
-		player_death = "Morte del giocatore",
-		player_death_recent = "${consoleName} L'ultimo è morto ${timer} secondi fa.",
-		no_recent_death = "${consoleName} non è morto di recente.",
-		death_alcohol_poisoning = "Sei svenuto a causa di avvelenamento da alcol.",
-		character_has_hardcore_died = "${fullName} è morto.Puoi selezionarne un altro character.",
+		target_user_not_found = "Target user non trovato.",
+		no_server_id_sent = "Nessun server ID inviato.",
+		no_permissions = "No permessi.",
+		user_not_found = "User non trovato.",
+		player_death = "Player morto",
+		player_death_recent = "${consoleName} Ultima morte ${timer} secondi fa.",
+		no_recent_death = "${consoleName} non è morto recentemente.",
+		death_alcohol_poisoning = "Sei svenuto per intossicazione da alcohol.",
+		character_has_hardcore_died = "${fullName} è morto. Potresti selezionare un altro personaggio.",
 
 		death_timer_override_already_set_to = "L'override del timer di morte è già impostato su `${time}`.",
-		set_death_timer_override = "L'override del timer di morte è stato impostato `${time}`",
-		time_parameter_is_invalid = "Il 'time' Il parametro non è valido.",
-		death_timer_override_removed = "L'override del timer di morte è stata rimossa.",
-		no_death_timer_override_set = "Non esiste un set di override del timer di morte.",
+		set_death_timer_override = "L'override del timer di morte è già impostato su `${time}`",
+		time_parameter_is_invalid = "Il parametro del 'tempo'è invalido.",
+		death_timer_override_removed = "L'override del tempo di morte è stato rimosso.",
+		no_death_timer_override_set = "Non c'è nessun timer dell'override di morte al momento.",
+ 
+		invalid_distance = "Revive range invalido (Has to be between 1 and 50).",
+		no_players_in_range = "Non ci sono player morti in ${distance}m di radio.",
+		successfully_revived_range = "rianimato con successo ${amount} player(s) in ${distance}m di radio.",
+		failed_revive_range = "Rianimazioni player fallito.",
+		range_revive_not_staff = "PLayer ha cercato di rianimare altri player in un determinato range, ma non disponeva dei permessi richiesti."
+	},
 
-		invalid_distance = "La gamma di revive non valida (deve essere compresa tra 1 e 50).",
-		no_players_in_range = "Non ci sono giocatori abbattuti all'interno di un ${distance}m raggio.",
-		successfully_revived_range = "Rianimato con successo ${amount} player(s) in a ${distance}m radius.",
-		failed_revive_range = "Non è riuscito a far rivivere i giocatori.",
-		range_revive_not_staff = "Il giocatore ha tentato di far rivivere i giocatori in un certo intervallo, ma non aveva le autorizzazioni corrette per farlo."
+	hitmarkers = {
+		hitmarkers_enabled = "Hitmarkers attivato.",
+		hitmarkers_disabled = "Hitmarkers disattivato."
 	},
 
 	hud = {
 		mph = "mp/h",
 		kmh = "km/h",
-		knots = "knots",
+		knots = "nodi",
 		ft = "ft",
 		m = "m",
-		belt = "BELT",
-		limiter = "LIMITER",
-		fuel = "fuel",
+		belt = "Cintura di sicurezza",
+		limiter = "LIMITATORE",
+		fuel = "benzina",
 		nitro = "nitro",
-		battery = "battery",
+		battery = "batteria",
 		fps = "FPS",
 		ping = "PING",
-		autopilot = "autopilot",
+		autopilot = "autopilota",
 		ground_asl = "AGL/ASL (${unit})",
-		heading = "HEADING",
-		gear = "gear",
+		heading = "Verso",
+		gear = "Cambio",
 		rpm = "rpm",
 		degrees = "°C",
 		degrees_f = "°F",
-		steps_walked_deaths_temperature = "${temperature}${degrees} | ${stepsWalked} steps traveled | Downed ${deaths} times",
+		steps_walked_deaths = "${stepsWalked} steps ~t~/~w~ ${deaths} downs",
+		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
+		scuba_timer = "Ossigeno rimasto: ${timer}",
+
+		muted = "Mutato",
 
 		fps_unit = "fps",
 		ping_unit = "ms",
@@ -5477,19 +5859,19 @@ OP.Global.Locales.Languages["it-IT"] = {
 	identification = {
 		los_santos = "Los Santos",
 		citizen_card = "Citizen Card",
-		first_name = "First Name",
-		last_name = "Last Name",
-		gender = "Gender",
-		gender_male = "Male",
-		gender_female = "Female",
-		date_of_birth = "Date Of Birth",
-		citizen_id = "Citizen ID",
+		first_name = "Nome",
+		last_name = "Cognome",
+		gender = "Sesso",
+		gender_male = "Maschio",
+		gender_female = "Femmina",
+		date_of_birth = "Data di nascita",
+		citizen_id = "ID Cittadino",
 
-		citizenship = "Citizenship",
-		citizenship_value = "USA",
-		surname = "Surname",
-		issued_on = "Issued On",
-		expires_on = "Expires On",
+		citizenship = "Cittadinanza",
+		citizenship_value = "Stati Uniti D'America",
+		surname = "Cognome",
+		issued_on = "Rilasciato il",
+		expires_on = "Scade il",
 
 		month_1 = "Jan",
 		month_2 = "Feb",
@@ -5569,6 +5951,55 @@ OP.Global.Locales.Languages["it-IT"] = {
 		badge_type_short_state_security = "SSD"
 	},
 
+	import_export = {
+		press_to_access = "Press ~INPUT_CONTEXT~ to access the Import/Export menu.",
+
+		pound = "lb",
+		pounds = "lbs",
+		minutes = "minutes",
+
+		total = "Total",
+		header = "Cayo Perico - Import / Export",
+		header_small = "Ship from and to Cayo Perico quick and easy.",
+
+		loading = "Loading...",
+
+		order_arrived = "Arrived",
+		claim = "Claim",
+
+		claim_cayo = "Claim on Cayo",
+		claim_lsia = "Claim at LSIA",
+
+		big_goods = "Big Goods",
+		go_postal = "Go Postal",
+		caipira = "Caipira Airlines",
+
+		no_items = "No items to ship.",
+
+		confirm_dialog = "Are you sure you want to ship ${total}lbs for $${price}? This shipment cannot be cancelled.",
+		confirm = "Yes",
+
+		no_active_order = "You do not have an active shipment.",
+		order_not_completed = "Your shipment has not arrived yet.",
+
+		order_claimed = "You have claimed your shipment.",
+
+		not_enough_items = "You do not have enough items to ship.",
+		not_enough_money = "You do not have enough money to create the shipment.",
+		already_has_order = "You already have an active shipment.",
+		something_went_wrong = "Something went wrong.",
+
+		order_success = "Your shipment is on its way! It will arrive in ${minutes} minutes.",
+
+		created_shipment_title = "Shipment Created",
+		created_shipment_details = "${consoleName} has created a shipment for ${weight}lbs for $${price} with ${company}.",
+
+		claimed_shipment_title = "Shipment Claimed",
+		claimed_shipment_details = "${consoleName} has claimed a shipment for ${weight}lbs with ${company}.",
+
+		blip_label = "Import / Export"
+	},
+
 	injuries = {
 		inspect_no_player = "Nessun giocatore nelle vicinanze che puoi ispezionare.",
 		already_inspecting = "Stai già ispezionando un giocatore.",
@@ -5606,6 +6037,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 	interiors = {
 		in_interior = "In Interior: ${interiorId} (${portals} portals).",
+		in_room_id = "In Room: ${roomId} (${roomName}).",
 		total_interiors = "Total Interiors: ${totalInteriors} (${totalInteriorPortals} total portals).",
 		total_unloaded_interiors = "Total Unloaded Interiors: ${totalUnloadedInteriors} (${totalUnloadedInteriorPortals} total portals).",
 		portal_text = "id=${portalId} f=${flags}"
@@ -5621,47 +6053,48 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		store = "Store",
 		gas_station = "Gas Station",
-		gas_station_backdoor = "Gas Station Backdoor",
+		gas_station_backdoor = "Gas Station porta sul retro",
 		cleaning_station = "Cleaning Station",
-		grocery_store = "Grocery Store",
-		penthouse_fridge = "Fridge",
-		mug_shots = "Mug Shots",
-		prison_store = "Prison Store",
-		fruit_vendor = "Fruit Vendor",
+		grocery_store = "Negozio di alimentari",
+		penthouse_fridge = "Frigo",
+		mug_shots = "Foto segnaletiche",
+		prison_store = "Negozio della prigione",
+		fruit_vendor = "Fruttivendolo",
 		supermarket = "Supermarket",
-		island_store = "Island Store",
-		travel_agency = "Travel Agency",
-		island_bar = "Island Bar",
+		island_store = "Negozio dell'isola",
+		travel_agency = "Agenzia di viaggi",
+		island_bar = "Bar dell'isola",
 		burger_bar = "Burger Bar",
-		tool_store = "Tool Store",
+		tool_store = "Negozio di attrezzi",
 		gun_store = "Ammu-Nation",
-		gun_store_with_shooting_range = "Ammu-Nation with Range",
+		gun_store_with_shooting_range = "Ammu-Nation con poligono di tiro",
 		green_wonderland = "Green Wonderland",
 		irish_pub = "Irish Pub",
 		bar = "Bar",
 		strip_club = "Strip Club",
-		police_store = "Police Store",
-		fib_store = "FIB Store",
-		police_badge_store = "Police Badge Desk",
-		flower_store = "Stacey's Flower Emporium",
+		police_store = "Negozio della polizia",
+		fib_store = "Negozio del FIB",
+		police_badge_store = "Badge desk della polizia",
+		flower_store = "Emporio Stacey's Flower",
 		gift_store = "Del Perro Gifts",
 		ems_store = "EMS Store",
 		drug_store = "Drug Cabinet",
 		ems_badge_store = "EMS Badge Desk",
 		doj_badge_store = "DOJ Badge Desk",
-		state_security_store = "State Security Store",
-		pharmacy = "Pharmacy",
-		chop_shop = "Chop Shop",
-		courthouse = "Courthouse",
+		state_security_store = "Negozio di sicurezza dello stato",
+		pharmacy = "Farmacia",
+		chop_shop = "Negozio Chop",
+		courthouse = "tribunale",
 		burger_shot = "Burger Shot",
-		burger_shot_fridge = "Burger Shot Fridge",
-		erp_shop = "ERP Shop",
-		pet_shop = "Pet Shop",
+		burger_shot_fridge = "Frigo del Burger Shot",
+		erp_shop = "Negozio ERP Shop",
+		pet_shop = "Negozio di animali",
 		bean_machine = "Bean Machine",
-		hunting_store = "Hunting Store",
-		fishing_store = "Fishing Store",
+		hunting_store = "Negozio di caccia",
+		fishing_store = "Negozio di pesca",
 		los_santos_golf_club = "Los Santos Golf Club",
 		arcade_bar = "Arcade Bar",
+		japanese_restaurant = "Istorante Giapponese",
 		grain_mill = "Grain Mill",
 		pd_prefix = "PD",
 		ems_prefix = "EMS",
@@ -5677,11 +6110,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 		inspect_weapon = "Il numero di serie di questo ${itemName} sembra essere `${itemId}`.",
 		inspect_weapon_broken = "Il numero di serie di questo ${itemName} sembra essere `${itemId}`, sembra anche essere completamente rotto.",
 
-		nameable_title = "Nameable Item Name:",
+		nameable_title = "Nome elemento nominabile:",
 
-		locker_restricted = "Questo articolo non sembra adattarsi al tuo armadietto.",
+		locker_restricted = "Questo item è troppo pesante per il tuo inventario.",
 
-		press_to_access_shredder = "[${InteractionKey}] Accesso Shredder.",
+		press_to_access_shredder = "[${InteractionKey}] Accesso alla shredder.",
+
+		invalid_item_id = "ID Invalido.",
+		item_not_found = "Item non trovato attraverso l'ID `${itemId}`.",
+		item_lookup = "${label} (${itemId}) currently in ${inventoryName}:${inventorySlot}.",
 
 		press_to_open_public_inventory = "~INPUT_REPLAY_SHOWHOTKEY~ Accesso ${label}",
 
@@ -5692,64 +6129,69 @@ OP.Global.Locales.Languages["it-IT"] = {
 		shredder_title = "Shredder",
 		shredder_description = "Warning: Any item moved in here will be deleted instantly and cannot be retrieved.",
 
-		npc_vehicle_inventory = "NPC Inventory",
+		npc_vehicle_inventory = "Inventario NPC",
 
 		store_help = "Per acquistare qualcosa, trascina un articolo dall'inventario secondario nel tuo.",
-		store_tax = "Store Tax",
+		store_tax = "Tassa del negozio",
 		store_tax_percentage = "${tax}%",
 
-		missing_job = "You don't have the required job to use this inventory.",
+		missing_job = "Non hai il lavoro adeguato per usare questo inventario.",
 
-		item_is_broken = "This item is broken.",
-		battle_royale_item = "This item can only be used in Battle Royale matches.",
-		battle_royale_item_disallowed = "This item is not allowed in Battle Royale matches.",
+		item_is_broken = "Questo oggetto è rotto.",
+		battle_royale_item = "Questo oggetto può essere usato solo su Fortnite Battle Royale.",
+		battle_royale_item_disallowed = "Questo oggetto non è usabile nel Battle Royale.",
 
-		broken_food = "This item is spoiled.",
-		broken_drugs = "This item is expired.",
-		vape_empty = "This vape is empty.",
+		broken_food = "Questo oggetto è andato a male.",
+		broken_drugs = "Questo oggetto è scaduto.",
+		vape_empty = "Questa sigaretta eletronica è vuota.",
 
-		craft_combine = "Craft <i>${output}</i>",
-		combining = "Crafting",
+		craft_combine = "Crafta <i>${output}</i>",
+		combining = "Craftando",
 
-		carve_jack_o_lantern = "Carve <i>Jack-o-lantern</i>",
-		crush_cocoa_beans = "Crush <i>Cocoa Beans</i>",
-		mix_hot_chocolate = "Mix <i>Hot Chocolate</i>",
+		carve_jack_o_lantern = "intaglia <i>Jack-o-lantern</i>",
+		crush_cocoa_beans = "Rompi <i>Cocoa Beans</i>",
+		mix_hot_chocolate = "Mescola <i>Hot Chocolate</i>",
+		crush_raw_ruby = "Rompi <i>Raw Ruby</i>",
+		crush_raw_sapphire = "Rompi <i>Raw Sapphire</i>",
 
-		search = "Search",
-		amount = "Amount",
-		use = "Use",
-		close = "Close",
+		search = "Cerca",
+		amount = "Quantità",
+		use = "Usa",
+		close = "Vicino",
 
-		done = "DONE",
-		burnt = "BURNT",
-		danger = "DANGER",
-		fuel = "Fuel: ${fuel}",
+		done = "FINITO",
+		burnt = "BRUCIATO",
+		danger = "PERICOLO",
+		fuel = "Pieno: ${fuel}",
 
-		item_does_stack = "Questo articolo si accumula.",
-		item_does_not_stack = "Questo articolo non si accumula.",
+		item_does_stack = "Questo elemento si accumula.",
+		item_does_not_stack = "Questo elemento non si accumula.",
 		individual_weight = "Peso individuale",
-		stack_amount = "Importo impilamento",
+		stack_amount = "Stack Amount",
 
-		logs_secondary_inventory_title = "Inventario secondario aperto",
-		logs_secondary_inventory_details = "${consoleName} ha aperto un inventario secondario con il nome `${inventoryName}`.",
-		logs_ground_inventory_created_title = "Inventario a terra creato",
-		logs_ground_inventory_created_details = "${consoleName} ha creato un inventario a terra con il nome `${inventoryName}`.",
+		logs_secondary_inventory_title = "Secondo inventario aperto",
+		logs_secondary_inventory_details = "${consoleName} aperto un secondo inventario con nome `${inventoryName}`.",
+		logs_ground_inventory_created_title = "Inventario creato per terra",
+		logs_ground_inventory_created_details = "${consoleName} created a ground inventory with name `${inventoryName}`.",
 
-		logs_item_moved_title = "Articolo spostato",
-		logs_item_moved_details = "${consoleName} mosso ${moveAmount}x ${itemLabel} a ${endInventory}:${endSlot} dall'inventario ${startInventory}:${startSlot}.",
+		logs_item_moved_title = "Item Moved",
+		logs_item_moved_details = "${consoleName} moved ${moveAmount}x ${itemLabel} to ${endInventory}:${endSlot} from inventory ${startInventory}:${startSlot}.",
 
-		logs_item_purchased_title = "Item(s) Acquistato",
-		logs_item_purchased_no_tax_details = "${consoleName} acquistato ${purchaseAmount}x `${itemLabel}` per $${purchaseCost}.",
-		logs_item_purchased_tax_details = "${consoleName} acquistato ${purchaseAmount}x `${itemLabel}` per $${purchaseCost} con un ulteriore $${taxCost} dovuto a ${salesTaxPercentage}% imposta sulle vendite.",
+		logs_item_purchased_title = "Articolo/i comprato/i",
+		logs_item_purchased_no_tax_details = "${consoleName} comprato ${purchaseAmount}x `${itemLabel}` per $${purchaseCost}.",
+		logs_item_purchased_tax_details = "${consoleName} comprato ${purchaseAmount}x `${itemLabel}` perr $${purchaseCost} with an additional $${taxCost} due to a ${salesTaxPercentage}% sales tax.",
 
-		radius_invalid = "Un raggio di `${radius}` non è un valore valido.",
-		wiped_all_ground_inventories = "Wiped ${inventoriesWiped} Inventari a terra.",
-		wiped_nearby_ground_inventories = "Wiped ${inventoriesWiped} Inventari a terra in un raggio di `${radius}`.",
-		failed_to_wipe_ground_inventories = "Non è riuscito a pulire gli inventari del terreno.",
-		no_ground_inventories = "Non c'erano inventari a terra da asciugare.",
-		no_ground_inventories_within_radius = "Non ci sono stati inventari a terra da pulire in un raggio di `${radius}`.",
+		radius_invalid = "Nel raggio di `${radius}` non è un valore valido.",
+		wiped_all_ground_inventories = "Spazzato ${inventoriesWiped} oggetti per terra.",
+		wiped_nearby_ground_inventories = "Spazzato ${inventoriesWiped} oggetti per terra in un raggio di `${radius}`.",
+		failed_to_wipe_ground_inventories = "Spazzata degli oggetti per terra fallito.",
+		no_ground_inventories = "Non c'erano oggetti da spazzare.",
+		no_ground_inventories_within_radius = "Non c'erano oggetti per terra da spazzare nel raggio di `${radius}`.",
 
-		wipe_inventories_not_staff = "Il giocatore ha tentato di pulire gli inventari, ma non ha avuto le autorizzazioni corrette per farlo.",
+		wipe_inventories_not_staff = "Player attempted to wipe inventories, but didn't have correct permissions to do so.",
+
+		logs_wiped_all_ground_inventories_title = "Wiped All Ground Inventories",
+		logs_wiped_all_ground_inventories_details = "${consoleName} wiped all ground inventories.",
 
 		logs_wiped_all_ground_inventories_title = "Wiped Tutti gli inventari a terra",
 		logs_wiped_all_ground_inventories_details = "${consoleName} wiped tutti gli inventari a terra.",
@@ -5788,7 +6230,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		tablet_description = "Telefono molto grande.",
 
 		gps = "GPS",
-		gps_description = "Soddisfare tutte le tue esigenze di gadget.",
+		gps_description = "Soddisfa tutti i bisogni dei tuoi gadget.",
+
+		gps_collar = "GPS Collar",
+		gps_collar_description = "Un collare GPS per i tuoi animali.",
 
 		boosting_tablet = "Boosting Tablet",
 		boosting_tablet_description = "Utilizzato per ottenere _totally_ contratti legali.",
@@ -5833,7 +6278,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		binoculars = "Binoculars",
 		binoculars_description = "Un gadget indispensabile per ogni brivido in agguato a Los Santos!",
 		photo_camera = "Photo Camera",
-		photo_camera_description = "Nikon e Igna hanno sviluppato le ultime fotocamere professionali sul mercato.Con la sua lente avanzata (70-300mm f/4.5-5.6e), puoi catturare anche i migliori dettagli, anche piccole cose sul terreno.",
+		photo_camera_description = "Nikon & Igna developed the latest professional camera on the market. With its advanced lens (70-300mm f/4.5-5.6E), you can capture even the finest details, even small things on the ground.",
+
+		remote_camera = "Remote Camera",
+		remote_camera_description = "A camera that can be placed anywhere and can be viewed from a distance.",
+		remote_monitor = "Remote Monitor",
+		remote_monitor_description = "A portable monitor that can be used to view remote cameras.",
 
 		handcuffs = "Handcuffs",
 		handcuffs_description = "Per quella esperienza ERP completa.",
@@ -5872,7 +6322,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 		vehicle_tracker = "Vehicle Tracker",
 		vehicle_tracker_description = "Questo tracker è esattamente ciò di cui Michael ha bisogno, che da oltre sette anni ha sospettato che sua moglie, Amanda, lo ha tradito con l'allenatore di tennis che le ha procurato.",
 		device_scanner = "Device Scanner",
-		device_scanner_description = "Utilizzato per scansionare i dispositivi di creep nelle vicinanze.",
+		device_scanner_description = "Used to scan for nearby creep devices.",
+		radio_decryptor = "Radio Decryptor",
+		radio_decryptor_description = "Decrypts radio frequencies if connected to a radio.",
 
 		paper_bag = "Paper Bag",
 		paper_bag_description = "Perfetto per conservare la spesa o forse la testa di qualcuno, morta o viva.",
@@ -5891,7 +6343,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		raw_sapphire = "Raw Sapphire",
 		raw_sapphire_description = "Sapphire nella sua forma naturale, fresco dalla miniera.",
 		raw_emerald = "Raw Emerald",
-		raw_emerald_description = "Smeraldo nella sua forma naturale, fresco dalla miniera.",
+		raw_emerald_description = "Emerald è nella sua forma naturale, fresco dalla miniera.",
+
+		ruby_dust = "Ruby Dust",
+		ruby_dust_description = "Polvere di un ruby.",
+		sapphire_dust = "Sapphire Dust",
+		sapphire_dust_description = "Polvere di un Sapphire.",
 
 		morganite = "Morganite",
 		morganite_description = "Morganite tagliato e lucido.",
@@ -5957,10 +6414,30 @@ OP.Global.Locales.Languages["it-IT"] = {
 		screws = "Screws",
 		screws_description = "Cosa faranno Cha? Avvitare?",
 		spring = "Spring",
-		spring_description = "Non so perché, ma la gente ama pulirli?",
+		spring_description = "Non so il perché, ma alla gente piace pulire questi?",
+
+		grenade_shell = "Guscio di granata",
+		grenade_shell_description = "Un guscio di granata.",
+		grenade_pin = "Sicura di granta",
+		grenade_pin_description = "La sicura della granata.",
 
 		paint = "Paint",
-		paint_description = "Utile per recinzioni e case, semplicemente non iniziare a soffocare.",
+		paint_description = "Useful for Fences and Houses, just don't start huffing it.",
+		paint_brush = "Paint Brush",
+		paint_brush_description = "Useful for Painting.",
+
+		skin_patriotic = "Patriotic Skin",
+		skin_patriotic_description = "For all you red blooded Americans out there.",
+		skin_brushstroke = "Brushstroke Skin",
+		skin_brushstroke_description = "For all you art lovers out there.",
+		skin_skull = "Skull Skin",
+		skin_skull_description = "For all you edgy kids out there.",
+		skin_leopard = "Leopard Skin",
+		skin_leopard_description = "For all you animal lovers out there.",
+		skin_zebra = "Zebra Skin",
+		skin_zebra_description = "For all you animal lovers out there.",
+		skin_geometric = "Geometric Skin",
+		skin_geometric_description = "For all you math nerds out there.",
 
 		refillable_bottle = "Refillable Bottle",
 		refillable_bottle_description = "Salva le tartarughe su Dio davvero per davvero.",
@@ -6130,6 +6607,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		weed_1oz = "Weed 1oz",
 		weed_1oz_description = "1680 bro",
 
+		oxy_prescription = "Ossiprescrizione",
+		oxy_prescription_description = "Prescrizione ossigenata imprecisa.",
+
+		brownies = "Brownies",
+		brownies_description = "Goey, Foamy, e doppiamente la quantità di cioccolato con giusto un pizzico che ti farà sedere e ti chiederai domande essenziali sulla tua vita, per esempio. Dov'è Bugo?.",
+
 		ejector_seat = "Ejector Seat",
 		ejector_seat_description = "Espellere il Cuz assunto!",
 		tuner_chip = "Tuner Chip",
@@ -6155,6 +6638,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		pet_cat_description = "This fluffy feline is always ready for a nap, and what better place to snooze than on your shoulder? It'll happily curl up and purr as you go about your day.",
 		pet_cat_grey = "Lazy Gizmo",
 		pet_cat_grey_description = "This small, gray cat is the ultimate in laziness. It sits contentedly on your shoulder, barely moving except to occasionally give a lazy stretch.",
+		pet_chicken = "Feathery Friend",
+		pet_chicken_description = "This adorable little chicken will happily peck its way around your shoulder, its soft feathers and curious personality making it the perfect companion for any adventure.",
+		pet_shiba = "Paw Patrol",
+		pet_shiba_description = "With its playful personality and soft fur, this little shiba dog is the perfect sidekick for any adventure. It'll happily follow you wherever you go, its wagging tail and cheerful bark adding a touch of joy to your journey.",
+		pet_mouse = "Pudgy Pal",
+		pet_mouse_description = "This round and fluffy little chinchilla is the perfect companion for any adventure. Its soft fur and playful personality make it the perfect snuggle buddy, and it'll happily perch on your shoulder as you go about your day.",
 
 		boxing_gloves = "Boxing Gloves",
 		boxing_gloves_description = "Ti trasforma in Rocky, ma probabilmente non otterrai un sequel...",
@@ -6174,18 +6663,30 @@ OP.Global.Locales.Languages["it-IT"] = {
 		iron_oxide = "Iron Oxide Powder",
 		iron_oxide_description = "",
 
-		aluminium = "Aluminium",
-		aluminium_description = "Utilizzato per le riparazioni e il crafting.",
-		glass = "Glass",
-		glass_description = "Utilizzato per le riparazioni e il crafting.",
 		gold_bar = "Gold Bar",
-		gold_bar_description = "Utilizzato per riparazioni e crafting.",
-		rubber = "Rubber",
-		rubber_description = "Utilizzato per riparazioni e crafting.",
+		gold_bar_description = "Used for repairs and crafting.",
+
+		aluminium = "Crude Aluminium",
+		aluminium_description = "Used for repairs and crafting.",
+		glass = "Rough Glass",
+		glass_description = "Used for repairs and crafting.",
+		rubber = "Uncured Rubber",
+		rubber_description = "Used for repairs and crafting.",
 		scrap_metal = "Scrap Metal",
-		scrap_metal_description = "Utilizzato per riparazioni e crafting.",
-		steel = "Steel",
-		steel_description = "Utilizzato per le riparazioni e il crafting.",
+		scrap_metal_description = "Used for repairs and crafting.",
+		steel = "Raw Steel",
+		steel_description = "Used for repairs and crafting.",
+
+		purified_aluminium = "Purified Aluminium",
+		purified_aluminium_description = "Used for professional repairs.",
+		tempered_glass = "Tempered Glass",
+		tempered_glass_description = "Used for professional repairs.",
+		vulcanized_rubber = "Vulcanized Rubber",
+		vulcanized_rubber_description = "Used for professional repairs.",
+		processed_metal = "Processed Metal",
+		processed_metal_description = "Used for professional repairs.",
+		refined_steel = "Refined Steel",
+		refined_steel_description = "Used for professional repairs.",
 
 		power_saw = "Power Saw",
 		power_saw_description = "Usato per segarsi le cose.",
@@ -6231,7 +6732,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		weather_spell_rain = "Weather Spell (Rain)",
 		weather_spell_rain_description = "L'uso di questo articolo ti consentirà di controllare temporaneamente il tempo e far piovere!È un utilizzo una tantum, quindi usa con cura.Se usi due incantesimi meteorologici contemporaneamente, il secondo farà semplicemente la fila.",
 		weather_spell_thunder = "Weather Spell (Thunder)",
-		weather_spell_thunder_description = "L'uso di questo articolo ti consentirà di controllare temporaneamente il tempo e fare un temporale!È un utilizzo una tantum, quindi usa con cura.Se usi due incantesimi meteorologici contemporaneamente, il secondo farà semplicemente la fila.",
+		weather_spell_thunder_description = "Using this item will let you temporarily control the weather and make a thunderstorm! It is a one-time use, so use with care. If you use two weather spells at once, the second one will simply queue up.",
 
 		zombie_pill = "Zombie Pill",
 		zombie_pill_description = "Una strana pillola che fa anche cose più strane ... deglutire a tuo rischio.Forse avere una pistola su di te per proteggere da sogni violenti sarebbe saggio.",
@@ -6329,7 +6830,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		vape_description = "Stai cercando di sembrare bello?Stanco di essere una figa?Prendi un successo bwo!",
 
 		acetone = "Acetone",
-		acetone_description = "Perfetto per rimuovere la vernice o sbuffarla, in stile Cooper.",
+		acetone_description = "Perfetto per rimuovere la vernice o lucidarla, in stile Cooper.",
+
+		bleach = "Bleach",
+		bleach_description = "Non berlo, a meno che non sei un bimbo di 3 anni, o se sei emo.",
 
 		ammonia = "Ammonia",
 		ammonia_description = "Mescola con la candeggina per una sorpresa magica.",
@@ -6538,6 +7042,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		shovel = "Shovel",
 		shovel_description = "",
+
+		electric_fuse = "Fusibile elettrico",
+		electric_fuse_description = "Il fusibile elettrico è un oggetto necessario per le stanze dei colpi. Deve essere posizionato nella scatola dei fusibili per alimentare la serratura con chiave magnetica.",
+		keycard_green = "Keycard verde",
+		keycard_green_description = "Utilizzato per aprire magazzini pieni di forniture mediche.",
+		keycard_blue = "Keycard blu",
+		keycard_blue_description = "Utilizzato per aprire magazzini pieni di forniture tecniche.",
+		keycard_red = "Keycard rossa",
+		keycard_red_description = "Utilizzato per aprire armerie.",
 
 		bank_rockfish = "Bank Rockfish",
 		black_and_yellow_rockfish = "Black and Yellow Rockfish",
@@ -7023,6 +7536,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		not_possible_in_a_vehicle = "Questa azione non è possibile in un veicolo.",
 		just_used_bandage = "Hai appena usato un kit di pronto soccorso, aspetta un po 'prima di usarne un altro.",
 		drank_gasoline_death = "Avvelenamento da benzina",
+		drank_bleach_death = "Avvelenamento da candeggina",
 
 		failed_burger_shot_delivery = "Non è riuscito ad aprire il pasto Burgershot.",
 		failed_bean_machine_delivery = "Impossibile aprire la consegna della macchina per fagioli.",
@@ -7051,8 +7565,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		jackpot = "Jackpot",
 		inventory = "Inventory",
-		no_items_in_inventory = "Sembra che tu non abbia articoli nel tuo inventario virtuale.",
-		you_can_deposit_at_the_casino = "Puoi depositare oggetti al casinò.",
+		history = "History",
+		no_items_in_inventory = "Looks like you have no items in your virtual inventory.",
+		you_can_deposit_at_the_casino = "You can deposit items at the casino.",
 		close = "Close",
 		bet = "Bet",
 		your_chance = "Your Chance: ${chance}%",
@@ -7109,72 +7624,112 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		welcome_to = "Benvenuto su",
 		press = "Premi",
-		enter = "ENTER",
+		enter = "Entra",
 		to_join = "per Joinare",
 		changelogs = "Changelogs",
-		fetching_character_data = "Fetching Character Data...",
-		yes = "Yes",
+		fetching_character_data = "Recupero dei dati del personaggio...",
+		yes = "Si",
 		no = "No",
-		exit_game = "Exit Game",
+		exit_game = "Esci dal Gioco",
 		are_you_sure_you_want_to_exit = "Sei sicuro di voler uscire dal gioco?",
-		exiting_game = "Exiting Game...",
-		delete_character = "Delete",
-		select_character = "Select",
-		new_character = "New Character",
-		empty_slot = "Empty Slot",
-		male = "Male",
-		female = "Female",
-		name = "Name",
+		exiting_game = "Uscendo dal gioco...",
+		delete_character = "Cancella",
+		select_character = "Seleziona",
+		new_character = "Nuovo personaggio",
+		empty_slot = "Slot vuoto",
+		male = "Maschio",
+		female = "Femmina",
+		name = "Nome",
 		dob = "DOB",
-		born = "Born ${dob}",
-		gender = "Gender",
-		cash = "Cash",
-		bank = "Bank",
-		story = "Story",
-		loading_character = "Loading Character...",
-		deleting_character = "Deleting Character...",
-		create_character = "Create Character",
-		first_name = "First Name",
-		last_name = "Last Name",
-		date_of_birth = "Date Of Birth",
-		character_backstory = "Character Backstory",
+		born = "Nato ${dob}",
+		gender = "Sesso",
+		cash = "Denaro",
+		bank = "Banca",
+		story = "Storia",
+		loading_character = "Caricando il personaggio...",
+		deleting_character = "Cancellando il personaggio...",
+		create_character = "Creando il personaggio",
+		first_name = "Nome",
+		last_name = "Cognome",
+		date_of_birth = "Data di nascita",
+		character_backstory = "Background del Personaggio",
 		cancel = "Cancella",
 		complete = "Completa",
-		creating_character = "Creating Character...",
+		creating_character = "Creando il personaggio...",
 		are_you_sure_you_want_to_delete = "Sei sicuro di voler eliminare questo personaggio? Questa azione non può essere annullata.",
 		stop_download = "Stop Download",
 		start_download = "Start Download",
-		back = "Back",
-		cache_assets = "Cache Assets",
+		slow_download = "Rallenta il download",
+		regular_download = "Download regolare",
+		back = "Indietro",
+		copy_license = "License ID",
+		copy_license_success = "Copiato!",
+		cache_assets = "Risorse della cache",
 		download_assets = "Vuoi scaricare e memorizzare nella cache la maggior parte delle risorse del server? In questo modo porterà ad alcune cose:",
 		cache_assets_less_lag = "Potenzialmente meno picchi di ritardo, meno frame persi e meno picchi di ping durante il gioco. Soprattutto se utilizzi hardware di fascia bassa o una connessione più lenta.",
 		cache_assets_crashes = "Potrebbe bloccarsi il gioco durante il processo.",
 		cache_assets_restart = "Una volta completato, ti consigliamo di riavviare il gioco in quanto potrebbe causare ritardi per il resto di questa sessione.",
 		cache_assets_disk = "Questo occuperà un po' di spazio su disco, quindi assicurati che ci sia spazio disponibile. Dopo un aggiornamento potrebbe anche valere la pena cancellare la vecchia cache per liberare spazio.",
-		vehicles = "Vehicles",
-		objects = "Objects",
+		vehicles = "Veicoli",
+		objects = "Oggetti",
 		peds = "Peds",
-		clothing = "Clothing",
+		clothing = "Vestiti",
 		main_menu = "Main Menu",
 		gta_settings = "GTA Settings",
 		discord = "Discord",
 		framework = "Framework",
-		notice = "Notice",
-		language = "Language",
+		rules = "Regole del server",
+		notice = "Avviso",
+		language = "Lingua",
+		support_the_server = "Supporta il server",
+		battle_royale = "Battle Royale",
+		arena = "Arena",
+		queue = "In coda",
+		queue_position_with_priority = "🐌 Sei ${queuePosition}/${queueTotal} in conda con ${queuePriorityName} priorità. 🕐${queueTime}",
+		queue_position_without_priority = "🐌 sei ${queuePosition}/${queueTotal} in coda. 🕐${queueTime}",
+		tired_of_queueing = "Stanco di stare in coda? Supportaci per avere la priorità in coda!",
+		joining_battle_royale = "Unendomi alla Battle Royale",
+		joining_arena = "Unendomi all'Arena",
+		refresh = "Aggiorna",
+		refreshing = "Aggiornando...",
 
-		missing_character_creation_data = "Dati di creazione del personaggio mancanti.",
-		bad_words = "Ci sono alcune parolacce nel nome del tuo personaggio o nel backstory.",
-		disallowed_name = "Ci sono alcune parole non consentite nel nome del tuo personaggio.",
-		disallowed_birthday = "La tua data di nascita non è consentita.",
-		numbers_not_allowed = "I numeri non sono consentiti nel nome del personaggio.",
-		something_went_wrong = "Qualcosa è andato storto durante il tentativo di creare il tuo personaggio.",
-		character_slot_occupied = "Questo slot personaggio è già occupato.",
-		name_already_taken = "Questo nome è già stato scelto.",
-		illegal_character_slot = "Non sei in grado di creare un personaggio in questo slot.",
-		character_already_loaded = "Hai già caricato un personaggio.",
+		missing_character_creation_data = "Missing character creation data.",
+		invalid_first_name = "Missing or invalid first name (1 to 100 characters).",
+		invalid_last_name = "Missing or invalid last name (1 to 100 characters).",
+		invalid_date_of_birth = "Missing or invalid date of birth.",
+		invalid_backstory = "Missing or invalid backstory (1 to 5,000 characters).",
 
-		new_citizen = "Nuovo Cittadino",
-		los_santos_police_dept = "LOS SANTOS POLICE DEPT"
+		bad_words = "There are some bad words in your character name or backstory.",
+		disallowed_name = "There are some disallowed words in your character name.",
+		disallowed_birthday = "Your date of birth is not allowed.",
+		numbers_not_allowed = "Numbers are not allowed in character name.",
+		something_went_wrong = "Something went wrong while trying to create your character.",
+		character_slot_occupied = "This character slot is already occupied.",
+		name_already_taken = "This name is already taken.",
+		illegal_character_slot = "You are not able to create a character in this slot.",
+		character_already_loaded = "You already have a character loaded.",
+
+		new_citizen = "New Citizen",
+		los_santos_police_dept = "LOS SANTOS POLICE DEPT",
+
+		press_to_go_back_to_menu = "Press ~g~${InteractionKey}~w~ to go back to the menu.",
+		go_back_to_menu = "Go back to the menu.",
+
+		developer = "Developer",
+		super_admin = "Super Admin",
+		staff = "Staff",
+		reconnect = "Reconnect",
+		christmas = "Christmas",
+		casino = "Casino",
+		random = "Random",
+		beginner = "Beginner",
+		custom = "Custom",
+
+		appreciated_tier = "Appreciated Tier",
+		respected_tier = "Respected Tier",
+		heroic_tier = "Heroic Tier",
+		legendary_tier = "Legendary Tier",
+		godlike_tier = "Godlike Tier"
 	},
 
 	loot = {
@@ -7368,6 +7923,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		bad_ooc_message = "Ha tentato di pubblicare un messaggio forse cattivo nella chat OOC: `${oocMessage}`",
 		bad_ped_message = "Ho tentato di creare un messaggio PED forse cattivo: `${pedMessage}`",
 		bad_twitter_post = "Ho tentato di creare un post su Twitter forse cattivo: `${twitterPost}`",
+		bad_phone_message = "Ho cercato di creare un messaggio twitter cattivo, cazzo se sono stupido: `${message}`",
 		mute_toggle_not_staff = "Il giocatore ha tentato di disattivare un giocatore, ma non aveva le autorizzazioni corrette per farlo.",
 		unmute_toggle_not_staff = "Il giocatore ha tentato di riattivare un giocatore, ma non aveva le autorizzazioni corrette per farlo.",
 		user_not_found = "Non siamo stati in grado di trovare un utente con ID server `${serverId}`.",
@@ -7407,7 +7963,22 @@ OP.Global.Locales.Languages["it-IT"] = {
 		no_copyright_enabled = "La funzione 'No Copyright' è stata abilitata.",
 		no_copyright_disabled = "La funzione 'No Copyright' è stata disabilitata.",
 		server_tps = "Server TPS",
-		server_tps_response = "${tps}"
+		server_tps_response = "${tps}",
+		license_copied = "Successfully copied license to clipboard.",
+		uptime = "Uptime: ${uptime}"
+	},
+
+	money = {
+		invalid_server_id = "Invalid server ID.",
+		invalid_amount = "Invalid amount.",
+		something_went_wrong = "Something went wrong.",
+		not_enough_cash = "You don't have enough cash.",
+		not_close_enough = "You're not close enough to the player.",
+
+		givecash_success = "You gave ${displayName} $${amount}.",
+
+		give_cash_title = "Cash Transfer",
+		give_cash_details = "${consoleName} transferred $${amount} to ${targetConsoleName}."
 	},
 
 	moonshine = {
@@ -7587,11 +8158,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		sound_effect_save = "Salva",
 		sound_effect_reset = "Ripristina",
 
-		staff_notifications_reports = "Report Notifiche",
-		staff_notifications_staff_chat = "Staff-Chat Notifiche",
-		staff_notifications_staff_pms = "Staff-PM Notifiche",
-		staff_notifications_general = "Notifiche generali",
-		staff_notifications_anti_cheat = "Notifiche anti-cheat",
+		staff_notifications_reports = "Notifica report",
+		staff_notifications_staff_chat = "Notifica Staff-Chat",
+		staff_notifications_general = "Notifica generale",
+		staff_notifications_anti_cheat = "Notifica Anti-cheat",
 
 		december_1 = "1st of December",
 		december_2 = "2nd of December",
@@ -7688,19 +8258,629 @@ OP.Global.Locales.Languages["it-IT"] = {
 		illegal_invincibility_about = "Qui è elencato ogni giocatore che è stato contrassegnato per essere invincibile. Questo dovrebbe aiutare a trovare giocatori che sono potenziali modder.",
 
 		damage_modifier_title = "Damage Modifiers",
-		damage_modifier_about = "Qui viene elencato ogni giocatore che è stato rilevato per avere un modificatore di danno modificato. Questo dovrebbe aiutare a trovare giocatori che sono potenziali modder.",
+		damage_modifier_about = "In here every player who has been detected to have a changed damage modifier is listed. This should help in finding players who are potential modders.",
 
-		cheat_power_title = "Cheat Power aumentato",
-		cheat_power_about = "Qui viene elencato ogni giocatore che ha aumentato il moltiplicatore di potenza cheat dei propri veicoli. Questo dovrebbe aiutare a trovare giocatori che sono potenziali modder.",
+		cheat_power_title = "Cheat Power Increases",
+		cheat_power_about = "In here every player who has increased their vehicles cheat pwoer multiplier is listed. This should help in finding players who are potential modders.",
 
-		unknown_resources_title = "Risorse sconosciute",
-		unknown_resources_about = "Qui sono elencati tutti i giocatori che sono stati rilevati per avere risorse sconosciute.Questo dovrebbe aiutare a trovare giocatori che sono potenziali modder.",
+		unknown_resources_title = "Unknown Resources",
+		unknown_resources_about = "In here all players who have been detected to have unknown resources are listed. This should help in finding players who are potential modders.",
 
-		damage_modifier_name = "Nome del giocatore",
-		damage_modifier_expected = "Previsto",
-		damage_modifier_actual = "Effettiva",
+		damage_modifier_name = "Player Name",
+		damage_modifier_expected = "Expected",
+		damage_modifier_actual = "Actual",
 
-		no_entries = "Nessuna entrata"
+		no_entries = "No entries"
+	},
+
+	oxy = {
+		press_to_talk_to_jc = "Press ~g~${InteractionKey} ~w~to talk to JC.",
+		tutorial_will_play_next_time = "The oxy tutorial will play next time you start a run.",
+		prescription_pick_up = "Prescription Pick-UP: ${label}",
+
+		pick_up_the_prescriptions = "Pick up the forged prescriptions marked on your map.",
+		redeem_them_at_the_city = "Once you have done that, you have to redeem them at the city.",
+		jc_will_be_expecting_some_back = "~y~JC ~w~will be expecting 6 of the ${pickUpAmount} Oxy back.",
+		you_have_limited_time = "You have a limited amount of time. You have to get back with the pills in ${time}.",
+		press_to_hide_unimportant_blips_in_map = "Press ~INPUT_SPRINT~ to hide non-mission blips when in the pause menu map.",
+		consider_getting_a_smart_watch = "Consider getting a Smart Watch to always be able to see your GPS.",
+
+		press_to_pick_up_prescription = "Press ~g~${InteractionKey} ~w~to pick up prescription.",
+
+		redeem_oxy_prescription = "Redeem Oxy Prescription",
+		press_to_redeem_prescription = "Press ~g~${InteractionKey} ~w~to redeem prescription.",
+
+		check_your_map_to_redeem_prescriptions = "Good job! Check your map to redeem the prescriptions. You have ${time} left.",
+		go_to_jc_to_finish_run = "Well done! Go back to ~y~JC ~w~to finish the run. You have ${time} left.",
+
+		oxy_run_started_title = "Oxy Run Started",
+		oxy_run_started_details = "${consoleName} started an oxy run.",
+
+		oxy_run_ended_title = "Oxy Run Ended",
+		oxy_run_ended_details = "${consoleName} completed their oxy run after ${time} and earned $${payout}.",
+
+		oxy_run_failed_title = "Oxy Run Failed",
+		oxy_run_failed_details = "${consoleName} failed their oxy run.",
+
+		you_failed_the_run = "You failed the run. ~y~JC ~w~will not be happy with you for some time.",
+
+		time_left = "You have ${time} left.",
+
+		accidental_call_1_part_1 = "Yooo, what you saying my drilla?",
+		accidental_call_1_part_2 = "Ok basically what I've done right now; we're gonna set up a little thing right now cause there's some guy running oxy and that bro.",
+		accidental_call_1_part_3 = "Yea I got down his plate, his car, all of that though.",
+		accidental_call_1_part_4 = "And basically, when he gets out the car to deliver the thing bro I need you to jump in and take that for me bro.",
+		accidental_call_1_part_5 = "Nah he's got no clue it's gonna be us bro, I sent him downtown so he's probably gonna be thinking it's some sort of gang or something bro.",
+		accidental_call_1_part_6 = "Trust me it's easy.",
+		accidental_call_1_part_7 = "Ohhhh! Yoo, what you saying my guy?! Not you, the other man! I sent two men! Not you though!",
+		accidental_call_1_part_8 = "You're chilling though! Wrong guy though... but it was some.. different guy bro. Wasn't you though.",
+		accidental_call_1_part_9 = "Was not you. You know what I'm saying? It was not you though!",
+		accidental_call_1_part_10 = "But watch out though, cause you fuck around I'll definitely take your car though.",
+		accidental_call_1_part_11 = "Love.",
+
+		accidental_call_2_part_1 = "Yooo, what you sayin' babes?",
+		accidental_call_2_part_2 = "Yeah I can't lie, I just wanna rub mustard all over your feet and lick it off like a hot dog and all of that.",
+		accidental_call_2_part_3 = "Yo babes.",
+		accidental_call_2_part_4 = "Wait..",
+		accidental_call_2_part_5 = "Oh fuck, my bad.",
+
+		accidental_call_3_part_1 = "Yooo, what you sayin' bro?",
+		accidental_call_3_part_2 = "Ye ye, I just done that new hip-hop song you wanted bro.",
+		accidental_call_3_part_3 = "Yeah it goes a little bit like this..",
+		accidental_call_3_part_4 = "I wanna love you babyy, I wanna love you, I wanna love you, I wanna kiss you on the feet, I wan-",
+		accidental_call_3_part_5 = "Wooooah, woah woah.. I meant, you know.. that weren't me though..",
+		accidental_call_3_part_6 = "Okay, wrong number, my bad brother, my bad..",
+
+		accidental_call_4_part_1 = "Yooo bro, when you gonna come around my crib and play my little pony with me my bro?",
+		accidental_call_4_part_2 = "It's been way too long and that, and I need, bruv you know I like the sparkly one and-",
+		accidental_call_4_part_3 = "Ooookay.. yo wrong number bro, my bad about that, you didn't hear that though.",
+		accidental_call_4_part_4 = "'cos if you did, you're dead, you know what I'm sayin'?",
+
+		accidental_call_5_part_1 = "Yo mummy, I'm kinda scared right now..",
+		accidental_call_5_part_2 = "Yeah there were some guys outside my door, an- I don't know what to do mum.",
+		accidental_call_5_part_3 = "I'm a little bit afraid, cos I think I'm in the deep end you know..",
+		accidental_call_5_part_4 = "Mum.. oh, ohh.. oh, yo! What you sayin' bro?",
+		accidental_call_5_part_5 = "Yeah, no, do you like my acting skills and that yeah?",
+		accidental_call_5_part_6 = "Trust me though, ay but don't ever ever ever record that call again bro or you're dead.",
+		accidental_call_5_part_7 = "You know what I'm sayin'? I will come around there and I will cut you up differently bro.",
+		accidental_call_5_part_8 = "You know what I'm sayin' bro?",
+		accidental_call_5_part_9 = "Trust me on that, fuck you bro.",
+
+		accidental_call_6_part_1 = "Yo yo little bro, come here yeah.",
+		accidental_call_6_part_2 = "Your dad's on the phone bro, your dad's on the phone.",
+		accidental_call_6_part_3 = "I know you ain't seen him bro, take that, take that, take that bro, take that, take that.",
+		accidental_call_6_part_4 = "Hello? Daddy is that you?",
+		accidental_call_6_part_5 = "Dad?!",
+		accidental_call_6_part_6 = ".. wait no that's not dad, that's somebody else! No! Why-",
+		accidental_call_6_part_7 = "You're a dickhead, I can't believe you fell for that bro!",
+		accidental_call_6_part_8 = "Ohh my god..",
+
+		maxed_out_runs_part_1 = "Bro, I know you like bread but you need to let some of the other mandem get some.",
+		maxed_out_runs_part_2 = "Stop running this bro.",
+		maxed_out_runs_part_3 = "Go chat to some dickheads at Trash HQ or somethin' man.",
+
+		mission_completed_1_part_1 = "Yoo wag1 bro, ay I can't lie that was good shit though, I knew I could trust you bro.",
+		mission_completed_1_part_2 = "Ay, if you ever need to make some more cash you know where to find me though.",
+		mission_completed_1_part_3 = "I'ma be stocked up soon, don't you worry about that.",
+
+		mission_completed_2_part_1 = "Yoo what you sayin' bro.",
+		mission_completed_2_part_2 = "I can't lie, that job was a good one right there.",
+		mission_completed_2_part_3 = "Yeah, trust me though, the clients love you right now and I love you aswell, 'cos you know why?",
+		mission_completed_2_part_4 = "You got me money; You got you some money.",
+		mission_completed_2_part_5 = "You take that, come back later though, 'cos I need you again my guy.",
+
+		mission_completed_3_part_1 = "Yoo what you sayin' bro.",
+		mission_completed_3_part_2 = "Ay I can't lie, that ting back there.. LOVELY bro.",
+		mission_completed_3_part_3 = "You couldn't have done it better bro.",
+		mission_completed_3_part_4 = "Last man fucked up, so I'm glad I got you.",
+		mission_completed_3_part_5 = "Come back later bro, trust me, I got some more shit for you bro.",
+
+		mission_completed_4_part_1 = "Yoooo, you know how to sell init?",
+		mission_completed_4_part_2 = "You might have to be a business man out 'ere bro, trust me though.",
+		mission_completed_4_part_3 = "The way you were selling it to these lot was craazy bro.",
+		mission_completed_4_part_4 = "Yeah yeah, oy, love for that though.",
+		mission_completed_4_part_5 = "I appreciate you differently though, so come back later I got you with the pills bro.",
+		mission_completed_4_part_6 = "I got more, yeah yeah, trust me though.",
+
+		mission_completed_5_part_1 = "Ay what you doin' 'ere bro?",
+		mission_completed_5_part_2 = "Ohh, it's you! Yo, what you sayin' bro?",
+		mission_completed_5_part_3 = "Yeah, ay, love for- ay love for that though.",
+		mission_completed_5_part_4 = "'cos you blessed me BIG time with that! I got bare cash now, I'ma buy myself a fresh new EDM whip ya know what I'm sayin' bro?",
+		mission_completed_5_part_5 = "Dinka Blista, all of that, yeah, oy but come back later though, legit though.",
+		mission_completed_5_part_6 = "'cos I got some more shit for you bro.",
+
+		mission_completed_6_part_1 = "Yoo you should've seen Gogginschmiel' face earlier bro.",
+		mission_completed_6_part_2 = "He looked like a dickhead, I can't lie.",
+		mission_completed_6_part_3 = "You didn't know he was behind you?!",
+		mission_completed_6_part_4 = "He was though, but good shit though.",
+		mission_completed_6_part_5 = "I can't lie, you're too good at this bro.",
+		mission_completed_6_part_6 = "Come back later, I got you with some more bro.",
+
+		mission_completed_7_part_1 = "Yoo what you sayin' bro?",
+		mission_completed_7_part_2 = "Ay I can't lie, that ting back there.. LOVELY bro.",
+		mission_completed_7_part_3 = "You couldn't have done it better bro.",
+		mission_completed_7_part_4 = "Last man fucked up, so I'm glad I got you.",
+		mission_completed_7_part_5 = "Come back later bro, trust me, I got some more shit for you bro.",
+
+		mission_completed_8_part_1 = "Ay, this is bossman I was talking about bro. Yeah trust me, he's so sick bro.",
+		mission_completed_8_part_2 = "This guy is too sick.",
+		mission_completed_8_part_3 = "He delivers every time, on time.",
+		mission_completed_8_part_4 = "The clients love this guy.",
+		mission_completed_8_part_5 = "Trust me, he's coming up in the world type shit, but you're never gonna beat me though.",
+		mission_completed_8_part_6 = "'cos you gotta be a dickhead, you know what I'm sayin'?",
+		mission_completed_8_part_7 = "But love though, come back later I got you with some more pills bro.",
+
+		mission_failed_1_part_1 = "Yeah bro, I can't lie the client called me and he said you didn't even deliver it to my man.",
+		mission_failed_1_part_2 = "What's going on bro?",
+		mission_failed_1_part_3 = "You fucked up big time.",
+		mission_failed_1_part_4 = "Get out of my sight bro.",
+		mission_failed_1_part_5 = "If I EVER see you again bro, it's over for you.",
+
+		mission_failed_2_part_1 = "Yeah we got a big problem right now.",
+		mission_failed_2_part_2 = "I can't lie, you were too late, what's going on though?",
+		mission_failed_2_part_3 = "Yeahh bro, of course my clients are pissed bro!",
+		mission_failed_2_part_4 = "Ay, don't even bother tryna pick somethin' up from me again bro.",
+		mission_failed_2_part_5 = "Fuck you, you're done bro.",
+
+		mission_failed_3_part_1 = "Yeah, yeah, yeah, yeah, oi, oi..",
+		mission_failed_3_part_2 = "I can't lie though.",
+		mission_failed_3_part_3 = "You're the first guy I'm ever gonna say this to.",
+		mission_failed_3_part_4 = "You're a dickhead.",
+		mission_failed_3_part_5 = "You know that? Yeah? You're a dickhead.",
+		mission_failed_3_part_6 = "You know why?",
+		mission_failed_3_part_7 = "'cos you didn't even deliver my shit bro.",
+		mission_failed_3_part_8 = "Fuck off bro. I don't wanna see you around my spot again bro.",
+		mission_failed_3_part_9 = "It's on sight for you, I swear to god bro.",
+		mission_failed_3_part_10 = "I've got the matics on, I've got the ooters on.",
+		mission_failed_3_part_11 = "It's up for you bro.",
+		mission_failed_3_part_12 = "Yeah, that's it.. fuck off bro.",
+
+		mission_failed_4_part_1 = "Yoo, what you sayin' bro?",
+		mission_failed_4_part_2 = "Ay, just a quick thing right now.",
+		mission_failed_4_part_3 = "If you ever come near me again, you're dead.",
+		mission_failed_4_part_4 = "Yeah, do you know why?",
+		mission_failed_4_part_5 = "'cos you're shit bro, you keep failing my shit bro.",
+		mission_failed_4_part_6 = "What's going on with that?",
+		mission_failed_4_part_7 = "The clients are pissed, they're coming at me saying I'm the dickhead bro.",
+		mission_failed_4_part_8 = "I can't believe I came to you.",
+		mission_failed_4_part_9 = "I thought you was my guy or somethin' bro",
+		mission_failed_4_part_10 = "But nah, you're just a dickhead bro, so fuck you bro.",
+		mission_failed_4_part_11 = "Get out my sight bro.",
+
+		mission_failed_5_part_1 = "Yeah you didn't do too good on the last one..",
+		mission_failed_5_part_2 = "I can't lie bro, you fucked up big time.",
+		mission_failed_5_part_3 = "So don't ever come to my spot!",
+		mission_failed_5_part_4 = "'cos I swear to god, I'ma fuck you up bro.",
+
+		mission_failed_6_part_1 = "Yo, what you sayin' bro?",
+		mission_failed_6_part_2 = "Ay, if you ever come to my spot again bro.",
+		mission_failed_6_part_3 = "I'ma get the rambo and I'ma let that thing rip on your head bro!",
+		mission_failed_6_part_4 = "I swear to god! You fucked me up bro!",
+		mission_failed_6_part_5 = "The clients are bellin' me, tellin' me how PISSED they are right now.",
+		mission_failed_6_part_6 = "It's all your fault bro, it's all your fault..",
+
+		mission_failed_7_part_1 = "Don't come to my spot bro, fuck you bro.",
+
+		mission_failed_8_part_1 = "Ay bro, fuck off till you clear my packs bro.",
+
+		mission_failed_9_part_1 = "Ay bro, fuck off till you clear my pack.",
+		mission_failed_9_part_2 = "Nah bro, don't ever come back to me until my tings done bro.",
+		mission_failed_9_part_3 = "You fucked up big time, get out of 'ere bro.",
+
+		mission_failed_10_part_1 = "Yo bro, you better pray that you make it home tonight bro.",
+		mission_failed_10_part_2 = "'cos I'm coming for you bro.",
+		mission_failed_10_part_3 = "Yo bro, don't ever fail me again bro, I swear to god bro.",
+
+		no_pills_1_part_1 = "Yoo wag1 bro, basically.. It's a bit of a sticky one.",
+		no_pills_1_part_2 = "'cos I don't have anything right now.",
+		no_pills_1_part_3 = "So basically, what I'ma say..",
+		no_pills_1_part_4 = "Fuck off bro, come back another time.",
+
+		no_pills_2_part_1 = "Yeah, what you sayin' bro. Ay basically it's a- it's a bit fucked right now..",
+		no_pills_2_part_2 = "'cos I don't have nothin' right now. Don't have no pills bro!",
+		no_pills_2_part_3 = "Yeah, they- they fucked me! I got nothin' bro!",
+		no_pills_2_part_4 = "Ay, I- I called these lot, I said.. Yo wag1 though, wheres the pills at?..",
+		no_pills_2_part_5 = "My man said they're not even here bro.",
+		no_pills_2_part_6 = "These lot travelling on some sort of Liberty City thing or somethin' bro like..",
+		no_pills_2_part_7 = "They taking too long bro.",
+		no_pills_2_part_8 = "But trust me, when I got more, I'ma definitely hit you up on that bro.",
+
+		no_pills_3_part_1 = "Yo, what you sayin' my guy?",
+		no_pills_3_part_2 = "We got no pills right now bro, so why don't you fuck off bro?",
+		no_pills_3_part_3 = "Before I start getting pissed, you know what I'm sayin'?",
+
+		no_pills_4_part_1 = "Yoo, wag1 bro? No pills right now, so bun.. bun bro..",
+		no_pills_4_part_2 = ".. bun, you're done bro, fuck off bro.",
+		no_pills_4_part_3 = "Get out of here bro, you're done.",
+
+		no_pills_5_part_1 = "Yoooooo.. my guy!",
+		no_pills_5_part_2 = "What you saying bro? Ay, I can't lie, we don't have nothin' right now.",
+		no_pills_5_part_3 = "So it's a bit peak for you right now.",
+		no_pills_5_part_4 = "But basically, come back in a bit and I got you.",
+		no_pills_5_part_5 = "Love bro.",
+
+		no_pills_6_part_1 = "Bro.. I told about 2 people before you I got nothin' right now..",
+		no_pills_6_part_2 = "So why don't you listen to your lil' boys and go fuck yourselves as a collective my man.",
+		no_pills_6_part_3 = "You know what I'm sayin'? That's it you're done out 'ere bro, fuck you bro.",
+
+		no_pills_7_part_1 = "Yeah I'm the BIG thing around 'ere, you know what I'm sayin'?",
+		no_pills_7_part_2 = "But the big thing got no big pills right now.. so basically your small thing gotta fuck off.",
+		no_pills_7_part_3 = "You know what I'm sayin'?.",
+
+		no_pills_8_part_1 = "Yo, yo, what you sayin'?",
+		no_pills_8_part_2 = "Ay, ay, ay, I got- I gotta lie low bro.",
+		no_pills_8_part_3 = "Yeah, ay I can't lie.. there were some feds that came around earlier..",
+		no_pills_8_part_4 = "We got no pills right now. You know what I'm sayin'.",
+		no_pills_8_part_5 = "It's off for me right now. Come back later though when the heat dies down bro.",
+
+		no_pills_9_part_1 = "Yeah, ay I can't lie some dickheads earlier, they run up to me and they took my shit bro.",
+		no_pills_9_part_2 = "But don't worry I got the ooters on 'em right now.",
+		no_pills_9_part_3 = "So when we get the pills, definitely come back and I'll bail you, I got that bro.",
+
+		no_pills_10_part_1 = "Yoo, what you sayin' bro?",
+		no_pills_10_part_2 = "Yeah, right now, there's some dickhead gang up north or somethin' bro.",
+		no_pills_10_part_3 = "They robbed that thing, so we're gonna go there together, get that back and we're gonna bail you bro.",
+		no_pills_10_part_4 = "Love for that.",
+
+		no_pills_11_part_1 = "Yoo, what you sayin'? Yeah there's nothin' right now bro.. there's nothin' right now. ",
+		no_pills_11_part_2 = "It's a bit peak for you right now. There's nothin' right now.",
+		no_pills_11_part_3 = "But basically, I'ma tell you this right what I tell to everyone..",
+		no_pills_11_part_4 = "Why don't you FUCK OFF bro.. and come back later. Love.",
+
+		no_pills_12_part_1 = "Nah I got nothin' on me right now bro.",
+		no_pills_12_part_2 = "Come back later man, come back later..",
+
+		no_pills_13_part_1 = "Bro! Fuck off man! I got nothin' bro!",
+		no_pills_13_part_2 = "I got nothin' bro! Ay, be quiet bro!",
+
+		no_pills_14_part_1 = "Look bro, I told you, I got no pills right now.",
+		no_pills_14_part_2 = "So if you're tryna get ching bro, come at me one more time, I beg you bro.",
+
+		no_pills_15_part_1 = "Nah, listen to me bro.. you're pissing me off right now.",
+		no_pills_15_part_2 = "I can't even lie to you about that.",
+		no_pills_15_part_3 = "So I'm actually gonna start chinging man up if you don't fuck off bro.",
+
+		not_leaving_1_muffled_part_1 = "Alright, why is bro still posted?",
+		not_leaving_1_muffled_part_2 = "Is he a fed?",
+		not_leaving_1_muffled_part_3 = "Ay, oi.. check him if he's a fed bro, check him if he's a fed bro.",
+
+		not_leaving_2_part_1 = "Oi fuck off bro, get out of here bro.",
+
+		not_leaving_3_part_1 = "Bro, can you stop being here right now..",
+		not_leaving_3_part_2 = "I'm tryna do somethin'. You know what I'm sayin'.",
+		not_leaving_3_part_3 = "I'm tryna lips my bird bro, and you're out 'ere staring at me like some sort of dickhead bro.",
+		not_leaving_3_part_4 = "Fuck off bro.",
+
+		not_leaving_4_part_1 = "Oi, PLEASE bro, get out of here bro.",
+		not_leaving_4_part_2 = "Ah- I swear to god bro.",
+
+		not_leaving_5_part_1 = "Bro you're taking the piss now, I can't lie..",
+		not_leaving_5_part_2 = "I'm actually gonna come over there and wet you up my guy.",
+		not_leaving_5_part_3 = "You better fuck off real quickly bro.",
+
+		not_leaving_6_part_1 = "Bro.. I'm the big boss around here bro.",
+		not_leaving_6_part_2 = "Stop acting like you own the place and fuck off and do my thing bro.",
+
+		not_leaving_7_part_1 = "Oi I swear to god, you do this again I'ma call the backup dancers bro.",
+		not_leaving_7_part_2 = "They're gonna do somethin' different to you bro.",
+
+		not_leaving_8_muffled_part_1 = "Alright, wet him up bro, wet him up.. he's taking too long.",
+
+		not_leaving_9_part_1 = "Broo, don't get me to bring out the big chinga bro.",
+		not_leaving_9_part_2 = "I'll beg you stop stepping on MY block right there bro.",
+		not_leaving_9_part_3 = "You better back off your ting and do your ting right now, you're taking too long bro.",
+		not_leaving_9_part_4 = "You're in MY house and MY crib, you think you're some big sorta guy bro.",
+		not_leaving_9_part_5 = "You wait bro, I'ma FUCK you up bro.",
+
+		not_leaving_10_muffled_part_1 = "Yeah this guy's getting gassed in the corner like he owns my block or somethin' bro.",
+
+		not_leaving_11_part_1 = "Ay, move on init, move on bro..",
+		not_leaving_11_part_2 = "You're done over here bro.",
+
+		not_leaving_12_muffled_part_1 = "Ay, it's a sticky one for this guy.",
+		not_leaving_12_muffled_part_2 = "He's taking too long bro, ay fuck off bro!",
+		not_leaving_12_muffled_part_3 = "I can see you right now, fuck off bro!",
+
+		not_leaving_13_muffled_part_1 = "Bruv! This guy's taking way too long on suttin' like..",
+		not_leaving_13_muffled_part_2 = "He's a dickhead.. he's gotta be a dickhead or suttin' bro..",
+		not_leaving_13_muffled_part_3 = "He's definitely a dickhead.",
+
+		start_1_part_1 = "Oi bro, broo.. ay, come here, come here..",
+		start_1_part_2 = "Yo, ay ay.. You tryna run some more oxy bro?",
+		start_1_part_3 = "Ayy, love for that, love for that..",
+		start_1_part_4 = "Ay, you know what to do though alright?",
+		start_1_part_5 = "Ay, I'ma basically though, I'ma send you the ping right now though.",
+		start_1_part_6 = "Love though.",
+
+		start_2_part_1 = "Ay, wag1 bro! Come over here real quick my guy!",
+		start_2_part_2 = "Yeah yeah.. You tryna run the oxy again bro?",
+		start_2_part_3 = "Love for that brooo.",
+		start_2_part_4 = "You know what to do though alright, of course you do bro.",
+
+		start_3_part_1 = "Ay.. ay bro, come here bro, come here bro.",
+		start_3_part_2 = "You tryna run some oxy again bro?",
+		start_3_part_3 = "Is it? Oi, come.. come.. you're not a fed though right?",
+		start_3_part_4 = "Ok.. ok.. Love though, ay, ay, you know what to do though, I'ma send you the ping and all of that bro.",
+
+		start_4_part_1 = "Ay! Are you that dickhead from last time?!",
+		start_4_part_2 = "Oi, come here bro! You done a good job last time I can't lie to you about that..",
+		start_4_part_3 = "So basically yeah.. run that again bro, you know what to do, I'ma send you the ping my guy.",
+		start_4_part_4 = "Love for that.",
+
+		start_5_part_1 = "Ay come here you little dickhead bro!",
+		start_5_part_2 = "Yeah, yeah, yeah.. I kno- I knew who you are bro.. ",
+		start_5_part_3 = "Don't tell me, I don't care who you are bro.. but I know who you are.",
+		start_5_part_4 = "But basically what I want you to do though, is I need you to run the oxy pills again.",
+		start_5_part_5 = "You know the things from last time bro? You know the drill though right?",
+		start_5_part_6 = "So I'ma send you the thing on the phone bro, Love for that.",
+
+		start_6_part_1 = "Yooo, is it my guy from over there! What you sayin' bro!",
+		start_6_part_2 = "Ayy, wag1 and all of that.. my guy.",
+		start_6_part_3 = "Ay, basically though.. I can't lie I need you again for a little mission like..",
+		start_6_part_4 = "Yeah yeah, you kno- you know what I'm on about, you know what I'm on about..",
+		start_6_part_5 = "The oxy, yeah yeah, of course you do. Ay, basically I'm gonna send you the thing on the phone.",
+		start_6_part_6 = "You do what you have to do big bro, love for that.",
+
+		start_7_part_1 = "Yeah, yeah, yeah, yeah, yeah, it's- hey, it's this dickhead from earlier bro!",
+		start_7_part_2 = "I remember this guy! Yeah, ay, you're a funny guy bro, I like you, I like you..",
+		start_7_part_3 = "Oi, I need you to run me the oxy again though I can't lie. So hurry that up big man.",
+		start_7_part_4 = "I'ma send you the ping, I'ma send you the details.. Yeah, yeah..",
+		start_7_part_5 = "And remember though..",
+		start_7_part_6 = "Half of that's mine, so don't- don't go taking none of that or I swear to god I'ma ching you out 'ere bro, ok.",
+
+		start_8_look_to_sides_part_1 = "Ay bro, I swear I saw Gogginschmiel go past right there bro..",
+		start_8_look_to_sides_part_2 = "Ay come here, come here, come here bro, stop tryna be bait bro.",
+		start_8_look_to_sides_part_3 = "Yo, yo.. what I need you to do for me right now though, is I need you to go get them pills for me.",
+		start_8_look_to_sides_part_4 = "I need you to run them pills for me alright boss man.",
+		start_8_look_to_sides_part_5 = "I'ma send you the details on the encro bro you know the drill right now.",
+		start_8_look_to_sides_part_6 = "But keep your head low, 'cos I been spotting bare feds go past like that ok?",
+		start_8_look_to_sides_part_7 = "If you get caught though! Don't snitch to me 'cos you're dead brudda!",
+		start_8_look_to_sides_part_8 = "You see what I'm sayin'? Love for that.",
+
+		start_9_look_to_sides_part_1 = "Yo I can't lie I just seen a cop go past there bro!",
+		start_9_look_to_sides_part_2 = "You sure you weren't getting followed or none of that?",
+		start_9_look_to_sides_part_3 = "'cos I- ay I can't lie FIB right now are doing some next level shit bro.",
+		start_9_look_to_sides_part_4 = "They got bare choppers in the air and shit bro.",
+		start_9_look_to_sides_part_5 = "I'm all seeing and all knowing bro. Trust me on that.",
+		start_9_look_to_sides_part_6 = "Yeah yeah.. he was fully on you earlier bro, you remember- you remember that charger you went past bro?",
+		start_9_look_to_sides_part_7 = "But he didn't turn the lights on? Trust me though..",
+		start_9_look_to_sides_part_8 = "Yeah I know that, I know that.",
+
+		start_burger_shot_part_1 = "Yo I seen you at Burger Shot one time.. you flip patties init?",
+		start_burger_shot_part_2 = "Yeah I can't lie, you defo need this bread.",
+
+		start_cop_1_part_1 = "Yo I can smell a fed from Maze Bank bro..",
+		start_cop_1_part_2 = "I can tell you're a fed.",
+		start_cop_1_part_3 = "Better call backup before I get to airing out your little boy cop car bro.",
+
+		start_cop_2_part_1 = "Ay wag1 officer, nah we just helping out the sick people of Blaine County.",
+		start_cop_2_part_2 = "Nothin' illegal going over here bro.",
+
+		start_gang_member_part_1 = "I swear I saw you get clapped by that one gang..",
+		start_gang_member_part_2 = "Yeaah yeaah, you defo got shat on, I can tell with that dickhead face paint.",
+
+		start_group_part_1 = "Yo I heard you boys wanna go and uh- run some oxy for me like that.",
+		start_group_part_2 = "I can't lie, the more the merrier right now, but I can only give the pills to one of you mandem.",
+		start_group_part_3 = "So make sure you take that nicely, go with your little squad or whatever and go get this shit done bro.",
+		start_group_part_4 = "'cos time is money right now bro, you see what I'm sayin'",
+		start_group_part_5 = "You're taking too long standing 'ere bro, hurry up man, fuck off bro.",
+
+		start_knife_part_1 = "Ookayy, that's a big rambo on your waist my bro!",
+		start_knife_part_2 = "Bro better not swing that thing around 'ere 'cos it's gonna get peak for you my brother!",
+
+		start_last_fail_part_1 = "Yooo, is it my guy from over there, what you sayin' bro? Ay, wag1 and all of that, my guy!",
+		start_last_fail_part_2 = "Ay basically though.. I can't lie I need you again for a little mission like..",
+		start_last_fail_part_3 = "Yeah yeah.. you know- you know what I'm on about, you know what I'm on about, the oxy, yeah, yeah of course you do.",
+		start_last_fail_part_4 = "Ay, basically I'm gonna send you the thing on the phone.",
+		start_last_fail_part_5 = "You do what you have to do big bro, love for that.",
+
+		start_legendary_tier_part_1 = "Ohhh, so you're big ballin' like that?",
+		start_legendary_tier_part_2 = "Legendary tier, okayy, looks like you might have to buy the whole floor for EDM my brother!",
+		start_legendary_tier_part_3 = "Come on.",
+
+		start_mechanic_part_1 = "Yoo, you repair cars init?",
+		start_mechanic_part_2 = "Yo g, after this I'ma need you to tune up my Asbo 'cos the dinga got too many dents in it bro.",
+
+		start_mercedes_part_1 = "Yo I love that Mercedes you got bro!",
+		start_mercedes_part_2 = "I can't lie I'ma need that off you when you're finished 'ere with this little thing right 'ere bro.",
+
+		start_no_gun_part_1 = "Bro comin' here on a friendly visit like you're not gonna get robbed.",
+		start_no_gun_part_2 = "You're lucky the ooters are out right now but..",
+		start_no_gun_part_3 = "Stay strapped next time yo.",
+
+		start_on_timer_1_part_1 = "Ay I can't lie to you bro, you failed the last one so what you doin' over here bro?",
+		start_on_timer_1_part_2 = "Nahh bro, come back later when you decide to get your act together you DICKhead.",
+
+		start_on_timer_2_part_1 = "Nahh bro, last time you failed me bro..",
+		start_on_timer_2_part_2 = "Go fuck off and do somethin' else my man.",
+
+		start_on_timer_3_part_1 = "Is it? You think you can come around here after fucking up like that bro?",
+		start_on_timer_3_part_2 = "Nah you better fuck off before I get the ooters on you bro!",
+
+		start_on_timer_4_part_1 = "Yeah I can't lie last time you fucked up bare bro..",
+		start_on_timer_4_part_2 = "I can't lie it's gonna look a bit peak for you if you stay here for about 2 more seconds my boy..",
+
+		start_on_timer_5_part_1 = "Yoo, what you sayin' g?",
+		start_on_timer_5_part_2 = "I can't lie you fucked up last time bro, you didn't even get the pills bro.",
+		start_on_timer_5_part_3 = "Like you fucked up big time bro like..",
+		start_on_timer_5_part_4 = "Don't come down here ever again bro! You know what I'm sayin'?",
+		start_on_timer_5_part_5 = "I know your name, I seen your face bro. You're finished out here bro.",
+
+		start_on_timer_6_part_1 = "Yeah this guy thinks he's a bad boy init? Fuckin' up and comin' back to me and actin' all sorry like..",
+		start_on_timer_6_part_2 = "Nahh bro, it don't work like that around here bro.",
+		start_on_timer_6_part_3 = "You better fuck off right now my guy!",
+
+		start_on_timer_7_part_1 = "Yeah I can't lie, this guy FUCKED up..",
+		start_on_timer_7_part_2 = "You see this guy over here? You see this dickhead right here yeah?",
+		start_on_timer_7_part_3 = "He fucked up bro, ay bro come here bro!",
+		start_on_timer_7_part_4 = "Yeah I can't lie, you're a dickhead, get out of here bro, come back later man.",
+
+		start_on_timer_8_part_1 = "Yeah you're some typea guyy bro..",
+		start_on_timer_8_part_2 = "This guy goes around MY thing bro.. fucks up MY thing bro.. pisses off MY people bro.",
+		start_on_timer_8_part_3 = "Then comes back he expecting a re-up, expect to get PAID bro!",
+		start_on_timer_8_part_4 = "Expect to get the bread bro.. you ain't getting no bread bro..",
+		start_on_timer_8_part_5 = "You're getting crumbs bro.. get the FUCK off my block bro!",
+		start_on_timer_8_part_6 = "Get out of here bro, you are done and all of that.",
+		start_on_timer_8_part_7 = "The phone just pinged aswell bro, you're finished bro! I got someone else on this thing bro.",
+
+		start_over_31d_part_1 = "Yo I can't lie bro! You been here for too long..",
+		start_over_31d_part_2 = "I beg you go touch something quickly and come back bro.",
+
+		start_over_100k_part_1 = "Why you pushin' grub when you got over a 100 bags to your name?",
+		start_over_100k_part_2 = "That ain't in cash right? 'cos I'ma defo send the ooters to rob you bro.",
+
+		start_revving_part_1 = "Aite if you keep revving that piece of shit car bro, we finna have problems.",
+		start_revving_part_2 = "Relax your foot, before I relax you bro!",
+
+		start_staff_1_part_1 = "Ay yo bro.. ain't you meant to be like banning dickheads and other dickhead shit instead of talking to me?",
+		start_staff_1_part_2 = "Fuck it, I need the bread but I'm watching you admins.",
+
+		start_staff_2_part_1 = "Broo, you're like the second moderator to be running oxy today..",
+		start_staff_2_part_2 = "You lot need to be on job, not on this job though.",
+
+		start_streamer_part_1 = "Yoooo, that's that one guy who thinks he's some big streamer!",
+		start_streamer_part_2 = "Yo Ls in the chat, fuck this guy bro!",
+
+		start_stressed_part_1 = "Bro! Why your hands shaking?!",
+		start_stressed_part_2 = "Go take a smoke break or somethin' bro 'cos you're movin' too stress right now.",
+
+		start_subaru_part_1 = "Ay that Subaru better be good off-road g!",
+		start_subaru_part_2 = "'cos this trail I'ma take you on is a different one!",
+
+		start_under_10k_part_1 = "Broo, I know you got like under 10k to your name!",
+		start_under_10k_part_2 = "So why don't you go take your broke arse and these pills to the location.. quickly my brother.",
+
+		start_under_24h_part_1 = "You're a beast bro! Keep it pushin'.",
+
+		start_zombie_pills_part_1 = "Okay so you just banged out Z Pills and now you wanna bang out Oxy Pills..",
+		start_zombie_pills_part_2 = "Naah you're definitely a crackhead!",
+
+		still_pressing_e_1_part_1 = "Aite bro, why you bein' bait bro?",
+		still_pressing_e_1_part_2 = "Stop comin' back to the spot bro. Bro I sent you the ping, check your phone my guy.",
+		still_pressing_e_1_part_3 = "Yeah yeah, check that.. check that..",
+
+		still_pressing_e_2_part_1 = "Brooo, are you- are you some sorta stupid guy or somethin'?",
+		still_pressing_e_2_part_2 = "Bro I just sent you the ping bro, are you fuckin' blind or somethin' bro?",
+		still_pressing_e_2_part_3 = "Check that phone bro, fuck off bro!",
+
+		still_pressing_e_3_part_1 = "Ay I can't lie, you do this one more time to me again, I told you too many times my guy..",
+		still_pressing_e_3_part_2 = "If you do that again, I'ma definitely send the ooters after you bro.",
+
+		still_pressing_e_4_part_1 = "You're takin' the piss now, fuck off bro!",
+
+		still_pressing_e_5_part_1 = "Brooo, are you fuckin' stupid or somethin'?",
+		still_pressing_e_5_part_2 = "Keep comin' back to man chattin' to me like that with your big boy voice?",
+		still_pressing_e_5_part_3 = "Ay you better back off right now, I swear to god I'ma fuck you up bro!",
+
+		still_pressing_e_6_muffled_part_1 = "Ay this guy's a dickhead though..",
+
+		still_pressing_e_7_muffled_part_1 = "Ay init this guy's a dickhead bro.",
+		still_pressing_e_7_muffled_part_2 = "He definitely a dickhead, he keeps comin' back!",
+		still_pressing_e_7_muffled_part_3 = "He thinks I'm gonna get more pissed, I'm not getting more pissed bro!",
+
+		still_pressing_e_8_part_1 = "Oi I can't lie you're starting to real piss me off now..",
+		still_pressing_e_8_part_2 = "So stop pressing that bro.",
+
+		still_pressing_e_9_part_1 = "Oi I can't lie if you keep pressing fuckin' E bro.",
+		still_pressing_e_9_part_2 = "I'ma go meta and I'ma blow you up in this bitch bro, fuck you bro.",
+
+		taking_too_long_1_part_1 = "Ay bro, you're taking a bit too long my guy, you know what I'm sayin'..",
+		taking_too_long_1_part_2 = "You better hurry that thing up quickly though.",
+
+		taking_too_long_2_part_1 = "Ay, if you keep takin' long we're gonna have big boy problems for you, you know what I'm sayin'?",
+		taking_too_long_2_part_2 = "You're too late bro, you're too late right now.. hurry up bro.",
+
+		taking_too_long_3_part_1 = "Yoo bro, you're takin' way too long bro, you tryna steal my job or somethin' bro?",
+
+		taking_too_long_5_part_1 = "Yo you think you're bare funny init? You think this is some type of joke big man?",
+		taking_too_long_5_part_2 = "Ay, come.. I beg you come to me right now bro, see what happens to you bro.",
+
+		taking_too_long_6_part_1 = "Ay you BEST not be takin' the piss bro.. I want my shit NOW fam..",
+		taking_too_long_6_part_2 = "Hurry the fuck up bro.",
+
+		taking_too_long_7_part_1 = "Bro I know what car you're drivin'..",
+		taking_too_long_7_part_2 = "I see you when you left bro, don't think you're safe.",
+
+		taking_too_long_8_part_1 = "Aite, that's it though.. this is the last chance bro.",
+		taking_too_long_8_part_2 = "If you take long again, I'ma dial up the ooters and it's gonna get sticky for you my guy.",
+		taking_too_long_8_part_3 = "So you better hurry the fuck up quickly bro... clock's ticking bro.",
+
+		too_many_people_1_part_1 = "Oi I can't lie, there's bare people around me right now bro!",
+		too_many_people_1_part_2 = "Why are you all here? You tryna like take over the spot or somethin' bro?",
+		too_many_people_1_part_3 = "'cos I swear to god I got ooters and matics about ready to kill someone.",
+		too_many_people_1_part_4 = "You see what I'm sayin' bro..",
+		too_many_people_1_part_5 = "BACK off all of you bro, I said ALL of you bro, yeah that means you bro, fuck you bro!",
+
+		too_many_people_2_part_1 = "Yo I can't lie, there's too many people right now bro..",
+		too_many_people_2_part_2 = "You're movin' kinda bait right now with all these man next to you and all of that bro.",
+		too_many_people_2_part_3 = "You said there was only be 1 of you around these parts bro, not like 4 of you dickheads bro..",
+		too_many_people_2_part_4 = "I don't care if you're in some sort of gang bro, do I give a fuck bro? No bro..",
+		too_many_people_2_part_5 = "Back you and your people up right now before it gets serious brother.",
+
+		tutorial_1_part_1 = "Ay what's good bro? You tryna run some oxy for me bro?",
+		tutorial_1_part_2 = "Yoo that's good! Ay, I can't lie to you right now bro I been lookin' for some help on all of that bro.",
+		tutorial_1_part_3 = "Ay, ay listen here- listen here though..",
+		tutorial_1_part_4 = "I've got a bunch of forge prescriptions yeah.. made for me around up north bro.",
+		tutorial_1_part_5 = "Yeah but I can't lie I'ma need you to pick up these things though for me though-",
+		tutorial_1_part_6 = "And then what I need you to do- Oi listen to me bro when I'm speaking to you bro!",
+		tutorial_1_part_7 = "Take them down to the city right.. and redeem them!",
+		tutorial_1_part_8 = "Yeah.. yeah.. you need to redeem them bro.",
+		tutorial_1_part_9 = "Yeah I'ma send you the details on the phone though so just check your GPS and all of that bro I got you bro..",
+		tutorial_1_part_10 = "But oi.. you better not take too long.. otherwise I'ma have to get the ooters on you bro.",
+		tutorial_1_part_11 = "And trust me that's not lookin' good for you right there, I can't lie about that.",
+		tutorial_1_part_12 = "Yeah lets get going big bro.. stop speaking to me bro, stop looking at my face bro and hurry the fuck up bro.",
+
+		tutorial_2_part_1 = "Oi what's good bro? You tryna run some oxy for me bro?",
+		tutorial_2_part_2 = "Yoo, that's good! Ay, I can't lie to you right now bro I been lookin' for some help on all of that bro.",
+		tutorial_2_part_3 = "Yo bro, I got a bunch of forge prescriptions made for me around up north here bro.",
+		tutorial_2_part_4 = "Ay what I'll need you to do though, is run down and pick up these prescriptions for me bro-",
+		tutorial_2_part_5 = "Yeah, and then listen here though- listen here though, take them down to the city bro, and redeem it at the pharmacies.",
+		tutorial_2_part_6 = "Yeah, yeah, yeah, yeah..",
+		tutorial_2_part_7 = "Yeah I'ma send you the details on the phone though, so just check your GPS and all of that bro, I got you bro.",
+		tutorial_2_part_8 = "But oi.. you better not take too long.. otherwise I'ma have to get the ooters on you bro.",
+		tutorial_2_part_9 = "And trust me that's not lookin' good for you right there, I can't lie about that.",
+		tutorial_2_part_10 = "Yeah lets get going big bro, stop speaking to me bro, stop lookin' at my face bro and hurry the fuck up bro.",
+
+		tutorial_3_part_1 = "Yo what's good my brother? Basically, are you tryna run some oxy for me right now?",
+		tutorial_3_part_2 = "Yeah.. yeah.. that's good though, cos I can't lie I've been lookin' for some help on all of that.",
+		tutorial_3_part_3 = "Yeah, yeah, yeah.. I got a bunch of forge prescriptions made for me around here up north. Trust me on that though.",
+		tutorial_3_part_4 = "Yeah but I can't lie though, I'ma need YOU, to pick up the prescriptions for me yeah-",
+		tutorial_3_part_5 = "And then basically, take them down to the city and redeem them at all the different pharmacies and all of that bro.",
+		tutorial_3_part_6 = "Yeah I got you though, 'cos what I'ma do right now yeah..",
+		tutorial_3_part_7 = "You see the encro bro? I'ma send you the details on the encro, so check your GPS my brother.",
+		tutorial_3_part_8 = "You better not take too long though or definitely gonna get the ooters on you so hurry that up big man.",
+		tutorial_3_part_9 = "Yeah lets get going big bro, stop speaking to me bro, stop lookin' at my face bro and hurry the fuck up bro.",
+		tutorial_3_part_10 = "Love bro, love."
+	},
+
+	panel = {
+		loading_title = "Loading",
+		error_title = "Something went wrong",
+
+		was_banned = "Banned",
+		loading = "Loading player data...",
+		no_warnings = "No warnings",
+		not_shown_warnings = "${count} more not shown",
+		system_issuer = "System",
+		add_warning_title = "Add Warning",
+		message_placeholder = "${playerName} did an oopsie...",
+
+		type_note = "Note",
+		type_warning = "Warning",
+		type_strike = "Strike",
+		type_system = "System",
+
+		button_cancel = "Cancel",
+		button_add = "Add",
+		button_close = "Close",
+		button_new = "New",
+
+		invalid_server_id = "Invalid server id.",
+
+		failed_load_player = "Failed to load player data. Did you enter a valid server id?",
+		failed_add_warning = "Failed to add warning.",
+
+		get_info_no_permissions = "Player attempted to get info about a player without proper permissions."
 	},
 
 	panic = {
@@ -7762,8 +8942,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 		dice_message_chat_title = "/dice [${serverId}]",
 		roll_message_chat_title = "/roll [${serverId}]",
 		description_message_chat_title = "/description [${serverId}]",
-		message_too_long = "Questo messaggio è troppo lungo e contiene troppo lingue!",
-		card_command_wait = "Hai appena pescato una carta, aspetta un po' prima di pescarne un'altra."
+		message_too_long = "The message contains too many characters or lines!",
+		card_command_wait = "You just drew a card, wait a bit before drawing another one.",
+		ped_message_timeout = "Slow down, wait a bit before sending another message."
 	},
 
 	ped_objects = {
@@ -7826,8 +9007,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	pepper_spray = {
-		press_to_pepper_spray = "Premi ~INPUT_ATTACK~ Per usare lo spray al pepe.",
-		using_pepper_spray = "Usando spray al pepe."
+		press_to_pepper_spray = "Press ~INPUT_ATTACK~ to use the Pepper Spray.",
+		using_pepper_spray = "Using Pepper Spray."
+	},
+
+	phone = {
+		app_settings = "Settings",
+		app_contacts = "Contacts",
+		app_calls = "Phone",
+		app_messages = "Messages"
 	},
 
 	phone_numbers = {
@@ -7854,6 +9042,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 		failed_plant = "Impossibile piantare una ${plant} pianta.",
 
 		type_weed_seeds = "Weed"
+	},
+
+	player_control = {
+		unable_to_drive_for_yourself = "You are unable to take over for yourself.",
+		drive_for_player_no_permissions = "Player attempted to drive for player but they didn't have the required permissions to do so.",
+		player_is_not_nearby = "The player with server ID ${serverId} is not nearby.",
+		player_is_not_the_drive_of_a_vehicle = "The player with server ID ${serverId} is not the driver of a vehicle.",
+		press_to_stop_drive_for = "Press ~INPUT_FRONTEND_CANCEL~ to stop driving for player."
 	},
 
 	player_scales = {
@@ -7898,6 +9094,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		model_parameter_is_not_an_object = "Il modello `${model}` non è un oggetto.",
 		spawned_prop_non_networked = "Ha generato un sostegno non network con il modello `${model}`.",
 		spawned_prop_networked = "Ha generato un sostegno in rete con il modello `${model}`.",
+		spawned_exact_prop = "Prop spawnato.",
 		failed_to_spawn_prop = "Impossibile generare prop con il modello `${model}`.",
 		not_able_to_spawn_in_vehicle = "Non puoi essere in un veicolo quando si genera un sostegno.",
 		not_able_to_spawn_while_dead = "Non puoi essere morto quando si genera un sostegno.",
@@ -7921,31 +9118,64 @@ OP.Global.Locales.Languages["it-IT"] = {
 	radio = {
 		frequency = "Frequenza",
 		switch = "Switch",
-		radio_turned_off = "La radio è stata spenta.",
-		radio_removed = "Hai perso la radio.",
-		no_radio = "Non hai una radio.",
-		unable_to_use_radio_while_cuffed = "Non puoi usare la radio mentre sei ammanettato.",
-		unable_to_use_radio_while_down = "Non puoi usare la radio mentre sei a terra.",
-		frequency_set_to = "La frequenza è stata impostata su ${frequency}.",
-		frequency_already_set_to = "La frequenza è già impostata su ${frequency}.",
-		radio_volume_same = "Il volume della radio è già impostato su `${radioVolume}`.",
-		radio_volume_reset = "Il volume della radio è stato ripristinato.",
-		radio_volume_set = "Il volume della radio è ora impostato su `${radioVolume}`.",
-		radio_volume_current = "Il tuo attuale volume della radio è impostato su `${radioVolume}`.",
-		radio_volume_current_default = "Il tuo attuale volume radio è predefinito.",
-		radio_sound_effects_same = "Il volume degli effetti sonori della radio è già impostato su `${radioSoundEffects}`.",
-		radio_sound_effects_reset = "Il volume degli effetti sonori della radio è stato ripristinato.",
-		radio_sound_effects_set = "Il volume degli effetti sonori della radio è stato ora impostato su `${radioSoundEffects}`.",
-		radio_sound_effects_current = "Il volume degli effetti sonori della radio è attualmente impostato su `${radioSoundEffects}`.",
-		radio_sound_effects_current_default = "Il volume degli effetti sonori della radio è attualmente predefinito.",
+		radio_turned_off = "The radio has been turned off.",
+		radio_removed = "You have lost your radio.",
+		no_radio = "You don't have a radio.",
+		unable_to_use_radio_while_cuffed = "You can not use the radio while you are cuffed.",
+		unable_to_use_radio_while_down = "You can not use the radio while you are down.",
+		unable_to_use_radio_as_animal = "You can not use the radio as an animal.",
+		frequency_set_to_streamer = "The frequency has been set.",
+		frequency_set_to = "The frequency has been set to ${frequency}.",
+		frequency_already_set_to = "The frequency is already set to ${frequency}.",
+		radio_volume_same = "The radio volume is already set to `${radioVolume}`.",
+		radio_volume_reset = "The radio volume has now been reset.",
+		radio_volume_set = "The radio volume has now been set to `${radioVolume}`.",
+		radio_volume_current = "Your current radio volume is set to `${radioVolume}`.",
+		radio_volume_current_default = "Your current radio volume is default.",
+		radio_sound_effects_same = "The volume of the radio sound effects is already set to `${radioSoundEffects}`.",
+		radio_sound_effects_reset = "The volume of the radio sound effects has now been reset.",
+		radio_sound_effects_set = "The volume of the radio sound effects has now been set to `${radioSoundEffects}`.",
+		radio_sound_effects_current = "The volume of the radio sound effects is currently set to `${radioSoundEffects}`.",
+		radio_sound_effects_current_default = "The volume of the radio sound effects is currently default.",
 
-		radio_missing_last_freq = "Non hai una radio per unirti all'ultima frequenza.",
+		radio_missing_last_freq = "You don't have a radio to join the last frequency.",
 
-		radio_debug_failed = "Impossibile attivare/disattivare il debug della radio.",
-		radio_debug_off = "Debug radio disattivato correttamente.",
-		radio_debug_on = "Debug radio attivato correttamente.",
+		radio_debug_failed = "Failed to toggle radio debug.",
+		radio_debug_off = "Successfully toggled radio debug off.",
+		radio_debug_on = "Successfully toggled radio debug on.",
 
-		radio_debug_no_permissions = "Tentativo di attivare/disattivare il debug della radio senza l'autorizzazione appropriata."
+		radio_debug_no_permissions = "Attempted to toggle the radio debug without proper permission.",
+
+		decrypt_frequency = "[${InteractionKey}] Decrypt Frequency",
+		decrypting_frequency = "Decrypting Frequency",
+		decrypting_frequency_failed = "Failed to decrypt frequency.",
+		decrypter_jammed = "The decryptor appears to be jammed.",
+		decrypted_frequency = "Frequency appears to be around `${frequency}`.",
+		no_frequency_detected = "No frequency detected."
+	},
+
+	remote_camera = {
+		connected_to_camera = "Connected to camera #${id}",
+
+		camera_distance = "Distance: ${distance}m",
+		out_of_range = "Out of range",
+
+		disconnect = "Disconnect",
+		view_feed = "View Feed",
+
+		no_nearby_cameras = "No nearby cameras",
+		nearby_cameras = "${amount} nearby camera(s)",
+		no_nearby_cameras_description = "There are no cameras near you.",
+
+		camera_operator = "operatore: ${fullName}",
+
+		camera_label = "Camera #${id}",
+		camera_distance = "Distanza: ${distance}m",
+		connect = "Connessione",
+
+		something_went_wrong = "Something went wrong.",
+		error_out_of_range = "The camera is out of range.",
+		error_not_found = "The camera was not found."
 	},
 
 	reskin = {
@@ -7954,7 +9184,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		reskin_player_no_permissions = "Il giocatore ha tentato di attivare o disattivare il debug della radio senza l'autorizzazione appropriata.",
 
-		radio_missing_last_freq = "Non hai una radio per unirti all'ultima frequenza.",
+		triggered_reskin_for_player = "Reskin attivato per il giocatore ${consoleName}.",
 
 		triggered_reskin_for_player_logs_title = "Reskin attivato per il giocatore",
 		triggered_reskin_for_player_logs_details = "${consoleName} attivato un reskin per ${targetConsoleName}.",
@@ -8519,24 +9749,27 @@ OP.Global.Locales.Languages["it-IT"] = {
 		exit_icu = "Uscita ICU",
 		exit_icu_interact = "[${InteractionKey}] Uscita ICU",
 
-		enter_second_floor = "Inserisci il secondo piano",
-		enter_second_floor = "[${InteractionKey}] Inserisci il secondo piano",
-
-		exit_second_floor = "Esci al secondo piano",
-		exit_second_floor_interact = "[${InteractionKey}] Esci al secondo piano",
-
-		enter_underground_tunnel = "Entra in tunnel sotterraneo",
-		enter_underground_tunnel_interact = "[${InteractionKey}] Entra in tunnel sotterraneo",
+		enter_underground_tunnel = "Entra nel tunner sotterraneo",
+		enter_underground_tunnel_interact = "[${InteractionKey}] Entra nel tunner sotterraneo",
 
 		exit_underground_tunnel = "Esci dal tunnel sotterraneo",
 		exit_underground_tunnel_interact = "[${InteractionKey}] Esci dal tunnel sotterraneo",
 
-		use_secret_tunnel_exit = "Usa l'uscita segreta",
-		use_secret_tunnel_exit_interact = "[${InteractionKey}] Usa l'uscita segreta"
+		use_secret_tunnel_exit = "Esci dall'uscita segreta",
+		use_secret_tunnel_exit_interact = "[${InteractionKey}] Esci dall'uscita segreta",
+
+		enter_hangar = "Entra nell'hangar",
+		enter_hangar_interact = "[${InteractionKey}] Entra nell'hangar",
+
+		exit_hangar = "Esci dall'hangar",
+		exit_hangar_interact = "[${InteractionKey}] Esci dall'Hangar"
 	},
 
 	test_server = {
-		fully_upgraded = "Veicolo aggiornato con successo."
+		you_are_not_in_a_vehicle = "Non sei su un veicolo.",
+		invalid_vehicle_preset = "Preset veicolo non valido.",
+		fully_upgraded = "Veicolo modificato con successo.",
+		applied_preset = "Preset appliccato con successo."
 	},
 
 	time_scale = {
@@ -8721,7 +9954,19 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	vape = {
-		press_to_use = "Premi ~INPUT_CONTEXT~ Per fare un tiro. Premi ~INPUT_FRONTEND_CANCEL~ Per mettere via lo svapo."
+		press_to_use = "Premi ~INPUT_CONTEXT~ per aspirare. Premi ~INPUT_FRONTEND_CANCEL~ per mettere la sigaretta elettronica via."
+	},
+
+	vdm = {
+		failed_vdm = "A coglione, non puoi fare VDM.",
+		invalid_entity = "Veicolo o player non trovato.",
+		invalid_network_id = "Network id invalido.",
+		invalid_target = "Target invalido.",
+		cleared_vdm = "Cleared ${amount} vdm targets.",
+		failed_vdm_clear = "Pulizia dei VDM targets fallito.",
+		added_vdm_target = "NPC con un network ID ${networkId} ti sta ora puntando ${target}.",
+
+		vdm_no_permissions = "Player ha cercato di avviare senza i permessi."
 	},
 
 	vending_machines = {
@@ -8782,25 +10027,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	weed_field = {
-		pick_weed = "Premi ~INPUT_CONTEXT~ per raccogliere.",
-		picking_weed = "Raccogliendo Weed"
-	},
-
-	welcome_screen = {
-		welcome_to = "Benvenuto a ${serverName}",
-		welcome_1 = "Hai appena creato il tuo primo personaggio. Le caratteristiche di base del tuo personaggio come la forma del viso, il colore della pelle, l'invecchiamento, ecc. possono essere modificate solo ora e non potrai cambiarle in un secondo momento, quindi assicurati di essere soddisfatto del tuo personaggio prima di terminare la creazione processi.",
-
-		creation_title = "Creazione Personaggio",
-		creation_1 = "Quando crei il tuo primo personaggio, il modello freemode verrà selezionato per impostazione predefinita. I modelli freemode maschile e femminile offrono un'ampia gamma di opzioni di personalizzazione. Puoi cambiare l'aspetto dei tuoi personaggi navigando nel menu usando i tasti freccia sinistra, destra, su e giù. La selezione corrente è evidenziata.",
-		creation_2 = "Nel menu \"Personalizzazione\" puoi modificare la forma del viso, il tono della pelle e l'abbigliamento del tuo personaggio.",
-		creation_3 = "Una volta che hai cambiato l'aspetto e l'abbigliamento di base del tuo personaggio, usa il tasto backspace per tornare al menu principale. Qui puoi utilizzare il tasto freccia giù per navigare nel menu \"Faccia\" e selezionarlo premendo Invio. Nel menu del viso puoi cambiare le caratteristiche facciali del tuo personaggio come imperfezioni, peli sul viso, sopracciglia, trucco, ecc.",
-		creation_4 = "Quando hai finito con il menu del viso puoi usare il tasto backspace per tornare di nuovo al menu principale. Qui puoi selezionare il menu \"Accessori\" se desideri aggiungere accessori come occhiali, cappelli, ecc.",
-		creation_5 = "Puoi in qualsiasi momento tornare al menu precedente selezionandoli nuovamente nel menu principale.",
-		creation_6 = "Una volta che sei soddisfatto dell'aspetto del tuo personaggio, puoi terminare il processo di creazione tenendo premuto il tasto \"G\"..",
-		creation_final = "Ricorda, non sarai in grado di cambiare il tono della pelle o la forma del viso del tuo personaggio una volta terminato il processo di creazione. Quindi assicurati di essere soddisfatto prima di finire.",
-
-		exit_intro = "Esci Introduzione",
-		exit_sure = "Sei sicuro?"
+		pick_weed = "Press ~INPUT_CONTEXT~ to pick weed.",
+		picking_weed = "Picking Weed"
 	},
 
 	wizard = {
@@ -8825,6 +10053,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		play_sound_knocking = "Knocking",
 		play_sound_discord = "Discord",
+		play_sound_phone_call = "Phone Call",
+		play_sound_message = "Message",
+		play_sound_twitter = "Twitter",
 
 		invalid_radius = "Invalid radius",
 		invalid_server_id = "ID server non valido.",
@@ -8958,6 +10189,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		reward_diamonds = "Hai preso un diamante.",
 		reward_gold_bar = "Hai preso una barra d'oro.",
 		reward_cash = "Hai preso un po 'di contanti.",
+		reward_keycard_red = "Hai preso una Keycard rossa.",
 
 		stockade_logs_title = "Stockade attivato",
 		stockade_logs_details = "${consoleName} attivato una palizzata."
@@ -9045,7 +10277,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		user_has_no_character_loaded = "L'utente non ha alcun carattere caricato.",
 		user_not_found = "L'utente inviato non è stato trovato sul server.",
 		invalid_character_id = "Parametro ID carattere non valido inviato.",
-		invalid_steam_identifier = "Parametro dell'identificatore del vapore non valido inviato."
+		invalid_license_identifier = "Parametro dell'identificatore del vapore non valido inviato."
 	},
 
 	police = {
@@ -9148,12 +10380,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 		park_vehicle = "Park Veicolo",
 		parked_vehicle = "Veicolo parcheggiato.",
 		no_vehicle_to_park = "Non c'è veicolo da parcheggiare.",
-		close_menu = "Close Menu",
+		close_menu = "Chiudi menù.",
 		purchased_vehicle = "Veicolo acquistato.",
-		shop_on_timeout = "Il negozio di veicoli è in timeout.Per favore riprova.",
-		spawn_area_not_clear = "L'area di spawn non è chiara.",
+		shop_on_timeout = "Ops qualcosa è andato storto nel vehicle shop, riprova tra un po'.",
+		spawn_area_not_clear = "Il punto di spawn non è libero.",
 		purchase_funds = "Fondi insufficienti.",
-		return_button = "Ritorna"
+		return_button = "Return",
+
+		toggled_messages_on = "Toggled messages on.",
+		toggled_messages_off = "Toggled messages off."
 	},
 
 	weazel_news = {
@@ -9234,12 +10469,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 		tank_full = "Il serbatoio è pieno.",
 		vehicle_busy = "Il veicolo vicino è occupato.",
 		purchase_jerry_can = "Premi ~g~${InventoryKey} ~w~per comprare una tanica di benzina.",
-		gas_station = "Gas Station",
-		petrolcan_fuel_text = "Petrol Amount Left: ${petrolAmount}%~n~Premi ~g~E ~w~per stopppare il pieno di benzina.",
+		gas_station = "Stazione di servizio",
+		petrolcan_fuel_text = "Carburante rimasto: ${petrolAmount}%~n~Premi ~g~E ~w~per smettere di rifornire.",
 		player_busy = "Sei impegnato con qualcos'altro.",
-		fuel_level_set_to = "Il livello del carburante è stato impostato su `${fuelLevel}`.",
-		not_in_a_vehicle = "Non sei in un veicolo.",
-		vehicle_engine_on = "Il motore è ancora in funzione.",
+		fuel_level_set_to = "Il carburato è stato settato a `${fuelLevel}`.",
+		not_in_a_vehicle = "Non sei sul veicolo.",
+		vehicle_engine_on = "Il motore è acceso.",
+
+		set_fuel_no_permissions = "Player attempted to set a vehicles fuel level without proper permissions.",
 
 		vehicle_exploded_logs_title = "Veicolo esploso",
 		vehicle_exploded_logs_details = "${consoleName} fare rifornimento di un veicolo e scatenato un'esplosione a causa di un motore in esecuzione."
@@ -9269,6 +10506,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		vehicle_currently_at = "Il tuo veicolo è attualmente disponibile su ${location}.",
 		vehicle_in_garage = "Il tuo veicolo si trova in ${garageName}.",
 		vehicle_withdrawn = "Il tuo veicolo è stato ritirato.",
+		insufficient_funds = "Non hai abbastanza soldi per ritirare questo veicolo.",
 		error_withdrawing = "Si è verificato un errore durante il tentativo di ritirare il tuo veicolo.",
 		withdraw_timeout = "Attendi un po' prima di provare a ritirare un altro veicolo.",
 		garage_in_use = "Questo garage è attualmente in uso, attendi un momento.",
@@ -9427,7 +10665,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		mileage = "Mileage",
 		vehicle_mileage_amount = "Questo veicolo ha ${miles} miles.",
 		not_in_driver_seat = "Per controllare il chilometraggio, devi essere al posto di guida.",
+		not_driving_vehicle = "Non stai guidando un veicolo.",
 		vehicle_locked = "Il veicolo è bloccato.",
+		gear_animation_enabled = "Animazione cambio (e suono) è stato appena attivato.",
+		gear_animation_disabled = "Animazione cambio (e suono) è stato appena disattivato.",
 		manual_gears_enabled = "Il cambio manuale è ora abilitato.",
 		manual_gears_disabled = "Il cambio manuale è stato ora disattivato.",
 		manual_gear_set_to = "Ingranaggio impostato su ${gearId}.",
@@ -9444,21 +10685,23 @@ OP.Global.Locales.Languages["it-IT"] = {
 		belt_is_on_and_vehicle_is_locked = "La cintura è allacciata e il veicolo è bloccato.",
 		belt_is_on = "La tua cintura è allacciata.",
 		vehicle_is_locked = "Il veicolo è bloccato.",
-
-		nearest_player_not_vehicle = "Il giocatore più vicino non è in un veicolo.",
-		no_dead_player_nearby = "Non c'è nessun giocatore morto in un veicolo vicino a te.",
-		dragging_out_player = "Trascinare il giocatore fuori dal veicolo.",
-		vehicle_too_fast = "Il veicolo si sta muovendo troppo velocemente.",
+		
+		nearest_player_not_vehicle = "Nearest player is not in a vehicle.",
+		no_dead_player_nearby = "There is no dead player in a vehicle near you.",
+		dragging_out_player = "Dragging player out of the vehicle.",
+		vehicle_too_fast = "The vehicle is moving too fast.",
 
 		debug_total_seats = "Sedili vicini: ${count}",
 
-		seat_debug_enabled = "Debug del posto abilitato.",
-		seat_debug_disabled = "DEBUG POSTO disabilitato.",
+		seat_debug_enabled = "Sedili vicini attivati: ${count}",
+		seat_debug_disabled = "Sedili vicini disabilitati.",
 
-		modifying_brakes = "Modifica dei freni",
-		toggle_brakes_on = "Freni a disattivazione off.",
+		modifying_brakes = "Freni modificati",
+		toggle_brakes_on = "Disattivati freni",
 		toggle_brakes_off = "Freni a disattivazione on.",
 		failed_modify_brakes = "Impossibile modificare i freni.",
+
+		toggle_disabled_brakes_no_permissions = "Player attempted to toggle disabled brakes via command without proper permissions.",
 
 		-- NOTE: `add_vehicle` command:
 		add_vehicle_not_super_admin = "Il giocatore ha tentato di aggiungere un veicolo al garage di qualcuno ma non erano un super admin.",
@@ -9513,17 +10756,20 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 	-- weapons/*
 	ammo = {
-		unboxing_ammo = "Spacchettando munizioni",
-		failed_unbox = "Spacchettamento munizioni fallito.",
-		failed_unbox_full = "Non puoi trasportare piu di queste munizioni.",
-		unbox_success = "Spacchettato con successo ${amount}x ${ammoType}.",
+		unboxing_ammo = "Unboxing Ammo",
+		failed_unbox = "Failed to unbox ammo.",
+		failed_unbox_full = "You cannot carry any more of this ammo.",
+		unbox_success = "Successfully unboxed ${amount}x ${ammoType}.",
 
-		type_pistol = "pistola munizioni",
-		type_smg = "sub munizioni",
-		type_rifle = "rifle munizioni",
-		type_sniper = "sniper munizioni",
-		type_shotgun = "12 gauge munizioni",
-		type_stungun = "taser cartucce"
+		type_pistol = "pistol ammo",
+		type_smg = "sub ammo",
+		type_rifle = "rifle ammo",
+		type_sniper = "sniper ammo",
+		type_shotgun = "12 gauge ammo",
+		type_stungun = "taser cartdiges",
+
+		fill_ammo_success = "Successfully filled ammo.",
+		fill_ammo_failed = "Failed to fill ammo."
 	},
 
 	weapons = {
@@ -9608,6 +10854,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		cannot_respawn_currently = "Attualmente non puoi rigenerare",
 		hold_to_respawn = "Tieni premuto ~b~ENTER ~w~Respirare o attendere l'arrivo di un paramedico",
 		hold_to_respawn_secondslol = "Tieni premuto ~b~ENTER (${seconds}) ~w~Respirare o attendere l'arrivo di un paramedico",
+		passed_out = "Sei svenuto",
 		light = "Luce",
 		moderate = "Moderare",
 		heavy = "Pesante",
