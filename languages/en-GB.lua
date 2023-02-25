@@ -1521,11 +1521,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		respawn_command_help = "Kill yourself. (for arena)",
 		respawn_command_substitutes = "/suicide",
 
-		-- game/atc
-		atc_debug_command = "/atc_debug",
-		atc_debug_command_help = "Toggle the ATC debug.",
-		atc_debug_command_substitutes = "",
-
 		-- game/audio
 		audio_debug_command = "/audio_debug",
 		audio_debug_command_help = "Toggle the audio debug.",
@@ -1934,9 +1929,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		draw_coords_destroy_command_help = "Destroy all the coordinate draws in the world.",
 		draw_coords_destroy_command_substitutes = "",
 
-		debug_damage_command = "/debug_damage",
-		debug_damage_command_help = "Debugs damage received every frame in your F8 console.",
-		debug_damage_command_substitutes = "",
+		damage_debug_command = "/debug_damage",
+		damage_debug_command_help = "Debugs damage received every frame in your F8 console.",
+		damage_debug_command_substitutes = "",
 
 		enable_ipl_command = "/enable_ipl",
 		enable_ipl_command_help = "Enables a certain IPL.",
@@ -2000,12 +1995,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		draw_vehicle_nodes_command_help = "Toggle drawing of nearby vehicles nodes.",
 		draw_vehicle_nodes_command_substitutes = "",
 
-		debug_player_command = "/debug_player",
-		debug_player_command_help = "Debugs information about a certain player.",
-		debug_player_command_parameter_server_id = "server id",
-		debug_player_command_parameter_server_id_help = "The server id of the player you want to debug.",
-		debug_player_command_substitutes = "",
-
 		distance_command = "/distance",
 		distance_command_help = "Calculate the distance between 2 points.",
 		distance_command_parameter_groundify = "groundify",
@@ -2055,9 +2044,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		doors_scan_command_parameter_save_distance_help = "Do you wish to save the distance to the entries?",
 		doors_scan_command_substitutes = "/doors",
 
-		debug_doors_command = "/debug_doors",
-		debug_doors_command_help = "Debugs information about nearby doors.",
-		debug_doors_command_substitutes = "",
+		door_debug_command = "/debug_doors",
+		door_debug_command_help = "Debugs information about nearby doors.",
+		door_debug_command_substitutes = "",
 
 		-- game/evidence
 		fingerprint_command = "/fingerprint",
@@ -2145,9 +2134,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		frisk_command_substitutes = "",
 
 		-- game/fruits
-		debug_trees_command = "/debug_trees",
-		debug_trees_command_help = "Debugs all trees in the world.",
-		debug_trees_command_substitutes = "",
+		tree_debug_command = "/debug_trees",
+		tree_debug_command_help = "Debugs all trees in the world.",
+		tree_debug_command_substitutes = "",
 
 		-- game/gun_trader
 		gun_trader_debug_command = "/gun_trader_debug",
@@ -2704,11 +2693,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		takeover_ped_command_substitutes = "/takeover",
 
 		-- game/ped_tasks
-		debug_ped_command = "/debug_ped",
-		debug_ped_command_help = "Debugs information about a ped.",
-		debug_ped_command_parameter_network_id = "network id",
-		debug_ped_command_parameter_network_id_help = "The peds network id.",
-		debug_ped_command_substitutes = "",
+		ped_debug_command = "/ped_debug",
+		ped_debug_command_help = "Debugs information about a ped.",
+		ped_debug_command_parameter_network_id = "network id",
+		ped_debug_command_parameter_network_id_help = "The peds network id.",
+		ped_debug_command_substitutes = "",
 
 		-- game/properties
 		properties_debug_command = "/properties_debug",
@@ -2823,11 +2812,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		remove_riot_player_command_parameter_server_id = "server id",
 		remove_riot_player_command_parameter_server_id_help = "The server ID of the player you would like to remove. Leave this blank to auto-select yourself.",
 		remove_riot_player_command_substitutes = "",
-
-		-- game/safes
-		debug_safe_command = "/debug_safe",
-		debug_safe_command_help = "Debugs the currently active safes combination.",
-		debug_safe_command_substitutes = "",
 
 		-- game/scoreboard
 		metagame_command = "/metagame",
@@ -3182,15 +3166,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		confirm_no_command_substitutes = "/cancel, /abort",
 
 		-- global/states
-		entity_states_debug_command = "/entity_states_debug",
-		entity_states_debug_command_help = "Toggle the debug for the entity states.",
-		entity_states_debug_command_substitutes = "/states",
-
-		debug_entity_states_command = "/debug_entity_states",
-		debug_entity_states_command_help = "Prints all states of a certain entity.",
-		debug_entity_states_command_parameter_network_id = "network id",
-		debug_entity_states_command_parameter_network_id_help = "The network id of the entity.",
-		debug_entity_states_command_substitutes = "/debug_states",
+		entity_states_command = "/entity_states",
+		entity_states_command_help = "Prints all states of a certain entity.",
+		entity_states_command_parameter_network_id = "network id",
+		entity_states_command_parameter_network_id_help = "The network id of the entity.",
+		entity_states_command_substitutes = "",
 
 		-- illegal/corner
 		corner_command = "/corner",
@@ -3302,9 +3282,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		toggle_anchor_command_substitutes = "/anchor",
 
 		-- vehicles/damage
-		debug_vehicle_command = "/debug_vehicle",
-		debug_vehicle_command_help = "Debugs the vehicles current damage values.",
-		debug_vehicle_command_substitutes = "",
+		vehicle_damage_debug_command = "/vehicle_damage_debug",
+		vehicle_damage_debug_command_help = "Debugs the vehicles current damage values.",
+		vehicle_damage_debug_command_substitutes = "",
 
 		-- vehicles/fuel
 		set_fuel_command = "/set_fuel",
@@ -3418,10 +3398,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		mileage_command = "/mileage",
 		mileage_command_help = "Check a vehicle's mileage.",
 		mileage_command_substitutes = "",
-
-		seat_debug_command = "/seat_debug",
-		seat_debug_command_help = "Toggles the seat debug.",
-		seat_debug_command_substitutes = "",
 
 		drag_out_command = "/drag_out",
 		drag_out_command_help = "Drags the nearest dead player out of the vehicle they are in.",
@@ -3656,6 +3632,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		custom_plate = "Custom Plate",
 		custom_character_id = "Custom Character ID",
+		custom_phone_number = "Custom Phone Number",
+		reskin = "Reskin",
 
 		no_player_packages = "You do not have any player packages.",
 		player_packages = "Player Packages:\n${playerPackages}",
@@ -4192,27 +4170,46 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		start_contract_type = "What do you want to do?",
 		start_contract_type_info = "Would you like to do a drop-off or VIN scratch? The VIN scratch costs an additional ${cost} CRYPT.",
-
+		
 		vin_scratch = "VIN scratch",
-
 		mark_pickup = "Mark Pickup",
 
-		new_contract = "You have a new boosting contract. (Class: ${class})",
+		new_contract = "You have a new boosting contract. (Class: ${className})",
 		started_contract = "Started contract.",
 		failed_contract = "Failed contract.",
-		completed_contract = "Completed contract.",
+		completed_contract = "Completed contract. You received ${payout} CRYPT.",
+		completed_contract_vin_scratch = "Completed contract. The vehicle can be found in your garage.",
 		marked_pickup = "Marked pickup.",
 
-		vehicle_tracker_is_being_hacked = "The vehicle tracker is being hacked. There is ${hacksRemaining} hacks remaining.",
-		use_chip_to_hack_vehicle_tracker = "Use a chip to hack the vehicle tracker. There is ${hacksRemaining} hacks remaining.",
-		vehicle_hacking_is_timed_out = "You have to wait a little before hacking again. There is ${hacksRemaining} hacks remaining.",
+		vehicle_tracker_is_being_hacked = "The vehicle tracker is being hacked. There is ${hacksRemaining} hack(s) remaining.",
+		use_chip_to_hack_vehicle_tracker = "Use a chip to hack the vehicle tracker. There is ${hacksRemaining} hack(s) remaining.",
+		vehicle_hacking_is_timed_out = "You have to wait a little before hacking again. There is ${hacksRemaining} hack(s) remaining.",
 		drop_the_vehicle_off = "Drop the vehicle off at the marked location.",
 		drop_off = "Drop-Off",
-		exit_the_vehicle = "Exit the vehicle to finish the mission.",
+		exit_the_vehicle = "Exit the vehicle and leave the area to finish the mission.",
 
 		vehicle_is_being_tampered = "A vehicle near ${locationLabel} is being tampered with. The model is ${modelLabel} (class ${className}) and the plate is ${plate}.",
 		vehicle_tamper = "Vehicle Tamper (${plate})",
-		vehicle_tracker_alert = "Vehicle Tracker Alert (${plate})"
+		vehicle_tracker_alert = "Vehicle Tracker Alert (${plate})",
+
+		exit_the_vehicle_to_scratch = "Exit the vehicle to do the VIN scratch.",
+
+		scratch = "VIN scratch.",
+		press_to_scratch = "Press ~g~E ~w~to VIN scratch.",
+
+		scratching_vehicle = "Scratching Vehicle",
+
+		deleted_boosted_vehicle_logs_title = "Deleted Boosted Vehicle",
+		deleted_boosted_vehicle_logs_details = "${consoleName} deleted boosted vehicle with ID ${vehicleId}.",
+
+		spawned_contract = "Successfully spawned a contract.",
+		spawned_contract_for = "Successfully spawned a contract for ${displayName}.",
+
+		spawn_contract_no_permissions = "Player attempted to spawn a boosting contract without proper permissions.",
+
+		already_max_vin_scratched_vehicles = "You already have the maximum amount of VIN scratched vehicles in your garage.",
+		contract_has_expired = "This contract thas expired.",
+		you_already_have_a_contract_started = "You already have a contract started."
 	},
 
 	brochure = {
@@ -5201,14 +5198,12 @@ OP.Global.Locales.Languages["en-GB"] = {
 		network_id = "Network Id",
 		owned_by_us = "Owned By Us",
 		owned_by = "Owned By",
+		one_state_set = "1 State Set",
+		many_states_set = "${count} States Set",
+		no_states = "No States",
 		first_owned_by_us = "First Owned By Us",
 		first_owned_by = "First Owned By",
 		first_owned_unknown = "First Owner Unknown",
-		not_networked = "Not Networked",
-		model_hash = "Model Hash",
-		model_name = "Model Name",
-		touching = "Touching",
-		addon = "Addon",
 		invalid_radius_parameter = "Invalid `radius` parameter.",
 		inject_code_not_developer = "The player attempted to inject code but they were not a developer.",
 		inject_code_invalid_player = "There are no players with server id `${serverId}`.",
@@ -5325,10 +5320,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 	debug_menu = {
 		menu_title = "Debug Menu",
 
-		debug_on = "On",
-		debug_off = "Off",
-
-		debug = "Debug",
 		timecycles = "Timecycles",
 		reset_timecycles = "Reset Timecycles",
 		weather = "Weather",
@@ -7983,11 +7974,23 @@ OP.Global.Locales.Languages["en-GB"] = {
 		something_went_wrong = "Something went wrong.",
 		not_enough_cash = "You don't have enough cash.",
 		not_close_enough = "You're not close enough to the player.",
+		user_not_available = "The user is not available.",
+
+		bill_received = "${displayName} has sent you a bill for $${amount}. Type `/yes` to accept it or `/no` to decline it.",
+		bill_expired = "Your bill from ${displayName} has expired.",
+		bill_declined = "You have declined the bill from ${displayName}.",
+		failed_bill_payment = "Failed to pay the bill.",
+		bill_success = "Successfully paid the $${amount} bill from ${displayName}.",
+		bill_created = "You have created a bill for $${amount} to ${displayName}.",
 
 		givecash_success = "You gave ${displayName} $${amount}.",
 
 		give_cash_title = "Cash Transfer",
-		give_cash_details = "${consoleName} transferred $${amount} to ${targetConsoleName}."
+		give_cash_details = "${consoleName} transferred $${amount} to ${targetConsoleName}.",
+		paid_bill_title = "Paid Bill",
+		paid_bill_details = "${consoleName} paid the $${amount} bill by ${targetConsoleName}.",
+		bill_created_title = "Bill Created",
+		bill_created_details = "${consoleName} created a bill for $${amount} to ${targetConsoleName}."
 	},
 
 	moonshine = {
@@ -9199,7 +9202,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		triggered_reskin_for_player_logs_details = "${consoleName} triggered a reskin for ${targetConsoleName}.",
 
 		triggered_reskin_for_self_logs_title = "Triggered Reskin For Self",
-		triggered_reskin_for_self_logs_details = "${consoleName} triggered a reskin for themselves."
+		triggered_reskin_for_self_logs_details = "${consoleName} triggered a reskin for themselves.",
+
+		no_reskin_packages = "You have no reskin packages.",
+		redeemed_reskin_package = "Successfully redeemd reskin package."
 	},
 
 	riot_mode = {
@@ -10146,6 +10152,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		minutes = "minutes",
 		second = "second",
 		seconds = "seconds",
+		just_now = "just now",
 		unknown = "Unknown",
 		flipped_vehicle_logs_title = "Flipped Vehicle",
 		flipped_vehicle_logs_details = "${consoleName} flipped a vehicle.",
@@ -10301,6 +10308,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		not_driver = "You are currently not driving a vehicle.",
 		failed_vin_get = "Failed to get the VIN.",
 		vin_checked = "The VIN number of this vehicle is ${vin}.",
+		vin_scratched = "The VIN number has been scratched.",
 
 		looking_up_vin = "Looking Up VIN",
 		invalid_vin = "Invalid or missing VIN number.",
@@ -10695,11 +10703,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		no_dead_player_nearby = "There is no dead player in a vehicle near you.",
 		dragging_out_player = "Dragging player out of the vehicle.",
 		vehicle_too_fast = "The vehicle is moving too fast.",
-
-		debug_total_seats = "Nearby Seats: ${count}",
-
-		seat_debug_enabled = "Seat debug enabled.",
-		seat_debug_disabled = "Seat debug disabled.",
 
 		modifying_brakes = "Modifying Brakes",
 		toggle_brakes_on = "Toggled brakes off.",
