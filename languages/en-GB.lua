@@ -1042,11 +1042,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		job_command_parameter_search_help = "The job/department/position name or part of it to search for or `none` to remove the job.",
 		job_command_substitutes = "",
 
-		resetjob_command = "/resetjob",
-		resetjob_command_parameter_server_id = "server id",
-		resetjob_command_parameter_server_id_help = "The players server id or 0 to select yourself",
-		resetjob_command_substitutes = "",
-		resetjob_command_help = "Resets someones job to unemployed",
+		reset_job_command = "/resetjob",
+		reset_job_command_parameter_server_id = "server id",
+		reset_job_command_parameter_server_id_help = "The players server id or 0 to select yourself",
+		reset_job_command_substitutes = "",
+		reset_job_command_help = "Resets someones job to unemployed",
 
 		watching_command = "/watching",
 		watching_command_help = "Shows you all players who are spectating nearby.",
@@ -2487,13 +2487,21 @@ OP.Global.Locales.Languages["en-GB"] = {
 		bank_command_help = "Display your bank balance.",
 		bank_command_substitutes = "",
 
-		givecash_command = "/give_cash",
-		givecash_command_parameter_server_id = "server id",
-		givecash_command_parameter_amount = "amount",
-		givecash_command_help = "Give another player a certain amount of cash",
-		givecash_command_parameter_server_id_help = "The server id of the player you with to give cash to.",
-		givecash_command_parameter_amount_help = "The amount of cash you want to give to the player",
-		givecash_command_substitutes = "/givecash",
+		give_cash_command = "/give_cash",
+		give_cash_command_parameter_server_id = "server id",
+		give_cash_command_parameter_amount = "amount",
+		give_cash_command_help = "Give another player a certain amount of cash",
+		give_cash_command_parameter_server_id_help = "The server id of the player you with to give cash to.",
+		give_cash_command_parameter_amount_help = "The amount of cash you want to give to the player",
+		give_cash_command_substitutes = "/givecash",
+
+		bill_player_command = "/bill_player",
+		bill_player_command_parameter_server_id = "server id",
+		bill_player_command_parameter_amount = "amount",
+		bill_player_command_help = "Bill another player a certain amount of money",
+		bill_player_command_parameter_server_id_help = "The server id of the player you with to send the bill to.",
+		bill_player_command_parameter_amount_help = "The amount of cash you want to bill the player",
+		bill_player_command_substitutes = "/bill",
 
 		-- game/notepads
 		notepad_command = "/notepad",
@@ -2794,6 +2802,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		reskin_command_parameter_server_id = "server id",
 		reskin_command_parameter_server_id_help = "The server ID of the player you would like to trigger a reskin for. Leave this blank to auto-select yourself.",
 		reskin_command_substitutes = "",
+
+		redeem_reskin_command = "/redeem_reskin",
+		redeem_reskin_command_help = "Redeem a puchased reskin.",		
+		redeem_reskin_command_substitutes = "",
 
 		-- game/riot_mode
 		toggle_riot_mode_command = "/riot_mode",
@@ -3468,7 +3480,15 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		toggle_folded_stock_command_command = "/toggle_folded_stock",
 		toggle_folded_stock_command_command_help = "Toggles the folded stock of the weapon you are currently holding.",
-		toggle_folded_stock_command_command_substitutes = "/folded_stock, /stock"
+		toggle_folded_stock_command_command_substitutes = "/folded_stock, /stock",
+
+		-- game/boosting
+		spawn_contract_command = "/spawn_contract",
+		spawn_contract_command_parameter_server_id = "server id",
+		spawn_contract_command_parameter_server_id_help = "The server ID you want to spawn a contract for. It will auto select you if left blank",
+		spawn_contract_command_substitutes = "/spawncontract",
+		spawn_contract_command_help = "Spawn a booting contract"
+
 	},
 
 	connections = {
