@@ -27,56 +27,56 @@ OP.Global.Locales.Languages["de-DE"] = {
 	},
 
 	emotes = {
-		get_in_trunk = "Drücken Sie ~INPUT_ENTER~, um die Amtsleitung einzugeben.",
+		get_in_trunk = "Drücken Sie ~INPUT_ENTER~, um in den Kofferraum einzusteigen.",
 		put_boombox_in_trunk = "Drücken Sie ~INPUT_ENTER~, um die Boombox in den Kofferraum zu legen.",
 		put_player_in_trunk = "Drücken Sie ~INPUT_ENTER~, um den Spieler in den Kofferraum zu legen.",
-		put_ped_in_trunk = "Drücken Sie ~INPUT_ENTER~, um das Ped in den Kofferraum zu legen.",
+		put_ped_in_trunk = "Drücken Sie ~INPUT_ENTER~, um den NPC in den Kofferraum zu legen.",
 		put_bicycle_in_trunk = "Drücken Sie ~INPUT_ENTER~, um das Fahrrad in den Kofferraum zu legen.",
 		trunk_interaction_display = "[${FahrzeugEingabeSchlüssel}] Aussteigen [${InteraktionsSchlüssel}] Kofferraum öffnen/schließen",
 		trunk_open_close_display = "[${InteractionKey}] Kofferraum öffnen/schließen",
 		boombox_already_in_trunk = "Im Kofferraum befindet sich bereits eine Boombox.",
 		the_trunk_is_occupied = "Der Kofferraum ist besetzt.",
-		unable_to_toggle_carry = "Bitte warten Sie ein wenig, bevor Sie den Übertrag umschalten.",
+		unable_to_toggle_carry = "Bitte warten Sie ein wenig, bevor Sie versuchen zu tragen.",
 		carry_disabled_animal = "Tiere können keine Spieler tragen.",
 
-		cancel_piggyback = "Drücken Sie ~INPUT_FRONTEND_RRIGHT~, um das Huckepack zu beenden.",
+		cancel_piggyback = "Drücken Sie ~INPUT_FRONTEND_RRIGHT~, um mit dem Huckepack aufzuhören.",
 		piggyback_hop_on = "[E] aufspringen",
-		stop_piggyback = "Drücken Sie ~INPUT_VEH_HEADLIGHT~, um das Huckepackverfahren zu beenden.",
+		stop_piggyback = "Drücken Sie ~INPUT_VEH_HEADLIGHT~, um mit dem Huckepack aufzuhören.",
 
-		lockpicking_cuffs = "Lockpicking-Manschetten",
+		lockpicking_cuffs = "Knacken Handschellen",
 		lockpick_cuffs_too_fast = "Sie haben sich zu schnell bewegt.",
-		success_lockpick_cuffs = "Erfolgreich Handschellen geknackt.",
-		failed_lockpick_cuffs = "Handschellen nicht geknackt.",
+		success_lockpick_cuffs = "Erfolgreich die Handschellen geknackt.",
+		failed_lockpick_cuffs = "Handschellen konnten nicht geknackt werden.",
 		lockpick_lost = "Du hast deinen Dietrich verloren.",
 
 		not_cuffed = "Sie sind nicht mit Handschellen gefesselt.",
 		unable_to_lockpick = "Sie sind nicht in der Lage, die Handschellen zu knacken.",
 
-		lockpick_cuffs_logs_title = "Lockpicked Handschellen",
-		lockpick_cuffs_logs_details = "${Konsolenname} hat seine Handschellen erfolgreich mit einem `${Gegenstandsname}` geknackt.",
+		lockpick_cuffs_logs_title = "Handschellen Geknackt",
+		lockpick_cuffs_logs_details = "${consoleName} hat seine Handschellen erfolgreich mit einem `${itemName}` geknackt.",
 
 		you_are_not_being_carried = "Sie werden derzeit nicht befördert.",
-		successfully_uncarried = "Force hat die Beförderung erfolgreich gestoppt.",
-		failed_uncarried = "Es ist nicht gelungen, die Überführung zu erzwingen.",
-		uncarry_missing_permissions = "Er hat versucht, die Beförderung ohne ordnungsgemäße Genehmigung zu unterbinden.",
+		successfully_uncarried = "Erfolgreich das Beenden des Tragens erzwungen.",
+		failed_uncarried = "Es ist nicht gelungen, das Beenden des Tragens zu erzwingen.",
+		uncarry_missing_permissions = "Er hat versucht, das Beenden des Tragens ohne Erlaubnis zu erzwingen.",
 
-		uncarry_logs_title = "Ungetragene Kraft",
-		uncarry_logs_details = "${consoleName} hat ${targetName} gezwungen, sie nicht mehr zu befördern.",
+		uncarry_logs_title = "Tragen Beendung Erzwungen",
+		uncarry_logs_details = "${consoleName} hat ${targetName} gezwungen, sie nicht mehr zu tragen.",
 
-		failed_carry_npc = "NPC konnte nicht befördert werden.",
-		carry_npc_something_wrong = "Bei dem Versuch, das Ped zu transportieren, ist etwas schief gelaufen.",
+		failed_carry_npc = "NPC konnte nicht getragen werden.",
+		carry_npc_something_wrong = "Bei dem Versuch, den NPC zu tragen, ist etwas schief gelaufen.",
 		throwing_force = "Wurfkraft",
 
-		e_to_struggle = "Drücken Sie E zum Kämpfen",
-		cant_struggle_dead = "Wenn man tot ist, kann man nicht mehr kämpfen.",
-		struggle_to_quick = "Wenn Sie sich nach der Anstrengung erschöpft fühlen, warten Sie ein wenig und versuchen Sie es erneut.",
+		e_to_struggle = "Drücken Sie E zum frei kämpfen",
+		cant_struggle_dead = "Sie können sich nicht frei kämpfen wenn Sie tot sind.",
+		struggle_to_quick = "Sie sind erschöpft, warten Sie ein wenig und versuchen Sie es erneut.",
 		struggle_logs_title = "Frei gekämpft",
-		struggle_logs_details = "${consoleName} kämpfte sich frei aus ${targetName}, das sie trägt."
+		struggle_logs_details = "${consoleName} kämpfte sich frei wenn ${targetName} sie getragen hat."
 	},
 
 	-- base/*
 	admin = {
-		feature_toggle_not_admin = "Versucht hat, sein eigenes oder das '${featureName}' eines anderen umzuschalten, aber nicht die richtigen Berechtigungen dafür hat.",
+		feature_toggle_not_admin = "Hat versucht, sein eigenes oder das '${featureName}' eines anderen umzuschalten, hatte aber nicht die richtigen Berechtigungen dafür.",
 		feature_toggle_activated_logs_title = "Ferngesteuert umschaltbare Funktion",
 		feature_toggle_activated_logs_details = "${consoleName} hat `${featureName}` für den Spieler ${targetConsoleName} umgeschaltet.",
 		feature_toggle_activated_logs_details_state = "${consoleName} hat `${featureName}` ${newState} für Spieler ${targetConsoleName} umgeschaltet.",
