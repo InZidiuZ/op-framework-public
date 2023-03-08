@@ -246,7 +246,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		logs_player_banned_details = "${consoleName} è stato bannato dal server da ${banner} per `${reason}`.",
 		logs_player_banned_no_reason_details = "Saresti stato bandito a livello globale dal sistema per una ragione `${reason}`.",
 
-        player_kicked = "${consoleName} è stato kickato dal server.",
+                player_kicked = "${consoleName} è stato kickato dal server.",
 		player_banned = "${consoleName} è stato bannato dal server.",
 
 		ban_double_kill = "Double Kill!",
@@ -8539,7 +8539,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		no_pills_10_part_3 = "They robbed that thing, so we're gonna go there together, get that back and we're gonna bail you bro.",
 		no_pills_10_part_4 = "Love for that.",
 
-		no_pills_11_part_1 = "Yoo, what you sayin'? Yeah there's nothin' right now bro.. there's nothin' right now.",
+		no_pills_11_part_1 = "Yoo, what you sayin'? Yeah there's nothin' right now bro.. there's nothin' right now. ",
 		no_pills_11_part_2 = "It's a bit peak for you right now. There's nothin' right now.",
 		no_pills_11_part_3 = "But basically, I'ma tell you this right what I tell to everyone..",
 		no_pills_11_part_4 = "Why don't you FUCK OFF bro.. and come back later. Love.",
@@ -8625,7 +8625,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		start_4_part_4 = "Love for that.",
 
 		start_5_part_1 = "Ay come here you little dickhead bro!",
-		start_5_part_2 = "Yeah, yeah, yeah.. I kno- I knew who you are bro..",
+		start_5_part_2 = "Yeah, yeah, yeah.. I kno- I knew who you are bro.. ",
 		start_5_part_3 = "Don't tell me, I don't care who you are bro.. but I know who you are.",
 		start_5_part_4 = "But basically what I want you to do though, is I need you to run the oxy pills again.",
 		start_5_part_5 = "You know the things from last time bro? You know the drill though right?",
