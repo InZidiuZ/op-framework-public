@@ -243,6 +243,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		ban_alert_description = "You would have been automatically banned by the system for reason `${reason}`.",
 
 		logs_player_banned_title = "Player Banned",
+		logs_player_banned_system_title = "Player Banned by System",
 		logs_player_banned_details = "${consoleName} has been banned from the server by ${banner} for reason `${reason}`.",
 		logs_player_banned_no_reason_details = "${consoleName} has been banned from the server by ${banner} without a specified reason.",
 
@@ -385,6 +386,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		indestructibility_feature = "Indestructibility",
 		infinite_ammo_feature = "Infinite Ammo",
 		invisibility_feature = "Invisibility",
+		muted_sirens_feature = "Muted Sirens",
 		nitro_boost_feature = "Nitro Boost",
 		no_nearby_vehicles_feature = "No Nearby Vehicles",
 		peeking_feature = "Peeking",
@@ -476,6 +478,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		auto_driving_engaged = "Auto driving has been engaged (Style: ${style}).",
 		auto_driving_updated = "Auto driving speed/location has been updated.",
 		auto_driving_disengaged = "Auto driving has been disengaged.",
+		not_auto_driving = "You are not auto driving.",
+		invalid_auto_drive_speed = "Invalid or missing auto drive speed.",
+		reset_auto_drive_speed = "Reset auto drive speed to default.",
+		set_auto_drive_speed = "Set auto drive speed to ${speed} mph.",
 
 		disable_collisions_on = "Your collisions are now disabled.",
 		disable_collisions_off = "Your collisions are now enabled.",
@@ -665,6 +671,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		ped_spawn_ban = "You tried to perform mitosis, but there was not enough sun for photosynthesis.",
 		weapon_spawn_ban = "You attempted the \"Pay to Win Route\" of FiveM where you now infact paid to get banned.",
 		illegal_vehicle_modifier_ban = "Unlike Dom Toretto from Fast and Furious, we are not family.",
+		freecam_ban = "You seem to have had an out of body experience.",
+		-- TODO: come up with a good one for both of these.
+		bad_screen_word_ban = "No reason.",
+		spiked_resource_ban = "No reason.",
 
 		honeypot_ban = "You attempted to toggle your creative mode, but didn't have the permissions to do so.",
 
@@ -688,6 +698,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		notification_damage_modifier = "Anti-Cheat: Damage modifier",
 		notification_illegal_weapon = "Anti-Cheat: Illegal weapon",
 		notification_spawned_object = "Anti-Cheat: Spawned Object",
+		notification_driving_hotwire = "Anti-Cheat: Driving while Hotwire",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus",
@@ -736,7 +747,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		invincibility_screenshot = "Anti-Cheat: Invincible",
 		runtime_texture_screenshot = "Anti-Cheat: Runtime Texture (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Anti-Cheat: Bad Screen Word (${words})",
-		freecam_detected_screenshot = "Anti-Cheat: Freecam Detected (${distance}m)"
+		freecam_detected_screenshot = "Anti-Cheat: Freecam Detected (${distance}m)",
+		driving_hotwire_screenshot = "Anti-Cheat: Driving while Hotwire"
 	},
 
 	authentication = {
@@ -1221,6 +1233,12 @@ OP.Global.Locales.Languages["en-GB"] = {
 		auto_drive_command_parameter_style_help = "Driving style (normal, rushed, reckless, reverse).",
 		auto_drive_command_substitutes = "",
 
+		drive_speed_command = "/drive_speed",
+		drive_speed_command_help = "Set the cruise speed for the auto drive command.",
+		drive_speed_command_parameter_speed = "speed",
+		drive_speed_command_parameter_speed_help = "The speed you want to set (in mph).",
+		drive_speed_command_substitutes = "",
+
 		toggle_weapon_attachment_command = "/toggle_weapon_attachment",
 		toggle_weapon_attachment_command_help = "Toggles a weapon attachment for the weapon you are currently holding.",
 		toggle_weapon_attachment_command_parameter_attachment = "attachment",
@@ -1454,8 +1472,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		-- game/airstrike
 		call_airstrike_command = "/call_airstrike",
 		call_airstrike_command_help = "Calls an airstrike on your current position.",
-		call_airstrike_command_parameter_radius = "radius",
-		call_airstrike_command_parameter_radius_help = "The radius of the area you want to be bombed.",
 		call_airstrike_command_substitutes = "",
 
 		-- game/airsupport
@@ -1551,10 +1567,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		toggle_bombs_command = "/toggle_bombs",
 		toggle_bombs_command_help = "Toggles the bombs on your current aircraft.",
 		toggle_bombs_command_substitutes = "",
-
-		plant_bomb_command = "/plant_bomb",
-		plant_bomb_command_help = "Plants a sticky bomb at your current position.",
-		plant_bomb_command_substitutes = "",
 
 		toggle_ignition_bomb_command = "/toggle_ignition_bomb",
 		toggle_ignition_bomb_command_help = "Toggles the ignition bomb for the vehicle you are currently in (vehicle will explode when engine is turned on).",
@@ -1741,6 +1753,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		culling_debug_command = "/culling_debug",
 		culling_debug_command_help = "Toggle the culling debug.",
 		culling_debug_command_substitutes = "",
+
+		-- game/daily_activities
+		reset_daily_activities_command = "/reset_daily_activities",
+		reset_daily_activities_command_help = "Reset your Daily Activities.",
+		reset_daily_activities_command_substitutes = "",
 
 		-- game/dashcam
 		unit_id_command = "/unit_id",
@@ -2298,6 +2315,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		refresh_inventory_command_parameter_inventory_name = "inventory name",
 		refresh_inventory_command_parameter_inventory_name_help = "The inventory you want to refresh.",
 		refresh_inventory_command_substitutes = "",
+
+		toggle_big_inventory_command = "/toggle_big_inventory",
+		toggle_big_inventory_command_help = "Temporarily increases your characters inventory slots to 250.",
+		toggle_big_inventory_command_substitutes = "/big_inventory",
 
 		item_lookup_command = "/item_lookup",
 		item_lookup_command_help = "Lookup an item by its ID.",
@@ -3272,8 +3293,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		give_key_command_help = "Give a vehicle key to a nearby person.",
 		give_key_command_parameter_server_id = "server id",
 		give_key_command_parameter_server_id_help = "The player's server id you would like to give the key to. This can be left blank (or at 0) to give it to the nearest person.",
-		give_key_command_parameter_plate_number = "plate number",
-		give_key_command_parameter_plate_number_help = "The vehicle's plate number you wish to give the key for. This can also be left blank to automatically select the nearest vehicle.",
 		give_key_command_substitutes = "/givekey",
 
 		hotwire_vehicle_command = "/hotwire_vehicle",
@@ -3324,6 +3343,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		ifr_command = "/ifr",
 		ifr_command_help = "Toggle IFR mode (Show landing assist for nearby runways).",
 		ifr_command_substitutes = "",
+
+		-- vehicles/sirens
+		mute_sirens_command = "/mute_sirens",
+		mute_sirens_command_help = "Mutes all sirens and horns.",
+		mute_sirens_command_substitutes = "",
 
 		-- vehicles/vehicles
 		flip_command = "/flip",
@@ -3666,7 +3690,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 	airstrike = {
 		create_airstrike_missing_permissions = "Player attmepted to create an airstrike but they didn't have the required permissions to do so.",
 
-		invalid_radius = "Invalid radius (between 1 and 50).",
 		airstrike_success = "Airstrike created with radius `${radius}`.",
 		airstrike_failed = "Failed to create an airstrike."
 	},
@@ -3934,6 +3957,15 @@ OP.Global.Locales.Languages["en-GB"] = {
 		press_to_pick_up_ball = "Press ~INPUT_CONTEXT~ to pick up ball."
 	},
 
+	banana_peels = {
+		slipped_logs_title = "Slipped On Banana Peel",
+		slipped_logs_details = "${consoleName} slipped on a banana peel while ${slipForce}.",
+
+		slip_0 = "walking",
+		slip_1 = "running",
+		slip_2 = "sprinting"
+	},
+
 	bandaids = {
 		label = "${type} Bandaid",
 
@@ -4048,6 +4080,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		rockford_records = "Rockford Records",
 		dispensary = "Dispensary",
 		haunted_high_school = "Haunted High School",
+		sushi_restaurant = "Sushi Restaurant",
 
 		bank = "Bank",
 		hospital = "Hospital",
@@ -4508,6 +4541,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 	},
 
 	crafting = {
+		menu_title = "Crafting",
+		close_menu = "Close Menu",
+
 		smelt_glass = "Smelt Broken Bottles",
 		press_to_smelt_glass = "[${SeatEjectKey}] Smelt Broken Bottles",
 		smelting_glass = "Smelting ${usedItems}",
@@ -4549,14 +4585,15 @@ OP.Global.Locales.Languages["en-GB"] = {
 		grilled_item = "Grilled Patty.",
 		failed_grill_item = "Failed to grill patty.",
 
+		hamburger_recipe = "Hamburger",
+		cheeseburger_recipe = "Cheeseburger",
+
 		assemble_burger = "Assemble Hamburger",
 		press_to_assemble_burger = "[${SeatEjectKey}] Assemble Hamburger",
 		assembling_burger = "Assembling Hamburger",
 		assembled_burger = "Assembled Hamburger",
 		failed_assemble_burger = "Failed to assemble a hamburger.",
 
-		assemble_cheeseburger = "Assemble Cheeseburger",
-		press_to_assemble_cheeseburger = "[${SeatEjectKey}] Assemble Cheeseburger",
 		assembling_cheeseburger = "Assembling Cheeseburger",
 		assembled_cheeseburger = "Assembled Cheeseburger",
 		failed_assemble_cheeseburger = "Failed to assemble a cheeseburger.",
@@ -5145,6 +5182,27 @@ OP.Global.Locales.Languages["en-GB"] = {
 		press_to_use_gavel = "Press ~INPUT_CONTEXT~ to use the Gavel."
 	},
 
+	daily_activities = {
+		press_to_daily_activities = "[${InteractionKey}] Daily Activities",
+		daily_activities = "Daily Activities",
+		resets_in = "Resets in ${resetsIn}...",
+		complete_the_other_tasks_to_unlock = "Complete the other tasks to unlock...",
+		remain = "${remain} remain",
+		claimed = "Claimed",
+		claim = "Claim",
+
+		reset_daily_activities_no_permissions = "Player attempted to reset their daily activities without proper permissions.",
+		reset_daily_activities = "Reset Daily Activities.",
+
+		parachute_from_location = "Parachute from ${location}.",
+		gamble_at_blackjack = "Play ${amount} hands at the Blackjack table.",
+		bring_in_items = "Bring over the following items.",
+		kills_in_arena = "Get ${amount} kills in Arena.",
+		headshot_kills_in_arena = "Get ${amount} headshot kills in Arena.",
+		punch_locals = "Punch ${amount} locals.",
+		move_from_place_to_place = "Move from ${from} to ${to} in ${time} seconds."
+	},
+
 	dashcam = {
 		video = "Video",
 		time = "Time",
@@ -5297,9 +5355,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		menu_title = "Debug Menu",
 
 		timecycles = "Timecycles",
-		reset_timecycles = "Reset Timecycles",
 		weather = "Weather",
-		reset_weather = "Reset Weather",
+		reset = "Reset",
 		refresh_interior = "Refresh Interior"
 	},
 
@@ -6052,6 +6109,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		irish_pub = "Irish Pub",
 		cinema = "Cinema",
 		bar = "Bar",
+		midnight = "Midnight Tunershop",
 		strip_club = "Strip Club",
 		police_store = "Police Store",
 		fib_store = "FIB Store",
@@ -6102,6 +6160,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		invalid_item_id = "Invalid item ID.",
 		item_not_found = "Could not find item with ID `${itemId}`.",
 		item_lookup = "${label} (${itemId}) currently in ${inventoryName}:${inventorySlot}.",
+
+		big_inventory_disabled = "Reset character inventory slots to default.",
+		big_inventory_enabled = "Temporarily increased your characters inventory slots.",
 
 		press_to_open_public_inventory = "~INPUT_REPLAY_SHOWHOTKEY~ Access ${label}",
 
@@ -6525,6 +6586,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		watermelon = "Watermelon",
 		watermelon_description = "Is it water or is it a melon? We may never know.",
 
+		banana_peel = "Banana Peel",
+		banana_peel_description = "From the hit game Mario Cart!",
+
 		beer = "Beer",
 		beer_description = "Angry water.",
 		vodka = "Vodka",
@@ -6633,6 +6697,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		pet_shiba_description = "With its playful personality and soft fur, this little shiba dog is the perfect sidekick for any adventure. It'll happily follow you wherever you go, its wagging tail and cheerful bark adding a touch of joy to your journey.",
 		pet_mouse = "Pudgy Pal",
 		pet_mouse_description = "This round and fluffy little chinchilla is the perfect companion for any adventure. Its soft fur and playful personality make it the perfect snuggle buddy, and it'll happily perch on your shoulder as you go about your day.",
+
+		hotwheels_mcqueen = "Lightning McQueen",
+		hotwheels_mcqueen_description = "Speed I am Speed, Float like a Cadillac sting Like a Beemer. KATCHOW KATCHOW KATCHOW",
+		hotwheels_towmater = "Tow Mater",
+		hotwheels_towmater_description = "My names my Mater, like tomater but with out the Tuh.",
 
 		boxing_gloves = "Boxing Gloves",
 		boxing_gloves_description = "Turns you into Rocky, but you probably won't get a sequel...",
@@ -7032,6 +7101,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		gas_mask = "Gas Mask",
 		gas_mask_description = "will save you from all types of gas, even grandmas farts",
+
+		nv_goggles = "Night Vision Goggles",
+		nv_goggles_description = "Will help you see in the dark.",
+		thermal_goggles = "Thermal Goggles",
+		thermal_goggles_description = "Deepthroat said do use the Mine Detector, but Solid Snake knows these are better.",
 
 		green_rolls = "Green Rolls",
 		green_rolls_description = "For those of us who need more than the average amount.",
@@ -7590,7 +7664,22 @@ OP.Global.Locales.Languages["en-GB"] = {
 		check_remaining_time = "Check remaining time",
 		leave_city = "Leave the City",
 		leave_jail = "Leave the Jail",
-		close_menu = "Close Menu"
+		close_menu = "Close Menu",
+
+		sentence_reduced = "Your sentence was reduced by ${amount} months, you have ${remaining} months left.",
+		sentence_over = "Your sentence is over.",
+		remaining_time = "Remaining Time: ${remaining} months.",
+		jailed = "You have been jailed for ${amount} months.",
+
+		mission_help_1 = "Press ~INPUT_CONTEXT~ to clean the floor.",
+		mission_help_2 = "Press ~INPUT_CONTEXT~ to eat something.",
+		mission_help_3 = "Press ~INPUT_CONTEXT~ to work out.",
+
+		mission_1 = "Cleaning the floor.",
+		mission_2 = "Eating a sandwich.",
+		mission_3 = "Working out.",
+
+		mission_blip = "Jail Mission"
 	},
 
 	kiosks = {
@@ -8269,6 +8358,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		freecam_detections_title = "Freecam Detections",
 		freecam_detections_about = "In here every player who has been detected to be using a freecam is listed. This should help in finding players who are potential modders.",
 
+		hotwire_driving_detections_title = "Hotwire-Driving Detections",
+		hotwire_driving_detections_about = "In here every player who has been detected to be driving a vehicle while still having the hotwire prompt on their screen is listed. This should help in finding players who are potential modders.",
+
 		damage_modifier_name = "Player Name",
 		damage_modifier_expected = "Expected",
 		damage_modifier_actual = "Actual",
@@ -8278,6 +8370,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		freecam_detections_name = "Player Name",
 		freecam_detections_distance = "Max Distance",
+
+		hotwire_driving_detections_name = "Player Name",
 
 		no_entries = "No entries"
 	},
@@ -9192,6 +9286,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		no_reskin_packages = "You have no reskin packages.",
 		redeemed_reskin_package = "Successfully redeemd reskin package."
+	},
+
+	restaurants = {				
+		["table"] = "Table",
+		press_to_table = "[${InteractionKey}] Table"
 	},
 
 	riot_mode = {
@@ -10596,6 +10695,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		vehicle_unlocked = "Vehicle Unlocked",
 		h_to_hotwire = "[H] Hotwire",
 		received_keys = "Received keys for vehicle with plate ${plate}.",
+		received_keys_no_plate = "Received keys for vehicle.",
 		you_are_not_in_a_vehicle = "You are not in a vehicle.",
 		you_are_in_a_vehicle = "You are currently in a vehicle.",
 		hotwired_vehicle_with_plate_number = "Hotwired vehicle with plate number '${plateNumber}'.",
@@ -10638,6 +10738,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		you_are_not_in_a_plane = "You are not in a plane.",
 		ifr_disabled = "IFR has been disabled.",
 		ifr_enabled = "IFR has been enabled."
+	},
+
+	sirens = {
+		sirens_muted_on = "All sirens are now muted.",
+		sirens_muted_off = "All sirens are now unmuted."
 	},
 
 	spawner = {
