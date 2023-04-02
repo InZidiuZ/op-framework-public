@@ -344,11 +344,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		already_sending_staff_message = "Stai già mandando un messaggio staff. Ti preghiamo di aspettare.",
 		unable_to_send_identical_staff_message = "Non puoi inviare due messaggi staff identici uno dopo l'altro entro 30 secondi.",
 
-		user_indefinitely_banned_warning_no_reason = "Ho bannato a tempo indeterminato questa persona senza un motivo specifico. Questo avviso è stato generato automaticamente a seguito del ban.",
-		user_indefinitely_banned_warning = "Ho bannato a tempo indeterminato questa persona per `${reason}`. Questo avviso è stato generato automaticamente a seguito del bad.",
-		user_temporarily_banned_warning_no_reason = "Ho bannato a tempo indeterminato questa persona senza un motivo specifico ${displayTime}. Questo avviso è stato generato automaticamente a seguito del bad..",
-		user_temporarily_banned_warning = "Ho bannato questa persona per `${reason}` per ${displayTime}. Questo avviso è stato generato automaticamente a seguito del bad.",
-
 		tp_coords_invalid_coordinates = "Cordinate invalide.",
 		tp_coords_teleported_to_coordinates = "Teletrasportato alle cordinate X: ${x}, Y: ${y}, Z: ${z}.",
 
@@ -507,11 +502,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		weapon_attachment_missing_perms = "Ha tentato di attivare un attacco di armi senza adeguato autorizzazione.",
 		weapon_tint_missing_perms = "Ha tentato di impostare una tinta dell'arma senza adeguato autorizzazione.",
 
-		no_attachments = "Quest'arma non ha attachments.",
-		available_attachments = "A disposizione Attachments",
-		current_attachments = "Attuale Attachments",
-		no_attachments = "No Attachments",
-		attachments_list = "Attachments:",
+		no_attachments = "Quest'arma non ha accessori.",
+		available_attachments = "Accessori disponibili",
+		current_attachments = "Accessori attacati",
+		no_attachments = "Nessun accessorio",
+		attachments_list = "Accessori:",
 		tint_label = "Tinta: \"${tintLabel}\" (${tintIndex})",
 
 		item_name_failed_set = "Impossibile impostare il nome dell'articolo Override.",
@@ -635,9 +630,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 	anti_cheat = {
 		illegal_client_event = "Ha attivato un evento client illegale con nome '${eventName}'.",
 		illegal_server_event = "Ha attivato un evento server illegale con nome '${eventName}'.",
-		illegal_weapon = "Ha generato un'arma illegale con il nome '${weaponLabel}'.",
-		illegal_alpha = "Modificato il valore alfa dei pedoni del giocatore (${alphaValue}).",
-		semi_god_mode = "Rilevata modalità semi dio.",
 		bad_entity_spawn = "Generato in un'entità con il nome del modello `${modelName}`.",
 		bad_entity_title = "Entità difettosa generata",
 		bad_entity_message = "${consoleName} entità generata con il nome del modello `${modelName}`.",
@@ -657,30 +649,28 @@ OP.Global.Locales.Languages["it-IT"] = {
 		ban_notification_title = "Anti-Cheat",
 		ban_notification = "Bannato ${consoleName} per `${banReason}`.",
 
-		fast_movement_ban = "Ma sei coglione? Non puoi volare.",
-		illegal_freeze_ban = "Lo sai vero che non è un gelato vero, riscaldalo?",
-		invincibility_ban = "Il bro ha cercato di essere superman, è diventato un vegetale.",
-		runtime_texture_ban = "Hai un mod menù?, ottimo ti server un nuovo account.",
-		vehicle_spawn_ban = "Hai provato ad usare la redstone su un carrello, ma ti ricordo che non siamo su minecraft.",
-		vehicle_modification_ban = "Penso tu abbia perso la targa, un admin l'ha trovata.",
-		thermal_night_vision_ban = "Il bro ha cercato di usare uno dei poteri di DareDevil.",
-		blacklisted_command_ban = "Ci scusiamo, Ma non hai il permesso di utilizzare questo comando. Ti preghiamo di contattare l'amministratore del server se credi sia un errore (creando un ticket ovviamente).",
-		text_entry_ban = "L'ispezione dell'elemento non è disponibile su questo browser.",
-		player_blips_ban = "Warzonata non disponibile, UAV Disabilitato.",
-		vehicle_spam_ban = "Counter terrorists win.",
-		damage_modifier_ban = "La tua potenza non è più 9000.",
+		bad_screen_word_ban = "Sappiamo degli esami a libro aperto, ma questo è ridicolo.",
+		blacklisted_command_ban = "Ci dispiace, ma non hai i permessi per questo comando. Ti preghiamo di contattare uno staffer se creadi che questo sia un errore.",
+		damage_modifier_ban = "La tua potenza non può essere superneinthausand.",
+		fast_movement_ban = "Il bro ha cercato di essere Flash.",
+		freecam_ban = "Sembra tu abbia avuto un'esperienza fuori dal tuo corpo.",
+		honeypot_ban = "Hai provato ad attivare la modalità creativa, ma non avevi i permessi neccessari per farlo.",
+		hotwire_driving_ban = "Vroom Vroom, sono nella macchina tu tua madre.",
+		illegal_freeze_ban = "Lo sai vero che il cibo caldo è più buono del cibo surgelato?",
+		illegal_ped_change_ban = "E' pericoloso fare un'operazione chiurgica su se stessi.",
+		illegal_spectating_ban = "Devi essere un agente FIB per guardare altri player o ussare /gamemode spettatore prima di spectare.",
+		illegal_vehicle_modifier_ban = "Sfortunatamento non come Toretto noi non siamo in fast&furious, noi non siamo una famiglia.",
+		invincibility_ban = "Non sei il cavalliere nero, potresti non essere invincibile.",
 		ped_spawn_ban = "Hai provato la mitosi, ma non c'era abbastanza sole per la fotosintesi.",
-		weapon_spawn_ban = "Hai provato la \"Pay to Win Route\" di FiveM, difatti ora hai pagato per essere bannato.",
-		illegal_vehicle_modifier_ban = "Sfortunatamente non come Dominic Toretto di F&F, noi non siamo una famiglia.",
-		freecam_ban = "Sembra che tu abbia avuto un'esperienza fuori dal corpo.",
-		-- TODO: come up with a good one for both of these.
-		bad_screen_word_ban = "Nessuna ragione.",
-		spiked_resource_ban = "Nessuna ragione.",
-
-		honeypot_ban = "Hai tentato di attivare/disattivare la modalità creativa, ma non disponevi delle autorizzazioni per farlo.",
-
-		illegal_ped_change = "È pericoloso eseguire la chirurgia plastica su te stesso.",
-		illegal_spectating = "Devi essere un agente FIB per guardare altri giocatori o utilizzare /gamemode spettatore prima di guardare.",
+		player_blips_ban = "Lo spazio aereo è pieno, l'UAV non è disponibile.",
+		runtime_texture_ban = "Il mod menù che hai, potresti usarlo, oppure no.",
+		spiked_resource_ban = "Provare a cambiare uno script senza permesso è come cambiare la fine di una storia solo perché non ti piace come finisce.",
+		text_entry_ban = "L'ispezione degli elementi non è disponibile su questo browser.",
+		thermal_night_vision_ban = "Il bro ha cercato di cheatare.",
+		vehicle_modification_ban = "Non sei riuscito a trovare i liquidi per le lampadine della tua auto.",
+		vehicle_spam_ban = "Counter terrorists win.",
+		vehicle_spawn_ban = "Hai provato ad usare la redstone sul carrello ma non avevi le rotaie costruite.",
+		weapon_spawn_ban = "Hai provato \"Strada del pay to win\" su FiveM, dove infatti hai pagato per essere bannato.",
 
 		mp_f_freemode_01_label = "Freemode (Femmina)",
 		mp_m_freemode_01_label = "Freemode (Maschio)",
@@ -1343,12 +1333,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		unscoop_command_parameter_revive_help = "Rianima i giocatori raccolti se vengono abbattuti.",
 		unscoop_command_substitutes = "",
 
-		admin_panel_command = "/admin_panel",
-		admin_panel_command_help = "Apre un profilo del pannello di amministrazione dei giocatori nel tuo browser.",
-		admin_panel_command_parameter_server_id = "server id",
-		admin_panel_command_parameter_server_id_help = "L'ID del server dei giocatori.",
-		admin_panel_command_substitutes = "/panel",
-
 		peek_command = "/peek",
 		peek_command_help = "Peek mostrerà tutti i giocatori invisibili intorno a te (incluso te stesso).",
 		peek_command_substitutes = "",
@@ -1674,16 +1658,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		barber_command_substitutes = "",
 
 		-- game/clothing
-		force_outfit_command = "/force_outfit",
-		force_outfit_command_help = "Applicare un vestito salvato senza essere vicino a un punto di abbigliamento.",
-		force_outfit_command_parameter_outfit = "outfit",
-		force_outfit_command_parameter_outfit_help = "Il nome dell'abito.",
-		force_outfit_command_substitutes = "",
-
-		export_outfit_command = "/export_outfit",
-		export_outfit_command_help = "Esporta il tuo abbigliamento attuale su un blocco note.",
-		export_outfit_command_substitutes = "",
-
 		save_outfit_command = "/save_outfit",
 		save_outfit_command_help = "Salva i tuoi vestiti attuali come vestito.",
 		save_outfit_command_parameter_name = "nome",
@@ -1696,11 +1670,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 		delete_outfit_command_parameter_name_help = "Il nome dell'abito.",
 		delete_outfit_command_substitutes = "",
 
-		reload_player_ped_data_command = "/reload_player_ped_data",
-		reload_player_ped_data_command_help = "Ripristina il tuo PED Player.(Corregge i PED invisibili)",
-		reload_player_ped_data_command_parameter_server_id = "server id",
-		reload_player_ped_data_command_parameter_server_id_help = "Lascia vuoto se vuoi farlo da solo.",
-		reload_player_ped_data_command_substitutes = "/reload_player_ped, /reload_ped_data, /reload_player",
+		share_outfit_command = "/share_outfit",
+		share_outfit_command_help = "Condividi un outfit con un altro player (se c'è un negozio vicino).",
+		share_outfit_command_parameter_server_id = "server id",
+		share_outfit_command_parameter_server_id_help = "Il player con il quale vuoi condividere questo outfit.",
+		share_outfit_command_parameter_hairstyle = "Taglio capelli",
+		share_outfit_command_parameter_hairstyle_help = "Se vuoi includere il taglio di capelli ed il colore (`0` oppure `false` se no).",
+		share_outfit_command_parameter_makeup = "makeup",
+		share_outfit_command_parameter_makeup_help = "Se vuoi includere il makeup (`0` oppure `false` se no).",
+		share_outfit_command_substitutes = "",
 
 		steal_outfit_command = "/steal_outfit",
 		steal_outfit_command_help = "Ruba l'outfit di un altro giocatore.",
@@ -1720,6 +1698,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		outfit_command_help = "Cambia in un outfit diverso quando vicino a un punto di abbigliamento.",
 		outfit_command_parameter_outfit = "outfit",
 		outfit_command_parameter_outfit_help = "Il nome dell'outfit.",
+		outfit_command_parameter_force = "forza",
+		outfit_command_parameter_force_help = "Ignora il controllo dei vestiti e non riprodurre l'animazione.",
 		outfit_command_substitutes = "",
 
 		outfits_command = "/outfits",
@@ -2161,6 +2141,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		toggle_vehicle_gravity_command_parameter_server_id = "server id",
 		toggle_vehicle_gravity_command_parameter_server_id_help = "L'ID server del giocatore per cui è possibile attivare la gravità.",
 		toggle_vehicle_gravity_command_substitutes = "/vehicle_gravity, /gravity",
+
+		-- game/gravity_gun
+		gravity_gun_command = "/gravity_gun",
+		gravity_gun_command_help = "Spawna un'arma gravitazionale per te.",
+		gravity_gun_command_substitutes = "",
 
 		-- game/halloween
 		halloween_debug_command = "/halloween_debug",
@@ -2644,6 +2629,27 @@ OP.Global.Locales.Languages["it-IT"] = {
 		list_ped_tasks_command_help = "Elenca tutte le attività di pedoponde disponibili.",
 		list_ped_tasks_command_substitutes = "",
 
+		-- game/ped_steal
+		ped_steal_command = "/ped_steal",
+		ped_steal_command_help = "Rubi il ped a qualcuno.",
+		ped_steal_command_parameter_server_id = "server id",
+		ped_steal_command_parameter_server_id_help = "L'ID del player.",
+		ped_steal_command_substitutes = "/steal_ped",
+
+		-- game/ped_takeover
+		takeover_ped_command = "/takeover_ped",
+		takeover_ped_command_help = "Ti fa controllare un certo ped.",
+		takeover_ped_command_parameter_network_id = "network id",
+		takeover_ped_command_parameter_network_id_help = "Il network ID è del ped di cui vuoi prendere controllo.",
+		takeover_ped_command_substitutes = "/takeover",
+
+		-- game/ped_tasks
+		ped_debug_command = "/ped_debug",
+		ped_debug_command_help = "Fa il debug di un ped.",
+		ped_debug_command_parameter_network_id = "network id",
+		ped_debug_command_parameter_network_id_help = "Il network id del ped.",
+		ped_debug_command_substitutes = "",
+
 		-- game/phone_numbers
 		custom_phone_number_command = "/custom_phone_number",
 		custom_phone_number_command_help = "Cambia il tuo numero di telefono.",
@@ -2672,27 +2678,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		set_player_scale_command_parameter_server_id = "server id",
 		set_player_scale_command_parameter_server_id_help = "L'ID server che desideri impostare la scala per.Lasciando questo vuoto ti selezionerà automaticamente.",
 		set_player_scale_command_substitutes = "/player_scale, /set_player_size, /player_size",
-
-		-- game/ped_steal
-		ped_steal_command = "/ped_steal",
-		ped_steal_command_help = "Rubare qualcuno PED.",
-		ped_steal_command_parameter_server_id = "server id",
-		ped_steal_command_parameter_server_id_help = "L'ID server dei giocatori.",
-		ped_steal_command_substitutes = "/steal_ped",
-
-		-- game/ped_takeover
-		takeover_ped_command = "/takeover_ped",
-		takeover_ped_command_help = "Ti fa controllare un certo ped.",
-		takeover_ped_command_parameter_network_id = "network id",
-		takeover_ped_command_parameter_network_id_help = "L'ID di rete del PED che vuoi prendere il sopravvento.",
-		takeover_ped_command_substitutes = "/takeover",
-
-		-- game/ped_tasks
-		ped_debug_command = "/debug_ped",
-		ped_debug_command_help = "Debug di informazioni su un PED.",
-		ped_debug_command_parameter_network_id = "network id",
-		ped_debug_command_parameter_network_id_help = "L'ID di rete PEDS.",
-		ped_debug_command_substitutes = "",
 
 		-- game/properties
 		properties_debug_command = "/properties_debug",
@@ -3629,7 +3614,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		reskin = "Reskin",
 
 		no_player_packages = "Non hai pacchetti giocatori.",
-		player_packages = "Player Packages:\n${playerPackages}",
+		player_packages = "Pacchetti del giocatore:\n${playerPackages}",
 		player_package = "- ${label}: ${amount}x",
 
 		appreciated_tier = "Appreciated Tier",
@@ -4182,16 +4167,16 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		no_contracts = "Non hai contratti disponibili. Unisciti alla coda per prenderne un po'.",
 
-		model = "Model",
-		plate = "Plate",
+		model = "Modello",
+		plate = "Targa",
 		buy_in = "Consenso",
 		expires_in = "Scade in",
 
 		start_contract_type = "Cosa vuoi fare??",
-		start_contract_type_info = "Ti piacerebbe fare un drop-off o un graffio VIN? Il graffio VIN costa un supplemento ${cost} CRYPT.",
+		start_contract_type_info = "Ti piacerebbe rubarla e consegnarla oppure far sì che diventi tua? Rubarla e farla diventare tua costa un supplemento di ${cost} CRYPT.",
 
 		drop_off = "Ritiro",
-		vin_scratch = "VIN graffiato",
+		vin_scratch = "Veicolo tuo",
 
 		start_contract = "Comincia Contratto",
 		transfer_contract = "Trasferisci Contratto",
@@ -4217,12 +4202,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		vehicle_tamper = "Manomissione di un veicolo (${plate})",
 		vehicle_tracker_alert = "Avviso di localizzazione del veicolo (${plate})",
 
-		exit_the_vehicle_to_scratch = "Esci dal veicolo per fare il graffio VIN.",
+		exit_the_vehicle_to_scratch = "Esci dal veicolo per far si che diventi tuo.",
 
-		scratch = "VIN graffio.",
-		press_to_scratch = "Premi ~g~E ~w~per il graffio VIN.",
+		scratch = "Graffia il numero seriale.",
+		press_to_scratch = "Premi ~g~E ~w~per graffiare il numero seriale dell'auto.",
 
-		scratching_vehicle = "Graffianco il veicolo",
+		scratching_vehicle = "Graffiando il numero del veicolo",
 
 		deleted_boosted_vehicle_logs_title = "Veicolo potenziato eliminato",
 		deleted_boosted_vehicle_logs_details = "${consoleName} veicolo potenziato con ID ${vehicleId} è stato eliminato.",
@@ -4411,10 +4396,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		invalid_job = "Non hai il lavoro richiesto per utilizzare questo punto di abbigliamento.",
 		outfit_list = "Outfits",
 		no_saved_outfits = "Non hai abiti salvati.",
-		outfit_title = "Vestito per ${type}",
-		no_freemode_model = "Puoi esportare solo abiti modello freemode.",
-		male = "mmaschio",
-		female = "femmina",
 		saved_outfit = "Outfit salvato `${name}` con successo.",
 		replaced_outfit = "Outfit rimpiazzato `${name}` con successo.",
 		failed_save_outfit_exists = "Salvataggio fallito, outfit `${name}` già esistente.",
@@ -4423,18 +4404,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 		failed_delete_outfit_doesnt_exists = "Cancellazione fallita, outfit `${name}` non esistente.",
 		failed_delete_outfit = "Cancellazione outfit fallito.",
 
-		pants = "Pataloni",
-		shoes = "Scarpe",
-		necklaces_and_ties = "Collane e cravatte",
-		undershirt = "Magliette",
-		decals = "Decalcomanie",
-		shirts = "Soprabiti",
-		arms = "Braccia",
-		mask = "Maschera",
-		armor = "Armatura",
-		parachute_and_bag = "Paracadute e borse",
-		hats_and_helmets = "Cappelli e caschi",
-		glasses = "Occhiali",
+		invalid_server_id = "Server ID invalido o mancante.",
+		player_model_missmatch = "Non puoi condividere questo outfit con questo player.",
+		player_too_far = "Il giocatore è troppo lontano.",
+		shared_outfit_too_far = "${displayName} Ha condiviso un outfit con te ma non sei vicino ad un negozio di vestiti/guardaroba.",
+		outfit_shared = "Outfit condiviso con successo.",
+		outfit_not_shared = "Outfit condiviso non riuscito.",
+		shared_outfit = "${displayName} ha condiviso un outfit con te. Scrivi `sì` per accettare o `no` per declinare. (Scadrà in 30 secondi)",
+		applied_shared_outfit = "Outfit condiviso appliccato con successo.",
+		declined_shared_outfit = "Outfit condiviso rifiutato.",
 
 		no_nearby_dead_player = "Nessun giocatore morto nelle vicinanze.",
 		failed_to_steal_shoes = "Impossibile rubare le scarpe.",
@@ -5195,8 +5173,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		resets_in = "Si resetta in ${resetsIn}...",
 		complete_the_other_tasks_to_unlock = "Completa le altre attività per sbloccare...",
 		remain = "${remain} Rimanente",
+		remain_money = "$${remain} Rimanente",
 		claimed = "Preso",
 		claim = "Prendi",
+		streak_reward = "Qualndo la tua streak è di 7 o superiore, riceverai un'altra spin giornaliera alla ruota della fortuna gratuitamente.",
 
 		reset_daily_activities_no_permissions = "Il giocatore ha tentato di reimpostare le proprie attività quotidiane senza le autorizzazioni appropriate.",
 		reset_daily_activities = "Reimposta le attività giornaliere.",
@@ -5207,7 +5187,17 @@ OP.Global.Locales.Languages["it-IT"] = {
 		kills_in_arena = "Fai ${amount} kill in arena.",
 		headshot_kills_in_arena = "Fai ${amount} headshot kill in arena.",
 		punch_locals = "Prendi a pugni ${amount}concittadini.",
-		move_from_place_to_place = "Vai da ${from} a ${to} in ${time} secondi."
+		move_from_place_to_place = "Vai da ${from} a ${to} in ${time} secondi.",
+		put_bets_in_jackpot = "Scommetti $${amount} al Jackpot.",
+		win_bets_in_jackpot = "Vinci item che valgono $${amount} al Jackpot.",
+		chop_vehicles = "Tagli ${amount} veicoli.",
+		purchase_ammo = "Compra ${amount} munizioni.",
+		collect_items_from_diving = "Colleziona ${amount}x ${itemLabel} dalla guida.",
+		take_zombie_pills = "Prendi ${amount} Zombie Pills.",
+		dig_up_a_treasure = "Scava un tesoro usando una mappa del tesoro.",
+		refine_gems = "Perfeziona ${amount} gemme.",
+		visit_location = "Visita ${location}.",
+		visit_the_location = "Visita la ${location}."
 	},
 
 	dashcam = {
@@ -5290,7 +5280,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 		vehicle_average = "Media: ${speed}",
 		vehicle_top_speed = "Top-Speed: ${speed}",
 		vehicle_acceleration = "Da 0 a 60: ${time}",
-		vehicle_acceleration_force = "Accelerazione: ${force}",
+		vehicle_acceleration_120 = "Da 0 a 120: ${time}",
+		vehicle_acceleration_150 = "Da 0 a 150: ${time}",
+		vehicle_acceleration_force = "Launch Force: ${force}",
 
 		invalid_network_id = "ID di rete non valido.",
 		delete_entity_success = "Entità eliminata con successo con ID di rete ${networkId}.",
@@ -5511,23 +5503,31 @@ OP.Global.Locales.Languages["it-IT"] = {
 		give_item_failed = "Impossibile dare ${itemName} al giocatore."
 	},
 
-	exclusive_dealerhship = {
+	exclusive_dealership = {
 		marker_label = "${label} | $${price}",
 		marker_label_purchase = "[${SeatEjectKey}] Acquistare ${label} per $${price}",
-		marker_label_purchase_timer = "[${timer}s] Tieni premuto ${SeatEjectKey} per comprare ${label} per $${price}",
 
-		purchased_vehicle = "Acquistato a ${label} per $${price}.",
+		confirm_purchase = "Conferma l'acquisto",
+		confirm_purchase_label = "${label} | $${price}",
+
+		deny_purchase = "Fa nulla, non lo voglio",
+		accept_purchase = "Sì, voglio comprarlo",
+		accept_purchase_info = "Sei sicuro di voler comprare questo veicolo? Questa azione non può essere cancellata.",
+
+		purchased_vehicle = "Comprato a ${label} per $${price}.",
 		insufficient_funds = "Fondi insufficienti.",
-		area_not_clear = "L'area di spawn non è chiara.",
-		invalid_package = "Impegno di sostenitore errato.",
+		area_not_clear = "L'area per lo spawn non è libera.",
+		invalid_package = "Impegno del sostenitore errato.",
 		something_went_wrong = "Qualcosa è andato storto.",
 
-		failed_vehicle_spawn = "Non è riuscito a spaziare il veicolo.Il veicolo sarà ancora nel tuo garage.",
+		failed_vehicle_spawn = "Non si è riusciti a creare il veicolo. Il veicolo sarà comunque nel tuo server.",
 
-		exclusive_dealerhship_blip = "Exclusive Deluxe Motorsport",
+		next_rotation_in = "Prossima rotazione in: ${time}",
 
-		log_title = "EDM Acquistare",
-		log_description = "Acquistato il `${label}` for $${price}."
+		exclusive_dealership_blip = "Exclusive Deluxe Motorsport",
+
+		log_title = "Compravendita EDM",
+		log_description = "Comprato `${label}` per $${price}."
 	},
 
 	failures = {
@@ -5684,6 +5684,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		invalid_server_id = "ID server non valido.",
 		yourself = "te stesso"
 	},
+	
+	gravity_gun = {
+			name_override = "Arma gravitazionale",
+	
+			failed_item_spawn = "Non si è riusciti a spawnare l'arma gravitazionale."
+		},
 
 	grills = {
 		campfire = "Falò",
@@ -5850,8 +5856,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		knots = "nodi",
 		ft = "ft",
 		m = "m",
-		belt = "Cintura di sicurezza",
-		limiter = "LIMITATORE",
+		belt = "Cintura",
+		limiter = "Limitatore",
 		fuel = "benzina",
 		nitro = "nitro",
 		battery = "batteria",
@@ -6267,7 +6273,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		body_armor_description = "Piatti e preparati per la guerra, o solo qualsiasi altro giorno per le strade di LS.",
 		first_aid_kit = "Primo aiuto di pronto soccorso",
 		first_aid_kit_description = "Il \"do-it-yourself\" doctor-kit.",
-		bandages = "Bandane",
+		bandages = "Bende",
 		bandages_description = "Per tutti gli outhies e i booboos.",
 		oxygen_tank = "Serbatorio di ossigeno",
 		oxygen_tank_description = "Un pacchetto di espansione polmonare.",
@@ -6311,9 +6317,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 		bcso_badge_description = "Un distintivo per i deputati dell'ufficio dello sceriffo della contea di Blaine.",
 		iaa_badge = "Distintivo IAA",
 		iaa_badge_description = "Un distintivo per gli agenti dell'agenzia degli affari interni.",
-		fib_badge = "Distintivo FI",
+		fib_badge = "Distintivo FIB",
 		fib_badge_description = "Un distintivo per gli agenti del Federal Investigation Bureau.",
-		swat_badge = "Distintivo SWAt",
+		swat_badge = "Distintivo SWAT",
 		swat_badge_description = "Un distintivo per gli ufficiali del dipartimento di armi e tattiche speciali.",
 		management_badge = "Distintivo di gestione",
 		management_badge_description = "Un distintivo per gli agenti della divisione di gestione SASP.",
@@ -6417,7 +6423,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		emerald = "Emerald",
 		emerald_description = "Smeraldo tagliato e lucido.",
 
-		ring = "Anello",
+		ring = "Annello",
 		ring_description = "Solo un anello vuoto.",
 
 		morganite_ring = "Anello di morganite",
@@ -6440,7 +6446,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		grip_description = "Grip quella canna UWU.",
 		sight = "Mirino Olografico",
 		sight_description = "Come correggere il cattivo obiettivo.",
-		scope = "Mirino Red Hot",
+		scope = "Mirino Red Dot",
 		scope_description = "Quindi puoi ottenere il bonus di distanza.",
 		suppressor = "Silenziatore",
 		suppressor_description = "Bang Bang più come Pew Pew.",
@@ -6476,7 +6482,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		grenade_shell = "Guscio di granata",
 		grenade_shell_description = "Un guscio di granata.",
-		grenade_pin = "Sicura di granta",
+		grenade_pin = "Perno granata",
 		grenade_pin_description = "La sicura della granata.",
 
 		paint = "Vernice",
@@ -6562,7 +6568,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		lettuce_description = "Quella roba verde che non vendono per le strade.",
 		patty = "Hamburger",
 		patty_description = "Un giorno un piccolo uomo troverà la formula segreta per questa carne, fino ad allora, continua a lanciare Fry Cook.",
-		potato = "Potata",
+		potato = "Patata",
 		potato_description = "L'unica cosa dalla Russia che non è una sposa AK o Vodka.",
 		raw_fries = "Patatine crude",
 		raw_fries_description = "Fondamentalmente solo una patata, ma qualcuno non ha fatto abbastanza sforzo per farlo qualcosa.",
@@ -6703,6 +6709,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		pet_shiba_description = "Con la sua personalità giocosa e la morbida pelliccia, questo piccolo cane shiba è il compagno perfetto per ogni avventura. Ti seguirà felicemente ovunque tu vada, la sua coda scodinzolante e la sua corteccia allegra aggiungeranno un tocco di gioia al tuo viaggio.",
 		pet_mouse = "Cincillà grassoccio",
 		pet_mouse_description = "Questo cincillà rotondo e soffice è il compagno perfetto per ogni avventura. La sua morbida pelliccia e la sua personalità giocosa lo rendono il perfetto compagno di coccole, e si appollaierà felicemente sulla tua spalla durante la tua giornata.",
+		pet_raccoon = "Rascal il procione",
+		pet_raccoon_description = "Introcendo Rascal, il soffice procione sempre pronto per l'avventura. Con un fisico paffuto e una personalità maliziosa, si siederà felicemente sulla tua spalla e ti aiuterà a cercare tesori. Pronto a unirti alla tua ricerca?",
 		
 		hotwheels_mcqueen = "Lightning McQueen",
 		hotwheels_mcqueen_description = "Io sono velocità, Veloce come una Cadillac come ed elegante come una fita. KATCHOW KATCHOW KATCHOW",
@@ -6825,7 +6833,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		avocado_smoothie = "Avocado Smoothie",
 		avocado_smoothie_description = "Succo verde sano, ignora i pezzi.",
 
-		raspberry = "Lampone",
+		raspberry = "Raspberry",
 		raspberry_description = "https://i.redd.it/jbcj0uqbihg41.jpg",
 
 		antenna = "Antenna",
@@ -7095,7 +7103,22 @@ OP.Global.Locales.Languages["it-IT"] = {
 		kettle_chips = "Kettle Chips (Miele-BBQ)",
 		kettle_chips_description = "Le migliori patatine al mondo.",
 		cheetos = "Cheetos",
-		cheetos_description = "Il miglior snack per le tue sessioni di gioco.",
+		cheetos_description = "Lo snack migliore per le tue sessioni di gaming.",
+
+		rice = "Riso",
+		rice_description = "Sono grani carnosi e soffici.",
+		nori = "Nori",
+		nori_description = "Questa è un'alga, ci potresti trovare nemo dentro.",
+		soy_sauce = "Salsa di soia",
+		soy_sauce_description = "La salsa di soia è un condimento saporito con un ricco sapore di umami, perfetto per marinate, condimenti e salse da immersione, a basso contenuto calorico e ricco di proteine.",
+		egg = "Uovo",
+		egg_description = "Versatile e nutrizioso, uova perfette per le omelette, strapazzate, o anche pasticeria.",
+		lime = "Lime",
+		lime_description = "Saporito e ricco di vitamina C, aggiungi la scorza di lime alle bevande,marina e usali come decoro.",
+		coconut = "Noce di cocco",
+		coconut_description = "Dolce e cremoso, il cocco esalta dessert, curry e frullati. Dab.",
+		sugar = "Zucchero",
+		sugar_description = "E' come la cocaina ma non è illegale, l'unica cosa che da è il diabete.",
 
 		golf_ball = "Palla da Golf",
 		golf_ball_description = "Utilizzato per il golf.",
@@ -7165,8 +7188,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		greenstriped_rockfish = "Scorfano striscie verdi",
 		halfbanded_rockfish = "Scorfano Mezzobanda",
 		honeycomb_rockfish = "Scorfano favo",
-		kelp_greenling_female = "Fuco pesce verda (femmina)",
-		kelp_greenling_male = "Fuco pesce verda (maschio)",
+		kelp_greenling_female = "Fuco pesce verde (femmina)",
+		kelp_greenling_male = "Fuco pesce verde (maschio)",
 		kelp_rockfish = "Scorfano fuco",
 		lingcod = "Lingcod",
 		olive_rockfish = "Scorfano oliva",
@@ -7519,7 +7542,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		weapon_addon_sentinelbbshotgun_description = "Sacchi di divertimento.",
 
 		-- TODO: Add a description for this one
-		weapon_addon_stungun = "Taser Coil",
+		weapon_addon_stungun = "Taser",
 		weapon_addon_stungun_description = "Divertimento zaptic per tutta la famiglia!",
 
 		weapon_addon_m4 = "Carabine M4",
@@ -7689,7 +7712,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	kiosks = {
-		access_kiosk = "Premi ~g~${InteractionKey} ~w~per accedere al kiosko",
 		read_catalog = "Premi ~g~${InteractionKey} ~w~per leggere il catalogo"
 	},
 
@@ -7759,7 +7781,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		slow_download = "Rallenta il download",
 		regular_download = "Download regolare",
 		back = "Indietro",
-		copy_license = "ID Licenzaì",
+		copy_license = "ID Licenza",
 		copy_license_success = "Copiato!",
 		cache_assets = "Risorse della cache",
 		download_assets = "Vuoi scaricare e memorizzare nella cache la maggior parte delle risorse del server? In questo modo porterà ad alcune cose:",
@@ -7784,6 +7806,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		queue = "In coda",
 		queue_position_with_priority = "🐌 Sei ${queuePosition}/${queueTotal} in conda con ${queuePriorityName} priorità. 🕐${queueTime}",
 		queue_position_without_priority = "🐌 sei ${queuePosition}/${queueTotal} in coda. 🕐${queueTime}",
+		you_are_through = "Sei in mezzo!",
+		join_server = "Entrando nel server",
 		tired_of_queueing = "Stanco di stare in coda? Supportaci per avere la priorità in coda!",
 		joining_battle_royale = "Unendomi alla Battle Royale",
 		joining_arena = "Unendomi all'Arena",
@@ -7820,7 +7844,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 		casino = "Casino",
 		random = "Casuale",
 		beginner = "Principiante",
-		custom = "Personalizzato"
+		custom = "Personalizzato",
+
+		appreciated_tier = "Appreciated Tier",
+		respected_tier = "Respected Tier",
+		heroic_tier = "Heroic Tier",
+		legendary_tier = "Legendary Tier",
+		godlike_tier = "Godlike Tier"
 	},
 
 	loot = {
@@ -8329,43 +8359,40 @@ OP.Global.Locales.Languages["it-IT"] = {
 		about_handling_overrides_text = "Crea sostituzioni di gestione temporanee per gestire le classi in modo dinamico. Le sostituzioni dureranno fino a quando non vengono rimosse o il server viene riavviato. Le sostituzioni verranno impostate per tutti i giocatori sul server.",
 		add_override = "Aggiungi sostituzione",
 		add = "Aggiungi",
-		model_name = "Nome del modello...",
+		model_name = "Nome modello...",
 		field_name = "Campo...",
 		value = "Valore...",
-		current_overrides = "Attuale sostituzione",
+		current_overrides = "Sostituzione corrente",
 
-		about_explosion_events_title = "Eventi di esplosione",
+		about_explosion_events_title = "Eventi esposivi",
 		about_explosion_events_about = "Qui vengono registrate le informazioni sugli ultimi 500 eventi di esplosione. Questo dovrebbe aiutare lo staff a trovare i modder.",
 		about_unusual_explosions = "Eventi esplosivi insoliti che non si verificano normalmente.",
-		explosions_by_type_title = "Esplosioni per tipo",
+		explosions_by_type_title = "Esplosioni di tipo",
 		players_causing_explosions_title = "Giocatori che causano esplosioni",
 		show_common_events_off = "Mostra eventi comuni: OFF",
 		show_common_events_on = "Mostra eventi comuni: ON",
 
-		illegal_weapons_title = "Armi generate",
+		illegal_weapons_title = "Armi spawnate",
 		illegal_weapons_about = "Qui vengono registrate le ultime 500 occorrenze di spawn nelle armi rilevate dal sistema. Quando qualcuno ha un'arma generata, non significa necessariamente che stia modificando, poiché i modder possono generare armi nelle mani di altri giocatori e quindi anche altri giocatori si presenterebbero qui.",
-		illegal_weapons_by_type = "Armi per tipo",
-		players_with_spawned_weapons = "Giocatori con armi generate",
+		illegal_weapons_by_type = "Armi di tipo",
+		players_with_spawned_weapons = "PLayer con armi spawnate",
 
-		ped_models_title = "Modello ped player",
+		ped_models_title = "Modelli ped dei player",
 		ped_models_about = "Qui è elencato ogni giocatore che non usa un modello di personaggio freemode. Questo dovrebbe aiutare a trovare giocatori che sono qui solo per trollare o potenziali modder.",
-		local_ped_models_title = "Modelli Ped locali",
-		animal_ped_models_title = "Modelli Animali locali",
+		local_ped_models_title = "Modelli ped locali",
+		animal_ped_models_title = "Modelli ped animali",
 
 		fast_movement_title = "Movimento veloce",
 		fast_movement_about = "Qui viene elencato ogni giocatore che è stato segnalato per essersi mosso troppo velocemente. Questo dovrebbe aiutare a trovare giocatori che sono potenziali modder.",
 
-		damage_modifier_title = "Modificatore di danno",
+		damage_modifier_title = "Modificatore di danni",
 		damage_modifier_about = "Qui viene elencato ogni giocatore che è stato rilevato per avere un modificatore di danno modificato. Questo dovrebbe aiutare a trovare giocatori che sono potenziali modder.",
 
 		bad_screen_word_title = "Brutte parole sullo schermo",
 		bad_screen_word_about = "Iqui viene elencato ogni giocatore che è stato rilevato per avere determinate parole sullo schermo. Questo dovrebbe aiutare a trovare giocatori che sono potenziali modder.",
-
+		
 		freecam_detections_title = "Rilevamenti di Freecam",
 		freecam_detections_about = "Qui è elencato ogni giocatore che è stato rilevato utilizzare una freecam. Questo dovrebbe aiutare a trovare giocatori che sono potenziali modder.",
-		
-		hotwire_driving_detections_title = "Rilevamenti di guida-scassinamento",
-		hotwire_driving_detections_about = "Qui viene elencato ogni giocatore che è stato rilevato alla guida di un veicolo pur avendo ancora il prompt hotwire sullo schermo. Questo dovrebbe aiutare a trovare giocatori che sono potenziali modder.",
 
 		damage_modifier_name = "Nome giocatore",
 		damage_modifier_expected = "Eccetto",
@@ -8989,7 +9016,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		failed_load_player = "Impossibile caricare i dati del giocatore. Hai inserito un ID server valido!?",
 		failed_add_warning = "Impossibile aggiungere un avvertimento.",
 
-		get_info_no_permissions = "Il giocatore ha tentato di ottenere informazioni su un giocatore senza le autorizzazioni appropriate."
+		get_info_no_permissions = "Il giocatore ha tentato di ottenere informazioni su un giocatore senza le autorizzazioni appropriate.",
+
+		user_indefinitely_banned_warning_no_reason = "Ho bannato a tempo indeterminato questa persona senza un motivo specifico. Questo avviso è stato generato automaticamente a seguito del divieto.",
+		user_indefinitely_banned_warning = "Ho bannato a tempo indeterminato questa persona con il motivo `${reason}`. Questo avviso è stato generato automaticamente a seguito del divieto.",
+		user_temporarily_banned_warning_no_reason = "Ho bannato questa persona senza un motivo specifico per ${displayTime}. Questo avviso è stato generato automaticamente a seguito del divieto.",
+		user_temporarily_banned_warning = "Ho bannato questa persona con il motivo `${reason}` for ${displayTime}. Questo avviso è stato generato automaticamente a seguito del divieto."
 	},
 
 	panic = {
@@ -9170,8 +9202,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 		player_left = "Giocatore a sinistra [${serverId}]"
 	},
 
+	pole_dancing = {
+		press_to_strip_dance = "Premi ~INPUT_CONTEXT~ per fare lo strip dance.",
+		this_pole_is_occupied = "Questo pale è occupato.",
+		stop_dancing = "Fermati",
+		change_dance = "Cambia ballo (${animationId})"
+	},
+
 	pools = {
-		pools_overflowing = "Pools Overflowing: ~r~${poolsOverflowing}"
+		pools_overflowing = "Piscine straripanti: ~r~${poolsOverflowing}"
 	},
 
 	props = {
@@ -9296,14 +9335,56 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 	restaurants = {
 		["table"] = "Tavolo",
-		press_to_table = "[${InteractionKey}] tavolo"
+		press_to_table = "[${InteractionKey}] Tavolo",
+
+		table_title = "Tavolo ${tableId}",
+		seat = "Sedia ${seatId}",
+		close_menu = "Chiudi menù",
+		loading = "Caricando...",
+
+		leave_seat = "Alzati",
+		view_menu = "Guarda il menù",
+		change_seating_position = "Cambia posizione (${animationId})",
+
+		sushi = "Sushi",
+		drinks = "Bevande",
+		desserts = "Dolci",
+
+		aka = "Aka",
+		kuro = "Kuro",
+		shiro = "Shiro",
+		midori = "Midori",
+		nigiri = "Nigiri",
+		sex_on_the_beach = "Sex on the beach",
+		mojito = "Mojito",
+		pina_colada = "Pina Colada",
+		tiramisu = "Tiramisù",
+		chocolate_mousse = "Mousse al ciocolato",
+
+		food_replenish = "La tua fame e la tua sete saranno riempite di ${amount}%.",
+		thirst_replenish = "Ti deseterai di ${amount}%.",
+		hunger_replenish = "La tua fame sarà riempita di ${amount}%.",
+		diving_drop_boost = "Prendi ${amount}x più gocce da viaggi subacquei per ${duration} minuti.",
+		hunting_drop_boost = "Prendi ${amount}x più gocce da caccia per ${duration} minuti.",
+		garbage_drop_boost = "Prendi ${amount}x più gocce da rifiuti per ${duration} minuti.",
+		faster_progress_bars = "Hai ${amount}x la barra più veloce per ${duration} minuti.",
+		weapon_damage_multiplier = "Hai ${amount}x danni aumentati per ${duration} minuti.",
+		local_sales_multiplier = "Hai ${amount}x moltiplicatore delle vendite per i prodotti venduti alla gente del posto.",
+		shorter_boosting_cooldown = "Hai ${amount}x un cooldown più corto per gli hackeraggi nel boosting.",
+		swim_faster = "Nuota ${amount}x più velocemente per ${duration} minuti.",
+		walk_faster = "Cammina e corri ${amount}x più veloce per ${duration} minuti.",
+		health_generation = "Hai una graduale generazione della salute per ${duration} minuti.",
+		better_stamina = "Essere in grado di correre per ${duration} minuti senza stancarti.",
+		more_inventory_space = "Avere ${amount} slot nell'inventario in più per ${duration} minuti.",
+
+		buffs_note = "I buff si attiveranno solo dopo aver lasciato le vicinanze dell'edificio."
 	},
 
 	riot_mode = {
-		riot_mode_enabled = "Modalità antisommossa abilitata correttamente.",
-		riot_mode_disabled = "Modalità antisommossa disabilitata correttamente.I PED già aggressivi continueranno a combattere fino a quando non saranno morti.",
+		riot_mode_enabled = "Modalità riot abilitata correttamente.",
+		riot_mode_disabled = "Modalità riot disabilitata correttamente.I PED già aggressivi continueranno a combattere fino a quando non saranno morti.",
 		riot_mode_failed = "Impossibile attivare la modalità Riot.",
-		riot_mode_missing_perms = "Ha tentato di attivare la modalità antisommossa senza l'autorizzazione adeguata.",
+		riot_mode_missing_perms = "Ha tentato di attivare la modalità riot senza l'autorizzazione adeguata.",
 
 		riot_mode_enabled_help = "La modalità antisommossa è stata abilitata.",
 		riot_mode_disabled_help = "La modalità antisommossa è stata disabilitata.",
@@ -10295,6 +10376,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		use_advanced_lockpick = "[${InteractionKey}] Usando Advanced Lockpick",
 		lockpicking_stockade = "Scassinando Stockade",
 
+		status_blip = "Stockade",
+		
 		stockade_reward_logs_title = "Ricompensa di stockade",
 		cash_pickup_logs_details = "${consoleName} raccolto $${cashAmount} in contanti.",
 		item_pickup_logs_details = "${consoleName} raccolto 1x ${itemName}.",
@@ -10599,8 +10682,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 	gadgets = {
 		helicopter_camera_vehicle_info_metric = "Velocità: ${speed} km/h\nModello: ${model}\nTarga: ${plate}",
 		helicopter_camera_vehicle_info_imperial = "elocità: ${speed} mp/h\nModello: ${model}\nTarga: ${plate}",
-		helicopter_camera_location_info = "${locationLabelHere}\n${locationLabelInDirection}",
-		helicopter_camera_world_info = "${time}\n${altitude}Piedi AGL\n${altitudeASL}Piedi ASL",
+		helicopter_camera_altitude = "${altitude}ft AGL",
+		helicopter_camera_altitude_asl = "${altitude}ft ASL",
 		unknown = "Sconosciuto"
 	},
 
