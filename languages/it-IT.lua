@@ -807,70 +807,70 @@ OP.Global.Locales.Languages["it-IT"] = {
 		-- if no substitutes are wanted, simply leave an empty string with ""
 
 		-- animations/carry
-		carry_command = "/carry",
+		carry_command = "carry",
 		carry_command_help = "Attiva/disattiva carry.",
 		carry_command_substitutes = "",
 
-		uncarry_command = "/uncarry",
+		uncarry_command = "uncarry",
 		uncarry_command_help = "Forza il giocatore che ti sta trasportando a smettere di trasportarti.",
 		uncarry_command_substitutes = "",
 
-		piggyback_command = "/piggyback",
+		piggyback_command = "piggyback",
 		piggyback_command_help = "Piggyback un altro giocatore.",
 		piggyback_command_substitutes = "",
 
-		pick_cuffs_command = "/pick_cuffs",
+		pick_cuffs_command = "pick_cuffs",
 		pick_cuffs_command_help = "Lockpick dalle manette.",
 		pick_cuffs_command_substitutes = "",
 
-		struggle_command = "/struggle",
+		struggle_command = "struggle",
 		struggle_command_help = "Cerca di sfuggire a qualcuno che ti trasporta.",
 		struggle_command_substitutes = "",
 
-		handsup_command = "/handsup",
+		handsup_command = "handsup",
 		handsup_command_help = "alza le mani (o abbassale).",
-		handsup_command_substitutes = "/hands, /surrender, /hu",
+		handsup_command_substitutes = "hands, surrender, hu",
 
 		-- animations/chairs
-		sit_command = "/sit",
+		sit_command = "sit",
 		sit_command_help = "Prova a sederti su una sedia vicina.",
 		sit_command_parameter_variation = "variazioni",
 		sit_command_parameter_variation_help = "Che animazione sit suonare (1 - 6)",
-		sit_command_substitutes = "/chair",
+		sit_command_substitutes = "chair",
 
 		-- animations/emotes
-		ragdoll_command = "/ragdoll",
+		ragdoll_command = "ragdoll",
 		ragdoll_command_help = "Attiva/disattiva ragdoll.",
 		ragdoll_command_substitutes = "",
 
 		-- base/admin
-		report_command = "/report",
+		report_command = "report",
 		report_command_help = "Invia un messaggio a tutti i membri dello staff attivi.",
 		report_command_parameter_message = "messaggio",
 		report_command_parameter_message_help = "Il messaggio che vorresti inviare.",
 		report_command_substitutes = "",
 
-		announce_command = "/announce",
+		announce_command = "announce",
 		announce_command_help = "Trasmetti un annuncio a tutti i giocatori.",
 		announce_command_parameter_message = "messaggio",
 		announce_command_parameter_message_help = "Il messaggio che vorresti trasmettere.",
 		announce_command_substitutes = "",
 
-		staff_pm_command = "/staff_pm",
+		staff_pm_command = "staff_pm",
 		staff_pm_command_help = "Invia un messaggio a un membro dello staff oa un giocatore come membro dello staff.",
 		staff_pm_command_parameter_server_id = "server id",
 		staff_pm_command_parameter_server_id_help = "L'ID del server del giocatore a cui stai tentando di inviare un messaggio.",
 		staff_pm_command_parameter_message = "messaggio",
 		staff_pm_command_parameter_message_help = "Il messaggio che vorresti inviare.",
-		staff_pm_command_substitutes = "/staffpm",
+		staff_pm_command_substitutes = "staffpm",
 
-		staff_command = "/staff",
+		staff_command = "staff",
 		staff_command_help = "Trasmetti un messaggio a tutti i membri dello staff attivi.",
 		staff_command_parameter_message = "messaggio",
 		staff_command_parameter_message_help = "Il messaggio che vorresti inviare.",
 		staff_command_substitutes = "",
 
-		wipe_command = "/wipe",
+		wipe_command = "wipe",
 		wipe_command_help = "Cancella le entità indesiderate dalla mappa.",
 		wipe_command_parameter_distance = "distanza",
 		wipe_command_parameter_distance_help = "Se vuoi solo entità entro un certo intervallo, inserire una distanza qui.Lascialo a `false` o` 0` per l'intera mappa.",
@@ -880,27 +880,27 @@ OP.Global.Locales.Languages["it-IT"] = {
 		wipe_command_parameter_model_name_help = "Se vuoi eliminare solo le entità di un determinato nome del modello, inserisci qui un nome del modello.Altrimenti lasciare vuoto, a `false` o` 0`.Puoi anche impostarlo su `veicoli 'o` peds`.",
 		wipe_command_substitutes = "",
 
-		noclip_command = "/noclip",
+		noclip_command = "noclip",
 		noclip_command_help = "Attiva/disattiva noclip.",
 		noclip_command_parameter_server_id = "server id",
 		noclip_command_parameter_server_id_help = "Se vuoi attivare il noclip per qualcun altro, inserisci qui il loro ID server.",
 		noclip_command_substitutes = "",
 
-		safe_noclip_command = "/safe_noclip",
+		safe_noclip_command = "safe_noclip",
 		safe_noclip_command_help = "Attiva/disattiva noclip but only if there is nobody nearby that could see you do so (staff members with staff toggled excluded).",
-		safe_noclip_command_substitutes = "/snoclip",
+		safe_noclip_command_substitutes = "snoclip",
 
-		delete_vehicle_command = "/delete_vehicle",
+		delete_vehicle_command = "delete_vehicle",
 		delete_vehicle_command_help = "Elimina un veicolo vicino.",
 		delete_vehicle_command_parameter_ignore_heading = "si",
 		delete_vehicle_command_parameter_ignore_heading_help = "Vorresti ignorare l'intestazione del tuo giocatore? Lasciare questo vuoto fungerà da a `no`.",
-		delete_vehicle_command_substitutes = "/dv",
+		delete_vehicle_command_substitutes = "dv",
 
-		delete_vehicle_interactively_command = "/delete_vehicle_interactively",
+		delete_vehicle_interactively_command = "delete_vehicle_interactively",
 		delete_vehicle_interactively_command_help = "Attiva/disattiva la cancellazione interattiva del veicolo.",
-		delete_vehicle_interactively_command_substitutes = "/dvi",
+		delete_vehicle_interactively_command_substitutes = "dvi",
 
-		kick_command = "/kick",
+		kick_command = "kick",
 		kick_command_help = "Caccia un giocatore dal server.",
 		kick_command_parameter_server_id = "server id",
 		kick_command_parameter_server_id_help = "L'ID del server del giocatore che stai tentando di espellere.",
@@ -908,7 +908,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		kick_command_parameter_reason_help = "Il motivo del calcio del giocatore. Questo può essere lasciato vuoto.",
 		kick_command_substitutes = "",
 
-		ban_command = "/ban",
+		ban_command = "ban",
 		ban_command_help = "Ban a player from the server.",
 		ban_command_parameter_server_id = "server id",
 		ban_command_parameter_server_id_help = "L'ID del server del giocatore che stai tentando di bannare.",
@@ -918,15 +918,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 		ban_command_parameter_reason_help = "Il motivo della squalifica del giocatore. Questo può essere lasciato vuoto.",
 		ban_command_substitutes = "",
 
-		staff_hidden_command = "/staff_hidden",
+		staff_hidden_command = "staff_hidden",
 		staff_hidden_command_help = "Attiva/disattiva se altri giocatori possono vedere o meno lo stato del tuo staff.",
 		staff_hidden_command_substitutes = "",
 
-		staff_toggle_command = "/staff_toggle",
+		staff_toggle_command = "staff_toggle",
 		staff_toggle_command_help = "Attiva/disattiva la tua disponibilità del personale Disattivarlo impedirà la visualizzazione di rapporti, PM del personale e messaggi del personale.",
 		staff_toggle_command_substitutes = "",
 
-		protective_mode_command = "/protective_mode",
+		protective_mode_command = "protective_mode",
 		protective_mode_command_help = "Attiva/disattiva modalità di protezione del server. Ciò cancellerà le nuove connessioni dai giocatori al di sotto della quantità specificata di tempo di gioco richiesto. Questo controllo è escluso dai membri dello staff e dai sostenitori del server.",
 		protective_mode_command_parameter_enabled = "attivato",
 		protective_mode_command_parameter_enabled_help = "Il controllo deve essere abilitato? Gli input validi sono: `true`, `false`, `1` e `0`.",
@@ -934,7 +934,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		protective_mode_command_parameter_playtime_help = "La quantità di tempo di riproduzione richiesta (secondi) per accettare una nuova connessione.",
 		protective_mode_command_substitutes = "",
 
-		spawn_vehicle_command = "/spawn_vehicle",
+		spawn_vehicle_command = "spawn_vehicle",
 		spawn_vehicle_command_help = "Genera un veicolo.",
 		spawn_vehicle_command_parameter_model_name = "Nome modello",
 		spawn_vehicle_command_parameter_model_name_help = "Il nome del modello del veicolo che vuoi generare.",
@@ -942,7 +942,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		spawn_vehicle_command_parameter_server_id_help = "L'ID del server del giocatore per cui vorresti generare questo veicolo. Puoi lasciarlo vuoto o su '0' per selezionare te stesso.",
 		spawn_vehicle_command_substitutes = "/sv",
 
-		create_vehicle_command = "/create_vehicle",
+		create_vehicle_command = "create_vehicle",
 		create_vehicle_command_help = "Genera un veicolo nella tua posizione attuale senza che ti penetri.",
 		create_vehicle_command_parameter_model_name = "nome modello",
 		create_vehicle_command_parameter_model_name_help = "Il nome del modello del veicolo che vuoi spawnare.",
@@ -950,13 +950,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 		create_vehicle_command_parameter_ground_help = "Il veicolo dovrebbe essere spawnato per terra?",
 		create_vehicle_command_substitutes = "/cv",
 
-		replace_vehicle_command = "/replace_vehicle",
+		replace_vehicle_command = "replace_vehicle",
 		replace_vehicle_command_help = "Sostituisci il tuo veicolo attuale con uno diverso.",
 		replace_vehicle_command_parameter_model_name = "Nome modello",
 		replace_vehicle_command_parameter_model_name_help = "Il nome del modello del veicolo che vuoi generare.",
 		replace_vehicle_command_substitutes = "/rv",
 
-		aimbot_command = "/aimbot",
+		aimbot_command = "aimbot",
 		aimbot_command_help = "Attiva/disattiva 'aimbot'.",
 		aimbot_command_parameter_server_id = "server id",
 		aimbot_command_parameter_server_id_help = "Se desideri attivare 'aimbot' per qualcun altro, inserisci qui il suo ID server.",
@@ -964,51 +964,51 @@ OP.Global.Locales.Languages["it-IT"] = {
 		aimbot_command_parameter_targets_help = "ID del server di destinazione (funziona solo quando si commuta per te stesso). (filtrerà i bersagli in modo che siano solo giocatori con questi ID server)",
 		aimbot_command_substitutes = "",
 
-		player_bones_debug_command = "/player_bones_debug",
+		player_bones_debug_command = "player_bones_debug",
 		player_bones_debug_command_help = "Attiva/disattiva il debugger delle ossa del giocatore.",
 		player_bones_debug_command_parameter_server_id = "server id",
 		player_bones_debug_command_parameter_server_id_help = "Se vuoi attivare il debugger delle ossa del giocatore per qualcun altro, inserisci qui il suo ID server.",
-		player_bones_debug_command_substitutes = "/player_bones",
+		player_bones_debug_command_substitutes = "player_bones",
 
-		wallhack_command = "/wallhack",
+		wallhack_command = "wallhack",
 		wallhack_command_help = "Attiva/disattiva 'wallhack'.",
 		wallhack_command_parameter_server_id = "server id",
 		wallhack_command_parameter_server_id_help = "Se vuoi attivare il 'wallhack' per qualcun altro, inserisci qui il suo ID server.",
 		wallhack_command_substitutes = "",
 
-		speed_boost_command = "/speed_boost",
+		speed_boost_command = "speed_boost",
 		speed_boost_command_help = "Attiva/disattiva 'speed boost'.",
 		speed_boost_command_parameter_server_id = "server id",
 		speed_boost_command_parameter_server_id_help = "Se desideri attivare o disattivare l''aumento di velocità' per qualcun altro, inserisci qui il suo ID server.",
 		speed_boost_command_substitutes = "",
 
-		nitro_boost_command = "/nitro_boost",
+		nitro_boost_command = "nitro_boost",
 		nitro_boost_command_help = "Attiva/disattiva 'nitro boost'.",
 		nitro_boost_command_parameter_server_id = "server id",
 		nitro_boost_command_parameter_server_id_help = "Se vuoi attivare il 'nitro boost' per qualcun altro, inserisci qui il suo ID server.",
-		nitro_boost_command_substitutes = "/nitro",
+		nitro_boost_command_substitutes = "nitro",
 
-		indestructibility_command = "/indestructibility",
+		indestructibility_command = "indestructibility",
 		indestructibility_command_help = "Attiva/disattiva 'indestructibility'.",
 		indestructibility_command_parameter_server_id = "server id",
 		indestructibility_command_parameter_server_id_help = "Se vuoi attivare l''indistruttibilità' per qualcun altro, inserisci qui il suo ID server.",
-		indestructibility_command_substitutes = "/ind, /god, /god_mode, /godmode",
+		indestructibility_command_substitutes = "ind, god, god_mode, godmode",
 
-		no_nearby_vehicles_command = "/no_nearby_vehicles",
+		no_nearby_vehicles_command = "no_nearby_vehicles",
 		no_nearby_vehicles_command_help = "Attiva/disattiva 'no nearby vehicles'.",
 		no_nearby_vehicles_command_parameter_server_id = "server id",
 		no_nearby_vehicles_command_parameter_server_id_help = "Se desideri attivare o disattivare 'nessun veicolo nelle vicinanze' per qualcun altro, inserisci qui il suo ID server.",
 		no_nearby_vehicles_command_substitutes = "",
 
-		disable_collisions_command = "/disable_collisions",
+		disable_collisions_command = "disable_collisions",
 		disable_collisions_command_help = "Disabilita le collisioni con veicoli e pedoni in un raggio di 10 metri.",
-		disable_collisions_command_substitutes = "/collisions",
+		disable_collisions_command_substitutes = "collisions",
 
-		ghost_command = "/ghost",
+		ghost_command = "ghost",
 		ghost_command_help = "Questo comando lo abiliterà /peek, /invisibility and /disable_collisions.",
 		ghost_command_substitutes = "",
 
-		job_command = "/job",
+		job_command = "job",
 		job_command_help = "Aggiorna il lavoro di qualcuno in base a una ricerca.",
 		job_command_parameter_server_id = "server id",
 		job_command_parameter_server_id_help = "L'id del server del giocatore o 0 per selezionarti.",
@@ -1016,39 +1016,39 @@ OP.Global.Locales.Languages["it-IT"] = {
 		job_command_parameter_search_help = "Il job/department/position nome o parte di esso da ricercare o `none` per rimuovere il job.",
 		job_command_substitutes = "",
 
-		reset_job_command = "/resetjob",
+		reset_job_command = "resetjob",
 		reset_job_command_help = "Resetta il job di qualcuno a Unemplyed.",
 		reset_job_command_parameter_server_id = "server id",
 		reset_job_command_parameter_server_id_help = "L'id del server del giocatore o 0 per selezionarti.",
 		reset_job_command_substitutes = "",
 
-		watching_command = "/watching",
+		watching_command = "watching",
 		watching_command_help = "Mostra tutti i giocatori che sono spettatori nelle vicinanze.",
 		watching_command_substitutes = "",
 
-		disable_recoil_command = "/disable_recoil",
+		disable_recoil_command = "disable_recoil",
 		disable_recoil_command_help = "Disattiva tutto il rinculo delle armi.",
 		disable_recoil_command_substitutes = "",
 
-		infinite_ammo_command = "/infinite_ammo",
+		infinite_ammo_command = "infinite_ammo",
 		infinite_ammo_command_help = "Attiva/disattiva munizioni infinite.",
 		infinite_ammo_command_substitutes = "",
 
-		stick_command = "/stick",
+		stick_command = "stick",
 		stick_command_help = "Ti fa restare attaccato al tetto di un veicolo (carsurf).",
 		stick_command_substitutes = "",
 
-		unstick_command = "/unstick",
+		unstick_command = "unstick",
 		unstick_command_help = "Ti fa staccare dal tetto di un veicolo.",
 		unstick_command_substitutes = "",
 
-		clean_ped_command = "/clean_ped",
+		clean_ped_command = "clean_ped",
 		clean_ped_command_help = "Pulisce il sangue di un personaggio, gli impatti dei proiettili, lo sporco, ecc.",
 		clean_ped_command_parameter_server_id = "server id",
 		clean_ped_command_parameter_server_id_help = "L'ID del server del giocatore di cui vuoi pulire il ped. Se lasciato vuoto, sarai automaticamente selezionato.",
 		clean_ped_command_substitutes = "",
 
-		toggle_vehicle_smoke_command = "/toggle_vehicle_smoke",
+		toggle_vehicle_smoke_command = "toggle_vehicle_smoke",
 		toggle_vehicle_smoke_command_help = "Attiva/disattiva 'fumo del veicolo'.",
 		toggle_vehicle_smoke_command_parameter_server_id = "server id",
 		toggle_vehicle_smoke_command_parameter_server_id_help = "Se vuoi attivare il 'fumo del veicolo' per qualcun altro, inserisci qui il suo ID server.",
@@ -1058,21 +1058,21 @@ OP.Global.Locales.Languages["it-IT"] = {
 		toggle_vehicle_smoke_command_parameter_color_g_help = "Il valore verde del colore del fumo (0 - 255).",
 		toggle_vehicle_smoke_command_parameter_color_b = "colore b",
 		toggle_vehicle_smoke_command_parameter_color_b_help = "Il valore blu del colore del fumo (0 - 255).",
-		toggle_vehicle_smoke_command_substitutes = "/vehicle_smoke, /smoke",
+		toggle_vehicle_smoke_command_substitutes = "vehicle_smoke, smoke",
 
-		speed_up_progress_bar_command = "/speed_up_progress_bar",
+		speed_up_progress_bar_command = "speed_up_progress_bar",
 		speed_up_progress_bar_command_help = "Attiva/disattiva 'accelerare progress bar'.",
 		speed_up_progress_bar_command_parameter_server_id = "server id",
 		speed_up_progress_bar_command_parameter_server_id_help = "Se desideri attivare la 'barra di avanzamento della velocità' per qualcun altro, inserisci qui il suo ID server.",
-		speed_up_progress_bar_command_substitutes = "/speed_up",
+		speed_up_progress_bar_command_substitutes = "speed_up",
 
-		invisibility_command = "/invisibility",
+		invisibility_command = "invisibility",
 		invisibility_command_help = "Attiva/disattiva 'invisibility'.",
 		invisibility_command_parameter_server_id = "server id",
 		invisibility_command_parameter_server_id_help = "Se vuoi attivare l''invisibilità' per qualcun altro, inserisci qui il suo ID server.",
-		invisibility_command_substitutes = "/inv, /invis, /invisible",
+		invisibility_command_substitutes = "inv, invis, invisible",
 
-		add_cash_command = "/add_cash",
+		add_cash_command = "add_cash",
 		add_cash_command_help = "Aggiungi denaro al personaggio di qualcuno.",
 		add_cash_command_parameter_amount = "ammonto",
 		add_cash_command_parameter_amount_help = "La quantità di denaro che vorresti dare al giocatore.",
@@ -1080,7 +1080,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		add_cash_command_parameter_server_id_help = "L'ID del server del giocatore. Se lasciato vuoto, te stesso viene selezionato automaticamente.",
 		add_cash_command_substitutes = "",
 
-		remove_cash_command = "/remove_cash",
+		remove_cash_command = "remove_cash",
 		remove_cash_command_help = "Rimuovi denaro dal personaggio di qualcuno.",
 		remove_cash_command_parameter_amount = "ammonto",
 		remove_cash_command_parameter_amount_help = "La quantità di denaro che vorresti rimuovere dal giocatore.",
@@ -1088,7 +1088,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		remove_cash_command_parameter_server_id_help = "L'ID del server del giocatore. Se lasciato vuoto, te stesso viene selezionato automaticamente.",
 		remove_cash_command_substitutes = "",
 
-		add_bank_command = "/add_bank",
+		add_bank_command = "add_bank",
 		add_bank_command_help = "Aggiungi saldo in banca al personaggio di qualcuno.",
 		add_bank_command_parameter_amount = "ammonto",
 		add_bank_command_parameter_amount_help = "L'importo del saldo bancario che vorresti dare al giocatore.",
@@ -1096,7 +1096,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		add_bank_command_parameter_server_id_help = "L'ID del server del giocatore. Se lasciato vuoto, te stesso viene selezionato automaticamente.",
 		add_bank_command_substitutes = "",
 
-		remove_bank_command = "/remove_bank",
+		remove_bank_command = "remove_bank",
 		remove_bank_command_help = "Rimuovi il saldo bancario dal personaggio di qualcuno.",
 		remove_bank_command_parameter_amount = "ammonto",
 		remove_bank_command_parameter_amount_help = "L'importo del saldo bancario che vorresti rimuovere dal giocatore.",
@@ -1104,7 +1104,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		remove_bank_command_parameter_server_id_help = "L'ID del server del giocatore. Se lasciato vuoto, te stesso viene selezionato automaticamente.",
 		remove_bank_command_substitutes = "",
 
-		spawn_item_command = "/spawn_item",
+		spawn_item_command = "spawn_item",
 		spawn_item_command_help = "Utilizzato per generare oggetti.",
 		spawn_item_command_parameter_item_name = "Nomi item",
 		spawn_item_command_parameter_item_name_help = "Il nome dell'elemento che vuoi generare. Questo deve essere il *nome dell'elemento*, e quindi le sue etichette non funzioneranno.",
@@ -1114,15 +1114,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 		spawn_item_command_parameter_server_id_help = "L'ID del server del giocatore per il quale vorresti generare l'oggetto. Se lasciato vuoto, viene selezionato te stesso.",
 		spawn_item_command_parameter_battle_royale_only = "Solo battle royal",
 		spawn_item_command_parameter_battle_royale_only_help = "Rendi questo oggetto un oggetto solo Battle Royale.",
-		spawn_item_command_substitutes = "/si",
+		spawn_item_command_substitutes = "si",
 
-		warning_message_command = "/warning_message",
+		warning_message_command = "warning_message",
 		warning_message_command_help = "Aggiungi un messaggio del server globale per tutti i giocatori.",
 		warning_message_command_parameter_message = "messaggi",
 		warning_message_command_parameter_message_help = "Il messaggio che vorresti mostrare ai giocatori. È possibile lasciare vuoto questo parametro per rimuovere il messaggio di avviso.",
 		warning_message_command_substitutes = "",
 
-		tp_coords_command = "/tp_coords",
+		tp_coords_command = "tp_coords",
 		tp_coords_command_help = "Teletrasportati ad alcune coordinate.",
 		tp_coords_command_parameter_x = "x",
 		tp_coords_command_parameter_x_help = "Le cordinate X sulle quali vuoi teletrasportarti.",
@@ -1130,37 +1130,37 @@ OP.Global.Locales.Languages["it-IT"] = {
 		tp_coords_command_parameter_y_help = "Le cordinate Y sulle quali vuoi teletrasportarti.",
 		tp_coords_command_parameter_z = "z",
 		tp_coords_command_parameter_z_help = "Le cordinate Z sulle quali vuoi teletrasportarti. Questo parametro è facoltativo e se lasciato vuoto verranno cercate automaticamente le coordinate del terreno.",
-		tp_coords_command_substitutes = "/tpc",
+		tp_coords_command_substitutes = "tpc",
 
-		tp_waypoint_command = "/tp_waypoint",
+		tp_waypoint_command = "tp_waypoint",
 		tp_waypoint_command_help = "Teletrasportati al waypoint impostato.",
-		tp_waypoint_command_substitutes = "/tp_marker, /tp",
+		tp_waypoint_command_substitutes = "tp_marker, tp",
 
-		isolate_player_command = "/isolate_player",
+		isolate_player_command = "isolate_player",
 		isolate_player_command_help = "Isola un giocatore, rifiutando qualsiasi cosa cerchi di fare.",
 		isolate_player_command_parameter_server_id = "server id",
 		isolate_player_command_parameter_server_id_help = "Il giocatore bersaglio.",
-		isolate_player_command_substitutes = "/isolate",
+		isolate_player_command_substitutes = "isolate",
 
-		show_all_evidence_command = "/show_all_evidence",
+		show_all_evidence_command = "show_all_evidence",
 		show_all_evidence_command_help = "Mostra tutte le prove del bossolo dei proiettili nelle vicinanze.",
-		show_all_evidence_command_substitutes = "/all_evidence, /show_evidence, /evidence",
+		show_all_evidence_command_substitutes = "all_evidence, show_evidence, evidence",
 
-		population_density_command = "/population_density",
+		population_density_command = "population_density",
 		population_density_command_help = "Sostituisci il moltiplicatore della densità di popolazione globale.",
 		population_density_command_parameter_multiplier = "moltiplicatore",
 		population_density_command_parameter_multiplier_help = "Il moltiplicatore della densità di popolazione che si desidera impostare. Lasciare questo vuoto lo disattiverà. I valori validi sono compresi tra 0,0 e 1,0.",
-		population_density_command_substitutes = "/population, /density, /pop",
+		population_density_command_substitutes = "population, density, pop",
 
-		repair_vehicle_command = "/repair_vehicle",
+		repair_vehicle_command = "repair_vehicle",
 		repair_vehicle_command_help = "Ripara il veicolo in cui ti trovi.",
-		repair_vehicle_command_substitutes = "/fix",
+		repair_vehicle_command_substitutes = "fix",
 
-		enter_vehicle_command = "/enter_vehicle",
+		enter_vehicle_command = "enter_vehicle",
 		enter_vehicle_command_help = "Forza il tuo giocatore a entrare nel veicolo a cui sei più vicino.",
-		enter_vehicle_command_substitutes = "/ev",
+		enter_vehicle_command_substitutes = "ev",
 
-		set_modification_command = "/set_modification",
+		set_modification_command = "set_modification",
 		set_modification_command_help = "Imposta le modifiche del veicolo sul veicolo in cui ti trovi.",
 		set_modification_command_parameter_mod_type = "Tipo di mod",
 		set_modification_command_parameter_mod_type_help = "L'ID del tipo di mod che desideri impostare.",
@@ -1168,111 +1168,111 @@ OP.Global.Locales.Languages["it-IT"] = {
 		set_modification_command_parameter_mod_index_help = "L'ID della mod che desideri impostare.",
 		set_modification_command_parameter_custom_tires = "Ruote modificate",
 		set_modification_command_parameter_custom_tires_help = "Ruote modificate?",
-		set_modification_command_substitutes = "/sm",
+		set_modification_command_substitutes = "sm",
 
-		set_livery_command = "/set_livery",
+		set_livery_command = "set_livery",
 		set_livery_command_help = "Imposta la livrea del veicolo in cui ti trovi.",
 		set_livery_command_parameter_livery_index = "Indice livree",
 		set_livery_command_parameter_livery_index_help = "L'indice della livrea che vuoi impostare.",
 		set_livery_command_substitutes = "",
 
-		set_fake_plate_command = "/set_fake_plate",
+		set_fake_plate_command = "set_fake_plate",
 		set_fake_plate_command_help = "Imposta il numero di targa falso sul veicolo in cui ti trovi.",
 		set_fake_plate_command_parameter_plate_number = "Numero targa",
 		set_fake_plate_command_parameter_plate_number_help = "Il numero di targa che si desidera impostare.",
-		set_fake_plate_command_substitutes = "/plate",
+		set_fake_plate_command_substitutes = "plate",
 
-		set_dirt_level_command = "/set_dirt_level",
+		set_dirt_level_command = "set_dirt_level",
 		set_dirt_level_command_help = "Pulisce il veicolo in cui ti trovi.",
 		set_dirt_level_command_parameter_dirt_level = "Livello sporco",
 		set_dirt_level_command_parameter_dirt_level_help = "Il livello di sporco che vuoi impostare (tra 0 e 15)",
-		set_dirt_level_command_substitutes = "/sd",
+		set_dirt_level_command_substitutes = "sd",
 
-		player_info_command = "/player_info",
+		player_info_command = "player_info",
 		player_info_command_help = "Restituisce alcune informazioni su un determinato giocatore.",
 		player_info_command_parameter_server_id = "server id",
 		player_info_command_parameter_server_id_help = "L'ID del server del giocatore di cui vorresti ottenere informazioni. Se lasciato vuoto, viene selezionato te stesso.",
-		player_info_command_substitutes = "/player, /pi",
+		player_info_command_substitutes = "player, pi",
 
-		inventory_command = "/inventory",
+		inventory_command = "inventory",
 		inventory_command_help = "Apri un inventario specifico.",
 		inventory_command_parameter_inventory_name = "Nome inventario",
 		inventory_command_parameter_inventory_name_help = "Il nome dell'inventario che desideri aprire.",
 		inventory_command_substitutes = "",
 
-		character_inventory_command = "/character_inventory",
+		character_inventory_command = "character_inventory",
 		character_inventory_command_help = "ti mostra l'inventario di un altro giocatore.",
 		character_inventory_command_parameter_server_id = "server id",
 		character_inventory_command_parameter_server_id_help = "L'ID del server di quel giocatore.",
-		character_inventory_command_substitutes = "/pockets",
+		character_inventory_command_substitutes = "pockets",
 
-		fake_disconnect_command = "/fake_disconnect",
+		fake_disconnect_command = "fake_disconnect",
 		fake_disconnect_command_help = "Attiva una serie di eventi per far sembrare che tu sia disconnesso dal server. Ciò abiliterà anche il tuo noclip se non è già attivo.",
-		fake_disconnect_command_substitutes = "/fake_leave, /dc",
+		fake_disconnect_command_substitutes = "fake_leave, dc",
 
-		set_identity_command = "/set_identity",
+		set_identity_command = "set_identity",
 		set_identity_command_help = "Sostituisce il nome del tuo giocatore.",
 		set_identity_command_parameter_player_name = "nome giocatore",
 		set_identity_command_parameter_player_name_help = "Il nome che vuoi impostare o vuoto per reimpostare.",
-		set_identity_command_substitutes = "/identity",
+		set_identity_command_substitutes = "identity",
 
-		disable_idle_cam_command = "/disable_idle_cam",
+		disable_idle_cam_command = "disable_idle_cam",
 		disable_idle_cam_command_help = "Disattiva l'attivazione della fotocamera inattiva.",
-		disable_idle_cam_command_substitutes = "/disable_idle, /idle",
+		disable_idle_cam_command_substitutes = "disable_idle, idle",
 
-		auto_drive_command = "/auto_drive",
+		auto_drive_command = "auto_drive",
 		auto_drive_command_help = "Ti guida automaticamente al waypoint impostato o guida in modo casuale se non ne è impostato nessuno.",
 		auto_drive_command_parameter_style = "stile",
 		auto_drive_command_parameter_style_help = "Stile di guida (normal, rushed, reckless, reverse).",
 		auto_drive_command_substitutes = "",
 
-		drive_speed_command = "/drive_speed",
+		drive_speed_command = "drive_speed",
 		drive_speed_command_help = "Impostare la velocità per il comando di guida automatica.",
 		drive_speed_command_parameter_speed = "Velocità",
 		drive_speed_command_parameter_speed_help = "La velocità che vuoi impostare (in mph).",
 		drive_speed_command_substitutes = "",
 
-		toggle_weapon_attachment_command = "/toggle_weapon_attachment",
+		toggle_weapon_attachment_command = "toggle_weapon_attachment",
 		toggle_weapon_attachment_command_help = "Attiva/disattiva un accessorio per l'arma che stai attualmente impugnando.",
 		toggle_weapon_attachment_command_parameter_attachment = "attachment",
 		toggle_weapon_attachment_command_parameter_attachment_help = "L'allegato che vuoi attivare.",
-		toggle_weapon_attachment_command_substitutes = "/weapon_attachment, /attachment",
+		toggle_weapon_attachment_command_substitutes = "weapon_attachment, attachment",
 
-		set_weapon_tint_command = "/set_weapon_tint",
+		set_weapon_tint_command = "set_weapon_tint",
 		set_weapon_tint_command_help = "Imposta o rimuove la tinta dell'arma che stai impugnando.",
 		set_weapon_tint_command_parameter_tint = "tinta",
 		set_weapon_tint_command_parameter_tint_help = "La tinta che vuoi impostare (lascia vuoto per rimuovere).",
-		set_weapon_tint_command_substitutes = "/weapon_tint, /tint",
+		set_weapon_tint_command_substitutes = "weapon_tint, tint",
 
-		set_item_name_override_command = "/set_item_name_override_command",
+		set_item_name_override_command = "set_item_name_override_command",
 		set_item_name_override_command_help = "Imposta o rimuove la sostituzione del nome dell'elemento dell'elemento specificato.",
 		set_item_name_override_command_parameter_slot = "slot",
 		set_item_name_override_command_parameter_slot_help = "Il numero di slot dell'elemento di cui si desidera sostituire il nome.",
 		set_item_name_override_command_parameter_item_name = "nome oggetto",
 		set_item_name_override_command_parameter_item_name_help = "La sostituzione del nome dell'elemento che desideri impostare (lascia vuoto per rimuovere).",
-		set_item_name_override_command_substitutes = "/set_name_override, /name_override",
+		set_item_name_override_command_substitutes = "set_name_override, name_override",
 
-		set_durability_command = "/set_durability",
+		set_durability_command = "set_durability",
 		set_durability_command_help = "Imposta la durabilità di tutti gli oggetti in un determinato slot.",
 		set_durability_command_parameter_slot = "slot",
 		set_durability_command_parameter_slot_help = "In quale slot impostare la durabilità degli oggetti.",
 		set_durability_command_parameter_amount = "ammonto",
 		set_durability_command_parameter_amount_help = "La durata da impostare (il valore predefinito è 100).",
-		set_durability_command_substitutes = "/durability",
+		set_durability_command_substitutes = "durability",
 
-		set_metadata_command = "/set_metadata",
+		set_metadata_command = "set_metadata",
 		set_metadata_command_help = "Imposta tutti i metadati degli elementi in un determinato slot.",
 		set_metadata_command_parameter_slot = "slot",
 		set_metadata_command_parameter_slot_help = "In quale slot impostare la durabilità degli oggetti.",
 		set_metadata_command_parameter_metadata = "metadata",
 		set_metadata_command_parameter_metadata_help = "Il json dei metadati da impostare.",
-		set_metadata_command_substitutes = "/metadata",
+		set_metadata_command_substitutes = "metadata",
 
-		refill_nitro_command = "/refill_nitro",
+		refill_nitro_command = "refill_nitro",
 		refill_nitro_command_help = "Ricarica il serbatoio nitro della tua auto.",
 		refill_nitro_command_substitutes = "",
 
-		register_weapon_command = "/register_weapon",
+		register_weapon_command = "register_weapon",
 		register_weapon_command_help = "Registra un'arma in un determinato slot per un determinato ID personaggio.",
 		register_weapon_command_parameter_slot = "slot",
 		register_weapon_command_parameter_slot_help = "Lo slot in cui si trova l'arma.",
@@ -1280,15 +1280,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 		register_weapon_command_parameter_character_id_help = "L'ID del personaggio a cui vuoi registrare l'arma.",
 		register_weapon_command_substitutes = "",
 
-		advanced_metagame_command = "/advanced_metagame",
+		advanced_metagame_command = "advanced_metagame",
 		advanced_metagame_command_help = "Comando Superadmin per aiutarti a portare il tuo metagaming al livello successivo.",
-		advanced_metagame_command_substitutes = "/am",
+		advanced_metagame_command_substitutes = "am",
 
-		list_weapon_attachments_command = "/list_weapon_attachments",
+		list_weapon_attachments_command = "list_weapon_attachments",
 		list_weapon_attachments_command_help = "Imposta o rimuove la tinta dell'arma che stai impugnando.",
-		list_weapon_attachments_command_substitutes = "/weapon_attachments, /attachments",
+		list_weapon_attachments_command_substitutes = "weapon_attachments, attachments",
 
-		wipe_first_owned_command = "/wipe_first_owned",
+		wipe_first_owned_command = "wipe_first_owned",
 		wipe_first_owned_command_help = "Cancella tutte le entità prima possedute da un determinato giocatore.",
 		wipe_first_owned_command_parameter_server_id = "server id",
 		wipe_first_owned_command_parameter_server_id_help = "L'ID del server dei giocatori.",
@@ -1296,97 +1296,97 @@ OP.Global.Locales.Languages["it-IT"] = {
 		wipe_first_owned_command_parameter_range_help = "L'intervallo in cui vuoi eliminare le entità o vuoto per eliminare tutto.",
 		wipe_first_owned_command_substitutes = "",
 
-		freeze_command = "/freeze",
+		freeze_command = "freeze",
 		freeze_command_help = "Blocca un giocatore.",
 		freeze_command_parameter_server_id = "server id",
 		freeze_command_parameter_server_id_help = "L'ID del server del giocatore che vuoi bloccare.",
 		freeze_command_substitutes = "",
 
-		unfreeze_command = "/unfreeze",
+		unfreeze_command = "unfreeze",
 		unfreeze_command_help = "Sblocca un giocatore.",
 		unfreeze_command_parameter_server_id = "server id",
 		unfreeze_command_parameter_server_id_help = "L'ID del server del giocatore che vuoi sbloccare.",
 		unfreeze_command_substitutes = "",
 
-		slap_command = "/slap",
+		slap_command = "slap",
 		slap_command_help = "Schiaffeggia un giocatore (uccidendolo).",
 		slap_command_parameter_server_id = "server id",
 		slap_command_parameter_server_id_help = "L'ID del server del giocatore che vuoi schiaffeggiare.",
 		slap_command_substitutes = "",
 
-		damage_player_command = "/damage_player",
+		damage_player_command = "damage_player",
 		damage_player_command_help = "Danneggia la salute di un giocatore.",
 		damage_player_command_parameter_server_id = "server id",
 		damage_player_command_parameter_server_id_help = "L'ID del server del giocatore che vuoi danneggiare.",
 		damage_player_command_parameter_health = "damage",
 		damage_player_command_parameter_health_help = "La quantità di danno che vuoi fare.",
-		damage_player_command_substitutes = "/damage",
+		damage_player_command_substitutes = "damage",
 
-		scoop_command = "/scoop",
+		scoop_command = "scoop",
 		scoop_command_help = "Raccoglie tutti i giocatori in un certo raggio. (Da utilizzare con /unscoop)",
 		scoop_command_parameter_radius = "raggio",
 		scoop_command_parameter_radius_help = "In quale raggio vuoi raccogliere i giocatori (2D).",
 		scoop_command_substitutes = "",
 
-		unscoop_command = "/unscoop",
+		unscoop_command = "unscoop",
 		unscoop_command_help = "Teletrasporta tutti i giocatori che hai raccolto in precedenza nella tua posizione attuale.",
 		unscoop_command_parameter_revive = "revive",
 		unscoop_command_parameter_revive_help = "Rianima i giocatori raccolti se vengono abbattuti.",
 		unscoop_command_substitutes = "",
 
-		peek_command = "/peek",
+		peek_command = "peek",
 		peek_command_help = "Peek mostrerà tutti i giocatori invisibili intorno a te (incluso te stesso).",
 		peek_command_substitutes = "",
 
-		hit_indicator_command = "/hit_indicator",
+		hit_indicator_command = "hit_indicator",
 		hit_indicator_command_help = "Attiva/disattiva l'indicatore di hit se utilizzi il mirino personalizzato.",
 		hit_indicator_command_substitutes = "",
 
-		trigger_ems_call_command = "/trigger_ems_call",
+		trigger_ems_call_command = "trigger_ems_call",
 		trigger_ems_call_command_help = "Invia una chiamata EMS locale dalla tua posizione.",
 		trigger_ems_call_command_substitutes = "",
 
 		-- base/anti_cheat
-		model_detect_add_command = "/model_detect_add",
+		model_detect_add_command = "model_detect_add",
 		model_detect_add_command_help = "Aggiungere temporaneamente un modello all'elenco di rilevamento. L'elenco viene reimpostato al riavvio del server.",
 		model_detect_add_command_parameter_model = "modello",
 		model_detect_add_command_parameter_model_help = "Il modello che desideri rilevare. Può essere sia un nome di modello che un hash di modello.",
-		model_detect_add_command_substitutes = "/detect",
+		model_detect_add_command_substitutes = "detect",
 
-		model_detect_remove_command = "/model_detect_remove",
+		model_detect_remove_command = "model_detect_remove",
 		model_detect_remove_command_help = "Rimuovere un modello dall'elenco di rilevamento.",
 		model_detect_remove_command_parameter_model = "modello",
 		model_detect_remove_command_parameter_model_help = "Il modello che vuoi rimuovere. Possono essere entrambi il nome del modello o un modello hash.",
-		model_detect_remove_command_substitutes = "/undetect",
+		model_detect_remove_command_substitutes = "undetect",
 
-		detection_area_add_command = "/detection_area_add",
+		detection_area_add_command = "detection_area_add",
 		detection_area_add_command_help = "Crea un'area in cui tutte le entità generate all'interno di quell'area ti verranno inviate con alcune informazioni. Le informazioni sono disponibili nell'interfaccia utente Panoramica.",
 		detection_area_add_command_parameter_radius = "raggio",
 		detection_area_add_command_parameter_radius_help = "Il raggio del cerchio in cui verranno rilevate le entità. Il valore minimo è '10' e il massimo è '5000'. Lasciandolo vuoto, l'impostazione predefinita sarà '100'.",
-		detection_area_add_command_substitutes = "/area_add",
+		detection_area_add_command_substitutes = "area_add",
 
-		detection_area_remove_command = "/detection_area_remove",
+		detection_area_remove_command = "detection_area_remove",
 		detection_area_remove_command_help = "Rimuovere un'area di rilevamento.",
 		detection_area_remove_command_parameter_area_id = "Area ID detector",
 		detection_area_remove_command_parameter_area_id_help = "L'ID dell'area di rilevamento che si desidera rimuovere.",
-		detection_area_remove_command_substitutes = "/area_remove",
+		detection_area_remove_command_substitutes = "area_remove",
 
 		-- base/commands
-		help_command = "/help",
+		help_command = "help",
 		help_command_help = "Mostra tutti i comandi disponibili.",
 		help_command_substitutes = "",
 
-		substitutes_command = "/substitutes",
+		substitutes_command = "substitutes",
 		substitutes_command_help = "Mostra tutti i sostituti disponibili.",
 		substitutes_command_substitutes = "",
 
 		-- base/discord
-		richer_presence_command = "/richer_presence",
+		richer_presence_command = "richer_presence",
 		richer_presence_command_help = "Attiva/disattiva la 'presenza più ricca' che aggiunge più informazioni alla presenza ricca, come il carattere carico.",
 		richer_presence_command_substitutes = "",
 
 		-- base/emojis
-		emojis_list_command = "Lista emoji",
+		emojis_list_command = "emojis_list",
 		emojis_list_command_help = "Elenca tutte le emoji disponibili.",
 		emojis_list_command_substitutes = "emojis",
 
@@ -1395,60 +1395,60 @@ OP.Global.Locales.Languages["it-IT"] = {
 		emojis_refresh_command_substitutes = "",
 
 		-- base/ping
-		get_pings_command = "/get_pings",
+		get_pings_command = "get_pings",
 		get_pings_command_help = "Ottieni un ping medio a vari host in tutto il mondo per trovare la posizione host più adatta per i giocatori attuali di questo server.",
 		get_pings_command_substitutes = "",
 
 		-- base/profile
-		profile_debug_command = "/profile_debug",
+		profile_debug_command = "profile_debug",
 		profile_debug_command_help = "Attiva o disattiva il debugger del profilo.",
 		profile_debug_command_substitutes = "",
 
 		-- base/users
-		playtime_command = "/playtime",
+		playtime_command = "playtime",
 		playtime_command_help = "Controlla il tempo di gioco totale sul server e il tempo di gioco di questa sessione.",
 		playtime_command_parameter_server_id = "server id",
 		playtime_command_parameter_server_id_help = "L'ID del server del giocatore per il quale vuoi ottenere il tempo di riproduzione. Puoi lasciare questo campo vuoto o su `0` per selezionare te stesso.",
 		playtime_command_substitutes = "",
 
-		leaderboard_command = "/leaderboard",
+		leaderboard_command = "leaderboard",
 		leaderboard_command_help = "Controlla la classifica del tempo di gioco.",
 		leaderboard_command_substitutes = "",
 
-		package_command = "/package",
+		package_command = "package",
 		package_command_help = "Controlla e aggiorna il tuo pacchetto.",
 		package_command_substitutes = "/refresh_package",
 
-		player_packages_command = "/player_packages",
+		player_packages_command = "player_packages",
 		player_packages_command_help = "Ottieni tutti i tuoi inutilizzati 'pacchetti di giocatori'.",
 		player_packages_command_substitutes = "",
 
-		unload_character_command = "/unload_character",
+		unload_character_command = "unload_character",
 		unload_character_command_help = "Scarica il personaggio di un giocatore.",
 		unload_character_command_parameter_server_id = "server id",
 		unload_character_command_parameter_server_id_help = "L'ID del server del giocatore per cui vuoi scaricare il personaggio. Puoi lasciare questo campo vuoto o su `0` per selezionare te stesso.",
 		unload_character_command_parameter_message = "messaggio",
 		unload_character_command_parameter_message_help = "Se desideri visualizzare un messaggio che il giocatore può vedere nel menu di accesso, digitalo qui.",
-		unload_character_command_substitutes = "/unload",
+		unload_character_command_substitutes = "unload",
 
 		-- game/admin_menu
-		admin_command = "/admin",
+		admin_command = "admin",
 		admin_command_help = "Apre il menu di amministrazione.",
 		admin_command_substitutes = "",
 
-		tp_player_command = "/tp_player",
+		tp_player_command = "tp_player",
 		tp_player_command_help = "Ti teletrasporta da un giocatore.",
 		tp_player_command_parameter_server_id = "server id",
 		tp_player_command_parameter_server_id_help = "L'ID del server del giocatore in cui ti teletrasporti.",
 		tp_player_command_substitutes = "",
 
-		tp_here_command = "/tp_here",
+		tp_here_command = "tp_here",
 		tp_here_command_help = "Ti teletrasporta un giocatore.",
 		tp_here_command_parameter_server_id = "server id",
 		tp_here_command_parameter_server_id_help = "L'ID del server del giocatore che desideri teletrasportare.",
 		tp_here_command_substitutes = "",
 
-		tp_to_command = "/tp_to",
+		tp_to_command = "tp_to",
 		tp_to_command_help = "Teletrasporta un giocatore ad un altro giocatore.",
 		tp_to_command_parameter_source_id = "source id",
 		tp_to_command_parameter_source_id_help = "Il giocatore che vuoi teletrasportare.",
@@ -1457,7 +1457,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		tp_to_command_substitutes = "",
 
 		-- game/airdrops
-		create_airdrop_command = "/create_airdrop",
+		create_airdrop_command = "create_airdrop",
 		create_airdrop_command_help = "Crea un approvigionamento.",
 		create_airdrop_command_parameter_airdrop_type = "tipo di approvigionamento",
 		create_airdrop_command_parameter_airdrop_type_help = "Il tipo di airdrop che vorresti creare. (armi, farmaci, medicinali, forniture, accessori, oggetti di valore, cibo)",
@@ -1466,48 +1466,48 @@ OP.Global.Locales.Languages["it-IT"] = {
 		create_airdrop_command_substitutes = "",
 
 		-- game/airstrike
-		call_airstrike_command = "/call_airstrike",
+		call_airstrike_command = "call_airstrike",
 		call_airstrike_command_help = "Chiama un attacco aereo nella tua posizione attuale.",
 		call_airstrike_command_substitutes = "",
 
 		-- game/airsupport
-		airsupport_command = "/airsupport",
+		airsupport_command = "airsupport",
 		airsupport_command_help = "Chiama un supporto aereo.",
 		airsupport_command_substitutes = "",
 
 		-- game/alerts
-		show_alert_command = "/show_alert",
+		show_alert_command = "show_alert",
 		show_alert_command_help = "Mostra un'allerta per un determinato giocatore (o per tutti).",
 		show_alert_command_parameter_server_id = "server id",
 		show_alert_command_parameter_server_id_help = "L'ID del giocatore al quale vuoi mostrare l'allerta.",
 		show_alert_command_parameter_content = "contenuto",
 		show_alert_command_parameter_content_help = "Contenuto dell'allerta.",
-		show_alert_command_substitutes = "/alert",
+		show_alert_command_substitutes = "alert",
 
 		-- game/archives
-		create_archive_command = "/create_archive",
+		create_archive_command = "create_archive",
 		create_archive_command_help = "Crea un nuovo caso nell'archivio in cui ti trovi attualmente più vicino.",
 		create_archive_command_parameter_case_number = "Numero del caso",
 		create_archive_command_parameter_case_number_help = "Il numero del caso (Intero compreso tra 1 e 99.999).",
 		create_archive_command_substitutes = "",
 
-		destroy_archive_command = "/destroy_archive",
+		destroy_archive_command = "destroy_archive",
 		destroy_archive_command_help = "Distrugge e il caso esistente nell'archivio in cui ti trovi attualmente più vicino.",
 		destroy_archive_command_parameter_case_number = "Numero del caso",
 		destroy_archive_command_parameter_case_number_help = "Il numero del caso. (Puoi distruggere solo casse vuote)",
 		destroy_archive_command_substitutes = "",
 
 		-- game/arena
-		respawn_command = "/respawn",
+		respawn_command = "respawn",
 		respawn_command_help = "Ucciditi. (per arena)",
 		respawn_command_substitutes = "/suicide",
 
 		-- game/audio
-		audio_debug_command = "/audio_debug",
+		audio_debug_command = "audio_debug",
 		audio_debug_command_help = "Attiva/disattiva il debug audio.",
 		audio_debug_command_substitutes = "",
 
-		play_audio_command = "/play_audio",
+		play_audio_command = "play_audio",
 		play_audio_command_help = "Riproduci un audio per un giocatore o per tutti i giocatori.",
 		play_audio_command_parameter_url = "url",
 		play_audio_command_parameter_url_help = "Il download URL dell'audio.",
@@ -1518,164 +1518,164 @@ OP.Global.Locales.Languages["it-IT"] = {
 		play_audio_command_substitutes = "",
 
 		-- game/battle_royale
-		battle_royale_toggle_command = "/battle_royale_toggle",
+		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Attiva/disattiva la funzione Battle Royale.",
-		battle_royale_toggle_command_substitutes = "/br_toggle",
+		battle_royale_toggle_command_substitutes = "br_toggle",
 
-		battle_royale_start_command = "/battle_royale_start",
+		battle_royale_start_command = "battle_royale_start",
 		battle_royale_start_command_help = "Inizia una partita di Battle Royale.",
 		battle_royale_start_command_parameter_no_vehicles = "no vehicles",
 		battle_royale_start_command_parameter_no_vehicles_help = "Crea una partita senza veicoli.",
-		battle_royale_start_command_substitutes = "/br_start",
+		battle_royale_start_command_substitutes = "br_start",
 
-		battle_royale_invite_command = "/battle_royale_invite",
+		battle_royale_invite_command = "battle_royale_invite",
 		battle_royale_invite_command_help = "Invita un giocatore nella tua lobby di Battle Royale.",
 		battle_royale_invite_command_parameter_server_id = "server id",
 		battle_royale_invite_command_parameter_server_id_help = "L'ID del server del giocatore che desideri invitare.",
-		battle_royale_invite_command_substitutes = "/br_invite",
+		battle_royale_invite_command_substitutes = "br_invite",
 
-		battle_royale_join_command = "/battle_royale_join",
+		battle_royale_join_command = "battle_royale_join",
 		battle_royale_join_command_help = "Unisciti alla lobby di Battle Royale di un giocatore.",
 		battle_royale_join_command_parameter_server_id = "server id",
 		battle_royale_join_command_parameter_server_id_help = "L'ID del server del giocatore a cui vorresti unirti.",
-		battle_royale_join_command_substitutes = "/br_join",
+		battle_royale_join_command_substitutes = "br_join",
 
-		battle_royale_leave_command = "/battle_royale_leave",
+		battle_royale_leave_command = "battle_royale_leave",
 		battle_royale_leave_command_help = "Esci dalla lobby di Battle Royale in cui ti trovi.",
-		battle_royale_leave_command_substitutes = "/br_leave",
+		battle_royale_leave_command_substitutes = "br_leave",
 
-		battle_royale_join_instance_command = "/battle_royale_join_instance",
+		battle_royale_join_instance_command = "battle_royale_join_instance",
 		battle_royale_join_instance_command_help = "Unisciti all'istanza di Battle Royale di un giocatore.",
 		battle_royale_join_instance_command_parameter_server_id = "server id",
 		battle_royale_join_instance_command_parameter_server_id_help = "L'ID del server del giocatore di cui vuoi unirti all'istanza.",
-		battle_royale_join_instance_command_substitutes = "/br_join_instance",
+		battle_royale_join_instance_command_substitutes = "br_join_instance",
 
-		battle_royale_leave_instance_command = "/battle_royale_leave_instance",
+		battle_royale_leave_instance_command = "battle_royale_leave_instance",
 		battle_royale_leave_instance_command_help = "Lascia l'istanza a cui ti sei unito.",
-		battle_royale_leave_instance_command_substitutes = "/br_leave_instance",
+		battle_royale_leave_instance_command_substitutes = "br_leave_instance",
 
 		-- game/beds
-		bed_command = "/bed",
+		bed_command = "bed",
 		bed_command_help = "Tentativo di sdraiarsi nel letto più vicino.",
 		bed_command_substitutes = "",
 
 		-- game/bombs
-		toggle_bombs_command = "/toggle_bombs",
+		toggle_bombs_command = "toggle_bombs",
 		toggle_bombs_command_help = "Attiva/disattiva le bombe sul tuo attuale aereo.",
 		toggle_bombs_command_substitutes = "",
 
-		toggle_ignition_bomb_command = "/toggle_ignition_bomb",
+		toggle_ignition_bomb_command = "toggle_ignition_bomb",
 		toggle_ignition_bomb_command_help = "Attiva/disattiva la bomba di accensione per il veicolo in cui ti trovi attualmente (il veicolo esploderà all'accensione del motore).",
-		toggle_ignition_bomb_command_substitutes = "/ignition_bomb",
+		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
-		wipe_boomboxes_command = "/wipe_boomboxes",
+		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Spazza i boombox.",
 		wipe_boomboxes_command_parameter_radius = "radius",
 		wipe_boomboxes_command_parameter_radius_help = "Il raggio di pulizia. Lasciarlo vuoto selezionerà automaticamente `100`. I valori validi sono superiori a `0`, così come `0` e `-1` che selezioneranno tutti gli inventari.",
 		wipe_boomboxes_command_substitutes = "",
 
-		draw_boomboxes_command = "/draw_boomboxes",
+		draw_boomboxes_command = "draw_boomboxes",
 		draw_boomboxes_command_help = "Disegna i boombox.",
 		draw_boomboxes_command_substitutes = "",
 
 		-- game/boosting
-		spawn_contract_command = "/spawn_contract",
+		spawn_contract_command = "spawn_contract",
 		spawn_contract_command_help = "Spawna un boosting contract.",
 		spawn_contract_command_parameter_server_id = "server id",
 		spawn_contract_command_parameter_server_id_help = "Se non metti nessun ID, spawnerà il contratto a te stesso.",
 		spawn_contract_command_substitutes = "",
 
 		-- game/cache
-		cache_assets_command = "/cache_assets",
+		cache_assets_command = "cache_assets",
 		cache_assets_command_help = "Richiedi e scarica forzatamente la maggior parte delle risorse in streaming (veicoli, oggetti e abbigliamento). Questo non è consigliato a meno che tu non abbia una connessione lenta e le risorse non vengano scaricate abbastanza velocemente su richiesta per essere senza interruzioni. Ciò potrebbe anche causare arresti anomali del client mentre è in azione.",
 		cache_assets_command_parameter_slow_download = "download lento",
 		cache_assets_command_parameter_slow_download_help = "Vuoi memorizzare nella cache le risorse lentamente? In questo modo ci vorrà molto più tempo, ma ridurrà anche la possibilità di schiantarsi.",
-		cache_assets_command_substitutes = "/download_cache, /preload_cache, /load_cache",
+		cache_assets_command_substitutes = "download_cache, preload_cache, load_cache",
 
 		-- game/cargo
-		cargo_start_command = "/cargo_start",
+		cargo_start_command = "cargo_start",
 		cargo_start_command_help = "Fa cominciare una rapina cargo mondiale.",
-		cargo_start_command_substitutes = "/start_cargo",
+		cargo_start_command_substitutes = "start_cargo",
 
-		cargo_end_command = "/cargo_end",
+		cargo_end_command = "cargo_end",
 		cargo_end_command_help = "Finisce una rapina cargo mondiale.",
-		cargo_end_command_substitutes = "/end_cargo",
+		cargo_end_command_substitutes = "end_cargo",
 
-		cargo_debug_command = "/cargo_debug",
+		cargo_debug_command = "cargo_debug",
 		cargo_debug_command_help = "Attiva o disattiva il debug del carico.",
 		cargo_debug_command_substitutes = "",
 
-		cargo_debug_peds_command = "/cargo_debug_peds",
+		cargo_debug_peds_command = "cargo_debug_peds",
 		cargo_debug_peds_command_help = "Attiva o disattiva il debug di Cargo Peds.",
 		cargo_debug_peds_command_substitutes = "",
 
 		-- game/casino
-		set_casino_screens_command = "/set_casino_screens",
+		set_casino_screens_command = "set_casino_screens",
 		set_casino_screens_command_help = "Imposta gli schermi del casinò.",
 		set_casino_screens_command_parameter_screen_label = "screen label",
 		set_casino_screens_command_parameter_screen_label_help = "L'etichetta dello schermo che si desidera impostare. Le etichette dello schermo disponibili sono `diamonds`, `skulls`, `snowflakes` and `winner`.",
 		set_casino_screens_command_substitutes = "",
 
 		-- game/cayo_perico
-		toggle_cayo_perico_command = "/toggle_cayo_perico",
+		toggle_cayo_perico_command = "toggle_cayo_perico",
 		toggle_cayo_perico_command_help = "Attiva/disattiva l'isola di Cayo Perico.",
-		toggle_cayo_perico_command_substitutes = "/toggle_island, /island",
+		toggle_cayo_perico_command_substitutes = "toggle_island, island",
 
 		-- game/cayo_perico_world
-		cayo_perico_command = "/cayo_perico",
+		cayo_perico_command = "cayo_perico",
 		cayo_perico_command_help = "Attiva/disattiva l'aiuto per entrare e uscire dal 'mondo' di Cayo Perico.",
 		cayo_perico_command_substitutes = "",
 
 		-- game/cinema
-		cinema_blacklist_add_command = "/cinema_blacklist_add",
+		cinema_blacklist_add_command = "cinema_blacklist_add",
 		cinema_blacklist_add_command_help = "Aggiungi un video alla lista nera del cinema locale.",
 		cinema_blacklist_add_command_parameter_video_key = "video key",
 		cinema_blacklist_add_command_parameter_video_key_help = "La chiave video per il video che desideri inserire nella blacklist. Example: 'youtube:dQw4w9WgXcQ'",
 		cinema_blacklist_add_command_substitutes = "",
 
-		cinema_screens_debug_command = "/cinema_screens_debug",
+		cinema_screens_debug_command = "cinema_screens_debug",
 		cinema_screens_debug_command_help = "Esegui il debug degli schermi cinematografici.",
 		cinema_screens_debug_command_substitutes = "",
 
-		cinema_focus_command = "/cinema_focus",
+		cinema_focus_command = "cinema_focus",
 		cinema_focus_command_help = "Concentrati sullo schermo cinematografico più vicino per una migliore esperienza visiva.",
-		cinema_focus_command_substitutes = "/focus_cinema",
+		cinema_focus_command_substitutes = "focus_cinema",
 
 		-- game/cinematic
-		cinematic_command = "/cinematic",
+		cinematic_command = "cinematic",
 		cinematic_command_help = "Attiva/disattiva barre nere cinematografiche.",
 		cinematic_command_parameter_bar_height = "altezza della barra",
 		cinematic_command_parameter_bar_height_help = "L'altezza delle sbarre. Deve essere compreso tra 0 e 50 (percentuale). Il valore predefinito è 10. Lasciandolo vuoto verrà impostato sull'ultimo valore utilizzato.",
-		cinematic_command_substitutes = "/c, /cin",
+		cinematic_command_substitutes = "c, cin",
 
 		-- game/clothing_menu
-		clothing_command = "/clothing",
+		clothing_command = "clothing",
 		clothing_command_help = "Apre il menu abbigliamento per te o per un altro giocatore.",
 		clothing_command_parameter_server_id = "server id",
 		clothing_command_parameter_server_id_help = "L'ID server del giocatore per il quale vorresti aprire il menu abbigliamento.",
 		clothing_command_substitutes = "",
 
-		barber_command = "/barber",
+		barber_command = "barber",
 		barber_command_help = "Apre il menu del barbiere per te o per un altro giocatore.",
 		barber_command_parameter_server_id = "server id",
 		barber_command_parameter_server_id_help = "L'ID del server del giocatore per il quale vorresti aprire il menu del barbiere.",
 		barber_command_substitutes = "",
 
 		-- game/clothing
-		save_outfit_command = "/save_outfit",
+		save_outfit_command = "save_outfit",
 		save_outfit_command_help = "Salva i tuoi vestiti attuali come vestito.",
 		save_outfit_command_parameter_name = "nome",
 		save_outfit_command_parameter_name_help = "Il nome dell'abito.",
 		save_outfit_command_substitutes = "",
 
-		delete_outfit_command = "/delete_outfit",
+		delete_outfit_command = "delete_outfit",
 		delete_outfit_command_help = "Elimina il vestito specificato.",
 		delete_outfit_command_parameter_name = "nome",
 		delete_outfit_command_parameter_name_help = "Il nome dell'abito.",
 		delete_outfit_command_substitutes = "",
 
-		share_outfit_command = "/share_outfit",
+		share_outfit_command = "share_outfit",
 		share_outfit_command_help = "Condividi un outfit con un altro player (se c'è un negozio vicino).",
 		share_outfit_command_parameter_server_id = "server id",
 		share_outfit_command_parameter_server_id_help = "Il player con il quale vuoi condividere questo outfit.",
@@ -1685,7 +1685,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		share_outfit_command_parameter_makeup_help = "Se vuoi includere il makeup (`0` oppure `false` se no).",
 		share_outfit_command_substitutes = "",
 
-		steal_outfit_command = "/steal_outfit",
+		steal_outfit_command = "steal_outfit",
 		steal_outfit_command_help = "Ruba l'outfit di un altro giocatore.",
 		steal_outfit_command_parameter_server_id = "server id",
 		steal_outfit_command_parameter_server_id_help = "L'ID del giocatore è invalido.",
@@ -1695,11 +1695,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		steal_outfit_command_parameter_makeup_help = "Se vuoi copiare i makeup dei giocatori.",
 		steal_outfit_command_substitutes = "",
 
-		steal_shoes_command = "/steal_shoes",
+		steal_shoes_command = "steal_shoes",
 		steal_shoes_command_help = "Ruba le scarpe del giocatore abbattuto più vicino.",
 		steal_shoes_command_substitutes = "",
 
-		outfit_command = "/outfit",
+		outfit_command = "outfit",
 		outfit_command_help = "Cambia in un outfit diverso quando vicino a un punto di abbigliamento.",
 		outfit_command_parameter_outfit = "outfit",
 		outfit_command_parameter_outfit_help = "Il nome dell'outfit.",
@@ -1707,75 +1707,75 @@ OP.Global.Locales.Languages["it-IT"] = {
 		outfit_command_parameter_force_help = "Ignora il controllo dei vestiti e non riprodurre l'animazione.",
 		outfit_command_substitutes = "",
 
-		outfits_command = "/outfits",
+		outfits_command = "outfits",
 		outfits_command_help = "Elenca tutti i tuoi abiti salvati.",
 		outfits_command_substitutes = "",
 
 		-- game/command_socket
-		reconnect_command_socket_command = "/reconnect_command_socket",
+		reconnect_command_socket_command = "reconnect_command_socket",
 		reconnect_command_socket_command_help = "Tenta di riconnettersi alla presa di comando.",
 		reconnect_command_socket_command_substitutes = "",
 
 		-- game/crafting
-		crafting_debug_command = "/crafting_debug",
+		crafting_debug_command = "crafting_debug",
 		crafting_debug_command_help = "Debug tutte le posizioni di realizzazione.",
 		crafting_debug_command_substitutes = "",
 
 		-- game/crashes
-		crash_command = "/crash",
+		crash_command = "crash",
 		crash_command_help = "Scatenare un incidente artificiale.",
 		crash_command_parameter_server_id = "server id",
 		crash_command_parameter_server_id_help = "L'ID server del giocatore che desideri attivare un crash.Lasciando questo vuoto ti selezionerà automaticamente.",
 		crash_command_substitutes = "",
 
 		-- game/crosshair
-		customize_crosshair_command = "/customize_crosshair",
+		customize_crosshair_command = "customize_crosshair",
 		customize_crosshair_command_help = "Apri il menu di personalizzazione del mirino.",
 		customize_crosshair_command_substitutes = "",
 
-		copy_crosshair_command = "/copy_crosshair",
+		copy_crosshair_command = "copy_crosshair",
 		copy_crosshair_command_help = "Copia le impostazioni correnti del mirino negli appunti.",
 		copy_crosshair_command_substitutes = "",
 
-		import_crosshair_command = "/import_crosshair",
+		import_crosshair_command = "import_crosshair",
 		import_crosshair_command_help = "Importa una configurazione del mirino o disabilita il mirino personalizzato.",
 		import_crosshair_command_parameter_config = "config",
 		import_crosshair_command_help_parameter_config_help = "Il file config o empty per disabilitare il mirino personalizzato.",
 		import_crosshair_command_substitutes = "",
 
 		-- game/culling
-		culling_debug_command = "/culling_debug",
+		culling_debug_command = "culling_debug",
 		culling_debug_command_help = "Attiva/disattiva Il debug incentrato.",
 		culling_debug_command_substitutes = "",
 
 		-- game/daily_activities
-		reset_daily_activities_command = "/reset_daily_activities",
+		reset_daily_activities_command = "reset_daily_activities",
 		reset_daily_activities_command_help = "Resetta le tue attività giornaliere.",
 		reset_daily_activities_command_substitutes = "",
 
 		-- game/dashcam
-		unit_id_command = "/unit_id",
+		unit_id_command = "unit_id",
 		unit_id_command_help = "Imposta l'ID unitario.",
 		unit_id_command_parameter_unit_id = "Unità id",
 		unit_id_command_parameter_unit_id_help = "Il tuo unità ID.Questo deve essere un numero intero tra 1 e 999.",
 		unit_id_command_substitutes = "",
 
 		-- game/debug
-		debug_command = "/debug",
+		debug_command = "debug",
 		debug_command_help = "Attiva/disattiva l'entità-debugger.Ciò mostrerà alcune informazioni generali sulle entità vicine.",
 		debug_command_substitutes = "",
 
-		npc_debug_command = "/npc_debug",
+		npc_debug_command = "npc_debug",
 		npc_debug_command_help = "Esegue il debug di tutti gli NPC non animali intorno a te.",
-		npc_debug_command_substitutes = "/npcs",
+		npc_debug_command_substitutes = "npcs",
 
-		network_debug_command = "/network_debug",
+		network_debug_command = "network_debug",
 		network_debug_command_help = "Attiva/disattiva L'entità-network-debugger.Ciò mostrerà alcune informazioni sulla rete sulle entità vicine.",
 		network_debug_parameter_minimal = "minimale",
 		network_debug_parameter_minimal_help = "Display minimo (NO predefinito).",
-		network_debug_command_substitutes = "/net_debug, /ndebug",
+		network_debug_command_substitutes = "net_debug, ndebug",
 
-		attach_command = "/attach",
+		attach_command = "attach",
 		attach_command_help = "Attiva/disattiva Lo strumento di attacco oggetto.Questo ti aiuterà a posizionare un oggetto allegato sul tuo PED.",
 		attach_command_parameter_model_name = "model name",
 		attach_command_parameter_model_name_help = "Il nome del modello che desideri allegare.",
@@ -1783,7 +1783,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		attach_command_parameter_bone_id_help = "L'ID osseo che si desidera utilizzare durante l'attacco dell'oggetto.Questo può essere lasciato vuoto per l'ID osseo predefinito.",
 		attach_command_substitutes = "",
 
-		position_command = "posizione",
+		position_command = "position",
 		position_command_help = "Salva la posizione corrente in un file di testo.",
 		position_command_parameter_label = "Etichetta",
 		position_command_parameter_label_help = "Un'etichetta opzionale da conservare con la posizione.",
@@ -1811,7 +1811,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		inject_code_command_parameter_server_id_help = "Il server ID del client del player a cui vuoi inserirlo. Lasciandolo incompleto questo si ritorcerà su di te.",
 		inject_code_command_parameter_otm = "otm",
 		inject_code_command_parameter_otm_help = "One-Time-Message. Se messo vero, puoi usare _sendResponse() per ottenere una risposta dal client del player.",
-		inject_code_command_substitutes = "/inject",
+		inject_code_command_substitutes = "inject",
 
 		inject_code_radius_command = "inject_code_radius",
 		inject_code_radius_command_help = "Iniettare codice sui client dei giocatori in un certo raggio.",
@@ -1819,65 +1819,65 @@ OP.Global.Locales.Languages["it-IT"] = {
 		inject_code_radius_command_parameter_url_help = "Un URL a un file di testo grezzo che contiene il codice che dovrebbe essere iniettato.",
 		inject_code_radius_command_parameter_radius = "raggio",
 		inject_code_radius_command_parameter_radius_help = "Il raggio in cui vuoi che i giocatori siano dentro per iniettare il codice.",
-		inject_code_radius_command_substitutes = "/inject_radius",
+		inject_code_radius_command_substitutes = "inject_radius",
 
 		run_code_command = "run_code",
 		run_code_command_help = "Esegue un piccolo frammento di codice.",
 		run_code_command_parameter_code = "code",
 		run_code_command_parameter_code_help = "Lo snippet di codice che desideri eseguire.",
-		run_code_command_substitutes = "/crun",
+		run_code_command_substitutes = "crun",
 
-		print_code_command = "/print_code",
+		print_code_command = "print_code",
 		print_code_command_help = "Esegue un piccolo frammento di codice e stampare il risultato.",
 		print_code_command_parameter_code = "code",
 		print_code_command_parameter_code_help = "Lo snippet di codice che desideri eseguire.",
-		print_code_command_substitutes = "/print",
+		print_code_command_substitutes = "print",
 
-		vehicle_bones_command = "/vehicle_bones",
+		vehicle_bones_command = "vehicle_bones",
 		vehicle_bones_command_help = "Disegna tutte le ossa del veicolo esistenti sul veicolo più vicino.",
 		vehicle_bones_command_parameter_bone_name = "bone name",
 		vehicle_bones_command_parameter_bone_name_help = "Basta mostrare una singola posizione delle ossa.",
 		vehicle_bones_command_substitutes = "",
 
-		vehicle_info_command = "/vehicle_info",
+		vehicle_info_command = "vehicle_info",
 		vehicle_info_command_help = "Stampa informazioni relative al veicolo in cui ti trovi per aiutare a debug Issues.",
 		vehicle_info_command_substitutes = "",
 
-		delete_entity_command = "/delete_entity",
+		delete_entity_command = "delete_entity",
 		delete_entity_command_help = "Elimina un'entità con un determinato ID di rete.",
 		delete_entity_command_parameter_network_id = "network id",
 		delete_entity_command_parameter_network_id_help = "L'ID di rete dell'entità che desideri eliminare.",
-		delete_entity_command_substitutes = "/de",
+		delete_entity_command_substitutes = "de",
 
-		move_entity_command = "/move_entity",
+		move_entity_command = "move_entity",
 		move_entity_command_help = "Sposta un'entità con un determinato ID di rete nella posizione corrente.",
 		move_entity_command_parameter_network_id = "network id",
 		move_entity_command_parameter_network_id_help = "L'ID di rete dell'entità che vuoi spostare.",
 		move_entity_command_parameter_ground = "Terra",
 		move_entity_command_parameter_ground_help = "Se l'entità deve essere posizionata correttamente a terra (solo veicoli).",
-		move_entity_command_substitutes = "/mv",
+		move_entity_command_substitutes = "mv",
 
-		fake_lag_command = "/fake_lag",
+		fake_lag_command = "fake_lag",
 		fake_lag_command_help = "Crea un falso lag.",
 		fake_lag_command_parameter_counter = "Contatore",
 		fake_lag_command_parameter_counter_help = "Il contatore utilizzato per creare il ritardo.Maggiore è questo valore, più lento sarà.Per disabilitare, lasciare questo vuoto o digitare `0`.",
-		fake_lag_command_substitutes = "/lag",
+		fake_lag_command_substitutes = "lag",
 
-		view_weapon_command = "/view_weapon",
+		view_weapon_command = "view_weapon",
 		view_weapon_command_help = "Genera un oggetto con il nome del modello dato e lo posiziona perfettamente per gli screenshot.",
 		view_weapon_command_parameter_weapon_name = "Nome dell'arma",
 		view_weapon_command_parameter_weapon_name_help = "Il nome dell'arma che vuoi visualizzare.",
 		view_weapon_command_parameter_component_names = "Nomi dei componenti",
 		view_weapon_command_parameter_component_names_help = "Un elenco di componenti (virgola separata) che si desidera collegare all'arma.",
-		view_weapon_command_substitutes = "/view",
+		view_weapon_command_substitutes = "view",
 
-		view_model_command = "/view_model",
+		view_model_command = "view_model",
 		view_model_command_help = "Genera un oggetto con il nome del modello dato e lo posiziona perfettamente per gli screenshot.",
 		view_model_command_parameter_model_name = "model name",
 		view_model_command_parameter_model_name_help = "Il nome del modello che desideri visualizzare.",
 		view_model_command_substitutes = "",
 
-		play_animation_command = "/play_animation",
+		play_animation_command = "play_animation",
 		play_animation_command_help = "Riproduce l'animazione specificata.",
 		play_animation_command_parameter_animation_dict = "animazione dict",
 		play_animation_command_parameter_animation_dict_help = "Il dizionario di animazione dell'animazione che vuoi suonare.",
@@ -1885,9 +1885,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 		play_animation_command_parameter_animation_name_help = "Il nome dell'animazione dell'animazione che vuoi suonare.",
 		play_animation_command_parameter_flags = "Flags",
 		play_animation_command_parameter_flags_help = "Le flag di animazione per l'animazione che vuoi suonare.",
-		play_animation_command_substitutes = "/animation",
+		play_animation_command_substitutes = "animation",
 
-		draw_coords_command = "/draw_coords",
+		draw_coords_command = "draw_coords",
 		draw_coords_command_help = "Disegna coordinate nel mondo.",
 		draw_coords_command_parameter_x = "x",
 		draw_coords_command_parameter_x_help = "Le X-Cordinate.",
@@ -1897,182 +1897,182 @@ OP.Global.Locales.Languages["it-IT"] = {
 		draw_coords_command_parameter_z_help = "Le Z-Cordinate.",
 		draw_coords_command_substitutes = "",
 
-		draw_coords_destroy_command = "/draw_coords_destroy",
+		draw_coords_destroy_command = "draw_coords_destroy",
 		draw_coords_destroy_command_help = "Distruggi tutte le coordinate nel mondo.",
 		draw_coords_destroy_command_substitutes = "",
 
-		damage_debug_command = "/debug_damage",
+		damage_debug_command = "debug_damage",
 		damage_debug_command_help = "Il danno di debug ha ricevuto ogni frame nella console F8.",
 		damage_debug_command_substitutes = "",
 
-		enable_ipl_command = "/enable_ipl",
+		enable_ipl_command = "enable_ipl",
 		enable_ipl_command_help = "Abilita un certo IPL.",
 		enable_ipl_command_parameter_ipl = "ipl",
 		enable_ipl_command_parameter_ipl_help = "L'IPL che vuoi abilitare.",
 		enable_ipl_command_substitutes = "",
 
-		disable_ipl_command = "/disable_ipl",
+		disable_ipl_command = "disable_ipl",
 		disable_ipl_command_help = "Disabilita un certo IPL.",
 		disable_ipl_command_parameter_ipl = "ipl",
 		disable_ipl_command_parameter_ipl_help = "L'IPL che vuoi disabilitare.",
 		disable_ipl_command_substitutes = "",
 
-		enable_ipl_globally_command = "/enable_ipl_globally",
+		enable_ipl_globally_command = "enable_ipl_globally",
 		enable_ipl_globally_command_help = "Abilita un certo IPL per tutti i giocatori sul server.",
 		enable_ipl_globally_command_parameter_ipl = "ipl",
 		enable_ipl_globally_command_parameter_ipl_help = "L'IPL che vuoi abilitare.",
 		enable_ipl_globally_command_substitutes = "",
 
-		enabled_ipls_command = "/enabled_ipls",
+		enabled_ipls_command = "enabled_ipls",
 		enabled_ipls_command_help = "Elenca tutti ipls abilitati a livello globale.",
 		enabled_ipls_command_substitutes = "",
 
-		disable_ipl_globally_command = "/disable_ipl_globally",
+		disable_ipl_globally_command = "disable_ipl_globally",
 		disable_ipl_globally_command_help = "Disabilita un certo IPL per tutti i giocatori sul server.",
 		disable_ipl_globally_command_parameter_ipl = "ipl",
 		disable_ipl_globally_command_parameter_ipl_help = "L'IPL che vuoi disabilitare.",
 		disable_ipl_globally_command_substitutes = "",
 
-		selfie_command = "/selfie",
+		selfie_command = "selfie",
 		selfie_command_help = "Attiva/disattiva la telecamera selfie.",
 		selfie_command_substitutes = "",
 
-		search_world_command = "/search_world",
+		search_world_command = "search_world",
 		search_world_command_help = "Cerca al mondo alcuni modelli.",
 		search_world_command_parameter_model_name = "nome del modello",
 		search_world_command_parameter_model_name_help = "Il nome del modello che desideri cercare.",
 		search_world_command_substitutes = "",
 
-		save_valid_ped_component_variations_command = "/save_valid_ped_component_variations",
+		save_valid_ped_component_variations_command = "save_valid_ped_component_variations",
 		save_valid_ped_component_variations_command_help = "Salva tutte le variazioni del componente PED valide per il modello di giocatore attuale.",
 		save_valid_ped_component_variations_command_substitutes = "",
 
-		toggle_vehicle_test_command = "/toggle_vehicle_test",
+		toggle_vehicle_test_command = "toggle_vehicle_test",
 		toggle_vehicle_test_command_help = "Attiva/disattiva il test del veicolo.(Traccia la velocità massima, ecc.)",
-		toggle_vehicle_test_command_substitutes = "/test_vehicle, /vehicle_test",
+		toggle_vehicle_test_command_substitutes = "test_vehicle, vehicle_test",
 
-		create_vehicle_model_lists_command = "/create_vehicle_model_lists",
+		create_vehicle_model_lists_command = "create_vehicle_model_lists",
 		create_vehicle_model_lists_command_help = "Crea elenchi di modelli di veicoli, classificati per nativo (used), native (unused) and addon.",
 		create_vehicle_model_lists_command_substitutes = "",
 
-		draw_vehicle_nodes_command = "/draw_vehicle_nodes",
+		draw_vehicle_nodes_command = "draw_vehicle_nodes",
 		draw_vehicle_nodes_command_help = "Attiva/disattiva disegno di nodi di veicoli vicini.",
 		draw_vehicle_nodes_command_substitutes = "",
 
-		distance_command = "/distance",
+		distance_command = "distance",
 		distance_command_help = "Calcola la distanza fra 2 punti.",
 		distance_command_parameter_groundify = "terra",
 		distance_command_parameter_groundify_help = "Metti a terra il punto.",
-		distance_command_substitutes = "/dist",
+		distance_command_substitutes = "dist",
 
-		get_command = "/get",
+		get_command = "get",
 		get_command_help = "Stampa il risultato dei nativi getter che corrispondono alla tua ricerca.",
 		get_command_parameter_search = "Cerca",
 		get_command_parameter_search_help = "Il nome o parte del nome del nativo.",
-		get_command_substitutes = "/native",
+		get_command_substitutes = "native",
 
-		ped_bone_command = "/ped_bone",
+		ped_bone_command = "ped_bone",
 		ped_bone_command_help = "Esegue il debug di un certo osso del ped.",
 		ped_bone_command_parameter_bone_name = "nome dell'osso",
 		ped_bone_command_parameter_bone_name_help = "L'osso sul quale vuoi eseguire il debug.",
 		ped_bone_command_substitutes = "",
 
-		edit_marker_command = "/edit_marker",
+		edit_marker_command = "edit_marker",
 		edit_marker_command_help = "Modifica una posizione di marcatori o posiziona un nuovo marcatore.",
 		edit_marker_command_parameter_marker_name = "nome del marcatore",
 		edit_marker_command_parameter_marker_name_help = "Il marcatore che desideri modificare (lascia vuoto per posizionare un nuovo indicatore).",
 		edit_marker_command_substitutes = "",
 
 		-- game/debug_menu
-		debug_menu_command = "/debug_menu",
+		debug_menu_command = "debug_menu",
 		debug_menu_command_help = "Attiva/disattive il menù debug.",
-		debug_menu_command_substitutes = "/dm",
+		debug_menu_command_substitutes = "dm",
 
 		-- game/dna_evidence
-		take_dna_sample_command = "/take_dna_sample",
+		take_dna_sample_command = "take_dna_sample",
 		take_dna_sample_command_help = "Prende un campione di DNA del giocatore più vicino.",
-		take_dna_sample_command_substitutes = "/dna_sample, /dna",
+		take_dna_sample_command_substitutes = "dna_sample, dna",
 
 		-- game/doors
-		door_offset_command = "/door_offset",
+		door_offset_command = "door_offset",
 		door_offset_command_help = "Attiva/disattiva lo strumento di offset della porta.",
 		door_offset_command_parameter_model_name = "nome del modello",
 		door_offset_command_parameter_model_name_help = "Il modello per cui desideri creare un offset.",
 		door_offset_command_substitutes = "",
 
-		doors_scan_command = "/doors_scan",
+		doors_scan_command = "doors_scan",
 		doors_scan_command_help = "Scansiona le porte vicine e salvale in un file di testo.",
 		doors_scan_command_parameter_clear_file = "cancella il file",
 		doors_scan_command_parameter_clear_file_help = "Desideri cancellare il contenuto del file prima di scriverlo?",
 		doors_scan_command_parameter_save_distance = "salva la distanza",
 		doors_scan_command_parameter_save_distance_help = "Desideri salvare la distanza dalle voci?",
-		doors_scan_command_substitutes = "/doors",
+		doors_scan_command_substitutes = "doors",
 
-		door_debug_command = "/debug_doors",
+		door_debug_command = "debug_doors",
 		door_debug_command_help = "Informazioni di debug sulle porte vicine.",
 		door_debug_command_substitutes = "",
 
 		-- game/evidence
-		fingerprint_command = "/fingerprint",
+		fingerprint_command = "fingerprint",
 		fingerprint_command_help = "Prendi le impronte digitali della persona più vicina.",
 		fingerprint_command_substitutes = "",
 
 		-- game/failures
-		engine_failure_chance_command = "/engine_failure_chance",
+		engine_failure_chance_command = "engine_failure_chance",
 		engine_failure_chance_command_help = "Sovrava la possibilità predefinita per i guasti degli aeromobili.",
 		engine_failure_chance_command_parameter_chance = "Possibilità",
 		engine_failure_chance_command_parameter_chance_help = "La possibilità che si verifichi un errore del motore o si svuota da ripristinare.",
 		engine_failure_chance_command_substitutes = "",
 
 		-- game/fake_ids
-		fake_id_command = "/fake_id",
+		fake_id_command = "fake_id",
 		fake_id_command_help = "Spawn in una carta cittadino falso.",
 		fake_id_command_parameter_female = "femmina",
 		fake_id_command_parameter_female_help = "Impostato su true se vuoi una carta cittadino femminile invece di un maschio.",
 		fake_id_command_substitutes = "",
 
 		-- game/forcefields
-		create_forcefield_command = "/create_forcefield",
+		create_forcefield_command = "create_forcefield",
 		create_forcefield_command_help = "Crea un campo di forza sulla tua posizione .",
 		create_forcefield_command_parameter_radius = "rggio",
 		create_forcefield_command_parameter_radius_help = "Il raggio del campo di forza.",
 		create_forcefield_command_parameter_deny_players = "Nega i giocatori",
 		create_forcefield_command_parameter_deny_players_help = "Il campo di forza dovrebbe negare l'ingresso ai giocatori?",
-		create_forcefield_command_substitutes = "/forcefield",
+		create_forcefield_command_substitutes = "forcefield",
 
-		destroy_forcefield_command = "/destroy_forcefield",
+		destroy_forcefield_command = "destroy_forcefield",
 		destroy_forcefield_command_help = "Distruggi un campo di forza specifico.",
 		destroy_forcefield_command_parameter_id = "id",
 		destroy_forcefield_command_parameter_id_help = "L'ID del campo di forza che desideri distruggere.",
 		destroy_forcefield_command_substitutes = "",
 
 		-- game/fortnite
-		fortnite_command = "/fortnite",
+		fortnite_command = "fortnite",
 		fortnite_command_help = "Attiva o disattiva la funzione di costruzione di Fortnite.",
-		fortnite_command_substitutes = "/fn",
+		fortnite_command_substitutes = "fn",
 
-		fortnite_debug_command = "/fortnite_debug",
+		fortnite_debug_command = "fortnite_debug",
 		fortnite_debug_command_help = "Attiva o disattiva il debugger dell'edificio fortnite.",
 		fortnite_debug_command_substitutes = "",
 
-		fortnite_wipe_command = "/fortnite_wipe",
+		fortnite_wipe_command = "fortnite_wipe",
 		fortnite_wipe_command_help = "Distruggi le costruzioni di Fortnite.",
 		fortnite_wipe_command_parameter_radius = "raggio",
 		fortnite_wipe_command_parameter_radius_help = "Il raggio per il quale vuoi cancellare. Lasciarlo vuoto o impostarlo su 0 cancellerà tutto.",
 		fortnite_wipe_command_substitutes = "",
 
 		-- game/freecam
-		freecam_command = "/freecam",
+		freecam_command = "freecam",
 		freecam_command_help = "Attiva/disattiva il freecam.",
 		freecam_command_parameter_track = "track",
 		freecam_command_parameter_track_help = "Chiedi a FreeCam di seguire il tuo personaggio.",
 		freecam_command_substitutes = "",
 
-		cinematic_freecam_command = "/cinematic_freecam",
+		cinematic_freecam_command = "cinematic_freecam",
 		cinematic_freecam_command_help = "Attiva/disattiva /cinematic and /freecam.",
-		cinematic_freecam_command_substitutes = "/cf",
+		cinematic_freecam_command_substitutes = "cf",
 
-		cam_point_command = "/cam_point",
+		cam_point_command = "cam_point",
 		cam_point_command_help = "Registra un punto della fotocamera.",
 		cam_point_command_parameter_time = "tempo",
 		cam_point_command_parameter_time_help = "Il tempo di transizione dall'ultimo punto in MS (min: 100, max: 30.000).",
@@ -2082,75 +2082,75 @@ OP.Global.Locales.Languages["it-IT"] = {
 		cam_point_command_parameter_override_help = "Sostituire il punto in quell'indice.",
 		cam_point_command_substitutes = "",
 
-		cam_clear_command = "/cam_clear",
+		cam_clear_command = "cam_clear",
 		cam_clear_command_help = "Cancella tutti i punti della fotocamera definiti.",
 		cam_clear_command_substitutes = "",
 
-		cam_play_command = "/cam_play",
+		cam_play_command = "cam_play",
 		cam_play_command_help = "Riproduci tutti i punti della fotocamera impostata.",
 		cam_play_command_parameter_ease = "sollevare",
 		cam_play_command_parameter_ease_help = "Facilità tra i punti della fotocamera.",
 		cam_play_command_substitutes = "",
 
 		-- game/frisk
-		frisk_command = "/frisk",
-		frisk_command_help = "Frisk la persona più vicina per le armi.",
+		frisk_command = "frisk",
+		frisk_command_help = "Perquisisci la persona più vicina per le armi.",
 		frisk_command_substitutes = "",
 
 		-- game/fruits
-		tree_debug_command = "/tree_debug",
+		tree_debug_command = "tree_debug",
 		tree_debug_command_help = "Debug di tutti gli alberi nel mondo.",
 		tree_debug_command_substitutes = "",
 
 		-- game/gun_trader
-		gun_trader_debug_command = "/gun_trader_debug",
+		gun_trader_debug_command = "gun_trader_debug",
 		gun_trader_debug_command_help = "Disegna un testo sulla posizione attuale del commerciante di armi.",
 		gun_trader_debug_command_substitutes = "",
 
 		-- game/gas_masks
-		gas_debug_command = "/gas_debug",
+		gas_debug_command = "gas_debug",
 		gas_debug_command_help = "Attiva/disattiva Il debug del gas.",
 		gas_debug_command_substitutes = "",
 
 		-- game/gps
-		gps_target_command = "/gps_target",
+		gps_target_command = "gps_target",
 		gps_target_command_help = "Imposta un obiettivo per il tuo GPS.",
 		gps_target_command_parameter_x = "x",
 		gps_target_command_parameter_x_help = "X Cordinate sul target.",
 		gps_target_command_parameter_y = "y",
 		gps_target_command_parameter_y_help = "Y Cordinate sul target.",
-		gps_target_command_substitutes = "/target",
+		gps_target_command_substitutes = "target",
 
 		-- game/graphics
-		toggle_noir_command = "/toggle_noir",
+		toggle_noir_command = "toggle_noir",
 		toggle_noir_command_help = "Attiva/disattiva Lo schermo noir e gli effetti audio.",
 		toggle_noir_command_parameter_timecycle_id = "id cicli temporali",
 		toggle_noir_command_parameter_timecycle_id_help = "L'ID del timiclo.Ce ne sono solo due.",
-		toggle_noir_command_substitutes = "/noir",
+		toggle_noir_command_substitutes = "noir",
 
 		-- game/gravity
-		toggle_vehicle_gravity_command = "/toggle_vehicle_gravity",
+		toggle_vehicle_gravity_command = "toggle_vehicle_gravity",
 		toggle_vehicle_gravity_command_help = "Attiva/disattiva La gravità per un determinato veicolo dei giocatori.",
 		toggle_vehicle_gravity_command_parameter_server_id = "server id",
 		toggle_vehicle_gravity_command_parameter_server_id_help = "L'ID server del giocatore per cui è possibile attivare la gravità.",
-		toggle_vehicle_gravity_command_substitutes = "/vehicle_gravity, /gravity",
+		toggle_vehicle_gravity_command_substitutes = "vehicle_gravity, gravity",
 
 		-- game/gravity_gun
-		gravity_gun_command = "/gravity_gun",
+		gravity_gun_command = "gravity_gun",
 		gravity_gun_command_help = "Spawna un'arma gravitazionale per te.",
 		gravity_gun_command_substitutes = "",
 
 		-- game/halloween
-		halloween_debug_command = "/halloween_debug",
+		halloween_debug_command = "halloween_debug",
 		halloween_debug_command_help = "Attiva/disattiva Il debug di Halloween.",
 		halloween_debug_command_substitutes = "",
 
-		halloween_start_escape_room_command = "/halloween_start_escape_room",
+		halloween_start_escape_room_command = "halloween_start_escape_room",
 		halloween_start_escape_room_command_help = "Avviare con forza la stanza di fuga.",
 		halloween_start_escape_room_command_substitutes = "",
 
 		-- game/health
-		revive_command = "/revive",
+		revive_command = "revive",
 		revive_command_help = "Rivivi qualcuno dai morti.",
 		revive_command_parameter_server_id = "server id",
 		revive_command_parameter_server_id_help = "L'ID server del giocatore che vuoi rilanciare.Puoi lasciare questo vuoto o a `0` per selezionare te stesso.Puoi anche fare `-1` per far rivivere tutti.",
@@ -2158,255 +2158,255 @@ OP.Global.Locales.Languages["it-IT"] = {
 		revive_command_parameter_remove_injuries_help = "Imposta questo su qualsiasi valore tranne `0` o` false` per rimuovere anche tutte le lesioni.",
 		revive_command_substitutes = "",
 
-		range_revive_command = "/range_revive",
+		range_revive_command = "range_revive",
 		range_revive_command_help = "Rivivi tutti i giocatori in una certa gamma.",
 		range_revive_command_parameter_distance = "Distanza",
 		range_revive_command_parameter_distance_help = "Gamma che vuoi rilanciare i giocatori in (tra 1 e 200).",
-		range_revive_command_substitutes = "/revive_range",
+		range_revive_command_substitutes = "revive_range",
 
-		recent_deaths_command = "/recent_deaths",
+		recent_deaths_command = "recent_deaths",
 		recent_deaths_command_help = "Ottieni le morti più recenti.",
 		recent_deaths_command_parameter_amount = "ammonto",
 		recent_deaths_command_parameter_amount_help = "La quantità di morti che vorresti ricevere.I valori validi sono tra `1` e` 100`.Lasciando questo come vuoto selezionerà automaticamente `20`.",
-		recent_deaths_command_substitutes = "/check_deaths",
+		recent_deaths_command_substitutes = "check_deaths",
 
-		player_death_command = "/player_death",
+		player_death_command = "player_death",
 		player_death_command_help = "Ottieni la recente morte di un giocatore.",
 		player_death_command_parameter_server_id = "server id",
 		player_death_command_parameter_server_id_help = "L'ID server del giocatore.Lasciare questo come vuoto selezionerà automaticamente il tuo ID.",
-		player_death_command_substitutes = "/check_death",
+		player_death_command_substitutes = "check_death",
 
-		death_timer_command = "/death_timer",
+		death_timer_command = "death_timer",
 		death_timer_command_help = "Sovravidia il tempo per il timer di respawn di morte.",
 		death_timer_command_parameter_time = "tempo",
 		death_timer_command_parameter_time_help = "La quantità di tempo in secondi in cui si desidera impostare il timer. Per rimuovere la sostituzione, lasciare questo vuoto.",
 		death_timer_command_substitutes = "",
 
 		-- game/hitmarkers
-		hitmarkers_command = "/hitmarkers",
+		hitmarkers_command = "hitmarkers",
 		hitmarkers_command_help = "metti/togli hitmarker sounds.",
 		hitmarkers_command_substitutes = "",
 
 		-- game/hud
-		watermark_command = "/watermark",
+		watermark_command = "watermark",
 		watermark_command_help = "Attiva/disattiva La filigrana centrale.",
 		watermark_command_substitutes = "",
 
-		metrics_toggle_command = "/metrics_toggle",
+		metrics_toggle_command = "metrics_toggle",
 		metrics_toggle_command_help = "Attiva/disattiva il display delle metriche centrali.",
-		metrics_toggle_command_substitutes = "/metrics, /metrics_display",
+		metrics_toggle_command_substitutes = "metrics, metrics_display",
 
-		toggle_small_metrics_command = "/toggle_small_metrics",
-		toggle_small_metrics_command_help = "Attiva/disattiva Il display di piccole metriche (if /mertrics è anche attivato).",
-		toggle_small_metrics_command_substitutes = "/small_metrics",
+		toggle_small_metrics_command = "toggle_small_metrics",
+		toggle_small_metrics_command_help = "Attiva/disattiva Il display di piccole metriche (se /mertrics è anche attivato).",
+		toggle_small_metrics_command_substitutes = "small_metrics",
 
-		toggle_phone_gps_command = "/toggle_phone_gps",
+		toggle_phone_gps_command = "toggle_phone_gps",
 		toggle_phone_gps_command_help = "Attiva/disattiva la minimap che si mostra quando si apri il telefono a piedi.",
-		toggle_phone_gps_command_substitutes = "/phone_gps",
+		toggle_phone_gps_command_substitutes = "phone_gps",
 
-		toggle_advanced_hud_command = "/toggle_advanced_hud",
+		toggle_advanced_hud_command = "toggle_advanced_hud",
 		toggle_advanced_hud_command_help = "Attiva/disattiva Il veicolo avanzato HUD.(RPM, ingranaggi, ecc.)",
-		toggle_advanced_hud_command_substitutes = "/advanced_hud",
+		toggle_advanced_hud_command_substitutes = "advanced_hud",
 
-		toggle_hud_gauges_command = "/toggle_hud_gauges",
+		toggle_hud_gauges_command = "toggle_hud_gauges",
 		toggle_hud_gauges_command_help = "Attiva/disattiva i calibri HUD.(Velocità e giri / min)",
-		toggle_hud_gauges_command_substitutes = "/gauges",
+		toggle_hud_gauges_command_substitutes = "gauges",
 
 		-- game/hunting
-		animal_debug_command = "/animal_debug",
+		animal_debug_command = "animal_debug",
 		animal_debug_command_help = "Attiva/disattiva Debug per animali.",
 		animal_debug_command_substitutes = "",
 
 		-- game/injuries
-		inspect_command = "/inspect",
+		inspect_command = "inspect",
 		inspect_command_help = "Ispeziona il giocatore più vicino per gli infortuni.",
 		inspect_command_substitutes = "",
 
 		-- game/instances
-		instance_create_command = "/instance_create",
+		instance_create_command = "instance_create",
 		instance_create_command_help = "Crea un'istanza.",
-		instance_create_command_substitutes = "/i_create",
+		instance_create_command_substitutes = "i_create",
 
-		instance_destroy_command = "/instance_destroy",
+		instance_destroy_command = "instance_destroy",
 		instance_destroy_command_help = "Distruggere un'istanza.",
 		instance_destroy_command_parameter_instance_id = "instance id",
 		instance_destroy_command_parameter_instance_id_help = "L'ID dell'istanza che desideri distruggere.",
-		instance_destroy_command_substitutes = "/i_destroy",
+		instance_destroy_command_substitutes = "i_destroy",
 
-		instance_add_player_command = "/instance_add_player",
+		instance_add_player_command = "instance_add_player",
 		instance_add_player_command_help = "Aggiungi un giocatore a un'istanza.",
 		instance_add_player_command_parameter_instance_id = "instance id",
 		instance_add_player_command_parameter_instance_id_help = "L'ID dell'istanza che desideri aggiungere un giocatore a.",
 		instance_add_player_command_parameter_server_id = "server id",
 		instance_add_player_command_parameter_server_id_help = "L'ID server del giocatore che si desidera aggiungere all'istanza.Questo parametro è facoltativo e si selezionerà automaticamente se lasciato vuoto.",
-		instance_add_player_command_substitutes = "/i_add",
+		instance_add_player_command_substitutes = "i_add",
 
-		instance_remove_player_command = "/instance_remove_player",
+		instance_remove_player_command = "instance_remove_player",
 		instance_remove_player_command_help = "Rimuovi un giocatore da un'istanza.",
 		instance_remove_player_command_parameter_instance_id = "instance id",
 		instance_remove_player_command_parameter_instance_id_help = "L'ID dell'istanza che desideri rimuovere un giocatore da.",
 		instance_remove_player_command_parameter_server_id = "server id",
 		instance_remove_player_command_parameter_server_id_help = "L'ID server del giocatore che si desidera rimuovere dall'istanza.Questo parametro è facoltativo e si selezionerà automaticamente se lasciato vuoto.",
-		instance_remove_player_command_substitutes = "/i_remove",
+		instance_remove_player_command_substitutes = "i_remove",
 
-		instance_get_players_command = "/instance_get_players",
+		instance_get_players_command = "instance_get_players",
 		instance_get_players_command_help = "Ottieni tutti i giocatori all'interno di un'istanza.",
 		instance_get_players_command_parameter_instance_id = "instance id",
 		instance_get_players_command_parameter_instance_id_help = "L'ID dell'istanza che desideri ottenere i giocatori.",
-		instance_get_players_command_substitutes = "/i_players",
+		instance_get_players_command_substitutes = "i_players",
 
-		quick_instance_command = "/quick_instance",
+		quick_instance_command = "quick_instance",
 		quick_instance_command_help = "Crea un'istanza e aggiungi te e un elenco di giocatori ad esso.",
 		quick_instance_command_parameter_server_ids = "server ids",
 		quick_instance_command_parameter_server_ids_help = "Elenco separato da virgola di ID server che si desidera aggiungere all'istanza.",
 		quick_instance_command_substitutes = "",
 
 		-- game/interiors
-		interior_debug_command = "/interior_debug",
+		interior_debug_command = "interior_debug",
 		interior_debug_command_help = "Attiva/disattiva Il testo di debug di interni.",
 		interior_debug_command_substitutes = "",
 
-		draw_interiors_command = "/draw_interiors",
+		draw_interiors_command = "draw_interiors",
 		draw_interiors_command_help = "Attiva/disattiva disegno di interni.",
-		draw_interiors_command_substitutes = "/interiors",
+		draw_interiors_command_substitutes = "interiors",
 
-		draw_interior_portals_command = "/draw_interior_portals",
+		draw_interior_portals_command = "draw_interior_portals",
 		draw_interior_portals_command_help = "Attiva/disattiva disegno di portali interni.",
-		draw_interior_portals_command_substitutes = "/interior_portals, /portals",
+		draw_interior_portals_command_substitutes = "interior_portals, portals",
 
-		random_interior_command = "/random_interior",
+		random_interior_command = "random_interior",
 		random_interior_command_help = "Teletrasporto in un interno casuale.",
 		random_interior_command_substitutes = "",
 
 		-- game/inventory
-		trunk_command = "/trunk",
+		trunk_command = "trunk",
 		trunk_command_help = "Tentativo di accedere a un inventario del tronco vicino.",
 		trunk_command_substitutes = "",
 
-		wipe_ground_inventories_command = "/wipe_ground_inventories",
+		wipe_ground_inventories_command = "wipe_ground_inventories",
 		wipe_ground_inventories_command_help = "Pulisci gli inventari del terreno.",
 		wipe_ground_inventories_command_parameter_radius = "radius",
 		wipe_ground_inventories_command_parameter_radius_help = "Il raggio di pulizia.Lasciando questo come vuoto selezionerà automaticamente `100`.I valori validi sono al di sopra di `0`, così come` 0` e `-1` che selezionerà tutti gli inventari.",
-		wipe_ground_inventories_command_substitutes = "/wipeinvs, /wipe_inventories, /wipe_ground",
+		wipe_ground_inventories_command_substitutes = "wipeinvs, wipe_inventories, wipe_ground",
 
-		refresh_inventory_command = "/refresh_inventory",
+		refresh_inventory_command = "refresh_inventory",
 		refresh_inventory_command_help = "Aggiorna con forza un certo inventario.",
 		refresh_inventory_command_parameter_inventory_name = "inventory name",
 		refresh_inventory_command_parameter_inventory_name_help = "L'inventario che vuoi aggiornare.",
 		refresh_inventory_command_substitutes = "",
 
-		toggle_big_inventory_command = "/toggle_big_inventory",
+		toggle_big_inventory_command = "toggle_big_inventory",
 		toggle_big_inventory_command_help = "Aumenta temporaneamente gli slot dell'inventario dei tuoi personaggi a 250.",
-		toggle_big_inventory_command_substitutes = "/big_inventory",
+		toggle_big_inventory_command_substitutes = "Big_inventory",
 
-		item_lookup_command = "/item_lookup",
+		item_lookup_command = "item_lookup",
 		item_lookup_command_help = "Cerca un elemento in base al suo ID.",
 		item_lookup_command_parameter_item_id = "ID dell'oggetto",
 		item_lookup_command_parameter_item_id_help = "L'ID dell'elemento che desideri cercare.",
-		item_lookup_command_substitutes = "/item",
+		item_lookup_command_substitutes = "item",
 
 		-- game/items
-		clear_map_command = "/clear_map",
+		clear_map_command = "clear_map",
 		clear_map_command_help = "Cancella la posizione memorizzata di una mappa.",
 		clear_map_command_parameter_slot = "slot",
 		clear_map_command_parameter_slot_help = "Lo slot di inventario nella mappa è in.",
 		clear_map_command_substitutes = "",
 
 		-- game/jackpot
-		jackpot_command = "/jackpot",
+		jackpot_command = "jackpot",
 		jackpot_command_help = "Attiva o disattiva l'interfaccia utente del jackpot.",
 		jackpot_command_substitutes = "",
 
 		-- game/locate
-		locate_entity_command = "/locate_entity",
+		locate_entity_command = "locate_entity",
 		locate_entity_command_help = "Individua una certa entità sulla mappa.",
 		locate_entity_command_parameter_filter = "filtro",
 		locate_entity_command_parameter_filter_help = "Quale filtro dovrebbe corrispondere l'entità (ID: 12345, piastra: 90fmk072, ecc.)",
-		locate_entity_command_substitutes = "/le",
+		locate_entity_command_substitutes = "le",
 
 		-- game/loot
-		loot_debug_command = "/loot_debug",
+		loot_debug_command = "loot_debug",
 		loot_debug_command_help = "Attiva/disattiva Il bottino debug.",
 		loot_debug_command_substitutes = "",
 
 		-- game/lottery
-		lottery_command = "/lottery",
+		lottery_command = "lottery",
 		lottery_command_help = "Ottieni lo stato attuale della lotteria.",
 		lottery_command_substitutes = "",
 
-		claim_lottery_command = "/claim_lottery",
+		claim_lottery_command = "claim_lottery",
 		claim_lottery_command_help = "Rivendicare le tue vincite alla lotteria.",
 		claim_lottery_command_substitutes = "",
 
-		roll_lottery_command = "/roll_lottery",
+		roll_lottery_command = "roll_lottery",
 		roll_lottery_command_help = "Rotola manualmente la lotteria.",
 		roll_lottery_command_substitutes = "",
 
 		-- game/mdt
-		mdt_command = "/mdt",
+		mdt_command = "mdt",
 		mdt_command_help = "Attiva/disattiva L'MDT.",
 		mdt_command_substitutes = "",
 
 		-- game/mechanics
-		check_vehicle_upgrades_command = "/check_vehicle_upgrades",
+		check_vehicle_upgrades_command = "check_vehicle_upgrades",
 		check_vehicle_upgrades_command_help = "Verifica se il veicolo vicino ha un aggiornamento del motore 5.",
-		check_vehicle_upgrades_command_substitutes = "/check_upgrades, /upgrades",
+		check_vehicle_upgrades_command_substitutes = "check_upgrades, upgrades",
 
 		-- game/mining
-		mining_debug_command = "/mining_debug",
+		mining_debug_command = "mining_debug",
 		mining_debug_command_help = "Attiva o disattiva il debug del mining.",
 		mining_debug_command_substitutes = "",
 
 		-- game/miscellaneous
 		-- these two commands should remain the same on all languages in case someone joins in with a language they don't know.
 		-- you can change the _help parts though if you'd like, not the "language code" though.
-		language_command = "/language",
+		language_command = "language",
 		language_command_help = "Imposta la tua lingua preferita.Questo cambiamento salverà per le sessioni future.Il cambiamento è immediato.",
 		language_command_parameter_language = "Linguaggio del codice",
 		language_command_parameter_language_help = "Il codice della lingua che desideri abilitare. Per vedere la tua lingua corrente e tutte le altre lingue disponibili, digita /languages. Per la lingua predefinita, lascia vuoto questo argomento.",
-		language_command_substitutes = "/lang",
+		language_command_substitutes = "lang",
 
-		languages_command = "/languages",
+		languages_command = "languages",
 		languages_command_help = "Controlla la tua lingua attuale e tutte le altre lingue disponibili.",
-		languages_command_substitutes = "/langs",
+		languages_command_substitutes = "langs",
 
-		ping_command = "/ping",
+		ping_command = "ping",
 		ping_command_help = "Ottieni il tuo ping attuale sul server.",
 		ping_command_substitutes = "",
 
-		ooc_command = "/ooc",
+		ooc_command = "ooc",
 		ooc_command_help = "Trasmettere un messaggio fuori dal personaggio all'intero server.",
 		ooc_command_parameter_message = "ooc message",
 		ooc_command_parameter_message_help = "Il messaggio che desideri inviare.",
 		ooc_command_substitutes = "",
 
-		ooc_local_command = "/ooc_local",
+		ooc_local_command = "ooc_local",
 		ooc_local_command_help = "Trasmettere un messaggio fuori dal personaggio ai giocatori vicini.",
 		ooc_local_command_parameter_message = "ooc message",
 		ooc_local_command_parameter_message_help = "Il messaggio che desideri inviare.",
-		ooc_local_command_substitutes = "/looc, /oocl, /ooclocal",
+		ooc_local_command_substitutes = "looc, oocl, ooclocal",
 
-		ooc_on_command = "/ooc_on",
+		ooc_on_command = "ooc_on",
 		ooc_on_command_help = "Abilita la chat OOC se disabilitato.",
 		ooc_on_command_substitutes = "",
 
-		ooc_off_command = "/ooc_off",
+		ooc_off_command = "ooc_off",
 		ooc_off_command_help = "Disabilita la chat OOC se abilitato.",
 		ooc_off_command_substitutes = "",
 
-		copy_license_command = "/copy_license",
+		copy_license_command = "copy_license",
 		copy_license_command_help ="Copia il tuo identificatore di licenza rockstar negli appunti. (Utilizzato dallo staff per identificarti)",
 		copy_license_command_substitutes = "",
 
-		clear_chat_command = "/clear_chat",
+		clear_chat_command = "clear_chat",
 		clear_chat_command_help = "Cancella la chat.",
-		clear_chat_command_substitutes = "/cls, /clear",
+		clear_chat_command_substitutes = "cls, clear",
 
-		clear_chat_all_command = "/clear_chat_all",
+		clear_chat_all_command = "clear_chat_all",
 		clear_chat_all_command_help = "Cancella la chat per tutti.",
-		clear_chat_all_command_substitutes = "/clsall, /clearall",
+		clear_chat_all_command_substitutes = "Clsall, clearall",
 
-		mute_command = "/mute",
+		mute_command = "mute",
 		mute_command_help = "Muta un giocatore dalla chat OOC e dal comando report.",
 		mute_command_parameter_server_id = "server id",
 		mute_command_parameter_server_id_help = "L'ID server del giocatore che vuoi disattivare.",
@@ -2416,40 +2416,40 @@ OP.Global.Locales.Languages["it-IT"] = {
 		mute_command_parameter_reason_help = "Il motivo dietro il muto del giocatore.",
 		mute_command_substitutes = "",
 
-		unmute_command = "/unmute",
+		unmute_command = "unmute",
 		unmute_command_help = "Smute un giocatore dall'OOC e dal comando del report.",
 		unmute_command_parameter_server_id = "server id",
 		unmute_command_parameter_server_id_help = "L'ID server del giocatore che vuoi riattivare.",
 		unmute_command_substitutes = "",
 
-		use_measurement_command = "/use_measurement",
+		use_measurement_command = "use_measurement",
 		use_measurement_command_help = "Sostituire il sistema di misurazione preferito del locale.",
 		use_measurement_command_parameter_measurement = "misura",
 		use_measurement_command_parameter_measurement_help = "Il sistema di misurazione che desideri utilizzare.I valori validi sono `Imperial` e` metric`.È possibile lasciare questo parametro come vuoto o come un valore non valido per l'utilizzo di impostazione predefinita.",
-		use_measurement_command_substitutes = "/measurement, /meas",
+		use_measurement_command_substitutes = "measurement, meas",
 
-		no_copyright_command = "/no_copyright",
+		no_copyright_command = "no_copyright",
 		no_copyright_command_help = "Questo comando disabiliterà tutti i suoni potenzialmente protetti da copyright provenienti dal framework quando abilitato.",
 		no_copyright_command_substitutes = "",
 
-		tps_command = "/tps",
+		tps_command = "tps",
 		tps_command_help = "Ottieni l'attuale TPS del server.",
 		tps_command_substitutes = "",
 
-		uptime_command = "/uptime",
+		uptime_command = "uptime",
 		uptime_command_help = "Controlla il tempo di attività del server.",
 		uptime_command_substitutes = "",
 
 		-- game/money
-		cash_command = "/cash",
+		cash_command = "cash",
 		cash_command_help = "Visualizza il tuo saldo in contanti.",
 		cash_command_substitutes = "",
 
-		bank_command = "/bank",
+		bank_command = "bank",
 		bank_command_help = "Visualizza il tuo saldo bancario.",
 		bank_command_substitutes = "",
 
-		give_cash_command = "/givecash",
+		give_cash_command = "givecash",
 		give_cash_command_help = "Dai soldi a un certo player con una ammonto preciso.",
 		give_cash_command_parameter_server_id = "server id",
 		give_cash_command_parameter_server_id_help = "L'ID del player a cui vuoi dare la somma di denaro.",
@@ -2457,119 +2457,119 @@ OP.Global.Locales.Languages["it-IT"] = {
 		give_cash_command_parameter_amount_help = "La somma di denaro che vuoi dare al player.",
 		give_cash_command_substitutes = "",
 
-		bill_player_command = "/bill_player",
+		bill_player_command = "bill_player",
 		bill_player_command_help = "Acconta ad un giocatore una somma di denaro che dovrà pagare.",
 		bill_player_command_parameter_server_id = "server id",
 		bill_player_command_parameter_server_id_help = "L'ID del player al quale vuoi mandare l'acconto.",
 		bill_player_command_parameter_amount = "Ammonto",
 		bill_player_command_parameter_amount_help = "Somma di denaro al quale vuoi accontare al player.",
-		bill_player_command_substitutes = "/bill",
+		bill_player_command_substitutes = "bill",
 
 		-- game/notepads
-		notepad_command = "/notepad",
+		notepad_command = "notepad",
 		notepad_command_help = "Attiva/disattiva il blocco note.",
 		notepad_command_substitutes = "",
 
-		notepad_debug_command = "/notepad_debug",
+		notepad_debug_command = "notepad_debug",
 		notepad_debug_command_help = "Mostra tutti gli ID note di blocco note vicini.",
 		notepad_debug_command_substitutes = "",
 
-		notepad_info_command = "/notepad_info",
+		notepad_info_command = "notepad_info",
 		notepad_info_command_help = "Fornisce informazioni su un determinato blocco note.",
 		notepad_info_command_parameter_notepad_id = "ID del notepad",
 		notepad_info_command_parameter_notepad_id_help = "L'ID del blocco note di cui desideri ottenere informazioni.",
 		notepad_info_command_substitutes = "",
 
-		wipe_notepads_command = "/wipe_notepads",
+		wipe_notepads_command = "wipe_notepads",
 		wipe_notepads_command_help = "Si asciugano tutti i blocchi note in un certo raggio.",
 		wipe_notepads_command_parameter_radius = "raggio",
 		wipe_notepads_command_parameter_radius_help = "Il raggio in cui si desidera cancellare i blocchi note in (max = 100).",
 		wipe_notepads_command_substitutes = "",
 
-		sign_notepad_command = "/sign_notepad",
+		sign_notepad_command = "sign_notepad",
 		sign_notepad_command_help = "Firma un blocco note.(Mette il tuo nome in fondo e previene ulteriori modifiche)",
 		sign_notepad_command_parameter_slot = "slot",
 		sign_notepad_command_parameter_slot_help = "Lo slot di inventario il blocco note è in.",
 		sign_notepad_command_substitutes = "/sign",
 
 		-- game/notices
-		add_notice_command = "/add_notice",
+		add_notice_command = "add_notice",
 		add_notice_command_help = "Aggiunge un messaggio galleggiante nella tua posizione corrente.",
 		add_notice_command_parameter_message = "messaggio",
 		add_notice_command_parameter_message_help = "Il messaggio che desideri aggiungere.",
 		add_notice_command_substitutes = "",
 
-		remove_notice_command = "/remove_notice",
+		remove_notice_command = "remove_notice",
 		remove_notice_command_help = "Rimosso un determinato messaggio aggiunto tramite /add_notice.",
 		remove_notice_command_parameter_message_id = "Messaggio ID",
 		remove_notice_command_parameter_message_id_help = "L'ID del messaggio che si desidera rimuovere.",
 		remove_notice_command_substitutes = "",
 
 		-- game/objects
-		frozen_objects_scan_command = "/frozen_objects_scan",
+		frozen_objects_scan_command = "frozen_objects_scan",
 		frozen_objects_scan_command_help = "Scansiona gli oggetti congelati di un modello di hash e scrivilo su un file sul server.",
 		frozen_objects_scan_command_parameter_model_name = "Nome del modello",
 		frozen_objects_scan_command_parameter_model_name_help = "Il nome del modello dell'oggetto per cui desideri scansionare.",
-		frozen_objects_scan_command_substitutes = "/frozen_objects",
+		frozen_objects_scan_command_substitutes = "frozen_objects",
 
 		-- game/orbitcam
-		orbitcam_command = "/orbitcam",
+		orbitcam_command = "orbitcam",
 		orbitcam_command_help = "Attiva/disattiva l'orbita.",
-		orbitcam_command_substitutes = "/orbit",
+		orbitcam_command_substitutes = "orbit",
 
-		track_player_command = "/track_player",
+		track_player_command = "track_player",
 		track_player_command_help = "Attiva/disattiva Tracciamento dei giocatori per Orbitcam.",
 		track_player_command_parameter_server_id = "server id",
 		track_player_command_parameter_server_id_help = "Il giocatore che vuoi tracciare (o falso per selezionare te stesso).",
-		track_player_command_substitutes = "/track",
+		track_player_command_substitutes = "track",
 
 		-- game/overview
-		overview_command = "/overview",
+		overview_command = "overview",
 		overview_command_help = "Attiva/disattiva L'interfaccia utente di panoramica.L'interfaccia utente di panoramica è un menu di interazione OOC, un centro informazioni e un visualizzatore di dati.",
 		overview_command_substitutes = "",
 
 		-- game/oxy
-		oxy_tutorial_command = "/oxy_tutorial",
+		oxy_tutorial_command = "oxy_tutorial",
 		oxy_tutorial_command_help = "Riproduci il tutorial oxy la prossima volta che inizi una corsa.",
 		oxy_tutorial_command_substitutes = "",
 
 		-- game/panel
-		panel_command = "/panel",
+		panel_command = "panel",
 		panel_command_help = "Mostra un mini pannello di amministrazione che ti consente di vedere le note di un giocatore e aggiungerne di nuove.",
 		panel_command_parameter_server_id = "server id",
 		panel_command_parameter_server_id_help = "Server-ID del giocatore di cui vuoi vedere il pannello (deve essere online o disconnesso di recente).",
 		panel_command_substitutes = "",
 
 		-- game/ped_messages
-		me_command = "/me",
+		me_command = "me",
 		me_command_help = "Narrare quello che sta facendo il tuo personaggio.",
 		me_command_parameter_message = "messaggio",
 		me_command_parameter_message_help = "Il messaggio che vorresti inviare per narrare le tue azioni.",
 		me_command_substitutes = "",
 
-		do_command = "/do",
+		do_command = "do",
 		do_command_help = "Visualizza meglio una scena del gioco di ruolo.",
 		do_command_parameter_message = "mssaggio",
 		do_command_parameter_message_help = "Il messaggio che desideri inviare per aiutare a visualizzare una scena di gioco di ruolo.",
 		do_command_substitutes = "",
 
-		description_command = "/description",
+		description_command = "description",
 		description_command_help = "Allega un messaggio al tuo PED per descriverne le funzionalità.",
 		description_command_parameter_message = "Messaggio",
 		description_command_parameter_message_help = "Il messaggio che desideri allegare al tuo PED.",
 		description_command_substitutes = "",
 
-		attempt_command = "/attempt",
+		attempt_command = "attempt",
 		attempt_command_help = "Tenta qualcosa con una probabilità di successo del 50%.",
 		attempt_command_parameter_message = "messaggio",
 		attempt_command_parameter_message_help = "Un messaggio di ciò che stai tentando.",
 		attempt_command_substitutes = "",
 
-		dice_command = "/dice",
+		dice_command = "dice",
 		dice_command_help = "Lanciare un dado standard.",
 		dice_command_substitutes = "",
 
-		roll_command = "/roll",
+		roll_command = "roll",
 		roll_command_help = "Un dadi più avanzati e complicati con impostazioni personalizzate.",
 		roll_command_parameter_rolls = "rolls",
 		roll_command_parameter_rolls_help = "La quantità di tiri che vorresti fare.Sei limitato a 20.",
@@ -2577,16 +2577,16 @@ OP.Global.Locales.Languages["it-IT"] = {
 		roll_command_parameter_max_help = "Il valore più alto che puoi ottenere su un tiro.Il valore più alto qui è 100.000.",
 		roll_command_substitutes = "",
 
-		card_command = "/card",
+		card_command = "card",
 		card_command_help = "Disegna una carta casuale.",
 		card_command_substitutes = "",
 
-		ped_messages_command = "/ped_messages",
+		ped_messages_command = "ped_messages",
 		ped_messages_command_help = "Attiva/disattiva se i messaggi PED devono essere visualizzati nella chat.",
 		ped_messages_command_substitutes = "",
 
 		-- game/ped_spawn
-		ped_spawn_command = "/ped_spawn",
+		ped_spawn_command = "Ped_spawn",
 		ped_spawn_command_help = "Spawna un ped.",
 		ped_spawn_command_parameter_model = "modello",
 		ped_spawn_command_parameter_model_help = "Il modello del PED vuoi generare.",
@@ -2596,7 +2596,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		ped_spawn_command_parameter_fearless_help = "Se il PED deve avere paura delle pistole/ecc. (default: no).",
 		ped_spawn_command_substitutes = "",
 
-		ped_task_command = "/ped_task",
+		ped_task_command = "ped_task",
 		ped_task_command_help = "Assegna i tuoi PED generati un'attività.",
 		ped_task_command_parameter_task = "compito",
 		ped_task_command_parameter_task_help = "L'attività che i PED generati dovrebbero eseguire.",
@@ -2604,85 +2604,85 @@ OP.Global.Locales.Languages["it-IT"] = {
 		ped_task_command_parameter_target_help = "Il server ID i PED dovrebbero target (optional).",
 		ped_task_command_substitutes = "",
 
-		ped_emote_command = "/ped_emote",
+		ped_emote_command = "ped_emote",
 		ped_emote_command_help = "Fa giocare i tuoi PED alzati di una certa emota.",
 		ped_emote_command_parameter_emote = "emote",
 		ped_emote_command_parameter_emote_help = "L'emota i peds spawned dovrebbero giocare.",
 		ped_emote_command_substitutes = "",
 
-		ped_remove_command = "/ped_remove",
+		ped_remove_command = "ped_remove",
 		ped_remove_command_help = "Si sbarazza di tutti i tuoi pedoni alzati.",
 		ped_remove_command_substitutes = "",
 
-		list_ped_emotes_command = "/list_ped_emotes",
+		list_ped_emotes_command = "list_ped_emotes",
 		list_ped_emotes_command_help = "Elenca tutte le emote di pedop disponibili.",
 		list_ped_emotes_command_substitutes = "",
 
-		list_ped_tasks_command = "/list_ped_tasks",
+		list_ped_tasks_command = "list_ped_tasks",
 		list_ped_tasks_command_help = "Elenca tutte le attività di pedoponde disponibili.",
 		list_ped_tasks_command_substitutes = "",
 
 		-- game/ped_steal
-		ped_steal_command = "/ped_steal",
+		ped_steal_command = "ped_steal",
 		ped_steal_command_help = "Rubi il ped a qualcuno.",
 		ped_steal_command_parameter_server_id = "server id",
 		ped_steal_command_parameter_server_id_help = "L'ID del player.",
-		ped_steal_command_substitutes = "/steal_ped",
+		ped_steal_command_substitutes = "steal_ped",
 
 		-- game/ped_takeover
-		takeover_ped_command = "/takeover_ped",
+		takeover_ped_command = "takeover_ped",
 		takeover_ped_command_help = "Ti fa controllare un certo ped.",
 		takeover_ped_command_parameter_network_id = "network id",
 		takeover_ped_command_parameter_network_id_help = "Il network ID è del ped di cui vuoi prendere controllo.",
-		takeover_ped_command_substitutes = "/takeover",
+		takeover_ped_command_substitutes = "takeover",
 
 		-- game/ped_tasks
-		ped_debug_command = "/ped_debug",
+		ped_debug_command = "ped_debug",
 		ped_debug_command_help = "Fa il debug di un ped.",
 		ped_debug_command_parameter_network_id = "network id",
 		ped_debug_command_parameter_network_id_help = "Il network id del ped.",
 		ped_debug_command_substitutes = "",
 
 		-- game/phone_numbers
-		custom_phone_number_command = "/custom_phone_number",
+		custom_phone_number_command = "custom_phone_number",
 		custom_phone_number_command_help = "Cambia il tuo numero di telefono.",
 		custom_phone_number_command_parameter_phone_number = "Numero di telefono",
 		custom_phone_number_command_parameter_phone_number_help = "Il numero di telefono in cui vorresti cambiare.Assicurati che segue il formato di XXX-XXXX.",
-		custom_phone_number_command_substitutes = "/custom_number",
+		custom_phone_number_command_substitutes = "custom_number",
 
-		phone_number_available_command = "/phone_number_available",
+		phone_number_available_command = "phone_number_available",
 		phone_number_available_command_help = "Controlla se è disponibile un numero di telefono.",
 		phone_number_available_command_parameter_phone_number = "Numero di telefono",
 		phone_number_available_command_parameter_phone_number_help = "Il numero di telefono che desideri verificare se è disponibile.Assicurati che segue il formato di XXX-XXXX.",
-		phone_number_available_command_substitutes = "/number_available",
+		phone_number_available_command_substitutes = "number_available",
 
 		-- game/player_control
-		drive_for_command = "/drive_for",
+		drive_for_command = "drive_for",
 		drive_for_command_help = "Prendi il controllo del veicolo di un giocatore e guida per lui.",
 		drive_for_command_parameter_server_id = "server id",
 		drive_for_command_parameter_server_id_help = "L'ID del server del giocatore per il quale vorresti subentrare.",
 		drive_for_command_substitutes = "",
 
 		-- game/player_scales
-		set_player_scale_command = "/set_player_scale",
+		set_player_scale_command = "set_player_scale",
 		set_player_scale_command_help = "Imposta la scala di un giocatore.",
 		set_player_scale_command_parameter_scale = "scala",
 		set_player_scale_command_parameter_scale_help = "La scala che vorresti impostarli.",
 		set_player_scale_command_parameter_server_id = "server id",
 		set_player_scale_command_parameter_server_id_help = "L'ID server che desideri impostare la scala per.Lasciando questo vuoto ti selezionerà automaticamente.",
-		set_player_scale_command_substitutes = "/player_scale, /set_player_size, /player_size",
+		set_player_scale_command_substitutes = "player_scale, set_player_size, player_size",
 
 		-- game/properties
-		properties_debug_command = "/properties_debug",
+		properties_debug_command = "properties_debug",
 		properties_debug_command_help = "Attiva/disattiva le proprietà debug.",
-		properties_debug_command_substitutes = "/properties",
+		properties_debug_command_substitutes = "properties",
 
 		-- game/props
-		props_manage_command = "/props_manage",
+		props_manage_command = "props_manage",
 		props_manage_command_help = "Gestisci oggetti di scena vicini.",
-		props_manage_command_substitutes = "/manage_props, /mp",
+		props_manage_command_substitutes = "manage_props, mp",
 
-		spawn_prop_command = "/spawn_prop",
+		spawn_prop_command = "spawn_prop",
 		spawn_prop_command_help = "Spawna un prop.",
 		spawn_prop_command_parameter_model_hash = "modello",
 		spawn_prop_command_parameter_model_hash_help = "Il modello di prop che desideri generare.",
@@ -2692,7 +2692,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		spawn_prop_command_parameter_no_pickup_help = "Questo oggetto di scena dovrebbe essere raccolto solo da super amministratori?",
 		spawn_prop_command_substitutes = "",
 
-		spawn_exact_prop_command = "/spawn_exact_prop",
+		spawn_exact_prop_command = "spawn_exact_prop",
 		spawn_exact_prop_command_help = "Spawna un prop alla tua esatta posizione.",
 		spawn_exact_prop_command_parameter_model_name = "model name",
 		spawn_exact_prop_command_parameter_model_name_help = "Il modello del prop che vuoi spawnare.",
@@ -2700,287 +2700,287 @@ OP.Global.Locales.Languages["it-IT"] = {
 		spawn_exact_prop_command_parameter_ground_help = "Se il prop è spawnato a terra o no.",
 		spawn_exact_prop_command_substitutes = "",
 
-		props_debug_command = "/props_debug",
+		props_debug_command = "props_debug",
 		props_debug_command_help = "Debug tutti gli oggetti di scena intorno a te.",
 		props_debug_command_substitutes = "",
 
-		delete_prop_command = "/delete_prop",
+		delete_prop_command = "delete_prop",
 		delete_prop_command_help = "Elimina un sostegno dato un determinato ID dell'elica.",
 		delete_prop_command_parameter_prop_id = "prop id",
 		delete_prop_command_parameter_prop_id_help = "L'ID dell'elica che stai cercando di eliminare.",
 		delete_prop_command_substitutes = "",
 
-		wipe_props_command = "/wipe_props",
+		wipe_props_command = "wipe_props",
 		wipe_props_command_help = "Asciuga gli oggetti di scena intorno a te.",
 		wipe_props_command_parameter_radius = "raggio",
 		wipe_props_command_parameter_radius_help = "Il raggio per la pulizia (1-100).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
-		radio_command = "/radio",
+		radio_command = "radio",
 		radio_command_help = "Attiva/disattiva L'interfaccia utente radio.",
 		radio_command_substitutes = "",
 
-		radio_debug_command = "/radio_debug",
+		radio_debug_command = "radio_debug",
 		radio_debug_command_help = "Attiva/disattiva Il debug radiofonico.",
 		radio_debug_command_substitutes = "",
 
-		frequency_command = "/frequency",
+		frequency_command = "frequency",
 		frequency_command_help = "Imposta su quale frequenza è la radio.",
 		frequency_command_parameter_frequency = "frequenza",
 		frequency_command_parameter_frequency_help = "La frequenza a cui vorresti andare.",
-		frequency_command_substitutes = "/freq",
+		frequency_command_substitutes = "freq",
 
-		force_frequency_command = "/force_frequency",
+		force_frequency_command = "force_frequency",
 		force_frequency_command_help = "Unisciti a una radiofrequenza senza bisogno di una radio o hai bisogno di essere in servizio.",
 		force_frequency_command_parameter_frequency = "frequenza",
 		force_frequency_command_parameter_frequency_help = "La frequenza a cui vorresti andare.",
 		force_frequency_command_substitutes = "",
 
-		random_frequency_command = "/random_frequency",
+		random_frequency_command = "random_frequency",
 		random_frequency_command_help = "Imposta la radio su una frequenza casuale.",
-		random_frequency_command_substitutes = "/random_freq, /rfreq",
+		random_frequency_command_substitutes = "random_freq, rfreq",
 
-		radio_sounds_command = "/radio_sounds",
+		radio_sounds_command = "radio_sounds",
 		radio_sounds_command_help = "Regola il volume degli effetti sonori della radio.",
 		radio_sounds_command_parameter_volume = "Livello del volume",
 		radio_sounds_command_parameter_volume_help = "Il livello di volume dei suoni radio.Il valore deve essere compreso tra 0 e 1. L'impostazione predefinita è 0,1.Lasciare questo vuoto restituirà il livello di volume corrente.",
 		radio_sounds_command_substitutes = "",
 
-		radio_volume_command = "/radio_volume",
+		radio_volume_command = "radio_volume",
 		radio_volume_command_help = "Regola il volume della radio.",
 		radio_volume_command_parameter_volume = "Livello del volume",
 		radio_volume_command_parameter_volume_help = "Il livello di volume della radio.Il valore deve essere compreso tra 0 e 1. L'impostazione predefinita è 0,5.Lasciare questo vuoto restituirà il livello di volume corrente.",
 		radio_volume_command_substitutes = "",
 
 		-- game/relationships
-		relationships_debug_command = "/relationships_debug",
+		relationships_debug_command = "relationships_debug",
 		relationships_debug_command_help = "Attiva/disattiva lo stato del player (Sposato, fidanzato, single) debug.",
 		relationships_debug_command_substitutes = "",
 
 		-- game/reskin
-		reskin_command = "/reskin",
+		reskin_command = "reskin",
 		reskin_command_help = "Attiva un reskin per un giocatore.",
 		reskin_command_parameter_server_id = "server id",
 		reskin_command_parameter_server_id_help = "L'ID del server del giocatore per il quale desideri attivare un reskin. Lascia questo spazio vuoto per selezionarti automaticamente.",
 		reskin_command_substitutes = "",
 
-		redeem_reskin_command = "/redeem_reskin",
+		redeem_reskin_command = "redeem_reskin",
 		redeem_reskin_command_help = "Riscatta una reskin acquistato.",
 		redeem_reskin_command_substitutes = "",
 
 		-- game/riot_mode
-		toggle_riot_mode_command = "/riot_mode",
+		toggle_riot_mode_command = "riot_mode",
 		toggle_riot_mode_command_help = "Attiva/disattiva modalità antisommossa per tutti i giocatori.",
 		toggle_riot_mode_command_substitutes = "",
 
-		add_riot_player_command = "/add_riot_player",
+		add_riot_player_command = "add_riot_player",
 		add_riot_player_command_help = "Aggiungi un giocatore alla 'lista delle rivolte' che avrà un attacco Ambient PEDS che i giocatori.",
 		add_riot_player_command_parameter_server_id = "server id",
 		add_riot_player_command_parameter_server_id_help = "L'ID server del giocatore che desideri aggiungere.Lascia questo vuoto per selezionarti automaticamente.",
 		add_riot_player_command_substitutes = "",
 
-		remove_riot_player_command = "/remove_riot_player",
+		remove_riot_player_command = "remove_riot_player",
 		remove_riot_player_command_help = "Rimuovere un giocatore dal 'Elenco antisommossa'.",
 		remove_riot_player_command_parameter_server_id = "server id",
 		remove_riot_player_command_parameter_server_id_help = "L'ID server del giocatore che desideri rimuovere.Lascia questo vuoto per selezionarti automaticamente.",
 		remove_riot_player_command_substitutes = "",
 
 		-- game/scoreboard
-		metagame_command = "/metagame",
+		metagame_command = "metagame",
 		metagame_command_help = "Attiva o disattiva l'estrazione costante degli ID server del giocatore.",
-		metagame_command_substitutes = "/meta, /m",
+		metagame_command_substitutes = "meta, m",
 
 		-- game/security_cameras
-		security_cameras_command = "/security_cameras",
+		security_cameras_command = "security_cameras",
 		security_cameras_command_help = "attiva/disattivaTheSecurityCameras.",
-		security_cameras_command_substitutes = "/sec, /sec_cam, /seccam, /sec_cams, /seccams, /security_cams, /securitycams, /security_camera, /securitycamera, /securitycameras", -- substitutes!!!
+		security_cameras_command_substitutes = "sec, sec_cam, Seccam, sec_cams, seccams, security_cams, securitycams, security_camera, securitycamera, securitycameras", -- substitutes!!!
 
-		security_cameras_scan_command = "/security_cameras_scan",
+		security_cameras_scan_command = "security_cameras_scan",
 		security_cameras_scan_command_help = "Ottieni tutti gli oggetti della telecamera di sicurezza noti e memorizzali in un file di testo.",
-		security_cameras_scan_command_substitutes = "/scan, /scan_cams, /scancams",
+		security_cameras_scan_command_substitutes = "scan, scan_cams, scancams",
 
-		security_cameras_health_command = "/security_cameras_health",
+		security_cameras_health_command = "security_cameras_health",
 		security_cameras_health_command_help = "Attiva/disattiva Lo strumento di debug per la salute delle telecamere di sicurezza.",
-		security_cameras_health_command_substitutes = "/cam_health",
+		security_cameras_health_command_substitutes = "cam_health",
 
 		-- game/shield
-		shield_command = "/shield",
+		shield_command = "shield",
 		shield_command_help = "Attiva/disattiva Lo scudo balistico.",
 		shield_command_substitutes = "",
 
 		-- game/shockwaves
-		create_shockwave_command = "/create_shockwave",
+		create_shockwave_command = "create_shockwave",
 		create_shockwave_command_help = "Crea un'onda d'urto nella tua posizione attuale.",
 		create_shockwave_command_parameter_force = "force",
 		create_shockwave_command_parameter_force_help = "La forza dell'onda d'urto (1 - 1000).",
 		create_shockwave_command_parameter_radius = "radius",
 		create_shockwave_command_parameter_radius_help = "Il raggio dell'onda d'urto (1 - 100).",
-		create_shockwave_command_substitutes = "/shockwave",
+		create_shockwave_command_substitutes = "shockwave",
 
 		-- game/shrooms
-		draw_shroom_areas_command = "/draw_shroom_areas",
+		draw_shroom_areas_command = "draw_shroom_areas",
 		draw_shroom_areas_command_help = "Disegna tutte le aree shroom e aggiungi altro.",
-		draw_shroom_areas_command_substitutes = "/shroom_areas",
+		draw_shroom_areas_command_substitutes = "shroom_areas",
 
 		-- game/spying
-		search_for_devices_command = "/search_for_devices",
+		search_for_devices_command = "search_for_devices",
 		search_for_devices_command_help = "Cerca dispositivi vicini.",
-		search_for_devices_command_substitutes = "/search_devices, /searchdevices, /s4d",
+		search_for_devices_command_substitutes = "search_devices, searchdevices, s4d",
 
 		-- game/spectating
-		spectate_command = "/spectate",
+		spectate_command = "spectate",
 		spectate_command_help = "Spettare un certo giocatore.",
 		spectate_command_parameter_server_id = "server id",
 		spectate_command_parameter_server_id_help = "L'ID server del giocatore che desideri sviluppare.",
-		spectate_command_substitutes = "/spec",
+		spectate_command_substitutes = "spec",
 
 		-- game/status
-		status_reset_command = "/status_reset",
+		status_reset_command = "status_reset",
 		status_reset_command_help = "Ripristina i livelli di stato.",
 		status_reset_command_parameter_server_id = "server id",
 		status_reset_command_parameter_server_id_help = "L'ID server del giocatore per cui si desidera ripristinare lo stato.Se lasciato a vuoto, verrà automaticamente selezionato.",
-		status_reset_command_substitutes = "/sr",
+		status_reset_command_substitutes = "sr",
 
-		toggle_status_command = "/toggle_status",
+		toggle_status_command = "toggle_status",
 		toggle_status_command_help = "Disabilitato (o abilita) determinati stati come fame, sete e stress.",
 		toggle_status_command_substitutes = "",
 
-		set_body_armor_command = "/set_body_armor",
+		set_body_armor_command = "set_body_armor",
 		set_body_armor_command_help = "Imposta il livello di armatura di qualcuno.",
 		set_body_armor_command_parameter_server_id = "server id",
 		set_body_armor_command_parameter_server_id_help = "L'ID server del giocatore in cui si desidera impostare il livello di armatura per il corpo.Puoi lasciare questo vuoto o a `0` per selezionare te stesso.Puoi anche fare `-1` per impostare il livello di armatura di tutti.",
 		set_body_armor_command_parameter_body_armor_level = "body armor level",
 		set_body_armor_command_parameter_body_armor_level_help = "Il livello dell'armatura del corpo che desideri impostare.Questo valore può essere ovunque da `0` a` 100`.Lasciare questo come vuoto o come un valore non valido sarà default a `100`.",
-		set_body_armor_command_substitutes = "/body_armor, /armor",
+		set_body_armor_command_substitutes = "body_armor, armor",
 
 		-- game/streamer_mode
-		toggle_streamer_mode_command = "/toggle_streamer_mode",
+		toggle_streamer_mode_command = "toggle_streamer_mode",
 		toggle_streamer_mode_command_help = "Attiva/disattiva la modalità streamer.Ciò impedirà ai giocatori di fare le emote '18+'quando sei nelle vicinanze e simili.",
-		toggle_streamer_mode_command_substitutes = "/streamer_mode, /streamer",
+		toggle_streamer_mode_command_substitutes = "streamer_mode, streamer",
 
 		-- game/sync
-		time_hour_command = "/time_hour",
+		time_hour_command = "time_hour",
 		time_hour_command_help = "Imposta l'ora di clock corrente.",
 		time_hour_command_parameter_hour = "ora",
 		time_hour_command_parameter_hour_help = "L'ora in cui desideri impostare l'orologio.Il valore deve essere compreso tra 0 e 23.",
 		time_hour_command_parameter_transition = "transizione",
 		time_hour_command_parameter_transition_help = "Se il tempo deve essere modificato con una transizione fluida (sì/no, il valore predefinito è no).",
-		time_hour_command_substitutes = "/hour",
+		time_hour_command_substitutes = "hour",
 
-		time_minute_command = "/time_minute",
+		time_minute_command = "time_minute",
 		time_minute_command_help = "Imposta il minuto di clock corrente.",
 		time_minute_command_parameter_minute = "minuto",
 		time_minute_command_parameter_minute_help = "Nel momento in cui desideri impostare l'orologio.Il valore deve essere compreso tra 0 e 59.",
-		time_minute_command_substitutes = "/minute",
+		time_minute_command_substitutes = "minute",
 
-		local_time_command = "/local_time",
+		local_time_command = "local_time",
 		local_time_command_help = "Imposta il tempo, ma solo per te.",
 		local_time_command_parameter_hour = "ora",
 		local_time_command_parameter_hour_help = "L'ora in cui desideri impostare l'orologio locale.Il valore deve essere compreso tra 0 e 23.",
 		local_time_command_substitutes = "",
 
-		brighter_nights_command = "/brighter_nights",
+		brighter_nights_command = "brighter_nights",
 		brighter_nights_command_help = "Imposta il tempo alle 12:00 e il tempo per liberare, ma solo per te.",
 		brighter_nights_command_substitutes = "",
 
-		weather_command = "/weather",
+		weather_command = "weather",
 		weather_command_help = "Cambiare il tempo.",
 		weather_command_parameter_weather = "nome meteorologico",
 		weather_command_parameter_weather_help = "Il nome del tempo in cui vorresti impostarlo.I nomi meteorologici validi sono EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS and HALLOWEEN.",
 		weather_command_substitutes = "",
 
-		advance_weather_command = "/advance_weather",
+		advance_weather_command = "advance_weather",
 		advance_weather_command_help = "Naturalmente avanza al tempo successivo.",
 		advance_weather_command_substitutes = "",
 
-		freeze_time_command = "/freeze_time",
+		freeze_time_command = "freeze_time",
 		freeze_time_command_help = "Attiva/disattiva se il tempo è congelato o meno.",
 		freeze_time_command_substitutes = "",
 
-		freeze_weather_command = "/freeze_weather",
+		freeze_weather_command = "freeze_weather",
 		freeze_weather_command_help = "Attiva/disattiva se il tempo è congelato o meno.",
 		freeze_weather_command_substitutes = "",
 
-		blackout_command = "/blackout",
+		blackout_command = "blackout",
 		blackout_command_help = "Attiva/disattiva se un blackout è attivo o no.",
 		blackout_command_substitutes = "",
 
 		-- game/tablet
-		tablet_command = "/tablet",
+		tablet_command = "tablet",
 		tablet_command_help = "Apre l'interfaccia utente del tablet (se hai un tablet).",
 		tablet_command_substitutes = "",
 
 		-- game/test_server
-		set_vehicle_preset_command = "/set_vehicle_preset",
+		set_vehicle_preset_command = "set_vehicle_preset",
 		set_vehicle_preset_command_help = "Aggiorna completamente il veicolo in cui ti trovi attualmente e applica i colori con il preset specificato.",
 		set_vehicle_preset_command_parameter_preset = "preset",
 		set_vehicle_preset_command_parameter_preset_help = "Il colore preimpostato che desideri applicare (rosso, blu, verde, giallo, arancione, bianco, nero).",
-		set_vehicle_preset_command_substitutes = "/vehicle_preset",
+		set_vehicle_preset_command_substitutes = "vehicle_preset",
 
-		detach_all_doors_command = "/detach_all_doors",
+		detach_all_doors_command = "Detach_all_doors",
 		detach_all_doors_command_help = "Stacca tutte le porte del veicolo in cui ti trovi attualmente.",
 		detach_all_doors_command_substitutes = "",
 
-		pop_all_tires_command = "/pop_all_tires",
+		pop_all_tires_command = "pop_all_tires",
 		pop_all_tires_command_help = "Pops tutti i pneumatici del veicolo in cui ti trovi attualmente.",
 		pop_all_tires_command_substitutes = "",
 
-		upgrade_vehicle_fully_command = "/upgrade_vehicle_fully",
+		upgrade_vehicle_fully_command = "upgrade_vehicle_fully",
 		upgrade_vehicle_fully_command_help = "Aggiornamenti Il veicolo in cui sei attualmente completamente.",
 		upgrade_vehicle_fully_command_substitutes = "",
 
-		random_vehicle_colors_command = "/random_vehicle_colors",
+		random_vehicle_colors_command = "random_vehicle_colors",
 		random_vehicle_colors_command_help = "Randomizza i colori del veicolo in cui ti trovi attualmente.",
 		random_vehicle_colors_command_parameter_lights = "luci",
 		random_vehicle_colors_command_parameter_lights_help = "Se anche le luci devono essere randomizzate (xenon e neon).",
 		random_vehicle_colors_command_substitutes = "",
 
-		starve_command = "/starve",
+		starve_command = "starve",
 		starve_command_help = "Imposta il cibo e la sete su 0.",
 		starve_command_substitutes = "",
 
 		-- game/time_scale
-		set_time_scale_command = "/set_time_scale",
+		set_time_scale_command = "set_time_scale",
 		set_time_scale_command_help = "Imposta la scala temporale del server.",
 		set_time_scale_command_parameter_time_scale = "Scala temporale",
 		set_time_scale_command_parameter_time_scale_help = "La scala temporale che desideri impostare.Il valore deve essere compreso tra 0 e 1.",
-		set_time_scale_command_substitutes = "/time_scale, /slow_motion",
+		set_time_scale_command_substitutes = "time_scale, slow_motion",
 
 		-- game/titanic
-		create_titanic_command = "/create_titanic",
+		create_titanic_command = "create_titanic",
 		create_titanic_command_help = "Crea un titanic che affonda.",
 		create_titanic_command_parameter_sink_time = "affondare il tempo",
 		create_titanic_command_parameter_sink_time_help = "La quantità di minuti che dovrebbe impiegare prima che la barca sia sott'acqua.",
 		create_titanic_command_substitutes = "",
 
 		-- game/top_down
-		top_down_command = "/top_down",
+		top_down_command = "top_down",
 		top_down_command_help = "Attiva/disattiva La vista dall'alto verso il basso.",
 		top_down_command_substitutes = "",
 
 		-- game/trackers
-		tracker_command = "/tracker",
+		tracker_command = "tracker",
 		tracker_command_help = "Attiva/disattiva Visibilità del tuo tracker.",
 		tracker_command_substitutes = "",
 
-		trackers_split_command = "/trackers_split",
+		trackers_split_command = "trackers_split",
 		trackers_split_command_help = "Attiva/disattiva tra i tracker memorizzati all'interno di una categoria sulla mappa e averli divisi.",
 		trackers_split_command_substitutes = "",
 
 		-- game/trains
-		trains_debug_command = "/trains_debug",
+		trains_debug_command = "trains_debug",
 		trains_debug_command_help = "Attiva/disattiva Trains Debug.",
 		trains_debug_command_substitutes = "",
 
-		spawn_train_command = "/spawn_train",
+		spawn_train_command = "spawn_train",
 		spawn_train_command_help = "Spawn un treno.",
 		spawn_train_command_parameter_track_id = "track id",
 		spawn_train_command_parameter_track_id_help = "La pista su cui desideri generare il treno.(Da 1 a 12)",
 		spawn_train_command_substitutes = "",
 
 		-- game/treasure_maps
-		spawn_map_piece_command = "/spawn_map_piece",
+		spawn_map_piece_command = "spawn_map_piece",
 		spawn_map_piece_command_help = "Spawn un pezzo di mappa del tesoro.",
 		spawn_map_piece_command_parameter_map_tier = "livello della mappa",
 		spawn_map_piece_command_parameter_map_tier_help = "Il livello della mappa che desideri generare un pezzo.",
@@ -2989,14 +2989,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 		spawn_map_piece_command_substitutes = "",
 
 		-- game/tsunami
-		set_ocean_scaler_command = "/set_ocean_scaler",
+		set_ocean_scaler_command = "set_ocean_scaler",
 		set_ocean_scaler_command_help = "Modifica a livello globale lo scaler dell'oceano.",
 		set_ocean_scaler_command_parameter_intensity = "intensità",
 		set_ocean_scaler_command_parameter_intensity_help = "L'intensità che vorresti impostarlo.",
-		set_ocean_scaler_command_substitutes = "/ocean_scaler, /set_waves_intensity, /waves_intensity",
+		set_ocean_scaler_command_substitutes = "ocean_scaler, set_waves_intensity, waves_intensity",
 
 		-- game/vdm
-		vdm_command = "/vdm",
+		vdm_command = "vdm",
 		vdm_command_help = "Fa in modo che l'npc specificato tenti di vdm la destinazione.",
 		vdm_command_parameter_target = "target",
 		vdm_command_parameter_target_help = "L'ID del server del giocatore di destinazione.",
@@ -3004,41 +3004,41 @@ OP.Global.Locales.Languages["it-IT"] = {
 		vdm_command_parameter_network_id_help = "L'ID della rete locale (o il suo veicolo).",
 		vdm_command_substitutes = "",
 
-		vdm_clear_command = "/vdm_clear",
+		vdm_clear_command = "vdm_clear",
 		vdm_clear_command_help = "Cancella tutti i tuoi obiettivi vdm.",
 		vdm_clear_command_substitutes = "",
 
 		-- game/voice
-		voice_debug_command = "/voice_debug",
+		voice_debug_command = "voice_debug",
 		voice_debug_command_help = "Attiva/disattiva Il debug della voce.",
 		voice_debug_command_parameter_server_id = "server id",
 		voice_debug_command_parameter_server_id_help = "Se vuoi attivare il 'debug vocale' per qualcun altro, inserisci qui il loro ID server.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "/muted_areas_debug",
+		muted_areas_debug_command = "muted_areas_debug",
 		muted_areas_debug_command_help = "Disegna tutte le aree vocali disattivate.",
-		muted_areas_debug_command_substitutes = "/muted_areas",
+		muted_areas_debug_command_substitutes = "Muted_areas",
 
-		listen_command = "/listen",
+		listen_command = "listen",
 		listen_command_help = "Attiva/disattiva Modalità di ascolto per un determinato utente.(Puoi sentire quello che dicono)",
 		listen_command_parameter_server_id = "server id",
 		listen_command_parameter_server_id_help = "L'utente che desideri ascoltare.",
 		listen_command_substitutes = "",
 
-		toggle_voice_mute_command = "/toggle_voice_mute",
+		toggle_voice_mute_command = "toggle_voice_mute",
 		toggle_voice_mute_command_help = "Mute e non muggire qualcuno dalla chat vocale.",
 		toggle_voice_mute_command_parameter_server_id = "server id",
 		toggle_voice_mute_command_parameter_server_id_help = "L'utente che desideri disattivare/disgustare.",
-		toggle_voice_mute_command_substitutes = "/voice_mute",
+		toggle_voice_mute_command_substitutes = "voice_mute",
 
 		-- game/wizard
-		wizard_command = "/wizard",
+		wizard_command = "wizard",
 		wizard_command_help = "Apre il menu della procedura guidata.",
 		wizard_command_parameter_server_id = "server id",
 		wizard_command_parameter_server_id_help = "Seleziona un determinato giocatore nel menu (opzionale).",
 		wizard_command_substitutes = "",
 
-		ragdoll_player_command = "/ragdoll_player",
+		ragdoll_player_command = "ragdoll_player",
 		ragdoll_player_command_help = "Fa un giocatore ragdoll.",
 		ragdoll_player_command_parameter_server_id = "server id",
 		ragdoll_player_command_parameter_server_id_help = "ID server del giocatore che desideri ragdoll.",
@@ -3046,7 +3046,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		ragdoll_player_command_parameter_force_help = "Applicare una forza casuale al giocatore dopo averli fatti ragdoll.",
 		ragdoll_player_command_substitutes = "",
 
-		ragdoll_radius_command = "/ragdoll_radius",
+		ragdoll_radius_command = "ragdoll_radius",
 		ragdoll_radius_command_help = "Costringe ogni giocatore in un dato raggio a Ragdoll in modo casuale.",
 		ragdoll_radius_command_parameter_radius = "raggio",
 		ragdoll_radius_command_parameter_radius_help = "Il raggio in cui i giocatori lo faranno ragdoll.",
@@ -3054,19 +3054,19 @@ OP.Global.Locales.Languages["it-IT"] = {
 		ragdoll_radius_command_parameter_force_help = "Applicare una forza casuale al giocatore dopo averli fatti ragdoll.",
 		ragdoll_radius_command_substitutes = "",
 
-		punch_radius_command = "/punch_radius",
+		punch_radius_command = "punch_radius",
 		punch_radius_command_help = "Costringe ogni giocatore in un dato raggio a pugni in modo casuale.",
 		punch_radius_command_parameter_radius = "raggio",
 		punch_radius_command_parameter_radius_help = "Il raggio in cui i giocatori colpiranno in modo casuale.",
 		punch_radius_command_substitutes = "",
 
-		flashbang_command = "/flashbang",
+		flashbang_command = "flashbang",
 		flashbang_command_help = "Flashbangs un certo giocatore.",
 		flashbang_command_parameter_server_id = "server id",
 		flashbang_command_parameter_server_id_help = "ID server del lettore target.",
 		flashbang_command_substitutes = "",
 
-		flashbang_radius_command = "/flashbang_radius",
+		flashbang_radius_command = "flashbang_radius",
 		flashbang_radius_command_help = "Flashbangs ogni giocatore in un dato raggio.",
 		flashbang_radius_command_parameter_radius = "raggio",
 		flashbang_radius_command_parameter_radius_help = "Il raggio in cui i giocatori saranno flashbange.",
@@ -3074,25 +3074,25 @@ OP.Global.Locales.Languages["it-IT"] = {
 		flashbang_radius_command_parameter_include_self_help = "Se vuoi flashbangare anche te stesso.",
 		flashbang_radius_command_substitutes = "",
 
-		punch_command = "/punch",
+		punch_command = "punch",
 		punch_command_help = "Costringe un certo giocatore a colpire in modo casuale.",
 		punch_command_parameter_server_id = "server id",
 		punch_command_parameter_server_id_help = "ID server del lettore target.",
 		punch_command_substitutes = "",
 
-		explode_command = "/explode_player",
+		explode_command = "explode_player",
 		explode_command_help = "Esplode un certo giocatore.",
 		explode_command_parameter_server_id = "server id",
 		explode_command_parameter_server_id_help = "ID server del lettore target.",
 		explode_command_substitutes = "",
 
-		ignite_player_command = "/ignite_player",
+		ignite_player_command = "ignite_player",
 		ignite_player_command_help = "Accende un giocatore in fiamme per un breve momento.",
 		ignite_player_command_parameter_server_id = "server id",
 		ignite_player_command_parameter_server_id_help = "ID server del lettore target.",
 		ignite_player_command_substitutes = "/ignite, /burn",
 
-		run_command_as_command = "/run_command_as",
+		run_command_as_command = "run_command_as",
 		run_command_as_command_help = "Fa eseguire un altro giocatore un comando.",
 		run_command_as_command_parameter_server_id = "server id",
 		run_command_as_command_parameter_server_id_help = "ID server del lettore target.",
@@ -3100,25 +3100,25 @@ OP.Global.Locales.Languages["it-IT"] = {
 		run_command_as_command_parameter_command_help = "Il comando che vuoi far funzionare il giocatore.",
 		run_command_as_command_substitutes = "/runas, /sudo",
 
-		ped_reverse_command = "/ped_reverse",
+		ped_reverse_command = "ped_reverse",
 		ped_reverse_command_help = "Rende il PED più vicino in un veicolo inverso.",
 		ped_reverse_command_substitutes = "",
 
-		ped_forwards_command = "/ped_forwards",
+		ped_forwards_command = "ped_forwards",
 		ped_forwards_command_help = "Fa in avanti il PED più vicino in un veicolo.",
 		ped_forwards_command_substitutes = "",
 
 		-- global/entities
-		local_entities_debug_command = "/local_entities_debug",
+		local_entities_debug_command = "local_entities_debug",
 		local_entities_debug_command_help = "Attiva/disattiva Il debug per le entità locali.",
-		local_entities_debug_command_substitutes = "/lentities",
+		local_entities_debug_command_substitutes = "lentities",
 
-		no_ped_population_areas_debug_command = "/no_ped_population_asreas_debug",
+		no_ped_population_areas_debug_command = "no_ped_population_asreas_debug",
 		no_ped_population_areas_debug_command_help = "Attiva o disattiva il debugger delle aree di popolazione senza pedoni.",
 		no_ped_population_areas_debug_command_substitutes = "",
 
 		-- global/explosions
-		create_explosion_command = "/create_explosion",
+		create_explosion_command = "create_explosion",
 		create_explosion_command_help = "Crea un'esplosione.",
 		create_explosion_command_parameter_explosion_type = "tipo di esplosione",
 		create_explosion_command_parameter_explosion_type_help = "Il tipo di esplosione.",
@@ -3126,167 +3126,167 @@ OP.Global.Locales.Languages["it-IT"] = {
 		create_explosion_command_parameter_damage_scale_help = "La scala del danno.",
 		create_explosion_command_parameter_camera_shake = "vibrazioni della videocamera",
 		create_explosion_command_parameter_camera_shake_help = "La fotocamera si scuote.",
-		create_explosion_command_substitutes = "/exp, /explode, /explosion",
+		create_explosion_command_substitutes = "exp, explode, explosion",
 
 		-- global/functions
-		confirm_yes_command = "/yes",
+		confirm_yes_command = "yes",
 		confirm_yes_command_help = "Conferma l'azione corrente.",
 		confirm_yes_command_substitutes = "/confirm",
 
-		confirm_no_command = "/no",
+		confirm_no_command = "no",
 		confirm_no_command_help = "Annulla l'azione corrente.",
 		confirm_no_command_substitutes = "/cancel, /abort",
 
 		-- global/states
-		entity_states_command = "/entity_states",
+		entity_states_command = "entity_states",
 		entity_states_command_help = "Stampa tutti gli stati di una certa entità.",
 		entity_states_command_parameter_network_id = "network id",
 		entity_states_command_parameter_network_id_help = "Il Network id Dell'entità.",
 		entity_states_command_substitutes = "",
 
 		-- illegal/corner
-		corner_command = "/corner",
-		corner_command_help = "Vendi droghe a una persona vicina.Il farmaco che vendi si basa sulla posizione in cui ti trovi.",
+		corner_command = "corner",
+		corner_command_help = "Vendi droghe a una persona vicina. Il farmaco che vendi si basa sulla posizione in cui ti trovi.",
 		corner_command_substitutes = "",
 
-		corner_debug_command = "/corner_debug",
+		corner_debug_command = "corner_debug",
 		corner_debug_command_help = "Mostra tutte le aree di vendita.",
 		corner_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
-		clear_uis_command = "/clear_uis",
+		clear_uis_command = "clear_uis",
 		clear_uis_command_help = "Cancella tutte le focus sull'interfaccia utente.",
 		clear_uis_command_substitutes = "",
 
-		interface_focuses_command = "/interface_focuses",
+		interface_focuses_command = "interface_focuses",
 		interface_focuses_command_help = "Controlla quali interfacce sono impostate come focalizzate.",
 		interface_focuses_command_substitutes = "/interface_focus, /focus, /focuses",
 
 		--jobs/duty
-		toggle_duty_status_command = "/toggle_duty_status",
+		toggle_duty_status_command = "toggle_duty_status",
 		toggle_duty_status_command_help = "Attiva/disattiva Il tuo stato in servizio.",
 		toggle_duty_status_command_parameter_server_id = "server id",
 		toggle_duty_status_command_parameter_server_id_help = "L'ID server di destinazione o vuoto se si desidera attivare il proprio stato.",
 		toggle_duty_status_command_substitutes = "/duty_status, /duty",
 
-		toggle_training_command = "/toggle_training",
+		toggle_training_command = "toggle_training",
 		toggle_training_command_help = "Attiva/disattiva il tuo stato di allenamento.",
-		toggle_training_command_substitutes = "/training",
+		toggle_training_command_substitutes = "training",
 
-		toggle_operator_status_command = "/toggle_operator_status",
+		toggle_operator_status_command = "toggle_operator_status",
 		toggle_operator_status_command_help = "Attiva/disattiva lo stato dell'operatore di emergenza.Con questo abilitato, riceverai la possibilità di accettare 911 chiamate.",
-		toggle_operator_status_command_substitutes = "/operator, /toggle_operator, /operator_status",
+		toggle_operator_status_command_substitutes = "operator, toggle_operator, operator_status",
 
 		-- jobs/police
-		aim_assist_command = "/aim_assist",
+		aim_assist_command = "aim_assist",
 		aim_assist_command_help = "Attiva/disattiva L'obiettivo PD assist.(In memoria di Nathan Spencer.)",
 		aim_assist_command_substitutes = "",
 
-		undercover_command = "/undercover",
+		undercover_command = "undercover",
 		undercover_command_help = "Attiva/disattiva Che tu sia o meno sotto copertura.Questo nasconderà varie cose che di solito esporrebbero il tuo stato di polizia.",
 		undercover_command_substitutes = "",
 
-		vin_number_command = "/vin_number",
+		vin_number_command = "vin_number",
 		vin_number_command_help = "Restituisce il numero VIN del veicolo che stai guidando.",
 		vin_number_command_substitutes = "/vin",
 
-		active_robberies_command = "/active_robberies",
+		active_robberies_command = "active_robberies",
 		active_robberies_command_help = "Elenca tutti i negozi attualmente attivi (aperti), banche e gioielleria.",
 		active_robberies_command_substitutes = "",
 
-		vin_lookup_command = "/vin_lookup",
+		vin_lookup_command = "vin_lookup",
 		vin_lookup_command_help = "Cerca il numero VIN di un veicolo.",
 		vin_lookup_command_parameter_vin_number = "Numero Vin",
 		vin_lookup_command_parameter_vin_number_help = "Il numero VIN che desideri controllare.",
-		vin_lookup_command_substitutes = "/lookup_vin, /lv",
+		vin_lookup_command_substitutes = "lookup_vin, lv",
 
-		pd_impound_command = "/pd_impound",
+		pd_impound_command = "pd_impound",
 		pd_impound_command_help = "Questo comanda sequestro un veicolo per giocatori per un certo periodo di tempo.",
 		pd_impound_command_parameter_minutes = "minuti",
 		pd_impound_command_parameter_minutes_help = "Per quanto tempo il veicolo dovrebbe essere sequestrato (tra 1 minuto e 12 ore).",
 		pd_impound_command_substitutes = "",
 
-		dispatch_command = "/dispatch",
+		dispatch_command = "dispatch",
 		dispatch_command_help = "Invia un messaggio nella spedizione PD.",
 		dispatch_command_parameter_message = "messaggio",
 		dispatch_command_parameter_message_help = "Il messaggio che desideri inviare.",
 		dispatch_command_substitutes = "",
 
 		-- jobs/state
-		license_give_command = "/license_give",
+		license_give_command = "license_give",
 		license_give_command_help = "Dare una licenza.",
 		license_give_command_parameter_character_id = "Id personaggio",
 		license_give_command_parameter_character_id_help = "L'ID del personaggio che vuoi dare la licenza to.",
 		license_give_command_parameter_license = "licenza",
 		license_give_command_parameter_license_help = "La licenza che desideri dare.Le licenze disponibili sono `heli`, `fw`, `cfi`, `hw`, `hwh`, `perf`, `utility`, `commercial`, `management`, `military`, `special`, `hunting` and `fishing`.",
-		license_give_command_substitutes = "/give_license, /add_license",
+		license_give_command_substitutes = "give_license, add_license",
 
-		license_remove_command = "/license_remove",
+		license_remove_command = "license_remove",
 		license_remove_command_help = "Rimuovere una licenza.",
 		license_remove_command_parameter_character_id = "ID Personaggio",
 		license_remove_command_parameter_character_id_help = "L'ID del personaggio da cui si desidera rimuovere la licenza.",
 		license_remove_command_parameter_license = "licenza",
 		license_remove_command_parameter_license_help = "La licenza che desideri rimuovere.Le licenze disponibili sono `heli`, `fw`, `cfi`, `hw`, `hwh`, `perf`, `management`, `military`, `special`, `hunting` and `fishing`.",
-		license_remove_command_substitutes = "/remove_license",
+		license_remove_command_substitutes = "remove_license",
 
-		license_list_command = "/license_list",
+		license_list_command = "license_list",
 		license_list_command_help = "Elenca tutte le licenze disponibili.",
-		license_list_command_substitutes = "/list_licenses",
+		license_list_command_substitutes = "list_licenses",
 
-		licenses_check_command = "/licenses_check",
+		licenses_check_command = "licenses_check",
 		licenses_check_command_help = "Cdiavolo le licenze di qualcuno.",
 		licenses_check_command_parameter_character_id = "character id",
 		licenses_check_command_parameter_character_id_help = "L'ID del personaggio per cui desideri controllare le licenze.",
-		licenses_check_command_substitutes = "/license_check, /check_licenses, /check_license",
+		licenses_check_command_substitutes = "license_check, check_licenses, check_license",
 
-		licenses_command = "/licenses",
+		licenses_command = "licenses",
 		licenses_command_help = "Ottieni le tue licenze.",
 		licenses_command_substitutes = "",
 
 		-- jobs/tow
-		toggle_mechanic_messages_command = "/toggle_mechanic_messages",
+		toggle_mechanic_messages_command = "toggle_mechanic_messages",
 		toggle_mechanic_messages_command_help = "Attiva o disattiva la ricezione dei messaggi del meccanico.",
-		toggle_mechanic_messages_command_substitutes = "/mechanic_messages",
+		toggle_mechanic_messages_command_substitutes = "mechanic_messages",
 
 		-- vehicles/boats
-		toggle_anchor_command = "/toggle_anchor",
+		toggle_anchor_command = "toggle_anchor",
 		toggle_anchor_command_help = "Attiva/disattiva l'ancora di una barca vicina.",
-		toggle_anchor_command_substitutes = "/anchor",
+		toggle_anchor_command_substitutes = "anchor",
 
 		-- vehicles/damage
-		vehicle_damage_debug_command = "/vehicle_damage_debug",
+		vehicle_damage_debug_command = "vehicle_damage_debug",
 		vehicle_damage_debug_command_help = "Esegue il debug dei valori di danno attuali dei veicoli.",
 		vehicle_damage_debug_command_substitutes = "",
 
 		-- vehicles/fuel
-		set_fuel_command = "/set_fuel",
+		set_fuel_command = "set_fuel",
 		set_fuel_command_help = "Imposta il livello del carburante del veicolo in cui ti trovi.",
 		set_fuel_command_parameter_fuel_level = "Livello del carburante",
 		set_fuel_command_parameter_fuel_level_help = "Il livello del carburante che desideri impostarlo.Lasciando questo vuoto selezionerà automaticamente `100`.",
-		set_fuel_command_substitutes = "/fuel",
+		set_fuel_command_substitutes = "fuel",
 
 		-- vehicles/garages
-		toggle_garage_debug_command = "/toggle_garage_debug",
+		toggle_garage_debug_command = "toggle_garage_debug",
 		toggle_garage_debug_command_help = "Attiva/disattiva Il debug del garage.",
-		toggle_garage_debug_command_substitutes = "/garage_debug",
+		toggle_garage_debug_command_substitutes = "Garage_debug",
 
 		-- vehicles/keys
-		give_key_command = "/give_key",
+		give_key_command = "give_key",
 		give_key_command_help = "Dai una chiave di veicolo a una persona vicina.",
 		give_key_command_parameter_server_id = "server id",
 		give_key_command_parameter_server_id_help = "L'ID server del giocatore a cui desideri dare la chiave.Questo può essere lasciato vuoto (o a 0) per darlo alla persona più vicina.",
-		give_key_command_substitutes = "/givekey",
+		give_key_command_substitutes = "givekey",
 
-		hotwire_vehicle_command = "/hotwire_vehicle",
+		hotwire_vehicle_command = "hotwire_vehicle",
 		hotwire_vehicle_command_help = "Immediatamente hotwire il veicolo in cui ti trovi.",
-		hotwire_vehicle_command_substitutes = "/hotwire",
+		hotwire_vehicle_command_substitutes = "hotwire",
 
-		pickup_keys_command = "/pickup_keys",
+		pickup_keys_command = "pickup_keys",
 		pickup_keys_command_help = "Ti fa raccogliere le chiavi del veicolo più vicino.",
 		pickup_keys_command_substitutes = "",
 
 		-- vehicles/modifications
-		wheel_offset_command = "/wheel_offset",
+		wheel_offset_command = "wheel_offset",
 		wheel_offset_command_help = "Modifica l'offset delle ruote di un veicolo.",
 		wheel_offset_command_parameter_wheels = "front/back",
 		wheel_offset_command_parameter_wheels_help = "Quali ruote vorresti modificare?",
@@ -3294,7 +3294,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		wheel_offset_command_parameter_value_help = "L'importo che desideri che fosse modificato.Questo può essere ovunque da -0,8 a 0,8, 0 essendo inadempiente.",
 		wheel_offset_command_substitutes = "",
 
-		wheel_rotation_command = "/wheel_rotation",
+		wheel_rotation_command = "wheel_rotation",
 		wheel_rotation_command_help = "Modifica la rotazione delle ruote di un veicolo.",
 		wheel_rotation_command_parameter_wheels = "front/back",
 		wheel_rotation_command_parameter_wheels_help = "Quali ruote vorresti modificare?",
@@ -3303,17 +3303,17 @@ OP.Global.Locales.Languages["it-IT"] = {
 		wheel_rotation_command_substitutes = "",
 
 		-- vehicles/plates
-		fake_plate_command = "/fake_plate",
+		fake_plate_command = "fake_plate",
 		fake_plate_command_help = "Attiva/disattiva la piastra finta del veicolo attuale.",
 		fake_plate_command_substitutes = "",
 
-		plate_available_command = "/plate_available",
+		plate_available_command = "plate_available",
 		plate_available_command_help = "Controllare se un numero di targa è disponibile per il `/custom_plate` comando.",
 		plate_available_command_parameter_plate_number = "targa",
 		plate_available_command_parameter_plate_number_help = "Il numero di targa che desideri controllare.I numeri delle targhe possono essere lunghi fino a 8 caratteri e possono essere costituiti solo da lettere e numeri di capitale.",
 		plate_available_command_substitutes = "",
 
-		custom_plate_command = "/custom_plate",
+		custom_plate_command = "custom_plate",
 		custom_plate_command_help = "Imposta una piastra personalizzata per uno dei tuoi veicoli.",
 		custom_plate_command_parameter_vehicle_id = "vehicle id",
 		custom_plate_command_parameter_vehicle_id_help = "L'ID del veicolo che vorresti avere la piastra personalizzata.(Puoi trovare questo ID nel tuo garage)",
@@ -3322,81 +3322,81 @@ OP.Global.Locales.Languages["it-IT"] = {
 		custom_plate_command_substitutes = "",
 
 		-- vehicles/runways
-		ifr_command = "/ifr",
+		ifr_command = "ifr",
 		ifr_command_help = "Attiva/disattiva la modalità IFR (mostra l'assistenza all'atterraggio per le piste vicine).",
 		ifr_command_substitutes = "",
 
 		-- vehicles/sirens
-		mute_sirens_command = "/mute_sirens",
+		mute_sirens_command = "mute_sirens",
 		mute_sirens_command_help = "Disabilità il suono di tutti i clacson e le sirene.",
 		mute_sirens_command_substitutes = "",
 
 		-- vehicles/vehicles
-		flip_command = "/flip",
+		flip_command = "flip",
 		flip_command_help = "Rotolare su un veicolo capovolto.",
 		flip_command_substitutes = "",
 
-		toggle_roll_control_command = "/toggle_roll_control",
+		toggle_roll_control_command = "toggle_roll_control",
 		toggle_roll_control_command_help = "Attiva o disattiva il rollio e il controllo dell'aria.",
-		toggle_roll_control_command_substitutes = "/roll_control",
+		toggle_roll_control_command_substitutes = "roll_control",
 
-		enable_ls_customs_command = "/enable_ls_customs",
+		enable_ls_customs_command = "enable_ls_customs",
 		enable_ls_customs_command_help = "Attiva o disattiva il menu LS Customs.",
-		enable_ls_customs_command_substitutes = "/ls_customs",
+		enable_ls_customs_command_substitutes = "ls_customs",
 
-		toggle_gear_animation_command = "/toggle_gear_animation",
+		toggle_gear_animation_command = "toggle_gear_animation",
 		toggle_gear_animation_command_help = "Attiva/disattiva l'audio e l'animazione del cambio di una macchina.",
 		toggle_gear_animation_command_substitutes = "/gear_animation, /gear_sounds",
 
-		door_command = "/door",
+		door_command = "door",
 		door_command_help = "Attiva/disattiva La porta di un veicolo.",
 		door_command_parameter_door_id = "porta id (1-6)",
 		door_command_parameter_door_id_help = "Quale porta del veicolo vorresti aprire?Questo parametro viene sovrascritto se sei un passeggero.Sei anche in grado di utilizzare questo comando al di fuori di un veicolo.",
 		door_command_substitutes = "",
 
-		window_command = "/window",
+		window_command = "window",
 		window_command_help = "Attiva/disattiva Il finestrino di un veicolo.",
 		window_command_parameter_window_id = "finestra id (1-4)",
 		window_command_parameter_window_id_help = "Quale finestra del veicolo vorresti aprire?Questo parametro viene sovrascritto se sei un passeggero.",
 		window_command_substitutes = "",
 
-		shuffle_command = "/shuffle",
+		shuffle_command = "shuffle",
 		shuffle_command_help = "Spostati su un altro sedile del veicolo.",
 		shuffle_command_substitutes = "/shuff",
 
-		seat_command = "/seat",
+		seat_command = "seat",
 		seat_command_help = "Passa a un altro sedile del veicolo.",
 		seat_command_parameter_seat_id = "Sedile id (1-6)",
 		seat_command_parameter_seat_id_help = "In quale posto vorresti provare a trasferirti?",
 		seat_command_substitutes = "",
 
-		engine_command = "/engine",
+		engine_command = "engine",
 		engine_command_help = "Attiva/disattiva motore di un veicolo.",
 		engine_command_substitutes = "",
 
-		mileage_command = "/mileage",
+		mileage_command = "mileage",
 		mileage_command_help = "Controlla il chilometraggio di un veicolo.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "/drag_out",
+		drag_out_command = "drag_out",
 		drag_out_command_help = "Trascina il giocatore morto più vicino fuori dal veicolo in cui si trova.",
 		drag_out_command_substitutes = "",
 
-		toggle_disabled_brakes_command = "/toggle_disabled_brakes",
+		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "Disabilita o abilita i freni del veicolo più vicino.",
-		toggle_disabled_brakes_command_substitutes = "/disable_brakes",
+		toggle_disabled_brakes_command_substitutes = "disable_brakes",
 
-		manual_toggle_command = "/manual_toggle",
+		manual_toggle_command = "manual_toggle",
 		manual_toggle_command_help = "Attiva/disattiva Che tu voglia controllare manualmente gli ingranaggi dei veicoli.",
 		manual_toggle_command_substitutes = "",
 
-		speed_limiter_command = "/speed_limiter",
+		speed_limiter_command = "speed_limiter",
 		speed_limiter_command_parameter_speed = "Velocità",
 		speed_limiter_command_parameter_speed_help = "Quale velocità vorresti utilizzare il limitatore di velocità?Puoi lasciare questo vuoto per ripristinarlo, il che lo restituirà a un comportamento normale.",
 		speed_limiter_command_help = "Sostituire il comportamento normale del limitatore di velocità per preimpostare il limite di velocità.",
-		speed_limiter_command_substitutes = "/sl, /cc, /cruise_control",
+		speed_limiter_command_substitutes = "sl, cc, cruise_control",
 
-		add_vehicle_command = "/add_vehicle",
+		add_vehicle_command = "add_vehicle",
 		add_vehicle_command_help = "Aggiungi un veicolo al garage di qualcuno.",
 		add_vehicle_command_parameter_model = "modello",
 		add_vehicle_command_parameter_model_help = "Il nome del modello o l'hash modello del veicolo che desideri aggiungere.",
@@ -3404,38 +3404,38 @@ OP.Global.Locales.Languages["it-IT"] = {
 		add_vehicle_command_parameter_server_id_help = "L'ID server del giocatore a cui desideri dare un veicolo.Lasciando questo vuoto ti selezionerà automaticamente.",
 		add_vehicle_command_substitutes = "",
 
-		toggle_vehicle_weapons_command = "/toggle_vehicle_weapons",
+		toggle_vehicle_weapons_command = "toggle_vehicle_weapons",
 		toggle_vehicle_weapons_command_help = "Attiva/disattiva È possibile utilizzare se le armi su un veicolo.",
 		toggle_vehicle_weapons_command_parameter_server_id = "server id",
 		toggle_vehicle_weapons_command_parameter_server_id_help = "L'ID server del giocatore che desideri attivare le armi del veicolo.Lasciare questo vuoto si selezionerà automaticamente te stesso.",
-		toggle_vehicle_weapons_command_substitutes = "/vehicle_weapons",
+		toggle_vehicle_weapons_command_substitutes = "vehicle_weapons",
 
 		-- weapons/ammo
-		fill_ammo_command = "/fill_ammo",
+		fill_ammo_command = "fill_ammo",
 		fill_ammo_command_help = "Riempie tutte le munizioni delle tue armi.",
 		fill_ammo_command_substitutes = "",
 
 		-- weapons/recoil
-		crosshair_command = "/crosshair",
+		crosshair_command = "crosshair",
 		crosshair_command_help = "Attiva/disattiva Il mirino.",
 		crosshair_command_substitutes = "",
 
-		aim_down_sight_command = "/aim_down_sight",
+		aim_down_sight_command = "aim_down_sight",
 		aim_down_sight_command_help = "Mira automaticamente a una vista quando fai clic con il pulsante destro del mouse anche se sei in terza persona.",
 		aim_down_sight_command_substitutes = "/ads",
 
 		-- weapons/weapons
-		check_ammo_command = "/check_ammo",
+		check_ammo_command = "check_ammo",
 		check_ammo_command_help = "Controlla quanta munizioni hai in totale per l'arma che stai attualmente tenendo.",
-		check_ammo_command_substitutes = "/ammo",
+		check_ammo_command_substitutes = "ammo",
 
-		toggle_airsoft_mode_command_command = "/toggle_airsoft_mode",
+		toggle_airsoft_mode_command_command = "toggle_airsoft_mode",
 		toggle_airsoft_mode_command_command_help = "Attiva o disattiva la modalità softair (a livello di server), che rende tutte le pistole a un danno incredibilmente basso.",
-		toggle_airsoft_mode_command_command_substitutes = "/airsoft_mode, /airsoft",
+		toggle_airsoft_mode_command_command_substitutes = "airsoft_mode, airsoft",
 
-		toggle_folded_stock_command_command = "/toggle_folded_stock",
+		toggle_folded_stock_command_command = "toggle_folded_stock",
 		toggle_folded_stock_command_command_help = "Attiva/disattiva il calcio ripiegato dell'arma che stai impugnando.",
-		toggle_folded_stock_command_command_substitutes = "/folded_stock, /stock"
+		toggle_folded_stock_command_command_substitutes = "folded_stock, stock"
 	},
 
 	connections = {
