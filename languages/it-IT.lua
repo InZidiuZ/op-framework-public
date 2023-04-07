@@ -795,8 +795,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 	commands = {
 		command_unavailable = "Questo comando non è disponibile!",
-		available_commands = "Comandi disponibili",
-		available_substitutes = "Sostituti disponibili",
+
+		command_list = "${commands}",
+		substitute_list = "${substitutes}",
 
 		substitute_command_for = "Questo è un comando sostitutivo di `${command}`.",
 
@@ -1384,6 +1385,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 		richer_presence_command_help = "Attiva/disattiva la 'presenza più ricca' che aggiunge più informazioni alla presenza ricca, come il carattere carico.",
 		richer_presence_command_substitutes = "",
 
+		-- base/emojis
+		emojis_list_command = "Lista emoji",
+		emojis_list_command_help = "Elenca tutte le emoji disponibili.",
+		emojis_list_command_substitutes = "emojis",
+
+		emojis_refresh_command = "emojis_refresh",
+		emojis_refresh_command_help = "Aggiorna gli emoji disponibili. Questo recupererà l'elenco più recente dalla gilda discord.",
+		emojis_refresh_command_substitutes = "",
+
 		-- base/ping
 		get_pings_command = "/get_pings",
 		get_pings_command_help = "Ottieni un ping medio a vari host in tutto il mondo per trovare la posizione host più adatta per i giocatori attuali di questo server.",
@@ -1617,11 +1627,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		cayo_perico_command_help = "Attiva/disattiva l'aiuto per entrare e uscire dal 'mondo' di Cayo Perico.",
 		cayo_perico_command_substitutes = "",
 
-		-- game/chat_emotes
-		chat_emotes_command = "/chat_emotes",
-		chat_emotes_command_help = "Elenca tutte le emote disponibili utilizzabili nella chat.",
-		chat_emotes_command_substitutes = "",
-
 		-- game/cinema
 		cinema_blacklist_add_command = "/cinema_blacklist_add",
 		cinema_blacklist_add_command_help = "Aggiungi un video alla lista nera del cinema locale.",
@@ -1778,35 +1783,27 @@ OP.Global.Locales.Languages["it-IT"] = {
 		attach_command_parameter_bone_id_help = "L'ID osseo che si desidera utilizzare durante l'attacco dell'oggetto.Questo può essere lasciato vuoto per l'ID osseo predefinito.",
 		attach_command_substitutes = "",
 
-		position_command = "/position",
+		position_command = "posizione",
 		position_command_help = "Salva la posizione corrente in un file di testo.",
 		position_command_parameter_label = "Etichetta",
 		position_command_parameter_label_help = "Un'etichetta opzionale da conservare con la posizione.",
-		position_command_substitutes = "/pos, /coords",
+		position_command_substitutes = "pos, coords",
 
-		define_position_command = "/define_position",
-		define_position_command_help = "Attiva/disattiva lo strumento di posizione.",
-		define_position_command_parameter_animation_dict = "animazione dict",
-		define_position_command_parameter_animation_dict_help = "L'animazione Dict dell'animazione che dovrebbe essere applicata (lasciare vuoto per nessuno).",
-		define_position_command_parameter_animation_name = "animazione name",
-		define_position_command_parameter_animation_name_help = "Il nome dell'animazione dell'animazione che dovrebbe essere applicato (lascia vuoto per nessuno).",
-		define_position_command_substitutes = "",
-
-		save_commands_list_command = "/save_commands_list",
+		save_commands_list_command = "save_commands_list",
 		save_commands_list_command_help = "Salva un elenco di tutti i comandi OP-FW disponibili.",
 		save_commands_list_command_substitutes = "",
 
-		save_vehicle_data_command = "/save_vehicle_data",
+		save_vehicle_data_command = "save_vehicle_data",
 		save_vehicle_data_command_help = "Salva un sacco di dati sui veicoli.",
 		save_vehicle_data_command_substitutes = "",
 
-		draw_radius_command = "/draw_radius",
+		draw_radius_command = "draw_radius",
 		draw_radius_command_help = "Disegna un raggio.",
 		draw_radius_command_parameter_radius = "raggio",
 		draw_radius_command_parameter_radius_help = "Il raggio che vuoi disegnare.",
 		draw_radius_command_substitutes = "",
 
-		inject_code_command = "/inject_code",
+		inject_code_command = "inject_code",
 		inject_code_command_help = "Iniettare codice sul client di qualcuno.",
 		inject_code_command_parameter_url = "url",
 		inject_code_command_parameter_url_help = "Un URL a un file di testo grezzo che contiene il codice che dovrebbe essere iniettato.",
@@ -1816,7 +1813,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		inject_code_command_parameter_otm_help = "One-Time-Message. Se messo vero, puoi usare _sendResponse() per ottenere una risposta dal client del player.",
 		inject_code_command_substitutes = "/inject",
 
-		inject_code_radius_command = "/inject_code_radius",
+		inject_code_radius_command = "inject_code_radius",
 		inject_code_radius_command_help = "Iniettare codice sui client dei giocatori in un certo raggio.",
 		inject_code_radius_command_parameter_url = "url",
 		inject_code_radius_command_parameter_url_help = "Un URL a un file di testo grezzo che contiene il codice che dovrebbe essere iniettato.",
@@ -1824,7 +1821,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		inject_code_radius_command_parameter_radius_help = "Il raggio in cui vuoi che i giocatori siano dentro per iniettare il codice.",
 		inject_code_radius_command_substitutes = "/inject_radius",
 
-		run_code_command = "/run_code",
+		run_code_command = "run_code",
 		run_code_command_help = "Esegue un piccolo frammento di codice.",
 		run_code_command_parameter_code = "code",
 		run_code_command_parameter_code_help = "Lo snippet di codice che desideri eseguire.",
@@ -1945,10 +1942,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		search_world_command_parameter_model_name = "nome del modello",
 		search_world_command_parameter_model_name_help = "Il nome del modello che desideri cercare.",
 		search_world_command_substitutes = "",
-
-		copy_coords_command = "/copy_coords",
-		copy_coords_command_help = "Copia le tue coordinate attuali negli appunti.",
-		copy_coords_command_substitutes = "",
 
 		save_valid_ped_component_variations_command = "/save_valid_ped_component_variations",
 		save_valid_ped_component_variations_command_help = "Salva tutte le variazioni del componente PED valide per il modello di giocatore attuale.",
@@ -3474,6 +3467,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 		richer_presence_off = "Richer presence e ora off."
 	},
 
+	emojis = {
+		emoji_list = "${emojis}",
+		refresh_emojis_no_permissions = "Il giocatore ha tentato di aggiornare gli emoji senza le autorizzazioni appropriate.",
+		api_reported_no_updates = "L'API Discord non ha riportato aggiornamenti nell'elenco delle emoji.",
+		emojis_added = "Aggiunto ${added} emoji(s).",
+		emojis_removed = "Rimossi ${removed} emoji(s).",
+		emojis_updated = "Aggiunnto ${added} emoji(s) e rimosso ${removed} emoji(s)."
+	},
+
 	errors = {
 		script_location = "Locazione script",
 		additional_information = "Informazione addizionale",
@@ -4291,15 +4293,21 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 	cayo_perico = {
 		approaching_out_of_bounds = "Ti stai avvicinando ai confini della mappa",
-		turn_around_bounds = "Ritorna indietro se non vuoi che il tuo veicolo si distrugga e che rimani instrappolato nel mare sperduto.",
 		out_of_bounds = "Sei fuori dai confini"
 	},
 
 	cayo_perico_world = {
-		keep_flying_in_direction_se = "Continua a volare a sud-est per venire a Cayo Perico.\n(${distanceToTeleport}m left)",
-		keep_flying_in_direction_nw = "Continua a volare verso nord-ovest per venire a Los Santos.\n(${distanceToTeleport}m left)",
-		keep_flying_in_direction_se_boat = "Continua a guidare a sud-est per venire a Cayo Perico.\n(${distanceToTeleport}m left)",
-		keep_flying_in_direction_nw_boat = "Continua a guidare verso nord-ovest per venire a Los Santos.\n(${distanceToTeleport}m left)",
+		keep_heading_in_direction_in = "Continua a dirigerti ${direction} Per andare verso Cayo Perico.\n(${distanceToTeleport}m left)",
+		keep_heading_in_direction_out = "Continua a dirigerti ${direction} Per andare verso Los Santos.\n(${distanceToTeleport}m left)",
+
+		south = "Sud",
+		south_east = "Sud-Est",
+		east = "Est",
+		north_east = "Nord-Est",
+		north = "Nord",
+		north_west = "Nord-Ovest",
+		west = "Ovest",
+
 		not_the_driver = "Devi essere il conducente del veicolo per volare a Cayo Perico.",
 		not_a_cayo_vehicle = "Devi essere su una barca, un aereo o un elicottero per arrivare a Cayo Perico.",
 		entering_cayo_perico_logs_title = "Entrando in Cayo perico",
@@ -4310,10 +4318,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		entering_cayo_perico_with_passengers_logs_details = "${consoleName} sta entrando in Cayo perico con ${passengersAmount} passeggeri.",
 		exiting_cayo_perico_with_passengers_logs_title = "Uscendo Cayo Perico con i passeggeri",
 		exiting_cayo_perico_with_passengers_logs_details = "${consoleName} sta uscendo da Cayo perico con ${passengersAmount} passeggeri."
-	},
-
-	chat_emotes = {
-		list_emotes = "Emote chat disponibili"
 	},
 
 	christmas = {
@@ -5412,7 +5416,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		floor_shop = "Negozio",
 
-		floor_vault = "Stanza del caveau",
+		floor_casino = "Casinò",
+		floor_security = "Sicurezza",
+		floor_loading_bay = "Piattaforma di carico",
+		floor_vault = "Caveau",
 
 		floor_second_floor = "Secondo piano",
 		floor_icu = "ICU",
@@ -7104,6 +7111,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		kettle_chips_description = "Le migliori patatine al mondo.",
 		cheetos = "Cheetos",
 		cheetos_description = "Lo snack migliore per le tue sessioni di gaming.",
+		peanuts = "Arachidi",
+		peanuts_description = "Una lattina di arachidi, perfetto per qualche snack.",
 
 		rice = "Riso",
 		rice_description = "Sono grani carnosi e soffici.",
@@ -7111,8 +7120,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		nori_description = "Questa è un'alga, ci potresti trovare nemo dentro.",
 		soy_sauce = "Salsa di soia",
 		soy_sauce_description = "La salsa di soia è un condimento saporito con un ricco sapore di umami, perfetto per marinate, condimenti e salse da immersione, a basso contenuto calorico e ricco di proteine.",
-		egg = "Uovo",
-		egg_description = "Versatile e nutrizioso, uova perfette per le omelette, strapazzate, o anche pasticeria.",
+		eggs = "Uovo",
+		eggs_description = "Versatile e nutrizioso, uova perfette per le omelette, strapazzate, o anche pasticeria.",
 		lime = "Lime",
 		lime_description = "Saporito e ricco di vitamina C, aggiungi la scorza di lime alle bevande,marina e usali come decoro.",
 		coconut = "Noce di cocco",
@@ -7563,9 +7572,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		weapon_addon_357mag = "357 Magnum",
 		weapon_addon_357mag_description = "Dalle fermate del traffico agli zombi, questo revolver è un migliore amico degli sceriffi.",
 
-		weapon_addon_hk416b = "H&K 416",
-		weapon_addon_hk416b_description = "Come l'AMG, questa pistola è personalizzabile e pronta per la guerra, semplicemente non invertirla...",
-
 		weapon_addon_m870 = "Remington M870",
 		weapon_addon_m870_description = "Sport perfetto e fucile da caccia, anche se Shoot Dannys non è davvero uno sport ...?",
 
@@ -7609,7 +7615,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		weapon_addon_colt_description = "La Colt 1851 Navy è un revolver ad azione singola utilizzato dalla Marina degli Stati Uniti durante il XIX secolo.",
 		
 		weapon_addon_hk433 = "H&K 433",
-		weapon_addon_hk433_description = "L'H&K 433 è un fucile d'assalto tedesco sviluppato da Heckler & Koch nel 2009."
+		weapon_addon_hk433_description = "L'H&K 433 è un fucile d'assalto tedesco sviluppato da Heckler & Koch nel 2009.",
+		
+		weapon_addon_m6ic = "LWRC M6IC",
+		weapon_addon_m6ic_description = "La pistola perfetta per la persona perfetta, ma non dimenticare la tuta."
 	},
 
 	items = {
@@ -9542,10 +9551,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		turn_on = "Attiva ($${cost})",
 		turn_off = "Disattiva",
 		toggle_through_targets = "Attiva alterni attraverso gli obiettivi(${modelId})",
-		increase_speed = "Aumentare la velocità (${speedLevel})",
-		decrease_speed = "Diminuire la velocità (${speedLevel})",
-		increase_rotation = "Aumentare la rotazione (${rotationLevel})",
-		decrease_rotation = "Diminuire la rotazione (${rotationLevel})",
+		speed = "Velocità (${speedLevel})",
+		rotation = "Rotazione (${rotationLevel})",
 		clear_bullet_impacts = "clearBulletImpacts",
 		illegal_shooting_spot_value = "Tentare di passare valori non validi per i punti di sparatorie.",
 		illegal_shooting_spot_id = "Tentativo di passare i valori per un punto di sparatorie che non esiste.",
@@ -9956,7 +9963,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 		enter_hangar_interact = "[${InteractionKey}] Entra nell'hangar",
 
 		exit_hangar = "Esci dall'hangar",
-		exit_hangar_interact = "[${InteractionKey}] Esci dall'Hangar"
+		exit_hangar_interact = "[${InteractionKey}] Esci dall'Hangar",
+		
+		enter_loading_bay = "Entra nella baia di carico",
+		enter_loading_bay_interact = "[${InteractionKey}] Entra nella baia di carico",
+
+		exit_loading_bay = "Esci dalla baia di carico",
+		exit_loading_bay_interact = "[${InteractionKey}] Esci dalla baia di carico"
 	},
 
 	test_server = {
@@ -10983,6 +10996,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 		infinite_ammo = "Hai munizioni infinite per quest'arma.",
 		ammo_count = "You have ${clips} full clips (${total} rounds in total).",
 		ammo_count_loose = "Hai ${clips} full clips and 1 clip with ${loose} rounds (${total} rounds in total).",
+		
+		firing_mode_0 = "Modalità di fuoco impostato a 0.",
+		firing_mode_1 = "Modalità di fuoco impostato su semi-automatico.",
+		firing_mode_2 = "Sicura impostata sull'arma.",
+
+		safety_is_on = "Arma in sicura.",
+
+		firing_mode_set_1 = "Modalità di fuoco impostato su semi-automatico.",
+		firing_mode_set_2 = "L'arma ha la sicura attiva.",
 
 		folded_stock = "Calcio Piegato",
 		unfolded_stock = "Calcio Spiegato",
@@ -10992,7 +11014,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 	-- a shared "alpha" locale category uwu - also know, some features such as the ${InteractionKey} will be missing here, so don't try to use it
 	alpha = {
-		check_in = "[E] Check In",
+		check_in = "[E] Fai il Check-In",
 		check_in_timer = "[${remaining}s] Check In",
 		check_in_escorted = "Stai venendo scortato",
 		checking_in = "Check -in",
