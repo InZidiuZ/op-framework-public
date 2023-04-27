@@ -4020,7 +4020,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	bazaar = {
-		access_bazaar = "Naciśnij ~INPUT_CONTEXT~, aby uzyskać dostęp do tego sklepu..",
+		access_bazaar = "Naciśnij ~INPUT_CONTEXT~, aby uzyskać dostęp do tego sklepu.",
 
 		bazaar_blip = "Bazar",
 
@@ -4075,16 +4075,16 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		police_department = "Departament Policji",
 		motel = "Motel",
 		tattoo_parlor = "Salon Tatuażu",
-		repair_shop = "Sklep wielobranżowy",
+		repair_shop = "Mechanik",
 		material_vendor = "Sprzedawca materiałów",
 		pdm = "Premium Deluxe Motorsport",
 		ls_customs = "Los Santos Customs",
 		jewelry_store = "Biżuteria Vangelico",
 		pd_air_hq = "Lądowisko Policyjne",
 		pd_sea_hq = "Przystań Policyjna",
-		ems_air_hq = "Lądowisko LSMC",
-		ems_boat_hq = "Przystań LSMC",
-		ems_garage = "LSMC Garaż"
+		ems_air_hq = "Lądowisko EMS",
+		ems_boat_hq = "Przystań EMS",
+		ems_garage = "EMS Garaż"
 	},
 
 	blockage = {
@@ -4507,12 +4507,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		hair = "Włosy",
 
 		blemishes = "Skazy",
-		facial_hair = "Włosy na twarzy",
+		facial_hair = "Broda",
 		eyebrows = "Brwi",
 		ageing = "Zmarszczki",
 		makeup = "Makijaz",
 		blush = "Rumieńce",
-		complexion = "Complexion",
+		complexion = "Cera",
 		sun_damage = "Opalenizna",
 		lipstick = "Szminka",
 		moles_and_freckles = "Znamiona i piegi",
@@ -6149,7 +6149,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		erp_shop = "ERP Shop",
 		pet_shop = "Pet Shop",
 		bean_machine = "Bean Machine",
-		hunting_store = "Hunting Store",
+		hunting_store = "Sklep myśliwski",
 		fishing_store = "Fishing Store",
 		los_santos_golf_club = "Los Santos Golf Club",
 		arcade_bar = "Arcade Bar",
@@ -6277,11 +6277,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		-- items & item descriptions
 		body_armor = "Pancerz",
-		body_armor_description = "Twarda powłoka mająca ochraniać ciało osoby noszacej.",
+		body_armor_description = "Twarda powłoka mająca chronić ciało osoby noszącej.",
 		first_aid_kit = "Zestaw pierwszej pomocy",
 		first_aid_kit_description = "Zestaw najpotrzebniejszych medykamentów.",
 		bandages = "Bandaże",
-		bandages_description = "Można plasterek?.",
+		bandages_description = "Można plasterek?",
 		oxygen_tank = "Butla z tlenem.",
 		oxygen_tank_description = "Zbiornik pozwalający na eksploracje głębin morskich i oceanów.",
 		ifak = "IFAK",
@@ -6294,9 +6294,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		radio = "Radio",
 		radio_description = "Urządzenie przeznaczone do transmisji przekazu dźwiękowego.",
 		smart_watch = "Smart Watch",
-		smart_watch_description = "Przychodzi z wbudowanym, zegarkiem, GPS, kompasem i licznikiem kroków! tylko prosze nie idź biegać o 2 rano!",
+		smart_watch_description = "Przychodzi z wbudowanym zegarkiem, GPS'em, kompasem i licznikiem kroków!",
 		tablet = "Tablet",
-		tablet_description = "Taki duży telefon.",
+		tablet_description = "Mały i poręczny, z wieloma aplikacjami.",
 
 		gps = "GPS",
 		gps_description = "Zaspokój wszystkie swoje potrzeby w zakresie gadżetów.",
@@ -6305,7 +6305,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		gps_collar_description = "Obroża GPS do śledzenia zwierząt domowych.",
 
 		boosting_tablet = "Tablet",
-		boosting_tablet_description = "Służy do uzyskania _totalnie_ legalnych umów.",
+		boosting_tablet_description = "Służy do uzyskania legalnych umów.",
 
 		hunting_license = "Licencja łowiecka",
 		hunting_license_description = "Pozwolenie na polowanie na polowanie.",
@@ -6368,7 +6368,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		compass_description = "Przyrząd wyposażony w igłę magnetyczną, wskazującą swym położeniem strony świata.",
 		map = "Mapa",
 		map_description = "Pokzauje gdzie idziesz i gdzie byłeś.",
-		glass_breaker = "Awaryjny rozpierdolator okien",
+		glass_breaker = "Młotek do okien",
 		glass_breaker_description = "Używane do wybijania szyb samochodowych w nagłych przypadkach.",
 
 		picture = "Zdjęcie",
@@ -6520,20 +6520,20 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		gumball_description = "Guma do żucia",
 
 		water = "Woda",
-		water_description = "Woda, po prostu woda",
-		hamburger = "Hamburger",
+		water_description = "Woda, po prostu woda.",
+		hamburger = "Hamburger.",
 		hamburger_description = "Smak Ameryki!",
 		belgian_fries = "Frytki belgijskie",
 		belgian_fries_description = "Tradycyjne, świeżo robione frytki.",
-		coke = "CocaCola",
-		coke_description = "Najpopularniejszy napój na całym świecie",
-		wonder_waffle = "Wonder Waffle",
+		coke = "CocaCola.",
+		coke_description = "Najpopularniejszy napój na całym świecie.",
+		wonder_waffle = "Wonder Waffle.",
 		wonder_waffle_description = "Mówi się, że Czerwona Mafia, znana z seryjnych napadów na bank, miała dietę składającą się wyłącznie z tego właśnie cudu. Było to rzekomo wymagane przez ich przywódcę, psychopatę mordującego policję na placu Legionu..",
-		cheeseburger = "Cheeseburger",
+		cheeseburger = "Cheeseburger.",
 		cheeseburger_description = "Jedna zaleta tego pożywienia. Jest zajebiście dobre!",
-		donut = "Donut",
+		donut = "Donut.",
 		donut_description = "Przyjaciel każdego policjanta.",
-		green_apple = "Energetyk",
+		green_apple = "Energetyk.",
 		green_apple_description = "Napój energetyczny.",
 		sandwich = "Kanapka",
 		sandwich_description = "Świeża kanapka wykonana z lokalnych produktów.",
@@ -6658,7 +6658,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		cigarette = "Papierosy",
 		cigarette_description = "Drobno pokrojony tytoń owinięty w bibułkę, służący do palenia przez wciąganie dymu.",
 		cigarette_pack = "Paczka Papierosów",
-		cigarette_pack_description = "Dla twojego taty, który jest uzależniony od papierosów (mam nadzieję, że po wyjściu po nie wróci).",
+		cigarette_pack_description = "Paczka czerwonych redwoodów, tego właśnie potrzebujesz.",
 
 		cocaine_bag = "Paczka kokainy",
 		cocaine_bag_description = "Mniejsze porcje twardego narkotyku.",
@@ -6784,8 +6784,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		ammo_box = "Duża skrzynka z amunicją",
 		ammo_box_description = "Idealny, gdy trzeba dużo strzelać. Zawiera 60 pocisków każdego rodzaju amunicji.",
 
-		stungun_ammo = "Taser Cartridge",
-		stungun_ammo_description = "TASER! TASER! TASER!.",
+		stungun_ammo = "Kartridż do tazera",
+		stungun_ammo_description = "TASER! TASER! TASER!",
 		pistol_ammo = "Amunicja do pistoletu",
 		pistol_ammo_description = "Amunicja pasująca do większości broni krótkich.",
 		sub_ammo = "Amunicja maszynowa",
@@ -6793,7 +6793,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		rifle_ammo = "Amunicja długa",
 		rifle_ammo_description = "Amunicja do broni długiej.",
 		sniper_ammo = "Amunicja snajperska",
-		sniper_ammo_description = "Amunicja snajperska",
+		sniper_ammo_description = "Amunicja snajperska.",
 		shotgun_ammo = "Amunicja do strzelby",
 		shotgun_ammo_description = "Amunicja do strzelby.",
 
@@ -6840,7 +6840,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		avocado_smoothie = "Avocado Smoothie",
 		avocado_smoothie_description = "Zdrowy zielony sok, zignoruj kawałki.",
 
-		raspberry = "Malina",
+		raspberry = "Urządzenie Hackujące",
 		raspberry_description = "https://i.redd.it/jbcj0uqbihg41.jpg",
 
 		antenna = "Antena",
@@ -6882,7 +6882,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		boombox_description = "Słuchaj swojej ulubionej muzyki o każdej porze dnia i gdzie chcesz.",
 
 		lighter = "Zapalniczka",
-		lighter_description = "Mały przenośny przedmiot służący do wytwarzania ognia, najczęściej w celu zapalenia papierosa, człowieka lub cygara",
+		lighter_description = "Mały przenośny przedmiot służący do wytwarzania ognia, najczęściej w celu zapalenia papierosa, człowieka lub cygara.",
 
 		nitro_tank = "Butla z Nitro",
 		nitro_tank_description = "Idealna jeśli potrzebujesz trochę prędkości.",
@@ -6932,7 +6932,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		tent_description = "Część asortymentu do rozłożenia biwaku.",
 		cloth_tent = "Namiot materiałowy",
 		cloth_tent_description = "Część asortymentu do rozłożenia biwaku.",
-		canvas_tent = "Namiot płócienncy",
+		canvas_tent = "Namiot płócienny",
 		canvas_tent_description = "Część asortymentu do rozłożenia biwaku.",
 		plastic_chair = "Plastikowe krzesło",
 		plastic_chair_description = "Część asortymentu do rozłożenia biwaku.",
@@ -7153,8 +7153,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		arena_pill = "Pigułka Areny",
 		arena_pill_description = "Dziwna pigułka, która robi jeszcze dziwniejsze rzeczy... Połknij na własne ryzyko. Być może mądrze byłoby mieć przy sobie broń, aby chronić się przed gwałtownymi snami.",
 
-		shovel = "Shovel",
-		shovel_description = "",
+		shovel = "Łopata",
+		shovel_description = "Służy do zakopania tego czego już nigdy nie chcesz zobaczyć.",
 
 		electric_fuse = "Elektryczny bezpiecznik",
 		electric_fuse_description = "Bezpiecznik elektryczny jest wymaganym przedmiotem w specjalnych pomieszczeniach do zrobienia napadu. Musi być umieszczony w skrzynce z bezpiecznikami, aby zasilić zamek z kluczem.",
@@ -7406,7 +7406,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		blue_parachute = "Niebieski spadochron",
 		black_parachute = "Czarny spadochron",
 
-		weapon_dagger_description = "Przez jakiś czas kołysałeś się w pirackim stylu, ale nie masz okrutnej broni która dopełaniała by zadania? Zdobądź ten sztylet ze strzeżoną rękojeścią.",
+		weapon_dagger_description = "Przez jakiś czas kołysałeś się w pirackim stylu, ale nie masz okrutnej broni, która dopełmiłaby zadanie? Zdobądź ten sztylet ze strzeżoną rękojeścią.",
 		weapon_bat_description = "Aluminiowy kij baseballowy ze skórzanym uchwytem. Lekki, a jednocześnie mocny dla wszystkich fanów Baseballu.",
 		weapon_bottle_description = "Nie jest to sprytne, ani ładne, tak samo jak ktoś idący na Ciebie z nożem. Gdy wszystko inne zawiedzie, ostateczna możliwość.",
 		weapon_crowbar_description = "Wytrzymały łom kuty z wysokiej jakości stali hartowanej zapewnia dodatkową siłę potrzebną do wykonania zadania.",
@@ -7423,7 +7423,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		weapon_wrench_description = "Odwieczny faworyt apokaliptycznych survivalistów i agresywnych ojców na całym świecie, najwyraźniej pełni również rolę pewnego rodzaju narzędzia.",
 		weapon_battleaxe_description = "Jeśli jest wystarczająco dobry dla średniowiecznych żołnierzy piechoty, nowoczesnych funkcjonariuszy straży granicznej i natarczywych mamuśek piłkarskich, jest wystarczająco dobry dla ciebie.",
 		weapon_poolcue_description = "Ach, nie ma dźwięku tak satysfakcjonującego jak trzask idealnego breaku, szczególnie gdy jest to kręgosłup drugiego faceta.",
-		weapon_stone_hatchet_description = "2,5 miliona lat badań i rozwoju, a my nadal tu jesteśmy",
+		weapon_stone_hatchet_description = "2,5 miliona lat badań i rozwoju, a my nadal tu jesteśmy.",
 
 		weapon_pistol_description = "Standardowy pistolet. Pistolet kalibru .45 o pojemności 12 naboi, który można rozszerzyć do 16.",
 		weapon_pistol_mk2_description = "Równowaga, prostota, precyzja: nic nie utrzymuje spokoju tak jak przedłużona lufa w ustach drugiego faceta.",
@@ -7529,8 +7529,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		weapon_addon_huntingrifle = "Broń Myśliwska",
 		weapon_addon_huntingrifle_description = "Podstawowe wyposażenie każdego myśliwego .",
 
-		weapon_addon_vfcombatpistol = "VF Combat Pistol",
-		weapon_addon_vfcombatpistol_description = "Druga wersja popularnego wśród stróżów prawa Combat Pistol'a. Oprócz nowego wyglądu ma również większe zastosowanie na służbie",
+		weapon_addon_vfcombatpistol = "Glock 17",
+		weapon_addon_vfcombatpistol_description = "Najpopularniejszy pistolet w amerykańskiej policji. Oprócz nowego wyglądu ma również większe zastosowanie na służbie",
 
 		weapon_addon_dp9 = "D&P 9 Pistol",
 		weapon_addon_dp9_description = "Podstawowa broń 9mm.",
@@ -7551,11 +7551,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		weapon_addon_sentinelbbshotgun_description = "Ktoś nie słucha twoich poleceń? Pokaż mu co to znaczy dostać 12mm gumowym pociskiem.",
 
 		-- TODO: Add a description for this one
-		weapon_addon_stungun = "Coil Stun Gun",
+		weapon_addon_stungun = "Paralizator",
 		weapon_addon_stungun_description = "Wystrzeliwuje pocisk, który podaje napięcie zdolne do chwilowego ogłuszenia napastnika. Po wystrzale ładowanie trwa około 4 sekund.",
 
 		weapon_addon_m4 = "M4 Carbine",
-		weapon_addon_m4_description = "\"Military Grade\" Właśnie dlatego został przekazany do Departamentu Policji.",
+		weapon_addon_m4_description = "Właśnie dlatego został przekazany do Departamentu Policji.",
 
 		weapon_addon_mp9 = "B&T MP9",
 		weapon_addon_mp9_description = "Mały i szybki, trochę jak osoba trzymająca go..",
@@ -7590,7 +7590,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		weapon_addon_katana = "Katana",
 		weapon_addon_katana_description = "Ninja, o tak!",
 
-		weapon_addon_stidvc = "STI DVC 2011",
+		weapon_addon_stidvc = "Kimber Warrior 1911",
 		weapon_addon_stidvc_description = "Przyszłość jest teraz stary człowieku, tylko w mniejszym kalibrze...",
 
 		weapon_addon_g36c = "Heckler & Koch G36C",
@@ -9880,7 +9880,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 	job_center = {
 		life_invader = "Urząd pracy",
-		life_invader_blip = "Złóż podanie o pracę",
+		life_invader_blip = "Life Invader",
 		ui_close_menu = "Zamknij menu",
 		press_to_browse_jobs = "Wciśnij ~INPUT_CONTEXT~ by zobaczyć oferty pracy.",
 		change_job = "Zmień pracę: ${jobName}",
@@ -10392,12 +10392,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		failed_unbox_full = "Nie możesz nosić więcej tej amunicji.",
 		unbox_success = "Pomyślnie rozpakowano ${amount}x ${ammoType}.",
 
-		type_pistol = "amunicja pistoletowa",
-		type_smg = "amunicja maszynowa",
-		type_rifle = "amunicja do karabinu",
-		type_sniper = "amunicja snajperska",
+		type_pistol = "Amunicja pistoletowa",
+		type_smg = "Amunicja maszynowa",
+		type_rifle = "Amunicja do karabinu",
+		type_sniper = "Amunicja snajperska",
 		type_shotgun = "Amunicja kalibru 12",
-		type_stungun = "taser cartdiges",
+		type_stungun = "Taser cartdiges",
 		
 		fill_ammo_success = "Pomyślnie wypełniono amunicje.",
 		fill_ammo_failed = "Nie udało się wypełnić amunicji."
