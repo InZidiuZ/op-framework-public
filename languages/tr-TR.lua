@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["tr-TR"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		cancelled_wipe = "Silinme işlemi iptal edildi.",
 
 		there_is_people_nearby = "Noclip yaparken seni görebilecek oyuncular var!",
+
+		cant_while_spectating = "İzlerken bunu yapamazsın.",
 
 		you_have_been_kicked = "${kicker} tarafından '${reason}' sebebiyle sunucudan atıldın.",
 		you_have_been_kicked_no_reason = "${kicker} tarafından belirtilmemiş bir nedenle sunucudan atıldın.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		notification_freecam_detected = "Anti-Hile: Freecam Tespit Edildi",
 		notification_illegal_vehicle_modifier = "Anti-Hile: Aracı Modifiye Etme",
+		notification_illegal_vehicle_spawn = "Anti-Hile: Araç Spawlandı",
 		notification_fast_movement = "Anti-Hile: Hızlı Hareket",
 		notification_illegal_freeze = "Anti-Hile: Yasaklı Donma",
 		notification_invincibility = "Anti-Hile: Yenilmezlik",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		npc_debug_command_substitutes = "npcs",
 
 		network_debug_command = "network_debug",
-		network_debug_command_help = "Yakındaki varlıklar hakkında ağ bilgileri gösteren varlık-ağı-hata-ayıklayıcısını açıp kapatabilirsiniz.",
-		network_debug_parameter_minimal = "minimal",
-		network_debug_parameter_minimal_help = "Minimal görünüm (varsayılan hayır).",
+		network_debug_command_help = "Varlık ağı hata ayıklama aracını açar/kapatır. Bu, baktığın varlık hakkında bazı ağ bilgilerini gösterir.",
 		network_debug_command_substitutes = "net_debug, ndebug",
 
 		attach_command = "attach",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		medical_care_1 = "Yaralandıysanız, hastaneye giderek kayıt yaptırabilir ve tedavi olabilirsiniz. Hastaneyi haritada bulabilirsiniz. Kendinizi iyileştirmek için bandaj veya ilk yardım kitleri de kullanabilirsiniz.",
 		medical_care_2 = "Eğer hastaneye götürülmeden yeniden doğarsanız veya oyunu çıkarken düşük durumdaysanız bazı eşyalarınızı kaybedebilirsiniz. Sunucu yeniden başlatması oyunu kapatmak gibi işlev görür.",
 
+		safety_hint = "İpucu: Silahınızın emniyetini açmak için ALT tuşuna ve orta fare düğmesine basabilirsiniz. Güvende kalın!",
+
 		closing_sentence = "Şehirde yapacak daha çok şey var! Etrafınıza sorarak yeni arkadaşlar edinin ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		many_states_set = "${count} Durumlar Ayarlandı",
 		no_states = "Durum Yok",
 		entity_health = "Sağlık ${health}/${maxHealth}",
-		first_owned_by_us = "İlk Olarak Bize Ait",
-		first_owned_by = "İlk Olarak Sahibi",
-		first_owned_unknown = "İlk Sahibi Bilinmiyor",
+		owned_by_server = "Sunucu",
+		first_owned_short = "İlk Sahibi: ${firstOwned}",
+		network_id_side = "Ağ ID'si: ${networkId}",
+		no_target = "Hedef Yok",
 		invalid_radius_parameter = "Geçersiz `yarıçapı` parametresi.",
 		inject_code_not_developer = "Oyuncu kod enjekte etmeye çalıştı, ancak geliştirici değil.",
 		inject_code_invalid_player = "Sunucu Kimliği `${serverId}` olan oyuncu bulunamadı.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		debug_damage_enabled = "Hasar hata ayıklama etkinleştirildi.",
 		debug_damage_disabled = "Hasar hata ayıklama devre dışı bırakıldı.",
 
-		enabled_network_debug = "Varlık ağı ayıklama etkinleştirildi. `PS`, olası oluşturulmuş varlıkları tanımlar.",
+		enabled_network_debug = "Varlık ağı hata ayıklama etkinleştirildi.",
 		disabled_network_debug = "Varlık ağının hata ayıklaması devre dışı bırakıldı.",
 		failed_network_debug = "Varlık ağının hata ayıklaması etkinleştirilemedi.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		searching_world = "Dünya aranıyor:\n${modelNames}",
 		copied_clipboard = "Koordinatlar panoya kopyalandı.",
 
-		saved_vehicle_model_lists_to_file = "Araç modeli listeleri sunucuda bir dosyaya kaydedildi."
+		saved_vehicle_model_lists_to_file = "Araç modeli listeleri sunucuda bir dosyaya kaydedildi.",
+
+		network_debug_logs_title = "Ağ Hata Ayıklama Etkinleştirildi",
+		network_debug_logs_details_on = "${consoleName} ağ hata ayıklamasını açtı.",
+		network_debug_logs_details_off = "${consoleName} ağ hata ayıklamasını kapattı."
 	},
 
 	debug_menu = {

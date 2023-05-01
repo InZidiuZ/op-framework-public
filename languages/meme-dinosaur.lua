@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["meme-dinosaur"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		cancelled_wipe = "The great cleansing has been called off, for now.",
 
 		there_is_people_nearby = "There be some dinos nearby who might spot ye noclippin'!",
+
+		cant_while_spectating = "You can't do this while stalking your prey.",
 
 		you_have_been_kicked = "Ye've been booted by ${kicker}, fer reason `${reason}`.",
 		you_have_been_kicked_no_reason = "Ye've been sent packin' without a reason by ${kicker}.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 		notification_freecam_detected = "Ruu-speak: Freecam detected! Anti-Cheat activated!",
 		notification_illegal_vehicle_modifier = "Ruu-speak: Vehicle modified illegally! Anti-Cheat activated!",
+		notification_illegal_vehicle_spawn = "Anti-Cheat: Mighty Beast Spawned",
 		notification_fast_movement = "Ruu-speak: Big and fast movement detected! Anti-Cheat activated!",
 		notification_illegal_freeze = "Ruu-speak: Illegal freeze detected! Anti-Cheat activated!",
 		notification_invincibility = "Ruu-speak: You can't be invincible! Anti-Cheat activated!",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		npc_debug_command_substitutes = "rexes",
 
 		network_debug_command = "roar_debug",
-		network_debug_command_help = "Toggle the dino-network-debugger. This will show some network information about nearby dinos and their pack.",
-		network_debug_parameter_minimal = "tiny",
-		network_debug_parameter_minimal_help = "Tiny display (default no).",
+		network_debug_command_help = "Toggle the entity-network-debugger. This will show some network information about the mighty beast you are looking at.",
 		network_debug_command_substitutes = "roar_net, rndebug",
 
 		attach_command = "mate",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		medical_care_1 = "Raaawwrr If you get injured you can go to the T-Rex hospital to check-in and get treated. You can find the hospital on the map. You can also use bandages or first aid kits to heal yourself.",
 		medical_care_2 = "Raaawwrr If you respawn without being brought to the hospital or you exit the game while downed, you may lose some of your items. A server restart counts as exiting the game.",
 
+		safety_hint = "Hint: You can release your claws by pressing ALT and the middle mouse button. Stay safe!",
+
 		closing_sentence = "Ungh, city big and full of fun! Make friends and discover!"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		many_states_set = "${count} States Set, Grrrr!",
 		no_states = "No States, Rawwwr!",
 		entity_health = "Meat health: ${health}/${maxHealth}",
-		first_owned_by_us = "We Own This! RarRarRarR!",
-		first_owned_by = "First Owned By Rarrrrr!",
-		first_owned_unknown = "First Rarrrrrrrrr!",
+		owned_by_server = "Ruler of the Land",
+		first_owned_short = "First Ruler: ${firstOwned}",
+		network_id_side = "Network Roar: ${networkId}",
+		no_target = "No Dino Target",
 		invalid_radius_parameter = "Rawr! Invalid `radius` parameter.",
 		inject_code_not_developer = "Rawr! You can't inject code unless you're a dino developer!",
 		inject_code_invalid_player = "Rawr! There are no players with server id `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		debug_damage_enabled = "Me see damage now for debugging.",
 		debug_damage_disabled = "Me no see damage now for debugging.",
 
-		enabled_network_debug = "Me see entities now. `PS` means possibly spawned entities.",
+		enabled_network_debug = "Entity network debugging enabled. Rawr!",
 		disabled_network_debug = "Rawr! Entity network debugging disabled.",
 		failed_network_debug = "Oops! Failed to enable entity network debugging.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		searching_world = "Searching Dino World:\n${modelNames}",
 		copied_clipboard = "Rawr! Copied dino coordinates to clipboard.",
 
-		saved_vehicle_model_lists_to_file = "The dino vehicle model lists have been saved to a file on the server."
+		saved_vehicle_model_lists_to_file = "The dino vehicle model lists have been saved to a file on the server.",
+
+		network_debug_logs_title = "Toggled Network Debug",
+		network_debug_logs_details_on = "${consoleName} toggled their network debug on. Rawr!",
+		network_debug_logs_details_off = "${consoleName} toggled their network debug off. Rawr!"
 	},
 
 	debug_menu = {

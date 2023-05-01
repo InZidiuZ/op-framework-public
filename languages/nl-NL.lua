@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		cancelled_wipe = "De wipe is geannuleerd.",
 
 		there_is_people_nearby = "Er zijn spelers in de buurt die je noclip kunnen zien gebruiken!",
+
+		cant_while_spectating = "Je kunt dit niet doen tijdens het kijken.",
 
 		you_have_been_kicked = "Je bent uit de server gekickt door ${kicker} met reden `${reason}`.",
 		you_have_been_kicked_no_reason = "Je bent zonder opgegeven reden uit de server gekickt door ${kicker}.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		notification_freecam_detected = "Anti-Cheat: Freecam Gedetecteerd",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Voertuig Modifier",
+		notification_illegal_vehicle_spawn = "Anti-Cheat: Voertuig gespawned",
 		notification_fast_movement = "Anti-Cheat: Snel bewegen",
 		notification_illegal_freeze = "Anti-Cheat: Ongeoorloofde bevriezing",
 		notification_invincibility = "Anti-Cheat: Onsterfelijkheid",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		npc_debug_command_substitutes = "npcs",
 
 		network_debug_command = "netwerk_debug",
-		network_debug_command_help = "Schakel de entiteit-netwerk-debugger in. Dit geeft enkele netwerkgegevens weer over nabijgelegen entiteiten.",
-		network_debug_parameter_minimal = "minimaal",
-		network_debug_parameter_minimal_help = "Minimale weergave (standaard nee).",
+		network_debug_command_help = "Schakel de entity-network-debugger in / uit. Dit zal enkele netwerkgegevens tonen over de entiteit waar je naar kijkt.",
 		network_debug_command_substitutes = "net_debug, ndebug",
 
 		attach_command = "attacheren",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		medical_care_1 = "Als je gewond raakt, kun je naar het ziekenhuis gaan om je in te checken en te laten behandelen. Je kunt het ziekenhuis op de kaart vinden. Je kunt ook verband of EHBO-kits gebruiken om jezelf te genezen.",
 		medical_care_2 = "Als je respawn zonder naar het ziekenhuis te zijn gebracht of als je het spel verlaat terwijl je neergaat, kun je enkele van je items verliezen. Een server herstart telt als het verlaten van het spel.",
 
+		safety_hint = "Tip: Je kunt je wapen van veiligheid afhalen door op ALT en de middelste muisknop te drukken. Blijf veilig!",
+
 		closing_sentence = "Er is nog veel meer te doen in de stad! Vraag rond en maak wat vrienden ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		many_states_set = "${count} statussen ingesteld",
 		no_states = "Geen statussen",
 		entity_health = "Gezondheid ${health}/${maxHealth}",
-		first_owned_by_us = "Eerste in ons bezit",
-		first_owned_by = "Eerste eigenaar:",
-		first_owned_unknown = "Eerste eigenaar onbekend",
+		owned_by_server = "Server",
+		first_owned_short = "Eerste eigenaar: ${firstOwned}",
+		network_id_side = "Netwerk-ID: ${networkId}",
+		no_target = "Geen Doelwit",
 		invalid_radius_parameter = "Ongeldige `radius` parameter.",
 		inject_code_not_developer = "De speler probeerde code te injecteren, maar is geen developer.",
 		inject_code_invalid_player = "Er zijn geen spelers met server id `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		debug_damage_enabled = "Schadedetectie debugging ingeschakeld.",
 		debug_damage_disabled = "Schadedetectie debugging uitgeschakeld.",
 
-		enabled_network_debug = "Debugging van entiteiten-netwerk ingeschakeld. `PS` identificeert mogelijk gespawnede entiteiten.",
+		enabled_network_debug = "Netwerkdebugging voor entiteiten ingeschakeld.",
 		disabled_network_debug = "Entiteit netwerk debuggen uitgeschakeld.",
 		failed_network_debug = "Kon entiteit netwerk debuggen niet inschakelen.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		searching_world = "Zoeken in wereld:\n${modelNames}",
 		copied_clipboard = "Coördinaten zijn gekopieerd naar het klembord.",
 
-		saved_vehicle_model_lists_to_file = "De voertuigmodel lijsten zijn opgeslagen in een bestand op de server."
+		saved_vehicle_model_lists_to_file = "De voertuigmodel lijsten zijn opgeslagen in een bestand op de server.",
+
+		network_debug_logs_title = "Netwerk Debuggen Ingeschakeld",
+		network_debug_logs_details_on = "${consoleName} heeft hun netwerkdebugging ingeschakeld.",
+		network_debug_logs_details_off = "${consoleName} heeft hun netwerkdebugging uitgeschakeld."
 	},
 
 	debug_menu = {

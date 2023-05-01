@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["de-DE"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["de-DE"] = {
 		cancelled_wipe = "Die Löschung wurde abgebrochen.",
 
 		there_is_people_nearby = "Es gibt Spieler in der Nähe, die dich noclip sehen könnten!",
+
+		cant_while_spectating = "Du kannst das nicht machen, während du zuschaust.",
 
 		you_have_been_kicked = "Du wurdest von ${kicker} für den Grund `${reason}` gekickt.",
 		you_have_been_kicked_no_reason = "Du wurdest ohne Angabe eines Grundes von ${kicker} gekickt.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["de-DE"] = {
 
 		notification_freecam_detected = "Anti-Cheat: Freecam erkannt",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Fahrzeugmodifikator",
+		notification_illegal_vehicle_spawn = "Anti-Cheat: Fahrzeug gespawnt",
 		notification_fast_movement = "Anti-Cheat: Schnelle Bewegung",
 		notification_illegal_freeze = "Anti-Cheat: Illegales Einfrieren",
 		notification_invincibility = "Anti-Cheat: Unbesiegbarkeit",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["de-DE"] = {
 		npc_debug_command_substitutes = "npcs",
 
 		network_debug_command = "network_debug",
-		network_debug_command_help = "Aktiviert/Deaktiviert den Entity-Netzwerk-Debugger. Dies zeigt einige Netzwerk-Informationen über nahegelegene Entitäten an.",
-		network_debug_parameter_minimal = "minimal",
-		network_debug_parameter_minimal_help = "Minimale Anzeige (Standard: Nein).",
+		network_debug_command_help = "Schaltet den Entity-Netzwerk-Debugger um. Dadurch werden einige Netzwerkinformationen über die Entity angezeigt, auf die du gerade schaust.",
 		network_debug_command_substitutes = "net_debug, ndebug",
 
 		attach_command = "attach",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["de-DE"] = {
 		medical_care_1 = "Wenn Sie verletzt werden, können Sie ins Krankenhaus gehen, um sich anzumelden und behandeln zu lassen. Sie können das Krankenhaus auf der Karte finden. Sie können auch Verbände oder Erste-Hilfe-Kits verwenden, um sich selbst zu heilen.",
 		medical_care_2 = "Wenn Sie ohne ins Krankenhaus zu gehen wiederbelebt werden oder das Spiel verlassen, während Sie verletzt sind, können Sie einige Ihrer Gegenstände verlieren. Ein Server-Neustart gilt als Verlassen des Spiels.",
 
+		safety_hint = "Hinweis: Du kannst deine Waffe durch Drücken von ALT und der mittleren Maustaste entsichern. Bleib sicher!",
+
 		closing_sentence = "Es gibt noch viel mehr zu tun in der Stadt! Frag herum und knüpfe Kontakte ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["de-DE"] = {
 		many_states_set = "${count} Zustände gesetzt",
 		no_states = "Keine Zustände",
 		entity_health = "Gesundheit ${health}/${maxHealth}",
-		first_owned_by_us = "Zuerst in unserem Besitz",
-		first_owned_by = "Zuerst im Besitz von",
-		first_owned_unknown = "Erster Besitzer unbekannt",
+		owned_by_server = "Server",
+		first_owned_short = "Erster Besitzer: ${firstOwned}",
+		network_id_side = "Netzwerk-ID: ${networkId}",
+		no_target = "Kein Ziel",
 		invalid_radius_parameter = "Ungültiger `Radius`-Parameter.",
 		inject_code_not_developer = "Der Spieler hat versucht, Code einzuspritzen, war jedoch kein Entwickler.",
 		inject_code_invalid_player = "Es gibt keine Spieler mit der Server-ID `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["de-DE"] = {
 		debug_damage_enabled = "Schaden-Debugging aktiviert.",
 		debug_damage_disabled = "Schaden-Debugging deaktiviert.",
 
-		enabled_network_debug = "Netzwerk-Debugging für Entity aktiviert. `PS` identifiziert möglicherweise gespawnte Entities.",
+		enabled_network_debug = "Entitäten-Netzwerkdebugging aktiviert.",
 		disabled_network_debug = "Entitäts-Netzwerkdebugging deaktiviert.",
 		failed_network_debug = "Entitäts-Netzwerkdebugging konnte nicht aktiviert werden.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["de-DE"] = {
 		searching_world = "Suche in der Welt:\n${modelNames}",
 		copied_clipboard = "Koordinaten wurden in die Zwischenablage kopiert.",
 
-		saved_vehicle_model_lists_to_file = "Die Fahrzeugmodell-Listen wurden auf dem Server in einer Datei gespeichert."
+		saved_vehicle_model_lists_to_file = "Die Fahrzeugmodell-Listen wurden auf dem Server in einer Datei gespeichert.",
+
+		network_debug_logs_title = "Netzwerkdebugging umgeschaltet",
+		network_debug_logs_details_on = "${consoleName} hat ihr Netzwerkdebugging eingeschaltet.",
+		network_debug_logs_details_off = "${consoleName} hat ihr Netzwerkdebugging ausgeschaltet."
 	},
 
 	debug_menu = {

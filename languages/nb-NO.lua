@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["nb-NO"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		cancelled_wipe = "Vipingen har blitt avbrutt.",
 
 		there_is_people_nearby = "Det er spillere i nærheten som kan se at du bruker noclip!",
+
+		cant_while_spectating = "Du kan ikke gjøre dette mens du spekterer.",
 
 		you_have_been_kicked = "Du har blitt sparket av ${kicker} for grunnen `${reason}`.",
 		you_have_been_kicked_no_reason = "Du har blitt sparket uten årsak av ${kicker}.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		notification_freecam_detected = "Anti-Cheat: Freecam oppdaget",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Ulovlig kjøretøy modifikasjon",
+		notification_illegal_vehicle_spawn = "Anti-Cheat: Kjøretøy spawnet",
 		notification_fast_movement = "Anti-Cheat: Rask bevegelse",
 		notification_illegal_freeze = "Anti-Cheat: Ulovlig frys",
 		notification_invincibility = "Anti-Cheat: Uovervinnelighet",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		npc_debug_command_substitutes = "npc-er",
 
 		network_debug_command = "nettverk_debug",
-		network_debug_command_help = "Aktiver/deaktiver enhetsnettverks-debuggeren. Dette vil vise noe nettverksinformasjon om nærliggende enheter.",
-		network_debug_parameter_minimal = "minimal",
-		network_debug_parameter_minimal_help = "Minimal visning (standard nei).",
+		network_debug_command_help = "Bytt til entitet-nettverks-debugger. Dette vil vise noe nettverksinformasjon om entiteten du ser på.",
 		network_debug_command_substitutes = "nett_debug, ndebug",
 
 		attach_command = "fest",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		medical_care_1 = "Hvis du blir skadet, kan du dra til sykehuset for å sjekke inn og få behandling. Du finner sykehuset på kartet. Du kan også bruke bandasjer eller førstehjelpssett for å helbrede deg selv.",
 		medical_care_2 = "Hvis du respawn uten å bli brakt til sykehuset, eller du forlater spillet mens du er nede, kan du miste noen av dine eiendeler. En serverstart teller som å forlate spillet.",
 
+		safety_hint = "Hint: Du kan ta av sikringen på våpenet ditt ved å trykke på ALT og midt-museknappen. Vær trygg!",
+
 		closing_sentence = "Det er mye mer å gjøre i byen! Spør rundt og få noen venner ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		many_states_set = "${count} Statusoppdateringer",
 		no_states = "Ingen status",
 		entity_health = "Helse ${health}/${maxHealth}",
-		first_owned_by_us = "Første Eiet Av Oss",
-		first_owned_by = "Første Eier",
-		first_owned_unknown = "Første Eier Ukjent",
+		owned_by_server = "Server",
+		first_owned_short = "Første eid av: ${firstOwned}",
+		network_id_side = "Nettverks-ID: ${networkId}",
+		no_target = "Ingen mål",
 		invalid_radius_parameter = "Ugyldig `radius` parameter.",
 		inject_code_not_developer = "Spilleren prøvde å injisere kode, men de er ikke en utvikler.",
 		inject_code_invalid_player = "Det er ingen spillere med server id `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		debug_damage_enabled = "Skadediagnose aktivert.",
 		debug_damage_disabled = "Skadediagnose deaktivert.",
 
-		enabled_network_debug = "Nettverksdiagnose for enheter aktivert. `PS` identifiserer muligens spawnete enheter.",
+		enabled_network_debug = "Enhetsnettverk feilsøking aktivert.",
 		disabled_network_debug = "Nettverksfeilsøking for enheter er deaktivert.",
 		failed_network_debug = "Kunne ikke aktivere nettverksfeilsøking for enheter.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		searching_world = "Søker i verden etter:\n${modelNames}",
 		copied_clipboard = "Kopierte koordinater til utklippstavlen.",
 
-		saved_vehicle_model_lists_to_file = "Listene over kjøretøymodeller har blitt lagret i en fil på serveren."
+		saved_vehicle_model_lists_to_file = "Listene over kjøretøymodeller har blitt lagret i en fil på serveren.",
+
+		network_debug_logs_title = "Toggled Network Debug",
+		network_debug_logs_details_on = "${consoleName} aktiverte enhetsnettverk feilsøking.",
+		network_debug_logs_details_off = "${consoleName} deaktiverte enhetsnettverk feilsøking."
 	},
 
 	debug_menu = {

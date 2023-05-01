@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["bn-BD"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		cancelled_wipe = "ওয়াইপ বাতিল করা হয়েছে।",
 
 		there_is_people_nearby = "নকলিপ করলে আপনার পাশে খেলোয়াড়গণ আছে!",
+
+		cant_while_spectating = "আপনি বুঝতে পারছেন না, স্পেক্টেটিং এ থাকার সময় এটি সম্ভব নয়।",
 
 		you_have_been_kicked = "আপনাকে কিক করেছে ${kicker} এর কারণ `${reason}`।",
 		you_have_been_kicked_no_reason = "আপনাকে ${kicker} এর কাছ থেকে কোন নির্দিষ্ট কারণ ছাড়াও কিক করা হয়েছে।",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		notification_freecam_detected = "এন্টি-চিট: ফ্রিক্যাম ট্র্যাক করা হয়েছে",
 		notification_illegal_vehicle_modifier = "এন্টি-চিট: যানবাহন পরিবর্তনকারী",
+		notification_illegal_vehicle_spawn = "এন্টি-চিট: গাড়ি প্রস্তুত করা হয়েছে",
 		notification_fast_movement = "এন্টি-চিট: দ্রুত গতি",
 		notification_illegal_freeze = "এন্টি-চিট: অনৈতিক জমাট",
 		notification_invincibility = "এন্টি-চিট: অতিরিক্ত সুরক্ষা",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		npc_debug_command_substitutes = "npcসমস্যা",
 
 		network_debug_command = "network_debug",
-		network_debug_command_help = "সেন্ট্রলে থাকা সমস্ত ইন্টিটির নেটওয়ার্ক সংক্রান্ত তথ্য প্রদর্শন করা হবে। এটি নিকটবর্তী ইন্টিটির নেটওয়ার্ক সম্পর্কিত কিছু তথ্য দেখাবে।",
-		network_debug_parameter_minimal = "সর্বনিম্ন",
-		network_debug_parameter_minimal_help = "সর্বনিম্ন প্রদর্শন (ডিফল্ট না)।",
+		network_debug_command_help = "ইউনিটি-নেটওয়ার্ক-ডিবাগার চালু / বন্ধ করুন। এটি আপনি দেখছেন ইউনিটির নেটওয়ার্ক সম্পর্কিত কিছু তথ্য প্রদর্শন করবে।",
 		network_debug_command_substitutes = "net_debug, ndebug",
 
 		attach_command = "আটাচ",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		medical_care_1 = "যদি আপনি ক্ষতিগ্রস্ত হন তবে আপনি হাসপাতালে চেক-ইন করতে এবং চিকিৎসা করতে যেতে পারেন। আপনি মানচিত্রে হাসপাতাল খুঁজতে পারেন। আপনি নিজেকে চিকিৎসা করতে আপনার হাতে ব্যান্ডেজ বা প্রথম চিকিৎসা প্রদানকারী কিট ব্যবহার করতে পারেন।",
 		medical_care_2 = "যদি আপনি হাসপাতালে না যেতে এবং অস্থায়ীভাবে মারা গেলেন বা আপনি গেম থেকে উঠে যান তখন আপনি আপনার কিছু সামগ্রী হারাতে পারেন। সার্ভার পুনরায় চালু হওয়ার মতো সম্মতি হিসাবে গণ্য করা হয়।",
 
+		safety_hint = "সতর্কতা: আপনি ALT এবং মাঝের মাউস বাটন চাপ দিয়ে আপনার অসুরক্ষিত শস্য নিকটবর্তী করতে পারেন। সুরক্ষিত থাকুন!",
+
 		closing_sentence = "শহরে করার কিছুই বেশি আছে! চার্দিকে জিজ্ঞাসা করুন এবং কিছু বন্ধু পান ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		many_states_set = "${count} অবস্থা স্থাপন করা হয়েছে",
 		no_states = "কোন অবস্থা নেই",
 		entity_health = "স্বাস্থ্য ${health}/${maxHealth}",
-		first_owned_by_us = "প্রথম আমাদের মালিকানাধীন",
-		first_owned_by = "প্রথম মালিক",
-		first_owned_unknown = "প্রথম মালিক অজানা",
+		owned_by_server = "সার্ভার",
+		first_owned_short = "প্রথম মালিক: ${firstOwned}",
+		network_id_side = "নেটওয়ার্ক আইডি: ${networkId}",
+		no_target = "কোন টার্গেট নেই",
 		invalid_radius_parameter = "ভুল `radius` পরামিতি।",
 		inject_code_not_developer = "খেলোয়াড় কোড ইনজেক্ট করে চেষ্টা করেছেন কিন্তু তারা ডেভেলপার নন।",
 		inject_code_invalid_player = "সার্ভার আইডি `${serverId}` সহ কোনও খেলোয়াড় নেই।",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		debug_damage_enabled = "ক্ষয় উপাত্ত প্রক্রিয়াধীন।",
 		debug_damage_disabled = "ক্ষয় উপাত্ত অক্ষম।",
 
-		enabled_network_debug = "ইউনিটি নেটওয়ার্ক ডিবাগিং সক্ষম করা হয়েছে। `PS` প্রস্তাবিত উপাদানগুলি চিহ্নিত করে।",
+		enabled_network_debug = "এন্টিটি নেটওয়ার্ক ডিবাগিং সক্রিয় করা হয়েছে।",
 		disabled_network_debug = "এটি ইণ্টিটি নেটওয়ার্ক ডিবাগিং নিষ্ক্রিয় করা হয়েছে।",
 		failed_network_debug = "ইণ্টিটি নেটওয়ার্ক ডিবাগিং সক্ষম করতে ব্যর্থ হয়েছে।",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		searching_world = "পৃথিবী অনুসন্ধান করা হচ্ছে:\n${modelNames}",
 		copied_clipboard = "কোয়ার্ডিনেটগুলি ক্লিপবোর্ডে কপি করা হয়েছে।",
 
-		saved_vehicle_model_lists_to_file = "গাড়ী মডেল তালিকাগুলি সার্ভারে একটি ফাইলে সংরক্ষিত হয়েছে।"
+		saved_vehicle_model_lists_to_file = "গাড়ী মডেল তালিকাগুলি সার্ভারে একটি ফাইলে সংরক্ষিত হয়েছে।",
+
+		network_debug_logs_title = "নেটওয়ার্ক ডিবাগ টগল করা হয়েছে",
+		network_debug_logs_details_on = "${consoleName} তাদের নেটওয়ার্ক ডিবাগ চালু করেছেন।",
+		network_debug_logs_details_off = "${consoleName} তাদের নেটওয়ার্ক ডিবাগ বন্ধ করেছেন।"
 	},
 
 	debug_menu = {

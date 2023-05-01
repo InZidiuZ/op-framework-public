@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["et-EE"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		cancelled_wipe = "Pühkimine on tühistatud.",
 
 		there_is_people_nearby = "Läheduses on mängijaid, kes võivad näha, kui kasutad noclipi!",
+
+		cant_while_spectating = "Te ei saa seda teha, kui olete vaatlejana.",
 
 		you_have_been_kicked = "Sind on välja visatud ${kicker} poolt põhjusel `${reason}`.",
 		you_have_been_kicked_no_reason = "Sind on välja visatud ${kicker} poolt põhjust märkimata.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		notification_freecam_detected = "Anti-Cheat: Freecam tuvastatud",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Sobimatud sõiduki muutjad",
+		notification_illegal_vehicle_spawn = "Anti-Cheat: Sõiduk loodi",
 		notification_fast_movement = "Anticheat: Kiire liikumine",
 		notification_illegal_freeze = "Anticheat: Ebaregulaarne külmutus",
 		notification_invincibility = "Anticheat: Läbimatus",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		npc_debug_command_substitutes = "nsd",
 
 		network_debug_command = "võrgu_tõrkeotsing",
-		network_debug_command_help = "Lülita sisse või välja üksuste võrgu tõrkeotsing. See kuvab lähedalasuvate üksuste võrguinfot.",
-		network_debug_parameter_minimal = "minimaalne",
-		network_debug_parameter_minimal_help = "Minimaalne kuvamine (vaikimisi mitte).",
+		network_debug_command_help = "Lülitage sisse või välja üksuse võrgumurdja. See näitab mõnda võrguteavet üksuse kohta, mida vaatate.",
 		network_debug_command_substitutes = "vtõ, võrk_tõrge",
 
 		attach_command = "kinnita",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		medical_care_1 = "Kui sa said vigastada, võid minna haiglasse sisse registreerima ja ennast ravima. Haigla asukoht on kaardil märgitud. Sulle võib abi olla ka sidemetest ja esmaabikomplektidest, millega saad ennast ise ravida.",
 		medical_care_2 = "Kui sa taaselustud ilma haiglasse toomata või lõpetad mängu olles vigastatud, võid kaotada osa oma esemetest. Serveri taaskäivitamine loetakse 'mängu lõpetamiseks'.",
 
+		safety_hint = "Näpunäide: saate ohutusparametri välja lülitada, vajutades klaviatuuri ALT-lahkriista vahetusnuppu. Olge turvaline!",
+
 		closing_sentence = "Linnas on palju teisigi asju teha! Küsige ringi ja leidke sõpru ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		many_states_set = "${count} seisundit määratud",
 		no_states = "Ühtegi olekut pole",
 		entity_health = "Tervis ${health}/${maxHealth}",
-		first_owned_by_us = "Meie omanduses esimesena",
-		first_owned_by = "Esimesena omandas",
-		first_owned_unknown = "Esimese omaniku andmed puuduvad",
+		owned_by_server = "Server",
+		first_owned_short = "Esimene omanik: ${firstOwned}",
+		network_id_side = "Võrgu ID: ${networkId}",
+		no_target = "Ei valitud sihtmärki",
 		invalid_radius_parameter = "Vigane `raadius` parameeter.",
 		inject_code_not_developer = "Mängija üritas sisestada koodi, kuid ta pole arendaja.",
 		inject_code_invalid_player = "Serveri ID '${serverId}'-ga mängijaid pole.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		debug_damage_enabled = "Kahju silumine on sisse lülitatud.",
 		debug_damage_disabled = "Kahju silumine on välja lülitatud.",
 
-		enabled_network_debug = "Entity võrgu silumine on sisse lülitatud. `PS` tähistab võimalikke tulnud üksusi.",
+		enabled_network_debug = "Objekti võrgu silumine on sisse lülitatud.",
 		disabled_network_debug = "Olekuvõrgu silumine keelatud.",
 		failed_network_debug = "Ei suudetud lubada olekuvõrgu silumist.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 		searching_world = "Otsin maailmast:\n${modelNames}",
 		copied_clipboard = "Koordinaadid on kopeeritud lõikelauale.",
 
-		saved_vehicle_model_lists_to_file = "Sõidukimudeli nimekirjad on salvestatud failina serverisse."
+		saved_vehicle_model_lists_to_file = "Sõidukimudeli nimekirjad on salvestatud failina serverisse.",
+
+		network_debug_logs_title = "Võrgu silumine sisse/välja lülitatud",
+		network_debug_logs_details_on = "${consoleName} lülitas oma võrgu silumise sisse.",
+		network_debug_logs_details_off = "${consoleName} lülitas oma võrgu silumise välja."
 	},
 
 	debug_menu = {

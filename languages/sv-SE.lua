@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["sv-SE"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		cancelled_wipe = "Rensningen har avbrutits.",
 
 		there_is_people_nearby = "Det finns spelare i närheten som kan se dig noclippa!",
+
+		cant_while_spectating = "Du kan inte göra detta medan du åskådar.",
 
 		you_have_been_kicked = "Du har blivit kickad av ${kicker} för anledning `${reason}`.",
 		you_have_been_kicked_no_reason = "Du har blivit kickad av ${kicker} utan specificerad anledning.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		notification_freecam_detected = "Anti-Cheat: Freecam upptäckt",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Fordonsmodifierare",
+		notification_illegal_vehicle_spawn = "Anti-Cheat: Fordon Spawnaed",
 		notification_fast_movement = "Anti-Cheat: Snabb rörelse",
 		notification_illegal_freeze = "Anti-Cheat: Olagligt frysa",
 		notification_invincibility = "Anti-Cheat: Oövervinnlighet",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		npc_debug_command_substitutes = "NPC:er",
 
 		network_debug_command = "nätverks_debug",
-		network_debug_command_help = "Aktivera nätverksdebuggern för entiteter. Visar information om nätverket för närliggande entiteter.",
-		network_debug_parameter_minimal = "minimal",
-		network_debug_parameter_minimal_help = "Minimal visning (standard = nej).",
+		network_debug_command_help = "Aktivera/deaktivera felsökningsläge för nätverksentiteter. Visar nätverksinformation om entiteten du tittar på.",
 		network_debug_command_substitutes = "nät_debug, ndebug",
 
 		attach_command = "fäst",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		medical_care_1 = "Om du skadar dig kan du gå till sjukhuset för att anmäla dig och få behandling. Du kan hitta sjukhuset på kartan. Du kan också använda bandage eller första hjälpen-kit för att läka dig själv.",
 		medical_care_2 = "Om du återupplivas utan att ha blivit förd till sjukhuset eller om du stänger av spelet medan du är nere, kan du förlora några av dina föremål. En serveromstart räknas som att stänga av spelet.",
 
+		safety_hint = "Tips: Du kan ta bort säkringen från ditt vapen genom att trycka på ALT och mittmusknappen. Var försiktig!",
+
 		closing_sentence = "Det finns mycket mer att göra i staden! Fråga runt och skaffa några vänner ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		many_states_set = "${count} tillstånd satta",
 		no_states = "Inga tillstånd",
 		entity_health = "Hälsa ${health}/${maxHealth}",
-		first_owned_by_us = "Först ägd av oss",
-		first_owned_by = "Först ägd av",
-		first_owned_unknown = "Första ägaren okänd",
+		owned_by_server = "Server",
+		first_owned_short = "Första ägare: ${firstOwned}",
+		network_id_side = "Nätverks-ID: ${networkId}",
+		no_target = "Inget mål",
 		invalid_radius_parameter = "Ogiltigt `radius`-parameter.",
 		inject_code_not_developer = "Spelaren försökte injicera kod men är inte en utvecklare.",
 		inject_code_invalid_player = "Det finns inga spelare med server-id `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		debug_damage_enabled = "Skadediagnostisering aktiverat.",
 		debug_damage_disabled = "Skadediagnostisering inaktiverat.",
 
-		enabled_network_debug = "Entitetsnätverksdiagnostisering aktiverat. 'PS' identifierar möjligen spawnade entiteter.",
+		enabled_network_debug = "Enhetsnätverksfelsökning aktiverad.",
 		disabled_network_debug = "Enhetsnätverksfelsökning avaktiverat.",
 		failed_network_debug = "Misslyckades med att aktivera enhetsnätverksfelsökning.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		searching_world = "Söker i världen:\n${modelNames}",
 		copied_clipboard = "Kopierade koordinater till urklipp.",
 
-		saved_vehicle_model_lists_to_file = "Fordonets modellistor har sparats i en fil på servern."
+		saved_vehicle_model_lists_to_file = "Fordonets modellistor har sparats i en fil på servern.",
+
+		network_debug_logs_title = "Växlat nätverksfelsökning",
+		network_debug_logs_details_on = "${consoleName} växlade sin nätverksfelsökning på.",
+		network_debug_logs_details_off = "${consoleName} växlade sin nätverksfelsökning av."
 	},
 
 	debug_menu = {

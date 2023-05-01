@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["meme-habibi"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		cancelled_wipe = "Wipe has been cancelled.",
 
 		there_is_people_nearby = "There are players nearby who could see you using noclip!",
+
+		cant_while_spectating = "Walla you can't do this while spectating.",
 
 		you_have_been_kicked = "You have been kicked by ${kicker} for `${reason}`.",
 		you_have_been_kicked_no_reason = "You have been kicked by ${kicker} without any specified reason.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		notification_freecam_detected = "Anti-Cheat: Habibi, someone is using freecam!",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Habibi, someone is modifying their vehicle illegally!",
+		notification_illegal_vehicle_spawn = "Habibi, someone spawned a haram vehicle. Anti-Cheat is active.",
 		notification_fast_movement = "Anti-Cheat: Habibi, someone is moving too fast!",
 		notification_illegal_freeze = "Anti-Cheat: Habibi, someone is freezing others illegally!",
 		notification_invincibility = "Anti-Cheat: Habibi, someone is invincible!",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		npc_debug_command_substitutes = "shb_shukluk",
 
 		network_debug_command = "raghba_khitat_alshabakat",
-		network_debug_command_help = "Toggle the shabak-network-debugger. This will show some shabak information about nearby entities.",
-		network_debug_parameter_minimal = "khas",
-		network_debug_parameter_minimal_help = "Minimal display (default no).",
+		network_debug_command_help = "Habibi, toggle the entity-network-debugger. This will show some network information about the entity you are looking at.",
 		network_debug_command_substitutes = "alshbaka, ndebug",
 
 		attach_command = "rabt",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		medical_care_1 = "If you get injured you can go to the hospital to check-in and get treated. You can find the hospital on the map. You can also use bandages or first aid kits to heal yourself.",
 		medical_care_2 = "If you respawn without being brought to the hospital or you exit the game while downed, you may lose some of your items. A server restart counts as exiting the game.",
 
+		safety_hint = "Pssst: You can take your weapon off safety by pressing ALT and the middle mouse button. Keep yourself safe ya habibi!",
+
 		closing_sentence = "Habibi, there's so much more to explore in the city! Ask around and make some friends ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		many_states_set = "${count} States Set",
 		no_states = "No States",
 		entity_health = "Health ${health}/${maxHealth}",
-		first_owned_by_us = "First Owned By Us",
-		first_owned_by = "First Owned By",
-		first_owned_unknown = "First Owner Unknown",
+		owned_by_server = "Server",
+		first_owned_short = "First Owner: ${firstOwned}",
+		network_id_side = "Habibi, network ID: ${networkId}",
+		no_target = "Ma'indha yaara ma'mur",
 		invalid_radius_parameter = "Habibi, the `radius` be messed up.",
 		inject_code_not_developer = "Oh no no, this player tryna inject code, but they not a developer.",
 		inject_code_invalid_player = "Yaarrr, there be no players with server id `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		debug_damage_enabled = "Debugging damage enabled.",
 		debug_damage_disabled = "Debugging damage disabled.",
 
-		enabled_network_debug = "Debugging network entities enabled. `PS` identifies entities that may be spawned.",
+		enabled_network_debug = "Tasweerat al-shaakel al-shebeekh li-alaqaat al-al-shabak ",
 		disabled_network_debug = "Entity network debugging is off now, habibi.",
 		failed_network_debug = "Failed to activate entity network debugging. Sorry, habibi.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		searching_world = "Searching the world for:\n${modelNames}",
 		copied_clipboard = "Coordinates have been copied to the clipboard.",
 
-		saved_vehicle_model_lists_to_file = "The vehicle model lists have been saved to a file on the server."
+		saved_vehicle_model_lists_to_file = "The vehicle model lists have been saved to a file on the server.",
+
+		network_debug_logs_title = "Tagjiih li-Tasweerat al-shaakel al-shebeekh",
+		network_debug_logs_details_on = "${consoleName} sallama Tasweerat al-shaakel al-shebeekh kayn.",
+		network_debug_logs_details_off = "${consoleName} sallama Tasweerat al-shaakel al-shebeekh mamkan."
 	},
 
 	debug_menu = {

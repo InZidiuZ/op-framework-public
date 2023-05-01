@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["da-DK"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		cancelled_wipe = "Wipe er blevet afbrudt.",
 
 		there_is_people_nearby = "Der er spillere i nærheden, der kan se dig noclip!",
+
+		cant_while_spectating = "Du kan ikke gøre dette mens du kigger på som tilskuer.",
 
 		you_have_been_kicked = "Du er blevet smidt ud af ${kicker} med begrundelsen `${reason}`.",
 		you_have_been_kicked_no_reason = "Du er blevet smidt ud uden en specificeret begrundelse af ${kicker}.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		notification_freecam_detected = "Anti-Cheat: Fricam opdaget",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Ulovlig køretøjsmodifikation",
+		notification_illegal_vehicle_spawn = "Anti-Cheat: Køretøj Spawnet",
 		notification_fast_movement = "Anti-Cheat: Hurtig bevægelse",
 		notification_illegal_freeze = "Anti-Cheat: Ulovlig fryse",
 		notification_invincibility = "Anti-Cheat: Usårlighed",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		npc_debug_command_substitutes = "npc'er",
 
 		network_debug_command = "netværk_debug",
-		network_debug_command_help = "Tænd/sluk for entity-netværks-debuggeren. Dette vil vise nogle netværksinformationer om nærliggende entitys.",
-		network_debug_parameter_minimal = "minimal",
-		network_debug_parameter_minimal_help = "Minimal visning (standard nej).",
+		network_debug_command_help = "Skift til entitetsnetværks-debugger. Dette vil vise noget netværksinformation om entiteten du kigger på.",
 		network_debug_command_substitutes = "net_debug, ndebug",
 
 		attach_command = "vedhæft",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		medical_care_1 = "Hvis du bliver såret, kan du gå til hospitalet for at blive indskrevet og få behandling. Du kan finde hospitalet på kortet. Du kan også bruge bandager eller førstehjælpskits til at helbrede dig selv.",
 		medical_care_2 = "Hvis du respawn uden at være bragt til hospitalet, eller hvis du afslutter spillet, mens du er nede, kan du miste nogle af dine ​​genstande. En servergenstart tæller som at afslutte spillet.",
 
+		safety_hint = "Tip: Du kan tage dit våben af sikkerhed ved at trykke på ALT og midterste museknap. Pas på dig selv!",
+
 		closing_sentence = "Der er meget mere at lave i byen! Spørg rundt og skab nogle venner ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		many_states_set = "${count} Tilstande Sat",
 		no_states = "Ingen tilstande",
 		entity_health = "Sundhed ${health}/${maxHealth}",
-		first_owned_by_us = "Første ejer: Os",
-		first_owned_by = "Første ejer:",
-		first_owned_unknown = "Første ejer Ukendt",
+		owned_by_server = "Server",
+		first_owned_short = "Første Ejer: ${firstOwned}",
+		network_id_side = "Netværks-ID: ${networkId}",
+		no_target = "Ingen Mål",
 		invalid_radius_parameter = "Ugyldig `radius` parameter.",
 		inject_code_not_developer = "Spilleren forsøgte at indsætte kode, men de var ikke en udvikler.",
 		inject_code_invalid_player = "Der er ingen spillere med server-ID `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		debug_damage_enabled = "Debugging af skade er aktiveret.",
 		debug_damage_disabled = "Debugging af skade er deaktiveret.",
 
-		enabled_network_debug = "Netværks-debugging af entiteter er aktiveret. `PS` identificerer muligvis spawned entiteter.",
+		enabled_network_debug = "Netværksfejlfinding for enheder er aktiveret.",
 		disabled_network_debug = "Fejlfinding af netværk for entiteter er deaktiveret.",
 		failed_network_debug = "Kunne ikke aktivere fejlfinding af netværk for entiteter.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["da-DK"] = {
 		searching_world = "Søger i verdenen:\n${modelNames}",
 		copied_clipboard = "Kopierede koordinater til udklipsholderen.",
 
-		saved_vehicle_model_lists_to_file = "Køretøjets model lister er blevet gemt i en fil på serveren."
+		saved_vehicle_model_lists_to_file = "Køretøjets model lister er blevet gemt i en fil på serveren.",
+
+		network_debug_logs_title = "Toggled Netværk Fejlfinding",
+		network_debug_logs_details_on = "${consoleName} aktiverede deres netværksfejlfinding.",
+		network_debug_logs_details_off = "${consoleName} deaktiverede deres netværksfejlfinding."
 	},
 
 	debug_menu = {

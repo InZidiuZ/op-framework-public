@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["meme-uwu"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		cancelled_wipe = "The wipe has been cawencesled.",
 
 		there_is_people_nearby = "Thewe awe playews nearby that could see you noclip!",
+
+		cant_while_spectating = "Yu can't do this whiwe spectating.",
 
 		you_have_been_kicked = "You have been kicked by ${kicker} fow weason `${weason}`.",
 		you_have_been_kicked_no_reason = "You have been kicked without a specified weason by ${kicker}.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 		notification_freecam_detected = "OwO Anti-Cheat: Fweecam Detected",
 		notification_illegal_vehicle_modifier = "OwO Anti-Cheat: Vehicle Modifiew",
+		notification_illegal_vehicle_spawn = "Anti-Cheat: Vehicle Spawned",
 		notification_fast_movement = "OwO Anti-Cheat: Fast movemewnt",
 		notification_illegal_freeze = "OwO Anti-Cheat: Illegal fweeze",
 		notification_invincibility = "OwO Anti-Cheat: Invincibiwity",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		npc_debug_command_substitutes = "npcs",
 
 		network_debug_command = "nwetwork_dewbug",
-		network_debug_command_help = "Toggwe the entity-nwetwork-dewbuggwer. This will show some nwetwork infowmation about nearby entitwies.",
-		network_debug_parameter_minimal = "minimawl",
-		network_debug_parameter_minimal_help = "Minimawl display (defawult no).",
+		network_debug_command_help = "Toggwe the entity-network-debugger. This will show some network infowmation about the entity yuw awe wooking at.",
 		network_debug_command_substitutes = "net_dewbug, ndebug",
 
 		attach_command = "attach",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		medical_care_1 = "If you get injuwed you can go to the hospital to check-in and get tweated. You can find the hospital on the map. You can also use bandages or fiwst aid kits to heal yourself.",
 		medical_care_2 = "If you wespawn without being bwought to the hospital or you exit the game while downed, you may wose some of youw items. A sewvew westawt counts as exiting the game.",
 
+		safety_hint = "Hint: Yuw can take yuw weapon off safety by pwessing ALT and the middwe mouse button. Stay safe!",
+
 		closing_sentence = "Thewe's a wot mowe to do in the city! Ask awound and make some fwiends ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		many_states_set = "${count} States Set",
 		no_states = "No States",
 		entity_health = "Health ${health}/${maxHealth}",
-		first_owned_by_us = "Fwirst Owned By Us",
-		first_owned_by = "Fwirst Owned By",
-		first_owned_unknown = "Fwirst Owner Unknwown",
+		owned_by_server = "Sewver",
+		first_owned_short = "Fiwst Owner: ${firstOwned}",
+		network_id_side = "Network ID: ${networkId}",
+		no_target = "No tawget",
 		invalid_radius_parameter = "Invawid `wadius` pawametew.",
 		inject_code_not_developer = "The p-pwayer attempted to inject code but they wewe not a devewopew.",
 		inject_code_invalid_player = "Thewe awe no pwayews with sewvew id `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		debug_damage_enabled = "Damage debugging enabled. 0w0",
 		debug_damage_disabled = "Damage debugging disabled. ;_;",
 
-		enabled_network_debug = "Entity network debugging enabled. `PS` identifies possibly spawned entities. >w<",
+		enabled_network_debug = "Entity nyaetwork debugging enabled.",
 		disabled_network_debug = "Entity nyetwork debugging disabled. (・`ω´・)",
 		failed_network_debug = "Failed to enable entity nyetwork debugging. (✖╹\\_╹✖)",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		searching_world = "Sewarching Wowwd:\n${modewNames}",
 		copied_clipboard = "Copied cwoordinates to cwipboard.",
 
-		saved_vehicle_model_lists_to_file = "The vehicle modew wists have been saved to a file on the sewver."
+		saved_vehicle_model_lists_to_file = "The vehicle modew wists have been saved to a file on the sewver.",
+
+		network_debug_logs_title = "Toggwed Nyaetwork Debug",
+		network_debug_logs_details_on = "${consoleName} toggled theiw nyaetwork debug on.",
+		network_debug_logs_details_off = "${consoleName} toggled theiw nyaetwork debug off."
 	},
 
 	debug_menu = {

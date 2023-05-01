@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["es-ES"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		cancelled_wipe = "El borrado ha sido cancelado.",
 
 		there_is_people_nearby = "¡Hay jugadores cerca que pueden verte usando noclip!",
+
+		cant_while_spectating = "No puedes hacer esto mientras estás en modo espectador.",
 
 		you_have_been_kicked = "Has sido expulsado por ${kicker} por la razón `${reason}`.",
 		you_have_been_kicked_no_reason = "Has sido expulsado sin una razón específica por ${kicker}.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		notification_freecam_detected = "Anti-Cheat: Se ha detectado Freecam",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Modificación ilegal de vehículos",
+		notification_illegal_vehicle_spawn = "Anti-Cheats: Vehículo spawnado",
 		notification_fast_movement = "Anti-Cheat: Movimiento rápido",
 		notification_illegal_freeze = "Anti-Cheat: Congelamiento ilegal",
 		notification_invincibility = "Anti-Cheat: Invencibilidad",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		npc_debug_command_substitutes = "npcs",
 
 		network_debug_command = "depuración_red",
-		network_debug_command_help = "Alternar el depurador de red de entidad. Esto mostrará información de red sobre las entidades cercanas.",
-		network_debug_parameter_minimal = "mínimo",
-		network_debug_parameter_minimal_help = "Visualización mínima (predeterminada no).",
+		network_debug_command_help = "Activar/deactivar el depurador de red de entidad. Esto mostrará información de red sobre la entidad que estás mirando.",
 		network_debug_command_substitutes = "dep_red, depurador_red",
 
 		attach_command = "adjuntar",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		medical_care_1 = "Si resultas herido, puedes ir al hospital para registrarte y recibir tratamiento. Puedes encontrar el hospital en el mapa. También puedes usar vendajes o kits de primeros auxilios para curarte a ti mismo.",
 		medical_care_2 = "Si reapareces sin haber sido llevado al hospital o sales del juego mientras estás herido, es posible que pierdas algunos de tus objetos. Un reinicio del servidor cuenta como salir del juego.",
 
+		safety_hint = "Consejo: Puedes desactivar la seguridad de tu arma presionando ALT y el botón medio del ratón. ¡Mantente seguro!",
+
 		closing_sentence = "¡Hay mucho por hacer en la ciudad! Pregunta por ahí y haz algunos amigos ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 		many_states_set = "${count} estados establecidos",
 		no_states = "Sin estados",
 		entity_health = "Salud ${health}/${maxHealth}",
-		first_owned_by_us = "Primera propiedad nuestra",
-		first_owned_by = "Primera propiedad de",
-		first_owned_unknown = "Primer propietario desconocido",
+		owned_by_server = "Servidor",
+		first_owned_short = "Primer dueño: ${firstOwned}",
+		network_id_side = "ID de red: ${networkId}",
+		no_target = "Sin objetivo",
 		invalid_radius_parameter = "Parámetro `radio` inválido.",
 		inject_code_not_developer = "El jugador intentó inyectar código pero no es desarrollador.",
 		inject_code_invalid_player = "No hay jugadores con el ID de servidor `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		debug_damage_enabled = "Depuración de daño activada.",
 		debug_damage_disabled = "Depuración de daño desactivada.",
 
-		enabled_network_debug = "Depuración de red de entidades activada. `PS` identifica entidades posiblemente creadas.",
+		enabled_network_debug = "Depuración de red de entidades habilitada.",
 		disabled_network_debug = "Depuración de red de entidades desactivada.",
 		failed_network_debug = "No se pudo activar la depuración de red de entidades.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 		searching_world = "Buscando en el mundo:\n${modelNames}",
 		copied_clipboard = "Coordenadas copiadas al portapapeles.",
 
-		saved_vehicle_model_lists_to_file = "Las listas de modelos de vehículos se han guardado en un archivo en el servidor."
+		saved_vehicle_model_lists_to_file = "Las listas de modelos de vehículos se han guardado en un archivo en el servidor.",
+
+		network_debug_logs_title = "Depuración de red cambiada",
+		network_debug_logs_details_on = "${consoleName} ha activado su depuración de red.",
+		network_debug_logs_details_off = "${consoleName} ha desactivado su depuración de red."
 	},
 
 	debug_menu = {

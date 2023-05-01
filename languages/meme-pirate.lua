@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["meme-pirate"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		cancelled_wipe = "Thar be nothin' more to wipe, me hearty!",
 
 		there_is_people_nearby = "Arrr, there be scallywags close to ye. They might see ye doin' yer noclip trickery!",
+
+		cant_while_spectating = "Ye can't be doin' this whilst spectatin'. Arrr!",
 
 		you_have_been_kicked = "Belay yer sails! Ye've been kicked by ${kicker} fer reason `${reason}`.",
 		you_have_been_kicked_no_reason = "Belay yer sails! Ye've been kicked without no reason by ${kicker}.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		notification_freecam_detected = "Avast ye! Anti-Cheat: Freecam Detected",
 		notification_illegal_vehicle_modifier = "Ahoy matey! Anti-Cheat: Vehicle Modifier",
+		notification_illegal_vehicle_spawn = "Anti-Cheat: Me Ship be Spawned",
 		notification_fast_movement = "Shivver me timbers! Anti-Cheat: Fast movement",
 		notification_illegal_freeze = "Batten down the hatches! Anti-Cheat: Illegal freeze",
 		notification_invincibility = "Heave ho! Anti-Cheat: Invincibility",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		npc_debug_command_substitutes = "scallywags",
 
 		network_debug_command = "network_debugger",
-		network_debug_command_help = "Toggle the entity-network-debugger. This will show some network information about nearby entities, aye!",
-		network_debug_parameter_minimal = "minimalistic",
-		network_debug_parameter_minimal_help = "Minimalistic display (default no), me hearty!",
+		network_debug_command_help = "Toggle the entity-network-debugger, me hearty. This here will show some network information about the entity ye be lookin' at.",
 		network_debug_command_substitutes = "net_debugger, ndebugger",
 
 		attach_command = "attach",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		medical_care_1 = "If ye get injured ye can go t' th' hospital t' check-in and get treated. Ye can find th' hospital on th' map. Ye can also use bandages or first aid kits t' heal yer self.",
 		medical_care_2 = "If ye respawn without bein' brought t' th' hospital or ye exit th' game while downed, ye may lose some o' yer items. A server restart counts as exitin' th' game.",
 
+		safety_hint = "Hint: Ye can take yer weapon off safety by pressin' ALT 'n the middle mouse button. Arrr, stay safe, matey!",
+
 		closing_sentence = "Arrr be a lot more t' do in th' city! Ask 'round and make some mateys ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		many_states_set = "${count} States Set",
 		no_states = "No States",
 		entity_health = "Health ${health}/${maxHealth}",
-		first_owned_by_us = "First Owned By Us Swashbucklers",
-		first_owned_by = "First Owned By",
-		first_owned_unknown = "First Owner Be A Mystery",
+		owned_by_server = "The Server's Treasure",
+		first_owned_short = "First Owner: ${firstOwned}",
+		network_id_side = "Network ID: ${networkId}",
+		no_target = "Nay Target",
 		invalid_radius_parameter = "Arrrgh matey! Yer `radius` parameter be not valid.",
 		inject_code_not_developer = "Avast! Ye be tryin' to inject code but ye aren't a developer.",
 		inject_code_invalid_player = "There be no swashbucklers with server id `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		debug_damage_enabled = "Damage debugging be enabled matey!",
 		debug_damage_disabled = "Walk the plank! Damage debugging be disabled.",
 
-		enabled_network_debug = "Avast! Entity network debugging be enabled. `PS` identifies possibly spawned entities.",
+		enabled_network_debug = "Ahoy matey, Entity network debugging enabled!",
 		disabled_network_debug = "Arr! Entity network debuggin' be disabled.",
 		failed_network_debug = "Blimey! Failed t'enable entity network debuggin'.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		searching_world = "Avast ye! Searching th' World:\n${modelNames}",
 		copied_clipboard = "Aye-aye! Copied the coordinates to yer clipboard, me hearty!",
 
-		saved_vehicle_model_lists_to_file = "Arrr! The vessel model lists be saved to a file on the server, matey!"
+		saved_vehicle_model_lists_to_file = "Arrr! The vessel model lists be saved to a file on the server, matey!",
+
+		network_debug_logs_title = "Toggled Network Debug",
+		network_debug_logs_details_on = "${consoleName} toggled their network debug on, matey!",
+		network_debug_logs_details_off = "${consoleName} toggled their network debug off, me heartie."
 	},
 
 	debug_menu = {

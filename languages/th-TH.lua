@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		cancelled_wipe = "การล้างข้อมูลถูกยกเลิกแล้ว",
 
 		there_is_people_nearby = "มีผู้เล่นอยู่ในบริเวณใกล้เคียง อาจมองเห็นการใช้คำสั่ง noclip ของคุณได้!",
+
+		cant_while_spectating = "คุณไม่สามารถทำสิ่งนี้ขณะที่กำลังมองดูโดยไม่ได้เป็นผู้เล่นได้",
 
 		you_have_been_kicked = "คุณถูกเตะออกจากเซิร์ฟเวอร์โดย ${kicker} เหตุผล `${reason}`.",
 		you_have_been_kicked_no_reason = "คุณถูกเตะออกจากเซิร์ฟเวอร์โดย ${kicker} โดยไม่ได้ระบุเหตุผล",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		notification_freecam_detected = "ป้องกันการโกง: ตรวจพบการใช้งาน Freecam",
 		notification_illegal_vehicle_modifier = "ป้องกันการโกง: การปรับแต่งยานพาหนะผิดกฎหมาย",
+		notification_illegal_vehicle_spawn = "Anti-Cheat: รถถูกสร้างขึ้น",
 		notification_fast_movement = "ป้องกันการโกง: การเคลื่อนที่ด้วยความเร็วสูง",
 		notification_illegal_freeze = "ป้องกันการโกง: การตรึงคงโดยผิดกฎหมาย",
 		notification_invincibility = "ป้องกันการโกง: การไม่สามารถทำลายได้",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		npc_debug_command_substitutes = "npcs",
 
 		network_debug_command = "network_debug",
-		network_debug_command_help = "เปิด/ปิดเครื่องมือตรวจสอบข้อมูลเครือข่าย Entity ที่อยู่ใกล้เคียง ซึ่งจะแสดงข้อมูลเกี่ยวกับเครือข่ายของ Entity ต่างๆ",
-		network_debug_parameter_minimal = "minimal",
-		network_debug_parameter_minimal_help = "แสดงข้อมูลอย่างย่อ (ไม่ตั้งค่า คือไม่แสดง)",
+		network_debug_command_help = "เปิด/ปิดการแสดงข้อมูลเครือข่ายของวัตถุ ซึ่งจะแสดงข้อมูลเครือข่ายเกี่ยวกับวัตถุที่คุณกำลังมองอยู่",
 		network_debug_command_substitutes = "net_debug, ndebug",
 
 		attach_command = "attach",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		medical_care_1 = "หากคุณได้รับบาดเจ็บ คุณสามารถไปที่โรงพยาบาลเพื่อเช็คอินและได้รับการรักษา โรงพยาบาลสามารถหาได้ในแผนที่ นอกจากนี้ คุณยังสามารถใช้ผ้าพันแผลหรือชุดช่วยเหลือการปฏิบัติการแรกช่วยในการรักษาตัวเองได้",
 		medical_care_2 = "หากคุณเกิดการสืบสวนโดยไม่ต้องไปโรงพยาบาลหรือคุณออกจากเกมขณะอยู่ในสภาพเจ็บป่วย คุณอาจสูญเสียบางไอเท็มของคุณได้ การรีสตาร์ทเซิร์ฟเวอร์นับเป็นการออกจากเกม",
 
+		safety_hint = "คำแนะนำ: คุณสามารถปลดล็อกปืนของคุณโดยกด ALT และปุ่มกลางเมาส์ อย่าลืมรักษาความปลอดภัย!",
+
 		closing_sentence = "มีอะไรหลายอย่างที่สามารถทำได้ในเมือง! คุณสามารถถามรายละเอียดเพิ่มเติมและหาเพื่อนได้เลย ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		many_states_set = "ตั้งค่าสถานะ ${count} รายการ",
 		no_states = "ไม่มีสถานะ",
 		entity_health = "เลือด ${health}/${maxHealth}",
-		first_owned_by_us = "เป็นเจ้าของเริ่มต้นโดยเรา",
-		first_owned_by = "เป็นเจ้าของเริ่มต้นโดย",
-		first_owned_unknown = "ไม่ทราบเจ้าของเริ่มต้น",
+		owned_by_server = "เซิร์ฟเวอร์",
+		first_owned_short = "เจ้าของคนแรก: ${firstOwned}",
+		network_id_side = "ID เครือข่าย: ${networkId}",
+		no_target = "ไม่มีเป้าหมาย",
 		invalid_radius_parameter = "พารามิเตอร์ `รัศมี` ไม่ถูกต้อง",
 		inject_code_not_developer = "ผู้เล่นพยายามฉ้อโกงโค้ด แต่พวกเขาไม่ใช่นักพัฒนา",
 		inject_code_invalid_player = "ไม่มีผู้เล่นที่มี ID เซิร์ฟเวอร์ `${serverId}`",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		debug_damage_enabled = "เปิดการตรวจสอบความเสียหาย",
 		debug_damage_disabled = "ปิดการตรวจสอบความเสียหาย",
 
-		enabled_network_debug = "เปิดการตรวจสอบเครือข่าย Entity. `PS` ตรวจพบ entity ที่เป็นไปได้ที่ถูกสร้างขึ้น",
+		enabled_network_debug = "เปิดการแก้ปัญหาระบบเครือข่ายของ Entity",
 		disabled_network_debug = "ปิดการตรวจสอบเครือข่าย Entity แล้ว",
 		failed_network_debug = "ไม่สามารถเปิดใช้งานการตรวจสอบเครือข่าย Entity ได้",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		searching_world = "กำลังค้นหาโลก:\n${modelNames}",
 		copied_clipboard = "คัดลอกตำแหน่งไปยังคลิปบอร์ดในคอมพิวเตอร์แล้ว.",
 
-		saved_vehicle_model_lists_to_file = "ไฟล์รายการรุ่นรถยนต์ได้ถูกบันทึกลงในเซิร์ฟเวอร์แล้ว."
+		saved_vehicle_model_lists_to_file = "ไฟล์รายการรุ่นรถยนต์ได้ถูกบันทึกลงในเซิร์ฟเวอร์แล้ว.",
+
+		network_debug_logs_title = "สลับโหมดแก้ปัญหาระบบเครือข่าย",
+		network_debug_logs_details_on = "${consoleName} เปิดโหมดแก้ปัญหาระบบเครือข่าย",
+		network_debug_logs_details_off = "${consoleName} ปิดโหมดแก้ปัญหาระบบเครือข่าย"
 	},
 
 	debug_menu = {

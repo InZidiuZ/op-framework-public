@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["meme-caveman"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		cancelled_wipe = "Ugh, the big clean-up is not happening.",
 
 		there_is_people_nearby = "Me see people, you no noclip!",
+
+		cant_while_spectating = "Ugh, no do this while watch.",
 
 		you_have_been_kicked = "Me say you go bye-bye by ${kicker} because ${reason}.",
 		you_have_been_kicked_no_reason = "Me say you go bye-bye without good reason by ${kicker}.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		notification_freecam_detected = "Ugg-ugg: Anti-Cheat say you use Freecam!",
 		notification_illegal_vehicle_modifier = "Ugg-ugg: Anti-Cheat say you mess with Car!",
+		notification_illegal_vehicle_spawn = "No-no: Car made magically!",
 		notification_fast_movement = "Ugg-ugg: Anti-Cheat say you move too Fast!",
 		notification_illegal_freeze = "Ugg-ugg: Anti-Cheat say you Freeze things Illegal!",
 		notification_invincibility = "Ugg-ugg: Anti-Cheat say you Invincible, but no one is Invincible!",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		npc_debug_command_substitutes = "ug-ug say 'npcs'",
 
 		network_debug_command = "ug-ug say 'network_debug'",
-		network_debug_command_help = "Ug-ug, toggle entity-network-debugger. Show some network information for nearby ug-ugs.",
-		network_debug_parameter_minimal = "minimal",
-		network_debug_parameter_minimal_help = "Ug-ug, display less information (default no).",
+		network_debug_command_help = "You want to know about shiny rock? Press this and see.",
 		network_debug_command_substitutes = "net_debug, ndebug",
 
 		attach_command = "ug-ug say 'attach'",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		medical_care_1 = "If hurt, go to big hut with red cross on map for fix. Use bandages or first aid too.",
 		medical_care_2 = "If you come back without going to hut or leave game while hurt, you may lose things. Game restart do same.",
 
+		safety_hint = "Hmm, need stay safe. Weapon off safety press ALT and middle mouse button.",
+
 		closing_sentence = "City have much much more to do! Ask around and make new friends ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		many_states_set = "${count} States Me Set",
 		no_states = "Me No States",
 		entity_health = "Me Big Toughness ${health}/${maxHealth}",
-		first_owned_by_us = "First Owned By Ugh Us",
-		first_owned_by = "First Owned By",
-		first_owned_unknown = "First Owner Lurked",
+		owned_by_server = "Fire in sky",
+		first_owned_short = "First Claw-maker: ${firstOwned}",
+		network_id_side = "Network mark: ${networkId}",
+		no_target = "Ugg Ugg, No Target",
 		invalid_radius_parameter = "Ugh! Radius wrong.",
 		inject_code_not_developer = "Me think player try to do funny thing, but no developer.",
 		inject_code_invalid_player = "No players with id `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		debug_damage_enabled = "Ugg see damage now.",
 		debug_damage_disabled = "Ugg no see damage anymore.",
 
-		enabled_network_debug = "Ugg see where new things appear. `PS` mean maybe spawned thing.",
+		enabled_network_debug = "Me see entities through time portal. Entity network debug enabled.",
 		disabled_network_debug = "Ugg! Entity network debuggery disabled.",
 		failed_network_debug = "Oops! Failed to enable entity network debuggery.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		searching_world = "Grog looking for:\n${modelNames}",
 		copied_clipboard = "Grog copied coordinates. Use them well.",
 
-		saved_vehicle_model_lists_to_file = "Grog saved vehicle model lists to cave painting on server."
+		saved_vehicle_model_lists_to_file = "Grog saved vehicle model lists to cave painting on server.",
+
+		network_debug_logs_title = "Ugg, Toggle Time Portal Debug",
+		network_debug_logs_details_on = "${consoleName} toggled their time portal debug on. Me watch closely.",
+		network_debug_logs_details_off = "${consoleName} toggled their time portal debug off. Me close eye now."
 	},
 
 	debug_menu = {

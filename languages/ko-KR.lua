@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["ko-KR"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		cancelled_wipe = "외부 초기화가 취소되었습니다.",
 
 		there_is_people_nearby = "님께서 분신술 사용 시 주위에 다른 플레이어가 있습니다!",
+
+		cant_while_spectating = "관전 중에는 이 작업을 수행할 수 없습니다.",
 
 		you_have_been_kicked = "${kicker}님께서 이유 `${reason}`로 인해 추방하셨습니다.",
 		you_have_been_kicked_no_reason = "${kicker}님께서 이유 없이 추방하셨습니다.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		notification_freecam_detected = "안티-치트: 프리캠 감지됨",
 		notification_illegal_vehicle_modifier = "안티-치트: 이상한 차량 수정기",
+		notification_illegal_vehicle_spawn = "안티-치트: 차량 스폰됨",
 		notification_fast_movement = "안티-치트: 빠른 이동",
 		notification_illegal_freeze = "안티-치트: 불법적인 굳기",
 		notification_invincibility = "안티-치트: 무적 상태",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		npc_debug_command_substitutes = "npcs",
 
 		network_debug_command = "network_debug",
-		network_debug_command_help = "엔티티 네트워크 디버거를 토글합니다. 이는 주변 엔티티에 대한 일부 네트워크 정보를 표시합니다.",
-		network_debug_parameter_minimal = "minimal",
-		network_debug_parameter_minimal_help = "최소한의 디스플레이 (기본값은 no).",
+		network_debug_command_help = "엔티티 네트워크 디버거를 토글합니다. 이것은 당신이 보고 있는 엔티티에 대한 일부 네트워크 정보를 보여줄 것입니다.",
 		network_debug_command_substitutes = "net_debug, ndebug",
 
 		attach_command = "attach",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		medical_care_1 = "부상을 입었다면 병원에 방문하여 진찰과 치료를 받을 수 있습니다. 맵에서 병원을 찾아볼 수 있습니다. 또한 붕대나 응급 처치 키트를 사용하여 자신의 체력을 회복할 수 있습니다.",
 		medical_care_2 = "병원에 이송되지 않고 리스폰하거나, 게임을 나갈 때 무력화 상태였다면 일부 아이템을 잃어버릴 수 있습니다. 서버 재시작은 게임을 나간 것으로 처리됩니다.",
 
+		safety_hint = "힌트: 당신은 ALT와 휠버튼을 눌러 무기의 안전장치를 해제할 수 있습니다. 안전하게 사용하세요!",
+
 		closing_sentence = "도시에서 할 것은 아직 많이 남았습니다! 주변을 둘러보고 친구를 사귀세요 ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		many_states_set = "${count}개 상태 설정됨",
 		no_states = "상태 없음",
 		entity_health = "체력 ${health}/${maxHealth}",
-		first_owned_by_us = "우리의 처음 소유",
-		first_owned_by = "처음 소유자",
-		first_owned_unknown = "첫 소유자를 알 수 없음",
+		owned_by_server = "서버 소유",
+		first_owned_short = "처음 소유자: ${firstOwned}",
+		network_id_side = "네트워크 ID: ${networkId}",
+		no_target = "대상 없음",
 		invalid_radius_parameter = "유효하지 않은 `반경` 매개 변수입니다.",
 		inject_code_not_developer = "플레이어가 코드를 삽입하려고 했지만 개발자가 아닙니다.",
 		inject_code_invalid_player = "서버 ID `${serverId}`을(를) 가진 플레이어가 없습니다.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		debug_damage_enabled = "피해 디버깅이 활성화되었습니다.",
 		debug_damage_disabled = "피해 디버깅이 비활성화되었습니다.",
 
-		enabled_network_debug = "엔티티 네트워크 디버깅이 활성화되었습니다. `PS`는 가능한 스폰된 엔티티를 나타냅니다.",
+		enabled_network_debug = "엔티티 네트워크 디버깅이 활성화되었습니다.",
 		disabled_network_debug = "엔티티 네트워크 디버깅이 비활성화되었습니다.",
 		failed_network_debug = "엔티티 네트워크 디버깅을 활성화하는 데 실패했습니다.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		searching_world = "세계를 검색 중입니다:\n${modelNames}",
 		copied_clipboard = "클립보드에 좌표가 복사되었습니다.",
 
-		saved_vehicle_model_lists_to_file = "차량 모델 목록이 서버의 파일에 저장되었습니다."
+		saved_vehicle_model_lists_to_file = "차량 모델 목록이 서버의 파일에 저장되었습니다.",
+
+		network_debug_logs_title = "네트워크 디버그 전환",
+		network_debug_logs_details_on = "${consoleName}님이 네트워크 디버그를 켰습니다.",
+		network_debug_logs_details_off = "${consoleName}님이 네트워크 디버그를 껐습니다."
 	},
 
 	debug_menu = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["meme-spongebob"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		cancelled_wipe = "Oh no, the big cleaning has been cancelled, meow!",
 
 		there_is_people_nearby = "There be players around, don't go noclipping, meow!",
+
+		cant_while_spectating = "You can't do dis while spectatin'.",
 
 		you_have_been_kicked = "You got yeeted by ${kicker} because of `${reason}`, meow!",
 		you_have_been_kicked_no_reason = "You got yeeted by ${kicker} without any reason, meow!",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		notification_freecam_detected = "Oh no! Plankton's created a F-R-E-E-C-A-M!",
 		notification_illegal_vehicle_modifier = "Uh oh! Someone's been tampering with their boat!",
+		notification_illegal_vehicle_spawn = "Anti-Cheat: Vehicle Spawned",
 		notification_fast_movement = "Whoa, that player is going B-O-L-T-S fast!",
 		notification_illegal_freeze = "That player just froze time like Sandy's treedome!",
 		notification_invincibility = "I don't think that player is taking any damage, they must be invincible!",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		npc_debug_command_substitutes = "npcs",
 
 		network_debug_command = "network_debuggerino",
-		network_debug_command_help = "Toggle the network-debuggerino. This will show some net information about nearby entities, just like when you count the bubbles in the bouncy castle!",
-		network_debug_parameter_minimal = "minimal-lino",
-		network_debug_parameter_minimal_help = "The less, the better (default no). Don't want to overload my sensitive receivers, you know!",
+		network_debug_command_help = "Toggle da entity-network-debugger. Dis will show some network info 'bout da entity yer lookin' at.",
 		network_debug_command_substitutes = "net_debuggerino, ndebuggerino",
 
 		attach_command = "attacheroo",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		medical_care_1 = "If ya get injured ya can go to the hospital to check-in and get treated. Ya can find the hospital on the map. Ya can also use bandages or first aid kits to heal yerself.",
 		medical_care_2 = "If ya respawn without bein brought to the hospital or ya exit the game while downed, ya may lose some of yer items. A server restart counts as exitin the game.",
 
+		safety_hint = "Hint: Yer can take yer weapon off safety by pressin' ALT and da middle mouse button. Stay safe!",
+
 		closing_sentence = "There's a lot more to do in Bikini Bottom! Ask around and make some jellyfish buddies ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		many_states_set = "Arrr, ${count} states be set!",
 		no_states = "No states be set, argh!",
 		entity_health = "Ye be havin' ${health} out of ${maxHealth} health, matey!",
-		first_owned_by_us = "First owned by us fine folk",
-		first_owned_by = "First owned by some other sea dog",
-		first_owned_unknown = "Arrr, first owner be unknown",
+		owned_by_server = "Server",
+		first_owned_short = "First Owner: ${firstOwned}",
+		network_id_side = "Network ID: ${networkId}",
+		no_target = "No target, meow!",
 		invalid_radius_parameter = "Barnacles! Ya got an invalid `radius` parameter. Try again!",
 		inject_code_not_developer = "Tartar sauce! Ya can't inject code if ya ain't a developer.",
 		inject_code_invalid_player = "Barnacles! There ain't no sailors with server ID `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		debug_damage_enabled = "Damage debugging enabled, meow.",
 		debug_damage_disabled = "Damage debugging disabled, meow.",
 
-		enabled_network_debug = "Entity network debugging enabled. `PS` identifies possibly spawned entities, meow.",
+		enabled_network_debug = "Entity network debugging enabled, aye aye, captain!",
 		disabled_network_debug = "Entity network debuggin' disabled.",
 		failed_network_debug = "Barnacles! Failed to enable entity network debuggin'.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		searching_world = "We're searching the world for:\n${modelNames}.",
 		copied_clipboard = "Coordinates copied to clipboard! Have fun! :D",
 
-		saved_vehicle_model_lists_to_file = "Success! The boatmobile model is now your new best friend! And the list is saved to a file on the server, so don't worry. :)"
+		saved_vehicle_model_lists_to_file = "Success! The boatmobile model is now your new best friend! And the list is saved to a file on the server, so don't worry. :)",
+
+		network_debug_logs_title = "Toggle Network Debug",
+		network_debug_logs_details_on = "${consoleName} toggled their network debug on, let's get krabby!",
+		network_debug_logs_details_off = "${consoleName} toggled their network debug off, aww, tartar sauce!"
 	},
 
 	debug_menu = {

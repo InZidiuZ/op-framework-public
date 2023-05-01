@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["it-IT"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		cancelled_wipe = "Il wipe è stato annullato.",
 
 		there_is_people_nearby = "Ci sono altri giocatori nei dintorni che potrebbero vederti noclippare!",
+
+		cant_while_spectating = "Non puoi farlo mentre sei in modalità spettatore.",
 
 		you_have_been_kicked = "Sei stato kickato da ${kicker} per il motivo `${reason}`.",
 		you_have_been_kicked_no_reason = "Sei stato kickato da ${kicker} senza specificare un motivo.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		notification_freecam_detected = "Anti-Cheat: Freecam rilevata",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Modificatore di veicolo illegale",
+		notification_illegal_vehicle_spawn = "Anti-Cheat: Veicolo Spawnato",
 		notification_fast_movement = "Anti-Cheat: Movimento rapido",
 		notification_illegal_freeze = "Anti-Cheat: Bloccaggio illegale",
 		notification_invincibility = "Anti-Cheat: Invincibilità",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		npc_debug_command_substitutes = "npcs",
 
 		network_debug_command = "debug_rete",
-		network_debug_command_help = "Attiva il debugger di rete degli oggetti. Mostrerà alcune informazioni di rete sugli oggetti nelle vicinanze.",
-		network_debug_parameter_minimal = "minimale",
-		network_debug_parameter_minimal_help = "Visualizzazione minimale (default no).",
+		network_debug_command_help = "Attiva/disattiva il debugger della rete delle entità. Ciò mostrerà alcune informazioni sulla rete dell'entità a cui stai guardando.",
 		network_debug_command_substitutes = "rete_debug, rdebug",
 
 		attach_command = "attacca",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		medical_care_1 = "Se sei ferito puoi recarti all'ospedale per effettuare il check-in e ricevere le cure necessarie. Puoi trovare l'ospedale sulla mappa. Puoi anche utilizzare bende o kit di pronto soccorso per curarti da solo.",
 		medical_care_2 = "Se respawni senza essere stato portato in ospedale o esci dal gioco mentre sei ferito, potresti perdere alcuni dei tuoi oggetti. Un riavvio del server conta come uscita dal gioco.",
 
+		safety_hint = "Suggerimento: puoi togliere la sicura dell'arma premendo il tasto ALT e il tasto centrale del mouse. Stai al sicuro!",
+
 		closing_sentence = "Ci sono molte altre cose da fare in città! Chiedi in giro e fatti degli amici ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		many_states_set = "${count} stati impostati",
 		no_states = "Nessuno stato",
 		entity_health = "Salute ${health}/${maxHealth}",
-		first_owned_by_us = "Primo posseduto da noi",
-		first_owned_by = "Primo posseduto da",
-		first_owned_unknown = "Primo proprietario sconosciuto",
+		owned_by_server = "Server",
+		first_owned_short = "Primo Proprietario: ${firstOwned}",
+		network_id_side = "ID di Rete: ${networkId}",
+		no_target = "Nessun bersaglio",
 		invalid_radius_parameter = "Parametro `raggio` non valido.",
 		inject_code_not_developer = "Il giocatore ha cercato di iniettare codice ma non era un developer.",
 		inject_code_invalid_player = "Non ci sono giocatori con l'id del server `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		debug_damage_enabled = "Debug del danno abilitato.",
 		debug_damage_disabled = "Debug del danno disabilitato.",
 
-		enabled_network_debug = "Debug della rete delle entità abilitato. `PS` identifica eventuali entità generate.",
+		enabled_network_debug = "Debug di rete entità abilitato.",
 		disabled_network_debug = "Debug della rete delle entità disattivato.",
 		failed_network_debug = "Impossibile attivare il debug della rete delle entità.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		searching_world = "Ricerca mondo:\n${modelNames}",
 		copied_clipboard = "Coordinate copiate negli appunti.",
 
-		saved_vehicle_model_lists_to_file = "Le liste di modelli di veicoli sono state salvate su un file sul server."
+		saved_vehicle_model_lists_to_file = "Le liste di modelli di veicoli sono state salvate su un file sul server.",
+
+		network_debug_logs_title = "Debug di rete attivato",
+		network_debug_logs_details_on = "${consoleName} ha attivato il debug di rete.",
+		network_debug_logs_details_off = "${consoleName} ha disattivato il debug di rete."
 	},
 
 	debug_menu = {

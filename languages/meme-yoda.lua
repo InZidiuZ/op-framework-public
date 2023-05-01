@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["meme-yoda"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		cancelled_wipe = "Cancelled, the wipe has been.",
 
 		there_is_people_nearby = "Players nearby are, see you noclip they may!",
+
+		cant_while_spectating = "Do this while spectating, you cannot.",
 
 		you_have_been_kicked = "Kicked, you have been, by ${kicker} for reason `${reason}`.",
 		you_have_been_kicked_no_reason = "Reason, not specified, kicked you have been, by ${kicker}.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		notification_freecam_detected = "Anti-Cheat, detected a freecam has been, hmmm",
 		notification_illegal_vehicle_modifier = "Anti-Cheat, illegal modification to vehicle, detected it has",
+		notification_illegal_vehicle_spawn = "Anti-Cheat: Vehicle spawned it has.",
 		notification_fast_movement = "Anti-Cheat, detected fast movement, hmmm",
 		notification_illegal_freeze = "Anti-Cheat, illegal freeze, detected it has",
 		notification_invincibility = "Anti-Cheat, detected invincibility, hmmm",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		npc_debug_command_substitutes = "npcs",
 
 		network_debug_command = "network_debug",
-		network_debug_command_help = "Entity-network-debugger, toggle you can. Information about nearby entities, show it will.",
-		network_debug_parameter_minimal = "minimal",
-		network_debug_parameter_minimal_help = "Minimal display (default no).",
+		network_debug_command_help = "Toggle the entity-network-debugger. This will show some network information about the entity you are looking at, hmmm.",
 		network_debug_command_substitutes = "net_debug, ndebug",
 
 		attach_command = "attach",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		medical_care_1 = "Injured, go to the hospital for check-up and treatment. Hospital location can be found on the map. Use bandages or first aid kits to heal yourself.",
 		medical_care_2 = "Respawning without being treated may cause loss of items. Exiting game while downed or during server restart counts as game exit and may cause you to lose items.",
 
+		safety_hint = "Stay safe, you will. Hint: by pressing ALT and the middle mouse button, your weapon off safety you can take off.",
+
 		closing_sentence = "A lot more to do in the city there is! Ask around and make some friends, hmmm ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		many_states_set = "${count} states set, they are.",
 		no_states = "No states, there are.",
 		entity_health = "Health ${health}/${maxHealth}, the entity has.",
-		first_owned_by_us = "First owned by us, this was.",
-		first_owned_by = "First owned by, this was.",
-		first_owned_unknown = "First owner unknown, this is.",
+		owned_by_server = "Server, it is.",
+		first_owned_short = "First Owner: ${firstOwned}, it was.",
+		network_id_side = "Network ID, it has. ${networkId}, hmmm.",
+		no_target = "Target, there is none.",
 		invalid_radius_parameter = "Invalid parameter, `radius` is.",
 		inject_code_not_developer = "Code injection attempted by non-developer, someone did.",
 		inject_code_invalid_player = "No players found with server id `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		debug_damage_enabled = "Damage debugging enabled, it is.",
 		debug_damage_disabled = "Damage debugging disabled, it is.",
 
-		enabled_network_debug = "Entity network debugging enabled, it is. `PS` identifies possibly spawned entities.",
+		enabled_network_debug = "Entity network debugging, enabled it is.",
 		disabled_network_debug = "Disabled, entity network debugging is.",
 		failed_network_debug = "Failed to enable entity network debugging, I have.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		searching_world = "Searching world, we are:\n${modelNames}",
 		copied_clipboard = "Coordinates to clipboard, copied we have.",
 
-		saved_vehicle_model_lists_to_file = "The vehicle model lists, saved to a file on the server they have been."
+		saved_vehicle_model_lists_to_file = "The vehicle model lists, saved to a file on the server they have been.",
+
+		network_debug_logs_title = "Network Debug Toggled",
+		network_debug_logs_details_on = "${consoleName}, their network debug on, toggled it has.",
+		network_debug_logs_details_off = "${consoleName}, their network debug off, toggled it has."
 	},
 
 	debug_menu = {

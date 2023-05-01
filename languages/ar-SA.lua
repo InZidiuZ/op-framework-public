@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["ar-SA"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		cancelled_wipe = "تم إلغاء المحو.",
 
 		there_is_people_nearby = "هناك لاعبون بالقرب منك الذين يمكنهم رؤيتك وأنت تستخدم النوكليب!",
+
+		cant_while_spectating = "لا يمكنك القيام بذلك أثناء المشاهدة.",
 
 		you_have_been_kicked = "تم طردك من قبل ${kicker} لسبب `${reason}`.",
 		you_have_been_kicked_no_reason = "لقد تم طردك بدون ذكر سبب من ${kicker}.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		notification_freecam_detected = "مكافحة الغش: كشف تشغيل Freecam",
 		notification_illegal_vehicle_modifier = "مكافحة الغش: تعديل مركبة غير قانوني",
+		notification_illegal_vehicle_spawn = "مكافحة الغش: تم إنشاء المركبة.",
 		notification_fast_movement = "مكافحة الغش: تحرك سريع",
 		notification_illegal_freeze = "مكافحة الغش: تجمد غير قانوني",
 		notification_invincibility = "مكافحة الغش: اللا قابلية للهجوم",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		npc_debug_command_substitutes = "حرفيين",
 
 		network_debug_command = "تصحيح_الشبكة",
-		network_debug_command_help = "تبديل أداة مصحح الشبكة للموجودات. سيعرض هذا بعض المعلومات المتعلقة بالشبكة عن الموجودات القريبة.",
-		network_debug_parameter_minimal = "حد_أدنى",
-		network_debug_parameter_minimal_help = "عرض بسيط (افتراضيًا لا).",
+		network_debug_command_help = "تبديل مصحح إعادة الشبكة الكيان. يظهر هذا بعض المعلومات حول الشبكة للكيان الذي تنظر إليه.",
 		network_debug_command_substitutes = "تصحيح_الشبكة, تصحيح_الشبكة, تصحيح_شبكي",
 
 		attach_command = "المرفق",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		medical_care_1 = "إذا تعرضت لإصابة ، يمكنك الذهاب إلى المستشفى للاستيفاء والعلاج. يمكنك العثور على المستشفى على الخريطة. يمكنك أيضًا استخدام الضمادات أو علب الإسعافات الأولية للشفاء بنفسك.",
 		medical_care_2 = "إذا قمت باستعادة مستواك دون أن يتم نقلك إلى المستشفى أو خرجت من اللعبة أثناء السقوط ، فقد تخسر بعض من مستلزماتك الخاصة. عدم الارتباط بالخادم يعد خروجًا من اللعبة.",
 
+		safety_hint = "تلميح: يمكنك إبقاء سلاحك في وضع عدم الأمان عن طريق الضغط على ALT وزر الماوس الأوسط. كن آمنًا!",
+
 		closing_sentence = "هناك الكثير من الأشياء التي يمكن القيام بها في المدينة! اسأل حولك وتعرف على بعض الأصدقاء ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		many_states_set = "${count} حالة تم تعيينها",
 		no_states = "لا يوجد حالات",
 		entity_health = "الصحة ${health}/${maxHealth}",
-		first_owned_by_us = "المملوكة الأولى من قِبلنا",
-		first_owned_by = "المملوكة الأولى من قِبل",
-		first_owned_unknown = "المالك الأول غير معروف",
+		owned_by_server = "الخادم",
+		first_owned_short = "المالك الأول: ${firstOwned}",
+		network_id_side = "معرف الشبكة: ${networkId}",
+		no_target = "لا يوجد هدف",
 		invalid_radius_parameter = "قيمة المعلمة `radius` غير صحيحة.",
 		inject_code_not_developer = "حاول اللاعب حقن كود ولكنه ليس مطورًا.",
 		inject_code_invalid_player = "لا يوجد لاعبين برقم هوية الخادم `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		debug_damage_enabled = "تم تمكين تصحيح الأضرار.",
 		debug_damage_disabled = "تم تعطيل تصحيح الأضرار.",
 
-		enabled_network_debug = "تم تمكين تصحيح شبكة الأجهزة. `PS` تحدد الأجهزة التي ربما تم نشرها.",
+		enabled_network_debug = "تم تمكين تصحيح الأخطاء لشبكة Entity.",
 		disabled_network_debug = "تم إيقاف تفعيل تصحيح الشبكة للكيانات.",
 		failed_network_debug = "فشل تفعيل تصحيح الشبكة للكيانات.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		searching_world = "البحث في العالم:\n${modelNames}",
 		copied_clipboard = "تم نسخ الإحداثيات إلى الحافظة.",
 
-		saved_vehicle_model_lists_to_file = "تم حفظ قوائم نماذج السيارات في ملف على الخادم."
+		saved_vehicle_model_lists_to_file = "تم حفظ قوائم نماذج السيارات في ملف على الخادم.",
+
+		network_debug_logs_title = "تبديل تعقب الأخطاء لشبكة Entity",
+		network_debug_logs_details_on = "${consoleName} قام بتفعيل تصحيح أخطاء الشبكة الخاص به.",
+		network_debug_logs_details_off = "${consoleName} قام بإيقاف تصحيح أخطاء الشبكة الخاص به."
 	},
 
 	debug_menu = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["meme-roadman"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		cancelled_wipe = "Nah mate, the wipe ain't happening no more.",
 
 		there_is_people_nearby = "Yo, there's heads nearby that could see you noclipping, watch out!",
+
+		cant_while_spectating = "Oi, you can't do that while spectating bruv.",
 
 		you_have_been_kicked = "You've been kicked by ${kicker} cuz of `${reason}`.",
 		you_have_been_kicked_no_reason = "Bruh, you got kicked for no reason by ${kicker}.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		notification_freecam_detected = "Oi, you're glitchin' bruv: Freecam spotted",
 		notification_illegal_vehicle_modifier = "Oi, that ain't legal: Vehicle modifier found",
+		notification_illegal_vehicle_spawn = "Oi, you're not slick, we caught you spawning illegal whips!",
 		notification_fast_movement = "Oi, slow down fam: Fast movement detected",
 		notification_illegal_freeze = "Oi, what's goin' on?: Illegal freeze detected",
 		notification_invincibility = "Oi, you can't be hurt: Invincibility detected",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		npc_debug_command_substitutes = "mandem",
 
 		network_debug_command = "mandem_debug",
-		network_debug_command_help = "Switch on/off the entity-network-debugger. It shows some network info about nearby mandems.",
-		network_debug_parameter_minimal = "bare minimum",
-		network_debug_parameter_minimal_help = "Display minimal info (default is none).",
+		network_debug_command_help = "Ight listen up, if you wanna see some network info on an entity then toggle that entity-network-debugger.",
 		network_debug_command_substitutes = "net_mandem, ndebug_mandem",
 
 		attach_command = "link up",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		medical_care_1 = "If you get merked, you can slide through the hospital to get patched up. It's on the map. You can also use bandages or first aid kits to fix yourself up.",
 		medical_care_2 = "If you respawn without going to the hospital or if you log off while hurt, you might lose some of your stash. A restart also counts as logging off, just sayin'.",
 
+		safety_hint = "Yo, listen up. You can take your gun off safety by pressing ALT and the middle mouse button. Keep yourself safe!",
+
 		closing_sentence = "There's bare more to do in the city! Ask around and link up with some manz ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		many_states_set = "${count} States Set",
 		no_states = "Nuttin'",
 		entity_health = "Condition ${health}/${maxHealth}",
-		first_owned_by_us = "We owned it first innit",
-		first_owned_by = "Owned by",
-		first_owned_unknown = "First owner a mystery to us",
+		owned_by_server = "The mandem up top own this.",
+		first_owned_short = "The OG who first copped it was ${firstOwned}.",
+		network_id_side = "Network ID: ${networkId}. You feel me?",
+		no_target = "No one there, blud",
 		invalid_radius_parameter = "Yo bruv, the `radius` you entered don't make sense. Try again.",
 		inject_code_not_developer = "Oi mate, you ain't a dev so you can't inject code. Nice try tho.",
 		inject_code_invalid_player = "Sorry bruv, can't find a player with server id `${serverId}`. Check again.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		debug_damage_enabled = "Allow me to shed some light on this issue, damage debugging is now enabled.",
 		debug_damage_disabled = "No worries fam, damage debugging is now off.",
 
-		enabled_network_debug = "Yo, entity network debugging is enabled. `PS` is gonna show you anything that could be a spawned entity, ya dig?",
+		enabled_network_debug = "Initiating entity network debugging, ya get me.",
 		disabled_network_debug = "Entity netwok debuggings off.",
 		failed_network_debug = "Sorry, I couldn't turn on entity network debugging.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		searching_world = "Searching the bits:\n${modelNames}",
 		copied_clipboard = "Copied coordinates to clipboard, safe.",
 
-		saved_vehicle_model_lists_to_file = "All the cars listed, saved to file on the server for future reference. Big ups!"
+		saved_vehicle_model_lists_to_file = "All the cars listed, saved to file on the server for future reference. Big ups!",
+
+		network_debug_logs_title = "Network Debug Toggled",
+		network_debug_logs_details_on = "${consoleName} switched on their network debug. Allow dem to flex.",
+		network_debug_logs_details_off = "${consoleName} switched off their network debug. No more flexin'."
 	},
 
 	debug_menu = {

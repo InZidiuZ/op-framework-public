@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["meme-valleygirl"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		cancelled_wipe = "Chill, wipe's off!",
 
 		there_is_people_nearby = "Ugh, like there's players around that could see you noclip!",
+
+		cant_while_spectating = "You, like, totally can't do this while spectating, duh.",
 
 		you_have_been_kicked = "OMG, you got kicked by ${kicker} for reason `${reason}`.",
 		you_have_been_kicked_no_reason = "You got kicked for no reason by ${kicker}!",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		notification_freecam_detected = "OMG! Anti-cheat alert! Someone's using a freecam!",
 		notification_illegal_vehicle_modifier = "Oh no! Someone's messing with their ride! Anti-cheat is on to them.",
+		notification_illegal_vehicle_spawn = "Anti-Cheat: A car just, like, appeared outta nowhere!",
 		notification_fast_movement = "Anti-cheat is lit fam! Someone's moving too fast!",
 		notification_illegal_freeze = "Uh-oh! Anti-cheat is on alert for illegal freezing.",
 		notification_invincibility = "Anti-cheat is like, 'No way!' Someone's trying to be invincible.",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		npc_debug_command_substitutes = "npccies",
 
 		network_debug_command = "network_debug",
-		network_debug_command_help = "Like, toggle the entity-network-debugger. This will show some network information about nearby entities.",
-		network_debug_parameter_minimal = "minimal",
-		network_debug_parameter_minimal_help = "Minimal display (default no).",
+		network_debug_command_help = "Toggle the entity-network-debugger. This will, like, show some network information about the entity you are looking at.",
 		network_debug_command_substitutes = "net_debug, ndebug",
 
 		attach_command = "attach",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		medical_care_1 = "If you get really hurt, you can cruise to the hospital to check-in and get treated. You can find the hospital on the map. You can also use bandages or first aid kits to heal yourself, like not a big deal.",
 		medical_care_2 = "If you respawn without hitting up the hospital or you rage quit while down, you might lose some of your stuff. A server restart counts as a rage quit, ugh.",
 
+		safety_hint = "Hint: You can like, take your weapon off safety by pressing ALT and the middle mouse button. Stay safe, hun!",
+
 		closing_sentence = "There's, like, so much more to do in the city! Don't be shy, ask around and make some friends ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		many_states_set = "${count} States Set",
 		no_states = "No States",
 		entity_health = "Health ${health}/${maxHealth}",
-		first_owned_by_us = "First Owned By Us",
-		first_owned_by = "First Owned By",
-		first_owned_unknown = "First Owner Unknown",
+		owned_by_server = "Server (like, duh)",
+		first_owned_short = "First Owner, like, was ${firstOwned}, just FYI.",
+		network_id_side = "Network ID, like, is ${networkId}.",
+		no_target = "Ugh, no target",
 		invalid_radius_parameter = "Omg, you entered like an invalid `radius` parameter. Totes not cool.",
 		inject_code_not_developer = "Like seriously, the player tried to inject code, but like they're not a developer. *eye roll*",
 		inject_code_invalid_player = "Ugh, there's like no players with server id `${serverId}`. Get it together.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		debug_damage_enabled = "Damage debugging is like, totally on. Sounds brutal!",
 		debug_damage_disabled = "Aww, no more damage debugging? Fine.",
 
-		enabled_network_debug = "Entity network debugging is on point, `PS` is like, totally identifying spawn entities.",
+		enabled_network_debug = "OMG, entity network debugging is on.",
 		disabled_network_debug = "Entity network debugging is, like, totally disabled.",
 		failed_network_debug = "Ugh, failed to enable entity network debugging.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		searching_world = "We're totally scouring the world for:\n${modelNames}",
 		copied_clipboard = "Coordinates copied to clipboard, bam!",
 
-		saved_vehicle_model_lists_to_file = "Vehicle model lists have been saved to server file. So hot right now."
+		saved_vehicle_model_lists_to_file = "Vehicle model lists have been saved to server file. So hot right now.",
+
+		network_debug_logs_title = "Toggled Network Debug",
+		network_debug_logs_details_on = "${consoleName} like, totally turned on entity network debugging.",
+		network_debug_logs_details_off = "${consoleName} like, turned off their network debug. Lame."
 	},
 
 	debug_menu = {

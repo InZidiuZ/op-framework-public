@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["meme-minionese"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		cancelled_wipe = "Bello! Da wipe has been cancelled.",
 
 		there_is_people_nearby = "Baboi, there are players nearby that could see you noclip!",
+
+		cant_while_spectating = "Bello, bello, bello! You can't do this while spectating.",
 
 		you_have_been_kicked = "Me sorry. You have been kicked by ${kicker} for reason `${reason}`.",
 		you_have_been_kicked_no_reason = "Me sorry. You have been kicked without a specified reason by ${kicker}.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		notification_freecam_detected = "Bananaaaaa! : Freecam Detected",
 		notification_illegal_vehicle_modifier = "Bananaaaaa! : Vehicle Modifier",
+		notification_illegal_vehicle_spawn = "Bee-do Bee-do Bee-do: Vehicle Spawned",
 		notification_fast_movement = "Bananaaaaa! : Fast movement",
 		notification_illegal_freeze = "Bananaaaaa! : Illegal freeze",
 		notification_invincibility = "Bananaaaaa! : Invincibility",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		npc_debug_command_substitutes = "bello yellow",
 
 		network_debug_command = "bee do bee do",
-		network_debug_command_help = "Toggle the entity-network-debugger. This will show some network information about nearby entities.",
-		network_debug_parameter_minimal = "me want banana",
-		network_debug_parameter_minimal_help = "Minimal display (default no).",
+		network_debug_command_help = "Toggle the entity-network-debugger. This will show some network information about the entity you are looking at.",
 		network_debug_command_substitutes = "ba ba da ga, bee do",
 
 		attach_command = "poopaye!",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		medical_care_1 = "If you get injured, you can go to hospital to check-in and get treatment. Hospital can be found on map. You can also use bandages or first aid kits to heal yourself.",
 		medical_care_2 = "If you respawn without being brought to hospital or exit game while downed, you may lose some items. Server restart counts as exiting game.",
 
+		safety_hint = "Poopaye! Hint: You can take your weapon off safety by pressing ALT and the middle mouse button. Stay safe!",
+
 		closing_sentence = "BANANA! Bello! Bello! Bello! Bello! Bello! Ask around and make some friends ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		many_states_set = "${count} States Set-Muak Muak",
 		no_states = "No States-Pwede Na",
 		entity_health = "Health ${health}/${maxHealth}-Me Dohty!",
-		first_owned_by_us = "First Owned By Us-Gelato",
-		first_owned_by = "First Owned By-Bee-Doh",
-		first_owned_unknown = "First Owner Unknown-Ah Ah!",
+		owned_by_server = "Server Bananna!",
+		first_owned_short = "First Owner: ${firstOwned} , bee-do!",
+		network_id_side = "Network ID: ${networkId} , banana!",
+		no_target = "Aww, bee do bee do",
 		invalid_radius_parameter = "Bapple! Invalid 'radius' parameter.",
 		inject_code_not_developer = "Poulet tikka masala! De player attempted to inject code but dey were not a developer.",
 		inject_code_invalid_player = "There are no players wid server id `${serverId}`. Me don't know dis player.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		debug_damage_enabled = "Tulaliloo! Damage debugging enabled.",
 		debug_damage_disabled = "Aaah! Damage debugging disabled.",
 
-		enabled_network_debug = "Bee do bee do bee do! Entity network debugging enabled. `PS` identifies possibly spawned entities.",
+		enabled_network_debug = "Bananaaaa! Entity network debugging enabled.",
 		disabled_network_debug = "Bello! Entity network debugging is no more.",
 		failed_network_debug = "Aww... Failed to enable entity network debugging.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		searching_world = "Searching World:\n${modelNames}.",
 		copied_clipboard = "Copied coordinates to clipboard. Gelato!",
 
-		saved_vehicle_model_lists_to_file = "The vehicle model lists have been saved to a file on the server. Bello!"
+		saved_vehicle_model_lists_to_file = "The vehicle model lists have been saved to a file on the server. Bello!",
+
+		network_debug_logs_title = "Bello! Toggled Network Debug",
+		network_debug_logs_details_on = "${consoleName} toggled their network debug on. Baanaaanaaa!",
+		network_debug_logs_details_off = "${consoleName} toggled their network debug off. Meep meep meep."
 	},
 
 	debug_menu = {

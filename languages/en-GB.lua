@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["en-GB"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		cancelled_wipe = "The wipe has been cancelled.",
 
 		there_is_people_nearby = "There are players nearby that could see you noclip!",
+
+		cant_while_spectating = "You can't do this while spectating.",
 
 		you_have_been_kicked = "You have been kicked by ${kicker} for reason `${reason}`.",
 		you_have_been_kicked_no_reason = "You have been kicked without a specified reason by ${kicker}.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		notification_freecam_detected = "Anti-Cheat: Freecam Detected",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Vehicle Modifier",
+		notification_illegal_vehicle_spawn = "Anti-Cheat: Vehicle Spawned",
 		notification_fast_movement = "Anti-Cheat: Rapid movement",
 		notification_illegal_freeze = "Anti-Cheat: Illegal freezing",
 		notification_invincibility = "Anti-Cheat: Invulnerability",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		npc_debug_command_substitutes = "npcs",
 
 		network_debug_command = "network_debug",
-		network_debug_command_help = "Toggle the entity-network-debugger. This will show some network information about nearby entities.",
-		network_debug_parameter_minimal = "minimal",
-		network_debug_parameter_minimal_help = "Minimal display (default no).",
+		network_debug_command_help = "Toggle the entity-network-debugger. This will show some network information about the entity you are looking at.",
 		network_debug_command_substitutes = "net_debug, ndebug",
 
 		attach_command = "attach",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		medical_care_1 = "If you become injured, you can go to the hospital to check in and receive treatment. You can find the hospital on the map. Alternatively, you can use bandages or first aid kits to treat yourself.",
 		medical_care_2 = "If you respawn without being taken to the hospital or you log out while injured, you may lose some of your possessions. Note that a server restart is considered logging out.",
 
+		safety_hint = "Hint: You can take your weapon off safety by pressing ALT and the middle mouse button. Stay safe!",
+
 		closing_sentence = "There's a lot more to do in the city! Ask around and make some friends ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		many_states_set = "${count} States Set",
 		no_states = "No States",
 		entity_health = "Health ${health}/${maxHealth}",
-		first_owned_by_us = "First Owned By Us",
-		first_owned_by = "First Owned By",
-		first_owned_unknown = "First Owner Unknown",
+		owned_by_server = "Server",
+		first_owned_short = "First Owner: ${firstOwned}",
+		network_id_side = "Network ID: ${networkId}",
+		no_target = "No Target",
 		invalid_radius_parameter = "Invalid `radius` parameter.",
 		inject_code_not_developer = "The player attempted to inject code but they were not a developer.",
 		inject_code_invalid_player = "There are no players with server id `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		debug_damage_enabled = "Damage debugging enabled.",
 		debug_damage_disabled = "Damage debugging disabled.",
 
-		enabled_network_debug = "Entity network debugging enabled. `PS` identifies possibly spawned entities.",
+		enabled_network_debug = "Entity network debugging enabled.",
 		disabled_network_debug = "Entity network debugging disabled.",
 		failed_network_debug = "Failed to enable entity network debugging.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		searching_world = "Searching the world:\n${modelNames}",
 		copied_clipboard = "Coordinates have been copied to the clipboard.",
 
-		saved_vehicle_model_lists_to_file = "The vehicle model lists have been saved to a file on the server."
+		saved_vehicle_model_lists_to_file = "The vehicle model lists have been saved to a file on the server.",
+
+		network_debug_logs_title = "Toggled Network Debug",
+		network_debug_logs_details_on = "${consoleName} enabled their network debug.",
+		network_debug_logs_details_off = "${consoleName} disabled their network debug."
 	},
 
 	debug_menu = {

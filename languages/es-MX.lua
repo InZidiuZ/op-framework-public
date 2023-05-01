@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["es-MX"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["es-MX"] = {
 		cancelled_wipe = "El borrado ha sido cancelado.",
 
 		there_is_people_nearby = "¡Hay jugadores cercanos que podrían verte usando noclip!",
+
+		cant_while_spectating = "No puedes hacer esto mientras estás especteando.",
 
 		you_have_been_kicked = "Has sido expulsado por ${kicker} por la razón `${reason}`.",
 		you_have_been_kicked_no_reason = "Has sido expulsado sin especificar la razón por ${kicker}.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 
 		notification_freecam_detected = "Anti-Cheat: Freecam Detectado",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Modificador de Vehículo Ilegal",
+		notification_illegal_vehicle_spawn = "Anti-Cheat: Vehículo Spawned",
 		notification_fast_movement = "Anti-trampa: Movimiento rápido",
 		notification_illegal_freeze = "Anti-trampa: Congelamiento ilegal",
 		notification_invincibility = "Anti-trampa: Invencibilidad",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		npc_debug_command_substitutes = "npcs",
 
 		network_debug_command = "depuración_de_red",
-		network_debug_command_help = "Activar o desactivar el depurador de red de entidades. Esto mostrará información sobre la red de entidades cercanas.",
-		network_debug_parameter_minimal = "mínimo",
-		network_debug_parameter_minimal_help = "Mostrar información mínima (por defecto no).",
+		network_debug_command_help = "Activa o desactiva el depurador de red de la entidad. Esto mostrará información sobre la conexión de red de la entidad en la que estás enfocando.",
 		network_debug_command_substitutes = "dep_red, dred",
 
 		attach_command = "adjuntar",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["es-MX"] = {
 		medical_care_1 = "Si te lesionas, puedes dirigirte al hospital para registrarte y recibir atención médica. Puedes encontrar el hospital en el mapa. También puedes usar vendas o kits de primeros auxilios para curarte.",
 		medical_care_2 = "Si reapareces sin ser llevado al hospital o sales del juego mientras estás herido, puedes perder algunos de tus objetos. Un reinicio del servidor cuenta como salir del juego.",
 
+		safety_hint = "Consejo: puedes quitar el seguro de tu arma presionando ALT y el botón central del mouse. ¡Mantente seguro!",
+
 		closing_sentence = "¡Hay mucho más que hacer en la ciudad! Pregunta a tu alrededor y haz algunos amigos ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["es-MX"] = {
 		many_states_set = "${count} Estados Establecidos",
 		no_states = "Sin estados",
 		entity_health = "Salud ${health}/${maxHealth}",
-		first_owned_by_us = "Primero propiedad nuestra",
-		first_owned_by = "Primero propiedad de",
-		first_owned_unknown = "Primer dueño desconocido",
+		owned_by_server = "Servidor",
+		first_owned_short = "Primer propietario: ${firstOwned}",
+		network_id_side = "ID de Red: ${networkId}",
+		no_target = "Sin objetivo",
 		invalid_radius_parameter = "Parámetro 'radio' no válido.",
 		inject_code_not_developer = "El jugador intentó inyectar código pero no es un desarrollador.",
 		inject_code_invalid_player = "No hay jugadores con ID de servidor `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		debug_damage_enabled = "Depuración de daño activada.",
 		debug_damage_disabled = "Depuración de daño desactivada.",
 
-		enabled_network_debug = "Depuración de red de entidades activada. `PS` identifica posiblemente entidades generadas.",
+		enabled_network_debug = "Depuración de red de entidades habilitada.",
 		disabled_network_debug = "Depuración de red de entidades desactivada.",
 		failed_network_debug = "Error al activar la depuración de red de entidades.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["es-MX"] = {
 		searching_world = "Buscando en el mundo:\n${modelNames}",
 		copied_clipboard = "Coordenadas copiadas al portapapeles.",
 
-		saved_vehicle_model_lists_to_file = "Las listas de modelos de vehículos se han guardado en un archivo en el servidor."
+		saved_vehicle_model_lists_to_file = "Las listas de modelos de vehículos se han guardado en un archivo en el servidor.",
+
+		network_debug_logs_title = "Depuración de Red Conmutada",
+		network_debug_logs_details_on = "${consoleName} activó la depuración de su red.",
+		network_debug_logs_details_off = "${consoleName} desactivó la depuración de su red."
 	},
 
 	debug_menu = {

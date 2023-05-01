@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["meme-klingon"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		cancelled_wipe = "QI’lop qorDu' ‘oH (wipe) qIl!",
 
 		there_is_people_nearby = "QapmeH (noclip) qep'a' tIqDaq qeylIS niQmey (players) 'e' patlh!",
+
+		cant_while_spectating = "qaStaHvIS 'ach vItlhutlh.",
 
 		you_have_been_kicked = "${kicker} temeQram (reason) `${reason}`Du'laHbe' joHwI'pu'! tlhIngan Hol: \"Soj chutlhqa'pu'",
 		you_have_been_kicked_no_reason = "${kicker} joHwI'pu'qa' yIDelchuq (reason) nIDatlh. tlhIngan Hol: \"Soj chutlhqa'pu'",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 		notification_freecam_detected = "Anti-Cheat: Freecam Detected", -- tlhIngan-Hol: yIqImHaq quvHa'pu' yIlo'laHbe'",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Vehicle Modifier", -- tlhIngan-Hol: yIqImHaq quvHa'pu' mach chenmoHwI'",
+		notification_illegal_vehicle_spawn = "ghob Anti-Cheat: loD poH mach rItlh.",
 		notification_fast_movement = "Anti-Cheat: Fast movement", -- tlhIngan-Hol: yIqImHaq quvHa'pu' Hurgh choH'a'",
 		notification_illegal_freeze = "Anti-Cheat: Illegal freeze", -- tlhIngan-Hol: yIqImHaq quvHa'pu' chIb freeze",
 		notification_invincibility = "Anti-Cheat: Invincibility", -- tlhIngan-Hol: yIqImHaq quvHa'pu' paq'batlh",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		npc_debug_command_substitutes = "npcs",
 
 		network_debug_command = "network_debug",
-		network_debug_command_help = "Toggle the entity-network-debugger. This will show some network information about nearby entities.",
-		network_debug_parameter_minimal = "minimal",
-		network_debug_parameter_minimal_help = "Minimal display (default no).",
+		network_debug_command_help = "lulIghmoH tammo' qo'patlh lo'laHbe'chugh. QonoS network information lupwI'",
 		network_debug_command_substitutes = "net_debug, ndebug",
 
 		attach_command = "attach",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		medical_care_1 = "jIbI'reS mammey, tIq lo'laHbe'chugh, 'ej tIqoSbe'lu'chugh. tIq pagh map. vay' che'wigh yoqghop 'ej chaq Suqqa'mo' chu' Daghaj'e' vItlhutlhchu'.",
 		medical_care_2 = "bombegh chay' batlh nIDmey lIj DaHechbe'chugh pa' tIqoSbe' 'ej qatlh. chenmoH jIlo'lu' 'ej DamaS law' DaHechbogh yIlo'lu'. vummo' qep'a' tlhe'ghorgh Qapchu' jIre'.",
 
+		safety_hint = "Hint: be'etlh vIneHbe' tIq 'e' ALT 'ej bI'el yImev. chav!",
+
 		closing_sentence = "qoq 'oH HujDaq ghu'vammeH pep vIlo'ta'! pIjHa' wIbuSHa' je ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		many_states_set = "${count} ponglu'be' poStaHvIS",
 		no_states = "ponglu'be' pagh",
 		entity_health = "Qap ${health}/${maxHealth}",
-		first_owned_by_us = "DaHjaj qar'a' Daj jImej",
-		first_owned_by = "DaHjaj qar'a' jImej",
-		first_owned_unknown = "DaHjaj qar'a' jImej boQ'a'",
+		owned_by_server = "Server",
+		first_owned_short = "cha'logh ghojwI': ${firstOwned}",
+		network_id_side = "Network ID: ${networkId}",
+		no_target = "bo'Degh Hom",
 		invalid_radius_parameter = "qIb naDevvo' `radius`.",
 		inject_code_not_developer = "ghu' nobvam lo'laHbe'chugh vay' Duyun may'be'.",
 		inject_code_invalid_player = "${serverId} ra'ghom DaH nobvam.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		debug_damage_enabled = "DamavQaS 'angnISlu'pu'.",
 		debug_damage_disabled = "DamavQaS 'angnISlu'qa'.",
 
-		enabled_network_debug = "chenmoH ruch DIlmey Dute mIw HaSta. 'PS' tlhIngan qumwI' jIjatlhbe'",
+		enabled_network_debug = "Entity QIn lutmeyta' maHvaD.",
 		disabled_network_debug = "Entity network debugging disabled.", -- loDvetlh mItlh jabbI'ay'",
 		failed_network_debug = "Failed to enable entity network debugging.", -- loDvetlh DIchDaq jabbI'ay' tIqDu'",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		searching_world = "Searching World:\n${modelNames}",
 		copied_clipboard = "Coordinates copied to clipboard.",
 
-		saved_vehicle_model_lists_to_file = "Vehicle model lists have been saved to a file on the server."
+		saved_vehicle_model_lists_to_file = "Vehicle model lists have been saved to a file on the server.",
+
+		network_debug_logs_title = "QIn lutmey nuquv",
+		network_debug_logs_details_on = "${consoleName} QIn lutmey qorwaghlu' qonDaq.",
+		network_debug_logs_details_off = "${consoleName} QIn lutmey Qaplu'ghachlu' qonDaq."
 	},
 
 	debug_menu = {

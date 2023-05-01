@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["hi-IN"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		cancelled_wipe = "वाइप रद्द कर दिया गया है।",
 
 		there_is_people_nearby = "आपके पास नॉक्लिप का उपयोग करने से पहले निकटतम सम्भवतः खिलाड़ियों हैं!",
+
+		cant_while_spectating = "आप इसे देखते हुए नहीं कर सकते।",
 
 		you_have_been_kicked = "${kicker} द्वारा आपको कारण `${reason}` के लिए निकाल दिया गया है।",
 		you_have_been_kicked_no_reason = "${kicker} द्वारा बिना किसी विशिष्ट कारण के आपको निकाल दिया गया है।",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 
 		notification_freecam_detected = "एंटी-चीट: फ्रीकैम पता चल गया है।",
 		notification_illegal_vehicle_modifier = "एंटी-चीट: वाहन मोड़िफ़ायर है।",
+		notification_illegal_vehicle_spawn = "एंटी-चीट: वाहन प्रकट हुआ है",
 		notification_fast_movement = "एंटी-चीट: तेज गति",
 		notification_illegal_freeze = "एंटी-चीट: अवैध जमाव",
 		notification_invincibility = "एंटी-चीट: अविश्वसनीयता",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		npc_debug_command_substitutes = "NPCs",
 
 		network_debug_command = "नेटवर्क_डीबग",
-		network_debug_command_help = "एन्टिटी-नेटवर्क-डीबगर को टॉगल करें। यह नजदीकी एन्टिटी के बारे में कुछ नेटवर्क सूचना दिखाएगा।",
-		network_debug_parameter_minimal = "घटिकशोषक",
-		network_debug_parameter_minimal_help = "कम से कम प्रदर्शन (डिफ़ॉल्ट नहीं)।",
+		network_debug_command_help = "एंटिटी-नेटवर्क-डिबगर को टॉगल करें। इससे आपको उस एंटिटी के बारे में कुछ नेटवर्क सूचना दिखाई देगी जो आप देख रहे हैं।",
 		network_debug_command_substitutes = "जाल_डीबग, एनडीईग",
 
 		attach_command = "अटैच",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		medical_care_1 = "यदि आप घायल हो जाते हैं तो आप अस्पताल जा कर देखभाल और इलाज करवा सकते हैं। आप मानचित्र पर अस्पताल ढूंढ सकते हैं। आप बैंडेज या प्राथमिक चिकित्सा किट का उपयोग करके अपने आप को ठीक कर सकते हैं।",
 		medical_care_2 = "यदि आप बिना अस्पताल जाए रीस्पॉन करते हैं या अपने ध्यान में नहीं होकर गेम से बाहर निकल जाते हैं, तो आप अपने कुछ आइटम खो सकते हैं। सर्वर रीस्टार्ट को गेम से बाहर निकलना माना जाता है।",
 
+		safety_hint = "इशारा: आप एलटी और मिडिल माउस बटन दबाकर अपने हथियार को सुरक्षित से खोल सकते हैं। सुरक्षित रहें!",
+
 		closing_sentence = "शहर में और कुछ करने के लिए बहुत कुछ है! आसपास पूछें और कुछ दोस्त बनाएं ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		many_states_set = "${count} स्टेट सेट किए गए",
 		no_states = "कोई स्टेट नहीं",
 		entity_health = "स्वस्थ ${health}/${maxHealth}",
-		first_owned_by_us = "हमारे द्वारा पहले स्वामित्व में",
-		first_owned_by = "पहले स्वामित्व में",
-		first_owned_unknown = "पहले मालिक अज्ञात",
+		owned_by_server = "सर्वर",
+		first_owned_short = "पहले के मालिक: ${firstOwned}",
+		network_id_side = "नेटवर्क आईडी: ${networkId}",
+		no_target = "कोई लक्ष्य नहीं",
 		invalid_radius_parameter = "`radius` पैरामीटर अमान्य है।",
 		inject_code_not_developer = "खिलाड़ी कोड प्रविष्टि करने का प्रयास किया लेकिन वे एक डेवलपर नहीं थे।",
 		inject_code_invalid_player = "सर्वर आईडी `${serverId}` के साथ कोई खिलाड़ी नहीं हैं।",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		debug_damage_enabled = "घातक debugging सक्षम।",
 		debug_damage_disabled = "घातक debugging अक्षम।",
 
-		enabled_network_debug = "इंसान network debugging सक्षम हुआ। `PS` आंकड़ों के संभव उत्पन्न हुए इंसानों की पहचान करता है।",
+		enabled_network_debug = "एन्टिटी नेटवर्क डिबगिंग सक्षम की गई।",
 		disabled_network_debug = "एंटिटी नेटवर्क डीबगिंग अक्षम है।",
 		failed_network_debug = "एंटिटी नेटवर्क डीबगिंग सक्षम करने में विफल।",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		searching_world = "दुनिया खोज रही:\n${modelNames}",
 		copied_clipboard = "कोऑर्डिनेट क्लिपबोर्ड पर कॉपी किए गए।",
 
-		saved_vehicle_model_lists_to_file = "वाहन मॉडल सूची सर्वर पर एक फ़ाइल में सहेजी गई हैं।"
+		saved_vehicle_model_lists_to_file = "वाहन मॉडल सूची सर्वर पर एक फ़ाइल में सहेजी गई हैं।",
+
+		network_debug_logs_title = "नेटवर्क डिबग चालू कर दिया गया",
+		network_debug_logs_details_on = "${consoleName} ने अपना नेटवर्क डिबग चालू किया।",
+		network_debug_logs_details_off = "${consoleName} ने अपना नेटवर्क डिबग बंद किया।"
 	},
 
 	debug_menu = {

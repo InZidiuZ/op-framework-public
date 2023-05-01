@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["ro-RO"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		cancelled_wipe = "Ștergerea completă a fost anulată.",
 
 		there_is_people_nearby = "Există jucători în apropiere care ar putea să te vadă când te deplasezi instantaneu!",
+
+		cant_while_spectating = "Nu poți face asta în timp ce ești spectator.",
 
 		you_have_been_kicked = "Ai fost dat afară de pe server de ${kicker} cu motivul `${reason}`.",
 		you_have_been_kicked_no_reason = "Ai fost dat afară de pe server fără un motiv specificat de ${kicker}.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		notification_freecam_detected = "Anti-Cheat: Freecam detectat",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Modificator de vehicule ilegal",
+		notification_illegal_vehicle_spawn = "Anti-Cheat: Vehicul Spawnt",
 		notification_fast_movement = "Anti-Cheat: Mișcare rapidă",
 		notification_illegal_freeze = "Anti-Cheat: Îngheț ilegal",
 		notification_invincibility = "Anti-Cheat: Invincibilitate",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		npc_debug_command_substitutes = "npc-uri",
 
 		network_debug_command = "network_debug",
-		network_debug_command_help = "Activați / dezactivați debuggerul rețelei de entități. Aceasta va afișa informații despre rețea referitoare la entitățile din apropiere.",
-		network_debug_parameter_minimal = "minimal",
-		network_debug_parameter_minimal_help = "Afișaj minim (implicit nu).",
+		network_debug_command_help = "Activează/dezactivează panoul de debugare a rețelei de entități. Acesta va afișa informații despre rețeaua entității la care te uiți.",
 		network_debug_command_substitutes = "net_debug, ndebug",
 
 		attach_command = "atașează",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		medical_care_1 = "Dacă sunteți răniți, puteți merge la spital pentru a vă înregistra și a primi tratament. Puteți găsi spitalul pe hartă. De asemenea, puteți utiliza bandaje sau truse de prim ajutor pentru a vă vindeca singuri.",
 		medical_care_2 = "Dacă reapăreți fără a fi adus la spital sau ieșiți din joc atunci când sunteți răniți, puteți pierde unele dintre obiectele voastre. Restartarea server-ului contează ca ieșire din joc.",
 
+		safety_hint = "Sfat: Poți dezactiva siguranța armei apăsând ALT și butonul central al mouse-ului. Fii în siguranță!",
+
 		closing_sentence = "Există mult mai multe activități de făcut în oraș! Întreabă în jur și fă-ți câțiva prieteni ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		many_states_set = "${count} stări setate",
 		no_states = "Fără stări",
 		entity_health = "Stare de sănătate ${health}/${maxHealth}",
-		first_owned_by_us = "Prima dată deținut de noi",
-		first_owned_by = "Prima dată deținut de",
-		first_owned_unknown = "Primul proprietar necunoscut",
+		owned_by_server = "Server",
+		first_owned_short = "Primul Proprietar: ${firstOwned}",
+		network_id_side = "ID Rețea: ${networkId}",
+		no_target = "Nici un țintă",
 		invalid_radius_parameter = "Parametrul `radius` este invalid.",
 		inject_code_not_developer = "Jucătorul încearcă să injecteze cod, dar nu face parte din echipa de dezvoltatori.",
 		inject_code_invalid_player = "Nu există jucători cu id-ul de server `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		debug_damage_enabled = "Debugging-ul pentru vătămări este activat.",
 		debug_damage_disabled = "Debugging-ul pentru vătămări este dezactivat.",
 
-		enabled_network_debug = "Debug network pentru entități activat. `PS` identifică entități posibil create.",
+		enabled_network_debug = "Debugging rețea entitate activat.",
 		disabled_network_debug = "Deblocarea rețelei de entități a fost dezactivată.",
 		failed_network_debug = "Nu s-a putut activa deblocarea rețelei de entități.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		searching_world = "Căutare în lume:\n${modelNames}",
 		copied_clipboard = "Coordonatele au fost copiate în clipboard.",
 
-		saved_vehicle_model_lists_to_file = "Listele de modele de vehicule au fost salvate într-un fișier de pe server."
+		saved_vehicle_model_lists_to_file = "Listele de modele de vehicule au fost salvate într-un fișier de pe server.",
+
+		network_debug_logs_title = "Debugging Rețea Activat",
+		network_debug_logs_details_on = "${consoleName} și-a activat debuggingul rețelei.",
+		network_debug_logs_details_off = "${consoleName} și-a dezactivat debuggingul rețelei."
 	},
 
 	debug_menu = {

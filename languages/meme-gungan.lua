@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["meme-gungan"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		cancelled_wipe = "Mesa say de wipe nosen be goin' to happun no mo'.",
 
 		there_is_people_nearby = "Deren playas closeby dat kin see you usin' da 'noclip' powah!",
+
+		cant_while_spectating = "Yousa can't do dis while spectating.",
 
 		you_have_been_kicked = "Yousa bin kicked by ${kicker} coz of `${reason}`.",
 		you_have_been_kicked_no_reason = "Yousa bin kicked by ${kicker} without a reason giben.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		notification_freecam_detected = "Oathee-Cheat: Freecam Datober",
 		notification_illegal_vehicle_modifier = "Oathee-Cheat: Vehicle Modiphiber",
+		notification_illegal_vehicle_spawn = "Anti-Cheat: Vehicle Spawned",
 		notification_fast_movement = "Oathee-Cheat: Fast Balaba",
 		notification_illegal_freeze = "Oathee-Cheat: Illegal Freeze",
 		notification_invincibility = "Oathee-Cheat: Invinsibliliber",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		npc_debug_command_substitutes = "npcs",
 
 		network_debug_command = "network_debug",
-		network_debug_command_help = "Goo-toggle da entity-network-debugger. Dis gonna show some network information 'bout nearby entities.",
-		network_debug_parameter_minimal = "minimal",
-		network_debug_parameter_minimal_help = "Minimal display (default no).",
+		network_debug_command_help = "Toggle da entity-network-debugger. Dis will show somen information about da entity yousa are lookin' at.",
 		network_debug_command_substitutes = "net_debug, ndebug",
 
 		attach_command = "attach",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		medical_care_1 = "If yousa get injured yousa can go to da hospital to check-in and get treated. Yousa can find da hospital on da map. Yousa can also use bandages or first aid kits to heal yourself.",
 		medical_care_2 = "If yousa respawn without being brought to da hospital or yousa exit da game while downed, yousa may lose some of yoursa items. A server restart counts as exiting da game.",
 
+		safety_hint = "Hint: Yousa can take your weapon off safety by pressin' ALT and da middle mouse button. Stay safe!",
+
 		closing_sentence = "Mesa gotsa lotsa more to do in da city! Ask around and make somesa friendsa ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		many_states_set = "${count} States Set",
 		no_states = "No States",
 		entity_health = "Health ${health}/${maxHealth}",
-		first_owned_by_us = "First Owned By Us",
-		first_owned_by = "First Owned By",
-		first_owned_unknown = "First Owner Unknown",
+		owned_by_server = "Server",
+		first_owned_short = "First Owner: ${firstOwned}",
+		network_id_side = "Network ID: ${networkId}",
+		no_target = "Meesa no find target",
 		invalid_radius_parameter = "Mesa think `radius` parameter is not working.",
 		inject_code_not_developer = "Yousa tryin to inject code, but you not a developer.",
 		inject_code_invalid_player = "No players with server id `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		debug_damage_enabled = "Damage debugging enabled.",
 		debug_damage_disabled = "Meesa no longer debugging damage.",
 
-		enabled_network_debug = "Meesa entity network debugging enabled. `PS` identifies possibly spawned entities.",
+		enabled_network_debug = "Entity network debuggin enabled.",
 		disabled_network_debug = "Mesa entity network debugging disabled.",
 		failed_network_debug = "Jar Jar Binks failed to enable entity network debugging.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		searching_world = "Mesa searching World:\n${modelNames}",
 		copied_clipboard = "Coordinates copied to clipboard.",
 
-		saved_vehicle_model_lists_to_file = "The vehicle model lists have been saved to a file on the server."
+		saved_vehicle_model_lists_to_file = "The vehicle model lists have been saved to a file on the server.",
+
+		network_debug_logs_title = "Toggled Network Debug",
+		network_debug_logs_details_on = "${consoleName} toggled deir network debug on.",
+		network_debug_logs_details_off = "${consoleName} toggled deir network debug off."
 	},
 
 	debug_menu = {

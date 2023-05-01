@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["meme-rude"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		cancelled_wipe = "The fucking wipe has been cancelled, stop being a little bitch.",
 
 		there_is_people_nearby = "Yo dumbass, there are fucking players nearby that could see you using noclip!",
+
+		cant_while_spectating = "You can't fucking do this while fucking spectating, dumbass.",
 
 		you_have_been_kicked = "Well fuck you, you've been kicked by ${kicker} for being a fucking piece of shit with the reason `${reason}`.",
 		you_have_been_kicked_no_reason = "You have been fucking kicked without a fucking specified reason by ${kicker}.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 		notification_freecam_detected = "Anti-Cheat: Holy shit, you're using a freecam!",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Hey, fuckface! Quit modifying your goddamn vehicle!",
+		notification_illegal_vehicle_spawn = "Anti-Cheat: A fucking vehicle has been spawned.",
 		notification_fast_movement = "Anti-Cheat: Stop fuckin' Usain Bolt-ing around like a maniac!",
 		notification_illegal_freeze = "Anti-Cheat: You tryna freeze this bitch? Not on my watch!",
 		notification_invincibility = "Anti-Cheat: Invincible? Yeah, right. You ain't no God, asshole!",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		npc_debug_command_substitutes = "f*cking npcs",
 
 		network_debug_command = "network_f*cking_debug",
-		network_debug_command_help = "Toggle the entity-network-debugger, you *sshole. This will show some network f*cking information about nearby entities.",
-		network_debug_parameter_minimal = "minimal *ss",
-		network_debug_parameter_minimal_help = "Minimal display (default no), dumba*s.",
+		network_debug_command_help = "Toggle the fucking entity-network-debugger. This shit will show you some fucking network information about the entity you are fucking looking at.",
 		network_debug_command_substitutes = "net_f*cking_debug, ndebug",
 
 		attach_command = "attach that sh*t",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		medical_care_1 = "If you get your ass kicked and need help, drag your sorry ass to the hospital. You can find it on the damn map. If you're too dumb to figure it out, use bandages or first aid kits to slap some band-aids on your wounds.",
 		medical_care_2 = "If you respawn without heading to the hospital, or you rage-quit like a little bitch when you're down and out, you might lose some of your shit. And if the server restarts, tough luck, you're screwed.",
 
+		safety_hint = "Hint: You can take your fucking weapon off fucking safety by pressing ALT and the fucking middle mouse button. Stay fucking safe!",
+
 		closing_sentence = "There's a lot more to do in this goddamn shithole! Ask around and make some fucking friends ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		many_states_set = "${count} Flipping States Set",
 		no_states = "No Damn States",
 		entity_health = "Pathetic Health ${health}/${maxHealth}",
-		first_owned_by_us = "First Owned By Our Godly Selves",
-		first_owned_by = "First Owned By Some Idiot",
-		first_owned_unknown = "First Owner Is So Pathetic We Don't Even Know Who It Is",
+		owned_by_server = "This fucking shit is owned by the fucking server.",
+		first_owned_short = "First fucking Owner: ${firstOwned}",
+		network_id_side = "Fucking Network ID: ${networkId}",
+		no_target = "No Fucking Target",
 		invalid_radius_parameter = "What the fuck? The `radius` parameter you entered is fucked up.",
 		inject_code_not_developer = "Who is this asshole trying to inject code? Oh, I see, just another fucking noob.",
 		inject_code_invalid_player = "Who the fuck are you trying to find? There's no player with the server ID of ${serverId}.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		debug_damage_enabled = "I'm not fucking around here, damage debugging has been enabled.",
 		debug_damage_disabled = "You're such a pussy, damage debugging has been disabled.",
 
-		enabled_network_debug = "Guess what, entity network debugging has been fucking enabled. You know what `PS` stands for? It's a hint for you, you useless piece of shit. It identifies possibly spawned entities.",
+		enabled_network_debug = "Entity network shit debugging enabled.",
 		disabled_network_debug = "Entity network debugging has been f***ing disabled.",
 		failed_network_debug = "Failed to f***ing enable entity network debugging.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		searching_world = "Let's see... we're fucking searching the world for these bitches:\n${modelNames}",
 		copied_clipboard = "We fucking copied the damn coordinates to the clipboard like a boss.",
 
-		saved_vehicle_model_lists_to_file = "We saved the goddamn vehicle model lists to a fucking file on the damn server. Easy peasy lemon squeezy."
+		saved_vehicle_model_lists_to_file = "We saved the goddamn vehicle model lists to a fucking file on the damn server. Easy peasy lemon squeezy.",
+
+		network_debug_logs_title = "Toggled Network Debug, Motherfucker",
+		network_debug_logs_details_on = "${consoleName} toggled their bullshit network debug on.",
+		network_debug_logs_details_off = "${consoleName} toggled their goddamn network debug off."
 	},
 
 	debug_menu = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["fr-FR"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		cancelled_wipe = "La réinitialisation a été annulée.",
 
 		there_is_people_nearby = "Il y a des joueurs à proximité qui pourraient vous voir utiliser le noclip !",
+
+		cant_while_spectating = "Vous ne pouvez pas faire cela en mode spectateur.",
 
 		you_have_been_kicked = "Vous avez été expulsé par ${kicker} pour la raison `${reason}`.",
 		you_have_been_kicked_no_reason = "Vous avez été expulsé sans raison spécifiée par ${kicker}.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 
 		notification_freecam_detected = "Anti-Cheat : Freecam détecté",
 		notification_illegal_vehicle_modifier = "Anti-Cheat : Modificateur de véhicule illégal",
+		notification_illegal_vehicle_spawn = "Anti-triche : véhicule apparu",
 		notification_fast_movement = "Anti-triche : Mouvement rapide",
 		notification_illegal_freeze = "Anti-triche : Immobilisation illégale",
 		notification_invincibility = "Anti-triche : Invincibilité",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		npc_debug_command_substitutes = "pnj",
 
 		network_debug_command = "debug_reseau",
-		network_debug_command_help = "Active ou désactive le débogage du réseau d'entités. Cela affichera des informations réseau sur les entités à proximité.",
-		network_debug_parameter_minimal = "minimal",
-		network_debug_parameter_minimal_help = "Affichage minimal (par défaut non).",
+		network_debug_command_help = "Activer ou désactiver l'affichage du débogage réseau. Cela affichera certaines informations réseau à propos de l'entité regardée.",
 		network_debug_command_substitutes = "net_debug, ndebug",
 
 		attach_command = "attacher",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		medical_care_1 = "Si vous êtes blessé, vous pouvez vous rendre à l'hôpital pour vous faire soigner. Vous pouvez trouver l'hôpital sur la carte. Vous pouvez également utiliser des bandages ou des trousses de premiers soins pour vous soigner.",
 		medical_care_2 = "Si vous réapparaissez sans avoir été amené à l'hôpital ou si vous quittez le jeu en étant blessé, vous risquez de perdre certains de vos objets. Un redémarrage du serveur compte comme une sortie du jeu.",
 
+		safety_hint = "Astuce : Vous pouvez désactiver la sécurité de votre arme en appuyant sur ALT et le bouton de la molette. Soyez prudent !",
+
 		closing_sentence = "Il y a beaucoup plus à faire dans la ville ! Demandez autour de vous et faites-vous des amis ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		many_states_set = "${count} États définis",
 		no_states = "Aucun État",
 		entity_health = "Santé ${health}/${maxHealth}",
-		first_owned_by_us = "Première Possession Par Nous",
-		first_owned_by = "Première Possession par",
-		first_owned_unknown = "Premier Propriétaire Inconnu",
+		owned_by_server = "Serveur",
+		first_owned_short = "Premier propriétaire : ${firstOwned}",
+		network_id_side = "ID du réseau : ${networkId}",
+		no_target = "Pas de cible",
 		invalid_radius_parameter = "Paramètre `radius` invalide.",
 		inject_code_not_developer = "Le joueur a tenté d'injecter du code mais il n'était pas un développeur.",
 		inject_code_invalid_player = "Il n'y a aucun joueur avec l'ID serveur `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		debug_damage_enabled = "Débogage de dommages activé.",
 		debug_damage_disabled = "Débogage de dommages désactivé.",
 
-		enabled_network_debug = "Débogage de réseau d'entités activé. `PS` identifie les entités potentiellement apparues.",
+		enabled_network_debug = "Débogage de réseau d'entité activé.",
 		disabled_network_debug = "Le débogage réseau de l'entité est désactivé.",
 		failed_network_debug = "Impossible d'activer le débogage réseau de l'entité.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		searching_world = "Recherche dans le monde:\n${modelNames}",
 		copied_clipboard = "Coordonnées copiées dans le presse-papier.",
 
-		saved_vehicle_model_lists_to_file = "Les listes de modèles de véhicules ont été enregistrées dans un fichier sur le serveur."
+		saved_vehicle_model_lists_to_file = "Les listes de modèles de véhicules ont été enregistrées dans un fichier sur le serveur.",
+
+		network_debug_logs_title = "Débogage de réseau basculé",
+		network_debug_logs_details_on = "${consoleName} a activé son débogage de réseau.",
+		network_debug_logs_details_off = "${consoleName} a désactivé son débogage de réseau."
 	},
 
 	debug_menu = {

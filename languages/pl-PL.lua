@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 1 (do not change)
+-- AUTO LOCALES: 2 (do not change)
 
 OP.Global.Locales.Languages["pl-PL"] = {
 	-- configuration settings for language
@@ -228,6 +228,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		cancelled_wipe = "Wymazywanie zostało anulowane.",
 
 		there_is_people_nearby = "W pobliżu są inni gracze, którzy mogą zobaczyć, iż używasz noclipa!",
+
+		cant_while_spectating = "Nie możesz tego zrobić podczas obserwowania.",
 
 		you_have_been_kicked = "Zostałeś wyrzucony przez ${kicker} z powodu `${reason}`.",
 		you_have_been_kicked_no_reason = "Zostałeś wyrzucony przez ${kicker} bez podania powodu.",
@@ -696,6 +698,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		notification_freecam_detected = "Anti-Cheat: Wykryto Freecam",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Modyfikacja pojazdu",
+		notification_illegal_vehicle_spawn = "Anty-Cheat: Pojazd zrespawnowany",
 		notification_fast_movement = "Anty-Cheat: Szybki ruch",
 		notification_illegal_freeze = "Anty-Cheat: Nielegalne zamrożenie",
 		notification_invincibility = "Anty-Cheat: Nieśmiertelność",
@@ -1795,9 +1798,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		npc_debug_command_substitutes = "npcs",
 
 		network_debug_command = "debugsieci",
-		network_debug_command_help = "Włącza / Wyłącza debugowanie sieci encji. Pokazuje informacje o sieci dla pobliskich obiektów.",
-		network_debug_parameter_minimal = "minimalny",
-		network_debug_parameter_minimal_help = "Minimalne wyświetlanie (domyślnie nie).",
+		network_debug_command_help = "Przełącz debugger sieciowe encji. Wyświetli to niektóre informacje sieciowe o encji, na którą patrzysz.",
 		network_debug_command_substitutes = "net_debug, ndebug",
 
 		attach_command = "dolacz",
@@ -4395,6 +4396,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		medical_care_1 = "Jeśli zostaniesz ranny, możesz udać się do szpitala, by się zarejestrować i otrzymać leczenie. Szpital znajdziesz na mapie. Możesz także użyć opatrunków lub zestawów pierwszej pomocy, aby się uleczyć.",
 		medical_care_2 = "Jeśli zostaniesz przeniesiony na punkt respawnu bez trafia do szpitala lub opuścisz grę będąc nieprzytomnym, możesz stracić niektóre przedmioty. Restart serwera jest równoznaczny z opuszczeniem gry.",
 
+		safety_hint = "Wskazówka: Możesz odbezpieczyć broń poprzez naciśnięcie ALT i środkowego przycisku myszy. Bądź bezpieczny!",
+
 		closing_sentence = "Jest wiele więcej do zrobienia w mieście! Porozmawiaj ze znajomymi i poznaj nowych ludzi ;)"
 	},
 
@@ -5402,9 +5405,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		many_states_set = "Ustawiono ${count} stanów",
 		no_states = "Brak stanów",
 		entity_health = "Życie ${health}/${maxHealth}",
-		first_owned_by_us = "Pierwszy Właściciel - My",
-		first_owned_by = "Pierwszy Właściciel - ",
-		first_owned_unknown = "Nieznany Pierwszy Właściciel",
+		owned_by_server = "Serwer",
+		first_owned_short = "Pierwszy właściciel: ${firstOwned}",
+		network_id_side = "ID sieciowe: ${networkId}",
+		no_target = "Brak celu",
 		invalid_radius_parameter = "Nieprawidłowy parametr `radius`.",
 		inject_code_not_developer = "Gracz próbował wstrzyknąć kod, ale nie jest deweloperem.",
 		inject_code_invalid_player = "Brak graczy z id serwera `${serverId}`.",
@@ -5489,7 +5493,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		debug_damage_enabled = "Debugowanie obrażeń włączone.",
 		debug_damage_disabled = "Debugowanie obrażeń wyłączone.",
 
-		enabled_network_debug = "Debugowanie sieci obiektów włączone. `PS` oznacza możliwe zespawnowane obiekty.",
+		enabled_network_debug = "Włączono debugowanie sieciowe obiektu.",
 		disabled_network_debug = "Wyłączono debugowanie sieci na elementach.",
 		failed_network_debug = "Nie udało się włączyć debugowania sieci na elementach.",
 
@@ -5514,7 +5518,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		searching_world = "Szukanie w świecie:\n${modelNames}",
 		copied_clipboard = "Skopiowano koordynaty do schowka.",
 
-		saved_vehicle_model_lists_to_file = "Listy modeli pojazdów zostały zapisane do pliku na serwerze."
+		saved_vehicle_model_lists_to_file = "Listy modeli pojazdów zostały zapisane do pliku na serwerze.",
+
+		network_debug_logs_title = "Debugowanie Sieciowe Przełączone",
+		network_debug_logs_details_on = "${consoleName} włączył(a) debugowanie sieciowe swojego obiektu.",
+		network_debug_logs_details_off = "${consoleName} wyłączył(a) debugowanie sieciowe swojego obiektu."
 	},
 
 	debug_menu = {
