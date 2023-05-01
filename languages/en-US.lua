@@ -8580,6 +8580,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		show_common_events_off = "Show common events: OFF",
 		show_common_events_on = "Show common events: ON",
 
+		explosion_events_type = "Type",
+		explosion_events_amount = "Amount",
+		explosion_events_nearby = "Nearby",
+		explosion_events_distance = "Distance",
+		explosion_events_player = "Player Name",
+
 		illegal_weapons_title = "Spawned weapons",
 		illegal_weapons_about = "In here the last 500 occurrences of spawned in weapons detected by the system are logged. When someone has a spawned in weapon, it doesn't necessarily mean they are modding, as modders can spawn weapons into other players hands and therefore other players would show up on here too.",
 		illegal_weapons_by_type = "Weapons by type",
