@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["sv-SE"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		wipe_props_command = "radera_props",
 		wipe_props_command_help = "Raderar props runt dig.",
 		wipe_props_command_parameter_radius = "radie",
-		wipe_props_command_parameter_radius_help = "Radien för raderingen (1-100).",
+		wipe_props_command_parameter_radius_help = "Radien för rensning (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		dispatch_command_parameter_message = "meddelande",
 		dispatch_command_parameter_message_help = "Meddelandet du vill skicka.",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "polis_kör_läge",
+		police_drive_mode_command_help = "Växla körläge för ditt polisfordon.",
+		police_drive_mode_command_parameter_mode = "läge",
+		police_drive_mode_command_parameter_mode_help = "Det läge du vill ha. \"D\" för drive och \"S\" för sport (sport är standard).",
+		police_drive_mode_command_substitutes = "kör_läge",
 
 		-- jobs/state
 		license_give_command = "ge_licens",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		categories = "Kategorier",
 		refresh = "Uppdatera",
 		refreshing = "Uppdaterar...",
+		not_available = "Ej tillgängligt",
 
 		kill = "Döda",
 		headshot = "Headshot",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		hotwire_driving_detections_name = "Spelarens namn",
 
+		model = "Modell",
+		label = "Etikett",
+		amount = "Belopp",
+		console_name = "Spelare",
+		expected = "Förväntat",
+		actual = "Verkligt",
+		words = "Ord",
+		distance = "Avstånd",
+		weapon = "Vapen",
+		type = "Typ",
+		nearby = "I närheten",
+
 		no_entries = "Inga poster"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		no_character_loaded = "Spelaren har ingen karaktär laddad.",
 		not_same_instance = "Spelaren är inte i samma instans som du.",
 
+		loading_coords = "Laddar koordinater",
+		preloading_area = "Förvärlar område",
+		finding_player = "Letar efter spelare",
+
 		invincibility_active = "Odödlighet: ~r~Aktiv~w~",
 		invincibility_inactive_dead = "Odödlighet: ~g~Inaktiv~w~ (död)",
 		invincibility_inactive = "Odödlighet: ~g~Inaktiv~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		cannot_use_dispatch = "Du kan inte använda dispatch just nu.",
 
 		dispatch_message_logs_title = "Dispatch-meddelande",
-		dispatch_message_logs_details = "${consoleName} skickade en dispatchmeddelande: `${message}`."
+		dispatch_message_logs_details = "${consoleName} skickade en dispatchmeddelande: `${message}`.",
+
+		no_keys = "Du har inte nycklarna till fordonet.",
+		invalid_drive_mode = "Ogiltigt körläge.",
+		not_in_police_vehicle = "Du sitter inte i en polisbil.",
+		drive_mode_too_fast = "Du åker för fort för att byta körläge.",
+		drive_mode_already_set = "Din körläge är redan inställt på `${mode}`.",
+		drive_mode_failed = "Misslyckades med att ändra körläge.",
+		drive_mode_set = "Körläget har ställts in till `${mode}`.",
+
+		mode_s = "Sport-läge",
+		mode_d = "Kör-läge",
+
+		drive_mode_logs_title = "Körläge Ändrat",
+		drive_mode_logs_details = "${consoleName} har ändrat sitt körläge till `${mode}`."
 	},
 
 	state = {

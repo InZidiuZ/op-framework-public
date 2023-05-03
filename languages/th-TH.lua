@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		wipe_props_command = "wipe_props",
 		wipe_props_command_help = "ลบสิ่งของ (prop) รอบๆ คุณ",
 		wipe_props_command_parameter_radius = "รัศมี",
-		wipe_props_command_parameter_radius_help = "รัศมีสำหรับการลบ (1-100)",
+		wipe_props_command_parameter_radius_help = "รัศมีสำหรับล้าง (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		dispatch_command_parameter_message = "ข้อความ",
 		dispatch_command_parameter_message_help = "ข้อความที่คุณต้องการส่ง",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "police_drive_mode",
+		police_drive_mode_command_help = "เปิด/ปิดโหมดขับรถของรถตำรวจของคุณ",
+		police_drive_mode_command_parameter_mode = "mode",
+		police_drive_mode_command_parameter_mode_help = "โหมดที่ต้องการตั้งค่า \"D\" สำหรับโหมดขับเคลื่อนแบบปกติ และ \"S\" สำหรับโหมดขับเคลื่อนแบบสปอร์ต (เป็นค่าเริ่มต้น)",
+		police_drive_mode_command_substitutes = "drive_mode",
 
 		-- jobs/state
 		license_give_command = "license_give",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		categories = "หมวดหมู่",
 		refresh = "รีเฟรช",
 		refreshing = "กำลังรีเฟรช...",
+		not_available = "ไม่มี",
 
 		kill = "ฆ่า",
 		headshot = "ยิงหัว",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		hotwire_driving_detections_name = "ชื่อผู้เล่น",
 
+		model = "โมเดล",
+		label = "ป้ายชื่อ",
+		amount = "จำนวน",
+		console_name = "ผู้เล่น",
+		expected = "คาดว่า",
+		actual = "จริง",
+		words = "คำ",
+		distance = "ระยะทาง",
+		weapon = "อาวุธ",
+		type = "ประเภท",
+		nearby = "ใกล้เคียง",
+
 		no_entries = "ไม่มีรายการ"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		no_character_loaded = "ผู้เล่นยังไม่ได้โหลดตัวละคร.",
 		not_same_instance = "ผู้เล่นไม่ได้อยู่ใน Instance เดียวกับคุณ.",
 
+		loading_coords = "กำลังโหลดพิกัด",
+		preloading_area = "กำลังโหลดพื้นที่",
+		finding_player = "กำลังค้นหาผู้เล่น",
+
 		invincibility_active = "ไม่ตาย: ~r~เปิด~w~",
 		invincibility_inactive_dead = "ไม่ตาย: ~g~ปิด~w~ (ตาย)",
 		invincibility_inactive = "ไม่ตาย: ~g~ปิด~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["th-TH"] = {
 		cannot_use_dispatch = "คุณไม่สามารถใช้ส่ง Dispatch ได้ในขณะนี้",
 
 		dispatch_message_logs_title = "บันทึกข้อความ Dispatch",
-		dispatch_message_logs_details = "${consoleName} ส่งข้อความเผยแพร่: `${message}`."
+		dispatch_message_logs_details = "${consoleName} ส่งข้อความเผยแพร่: `${message}`.",
+
+		no_keys = "คุณไม่มีกุญแจรถยนต์นี้",
+		invalid_drive_mode = "โหมดขับรถไม่ถูกต้อง",
+		not_in_police_vehicle = "คุณไม่ได้อยู่ในรถตำรวจ",
+		drive_mode_too_fast = "คุณกำลังขับรถอย่างเร็วเกินไปที่จะเปลี่ยนโหมดขับรถได้",
+		drive_mode_already_set = "โหมดขับของคุณถูกตั้งค่าเป็น `${mode}` แล้ว.",
+		drive_mode_failed = "การตั้งค่าโหมดขับไม่สำเร็จ.",
+		drive_mode_set = "ตั้งค่าโหมดขับเป็น `${mode}` สำเร็จแล้ว.",
+
+		mode_s = "โหมดสปอร์ต",
+		mode_d = "โหมดขับปกติ",
+
+		drive_mode_logs_title = "เปลี่ยนโหมดขับ",
+		drive_mode_logs_details = "${consoleName} ได้เปลี่ยนโหมดขับเป็น `${mode}`."
 	},
 
 	state = {

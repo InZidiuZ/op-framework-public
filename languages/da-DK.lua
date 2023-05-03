@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["da-DK"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		wipe_props_command = "slet_objekter",
 		wipe_props_command_help = "Sletter objekter omkring dig.",
 		wipe_props_command_parameter_radius = "radius",
-		wipe_props_command_parameter_radius_help = "Radius for sletning (1-100).",
+		wipe_props_command_parameter_radius_help = "Radius for at fjerne genstande (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["da-DK"] = {
 		dispatch_command_parameter_message = "besked",
 		dispatch_command_parameter_message_help = "Den besked, du vil sende.",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "police_drive_mode",
+		police_drive_mode_command_help = "Ændrer køretilstand for dit politikøretøj.",
+		police_drive_mode_command_parameter_mode = "tilstand",
+		police_drive_mode_command_parameter_mode_help = "Den tilstand, du ønsker at indstille. \"D\" for standard og \"S\" for sport (sportstilstand er standard).",
+		police_drive_mode_command_substitutes = "køremåde",
 
 		-- jobs/state
 		license_give_command = "licens_giv",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		categories = "Kategorier",
 		refresh = "Opdater",
 		refreshing = "Opdaterer...",
+		not_available = "Ikke tilgængelig",
 
 		kill = "Dræb",
 		headshot = "Headshot",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		hotwire_driving_detections_name = "Spillernavn",
 
+		model = "Model",
+		label = "Mærke",
+		amount = "Beløb",
+		console_name = "Spiller",
+		expected = "Forventet",
+		actual = "Aktuel",
+		words = "Ord",
+		distance = "Afstand",
+		weapon = "Våben",
+		type = "Type",
+		nearby = "I nærheden",
+
 		no_entries = "Ingen poster"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		no_character_loaded = "Spilleren har ikke indlæst en karakter.",
 		not_same_instance = "Spilleren er ikke i samme instans som dig.",
 
+		loading_coords = "Indlæser koordinater",
+		preloading_area = "Forudindlæser område",
+		finding_player = "Finder spiller",
+
 		invincibility_active = "Usårlighed: ~r~Aktiv~w~",
 		invincibility_inactive_dead = "Usårlighed: ~g~Inaktiv~w~ (død)",
 		invincibility_inactive = "Usårlighed: ~g~Inaktiv~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["da-DK"] = {
 		cannot_use_dispatch = "Du kan ikke bruge dispatch lige nu.",
 
 		dispatch_message_logs_title = "Dispatch Besked",
-		dispatch_message_logs_details = "${consoleName} har sendt en dispatch besked: `${message}`."
+		dispatch_message_logs_details = "${consoleName} har sendt en dispatch besked: `${message}`.",
+
+		no_keys = "Du har ikke nøglerne til dette køretøj.",
+		invalid_drive_mode = "Ugyldig køremåde.",
+		not_in_police_vehicle = "Du er ikke i en politibil.",
+		drive_mode_too_fast = "Du kører for hurtigt til at skifte køremåde.",
+		drive_mode_already_set = "Din køremåde er allerede indstillet til `${mode}`.",
+		drive_mode_failed = "Kunne ikke ændre køremåde.",
+		drive_mode_set = "Køremåde er blevet indstillet til `${mode}`.",
+
+		mode_s = "Sportstilstand",
+		mode_d = "Almindelig tilstand",
+
+		drive_mode_logs_title = "Køremåde ændret",
+		drive_mode_logs_details = "${consoleName} ændrede deres køremåde til `${mode}`."
 	},
 
 	state = {

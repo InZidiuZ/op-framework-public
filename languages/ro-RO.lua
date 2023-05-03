@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["ro-RO"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		wipe_props_command = "sterge_obiectele",
 		wipe_props_command_help = "Șterge obiectele din jurul dvs.",
 		wipe_props_command_parameter_radius = "rază",
-		wipe_props_command_parameter_radius_help = "Raza pentru ștergere (1-100).",
+		wipe_props_command_parameter_radius_help = "Raza pentru ștergere (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		dispatch_command_parameter_message = "mesaj",
 		dispatch_command_parameter_message_help = "Mesajul pe care doriți să îl trimiteți.",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "mod_politie_deplasare",
+		police_drive_mode_command_help = "Comută modul de deplasare al vehiculului de poliție.",
+		police_drive_mode_command_parameter_mode = "mod",
+		police_drive_mode_command_parameter_mode_help = "Modul pe care doriți să îl setați. \"D\" pentru conducere și \"S\" pentru sport (modul sport este implicit).",
+		police_drive_mode_command_substitutes = "mod_deplasare_politie",
 
 		-- jobs/state
 		license_give_command = "acorda_licenta",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		categories = "Categorii",
 		refresh = "Reîmprospătează",
 		refreshing = "Se reîmprospătează...",
+		not_available = "N/disponibil",
 
 		kill = "Omoară",
 		headshot = "Lovitură la cap",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		hotwire_driving_detections_name = "Numele Jucătorului",
 
+		model = "Model",
+		label = "Etichetă",
+		amount = "Cantitate",
+		console_name = "Jucător",
+		expected = "Aşteptat",
+		actual = "Real",
+		words = "Cuvinte",
+		distance = "Distanţă",
+		weapon = "Arma",
+		type = "Tip",
+		nearby = "Aproape",
+
 		no_entries = "Nu există intrări"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		no_character_loaded = "Jucătorul nu are un personaj încărcat.",
 		not_same_instance = "Jucătorul nu este în aceeași instanță cu tine.",
 
+		loading_coords = "Se încarcă coordonatele",
+		preloading_area = "Se preîncarcă zona",
+		finding_player = "Căutarea jucătorului",
+
 		invincibility_active = "Invincibilitate: ~r~Activă~w~",
 		invincibility_inactive_dead = "Invincibilitate: ~g~Inactivă~w~ (mort)",
 		invincibility_inactive = "Invincibilitate: ~g~Inactivă~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		cannot_use_dispatch = "Nu poți utiliza dispeceratul în acest moment.",
 
 		dispatch_message_logs_title = "Jurnalele mesajelor de dispecerat",
-		dispatch_message_logs_details = "${consoleName} a trimis un mesaj de dispecerat: `${message}`."
+		dispatch_message_logs_details = "${consoleName} a trimis un mesaj de dispecerat: `${message}`.",
+
+		no_keys = "Nu aveți cheile acestui vehicul.",
+		invalid_drive_mode = "Mod de conducere nevalid.",
+		not_in_police_vehicle = "Nu sunteți într-un vehicul de poliție.",
+		drive_mode_too_fast = "Mergeți prea repede pentru a schimba modurile de conducere.",
+		drive_mode_already_set = "Modul de conducere este deja setat pe `${mode}`.",
+		drive_mode_failed = "Setarea modului de conducere a eșuat.",
+		drive_mode_set = "Modulul de conducere a fost setat cu succes pe `${mode}`.",
+
+		mode_s = "Modul Sport",
+		mode_d = "Modul Conducere",
+
+		drive_mode_logs_title = "Modulul de conducere a fost schimbat",
+		drive_mode_logs_details = "${consoleName} a schimbat modulul de conducere pe  `${mode}`."
 	},
 
 	state = {

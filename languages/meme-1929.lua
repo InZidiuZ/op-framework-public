@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["meme-1929"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		wipe_props_command = "wipe_props",
 		wipe_props_command_help = "Removes objects in the vicinity.",
 		wipe_props_command_parameter_radius = "radius",
-		wipe_props_command_parameter_radius_help = "The radius for the deletion (1-100).",
+		wipe_props_command_parameter_radius_help = "The radius fur the wipe (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		dispatch_command_parameter_message = "message",
 		dispatch_command_parameter_message_help = "The message thou desirest to send.",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "police_drive_mode",
+		police_drive_mode_command_help = "Toggle thee drife mole of your police vehicle.",
+		police_drive_mode_command_parameter_mode = "mole",
+		police_drive_mode_command_parameter_mode_help = "The mole you want to set. \"D\" for drife and \"S\" for sport (sport is default).",
+		police_drive_mode_command_substitutes = "drive_mode",
 
 		-- jobs/state
 		license_give_command = "license_give",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		categories = "Categories",
 		refresh = "Refresh",
 		refreshing = "Refreshing...",
+		not_available = "N/A",
 
 		kill = "Kill",
 		headshot = "Headshot",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		hotwire_driving_detections_name = "Name of Player",
 
+		model = "Model",
+		label = "Labul",
+		amount = "Amount",
+		console_name = "Player Name",
+		expected = "Expcted",
+		actual = "Actual",
+		words = "Words",
+		distance = "Distance",
+		weapon = "Arms",
+		type = "Kind",
+		nearby = "Nearby",
+
 		no_entries = "No Entries"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		no_character_loaded = "Player hath not loaded a character.",
 		not_same_instance = "Player is not in the same instance as thou.",
 
+		loading_coords = "Loading Coordinates",
+		preloading_area = "Preloading Area",
+		finding_player = "Searching Player",
+
 		invincibility_active = "Invincibility: ~r~Active~w~",
 		invincibility_inactive_dead = "Invincibility: ~g~Inactive~w~ (dead)",
 		invincibility_inactive = "Invincibility: ~g~Inactive~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		cannot_use_dispatch = "Thou canst not use dispatcheth right now.",
 
 		dispatch_message_logs_title = "Dispatch Message Logs",
-		dispatch_message_logs_details = "${consoleName} hath sent forth a dispatch message: `${message}`."
+		dispatch_message_logs_details = "${consoleName} hath sent forth a dispatch message: `${message}`.",
+
+		no_keys = "The keys to this vehicle are not in your possession.",
+		invalid_drive_mode = "Invalid driving mode.",
+		not_in_police_vehicle = "You are not in a police vehicle.",
+		drive_mode_too_fast = "You are driving too fast to change driving modes.",
+		drive_mode_already_set = "Thou hast already set thy driving mode to `${mode}`.",
+		drive_mode_failed = "Failed to set driving mode.",
+		drive_mode_set = "Successfully set driving mode to `${mode}`.",
+
+		mode_s = "Sport-Mode",
+		mode_d = "Drive-Mode",
+
+		drive_mode_logs_title = "Changed Driving Mode",
+		drive_mode_logs_details = "${consoleName} changed their driving mode to `${mode}`."
 	},
 
 	state = {

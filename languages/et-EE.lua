@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["et-EE"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		wipe_props_command = "puhasta_objektid",
 		wipe_props_command_help = "Puhastab piirkonda lähedalolevad objektid.",
 		wipe_props_command_parameter_radius = "raadius",
-		wipe_props_command_parameter_radius_help = "Puhastatav raadius (1-100).",
+		wipe_props_command_parameter_radius_help = "Puhastuse raadius (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["et-EE"] = {
 		dispatch_command_parameter_message = "sõnum",
 		dispatch_command_parameter_message_help = "Sõnum, mida soovite saata.",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "politsei_sõidurežiim",
+		police_drive_mode_command_help = "Lülita oma politsei sõiduki sõidurežiim sisse või välja.",
+		police_drive_mode_command_parameter_mode = "režiim",
+		police_drive_mode_command_parameter_mode_help = "Režiim, mida soovite seada. \"D\" tähendab \"drive\" ja \"S\" tähendab \"sport\" (sportrežiim on vaikimisi).",
+		police_drive_mode_command_substitutes = "sõidurežiim",
 
 		-- jobs/state
 		license_give_command = "luba_andmine",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		categories = "Kategooriad",
 		refresh = "Värskenda",
 		refreshing = "Laadimine...",
+		not_available = "Puudub",
 
 		kill = "Tapmine",
 		headshot = "Pähe laskmine",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		hotwire_driving_detections_name = "Mängija nimi",
 
+		model = "Mudel",
+		label = "Silt",
+		amount = "Summa",
+		console_name = "Mängija",
+		expected = "Oodatud",
+		actual = "Tegelik",
+		words = "Sõnad",
+		distance = "Kaugus",
+		weapon = "Relv",
+		type = "Tüüp",
+		nearby = "Läheduses",
+
 		no_entries = "Sissekanded puuduvad"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		no_character_loaded = "Mängijal ei ole karakterit valitud.",
 		not_same_instance = "Mängija ei ole samas instantsis kui sina.",
 
+		loading_coords = "Koordinaatide laadimine",
+		preloading_area = "Eelnevalt laaditav piirkond",
+		finding_player = "Mängija otsimine",
+
 		invincibility_active = "Surematuse režiim: ~r~Aktiivne~w~",
 		invincibility_inactive_dead = "Surematuse režiim: ~g~Mitteaktiivne~w~ (surnud)",
 		invincibility_inactive = "Surematuse režiim: ~g~Mitteaktiivne~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["et-EE"] = {
 		cannot_use_dispatch = "Te ei saa hetkel kasutada hädakõnet.",
 
 		dispatch_message_logs_title = "Hädakõne sõnum",
-		dispatch_message_logs_details = "${consoleName} saatis hädakõne sõnumi: `${message}`."
+		dispatch_message_logs_details = "${consoleName} saatis hädakõne sõnumi: `${message}`.",
+
+		no_keys = "Sul ei ole selle sõiduki võtmeid.",
+		invalid_drive_mode = "Vigane juhtimisrežiim.",
+		not_in_police_vehicle = "Sa ei ole politseisõidukis.",
+		drive_mode_too_fast = "Sa sõidad liiga kiiresti, et muuta juhtimisrežiimi.",
+		drive_mode_already_set = "Teie sõidurežiim on juba määratud `${mode}`.",
+		drive_mode_failed = "Sõidurežiimi määramine ebaõnnestus.",
+		drive_mode_set = "Sõidurežiim on edukalt määratud `${mode}`.",
+
+		mode_s = "Sport-Režiim",
+		mode_d = "Tavarežiim",
+
+		drive_mode_logs_title = "Sõidurežiim muutus",
+		drive_mode_logs_details = "${consoleName} muutis oma sõidurežiimi `${mode}`'ks."
 	},
 
 	state = {

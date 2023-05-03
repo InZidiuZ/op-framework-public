@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["meme-valleygirl"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		wipe_props_command = "wipe_props",
 		wipe_props_command_help = "Like, totally obliterates props all around you.",
 		wipe_props_command_parameter_radius = "radius",
-		wipe_props_command_parameter_radius_help = "The radius for the wipe (1-100), y'know.",
+		wipe_props_command_parameter_radius_help = "The like, radius for the wipe (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		dispatch_command_parameter_message = "message",
 		dispatch_command_parameter_message_help = "The totally awesome message you want to send, duh.",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "police_drive_mode",
+		police_drive_mode_command_help = "Toggle the drive mode of your police ride.",
+		police_drive_mode_command_parameter_mode = "mode",
+		police_drive_mode_command_parameter_mode_help = "The mode you want to set. \"D\" for drive and \"S\" for sport (sport is default).",
+		police_drive_mode_command_substitutes = "drive_mode",
 
 		-- jobs/state
 		license_give_command = "license_give",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		categories = "Categories, like OMG!",
 		refresh = "Refresh, duh!",
 		refreshing = "Refreshing... like totally!",
+		not_available = "Not available",
 
 		kill = "Kill, like so dead",
 		headshot = "Headshot, like a total boss",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		hotwire_driving_detections_name = "Player Name",
 
+		model = "Model",
+		label = "Label",
+		amount = "Amount",
+		console_name = "Player Name",
+		expected = "Expected",
+		actual = "Actually",
+		words = "Words",
+		distance = "Distance",
+		weapon = "Weapon",
+		type = "Type",
+		nearby = "Like, Nearby",
+
 		no_entries = "Like, No entries, duh!"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		no_character_loaded = "Uh oh, it looks like, like, that player hasn't loaded a character.",
 		not_same_instance = "Umm, like, that player isn't in your group or whatever, so you can't spectate them.",
 
+		loading_coords = "Loading the Coords",
+		preloading_area = "Preloading the Area",
+		finding_player = "Looking for the Player",
+
 		invincibility_active = "OMG, like, you're totally invincible right now! Yas!",
 		invincibility_inactive_dead = "Invincibility: ~g~Inactive~w~ (dead)",
 		invincibility_inactive = "Invincibility: ~g~Inactive~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		cannot_use_dispatch = "Sorry, you can't use dispatch at the moment.",
 
 		dispatch_message_logs_title = "Dispatch Message Logs",
-		dispatch_message_logs_details = "${consoleName} like, totally sent a dispatch message: `${message}`. So rad!"
+		dispatch_message_logs_details = "${consoleName} like, totally sent a dispatch message: `${message}`. So rad!",
+
+		no_keys = "Like, You don't have the keys to this vehicle.",
+		invalid_drive_mode = "That's like, an invalid drive mode.",
+		not_in_police_vehicle = "You're totally not in a police car right now.",
+		drive_mode_too_fast = "You're like, going too fast to change drive modes.",
+		drive_mode_already_set = "Like, your drive mode is already set to `${mode}`.",
+		drive_mode_failed = "Ugh, failed to set drive mode.",
+		drive_mode_set = "Yay, you successfully set drive mode to `${mode}`!",
+
+		mode_s = "Sport-Mode",
+		mode_d = "Drive-Mode",
+
+		drive_mode_logs_title = "Drive Mode Changed",
+		drive_mode_logs_details = "${consoleName} changed their drive mode to `${mode}`. So rad!"
 	},
 
 	state = {

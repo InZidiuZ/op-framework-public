@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["ko-KR"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		wipe_props_command = "wipe_props",
 		wipe_props_command_help = "근처 소품들을 제거합니다.",
 		wipe_props_command_parameter_radius = "반경",
-		wipe_props_command_parameter_radius_help = "제거 반경 (1-100).",
+		wipe_props_command_parameter_radius_help = "제거 반경 (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		dispatch_command_parameter_message = "메시지",
 		dispatch_command_parameter_message_help = "보내고자 하는 메시지입니다.",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "경찰_운전_모드",
+		police_drive_mode_command_help = "경찰 차량의 주행 모드를 전환합니다.",
+		police_drive_mode_command_parameter_mode = "모드",
+		police_drive_mode_command_parameter_mode_help = "설정할 모드입니다. \"D\"는 드라이브, \"S\"는 스포츠모드입니다 (기본값은 스포츠모드입니다).",
+		police_drive_mode_command_substitutes = "운전_모드",
 
 		-- jobs/state
 		license_give_command = "라이선스_부여",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		categories = "카테고리",
 		refresh = "새로고침",
 		refreshing = "새로고침 중...",
+		not_available = "N/A",
 
 		kill = "킬",
 		headshot = "헤드샷",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		hotwire_driving_detections_name = "플레이어 이름",
 
+		model = "모델",
+		label = "이름표",
+		amount = "금액",
+		console_name = "플레이어",
+		expected = "예상",
+		actual = "실제",
+		words = "단어",
+		distance = "거리",
+		weapon = "무기",
+		type = "종류",
+		nearby = "근처",
+
 		no_entries = "항목 없음"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		no_character_loaded = "플레이어가 캐릭터를 불러오지 않았습니다.",
 		not_same_instance = "플레이어가 현재 인스턴스에 존재하지 않습니다.",
 
+		loading_coords = "좌표 불러오는 중",
+		preloading_area = "영역 미리 불러오는 중",
+		finding_player = "플레이어 찾는 중",
+
 		invincibility_active = "무적: ~r~활성화~w~",
 		invincibility_inactive_dead = "무적: ~g~비활성화~w~ (사망)",
 		invincibility_inactive = "무적: ~g~비활성화~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		cannot_use_dispatch = "지금은 디스패치를 사용할 수 없습니다.",
 
 		dispatch_message_logs_title = "디스패치 메시지",
-		dispatch_message_logs_details = "${consoleName}이(가) 디스패치 메시지를 보냈습니다: `${message}`."
+		dispatch_message_logs_details = "${consoleName}이(가) 디스패치 메시지를 보냈습니다: `${message}`.",
+
+		no_keys = "이 차량에 열쇠가 없습니다.",
+		invalid_drive_mode = "유효하지 않은 운전 모드입니다.",
+		not_in_police_vehicle = "당신은 경찰 차량에 타고 있지 않습니다.",
+		drive_mode_too_fast = "운전 모드를 변경하기에는 너무 빠릅니다.",
+		drive_mode_already_set = "운전 모드가 이미 `${mode}`(으)로 설정되어 있습니다.",
+		drive_mode_failed = "운전 모드 설정에 실패했습니다.",
+		drive_mode_set = "운전 모드를 성공적으로 `${mode}`(으)로 설정했습니다.",
+
+		mode_s = "스포츠 모드",
+		mode_d = "드라이브 모드",
+
+		drive_mode_logs_title = "운전 모드 변경됨",
+		drive_mode_logs_details = "${consoleName}님이 운전 모드를 `${mode}`(으)로 변경했습니다."
 	},
 
 	state = {

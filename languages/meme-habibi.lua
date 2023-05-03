@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["meme-habibi"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		wipe_props_command = "wipe_props",
 		wipe_props_command_help = "Clears props around you.",
 		wipe_props_command_parameter_radius = "radius",
-		wipe_props_command_parameter_radius_help = "The radius for clearing (1-100).",
+		wipe_props_command_parameter_radius_help = "The radius for the wipe (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		dispatch_command_parameter_message = "message",
 		dispatch_command_parameter_message_help = "The message you want to send.",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "police_drive_mode",
+		police_drive_mode_command_help = "Toggle the drive mode of your police vehicle.",
+		police_drive_mode_command_parameter_mode = "mode",
+		police_drive_mode_command_parameter_mode_help = "The mode you want to set. \"D\" for drive and \"S\" for sport (sport is default).",
+		police_drive_mode_command_substitutes = "drive_mode",
 
 		-- jobs/state
 		license_give_command = "license_give",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		categories = "الفئات",
 		refresh = "إعادة تحميل",
 		refreshing = "جارٍ إعادة التحميل...",
+		not_available = "Mooshkla!",
 
 		kill = "قتل",
 		headshot = "رأس",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		hotwire_driving_detections_name = "اسم اللاعب",
 
+		model = "Zawag",
+		label = "Etiket",
+		amount = "المبلغ",
+		console_name = "اسم اللاعب",
+		expected = "متوقع",
+		actual = "فعلي",
+		words = "الكلمات",
+		distance = "المسافة",
+		weapon = "السلاح",
+		type = "النوع",
+		nearby = "القريب",
+
 		no_entries = "لا توجد إدخالات"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		no_character_loaded = "L-Loghba m'ghandha xejn imhatriaħ.",
 		not_same_instance = "Il-loghba ma hiex fil-istess istanza bħalik.",
 
+		loading_coords = "جاري التحميل للإحداثيات",
+		preloading_area = "جاري تحميل المنطقة السابقة",
+		finding_player = "جاري البحث عن اللاعب",
+
 		invincibility_active = "Invincibility: ~r~Attiva~w~",
 		invincibility_inactive_dead = "Invincibility: ~g~Inattiva~w~ (miet)",
 		invincibility_inactive = "Invincibility: ~g~Inattiva~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		cannot_use_dispatch = "لا يمكنك استخدام التوجيه الآن.",
 
 		dispatch_message_logs_title = "سجل رسائل التوجيه",
-		dispatch_message_logs_details = "${consoleName} sent a dispatch message: `${message}`."
+		dispatch_message_logs_details = "${consoleName} sent a dispatch message: `${message}`.",
+
+		no_keys = "ليس لديك مفاتيح هذه السيارة.",
+		invalid_drive_mode = "وضع القيادة غير صالح.",
+		not_in_police_vehicle = "أنت لست في سيارة الشرطة.",
+		drive_mode_too_fast = "أنت تسير بسرعة كبيرة جدًا لتغيير وضع القيادة.",
+		drive_mode_already_set = "Yalla, your drive mode was already set to `${mode}`.",
+		drive_mode_failed = "Ehwallah, couldn't set drive mode.",
+		drive_mode_set = "Mabrook! Drive mode has been set to `${mode}`.",
+
+		mode_s = "Sport-Mode",
+		mode_d = "Drive-Mode",
+
+		drive_mode_logs_title = "Drive Mode Changed",
+		drive_mode_logs_details = "${consoleName} changed their drive mode to `${mode}` ya habibi."
 	},
 
 	state = {

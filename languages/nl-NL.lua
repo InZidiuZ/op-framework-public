@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		wipe_props_command = "verwijder_props",
 		wipe_props_command_help = "Verwijdert props in de buurt.",
 		wipe_props_command_parameter_radius = "straal",
-		wipe_props_command_parameter_radius_help = "De straal voor de verwijdering (1-100).",
+		wipe_props_command_parameter_radius_help = "De straal voor het wissen (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		dispatch_command_parameter_message = "bericht",
 		dispatch_command_parameter_message_help = "Het bericht dat je wilt verzenden.",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "politie_rijmodus",
+		police_drive_mode_command_help = "Schakel tussen de rijmodi van je politievoertuig.",
+		police_drive_mode_command_parameter_mode = "modus",
+		police_drive_mode_command_parameter_mode_help = "De modus die je wilt instellen. \"D\" voor rijden en \"S\" voor sport (sport is standaard).",
+		police_drive_mode_command_substitutes = "rijmodus",
 
 		-- jobs/state
 		license_give_command = "rijbewijs_geven",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		categories = "Categorieën",
 		refresh = "Verversen",
 		refreshing = "Aan het verversen...",
+		not_available = "Niet beschikbaar",
 
 		kill = "Dood",
 		headshot = "Hoofdschot",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		hotwire_driving_detections_name = "Spelersnaam",
 
+		model = "Model",
+		label = "Label",
+		amount = "Bedrag",
+		console_name = "Speler",
+		expected = "Verwacht",
+		actual = "Feitelijk",
+		words = "Woorden",
+		distance = "Afstand",
+		weapon = "Wapen",
+		type = "Type",
+		nearby = "Dichtbij",
+
 		no_entries = "Geen invoer"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		no_character_loaded = "Speler heeft geen personage geladen.",
 		not_same_instance = "Speler is niet in dezelfde instance als jij.",
 
+		loading_coords = "Coördinaten laden",
+		preloading_area = "Gebied voorladen",
+		finding_player = "Speler zoeken",
+
 		invincibility_active = "Onsterfelijkheid: ~r~Actief~w~",
 		invincibility_inactive_dead = "Onsterfelijkheid: ~g~Inactief~w~ (dood)",
 		invincibility_inactive = "Onsterfelijkheid: ~g~Inactief~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		cannot_use_dispatch = "Je kunt momenteel geen gebruik maken van Dispatch.",
 
 		dispatch_message_logs_title = "Dispatch Bericht",
-		dispatch_message_logs_details = "${consoleName} heeft een Dispatch bericht verzonden: `${message}`."
+		dispatch_message_logs_details = "${consoleName} heeft een Dispatch bericht verzonden: `${message}`.",
+
+		no_keys = "Je hebt geen sleutels van dit voertuig.",
+		invalid_drive_mode = "Ongeldige rijmodus.",
+		not_in_police_vehicle = "Je zit niet in een politievoertuig.",
+		drive_mode_too_fast = "Je gaat te snel om van rijmodus te veranderen.",
+		drive_mode_already_set = "Je rijmodus is al ingesteld op `${mode}`.",
+		drive_mode_failed = "Het instellen van de rijmodus is mislukt.",
+		drive_mode_set = "Je rijmodus is succesvol ingesteld op `${mode}`.",
+
+		mode_s = "Sportmodus",
+		mode_d = "Rijmodus",
+
+		drive_mode_logs_title = "Rijmodus gewijzigd",
+		drive_mode_logs_details = "${consoleName} heeft hun rijmodus gewijzigd naar `${mode}`."
 	},
 
 	state = {

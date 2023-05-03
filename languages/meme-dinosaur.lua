@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["meme-dinosaur"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		wipe_props_command = "wipe_props",
 		wipe_props_command_help = "Make all puny props around you extinct.",
 		wipe_props_command_parameter_radius = "radius",
-		wipe_props_command_parameter_radius_help = "The size of the area you want to make extinct (1-100).",
+		wipe_props_command_parameter_radius_help = "The big stomp radius for the wipe (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		dispatch_command_parameter_message = "rawr",
 		dispatch_command_parameter_message_help = "Roar the message loudly.",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "police_stomp_mode",
+		police_drive_mode_command_help = "Toggle the stomp mode of your law enforcement ankle-biters.",
+		police_drive_mode_command_parameter_mode = "mode",
+		police_drive_mode_command_parameter_mode_help = "The mode you want to set. \"D\" for default and \"S\" for speedy (speedy is the default because dinos love to run).",
+		police_drive_mode_command_substitutes = "stomp_mode",
 
 		-- jobs/state
 		license_give_command = "license_roar",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		categories = "Roarroars",
 		refresh = "Chomp chomp",
 		refreshing = "Chomping...",
+		not_available = "RAWR! Sorry, not available in dino-speak.",
 
 		kill = "Munch",
 		headshot = "Big Munch",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 		hotwire_driving_detections_name = "Dino Name",
 
+		model = "Dino-model",
+		label = "Roar",
+		amount = "Rawr",
+		console_name = "Hatchling",
+		expected = "Hunt expected",
+		actual = "Hunt actual",
+		words = "Roars",
+		distance = "Roaming distance",
+		weapon = "Claws",
+		type = "Kind",
+		nearby = "Dino friends",
+
 		no_entries = "No entries"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		no_character_loaded = "Rarr! Player does not have a character loaded.",
 		not_same_instance = "Rawr! Player is not in your herd.",
 
+		loading_coords = "Locating nest",
+		preloading_area = "Scanning for prey",
+		finding_player = "Smelling player",
+
 		invincibility_active = "Rawr! Invincibility: ~r~Active~w~",
 		invincibility_inactive_dead = "Rarr! Invincibility: ~g~Inactive~w~ (gone extinct)",
 		invincibility_inactive = "Rarr! Invincibility: ~g~Inactive~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		cannot_use_dispatch = "You cannot use rawr dispatch right now.",
 
 		dispatch_message_logs_title = "Rawr Message Logs",
-		dispatch_message_logs_details = "${consoleName} sіrоhі sent a dispatch message: `${message}`."
+		dispatch_message_logs_details = "${consoleName} sіrоhі sent a dispatch message: `${message}`.",
+
+		no_keys = "No keys for this egg.",
+		invalid_drive_mode = "Dino not able to use mode.",
+		not_in_police_vehicle = "Not in dino cop vehicle.",
+		drive_mode_too_fast = "Dino go too fast for mode change.",
+		drive_mode_already_set = "Rawr! Your drive mode is already set to `${mode}`.",
+		drive_mode_failed = "Oh no! Failed to set drive mode.",
+		drive_mode_set = "Rawr! Successfully set drive mode to `${mode}`.",
+
+		mode_s = "Sport-Mode (ROAR)",
+		mode_d = "Drive-Mode (RUMBLE)",
+
+		drive_mode_logs_title = "Drive Mode Changed (DINO-SPEAK)",
+		drive_mode_logs_details = "${consoleName} changed their drive mode to `${mode}`. (RAWR)"
 	},
 
 	state = {

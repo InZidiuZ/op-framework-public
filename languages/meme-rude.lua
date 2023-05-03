@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["meme-rude"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		wipe_props_command = "wipe_props",
 		wipe_props_command_help = "Wipes all the fuckin' props around ya.",
 		wipe_props_command_parameter_radius = "radius",
-		wipe_props_command_parameter_radius_help = "The fuckin' radius for the wipe (1-100).",
+		wipe_props_command_parameter_radius_help = "The freaking radius for the damn wipe (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		dispatch_command_parameter_message = "message",
 		dispatch_command_parameter_message_help = "The fucking message you want to fucking send.",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "police_drive_mode",
+		police_drive_mode_command_help = "Toggle the damn drive mode of your freaking police vehicle.",
+		police_drive_mode_command_parameter_mode = "mode",
+		police_drive_mode_command_parameter_mode_help = "The damn mode you want to set. \"D\" for drive and \"S\" for sport (sport is default).",
+		police_drive_mode_command_substitutes = "drive_mode",
 
 		-- jobs/state
 		license_give_command = "license_give",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		categories = "Bloody Categories",
 		refresh = "Refresh That Bloody Thing",
 		refreshing = "Bloody Refreshing...",
+		not_available = "Not freaking available",
 
 		kill = "Bloody Kill",
 		headshot = "Bloody Headshot",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 		hotwire_driving_detections_name = "Son of a Bitch's Name",
 
+		model = "Freaking Model",
+		label = "Freaking Label",
+		amount = "Amount, you cheap bastard",
+		console_name = "Player, you filthy motherfucker",
+		expected = "Expected, but you fucked up",
+		actual = "Actual, you dumbass",
+		words = "Words, you illiterate fuck",
+		distance = "Distance, why don't you measure it yourself",
+		weapon = "Weapon, how about a fucking bazooka",
+		type = "Type, like your mom's",
+		nearby = "Nearby, but not close enough for your stinky ass",
+
 		no_entries = "Nothing Here You Fucking Idiot"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		no_character_loaded = "Player doesn't even have a fucking character loaded. Are you that stupid?",
 		not_same_instance = "Are you fucking blind? That player isn't even in the same damn instance as you!",
 
+		loading_coords = "Loading Coords, fucking wait for it",
+		preloading_area = "Preloading Area, because it takes time to load fucking details",
+		finding_player = "Finding Player, patience, asshole",
+
 		invincibility_active = "You're a coward. Invincibility: ~r~Active~w~",
 		invincibility_inactive_dead = "Invincibility: ~g~Inactive~w~ (dead). What a fucking loser.",
 		invincibility_inactive = "Invincibility: ~g~Inactive~w~. Can't handle a bit of pain, can you?",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		cannot_use_dispatch = "You can't fucking use dispatch right now.",
 
 		dispatch_message_logs_title = "Dispatch Message Logs: Don't get your panties in a twist.",
-		dispatch_message_logs_details = "${consoleName} fucking sent a goddamn dispatch message: `${message}`."
+		dispatch_message_logs_details = "${consoleName} fucking sent a goddamn dispatch message: `${message}`.",
+
+		no_keys = "You fucking don't have the keys to this goddamn vehicle.",
+		invalid_drive_mode = "Invalid drive mode, you fucking moron.",
+		not_in_police_vehicle = "You are not in a pig's vehicle, you piece of shit.",
+		drive_mode_too_fast = "You are going too fucking fast to change drive modes, slow the fuck down.",
+		drive_mode_already_set = "What the fuck are you doing, you dumbass? Your drive mode is already set to `${mode}`.",
+		drive_mode_failed = "Holy shit, something went wrong and we couldn't set your fucking drive mode.",
+		drive_mode_set = "Congratulations, you piece of shit! You successfully set your fucking drive mode to `${mode}`.",
+
+		mode_s = "Sport-Mode, like a fucking boss",
+		mode_d = "Drive-Mode, for pussies",
+
+		drive_mode_logs_title = "Drive Mode Changed, woohoo!",
+		drive_mode_logs_details = "${consoleName} had nothing better to do than change their fucking drive mode to `${mode}`."
 	},
 
 	state = {

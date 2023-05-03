@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["pt-BR"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		wipe_props_command = "remover_objetos",
 		wipe_props_command_help = "Remove objetos ao seu redor.",
 		wipe_props_command_parameter_radius = "raio",
-		wipe_props_command_parameter_radius_help = "O raio da remoção (1-100).",
+		wipe_props_command_parameter_radius_help = "O raio para apagar (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		dispatch_command_parameter_message = "mensagem",
 		dispatch_command_parameter_message_help = "A mensagem que você deseja enviar.",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "police_drive_mode",
+		police_drive_mode_command_help = "Alterna o modo de condução do seu veículo policial.",
+		police_drive_mode_command_parameter_mode = "modo",
+		police_drive_mode_command_parameter_mode_help = "O modo que você deseja definir. \"D\" para dirigir e \"S\" para esportivo (o modo esportivo é o padrão).",
+		police_drive_mode_command_substitutes = "modo_conducao",
 
 		-- jobs/state
 		license_give_command = "dar_licenca",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		categories = "Categorias",
 		refresh = "Atualizar",
 		refreshing = "Atualizando...",
+		not_available = "Indisponível",
 
 		kill = "Matar",
 		headshot = "Tiro na Cabeça",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["pt-BR"] = {
 
 		hotwire_driving_detections_name = "Nome do Jogador",
 
+		model = "Modelo",
+		label = "Rótulo",
+		amount = "Quantidade",
+		console_name = "Jogador",
+		expected = "Esperado",
+		actual = "Atual",
+		words = "Palavras",
+		distance = "Distância",
+		weapon = "Arma",
+		type = "Tipo",
+		nearby = "Próximo",
+
 		no_entries = "Sem Entradas"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		no_character_loaded = "O jogador não possui um personagem carregado.",
 		not_same_instance = "O jogador não está na mesma instância que você.",
 
+		loading_coords = "Carregando Coords",
+		preloading_area = "Pré-carregando Área",
+		finding_player = "Encontrando Jogador",
+
 		invincibility_active = "Invencibilidade: ~r~Ativa~w~",
 		invincibility_inactive_dead = "Invencibilidade: ~g~Inativa~w~ (morto)",
 		invincibility_inactive = "Invencibilidade: ~g~Inativa~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		cannot_use_dispatch = "Você não pode usar o despacho agora.",
 
 		dispatch_message_logs_title = "Mensagem do Despacho",
-		dispatch_message_logs_details = "${consoleName} enviou uma mensagem de despacho: `${message}`."
+		dispatch_message_logs_details = "${consoleName} enviou uma mensagem de despacho: `${message}`.",
+
+		no_keys = "Você não tem as chaves deste veículo.",
+		invalid_drive_mode = "Modo de dirigir inválido.",
+		not_in_police_vehicle = "Você não está em um veículo policial.",
+		drive_mode_too_fast = "Você está indo rápido demais para mudar os modos de dirigir.",
+		drive_mode_already_set = "Seu modo de condução já está definido como `${mode}`.",
+		drive_mode_failed = "Falha ao definir o modo de condução.",
+		drive_mode_set = "Modo de condução definido com sucesso para `${mode}`.",
+
+		mode_s = "Modo esporte",
+		mode_d = "Modo drive",
+
+		drive_mode_logs_title = "Modo de Condução Alterado",
+		drive_mode_logs_details = "${consoleName} alterou seu modo de condução para `${mode}`."
 	},
 
 	state = {

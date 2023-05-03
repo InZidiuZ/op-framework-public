@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["bn-BD"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		wipe_props_command = "প্রপস মুছুন",
 		wipe_props_command_help = "আপনার চারমিলে প্রপস মুছে ফেলে।",
 		wipe_props_command_parameter_radius = "ব্যাসার্ধ",
-		wipe_props_command_parameter_radius_help = "মুছে ফেলার জন্য ব্যাসার্ধ (১-১০০)।",
+		wipe_props_command_parameter_radius_help = "ওয়াইপের জন্য ব্যাসার্ধ (1-250)।",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		dispatch_command_parameter_message = "বার্তা",
 		dispatch_command_parameter_message_help = "আপনি যে বার্তা প্রেরণ করতে চান তা।",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "police_drive_mode",
+		police_drive_mode_command_help = "আপনার পুলিশ গাড়ির চালনা মোডটি টগল করুন।",
+		police_drive_mode_command_parameter_mode = "মোড",
+		police_drive_mode_command_parameter_mode_help = "আপনি যে মোডটি সেট করতে চান। \"D\" ড্রাইভ এবং \"S\" স্পোর্ট (স্পোর্ট ডিফল্ট হল)।",
+		police_drive_mode_command_substitutes = "drive_mode",
 
 		-- jobs/state
 		license_give_command = "লাইসেন্স_দিন",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		categories = "বিভাগসমূহ",
 		refresh = "পুনরায় লোড করুন",
 		refreshing = "পুনরায় লোড হচ্ছে...",
+		not_available = "পাওয়া যায় নি",
 
 		kill = "হত্যা করুন",
 		headshot = "হেডশট",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		hotwire_driving_detections_name = "প্লেয়ার নাম",
 
+		model = "মডেল",
+		label = "লেবেল",
+		amount = "পরিমাণ",
+		console_name = "খেলোয়াড়",
+		expected = "প্রত্যাশিত",
+		actual = "বর্তমান",
+		words = "শব্দ",
+		distance = "দূরত্ব",
+		weapon = "অস্ত্র",
+		type = "ধরণ",
+		nearby = "উপস্থিত",
+
 		no_entries = "কোনো এন্ট্রি নেই"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		no_character_loaded = "প্লেয়ারের কোনও ক্যারেক্টার লোড করা হয়নি।",
 		not_same_instance = "প্লেয়ার আপনার সমস্ত উপাদান একই নয়।",
 
+		loading_coords = "স্থানাঙ্ক লোড হচ্ছে",
+		preloading_area = "পূর্ব লোডিং এরিয়া",
+		finding_player = "খেলোয়াড় খুঁজে পাচ্ছি না",
+
 		invincibility_active = "অজেয়গ্রস্ততা: ~r~সক্রিয়~w~",
 		invincibility_inactive_dead = "অজেয়গ্রস্ততা: ~g~নিষ্ক্রিয়~w~ (মৃত্যু)",
 		invincibility_inactive = "অজেয়গ্রস্ততা: ~g~নিষ্ক্রিয়~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		cannot_use_dispatch = "আপনি এখন প্রেরণ ব্যবহার করতে পারেন না।",
 
 		dispatch_message_logs_title = "প্রেরণ বার্তা লগ",
-		dispatch_message_logs_details = "${consoleName} একটি ডিসপ্যাচ বার্তা প্রেরণ করেছেন: `${message}`।"
+		dispatch_message_logs_details = "${consoleName} একটি ডিসপ্যাচ বার্তা প্রেরণ করেছেন: `${message}`।",
+
+		no_keys = "আপনার এই গাড়ির চাবিটি নেই।",
+		invalid_drive_mode = "অবৈধ চালনা মোড।",
+		not_in_police_vehicle = "আপনি একটি পুলিশ গাড়িতে নন।",
+		drive_mode_too_fast = "চালনা মোড পরিবর্তন করার জন্য আপনি খুব দ্রুত চলছেন।",
+		drive_mode_already_set = "আপনার গাড়ি চালনার মোড ইতিমধ্যে `${mode}` হিসাবে সেট করা হয়েছে।",
+		drive_mode_failed = "গাড়ি চালনার মোড সেট করতে ব্যর্থ হয়েছে।",
+		drive_mode_set = "আপনার গাড়ি চালনার মোড সফলভাবে `${mode}` হিসাবে সেট করা হয়েছে।",
+
+		mode_s = "স্পোর্ট-মোড",
+		mode_d = "ড্রাইভ-মোড",
+
+		drive_mode_logs_title = "গাড়ির চালনা মোড পরিবর্তিত হয়েছে",
+		drive_mode_logs_details = "${consoleName} তাঁর গাড়ির চালনা মোড `${mode}` হিসাবে পরিবর্তন করেছেন।"
 	},
 
 	state = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["meme-klingon"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		wipe_props_command = "wipe_props",
 		wipe_props_command_help = "Wipes props around you.",
 		wipe_props_command_parameter_radius = "radius",
-		wipe_props_command_parameter_radius_help = "The radius for the wipe (1-100).",
+		wipe_props_command_parameter_radius_help = "bIHta'ghach qutlh (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		dispatch_command_parameter_message = "ghItlh",
 		dispatch_command_parameter_message_help = "The ghItlh you want to send",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "police_drive_mode",
+		police_drive_mode_command_help = "police poH rep Haplo' 'a'.",
+		police_drive_mode_command_parameter_mode = "Haplo'",
+		police_drive_mode_command_parameter_mode_help = "Haplo' (Drive) je (Sport) puq jay' QIch. (Sport 'oH poQbogh).",
+		police_drive_mode_command_substitutes = "drive_mode",
 
 		-- jobs/state
 		license_give_command = "QuvHa'wI_give",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		categories = "pIm",
 		refresh = "yIv",
 		refreshing = "yIvHa'",
+		not_available = "jImej",
 
 		kill = "qa'Hom",
 		headshot = "tay'Ha'moH",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 		hotwire_driving_detections_name = "nuqneHwI' poH",
 
+		model = "Qap",
+		label = "chay'",
+		amount = "De'wi",
+		console_name = "lo'wI'",
+		expected = "re'",
+		actual = "vaS'",
+		words = "mugh",
+		distance = "tetlh",
+		weapon = "lojmIt",
+		type = "lo'",
+		nearby = "lI'",
+
 		no_entries = "chImmeH wej"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		no_character_loaded = "lutlhlaHbe'lu'. Haqtaj",
 		not_same_instance = "be'joy' luDaq yIDelchugh 'e' Da",
 
+		loading_coords = "meqHuv coords",
+		preloading_area = "preloading pagh",
+		finding_player = "jughevchugh meqHuv",
+
 		invincibility_active = "DIjatlh: ~r~muSHa'~w~",
 		invincibility_inactive_dead = "DIjatlh: ~g~muq~w~ (qab)",
 		invincibility_inactive = "DIjatlh: ~g~muq~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		cannot_use_dispatch = "pe'vIlDaq QaQ Dispatch.",
 
 		dispatch_message_logs_title = "Dispatch pong logs",
-		dispatch_message_logs_details = "${consoleName} vItlhobchu'DI' naDev: `${message}`."
+		dispatch_message_logs_details = "${consoleName} vItlhobchu'DI' naDev: `${message}`.",
+
+		no_keys = "ghaH 'Inmey neH veS juH.",
+		invalid_drive_mode = "Drive mode qagh jay' law'",
+		not_in_police_vehicle = "jup 'oH law' chenmoHmeH 'oH.",
+		drive_mode_too_fast = "Drive mode chenmoHmeH vItlhutlh.",
+		drive_mode_already_set = "jIyajbe' ${mode} tIq law' Hoch.",
+		drive_mode_failed = "jIyajbe' ${mode} tIq law' qaH.",
+		drive_mode_set = "jIyajbe' ${mode} tIq law' HochvaD.",
+
+		mode_s = "tlhIngan Hol jI'orq'e'",
+		mode_d = "tlhIngan Hol jIlo'neS",
+
+		drive_mode_logs_title = "tIq law' jIyajbe'",
+		drive_mode_logs_details = "${consoleName} tIq law' jIyajbe' DaH ${mode}."
 	},
 
 	state = {

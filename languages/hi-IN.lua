@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["hi-IN"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		wipe_props_command = "wipe_props",
 		wipe_props_command_help = "आपके आस-पास प्रॉप्स को मिटा देता है।",
 		wipe_props_command_parameter_radius = "रेडियस",
-		wipe_props_command_parameter_radius_help = "मिटाने के लिए रेडियस (1-100)।",
+		wipe_props_command_parameter_radius_help = "मिटाने के लिए त्रिज्या (1-250)।",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		dispatch_command_parameter_message = "संदेश",
 		dispatch_command_parameter_message_help = "आप भेजना चाहते हैं संदेश।",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "police_drive_mode",
+		police_drive_mode_command_help = "अपने पुलिस वाहन के ड्राइव मोड को टॉगल करें।",
+		police_drive_mode_command_parameter_mode = "मोड",
+		police_drive_mode_command_parameter_mode_help = "आप जो मोड सेट करना चाहते हैं। ड्राइव के लिए \"D\" और स्पोर्ट के लिए \"S\" (स्पोर्ट डिफ़ॉल्ट है)।",
+		police_drive_mode_command_substitutes = "drive_mode",
 
 		-- jobs/state
 		license_give_command = "दस्तावेज दें",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		categories = "श्रेणियाँ",
 		refresh = "ताज़ा करें",
 		refreshing = "ताज़ा कर रहे हैं...",
+		not_available = "उपलब्ध नहीं है",
 
 		kill = "किल",
 		headshot = "हेडशॉट",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["hi-IN"] = {
 
 		hotwire_driving_detections_name = "खिलाड़ी का नाम",
 
+		model = "मॉडल",
+		label = "लेबल",
+		amount = "राशि",
+		console_name = "खिलाड़ी",
+		expected = "अपेक्षित",
+		actual = "वास्तविक",
+		words = "शब्द",
+		distance = "दुरी",
+		weapon = "हथियार",
+		type = "प्रकार",
+		nearby = "निकटवर्ती",
+
 		no_entries = "कोई प्रविष्टियां नहीं हैं"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		no_character_loaded = "खिलाड़ी के पास कोई चरित्र लोड नहीं है।",
 		not_same_instance = "खिलाड़ी आपकी तुलना में नहीं है।",
 
+		loading_coords = "कोऑर्डिनेट लोड हो रहे हैं",
+		preloading_area = "प्रीलोडिंग क्षेत्र",
+		finding_player = "खिलाड़ी ढूंढ़ रहा है",
+
 		invincibility_active = "अटूटता: ~r~सक्रिय~w~",
 		invincibility_inactive_dead = "अटूटता: ~g~निष्क्रिय~w~ (मृत)",
 		invincibility_inactive = "अटूटता: ~g~निष्क्रिय~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		cannot_use_dispatch = "आप अभी डिस्पैच का उपयोग नहीं कर सकते।",
 
 		dispatch_message_logs_title = "डिस्पैच संदेश",
-		dispatch_message_logs_details = "${consoleName} ने एक डिस्पैच संदेश भेजा: `${message}`।"
+		dispatch_message_logs_details = "${consoleName} ने एक डिस्पैच संदेश भेजा: `${message}`।",
+
+		no_keys = "आपके पास इस वाहन की चाबियों नहीं हैं।",
+		invalid_drive_mode = "अमान्य ड्राइव मोड।",
+		not_in_police_vehicle = "आप एक पुलिस वाहन में नहीं हैं।",
+		drive_mode_too_fast = "आप ड्राइव मोड बदलने के लिए बहुत तेज जा रहे हैं।",
+		drive_mode_already_set = "आपकी ड्राइव मोड पहले से ही `${mode}` पर सेट है।",
+		drive_mode_failed = "ड्राइव मोड सेट करने में विफल।",
+		drive_mode_set = "आपकी ड्राइव मोड को सफलतापूर्वक `${mode}` पर सेट किया गया।",
+
+		mode_s = "स्पोर्ट मोड",
+		mode_d = "ड्राइव मोड",
+
+		drive_mode_logs_title = "ड्राइव मोड बदला गया",
+		drive_mode_logs_details = "${consoleName} ने अपनी ड्राइव मोड को `${mode}` पर बदल दिया।"
 	},
 
 	state = {

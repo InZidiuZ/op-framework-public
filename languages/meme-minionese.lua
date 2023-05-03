@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["meme-minionese"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		wipe_props_command = "Wipe banana props",
 		wipe_props_command_help = "Wipes props around yu.",
 		wipe_props_command_parameter_radius = "banana radius",
-		wipe_props_command_parameter_radius_help = "Da banana radius for da wipe (1-100).",
+		wipe_props_command_parameter_radius_help = "Da radius fur da wipe (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		dispatch_command_parameter_message = "bello",
 		dispatch_command_parameter_message_help = "Bananaaaah! (The message you want to send.)",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "banana_police_drive_mode",
+		police_drive_mode_command_help = "Toggle da drive mode of your police vehicle.",
+		police_drive_mode_command_parameter_mode = "mode",
+		police_drive_mode_command_parameter_mode_help = "Da mode you want to set. \"D\" for drive and \"S\" for sport (sport is default).",
+		police_drive_mode_command_substitutes = "drive_mode",
 
 		-- jobs/state
 		license_give_command = "croak",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		categories = "Belloist's Categoriess",
 		refresh = "Bananaaaa",
 		refreshing = "Bababa bababa bababa...",
+		not_available = "N/A",
 
 		kill = "BANANA!",
 		headshot = "BANANA BOOM!",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		hotwire_driving_detections_name = "Jerry",
 
+		model = "Modelo",
+		label = "Tag",
+		amount = "Bello!",
+		console_name = "Minionese gibberish",
+		expected = "Understand?",
+		actual = "Actually",
+		words = "Banana",
+		distance = "Potato",
+		weapon = "Banana gun",
+		type = "Type-type",
+		nearby = "Bababa",
+
 		no_entries = "No beedo entries"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		no_character_loaded = "Player no have character loaded. Me worried.",
 		not_same_instance = "Player not in same instance as me. Me lost.",
 
+		loading_coords = "Loading jelly",
+		preloading_area = "Pre-bello area",
+		finding_player = "Locating banana",
+
 		invincibility_active = "Invincibility: ~r~Bee do!~w~",
 		invincibility_inactive_dead = "Invincibility: ~g~Bee do!~w~ (dead)",
 		invincibility_inactive = "Invincibility: ~g~Bee do!~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		cannot_use_dispatch = "You cannot use bee doo right now.",
 
 		dispatch_message_logs_title = "Bee Doo Message",
-		dispatch_message_logs_details = "${consoleName} sent an ooh bee doo message: `${message}`."
+		dispatch_message_logs_details = "${consoleName} sent an ooh bee doo message: `${message}`.",
+
+		no_keys = "Me want banana but no key!",
+		invalid_drive_mode = "Invalid banana mode.",
+		not_in_police_vehicle = "You not in police car, me think.",
+		drive_mode_too_fast = "Too fast for bananas mode change!",
+		drive_mode_already_set = "Bee do, bee do, bee do! Your drive mode is already set to `${mode}`.",
+		drive_mode_failed = "Uh oh! Failed to set drive mode.",
+		drive_mode_set = "Bello! Successfully set drive mode to `${mode}`.",
+
+		mode_s = "Bee do bee do! Sport-Mode",
+		mode_d = "Bee do! Drive-Mode",
+
+		drive_mode_logs_title = "Bee do, bee do! Drive Mode Changed",
+		drive_mode_logs_details = "${consoleName} changed their drive mode to `${mode}`. Bee do, bee do!"
 	},
 
 	state = {

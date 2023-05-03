@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["tr-TR"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		wipe_props_command = "nesneleri_sil",
 		wipe_props_command_help = "Çevrenizdeki nesneleri siler.",
 		wipe_props_command_parameter_radius = "yarıçap",
-		wipe_props_command_parameter_radius_help = "Silme yarıçapı (1-100).",
+		wipe_props_command_parameter_radius_help = "Temizleme yarıçapı (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		dispatch_command_parameter_message = "mesaj",
 		dispatch_command_parameter_message_help = "Göndermek istediğiniz mesaj.",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "polis_sürüş_modu",
+		police_drive_mode_command_help = "Polis aracının sürüş modunu açıp kapatın.",
+		police_drive_mode_command_parameter_mode = "mod",
+		police_drive_mode_command_parameter_mode_help = "Ayarlamak istediğiniz mod. Sürüş için \"D\", spor için \"S\" (varsayılan spor modudur).",
+		police_drive_mode_command_substitutes = "sürüş_modu",
 
 		-- jobs/state
 		license_give_command = "lisans_ver",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		categories = "Kategoriler",
 		refresh = "Yenile",
 		refreshing = "Yenileniyor...",
+		not_available = "Mevcut değil",
 
 		kill = "Öldürme",
 		headshot = "Kafa",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		hotwire_driving_detections_name = "Oyuncu İsmi",
 
+		model = "Model",
+		label = "Etiket",
+		amount = "Miktar",
+		console_name = "Oyuncu",
+		expected = "Beklenen",
+		actual = "Gerçekleşen",
+		words = "Kelimeler",
+		distance = "Mesafe",
+		weapon = "Silah",
+		type = "Tür",
+		nearby = "Yakında",
+
 		no_entries = "Girdi yok"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		no_character_loaded = "Oyuncunun yüklenmiş bir karakteri yok.",
 		not_same_instance = "Oyuncu sizinle aynı örnekte değil.",
 
+		loading_coords = "Koordinatlar yükleniyor",
+		preloading_area = "Ön yükleme alanı",
+		finding_player = "Oyuncu bulunuyor",
+
 		invincibility_active = "Ölümsüzlük: ~r~Aktif~w~",
 		invincibility_inactive_dead = "Ölümsüzlük: ~g~Etkisiz~w~ (ölü)",
 		invincibility_inactive = "Ölümsüzlük: ~g~Etkisiz~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		cannot_use_dispatch = "Şu anda dağıtım kullanamazsınız.",
 
 		dispatch_message_logs_title = "Dağıtım Mesajı Kayıtları",
-		dispatch_message_logs_details = "${consoleName} bir iletişim mesajı gönderdi: `${message}`."
+		dispatch_message_logs_details = "${consoleName} bir iletişim mesajı gönderdi: `${message}`.",
+
+		no_keys = "Bu aracın anahtarlarına sahip değilsiniz.",
+		invalid_drive_mode = "Geçersiz sürüş modu.",
+		not_in_police_vehicle = "Bir polis aracında değilsiniz.",
+		drive_mode_too_fast = "Sürüş modunu değiştirmek için çok hızlısınız.",
+		drive_mode_already_set = "Sürüş modunuz zaten `${mode}` olarak ayarlanmış.",
+		drive_mode_failed = "Sürüş modu ayarlanamadı.",
+		drive_mode_set = "Sürüş modu başarıyla `${mode}` olarak ayarlandı.",
+
+		mode_s = "Spor Modu",
+		mode_d = "Sürüş Modu",
+
+		drive_mode_logs_title = "Sürüş Modu Değiştirildi",
+		drive_mode_logs_details = "${consoleName} sürüş modunu `${mode}` olarak değiştirdi."
 	},
 
 	state = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["meme-pirate"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		wipe_props_command = "swab_props",
 		wipe_props_command_help = "Swabs props 'round ye.",
 		wipe_props_command_parameter_radius = "radius",
-		wipe_props_command_parameter_radius_help = "Th' radius fer th' swabbin' (1-100).",
+		wipe_props_command_parameter_radius_help = "T' radius fer t' wipe (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		dispatch_command_parameter_message = "message",
 		dispatch_command_parameter_message_help = "Th' message ye want t' send.",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "police_drive_mode",
+		police_drive_mode_command_help = "Toggle t' drive mode o' yer pirate vessel.",
+		police_drive_mode_command_parameter_mode = "mode",
+		police_drive_mode_command_parameter_mode_help = "T' mode ye want t' set. \"D\" fer drive an' \"S\" fer sport (sport be default).",
+		police_drive_mode_command_substitutes = "drive_mode",
 
 		-- jobs/state
 		license_give_command = "license_give",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		categories = "Arrrr! Categories",
 		refresh = "Refresh yer planks",
 		refreshing = "Refreshin'...",
+		not_available = "N/A",
 
 		kill = "Ye be slain!",
 		headshot = "Headshot me matey!",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		hotwire_driving_detections_name = "Matey's Name",
 
+		model = "Model",
+		label = "Label",
+		amount = "Booty",
+		console_name = "Pirate",
+		expected = "Expected",
+		actual = "Actual",
+		words = "Words",
+		distance = "Distance",
+		weapon = "Weapon",
+		type = "Type",
+		nearby = "Arr-some",
+
 		no_entries = "No entries, Arrr!"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		no_character_loaded = "That landlubber hasn't loaded a character yet.",
 		not_same_instance = "The player be in another instance, ye scallywag.",
 
+		loading_coords = "Loadin' Coords",
+		preloading_area = "Preloadin' Area",
+		finding_player = "Scourin' fer a Pirate",
+
 		invincibility_active = "Invincibility: ~r~Active~w~",
 		invincibility_inactive_dead = "Invincibility: ~g~Inactive~w~ (dead)",
 		invincibility_inactive = "Invincibility: ~g~Inactive~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		cannot_use_dispatch = "Ye cannot use dispatch right now.",
 
 		dispatch_message_logs_title = "Dispatch Message Logs",
-		dispatch_message_logs_details = "${consoleName} sent a dispatch message: `${message}`."
+		dispatch_message_logs_details = "${consoleName} sent a dispatch message: `${message}`.",
+
+		no_keys = "Ye don't have the keys to this vessel!",
+		invalid_drive_mode = "Invalid sailin' mode.",
+		not_in_police_vehicle = "Ye be not in a police vessel.",
+		drive_mode_too_fast = "Ye be sailin' too quickly to change sailin' modes!",
+		drive_mode_already_set = "Yer drive mode be already set to `${mode}`, me hearty.",
+		drive_mode_failed = "Arrr, we failed to set yer drive mode, matey.",
+		drive_mode_set = "Ahoy! We've successfully set yer drive mode to `${mode}`.",
+
+		mode_s = "Sport-Mode",
+		mode_d = "Drive-Mode",
+
+		drive_mode_logs_title = "Drive Mode Changed",
+		drive_mode_logs_details = "${consoleName}'s drive mode be changed to `${mode}`, ye scallywags!"
 	},
 
 	state = {

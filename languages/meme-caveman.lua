@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["meme-caveman"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		wipe_props_command = "Me wipe props.",
 		wipe_props_command_help = "Me wipe props around you.",
 		wipe_props_command_parameter_radius = "radius",
-		wipe_props_command_parameter_radius_help = "How big me make the wipe? (1-100).",
+		wipe_props_command_parameter_radius_help = "Me radius for da wipe (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		dispatch_command_parameter_message = "ug-ug",
 		dispatch_command_parameter_message_help = "Ug-ug message you want to send.",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "police_drive_mode",
+		police_drive_mode_command_help = "Toggle da drive mode of your police vehicle.",
+		police_drive_mode_command_parameter_mode = "mode",
+		police_drive_mode_command_parameter_mode_help = "Da mode you want to set. \"D\" for drive and \"S\" for sport (sport is default).",
+		police_drive_mode_command_substitutes = "drive_mode",
 
 		-- jobs/state
 		license_give_command = "give_license",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		categories = "Ug Ug (Categories)",
 		refresh = "Ug (Refresh)",
 		refreshing = "Ugug... (Refreshing...)",
+		not_available = "No Avail",
 
 		kill = "Ug (Kill)",
 		headshot = "Head-Ug (Headshot)",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		hotwire_driving_detections_name = "Thag's Name",
 
+		model = "Ugg Ugg",
+		label = "Tribal Name",
+		amount = "Ug",
+		console_name = "Uggg Ugg",
+		expected = "Meant to be ugged",
+		actual = "Ugged in real life",
+		words = "Ugggs",
+		distance = "Ug distance",
+		weapon = "Ugging tool",
+		type = "Type of ug",
+		nearby = "Ug nearby",
+
 		no_entries = "Me See Nothing"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		no_character_loaded = "Caveperson no have character loaded!",
 		not_same_instance = "That caveperson no in same group as you!",
 
+		loading_coords = "Loading ug coords",
+		preloading_area = "Preloading ug area",
+		finding_player = "Me searching for ug player",
+
 		invincibility_active = "You have big invincible skin: ~r~Active~w~",
 		invincibility_inactive_dead = "You no invincible, because you dead: ~g~Inactive~w~",
 		invincibility_inactive = "No invincible: ~g~Inactive~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		cannot_use_dispatch = "Me no use dispatch now.",
 
 		dispatch_message_logs_title = "Dispatch logs",
-		dispatch_message_logs_details = "${consoleName} sent dispatch message. Message: `${message}`."
+		dispatch_message_logs_details = "${consoleName} sent dispatch message. Message: `${message}`.",
+
+		no_keys = "You no have ug keys for this ride.",
+		invalid_drive_mode = "Ug drive mode not right.",
+		not_in_police_vehicle = "You are not in an police ride.",
+		drive_mode_too_fast = "Ug drive mode too fast! Slow down.",
+		drive_mode_already_set = "You no need change, already set to `${mode}`.",
+		drive_mode_failed = "Me not able to change.",
+		drive_mode_set = "Me did it! Set to `${mode}`.",
+
+		mode_s = "Fast-Mode",
+		mode_d = "Drive-Mode",
+
+		drive_mode_logs_title = "Drive Mode Changed",
+		drive_mode_logs_details = "${consoleName} changed to `${mode}`."
 	},
 
 	state = {

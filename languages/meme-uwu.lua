@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["meme-uwu"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		wipe_props_command = "wipe_props",
 		wipe_props_command_help = "Wipes da props awound u.",
 		wipe_props_command_parameter_radius = "radius",
-		wipe_props_command_parameter_radius_help = "Da radius fow da wipe (1-100).",
+		wipe_props_command_parameter_radius_help = "Da wadius fow da wipe (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		dispatch_command_parameter_message = "meowssage",
 		dispatch_command_parameter_message_help = "The meowssage you want to send uwu.",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "powice_dwive_mode",
+		police_drive_mode_command_help = "Toggwe da dwive mode of youw powice vehicwe.",
+		police_drive_mode_command_parameter_mode = "mode",
+		police_drive_mode_command_parameter_mode_help = "Da mode you want to set. \"D\" fow dwive and \"S\" fow spowt (spowt is defauwt).",
+		police_drive_mode_command_substitutes = "dwive_mode",
 
 		-- jobs/state
 		license_give_command = "wicense_give",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		categories = "Categowies",
 		refresh = "Wefweshing...",
 		refreshing = "Wefwesh",
+		not_available = "Nu availabwe",
 
 		kill = "K-ill",
 		headshot = "Headshot",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 		hotwire_driving_detections_name = "Pwayer Nyame",
 
+		model = "Modew",
+		label = "Labew",
+		amount = "Awmount",
+		console_name = "Pwayer",
+		expected = "Expected",
+		actual = "Actual",
+		words = "Wowds",
+		distance = "Distance",
+		weapon = "Weapon",
+		type = "Type",
+		nearby = "Nyawby",
+
 		no_entries = "No entwies"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		no_character_loaded = "Playewr does not have a chawacter loaded. ;w;",
 		not_same_instance = "Playewr is nowt in the same instance as ywou. owo",
 
+		loading_coords = "Woading Cowds",
+		preloading_area = "Pweloading Awea",
+		finding_player = "Finding Pwayer",
+
 		invincibility_active = "Invincibiwity: ~r~Active~w~",
 		invincibility_inactive_dead = "Invincibiwity: ~g~Inactive~w~ (dead)",
 		invincibility_inactive = "Invincibiwity: ~g~Inactive~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		cannot_use_dispatch = "Yuwo cannot use dispatch wight now. ╥﹏╥",
 
 		dispatch_message_logs_title = "Dispatch Message",
-		dispatch_message_logs_details = "${consoleName} sent a dispwatch message: `${message}`."
+		dispatch_message_logs_details = "${consoleName} sent a dispwatch message: `${message}`.",
+
+		no_keys = "You don't have the keys to this vewicle.",
+		invalid_drive_mode = "Invalid dwive mode.",
+		not_in_police_vehicle = "You awe not in an police vewicle.",
+		drive_mode_too_fast = "You awe going too fast to change dwive modes.",
+		drive_mode_already_set = "Yuw d-dwive mode is awready set tuwu `${mode}`.",
+		drive_mode_failed = "Faiwed tuwu set d-dwive mode.",
+		drive_mode_set = "Successfuwwy set d-dwive mode tuwu `${mode}`.",
+
+		mode_s = "Spowt-Mode",
+		mode_d = "Dwive-Mode",
+
+		drive_mode_logs_title = "Dwive Mode Changed",
+		drive_mode_logs_details = "${consoleName} changed theiw dwive mode tuwu `${mode}`."
 	},
 
 	state = {

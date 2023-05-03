@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["meme-gungan"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		wipe_props_command = "wipe_props",
 		wipe_props_command_help = "Wipes bombad props around yousa.",
 		wipe_props_command_parameter_radius = "radius",
-		wipe_props_command_parameter_radius_help = "Da radius for da wipe (1-100).",
+		wipe_props_command_parameter_radius_help = "Da radius for da wipe (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		dispatch_command_parameter_message = "mesk",
 		dispatch_command_parameter_message_help = "Da mesk yousa wantin to send.",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "police_drive_mode",
+		police_drive_mode_command_help = "Toggle da drive mode of ya police vehicle.",
+		police_drive_mode_command_parameter_mode = "mode",
+		police_drive_mode_command_parameter_mode_help = "Da mode ya want to set. \"D\" for drive and \"S\" for sport (sport is default).",
+		police_drive_mode_command_substitutes = "drive_mode",
 
 		-- jobs/state
 		license_give_command = "license_give",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		categories = "Categotien",
 		refresh = "Refreshen",
 		refreshing = "Refreshing-sa...",
+		not_available = "Mesa no have dat",
 
 		kill = "Killy",
 		headshot = "Headshot-sa",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		hotwire_driving_detections_name = "Palpatine n'gad",
 
+		model = "Modela",
+		label = "Labelo",
+		amount = "Gooberfisha",
+		console_name = "Peega",
+		expected = "Expectedo",
+		actual = "Actuala",
+		words = "Gooberfishe",
+		distance = "Distancia",
+		weapon = "Whapa",
+		type = "Typee",
+		nearby = "Nearbya",
+
 		no_entries = "N'goli kaya"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		no_character_loaded = "Player does notsa have a character loaded.",
 		not_same_instance = "The player issa notsa in da same instance as yusa.",
 
+		loading_coords = "Loadinga Coordsa",
+		preloading_area = "Preloadinga Areaa",
+		finding_player = "Findinga Playera",
+
 		invincibility_active = "Yusa is invincible: ~r~Active~w~",
 		invincibility_inactive_dead = "Yusa is invincible: ~g~Inactive~w~ (dead)",
 		invincibility_inactive = "Yusa is invincible: ~g~Inactive~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		cannot_use_dispatch = "Yousa cannot use dispatch right now.",
 
 		dispatch_message_logs_title = "Dispatch Message",
-		dispatch_message_logs_details = "${consoleName} mesa ganna dispatch message: `${message}`."
+		dispatch_message_logs_details = "${consoleName} mesa ganna dispatch message: `${message}`.",
+
+		no_keys = "Oosah, mesa no have da keys to dis vehicle.",
+		invalid_drive_mode = "Mesa no tink dis drive mode issa valid.",
+		not_in_police_vehicle = "Yousa no in a police vehicle, mooie.",
+		drive_mode_too_fast = "Yousa going too fasto to change drive modes.",
+		drive_mode_already_set = "Mesa buyin' mooey mooley. Yousa drive mode issen already set to `${mode}`.",
+		drive_mode_failed = "Ouch time. Failed to set drive mode.",
+		drive_mode_set = "Exsqueeze me. Successfully set drive mode to `${mode}`.",
+
+		mode_s = "Sport-Mode. Yeez betta betta clatta cava.",
+		mode_d = "Drive-Mode. Yeez hassen more safety-safety.",
+
+		drive_mode_logs_title = "Drive Mode Changed. Oke-day.",
+		drive_mode_logs_details = "${consoleName} changed their drive mode to `${mode}`. Tis'n a whole mesa, happy shoober!"
 	},
 
 	state = {

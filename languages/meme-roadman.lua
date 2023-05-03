@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["meme-roadman"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		wipe_props_command = "wipe_props",
 		wipe_props_command_help = "Mandem, wipes out all dem props around you.",
 		wipe_props_command_parameter_radius = "radius",
-		wipe_props_command_parameter_radius_help = "The size of the area you wanna wipe out, from 1 to 100 blud.",
+		wipe_props_command_parameter_radius_help = "The radius for the wipe (1-250), innit.",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		dispatch_command_parameter_message = "msg",
 		dispatch_command_parameter_message_help = "The message you wanna send, innit.",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "police_drive_mode",
+		police_drive_mode_command_help = "Toggle the drive mode of your police whip.",
+		police_drive_mode_command_parameter_mode = "mode",
+		police_drive_mode_command_parameter_mode_help = "The mode you want to set. \"D\" for drive and \"S\" for sport (sport is default), cuz.",
+		police_drive_mode_command_substitutes = "drive_mode",
 
 		-- jobs/state
 		license_give_command = "give_license",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		categories = "Categs",
 		refresh = "Refresk",
 		refreshing = "Refresking...",
+		not_available = "N/A, bro.",
 
 		kill = "Yute",
 		headshot = "Headshotting",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		hotwire_driving_detections_name = "Mandem Name",
 
+		model = "Whip",
+		label = "Nickname",
+		amount = "P's",
+		console_name = "Mandem",
+		expected = "Sposed to be",
+		actual = "Actually",
+		words = "Wurds",
+		distance = "Distance ting",
+		weapon = "Strap",
+		type = "Sorta",
+		nearby = "Man's about",
+
 		no_entries = "Nah, nothing here"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		no_character_loaded = "That playa ain't got no character loaded, fam.",
 		not_same_instance = "Yo, that player ain't chillin' in the same instance as you.",
 
+		loading_coords = "Loading dem coords",
+		preloading_area = "Preloading area innit",
+		finding_player = "Looking for my man dem",
+
 		invincibility_active = "Invincibility: ~r~On fleek, homie~w~",
 		invincibility_inactive_dead = "Invincibility: ~g~Dead, fam~w~",
 		invincibility_inactive = "Invincibility: ~g~Inactive, bro~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		cannot_use_dispatch = "You can't send messages right now, blud.",
 
 		dispatch_message_logs_title = "Snitchin' logs",
-		dispatch_message_logs_details = "${consoleName} sent a dispatch message: `${message}`."
+		dispatch_message_logs_details = "${consoleName} sent a dispatch message: `${message}`.",
+
+		no_keys = "You ain't got the keys to that whip bruv.",
+		invalid_drive_mode = "That's not a valid way to drif' innit.",
+		not_in_police_vehicle = "You ain't in no po-lice car g.",
+		drive_mode_too_fast = "You're doin' it too fast bruv, slow down.",
+		drive_mode_already_set = "Bruv, your drive mode is already set to `${mode}`.",
+		drive_mode_failed = "Ah sh*t, failed to set drive mode.",
+		drive_mode_set = "Safe, we set your drive mode to `${mode}`.",
+
+		mode_s = "Sicko-Mode",
+		mode_d = "Regular-Mode",
+
+		drive_mode_logs_title = "Drive Mode Changed",
+		drive_mode_logs_details = "${consoleName} changed their drive mode to `${mode}` innit."
 	},
 
 	state = {

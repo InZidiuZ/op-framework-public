@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["de-DE"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["de-DE"] = {
 		wipe_props_command = "wipe_props",
 		wipe_props_command_help = "Löscht die Objekte um Sie herum.",
 		wipe_props_command_parameter_radius = "Radius",
-		wipe_props_command_parameter_radius_help = "Der Radius für das Löschen (1-100).",
+		wipe_props_command_parameter_radius_help = "Der Radius für das Entfernen (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["de-DE"] = {
 		dispatch_command_parameter_message = "nachricht",
 		dispatch_command_parameter_message_help = "Die Nachricht, die du senden möchtest.",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "police_drive_mode",
+		police_drive_mode_command_help = "Schalte den Fahrmodus deines Polizeifahrzeugs um.",
+		police_drive_mode_command_parameter_mode = "Modus",
+		police_drive_mode_command_parameter_mode_help = "Der Modus, den du einstellen möchtest. \"D\" für Normal und \"S\" für Sport (Sport ist Standard).",
+		police_drive_mode_command_substitutes = "fahrmodus",
 
 		-- jobs/state
 		license_give_command = "lizenz_vergeben",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["de-DE"] = {
 		categories = "Kategorien",
 		refresh = "Aktualisieren",
 		refreshing = "Aktualisiere...",
+		not_available = "N/A",
 
 		kill = "Töten",
 		headshot = "Kopfschuss",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["de-DE"] = {
 
 		hotwire_driving_detections_name = "Spielername",
 
+		model = "Modell",
+		label = "Label",
+		amount = "Menge",
+		console_name = "Spieler",
+		expected = "Erwartet",
+		actual = "Tatsächlich",
+		words = "Wörter",
+		distance = "Entfernung",
+		weapon = "Waffe",
+		type = "Typ",
+		nearby = "In der Nähe",
+
 		no_entries = "Kein Eintrag"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["de-DE"] = {
 		no_character_loaded = "Spieler hat keinen Charakter geladen.",
 		not_same_instance = "Spieler befindet sich nicht in derselben Instanz wie du.",
 
+		loading_coords = "Lade Koordinaten",
+		preloading_area = "Vorladen Bereich",
+		finding_player = "Spieler wird gesucht",
+
 		invincibility_active = "Unverwundbarkeit: ~r~Aktiv~w~",
 		invincibility_inactive_dead = "Unverwundbarkeit: ~g~Inaktiv~w~ (tot)",
 		invincibility_inactive = "Unverwundbarkeit: ~g~Inaktiv~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["de-DE"] = {
 		cannot_use_dispatch = "Sie können den Dispatch jetzt nicht verwenden.",
 
 		dispatch_message_logs_title = "Dispatch-Nachricht",
-		dispatch_message_logs_details = "${consoleName} hat eine Dispatch-Nachricht gesendet: `${message}`."
+		dispatch_message_logs_details = "${consoleName} hat eine Dispatch-Nachricht gesendet: `${message}`.",
+
+		no_keys = "Du hast keine Schlüssel für dieses Fahrzeug.",
+		invalid_drive_mode = "Ungültiger Fahrmodus.",
+		not_in_police_vehicle = "Du bist nicht in einem Polizeifahrzeug.",
+		drive_mode_too_fast = "Du fährst zu schnell, um den Fahrmodus zu ändern.",
+		drive_mode_already_set = "Dein Fahrmodus ist bereits auf `${mode}` eingestellt.",
+		drive_mode_failed = "Fehler beim Einstellen des Fahrmodus.",
+		drive_mode_set = "Fahrmodus erfolgreich auf `${mode}` eingestellt.",
+
+		mode_s = "Sport-Modus",
+		mode_d = "Fahr-Modus",
+
+		drive_mode_logs_title = "Fahrmodus geändert",
+		drive_mode_logs_details = "${consoleName} hat seinen Fahrmodus auf `${mode}` geändert."
 	},
 
 	state = {

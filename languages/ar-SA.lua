@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 2 (do not change)
+-- AUTO LOCALES: 3 (do not change)
 
 OP.Global.Locales.Languages["ar-SA"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		wipe_props_command = "مسح_العناصر",
 		wipe_props_command_help = "يقوم بمسح العناصر حولك.",
 		wipe_props_command_parameter_radius = "نصف_القطر",
-		wipe_props_command_parameter_radius_help = "نصف القطر للمسح (1-100).",
+		wipe_props_command_parameter_radius_help = "نطاق المسح (1-250).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3277,6 +3277,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		dispatch_command_parameter_message = "الرسالة",
 		dispatch_command_parameter_message_help = "الرسالة التي تريد إرسالها.",
 		dispatch_command_substitutes = "",
+
+		police_drive_mode_command = "police_drive_mode",
+		police_drive_mode_command_help = "تبديل وضعية القيادة في سيارتك الشرطية.",
+		police_drive_mode_command_parameter_mode = "الوضعية",
+		police_drive_mode_command_parameter_mode_help = "الوضعية التي ترغب في تعيينها. \"D\" للقيادة و \"S\" الرياضية (الرياضية هي الإعداد الافتراضي).",
+		police_drive_mode_command_substitutes = "drive_mode",
 
 		-- jobs/state
 		license_give_command = "license_give",
@@ -3880,6 +3886,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		categories = "الفئات",
 		refresh = "تحديث",
 		refreshing = "يتم التحديث...",
+		not_available = "غير متوفر",
 
 		kill = "قتل",
 		headshot = "رأس الأعلى",
@@ -8630,6 +8637,18 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		hotwire_driving_detections_name = "اسم اللاعب",
 
+		model = "النموذج",
+		label = "التسمية",
+		amount = "الكمية",
+		console_name = "اللاعب",
+		expected = "المتوقع",
+		actual = "الفعلي",
+		words = "الكلمات",
+		distance = "المسافة",
+		weapon = "السلاح",
+		type = "النوع",
+		nearby = "بالقرب منك",
+
 		no_entries = "لا توجد ادخالات"
 	},
 
@@ -9879,6 +9898,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		no_character_loaded = "اللاعب ليس لديه شخصية محملة.",
 		not_same_instance = "اللاعب ليس في نفس النسخة الحالية معك.",
 
+		loading_coords = "جاري تحميل الإحداثيات",
+		preloading_area = "جاري تحميل المنطقة",
+		finding_player = "جاري البحث عن اللاعب",
+
 		invincibility_active = "اللازمية: ~r~نشطة~w~",
 		invincibility_inactive_dead = "اللازمية: ~g~غير نشطة~w~ (ميت)",
 		invincibility_inactive = "اللازمية: ~g~غير نشطة~w~",
@@ -10782,7 +10805,21 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		cannot_use_dispatch = "لا يمكنك استخدام التوجيه الآن.",
 
 		dispatch_message_logs_title = "سجل الرسالة التوجيهية",
-		dispatch_message_logs_details = "${consoleName} أرسل رسالة إرسال: `${message}`."
+		dispatch_message_logs_details = "${consoleName} أرسل رسالة إرسال: `${message}`.",
+
+		no_keys = "ليس لديك مفتاح لهذه السيارة.",
+		invalid_drive_mode = "نمط القيادة غير صالح.",
+		not_in_police_vehicle = "أنت لست داخل سيارة شرطة.",
+		drive_mode_too_fast = "أنت تسير بسرعة عالية جدًا لتغيير نمط القيادة.",
+		drive_mode_already_set = "تم تعيين وضع القيادة الخاص بك بالفعل على '${mode}'.",
+		drive_mode_failed = "لم يتم تعيين وضع القيادة بنجاح.",
+		drive_mode_set = "تم تعيين وضع القيادة الخاص بك بنجاح على '${mode}'.",
+
+		mode_s = "وضع الرياضة",
+		mode_d = "وضع الدفع",
+
+		drive_mode_logs_title = "تم تغيير وضع القيادة",
+		drive_mode_logs_details = "قام ${consoleName} بتغيير وضع القيادة الخاص بهم إلى '${mode}'."
 	},
 
 	state = {
