@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["tr-TR"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 	arena = {
 		player_died = "${name} öldü.",
-		player_killed = "${killedName} ${name} tarafından ${deathCause} nedeniyle ${distance}m mesafeden öldürüldü.",
+		player_killed = "${killerName} kişisi ${name}'i ${deathCause} (${distance}m) mesafeden öldürdü.",
 		hud_info = "Oyuncu Sayısı: ${playerAmount}\n\nÖlümler: ${deaths}\nÖldürme Sayısı: ${kills}",
 		press_to_access_menu = "Arena menüsüne erişmek için ~INPUT_INTERACTION_MENU~ tuşuna basın.",
 		this_command_is_only_for_arena = "Bu komut yalnızca Arena için geçerlidir.",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		kill = "Öldürme",
 		headshot = "Kafa",
 		killstreak = "Öldürme Serisi",
+		assist = "Destek",
 
 		level = "Seviye",
 		position = "Pozisyon",

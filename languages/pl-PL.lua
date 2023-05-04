@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["pl-PL"] = {
 	-- configuration settings for language
@@ -2779,7 +2779,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		wipe_props_command = "wipe_props",
 		wipe_props_command_help = "Usuwa propy wokół ciebie.",
 		wipe_props_command_parameter_radius = "promien",
-		wipe_props_command_parameter_radius_help = "Promień czyszczenia (1-250).",
+		wipe_props_command_parameter_radius_help = "Promień do usuwania (1-100).",
 		wipe_props_command_substitutes = "",
 
 		-- game/radio
@@ -3278,11 +3278,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		dispatch_command_parameter_message_help = "Wiadomość, którą chcesz wysłać.",
 		dispatch_command_substitutes = "dp",
 
-		police_drive_mode_command = "tryb_jazdy_policji",
+		police_drive_mode_command = "police_drive_mode",
 		police_drive_mode_command_help = "Przełącza tryb jazdy twojego policyjnego pojazdu.",
-		police_drive_mode_command_parameter_mode = "tryb",
+		police_drive_mode_command_parameter_mode = "mode",
 		police_drive_mode_command_parameter_mode_help = "Tryb, którego chcesz użyć. \"D\" dla trybu jazdy i \"S\" dla trybu sportowego (tryb sportowy jest domyślny).",
-		police_drive_mode_command_substitutes = "jazda_policji",
+		police_drive_mode_command_substitutes = "drive_mode",
 
 		-- jobs/state
 		license_give_command = "license_give",
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 	arena = {
 		player_died = "${name} umarł.",
-		player_killed = "${name}Został zabity przez ${killerName} z powodu ${deathCause} z odległości ${distance}m.",
+		player_killed = "${killerName} zabił ${name} używając ${deathCause} (${distance}m).",
 		hud_info = "Kwota gracza: ${playerAmount}\n\nDeaths: ${deaths}\nKills: ${kills}",
 		press_to_access_menu = "Naciśnij ~INPUT_INTERACTION_MENU~, aby otworzyć menu Areny.",
 		this_command_is_only_for_arena = "Ta komenda jest tylko dla areny",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		kill = "Zabójstwo",
 		headshot = "Celowanie w głowę",
 		killstreak = "Serie zabójstw",
+		assist = "Asysta",
 
 		level = "Poziom",
 		position = "Pozycja",
@@ -4380,30 +4381,30 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		san_andreas = "San Andreas!",
 
 		getting_started = "Turystyka",
-		getting_started_1 = "Stan ma wiele pięknych miejsc, które przyciągają miłośników przyrody z całego świata. Jeśli chcesz poczuć bliskość natury, polecamy odwiedzić Park Narodowy Banff. Jest to idealne miejsce dla osób, które chcą poczuć bliskość natury i zobaczyć piękno dzikiej przyrody. Znajdziesz tam góry, rzeki, lasy i malownicze jeziora.",
-		getting_started_2 = "Góra Chiliad jest również popularnym celem turystycznym dla miłośników krajobrazów. Znajduje się tam punkt widokowy, z którego można podziwiać piękne widoki na okolicę. Wspinaczka na szczyt jest również popularną atrakcją dla turystów. Na szczycie można zrobić piękne zdjęcia, które staną się wspaniałą pamiątką.",
-		getting_started_3 = "W pobliżu Góry Chiliad znajduje się urocze miasteczko Paleto Bay. To idealne miejsce dla fanów myślistwa, ponieważ w Hunting Store można znaleźć wszystko, czego potrzeba do udanego polowania!",
+		getting_started_1 = "Stan ma wiele pięknych miejsc, które przyciągają miłośników przyrody z całego świata.",
+		getting_started_2 = "Góra Chiliad jest popularnym celem turystycznym dla miłośników krajobrazów. Na szczycie można zrobić piękne zdjęcia, które staną się wspaniałą pamiątką.",
+		getting_started_3 = "W pobliżu góry znajduje się urocze miasteczko Paleto Bay. To idealne miejsce dla fanów myślistwa, ponieważ w Hunting Store można znaleźć wszystko, czego potrzeba do udanego polowania!",
 
 		where_now = "Stolica",
-		where_now_1 = "Następnie udajemy się do stolicy stanu - Los Santos. To miasto pełne życia, klubów i pubów, które gwarantują wieczorny relaks. Miejsca takie jak Vespucci Beach, Del Perro Pier i Mirror Park to idealne miejsca na wypoczynek. Jednak, bądź ostrożny, ponieważ miasto skrywa wiele niebezpiecznych dzielnic, dlatego warto uważać. Na szczęście mamy świetnie zorganizowane jednostkę policyjną oraz departament sprawiedliwości, które dokładają wszelkich starań, by zadbać o bezpieczeństwo.",
-		where_now_2 = "Gdy już zaopatrzysz się w zapasy, udaj się do sądu i odbierz kartę obywatela. Będzie ona pełniła rolę twojego dowodu osobistego, prawa jazdy i pozwolenia na broń.",
+		where_now_1 = "Następnie udajemy się do stolicy stanu - Los Santos. To miasto pełne życia, klubów i pubów, które gwarantują wieczorny relaks. Miejsca takie jak Vespucci Beach, Del Perro Pier i Mirror Park to idealne miejsca na wypoczynek.",
+		where_now_2 = "Jednak, bądź ostrożny, ponieważ miasto skrywa wiele niebezpiecznych dzielnic. Na szczęście mamy świetnie zorganizowane jednostkę policyjną oraz departament sprawiedliwości, które dokładają wszelkich starań, by zadbać o bezpieczeństwo.",
 
 		getting_a_job = "Perspektywy",
 		getting_a_job_1 = "Los Santos to miasto, które obfituje w wiele możliwości. Nie musisz martwić się o wydanie wszystkich swoich oszczędności na właśnie sprowadzone auto w Premium Deluxe Motorsport. Miasto to oferuje wiele różnych możliwości zarobienia pieniędzy i chętnie zatrudnia turystów.",
 		getting_a_job_2 = "W takim Life Invanderze praktycznie zawsze znajdą zajęcie, które poratuje Cię paroma dolarami. Zawsze jest gdzieś coś do zrobienia, niezależnie od pory dnia lub nocy.",
-		getting_a_job_3 = "Jeśli jednak szukasz czegoś więcej, to warto poszukać innych miejsc, które często potrzebują dodatkowych rąk do pracy. Warsztaty samochodowe, puby i restauracje, a nawet szpitale, to tylko kilka przykładów miejsc, w których można znaleźć pracę. Może nawet stać Cię będzie na wyniesienie z moteli, które lubią zbijać majątek na turystach!",
-		getting_a_job_4 = "Praca w Los Santos może być również dobrą okazją do zdobycia cennego doświadczenia i nawiązania nowych kontaktów. Wiele miejsc pracy oferuje szkolenia i możliwość awansu, co pozwala na rozwój zawodowy i zdobycie nowych umiejętności.",
-		getting_a_job_5 = "Dodatkowo, praca może pozwolić na nawiązanie nowych znajomości, co w przyszłości może okazać się bardzo wartościowe. W końcu kontakty w dzisiejszym świecie są najważniejsze w biznesie.",
+		getting_a_job_3 = "Jeśli jednak szukasz czegoś więcej to jest wiele miejsc, które potrzebują dodatkowych rąk do pracy. Warsztaty samochodowe, puby i restauracje, a nawet szpitale, to tylko kilka przykładów, w których można znaleźć pracę. Może nawet stać Cię będzie na wyniesienie z moteli, które lubią zbijać majątek na turystach!",
+		getting_a_job_4 = "Wiele miejsc oferuje szkolenia i możliwość awansu, co pozwala na rozwój zawodowy i zdobycie nowych umiejętności.",
+		getting_a_job_5 = "Dodatkowo, praca może być również dobrą okazją do nawiązania nowych znajomości. W końcu kontakty w dzisiejszym świecie są najważniejsze w biznesie.",
 
 		your_appearance = "Zdrowie",
 		your_appearance_1 = "Przechadzając się po Vinewood Boulevard wyrżnąłeś się z podekscytowania? Jeśli potrzebujesz pomocy medycznej, Szpital Mount Zonah w mig postawi Ci diagnozę!",
 		your_appearance_2 = "Pacjenci otrzymują tam opiekę od najlepszych specjalistów w swoich dziedzinach, którzy stosują najnowsze metody diagnostyczne i lecznicze, a sam szpital jest wyposażony w najnowocześniejsze urządzenia diagnostyczne i terapeutyczne, co pozwala na dokładne diagnozowanie chorób i skuteczne ich leczenie.",
 
 		medical_care = "Papierologia",
-		medical_care_1 = "Zabalowałeś za mocno w salonie gier i Twoje dokumenty gdzieś wyparowały? Nasz sąd ten cechuje się wysokim poziomem i szybkością działania, co oznacza, że szybko i sprawnie zajmie się Twoją sprawą! Oczywiście, za korzystanie z usług sądu trzeba zapłacić pewną opłatę.",
-		medical_care_2 = "Wskazane jest również, abyś udał się do Suburbana w końcu wypada jakoś się prezentować, zadbać o odpowiedni wygląd, który jest adekwatny do wizyty w sądzie.",
+		medical_care_1 = "Zabalowałeś za mocno w salonie gier i Twoje dokumenty gdzieś wyparowały? Nasz sąd ten cechuje się wysokim poziomem i szybkością działania, co oznacza, że ​​szybko i sprawnie zajmie się Twoją sprawą! Oczywiście, za korzystanie z usług sądu trzeba zapłacić pewną opłatę.",
+		medical_care_2 = "Wskazane jest również, abyś udał się do Suburbana - w końcu wypada jakoś się prezentować, zadbać o odpowiedni wygląd, który jest adekwatny do wizyty w sądzie.",
 
-		safety_hint = "Wskazówka: Sevra to kiep!",
+		safety_hint = "Kupuj kolejne wydania gazet i bądź z nami na bieżąco!",
 
 		closing_sentence = "W mieście jest o wiele więcej do zrobienia, niż Ci się tylko wydaje!"
 	},
@@ -8654,7 +8655,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 	oxy = {
 		press_to_talk_to_jc = "Naciśnij ~g~${InteractionKey} ~w~aby porozmawiać z JC.",
-		tutorial_will_play_next_time = "Samouczek dotyczący oxy zagra w następnym razie, gdy rozpoczniesz bieg.",
+		tutorial_will_play_next_time = "Samouczek dotyczący oxy pojawi się, gdy rozpoczniesz nową sprzedaż oxy.",
 		prescription_pick_up = "Odbiór recepty: ${label}",
 
 		pick_up_the_prescriptions = "Odbierz sfałszowane recepty oznaczone na Twojej mapie.",
@@ -8662,26 +8663,26 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		jc_will_be_expecting_some_back = "~y~JC ~w~oczekuje zwrotu 6 tabletek Oxy z ilości ${pickUpAmount}.",
 		you_have_limited_time = "Masz ograniczony czas. Powinieneś wrócić z tabletkami w ciągu ${time}.",
 		press_to_hide_unimportant_blips_in_map = "Naciśnij ~INPUT_SPRINT~, aby ukryć piksele nieważne dla misji w menu pauzy.",
-		consider_getting_a_smart_watch = "Rozważ zakup inteligentnego zegarka, aby zawsze móc zobaczyć swoją lokalizację GPS.",
+		consider_getting_a_smart_watch = "Rozważ zakup smart watch'a, aby zawsze móc zobaczyć swoją lokalizację GPS.",
 
 		press_to_pick_up_prescription = "Naciśnij ~g~${InteractionKey} ~w~, aby odebrać receptę.",
 
-		redeem_oxy_prescription = "Odbierz receptę na Oxy",
-		press_to_redeem_prescription = "Naciśnij ~g~${InteractionKey} ~w~aby odbierzesz receptę.",
+		redeem_oxy_prescription = "Zrealizuj receptę na Oxy",
+		press_to_redeem_prescription = "Naciśnij ~g~${InteractionKey} ~w~aby zrealizować receptę.",
 
-		check_your_map_to_redeem_prescriptions = "Dobra robota! Sprawdź mapę, aby odbierać recepty. Masz ${time} pozostało.",
-		go_to_jc_to_finish_run = "Dobrze Ci poszło! Wróć do ~y~JC ~w~, aby zakończyć pracę. Masz ${time} pozostało.",
+		check_your_map_to_redeem_prescriptions = "Dobra robota! Sprawdź mapę, aby zrealizować recepty. Pozostało ${time}.",
+		go_to_jc_to_finish_run = "Dobrze Ci poszło! Wróć do ~y~JC ~w~, aby zakończyć sprzedaż. Pozostało ${time}.",
 
-		oxy_run_started_title = "Rozpoczęto pracę na Oxy",
-		oxy_run_started_details = "${consoleName} rozpoczął pracę na Oxy.",
+		oxy_run_started_title = "Rozpoczęto sprzedaż Oxy",
+		oxy_run_started_details = "${consoleName} rozpoczął sprzedaż Oxy.",
 
-		oxy_run_ended_title = "Praca na Oxy zakończona",
-		oxy_run_ended_details = "${consoleName} ukończył swoją akcję z oxy po ${time} i zarobił $${payout}.",
+		oxy_run_ended_title = "Sprzedaż Oxy zakończona",
+		oxy_run_ended_details = "${consoleName} ukończył swoją sprzedaż oxy po ${time} i zarobił $${payout}.",
 
-		oxy_run_failed_title = "Nieudana Akcja z Oxy",
-		oxy_run_failed_details = "${consoleName} nie ukończył swojej akcji z oxy.",
+		oxy_run_failed_title = "Nieudana sprzedaż Oxy",
+		oxy_run_failed_details = "${consoleName} nie ukończył sprzedaży oxy.",
 
-		you_failed_the_run = "Nie ukończyłeś akcji. ~y~JC ~w~nie będzie z tobą zadowolony przez jakiś czas.",
+		you_failed_the_run = "Nie ukończyłeś sprzedaży. ~y~JC ~w~nie będzie tobą zadowolony przez jakiś czas.",
 
 		time_left = "Pozostało ci ${time}.",
 
@@ -9032,7 +9033,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		start_cop_1_part_2 = "Widzę, że jesteś policjantem.",
 		start_cop_1_part_3 = "Lepiej wezwij posiłki, zanim zacznę wietrzyć twoje małe policyjne auto, bro.",
 
-		start_cop_2_part_1 = "Cześć, co tam u was, oficerowie? Po prostu pomagamy chorym ludziom w hrabstwie Blaine. ",
+		start_cop_2_part_1 = "Cześć, co tam u was, oficerowie? Po prostu pomagamy chorym ludziom w hrabstwie Blaine.",
 		start_cop_2_part_2 = "Nie dzieje się nic nielegalnego, bro.",
 
 		start_gang_member_part_1 = "Przysięgam, że widziałem, jak tamtej jednej grupy załatwili cię..",
@@ -10258,9 +10259,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	titanic = {
-		created_titanic = "Utworzono Tytanic z czasem zatonięcia ${sinkTime} minut(y).",
-		failed_to_create_titanic = "Nie udało się utworzyć Tytanic.",
-		create_titanic_missing_permissions = "Gracz próbował utworzyć Tytanic, ale nie miał wymaganych uprawnień."
+		created_titanic = "Stworzono Titanic z czasem tonięcia ${sinkTime} minut(y).",
+		failed_to_create_titanic = "Nie udało się stworzyć Titanica.",
+		create_titanic_missing_permissions = "Gracz próbował stworzyć Titanica, ale nie miał wymaganych uprawnień."
 	},
 
 	top_down = {
@@ -11119,12 +11120,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	spawner = {
-		press_to_access_spawner = "Naciśnij ~INPUT_CONTEXT~ aby uzyskać dostęp do generatora pojazdu.",
+		press_to_access_spawner = "Naciśnij ~INPUT_CONTEXT~ aby uzyskać dostęp do garażu.",
 
 		parked_vehicle = "Pomyślnie zaparkowany pojazd.",
 
 		spawner_burger_shot = "Pojazdy dostawcze Burger Shot",
-		spawner_bean_machine = "Pojazdy dostawcze do kawiarni",
+		spawner_bean_machine = "Pojazdy dostawcze Bean Machine",
 		spawner_weazel_news = "Pojazdy Weazel News",
 		close_menu = "Zamknij menu",
 		vehicle_list = "Lista pojazdów",

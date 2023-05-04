@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["ar-SA"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 	arena = {
 		player_died = "توفي ${name}.",
-		player_killed = "${killedName} تم قتله من قبل ${name} بسبب ${deathCause} من مسافة ${distance}م.",
+		player_killed = "${killerName} قتل ${name} بـ ${deathCause} (${distance} متر).",
 		hud_info = "عدد اللاعبين: ${playerAmount}\n\nالوفيات: ${deaths}\nالقتل: ${kills}",
 		press_to_access_menu = "اضغط ~INPUT_INTERACTION_MENU~ للوصول إلى قائمة الملعب.",
 		this_command_is_only_for_arena = "هذا الأمر مخصص فقط لـ الملعب.",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		kill = "قتل",
 		headshot = "رأس الأعلى",
 		killstreak = "سلسلة القتل",
+		assist = "مساعدة",
 
 		level = "المستوى",
 		position = "المركز",

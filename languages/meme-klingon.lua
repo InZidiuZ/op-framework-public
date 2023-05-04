@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["meme-klingon"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 	arena = {
 		player_died = "${name} Qo'noS qeylIS.",
-		player_killed = "${killedName} qatlho' ${deathCause} jatlh'a' $ {distance}m chonDaq ${name} Hegh.",
+		player_killed = "${killerName} HIq ${name} Duj ${deathCause} (${distance}m) che'.",
 		hud_info = "lo'laHbe' nIvDaq: ${playerAmount}\n\nQo'noS qeylIS: ${deaths}\nQejDaq pagh: ${kills}",
 		press_to_access_menu = "Dap bom ~INPUT_INTERACTION_MENU~ vIghor 'ej Arena menu Hoch.",
 		this_command_is_only_for_arena = "rid 'e' cha'logh Qapchu'pu' tlhIngan 'ejbe'.",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		kill = "qa'Hom",
 		headshot = "tay'Ha'moH",
 		killstreak = "qa'Hom jIlwI'",
+		assist = "Qapchu'",
 
 		level = "Hap",
 		position = "nagh",

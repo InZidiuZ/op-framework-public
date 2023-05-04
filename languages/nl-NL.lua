@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 	arena = {
 		player_died = "${name} is overleden.",
-		player_killed = "${killedName} is gedood door ${name} wegens ${deathCause} met een afstand van ${distance}m.",
+		player_killed = "${killerName} heeft ${name} gedood met ${deathCause} (${distance}m).",
 		hud_info = "Aantal spelers: ${playerAmount}\n\nOverledenen: ${deaths}\nKills: ${kills}",
 		press_to_access_menu = "Druk op ~INPUT_INTERACTION_MENU~ om toegang te krijgen tot het Arenamenu.",
 		this_command_is_only_for_arena = "Dit commando is alleen voor de Arena.",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		kill = "Dood",
 		headshot = "Hoofdschot",
 		killstreak = "Dodenreeks",
+		assist = "Hulp",
 
 		level = "Niveau",
 		position = "Positie",

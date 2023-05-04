@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["en-GB"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 	arena = {
 		player_died = "${name} died.",
-		player_killed = "${killedName} was killed by ${name} for reason ${deathCause} from a distance of ${distance}m.",
+		player_killed = "${killerName} killed ${name} with ${deathCause} (${distance}m).",
 		hud_info = "Player Amount: ${playerAmount}\n\nDeaths: ${deaths}\nKills: ${kills}",
 		press_to_access_menu = "Press ~INPUT_INTERACTION_MENU~ to access the Arena menu.",
 		this_command_is_only_for_arena = "This command is only for the Arena.",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		kill = "Kill",
 		headshot = "Headshot",
 		killstreak = "Killstreak",
+		assist = "Assist",
 
 		level = "Level",
 		position = "Position",

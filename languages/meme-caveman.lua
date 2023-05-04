@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["meme-caveman"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 	arena = {
 		player_died = "${name} ugh! died.",
-		player_killed = "${killedName} ugh! was killed by ${name} for reason ${deathCause} from ugh! distance of ${distance}m.",
+		player_killed = "${killerName} bonked ${name} with ${deathCause} (${distance}m).",
 		hud_info = "Player Amount: ${playerAmount}\n\nUgh! Deaths: ${deaths}\nUgh! Kills: ${kills}",
 		press_to_access_menu = "Press ~INPUT_INTERACTION_MENU~ to access the Arena menu.",
 		this_command_is_only_for_arena = "This command is only for Arena. Ugh!",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		kill = "Ug (Kill)",
 		headshot = "Head-Ug (Headshot)",
 		killstreak = "Killstreak",
+		assist = "Help",
 
 		level = "Ug Ug (Level)",
 		position = "Ook (Position)",

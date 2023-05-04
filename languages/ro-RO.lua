@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["ro-RO"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 	arena = {
 		player_died = "${name} a murit.",
-		player_killed = "${killedName} a fost ucis de ${name} din motive de ${deathCause} de la o distanță de ${distance}m.",
+		player_killed = "${killerName} a omorât pe ${name} cu ${deathCause} (${distance}m).",
 		hud_info = "Număr de jucători: ${playerAmount}\n\nDecese: ${deaths}\nUcideri: ${kills}",
 		press_to_access_menu = "Apasă ~INPUT_INTERACTION_MENU~ pentru a accesa meniul Arena.",
 		this_command_is_only_for_arena = "Această comandă este doar pentru Arena.",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		kill = "Omoară",
 		headshot = "Lovitură la cap",
 		killstreak = "Seria de omoruri",
+		assist = "Asistență",
 
 		level = "Nivel",
 		position = "Poziție",

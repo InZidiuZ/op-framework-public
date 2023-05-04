@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["meme-spongebob"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 	arena = {
 		player_died = "${name} turned into a Jellyfish",
-		player_killed = "${killedName} was turned into a Krabby Patty by ${name} because ${deathCause} from a distance of ${distance}m. Ha ha ha!",
+		player_killed = "${killerName} has sent ${name} to the big kahuna with ${deathCause} (${distance}m)!",
 		hud_info = "Player Amount: ${playerAmount}\n\nDeaths: ${deaths}\nKills: ${kills}. Don't worry, they'll come back as ghostly ghoulies!",
 		press_to_access_menu = "Press ~INPUT_INTERACTION_MENU~ to access the Arena menu. Ooooh, I can't wait to see the action!",
 		this_command_is_only_for_arena = "Only people from the Arena can use this! Aren't you lucky.",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		kill = "Kill",
 		headshot = "Headshot",
 		killstreak = "Killstweak",
+		assist = "Assist",
 
 		level = "Me level be",
 		position = "Position",

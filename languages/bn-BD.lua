@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["bn-BD"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 	arena = {
 		player_died = "${name} মারা গেছে।",
-		player_killed = "${name} দূরত্ব ${distance}মিটার থেকে ${killedName}-কে ${deathCause} কারণে হত্যা করেছে।",
+		player_killed = "${killerName} ${distance}মিটারদূরত্বে ${deathCause} ব্যবহার করে ${name}-কে হত্যা করেছেন।",
 		hud_info = "খেলোয়ার সংখ্যা: ${playerAmount}\n\nমৃত্যু: ${deaths}\nহত্যা: ${kills}",
 		press_to_access_menu = "অ্যারিনা মেনু অ্যাক্সেস করতে ~INPUT_INTERACTION_MENU~ চাপুন।",
 		this_command_is_only_for_arena = "এই কমান্ড কেবল অ্যারিনার জন্য।",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		kill = "হত্যা করুন",
 		headshot = "হেডশট",
 		killstreak = "কিলস্ট্রিক",
+		assist = "সহায়তা",
 
 		level = "লেভেল",
 		position = "অবস্থান",

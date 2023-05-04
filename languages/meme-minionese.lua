@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["meme-minionese"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 	arena = {
 		player_died = "${name} dala babblooo...",
-		player_killed = "${killedName} was ki-kiii by ${name} for reason ${deathCause} from a distance of ${distance}m.",
+		player_killed = "${killerName} BEE-DOHed ${name} with ${deathCause} (${distance}m).",
 		hud_info = "Bananaaaa: ${playerAmount}\n\nBabblooois: ${deaths}\nKlllss: ${kills}",
 		press_to_access_menu = "Press ~INPUT_INTERACTION_MENU~ to access the Minion Arena menu.",
 		this_command_is_only_for_arena = "Bee Do Bee Do Bee Do! This command is only for the Minion Arena.",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		kill = "BANANA!",
 		headshot = "BANANA BOOM!",
 		killstreak = "BANANAAAAAA STREEEEK!",
+		assist = "BEE-DOH assist",
 
 		level = "Levellll",
 		position = "Papoy Positionnn",

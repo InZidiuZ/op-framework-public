@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["meme-pirate"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 	arena = {
 		player_died = "${name} died.",
-		player_killed = "${killedName} was killed by ${name} fer reason ${deathCause} from a distance o' ${distance}m.",
+		player_killed = "${killerName} slayed ${name} wit' ${deathCause} (from ${distance}m away, arrrgh).",
 		hud_info = "Player Amount: ${playerAmount}\n\nDeaths: ${deaths}\nKills: ${kills}",
 		press_to_access_menu = "Press ~INPUT_INTERACTION_MENU~ t' access th' Arena menu.",
 		this_command_is_only_for_arena = "This command be only fer Arena.",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		kill = "Ye be slain!",
 		headshot = "Headshot me matey!",
 		killstreak = "Killstreak",
+		assist = "Assist",
 
 		level = "Ahoy, level",
 		position = "Position on th' seas",

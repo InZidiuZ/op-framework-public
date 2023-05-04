@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["meme-uwu"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 	arena = {
 		player_died = "${name} died. OwO",
-		player_killed = "${killedName} was killed by ${name} for weason ${deathCause} fwom a distance of ${distance}m. :3",
+		player_killed = "${kiwwewNyame} kiwwed ${nyame} with ${deathCause} (${distance}m).",
 		hud_info = "Pwayer Amount: ${playerAmount}\n\nDeaths: ${deaths}\nKiwws: ${kills}",
 		press_to_access_menu = "Press ~INPUT_INTERACTION_MENU~ to access the Awena menu. UwU",
 		this_command_is_only_for_arena = "This command is only for Awena. :3",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		kill = "K-ill",
 		headshot = "Headshot",
 		killstreak = "Killstweam",
+		assist = "Assist",
 
 		level = "Wevel",
 		position = "Position",

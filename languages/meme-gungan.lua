@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["meme-gungan"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 	arena = {
 		player_died = "${name} died.",
-		player_killed = "${killedName} was killed by ${name} for reason ${deathCause} wit a distance of ${distance}m.",
+		player_killed = "${killerName} bryngeebonged ${name} witha ${deathCause} (${distance}m).",
 		hud_info = "Player Amount: ${playerAmount}\n\nDeaths: ${deaths}\nKills: ${kills}",
 		press_to_access_menu = "Press ~INPUT_INTERACTION_MENU~ to open de Arena menu.",
 		this_command_is_only_for_arena = "Dis command issa only for de Arena.",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		kill = "Killy",
 		headshot = "Headshot-sa",
 		killstreak = "Killstreak-sa",
+		assist = "Assist",
 
 		level = "Lub-lub",
 		position = "Positiona",

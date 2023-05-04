@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["ne-NP"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 
 	arena = {
 		player_died = "${name} मर्यो।",
-		player_killed = "${name} द्वारा ${killedName} ${deathCause} कारणको लागि ${distance}m दूरीबाट हत्या गरिएको छ।",
+		player_killed = "${killerName} ले ${name}लाई ${deathCause} (${distance}मीटर) दूरीबाट मारेको।",
 		hud_info = "खिलाडी संख्या: ${playerAmount}\n\nमृत्यु: ${deaths}\nकिल्लिंग्स: ${kills}",
 		press_to_access_menu = "एरिना मेनू तक पहुँचने के लिए ~INPUT_INTERACTION_MENU~ दबाएं।",
 		this_command_is_only_for_arena = "यह कमांड केवल एरिना के लिए है।",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		kill = "मारी",
 		headshot = "हेडशट",
 		killstreak = "किल्लता सार्नु",
+		assist = "सहयोग",
 
 		level = "स्तर",
 		position = "पद",

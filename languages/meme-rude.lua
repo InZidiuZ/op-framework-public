@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["meme-rude"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 	arena = {
 		player_died = "${name} f***in' died. Ain't that some s***?",
-		player_killed = "${killedName} got f***in' killed by ${name} for reason ${deathCause} from a f***in' distance of ${distance}m. GODDAMN!",
+		player_killed = "${killerName} just brutally murdered ${name} with ${deathCause} (${distance} freaking meters away).",
 		hud_info = "Player Amount: ${playerAmount}\n\nDeaths: ${deaths}\nKills: ${kills}. S***, that's f***in' badass!",
 		press_to_access_menu = "Press ~INPUT_INTERACTION_MENU~ to f***in' access the Arena menu. LET'S F***IN' GO!",
 		this_command_is_only_for_arena = "Listen up, you f***in' idiot. This command is only for the f***in' Arena. Got that, dumbass?",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		kill = "Bloody Kill",
 		headshot = "Bloody Headshot",
 		killstreak = "Bloody Killstreak",
+		assist = "Assist",
 
 		level = "How F*cking Good You Are",
 		position = "Bloody Position",

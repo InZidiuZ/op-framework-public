@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 	arena = {
 		player_died = "${name} เสียชีวิตแล้ว",
-		player_killed = "${name} ฆ่า ${killedName} เนื่องจาก ${deathCause} จากระยะทาง ${distance} เมตร",
+		player_killed = "${killerName} ฆ่า ${name} ด้วย ${deathCause} (${distance} เมตร).",
 		hud_info = "จำนวนผู้เล่น: ${playerAmount}\n\nจำนวนการเสียชีวิต: ${deaths}\nจำนวนการฆ่า: ${kills}",
 		press_to_access_menu = "กด ~INPUT_INTERACTION_MENU~ เพื่อเข้าถึงเมนูสนามต่อสู้",
 		this_command_is_only_for_arena = "คำสั่งนี้ใช้ได้เฉพาะสำหรับสนามต่อสู้เท่านั้น",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		kill = "ฆ่า",
 		headshot = "ยิงหัว",
 		killstreak = "ต่อเนื่องการฆ่า",
+		assist = "ช่วยเหลือ",
 
 		level = "เลเวล",
 		position = "ตำแหน่ง",

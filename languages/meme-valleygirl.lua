@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["meme-valleygirl"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 	arena = {
 		player_died = "${name} is, like, dead.",
-		player_killed = "${killedName} got totally owned by ${name} for reason ${deathCause} from a distance of ${distance}m.",
+		player_killed = "${killerName} totally murdered ${name} with ${deathCause} (${distance}m), like oh my god!",
 		hud_info = "Player Amount: ${playerAmount}\n\nDeaths: ${deaths}\nKills: ${kills} - totally legit, of course",
 		press_to_access_menu = "Press ~INPUT_INTERACTION_MENU~ to access the epic Arena menu.",
 		this_command_is_only_for_arena = "Umm, hello? This command is like, only for Arena.",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		kill = "Kill, like so dead",
 		headshot = "Headshot, like a total boss",
 		killstreak = "Killstreak, like on fire",
+		assist = "Assist" - "Helping hand, yas queen!",
 
 		level = "Level, like your status",
 		position = "Position, like your spot",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["et-EE"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 	arena = {
 		player_died = "${name} suri.",
-		player_killed = "${killedName} tapeti ${name} poolt põhjusel ${deathCause} kaugusel ${distance} meetrit.",
+		player_killed = "${killerName} tappis ${name} relvaga ${deathCause} (${distance}m).",
 		hud_info = "Mängijate arv: ${playerAmount}\n\nSurmad: ${deaths}\nTapmised: ${kills}",
 		press_to_access_menu = "Vajuta ~INPUT_INTERACTION_MENU~, et avada Arena menüü.",
 		this_command_is_only_for_arena = "See käsk on ainult Arena jaoks.",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		kill = "Tapmine",
 		headshot = "Pähe laskmine",
 		killstreak = "Tapmistsükkel",
+		assist = "Abistamine",
 
 		level = "Tase",
 		position = "Asukoht",

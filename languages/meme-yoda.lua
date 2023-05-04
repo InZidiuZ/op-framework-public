@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["meme-yoda"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 	arena = {
 		player_died = "${name} has died.",
-		player_killed = "${name} has killed ${killedName} for reason ${deathCause}, from a distance of ${distance}m.",
+		player_killed = "${killerName} ${distance}m away, killed ${name} with ${deathCause}.",
 		hud_info = "Player Amount: ${playerAmount}\n\nDeaths: ${deaths}\nKills: ${kills}",
 		press_to_access_menu = "Press ~INPUT_INTERACTION_MENU~ you must, to access the Arena menu.",
 		this_command_is_only_for_arena = "Only for the Arena, this command is.",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		kill = "Kill",
 		headshot = "Headshot",
 		killstreak = "Killstreak",
+		assist = "Assistance, given it was.", --Changed "Assist",
 
 		level = "Level",
 		position = "Position",

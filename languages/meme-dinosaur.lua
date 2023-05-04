@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["meme-dinosaur"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 	arena = {
 		player_died = "${name} perished.",
-		player_killed = "${killedName} was brought down by ${name} for reason ${deathCause} from a distance of ${distance}m.",
+		player_killed = "${killerName} smashed ${name} with ${deathCause} (${distance}m)!",
 		hud_info = "Dino Amount: ${playerAmount}\n\nDeaths: ${deaths}\nKills: ${kills}",
 		press_to_access_menu = "Press ~INPUT_INTERACTION_MENU~ to access the Arena menu.",
 		this_command_is_only_for_arena = "This command is only for the Arena.",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		kill = "Munch",
 		headshot = "Big Munch",
 		killstreak = "Munch Frenzy",
+		assist = "Helping claws",
 
 		level = "Rarrrr Level",
 		position = "Territory",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 3 (do not change)
+-- AUTO LOCALES: 4 (do not change)
 
 OP.Global.Locales.Languages["ko-KR"] = {
 	-- configuration settings for language
@@ -3845,7 +3845,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 	arena = {
 		player_died = "${name} 님이 사망하셨습니다.",
-		player_killed = "${name} 님이 ${killedName} 님을 ${deathCause} 이유로 ${distance}m 거리에서 살해하였습니다.",
+		player_killed = "${killerName} 님이 ${name} 님을 ${deathCause} (${distance}m)로 죽였습니다.",
 		hud_info = "플레이어 수: ${playerAmount}\n\n사망: ${deaths}\n킬: ${kills}",
 		press_to_access_menu = "아레나 메뉴에 접근하려면 ~INPUT_INTERACTION_MENU~ 를 누르세요.",
 		this_command_is_only_for_arena = "이 명령어는 아레나에서만 사용 가능합니다.",
@@ -3891,6 +3891,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		kill = "킬",
 		headshot = "헤드샷",
 		killstreak = "연속 킬",
+		assist = "어시스트",
 
 		level = "레벨",
 		position = "순위",
