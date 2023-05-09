@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["meme-minionese"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		toggle_player_track_no_permissions = "Sinubukan na paganahin ang player tracking ng walang naaangkop na pahintulot.",
 		set_job_no_permissions = "Sinubukan na maglagay ng trabaho nang walang naaangkop na pahintulot.",
+		toggle_reflection_no_permissions = "Bello! Attempted to toggle damage reflection without proper permissions.",
+
+		success_enable_reflection = "Bello! Successfully enabled reflection.",
+		success_disable_reflection = "Bello! Successfully disabled reflection.",
+		failed_toggle_reflection = "Bello! Failed to toggle reflection.",
+
+		reflection_logs_title = "Bababa! Reflection Toggled",
+		reflection_logs_enabled_details = "${consoleName} has toggled reflection on.",
+		reflection_logs_disabled_details = "${consoleName} has toggled reflection off.",
 
 		protective_mode_not_staff = "Bello! Attempted ta toggle da server's protective mode without da proper permissions.",
 		protective_mode_toggled_on = "Da server's protective mode has been toggled on! Required playtime to connect to da server is now set to `${playtime}`.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		wallhack_feature = "Baboi Wallahack",
 		watching_feature = "Bello Watching",
 		fortnite_feature = "Gelato Fortnite",
+		reflection_feature = "Baba! Damage Reflection",
 
 		you_are_not_in_a_vehicle = "Me nona ina da vehicle.",
 		repaired_vehicle = "Da vehicle beena repaired.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		track_player_command_parameter_server_id_help = "The baboi's server ID you are wanting to poof. Leave blank to unpoof.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "bello-lika bada-boom",
+		reflect_damage_command_help = "Bello-lika bada-boom. (Banana ina da face!)",
+		reflect_damage_command_substitutes = "bello",
+
 		stick_command = "stikky",
 		stick_command_help = "Stikky to the car you're ontop of.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		set_weapon_tint_command_parameter_tint_help = "Stoo golongi you wanto seto (leavo empty to removo).",
 		set_weapon_tint_command_substitutes = "golongi_weapon, golongi",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "set_item_name_override",
 		set_item_name_override_command_help = "Setso or removeso the itemo nama overrideo ofo theo specifiedo itemo.",
 		set_item_name_override_command_parameter_slot = "slot",
 		set_item_name_override_command_parameter_slot_help = "Theo slotto numbero ofo theo itemo whicho namo you wanto overrideo.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		putting_leash_on = "Me want leash! Putting Leash On",
 		press_to_take_leash_off = "Poulet Tikka Masala! [${InteractionKey}] Take Off Leash",
 		takeing_leash_off = "Ba-na-naa! Taking Leash Off."
+	},
+
+	letterboxes = {
+		press_to_access = "Bello ~g~${SeatEjectKey} ~w~to access the ${type}",
+		letterbox_broken = "Da ${type} is tu-to-bad.",
+
+		type_letterbox = "letterbox-a",
+		type_newsdisp = "newspaper-boom",
+		type_postbox = "postbox-a"
 	},
 
 	locate = {

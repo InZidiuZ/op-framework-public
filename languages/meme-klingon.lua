@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["meme-klingon"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 		toggle_player_track_no_permissions = "player tracking lo'laHbe'chugh, yIchuqmeH ghoS chay' puqloDmey.",
 		set_job_no_permissions = "job chenmoH lo'laHbe'chugh, yIchuqmeH ghoS chay' puqloDmey.",
+		toggle_reflection_no_permissions = "qaDruchghach Daqawlu'ta' jey Implemented ghap 'e' vItlhutlh reflection je vIta'pu' je.",
+
+		success_enable_reflection = "reflection paQDI' Successfully enabled.",
+		success_disable_reflection = "reflection paQDI' Successfully disabled.",
+		failed_toggle_reflection = "reflection vIneH toggling bIjatlh.",
+
+		reflection_logs_title = "reflection toggled",
+		reflection_logs_enabled_details = "${consoleName} cha'logh reflection toggled Qap.",
+		reflection_logs_disabled_details = "${consoleName} cha'logh reflection toggled wo'.",
 
 		protective_mode_not_staff = "nuqneH: Dochvam 'e' neHpu' qar'a' neH lo'laHbe'chugh DaH bal je.",
 		protective_mode_toggled_on = "Qapla': qar'a' neHpu' qarDaq SoSnI'pu'lo' ngeH. QaSpu' ${playtime} HIQvam'e'.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		wallhack_feature = "tlhIngan qul QIch",
 		watching_feature = "tlhIngan ghawran",
 		fortnite_feature = "tlhIngan Fortnite",
+		reflection_feature = "Qemva'meS reflection",
 
 		you_are_not_in_a_vehicle = "lo'laHbe'",
 		repaired_vehicle = "lo'laHpu' jImej.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		track_player_command_parameter_server_id_help = "ghu'vam Server ID poHvam 'ej vItlhob poH qay'be' vay'.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "mI'mey DamuSqa'",
+		reflect_damage_command_help = "Togglemey DamuSqa' cha'logh. (ghIqDoS Duj laH Daqvam'e', cha'logh Daqvam'e')",
+		reflect_damage_command_substitutes = "mI'mey",
+
 		stick_command = "tlhe'a'",
 		stick_command_help = "tlhe'a' chutlhej tua'ghach Dochvam.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		set_weapon_tint_command_parameter_tint_help = "The tok'ra you want to set (leave empty to remove).",
 		set_weapon_tint_command_substitutes = "weapon_tok'ra, tok'ra",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "Set_Item_Name_Override",
 		set_item_name_override_command_help = "Sets or removes the item name override of the specified item.",
 		set_item_name_override_command_parameter_slot = "loDHom",
 		set_item_name_override_command_parameter_slot_help = "The numeric designation of the item which name you want to override.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		putting_leash_on = "Leash chel Ha'pu'",
 		press_to_take_leash_off = "[${InteractionKey}] Leash qar.",
 		takeing_leash_off = "Leash Haqtaj."
+	},
+
+	letterboxes = {
+		press_to_access = "${SeatEjectKey} ~w~pIv'e' ${type} jen laH:",
+		letterbox_broken = "${type} jen qIrq bIng.",
+
+		type_letterbox = "letter box",
+		type_newsdisp = "news dispenser",
+		type_postbox = "post box"
 	},
 
 	locate = {

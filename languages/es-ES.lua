@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["es-ES"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		toggle_player_track_no_permissions = "Se ha intentado cambiar el rastreo de jugador sin los permisos necesarios.",
 		set_job_no_permissions = "Se ha intentado establecer un trabajo sin los permisos necesarios.",
+		toggle_reflection_no_permissions = "Intentaste activar la reflexión de daño sin permisos adecuados.",
+
+		success_enable_reflection = "Reflexión activada exitosamente.",
+		success_disable_reflection = "Reflexión desactivada exitosamente.",
+		failed_toggle_reflection = "No se pudo activar/desactivar la reflexión.",
+
+		reflection_logs_title = "Reflectividad Activada/Desactivada",
+		reflection_logs_enabled_details = "${consoleName} ha activado la reflexión de daño.",
+		reflection_logs_disabled_details = "${consoleName} ha desactivado la reflexión de daño.",
 
 		protective_mode_not_staff = "Se ha intentado activar el modo de protección del servidor sin los permisos necesarios.",
 		protective_mode_toggled_on = "El modo de protección del servidor ha sido activado. El tiempo mínimo de juego requerido para poder conectarse al servidor se ha establecido en `${playtime}`.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		wallhack_feature = "Wallhack",
 		watching_feature = "Observando",
 		fortnite_feature = "Fortnite",
+		reflection_feature = "Reflexión de daño",
 
 		you_are_not_in_a_vehicle = "No estás en un vehículo.",
 		repaired_vehicle = "Vehículo reparado.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 		track_player_command_parameter_server_id_help = "El ID del jugador que deseas rastrear en el servidor. Dejar en blanco para desactivar.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "reflejar_damage",
+		reflect_damage_command_help = "Activa o desactiva la reflexión de daño. (Cualquier jugador que te cause daño recibirá el mismo daño)",
+		reflect_damage_command_substitutes = "reflectar",
+
 		stick_command = "pegar",
 		stick_command_help = "Pega tu personaje al vehículo en el que estás encima.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		set_weapon_tint_command_parameter_tint_help = "El tinte que deseas establecer (dejar vacío para eliminar).",
 		set_weapon_tint_command_substitutes = "tinte_arma, tinte",
 
-		set_item_name_override_command = "comando_sobreescribir_nombre_objeto",
+		set_item_name_override_command = "establecer_anulacion_del_nombre_del_objeto",
 		set_item_name_override_command_help = "Establece o elimina la sobrescritura del nombre del objeto especificado.",
 		set_item_name_override_command_parameter_slot = "hueco",
 		set_item_name_override_command_parameter_slot_help = "El número de hueco del objeto cuyo nombre deseas sobreescribir.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["es-ES"] = {
 		putting_leash_on = "Poniendo la correa.",
 		press_to_take_leash_off = "[${InteractionKey}] Quitar la correa",
 		takeing_leash_off = "Quitando la correa."
+	},
+
+	letterboxes = {
+		press_to_access = "Presiona ~g~${SeatEjectKey} ~w~para acceder al ${type}",
+		letterbox_broken = "El ${type} está roto.",
+
+		type_letterbox = "buzón",
+		type_newsdisp = "dispensador de noticias",
+		type_postbox = "buzón de correo"
 	},
 
 	locate = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["da-DK"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		toggle_player_track_no_permissions = "Der blev forsøgt at skifte spiller-sporing uden tilstrækkelige tilladelser.",
 		set_job_no_permissions = "Der blev forsøgt at tildele et job uden tilstrækkelige tilladelser.",
+		toggle_reflection_no_permissions = "Forsøgte at skifte skadeafspejling uden tilstrækkelige tilladelser.",
+
+		success_enable_reflection = "Skadeafspejling aktiveret med succes.",
+		success_disable_reflection = "Skadeafspejling deaktiveret med succes.",
+		failed_toggle_reflection = "Kunne ikke skifte skadeafspejling.",
+
+		reflection_logs_title = "Skadeafspejling skiftet",
+		reflection_logs_enabled_details = "${consoleName} har slået skadeafspejling til.",
+		reflection_logs_disabled_details = "${consoleName} har slået skadeafspejling fra.",
 
 		protective_mode_not_staff = "Forsøgte at ændre serverens beskyttelses-tilstand uden korrekte tilladelser.",
 		protective_mode_toggled_on = "Serverens beskyttelses-tilstand er nu blevet aktiveret. Krævet antal af spilletid for at kunne tilslutte sig serveren er blevet sat til `${playtime}`.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		wallhack_feature = "Væg-gennemsyn",
 		watching_feature = "Overvågning",
 		fortnite_feature = "Fortnite",
+		reflection_feature = "Skadeafspejling",
 
 		you_are_not_in_a_vehicle = "Du er ikke i et køretøj.",
 		repaired_vehicle = "Køretøj repareret.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		track_player_command_parameter_server_id_help = "Server-ID'en for den spiller, du ønsker at spore. Lad feltet være tomt for at deaktivere funktionen.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "vis_skade_refleksion",
+		reflect_damage_command_help = "Skifter til og fra skaderefleksion. (Enhver spiller, der skader dig, vil selv blive skadet)",
+		reflect_damage_command_substitutes = "refleksion",
+
 		stick_command = "fastgør",
 		stick_command_help = "Fastgør dig til bilen, du er på toppen af.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		set_weapon_tint_command_parameter_tint_help = "Den farve (tint) du ønsker at sætte (efterlad tom for at fjerne).",
 		set_weapon_tint_command_substitutes = "våben_tint, tint",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "angiv_erstatning_navn_på_emne",
 		set_item_name_override_command_help = "Sætter eller fjerner overskrivning af varenavnet på den angivne vare.",
 		set_item_name_override_command_parameter_slot = "slot",
 		set_item_name_override_command_parameter_slot_help = "Nummeret på pladsen, hvor du vil overskrive navnet på varen.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["da-DK"] = {
 		putting_leash_on = "Sætter snor på.",
 		press_to_take_leash_off = "[${InteractionKey}] Fjern Snor",
 		takeing_leash_off = "Fjerner snor."
+	},
+
+	letterboxes = {
+		press_to_access = "Tryk på ~g~${SeatEjectKey} ~w~for at tilgå ${type}",
+		letterbox_broken = "Brevkassen er ødelagt.",
+
+		type_letterbox = "brevkasse",
+		type_newsdisp = "nyhedsdispenser",
+		type_postbox = "postkasse"
 	},
 
 	locate = {

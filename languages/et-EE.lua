@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["et-EE"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		toggle_player_track_no_permissions = "Mängija jälgimise proovimine ilma asjakohaste õigusteta.",
 		set_job_no_permissions = "Töö seadmise proovimine ilma asjakohaste õigusteta.",
+		toggle_reflection_no_permissions = "Katsetasite kahju peegeldamise sisse- ja väljalülitamist ilma vastava luba omamata.",
+
+		success_enable_reflection = "Kahju peegeldamine edukalt sisse lülitatud.",
+		success_disable_reflection = "Kahju peegeldamine edukalt välja lülitatud.",
+		failed_toggle_reflection = "Kahju peegeldamise sisselülitamine/väljalülitamine ebaõnnestus.",
+
+		reflection_logs_title = "Kahju Peegeldamine on/Suletud",
+		reflection_logs_enabled_details = "${consoleName} lülitas kahju peegeldamise sisse.",
+		reflection_logs_disabled_details = "${consoleName} lülitas kahju peegeldamise välja.",
 
 		protective_mode_not_staff = "Katse lubada serveri kaitse režiimi ilma sobivate õigusteta.",
 		protective_mode_toggled_on = "Serveri kaitse režiim on nüüd aktiveeritud. Nõutav mängu aeg, et ühenduda serveriga, on määratud `${playtime}`.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		wallhack_feature = "Seinte läbivaatamise funktsioon",
 		watching_feature = "Jälgimine",
 		fortnite_feature = "Fortnite",
+		reflection_feature = "Kahju Peegeldamine",
 
 		you_are_not_in_a_vehicle = "Sa pole sõidukis.",
 		repaired_vehicle = "Sõiduk parandatud.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		track_player_command_parameter_server_id_help = "Mängija serveri ID, keda soovite jälgida. Jätke tühjaks, et keelata.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "peegelda_kahju",
+		reflect_damage_command_help = "Lülitab sisse/välja kahju peegeldamise. (Iga mängija, kes sulle kahju teeb, saab ise kahjustada)",
+		reflect_damage_command_substitutes = "peegel",
+
 		stick_command = "klammerdu",
 		stick_command_help = "Klamberdu auto külge, mille peal viibid.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		set_weapon_tint_command_parameter_tint_help = "Toon, mida soovite määrata (tühjana jätmiseks jätke tühjaks).",
 		set_weapon_tint_command_substitutes = "relva_toon, toon",
 
-		set_item_name_override_command = "määra_eseme_nimi_ülekirjutuseks_käsk",
+		set_item_name_override_command = "määra_toote_nimi_asenduseks",
 		set_item_name_override_command_help = "Määrab või eemaldab näidatud eseme nime ülekirjutuse.",
 		set_item_name_override_command_parameter_slot = "pessa",
 		set_item_name_override_command_parameter_slot_help = "Eseme pesa number, mille nime soovite ümber kirjutada.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["et-EE"] = {
 		putting_leash_on = "Panen rihma peale.",
 		press_to_take_leash_off = "[${InteractionKey}] Võtke rihm maha",
 		takeing_leash_off = "Võtan rihma maha."
+	},
+
+	letterboxes = {
+		press_to_access = "Vajuta ~g~${SeatEjectKey}  ~w~, et ligipääsu saada ${type}ile",
+		letterbox_broken = "${type} on katki.",
+
+		type_letterbox = "postkast",
+		type_newsdisp = "uudiste jagaja",
+		type_postbox = "kirjakast"
 	},
 
 	locate = {

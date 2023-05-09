@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["meme-habibi"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		toggle_player_track_no_permissions = "Makaynch lkhouya les permissions bach nl9aw player tracker.",
 		set_job_no_permissions = "Makaynch lkhouya les permissions bach n9dro n7to 7ogra.",
+		toggle_reflection_no_permissions = "You do not have the proper permissions to toggle damage reflection.",
+
+		success_enable_reflection = "Reflection has been enabled successfully.",
+		success_disable_reflection = "Reflection has been disabled successfully.",
+		failed_toggle_reflection = "Failed to toggle reflection.",
+
+		reflection_logs_title = "Reflection Toggled",
+		reflection_logs_enabled_details = "${consoleName} has toggled on the damage reflection feature.",
+		reflection_logs_disabled_details = "${consoleName} has toggled off the damage reflection feature.",
 
 		protective_mode_not_staff = "Sorry Habibi, you cannot turn on the server's protective mode without proper permissions.",
 		protective_mode_toggled_on = "Alhamdulillah! The server's protective mode is on now. The required playtime to join the server has been set to `${playtime}`.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		wallhack_feature = "Wallhack",
 		watching_feature = "Watching",
 		fortnite_feature = "Fortnite",
+		reflection_feature = "Damage Reflection",
 
 		you_are_not_in_a_vehicle = "You're not in a vehicle Habibi.",
 		repaired_vehicle = "Vehicle has been repaired Habibi.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		track_player_command_parameter_server_id_help = "The player's server ID you are wanting to track. Leave blank to disable.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "reflect_damage",
+		reflect_damage_command_help = "Toggles damage reflection. (Any player who damages you will be damaged themselves)",
+		reflect_damage_command_substitutes = "reflect",
+
 		stick_command = "halek",
 		stick_command_help = "Stick to the car you're ontop of.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		set_weapon_tint_command_parameter_tint_help = "The tint you want to set (leave empty to remove).",
 		set_weapon_tint_command_substitutes = "weapon_tint, tint",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "set_item_name_override",
 		set_item_name_override_command_help = "Sets or removes the item name override of the specified item.",
 		set_item_name_override_command_parameter_slot = "slot",
 		set_item_name_override_command_parameter_slot_help = "The number of the slot which name you want to override.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		putting_leash_on = "Putting Leash On (وضع الجلادة).",
 		press_to_take_leash_off = "[${InteractionKey}] Take Off Leash (إضغط ~INPUT_CONTEXT~ لإزالة الجلادة).",
 		takeing_leash_off = "Taking Leash Off (إزالة الجلادة)."
+	},
+
+	letterboxes = {
+		press_to_access = "Press ~g~${SeatEjectKey} ~w~to access the ${type}",
+		letterbox_broken = "The ${type} is broken.",
+
+		type_letterbox = "letterbox",
+		type_newsdisp = "news dispenser",
+		type_postbox = "postbox"
 	},
 
 	locate = {

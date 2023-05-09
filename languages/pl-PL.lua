@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["pl-PL"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		toggle_player_track_no_permissions = "Próba przełączenia śledzenia gracza bez odpowiednich uprawnień.",
 		set_job_no_permissions = "Próba ustawienia pracy bez odpowiednich uprawnień.",
+		toggle_reflection_no_permissions = "Próba przełączenia odbicia obrażeń bez odpowiednich uprawnień.",
+
+		success_enable_reflection = "Pomyślnie włączono odbicie obrażeń.",
+		success_disable_reflection = "Pomyślnie wyłączono odbicie obrażeń.",
+		failed_toggle_reflection = "Nie udało się przełączyć odbicia obrażeń.",
+
+		reflection_logs_title = "Przełączono odbicie obrażeń",
+		reflection_logs_enabled_details = "${consoleName} włączył(a) odbicie obrażeń.",
+		reflection_logs_disabled_details = "${consoleName} wyłączył(a) odbicie obrażeń.",
 
 		protective_mode_not_staff = "Nie posiadasz permisji.",
 		protective_mode_toggled_on = "Ochrona serwera została włączona. Wymagana liczba godzin na serwerze aby dołączyć to `${playtime}`.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		wallhack_feature = "Wallhack",
 		watching_feature = "Oglądanie",
 		fortnite_feature = "Fortnite",
+		reflection_feature = "Odbicie obrażeń",
 
 		you_are_not_in_a_vehicle = "Nie jesteś w pojeździe.",
 		repaired_vehicle = "Naprawiony Pojazd",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		track_player_command_parameter_server_id_help = "Identyfikator gracza, którego chcesz śledzić. Pozostaw puste, aby to wyłączyć.",
 		track_player_command_substitutes = "trp",
 
+		reflect_damage_command = "odzwierciedlanie_obrażeń",
+		reflect_damage_command_help = "Włącza/wyłącza odzwierciedlanie obrażeń. (Gracz, który spowoduje u Ciebie obrażenia, otrzyma obrażenia na własnej postaci)",
+		reflect_damage_command_substitutes = "odzwierciedlenie",
+
 		stick_command = "stick",
 		stick_command_help = "Sprawia, że kleisz się do samochodu, w którym jesteś.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		set_weapon_tint_command_parameter_tint_help = "Malowanie które chciałbyś ustawić (pozostaw to pole puste aby zdjąć malowanie).",
 		set_weapon_tint_command_substitutes = "weapon_tint, tint",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "ustaw_nadpisanie_nazwy_przedmiotu",
 		set_item_name_override_command_help = "Nadpisuje nazwę przedmiotu.",
 		set_item_name_override_command_parameter_slot = "slot",
 		set_item_name_override_command_parameter_slot_help = "Slot przedmiotu.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		putting_leash_on = "Zakładanie smyczy",
 		press_to_take_leash_off = "[${InteractionKey}] Zdejmij smycz",
 		takeing_leash_off = "Zdejmowanie smyczy."
+	},
+
+	letterboxes = {
+		press_to_access = "Naciśnij klawisz ~g~${SeatEjectKey} ~w~aby uzyskać dostęp do ${type}",
+		letterbox_broken = "Skrzynka pocztowa ${type} jest zepsuta.",
+
+		type_letterbox = "skrzynka pocztowa",
+		type_newsdisp = "dystrybutor wiadomości",
+		type_postbox = "skrzynka pocztowa"
 	},
 
 	locate = {

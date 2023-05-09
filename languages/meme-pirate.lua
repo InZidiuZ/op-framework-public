@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["meme-pirate"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		toggle_player_track_no_permissions = "Arr! Ye don't have the proper permissions to toggle player tracking, matey.",
 		set_job_no_permissions = "Blimey! Ye don't have the proper permissions to set a job, matey.",
+		toggle_reflection_no_permissions = "Ye be tryin' to toggle damage reflection without proper permissions.",
+
+		success_enable_reflection = "Reflection be successfully enabled.",
+		success_disable_reflection = "Reflection be successfully disabled.",
+		failed_toggle_reflection = "Failed to toggle reflection, ye landlubber.",
+
+		reflection_logs_title = "Reflection Toggled",
+		reflection_logs_enabled_details = "${consoleName} be togglin' reflection on.",
+		reflection_logs_disabled_details = "${consoleName} be togglin' reflection off.",
 
 		protective_mode_not_staff = "Arr, ye be tryin' t' toggle the server's protective mode without proper permissions!",
 		protective_mode_toggled_on = "Arr, the server's protective mode be enabled! Ye be needin' `${playtime}` of playtime to join now.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		wallhack_feature = "Spyglass Vision",
 		watching_feature = "Lookout",
 		fortnite_feature = "Skull & Bones",
+		reflection_feature = "Damage Reflection",
 
 		you_are_not_in_a_vehicle = "Ye be not in a vessel, matey.",
 		repaired_vehicle = "Repaired me ship, arr!",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		track_player_command_parameter_server_id_help = "The scallywag's server ID ye be wanting to track. Leave blank to disable.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "pirate_reflect_damage",
+		reflect_damage_command_help = "Arrr! Toggles damage reflection. (Any scallywag who damages ye will take the same damage themselves)",
+		reflect_damage_command_substitutes = "pirate_reflect",
+
 		stick_command = "splice_the_mainbrace",
 		stick_command_help = "Splice the mainbrace and stick to the vessel ye be aboard.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		set_weapon_tint_command_parameter_tint_help = "Thar tint ye be wantin' to set (leave empty to walk the plank).",
 		set_weapon_tint_command_substitutes = "weapon_tint, tint",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "set_item_name_override",
 		set_item_name_override_command_help = "Sets or removes thar item name override o' th' specified item.",
 		set_item_name_override_command_parameter_slot = "slot",
 		set_item_name_override_command_parameter_slot_help = "Th' slot number o' th' item which name ye be wantin' to override.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		putting_leash_on = "Puttin' Leash On",
 		press_to_take_leash_off = "[${InteractionKey}] Take Off Leash",
 		takeing_leash_off = "Takin' Leash Off."
+	},
+
+	letterboxes = {
+		press_to_access = "Press ~g~${SeatEjectKey} ~w~to access the ${type}, matey!",
+		letterbox_broken = "Arrr! The ${type} be broken, me heartie.",
+
+		type_letterbox = "letterbox",
+		type_newsdisp = "news dispenser",
+		type_postbox = "postbox"
 	},
 
 	locate = {

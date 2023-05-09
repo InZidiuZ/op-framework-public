@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["ro-RO"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		toggle_player_track_no_permissions = "S-a încercat activarea/dezactivarea urmăririi jucătorului fără permisiuni corespunzătoare.",
 		set_job_no_permissions = "S-a încercat setarea unei slujbe fără permisiuni corespunzătoare.",
+		toggle_reflection_no_permissions = "Încercare de a activa/dezactiva reflecția daunelor fără permisiunile adecvate.",
+
+		success_enable_reflection = "Reflecția daunelor a fost activată cu succes.",
+		success_disable_reflection = "Reflecția daunelor a fost dezactivată cu succes.",
+		failed_toggle_reflection = "Eroare la activarea/dezactivarea reflecției daunelor.",
+
+		reflection_logs_title = "Reflecția daunelor a fost activată/dezactivată",
+		reflection_logs_enabled_details = "${consoleName} a activat reflecția daunelor.",
+		reflection_logs_disabled_details = "${consoleName} a dezactivat reflecția daunelor.",
 
 		protective_mode_not_staff = "Încercare de a comuta modul de protecție a serverului fără permisiuni suficiente.",
 		protective_mode_toggled_on = "Modul de protecție a serverului a fost activat. Timpul minim de joc necesar pentru a te conecta la server este acum setat la `${playtime}`.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		wallhack_feature = "Perete transparent",
 		watching_feature = "Observând",
 		fortnite_feature = "Fortnite",
+		reflection_feature = "Reflecție daune",
 
 		you_are_not_in_a_vehicle = "Nu ești într-un vehicul.",
 		repaired_vehicle = "Vehiculul a fost reparat.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		track_player_command_parameter_server_id_help = "ID-ul serverului pentru jucătorul pe care doriți să îl urmăriți. Lăsați gol pentru a dezactiva.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "reflecta_daune",
+		reflect_damage_command_help = "Activeaza/dezactiveaza reflejarea de daune. (Orice jucator care te dauneaza va primi daune proprii)",
+		reflect_damage_command_substitutes = "reflect",
+
 		stick_command = "lipi",
 		stick_command_help = "Lipiți-vă de mașina pe care sunteți deasupra.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		set_weapon_tint_command_parameter_tint_help = "Tintul pe care doriți să îl setați (lăsați gol pentru a elimina).",
 		set_weapon_tint_command_substitutes = "setare_tintă_armă, tintă",
 
-		set_item_name_override_command = "setare_nume_override_obiect",
+		set_item_name_override_command = "seteaza_override_nume_item",
 		set_item_name_override_command_help = "Setează sau elimină numele override-ului obiectului specificat.",
 		set_item_name_override_command_parameter_slot = "slot",
 		set_item_name_override_command_parameter_slot_help = "Numărul slotului obiectului pentru care doriți să înlocuiți numele.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		putting_leash_on = "Punând Lesa",
 		press_to_take_leash_off = "[${InteractionKey}] Scoate Lesa",
 		takeing_leash_off = "Scoțând Lesa."
+	},
+
+	letterboxes = {
+		press_to_access = "Apasa ~g~${SeatEjectKey} ~w~pentru a accesa ${type}",
+		letterbox_broken = "Cutia ${type} este stricata.",
+
+		type_letterbox = "cutie postala",
+		type_newsdisp = "distribuitor de stiri",
+		type_postbox = "cutie postala"
 	},
 
 	locate = {

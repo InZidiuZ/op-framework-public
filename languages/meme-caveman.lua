@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["meme-caveman"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		toggle_player_track_no_permissions = "You no have permission to track.",
 		set_job_no_permissions = "You no have permission to set job.",
+		toggle_reflection_no_permissions = "Ugg not allowed to change damage reflection.",
+
+		success_enable_reflection = "Ugg successfully made things bounce off us.",
+		success_disable_reflection = "Ugg successfully made things hurt us.",
+		failed_toggle_reflection = "Ugg failed to toggle reflection.",
+
+		reflection_logs_title = "Ugg changed reflection setting",
+		reflection_logs_enabled_details = "${consoleName} has enabled reflection.",
+		reflection_logs_disabled_details = "${consoleName} has disabled reflection.",
 
 		protective_mode_not_staff = "Ugh! You try toggle server protective mode without me say so. No can do.",
 		protective_mode_toggled_on = "Server protective mode now on! You need `${playtime}` playtime to join.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		wallhack_feature = "Wallhack",
 		watching_feature = "Watching",
 		fortnite_feature = "Fortnite",
+		reflection_feature = "Reflection of Damage",
 
 		you_are_not_in_a_vehicle = "You not ride go go.",
 		repaired_vehicle = "Vehicle good now.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		track_player_command_parameter_server_id_help = "That caveperson's server ID me want to track. Leave blank to untrack.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "ug-ug reflect_damage",
+		reflect_damage_command_help = "Toggle ug-ug damage reflection. (Ug-ug player who hit you get hurt too)",
+		reflect_damage_command_substitutes = "ug-ug reflect",
+
 		stick_command = "stick",
 		stick_command_help = "Me stick to the mammoth me atop.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		set_weapon_tint_command_parameter_tint_help = "You want make weapon look like (no word = back to normal).",
 		set_weapon_tint_command_substitutes = "weapon_tint, look",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "set_item_name_override",
 		set_item_name_override_command_help = "Change name of item.",
 		set_item_name_override_command_parameter_slot = "slot",
 		set_item_name_override_command_parameter_slot_help = "Select item number you want change name.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		putting_leash_on = "Putting Leash On the filthy beast.",
 		press_to_take_leash_off = "Take Off Leash by pressing [${InteractionKey}].",
 		takeing_leash_off = "Ugh! Taking Leash Off."
+	},
+
+	letterboxes = {
+		press_to_access = "Hit ~g~${SeatEjectKey} ~w~to use the ${type}",
+		letterbox_broken = "The ${type} is busted.",
+
+		type_letterbox = "ug-ug letterbox",
+		type_newsdisp = "news giver",
+		type_postbox = "ug-ug postbox"
 	},
 
 	locate = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["meme-rude"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 		toggle_player_track_no_permissions = "Well, ain't that some fucking bullshit? You don't have the damn permissions to toggle that player tracking.",
 		set_job_no_permissions = "The fuck you think you're doing? You ain't got the damn permissions to set that goddamn job, dumbass.",
+		toggle_reflection_no_permissions = "You fucking prick tried toggling damage reflection without proper fucking permissions.",
+
+		success_enable_reflection = "Reflection successfully fucking enabled.",
+		success_disable_reflection = "Reflection successfully fucking disabled.",
+		failed_toggle_reflection = "Failed to toggle fucking reflection, ya dumbass.",
+
+		reflection_logs_title = "Reflection Fucking Toggled",
+		reflection_logs_enabled_details = "${consoleName} has dickwadly toggled reflection on.",
+		reflection_logs_disabled_details = "${consoleName} has cock-a-doodle toggled reflection off.",
 
 		protective_mode_not_staff = "Sorry you stupid prick, but you ain't got no goddamn permission to toggle the fucking server protective mode.",
 		protective_mode_toggled_on = "Oh, looks like we're in lockdown mode now, assholes. The required amount of playtime to join the fucking server is `${playtime}`.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		wallhack_feature = "Wallhacking Like a B*tch",
 		watching_feature = "Peeping Like a Creep",
 		fortnite_feature = "F**k Off with Fortnite",
+		reflection_feature = "The almighty good ol' Damage Reflection",
 
 		you_are_not_in_a_vehicle = "Get in a damn vehicle, dumbass.",
 		repaired_vehicle = "Vehicle Repaired, Magic Fingers!",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		track_player_command_parameter_server_id_help = "The cocksucking player's server ID you are wanting to fucking track. Leave blank to disable.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "reflect_damage",
+		reflect_damage_command_help = "Toggles fucking damage reflection. (Any dickhead who fucking damages you will be fucked up themselves)",
+		reflect_damage_command_substitutes = "reflect",
+
 		stick_command = "stick",
 		stick_command_help = "Stick your ass to the car you're lying on.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		set_weapon_tint_command_parameter_tint_help = "Tell me the damn tint you want to set (leave it empty if you want to remove it, you indecisive bastard).",
 		set_weapon_tint_command_substitutes = "weapon_tint, tint",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "set_item_name_override",
 		set_item_name_override_command_help = "Sets or removes the freaking item name override of the goddamn specified item, you moron.",
 		set_item_name_override_command_parameter_slot = "slot",
 		set_item_name_override_command_parameter_slot_help = "What the hell is the slot number of the damn item which name you want to override, huh?",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		putting_leash_on = "Putting the Fucking Leash On",
 		press_to_take_leash_off = "[${InteractionKey}] Take the Fucking Leash Off",
 		takeing_leash_off = "Taking the Goddamn Leash Off."
+	},
+
+	letterboxes = {
+		press_to_access = "Press ~g~${SeatEjectKey} ~w~to fucking access the ${type}",
+		letterbox_broken = "The fucking ${type} is fucking broken.",
+
+		type_letterbox = "fucking letterbox",
+		type_newsdisp = "fucking news dispenser",
+		type_postbox = "fucking postbox"
 	},
 
 	locate = {

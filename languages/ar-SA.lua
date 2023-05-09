@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["ar-SA"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		toggle_player_track_no_permissions = "حاول تبديل تتبع اللاعب بدون أذونات كافية.",
 		set_job_no_permissions = "حاول تحديد وظيفة بدون أذونات كافية.",
+		toggle_reflection_no_permissions = "تم محاولة تبديل خاصية الانعكاس بدون الصلاحيات اللازمة.",
+
+		success_enable_reflection = "تم تمكين خاصية الانعكاس بنجاح.",
+		success_disable_reflection = "تم تعطيل خاصية الانعكاس بنجاح.",
+		failed_toggle_reflection = "فشل في تبديل خاصية الانعكاس.",
+
+		reflection_logs_title = "تبديل الانعكاس",
+		reflection_logs_enabled_details = "قام ${consoleName} بتبديل خاصية الانعكاس للتشغيل.",
+		reflection_logs_disabled_details = "قام ${consoleName} بتبديل خاصية الانعكاس للإيقاف.",
 
 		protective_mode_not_staff = "تم محاولة تبديل وضع حماية الخادم بدون الصلاحيات المناسبة.",
 		protective_mode_toggled_on = "تم تمكين وضع الحماية للخادم. تم تعيين الوقت المطلوب للعب للانضمام إلى الخادم إلى `${playtime}`.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		wallhack_feature = "والهاك",
 		watching_feature = "مشاهدة",
 		fortnite_feature = "فورت نايت",
+		reflection_feature = "خاصية الانعكاس للضرر",
 
 		you_are_not_in_a_vehicle = "أنت لست في مركبة.",
 		repaired_vehicle = "تم إصلاح المركبة.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		track_player_command_parameter_server_id_help = "معرف الخادم الخاص باللاعب الذي ترغب في تتبعه. اتركه فارغًا للتعطيل.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "تمكين_استعادة_الأذى",
+		reflect_damage_command_help = "تبديل تأثير الأذى. (أي لاعب يسبب لك أذى سيتعرض للأذى بنفسه)",
+		reflect_damage_command_substitutes = "refl",
+
 		stick_command = "التصاق",
 		stick_command_help = "يتم الالتصاق بالسيارة التي تمتلكها.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		set_weapon_tint_command_parameter_tint_help = "الصبغة التي تريد تعيينها (اتركه فارغاً للإزالة).",
 		set_weapon_tint_command_substitutes = "صبغة_السلاح, صبغة",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "تعيين_اسم_للعنصر",
 		set_item_name_override_command_help = "يضبط أو يزيل استبدال اسم العنصر للعنصر المحدد",
 		set_item_name_override_command_parameter_slot = "الفتحة",
 		set_item_name_override_command_parameter_slot_help = "رقم الفتحة للعنصر الذي تريد استبدال اسمه.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		putting_leash_on = "وضع الزمام.",
 		press_to_take_leash_off = "[${InteractionKey}] خلع الزمام",
 		takeing_leash_off = "خلع الزمام."
+	},
+
+	letterboxes = {
+		press_to_access = "اضغط على ~g~${SeatEjectKey} ~w~للوصول إلى ${type}",
+		letterbox_broken = "تم تحطيم ${type}.",
+
+		type_letterbox = "صندوق البريد",
+		type_newsdisp = "موزع الأخبار",
+		type_postbox = "المربع البريدي"
 	},
 
 	locate = {

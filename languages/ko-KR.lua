@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["ko-KR"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		toggle_player_track_no_permissions = "적절한 권한 없이 플레이어 추적을 전환하려고 시도했습니다.",
 		set_job_no_permissions = "적절한 권한 없이 직업을 설정하려고 시도했습니다.",
+		toggle_reflection_no_permissions = "적절한 권한 없이 데미지 반사를 전환하려 했습니다.",
+
+		success_enable_reflection = "데미지 반사가 성공적으로 활성화되었습니다.",
+		success_disable_reflection = "데미지 반사가 성공적으로 비활성화되었습니다.",
+		failed_toggle_reflection = "데미지 반사 전환에 실패했습니다.",
+
+		reflection_logs_title = "반사 전환됨",
+		reflection_logs_enabled_details = "${consoleName} 님이 반사를 켜셨습니다.",
+		reflection_logs_disabled_details = "${consoleName} 님이 반사를 끄셨습니다.",
 
 		protective_mode_not_staff = "올바른 권한 없이 서버 방어 모드를 전환하려 했습니다.",
 		protective_mode_toggled_on = "서버 방어 모드가 활성화되었습니다. 서버에 연결하려면 필요한 플레이 시간은 `${playtime}`입니다.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		wallhack_feature = "벽 관통",
 		watching_feature = "시청 중",
 		fortnite_feature = "포트나이트",
+		reflection_feature = "데미지 반사",
 
 		you_are_not_in_a_vehicle = "차량에 타고 있지 않습니다.",
 		repaired_vehicle = "수리된 차량.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		track_player_command_parameter_server_id_help = "추적을 원하는 플레이어의 서버 아이디입니다. 비워둬서 비활성화 할 수 있습니다.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "반사 데미지",
+		reflect_damage_command_help = "데미지 반사를 전환합니다. (당신을 공격하는 플레이어는 스스로도 데미지를 받습니다)",
+		reflect_damage_command_substitutes = "반사",
+
 		stick_command = "붙어있기",
 		stick_command_help = "위에 올라탄 차량에 붙어있습니다.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		set_weapon_tint_command_parameter_tint_help = "설정하려는 틴트 (비워두면 제거됨).",
 		set_weapon_tint_command_substitutes = "무기틴트, 틴트",
 
-		set_item_name_override_command = "아이템_이름_재정의_설정",
+		set_item_name_override_command = "아이템 이름 덮어쓰기 설정",
 		set_item_name_override_command_help = "지정된 아이템의 이름을 재정의하거나 제거합니다.",
 		set_item_name_override_command_parameter_slot = "슬롯",
 		set_item_name_override_command_parameter_slot_help = "이름을 재정의하려는 아이템의 슬롯 번호입니다.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		putting_leash_on = "가죽줄 착용 중",
 		press_to_take_leash_off = "[${InteractionKey}] 가죽줄 제거",
 		takeing_leash_off = "가죽줄 제거 중"
+	},
+
+	letterboxes = {
+		press_to_access = "눌러서 ${type}에 접근하십시오: ~g~${SeatEjectKey}",
+		letterbox_broken = "${type}이(가) 고장났습니다.",
+
+		type_letterbox = "우체통",
+		type_newsdisp = "뉴스 디스펜서",
+		type_postbox = "포스트박스"
 	},
 
 	locate = {

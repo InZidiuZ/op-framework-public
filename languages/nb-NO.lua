@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["nb-NO"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		toggle_player_track_no_permissions = "Forsøkte å slå på/av spiller-sporing uten tilstrekkelige tillatelser.",
 		set_job_no_permissions = "Forsøkte å sette en jobb uten tilstrekkelige tillatelser.",
+		toggle_reflection_no_permissions = "Prøvde å aktivere skadedemping uten tilstrekkelige tillatelser.",
+
+		success_enable_reflection = "Skadedemping ble aktivert.",
+		success_disable_reflection = "Skadedemping ble deaktivert.",
+		failed_toggle_reflection = "Kunne ikke aktivere/deaktivere skadedemping.",
+
+		reflection_logs_title = "Skadedemping endret",
+		reflection_logs_enabled_details = "${consoleName} har aktivert skadedemping.",
+		reflection_logs_disabled_details = "${consoleName} har deaktivert skadedemping.",
 
 		protective_mode_not_staff = "Forsøkte å aktivere serverens beskyttelsesmodus uten nødvendige tillatelser.",
 		protective_mode_toggled_on = "Serverens beskyttelsesmodus er nå aktivert. Nødvendig spilletid før tilkobling til serveren er satt til `${playtime}`.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		wallhack_feature = "Veggjukse",
 		watching_feature = "Overvåking",
 		fortnite_feature = "Fortnite",
+		reflection_feature = "Skadedemping",
 
 		you_are_not_in_a_vehicle = "Du er ikke i et kjøretøy.",
 		repaired_vehicle = "Kjøretøyet er reparert.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		track_player_command_parameter_server_id_help = "Server-IDen til spilleren du vil spore. La stå tomt for å deaktivere.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "speilskade",
+		reflect_damage_command_help = "Aktiverer skadespeiling. (Enhver spiller som skader deg vil selv bli skadet)",
+		reflect_damage_command_substitutes = "speil",
+
 		stick_command = "fest",
 		stick_command_help = "Fest deg til bilen du står oppå.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		set_weapon_tint_command_parameter_tint_help = "Fargen du ønsker å sette (la stå tomt for å fjerne).",
 		set_weapon_tint_command_substitutes = "våpenfarge, farge",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "sett_element_navn_overstyring",
 		set_item_name_override_command_help = "Setter eller fjerner navneoverskriften til det angitte elementet.",
 		set_item_name_override_command_parameter_slot = "slot",
 		set_item_name_override_command_parameter_slot_help = "Nummeret på plassen til elementet du ønsker å endre navn på.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		putting_leash_on = "Tar på bånd",
 		press_to_take_leash_off = "[${InteractionKey}] Ta av bånd",
 		takeing_leash_off = "Tar av bånd."
+	},
+
+	letterboxes = {
+		press_to_access = "Trykk på ~g~${SeatEjectKey} ~w~for å åpne ${type}",
+		letterbox_broken = "Postkassen er ødelagt.",
+
+		type_letterbox = "postkasse",
+		type_newsdisp = "nyhetsholder",
+		type_postbox = "postkasse"
 	},
 
 	locate = {

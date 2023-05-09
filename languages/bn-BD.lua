@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["bn-BD"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		toggle_player_track_no_permissions = "মান appropriate অনুমতিসহ প্লেয়ার ট্র্যাক টগল করার চেষ্টা করা হয়েছে।",
 		set_job_no_permissions = "উচিত অনুমতিবিহীনভাবে একটি কাজ সেট করার চেষ্টা করা হয়েছে।",
+		toggle_reflection_no_permissions = "সঠিক অনুমতি ছাড়াই ক্ষতি প্রতিবিধি টগল করার চেষ্টা করা হয়েছে।",
+
+		success_enable_reflection = "সফলভাবে প্রতিফলন চালু করা হয়েছে।",
+		success_disable_reflection = "সফলভাবে প্রতিফলন বন্ধ করা হয়েছে।",
+		failed_toggle_reflection = "প্রতিবিধি টগল করা ব্যর্থ হয়েছে।",
+
+		reflection_logs_title = "প্রতিফলন পাল্টানো হয়েছে",
+		reflection_logs_enabled_details = "${consoleName} প্রতিফলন চালু করেছেন।",
+		reflection_logs_disabled_details = "${consoleName} প্রতিফলন বন্ধ করেছেন।",
 
 		protective_mode_not_staff = "সঠিক অনুমতি না থাকার কারণে সার্ভার প্রটেক্টিভ মোড টগল করা হয়নি।",
 		protective_mode_toggled_on = "সার্ভার প্রটেক্টিভ মোড এখন সক্রিয় হয়েছে। সার্ভারে সংযোগ করতে প্লে টাইমের প্রয়োজনীয় পরিমাণ হয় `${playtime}`।",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		wallhack_feature = "ওয়ালহ্যাক",
 		watching_feature = "দেখছে",
 		fortnite_feature = "ফর্টনাইট",
+		reflection_feature = "ক্ষতি প্রতিপ্রবণতা",
 
 		you_are_not_in_a_vehicle = "আপনি গাড়ির ভিতরে নেই।",
 		repaired_vehicle = "পরিবহন মেরামত হয়েছে।",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		track_player_command_parameter_server_id_help = "আপনি ট্র্যাক করতে চান খেলোয়াড়ের সার্ভার আইডি। নিরবত্ত করলে অক্ষম করুন।",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "প্রতিফলন_ক্ষতি",
+		reflect_damage_command_help = "ক্ষতি প্রতিফলন চালু / বন্ধ করে। (আপনাকে ক্ষতি করে যেকোনো খেলোয়াড়ের পার্থক্য হতে বোঝাও হবে যে তারা তাদের নিজেদের ক্ষতি হবে)",
+		reflect_damage_command_substitutes = "প্রতিফলন",
+
 		stick_command = "স্টিক",
 		stick_command_help = "যে গাড়ির উপরে আপনি আছেন সেই গাড়ি স্টিক করুন।",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		set_weapon_tint_command_parameter_tint_help = "আপনি যে টিন্টটি সেট করতে চান (এখানে ফাঁকা রাখুন যদি সরানো চান)।",
 		set_weapon_tint_command_substitutes = "সশস_টিন্ট, টিন্ট",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "আইটেম_নাম_উল্লেখমান_দখল",
 		set_item_name_override_command_help = "নির্দিষ্ট আইটেমের নাম ওভাররাইড সেট করে বা সরায় ফেলে।",
 		set_item_name_override_command_parameter_slot = "স্লট",
 		set_item_name_override_command_parameter_slot_help = "আপনি যে স্লট নং চান সেই আইটেমের নাম ওভাররাইড সেট করতে।",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		putting_leash_on = "লিশ বন্ধ করা হচ্ছে।",
 		press_to_take_leash_off = "[${InteractionKey}] লিশ খুলুন",
 		takeing_leash_off = "লিশ খুলছে।"
+	},
+
+	letterboxes = {
+		press_to_access = "~g~${SeatEjectKey} ~w~চাবি চাপুন যেন ${type} এ প্রবেশ করতে পারেন",
+		letterbox_broken = "${type} ভেঙ্গে গেছে।",
+
+		type_letterbox = "চিঠিবাক্স",
+		type_newsdisp = "সংবাদ বিতরণকারী",
+		type_postbox = "পোস্টবক্স"
 	},
 
 	locate = {

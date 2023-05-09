@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		toggle_player_track_no_permissions = "พยายามสลับการติดตามผู้เล่นโดยไม่มีสิทธิ์ที่เพียงพอ",
 		set_job_no_permissions = "พยายามตั้งค่างานโดยไม่มีสิทธิ์ที่เพียงพอ",
+		toggle_reflection_no_permissions = "พยายามเปิดการสะท้อนความเสียหายโดยไม่ได้รับอนุญาตแบบเหมาะสม",
+
+		success_enable_reflection = "เปิดการสะท้อนความเสียหายเรียบร้อยแล้ว",
+		success_disable_reflection = "ปิดการสะท้อนความเสียหายเรียบร้อยแล้ว",
+		failed_toggle_reflection = "การสลับการสะท้อนความเสียหายล้มเหลว",
+
+		reflection_logs_title = "สลับการสะท้อนความเสียหาย",
+		reflection_logs_enabled_details = "${consoleName} ได้เปิดการสะท้อนความเสียหาย",
+		reflection_logs_disabled_details = "${consoleName} ได้ปิดการสะท้อนความเสียหาย",
 
 		protective_mode_not_staff = "พยายามเปิดโหมดป้องกันเซิร์ฟเวอร์โดยไม่ได้รับอนุญาตให้ทำ",
 		protective_mode_toggled_on = "โหมดป้องกันเซิร์ฟเวอร์ถูกเปิดแล้ว ระยะเวลาการเล่นที่จำเป็นเพื่อเข้าเซิร์ฟเวอร์ถูกตั้งเป็น `${playtime}`",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		wallhack_feature = "ตกแต่งผนัง",
 		watching_feature = "ดูเหตุการณ์",
 		fortnite_feature = "ฟอร์ตไนท์",
+		reflection_feature = "การสะท้อนความเสียหาย",
 
 		you_are_not_in_a_vehicle = "คุณไม่ได้อยู่ในยานพาหนะ",
 		repaired_vehicle = "ซ่อมแซมยานพาหนะเรียบร้อยแล้ว",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		track_player_command_parameter_server_id_help = "เลขไอดีเซิร์ฟเวอร์ของผู้เล่นที่คุณต้องการติดตาม ปล่อยว่างเพื่อปิดการติดตาม",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "reflect_damage",
+		reflect_damage_command_help = "เปิด/ปิดการสะท้อนความเสียหาย (ผู้เล่นใดที่โจมตีคุณจะถูกโจมตีตัวเอง)",
+		reflect_damage_command_substitutes = "reflect",
+
 		stick_command = "ติดตามรถ",
 		stick_command_help = "ติดตามรถที่คุณอยู่ด้านบน",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		set_weapon_tint_command_parameter_tint_help = "สีที่คุณต้องการตั้งค่า (เว้นว่างไว้หากต้องการลบ).",
 		set_weapon_tint_command_substitutes = "weapon_tint, tint",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "set_item_name_override",
 		set_item_name_override_command_help = "ตั้งค่าหรือลบการแทนที่ชื่อไอเท็มของไอเท็มที่ระบุไว้",
 		set_item_name_override_command_parameter_slot = "สล็อต",
 		set_item_name_override_command_parameter_slot_help = "หมายเลขสล็อตของไอเท็มที่คุณต้องการแทนที่ชื่อ",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["th-TH"] = {
 		putting_leash_on = "ใส่เชือกจูง",
 		press_to_take_leash_off = "[${InteractionKey}] ถอดเชือกจูง",
 		takeing_leash_off = "ถอดเชือกจูงออก"
+	},
+
+	letterboxes = {
+		press_to_access = "กด ~g~${SeatEjectKey} ~w~เพื่อเข้าถึง ${type}",
+		letterbox_broken = "${type} ได้รับความเสียหายแล้ว",
+
+		type_letterbox = "กล่องจดหมาย",
+		type_newsdisp = "ตู้จำหน่ายข่าว",
+		type_postbox = "กล่องไปรษณีย์"
 	},
 
 	locate = {

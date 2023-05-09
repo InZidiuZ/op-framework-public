@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["meme-roadman"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		toggle_player_track_no_permissions = "Bruv, you don't have the permissions to toggle player tracking.",
 		set_job_no_permissions = "You don't have the permissions to set a job, fam.",
+		toggle_reflection_no_permissions = "Oi fam, you can't toggle the reflect ting without the rights.",
+
+		success_enable_reflection = "Ya ya, reflection enabled now innit.",
+		success_disable_reflection = "Safe, reflection disabled now.",
+		failed_toggle_reflection = "Mad ting, couldn't toggle reflection still.",
+
+		reflection_logs_title = "Reflection Toggled",
+		reflection_logs_enabled_details = "${consoleName} just turned on reflection, blood.",
+		reflection_logs_disabled_details = "${consoleName} just turned off reflection.",
 
 		protective_mode_not_staff = "Bruv, you can't turn on the server protective mode without proper permissions.",
 		protective_mode_toggled_on = "Alrite blud, server protective mode has been turned on. You gotta have played for `${playtime}` before you can connect to the server now.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		wallhack_feature = "Wallhack, innit?",
 		watching_feature = "Watching, fam.",
 		fortnite_feature = "Fortnite, blud.",
+		reflection_feature = "Damage Reflection",
 
 		you_are_not_in_a_vehicle = "Bruv, you ain't in a whip.",
 		repaired_vehicle = "Sorted, the whip's good as new.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		track_player_command_parameter_server_id_help = "The mandem's server ID you want to track. Leave blank to disable.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "reflect damage",
+		reflect_damage_command_help = "Toggle damage reflection. (Anyone who damages you will also get damaged)",
+		reflect_damage_command_substitutes = "reflect",
+
 		stick_command = "holdup",
 		stick_command_help = "Hold onto the whip you're ontop of.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		set_weapon_tint_command_parameter_tint_help = "Yo, what tint you want set? (Leave it blank if you ain't wantin' a tint).",
 		set_weapon_tint_command_substitutes = "weapon_tint, tint",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "set item name override",
 		set_item_name_override_command_help = "Sets or removes the item name override for the specific item.",
 		set_item_name_override_command_parameter_slot = "slot",
 		set_item_name_override_command_parameter_slot_help = "Enter the slot number for the item name that you want to override.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		putting_leash_on = "Putting Dog Lead on fam.",
 		press_to_take_leash_off = "[${InteractionKey}] Take off the Dog Lead",
 		takeing_leash_off = "Taking off the Dog Lead fam."
+	},
+
+	letterboxes = {
+		press_to_access = "Press ~g~${SeatEjectKey} ~w~to access the ${type}",
+		letterbox_broken = "The ${type} is mash up.",
+
+		type_letterbox = "letterbox",
+		type_newsdisp = "news manz dispenser",
+		type_postbox = "postbox bloodclart"
 	},
 
 	locate = {

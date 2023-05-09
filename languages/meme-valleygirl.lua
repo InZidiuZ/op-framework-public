@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["meme-valleygirl"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		toggle_player_track_no_permissions = "No way, like you're not allowed to toggle player tracking!",
 		set_job_no_permissions = "Sorry, can't change jobs without the proper clearance.",
+		toggle_reflection_no_permissions = "Like, you can't toggle damage reflection without, like, proper permissions, duh.",
+
+		success_enable_reflection = "Yay, you've, like, successfully enabled reflection!",
+		success_disable_reflection = "Boohoo, reflection's, like, successfully disabled, bummer!",
+		failed_toggle_reflection = "Uh-oh, like, reflection toggling has failed, that's so not hot!",
+
+		reflection_logs_title = "Reflection Toggled",
+		reflection_logs_enabled_details = "${consoleName} has toggled reflection on. Get ready to get, like, totally reflected!",
+		reflection_logs_disabled_details = "${consoleName} has toggled reflection off. No more reflecting for ya, boo!",
 
 		protective_mode_not_staff = "Like, you can't toggle the server protective mode without proper permissions, sorry.",
 		protective_mode_toggled_on = "Oh-em-gee, server protective mode has like, totally been enabled. You'll need to have played for, like, ${playtime} hours to connect to the server now.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		wallhack_feature = "Wallhack",
 		watching_feature = "Watching",
 		fortnite_feature = "Fortnite",
+		reflection_feature = "Damage Reflection",
 
 		you_are_not_in_a_vehicle = "Oh-em-gee, you're, like, not even in a car!",
 		repaired_vehicle = "Yas, the car is totally fixed!",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		track_player_command_parameter_server_id_help = "The player's server ID you are like wanting to track. Like, leave blank to disable, duh!",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "reflect_damage",
+		reflect_damage_command_help = "OMG like, turns on damage reflection. (Like, anyone who tries to attack you will get hurt too!)",
+		reflect_damage_command_substitutes = "reflect",
+
 		stick_command = "stick",
 		stick_command_help = "Stick to the car you're ontop of, like, oh my god!",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		set_weapon_tint_command_parameter_tint_help = "Select the tint you wanna use (leave it empty to remove).",
 		set_weapon_tint_command_substitutes = "weapon_tint, tint",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "set_item_name_override",
 		set_item_name_override_command_help = "Changes or deletes the name of your item.",
 		set_item_name_override_command_parameter_slot = "slot",
 		set_item_name_override_command_parameter_slot_help = "The slot number of the item you wanna change the name of.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		putting_leash_on = "Putting Leash On, so cute.",
 		press_to_take_leash_off = "[${InteractionKey}] Take Off Leash, like, let it go.",
 		takeing_leash_off = "Taking Leash Off, good riddance."
+	},
+
+	letterboxes = {
+		press_to_access = "Like, press ~g~${SeatEjectKey} ~w~to use the ${type}.",
+		letterbox_broken = "Ugh, the ${type} is, like, totally broken.",
+
+		type_letterbox = "letterbox",
+		type_newsdisp = "news dispenser",
+		type_postbox = "postbox"
 	},
 
 	locate = {

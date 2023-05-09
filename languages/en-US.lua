@@ -287,6 +287,15 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		toggle_player_track_no_permissions = "Attempted to toggle player tracking without proper permissions.",
 		set_job_no_permissions = "Attempted to set a job without proper permissions.",
+		toggle_reflection_no_permissions = "Attempted to toggle damage reflection without proper permissions.",
+
+		success_enable_reflection = "Successfully enabled reflection.",
+		success_disable_reflection = "Successfully disabled reflection.",
+		failed_toggle_reflection = "Failed to toggle reflection.",
+
+		reflection_logs_title = "Reflection Toggled",
+		reflection_logs_enabled_details = "${consoleName} has toggled reflection on.",
+		reflection_logs_disabled_details = "${consoleName} has toggled reflection off.",
 
 		protective_mode_not_staff = "Attempted to toggle the server protective mode without proper permissions.",
 		protective_mode_toggled_on = "Server protective mode has now been enabled. Required amount of playtime to connect to the server has been set to `${playtime}`.",
@@ -404,6 +413,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		wallhack_feature = "Wallhack",
 		watching_feature = "Watching",
 		fortnite_feature = "Fortnite",
+		reflection_feature = "Damage Reflection",
 
 		you_are_not_in_a_vehicle = "You are not in a vehicle.",
 		repaired_vehicle = "Repaired vehicle.",
@@ -1060,6 +1070,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		track_player_command_parameter_server_id_help = "The player's server ID you are wanting to track. Leave blank to disable.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "reflect_damage",
+		reflect_damage_command_help = "Toggles damage reflection. (Any player who damages you will be damaged themselves)",
+		reflect_damage_command_substitutes = "reflect",
+
 		stick_command = "stick",
 		stick_command_help = "Stick to the car you're ontop of.",
 		stick_command_substitutes = "",
@@ -1270,7 +1284,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		set_weapon_tint_command_parameter_tint_help = "The tint you want to set (leave empty to remove).",
 		set_weapon_tint_command_substitutes = "weapon_tint, tint",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "set_item_name_override",
 		set_item_name_override_command_help = "Sets or removes the item name override of the specified item.",
 		set_item_name_override_command_parameter_slot = "slot",
 		set_item_name_override_command_parameter_slot_help = "The slot number of the item which name you want to override.",
@@ -7936,6 +7950,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		putting_leash_on = "Putting Leash On",
 		press_to_take_leash_off = "[${InteractionKey}] Take Off Leash",
 		takeing_leash_off = "Taking Leash Off."
+	},
+
+	letterboxes = {
+		press_to_access = "Press ~g~${SeatEjectKey} ~w~to access the ${type}",
+		letterbox_broken = "The ${type} is broken.",
+
+		type_letterbox = "letterbox",
+		type_newsdisp = "news dispenser",
+		type_postbox = "postbox"
 	},
 
 	locate = {

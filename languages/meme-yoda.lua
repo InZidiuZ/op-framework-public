@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["meme-yoda"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		toggle_player_track_no_permissions = "Proper permissions, you do not have to toggle player tracking, hmmm.",
 		set_job_no_permissions = "Set a job, without proper permissions you tried, hmmm.",
+		toggle_reflection_no_permissions = "Without proper permissions, toggle damage reflection you have attempted.",
+
+		success_enable_reflection = "Reflection enabled, successfully it has been.",
+		success_disable_reflection = "Reflection disabled, successfully it has been.",
+		failed_toggle_reflection = "Failed to toggle reflection, we have.",
+
+		reflection_logs_title = "Reflection Toggled",
+		reflection_logs_enabled_details = "Reflection on, ${consoleName} has toggled it.",
+		reflection_logs_disabled_details = "Reflection off, ${consoleName} has toggled it.",
 
 		protective_mode_not_staff = "Without proper permissions, toggle the server's protective mode you attempted.",
 		protective_mode_toggled_on = "Enabled, the server's protective mode has been. Required playtime to connect to the server has been set to `${playtime}`.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		wallhack_feature = "Wallhack, you have.",
 		watching_feature = "Watching, I am.",
 		fortnite_feature = "Fortnite, we play.",
+		reflection_feature = "Damage Reflection",
 
 		you_are_not_in_a_vehicle = "Not in a vehicle, you are.",
 		repaired_vehicle = "Repaired the vehicle, I have.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		track_player_command_parameter_server_id_help = "ID of player you want to track. Leave blank to disable, yes.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "reflect_damage",
+		reflect_damage_command_help = "Damage reflection toggles. (Anyone who damages you will be damaged themselves)",
+		reflect_damage_command_substitutes = "reflection",
+
 		stick_command = "stick",
 		stick_command_help = "Stick to the car, you must.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		set_weapon_tint_command_parameter_tint_help = "The tint you want to set (leave empty to remove).", -- "Tint, you want to set, leave empty to remove, you must.",
 		set_weapon_tint_command_substitutes = "weapon_tint, tint", -- "Weapon_tint, substitutes these are.",
 
-		set_item_name_override_command = "set_item_name_override_command", -- "Item name override command, set this is.",
+		set_item_name_override_command = "set_item_name_override",
 		set_item_name_override_command_help = "Sets or removes the item name override of the specified item.", -- "Item name override, sets or removes, specified item of.",
 		set_item_name_override_command_parameter_slot = "slot", -- "Slot, you must input, the item you want to override.",
 		set_item_name_override_command_parameter_slot_help = "The slot number of the item which name you want to override.", -- "The slot number, you must input, override the item name, you want to.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		putting_leash_on = "Leash, putting on.",
 		press_to_take_leash_off = "Leash, off you must take it [${InteractionKey}]",
 		takeing_leash_off = "Leash, taking off, mm."
+	},
+
+	letterboxes = {
+		press_to_access = "Press ~g~${SeatEjectKey} ~w~to access the ${type}.",
+		letterbox_broken = "The ${type} broken, it is.",
+
+		type_letterbox = "letterbox",
+		type_newsdisp = "news dispenser",
+		type_postbox = "postbox"
 	},
 
 	locate = {

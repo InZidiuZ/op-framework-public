@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["sv-SE"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		toggle_player_track_no_permissions = "Försökte växla spelarspårning utan korrekta behörigheter.",
 		set_job_no_permissions = "Försökte sätta yrke utan korrekta behörigheter.",
+		toggle_reflection_no_permissions = "Försökte aktivera skadereflektion utan tillräckliga behörigheter.",
+
+		success_enable_reflection = "Skadereflektionen aktiverades framgångsrikt.",
+		success_disable_reflection = "Skadereflektionen avaktiverades framgångsrikt.",
+		failed_toggle_reflection = "Misslyckades med att aktivera/släcka skadereflektionen.",
+
+		reflection_logs_title = "Skadereflektion påslagen/avslagen",
+		reflection_logs_enabled_details = "${consoleName} har aktiverat skadereflektionen.",
+		reflection_logs_disabled_details = "${consoleName} har avaktiverat skadereflektionen.",
 
 		protective_mode_not_staff = "Försökte aktivera serverns skyddsläge utan tillräckliga behörigheter.",
 		protective_mode_toggled_on = "Serverns skyddsläge har nu aktiverats. Krävd mängd speltid för att ansluta till servern har satts till `${playtime}`.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		wallhack_feature = "Genomväggssyn",
 		watching_feature = "Övervakning",
 		fortnite_feature = "Fortnite",
+		reflection_feature = "Skadereflektion",
 
 		you_are_not_in_a_vehicle = "Du är inte i ett fordon.",
 		repaired_vehicle = "Reparerade fordonet.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		track_player_command_parameter_server_id_help = "Spelarens server-ID du vill spåra. Lämna tomt för att stänga av.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "reflektera_skada",
+		reflect_damage_command_help = "Växlar skadereflektion. (Alla spelare som skadar dig kommer att skadas själva)",
+		reflect_damage_command_substitutes = "reflektera",
+
 		stick_command = "fastna",
 		stick_command_help = "Fäst på bilen du är ovanpå.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		set_weapon_tint_command_parameter_tint_help = "Den nyans du vill använda (lämna tom för att ta bort).",
 		set_weapon_tint_command_substitutes = "vapen_nyans, nyans",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "sätt_överstyr_namn_på_föremål",
 		set_item_name_override_command_help = "Sätter eller tar bort namn-override för det angivna föremålet.",
 		set_item_name_override_command_parameter_slot = "plats",
 		set_item_name_override_command_parameter_slot_help = "Numret på platsen för föremålet vars namn du vill ändra.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		putting_leash_on = "Sätter på koppel.",
 		press_to_take_leash_off = "[${InteractionKey}] Ta av koppel",
 		takeing_leash_off = "Tar av koppel."
+	},
+
+	letterboxes = {
+		press_to_access = "Tryck på ~g~${SeatEjectKey} ~w~för att komma åt ${type}",
+		letterbox_broken = "${type} är trasig.",
+
+		type_letterbox = "brevlåda",
+		type_newsdisp = "tidningsdispenser",
+		type_postbox = "postlåda"
 	},
 
 	locate = {

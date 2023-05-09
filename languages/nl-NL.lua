@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		toggle_player_track_no_permissions = "Poging om speler tracking in- of uit te schakelen zonder de juiste rechten.",
 		set_job_no_permissions = "Poging om een job in te stellen zonder de juiste rechten.",
+		toggle_reflection_no_permissions = "Poging om schade reflectie te activeren zonder de juiste toestemming.",
+
+		success_enable_reflection = "Schade reflectie is succesvol ingeschakeld.",
+		success_disable_reflection = "Schade reflectie is succesvol uitgeschakeld.",
+		failed_toggle_reflection = "Het activeren van schade reflectie is mislukt.",
+
+		reflection_logs_title = "Reflectie aan/uit gezet",
+		reflection_logs_enabled_details = "${consoleName} heeft schade reflectie aan gezet.",
+		reflection_logs_disabled_details = "${consoleName} heeft schade reflectie uit gezet.",
 
 		protective_mode_not_staff = "Er is geprobeerd om de beschermingsmodus van de server in te schakelen zonder de juiste machtigingen.",
 		protective_mode_toggled_on = "De beschermingsmodus van de server is nu ingeschakeld. De vereiste hoeveelheid speeltijd om verbinding te maken met de server is ingesteld op `${playtime}`.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		wallhack_feature = "Wallhack",
 		watching_feature = "Kijken",
 		fortnite_feature = "Fortnite",
+		reflection_feature = "Schade Reflectie",
 
 		you_are_not_in_a_vehicle = "Je zit niet in een voertuig.",
 		repaired_vehicle = "Voertuig gerepareerd.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		track_player_command_parameter_server_id_help = "De server-ID van de speler die je wilt volgen. Laat leeg om uit te schakelen.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "weerkaatsing_schade",
+		reflect_damage_command_help = "Wisselt het weerkaatsen van schade in. (Elke speler die jou beschadigt, zal zelf ook beschadigd worden)",
+		reflect_damage_command_substitutes = "weerkaatsing",
+
 		stick_command = "vastplakken",
 		stick_command_help = "Plakt vast aan de auto waar je op staat.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		set_weapon_tint_command_parameter_tint_help = "De tint die je wilt instellen (laat leeg om te verwijderen).",
 		set_weapon_tint_command_substitutes = "weapon_tint, tint",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "item_naam_override_instellen",
 		set_item_name_override_command_help = "Stelt de itemnaamoverschrijving van het opgegeven item in of verwijdert deze.",
 		set_item_name_override_command_parameter_slot = "slot",
 		set_item_name_override_command_parameter_slot_help = "Het slotnummer van het item waarvan je de naam wilt overschrijven.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		putting_leash_on = "Lijn aan het plaatsen",
 		press_to_take_leash_off = "[${InteractionKey}] Haal de lijn eraf",
 		takeing_leash_off = "Lijn verwijderen."
+	},
+
+	letterboxes = {
+		press_to_access = "Druk op ~g~${SeatEjectKey} ~w~om toegang te krijgen tot de ${type}",
+		letterbox_broken = "De ${type} is kapot.",
+
+		type_letterbox = "brievenbus",
+		type_newsdisp = "nieuwskiosk",
+		type_postbox = "postbus"
 	},
 
 	locate = {

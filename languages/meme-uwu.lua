@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["meme-uwu"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 		toggle_player_track_no_permissions = "Attempted to toggle pwayew twacking without pwopew pewmissions.",
 		set_job_no_permissions = "Attempted to set a job without pwopew pewmissions.",
+		toggle_reflection_no_permissions = "OwO wat's dis? Yuwu don't have da pwoper permissions tuwu toggle damage weflection.",
+
+		success_enable_reflection = "Yay! Successfully enabled weflection.",
+		success_disable_reflection = "Yay! Successfully disabled weflection.",
+		failed_toggle_reflection = "Whoopsies! Failed to toggle weflection.",
+
+		reflection_logs_title = "Weflection Toggled",
+		reflection_logs_enabled_details = "${consoleName} has toggled weflection on.",
+		reflection_logs_disabled_details = "${consoleName} has toggled weflection off.",
 
 		protective_mode_not_staff = "UwU I saw you, you can't toggle the server protective mode without proper permissions >:3",
 		protective_mode_toggled_on = "Server protective mode has been enabled now! Required playtime to connect has been set to `${playtime}`. Enjoy our server~",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		wallhack_feature = "Wallhack OwO",
 		watching_feature = "Watcwing UwU",
 		fortnite_feature = "Fortnite UwU",
+		reflection_feature = "Damage Weflection",
 
 		you_are_not_in_a_vehicle = "You awe not in a vehicwe.",
 		repaired_vehicle = "Repaiwed vehicwe.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		track_player_command_parameter_server_id_help = "The pwayew's sewvew ID you awe wanting to twack. Weave blank to disabwe.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "weffect_damage",
+		reflect_damage_command_help = "Toggles damage wefwection. (Any playew who damages you will be damaged themselves)",
+		reflect_damage_command_substitutes = "weffect",
+
 		stick_command = "stick",
 		stick_command_help = "Stick to the caw you'we ontop of.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		set_weapon_tint_command_parameter_tint_help = "Da tint uwu wawnts tuwu set (weave empty tuwu wemove).",
 		set_weapon_tint_command_substitutes = "weapon_tint, tintwu",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "set_item_name_override",
 		set_item_name_override_command_help = "Sets ow wemoves da item name ovewwide of da specified item.",
 		set_item_name_override_command_parameter_slot = "swot",
 		set_item_name_override_command_parameter_slot_help = "Da swot numbew of da item which name uwu wawnt tuwu ovewwide.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		putting_leash_on = "Putting Weash On",
 		press_to_take_leash_off = "[${InteractionKey}] Take Off Leash",
 		takeing_leash_off = "Taking Weash Off."
+	},
+
+	letterboxes = {
+		press_to_access = "Pwess ~g~${SeatEjectKey} ~w~to access the ${type}",
+		letterbox_broken = "The ${type} is bwoken.",
+
+		type_letterbox = "wetterbox",
+		type_newsdisp = "news dispensew",
+		type_postbox = "postbox"
 	},
 
 	locate = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["de-DE"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["de-DE"] = {
 
 		toggle_player_track_no_permissions = "Es wurde versucht, den Spieler-Tracker ohne ausreichende Berechtigungen umzuschalten.",
 		set_job_no_permissions = "Es wurde versucht, einen Job ohne ausreichende Berechtigungen festzulegen.",
+		toggle_reflection_no_permissions = "Versuchte, die Schadensreflexion ohne ausreichende Berechtigungen umzuschalten.",
+
+		success_enable_reflection = "Schadensreflexion erfolgreich aktiviert.",
+		success_disable_reflection = "Schadensreflexion erfolgreich deaktiviert.",
+		failed_toggle_reflection = "Schadensreflexion konnte nicht umgeschaltet werden.",
+
+		reflection_logs_title = "Reflexion umgeschaltet",
+		reflection_logs_enabled_details = "${consoleName} hat die Reflexion aktiviert.",
+		reflection_logs_disabled_details = "${consoleName} hat die Reflexion deaktiviert.",
 
 		protective_mode_not_staff = "Es wurde versucht, den Schutzmodus des Servers ohne entsprechende Berechtigung zu aktivieren.",
 		protective_mode_toggled_on = "Der Schutzmodus des Servers wurde aktiviert. Die erforderliche Spielzeit zum Verbinden mit dem Server beträgt nun `${playtime}`.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["de-DE"] = {
 		wallhack_feature = "Wand-Durchsicht",
 		watching_feature = "Beobachten",
 		fortnite_feature = "Fortnite",
+		reflection_feature = "Schadensreflexion",
 
 		you_are_not_in_a_vehicle = "Du befindest dich nicht in einem Fahrzeug.",
 		repaired_vehicle = "Fahrzeug wurde repariert.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["de-DE"] = {
 		track_player_command_parameter_server_id_help = "Die Server-ID des Spielers, den Sie verfolgen möchten. Lassen Sie es leer, um es zu deaktivieren.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "schaden_reflektieren",
+		reflect_damage_command_help = "Aktiviert die Reflektion des Schadens. (Jeder Spieler, der dir Schaden zufügt, wird selbst Schaden erleiden)",
+		reflect_damage_command_substitutes = "reflektieren",
+
 		stick_command = "klammern",
 		stick_command_help = "An das Auto, auf dem du stehst, anklammern.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["de-DE"] = {
 		set_weapon_tint_command_parameter_tint_help = "Die Farbe, die du einstellen möchtest (leere lassen, um zu entfernen).",
 		set_weapon_tint_command_substitutes = "weapon_tint, tint",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "setze_itemnamen",
 		set_item_name_override_command_help = "Legt den Artikelnamen-Override des angegebenen Artikels fest oder entfernt ihn.",
 		set_item_name_override_command_parameter_slot = "Steckplatz",
 		set_item_name_override_command_parameter_slot_help = "Die Schlitzzahl des Artikels, dessen Namen du überschreiben möchtest.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["de-DE"] = {
 		putting_leash_on = "Leine anlegen",
 		press_to_take_leash_off = "[${InteractionKey}] Leine entfernen",
 		takeing_leash_off = "Leine entfernen"
+	},
+
+	letterboxes = {
+		press_to_access = "Drücke ~g~${SeatEjectKey}~w~, um auf das ${type} zuzugreifen",
+		letterbox_broken = "Der ${type} ist kaputt.",
+
+		type_letterbox = "Briefkasten",
+		type_newsdisp = "Nachrichtenverkauf",
+		type_postbox = "Postkasten"
 	},
 
 	locate = {

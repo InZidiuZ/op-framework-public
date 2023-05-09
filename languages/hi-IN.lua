@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["hi-IN"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["hi-IN"] = {
 
 		toggle_player_track_no_permissions = "अनुमतियों के बिना प्लेयर ट्रैकिंग को टॉगल करने का प्रयास किया गया।",
 		set_job_no_permissions = "अनुमतियों के बिना नौकरी सेट करने का प्रयास किया गया।",
+		toggle_reflection_no_permissions = "प्रचार की सही अनुमतियाँ न होने के कारण हमेशा चोट अभिव反射 को टॉगल करने का प्रयास किया गया।",
+
+		success_enable_reflection = "अभिव反फलक सफलतापूर्वक सक्षम कर दिया गया।",
+		success_disable_reflection = "अभिव反फलक सफलतापूर्वक अक्षम कर दिया गया।",
+		failed_toggle_reflection = "अभिव反फलक को टॉगल करने में विफल रहा।",
+
+		reflection_logs_title = "अभिव反फलक टॉगल किया",
+		reflection_logs_enabled_details = "${consoleName} ने अभिव反फलक को चालू कर दिया है।",
+		reflection_logs_disabled_details = "${consoleName} ने अभिव反फलक को बंद कर दिया है।",
 
 		protective_mode_not_staff = "उचित अनुमतियों के बिना सर्वर संरक्षक मोड को टॉगल करने का प्रयास किया गया।",
 		protective_mode_toggled_on = "सर्वर संरक्षक मोड अब सक्षम हो गया है। सर्वर से कनेक्ट होने के लिए आवश्यक खेलने का समय `${playtime}` पर सेट किया गया है।",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		wallhack_feature = "वॉलहैक",
 		watching_feature = "देखभाल",
 		fortnite_feature = "फोर्टनाइट",
+		reflection_feature = "चोट अभिव反फलक",
 
 		you_are_not_in_a_vehicle = "आप गाड़ी में नहीं हों।",
 		repaired_vehicle = "ठीक की गई गाड़ी।",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		track_player_command_parameter_server_id_help = "आप ट्रैक करना चाहते हैं उस खिलाड़ी का सर्वर आईडी। अक्षम करने के लिए खाली छोड़ दें।",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "दुर्घटना प्रतिबिंबित करें",
+		reflect_damage_command_help = "घायली प्रतिबिंब टॉगल करता है। (जो प्लेयर आपको नुकसान पहुंचाता है, वे खुद होंगे)",
+		reflect_damage_command_substitutes = "प्रतिबिंब",
+
 		stick_command = "स्टिक",
 		stick_command_help = "उस गाड़ी से जोड़ें जिस पर आप ऊपर हो।",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		set_weapon_tint_command_parameter_tint_help = "आप जिस रंग को सेट करना चाहते हैं (खाली छोड़ दें तो हटा दें)।",
 		set_weapon_tint_command_substitutes = "weapon_tint, रंग",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "आइटम नाम अधिरोहण सेट करें",
 		set_item_name_override_command_help = "निर्दिष्ट आइटम के आइटम नाम को ओवरराइड सेट करता है या हटाता है।",
 		set_item_name_override_command_parameter_slot = "स्लॉट",
 		set_item_name_override_command_parameter_slot_help = "जिस आइटम के नाम को ओवरराइड करना है उसके स्लॉट नंबर।",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		putting_leash_on = "लीश पहेंचाई जा रही है।",
 		press_to_take_leash_off = "[${InteractionKey}] लीश उतारें।",
 		takeing_leash_off = "लीश उतार रहे हैं।"
+	},
+
+	letterboxes = {
+		press_to_access = "पहुंचने के लिए ~g~${SeatEjectKey} ~w~दबाएं ${type}",
+		letterbox_broken = "${type} टूट गया है।",
+
+		type_letterbox = "लेटरबॉक्स",
+		type_newsdisp = "समाचार वितरक",
+		type_postbox = "पोस्टबॉक्स"
 	},
 
 	locate = {

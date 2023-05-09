@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["meme-spongebob"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		toggle_player_track_no_permissions = "You can't toggle player trackin' without permission, arrr!",
 		set_job_no_permissions = "No permission matey! Ye can't set a job!",
+		toggle_reflection_no_permissions = "Whoopsie! Ya can't toggle the damage reflection without permission!",
+
+		success_enable_reflection = "Yay! Ya successfully turned on the damage reflection.",
+		success_disable_reflection = "Yay! Ya successfully turned off the damage reflection.",
+		failed_toggle_reflection = "Barnacles! Failed to toggle the damage reflection.",
+
+		reflection_logs_title = "Reflection Toggled",
+		reflection_logs_enabled_details = "${consoleName} turned on the damage reflection.",
+		reflection_logs_disabled_details = "${consoleName} turned off the damage reflection.",
 
 		protective_mode_not_staff = "Oh no! You can't toggle the protective mode without the proper permissions.",
 		protective_mode_toggled_on = "Woohoo! The protective mode is now on. You have to spend `${playtime}` in-game to join the server.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		wallhack_feature = "Wallhack",
 		watching_feature = "Watching",
 		fortnite_feature = "Fortnite",
+		reflection_feature = "Damage Reflection",
 
 		you_are_not_in_a_vehicle = "You are not in a vehicle.",
 		repaired_vehicle = "Repaired vehicle.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		track_player_command_parameter_server_id_help = "The landlubber's server ID ye be wanting to track. Leave blank to disable, arrr!",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "reflect_damage",
+		reflect_damage_command_help = "Togglez damaj refleckshun. (Any player who damajes ya will be damajed themselves)",
+		reflect_damage_command_substitutes = "reflect",
+
 		stick_command = "stick",
 		stick_command_help = "Stick to the ship ye be standin' on.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		set_weapon_tint_command_parameter_tint_help = "Da tint ya want to set (leave empty to remove).",
 		set_weapon_tint_command_substitutes = "weapon_tint, tint",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "set_item_name_override",
 		set_item_name_override_command_help = "Sets or removes da item name override of da specified item.",
 		set_item_name_override_command_parameter_slot = "slot",
 		set_item_name_override_command_parameter_slot_help = "Da slot number of da item which name ya want to override.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		putting_leash_on = "Puttin' the leash on the prisoner, aye!",
 		press_to_take_leash_off = "[${InteractionKey}] Take off the leash!",
 		takeing_leash_off = "Takin' the leash off the scallywag."
+	},
+
+	letterboxes = {
+		press_to_access = "Press ~g~${SeatEjectKey} ~w~to access da ${type}",
+		letterbox_broken = "Da ${type} iz broken.",
+
+		type_letterbox = "lettabox",
+		type_newsdisp = "news dispensa",
+		type_postbox = "postbox"
 	},
 
 	locate = {

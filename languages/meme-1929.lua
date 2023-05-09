@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["meme-1929"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		toggle_player_track_no_permissions = "You do not have permission to toggle player tracking.",
 		set_job_no_permissions = "You do not have permission to set a job.",
+		toggle_reflection_no_permissions = "Attempted to toggle damage reflection without proper permissions.",
+
+		success_enable_reflection = "Reflection successfully enabled.",
+		success_disable_reflection = "Reflection successfully disabled.",
+		failed_toggle_reflection = "Failed to toggle reflection.",
+
+		reflection_logs_title = "Reflection Toggled",
+		reflection_logs_enabled_details = "${consoleName} has enabled reflection.",
+		reflection_logs_disabled_details = "${consoleName} has disabled reflection.",
 
 		protective_mode_not_staff = "Attempted to toggle on the server's protective mode without proper permissions.",
 		protective_mode_toggled_on = "The server's protective mode has been enabled. The required amount of playtime to connect to the server has been set to `${playtime}`.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		wallhack_feature = "Wall Vision",
 		watching_feature = "Observing",
 		fortnite_feature = "Fortnite",
+		reflection_feature = "Damage Reflection",
 
 		you_are_not_in_a_vehicle = "Thou art not in a vehicle.",
 		repaired_vehicle = "Repaired thy vehicle.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		track_player_command_parameter_server_id_help = "The server ID of the player you want to track. Leave blank to disable.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "reflect_damage",
+		reflect_damage_command_help = "Toggles reflecting of damage. (Any player who damages you will damage themselves)",
+		reflect_damage_command_substitutes = "reflect",
+
 		stick_command = "stick",
 		stick_command_help = "Grabs onto the car you are standing on.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		set_weapon_tint_command_parameter_tint_help = "The hue you want to set (leave blank to remove).",
 		set_weapon_tint_command_substitutes = "tint_weapon, hue",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "set_item_name_override",
 		set_item_name_override_command_help = "Sets or removes the item name override of the specified item.",
 		set_item_name_override_command_parameter_slot = "number",
 		set_item_name_override_command_parameter_slot_help = "The number of the slot of the item which name you want to override.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		putting_leash_on = "Attaching Leash.",
 		press_to_take_leash_off = "[${InteractionKey}] Remove Leash",
 		takeing_leash_off = "Removing Leash."
+	},
+
+	letterboxes = {
+		press_to_access = "Press ~g~${SeatEjectKey} ~w~to access the ${type}",
+		letterbox_broken = "The ${type} is damaged.",
+
+		type_letterbox = "letterbox",
+		type_newsdisp = "news dispenser",
+		type_postbox = "postbox"
 	},
 
 	locate = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["tr-TR"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		toggle_player_track_no_permissions = "Geçerli izinler yokken oyuncu takip özelliği açılmaya çalışıldı.",
 		set_job_no_permissions = "Geçerli izinler yokken bir iş atamaya çalışıldı.",
+		toggle_reflection_no_permissions = "Doğru izinlere sahip olmadan hasar yansımasını açmaya çalışıldı.",
+
+		success_enable_reflection = "Hasar yansıması başarıyla açıldı.",
+		success_disable_reflection = "Hasar yansıması başarıyla kapatıldı.",
+		failed_toggle_reflection = "Hasar yansıtma geçişini değiştirme başarısız oldu.",
+
+		reflection_logs_title = "Yansıtma Değiştirildi",
+		reflection_logs_enabled_details = "${consoleName}, yansıtma özelliğini açtı.",
+		reflection_logs_disabled_details = "${consoleName}, yansıtma özelliğini kapattı.",
 
 		protective_mode_not_staff = "Sunucunun koruyucu modunu uygun izinler olmadan açmaya çalıştınız.",
 		protective_mode_toggled_on = "Sunucu koruyucu modu etkinleştirildi. Sunucuya bağlanmak için gereken oynama süresi `${playtime}` olarak ayarlandı.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		wallhack_feature = "Duvar Hilesi",
 		watching_feature = "İzleme",
 		fortnite_feature = "Fortnite",
+		reflection_feature = "Hasar Yansıtma",
 
 		you_are_not_in_a_vehicle = "Araçta değilsiniz.",
 		repaired_vehicle = "Araç tamir edildi.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		track_player_command_parameter_server_id_help = "Takip etmek istediğiniz oyuncunun sunucu kimliği. Devre dışı bırakmak için boş bırakın.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "zarar_yansitma",
+		reflect_damage_command_help = "Hasarı yansıtmayı açar/kapatır. (Seni hasarlandıran herhangi bir oyuncu kendisi de hasarlanır)",
+		reflect_damage_command_substitutes = "yansit",
+
 		stick_command = "yapış",
 		stick_command_help = "Üzerinde olduğunuz araca yapışır.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		set_weapon_tint_command_parameter_tint_help = "Ayarlamak istediğiniz renk (çıkarmak için boş bırakın).",
 		set_weapon_tint_command_substitutes = "silah_renk, renk",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "item_isim_ustunden_yazma_ayarla",
 		set_item_name_override_command_help = "Belirtilen öğenin adını değiştirir veya kaldırır.",
 		set_item_name_override_command_parameter_slot = "slot",
 		set_item_name_override_command_parameter_slot_help = "Adını değiştirmek istediğiniz öğenin yuva numarası.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		putting_leash_on = "Tasma takılıyor",
 		press_to_take_leash_off = "[${InteractionKey}] Tasmayı çıkar",
 		takeing_leash_off = "Tasma çıkartılıyor."
+	},
+
+	letterboxes = {
+		press_to_access = "${SeatEjectKey} ~ tuşuna basarak ${type} erişebilirsiniz",
+		letterbox_broken = "${type} çalışmıyor.",
+
+		type_letterbox = "posta kutusu",
+		type_newsdisp = "haberler dağıtıcısı",
+		type_postbox = "mektup kutusu"
 	},
 
 	locate = {

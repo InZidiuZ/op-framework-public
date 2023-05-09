@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["meme-gungan"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		toggle_player_track_no_permissions = "Jar Jar Binks says: Mesa no can toggle player trackin' without proper permissions.",
 		set_job_no_permissions = "Jar Jar Binks says: Mesa no can set a job without proper permissions.",
+		toggle_reflection_no_permissions = "Meesa tried to toggle damage reflection mesaout proper permissions.",
+
+		success_enable_reflection = "Reflection mesa enabled successfully.",
+		success_disable_reflection = "Reflection mesa disabled successfully.",
+		failed_toggle_reflection = "Meesa failed to toggle reflection.",
+
+		reflection_logs_title = "Reflection Toggled",
+		reflection_logs_enabled_details = "${consoleName} has toggled reflection on.",
+		reflection_logs_disabled_details = "${consoleName} has toggled reflection off.",
 
 		protective_mode_not_staff = "Mesa no allowed togey toggly server protective mode without da grand big boss's permissions, okeyday?",
 		protective_mode_toggled_on = "Yousa mesa happy to tell that server protective mode have been enabled. Da required amount of playtime to connect to da server is now set to `${playtime}`.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		wallhack_feature = "Wallhack (Lifa)",
 		watching_feature = "Watching (Unga)",
 		fortnite_feature = "Fortnite (Fugu)",
+		reflection_feature = "Damage Reflection",
 
 		you_are_not_in_a_vehicle = "Meesa no in a vehicle.",
 		repaired_vehicle = "Meesa fixa vehicle.",
@@ -1062,6 +1072,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		track_player_command_parameter_server_id_help = "Da player's server ID yousa be wanting to track. Leave blank to disable.",
 		track_player_command_substitutes = "",
 
+		reflect_damage_command = "Reflecten damaj",
+		reflect_damage_command_help = "Toggles damaj reflecten. (Any playa hu damages yousa will be damaged themselves)",
+		reflect_damage_command_substitutes = "reflect",
+
 		stick_command = "stick",
 		stick_command_help = "Stick to da car yousa ontop of.",
 		stick_command_substitutes = "",
@@ -1272,7 +1286,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		set_weapon_tint_command_parameter_tint_help = "Da tint yousa want to set (leave empty to remove).",
 		set_weapon_tint_command_substitutes = "weapon_tint, tint",
 
-		set_item_name_override_command = "set_item_name_override_command",
+		set_item_name_override_command = "Seten item namen overriden",
 		set_item_name_override_command_help = "Setsa or removes da item name override of da specified item.",
 		set_item_name_override_command_parameter_slot = "slot",
 		set_item_name_override_command_parameter_slot_help = "Da slot number of da item which name yousa want to override.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		putting_leash_on = "Meesa putting Leash On",
 		press_to_take_leash_off = "[${InteractionKey}] Take Off Leash",
 		takeing_leash_off = "Taking Leash Off."
+	},
+
+	letterboxes = {
+		press_to_access = "Press ~g~${SeatEjectKey} ~w~to accessen the ${type}",
+		letterbox_broken = "Da ${type} issen broken.",
+
+		type_letterbox = "Letterbox",
+		type_newsdisp = "News dispensa",
+		type_postbox = "Postbox"
 	},
 
 	locate = {

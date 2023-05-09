@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 4 (do not change)
+-- AUTO LOCALES: 5 (do not change)
 
 OP.Global.Locales.Languages["en-GB"] = {
 	-- configuration settings for language
@@ -289,6 +289,15 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		toggle_player_track_no_permissions = "Attempted to toggle player tracking without proper permissions.",
 		set_job_no_permissions = "Attempted to set a job without proper permissions.",
+		toggle_reflection_no_permissions = "Attempted to toggle damage reflection without proper permissions.",
+
+		success_enable_reflection = "Reflection has been successfully enabled.",
+		success_disable_reflection = "Reflection has been successfully disabled.",
+		failed_toggle_reflection = "Failed to toggle reflection.",
+
+		reflection_logs_title = "Reflection Toggled",
+		reflection_logs_enabled_details = "${consoleName} has enabled reflection.",
+		reflection_logs_disabled_details = "${consoleName} has disabled reflection.",
 
 		protective_mode_not_staff = "Attempted to toggle the server's protective mode without proper permissions.",
 		protective_mode_toggled_on = "The server's protective mode has been enabled. The required amount of playtime to connect to the server has been set to `${playtime}`.",
@@ -406,6 +415,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		wallhack_feature = "Wall Vision",
 		watching_feature = "Observing",
 		fortnite_feature = "Fortnite Game",
+		reflection_feature = "Damage Reflection",
 
 		you_are_not_in_a_vehicle = "You are not in a vehicle.",
 		repaired_vehicle = "Repaired vehicle.",
@@ -1061,6 +1071,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		track_player_command_parameter_server_id = "server ID",
 		track_player_command_parameter_server_id_help = "The player's server ID you want to track. Leave blank to disable.",
 		track_player_command_substitutes = "",
+
+		reflect_damage_command = "reflect_damage",
+		reflect_damage_command_help = "Toggles damage reflection. (Any player who damages you will be damaged themselves)",
+		reflect_damage_command_substitutes = "reflect",
 
 		stick_command = "stick",
 		stick_command_help = "Stick to the car you're on top of.",
@@ -7938,6 +7952,15 @@ OP.Global.Locales.Languages["en-GB"] = {
 		putting_leash_on = "Putting Lead On",
 		press_to_take_leash_off = "[${InteractionKey}] Take Off Lead",
 		takeing_leash_off = "Taking Lead Off."
+	},
+
+	letterboxes = {
+		press_to_access = "Press ~g~${SeatEjectKey} ~w~to access the ${type}",
+		letterbox_broken = "The ${type} is broken.",
+
+		type_letterbox = "letterbox",
+		type_newsdisp = "news dispenser",
+		type_postbox = "postbox"
 	},
 
 	locate = {
