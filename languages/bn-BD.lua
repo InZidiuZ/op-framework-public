@@ -16,8 +16,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		system = "সিস্টেম",
 		warning = "সতর্কতা",
 		invalid_input = "অবৈধ ইনপুট।",
-		missing_input = "ইনপুট নেই।",
-		player_not_found = "সার্ভার আইডি দিয়ে খেলোয়াড় খুঁজে পাওয়া যায় নি। `${serverId}`।",
+		missing_input = "ইনপুট অনুপস্থিত।",
+		player_not_found = "সার্ভার আইডি দিয়ে প্লেয়ার খুঁজে পাওয়া যায় নি। `${serverId}`।",
 		something_went_wrong = "কিছু একটা ভুল হয়েছে। আবার চেষ্টা করুন।",
 		yes = "হ্যাঁ",
 		no = "না"
@@ -25,49 +25,49 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 	-- animations/*
 	emotes = {
-		get_in_trunk = "ট্রাঙ্কে ঢুকতে ~INPUT_ENTER~ চাপুন।",
-		put_boombox_in_trunk = "ট্রাঙ্কে বুমবক্স নিতে ~INPUT_ENTER~ চাপুন।",
-		put_player_in_trunk = "ট্রাঙ্কে খেলোয়াড় নিতে ~INPUT_ENTER~ চাপুন।",
+		get_in_trunk = "ট্রাঙ্কে প্রবেশ করতে ~INPUT_ENTER~ চাপুন।",
+		put_boombox_in_trunk = "ট্রাঙ্কে বুমবক্স রাখতে ~INPUT_ENTER~ চাপুন।",
+		put_player_in_trunk = "ট্রাঙ্কে প্লেয়ার রাখতে ~INPUT_ENTER~ চাপুন।",
 		put_player_in_seat = "[${VehicleEnterKey}] সিটে বসাতে",
-		trunk_interaction_display = "[${VehicleEnterKey}] বাইরে পড়ুন [${InteractionKey}] ট্রাঙ্ক খোলুন / বন্ধ করুন",
-		trunk_open_close_display = "[${InteractionKey}] ট্রাঙ্ক খোলুন / বন্ধ করুন",
+		trunk_interaction_display = "[${VehicleEnterKey}] বাইরে আরোহণ [${InteractionKey}] ট্রাঙ্ক খুলুন / বন্ধ করুন",
+		trunk_open_close_display = "[${InteractionKey}] ট্রাঙ্ক খুলুন / বন্ধ করুন",
 		boombox_already_in_trunk = "ট্রাঙ্কে ইতিমধ্যে একটি বুমবক্স রয়েছে।",
-		the_trunk_is_occupied = "ট্রাঙ্ক অধিকৃত আছে।",
-		unable_to_toggle_carry = "ক্রমবর্ধমানে ক্যারি আঁশটি বাদ দেওয়া হয়েছে।",
-		carry_disabled_animal = "প্রাণী পেড় ক্যারি করতে পারেন না।",
+		the_trunk_is_occupied = "ট্রাঙ্ক ইতিমধ্যে দখলকৃত রয়েছেে।",
+		unable_to_toggle_carry = "বহন করার আগে একটু অপেক্ষা করুন।",
+		carry_disabled_animal = "প্রাণী NPC বহন করা যাবে না।",
 
 		cancel_piggyback = "পিগিব্যাক বাতিল করতে ~INPUT_FRONTEND_RRIGHT~ চাপুন।",
 		piggyback_hop_on = "[${InteractionKey}] হপ অন",
-		stop_piggyback = "পিগিব্যাকিং থেকে বাদ দেওয়ার জন্য ~INPUT_VEH_HEADLIGHT~ চাপুন।",
+		stop_piggyback = "পিগিব্যাক বন্ধ করার জন্য ~INPUT_VEH_HEADLIGHT~ চাপুন।",
 
-		lockpicking_cuffs = "লকপিকিং হ্যান্ডকাফস",
-		lockpick_cuffs_too_fast = "আপনি অত্যন্ত দ্রুত চলে গেলেন।",
-		success_lockpick_cuffs = "হ্যান্ডকাফস সফলভাবে লকপিক করা হয়েছে।",
-		failed_lockpick_cuffs = "হ্যান্ডকাফস লকপিক করতে ব্যর্থ হয়েছে।",
+		lockpicking_cuffs = "হাতকড়া লকপিকিং করা হচ্ছে",
+		lockpick_cuffs_too_fast = "আপনি অত্যন্ত দ্রুত সরে গেলেন।",
+		success_lockpick_cuffs = "হাতকড়া সফলভাবে লকপিক করা হয়েছে।",
+		failed_lockpick_cuffs = "হাতকড়া লকপিক করতে ব্যর্থ হয়েছে।",
 		lockpick_lost = "আপনি আপনার লকপিক হারিয়ে ফেলেছেন।",
 
-		not_cuffed = "আপনি হ্যান্ডকাফস করা হয় নি।",
-		unable_to_lockpick = "আপনি হ্যান্ডকাফস লকপিক করতে অক্ষম।",
+		not_cuffed = "আপনি হাতকড়া পরানো নয়।",
+		unable_to_lockpick = "আপনি হাতকড়া লকপিক করতে অক্ষম।",
 
-		lockpick_cuffs_logs_title = "লকপিক হ্যান্ডকাফস",
-		lockpick_cuffs_logs_details = "${consoleName} একটি `${itemName}` ব্যবহার করে তাদের হ্যান্ডকাফস সফলভাবে লকপিক করেছেন।",
+		lockpick_cuffs_logs_title = "হাতকড়া লকপিকিং করা হচ্ছে",
+		lockpick_cuffs_logs_details = "${consoleName} একটি `${itemName}` ব্যবহার করে তাদের হাতকড়া সফলভাবে লকপিক করেছেন।",
 
-		you_are_not_being_carried = "আপনি বর্তমানে বহিত হয়নি।",
-		successfully_uncarried = "সাফল্যের সাথে বহন থেমে দেওয়া হয়েছে।",
+		you_are_not_being_carried = "আপনি বর্তমানে বহনকৃত নন।",
+		successfully_uncarried = "সাফল্যের সাথে বহন বন্ধ করা হয়েছে।",
 		failed_uncarried = "বহন স্থগিত করতে ব্যর্থ হয়েছে।",
-		uncarry_missing_permissions = "অপ্রয়োজনীয় অনুমতিহীন বহন স্থগিত করার চেষ্টা করা হয়েছে।",
+		uncarry_missing_permissions = "প্রয়োজনীয় অনুমতি ছাড়া বহন স্থগিত করার চেষ্টা করা হয়েছে।",
 
 		uncarry_logs_title = "বহন স্থগিত করুন",
-		uncarry_logs_details = "${consoleName} ${targetName} কে বহন থেমে দিয়েছেন।",
+		uncarry_logs_details = "${consoleName} ${targetName} কে বহন করা থেমে দিয়েছেন।",
 
-		failed_carry_npc = "NPC বহন করতে ব্যর্থ হয়েছে।",
-		carry_npc_something_wrong = "পেড় বহন করার চেষ্টা করার সময় কিছু সমস্যা হয়েছে।",
+		failed_carry_npc = "NPC কে বহন করতে ব্যর্থ হয়েছে।",
+		carry_npc_something_wrong = "NPC বহন করার সময় কিছু সমস্যা হয়েছে।",
 
-		e_to_struggle = "সংঘর্ষের জন্য E চাপুন",
-		cant_struggle_dead = "মৃত্যুবরণে আপনি সংঘর্ষ করতে পারবেন না।",
-		struggle_to_quick = "আপনি সংঘর্ষে নেমে পরিশ্রমী অনুভব করছেন, একটু অপেক্ষা করুন এবং পরে আবার চেষ্টা করুন।",
-		struggle_logs_title = "সংঘর্ষের ফলে মুক্তি পেলেন",
-		struggle_logs_details = "${consoleName} একজন ${targetName} এর থেকে মুক্তি পেলে সংঘর্ষ করেছেন।"
+		e_to_struggle = "বহনকৃত অবস্থা হতে বেরিয়ে আসার জন্য E চাপুন",
+		cant_struggle_dead = "আহত অবস্থায় আপনি বহনকৃত অবস্থা হতে বেরিয়ে আসতে পারবেন না।",
+		struggle_to_quick = "আপনি বহনকৃত অবস্থা থেকে বেরিয়ে আসার চেষ্টা করার পরে ক্লান্ত বোধ করছেন, একটু অপেক্ষা করুন এবং আবার চেষ্টা করুন।",
+		struggle_logs_title = "বহনকৃত অবস্থা থেকে মুক্তি পেলেন",
+		struggle_logs_details = "${consoleName}, ${targetName} এর বহনকৃত অবস্থা থেকে মুক্তি লাভ করেছেন।"
 	},
 
 	-- base/*
