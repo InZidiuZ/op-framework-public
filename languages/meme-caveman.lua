@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["meme-caveman"] = {
 	-- configuration settings for language
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		watching_feature = "Watching",
 		fortnite_feature = "Fortnite",
 		reflection_feature = "Reflection of Damage",
+		stable_cam_feature = "Stable Cam",
 
 		you_are_not_in_a_vehicle = "You not ride go go.",
 		repaired_vehicle = "Vehicle good now.",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		unable_to_enter_vehicle_while_dead = "You no can enter vehicle while dead.",
 		the_closest_vehicle_had_no_free_seats = "Vehicle closest have no space for more people.",
 		there_are_no_nearby_vehicles = "No vehicles nearby.",
+		vehicle_not_found_network = "Ugh! Cannot find vehicle with network id.",
 		entered_vehicle = "Try enter nearby ${vehicleName}.",
 
 		set_vehicle_modifications_logs_title = "Change Vehicle",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		enter_vehicle_command = "unga enter vehicle",
 		enter_vehicle_command_help = "Me force player to enter vehicle closest to me (me exit vehicle if already in one).",
+		enter_vehicle_command_parameter_network_id = "network id",
+		enter_vehicle_command_parameter_network_id_help = "Me want go in vehicle. Put network id of vehicle here. (optional)",
 		enter_vehicle_command_substitutes = "unga ev",
 
 		set_modification_command = "unga set modification",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		detection_area_remove_command_parameter_area_id = "ug-ug id of detection area",
 		detection_area_remove_command_parameter_area_id_help = "Ugg ID of the detection area you want to remove.",
 		detection_area_remove_command_substitutes = "area_remove",
+
+		screen_text_debug_command = "screen_text_debug",
+		screen_text_debug_command_help = "Debug the screen-text exclusion rectangles.",
+		screen_text_debug_command_substitutes = "screen_text",
 
 		-- base/commands
 		help_command = "ugh",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		cache_assets_command_parameter_slow_download = "ug-ug download",
 		cache_assets_command_parameter_slow_download_help = "Want cache assets ug-ug? Take long long time, but less chance of boom-boom.",
 		cache_assets_command_substitutes = "ug-ug_cache, rock_cache, big_cache",
+
+		-- game/camera
+		stable_cam_command = "stable_cam",
+		stable_cam_command_help = "Push button, make screen no move. (Toggle stable cam).",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "grunt-grunt_start",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		fake_id_command_parameter_female_help = "Ug-ug, set to true if you want female citizen card instead of male.",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/fire_swap",
+		flag_swap_command_help = "Toggle whole tribe 'fire swap' event.",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
 		create_forcefield_command_help = "Ug-ug, creates forcefield at current place.",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		no_copyright_command_help = "Me not want bad juju with copyright stuff. This command make all sounds safe.",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "paint",
+		picture_command_help = "Make picture with custom mammoth picture URL.",
+		picture_command_parameter_url = "mammoth_url",
+		picture_command_parameter_url_help = "Custom mammoth picture's URL.",
+		picture_command_parameter_description = "description",
+		picture_command_parameter_description_help = "Picture description for tribe.",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "Know how fast server run with this command. Get TPS.",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		uptime_command = "ugh-time",
 		uptime_command_help = "Me check how long server been roar.",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "auto_run",
+		auto_run_command_help = "Set keybind for effortless running.",
+		auto_run_command_parameter_control_id = "control id",
+		auto_run_command_parameter_control_id_help = "Ugga ugga control ID for auto-run.",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "walk_forwards",
+		walk_forwards_command_help = "Make cavebro or other caveperson walk forwards without thinking (try to dodge obstacles too).",
+		walk_forwards_command_parameter_server_id = "server id",
+		walk_forwards_command_parameter_server_id_help = "Server ID of caveperson you want to make walk forwards.",
+		walk_forwards_command_parameter_sprint = "sprint",
+		walk_forwards_command_parameter_sprint_help = "Ugg player run fast or no? (Default: Ugg)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "grunt-grunt",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		create_shockwave_command_parameter_radius_help = "The big width of shockwave (1 - 100).",
 		create_shockwave_command_substitutes = "shockwave",
 
+		push_player_command = "push_player",
+		push_player_command_help = "Evict player or car from cave.",
+		push_player_command_parameter_server_id = "server id",
+		push_player_command_parameter_server_id_help = "Player server id. (pls no mammoth)",
+		push_player_command_substitutes = "push",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "draw_shroom_areas",
 		draw_shroom_areas_command_help = "Draw all shroom areas and add more.",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		local_entities_debug_command_help = "Ug toggle debug for stuff nearby.",
 		local_entities_debug_command_substitutes = "lentities",
 
-		no_ped_population_areas_debug_command = "debug_no_ug_people_zone",
+		no_ped_population_areas_debug_command = "no_ped_population_areas_debug",
 		no_ped_population_areas_debug_command_help = "Ug toggle the debugger for no-ug-people areas.",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		hotwire_vehicle_command = "hotwire_vehicle",
 		hotwire_vehicle_command_help = "Instantly hotwire vehicle, UghUgh.",
+		hotwire_vehicle_command_parameter_server_id = "server id",
+		hotwire_vehicle_command_parameter_server_id_help = "Ugga ugga! Make another player instantly hotwire the vehicle they are in.",
 		hotwire_vehicle_command_substitutes = "ug-goog",
 
 		pickup_keys_command = "ug-pickup-kizzles",
@@ -4245,7 +4293,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		material_vendor = "Stuff Trader",
 		pdm = "Fancy Car Trader",
 		ls_customs = "Car Changing Cave",
-		jewelry_store = "Sparkly Stone Trader",
+		jewelry_store = "Vangelico Jewelry",
 		pd_air_hq = "Flying Cave of Law",
 		pd_sea_hq = "Unga Bunga Law Cave",
 		ems_air_hq = "Ooga Booga Med Cave",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		crafted_gas_grenade = "Me make stinky gas bomb!",
 		failed_craft_gas_grenade = "Ugh! Could not make gas bomb.",
 
+		break_apart_ring = "Break Apart Ring",
+		press_break_apart_ring = "[${SeatEjectKey}] Break Apart Ring",
+		breaking_ring = "Me break apart ring.",
+		broke_ring = "Me broke apart ring.",
+		failed_break_ring = "Me fail to break apart ring.",
+
 		no_required_items = "You no have all the things needed.",
 
 		debug_multi = "Uh-oh. Many things happening.",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] Fire big boom in sky"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "Me no have permission to swap flags.",
+
+		toggled_flag_swap_on = "Me toggled flag swap on.",
+		toggled_flag_swap_off = "Flag swap turned off. Ugg ugg."
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ to spin Lucky Wheel. It cost $${cost}. Me hope you win!",
-		spin_lucky_wheel_for_free = "Hold ~INPUT_CONTEXT~ to spin Lucky Wheel. You get one free spin today. Woohoo!",
-		unable_to_spin_lucky_wheel = "Ugh! You already spin wheel today. Try again tomorrow!",
-		unable_to_spin_lucky_wheel_time = "Ugh! You already spin wheel today. Come back in ${displayTime}.",
-		lucky_wheel_is_occupied = "Grr! Wheel occupied. Wait your turn.",
+		hold_to_spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel, but it costs $${cost}. Ugg ugga ug.",
+		hold_to_spin_lucky_wheel_free_one_left = "If you hold ~INPUT_CONTEXT~, you can spin the Lucky Wheel for free one last time today. Ugg ugg.",
+		hold_to_spin_lucky_wheel_free_multiple_left = "You still have ${spins} free spins left today. Hold ~INPUT_CONTEXT~ to use them and spin the Lucky Wheel. Ugg ugga ug.",
+		continue_holding_to_spin_lucky_wheel = "Keep holding ~INPUT_CONTEXT~ to spin the Lucky Wheel. Ugg ugg.",
+		unable_to_spin_lucky_wheel = "Ugh, spinny wheel no go. You already spinny spinny all you can today. Wait ${time} before try again.",
 		not_enough_balance_to_spin = "Me hear you, no have enough shiny rocks to spin wheel. You need $${cost}.",
+		lucky_wheel_is_occupied = "Grr! Wheel occupied. Wait your turn.",
+
 		logs_lucky_wheel_reward_title = "Lucky Wheel Reward",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} spin wheel and get car.",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} get car `${modelName}`.",
 		logs_lucky_wheel_reward_money_details = "${consoleName} spin wheel and get ${amount} cash.",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} spinny spinny wheel and get ${amount} chips! Ooga booga!",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} spin wheel and get shiny `${itemName}` jewelry.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} spin wheel and get `${itemName}` item.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} spin wheel and win one week of queue priority. Ugg ugg happy for ${consoleName}!"
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		server_tps = "Server TPS",
 		server_tps_response = "Ugg! TPS is at ${tps}.",
 		license_copied = "Grunts! Me copied license!",
-		uptime = "Uptime: ${uptime}."
+		uptime = "Uptime: ${uptime}.",
+
+		picture_no_url = "Grrr, missing link!",
+		picture_invalid_url = "Bad link. Link must start with https://. Grug no understand otherwise.",
+		picture_no_description = "Ugh, no description given.",
+		picture_failed = "Grug sorry, failed to make picture.",
+
+		auto_run_already_set_to = "Me fix problem now. You already set auto-run for ${controlId}. Ooga!",
+		auto_run_already_unset = "Me no need run no more.",
+		auto_run_set_to = "Me now use ${controlId} to run like mammoth.",
+		auto_run_unset = "Me no use auto-run no more.",
+
+		invalid_server_id = "Server ID no good.",
+		walk_forwards_success = "Me now walk forwards for ${displayName}.",
+		walk_forwards_failed = "Me no could start walking forwards for ${displayName}."
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "Player try make shockwave but no grunt authority. No can do.",
+		push_player_missing_permissions = "You no have permission to push player.",
 		shockwave_success = "Ugh Ugh, Shockwave created.",
-		shockwave_failed = "Ugh. Shockwave creation failed."
+		shockwave_failed = "Ugh. Shockwave creation failed.",
+
+		invalid_server_id = "Server ID no good.",
+		push_player_success = "Me push player. Successful.",
+		push_player_failed = "Me push player. Fail."
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		you_are_in_a_vehicle = "You sit in a vehicle now.",
 		hotwired_vehicle_with_plate_number = "Me hotwired vehicle with plate number '${plateNumber}'.",
 		unable_to_hotwire_vehicle = "Me no able to hotwire vehicle!",
-		picked_up_keys = "Me picked up keys for '${plate}'."
+		picked_up_keys = "Me picked up keys for '${plate}'.",
+		invalid_server_id = "Server ID not good.",
+		hotwired_vehicle_for_player = "Me made ${displayName} hotwire the big thing they sit on."
 	},
 
 	modifications = {

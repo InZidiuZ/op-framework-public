@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["es-MX"] = {
 	-- configuration settings for language
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		watching_feature = "Observando",
 		fortnite_feature = "Fortnite",
 		reflection_feature = "Reflejo de daño",
+		stable_cam_feature = "Cámara estable",
 
 		you_are_not_in_a_vehicle = "No estás en un vehículo.",
 		repaired_vehicle = "Reparaste el vehículo.",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		unable_to_enter_vehicle_while_dead = "No puedes entrar en un vehículo mientras estás muerto.",
 		the_closest_vehicle_had_no_free_seats = "El vehículo más cercano no tenía asientos libres.",
 		there_are_no_nearby_vehicles = "No hay vehículos cerca.",
+		vehicle_not_found_network = "No se encontró un vehículo con el ID de red especificado.",
 		entered_vehicle = "Intentó entrar en ${vehicleName} cercano.",
 
 		set_vehicle_modifications_logs_title = "Establecer modificaciones de vehículo",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["es-MX"] = {
 
 		enter_vehicle_command = "entrar_vehiculo",
 		enter_vehicle_command_help = "Forzar a tu personaje a entrar al vehículo más cercano (te hace salir del vehículo en el que estás).",
+		enter_vehicle_command_parameter_network_id = "ID de red",
+		enter_vehicle_command_parameter_network_id_help = "ID de red del vehículo que quieres entrar. (opcional)",
 		enter_vehicle_command_substitutes = "ev",
 
 		set_modification_command = "establecer_modificacion",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["es-MX"] = {
 		detection_area_remove_command_parameter_area_id = "ID de la zona de detección",
 		detection_area_remove_command_parameter_area_id_help = "El ID del área de detección que deseas remover.",
 		detection_area_remove_command_substitutes = "area_eliminar",
+
+		screen_text_debug_command = "depurar_texto_pantalla",
+		screen_text_debug_command_help = "Depura los rectángulos de exclusión de texto en pantalla.",
+		screen_text_debug_command_substitutes = "texto_pantalla",
 
 		-- base/commands
 		help_command = "ayuda",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["es-MX"] = {
 		cache_assets_command_parameter_slow_download = "descarga lenta",
 		cache_assets_command_parameter_slow_download_help = "¿Quieres descargar en caché los activos lentamente? Esto hará que tarde mucho más, pero también reducirá la posibilidad de fallos.",
 		cache_assets_command_substitutes = "descarga_caché, precarga_caché, carga_caché",
+
+		-- game/camera
+		stable_cam_command = "cam_estable",
+		stable_cam_command_help = "Activa o desactiva la cámara estable.",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "inicio_carga",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["es-MX"] = {
 		fake_id_command_parameter_female_help = "Establece como verdadero si deseas una tarjeta de ciudadana femenina en lugar de masculina.",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/intercambiar_bandera",
+		flag_swap_command_help = "Activa o desactiva el evento de 'intercambio de banderas' para todo el servidor.",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "crear_forcefield",
 		create_forcefield_command_help = "Crea un campo de fuerza en tu posición actual.",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["es-MX"] = {
 		no_copyright_command_help = "Este comando deshabilitará todos los sonidos con derechos de autor potencialmente provenientes del framework cuando esté habilitado.",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "foto",
+		picture_command_help = "Genera un objeto de foto con una URL de imagen personalizada.",
+		picture_command_parameter_url = "url",
+		picture_command_parameter_url_help = "La URL de la imagen.",
+		picture_command_parameter_description = "descripción",
+		picture_command_parameter_description_help = "La descripción de la foto.",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "Obtén el TPS actual del servidor.",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["es-MX"] = {
 		uptime_command = "tiempo_online",
 		uptime_command_help = "Revisa el tiempo que el servidor ha estado en línea.",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "auto_correr",
+		auto_run_command_help = "Configura una tecla para la función de auto-corrido.",
+		auto_run_command_parameter_control_id = "id de control",
+		auto_run_command_parameter_control_id_help = "El ID de control al que deseas asignar el auto-run.",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "caminar_hacia_adelante",
+		walk_forwards_command_help = "Hace que tú o otro jugador camine hacia adelante automáticamente (intentando evitar obstáculos).",
+		walk_forwards_command_parameter_server_id = "ID de servidor",
+		walk_forwards_command_parameter_server_id_help = "El ID de servidor del jugador que deseas hacer caminar hacia adelante.",
+		walk_forwards_command_parameter_sprint = "correr",
+		walk_forwards_command_parameter_sprint_help = "Indica si el jugador debe correr al caminar hacia adelante. (Valor predeterminado: falso)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "efectivo",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["es-MX"] = {
 		create_shockwave_command_parameter_radius_help = "El radio de la onda de choque (1 - 100).",
 		create_shockwave_command_substitutes = "onda_de_choque",
 
+		push_player_command = "empujar_jugador",
+		push_player_command_help = "Empuja un jugador o el vehículo en el que se encuentra lejos de ti.",
+		push_player_command_parameter_server_id = "id del servidor",
+		push_player_command_parameter_server_id_help = "La ID del servidor del jugador.",
+		push_player_command_substitutes = "empujar",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "dibujar_areas_de_setas",
 		draw_shroom_areas_command_help = "Dibuja todas las áreas de setas y añade más.",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		local_entities_debug_command_help = "Activa o desactiva la depuración de entidades locales.",
 		local_entities_debug_command_substitutes = "lentidades",
 
-		no_ped_population_areas_debug_command = "depurar_areas_sin_población",
+		no_ped_population_areas_debug_command = "no_mostrar_areas_de_población_de_peatones_depuración",
 		no_ped_population_areas_debug_command_help = "Activa o desactiva la depuración de 'áreas sin población de peatones'.",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["es-MX"] = {
 
 		hotwire_vehicle_command = "puentear_vehículo",
 		hotwire_vehicle_command_help = "Puentear instantáneamente el vehículo en el que te encuentras.",
+		hotwire_vehicle_command_parameter_server_id = "id del servidor",
+		hotwire_vehicle_command_parameter_server_id_help = "Hace que otro jugador caliente inmediatamente el cableado del vehículo en el que se encuentran.",
 		hotwire_vehicle_command_substitutes = "hotwire", -- cambiar comando de "robo de vehículo",
 
 		pickup_keys_command = "pickup_keys", -- comando para "recoger llaves",
@@ -4245,7 +4293,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		material_vendor = "Proveedor de Materiales",
 		pdm = "Premium Deluxe Motorsport",
 		ls_customs = "Los Santos Customs",
-		jewelry_store = "Joyas Vangelico",
+		jewelry_store = "Vangelico Joyeros",
 		pd_air_hq = "Sede Aérea de la Policía",
 		pd_sea_hq = "Sede Marino de la Policía",
 		ems_air_hq = "Sede Aérea de EMS",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["es-MX"] = {
 		crafted_gas_grenade = "Granada de gas fabricada.",
 		failed_craft_gas_grenade = "No se pudo fabricar granada de gas.",
 
+		break_apart_ring = "Separar el anillo",
+		press_break_apart_ring = "[${SeatEjectKey}] Separar el anillo",
+		breaking_ring = "Separando el anillo",
+		broke_ring = "Anillo separado.",
+		failed_break_ring = "No se pudo separar el anillo.",
+
 		no_required_items = "No tienes todos los objetos necesarios.",
 
 		debug_multi = "-Múltiples producciones-",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["es-MX"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] Lanza Fuegos Artificiales"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "Intentando alternar el cambio de bandera sin los permisos adecuados.",
+
+		toggled_flag_swap_on = "Alternó el cambio de bandera.",
+		toggled_flag_swap_off = "Interruptor de cambio de bandera desactivado."
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["es-MX"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Mantén presionado ~INPUT_CONTEXT~ para girar la Ruleta de la Suerte. El costo es de $${cost}.",
-		spin_lucky_wheel_for_free = "Mantén presionado ~INPUT_CONTEXT~ para girar la Ruleta de la Suerte. Te queda un giro gratis hoy.",
-		unable_to_spin_lucky_wheel = "Ya has girado la Rueda de la Fortuna el número máximo de veces permitido para hoy. ¡Vuelve más tarde para otro intento!",
-		unable_to_spin_lucky_wheel_time = "Ya has girado la Rueda de la Fortuna el número máximo de veces permitido para hoy. El siguiente intento estará disponible en ${displayTime}.",
-		lucky_wheel_is_occupied = "La Rueda de la Fortuna está ocupada. Por favor espera.",
+		hold_to_spin_lucky_wheel = "Mantén ~INPUT_CONTEXT~ para girar la Rueda de la Fortuna. El costo es de $${costo}.",
+		hold_to_spin_lucky_wheel_free_one_left = "Mantén ~INPUT_CONTEXT~ para girar la Rueda de la Fortuna. Hoy tienes 1 giro gratuito restante.",
+		hold_to_spin_lucky_wheel_free_multiple_left = "Mantén ~INPUT_CONTEXT~ para girar la Rueda de la Fortuna. Hoy tienes ${giros} giros gratuitos restantes.",
+		continue_holding_to_spin_lucky_wheel = "Sigue manteniendo ~INPUT_CONTEXT~ para girar la Rueda de la Fortuna.",
+		unable_to_spin_lucky_wheel = "Ya has girado la Ruleta de la Fortuna el número máximo de veces permitido hoy. Próximo giro disponible en ${time}.",
 		not_enough_balance_to_spin = "No tienes suficiente dinero para girar la rueda. El costo es $${cost}.",
+		lucky_wheel_is_occupied = "La Rueda de la Fortuna está ocupada. Por favor espera.",
+
 		logs_lucky_wheel_reward_title = "Recompensa de la Rueda de la Fortuna",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} ha girado la ruleta y ha ganado un vehículo.",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} ha recibido correctamente un vehículo con nombre de modelo `${modelName}`.",
 		logs_lucky_wheel_reward_money_details = "${consoleName} ha girado la ruleta y ha ganado $${amount}.",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} ha girado la ruleta y ganado ${amount} en fichas.",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} ha girado la ruleta y ha ganado joyas con el nombre de `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} ha girado la ruleta y ha ganado un objeto con el nombre de `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} ha girado la ruleta y ha ganado una semana de prioridad en la cola."
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["es-MX"] = {
 		server_tps = "TPS del servidor",
 		server_tps_response = "${tps}",
 		license_copied = "Licencia copiada exitosamente al portapapeles.",
-		uptime = "Tiempo activo: ${uptime}"
+		uptime = "Tiempo activo: ${uptime}",
+
+		picture_no_url = "URL faltante.",
+		picture_invalid_url = "URL inválida, debe comenzar con https://.",
+		picture_no_description = "Descripción faltante.",
+		picture_failed = "No se ha podido crear la imagen.",
+
+		auto_run_already_set_to = "El auto-run ya está configurado para controlar ${controlId}.",
+		auto_run_already_unset = "El auto-corrido ya está desactivado.",
+		auto_run_set_to = "El auto-corrido ha sido activado para control ${controlId}.",
+		auto_run_unset = "El auto-corrido ha sido desactivado.",
+
+		invalid_server_id = "ID de servidor no válido.",
+		walk_forwards_success = "Cambió con éxito el paseo hacia adelante para ${displayName}.",
+		walk_forwards_failed = "No se pudo cambiar el paseo hacia adelante para ${displayName}."
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["es-MX"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "El jugador intentó crear una onda de choque pero no tenía los permisos necesarios.",
+		push_player_missing_permissions = "El jugador intentó empujar a otro jugador pero no tenía los permisos necesarios.",
 		shockwave_success = "Onda de choque creada con éxito.",
-		shockwave_failed = "No se pudo crear la onda de choque."
+		shockwave_failed = "No se pudo crear la onda de choque.",
+
+		invalid_server_id = "ID de servidor no válido.",
+		push_player_success = "Jugador empujado exitosamente.",
+		push_player_failed = "Error al empujar al jugador."
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["es-MX"] = {
 		you_are_in_a_vehicle = "Actualmente estás en un vehículo.",
 		hotwired_vehicle_with_plate_number = "Arrancaste el vehículo con la placa '${plateNumber}'.",
 		unable_to_hotwire_vehicle = "No se pudo arrancar el vehículo.",
-		picked_up_keys = "Recogiste las llaves del vehículo `${plate}`."
+		picked_up_keys = "Recogiste las llaves del vehículo `${plate}`.",
+		invalid_server_id = "ID de servidor inválido.",
+		hotwired_vehicle_for_player = "${displayName} ha cerrado el carro en el que está."
 	},
 
 	modifications = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["tr-TR"] = {
 	-- configuration settings for language
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		watching_feature = "İzleme",
 		fortnite_feature = "Fortnite",
 		reflection_feature = "Hasar Yansıtma",
+		stable_cam_feature = "Stabil Kamera",
 
 		you_are_not_in_a_vehicle = "Araçta değilsiniz.",
 		repaired_vehicle = "Araç tamir edildi.",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		unable_to_enter_vehicle_while_dead = "Ölüyken araca binemezsiniz.",
 		the_closest_vehicle_had_no_free_seats = "En yakın araçta boş koltuk yoktu.",
 		there_are_no_nearby_vehicles = "Yakında hiçbir araç yok.",
+		vehicle_not_found_network = "Ağ kimliği ile eşleşen araç bulunamadı.",
 		entered_vehicle = "Yakındaki ${vehicleName} aracına girmeye çalışıldı.",
 
 		set_vehicle_modifications_logs_title = "Araç Modifikasyonları Ayarla",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		enter_vehicle_command = "araca_gir",
 		enter_vehicle_command_help = "Oyuncunuzu araçtan indirip, en yakındaki araca zorla bindirin (eğer araçta iseniz önce inersiniz).",
+		enter_vehicle_command_parameter_network_id = "ağ kimliği",
+		enter_vehicle_command_parameter_network_id_help = "Girmek istediğiniz aracın aş kimliği. (isteğe bağlı)",
 		enter_vehicle_command_substitutes = "ag",
 
 		set_modification_command = "modifikasyon_ayarla",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		detection_area_remove_command_parameter_area_id = "taranan alan kimliği",
 		detection_area_remove_command_parameter_area_id_help = "Kaldırmak istediğiniz algılama alanının kimliği.",
 		detection_area_remove_command_substitutes = "bolge_kaldir",
+
+		screen_text_debug_command = "screen_text_debug",
+		screen_text_debug_command_help = "Ekran metni dışlama dikdörtgenlerini hata ayıklar.",
+		screen_text_debug_command_substitutes = "screen_text",
 
 		-- base/commands
 		help_command = "yardım",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		cache_assets_command_parameter_slow_download = "yavaş indirme",
 		cache_assets_command_parameter_slow_download_help = "Varlıkları yavaş bir şekilde önbelleğe almak istiyor musunuz? Bu işlem daha uzun sürer ama çökme olasılığını azaltır.",
 		cache_assets_command_substitutes = "indirme_cache, önbelleğe_ön_yükleme, yükleme_cache",
+
+		-- game/camera
+		stable_cam_command = "stabil_kam",
+		stable_cam_command_help = "Stabil kamerasını açıp kapatır.",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "kargo_başlat",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		fake_id_command_parameter_female_help = "Eğer erkek yerine bir kadın vatandaş kartı istiyorsanız, bu özelliği true olarak ayarlayın.",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/bayrak_degistir",
+		flag_swap_command_help = "Sunucu genelinde 'bayrak değiştirme' etkinliğini açar/kapatır.",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "forcefield_yarat",
 		create_forcefield_command_help = "Mevcut konumunuzda bir güç alanı oluşturur.",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		no_copyright_command_help = "Bu komut etkinleştirildiğinde, çerçeveden gelen tüm potansiyel telif hakkı olan seslerin kullanımını devre dışı bırakır.",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "resim",
+		picture_command_help = "Özel bir resim URL'si ile resim öğesi yapar.",
+		picture_command_parameter_url = "url",
+		picture_command_parameter_url_help = "Resim URL'si.",
+		picture_command_parameter_description = "açıklama",
+		picture_command_parameter_description_help = "Resim açıklaması.",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "Sunucunun mevcut TPS'sini alın.",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		uptime_command = "uptime",
 		uptime_command_help = "Sunucunun çalışma süresini kontrol eder.",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "otomatik_koş",
+		auto_run_command_help = "Otomatik koşmak için bir tuş bağlama ayarlar.",
+		auto_run_command_parameter_control_id = "kontrol kimliği",
+		auto_run_command_parameter_control_id_help = "Otomatik koşu işlevine bağlamak istediğiniz kontrol kimliği.",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "ileri_yürü",
+		walk_forwards_command_help = "Sizi veya başka bir oyuncuyu otomatik olarak ileri yürütürken (engellerden kaçınmaya çalışarak).",
+		walk_forwards_command_parameter_server_id = "sunucu kimliği",
+		walk_forwards_command_parameter_server_id_help = "İleri yürütülecek oyuncunun sunucu kimliği.",
+		walk_forwards_command_parameter_sprint = "koşmak",
+		walk_forwards_command_parameter_sprint_help = "Oyuncunun ileri yürürken koşup koşmayacağı. (Varsayılan: false)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "nakit",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		create_shockwave_command_parameter_radius_help = "Şok dalgasının yarıçapı (1 - 100).",
 		create_shockwave_command_substitutes = "sok dalga",
 
+		push_player_command = "push_player",
+		push_player_command_help = "Bir oyuncuyu veya araçlarını sizden uzak itin.",
+		push_player_command_parameter_server_id = "sunucu kimliği",
+		push_player_command_parameter_server_id_help = "Oyuncunun sunucu kimliği",
+		push_player_command_substitutes = "it",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "mantar_alanlarını_çiz",
 		draw_shroom_areas_command_help = "Tüm mantar alanlarını çiz ve daha fazlasını ekleyin.",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		local_entities_debug_command_help = "Yerel nesnelerin hata ayıklamasını açıp kapatır.",
 		local_entities_debug_command_substitutes = "lnesneler",
 
-		no_ped_population_areas_debug_command = "npc_nufus_alanlari_hata_ayıklama",
+		no_ped_population_areas_debug_command = "no_ped_population_areas_debug",
 		no_ped_population_areas_debug_command_help = "'NPC nufus alanlari' hata ayıklamasını açıp kapatır.",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		hotwire_vehicle_command = "aracı_direkt_çalıştır",
 		hotwire_vehicle_command_help = "Bulunduğunuz aracı anında çalıştırın.",
+		hotwire_vehicle_command_parameter_server_id = "sunucu kimliği",
+		hotwire_vehicle_command_parameter_server_id_help = "Başka bir oyuncunun içinde bulunduğu aracı anında çalıştırın.",
 		hotwire_vehicle_command_substitutes = "kablolu",
 
 		pickup_keys_command = "anahtarlari_al",
@@ -4245,7 +4293,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		material_vendor = "Malzeme Satıcısı",
 		pdm = "Premium Deluxe Motorsport",
 		ls_customs = "Los Santos Customs",
-		jewelry_store = "Vangelico Mücevherat",
+		jewelry_store = "Vangelico Mücevher",
 		pd_air_hq = "Polis Hava Merkezi",
 		pd_sea_hq = "Polis Deniz Karakolu",
 		ems_air_hq = "Acil Sağlık Hava Karakolu",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		crafted_gas_grenade = "Gaz dolu el bombası üretildi.",
 		failed_craft_gas_grenade = "Gaz bombası üretme işlemi başarısız oldu.",
 
+		break_apart_ring = "Yuzuk Parcalama",
+		press_break_apart_ring = "[${SeatEjectKey}] Yüzük parçalama",
+		breaking_ring = "Yüzük parçalama işlemi",
+		broke_ring = "Yüzük parçalandı.",
+		failed_break_ring = "Yüzük parçalama işlemi başarısız oldu.",
+
 		no_required_items = "Tüm gerekli öğeleriniz yok.",
 
 		debug_multi = "-Birden Fazla Çıkış-",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] Havai Fişek At"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "Bayrak değişimlerini uygun izinler olmadan etkisizleştirmeye çalışıldı.",
+
+		toggled_flag_swap_on = "Bayrak değişimi açıldı.",
+		toggled_flag_swap_off = "Bayrak takası kapalı."
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["tr-TR"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Şanslı Çark'ı çevirmek için ~INPUT_CONTEXT~ basılı tutun. Bedeli $${cost}.",
-		spin_lucky_wheel_for_free = "Şanslı Çark'ı çevirmek için ~INPUT_CONTEXT~ basılı tutun. Bugün ücretsiz bir çevrim hakkınız var.",
-		unable_to_spin_lucky_wheel = "Bugün izin verilen miktarda Lucky Wheel çevirdiniz. Bir sonraki çevrim için daha sonra tekrar gelin!",
-		unable_to_spin_lucky_wheel_time = "Bugün izin verilen miktarda Lucky Wheel çevirdiniz. Bir sonraki çevrim ${displayTime} sonra mümkün olacak.",
-		lucky_wheel_is_occupied = "Lucky Wheel şu anda meşgul. Lütfen bekleyin.",
+		hold_to_spin_lucky_wheel = "Şanslı Çarkı çevirmek için basılı tutun: ~INPUT_CONTEXT~. Ücreti $${cost} dir.",
+		hold_to_spin_lucky_wheel_free_one_left = "Şanslı Çarkı çevirmek için basılı tutun: ~INPUT_CONTEXT~. Bugün 1 ücretsiz çevirme hakkınız kaldı.",
+		hold_to_spin_lucky_wheel_free_multiple_left = "Şanslı Çarkı çevirmek için basılı tutun: ~INPUT_CONTEXT~. Bugün ${spins} adet ücretsiz çevirme hakkınız kaldı.",
+		continue_holding_to_spin_lucky_wheel = "Şanslı Çarkı çevirmeye devam etmek için ~INPUT_CONTEXT~ tuşuna basılı tutun.",
+		unable_to_spin_lucky_wheel = "Bugün izin verilen kadar Lucky Wheel'i zaten çevirdiniz. Bir sonraki spin ${time} sonra müsait olacaktır.",
 		not_enough_balance_to_spin = "Çarkı çevirmek için yeterli paranız yok. Maliyeti $${cost}.",
+		lucky_wheel_is_occupied = "Lucky Wheel şu anda meşgul. Lütfen bekleyin.",
+
 		logs_lucky_wheel_reward_title = "Lucky Wheel Ödülü",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} çarkı döndürdü ve bir araç kazandı.",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} '${modelName}' model isimli bir araç başarıyla verildi.",
 		logs_lucky_wheel_reward_money_details = "${consoleName} çarkı döndürdü ve $${amount} kazandı.",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} çarkı çevirdi ve $${amount} değerinde çip kazandı.",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} çarkı döndürdü ve '${itemName}' isimli mücevher kazandı.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} çarkı döndürdü ve '${itemName}' isimli bir eşya kazandı.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} çarkı döndürdü ve bir hafta kuyruk önceliği kazandı."
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		server_tps = "Sunucu TPS",
 		server_tps_response = "${tps}",
 		license_copied = "Lisans başarıyla panoya kopyalandı.",
-		uptime = "Çalışma süresi: ${uptime}"
+		uptime = "Çalışma süresi: ${uptime}",
+
+		picture_no_url = "URL bulunamadı",
+		picture_invalid_url = "Geçersiz URL, https:// ile başlamalıdır.",
+		picture_no_description = "Açıklama bulunamadı.",
+		picture_failed = "Resim oluşturulamadı.",
+
+		auto_run_already_set_to = "Otomatik çalıştırma zaten ${controlId} kontrolüne ayarlanmış.",
+		auto_run_already_unset = "Otomatik koşu zaten kapatılmış.",
+		auto_run_set_to = "Otomatik koşu ${controlId} tuşuna atanmış.",
+		auto_run_unset = "Otomatik koşu kapatıldı.",
+
+		invalid_server_id = "Geçersiz sunucu ID'si.",
+		walk_forwards_success = "${displayName} için ileri yürüme başarıyla açıldı.",
+		walk_forwards_failed = "${displayName} için ileri yürüme açılamadı."
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "Bir oyuncu şok dalgası oluşturmayı denedi ancak gerekli izinlere sahip değil.",
+		push_player_missing_permissions = "Bir oyuncu diğer bir oyuncuyu itmek istedi ancak gerekli izinlere sahip değildi.",
 		shockwave_success = "Şok dalgası başarıyla yaratıldı.",
-		shockwave_failed = "Şok dalgası oluşturulamadı."
+		shockwave_failed = "Şok dalgası oluşturulamadı.",
+
+		invalid_server_id = "Geçersiz sunucu ID'si.",
+		push_player_success = "Oyuncu başarıyla itildi.",
+		push_player_failed = "Oyuncunun itilmesi başarısız oldu."
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		you_are_in_a_vehicle = "Şu anda bir araçtasınız.",
 		hotwired_vehicle_with_plate_number = "${plateNumber} plakalı araç bağlanmıştır.",
 		unable_to_hotwire_vehicle = "Araç bağlanamadı.",
-		picked_up_keys = "${plate} plakalı aracın anahtarları alındı."
+		picked_up_keys = "${plate} plakalı aracın anahtarları alındı.",
+		invalid_server_id = "Geçersiz sunucu numarası.",
+		hotwired_vehicle_for_player = "${displayName} araçlarını zorla çalıştırmaları için teşvik edildi."
 	},
 
 	modifications = {

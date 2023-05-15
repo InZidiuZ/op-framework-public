@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["ro-RO"] = {
 	-- configuration settings for language
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		watching_feature = "Observând",
 		fortnite_feature = "Fortnite",
 		reflection_feature = "Reflecție daune",
+		stable_cam_feature = "Camera stabilă",
 
 		you_are_not_in_a_vehicle = "Nu ești într-un vehicul.",
 		repaired_vehicle = "Vehiculul a fost reparat.",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		unable_to_enter_vehicle_while_dead = "Nu puteți urca într-un vehicul când sunteți mort.",
 		the_closest_vehicle_had_no_free_seats = "Cel mai apropiat vehicul nu avea locuri libere.",
 		there_are_no_nearby_vehicles = "Nu există vehicule în apropiere.",
+		vehicle_not_found_network = "Mașina cu id de rețea nu a fost găsită.",
 		entered_vehicle = "A încercat să urce în vehiculul ${vehicleName} din apropiere.",
 
 		set_vehicle_modifications_logs_title = "Setări Modificări pentru Vehicul",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		enter_vehicle_command = "intrare_vehicul",
 		enter_vehicle_command_help = "Forțează personajul tău să intre în vehiculul cel mai apropiat (te scoate din vehiculul în care ești, dacă ești într-unul).",
+		enter_vehicle_command_parameter_network_id = "id de rețea",
+		enter_vehicle_command_parameter_network_id_help = "Id de rețea al mașinii în care doriți să intrați. (opțional)",
 		enter_vehicle_command_substitutes = "iv",
 
 		set_modification_command = "setează_modificare",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		detection_area_remove_command_parameter_area_id = "id zona detectie",
 		detection_area_remove_command_parameter_area_id_help = "ID-ul zonei de detectare pe care doriți să o eliminați.",
 		detection_area_remove_command_substitutes = "area_remove",
+
+		screen_text_debug_command = "debug_text_ecran",
+		screen_text_debug_command_help = "Debugează dreptunghiurile de excludere ale textului de pe ecran.",
+		screen_text_debug_command_substitutes = "text_ecran_debug",
 
 		-- base/commands
 		help_command = "ajutor",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		cache_assets_command_parameter_slow_download = "descărcare lentă",
 		cache_assets_command_parameter_slow_download_help = "Doriți să preîncărcați resursele lent? Această opțiune va face să dureze mult mai mult, dar va reduce și riscul de blocare.",
 		cache_assets_command_substitutes = "descarcare_cache, preincarcare_cache, incarcare_cache",
+
+		-- game/camera
+		stable_cam_command = "camera_stabilă",
+		stable_cam_command_help = "Comută camera stabilă.",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "cargo_start",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		fake_id_command_parameter_female_help = "Setează la adevărat dacă dorești un card de identitate de cetățean feminin în loc de unul masculin.",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/schimba_steag",
+		flag_swap_command_help = "Activează/dezactivează evenimentul 'schimbare de steag' pe server.",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "creează_câmp_de_forță",
 		create_forcefield_command_help = "Creează un câmp de forță în poziția ta curentă.",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		no_copyright_command_help = "Acest comandă va dezactiva toate sunetele care pot fi protejate de dreptul de autor furnizate de framework când este activată.",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "poza",
+		picture_command_help = "Generează un obiect ce conține o imagine personalizată și o descriere.",
+		picture_command_parameter_url = "url",
+		picture_command_parameter_url_help = "Adresa URL a imaginii.",
+		picture_command_parameter_description = "descriere",
+		picture_command_parameter_description_help = "Descrierea imaginii.",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "Obțineți TPS-ul serverului curent.",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		uptime_command = "uptime",
 		uptime_command_help = "Verifică timpul de activitate al serverului.",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "rulează_automat",
+		auto_run_command_help = "Setează o comandă rapidă pentru a rulează automat în joc.",
+		auto_run_command_parameter_control_id = "id-ul de control",
+		auto_run_command_parameter_control_id_help = "ID-ul de control la care doriți să legați auto-rulează.",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "mergi_inainte",
+		walk_forwards_command_help = "Face ca jucătorul sau alt jucător să meargă automat înainte (încercând să evite obstacolele).",
+		walk_forwards_command_parameter_server_id = "id server",
+		walk_forwards_command_parameter_server_id_help = "ID-ul serverului jucătorului pe care doriți să-l faceți să meargă înainte.",
+		walk_forwards_command_parameter_sprint = "sprint",
+		walk_forwards_command_parameter_sprint_help = "Indică dacă jucătorul trebuie să alerge în timp ce merge înainte. (Valoare implicită: false)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "bani",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		create_shockwave_command_parameter_radius_help = "Raza undei de șoc (1 - 100).",
 		create_shockwave_command_substitutes = "unda_de_soc",
 
+		push_player_command = "impinge_jucator",
+		push_player_command_help = "Împinge un jucător sau vehiculul în care se află departe de tine.",
+		push_player_command_parameter_server_id = "id server",
+		push_player_command_parameter_server_id_help = "Id-ul serverului al jucătorului.",
+		push_player_command_substitutes = "impinge",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "desenează_zone_ciuperci",
 		draw_shroom_areas_command_help = "Desenează toate zonele de ciuperci și adaugă altele noi.",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		local_entities_debug_command_help = "Activează/dezactivează debugger-ul pentru entitățile locale.",
 		local_entities_debug_command_substitutes = "lentities",
 
-		no_ped_population_areas_debug_command = "debug_zone_fară_populare_ped",
+		no_ped_population_areas_debug_command = "no_ped_population_areas_debug",
 		no_ped_population_areas_debug_command_help = "Activează/dezactivează debugger-ul pentru 'zonele fără populație de ped-i'.",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		hotwire_vehicle_command = "hotwire_vehicul",
 		hotwire_vehicle_command_help = "Pornește mașina în care ești instantaneu.",
+		hotwire_vehicle_command_parameter_server_id = "id server",
+		hotwire_vehicle_command_parameter_server_id_help = "Face ca un alt jucător să hotwireze instant un vehicul în care se află.",
 		hotwire_vehicle_command_substitutes = "pornire_furtiva",
 
 		pickup_keys_command = "aduna_cheile",
@@ -4245,7 +4293,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		material_vendor = "Vânzător de materiale",
 		pdm = "Premium Deluxe Motorsport",
 		ls_customs = "Vamă Los Santos",
-		jewelry_store = "Magazinul Vangelico Jewellery",
+		jewelry_store = "Magazin de bijuterii Vangelico",
 		pd_air_hq = "Sediul aerian al poliției",
 		pd_sea_hq = "Sediul naval al Poliției",
 		ems_air_hq = "Sediul aerian al Serviciului de Urgență",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		crafted_gas_grenade = "Grenadă cu gaz fabricată.",
 		failed_craft_gas_grenade = "Nu s-a reușit fabricarea grenadei cu gaz.",
 
+		break_apart_ring = "Desparte inelele",
+		press_break_apart_ring = "[${SeatEjectKey}] Desparte inelele",
+		breaking_ring = "Despart inelele",
+		broke_ring = "Inelele au fost despartite.",
+		failed_break_ring = "Nu s-a reușit să se despartă inelele.",
+
 		no_required_items = "Nu ai toate obiectele necesare.",
 
 		debug_multi = "-Multiple Ieșiri-",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] Porniți artificiile"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "S-a încercat să se schimbe opțiunea flag swaps fără permisiunea necesară.",
+
+		toggled_flag_swap_on = "S-a schimbat opțiunea flag swap.",
+		toggled_flag_swap_off = "Indicator de schimbare oprit."
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["ro-RO"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Ține apăsat ~INPUT_CONTEXT~ pentru a face roata norocului. Costul este de $${cost}.",
-		spin_lucky_wheel_for_free = "Ține apăsat ~INPUT_CONTEXT~ pentru a face roata norocului. Mai aveți o rotire gratuită astăzi.",
-		unable_to_spin_lucky_wheel = "Ai rotit Roata Norocului de câte ori este permis astăzi. Încearcă din nou mai târziu!",
-		unable_to_spin_lucky_wheel_time = "Ai rotit Roata Norocului de câte ori este permis astăzi. Următoarea rotire disponibilă în ${displayTime}.",
-		lucky_wheel_is_occupied = "Roata Norocului este ocupată momentan. Te rugăm să aștepți.",
+		hold_to_spin_lucky_wheel = "Țineți apăsat ~INPUT_CONTEXT~ pentru a invarti Roata Norocului. Costul este de $${cost}.",
+		hold_to_spin_lucky_wheel_free_one_left = "Țineți apăsat ~INPUT_CONTEXT~ pentru a invarti Roata Norocului. Aveți 1 rotire gratuită astăzi.",
+		hold_to_spin_lucky_wheel_free_multiple_left = "Țineți apăsat ~INPUT_CONTEXT~ pentru a invarti Roata Norocului. Aveți ${spins} rotiri gratuite astăzi.",
+		continue_holding_to_spin_lucky_wheel = "Continuați să țineți apăsat ~INPUT_CONTEXT~ pentru a intrerupe Roata Norocului.",
+		unable_to_spin_lucky_wheel = "Ați învârtit Roata Norocului de câte ori v-a fost permis astăzi. Următoarea încercare este disponibilă peste ${time}.",
 		not_enough_balance_to_spin = "Nu ai suficienți bani pentru a roti roata. Costul este de $${cost}.",
+		lucky_wheel_is_occupied = "Roata Norocului este ocupată momentan. Te rugăm să aștepți.",
+
 		logs_lucky_wheel_reward_title = "Recompensă Roata Norocului",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} a vrut roata norocului și a câștigat un vehicul.",
 		logs_lucky_wheel_reward_vehicle_given_details = "Vehiculul cu numele ${modelName} a fost cu succes acordat lui ${consoleName}.",
 		logs_lucky_wheel_reward_money_details = "${consoleName} a vrut roata norocului și a câștigat $${amount}.",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} a învârtit Roata Norocului și a câștigat ${amount} dolari în jetoane.",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} a vrut roata norocului și a câștigat o bijuterie denumită `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} a vrut roata norocului și a câștigat un obiect denumit `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} a invârtit roata și a câștigat o săptămână de prioritate în coadă."
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		server_tps = "TPS Server",
 		server_tps_response = "${tps}", -- Răspunsul pentru comanda "/tps",
 		license_copied = "Licența a fost copiată cu succes.",
-		uptime = "Timp funcționare: ${uptime}"
+		uptime = "Timp funcționare: ${uptime}",
+
+		picture_no_url = "Lipsește URL-ul.",
+		picture_invalid_url = "URL-ul introdus este invalid, trebuie să înceapă cu https://.",
+		picture_no_description = "Lipsește descrierea.",
+		picture_failed = "Eroare în crearea imaginii.",
+
+		auto_run_already_set_to = "Auto-run este deja setat pentru controlul ${controlId}.",
+		auto_run_already_unset = "Auto-run-ul este deja dezactivat.",
+		auto_run_set_to = "Auto-run-ul a fost setat să utilizeze tasta ${controlId}.",
+		auto_run_unset = "Auto-run-ul a fost dezactivat.",
+
+		invalid_server_id = "ID-ul serverului este invalid.",
+		walk_forwards_success = "Mutarea înainte a jucătorului ${displayName} a fost activată cu succes.",
+		walk_forwards_failed = "Nu s-a putut activa mutarea înainte a jucătorului ${displayName}."
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "Jucatorul a incercat sa creeze unda de soc, dar nu avea permisiuni necesare.",
+		push_player_missing_permissions = "Jucătorul a încercat să împingă un alt jucător fără permisiunile necesare.",
 		shockwave_success = "Șocul a fost creat cu succes.",
-		shockwave_failed = "Nu s-a putut crea șocul."
+		shockwave_failed = "Nu s-a putut crea șocul.",
+
+		invalid_server_id = "ID-ul serverului este invalid.",
+		push_player_success = "Jucator impins cu succes.",
+		push_player_failed = "Nu s-a reusit impingerea jucatorului."
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		you_are_in_a_vehicle = "Te afli în prezent într-un vehicul.",
 		hotwired_vehicle_with_plate_number = "S-a dat contact la vehiculul cu numărul de înmatriculare '${plateNumber}'.",
 		unable_to_hotwire_vehicle = "Nu se poate da contact la vehicul.",
-		picked_up_keys = "Ai luat cheile pentru `${plate}`."
+		picked_up_keys = "Ai luat cheile pentru `${plate}`.",
+		invalid_server_id = "ID server invalid.",
+		hotwired_vehicle_for_player = "${displayName} a reusit sa pornesca masina in care se afla."
 	},
 
 	modifications = {

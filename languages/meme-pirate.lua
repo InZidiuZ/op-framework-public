@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["meme-pirate"] = {
 	-- configuration settings for language
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		watching_feature = "Lookout",
 		fortnite_feature = "Skull & Bones",
 		reflection_feature = "Damage Reflection",
+		stable_cam_feature = "Stable Cam me hearties!",
 
 		you_are_not_in_a_vehicle = "Ye be not in a vessel, matey.",
 		repaired_vehicle = "Repaired me ship, arr!",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		unable_to_enter_vehicle_while_dead = "Ye be unable to enter a vessel while dead.",
 		the_closest_vehicle_had_no_free_seats = "Th' closest vessel had no free seats.",
 		there_are_no_nearby_vehicles = "Thar be no nearby vessels.",
+		vehicle_not_found_network = "Ahoy! Could not spy the vessel with network id.",
 		entered_vehicle = "Attempted to enter nearby ${vehicleName}.",
 
 		set_vehicle_modifications_logs_title = "Set Vessel Modifications",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		enter_vehicle_command = "enter_ship",
 		enter_vehicle_command_help = "Force yer player ped t'enter th' ship ye be closest to (makes ye exit th' ship if ye be in one).",
+		enter_vehicle_command_parameter_network_id = "network id",
+		enter_vehicle_command_parameter_network_id_help = "Enter the network id of the vessel ye want to board. (optional)",
 		enter_vehicle_command_substitutes = "es",
 
 		set_modification_command = "set_modification",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		detection_area_remove_command_parameter_area_id = "detection area id",
 		detection_area_remove_command_parameter_area_id_help = "Th' ID o' th' detection area ye be wantin' t' remove.",
 		detection_area_remove_command_substitutes = "area_remove",
+
+		screen_text_debug_command = "screen_text_debug",
+		screen_text_debug_command_help = "Debug the exclusion rectangles for screen-text me hearties.",
+		screen_text_debug_command_substitutes = "screen_text",
 
 		-- base/commands
 		help_command = "help",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		cache_assets_command_parameter_slow_download = "slowly plunder",
 		cache_assets_command_parameter_slow_download_help = "Be ye wantin' to plunder the assets slowly? Doin' that will make it take much longer, but will also reduce the chance of crashin'.",
 		cache_assets_command_substitutes = "plunder_cache, preload_cache, load_cache",
+
+		-- game/camera
+		stable_cam_command = "stable_cam",
+		stable_cam_command_help = "Avast! Toggles the stable cam me hearties.",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "plunder_start",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		fake_id_command_parameter_female_help = "Set t' true if ye want a female citizen card instead o' a male.",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/arr_swap",
+		flag_swap_command_help = "Toggle th' server-wide 'arr swap' event.",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
 		create_forcefield_command_help = "Creates a forcefield at yer current position.",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		no_copyright_command_help = "This command will disable all potentially copyrrrighted sounds comin' from the framework when enabled.",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "portrait",
+		picture_command_help = "Spawns a portrait item wit' a custom image URL.",
+		picture_command_parameter_url = "url",
+		picture_command_parameter_url_help = "Th' image url.",
+		picture_command_parameter_description = "description",
+		picture_command_parameter_description_help = "Th' portrait description.",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "Get the server's current TPS, ye scallywags.",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		uptime_command = "sail time",
 		uptime_command_help = "Check the sail time of the ship.",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "auto_run",
+		auto_run_command_help = "Set a keybind fer a auto-run.",
+		auto_run_command_parameter_control_id = "control id",
+		auto_run_command_parameter_control_id_help = "Th' control ID ye would like t' bind t' auto-run.",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "walk_forwards",
+		walk_forwards_command_help = "Makes ye or another player walk forwards automatically (while attemptin' t' avoid obstacles).",
+		walk_forwards_command_parameter_server_id = "server id",
+		walk_forwards_command_parameter_server_id_help = "Th' server id o' th' player ye want t' make walk forwards.",
+		walk_forwards_command_parameter_sprint = "sprint",
+		walk_forwards_command_parameter_sprint_help = "Whether or not ye scallywag should sprint while walkin' forwards. (Default: false)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "loot",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		create_shockwave_command_parameter_radius_help = "Th' radius o' th' shockwave (1 - 100).",
 		create_shockwave_command_substitutes = "shockwave",
 
+		push_player_command = "push_player",
+		push_player_command_help = "Shove a scallywag or the vessel they be in away from ye.",
+		push_player_command_parameter_server_id = "server id",
+		push_player_command_parameter_server_id_help = "The server id o' th' scallywag.",
+		push_player_command_substitutes = "shove",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "draw_shroom_areas",
 		draw_shroom_areas_command_help = "Draw all shroom areas and add more.",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		local_entities_debug_command_help = "Toggle the debug for local booty.",
 		local_entities_debug_command_substitutes = "lbooty",
 
-		no_ped_population_areas_debug_command = "no scallywag population areas debug",
+		no_ped_population_areas_debug_command = "no_ped_population_areas_debug",
 		no_ped_population_areas_debug_command_help = "Toggle the 'no scallywag population areas' debugger.",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		hotwire_vehicle_command = "hotwire_vehicle",
 		hotwire_vehicle_command_help = "Instantly hotwire th' vessel ye be in.",
+		hotwire_vehicle_command_parameter_server_id = "server id",
+		hotwire_vehicle_command_parameter_server_id_help = "Make another scallywag instantly hotwire the vessel they be in.",
 		hotwire_vehicle_command_substitutes = "hoist the jolly roger",
 
 		pickup_keys_command = "pickup yer keys",
@@ -4245,7 +4293,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		material_vendor = "Material Trader",
 		pdm = "Fancy Car Emporium",
 		ls_customs = "Los Santos Pimpin' Works",
-		jewelry_store = "Vangelico's Jewel Emporium",
+		jewelry_store = "Vangelico Jewelry",
 		pd_air_hq = "Police Ship HQ",
 		pd_sea_hq = "Police Sea Harb'r",
 		ems_air_hq = "EMS Air Harb'r",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		crafted_gas_grenade = "Crafted gas grenade, argh!",
 		failed_craft_gas_grenade = "Arrrgh! Ye couldn't make a gas grenade matey.",
 
+		break_apart_ring = "Break Apart Ring",
+		press_break_apart_ring = "[${SeatEjectKey}] Break Apart Ring",
+		breaking_ring = "Breaking Apart Ring",
+		broke_ring = "Broke apart ring, arrr.",
+		failed_break_ring = "Failed to break apart ring, ye be no good with tools!",
+
 		no_required_items = "Yer missing some important loot.",
 
 		debug_multi = "-Multin' Outputs-",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] Fire Firework"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "Attempted to toggle flag swaps without proper permissions, walk the plank!",
+
+		toggled_flag_swap_on = "Toggled flag swap on, hoist the Jolly Roger!",
+		toggled_flag_swap_off = "Avast! Flag swap off toggled, me hearty."
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ to spin th' Lucky Wheel. Th' cost be $${cost}.",
-		spin_lucky_wheel_for_free = "Hold ~INPUT_CONTEXT~ to spin th' Lucky Wheel. Ye have one free spin left today.",
-		unable_to_spin_lucky_wheel = "Ye 'ave already spun the Lucky Wheel as much as permitted today. Come back later for another spin, me hearty!",
-		unable_to_spin_lucky_wheel_time = "Ye 'ave already spun the Lucky Wheel as much as permitted today. Next spin available in ${displayTime}.",
-		lucky_wheel_is_occupied = "Arrr! The Lucky Wheel be currently occupied. Wait yer turn, matey!",
+		hold_to_spin_lucky_wheel = "Arrr! Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. The cost be $${cost}.",
+		hold_to_spin_lucky_wheel_free_one_left = "Ahoy! Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. Ye have 1 free spin left today.",
+		hold_to_spin_lucky_wheel_free_multiple_left = "Ho ho! Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. Ye have ${spins} free spins left today.",
+		continue_holding_to_spin_lucky_wheel = "Keep holding ~INPUT_CONTEXT~ to spin the Lucky Wheel, ye ol' scallywag.",
+		unable_to_spin_lucky_wheel = "Ye 'ave already spun th' Lucky Wheel as much as permitted today. Next spin available in ${time}.",
 		not_enough_balance_to_spin = "Ye do not 'ave enough doubloons to spin the wheel. The cost be $${cost}.",
+		lucky_wheel_is_occupied = "Arrr! The Lucky Wheel be currently occupied. Wait yer turn, matey!",
+
 		logs_lucky_wheel_reward_title = "Lucky Wheel Booty",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} be spinnin' th' wheel 'n won a vessel, me hearty!",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} be granted a vessel wit' th' name `${modelName}`!",
 		logs_lucky_wheel_reward_money_details = "${consoleName} has spun th' wheel 'n won $${amount}!",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} 'as spun th' wheel 'n won $${amount} worth o' chips.",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} has spun th' wheel 'n won jewelry wit' th' name `${itemName}`!",
 		logs_lucky_wheel_reward_item_details = "${consoleName} has spun th' wheel 'n won an item wit' th' name `${itemName}`!",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} has spun the wheel and won one week of queue priority."
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		server_tps = "Server TPS",
 		server_tps_response = "${tps}",
 		license_copied = "Successfully swabbed license to clipboard, arr!",
-		uptime = "Uptime, me hearty: ${uptime}"
+		uptime = "Uptime, me hearty: ${uptime}",
+
+		picture_no_url = "Missing url, me hearty.",
+		picture_invalid_url = "Invalid url, has to start with https://, arrrrr.",
+		picture_no_description = "Missing description, yo ho ho!",
+		picture_failed = "Failed to create picture, walk the plank!",
+
+		auto_run_already_set_to = "Auto-run be already set to control ${controlId}, arrr.",
+		auto_run_already_unset = "Arrr, ye be already not runnin'.",
+		auto_run_set_to = "Arrr, auto-run be set to sail ${controlId}.",
+		auto_run_unset = "Arrr, auto-run be toppled.",
+
+		invalid_server_id = "Ahoy, that server ID be not valid.",
+		walk_forwards_success = "Aye! Successfully toggled walkin' forwards for ${displayName}.",
+		walk_forwards_failed = "Blimey! Failed to toggle walkin' forwards for ${displayName}."
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "Ahoy! Player attempted to create a shockwave but they didn't have the required permissions.",
+		push_player_missing_permissions = "Shiver me timbers! Ye tried to thrust a pirate but ye don't have the permissions.",
 		shockwave_success = "Arrr, Ye've created shockwave successfully!",
-		shockwave_failed = "Shiver me timbers! Ye failed to create shockwave."
+		shockwave_failed = "Shiver me timbers! Ye failed to create shockwave.",
+
+		invalid_server_id = "Ahoy, that server ID be not valid.",
+		push_player_success = "Arrr! Ye have successfully sent that scallywag flyin'!",
+		push_player_failed = "Shiver me timbers! We couldn't send that landlubber flyin'."
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		you_are_in_a_vehicle = "Ye be currently in a ship!",
 		hotwired_vehicle_with_plate_number = "Ahoy! Hotwired ship with plate number '${plateNumber}'!",
 		unable_to_hotwire_vehicle = "Avast! Unable to hotwire ship!",
-		picked_up_keys = "Picked up keys for `${plate}`. Avast!"
+		picked_up_keys = "Picked up keys for `${plate}`. Avast!",
+		invalid_server_id = "Blimey! That server ID be invalid.",
+		hotwired_vehicle_for_player = "Avast there! ${displayName} has gotten the ship ready to sail!"
 	},
 
 	modifications = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["meme-yoda"] = {
 	-- configuration settings for language
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		watching_feature = "Watching, I am.",
 		fortnite_feature = "Fortnite, we play.",
 		reflection_feature = "Damage Reflection",
+		stable_cam_feature = "Cam Stable, toggled it shall be.",
 
 		you_are_not_in_a_vehicle = "Not in a vehicle, you are.",
 		repaired_vehicle = "Repaired the vehicle, I have.",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		unable_to_enter_vehicle_while_dead = "While dead, enter a vehicle, you cannot.",
 		the_closest_vehicle_had_no_free_seats = "No free seats, the closest vehicle had.",
 		there_are_no_nearby_vehicles = "Vehicles nearby, there are none.",
+		vehicle_not_found_network = "Network id, vehicle not found, it is.",
 		entered_vehicle = "${vehicleName} nearby, attempted to enter.",
 
 		set_vehicle_modifications_logs_title = "Set Vehicle Modifications",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		enter_vehicle_command = "enter_vehicle",
 		enter_vehicle_command_help = "Closest vehicle, force entry you can. Exit vehicle, if in one, you must.",
+		enter_vehicle_command_parameter_network_id = "network id, enter you must.",
+		enter_vehicle_command_parameter_network_id_help = "Optional, network id of the vehicle you want to enter, it is.",
 		enter_vehicle_command_substitutes = "ev",
 
 		set_modification_command = "set_modification",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		detection_area_remove_command_parameter_area_id = "id of detection area",
 		detection_area_remove_command_parameter_area_id_help = "Remove, you want, the detection area ID, you must provide. Hmm.",
 		detection_area_remove_command_substitutes = "area_remove",
+
+		screen_text_debug_command = "Debug, screen-text you shall.",
+		screen_text_debug_command_help = "Exclusion rectangles, debug you can.",
+		screen_text_debug_command_substitutes = "screen_text, use them you may.",
 
 		-- base/commands
 		help_command = "help",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		cache_assets_command_parameter_slow_download = "download slowly, you want?",
 		cache_assets_command_parameter_slow_download_help = "Reduce chances of crashing, you will. But much longer, it will take.",
 		cache_assets_command_substitutes = "preload_cache, download_cache, cache_load",
+
+		-- game/camera
+		stable_cam_command = "Toggle the stable cam, you can.",
+		stable_cam_command_help = "Toggles, the stable cam, it will.",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "Cargo heist, start you will.",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		fake_id_command_parameter_female_help = "Set to true if female citizen card it is, instead of male.",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/flag_swap",
+		flag_swap_command_help = "Toggle the server-wide 'flag swap' event. Yeessss.",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
 		create_forcefield_command_help = "Creates a forcefield at your current position.",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		no_copyright_command_help = "Disable all potentially copyrighted sounds coming from the framework, hmmm.",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "picture",
+		picture_command_help = "Spawns a picture item with a custom image URL. Caught in motion, the scene was, hmm?",
+		picture_command_parameter_url = "url",
+		picture_command_parameter_url_help = "The image url. Find it, you must.",
+		picture_command_parameter_description = "description",
+		picture_command_parameter_description_help = "The picture description. Speak it, you should.",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "Current TPS of the server, get, hmmm.",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		uptime_command = "uptime",
 		uptime_command_help = "Uptime of the server, check you can.",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "auto_run",
+		auto_run_command_help = "Set a keybind for a auto-run. Run like the wind, you will. Hmmmm.",
+		auto_run_command_parameter_control_id = "control id, you must choose",
+		auto_run_command_parameter_control_id_help = "Control ID to auto-run, bind you want.",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "go forward, you will",
+		walk_forwards_command_help = "Moves you or the chosen player forward automatically, obstacle avoid it will try.",
+		walk_forwards_command_parameter_server_id = "server id, choose you it must",
+		walk_forwards_command_parameter_server_id_help = "The server ID of the player you want to move forward.",
+		walk_forwards_command_parameter_sprint = "sprint, you can",
+		walk_forwards_command_parameter_sprint_help = "To sprint while walk forward, this player should or not. (Default: false)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "cash",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		create_shockwave_command_parameter_radius_help = "The radius of the shockwave (1 - 100), it is.",
 		create_shockwave_command_substitutes = "shockwave",
 
+		push_player_command = "push_player",
+		push_player_command_help = "Away push a player or the ship they are in, you will.",
+		push_player_command_parameter_server_id = "server id",
+		push_player_command_parameter_server_id_help = "Server ID of player, this is.",
+		push_player_command_substitutes = "push",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "draw_shroom_areas",
 		draw_shroom_areas_command_help = "All shroom areas draw, add more we can.",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		local_entities_debug_command_help = "Toggle the debug for local entities, you can.",
 		local_entities_debug_command_substitutes = "lentities",
 
-		no_ped_population_areas_debug_command = "no_ped_population_asreas_debug",
+		no_ped_population_areas_debug_command = "no_ped_population_areas_debug",
 		no_ped_population_areas_debug_command_help = "Toggle the 'no ped population areas' debugger, you can.",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		hotwire_vehicle_command = "hotwire_vehicle",
 		hotwire_vehicle_command_help = "Hotwire the vehicle you are in instantly, you will.",
+		hotwire_vehicle_command_parameter_server_id = "server id",
+		hotwire_vehicle_command_parameter_server_id_help = "Another player's vehicle instantly hotwire, make.",
 		hotwire_vehicle_command_substitutes = "hotwire",
 
 		pickup_keys_command = "pickup_keys",
@@ -4245,7 +4293,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		material_vendor = "Material Vendor",
 		pdm = "Premium Deluxe Motorsport",
 		ls_customs = "Los Santos Customs",
-		jewelry_store = "Vangelico Jewellery",
+		jewelry_store = "Jewelry of Vangelico",
 		pd_air_hq = "Police Air HQ",
 		pd_sea_hq = "Police Sea HQ, it is.",
 		ems_air_hq = "EMS Air HQ, it is.",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		crafted_gas_grenade = "Gas grenade, crafted it is.",
 		failed_craft_gas_grenade = "Crafting of gas grenade, failed it has.",
 
+		break_apart_ring = "Ring, break apart",
+		press_break_apart_ring = "[${SeatEjectKey}] Ring, break apart",
+		breaking_ring = "Breaking apart, the ring is",
+		broke_ring = "Broke apart, the ring did",
+		failed_break_ring = "Failed, the ring apart to break.",
+
 		no_required_items = "All the required items, you do not have.",
 
 		debug_multi = "-Multiple Outputs-, debug mode is on.",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] Firework, fire."
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "Failed, proper permissions flag swaps without to toggle attempted.",
+
+		toggled_flag_swap_on = "Toggled on, flag swap did.",
+		toggled_flag_swap_off = "Flag swap off, toggled it has."
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. The cost is $${cost}.",
-		spin_lucky_wheel_for_free = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. You have one free spin left today.",
-		unable_to_spin_lucky_wheel = "Already spun the Lucky Wheel as much as permitted today, you have. Come back later for another spin, you must!",
-		unable_to_spin_lucky_wheel_time = "Already spun the Lucky Wheel as much as permitted today, you have. Next spin available in ${displayTime}, it will be.",
-		lucky_wheel_is_occupied = "Occupied, the Lucky Wheel is. Please wait, you must.",
+		hold_to_spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. The cost is $${cost}.",
+		hold_to_spin_lucky_wheel_free_one_left = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. Today, free spin you have, 1 left.",
+		hold_to_spin_lucky_wheel_free_multiple_left = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. Today, free spins you have, ${spins} left.",
+		continue_holding_to_spin_lucky_wheel = "Continue holding ~INPUT_CONTEXT~ to spin the Lucky Wheel, you must.",
+		unable_to_spin_lucky_wheel = "Already spun, as much as permitted today, the Lucky Wheel has. Next spin available in ${time}.",
 		not_enough_balance_to_spin = "Enough money, you do not have. The cost is $${cost}.",
+		lucky_wheel_is_occupied = "Occupied, the Lucky Wheel is. Please wait, you must.",
+
 		logs_lucky_wheel_reward_title = "Lucky Wheel Reward, this is.",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} has spun the wheel, a vehicle won they have.",
 		logs_lucky_wheel_reward_vehicle_given_details = "Vehicle with the model name `${modelName}` has been given to ${consoleName}, successful it is.",
 		logs_lucky_wheel_reward_money_details = "${consoleName} has spun the wheel, won $${amount} they have.",
+		logs_lucky_wheel_reward_chips_details = "Wheel spun by ${consoleName}, $${amount} worth of chips won.",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} has spun the wheel and won jewelry named `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} has spun the wheel and won an item named `${itemName}` it has.",
 		logs_lucky_wheel_reward_queue_priority_details = "One week of queue priority, ${consoleName} has won by spinning the wheel."
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		server_tps = "Server TPS",
 		server_tps_response = "TPS, the server is: ${tps}",
 		license_copied = "Successfully copied the license, you have.",
-		uptime = "Uptime, the server is: ${uptime}"
+		uptime = "Uptime, the server is: ${uptime}",
+
+		picture_no_url = "Missing url, there is.",
+		picture_invalid_url = "Invalid url, has to start with https://, it does.",
+		picture_no_description = "Missing description, there is.",
+		picture_failed = "Failed to create picture, there has.",
+
+		auto_run_already_set_to = "Control ${controlId}, already set to auto-run, it is.",
+		auto_run_already_unset = "Auto-run, already unset it is.",
+		auto_run_set_to = "Auto-run, set it is. Control ${controlId} it has.",
+		auto_run_unset = "Auto-run, unset it has been.",
+
+		invalid_server_id = "ID of server, invalid it is.",
+		walk_forwards_success = "Successfully, walking forwards toggled for ${displayName} it has.",
+		walk_forwards_failed = "Failed to toggle, walking forwards for ${displayName} it has."
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "Creation of a shockwave attempted by player was, but the required permissions, they did not have.",
+		push_player_missing_permissions = "Required permissions, player who attempted to push a player did not have.",
 		shockwave_success = "Shockwave created successfully, young padawan.",
-		shockwave_failed = "Failed to create the shockwave, we have. Hmmm."
+		shockwave_failed = "Failed to create the shockwave, we have. Hmmm.",
+
+		invalid_server_id = "ID of server, invalid it is.",
+		push_player_success = "Successfully pushed, the player has.",
+		push_player_failed = "Failed to push, the player has."
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		you_are_in_a_vehicle = "In a vehicle, you currently are.",
 		hotwired_vehicle_with_plate_number = "Vehicle hotwired, with plate number '${plateNumber}' it has been.",
 		unable_to_hotwire_vehicle = "Vehicle unable to hotwire, hmph!",
-		picked_up_keys = "Keys picked up for `${plate}`, yes."
+		picked_up_keys = "Keys picked up for `${plate}`, yes.",
+		invalid_server_id = "Invalid server ID, this is.",
+		hotwired_vehicle_for_player = "${displayName} has, the vehicle they are in, hotwired."
 	},
 
 	modifications = {

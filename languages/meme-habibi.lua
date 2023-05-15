@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["meme-habibi"] = {
 	-- configuration settings for language
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		watching_feature = "Watching",
 		fortnite_feature = "Fortnite",
 		reflection_feature = "Damage Reflection",
+		stable_cam_feature = "Stable Cam",
 
 		you_are_not_in_a_vehicle = "You're not in a vehicle Habibi.",
 		repaired_vehicle = "Vehicle has been repaired Habibi.",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		unable_to_enter_vehicle_while_dead = "You can't hop into a vehicle while you're dead.",
 		the_closest_vehicle_had_no_free_seats = "The nearest vehicle has no empty seats.",
 		there_are_no_nearby_vehicles = "There aren't any vehicles around.",
+		vehicle_not_found_network = "Vehicle with network id not found.",
 		entered_vehicle = "Tried to hop into the nearby ${vehicleName}.",
 
 		set_vehicle_modifications_logs_title = "Set Vehicle Modifications",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		enter_vehicle_command = "daakhil", -- "daakhil" means "enter",
 		enter_vehicle_command_help = "Force your player ped to enter the vehicle you are closest to (makes you exit the vehicle if you are in one).",
+		enter_vehicle_command_parameter_network_id = "network id",
+		enter_vehicle_command_parameter_network_id_help = "Network id of the vehicle you want to enter. (optional)",
 		enter_vehicle_command_substitutes = "dv", -- "dv" means "ev",
 
 		set_modification_command = "hajm_adiaa", -- "hajm_adiaa" means "set modification",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		detection_area_remove_command_parameter_area_id = "detection area id",
 		detection_area_remove_command_parameter_area_id_help = "The ID of the detection area you want to remove.",
 		detection_area_remove_command_substitutes = "area_remove",
+
+		screen_text_debug_command = "screen_text_debug",
+		screen_text_debug_command_help = "Debug the screen-text exclusion rectangles.",
+		screen_text_debug_command_substitutes = "screen_text",
 
 		-- base/commands
 		help_command = "help",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		cache_assets_command_parameter_slow_download = "admit lag",
 		cache_assets_command_parameter_slow_download_help = "Do you want to admit lag while caching assets? This will make the process much slower but will reduce the risk of crashing.",
 		cache_assets_command_substitutes = "cache_download, preload_cache, load_cache",
+
+		-- game/camera
+		stable_cam_command = "stable_cam",
+		stable_cam_command_help = "Toggles the stable cam.",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "cargo_start",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		fake_id_command_parameter_female_help = "Set to true if you want a yemma citizen card instead of a baba.", -- "baba",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/flag_swap",
+		flag_swap_command_help = "Toogol il 'flag swap' event for il server.",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
 		create_forcefield_command_help = "Creates a forcefield at your current position.",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		no_copyright_command_help = "This command will disable all sounds potentially protected by copyright in the framework when enabled.",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "picture",
+		picture_command_help = "Spawns a picture item with a custom image URL.",
+		picture_command_parameter_url = "url",
+		picture_command_parameter_url_help = "Il image URL.",
+		picture_command_parameter_description = "description",
+		picture_command_parameter_description_help = "Il picture description.",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "Gets the current TPS (Ticks Per Second) of the server.",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		uptime_command = "عمر الخادم",
 		uptime_command_help = "تحقق من مدة تشغيل الخادم.",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "auto_run",
+		auto_run_command_help = "Tayyeb a keybind for auto-run.",
+		auto_run_command_parameter_control_id = "تعريف التحكم",
+		auto_run_command_parameter_control_id_help = "تعريف التحكم الذي تريد ربطه بالتشغيل التلقائي.",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "المشي_إلى_الأمام",
+		walk_forwards_command_help = "يجعلك أو أي لاعب آخر يسير أمامياً تلقائيًا (مع محاولة تجنب العوائق).",
+		walk_forwards_command_parameter_server_id = "تعريف الخادم",
+		walk_forwards_command_parameter_server_id_help = "تعريف خادم اللاعب الذي تريد جعله يسير إلى الأمام.",
+		walk_forwards_command_parameter_sprint = "الركض",
+		walk_forwards_command_parameter_sprint_help = "Whether or not the player should sprint while walking forwards. (Default: false)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "النقدية",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		create_shockwave_command_parameter_radius_help = "Da radius of da shockwave (1 - 100).",
 		create_shockwave_command_substitutes = "shockwave",
 
+		push_player_command = "push_player",
+		push_player_command_help = "Push a player or the vehicle they are in away from you.",
+		push_player_command_parameter_server_id = "server id",
+		push_player_command_parameter_server_id_help = "The server id of the player.",
+		push_player_command_substitutes = "push", -- "دفع",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "draw_shroom_areas",
 		draw_shroom_areas_command_help = "Draw all da shroom areas and add more.",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		local_entities_debug_command_help = "Toggle the debug for local entities.",
 		local_entities_debug_command_substitutes = "lentities",
 
-		no_ped_population_areas_debug_command = "hal mamlookaat la tashamal al-alibad binafsihim tafeheeka",
+		no_ped_population_areas_debug_command = "no_ped_population_areas_debug",
 		no_ped_population_areas_debug_command_help = "Toggle the 'no ped population areas' debugger.",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		hotwire_vehicle_command = "hotwire_vehicle",
 		hotwire_vehicle_command_help = "احرق الأسلاك وتشغيل السيارة فوراً.",
+		hotwire_vehicle_command_parameter_server_id = "server id",
+		hotwire_vehicle_command_parameter_server_id_help = "Make someone else quickly hotwire the vehicle they are in.",
 		hotwire_vehicle_command_substitutes = "start",
 
 		pickup_keys_command = "pickup_keys",
@@ -4245,7 +4293,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		material_vendor = "Material Vendor",
 		pdm = "Premium Deluxe Motorsport",
 		ls_customs = "Los Santos Customs",
-		jewelry_store = "Vangelico Jewellery",
+		jewelry_store = "Vangelico Jewelry",
 		pd_air_hq = "Police Air HQ",
 		pd_sea_hq = "Maktab al-Shorta bi'l-bahr",
 		ems_air_hq = "Maktab al-Sihhah fi'l-hawa",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		crafted_gas_grenade = "Crafted Habibi gas grenade.",
 		failed_craft_gas_grenade = "Sorry habibi, the gas grenade crafting failed.",
 
+		break_apart_ring = "Disassemble Ring",
+		press_break_apart_ring = "[${SeatEjectKey}] Disassemble Ring",
+		breaking_ring = "Disassembling Ring",
+		broke_ring = "Successfully disassembled ring.",
+		failed_break_ring = "Failed to disassemble ring.",
+
 		no_required_items = "You don't got all the things you need, habibi.",
 
 		debug_multi = "-Many messages-",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] Fire Firework, habibi"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "Tried to switch flag swaps without proper permissions.",
+
+		toggled_flag_swap_on = "Switched flag swap on.",
+		toggled_flag_swap_off = "Toggled flag swap off."
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Press and hold ~INPUT_CONTEXT~ to spin the Lucky Wheel for a cost of $${cost}.",
-		spin_lucky_wheel_for_free = "Press and hold ~INPUT_CONTEXT~ to spin the Lucky Wheel for free. You have one free spin left for today.",
-		unable_to_spin_lucky_wheel = "Sorry, habibi. You've already spun the Lucky Wheel as much as you're allowed to today. Come back later for another try!",
-		unable_to_spin_lucky_wheel_time = "Ya Allah! You've already spun the Lucky Wheel as much as you're allowed to today. Try again in ${displayTime}.",
-		lucky_wheel_is_occupied = "Uh-oh, habibi. The Lucky Wheel is already being used right now. Please wait patiently for your turn.",
+		hold_to_spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. The cost is $${cost}.",
+		hold_to_spin_lucky_wheel_free_one_left = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. You have 1 free spin left today.",
+		hold_to_spin_lucky_wheel_free_multiple_left = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. You have ${spins} free spins left today.",
+		continue_holding_to_spin_lucky_wheel = "Continue holding ~INPUT_CONTEXT~ to spin the Lucky Wheel.",
+		unable_to_spin_lucky_wheel = "Sorry Habibi, you have already spun the Lucky Wheel as much as you can today. Try again after ${time}.",
 		not_enough_balance_to_spin = "Oops! You don't have enough money to spin the wheel. Each spin costs $${cost}.",
+		lucky_wheel_is_occupied = "Uh-oh, habibi. The Lucky Wheel is already being used right now. Please wait patiently for your turn.",
+
 		logs_lucky_wheel_reward_title = "Lucky Wheel Reward",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} has spun the wheel and won a vehicle.",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} has received a vehicle with model name `${modelName}` from their lucky wheel spin.",
 		logs_lucky_wheel_reward_money_details = "${consoleName} has spun the wheel and won $${amount}.",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} spun the wheel and won $${amount} worth of chips. Mashallah!",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} has spun the wheel and won jewelry with the name `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} has spun the wheel and won an item with the name `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} has spun the wheel and won one week of queue priority."
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		server_tps = "Failed to automatically generate translation.",
 		server_tps_response = "${tps}",
 		license_copied = "تم نسخ الترخيص بنجاح إلى الحافظة.",
-		uptime = " الوقت الإجمالي للخادم: ${uptime}"
+		uptime = " الوقت الإجمالي للخادم: ${uptime}",
+
+		picture_no_url = "Missing URL. Please provide a valid URL to proceed.",
+		picture_invalid_url = "Invalid URL. Please ensure your URL starts with https://",
+		picture_no_description = "Missing description. Please provide a description for the picture.",
+		picture_failed = "Sorry Habibi, we couldn't create the picture. Please try again later, insha'Allah.",
+
+		auto_run_already_set_to = "Auto-run is already set to control ${controlId}. Keep on gaming, my friend!",
+		auto_run_already_unset = "Auto-run is already unset ya habibi.",
+		auto_run_set_to = "Auto-run ba'a set to control ${controlId} ya habibi.",
+		auto_run_unset = "Auto-run ba'a unset ya habibi.",
+
+		invalid_server_id = "Invalid server ID ya habibi.",
+		walk_forwards_success = "Successfully toggled walking forwards for ${displayName} ya habibi.",
+		walk_forwards_failed = "Failed to toggle walking forwards for ${displayName} ya habibi."
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "Khilari shockwave banane ki koshish kar raha tha magar us ke paas munasib ijazat nahin thi.",
+		push_player_missing_permissions = "Ya habibi, player attempted to push a player but they didn't have the required permissions.",
 		shockwave_success = "Shockwave successfully created.",
-		shockwave_failed = "Failed to create shockwave."
+		shockwave_failed = "Failed to create shockwave.",
+
+		invalid_server_id = "Invalid server ID ya habibi.",
+		push_player_success = "Player pushed successfully, Habibi.",
+		push_player_failed = "Sorry, unable to push player, Habibi."
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		you_are_in_a_vehicle = "أنت حاليا في سيارة.",
 		hotwired_vehicle_with_plate_number = "تم تشغيل سيارة ذات اللوحة '${plateNumber}'.",
 		unable_to_hotwire_vehicle = "لا يمكن تشغيل سيارة بوساطة التماس الكهربائي.",
-		picked_up_keys = "المفاتيح التي تخص السيارة `${plate}` تم أخذها."
+		picked_up_keys = "المفاتيح التي تخص السيارة `${plate}` تم أخذها.",
+		invalid_server_id = "Invalid server ID, Habibi.",
+		hotwired_vehicle_for_player = "Habibi, ${displayName} has successfully hotwired the vehicle they are in."
 	},
 
 	modifications = {

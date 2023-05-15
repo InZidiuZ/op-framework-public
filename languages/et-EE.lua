@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["et-EE"] = {
 	-- configuration settings for language
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		watching_feature = "Jälgimine",
 		fortnite_feature = "Fortnite",
 		reflection_feature = "Kahju Peegeldamine",
+		stable_cam_feature = "Stabiilne Kaamera",
 
 		you_are_not_in_a_vehicle = "Sa pole sõidukis.",
 		repaired_vehicle = "Sõiduk parandatud.",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		unable_to_enter_vehicle_while_dead = "Surnuna ei saa sõidukisse siseneda.",
 		the_closest_vehicle_had_no_free_seats = "Lähim sõiduk polnud vabade kohtadega.",
 		there_are_no_nearby_vehicles = "Läheduses ei ole ühtegi sõidukit.",
+		vehicle_not_found_network = "Sõidukit võrgu ID-ga ei leitud.",
 		entered_vehicle = "Üritas sisse minna lähedalasuvasse sõidukisse ${vehicleName}.",
 
 		set_vehicle_modifications_logs_title = "Määra sõiduki modifikatsioonid",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		enter_vehicle_command = "sisse",
 		enter_vehicle_command_help = "Sunnib teie mängijat sõidukisse sisenema, mis on teile lähim (teeb teid väljumiseks sõidukist, kui olete selles).",
+		enter_vehicle_command_parameter_network_id = "võrgu ID",
+		enter_vehicle_command_parameter_network_id_help = "Sõiduki võrgu ID, millele soovite siseneda. (valikuline)",
 		enter_vehicle_command_substitutes = "sv",
 
 		set_modification_command = "seadista_modifikatsioon",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		detection_area_remove_command_parameter_area_id = "tuvastusala id",
 		detection_area_remove_command_parameter_area_id_help = "Eemaldatava vaatlusalaga seotud ID.",
 		detection_area_remove_command_substitutes = "ala_eemalda",
+
+		screen_text_debug_command = "ekraanitekst_debug",
+		screen_text_debug_command_help = "Ekraaniteksti välistamise ristkülikute silumine.",
+		screen_text_debug_command_substitutes = "ekraanitekst",
 
 		-- base/commands
 		help_command = "abi",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 		cache_assets_command_parameter_slow_download = "aeglane allalaadimine",
 		cache_assets_command_parameter_slow_download_help = "Kas soovite andmeid aeglaselt alla laadida? See võtab kaua aega, kuid vähendab kokkujooksmise riski.",
 		cache_assets_command_substitutes = "andmepuhver_allalaadimine, eelkäivituse_allalaadimine, laadi_puhver",
+
+		-- game/camera
+		stable_cam_command = "stabiilne_cam",
+		stable_cam_command_help = "Stabiliseeritud kaamera sisse/välja lülitamine.",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "kauba_alustamine",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 		fake_id_command_parameter_female_help = "Määrab väärtuse tõeks, kui soovite naistunnistust meestunnistuse asemel.",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/lipp_vahetus",
+		flag_swap_command_help = "Vahetab serveri ulatuses 'lippude vahetuse' ürituse sisse/lülita see välja.",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "tee_jõuväli",
 		create_forcefield_command_help = "Loo jõuväli oma praeguses asukohas.",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["et-EE"] = {
 		no_copyright_command_help = "See käsk keelab kõik potentsiaalselt autoriõigustega kaitstud helid raamistikust, kui see on lubatud.",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "pilt",
+		picture_command_help = "Loo muudetava pildiga ese",
+		picture_command_parameter_url = "url",
+		picture_command_parameter_url_help = "Pildi URL",
+		picture_command_parameter_description = "kirjeldus",
+		picture_command_parameter_description_help = "Pildi kirjeldus",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "Võta serveri hetkeline TPS.",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["et-EE"] = {
 		uptime_command = "uptime",
 		uptime_command_help = "Kontrolli serveri tööaega.",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "automaatjooks",
+		auto_run_command_help = "Seab automaatjooksu klahvipuute.",
+		auto_run_command_parameter_control_id = "kontrolli id",
+		auto_run_command_parameter_control_id_help = "Kontrolli ID, mille soovite siduda automaatse jooksuga.",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "käi_edasi",
+		walk_forwards_command_help = "Paneb sind või teise mängija automaatselt edasi liikuma (proovides takistusi vältida).",
+		walk_forwards_command_parameter_server_id = "serveri id",
+		walk_forwards_command_parameter_server_id_help = "Mängija serveri id, keda soovite käima panna.",
+		walk_forwards_command_parameter_sprint = "sprint",
+		walk_forwards_command_parameter_sprint_help = "Kas mängija peaks jooksma edasi liikudes. (Vaikimisi: false)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "raha",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["et-EE"] = {
 		create_shockwave_command_parameter_radius_help = "Põrutuslaine raadius (1 - 100).",
 		create_shockwave_command_substitutes = "põrutuslaine",
 
+		push_player_command = "tõuka_mängijat",
+		push_player_command_help = "Mängija või tema autosõiduki tõukamine sinust eemale.",
+		push_player_command_parameter_server_id = "server id",
+		push_player_command_parameter_server_id_help = "Mängija serveri ID.",
+		push_player_command_substitutes = "tõuka",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "joonista_seened_ala",
 		draw_shroom_areas_command_help = "Joonista kõik seened alad ja lisa rohkem.",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		local_entities_debug_command_help = "Lülita sisse/välja kohalike objektide silumisrežiim.",
 		local_entities_debug_command_substitutes = "lobjektid",
 
-		no_ped_population_areas_debug_command = "no_ped_populatsiooni_alad",
+		no_ped_population_areas_debug_command = "ei_ped_asustatud_piirkondi_debug",
 		no_ped_population_areas_debug_command_help = "Lülita sisse/välja 'no ped population areas' silumisrežiim.",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		hotwire_vehicle_command = "autosse_sissejuhtimine",
 		hotwire_vehicle_command_help = "Kävitab sisse mootori sõidukis, kus viibite.",
+		hotwire_vehicle_command_parameter_server_id = "serveri ID",
+		hotwire_vehicle_command_parameter_server_id_help = "Muudab mängija juhitud sõiduki koheselt varastatuks.",
 		hotwire_vehicle_command_substitutes = "hotwire",
 
 		pickup_keys_command = "korja_võtmed",
@@ -4245,7 +4293,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		material_vendor = "Materjalide müüja",
 		pdm = "Premium Deluxe Motorsport",
 		ls_customs = "Los Santos Customs",
-		jewelry_store = "Vangelico ehete kauplus",
+		jewelry_store = "Vangelico Juveelipood",
 		pd_air_hq = "Politsei õhuväe peakorter",
 		pd_sea_hq = "Politsei mereväe peakorter",
 		ems_air_hq = "KIIRABI õhuväe peakorter",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["et-EE"] = {
 		crafted_gas_grenade = "Gaasi granaat valmistatud.",
 		failed_craft_gas_grenade = "Gaasi granaadi valmistamine ebaõnnestus.",
 
+		break_apart_ring = "Lahuta sõrmus",
+		press_break_apart_ring = "[${SeatEjectKey}] Lahuta sõrmus",
+		breaking_ring = "Sõrmuse lahtiharutamine",
+		broke_ring = "Sõrmus lahtiharutatud.",
+		failed_break_ring = "Sõrmuse lahtiharutamine ebaõnnestus.",
+
 		no_required_items = "Sul pole kõiki vajalikke esemeid.",
 
 		debug_multi = "-Mitmed väljundid-",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] Lase ilutulestikku"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "Üritati lippude vahetust sisse lülitada ilma korralike õigusteta.",
+
+		toggled_flag_swap_on = "Vahetuslippude lülitamine sisse.",
+		toggled_flag_swap_off = "Põrandaaluse lipu vahetus välja lülitatud."
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["et-EE"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Hoidke ~INPUT_CONTEXT~, et keerutada Õnnelikku Ratast. Hind on $${cost}. ",
-		spin_lucky_wheel_for_free = "Hoidke ~INPUT_CONTEXT~, et keerutada Õnnelikku Ratast. Teil on täna üks tasuta keerutus jäänud.",
-		unable_to_spin_lucky_wheel = "Te olete juba täna õnneloosi keerutanud maksimaalselt lubatud arvu kordi. Tulge hiljem tagasi, et uuesti keerutada!",
-		unable_to_spin_lucky_wheel_time = "Te olete juba täna õnneloosi keerutanud maksimaalselt lubatud arvu kordi. Järgmine keerutus on saadaval ${displayTime}.",
-		lucky_wheel_is_occupied = "Õnneloos on praegu hõivatud. Palun oodake.",
+		hold_to_spin_lucky_wheel = "Hoia ~INPUT_CONTEXT~, et keerutada Õnnelikku Ratast. Hind on $${cost}.",
+		hold_to_spin_lucky_wheel_free_one_left = "Hoia ~INPUT_CONTEXT~, et keerutada Õnnelikku Ratast. Täna on sul veel 1 tasuta keerutus jäänud.",
+		hold_to_spin_lucky_wheel_free_multiple_left = "Hoia ~INPUT_CONTEXT~, et keerutada Õnnelikku Ratast. Täna on sul ${spins} tasuta keerutust jäänud.",
+		continue_holding_to_spin_lucky_wheel = "Jätka ~INPUT_CONTEXT~ hoimist, et keerutamist jätkata.",
+		unable_to_spin_lucky_wheel = "Teil on juba täna Lucky Wheeli keerutamise maksimaalne piirarv kätte saadud. Järgmine keerutamine on saadav ${time} pärast.",
 		not_enough_balance_to_spin = "Teil pole piisavalt raha, et ratast keerutada. Hind on $${cost}.",
+		lucky_wheel_is_occupied = "Õnneloos on praegu hõivatud. Palun oodake.",
+
 		logs_lucky_wheel_reward_title = "Õnneloosi auhind",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} keeras õnneratast ja võitis sõiduki.",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} sai edukalt sõiduki mudeliga `${modelName}`.",
 		logs_lucky_wheel_reward_money_details = "${consoleName} keeras õnneratast ja võitis $${amount}.",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} keerutas ratast ja võitis $${amount} väärtuses plaate.",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} keeras õnneratast ja võitis ehte nimega `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} keeras õnneratast ja võitis eseme nimega `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} keerutas ratast ja võitis järjekorra prioriteedi üheks nädalaks."
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["et-EE"] = {
 		server_tps = "Serveri TPS",
 		server_tps_response = "${tps}",
 		license_copied = "Luba kopeeritud edukalt lõikelauale.",
-		uptime = "Lülitusaeg: ${uptime}"
+		uptime = "Lülitusaeg: ${uptime}",
+
+		picture_no_url = "Puuduv URL.",
+		picture_invalid_url = "URL on vale, see peab algama https://.",
+		picture_no_description = "Puuduv kirjeldus.",
+		picture_failed = "Pildi loomine ebaõnnestus.",
+
+		auto_run_already_set_to = "Auto-run on juba määratud kontrollile ${controlId}.",
+		auto_run_already_unset = "Automaatse jooksmise funktsioon on juba keelatud.",
+		auto_run_set_to = "Automaatse jooksmise funktsioon on seadistatud kontrollile ${controlId}.",
+		auto_run_unset = "Automaatse jooksmise funktsioon on nüüd keelatud.",
+
+		invalid_server_id = "Vigane serveri ID.",
+		walk_forwards_success = "Käimasoleva tegelase ${displayName} kõnni funktsioon edukalt vahetatud.",
+		walk_forwards_failed = "Ei õnnestunud vahetada käimasoleva tegelase ${displayName} kõnni funktsiooni."
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "Mängija üritas tekitada šokklainet, kuid tal polnud vajalikke õiguseid.",
+		push_player_missing_permissions = "Mängija üritas teist mängijat lükata, kuid tal ei olnud vajalikke õigusi.",
 		shockwave_success = "Šokklaine loomine õnnestus.",
-		shockwave_failed = "Ebaõnnestus šokklaine loomine."
+		shockwave_failed = "Ebaõnnestus šokklaine loomine.",
+
+		invalid_server_id = "Vigane serveri ID.",
+		push_player_success = "Mängija edukalt tõugatud.",
+		push_player_failed = "Mängija tõukamine ebaõnnestus."
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["et-EE"] = {
 		you_are_in_a_vehicle = "Sa oled hetkel sõidukis.",
 		hotwired_vehicle_with_plate_number = "Sõiduk numbrimärgiga '${plateNumber}' sai käivitatud ilma võtmeta.",
 		unable_to_hotwire_vehicle = "Ei saa sõidukit käivitada ilma võtmeta.",
-		picked_up_keys = "Korjasid üles võtmed sõidukile '${plate}'."
+		picked_up_keys = "Korjasid üles võtmed sõidukile '${plate}'.",
+		invalid_server_id = "Vigane serveri ID.",
+		hotwired_vehicle_for_player = "Tehnikaüksusel on nüüd ${displayName} tehnika üle kontroll ning see on kasutusvalmis."
 	},
 
 	modifications = {

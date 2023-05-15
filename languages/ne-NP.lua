@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["ne-NP"] = {
 	-- configuration settings for language
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		watching_feature = "देखिरहेको",
 		fortnite_feature = "फोर्टनाइट",
 		reflection_feature = "हानि प्रतिबिम्ब",
+		stable_cam_feature = "स्थिर क्याम",
 
 		you_are_not_in_a_vehicle = "तपाईं गाडीमा छैनन्।",
 		repaired_vehicle = "गाडी मर्मत गरिएको।",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		unable_to_enter_vehicle_while_dead = "तपाईं जीते नभएको अवस्थामा गाडीमा प्रवेश गर्न सक्नुहुन्न ।",
 		the_closest_vehicle_had_no_free_seats = "नजिकैको गाडीमा फ्री सीटहरू छैनन् ।",
 		there_are_no_nearby_vehicles = "नजिकमा कुनै गाडीहरू छैनन् ।",
+		vehicle_not_found_network = "नेटवर्क आईडीसहित गाडी फेला परेन।",
 		entered_vehicle = "नजिकको ${vehicleName}मा प्रवेश गर्न कोशिस गरिएको थियो ।",
 
 		set_vehicle_modifications_logs_title = "गाडी सुधारहरू सेट गरियो",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["ne-NP"] = {
 
 		enter_vehicle_command = "गाडीमा प्रवेश गर्नुहोस्",
 		enter_vehicle_command_help = "तपाईं जस्तो सबैभन्दा नजिकको गाडीमा प्रवेश गर्नुहोस् (तपाईं गाडीमा छन् भने बाहिर आउनुहुन्छ).",
+		enter_vehicle_command_parameter_network_id = "नेटवर्क आईडी",
+		enter_vehicle_command_parameter_network_id_help = "तपाईंले चढ्न चाहनु भएको गाडीको नेटवर्क आईडी। (वैकल्पिक)",
 		enter_vehicle_command_substitutes = "ईभी",
 
 		set_modification_command = "मोडिफिकेशन सेट गर्नुहोस्",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		detection_area_remove_command_parameter_area_id = "पत्तन क्षेत्र आईडी",
 		detection_area_remove_command_parameter_area_id_help = "हटाउन चाहनु भएको जाँच क्षेत्रको ID।",
 		detection_area_remove_command_substitutes = "क्षेत्र_हटाउनु",
+
+		screen_text_debug_command = "screen_text_debug",
+		screen_text_debug_command_help = "स्क्रीन-टेक्स्ट अपवर्जन रेक्टेंगलहरू डिबग गर्नुहोस्।",
+		screen_text_debug_command_substitutes = "screen_text",
 
 		-- base/commands
 		help_command = "मद्दत",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		cache_assets_command_parameter_slow_download = "धीमिलो डाउनलोड",
 		cache_assets_command_parameter_slow_download_help = "के तपाईं एसेटहरू स्लो रुपमा क्यास गर्न चाहनुहुन्छ? यसले काफी लामो समय लिन्छ, तर क्र्याश भएको चान्स पनि कम गर्दछ।",
 		cache_assets_command_substitutes = "download_cache, preload_cache, load_cache",
+
+		-- game/camera
+		stable_cam_command = "स्थिर क्याम",
+		stable_cam_command_help = "स्थिर क्याम टगल गर्नुहोस्।",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "कार्गो_सुरु_गर्नुहोस्",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		fake_id_command_parameter_female_help = "यदि तपाईं महिला नागरिकता कार्ड चाहनुहुन्छ भने सत्य भन्दा सेट गर्नुहोस्।",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/flag_swap",
+		flag_swap_command_help = "सर्भर-व्यापी 'फ्लैग बदल्ने' सचिवता सक्षम/असक्षम पार्ट्य टगल गर्नुहोस्।",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
 		create_forcefield_command_help = "तपाईंको हालको स्थानमा एक बल फिल्ड सिर्जना गर्दछ।",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		no_copyright_command_help = "यो कमाण्ड सक्षम गरेमा फ्रेमवर्कबाट सम्भवतः कपिराइट भएका सबै आवाजहरूलाई अक्षम गर्नेछ।",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "तस्वीर",
+		picture_command_help = "एक कस्टम तस्वीर URL संग एक तस्वीर आइटम्स्पान बोक्छा।",
+		picture_command_parameter_url = "url",
+		picture_command_parameter_url_help = "तस्वीर URL।",
+		picture_command_parameter_description = "विवरण",
+		picture_command_parameter_description_help = "तस्वीर विवरण।",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "सर्भरको वर्तमान TPS प्राप्त गर्नुहोस्।",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		uptime_command = "समय संचालन",
 		uptime_command_help = "सर्भरको समय संचालन हेर्नुहोस्।",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "आटो रन",
+		auto_run_command_help = "आटो-रन सेट गर्नुको लागि एक कीबाइन्ड।",
+		auto_run_command_parameter_control_id = "कंट्रोल आईडी",
+		auto_run_command_parameter_control_id_help = "आप ऑटो-रन से बाइंड करना चाहते हैं।",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "आगे चलें",
+		walk_forwards_command_help = "आप या किसी अन्य खिलाड़ी को स्वचालित रूप से आगे चलने के लिए मजबूर करता है (जबकि आप बाधाओं से बचने का प्रयास करते हैं)।",
+		walk_forwards_command_parameter_server_id = "सर्वर आईडी",
+		walk_forwards_command_parameter_server_id_help = "उस खिलाड़ी का सर्वर आईडी जिसे आप आगे बढ़ते देखना चाहते हैं।",
+		walk_forwards_command_parameter_sprint = "स्प्रिंट",
+		walk_forwards_command_parameter_sprint_help = "के खिलाडी अगाडि हिँड़्दा स्प्रिन्ट गर्नुपर्छ कि नपर्छ। (पूर्वनिर्धारित: गलत)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "नगद",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		create_shockwave_command_parameter_radius_help = "शॉकवेवको त्रिज्या (१ - १००)।",
 		create_shockwave_command_substitutes = "शॉकवेव",
 
+		push_player_command = "प्लेयर धक्का दिनुहोस्",
+		push_player_command_help = "एक खिलाडी वा वाहनलाई आफ्नो बाटोबाट टाढा धक्का दिनुहोस्।",
+		push_player_command_parameter_server_id = "सर्भर आईडी",
+		push_player_command_parameter_server_id_help = "खिलाडीको सर्भर आईडी।",
+		push_player_command_substitutes = "धक्का",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "draw_shroom_areas",
 		draw_shroom_areas_command_help = "सबै श्रूम क्षेत्रहरू देखाउनुहोस् र अझ थप थप्नुहोस्।",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		local_entities_debug_command_help = "स्थानीय सत्ताहरूको डिबग टगल गर्नुहोस्।",
 		local_entities_debug_command_substitutes = "lentities",
 
-		no_ped_population_areas_debug_command = "no_ped_population_asreas_debug",
+		no_ped_population_areas_debug_command = "कुनै पेड घनत्व क्षेत्र सहजलाई फुच्छे",
 		no_ped_population_areas_debug_command_help = "'कुनै पेड नेपाली एरियामा नभएको' डिबगर टगल गर्नुहोस्।",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["ne-NP"] = {
 
 		hotwire_vehicle_command = "hotwire_vehicle",
 		hotwire_vehicle_command_help = "तपाईं भएको गाडी तत्काल हट्वायर गर्नुहोस्।",
+		hotwire_vehicle_command_parameter_server_id = "सर्भर आईडी",
+		hotwire_vehicle_command_parameter_server_id_help = "अर्को खेलाडीलाई झटपट गाडी चोरी गर्नुहोस्।",
 		hotwire_vehicle_command_substitutes = "hotwire", -- गर्म वाहन कमान प्रतिस्थापनहरू = "हटवायर",
 
 		pickup_keys_command = "pickup_keys", -- चाबिहरू पिक अप कमान = "पासको गाडीको चाबि हात लिनुहोस्",
@@ -4245,7 +4293,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		material_vendor = "सामग्री विक्रेता",
 		pdm = "प्रीमियम डीलक्स मोटरस्पोर्ट",
 		ls_customs = "लॉस संतोस कस्टम्स",
-		jewelry_store = "व्यंगेलिको ज्वेलरी",
+		jewelry_store = "भेन्ग्लिको ज्वेलरी",
 		pd_air_hq = "पुलिस एयर हेड क्वार्टर्स",
 		pd_sea_hq = "पुलिस सी हेड क्वार्टर्स",
 		ems_air_hq = "इमरजेन्सी मेडिकल सर्विस एअर हेड क्वार्टर्स",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		crafted_gas_grenade = "ग्यास ग्रेनेड बनाइयो।",
 		failed_craft_gas_grenade = "ग्यास ग्रेनेड बनाउन असफल भयो।",
 
+		break_apart_ring = "छोडेर जाने अङ्गूठी",
+		press_break_apart_ring = "[${SeatEjectKey}] अङ्गूठी छोड्नुहोस्",
+		breaking_ring = "अङ्गूठी सट्टा पारिजात हुँदैछ।",
+		broke_ring = "अङ्गूठी छोडिएको छ।",
+		failed_break_ring = "अङ्गूठी छोड्न सकिएन।",
+
 		no_required_items = "तपाईंसँग सबै आवश्यक वस्तुहरु छैनन्।",
 
 		debug_multi = "- बहुमुखी उत्पादनहरू -",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["ne-NP"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] फायर फायरवर्क"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "उचित अनुमतिहरू नभएको साथ, झण्डा विनिमय टगल गर्न कोशिस गरिएको थियो।",
+
+		toggled_flag_swap_on = "झण्डा विनिमय अन को ठेगानामा राखियो।",
+		toggled_flag_swap_off = "ध्वज बदल बन्द गरियो।"
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["ne-NP"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ बटन हामीलाई Lucky Wheel मा घुमाउनुहोस्। कुल बाला $${cost} हो।",
-		spin_lucky_wheel_for_free = "Hold ~INPUT_CONTEXT~ बटन हामीलाई Lucky Wheel मा घुमाउनुहोस्। तपाईंलाई आज त एक बार नि:शुल्क घुमाउनको लागी छ।",
-		unable_to_spin_lucky_wheel = "तपाईंलाई आज लकी व्हील अस्पिन गर्न अनुमति छैन। पछि फेरी आउनुहोस्!",
-		unable_to_spin_lucky_wheel_time = "तपाईंलाई आज लकी व्हील अस्पिन गर्न अनुमति छैन। अर्को स्पिनको लागि ${displayTime} पछि उपलब्ध हुनेछ।",
-		lucky_wheel_is_occupied = "लकी व्हील वर्तमानमा कुनै पनि प्रयोगवद्ध छ। कृपया पर्खनुहोस्।",
+		hold_to_spin_lucky_wheel = "होल्ड ~INPUT_CONTEXT~ गर्नुहोस् लकी व्हील स्पिन गर्न। किस्ता $${cost}।",
+		hold_to_spin_lucky_wheel_free_one_left = "होल्ड ~INPUT_CONTEXT~ गर्नुहोस् लकी व्हील स्पिन गर्न। तपाईंको आज 1 निःशुल्क स्पिन वाका छन्।",
+		hold_to_spin_lucky_wheel_free_multiple_left = "होल्ड ~INPUT_CONTEXT~ गर्नुहोस् लकी व्हील स्पिन गर्न। तपाईंलाई ${spins} निःशुल्क स्पिन म्याद बाँकी छन्।",
+		continue_holding_to_spin_lucky_wheel = "~INPUT_CONTEXT~ जारी राख्न लकी व्हील स्पिन गर्नुहोस्।",
+		unable_to_spin_lucky_wheel = "तपाईंले आज यो भाग्यशाली चक्र अरु बाट हेर्न सक्नु भएको संख्या सम्पूर्ण गरेका छन्। ${time} पछि अर्को चक्र उपलब्ध हुनेछ।",
 		not_enough_balance_to_spin = "तपाईंलाई चाक अस्पिन गर्न पर्ने धन पर्याप्त छैन। किन्तु यो लगत ${cost} हो।",
+		lucky_wheel_is_occupied = "लकी व्हील वर्तमानमा कुनै पनि प्रयोगवद्ध छ। कृपया पर्खनुहोस्।",
+
 		logs_lucky_wheel_reward_title = "लकी व्हील ईनाम",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} ले चक्की घुमाएर एक गाडी जित्यो।",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} लाई मोडेल नाम `${modelName}` भएको गाडी सफलतापूर्वक दिइएको छ।",
 		logs_lucky_wheel_reward_money_details = "${consoleName} ले चक्की घुमाएर $${amount} जित्यो।",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} चक्र हेर्दै दम्फत जित्नुभएको छ र चिप्स रू ${amount} को मूल्य छ।",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} ले चक्की घुमाएर `${itemName}` नामक आभूषण जित्यो।",
 		logs_lucky_wheel_reward_item_details = "${consoleName} ले चक्की घुमाएर `${itemName}` नामक एक वस्तु जित्यो।",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} व्हिल पल्टेर वर्तमान सप्ताहको कतार अग्रता जित्यो।"
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		server_tps = "सर्भर TPS",
 		server_tps_response = "${tps}",
 		license_copied = "लाइसेन्स सफलतापूर्वक क्लिपबोर्डमा कपी गरियो।",
-		uptime = "अपटाइम: ${uptime}"
+		uptime = "अपटाइम: ${uptime}",
+
+		picture_no_url = "URL विरामी छ।",
+		picture_invalid_url = "अमान्य url, https:// देखि सुरु हुनुपर्छ।",
+		picture_no_description = "विवरण विरामी छ।",
+		picture_failed = "तस्विर बनाउन असफल भयो।",
+
+		auto_run_already_set_to = "अटो चलाउने योजना हेराएको छ र ${controlId} मा नियन्त्रण अधिकार छ।",
+		auto_run_already_unset = "ऑटो-रन पहिलेनै सेट नभएको छ।",
+		auto_run_set_to = "${controlId} कन्ट्रोलमा ऑटो-रन सेट गरियो।",
+		auto_run_unset = "ऑटो-रन सेटिङको सेटिङ हटाइयो।",
+
+		invalid_server_id = "अवैध सर्भर आईडी।",
+		walk_forwards_success = "${displayName} को लागि सफलतापूर्वक अगाडि टाढा चलाउन सकेको।",
+		walk_forwards_failed = "${displayName} को लागि अगाडि टाढा चलाउन असफल भयो।"
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["ne-NP"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "खिलाडीले शकवेभ तयार गर्ने कोशिश गर्नु भएको छ, तर उनीहरुलाई आवश्यक अनुमति छैन।",
+		push_player_missing_permissions = "खेलाडीले अरु खेलाडीलाई धक्का दिन चाहेको तर पर्मिशन नभएको थियो।",
 		shockwave_success = "शकवेभ सफलतापूर्वक तयार गरियो।",
-		shockwave_failed = "शकवेभ तयार गर्न सकिएन।"
+		shockwave_failed = "शकवेभ तयार गर्न सकिएन।",
+
+		invalid_server_id = "अवैध सर्भर आईडी।",
+		push_player_success = "खेलाडी सफलतापूर्वक धक्का दिएको।",
+		push_player_failed = "खेलाडीलाई धक्का दिन असफल भयो।"
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		you_are_in_a_vehicle = "तपाईं वर्तमानमा एक गाडीमा छन्।",
 		hotwired_vehicle_with_plate_number = "${plateNumber} नम्बर प्लेट वाली गाडीलाई हटवाएको।",
 		unable_to_hotwire_vehicle = "गाडी हटाउन सकिएन।",
-		picked_up_keys = "${plate} को चाभि उठाएको।"
+		picked_up_keys = "${plate} को चाभि उठाएको।",
+		invalid_server_id = "अमान्य सर्भर आईडी।",
+		hotwired_vehicle_for_player = "${displayName}ले जसले होतवायर गरेको छ, त्यो गाडीमा सफलतापूर्वक होतवायर गरियो।"
 	},
 
 	modifications = {

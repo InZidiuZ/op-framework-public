@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		watching_feature = "Kijken",
 		fortnite_feature = "Fortnite",
 		reflection_feature = "Schade Reflectie",
+		stable_cam_feature = "Stabiele Cam",
 
 		you_are_not_in_a_vehicle = "Je zit niet in een voertuig.",
 		repaired_vehicle = "Voertuig gerepareerd.",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		unable_to_enter_vehicle_while_dead = "Je kunt geen voertuig betreden terwijl je dood bent.",
 		the_closest_vehicle_had_no_free_seats = "Het dichtstbijzijnde voertuig had geen vrije zitplaatsen.",
 		there_are_no_nearby_vehicles = "Er zijn geen voertuigen in de buurt.",
+		vehicle_not_found_network = "Voertuig met netwerk-ID niet gevonden.",
 		entered_vehicle = "Poging tot betreden van de nabije ${vehicleName}.",
 
 		set_vehicle_modifications_logs_title = "Voertuig Aanpassingen Setten",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		enter_vehicle_command = "invoeren_voertuig",
 		enter_vehicle_command_help = "Dwing je speler om in het dichtstbijzijnde voertuig te stappen (maakt je gedwongen de auto te verlaten als je al in een auto zit).",
+		enter_vehicle_command_parameter_network_id = "netwerk-ID",
+		enter_vehicle_command_parameter_network_id_help = "Netwerk-ID van het voertuig waarin je wilt stappen. (optioneel)",
 		enter_vehicle_command_substitutes = "iv",
 
 		set_modification_command = "set_modificatie",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		detection_area_remove_command_parameter_area_id = "ID van detectiegebied",
 		detection_area_remove_command_parameter_area_id_help = "Het ID van het detectiegebied dat je wilt verwijderen.",
 		detection_area_remove_command_substitutes = "area_verwijderen",
+
+		screen_text_debug_command = "screen_text_debug",
+		screen_text_debug_command_help = "Bekijk de uitsluitingsrechthoeken van de screen-text voor debuggen.",
+		screen_text_debug_command_substitutes = "screen_text",
 
 		-- base/commands
 		help_command = "help",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		cache_assets_command_parameter_slow_download = "langzaam downloaden",
 		cache_assets_command_parameter_slow_download_help = "Wil je de assets langzaam downloaden? Dit zal de download veel langer maken maar zal ook de kans op crashes verminderen.",
 		cache_assets_command_substitutes = "download_cache, preload_cache, load_cache",
+
+		-- game/camera
+		stable_cam_command = "stabiele_cam",
+		stable_cam_command_help = "Schakelt de stabiele cam in of uit.",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "cargo_start",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		fake_id_command_parameter_female_help = "Stel dit in op true als je een vrouwelijke ID-kaart wilt in plaats van een mannelijke.",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/vlag_ruilen",
+		flag_swap_command_help = "Schakel het server-brede 'vlag ruil' evenement in of uit.",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "maak_forcefield",
 		create_forcefield_command_help = "Maakt een forcefield op jouw huidige positie.",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		no_copyright_command_help = "Deze opdracht zal alle potentieel auteursrechtelijk beschermde geluiden uitgeschakelen die uit het framework komen wanneer deze is ingeschakeld.",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "afbeelding",
+		picture_command_help = "Genereert een afbeelding-item met een aangepaste URL.",
+		picture_command_parameter_url = "url",
+		picture_command_parameter_url_help = "De URL van de afbeelding.",
+		picture_command_parameter_description = "beschrijving",
+		picture_command_parameter_description_help = "De beschrijving van de afbeelding.",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "Krijg de huidige TPS van de server.",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		uptime_command = "uptime",
 		uptime_command_help = "Controleer de uptime van de server.",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "auto_ren",
+		auto_run_command_help = "Stel een sneltoets in voor automatisch rennen.",
+		auto_run_command_parameter_control_id = "bedienings-id",
+		auto_run_command_parameter_control_id_help = "De bedienings-ID waaraan u het automatisch rennen wilt binden.",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "vooruit_lopen",
+		walk_forwards_command_help = "Laat u of een andere speler automatisch vooruitlopen (terwijl u probeert obstakels te vermijden).",
+		walk_forwards_command_parameter_server_id = "server-id",
+		walk_forwards_command_parameter_server_id_help = "De server-id van de speler die u automatisch vooruit wilt laten lopen.",
+		walk_forwards_command_parameter_sprint = "rennen",
+		walk_forwards_command_parameter_sprint_help = "Of de speler moet rennen tijdens het vooruit lopen. (Standaard: false)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "geld",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		create_shockwave_command_parameter_radius_help = "De straal van de schokgolf (1 - 100).",
 		create_shockwave_command_substitutes = "shockgolf",
 
+		push_player_command = "duw_speler",
+		push_player_command_help = "Duw een speler of het voertuig waarin ze zitten weg van jou.",
+		push_player_command_parameter_server_id = "server id",
+		push_player_command_parameter_server_id_help = "De server id van de speler.",
+		push_player_command_substitutes = "duw",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "teken_shroom_gebieden",
 		draw_shroom_areas_command_help = "Teken alle shroom gebieden en voeg er meer toe.",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		local_entities_debug_command_help = "Schakel het debuggen van lokale entiteiten in of uit.",
 		local_entities_debug_command_substitutes = "lentiteiten",
 
-		no_ped_population_areas_debug_command = "no_ped_populatiegebieden_debug",
+		no_ped_population_areas_debug_command = "geen_ped_populatiegebieden_debug",
 		no_ped_population_areas_debug_command_help = "Schakel de 'geen ped populatiegebieden' debugger in of uit.",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		hotwire_vehicle_command = "voertuig_hacken",
 		hotwire_vehicle_command_help = "Het voertuig waar je in zit direct hacken.",
+		hotwire_vehicle_command_parameter_server_id = "server id",
+		hotwire_vehicle_command_parameter_server_id_help = "Maakt het voor een andere speler mogelijk om het voertuig waarin ze zich bevinden direct te starten.",
 		hotwire_vehicle_command_substitutes = "starten",
 
 		pickup_keys_command = "sleutels_oprapen",
@@ -4245,7 +4293,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		material_vendor = "Materiaal Leverancier",
 		pdm = "Premium Deluxe Motorsport",
 		ls_customs = "Los Santos Customs",
-		jewelry_store = "Vangelico Juwelier",
+		jewelry_store = "Vangelico-juwelier",
 		pd_air_hq = "Politie Luchthaven HQ",
 		pd_sea_hq = "Politie Zee HQ",
 		ems_air_hq = "EMS Luchthaven HQ",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		crafted_gas_grenade = "Gasgranaat gemaakt.",
 		failed_craft_gas_grenade = "Gasgranaat maken mislukt.",
 
+		break_apart_ring = "Scheid ringen",
+		press_break_apart_ring = "[${SeatEjectKey}] Ringen scheiden",
+		breaking_ring = "Ringen scheiden",
+		broke_ring = "Ringen uit elkaar gescheiden.",
+		failed_break_ring = "Het scheiden van de ringen is mislukt.",
+
 		no_required_items = "Je hebt niet alle benodigde items.",
 
 		debug_multi = "-Meerdere output-",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] Schiet vuurwerk af"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "Er is geprobeerd de vlagwisselingen te wijzigen zonder de juiste toestemming.",
+
+		toggled_flag_swap_on = "Vlagwisselingen zijn gewijzigd.",
+		toggled_flag_swap_off = "Vlag-'swap' uitgezet."
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Houd ~INPUT_CONTEXT~ ingedrukt om het Lucky Wheel te draaien. De kosten bedragen $${cost}.",
-		spin_lucky_wheel_for_free = "Houd ~INPUT_CONTEXT~ ingedrukt om het Lucky Wheel te draaien. U heeft vandaag nog één gratis draai over.",
-		unable_to_spin_lucky_wheel = "Je hebt vandaag al zoveel spins gedaan als toegestaan op het Lucky Wheel. Kom later terug voor een nieuwe kans!",
-		unable_to_spin_lucky_wheel_time = "Je hebt vandaag al zoveel spins gedaan als toegestaan op het Lucky Wheel. Volgende spin beschikbaar in ${displayTime}.",
-		lucky_wheel_is_occupied = "Het Lucky Wheel is momenteel bezet. Wacht alstublieft.",
+		hold_to_spin_lucky_wheel = "Houd ~INPUT_CONTEXT~ vast om het Lucky Wheel te draaien. Kosten zijn $${cost}.",
+		hold_to_spin_lucky_wheel_free_one_left = "Houd ~INPUT_CONTEXT~ vast om het Lucky Wheel te draaien. Je hebt vandaag nog 1 gratis spin over.",
+		hold_to_spin_lucky_wheel_free_multiple_left = "Houd ~INPUT_CONTEXT~ vast om het Lucky Wheel te draaien. Je hebt vandaag nog ${spins} gratis spins over.",
+		continue_holding_to_spin_lucky_wheel = "Blijf ~INPUT_CONTEXT~ vasthouden om het Lucky Wheel te blijven draaien.",
+		unable_to_spin_lucky_wheel = "Je hebt vandaag al zo vaak als toegestaan de Lucky Wheel gedraaid. Volgende draai beschikbaar na ${time}.",
 		not_enough_balance_to_spin = "Je hebt niet genoeg geld om het wiel te draaien. De kosten zijn $${cost}.",
+		lucky_wheel_is_occupied = "Het Lucky Wheel is momenteel bezet. Wacht alstublieft.",
+
 		logs_lucky_wheel_reward_title = "Lucky Wheel Beloning",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} heeft aan het rad gedraaid en heeft een voertuig gewonnen.",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} heeft succesvol een voertuig ontvangen met modelnaam `${modelName}`.",
 		logs_lucky_wheel_reward_money_details = "${consoleName} heeft aan het rad gedraaid en heeft $${amount} gewonnen.",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} heeft aan het wiel gedraaid en $${amount} aan chips gewonnen.",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} heeft aan het rad gedraaid en heeft sieraden gewonnen met de naam `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} heeft aan het rad gedraaid en heeft een item gewonnen met de naam `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} heeft aan het wiel gedraaid en heeft een week lang voorrang in de wachtrij gewonnen."
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		server_tps = "Server TPS",
 		server_tps_response = "${tps}",
 		license_copied = "Licentie met succes gekopieerd naar klembord.",
-		uptime = "Downtijd: ${uptime}"
+		uptime = "Downtijd: ${uptime}",
+
+		picture_no_url = "URL ontbreekt.",
+		picture_invalid_url = "Ongeldige URL, moet beginnen met https://.",
+		picture_no_description = "Beschrijving ontbreekt.",
+		picture_failed = "Afbeelding kon niet worden gemaakt.",
+
+		auto_run_already_set_to = "Auto-run is al ingesteld op controle ${controlId}.",
+		auto_run_already_unset = "Automatische rennen staat al uit.",
+		auto_run_set_to = "Automatische rennen is ingesteld op toets ${controlId}.",
+		auto_run_unset = "Automatische rennen is uitgeschakeld.",
+
+		invalid_server_id = "Ongeldige server ID.",
+		walk_forwards_success = "Lopen voor ${displayName} is succesvol aan/uit gezet.",
+		walk_forwards_failed = "Lopen voor ${displayName} kan niet aan/uit gezet worden."
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "Speler probeerde een schokgolf te creëren maar had niet de vereiste toestemming.",
+		push_player_missing_permissions = "Een speler heeft geprobeerd een andere speler te duwen zonder de juiste toestemming.",
 		shockwave_success = "Schokgolf succesvol gecreëerd.",
-		shockwave_failed = "Kon schokgolf niet creëren."
+		shockwave_failed = "Kon schokgolf niet creëren.",
+
+		invalid_server_id = "Ongeldige server ID.",
+		push_player_success = "Speler succesvol geduwd.",
+		push_player_failed = "Kan speler niet duwen."
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		you_are_in_a_vehicle = "Je zit momenteel in een voertuig.",
 		hotwired_vehicle_with_plate_number = "Voertuig met kentekennummer '${plateNumber}' gestart zonder sleutel.",
 		unable_to_hotwire_vehicle = "Kan voertuig niet starten met hotwiring.",
-		picked_up_keys = "Sleutels opgepakt voor `${plate}`."
+		picked_up_keys = "Sleutels opgepakt voor `${plate}`.",
+		invalid_server_id = "Ongeldige server-ID.",
+		hotwired_vehicle_for_player = "${displayName} heeft succesvol het voertuig gestart waarin ze zaten."
 	},
 
 	modifications = {

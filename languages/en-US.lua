@@ -414,6 +414,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		watching_feature = "Watching",
 		fortnite_feature = "Fortnite",
 		reflection_feature = "Damage Reflection",
+		stable_cam_feature = "Stable Cam",
 
 		you_are_not_in_a_vehicle = "You are not in a vehicle.",
 		repaired_vehicle = "Repaired vehicle.",
@@ -440,6 +441,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		unable_to_enter_vehicle_while_dead = "You are unable to enter a vehicle while dead.",
 		the_closest_vehicle_had_no_free_seats = "The closest vehicle had no free seats.",
 		there_are_no_nearby_vehicles = "There are no nearby vehicles.",
+		vehicle_not_found_network = "Vehicle with network id not found.",
 		entered_vehicle = "Attempted to enter nearby ${vehicleName}.",
 
 		set_vehicle_modifications_logs_title = "Set Vehicle Modifications",
@@ -1198,6 +1200,8 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		enter_vehicle_command = "enter_vehicle",
 		enter_vehicle_command_help = "Force your player ped to enter the vehicle you are closest to (makes you exit the vehicle if you are in one).",
+		enter_vehicle_command_parameter_network_id = "network id",
+		enter_vehicle_command_parameter_network_id_help = "Network id of the vehicle you want to enter. (optional)",
 		enter_vehicle_command_substitutes = "ev",
 
 		set_modification_command = "set_modification",
@@ -1410,6 +1414,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		detection_area_remove_command_parameter_area_id = "detection area id",
 		detection_area_remove_command_parameter_area_id_help = "The ID of the detection area you are wanting to remove.",
 		detection_area_remove_command_substitutes = "area_remove",
+
+		screen_text_debug_command = "screen_text_debug",
+		screen_text_debug_command_help = "Debug the screen-text exclusion rectangles.",
+		screen_text_debug_command_substitutes = "screen_text",
 
 		-- base/commands
 		help_command = "help",
@@ -1632,6 +1640,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		cache_assets_command_parameter_slow_download = "slow download",
 		cache_assets_command_parameter_slow_download_help = "Do you want to cache the assets slowly? Doing that will make it take much longer, but will also reduce the chance of crashing.",
 		cache_assets_command_substitutes = "download_cache, preload_cache, load_cache",
+
+		-- game/camera
+		stable_cam_command = "stable_cam",
+		stable_cam_command_help = "Toggles the stable cam.",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "cargo_start",
@@ -2090,6 +2103,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		fake_id_command_parameter_female_help = "Set to true if you want a female citizen card instead of a male.",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/flag_swap",
+		flag_swap_command_help = "Toggle the server-wide 'flag swap' event.",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
 		create_forcefield_command_help = "Creates a forcefield at your current position.",
@@ -2502,6 +2520,14 @@ OP.Global.Locales.Languages["en-US"] = {
 		no_copyright_command_help = "This command will disable all potentially copyrighted sounds coming from the framework when enabled.",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "picture",
+		picture_command_help = "Spawns a picture item with a custom image URL.",
+		picture_command_parameter_url = "url",
+		picture_command_parameter_url_help = "The image url.",
+		picture_command_parameter_description = "description",
+		picture_command_parameter_description_help = "The picture description.",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "Get the server's current TPS.",
 		tps_command_substitutes = "",
@@ -2509,6 +2535,20 @@ OP.Global.Locales.Languages["en-US"] = {
 		uptime_command = "uptime",
 		uptime_command_help = "Check the uptime of the server.",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "auto_run",
+		auto_run_command_help = "Set a keybind for a auto-run.",
+		auto_run_command_parameter_control_id = "control id",
+		auto_run_command_parameter_control_id_help = "The control ID you would like to bind to auto-run.",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "walk_forwards",
+		walk_forwards_command_help = "Makes you or another player walk forwards automatically (while attempting to avoid obstacles).",
+		walk_forwards_command_parameter_server_id = "server id",
+		walk_forwards_command_parameter_server_id_help = "The server id of the player you want to make walk forwards.",
+		walk_forwards_command_parameter_sprint = "sprint",
+		walk_forwards_command_parameter_sprint_help = "Whether or not the player should sprint while walking forwards. (Default: false)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "cash",
@@ -2896,6 +2936,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		create_shockwave_command_parameter_radius_help = "The radius of the shockwave (1 - 100).",
 		create_shockwave_command_substitutes = "shockwave",
 
+		push_player_command = "push_player",
+		push_player_command_help = "Push a player or the vehicle they are in away from you.",
+		push_player_command_parameter_server_id = "server id",
+		push_player_command_parameter_server_id_help = "The server id of the player.",
+		push_player_command_substitutes = "push",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "draw_shroom_areas",
 		draw_shroom_areas_command_help = "Draw all shroom areas and add more.",
@@ -3201,7 +3247,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		local_entities_debug_command_help = "Toggle the debug for local entities.",
 		local_entities_debug_command_substitutes = "lentities",
 
-		no_ped_population_areas_debug_command = "no_ped_population_asreas_debug",
+		no_ped_population_areas_debug_command = "no_ped_population_areas_debug",
 		no_ped_population_areas_debug_command_help = "Toggle the 'no ped population areas' debugger.",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3363,6 +3409,8 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		hotwire_vehicle_command = "hotwire_vehicle",
 		hotwire_vehicle_command_help = "Instantly hotwire the vehicle you are in.",
+		hotwire_vehicle_command_parameter_server_id = "server id",
+		hotwire_vehicle_command_parameter_server_id_help = "Make another player instantly hotwire the vehicle they are in.",
 		hotwire_vehicle_command_substitutes = "hotwire",
 
 		pickup_keys_command = "pickup_keys",
@@ -4243,7 +4291,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		material_vendor = "Material Vendor",
 		pdm = "Premium Deluxe Motorsport",
 		ls_customs = "Los Santos Customs",
-		jewelry_store = "Vangelico Jewellery",
+		jewelry_store = "Vangelico Jewelry",
 		pd_air_hq = "Police Air HQ",
 		pd_sea_hq = "Police Sea HQ",
 		ems_air_hq = "EMS Air HQ",
@@ -5087,6 +5135,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		crafted_gas_grenade = "Crafted gas grenade.",
 		failed_craft_gas_grenade = "Failed to craft gas grenade.",
 
+		break_apart_ring = "Break Apart Ring",
+		press_break_apart_ring = "[${SeatEjectKey}] Break Apart Ring",
+		breaking_ring = "Breaking Apart Ring",
+		broke_ring = "Broke apart ring.",
+		failed_break_ring = "Failed to break apart ring.",
+
 		no_required_items = "You don't have all the required items.",
 
 		debug_multi = "-Multiple Outputs-",
@@ -5776,6 +5830,13 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] Fire Firework"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "Attempted to toggle flag swaps without proper permissions.",
+
+		toggled_flag_swap_on = "Toggled flag swap on.",
+		toggled_flag_swap_off = "Toggled flag swap off."
 	},
 
 	forcefields = {
@@ -8116,16 +8177,19 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. The cost is $${cost}.",
-		spin_lucky_wheel_for_free = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. You have one free spin left today.",
-		unable_to_spin_lucky_wheel = "You have already spun the Lucky Wheel as much as permitted today. Come back later for another spin!",
-		unable_to_spin_lucky_wheel_time = "You have already spun the Lucky Wheel as much as permitted today. Next spin available in ${displayTime}.",
-		lucky_wheel_is_occupied = "The Lucky Wheel is currently occupied. Please wait.",
+		hold_to_spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. The cost is $${cost}.",
+		hold_to_spin_lucky_wheel_free_one_left = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. You have 1 free spin left today.",
+		hold_to_spin_lucky_wheel_free_multiple_left = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. You have ${spins} free spins left today.",
+		continue_holding_to_spin_lucky_wheel = "Continue holding ~INPUT_CONTEXT~ to spin the Lucky Wheel.",
+		unable_to_spin_lucky_wheel = "You have already spun the Lucky Wheel as much as permitted today. Next spin available in ${time}.",
 		not_enough_balance_to_spin = "You do not have enough money to spin the wheel. The cost is $${cost}.",
+		lucky_wheel_is_occupied = "The Lucky Wheel is currently occupied. Please wait.",
+
 		logs_lucky_wheel_reward_title = "Lucky Wheel Reward",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} has spun the wheel and won a vehicle.",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} has been successfully given a vehicle with model name `${modelName}`.",
 		logs_lucky_wheel_reward_money_details = "${consoleName} has spun the wheel and won $${amount}.",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} has spun the wheel and won $${amount} worth of chips.",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} has spun the wheel and won jewelry with the name of `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} has spun the wheel and won an item with the name of `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} has spun the wheel and won one week of queue priority."
@@ -8334,7 +8398,21 @@ OP.Global.Locales.Languages["en-US"] = {
 		server_tps = "Server TPS",
 		server_tps_response = "${tps}",
 		license_copied = "Successfully copied license to clipboard.",
-		uptime = "Uptime: ${uptime}"
+		uptime = "Uptime: ${uptime}",
+
+		picture_no_url = "Missing url.",
+		picture_invalid_url = "Invalid url, has to start with https://.",
+		picture_no_description = "Missing description.",
+		picture_failed = "Failed to create picture.",
+
+		auto_run_already_set_to = "Auto-run is already set to control ${controlId}.",
+		auto_run_already_unset = "Auto-run is already unset.",
+		auto_run_set_to = "Auto-run has been set to control ${controlId}.",
+		auto_run_unset = "Auto-run has been unset.",
+
+		invalid_server_id = "Invalid server ID.",
+		walk_forwards_success = "Successfully toggled walking forwards for ${displayName}.",
+		walk_forwards_failed = "Failed to toggle walking forwards for ${displayName}."
 	},
 
 	money = {
@@ -9821,8 +9899,13 @@ OP.Global.Locales.Languages["en-US"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "Player attempted to create a shockwave but they didn't have the required permissions.",
+		push_player_missing_permissions = "Player attempted to push a player but they didn't have the required permissions.",
 		shockwave_success = "Successfully created shockwave.",
-		shockwave_failed = "Failed to create shockwave."
+		shockwave_failed = "Failed to create shockwave.",
+
+		invalid_server_id = "Invalid server ID.",
+		push_player_success = "Successfully pushed player.",
+		push_player_failed = "Failed to push player."
 	},
 
 	shooting_ranges = {
@@ -11095,7 +11178,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		you_are_in_a_vehicle = "You are currently in a vehicle.",
 		hotwired_vehicle_with_plate_number = "Hotwired vehicle with plate number '${plateNumber}'.",
 		unable_to_hotwire_vehicle = "Unable to hotwire vehicle.",
-		picked_up_keys = "Picked up keys for `${plate}`."
+		picked_up_keys = "Picked up keys for `${plate}`.",
+		invalid_server_id = "Invalid server ID.",
+		hotwired_vehicle_for_player = "Made ${displayName} hotwire the vehicle they are in."
 	},
 
 	modifications = {

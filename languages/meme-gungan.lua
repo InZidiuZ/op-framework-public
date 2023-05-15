@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["meme-gungan"] = {
 	-- configuration settings for language
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		watching_feature = "Watching (Unga)",
 		fortnite_feature = "Fortnite (Fugu)",
 		reflection_feature = "Damage Reflection",
+		stable_cam_feature = "Stable Cam",
 
 		you_are_not_in_a_vehicle = "Meesa no in a vehicle.",
 		repaired_vehicle = "Meesa fixa vehicle.",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		unable_to_enter_vehicle_while_dead = "Yousa unable to enter a vehicle while dead.",
 		the_closest_vehicle_had_no_free_seats = "Da closest vehicle had no free seats.",
 		there_are_no_nearby_vehicles = "There are no nearby vehicles.",
+		vehicle_not_found_network = "Meesa no findin da vehicle wit dat network id.",
 		entered_vehicle = "Attempted to enter nearby ${vehicleName}.",
 
 		set_vehicle_modifications_logs_title = "Set Vehicle Modifications",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		enter_vehicle_command = "oosa_vehicle",
 		enter_vehicle_command_help = "Mesa helps you enter the vehicle yousa closest to (makes yousa exit the vehicle if yousa already in one).",
+		enter_vehicle_command_parameter_network_id = "network id",
+		enter_vehicle_command_parameter_network_id_help = "Network id of da vehicle yousa wantin to enter. (optional)",
 		enter_vehicle_command_substitutes = "ev",
 
 		set_modification_command = "set_modification",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		detection_area_remove_command_parameter_area_id = "detection area id",
 		detection_area_remove_command_parameter_area_id_help = "Da ID of da detection area yousa be wantin' to remove.",
 		detection_area_remove_command_substitutes = "area_remove",
+
+		screen_text_debug_command = "screen_text_debug",
+		screen_text_debug_command_help = "Debug da screen-text exclusion rectangles.",
+		screen_text_debug_command_substitutes = "screen_text",
 
 		-- base/commands
 		help_command = "help",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		cache_assets_command_parameter_slow_download = "bongo slow download",
 		cache_assets_command_parameter_slow_download_help = "Mesa suggest yous cache the assets slowly? Doing that will make it take much longer, but will also reduce the chance of crashing.",
 		cache_assets_command_substitutes = "download_cache, preload_cache, load_cache",
+
+		-- game/camera
+		stable_cam_command = "stable_cam",
+		stable_cam_command_help = "Togglin da stable cam.",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "cargo_start",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		fake_id_command_parameter_female_help = "Set to true if yousa want a female citizen card instead of a male.",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/sleemo_swap",
+		flag_swap_command_help = "Mesa help yous toggle da servo-wide 'sleemo swap' event.",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
 		create_forcefield_command_help = "Mesa creates a forcefield at mesa current position.",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		no_copyright_command_help = "Dis command will disable all potentially copyrighted sounds coming from the framework when meesa enabled.",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "picture",
+		picture_command_help = "Spawns a picture item with a custom image URL.",
+		picture_command_parameter_url = "gloo url",
+		picture_command_parameter_url_help = "Da image gloo url.",
+		picture_command_parameter_description = "description",
+		picture_command_parameter_description_help = "Da picture description.",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "Get da server's current TPS.",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		uptime_command = "gun_upi",
 		uptime_command_help = "Mesa checkin' da upi-time of da server.",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "auto_run",
+		auto_run_command_help = "Set a keybind for a auto-run.",
+		auto_run_command_parameter_control_id = "controla id",
+		auto_run_command_parameter_control_id_help = "Da controla ID mesa lika usen gi bind geme auto-run.",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "Walka Forwarden",
+		walk_forwards_command_help = "Maken yousa o otra playen walken forwarden automaten (wilen attempten gi avoiden obstacles).",
+		walk_forwards_command_parameter_server_id = "server id",
+		walk_forwards_command_parameter_server_id_help = "Da server id mesa da playen binken gi walken forwarden.",
+		walk_forwards_command_parameter_sprint = "Sprinten",
+		walk_forwards_command_parameter_sprint_help = "Yousa wanting da player to sprint while walking forwards. (Default: false)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "feesaa",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		create_shockwave_command_parameter_radius_help = "Mesa radius o' da shockwave (1 - 100).",
 		create_shockwave_command_substitutes = "shockwave",
 
+		push_player_command = "push_player",
+		push_player_command_help = "Pushen a player or da vehicle dey issa in away from yousa.",
+		push_player_command_parameter_server_id = "server id",
+		push_player_command_parameter_server_id_help = "Da server id of da player.",
+		push_player_command_substitutes = "push",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "draw_shroom_areas",
 		draw_shroom_areas_command_help = "Draw all shroom areas and add more.",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		local_entities_debug_command_help = "Katah toogle debugen fo local entitiesen.",
 		local_entities_debug_command_substitutes = "lentities",
 
-		no_ped_population_areas_debug_command = "no_ped_population_asreas_debug",
+		no_ped_population_areas_debug_command = "no_ped_population_areas_debug",
 		no_ped_population_areas_debug_command_help = "Katah toogle de debugger fo 'no ped population areas'.",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		hotwire_vehicle_command = "hotwire_vehicle",
 		hotwire_vehicle_command_help = "Instantly hotwire da vehicle yousa are in.",
+		hotwire_vehicle_command_parameter_server_id = "server id",
+		hotwire_vehicle_command_parameter_server_id_help = "Mesa helpfully hotwire vehicle, yum.",
 		hotwire_vehicle_command_substitutes = "hotwire",
 
 		pickup_keys_command = "mesa_keys",
@@ -4245,7 +4293,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		material_vendor = "Material Vendor",
 		pdm = "Premium Deluxe Motorsport",
 		ls_customs = "Los Santos Customs",
-		jewelry_store = "Vangelico Jewellery",
+		jewelry_store = "Jewelry store from Vangelico",
 		pd_air_hq = "Police Air HQ",
 		pd_sea_hq = "Poopa Sea HQ",
 		ems_air_hq = "EMS Air Mui-mui",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		crafted_gas_grenade = "Mesah crafted gas grenade.",
 		failed_craft_gas_grenade = "Meesa couldn't make gas grenade.",
 
+		break_apart_ring = "Break ring into little pieces",
+		press_break_apart_ring = "[${SeatEjectKey}] Crush the ring!",
+		breaking_ring = "Breaking apart ring...",
+		broke_ring = "Ring all smashed up.",
+		failed_break_ring = "Me messed up, could not break ring.",
+
 		no_required_items = "You no have all the necessary items.",
 
 		debug_multi = "-Multiple outputs-",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] Fire Firework"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "Me no have permissions to swap flags.",
+
+		toggled_flag_swap_on = "Swapped flags, meesa did it.",
+		toggled_flag_swap_off = "Yousa turned off flag swap."
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. The cost is $${cost}.",
-		spin_lucky_wheel_for_free = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. Yousa have one free spin left today.",
-		unable_to_spin_lucky_wheel = "Meesa sorry, yousa already spun the Lucky Wheel as much as permitted today. Come back later for another spin!",
-		unable_to_spin_lucky_wheel_time = "Meesa sorry, yousa already spun the Lucky Wheel as much as permitted today. Next spin available in ${displayTime}.",
-		lucky_wheel_is_occupied = "The Lucky Wheel is currently occupied. Please wait.",
+		hold_to_spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. Da cost is $${cost}.",
+		hold_to_spin_lucky_wheel_free_one_left = "Hold ~INPUT_CONTEXT~ to spin da Lucky Wheel. Yousa have 1 free spin left today.",
+		hold_to_spin_lucky_wheel_free_multiple_left = "Hold ~INPUT_CONTEXT~ to spin da Lucky Wheel. Yousa have ${spins} free spins left today.",
+		continue_holding_to_spin_lucky_wheel = "Continue holding ~INPUT_CONTEXT~ to spin da Lucky Wheel.",
+		unable_to_spin_lucky_wheel = "Mesa sorry, yousa already spinned the Lucky Wheel as much as permitted today. Next spin available in ${time}.",
 		not_enough_balance_to_spin = "Meesa sorry, you do not have enough money to spin the wheel. The cost is $${cost}.",
+		lucky_wheel_is_occupied = "The Lucky Wheel is currently occupied. Please wait.",
+
 		logs_lucky_wheel_reward_title = "Lucky Wheel Reward",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} mesa spun da wheel an' won a vehicle.",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} mesa bombadly been given a vehicle wit da model name `${modelName}`.",
 		logs_lucky_wheel_reward_money_details = "${consoleName} mesa spun da wheel an' won $${amount}.",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} has spinned da wheel and won $${amount} worth of chips.",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} mesa spun da wheel an' won jewelry wit da name of `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} mesa spun da wheel an' won an item wit da name of `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} has spun da wheel and won one week of da queue priority."
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		server_tps = "Server TPS",
 		server_tps_response = "${tps}", --"${tps}",
 		license_copied = "Chisoo choppa da license.",
-		uptime = "Yusa uptime: ${uptime}."
+		uptime = "Yusa uptime: ${uptime}.",
+
+		picture_no_url = "Missing url. Yousa need to provide da url.",
+		picture_invalid_url = "Invalid url, has to start with https://. Mesa thinks dis url no good.",
+		picture_no_description = "Missing description. Yousa need to provide da description.",
+		picture_failed = "Failed to create picture. Mesa sorry.",
+
+		auto_run_already_set_to = "Auto-run is already set to control ${controlId}.",
+		auto_run_already_unset = "Auto-run isa unset bombad.",
+		auto_run_set_to = "Auto-run isa set to control ${controlId}.",
+		auto_run_unset = "Auto-run isa unset.",
+
+		invalid_server_id = "Mesa no understand server ID.",
+		walk_forwards_success = "Successfully toggled mesa walking forwards for ${displayName}.",
+		walk_forwards_failed = "Mesa failed to toggle walking forwards for ${displayName}."
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "Da player tryin' to create a shockwave but no have da required permissions.",
+		push_player_missing_permissions = "Mesa sorry, yousa need more permissions to push other players.",
 		shockwave_success = "Da boom boom been createden. Mesa so happy!",
-		shockwave_failed = "Uh oh, da boom boom didn't worken. Mesa sorry."
+		shockwave_failed = "Uh oh, da boom boom didn't worken. Mesa sorry.",
+
+		invalid_server_id = "Mesa no understand server ID.",
+		push_player_success = "Yousa pushed da playa successfully.",
+		push_player_failed = "Mesa sorry, da pushin' of da playa failed."
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		you_are_in_a_vehicle = "Yousa currently in a vehicle.",
 		hotwired_vehicle_with_plate_number = "Hotwired vehicle wesa plate number '${plateNumber}'.",
 		unable_to_hotwire_vehicle = "Mesa cant hotwire vehicle.",
-		picked_up_keys = "Mesa picked up keysen for `${plate}`."
+		picked_up_keys = "Mesa picked up keysen for `${plate}`.",
+		invalid_server_id = "Invalid server ID. Meesa no understand.",
+		hotwired_vehicle_for_player = "Made ${displayName} hotwire da vehicle theysa in."
 	},
 
 	modifications = {

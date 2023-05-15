@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["fr-FR"] = {
 	-- configuration settings for language
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		watching_feature = "Surveillance",
 		fortnite_feature = "Fortnite",
 		reflection_feature = "Réflexion des Dégâts",
+		stable_cam_feature = "Caméra stable",
 
 		you_are_not_in_a_vehicle = "Vous n'êtes pas dans un véhicule.",
 		repaired_vehicle = "Véhicule réparé.",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		unable_to_enter_vehicle_while_dead = "Vous ne pouvez pas entrer dans un véhicule lorsque vous êtes mort(e).",
 		the_closest_vehicle_had_no_free_seats = "Le véhicule le plus proche n'avait pas de siège libre.",
 		there_are_no_nearby_vehicles = "Il n'y a pas de véhicules à proximité.",
+		vehicle_not_found_network = "Véhicule avec l'identifiant réseau introuvable.",
 		entered_vehicle = "Tentative d'entrer dans le ${vehicleName} à proximité.",
 
 		set_vehicle_modifications_logs_title = "Définir les modifications de véhicule",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["fr-FR"] = {
 
 		enter_vehicle_command = "entrer_vehicule",
 		enter_vehicle_command_help = "Forcez votre personnage à entrer dans le véhicule le plus proche de vous (vous fait sortir du véhicule si vous en êtes déjà dedans).",
+		enter_vehicle_command_parameter_network_id = "identifiant réseau",
+		enter_vehicle_command_parameter_network_id_help = "Identifiant réseau du véhicule que vous voulez entrer. (facultatif)",
 		enter_vehicle_command_substitutes = "ev",
 
 		set_modification_command = "set_modification",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		detection_area_remove_command_parameter_area_id = "identifiant de la zone de détection",
 		detection_area_remove_command_parameter_area_id_help = "L'ID de la zone de détection que vous souhaitez supprimer.",
 		detection_area_remove_command_substitutes = "zone_suppr",
+
+		screen_text_debug_command = "debug_texte_écran",
+		screen_text_debug_command_help = "Déboguer les rectangles d'exclusion de texte à l'écran.",
+		screen_text_debug_command_substitutes = "texte_écran",
 
 		-- base/commands
 		help_command = "aide",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		cache_assets_command_parameter_slow_download = "téléchargement lent",
 		cache_assets_command_parameter_slow_download_help = "Voulez-vous télécharger les assets lentement ? Cela prendra beaucoup plus de temps, mais réduira également le risque de plantage.",
 		cache_assets_command_substitutes = "telechargement_cache, preload_cache, load_cache",
+
+		-- game/camera
+		stable_cam_command = "caméra_stable",
+		stable_cam_command_help = "Active ou désactive la caméra stable.",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "debut_cargo",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		fake_id_command_parameter_female_help = "Réglez sur vrai si vous souhaitez une carte d'identité de citoyenne au lieu d'un citoyen.",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/inversion_drapeau",
+		flag_swap_command_help = "Active ou désactive l'événement 'inversion de drapeaux' à l'échelle du serveur.",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "creer_champ_de_force",
 		create_forcefield_command_help = "Crée un champ de force à votre position actuelle.",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		no_copyright_command_help = "Cette commande désactivera tous les sons potentiellement soumis au droit d'auteur provenant du framework lorsqu'elle est activée.",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "photo",
+		picture_command_help = "Fait apparaître un objet 'photo' avec une URL d'image personnalisée.",
+		picture_command_parameter_url = "url",
+		picture_command_parameter_url_help = "L'URL de l'image.",
+		picture_command_parameter_description = "description",
+		picture_command_parameter_description_help = "La description de la photo.",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "Obtenir les TPS actuels du serveur.",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		uptime_command = "temps_de_fonctionnement",
 		uptime_command_help = "Vérifiez le temps de fonctionnement du serveur.",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "auto_course",
+		auto_run_command_help = "Définit un raccourci clavier pour la fonction 'auto-course'.",
+		auto_run_command_parameter_control_id = "identifiant de contrôle",
+		auto_run_command_parameter_control_id_help = "L'identifiant de contrôle que vous souhaitez associer à l'autorun.",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "marcher_en_avant",
+		walk_forwards_command_help = "Fait marcher automatiquement (tout en essayant d'éviter les obstacles) vous ou un autre joueur.",
+		walk_forwards_command_parameter_server_id = "identifiant de serveur",
+		walk_forwards_command_parameter_server_id_help = "L'identifiant de serveur du joueur que vous voulez faire marcher en avant.",
+		walk_forwards_command_parameter_sprint = "sprint",
+		walk_forwards_command_parameter_sprint_help = "Si le joueur doit ou non sprinter en marchant vers l'avant. (Défaut: false)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "argent",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		create_shockwave_command_parameter_radius_help = "Le rayon de l'onde de choc (1 - 100).",
 		create_shockwave_command_substitutes = "onde_de_choc",
 
+		push_player_command = "pousser_joueur",
+		push_player_command_help = "Pousse un joueur ou le véhicule dans lequel il se trouve loin de vous.",
+		push_player_command_parameter_server_id = "id serveur",
+		push_player_command_parameter_server_id_help = "L'identifiant serveur du joueur.",
+		push_player_command_substitutes = "pousser",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "dessiner_zones_de_champi",
 		draw_shroom_areas_command_help = "Dessine toutes les zones de champignons et ajoute-en davantage.",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		local_entities_debug_command_help = "Active/désactive le débogage des entités locales.",
 		local_entities_debug_command_substitutes = "lentites",
 
-		no_ped_population_areas_debug_command = "debug_zones_sans_ped",
+		no_ped_population_areas_debug_command = "zones_populations_sans_ped_debug",
 		no_ped_population_areas_debug_command_help = "Active/désactive le débogage des zones sans PNJ.",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["fr-FR"] = {
 
 		hotwire_vehicle_command = "pirater_vehicule",
 		hotwire_vehicle_command_help = "Démarre instantanément le véhicule dans lequel vous vous trouvez.",
+		hotwire_vehicle_command_parameter_server_id = "id serveur",
+		hotwire_vehicle_command_parameter_server_id_help = "Fait instantanément chauffer le moteur du véhicule dans lequel se trouve un autre joueur.",
 		hotwire_vehicle_command_substitutes = "forcer_demarreur",
 
 		pickup_keys_command = "ramasser_cles",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		crafted_gas_grenade = "Grenade lacrymogène fabriquée.",
 		failed_craft_gas_grenade = "La fabrication de grenade lacrymogène a échoué.",
 
+		break_apart_ring = "Casser la bague",
+		press_break_apart_ring = "[${SeatEjectKey}] Casser la bague",
+		breaking_ring = "Cassage de la bague",
+		broke_ring = "Bague cassée.",
+		failed_break_ring = "Impossible de casser la bague.",
+
 		no_required_items = "Vous n'avez pas tous les objets requis.",
 
 		debug_multi = "-Sorties multiples-",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["fr-FR"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] Lancer un feu d'artifice"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "Erreur: Permissions insuffisantes pour changer les drapeaux de swap.",
+
+		toggled_flag_swap_on = "Drapeaux de swap activés.",
+		toggled_flag_swap_off = "Le drapeau de permutation est désactivé."
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["fr-FR"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Appuyez sur ~INPUT_CONTEXT~ pour faire tourner la Roue de la Chance. Le coût est de $${cost}.",
-		spin_lucky_wheel_for_free = "Appuyez sur ~INPUT_CONTEXT~ pour faire tourner la Roue de la Chance. Vous avez une rotation gratuite aujourd'hui.",
-		unable_to_spin_lucky_wheel = "Vous avez déjà fait tourner la Roue de la Fortune autant de fois que permis aujourd'hui. Revenez plus tard pour une autre tentative!",
-		unable_to_spin_lucky_wheel_time = "Vous avez déjà fait tourner la Roue de la Fortune autant de fois que permis aujourd'hui. Prochain tour disponible dans ${displayTime}.",
-		lucky_wheel_is_occupied = "La Roue de la Fortune est actuellement en cours d'utilisation. Veuillez patienter.",
+		hold_to_spin_lucky_wheel = "Maintenez ~INPUT_CONTEXT~ pour faire tourner la Roue de la Chance. Le coût est de $${cost}.",
+		hold_to_spin_lucky_wheel_free_one_left = "Maintenez ~INPUT_CONTEXT~ pour faire tourner la Roue de la Chance. Il vous reste 1 rotation gratuite aujourd'hui.",
+		hold_to_spin_lucky_wheel_free_multiple_left = "Maintenez ~INPUT_CONTEXT~ pour faire tourner la Roue de la Chance. Il vous reste ${spins} rotations gratuites aujourd'hui.",
+		continue_holding_to_spin_lucky_wheel = "Continuez de maintenir ~INPUT_CONTEXT~ pour faire tourner la Roue de la Chance.",
+		unable_to_spin_lucky_wheel = "Vous avez déjà joué à la Roue de la Fortune le nombre maximal de fois autorisé aujourd'hui. Prochain tour disponible dans ${time}.",
 		not_enough_balance_to_spin = "Vous n'avez pas assez d'argent pour faire tourner la roue. Le coût est de $${cost}.",
+		lucky_wheel_is_occupied = "La Roue de la Fortune est actuellement en cours d'utilisation. Veuillez patienter.",
+
 		logs_lucky_wheel_reward_title = "Récompense de la Roue de la Fortune",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} a fait tourner la roue et a gagné un véhicule.",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} a reçu un véhicule avec le modèle `${modelName}`.",
 		logs_lucky_wheel_reward_money_details = "${consoleName} a fait tourner la roue et a gagné $$${amount}.",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} a joué à la roue et a gagné ${amount} $ de jetons.",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} a fait tourner la roue et a gagné des bijoux nommés `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} a fait tourner la roue et a gagné un objet nommé `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} a tourné la roue et a gagné une semaine de priorité dans la file d'attente."
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		server_tps = "TPS du serveur",
 		server_tps_response = "${tps}",
 		license_copied = "Licence copiée avec succès dans le presse-papiers.",
-		uptime = "Durée de fonctionnement : ${uptime}"
+		uptime = "Durée de fonctionnement : ${uptime}",
+
+		picture_no_url = "URL manquante.",
+		picture_invalid_url = "URL invalide, doit commencer par https://.",
+		picture_no_description = "Description manquante.",
+		picture_failed = "Impossible de créer l'image.",
+
+		auto_run_already_set_to = "L'auto-run est déjà réglé sur le contrôle ${controlId}.",
+		auto_run_already_unset = "La fonction de course automatique est déjà désactivée.",
+		auto_run_set_to = "La fonction de course automatique a été activée avec le contrôle ${controlId}.",
+		auto_run_unset = "La fonction de course automatique a été désactivée.",
+
+		invalid_server_id = "ID du serveur invalide.",
+		walk_forwards_success = "La marche avant a été activée avec succès pour ${displayName}.",
+		walk_forwards_failed = "Impossible d'activer la marche avant pour ${displayName}."
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["fr-FR"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "Le joueur a tenté de créer une onde de choc mais il n'avait pas les permissions requises.",
+		push_player_missing_permissions = "Un joueur a tenté de pousser un autre joueur sans les permissions requises.",
 		shockwave_success = "Onde de choc créée avec succès.",
-		shockwave_failed = "Impossible de créer l'onde de choc."
+		shockwave_failed = "Impossible de créer l'onde de choc.",
+
+		invalid_server_id = "ID du serveur invalide.",
+		push_player_success = "Joueur poussé avec succès.",
+		push_player_failed = "Impossible de pousser le joueur."
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		you_are_in_a_vehicle = "Vous êtes actuellement dans un véhicule.",
 		hotwired_vehicle_with_plate_number = "Démarrage à chaud du véhicule avec le numéro de plaque '${plateNumber}'.",
 		unable_to_hotwire_vehicle = "Impossible de démarrer le véhicule à chaud.",
-		picked_up_keys = "Clés récupérées pour `${plate}`."
+		picked_up_keys = "Clés récupérées pour `${plate}`.",
+		invalid_server_id = "ID de serveur invalide.",
+		hotwired_vehicle_for_player = "${displayName} a mis le contact du véhicule dans lequel il se trouve."
 	},
 
 	modifications = {

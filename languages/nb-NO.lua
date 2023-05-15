@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["nb-NO"] = {
 	-- configuration settings for language
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		watching_feature = "Overvåking",
 		fortnite_feature = "Fortnite",
 		reflection_feature = "Skadedemping",
+		stable_cam_feature = "Stabil Kamera",
 
 		you_are_not_in_a_vehicle = "Du er ikke i et kjøretøy.",
 		repaired_vehicle = "Kjøretøyet er reparert.",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		unable_to_enter_vehicle_while_dead = "Du kan ikke gå inn i et kjøretøy mens du er død.",
 		the_closest_vehicle_had_no_free_seats = "Det nærmeste kjøretøyet hadde ingen ledige seter.",
 		there_are_no_nearby_vehicles = "Det er ingen kjøretøy i nærheten.",
+		vehicle_not_found_network = "Finner ikke kjøretøy med tilkoblings-id.",
 		entered_vehicle = "Forsøkte å gå inn i kjøretøy i nærheten: ${vehicleName}.",
 
 		set_vehicle_modifications_logs_title = "Angi kjøretøy endringer",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		enter_vehicle_command = "gå_inn_i_kjøretøy",
 		enter_vehicle_command_help = "Tving spilleren din til å gå inn i det kjøretøyet du er nærmest (lar deg gå ut av kjøretøyet hvis du allerede er i et).",
+		enter_vehicle_command_parameter_network_id = "tilkoblings-id",
+		enter_vehicle_command_parameter_network_id_help = "Tilkoblings-id til kjøretøyet du vil entre. (valgfritt)",
 		enter_vehicle_command_substitutes = "gik",
 
 		set_modification_command = "sett_modifikasjon",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		detection_area_remove_command_parameter_area_id = "deteksjonsområde-id",
 		detection_area_remove_command_parameter_area_id_help = "ID-en til deteksjonsområdet du vil fjerne.",
 		detection_area_remove_command_substitutes = "område_fjern",
+
+		screen_text_debug_command = "screen_text_debug",
+		screen_text_debug_command_help = "Debug skjevelinjer for skjermtekst-utelukkelse.",
+		screen_text_debug_command_substitutes = "screen_text",
 
 		-- base/commands
 		help_command = "hjelp",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		cache_assets_command_parameter_slow_download = "treg nedlasting",
 		cache_assets_command_parameter_slow_download_help = "Vil du laste ned ressursene sakte? Dette vil ta mye lengre tid, men vil også redusere sjansen for krasj.",
 		cache_assets_command_substitutes = "last_ned_cache, forhåndslast_cache, last_cache",
+
+		-- game/camera
+		stable_cam_command = "stabil_kam",
+		stable_cam_command_help = "Veksler stabil kamera-modus.",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "cargo_start",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		fake_id_command_parameter_female_help = "Sett til true hvis du vil ha et kvinnenøkkelkort i stedet for et mannsnøkkelkort.",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/flaggbytte",
+		flag_swap_command_help = "Aktiverer/På av/på serverens 'flaggbytte'-event.",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "lag_forcefield",
 		create_forcefield_command_help = "Oppretter en kraftfelt på gjeldende posisjon.",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		no_copyright_command_help = "Denne kommandoen deaktiverer alle lyder som potensielt kan være beskyttet av opphavsrett i rammeverket når den er aktivert.",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "bilde",
+		picture_command_help = "Lager et bilde-objekt med en tilpasset bilde-URL.",
+		picture_command_parameter_url = "url",
+		picture_command_parameter_url_help = "Bilde-URLen.",
+		picture_command_parameter_description = "beskrivelse",
+		picture_command_parameter_description_help = "Bildeforklaringen.",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "Få gjeldende TPS for serveren.",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		uptime_command = "opptid",
 		uptime_command_help = "Sjekk serverens oppetid.",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "auto_løp",
+		auto_run_command_help = "Angir en hurtigtast for automatisert løping.",
+		auto_run_command_parameter_control_id = "kontroll id",
+		auto_run_command_parameter_control_id_help = "Kontroll-ID som du vil binde auto-run til.",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "gå_fremover",
+		walk_forwards_command_help = "Får deg eller en annen spiller til å gå framover automatisk (mens du prøver å unngå hinder).",
+		walk_forwards_command_parameter_server_id = "server-id",
+		walk_forwards_command_parameter_server_id_help = "Spillerens server-ID du vil få til å gå framover. ",
+		walk_forwards_command_parameter_sprint = "sprint",
+		walk_forwards_command_parameter_sprint_help = "Om spilleren skal sprinte mens de går fremover. (Standard: false)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "kontanter",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		create_shockwave_command_parameter_radius_help = "Radiusen på sjokkbølgen (1 - 100).",
 		create_shockwave_command_substitutes = "sjokkbølge",
 
+		push_player_command = "dytt_spiller",
+		push_player_command_help = "Dytt en spiller eller kjøretøyet de er i bort fra deg.",
+		push_player_command_parameter_server_id = "server id",
+		push_player_command_parameter_server_id_help = "Server-IDen til spilleren.",
+		push_player_command_substitutes = "dytt",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "tegn_sopp_områder",
 		draw_shroom_areas_command_help = "Tegn alle sopp-områder og legg til flere.",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		local_entities_debug_command_help = "Skru på eller av debugging for lokale objekter.",
 		local_entities_debug_command_substitutes = "lobjekter",
 
-		no_ped_population_areas_debug_command = "ingen_person_populasjons_områder_debug",
+		no_ped_population_areas_debug_command = "ingen_folk_populasjonsområder_debug",
 		no_ped_population_areas_debug_command_help = "Skru på eller av debugging for 'ingen person populasjonsområder'.",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		hotwire_vehicle_command = "hotwire_kjøretøy",
 		hotwire_vehicle_command_help = "Raskt tenne på motoren i kjøretøyet du er i.",
+		hotwire_vehicle_command_parameter_server_id = "server id",
+		hotwire_vehicle_command_parameter_server_id_help = "Gjør at en annen spiller øyeblikkelig kan starte en uautorisert start av kjøretøyet de er i.",
 		hotwire_vehicle_command_substitutes = "hotwire",
 
 		pickup_keys_command = "plukk_opp_nøkler",
@@ -4245,7 +4293,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		material_vendor = "Materiellforhandler",
 		pdm = "Premium Deluxe Motorsport",
 		ls_customs = "Los Santos Customs",
-		jewelry_store = "Vangelico Smykker",
+		jewelry_store = "Vangelico Jewelry",
 		pd_air_hq = "Politiets Luft HQ",
 		pd_sea_hq = "Politiets Sjø HQ",
 		ems_air_hq = "Ambulansefly HQ",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		crafted_gas_grenade = "Har laget gassgranat.",
 		failed_craft_gas_grenade = "Kunne ikke lage gassgranat.",
 
+		break_apart_ring = "Bryt fra hverandre ringen",
+		press_break_apart_ring = "[${SeatEjectKey}] Bryt fra hverandre ringen",
+		breaking_ring = "Bryter fra hverandre ringen",
+		broke_ring = "Brøt fra hverandre ringen.",
+		failed_break_ring = "Kunne ikke bryte fra hverandre ringen.",
+
 		no_required_items = "Du har ikke alle nødvendige gjenstander.",
 
 		debug_multi = "-Flere utganger-",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] Fyrverkeri"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "Forsøkte å veksle flaggutvekslinger uten tilstrekkelige tillatelser.",
+
+		toggled_flag_swap_on = "Vekslet flaggutvekslinger på.",
+		toggled_flag_swap_off = "Byttet flaggbytte av."
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ for å spinne lykkehjulet. Prisen er $${cost}.",
-		spin_lucky_wheel_for_free = "Hold ~INPUT_CONTEXT~ for å spinne lykkehjulet. Du har én gratis spinn igjen i dag.",
-		unable_to_spin_lucky_wheel = "Du har allerede snurret lykkehjulet så mye som tillatt i dag. Kom tilbake senere for å snurre igjen!",
-		unable_to_spin_lucky_wheel_time = "Du har allerede snurret lykkehjulet så mye som tillatt i dag. Neste spinn er tilgjengelig om ${displayTime}.",
-		lucky_wheel_is_occupied = "Lykkehjulet er for øyeblikket opptatt. Vennligst vent.",
+		hold_to_spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ for å spinne Lykkehjulet. Kostnaden er $${cost}.",
+		hold_to_spin_lucky_wheel_free_one_left = "Hold ~INPUT_CONTEXT~ for å spinne Lykkehjulet. Du har 1 gratis spinn igjen i dag.",
+		hold_to_spin_lucky_wheel_free_multiple_left = "Hold ~INPUT_CONTEXT~ for å spinne Lykkehjulet. Du har ${spins} gratis spinn igjen i dag.",
+		continue_holding_to_spin_lucky_wheel = "Fortsett å holde ~INPUT_CONTEXT~ for å spinne Lykkehjulet.",
+		unable_to_spin_lucky_wheel = "Du har allerede spunnet Lykkehjulet så mye som tillatt i dag. Neste spinn tilgjengelig om ${time}.",
 		not_enough_balance_to_spin = "Du har ikke nok penger til å snurre hjulet. Kostnaden er $${cost}.",
+		lucky_wheel_is_occupied = "Lykkehjulet er for øyeblikket opptatt. Vennligst vent.",
+
 		logs_lucky_wheel_reward_title = "Lykkehjulets premie",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} har spunnet hjulet og vunnet et kjøretøy.",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} har blitt gitt et kjøretøy med modellnavn `${modelName}`.",
 		logs_lucky_wheel_reward_money_details = "${consoleName} har spunnet hjulet og vunnet $${amount}.",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} har spunnet hjulet og vunnet $${amount} med chips.",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} har spunnet hjulet og vunnet smykker med navnet `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} har spunnet hjulet og vunnet en gjenstand med navnet `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} har spunnet lykkehjulet og vant en uke med køprioritet."
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		server_tps = "Server TPS",
 		server_tps_response = "${tps}",
 		license_copied = "Lisensen er kopiert til utklippstavlen.",
-		uptime = "Oppetid: ${uptime}"
+		uptime = "Oppetid: ${uptime}",
+
+		picture_no_url = "Mangler URL.",
+		picture_invalid_url = "Ugyldig URL, må starte med https://.",
+		picture_no_description = "Mangler beskrivelse.",
+		picture_failed = "Kunne ikke opprette bilde.",
+
+		auto_run_already_set_to = "Automatisk kjøring er allerede satt til å kontrollere ${controlId}.",
+		auto_run_already_unset = "Auto-kjøring er allerede avslått.",
+		auto_run_set_to = "Auto-kjøring er satt til å kontrollere ${controlId}.",
+		auto_run_unset = "Auto-kjøring har blitt avslått.",
+
+		invalid_server_id = "Ugyldig server-ID.",
+		walk_forwards_success = "Toggling av å gå fremover for ${displayName} var vellykket.",
+		walk_forwards_failed = "Toggling av å gå fremover for ${displayName} mislyktes."
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "Spilleren prøvde å lage en sjokkbølge, men hadde ikke de nødvendige tillatelsene.",
+		push_player_missing_permissions = "Spilleren forsøkte å dytte en annen spiller, men de hadde ikke de nødvendige tillatelsene.",
 		shockwave_success = "Sjokkbølge opprettet.",
-		shockwave_failed = "Kunne ikke opprette sjokkbølge."
+		shockwave_failed = "Kunne ikke opprette sjokkbølge.",
+
+		invalid_server_id = "Ugyldig server-ID.",
+		push_player_success = "Spilleren ble vellykket dyttet.",
+		push_player_failed = "Kunne ikke dytte spilleren."
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		you_are_in_a_vehicle = "Du er for øyeblikket i et kjøretøy.",
 		hotwired_vehicle_with_plate_number = "Startet kjøretøy med registreringsnummer '${plateNumber}'.",
 		unable_to_hotwire_vehicle = "Kunne ikke starte kjøretøy.",
-		picked_up_keys = "Plukket opp nøkler for `${plate}`."
+		picked_up_keys = "Plukket opp nøkler for `${plate}`.",
+		invalid_server_id = "Ugyldig server-ID.",
+		hotwired_vehicle_for_player = "${displayName} har varmet opp kjøretøyet de sitter i."
 	},
 
 	modifications = {

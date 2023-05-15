@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["bn-BD"] = {
 	-- configuration settings for language
@@ -16,8 +16,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		system = "সিস্টেম",
 		warning = "সতর্কতা",
 		invalid_input = "অবৈধ ইনপুট।",
-		missing_input = "ইনপুট নেই।",
-		player_not_found = "সার্ভার আইডি দিয়ে খেলোয়াড় খুঁজে পাওয়া যায় নি। `${serverId}`।",
+		missing_input = "ইনপুট অনুপস্থিত।",
+		player_not_found = "সার্ভার আইডি দিয়ে প্লেয়ার খুঁজে পাওয়া যায় নি। `${serverId}`।",
 		something_went_wrong = "কিছু একটা ভুল হয়েছে। আবার চেষ্টা করুন।",
 		yes = "হ্যাঁ",
 		no = "না"
@@ -25,49 +25,49 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 	-- animations/*
 	emotes = {
-		get_in_trunk = "ট্রাঙ্কে ঢুকতে ~INPUT_ENTER~ চাপুন।",
-		put_boombox_in_trunk = "ট্রাঙ্কে বুমবক্স নিতে ~INPUT_ENTER~ চাপুন।",
-		put_player_in_trunk = "ট্রাঙ্কে খেলোয়াড় নিতে ~INPUT_ENTER~ চাপুন।",
+		get_in_trunk = "ট্রাঙ্কে প্রবেশ করতে ~INPUT_ENTER~ চাপুন।",
+		put_boombox_in_trunk = "ট্রাঙ্কে বুমবক্স রাখতে ~INPUT_ENTER~ চাপুন।",
+		put_player_in_trunk = "ট্রাঙ্কে প্লেয়ার রাখতে ~INPUT_ENTER~ চাপুন।",
 		put_player_in_seat = "[${VehicleEnterKey}] সিটে বসাতে",
-		trunk_interaction_display = "[${VehicleEnterKey}] বাইরে পড়ুন [${InteractionKey}] ট্রাঙ্ক খোলুন / বন্ধ করুন",
-		trunk_open_close_display = "[${InteractionKey}] ট্রাঙ্ক খোলুন / বন্ধ করুন",
+		trunk_interaction_display = "[${VehicleEnterKey}] বাইরে আরোহণ [${InteractionKey}] ট্রাঙ্ক খুলুন / বন্ধ করুন",
+		trunk_open_close_display = "[${InteractionKey}] ট্রাঙ্ক খুলুন / বন্ধ করুন",
 		boombox_already_in_trunk = "ট্রাঙ্কে ইতিমধ্যে একটি বুমবক্স রয়েছে।",
-		the_trunk_is_occupied = "ট্রাঙ্ক অধিকৃত আছে।",
-		unable_to_toggle_carry = "ক্রমবর্ধমানে ক্যারি আঁশটি বাদ দেওয়া হয়েছে।",
-		carry_disabled_animal = "প্রাণী পেড় ক্যারি করতে পারেন না।",
+		the_trunk_is_occupied = "ট্রাঙ্ক ইতিমধ্যে দখলকৃত রয়েছেে।",
+		unable_to_toggle_carry = "বহন করার আগে একটু অপেক্ষা করুন।",
+		carry_disabled_animal = "প্রাণী NPC বহন করা যাবে না।",
 
 		cancel_piggyback = "পিগিব্যাক বাতিল করতে ~INPUT_FRONTEND_RRIGHT~ চাপুন।",
 		piggyback_hop_on = "[${InteractionKey}] হপ অন",
-		stop_piggyback = "পিগিব্যাকিং থেকে বাদ দেওয়ার জন্য ~INPUT_VEH_HEADLIGHT~ চাপুন।",
+		stop_piggyback = "পিগিব্যাক বন্ধ করার জন্য ~INPUT_VEH_HEADLIGHT~ চাপুন।",
 
-		lockpicking_cuffs = "লকপিকিং হ্যান্ডকাফস",
-		lockpick_cuffs_too_fast = "আপনি অত্যন্ত দ্রুত চলে গেলেন।",
-		success_lockpick_cuffs = "হ্যান্ডকাফস সফলভাবে লকপিক করা হয়েছে।",
-		failed_lockpick_cuffs = "হ্যান্ডকাফস লকপিক করতে ব্যর্থ হয়েছে।",
+		lockpicking_cuffs = "হাতকড়া লকপিকিং করা হচ্ছে",
+		lockpick_cuffs_too_fast = "আপনি অত্যন্ত দ্রুত সরে গেলেন।",
+		success_lockpick_cuffs = "হাতকড়া সফলভাবে লকপিক করা হয়েছে।",
+		failed_lockpick_cuffs = "হাতকড়া লকপিক করতে ব্যর্থ হয়েছে।",
 		lockpick_lost = "আপনি আপনার লকপিক হারিয়ে ফেলেছেন।",
 
-		not_cuffed = "আপনি হ্যান্ডকাফস করা হয় নি।",
-		unable_to_lockpick = "আপনি হ্যান্ডকাফস লকপিক করতে অক্ষম।",
+		not_cuffed = "আপনি হাতকড়া পরানো নয়।",
+		unable_to_lockpick = "আপনি হাতকড়া লকপিক করতে অক্ষম।",
 
-		lockpick_cuffs_logs_title = "লকপিক হ্যান্ডকাফস",
-		lockpick_cuffs_logs_details = "${consoleName} একটি `${itemName}` ব্যবহার করে তাদের হ্যান্ডকাফস সফলভাবে লকপিক করেছেন।",
+		lockpick_cuffs_logs_title = "হাতকড়া লকপিকিং করা হচ্ছে",
+		lockpick_cuffs_logs_details = "${consoleName} একটি `${itemName}` ব্যবহার করে তাদের হাতকড়া সফলভাবে লকপিক করেছেন।",
 
-		you_are_not_being_carried = "আপনি বর্তমানে বহিত হয়নি।",
-		successfully_uncarried = "সাফল্যের সাথে বহন থেমে দেওয়া হয়েছে।",
+		you_are_not_being_carried = "আপনি বর্তমানে বহনকৃত নন।",
+		successfully_uncarried = "সাফল্যের সাথে বহন বন্ধ করা হয়েছে।",
 		failed_uncarried = "বহন স্থগিত করতে ব্যর্থ হয়েছে।",
-		uncarry_missing_permissions = "অপ্রয়োজনীয় অনুমতিহীন বহন স্থগিত করার চেষ্টা করা হয়েছে।",
+		uncarry_missing_permissions = "প্রয়োজনীয় অনুমতি ছাড়া বহন স্থগিত করার চেষ্টা করা হয়েছে।",
 
 		uncarry_logs_title = "বহন স্থগিত করুন",
-		uncarry_logs_details = "${consoleName} ${targetName} কে বহন থেমে দিয়েছেন।",
+		uncarry_logs_details = "${consoleName} ${targetName} কে বহন করা থেমে দিয়েছেন।",
 
-		failed_carry_npc = "NPC বহন করতে ব্যর্থ হয়েছে।",
-		carry_npc_something_wrong = "পেড় বহন করার চেষ্টা করার সময় কিছু সমস্যা হয়েছে।",
+		failed_carry_npc = "NPC কে বহন করতে ব্যর্থ হয়েছে।",
+		carry_npc_something_wrong = "NPC বহন করার সময় কিছু সমস্যা হয়েছে।",
 
-		e_to_struggle = "সংঘর্ষের জন্য E চাপুন",
-		cant_struggle_dead = "মৃত্যুবরণে আপনি সংঘর্ষ করতে পারবেন না।",
-		struggle_to_quick = "আপনি সংঘর্ষে নেমে পরিশ্রমী অনুভব করছেন, একটু অপেক্ষা করুন এবং পরে আবার চেষ্টা করুন।",
-		struggle_logs_title = "সংঘর্ষের ফলে মুক্তি পেলেন",
-		struggle_logs_details = "${consoleName} একজন ${targetName} এর থেকে মুক্তি পেলে সংঘর্ষ করেছেন।"
+		e_to_struggle = "বহনকৃত অবস্থা হতে বেরিয়ে আসার জন্য E চাপুন",
+		cant_struggle_dead = "আহত অবস্থায় আপনি বহনকৃত অবস্থা হতে বেরিয়ে আসতে পারবেন না।",
+		struggle_to_quick = "আপনি বহনকৃত অবস্থা থেকে বেরিয়ে আসার চেষ্টা করার পরে ক্লান্ত বোধ করছেন, একটু অপেক্ষা করুন এবং আবার চেষ্টা করুন।",
+		struggle_logs_title = "বহনকৃত অবস্থা থেকে মুক্তি পেলেন",
+		struggle_logs_details = "${consoleName}, ${targetName} এর বহনকৃত অবস্থা থেকে মুক্তি লাভ করেছেন।"
 	},
 
 	-- base/*
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		watching_feature = "দেখছে",
 		fortnite_feature = "ফর্টনাইট",
 		reflection_feature = "ক্ষতি প্রতিপ্রবণতা",
+		stable_cam_feature = "স্থিরতা সংযন্ত্র ফিচার",
 
 		you_are_not_in_a_vehicle = "আপনি গাড়ির ভিতরে নেই।",
 		repaired_vehicle = "পরিবহন মেরামত হয়েছে।",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		unable_to_enter_vehicle_while_dead = "আপনি মৃত্যুবরণ হওয়ায় গাড়িতে প্রবেশ করতে পারবেন না।",
 		the_closest_vehicle_had_no_free_seats = "সর্বনিকটতম গাড়িতে কোনও ফ্রি আসন নেই।",
 		there_are_no_nearby_vehicles = "কোনও নিকটবর্তী গাড়ি নেই।",
+		vehicle_not_found_network = "নেটওয়ার্ক আইডি সহ গাড়ী পাওয়া যায় নি।",
 		entered_vehicle = "${vehicleName} এর নিকটবর্তী একটি গাড়িতে প্রবেশ চেষ্টা করা হয়েছে।",
 
 		set_vehicle_modifications_logs_title = "গাড়ির মর্যাদাবহরণ সেট করুন",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		enter_vehicle_command = "গাড়ি প্রবেশ করুন",
 		enter_vehicle_command_help = "আপনার প্লেয়ার এসেট ফাঁকা করুন যখন আপনি গাড়ির কাছে নেকটা থাকবেন (যদি আপনি ইতিমধ্যে একটি গাড়ির ভেতর থাকেন তখন অবশ্যই তা থেকে বের হতে হবে)।",
+		enter_vehicle_command_parameter_network_id = "নেটওয়ার্ক আইডি",
+		enter_vehicle_command_parameter_network_id_help = "আপনি যে গাড়িতে চলে যেতে চান সেটির নেটওয়ার্ক আইডি। (ঐচ্ছিক)",
 		enter_vehicle_command_substitutes = "ইভি",
 
 		set_modification_command = "সেট_মডিফিকেশন",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		detection_area_remove_command_parameter_area_id = "ডিটেকশন এলাকা আইডি",
 		detection_area_remove_command_parameter_area_id_help = "আপনি যে ডিটেকশন এলাকা মুছতে চান তার আইডি।",
 		detection_area_remove_command_substitutes = "এলাকা_মুছুন",
+
+		screen_text_debug_command = "স্ক্রিন-টেক্সট ডিবাগ",
+		screen_text_debug_command_help = "স্ক্রিন-টেক্সট অস্বস্তিতা রেক্টেঙ্গগুলির উপর ডিবাগ করুন।",
+		screen_text_debug_command_substitutes = "স্ক্রিন-টেক্সট",
 
 		-- base/commands
 		help_command = "হেল্প",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		cache_assets_command_parameter_slow_download = "মন্থর ডাউনলোড",
 		cache_assets_command_parameter_slow_download_help = "আপনি কি ক্যেশ এসেটগুলি ধীরে ধীরে করতে চান? এটি খুব বেশি সময় লাগবে, কিন্তু এর মাধ্যমে ক্র্যাশিং এর সম্ভাবনা কমে যাবে।",
 		cache_assets_command_substitutes = "ডাউনলোড_সুরক্ষিত, প্রিলোড_সুরক্ষিত, ক্যাশ_লোড",
+
+		-- game/camera
+		stable_cam_command = "স্থির ক্যাম",
+		stable_cam_command_help = "স্থির ক্যাম চালু / বন্ধ করে।",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "cargo_start",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		fake_id_command_parameter_female_help = "পুরুষ নাগরিকত্ব পত্রের পরিবর্তে আপনি যদি মহিলা নাগরিকত্ব পত্র চান তবে এটি সত্য হিসাবে সেট করুন।",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/পতাকা_পরিবর্তন",
+		flag_swap_command_help = "সার্ভার সম্পূর্ণ 'পতাকা পরিবর্তন' ইভেন্টটি টগল করুন।",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "ফোর্সফিল্ড তৈরি করুন",
 		create_forcefield_command_help = "আপনার বর্তমান অবস্থানে একটি ফোর্সফিল্ড তৈরি করে।",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		no_copyright_command_help = "এই কমান্ডটি চালু করলে ফ্রেমওয়ার্ক থেকে সম্ভবতঃ কপিরাইটযুক্ত শব্দগুলি নিষ্ক্রিয় হবে।",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "ছবি",
+		picture_command_help = "একটি কাস্টম ইমেজ ইউআরএল সহ একটি চিত্র আইটেম স্প্যান করুন।",
+		picture_command_parameter_url = "ইউআরএল",
+		picture_command_parameter_url_help = "ছবির ইউআরএল।",
+		picture_command_parameter_description = "বিবরণ",
+		picture_command_parameter_description_help = "ছবির বিবরণ।",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "সার্ভারের বর্তমান TPS পেতে।",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		uptime_command = "আপটাইম",
 		uptime_command_help = "সার্ভারের আপটাইম পরীক্ষা করুন।",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "অটো রান",
+		auto_run_command_help = "অটো রানের জন্য একটি কীবাইন্ড সেট করুন।",
+		auto_run_command_parameter_control_id = "কন্ট্রোল আইডি",
+		auto_run_command_parameter_control_id_help = "অটো-রান বাইন্ড করতে চাইলে কন্ট্রোল আইডি।",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "সামনে হাঁটুন",
+		walk_forwards_command_help = "নিজেকে বা অন্য কোন খেলোয়ারকে স্বয়ংক্রিয়ভাবে সামনে হাঁটানো হবে (অবজেক্ট হিসাবে হাঁটতে চেষ্টা করবে)।",
+		walk_forwards_command_parameter_server_id = "সার্ভার আইডি",
+		walk_forwards_command_parameter_server_id_help = "সামনে হাঁটাতে চাইতে হয়ে প্লেয়ারের সার্ভার আইডি।",
+		walk_forwards_command_parameter_sprint = "দৌড়ান",
+		walk_forwards_command_parameter_sprint_help = "খেয়াল করুন ব্যবহারকারী চলার সময় দৌড়াইতে হবে কি না। (ডিফল্ট: মিথ্যা)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "নগদ",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		create_shockwave_command_parameter_radius_help = "স্ট্যান্ড বিশেষের আয়তন (1-100)।",
 		create_shockwave_command_substitutes = "দ্রব্যস্ফোরক",
 
+		push_player_command = "পুশ_প্লেয়ার",
+		push_player_command_help = "ব্যবহারকারীকে এবং তাদের গাড়ি আপনার থেকে দূরে টাকিয়ে দিন।",
+		push_player_command_parameter_server_id = "সার্ভার আইডি",
+		push_player_command_parameter_server_id_help = "প্লেয়ারের সার্ভার আইডি।",
+		push_player_command_substitutes = "পুশ",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "draw_shroom_areas",
 		draw_shroom_areas_command_help = "সমস্ত শ্রুম এলাকা আঁকুন এবং অধিক যোগ করুন।",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		local_entities_debug_command_help = "লোকাল এন্টিটির জন্য ডিবাগ চালু / বন্ধ করুন।",
 		local_entities_debug_command_substitutes = "lentities",
 
-		no_ped_population_areas_debug_command = "কোনও_পেড_পপুলেশন_এলাকা_ডিবাগ",
+		no_ped_population_areas_debug_command = "কোনো_পেডস_পপুলেশন_এরিয়া_ডিবাগ",
 		no_ped_population_areas_debug_command_help = "‘কোনও পেড পপুলেশন এলাকা’ ডিবগারটি টগল করুন।",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		hotwire_vehicle_command = "হটওয়ায়ার্ড_গাড়ি",
 		hotwire_vehicle_command_help = "আপনি এখন কি গাড়ির ভিতরে আছে, তা তাতে দক্ষতার সাহায্যে ইনস্ট্যান্টলি হটওয়ায়ার্ড করুন।",
+		hotwire_vehicle_command_parameter_server_id = "সার্ভার আইডি",
+		hotwire_vehicle_command_parameter_server_id_help = "অন্য একটি খেলোয়াড় গাড়ি তাকে তার গাড়ি তীব্রভাবে সক্রিয় করবে।",
 		hotwire_vehicle_command_substitutes = "হটওয়ায়ার",
 
 		pickup_keys_command = "কী উঠান",
@@ -4245,7 +4293,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		material_vendor = "উপকরণ বিক্রেতা",
 		pdm = "প্রিমিয়াম ডেলাক্স মোটরস্পোর্ট",
 		ls_customs = "লস সান্তোস কাস্টমস",
-		jewelry_store = "ভ্যাঞ্জেলিকো জুয়েলারি",
+		jewelry_store = "ভ্যানজেলিকো জুয়েলারী",
 		pd_air_hq = "পুলিশ এয়ার এইচকিউ",
 		pd_sea_hq = "পুলিশ সাগর হেড কোয়ার্টার",
 		ems_air_hq = "ইএমএস এয়ার হেড কোয়ার্টার",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		crafted_gas_grenade = "গ্যাস গ্রেনেড তৈরি করা হয়েছে।",
 		failed_craft_gas_grenade = "গ্যাস গ্রেনেড তৈরি করতে ব্যর্থ হয়েছে।",
 
+		break_apart_ring = "রিং ভাঙান",
+		press_break_apart_ring = "[${SeatEjectKey}] রিং ভাঙান",
+		breaking_ring = "রিং ভাঙছে",
+		broke_ring = "ভাঙা রিং।",
+		failed_break_ring = "রিং ভাঙতে ব্যর্থ হয়েছে।",
+
 		no_required_items = "আপনার সমস্ত প্রয়োজনীয় জিনিসপত্র নেই।",
 
 		debug_multi = "-একাধিক আউটপুট-",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] ফায়ারওয়ার্ক"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "উচিত অনুমতিসহ ফ্ল্যাগ সোয়াপ টগল করতে চেষ্টা করেছেন না।",
+
+		toggled_flag_swap_on = "ফ্ল্যাগ সোয়াপ চালু করা হয়েছে।",
+		toggled_flag_swap_off = "ফ্ল্যাগ পরিবর্তন অফ করা হয়েছে।"
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["bn-BD"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "ভাগ্যবান চাকা ঘুরানোর জন্য ~INPUT_CONTEXT~ ভাঙ্গো রেখে রাখুন। খরচ $${cost}।",
-		spin_lucky_wheel_for_free = "বিনামূল্যে একটি রউন্ড ঘুরানোর জন্য ~INPUT_CONTEXT~ ভাঙ্গো রেখে রাখুন। আজ আপনার একটি বিনামূল্যে ঘুরানোর সুযোগ রয়েছে।",
-		unable_to_spin_lucky_wheel = "আপনি আজ প্রদত্ত সীমার মধ্যে ইতিমধ্যে সৌভাগ্যের চাকা ঘুরানোর চেষ্টা করেছেন। পরে আবার আসুন!",
-		unable_to_spin_lucky_wheel_time = "আপনি আজ প্রদত্ত সীমার মধ্যে ইতিমধ্যে সৌভাগের চাকা ঘুরানোর চেষ্টা করেছেন। পরবর্তী ঘুরানো সময় ${displayTime} পরবর্তী!",
-		lucky_wheel_is_occupied = "সৌভাগের চাকা বর্তমানে ব্যবহৃত হয়েছে। দয়া করে অপেক্ষা করুন।",
+		hold_to_spin_lucky_wheel = "তুমি লাকি হুইল ঘুরানোর জন্য ~INPUT_CONTEXT~ বোধহও। খরচ হচ্ছে $${cost}।",
+		hold_to_spin_lucky_wheel_free_one_left = "তুমি লাকি হুইল ঘুরানোর জন্য ~INPUT_CONTEXT~ বোধহও। তোমার আজকে ১টি ফ্রি স্পিন বাকি রয়েছে।",
+		hold_to_spin_lucky_wheel_free_multiple_left = "তুমি লাকি হুইল ঘুরানোর জন্য ~INPUT_CONTEXT~ বোধহও। তোমার আজকে ${spins}টি ফ্রি স্পিন বাকি রয়েছে।",
+		continue_holding_to_spin_lucky_wheel = "লাকি হুইল ঘুরানোর জন্য ~INPUT_CONTEXT~ না ছেড়ে থাকতে থাকো।",
+		unable_to_spin_lucky_wheel = "আপনি আজকে সুসংবাদের মত লাকি হুইলটি একই সময়ে একাধিকবার ঘুরিতে পারেন না। পরবর্তী ঘুর্ণনের সময় ${time} অপেক্ষা করুন।",
 		not_enough_balance_to_spin = "আপনার পাওনা আসতে যথাযথ নয় সৌভাগপূর্ণ চাকা ঘুরানোর জন্য। খরচ $${cost}।",
+		lucky_wheel_is_occupied = "সৌভাগের চাকা বর্তমানে ব্যবহৃত হয়েছে। দয়া করে অপেক্ষা করুন।",
+
 		logs_lucky_wheel_reward_title = "সৌভাগের চাকার পুরস্কার",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} চাকা ঘুরিয়ে গাড়ী জেতেছে।",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} সফলভাবে মডেলের নাম `${modelName}` নিয়ে একটি গাড়ি পেয়েছে।",
 		logs_lucky_wheel_reward_money_details = "${consoleName} চাকা ঘুরিয়ে $${amount} জিতেছে।",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} রটেশন করে লাকি হুইল আর অধিক বেন করেছেন। চিপসের মূল্য $${amount}।",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} চাকা ঘুরিয়ে জুয়েলারি জিতেছে যা `${itemName}` নামে।",
 		logs_lucky_wheel_reward_item_details = "${consoleName} চাকা ঘুরিয়ে আইটেমটি জিতেছে যা `${itemName}` নামে।",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} কে চাকা ঘুরিয়ে এক সপ্তাহ কিউ প্রায়োরিটি জিতেছে।"
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		server_tps = "সার্ভার TPS",
 		server_tps_response = "${tps}",
 		license_copied = "লাইসেন্স সফলভাবে ক্লিপবোর্ডে কপি করা হয়েছে।",
-		uptime = "আপটাইম: ${uptime}"
+		uptime = "আপটাইম: ${uptime}",
+
+		picture_no_url = "ইউআরএল অনুপস্থিত।",
+		picture_invalid_url = "ইউআরএল অবৈধ, https:// দিয়ে শুরু করতে হবে।",
+		picture_no_description = "বর্ণনা নেই।",
+		picture_failed = "ছবি তৈরি করতে ব্যর্থ হয়েছে।",
+
+		auto_run_already_set_to = "অটো রান আগেই কন্ট্রোল ${controlId} এর জন্য সেট করা হয়েছে।",
+		auto_run_already_unset = "অটো-রান আগেই নির্দিষ্ট নেই।",
+		auto_run_set_to = "${controlId} এর মাধ্যমে অটো-রান সফলভাবে নির্দিষ্ট হয়েছে।",
+		auto_run_unset = "অটো-রান সফলভাবে নির্দিষ্ট হয়নি।",
+
+		invalid_server_id = "অবৈধ সার্ভার আইডি।",
+		walk_forwards_success = "${displayName} এর জন্য হাঁটতে সাফল্যপূর্ণভাবে টগল করা হয়েছে।",
+		walk_forwards_failed = "${displayName} এর জন্য হাঁটতে টগল করা ব্যর্থ হয়েছে।"
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "খেলোয়াড় একটি শকওয়েভ তৈরি করার চেষ্টা করেছে কিন্তু তাদের প্রয়োজনীয় অনুমতি নেই।",
+		push_player_missing_permissions = "খেলোয়াড় প্রবেশ করার জন্য প্রয়োজনীয় অনুমতি না থাকার কারণে প্রবেশ করার চেষ্টা করেছে।",
 		shockwave_success = "সাফল্যপূর্ণভাবে শকওয়েভ তৈরি করা হয়েছে।",
-		shockwave_failed = "শকওয়েভ তৈরি করতে ব্যর্থ হয়েছে।"
+		shockwave_failed = "শকওয়েভ তৈরি করতে ব্যর্থ হয়েছে।",
+
+		invalid_server_id = "অবৈধ সার্ভার আইডি।",
+		push_player_success = "প্লেয়ারকে সফলভাবে ধাক্কা দেওয়া হয়েছে।",
+		push_player_failed = "প্লেয়ারকে ধাক্কা দেওয়া ব্যর্থ হয়েছে।"
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		you_are_in_a_vehicle = "আপনি একটি যানবাহনে বর্তমানে অবস্থিত আছেন।",
 		hotwired_vehicle_with_plate_number = "'${plateNumber}' প্লেট নম্বর সহ যানবাহনের হটওয়াইর করা হল।",
 		unable_to_hotwire_vehicle = "যানবাহন হটওয়াইর করা সম্ভব হলনা।",
-		picked_up_keys = "'${plate}' প্লেট জন্য চাবি উঠিয়ে নেওয়া হল।"
+		picked_up_keys = "'${plate}' প্লেট জন্য চাবি উঠিয়ে নেওয়া হল।",
+		invalid_server_id = "অবৈধ সার্ভার আইডি।",
+		hotwired_vehicle_for_player = "${displayName} কে উন্নয়ন পানি করেছেন যে গাড়ি তারা উদ্ধার করছে।"
 	},
 
 	modifications = {

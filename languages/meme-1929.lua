@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["meme-1929"] = {
 	-- configuration settings for language
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		watching_feature = "Observing",
 		fortnite_feature = "Fortnite",
 		reflection_feature = "Damage Reflection",
+		stable_cam_feature = "undefined",
 
 		you_are_not_in_a_vehicle = "Thou art not in a vehicle.",
 		repaired_vehicle = "Repaired thy vehicle.",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		unable_to_enter_vehicle_while_dead = "Thee art unable to enter a vehicle whilst deceased.",
 		the_closest_vehicle_had_no_free_seats = "The closest vehicle had no free seats.",
 		there_are_no_nearby_vehicles = "There art nay nearby vehicles.",
+		vehicle_not_found_network = "undefined",
 		entered_vehicle = "Attempted to enter nearby ${vehicleName}.",
 
 		set_vehicle_modifications_logs_title = "Set Vehicle Modifications",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		enter_vehicle_command = "automobile_entry",
 		enter_vehicle_command_help = "Coerce your player character to enter the closest automobile (if you are currently in one, this command will make you exit the vehicle).",
+		enter_vehicle_command_parameter_network_id = "undefined",
+		enter_vehicle_command_parameter_network_id_help = "undefined",
 		enter_vehicle_command_substitutes = "ae",
 
 		set_modification_command = "set_customization",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		detection_area_remove_command_parameter_area_id = "detection area ID",
 		detection_area_remove_command_parameter_area_id_help = "The ID of the detection area you are wanting to remove.",
 		detection_area_remove_command_substitutes = "area_remove",
+
+		screen_text_debug_command = "undefined",
+		screen_text_debug_command_help = "undefined",
+		screen_text_debug_command_substitutes = "undefined",
 
 		-- base/commands
 		help_command = "help",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		cache_assets_command_parameter_slow_download = "slow load",
 		cache_assets_command_parameter_slow_download_help = "Do you wish to slowly load the assets? This will take much longer but will reduce the risk of crashing.",
 		cache_assets_command_substitutes = "load_cache, download_cache, preload_cache",
+
+		-- game/camera
+		stable_cam_command = "undefined",
+		stable_cam_command_help = "undefined",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "start_cargo",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		fake_id_command_parameter_female_help = "Set to true if you want a lady's identification card instead of a gentleman's.",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "undefined",
+		flag_swap_command_help = "undefined",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
 		create_forcefield_command_help = "Creates a force field at your current location.",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		no_copyright_command_help = "This command will disable all potentially copyrighted sounds coming from the framework when enabled.",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "undefined",
+		picture_command_help = "undefined",
+		picture_command_parameter_url = "undefined",
+		picture_command_parameter_url_help = "undefined",
+		picture_command_parameter_description = "undefined",
+		picture_command_parameter_description_help = "undefined",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "Get the server's current TPS.",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		uptime_command = "downtime",
 		uptime_command_help = "Check the server's downtime since the last reset.",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "undefined",
+		auto_run_command_help = "undefined",
+		auto_run_command_parameter_control_id = "undefined",
+		auto_run_command_parameter_control_id_help = "undefined",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "undefined",
+		walk_forwards_command_help = "undefined",
+		walk_forwards_command_parameter_server_id = "undefined",
+		walk_forwards_command_parameter_server_id_help = "undefined",
+		walk_forwards_command_parameter_sprint = "undefined",
+		walk_forwards_command_parameter_sprint_help = "undefined",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "money",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		create_shockwave_command_parameter_radius_help = "The range of the shockwave (1 - 100).",
 		create_shockwave_command_substitutes = "shockwave",
 
+		push_player_command = "undefined",
+		push_player_command_help = "undefined",
+		push_player_command_parameter_server_id = "undefined",
+		push_player_command_parameter_server_id_help = "undefined",
+		push_player_command_substitutes = "undefined",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "draw_shroom_areas",
 		draw_shroom_areas_command_help = "Draw all mushroom areas and add more.",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		local_entities_debug_command_help = "Activates/deactivates debugging for local entities.",
 		local_entities_debug_command_substitutes = "lentities",
 
-		no_ped_population_areas_debug_command = "no_ped_population_asreas_debug",
+		no_ped_population_areas_debug_command = "undefined",
 		no_ped_population_areas_debug_command_help = "Activates/deactivates the debugger for areas without pedestrian population.",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		hotwire_vehicle_command = "hotwire_vehicle",
 		hotwire_vehicle_command_help = "Immediately hotwire the vehicle thou art in.",
+		hotwire_vehicle_command_parameter_server_id = "undefined",
+		hotwire_vehicle_command_parameter_server_id_help = "undefined",
 		hotwire_vehicle_command_substitutes = "hotwire",
 
 		pickup_keys_command = "pickup_keys",
@@ -4245,7 +4293,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		material_vendor = "Supply Vendor",
 		pdm = "Premium Deluxe Motorsport",
 		ls_customs = "Los Santos Customs",
-		jewelry_store = "Vangelico Jewellery",
+		jewelry_store = "undefined",
 		pd_air_hq = "Police Aviation HQ",
 		pd_sea_hq = "Police Sea Headquarters",
 		ems_air_hq = "EMS Air Headquarters",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		crafted_gas_grenade = "Crafted gas grenade.",
 		failed_craft_gas_grenade = "Failed to manufacture gas grenade.",
 
+		break_apart_ring = "undefined",
+		press_break_apart_ring = "undefined",
+		breaking_ring = "undefined",
+		broke_ring = "undefined",
+		failed_break_ring = "undefined",
+
 		no_required_items = "You don't have all the necessary items.",
 
 		debug_multi = "-Multiple Outputs-",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] Fire Firework"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "undefined",
+
+		toggled_flag_swap_on = "undefined",
+		toggled_flag_swap_off = "undefined"
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["meme-1929"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. The cost is $${cost}.",
-		spin_lucky_wheel_for_free = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. Thou hast one free spin left today.",
-		unable_to_spin_lucky_wheel = "Thou hast already spun the Lucky Wheel as much as permitted this day. Return anon for another spin!",
-		unable_to_spin_lucky_wheel_time = "Thou hast already spun the Lucky Wheel as much as permitted this day. Next spin available in ${displayTime}.",
-		lucky_wheel_is_occupied = "The Lucky Wheel is currently occupied. Please tarry.",
+		hold_to_spin_lucky_wheel = "undefined",
+		hold_to_spin_lucky_wheel_free_one_left = "undefined",
+		hold_to_spin_lucky_wheel_free_multiple_left = "undefined",
+		continue_holding_to_spin_lucky_wheel = "undefined",
+		unable_to_spin_lucky_wheel = "undefined",
 		not_enough_balance_to_spin = "Thou dost not posses enough currency to spin the wheel. The cost is $${cost}.",
+		lucky_wheel_is_occupied = "The Lucky Wheel is currently occupied. Please tarry.",
+
 		logs_lucky_wheel_reward_title = "Lucky Wheel Reward",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} hath spun the wheel and won a horseless carriage.",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} hath been bestowed a horseless carriage with the model name `${modelName}`.",
 		logs_lucky_wheel_reward_money_details = "${consoleName} hath spun the wheel and won $${amount}.",
+		logs_lucky_wheel_reward_chips_details = "undefined",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} hath spun the wheel and won jewels with the name of `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} hath spun the wheel and won an article with the name of `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} hath spun the wheel and won one week of queue priority."
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		server_tps = "Server tick rate",
 		server_tps_response = "${tps}",
 		license_copied = "License successfully copied to clipboard.",
-		uptime = "Uptime: ${uptime}"
+		uptime = "Uptime: ${uptime}",
+
+		picture_no_url = "undefined",
+		picture_invalid_url = "undefined",
+		picture_no_description = "undefined",
+		picture_failed = "undefined",
+
+		auto_run_already_set_to = "undefined",
+		auto_run_already_unset = "undefined",
+		auto_run_set_to = "undefined",
+		auto_run_unset = "undefined",
+
+		invalid_server_id = "undefined",
+		walk_forwards_success = "undefined",
+		walk_forwards_failed = "undefined"
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "The player attempted to create a shockwave but they did not have the necessary permissions.",
+		push_player_missing_permissions = "undefined",
 		shockwave_success = "Shockwave created successfully.",
-		shockwave_failed = "Failed to create shockwave."
+		shockwave_failed = "Failed to create shockwave.",
+
+		invalid_server_id = "undefined",
+		push_player_success = "Player successfully shoved.",
+		push_player_failed = "Failed to shove player."
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		you_are_in_a_vehicle = "Thou art already in an automobile.",
 		hotwired_vehicle_with_plate_number = "Hotwired automobile with plate number '${plateNumber}'.",
 		unable_to_hotwire_vehicle = "Unable to hotwire automobile.",
-		picked_up_keys = "Picked up keys for automobile '${plate}'."
+		picked_up_keys = "Picked up keys for automobile '${plate}'.",
+		invalid_server_id = "Invalid server identification.",
+		hotwired_vehicle_for_player = "${displayName} has successfully hotwired the vehicle they are in."
 	},
 
 	modifications = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["meme-minionese"] = {
 	-- configuration settings for language
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		watching_feature = "Bello Watching",
 		fortnite_feature = "Gelato Fortnite",
 		reflection_feature = "Baba! Damage Reflection",
+		stable_cam_feature = "Labalaba Cam",
 
 		you_are_not_in_a_vehicle = "Me nona ina da vehicle.",
 		repaired_vehicle = "Da vehicle beena repaired.",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		unable_to_enter_vehicle_while_dead = "Bee doh! You cannot enter a vehicle while dead.",
 		the_closest_vehicle_had_no_free_seats = "Bee doh, the closest vehicle had no free seats.",
 		there_are_no_nearby_vehicles = "Bananaaaa, there are no nearby vehicles.",
+		vehicle_not_found_network = "Bilangombo izafanana na id ya mkeka.",
 		entered_vehicle = "Bee doh, attempted to enter nearby ${vehicleName}.",
 
 		set_vehicle_modifications_logs_title = "Set Vehicle Modifications",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		enter_vehicle_command = "enter_vehicle",
 		enter_vehicle_command_help = "Bello! Force your player ped to get inside the vehicle you are closest to (makes you exit the vehicle if you are in one).",
+		enter_vehicle_command_parameter_network_id = "ida ya mkeka",
+		enter_vehicle_command_parameter_network_id_help = "Ida ya mkeka ya gari unalotaka kuingia. (hiari)",
 		enter_vehicle_command_substitutes = "ev",
 
 		set_modification_command = "set_modification",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		detection_area_remove_command_parameter_area_id = "detection area ID",
 		detection_area_remove_command_parameter_area_id_help = "Tu ID de la zona de detección que deseas remover.",
 		detection_area_remove_command_substitutes = "remover_zona",
+
+		screen_text_debug_command = "skrini_maandishi_sahihi",
+		screen_text_debug_command_help = "Hakiki maeneo ya kuondoa yaliyopo kwenye skrini.",
+		screen_text_debug_command_substitutes = "skrini_maandishi",
 
 		-- base/commands
 		help_command = "ayuda",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		cache_assets_command_parameter_slow_download = "bee do bee do slow download",
 		cache_assets_command_parameter_slow_download_help = "Do you want to cache the assets slowly, gelato? Doing that will make it take much longer, but will also reduce the chance of crashing.",
 		cache_assets_command_substitutes = "bee do bee do download cache, bee do bee do preload cache, bee do bee do load cache",
+
+		-- game/camera
+		stable_cam_command = "labalaba_cam",
+		stable_cam_command_help = "Funga/Wezesha Labalaba Camu.",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "bananaaaa! cargo_start",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		fake_id_command_parameter_female_help = "Bello kelele! Set tu tru if yu want a female citizen card instead of a male.",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/gibberish_swap",
+		flag_swap_command_help = "Bee-Do bee-Do! Toggle the Bananaaaaah-swide 'gibberish swap' event.",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "create_fartgun",
 		create_forcefield_command_help = "Creates a fartgun at yer current position.",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		no_copyright_command_help = "This command will disable all potentially copyrighted sounds coming from the framework when enabled.",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "bee-do",
+		picture_command_help = "Bee-Do bee-Do! Spawns a picture item with a custom bananaaaaa URL.",
+		picture_command_parameter_url = "bananaaaaah",
+		picture_command_parameter_url_help = "The bananaaaaah URL.",
+		picture_command_parameter_description = "potato",
+		picture_command_parameter_description_help = "The spud description.",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "What's da server's current TPS, boss?",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		uptime_command = "bello time",
 		uptime_command_help = "Check how long server been working hard.",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "bello-bello",
+		auto_run_command_help = "Bananaaaah! Set a keybind for a auto-runaah.",
+		auto_run_command_parameter_control_id = "banana",
+		auto_run_command_parameter_control_id_help = "Bababa nana! The banana ID you would like to bind to auto-run.",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "butt",
+		walk_forwards_command_help = "Bello! Makes you or another player walk forwards automatically (while attempting to avoid obstacles).",
+		walk_forwards_command_parameter_server_id = "bapple",
+		walk_forwards_command_parameter_server_id_help = "Me want bapple! The server id of the player you want to make walk forwards.",
+		walk_forwards_command_parameter_sprint = "tatata bala tu",
+		walk_forwards_command_parameter_sprint_help = "Whaaatoo maay laa! Whethaar oor naat daa plaayeer shaaldaa spriint walaa waakaa forwaards. (Defauuult: false)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "banana",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		create_shockwave_command_parameter_radius_help = "Il raggio della onda d'urto (1 - 100).",
 		create_shockwave_command_substitutes = "onda_d'urto",
 
+		push_player_command = "puush_plaayeer",
+		push_player_command_help = "Puushaa plaayeer oor daa veheecle they aaar in aawaay frooam yoo. Baanaanaaaa!",
+		push_player_command_parameter_server_id = "sairvaaar iid",
+		push_player_command_parameter_server_id_help = "Daa sairvaaar iid of daa plaayeer. Baanaaaa!",
+		push_player_command_substitutes = "puush",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "disegna_aree_dei_funghi",
 		draw_shroom_areas_command_help = "Disegna tutte le aree dei funghi e ne aggiunge altre.",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		local_entities_debug_command_help = "Bappo gelato! Toggle the debug for local entities.",
 		local_entities_debug_command_substitutes = "lentities",
 
-		no_ped_population_areas_debug_command = "no_ped_population_asreas_debug",
+		no_ped_population_areas_debug_command = "noo_peeed_populaation_aaareas_debug",
 		no_ped_population_areas_debug_command_help = "Bee doo bee doo! Toggle the 'no ped population areas' debugger.",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		hotwire_vehicle_command = "hotwire_vehicle",
 		hotwire_vehicle_command_help = "Arranca el vehículo que estás en la momentáneamente.",
+		hotwire_vehicle_command_parameter_server_id = "sairvaaar iid",
+		hotwire_vehicle_command_parameter_server_id_help = "Bee do bee do bee do! Make another minion instantly hotwire the vehicle they are in.",
 		hotwire_vehicle_command_substitutes = "baboi",
 
 		pickup_keys_command = "tulalô-banana",
@@ -4245,7 +4293,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		material_vendor = "Materia Venditor",
 		pdm = "Premium Deluxe Motorsport",
 		ls_customs = "Los Santos Customs",
-		jewelry_store = "Vangelico Monile",
+		jewelry_store = "Vangelico Jewelry",
 		pd_air_hq = "Politia Aer Aedes",
 		pd_sea_hq = "Bello Polisi Sea HQ",
 		ems_air_hq = "Bello EMS Air HQ",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		crafted_gas_grenade = "Ta-daa! Successfully crafted fart gun.",
 		failed_craft_gas_grenade = "Bello! Bello! Bello! Unsuccessful to craft gas grenade.",
 
+		break_apart_ring = "Bee do bee do bee do! Break Apart Ring",
+		press_break_apart_ring = "[${SeatEjectKey}] Bee do bee do bee do! Break Apart Ring",
+		breaking_ring = "Bee do bee do bee do! Breaking Apart Ring",
+		broke_ring = "Bee do bee do bee do! Broke apart ring.",
+		failed_break_ring = "Bee do bee do bee do! Failed to break apart ring.",
+
 		no_required_items = "Tank yu, but yu don't have all the required items.",
 
 		debug_multi = "-Banana? Potato?-",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] Fire Firework! Me like fireworks!"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "Bee do bee do bee do! Attempted to toggle flag swaps without proper permissions.",
+
+		toggled_flag_swap_on = "Bee do bee do bee do! Toggled flag swap on.",
+		toggled_flag_swap_off = "Bellooo! Flag swap off toggled."
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Baboi! Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. The cost is $${cost}.",
-		spin_lucky_wheel_for_free = "Baboi! Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. You have one free spin left today.",
-		unable_to_spin_lucky_wheel = "Bee-doh! You already spun the Lucky Wheel maximum number of times today. Come back later!",
-		unable_to_spin_lucky_wheel_time = "Bee-doh! You already spun the Lucky Wheel maximum number of times today. Next spin available in ${displayTime}.",
-		lucky_wheel_is_occupied = "Bee-doh! Someone is currently spinning the Lucky Wheel. Please wait.",
+		hold_to_spin_lucky_wheel = "Baboi! Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. Da cost is $${cost}.",
+		hold_to_spin_lucky_wheel_free_one_left = "Baboi! Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. YU have 1 free spin left todaayyy.",
+		hold_to_spin_lucky_wheel_free_multiple_left = "Baboi! Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. YU have ${spins} free spins left todaayyy.",
+		continue_holding_to_spin_lucky_wheel = "Baboi! Continue holding ~INPUT_CONTEXT~ to spin the Lucky Wheel.",
+		unable_to_spin_lucky_wheel = "Bello, you already spinned the lucky wheel the maximum permitted times today. Next spin available in ${time}.",
 		not_enough_balance_to_spin = "Bee-doh! You don't have enough bananas to spin the wheel. The cost is $${cost}.",
+		lucky_wheel_is_occupied = "Bee-doh! Someone is currently spinning the Lucky Wheel. Please wait.",
+
 		logs_lucky_wheel_reward_title = "Lucky Wheel Reward",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} haa spun da wheel an' won a vehicle.",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} haa been giv'n a vehicle wid model name `${modelName}`.",
 		logs_lucky_wheel_reward_money_details = "${consoleName} haa spun da wheel an' won $${amount}.",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} has spinned the wheel and won $$${amount} worth of chips. BANANA!",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} haa spun da wheel an' won jewelry wid da name of `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} haa spun da wheel an' won an item wid da name of `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} banana baboi! Hehehehe! has spun the wheel and won one week of queue priority."
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		server_tps = "Gulang ng server TPS",
 		server_tps_response = "${tps}",
 		license_copied = "Successfully copied license to clipboard.",
-		uptime = "Uptime: ${uptime}"
+		uptime = "Uptime: ${uptime}",
+
+		picture_no_url = "Bababa potato. Missing url.",
+		picture_invalid_url = "Muhahaha! Invalid url, it has to start with https://. Potatooooo!",
+		picture_no_description = "Bababa. Missing description. Poopaye!",
+		picture_failed = "Ahahaha... Bababa! Failed to create picture. Me want banana!",
+
+		auto_run_already_set_to = "Auto-run is already set to control ${controlId}. BAPPLE!",
+		auto_run_already_unset = "Bellopi is already unset.",
+		auto_run_set_to = "Bellopi has been set to control ${controlId}.",
+		auto_run_unset = "Bellopi has been unset.",
+
+		invalid_server_id = "Bellopi! Bellopi! Invalid server ID.",
+		walk_forwards_success = "Bello! Bello! Successfully toggled walking forwards for ${displayName}.",
+		walk_forwards_failed = "Belloo... Failed to toggle walking forwards for ${displayName}."
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "Bananaaa! The player who attempted to create a shockwave didn't have permission.",
+		push_player_missing_permissions = "Bello! Banana... Player attempted to push a player but they didn't have the required permissions.",
 		shockwave_success = "Bello! Shockwave created successfully.",
-		shockwave_failed = "Aahh... Failed to create shockwave."
+		shockwave_failed = "Aahh... Failed to create shockwave.",
+
+		invalid_server_id = "Invalid server ID... Bello.",
+		push_player_success = "Poopaye! Successfully pushed player.",
+		push_player_failed = "Bee doo bee doo. Failed to push player."
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		you_are_in_a_vehicle = "Bello! You're currently in a vehicle.",
 		hotwired_vehicle_with_plate_number = "Hotwired vehicle with plate number '${plateNumber}'. Me want banana!",
 		unable_to_hotwire_vehicle = "Sorry! Unable to hotwire vehicle.",
-		picked_up_keys = "Picked up keys for `${plate}`. Me happy!"
+		picked_up_keys = "Picked up keys for `${plate}`. Me happy!",
+		invalid_server_id = "Gelato! Invalid server ID.",
+		hotwired_vehicle_for_player = "Bello! Made ${displayName} hotwire the vehicle they are in."
 	},
 
 	modifications = {

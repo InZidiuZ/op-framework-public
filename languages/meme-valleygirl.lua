@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["meme-valleygirl"] = {
 	-- configuration settings for language
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		watching_feature = "Watching",
 		fortnite_feature = "Fortnite",
 		reflection_feature = "Damage Reflection",
+		stable_cam_feature = "Stable Cam, like OMG",
 
 		you_are_not_in_a_vehicle = "Oh-em-gee, you're, like, not even in a car!",
 		repaired_vehicle = "Yas, the car is totally fixed!",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		unable_to_enter_vehicle_while_dead = "Sorry, but like, you can't enter a car when you're dead.",
 		the_closest_vehicle_had_no_free_seats = "Ugh, the closest car didn't have like, any free seats.",
 		there_are_no_nearby_vehicles = "Umm, there aren't any cars like, nearby.",
+		vehicle_not_found_network = "Vehicle with network id not found, bummer.",
 		entered_vehicle = "Like, tried to get in this cute ${vehicleName} I saw.",
 
 		set_vehicle_modifications_logs_title = "Customized My Ride",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		enter_vehicle_command = "enter_vehicle",
 		enter_vehicle_command_help = "Force your player ped to enter the vehicle you are closest to (makes you exit the vehicle if you are in one).",
+		enter_vehicle_command_parameter_network_id = "network id, like what's the #?",
+		enter_vehicle_command_parameter_network_id_help = "Network id of the vehicle you want to enter. (optional), like you don't have to put it but whatever",
 		enter_vehicle_command_substitutes = "ev", --     (Short for "enter vehicle",
 
 		set_modification_command = "set_modification",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		detection_area_remove_command_parameter_area_id = "area id",
 		detection_area_remove_command_parameter_area_id_help = "The ID of the detection area you are wanting to remove. Like, the area number you wanna totally get rid of.",
 		detection_area_remove_command_substitutes = "area_remove, like, totally remove it",
+
+		screen_text_debug_command = "screen_text_debug, like debug stuff",
+		screen_text_debug_command_help = "Debug the screen-text exclusion rectangles, like fixin' stuff!",
+		screen_text_debug_command_substitutes = "screen_text, like just use this",
 
 		-- base/commands
 		help_command = "help",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		cache_assets_command_parameter_slow_download = "slow downlaod",
 		cache_assets_command_parameter_slow_download_help = "Do you want to, like, cache the assets slowly? Doing that will make it take much longer, but will also, like, reduce the chance of crashing.",
 		cache_assets_command_substitutes = "download_cache, preload_cache, load_cache",
+
+		-- game/camera
+		stable_cam_command = "stable_cam, like keeping it steady",
+		stable_cam_command_help = "Toggles the stable cam, like turnin' it on and off. So cool!",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "cargo_start",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		fake_id_command_parameter_female_help = "Like, set to true if you want a chick citizen card instead of a dude.",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/flag_swap",
+		flag_swap_command_help = "Toggle the server-wide 'flag swap' event, like, totally!",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
 		create_forcefield_command_help = "Creates a forcefield at your current position, like, totally.",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		no_copyright_command_help = "No more icky copyrighted sounds from the framework. This command disables them all.",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "picture",
+		picture_command_help = "OMG, spawns a picture item with a custom image URL!",
+		picture_command_parameter_url = "url",
+		picture_command_parameter_url_help = "The image url, like, duh!",
+		picture_command_parameter_description = "description",
+		picture_command_parameter_description_help = "The picture description, like, totally optional!",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "Find out the server's current TPS (ticks per second).",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		uptime_command = "upmytime",
 		uptime_command_help = "Check out how long the server has been totally doing its thang, ya know?",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "auto_run",
+		auto_run_command_help = "Set a keybind for a auto-run, like, so cool!",
+		auto_run_command_parameter_control_id = "control id, like, totally",
+		auto_run_command_parameter_control_id_help = "The control ID you wanna bind, ya know, to auto-run.",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "walk_forwards, oh-em-gee",
+		walk_forwards_command_help = "Makes you or another player walk forwards automatically (while like, trying to avoid obstacles, lol).",
+		walk_forwards_command_parameter_server_id = "server id, duh",
+		walk_forwards_command_parameter_server_id_help = "The server id of the player you wanna make walk forwards.",
+		walk_forwards_command_parameter_sprint = "sprint, yasss",
+		walk_forwards_command_parameter_sprint_help = "Whether or not the player should, like, sprint while walking forwards or not. (The default is like, false)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "cashmoney",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		create_shockwave_command_parameter_radius_help = "The radius, like, how wide the shockwave goes? (1 - 100).",
 		create_shockwave_command_substitutes = "shockwave",
 
+		push_player_command = "push_player",
+		push_player_command_help = "Push, like, a player or the car they're in away from you.",
+		push_player_command_parameter_server_id = "server ID",
+		push_player_command_parameter_server_id_help = "The server ID, like, of the player.",
+		push_player_command_substitutes = "push",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "draw_shroom_areas",
 		draw_shroom_areas_command_help = "Draw all those shroom areas and add more, y'know.",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		local_entities_debug_command_help = "Toggle the debug for local entities, ya know?",
 		local_entities_debug_command_substitutes = "lentities",
 
-		no_ped_population_areas_debug_command = "no_ped_population_asreas_debug",
+		no_ped_population_areas_debug_command = "no_ped_population_areas_debug",
 		no_ped_population_areas_debug_command_help = "Toggle the 'no ped population areas' debugger, duh.",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		hotwire_vehicle_command = "hotwire_vehicle, start it up",
 		hotwire_vehicle_command_help = "Instantly hotwire the vehicle you are in, oh my god!",
+		hotwire_vehicle_command_parameter_server_id = "server ID",
+		hotwire_vehicle_command_parameter_server_id_help = "Make another player like totally hotwire the car they're in, ya know?",
 		hotwire_vehicle_command_substitutes = "hotwire",
 
 		pickup_keys_command = "pickup_keys",
@@ -4245,7 +4293,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		material_vendor = "Construction Supplies Dude",
 		pdm = "Fancy Cars, yo!",
 		ls_customs = "Car Upgrades Shop",
-		jewelry_store = "Fancy Bling Store",
+		jewelry_store = "Vangelico Jewelry",
 		pd_air_hq = "Police Helicopter Pad",
 		pd_sea_hq = "OMG, like, welcome to the Police Sea HQ!",
 		ems_air_hq = "Hey there! You've, like, arrived at the EMS Air HQ.",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		crafted_gas_grenade = "We did it! We made a like, totally awesome gas grenade!",
 		failed_craft_gas_grenade = "Oh my gosh, you totally failed at crafting a gas grenade.",
 
+		break_apart_ring = "Break Apart Ring",
+		press_break_apart_ring = "[${SeatEjectKey}] Break Apart Ring",
+		breaking_ring = "Breaking Apart Ring, oh my god!",
+		broke_ring = "Honey, we broke apart the ring. Yasss!",
+		failed_break_ring = "Failed to break apart the ring. Bummer!",
+
 		no_required_items = "Sorry, but you don't have all the things required for this.",
 
 		debug_multi = "-Like, Multiple Outputs-",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] Fire Firework"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "Like, you're not even allowed to toggle flag swaps, so get outta here!",
+
+		toggled_flag_swap_on = "Flag swap is like, totally on now. Groovy!",
+		toggled_flag_swap_off = "Like, you turned off flag swapping."
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Hey, hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. The cost is $${cost}.",
-		spin_lucky_wheel_for_free = "Like, hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. You have one free spin left today, woohoo!",
-		unable_to_spin_lucky_wheel = "OMG, you've already spun the Lucky Wheel too many times today. Come back later for another try!",
-		unable_to_spin_lucky_wheel_time = "OMG, you've already spun the Lucky Wheel too many times today. Next spin available in ${displayTime}.",
-		lucky_wheel_is_occupied = "Sorry, the Lucky Wheel is taken at the moment. Please wait.",
+		hold_to_spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ to like, spin the Lucky Wheel. It like, costs $${cost}.",
+		hold_to_spin_lucky_wheel_free_one_left = "Hold ~INPUT_CONTEXT~ to like, spin the Lucky Wheel. Today, you have 1 free spin left.",
+		hold_to_spin_lucky_wheel_free_multiple_left = "Hold ~INPUT_CONTEXT~ to like, spin the Lucky Wheel. Today, you have ${spins} free spins left.",
+		continue_holding_to_spin_lucky_wheel = "Like, continue holding ~INPUT_CONTEXT~ to spin the Lucky Wheel.",
+		unable_to_spin_lucky_wheel = "Sorry, but you've already spun the Lucky Wheel the maximum times allowed for today. You can spin again in ${time}.",
 		not_enough_balance_to_spin = "Oops, looks like you don't have enough cash to spin the wheel. It costs $${cost}.",
+		lucky_wheel_is_occupied = "Sorry, the Lucky Wheel is taken at the moment. Please wait.",
+
 		logs_lucky_wheel_reward_title = "Lucky Wheel Prize",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} spun the wheel and got a sweet ride.",
 		logs_lucky_wheel_reward_vehicle_given_details = "OMG, ${consoleName} totally got a car with model ${modelName}!",
 		logs_lucky_wheel_reward_money_details = "${consoleName} spun the wheel and won ${amount} bucks, like, sick!",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} spun the wheel and snagged $${amount} worth of chips. Like, so lucky!",
 		logs_lucky_wheel_reward_jewelry_details = "YAAAS, ${consoleName} won some jewelry with the name `${itemName}` on the wheel, how rad!",
 		logs_lucky_wheel_reward_item_details = "${consoleName} spun the wheel and won a dope item named `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} just scored like, a week of queue priority by spinning the wheel, omg!"
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		server_tps = "Server OMG",
 		server_tps_response = "OMG, like ${tps} TPS!",
 		license_copied = "Successfully copied license to clipboard. Cowabunga!",
-		uptime = "Uptime: ${uptime}. Like, totally awesome!"
+		uptime = "Uptime: ${uptime}. Like, totally awesome!",
+
+		picture_no_url = "Uh, you didn't provide a URL for the picture.",
+		picture_invalid_url = "OMG, your URL is totally invalid! Like, it needs to start with https://, duh.",
+		picture_no_description = "Uh, you forgot to add a description for the picture.",
+		picture_failed = "Ugh, sorry, I'm totally unable to create the picture for you.",
+
+		auto_run_already_set_to = "Like, seriously girl, the auto-run is already set to control ${controlId}. Get with it!",
+		auto_run_already_unset = "Like, auto-run is, you know, already unset.",
+		auto_run_set_to = "Auto-run has been set to control ${controlId}, you go girl.",
+		auto_run_unset = "Auto-run has been, like, totally unset, duh.",
+
+		invalid_server_id = "Ugh, invalid server ID, whatever.",
+		walk_forwards_success = "Successfully toggled walking forwards for ${displayName}, so fierce.",
+		walk_forwards_failed = "Failed to toggle walking forwards for ${displayName}, sorry not sorry."
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "Can't create a shockwave unless you have the right permissions, sorry girrrl.",
+		push_player_missing_permissions = "Player attempted to push a player but like, they didn't have the required permissions, oh em gee.",
 		shockwave_success = "OMG, like totally created a shockwave!",
-		shockwave_failed = "Ugh, failed to create shockwave."
+		shockwave_failed = "Ugh, failed to create shockwave.",
+
+		invalid_server_id = "Invalid server ID, again? Seriously, time to get your life together.",
+		push_player_success = "Yaaas, totally pushed ${displayName}!",
+		push_player_failed = "Sorry, can't push ${displayName}."
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		you_are_in_a_vehicle = "You're currently cruisin' in a ride.",
 		hotwired_vehicle_with_plate_number = "Hotwired the ride with plate number '${plateNumber}'.",
 		unable_to_hotwire_vehicle = "Couldn't hotwire the ride, bummer.",
-		picked_up_keys = "Picked up the keys for `${plate}`."
+		picked_up_keys = "Picked up the keys for `${plate}`.",
+		invalid_server_id = "That server ID is like, so not valid.",
+		hotwired_vehicle_for_player = "OMG, ${displayName} hotwired the ride they're in. So sick!"
 	},
 
 	modifications = {

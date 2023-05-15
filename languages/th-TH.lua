@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		watching_feature = "ดูเหตุการณ์",
 		fortnite_feature = "ฟอร์ตไนท์",
 		reflection_feature = "การสะท้อนความเสียหาย",
+		stable_cam_feature = "กล้องที่มั่นคง",
 
 		you_are_not_in_a_vehicle = "คุณไม่ได้อยู่ในยานพาหนะ",
 		repaired_vehicle = "ซ่อมแซมยานพาหนะเรียบร้อยแล้ว",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		unable_to_enter_vehicle_while_dead = "คุณไม่สามารถเข้ารถได้ในขณะที่ตาย",
 		the_closest_vehicle_had_no_free_seats = "ยานพาหนะที่อยู่ใกล้ที่สุดไม่มีที่ว่าง",
 		there_are_no_nearby_vehicles = "ไม่มียานพาหนะใกล้เคียง",
+		vehicle_not_found_network = "ไม่พบยานพาหนะด้วย network id",
 		entered_vehicle = "พยายามเข้าร่วม ${vehicleName} ที่อยู่ใกล้",
 
 		set_vehicle_modifications_logs_title = "กำหนดการปรับเปลี่ยนยานพาหนะ",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		enter_vehicle_command = "enter_vehicle",
 		enter_vehicle_command_help = "บังคับบิดาแม่ของคุณเพื่อเข้ารถที่อยู่ใกล้ที่สุด (ทำให้คุณออกจากรถหากคุณอยู่ในรถ)",
+		enter_vehicle_command_parameter_network_id = "network id",
+		enter_vehicle_command_parameter_network_id_help = "Network id ของยานพาหนะที่คุณต้องการเข้าสู่ (ไม่จำเป็น)",
 		enter_vehicle_command_substitutes = "ev",
 
 		set_modification_command = "set_modification",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		detection_area_remove_command_parameter_area_id = "รหัสพื้นที่ตรวจจับ",
 		detection_area_remove_command_parameter_area_id_help = "ระบุ ID ของพื้นที่ตรวจจับที่ต้องการลบ",
 		detection_area_remove_command_substitutes = "area_remove",
+
+		screen_text_debug_command = "screen_text_debug",
+		screen_text_debug_command_help = "Debug ของรักษาความปลอดภัยของข้อความบนหน้าจอ",
+		screen_text_debug_command_substitutes = "screen_text",
 
 		-- base/commands
 		help_command = "help",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		cache_assets_command_parameter_slow_download = "การดาวน์โหลดช้า",
 		cache_assets_command_parameter_slow_download_help = "คุณต้องการดาวน์โหลดแคชไฟล์ช้าหรือไม่? การทำเช่นนั้นจะใช้เวลานานมาก แต่จะลดโอกาสเกิดความผิดพลาดได้",
 		cache_assets_command_substitutes = "ดาวน์โหลดแคช, แคช, โหลดแคช",
+
+		-- game/camera
+		stable_cam_command = "stable_cam",
+		stable_cam_command_help = "เปิด / ปิด กล้องที่มั่นคง",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "cargo_start",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		fake_id_command_parameter_female_help = "ตั้งค่าเป็นจริงถ้าคุณต้องการบัตรประชาชนผู้หญิงแทนชาย",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/ถึงเวลาเปลี่ยนธง",
+		flag_swap_command_help = "เปิด/ปิดการเกิดเหตุการณ์ 'ถึงเวลาเปลี่ยนธง' ทั่วเซิร์ฟเวอร์",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "สร้างสนามแรงดัน",
 		create_forcefield_command_help = "สร้างสนามแรงดันที่ตำแหน่งปัจจุบันของคุณ",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["th-TH"] = {
 		no_copyright_command_help = "คำสั่งนี้จะปิดใช้งานเสียงที่เป็นลิขสิทธิ์ที่อาจมีในโปรแกรม",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "รูป",
+		picture_command_help = "สร้างไอเท็มรูปภาพด้วย URL ที่กำหนดเอง",
+		picture_command_parameter_url = "url",
+		picture_command_parameter_url_help = "URL ของรูปภาพ",
+		picture_command_parameter_description = "description",
+		picture_command_parameter_description_help = "คำอธิบายรูปภาพ",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "ดู TPS ปัจจุบันของเซิร์ฟเวอร์",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["th-TH"] = {
 		uptime_command = "uptime",
 		uptime_command_help = "ตรวจสอบเวลาที่เซิร์ฟเวอร์เปิดใช้งาน.",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "auto_run",
+		auto_run_command_help = "กำหนดปุ่มเชื่อมโยงการวิ่งอัตโนมัติ",
+		auto_run_command_parameter_control_id = "ไอดีควบคุม",
+		auto_run_command_parameter_control_id_help = "ไอดีควบคุมที่คุณต้องการผูกกับการวิ่งอัตโนมัติ",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "เดินหน้า",
+		walk_forwards_command_help = "ทำให้คุณหรือผู้เล่นอื่นๆ เดินหน้าอัตโนมัติ (พยายามหลีกเลี่ยงสิ่งกีดขวาง)",
+		walk_forwards_command_parameter_server_id = "ไอดีเซิร์ฟเวอร์",
+		walk_forwards_command_parameter_server_id_help = "ไอดีเซิร์ฟเวอร์ของผู้เล่นที่คุณต้องการทำให้เดินหน้า",
+		walk_forwards_command_parameter_sprint = "วิ่ง",
+		walk_forwards_command_parameter_sprint_help = "ระบุว่าผู้เล่นควรวิ่งเร็วขึ้นเมื่อเดินไปข้างหน้าหรือไม่ (ค่าเริ่มต้น: false)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "cash",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		create_shockwave_command_parameter_radius_help = "รัศมีของเสียงช็อกเวฟ (1 - 100)",
 		create_shockwave_command_substitutes = "shockwave",
 
+		push_player_command = "push_player",
+		push_player_command_help = "เลี้ยวผู้เล่นหรือยานพาหนะที่เขาอยู่ไกล้จากคุณ",
+		push_player_command_parameter_server_id = "Server id",
+		push_player_command_parameter_server_id_help = "เลขไอดีเซิร์ฟเวอร์ของผู้เล่น",
+		push_player_command_substitutes = "push",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "draw_shroom_areas",
 		draw_shroom_areas_command_help = "วาดพื้นที่เห็ดและเพิ่มเติม",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		local_entities_debug_command_help = "เปิด/ปิดการแสดงผลแบบดีบักของวัตถุในพื้นที่ใกล้เคียง",
 		local_entities_debug_command_substitutes = "lentities",
 
-		no_ped_population_areas_debug_command = "no_ped_population_asreas_debug",
+		no_ped_population_areas_debug_command = "no_ped_population_areas_debug",
 		no_ped_population_areas_debug_command_help = "เปิด/ปิดโหมดแสดงผลของพื้นที่ที่ไม่มี NPC เคลื่อนที่",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		hotwire_vehicle_command = "hotwire_vehicle",
 		hotwire_vehicle_command_help = "Hotwire รถยนต์ทันทีที่คุณกำลังนอนอยู่ภายในรถ",
+		hotwire_vehicle_command_parameter_server_id = "Server id",
+		hotwire_vehicle_command_parameter_server_id_help = "ทำให้ผู้เล่นคนอื่นสามารถเปิดรถยนต์ของพวกเขาได้ทันที",
 		hotwire_vehicle_command_substitutes = "hotwire",
 
 		pickup_keys_command = "pickup_keys",
@@ -4245,7 +4293,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		material_vendor = "ร้านขายวัสดุ",
 		pdm = "ประจำสำนักงาน Premium Deluxe Motorsport",
 		ls_customs = "ร้านซ่อม Los Santos Customs",
-		jewelry_store = "ร้านเครื่องประดับ Vangelico",
+		jewelry_store = "Vangelico Jewelry",
 		pd_air_hq = "สำนักงานตำรวจทางอากาศ",
 		pd_sea_hq = "ศูนย์บริหารงานเสด็จฯทางทะเลของตำรวจ",
 		ems_air_hq = "ศูนย์บริหารงานเอ็มเอสทางอากาศ",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		crafted_gas_grenade = "คราฟกระสุนระเบิดแก๊สเรียบร้อยแล้ว",
 		failed_craft_gas_grenade = "การผลิตเกรนเนดแก๊สล้มเหลว",
 
+		break_apart_ring = "แยกหมวกนิรภัย",
+		press_break_apart_ring = "[${SeatEjectKey}] แยกหมวกนิรภัย",
+		breaking_ring = "กำลังแยกหมวกนิรภัยออก",
+		broke_ring = "แยกหมวกนิรภัยเรียบร้อย",
+		failed_break_ring = "ไม่สามารถแยกหมวกนิรภัยได้",
+
 		no_required_items = "คุณไม่มีไอเท็มที่จำเป็นทั้งหมด",
 
 		debug_multi = "-ผลลัพธ์หลายรายการ-",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] ปล่อยดอกไม้ไฟ"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "พยายามสลับธงโดยไม่มีสิทธิ์เหมาะสม",
+
+		toggled_flag_swap_on = "สลับธงเปิด",
+		toggled_flag_swap_off = "ปิดสลับป้ายเรียบร้อยแล้ว"
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["th-TH"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "กดค้าง ~INPUT_CONTEXT~ เพื่อหมุนล้อแห่งความโชคดี มีค่าใช้จ่าย ${cost}",
-		spin_lucky_wheel_for_free = "กดค้าง ~INPUT_CONTEXT~ เพื่อหมุนล้อแห่งความโชคดีแบบฟรี คุณมีโอกาสหมุนฟรีอีกหนึ่งครั้งในวันนี้",
-		unable_to_spin_lucky_wheel = "คุณได้ส่องวงล้อโชคดีไปแล้วตามที่อนุญาตให้วันนี้ โปรดกลับมาใหม่ในภายหลังเพื่อส่องวงล้ออีกครั้ง!",
-		unable_to_spin_lucky_wheel_time = "คุณได้ส่องวงล้อโชคดีไปแล้วตามที่อนุญาตให้วันนี้ โปรดกลับมาใหม่ในภายหลังในเวลา ${displayTime} เพื่อส่องวงล้ออีกครั้ง",
-		lucky_wheel_is_occupied = "วงล้อโชคดีกำลังถูกใช้งานอยู่ โปรดรอสักครู่",
+		hold_to_spin_lucky_wheel = "กดค้าง ~INPUT_CONTEXT~ เพื่อหมุนลูกเสี่ยงโชค ราคา $${cost}",
+		hold_to_spin_lucky_wheel_free_one_left = "กดค้าง ~INPUT_CONTEXT~ เพื่อหมุนลูกเสี่ยงโชค คุณมีการหมุนฟรีอีก 1 ครั้งวันนี้",
+		hold_to_spin_lucky_wheel_free_multiple_left = "กดค้าง ~INPUT_CONTEXT~ เพื่อหมุนลูกเสี่ยงโชค คุณมีการหมุนฟรีอีก ${spins} ครั้งวันนี้",
+		continue_holding_to_spin_lucky_wheel = "กดค้าง ~INPUT_CONTEXT~ เพื่อหมุนลูกเสี่ยงโชคต่อไป",
+		unable_to_spin_lucky_wheel = "คุณหมุนลูกเขย่าโชคสังเวียนไปแล้วตามจำนวนครั้งที่อนุญาตประจำวันแล้ว จะสามารถหมุนได้อีกในอีก ${time}",
 		not_enough_balance_to_spin = "คุณมียอดเงินไม่เพียงพอสำหรับการส่องวงล้อโชคดี ต้องใช้เงิน $${cost}",
+		lucky_wheel_is_occupied = "วงล้อโชคดีกำลังถูกใช้งานอยู่ โปรดรอสักครู่",
+
 		logs_lucky_wheel_reward_title = "รางวัลจากการส่องวงล้อโชคดี",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} หมุนล้อแล้วได้รถ",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} ได้รับรถ ชื่อโมเดล `${modelName}` สำเร็จแล้ว",
 		logs_lucky_wheel_reward_money_details = "${consoleName} หมุนล้อแล้วได้รับเงิน $$${amount}",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} หมุนลูกเขย่าโชคและได้รับชิปมูลค่า $${amount}",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} หมุนล้อแล้วได้รับเครื่องประดับชื่อ `${itemName}`",
 		logs_lucky_wheel_reward_item_details = "${consoleName} หมุนล้อแล้วได้รับไอเท็มชื่อ `${itemName}`",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} หมุนวงล้อแล้วได้รับสิทธิ์คิว 1 สัปดาห์"
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["th-TH"] = {
 		server_tps = "Failed to automatically generate translation.",
 		server_tps_response = "${tps}",
 		license_copied = "คัดลอกไฟล์ลิขสิทธิ์เรียบร้อยแล้ว",
-		uptime = "ออนไลน์มาแล้ว: ${uptime}"
+		uptime = "ออนไลน์มาแล้ว: ${uptime}",
+
+		picture_no_url = "ไม่มี URL.",
+		picture_invalid_url = "URL ไม่ถูกต้อง ต้องเริ่มต้นด้วย https://",
+		picture_no_description = "ไม่มีคำอธิบาย",
+		picture_failed = "ไม่สามารถสร้างภาพได้",
+
+		auto_run_already_set_to = "การรันออโต้ได้ถูกตั้งค่าให้ใช้งานปุ่ม ${controlId} แล้ว",
+		auto_run_already_unset = "การเริ่มรันออโต้อยู่แล้ว",
+		auto_run_set_to = "เริ่มรันออโต้ถูกตั้งค่าไปที่ ${controlId}",
+		auto_run_unset = "การเริ่มรันออโต้ถูกยกเลิกแล้ว",
+
+		invalid_server_id = "ID เซิร์ฟเวอร์ไม่ถูกต้อง",
+		walk_forwards_success = "สามารถสลับการเดินหน้าสำหรับ ${displayName} ได้สำเร็จ",
+		walk_forwards_failed = "ไม่สามารถสลับการเดินหน้าสำหรับ ${displayName} ได้"
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "ผู้เล่นพยายามสร้างแรงกระสุนแตะผิดแต่ไม่ได้รับอนุญาต",
+		push_player_missing_permissions = "ผู้เล่นพยายามเลื่อนผู้เล่น แต่พวกเขาไม่มีสิทธิ์ที่จำเป็น",
 		shockwave_success = "สร้างเอฟเฟกต์ shockwave สำเร็จ",
-		shockwave_failed = "ไม่สามารถสร้างเอฟเฟกต์ shockwave ได้"
+		shockwave_failed = "ไม่สามารถสร้างเอฟเฟกต์ shockwave ได้",
+
+		invalid_server_id = "ID เซิร์ฟเวอร์ไม่ถูกต้อง",
+		push_player_success = "ผลักผู้เล่นสำเร็จ",
+		push_player_failed = "ไม่สามารถผลักผู้เล่นได้"
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		you_are_in_a_vehicle = "คุณกำลังเดินทางอยู่ในยานพาหนะ",
 		hotwired_vehicle_with_plate_number = "ทำการแฮกไฟรถที่มีเลขทะเบียน '${plateNumber}' เรียบร้อยแล้ว",
 		unable_to_hotwire_vehicle = "ไม่สามารถแฮกไฟรถได้",
-		picked_up_keys = "รับกุญแจสำหรับ `${plate}` แล้ว"
+		picked_up_keys = "รับกุญแจสำหรับ `${plate}` แล้ว",
+		invalid_server_id = "รหัสเซิร์ฟเวอร์ไม่ถูกต้อง",
+		hotwired_vehicle_for_player = "ทำให้ ${displayName} เรียกใช้รถยนต์โดยไม่ได้รับอนุญาต"
 	},
 
 	modifications = {

@@ -1,9 +1,9 @@
-if not OP then OP = {} end
+ if not OP then OP = {} end
 if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["meme-spongebob"] = {
 	-- configuration settings for language
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		watching_feature = "Watching",
 		fortnite_feature = "Fortnite",
 		reflection_feature = "Damage Reflection",
+		stable_cam_feature = "Stable Cam (Krusty Krab style)",
 
 		you_are_not_in_a_vehicle = "You are not in a vehicle.",
 		repaired_vehicle = "Repaired vehicle.",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		unable_to_enter_vehicle_while_dead = "You can't hop in a vehicle while sleeping with the fishes, buddy!",
 		the_closest_vehicle_had_no_free_seats = "Aw, barnacles! The closest boatmobile was full.",
 		there_are_no_nearby_vehicles = "Sorry, pal, there are no boatmobiles in sight.",
+		vehicle_not_found_network = "Where's the vehicle? I looked everywhere!",
 		entered_vehicle = "Attempted to hop on nearby ${vehicleName}! Hope there's plankton on the way!",
 
 		set_vehicle_modifications_logs_title = "Customized Boatmobile",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		enter_vehicle_command = "enter_vehicle",
 		enter_vehicle_command_help = "Get in the boatmobile, Gary!",
+		enter_vehicle_command_parameter_network_id = "network id (optional, if you feel like practicing Karate)",
+		enter_vehicle_command_parameter_network_id_help = "The vehicle's network id. Don't forget the pickles on your Krabby Patty when you enter. (optional)",
 		enter_vehicle_command_substitutes = "ev",
 
 		set_modification_command = "set_modification",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		detection_area_remove_command_parameter_area_id = "detection area id",
 		detection_area_remove_command_parameter_area_id_help = "The ID of the detection area you are wanting to remove. (Translate: Da ID o' da detection area ya wanna remove.)",
 		detection_area_remove_command_substitutes = "area_remove (Translate: area_remove)",
+
+		screen_text_debug_command = "screen_text_debug (meow)",
+		screen_text_debug_command_help = "Debug the screen-text exclusion rectangles. This'll help you avoid landing in patchy grass.",
+		screen_text_debug_command_substitutes = "screen_text (meow)",
 
 		-- base/commands
 		help_command = "help (Translate: help)",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		cache_assets_command_parameter_slow_download = "sllooww ddoowwnnllooaadd",
 		cache_assets_command_parameter_slow_download_help = "Ddoo yyoouu wwaanntt ttoo ccaacchhee tthhee aasssseetttss sllowwllyy? DDooiinngg tthhaatt wwiillll mmaakkee iitt ttaakkee mmuucchh lloonnnggeerr, bbuutt wwiilll aallssoo rreedduuccee tthhee cchhaannccee ooff ccrasshhinngg.",
 		cache_assets_command_substitutes = "ddoowwnnllooaadd__ccaacchhee, pprreellooaadd__ccaacchhee, llooaadd__ccaacchhee",
+
+		-- game/camera
+		stable_cam_command = "stable_cam (I'm ready, I'm ready, I'm ready!)",
+		stable_cam_command_help = "Toggles the stable cam. This will make your camera as stable as King Neptune's crown.",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "ccaarrggo_ssttaarrt",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		fake_id_command_parameter_female_help = "Set to true if ye wanna womanly citizen card instead of a manly one.",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/flag_swap",
+		flag_swap_command_help = "Toggle the server-wide 'flag swap' event, me boy!",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
 		create_forcefield_command_help = "Creates a forcefield at yer current location, ay ay!",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		no_copyright_command_help = "This command will disable all potentially copyrighted sounds coming from the framework when enabled.",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "picture",
+		picture_command_help = "Spawns a picture item with a custom image URL, arr!",
+		picture_command_parameter_url = "url",
+		picture_command_parameter_url_help = "The image url, aye!",
+		picture_command_parameter_description = "description",
+		picture_command_parameter_description_help = "The picture description, matey!",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "Get th' server's current TPS.",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		uptime_command = "uptimeo",
 		uptime_command_help = "Check da uptime of da server, dude.",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "auto_run",
+		auto_run_command_help = "Set a keybind for an auto-run, ye scallywag!",
+		auto_run_command_parameter_control_id = "Control ID lalalalalala",
+		auto_run_command_parameter_control_id_help = "Yer control ID ya want ta bind ta auto-run.",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "walk_forwards",
+		walk_forwards_command_help = "Makes ya or anotha player walk forwards automatically (while attemptin' ta avoid obstacles).",
+		walk_forwards_command_parameter_server_id = "Server ID",
+		walk_forwards_command_parameter_server_id_help = "The server ID o' the player ya want ta make walk forwards.",
+		walk_forwards_command_parameter_sprint = "Sprint",
+		walk_forwards_command_parameter_sprint_help = "Whether or not the player should sprint while walking forwards. (Default: false)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "cashew",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		create_shockwave_command_parameter_radius_help = "Da radius of da shockwave (1 - 100).",
 		create_shockwave_command_substitutes = "shockwave",
 
+		push_player_command = "push_player",
+		push_player_command_help = "Push a player or the vehicle they are in away from you.",
+		push_player_command_parameter_server_id = "server id",
+		push_player_command_parameter_server_id_help = "The server id of the player.",
+		push_player_command_substitutes = "push",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "draw_shroom_areas",
 		draw_shroom_areas_command_help = "Draw all da shroom areas and add more.",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		local_entities_debug_command_help = "Toggle th' debug fer local entities.",
 		local_entities_debug_command_substitutes = "lentities",
 
-		no_ped_population_areas_debug_command = "no_ped_population_asreas_debug",
+		no_ped_population_areas_debug_command = "no_ped_population_areas_debug",
 		no_ped_population_areas_debug_command_help = "Toggle th' 'no ped population areas' debugger.",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		hotwire_vehicle_command = "hotwire_vehicle",
 		hotwire_vehicle_command_help = "Instantly hotwire the vehicle you are in.", -- SpongeBob Speak: "Make tha' ride yours in a jiffy!",
+		hotwire_vehicle_command_parameter_server_id = "server id",
+		hotwire_vehicle_command_parameter_server_id_help = "Make another sponge instantly start up the vessel they are in, me boy-o!",
 		hotwire_vehicle_command_substitutes = "hotwire",
 
 		pickup_keys_command = "pickup_keys",
@@ -4245,7 +4293,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		material_vendor = "Squidward's Art Supplies",
 		pdm = "Bikini Bottom Boatmobiles",
 		ls_customs = "Bikini Bottom Customs",
-		jewelry_store = "Pearl Krabs' Fine Jewelry",
+		jewelry_store = "Vangelico Jewelry",
 		pd_air_hq = "Krusty Krab Air HQ",
 		pd_sea_hq = "Police Sea HQ, Ahoy there me hearty!",
 		ems_air_hq = "EMS Air HQ, Let's go save some jellyfish!",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		crafted_gas_grenade = "Successfully cooked up a Chum Bucket gas grenade!",
 		failed_craft_gas_grenade = "Barnacles! You couldn't craft the gas grenade, mateys!",
 
+		break_apart_ring = "Splitting Ring into Two, aye aye!",
+		press_break_apart_ring = "[${SeatEjectKey}] Split the Ring in Two, me hearty!",
+		breaking_ring = "Splitting the Ring into Pieces, woo hoo!",
+		broke_ring = "Ring has been split into pieces, yeah!",
+		failed_break_ring = "Splitting the Ring has failed, oh no!",
+
 		no_required_items = "Tartar Sauce! You don't have all the required items!",
 
 		debug_multi = "-Multiple Outputs-",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] Firework time, baby!"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "Trying to switch flags without permission, uh oh!",
+
+		toggled_flag_swap_on = "Swapped the flags, hooray!",
+		toggled_flag_swap_off = "Flag swap toggled off, dude!"
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Hoist the anchor! Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. Th' cost be $${cost}.",
-		spin_lucky_wheel_for_free = "Ahoy! Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. Ye have one free spin left today, me bucko.",
-		unable_to_spin_lucky_wheel = "Oopsie! You've already given the Lucky Wheel a good spin for today! You can try again tomorrow!",
-		unable_to_spin_lucky_wheel_time = "Sorry, but you've already given the Lucky Wheel a good spin today! Please come back in ${displayTime}.",
-		lucky_wheel_is_occupied = "Hold your seahorses! Someone else is spinning the Lucky Wheel right now. Please be patient!",
+		hold_to_spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel, moneybags! It'll cost you $${cost}.",
+		hold_to_spin_lucky_wheel_free_one_left = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel, buddy! You've got 1 free spin left today.",
+		hold_to_spin_lucky_wheel_free_multiple_left = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel, dude! You've got ${spins} free spins left today.",
+		continue_holding_to_spin_lucky_wheel = "Keep holding ~INPUT_CONTEXT~ to spin the Lucky Wheel, buddy!",
+		unable_to_spin_lucky_wheel = "Sorry SpongeBob, you already spun the Lucky Wheel too many times today. Next spin available in ${time} Krusty Krab Time.",
 		not_enough_balance_to_spin = "Sorry, you don't have enough doubloons to give the Lucky Wheel a spin. The cost is $${cost}.",
+		lucky_wheel_is_occupied = "Hold your seahorses! Someone else is spinning the Lucky Wheel right now. Please be patient!",
+
 		logs_lucky_wheel_reward_title = "Lucky Wheel Treasure",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} has spun the wheel and got themsel' a new drivin' transport!",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} has been gifted a vehi'le with the model name of `${modelName}`.",
 		logs_lucky_wheel_reward_money_details = "${consoleName} has spun the wheel and won $${amount}. Cha-ching!",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} spun the wheel and won $${amount} worth of chips. Wahoo!",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} has spun the wheel and won some fancy jewelry with the name of `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} has spun the wheel and won an item called `${itemName}`. Ye-haw!",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} spun the wheel and won one week of queue priority, meow!"
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		server_tps = "Server TPS (Time Pieces a Second)",
 		server_tps_response = "${tps}, me hearty!",
 		license_copied = "Successfully copied yer license t' clipboard!",
-		uptime = "Booty Time: ${uptime}"
+		uptime = "Booty Time: ${uptime}",
+
+		picture_no_url = "Oh no, SpongeBob! The url is missing for this picture!",
+		picture_invalid_url = "This url doesn't look right to me, SpongeBob. It should start with 'https://'!",
+		picture_no_description = "Uh oh, SpongeBob! You forgot to give a description for this picture!",
+		picture_failed = "Oopsie daisy, SpongeBob! Something went wrong and we couldn't create the picture.",
+
+		auto_run_already_set_to = "SpongeBob, the auto-run is already set to control ${controlId}. Keep up the good work!",
+		auto_run_already_unset = "Auto-run is already unset. Meow!",
+		auto_run_set_to = "Auto-run has been set to control ${controlId}. Aye aye, captain!",
+		auto_run_unset = "Auto-run has been unset. Ooh, tartar sauce!",
+
+		invalid_server_id = "Invalid server ID. Oopsie daisy!",
+		walk_forwards_success = "Successfully toggled walking forwards for ${displayName}. Let's go, let's go, let's go!",
+		walk_forwards_failed = "Failed to toggle walking forwards for ${displayName}. Oh, barnacles!"
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "We got a landlubber trying to create a shockwave here, but they don't have the right permissions! Walk the plank!",
+		push_player_missing_permissions = "Player attempted to push a player but they didn't have the required permissions. This is not goo-od!",
 		shockwave_success = "Successfulllllllly created shockwave.",
-		shockwave_failed = "Aw, tartar sauce! Failed to create shockwave."
+		shockwave_failed = "Aw, tartar sauce! Failed to create shockwave.",
+
+		invalid_server_id = "Invalid server ID. Did someone say krabby patties?",
+		push_player_success = "Successfully pushed player. Bikini Bottom Power!",
+		push_player_failed = "Failed to push player. That's a no-no."
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		you_are_in_a_vehicle = "Yarrr! Ye be in a boat!",
 		hotwired_vehicle_with_plate_number = "Thar she blows! Yer hotwired the boat with the plate number '${plateNumber}'!",
 		unable_to_hotwire_vehicle = "Ahoy! Unable to hotwire the boat, ye bilge rat!",
-		picked_up_keys = "Arr! Ye picked up the keys for '${plate}'!"
+		picked_up_keys = "Arr! Ye picked up the keys for '${plate}'!",
+		invalid_server_id = "Invalid server ID. Are you from Rock Bottom?",
+		hotwired_vehicle_for_player = "Made ${displayName} hotwire the vehicle they are in. Time to get jellyfishing!"
 	},
 
 	modifications = {

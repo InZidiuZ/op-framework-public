@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["meme-roadman"] = {
 	-- configuration settings for language
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		watching_feature = "Watching, fam.",
 		fortnite_feature = "Fortnite, blud.",
 		reflection_feature = "Damage Reflection",
+		stable_cam_feature = "Stable Cam, innit",
 
 		you_are_not_in_a_vehicle = "Bruv, you ain't in a whip.",
 		repaired_vehicle = "Sorted, the whip's good as new.",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		unable_to_enter_vehicle_while_dead = "Bruh, you can't hop in a whip when you're flatlined.",
 		the_closest_vehicle_had_no_free_seats = "Ayo, the closest whip was already full.",
 		there_are_no_nearby_vehicles = "No whips around here fam.",
+		vehicle_not_found_network = "Oi, can't find that vehicle with that network ID.",
 		entered_vehicle = "Tried to jump in ${vehicleName} but it wasn't safe.",
 
 		set_vehicle_modifications_logs_title = "Customized a Whip",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		enter_vehicle_command = "enter_vehicle",
 		enter_vehicle_command_help = "Yo, force your player to hop into the vehicle nearest to you (if you're already cruisin', it'll make you dip).",
+		enter_vehicle_command_parameter_network_id = "network ID, bruv",
+		enter_vehicle_command_parameter_network_id_help = "Put in the network ID of the whip you wanna hop in. (optional)",
 		enter_vehicle_command_substitutes = "ev",
 
 		set_modification_command = "set_modification",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		detection_area_remove_command_parameter_area_id = "id of detection area",
 		detection_area_remove_command_parameter_area_id_help = "The ID of the detection area you tryna remove fam.",
 		detection_area_remove_command_substitutes = "area_remove",
+
+		screen_text_debug_command = "screen_text_debug",
+		screen_text_debug_command_help = "Debug the screen-text exclusion squares, fam.",
+		screen_text_debug_command_substitutes = "screen_text",
 
 		-- base/commands
 		help_command = "help",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		cache_assets_command_parameter_slow_download = "man's doin it slow",
 		cache_assets_command_parameter_slow_download_help = "Do you wan' the assets to be cached slow mate? It'll take longer, but it'll also be less likely to crash.",
 		cache_assets_command_substitutes = "download_cache, preload_cache, load_cache",
+
+		-- game/camera
+		stable_cam_command = "stable_cam",
+		stable_cam_command_help = "Toggles the stable cam, blud.",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "initiate the world-wide cargo heist",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		fake_id_command_parameter_female_help = "Set to true if you want a bird citizen card instead of a geezer.",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/flag_swap",
+		flag_swap_command_help = "Yo toggle the mad 'flag swap' event for the mandem.",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
 		create_forcefield_command_help = "Creates a forcefield at your current ends.",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		no_copyright_command_help = "Disable all possibly owned sounds that come from the framework.",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "picture",
+		picture_command_help = "Spawns a picture with a custom image URL, get me?",
+		picture_command_parameter_url = "url",
+		picture_command_parameter_url_help = "The link to the image, fam.",
+		picture_command_parameter_description = "description",
+		picture_command_parameter_description_help = "Description for the pic, you get me?",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "Check the server's current TPS.",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		uptime_command = "how long the ting been up",
 		uptime_command_help = "Check how long the server has been up.",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "auto_run",
+		auto_run_command_help = "Set a keybind for auto-running like a champ.",
+		auto_run_command_parameter_control_id = "lessgetit control id",
+		auto_run_command_parameter_control_id_help = "What control ID do you wanna bind to auto-run?",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "shiftin init",
+		walk_forwards_command_help = "Force a player to move forwards (trying to dodge any obstacles like a boss).",
+		walk_forwards_command_parameter_server_id = "mandem id",
+		walk_forwards_command_parameter_server_id_help = "The mandem ID you wanna force to shift in.",
+		walk_forwards_command_parameter_sprint = "dash that ting",
+		walk_forwards_command_parameter_sprint_help = "Whether man's gotta jog while moving forwards. (Default: false)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "cash",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		create_shockwave_command_parameter_radius_help = "The radius of the shockwave (1 - 100).",
 		create_shockwave_command_substitutes = "shockwave",
 
+		push_player_command = "push_player",
+		push_player_command_help = "Send a bro or a whip away from ya.",
+		push_player_command_parameter_server_id = "server id",
+		push_player_command_parameter_server_id_help = "The server id of the bro.",
+		push_player_command_substitutes = "push",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "draw_shroom_areas",
 		draw_shroom_areas_command_help = "Draw all shroom areas and add more.",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		local_entities_debug_command_help = "Turn on/off the debugging feature for local entities, innit.",
 		local_entities_debug_command_substitutes = "lentities",
 
-		no_ped_population_areas_debug_command = "no_ped_popo_areas_dbg",
+		no_ped_population_areas_debug_command = "no_ped_population_areas_debug",
 		no_ped_population_areas_debug_command_help = "Turn on/off the debugging feature for no ped population areas, yeah?",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		hotwire_vehicle_command = "hotwire_vehicle",
 		hotwire_vehicle_command_help = "No messing around, just get the vehicle running ASAP.",
+		hotwire_vehicle_command_parameter_server_id = "server id",
+		hotwire_vehicle_command_parameter_server_id_help = "Yo make another brudda instantly hotwire the whip they in.",
 		hotwire_vehicle_command_substitutes = "spark that shit up",
 
 		pickup_keys_command = "scoop up the keys",
@@ -4245,7 +4293,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		material_vendor = "Supplies Plug",
 		pdm = "Whips Emporium",
 		ls_customs = "Custom Rides",
-		jewelry_store = "Jewelry Spot",
+		jewelry_store = "Vangelico Jewelry",
 		pd_air_hq = "Pig Air HQ",
 		pd_sea_hq = "Police Mandem HQ",
 		ems_air_hq = "EMS Skr Air HQ",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		crafted_gas_grenade = "Ay, man crafted a gas grenade blud.",
 		failed_craft_gas_grenade = "Ay blud, couldn't craft no gas grenade.",
 
+		break_apart_ring = "Split da ring",
+		press_break_apart_ring = "[${SeatEjectKey}] Split da ring",
+		breaking_ring = "Splitting da ring",
+		broke_ring = "Man split the ring, innit.",
+		failed_break_ring = "Couldn't do it maan, da ring still whole.",
+
 		no_required_items = "Bruv, you ain't got all the tings you need.",
 
 		debug_multi = "-Multiple Outputs-",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] Light a Firework"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "You ain't got the permissions to mess with flag swaps.",
+
+		toggled_flag_swap_on = "Flag swap turned on, ya get me?",
+		toggled_flag_swap_off = "Flag swap off, innit."
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. You gotta pay up $${cost}.",
-		spin_lucky_wheel_for_free = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. You got one free spin left for today, innit.",
-		unable_to_spin_lucky_wheel = "Oi fam, you already spun the Lucky Wheel as many times as you can today. Come back later for another spin!",
-		unable_to_spin_lucky_wheel_time = "You already spun the Lucky Wheel as much as you're allowed to today. Next spin ain't available until ${displayTime}.",
-		lucky_wheel_is_occupied = "The Lucky Wheel's busy right now. Chill for a bit.",
+		hold_to_spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ to spin the lucky ting. It's gonna cost you $$ {cost}.",
+		hold_to_spin_lucky_wheel_free_one_left = "Hold ~INPUT_CONTEXT~ to spin the lucky ting. You got one free spin left today, fam.",
+		hold_to_spin_lucky_wheel_free_multiple_left = "Hold ~INPUT_CONTEXT~ to spin the lucky ting. You got ${spins} free spins left today, bruv.",
+		continue_holding_to_spin_lucky_wheel = "Keep holdin' ~INPUT_CONTEXT~ to spin the lucky ting.",
+		unable_to_spin_lucky_wheel = "Yo fam, you've already spun the Lucky Wheel max times allowed for today. Try again in ${time}.",
 		not_enough_balance_to_spin = "You don't have enough P's to spin the wheel fam. It costs $$${cost}.",
+		lucky_wheel_is_occupied = "The Lucky Wheel's busy right now. Chill for a bit.",
+
 		logs_lucky_wheel_reward_title = "Lucky Wheel Bless-up",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} just spun the wheel and got a fresh ride.",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} just got hooked up with a ride called `${modelName}`.",
 		logs_lucky_wheel_reward_money_details = "${consoleName} just spun the wheel and won $${amount}.",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} spun the wheel and won $${amount} worth of chips. Respect!",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} just hit the wheel and won some sparkly `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} just spun the wheel and won a `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} spun the wheel and won 1 week of priority in the queue, sick!"
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		server_tps = "Server Lag",
 		server_tps_response = "Yo, the server tps is ${tps}",
 		license_copied = "Successfully swiped license cuz. Safe.",
-		uptime = "Uptime: ${uptime}, we been up for a minute now."
+		uptime = "Uptime: ${uptime}, we been up for a minute now.",
+
+		picture_no_url = "Ayo, you need to provide a URL for the picture.",
+		picture_invalid_url = "Brah, that URL ain't valid. It's gotta start with https://.",
+		picture_no_description = "You forgot to include a description for the picture fam.",
+		picture_failed = "Sorry fam, we couldn't create the picture.",
+
+		auto_run_already_set_to = "Control ${controlId} is already set for auto-run. You good.",
+		auto_run_already_unset = "Fam, auto-run is already undone.",
+		auto_run_set_to = "Your auto-run has been set to control ${controlId}.",
+		auto_run_unset = "Auto-run has been undone, G.",
+
+		invalid_server_id = "Bruv, that server ID ain't valid.",
+		walk_forwards_success = "Safe, toggled walking forwards for ${displayName}.",
+		walk_forwards_failed = "Couldn't toggle walking forwards for ${displayName}, blud."
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "Some yute tried to create a shockwave but they ain't got the clearance for that.",
+		push_player_missing_permissions = "Yo, this player tried pushing someone but didn't have the required permissions.",
 		shockwave_success = "Shockwave created proper.",
-		shockwave_failed = "Shockwave creation goofed."
+		shockwave_failed = "Shockwave creation goofed.",
+
+		invalid_server_id = "Oi, that server ID ain't valid.",
+		push_player_success = "Safe blud, you've just pushed that player there.",
+		push_player_failed = "Bare sorry fam, couldn't push that player."
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		you_are_in_a_vehicle = "Fam, you're already in a whip.",
 		hotwired_vehicle_with_plate_number = "Manz hotwired the whip with plate number '${plateNumber}'.",
 		unable_to_hotwire_vehicle = "Bruv, we can't hotwire that whip.",
-		picked_up_keys = "Picked up the keys for `${plate}` whip."
+		picked_up_keys = "Picked up the keys for `${plate}` whip.",
+		invalid_server_id = "Bruv, that server ID ain't right.",
+		hotwired_vehicle_for_player = "Yo, my guy ${displayName} just hotwired the whip they're in."
 	},
 
 	modifications = {

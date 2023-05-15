@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 5 (do not change)
+-- AUTO LOCALES: 6 (do not change)
 
 OP.Global.Locales.Languages["meme-dinosaur"] = {
 	-- configuration settings for language
@@ -416,6 +416,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		watching_feature = "Watching",
 		fortnite_feature = "Carnivore Combat",
 		reflection_feature = "Damage Reflection",
+		stable_cam_feature = "Stable Cam Dino-Speak",
 
 		you_are_not_in_a_vehicle = "You are not riding a beast.",
 		repaired_vehicle = "Restored beast's strength.",
@@ -442,6 +443,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		unable_to_enter_vehicle_while_dead = "You cannot mount a dinosaur while dead!",
 		the_closest_vehicle_had_no_free_seats = "All the nearby dinosaur mounts are already taken.",
 		there_are_no_nearby_vehicles = "No dinosaur mounts are in sight.",
+		vehicle_not_found_network = "Me not find vehicle with network id.",
 		entered_vehicle = "Tried to mount a nearby ${vehicleName} dinosaur.",
 
 		set_vehicle_modifications_logs_title = "Dinosaur Mount Modifications",
@@ -1200,6 +1202,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 		enter_vehicle_command = "enter_roar_machine",
 		enter_vehicle_command_help = "Force your dinosaur to enter the roar machine you are closest to (makes you exit the roar machine if you are in one).",
+		enter_vehicle_command_parameter_network_id = "network id",
+		enter_vehicle_command_parameter_network_id_help = "Tell me network id of vehicle you want to enter. (optional)",
 		enter_vehicle_command_substitutes = "erm",
 
 		set_modification_command = "set_roar_modification",
@@ -1412,6 +1416,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		detection_area_remove_command_parameter_area_id = "detection area id",
 		detection_area_remove_command_parameter_area_id_help = "You must input the ID of the area you wish to remove from detection.",
 		detection_area_remove_command_substitutes = "area_remove",
+
+		screen_text_debug_command = "screen_text_debug",
+		screen_text_debug_command_help = "Debug the screen-text exclusion rectangles in Dino-Speak.",
+		screen_text_debug_command_substitutes = "screen_text",
 
 		-- base/commands
 		help_command = "help",
@@ -1634,6 +1642,11 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		cache_assets_command_parameter_slow_download = "slow stomp",
 		cache_assets_command_parameter_slow_download_help = "Urrrrp! You want stomp slowwwwly? That means it will take loooonger, but less chance of crash boom bang.",
 		cache_assets_command_substitutes = "stomp_cache, preload_cache, load_cache",
+
+		-- game/camera
+		stable_cam_command = "stable_cam",
+		stable_cam_command_help = "Me turn on Stable Cam Dino-Speak.",
+		stable_cam_command_substitutes = "",
 
 		-- game/cargo
 		cargo_start_command = "roar_go_cargo",
@@ -2092,6 +2105,11 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		fake_id_command_parameter_female_help = "Set to true if you want a herbivore's citizen card instead of a carnivore's.",
 		fake_id_command_substitutes = "",
 
+		-- game/flag_swap
+		flag_swap_command = "/caveman_swap",
+		flag_swap_command_help = "Ugg toggle server-wide 'flag swap' event!",
+		flag_swap_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
 		create_forcefield_command_help = "Creates a protective field at your den.",
@@ -2504,6 +2522,14 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		no_copyright_command_help = "This command will prevent any sounds that are owned by other dinosaurs from playing when enabled.",
 		no_copyright_command_substitutes = "",
 
+		picture_command = "picture",
+		picture_command_help = "Ugg make picture item with fancy picture URL.",
+		picture_command_parameter_url = "url",
+		picture_command_parameter_url_help = "Ugg show picture!",
+		picture_command_parameter_description = "description",
+		picture_command_parameter_description_help = "Ugg say what picture show.",
+		picture_command_substitutes = "",
+
 		tps_command = "tps",
 		tps_command_help = "Find out how fast the server's heart is beating.",
 		tps_command_substitutes = "",
@@ -2511,6 +2537,20 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		uptime_command = "rawrtime",
 		uptime_command_help = "Roar about how long server has been up.",
 		uptime_command_substitutes = "",
+
+		auto_run_command = "auto_run",
+		auto_run_command_help = "Ugg make feet go fast with keybind for auto-run.",
+		auto_run_command_parameter_control_id = "control id",
+		auto_run_command_parameter_control_id_help = "The control ID you would like to bind to automatic running.",
+		auto_run_command_substitutes = "",
+
+		walk_forwards_command = "walk_forwards",
+		walk_forwards_command_help = "Makes you or another player walk forwards automatically (while attempting to avoid obstacles).",
+		walk_forwards_command_parameter_server_id = "server id",
+		walk_forwards_command_parameter_server_id_help = "The server id of the player you want to make walk forwards.",
+		walk_forwards_command_parameter_sprint = "sprint",
+		walk_forwards_command_parameter_sprint_help = "Rawrrr! Whether or not the player should sprint while walking forwards. (Default: false)",
+		walk_forwards_command_substitutes = "",
 
 		-- game/money
 		cash_command = "chompies",
@@ -2898,6 +2938,12 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		create_shockwave_command_parameter_radius_help = "The size of the roar (1 - 100).",
 		create_shockwave_command_substitutes = "roar",
 
+		push_player_command = "push_player_dino",
+		push_player_command_help = "Push a player or the vehicle they are in away from you with your mighty strength.",
+		push_player_command_parameter_server_id = "server id",
+		push_player_command_parameter_server_id_help = "The rawrrr! server id of the player.",
+		push_player_command_substitutes = "push_dino",
+
 		-- game/shrooms
 		draw_shroom_areas_command = "draw_shroom_areas",
 		draw_shroom_areas_command_help = "Display all mushroom areas and create new ones.",
@@ -3203,7 +3249,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		local_entities_debug_command_help = "Toggle the debug for distant entities. RAAWRK!",
 		local_entities_debug_command_substitutes = "lentities",
 
-		no_ped_population_areas_debug_command = "no_egg_laying_areas_debug",
+		no_ped_population_areas_debug_command = "no_ped_population_areas_debug_dino",
 		no_ped_population_areas_debug_command_help = "Toggle the 'no egg-laying areas' debugger. RAAWRK!",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3365,6 +3411,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 		hotwire_vehicle_command = "hotwire_vehicle",
 		hotwire_vehicle_command_help = "Instantly hotwire the vehicle you are in, RAWR!",
+		hotwire_vehicle_command_parameter_server_id = "server id",
+		hotwire_vehicle_command_parameter_server_id_help = "Make another player instantly hotwire the vehicle they are in.",
 		hotwire_vehicle_command_substitutes = "chomp",
 
 		pickup_keys_command = "pick_dino_keys",
@@ -4245,7 +4293,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		material_vendor = "Rawr Materials Vendor",
 		pdm = "Premium Deluxe Motorsaur",
 		ls_customs = "Los Santos Sauromobile Customs",
-		jewelry_store = "Vangelico Jewellery Nest",
+		jewelry_store = "Vangelico Jewelry",
 		pd_air_hq = "Police Ptero Headquarters",
 		pd_sea_hq = "Police Sea HQooh, ooh, ooh!",
 		ems_air_hq = "EMS Air HQ! Aaah, aaah, aaah!",
@@ -5089,6 +5137,12 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		crafted_gas_grenade = "Rarrr, crafted gas grawr-nade.",
 		failed_craft_gas_grenade = "Failed to craft gas grenade. Rawr!",
 
+		break_apart_ring = "Break Apart Ring",
+		press_break_apart_ring = "[${SeatEjectKey}] Break Apart Ring",
+		breaking_ring = "Breaking Apart Ring",
+		broke_ring = "Broke apart ring.",
+		failed_break_ring = "Failed to break apart ring.",
+
 		no_required_items = "You don't have all the required items. Rawr!",
 
 		debug_multi = "-Multiple Outputs- Rawrrrr!",
@@ -5778,6 +5832,13 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 	fireworks = {
 		fire_firework = "[${InteractionKey}] Burn and Shine!"
+	},
+
+	flag_swap = {
+		toggle_flag_swap_no_permissions = "Attempted to toggle flag swaps without proper permissions.",
+
+		toggled_flag_swap_on = "Toggled flag swap on.",
+		toggled_flag_swap_off = "Rawr! Flag swap off toggled."
 	},
 
 	forcefields = {
@@ -8118,16 +8179,19 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 	},
 
 	lucky_wheel = {
-		spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ for spin Lucky Wheel. Cost is $${cost}. Raaawr!",
-		spin_lucky_wheel_for_free = "Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. Free one spin left today. Raaawr!",
-		unable_to_spin_lucky_wheel = "Raaar! You already spun the Lucky Wheel as much as dinosaurusly allowed today. Come back later for another spin!",
-		unable_to_spin_lucky_wheel_time = "Raaar! You already spun the Lucky Wheel as much as dinosaurusly allowed today. Next spin available in ${displayTime}.",
-		lucky_wheel_is_occupied = "The Lucky Wheel is currently occupied. Please wait your turn!",
+		hold_to_spin_lucky_wheel = "Roar! Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. The cost is $${cost}.",
+		hold_to_spin_lucky_wheel_free_one_left = "Roar! Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. You have 1 free spin left today.",
+		hold_to_spin_lucky_wheel_free_multiple_left = "Roar! Hold ~INPUT_CONTEXT~ to spin the Lucky Wheel. You have ${spins} free spins left today.",
+		continue_holding_to_spin_lucky_wheel = "Rawr! Continue holding ~INPUT_CONTEXT~ to spin the Lucky Wheel.",
+		unable_to_spin_lucky_wheel = "Rarrr, you already spun the Lucky Wheel as much as allowed today. Come back in ${time} for another try.",
 		not_enough_balance_to_spin = "You do not have enough shiny stones to spin the wheel. The cost is $${cost}.",
+		lucky_wheel_is_occupied = "The Lucky Wheel is currently occupied. Please wait your turn!",
+
 		logs_lucky_wheel_reward_title = "Roar! Lucky Wheel Reward",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} has hunted for lucky wheel and earned a vehicle!",
 		logs_lucky_wheel_reward_vehicle_given_details = "This vehicle has ${modelName} model name as ${consoleName} receive it in enthusiastic manner!",
 		logs_lucky_wheel_reward_money_details = "${consoleName} has conquered the lucky wheel and found $${amount}.",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} has spun the wheel and won $${amount} worth of chips. Good job!",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} has hunted for lucky wheel and achieved jewelry with the name of `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} has hunted for lucky wheel and found an item named `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} has spun the wheel and won one week of queue priority."
@@ -8336,7 +8400,21 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		server_tps = "Server ROR",
 		server_tps_response = "ROAR! TPS: ${tps}",
 		license_copied = "ROAR! License successfully copied to clipboard.",
-		uptime = "ROAR! Uptime: ${uptime}"
+		uptime = "ROAR! Uptime: ${uptime}",
+
+		picture_no_url = "Rarrr, you forgot to provide an image url. Try again!",
+		picture_invalid_url = "Rarrr, invalid url. It has to start with https://. Please check and retry.",
+		picture_no_description = "Rarrr, provide a description for the picture. Please try again.",
+		picture_failed = "Rarrr, failed to create the picture. Please try again later.",
+
+		auto_run_already_set_to = "Rarrr, auto-run is already set to control ${controlId}. Not again!",
+		auto_run_already_unset = "Argh argh, auto-run already unset.",
+		auto_run_set_to = "Argh argh, auto-run set to control ${controlId}.",
+		auto_run_unset = "Argh argh, auto-run unset.",
+
+		invalid_server_id = "Sorry, invalid dino nest ID.",
+		walk_forwards_success = "${displayName} now walking forward, argh.",
+		walk_forwards_failed = "Failed to toggle walking forwards for ${displayName}, argh."
 	},
 
 	money = {
@@ -9823,8 +9901,13 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "Player tried to create a shockwave without permission.",
+		push_player_missing_permissions = "You can't push another dino, you don't have sharp enough teeth.",
 		shockwave_success = "Roar! Successfully created shockwave.",
-		shockwave_failed = "Me no like. Failed to create shockwave."
+		shockwave_failed = "Me no like. Failed to create shockwave.",
+
+		invalid_server_id = "Sorry, invalid dino nest ID, argh.",
+		push_player_success = "Rarr, pushed player successfully!",
+		push_player_failed = "Rarr, failed to push player."
 	},
 
 	shooting_ranges = {
@@ -11097,7 +11180,9 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		you_are_in_a_vehicle = "You are currently sitting on a dino-mobile.",
 		hotwired_vehicle_with_plate_number = "Hotwired dino-mobile with plate number '${plateNumber}'.",
 		unable_to_hotwire_vehicle = "Unable to hotwire dino-mobile.",
-		picked_up_keys = "Picked up keys for dino-mobile `${plate}`."
+		picked_up_keys = "Picked up keys for dino-mobile `${plate}`.",
+		invalid_server_id = "Rarr, ID is invalid.",
+		hotwired_vehicle_for_player = "Rarr, ${displayName} has hotwired the vehicle they are in!"
 	},
 
 	modifications = {
