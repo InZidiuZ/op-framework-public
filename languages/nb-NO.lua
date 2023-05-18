@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["nb-NO"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/flaggbytte",
+		flag_swap_command = "flaggbytte",
 		flag_swap_command_help = "Aktiverer/På av/på serverens 'flaggbytte'-event.",
+		flag_swap_command_parameter_flags = "flagg",
+		flag_swap_command_parameter_flags_help = "Antall flagg som skal være tilstede i verden under hendelsen. (standardverdi: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "flaggbytte_vis_flagg",
+		flag_swap_show_flags_command_help = "Bryter av og på visning av alle nærliggende flagg.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "flaggbytte_ledertavle",
+		flag_swap_leaderboard_command_help = "Bryter av og på visning av ledertavle for flaggbytte.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "lag_forcefield",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		toggle_flag_swap_no_permissions = "Forsøkte å veksle flaggutvekslinger uten tilstrekkelige tillatelser.",
 
 		toggled_flag_swap_on = "Vekslet flaggutvekslinger på.",
-		toggled_flag_swap_off = "Byttet flaggbytte av."
+		toggled_flag_swap_off = "Byttet flaggbytte av.",
+
+		showing_flags = "Viser flagg.",
+		not_showing_flags = "Viser ikke lenger flagg.",
+
+		flag_swap_leaderboard = "Flaggbytter Leaderboard",
+		ongoing = "Pågår",
+		not_ongoing = "Ikke pågår",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} flagg",
+		players_with_most_flags_will_show_here = "Spillerne med flest flagg vil vises her."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		treasure_map_description = "Et falmet og værslitt kart som lover utallige rikdommer til de som kan tyde dets kryptiske ledetråder. X markerer stedet, men reisen til skatten kan være farlig og full av utfordringer.",
 		treasure_map_piece = "Skattekartbrikke",
 		treasure_map_piece_description = "Et revet fragment av et større skattekart, kanskje mistet eller bevisst skjult. Den inneholder et fragment av mysteriet, en gåte som venter på å bli løst. Samle alle brikkene, sett sammen kartet og lås opp hemmelighetene til en lenge tapt skatt. Pass deg for rivaliserende skattejegere og uventede hindringer på veien!",
+
+		flag = "Flagg",
+		flag_description = "Hold godt på det!",
 
 		black_dildo = "Svart Dildo",
 		black_dildo_description = "Vi vil få den tilståelsen på en eller annen måte.",

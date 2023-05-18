@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["meme-gungan"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/sleemo_swap",
+		flag_swap_command = "bombad_flag_swap",
 		flag_swap_command_help = "Mesa help yous toggle da servo-wide 'sleemo swap' event.",
+		flag_swap_command_parameter_flags = "flags",
+		flag_swap_command_parameter_flags_help = "Da number o' flags dat should exist in da world durin' da event. (default: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "bombad_flag_swap_show_flags",
+		flag_swap_show_flags_command_help = "Toggle showin' of all nearby flags.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "bombad_flag_swap_leaderboard",
+		flag_swap_leaderboard_command_help = "Toggle da flag swap leaderboard.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		toggle_flag_swap_no_permissions = "Me no have permissions to swap flags.",
 
 		toggled_flag_swap_on = "Swapped flags, meesa did it.",
-		toggled_flag_swap_off = "Yousa turned off flag swap."
+		toggled_flag_swap_off = "Yousa turned off flag swap.",
+
+		showing_flags = "Mesa showin' da flags.",
+		not_showing_flags = "Mesa no longa showin' da flags.",
+
+		flag_swap_leaderboard = "Flag Swap Leaderboard",
+		ongoing = "While it happens",
+		not_ongoing = "No happening",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} flags",
+		players_with_most_flags_will_show_here = "Da playas wit da mos' flags, dey be shown here."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		treasure_map_description = "A fadeden and weathereden mapen dat promises untolden riches to doesen who can decipher its cryptic clueen. X marken the spot, but the journey to the treasureda may be perilousen and fraught with challenges.",
 		treasure_map_piece = "Goppa Map Piece",
 		treasure_map_piece_description = "Mesa found a torn piece of a larger map, couldba mesa been lost or deliberately hidden. Itsasa holds a piece of mesa mystery, a puzzle waiting to be solved. Collect all the pieces, assemble the map, and unlock the secrets of a long-lost treasure. Be warned of rival treasure hunters and unexpected obstacles along the way!",
+
+		flag = "Flag",
+		flag_description = "Hold onto it tightly!",
 
 		black_dildo = "Black Oongan",
 		black_dildo_description = "Wesa gonna getsa that confession one way or another.",

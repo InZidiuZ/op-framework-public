@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["meme-habibi"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/flag_swap",
+		flag_swap_command = "swap_baladiya",
 		flag_swap_command_help = "Toogol il 'flag swap' event for il server.",
+		flag_swap_command_parameter_flags = "flags",
+		flag_swap_command_parameter_flags_help = "The number of flags that should exist in the world during the event. (default: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "show_baladiya_flags",
+		flag_swap_show_flags_command_help = "Toggle showing of all nearby flags.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "show_baladiya_leaderboard",
+		flag_swap_leaderboard_command_help = "Toggle the swap baladiya leaderboard.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		toggle_flag_swap_no_permissions = "Tried to switch flag swaps without proper permissions.",
 
 		toggled_flag_swap_on = "Switched flag swap on.",
-		toggled_flag_swap_off = "Toggled flag swap off."
+		toggled_flag_swap_off = "Toggled flag swap off.",
+
+		showing_flags = "I'm showing you where the flags are.",
+		not_showing_flags = "I'm not showing flags anymore.",
+
+		flag_swap_leaderboard = "لوحة تبادل الأعلام",
+		ongoing = "قائم",
+		not_ongoing = "غير قائم",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} أعلام",
+		players_with_most_flags_will_show_here = "ستظهر هنا اللاعبون الذين يحملون أكبر عدد من الأعلام."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		treasure_map_description = "An ancient and weathered map that promises treasures untold to those who can unravel its riddles. X marks the spot, but beware the perils and challenges on your journey. Habibi!",
 		treasure_map_piece = "تدليكة خريطة الكنز",
 		treasure_map_piece_description = "شذرة ممزقة من خارطة كنز أكبر ، ربما فُقدت أو تم إخفاؤها عمدًا. إنه يحمل جزءًا من الغموض ، ولغزًا في انتظار الحل. اجمع جميع القطع ، وأسِّس الخريطة ، واكتشف أسرار كنز فقد طويلاً. احذر من الصيادين المنافسين والعوائق غير المتوقعة في طريقك!",
+
+		flag = "العلم",
+		flag_description = "احتفظ به بإحكام!",
 
 		black_dildo = "ديلدو الأسود",
 		black_dildo_description = "سنحصل على اعترافك بأي وسيلة كانت.",

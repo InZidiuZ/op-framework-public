@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["de-DE"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["de-DE"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/flag_swap",
+		flag_swap_command = "flaggen_wechseln",
 		flag_swap_command_help = "Aktiviert/Deaktiviert das Ereignis 'Flaggen tauschen' serverweit.",
+		flag_swap_command_parameter_flags = "flaggen",
+		flag_swap_command_parameter_flags_help = "Die Anzahl der Flaggen, die während des Ereignisses in der Welt vorhanden sein sollen. (Standard: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "flaggen_anzeigen",
+		flag_swap_show_flags_command_help = "Anzeigen aller nahen Flaggen ein-/ausschalten.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "flaggen_wechseln_bestenliste",
+		flag_swap_leaderboard_command_help = "Wechseln zur Bestenliste für Flaggenwechsel.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "erstelle_forcefield",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["de-DE"] = {
 		toggle_flag_swap_no_permissions = "Es wurde versucht, Flaggen-Swaps ohne entsprechende Berechtigungen zu aktivieren.",
 
 		toggled_flag_swap_on = "Flaggen-Swap aktiviert.",
-		toggled_flag_swap_off = "Flaggenwechsel abgeschaltet."
+		toggled_flag_swap_off = "Flaggenwechsel abgeschaltet.",
+
+		showing_flags = "Zeige Flaggen.",
+		not_showing_flags = "Zeige keine Flaggen mehr.",
+
+		flag_swap_leaderboard = "Flag-Tausch Rangliste",
+		ongoing = "Läuft",
+		not_ongoing = "Nicht läuft",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} Fahnen",
+		players_with_most_flags_will_show_here = "Die Spieler mit den meisten Fahnen werden hier angezeigt."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["de-DE"] = {
 		treasure_map_description = "Eine verblasste und verwitterte Karte, die unermesslichen Reichtum verspricht, für diejenigen, die ihre kryptischen Hinweise entschlüsseln können. X markiert den Ort, aber die Reise zum Schatz kann gefährlich und voller Herausforderungen sein.",
 		treasure_map_piece = "Schatzkarten-Stück",
 		treasure_map_piece_description = "Ein zerrissenes Fragment einer größeren Schatzkarte, vielleicht verloren oder absichtlich versteckt. Es enthält ein Puzzle und wartet darauf, gelöst zu werden. Sammle alle Stücke, setze die Karte zusammen und enthülle die Geheimnisse eines längst verlorenen Schatzes. Vorsicht vor Rivalen und unerwarteten Hindernissen auf dem Weg!",
+
+		flag = "Fahne",
+		flag_description = "Halte sie fest!",
 
 		black_dildo = "Schwarzer Dildo",
 		black_dildo_description = "Wir werden das Geständnis so oder so bekommen.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["meme-valleygirl"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/flag_swap",
+		flag_swap_command = "flag_swaaap",
 		flag_swap_command_help = "Toggle the server-wide 'flag swap' event, like, totally!",
+		flag_swap_command_parameter_flags = "numba of flags",
+		flag_swap_command_parameter_flags_help = "The amount of flags that should be around during the event (default: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "show_flags",
+		flag_swap_show_flags_command_help = "Toggle on showing all the flags nearby.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "show_leaderboard",
+		flag_swap_leaderboard_command_help = "Toggle on the flag swap leaderboard.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		toggle_flag_swap_no_permissions = "Like, you're not even allowed to toggle flag swaps, so get outta here!",
 
 		toggled_flag_swap_on = "Flag swap is like, totally on now. Groovy!",
-		toggled_flag_swap_off = "Like, you turned off flag swapping."
+		toggled_flag_swap_off = "Like, you turned off flag swapping.",
+
+		showing_flags = "Flags are popping up!",
+		not_showing_flags = "No flags in sight.",
+
+		flag_swap_leaderboard = "Flag Swap Leaderboard",
+		ongoing = "Totally happening right now",
+		not_ongoing = "Not happening rn :/",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags}, like, totally flags",
+		players_with_most_flags_will_show_here = "The players with the most amount of flags, like, will be shown here."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		treasure_map_description = "A faded and weathered map that promises untold riches to those who can like, decipher its cryptic clues. X marks the spot and all, but the journey to the treasure may be, like, super perilous and fraught with challenges.",
 		treasure_map_piece = "OMG! Like, this is, like, a piece of a Treasure Map!",
 		treasure_map_piece_description = "This is, like, totally a small piece of a huge treasure map! Maybe it was lost or hidden on purpose, like, so mysterious! Collect all the pieces, put 'em together, and, like, unlock the secrets to, like, a super old treasure! But watch out for other treasure hunters and any unexpected roadblocks!",
+
+		flag = "Flag",
+		flag_description = "Hold it tight, okrrrr!",
 
 		black_dildo = "Black Dildo",
 		black_dildo_description = "We'll get that confession, like, one way or another!",

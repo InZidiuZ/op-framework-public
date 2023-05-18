@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["tr-TR"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/bayrak_degistir",
+		flag_swap_command = "bayrak_degisimi",
 		flag_swap_command_help = "Sunucu genelinde 'bayrak değiştirme' etkinliğini açar/kapatır.",
+		flag_swap_command_parameter_flags = "bayraklar",
+		flag_swap_command_parameter_flags_help = "Etkinlik sırasında dünyada bulunacak bayrak sayısı. (varsayılan: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "bayrak_degisimi_goster_bayraklar",
+		flag_swap_show_flags_command_help = "Yakındaki tüm bayrakların gösterimini açıp/kapatır.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "bayrak_degisimi_liderlik_tablosu",
+		flag_swap_leaderboard_command_help = "Bayrak değişimi liderlik tablosunu açıp/kapatır.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "forcefield_yarat",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		toggle_flag_swap_no_permissions = "Bayrak değişimlerini uygun izinler olmadan etkisizleştirmeye çalışıldı.",
 
 		toggled_flag_swap_on = "Bayrak değişimi açıldı.",
-		toggled_flag_swap_off = "Bayrak takası kapalı."
+		toggled_flag_swap_off = "Bayrak takası kapalı.",
+
+		showing_flags = "Bayraklar gösteriliyor.",
+		not_showing_flags = "Artık bayraklar gösterilmiyor.",
+
+		flag_swap_leaderboard = "Bayrak Takası Sıralaması",
+		ongoing = "Devam Ediyor",
+		not_ongoing = "Devam Etmiyor",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} bayrak",
+		players_with_most_flags_will_show_here = "En fazla sayıda bayrağı olan oyuncular burada gösterilecek."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		treasure_map_description = "Esmer ve yıpranmış bir harita, şifreli ipuçlarını çözebilenlere söz verilen sonsuz zenginlikleri vaat ediyor. X noktası yerini belirlerken, hazineye olan yolculuk tehlikeli ve zorlu olabilir.",
 		treasure_map_piece = "Hazine Haritası Parçası",
 		treasure_map_piece_description = "Büyük bir hazine haritasının koparılmış parçası, kaybolmuş veya kasıtlı olarak gizlenmiş olabilir. Bir sır parçası, çözülmesi bekleyen bir bulmaca taşır. Tüm parçaları toplayın, haritayı birleştirin ve kayıp bir hazinenin sırlarını açın. Rakip hazine avcılarından ve beklenmedik engellerden sakının!",
+
+		flag = "Bayrak",
+		flag_description = "Sıkıca tutun!",
 
 		black_dildo = "Siyah Dildo",
 		black_dildo_description = "İtirafı ya da yağları alacağız, her türlü yolla.",

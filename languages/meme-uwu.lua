@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["meme-uwu"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/fwag_swappu",
+		flag_swap_command = "fwag_swap",
 		flag_swap_command_help = "Toggle the sewvew-wide 'fwag swap' event. OwO",
+		flag_swap_command_parameter_flags = "fwags",
+		flag_swap_command_parameter_flags_help = "Da numbew of fwags dat shouwd exist in da wowwd duwing da event. (defauwt: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "fwag_swap_show_fwags",
+		flag_swap_show_flags_command_help = "Toggwe showin' of aww nearby fwags.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "fwag_swap_weadewboawd",
+		flag_swap_leaderboard_command_help = "Toggwe da fwag swap weadewboawd.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "cweate_fowcefield",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		toggle_flag_swap_no_permissions = "Attewpted to toggwe fwag swaps without pwopew pewmissions.",
 
 		toggled_flag_swap_on = "Toggwed fwag swap on.",
-		toggled_flag_swap_off = "Tuwgwed fwag swap off."
+		toggled_flag_swap_off = "Tuwgwed fwag swap off.",
+
+		showing_flags = "Showin' fwags.",
+		not_showing_flags = "No wongew showin' fwags.",
+
+		flag_swap_leaderboard = "Flag Swaap Weadeboawd",
+		ongoing = "Owongoing",
+		not_ongoing = "Not Owongoing",
+		position_and_name = "${position}. ${nyame}",
+		flag_count = "${flags} flags (・`ω´・)",
+		players_with_most_flags_will_show_here = "The pwayers with the most amount of flags will show hewe. OwO"
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		treasure_map_description = "A faded and weathewed map that pwomises untowd wiches to those who can deciphew its cwyptic clues. X mawks the spot, but the jouwney to the tweasure may be pewilous and fwought with challenges.",
 		treasure_map_piece = "Tweasure Map Piece",
 		treasure_map_piece_description = "A town fwaggment of a warger tweasure map, perhaps wost ow dewiberatewy hidden. It howds a town of the mystewy, a puzzwe waiting to be sowved. Cowwect aww the pieces, assemble the map, and unlock the secwets of a wong-wost tweasure. Bewawe of wivaw tweasure hunters and unexpected obstacwes along the way!",
+
+		flag = "Fwag",
+		flag_description = "Hold onto it tightwy! (っ˘ڡ˘ς)",
 
 		black_dildo = "Bwack Dildo",
 		black_dildo_description = "We wiww get that confession one way ow anothew.",

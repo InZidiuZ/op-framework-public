@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["ko-KR"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/국기교체",
+		flag_swap_command = "플래그교체",
 		flag_swap_command_help = "서버 전체 ‘국기 교체’ 이벤트를 토글합니다.",
+		flag_swap_command_parameter_flags = "플래그 수",
+		flag_swap_command_parameter_flags_help = "이벤트 동안 세상에 존재해야 할 플래그의 수입니다. (기본값: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "플래그_보기",
+		flag_swap_show_flags_command_help = "주변의 모든 플래그 표시를 전환합니다.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "플래그_교체_리더보드",
+		flag_swap_leaderboard_command_help = "플래그 교체 리더보드를 전환합니다.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		toggle_flag_swap_no_permissions = "적절한 권한 없이 교환 국기를 전환하려고 했습니다.",
 
 		toggled_flag_swap_on = "교환 국기 전환을 전환했습니다.",
-		toggled_flag_swap_off = "토글된 국기 교체를 끕니다."
+		toggled_flag_swap_off = "토글된 국기 교체를 끕니다.",
+
+		showing_flags = "플래그 표시 중.",
+		not_showing_flags = "더 이상 플래그를 표시하지 않습니다.",
+
+		flag_swap_leaderboard = "깃발 바꾸기 리더보드",
+		ongoing = "진행 중",
+		not_ongoing = "진행 중 아님",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags}개의 깃발",
+		players_with_most_flags_will_show_here = "가장 많은 깃발을 획득한 플레이어들이 이곳에 표시됩니다."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		treasure_map_description = "우물정자가 적힌 낡고 찢어진 보물 지도입니다. 암호를 해독할 수 있는 사람들에게는 수수께끼를 풀면서 다른 이들보다 보금자리를 찾을 수 있습니다. 하지만 보물을 찾기 위해서는 위험과 어려움이 많습니다.",
 		treasure_map_piece = "보물 지도 조각",
 		treasure_map_piece_description = "큰 보물 지도의 일부분이 찢겨 나온 조각입니다. 아마 잃어버렸거나 의도적으로 숨겨졌을지도 모릅니다. 보물을 찾는 데 필요한 단서를 제공합니다. 모든 조각을 모아 큰 지도를 완성하고 오래된 보물의 비밀을 풀어보세요. 하지만 경쟁자나 예상치 못한 장애물에 유의해야 합니다!",
+
+		flag = "깃발",
+		flag_description = "꽉 잡으세요!",
 
 		black_dildo = "검은 딜도",
 		black_dildo_description = "어떤 방법이든 자백을 얻겠습니다.",

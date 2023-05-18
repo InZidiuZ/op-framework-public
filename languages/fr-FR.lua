@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["fr-FR"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/inversion_drapeau",
+		flag_swap_command = "changement_de_drapeaux",
 		flag_swap_command_help = "Active ou désactive l'événement 'inversion de drapeaux' à l'échelle du serveur.",
+		flag_swap_command_parameter_flags = "drapeaux",
+		flag_swap_command_parameter_flags_help = "Le nombre de drapeaux qui doivent être présents dans le monde pendant l'événement. (défaut: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "changement_de_drapeaux_afficher_drapeaux",
+		flag_swap_show_flags_command_help = "Affiche ou non tous les drapeaux à proximité.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "changement_de_drapeaux_classement",
+		flag_swap_leaderboard_command_help = "Affiche ou non le classement des échanges de drapeaux.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "creer_champ_de_force",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		toggle_flag_swap_no_permissions = "Erreur: Permissions insuffisantes pour changer les drapeaux de swap.",
 
 		toggled_flag_swap_on = "Drapeaux de swap activés.",
-		toggled_flag_swap_off = "Le drapeau de permutation est désactivé."
+		toggled_flag_swap_off = "Le drapeau de permutation est désactivé.",
+
+		showing_flags = "Affichage des drapeaux.",
+		not_showing_flags = "Les drapeaux ne sont plus affichés.",
+
+		flag_swap_leaderboard = "Classement du drapeau",
+		ongoing = "En cours",
+		not_ongoing = "Pas en cours",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} drapeaux",
+		players_with_most_flags_will_show_here = "Les joueurs avec le plus grand nombre de drapeaux apparaîtront ici."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		treasure_map_description = "Une carte décolorée et abîmée qui promet des richesses inestimables à ceux qui pourront décrypter ses énigmes cryptiques. X marque l'emplacement, mais le voyage vers le trésor peut être périlleux et rempli de défis.",
 		treasure_map_piece = "Fragment de Carte au Trésor",
 		treasure_map_piece_description = "Un morceau déchiré d'une carte au trésor plus grande, peut-être perdu ou délibérément caché. Il contient un fragment du mystère, un puzzle en attente d'être résolu. Collectez toutes les pièces, assemblez la carte et débloquez les secrets d'un trésor depuis longtemps perdu. Attention aux chasseurs de trésors rivaux et aux obstacles inattendus sur le chemin !",
+
+		flag = "Drapeau",
+		flag_description = "Tenez-le bien !",
 
 		black_dildo = "Gode Noir",
 		black_dildo_description = "Nous obtiendrons cette confession d'une manière ou d'une autre.",

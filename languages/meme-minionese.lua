@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["meme-minionese"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/gibberish_swap",
+		flag_swap_command = "bello_swap",
 		flag_swap_command_help = "Bee-Do bee-Do! Toggle the Bananaaaaah-swide 'gibberish swap' event.",
+		flag_swap_command_parameter_flags = "bello",
+		flag_swap_command_parameter_flags_help = "Dul sae hello ka, bob aih da (default: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "bello_swap_show_flags",
+		flag_swap_show_flags_command_help = "Tigul bollu gelato potatum.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "bello_swap_leaderboard",
+		flag_swap_leaderboard_command_help = "Tigul leaderbob, tada!",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "create_fartgun",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		toggle_flag_swap_no_permissions = "Bee do bee do bee do! Attempted to toggle flag swaps without proper permissions.",
 
 		toggled_flag_swap_on = "Bee do bee do bee do! Toggled flag swap on.",
-		toggled_flag_swap_off = "Bellooo! Flag swap off toggled."
+		toggled_flag_swap_off = "Bellooo! Flag swap off toggled.",
+
+		showing_flags = "Poobah poobah.",
+		not_showing_flags = "Me poobah poobah.",
+
+		flag_swap_leaderboard = "Kanana-Banana Alet Leaderboard",
+		ongoing = "Bello",
+		not_ongoing = "Not Bello",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} kananas",
+		players_with_most_flags_will_show_here = "Da players with most kananas in their hands will show here."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		treasure_map_description = "Un mapa desteñido y deteriorado que promete riquezas incontables para aquellos que puedan descifrar sus pistas crípticas. X marca el lugar, pero el viaje al tesoro puede ser peligroso y lleno de desafíos.",
 		treasure_map_piece = "Banana Language Treasure Map Piece",
 		treasure_map_piece_description = "Bello Bello! A banana language fragment of a bigger treasure map, maybe lost or intentionally hidden. It has a piece of the mystery, a puzzle waiting to be decrypted. Gather all the pieces, put the map together, and unlock the secrets of a long-lost treasure. Be cautious of competing banana hunters and unexpected obstacles along the way!",
+
+		flag = "Kanana",
+		flag_description = "Bello bellow, grab it tight!",
 
 		black_dildo = "Banana Language Black Dildo",
 		black_dildo_description = "Bababa babanana! We'll get that confession one way or another.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["et-EE"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["et-EE"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/lipp_vahetus",
+		flag_swap_command = "lippude_vahetus",
 		flag_swap_command_help = "Vahetab serveri ulatuses 'lippude vahetuse' ürituse sisse/lülita see välja.",
+		flag_swap_command_parameter_flags = "lippude_arv",
+		flag_swap_command_parameter_flags_help = "Lippude arv, mis peaks sündmuse ajal maailmas olema. (vaikimisi: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "lippude_näitamine",
+		flag_swap_show_flags_command_help = "Lülita sisse või välja kõikide lähedal asuvate lippude näitamine.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "lippude_edetabel",
+		flag_swap_leaderboard_command_help = "Lülita lippude edetabel sisse või välja.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "tee_jõuväli",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["et-EE"] = {
 		toggle_flag_swap_no_permissions = "Üritati lippude vahetust sisse lülitada ilma korralike õigusteta.",
 
 		toggled_flag_swap_on = "Vahetuslippude lülitamine sisse.",
-		toggled_flag_swap_off = "Põrandaaluse lipu vahetus välja lülitatud."
+		toggled_flag_swap_off = "Põrandaaluse lipu vahetus välja lülitatud.",
+
+		showing_flags = "Näitan lippe.",
+		not_showing_flags = "Lippude näitamine lõpetatud.",
+
+		flag_swap_leaderboard = "Lippude vahetuse edetabel",
+		ongoing = "Toimub",
+		not_ongoing = "Ei toimu",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} lippu",
+		players_with_most_flags_will_show_here = "Mängijad, kellel on kõige rohkem lippe, ilmuvad siia."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["et-EE"] = {
 		treasure_map_description = "Tuhat aardet lubav tuhm ja ilmastikuga rikutud kaart, mille mõistujad on võimelised avastama rikkusi. X tähistab aarde asukohta, kuid aardele jõudmise teekond võib olla ohtlik ja keeruline.",
 		treasure_map_piece = "Aardekaardi tükk",
 		treasure_map_piece_description = "Puruks rebitud fragment suuremast aardekaardist, mis on kaotatud või teadlikult peidetud. Ta hoiab endas müsteeriumi killukest, pusletükki, mis ootab lahendamist. Koguge kõik tükid, koostage kaart ja avastage kaugelt kadunud aare saladused. Olge valmis konkureerivate aardejahtijate ja ootamatute takistustega teel!",
+
+		flag = "Lipp",
+		flag_description = "Hoia seda tugevalt kinni!",
 
 		black_dildo = "Must dildo",
 		black_dildo_description = "Me saame selle ülestunnistuse ühel või teisel moel.",

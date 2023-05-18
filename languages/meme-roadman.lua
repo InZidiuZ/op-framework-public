@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["meme-roadman"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/flag_swap",
+		flag_swap_command = "flag_swap",
 		flag_swap_command_help = "Yo toggle the mad 'flag swap' event for the mandem.",
+		flag_swap_command_parameter_flags = "flags",
+		flag_swap_command_parameter_flags_help = "Da number of flags dat should exist in the mandem world during da event. (default: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "flag_swap_show_flags",
+		flag_swap_show_flags_command_help = "Toggle showin of all nearby flags.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "flag_swap_leaderboard",
+		flag_swap_leaderboard_command_help = "Toggle da flag swap leaderboard.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		toggle_flag_swap_no_permissions = "You ain't got the permissions to mess with flag swaps.",
 
 		toggled_flag_swap_on = "Flag swap turned on, ya get me?",
-		toggled_flag_swap_off = "Flag swap off, innit."
+		toggled_flag_swap_off = "Flag swap off, innit.",
+
+		showing_flags = "Mandem, we showin flags now.",
+		not_showing_flags = "Nah we ain't showin flags no more.",
+
+		flag_swap_leaderboard = "Flag Swap Leaderboard",
+		ongoing = "Live and direct",
+		not_ongoing = "Not really happening",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} flags",
+		players_with_most_flags_will_show_here = "The real OG's with the most flags will be shoutin' out here."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		treasure_map_description = "Got yourself a chance to hit a big lick with this map. But be warned, gettin' to the score might be dangerous and shifty, ya hear?",
 		treasure_map_piece = "Treas Map Piece",
 		treasure_map_piece_description = "A tiny bit of a big treasure map, maybe it got lost or someone hid it. It got the key to a mystery, a puzzle to be solved. Gather all the bits, put the map together, and get ready to find a treasure that was lost a long time ago. But watch out for rival treasure hunters and unexpected obstacles that might come your way!",
+
+		flag = "Flag",
+		flag_description = "Hold onto that ting tight, bruv!",
 
 		black_dildo = "Black Dildo",
 		black_dildo_description = "We are gonna make them talk, one way or another.",

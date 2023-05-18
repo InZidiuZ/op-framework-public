@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["sv-SE"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/byte_swap",
+		flag_swap_command = "flagbyte_ombyte",
 		flag_swap_command_help = "Växla server-breda byte-swappet.",
+		flag_swap_command_parameter_flags = "flaggor",
+		flag_swap_command_parameter_flags_help = "Antalet flaggor som ska finnas i världen under evenemanget. (standard: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "flagbyte_ombyte_show_flags",
+		flag_swap_show_flags_command_help = "Växlar om visning av alla närliggande flaggor.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "flagbyte_ombyte_topplista",
+		flag_swap_leaderboard_command_help = "Växlar om flagbyte-ombyte topplistan.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "skapa_kraftfält",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		toggle_flag_swap_no_permissions = "Försökte växla flaggor utan rättigheter.",
 
 		toggled_flag_swap_on = "Växlade flaggor på.",
-		toggled_flag_swap_off = "Toggla flagga-byte av."
+		toggled_flag_swap_off = "Toggla flagga-byte av.",
+
+		showing_flags = "Visar flaggor.",
+		not_showing_flags = "Visar inte längre flaggor.",
+
+		flag_swap_leaderboard = "Flag Swap Leaderboard",
+		ongoing = "Ongoing",
+		not_ongoing = "Not Ongoing",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} flags",
+		players_with_most_flags_will_show_here = "The players with the most amount of flags will show here."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		treasure_map_description = "En blekt och väderbiten karta som lovar outtömlig rikedom till de som kan dechiffrera dess kryptiska ledtrådar. X-märket markerar platsen, men resan till skatten kan vara farlig och full av utmaningar.",
 		treasure_map_piece = "Skrapsak av skattkarta",
 		treasure_map_piece_description = "Ett trasigt fragment av en större skattkarta, kanske förlorat eller medvetet gömt. Den bär på en del av mysteriet, en pusselbit som väntar på att lösas. Samla alla bitar, sätt samman kartan och lås upp hemligheterna kring en förlorad skatt. Var beredd på rivaliserande skattletare och oväntade hinder längs vägen!",
+
+		flag = "Flag",
+		flag_description = "Hold onto it tightly!",
 
 		black_dildo = "Svart dildo",
 		black_dildo_description = "Vi ska få fram den erkännandet på ett sätt eller annat.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["da-DK"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["da-DK"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/flag_byt",
+		flag_swap_command = "flag_swap",
 		flag_swap_command_help = "Til- eller frakobler server-bredt 'flag bytnings' event.",
+		flag_swap_command_parameter_flags = "flags",
+		flag_swap_command_parameter_flags_help = "Antal flag der skal være i verdenen under eventet. (standard: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "flag_swap_show_flags",
+		flag_swap_show_flags_command_help = "Skift synligheden af alle nærliggende flag.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "flag_swap_leaderboard",
+		flag_swap_leaderboard_command_help = "Skift synligheden af flag byt leaderboard.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "lav_forcefield",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["da-DK"] = {
 		toggle_flag_swap_no_permissions = "Forsøgte at skifte flag uden de nødvendige tilladelser.",
 
 		toggled_flag_swap_on = "Aktiverede flag skift.",
-		toggled_flag_swap_off = "Flag skift deaktiveret."
+		toggled_flag_swap_off = "Flag skift deaktiveret.",
+
+		showing_flags = "Viser flag.",
+		not_showing_flags = "Viser ikke længere flag.",
+
+		flag_swap_leaderboard = "Flag Skift Leaderboard",
+		ongoing = "Pågående",
+		not_ongoing = "Ikke Pågående",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} flag",
+		players_with_most_flags_will_show_here = "Spillerne med flest flag vil vises her."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 		treasure_map_description = "Et falmet og vejrbidt kort, som lover ubegribelige rigdomme til dem, der kan tyde dets kryptiske spor. X er mærket, men rejsen til skatten kan være farlig og fyldt med udfordringer.",
 		treasure_map_piece = "Skattekortstykke",
 		treasure_map_piece_description = "Et revnet fragment af et større skattekort, måske tabt eller bevidst skjult. Det indeholder en del af mysteriet, en puzzle, der venter på at blive løst. Så saml alle stykkerne, samle kortet og lås op for hemmelighederne om en fortabte skat. Vær forsigtig med rivaliserende skattejægere og uventede forhindringer på vejen!",
+
+		flag = "Flag",
+		flag_description = "Hold fast på det!",
 
 		black_dildo = "Sort Dildo",
 		black_dildo_description = "Vi får den tilståelse en eller anden måde.",

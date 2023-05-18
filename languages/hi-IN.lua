@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["hi-IN"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/फ्लैग_स्वॉप",
+		flag_swap_command = "फ़्लैग_स्वैप",
 		flag_swap_command_help = "सर्वर-वाइड 'फ्लैग स्वॉप' इवेंट को टॉगल करें।",
+		flag_swap_command_parameter_flags = "फ़्लैग्स",
+		flag_swap_command_parameter_flags_help = "इवेंट के दौरान दुनिया में मौजूद अंकों की संख्या। (डिफ़ॉल्ट: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "फ़्लैग_स्वैप_फ़्लैग्स_दिखाएँ",
+		flag_swap_show_flags_command_help = "नजदीकी फ़्लैग्स का प्रदर्शन टॉगल करें।",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "फ़्लैग_स्वैप_लीडरबोर्ड",
+		flag_swap_leaderboard_command_help = "फ़्लैग स्वैप लीडरबोर्ड टॉगल करें।",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		toggle_flag_swap_no_permissions = "उचित अनुमतियां न होने के कारण फल्ग स्वैप्स को टॉगल करने का प्रयास किया गया।",
 
 		toggled_flag_swap_on = "फ्लैग स्वैप को टॉगल किया गया।",
-		toggled_flag_swap_off = "ध्वज स्वैप ऑफ़ किया गया।"
+		toggled_flag_swap_off = "ध्वज स्वैप ऑफ़ किया गया।",
+
+		showing_flags = "फ़्लैग्स दिखा रहा है।",
+		not_showing_flags = "फ़्लैग नहीं दिखा रहा है।",
+
+		flag_swap_leaderboard = "फ्लैग स्वैप लीडरबोर्ड",
+		ongoing = "चल रहा है",
+		not_ongoing = "चल रहा नहीं है",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} फ्लैग्स",
+		players_with_most_flags_will_show_here = "जो खिलाड़ी सबसे अधिक फ्लैग्स रखेंगे वहाँ दिखाई देंगे।"
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		treasure_map_description = "एक मुरझाया और मौसमी नक्शा जो उन लोगों को दिखाता है जो इसकी गुप्त सूचनाओं का अनुवाद कर सकते हैं। एक्स मार्क स्थान दर्शाता है, लेकिन खजाने तक की यात्रा जोखिम भरी और संघर्ष से भरी हो सकती है।",
 		treasure_map_piece = "खजाने का नक्शा टुकड़ा",
 		treasure_map_piece_description = "एक बड़े खजाने का नक्शा का टूटा हुआ अंश, शायद खो गया हो या जानबूझकर छिपा दिया हो। यह रहस्य का तुकड़ा है, एक पहेली होती है जो हल करने के लिए इंतज़ार कर रही है। सभी टुकड़ों को एकत्र करें, नक्शा जोड़ें और एक लंबे समय से गुम खजाने के रहस्यों को अनलॉक करें। कुछ विरोधी खजाना खोजकर्ताओं और अप्रत्याशित बाधाओं के साथ सावधान रहें!",
+
+		flag = "फ्लैग",
+		flag_description = "इसे मजबूती से पकड़ो!",
 
 		black_dildo = "काला डिल्डो",
 		black_dildo_description = "हम उस आवेदन पत्र को किसी भी तरीके से हासिल कर लेंगे।",

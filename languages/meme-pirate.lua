@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["meme-pirate"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/arr_swap",
+		flag_swap_command = "jolly_roger_swap",
 		flag_swap_command_help = "Toggle th' server-wide 'arr swap' event.",
+		flag_swap_command_parameter_flags = "pieces_of_eight",
+		flag_swap_command_parameter_flags_help = "Th' number o' jolly roger flags that mus' be present in th' world durin' th' event. (default: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "jolly_roger_swap_show_rogers",
+		flag_swap_show_flags_command_help = "Toggle showin' o' all nearby jolly roger flags.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "jolly_roger_swap_leaderboard",
+		flag_swap_leaderboard_command_help = "Toggle th' jolly roger swap leaderboard.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		toggle_flag_swap_no_permissions = "Attempted to toggle flag swaps without proper permissions, walk the plank!",
 
 		toggled_flag_swap_on = "Toggled flag swap on, hoist the Jolly Roger!",
-		toggled_flag_swap_off = "Avast! Flag swap off toggled, me hearty."
+		toggled_flag_swap_off = "Avast! Flag swap off toggled, me hearty.",
+
+		showing_flags = "Showin' jolly roger flags.",
+		not_showing_flags = "Nay longer showin' flags.",
+
+		flag_swap_leaderboard = "Jolly Roger Swap Leaderboard",
+		ongoing = "A-sailin'",
+		not_ongoing = "No voyage",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} Jolly Rogers",
+		players_with_most_flags_will_show_here = "The scallywags with the most Jolly Rogers will show here."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		treasure_map_description = "A faded an' weathered map that promises untold riches t' those who can decipher its cryptic clues. X marks the spot, but the journey t' the treasure may be perilous an' fraught with challenges, yo ho ho!",
 		treasure_map_piece = "Piece of the Treasure Map",
 		treasure_map_piece_description = "Arrr, a torn fragment of a larger treasure map! Mayhap lost or hidden on purpose. 'Tis holdin' a piece of the mystery, a puzzle waitin' to be solved. Ye must collect all o' the pieces, assemble the map and unlock the secrets of a long-lost treasure. But beware o' yer rival treasure hunters and unexpected obstacles along the way!",
+
+		flag = "Jolly Roger",
+		flag_description = "Hold onto it with a tight fist, ye scurvy dog!",
 
 		black_dildo = "Black Sparrow",
 		black_dildo_description = "We'll be gettin' that confession one way or another, Matey!",

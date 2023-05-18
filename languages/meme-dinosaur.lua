@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["meme-dinosaur"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/caveman_swap",
+		flag_swap_command = "rawr_swap",
 		flag_swap_command_help = "Ugg toggle server-wide 'flag swap' event!",
+		flag_swap_command_parameter_flags = "skreech",
+		flag_swap_command_parameter_flags_help = "The number of sky seeds that should exist in the world during the event. (default: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "rawr_show_skreech",
+		flag_swap_show_flags_command_help = "Toggle showing of all nearby sky seeds.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "rawr_leaderboard_skreech",
+		flag_swap_leaderboard_command_help = "Toggle the sky seed swap leaderboard.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		toggle_flag_swap_no_permissions = "Attempted to toggle flag swaps without proper permissions.",
 
 		toggled_flag_swap_on = "Toggled flag swap on.",
-		toggled_flag_swap_off = "Rawr! Flag swap off toggled."
+		toggled_flag_swap_off = "Rawr! Flag swap off toggled.",
+
+		showing_flags = "Skreechs visible.",
+		not_showing_flags = "Skreechs hidden.",
+
+		flag_swap_leaderboard = "Roar Swish Roar Leaderboard",
+		ongoing = "Meat On",
+		not_ongoing = "Idle Grunt",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} eggs collected",
+		players_with_most_flags_will_show_here = "Mightiest of Hunters"
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		treasure_map_description = "A faded and weathered map that promises untold riches to those who can decipher its cryptic clues. X marks the spot, but the journey to the treasure may be perilous and fraught with challenges.",
 		treasure_map_piece = "Rargh Map Piece",
 		treasure_map_piece_description = "A rawrgh fragment of a larger treasure map, perhaps lost or deliberately hidden. It holds a mrr mystery, a puzzle waiting to be solved. Collect all the pieces, assemble the map, and unlock the secrets of a long-lost treasure. Beware of rival treasure hunters and unexpected obstacles along the way!",
+
+		flag = "Egg",
+		flag_description = "Protect Egg at All Costs!",
 
 		black_dildo = "Black Pterodactyl",
 		black_dildo_description = "We will get that confession one way or another.",

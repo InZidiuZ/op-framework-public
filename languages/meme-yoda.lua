@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["meme-yoda"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/flag_swap",
+		flag_swap_command = "command_swap_flagged_have",
 		flag_swap_command_help = "Toggle the server-wide 'flag swap' event. Yeessss.",
+		flag_swap_command_parameter_flags = "flags_have",
+		flag_swap_command_parameter_flags_help = "During the event, the number of flags in the world should be this much. (default: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "command_flagged_have_show",
+		flag_swap_show_flags_command_help = "Toggle the display of all nearby flags, we will.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "command_swap_flagged_leaderboard",
+		flag_swap_leaderboard_command_help = "Toggle the flag swap leaderboard, you shall.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		toggle_flag_swap_no_permissions = "Failed, proper permissions flag swaps without to toggle attempted.",
 
 		toggled_flag_swap_on = "Toggled on, flag swap did.",
-		toggled_flag_swap_off = "Flag swap off, toggled it has."
+		toggled_flag_swap_off = "Flag swap off, toggled it has.",
+
+		showing_flags = "Flags, we are showing.",
+		not_showing_flags = "Stop showing flags, we have.",
+
+		flag_swap_leaderboard = "Leaderboard, Flag Swap it is",
+		ongoing = "Ongoing, it is",
+		not_ongoing = "Not ongoing, it is",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} flags, they have",
+		players_with_most_flags_will_show_here = "Here, players with most amount of flags show, hmmm."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		treasure_map_description = "A faded and weathered map that promises untold riches to those who can decipher its cryptic clues. Perilous and fraught with challenges, the journey to the treasure may be. X marks the spot, it does.",
 		treasure_map_piece = "Piece of treasure map, this is",
 		treasure_map_piece_description = "A fragment, torn from a larger treasure map, this is. Perhaps lost, deliberately hidden it was. Holds a piece of the mystery, a puzzle waiting to be solved. Collect all the pieces, assemble the map, and unlock the secrets of a long-lost treasure, you must. Beware of rival treasure hunters and unexpected obstacles along the way, you should!",
+
+		flag = "Flag, it is.",
+		flag_description = "Tightly hold onto it, you must!",
 
 		black_dildo = "Black Dildo, this is.",
 		black_dildo_description = "We will get that confession one way or another, we shall.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["th-TH"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/ถึงเวลาเปลี่ยนธง",
+		flag_swap_command = "flag_swap",
 		flag_swap_command_help = "เปิด/ปิดการเกิดเหตุการณ์ 'ถึงเวลาเปลี่ยนธง' ทั่วเซิร์ฟเวอร์",
+		flag_swap_command_parameter_flags = "flags",
+		flag_swap_command_parameter_flags_help = "จำนวน flag ที่ควรมีในโลกในระหว่างกิจกรรม (ค่าเริ่มต้น: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "flag_swap_show_flags",
+		flag_swap_show_flags_command_help = "สลับการแสดงผลของ flag ทั้งหมดที่อยู่ใกล้เคียง",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "flag_swap_leaderboard",
+		flag_swap_leaderboard_command_help = "สลับการแสดงผลของตารางคะแนนผู้เล่นที่เกี่ยวข้องกับกิจกรรม flag_swap",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "สร้างสนามแรงดัน",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["th-TH"] = {
 		toggle_flag_swap_no_permissions = "พยายามสลับธงโดยไม่มีสิทธิ์เหมาะสม",
 
 		toggled_flag_swap_on = "สลับธงเปิด",
-		toggled_flag_swap_off = "ปิดสลับป้ายเรียบร้อยแล้ว"
+		toggled_flag_swap_off = "ปิดสลับป้ายเรียบร้อยแล้ว",
+
+		showing_flags = "กำลังแสดง flag",
+		not_showing_flags = "ไม่แสดง flag อีกต่อไป",
+
+		flag_swap_leaderboard = "ตารางคะแนนสลับธง",
+		ongoing = "กำลังดำเนินการอยู่",
+		not_ongoing = "ไม่ได้ดำเนินการ",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} ธง",
+		players_with_most_flags_will_show_here = "ผู้เล่นที่มีจำนวนธงมากที่สุดจะปรากฏที่นี่"
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		treasure_map_description = "แผนที่ที่เลืองเลียงและเนื้อหาอักลับมีคำสั่งไม่ชัดเจนที่สัญลักษณ์ตาจุก X บอกตำแหน่ง แต่การเดินทางตามเส้นทางไปหาทรัพย์สินอาจอันตรายและเจ็บป่วยได้",
 		treasure_map_piece = "ชิ้นส่วนแผนที่หาขุมทรัพย์",
 		treasure_map_piece_description = "ชิ้นส่วนแผ่นผ่านแผนที่ขนาดใหญ่ที่อาจหายไปหรือถูกซ่อนไว้โดยตั้งใจ มันเก็บปริศนาชิ้นหนึ่ง ประกอบด้วยแผนที่ และปลดล็อคความลับของคำสั่งซื้อหาขุมทรัพย์ที่สูญหายนานแล้ว ระวังนักล่าขุมทรัพย์ฝ่ายตรงข้ามและอุปสรรคที่ไม่คาดคิดที่จะเกิดขึ้น!",
+
+		flag = "ธง",
+		flag_description = "ถือมันไว้แน่นๆ!",
 
 		black_dildo = "ดิลโด้สีดำ",
 		black_dildo_description = "เราจะได้รับการยอมรับว่าเป็นอย่างไรก็ตาม",

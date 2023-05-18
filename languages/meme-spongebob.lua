@@ -1,9 +1,9 @@
- if not OP then OP = {} end
+if not OP then OP = {} end
 if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["meme-spongebob"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/flag_swap",
+		flag_swap_command = "flag_swap_speak_like_spongebob",
 		flag_swap_command_help = "Toggle the server-wide 'flag swap' event, me boy!",
+		flag_swap_command_parameter_flags = "fLaGs",
+		flag_swap_command_parameter_flags_help = "Da nUmBeR oF fLaGs ThAt ShOuLd ExIsT iN dA wOrLd DuRiNg Da EvEnT. (dEfAuLt: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "show_fLaGs",
+		flag_swap_show_flags_command_help = "ToOGlE sHoWiNg Of AlL nEaRbY fLaGs.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "flag_swap_leaderboard_speak_like_spongebob",
+		flag_swap_leaderboard_command_help = "ToOGlE dA fLaG sWaP LeAdErBoArD.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		toggle_flag_swap_no_permissions = "Trying to switch flags without permission, uh oh!",
 
 		toggled_flag_swap_on = "Swapped the flags, hooray!",
-		toggled_flag_swap_off = "Flag swap toggled off, dude!"
+		toggled_flag_swap_off = "Flag swap toggled off, dude!",
+
+		showing_flags = "ShOwInG fLaGs.",
+		not_showing_flags = "No lOnGeR sHoWiNg FlAgS.",
+
+		flag_swap_leaderboard = "Flag Swap Leaderboard",
+		ongoing = "Ooooh, it's ongoing!",
+		not_ongoing = "Not happening right now, me boyo!",
+		position_and_name = "${position}. ${name}", -- Example: "1. SpongeBob",
+		flag_count = "${flags} flags", -- Example: "5 flags",
+		players_with_most_flags_will_show_here = "The players with the most flags will be displayed here, arrrr!"
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		treasure_map_description = "A faded and weathered map that promises untold riches to those who can decipher its cryptic clues, just like the hash slinging slasher story. X marks the spot, but the journey to the treasure may be perilous and fraught with challenges, just like when SpongeBob and Patrick go on an adventure.",
 		treasure_map_piece = "Treasure Map Piece-yo",
 		treasure_map_piece_description = "Arrrgh! Ye found a torn fragment of a larger treasure map, maybe lost or deliberately hidden-yo. It holds a clue to the mystery-yo, a puzzle waiting to be solved-yo. Collect all the pieces, assemble the map, and unlock the secrets of a long-lost treasure-yo. But beware of rival treasure hunters and unexpected obstacles along the way-yo!",
+
+		flag = "Flag",
+		flag_description = "Hold onto it tightly, me heartie!",
 
 		black_dildo = "Black Dildo-yo",
 		black_dildo_description = "Arrrgh! We will get that confession one way or another-yo!",

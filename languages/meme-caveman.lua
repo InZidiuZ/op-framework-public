@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["meme-caveman"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/fire_swap",
+		flag_swap_command = "Ug flag_swap",
 		flag_swap_command_help = "Toggle whole tribe 'fire swap' event.",
+		flag_swap_command_parameter_flags = "Ug flags",
+		flag_swap_command_parameter_flags_help = "Ug number of flags that should exist in world during event. (Ug default: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "Ug flag_swap_show_flags",
+		flag_swap_show_flags_command_help = "Toggle showing of all nearby flags.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "Ug flag_swap_leaderboard",
+		flag_swap_leaderboard_command_help = "Toggle the flag swap leaderboard.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		toggle_flag_swap_no_permissions = "Me no have permission to swap flags.",
 
 		toggled_flag_swap_on = "Me toggled flag swap on.",
-		toggled_flag_swap_off = "Flag swap turned off. Ugg ugg."
+		toggled_flag_swap_off = "Flag swap turned off. Ugg ugg.",
+
+		showing_flags = "Me showing flags.",
+		not_showing_flags = "Me no show flags no more.",
+
+		flag_swap_leaderboard = "Ugg Ugg Flag Swap",
+		ongoing = "Ooh Ooh Ongoing",
+		not_ongoing = "Ugh Ugh Not Ongoing",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} big flags",
+		players_with_most_flags_will_show_here = "The cavepeople who grab most big flags will show here."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		treasure_map_description = "A faded an' weathered map dat promises untold riches to dem who can decipher its cryptic clues. X marks da spot, but da journey to da treasure may be perilous an' fraught with challenges.",
 		treasure_map_piece = "Map Piece of Treasure",
 		treasure_map_piece_description = "Small piece of big treasure map. Maybe lost or hidden intentionally. It holds part of the mystery, a puzzle waiting to be solved. Collect all the pieces, put together the map, and reveal the secrets of ancient treasure. Be careful of other treasure hunters and unexpected challenges on the way!",
+
+		flag = "Big Flag",
+		flag_description = "Hold onto it tightly with all your might!",
 
 		black_dildo = "Dark Stick for Adult Fun",
 		black_dildo_description = "We will get confession by any means.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["ro-RO"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/schimba_steag",
+		flag_swap_command = "schimbare_stegulete",
 		flag_swap_command_help = "Activează/dezactivează evenimentul 'schimbare de steag' pe server.",
+		flag_swap_command_parameter_flags = "stegulete",
+		flag_swap_command_parameter_flags_help = "Numărul de stegulețe care ar trebui să existe în lume în timpul evenimentului. (implicit: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "schimbare_stegulete_afisare_stegulete",
+		flag_swap_show_flags_command_help = "Comutare afișare stegulețe din apropiere.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "schimbare_stegulete_clasament",
+		flag_swap_leaderboard_command_help = "Comutare clasament schimbare stegulețe.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "creează_câmp_de_forță",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		toggle_flag_swap_no_permissions = "S-a încercat să se schimbe opțiunea flag swaps fără permisiunea necesară.",
 
 		toggled_flag_swap_on = "S-a schimbat opțiunea flag swap.",
-		toggled_flag_swap_off = "Indicator de schimbare oprit."
+		toggled_flag_swap_off = "Indicator de schimbare oprit.",
+
+		showing_flags = "Se afișează stegulețele.",
+		not_showing_flags = "Nu se mai afișează stegulețele.",
+
+		flag_swap_leaderboard = "Clasament schimbare steaguri",
+		ongoing = "În desfășurare",
+		not_ongoing = "Nu este în desfășurare",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} steaguri",
+		players_with_most_flags_will_show_here = "Jucătorii cu cele mai multe steaguri vor fi afișați aici."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		treasure_map_description = "O hartă estompată și îmbătrânită care promite bogății neîncăpute pentru cei care pot descifra indiciile sale criptice. X marchează locul, dar călătoria spre comoară poate fi periculoasă și plină de provocări.",
 		treasure_map_piece = "Bucată din Harta Comoară",
 		treasure_map_piece_description = "Un fragment rupt al unei hărți de tezaur mai mari, pierdută sau ascunsă intenționat. Deține o bucățică a misterului, o puzzle ce așteaptă să fie rezolvat. Colectează toate bucățile, asamblează harta și descoperă secretele unei comori pierdute de mult timp. Fii atent la rivalii vânătorilor de comori și obstacolele neașteptate de-a lungul drumului!",
+
+		flag = "Steag",
+		flag_description = "Ține-l strâns!",
 
 		black_dildo = "Dildou Negru",
 		black_dildo_description = "O vom obține acea mărturisire într-un fel sau altul.",

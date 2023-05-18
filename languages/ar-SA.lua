@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["ar-SA"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/تبديل_الأعلام",
+		flag_swap_command = "flag_swap",
 		flag_swap_command_help = "تفعيل/إلغاء تفعيل حدث تبديل الأعلام على مستوى الخادم.",
+		flag_swap_command_parameter_flags = "flags",
+		flag_swap_command_parameter_flags_help = "عدد الأعلام التي يجب أن تظهر في العالم خلال الحدث. (القيمة الافتراضية: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "flag_swap_show_flags",
+		flag_swap_show_flags_command_help = "تبديل عرض جميع الأعلام القريبة.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "flag_swap_leaderboard",
+		flag_swap_leaderboard_command_help = "تبديل قائمة المتصدرين للأعلام المبادلة.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "انشاء_حقل_قوة",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		toggle_flag_swap_no_permissions = "تم محاولة تغيير حركات الأعلام دون وجود الصلاحيات اللازمة.",
 
 		toggled_flag_swap_on = "تم تغيير حركات الأعلام.",
-		toggled_flag_swap_off = "تم تبديل حالة تبديل العلم إيقاف التشغيل."
+		toggled_flag_swap_off = "تم تبديل حالة تبديل العلم إيقاف التشغيل.",
+
+		showing_flags = "يتم عرض الأعلام.",
+		not_showing_flags = "تم إيقاف عرض الأعلام.",
+
+		flag_swap_leaderboard = "جدول ترتيب صاحب العلم",
+		ongoing = "جاري",
+		not_ongoing = "غير جاري",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} علم",
+		players_with_most_flags_will_show_here = "سيتم عرض اللاعبين الذين يحملون أكبر عدد من الأعلام هنا."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		treasure_map_description = "خريطة باهتة ومتعرجة توعد بثروات لا توصف لأولئك الذين يستطيعون فك شفراتها الغامضة. الحرف X تُشير إلى الموقع الذي يجب الوجود فيه، لكن الرحلة إلى الكنز قد تكون خطرة ومليئة بالتحديات.",
 		treasure_map_piece = "جزء خريطة الكنز",
 		treasure_map_piece_description = "قطعة ممزقة من خريطة كنز أكبر، ربما فُقدت أو تم إخفاءها عمدًا. تحمل جزءًا من الغموض، ولغزًا في انتظار الحل. اجمع جميع الأجزاء، وضع الخريطة، وافتح أسرار الكنز الضائع. احذر من منافسي صائدي الكنوز والمعوقات الغير متوقعة على طريقك!",
+
+		flag = "العلم",
+		flag_description = "احتفظ به بحزم!",
 
 		black_dildo = "زب أسود",
 		black_dildo_description = "سنحصل على الاعتراف بأي وسيلة كانت.",

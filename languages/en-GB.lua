@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["en-GB"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["en-GB"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/flag_swap",
+		flag_swap_command = "swap_flag",
 		flag_swap_command_help = "Toggle the server-wide 'flag swap' event.",
+		flag_swap_command_parameter_flags = "flags",
+		flag_swap_command_parameter_flags_help = "The number of flags that should exist in the world during the event. (default: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "show_flags",
+		flag_swap_show_flags_command_help = "Toggle showing of all nearby flags.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "flag_leaderboard",
+		flag_swap_leaderboard_command_help = "Toggle the flag swap leaderboard.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["en-GB"] = {
 		toggle_flag_swap_no_permissions = "Tried to toggle flag swaps without the required permissions.",
 
 		toggled_flag_swap_on = "Flag swapping toggled on.",
-		toggled_flag_swap_off = "Toggled flag swap off."
+		toggled_flag_swap_off = "Toggled flag swap off.",
+
+		showing_flags = "Showing flags.",
+		not_showing_flags = "No longer showing flags.",
+
+		flag_swap_leaderboard = "Flag Swap Leaderboard",
+		ongoing = "In Progress",
+		not_ongoing = "Not in Progress",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} flags",
+		players_with_most_flags_will_show_here = "The players with the highest number of flags will be displayed here."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		treasure_map_description = "A faded and weathered map that promises untold riches to those who can decipher its cryptic clues. X marks the spot, but the journey to the treasure may be perilous and fraught with challenges.",
 		treasure_map_piece = "Treasure Map Piece",
 		treasure_map_piece_description = "A torn fragment of a larger treasure map, perhaps lost or deliberately hidden. It holds a fragment of the mystery, a puzzle waiting to be solved. Collect all the pieces, assemble the map, and unlock the secrets of a long-lost treasure. Beware of rival treasure hunters and unexpected obstacles along the way!",
+
+		flag = "Flag",
+		flag_description = "Hold on to it securely!",
 
 		black_dildo = "Black Dildo",
 		black_dildo_description = "We will get that confession one way or another.",

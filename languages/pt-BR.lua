@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["pt-BR"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/trocar_bandeiras",
+		flag_swap_command = "alternar_bandeiras",
 		flag_swap_command_help = "Ativa ou desativa o evento de 'troca de bandeiras' em todo o servidor.",
+		flag_swap_command_parameter_flags = "bandeiras",
+		flag_swap_command_parameter_flags_help = "O número de bandeiras que deve existir no mundo durante o evento. (padrão: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "alternar_bandeiras_mostrar_bandeiras",
+		flag_swap_show_flags_command_help = "Ativa ou desativa a exibição de todas as bandeiras próximas.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "alternar_bandeiras_quadro_de_lideres",
+		flag_swap_leaderboard_command_help = "Ativa ou desativa o quadro de líderes do evento de bandeiras.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "criar_campo_de_forca",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		toggle_flag_swap_no_permissions = "Tentativa de alternar troca de bandeiras sem permissões adequadas.",
 
 		toggled_flag_swap_on = "Alternado troca de bandeiras.",
-		toggled_flag_swap_off = "Alternância de bandeira desativada."
+		toggled_flag_swap_off = "Alternância de bandeira desativada.",
+
+		showing_flags = "Exibindo bandeiras.",
+		not_showing_flags = "Não exibindo mais bandeiras.",
+
+		flag_swap_leaderboard = "Quadro de Líderes da Troca de Bandeiras",
+		ongoing = "Em andamento",
+		not_ongoing = "Não em andamento",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} bandeiras",
+		players_with_most_flags_will_show_here = "Os jogadores com a maior quantidade de bandeiras aparecerão aqui."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		treasure_map_description = "Um mapa desbotado e desgastado que promete riquezas incontáveis para aqueles que podem decifrar suas pistas enigmáticas. A marcação X indica o local do tesouro, mas a jornada até ele pode ser perigosa e cheia de desafios.",
 		treasure_map_piece = "Fragmento do Mapa do Tesouro",
 		treasure_map_piece_description = "Um fragmento rasgado de um mapa do tesouro maior, talvez perdido ou deliberadamente escondido. Ele contém um pedaço do mistério, um quebra-cabeça esperando para ser resolvido. Junte todas as peças, monte o mapa e desbloqueie os segredos de um tesouro perdido há muito tempo. Cuidado com caçadores de tesouros rivais e obstáculos inesperados no caminho!",
+
+		flag = "Bandeira",
+		flag_description = "Segure-a firmemente!",
 
 		black_dildo = "Dildo Preto",
 		black_dildo_description = "Conseguiremos aquela confissão de um jeito ou de outro.",

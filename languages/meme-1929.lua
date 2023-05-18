@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["meme-1929"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "undefined",
+		flag_swap_command = "flag_exchange",
 		flag_swap_command_help = "undefined",
+		flag_swap_command_parameter_flags = "flags",
+		flag_swap_command_parameter_flags_help = "The number of flags that will be present in the world during the event. (default: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "flag_exchange_show_flags",
+		flag_swap_show_flags_command_help = "Toggle the display of all nearby flags.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "flag_exchange_leaderboard",
+		flag_swap_leaderboard_command_help = "Toggle the flag exchange leaderboard.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		toggle_flag_swap_no_permissions = "undefined",
 
 		toggled_flag_swap_on = "undefined",
-		toggled_flag_swap_off = "undefined"
+		toggled_flag_swap_off = "undefined",
+
+		showing_flags = "Displaying flags.",
+		not_showing_flags = "No longer displaying flags.",
+
+		flag_swap_leaderboard = "Flag Swap Leaderboard",
+		ongoing = "In Progress",
+		not_ongoing = "Not In Progress",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} flags",
+		players_with_most_flags_will_show_here = "The players with the most flags will show here."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		treasure_map_description = "A faded and weathered map that promises great wealth to those who can decode its puzzling clues. X marks the spot, but the journey to the treasure may be hazardous and challenging.",
 		treasure_map_piece = "Piece of Treasure Map",
 		treasure_map_piece_description = "A torn fragment of a larger treasure map, perhaps lost or deliberately hidden. It holds a fragment of the mystery, a puzzle waiting to be solved. Collect all the pieces, assemble the map, and unlock the secrets of a long-lost treasure. Beware of rival treasure hunters and unexpected obstacles along the way!",
+
+		flag = "Pennant",
+		flag_description = "Hold on to it tightly!",
 
 		black_dildo = "Black Phallus",
 		black_dildo_description = "We will get that confession one way or another.",

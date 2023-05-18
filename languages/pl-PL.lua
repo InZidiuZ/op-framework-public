@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["pl-PL"] = {
 	-- configuration settings for language
@@ -675,7 +675,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		ban_notification_title = "Anti-Cheat",
 		ban_notification = "Zbanowany ${consoleName} za `${banReason}`.",
 
-		bad_screen_word_ban = "Próba (popsucia) ekranu",
+		bad_screen_word_ban = "Próba użycia niedozwolonego słowa.",
 		blacklisted_command_ban = "Przepraszam, ale nie masz permisji do wykonania tej komendy. Skontaktuj się z administratorem jeśli wierzysz, że jest to błąd.",
 		damage_modifier_ban = "Nie możesz być za silny co nie?.",
 		distance_taze_ban = "Twoje zdolności ogłuszania z odległości nie zostały docenione.",
@@ -818,7 +818,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		server_restarting = "Serwer jest obecnie restartowany. Prosze spróbować za kilka minut.",
 		connection_cancelled = "To połączenie zostało anulowane, ponieważ inne jest już aktywne.",
 		no_reason_provided = "Nie podano powodu.",
-		discord_whitelist_id_not_found = "Nie mogliśmy znaleźć Twojego identyfikatora niezgody. Upewnij się, że Discord jest otwarty w tle i że umożliwiłeś FiveM pobieranie danych z Twojego klienta Discord.\n\n${communityDiscord}"
+		discord_whitelist_id_not_found = "Nie mogliśmy znaleźć Twojego discord ID. Upewnij się, że Discord jest otwarty w tle i że umożliwiłeś FiveM pobieranie danych z Twojego klienta Discord.\n\n${communityDiscord}"
 	},
 
 	chat = {
@@ -851,7 +851,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		piggyback_command = "piggyback",
 		piggyback_command_help = "Wzięcie na barana innego gracza.",
-		piggyback_command_substitutes = "",
+		piggyback_command_substitutes = "baran",
 
 		pick_cuffs_command = "pick_cuffs",
 		pick_cuffs_command_help = "Wyrwanie z kajdanek.",
@@ -1074,9 +1074,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		track_player_command_parameter_server_id_help = "Identyfikator gracza, którego chcesz śledzić. Pozostaw puste, aby to wyłączyć.",
 		track_player_command_substitutes = "trp",
 
-		reflect_damage_command = "odzwierciedlanie_obrażeń",
-		reflect_damage_command_help = "Włącza/wyłącza odzwierciedlanie obrażeń. (Gracz, który spowoduje u Ciebie obrażenia, otrzyma obrażenia na własnej postaci)",
-		reflect_damage_command_substitutes = "odzwierciedlenie",
+		reflect_damage_command = "reflect_damage",
+		reflect_damage_command_help = "Włącza/wyłącza odbijanie obrażeń. (Gracz, który spowoduje u Ciebie obrażenia, otrzyma obrażenia na własnej postaci)",
+		reflect_damage_command_substitutes = "reflect",
 
 		stick_command = "stick",
 		stick_command_help = "Sprawia, że kleisz się do samochodu, w którym jesteś.",
@@ -1202,8 +1202,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		enter_vehicle_command = "enter_vehicle",
 		enter_vehicle_command_help = "Wchodzisz do pojazdu najbliżej ciebie .",
-		enter_vehicle_command_parameter_network_id = "numer sieciowy",
-		enter_vehicle_command_parameter_network_id_help = "Numer sieciowy pojazdu, do którego chcesz wejść. (opcjonalnie)",
+		enter_vehicle_command_parameter_network_id = "id",
+		enter_vehicle_command_parameter_network_id_help = "ID pojazdu, do którego chcesz wejść. (opcjonalnie)",
 		enter_vehicle_command_substitutes = "ev",
 
 		set_modification_command = "set_modification",
@@ -1290,7 +1290,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		set_weapon_tint_command_parameter_tint_help = "Malowanie które chciałbyś ustawić (pozostaw to pole puste aby zdjąć malowanie).",
 		set_weapon_tint_command_substitutes = "weapon_tint, tint",
 
-		set_item_name_override_command = "ustaw_nadpisanie_nazwy_przedmiotu",
+		set_item_name_override_command = "set_item_name_override_command",
 		set_item_name_override_command_help = "Nadpisuje nazwę przedmiotu.",
 		set_item_name_override_command_parameter_slot = "slot",
 		set_item_name_override_command_parameter_slot_help = "Slot przedmiotu.",
@@ -1644,7 +1644,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		cache_assets_command_substitutes = "download_cache, preload_cache, load_cache",
 
 		-- game/camera
-		stable_cam_command = "stabilna_kamera",
+		stable_cam_command = "stable_cam",
 		stable_cam_command_help = "Przełącza stabilizację kamery.",
 		stable_cam_command_substitutes = "",
 
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/zmien_flagi",
+		flag_swap_command = "zmiana_flag",
 		flag_swap_command_help = "Przełącza wydarzenie 'zmiana flagi' na całym serwerze.",
+		flag_swap_command_parameter_flags = "flagi",
+		flag_swap_command_parameter_flags_help = "Liczba flag, które powinny być na mapie. (domyślnie: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "pokaz_flagi",
+		flag_swap_show_flags_command_help = "Włącz/Wyłącz pokazywanie pobliskich flag.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "tablica_wynikow_zmiana_flag",
+		flag_swap_leaderboard_command_help = "Włącz/Wyłącz tablicę wyników dla zmiany flag.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
@@ -2523,10 +2533,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		no_copyright_command_substitutes = "",
 
 		picture_command = "zdjecie",
-		picture_command_help = "Wysyła przedmiot z własnym URL obrazka.",
+		picture_command_help = "Robi zdjęcie przedmiotu z własnym URL obrazka.",
 		picture_command_parameter_url = "url",
 		picture_command_parameter_url_help = "URL obrazka.",
-		picture_command_parameter_description = "opis",
+		picture_command_parameter_description = "description",
 		picture_command_parameter_description_help = "Opis zdjęcia.",
 		picture_command_substitutes = "",
 
@@ -2538,13 +2548,13 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		uptime_command_help = "Sprawdź aktualny uptime serwera.",
 		uptime_command_substitutes = "",
 
-		auto_run_command = "auto_bieg",
+		auto_run_command = "auto_run",
 		auto_run_command_help = "Ustawia klawisz do automatycznego biegu.",
-		auto_run_command_parameter_control_id = "id sterowania",
-		auto_run_command_parameter_control_id_help = "ID sterowania, które chcesz przypisać do automatycznego biegu.",
+		auto_run_command_parameter_control_id = "id klawisza",
+		auto_run_command_parameter_control_id_help = "ID klawisza, którego chcesz przypisać do automatycznego biegu.",
 		auto_run_command_substitutes = "",
 
-		walk_forwards_command = "idź_do_przodu",
+		walk_forwards_command = "walk_forwards",
 		walk_forwards_command_help = "Automatyczne poruszanie się do przodu (próba uniknięcia przeszkód) dla ciebie lub innego gracza.",
 		walk_forwards_command_parameter_server_id = "ID gracza na serwerze",
 		walk_forwards_command_parameter_server_id_help = "ID gracza na serwerze, którego chcesz skierować do przodu.",
@@ -2938,7 +2948,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		create_shockwave_command_parameter_radius_help = "Promień fali uderzeniowej (1 - 100).",
 		create_shockwave_command_substitutes = "shockwave",
 
-		push_player_command = "pchnij_gracza",
+		push_player_command = "push_player",
 		push_player_command_help = "Odepchnij gracza lub pojazd, w którym się znajduje, od siebie.",
 		push_player_command_parameter_server_id = "id serwera",
 		push_player_command_parameter_server_id_help = "Identyfikator serwera gracza.",
@@ -3249,7 +3259,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		local_entities_debug_command_help = "Włącz debuger dla lokalnych jednostek.",
 		local_entities_debug_command_substitutes = "/lentities",
 
-		no_ped_population_areas_debug_command = "brak_obszarow_personalnych_debugowe",
+		no_ped_population_areas_debug_command = "no_ped_population_asreas_debug",
 		no_ped_population_areas_debug_command_help = "Przełącz debugger obszarów miezamieszkałych przez pedów",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3411,7 +3421,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		hotwire_vehicle_command = "hotwire_vehicle",
 		hotwire_vehicle_command_help = "Natychmiastowe uruchomienie pojazdu na kable.",
-		hotwire_vehicle_command_parameter_server_id = "id serwera",
+		hotwire_vehicle_command_parameter_server_id = "id",
 		hotwire_vehicle_command_parameter_server_id_help = "Umożliwia innemu graczowi szybkie odpalenie pojazdu, w którym się znajduje.",
 		hotwire_vehicle_command_substitutes = "hotwire",
 
@@ -3907,7 +3917,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 	arena = {
 		player_died = "${name} umarł.",
-		player_killed = "${killerName} zabił ${name} używając ${deathCause} (${distance}m).",
+		player_killed = "${name}Został zabity przez ${killerName} z powodu ${deathCause} z odległości ${distance}m.",
 		hud_info = "Kwota gracza: ${playerAmount}\n\nDeaths: ${deaths}\nKills: ${kills}",
 		press_to_access_menu = "Naciśnij ~INPUT_INTERACTION_MENU~, aby otworzyć menu Areny.",
 		this_command_is_only_for_arena = "Ta komenda jest tylko dla areny",
@@ -4293,7 +4303,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		material_vendor = "Sprzedawca Materiałów",
 		pdm = "Premium Deluxe Motorsport",
 		ls_customs = "Los Santos Customs",
-		jewelry_store = "Sklep jubilerski Vangelico",
+		jewelry_store = "Biżuteria Vangelico",
 		pd_air_hq = "Lądowisko Policyjne",
 		pd_sea_hq = "Przystań Policyjna",
 		ems_air_hq = "Lądowisko EMS",
@@ -4745,9 +4755,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		eyebrows = "Brwi",
 		ageing = "Zmarszczki",
 		makeup = "Makijaz",
-		blush = "Rumieńce",
+		blush = "Rumieńce/Cieniowanie Włosów",
 		complexion = "Cera",
-		sun_damage = "Opalenizna",
+		sun_damage = "Uszkodzenia Twarzy",
 		lipstick = "Szminka",
 		moles_and_freckles = "Znamiona i piegi",
 		chest_hair = "Włosy na klatce piersiowej",
@@ -5684,7 +5694,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		floor_surgery = "Sale operacyjne",
 
 		floor_entrance = "Wejście",
-		floor_server_room = "Serverownia",
+		floor_server_room = "Serwerownia",
 
 		floor_50 = "Piętro 50",
 		floor_49 = "Piętro 49",
@@ -5835,10 +5845,20 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	flag_swap = {
-		toggle_flag_swap_no_permissions = "Próba przełączenia flag wymiany bez odpowiednich uprawnień.",
+		toggle_flag_swap_no_permissions = "Próba przełączenia zamiany flag bez odpowiednich uprawnień.",
 
-		toggled_flag_swap_on = "Przełączono flagę wymiany.",
-		toggled_flag_swap_off = "Wyłączone zamienianie flag."
+		toggled_flag_swap_on = "Przełączono zamianę flag.",
+		toggled_flag_swap_off = "Wyłączone zamienianie flag.",
+
+		showing_flags = "Pokazywanie flag.",
+		not_showing_flags = "Nie pokazywanie flag.",
+
+		flag_swap_leaderboard = "Tablica wyników Flag Swap",
+		ongoing = "W trakcie trwania",
+		not_ongoing = "Nie trwa",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} flagi",
+		players_with_most_flags_will_show_here = "Gracze z największą ilością flag będą widoczni tutaj."
 	},
 
 	forcefields = {
@@ -6402,7 +6422,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		flower_store = "Kwiaciarnia",
 		gift_store = "Sklep z upominkami",
 		ems_store = "Sklep medyczny",
-		drug_store = "El narcoticos",
+		drug_store = "Sklep z lekami",
 		ems_badge_store = "Szpitalne biurko z odznakami medycznymi",
 		doj_badge_store = "Biurko z odznakami DOJ",
 		state_security_store = "Sklep stanowej ochrony",
@@ -7174,7 +7194,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		jail_card = "Karta więzienia",
 		jail_card_description = "Wyjdź z więzienia za pomocą tej karty!",
 
-		vape = "Geek Bar",
+		vape = "E-Papieros",
 		vape_description = "Chcesz wyglądać fajnie? Weź to mordo!",
 
 		acetone = "Aceton",
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		treasure_map_description = "",
 		treasure_map_piece = "Fragment mapy skarbów",
 		treasure_map_piece_description = "",
+
+		flag = "Flaga",
+		flag_description = "Trzymaj ją mocno!",
 
 		black_dildo = "Czarne Dildo",
 		black_dildo_description = "",
@@ -8019,9 +8042,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		press_to_access = "Naciśnij klawisz ~g~${SeatEjectKey} ~w~aby uzyskać dostęp do ${type}",
 		letterbox_broken = "Skrzynka pocztowa ${type} jest zepsuta.",
 
-		type_letterbox = "skrzynka pocztowa",
-		type_newsdisp = "dystrybutor wiadomości",
-		type_postbox = "skrzynka pocztowa"
+		type_letterbox = "skrzynki pocztowej",
+		type_newsdisp = "dystrybutora wiadomości",
+		type_postbox = "skrzynki pocztowej"
 	},
 
 	locate = {
@@ -8183,7 +8206,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		hold_to_spin_lucky_wheel_free_one_left = "Przytrzymaj ~INPUT_CONTEXT~, aby obrócić Kołem Fortuny. Masz dzisiaj 1 darmowy spin.",
 		hold_to_spin_lucky_wheel_free_multiple_left = "Przytrzymaj ~INPUT_CONTEXT~, aby obrócić Kołem Fortuny. Masz dzisiaj ${spins} darmowych spinów.",
 		continue_holding_to_spin_lucky_wheel = "Kontynuuj przytrzymywanie ~INPUT_CONTEXT~, aby obrócić Kołem Fortuny.",
-		unable_to_spin_lucky_wheel = "Dzisiaj już wykorzystałeś limit korzystania z koła fortuny. Następne próby będą możliwe za ${time}.",
+		unable_to_spin_lucky_wheel = "Już zakręciłeś kołem fortuny. Wróć później, aby zakrecić ponownie!",
 		not_enough_balance_to_spin = "Nie masz wystarczająco pieniędzy by zakręcić kołem. Koszt to $${cost}.",
 		lucky_wheel_is_occupied = "Koło fortuny jest aktualnie zajęte. Prosze czekać.",
 
@@ -8409,7 +8432,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		auto_run_already_set_to = "Automatyczne uruchamianie jest już ustawione na klawisz ${controlId}.",
 		auto_run_already_unset = "Auto-run już jest wyłączone.",
-		auto_run_set_to = "Auto-run ustawione na kontrolkę ${controlId}.",
+		auto_run_set_to = "Auto-run ustawione na klawisz ${controlId}.",
 		auto_run_unset = "Auto-run zostało wyłączone.",
 
 		invalid_server_id = "Nieprawidłowy ID serwera.",
@@ -10365,9 +10388,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	},
 
 	titanic = {
-		created_titanic = "Stworzono Titanic z czasem tonięcia ${sinkTime} minut(y).",
+		created_titanic = "Stworzono Titanic z czasem zatonięcia ${sinkTime} minut(y).",
 		failed_to_create_titanic = "Nie udało się stworzyć Titanica.",
-		create_titanic_missing_permissions = "Gracz próbował stworzyć Titanica, ale nie miał wymaganych uprawnień."
+		create_titanic_missing_permissions = "Gracz próbował stworzyć Titanica, ale nie miał odpowiednich uprawnień."
 	},
 
 	top_down = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["meme-rude"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "undefined",
+		flag_swap_command = "flag_swap",
 		flag_swap_command_help = "undefined",
+		flag_swap_command_parameter_flags = "flags",
+		flag_swap_command_parameter_flags_help = "The fucking number of flags that should fucking exist in this shitty world during the motherfucking event. (default: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "flag_swap_show_flags",
+		flag_swap_show_flags_command_help = "Fucking toggle showing of all nearby shitty-ass flags.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "flag_swap_leaderboard",
+		flag_swap_leaderboard_command_help = "Fucking toggle the goddamn flag swap leaderboard, asshole.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield, you fucker",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		toggle_flag_swap_no_permissions = "undefined",
 
 		toggled_flag_swap_on = "undefined",
-		toggled_flag_swap_off = "undefined"
+		toggled_flag_swap_off = "undefined",
+
+		showing_flags = "Showing all these fucking flags, bitch!",
+		not_showing_flags = "No longer showing any fucking flags, fuck off!",
+
+		flag_swap_leaderboard = "F**k Swap Leaderboard",
+		ongoing = "Still Going, Amazing!",
+		not_ongoing = "No Longer Going, Tough Luck!",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} F**king Flags",
+		players_with_most_flags_will_show_here = "The biggest f**king flag hoarders will be displayed here."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		treasure_map_description = "A faded and weathered map that promises untold riches to those who can fucking decipher its cryptic clues. X marks the fucking spot, but the journey to the treasure may be perilous and fraught with challenges.",
 		treasure_map_piece = "Fucking Piece of a Treasure Map",
 		treasure_map_piece_description = "This bloody thing is a torn fragment of a larger treasure map that some dumbass lost or hid intentionally. It has a fragment of the mystery, a goddamn puzzle waiting to be solved. Get all the pieces, put the damn map together, and unlock the secrets of a freakin' long-lost treasure. Watch out for rival treasure hunters and unexpected bullshit along the way!",
+
+		flag = "F**king Flag",
+		flag_description = "Clutch that motherf**ker with everything you've got!",
 
 		black_dildo = "Fucking Black Dildo",
 		black_dildo_description = "We'll get that goddamn confession one bloody way or another.",

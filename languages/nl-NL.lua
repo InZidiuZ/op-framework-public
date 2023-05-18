@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/vlag_ruilen",
+		flag_swap_command = "vlag_wissel",
 		flag_swap_command_help = "Schakel het server-brede 'vlag ruil' evenement in of uit.",
+		flag_swap_command_parameter_flags = "vlaggen",
+		flag_swap_command_parameter_flags_help = "Het aantal vlaggen dat tijdens het evenement in de wereld moet bestaan. (standaard: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "vlag_wissel_toon_vlaggen",
+		flag_swap_show_flags_command_help = "Schakel het tonen van alle nabijgelegen vlaggen in.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "vlag_wissel_scorebord",
+		flag_swap_leaderboard_command_help = "Schakel het vlagwissel-scorebord in.",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "maak_forcefield",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		toggle_flag_swap_no_permissions = "Er is geprobeerd de vlagwisselingen te wijzigen zonder de juiste toestemming.",
 
 		toggled_flag_swap_on = "Vlagwisselingen zijn gewijzigd.",
-		toggled_flag_swap_off = "Vlag-'swap' uitgezet."
+		toggled_flag_swap_off = "Vlag-'swap' uitgezet.",
+
+		showing_flags = "Vlaggen tonen.",
+		not_showing_flags = "Vlaggen worden niet langer getoond.",
+
+		flag_swap_leaderboard = "Vlag Omruilscorebord",
+		ongoing = "Bezig",
+		not_ongoing = "Niet bezig",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} vlaggen",
+		players_with_most_flags_will_show_here = "De spelers met de meeste vlaggen zullen hier getoond worden."
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		treasure_map_description = "Een vervaagde en verweerde kaart die onvertelde rijkdom belooft voor degenen die zijn cryptische aanwijzingen kunnen ontcijferen. De 'X' markeert de plek, maar de reis naar de schat kan gevaarlijk zijn en vol uitdagingen.",
 		treasure_map_piece = "Stukje schatkaart",
 		treasure_map_piece_description = "Een gescheurd fragment van een grotere schatkaart, waarschijnlijk verloren of opzettelijk verborgen. Het bevat een deel van het mysterie, een puzzel die nog opgelost moet worden. Verzamel alle stukjes, assembleer de kaart en ontgrendel de geheimen van een langverloren schat. Pas op voor rivaliserende schatjagers en onverwachte obstakels onderweg!",
+
+		flag = "Vlag",
+		flag_description = "Houd hem stevig vast!",
 
 		black_dildo = "Zwarte Dildo",
 		black_dildo_description = "We zullen die bekentenis hoe dan ook krijgen.",

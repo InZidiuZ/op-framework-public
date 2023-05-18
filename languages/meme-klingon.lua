@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["meme-klingon"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/tlhIngan_flag_swap",
+		flag_swap_command = "Qapla' lojmIt",
 		flag_swap_command_help = "'tlhIngan",
+		flag_swap_command_parameter_flags = "lojmItDI' wIlo'",
+		flag_swap_command_parameter_flags_help = "lojmItDI' ghogh be 'oH wIDatlhvIS qarDu'. (chelel: 100)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "Qapla' lojmItDu'",
+		flag_swap_show_flags_command_help = "Qapla' lojmItDu' hol wIDatlhvIS ghIq Haqtaj.",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "Qapla' lojmItDaq tetlh",
+		flag_swap_leaderboard_command_help = "Qapla' lojmItDaq tetlh chavbe'",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "cha'logh",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		toggle_flag_swap_no_permissions = "Attempted to toggle flag swaps without proper permissions.",
 
 		toggled_flag_swap_on = "Toggled flag swap on.",
-		toggled_flag_swap_off = "QI'yaH ngevwI' ghItlh. "
+		toggled_flag_swap_off = "QI'yaH ngevwI' ghItlh. ",
+
+		showing_flags = "wIDatlhvIS Holqa'.",
+		not_showing_flags = "wIDatlhvIS Hol chaq jImej.",
+
+		flag_swap_leaderboard = "Qej vIleghlI' pagh",
+		ongoing = "'oH",
+		not_ongoing = "ghobe'",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} muHIv",
+		players_with_most_flags_will_show_here = "muHIv mamev vIleghlI' pagh Hoch 'Iv!"
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		treasure_map_description = "Qapla' qara'nga (success in finding untold riches with the faded and weathered map, although the journey may be a difficult one)",
 		treasure_map_piece = "ghItlh jup 'ev qaStaHvIS maH!",
 		treasure_map_piece_description = "nIvbogh qarDaq De' Qo'chaj qonwI'', SIqIgh jet neH 'ule' wIypu'be'. chelcha'lu'pu' 'e' yIvang, nIvbogh wInej 'ej ghapchoH... loD QapQap HaqwI''e' 'ej cha'logh QaQHegh!",
+
+		flag = "muHIv",
+		flag_description = "tlhIj chenmoH!",
 
 		black_dildo = "cha'logh Dildo",
 		black_dildo_description = "qaStaHvIS HaqwI''e' luq vItlhutlhlaHbe', cha'logh Dildo.",

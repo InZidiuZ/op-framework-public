@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["bn-BD"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/পতাকা_পরিবর্তন",
+		flag_swap_command = "পতাকা_বদলো",
 		flag_swap_command_help = "সার্ভার সম্পূর্ণ 'পতাকা পরিবর্তন' ইভেন্টটি টগল করুন।",
+		flag_swap_command_parameter_flags = "পতাকা",
+		flag_swap_command_parameter_flags_help = "ঘটনার সময় বিশ্বে কতগুলি পতাকা থাকবে সেট করুন। (ডিফল্ট: ১০০)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "পতাকা_দেখাও",
+		flag_swap_show_flags_command_help = "সমস্ত আসপাটায় পতাকা দেখার নির্দেশ।",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "পতাকা_লীডারবোর্ড",
+		flag_swap_leaderboard_command_help = "পতাকা বদলো লীডারবোর্ডটি চালু বা বন্ধ করুন।",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "ফোর্সফিল্ড তৈরি করুন",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		toggle_flag_swap_no_permissions = "উচিত অনুমতিসহ ফ্ল্যাগ সোয়াপ টগল করতে চেষ্টা করেছেন না।",
 
 		toggled_flag_swap_on = "ফ্ল্যাগ সোয়াপ চালু করা হয়েছে।",
-		toggled_flag_swap_off = "ফ্ল্যাগ পরিবর্তন অফ করা হয়েছে।"
+		toggled_flag_swap_off = "ফ্ল্যাগ পরিবর্তন অফ করা হয়েছে।",
+
+		showing_flags = "পতাকাগুলি দেখাচ্ছি।",
+		not_showing_flags = "পতাকাগুলি আর দেখাচ্ছি না।",
+
+		flag_swap_leaderboard = "পতাকা পরিবর্তন লিডারবোর্ড",
+		ongoing = "চলমান",
+		not_ongoing = "চলমান নয়",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} পতাকা",
+		players_with_most_flags_will_show_here = "এখানে সর্বাধিক পতাকা এনেসহবল খেলোয়াড়দের তালিকা প্রদর্শিত হবে।"
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		treasure_map_description = "একটি ফেডেড এবং ওয়াদপ্রদ মানচিত্র যা গোপনীয়ভাবে সংগৃহীত ধনের মূল্য নির্ণয়ে সহায়তা করে। এই ক্রিপ্টিক সূত্রগুলি বোঝার জন্য যানবাহনটি চালিয়ে তারপর ট্রেজার প্রাপ্তির জন্য যাত্রা করতে হবে। সম্ভবতঃ সঞ্চারটি বিপজ্জনক এবং চাওয়া বা চোরটি প্রসঙ্গটি উন্নয়ন করতে পারে।",
 		treasure_map_piece = "সংগ্রহকৃত মানচিত্রের টুকরো",
 		treasure_map_piece_description = "একটি বড় খোঁজার মানচিত্রের ছিটকে টোর্ন ফ্র্যাগমেন্ট, হারিয়ে গেছে কিংবা স্বজন প্রতি সাজে গোপন করা হয়েছে। এতে মধ্যে একটি সুষ্ঠু রহস্য, একটি জিগস পাজল আছে। সকল টুকরো সংগ্রহ করুন, মানচিত্র সংঘটিত করুন এবং কোনও দীর্ঘকাল হারিয়ে গেছে খোঁজের রহস্যগুলি আনলক করুন। প্রতিপক্ষী খোঁজক এবং অপ্রত্যাশিত অবরোধগুলির জন্য সাবধান থাকুন!",
+
+		flag = "পতাকা",
+		flag_description = "এটি সুবিধাজনকভাবে ধরে রাখুন!",
 
 		black_dildo = "কালো ডিলডো",
 		black_dildo_description = "আমরা আবশ্যকতানুসারে স্বাক্ষর প্রাপ্ত করব",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 6 (do not change)
+-- AUTO LOCALES: 7 (do not change)
 
 OP.Global.Locales.Languages["ne-NP"] = {
 	-- configuration settings for language
@@ -2106,9 +2106,19 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		fake_id_command_substitutes = "",
 
 		-- game/flag_swap
-		flag_swap_command = "/flag_swap",
+		flag_swap_command = "ध्वज_परिवर्तन",
 		flag_swap_command_help = "सर्भर-व्यापी 'फ्लैग बदल्ने' सचिवता सक्षम/असक्षम पार्ट्य टगल गर्नुहोस्।",
+		flag_swap_command_parameter_flags = "ध्वजहरु",
+		flag_swap_command_parameter_flags_help = "यो घटनाको दौरामा विश्वमा अवस्थित हुनुपर्ने ध्वज संख्या। (पूर्वनिर्धारित: १००)",
 		flag_swap_command_substitutes = "",
+
+		flag_swap_show_flags_command = "ध्वज_परिवर्तन_देखाउनुहोस्",
+		flag_swap_show_flags_command_help = "नजिकको सबै ध्वजहरु देखाउन सक्षम/विक्षम गर्नुहोस्।",
+		flag_swap_show_flags_command_substitutes = "",
+
+		flag_swap_leaderboard_command = "ध्वज_परिवर्तन_लिडरबोर्ड",
+		flag_swap_leaderboard_command_help = "दौरामा ध्वज परिवर्तन खेलाडीबीच लिडरबोर्ड टगल गर्नुहोस्।",
+		flag_swap_leaderboard_command_substitutes = "",
 
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
@@ -5838,7 +5848,17 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		toggle_flag_swap_no_permissions = "उचित अनुमतिहरू नभएको साथ, झण्डा विनिमय टगल गर्न कोशिस गरिएको थियो।",
 
 		toggled_flag_swap_on = "झण्डा विनिमय अन को ठेगानामा राखियो।",
-		toggled_flag_swap_off = "ध्वज बदल बन्द गरियो।"
+		toggled_flag_swap_off = "ध्वज बदल बन्द गरियो।",
+
+		showing_flags = "ध्वजहरु देखाइदै।",
+		not_showing_flags = "अब ध्वज देखाइएको छैन्।",
+
+		flag_swap_leaderboard = "फ्लेग स्वाप लिडरबोर्ड",
+		ongoing = "जारी",
+		not_ongoing = "जारी नहीं",
+		position_and_name = "${position}. ${name}",
+		flag_count = "${flags} फ्लेग",
+		players_with_most_flags_will_show_here = "ज्यादातर फ्लेग होल्डर खेलाडी यहाँ दिखाए जाएंगे।"
 	},
 
 	forcefields = {
@@ -7306,6 +7326,9 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		treasure_map_description = "एक फेडेदा र मौसमी नक्सा जुन क्रिप्टिक संकेतहरू हल्न सक्ने विशाल धनलाभको वादा गर्दछ। एक्स स्थानमा चिन्ह लगाउनुहोस्, तर खजाको यात्रा जोखिमपूर्ण र साथै चुनौतीभरा भएको हुन सक्छ।",
 		treasure_map_piece = "खजाको नक्साको टुक्रा",
 		treasure_map_piece_description = "एक ठूलो खजाको नक्साको फारखट टुक्रा, शायद नष्ट वा जानचेन गरिएको। यो रहस्य रख्छ, हल गर्न चाहने पहेली। सबै टुक्राहरू सङ्कलन गर्नुहोस्, नक्सा तयार गर्नुहोस्, र एक दुर्लभ खजाको गोप्यताहरू सम्झौता गर्नुहोस्। ट्रेजर हन्टरहरू र अप्रत्याशित चुनौतिहरूको सावधानी गर्नुहोस्!",
+
+		flag = "फ्लेग",
+		flag_description = "इसे मजबूती से पकड़े रखो!",
 
 		black_dildo = "कालो डिल्डो",
 		black_dildo_description = "हामी त्यसो साचेको उल्लेख प्राप्त गर्नु छ।",
