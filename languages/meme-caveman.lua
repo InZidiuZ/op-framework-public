@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["meme-caveman"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		banner_name_generic = "Big Chief",
 
-		ban_alert_title = "No Can Be Here!",
+		ban_alert_title = "You Banned",
+		ban_alert_description_banner = "You did something bad and ${banner} punish you with ban for '${reason}' reason.",
 		ban_alert_description = "You do very bad thing, so system make you leave tribe for reason `${reason}`.",
 
 		logs_player_banned_title = "Bad Person No Come Back",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		reflection_logs_title = "Ugg changed reflection setting",
 		reflection_logs_enabled_details = "${consoleName} has enabled reflection.",
 		reflection_logs_disabled_details = "${consoleName} has disabled reflection.",
+
+		headache_logs_title = "Headache Triggered",
+		headache_logs_details = "${consoleName} has triggered a headache for ${targetConsoleName}.",
+		trigger_headache_no_permissions = "You no have permission to trigger headache!",
+
+		success_trigger_headache = "Headache successfully triggered for ${playerName}.",
+		failed_trigger_headache = "Failed to trigger the headache.",
 
 		protective_mode_not_staff = "Ugh! You try toggle server protective mode without me say so. No can do.",
 		protective_mode_toggled_on = "Server protective mode now on! You need `${playtime}` playtime to join.",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		reflect_damage_command_help = "Toggle ug-ug damage reflection. (Ug-ug player who hit you get hurt too)",
 		reflect_damage_command_substitutes = "ug-ug reflect",
 
+		trigger_headache_command = "ooga_booga_headache",
+		trigger_headache_command_help = "Cause caveperson feel ouchie. Lag happen for short time.",
+		trigger_headache_command_parameter_server_id = "server_id",
+		trigger_headache_command_parameter_server_id_help = "ID of player you want to give headache to. Use big brain to find.",
+		trigger_headache_command_substitutes = "head_ouch",
+
 		stick_command = "stick",
 		stick_command_help = "Me stick to the mammoth me atop.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		clean_ped_command = "clean_ped",
 		clean_ped_command_help = "Me clean caveperson's blood, arrow marks, dirt, etc.",
 		clean_ped_command_parameter_server_id = "ug",
-		clean_ped_command_parameter_server_id_help = "Unug the player ug you wanting to clean the ug of. If left at ug, yourself will automatically be selected.",
+		clean_ped_command_parameter_server_id_help = "ID of player you want to clean the caveperson suit of.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "toggle_vehicle_smoke",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		play_audio_command_parameter_server_id_help = "Player's server ID you want play audio for. You do `-1` for all players.",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "surprise_bandaid",
+		random_bandaid_command_help = "Ugh ugh! Gives you random bandaid. :)",
+		random_bandaid_command_substitutes = "bandaid",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Ugg toggle the Battle Royale thing.",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		rectangle_command = "rectangle",
 		rectangle_command_help = "Create Oog rectangle in 3D oog space.",
 		rectangle_command_substitutes = "Rect",
+
+		define_area_command = "define_area",
+		define_area_command_help = "Define cave.",
+		define_area_command_substitutes = "area",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		mileage_command_help = "Check how far car has gone.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "drag_out",
-		drag_out_command_help = "Pull dead player from car. No use for them there.",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "Ugg-ugg! Disables or enables the brakes of the nearest metal wagon.",
 		toggle_disabled_brakes_command_substitutes = "disable_brakes",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		spiderman = "Spiderman",
 		star_wars = "Star-Wars",
 
+		failed_random_bandaid = "Ugh! Failed get random bandaid.",
+
 		received_bandaid_logs_title = "Received Bandaid",
-		received_bandaid_logs_details = "${consoleName} received 1x ${bandaid} after ugg-ugg liftin'."
+		received_bandaid_logs_details = "${consoleName} received 1x ${bandaid} after ugg-ugg liftin'.",
+		spawned_bandaid_logs_details = "${consoleName} give self 1x ${bandaid}."
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		next_rotation_in = "Next rotation ug-ug in: ${time}",
 
 		exclusive_dealership_blip = "Exclusive ug-ug Deluxe Motorsport",
+		exclusive_buyback_blip = "Prestige Wheels Exchange",
+
+		buyback_vehicle_help = "Press ~INPUT_CONTEXT~ to go to exchange.",
+		buyback_title = "Prestige Wheels Exchange",
+		sell_closest_vehicle = "Ugh. ${label} good for $${price} (${percent}% mammoth meat)?",
+		deny_sale = "No, me want keep",
+		accept_sale = "Ooga",
+		accept_sale_description = "You sell ${label} for $${price}? You sure? No take backs.",
+		are_you_sure_sell = "You sure want sell?",
+		no_vehicle_to_sell = "No ${label} nearby for sell.",
+		vehicle_not_owned = "You no own this ${label}.",
+		sale_success = "You sell `${label}` for $${price}. Cave happy.",
+
+		sale_log_title = "EDM Buyback",
+		sale_log_description = "${consoleName} trade meat for `${label}` at $${price}.",
 
 		log_title = "UG-UG SMASH Purchase",
 		log_description = "UG-UG SMASH `${label}` for $${price}."
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		state_security_badge_details = "State Security Department | ${firstName} ${lastName}",
 		doj_badge = "DOJ ID",
 		doj_badge_details = "DOJ | ${firstName} ${lastName} | Big Shot: ${positionName}",
+		doc_badge = "BIG ROCK THUMP Badge",
+		doc_badge_details = "BIG ROCK THUMP | ${firstName} ${lastName} | Rank: ${positionName}",
 
 		badge_type_sasp = "San Andreas State Police",
 		badge_type_bcso = "Blaine County Sheriff's Office",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		badge_type_bcfd = "Blaine tribe firemen",
 		badge_type_state_security = "State tribe safe guard",
 		badge_type_doj = "Justice tribe",
+		badge_type_doc = "Department Of Corrections",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		badge_type_short_ems = "EMS",
 		badge_type_short_doctor = "Doctor",
 		badge_type_short_bcfd = "BCFD",
-		badge_type_short_state_security = "SSD"
+		badge_type_short_state_security = "SSD",
+		badge_type_short_doc = "BIG ROCK THUMP"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		police_store = "Police Cave Store",
 		fib_store = "FIB Cave Store",
 		police_badge_store = "Police Badge Cave Desk",
+		doc_badge_store = "BIG ROCK THUMP Badge Station",
 		flower_store = "Stacey's Cave Flower Emporium",
 		gift_store = "Del Perro Cave Gifts",
 		ems_store = "EMS Cave Store",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		state_security_badge_description = "Me ID for agents of the State Security.",
 		doj_badge = "Me DOJ Badge",
 		doj_badge_description = "Me badge for employees of the Department of Justice.",
+		doc_badge = "BIG ROCK THUMP Badge",
+		doc_badge_description = "Rock with BIG ROCK THUMP engraving for BIG ROCK THUMP tribe members.",
 
 		radio_chop_shop = "Chop Shop Radio",
 		radio_chop_shop_description = "Used to receive intel on 'hot' vehicles from the non-existent people operating the chop shop.",

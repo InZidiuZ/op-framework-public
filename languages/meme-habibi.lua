@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["meme-habibi"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		banner_name_generic = "عضو من فريق الدعم الفني",
 
-		ban_alert_title = "حُظرت من النظام",
+		ban_alert_title = "Banned From Server",
+		ban_alert_description_banner = "You would have been automatically banned by ${banner} for the reason `${reason}`.",
 		ban_alert_description = "لقد تم حظرك تلقائيا من النظام لسبب `${reason}`.",
 
 		logs_player_banned_title = "تم حظر اللاعب",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		reflection_logs_title = "Reflection Toggled",
 		reflection_logs_enabled_details = "${consoleName} has toggled on the damage reflection feature.",
 		reflection_logs_disabled_details = "${consoleName} has toggled off the damage reflection feature.",
+
+		headache_logs_title = "Triggered Headache",
+		headache_logs_details = "${consoleName} has caused ${targetConsoleName} to feel a headache.",
+		trigger_headache_no_permissions = "You do not have the proper permissions to trigger a headache.",
+
+		success_trigger_headache = "Successfully caused ${playerName} to feel a headache.",
+		failed_trigger_headache = "Failed to cause a headache.",
 
 		protective_mode_not_staff = "Sorry Habibi, you cannot turn on the server's protective mode without proper permissions.",
 		protective_mode_toggled_on = "Alhamdulillah! The server's protective mode is on now. The required playtime to join the server has been set to `${playtime}`.",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		reflect_damage_command_help = "Toggles damage reflection. (Any player who damages you will be damaged themselves)",
 		reflect_damage_command_substitutes = "reflect",
 
+		trigger_headache_command = "trigger_migra",
+		trigger_headache_command_help = "Causes the specified player to experience a migraine for a short period of time.",
+		trigger_headache_command_parameter_server_id = "server id",
+		trigger_headache_command_parameter_server_id_help = "The server ID of the player you want to trigger a migraine for.",
+		trigger_headache_command_substitutes = "migra",
+
 		stick_command = "halek",
 		stick_command_help = "Stick to the car you're ontop of.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		clean_ped_command = "sajjel_almalaj",
 		clean_ped_command_help = "Cleans a characters blood, bullet impacts, dirt, etc.",
 		clean_ped_command_parameter_server_id = "آي دي السيرفر",
-		clean_ped_command_parameter_server_id_help = "آي دي اللاعب الذي تريد تنظيف شكله، إذا تركته فارغاً، سيتم اختيارك تلقائياً.",
+		clean_ped_command_parameter_server_id_help = "The server ID of the player you want to clean the ped of.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "تبديل الدخان في المركبة",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		play_audio_command_parameter_server_id_help = "The server ID of the player you want to play the audio for. You can use `-1` for all players.",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "random_bandaid",
+		random_bandaid_command_help = "Gives you a random bandaid. :)",
+		random_bandaid_command_substitutes = "bandaid",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Toggle the Battle Royale feature.",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		rectangle_command = "rectangle",
 		rectangle_command_help = "Create a rectangle in 3D space.",
 		rectangle_command_substitutes = "rect",
+
+		define_area_command = "define_area",
+		define_area_command_help = "Define an area.",
+		define_area_command_substitutes = "area",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		mileage_command_help = "Check the mileage of the vehicle.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "drag_out",
-		drag_out_command_help = "Drag out the nearest deceased player from their vehicle.",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "Disables or enables the brakes of the closest vehicle.",
 		toggle_disabled_brakes_command_substitutes = "disable_brakes",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		spiderman = "Spiderman",
 		star_wars = "Star-Wars",
 
+		failed_random_bandaid = "Failed to get a random bandaid.",
+
 		received_bandaid_logs_title = "Received Bandaid",
-		received_bandaid_logs_details = "${consoleName} received 1x ${bandaid} after airlifting."
+		received_bandaid_logs_details = "${consoleName} received 1x ${bandaid} after airlifting.",
+		spawned_bandaid_logs_details = "${consoleName} gave themselves 1x ${bandaid}."
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		next_rotation_in = "الدورة التالية في: ${time}",
 
 		exclusive_dealership_blip = "معارض السيارات الفاخرة الحصرية",
+		exclusive_buyback_blip = "Exchange for Prestigious Wheels",
+
+		buyback_vehicle_help = "Press ~INPUT_CONTEXT~ to access the exchange.",
+		buyback_title = "Prestigious Wheels Exchange",
+		sell_closest_vehicle = "Do you want to sell your ${label} for $${price} (${percent}% of its original price)?",
+		deny_sale = "No, I want to keep it",
+		accept_sale = "Yes, I'm sure",
+		accept_sale_description = "Are you sure you want to sell your vehicle for $${price}? This action cannot be undone.",
+		are_you_sure_sell = "Are you sure you want to sell it?",
+		no_vehicle_to_sell = "No vehicle nearby can be sold.",
+		vehicle_not_owned = "You do not own this vehicle.",
+		sale_success = "You have successfully sold your `${label}` for $${price}.",
+
+		sale_log_title = "EDM Buyback",
+		sale_log_description = "${consoleName} sold their `${label}` for $${price}.",
 
 		log_title = "شراء EDM",
 		log_description = "تم شراء `${label}` بقيمة $${price}."
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		state_security_badge_details = "قسم الأمن الوطني | ${firstName} ${lastName}",
 		doj_badge = "معرف وزارة العدل",
 		doj_badge_details = "وزارة العدل | ${firstName} ${lastName} | المنصب: ${positionName}",
+		doc_badge = "Badge DOC",
+		doc_badge_details = "DOC | ${firstName} ${lastName} | Position: ${positionName}",
 
 		badge_type_sasp = "شرطة ولاية سان أندريس",
 		badge_type_bcso = "مكتب شريف مقاطعة بلين",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		badge_type_bcfd = "إدارة إطفاء مقاطعة بلاين",
 		badge_type_state_security = "إدارة أمن ولاية",
 		badge_type_doj = "وزارة العدل",
+		badge_type_doc = "Department Of Corrections",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		badge_type_short_ems = "EMS",
 		badge_type_short_doctor = "Doctor",
 		badge_type_short_bcfd = "BCFD",
-		badge_type_short_state_security = "SSD"
+		badge_type_short_state_security = "SSD",
+		badge_type_short_doc = "DOC"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		police_store = "متجر الشرطة",
 		fib_store = "متجر الـFIB",
 		police_badge_store = "مكتب بطاقات الشرطة",
+		doc_badge_store = "Department Of Corrections Badge Desk",
 		flower_store = "مغازل ستيسي للزهور",
 		gift_store = "هدايا دل بيرو",
 		ems_store = "متجر الإسعافات الأولية",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		state_security_badge_description = "هوية لعملاء أمن الدولة.",
 		doj_badge = "شارة وزارة العدل",
 		doj_badge_description = "شارة لموظفي وزارة العدل.",
+		doc_badge = "Badge DOC",
+		doc_badge_description = "A badge for employees of the Department of Corrections.",
 
 		radio_chop_shop = "راديو ورشة القطع",
 		radio_chop_shop_description = "يستخدم لتلقي المعلومات عن المركبات الساخنة من الأشخاص الغير موجودين الذين يديرون ورشة القطع.",

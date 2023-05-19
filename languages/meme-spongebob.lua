@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["meme-spongebob"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		banner_name_generic = "a Cap'n",
 
-		ban_alert_title = "Banned by the Krabby Patty Secret Formula Protection System",
+		ban_alert_title = "Banned From Server, duh!",
+		ban_alert_description_banner = "Oh no, it looks like ${banner} was really cheesed off with you and banned you from the server. They said it was because of `${reason}`. Ouch!",
 		ban_alert_description = "Ye would have been automatically banned by the system fer reason `${reason}`.",
 
 		logs_player_banned_title = "Player Walked the Plank",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		reflection_logs_title = "Reflection Toggled",
 		reflection_logs_enabled_details = "${consoleName} turned on the damage reflection.",
 		reflection_logs_disabled_details = "${consoleName} turned off the damage reflection.",
+
+		headache_logs_title = "Got yourself a headache",
+		headache_logs_details = "Woohoo, it looks like ${consoleName} has triggered a massive headache on ${targetConsoleName}. That's one way to make 'em earworms stop.",
+		trigger_headache_no_permissions = "Hey, whoa, you can't do that without the proper permissions. Things'll get ugly, just you watch.",
+
+		success_trigger_headache = "Great job, you just gave ${playerName} a headache. Don't poke the oyster, buddy!",
+		failed_trigger_headache = "Yikes, something went wrong. No headache for ${playerName}.",
 
 		protective_mode_not_staff = "Oh no! You can't toggle the protective mode without the proper permissions.",
 		protective_mode_toggled_on = "Woohoo! The protective mode is now on. You have to spend `${playtime}` in-game to join the server.",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		reflect_damage_command_help = "Togglez damaj refleckshun. (Any player who damajes ya will be damajed themselves)",
 		reflect_damage_command_substitutes = "reflect",
 
+		trigger_headache_command = "trigger_headache",
+		trigger_headache_command_help = "Make player lag for short time. MEOW!.",
+		trigger_headache_command_parameter_server_id = "player's server id",
+		trigger_headache_command_parameter_server_id_help = "Player's server ID you want to cause a headache for. EEEK!",
+		trigger_headache_command_substitutes = "headache",
+
 		stick_command = "stick",
 		stick_command_help = "Stick to the ship ye be standin' on.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		clean_ped_command = "clean_ped",
 		clean_ped_command_help = "Cleans a character's blood, bullet impacts, dirt, etc. Wash them with the Krusty Krab's secret formula! Hehehe.",
 		clean_ped_command_parameter_server_id = "server id",
-		clean_ped_command_parameter_server_id_help = "Da player's server ID ya be tryin' t'clean de ped of. If left blank, ye be selected automatic-like.",
+		clean_ped_command_parameter_server_id_help = "Player's server ID you want to clean the ped of. BLAH BLAH BLAH.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "toggle_vehicle_smoke",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		play_audio_command_parameter_server_id_help = "The player's server ID you want to play this audio for. You can do `-1` for all players. (Translated: Da player's server ID yoo want to play dis audio for. Yoo can do `-1` for all players.)",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "random_bandaid",
+		random_bandaid_command_help = "Gud feeleeng bandaid go brrr. :)",
+		random_bandaid_command_substitutes = "bandaid",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle (Translated: Battle Royale Toggle)",
 		battle_royale_toggle_command_help = "Toggle da Battle Royale feature.",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		rectangle_command = "rectangle, arrr",
 		rectangle_command_help = "Create a rectangle in 3D space, arrr.",
 		rectangle_command_substitutes = "rect, arrr",
+
+		define_area_command = "defeen area",
+		define_area_command_help = "Defeen an area.",
+		define_area_command_substitutes = "area",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menu, ooooh",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		mileage_command_help = "Check a vehicle's mileage. (translation: see how far the vroom-vroom has traveled)",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "drag_out",
-		drag_out_command_help = "Drags the nearest dead player out of the vehicle they are in. (translation: pulls out a flopped-over landlubber out of the booty rest they be occupying)",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "Disables or enables the brakes of the nearest vehicle. (stops the vehicle instantly)",
 		toggle_disabled_brakes_command_substitutes = "disable_brakes",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		spiderman = "Spidrman",
 		star_wars = "Star-Worz",
 
+		failed_random_bandaid = "Sory, no bandaid avaliable.",
+
 		received_bandaid_logs_title = "Recieved Bandaid",
-		received_bandaid_logs_details = "${consoleName} got 1x ${bandaid} after airliftin'."
+		received_bandaid_logs_details = "${consoleName} got 1x ${bandaid} after airliftin'.",
+		spawned_bandaid_logs_details = "${consoleName} gived themselves 1x ${bandaid}."
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		next_rotation_in = "Next rotation in: ${time} me hearty!",
 
 		exclusive_dealership_blip = "Arrr, tis the Exclusive Deluxe Motorsport",
+		exclusive_buyback_blip = "Prestige Wheelz Exhange",
+
+		buyback_vehicle_help = "Press ~INPUT_CONTEXT~ to access the exhange.",
+		buyback_title = "Prestige Wheelz Exhange",
+		sell_closest_vehicle = "Sell yer ${label} fer $${price} (${percent}% o' its price)?",
+		deny_sale = "Nah, I wanna keep it",
+		accept_sale = "Aye, I be sure",
+		accept_sale_description = "Are ye sure ye wanna sell yer vehicle fer $${price}? This action cannot be undone.",
+		are_you_sure_sell = "Ye sure ye wanna sell it?",
+		no_vehicle_to_sell = "No sellable vehicle nearby matey.",
+		vehicle_not_owned = "Ye do not own this vehicle, arrrr!",
+		sale_success = "Successfully sold yer `${label}` for $${price}, yo ho ho!",
+
+		sale_log_title = "Krabby Patty Selling",
+		sale_log_description = "${consoleName} traded their `${label}` for $${price} worth of jellyfish jelly.",
 
 		log_title = "EDM Purchase, ahoy!",
 		log_description = "Ye have bought the `${label}` for $${price}, matey!"
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		state_security_badge_details = "State Security Department | ${firstName} ${lastName}",
 		doj_badge = "DOJ ID",
 		doj_badge_details = "DOJ | ${firstName} ${lastName} | Position: ${positionName}",
+		doc_badge = "Krabby Patty Flipper",
+		doc_badge_details = "DOC | ${firstName} ${lastName} | Position: ${positionName}",
 
 		badge_type_sasp = "San Andreas State Police",
 		badge_type_bcso = "Blaine County Sheriff's Office",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		badge_type_bcfd = "Blaine County Fire Department, yippee!",
 		badge_type_state_security = "State Security Department, arf!",
 		badge_type_doj = "Department of Justish, tada!",
+		badge_type_doc = "Krusty Krab",
 
 		badge_type_short_sasp = "SASP, aye aye!",
 		badge_type_short_bcso = "BCSO, hehe!",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		badge_type_short_ems = "E.M.S.",
 		badge_type_short_doctor = "Doctor-y",
 		badge_type_short_bcfd = "B.C.F.D.",
-		badge_type_short_state_security = "S.S.D."
+		badge_type_short_state_security = "S.S.D.",
+		badge_type_short_doc = "KK"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		police_store = "Police Emporium",
 		fib_store = "FIB Central",
 		police_badge_store = "Police Badge Fancy Desk",
+		doc_badge_store = "Krusty Krab Employee Locker",
 		flower_store = "Stacey's Flower Palace",
 		gift_store = "Bubble Bass' Gift Store",
 		ems_store = "EMS Supply Store",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		state_security_badge_description = "An ID for super secret agents of the State Security, yo.",
 		doj_badge = "DOJ Badge-yo",
 		doj_badge_description = "A badge for employees of the Department of Justice, yo.",
+		doc_badge = "Krabby Patty Flipper Badge",
+		doc_badge_description = "A badge for employees of the Krusty Krab that shows they know how to flip Krabby Patties perfectly.",
 
 		radio_chop_shop = "Chop Shop Radio-yo",
 		radio_chop_shop_description = "Used to receive intel on 'hot' vehicles from the non-existent people operating the chop shop, yo.",

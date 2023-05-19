@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["meme-pirate"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		banner_name_generic = "a Deckhand",
 
-		ban_alert_title = "Banned by Black Spot",
+		ban_alert_title = "Banned From Ye Server",
+		ban_alert_description_banner = "Ye would have been automatically banned by ${banner} for reason `${reason}`.",
 		ban_alert_description = "Ye would have been automatically banned by the system fer reason `${reason}`.",
 
 		logs_player_banned_title = "Swabbie Banned",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		reflection_logs_title = "Reflection Toggled",
 		reflection_logs_enabled_details = "${consoleName} be togglin' reflection on.",
 		reflection_logs_disabled_details = "${consoleName} be togglin' reflection off.",
+
+		headache_logs_title = "Triggered Headache",
+		headache_logs_details = "${consoleName} has triggered a headache for ${targetConsoleName}.",
+		trigger_headache_no_permissions = "Attempted to trigger a headache without proper permissions. Arrr!",
+
+		success_trigger_headache = "Successfully triggered a headache for ${playerName}. Ho ho ho!",
+		failed_trigger_headache = "Failed to trigger a headache. Shiver me timbers!",
 
 		protective_mode_not_staff = "Arr, ye be tryin' t' toggle the server's protective mode without proper permissions!",
 		protective_mode_toggled_on = "Arr, the server's protective mode be enabled! Ye be needin' `${playtime}` of playtime to join now.",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		reflect_damage_command_help = "Arrr! Toggles damage reflection. (Any scallywag who damages ye will take the same damage themselves)",
 		reflect_damage_command_substitutes = "pirate_reflect",
 
+		trigger_headache_command = "plunder_headache",
+		trigger_headache_command_help = "Causes the specified landlubber to lag for a short period of time.",
+		trigger_headache_command_parameter_server_id = "server id",
+		trigger_headache_command_parameter_server_id_help = "The player's server ID ye be wanting to plunder a headache for.",
+		trigger_headache_command_substitutes = "headache",
+
 		stick_command = "splice_the_mainbrace",
 		stick_command_help = "Splice the mainbrace and stick to the vessel ye be aboard.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		clean_ped_command = "swab_the_deck",
 		clean_ped_command_help = "Swab the deck and clean a character's blood, bullet impacts, dirt, etc.",
 		clean_ped_command_parameter_server_id = "crew id",
-		clean_ped_command_parameter_server_id_help = "Th' pirate's crew ID ye be wantin' t' clean th' ped of. If left at blank, ye'll be selected automatically.",
+		clean_ped_command_parameter_server_id_help = "The player's server ID ye be wanting to clean the swashbuckler of.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "toggle_vehicle_smoke",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		play_audio_command_parameter_server_id_help = "Th' player's server ID ye want t' play this audio fer. Ye can do `-1` fer all players.",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "random_bandaid",
+		random_bandaid_command_help = "Gives ye a random bandaid. Arrr! :)",
+		random_bandaid_command_substitutes = "bandaid",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Toggle th' Battle Royale feature.",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		rectangle_command = "rectangle",
 		rectangle_command_help = "Create a rectangle in 3D space.",
 		rectangle_command_substitutes = "rect",
+
+		define_area_command = "define_area",
+		define_area_command_help = "Define an area. Yarrr!",
+		define_area_command_substitutes = "area",
 
 		-- game/debug_menu
 		debug_menu_command = "debug-menu",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		mileage_command_help = "Check a vessel's mileage, me hearty.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "drag_out",
-		drag_out_command_help = "Drag the nearest dead scallywag out of the vessel they be in, matey!",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "Disables or enables the anchor of the nearest vessel.",
 		toggle_disabled_brakes_command_substitutes = "disable_brakes",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		spiderman = "Spidermate",
 		star_wars = "Starrr-Wars",
 
+		failed_random_bandaid = "Failed to get a random bandaid, me hearty.",
+
 		received_bandaid_logs_title = "Received Band-Aid",
-		received_bandaid_logs_details = "${consoleName} received 1x ${bandaid} after airliftin'."
+		received_bandaid_logs_details = "${consoleName} received 1x ${bandaid} after airliftin'.",
+		spawned_bandaid_logs_details = "${consoleName} gave themselves 1x ${bandaid}. Shiver me timbers!"
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		next_rotation_in = "Next rotation in: ${time}",
 
 		exclusive_dealership_blip = "Exclusive Deluxe Motorsport",
+		exclusive_buyback_blip = "Prestige Wheels Exchange",
+
+		buyback_vehicle_help = "Press ~INPUT_CONTEXT~ to access the exchange, me matey.",
+		buyback_title = "Prestige Wheels Exchange",
+		sell_closest_vehicle = "Arrr ye sure ye want t' sell yer ${label} fer $${price} (${percent}% o' its price)?",
+		deny_sale = "Nay, shiver me timbers! I wanna keep it",
+		accept_sale = "Aye, me hearty!",
+		accept_sale_description = "Be ye sure ye want t' sell yer vessel fer $${price}? This action cannot be undone.",
+		are_you_sure_sell = "Be ye sure ye want t' sell it?",
+		no_vehicle_to_sell = "No sellable vessel nearby, ye scallywag!",
+		vehicle_not_owned = "Ye do not own this vessel, ye landlubber!",
+		sale_success = "Successfully sold yer `${label}` fer $${price}, yo ho ho!",
+
+		sale_log_title = "Booty Buyback",
+		sale_log_description = "${consoleName} sold thar `${label}` fer $${price}.",
 
 		log_title = "EDM Purchase",
 		log_description = "Purchased the `${label}` fer $${price}."
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		state_security_badge_details = "Ye be encounterin' a member o' the infamous State Security Department | ${firstName} ${lastName}",
 		doj_badge = "DOJ Black Flag",
 		doj_badge_details = "This here be a member o' the fearless DOJ | ${firstName} ${lastName} | Position: ${positionName}",
+		doc_badge = "Jolly Roger",
+		doc_badge_details = "DOC | ${firstName} ${lastName} | Position: ${positionName}",
 
 		badge_type_sasp = "San Andreas State Pirates",
 		badge_type_bcso = "Blaine County Seadogs' Office",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		badge_type_bcfd = "Blaine County Fire Department (Blimey!)",
 		badge_type_state_security = "State Security Department (Shiver me timbers)",
 		badge_type_doj = "Department Of Justice (Avast!)",
+		badge_type_doc = "Department Of Scallywags",
 
 		badge_type_short_sasp = "SASP (Yo ho ho)",
 		badge_type_short_bcso = "BCSO (Ahoy!)",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		badge_type_short_ems = "EMS",
 		badge_type_short_doctor = "Doctor",
 		badge_type_short_bcfd = "BCFD",
-		badge_type_short_state_security = "SSD"
+		badge_type_short_state_security = "SSD",
+		badge_type_short_doc = "DOC"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		police_store = "Privateer Store",
 		fib_store = "FIB Store",
 		police_badge_store = "Privateer Badge Desk",
+		doc_badge_store = "DOC Jolly Roger Desk",
 		flower_store = "Stacey's Flower Emporium",
 		gift_store = "Booty Bay Gifts",
 		ems_store = "Surgeon's Store",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		state_security_badge_description = "Aye, an ID fer agents o' the State Security.",
 		doj_badge = "DOJ Badge",
 		doj_badge_description = "A badge fer crew o' the Department o' Justice.",
+		doc_badge = "Jolly Roger",
+		doc_badge_description = "A mark 'o authority fer employees 'o the Department of Scallywags.",
 
 		radio_chop_shop = "Chop Shop Radio",
 		radio_chop_shop_description = "Used t' receive intel on 'ot' vehicles from th' non-existent buccaneers operatin' th' chop shop.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["bn-BD"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		banner_name_generic = "একজন স্টাফ মেম্বার",
 
-		ban_alert_title = "সিস্টেম দ্বারা নিষ্ক্রিয়তাৎ করা হয়েছে",
+		ban_alert_title = "সার্ভার থেকে নিষ্কাসিত",
+		ban_alert_description_banner = "${banner} আপনাকে স্বয়ংক্রিয়ভাবে `${reason}` কারণে অবরোধ করেছেন।",
 		ban_alert_description = "সিস্টেম দ্বারা আপনার জন্য কারণ হিসাবে `${reason}` দিয়ে আপনাকে নিষ্ক্রিয়তাৎ করা হয়েছে।",
 
 		logs_player_banned_title = "খেলোয়াড় নিষ্ক্রিয়তাৎ করা হয়েছে",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		reflection_logs_title = "প্রতিফলন পাল্টানো হয়েছে",
 		reflection_logs_enabled_details = "${consoleName} প্রতিফলন চালু করেছেন।",
 		reflection_logs_disabled_details = "${consoleName} প্রতিফলন বন্ধ করেছেন।",
+
+		headache_logs_title = "হেডাচ ট্রিগার হয়েছে",
+		headache_logs_details = "${consoleName} একজনের জন্য হেডাচ ট্রিগার করেছেন: ${targetConsoleName}।",
+		trigger_headache_no_permissions = "প্রয়োজনীয় অনুমতি ছাড়াই হেডাচ ট্রিগার করা হয়েছে।",
+
+		success_trigger_headache = "${playerName}-এর জন্য সফলভাবে হেডাচ ট্রিগার হয়েছে।",
+		failed_trigger_headache = "হেডাচ ট্রিগার করা ব্যর্থ হয়েছে।",
 
 		protective_mode_not_staff = "সঠিক অনুমতি না থাকার কারণে সার্ভার প্রটেক্টিভ মোড টগল করা হয়নি।",
 		protective_mode_toggled_on = "সার্ভার প্রটেক্টিভ মোড এখন সক্রিয় হয়েছে। সার্ভারে সংযোগ করতে প্লে টাইমের প্রয়োজনীয় পরিমাণ হয় `${playtime}`।",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		reflect_damage_command_help = "ক্ষতি প্রতিফলন চালু / বন্ধ করে। (আপনাকে ক্ষতি করে যেকোনো খেলোয়াড়ের পার্থক্য হতে বোঝাও হবে যে তারা তাদের নিজেদের ক্ষতি হবে)",
 		reflect_damage_command_substitutes = "প্রতিফলন",
 
+		trigger_headache_command = "হেডাচ ট্রিগার করুন",
+		trigger_headache_command_help = "একজন খেলোয়ারকে একটি সংক্ষিপ্ত সময় জারি লেগে দেওয়ার জন্য জড়িত করে।",
+		trigger_headache_command_parameter_server_id = "সার্ভার আইডি",
+		trigger_headache_command_parameter_server_id_help = "আপনি যার জন্য হেডাচ ট্রিগার করতে চান তার খেলোয়ারের সার্ভার আইডি।",
+		trigger_headache_command_substitutes = "হেডাচ",
+
 		stick_command = "স্টিক",
 		stick_command_help = "যে গাড়ির উপরে আপনি আছেন সেই গাড়ি স্টিক করুন।",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		clean_ped_command = "পেড়",
 		clean_ped_command_help = "কোনও চরিত্রের রক্ত, গুলি প্রভাব, ময়লা ইত্যাদি পরিষ্কার করে দিন।",
 		clean_ped_command_parameter_server_id = "সার্ভার আইডি",
-		clean_ped_command_parameter_server_id_help = "পিড ক্লিন করতে চান আর কোন ব্যবহারকারীর সাথে কাজ করতে চান তাহলে তার সার্ভার আইডি ইনসার্ট করুন। যদি না করেন, আপনি স্বয়ং নির্বাচিত হবেন।",
+		clean_ped_command_parameter_server_id_help = "আপনি যে খেলোয়ারের জন্য পেড পরিষ্কার করতে চান তার সার্ভার আইডি।",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "toggle_vehicle_smoke",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		play_audio_command_parameter_server_id_help = "আপনি কোন প্লেয়ারকে এই অডিও প্লে করতে চান তা নির্দিষ্ট করুন। আপনি সমস্ত প্লেয়ারের ক্ষেত্রে `-1` দিতে পারেন।",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "এলোমেলো_ব্যান্ডেজ",
+		random_bandaid_command_help = "আপনাকে একটি এলোমেলো ব্যান্ডএড দেবে। :)",
+		random_bandaid_command_substitutes = "ব্যান্ডএড",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "ব্যাটেল রয়েল বৈশিষ্ট্য চালু/বন্ধ করুন।",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		rectangle_command = "চতুর্ভুজ",
 		rectangle_command_help = "3D স্পেসে একটি চতুর্ভুজ তৈরি করুন।",
 		rectangle_command_substitutes = "rect",
+
+		define_area_command = "define_area",
+		define_area_command_help = "একটি এলাকা নির্ধারণ করুন।",
+		define_area_command_substitutes = "এলাকা",
 
 		-- game/debug_menu
 		debug_menu_command = "ডিবাগ মেনু",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		mileage_command_help = "একটি গাড়ির মাইলেজ চেক করুন।",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "বাইরে টেনে নেওয়া",
-		drag_out_command_help = "সবচেয়ে নিকটবর্তী মৃত খেলোয়াড়ের গাড়ি থেকে টেনে নেওয়া হয়ে যান।",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "টগল_অক্ষম_ব্রেক",
 		toggle_disabled_brakes_command_help = "নিকটবর্তী গাড়ির ব্রেককে অক্ষম বা সক্ষম করে।",
 		toggle_disabled_brakes_command_substitutes = "ব্রেক_অক্ষম",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		spiderman = "স্পাইডারম্যান",
 		star_wars = "স্টার-ওয়ার্স",
 
+		failed_random_bandaid = "এলোমেলো ব্যান্ডএড পাওয়া যায়নি।",
+
 		received_bandaid_logs_title = "ব্যান্ডএড পেয়েছেন",
-		received_bandaid_logs_details = "${consoleName} এয়ারলিফটিংয়ের পরে 1টি ${bandaid} পেয়েছেন।"
+		received_bandaid_logs_details = "${consoleName} এয়ারলিফটিংয়ের পরে 1টি ${bandaid} পেয়েছেন।",
+		spawned_bandaid_logs_details = "${consoleName} নিজেকে 1x ${bandaid} দিয়েছেন।"
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		next_rotation_in = "পরবর্তী রোটেশন: ${time}",
 
 		exclusive_dealership_blip = "এক্সক্লুসিভ ডেলাক্স মোটরস্পোর্ট",
+		exclusive_buyback_blip = "প্রেস্টিজ হুইলস এক্সচেঞ্জ",
+
+		buyback_vehicle_help = "এক্সচেঞ্জে প্রবেশ করতে ~INPUT_CONTEXT~ চাপুন।",
+		buyback_title = "প্রেস্টিজ হুইলস এক্সচেঞ্জ",
+		sell_closest_vehicle = "${label} বিক্রি করুন এবং $${price} (${percent}% দামে) পেয়ে যাবেন?",
+		deny_sale = "না, আমি রেখে দিবো।",
+		accept_sale = "হ্যাঁ, আমি নিশ্চিত।",
+		accept_sale_description = "আপনি কি নিশ্চিত যে আপনি $${price}-এ আপনার গাড়ি বিক্রি করতে চান? এই কাজটি বাতিল করা যাবে না।",
+		are_you_sure_sell = "আপনি কি এটি বিক্রি করতে নিশ্চিত?",
+		no_vehicle_to_sell = "কোন বিক্রি করা যাবে না যেকোনো গাড়ি।",
+		vehicle_not_owned = "আপনি এই গাড়ি মালিক না।",
+		sale_success = "আপনি সরফর করেছেন `${label}` এর জন্য $${price}-এ বিক্রি করা হয়েছে।",
+
+		sale_log_title = "EDM পাল্টা কিনুন",
+		sale_log_description = "${consoleName} তাঁর `${label}` এর জন্য $${price} মূল্যে বেচে দিলেন।",
 
 		log_title = "ইডিএম ক্রয়",
 		log_description = "${label} কে $${price} এ ক্রয় করা হয়েছে।"
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		state_security_badge_details = "রাজ্য নিরাপত্তা বিভাগ | ${firstName} ${lastName}",
 		doj_badge = "ডিওজে আইডি",
 		doj_badge_details = "ডিওজে | ${firstName} ${lastName} | পদবী: ${positionName}",
+		doc_badge = "ডক ব্যাজ",
+		doc_badge_details = "ডক | ${firstName} ${lastName} | পদবী: ${positionName}",
 
 		badge_type_sasp = "স্যান অ্যানড্রেস রাজ্য পুলিশ",
 		badge_type_bcso = "ব্লেইন কাউন্টি শেরিফ অফিস",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		badge_type_bcfd = "ব্লেইন কাউন্টি ফায়ার ডিপার্টমেন্ট",
 		badge_type_state_security = "রাষ্ট্রীয় নিরাপত্তা বিভাগ",
 		badge_type_doj = "বিচার বিভাগ",
+		badge_type_doc = "কারাগার বিভাগ",
 
 		badge_type_short_sasp = "এসএসপি",
 		badge_type_short_bcso = "বিসিএসও",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		badge_type_short_ems = "ইমারজেন্সি মেডিকেল সার্ভিস (ইইএস)",
 		badge_type_short_doctor = "ডাক্তার",
 		badge_type_short_bcfd = "বিসিএফডি",
-		badge_type_short_state_security = "রাষ্ট্রীয় সুরক্ষা ডিপার্টমেন্ট (এসএসডি)"
+		badge_type_short_state_security = "রাষ্ট্রীয় সুরক্ষা ডিপার্টমেন্ট (এসএসডি)",
+		badge_type_short_doc = "ডক"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		police_store = "পুলিশ স্টোর",
 		fib_store = "এফআইবি স্টোর",
 		police_badge_store = "পুলিশ বেজ ডেস্ক",
+		doc_badge_store = "ডক ব্যাজ ডেস্ক",
 		flower_store = "স্টেসির ফুল এম্পোরিয়াম",
 		gift_store = "ডেল পেরো গিফটস",
 		ems_store = "ইএমএস স্টোর",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		state_security_badge_description = "রাষ্ট্রীয় সুরক্ষার এজেন্টদের জন্য একটি আইডি।",
 		doj_badge = "বিচার বিভাগ ব্যাজ",
 		doj_badge_description = "বিচার বিভাগ কর্মীদের জন্য একটি ব্যাজ।",
+		doc_badge = "ডক ব্যাজ",
+		doc_badge_description = "কারাগার বিভাগের কর্মচারীদের জন্যে একটি ব্যাজ।",
 
 		radio_chop_shop = "চপ শপ রেডিও",
 		radio_chop_shop_description = "কাটা দোকানগুলি চালাতে অস্তিত্ব নেই বলে ধারণা করা কিছু মানুষ দ্বারা 'গরম' গাড়ির তথ্য পেতে ব্যবহৃত হয়।",

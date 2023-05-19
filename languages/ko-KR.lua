@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["ko-KR"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		banner_name_generic = "관리자",
 
-		ban_alert_title = "시스템에 의해 차단됨",
+		ban_alert_title = "서버에서 차단되었습니다",
+		ban_alert_description_banner = "${banner} 님이 `${reason}` 이유로 자동으로 차단되었을 것입니다.",
 		ban_alert_description = "시스템에 의해 '${reason}' 이유로 자동으로 차단되었습니다.",
 
 		logs_player_banned_title = "플레이어 차단됨",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		reflection_logs_title = "반사 전환됨",
 		reflection_logs_enabled_details = "${consoleName} 님이 반사를 켜셨습니다.",
 		reflection_logs_disabled_details = "${consoleName} 님이 반사를 끄셨습니다.",
+
+		headache_logs_title = "두통 발생",
+		headache_logs_details = "${consoleName} 님이 ${targetConsoleName} 님에게 두통을 일으켰습니다.",
+		trigger_headache_no_permissions = "권한 없이 두통을 일으켜 보려 했습니다.",
+
+		success_trigger_headache = "${playerName} 님에게 두통을 성공적으로 일으켰습니다.",
+		failed_trigger_headache = "두통을 일으키지 못했습니다.",
 
 		protective_mode_not_staff = "올바른 권한 없이 서버 방어 모드를 전환하려 했습니다.",
 		protective_mode_toggled_on = "서버 방어 모드가 활성화되었습니다. 서버에 연결하려면 필요한 플레이 시간은 `${playtime}`입니다.",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		reflect_damage_command_help = "데미지 반사를 전환합니다. (당신을 공격하는 플레이어는 스스로도 데미지를 받습니다)",
 		reflect_damage_command_substitutes = "반사",
 
+		trigger_headache_command = "두통_유발",
+		trigger_headache_command_help = "해당 플레이어를 짧은 시간 동안 랙 걸리도록 만듭니다.",
+		trigger_headache_command_parameter_server_id = "서버 아이디",
+		trigger_headache_command_parameter_server_id_help = "두통을 유발하고자하는 플레이어의 서버 아이디입니다.",
+		trigger_headache_command_substitutes = "두통",
+
 		stick_command = "붙어있기",
 		stick_command_help = "위에 올라탄 차량에 붙어있습니다.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		clean_ped_command = "캐릭터_청소",
 		clean_ped_command_help = "캐릭터의 피, 총알 충격, 먼지 등을 청소합니다.",
 		clean_ped_command_parameter_server_id = "서버 아이디",
-		clean_ped_command_parameter_server_id_help = "페드(Clean Ped)를 초기화하고자 하는 플레이어의 서버 아이디입니다. 공란으로 남겨둘 경우, 자신이 자동으로 선택됩니다.",
+		clean_ped_command_parameter_server_id_help = "해당 플레이어의 캐릭터를 지우고자 하는 서버 아이디입니다.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "toggle_vehicle_smoke",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		play_audio_command_parameter_server_id_help = "이 오디오를 재생할 플레이어의 서버 ID입니다. 모든 플레이어에게 재생하려면 `-1`를 입력하세요.",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "랜덤_밴드에이드",
+		random_bandaid_command_help = "랜덤 밴드 에이드를 받습니다. :)",
+		random_bandaid_command_substitutes = "밴드 에이드",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "전투 로얄 기능을 토글합니다.",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		rectangle_command = "사각형",
 		rectangle_command_help = "3D 공간에서 사각형을 만듭니다.",
 		rectangle_command_substitutes = "rect",
+
+		define_area_command = "영역 지정",
+		define_area_command_help = "영역을 지정합니다.",
+		define_area_command_substitutes = "영역",
 
 		-- game/debug_menu
 		debug_menu_command = "디버그_메뉴",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		mileage_command_help = "차량의 주행거리를 확인합니다.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "끌어내기",
-		drag_out_command_help = "가장 가까운 사망한 플레이어를 차에서 끌어냅니다.",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "가장 가까운 차량의 브레이크를 사용하지 않도록 끄거나 켜줍니다.",
 		toggle_disabled_brakes_command_substitutes = "disable_brakes",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		spiderman = "스파이더맨",
 		star_wars = "스타워즈",
 
+		failed_random_bandaid = "랜덤 밴드 에이드를 받지 못했습니다.",
+
 		received_bandaid_logs_title = "붕대 수령",
-		received_bandaid_logs_details = "${consoleName}이/가 헬리콥터로 이동한 후 1개의 ${bandaid}를 수령했습니다."
+		received_bandaid_logs_details = "${consoleName}이/가 헬리콥터로 이동한 후 1개의 ${bandaid}를 수령했습니다.",
+		spawned_bandaid_logs_details = "${consoleName}님이 ${bandaid} 1개를 받았습니다."
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		next_rotation_in = "다음 로테이션: ${time} 후",
 
 		exclusive_dealership_blip = "독점 Deluxe Motorsport",
+		exclusive_buyback_blip = "프레스티지 휠 교환소",
+
+		buyback_vehicle_help = "~INPUT_CONTEXT~를 눌러 교환이 가능합니다.",
+		buyback_title = "프레스티지 휠 교환소",
+		sell_closest_vehicle = "${label}을(를) ${price}달러에 팔까요? (${percent}% 가격)",
+		deny_sale = "아니요, 유지할래요",
+		accept_sale = "네, 확실해요",
+		accept_sale_description = "${price}달러에 차량을 팔까요? 이 작업은 되돌릴 수 없습니다.",
+		are_you_sure_sell = "정말 판매하시겠어요?",
+		no_vehicle_to_sell = "주변에 판매 가능한 차량이 없습니다.",
+		vehicle_not_owned = "이 차량을 소유하고 있지 않습니다.",
+		sale_success = "${label}을(를) $${price}에 성공적으로 판매했습니다.",
+
+		sale_log_title = "EDM Buyback",
+		sale_log_description = "${consoleName} sold their `${label}` for $${price}.",
 
 		log_title = "EDM 구매",
 		log_description = "${label}을/를 $${price}에 구매했습니다."
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		state_security_badge_details = "국가 안보부 | ${firstName} ${lastName}",
 		doj_badge = "DOJ ID",
 		doj_badge_details = "DOJ | ${firstName} ${lastName} | 직위: ${positionName}",
+		doc_badge = "DOC 배지",
+		doc_badge_details = "DOC | ${firstName} ${lastName} | 직위: ${positionName}",
 
 		badge_type_sasp = "산 안드레아스 주 경찰서",
 		badge_type_bcso = "블레인 카운티 보안관국",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		badge_type_bcfd = "블레인 카운티 소방서",
 		badge_type_state_security = "주 보안국",
 		badge_type_doj = "사법부",
+		badge_type_doc = "교정 복장국",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		badge_type_short_ems = "응급실",
 		badge_type_short_doctor = "의사",
 		badge_type_short_bcfd = "BCFD",
-		badge_type_short_state_security = "주요부대"
+		badge_type_short_state_security = "주요부대",
+		badge_type_short_doc = "DOC"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		police_store = "경찰 매장",
 		fib_store = "FIB 매장",
 		police_badge_store = "경찰 배지 데스크",
+		doc_badge_store = "DOC 배지 데스크",
 		flower_store = "스테이시의 꽃 가게",
 		gift_store = "Del Perro 선물 상점",
 		ems_store = "응급 처치 단말기 상점",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		state_security_badge_description = "국가안보본부 요원용 신분증입니다.",
 		doj_badge = "미국 법무부 배지",
 		doj_badge_description = "미국 법무부 직원용 배지입니다.",
+		doc_badge = "DOC 배지",
+		doc_badge_description = "교정 복장국 직원용 배지입니다.",
 
 		radio_chop_shop = "쵹샵 무전기",
 		radio_chop_shop_description = "쵹샵을 운영하는 이들로부터 '핫한' 차량에 대한 정보를 수신하는 무전기입니다.",

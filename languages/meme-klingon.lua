@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["meme-klingon"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 		banner_name_generic = "Duyung'an Hol",
 
-		ban_alert_title = "Qapta' be'Hom'e'",
+		ban_alert_title = "boqlIj 'ej DIvI' Hol Dajatlh",
+		ban_alert_description_banner = "${banner} vItlhutlhngaD vay' ${reason} yIbuS law' Hoch ban 'oH.",
 		ban_alert_description = "be'Hom'e' qutlh `cuy` sabta' rung yInwI'pu' chenmoHwanI'.",
 
 		logs_player_banned_title = "lo'laHbe' Qapta'",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		reflection_logs_title = "reflection toggled",
 		reflection_logs_enabled_details = "${consoleName} cha'logh reflection toggled Qap.",
 		reflection_logs_disabled_details = "${consoleName} cha'logh reflection toggled wo'.",
+
+		headache_logs_title = "QonwI' Hol jImej",
+		headache_logs_details = "${consoleName} jImej ${targetConsoleName} Hol.",
+		trigger_headache_no_permissions = "Hol jImej qID cha'DIchlo' Duy wIrep.",
+
+		success_trigger_headache = "${playerName} Hol jImej lo'laHbe', SoHvaD jImej.",
+		failed_trigger_headache = "Hol jImej loS. ghu'vam!",
 
 		protective_mode_not_staff = "nuqneH: Dochvam 'e' neHpu' qar'a' neH lo'laHbe'chugh DaH bal je.",
 		protective_mode_toggled_on = "Qapla': qar'a' neHpu' qarDaq SoSnI'pu'lo' ngeH. QaSpu' ${playtime} HIQvam'e'.",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		reflect_damage_command_help = "Togglemey DamuSqa' cha'logh. (ghIqDoS Duj laH Daqvam'e', cha'logh Daqvam'e')",
 		reflect_damage_command_substitutes = "mI'mey",
 
+		trigger_headache_command = "QI'lop ghu'vetlh",
+		trigger_headache_command_help = "Qapla'! tIn chonwI' puqloD cu'wI' lo'wI'vam'e'.",
+		trigger_headache_command_parameter_server_id = "server ID",
+		trigger_headache_command_parameter_server_id_help = "Dochvam'e' tIn chonwI' puqloD neH vIghajbe'chugh Dochvam'e' ghoqwI'pu' jatlh.",
+		trigger_headache_command_substitutes = "vebwe'",
+
 		stick_command = "tlhe'a'",
 		stick_command_help = "tlhe'a' chutlhej tua'ghach Dochvam.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		clean_ped_command = "lIghon_yl",
 		clean_ped_command_help = "yInghol HochmeyDaj, qaghmeyDaj, tagh, 'ej. jay'.",
 		clean_ped_command_parameter_server_id = "puq mach",
-		clean_ped_command_parameter_server_id_help = "The player's puq mach (server ID) you are wanting to clean the ped of. If left at blank, Sov may' be automatically selected.",
+		clean_ped_command_parameter_server_id_help = "Dochvam'e' tIn chonwI' puqloD neH vIchup Doch logh jatlh.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "toggle_vehicle_smoke",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		play_audio_command_parameter_server_id_help = "bI'reS vIneHchuq Server ID. batlh 'oHlet `'-1'` legh.",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "QI'tu'Daq jIroq",
+		random_bandaid_command_help = "Soghmey vIqel. :)",
+		random_bandaid_command_substitutes = "vIqel",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "qatwlh 'oH yIqem torgh Battle Royale.",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		rectangle_command = "'unwej",
 		rectangle_command_help = "3D chonwI'wI' De' pegh 'unwej.",
 		rectangle_command_substitutes = "'un",
+
+		define_area_command = "ghItlh",
+		define_area_command_help = "GhItlh ngeD.",
+		define_area_command_substitutes = "ngeD",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		mileage_command_help = "Dun yItlh moQ jaqmoHwI'",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "ghomHa'ghach",
-		drag_out_command_help = "pe'meH tIn ngeHbe' chenmoHlu' Dun chaH.",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "QInDuj_vItlhutlh",
 		toggle_disabled_brakes_command_help = "taHta' QaQqu' 'ej QIj QaQ yIn loS DIm",
 		toggle_disabled_brakes_command_substitutes = "QaQ_loS_DIm",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		spiderman = "tIloth-man",
 		star_wars = "Huy'cha' qam",
 
+		failed_random_bandaid = "Soghmey vIqel 'e' chenmoH.",
+
 		received_bandaid_logs_title = "jagh ben log Hoch",
-		received_bandaid_logs_details = "${consoleName} qay'be' ${bandaid} wIv chu'Hom airlifting."
+		received_bandaid_logs_details = "${consoleName} qay'be' ${bandaid} wIv chu'Hom airlifting.",
+		spawned_bandaid_logs_details = "${consoleName} 'ej 1x ${bandaid} qurghchu',"
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		next_rotation_in = "QavDaj rotlhjIH: ${time}",
 
 		exclusive_dealership_blip = "Qoylu'pu' choHwI' yabDaj",
+		exclusive_buyback_blip = "chuvmey chImwI' joHwI'",
+
+		buyback_vehicle_help = "Qapla' lut vItlhutlh!",
+		buyback_title = "chuvmey chImwI' joHwI'",
+		sell_closest_vehicle = "qaStaHvIS ${label} wIpoQ $${price} (${percent}% chenmoH)?",
+		deny_sale = "QaparHa', jatlhbe'chugh",
+		accept_sale = "Heghlu'meH QaQ jajvam",
+		accept_sale_description = "Hoch $${price} laH wIpe'meH qaStaHvIS wIqaw'egh? be'joy' qa' nobwI'.",
+		are_you_sure_sell = "QaparHa', Heghlu'meH QaQ jajvam?",
+		no_vehicle_to_sell = "ta' sellable qaStaHvIS",
+		vehicle_not_owned = "ghobe' qaStaHvIS 'oH",
+		sale_success = "QaStaHvIS `${label}` cha'qu' $${price} vItlhutlh. vItlhutlh. vItlhutlh. ",
+
+		sale_log_title = "EDM Buyback",
+		sale_log_description = "${consoleName} qo'vvo'${label}-yo' tIqDaq $${price}.",
 
 		log_title = "choHwI' qutlh",
 		log_description = "choHwI' `${label}` Dap bom ${price} wov."
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		state_security_badge_details = "tlhoy State Security Department | ${firstName} ${lastName}",
 		doj_badge = "DOJ ID",
 		doj_badge_details = "DOJ | ${firstName} ${lastName} | lo'law' Hoch: ${positionName}",
+		doc_badge = "DOC baD",
+		doc_badge_details = "DOC | ${firstName} ${lastName} | mu'lI': ${positionName}",
 
 		badge_type_sasp = "San Andreas loq State Police",
 		badge_type_bcso = "Blaine County Sheriff's loq Office",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		badge_type_bcfd = "Blaine Daqatlh HoH",
 		badge_type_state_security = "tera' vIn",
 		badge_type_doj = "ghItlhmeH yuQjIqat",
+		badge_type_doc = "Department Daq Hutlh",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		badge_type_short_ems = "EMS",
 		badge_type_short_doctor = "nID",
 		badge_type_short_bcfd = "BCFD",
-		badge_type_short_state_security = "SSD"
+		badge_type_short_state_security = "SSD",
+		badge_type_short_doc = "DOC"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		police_store = "QapwI' QIb Store",
 		fib_store = "FIB QIb Store",
 		police_badge_store = "QapwI' QIb maqtagh",
+		doc_badge_store = "DOC baD Hutlh",
 		flower_store = "Stacey's loDni' botany Emporium",
 		gift_store = "Del Perro Gifts",
 		ems_store = "EMS QIb Store",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		state_security_badge_description = "qoStaHvIS Security bejpu' qorDu'lIj QaQar",
 		doj_badge = "DOJ 'ImpeD",
 		doj_badge_description = "tlhIngan mupwI'pu' Doj Dochvam'e' 'ImpeD",
+		doc_badge = "DOC baD",
+		doc_badge_description = "A baD for employees of the Department Daq Hutlh.",
 
 		radio_chop_shop = "Chop Shop HaSta",
 		radio_chop_shop_description = "chop HaSta tup mIS Daq jotlhmeH 'e' hot' chel pa' ghewmey luq chu' ghaH ghaH 'e' yIDawD",

@@ -241,7 +241,8 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		banner_name_generic = "a Staff Member",
 
-		ban_alert_title = "Banned by System",
+		ban_alert_title = "Banned From Server",
+		ban_alert_description_banner = "You would have been automatically banned by ${banner} for reason `${reason}`.",
 		ban_alert_description = "You would have been automatically banned by the system for reason `${reason}`.",
 
 		logs_player_banned_title = "Player Banned",
@@ -296,6 +297,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		reflection_logs_title = "Reflection Toggled",
 		reflection_logs_enabled_details = "${consoleName} has toggled reflection on.",
 		reflection_logs_disabled_details = "${consoleName} has toggled reflection off.",
+
+		headache_logs_title = "Triggered Headache",
+		headache_logs_details = "${consoleName} has triggered a headache for ${targetConsoleName}.",
+		trigger_headache_no_permissions = "Attempted to trigger a headache without proper permissions.",
+
+		success_trigger_headache = "Successfully triggered a headache for ${playerName}.",
+		failed_trigger_headache = "Failed to trigger a headache.",
 
 		protective_mode_not_staff = "Attempted to toggle the server protective mode without proper permissions.",
 		protective_mode_toggled_on = "Server protective mode has now been enabled. Required amount of playtime to connect to the server has been set to `${playtime}`.",
@@ -1076,6 +1084,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		reflect_damage_command_help = "Toggles damage reflection. (Any player who damages you will be damaged themselves)",
 		reflect_damage_command_substitutes = "reflect",
 
+		trigger_headache_command = "trigger_headache",
+		trigger_headache_command_help = "Causes the specified player to lag for a short period of time.",
+		trigger_headache_command_parameter_server_id = "server id",
+		trigger_headache_command_parameter_server_id_help = "The player's server ID you are wanting to trigger a headache for.",
+		trigger_headache_command_substitutes = "headache",
+
 		stick_command = "stick",
 		stick_command_help = "Stick to the car you're ontop of.",
 		stick_command_substitutes = "",
@@ -1087,7 +1101,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		clean_ped_command = "clean_ped",
 		clean_ped_command_help = "Cleans a characters blood, bullet impacts, dirt, etc.",
 		clean_ped_command_parameter_server_id = "server id",
-		clean_ped_command_parameter_server_id_help = "The player's server ID you are wanting to clean the ped of. If left at blank, yourself will automatically be selected.",
+		clean_ped_command_parameter_server_id_help = "The player's server ID you are wanting to clean the ped of.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "toggle_vehicle_smoke",
@@ -1565,6 +1579,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		play_audio_command_parameter_server_id_help = "The player's server ID you want to play this audio for. You can do `-1` for all players.",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "random_bandaid",
+		random_bandaid_command_help = "Gives you a random bandaid. :)",
+		random_bandaid_command_substitutes = "bandaid",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Toggle the Battle Royale feature.",
@@ -2041,6 +2060,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		rectangle_command = "rectangle",
 		rectangle_command_help = "Create a rectangle in 3D space.",
 		rectangle_command_substitutes = "rect",
+
+		define_area_command = "define_area",
+		define_area_command_help = "Define an area.",
+		define_area_command_substitutes = "area",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
@@ -3524,10 +3547,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		mileage_command_help = "Check a vehicle's mileage.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "drag_out",
-		drag_out_command_help = "Drags the nearest dead player out of the vehicle they are in.",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "Disables or enables the brakes of the nearest vehicle.",
 		toggle_disabled_brakes_command_substitutes = "disable_brakes",
@@ -4190,8 +4209,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		spiderman = "Spiderman",
 		star_wars = "Star-Wars",
 
+		failed_random_bandaid = "Failed to get a random bandaid.",
+
 		received_bandaid_logs_title = "Received Bandaid",
-		received_bandaid_logs_details = "${consoleName} received 1x ${bandaid} after airlifting."
+		received_bandaid_logs_details = "${consoleName} received 1x ${bandaid} after airlifting.",
+		spawned_bandaid_logs_details = "${consoleName} gave themselves 1x ${bandaid}."
 	},
 
 	battle_royale = {
@@ -5797,6 +5819,21 @@ OP.Global.Locales.Languages["en-US"] = {
 		next_rotation_in = "Next rotation in: ${time}",
 
 		exclusive_dealership_blip = "Exclusive Deluxe Motorsport",
+		exclusive_buyback_blip = "Prestige Wheels Exchange",
+
+		buyback_vehicle_help = "Press ~INPUT_CONTEXT~ to access the exchange.",
+		buyback_title = "Prestige Wheels Exchange",
+		sell_closest_vehicle = "Sell your ${label} for $${price} (${percent}% of its price)?",
+		deny_sale = "Nevermind, I wanna keep it",
+		accept_sale = "Yes, i am sure",
+		accept_sale_description = "Are you sure you want to sell your vehicle for $${price}? This action cannot be undone.",
+		are_you_sure_sell = "Are you sure you want to sell it?",
+		no_vehicle_to_sell = "No sellable vehicle nearby.",
+		vehicle_not_owned = "You do not own this vehicle.",
+		sale_success = "Successfully sold your `${label}` for $${price}.",
+
+		sale_log_title = "EDM Buyback",
+		sale_log_description = "${consoleName} sold their `${label}` for $${price}.",
 
 		log_title = "EDM Purchase",
 		log_description = "Purchased the `${label}` for $${price}."
@@ -6263,6 +6300,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		state_security_badge_details = "State Security Department | ${firstName} ${lastName}",
 		doj_badge = "DOJ ID",
 		doj_badge_details = "DOJ | ${firstName} ${lastName} | Position: ${positionName}",
+		doc_badge = "DOC Badge",
+		doc_badge_details = "DOC | ${firstName} ${lastName} | Position: ${positionName}",
 
 		badge_type_sasp = "San Andreas State Police",
 		badge_type_bcso = "Blaine County Sheriff's Office",
@@ -6276,6 +6315,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		badge_type_bcfd = "Blaine County Fire Department",
 		badge_type_state_security = "State Security Department",
 		badge_type_doj = "Department Of Justice",
+		badge_type_doc = "Department Of Corrections",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
@@ -6287,7 +6327,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		badge_type_short_ems = "EMS",
 		badge_type_short_doctor = "Doctor",
 		badge_type_short_bcfd = "BCFD",
-		badge_type_short_state_security = "SSD"
+		badge_type_short_state_security = "SSD",
+		badge_type_short_doc = "DOC"
 	},
 
 	import_export = {
@@ -6417,6 +6458,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		police_store = "Police Store",
 		fib_store = "FIB Store",
 		police_badge_store = "Police Badge Desk",
+		doc_badge_store = "DOC Badge Desk",
 		flower_store = "Stacey's Flower Emporium",
 		gift_store = "Del Perro Gifts",
 		ems_store = "EMS Store",
@@ -6624,6 +6666,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		state_security_badge_description = "An ID for agents of the State Security.",
 		doj_badge = "DOJ Badge",
 		doj_badge_description = "A badge for employees of the Department of Justice.",
+		doc_badge = "DOC Badge",
+		doc_badge_description = "A badge for employees of the Department of Corrections.",
 
 		radio_chop_shop = "Chop Shop Radio",
 		radio_chop_shop_description = "Used to receive intel on 'hot' vehicles from the non-existent people operating the chop shop.",

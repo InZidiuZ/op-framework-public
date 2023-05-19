@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["ro-RO"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		banner_name_generic = "un membru al staff-ului",
 
-		ban_alert_title = "Banat de Sistem",
+		ban_alert_title = "Interzis pe server",
+		ban_alert_description_banner = "Ai fi fost interzis automat de ${banner} din motivul `${reason}`.",
 		ban_alert_description = "Ai fi fost banat automat de sistem din motivele `${reason}`.",
 
 		logs_player_banned_title = "Jucător Banat",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		reflection_logs_title = "Reflecția daunelor a fost activată/dezactivată",
 		reflection_logs_enabled_details = "${consoleName} a activat reflecția daunelor.",
 		reflection_logs_disabled_details = "${consoleName} a dezactivat reflecția daunelor.",
+
+		headache_logs_title = "Declansare dureri de cap",
+		headache_logs_details = "${consoleName} a declanșat dureri de cap pentru ${targetConsoleName}.",
+		trigger_headache_no_permissions = "Încercare de declanșare a durerilor de cap fără permisiunile necesare.",
+
+		success_trigger_headache = "Durerile de cap au fost declanșate cu succes pentru ${playerName}.",
+		failed_trigger_headache = "Declanșarea durerilor de cap a eșuat.",
 
 		protective_mode_not_staff = "Încercare de a comuta modul de protecție a serverului fără permisiuni suficiente.",
 		protective_mode_toggled_on = "Modul de protecție a serverului a fost activat. Timpul minim de joc necesar pentru a te conecta la server este acum setat la `${playtime}`.",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		reflect_damage_command_help = "Activeaza/dezactiveaza reflejarea de daune. (Orice jucator care te dauneaza va primi daune proprii)",
 		reflect_damage_command_substitutes = "reflect",
 
+		trigger_headache_command = "declanșează_durere_de_cap",
+		trigger_headache_command_help = "Determină jucătorul specificat să întâmpine o perioadă scurtă de lag.",
+		trigger_headache_command_parameter_server_id = "id_server",
+		trigger_headache_command_parameter_server_id_help = "ID-ul serverului al jucătorului pentru care doriți să declanșați durere de cap.",
+		trigger_headache_command_substitutes = "durere_de_cap",
+
 		stick_command = "lipi",
 		stick_command_help = "Lipiți-vă de mașina pe care sunteți deasupra.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		clean_ped_command = "cura_ped",
 		clean_ped_command_help = "Curăță sângele, impacturile de glonțe, murdăria etc. a unui personaj.",
 		clean_ped_command_parameter_server_id = "ID server",
-		clean_ped_command_parameter_server_id_help = "ID-ul jucătorului al cărui ped doriți să fie șters. Dacă nu introduceți niciun număr, ped-ul dumneavoastră va fi selectat automat.",
+		clean_ped_command_parameter_server_id_help = "ID-ul serverului al jucătorului pentru care doriți să curățați ped-ul.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "comutare_fum_de_masina",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		play_audio_command_parameter_server_id_help = "ID-ul serverului jucătorului la care dorești să redai acest audio. Poți folosi `-1` pentru a reda audio-ul pentru toți jucătorii.",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "bandaj_aleatoriu",
+		random_bandaid_command_help = "Vă oferă un pansament aleatoriu. :)",
+		random_bandaid_command_substitutes = "pansament",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Activează sau dezactivează funcția Battle Royale.",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		rectangle_command = "dreptunghi",
 		rectangle_command_help = "Creați un dreptunghi în spațiul 3D.",
 		rectangle_command_substitutes = "rect",
+
+		define_area_command = "defineste_zona",
+		define_area_command_help = "Definiți o zonă.",
+		define_area_command_substitutes = "zona",
 
 		-- game/debug_menu
 		debug_menu_command = "meniu_depanare",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		mileage_command_help = "Verifică kilometrajul unui vehicul.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "trage",
-		drag_out_command_help = "Trage jucătorul mort cel mai apropiat din vehiculul în care se află.",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "Dezactivează sau activează frânele vehiculului cel mai apropiat.",
 		toggle_disabled_brakes_command_substitutes = "dezactivează_frâne",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		spiderman = "Spiderman",
 		star_wars = "Războiul Stelelor",
 
+		failed_random_bandaid = "Nu s-a putut obține un pansament aleatoriu.",
+
 		received_bandaid_logs_title = "Bandaj primit",
-		received_bandaid_logs_details = "${consoleName} a primit 1x ${bandaid} după ce a fost transportat cu elicopterul."
+		received_bandaid_logs_details = "${consoleName} a primit 1x ${bandaid} după ce a fost transportat cu elicopterul.",
+		spawned_bandaid_logs_details = "${consoleName} și-a dat un pansament în valoare de 1 ${bandaid}."
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		next_rotation_in = "Următoarea rotație în: ${time}",
 
 		exclusive_dealership_blip = "Exclusive Deluxe Motorsport",
+		exclusive_buyback_blip = "Schimb de anvelope Prestige",
+
+		buyback_vehicle_help = "Apăsați tasta ~INPUT_CONTEXT~ pentru a accesa schimbul de anvelope.",
+		buyback_title = "Schimb de anvelope Prestige",
+		sell_closest_vehicle = "Doriți să vindeți ${label}-ul pentru $${price} (${percent}% din prețul său)?",
+		deny_sale = "Nu contează, vreau să-l păstrez",
+		accept_sale = "Da, sunt sigur",
+		accept_sale_description = "Sunteți sigur că doriți să vindeți vehiculul dumneavoastră pentru $${price}? Această acțiune nu poate fi anulată.",
+		are_you_sure_sell = "Sunteți sigur că doriți să-l vindeți?",
+		no_vehicle_to_sell = "Niciun vehicul vândut în apropiere.",
+		vehicle_not_owned = "Nu dețineți acest vehicul.",
+		sale_success = "Ați vândut cu succes `${label}-ul` pentru $${price}.",
+
+		sale_log_title = "Răscumpărare EDM",
+		sale_log_description = "${consoleName} a vândut `${label}` pentru $${price}.",
 
 		log_title = "Cumpărare EDM",
 		log_description = "Achiziționat `${label}` cu ${price}$."
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		state_security_badge_details = "Departamentul de Securitate al Statului | ${prenume} ${nume}",
 		doj_badge = "Carte de identitate DOJ",
 		doj_badge_details = "DOJ | ${prenume} ${nume} | Poziție: ${numePoziție}",
+		doc_badge = "Insignă de DOC",
+		doc_badge_details = "DOC | ${firstName} ${lastName} | Poziție: ${positionName}",
 
 		badge_type_sasp = "Politia Statului San Andreas",
 		badge_type_bcso = "Biroul Șerifului Comitatului Blaine",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		badge_type_bcfd = "Departamentul de Pompieri din Comitatul Blaine",
 		badge_type_state_security = "Departamentul de Securitate al Statului",
 		badge_type_doj = "Departamentul de Justiție",
+		badge_type_doc = "Departamentul de Corecții",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		badge_type_short_ems = "EMS",
 		badge_type_short_doctor = "Doctor",
 		badge_type_short_bcfd = "BCFD",
-		badge_type_short_state_security = "SSD"
+		badge_type_short_state_security = "SSD",
+		badge_type_short_doc = "DOC"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		police_store = "Magazinul de echipament de poliție",
 		fib_store = "Magazinul FIB",
 		police_badge_store = "Biroul de plasare a insignelor de poliție",
+		doc_badge_store = "Biroul de insigne DOC",
 		flower_store = "Floriștia lui Stacey",
 		gift_store = "Magazinul de cadouri Del Perro",
 		ems_store = "Magazinul de echipament de ambulanță",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		state_security_badge_description = "Un ID pentru agenții Securității Statului.",
 		doj_badge = "Insignă DOJ",
 		doj_badge_description = "O insignă pentru angajații Departamentului de Justiție.",
+		doc_badge = "Insignă de DOC",
+		doc_badge_description = "O insignă pentru angajații Departamentului de Corecții.",
 
 		radio_chop_shop = "Radio Atelierul de Dezmembrări",
 		radio_chop_shop_description = "Folosit pentru a primi informații despre vehiculele \"călduțe\" de la persoanele inexistente care operează atelierul de dezmembrări.",

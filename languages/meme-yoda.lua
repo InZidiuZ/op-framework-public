@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["meme-yoda"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		banner_name_generic = "a Staff Member, it is",
 
-		ban_alert_title = "Banned by System, you are",
+		ban_alert_title = "Banned From Server, You Have Been",
+		ban_alert_description_banner = "By ${banner}, automatically banned you have been. Reason: `${reason}`.",
 		ban_alert_description = "Automatically banned by the system, you would have been for reason `${reason}`.",
 
 		logs_player_banned_title = "Player Banned, has been",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		reflection_logs_title = "Reflection Toggled",
 		reflection_logs_enabled_details = "Reflection on, ${consoleName} has toggled it.",
 		reflection_logs_disabled_details = "Reflection off, ${consoleName} has toggled it.",
+
+		headache_logs_title = "Headache, Triggered It Has",
+		headache_logs_details = "${consoleName} has triggered a headache for ${targetConsoleName}.",
+		trigger_headache_no_permissions = "Proper permissions, you do not have. Attempt to trigger a headache failed it has.",
+
+		success_trigger_headache = "Headache for ${playerName}, successfully triggered it has been.",
+		failed_trigger_headache = "Fail to trigger a headache, it did.",
 
 		protective_mode_not_staff = "Without proper permissions, toggle the server's protective mode you attempted.",
 		protective_mode_toggled_on = "Enabled, the server's protective mode has been. Required playtime to connect to the server has been set to `${playtime}`.",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		reflect_damage_command_help = "Damage reflection toggles. (Anyone who damages you will be damaged themselves)",
 		reflect_damage_command_substitutes = "reflection",
 
+		trigger_headache_command = "Trigger headache, you will",
+		trigger_headache_command_help = "Short period of lag, causes for the specified player.",
+		trigger_headache_command_parameter_server_id = "Server ID, you must provide",
+		trigger_headache_command_parameter_server_id_help = "The player's server ID, you are wanting to trigger a headache for.",
+		trigger_headache_command_substitutes = "Headache, you may",
+
 		stick_command = "stick",
 		stick_command_help = "Stick to the car, you must.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		clean_ped_command = "clean_ped",
 		clean_ped_command_help = "A characters blood, bullet impacts, dirt and more, cleaned they will be.",
 		clean_ped_command_parameter_server_id = "Server ID, you must enter",
-		clean_ped_command_parameter_server_id_help = "The player's Server ID whose ped you want to clean. If left blank, you will be automatically selected.",
+		clean_ped_command_parameter_server_id_help = "The player's server ID, you are wanting to clean the ped of, you must provide.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "Toggle, vehicle smoke you must",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		play_audio_command_parameter_server_id_help = "Server's identifier of the player whom you want to play this audio will be. `-1` you can choose for all players.",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "Random bandaid, you must get it",
+		random_bandaid_command_help = "Random bandaid, gives you. Hmmm. :)",
+		random_bandaid_command_substitutes = "bandaid",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "The Battle Royale feature, toggle you can.",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		rectangle_command = "rectangle",
 		rectangle_command_help = "Create, in 3D space, a rectangle this will.",
 		rectangle_command_substitutes = "rect",
+
+		define_area_command = "Define, an area you can.",
+		define_area_command_help = "An area, define you can.",
+		define_area_command_substitutes = "area",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		mileage_command_help = "Check a vehicle's mileage, we must.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "drag_out",
-		drag_out_command_help = "The nearest dead player out of the vehicle they are in, ye shall drag. Hmmm.",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "Enables or disables the brakes of the closest vehicle, it does.",
 		toggle_disabled_brakes_command_substitutes = "disable_brakes",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		spiderman = "Spiderman",
 		star_wars = "Star-Wars",
 
+		failed_random_bandaid = "Failed to get a random bandaid, I have.",
+
 		received_bandaid_logs_title = "Received Bandaid",
-		received_bandaid_logs_details = "1x ${bandaid} ${consoleName} received after airlifting, hmm."
+		received_bandaid_logs_details = "1x ${bandaid} ${consoleName} received after airlifting, hmm.",
+		spawned_bandaid_logs_details = "${consoleName}, 1 ${bandaid} gave themselves, yes?"
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		next_rotation_in = "Next rotation in, ${time} it is.",
 
 		exclusive_dealership_blip = "Deluxe Motorsport, Exclusive it is.",
+		exclusive_buyback_blip = "Exchange of Prestige Wheels, this is.",
+
+		buyback_vehicle_help = "Access exchange, press ~INPUT_CONTEXT~ you must.",
+		buyback_title = "Exchange of Prestige Wheels, title this is.",
+		sell_closest_vehicle = "Your ${label} for $${price} (${percent}% of its value) sell, hmm?",
+		deny_sale = "Nevermind, keep it, I will",
+		accept_sale = "Yes, sure, I am",
+		accept_sale_description = "For $${price} your vehicle, sell you want? Hmm, certain you are? Cannot be undone, this action.",
+		are_you_sure_sell = "Sure, sell it you want?",
+		no_vehicle_to_sell = "No vehicle nearby to sell, there is.",
+		vehicle_not_owned = "This vehicle, you do not own.",
+		sale_success = "Your `${label}` successfully sold for $${price}, hmm.",
+
+		sale_log_title = "EDM Buyback",
+		sale_log_description = "Sold their `${label}` for $${price}, ${consoleName} has.",
 
 		log_title = "Purchase, EDM",
 		log_description = "The `${label}` purchased, $${price} it was."
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		state_security_badge_details = "ID of the State Security Department | ${firstName} ${lastName}",
 		doj_badge = "DOJ ID",
 		doj_badge_details = "The DOJ identification of ${firstName} ${lastName} | Position: ${positionName}",
+		doc_badge = "DOC Badge",
+		doc_badge_details = "DOC | ${firstName} ${lastName} | Position: ${positionName}",
 
 		badge_type_sasp = "San Andreas State Police",
 		badge_type_bcso = "Blaine County Sheriff's Office",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		badge_type_bcfd = "Blaine County Fire Department, the",
 		badge_type_state_security = "Department of State Security, the",
 		badge_type_doj = "Department of Justice, the",
+		badge_type_doc = "Department Of Corrections",
 
 		badge_type_short_sasp = "SASP, the",
 		badge_type_short_bcso = "BCSO, the",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		badge_type_short_ems = "EMS",
 		badge_type_short_doctor = "Doctor",
 		badge_type_short_bcfd = "BCFD",
-		badge_type_short_state_security = "SSD"
+		badge_type_short_state_security = "SSD",
+		badge_type_short_doc = "DOC"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		police_store = "Store Police, it is",
 		fib_store = "Store FIB, it is",
 		police_badge_store = "Badge Desk Police, it is",
+		doc_badge_store = "DOC Badge Desk",
 		flower_store = "Emporium Flower of Stacey, it is",
 		gift_store = "Gifts of Del Perro, it is",
 		ems_store = "Store EMS, it is",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		state_security_badge_description = "For agents of the State Security, this is the ID.",
 		doj_badge = "DOJ Badge",
 		doj_badge_description = "Badge for workers of the Department of Justice, this is.",
+		doc_badge = "DOC Badge",
+		doc_badge_description = "For employees of the Department of Corrections, a badge this is.",
 
 		radio_chop_shop = "Radio Chop Shop, this is",
 		radio_chop_shop_description = "'Hot' vehicles intel, non-existent people operating the chop shop provide, this radio is used for.",

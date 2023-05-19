@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["meme-minionese"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		banner_name_generic = "a Staff Member",
 
-		ban_alert_title = "Bananadu! You have been banned by System",
+		ban_alert_title = "Bello-ban!",
+		ban_alert_description_banner = "Bello! ${banner} has boop-booped you and you are now banned for reason `${reason}`.",
 		ban_alert_description = "Bananadu! You would have been automatically bananadu by the system for reason `${reason}`.",
 
 		logs_player_banned_title = "Player Bananadu",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		reflection_logs_title = "Bababa! Reflection Toggled",
 		reflection_logs_enabled_details = "${consoleName} has toggled reflection on.",
 		reflection_logs_disabled_details = "${consoleName} has toggled reflection off.",
+
+		headache_logs_title = "Bello-triggered Headache",
+		headache_logs_details = "${consoleName} has triggered a headache for ${targetConsoleName}. Bello-bello!",
+		trigger_headache_no_permissions = "Boop-boop! You don't have permission to trigger a headache. Bello!",
+
+		success_trigger_headache = "Successfully triggered a headache for ${playerName}. Bello-bello!",
+		failed_trigger_headache = "Failed to trigger a headache. Oopsie-doopsie. Bello!",
 
 		protective_mode_not_staff = "Bello! Attempted ta toggle da server's protective mode without da proper permissions.",
 		protective_mode_toggled_on = "Da server's protective mode has been toggled on! Required playtime to connect to da server is now set to `${playtime}`.",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		reflect_damage_command_help = "Bello-lika bada-boom. (Banana ina da face!)",
 		reflect_damage_command_substitutes = "bello",
 
+		trigger_headache_command = "banana_gelato_la_ba_ba_pa_pa",
+		trigger_headache_command_help = "Bapple kana da laka chaka pada mika!",
+		trigger_headache_command_parameter_server_id = "banana_id",
+		trigger_headache_command_parameter_server_id_help = "Bapple banana_id da banana banana_kana_la fleep!",
+		trigger_headache_command_substitutes = "ba_ba_pa_pa",
+
 		stick_command = "stikky",
 		stick_command_help = "Stikky to the car you're ontop of.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		clean_ped_command = "clean_baboi",
 		clean_ped_command_help = "Baboi a character's blood, bullet impacts, dirt, etc.",
 		clean_ped_command_parameter_server_id = "bello-banana",
-		clean_ped_command_parameter_server_id_help = "Da player's server ID you are wanting to clean da ped of. If left at blank, yourself will automatically be selected.",
+		clean_ped_command_parameter_server_id_help = "Bapple banana_id da banana banana_kana_la taka da ped da!",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "toggle_vehicle_smoke",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		play_audio_command_parameter_server_id_help = "Da player's server ID yu want to play dis audio for. Yu can do `-1` for all players.",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "banana_bandaid",
+		random_bandaid_command_help = "Baboi baboi! Gives you a random bandaid. :)",
+		random_bandaid_command_substitutes = "bandaidu",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Poopaye da Battle Royale feature.",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		rectangle_command = "rektangle",
 		rectangle_command_help = "Creeeate a rektangle een 3D spees.",
 		rectangle_command_substitutes = "rekt",
+
+		define_area_command = "suba dekkar",
+		define_area_command_help = "Baboi! Define an area.",
+		define_area_command_substitutes = "suba",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menoo",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		mileage_command_help = "Cheeeck a vehicle's mileage.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "drag_out",
-		drag_out_command_help = "Drags tha neeearest dead player out of their vehicle.",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "Bee-Do! Bee-Do! Disable or enable the brakes of the nearest vehicle.",
 		toggle_disabled_brakes_command_substitutes = "disable_brakes",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		spiderman = "Bello-Nosi Spiderman",
 		star_wars = "Bello-Nosi Star-Wars",
 
+		failed_random_bandaid = "Baboi... Err baboi baboi baboi. Failed to get a random bandaid.",
+
 		received_bandaid_logs_title = "Poopaye-boopaye Received Bandaid",
-		received_bandaid_logs_details = "${consoleName} received 1x ${bandaid} after airlifting."
+		received_bandaid_logs_details = "${consoleName} received 1x ${bandaid} after airlifting.",
+		spawned_bandaid_logs_details = "${consoleName} gave themselves 1x ${bandaid}. Baboi!"
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		next_rotation_in = "Lalalululö tu: ${time}",
 
 		exclusive_dealership_blip = "Bello Lükso Motörsport",
+		exclusive_buyback_blip = "Prestige Wheels Exchange baboi!",
+
+		buyback_vehicle_help = "Baboi baboi baboi! Press ~INPUT_CONTEXT~ to access the exchange.",
+		buyback_title = "Prestige Wheels Exchange baboi!",
+		sell_closest_vehicle = "Baboi, you wanna sell your ${label} for $${price} (${percent}% of its price)?",
+		deny_sale = "Tulaliloo, me no wanna",
+		accept_sale = "Bee do bee do bee do, me sure",
+		accept_sale_description = "Whaaat? You really wanna sell your ${label} for $${price}? This cannot be undone.",
+		are_you_sure_sell = "Whaaaat?",
+		no_vehicle_to_sell = "Baboi, me no see any sellable vehicle nearby.",
+		vehicle_not_owned = "Gelato! You are not the owner of this vehicle.",
+		sale_success = "Bello! You sold your `${label}` for $${price}.",
+
+		sale_log_title = "EDM Buyback",
+		sale_log_description = "${consoleName} sold bido for ${label} wif ${price}.",
 
 		log_title = "EDM Papalë",
 		log_description = "Papalë the `${label}` for $${price}."
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		state_security_badge_details = "State Security Department | ${firstName} ${lastName}",
 		doj_badge = "Department of Justice Identification",
 		doj_badge_details = "Department of Justice | ${firstName} ${lastName} | Position: ${positionName}",
+		doc_badge = "BAH-BLEH-DAH Badge",
+		doc_badge_details = "BAH-BLEH-DAH | ${firstName} ${lastName} | Position: ${positionName}",
 
 		badge_type_sasp = "San Andreas State Police Badge",
 		badge_type_bcso = "Blaine County Sheriff's Office Badge",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		badge_type_bcfd = "Blaine County Fire Department Bee Do",
 		badge_type_state_security = "State Security Department Bee Do Bee Do Bee Do",
 		badge_type_doj = "Department Of Justice Bee Do",
+		badge_type_doc = "Deparment Of Comishuns",
 
 		badge_type_short_sasp = "SASP Bee Do",
 		badge_type_short_bcso = "BCSO Bee Do",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		badge_type_short_ems = "BUMBLEBEE MEDIC",
 		badge_type_short_doctor = "DOCTOR GOGGLES",
 		badge_type_short_bcfd = "BANANA COAST FIRE DEPT",
-		badge_type_short_state_security = "STATE SECURITY DESPICABLE"
+		badge_type_short_state_security = "STATE SECURITY DESPICABLE",
+		badge_type_short_doc = "BAH-BLEH-DAH"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		police_store = "Polis Bello Store",
 		fib_store = "FIB Store-Bello",
 		police_badge_store = "Polis Badge Desk",
+		doc_badge_store = "BAH-BLEH-DAH Badge Desk",
 		flower_store = "Stuart's Flower Emporium",
 		gift_store = "Del Perro Minion-Banana",
 		ems_store = "BANANA-EMS Store",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		state_security_badge_description = "Da ID fo bellopa af da Bellopobana Security.",
 		doj_badge = "DOJ Badge",
 		doj_badge_description = "A badge fo employees ob da Department ob Justice.",
+		doc_badge = "BAH-BLEH-DAH Badge",
+		doc_badge_description = "Aba-da for employees ofa-da Deparment ofa-da Comishuns.",
 
 		radio_chop_shop = "Chop Shop Radio",
 		radio_chop_shop_description = "Doo doo bee doo, used to receive intel on 'hot' vehicles from da non-existent people operating da chop shop.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["meme-dinosaur"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 		banner_name_generic = "a Mighty Dinosaur",
 
-		ban_alert_title = "Banished by System",
+		ban_alert_title = "Tyrannosaurus has Declared You Extinct",
+		ban_alert_description_banner = "You would have been automatically extincted by ${banner} for reason `${reason}`.",
 		ban_alert_description = "You would have been automatically banished from the land by the system, for the reason `${reason}`.",
 
 		logs_player_banned_title = "Player Banished",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		reflection_logs_title = "Reflection Toggled",
 		reflection_logs_enabled_details = "${consoleName} toggled on reflection. Keep those claws away!",
 		reflection_logs_disabled_details = "${consoleName} toggled off reflection. Hope you have bandages.",
+
+		headache_logs_title = "Headache Triggered",
+		headache_logs_details = "${consoleName} has triggered a headache for ${targetConsoleName}.",
+		trigger_headache_no_permissions = "Attempted to trigger a headache without proper permissions. Permission not granted by pterodactyl chief.",
+
+		success_trigger_headache = "Headache triggered successfully for ${playerName}.",
+		failed_trigger_headache = "Failed to trigger a headache. IT specialist raptor team working on this issue currently.",
 
 		protective_mode_not_staff = "Rawr! You tried toggling server protective mode without proper permissions. No can do!",
 		protective_mode_toggled_on = "Rawr! Server protective mode has been enabled. You must now wait `${playtime}` worth of sunrises and sunsets before you can join us.",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		reflect_damage_command_help = "Me roar! Any dino who bites me will bite themselves.",
 		reflect_damage_command_substitutes = "rawr",
 
+		trigger_headache_command = "roar_trigger_headache",
+		trigger_headache_command_help = "Roars loudly to give the specified player a headache.",
+		trigger_headache_command_parameter_server_id = "server id",
+		trigger_headache_command_parameter_server_id_help = "The player's server ID you want to give a headache to.",
+		trigger_headache_command_substitutes = "roar_headache",
+
 		stick_command = "hang_on",
 		stick_command_help = "Hang onto the back of a larger dino.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		clean_ped_command = "clean_dino",
 		clean_ped_command_help = "Clean off a dino's scales, blood, and dirt.",
 		clean_ped_command_parameter_server_id = "skree ree-rawr",
-		clean_ped_command_parameter_server_id_help = "The saurus's server ID you are wanting to clean the ped of. If left at blank, yourself will automatically be selected.",
+		clean_ped_command_parameter_server_id_help = "The player's server ID you want to clean the dinosaur of.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "toggle_vehicle_smoke",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		play_audio_command_parameter_server_id_help = "The server ID of the player you want to play this audio sound bite for. You can do `-1` to play it for all players.",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "random_bandaid",
+		random_bandaid_command_help = "Gives you a random leaf. :)",
+		random_bandaid_command_substitutes = "leaf",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Toggle rah-rah Battle Royale.",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		rectangle_command = "rectangle",
 		rectangle_command_help = "Create a rectangle in 3D swamp.",
 		rectangle_command_substitutes = "rect",
+
+		define_area_command = "define_territory",
+		define_area_command_help = "Define a territory.",
+		define_area_command_substitutes = "territory",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		mileage_command_help = "Check a dino's stomping distance.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "drag_out",
-		drag_out_command_help = "Drags the nearest extinct dino out of the nest they are in.",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "skreech_chomp_toggle",
 		toggle_disabled_brakes_command_help = "Chomps or skreeches the brakes of the nearest dino mobile.",
 		toggle_disabled_brakes_command_substitutes = "brakes_disable_chomp",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		spiderman = "Arachno-Lizard",
 		star_wars = "Star-Rexes",
 
+		failed_random_bandaid = "Failed to get a random leaf.",
+
 		received_bandaid_logs_title = "Received Banda-Saurus",
-		received_bandaid_logs_details = "${consoleName} received 1x ${bandaid} after flying."
+		received_bandaid_logs_details = "${consoleName} received 1x ${bandaid} after flying.",
+		spawned_bandaid_logs_details = "${consoleName} gave themselves 1x ${leaf}."
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		next_rotation_in = "NexT-RotatIon iN: ${time}",
 
 		exclusive_dealership_blip = "ExcluSive Deluxe Motorsport",
+		exclusive_buyback_blip = "Prestige Eggs Exchange",
+
+		buyback_vehicle_help = "Press ~INPUT_CONTEXT~ to access the exchange.",
+		buyback_title = "Prestige Eggs Exchange",
+		sell_closest_vehicle = "Sell dino ${label} for $${price} (${percent}% ov its price)?",
+		deny_sale = "Nah, me wanna keep it",
+		accept_sale = "Yup, me sure",
+		accept_sale_description = "You can't take it back if you sell dino ${label} fer $${price}. Are you sure?",
+		are_you_sure_sell = "Sure me want to sell dino?",
+		no_vehicle_to_sell = "No sellable dino nearby.",
+		vehicle_not_owned = "Dino not belong to you.",
+		sale_success = "You successfully sold dino `${label}` fer $${price}.",
+
+		sale_log_title = "EDM Urrr",
+		sale_log_description = "${consoleName} rawrrrr their `${label}` for $${price}.",
 
 		log_title = "EDM PurchaSe",
 		log_description = "Purchased the `${label}` for $${price}."
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		state_security_badge_details = "State Security Raargh Department | ${firstName} ${lastName}",
 		doj_badge = "DOJ Raargh",
 		doj_badge_details = "DOJ | ${firstName} ${lastName} | Position: ${positionName}",
+		doc_badge = "ROAR Badge",
+		doc_badge_details = "ROAR | ${firstName} ${lastName} | Position: ${positionName}",
 
 		badge_type_sasp = "San Andreas State Police Raargh",
 		badge_type_bcso = "Blaine County Sheriff's Office Raargh",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		badge_type_bcfd = "Blaine County Fire Departmentsaurus",
 		badge_type_state_security = "State Security Departmentsaurus",
 		badge_type_doj = "Department Of Justicesaurus",
+		badge_type_doc = "Department of Clawrections",
 
 		badge_type_short_sasp = "SASPsaurus",
 		badge_type_short_bcso = "BCSOsaurus",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		badge_type_short_ems = "Healer",
 		badge_type_short_doctor = "Herbivore Surgeon",
 		badge_type_short_bcfd = "Big Claw Fire and Rescue",
-		badge_type_short_state_security = "Saurian Security Division"
+		badge_type_short_state_security = "Saurian Security Division",
+		badge_type_short_doc = "ROAR"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		police_store = "Jurassic Police Armory",
 		fib_store = "InGen Special Forces Armory",
 		police_badge_store = "Jurassic Police Badge Desk",
+		doc_badge_store = "ROAR Badge Den",
 		flower_store = "Stegosaurus' Flower Emporium",
 		gift_store = "Del Perro Offerings",
 		ems_store = "Pterodactyl EMS Store",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		state_security_badge_description = "An ID for agents of the State Security translated to Dinosaur Speak: 'Big Teeth Tribesmate ID'.",
 		doj_badge = "DOJ Badge",
 		doj_badge_description = "A badge for employees of the Department of Justice translated to Dinosaur Speak: 'Lawgiver Tribe Badge'.",
+		doc_badge = "ROAR Badge",
+		doc_badge_description = "A badge for employees of the Department of Clawrections.",
 
 		radio_chop_shop = "Chop Shop Radio",
 		radio_chop_shop_description = "Used to receive intel on 'hot' vehicles from the non-existent people operating the chop shop translated to Dinosaur Speak: 'Meat Eaters Perception Enhancer'.",

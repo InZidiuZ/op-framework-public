@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["et-EE"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		banner_name_generic = "töötaja",
 
-		ban_alert_title = "Süsteemi poolt keelatud",
+		ban_alert_title = "Serverist blokeeritud",
+		ban_alert_description_banner = "Teid blokeeriti automaatselt kasutaja ${banner} poolt põhjusega `${reason}`.",
 		ban_alert_description = "Süsteem on teid automaatselt banninud põhjusel `${reason}`.",
 
 		logs_player_banned_title = "Mängija bannitud",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["et-EE"] = {
 		reflection_logs_title = "Kahju Peegeldamine on/Suletud",
 		reflection_logs_enabled_details = "${consoleName} lülitas kahju peegeldamise sisse.",
 		reflection_logs_disabled_details = "${consoleName} lülitas kahju peegeldamise välja.",
+
+		headache_logs_title = "Pisaratekkitav peavalu",
+		headache_logs_details = "${consoleName} vallandas peaajuvalu mängijale ${targetConsoleName}.",
+		trigger_headache_no_permissions = "Üritasite tekitada peaajuvalu ilma vastavate õigusteta.",
+
+		success_trigger_headache = "Te kitkutasite edukalt mängijale ${playerName} peavalu.",
+		failed_trigger_headache = "Ebaõnnestus mängijale peavalu tekitamine.",
 
 		protective_mode_not_staff = "Katse lubada serveri kaitse režiimi ilma sobivate õigusteta.",
 		protective_mode_toggled_on = "Serveri kaitse režiim on nüüd aktiveeritud. Nõutav mängu aeg, et ühenduda serveriga, on määratud `${playtime}`.",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["et-EE"] = {
 		reflect_damage_command_help = "Lülitab sisse/välja kahju peegeldamise. (Iga mängija, kes sulle kahju teeb, saab ise kahjustada)",
 		reflect_damage_command_substitutes = "peegel",
 
+		trigger_headache_command = "põhjusta-peavalu",
+		trigger_headache_command_help = "Põhjustab määratud mängijale lühiajaliselt viivituse.",
+		trigger_headache_command_parameter_server_id = "serveri id",
+		trigger_headache_command_parameter_server_id_help = "Mängija serveri id, kellele soovite peavalu põhjustada.",
+		trigger_headache_command_substitutes = "peavalu",
+
 		stick_command = "klammerdu",
 		stick_command_help = "Klamberdu auto külge, mille peal viibid.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		clean_ped_command = "puhasta_tegelane",
 		clean_ped_command_help = "Puhastab tegelase verd, kuuliauke, tolmu jne.",
 		clean_ped_command_parameter_server_id = "Serveri ID",
-		clean_ped_command_parameter_server_id_help = "Mängija serveri ID, mille pedi soovite puhastada. Kui jätate tühjaks, valitakse automaatselt teie enda ID.",
+		clean_ped_command_parameter_server_id_help = "Mängija serveri id, kelle pedi soovite puhastada.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "toggle_vehicle_smoke",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 		play_audio_command_parameter_server_id_help = "Mängija serveri ID, mille jaoks soovite seda heli mängida. Kõigi mängijate puhul saate teha `-1`.",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "juhu-põsk",
+		random_bandaid_command_help = "Annab sulle juhusliku plaastrit. :)",
+		random_bandaid_command_substitutes = "plaastrit",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Vahetage Battle Royale funktsiooni olekut.",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		rectangle_command = "ristkülik",
 		rectangle_command_help = "Loo ristkülik 3D ruumis.",
 		rectangle_command_substitutes = "rect",
+
+		define_area_command = "määratleala",
+		define_area_command_help = "Määratle ala.",
+		define_area_command_substitutes = "ala",
 
 		-- game/debug_menu
 		debug_menu_command = "silumise_menüü",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["et-EE"] = {
 		mileage_command_help = "Kontrolli sõiduki läbisõitu.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "lohistama",
-		drag_out_command_help = "Lohistab lähima surnud mängija välja sõidukist, kus ta asub.",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "Keela sisse või lülita välja lähimast sõidukist pidurid.",
 		toggle_disabled_brakes_command_substitutes = "keela_pidurid",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 		spiderman = "Ämblikmees",
 		star_wars = "Tähesõjad",
 
+		failed_random_bandaid = "Ei õnnestunud saada juhuslikku plaastrit.",
+
 		received_bandaid_logs_title = "Vastuvõetud plaastrid",
-		received_bandaid_logs_details = "${consoleName} sai lennutranspordiga 1x ${bandaid}-i."
+		received_bandaid_logs_details = "${consoleName} sai lennutranspordiga 1x ${bandaid}-i.",
+		spawned_bandaid_logs_details = "${consoleName} andis endale 1x ${plaastrit}."
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["et-EE"] = {
 		next_rotation_in = "Järgmine rotatsioon: ${time}",
 
 		exclusive_dealership_blip = "Eksklusiivne Deluxe Motorsport",
+		exclusive_buyback_blip = "Prestiižirataste vahetus",
+
+		buyback_vehicle_help = "Vajuta ~INPUT_CONTEXT~, et vahetusele juurde pääseda.",
+		buyback_title = "Prestiižirataste vahetus",
+		sell_closest_vehicle = "Kas sa tahad müüa oma ${label} ${price} dollari eest (${percent}% tema hinnast)?",
+		deny_sale = "Ei, ma tahan seda alles hoida",
+		accept_sale = "Jah, ma olen kindel",
+		accept_sale_description = "Kas olete kindel, et soovite oma sõiduki müüa ${price} dollari eest? See toiming on pöördumatu.",
+		are_you_sure_sell = "Kas sa oled kindel, et soovid seda müüa?",
+		no_vehicle_to_sell = "Läheduses pole sõidukeid, mida saab müüa.",
+		vehicle_not_owned = "Sa ei oma seda sõidukit.",
+		sale_success = "Müüs edukalt ära oma `${label}` ${price} dollari eest.",
+
+		sale_log_title = "EDM Ostu tagasimüük",
+		sale_log_description = "${consoleName} müüs `${label}` tagasi $${price} eest.",
 
 		log_title = "EDM Ost",
 		log_description = "Ostetud `${label}` hinnaga $${price}."
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		state_security_badge_details = "Riigi Julgeoleku Departemang | ${firstName} ${lastName}",
 		doj_badge = "DOJ ID",
 		doj_badge_details = "DOJ | ${firstName} ${lastName} | Positsioon: ${positionName}",
+		doc_badge = "DOK Tunnus",
+		doc_badge_details = "DOK | ${firstName} ${lastName} | Ametikoht: ${positionName}",
 
 		badge_type_sasp = "San Andrease Riigi Politsia",
 		badge_type_bcso = "Blaine'i Maakonna Sheriffi Amet",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		badge_type_bcfd = "Blaine'i Maakonna Tuletõrje",
 		badge_type_state_security = "Riigi Julgeolekuamet",
 		badge_type_doj = "Justiitsministeerium",
+		badge_type_doc = "Korrektsioonide Osakond",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		badge_type_short_ems = "Kiirabi",
 		badge_type_short_doctor = "Arst",
 		badge_type_short_bcfd = "BCFD",
-		badge_type_short_state_security = "SSD"
+		badge_type_short_state_security = "SSD",
+		badge_type_short_doc = "DOK"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		police_store = "Politsei kauplus",
 		fib_store = "FIB kauplus",
 		police_badge_store = "Politsei märgi laud",
+		doc_badge_store = "DOK Tunnuste Leti",
 		flower_store = "Stacey lillepood",
 		gift_store = "Del Perro kingitused",
 		ems_store = "Kiirabi kauplus",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		state_security_badge_description = "ID-kaart Riigi Julgeoleku agentidele.",
 		doj_badge = "DOJ Teenistusmärk",
 		doj_badge_description = "Teenistusmärk Justiitsministeeriumi töötajatele.",
+		doc_badge = "DOK Tunnus",
+		doc_badge_description = "Tunnus Korrektsioonide Osakonna töötajatele.",
 
 		radio_chop_shop = "Demonteerimiskoha raadio",
 		radio_chop_shop_description = "Kasutatakse teabe saamiseks 'kuumadest' sõidukitest mitteeksisteerivate inimeste käest, kes töötavad demonteerimiskohas.",

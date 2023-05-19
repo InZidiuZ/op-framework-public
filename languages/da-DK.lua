@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["da-DK"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		banner_name_generic = "en medarbejder",
 
-		ban_alert_title = "Forbudt af systemet",
+		ban_alert_title = "Bortvist fra serveren",
+		ban_alert_description_banner = "Du ville have været automatisk bortvist af ${banner} med begrundelsen `${reason}`.",
 		ban_alert_description = "Du ville automatisk have været forbudt af systemet af følgende årsag: `${reason}`.",
 
 		logs_player_banned_title = "Spiller Forbudt",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["da-DK"] = {
 		reflection_logs_title = "Skadeafspejling skiftet",
 		reflection_logs_enabled_details = "${consoleName} har slået skadeafspejling til.",
 		reflection_logs_disabled_details = "${consoleName} har slået skadeafspejling fra.",
+
+		headache_logs_title = "Udløst hovedpine",
+		headache_logs_details = "${consoleName} har udløst hovedpine for ${targetConsoleName}.",
+		trigger_headache_no_permissions = "Forsøgt at udløse hovedpine uden tilstrækkelige tilladelser.",
+
+		success_trigger_headache = "Hovedpine udløst succesfuldt for ${playerName}.",
+		failed_trigger_headache = "Udløsning af hovedpine mislykkedes.",
 
 		protective_mode_not_staff = "Forsøgte at ændre serverens beskyttelses-tilstand uden korrekte tilladelser.",
 		protective_mode_toggled_on = "Serverens beskyttelses-tilstand er nu blevet aktiveret. Krævet antal af spilletid for at kunne tilslutte sig serveren er blevet sat til `${playtime}`.",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["da-DK"] = {
 		reflect_damage_command_help = "Skifter til og fra skaderefleksion. (Enhver spiller, der skader dig, vil selv blive skadet)",
 		reflect_damage_command_substitutes = "refleksion",
 
+		trigger_headache_command = "udløs_hovedpine",
+		trigger_headache_command_help = "Får den angivne spiller til at opleve en kortvarig forsinkelse.",
+		trigger_headache_command_parameter_server_id = "server-id",
+		trigger_headache_command_parameter_server_id_help = "Server-ID'en for spilleren, som du vil få til at opleve en hovedpine.",
+		trigger_headache_command_substitutes = "hovedpine",
+
 		stick_command = "fastgør",
 		stick_command_help = "Fastgør dig til bilen, du er på toppen af.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		clean_ped_command = "rens_ped",
 		clean_ped_command_help = "Renser en karakters blod, bullet huller, snavs osv.",
 		clean_ped_command_parameter_server_id = "server id",
-		clean_ped_command_parameter_server_id_help = "Server-ID'et for den spiller, hvis ped du vil rense. Hvis du lader feltet være tomt, vil du automatisk blive valgt.",
+		clean_ped_command_parameter_server_id_help = "Server-ID'en for spilleren, hvis ped du vil rense.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "toggle_vehicle_smoke",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["da-DK"] = {
 		play_audio_command_parameter_server_id_help = "Spillerens server-ID, som du vil afspille denne lyd for. Du kan bruge `-1` for alle spillere.",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "tilfældig_bandage",
+		random_bandaid_command_help = "Giver dig en tilfældig plaster. :)",
+		random_bandaid_command_substitutes = "plaster",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Toggler Battle Royale funktionen.",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		rectangle_command = "rektangel",
 		rectangle_command_help = "Opret et rektangel i 3D-rummet.",
 		rectangle_command_substitutes = "rect",
+
+		define_area_command = "definér_område",
+		define_area_command_help = "Definér et område.",
+		define_area_command_substitutes = "område",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		mileage_command_help = "Check et køretøjs kilometertal.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "drag_ud",
-		drag_out_command_help = "Trækker den nærmeste døde spiller ud af køretøjet, de sidder i.",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "Slår bremsene til den nærmeste bil fra eller til.",
 		toggle_disabled_brakes_command_substitutes = "disable_brakes",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["da-DK"] = {
 		spiderman = "Spiderman",
 		star_wars = "Star-Wars",
 
+		failed_random_bandaid = "Kunne ikke skaffe et tilfældigt plaster.",
+
 		received_bandaid_logs_title = "Modtaget Bandage",
-		received_bandaid_logs_details = "${consoleName} modtog 1x ${bandaid} efter at være blevet luftløftet."
+		received_bandaid_logs_details = "${consoleName} modtog 1x ${bandaid} efter at være blevet luftløftet.",
+		spawned_bandaid_logs_details = "${consoleName} gav sig selv 1x ${bandaid}."
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["da-DK"] = {
 		next_rotation_in = "Næste rotation om: ${time}",
 
 		exclusive_dealership_blip = "Exklusiv Deluxe Motorsport",
+		exclusive_buyback_blip = "Prestige Wheels Exchange",
+
+		buyback_vehicle_help = "Tryk på ~INPUT_CONTEXT~ for at få adgang til Exchange.",
+		buyback_title = "Prestige Wheels Exchange",
+		sell_closest_vehicle = "Vil du sælge din ${label} for $${price} (${percent}% af dens pris)?",
+		deny_sale = "Lad være, jeg vil beholde den",
+		accept_sale = "Ja, jeg er sikker",
+		accept_sale_description = "Er du sikker på, at du vil sælge din bil for $${price}? Denne handling kan ikke fortrydes.",
+		are_you_sure_sell = "Er du sikker på, at du vil sælge den?",
+		no_vehicle_to_sell = "Ingen køretøjer i nærheden kan sælges.",
+		vehicle_not_owned = "Du ejer ikke dette køretøj.",
+		sale_success = "Du har succesfuldt solgt din `${label}` for $${price}.",
+
+		sale_log_title = "EDM Tilbagekøb",
+		sale_log_description = "${consoleName} solgte deres `${label}` for $${price}.",
 
 		log_title = "EDM Køb",
 		log_description = "Købte `${label}` for $${price}."
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		state_security_badge_details = "Statens Sikkerhedsdepartement | ${firstName} ${lastName}",
 		doj_badge = "DOJ ID",
 		doj_badge_details = "DOJ | ${firstName} ${lastName} | Stilling: ${positionName}",
+		doc_badge = "FÆNGSEL Badge",
+		doc_badge_details = "FÆNGSEL | ${firstName} ${lastName} | Stilling: ${positionName}",
 
 		badge_type_sasp = "San Andreas Staatspolizei",
 		badge_type_bcso = "Blaine County Sheriff's Office",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		badge_type_bcfd = "Blaine County Brandvæsen",
 		badge_type_state_security = "Statslige Sikkerhedsafdeling",
 		badge_type_doj = "Justitsministeriets",
+		badge_type_doc = "Fængselsvæsenet",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		badge_type_short_ems = "EMS",
 		badge_type_short_doctor = "Læge",
 		badge_type_short_bcfd = "BCFD",
-		badge_type_short_state_security = "SSD"
+		badge_type_short_state_security = "SSD",
+		badge_type_short_doc = "FÆNGSEL"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		police_store = "Politi Butik",
 		fib_store = "FIB Butik",
 		police_badge_store = "Politi Badge Skranke",
+		doc_badge_store = "FÆNGSEL Badge Skranke",
 		flower_store = "Staceys Blomster Emporium",
 		gift_store = "Del Perro Gaver",
 		ems_store = "EMS Butik",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		state_security_badge_description = "Et ID til agenter fra Stats Sikkerheden.",
 		doj_badge = "DOJ Badge",
 		doj_badge_description = "En badge til medarbejdere i Justitsministeriet.",
+		doc_badge = "FÆNGSEL Badge",
+		doc_badge_description = "En badge for medarbejdere i Fængselsvæsenet.",
 
 		radio_chop_shop = "Chop Shop Radio",
 		radio_chop_shop_description = "Bruges til at modtage intel om 'hot' køretøjer fra de ikke-eksisterende personer, der opererer chop shoppen.",

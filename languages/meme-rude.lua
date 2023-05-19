@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["meme-rude"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 		banner_name_generic = "some bloody tosser",
 
-		ban_alert_title = "Fucking Banned by System",
+		ban_alert_title = "F***ed from Server",
+		ban_alert_description_banner = "You would have been automatically f***ed by ${banner} for reason `${reason}`.",
 		ban_alert_description = "Congratulations, you would have been automatically banned by our flawless automated system for the unforgivable sin of `${reason}`.",
 
 		logs_player_banned_title = "Player Fucked off",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		reflection_logs_title = "Reflection Fucking Toggled",
 		reflection_logs_enabled_details = "${consoleName} has dickwadly toggled reflection on.",
 		reflection_logs_disabled_details = "${consoleName} has cock-a-doodle toggled reflection off.",
+
+		headache_logs_title = "Triggered F***ing Headache",
+		headache_logs_details = "${consoleName} has triggered a f***ing headache for ${targetConsoleName}.",
+		trigger_headache_no_permissions = "Attempted to f***ing trigger a headache without proper permissions.",
+
+		success_trigger_headache = "Successfully triggered a f***ing headache for ${playerName}.",
+		failed_trigger_headache = "Failed to trigger a f***ing headache.",
 
 		protective_mode_not_staff = "Sorry you stupid prick, but you ain't got no goddamn permission to toggle the fucking server protective mode.",
 		protective_mode_toggled_on = "Oh, looks like we're in lockdown mode now, assholes. The required amount of playtime to join the fucking server is `${playtime}`.",
@@ -416,7 +424,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		watching_feature = "Peeping Like a Creep",
 		fortnite_feature = "F**k Off with Fortnite",
 		reflection_feature = "The almighty good ol' Damage Reflection",
-		stable_cam_feature = "undefined",
+		stable_cam_feature = "Stable Cam, because shaky cam is for pussies.",
 
 		you_are_not_in_a_vehicle = "Get in a damn vehicle, dumbass.",
 		repaired_vehicle = "Vehicle Repaired, Magic Fingers!",
@@ -443,7 +451,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		unable_to_enter_vehicle_while_dead = "You can't fucking enter a vehicle while you're fucking dead, dumbass.",
 		the_closest_vehicle_had_no_free_seats = "The closest fucking vehicle has no fucking free seats, what the fuck.",
 		there_are_no_nearby_vehicles = "There are no fucking nearby vehicles, shit.",
-		vehicle_not_found_network = "undefined",
+		vehicle_not_found_network = "What the fuck do you mean 'Vehicle with network id not found'? That shit's gone like your dad's love for you.",
 		entered_vehicle = "Tried to fucking enter that goddamn ${vehicleName} over there.",
 
 		set_vehicle_modifications_logs_title = "Set the Fucking Mod on That Shit",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		reflect_damage_command_help = "Toggles fucking damage reflection. (Any dickhead who fucking damages you will be fucked up themselves)",
 		reflect_damage_command_substitutes = "reflect",
 
+		trigger_headache_command = "trigger_headache, because sometimes you just want to give someone a fucking migraine.",
+		trigger_headache_command_help = "Causes the specified player to lag for a short period of time, because fuck that guy.",
+		trigger_headache_command_parameter_server_id = "server id, the unlucky bastard.",
+		trigger_headache_command_parameter_server_id_help = "The player's server ID you are wanting to trigger a headache for. You know, for when you just want to ruin someone's day.",
+		trigger_headache_command_substitutes = "headache, because why just shoot them when you can give them a fucking headache instead?",
+
 		stick_command = "stick",
 		stick_command_help = "Stick your ass to the car you're lying on.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		clean_ped_command = "clean_ped",
 		clean_ped_command_help = "Cleans that bullshit of a character's fucking blood, bullet impacts, dirt, etc.",
 		clean_ped_command_parameter_server_id = "server ID, you f****** c***!",
-		clean_ped_command_parameter_server_id_help = "The player's server ID you are wanting to clean the ped of, unless you want to s*** your own p**** then leave it blank.",
+		clean_ped_command_parameter_server_id_help = "The player's server ID you are wanting to clean the ped of, because sometimes you just gotta wipe that shit clean.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "toggle vehicle smoke, you b****!",
@@ -1202,8 +1216,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 		enter_vehicle_command = "getthefuckin",
 		enter_vehicle_command_help = "Forces your sorry ass into the nearest fucking vehicle (kicks your ass out of the vehicle if you're already in one).",
-		enter_vehicle_command_parameter_network_id = "undefined",
-		enter_vehicle_command_parameter_network_id_help = "undefined",
+		enter_vehicle_command_parameter_network_id = "fucking network id",
+		enter_vehicle_command_parameter_network_id_help = "The fucking network id of the vehicle you want to enter. (optional)",
 		enter_vehicle_command_substitutes = "ev",
 
 		set_modification_command = "tweakshit",
@@ -1417,9 +1431,9 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		detection_area_remove_command_parameter_area_id_help = "The fucking ID of the goddamn detection area you want to remove, you prick.",
 		detection_area_remove_command_substitutes = "area_remove",
 
-		screen_text_debug_command = "undefined",
-		screen_text_debug_command_help = "undefined",
-		screen_text_debug_command_substitutes = "undefined",
+		screen_text_debug_command = "screen_text_debugging_fucking_command",
+		screen_text_debug_command_help = "Fucking debug the screen-text exclusion rectangles, asshole.",
+		screen_text_debug_command_substitutes = "screen_text_fucking_debug",
 
 		-- base/commands
 		help_command = "help",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		play_audio_command_parameter_server_id_help = "The fuckin' server ID for the piece of shit player you want to play this crappy ass audio for. You can do `-1` for all the fucking players. ",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "gimme_fucking_random_bandaid",
+		random_bandaid_command_help = "Gives you a fucking random bandaid, you useless piece of shit. :)",
+		random_bandaid_command_substitutes = "bandaid_random",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Toggle the fucking Battle Royale bullshit.",
@@ -1644,8 +1663,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		cache_assets_command_substitutes = "download_the_goddamn_cache, preload_this_shit, just_load_the_fucking_assets_already",
 
 		-- game/camera
-		stable_cam_command = "undefined",
-		stable_cam_command_help = "undefined",
+		stable_cam_command = "stable_cam",
+		stable_cam_command_help = "Toggles that fucking stable cam, yo.",
 		stable_cam_command_substitutes = "",
 
 		-- game/cargo
@@ -2044,6 +2063,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		rectangle_command_help = "Create a fucking rectangle in 3D space, you dumbass.",
 		rectangle_command_substitutes = "rect",
 
+		define_area_command = "define_area",
+		define_area_command_help = "Defines a fucking area, you shit.",
+		define_area_command_substitutes = "area",
+
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
 		debug_menu_command_help = "Toggles the fucking debug shit.",
@@ -2107,7 +2130,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 		-- game/flag_swap
 		flag_swap_command = "flag_swap",
-		flag_swap_command_help = "undefined",
+		flag_swap_command_help = "Toggle the fucking server-wide 'flag swap' event, motherfucker.",
 		flag_swap_command_parameter_flags = "flags",
 		flag_swap_command_parameter_flags_help = "The fucking number of flags that should fucking exist in this shitty world during the motherfucking event. (default: 100)",
 		flag_swap_command_substitutes = "",
@@ -2532,12 +2555,12 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		no_copyright_command_help = "This f***ing command will disable all potentially copyrighted sounds coming from the framework when the s*** is enabled.",
 		no_copyright_command_substitutes = "",
 
-		picture_command = "undefined",
-		picture_command_help = "undefined",
-		picture_command_parameter_url = "undefined",
-		picture_command_parameter_url_help = "undefined",
-		picture_command_parameter_description = "undefined",
-		picture_command_parameter_description_help = "undefined",
+		picture_command = "picture",
+		picture_command_help = "Spawns a picture item with a goddamn custom image URL.",
+		picture_command_parameter_url = "url",
+		picture_command_parameter_url_help = "The fucking image URL, asshole.",
+		picture_command_parameter_description = "description",
+		picture_command_parameter_description_help = "The goddamn description of the fucking picture.",
 		picture_command_substitutes = "",
 
 		tps_command = "tps",
@@ -2548,18 +2571,18 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		uptime_command_help = "Check how long this shitshow has been running.",
 		uptime_command_substitutes = "",
 
-		auto_run_command = "undefined",
-		auto_run_command_help = "undefined",
-		auto_run_command_parameter_control_id = "undefined",
-		auto_run_command_parameter_control_id_help = "undefined",
+		auto_run_command = "auto_run",
+		auto_run_command_help = "Set a fucking keybind for auto-fucking-run.",
+		auto_run_command_parameter_control_id = "control fucking id",
+		auto_run_command_parameter_control_id_help = "The fucking control ID you would like to bind to auto-run, you lazy asshole.",
 		auto_run_command_substitutes = "",
 
-		walk_forwards_command = "undefined",
-		walk_forwards_command_help = "undefined",
-		walk_forwards_command_parameter_server_id = "undefined",
-		walk_forwards_command_parameter_server_id_help = "undefined",
-		walk_forwards_command_parameter_sprint = "undefined",
-		walk_forwards_command_parameter_sprint_help = "undefined",
+		walk_forwards_command = "walk_forwards",
+		walk_forwards_command_help = "Makes your worthless ass or another fucking player walk the fuck forwards automatically (while attempting to avoid fucking obstacles).",
+		walk_forwards_command_parameter_server_id = "server fucking id",
+		walk_forwards_command_parameter_server_id_help = "The f**kin' server id of the c**t you wanna make walk forwards.",
+		walk_forwards_command_parameter_sprint = "sprint",
+		walk_forwards_command_parameter_sprint_help = "If the b*****d should sprint while walkin' forwards. (Default: false)",
 		walk_forwards_command_substitutes = "",
 
 		-- game/money
@@ -2948,11 +2971,11 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		create_shockwave_command_parameter_radius_help = "The fucking radius of the fucking shockwave (1 - 100).",
 		create_shockwave_command_substitutes = "shockwave",
 
-		push_player_command = "undefined",
-		push_player_command_help = "undefined",
-		push_player_command_parameter_server_id = "undefined",
-		push_player_command_parameter_server_id_help = "undefined",
-		push_player_command_substitutes = "undefined",
+		push_player_command = "push_player",
+		push_player_command_help = "Push the c**t or the f*****g vehicle they're in away from you.",
+		push_player_command_parameter_server_id = "server id",
+		push_player_command_parameter_server_id_help = "The server id of the w*nker.",
+		push_player_command_substitutes = "push, shove, knock over",
 
 		-- game/shrooms
 		draw_shroom_areas_command = "draw_shitty_shroom_areas",
@@ -3259,7 +3282,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		local_entities_debug_command_help = "Toggles the goddamn debug for local entities because who the fuck knows what's going on.",
 		local_entities_debug_command_substitutes = "lentities",
 
-		no_ped_population_areas_debug_command = "undefined",
+		no_ped_population_areas_debug_command = "no_ped_population_areas_debug, disable_ped_spawn_zones_debug",
 		no_ped_population_areas_debug_command_help = "Toggles the fucking debugger for 'no ped population areas' because apparently some assholes don't want peds spawning all over the fucking place.",
 		no_ped_population_areas_debug_command_substitutes = "",
 
@@ -3421,8 +3444,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 		hotwire_vehicle_command = "hotwire_vehicle",
 		hotwire_vehicle_command_help = "F*cking instantly hotwire the godd*mn vehicle you're in.",
-		hotwire_vehicle_command_parameter_server_id = "undefined",
-		hotwire_vehicle_command_parameter_server_id_help = "undefined",
+		hotwire_vehicle_command_parameter_server_id = "server id, s_id, id",
+		hotwire_vehicle_command_parameter_server_id_help = "Make some other idiot who's apparently good with a screwdriver instantly hotwire the damn car they're sitting in.",
 		hotwire_vehicle_command_substitutes = "hotwire",
 
 		pickup_keys_command = "pickup_keys",
@@ -3525,10 +3548,6 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		mileage_command = "mileage",
 		mileage_command_help = "Check how f*cking far this piece of sh*t vehicle has gone.",
 		mileage_command_substitutes = "",
-
-		drag_out_command = "drag_out",
-		drag_out_command_help = "Drag out that dead f*cker from the car they're in, like a boss.",
-		drag_out_command_substitutes = "",
 
 		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "Fucking disables or enables the brakes of the nearest piece of shit vehicle.",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		spiderman = "F***ing Spiderman",
 		star_wars = "Star-Wars for F***tards",
 
+		failed_random_bandaid = "Fuck, couldn't get a single bullshit bandaid!",
+
 		received_bandaid_logs_title = "Received F***ing Bandaid",
-		received_bandaid_logs_details = "${consoleName} got his *** patched with 1x ${bandaid} after being f***ed up."
+		received_bandaid_logs_details = "${consoleName} got his *** patched with 1x ${bandaid} after being f***ed up.",
+		spawned_bandaid_logs_details = "${consoleName} gave themselves 1x worthless piece of crap ${bandaid}."
 	},
 
 	battle_royale = {
@@ -4303,7 +4325,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		material_vendor = "F*cking Material Scammer",
 		pdm = "Overpriced F*cking Cars",
 		ls_customs = "Los Santos Ripoff",
-		jewelry_store = "undefined",
+		jewelry_store = "That overpriced piece of shit Vangelico Jewelry place",
 		pd_air_hq = "F*cking Police Air HQ",
 		pd_sea_hq = "Fucking Pigshits Sea HQ",
 		ems_air_hq = "EMS Air HQ where you can pick up some fucking losers",
@@ -5147,11 +5169,11 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		crafted_gas_grenade = "You fucking made a gas grenade like a pro.",
 		failed_craft_gas_grenade = "Failed to %$&#$*! craft the damn gas grenade.",
 
-		break_apart_ring = "undefined",
-		press_break_apart_ring = "undefined",
-		breaking_ring = "undefined",
-		broke_ring = "undefined",
-		failed_break_ring = "undefined",
+		break_apart_ring = "Break that dumbass ring apart, who cares",
+		press_break_apart_ring = "[${SeatEjectKey}] Break Apart Ring, You Pussy",
+		breaking_ring = "Breaking Apart Ring, You Wimp",
+		broke_ring = "Broke apart ring, Hell yeah! Take that, you piece of shit!",
+		failed_break_ring = "Failed to break apart ring, Fuck!",
 
 		no_required_items = "You %@#$ don't have all the &@##$! required items.",
 
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		next_rotation_in = "Next fucking rotation in: ${time}",
 
 		exclusive_dealership_blip = "Get your ass to Exclusive Deluxe Motorsport",
+		exclusive_buyback_blip = "Prestige Wheels Exchange, Only For Rich Bastards",
+
+		buyback_vehicle_help = "Press ~INPUT_CONTEXT~ to access the fucking exchange, Bro",
+		buyback_title = "Prestige Wheels Exchange, Where Your Money Doesn't Matter",
+		sell_closest_vehicle = "Are you sure you want to sell your stinky ${label} for a shitty $${price} (${percent}% of its original price), you dumbass?",
+		deny_sale = "Nevermind, I wanna keep that goddamn thing",
+		accept_sale = "Hell yeah, I am sure! Give me the freaking money!",
+		accept_sale_description = "Do you really want to sell your fucking car for $${price}? This shit cannot be undone.",
+		are_you_sure_sell = "Are you fucking sure you want to sell it?",
+		no_vehicle_to_sell = "There is no fucking vehicle nearby that you can sell.",
+		vehicle_not_owned = "The fuck you trying to sell? You do not own this shitty vehicle.",
+		sale_success = "You have fucking sold your `${label}` for $${price} successfully.",
+
+		sale_log_title = "EDM Buyback",
+		sale_log_description = "${consoleName} sold their `${label}` for $${price}.",
 
 		log_title = "EDM Miserable Purchase",
 		log_description = "Fucking bought `${label}` for $${price}."
@@ -5845,10 +5882,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 	},
 
 	flag_swap = {
-		toggle_flag_swap_no_permissions = "undefined",
+		toggle_flag_swap_no_permissions = "You can't fucking toggle flag swaps without proper goddamn permissions.",
 
-		toggled_flag_swap_on = "undefined",
-		toggled_flag_swap_off = "undefined",
+		toggled_flag_swap_on = "Flag swap fucking on.",
+		toggled_flag_swap_off = "Flag swap fucking off.",
 
 		showing_flags = "Showing all these fucking flags, bitch!",
 		not_showing_flags = "No longer showing any fucking flags, fuck off!",
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		state_security_badge_details = "State Security Department | ${firstName} ${lastName}",
 		doj_badge = "DOJ Ass ID",
 		doj_badge_details = "DOJ | ${firstName} ${lastName} | Fucking Position: ${positionName}",
+		doc_badge = "DOC Cunt Badge",
+		doc_badge_details = "Department of Cunts | ${firstName} ${lastName} | Fuckin' Position: ${positionName}",
 
 		badge_type_sasp = "San Andreas State Police Shit",
 		badge_type_bcso = "Blaine County Sheriff's Ass",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		badge_type_bcfd = "Blaine County Fire Department, Sh*tty Firefighters",
 		badge_type_state_security = "State Security Department, Dirty Scumbags",
 		badge_type_doj = "Department Of Justice, Corrupt F*cks",
+		badge_type_doc = "Fucking Department Of Cunts",
 
 		badge_type_short_sasp = "SASP, Sons of A B*tch",
 		badge_type_short_bcso = "BCSO, B*tch County Sheriff's Office",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		badge_type_short_ems = "EMS",
 		badge_type_short_doctor = "Doctor",
 		badge_type_short_bcfd = "BCFD",
-		badge_type_short_state_security = "SSD"
+		badge_type_short_state_security = "SSD",
+		badge_type_short_doc = "DOC"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		police_store = "Police Shit Store",
 		fib_store = "Fucking FIB Store",
 		police_badge_store = "Police Badge Fucking Desk",
+		doc_badge_store = "Cunt-ass DOC Badge Desk",
 		flower_store = "Stacey's Stupid Flower Emporium",
 		gift_store = "Fucking Del Perro Gifts",
 		ems_store = "Fucking EMS Store",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		state_security_badge_description = "An ID for agents of the State Security, because apparently 'probable cause' is overrated.",
 		doj_badge = "DOJ Badge",
 		doj_badge_description = "A badge for employees of the Department of Justice, because being above the law is a perk of the job.",
+		doc_badge = "DOC Cunt Badge",
+		doc_badge_description = "A fucking badge for employees of the Department of Cunts.",
 
 		radio_chop_shop = "Chop Shop Radio",
 		radio_chop_shop_description = "Used to receive intel on 'hot' vehicles from the nonexistent people operating the chop shop, because even the criminals have a better communication system than our incompetent team.",
@@ -8202,11 +8246,11 @@ OP.Global.Locales.Languages["meme-rude"] = {
 	},
 
 	lucky_wheel = {
-		hold_to_spin_lucky_wheel = "undefined",
-		hold_to_spin_lucky_wheel_free_one_left = "undefined",
-		hold_to_spin_lucky_wheel_free_multiple_left = "undefined",
-		continue_holding_to_spin_lucky_wheel = "undefined",
-		unable_to_spin_lucky_wheel = "undefined",
+		hold_to_spin_lucky_wheel = "Grab ~INPUT_CONTEXT~ to spin the Fucking Lucky Wheel. It costs $${cost} you cheap cunt.",
+		hold_to_spin_lucky_wheel_free_one_left = "Hold ~INPUT_CONTEXT~ to spin the Lucky F***ing Wheel. You have 1 f***ing free spin left today.",
+		hold_to_spin_lucky_wheel_free_multiple_left = "Hold ~INPUT_CONTEXT~ to spin the Lucky F***ing Wheel. You have ${spins} f***ing free spins left today.",
+		continue_holding_to_spin_lucky_wheel = "Keep f***ing holding ~INPUT_CONTEXT~ to spin the Lucky F***ing Wheel.",
+		unable_to_spin_lucky_wheel = "You have already f***ing spun the Lucky F***ing Wheel as much as f***ing permitted today. Next spin available in ${time}.",
 		not_enough_balance_to_spin = "You don't have enough fucking money to spin the wheel. It costs $${cost}, you broke-ass bitch.",
 		lucky_wheel_is_occupied = "The fucking Lucky Wheel is being used right now. You can sit your ass down and wait.",
 
@@ -8214,7 +8258,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} fucking spun the wheel and won a goddamn vehicle.",
 		logs_lucky_wheel_reward_vehicle_given_details = "Some motherfucker named ${consoleName} has been successfully given a vehicle with model name `${modelName}`.",
 		logs_lucky_wheel_reward_money_details = "Holy shit, ${consoleName} just spun that damn wheel and won $${amount}.",
-		logs_lucky_wheel_reward_chips_details = "undefined",
+		logs_lucky_wheel_reward_chips_details = "${consoleName} has f***ing spun the wheel and won $${amount} worth of f***ing chips.",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} just won some fancy-ass jewelry with the name of `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "Goddamn, ${consoleName} just spun that shit and won an item with the name of `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} has fucking spun the wheel and won one fucking week of queue priority, lucky bastard."
@@ -8425,19 +8469,19 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		license_copied = "License successfully fucking copied to your fucking clipboard.",
 		uptime = "Uptime, motherfucker: ${uptime}",
 
-		picture_no_url = "undefined",
-		picture_invalid_url = "undefined",
-		picture_no_description = "undefined",
-		picture_failed = "undefined",
+		picture_no_url = "Where's the goddamn URL?",
+		picture_invalid_url = "What the fu*k man, this URL is invalid! It gotta start with https://.",
+		picture_no_description = "What's the description of this sh*t?",
+		picture_failed = "Couldn't make the damn picture. WTF",
 
-		auto_run_already_set_to = "undefined",
-		auto_run_already_unset = "undefined",
-		auto_run_set_to = "undefined",
-		auto_run_unset = "undefined",
+		auto_run_already_set_to = "Auto-run is already set to control ${controlId}. What the fu*k do you want from me?",
+		auto_run_already_unset = "Auto-run is already unset. You blind or something?",
+		auto_run_set_to = "Auto-run has been set to control ${controlId}. Finally something that went right!",
+		auto_run_unset = "Auto-run has been unset. Congratu-f*cking-lations.",
 
-		invalid_server_id = "undefined",
-		walk_forwards_success = "undefined",
-		walk_forwards_failed = "undefined"
+		invalid_server_id = "Bro, that server ID is not valid. Try again.",
+		walk_forwards_success = "Yo, I toggled walking forward for ${displayName} like a boss. What now, b*tches?",
+		walk_forwards_failed = "${displayName} couldn't figure out how to move his ass forward."
 	},
 
 	money = {
@@ -9924,11 +9968,11 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 	shockwaves = {
 		create_shockwave_missing_permissions = "This little shit tried to create a fucking shockwave without the fucking permissions. Fuck off!",
-		push_player_missing_permissions = "undefined",
+		push_player_missing_permissions = "Who does this idiot think he is? He tried to push someone without the frickin' permissions!",
 		shockwave_success = "Shockwave created like a boss!",
 		shockwave_failed = "Failed to create a damn shockwave, try again!",
 
-		invalid_server_id = "undefined",
+		invalid_server_id = "Bruh, WTF? This server ID is straight up invalid.",
 		push_player_success = "Player fucking pushed successfully.",
 		push_player_failed = "Can't fucking push player, try again."
 	},

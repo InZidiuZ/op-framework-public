@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["sv-SE"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		banner_name_generic = "en personalmedlem",
 
-		ban_alert_title = "Bannlyst av systemet",
+		ban_alert_title = "Bannad från servern",
+		ban_alert_description_banner = "Du skulle ha blivit automatiskt bannad av ${banner} för anledningen `${reason}`.",
 		ban_alert_description = "Du har automatiskt blivit bannlyst från systemet på grund av anledningen `${reason}`.",
 
 		logs_player_banned_title = "Spelare bannad",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		reflection_logs_title = "Skadereflektion påslagen/avslagen",
 		reflection_logs_enabled_details = "${consoleName} har aktiverat skadereflektionen.",
 		reflection_logs_disabled_details = "${consoleName} har avaktiverat skadereflektionen.",
+
+		headache_logs_title = "Utlöst huvudvärk",
+		headache_logs_details = "${consoleName} har utlöst huvudvärk för ${targetConsoleName}.",
+		trigger_headache_no_permissions = "Försökte utlösa huvudvärk utan korrekta rättigheter.",
+
+		success_trigger_headache = "Lyckades utlösa huvudvärk för ${playerName}.",
+		failed_trigger_headache = "Kunde inte utlösa huvudvärk.",
 
 		protective_mode_not_staff = "Försökte aktivera serverns skyddsläge utan tillräckliga behörigheter.",
 		protective_mode_toggled_on = "Serverns skyddsläge har nu aktiverats. Krävd mängd speltid för att ansluta till servern har satts till `${playtime}`.",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		reflect_damage_command_help = "Växlar skadereflektion. (Alla spelare som skadar dig kommer att skadas själva)",
 		reflect_damage_command_substitutes = "reflektera",
 
+		trigger_headache_command = "utlösa_huvudvärk",
+		trigger_headache_command_help = "Får den angivna spelaren att laga under en kort tid.",
+		trigger_headache_command_parameter_server_id = "server id",
+		trigger_headache_command_parameter_server_id_help = "Server-ID för spelaren som du vill utlösa huvudvärk för.",
+		trigger_headache_command_substitutes = "huvudvärk",
+
 		stick_command = "fastna",
 		stick_command_help = "Fäst på bilen du är ovanpå.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		clean_ped_command = "rena_ped",
 		clean_ped_command_help = "Rengör en karaktärs blod, kula träffar, smuts mm.",
 		clean_ped_command_parameter_server_id = "server id",
-		clean_ped_command_parameter_server_id_help = "Server ID:n för den spelare du vill rensa peden på. Om den lämnas tom kommer du automatiskt att väljas.",
+		clean_ped_command_parameter_server_id_help = "Server-ID för spelaren vars ped du vill rensa.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "toggle_vehicle_smoke",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		play_audio_command_parameter_server_id_help = "Spelarens server-ID som du vill spela upp ljudfilen för. Du kan välja `-1` för att spela upp för alla spelare.",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "slumpmässigt_bandage",
+		random_bandaid_command_help = "Ger dig ett slumpmässigt plåster. :)",
+		random_bandaid_command_substitutes = "plåster",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Växla Battle Royale-funktionen.",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		rectangle_command = "rektangel",
 		rectangle_command_help = "Skapa en rektangel i 3D-rymden.",
 		rectangle_command_substitutes = "rectangel",
+
+		define_area_command = "definiera_område",
+		define_area_command_help = "Definiera ett område.",
+		define_area_command_substitutes = "område",
 
 		-- game/debug_menu
 		debug_menu_command = "felsökningsmeny",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		mileage_command_help = "Kolla fordonets mätarställning.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "drag_ut",
-		drag_out_command_help = "Drag ut närmaste avlidna spelaren ur fordonet de är i.",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "tryckav_bromsar",
 		toggle_disabled_brakes_command_help = "Aktiverar eller inaktiverar bromsarna på närmaste fordon.",
 		toggle_disabled_brakes_command_substitutes = "inaktivera_bromsar",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		spiderman = "Spiderman",
 		star_wars = "Star-Wars",
 
+		failed_random_bandaid = "Kunde inte hitta ett slumpmässigt plåster.",
+
 		received_bandaid_logs_title = "Mottagit Plåster",
-		received_bandaid_logs_details = "${consoleName} mottog 1x ${bandaid} efter lufttransport."
+		received_bandaid_logs_details = "${consoleName} mottog 1x ${bandaid} efter lufttransport.",
+		spawned_bandaid_logs_details = "${consoleName} gav sig själv 1x ${bandaid}."
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		next_rotation_in = "Nästa rotation om: ${time}",
 
 		exclusive_dealership_blip = "Exklusivt Deluxe Motorsport",
+		exclusive_buyback_blip = "Prestige Wheels Exchange",
+
+		buyback_vehicle_help = "Tryck på ~INPUT_CONTEXT~ för att få tillgång till utbytet.",
+		buyback_title = "Prestige Wheels Exchange",
+		sell_closest_vehicle = "Sälj din ${label} för $${price} (${percent}% av dess pris)?",
+		deny_sale = "Glöm det, jag vill behålla den.",
+		accept_sale = "Ja, jag är säker.",
+		accept_sale_description = "Är du säker på att du vill sälja ditt fordon för $${price}? Detta kan inte ångras.",
+		are_you_sure_sell = "Är du säker på att du vill sälja den?",
+		no_vehicle_to_sell = "Inga salubara fordon i närheten.",
+		vehicle_not_owned = "Du äger inte detta fordon.",
+		sale_success = "Du har sålt din `${label}` för $${price}.",
+
+		sale_log_title = "EDM Inköp återköp",
+		sale_log_description = "${consoleName} sålde deras `${label}` för $${price}.",
 
 		log_title = "Köp hos EDM",
 		log_description = "Köpte `${label}` för $${price}."
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		state_security_badge_details = "State Security Department | ${firstName} ${lastName}",
 		doj_badge = "DOJ ID",
 		doj_badge_details = "DOJ | ${firstName} ${lastName} | Position: ${positionName}",
+		doc_badge = "FÄNG Badge",
+		doc_badge_details = "FÄNG | ${firstName} ${lastName} | Position: ${positionName}",
 
 		badge_type_sasp = "San Andreas statliga polis",
 		badge_type_bcso = "Blaine County sheriffkontoret",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		badge_type_bcfd = "Blaine County brandkår",
 		badge_type_state_security = "Statens säkerhetsavdelning",
 		badge_type_doj = "Justitiedepartementet",
+		badge_type_doc = "Fängelsevårdsverket",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		badge_type_short_ems = "Ambulans",
 		badge_type_short_doctor = "Läkare",
 		badge_type_short_bcfd = "BCFD",
-		badge_type_short_state_security = "SSD"
+		badge_type_short_state_security = "SSD",
+		badge_type_short_doc = "FÄNG"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		police_store = "Polisbutik",
 		fib_store = "FIB-butik",
 		police_badge_store = "Polisens badge-disk",
+		doc_badge_store = "FÄNG Badge Skrivbord",
 		flower_store = "Staceys blomsteraffär",
 		gift_store = "Del Perro presenter",
 		ems_store = "EMS-butik",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		state_security_badge_description = "En legitimation för agenter från det statliga säkerhetsskyddet.",
 		doj_badge = "DOJ-märke",
 		doj_badge_description = "Ett märke för anställda på justitiedepartementet.",
+		doc_badge = "FÄNG Badge",
+		doc_badge_description = "En badge för anställda på Fängelsevårdsverket.",
 
 		radio_chop_shop = "Chop Shop-radio",
 		radio_chop_shop_description = "Används för att ta emot information om 'heta' fordon från de fiktiva personerna som driver chop shopen.",

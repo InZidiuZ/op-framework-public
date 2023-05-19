@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["ne-NP"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["ne-NP"] = {
 
 		banner_name_generic = "स्टाफ सदस्य",
 
-		ban_alert_title = "प्रणालीद्वारा निषेधित",
+		ban_alert_title = "सर्भरबाट ब्यान गरिएको",
+		ban_alert_description_banner = "तपाईंलाई `${reason}` कारणको लागि `${banner}` द्वारा स्वचालित रूपमा प्रतिबन्ध लगाइएको हुन्थ्यो।",
 		ban_alert_description = "तपाईं निषेधित व्यवस्थापक द्वारा `${reason}` कारणको लागि स्वचालित रुपमा निषेधित गरिएको छ।",
 
 		logs_player_banned_title = "खेलाडी निषेधित",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		reflection_logs_title = "हानि प्रतिबिम्ब टगल गरियो",
 		reflection_logs_enabled_details = "${consoleName} ने हानि प्रतिबिम्ब चालू किया है।",
 		reflection_logs_disabled_details = "${consoleName} ने हानि प्रतिबिम्ब बंद किया है।",
+
+		headache_logs_title = "हेडेको ट्रिगर गरियो",
+		headache_logs_details = "${targetConsoleName}को लागि ${consoleName}ले हेडेको ट्रिगर गरियो।",
+		trigger_headache_no_permissions = "अनुमति नभएको थियो हेडेको ट्रिगर गर्ने कोसिस।",
+
+		success_trigger_headache = "सफलतापूर्वक ${playerName}को लागि हेडेको ट्रिगर गरियो।",
+		failed_trigger_headache = "हेडेको ट्रिगर गर्न सकिएन।",
 
 		protective_mode_not_staff = "पुर्वाधार के बिना सर्वर संरक्षात्मक मोड टॉगल करने का प्रयास किया गया।",
 		protective_mode_toggled_on = "सर्वर संरक्षात्मक मोड अब सक्षम है। सर्वर से कनेक्ट होने के लिए आवश्यक खेलने का समय `${playtime}` पर सेट किया गया है।",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		reflect_damage_command_help = "दुखाइ परामर्श टगल गर्छ। (तपाईंलाई दुखाउने कुनै पनि खेलाडीले स्वयंलाई दुखा पुर्‍याउनेछ।)",
 		reflect_damage_command_substitutes = "परामर्श",
 
+		trigger_headache_command = "trigger_headache",
+		trigger_headache_command_help = "कुरा गरिएको खेलाडीलाई थोरै समयका लागि ल्याग हुनु हुन्छ।",
+		trigger_headache_command_parameter_server_id = "सर्भर आईडी",
+		trigger_headache_command_parameter_server_id_help = "तपाईं जसलाई थोरै समयका लागि ल्याग गर्न चाहनुहुन्छ त्यो खेलाडीको सर्भर आईडी।",
+		trigger_headache_command_substitutes = "सिरोखोज",
+
 		stick_command = "स्टिक",
 		stick_command_help = "टॉप गरिएको गाडीमा लिपट्नुहोस्।",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		clean_ped_command = "पेड_सफा_गर्नुहोस्",
 		clean_ped_command_help = "चरित्रको रक्त, गोलीहरूको प्रभाव, मैला आदि सफा गर्नुहोस्।",
 		clean_ped_command_parameter_server_id = "सर्भर आईडी",
-		clean_ped_command_parameter_server_id_help = "यदि आप किसी खेलकूद के खिलाड़ी के पेड को साफ करना चाहते हैं तो उनका सर्वर आईडी डालें। अगर खाली छोड़ दिया जाए तो आप खुद को स्वचालित रूप से चयनित कर लेंगे।",
+		clean_ped_command_parameter_server_id_help = "तपाईं जसलाई पेड सफा गर्न चाहनुहुन्छ त्यो खेलाडीको सर्भर आईडी।",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "toggle_vehicle_smoke",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		play_audio_command_parameter_server_id_help = "तपाईं यो अडिओ बजाउन चाहानु भएको खेलाडीको सर्भर आईडी। तपाइँ सबै खेलाडीहरूको लागि `-1` गर्न सक्नुहुन्छ।",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "क्रमिक बैंडएड",
+		random_bandaid_command_help = "एक यादृच्छिक बैण्डएड प्रदान गर्दछ। :)",
+		random_bandaid_command_substitutes = "बैण्डएड",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "बैटल रोयल सुविधा टगल गर्नुहोस्।",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		rectangle_command = "rectangle",
 		rectangle_command_help = "3D ठाउँमा एक चतुर्भुज बनाउनुहोस्।",
 		rectangle_command_substitutes = "rect",
+
+		define_area_command = "क्षेत्र परिभाषित गर्नुहोस्",
+		define_area_command_help = "एक क्षेत्र परिभाषित गर्नुहोस्।",
+		define_area_command_substitutes = "क्षेत्र",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		mileage_command_help = "एक गाडीको माइलेज जाँच गर्नुहोस्।",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "drag_out",
-		drag_out_command_help = "निकटतम मृत पालकलाई उनीहरु जुन गाडीमा छन्, तीनी बाहिर खिंच्नुहोस्।",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "नजिकै गाडीको ब्रेकहरू निषेध गर्दछ वा सक्षम गर्दछ।",
 		toggle_disabled_brakes_command_substitutes = "disable_brakes",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		spiderman = "स्पाइडरम्यान",
 		star_wars = "स्टार-वार्स",
 
+		failed_random_bandaid = "यादृच्छिक बैण्डएड प्राप्त गर्न असफल भयो।",
+
 		received_bandaid_logs_title = "बैन्डएड प्राप्त गरियो",
-		received_bandaid_logs_details = "${consoleName} उडाइ सेवा द्वारा बैन्डएड 1x ${bandaid} प्राप्त गर्यो।"
+		received_bandaid_logs_details = "${consoleName} उडाइ सेवा द्वारा बैन्डएड 1x ${bandaid} प्राप्त गर्यो।",
+		spawned_bandaid_logs_details = "${consoleName} 1x ${bandaid} दिए।"
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		next_rotation_in = "अर्को रोटेसन: ${time}",
 
 		exclusive_dealership_blip = "एक्सक्लूसिभ डेलक्स मोटरस्पोर्ट",
+		exclusive_buyback_blip = "प्रतिष्ठित चाका ​​विनिमय",
+
+		buyback_vehicle_help = "विनिमयका लागि ~INPUT_CONTEXT~ थिच्नुहोस्।",
+		buyback_title = "प्रतिष्ठित चाका ​​विनिमय",
+		sell_closest_vehicle = "तपाईको ${label} बेच्न चाहानुहुन्छ $${price} मा (${percent}% तिर्नुहोस्)?",
+		deny_sale = "लगायत नहुन, मलाई यो राख्नुहोस्",
+		accept_sale = "हुन्छ, म सुनिश्चित छु",
+		accept_sale_description = "के तपाईं निश्चय गर्नु हुन्छ कि तपाईं तपाईंको गाडीलाई $${price} को लागि बेच्न चाहनुहुन्छ? यो कार्य अस्थायी रूपमा हुन्छ।",
+		are_you_sure_sell = "के तपाईं यो बेच्न चाहनुहुन्छ?",
+		no_vehicle_to_sell = "कुनै बेच्न योग्य गाडी सम्पर्कमा छैन।",
+		vehicle_not_owned = "तपाईंलाई यो गाडी स्वामित्वमा छैन।",
+		sale_success = "तपाईंले यो `${label}` तपाइँको ${price} को लागि बिक्री गर्न सफल भएको छ।",
+
+		sale_log_title = "EDM वापसी खरीद",
+		sale_log_description = "${consoleName} ले उनीहरूको `${label}` बेच्न गएर $${price} मा बिक्रि गर्नुभयो।",
 
 		log_title = "EDM खरीद",
 		log_description = "तपाईंले `${label}` लागि $${price} खरीद गर्नुभएको।"
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		state_security_badge_details = "राज्य सुरक्षा विभाग | ${पहिलोनाम} ${थर}",
 		doj_badge = "DOJ आईडी",
 		doj_badge_details = "DOJ | ${पहिलोनाम} ${थर} | पद: ${स्थाननाम}",
+		doc_badge = "DOC ब्याज",
+		doc_badge_details = "DOC | ${firstName} ${lastName} | पद: ${positionName}",
 
 		badge_type_sasp = "सैन एन्ड्रियास राज्य प्रहरी",
 		badge_type_bcso = "ब्लेन काउण्टी शेरिफ कार्यालय",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		badge_type_bcfd = "ब्लेन काउंटी फायर विभाग",
 		badge_type_state_security = "राज्य सुरक्षा विभाग",
 		badge_type_doj = "न्याय विभाग",
+		badge_type_doc = "न्याय संचालन विभाग",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		badge_type_short_ems = "ईएमएस",
 		badge_type_short_doctor = "डाक्टर",
 		badge_type_short_bcfd = "बीसीएफडी",
-		badge_type_short_state_security = "राज्य सुरक्षा"
+		badge_type_short_state_security = "राज्य सुरक्षा",
+		badge_type_short_doc = "DOC"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		police_store = "पुलिस स्टोर",
 		fib_store = "एफआईबी स्टोर",
 		police_badge_store = "पुलिस बैज डेस्क",
+		doc_badge_store = "DOC ब्याज डेस्क",
 		flower_store = "स्टेसीको फूल एम्पोरियम",
 		gift_store = "डेल पेरो उपहार स्टोर",
 		ems_store = "इमरजेन्सी मेडिकल सर्भिस स्टोर",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		state_security_badge_description = "राज्य सुरक्षा एजेन्टहरुको लागि एक आईडी।",
 		doj_badge = "DOJ बेज",
 		doj_badge_description = "बिचार मन्त्रालयका कर्मचारीहरुको लागि एक बेज।",
+		doc_badge = "DOC ब्याज",
+		doc_badge_description = "न्याय संचालन विभागका कर्मचारीहरूको लागि एक ब्याज।",
 
 		radio_chop_shop = "चप शप रेडियो",
 		radio_chop_shop_description = "चप शप चलाउने अस्तित्व नरहेको मानिसहरुबाट  'हट' गाडीहरुको सूचना प्राप्त गर्नको लागि प्रयोग गरिन्छ।",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["tr-TR"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		banner_name_generic = "Bir personel üyesi",
 
-		ban_alert_title = "Sistem Tarafından Yasaklandınız",
+		ban_alert_title = "Sunucudan Yasaklandınız",
+		ban_alert_description_banner = "Sebep: `${reason}`. ${banner} tarafından otomatik olarak yasaklanmış olacaktınız.",
 		ban_alert_description = "Sistem tarafından `${reason}` sebebiyle otomatik olarak yasaklanmış olabilirdiniz.",
 
 		logs_player_banned_title = "Oyuncu Yasaklandı",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		reflection_logs_title = "Yansıtma Değiştirildi",
 		reflection_logs_enabled_details = "${consoleName}, yansıtma özelliğini açtı.",
 		reflection_logs_disabled_details = "${consoleName}, yansıtma özelliğini kapattı.",
+
+		headache_logs_title = "Baş Ağrısı Tetiklendi",
+		headache_logs_details = "${consoleName}, ${targetConsoleName} için baş ağrısı tetikledi.",
+		trigger_headache_no_permissions = "Yeterli izinlere sahip olmadan baş ağrısı tetikleme girişiminde bulunuldu.",
+
+		success_trigger_headache = "${playerName} için baş ağrısı başarıyla tetiklendi.",
+		failed_trigger_headache = "Baş ağrısı tetikleyemedi.",
 
 		protective_mode_not_staff = "Sunucunun koruyucu modunu uygun izinler olmadan açmaya çalıştınız.",
 		protective_mode_toggled_on = "Sunucu koruyucu modu etkinleştirildi. Sunucuya bağlanmak için gereken oynama süresi `${playtime}` olarak ayarlandı.",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		reflect_damage_command_help = "Hasarı yansıtmayı açar/kapatır. (Seni hasarlandıran herhangi bir oyuncu kendisi de hasarlanır)",
 		reflect_damage_command_substitutes = "yansit",
 
+		trigger_headache_command = "baş_ağrısı_oluştur",
+		trigger_headache_command_help = "Belirtilen oyuncunun kısa bir süre için takılmasına neden olur.",
+		trigger_headache_command_parameter_server_id = "sunucu id",
+		trigger_headache_command_parameter_server_id_help = "Baş ağrısı oluşturmak istediğiniz oyuncunun sunucu kimliği.",
+		trigger_headache_command_substitutes = "başağrısı",
+
 		stick_command = "yapış",
 		stick_command_help = "Üzerinde olduğunuz araca yapışır.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		clean_ped_command = "iyileştir",
 		clean_ped_command_help = "Bir karakterin kanını, kurşun izlerini, toprağı vb. temizler.",
 		clean_ped_command_parameter_server_id = "sunucu kimliği",
-		clean_ped_command_parameter_server_id_help = "Ped'i temizlemek istediğiniz oyuncunun sunucu kimliği. Boş bırakılırsa, otomatik olarak kendiniz seçilir.",
+		clean_ped_command_parameter_server_id_help = "Ped'i temizlemek istediğiniz oyuncunun sunucu kimliği.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "araç_dumanını_aç/kapat",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		play_audio_command_parameter_server_id_help = "Bu sesi çalmak istediğiniz oyuncunun sunucu kimliği. Tüm oyuncular için `-1` yapabilirsiniz.",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "rastgele_bandaj",
+		random_bandaid_command_help = "Rastgele bir bandaj verir. :)",
+		random_bandaid_command_substitutes = "bandaj",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Savaş Royale özelliğini açıp kapatın.",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		rectangle_command = "dikdörtgen",
 		rectangle_command_help = "3B uzayda bir dikdörtgen oluşturun.",
 		rectangle_command_substitutes = "dörtgen",
+
+		define_area_command = "alan_tanımı",
+		define_area_command_help = "Bir alan tanımlayın.",
+		define_area_command_substitutes = "alan",
 
 		-- game/debug_menu
 		debug_menu_command = "hata ayıklama menüsü",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		mileage_command_help = "Bir aracın kilometre bilgisini kontrol eder.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "drag_out",
-		drag_out_command_help = "Ölü en yakın oyuncuyu araçtan dışarı sürükler.",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "frenleri_devre_disi_birak",
 		toggle_disabled_brakes_command_help = "En yakın aracın frenlerini devre dışı bırakır veya etkinleştirir.",
 		toggle_disabled_brakes_command_substitutes = "frenleri_kapat",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		spiderman = "Örümcek Adam",
 		star_wars = "Yıldız Savaşları",
 
+		failed_random_bandaid = "Rastgele bir bandaj alınamadı.",
+
 		received_bandaid_logs_title = "Bant Alındı",
-		received_bandaid_logs_details = "${consoleName}, havadan nakil sonrasında 1x ${bandaid} aldı."
+		received_bandaid_logs_details = "${consoleName}, havadan nakil sonrasında 1x ${bandaid} aldı.",
+		spawned_bandaid_logs_details = "${consoleName} kendisine 1x ${bandaid} verdi."
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		next_rotation_in = "${time} sonra bir sonraki dönüşüm.",
 
 		exclusive_dealership_blip = "Özel Deluxe Motorsport",
+		exclusive_buyback_blip = "Prestij Jant Takas",
+
+		buyback_vehicle_help = "Değiş tokuşa erişmek için ~INPUT_CONTEXT~ tuşuna basın.",
+		buyback_title = "Prestij Jant Takası",
+		sell_closest_vehicle = "En yakın ${label}'i $${price} (${percent}% fiyatına satmak ister misin?)",
+		deny_sale = "Hayır, satmak istemiyorum",
+		accept_sale = "Evet, eminim",
+		accept_sale_description = "Bu aracınızı $${price}'a satmak istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+		are_you_sure_sell = "Satmak istediğinizden emin misiniz?",
+		no_vehicle_to_sell = "Satılabilir araç yok.",
+		vehicle_not_owned = "Bu araca sahip değilsiniz.",
+		sale_success = "Başarıyla `${label}` aracınızı $${price}'a sattınız.",
+
+		sale_log_title = "EDM Geri Satın Alma",
+		sale_log_description = "${consoleName}, `${label}` adlı eşyasını $${price} fiyatıyla sattı.",
 
 		log_title = "EDM Satın Alma",
 		log_description = "${label}'yi ${price}$ karşılığında satın aldı."
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		state_security_badge_details = "Devlet Güvenliği Departmanı | ${firstName} ${lastName}",
 		doj_badge = "DOJ Kimliği",
 		doj_badge_details = "DOJ | ${firstName} ${lastName} | Pozisyon: ${positionName}",
+		doc_badge = "DOK Rozeti",
+		doc_badge_details = "DOK | ${firstName} ${lastName} | Pozisyon: ${positionName}",
 
 		badge_type_sasp = "San Andreas Eyalet Polisi",
 		badge_type_bcso = "Blaine İlçesi Şerif Ofisi",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		badge_type_bcfd = "Blaine İlçe İtfaiye Departmanı",
 		badge_type_state_security = "Devlet Güvenlik Departmanı",
 		badge_type_doj = "Adalet Bakanlığı",
+		badge_type_doc = "Ceza ve Tevkifevleri Genel Müdürlüğü",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		badge_type_short_ems = "SAĞLIK",
 		badge_type_short_doctor = "Doktor",
 		badge_type_short_bcfd = "BCFD",
-		badge_type_short_state_security = "SSD"
+		badge_type_short_state_security = "SSD",
+		badge_type_short_doc = "DOK"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		police_store = "Polis Mağazası",
 		fib_store = "FIB Mağazası",
 		police_badge_store = "Polis Rozet Bankosu",
+		doc_badge_store = "DOK Rozet Masası",
 		flower_store = "Stacey'nin Çiçek Emporiumu",
 		gift_store = "Del Perro Hediyelik Eşya",
 		ems_store = "EMS Mağazası",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		state_security_badge_description = "Devlet Güvenliği ajentleri için bir kimlik.",
 		doj_badge = "ADA Rozeti",
 		doj_badge_description = "Adalet Bakanlığı çalışanları için bir rozet.",
+		doc_badge = "DOK Rozeti",
+		doc_badge_description = "Ceza ve Tevkifevleri Genel Müdürlüğü personeli için bir rozet.",
 
 		radio_chop_shop = "Chop Shop Radyo",
 		radio_chop_shop_description = "Var olmayan kişilerden 'sıcak' araçlar hakkında bilgi almak için kullanılan bir radyo.",

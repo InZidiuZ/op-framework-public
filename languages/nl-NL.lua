@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		banner_name_generic = "een personeelslid",
 
-		ban_alert_title = "Verbannen door Systeem",
+		ban_alert_title = "Verbannen van de Server",
+		ban_alert_description_banner = "Je zou automatisch zijn verbannen door ${banner} voor reden `${reason}`.",
 		ban_alert_description = "Je bent automatisch verbannen door het systeem voor de reden `${reason}`.",
 
 		logs_player_banned_title = "Speler Verbannen",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		reflection_logs_title = "Reflectie aan/uit gezet",
 		reflection_logs_enabled_details = "${consoleName} heeft schade reflectie aan gezet.",
 		reflection_logs_disabled_details = "${consoleName} heeft schade reflectie uit gezet.",
+
+		headache_logs_title = "Hoofdpijn Geactiveerd",
+		headache_logs_details = "${consoleName} heeft hoofdpijn geactiveerd voor ${targetConsoleName}.",
+		trigger_headache_no_permissions = "Poging om hoofdpijn te activeren zonder de juiste toestemming.",
+
+		success_trigger_headache = "Hoofdpijn is succesvol geactiveerd voor ${playerName}.",
+		failed_trigger_headache = "Kon hoofdpijn niet activeren.",
 
 		protective_mode_not_staff = "Er is geprobeerd om de beschermingsmodus van de server in te schakelen zonder de juiste machtigingen.",
 		protective_mode_toggled_on = "De beschermingsmodus van de server is nu ingeschakeld. De vereiste hoeveelheid speeltijd om verbinding te maken met de server is ingesteld op `${playtime}`.",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		reflect_damage_command_help = "Wisselt het weerkaatsen van schade in. (Elke speler die jou beschadigt, zal zelf ook beschadigd worden)",
 		reflect_damage_command_substitutes = "weerkaatsing",
 
+		trigger_headache_command = "trigger_hoofdpijn",
+		trigger_headache_command_help = "Veroorzaakt kortdurende lag bij de opgegeven speler.",
+		trigger_headache_command_parameter_server_id = "server id",
+		trigger_headache_command_parameter_server_id_help = "De server id van de speler waarvoor je hoofdpijn wilt veroorzaken.",
+		trigger_headache_command_substitutes = "hoofdpijn",
+
 		stick_command = "vastplakken",
 		stick_command_help = "Plakt vast aan de auto waar je op staat.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		clean_ped_command = "schoon_ped",
 		clean_ped_command_help = "Maakt het bloed, kogelgaten, vuil, etc. van een personage schoon.",
 		clean_ped_command_parameter_server_id = "server id",
-		clean_ped_command_parameter_server_id_help = "Het server-id van de speler wiens 'ped' je wilt schoonmaken. Als er niets ingevuld wordt, wordt automatisch jezelf geselecteerd.",
+		clean_ped_command_parameter_server_id_help = "De server id van de speler waarvan je het personage wilt schoonmaken.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "toggle_vehicle_smoke",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		play_audio_command_parameter_server_id_help = "De server-ID van de speler waarvoor je deze audio wilt afspelen. Je kan `-1` gebruiken om het voor alle spelers af te spelen.",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "willekeurige_pleister",
+		random_bandaid_command_help = "Geeft je een willekeurig verband. :)",
+		random_bandaid_command_substitutes = "verband",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Schakel de Battle Royale-functie in of uit.",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		rectangle_command = "rechthoek",
 		rectangle_command_help = "Creëer een rechthoek in 3D-ruimte.",
 		rectangle_command_substitutes = "rect",
+
+		define_area_command = "gebied_definiëren",
+		define_area_command_help = "Definieer een gebied.",
+		define_area_command_substitutes = "gebied",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		mileage_command_help = "Bekijk de kilometerstand van het voertuig.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "drag_out",
-		drag_out_command_help = "Haal de dichtstbijzijnde dode speler uit het voertuig waarin ze zaten.",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "schakel_uitgeschakelde_remmen",
 		toggle_disabled_brakes_command_help = "Schakelt de remmen van het dichtstbijzijnde voertuig uit of in.",
 		toggle_disabled_brakes_command_substitutes = "uitschakelen_remmen",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		spiderman = "Spiderman",
 		star_wars = "Star-Wars",
 
+		failed_random_bandaid = "Kon geen willekeurig verband krijgen.",
+
 		received_bandaid_logs_title = "Verkregen Pleister",
-		received_bandaid_logs_details = "${consoleName} heeft 1x ${bandaid} ontvangen na een luchttransport."
+		received_bandaid_logs_details = "${consoleName} heeft 1x ${bandaid} ontvangen na een luchttransport.",
+		spawned_bandaid_logs_details = "${consoleName} heeft zichzelf 1x ${bandaid} gegeven."
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		next_rotation_in = "Volgende rotatie in: ${time}",
 
 		exclusive_dealership_blip = "Exclusieve Deluxe Motorsport",
+		exclusive_buyback_blip = "Prestige Wheels Ruil",
+
+		buyback_vehicle_help = "Druk op ~INPUT_CONTEXT~ om de ruil te openen.",
+		buyback_title = "Prestige Wheels Ruil",
+		sell_closest_vehicle = "Verkoop je ${label} voor $${price} (${percent}% van zijn waarde)?",
+		deny_sale = "Nee, ik wil het behouden",
+		accept_sale = "Ja, ik weet het zeker",
+		accept_sale_description = "Weet je zeker dat je je voertuig wilt verkopen voor $${price}? Deze actie kan niet ongedaan worden gemaakt.",
+		are_you_sure_sell = "Weet je zeker dat je het wilt verkopen?",
+		no_vehicle_to_sell = "Geen verkoopbaar voertuig in de buurt.",
+		vehicle_not_owned = "Je bezit dit voertuig niet.",
+		sale_success = "Je hebt je `${label}` succesvol verkocht voor $${price}.",
+
+		sale_log_title = "EDM Terugkoop",
+		sale_log_description = "${consoleName} heeft hun `${label}` verkocht voor $${price}.",
 
 		log_title = "EDM Aankoop",
 		log_description = "De `${label}` gekocht voor $${price}."
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		state_security_badge_details = "Afdeling Staatsveiligheid | ${firstName} ${lastName}",
 		doj_badge = "DOJ ID",
 		doj_badge_details = "DOJ | ${firstName} ${lastName} | Positie: ${positionName}",
+		doc_badge = "Bewijs van lidmaatschap Dienst Justitiële Inrichtingen",
+		doc_badge_details = "DJIB | ${firstName} ${lastName} | Positie: ${positionName}",
 
 		badge_type_sasp = "Politie van San Andreas",
 		badge_type_bcso = "Sheriff's Kantoor van Blaine County",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		badge_type_bcfd = "Brandweer Blaine County",
 		badge_type_state_security = "Staatsveiligheidsdienst",
 		badge_type_doj = "Ministerie van Justitie",
+		badge_type_doc = "Dienst Justitiële Inrichtingen",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		badge_type_short_ems = "Ambulance",
 		badge_type_short_doctor = "Dokter",
 		badge_type_short_bcfd = "BCFD",
-		badge_type_short_state_security = "SSD"
+		badge_type_short_state_security = "SSD",
+		badge_type_short_doc = "DJIB"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		police_store = "Politie winkel",
 		fib_store = "FIB winkel",
 		police_badge_store = "Politie Badge Desk",
+		doc_badge_store = "DJIB-Ledenbalie",
 		flower_store = "Stacey's Bloemen Emporium",
 		gift_store = "Del Perro Cadeau's",
 		ems_store = "EMS Winkel",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		state_security_badge_description = "Een ID voor agenten van de Staatsveiligheid.",
 		doj_badge = "DOJ-badge",
 		doj_badge_description = "Een badge voor werknemers van het Ministerie van Justitie.",
+		doc_badge = "Bewijs van lidmaatschap Dienst Justitiële Inrichtingen",
+		doc_badge_description = "Een bewijs van lidmaatschap voor medewerkers van de Dienst Justitiële Inrichtingen.",
 
 		radio_chop_shop = "Chop Shop-radio",
 		radio_chop_shop_description = "Gebruikt om informatie te ontvangen over 'hete' voertuigen van de niet-bestaande personen die de chop shop exploiteren.",

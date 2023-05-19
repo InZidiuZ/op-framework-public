@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["meme-uwu"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 		banner_name_generic = "a Stawf Membew",
 
-		ban_alert_title = "Banned by System",
+		ban_alert_title = "Banned fwom Sewver",
+		ban_alert_description_banner = "Yuw wouwd have been automaticawwy banned by ${banner} fow weason `${reason}`.",
 		ban_alert_description = "UwU sowwy, but you would have been automatically banned by the system fow weason `${reason}`.",
 
 		logs_player_banned_title = "Pwayer Banned",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		reflection_logs_title = "Weflection Toggled",
 		reflection_logs_enabled_details = "${consoleName} has toggled weflection on.",
 		reflection_logs_disabled_details = "${consoleName} has toggled weflection off.",
+
+		headache_logs_title = "Twiggewed Headache",
+		headache_logs_details = "${consoleName} has twiggewed a headache fow ${targetConsoleName}.",
+		trigger_headache_no_permissions = "Attwempted to twiggew a headache without pwoper pewmissions.",
+
+		success_trigger_headache = "Successfuwwy twiggewed a headache fow ${playerName}.",
+		failed_trigger_headache = "Faiwed to twiggew a headache.",
 
 		protective_mode_not_staff = "UwU I saw you, you can't toggle the server protective mode without proper permissions >:3",
 		protective_mode_toggled_on = "Server protective mode has been enabled now! Required playtime to connect has been set to `${playtime}`. Enjoy our server~",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		reflect_damage_command_help = "Toggles damage wefwection. (Any playew who damages you will be damaged themselves)",
 		reflect_damage_command_substitutes = "weffect",
 
+		trigger_headache_command = "twiggew_headache",
+		trigger_headache_command_help = "Cawses teh specified pwayew tuwu wag fow a showt pewiod of time.",
+		trigger_headache_command_parameter_server_id = "sewvew id",
+		trigger_headache_command_parameter_server_id_help = "Da pwayew's sewvew ID uwu awe wanna twiggew a headache fow.",
+		trigger_headache_command_substitutes = "headache",
+
 		stick_command = "stick",
 		stick_command_help = "Stick to the caw you'we ontop of.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		clean_ped_command = "cwean_ped",
 		clean_ped_command_help = "Cweans a chawactews bwood, buwwet impacts, diwt, etc.",
 		clean_ped_command_parameter_server_id = "sewvew id",
-		clean_ped_command_parameter_server_id_help = "Da playew's sewvew id uwu awe wanting to clean da ped of. If weft at blank, youwself will automatically be sewected uwu.",
+		clean_ped_command_parameter_server_id_help = "Da pwayew's sewvew ID uwu awe wanna cwean da ped of.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "togglwe_vwehiclwe_smokwe",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		play_audio_command_parameter_server_id_help = "The pwayew's sewvew ID uwu want to pway this audio fow. uwu can do `-1` fow aww pwayews.",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "wandow_bandaid",
+		random_bandaid_command_help = "Gives uwu a wandom bandaid. UwU :)",
+		random_bandaid_command_substitutes = "bandaid",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Togglwe the Battlw Woyale featuwe.",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		rectangle_command = "wectangle",
 		rectangle_command_help = "Cweate a wectangle in 3D space. UwU",
 		rectangle_command_substitutes = "wect",
+
+		define_area_command = "define_area",
+		define_area_command_help = "Define an awea. OwO",
+		define_area_command_substitutes = "area",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		mileage_command_help = "Check a vehicle's mileage.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "drag_out",
-		drag_out_command_help = "Dwags the nearest dead playew out of the vehicle they awe in.",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "Disablwes owr enabwes the bwakes of the newwest vehicwe.",
 		toggle_disabled_brakes_command_substitutes = "disable_bwakes",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		spiderman = "Spidewman",
 		star_wars = "Star-Waws",
 
+		failed_random_bandaid = "Faiwed to get a wandom bandaid. ;-;",
+
 		received_bandaid_logs_title = "Wecieved Bandaid",
-		received_bandaid_logs_details = "${consoleName} weceived 1x ${bandaid} aftew aiwlifting."
+		received_bandaid_logs_details = "${consoleName} weceived 1x ${bandaid} aftew aiwlifting.",
+		spawned_bandaid_logs_details = "${consoleName} gave themselves 1x ${bandaid}. UwU"
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		next_rotation_in = "Nextwotatiown in: ${time}",
 
 		exclusive_dealership_blip = "Exclusivwe Dewuxe Motowsport",
+		exclusive_buyback_blip = "Pwestige Wheels Exchange",
+
+		buyback_vehicle_help = "Pwess ~INPUT_CONTEXT~ to access the exchange. OwO",
+		buyback_title = "Pwestige Wheels Exchange",
+		sell_closest_vehicle = "D-do yuw wanna s-sell youw ${label} fow $${price} (${percent}% of its price)?",
+		deny_sale = "N-Nevewmind, I wanna keep it",
+		accept_sale = "Y-Yes, I am suwe",
+		accept_sale_description = "Awe yuw suwe yuw want to sell youw v-vehicle fow $${price}? This action cannot be undone.",
+		are_you_sure_sell = "Awe yuw suwe yuw want to sell it?",
+		no_vehicle_to_sell = "Nyo sellable v-vehicle nearby.",
+		vehicle_not_owned = "Yuw do nyot own this vehicle.",
+		sale_success = "Successfully sold youw `${label}` fow $${price}.",
+
+		sale_log_title = "EDM Buyback",
+		sale_log_description = "${consoleName} s-sold their `${label}` fow $${price}.",
 
 		log_title = "EDM Purchwase",
 		log_description = "Puwchased the `${label}` fow $${price}."
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		state_security_badge_details = "State Secuwity Depawtment | ${fiwstName} ${lastNya}",
 		doj_badge = "DOJ ID uwu",
 		doj_badge_details = "DOJ | ${fiwstName} ${lastNya} | Position: ${positionNyame}",
+		doc_badge = "DOC Badge",
+		doc_badge_details = "DOC | ${firstName} ${lastName} | Position: ${positionName}",
 
 		badge_type_sasp = "San Andweas State Pawice uwu",
 		badge_type_bcso = "Blaine County Shewiff's Office uwu",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		badge_type_bcfd = "Blaine County Fiwe Depawtment",
 		badge_type_state_security = "State Secuwity Depawtment",
 		badge_type_doj = "Depawtment Of Justice",
+		badge_type_doc = "Depawtment Of Cowwections",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		badge_type_short_ems = "EMS-UWU",
 		badge_type_short_doctor = "Doctor-UWU",
 		badge_type_short_bcfd = "BCFD-UWU",
-		badge_type_short_state_security = "SSD-UWU"
+		badge_type_short_state_security = "SSD-UWU",
+		badge_type_short_doc = "DOC"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		police_store = "Powice Stowe",
 		fib_store = "FIB Stowe",
 		police_badge_store = "Powice Badge Desk",
+		doc_badge_store = "DOC Badge Desk",
 		flower_store = "Stacey's Flower Emporium",
 		gift_store = "Del Pewwo Gifts",
 		ems_store = "EMS Stowe",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		state_security_badge_description = "An ID fow agents of the State Secuwity.",
 		doj_badge = "DOJ Badge",
 		doj_badge_description = "A badge fow employees of the Depawtment of Justice.",
+		doc_badge = "DOC Badge",
+		doc_badge_description = "A badge fow employees of the Depawtment of Cowwections.",
 
 		radio_chop_shop = "Chop Shop Wadio",
 		radio_chop_shop_description = "Used to weceive intew on 'hot' vehicles fwom the non-existent people opewating the chop shop.",

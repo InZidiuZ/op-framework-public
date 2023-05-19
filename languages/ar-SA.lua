@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["ar-SA"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		banner_name_generic = "أحد أعضاء الفريق",
 
-		ban_alert_title = "تم حظرك من النظام",
+		ban_alert_title = "تم حظرك من السيرفر",
+		ban_alert_description_banner = "لقد تم حظرك تلقائيًا من قبل ${banner} لسبب `${reason}`.",
 		ban_alert_description = "لقد تم حظرك تلقائيًا من قبل النظام بسبب `${reason}`.",
 
 		logs_player_banned_title = "حظر اللاعب",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		reflection_logs_title = "تبديل الانعكاس",
 		reflection_logs_enabled_details = "قام ${consoleName} بتبديل خاصية الانعكاس للتشغيل.",
 		reflection_logs_disabled_details = "قام ${consoleName} بتبديل خاصية الانعكاس للإيقاف.",
+
+		headache_logs_title = "تم تفعيل صداع",
+		headache_logs_details = "${consoleName} قام بتفعيل صداع لـ ${targetConsoleName}.",
+		trigger_headache_no_permissions = "حاول تفعيل صداع بدون صلاحيات كافية.",
+
+		success_trigger_headache = "تم تفعيل صداع بنجاح لـ ${playerName}.",
+		failed_trigger_headache = "فشل في تفعيل صداع.",
 
 		protective_mode_not_staff = "تم محاولة تبديل وضع حماية الخادم بدون الصلاحيات المناسبة.",
 		protective_mode_toggled_on = "تم تمكين وضع الحماية للخادم. تم تعيين الوقت المطلوب للعب للانضمام إلى الخادم إلى `${playtime}`.",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		reflect_damage_command_help = "تبديل تأثير الأذى. (أي لاعب يسبب لك أذى سيتعرض للأذى بنفسه)",
 		reflect_damage_command_substitutes = "refl",
 
+		trigger_headache_command = "تفعيل_صداع",
+		trigger_headache_command_help = "يتسبب في تأخر اللاعب المحدد لفترة قصيرة من الوقت.",
+		trigger_headache_command_parameter_server_id = "معرف_السيرفر",
+		trigger_headache_command_parameter_server_id_help = "معرف السيرفر للاعب الذي تريد تفعيل الصداع له.",
+		trigger_headache_command_substitutes = "صداع",
+
 		stick_command = "التصاق",
 		stick_command_help = "يتم الالتصاق بالسيارة التي تمتلكها.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		clean_ped_command = "تنظيف_اللاعب",
 		clean_ped_command_help = "يقوم بتنظيف دم الشخصية، وآثار الرصاص، والأوساخ، إلخ.",
 		clean_ped_command_parameter_server_id = "معرّف الخادم",
-		clean_ped_command_parameter_server_id_help = "معرّف اللاعب الذي تريد تنظيف شخصيّته. إذا تركته فارغاً، فسيتم اختيارك تلقائياً.",
+		clean_ped_command_parameter_server_id_help = "معرف السيرفر للاعب الذي تريد تنظيف الشخصية التي يتحكم بها.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "تبديل_الدخان_عن_المركبة",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		play_audio_command_parameter_server_id_help = "معرّف الخادم الذي تريد تشغيل الملف الصوتي عليه. يمكنك إدخال `-1` لتشغيل الملف الصوتي على جميع اللاعبين.",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "عصا لصق الجروح العشوائي",
+		random_bandaid_command_help = "يعطيك ضمادة عشوائية. :)",
+		random_bandaid_command_substitutes = "ضمادة",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "قم بتبديل ميزة Battle Royale.",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		rectangle_command = "مستطيل",
 		rectangle_command_help = "إنشاء مستطيل في الفضاء ثلاثي الأبعاد.",
 		rectangle_command_substitutes = "rect",
+
+		define_area_command = "تعريف_منطقة",
+		define_area_command_help = "تعريف منطقة.",
+		define_area_command_substitutes = "منطقة",
 
 		-- game/debug_menu
 		debug_menu_command = "قائمة التصحيح",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		mileage_command_help = "فحص عداد المسافات للسيارة.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "drag_out",
-		drag_out_command_help = "سحب أقرب لاعب ميت خارج السيارة التي يجلس بها.",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "يعطّل أو يفعل فِرام أقرب سيارة.",
 		toggle_disabled_brakes_command_substitutes = "disable_brakes",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		spiderman = "سبايدرمان",
 		star_wars = "حرب_النجوم",
 
+		failed_random_bandaid = "فشل في الحصول على ضمادة عشوائي.",
+
 		received_bandaid_logs_title = "تلقي العلاج بالباند إيد",
-		received_bandaid_logs_details = "${consoleName} تلقى 1x ${bandaid} بعد النقل الجوي."
+		received_bandaid_logs_details = "${consoleName} تلقى 1x ${bandaid} بعد النقل الجوي.",
+		spawned_bandaid_logs_details = "${consoleName} أعطى نفسه 1x ${bandaid}."
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		next_rotation_in = "الدورة التالية في: ${time}",
 
 		exclusive_dealership_blip = "متجر إكسكلوسيف ديلوكس موتورسبورت",
+		exclusive_buyback_blip = "صرافة عجلات Prestige",
+
+		buyback_vehicle_help = "اضغط ~INPUT_CONTEXT~ للوصول إلى الصرافة.",
+		buyback_title = "صرافة عجلات Prestige",
+		sell_closest_vehicle = "هل ترغب في بيع ${label} الخاص بك مقابل ${price}$ (${percent}% من قيمتها)؟",
+		deny_sale = "لا شكرا ، أرغب في الاحتفاظ به",
+		accept_sale = "نعم، أنا متأكد",
+		accept_sale_description = "هل أنت متأكد من رغبتك في بيع مركبتك مقابل ${price}$؟ هذه العملية لا يمكن التراجع عنها.",
+		are_you_sure_sell = "هل أنت متأكد من رغبتك في البيع؟",
+		no_vehicle_to_sell = "لا يوجد مركبة يمكن بيعها بالقرب منك.",
+		vehicle_not_owned = "لا تمتلك هذه المركبة.",
+		sale_success = "تم بيع `${label}` الخاص بك بنجاح مقابل ${price}$.",
+
+		sale_log_title = "إعادة الشراء",
+		sale_log_description = "${consoleName} قام ببيع `${label}` بمبلغ ${price}$.",
 
 		log_title = "شراء من متجر EDM",
 		log_description = "تم شراء `${label}` بقيمة $${price}."
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		state_security_badge_details = "إدارة أمن الدولة | ${firstName} ${lastName}",
 		doj_badge = "هوية وزارة العدل",
 		doj_badge_details = "وزارة العدل | ${firstName} ${lastName} | المنصب: ${positionName}",
+		doc_badge = "شارة المصحح",
+		doc_badge_details = "DOC | ${firstName} ${lastName} | المنصب: ${positionName}",
 
 		badge_type_sasp = "شرطة ولاية سان أندرياس",
 		badge_type_bcso = "مكتب شريف مقاطعة بلاين",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		badge_type_bcfd = "إدارة الإطفاء في مقاطعة بلاين",
 		badge_type_state_security = "إدارة الأمن الحكومي",
 		badge_type_doj = "إدارة العدل الحكومي",
+		badge_type_doc = "وزارة السجون",
 
 		badge_type_short_sasp = "إدارة الأمن العام في سان أندرياس",
 		badge_type_short_bcso = "شرطة مقاطعة بلاين",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		badge_type_short_ems = "الإسعافات الأولية",
 		badge_type_short_doctor = "الطبيب",
 		badge_type_short_bcfd = "إدارة الحرائق",
-		badge_type_short_state_security = "الأمن الوطني"
+		badge_type_short_state_security = "الأمن الوطني",
+		badge_type_short_doc = "DOC"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		police_store = "متجر الشرطة",
 		fib_store = "متجر FBI",
 		police_badge_store = "مكتب شارات الشرطة",
+		doc_badge_store = "مكتب شارة وزارة السجون",
 		flower_store = "محل زهور ستيسي",
 		gift_store = "محل هدايا ديل بيرو",
 		ems_store = "متجر EMS",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		state_security_badge_description = "هوية لعملاء أمن الدولة.",
 		doj_badge = "شارة وزارة العدل",
 		doj_badge_description = "شارة لموظفي وزارة العدل.",
+		doc_badge = "شارة المصحح",
+		doc_badge_description = "شارة لموظفي وزارة السجون.",
 
 		radio_chop_shop = "راديو تقطيع السيارات",
 		radio_chop_shop_description = "يستخدم لتلقي معلومات عن السيارات 'الساخنة' من الأشخاص المفترضين الذين يعملون في تقطيع السيارات.",

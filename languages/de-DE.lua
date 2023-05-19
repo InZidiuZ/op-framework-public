@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["de-DE"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["de-DE"] = {
 
 		banner_name_generic = "ein Teammitglied",
 
-		ban_alert_title = "Ban durch das System",
+		ban_alert_title = "Vom Server gebannt",
+		ban_alert_description_banner = "Du wärst automatisch von ${banner} für den Grund `${reason}` gebannt worden.",
 		ban_alert_description = "Du wurdest automatisch vom System wegen `${reason}` gebannt.",
 
 		logs_player_banned_title = "Spieler gebannt",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["de-DE"] = {
 		reflection_logs_title = "Reflexion umgeschaltet",
 		reflection_logs_enabled_details = "${consoleName} hat die Reflexion aktiviert.",
 		reflection_logs_disabled_details = "${consoleName} hat die Reflexion deaktiviert.",
+
+		headache_logs_title = "Kopfschmerzen ausgelöst",
+		headache_logs_details = "${consoleName} hat bei ${targetConsoleName} Kopfschmerzen ausgelöst.",
+		trigger_headache_no_permissions = "Es wurde versucht, Kopfschmerzen auszulösen, ohne die entsprechenden Berechtigungen zu haben.",
+
+		success_trigger_headache = "Kopfschmerzen wurden erfolgreich für ${playerName} ausgelöst.",
+		failed_trigger_headache = "Das Auslösen von Kopfschmerzen ist fehlgeschlagen.",
 
 		protective_mode_not_staff = "Es wurde versucht, den Schutzmodus des Servers ohne entsprechende Berechtigung zu aktivieren.",
 		protective_mode_toggled_on = "Der Schutzmodus des Servers wurde aktiviert. Die erforderliche Spielzeit zum Verbinden mit dem Server beträgt nun `${playtime}`.",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["de-DE"] = {
 		reflect_damage_command_help = "Aktiviert die Reflektion des Schadens. (Jeder Spieler, der dir Schaden zufügt, wird selbst Schaden erleiden)",
 		reflect_damage_command_substitutes = "reflektieren",
 
+		trigger_headache_command = "löse_kopfschmerz_aus",
+		trigger_headache_command_help = "Verursacht bei dem angegebenen Spieler für kurze Zeit Lags.",
+		trigger_headache_command_parameter_server_id = "Server ID",
+		trigger_headache_command_parameter_server_id_help = "Die Server-ID des Spielers, bei dem du ein Kopfschmerz auslösen möchtest.",
+		trigger_headache_command_substitutes = "kopfschmerzen",
+
 		stick_command = "klammern",
 		stick_command_help = "An das Auto, auf dem du stehst, anklammern.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["de-DE"] = {
 		clean_ped_command = "spieler_reinigen",
 		clean_ped_command_help = "Reinigt das Blut, Einschläge, den Schmutz usw. eines Charakters.",
 		clean_ped_command_parameter_server_id = "Server ID",
-		clean_ped_command_parameter_server_id_help = "Die Server-ID des Spielers, dessen Ped gereinigt werden soll. Wenn sie leer gelassen wird, wird automatisch dich ausgewählt.",
+		clean_ped_command_parameter_server_id_help = "Die Server-ID des Spielers, dessen Spielfigur du säubern möchtest.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "Fahrzeugrauch umschalten",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["de-DE"] = {
 		play_audio_command_parameter_server_id_help = "Die Server-ID des Spielers, für den Sie dieses Audio abspielen möchten. Sie können `-1` für alle Spieler verwenden.",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "zufälliges_pflaster",
+		random_bandaid_command_help = "Gibt dir einen zufälligen Verband. :)",
+		random_bandaid_command_substitutes = "verband",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Aktiviere/deaktiviere das Battle-Royale-Feature.",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["de-DE"] = {
 		rectangle_command = "Rechteck",
 		rectangle_command_help = "Erstellen Sie ein Rechteck im 3D-Raum.",
 		rectangle_command_substitutes = "rect",
+
+		define_area_command = "definiere_bereich",
+		define_area_command_help = "Definiere einen Bereich.",
+		define_area_command_substitutes = "bereich",
 
 		-- game/debug_menu
 		debug_menu_command = "Debug-Menü",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["de-DE"] = {
 		mileage_command_help = "Überprüfen Sie den Kilometerstand eines Fahrzeugs.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "herausziehen",
-		drag_out_command_help = "Zieht den nächsten toten Spieler aus dem Fahrzeug heraus.",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "Deaktiviert oder aktiviert die Bremsen des nächstgelegenen Fahrzeugs.",
 		toggle_disabled_brakes_command_substitutes = "Bremsen_deaktivieren",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["de-DE"] = {
 		spiderman = "Spiderman",
 		star_wars = "Star-Wars",
 
+		failed_random_bandaid = "Konnte keinen zufälligen Verband bekommen.",
+
 		received_bandaid_logs_title = "Verband erhalten",
-		received_bandaid_logs_details = "${consoleName} hat nach einer Luftrettung 1x ${bandaid} erhalten."
+		received_bandaid_logs_details = "${consoleName} hat nach einer Luftrettung 1x ${bandaid} erhalten.",
+		spawned_bandaid_logs_details = "${consoleName} hat sich selbst 1x ${bandaid} gegeben."
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["de-DE"] = {
 		next_rotation_in = "Nächste Rotation in: ${time}",
 
 		exclusive_dealership_blip = "Exclusive Deluxe Motorsport",
+		exclusive_buyback_blip = "Prestige Wheels Exchange",
+
+		buyback_vehicle_help = "Drücke ~INPUT_CONTEXT~, um auf den Austausch zuzugreifen.",
+		buyback_title = "Prestige Wheels Exchange",
+		sell_closest_vehicle = "Möchtest du dein ${label} für $${price} verkaufen (${percent}% des Wertes)?",
+		deny_sale = "Nein, behalten wir es lieber.",
+		accept_sale = "Ja, ich bin sicher.",
+		accept_sale_description = "Bist du sicher, dass du dein Fahrzeug für $${price} verkaufen möchtest? Diese Aktion kann nicht rückgängig gemacht werden.",
+		are_you_sure_sell = "Sicher, dass es verkauft werden soll?",
+		no_vehicle_to_sell = "Kein verkaufbares Fahrzeug in der Nähe.",
+		vehicle_not_owned = "Dieses Fahrzeug gehört dir nicht.",
+		sale_success = "Dein `${label}` wurde erfolgreich für $${price} verkauft.",
+
+		sale_log_title = "EDM Rückkauf",
+		sale_log_description = "${consoleName} hat ihr/ihr `${label}` für $${price} verkauft.",
 
 		log_title = "EDM Kauf",
 		log_description = "Habe `${label}` für $${price} gekauft."
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["de-DE"] = {
 		state_security_badge_details = "Staatliches Sicherheitsdepartement | ${firstName} ${lastName}",
 		doj_badge = "DOJ-ID",
 		doj_badge_details = "DOJ | ${firstName} ${lastName} | Position: ${positionName}",
+		doc_badge = "DOC Abzeichen",
+		doc_badge_details = "DOC | ${firstName} ${lastName} | Position: ${positionName}",
 
 		badge_type_sasp = "San Andreas State Police",
 		badge_type_bcso = "Sheriffbüro von Blaine County",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["de-DE"] = {
 		badge_type_bcfd = "Feuerwehr von Blaine County",
 		badge_type_state_security = "Staatsicherheitsabteilung",
 		badge_type_doj = "Justizministerium",
+		badge_type_doc = "Justizvollzugsanstalt",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["de-DE"] = {
 		badge_type_short_ems = "Rettungsdienst",
 		badge_type_short_doctor = "Arzt",
 		badge_type_short_bcfd = "BCFD",
-		badge_type_short_state_security = "SSD"
+		badge_type_short_state_security = "SSD",
+		badge_type_short_doc = "DOC"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["de-DE"] = {
 		police_store = "Polizeigeschäft",
 		fib_store = "FIB-Geschäft",
 		police_badge_store = "Polizei-Abzeichen-Schreibtisch",
+		doc_badge_store = "DOC Abzeichen Schreibtisch",
 		flower_store = "Staceys Blumenladen",
 		gift_store = "Del Perro Geschenke",
 		ems_store = "EMS-Geschäft",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["de-DE"] = {
 		state_security_badge_description = "Ein Ausweis für Agenten des Staatssicherheitsdienstes.",
 		doj_badge = "DOJ-Abzeichen",
 		doj_badge_description = "Ein Abzeichen für Mitarbeiter des Justizministeriums.",
+		doc_badge = "DOC Abzeichen",
+		doc_badge_description = "Ein Abzeichen für Mitarbeiter der Justizvollzugsanstalt.",
 
 		radio_chop_shop = "Chop-Shop-Funkgerät",
 		radio_chop_shop_description = "Wird verwendet, um Informationen zu 'heißen' Fahrzeugen von den Personen zu erhalten, die angeblich den Chop-Shop betreiben.",

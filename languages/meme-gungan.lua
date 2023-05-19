@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["meme-gungan"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		banner_name_generic = "a Staff Member", --You may keep this as it is, "a Staff Member",
 
-		ban_alert_title = "Banned by System",
+		ban_alert_title = "Banished from Da Server",
+		ban_alert_description_banner = "Youza would have been automatically banished by ${banner} for mesa ${reason}.",
 		ban_alert_description = "Yousa would have been automatically banned by the system fo reason `${reason}`.",
 
 		logs_player_banned_title = "Player Banned",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		reflection_logs_title = "Reflection Toggled",
 		reflection_logs_enabled_details = "${consoleName} has toggled reflection on.",
 		reflection_logs_disabled_details = "${consoleName} has toggled reflection off.",
+
+		headache_logs_title = "Triggered Headache",
+		headache_logs_details = "${consoleName} has triggered a headache for ${targetConsoleName}.",
+		trigger_headache_no_permissions = "Mesa sorry, but yousa no have da right permissions to triggah a headache.",
+
+		success_trigger_headache = "Successfully triggered a headache for ${playerName}.",
+		failed_trigger_headache = "Mesa no able to triggah da headache, mesa sorry.",
 
 		protective_mode_not_staff = "Mesa no allowed togey toggly server protective mode without da grand big boss's permissions, okeyday?",
 		protective_mode_toggled_on = "Yousa mesa happy to tell that server protective mode have been enabled. Da required amount of playtime to connect to da server is now set to `${playtime}`.",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		reflect_damage_command_help = "Toggles damaj reflecten. (Any playa hu damages yousa will be damaged themselves)",
 		reflect_damage_command_substitutes = "reflect",
 
+		trigger_headache_command = "Mesa tink weesa cause a headache",
+		trigger_headache_command_help = "Dis gon' make da specified playa lag fosa shoft period of time.",
+		trigger_headache_command_parameter_server_id = "Server id",
+		trigger_headache_command_parameter_server_id_help = "Da playa's server ID yousa wantin' to trigger a headache for.",
+		trigger_headache_command_substitutes = "Headache",
+
 		stick_command = "stick",
 		stick_command_help = "Stick to da car yousa ontop of.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		clean_ped_command = "clean_ped",
 		clean_ped_command_help = "Cleans a characters blood, bullet impacts, dirt, etc.",
 		clean_ped_command_parameter_server_id = "gogga id",
-		clean_ped_command_parameter_server_id_help = "Da playo'sa gogga id yousa wanting to clean da ped of. If left blank, yousa will automatically be selected.",
+		clean_ped_command_parameter_server_id_help = "Da playa's server ID yousa wantin' to clean da ped of.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "toggle_vehicle_smoke",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		play_audio_command_parameter_server_id_help = "Da player's server ID yousa want to play dis audio for. Yousa can do `-1` for all players.",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "Random bandaid",
+		random_bandaid_command_help = "Gives you a random bandaid. :)",
+		random_bandaid_command_substitutes = "bandaid",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Ding dong da Battle Royale feature.",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		rectangle_command = "rectangle",
 		rectangle_command_help = "Create a rectangle in 3D space.",
 		rectangle_command_substitutes = "rect",
+
+		define_area_command = "mesa_area",
+		define_area_command_help = "Define mesa area.",
+		define_area_command_substitutes = "zona",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		mileage_command_help = "Check vehicle's mileage.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "drag_out",
-		drag_out_command_help = "Drags lusa mui muidalor dead player out of vehicle.",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "Mesa or moozoom da brakes ob da nearest vehicle.",
 		toggle_disabled_brakes_command_substitutes = "disable_brakes",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		spiderman = "Spiderman",
 		star_wars = "Staa-Wars",
 
+		failed_random_bandaid = "Meesa no sucess getten random bandaid.",
+
 		received_bandaid_logs_title = "Received Bandaid",
-		received_bandaid_logs_details = "${consoleName} received 1x ${bandaid} after airlifting."
+		received_bandaid_logs_details = "${consoleName} received 1x ${bandaid} after airlifting.",
+		spawned_bandaid_logs_details = "${consoleName} give themselve 1x ${bandaid}."
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		next_rotation_in = "Mesa gonna rotate soon: ${time}",
 
 		exclusive_dealership_blip = "Deluxen kakeelya'kaknee",
+		exclusive_buyback_blip = "Prestige Wheels Exchange",
+
+		buyback_vehicle_help = "Press ~INPUT_CONTEXT~ to accessa prestigio wheels exchange.",
+		buyback_title = "Prestige Wheels of Mesa Exchange",
+		sell_closest_vehicle = "Meesa Nabee Sellin' yer ${label} for $${price} (${percent}% mula)?",
+		deny_sale = "Noo-noo, Meesa keepin' it",
+		accept_sale = "Yessa, Meesa shore",
+		accept_sale_description = "Yousa sure yousa wanna sell de vehicle for $${price}? Disen action no can undone.",
+		are_you_sure_sell = "Yousa shore yousa wanna sell it?",
+		no_vehicle_to_sell = "Nuttin sellable vehicle nearby.",
+		vehicle_not_owned = "Yousa no own dis vehicle.",
+		sale_success = "Successfully sold yer `${label}` for $${price}, okeeday!.",
+
+		sale_log_title = "EDM Buyback",
+		sale_log_description = "${consoleName} solda their `${label}` for $${price}.",
 
 		log_title = "EDM Purchase",
 		log_description = "Nabbedda the `${label}` for $${price}."
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		state_security_badge_details = "State Security Department | ${firstName} ${lastName}",
 		doj_badge = "DOJ ID",
 		doj_badge_details = "DOJ | ${firstName} ${lastName} | Position: ${positionName}",
+		doc_badge = "DOK Badge",
+		doc_badge_details = "DOK | ${firstName} ${lastName} | Position: ${positionName}",
 
 		badge_type_sasp = "SASO Badge",
 		badge_type_bcso = "BCSO Badge",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		badge_type_bcfd = "Blaine County Fire Department",
 		badge_type_state_security = "State Security Department",
 		badge_type_doj = "Departmen' Of Justice",
+		badge_type_doc = "Department Ofa Corrections",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		badge_type_short_ems = "EMS",
 		badge_type_short_doctor = "Doctor",
 		badge_type_short_bcfd = "BCFD",
-		badge_type_short_state_security = "SSD"
+		badge_type_short_state_security = "SSD",
+		badge_type_short_doc = "DOK"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		police_store = "Police Equipment Store",
 		fib_store = "FIB Equipment Store",
 		police_badge_store = "Police Badge Desk",
+		doc_badge_store = "DOK Badge Desk",
 		flower_store = "Stacey's Flower Emporium",
 		gift_store = "Del Perro Gifts",
 		ems_store = "EMS Equipment Store",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		state_security_badge_description = "An ID for agents of the Steyt Sekyooritee.",
 		doj_badge = "DOJ Baj",
 		doj_badge_description = "A baj for employees of the Dipartment of Justice.",
+		doc_badge = "DOK Badge",
+		doc_badge_description = "A badge for employees of the Department of Corrections.",
 
 		radio_chop_shop = "Chop Shop Reydeeoh",
 		radio_chop_shop_description = "Used to receive intel on 'hot' vehicles from the non-existent people operating the chop shop.",

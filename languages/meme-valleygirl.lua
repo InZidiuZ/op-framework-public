@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["meme-valleygirl"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		banner_name_generic = "a Staff Member, duh",
 
-		ban_alert_title = "Banned by like, the System",
+		ban_alert_title = "Banned From Server, OMG!",
+		ban_alert_description_banner = "Yuh woulda like, totally been auto-banned by ${banner} for reason '${reason}'! Rude!",
 		ban_alert_description = "The System totally banned you for reason `${reason}`.",
 
 		logs_player_banned_title = "Player Banned, ugh",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		reflection_logs_title = "Reflection Toggled",
 		reflection_logs_enabled_details = "${consoleName} has toggled reflection on. Get ready to get, like, totally reflected!",
 		reflection_logs_disabled_details = "${consoleName} has toggled reflection off. No more reflecting for ya, boo!",
+
+		headache_logs_title = "Major Headache Alert!",
+		headache_logs_details = "${consoleName} has like, totally triggered a major headache for ${targetConsoleName}.",
+		trigger_headache_no_permissions = "Like, sorry not sorry, you ain't got the perms to trigger a headache!",
+
+		success_trigger_headache = "Like, woohoo! You like, totally triggered a headache for ${playerName}.",
+		failed_trigger_headache = "Ugh, like dang, we can't trigger a headache. Bummer.",
 
 		protective_mode_not_staff = "Like, you can't toggle the server protective mode without proper permissions, sorry.",
 		protective_mode_toggled_on = "Oh-em-gee, server protective mode has like, totally been enabled. You'll need to have played for, like, ${playtime} hours to connect to the server now.",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		reflect_damage_command_help = "OMG like, turns on damage reflection. (Like, anyone who tries to attack you will get hurt too!)",
 		reflect_damage_command_substitutes = "reflect",
 
+		trigger_headache_command = "trigger_headache",
+		trigger_headache_command_help = "OMG causes the specified player to lag for, like, a sec.",
+		trigger_headache_command_parameter_server_id = "server id",
+		trigger_headache_command_parameter_server_id_help = "The player's server ID you are wanting to trigger a headache for, duh.",
+		trigger_headache_command_substitutes = "headache",
+
 		stick_command = "stick",
 		stick_command_help = "Stick to the car you're ontop of, like, oh my god!",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		clean_ped_command = "clean_ped",
 		clean_ped_command_help = "Cleans a characters like blood, bullet impacts, dirt, like, etc.",
 		clean_ped_command_parameter_server_id = "sErVeR iD",
-		clean_ped_command_parameter_server_id_help = "OMG, the player's server ID you're like totally wanting to clean the ped of. If you leave it blank, you'll, like, automatically do it for yourself.",
+		clean_ped_command_parameter_server_id_help = "The player's server ID you are wanting to, like, clean the ped of.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "toggle_vehicle_smoke",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		play_audio_command_parameter_server_id_help = "The server ID of the player you want to bang this audio for. You can also use `-1` to play it for everyone, ya know?",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "random_bandaid",
+		random_bandaid_command_help = "Gives you, like, a totally random bandaid. :)",
+		random_bandaid_command_substitutes = "bandaid",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Toggle the Battle Royale, duh!",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		rectangle_command = "rectangle",
 		rectangle_command_help = "Create a rectangle in 3D space, cuz like, why not?",
 		rectangle_command_substitutes = "rect",
+
+		define_area_command = "define_area",
+		define_area_command_help = "Define, umm, an area.",
+		define_area_command_substitutes = "area",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		mileage_command_help = "Check out like how far the car has been driven.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "drag_out",
-		drag_out_command_help = "Like drag out the closest dead player from their totally uncool car.",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "Totally disables or like, enables the brakes of the nearest vehicle.",
 		toggle_disabled_brakes_command_substitutes = "disable_brakes",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		spiderman = "Spiderman, web-slinging hero!",
 		star_wars = "Star-Wars, the force is totally with us!",
 
+		failed_random_bandaid = "Oopsie, like, couldn't get a random bandaid.",
+
 		received_bandaid_logs_title = "Received Bandaid, yay!",
-		received_bandaid_logs_details = "${consoleName} received 1x ${bandaid} after airlifting, how awesome!"
+		received_bandaid_logs_details = "${consoleName} received 1x ${bandaid} after airlifting, how awesome!",
+		spawned_bandaid_logs_details = "${consoleName} gave themselves, like, 1x ${bandaid}."
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		next_rotation_in = "The next rotation is in like ${time}",
 
 		exclusive_dealership_blip = "O-M-G! Exclusive Deluxe Motorsport",
+		exclusive_buyback_blip = "Prestige Wheels Exchange",
+
+		buyback_vehicle_help = "Press ~INPUT_CONTEXT~ to, like, access the exchange.",
+		buyback_title = "Prestige Wheels Exchange, y'know",
+		sell_closest_vehicle = "Do you, like, wanna sell your ${label} for $${price} (${percent}% of its value)?",
+		deny_sale = "No way, I wanna keep it!",
+		accept_sale = "Totally!",
+		accept_sale_description = "Are you sure you wanna sell your vehicle for $${price}? This can't be undone.",
+		are_you_sure_sell = "Sure about this, babe?",
+		no_vehicle_to_sell = "Sorry, there's no car nearby for you to sell.",
+		vehicle_not_owned = "Um, you don't even own this vehicle.",
+		sale_success = "Yasss, you sold your `${label}` for $${price}. Nice job!",
+
+		sale_log_title = "OMG, like EDM Buyback",
+		sale_log_description = "${consoleName} omg, sold their `${label}` for $${price}.",
 
 		log_title = "Yaaas! Your EDM Purchase",
 		log_description = "Like, you just got your hands on the `${label}` for only $${price}!"
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		state_security_badge_details = "State Security Department | ${firstName} ${lastName}",
 		doj_badge = "DOJ ID",
 		doj_badge_details = "DOJ | ${firstName} ${lastName} | Job: ${positionName}",
+		doc_badge = "DOC Badge, like totally",
+		doc_badge_details = "DOC | ${firstName} ${lastName} | Position: ${positionName}, like for sure",
 
 		badge_type_sasp = "San Andreas State Police Badge",
 		badge_type_bcso = "Blaine County Sheriff's Office Badge",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		badge_type_bcfd = "Blaine County Fire Department, heroes in uniform",
 		badge_type_state_security = "State Security Department, keeping us safe",
 		badge_type_doj = "Department Of Justice, justice always prevails",
+		badge_type_doc = "Department Of Corrections, duh",
 
 		badge_type_short_sasp = "SASP, the coolest cops around",
 		badge_type_short_bcso = "BCSO, serving and protecting",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		badge_type_short_ems = "EMS",
 		badge_type_short_doctor = "Doctor",
 		badge_type_short_bcfd = "BCFD",
-		badge_type_short_state_security = "SSD"
+		badge_type_short_state_security = "SSD",
+		badge_type_short_doc = "DOC, like seriously"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		police_store = "Cop Shop",
 		fib_store = "Secret Agent Supply",
 		police_badge_store = "Cop ID Desk",
+		doc_badge_store = "DOC Badge Desk, so much yes",
 		flower_store = "Stacey's Flower Palace",
 		gift_store = "Del Perro Gifts, like OMG!",
 		ems_store = "EMS Supply",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		state_security_badge_description = "That's, like, an ID for totally rad agents of the State Security, ya know?",
 		doj_badge = "DOJ Badge, so 90s!",
 		doj_badge_description = "A badge for employees of the groovy Department of Justice.",
+		doc_badge = "DOC Badge, literally",
+		doc_badge_description = "A badge for employees of the Department of Corrections, like hello?",
 
 		radio_chop_shop = "Chop Shop Radio, how sick!",
 		radio_chop_shop_description = "Used to, like, receive intel on 'hot' vehicles from some non-existent people operating the chop shop.",

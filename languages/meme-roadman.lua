@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["meme-roadman"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		banner_name_generic = "a mandem ting",
 
-		ban_alert_title = "Banned by the system, fam",
+		ban_alert_title = "Y'got banned from dis server",
+		ban_alert_description_banner = "Yo, you would have been automatically banned by ${banner} 'cuz of `${reason}`.",
 		ban_alert_description = "You would've been automatically banned by the system for `${reason}`, ya know.",
 
 		logs_player_banned_title = "Player got banned, fam",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		reflection_logs_title = "Reflection Toggled",
 		reflection_logs_enabled_details = "${consoleName} just turned on reflection, blood.",
 		reflection_logs_disabled_details = "${consoleName} just turned off reflection.",
+
+		headache_logs_title = "Headache Initiated",
+		headache_logs_details = "${consoleName} done caused a headache for ${targetConsoleName}.",
+		trigger_headache_no_permissions = "You can't be tryna trigger a headache without the proper clearance, fam.",
+
+		success_trigger_headache = "Mad ting, initiated a headache for ${playerName}.",
+		failed_trigger_headache = "Gahdamn, couldn't initiate no headache.",
 
 		protective_mode_not_staff = "Bruv, you can't turn on the server protective mode without proper permissions.",
 		protective_mode_toggled_on = "Alrite blud, server protective mode has been turned on. You gotta have played for `${playtime}` before you can connect to the server now.",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		reflect_damage_command_help = "Toggle damage reflection. (Anyone who damages you will also get damaged)",
 		reflect_damage_command_substitutes = "reflect",
 
+		trigger_headache_command = "trigger_headache",
+		trigger_headache_command_help = "If you wanna troll someone, make 'em lag for a bit.",
+		trigger_headache_command_parameter_server_id = "server id",
+		trigger_headache_command_parameter_server_id_help = "The server ID of the player you want to lag-out.",
+		trigger_headache_command_substitutes = "headache",
+
 		stick_command = "holdup",
 		stick_command_help = "Hold onto the whip you're ontop of.",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		clean_ped_command = "scrub",
 		clean_ped_command_help = "Washes a bruddas blood, bullet impacts, dirt, etc.",
 		clean_ped_command_parameter_server_id = "server ID blud",
-		clean_ped_command_parameter_server_id_help = "The player's server ID you wanna clean the ped of. If you leave it blank, it's gonna clean your own ped automatically. Ya get me?",
+		clean_ped_command_parameter_server_id_help = "The server ID of the player you want to clean up the look of the ped.",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "toggle_vehicle_smoke",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		play_audio_command_parameter_server_id_help = "The player's server ID the audio should be played for. Use `-1` for all players.",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "random_bandaid",
+		random_bandaid_command_help = "Gives you a random bandaid innit. :)",
+		random_bandaid_command_substitutes = "bandaid",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Turn the Battle Royale ting on or off, innit.",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		rectangle_command = "rectangle",
 		rectangle_command_help = "Build a rectangle in 3D space innit.",
 		rectangle_command_substitutes = "rect",
+
+		define_area_command = "define_area",
+		define_area_command_help = "Define an area, like a trap house or summin'.",
+		define_area_command_substitutes = "area",
 
 		-- game/debug_menu
 		debug_menu_command = "hacker menu",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		mileage_command_help = "Peep the miles on this whip.",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "drag_out",
-		drag_out_command_help = "Yank out the closest homie who's been dropped.",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "Turns off or on the brakes on the closest whip.",
 		toggle_disabled_brakes_command_substitutes = "disable_brakes",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		spiderman = "Spiderman",
 		star_wars = "Star-Wars",
 
+		failed_random_bandaid = "Bruv, couldn't get ya a bandaid.",
+
 		received_bandaid_logs_title = "Bruv got a bandaid",
-		received_bandaid_logs_details = "Yo! ${consoleName} got a fresh 1x ${bandaid} after gettin airlifted."
+		received_bandaid_logs_details = "Yo! ${consoleName} got a fresh 1x ${bandaid} after gettin airlifted.",
+		spawned_bandaid_logs_details = "${consoleName} gave themselves 1x ${bandaid}, safe."
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		next_rotation_in = "Watch out in ${time} for next items",
 
 		exclusive_dealership_blip = "Dealership for rich man, Exclusive Deluxe Motorsport",
+		exclusive_buyback_blip = "Prestige Wheels Exchange",
+
+		buyback_vehicle_help = "Press ~INPUT_CONTEXT~ to access the exchange, innit.",
+		buyback_title = "Prestige Wheels Exchange",
+		sell_closest_vehicle = "You wanna sell your ${label} for $${price} (${percent}% of its price)?",
+		deny_sale = "Nah, I'll keep it",
+		accept_sale = "Yea, I'm sure",
+		accept_sale_description = "You sure you wanna sell your ride for $${price}? Can't undo this move.",
+		are_you_sure_sell = "You positive you wanna sell it?",
+		no_vehicle_to_sell = "Nah fam, no vehicles to sell around here.",
+		vehicle_not_owned = "Bruv, you don't own this whip.",
+		sale_success = "Big up! You sold your `${label}` for $${price}.",
+
+		sale_log_title = "EDM Buyback",
+		sale_log_description = "${consoleName} flipped their `${label}` for $${price}.",
 
 		log_title = "We made that transaction for ya, Fam",
 		log_description = "Yo, we just put that `${label}` in yo name for $${price}."
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		state_security_badge_details = "State Security Department | ${firstName} ${lastName}",
 		doj_badge = "DOJ ID",
 		doj_badge_details = "DOJ | ${firstName} ${lastName} | Role: ${positionName}",
+		doc_badge = "Warden's Chain",
+		doc_badge_details = "DOC | ${firstName} ${lastName} | Role: ${positionName}",
 
 		badge_type_sasp = "San Andreas State Police",
 		badge_type_bcso = "Blaine County Sheriff's Office",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		badge_type_bcfd = "Blaine County Fire Department Mandem",
 		badge_type_state_security = "State Security Department G",
 		badge_type_doj = "Department Of Justice Fam",
+		badge_type_doc = "Department Of Corrections",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		badge_type_short_ems = "EMS",
 		badge_type_short_doctor = "Doc",
 		badge_type_short_bcfd = "BCFD",
-		badge_type_short_state_security = "SSD"
+		badge_type_short_state_security = "SSD",
+		badge_type_short_doc = "DOC"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		police_store = "Feds R' Us",
 		fib_store = "IAA",
 		police_badge_store = "Pig Badge Desk",
+		doc_badge_store = "Warden's Office",
 		flower_store = "Stacey's Plant Emporium",
 		gift_store = "Del Perro Trinkets",
 		ems_store = "Paramedic Gear",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		state_security_badge_description = "An ID for mandem in the State Security.",
 		doj_badge = "DOJ Badge",
 		doj_badge_description = "A badge for workers in the Department of Justice.",
+		doc_badge = "Warden's Chain",
+		doc_badge_description = "A chain for real ones who work for the Department of Corrections.",
 
 		radio_chop_shop = "Chop Shop Radio",
 		radio_chop_shop_description = "Used to get da intel on booming whips from the mandem running the chop shop.",

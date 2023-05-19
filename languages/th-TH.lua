@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 7 (do not change)
+-- AUTO LOCALES: 8 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -243,7 +243,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		banner_name_generic = "เจ้าหน้าที่ผู้ดูแล",
 
-		ban_alert_title = "ถูกแบนโดยระบบ",
+		ban_alert_title = "ถูกแบนจากเซิร์ฟเวอร์",
+		ban_alert_description_banner = "คุณถูกแบนโดย ${banner} โดยมีเหตุผล `${reason}`.",
 		ban_alert_description = "ระบบได้แบนคุณโดยอัตโนมัติเนื่องจาก `${reason}`.",
 
 		logs_player_banned_title = "ผู้เล่นถูกแบน",
@@ -298,6 +299,13 @@ OP.Global.Locales.Languages["th-TH"] = {
 		reflection_logs_title = "สลับการสะท้อนความเสียหาย",
 		reflection_logs_enabled_details = "${consoleName} ได้เปิดการสะท้อนความเสียหาย",
 		reflection_logs_disabled_details = "${consoleName} ได้ปิดการสะท้อนความเสียหาย",
+
+		headache_logs_title = "เปิดการทำงานโหมดปวดหัว",
+		headache_logs_details = "${consoleName} ได้เปิดการทำงานโหมดปวดหัวของ ${targetConsoleName} แล้ว.",
+		trigger_headache_no_permissions = "พยายามเปิดการทำงานโหมดปวดหัวโดยไม่ได้รับอนุญาต.",
+
+		success_trigger_headache = "เปิดการทำงานโหมดปวดหัวสำเร็จสำหรับ ${playerName}.",
+		failed_trigger_headache = "ไม่สามารถเปิดการทำงานโหมดปวดหัวได้.",
 
 		protective_mode_not_staff = "พยายามเปิดโหมดป้องกันเซิร์ฟเวอร์โดยไม่ได้รับอนุญาตให้ทำ",
 		protective_mode_toggled_on = "โหมดป้องกันเซิร์ฟเวอร์ถูกเปิดแล้ว ระยะเวลาการเล่นที่จำเป็นเพื่อเข้าเซิร์ฟเวอร์ถูกตั้งเป็น `${playtime}`",
@@ -1078,6 +1086,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		reflect_damage_command_help = "เปิด/ปิดการสะท้อนความเสียหาย (ผู้เล่นใดที่โจมตีคุณจะถูกโจมตีตัวเอง)",
 		reflect_damage_command_substitutes = "reflect",
 
+		trigger_headache_command = "ให้ปวดศรีษะ",
+		trigger_headache_command_help = "ทำให้ผู้เล่นที่ระบุสั่นสะเทือนสั้นๆ",
+		trigger_headache_command_parameter_server_id = "server id",
+		trigger_headache_command_parameter_server_id_help = "ไอดีเซิร์ฟเวอร์ของผู้เล่นที่คุณต้องการให้เกิดอาการปวดศรีษะ",
+		trigger_headache_command_substitutes = "ปวดศรีษะ",
+
 		stick_command = "ติดตามรถ",
 		stick_command_help = "ติดตามรถที่คุณอยู่ด้านบน",
 		stick_command_substitutes = "",
@@ -1089,7 +1103,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		clean_ped_command = "ทำความสะอาดตัวละคร",
 		clean_ped_command_help = "ล้างเลือด, รอยกระสุน, ฝุ่นหลังในตัวละคร",
 		clean_ped_command_parameter_server_id = "ไอดีเซิร์ฟเวอร์",
-		clean_ped_command_parameter_server_id_help = "ไอดีเซิร์ฟเวอร์ของผู้เล่นที่คุณต้องการเคลียร์พื้นที่วิ่ง. ถ้าปล่อยว่างไว้ ระบบจะเลือกคุณเองโดยอัตโนมัติ",
+		clean_ped_command_parameter_server_id_help = "ไอดีเซิร์ฟเวอร์ของผู้เล่นที่คุณต้องการล้างภาพของตัวละคร",
 		clean_ped_command_substitutes = "",
 
 		toggle_vehicle_smoke_command = "toggle_vehicle_smoke",
@@ -1567,6 +1581,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		play_audio_command_parameter_server_id_help = "รหัสเซิร์ฟเวอร์ของผู้เล่นที่ต้องการเล่นเสียงนี้ คุณสามารถใช้ค่า `-1` เพื่อเล่นเสียงสำหรับทุกผู้เล่น",
 		play_audio_command_substitutes = "",
 
+		-- game/bandaids
+		random_bandaid_command = "random_bandaid",
+		random_bandaid_command_help = "สุ่มให้แผ่นพลาสเตอร์ทาแผล",
+		random_bandaid_command_substitutes = "พลาสเตอร์",
+
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "เปิดหรือปิดการใช้งานฟีเจอร์ Battle Royale",
@@ -2043,6 +2062,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		rectangle_command = "rectangle",
 		rectangle_command_help = "สร้างสี่เหลี่ยมผืนผ้าในพื้นที่ 3 มิติ",
 		rectangle_command_substitutes = "rect",
+
+		define_area_command = "กำหนดพื้นที่",
+		define_area_command_help = "กำหนดพื้นที่",
+		define_area_command_substitutes = "พื้นที่",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
@@ -3526,10 +3549,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		mileage_command_help = "ตรวจสอบระยะทางของรถ",
 		mileage_command_substitutes = "",
 
-		drag_out_command = "drag_out",
-		drag_out_command_help = "ลากผู้เล่นที่เสียชีวิตใกล้ที่สุดจากโดยสารออกจากรถ",
-		drag_out_command_substitutes = "",
-
 		toggle_disabled_brakes_command = "toggle_disabled_brakes",
 		toggle_disabled_brakes_command_help = "เปิดหรือปิดระบบเบรคของยานพาหนะที่อยู่ใกล้ที่สุด",
 		toggle_disabled_brakes_command_substitutes = "disable_brakes",
@@ -4192,8 +4211,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		spiderman = "Spiderman",
 		star_wars = "Star-Wars",
 
+		failed_random_bandaid = "ไม่สามารถสุ่มแผ่นพลาสเตอร์ได้",
+
 		received_bandaid_logs_title = "ได้รับพลาสเตอร์",
-		received_bandaid_logs_details = "${consoleName} ได้รับ 1x ${bandaid} หลังจากที่ถูกลำเลียงโดยอากาศ."
+		received_bandaid_logs_details = "${consoleName} ได้รับ 1x ${bandaid} หลังจากที่ถูกลำเลียงโดยอากาศ.",
+		spawned_bandaid_logs_details = "${consoleName} ให้แผ่นพลาสเตอร์ 1 ชิ้นให้ตัวเอง"
 	},
 
 	battle_royale = {
@@ -5799,6 +5821,21 @@ OP.Global.Locales.Languages["th-TH"] = {
 		next_rotation_in = "การหมุนต่อไปใน: ${time}",
 
 		exclusive_dealership_blip = "Exclusive Deluxe Motorsport",
+		exclusive_buyback_blip = "Prestige Wheels Exchange",
+
+		buyback_vehicle_help = "กด ~INPUT_CONTEXT~ เพื่อเข้าถึง Prestige Wheels Exchange",
+		buyback_title = "Prestige Wheels Exchange",
+		sell_closest_vehicle = "คุณต้องการขาย ${label} ของคุณใช่ไหม ราคา $${price} (${percent}% ของราคา)?",
+		deny_sale = "ไม่เป็นไร ฉันต้องการเก็บรักษา",
+		accept_sale = "ใช่ ฉันแน่ใจ",
+		accept_sale_description = "คุณแน่ใจหรือไม่ว่าต้องการขาย ${label} ไปในราคา $${price} การดำเนินการนี้ไม่สามารถยกเลิกได้.",
+		are_you_sure_sell = "คุณแน่ใจหรือไม่ว่าต้องการขาย?",
+		no_vehicle_to_sell = "ไม่มียานพาหนะที่ขายได้ในบริเวณใกล้เคียง",
+		vehicle_not_owned = "คุณไม่ได้เป็นเจ้าของยานพาหนะนี้",
+		sale_success = "นำ ${label} ของคุณไปขายเรียบร้อยแล้ว ราคา $${price}",
+
+		sale_log_title = "บันทึกการขาย EDM",
+		sale_log_description = "${consoleName} ขาย `${label}` ของตนเองไปให้ร้านเพื่อรับเงิน $${price} บาท",
 
 		log_title = "การซื้อ EDM",
 		log_description = "ซื้อ `${label}` ในราคา $${price}"
@@ -6265,6 +6302,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		state_security_badge_details = "แผนกรัฐวิสาหกิจ | ${firstName} ${lastName}",
 		doj_badge = "บัตรประจำตัว DOJ",
 		doj_badge_details = "DOJ | ${firstName} ${lastName} | ตำแหน่ง: ${positionName}",
+		doc_badge = "ป้ายตรา DOC",
+		doc_badge_details = "DOC | ${firstName} ${lastName} | ตำแหน่ง: ${positionName}",
 
 		badge_type_sasp = "ตำรวจรัฐ San Andreas",
 		badge_type_bcso = "สโนว์โชริฟ์แควนตี้รัฐ Blaine",
@@ -6278,6 +6317,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		badge_type_bcfd = "แผนกดับเพลิง Blaine County",
 		badge_type_state_security = "แผนกรักษารัฐ",
 		badge_type_doj = "กรมดำเนินคดี",
+		badge_type_doc = "กรมราชทัณฑ์",
 
 		badge_type_short_sasp = "SASP",
 		badge_type_short_bcso = "BCSO",
@@ -6289,7 +6329,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		badge_type_short_ems = "EMS",
 		badge_type_short_doctor = "แพทย์",
 		badge_type_short_bcfd = "BCFD",
-		badge_type_short_state_security = "SSD"
+		badge_type_short_state_security = "SSD",
+		badge_type_short_doc = "DOC"
 	},
 
 	import_export = {
@@ -6419,6 +6460,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		police_store = "ร้านค้าตำรวจ",
 		fib_store = "ร้านค้า FIB",
 		police_badge_store = "โต๊ะขายเครื่องหมายตำรวจ",
+		doc_badge_store = "จุดขายป้ายตรากรมราชทัณฑ์",
 		flower_store = "ร้านขายดอกไม้ของ Stacy",
 		gift_store = "Del Perro Gifts",
 		ems_store = "ร้านค้า EMS",
@@ -6626,6 +6668,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		state_security_badge_description = "บัตรประจำตัวสำหรับเอเยนต์ของ State Security",
 		doj_badge = "เหรียญตรา DOJ",
 		doj_badge_description = "เหรียญตราสำหรับพนักงานของกรมยุติธรรม",
+		doc_badge = "ป้ายตรา DOC",
+		doc_badge_description = "ป้ายตราสำหรับพนักงานกรมราชทัณฑ์",
 
 		radio_chop_shop = "วิทยุช็อปช็อป",
 		radio_chop_shop_description = "ใช้ในการรับสารสนเทศเกี่ยวกับยานพาหนะที่ 'ร้อน' จากผู้ดำเนินการช็อปช็อปที่ไม่มีอยู่จริง",
