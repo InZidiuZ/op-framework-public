@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["meme-valleygirl"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		put_boombox_in_trunk = "Press ~INPUT_ENTER~ to like, Put the boombox in the trunk.",
 		put_player_in_trunk = "Press ~INPUT_ENTER~ to like, Put the player in the trunk.",
 		put_player_in_seat = "[${VehicleEnterKey}] Place in the, Like, Seat",
+		putting_player_in_seat = "Putting in Seat",
 		trunk_interaction_display = "[${VehicleEnterKey}] Climb Out [${InteractionKey}] Open/Close Trunk",
 		trunk_open_close_display = "[${InteractionKey}] Open/Close the Trunk",
+		trunk_get_out_display = "[${VehicleEnterKey}] Get Out",
 		boombox_already_in_trunk = "There's, like, already a boombox in this trunk.",
 		the_trunk_is_occupied = "The trunk is, like, already taken.",
 		unable_to_toggle_carry = "I, like, think you need to wait a bit before toggling the carry.",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		freecam_ban = "Honey, you're like not in your body right now or something!",
 		honeypot_ban = "You can't, like, switch to creative mode without permission, duh!",
 		hotwire_driving_ban = "I stole me mum's car and they caught me!",
-		illegal_freeze_ban = "Why would you want frozen food? Like, warm food is way better!",
-		illegal_ped_change_ban = "You shouldn't, like, give yourself plastic surgery or something, that's dangerous!",
+		illegal_freeze_ban = "OMG, like, wandering free is cool, but you can't mess with physics, ya know? Sir Isaac Newton wouldn't dig it.",
+		illegal_ped_change_ban = "Ugh, ID theft is, like, a major bummer! Characters get messed up every year!",
 		illegal_spectating_ban = "Sorry, babe, you need to be an FIB Agent to creep on other players or use /gamemode spectator to spectate.",
 		illegal_vehicle_modifier_ban = "We ain't no Fast and Furious fam, so sorry, sis, you can't modify your ride here.",
 		invincibility_ban = "Aw, love, you ain't no Black Knight. You can't be invincible.",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		vehicle_modification_ban = "You, like, totally couldn't find the headlight fluid for your car.",
 		vehicle_spam_ban = "Counter terrorists like totally win.",
 		vehicle_spawn_ban = "You tried to use redstone on a minecart but, like, didn't have powered rails - sorry not sorry.",
-		weapon_spawn_ban = "Like, you tried to take the \"Pay to Win Route\" of FiveM, but really you just paid to get banned, whatevs.",
+		weapon_spawn_ban = "Tried to get a rabbit outta the hat, and ended up with a bazooka? Way harsh!",
+		high_damage_ban = "Uh oh, you did too much damage. You're, like, banned for causing total chaos.",
+		suspicious_explosion_ban = "Sorry, but this isn't like a Michael Bay movie. No crazy pyrotechnics allowed.",
 
 		mp_f_freemode_01_label = "Freemode (female), woo!",
 		mp_m_freemode_01_label = "Freemode (male), dude!",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		notification_distance_taze = "Anti-Cheat Alert: ${displayName} totally tazed someone from like really far away (${distance}m), like not cool!",
 		notification_bad_screen_word = "Anti-Cheat Alert: ${displayName} has like ${count} trigger word(s) on their screen, omg that's like so inappropriate!",
+		notification_suspicious_explosion = "Hey, like, heads up: ${displayName} triggered an explosion of the ${explosionType} variety.",
 
 		notification_freecam_detected = "OMG! Anti-cheat alert! Someone's using a freecam!",
 		notification_illegal_vehicle_modifier = "Oh no! Someone's messing with their ride! Anti-cheat is on to them.",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		notification_illegal_weapon = "Anti-cheat is totally buggin'! Someone's using an illegal weapon!",
 		notification_spawned_object = "Uh-Oh: You Spawned an Object!",
 		notification_driving_hotwire = "Drama Alert: Driving While Hotwiring!",
+		notification_semi_godmode = "Anti-Cheat Alert: You're, like, in Semi-Godmode or something.",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		runtime_texture_screenshot = "Anti-Cheat: Totally Chill Runtime Texture (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Anti-Cheat: Just, like, Bad Screen Word (${words})",
 		freecam_detected_screenshot = "Anti-Cheat: OMG! Freecam Detected, like, ${distance}m away!",
-		driving_hotwire_screenshot = "Anti-Cheat: So, Like, Driving while Hotwire is Just Wrong!"
+		driving_hotwire_screenshot = "Anti-Cheat: So, Like, Driving while Hotwire is Just Wrong!",
+		semi_godmode_screenshot = "Anti-Cheat Alert: Semi-Godmode detected. That's so not cool."
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		wipe_command_parameter_ignore_local_entities = "like ignore local stuff",
 		wipe_command_parameter_ignore_local_entities_help = "Like, ignore non-networked entities? If you're cleaning up from a cheater, it is recommended you put this to `true` or `1`. Ugh, eww no cheats allowed!",
 		wipe_command_parameter_model_name = "model name",
-		wipe_command_parameter_model_name_help = "Like, if you only wanna delete things of a certain model name, put the name here. If not, just leave it blank, at `false` or `0`. You can also use `vehicles` or `peds`.",
+		wipe_command_parameter_model_name_help = "If you, like, only want to delete stuff of a certain model name, put it here. Like, cars, people, or objects. Otherwise, leave blank or set to `false` or `0`.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "noclip",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "toggle_big_inventory",
-		toggle_big_inventory_command_help = "OMG, like temporarily increases your characters inventory slots to 250.",
+		toggle_big_inventory_command_help = "OMG, like, you can TOTES get more inventory space for a hot sec! You'll have 250 slots, but don't forget it's only TEMP and will reset when you log off.",
 		toggle_big_inventory_command_substitutes = "big_inventory",
 
 		item_lookup_command = "lookup an item",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		item_lookup_command_parameter_item_id = "item ID",
 		item_lookup_command_parameter_item_id_help = "The unique identification number for the item you wanna look up.",
 		item_lookup_command_substitutes = "item search",
+
+		clear_evidence_command = "clear_evidence",
+		clear_evidence_command_help = "Ugh, you can totally clear a certain evidence locker, but be warned, you can't undo it!",
+		clear_evidence_command_parameter_evidence_id = "evidence id",
+		clear_evidence_command_parameter_evidence_id_help = "The ID of the evidence locker you want to totally wipe clean.",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "clear map",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		battle_royale = "Battle Royale, like, so fierce",
 		arena_gun_game = "Arena Gun Game, so rad!",
 		lottery = "Lottery, yes please!",
+		jackpot = "Jackpot! As if, so rad!",
 		daily_tasks = "Daily Tasks, gotta stay on fleek",
 		categories = "Categories, like OMG!",
 		refresh = "Refresh, duh!",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		xp = "XP, like experience points",
 		money_won = "Money Won, like cash money",
 		average_percentage = "Average Percentage, like your general performance",
-		streak = "Streak, like OMG"
+		streak = "Streak, like OMG",
+		money_lost = "Like, bummer, dude, you lost some cash. That sucks.",
+		net = "Net (da money you got)",
+		net_ratio = "Net Ratio (how much cash you got)",
+		items_gambled = "Items Gambled (things you betted)"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		attachment_label_fmj = "Totally boss Full Metal Jacket Rounds",
 		attachment_label_scope_nv = "Night Vision Scope, hella tight",
 		attachment_label_scope_thermal = "Thermal Scope, bitchin'",
+		attachment_label_stock = "Stock (inventory of stuff)",
 
 		attachment_label_luxury1 = "The Pimp, like sooo sick",
 		attachment_label_luxury2 = "The Ballas, sooo lush",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		showing_flags = "Flags are popping up!",
 		not_showing_flags = "No flags in sight.",
 
+		flag = "Flag ${flagId}",
+
 		flag_swap_leaderboard = "Flag Swap Leaderboard",
 		ongoing = "Totally happening right now",
 		not_ongoing = "Not happening rn :/",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "Ew, just one flag? Lame.",
 		flag_count = "${flags}, like, totally flags",
-		players_with_most_flags_will_show_here = "The players with the most amount of flags, like, will be shown here."
+		players_with_most_flags_will_show_here = "The players with the most amount of flags, like, will be shown here.",
+		flags_on_ground = "Ew, flags on the ground?! Total barf: ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		los_santos_golf_club = "Los Santos Golf Club",
 		arcade_bar = "Arcade Bar",
 		japanese_restaurant = "Japanese Restaurant",
+		japanese_restaurant_kitchen = "Japanese Restaurant Kitchen (a place with good sushi)",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Grain Mill",
 		pd_prefix = "PD",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		invalid_item_id = "Uh, like that's not a valid item ID.",
 		item_not_found = "Couldn't find that item with ID `${itemId}`, so lame.",
 		item_lookup = "${label} (${itemId}) is currently in ${inventoryName}:${inventorySlot}, like seriously",
+
+		invalid_evidence_id = "That evidence ID is bogus, like, not even cool.",
+		not_near_evidence_locker = "Uh, hello? You need to be closer to the evidence locker to do that.",
+		clear_evidence_success = "Cleared that evidence like a boss! ID `${evidenceId}` is gone!",
+		clear_evidence_failed = "Sorry, clearing that evidence is like, not happening.",
+
+		clear_evidence_logs_title = "Cleared Evidence",
+		clear_evidence_logs_details = "${consoleName} was totally a boss and cleared evidence with ID `${evidenceId}`. Like, deleted ${deleted} thing(s) and kept ${kept} though.",
 
 		big_inventory_disabled = "Reset my inventory slots, I guess.",
 		big_inventory_enabled = "OMG, my inventory just got bigger!",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		move_to_wash = "Omigod, move here to wash the car",
 		vehicle_too_clean = "The car is, like, too clean to be washed.",
 		move_to_put_fake_plate = "Go here to put on a fake license plate.",
-		unable_to_repair = "You can't fix the car while other players are inside.",
 		failed_lockpicking = "Lame, failed to lockpick",
 		lockpicking_succeeded = "Yasss, lockpicking like a boss",
 		hotwiring_vehicle = "Hotwiring Ride",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		press_to_deposit = "Like, press ~INPUT_REPLAY_SHOWHOTKEY~ to deposit items to the Online Jackpot.",
 		can_only_withdraw_at_casino = "Sorry not sorry, but you can only withdraw at the Casino. Sucks, I know.",
 
+		take_fee_no_permissions = "Player like, tried to take jackpot fees without proper permissions. Rude!",
+		took_jackpot_fees = "Took jackpot fees. Removed ${removedTotalItems} items worth like, $${removedTotalWorth} from ${inventories} inventories. So extra!",
+
 		jackpot = "Awesome Sauce Jackpot!",
 		inventory = "Stash",
 		history = "Chronicles",
-		no_items_in_inventory = "Chillax, it looks like you haven't stashed any item in your virtual stash.",
-		you_can_deposit_at_the_casino = "You can deposit your items at the casino, duh!",
-		close = "Close",
 		bet = "Bet, like seriously",
-		your_chance = "Your Chance: ${chance}% - duh, don't mess it up",
-		character_bet = "${characterName} just bet ${itemAmount} item(s) worth $${itemWorth} - you go girl!",
-		pot = "Pot: $${jackpotWorth} - big cha-ching",
-		items = "Items: ${jackpotItemAmount} - yeah, that's right",
-		withdraw = "Withdraw (${withdrawAmount}) - cashing out!",
-		quick_sell = "Quick Sell ($${quickSellWorth}) - quick cash!",
-		inventory_value = "Value: like, $$${inventoryWorth}",
-		inventory_total_items = "Total Items: ${inventoryTotalItems}, just so you know.",
-		daily_fee_information = "OMG, at 6AM UTC like, every day, items worth >= 5% of your total inventory value will be removed as a 'storage fee'.",
-
-		take_fee_no_permissions = "Player like, tried to take jackpot fees without proper permissions. Rude!",
-		took_jackpot_fees = "Took jackpot fees. Removed ${removedTotalItems} items worth like, $${removedTotalWorth} from ${inventories} inventories. So extra!"
+		your_chance = "Your chance of success: ${chance}%",
+		pot = "Pot: $$${pot}, like, OMG",
+		items = "Items: ${items}, total Valley Girl awesomeness",
+		time = "Time: ${time}s, like, how long we been at this?",
+		chatters = "Chatters: ${chatters}, who's, like, chatting it up?",
+		send_a_message = "Send a message..., like, drop some words",
+		bet_placed = "${name} bet ${count} item(s) worth $${worth}, that's like, totally rad",
+		bet_item = "${amount}x ${name} ($${worth}), like, I need that in my life",
+		value = "Value: $${value}, like, worth its weight in gold",
+		total_items = "Total Items: ${totalItems}, like, a whole lotta stuff",
+		withdraw = "Withdraw (${amount}), like, I need my money now",
+		quick_sell = "Quick Sell ($${worth}), like, cha-ching, sold!",
+		storage_fee_warning = "At 6AM UTC every day, items worth >= 5% of your total inventory value will be removed as a 'storage fee'. Just sayin'.",
+		item_with_worth = "${label} (${worth} dollars, like totally)",
+		select_all = "Check 'em all, duh",
+		deselect_all = "Uncheck 'em all, duh",
+		bet_with_amount = "Bet ($${amount} dollars, like totally)",
+		close = "Close",
+		no_items_in_inventory = "Chillax, it looks like you haven't stashed any item in your virtual stash.",
+		deposit_at_casino = "You can totally drop off your stuff at the casino, like duh",
+		sort = "Organize",
+		player_won_pot = "${name} totally scored $${amount} like ${timeAgo} ago, with a ${chance}% chance! Like, awesome!",
+		the_ticket_was = "The ticket was ${ticket}. (da ticket was like ${ticket})",
+		recent_pots_will_show_here = "Recent pots will show up here. (recent bets are here)"
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		random = "Like totally random, dude!",
 		beginner = "For all you newbies out there, this one's fer you!",
 		custom = "Custom just means like, we made it our own, ya know?",
+
+		job_low = "Totally easy job",
+		job_medium = "Kinda tough job",
+		job_high = "Like, super hard job",
 
 		appreciated_tier = "Appreciated Tier, you're appreciated but not quite there yet, ya feel?",
 		respected_tier = "Respected Tier, like totally respectable, ya know?",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		bad_screen_word_title = "Bad Screen Words, Duh",
 		bad_screen_word_about = "In here every player who has been detected to, like, have certain like words on their lame screen is listed. This should help in finding players who are potential modders, ugh!",
-
-		freecam_detections_title = "Freecam Detections, OMG",
-		freecam_detections_about = "In here every player who has been detected to be using a freecam is listed. This should help in finding players who are potential modders, like, seriously.",
 
 		damage_modifier_name = "Player Name",
 		damage_modifier_expected = "Expected",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		better_stamina = "You'll be able to run without running out of stamina for ${duration} minutes. How fab!",
 		more_inventory_space = "OMG, like totally have an extra ${amount} slots in ur inventory for ${duration} mins!",
 
-		buffs_note = "Just a heads up, the buffs won't kick in until you, like, leave the building."
+		buffs_note = "Just a heads up, the buffs won't kick in until you, like, leave the building.",
+
+		press_to_prepare_food = "[${InteractionKey}] Prepare Food (to make food press ${InteractionKey})",
+		prepare_food = "Prepare Food (make food)",
+
+		kissaki_kitchen = "Kissaki Kitchen (a fancy place with delicious food)",
+
+		craft = "Craft (make something cool)",
+		starting = "Starting (getting going)"
 	},
 
 	riot_mode = {

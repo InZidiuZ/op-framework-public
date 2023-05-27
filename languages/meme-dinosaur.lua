@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["meme-dinosaur"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		put_boombox_in_trunk = "Press ~INPUT_ENTER~ to stash boombox in trunk!",
 		put_player_in_trunk = "Press ~INPUT_ENTER~ to toss dino in trunk!",
 		put_player_in_seat = "[${VehicleEnterKey}] Place in Seat",
+		putting_player_in_seat = "Placing in nest",
 		trunk_interaction_display = "[${VehicleEnterKey}] Rrrawwwrr Out [${InteractionKey}] Open/Close Trunk",
 		trunk_open_close_display = "[${InteractionKey}] Open/Close Trunk",
+		trunk_get_out_display = "[${VehicleEnterKey}] Hatch out",
 		boombox_already_in_trunk = "Rrrawwwrr! There is already a boombox in the trunk.",
 		the_trunk_is_occupied = "Rrrowr! The trunk is occupied.",
 		unable_to_toggle_carry = "Please wait a bit before toggling the carry.",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		freecam_ban = "You seem to have had an out of body experience. You belong in body, not out of it.",
 		honeypot_ban = "You attempted to toggle your creative mode, but didn't have the permissions to do so. Only the sharptooth have such power.",
 		hotwire_driving_ban = "Vroom Vroom, me in me egg car. Not allowed to hatch that egg.",
-		illegal_freeze_ban = "You know warm food is a lot better than frozen food? Frozen time is not allowed.",
-		illegal_ped_change_ban = "Its dangerous to perform plastic surgery on yourself. Stick to your own scutes.",
+		illegal_freeze_ban = "While spirits may roam free, we dinosaurs are bound by the laws of physics. Sir Isaac Newton wouldn't have it any other way.",
+		illegal_ped_change_ban = "Identity theft is not a joke, Jim! Millions of dinosaurs suffer every year.",
 		illegal_spectating_ban = "You must be a FIB Agent to watch other players or use /gamemode spectator before spectating. Rawr!",
 		illegal_vehicle_modifier_ban = "Unlike Dom Toretto from Fast and Furious, we dinos don't consider you family. Grrrr...",
 		invincibility_ban = "You are not the Black Knight, you may not be invincible. Roarrr!",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		vehicle_modification_ban = "No headlight fluid for car. Sorry not sorry.",
 		vehicle_spam_ban = "Counter dinos win. No spamming vehicles.",
 		vehicle_spawn_ban = "You try use redstone on minecart without powered rails? No vehicle spawn, sorry!",
-		weapon_spawn_ban = "You tried to use the \"Pay to Win Route\" of FiveM, which is not the way of the mighty Dinosaurs. You have been banished.",
+		weapon_spawn_ban = "Attempted to pull a rabbit out of the hat, found a bazooka instead.",
+		high_damage_ban = "Your strength has caused an imbalance in our prehistoric realm, resulting in banishment.",
+		suspicious_explosion_ban = "Sorry, but excessive use of fire and explosions is not allowed in this era.",
 
 		mp_f_freemode_01_label = "Free roam (female)",
 		mp_m_freemode_01_label = "Free roam (male)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} took down a foe with a taser from a very far distance (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} has seen ${count} concerning word(s) on their screen; please investigate.",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} triggered a ${explosionType} explosion.",
 
 		notification_freecam_detected = "Ruu-speak: Freecam detected! Anti-Cheat activated!",
 		notification_illegal_vehicle_modifier = "Ruu-speak: Vehicle modified illegally! Anti-Cheat activated!",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		notification_illegal_weapon = "Ruu-speak: Illegal weapon detected! Anti-Cheat activated!",
 		notification_spawned_object = "Argh! Spawned Object",
 		notification_driving_hotwire = "Argh! Driving while Hotwire",
+		notification_semi_godmode = "Anti-Cheat: Semi-Godmode",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus (GRRRR)",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		runtime_texture_screenshot = "Anti-Cheat: Meep! Runtime Texture (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Anti-Cheat: Hiss! Bad Screen Word (${words})",
 		freecam_detected_screenshot = "Anti-Cheat: Rarr! Freecam Detected (${distance}m)",
-		driving_hotwire_screenshot = "Anti-Cheat: Chomp! Driving while Hotwire"
+		driving_hotwire_screenshot = "Anti-Cheat: Chomp! Driving while Hotwire",
+		semi_godmode_screenshot = "Anti-Cheat: Semi-Godmode"
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		wipe_command_parameter_ignore_local_entities = "ignore local dinos",
 		wipe_command_parameter_ignore_local_entities_help = "Ignore non-connected dinos? If you're cleaning up from a cheater, it is recommended you put this to `true` or `1`.",
 		wipe_command_parameter_model_name = "thickscalers or meat-eaters",
-		wipe_command_parameter_model_name_help = "If you want to destroy entities of a certain type of dinosaur, insert the type of dinosaur here such as 'thickscalers' or 'meat-eaters'. Otherwise leave blank.",
+		wipe_command_parameter_model_name_help = "If you want to delete entities with a specific prehistoric species name, please indicate it here. Otherwise, leave blank or set it to `false` or `0`. You can also set this to `nestlings`, `hatchlings`, or `objects`.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "time traveler",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "rawr_toggle_big_inventory",
-		toggle_big_inventory_command_help = "Temporarily rawr-increases your character's inventory slots to 250.",
+		toggle_big_inventory_command_help = "RAWR! Temporarily increases yer characters inventory slots to 250. (This is TEMPORARY and will reset when ye relog)",
 		toggle_big_inventory_command_substitutes = "rawr_big_inventory",
 
 		item_lookup_command = "rawr_lookup",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		item_lookup_command_parameter_item_id = "eatable ID",
 		item_lookup_command_parameter_item_id_help = "The ID of the eatable you want to lookup.",
 		item_lookup_command_substitutes = "eatable_look",
+
+		clear_evidence_command = "clear_evidence",
+		clear_evidence_command_help = "Clears the specified evidence locker. This action cannot be undone! BONES!",
+		clear_evidence_command_parameter_evidence_id = "evidence id",
+		clear_evidence_command_parameter_evidence_id_help = "The ID of the evidence locker ye want to clear. DIG DEEP!",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "clear_map",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		battle_royale = "Dino Battle Royale",
 		arena_gun_game = "Dino Arena Gun Game",
 		lottery = "Dino Lottery",
+		jackpot = "Dino-strike!",
 		daily_tasks = "Dino Daily Tasks",
 		categories = "Roarroars",
 		refresh = "Chomp chomp",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		xp = "Experience",
 		money_won = "Prey Looted",
 		average_percentage = "N/A",
-		streak = "Skreeek"
+		streak = "Skreeek",
+		money_lost = "Money Lost",
+		net = "Roar!",
+		net_ratio = "Roar Ratio",
+		items_gambled = "Items Chomped"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		attachment_label_fmj = "Full Metal Jacket Ooga Booga",
 		attachment_label_scope_nv = "Dark Sleep Scope",
 		attachment_label_scope_thermal = "Fire Vision Scope",
+		attachment_label_stock = "Stock",
 
 		attachment_label_luxury1 = "The Rawr",
 		attachment_label_luxury2 = "The Roar",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		showing_flags = "Skreechs visible.",
 		not_showing_flags = "Skreechs hidden.",
 
+		flag = "ROAR! Flag ${flagId}",
+
 		flag_swap_leaderboard = "Roar Swish Roar Leaderboard",
 		ongoing = "Meat On",
 		not_ongoing = "Idle Grunt",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "1 flag",
 		flag_count = "${flags} eggs collected",
-		players_with_most_flags_will_show_here = "Mightiest of Hunters"
+		players_with_most_flags_will_show_here = "Mightiest of Hunters",
+		flags_on_ground = "Raaah! ${flagsOnGround} flags down there."
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		los_santos_golf_club = "Dino-swing Club",
 		arcade_bar = "Prehistoric Play Pit",
 		japanese_restaurant = "Chomping Grounds Restaurant",
+		japanese_restaurant_kitchen = "Japanese Restaurant Jungle",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Prehistoric Bakery",
 		pd_prefix = "Prehistoric Protectors",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		invalid_item_id = "Roar! Invalid item ID.",
 		item_not_found = "Grrrr! Cannot find item with ID `${itemId}`.",
 		item_lookup = "${label} (${itemId}) currently in ${inventoryName}:${inventorySlot}. Munch Munch!",
+
+		invalid_evidence_id = "Me no understand evidence ID.",
+		not_near_evidence_locker = "You far from evidence locker.",
+		clear_evidence_success = "Evidence with ID `${evidenceId}` gone.",
+		clear_evidence_failed = "Me not able to clear evidence.",
+
+		clear_evidence_logs_title = "Cleared Evidence",
+		clear_evidence_logs_details = "${consoleName} cleared evidence with ID `${evidenceId}`. ${deleted} thing(s) gone, ${kept} thing(s) kept.",
 
 		big_inventory_disabled = "Roar! Resetting character inventory slots to default.",
 		big_inventory_enabled = "Rrrrr! Temporarily increasing your character's inventory slots. More space to hoard things!",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		move_to_wash = "Stomp over here to clean vehicle",
 		vehicle_too_clean = "Vehicle already spotless, no need to clean more!",
 		move_to_put_fake_plate = "Stomp here to put fake license plate",
-		unable_to_repair = "Cannot repair with players still inside vehicle",
 		failed_lockpicking = "Failed to chomp lock",
 		lockpicking_succeeded = "Lock opened with snap",
 		hotwiring_vehicle = "Rarr-Rarr-Rarr-Rarr! Hotwiring Vehicle",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		press_to_deposit = "Roooaaar! Press ~INPUT_REPLAY_SHOWHOTKEY~ to deposit items to the Online Jackpot.",
 		can_only_withdraw_at_casino = "Only allowed to withdraw at the Jurassic Casino. Roaaar!",
 
+		take_fee_no_permissions = "Rawr rawr attempted to take jackpot fees without proper permissions.",
+		took_jackpot_fees = "Rawr rawr fees taken. Removed ${removedTotalItems} rawr worth $${removedTotalWorth} from ${inventories} inventories.",
+
 		jackpot = "Roar!",
 		inventory = "Stomach",
 		history = "Stories",
-		no_items_in_inventory = "No food in stomach.",
-		you_can_deposit_at_the_casino = "You can deposit food at the casino.",
-		close = "Close",
 		bet = "Hunt",
-		your_chance = "Your Odds: ${chance}%",
-		character_bet = "${characterName} hunt ${itemAmount} prey worth $${itemWorth}",
-		pot = "Feast: $${jackpotWorth}",
-		items = "Prey Count: ${jackpotItemAmount}",
-		withdraw = "Digest (${withdrawAmount})",
-		quick_sell = "Trade for Meals ($${quickSellWorth})",
-		inventory_value = "RAWR: $${inventoryWorth}",
-		inventory_total_items = "Total RAWR: ${inventoryTotalItems} items",
-		daily_fee_information = "Rawr rawr 6AM UTC every day, items worth >= 5% of your total inventory value will be removed as a 'storage fee'.",
-
-		take_fee_no_permissions = "Rawr rawr attempted to take jackpot fees without proper permissions.",
-		took_jackpot_fees = "Rawr rawr fees taken. Removed ${removedTotalItems} rawr worth $${removedTotalWorth} from ${inventories} inventories."
+		your_chance = "Chance: ${chance}% - Raaah!",
+		pot = "Rar: $$$${pot} (rar-raf) !",
+		items = "Items: ${items} (gar-gar)",
+		time = "Time: ${time}ra (gak)",
+		chatters = "Chak-chatters: ${chatters} (chak-chak)",
+		send_a_message = "Rak-rak a rarakarakar...",
+		bet_placed = "${name} rarrar ${count} ra-gargarg worth $$$${worth}.",
+		bet_item = "${amount}x ${name} ($$$${worth}) (rar-gar)",
+		value = "Rav-rav: $$$${value} (raf-gar)",
+		total_items = "Total Gar-Gar: ${totalItems} (gar-gar)",
+		withdraw = "Wa-Wa (${amount}) (ra-ra)",
+		quick_sell = "Quick-Gar-Gar ($$$${worth}) (raf-gar-gar)",
+		storage_fee_warning = "At Gak-Gak UTC every rar-gargarg, ra-gargarg worth >= 5% of your rar-rafa inventory rav-rav will be reomved as a 'wa-wa-raf'.",
+		item_with_worth = "${label} (${worth} bones)",
+		select_all = "Me Pick All",
+		deselect_all = "Me No Want All",
+		bet_with_amount = "Me Bet (${amount} bones)",
+		close = "Close",
+		no_items_in_inventory = "No food in stomach.",
+		deposit_at_casino = "Me Deposit Things At Casino",
+		sort = "Me Arrange",
+		player_won_pot = "${name} Won ${amount} bones with a ${chance}% chance ${timeAgo} back.",
+		the_ticket_was = "Ticket Be ${ticket}.",
+		recent_pots_will_show_here = "Recent hot meals for dinos will show up here!"
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		random = "Raaahhh! (Random)",
 		beginner = "Rrraahh! (Beginner)",
 		custom = "Raahhhh! (Custom)",
+
+		job_low = "Small Work",
+		job_medium = "Medium Work",
+		job_high = "Big Work",
 
 		appreciated_tier = "Raaahhh-rarr! (Appreciated Tier)",
 		respected_tier = "Raaaar! (Respected Tier)",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 		bad_screen_word_title = "Bad Words on Screen",
 		bad_screen_word_about = "This is where we list every dino who has been caught with certain words on their screen. We need to find these dinos and make sure they're not using mods to cheat!",
-
-		freecam_detections_title = "Caught Dinos on Freecam",
-		freecam_detections_about = "This is where we list every dino who has been caught using freecam. We need to find these sneaky dinos before they spoil the game for everyone else!",
 
 		damage_modifier_name = "Dino Name",
 		damage_modifier_expected = "Expected",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		better_stamina = "Run without getting tired like a T-Rex! Be able to run without running out of stamina for ${duration} minutes.",
 		more_inventory_space = "Have an additional ${amount} inventory slots for ${duration} minutes.",
 
-		buffs_note = "The buffs will only activate once you have left the vicinity of the building."
+		buffs_note = "The buffs will only activate once you have left the vicinity of the building.",
+
+		press_to_prepare_food = "[${InteractionKey}] Prepare Fresh Meat",
+		prepare_food = "Prepare Fresh Meat",
+
+		kissaki_kitchen = "Kissaki Cuisine",
+
+		craft = "Create",
+		starting = "Hatching"
 	},
 
 	riot_mode = {

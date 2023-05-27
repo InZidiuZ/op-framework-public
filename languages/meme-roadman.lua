@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["meme-roadman"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		put_boombox_in_trunk = "Press ~INPUT_ENTER~ to put the boombox in the boot.",
 		put_player_in_trunk = "Press ~INPUT_ENTER~ to chuck that player in the boot.",
 		put_player_in_seat = "[${VehicleEnterKey}] Put them in a seat fam",
+		putting_player_in_seat = "Putting manz in seat",
 		trunk_interaction_display = "[${VehicleEnterKey}] Jump Out [${InteractionKey}] Pop Trunk",
 		trunk_open_close_display = "[${InteractionKey}] Pop/Close Trunk",
+		trunk_get_out_display = "[${VehicleEnterKey}] Climb Out",
 		boombox_already_in_trunk = "Yo, there's already a boombox in the trunk fam.",
 		the_trunk_is_occupied = "Oi, the trunk's taken already.",
 		unable_to_toggle_carry = "Hold up, you can't just toggle carrying like that.",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		freecam_ban = "Bruh, you had an out-of-body ting?",
 		honeypot_ban = "You tried to go creative mode, but you ain't got the power for that, innit?",
 		hotwire_driving_ban = "Skrrt skrrt, you tryna steal me whip?",
-		illegal_freeze_ban = "Why you freezing food like that? It's better when it's warm, G.",
-		illegal_ped_change_ban = "Bruh, don't be tryna perform surgery on yourself, it's dangerous.",
+		illegal_freeze_ban = "Oi fam, we can't be defying the laws of physics out here. Even Newton knew that.",
+		illegal_ped_change_ban = "Bruh, you can't go around stealing people's identities. That's not a joke, swear down.",
 		illegal_spectating_ban = "Bruv, only FIB Agents can watch others or use /gamemode spectator before that.",
 		illegal_vehicle_modifier_ban = "We ain't no Toretto family like in the movies fam.",
 		invincibility_ban = "Bruh, you ain't no Black Knight. You can't be invincible.",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		vehicle_modification_ban = "Bruh, you couldn't even find headlight fluid for your ride.",
 		vehicle_spam_ban = "Yo, Counter Terrorists win or whatever.",
 		vehicle_spawn_ban = "Lol, you tried to use redstone on a minecart but you didn't even have powered rails. L.",
-		weapon_spawn_ban = "You tried the \"Pay to Win Route\" of FiveM bruv, now you paid to get banned out 'ere.",
+		weapon_spawn_ban = "Man thought he was gonna pull a rabbit out of the hat, but ended up with a bazooka instead. Feds ain't having it.",
+		high_damage_ban = "You went too hard, fam. We can't let that slide, unna?",
+		suspicious_explosion_ban = "Allow me to translate, still… You can't be causing explosive scenes like Michael Bay films, innit?",
 
 		mp_f_freemode_01_label = "Freemode (mandem) (female)",
 		mp_m_freemode_01_label = "Freemode (mandem) (male)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} tazed someone from a long range (${distance}m). Allow it fam.",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} has ${count} bait word(s) on their screen fam.",
+		notification_suspicious_explosion = "Mandem @ Anti-Cheat: ${displayName} triggered a ${explosionType} explosion.",
 
 		notification_freecam_detected = "Oi, you're glitchin' bruv: Freecam spotted",
 		notification_illegal_vehicle_modifier = "Oi, that ain't legal: Vehicle modifier found",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		notification_illegal_weapon = "Oi, that ain't allowed: Illegal weapon detected",
 		notification_spawned_object = "Anti-Cheat: Man's out here spawning objects for fun and that",
 		notification_driving_hotwire = "Anti-Cheat: Man's out here driving while it's hotwyred",
+		notification_semi_godmode = "Safe g, you've activated Semi-Godmode. Anti-Cheat says nah tho.",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		runtime_texture_screenshot = "Anti-Cheat: Some dodgy texture is runnin' (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Oi blud, stop usin' dem bad words (${words})",
 		freecam_detected_screenshot = "Anti-Cheat: You're freelookin' (${distance}m) away",
-		driving_hotwire_screenshot = "Anti-Cheat: You can't be drivin' while hotwire, fam"
+		driving_hotwire_screenshot = "Anti-Cheat: You can't be drivin' while hotwire, fam",
+		semi_godmode_screenshot = "Oi you, thought you could fool Anti-Cheat with that Semi-Godmode? Gotcha now, wasteman!"
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		wipe_command_parameter_ignore_local_entities = "no local manz",
 		wipe_command_parameter_ignore_local_entities_help = "You wanna ignore the un-networked tingz? If some wasteman's cheating, set this to `true` or `1`.",
 		wipe_command_parameter_model_name = "model name",
-		wipe_command_parameter_model_name_help = "If you only wanna delete stuff of a certain model name, put dat name here. Otherwise leave it blank, at `false` or `0`. You can also put `whips` or `mandems`.",
+		wipe_command_parameter_model_name_help = "If you only want to delete certain mandem/tings, put the name of what you want to get wiped. Else, leave blank (or put false/zero). You can also use `vehicles`, `peds`, or `objects` to wipe those specific tings.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "noclip",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "big up inventory",
-		toggle_big_inventory_command_help = "Temporarily upgrade your character's inventory slots to a whopping 250.",
+		toggle_big_inventory_command_help = "Make your pockets bigger, up it to 250 slots man. (This is only temporary and resets once you log back in)",
 		toggle_big_inventory_command_substitutes = "big_inventory",
 
 		item_lookup_command = "man dem check ting",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		item_lookup_command_parameter_item_id = "item ID",
 		item_lookup_command_parameter_item_id_help = "The ID of the item you're lookin' for.",
 		item_lookup_command_substitutes = "ting",
+
+		clear_evidence_command = "clear_evidence",
+		clear_evidence_command_help = "Swipe all the stuff from a specific evidence locker. This is a solid move and can't be undone!",
+		clear_evidence_command_parameter_evidence_id = "evidence ID",
+		clear_evidence_command_parameter_evidence_id_help = "That ID thing for the evidence locker that needs clearing.",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "clear map",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		battle_royale = "The Endz Royale",
 		arena_gun_game = "Guns blazing inna the 'Dome",
 		lottery = "The P's come easy",
+		jackpot = "Jackpot! Man's rich now.",
 		daily_tasks = "Movements of the day",
 		categories = "Categs",
 		refresh = "Refresk",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		xp = "XP",
 		money_won = "Cash Won",
 		average_percentage = "Avg Percez",
-		streak = "Streakin'"
+		streak = "Streakin'",
+		money_lost = "Fam, man just lost bare P's. Could cry right now.",
+		net = "Money",
+		net_ratio = "Money Ratio",
+		items_gambled = "Items Betted"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		attachment_label_fmj = "FMJ Rounds, fam",
 		attachment_label_scope_nv = "NV Scope, innit",
 		attachment_label_scope_thermal = "Thermal Scope, bruv",
+		attachment_label_stock = "Merchandise",
 
 		attachment_label_luxury1 = "The Pimp, cuz",
 		attachment_label_luxury2 = "The Ballas, blud",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		showing_flags = "Mandem, we showin flags now.",
 		not_showing_flags = "Nah we ain't showin flags no more.",
 
+		flag = "I'm waving my flag ${flagId}",
+
 		flag_swap_leaderboard = "Flag Swap Leaderboard",
 		ongoing = "Live and direct",
 		not_ongoing = "Not really happening",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "Just one flag tho",
 		flag_count = "${flags} flags",
-		players_with_most_flags_will_show_here = "The real OG's with the most flags will be shoutin' out here."
+		players_with_most_flags_will_show_here = "The real OG's with the most flags will be shoutin' out here.",
+		flags_on_ground = "You see them flags on the floor: ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		los_santos_golf_club = "Los Santos Golf Club",
 		arcade_bar = "Arcade Bar",
 		japanese_restaurant = "Sushi Spot",
+		japanese_restaurant_kitchen = "Sushi Bar Kitchen",
 		["945_studios"] = "945 Studios",
 		grain_mill = "The Mill",
 		pd_prefix = "5-0",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		invalid_item_id = "Invalid ID, try again.",
 		item_not_found = "Couldn't find an item with ID `${itemId}`.",
 		item_lookup = "${label} (${itemId}) currently held in ${inventoryName}:${inventorySlot}.",
+
+		invalid_evidence_id = "That ID ain't valid, bruv.",
+		not_near_evidence_locker = "You ain't near the evidence locker, fam.",
+		clear_evidence_success = "Safe, we cleared that evidence with the ID `${evidenceId}`.",
+		clear_evidence_failed = "Nah fam, couldn't clear that evidence.",
+
+		clear_evidence_logs_title = "Cleared Evidence, Bruddah",
+		clear_evidence_logs_details = "${consoleName} cleared evidence with the ID `${evidenceId}`. Erased ${deleted} stuff and kept ${kept} items.",
 
 		big_inventory_disabled = "Reset character inventory slots to default.",
 		big_inventory_enabled = "Yo' inventory slots bein' temporarily increased, fam.",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		move_to_wash = "Get over here to rinse the whip",
 		vehicle_too_clean = "Can't wash the whip, it's already too clean",
 		move_to_put_fake_plate = "Slide over here to fit on a fake plate",
-		unable_to_repair = "You can't sort out the whip while mans are still inside",
 		failed_lockpicking = "Mashed it on lockpicking",
 		lockpicking_succeeded = "Managed to finesse the lockpick",
 		hotwiring_vehicle = "Jackin' Car",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		press_to_deposit = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to deposit items to the Online Jackpot.",
 		can_only_withdraw_at_casino = "Listen mate, you can only withdraw at the Casino, innit.",
 
+		take_fee_no_permissions = "Oi, this ain't your jackpot to take mate. Get the proper permissions first.",
+		took_jackpot_fees = "We took the jackpot fees. We removed ${removedTotalItems} bits worth ££{removedTotalWorth} from ${inventories} inventories.",
+
 		jackpot = "The big one",
 		inventory = "Your stash",
 		history = "The previous hits",
-		no_items_in_inventory = "Y'all ain't got nothin' in your stash.",
-		you_can_deposit_at_the_casino = "You can stash some goods at the casino.",
-		close = "Shut it",
 		bet = "Put it all on",
-		your_chance = "Your shot: ${chance}%",
-		character_bet = "${characterName} put ${itemAmount} things worth $${itemWorth} on the line",
-		pot = "Pot: $${jackpotWorth}",
-		items = "Things: ${jackpotItemAmount}",
-		withdraw = "Cash out (${withdrawAmount})",
-		quick_sell = "Sell quick for ${quickSellWorth} smackeroonis",
-		inventory_value = "Value: ££{inventoryWorth}",
-		inventory_total_items = "Total Items: ${inventoryTotalItems}",
-		daily_fee_information = "Every day at 6AM UTC, we'll be takin' care of items worth >= 5% of your total inventory value as a 'storage fee'.",
-
-		take_fee_no_permissions = "Oi, this ain't your jackpot to take mate. Get the proper permissions first.",
-		took_jackpot_fees = "We took the jackpot fees. We removed ${removedTotalItems} bits worth ££{removedTotalWorth} from ${inventories} inventories."
+		your_chance = "Your chance is ${chance}%.",
+		pot = "Cash: $${pot}",
+		items = "Stuff: ${items}",
+		time = "Time: ${time}s",
+		chatters = "Chatters: ${chatters}",
+		send_a_message = "Spit some game...",
+		bet_placed = "${name} just put $${worth} on the line with ${count} item(s).",
+		bet_item = "${amount}x ${name} ($${worth})",
+		value = "Value: $${value}",
+		total_items = "Total Shit: ${totalItems}",
+		withdraw = "Withdraw (${amount})",
+		quick_sell = "Quick Flip ($${worth})",
+		storage_fee_warning = "Every day at 6AM (UTC), we're taking types worth >= 5% of your net worth as a 'storage fee'. Cheetahs gotta eat.",
+		item_with_worth = "${label} (££{worth})",
+		select_all = "Select everyone cuz",
+		deselect_all = "Select nae one ya get me",
+		bet_with_amount = "Put a bet down for (££{amount})",
+		close = "Shut it",
+		no_items_in_inventory = "Y'all ain't got nothin' in your stash.",
+		deposit_at_casino = "Bruv, you can deposit items at the casino.",
+		sort = "Sort it bruv",
+		player_won_pot = "${name} won ££${amount} with a ${chance}% chance about ${timeAgo}.",
+		the_ticket_was = "The ticket was ${ticket}, ya get me.",
+		recent_pots_will_show_here = "Recent bets will show up here."
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		random = "Bare random",
 		beginner = "Baptism of fire",
 		custom = "Bespoke",
+
+		job_low = "Bruv, this a low paying job",
+		job_medium = "A'ight, this a medium job fam",
+		job_high = "Bruv, this a high payin' job",
 
 		appreciated_tier = "Peak level",
 		respected_tier = "Rated level",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		bad_screen_word_title = "Profanity Filter",
 		bad_screen_word_about = "List of players with profanities detected on their screen. Detects potential modders.",
-
-		freecam_detections_title = "Freecam Detection",
-		freecam_detections_about = "All players detected using freecam listed here. Detects potential modders.",
 
 		damage_modifier_name = "Bredrin Name",
 		damage_modifier_expected = "What's meant to happen",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		better_stamina = "Run fo days witout runnin' outta stamina fo ${duration} mins.",
 		more_inventory_space = "Get an extra ${amount} of space in your pockets for ${duration} minutes, init.",
 
-		buffs_note = "Listen up, dawg. These buffs won't work unless you dip out of the building first."
+		buffs_note = "Listen up, dawg. These buffs won't work unless you dip out of the building first.",
+
+		press_to_prepare_food = "[${InteractionKey}] Make Food",
+		prepare_food = "Make Food",
+
+		kissaki_kitchen = "Kissaki's Kitchen",
+
+		craft = "Make",
+		starting = "Beginning"
 	},
 
 	riot_mode = {

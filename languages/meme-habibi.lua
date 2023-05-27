@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["meme-habibi"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		put_boombox_in_trunk = "اضغط ~INPUT_ENTER~ لوضع صندوق الموسيقى في الصندوق.",
 		put_player_in_trunk = "اضغط ~INPUT_ENTER~ لوضع اللاعب في صندوق السيارة.",
 		put_player_in_seat = "[${VehicleEnterKey}] وضع اللاعب في المقعد",
+		putting_player_in_seat = "Placing in seat",
 		trunk_interaction_display = "[${VehicleEnterKey}] Get out [${InteractionKey}] Open/Close trunk",
 		trunk_open_close_display = "[${InteractionKey}] Open/Close trunk",
+		trunk_get_out_display = "[${VehicleEnterKey}] Get out",
 		boombox_already_in_trunk = "There is already a boombox in the trunk.",
 		the_trunk_is_occupied = "The trunk is occupied.",
 		unable_to_toggle_carry = "Please wait a bit before toggling the carry.",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		freecam_ban = "It seems like you had an out of body experience.",
 		honeypot_ban = "You tried to switch to creative mode, but lacked the necessary permissions.",
 		hotwire_driving_ban = "Vroom Vroom, I'm driving my mom's car!",
-		illegal_freeze_ban = "Did you know that warm food is better than frozen food?",
-		illegal_ped_change_ban = "Performing a plastic surgery on yourself can be quite dangerous.",
+		illegal_freeze_ban = "Although the spirits may roam free, us mere mortals are bound by the laws of physics. Sir Isaac Newton wouldn't want it any other way.",
+		illegal_ped_change_ban = "Identity theft is not a joke, Jim! Millions of characters suffer every year.",
 		illegal_spectating_ban = "Sorry Habibi, you need to be an FIB Agent to watch other players or use /gamemode spectator to spectate.",
 		illegal_vehicle_modifier_ban = "We are not like Dom Toretto and his family from Fast and Furious. Modifying vehicles is not allowed.",
 		invincibility_ban = "Habibi, you may not be invincible. You are not the Black Knight.",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		vehicle_modification_ban = "You can't find headlight fluid for your car.",
 		vehicle_spam_ban = "Counter terrorists win. (You have been banned for spamming vehicle spawn)",
 		vehicle_spawn_ban = "You tried using redstone on a minecart, but forgot to add powered rails. (You have been banned for improper vehicle spawning)",
-		weapon_spawn_ban = "You have attempted the \"Pay to Win Route\" of FiveM where you have paid to get banned.",
+		weapon_spawn_ban = "Tried to pull a rabbit out of the hat, ended up with a bazooka.",
+		high_damage_ban = "You abused your power and brought chaos to our realm.",
+		suspicious_explosion_ban = "We do not encourage excessive use of explosions. Please avoid doing so.",
 
 		mp_f_freemode_01_label = "Freemode (female)",
 		mp_m_freemode_01_label = "Freemode (male)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} has tazed someone over a very long distance (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} has ${count} trigger word(s) on their screen.",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} triggered a ${explosionType} explosion.",
 
 		notification_freecam_detected = "Anti-Cheat: Habibi, someone is using freecam!",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Habibi, someone is modifying their vehicle illegally!",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		notification_illegal_weapon = "Anti-Cheat: Habibi, someone is using an illegal weapon!",
 		notification_spawned_object = "Anti-Cheat: Object spawned",
 		notification_driving_hotwire = "Anti-Cheat: Driving while hotwiring",
+		notification_semi_godmode = "Anti-Cheat: Semi-Godmode",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		runtime_texture_screenshot = "Anti-Cheat: Runtime Texture Modified (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Anti-Cheat: Inappropriate Language Detected (${words})",
 		freecam_detected_screenshot = "Anti-Cheat: Freecam Detected (${distance}m)",
-		driving_hotwire_screenshot = "Anti-Cheat: Hotwiring while Driving Detected"
+		driving_hotwire_screenshot = "Anti-Cheat: Hotwiring while Driving Detected",
+		semi_godmode_screenshot = "Anti-Cheat: Semi-Godmode"
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		wipe_command_parameter_ignore_local_entities = "ignoruj lokalne obiekty",
 		wipe_command_parameter_ignore_local_entities_help = "Ignoruj obiekty poza siecią? Jeśli sprzątasz po oszustach, zaleca się ustawienie tej wartości na `true` lub `1`.",
 		wipe_command_parameter_model_name = "اسم النموذج",
-		wipe_command_parameter_model_name_help = "إذا كنت تريد حذف الكائنات ذات الاسم النموذجي المحدد فقط، يرجى إدخال اسم النموذج هنا. وإلا، اتركه فارغًا، عند 'false' أو '0'. يمكنك أيضًا تعيين هذا إلى 'المركبات' أو 'المشاة'.",
+		wipe_command_parameter_model_name_help = "If you want to delete only entities of a certain model name, please insert the model name here. Otherwise leave it blank, as `false` or `0`. You can also set this to `vehicles`, `peds` or `objects`.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "نوكليب",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "toggle_big_inventory",
-		toggle_big_inventory_command_help = "يزيد مؤقتًا فتحات تخزين شخصيتك إلى 250.",
+		toggle_big_inventory_command_help = "ازداد حجم جيب شخصيتك مؤقتاً إلى 250 خانة. (سيعود إلى الحجم الأصلي عند إعادة تسجيل الدخول)",
 		toggle_big_inventory_command_substitutes = "big_inventory",
 
 		item_lookup_command = "habibi_lookup_item",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		item_lookup_command_parameter_item_id = "item ID",
 		item_lookup_command_parameter_item_id_help = "The identification number of the item you want to find.",
 		item_lookup_command_substitutes = "habibi_item_search", -- "habibi_item",
+
+		clear_evidence_command = "clear_evidence",
+		clear_evidence_command_help = "يمسح الخزانة الأدلة المحددة. لا يمكن التراجع عن هذا الإجراء!",
+		clear_evidence_command_parameter_evidence_id = "هوية الدليل",
+		clear_evidence_command_parameter_evidence_id_help = "هوية خزانة الأدلة التي تريد محوها.",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "habibi_clear_map",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		battle_royale = "Battle Royale", -- "باتل رويال",
 		arena_gun_game = "Arena Gun Game", -- "أرينا غان جيم",
 		lottery = "Latari", -- "لطاري",
+		jackpot = "Jackpot",
 		daily_tasks = "Al-A'maal Al-Yawmiya", -- "الأعمال اليومية",
 		categories = "الفئات",
 		refresh = "إعادة تحميل",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		xp = "الخبرة",
 		money_won = "المال المكسوب",
 		average_percentage = "النسبة المتوسطة",
-		streak = "Streak"
+		streak = "Streak",
+		money_lost = "Money Lost",
+		net = "نسبة الصافي",
+		net_ratio = "نسبة الصافي",
+		items_gambled = "العناصر المراهن عليها"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		attachment_label_fmj = "Kartuši me teli metali",
 		attachment_label_scope_nv = "Scope e natës Vision",
 		attachment_label_scope_thermal = "Scope termik",
+		attachment_label_stock = "المخزون",
 
 		attachment_label_luxury1 = "The Pimp",
 		attachment_label_luxury2 = "The Ballas",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		showing_flags = "I'm showing you where the flags are.",
 		not_showing_flags = "I'm not showing flags anymore.",
 
+		flag = "العلم ${flagId}",
+
 		flag_swap_leaderboard = "لوحة تبادل الأعلام",
 		ongoing = "قائم",
 		not_ongoing = "غير قائم",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "1 علم",
 		flag_count = "${flags} أعلام",
-		players_with_most_flags_will_show_here = "ستظهر هنا اللاعبون الذين يحملون أكبر عدد من الأعلام."
+		players_with_most_flags_will_show_here = "ستظهر هنا اللاعبون الذين يحملون أكبر عدد من الأعلام.",
+		flags_on_ground = "The flags are on the ground: ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		los_santos_golf_club = "نادي الغولف لوس سانتوس",
 		arcade_bar = "نادي الالعاب",
 		japanese_restaurant = "مطعم ياباني",
+		japanese_restaurant_kitchen = "مطبخ مطعم ياباني",
 		["945_studios"] = "945 Studios",
 		grain_mill = "مطحنة الحبوب",
 		pd_prefix = "شرطة",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		invalid_item_id = "رقم المنتج غير صالح.",
 		item_not_found = "لم يتم العثور على المنتج برقم التعريف الخاص '${itemId}'.",
 		item_lookup = "${label} (${itemId}) في الوقت الحالي في ${inventoryName}:${inventorySlot}.",
+
+		invalid_evidence_id = "Invalid evidence identification number.",
+		not_near_evidence_locker = "You are not close to the evidence locker.",
+		clear_evidence_success = "Evidence with identification number `${evidenceId}` has been successfully cleared.",
+		clear_evidence_failed = "Failed to clear evidence.",
+
+		clear_evidence_logs_title = "Cleared Evidence",
+		clear_evidence_logs_details = "${consoleName} cleared the evidence with ID `${evidenceId}`. Deleted ${deleted} item(s) and kept ${kept}.",
 
 		big_inventory_disabled = "إعادة تعيين فتحات مخزن الشخصية الخاصة بك إلى الإعداد الافتراضي.",
 		big_inventory_enabled = "زيادة مؤقتة لفتحات مخزن الشخصية الخاصة بك.",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		move_to_wash = "انتقل هنا لغسل السيارة",
 		vehicle_too_clean = "السيارة نظيفة جداً للغسل.",
 		move_to_put_fake_plate = "انتقل هنا لوضع لوحة ترخيص مزيفة.",
-		unable_to_repair = "لا يمكنك إصلاح السيارة بينما يوجد لاعبون داخلها.",
 		failed_lockpicking = "فشلت عملية فتح القفل",
 		lockpicking_succeeded = "تم فتح القفل بنجاح.",
 		hotwiring_vehicle = "Hotwiring Vehicle",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		press_to_deposit = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to deposit items to the Online Jackpot, Habibi.",
 		can_only_withdraw_at_casino = "Habibi, you can only withdraw at the Casino.",
 
+		take_fee_no_permissions = "حاول أحد اللاعبين الحصول على رسوم الجائزة دون الحصول على الصلاحيات اللازمة.",
+		took_jackpot_fees = "حصلنا على رسوم الجائزة. تم إزالة ${removedTotalItems} عنصرًا بقيمة $${removedTotalWorth} من ${inventories} مخازن.",
+
 		jackpot = "جاكبوت",
 		inventory = "مخزن",
 		history = "تاريخ",
-		no_items_in_inventory = "يبدو أنه ليس لديك أي عناصر في مخزنك الافتراضي.",
-		you_can_deposit_at_the_casino = "يمكنك إيداع العناصر في الكازينو.",
-		close = "اغلاق",
 		bet = "رهان",
-		your_chance = "فرصتك: ${chance}%",
-		character_bet = "${characterName} يراهن ${itemAmount} عنصر(أشياء) بقيمة ${itemWorth} دولار",
-		pot = "الجائزة: $${jackpotWorth}",
-		items = "العناصر: ${jackpotItemAmount}",
-		withdraw = "سحب (${withdrawAmount})",
-		quick_sell = "بيع سريع ( $${quickSellWorth})",
-		inventory_value = "قيمة: $${inventoryWorth}",
-		inventory_total_items = "العناصر الإجمالية: ${inventoryTotalItems}",
-		daily_fee_information = "يتم إزالة العناصر التي تزيد قيمتها عن أو يساوي 5% من قيمة إجمالي محتويات الجرد في الساعة 6 صباحًا بتوقيت UTC تحت اسم 'رسوم التخزين'.",
-
-		take_fee_no_permissions = "حاول أحد اللاعبين الحصول على رسوم الجائزة دون الحصول على الصلاحيات اللازمة.",
-		took_jackpot_fees = "حصلنا على رسوم الجائزة. تم إزالة ${removedTotalItems} عنصرًا بقيمة $${removedTotalWorth} من ${inventories} مخازن."
+		your_chance = "Your chance: ${chance}%",
+		pot = "Jara: $${pot}",
+		items = "Sarakin: ${items}",
+		time = "Wakt: ${time}s",
+		chatters = "Adhiyyatu: ${chatters}",
+		send_a_message = "Saa' ma'a qauli ...",
+		bet_placed = "${name} daraba dukkan ${count} ab'adin da ke sauqar $${worth}.",
+		bet_item = "${amount}x ${name} ($${worth})",
+		value = "Dan adam: $${value}",
+		total_items = "Adadin sarakin: ${totalItems}",
+		withdraw = "Kawo (${amount})",
+		quick_sell = "Fiye da kudi ($${worth})",
+		storage_fee_warning = "Sai a ran 6am UTC kowane rana, adadin ab'adin da ya fi karfin >= 5% dake jihar sarrafa zai cigaba da a share mataimakin wadda aka rubuta 'storage fee'.",
+		item_with_worth = "${label} (${worth} ${currency})",
+		select_all = "Select All",
+		deselect_all = "Deselect All",
+		bet_with_amount = "Bet (${amount} ${currency})",
+		close = "اغلاق",
+		no_items_in_inventory = "يبدو أنه ليس لديك أي عناصر في مخزنك الافتراضي.",
+		deposit_at_casino = "You can deposit items at the casino.",
+		sort = "Sort",
+		player_won_pot = "${name} won ${amount} ${currency} with a ${chance}% chance ${timeAgo} ago.",
+		the_ticket_was = "The ticket was ${ticket}.",
+		recent_pots_will_show_here = "ستعرض الأواني الأخيرة هنا."
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		random = "عَشَوَائِيّ",
 		beginner = "مُبْتَدِئ",
 		custom = "عَرَفِيّ",
+
+		job_low = "Job Low",
+		job_medium = "Job Medium",
+		job_high = "Job High",
 
 		appreciated_tier = "دَرَجَة مُقَدَّرَة",
 		respected_tier = "دَرَجَة مُحْتَرَمَة",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		bad_screen_word_title = "Kalimaat Siyaahiyya Maa-aSira",
 		bad_screen_word_about = "In here, kulli laeib alladhi yurfa' annahu yamlik kalimaat maa-aSira mawquufat 'ala SharTat-hi yuQaal fi-hi. Haadha yasaa'du fi Hudhur al-laeib alladhi yurwunatan lada-hu bi-annahu mumkin an yakun shakhsan mumawwidhan li-l-laeib.",
-
-		freecam_detections_title = "MuHallat al-Muraaqabah li-Kamera al-Tahrir al-Hurr",
-		freecam_detections_about = "In here, kulli laeib alladhi yurfa' annahu yamlik Kamera al-Tahrir al-Hurr TaQisat yuQaal fi-hi. Haadha yasaa'du fi Hudhur al-laeib alladhi yurwunatan lada-hu bi-annahu mumkin an yakun shakhsan mumawwidhan li-l-laeib.",
 
 		damage_modifier_name = "اسم اللاعب",
 		damage_modifier_expected = "المتوقع",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		better_stamina = "You will be able to run without getting tired for ${duration} minutes.",
 		more_inventory_space = "You now have ${amount} more inventory slots for ${duration} minutes.",
 
-		buffs_note = "The buffs will only take effect once you leave the building's area."
+		buffs_note = "The buffs will only take effect once you leave the building's area.",
+
+		press_to_prepare_food = "[${InteractionKey}] تحضير الطعام",
+		prepare_food = "تحضير الطعام",
+
+		kissaki_kitchen = "مطبخ القص",
+
+		craft = "صُنع",
+		starting = "البدء"
 	},
 
 	riot_mode = {

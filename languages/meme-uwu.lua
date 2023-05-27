@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["meme-uwu"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		put_boombox_in_trunk = "Pwess ~INPUT_ENTER~ to put boombox in da twunk UwU.",
 		put_player_in_trunk = "Pwess ~INPUT_ENTER~ to put da pwayer in da twunk OwO.",
 		put_player_in_seat = "[${VehicleEnterKey}] Place in Seat-nyaa~",
+		putting_player_in_seat = "Pwacing In Seat",
 		trunk_interaction_display = "[${VehicleEnterKey}] Cwimb Out [${InteractionKey}] Open/Close Twunk",
 		trunk_open_close_display = "[${InteractionKey}] Open/Close Twunk",
+		trunk_get_out_display = "[${VehicleEnterKey}] Cwimb Out",
 		boombox_already_in_trunk = "Der iws already a boombox in the twunk.",
 		the_trunk_is_occupied = "The twunk is occupied.",
 		unable_to_toggle_carry = "Pwease wait a bit before toggling the carry.",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		freecam_ban = "You seem to have had an out of body experience. *nuzzles*",
 		honeypot_ban = "You attempted to toggle your cweative mode, but didn't have the permissions to do so. :3",
 		hotwire_driving_ban = "Vwoom Vwoom, I'm in me mums car. XD",
-		illegal_freeze_ban = "You know warm food is a lot bettew than frozen food? ^w^",
-		illegal_ped_change_ban = "Its dangerous to perform plastic surgery on yourself. :o",
+		illegal_freeze_ban = "Whiwe spiwits may wandew fweewy, we mewe mowtaws awe bound by the waws of physics. Siw Isaac Newton wouldn't have it any othew way.",
+		illegal_ped_change_ban = "Identity theft is not a joke, Jim! Miwwions of chawactews suffew evewy year.",
 		illegal_spectating_ban = "UwU, you must be an FIB Agent to watch othew players ow use /gamemode spectatow befowe spectating.",
 		illegal_vehicle_modifier_ban = "Unwike Dom Toretto fwom Fast and Fuwious, we awe not family.",
 		invincibility_ban = "You awe not the Black Knight, you may not be invincible UwU.",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		vehicle_modification_ban = "You couldn't find the headlight fluid for your car. ;w;",
 		vehicle_spam_ban = "Countew tewwowists win. uwu",
 		vehicle_spawn_ban = "You twied to use wedstone on a minecart but didn't have powered rails. UvU",
-		weapon_spawn_ban = "UwU Oh No! Yuwu attempted teh \"Pay tuwu Win Woute\" of FiveM whewe yuwu now infact paid tuwu get banned.",
+		weapon_spawn_ban = "Attempted to pull a wabbit out of the hat, found a bazooka instead.",
+		high_damage_ban = "The scawes of power were tilted too far in your favor, disrupting the balance of our realm.",
+		suspicious_explosion_ban = "Sowwy, but this isn't a Michael Bay film. Excessive use of pywotechnics is not permitted.",
 
 		mp_f_freemode_01_label = "Fweemode (femawe)",
 		mp_m_freemode_01_label = "Fweemode (male)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} tazed someone ovew a vewy warge distance (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} has ${count} twigger wowd(s) on theiw scween.",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} twiggered a ${explosionType} explosion.",
 
 		notification_freecam_detected = "OwO Anti-Cheat: Fweecam Detected",
 		notification_illegal_vehicle_modifier = "OwO Anti-Cheat: Vehicle Modifiew",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		notification_illegal_weapon = "OwO Anti-Cheat: Illegal weapon",
 		notification_spawned_object = "Anti-Cheat: Spawnye Owbject",
 		notification_driving_hotwire = "Anti-Cheat: Dwiving whiwe Hotwiyre",
+		notification_semi_godmode = "Anti-Cheat: Semi-Godmode",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		runtime_texture_screenshot = "Anti-Cheat: Wuntime Texture (${textureDict}, ${textureName}) >w<",
 		bad_screen_word_screenshot = "Anti-Cheat: Bad Scween Wowd (${words}) UwU",
 		freecam_detected_screenshot = "Anti-Cheat: Fweecam Detected (${distance}m) owo",
-		driving_hotwire_screenshot = "Anti-Cheat: Dwiving while Hotwire owo"
+		driving_hotwire_screenshot = "Anti-Cheat: Dwiving while Hotwire owo",
+		semi_godmode_screenshot = "Anti-Cheat: Semi-Godmode"
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		wipe_command_parameter_ignore_local_entities = "ignowe wocaw entities",
 		wipe_command_parameter_ignore_local_entities_help = "Ignowe non-netwowked entities? If yuw'we cweanying up fwom a cheatew, it is wecommended yuw put this to `twue` ow `1` UwU.",
 		wipe_command_parameter_model_name = "modew nyamye",
-		wipe_command_parameter_model_name_help = "If uwu awe wanting to only dewete entities of a cewtain modew nyamye, insewt a modew nyamye hewe. UwU can also set this to `vehicwes` ow `peds`. Othewwise weave blank, at `fawse` ow `0`.",
+		wipe_command_parameter_model_name_help = "If you awe wanting to only delete entities of a certain model name, insert a model name hewe. Otherwise leave blank, at `fawse` or `0`. You can also set this to `vehicles`, `peds` or `objects`.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "nyocwip",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "togglwe_big_inventowy",
-		toggle_big_inventory_command_help = "Tempowawily incweases youw chawactews inventowy slots to 250.",
+		toggle_big_inventory_command_help = "Tempowawily incweases youw charactews inventowy swots to 250. (This is TEMPORAWY and will weset when you welog)",
 		toggle_big_inventory_command_substitutes = "big_inventowy",
 
 		item_lookup_command = "item_w00kup",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		item_lookup_command_parameter_item_id = "item id",
 		item_lookup_command_parameter_item_id_help = "The ID of the item yuw want to w00kup.",
 		item_lookup_command_substitutes = "item",
+
+		clear_evidence_command = "cwear_evidence",
+		clear_evidence_command_help = "Cleaws the specified evidence wockew. This action cannot be undone!",
+		clear_evidence_command_parameter_evidence_id = "evidence id",
+		clear_evidence_command_parameter_evidence_id_help = "The ID of the evidence wockew you want to cweaw.",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "cweaw_map",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		battle_royale = "Battle Woyale",
 		arena_gun_game = "Awena Gun Game",
 		lottery = "Wottery",
+		jackpot = "Jackpot",
 		daily_tasks = "Daily Tawks",
 		categories = "Categowies",
 		refresh = "Wefweshing...",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		xp = "XP",
 		money_won = "Money Won",
 		average_percentage = "Avg. Pewcentage",
-		streak = "Stweak"
+		streak = "Stweak",
+		money_lost = "Money Lost",
+		net = "Ny-net",
+		net_ratio = "Ny-net Watio",
+		items_gambled = "Items Gambled (´•ω•`)"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		attachment_label_fmj = "Fuww Metaw Jacket Wounds",
 		attachment_label_scope_nv = "Nyight Vision Scowpe",
 		attachment_label_scope_thermal = "Thewmal Scowpe",
+		attachment_label_stock = "Stowk (*^ω^*)",
 
 		attachment_label_luxury1 = "The Pimp",
 		attachment_label_luxury2 = "The Bawwas",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		showing_flags = "Showin' fwags.",
 		not_showing_flags = "No wongew showin' fwags.",
 
+		flag = "Fwag ${flagId}",
+
 		flag_swap_leaderboard = "Flag Swaap Weadeboawd",
 		ongoing = "Owongoing",
 		not_ongoing = "Not Owongoing",
 		position_and_name = "${position}. ${nyame}",
+		flag_count_one = "1 fwag",
 		flag_count = "${flags} flags (・`ω´・)",
-		players_with_most_flags_will_show_here = "The pwayers with the most amount of flags will show hewe. OwO"
+		players_with_most_flags_will_show_here = "The pwayers with the most amount of flags will show hewe. OwO",
+		flags_on_ground = "Flags on gwound: ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		los_santos_golf_club = "Los Santos Golf Club owo",
 		arcade_bar = "Arcade Bar owo",
 		japanese_restaurant = "Japanese Restaurant owo",
+		japanese_restaurant_kitchen = "Japanese Westawant Kitchen (＾◡＾)",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Grain Mill owo",
 		pd_prefix = "PD owo",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		invalid_item_id = "Invalid item ID. >_<",
 		item_not_found = "Could not find item with ID `${itemId}`. OwO",
 		item_lookup = "${label} (${itemId}) cuwwentwy in ${inventoryName}:${inventorySlot}. UwU",
+
+		invalid_evidence_id = "Invawid evidence ID.",
+		not_near_evidence_locker = "Yuwu awe not neaw evidence wocker.",
+		clear_evidence_success = "Successfuwwy cleared evidence with ID `${evidenceId}`.",
+		clear_evidence_failed = "Failed to clear evidence.",
+
+		clear_evidence_logs_title = "Cleared Evidence",
+		clear_evidence_logs_details = "${consoleName} cleared evidence with ID `${evidenceId}`. Deweted ${deleted} item(s) and kept ${kept}.",
 
 		big_inventory_disabled = "Weset chawactew inventory slots to defauwt. owo",
 		big_inventory_enabled = "Tempowawily incweased youw chawactews inventory slots. ^w^",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		move_to_wash = "Move hewe to wash the vehicwe",
 		vehicle_too_clean = "The vehicwe is too cwean to be washed UwU.",
 		move_to_put_fake_plate = "Move hewe to put on a fake wicense plate OwO.",
-		unable_to_repair = "You are unable to wepair the vehicwe while there awe pwayers inside UwU.",
 		failed_lockpicking = "Failed Lockpicking Owo",
 		lockpicking_succeeded = "Lockpicking Succeeded UwU.",
 		hotwiring_vehicle = "H-hotwirwing Vehic-lu!",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		press_to_deposit = "Pwess ~INPUT_REPLAY_SHOWHOTKEY~ to deposit items to the Onwine Jackpot.",
 		can_only_withdraw_at_casino = "You can onwy withdraw at the Casino. UwU",
 
+		take_fee_no_permissions = "Pwayew attempted to take jackpot fees without pwopew pewmissions.",
+		took_jackpot_fees = "Took jackpot fees. Wemoved ${removedTotalItems} items wowth $${removedTotalWorth} fwom ${inventories} inventories.",
+
 		jackpot = "Jwackpot",
 		inventory = "Inventowy",
 		history = "Histowy",
-		no_items_in_inventory = "Wooks wike you have no items in youw virtuaw inventowy.",
-		you_can_deposit_at_the_casino = "You can deposit items at the casinowo.",
-		close = "Cwose",
 		bet = "Bet",
-		your_chance = "Youw Chance: ${chance}%",
-		character_bet = "${characterName} bet ${itemAmount} item(s) wowth $${itemWorth}",
-		pot = "Pot: $${jackpotWorth}",
-		items = "Items: ${jackpotItemAmount}",
-		withdraw = "Withdraw (${withdrawAmount})",
-		quick_sell = "Quick Sell ($${quickSellWorth})",
-		inventory_value = "Vawue: $${inventoryWorth}",
-		inventory_total_items = "Totaw Items: ${inventoryTotalItems}",
-		daily_fee_information = "At 6AM UTC evewy day, items wowth >= 5% of youw totaw inventory vawue will be wemoved as a 'stowage fee'.",
-
-		take_fee_no_permissions = "Pwayew attempted to take jackpot fees without pwopew pewmissions.",
-		took_jackpot_fees = "Took jackpot fees. Wemoved ${removedTotalItems} items wowth $${removedTotalWorth} fwom ${inventories} inventories."
+		your_chance = "Chance: ${chance}%",
+		pot = "Pot: $${pot} (・`ω´・)",
+		items = "Itemsies: ${items} (*^ω^*)",
+		time = "Timeie-wimey: ${time}s ฅ(＾・ω・＾ฅ)",
+		chatters = "Chatters: ${chatters} (≧◡≦)",
+		send_a_message = "Send a message... (´• ω •`)",
+		bet_placed = "${name} betted ${count} item(s) worth $${worth}. (ﾉ´ヮ`)ﾉ*: ･ﾟ",
+		bet_item = "${amount}x ${name} ($${worth}) (⁄˘⁄ ⁄ ω⁄ ⁄ ˘⁄)♡",
+		value = "Value: $${value} (＾＾)ｂ",
+		total_items = "Total Itemsies: ${totalItems} (✿˵◕‿◕˵✿)",
+		withdraw = "Withdraw (${amount}) (つ✧ω✧)つ",
+		quick_sell = "Quick Sell ($${worth}) (＾◡＾)っ",
+		storage_fee_warning = "At 6AM UTC every day, itemsies worth >= 5% of your total inventory value will be reomved as a 'storage fee'. (╥﹏╥)",
+		item_with_worth = "${label} (UwU $${worth})",
+		select_all = "Sewect Aww",
+		deselect_all = "Deselect Aww",
+		bet_with_amount = "Bet (UwU $${amount})",
+		close = "Cwose",
+		no_items_in_inventory = "Wooks wike you have no items in youw virtuaw inventowy.",
+		deposit_at_casino = "Yu can deposit itemz at teh casino.",
+		sort = "Sortie",
+		player_won_pot = "${name} won UwU $${amount} with a ${chance}% chance ${timeAgo} ago OwO.",
+		the_ticket_was = "Da ticket waz ${ticket} UwU.",
+		recent_pots_will_show_here = "We-cent po-ts wiww show up hewe. (◕‿◕✿)"
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		random = "Wandom",
 		beginner = "Beginnew",
 		custom = "Custom",
+
+		job_low = "Wew Job",
+		job_medium = "Mid Job",
+		job_high = "High Job",
 
 		appreciated_tier = "Appweciated Tier",
 		respected_tier = "Wespected Tier",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 		bad_screen_word_title = "Bad Scween Wowds",
 		bad_screen_word_about = "In hewe evewy playew who has been detected to have cewtain wowds on theiw scween is wisted. This should hewp in finding playews who awe potentiew moddews.",
-
-		freecam_detections_title = "Fweecam Detections",
-		freecam_detections_about = "In hewe evewy playew who has been detected to be using a fweecam is wisted. This should hewp in finding playews who awe potentiew moddews.",
 
 		damage_modifier_name = "Pwayer Nyame",
 		damage_modifier_expected = "Expected OwO",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		better_stamina = "You can wun without getting tiwed and without wunning out of stamina fow ${duration} minutes >w<",
 		more_inventory_space = "H-have an additional ${amount} inventowy swots fow ${duration} minutes.",
 
-		buffs_note = "The buffs will only activate once you have weft the vicinity of the building."
+		buffs_note = "The buffs will only activate once you have weft the vicinity of the building.",
+
+		press_to_prepare_food = "[${IntewactionKey}] Pwepawe Food (っ＾▿＾)",
+		prepare_food = "Pwepawe Food (＾▽＾)",
+
+		kissaki_kitchen = "Kissaki Kitchen (✿◠‿◠)",
+
+		craft = "Cwaft (◕ᴥ◕)",
+		starting = "Stawting (つ✧ω✧)つ"
 	},
 
 	riot_mode = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["meme-spongebob"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		put_boombox_in_trunk = "Grab your jellyfish and press ~INPUT_ENTER~ to put the boombox in the trunk-aroonie.",
 		put_player_in_trunk = "Let's put our friend in the trunk-aroonie. Press ~INPUT_ENTER~ to do it!",
 		put_player_in_seat = "[${VehicleEnterKey}] Ooh! Let's put them in a seat-aroonie!",
+		putting_player_in_seat = "Putting you on the seat!",
 		trunk_interaction_display = "[${VehicleEnterKey}] Get Out [${InteractionKey}] Open/Close Trunky!",
 		trunk_open_close_display = "[${InteractionKey}] Open/Close Trunky!",
+		trunk_get_out_display = "[${VehicleEnterKey}] Climb out of here!",
 		boombox_already_in_trunk = "Oh, Barnacles! There be already a boombox in the trunk, matey!",
 		the_trunk_is_occupied = "The trunk be already taken by someone, arr!",
 		unable_to_toggle_carry = "Hold yer horses, mate! Ye can't toggle the carry right now!",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		freecam_ban = "Ye seem to 'ave had an out o' body experience.",
 		honeypot_ban = "Ye attempted to toggle yer creative mode, but didn't 'ave the permissions to do so.",
 		hotwire_driving_ban = "Vroom Vroom, I'm in me mums car.",
-		illegal_freeze_ban = "Ye know warm grub be a lot better than frozen grub?",
-		illegal_ped_change_ban = "It be dangerous to perform plastic surgery on yer own self.",
+		illegal_freeze_ban = "While spirits may roam free, us mere mortals are bound by the laws of phyisics. Sir Isaac Newton wouldn't have it any other way, me boy!",
+		illegal_ped_change_ban = "Identity theft is not a joke, Jim! Millions of characters suffer every year, ar ar ar!",
 		illegal_spectating_ban = "You gotta be an FIB Agent to watch other players or use /gamemode spectator before spectating, dood.",
 		illegal_vehicle_modifier_ban = "Unlike Dom Toretto from Fast and Furious, we ain't family, meow.",
 		invincibility_ban = "You are not the Black Knight, you can't be invincible, meow.",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		vehicle_modification_ban = "You couldn't find the headlight fluid for your boatmobile.",
 		vehicle_spam_ban = "Krabs won't let you spam boats like that.",
 		vehicle_spawn_ban = "You tried to use redstone on a jellyfish-powered boat but didn't have enough electro-magnetic fields.",
-		weapon_spawn_ban = "You tried to take the \"Pay to Win Route\" of FiveM where you now in-fact payed to get banned, ahahahaha!",
+		weapon_spawn_ban = "Tried to perform magic tricks but ended up finding a bazooka, hahaha!",
+		high_damage_ban = "Oh, it looks like you're too powerful for our world. You broke the balance!",
+		suspicious_explosion_ban = "Oops! Only Michael Bay can have that many explosions. Not you, not here!",
 
 		mp_f_freemode_01_label = "Freemode (squidette)",
 		mp_m_freemode_01_label = "Freemode (spongebro)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} zapped someone from really far away (${distance}m) with the jellyfish stinger, wowza!",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} has ${count} booger word(s) on their screen… gross!",
+		notification_suspicious_explosion = "Anti-Cheat Alert: ${displayName} has caused a suspicious ${explosionType} explosion!",
 
 		notification_freecam_detected = "Oh no! Plankton's created a F-R-E-E-C-A-M!",
 		notification_illegal_vehicle_modifier = "Uh oh! Someone's been tampering with their boat!",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		notification_illegal_weapon = "Woah, that's an illegal weapon! Time to call in Mermaid Man and Barnacle Boy!",
 		notification_spawned_object = "Anti-Cheat: Spawned Object",
 		notification_driving_hotwire = "Anti-Cheat: Driving while Hotwire",
+		notification_semi_godmode = "Anti-Cheat: Semi-Godmode, who lives in a pineapple under the sea?",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		runtime_texture_screenshot = "Anti-Cheat: Runtime Texture (${textureDict}, ${textureName}) Meow",
 		bad_screen_word_screenshot = "Anti-Cheat: Bad Screen Word (${words}) Meow",
 		freecam_detected_screenshot = "Anti-Cheat: Freecam Detected (${distance}m) Meow",
-		driving_hotwire_screenshot = "Anti-Cheat: Driving while Hotwire Meow"
+		driving_hotwire_screenshot = "Anti-Cheat: Driving while Hotwire Meow",
+		semi_godmode_screenshot = "Anti-Cheat: Semi-Godmode, oh barnacles!"
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		wipe_command_parameter_ignore_local_entities = "ignore local entities",
 		wipe_command_parameter_ignore_local_entities_help = "Ignore non-networked entities? If ya cleanin' up from a cheater, it be recommended ya put dis to `true` or `1`.",
 		wipe_command_parameter_model_name = "model name",
-		wipe_command_parameter_model_name_help = "If ye be wantin' to only delete entities of a certain model name, insert a model name here. Otherwise leave blank, at `false` or `0`. Ye can also set this to `boats` or `creatures`.",
+		wipe_command_parameter_model_name_help = "If you're looking to delete specific entities, tell me the name of it right here. Otherwise, leave this blank, false, or 0. You can also choose 'vehicles', 'peds', or 'objects' here.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "noclip",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "toggle_big_inventory, like when you go from a small shell to a big one!",
-		toggle_big_inventory_command_help = "Temporarily increases your characters inventory slots to 250, like a giant clam!",
+		toggle_big_inventory_command_help = "Temporarily increases yer characters' inventory slots to 250. (Dis be TEMPORARY and will reset when ye relog)",
 		toggle_big_inventory_command_substitutes = "big_inventory, because sometimes you need more space for jellyfish jelly!",
 
 		item_lookup_command = "item_lookup",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		item_lookup_command_parameter_item_id = "item ID, arrr",
 		item_lookup_command_parameter_item_id_help = "The ID of the item ye be wantin' to look up.",
 		item_lookup_command_substitutes = "item",
+
+		clear_evidence_command = "clear_evidence",
+		clear_evidence_command_help = "Clears tha specified evidence locker. Dis action cannot be undone!",
+		clear_evidence_command_parameter_evidence_id = "evidence id",
+		clear_evidence_command_parameter_evidence_id_help = "Tha ID o' tha evidence locker ye want t' clear.",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "clear_map",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		battle_royale = "Ultimate Battle Royale",
 		arena_gun_game = "Arena o' Gun Game",
 		lottery = "Lucky draw",
+		jackpot = "Krabs' lucky pot!",
 		daily_tasks = "Me to-do list fer today",
 		categories = "Categowies",
 		refresh = "Wefwesh",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		xp = "XP",
 		money_won = "Money Won",
 		average_percentage = "Averagewage Percentage",
-		streak = "Streak-o-rama!"
+		streak = "Streak-o-rama!",
+		money_lost = "Blew my entire savings on kelp shakes!",
+		net = "Netty-net",
+		net_ratio = "Netty-net Ratio",
+		items_gambled = "Items Gambled, like a coin toss!"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		attachment_label_fmj = "Full Metal Jacket Rounds (It makes gun go BOOM!)",
 		attachment_label_scope_nv = "Night Vision Scope (See in da dark like a fancy spy!)",
 		attachment_label_scope_thermal = "Thermal Scope (Sees heat like chili cook-off!)",
+		attachment_label_stock = "Stocky-stock",
 
 		attachment_label_luxury1 = "The Pimp (Lookin' classy, like a real baller!)",
 		attachment_label_luxury2 = "The Ballas (Representin' your set with style!)",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		showing_flags = "ShOwInG fLaGs.",
 		not_showing_flags = "No lOnGeR sHoWiNg FlAgS.",
 
+		flag = "Flag ${flagId}",
+
 		flag_swap_leaderboard = "Flag Swap Leaderboard",
 		ongoing = "Ooooh, it's ongoing!",
 		not_ongoing = "Not happening right now, me boyo!",
 		position_and_name = "${position}. ${name}", -- Example: "1. SpongeBob",
+		flag_count_one = "1 flag",
 		flag_count = "${flags} flags", -- Example: "5 flags",
-		players_with_most_flags_will_show_here = "The players with the most flags will be displayed here, arrrr!"
+		players_with_most_flags_will_show_here = "The players with the most flags will be displayed here, arrrr!",
+		flags_on_ground = "Flags on de ground: ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		los_santos_golf_club = "Los Golf-o-rama Club",
 		arcade_bar = "Arcade-a-rama Bar",
 		japanese_restaurant = "Japaneesy Restaurant-o-rama",
+		japanese_restaurant_kitchen = "Japanese Restaurant Galley",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Grain-o-rama Mill",
 		pd_prefix = "Po-lice-ee Department-o-rama",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		invalid_item_id = "Invalid item ID. That be like trying to catch a jellyfish with a volleyball net.",
 		item_not_found = "I can't seem to find that item with ID `${itemId}`. Are you sure it's here?",
 		item_lookup = "${label} (${itemId}) is currently in ${inventoryName}:${inventorySlot}.",
+
+		invalid_evidence_id = "Invalid evidence ID m8.",
+		not_near_evidence_locker = "You are not near de evidence locker, barnacles!",
+		clear_evidence_success = "Successfully cleared evidence with ID `${evidenceId}`, yippee ki-yay!",
+		clear_evidence_failed = "Failed to clear evidence, aw, tartar sauce!",
+
+		clear_evidence_logs_title = "Cleared Evidence, aye aye, captain!",
+		clear_evidence_logs_details = "${consoleName} cleared evidence with ID `${evidenceId}`. Deleted ${deleted} item(s) and kept ${kept}. Squidward, be proud of me!",
 
 		big_inventory_disabled = "Reset yer inventory to the default slots?",
 		big_inventory_enabled = "I have temporarily increased yer inventory slots, so keep what ye need and drop what ye don't!",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		move_to_wash = "Shift it over here and let's get scrubbin'!",
 		vehicle_too_clean = "This ride is already spic and span, no need for a wash!",
 		move_to_put_fake_plate = "Head over here and let's slap on a phony plate.",
-		unable_to_repair = "Can't repair the ride with folks still aboard, captain!",
 		failed_lockpicking = "Failed at the ol' lockpickin' trick!",
 		lockpicking_succeeded = "Aha! Unlocked her like a charm!",
 		hotwiring_vehicle = "Hotwirin' Vehicle",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		press_to_deposit = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to deposit stuff to the Online Jackpot.",
 		can_only_withdraw_at_casino = "Ya can only take stuff out at the Casino, no other place!",
 
+		take_fee_no_permissions = "Arrrgh! A player tried to take jackpot fees without proper permissions.",
+		took_jackpot_fees = "We got the booty! We've taken ${removedTotalItems} items worth $${removedTotalWorth} from ${inventories} inventories.",
+
 		jackpot = "Jellyfish Jam Jackpot!",
 		inventory = "Treasure Chest",
 		history = "Sea Stories",
-		no_items_in_inventory = "Looks like your treasure is empty.",
-		you_can_deposit_at_the_casino = "You can deposit items at the Krusty Krab.",
-		close = "Arrr, close!",
 		bet = "Bet",
-		your_chance = "Yer Chance: ${chance}%",
-		character_bet = "${characterName} bet ${itemAmount} booty(s) worth $${itemWorth}",
-		pot = "The booty be: $${jackpotWorth}!",
-		items = "Number o' items: ${jackpotItemAmount}",
-		withdraw = "Withdraw (${withdrawAmount})",
-		quick_sell = "Quick Trade ($${quickSellWorth}) to the Barg'n Mart",
-		inventory_value = "Value: $${inventoryWorth} in Krusty Krab dollars",
-		inventory_total_items = "Total Items: ${inventoryTotalItems} items in the treasure chest",
-		daily_fee_information = "At 6AM UTC every day, items worth >= 5% of yer total inventory value will be removed as a 'storage fee'. Ye better keep an eye on it!",
-
-		take_fee_no_permissions = "Arrrgh! A player tried to take jackpot fees without proper permissions.",
-		took_jackpot_fees = "We got the booty! We've taken ${removedTotalItems} items worth $${removedTotalWorth} from ${inventories} inventories."
+		your_chance = "Chance: ${chance}% Meep meep!",
+		pot = "Pot: $${pot} (Squidward Ready to Retire)",
+		items = "Itemsies: ${items}",
+		time = "Timey-Wimey: ${time} secz",
+		chatters = "Chatties: ${chatters}",
+		send_a_message = "Sendeth a message...",
+		bet_placed = "${name} be bettin' ${count} booty(s) worth $${worth}.",
+		bet_item = "${amount}x ${name} ($${worth})",
+		value = "Value: $${value} (Patrick's Wallet)",
+		total_items = "Total Itemsies: ${totalItems}",
+		withdraw = "Withdraaaaw (${amount})",
+		quick_sell = "Quick Sell ($${worth}) (Mr.Krabs Approval)",
+		storage_fee_warning = "Listen up mateys, at 6AM UTC every day, items worth >= 5% of yer total booty will be removed as a 'storage fee'.",
+		item_with_worth = "${label} (worth $${worth} for me penny-pinchin' wallet)",
+		select_all = "Pick all",
+		deselect_all = "Nah",
+		bet_with_amount = "I'll bet $${amount} me boy-o!",
+		close = "Arrr, close!",
+		no_items_in_inventory = "Looks like your treasure is empty.",
+		deposit_at_casino = "Ye can stash yer items at the casino, arr!",
+		sort = "Sort it out",
+		player_won_pot = "${name} be the lucky landlubber who grabbed $${amount} with a ${chance}% chance ${timeAgo} ago, aaarrr!",
+		the_ticket_was = "The ticket was ${ticket}, yarrr!",
+		recent_pots_will_show_here = "Recent pots will showeth up herein."
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		random = "Randomness!",
 		beginner = "Amateuuur!",
 		custom = "Customizatiiooon!",
+
+		job_low = "Scallywag Level Job",
+		job_medium = "Squidward Level Job",
+		job_high = "Barnacle Boy Level Job",
 
 		appreciated_tier = "Appreciated Tier (Aye Aye, Captain!)",
 		respected_tier = "Respected Tier (Respeeeeect!)",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		bad_screen_word_title = "Bad Screeen Wurds",
 		bad_screen_word_about = "In hiah ev'ry playah who has been detected t' have certain wurds on their screeen is listed. This should help in findin' playahs who arr potential moddahs.",
-
-		freecam_detections_title = "Freecam Detections",
-		freecam_detections_about = "In hiah ev'ry playah who has been detected t' be usin' a freecam is listed. This should help in findin' playahs who arr potential moddahs.",
 
 		damage_modifier_name = "Name o' Player",
 		damage_modifier_expected = "Expected",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		better_stamina = "Run without getting tired for ${duration} minutes",
 		more_inventory_space = "Have an additional ${amount} slots in me pockets for ${duration} minutes matey.",
 
-		buffs_note = "The buffs will only activate once ye leave the area of the building."
+		buffs_note = "The buffs will only activate once ye leave the area of the building.",
+
+		press_to_prepare_food = "[${InteractionKey}] Prepare the grub!",
+		prepare_food = "Prepareth Food",
+
+		kissaki_kitchen = "Kissaki Galley",
+
+		craft = "Crafty-craft",
+		starting = "Starting it up"
 	},
 
 	riot_mode = {

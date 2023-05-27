@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["meme-caveman"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		put_boombox_in_trunk = "Press ~INPUT_ENTER~ to put boombox in big box.",
 		put_player_in_trunk = "Press ~INPUT_ENTER~ to put player in big box.",
 		put_player_in_seat = "[${VehicleEnterKey}] Place in seatee",
+		putting_player_in_seat = "Ugh, Place In Seat",
 		trunk_interaction_display = "[${VehicleEnterKey}] Grunt Out [${InteractionKey}] Open/Close Thunk",
 		trunk_open_close_display = "[${InteractionKey}] Open/Close Thunk",
+		trunk_get_out_display = "[${VehicleEnterKey}] Climb Like Monkey",
 		boombox_already_in_trunk = "Thunk already has boombox.",
 		the_trunk_is_occupied = "Thunk is occupied.",
 		unable_to_toggle_carry = "Wait before switching carry.",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		freecam_ban = "You leave body behind and fly with spirit, impossible!",
 		honeypot_ban = "You want be maker of own world like gods, but no power!",
 		hotwire_driving_ban = "Vroom Vroom, me sit in chief's wagon now, no!",
-		illegal_freeze_ban = "Warm mammoth meat better than frozen, no freeze others!",
-		illegal_ped_change_ban = "Changing looks bad and dangerous, no!",
+		illegal_freeze_ban = "Ugh! You stop time like hairy mammoth trapped in tar. You break law of nature. No good. Sir Isaac Newton very unhappy.",
+		illegal_ped_change_ban = "No steal identity. Not funny, Jim! Many characters hurt every year. Very bad!",
 		illegal_spectating_ban = "Me see players only if me FIB Agent or me use /gamemode spectator.",
 		illegal_vehicle_modifier_ban = "No family here. No Dom Toretto from Fast and Furious.",
 		invincibility_ban = "You not Black Knight. You not invincible.",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		vehicle_modification_ban = "You no find headlight fluid for car. Ha! Now car no go.",
 		vehicle_spam_ban = "You annoy with too many cars. Me go counter terrorists.",
 		vehicle_spawn_ban = "You try use redstone on minecart but no have powered rails. Me ban you now.",
-		weapon_spawn_ban = "You try use money to win in FiveM. You get ban now.",
+		weapon_spawn_ban = "You try magic trick. Pull bunny from hat. Bam! Big boom stick instead. No good!",
+		high_damage_ban = "You Too Strong. Get Out of Cave.",
+		suspicious_explosion_ban = "Ugh, Stop Big Boom Boom. You Ban.",
 
 		mp_f_freemode_01_label = "Free (woman)",
 		mp_m_freemode_01_label = "Free (man)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} use taze from very far away (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} have ${count} bad word(s) on screen.",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} Make Big Boom Boom with ${explosionType}.",
 
 		notification_freecam_detected = "Ugg-ugg: Anti-Cheat say you use Freecam!",
 		notification_illegal_vehicle_modifier = "Ugg-ugg: Anti-Cheat say you mess with Car!",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		notification_illegal_weapon = "Ugg-ugg: Anti-Cheat say you use Illegal Weapon!",
 		notification_spawned_object = "Ugh: Spawned Object",
 		notification_driving_hotwire = "Ugh: Driving while Hotwire",
+		notification_semi_godmode = "You not god. You cheat like sneaky cave rat. We catch you.",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		runtime_texture_screenshot = "Me see sneaky tricks. (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Me no like bad words. (${words})",
 		freecam_detected_screenshot = "Me see you from far away. Cheater. (${distance}m)",
-		driving_hotwire_screenshot = "Me see you take car without permission. Me no like. Bad."
+		driving_hotwire_screenshot = "Me see you take car without permission. Me no like. Bad.",
+		semi_godmode_screenshot = "You cheat like sly fox in henhouse. We have proof."
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		wipe_command_parameter_ignore_local_entities = "ug-ug no-see entities",
 		wipe_command_parameter_ignore_local_entities_help = "Ug-Ug no-see? If cleaning up from cheat-ug-ug, then recommend putting to `true` or `1`.",
 		wipe_command_parameter_model_name = "ug-ug ug-ug name",
-		wipe_command_parameter_model_name_help = "If you want only to smash things with certain ug-ug ug-ug name, say here. Otherwise leave blank or say `no want` like dumb dino. You also can say `big things with wheels` or `little guys who walk`.",
+		wipe_command_parameter_model_name_help = "If You Want Delete Only Certain Rocks or Trees, Name Here. Otherwise, Leave Blank. You Also Can Say `UggaUggaCars`, `UggaUggaHumans` or `UggaUggaObjects`.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "no walk",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "toggle_big_rock_sack",
-		toggle_big_inventory_command_help = "Grug, make bigger rock sack for time only!",
+		toggle_big_inventory_command_help = "Ugga ugga! Grog make you carry more stuff. You have 250 slots now. (This is TEMPORARY and reset when you relog)",
 		toggle_big_inventory_command_substitutes = "big_rock_sack",
 
 		item_lookup_command = "ug lookup item",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		item_lookup_command_parameter_item_id = "item id",
 		item_lookup_command_parameter_item_id_help = "Ug id of the item you want to look at",
 		item_lookup_command_substitutes = "ug item",
+
+		clear_evidence_command = "clear_evidence",
+		clear_evidence_command_help = "Grog wipe out all stuff in the chest. No come back!",
+		clear_evidence_command_parameter_evidence_id = "big number",
+		clear_evidence_command_parameter_evidence_id_help = "Big number that tell Grog which chest to wipe.",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "destroy_map",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		battle_royale = "Battle of Ugg",
 		arena_gun_game = "Ugg Gun Game",
 		lottery = "Ugg Lottery",
+		jackpot = "Me hit big luck. Me win all shiny rocks!",
 		daily_tasks = "Ugg Daily Tasks",
 		categories = "Ug Ug (Categories)",
 		refresh = "Ug (Refresh)",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		xp = "XP",
 		money_won = "Ookook for Money Won",
 		average_percentage = "Ookook Average Percentage",
-		streak = "Streak,"
+		streak = "Streak,",
+		money_lost = "Me lose shiny rocks. Me sad.",
+		net = "Ug",
+		net_ratio = "Ug Ratio",
+		items_gambled = "Items Gambled"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		attachment_label_fmj = "Big Metal Pointy Bullets",
 		attachment_label_scope_nv = "Eyeglass Make See Good In Dark",
 		attachment_label_scope_thermal = "Thing Make Hot Stuff Look White",
+		attachment_label_stock = "Stock",
 
 		attachment_label_luxury1 = "Fancy Hat That Say I Am Important",
 		attachment_label_luxury2 = "Gang Hat For Ballas",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		showing_flags = "Me showing flags.",
 		not_showing_flags = "Me no show flags no more.",
 
+		flag = "Me see ${flagId} flag!",
+
 		flag_swap_leaderboard = "Ugg Ugg Flag Swap",
 		ongoing = "Ooh Ooh Ongoing",
 		not_ongoing = "Ugh Ugh Not Ongoing",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "Me see 1 flag!",
 		flag_count = "${flags} big flags",
-		players_with_most_flags_will_show_here = "The cavepeople who grab most big flags will show here."
+		players_with_most_flags_will_show_here = "The cavepeople who grab most big flags will show here.",
+		flags_on_ground = "Ug ah-ah! Flags on ground: ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		los_santos_golf_club = "Rock Hitting Place",
 		arcade_bar = "Game and Drink Cave",
 		japanese_restaurant = "Sushi Eating Place",
+		japanese_restaurant_kitchen = "Caveman restaurant Kitchen",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Grain Crusher",
 		pd_prefix = "Ugh Ugh Force",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		invalid_item_id = "Me no understan'. That item ID not valid.",
 		item_not_found = "Me can't find item with ID `${itemId}`.",
 		item_lookup = "Me find ${label} (${itemId}) in ${inventoryName}:${inventorySlot}.",
+
+		invalid_evidence_id = "Ugh! Invalid evidence ID.",
+		not_near_evidence_locker = "Ugh! You not near evidence locker.",
+		clear_evidence_success = "Ugh! Successfully clear evidence with ID `${evidenceId}`.",
+		clear_evidence_failed = "Ugh! Failed to clear evidence.",
+
+		clear_evidence_logs_title = "Cleared Evidence",
+		clear_evidence_logs_details = "${consoleName} cleared evidence with ID `${evidenceId}`. Deleted ${deleted} item(s) and kept ${kept}.",
 
 		big_inventory_disabled = "Me put character inventory back to normal.",
 		big_inventory_enabled = "Me make character inventory bigger for short time.",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		move_to_wash = "Grock Move here to wash the grock vehicle",
 		vehicle_too_clean = "Grock! The vehicle too clean for washing",
 		move_to_put_fake_plate = "Grock! Move here to put on the fake license grock plate.",
-		unable_to_repair = "Grock! You not able to repair grock vehicle with players inside.",
 		failed_lockpicking = "Ooh Ooh! Lockpicking Failed!",
 		lockpicking_succeeded = "Ooh yeah! Lockpicking Succeeded!",
 		hotwiring_vehicle = "Ung-Ung, Start big rock!",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		press_to_deposit = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to put goodies in the Online Jackpot.",
 		can_only_withdraw_at_casino = "No way jose, you can only get goods from Casino.",
 
+		take_fee_no_permissions = "Me no let player take jackpot fees without permission.",
+		took_jackpot_fees = "Me took jackpot fees. Me removed ${removedTotalItems} things worth $${removedTotalWorth} from ${inventories} inventories.",
+
 		jackpot = "Big Win",
 		inventory = "Many Stuff",
 		history = "Old Stuff",
-		no_items_in_inventory = "You no have any stuff in your virtual stuff collection.",
-		you_can_deposit_at_the_casino = "You give stuff to casino.",
-		close = "Stop",
 		bet = "Make Bet",
-		your_chance = "Your Chance: ${chance}%",
-		character_bet = "${characterName} bet ${itemAmount} stuff(s) worth $${itemWorth}",
-		pot = "Big Win Stuff Worth: $${jackpotWorth}",
-		items = "Number of Stuff: ${jackpotItemAmount}",
-		withdraw = "Take Back (${withdrawAmount})",
-		quick_sell = "Sell Fast ($${quickSellWorth})",
-		inventory_value = "Me find: $${inventoryWorth}",
-		inventory_total_items = "Total things: ${inventoryTotalItems}",
-		daily_fee_information = "At 6AM UTC every sun come up, things worth >= 5% of your total cave worth will be taken as 'storage fee'.",
-
-		take_fee_no_permissions = "Me no let player take jackpot fees without permission.",
-		took_jackpot_fees = "Me took jackpot fees. Me removed ${removedTotalItems} things worth $${removedTotalWorth} from ${inventories} inventories."
+		your_chance = "Chance: ${chance}%. Ooga booga!",
+		pot = "Ugga ugga: $${pot}",
+		items = "Stuff: ${items}",
+		time = "Me count: ${time}s",
+		chatters = "Chatters: ${chatters}",
+		send_a_message = "Say with mouth...",
+		bet_placed = "${name} make big bet ugga ${count} thing(s) worth $${worth}.",
+		bet_item = "${amount}x ${name} ($${worth})",
+		value = "Value: $${value}",
+		total_items = "Total Stuff: ${totalItems}",
+		withdraw = "Take (${amount})",
+		quick_sell = "Quick Sell ($${worth})",
+		storage_fee_warning = "At sun go up and down (6AM UTC) every day, stuff worth >= 5% of all stuff in your gruntug will get taken as 'storage fee'.",
+		item_with_worth = "${label} (Me give shiny rock ${worth})",
+		select_all = "Me want all",
+		deselect_all = "Me no want any",
+		bet_with_amount = "Me bet (Me give shiny rock $${amount})",
+		close = "Stop",
+		no_items_in_inventory = "You no have any stuff in your virtual stuff collection.",
+		deposit_at_casino = "You can give shiny rocks to casino.",
+		sort = "Sort (Me organize)",
+		player_won_pot = "${name} win big shiny rock $${amount} with a ${chance}% chance ${timeAgo} ago.",
+		the_ticket_was = "Ticket say ${ticket}.",
+		recent_pots_will_show_here = "Recent pots show here."
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		random = "No sense-much",
 		beginner = "Newbie",
 		custom = "Tailored",
+
+		job_low = "Low Job (Me work hard for little shiny rock)",
+		job_medium = "Medium Job (Me work medium hard for medium shiny rock)",
+		job_high = "High Job (Me work extra hard for many shiny rocks)",
 
 		appreciated_tier = "Liked level",
 		respected_tier = "Respected level",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		bad_screen_word_title = "Words Bad for Screen",
 		bad_screen_word_about = "Me got list of bad words on screens. Me check who using them and see if they cheat!",
-
-		freecam_detections_title = "Freecam Spotted",
-		freecam_detections_about = "Me find those using freecam. They try to cheat and hide, but no match for me!",
 
 		damage_modifier_name = "Ugg's Name",
 		damage_modifier_expected = "Expected Hit",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		better_stamina = "Unga bunga, run long time! You able to run without getting tired for ${duration} moons.",
 		more_inventory_space = "Ug have extra ${amount} ooga booga slots in ug bag for ${duration} moons.",
 
-		buffs_note = "Ug buffs only work when ug leave cave."
+		buffs_note = "Ug buffs only work when ug leave cave.",
+
+		press_to_prepare_food = "[${InteractionKey}] Prepare Mammoth Meat",
+		prepare_food = "Prepare Mammoth Meat",
+
+		kissaki_kitchen = "Kissaki Kitchen",
+
+		craft = "Craft",
+		starting = "Starting"
 	},
 
 	riot_mode = {

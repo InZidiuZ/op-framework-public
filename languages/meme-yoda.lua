@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["meme-yoda"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		put_boombox_in_trunk = "Put boombox in trunk, you must. Press ~INPUT_ENTER~ to do so",
 		put_player_in_trunk = "Put player in trunk, you must. Press ~INPUT_ENTER~ to do so",
 		put_player_in_seat = "[${VehicleEnterKey}], Place in seat, you must",
+		putting_player_in_seat = "In seat, placing",
 		trunk_interaction_display = "[${VehicleEnterKey}] Climb Out [${InteractionKey}] Trunk open/close",
 		trunk_open_close_display = "[${InteractionKey}] Trunk open/close",
+		trunk_get_out_display = "[${VehicleEnterKey}] Climb out, you must",
 		boombox_already_in_trunk = "Boombox already in trunk, there is.",
 		the_trunk_is_occupied = "Occupied, the trunk is.",
 		unable_to_toggle_carry = "Please wait a bit before toggling the carry, you must.",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		freecam_ban = "Out of body experience, you seem to have.",
 		honeypot_ban = "Your creative mode, toggle you attempted, but the permissions had not.",
 		hotwire_driving_ban = "In me mum's car, I'm - Vroom Vroom!",
-		illegal_freeze_ban = "Better, warm food is than frozen food, you know?",
-		illegal_ped_change_ban = "Perform plastic surgery on yourself, dangerous it is.",
+		illegal_freeze_ban = "Bound by laws of physics, we are. Spirits wander freely, we shall not. Any other way, Sir Isaac Newton wouldn't have it.",
+		illegal_ped_change_ban = "A joke, identity theft is not, Jim! Millions of characters suffer every year, they do.",
 		illegal_spectating_ban = "FIB Agent, you must be, to watch others or /gamemode spectator use before spectating.",
 		illegal_vehicle_modifier_ban = "Family, we are not, unlike Dom Toretto from Fast and Furious.",
 		invincibility_ban = "Black Knight, you are not, invincible you may not be.",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		vehicle_modification_ban = "Headlight fluid for your car, find, you could not.",
 		vehicle_spam_ban = "Win, counter terrorists do.",
 		vehicle_spawn_ban = "Redstone on a minecart you tried to use, but powered rails have you not.",
-		weapon_spawn_ban = "The \"Pay to Win Route\" of FiveM, you attempted. Paid to get banned, you have.",
+		weapon_spawn_ban = "Pulled a rabbit out of the hat, attempted you did; found a bazooka instead, you did.",
+		high_damage_ban = "Too strong, the force within you is. Disrupting balance of our realm, you are.",
+		suspicious_explosion_ban = "Sorry, a Michael Bay film, this is not. Excessive use of pyrotechnics, not permitted it is.",
 
 		mp_f_freemode_01_label = "Freemode, female is.",
 		mp_m_freemode_01_label = "Freemode, male is.",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} tazed someone over a very large distance (${distance}m), ${thisIs}.",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} has ${count} trigger word(s) on their screen, ${thisIs}.",
+		notification_suspicious_explosion = "Anti-Cheat, ${displayName} has triggered a ${explosionType} explosion, suspicious it seems.",
 
 		notification_freecam_detected = "Anti-Cheat, detected a freecam has been, hmmm",
 		notification_illegal_vehicle_modifier = "Anti-Cheat, illegal modification to vehicle, detected it has",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		notification_illegal_weapon = "Anti-Cheat, illegal weapon detected, hmmm",
 		notification_spawned_object = "Anti-Cheat: Object Spawned, hmmm",
 		notification_driving_hotwire = "Anti-Cheat: Driving while hotwire, reckless you are",
+		notification_semi_godmode = "Anti-Cheat: Semi-Godmode, this is.",
 
 		ig_orleans_label = "Sasquatch, he is",
 		u_m_m_jesus_01_label = "Jesus, be with you",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		runtime_texture_screenshot = "Anti-Cheat, runtime texture (${textureDict}, ${textureName}) detected it has.",
 		bad_screen_word_screenshot = "Anti-Cheat, bad screen word (${words}) detected it has.",
 		freecam_detected_screenshot = "Anti-Cheat, freecam detected, ${distance}m away you were.",
-		driving_hotwire_screenshot = "Anti-Cheat, driving while hotwire, you were."
+		driving_hotwire_screenshot = "Anti-Cheat, driving while hotwire, you were.",
+		semi_godmode_screenshot = "Anti-Cheat: Semi-Godmode, this is."
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		wipe_command_parameter_ignore_local_entities = "ignore local entities",
 		wipe_command_parameter_ignore_local_entities_help = "Non-networked entities ignore, you must. If cleaning up after a cheater, recommended to set to `true` or `1`.",
 		wipe_command_parameter_model_name = "name of model",
-		wipe_command_parameter_model_name_help = "To delete entities of a specific model, enter the name of that model here. Otherwise, leave it blank, `false`, or `0`. You can also use `vehicles` or `peds`.",
+		wipe_command_parameter_model_name_help = "If delete only entities of certain model name, you want, insert model name it must. Otherwise, leave blank, at `false` or `0` you can. 'Vehicles', 'peds' or 'objects' you may also set this to, hmmm.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "noclip",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "toggle_big_inventory",
-		toggle_big_inventory_command_help = "Temporarily increases your character's inventory slots to 250, it will.",
+		toggle_big_inventory_command_help = "Increase your character's inventory slots to 250, this is temporary and will reset when you relog, hmmm.",
 		toggle_big_inventory_command_substitutes = "big_inventory",
 
 		item_lookup_command = "lookup_item",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		item_lookup_command_parameter_item_id = "item id",
 		item_lookup_command_parameter_item_id_help = "The ID of the item, you seek.",
 		item_lookup_command_substitutes = "item",
+
+		clear_evidence_command = "Clear evidence, hmmm.",
+		clear_evidence_command_help = "Clear the specified evidence locker, cannot be undone, this action cannot.",
+		clear_evidence_command_parameter_evidence_id = "Evidence ID, hmmm.",
+		clear_evidence_command_parameter_evidence_id_help = "The ID of the evidence locker you want to clear, hmmm.",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "clear_map",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		battle_royale = "Battle Royale, we shall have.",
 		arena_gun_game = "Gun Game in Arena, let's play.",
 		lottery = "Lottery, try your luck you may.",
+		jackpot = "Jackpot, you have hit!",
 		daily_tasks = "Daily Tasks, complete them you must.",
 		categories = "Categories",
 		refresh = "Refresh",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		xp = "XP",
 		money_won = "Money Won",
 		average_percentage = "Average Percentage",
-		streak = "Streak, you have."
+		streak = "Streak, you have.",
+		money_lost = "Lost money, you have.",
+		net = "Net, it is",
+		net_ratio = "Net ratio, it is",
+		items_gambled = "Items gambled, they were"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		attachment_label_fmj = "Full Metal Jacket Rounds, hm",
 		attachment_label_scope_nv = "Night Vision Scope, strong is its power",
 		attachment_label_scope_thermal = "Thermal Scope, hot it is",
+		attachment_label_stock = "Stock, labeled it is",
 
 		attachment_label_luxury1 = "The Pimp, mmm",
 		attachment_label_luxury2 = "The Ballas, their taste it has",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		showing_flags = "Flags, we are showing.",
 		not_showing_flags = "Stop showing flags, we have.",
 
+		flag = "Flag ${flagId}, hmmm.",
+
 		flag_swap_leaderboard = "Leaderboard, Flag Swap it is",
 		ongoing = "Ongoing, it is",
 		not_ongoing = "Not ongoing, it is",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "1 flag, hmmm.",
 		flag_count = "${flags} flags, they have",
-		players_with_most_flags_will_show_here = "Here, players with most amount of flags show, hmmm."
+		players_with_most_flags_will_show_here = "Here, players with most amount of flags show, hmmm.",
+		flags_on_ground = "Flags on ground, there are: ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		los_santos_golf_club = "Los Santos Golf Club",
 		arcade_bar = "Arcade Bar",
 		japanese_restaurant = "Japanese Restaurant",
+		japanese_restaurant_kitchen = "Kitchen of the Japanese restaurant, this is",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Grain Mill",
 		pd_prefix = "PD",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		invalid_item_id = "Invalid, the item ID is.",
 		item_not_found = "Found not, item with ID `${itemId}`.",
 		item_lookup = "${label} (${itemId}), in ${inventoryName}:${inventorySlot}, it is found.",
+
+		invalid_evidence_id = "Invalid evidence ID, this is.",
+		not_near_evidence_locker = "Near the evidence locker, you are not.",
+		clear_evidence_success = "Evidence cleared successfully, with ID '${evidenceId}' it was.",
+		clear_evidence_failed = "Failed to clear evidence, we have.",
+
+		clear_evidence_logs_title = "Cleared Evidence, logs are:",
+		clear_evidence_logs_details = "Evidence cleared by ${consoleName} with ID `${evidenceId}`. Deleted item(s): ${deleted} and kept ${kept}.",
 
 		big_inventory_disabled = "Character inventory, slots, default, set to be.",
 		big_inventory_enabled = "Characters, inventory slots, increased, temporarily, they have been.",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		move_to_wash = "Here, move to wash the vehicle",
 		vehicle_too_clean = "Clean, the vehicle is. Too clean to be washed it should be.",
 		move_to_put_fake_plate = "Here, move to put on a fake license plate",
-		unable_to_repair = "Repair, the vehicle, you cannot. Players inside there are.",
 		failed_lockpicking = "Failed, lockpicking has",
 		lockpicking_succeeded = "Lockpicking succeeded, it has",
 		hotwiring_vehicle = "Vehicle hotwiring, I am",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		press_to_deposit = "To the Online Jackpot, items deposit, press ~INPUT_REPLAY_SHOWHOTKEY~ you must.",
 		can_only_withdraw_at_casino = "Withdraw, at the Casino you can, only.",
 
+		take_fee_no_permissions = "Proper permissions, player did not have. Attempted to take jackpot fees, hmmmm.",
+		took_jackpot_fees = "Took jackpot fees, we did. Removed ${removedTotalItems} items worth $${removedTotalWorth} from ${inventories} inventories, hmmm.",
+
 		jackpot = "Jackpot, you have won!",
 		inventory = "Inventory, you must check.",
 		history = "History, look into the past you must.",
-		no_items_in_inventory = "No items do you have in your virtual inventory. Hmmmm",
-		you_can_deposit_at_the_casino = "At the casino, items you can deposit.",
-		close = "Close, you must.",
 		bet = "Bet, you will?",
-		your_chance = "Your chance, it is: ${chance}%",
-		character_bet = "A bet placed by ${characterName}, ${itemAmount} item(s) worth $${itemWorth}",
-		pot = "The pot, it is worth: $${jackpotWorth}",
-		items = "Items, the jackpot contains: ${jackpotItemAmount}",
-		withdraw = "Withdraw (${withdrawAmount}), you may.",
-		quick_sell = "Quick sell (${quickSellWorth}), Sell quickly you must.",
-		inventory_value = "Value, your inventory has: $${inventoryWorth}",
-		inventory_total_items = "Total items, you have: ${inventoryTotalItems}",
-		daily_fee_information = "At 6AM UTC every day, items worth >= 5% of your total inventory value will be removed as a 'storage fee', hmmm.",
-
-		take_fee_no_permissions = "Proper permissions, player did not have. Attempted to take jackpot fees, hmmmm.",
-		took_jackpot_fees = "Took jackpot fees, we did. Removed ${removedTotalItems} items worth $${removedTotalWorth} from ${inventories} inventories, hmmm."
+		your_chance = "Chance, you have: ${chance}%",
+		pot = "Pot, there is: $${pot}",
+		items = "Items, there are: ${items}",
+		time = "Time, there is: ${time}s",
+		chatters = "Chatters, there are: ${chatters}",
+		send_a_message = "A message, send...",
+		bet_placed = "${name}, bet ${count} item(s) worth $${worth}, ${you have}.",
+		bet_item = "${amount}x ${name} ($${worth}), there are",
+		value = "Value, it has: $${value}",
+		total_items = "Total items, there are: ${totalItems}",
+		withdraw = "Withdraw (${amount}), you can",
+		quick_sell = "Quick sell ($${worth}), you can",
+		storage_fee_warning = "Warning, at 6AM UTC every day, items worth >= 5% of your total inventory value, as 'storage fee' removed, they will be.",
+		item_with_worth = "${label} (${worth} credits are worth)",
+		select_all = "All, select",
+		deselect_all = "All, remove selection",
+		bet_with_amount = "Wager ($${amount} credits, I do)",
+		close = "Close, you must.",
+		no_items_in_inventory = "No items do you have in your virtual inventory. Hmmmm",
+		deposit_at_casino = "You can deposit items at the casino, yes.",
+		sort = "Arrange, I shall",
+		player_won_pot = "${name} victory, ${amount} credits won with a ${chance}% chance, ${timeAgo} ago.",
+		the_ticket_was = "The ticket, it was ${ticket}.",
+		recent_pots_will_show_here = "Recent pots, here they will show up"
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		random = "Haphazard",
 		beginner = "Novice",
 		custom = "Custom-built, yes?",
+
+		job_low = "Low, this job is",
+		job_medium = "Medium, this job is",
+		job_high = "High, this job is",
 
 		appreciated_tier = "Appreciated, you are",
 		respected_tier = "Respected, you are",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		bad_screen_word_title = "Bad Screen Words, listed players are",
 		bad_screen_word_about = "Listed, players who detected, have certain words on their screen. Potential modders, they may be.",
-
-		freecam_detections_title = "Freecam Detections, listed players are",
-		freecam_detections_about = "Listed, players who detected, are using a freecam. Potential modders, they may be.",
 
 		damage_modifier_name = "Name of the player",
 		damage_modifier_expected = "Expected damage",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		better_stamina = "Run without running out of stamina for ${duration} minutes, you will be able to.",
 		more_inventory_space = "Additional inventory slots, you have. ${amount} slots for ${duration} minutes.",
 
-		buffs_note = "Activate, the buffs will, only after leaving the building."
+		buffs_note = "Activate, the buffs will, only after leaving the building.",
+
+		press_to_prepare_food = "[${InteractionKey}] Prepare food, you must",
+		prepare_food = "Food, prepare it you shall",
+
+		kissaki_kitchen = "Kissaki Kitchen, this is called",
+
+		craft = "Craft, you must",
+		starting = "Starting, it is"
 	},
 
 	riot_mode = {

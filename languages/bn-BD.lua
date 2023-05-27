@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["bn-BD"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		put_boombox_in_trunk = "ট্রাঙ্কে বুমবক্স রাখতে ~INPUT_ENTER~ চাপুন।",
 		put_player_in_trunk = "ট্রাঙ্কে প্লেয়ার রাখতে ~INPUT_ENTER~ চাপুন।",
 		put_player_in_seat = "[${VehicleEnterKey}] সিটে বসাতে",
+		putting_player_in_seat = "আসনে রাখা হচ্ছে",
 		trunk_interaction_display = "[${VehicleEnterKey}] বাইরে আরোহণ [${InteractionKey}] ট্রাঙ্ক খুলুন / বন্ধ করুন",
 		trunk_open_close_display = "[${InteractionKey}] ট্রাঙ্ক খুলুন / বন্ধ করুন",
+		trunk_get_out_display = "[${VehicleEnterKey}] উঠুন",
 		boombox_already_in_trunk = "ট্রাঙ্কে ইতিমধ্যে একটি বুমবক্স রয়েছে।",
 		the_trunk_is_occupied = "ট্রাঙ্ক ইতিমধ্যে দখলকৃত রয়েছেে।",
 		unable_to_toggle_carry = "বহন করার আগে একটু অপেক্ষা করুন।",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		freecam_ban = "আপনার কিছু মনে হয় নি না যে আপনি আত্মার বাইরে চলে গেছেন।",
 		honeypot_ban = "আপনি নিজেকে তৈরি মোড চালু করতে চেষ্টা করেছিলেন, তবে করার জন্য অনুমতি ছিল না।",
 		hotwire_driving_ban = "ভ্রুম ভ্রুম, আমি আমার মায়ের গাড়িতে।",
-		illegal_freeze_ban = "আপনি জানেন উষ্ণ খাবার সবচেয়ে ভালো?",
-		illegal_ped_change_ban = "নিজের উপর প্লাস্টিক সার্জারি করা প্রচন্ড জোরালো।",
+		illegal_freeze_ban = "গোষ্ঠীবদ্ধ হওয়া অযোগ্য, আমরা কেবল মহত্ত্বের সীমাবদ্ধতার শৃংখলার অনুযায়ী বাধিত। স্যার আইজাক নিউটন অন্য কিছুর স্বাক্ষরী করতে চাইতেন না।",
+		illegal_ped_change_ban = "পরিচয় চুরি আজকে হাস্যকর। লক্ষ করছেন না? বছরেও মিলিয়নো চরিত্র যথাযথভাবে আঘাত পায়।",
 		illegal_spectating_ban = "আপনাকে কাজ করছা FIB এজেন্ট হতে হবে বা প্রাথমিক ভূমিকার সাথে একটি spectator মোড ব্যবহার করতে হবে।",
 		illegal_vehicle_modifier_ban = "Fast and Furious এর মধ্যে Dom Toretto থেকে বিভিন্নভাবে আমরা পরিবার নই।",
 		invincibility_ban = "আপনি কোন কালো রাজকুমার নন, আপনি অমর হতে পারবেন না।",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		vehicle_modification_ban = "আপনি আপনার গাড়ির হেডলাইট ফ্লুইড খুঁজতে পারেন না।",
 		vehicle_spam_ban = "কাউন্টার টেররিস্ট জিতে গেছে।",
 		vehicle_spawn_ban = "আপনি একটি মাইনকার্টে রেডস্টোন ব্যবহার করার চেষ্টা করেছিলেন কিন্তু ফ্রি গাড়িতে পাওয়া যায় নি।",
-		weapon_spawn_ban = "আপনি ফাইভএমের \"পে টু উইন রুট\" চেষ্টা করেছেন যেখানে আপনি এখন করে দিয়েছেন ব্যান পেতে জন্য।",
+		weapon_spawn_ban = "টোপি থেকে একটি খরগোশ তুলতে চেষ্টা করেছিলাম, পাওয়া হল বেজোকা।",
+		high_damage_ban = "আপনি পাওয়ার সাড়া খুব বেশি, আমাদের জগতের একটি সমতার ভাঙ্গা করে দিয়েছেন।",
+		suspicious_explosion_ban = "দুঃখিত, কিন্তু এটি মাইকেল বে ছবি নয়। পাইরোটেকনিকের অতিরিক্ত ব্যবহার অনুমতি দেওয়া হয় না।",
 
 		mp_f_freemode_01_label = "ফ্রিমোড (মহিলা)",
 		mp_m_freemode_01_label = "ফ্রিমোড (পুরুষ)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		notification_distance_taze = "এন্টি-চিট: ${displayName} খুব দূরে (${distance}মিটার) কারওকে তেজ মারলেন।",
 		notification_bad_screen_word = "এন্টি-চিট: ${displayName} এর স্ক্রীনে ${count}টি ট্রিগার ওয়ার্ড আছে।",
+		notification_suspicious_explosion = "এন্টি-চিট: ${displayName} একটি ${explosionType} বিস্ফোরণ উত্তেজিত করেছেন।",
 
 		notification_freecam_detected = "এন্টি-চিট: ফ্রিক্যাম ট্র্যাক করা হয়েছে",
 		notification_illegal_vehicle_modifier = "এন্টি-চিট: যানবাহন পরিবর্তনকারী",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		notification_illegal_weapon = "এন্টি-চিট: অনৈতিক সশস্ত্রবাহী",
 		notification_spawned_object = "এন্টি-চিট: জিনিস তৈরি করা হয়েছে",
 		notification_driving_hotwire = "এন্টি-চিট: হটওয়ায়ার সময় গাড়ি চালনা",
+		notification_semi_godmode = "অ্যান্টি-চিট: অর্ধ দেবত্ব",
 
 		ig_orleans_label = "সাসকোচ",
 		u_m_m_jesus_01_label = "যীশু",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		runtime_texture_screenshot = "এন্টি-চিট: রানটাইম টেক্সচার (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "এন্টি-চিট: খারাপ স্ক্রিন শব্দ (${words})",
 		freecam_detected_screenshot = "এন্টি-চিট: ফ্রি ক্যাম সনাক্তকরণ করা হয়েছে (${distance}মিটার)",
-		driving_hotwire_screenshot = "এন্টি-চিট: হটওয়ায়ার সময় ড্রাইভিং"
+		driving_hotwire_screenshot = "এন্টি-চিট: হটওয়ায়ার সময় ড্রাইভিং",
+		semi_godmode_screenshot = "অ্যান্টি-চিট: অর্ধ দেবত্ব"
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		wipe_command_parameter_ignore_local_entities = "স্থানীয় ইঞ্জিনগুলি উপেক্ষা করুন",
 		wipe_command_parameter_ignore_local_entities_help = "স্থানীয় ইঞ্জিনগুলি উপেক্ষা করতে চান? আপনি চিটার থেকে পরিস্কার করছেন তাহলে আপনাকে এটি টেনে নেওয়া সুপারিশ করা হয়।",
 		wipe_command_parameter_model_name = "মডেল নাম",
-		wipe_command_parameter_model_name_help = "আপনি যদি কেবল কোন নির্দিষ্ট মডেল নামের ইণ্টিটি মুছতে চান তাহলে এখানে মডেল এর নাম লিখুন। অন্যথায় এটি ফাঁকা, `false` বা `0` রাখুন। আপনি `vehicles` বা `peds` হিসাবে এটি সেট করতে পারেন।",
+		wipe_command_parameter_model_name_help = "আপনি যদি কেবলমাত্র একটি নির্দিষ্ট মডেল নামে সমস্ত একক ডিলিট করতে চান তবে এখানে একটি মডেল নাম ইনসার্ট করুন। অন্যথায় ফাঁকা, `false` বা `0` রাখুন। আপনি এটিকে একটি `vehicles`,`peds` বা `objects` হিসাবে সেট করতে পারেন।",
 		wipe_command_substitutes = "",
 
 		noclip_command = "নক্লিপ",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "বড় ইনভেন্টরি চালু/বন্ধ করুন",
-		toggle_big_inventory_command_help = "আপনার ক্যারেক্টারের ইনভেন্টরি স্লটগুলি সাময়িকভাবে 250 টি বাড়ানো হয়।",
+		toggle_big_inventory_command_help = "এটি অস্থায়ীভাবে আপনার চরিত্রের ইনভেন্টরি স্লটগুলি বাড়ানোর জন্য 250-এ পরিবর্তনশীল। (এটি অস্থায়ীভাবে এবং আপনি পুনরায় লগইন করলে মৌলিক অবস্থায় ফিরে যাবেন)",
 		toggle_big_inventory_command_substitutes = "বড়_ইনভেন্টরি",
 
 		item_lookup_command = "আইটেম_খুঁজুন",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		item_lookup_command_parameter_item_id = "আইটেম আইডি",
 		item_lookup_command_parameter_item_id_help = "আপনি যে আইটেমটি খুঁজতে চান তার আইডি।",
 		item_lookup_command_substitutes = "আইটেম",
+
+		clear_evidence_command = "স্পষ্ট প্রমাণগুলি",
+		clear_evidence_command_help = "নির্দিষ্ট প্রমাণ লকারটি স্পষ্ট করে। এই ক্রিয়াটি রদ্দ করা যাবে না!",
+		clear_evidence_command_parameter_evidence_id = "প্রমাণ আইডি",
+		clear_evidence_command_parameter_evidence_id_help = "আপনি যে প্রমাণ লকারটি স্পষ্ট করতে চান তার আইডি।",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "মানচিত্র_সাফ়_করুন",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		battle_royale = "বাতলি রয়েল",
 		arena_gun_game = "গান গেম",
 		lottery = "লটারি",
+		jackpot = "জ্যাকপট",
 		daily_tasks = "দৈনিক টাস্ক",
 		categories = "বিভাগসমূহ",
 		refresh = "পুনরায় লোড করুন",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		xp = "এক্সপি",
 		money_won = "টাকা জিতেছেন",
 		average_percentage = "গড় শতকরা",
-		streak = "ক্রম"
+		streak = "ক্রম",
+		money_lost = "টাকা হারিয়েছি",
+		net = "নেট",
+		net_ratio = "নেট অনুপাত",
+		items_gambled = "আইটেম জুড়ে খেলা হয়েছে"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		attachment_label_fmj = "পুর্ণ ধাতু জ্যাকেট রাউন্ডস",
 		attachment_label_scope_nv = "নাইট ভিশন স্কোপ",
 		attachment_label_scope_thermal = "থার্মাল স্কোপ",
+		attachment_label_stock = "স্টক",
 
 		attachment_label_luxury1 = "দ্য পিম্প",
 		attachment_label_luxury2 = "দ্য বালাস",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		showing_flags = "পতাকাগুলি দেখাচ্ছি।",
 		not_showing_flags = "পতাকাগুলি আর দেখাচ্ছি না।",
 
+		flag = "পতাকা ${flagId}",
+
 		flag_swap_leaderboard = "পতাকা পরিবর্তন লিডারবোর্ড",
 		ongoing = "চলমান",
 		not_ongoing = "চলমান নয়",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "1 পতাকা",
 		flag_count = "${flags} পতাকা",
-		players_with_most_flags_will_show_here = "এখানে সর্বাধিক পতাকা এনেসহবল খেলোয়াড়দের তালিকা প্রদর্শিত হবে।"
+		players_with_most_flags_will_show_here = "এখানে সর্বাধিক পতাকা এনেসহবল খেলোয়াড়দের তালিকা প্রদর্শিত হবে।",
+		flags_on_ground = "স্থান দিয়ে পতাকা: ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		los_santos_golf_club = "লস সান্টোস গল্ফ ক্লাব",
 		arcade_bar = "আরকেড বার",
 		japanese_restaurant = "জাপানি রেস্তোরাঁ",
+		japanese_restaurant_kitchen = "জাপানি রেস্তোরাঁ রান্নাঘর",
 		["945_studios"] = "945 Studios",
 		grain_mill = "অনাজ মিল",
 		pd_prefix = "পুলিশ",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		invalid_item_id = "অবৈধ আইটেম আইডি।",
 		item_not_found = "${itemId} আইডি সহ আইটেম খুঁজে পাওয়া যায়নি।",
 		item_lookup = "${inventoryName}:${inventorySlot} এ ${label} (${itemId}) বর্তমানে রয়েছে।",
+
+		invalid_evidence_id = "অবৈধ প্রমাণ আইডি।",
+		not_near_evidence_locker = "আপনি প্রমাণের লকার কাছে নেই।",
+		clear_evidence_success = "সফলভাবে প্রমাণপত্র সাফ করা হয়েছে। আইডি `${evidenceId}`।",
+		clear_evidence_failed = "প্রমাণপত্র সাফ করা যাচ্ছে না।",
+
+		clear_evidence_logs_title = "সাফ করা প্রমাণপত্র",
+		clear_evidence_logs_details = "${consoleName} এর দ্বারা প্রমাণপত্রের সাফ করা হয়েছে আইডি `${evidenceId}`. ${deleted} বস্তু(সমূহ) মুছে ফেলা হয়েছে এবং ${kept} ভাগটি রেখে দেওয়া হয়েছে।",
 
 		big_inventory_disabled = "ক্যারেক্টারের ইনভেন্টরির স্লটগুলি ডিফল্টে রিসেট করুন।",
 		big_inventory_enabled = "অস্থায়ীভাবে আপনার ক্যারেক্টারের ইনভেন্টরির স্লটগুলি বাড়িয়ে দেওয়া হয়েছে।",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		move_to_wash = "গাড়ি ধুওয়ার জন্য এখানে আসুন",
 		vehicle_too_clean = "গাড়িটি পরিষ্কার খুব বেশি হয়ে গেছে এবং ধুয়ে নেয়া যাবে না।",
 		move_to_put_fake_plate = "মিথ্যা লাইসেন্স প্লেট পরিমার্জনের জন্য এখানে যান।",
-		unable_to_repair = "গাড়ির মেরামত করতে আপনি গাড়ির ভিতরে অন্যদের থাকলে পরিস্থিতি নিয়ন্ত্রণ করতে পারবেন না।",
 		failed_lockpicking = "লকপিকিং ব্যর্থ হয়েছে",
 		lockpicking_succeeded = "তমকপিকিং সফল হয়েছে।",
 		hotwiring_vehicle = "হটওয়ায়ারিং গাড়ি",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		press_to_deposit = "অনলাইন জ্যাকপটে জিনিসপত্র জমা দিতে ~INPUT_REPLAY_SHOWHOTKEY~ বোতামটি চাপুন।",
 		can_only_withdraw_at_casino = "আপনি কেবলমাত্র ক্যাসিনোতে উত্তোলন করতে পারবেন।",
 
+		take_fee_no_permissions = "প্লেয়ার সঠিক অনুমতি ছাড়াই জ্যাকপট ফি লাভ করার চেষ্টা করেছে।",
+		took_jackpot_fees = "জ্যাকপট ফি গ্রহণ করেছেন। ${inventories} ইনভেন্টরি থেকে যোগ দেওয়া ${removedTotalItems} টি আইটেম মোট $${removedTotalWorth} মূল্যে সরে ফেলেছেন।",
+
 		jackpot = "জ্যাকপট",
 		inventory = "ইনভেন্টরি",
 		history = "ইতিহাস",
-		no_items_in_inventory = "লক্ষ্য করুন, আপনার ভার্চুয়াল ইনভেন্টরিতে কোন আইটেম নেই।",
-		you_can_deposit_at_the_casino = "আপনি ক্যাসিনোতে আইটেম জমা দিতে পারেন।",
-		close = "বন্ধ করুন",
 		bet = "বাজি লগাও",
-		your_chance = "আপনার সুযোগ: ${chance}% ",
-		character_bet = "${characterName} ${itemAmount}টি আইটেম দিয়ে $${itemWorth} বাজি লগালেন।",
-		pot = "সুরা: $${jackpotWorth}",
-		items = "আইটেমস: ${jackpotItemAmount}",
-		withdraw = "উত্তোলন করুন (${withdrawAmount})",
-		quick_sell = "দ্রুত বিক্রি করুন ($${quickSellWorth})",
-		inventory_value = "মূল্য: $${inventoryWorth}",
-		inventory_total_items = "মোট আইটেমসমূহ: ${inventoryTotalItems}",
-		daily_fee_information = "প্রতিদিন 6AM UTC এ পূর্ণ ষষ্ঠি করোয়া হবে এবং আপনার মোট ইনভেন্টরি মূল্যের 5% এর বেশি মানের আইটেমগুলি একটি 'স্টোরেজ ফি' হিসাবে সরানো হবে।",
-
-		take_fee_no_permissions = "প্লেয়ার সঠিক অনুমতি ছাড়াই জ্যাকপট ফি লাভ করার চেষ্টা করেছে।",
-		took_jackpot_fees = "জ্যাকপট ফি গ্রহণ করেছেন। ${inventories} ইনভেন্টরি থেকে যোগ দেওয়া ${removedTotalItems} টি আইটেম মোট $${removedTotalWorth} মূল্যে সরে ফেলেছেন।"
+		your_chance = "সম্ভাবনা: ${chance}%",
+		pot = "পট: $${pot}",
+		items = "আইটেমগুলি: ${items}",
+		time = "সময়: ${time}s",
+		chatters = "চ্যাটারগন: ${chatters}",
+		send_a_message = "একটি বার্তা পাঠান...",
+		bet_placed = "${name} ${worth} এর মূল্যের জিনিস ${count}টি বস্তু দিয়ে বাজি দেন।",
+		bet_item = "${worth} এর মূল্যের ${amount}টি ${name}",
+		value = "মান: $${value}",
+		total_items = "মোট আইটেমগুলি: ${totalItems}",
+		withdraw = "উত্তোলন করুন (${amount})",
+		quick_sell = "দ্রুত বিক্রি করুন ($${worth})",
+		storage_fee_warning = "প্রতি দিন সকাল 6 টার সময়, আপনার মোট ইনভেন্টরি মূল্যের >= 5% এর মানের আইটেমগুলি রিমুভ করা হবে যেটি সংরক্ষণ ফি হিসেবে হালনাগাদ হবে।",
+		item_with_worth = "${label} ($${worth})",
+		select_all = "সব নির্বাচন করুন",
+		deselect_all = "সব নির্বাচন বাতিল করুন",
+		bet_with_amount = "বাজি দিন ($${amount})",
+		close = "বন্ধ করুন",
+		no_items_in_inventory = "লক্ষ্য করুন, আপনার ভার্চুয়াল ইনভেন্টরিতে কোন আইটেম নেই।",
+		deposit_at_casino = "আপনি ক্যাসিনোতে জিনিস আমানত করতে পারেন।",
+		sort = "সাজান",
+		player_won_pot = "${name} একটি ${chance}% সুযোগ নিঃশেষে $${amount} জিতেছেন ${timeAgo} পূর্বে।",
+		the_ticket_was = "টিকেটটি ${ticket} ছিল।",
+		recent_pots_will_show_here = "সাম্প্রতিক পটগুলি এখানে দেখানো হবে।"
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		random = "যোজো",
 		beginner = "প্রাথমিক",
 		custom = "অভিনন্দন",
+
+		job_low = "নিম্ন চাকরি",
+		job_medium = "মাঝারি চাকরি",
+		job_high = "উচ্চ চাকরি",
 
 		appreciated_tier = "উপস্থিত টিয়ার",
 		respected_tier = "সম্মানিত টিয়ার",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		bad_screen_word_title = "অপব্যবহৃত শব্দসমূহ",
 		bad_screen_word_about = "এখানে নির্দিষ্ট কিছু শব্দ তাদের স্ক্রিনে দেখা গেলে তাদের তালিকা দেওয়া হয়েছে। এটি সম্ভবত মডার্স খোঁজার জন্য সহায়তা করবে।",
-
-		freecam_detections_title = "ফ্রীক্যাম ট্র্যাকিং",
-		freecam_detections_about = "এখানে ফ্রিক্যাম ব্যবহার করা প্লেয়ারদের তালিকা দেওয়া হয়েছে। এটি সম্ভবত মডার্স খোঁজার জন্য সহায়তা করবে।",
 
 		damage_modifier_name = "প্লেয়ার নাম",
 		damage_modifier_expected = "প্রত্যাশিত",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		better_stamina = "${duration} মিনিটের জন্য দৌড়ার স্ট্যামিনা শেষ হওয়া না হবে।",
 		more_inventory_space = "${duration} মিনিটের জন্য আরও ${amount} ইনভেন্টরি স্লট থাকবে।",
 
-		buffs_note = "বাফস কেবল সম্ভব হবে যখন আপনি ভবনের আশপাশ থেকে চলে যাবেন।"
+		buffs_note = "বাফস কেবল সম্ভব হবে যখন আপনি ভবনের আশপাশ থেকে চলে যাবেন।",
+
+		press_to_prepare_food = "[${InteractionKey}] খাবার প্রস্তুত করুন",
+		prepare_food = "খাবার প্রস্তুত করুন",
+
+		kissaki_kitchen = "কিসাকি রান্নাঘর",
+
+		craft = "ক্রাফট",
+		starting = "শুরু হচ্ছে"
 	},
 
 	riot_mode = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["meme-rude"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		put_boombox_in_trunk = "Press ~INPUT_ENTER~ to put the fucking boombox in the trunk.",
 		put_player_in_trunk = "Press ~INPUT_ENTER~ to put that player in the goddamn trunk.",
 		put_player_in_seat = "[${VehicleEnterKey}] Sit the fuck down in the seat!",
+		putting_player_in_seat = "Shoving Your Ass In Seat",
 		trunk_interaction_display = "[${VehicleEnterKey}] Climb the fuck out [${InteractionKey}] Open/Close the goddamn Trunk",
 		trunk_open_close_display = "[${InteractionKey}] Open/Close the damn Trunk",
+		trunk_get_out_display = "[${VehicleEnterKey}] Fucking Climb Out",
 		boombox_already_in_trunk = "There's already a fucking boombox in the goddamn trunk.",
 		the_trunk_is_occupied = "The goddamn trunk is fucking occupied.",
 		unable_to_toggle_carry = "Wait a fucking bit before toggling the motherfucking carry.",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		freecam_ban = "Did you try to spy on us with your creepy out-of-body experience? You're banned!",
 		honeypot_ban = "You f-ing cheater! Trying to slyly unleash your creative skills? You don't have the f-ing permissions for that!",
 		hotwire_driving_ban = "Ha! As if you're driving your own car. Get the f- outta here!",
-		illegal_freeze_ban = "A freezing idiot like you doesn't understand that warm food is way f-ing better than frozen food!",
-		illegal_ped_change_ban = "You think you can do plastic surgery on yourself? You stinky, worthless piece of sh-t!",
+		illegal_freeze_ban = "Listen here, you janky little prick. While spirits may float aimlessly, us mere mortals gotta follow the laws of physics. Sir Isaac Newton wouldn't have it any other way, so stop freezing shit up or you'll be banned.",
+		illegal_ped_change_ban = "Oi, ya bloody cheeky wanker! Identity theft is no fuckin' joke. Millions of characters suffer every year from pricks like you. So cut that shit out or risk getting banned.",
 		illegal_spectating_ban = "You ain't no damn FIB agent, so keep your eyes to yourself or use /gamemode spectator if you wanna creep on others.",
 		illegal_vehicle_modifier_ban = "Don't be thinking you're Dom Toretto from Fast and Furious 'cause we ain't no damn family.",
 		invincibility_ban = "You ain't no Black Knight, so stop acting invincible like a little bitch.",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		vehicle_modification_ban = "HA! You couldn't even find the fucking headlight fluid for your car, much less modify it. You're a fucking joke.",
 		vehicle_spam_ban = "You really thought you could spam the hell outta the vehicle system and get away with it? Sorry, fucker, the counter terrorists win this one.",
 		vehicle_spawn_ban = "You stupid fuck. You seriously tried using redstone on a minecart without powered rails? How fucking dense can you be?",
-		weapon_spawn_ban = "Congratulations, you have chosen to take the \"Pay to Win Route\" of FiveM and have been rewarded with a well-deserved ban.",
+		weapon_spawn_ban = "So, ya thought ya could just pull a rabbit outta the bloody hat, huh ya tosser? Well, looks like ya did one better and found a bloody bazooka. Congrats, you're banned now.",
+		high_damage_ban = "You're Fucking Overpowered. Get Fucking Lost.",
+		suspicious_explosion_ban = "What The Fuck Was That? No Fucking Explosions Allowed!",
 
 		mp_f_freemode_01_label = "Freemode (female, don't judge)",
 		mp_m_freemode_01_label = "Freemode (male, if you care)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 		notification_distance_taze = "Breaking News: ${displayName} has demonstrated their exceptional tazing skills by zapping someone from a ridiculous distance of ${distance} meters away, triggering our anti-cheat system.",
 		notification_bad_screen_word = "Our anti-cheat system caught ${displayName} having ${count} forbidden words on their screen. Shameful!",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} Triggered A Suspicious Fucking Explosion. Watch Out!",
 
 		notification_freecam_detected = "Anti-Cheat: Holy shit, you're using a freecam!",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Hey, fuckface! Quit modifying your goddamn vehicle!",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		notification_illegal_weapon = "Anti-Cheat: You're gonna pull out that illegal weapon? Not if I can help it, you prick!",
 		notification_spawned_object = "Anti-Cheat: Spawned Shit",
 		notification_driving_hotwire = "Anti-Cheat: Driving while Humping the Hotwire",
+		notification_semi_godmode = "Did someone say godmode? Nah mate, it's just some half-assed attempt at cheating. Anti-Cheat: Semi-Godmode activated.",
 
 		ig_orleans_label = "Bigfoot",
 		u_m_m_jesus_01_label = "Jesus Christ",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		runtime_texture_screenshot = "Anti-Cheat: Someone's using a forbidden texture in-game (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Anti-Cheat: Someone's using Bad Words in the game screen (${words})",
 		freecam_detected_screenshot = "Anti-Cheat: Someone's trying to use Freecam (${distance}m)",
-		driving_hotwire_screenshot = "Anti-Cheat: Someone's trying to drive while Hotwire"
+		driving_hotwire_screenshot = "Anti-Cheat: Someone's trying to drive while Hotwire",
+		semi_godmode_screenshot = "Oi, oi, anti-cheat's got something to show ya. Check out the screenshot of that shady semi-godmode bullshit."
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		wipe_command_parameter_ignore_local_entities = "ignore local shite",
 		wipe_command_parameter_ignore_local_entities_help = "Ignore those non-networked shitty entities? If you're cleaning up from a dirty cheating fuck, it is recommended you put this bollocks to `true` or `1`.",
 		wipe_command_parameter_model_name = "model name",
-		wipe_command_parameter_model_name_help = "If you're being picky and only want to obliterate shit of a certain model name, type that shit here. Otherwise, leave it blank or put that shit at `false` or `0`. You can also set this to `vehicles` or `peds`, if you're feeling fancy.",
+		wipe_command_parameter_model_name_help = "If You Fucking Want To Only Delete Entities Of A Certain Model Name, Insert That Shit Here. Otherwise Leave It Blank, At `False` Or `0`. You Can Also Set This To `Vehicles`, `Peds` Or `Objects`. Figure It The Fuck Out.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "noclip",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "toggle_bitchin_big_inventory",
-		toggle_big_inventory_command_help = "Temporarily increases your worthless character's inventory slots to a whopping 250.",
+		toggle_big_inventory_command_help = "F**k it, if you need more space, here you go! Increases inventory slots to 250. (This s**t is TEMPORARY and will reset when you f**king reconnect)",
 		toggle_big_inventory_command_substitutes = "big_ass_inventory",
 
 		item_lookup_command = "item_lookup",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		item_lookup_command_parameter_item_id = "item id",
 		item_lookup_command_parameter_item_id_help = "The fucking ID of the item you want to look the fuck up.",
 		item_lookup_command_substitutes = "item",
+
+		clear_evidence_command = "clear_evidence",
+		clear_evidence_command_help = "Yo, you sure you wanna do this? Clears the f**king evidence locker. You can't undo this s**t!",
+		clear_evidence_command_parameter_evidence_id = "evidence id",
+		clear_evidence_command_parameter_evidence_id_help = "The f**king ID of the evidence locker you wanna clear, dipsh*t.",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "clear_map",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		battle_royale = "F*cking Battle Royale",
 		arena_gun_game = "F*cking Gun Game for Retards",
 		lottery = "Lottery for Stupidity",
+		jackpot = "Well fuckin' done mate, you've hit the jackpot! Enjoy your winnings.",
 		daily_tasks = "F*cking Tasks to Keep You Busy",
 		categories = "Bloody Categories",
 		refresh = "Refresh That Bloody Thing",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		xp = "Bloody XP",
 		money_won = "Bloody Money Won",
 		average_percentage = "Bloody Average Percentage",
-		streak = "Streak (How many times have you gotten lucky?)"
+		streak = "Streak (How many times have you gotten lucky?)",
+		money_lost = "You stupid fuckin' wanker. Ya just lost all ya bloody money. Try not to be a dumbass next time.",
+		net = "Better not say it",
+		net_ratio = "Net Ratio (Do I look like a calculator to you?)",
+		items_gambled = "Items Gambled Because You Can't Control Your Gambling Addiction"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		attachment_label_fmj = "Fucking Metal Jacket Rounds",
 		attachment_label_scope_nv = "Night Vision Scope for Seeing Shit in the Dark",
 		attachment_label_scope_thermal = "Thermal Scope for Spotting Warm Bodies",
+		attachment_label_stock = "Stock (Duh)",
 
 		attachment_label_luxury1 = "The Fucking Pimp",
 		attachment_label_luxury2 = "The Fucking Ballas",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		showing_flags = "Showing all these fucking flags, bitch!",
 		not_showing_flags = "No longer showing any fucking flags, fuck off!",
 
+		flag = "F**kin' Flag ${flagId}",
+
 		flag_swap_leaderboard = "F**k Swap Leaderboard",
 		ongoing = "Still Going, Amazing!",
 		not_ongoing = "No Longer Going, Tough Luck!",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "Just one, man. Only F**kin' one flag.",
 		flag_count = "${flags} F**king Flags",
-		players_with_most_flags_will_show_here = "The biggest f**king flag hoarders will be displayed here."
+		players_with_most_flags_will_show_here = "The biggest f**king flag hoarders will be displayed here.",
+		flags_on_ground = "Oh look, there's some fucking flags on the ground: ${flagsOnGround}."
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		los_santos_golf_club = "Los Santos Golf Suckers",
 		arcade_bar = "Arcade Shitshow",
 		japanese_restaurant = "Japanese Crap Restaurant",
+		japanese_restaurant_kitchen = "Some Oriental Kitchen That Serves Sushi and Stuff",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Grain Turd",
 		pd_prefix = "Pig Department",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		invalid_item_id = "The fuck? Invalid item ID.",
 		item_not_found = "Get your shit together, we couldn't find the fucking item with ID `${itemId}`.",
 		item_lookup = "${label} (${itemId}) is currently in that piece of crap ${inventoryName}:${inventorySlot}.",
+
+		invalid_evidence_id = "Oops, looks like that evidence ID is invalid, you fuc*ing moron.",
+		not_near_evidence_locker = "Are you f*cking blind? You're not even near the damn evidence locker.",
+		clear_evidence_success = "Congratulations genius, you managed to clear evidence with the ID of `${evidenceId}` without f*cking it up.",
+		clear_evidence_failed = "Well, that didn't f*cking work. Sorry.",
+
+		clear_evidence_logs_title = "F*cking Cleared Evidence",
+		clear_evidence_logs_details = "${consoleName} cleared evidence with the ID of `${evidenceId}`. Deleted ${deleted} item(s) and kept ${kept}. Congratu-f*cking-lations.",
 
 		big_inventory_disabled = "Reset your damn inventory to its default slots, fuck off.",
 		big_inventory_enabled = "Congratulations asshole, we temporarily fucking increased your inventory slots.",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		move_to_wash = "Move your ass here to wash the freaking vehicle",
 		vehicle_too_clean = "Are you kidding me? The freaking vehicle is too clean to be washed",
 		move_to_put_fake_plate = "Move your ass here to put on a freaking fake license plate",
-		unable_to_repair = "Can't you see there are freakin' players inside the crap vehicle? You can't fix that crap",
 		failed_lockpicking = "You suck at lockpicking! Failed!",
 		lockpicking_succeeded = "You freaking did it! Lockpicking successful!",
 		hotwiring_vehicle = "Fucking Hotwiring This Piece of Shit",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		press_to_deposit = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to fucking deposit items in the Online Jackpot.",
 		can_only_withdraw_at_casino = "You can only withdraw that shit at the goddamn Casino!",
 
+		take_fee_no_permissions = "This piece of shit tried to take jackpot fees without proper permissions.",
+		took_jackpot_fees = "Oh yeah baby, I took those fucking jackpot fees. I removed ${removedTotalItems} goddamn items worth $${removedTotalWorth} from ${inventories} stinky-ass inventories.",
+
 		jackpot = "Fucking Jackpot",
 		inventory = "Your Shit",
 		history = "Fucking History",
-		no_items_in_inventory = "Fuck, you ain't got shit in your virtual inventory.",
-		you_can_deposit_at_the_casino = "You better deposit some shit at the fucking casino.",
-		close = "Fuck Off",
 		bet = "Bet Your Worthless Shit",
-		your_chance = "Your Fucking Chance: ${chance}%",
-		character_bet = "${characterName} bet ${itemAmount} worthless piece(s) of shit worth $${itemWorth}",
-		pot = "Pot of Fucking Shit: $${jackpotWorth}",
-		items = "Shit Amount: ${jackpotItemAmount}",
-		withdraw = "Get Your Shit Back (${withdrawAmount})",
-		quick_sell = "Quick Sell Your Fucking Shit ($${quickSellWorth})",
-		inventory_value = "Value: Get a fucking job and earn some money: $${inventoryWorth}",
-		inventory_total_items = "Total Fucking Items: ${inventoryTotalItems}",
-		daily_fee_information = "Listen up you entitled fuck: every fucking day at 6AM UTC, items worth >= 5% of your total inventory value will be taken away as a 'storage fee'.",
-
-		take_fee_no_permissions = "This piece of shit tried to take jackpot fees without proper permissions.",
-		took_jackpot_fees = "Oh yeah baby, I took those fucking jackpot fees. I removed ${removedTotalItems} goddamn items worth $${removedTotalWorth} from ${inventories} stinky-ass inventories."
+		your_chance = "Your chance of success is a sh*tty ${chance}%. Good luck with that.",
+		pot = "F***ing Pot: $${pot}",
+		items = "S***ty Items: ${items}",
+		time = "Time that's running out (because we all know you're a f***ing loser): ${time}s",
+		chatters = "Chatroom full of dumbasses: ${chatters}",
+		send_a_message = "Type your f***ing message here...",
+		bet_placed = "${name} just threw away ${count} s***ty item(s) worth a f***ing lousy $${worth}.",
+		bet_item = "S***ty ${amount}x ${name} that ain't worth s*** ($${worth})",
+		value = "F***ing Value: $${value}",
+		total_items = "Total S***ty Items: ${totalItems}",
+		withdraw = "Take your s***ty items back (${amount})",
+		quick_sell = "Sell Your S***ty Items for a Crappy $${worth}",
+		storage_fee_warning = "Every f***ing day at 6AM UTC, we're gonna throw away items worth >= 5% of your worthless inventory value as a 'storage fee'. So tough s***.",
+		item_with_worth = "${label} ($${worth})",
+		select_all = "Select All, You Lazy C**t",
+		deselect_all = "Deselect All, You Tw*t",
+		bet_with_amount = "Bet ($${amount}), Hope You Don't Lose Your Sh*t",
+		close = "Fuck Off",
+		no_items_in_inventory = "Fuck, you ain't got shit in your virtual inventory.",
+		deposit_at_casino = "You can deposit items at the f**king casino, ya know?",
+		sort = "Sort, You Disorganized F**ker",
+		player_won_pot = "${name} won $${amount} with a f**king ${chance}% chance ${timeAgo} ago. Holy Sh*t, right?",
+		the_ticket_was = "The ticket was ${ticket}. Don't Be a P***y, Take It Now!",
+		recent_pots_will_show_here = "Your Recent Screw-Ups Will Be Displayed Here"
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		random = "Random Crap",
 		beginner = "Noob",
 		custom = "Fancy Ass",
+
+		job_low = "Sh*tty-Ass Low Job",
+		job_medium = "Average-Ass Medium Job",
+		job_high = "Fancy-Ass High Job",
 
 		appreciated_tier = "Suck Up Tier",
 		respected_tier = "Kiss Ass Tier",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 		bad_screen_word_title = "Foul Language on Screen",
 		bad_screen_word_about = "This list shows players who can't control their potty mouths and have certain words popping up on their screens. Keep an eye on them before they ruin the game for others.",
-
-		freecam_detections_title = "Freecam Freaks",
-		freecam_detections_about = "This list shows players who use freecams to cheat and gain an unfair advantage. Keep an eye on them and kick them out if they continue to break the rules.",
 
 		damage_modifier_name = "Cunt's Name",
 		damage_modifier_expected = "What the fuck you expected?",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		better_stamina = "You'll fucking run like a cheetah without running out of stamina for the next ${duration} fucking minutes. Keep running and don't fucking stop!",
 		more_inventory_space = "Have an additional fucking ${amount} inventory slots for ${duration} shitty minutes.",
 
-		buffs_note = "The fucking buffs will only activate once you have left the fucking vicinity of the goddamn building."
+		buffs_note = "The fucking buffs will only activate once you have left the fucking vicinity of the goddamn building.",
+
+		press_to_prepare_food = "[${InteractionKey}] Prepare Freaking Food, Dumbass",
+		prepare_food = "Prepare Some Freaking Food",
+
+		kissaki_kitchen = "Some Other Asian Kitchen With Fancy Knives",
+
+		craft = "Craft (Are You a Witch?)",
+		starting = "Get Ready to Kick Some Ass"
 	},
 
 	riot_mode = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["ar-SA"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		put_boombox_in_trunk = "اضغط ~INPUT_ENTER~ لوضع الصندوق الصوتي في صندوق السيارة.",
 		put_player_in_trunk = "اضغط ~INPUT_ENTER~ لوضع اللاعب في صندوق السيارة.",
 		put_player_in_seat = "[${VehicleEnterKey}] وضعه في المقعد",
+		putting_player_in_seat = "وضع في المقعد",
 		trunk_interaction_display = "[${VehicleEnterKey}] الخروج من السيارة [${InteractionKey}] فتح/إغلاق الجذع",
 		trunk_open_close_display = "[${InteractionKey}] فتح/إغلاق الجذع",
+		trunk_get_out_display = "[${VehicleEnterKey}] الخروج من الصندوق",
 		boombox_already_in_trunk = "يوجد بومبوكس بالفعل في الجذع.",
 		the_trunk_is_occupied = "الجذع مشغول.",
 		unable_to_toggle_carry = "يرجى الانتظار قليلاً قبل تبديل التحمل.",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		freecam_ban = "يبدو أنك خرجت خارج جسدك.",
 		honeypot_ban = "حاولت تشغيل وضع الإبداع الخاص بك، ولكن لم تكن لديك الصلاحيات اللازمة لذلك.",
 		hotwire_driving_ban = "فروم فروم، أنا في سيارة أمي.",
-		illegal_freeze_ban = "هل تعلم أن الأطعمة الدافئة أفضل من الأطعمة المجمدة؟",
-		illegal_ped_change_ban = "من المؤذي أن تجري عمليات التجميل بنفسك.",
+		illegal_freeze_ban = "في حين تنتشر الأرواح بحرية، نحن الموتى البشر ملتزمون بقوانين الفيزياء، فسير آيزاك نيوتن لن يسمح بغير ذلك.",
+		illegal_ped_change_ban = "سرقة الهوية ليست ممزحة، جيم! يعاني الملايين من الشخصيات سنويًا.",
 		illegal_spectating_ban = "يجب أن تكون عميل FIB لمشاهدة اللاعبين الآخرين أو استخدام /gamemode spectator قبل المشاهدة.",
 		illegal_vehicle_modifier_ban = "على عكس دوم توريتو من فيلم السرعة والغضب، نحن لسنا عائلة.",
 		invincibility_ban = "أنت لست الفارس الأسود، ولا يمكنك أن تكون لا يمكن إيذائك.",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		vehicle_modification_ban = "لم تجد سائل إضاءة الأضواء الأمامية لسيارتك.",
 		vehicle_spam_ban = "فوز مضاد للإرهابيين.",
 		vehicle_spawn_ban = "قمت بتجربة استخدام الريدستون في عربة التعدين ولكن لم تكن هناك قضبان طاقة.",
-		weapon_spawn_ban = "لقد حاولت استخدام \"خيار دفع للفوز\" في FiveM، حيث دفعت فعلاً لتحصل على حظر.",
+		weapon_spawn_ban = "حاولوا سحب أرنب من القبعة، وجدوا بدلاً من ذلك قاذفة صواريخ.",
+		high_damage_ban = "تم انحراف مقاييس القوة بشكل كبير لصالحك، مما يؤثر على توازن عالمنا.",
+		suspicious_explosion_ban = "عذراً، ولكن هذا ليس فيلمًا من إخراج مايكل باي. لا يُسمح باستخدام الألعاب النارية بشكل مفرط.",
 
 		mp_f_freemode_01_label = "Freemode (أنثى)",
 		mp_m_freemode_01_label = "Freemode (ذكر)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} قام بإطلاق الرصاص بالتايزر على شخص على بعد مسافة كبيرة للغاية (${distance} متر).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} لديه كلمة كلامية/صورة غير مقبولة على شاشته (${count} كلمات/صور).",
+		notification_suspicious_explosion = "مكافحة الغش: قام ${displayName} بتفجير ${explosionType}.",
 
 		notification_freecam_detected = "مكافحة الغش: كشف تشغيل Freecam",
 		notification_illegal_vehicle_modifier = "مكافحة الغش: تعديل مركبة غير قانوني",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		notification_illegal_weapon = "مكافحة الغش: سلاح غير قانوني",
 		notification_spawned_object = "المضاد للغش: تم إنشاء عنصر",
 		notification_driving_hotwire = "المضاد للغش: القيادة أثناء السرقة",
+		notification_semi_godmode = "مكافحة الغش: نصف الوضع الإلهي",
 
 		ig_orleans_label = "الساسكواتش",
 		u_m_m_jesus_01_label = "يسوع",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		runtime_texture_screenshot = "منع الغش: تكستر معدل أثناء اللعب (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "منع الغش: كلمات غير لائقة في الشاشة (${words})",
 		freecam_detected_screenshot = "منع الغش: الكشف عن وجود Freecam (${distance}m)",
-		driving_hotwire_screenshot = "منع الغش: القيادة أثناء عملية فتح السيارة"
+		driving_hotwire_screenshot = "منع الغش: القيادة أثناء عملية فتح السيارة",
+		semi_godmode_screenshot = "مكافحة الغش: نصف الوضع الإلهي"
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		wipe_command_parameter_ignore_local_entities = "تجاهل الكيانات المحلية",
 		wipe_command_parameter_ignore_local_entities_help = "هل تريد تجاهل الكيانات غير المتصلة بالشبكة؟ إذا كنت تنظف من المخادعين ، فمن المستحسن وضع هذا على `true` أو  `1`.",
 		wipe_command_parameter_model_name = "اسم النموذج",
-		wipe_command_parameter_model_name_help = "إذا كنت تريد حذف الكيانات ذات الاسم النموذجي المحدد، فأدخل اسم النموذج هنا. وإلا، اتركه فارغًا، أو ضع `false` أو `0`. يمكنك أيضًا ضبط هذا على `vehicles` أو `peds`.",
+		wipe_command_parameter_model_name_help = "إذا كنت تريد حذف العناصر التي لها اسم نموذجي محدد، فأضف اسم النموذج هنا. وإلا، اتركه فارغًا، أو يساوي `false` أو `0`. يمكنك أيضًا ضبط هذا على `vehicles`، `peds` أو `objects`.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "التحوم في الهواء",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "تبديل_المخزون_الكبير",
-		toggle_big_inventory_command_help = "زيادة المساحة المؤقتة لـ 250 خانة في المخزون.",
+		toggle_big_inventory_command_help = "يزيد مؤقتًا عدد فتحات المخزن لشخصيتك إلى 250. (هذا مؤقت وسيعود إلى الحالة الأصلية عند إعادة تسجيل الدخول)",
 		toggle_big_inventory_command_substitutes = "big_inventory",
 
 		item_lookup_command = "lookup_item",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		item_lookup_command_parameter_item_id = "معرف العنصر",
 		item_lookup_command_parameter_item_id_help = "معرف العنصر الذي تريد البحث عنه.",
 		item_lookup_command_substitutes = "عنصر",
+
+		clear_evidence_command = "clear_evidence",
+		clear_evidence_command_help = "يُمكنك حذف زجاجة فحص أو زجاجات الفحص المحددة. لا يمكن التراجع عن هذا الإجراء!",
+		clear_evidence_command_parameter_evidence_id = "معرف الزجاجة",
+		clear_evidence_command_parameter_evidence_id_help = "معرف زجاجة الفحص التي تريد حذفها.",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "مسح_الخريطة",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		battle_royale = "معركة ملكية",
 		arena_gun_game = "areArena Gun Game",
 		lottery = "اليانصيب",
+		jackpot = "جائزة الجاكبوت",
 		daily_tasks = "المهام اليومية",
 		categories = "الفئات",
 		refresh = "تحديث",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		xp = "نقاط الخبرة",
 		money_won = "المال الذي تم الفوز به",
 		average_percentage = "النسبة المتوسطة",
-		streak = "السلسلة"
+		streak = "السلسلة",
+		money_lost = "فقدان المال",
+		net = "الصافي",
+		net_ratio = "نسبة الصافي",
+		items_gambled = "العناصر المُقامر بها"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		attachment_label_fmj = "رصاصة الجاكت الكامل المعدنية",
 		attachment_label_scope_nv = "نظارة الرؤية الليلية",
 		attachment_label_scope_thermal = "نظارة حرارية",
+		attachment_label_stock = "المخزون",
 
 		attachment_label_luxury1 = "ذا بيمب",
 		attachment_label_luxury2 = "ذا بالاس",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		showing_flags = "يتم عرض الأعلام.",
 		not_showing_flags = "تم إيقاف عرض الأعلام.",
 
+		flag = "العلامة ${flagId}",
+
 		flag_swap_leaderboard = "جدول ترتيب صاحب العلم",
 		ongoing = "جاري",
 		not_ongoing = "غير جاري",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "1 علامة",
 		flag_count = "${flags} علم",
-		players_with_most_flags_will_show_here = "سيتم عرض اللاعبين الذين يحملون أكبر عدد من الأعلام هنا."
+		players_with_most_flags_will_show_here = "سيتم عرض اللاعبين الذين يحملون أكبر عدد من الأعلام هنا.",
+		flags_on_ground = "الأعلام على الأرض: ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		los_santos_golf_club = "نادي لوس سانتوس للغولف",
 		arcade_bar = "مطعم وبار أركيد",
 		japanese_restaurant = "مطعم ياباني",
+		japanese_restaurant_kitchen = "مطبخ المطعم الياباني",
 		["945_studios"] = "945 Studios",
 		grain_mill = "مطحنة حبوب",
 		pd_prefix = "شرطة",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		invalid_item_id = "معرف العنصر غير صالح.",
 		item_not_found = "تعذر العثور على العنصر ذو المعرف `${itemId}`.",
 		item_lookup = "(${itemId}) ${label} موجود حاليًا في ${inventoryName}:${inventorySlot}.",
+
+		invalid_evidence_id = "رقم إثبات غير صالح.",
+		not_near_evidence_locker = "أنت لست بالقرب من خزانة الأدلة.",
+		clear_evidence_success = "تم مسح الأدلة بنجاح برقم `${evidenceId}`.",
+		clear_evidence_failed = "فشل في مسح الأدلة.",
+
+		clear_evidence_logs_title = "مسح الأدلة المتاحة",
+		clear_evidence_logs_details = "قام ${consoleName} بمسح الأدلة برقم `${evidenceId}`. تم حذف ${deleted} عنصر/عناصر والاحتفاظ بـ ${kept}.",
 
 		big_inventory_disabled = "إعادة تعيين فتحات العناصر الخاصة بشخصيتك إلى الإعداد الافتراضي.",
 		big_inventory_enabled = "زيادة فتحات العناصر الخاصة بشخصيتك مؤقتًا.",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		move_to_wash = "انتقل هنا لغسل المركبة",
 		vehicle_too_clean = "المركبة نظيفة جداً ولا يمكن غسيلها الآن",
 		move_to_put_fake_plate = "انتقل هنا لوضع لوحة ترخيص مزيفة",
-		unable_to_repair = "لا يمكنك إصلاح المركبة بينما يوجد لاعبون داخلها",
 		failed_lockpicking = "فشل الكسر",
 		lockpicking_succeeded = "تمت عملية الكسر بنجاح",
 		hotwiring_vehicle = "سرقة السيارة",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		press_to_deposit = "اضغط على ~INPUT_REPLAY_SHOWHOTKEY~ لإيداع العناصر في صندوق جاكبوت الإنترنت.",
 		can_only_withdraw_at_casino = "يمكنك السحب فقط في الكازينو.",
 
+		take_fee_no_permissions = "حاول اللاعب أخذ رسوم الجائزة دون الأذونات المناسبة.",
+		took_jackpot_fees = "تم أخذ رسوم الجائزة. تمت إزالة ${removedTotalItems} من العناصر التي تبلغ قيمتها $${removedTotalWorth} من ${inventories} مخازن.",
+
 		jackpot = "الجائزة الكبرى",
 		inventory = "المخزن",
 		history = "السجل",
-		no_items_in_inventory = "يبدو أن ليس لديك أي عناصر في مخزنك الافتراضي.",
-		you_can_deposit_at_the_casino = "يمكنك إيداع العناصر في الكازينو.",
-		close = "إغلاق",
 		bet = "رهان",
-		your_chance = "فرصتك: ${chance}%",
-		character_bet = "${characterName} راهن ${itemAmount} عناصر بقيمة $${itemWorth}",
-		pot = "الجائزة الكبرى: $${jackpotWorth}",
-		items = "العناصر: ${jackpotItemAmount}",
-		withdraw = "سحب (${withdrawAmount})",
-		quick_sell = "بيع سريع ($${quickSellWorth})",
-		inventory_value = "القيمة: $${inventoryWorth}",
-		inventory_total_items = "إجمالي العناصر: ${inventoryTotalItems}",
-		daily_fee_information = "في الساعة 6 صباحًا بتوقيت UTC، سيتم إزالة العناصر بقيمة >= 5٪ من إجمالي قيمة المخزون الخاص بك كرسوم تخزين.",
-
-		take_fee_no_permissions = "حاول اللاعب أخذ رسوم الجائزة دون الأذونات المناسبة.",
-		took_jackpot_fees = "تم أخذ رسوم الجائزة. تمت إزالة ${removedTotalItems} من العناصر التي تبلغ قيمتها $${removedTotalWorth} من ${inventories} مخازن."
+		your_chance = "الفرصة: ${chance}%",
+		pot = "الجائزة: $${pot}",
+		items = "العناصر: ${items}",
+		time = "الوقت: ${time} ثانية",
+		chatters = "المتحدثون: ${chatters}",
+		send_a_message = "أرسل رسالة...",
+		bet_placed = "${name} قام بالرهان على ${count} عنصر(أشياء) بقيمة $${worth}.",
+		bet_item = "${amount}x ${name} ($${worth})",
+		value = "القيمة: $${value}",
+		total_items = "مجموع العناصر: ${totalItems}",
+		withdraw = "سحب (${amount})",
+		quick_sell = "البيع السريع ($${worth})",
+		storage_fee_warning = "في الساعة 6 صباحاً بتوقيت UTC سيتم إزالة العناصر التي تزيد قيمتها عن 5٪ من قيمة المخزون الإجمالي كرسوم تخزين.",
+		item_with_worth = "${worth} ريال (${label})",
+		select_all = "تحديد الكل",
+		deselect_all = "إلغاء تحديد الكل",
+		bet_with_amount = "تراهن (${amount} ﷼)",
+		close = "إغلاق",
+		no_items_in_inventory = "يبدو أن ليس لديك أي عناصر في مخزنك الافتراضي.",
+		deposit_at_casino = "يمكنك إيداع الأغراض في الكازينو.",
+		sort = "ترتيب",
+		player_won_pot = "${name} فاز بمبلغ ${amount} ريال بنسبة ${chance}% قبل ${timeAgo}.",
+		the_ticket_was = "التذكرة كانت ${ticket}.",
+		recent_pots_will_show_here = "ستظهر الأواني الأخيرة هنا"
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		random = "عشوائي",
 		beginner = "مبتدئ",
 		custom = "مخصص",
+
+		job_low = "وظيفة منخفضة",
+		job_medium = "وظيفة متوسطة",
+		job_high = "وظيفة عالية",
 
 		appreciated_tier = "الطبقة المقدرة",
 		respected_tier = "الطبقة المحترمة",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		bad_screen_word_title = "كلمات غير لائقة على الشاشة",
 		bad_screen_word_about = "في هذا القسم، يتم عرض قائمة باللاعبين الذين تم الكشف عن وجود كلمات معينة على شاشتهم. ويجب أن يساعد هذا في العثور على اللاعبين المحتملين للاستخدام غير القانوني.",
-
-		freecam_detections_title = "الكشف عن Freecam",
-		freecam_detections_about = "في هذا القسم، يتم عرض قائمة باللاعبين الذين تم الكشف عن استخدامهم لتقنية 'Freecam'. ويجب أن يساعد هذا في العثور على اللاعبين المحتملين للاستخدام غير القانوني.",
 
 		damage_modifier_name = "اسم اللاعب",
 		damage_modifier_expected = "المُتَوَقَّع",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		better_stamina = "القدرة على الجري دون الإنهاء من الطاقة لمدة ${duration} دقائق.",
 		more_inventory_space = "يحصل على ${amount} مساحة إضافية للمخزن لمدة ${duration} دقائق.",
 
-		buffs_note = "لن تنشط النعمات إلا عند مغادرتك لمحيط المبنى."
+		buffs_note = "لن تنشط النعمات إلا عند مغادرتك لمحيط المبنى.",
+
+		press_to_prepare_food = "[${InteractionKey}] تحضير الطعام",
+		prepare_food = "تحضير الطعام",
+
+		kissaki_kitchen = "مطبخ كيساكي",
+
+		craft = "تصنيع",
+		starting = "بدء"
 	},
 
 	riot_mode = {

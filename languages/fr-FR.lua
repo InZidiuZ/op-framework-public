@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["fr-FR"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		put_boombox_in_trunk = "Appuyez sur ~INPUT_ENTER~ pour mettre le boombox dans le coffre.",
 		put_player_in_trunk = "Appuyez sur ~INPUT_ENTER~ pour mettre le joueur dans le coffre.",
 		put_player_in_seat = "[${VehicleEnterKey}] Placer dans le siège",
+		putting_player_in_seat = "Placer dans le siège",
 		trunk_interaction_display = "[${VehicleEnterKey}] Sortir [${InteractionKey}] Ouvrir/Fermer le coffre",
 		trunk_open_close_display = "[${InteractionKey}] Ouvrir/Fermer le coffre",
+		trunk_get_out_display = "[${VehicleEnterKey}] Descendre",
 		boombox_already_in_trunk = "Il y a déjà un boombox dans le coffre.",
 		the_trunk_is_occupied = "Le coffre est occupé.",
 		unable_to_toggle_carry = "Veuillez attendre un peu avant de basculer le transport.",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		freecam_ban = "Vous semblez avoir vécu une expérience hors de votre corps.",
 		honeypot_ban = "Vous avez essayé d'activer votre mode créatif, mais vous n'avez pas les autorisations nécessaires pour le faire.",
 		hotwire_driving_ban = "Vroom Vroom, je suis dans la voiture de ma maman.",
-		illegal_freeze_ban = "Vous savez que la nourriture chaude est bien meilleure que la nourriture congelée?",
-		illegal_ped_change_ban = "Il est dangereux de pratiquer une chirurgie esthétique sur soi-même.",
+		illegal_freeze_ban = "Alors que les esprits peuvent errer librement, nous simples mortels sommes tenus par les lois de la physique. Sir Isaac Newton ne l'aurait pas voulu autrement.",
+		illegal_ped_change_ban = "L'usurpation d'identité n'est pas une plaisanterie, Jim! Des millions de personnages en souffrent chaque année.",
 		illegal_spectating_ban = "Vous devez être un agent du FIB pour observer d'autres joueurs ou utiliser /gamemode spectator avant de pouvoir observer.",
 		illegal_vehicle_modifier_ban = "Contrairement à Dom Toretto de Fast and Furious, nous ne sommes pas une famille.",
 		invincibility_ban = "Vous n'êtes pas le Chevalier Noir, vous ne pouvez pas être invincible.",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		vehicle_modification_ban = "Vous n'avez pas trouvé le liquide pour phares de votre voiture.",
 		vehicle_spam_ban = "Les contre-terroristes gagnent.",
 		vehicle_spawn_ban = "Vous avez essayé d'utiliser la redstone sur un wagonnet mais vous n'aviez pas de rails alimentés.",
-		weapon_spawn_ban = "Vous avez tenté la \"voie Pay to Win\" de FiveM, où vous avez en fait payé pour vous faire bannir.",
+		weapon_spawn_ban = "Tentative de sortir un lapin du chapeau, mais on a trouvé un bazooka à la place.",
+		high_damage_ban = "Les déséquilibres sont interdits sur ce serveur. Votre pouvoir était excessif.",
+		suspicious_explosion_ban = "Désolé, mais ce n'est pas un film de Michael Bay. Une utilisation excessive de pyrotechnie n'est pas autorisée.",
 
 		mp_f_freemode_01_label = "Freemode (femme)",
 		mp_m_freemode_01_label = "Freemode (homme)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 
 		notification_distance_taze = "Anti-Cheat : ${displayName} a neutralisé quelqu'un avec une arme de tazer à une très grande distance (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat : ${displayName} a ${count} mot(s) déclencheur(s) sur leur écran.",
+		notification_suspicious_explosion = "Anti-Triche: ${displayName} a déclenché une explosion suspecte (${explosionType}).",
 
 		notification_freecam_detected = "Anti-Cheat : Freecam détecté",
 		notification_illegal_vehicle_modifier = "Anti-Cheat : Modificateur de véhicule illégal",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		notification_illegal_weapon = "Anti-triche : Arme illégale",
 		notification_spawned_object = "Anti-triche : Objet apparu",
 		notification_driving_hotwire = "Anti-triche : Conduite en voiture volée",
+		notification_semi_godmode = "Anti-Cheat: Mode Dieu Partiel",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jésus",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		runtime_texture_screenshot = "Anti-triche : texture en exécution (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Anti-triche : mot inapproprié à l'écran (${words})",
 		freecam_detected_screenshot = "Anti-triche : caméra libre détectée (${distance}m)",
-		driving_hotwire_screenshot = "Anti-triche : conduite pendant que la voiture est chaude"
+		driving_hotwire_screenshot = "Anti-triche : conduite pendant que la voiture est chaude",
+		semi_godmode_screenshot = "Anti-Cheat: Mode Dieu Partiel"
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		wipe_command_parameter_ignore_local_entities = "ignorer les entités locales",
 		wipe_command_parameter_ignore_local_entities_help = "Ignorer les entités non-réseau ? Si vous nettoyez après un tricheur, il est recommandé de mettre ceci à `vrai` ou `1`.",
 		wipe_command_parameter_model_name = "nom du modèle",
-		wipe_command_parameter_model_name_help = "Si vous voulez supprimer uniquement des entités d'un certain nom de modèle, insérez un nom de modèle ici. Sinon, laissez-le vide, à `false` ou `0`. Vous pouvez également définir cela sur `véhicules` ou `piétons`.",
+		wipe_command_parameter_model_name_help = "Si vous souhaitez seulement supprimer des entités d'un certain nom de modèle, insérez le nom ici. Sinon, laissez le champ vide ou mettez-le à `false` ou `0`. Vous pouvez également le définir sur `véhicules`, `piétons` ou `objets`.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "noclip",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "activer_inventaire_gros",
-		toggle_big_inventory_command_help = "Augmente temporairement les emplacements de l'inventaire de votre personnage à 250.",
+		toggle_big_inventory_command_help = "Augmente temporairement les emplacements de votre inventaire à 250. (Ceci est TEMPORAIRE et sera réinitialisé lorsque vous vous reconnecterez)",
 		toggle_big_inventory_command_substitutes = "inventaire_gros",
 
 		item_lookup_command = "recherche_objet",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		item_lookup_command_parameter_item_id = "ID de l'objet",
 		item_lookup_command_parameter_item_id_help = "L'ID de l'objet que vous souhaitez rechercher.",
 		item_lookup_command_substitutes = "objet",
+
+		clear_evidence_command = "clear_evidence",
+		clear_evidence_command_help = "Efface le casier à preuves spécifié. Cette action ne peut pas être annulée!",
+		clear_evidence_command_parameter_evidence_id = "ID preuve",
+		clear_evidence_command_parameter_evidence_id_help = "L'ID du casier à preuves que vous souhaitez effacer.",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "effacer_carte",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		battle_royale = "Battle Royale",
 		arena_gun_game = "Arène Gun Game",
 		lottery = "Loterie",
+		jackpot = "Jackpot",
 		daily_tasks = "Tâches quotidiennes",
 		categories = "Catégories",
 		refresh = "Actualiser",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		xp = "Expérience",
 		money_won = "Argent gagné",
 		average_percentage = "Pourcentage moyen",
-		streak = "Série"
+		streak = "Série",
+		money_lost = "Argent Perdu",
+		net = "Réseau",
+		net_ratio = "Ratio de Réseau",
+		items_gambled = "Objets Joués"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		attachment_label_fmj = "Munitions à ogive blindée",
 		attachment_label_scope_nv = "Viseur à vision nocturne",
 		attachment_label_scope_thermal = "Viseur thermique",
+		attachment_label_stock = "Stock",
 
 		attachment_label_luxury1 = "Le Pimp",
 		attachment_label_luxury2 = "Les Ballas",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		showing_flags = "Affichage des drapeaux.",
 		not_showing_flags = "Les drapeaux ne sont plus affichés.",
 
+		flag = "Drapeau ${flagId}",
+
 		flag_swap_leaderboard = "Classement du drapeau",
 		ongoing = "En cours",
 		not_ongoing = "Pas en cours",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "1 drapeau",
 		flag_count = "${flags} drapeaux",
-		players_with_most_flags_will_show_here = "Les joueurs avec le plus grand nombre de drapeaux apparaîtront ici."
+		players_with_most_flags_will_show_here = "Les joueurs avec le plus grand nombre de drapeaux apparaîtront ici.",
+		flags_on_ground = "Drapeaux au sol : ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		los_santos_golf_club = "Club de golf de Los Santos",
 		arcade_bar = "Bar d'arcade",
 		japanese_restaurant = "Restaurant japonais",
+		japanese_restaurant_kitchen = "Cuisine de Restaurant Japonais",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Moulin à céréales",
 		pd_prefix = "PD",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		invalid_item_id = "ID d'objet invalide.",
 		item_not_found = "Impossible de trouver l'objet avec l'ID `${itemId}`.",
 		item_lookup = "${label} (${itemId}) actuellement dans ${inventoryName}:${inventorySlot}.",
+
+		invalid_evidence_id = "ID de preuve invalide.",
+		not_near_evidence_locker = "Vous n'êtes pas près du casier à preuves.",
+		clear_evidence_success = "Preuve effacée avec succès avec l'ID `${evidenceId}`.",
+		clear_evidence_failed = "Impossible d'effacer la preuve.",
+
+		clear_evidence_logs_title = "Preuves effacées",
+		clear_evidence_logs_details = "${consoleName} a effacé une preuve avec l'ID `${evidenceId}`. ${deleted} élément(s) ont été supprimé(s) et ${kept} ont été conservé(s).",
 
 		big_inventory_disabled = "Réinitialisez les emplacements d'inventaire de votre personnage aux paramètres par défaut.",
 		big_inventory_enabled = "Augmentation temporaire des emplacements d'inventaire de votre personnage.",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		move_to_wash = "Déplacez-vous ici pour laver le véhicule",
 		vehicle_too_clean = "Le véhicule est trop propre pour être lavé.",
 		move_to_put_fake_plate = "Déplacez-vous ici pour mettre une fausse plaque d'immatriculation.",
-		unable_to_repair = "Vous ne pouvez pas réparer le véhicule si des joueurs sont à l'intérieur.",
 		failed_lockpicking = "Crochetage échoué",
 		lockpicking_succeeded = "Crochetage réussi.",
 		hotwiring_vehicle = "Démarrage à chaud du véhicule",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		press_to_deposit = "Appuyez sur ~INPUT_REPLAY_SHOWHOTKEY~ pour déposer des objets dans le Jackpot en ligne.",
 		can_only_withdraw_at_casino = "Vous ne pouvez retirer des objets qu'au Casino.",
 
+		take_fee_no_permissions = "Joueur a tenté de prendre des frais de jackpot sans les autorisations nécessaires.",
+		took_jackpot_fees = "A pris les frais de jackpot. A retiré ${removedTotalItems} objets d'une valeur de $${removedTotalWorth} des inventaires de ${inventories}.",
+
 		jackpot = "Jackpot",
 		inventory = "Inventaire",
 		history = "Historique",
-		no_items_in_inventory = "Il semblerait que vous n'ayez aucun objet dans votre inventaire virtuel.",
-		you_can_deposit_at_the_casino = "Vous pouvez déposer des objets au casino.",
-		close = "Fermer",
 		bet = "Miser",
-		your_chance = "Votre chance : ${chance}%",
-		character_bet = "${characterName} a misé ${itemAmount} objet(s) d'une valeur de $${itemWorth}",
-		pot = "Pot : $${jackpotWorth}",
-		items = "Objets : ${jackpotItemAmount}",
-		withdraw = "Retirer (${withdrawAmount})",
-		quick_sell = "Vente rapide ($${quickSellWorth})",
-		inventory_value = "Valeur : $${inventoryWorth}",
-		inventory_total_items = "Total d'objets : ${inventoryTotalItems}",
-		daily_fee_information = "À 6h UTC chaque jour, les objets d'une valeur >= 5% de la valeur totale de votre inventaire seront retirés en tant que 'frais de stockage'.",
-
-		take_fee_no_permissions = "Joueur a tenté de prendre des frais de jackpot sans les autorisations nécessaires.",
-		took_jackpot_fees = "A pris les frais de jackpot. A retiré ${removedTotalItems} objets d'une valeur de $${removedTotalWorth} des inventaires de ${inventories}."
+		your_chance = "Chance : ${chance}%",
+		pot = "Pot : $${pot}",
+		items = "Objets : ${items}",
+		time = "Temps : ${time}s",
+		chatters = "Discutants : ${chatters}",
+		send_a_message = "Envoyer un message...",
+		bet_placed = "${name} a misé ${count} objet(s) d'une valeur de $${worth}.",
+		bet_item = "${amount}x ${name} ($${worth})",
+		value = "Valeur : $${value}",
+		total_items = "Total d'objets : ${totalItems}",
+		withdraw = "Retrait (${amount})",
+		quick_sell = "Vente rapide ($${worth})",
+		storage_fee_warning = "À 6h UTC chaque jour, des objets d'une valeur >= 5% de la valeur de votre inventaire total seront retirés comme 'frais de stockage'.",
+		item_with_worth = "${label} (${worth} $)",
+		select_all = "Tout Sélectionner",
+		deselect_all = "Tout Désélectionner",
+		bet_with_amount = "Parier (${amount} $)",
+		close = "Fermer",
+		no_items_in_inventory = "Il semblerait que vous n'ayez aucun objet dans votre inventaire virtuel.",
+		deposit_at_casino = "Vous pouvez déposer des objets au casino.",
+		sort = "Trier",
+		player_won_pot = "${name} a gagné ${amount} $ avec une chance de ${chance}% ${timeAgo} auparavant.",
+		the_ticket_was = "Le ticket était ${ticket}.",
+		recent_pots_will_show_here = "Les pots récents apparaîtront ici."
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		random = "Aléatoire",
 		beginner = "Débutant",
 		custom = "Personnalisé",
+
+		job_low = "Emploi Faible",
+		job_medium = "Emploi Moyen",
+		job_high = "Emploi Élevé",
 
 		appreciated_tier = "Niveau Apprécié",
 		respected_tier = "Niveau Respecté",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["fr-FR"] = {
 
 		bad_screen_word_title = "Mots d'écran inappropriés",
 		bad_screen_word_about = "Ici, tous les joueurs ayant certains mots à l'écran seront répertoriés. Cela devrait aider à trouver des joueurs qui pourraient être des moddeurs potentiels.",
-
-		freecam_detections_title = "Détections de la caméra libre",
-		freecam_detections_about = "Ici, tous les joueurs ayant été détectés en utilisant une caméra libre seront répertoriés. Cela devrait aider à trouver des joueurs qui pourraient être des moddeurs potentiels.",
 
 		damage_modifier_name = "Nom Joueur",
 		damage_modifier_expected = "Attendu",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		better_stamina = "Être capable de courir sans manquer d'endurance pendant ${duration} minutes.",
 		more_inventory_space = "Avoir ${amount} emplacements supplémentaires dans l'inventaire pendant ${duration} minutes.",
 
-		buffs_note = "Les améliorations ne s'activeront que lorsque vous aurez quitté l'intérieur du bâtiment."
+		buffs_note = "Les améliorations ne s'activeront que lorsque vous aurez quitté l'intérieur du bâtiment.",
+
+		press_to_prepare_food = "[${InteractionKey}] Préparer la Nourriture",
+		prepare_food = "Préparer la Nourriture",
+
+		kissaki_kitchen = "Cuisine Kissaki",
+
+		craft = "Fabriquer",
+		starting = "Démarrage"
 	},
 
 	riot_mode = {

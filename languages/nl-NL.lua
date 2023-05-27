@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		put_boombox_in_trunk = "Druk op ~INPUT_ENTER~ om de boombox in de kofferbak te plaatsen.",
 		put_player_in_trunk = "Druk op ~INPUT_ENTER~ om de speler in de kofferbak te plaatsen.",
 		put_player_in_seat = "[${VehicleEnterKey}] Plaats in zitplaats",
+		putting_player_in_seat = "Plaatsen in stoel",
 		trunk_interaction_display = "[${VehicleEnterKey}] Uitstappen [${InteractionKey}] Kofferbak openen/sluiten",
 		trunk_open_close_display = "[${InteractionKey}] Kofferbak openen/sluiten",
+		trunk_get_out_display = "[${VehicleEnterKey}] Uitstappen",
 		boombox_already_in_trunk = "Er zit al een ghettoblaster in de kofferbak.",
 		the_trunk_is_occupied = "De kofferbak is bezet.",
 		unable_to_toggle_carry = "Wacht even voordat je het dragen kan aanpassen.",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		freecam_ban = "Het lijkt erop dat je een buitenlichamelijke ervaring hebt gehad.",
 		honeypot_ban = "Je hebt geprobeerd je creative mode in te schakelen, maar had daarvoor geen toestemming.",
 		hotwire_driving_ban = "Vroom Vroom, ik zit in de auto van m'n moeder.",
-		illegal_freeze_ban = "Weet je dat warm eten veel lekkerder is dan bevroren eten?",
-		illegal_ped_change_ban = "Het is gevaarlijk om zelf plastische chirurgie uit te voeren.",
+		illegal_freeze_ban = "Terwijl geesten vrij kunnen ronddwalen, zijn wij stervelingen gebonden aan de wetten van de fysica. Sir Isaac Newton zou het niet anders willen.",
+		illegal_ped_change_ban = "Identiteitsdiefstal is geen grap, Jim! Miljoenen personages lijden hier elk jaar onder.",
 		illegal_spectating_ban = "Je moet een FIB Agent zijn om andere spelers te observeren of gebruik /gamemode spectator voordat je gaat observeren.",
 		illegal_vehicle_modifier_ban = "In tegenstelling tot Dom Toretto uit Fast and Furious, zijn we geen familie.",
 		invincibility_ban = "Je bent niet de Black Knight, je mag niet onoverwinnelijk zijn.",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		vehicle_modification_ban = "Je kon de koplampvloeistof niet vinden voor je auto.",
 		vehicle_spam_ban = "Tegen terroristen winnen.",
 		vehicle_spawn_ban = "Je probeerde redstone te gebruiken op een mijnkar maar je had geen elektrisch aangedreven rails.",
-		weapon_spawn_ban = "Je hebt de \"Pay to Win Route\" van FiveM geprobeerd, waarbij je nu eigenlijk hebt betaald om verbannen te worden.",
+		weapon_spawn_ban = "Probeerde een konijn uit de hoed te toveren, vond in plaats daarvan een bazooka.",
+		high_damage_ban = "De machtsverhoudingen waren te sterk in jouw voordeel, waardoor het evenwicht in onze wereld werd verstoord.",
+		suspicious_explosion_ban = "Sorry, maar dit is geen Michael Bay-film. Overmatig gebruik van pyrotechniek is niet toegestaan.",
 
 		mp_f_freemode_01_label = "Freemode (vrouw)",
 		mp_m_freemode_01_label = "Freemode (man)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} heeft iemand getaserd over een zeer grote afstand (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} heeft ${count} triggerwoord(en) op hun scherm.",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} heeft een ${explosionType}-explosie veroorzaakt.",
 
 		notification_freecam_detected = "Anti-Cheat: Freecam Gedetecteerd",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Voertuig Modifier",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		notification_illegal_weapon = "Anti-Cheat: Illegaal wapen",
 		notification_spawned_object = "Anti-Cheat: Gespawned object",
 		notification_driving_hotwire = "Anti-Cheat: Rijden tijdens Hotwire",
+		notification_semi_godmode = "Anti-Cheat: Semi-Godmodus",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jezus",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		runtime_texture_screenshot = "Anti-Cheat: Runtime Textuur (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Anti-Cheat: Verboden Schermwoord (${words})",
 		freecam_detected_screenshot = "Anti-Cheat: Freecam gedetecteerd (${distance}m)",
-		driving_hotwire_screenshot = "Anti-Cheat: Rijden tijdens het (hete) starten"
+		driving_hotwire_screenshot = "Anti-Cheat: Rijden tijdens het (hete) starten",
+		semi_godmode_screenshot = "Anti-Cheat: Semi-Godmodus"
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		wipe_command_parameter_ignore_local_entities = "negeer lokale objecten",
 		wipe_command_parameter_ignore_local_entities_help = "Lokale objecten negeren? Als je aan het opruimen bent van een cheater, wordt aanbevolen dit op `true` of `1` te zetten.",
 		wipe_command_parameter_model_name = "modelnaam",
-		wipe_command_parameter_model_name_help = "Als u alleen entiteiten van een bepaalde modelnaam wilt verwijderen, voert u hier een modelnaam in. Laat het anders leeg, op `false` of `0`. U kunt dit ook instellen op `voertuigen` of `peds`.",
+		wipe_command_parameter_model_name_help = "Als je alleen entiteiten van een bepaalde modelnaam wilt verwijderen, voer dan hier een modelnaam in. Anders laat je dit leeg, op 'false' of '0'. Je kunt dit ook instellen op 'voertuigen', 'peds' of 'objecten'.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "noclip",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "wissel_grote_inventaris",
-		toggle_big_inventory_command_help = "Vergroot tijdelijk de inventarisslots van jouw personage naar 250.",
+		toggle_big_inventory_command_help = "Verhoogt tijdelijk de inventaris slots van je personage naar 250. (Dit is TIJDELIJK en zal worden teruggezet wanneer je opnieuw inlogt)",
 		toggle_big_inventory_command_substitutes = "grote_inventaris",
 
 		item_lookup_command = "zoek_item",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		item_lookup_command_parameter_item_id = "item id",
 		item_lookup_command_parameter_item_id_help = "Het ID van het item dat je wilt opzoeken.",
 		item_lookup_command_substitutes = "item",
+
+		clear_evidence_command = "clear_evidence",
+		clear_evidence_command_help = "Maakt de opgegeven bewijsslot leeg. Deze actie kan niet ongedaan worden gemaakt!",
+		clear_evidence_command_parameter_evidence_id = "bewijs id",
+		clear_evidence_command_parameter_evidence_id_help = "Het ID van de bewijsslot dat je wilt legen.",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "map_wissen",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		battle_royale = "Battle Royale",
 		arena_gun_game = "Arena Gun Game",
 		lottery = "Loterij",
+		jackpot = "Jackpot",
 		daily_tasks = "Dagelijkse Taken",
 		categories = "Categorieën",
 		refresh = "Verversen",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		xp = "XP",
 		money_won = "Geld gewonnen",
 		average_percentage = "Gemiddeld percentage",
-		streak = "Reeks"
+		streak = "Reeks",
+		money_lost = "Geld Verloren",
+		net = "Netto",
+		net_ratio = "Netto Verhouding",
+		items_gambled = "Ingezetten Items"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		attachment_label_fmj = "Volmantel Kogels",
 		attachment_label_scope_nv = "Nachtkijker Richtkijker",
 		attachment_label_scope_thermal = "Thermische Richtkijker",
+		attachment_label_stock = "Voorraad",
 
 		attachment_label_luxury1 = "De Pooier",
 		attachment_label_luxury2 = "De Ballas",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		showing_flags = "Vlaggen tonen.",
 		not_showing_flags = "Vlaggen worden niet langer getoond.",
 
+		flag = "Vlag ${flagId}",
+
 		flag_swap_leaderboard = "Vlag Omruilscorebord",
 		ongoing = "Bezig",
 		not_ongoing = "Niet bezig",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "1 vlag",
 		flag_count = "${flags} vlaggen",
-		players_with_most_flags_will_show_here = "De spelers met de meeste vlaggen zullen hier getoond worden."
+		players_with_most_flags_will_show_here = "De spelers met de meeste vlaggen zullen hier getoond worden.",
+		flags_on_ground = "Vlaggen op de grond: ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		los_santos_golf_club = "Golfclub van Los Santos",
 		arcade_bar = "Arcade Bar",
 		japanese_restaurant = "Japans Restaurant",
+		japanese_restaurant_kitchen = "Japanse Restaurantkeuken",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Graanmolen",
 		pd_prefix = "Politie",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		invalid_item_id = "Ongeldige item ID.",
 		item_not_found = "Kon item met ID `${itemId}` niet vinden.",
 		item_lookup = "${label} (${itemId}) momenteel in ${inventoryName}:${inventorySlot}.",
+
+		invalid_evidence_id = "Ongeldige bewijs ID.",
+		not_near_evidence_locker = "U bent niet in de buurt van het bewijskastje.",
+		clear_evidence_success = "Bewijs met ID `${evidenceId}` succesvol verwijderd.",
+		clear_evidence_failed = "Verwijderen van bewijs is mislukt.",
+
+		clear_evidence_logs_title = "Bewijs verwijderd",
+		clear_evidence_logs_details = "${consoleName} heeft bewijs met ID `${evidenceId}` verwijderd. ${deleted} item(s) zijn verwijderd en ${kept} zijn behouden.",
 
 		big_inventory_disabled = "Personage-inventaris terugzetten naar standaard.",
 		big_inventory_enabled = "Tijdelijk de inventarisslots van je personage vergroot.",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		move_to_wash = "Verplaats hierheen om het voertuig te wassen",
 		vehicle_too_clean = "Het voertuig is te schoon om te worden gewassen.",
 		move_to_put_fake_plate = "Ga hierheen om een nep kentekenplaat te bevestigen.",
-		unable_to_repair = "Je kunt het voertuig niet repareren terwijl er spelers in zitten.",
 		failed_lockpicking = "Lockpicken Mislukt",
 		lockpicking_succeeded = "Lockpicken Gelukt.",
 		hotwiring_vehicle = "Voertuig Starten zonder Sleutel",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		press_to_deposit = "Druk op ~INPUT_REPLAY_SHOWHOTKEY~ om items naar de Online Jackpot te storten.",
 		can_only_withdraw_at_casino = "Je kunt alleen opnemen in het Casino.",
 
+		take_fee_no_permissions = "Speler probeerde jackpotkosten te nemen zonder de juiste toestemmingen.",
+		took_jackpot_fees = "Jackpotkosten genomen. ${removedTotalItems} items ter waarde van $${removedTotalWorth} zijn verwijderd uit ${inventories} inventoires.",
+
 		jackpot = "Jackpot",
 		inventory = "Inventaris",
 		history = "Geschiedenis",
-		no_items_in_inventory = "Het lijkt erop dat je geen items in je virtuele inventaris hebt.",
-		you_can_deposit_at_the_casino = "Je kunt items storten in het casino.",
-		close = "Sluiten",
 		bet = "Inzet",
-		your_chance = "Jouw Kans: ${chance}%",
-		character_bet = "${characterName} zette ${itemAmount} item(s) ter waarde van $${itemWorth} in",
-		pot = "Pot: $${jackpotWorth}",
-		items = "Items: ${jackpotItemAmount}",
-		withdraw = "Opnemen (${withdrawAmount})",
-		quick_sell = "Snelle Verkoop ($${quickSellWorth})",
-		inventory_value = "Waarde: $${inventoryWorth}",
-		inventory_total_items = "Totaal Aantal Items: ${inventoryTotalItems}",
-		daily_fee_information = "Om 6:00 UTC elke dag worden items ter waarde van >= 5% van de totale waarde van je inventaris verwijderd als 'opslagkosten'.",
-
-		take_fee_no_permissions = "Speler probeerde jackpotkosten te nemen zonder de juiste toestemmingen.",
-		took_jackpot_fees = "Jackpotkosten genomen. ${removedTotalItems} items ter waarde van $${removedTotalWorth} zijn verwijderd uit ${inventories} inventoires."
+		your_chance = "Kans: ${chance}%",
+		pot = "Pot: $${pot}",
+		items = "Items: ${items}",
+		time = "Tijd: ${time}s",
+		chatters = "Chatters: ${chatters}",
+		send_a_message = "Stuur een bericht...",
+		bet_placed = "${name} zet ${count} item(s) ter waarde van $${worth} in.",
+		bet_item = "${amount}x ${name} ($${worth})",
+		value = "Waarde: $${value}",
+		total_items = "Totaal aantal items: ${totalItems}",
+		withdraw = "Opnemen (${amount})",
+		quick_sell = "Snel Verkopen ($${worth})",
+		storage_fee_warning = "Om 6.00 uur UTC worden elke dag items die >= 5% van de totale waarde van uw inventaris waard zijn, verwijderd als 'opslagkosten'.",
+		item_with_worth = "${label} ($${worth})",
+		select_all = "Alles selecteren",
+		deselect_all = "Selectie opheffen",
+		bet_with_amount = "Wedden ($${amount})",
+		close = "Sluiten",
+		no_items_in_inventory = "Het lijkt erop dat je geen items in je virtuele inventaris hebt.",
+		deposit_at_casino = "Je kunt items in het casino storten.",
+		sort = "Sorteren",
+		player_won_pot = "${name} won ${amount} met een kans van ${chance}% ${timeAgo} geleden.",
+		the_ticket_was = "Het ticket was ${ticket}.",
+		recent_pots_will_show_here = "Recente potten worden hier getoond."
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		random = "Willekeurig",
 		beginner = "Beginner",
 		custom = "Aangepast",
+
+		job_low = "Laag inkomen beroep",
+		job_medium = "Midden inkomen beroep",
+		job_high = "Hoog inkomen beroep",
 
 		appreciated_tier = "Gewaardeerde tier",
 		respected_tier = "Gerespecteerde tier",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		bad_screen_word_title = "Slechte Schermwoorden",
 		bad_screen_word_about = "Hier worden alle spelers weergegeven die betrapt zijn op het hebben van bepaalde woorden op hun scherm. Dit kan helpen bij het opsporen van spelers die mogelijk modders zijn.",
-
-		freecam_detections_title = "Freecam Detecties",
-		freecam_detections_about = "Hier worden alle spelers weergegeven die betrapt zijn op het gebruik van een freecam. Dit kan helpen bij het opsporen van spelers die mogelijk modders zijn.",
 
 		damage_modifier_name = "Spelersnaam",
 		damage_modifier_expected = "Verwacht",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		better_stamina = "Kan rennen zonder uitgeput te raken voor ${duration} minuten.",
 		more_inventory_space = "Heb ${amount} extra inventarisvakken voor ${duration} minuten.",
 
-		buffs_note = "De buffs worden alleen geactiveerd nadat je het gebouw hebt verlaten."
+		buffs_note = "De buffs worden alleen geactiveerd nadat je het gebouw hebt verlaten.",
+
+		press_to_prepare_food = "[${InteractionKey}] Bereid Eten",
+		prepare_food = "Bereid Eten",
+
+		kissaki_kitchen = "Kissaki Keuken",
+
+		craft = "Maken",
+		starting = "Starten"
 	},
 
 	riot_mode = {

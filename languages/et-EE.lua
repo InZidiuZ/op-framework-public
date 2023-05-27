@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["et-EE"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		put_boombox_in_trunk = "Vajuta ~INPUT_ENTER~, et panna boombox pakiruumi.",
 		put_player_in_trunk = "Vajuta ~INPUT_ENTER~, et panna mängija pakiruumi.",
 		put_player_in_seat = "[${VehicleEnterKey}] Istu istmele",
+		putting_player_in_seat = "Istmele panemine",
 		trunk_interaction_display = "[${VehicleEnterKey}] Välju sõidukist [${InteractionKey}] Ava/sulge pagasiruum",
 		trunk_open_close_display = "[${InteractionKey}] Ava/sulge pagasiruum",
+		trunk_get_out_display = "[${VehicleEnterKey}] Väljumine",
 		boombox_already_in_trunk = "Pagasiruumis on juba helisüsteem.",
 		the_trunk_is_occupied = "Pagasiruum on hõivatud.",
 		unable_to_toggle_carry = "Palun oodake enne kandmise sisse/välja lülitamist.",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		freecam_ban = "Tundub, et teil oli kehaväline kogemus.",
 		honeypot_ban = "Te üritasite sisse lülitada loomeolekut, kuid teil ei olnud selleks õigusi.",
 		hotwire_driving_ban = "Vroom Vroom, ma olen ema autos.",
-		illegal_freeze_ban = "Tead ju, et soe toit on palju parem kui külmutatud toit?",
-		illegal_ped_change_ban = "Iseendale plastilise kirurgia tegemine on ohtlik.",
+		illegal_freeze_ban = "Kuigi hinged võivad rännata vabalt, oleme meie surelikud seotud füüsikaseadustega. Hr. Isaac Newton ei võtaks midagi muud.",
+		illegal_ped_change_ban = "Isiku vargus pole nali, Jim! Miljonid tegelased kannatavad igal aastal.",
 		illegal_spectating_ban = "Te peate olema FIB agendiks, et teisi mängijaid jälgida või kasutada /gamemode spectator enne jälgimist.",
 		illegal_vehicle_modifier_ban = "Erinevalt Dom Torettost kiired ja vihased filmidest, me siin perekond ei ole.",
 		invincibility_ban = "Te ei ole Must rüütel, nii et te ei saa olla surematu.",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["et-EE"] = {
 		vehicle_modification_ban = "Sa ei leidnud oma auto esitulede vedelikku.",
 		vehicle_spam_ban = "Counter terrorists win.",
 		vehicle_spawn_ban = "Sa üritasid punast kivi malmvaguni kasutada, kuid sul ei olnud piisavalt toiterelssi.",
-		weapon_spawn_ban = "Te üritasite kasutada FiveMi maksmiski teed, kus te tegelikult maksisite enda bännerdamise eest.",
+		weapon_spawn_ban = "Püüdsin kübarast jänesesid välja võluda, kuid leidsin selle asemel bazooka.",
+		high_damage_ban = "Jõu tasakaal on rikutud. Sul on keelatud mängida selles maailmas nii suure kahju tõttu.",
+		suspicious_explosion_ban = "Vabandust, aga see pole Michael Bay film. Liiga palju plahvatusi pole lubatud.",
 
 		mp_f_freemode_01_label = "Vaba režiim (naine)",
 		mp_m_freemode_01_label = "Vaba režiim (mees)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} taser kasutanud kedagi väga suure kauguse (${distance}m) tagant.",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName}'i ekraanil tuvastati ${count} tundlikku sõna.",
+		notification_suspicious_explosion = "Cheati tuvastamine: ${displayName} põhjustas plahvatuse tüübiga ${explosionType}.",
 
 		notification_freecam_detected = "Anti-Cheat: Freecam tuvastatud",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Sobimatud sõiduki muutjad",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		notification_illegal_weapon = "Anticheat: Keelatud relv",
 		notification_spawned_object = "Anticheat: Loodud objekt",
 		notification_driving_hotwire = "Anticheat: Hotwire'iga sõidukijuhtimine",
+		notification_semi_godmode = "Turbemeede: Pool-Jumal-Mood",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jeesus",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		runtime_texture_screenshot = "Petturitõrje: Kasutusele võetud tekstuur (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Petturitõrje: Halb ekraanisõna (${words})",
 		freecam_detected_screenshot = "Petturitõrje: Vaba kaamera tuvastatud (${distance}m)",
-		driving_hotwire_screenshot = "Petturitõrje: Juhtimine samal ajal kui autot varastatakse"
+		driving_hotwire_screenshot = "Petturitõrje: Juhtimine samal ajal kui autot varastatakse",
+		semi_godmode_screenshot = "Turbemeede: Pool-Jumal-Mood"
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		wipe_command_parameter_ignore_local_entities = "ignoreeri lokaalseid entiteede",
 		wipe_command_parameter_ignore_local_entities_help = "Ignoreeri mittevõrgustatud entiteete? Kui puhastad petise tegevusest, siis soovitatakse see seade muuta `true` või `1` peale.",
 		wipe_command_parameter_model_name = "mudeli nimi",
-		wipe_command_parameter_model_name_help = "Kui soovite kustutada ainult teatud mudelinimega objekte, sisestage siia mudeli nimi. Või jätke tühjaks, 'false' või '0'. Võite määrata ka 'sõidukid' või 'jalakäijad'.",
+		wipe_command_parameter_model_name_help = "Kui soovite kustutada ainult teatud mudeli nimega üksusi, sisestage siia mudeli nimi. Vastasel juhul jätke tühi, `false` või `0`. Saate selle seada ka `vehicles`'iks, `peds`'iks või `objects`'iks.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "läbimine läbi objektide",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "vaheta_suur_inventar",
-		toggle_big_inventory_command_help = "Suurendab ajutiselt tegelase inventari ruumi 250-le.",
+		toggle_big_inventory_command_help = "Ajutiselt suurendab teie tegelase inventuuri ruume 250-le. (See on AJUTINE ja nullitakse uuesti sisse logides)",
 		toggle_big_inventory_command_substitutes = "suur_inventar",
 
 		item_lookup_command = "eseme_otsing",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["et-EE"] = {
 		item_lookup_command_parameter_item_id = "eseme id",
 		item_lookup_command_parameter_item_id_help = "Eseme ID, mida soovite otsida.",
 		item_lookup_command_substitutes = "ese",
+
+		clear_evidence_command = "clear_evidence",
+		clear_evidence_command_help = "Kustutab määratud tõendite kapis olevad esemed. See toiming ei ole tagasipööratav!",
+		clear_evidence_command_parameter_evidence_id = "tõendite ID",
+		clear_evidence_command_parameter_evidence_id_help = "Tõendite kapi ID, mida soovite tühjendada.",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "tühjenda_kaart",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		battle_royale = "Võitlus kuninglikus lahingus",
 		arena_gun_game = "Aarene gun game",
 		lottery = "Loterii",
+		jackpot = "Jackpot",
 		daily_tasks = "Igapäevased ülesanded",
 		categories = "Kategooriad",
 		refresh = "Värskenda",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 		xp = "Kogemuspunktid",
 		money_won = "Võidetud raha",
 		average_percentage = "Keskmine protsent",
-		streak = "Järjestikused võidud"
+		streak = "Järjestikused võidud",
+		money_lost = "Raha kaotatud",
+		net = "Võrk",
+		net_ratio = "Võrgusuhe",
+		items_gambled = "Panustatud esemed"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		attachment_label_fmj = "Täiskupliga kuulid",
 		attachment_label_scope_nv = "Öise nägemisega optiline sihik",
 		attachment_label_scope_thermal = "Termiline optiline sihik",
+		attachment_label_stock = "Varu",
 
 		attachment_label_luxury1 = "Luksuslik kammitseja",
 		attachment_label_luxury2 = "Ballas",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["et-EE"] = {
 		showing_flags = "Näitan lippe.",
 		not_showing_flags = "Lippude näitamine lõpetatud.",
 
+		flag = "Lipp ${flagId}",
+
 		flag_swap_leaderboard = "Lippude vahetuse edetabel",
 		ongoing = "Toimub",
 		not_ongoing = "Ei toimu",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "1 lipp",
 		flag_count = "${flags} lippu",
-		players_with_most_flags_will_show_here = "Mängijad, kellel on kõige rohkem lippe, ilmuvad siia."
+		players_with_most_flags_will_show_here = "Mängijad, kellel on kõige rohkem lippe, ilmuvad siia.",
+		flags_on_ground = "Lipud maas: ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		los_santos_golf_club = "Los Santos Golfiklubi",
 		arcade_bar = "Mängutuba Baar",
 		japanese_restaurant = "Jaapani Restoran",
+		japanese_restaurant_kitchen = "Jaapani restorani köök",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Teraviljamuuseum",
 		pd_prefix = "PD",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["et-EE"] = {
 		invalid_item_id = "Vigane eseme ID.",
 		item_not_found = "Ei leitud eset ID-ga `${itemId}`.",
 		item_lookup = "${label} (${itemId}) hetkel asukohas ${inventoryName}:${inventorySlot}.",
+
+		invalid_evidence_id = "Vale tõendi ID.",
+		not_near_evidence_locker = "Sa ei ole tõendite kapis.",
+		clear_evidence_success = "Tõend edukalt kustutatud ID-ga `${evidenceId}`.",
+		clear_evidence_failed = "Tõendi kustutamine ebaõnnestus.",
+
+		clear_evidence_logs_title = "Tõendite kustutamine",
+		clear_evidence_logs_details = "${consoleName} kustutas tõendi ID-ga `${evidenceId}`. Kustutati ${deleted} objekti ja hoiti alles ${kept}.",
 
 		big_inventory_disabled = "Taasta tegelase inventari pesad vaikeseadetele.",
 		big_inventory_enabled = "Suurendatud sinu tegelase inventari pesasid ajutiselt.",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["et-EE"] = {
 		move_to_wash = "Liiguta siia, et pesta sõidukit",
 		vehicle_too_clean = "Sõiduk on liiga puhas, et seda pesta.",
 		move_to_put_fake_plate = "Liigutage siia, et panna vale numbrimärk.",
-		unable_to_repair = "Te ei saa sõidukit parandada, kui sees on mängijaid.",
 		failed_lockpicking = "Lukuharjutus ebaõnnestus.",
 		lockpicking_succeeded = "Lukuharjutus õnnestus.",
 		hotwiring_vehicle = "Süütelukklahti rakendamine.",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["et-EE"] = {
 		press_to_deposit = "Vajuta ~INPUT_REPLAY_SHOWHOTKEY~, et sissemakse teha Online Jackpoti.",
 		can_only_withdraw_at_casino = "Sul on võimalik raha välja võtta ainult kasiinos.",
 
+		take_fee_no_permissions = "Mängija üritas võtta jackpoti tasusid ilma sobivate õigusteta.",
+		took_jackpot_fees = "Võeti jackpoti tasud. Eemaldatud ${removedTotalItems} eset, mille väärtus on $${removedTotalWorth} ${inventories} inventaridest.",
+
 		jackpot = "Jackpot",
 		inventory = "Inventar",
 		history = "Ajalugu",
-		no_items_in_inventory = "Paistab, et Sul ei ole virtuaalses inventaris esemeid.",
-		you_can_deposit_at_the_casino = "Sul on võimalik teha sissemakseid kasiinos.",
-		close = "Sulge",
 		bet = "Panus",
-		your_chance = "Sinu võimalus: ${chance}%",
-		character_bet = "${characterName} pani panuseks ${itemAmount} ese(t) väärtusega $${itemWorth}",
-		pot = "Pot: $${jackpotWorth}",
-		items = "Esemed: ${jackpotItemAmount}",
-		withdraw = "Võta välja (${withdrawAmount})",
-		quick_sell = "Kiirmüük ($${quickSellWorth})",
-		inventory_value = "Väärtus: $${inventoryWorth}",
-		inventory_total_items = "Kokku esemeid: ${inventoryTotalItems}",
-		daily_fee_information = "Iga päev kell 6 UTC eemaldatakse inventari väärtusest >= 5% esemeid kui 'hoidlatasu'.",
-
-		take_fee_no_permissions = "Mängija üritas võtta jackpoti tasusid ilma sobivate õigusteta.",
-		took_jackpot_fees = "Võeti jackpoti tasud. Eemaldatud ${removedTotalItems} eset, mille väärtus on $${removedTotalWorth} ${inventories} inventaridest."
+		your_chance = "Võimalus: ${chance}%",
+		pot = "Pott: $${pot}",
+		items = "Esemed: ${items}",
+		time = "Aeg: ${time} sek",
+		chatters = "Vestlejaid: ${chatters}",
+		send_a_message = "Saada sõnum...",
+		bet_placed = "${name} panustas ${count} ese(me)t väärtusega $${worth}.",
+		bet_item = "${amount}x ${name} ($${worth})",
+		value = "Väärtus: $${value}",
+		total_items = "Kokku esemeid: ${totalItems}",
+		withdraw = "Võta välja (${amount})",
+		quick_sell = "Kiirmüük ($${worth})",
+		storage_fee_warning = "Iga päev kell 6 UTC eemaldatakse esemed, mis on väärtusega >= 5% teie koguvarast. Seda nimetatakse 'hoiutasuks'.",
+		item_with_worth = "${label} ($${worth})",
+		select_all = "Vali kõik",
+		deselect_all = "Tühista valik",
+		bet_with_amount = "Panus ($${amount})",
+		close = "Sulge",
+		no_items_in_inventory = "Paistab, et Sul ei ole virtuaalses inventaris esemeid.",
+		deposit_at_casino = "Saate esemeid hoiustada kasiinos.",
+		sort = "Sordi",
+		player_won_pot = "${name} võitis ${amount} $ ${chance}% tõenäosusega ${timeAgo} tagasi.",
+		the_ticket_was = "Pilet oli ${ticket}.",
+		recent_pots_will_show_here = "Uusimad potid kuvatakse siin."
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		random = "Juhuslik",
 		beginner = "Algaja",
 		custom = "Kohandatud",
+
+		job_low = "Madal töö",
+		job_medium = "Keskmine töö",
+		job_high = "Kõrge töö",
 
 		appreciated_tier = "Hinnatud tase",
 		respected_tier = "Austatud tase",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		bad_screen_word_title = "Halvad ekraanisõnad",
 		bad_screen_word_about = "Siin loetletakse kõik mängijad, kellel on avastatud teatud sõnad nende ekraanil. See peaks aitama leida mängijaid, kes võivad olla modereerimisega seotud.",
-
-		freecam_detections_title = "Vaba kaamera avastused",
-		freecam_detections_about = "Siin loetletakse kõik mängijad, kellel on avastatud vaba kaamera kasutamine. See peaks aitama leida mängijaid, kes võivad olla modereerimisega seotud.",
 
 		damage_modifier_name = "Mängija nimi",
 		damage_modifier_expected = "Oodatud",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["et-EE"] = {
 		better_stamina = "Saad joosta ilma, et jooksustamina lõppeda ${duration} minutit.",
 		more_inventory_space = "Lisandunud ${amount} inventari pesa ${duration} minutit.",
 
-		buffs_note = "Buffid aktiveeruvad alles pärast seda, kui olete hoonest kaugemale liikunud."
+		buffs_note = "Buffid aktiveeruvad alles pärast seda, kui olete hoonest kaugemale liikunud.",
+
+		press_to_prepare_food = "[${InteractionKey}] Valmista toitu",
+		prepare_food = "Valmista toitu",
+
+		kissaki_kitchen = "Kissaki köök",
+
+		craft = "Valmistamine",
+		starting = "Alustamine"
 	},
 
 	riot_mode = {

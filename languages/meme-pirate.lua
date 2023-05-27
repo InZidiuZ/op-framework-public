@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["meme-pirate"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		put_boombox_in_trunk = "Hoist the black flag and press ~INPUT_ENTER~ to store the boombox in the trunk.",
 		put_player_in_trunk = "Hoist the black flag and press ~INPUT_ENTER~ to make the landlubber walk the plank.",
 		put_player_in_seat = "[${VehicleEnterKey}] Make 'em walk the plank",
+		putting_player_in_seat = "Placin' In Seat",
 		trunk_interaction_display = "[${VehicleEnterKey}] Climb Out [${InteractionKey}] Open/Close Trunk",
 		trunk_open_close_display = "[${InteractionKey}] Open/Close Trunk",
+		trunk_get_out_display = "[${VehicleEnterKey}] Climb Out",
 		boombox_already_in_trunk = "There be already a boombox in the trunk, arr.",
 		the_trunk_is_occupied = "The trunk be occupied, matey.",
 		unable_to_toggle_carry = "Ahoy, ye need to wait a bit before toggling the carry.",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		freecam_ban = "Ye seem to 'ave 'ad an out o' body experience.",
 		honeypot_ban = "Ye attempted to toggle yer creative mode, but didn't 'ave the permissions to do so.",
 		hotwire_driving_ban = "Vroom Vroom, I be in me mums ship.",
-		illegal_freeze_ban = "Ye know warm grub be a lot better than frozen grub?",
-		illegal_ped_change_ban = "It be dangerous to perform plastic surgery on yer own sel'.",
+		illegal_freeze_ban = "Whilst de spirits may roam free, us mere mortals be bound by de laws o' physics. Sir Isaac Newton wouldn't have it any other way, arrr.",
+		illegal_ped_change_ban = "Identity theft be not a joke, Jim! Millions o' characters suffer every year, arrr.",
 		illegal_spectating_ban = "Ye must be an FIB Agent to watch other players or use /gamemode spectator afore spectatin'.",
 		illegal_vehicle_modifier_ban = "Unlike Dom Toretto from Fast and Furious, we be not family.",
 		invincibility_ban = "Ye be not the Black Knight, ye may not be invincible.",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		vehicle_modification_ban = "Ye couldn't find th' headlight fluid for yer car.",
 		vehicle_spam_ban = "Counter pirates win.",
 		vehicle_spawn_ban = "Ye tried to use redstone on a minecart but didn't have powered rails.",
-		weapon_spawn_ban = "Ye attempted the \"Pay to Win Route\" o' FiveM where ye now in fact paid to get banned.",
+		weapon_spawn_ban = "Attempted t' pull a rabbit out o' de hat, found a bazooka instead, yo ho!",
+		high_damage_ban = "The scales of power were tilted too far in yer favor, disruptin' the balance o' our realm.",
+		suspicious_explosion_ban = "Sorry, but this ain't a Michael Bay film. Excessive use o' pyrotechnics be not permitted.",
 
 		mp_f_freemode_01_label = "Freemode (lass)",
 		mp_m_freemode_01_label = "Freemode (lad)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} tazed someone o'er a very large distance (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} has ${count} trigger word(s) on their screen.",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} triggered a ${explosionType} explosion.",
 
 		notification_freecam_detected = "Avast ye! Anti-Cheat: Freecam Detected",
 		notification_illegal_vehicle_modifier = "Ahoy matey! Anti-Cheat: Vehicle Modifier",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		notification_illegal_weapon = "Walk the plank! Anti-Cheat: Illegal weapon",
 		notification_spawned_object = "Arrr! Ye be caught cheatin'! Ye spawned an object!",
 		notification_driving_hotwire = "Arrr! Ye be caught cheatin'! Ye be drivin' whilst hotwirin'!",
+		notification_semi_godmode = "Anti-Cheat: Semi-Godmode, avast!",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		runtime_texture_screenshot = "Ahoy matey! Anti-Cheat: Runtime Texture (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Ye be usin' bad words! Anti-Cheat: Bad Screen Word (${words})",
 		freecam_detected_screenshot = "All hands on deck! Anti-Cheat: Freecam Detected (${distance}m)",
-		driving_hotwire_screenshot = "Hoist the Jolly Roger! Anti-Cheat: Driving while Hotwire"
+		driving_hotwire_screenshot = "Hoist the Jolly Roger! Anti-Cheat: Driving while Hotwire",
+		semi_godmode_screenshot = "Anti-Cheat: Semi-Godmode, ahoy!"
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		wipe_command_parameter_ignore_local_entities = "ignore local entities",
 		wipe_command_parameter_ignore_local_entities_help = "Ignore non-networked entities, arrr? If ye be cleanin' up aft' a cheater, it be recommended ye put this t' `true` or `1`.",
 		wipe_command_parameter_model_name = "model name",
-		wipe_command_parameter_model_name_help = "If ye be wantin' to only delete entities o' a certain model name, insert a model name here. Otherwise leave blank, at `false` or `0`. Ye can also set this to `ships` or `landlubbers`.",
+		wipe_command_parameter_model_name_help = "If ye be wantin' to only delete entities o' a certain model name, insert a model name here. Otherwise leave blank, at `false` or `0`. Ye can also set this to `vehicles`, `peds` or `objects`.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "noclip",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "toggle_big_satchel",
-		toggle_big_inventory_command_help = "Hoist the jolly roger and increase yer inventory slots to 250, ye scallywag!",
+		toggle_big_inventory_command_help = "Temporarily increases yer charrrracters inventory slots to 250. (This be TEMPORARY and will reset when ye relog)",
 		toggle_big_inventory_command_substitutes = "big_satchel",
 
 		item_lookup_command = "item_lookup",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		item_lookup_command_parameter_item_id = "item id",
 		item_lookup_command_parameter_item_id_help = "The ID o' tha bootie ye be wanting to be checkin'.",
 		item_lookup_command_substitutes = "item",
+
+		clear_evidence_command = "clear_evidence",
+		clear_evidence_command_help = "Clears the specified evidence locker. This action cannot be undone, ye scallywag!",
+		clear_evidence_command_parameter_evidence_id = "evidence id",
+		clear_evidence_command_parameter_evidence_id_help = "The ID of the evidence locker ye want to clear, me hearty.",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "clear_map",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		battle_royale = "Mighty Battle Royale",
 		arena_gun_game = "Arena Gunpowder Game",
 		lottery = "Lucky Draw",
+		jackpot = "Jackpot, me hearties!",
 		daily_tasks = "Daily Quests",
 		categories = "Arrrr! Categories",
 		refresh = "Refresh yer planks",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		xp = "XP doubloons",
 		money_won = "Booty won",
 		average_percentage = "Average Percentage",
-		streak = "Streak, me hearty!"
+		streak = "Streak, me hearty!",
+		money_lost = "Money Lost, yarr.",
+		net = "Booty",
+		net_ratio = "Booty Ratio",
+		items_gambled = "Items Gambled on"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		attachment_label_fmj = "Full Metal Jacket Rounds",
 		attachment_label_scope_nv = "Night Vision Spyglass",
 		attachment_label_scope_thermal = "Thermal Spyglass",
+		attachment_label_stock = "Stockpile",
 
 		attachment_label_luxury1 = "The Fancy Lad",
 		attachment_label_luxury2 = "The Scallywag",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		showing_flags = "Showin' jolly roger flags.",
 		not_showing_flags = "Nay longer showin' flags.",
 
+		flag = "Flag ${flagId}",
+
 		flag_swap_leaderboard = "Jolly Roger Swap Leaderboard",
 		ongoing = "A-sailin'",
 		not_ongoing = "No voyage",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "1 jolly roger",
 		flag_count = "${flags} Jolly Rogers",
-		players_with_most_flags_will_show_here = "The scallywags with the most Jolly Rogers will show here."
+		players_with_most_flags_will_show_here = "The scallywags with the most Jolly Rogers will show here.",
+		flags_on_ground = "Jolly Roger flag(s) on deck: ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		los_santos_golf_club = "Los Santos Golf Club",
 		arcade_bar = "Arcade Bar",
 		japanese_restaurant = "Japanese Restaurant",
+		japanese_restaurant_kitchen = "Tavern Kitchen",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Grain Mill",
 		pd_prefix = "Ahoy there matey, PD",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		invalid_item_id = "Invalid booty ID.",
 		item_not_found = "Could not find booty with ID `${itemId}`.",
 		item_lookup = "${label} (${itemId}) currently in ${inventoryName}:${inventorySlot}.",
+
+		invalid_evidence_id = "False evidence ID, me hearty.",
+		not_near_evidence_locker = "Ye be not near the evidence locker, ye scurvy dog.",
+		clear_evidence_success = "Successful in clearing evidence with ID `${evidenceId}`, arrrr!",
+		clear_evidence_failed = "Failed to clear evidence, aye captain!",
+
+		clear_evidence_logs_title = "Cleared Evidence Logs",
+		clear_evidence_logs_details = "${consoleName} hoisted the black flag and cleared evidence with ID `${evidenceId}`. Deleted ${deleted} item(s) and kept ${kept}.",
 
 		big_inventory_disabled = "Reset scallywag inventory slots t' default.",
 		big_inventory_enabled = "Temporarily increased yer scallywag inventory slots.",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		move_to_wash = "Move here to swab the ship",
 		vehicle_too_clean = "Arrr, the ship be too clean to be washed.",
 		move_to_put_fake_plate = "Move here to put on a fake Jolly Roger.",
-		unable_to_repair = "Ye can't repair the ship while there be mateys aboard.",
 		failed_lockpicking = "Failed T' Pick The Lock",
 		lockpicking_succeeded = "Lockpickin' Successful.",
 		hotwiring_vehicle = "Hotwirin' Vessel",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		press_to_deposit = "Hoist the Jolly Roger and press ~INPUT_REPLAY_SHOWHOTKEY~ to deposit yer loot into the Online Jackpot.",
 		can_only_withdraw_at_casino = "Ye can only withdraw yer treasures at the Casino. Make haste, me matey!",
 
+		take_fee_no_permissions = "Ye attempted to take jackpot fees without proper permissions.",
+		took_jackpot_fees = "Took jackpot fees. Removed ${removedTotalItems} items worth $${removedTotalWorth} from ${inventories} inventories.",
+
 		jackpot = "Booty",
 		inventory = "Plunder Stash",
 		history = "History of Plunder",
-		no_items_in_inventory = "Arrr! It looks like ye have no items in yer virtual plunder stash.",
-		you_can_deposit_at_the_casino = "Ye can deposit items at the casino, me hearty.",
-		close = "Shut It",
 		bet = "Plunder",
-		your_chance = "Yer Chance: ${chance}%",
-		character_bet = "${characterName} be bettin' ${itemAmount} piece(s) o' loot worth $${itemWorth}",
-		pot = "Pot o' Booty: $${jackpotWorth}",
-		items = "Items in the Booty: ${jackpotItemAmount}",
-		withdraw = "Withdraw (${withdrawAmount})",
-		quick_sell = "Quick Sell ($${quickSellWorth})",
-		inventory_value = "Booty Worth: $${inventoryWorth}",
-		inventory_total_items = "Total Booty: ${inventoryTotalItems}",
-		daily_fee_information = "At 6AM UTC every day, items worth >= 5% of yer total booty worth will be removed as a 'storage fee'.",
-
-		take_fee_no_permissions = "Ye attempted to take jackpot fees without proper permissions.",
-		took_jackpot_fees = "Took jackpot fees. Removed ${removedTotalItems} items worth $${removedTotalWorth} from ${inventories} inventories."
+		your_chance = "Chance: ${chance}%, avast ye!",
+		pot = "Booty: $${pot}",
+		items = "Items: ${items}",
+		time = "Time: ${time}s",
+		chatters = "Mateys: ${chatters}",
+		send_a_message = "Send a message...",
+		bet_placed = "${name} wagered ${count} piece(s) worth $${worth}.",
+		bet_item = "${amount}x ${name} ($${worth})",
+		value = "Value: $${value}",
+		total_items = "Total Items: ${totalItems}",
+		withdraw = "Obtain (${amount})",
+		quick_sell = "Rapid Sell ($${worth})",
+		storage_fee_warning = "Come 6 bells in the morning watch (UTC), port fees shall remove items worth >= 5% of yer booty. Beware!",
+		item_with_worth = "${label} ($${worth})",
+		select_all = "Select All, me hearties!",
+		deselect_all = "Deselect All, ye scallywags!",
+		bet_with_amount = "Bet ($${amount})",
+		close = "Shut It",
+		no_items_in_inventory = "Arrr! It looks like ye have no items in yer virtual plunder stash.",
+		deposit_at_casino = "Ye can deposit items at the casino.",
+		sort = "Sort, ye bilge rat!",
+		player_won_pot = "${name} won $${amount} with a ${chance}% chance ${timeAgo} ago, arrr!",
+		the_ticket_was = "The ticket was ${ticket}, me hearty!",
+		recent_pots_will_show_here = "Newest bounties be showin' up here."
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		random = "Ran'dom",
 		beginner = "Greenskin",
 		custom = "Custom",
+
+		job_low = "Lowly Job",
+		job_medium = "Medium Job",
+		job_high = "High Job, avast!",
 
 		appreciated_tier = "Appreciated Tier",
 		respected_tier = "Respected Tier",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		bad_screen_word_title = "Cursed Screen Words",
 		bad_screen_word_about = "Arr! In 'ere every bilge rat who be caught with certain words showin' on their screen be listed. This be helpin' ya catch potential modders.",
-
-		freecam_detections_title = "Freecam Sightin's",
-		freecam_detections_about = "Arr! In 'ere every sailor who be caught usin' a freecam be listed. This be helpin' ya spot potential modders.",
 
 		damage_modifier_name = "Matey's Name",
 		damage_modifier_expected = "Expected",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		better_stamina = "Hoist the Jolly Roger! Ye can run without running out of stamina for ${duration} minutes.",
 		more_inventory_space = "Ye'll have an additional ${amount} inventory slots for ${duration} minutes.",
 
-		buffs_note = "Thar buffs'll only activate once ye have left the vicinity of thar building."
+		buffs_note = "Thar buffs'll only activate once ye have left the vicinity of thar building.",
+
+		press_to_prepare_food = "[${InteractionKey}] Ready grub",
+		prepare_food = "Prepare Grub",
+
+		kissaki_kitchen = "Kissaki's Galley",
+
+		craft = "Craft",
+		starting = "Setting sail"
 	},
 
 	riot_mode = {

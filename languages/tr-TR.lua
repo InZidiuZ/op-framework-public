@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["tr-TR"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		put_boombox_in_trunk = "Boombox'ı bagaja koymak için ~INPUT_ENTER~ tuşuna basın.",
 		put_player_in_trunk = "Oyuncuyu bagaja koymak için ~INPUT_ENTER~ tuşuna basın.",
 		put_player_in_seat = "[${VehicleEnterKey}] Koltuğa yerleştir",
+		putting_player_in_seat = "Koltuğa Yerleştirmek",
 		trunk_interaction_display = "[${VehicleEnterKey}] Çık [${InteractionKey}] Bagajı Aç/Kapat",
 		trunk_open_close_display = "[${InteractionKey}] Bagajı Aç/Kapat",
+		trunk_get_out_display = "[${VehicleEnterKey}] Dışarı Çıkmak",
 		boombox_already_in_trunk = "Bagajda zaten bir boombox var.",
 		the_trunk_is_occupied = "Bagaj dolu.",
 		unable_to_toggle_carry = "Taşımayı açıp kapatmadan önce lütfen biraz bekleyin.",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		freecam_ban = "Dışarıdan bir deneyim yaşadığın için engellendin.",
 		honeypot_ban = "Yaratıcı modu açmaya çalıştın ama iznin yoktu.",
 		hotwire_driving_ban = "Vroom Vroom, ben annemin arabasındayım.",
-		illegal_freeze_ban = "Bilirsin sıcak yemek dondurulmuş yemekten daha iyidir?",
-		illegal_ped_change_ban = "Kendine estetik müdahale yapmak çok tehlikeli.",
+		illegal_freeze_ban = "Ruhlar özgürce dolaşabilirken, biz sıradan insanlar fizik kanunlarına bağlıyız. Sir Isaac Newton başka türlü istemezdi.",
+		illegal_ped_change_ban = "Kimlik hırsızlığı şaka değil, Jim! Her yıl milyonlarca karakter bundan muzdariptir.",
 		illegal_spectating_ban = "Diğer oyuncuları izlemek için FIB Ajanı olmanız veya /gamemode spectator komutunu kullanmanız gerekiyor.",
 		illegal_vehicle_modifier_ban = "Fast and Furious'taki Dom Toretto gibi aile değiliz.",
 		invincibility_ban = "Siyah Şövalye değilsiniz, ölümsüz olamazsınız.",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		vehicle_modification_ban = "Arabanızın far sıvısını bulamadınız.",
 		vehicle_spam_ban = "Kontre teröristler kazandı.",
 		vehicle_spawn_ban = "Maden arabasında redstone kullanmaya çalıştınız ancak motorlu raylarınız yoktu.",
-		weapon_spawn_ban = "BeşM'e \"Kazanmak için Öde\" yolunu denediniz ve şimdi aslında yasaklanmak için ödediniz.",
+		weapon_spawn_ban = "Sihirli şapkasından tavşan çıkarmaya kalkarken bazooka buldu.",
+		high_damage_ban = "Güç ölçekleri sizin lehinize çok fazla eğildi, krallığımızın denge noktasını bozduğu için cezalandırıldınız.",
+		suspicious_explosion_ban = "Üzgünüz, ancak bu bir Michael Bay filmi değil. Aşırı kullanımı yasak olan patlayıcılar kullanmak doğru değil.",
 
 		mp_f_freemode_01_label = "Serbest mod (kadın)",
 		mp_m_freemode_01_label = "Serbest mod (erkek)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		notification_distance_taze = "Anti-Hile: ${displayName} çok uzak bir mesafeden (${distance}m) birini tazelerken tespit edildi.",
 		notification_bad_screen_word = "Anti-Hile: ${displayName}'ın ekranında ${count} tetikleyici kelime tespit edildi.",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName}, ${explosionType} patlamasına neden oldu.",
 
 		notification_freecam_detected = "Anti-Hile: Freecam Tespit Edildi",
 		notification_illegal_vehicle_modifier = "Anti-Hile: Aracı Modifiye Etme",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		notification_illegal_weapon = "Anti-Hile: Yasaklı Silah",
 		notification_spawned_object = "Anti-Cheat: Nesne Oluşturuldu",
 		notification_driving_hotwire = "Anti-Cheat: Sıcak Telle Sürüş",
+		notification_semi_godmode = "Anti-Cheat: Yarı-Tanrı Modu",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "İsa",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		runtime_texture_screenshot = "Anti-Hile: Çalışma Zamanı Doku (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Anti-Hile: Kötü Ekran Kelimesi (${words})",
 		freecam_detected_screenshot = "Anti-Hile: Serbest Kamera Tespit Edildi (${distance}m)",
-		driving_hotwire_screenshot = "Anti-Hile: Çalarken Sürüş"
+		driving_hotwire_screenshot = "Anti-Hile: Çalarken Sürüş",
+		semi_godmode_screenshot = "Anti-Cheat: Yarı-Tanrı Modu"
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		wipe_command_parameter_ignore_local_entities = "yerel nesneleri yok say",
 		wipe_command_parameter_ignore_local_entities_help = "Ağa bağlı olmayan nesneleri dikkate almak istemiyorsanız, burayı `true` veya `1` olarak ayarlamanız önerilir. Bir hileciyi temizliyorsanız bunu bu şekilde ayarlayın.",
 		wipe_command_parameter_model_name = "model ismi",
-		wipe_command_parameter_model_name_help = "Sadece belirli bir model ismi olan nesneleri silmek istiyorsanız buraya bir model adı ekleyin. Aksi takdirde boş bırakın, `false` veya `0` olarak ayarlayın. Ayrıca bunu `vehicles` veya `peds` olarak ayarlayabilirsiniz.",
+		wipe_command_parameter_model_name_help = "Yalnızca belirli bir model adındaki öğeleri silmek istiyorsanız, buraya bir model adı yazın. Aksi takdirde boş bırakın, `false` veya `0`. Ayrıca bunu `vehicles`, `peds` veya `objects` olarak ayarlayabilirsiniz.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "geçiş",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "buyuk_envanter",
-		toggle_big_inventory_command_help = "Geçici olarak karakterinizin envanter yuvalarını 250'ye arttırır.",
+		toggle_big_inventory_command_help = "Geçici olarak karakterinizin envanter yuvalarını 250'ye çıkarır. (Bu GEÇİCİ bir değişikliktir ve oyuna yeniden girdiğinizde sıfırlanır)",
 		toggle_big_inventory_command_substitutes = "buyuk_envanter",
 
 		item_lookup_command = "esya_bak",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		item_lookup_command_parameter_item_id = "öğe id'si",
 		item_lookup_command_parameter_item_id_help = "Bakmak istediğiniz öğenin ID'si.",
 		item_lookup_command_substitutes = "esya",
+
+		clear_evidence_command = "delilleri_temizle",
+		clear_evidence_command_help = "Belirtilen delil dolabını temizler. Bu işlem geri alınamaz!",
+		clear_evidence_command_parameter_evidence_id = "delil id",
+		clear_evidence_command_parameter_evidence_id_help = "Temizlemek istediğiniz delil dolabının kimliği.",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "haritayı_temizle",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		battle_royale = "Savaş Kralı",
 		arena_gun_game = "Arena Silah Oyunu",
 		lottery = "Loto",
+		jackpot = "Ekstra büyük ikramiye",
 		daily_tasks = "Günlük Görevler",
 		categories = "Kategoriler",
 		refresh = "Yenile",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		xp = "XP",
 		money_won = "Kazanılan Para",
 		average_percentage = "Ortalama Yüzde",
-		streak = "Seri"
+		streak = "Seri",
+		money_lost = "Kaybedilen para",
+		net = "Net",
+		net_ratio = "Net Oranı",
+		items_gambled = "Bahis Oynanan Eşyalar"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		attachment_label_fmj = "Tam Metal Ceket Mermileri",
 		attachment_label_scope_nv = "Gece Görüşü Dürbünü",
 		attachment_label_scope_thermal = "Termal Dürbün",
+		attachment_label_stock = "Stok",
 
 		attachment_label_luxury1 = "Şımarık",
 		attachment_label_luxury2 = "Ballas",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		showing_flags = "Bayraklar gösteriliyor.",
 		not_showing_flags = "Artık bayraklar gösterilmiyor.",
 
+		flag = "${flagId} Bayrağı",
+
 		flag_swap_leaderboard = "Bayrak Takası Sıralaması",
 		ongoing = "Devam Ediyor",
 		not_ongoing = "Devam Etmiyor",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "1 bayrak",
 		flag_count = "${flags} bayrak",
-		players_with_most_flags_will_show_here = "En fazla sayıda bayrağı olan oyuncular burada gösterilecek."
+		players_with_most_flags_will_show_here = "En fazla sayıda bayrağı olan oyuncular burada gösterilecek.",
+		flags_on_ground = "Yerdeki bayraklar: ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		los_santos_golf_club = "Los Santos Golf Kulübü",
 		arcade_bar = "Arcade Bar",
 		japanese_restaurant = "Japon Restoranı",
+		japanese_restaurant_kitchen = "Japon Restoranı Mutfak",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Tahıl Değirmeni",
 		pd_prefix = "PD",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		invalid_item_id = "Geçersiz öğe Kimliği.",
 		item_not_found = "ID `${itemId}` ile öğe bulunamadı.",
 		item_lookup = "${label} (${itemId}) şu anda ${inventoryName}:${inventorySlot} içinde.",
+
+		invalid_evidence_id = "Geçersiz delil kimliği.",
+		not_near_evidence_locker = "Delil dolabına yakın değilsiniz.",
+		clear_evidence_success = "Kimlik numarası `${evidenceId}` olan delil başarı ile temizlendi.",
+		clear_evidence_failed = "Delil temizleme başarısız oldu.",
+
+		clear_evidence_logs_title = "Deliller Temizlendi",
+		clear_evidence_logs_details = "${consoleName} kimlik numarası `${evidenceId}` olan delili temizledi. ${deleted} adet öğe silindi ve ${kept} adet öğe saklandı.",
 
 		big_inventory_disabled = "Karakter envanteri yuvalarını varsayılan ayarlarına sıfırla.",
 		big_inventory_enabled = "Geçici olarak karakterinin envanter yuvalarını arttırıldı.",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		move_to_wash = "Aracı yıkamak için buraya gelin",
 		vehicle_too_clean = "Araba çok temiz, yıkanamaz.",
 		move_to_put_fake_plate = "Sahte plakayı takmak için buraya gelin.",
-		unable_to_repair = "Aracın içinde oyuncular olduğu sürece tamir edemezsiniz.",
 		failed_lockpicking = "Kilit açma başarısız oldu",
 		lockpicking_succeeded = "Kilit açma başarılı oldu.",
 		hotwiring_vehicle = "Aracı Saldırarak Çalıştırma",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		press_to_deposit = "Online jackpot'a öğeleri yatırmak için ~INPUT_REPLAY_SHOWHOTKEY~ düğmesine basın.",
 		can_only_withdraw_at_casino = "Sadece casinoda para çekebilirsiniz.",
 
+		take_fee_no_permissions = "Oyuncu uygun izin olmadan jackpot ücretlerini almaya çalıştı.",
+		took_jackpot_fees = "Jackpot ücretleri alındı. ${inventories} envanterlerinden $${removedTotalWorth} değerinde ${removedTotalItems} öğe çıkarıldı.",
+
 		jackpot = "Piyango",
 		inventory = "Envanter",
 		history = "Geçmiş",
-		no_items_in_inventory = "Sanal envanterinde hiçbir öğe görünmüyor.",
-		you_can_deposit_at_the_casino = "Öğelerini casinoya yatırabilirsin.",
-		close = "Kapat",
 		bet = "Bahis",
-		your_chance = "Şansın: ${chance}%",
-		character_bet = "${characterName} ${itemAmount} adet ögeyi $${itemWorth} değerinde bahis yaptı",
-		pot = "Kazanç: $${jackpotWorth}",
-		items = "Öğeler: ${jackpotItemAmount}",
-		withdraw = "Para Çek (${withdrawAmount})",
-		quick_sell = "Hızlı Satış ($${quickSellWorth})",
-		inventory_value = "Değer: $${inventoryWorth}",
-		inventory_total_items = "Toplam Öğe: ${inventoryTotalItems}",
-		daily_fee_information = "Her gün saat 6'da UTC'de, değeri toplam envanter değerinizin >=% 5 olan öğeler, bir 'depolama ücreti' olarak kaldırılacaktır.",
-
-		take_fee_no_permissions = "Oyuncu uygun izin olmadan jackpot ücretlerini almaya çalıştı.",
-		took_jackpot_fees = "Jackpot ücretleri alındı. ${inventories} envanterlerinden $${removedTotalWorth} değerinde ${removedTotalItems} öğe çıkarıldı."
+		your_chance = "Şansınız: ${chance}%",
+		pot = "Pot: $${pot}",
+		items = "Eşyalar: ${items}",
+		time = "Süre: ${time}s",
+		chatters = "Sohbet edenler: ${chatters}",
+		send_a_message = "Mesaj gönder...",
+		bet_placed = "${name} ${worth} değerinde ${count} eşya ile bahis yaptı.",
+		bet_item = "${amount}x ${name} ($${worth})",
+		value = "Değer: $${value}",
+		total_items = "Toplam eşya: ${totalItems}",
+		withdraw = "Çek (${amount})",
+		quick_sell = "Hızlı Satış ($${worth})",
+		storage_fee_warning = "Her gün saat 6'da UTC'de, toplam envanter değerinizin >= 5%'i değerindeki eşyalar 'depolama ücreti' olarak silinecektir.",
+		item_with_worth = "${label} ($${worth})",
+		select_all = "Hepsini Seç",
+		deselect_all = "Hiçbirini Seçme",
+		bet_with_amount = "${amount} Türk Lirası ile Bahis Yap",
+		close = "Kapat",
+		no_items_in_inventory = "Sanal envanterinde hiçbir öğe görünmüyor.",
+		deposit_at_casino = "Kasino'ya ögeleri yatırabilirsiniz.",
+		sort = "Sırala",
+		player_won_pot = "${name}, ${timeAgo} önce ${chance}% şans ile $${amount} kazandı.",
+		the_ticket_was = "Bilet ${ticket} idi.",
+		recent_pots_will_show_here = "Son tencereler burada gösterilecek."
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		random = "Rastgele",
 		beginner = "Acemi",
 		custom = "Özel",
+
+		job_low = "Düşük İş",
+		job_medium = "Orta İş",
+		job_high = "Yüksek İş",
 
 		appreciated_tier = "Takdir Edilen Seviye",
 		respected_tier = "Saygın Seviye",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		bad_screen_word_title = "Kötü Ekran Kelimeleri",
 		bad_screen_word_about = "Burada, ekranlarında belirli kelimelerin bulunduğu tespit edilen her oyuncu listelenir. Bu, potansiyel modder oyuncuları bulmaya yardımcı olmalıdır.",
-
-		freecam_detections_title = "Freecam Tespitleri",
-		freecam_detections_about = "Burada, freecam kullanan tespit edilen her oyuncu listelenir. Bu, potansiyel modder oyuncuları bulmaya yardımcı olmalıdır.",
 
 		damage_modifier_name = "Oyuncu İsmi",
 		damage_modifier_expected = "Beklenen",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		better_stamina = "${duration} dakika boyunca koşu sırasında dayanıklılık tükenmeden koşabilin.",
 		more_inventory_space = "${duration} dakika boyunca ekstra ${amount} envanter yuvasına sahip olun.",
 
-		buffs_note = "Buff'lar, binanın yakınından uzaklaştığınızda yalnızca etkinleştirilecektir."
+		buffs_note = "Buff'lar, binanın yakınından uzaklaştığınızda yalnızca etkinleştirilecektir.",
+
+		press_to_prepare_food = "[${InteractionKey}] Yemek Hazırla",
+		prepare_food = "Yemek Hazırla",
+
+		kissaki_kitchen = "Kissaki Mutfak",
+
+		craft = "El işi",
+		starting = "Başlama"
 	},
 
 	riot_mode = {

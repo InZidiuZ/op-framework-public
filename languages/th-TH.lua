@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		put_boombox_in_trunk = "กด ~INPUT_ENTER~ เพื่อใส่บุ๊คบ็อกซ์ลงในช่องทรงกระบอก",
 		put_player_in_trunk = "กด ~INPUT_ENTER~ เพื่อใส่ผู้เล่นลงในช่องทรงกระบอก",
 		put_player_in_seat = "[${VehicleEnterKey}] จัดตำแหน่งนั่ง",
+		putting_player_in_seat = "ใส่ผู้เล่นในที่นั่ง",
 		trunk_interaction_display = "[${VehicleEnterKey}] ออกจากรถ [${InteractionKey}] เปิด/ปิดท้ายรถ",
 		trunk_open_close_display = "[${InteractionKey}] เปิด/ปิดท้ายรถ",
+		trunk_get_out_display = "[${VehicleEnterKey}] ลอยออก",
 		boombox_already_in_trunk = "มีบูมบ็อกซ์อยู่ในท้องรถแล้ว",
 		the_trunk_is_occupied = "ท้องรถถูกใช้งานอยู่",
 		unable_to_toggle_carry = "กรุณารอสักครู่ก่อนเปิด/ปิดการถือของ",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		freecam_ban = "คุณดูเหมือนว่าจะมีประสบการณ์ออกจากร่างกายของตัวเอง",
 		honeypot_ban = "คุณพยายามเปิดโหมดสร้างสรรค์ของคุณ แต่ไม่มีสิทธิ์ที่จะทำได้",
 		hotwire_driving_ban = "วุ่มวาม! ผมอยู่ในรถของแม่ผม",
-		illegal_freeze_ban = "คุณรู้หรือไม่ว่าอาหารที่อุ่นจะดีกว่าอาหารที่แช่แข็ง",
-		illegal_ped_change_ban = "การผ่าตัดตนเองอันตราย",
+		illegal_freeze_ban = "แม้ว่าจะมีจิตวิญญาณวิ่งไปตามอิสระ แต่เรามนุษย์งามต้องเชื่อฟังกับกฎหมายของฟิสิกส์ คุณซิร์ อิสาค นิวตันก็อยากจะให้เราเชื่อฟังเช่นกัน",
+		illegal_ped_change_ban = "การขโมยตัวตนไม่ใช่การล้อเล่น นับล้านตัวละครประสบความเสียหายทุกปี",
 		illegal_spectating_ban = "คุณต้องเป็นเอเจนต์ FIB เพื่อดูผู้เล่นคนอื่น หรือใช้คำสั่ง /gamemode spectator ก่อนที่จะดู.",
 		illegal_vehicle_modifier_ban = "ไม่เหมือนกับ Dom Toretto จาก Fast and Furious, เราไม่ใช่ครอบครัว.",
 		invincibility_ban = "คุณไม่ใช่ Black Knight, คุณไม่สามารถที่จะไม่ตายได้.",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		vehicle_modification_ban = "คุณไม่สามารถหาน้ำมันไฟฉายสำหรับรถของคุณได้",
 		vehicle_spam_ban = "นับถอยหลังจนถึงการชนฟื้นชีพศัตรู",
 		vehicle_spawn_ban = "คุณพยายามใช้ redstone กับ minecart แต่ไม่ได้มี powered rail",
-		weapon_spawn_ban = "คุณพยายามที่จะไปตามเส้นทาง \"Pay to Win Route\" ของ FiveM ที่จริงแล้วคุณจ่ายเงินเพื่อจะถูกแบน",
+		weapon_spawn_ban = "พยายามดึงกระต่ายออกจากหมวกจุดหมาย ก็ได้พบปืนใหญ่แทน",
+		high_damage_ban = "ความสามารถของคุณมีความเท่าเทียมกับผู้เล่นอื่น ซึ่งทำให้เกิดการเบียดเสียดและไม่ตรงตามกฎระเบียบของเซิร์ฟเวอร์",
+		suspicious_explosion_ban = "ขออภัย, นี่ไม่ใช่ภาพยนตร์ของ Michael Bay การใช้ระเบิดเป็นจำนวนมากไม่ได้รับอนุญาต",
 
 		mp_f_freemode_01_label = "Freemode (หญิง)",
 		mp_m_freemode_01_label = "Freemode (ชาย)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} ใช้ปืนยางละเมิดกฏหมายต่อผู้อื่นโดยใช้ระยะทางที่ใหญ่มาก (${distance} เมตร)",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} มีคำไม่เหมาะสม ${count} คำบนหน้าจอของตน",
+		notification_suspicious_explosion = "การตรวจสอบความปลอดภัย: ${displayName} ทำการเกิดเหตุการณ์ ${explosionType}",
 
 		notification_freecam_detected = "ป้องกันการโกง: ตรวจพบการใช้งาน Freecam",
 		notification_illegal_vehicle_modifier = "ป้องกันการโกง: การปรับแต่งยานพาหนะผิดกฎหมาย",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		notification_illegal_weapon = "ป้องกันการโกง: การใช้งานอาวุธผิดกฎหมาย",
 		notification_spawned_object = "ตรวจสอบการโกง: สร้างวัตถุ",
 		notification_driving_hotwire = "ตรวจสอบการโกง: ขับรถขณะเปิดตัวระบบเรียกรถ",
+		notification_semi_godmode = "ตรวจจับโปรแกรมช่วยเล่น: โหมดเทพครึ่งหนึ่ง",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "พระเยซู",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		runtime_texture_screenshot = "ตรวจพบการใช้งาน Texture ในเวลารันโปรแกรม (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "ตรวจพบคำหยาบไม่เหมาะสม (${words})",
 		freecam_detected_screenshot = "ตรวจพบการใช้งาน Freecam (${distance}เมตร)",
-		driving_hotwire_screenshot = "ตรวจพบการขับรถยนต์ในขณะที่ถูกโจมตี"
+		driving_hotwire_screenshot = "ตรวจพบการขับรถยนต์ในขณะที่ถูกโจมตี",
+		semi_godmode_screenshot = "ตรวจจับโปรแกรมช่วยเล่น: โหมดเทพครึ่งหนึ่ง"
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		wipe_command_parameter_ignore_local_entities = "ไม่สนใจสิ่งของท้องถิ่น",
 		wipe_command_parameter_ignore_local_entities_help = "ไม่สนใจสิ่งของที่ไม่ได้รับการเชื่อมต่อเครือข่ายหรือไม่? หากคุณต้องการทำความสะอาดจากผู้ใช้ที่มีการซ่อมแซม แนะนำให้ใช้ `true` หรือ `1`",
 		wipe_command_parameter_model_name = "ชื่อโมเดล",
-		wipe_command_parameter_model_name_help = "หากคุณต้องการลบเฉพาะองค์ประกอบของโมเดลที่ระบุชื่อไว้เท่านั้นให้ใส่ชื่อโมเดลที่นี่ ถ้าไม่ใช่ให้เว้นว่างไว้ หรือใส่ `false` หรือ `0` สามารถกำหนดเป็น `vehicles` หรือ `peds` ได้อีกด้วย",
+		wipe_command_parameter_model_name_help = "หากคุณต้องการลบองค์ประกอบเฉพาะชนิดใดชนิดหนึ่งเท่านั้น ให้ใส่ชื่อโมเดลที่นี่ ไม่เช่นนั้นเว้นว่างไว้ที่ `false` หรือ `0` คุณยังสามารถตั้งค่าได้เป็น `vehicles` `peds` หรือ `objects`",
 		wipe_command_substitutes = "",
 
 		noclip_command = "noclip",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "toggle_big_inventory",
-		toggle_big_inventory_command_help = "เพิ่มจำนวนช่องว่างในกระเป๋าของตัวละครของคุณชั่วคราวเป็น 250",
+		toggle_big_inventory_command_help = "เพิ่มช่องเก็บของของตัวละครของคุณชั่วคราวเป็น 250 ช่อง (เป็นการเพิ่มชั่วคราวและจะรีเซ็ตเมื่อคุณล็อกอินใหม่)",
 		toggle_big_inventory_command_substitutes = "big_inventory",
 
 		item_lookup_command = "ค้นหาไอเท็ม",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		item_lookup_command_parameter_item_id = "ID ของไอเท็ม",
 		item_lookup_command_parameter_item_id_help = "ID ของไอเท็มที่คุณต้องการค้นหา",
 		item_lookup_command_substitutes = "ไอเท็ม",
+
+		clear_evidence_command = "clear_evidence",
+		clear_evidence_command_help = "ลบตู้เก็บของหลักฐานที่ระบุไว้ การกระทำนี้ไม่สามารถย้อนกลับได้!",
+		clear_evidence_command_parameter_evidence_id = "รหัสตู้เก็บของหลักฐาน",
+		clear_evidence_command_parameter_evidence_id_help = "รหัสตู้เก็บของหลักฐานที่คุณต้องการลบ",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "ล้างแผนที่",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		battle_royale = "บัลลี่รอยัล",
 		arena_gun_game = "สนามรบปืนเกม",
 		lottery = "ล็อตเตอรี่",
+		jackpot = "รางวัล",
 		daily_tasks = "ภารกิจรายวัน",
 		categories = "หมวดหมู่",
 		refresh = "รีเฟรช",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		xp = "ประสบการณ์",
 		money_won = "เงินรางวัลที่ได้รับ",
 		average_percentage = "เปอร์เซ็นต์เฉลี่ย",
-		streak = "ระยะเวลา"
+		streak = "ระยะเวลา",
+		money_lost = "เสียเงิน",
+		net = "เน็ต",
+		net_ratio = "อัตราส่วนเน็ต",
+		items_gambled = "ไอเท็มที่เสี่ยงโชค"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		attachment_label_fmj = "กระสุน Full Metal Jacket",
 		attachment_label_scope_nv = "กล้องที่มองเห็นในที่มืด",
 		attachment_label_scope_thermal = "กล้องอินฟราเรด",
+		attachment_label_stock = "สต็อก",
 
 		attachment_label_luxury1 = "The Pimp",
 		attachment_label_luxury2 = "The Ballas",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["th-TH"] = {
 		showing_flags = "กำลังแสดง flag",
 		not_showing_flags = "ไม่แสดง flag อีกต่อไป",
 
+		flag = "ธง ${flagId}",
+
 		flag_swap_leaderboard = "ตารางคะแนนสลับธง",
 		ongoing = "กำลังดำเนินการอยู่",
 		not_ongoing = "ไม่ได้ดำเนินการ",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "1 ธง",
 		flag_count = "${flags} ธง",
-		players_with_most_flags_will_show_here = "ผู้เล่นที่มีจำนวนธงมากที่สุดจะปรากฏที่นี่"
+		players_with_most_flags_will_show_here = "ผู้เล่นที่มีจำนวนธงมากที่สุดจะปรากฏที่นี่",
+		flags_on_ground = "ธงโดนวางบนพื้น: ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		los_santos_golf_club = "สโมสรกอล์ฟล็อสแซนตอส",
 		arcade_bar = "บาร์เกมส์",
 		japanese_restaurant = "ร้านอาหารญี่ปุ่น",
+		japanese_restaurant_kitchen = "ครัวร้านอาหารญี่ปุ่น",
 		["945_studios"] = "945 Studios",
 		grain_mill = "โรงสีข้าว",
 		pd_prefix = "ตำรวจ",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["th-TH"] = {
 		invalid_item_id = "รหัสไอเทมไม่ถูกต้อง",
 		item_not_found = "ไม่พบไอเทมที่มีรหัส `${itemId}`",
 		item_lookup = "${label} (${itemId}) อยู่ใน ${inventoryName}:${inventorySlot}",
+
+		invalid_evidence_id = "ไม่มีหลักฐานที่ถูกต้อง",
+		not_near_evidence_locker = "คุณไม่ได้อยู่ใกล้ตู้เก็บของพยาน",
+		clear_evidence_success = "ล้างหลักฐานเรียบร้อยแล้วด้วย ID `${evidenceId}`",
+		clear_evidence_failed = "ไม่สามารถล้างหลักฐานได้",
+
+		clear_evidence_logs_title = "ล้างหลักฐาน",
+		clear_evidence_logs_details = "${consoleName} ล้างหลักฐานด้วย ID `${evidenceId}`. ลบ ${deleted} รายการและเก็บ ${kept} อยู่",
 
 		big_inventory_disabled = "รีเซ็ตช่องเก็บของละเอียดเดิมของตัวละคร",
 		big_inventory_enabled = "เพิ่มช่องเก็บของของตัวละครชั่วคราว",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		move_to_wash = "เลื่อนมาล้างรถ",
 		vehicle_too_clean = "รถสะอาดเกินไปไม่จำเป็นต้องล้าง",
 		move_to_put_fake_plate = "เลื่อนมาใส่ป้ายทะเบียนปลอม",
-		unable_to_repair = "คุณไม่สามารถซ่อมรถได้ในขณะที่มีผู้เล่นอยู่ภายใน",
 		failed_lockpicking = "ล็อกพิกกี้ล้มเหลว",
 		lockpicking_succeeded = "ล็อกพิกกี้สำเร็จ",
 		hotwiring_vehicle = "ทำการเปิดรถโดยไม่มีกุญแจ",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["th-TH"] = {
 		press_to_deposit = "กด ~INPUT_REPLAY_SHOWHOTKEY~ เพื่อฝากไอเท็มใน Online Jackpot",
 		can_only_withdraw_at_casino = "คุณสามารถถอนเงินได้เฉพาะที่คาสิโน",
 
+		take_fee_no_permissions = "ผู้เล่นพยายามเหรียญฟรีแต่ไม่มีสิทธิ์เข้าถึง",
+		took_jackpot_fees = "นำค่าธรรมเนียมแจ็คพอตแล้ว นำสิ่งของ ${removedTotalItems} รายการมูลค่า $${removedTotalWorth} จาก ${inventories} คลังสินค้า",
+
 		jackpot = "แจ็คพอต",
 		inventory = "คลังของ",
 		history = "ประวัติ",
-		no_items_in_inventory = "ดูเหมือนว่าคุณไม่มีไอเท็มในคลังของเสมือน",
-		you_can_deposit_at_the_casino = "คุณสามารถฝากไอเท็มที่คาสิโนได้",
-		close = "ปิด",
 		bet = "เดิมพัน",
-		your_chance = "โอกาสของคุณ: ${chance}%",
-		character_bet = "${characterName} วางเดิมพันไอเท็ม ${itemAmount} ชิ้นมูลค่า $${itemWorth}",
-		pot = "รางวัลแจ็คพอต: $${jackpotWorth}",
-		items = "ไอเท็ม: ${jackpotItemAmount}",
-		withdraw = "ถอน (${withdrawAmount})",
-		quick_sell = "ขายด่วน ($${quickSellWorth})",
-		inventory_value = "มูลค่า: $${inventoryWorth}",
-		inventory_total_items = "จำนวนสิ่งของทั้งหมด: ${inventoryTotalItems}",
-		daily_fee_information = "ทุกวันเวลา 6 โมงเช้าตามเวลาประเทศไทย รายการสิ่งของที่มีมูลค่า >= 5% ของมูลค่าสินค้าทั้งหมดของคุณจะถูกนำออกเป็นค่าเก็บของ",
-
-		take_fee_no_permissions = "ผู้เล่นพยายามเหรียญฟรีแต่ไม่มีสิทธิ์เข้าถึง",
-		took_jackpot_fees = "นำค่าธรรมเนียมแจ็คพอตแล้ว นำสิ่งของ ${removedTotalItems} รายการมูลค่า $${removedTotalWorth} จาก ${inventories} คลังสินค้า"
+		your_chance = "โอกาส: ${chance}%",
+		pot = "โต๊ะเดิมพัน: $${pot}",
+		items = "ไอเทม: ${items}",
+		time = "เวลา: ${time}วินาที",
+		chatters = "ผู้สนทนา: ${chatters}คน",
+		send_a_message = "ส่งข้อความ...",
+		bet_placed = "${name} วางเดิมพัน ${count} ชิ้น เป็นมูลค่า $${worth}",
+		bet_item = "${amount}x ${name} ($${worth})",
+		value = "มูลค่า: $${value}",
+		total_items = "ทั้งหมด: ${totalItems} ชิ้น",
+		withdraw = "ถอนออก (${amount})",
+		quick_sell = "ขายด่วน ($${worth})",
+		storage_fee_warning = "เมื่อเวลา 6 โมงเช้า UTC ทุกวัน ไอเทมที่มีมูลค่า >= 5% ของกล่องของคุณจะถูกลบออกเป็นค่าธรรมเนียมการเก็บเข้า 'storage fee'",
+		item_with_worth = "${label} ($${worth})",
+		select_all = "Select All",
+		deselect_all = "Deselect All",
+		bet_with_amount = "Bet ($${amount})",
+		close = "ปิด",
+		no_items_in_inventory = "ดูเหมือนว่าคุณไม่มีไอเท็มในคลังของเสมือน",
+		deposit_at_casino = "You can deposit items at the casino.",
+		sort = "Sort",
+		player_won_pot = "${name} won $${amount} with a ${chance}% chance ${timeAgo} ago.",
+		the_ticket_was = "The ticket was ${ticket}.",
+		recent_pots_will_show_here = "หม้อล่าสุดจะแสดงที่นี่"
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		random = "สุ่ม",
 		beginner = "ผู้เริ่มต้น",
 		custom = "กำหนดเอง",
+
+		job_low = "Low Job",
+		job_medium = "Medium Job",
+		job_high = "High Job",
 
 		appreciated_tier = "ระดับที่น่าประทับใจ",
 		respected_tier = "ระดับที่เคารพ",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		bad_screen_word_title = "คำหยาบบนหน้าจอ",
 		bad_screen_word_about = "รายชื่อผู้เล่นที่ตรวจพบว่ามีคำหยาบบนหน้าจอจะอยู่ที่นี่ สามารถช่วยในการค้นหาผู้เล่นที่อาจเป็นโปรแกรมมอดได้",
-
-		freecam_detections_title = "การตรวจจับ Freecam",
-		freecam_detections_about = "รายชื่อผู้เล่นที่ตรวจพบว่ากำลังใช้ freecam จะอยู่ที่นี่ สามารถช่วยในการค้นหาผู้เล่นที่อาจเป็นโปรแกรมมอดได้",
 
 		damage_modifier_name = "ชื่อผู้เล่น",
 		damage_modifier_expected = "ค่าที่คาดหวัง",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["th-TH"] = {
 		better_stamina = "สามารถวิ่งได้โดยไม่ต้องหมดแรงเหนื่อย ${duration} นาที",
 		more_inventory_space = "มีช่องว่างเพิ่มขึ้น ${amount} ช่องสำหรับ ${duration} นาที",
 
-		buffs_note = "เอฟเฟกต์จะเริ่มทำงานเมื่อคุณออกจากโดม หรือสถานที่ที่คุณอยู่อยู่"
+		buffs_note = "เอฟเฟกต์จะเริ่มทำงานเมื่อคุณออกจากโดม หรือสถานที่ที่คุณอยู่อยู่",
+
+		press_to_prepare_food = "[${InteractionKey}] เตรียมอาหาร",
+		prepare_food = "เตรียมอาหาร",
+
+		kissaki_kitchen = "ครัว Kissaki",
+
+		craft = "คราฟท์",
+		starting = "เริ่ม"
 	},
 
 	riot_mode = {

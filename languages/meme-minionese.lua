@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["meme-minionese"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		put_boombox_in_trunk = "Press ~INPUT_ENTER~ to put boombox in the trunk. Bello!",
 		put_player_in_trunk = "Press ~INPUT_ENTER~ to put the player in the trunk. Bello!",
 		put_player_in_seat = "[${VehicleEnterKey}] Place in Seat. Bello!",
+		putting_player_in_seat = "Kanulizi ka doo tiki-taka",
 		trunk_interaction_display = "[${VehicleEnterKey}] Beedo Climb Out [${InteractionKey}] Bello Open/Close Trunk",
 		trunk_open_close_display = "[${InteractionKey}] Bello Open/Close Trunk",
+		trunk_get_out_display = "[${VehicleEnterKey}] Labba kee taka",
 		boombox_already_in_trunk = "Bello! There is already a boombox in the trunk.",
 		the_trunk_is_occupied = "Bello! The trunk is occupied.",
 		unable_to_toggle_carry = "Bello! Please wait a bit before toggling the carry.",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		freecam_ban = "Bee doo bee doo bee doo, you seem to have had an out of body experience.",
 		honeypot_ban = "Potato, you attempted to toggle your creative mode, but didn't have the permissions to do so.",
 		hotwire_driving_ban = "Bananaaaa! Vroom Vroom, I'm in me mums car.",
-		illegal_freeze_ban = "Gelato? You know warm food is a lot better than frozen food?",
-		illegal_ped_change_ban = "Papoy! Its dangerous to perform plastic surgery on yourself.",
+		illegal_freeze_ban = "Bello, bello, bello! Tank yu fo being a good peron, but no freeze-ey unless yu a ghosty.",
+		illegal_ped_change_ban = "Baboi, baboi! No copy-ey someone else's face, it's not nice!",
 		illegal_spectating_ban = "Bello! Bananaaaaa! (You must be an FIB Agent to watch other players or use /gamemode spectator before spectating.)",
 		illegal_vehicle_modifier_ban = "Poulet tikka masala! (Unlike Dom Toretto from Fast and Furious, we are not family.)",
 		invincibility_ban = "Papoy! (You are not the Black Knight, you may not be invincible.)",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		vehicle_modification_ban = "Mwahh! You couldn't find the headlight fluid for your car.",
 		vehicle_spam_ban = "Poopaye! Counter terrorists win.",
 		vehicle_spawn_ban = "Bababa banana! You tried to use redstone on a minecart but didn't have powered rails.",
-		weapon_spawn_ban = "Bello! You tried to cheat the game by paying, so now you're banned!",
+		weapon_spawn_ban = "Underwear! Remember to use only the weapons that you have, not the ones that you get from the magician.",
+		high_damage_ban = "Bello kiwi, bello zusu, bello bako! Bello kiwi, bello zusu, bello bako! Bello kiwi, bello zusu, bello bako!",
+		suspicious_explosion_ban = "Boboisa! Boboisa!",
 
 		mp_f_freemode_01_label = "Freemode (female)",
 		mp_m_freemode_01_label = "Freemode (male)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		notification_distance_taze = "Bapple! ${displayName} tazed someone from a very far distance (${distance}m). Anti-cheat caught you!",
 		notification_bad_screen_word = "Bapple! ${displayName} has ${count} trigger word(s) on their screen. Anti-cheat caught you!",
+		notification_suspicious_explosion = "Banana-Tiki: ${displayName} taka ${explosionType}.",
 
 		notification_freecam_detected = "Bananaaaaa! : Freecam Detected",
 		notification_illegal_vehicle_modifier = "Bananaaaaa! : Vehicle Modifier",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		notification_illegal_weapon = "Bananaaaaa! : Illegal weapon",
 		notification_spawned_object = "Bello-Keete: Spawned Oobject",
 		notification_driving_hotwire = "Bello-Keete: Driving Witoht Hotwire",
+		notification_semi_godmode = "Anti-Cheat: Bee-do bee-do bee-do! Semi-Godmode",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Bello!",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		runtime_texture_screenshot = "Mee mee: Runtime Texture (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Mee mee: Bad Screen Word (${words})",
 		freecam_detected_screenshot = "Mee mee: Freecam Detected (${distance}m)",
-		driving_hotwire_screenshot = "Mee mee: Driving while Hotwire"
+		driving_hotwire_screenshot = "Mee mee: Driving while Hotwire",
+		semi_godmode_screenshot = "Anti-Cheat: Bee-do bee-do bee-do! Semi-Godmode"
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		wipe_command_parameter_ignore_local_entities = "uh oh",
 		wipe_command_parameter_ignore_local_entities_help = "Uh oh! Da bee do bee do. Banana naaa? If you're cleaning up from a cheater, it is recommended you put this to `1`.",
 		wipe_command_parameter_model_name = "model name",
-		wipe_command_parameter_model_name_help = "If yoo bana want delete tingz with only one kain of model name, put da model name heeya. If not, no put nothing, let it be blank, `false`, or `0`. You can put `vehicles` or `peds` fo' only deleting those kinds of tingz.",
+		wipe_command_parameter_model_name_help = "Bello kiwi, bananas ka wala nana kee nini. Mali ma bananas to ko bolo. Bello kiwi, bananas, yoyo.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "noclip",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "papoy_gelu",
-		toggle_big_inventory_command_help = "Gelu tiki paka jello lolo. Baanaana inventory papoy 250.",
+		toggle_big_inventory_command_help = "Bee-do bee-do bee-do! Temporarily increase character inventory to 250 slots. (Laa laa laa laa, this is TEMPORARY and will reset when you relog)",
 		toggle_big_inventory_command_substitutes = "inventory_gelu",
 
 		item_lookup_command = "bananana_baboi",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		item_lookup_command_parameter_item_id = "itemo ido",
 		item_lookup_command_parameter_item_id_help = "The ID of the itemo you wanto lookatoo.",
 		item_lookup_command_substitutes = "itemo",
+
+		clear_evidence_command = "clear_evidence",
+		clear_evidence_command_help = "Bello! Clears the specified evidence locker. This action cannot be undone!",
+		clear_evidence_command_parameter_evidence_id = "evidence id",
+		clear_evidence_command_parameter_evidence_id_help = "The ID of the evidence locker you want to clear.",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "bananaaa",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		battle_royale = "Battle Royale",
 		arena_gun_game = "Arena Gun Game",
 		lottery = "Lottery",
+		jackpot = "Bello! Jackpot!",
 		daily_tasks = "Daily Tasko",
 		categories = "Belloist's Categoriess",
 		refresh = "Bananaaaa",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		xp = "XP BANAANAA!",
 		money_won = "Money Monetaaa",
 		average_percentage = "Averaaaage Percentageee",
-		streak = "Bop Bop Dopalac"
+		streak = "Bop Bop Dopalac",
+		money_lost = "Uh oh! Money go bye-bye!",
+		net = "Bello",
+		net_ratio = "Bello Ratio",
+		items_gambled = "Banana Potatoes"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		attachment_label_fmj = "Baboi Baboi Baboi Metal Jacket Rounds",
 		attachment_label_scope_nv = "Bapple Bapple Banana Night Vision Scope",
 		attachment_label_scope_thermal = "Baboi Baboi Baboi Thermal Scope",
+		attachment_label_stock = "Potato",
 
 		attachment_label_luxury1 = "Da Pimp",
 		attachment_label_luxury2 = "Da Ballas",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		showing_flags = "Poobah poobah.",
 		not_showing_flags = "Me poobah poobah.",
 
+		flag = "Flag ${flagId}",
+
 		flag_swap_leaderboard = "Kanana-Banana Alet Leaderboard",
 		ongoing = "Bello",
 		not_ongoing = "Not Bello",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "1 flag",
 		flag_count = "${flags} kananas",
-		players_with_most_flags_will_show_here = "Da players with most kananas in their hands will show here."
+		players_with_most_flags_will_show_here = "Da players with most kananas in their hands will show here.",
+		flags_on_ground = "Bellooo belloo: ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		los_santos_golf_club = "Golf Course of Gru",
 		arcade_bar = "Arcade Giggle",
 		japanese_restaurant = "Sushi Butt",
+		japanese_restaurant_kitchen = "Japanoo Restaurant Peeji",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Grain Lab",
 		pd_prefix = "PD - Bee Doo Bee Doo Bee Doo",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		invalid_item_id = "Banana, invalid item ID.",
 		item_not_found = "Me want banana! Could not find item with ID `${itemId}`.",
 		item_lookup = "${label} (${itemId}) currently in ${inventoryName}:${inventorySlot}.",
+
+		invalid_evidence_id = "Bananaaa, invalid evidence ID.",
+		not_near_evidence_locker = "Bababa, you not near evidence locker.",
+		clear_evidence_success = "Belloo belloo, successfully cleared evidence with ID `${evidenceId}`.",
+		clear_evidence_failed = "Bananaaaa, failed to clear evidence.",
+
+		clear_evidence_logs_title = "Cleared Evidence",
+		clear_evidence_logs_details = "${consoleName} cleared evidence with ID `${evidenceId}`. Deleted ${deleted} item(s) and kept ${kept}.",
 
 		big_inventory_disabled = "Lu doh! Reset character inventory slots to default.",
 		big_inventory_enabled = "Pwede na yo! Temporarily increased your characters inventory slots.",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		move_to_wash = "Bee-do Bee-do Move here to wash the vehicle Bee-do!",
 		vehicle_too_clean = "Bee-do Bee-do The vehicle is too clean to be washed Bee-do!",
 		move_to_put_fake_plate = "Bee-do Bee-do Move here to put on a fake license plate Bee-do!",
-		unable_to_repair = "Bee-do Bee-do You are unable to repair the vehicle while there are players inside Bee-do!",
 		failed_lockpicking = "Bee-do Bee-do Failed Lockpicking Bee-do!",
 		lockpicking_succeeded = "Bee-do Bee-do Lockpicking Succeeded Bee-do!",
 		hotwiring_vehicle = "Bello ta-wirin Vehicle",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		press_to_deposit = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to deposit items to the Online Jackpot.",
 		can_only_withdraw_at_casino = "You can only withdraw at the Casino.",
 
+		take_fee_no_permissions = "Bello-gelato tried to take jackpot fees without proper permissions.",
+		took_jackpot_fees = "Took jackpot fees. Removed ${removedTotalItems} potatos worth $$${removedTotalWorth} from ${inventories} inventories.",
+
 		jackpot = "Bapple Gapple!",
 		inventory = "Bee Doo!",
 		history = "La La La!",
-		no_items_in_inventory = "Me not see any items in your virtual inventory.",
-		you_can_deposit_at_the_casino = "You can deposit items at the casino.",
-		close = "Poopaye!",
 		bet = "Baboi!",
-		your_chance = "Banana: ${chance}%",
-		character_bet = "${characterName} baboi ${itemAmount} item(s) worth $${itemWorth}",
-		pot = "Pot: $${jackpotWorth}",
-		items = "Items: ${jackpotItemAmount}",
-		withdraw = "Gelato (${withdrawAmount})",
-		quick_sell = "Banana? ($${quickSellWorth})",
-		inventory_value = "Bello: $$${inventoryWorth}",
-		inventory_total_items = "Total Potatos: ${inventoryTotalItems}",
-		daily_fee_information = "At 6AM UTC every day, potatos worth >= 5% of your total bello will be taken as a 'banana fee'.",
-
-		take_fee_no_permissions = "Bello-gelato tried to take jackpot fees without proper permissions.",
-		took_jackpot_fees = "Took jackpot fees. Removed ${removedTotalItems} potatos worth $$${removedTotalWorth} from ${inventories} inventories."
+		your_chance = "Chance: ${chance}% - Me want Bananaaaa!",
+		pot = "Bello: $${pot}",
+		items = "Banana: ${items}",
+		time = "Tulaliloo: ${time}s",
+		chatters = "Bababa?: ${chatters}",
+		send_a_message = "Baboi!",
+		bet_placed = "${name} bee do bee do ${count} item(s) worth $${worth}.",
+		bet_item = "${amount}x ${name} ($${worth})",
+		value = "Value: $${value} banana.",
+		total_items = "Total Items: ${totalItems} bababa?",
+		withdraw = "Poopaye (${amount})",
+		quick_sell = "Bapple ($${worth})",
+		storage_fee_warning = "At 6AM UTC every day, items worth >= 5% of your total inventory value will be reomved as a 'storage fee' bababa banana.",
+		item_with_worth = "${label} (Gelato $${worth})",
+		select_all = "Poppadom",
+		deselect_all = "Hana Kulua",
+		bet_with_amount = "Bapoy Bee Doo ($${amount})",
+		close = "Poopaye!",
+		no_items_in_inventory = "Me not see any items in your virtual inventory.",
+		deposit_at_casino = "Me wanna deposit things at da casino.",
+		sort = "Tulaliloo ti amo!",
+		player_won_pot = "${name} waka-won $${amount} wid a ${chance}% chance ${timeAgo} banana.",
+		the_ticket_was = "Da ticket was ${ticket}.",
+		recent_pots_will_show_here = "Gelato ba nanaaaa!"
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		random = "Potato!",
 		beginner = "Bee doo!",
 		custom = "La Boda!",
+
+		job_low = "Jobba-Low",
+		job_medium = "Jobba-Med",
+		job_high = "Jobba-High",
 
 		appreciated_tier = "Bello!",
 		respected_tier = "Tank yu!",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		bad_screen_word_title = "Bod Skreen Wurds",
 		bad_screen_word_about = "Tu kevigaar toto plaaeya bi tokoloti deetokdo tu haf certeen wurds on thaaar skreen is leested hair. Tiis shood helf in findong plaeyas hoo aar pooteencial moodars.",
-
-		freecam_detections_title = "Freecam Ditekshans",
-		freecam_detections_about = "Tu kevigaar toto plaaeya bi tokoloti deetokdo tu bi yuusong a freecam is leested hair. Tiis shood helf in findong plaeyas hoo aar pooteencial moodars.",
 
 		damage_modifier_name = "Bob'ss moo",
 		damage_modifier_expected = "Eh boo",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		better_stamina = "Bee doo bee doo, be able to run without running out of stamina for ${duration} minutes.",
 		more_inventory_space = "Bello! You get ${amount} more inventory slots for ${duration} minutes!",
 
-		buffs_note = "Papoy! Remember, buffs only work when you leave the building."
+		buffs_note = "Papoy! Remember, buffs only work when you leave the building.",
+
+		press_to_prepare_food = "[${InteractionKey}] Bello Potatoes",
+		prepare_food = "Bello Potatoes",
+
+		kissaki_kitchen = "Kissaki Peeji",
+
+		craft = "Bananooo",
+		starting = "Begiinooo"
 	},
 
 	riot_mode = {

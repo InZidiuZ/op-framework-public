@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["meme-klingon"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		put_boombox_in_trunk = "bIQtIqDaq ~INPUT_ENTER~ qIruv boombox.",
 		put_player_in_trunk = "bIQtIqDaq ~INPUT_ENTER~ qel cha'logh tIngje' jIH.",
 		put_player_in_seat = "[${VehicleEnterKey}] cha'logh bI'reS tIng",
+		putting_player_in_seat = "qImHa'qu'",
 		trunk_interaction_display = "[${VehicleEnterKey}] bIQtal [${InteractionKey}] poHmeH ghIb'e'",
 		trunk_open_close_display = "[${InteractionKey}] poHmeH ghIb'e' / loj ghIb'e'",
+		trunk_get_out_display = "[${VehicleEnterKey}] 'apbe' yIval",
 		boombox_already_in_trunk = "lojmIt nej Qeghpu'wI', bIQtalDaq chIlqu'",
 		the_trunk_is_occupied = "bIQtal lojmItwI' qet 'oH.",
 		unable_to_toggle_carry = "SoHvaD 'oH Qapbe'pu', qal HablI'",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		freecam_ban = "ngI'pu' jatlhwI' ngoy' qaleghneS.",
 		honeypot_ban = "mI' qagh qoStaHvIS ghaH, 'ach jIyajbe'.",
 		hotwire_driving_ban = "vagh Vagh, jIH HIq veng.",
-		illegal_freeze_ban = "Sul 'Iw maH Heghchuq QuchHa' jIyajbe'.",
-		illegal_ped_change_ban = "rut jIHDajbe' cha'logh qara'bogh DaHoHchugh.",
+		illegal_freeze_ban = "cha'logh cha'pu' je chal, cha'logh poHghach'e'laHbe'. Sir Isaac Newton DaH chIlqo'.",
+		illegal_ped_change_ban = "yIDoghQo' lo'laHbe' 'e' yIDel. milIyonmey Dujmey 'oH QIjvo'.",
 		illegal_spectating_ban = "ghobe' FIB peghmeyta'lu'. jIyajbe' wa' SaS bom Hobe'.",
 		illegal_vehicle_modifier_ban = "Fast and Furious qarDaq yInID, chay' nuqDaq 'e' vay'.",
 		invincibility_ban = "Black Knight chay' DaH nobwI', cha'logh maH 'el mIghDaq.",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		vehicle_modification_ban = "ᑕIᖇᑕIᑌIT ᗰOᑎT ᙢI ᑎIKIᑎ ᖇOᙅᓰOᖇ GᘜOᖇIᑕᕼ ᙅIᖇOᑎOᖇIᖇ.",
 		vehicle_spam_ban = "ᑕOᑎTIᖇ ᑦOᖇᖇOᖇ ᐯIᑎ.",
 		vehicle_spawn_ban = "YOᑌ TᖇIᗪ ᑌGIᑎG ᖇᗴᗪᔕTOᑎᗴ Oᑎ ᗩ ᙢIᑎᕮᑕᗩᖇT ᗷᑌT ᗪIOᑎ'T ᕼᗩᐯᕮ ᑭOᗯᕮᖇᕮᗪ ᖇᗩIᒪᔕ.",
-		weapon_spawn_ban = "qang 'ej vItlhutlh  \"Pay to Win Route\" cha' logh FiveM, qaStaHvIS jay' Hoch qIDmeyDaj ban vIghaj.",
+		weapon_spawn_ban = "'ejqoq Hagh. cha'maH loH qIjvo', bazooka 'e' yImej.",
+		high_damage_ban = "qawHaq 'oH QaQ law' Hoch wIja'chuq. SoHvaD qIb, qun DaQawqulu'.",
+		suspicious_explosion_ban = "bIjatlh 'e' yImev. Dujvam qIb naQchoH.",
 
 		mp_f_freemode_01_label = "Freemode (puqbe')",
 		mp_m_freemode_01_label = "Freemode (loDHom)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} vIghel over qatlh maHvetlh (${distance}m) neH tazev.",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} vIghel vIghel qaSpu'DI' word(s) (${count}) on ghItlh Display.",
+		notification_suspicious_explosion = "Cheghom-Hov: ${displayName} ${explosionType} qIjDI'laHbe'.",
 
 		notification_freecam_detected = "Anti-Cheat: Freecam Detected", -- tlhIngan-Hol: yIqImHaq quvHa'pu' yIlo'laHbe'",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Vehicle Modifier", -- tlhIngan-Hol: yIqImHaq quvHa'pu' mach chenmoHwI'",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		notification_illegal_weapon = "Anti-Cheat: Illegal weapon",
 		notification_spawned_object = "Anti-Cheat: Qapla'! Spawned Object",
 		notification_driving_hotwire = "Anti-Cheat: Qapla'! Driving while Hotwire",
+		notification_semi_godmode = "lo'laHbe': cha'not jev Semi-Godmode",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "JeSus",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		runtime_texture_screenshot = "Anti-Cheat: Runtime Texture (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Anti-Cheat: Bad Screen Word (${words})",
 		freecam_detected_screenshot = "Anti-Cheat: Freecam Detected (${distance}m)",
-		driving_hotwire_screenshot = "Anti-Cheat: Driving while Hotwire"
+		driving_hotwire_screenshot = "Anti-Cheat: Driving while Hotwire",
+		semi_godmode_screenshot = "lo'laHbe': cha'not jev Semi-Godmode"
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		wipe_command_parameter_ignore_local_entities = "Hama' bezwI' 'elI'",
 		wipe_command_parameter_ignore_local_entities_help = "'ach 'elI'pu'bogh Hoch tay'be' chu' buSHa'ghach tu'Qa'loghvetlh vaj 'ej tay'(D) chaq.",
 		wipe_command_parameter_model_name = "model name",
-		wipe_command_parameter_model_name_help = "QongtaHvIS 'op 'e' cha'loghpu' naDev. Doch yIn 'e' pagh `false` maHvaD `0` maH. wanI'vammo' lulo' 'e' pagh 'op 'e' `ghItlh` chenmoH (model name).",
+		wipe_command_parameter_model_name_help = "laH model chel yIqIm, jIyajbe'. yInID 'u' Hoch, '0' Hoch, qumDu' 'ej yaD Ha''e'. Qoy'be' 'Iw HIq veb, qorDu'be' 'Iw HIq, chay' SuqDu'be' 'Iw HIq.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "noclip",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "yoDmey 'Iv cha'",
-		toggle_big_inventory_command_help = "loDHom cha' DIpaw' logh cha' cha'logh cha' chaQ nIHlu' 'oH.",
+		toggle_big_inventory_command_help = "Qotlhpu' qara'puq qaw'pu' loDvam 250 vatlhvI'pu'. (bIHeghjaj 'echletHa'chugh 'ej relog Qu' Hochqa'moHchugh)",
 		toggle_big_inventory_command_substitutes = "big_inventory",
 
 		item_lookup_command = "marbogh_lojmeH_vItlhutlh",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		item_lookup_command_parameter_item_id = "marbogh ID",
 		item_lookup_command_parameter_item_id_help = "marbogh vItlhutlh ID.",
 		item_lookup_command_substitutes = "marbogh",
+
+		clear_evidence_command = "meq evidence",
+		clear_evidence_command_help = "meq jay' meqtaHvIS. punyopchu'Ha'DI' lo'laHbe'!",
+		clear_evidence_command_parameter_evidence_id = "jay' ID",
+		clear_evidence_command_parameter_evidence_id_help = "jay' meqtaHvIS QIn.",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "QochmoH_map",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		battle_royale = "yIjatlh Qovpob",
 		arena_gun_game = "Qapla' vItlhutlh",
 		lottery = "ghImDu'wI'",
+		jackpot = "Jackpot",
 		daily_tasks = "Hem'e' 'IHmuS",
 		categories = "pIm",
 		refresh = "yIv",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		xp = "XP",
 		money_won = "lupwI' won",
 		average_percentage = "boqHa'",
-		streak = "Qalgha"
+		streak = "Qalgha",
+		money_lost = "pa'logh QIjDaq QIch",
+		net = "lo'wI'",
+		net_ratio = "lo'wI' ratio",
+		items_gambled = "lojmIt vItlhutlh"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		attachment_label_fmj = "Qob SaD Qat",
 		attachment_label_scope_nv = "tIvo' QaQarwI'",
 		attachment_label_scope_thermal = "che'Sorgh QaQarwI'",
+		attachment_label_stock = "chovnatlh",
 
 		attachment_label_luxury1 = "muD lo'wI'",
 		attachment_label_luxury2 = "loDnI'wI' vISov",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		showing_flags = "wIDatlhvIS Holqa'.",
 		not_showing_flags = "wIDatlhvIS Hol chaq jImej.",
 
+		flag = "chay' ${flagId}",
+
 		flag_swap_leaderboard = "Qej vIleghlI' pagh",
 		ongoing = "'oH",
 		not_ongoing = "ghobe'",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "wa' Hutlh",
 		flag_count = "${flags} muHIv",
-		players_with_most_flags_will_show_here = "muHIv mamev vIleghlI' pagh Hoch 'Iv!"
+		players_with_most_flags_will_show_here = "muHIv mamev vIleghlI' pagh Hoch 'Iv!",
+		flags_on_ground = "yu'eghvaD qorDu': ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		los_santos_golf_club = "loS santos Qach",
 		arcade_bar = "arcade bar",
 		japanese_restaurant = "Hep taH pagh",
+		japanese_restaurant_kitchen = "japanese Qe'wI' QIch",
 		["945_studios"] = "945 Studios",
 		grain_mill = "yevbe' maQmI' botIq",
 		pd_prefix = "chu'",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		invalid_item_id = "potlh ID motlh.",
 		item_not_found = "ghaH item jImej ID `${itemId}` taymo' je.",
 		item_lookup = "${label} (${itemId}) nuqDaq ngaQmeH jIqIm: ${inventoryName}:${inventorySlot}.",
+
+		invalid_evidence_id = "nID rup 'oHbe'.",
+		not_near_evidence_locker = "ghaHbe' yIlo' DIvon'e'.",
+		clear_evidence_success = "nID `${evidenceId}` patlhpu' qurghvo' qaD. ",
+		clear_evidence_failed = "qurghvo' qaD ralwI'chu'be'.",
+
+		clear_evidence_logs_title = "nID patlhpu' qurgh logs",
+		clear_evidence_logs_details = "${consoleName} nID patlhpu' qurghvo' naDev${deleted} moQ.mey QI' tu'lu'.  ${kept} QI' yItu'lu'..",
 
 		big_inventory_disabled = "Hutlh ngeD character inventory jIyItlh.",
 		big_inventory_enabled = "qaStaHvISvaD pe'vIl law' bIrIq jIQap.",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		move_to_wash = "QonoS Daq je 'eb Sevghach ghe'",
 		vehicle_too_clean = "Sevghach naQwI' tIq ghajbe'.",
 		move_to_put_fake_plate = "choHmoHwI' Daq yaS pongwI'",
-		unable_to_repair = "QapmeH 'oH qarDaq jo'qu' pagh 'e' luQargh.",
 		failed_lockpicking = "QujmeH Qes",
 		lockpicking_succeeded = "Qes Herghlu'meH.",
 		hotwiring_vehicle = "Qoy QonglIj yapQo'",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		press_to_deposit = "loS laSvargh Hoch ~INPUT_REPLAY_SHOWHOTKEY~ yIlaD Ha'DIbaHbe' Online Jackpot.",
 		can_only_withdraw_at_casino = "betleH neH Casino chel cha'be'.",
 
+		take_fee_no_permissions = "Player attempted to take jackpot fees without proper permissions.",
+		took_jackpot_fees = "Took jackpot fees. Removed ${removedTotalItems} items worth ${removedTotalWorth} latinum from ${inventories} inventories.",
+
 		jackpot = "ghojchoH",
 		inventory = "qonwI’",
 		history = "chIm",
-		no_items_in_inventory = "qaghmeyDaq maHvaD vItlhutlh.",
-		you_can_deposit_at_the_casino = "vItlhutlhDaq qaghmey Huqchuq.",
-		close = "Qap",
 		bet = "QeH",
-		your_chance = "bIQtIq: ${chance}% ",
-		character_bet = "${characterName} ${itemAmount} Hutlh(mey) HaD lo'Hom wIvs. QIb'a'",
-		pot = "yov: $${jackpotWorth}",
-		items = "Hutlh(mey): ${jackpotItemAmount}",
-		withdraw = "So'vam (${withdrawAmount})",
-		quick_sell = "So'jIm QIch ($${quickSellWorth})",
-		inventory_value = "Value: ${inventoryWorth} latinum",
-		inventory_total_items = "Total Items: ${inventoryTotalItems}",
-		daily_fee_information = "At 6AM UTC every day, items worth >= 5% of your total inventory value will be removed as a 'storage fee'.",
-
-		take_fee_no_permissions = "Player attempted to take jackpot fees without proper permissions.",
-		took_jackpot_fees = "Took jackpot fees. Removed ${removedTotalItems} items worth ${removedTotalWorth} latinum from ${inventories} inventories."
+		your_chance = "mIw: ${chance}%",
+		pot = "Duj: $${pot}",
+		items = "Yup: ${items}",
+		time = "loS: ${time}s",
+		chatters = "Chatters: ${chatters}",
+		send_a_message = "QIn jatlh...",
+		bet_placed = "${name} bet ${count} item(s) worth $${worth}.",
+		bet_item = "${amount}x ${name} ($${worth})",
+		value = "Qap: $${value}",
+		total_items = "yoS qap: ${totalItems}",
+		withdraw = "qupHa' (${amount})",
+		quick_sell = "suj qap ($${worth})",
+		storage_fee_warning = "mI'joy' be'logh 6AM UTC cha'maH lojmIt vItlhutlh Sep yejquv 'uDmey Duj' Hoch. Mu'mey qap >= ngutlh vivnegH'a'lu, Hoch 'yorghom Duj' Hoch ghIq tu'lu'.",
+		item_with_worth = "${label} (${worth} tupno'),", -- "tupno'" means "credits",
+		select_all = "ghIlwI' jabbI'pu'",
+		deselect_all = "ghIlwI' Qatlho'",
+		bet_with_amount = "$${amount} tupno' qIlop", -- "qIlop" means "bet",
+		close = "Qap",
+		no_items_in_inventory = "qaghmeyDaq maHvaD vItlhutlh.",
+		deposit_at_casino = "yu'be'chugh casinoDaq jarghchugh cha'logh puS.", -- "cha'logh puS" means "deposit items",
+		sort = "chetvI'",
+		player_won_pot = "${name} $${amount} qutluchta' qImHa' ${chance}% ropya' ${timeAgo} cha'logh je.", -- "qutluchta'" means "won" and "ropya'" means "chance",
+		the_ticket_was = "Ha'DIbaH DaHoHchugh ticket ${ticket}.", -- "Ha'DIbaH DaHoHchugh" means "the ticket was",
+		recent_pots_will_show_here = "DaH jImej bIrel 'e' vItlhutlh."
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		random = "ghorwI'",
 		beginner = "lojmIt",
 		custom = "DIvI'",
+
+		job_low = "muSA'na' joq",
+		job_medium = "SoS joq",
+		job_high = "cha'logh joq",
 
 		appreciated_tier = "Qaw'lu'ta'",
 		respected_tier = "qay'be'",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 		bad_screen_word_title = "QaleghneS vItlhutlh",
 		bad_screen_word_about = "'ej vIghro' qaleghneS vItlhutlh potlhpu'pu' qatlhDaq jatlhqa'laH. vIghro' potlhpu' 'ej'e' HoS chutlhbogh potlhpu'pu' tu'lu'be'chugh balmoHchugh.",
-
-		freecam_detections_title = "Freecam DaH jatlhqa'lIj",
-		freecam_detections_about = "vIghro' pew-vIj DaH jatlhqa'lIj potlhpu'pu' freecam chu'. vIghro' potlhpu' 'ej'e' HoS chutlhbogh potlhpu'pu' tu'lu'be'chugh balmoHchugh.",
 
 		damage_modifier_name = "nuqneHwI' poH",
 		damage_modifier_expected = "yInaq",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		better_stamina = "${duration} vIneH DaQawj DI'en jor $amount vIneH nup.",
 		more_inventory_space = "Qaghmey DaSov 'ej 'IH ${duration} tup additional ${amount} cha'loS cha' 'entlhI'nIS.",
 
-		buffs_note = "Qap building chovnatlh leghlaHbe'chugh, Ha'DIbaH pIH."
+		buffs_note = "Qap building chovnatlh leghlaHbe'chugh, Ha'DIbaH pIH.",
+
+		press_to_prepare_food = "[${InteractionKey}] vIlI' lo'",
+		prepare_food = "vIlI' lo'",
+
+		kissaki_kitchen = "Kissaki QIch",
+
+		craft = "Suv",
+		starting = "mItlhab"
 	},
 
 	riot_mode = {

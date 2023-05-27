@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["nb-NO"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		put_boombox_in_trunk = "Trykk ~INPUT_ENTER~ for å legge soundboxen i bagasjerommet",
 		put_player_in_trunk = "Trykk ~INPUT_ENTER~ for å legge spilleren i bagasjerommet",
 		put_player_in_seat = "[${VehicleEnterKey}] Sett i sete",
+		putting_player_in_seat = "Plasserer i sete",
 		trunk_interaction_display = "[${VehicleEnterKey}] Klatre ut [${InteractionKey}] Åpne/lukk bagasjerommet",
 		trunk_open_close_display = "[${InteractionKey}] Åpne/lukk bagasjerommet",
+		trunk_get_out_display = "[${VehicleEnterKey}] Gå ut",
 		boombox_already_in_trunk = "Det er allerede en boombox i bagasjerommet.",
 		the_trunk_is_occupied = "Bagasjerommet er allerede opptatt.",
 		unable_to_toggle_carry = "Vennligst vent litt før du bytter bæremodus.",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		freecam_ban = "Det ser ut til at du har hatt en utenomkroppslig opplevelse.",
 		honeypot_ban = "Du prøvde å aktivere kreativ modus, men hadde ikke tillatelse til å gjøre det.",
 		hotwire_driving_ban = "Vroom Vroom, jeg er i pappas bil.",
-		illegal_freeze_ban = "Varm mat er mye bedre enn mat som er fryst?",
-		illegal_ped_change_ban = "Det er farlig å gjøre plastisk kirurgi på deg selv.",
+		illegal_freeze_ban = "Mens ånder kan vandre fritt, er vi dødelige bundet av fysikkens lover. Sir Isaac Newton ville ikke ha det annerledes.",
+		illegal_ped_change_ban = "Identitetstyveri er ikke en spøk! Millioner av karakterer lider hvert år.",
 		illegal_spectating_ban = "Du må være en FIB-agent for å overvåke andre spillere eller bruke /gamemode spectator før du overvåker.",
 		illegal_vehicle_modifier_ban = "I motsetning til Dom Toretto fra Fast and Furious, er vi ikke familie.",
 		invincibility_ban = "Du er ikke Den svarte ridderen, du kan ikke være udødelig.",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		vehicle_modification_ban = "Du kunne ikke finne frontlysevæsken til bilen din.",
 		vehicle_spam_ban = "Counter terrorists win.",
 		vehicle_spawn_ban = "Du prøvde å bruke rødsten på en gruvevogn, men hadde ikke aktiverte skinner.",
-		weapon_spawn_ban = "Du har prøvd å gå den \"Betal for å vinne-ruten\" i FiveM hvor du nå faktisk har betalt for å bli utestengt.",
+		weapon_spawn_ban = "Forsøkte å trylle fram en kanin fra hatten, fant en bazooka i stedet.",
+		high_damage_ban = "Skalaene av makt var vippet for mye i din favør og forstyrret balansen i vår verden.",
+		suspicious_explosion_ban = "Beklager, men dette er ikke en Michael Bay-film. Overdreven bruk av pyroteknikk er ikke tillatt.",
 
 		mp_f_freemode_01_label = "Fri modus (kvinne)",
 		mp_m_freemode_01_label = "Fri modus (mann)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} tazer noen på en veldig lang avstand (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} har ${count} utløsningsord på skjermen deres.",
+		notification_suspicious_explosion = "Anti-Jukse: ${displayName} utløste en ${explosionType} eksplosjon.",
 
 		notification_freecam_detected = "Anti-Cheat: Freecam oppdaget",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Ulovlig kjøretøy modifikasjon",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		notification_illegal_weapon = "Anti-Cheat: Ulovlig våpen",
 		notification_spawned_object = "Anti-Cheat: Ferdigstilte objekter",
 		notification_driving_hotwire = "Anti-Cheat: Kjøring mens bilen er på varme",
+		notification_semi_godmode = "Anti-Cheat: Semi-Gudmodus",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		runtime_texture_screenshot = "Anti-Cheat: Kjøretids tekstur (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Anti-Cheat: Dårlig skjermbildeord (${words})",
 		freecam_detected_screenshot = "Anti-Cheat: Freecam oppdaget (${distance}m)",
-		driving_hotwire_screenshot = "Anti-Cheat: Kjører mens bilen er kapret"
+		driving_hotwire_screenshot = "Anti-Cheat: Kjører mens bilen er kapret",
+		semi_godmode_screenshot = "Anti-Cheat: Semi-Gudmodus"
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		wipe_command_parameter_ignore_local_entities = "ignorer lokale enheter",
 		wipe_command_parameter_ignore_local_entities_help = "Ignorer ikke-nettverksenheter? Hvis du rydder opp etter en juksemaker, anbefales det at du setter dette til `true` eller `1`.",
 		wipe_command_parameter_model_name = "modellnavn",
-		wipe_command_parameter_model_name_help = "Hvis du ønsker å kun slette enheter av et bestemt modellnavn, sett inn det aktuelle modellnavnet her. Hvis ikke, la feltet være blankt, `false` eller `0`. Du kan også sette dette til `kjøretøy` eller `peds`.",
+		wipe_command_parameter_model_name_help = "Hvis du kun vil slette enheter av en bestemt modellnavn, skriv modellnavnet her. Ellers la det være tomt, `false` eller `0`. Du kan også sette dette til `kjøretøy`, `peds` eller `objekter`.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "noclip",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "bytt_stort_lager",
-		toggle_big_inventory_command_help = "Midlertidig øker plassene i din figurs lager til 250.",
+		toggle_big_inventory_command_help = "Øker midlertidig antall inventar-slots til 250. (Dette er MIDLERIDIG og vil tilbakestilles når du logger av og på)",
 		toggle_big_inventory_command_substitutes = "stort_lager",
 
 		item_lookup_command = "søk_etter_gjenstand",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		item_lookup_command_parameter_item_id = "gjenstand id",
 		item_lookup_command_parameter_item_id_help = "ID-en til gjenstanden du vil søke etter.",
 		item_lookup_command_substitutes = "gjenstand",
+
+		clear_evidence_command = "clear_evidence",
+		clear_evidence_command_help = "Tømmer den angitte evidence-lageret. Handlingen kan ikke angres!",
+		clear_evidence_command_parameter_evidence_id = "evidence id",
+		clear_evidence_command_parameter_evidence_id_help = "ID-en til evidence-lageret du vil tømme.",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "fjern_kart",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		battle_royale = "Kamp Royale",
 		arena_gun_game = "Arena Pistolspill",
 		lottery = "Lotto",
+		jackpot = "Jackpot",
 		daily_tasks = "Daglige Oppgaver",
 		categories = "Kategorier",
 		refresh = "Oppdater",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		xp = "Erfaringspoeng",
 		money_won = "Penger vunnet",
 		average_percentage = "Gjennomsnittlig prosentandel",
-		streak = "Streak"
+		streak = "Streak",
+		money_lost = "Penger tapt",
+		net = "Nettverk",
+		net_ratio = "Nettverksforhold",
+		items_gambled = "Gamblede varer"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		attachment_label_fmj = "Helskjermende Runder",
 		attachment_label_scope_nv = "Nattsynssikte",
 		attachment_label_scope_thermal = "Termisk Sikte",
+		attachment_label_stock = "Lagerbeholdning",
 
 		attachment_label_luxury1 = "Pimp-en",
 		attachment_label_luxury2 = "Ballas-en",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		showing_flags = "Viser flagg.",
 		not_showing_flags = "Viser ikke lenger flagg.",
 
+		flag = "Flagg ${flagId}",
+
 		flag_swap_leaderboard = "Flaggbytter Leaderboard",
 		ongoing = "Pågår",
 		not_ongoing = "Ikke pågår",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "1 flagg",
 		flag_count = "${flags} flagg",
-		players_with_most_flags_will_show_here = "Spillerne med flest flagg vil vises her."
+		players_with_most_flags_will_show_here = "Spillerne med flest flagg vil vises her.",
+		flags_on_ground = "Flagg på bakken: ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		los_santos_golf_club = "Los Santos Golfklubb",
 		arcade_bar = "Arkadebar",
 		japanese_restaurant = "Japansk restaurant",
+		japanese_restaurant_kitchen = "Japansk Restaurant Kjøkken",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Kornmølle",
 		pd_prefix = "PD",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		invalid_item_id = "Ugyldig gjenstand ID.",
 		item_not_found = "Kunne ikke finne gjenstanden med ID `${itemId}`.",
 		item_lookup = "${label} (${itemId}) befinner seg nå i ${inventoryName}:${inventorySlot}.",
+
+		invalid_evidence_id = "Ugyldig bevis ID.",
+		not_near_evidence_locker = "Du er ikke i nærheten av bevis skapet.",
+		clear_evidence_success = "Bevis med ID `${evidenceId}` har blitt slettet.",
+		clear_evidence_failed = "Kunne ikke slette bevis.",
+
+		clear_evidence_logs_title = "Slettet Bevis",
+		clear_evidence_logs_details = "${consoleName} slettet bevis med ID `${evidenceId}`.  Slettet ${deleted} element(er) og beholdt ${kept}.",
 
 		big_inventory_disabled = "Tilbakestill karakterens inventarslots til standardverdier.",
 		big_inventory_enabled = "Midlertidig økt karakterens inventarslots.",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		move_to_wash = "Flytt deg hit for å vaske kjøretøyet.",
 		vehicle_too_clean = "Kjøretøyet er alt for rent til å vaske.",
 		move_to_put_fake_plate = "Flytt hit for å sette på en falsk bilskilt.",
-		unable_to_repair = "Du kan ikke reparere kjøretøyet mens det er spillere inni.",
 		failed_lockpicking = "Feilet i å plukke låsen.",
 		lockpicking_succeeded = "Låsen ble plukket.",
 		hotwiring_vehicle = "Starte kjøretøy uten nøkkel.",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		press_to_deposit = "Trykk ~INPUT_REPLAY_SHOWHOTKEY~ for å sette inn gjenstander i Online Jackpot.",
 		can_only_withdraw_at_casino = "Du kan bare ta ut penger på kasinoet.",
 
+		take_fee_no_permissions = "Spiller forsøkte å ta jackpot-avgifter uten riktig tillatelser.",
+		took_jackpot_fees = "Tok jackpot-avgifter. Fjernet ${removedTotalItems} gjenstander verdt $${removedTotalWorth} fra ${inventories} inventarer.",
+
 		jackpot = "Jackpot",
 		inventory = "Inventar",
 		history = "Historikk",
-		no_items_in_inventory = "Det ser ut som du ikke har noen gjenstander i det virtuelle inventaret ditt.",
-		you_can_deposit_at_the_casino = "Du kan sette inn gjenstander på kasinoet.",
-		close = "Lukk",
 		bet = "Innsats",
-		your_chance = "Din sjanse: ${chance}%",
-		character_bet = "${characterName} satset ${itemAmount} gjenstand(er) til en verdi av $${itemWorth}",
-		pot = "Potten: $${jackpotWorth}",
-		items = "Gjenstander: ${jackpotItemAmount}",
-		withdraw = "Ta ut (${withdrawAmount})",
-		quick_sell = "Rask salg ($${quickSellWorth})",
-		inventory_value = "Verdi: $${inventoryWorth}",
-		inventory_total_items = "Totale gjenstander: ${inventoryTotalItems}",
-		daily_fee_information = "Klokken 06:00 UTC hver dag vil gjenstander som er verdt >= 5% av den totale inventarverdien din bli fjernet som 'lagringsavgift'.",
-
-		take_fee_no_permissions = "Spiller forsøkte å ta jackpot-avgifter uten riktig tillatelser.",
-		took_jackpot_fees = "Tok jackpot-avgifter. Fjernet ${removedTotalItems} gjenstander verdt $${removedTotalWorth} fra ${inventories} inventarer."
+		your_chance = "Sjanse: ${chance}%",
+		pot = "Pott: $${pot}",
+		items = "Gjenstander: ${items}",
+		time = "Tid: ${time}s",
+		chatters = "Snakker: ${chatters}",
+		send_a_message = "Send en melding...",
+		bet_placed = "${name} satset ${count} gjenstand(er) til en verdi av $${worth}.",
+		bet_item = "${amount}x ${name} ($${worth})",
+		value = "Verdi: $${value}",
+		total_items = "Totale gjenstander: ${totalItems}",
+		withdraw = "Ta ut (${amount})",
+		quick_sell = "Rask salg ($${worth})",
+		storage_fee_warning = "Klokken 6AM UTC hver dag vil gjenstander verdt >= 5% av den totale inventarverdien din fjernes som en 'oppbevaringsavgift'.",
+		item_with_worth = "${label} (${worth} kr)",
+		select_all = "Velg alle",
+		deselect_all = "Fjern alle valg",
+		bet_with_amount = "Sats (${amount} kr)",
+		close = "Lukk",
+		no_items_in_inventory = "Det ser ut som du ikke har noen gjenstander i det virtuelle inventaret ditt.",
+		deposit_at_casino = "Du kan sette inn gjenstander på kasinoet.",
+		sort = "Sorter",
+		player_won_pot = "${name} vant ${amount} kr med en ${chance}% sjanse ${timeAgo} siden.",
+		the_ticket_was = "Billetten var ${ticket}.",
+		recent_pots_will_show_here = "Nylige gryter vil bli vist her."
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		random = "Tilfeldig",
 		beginner = "Nybegynner",
 		custom = "Tilpasset",
+
+		job_low = "Lavt arbeid",
+		job_medium = "Medium arbeid",
+		job_high = "Høyt arbeid",
 
 		appreciated_tier = "Verdsatt nivå",
 		respected_tier = "Respektert nivå",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		bad_screen_word_title = "Uakseptable Ord på Skjermen",
 		bad_screen_word_about = "Her vises listen over alle spillere som er oppdaget å ha visse ord på skjermen. Dette kan hjelpe å finne potensielle moddere.",
-
-		freecam_detections_title = "Fri Kamera Deteksjoner",
-		freecam_detections_about = "Her vises listen over alle spillere som er oppdaget å bruke et fritt kamera. Dette kan hjelpe å finne potensielle moddere.",
 
 		damage_modifier_name = "Spiller Navn",
 		damage_modifier_expected = "Forventet",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		better_stamina = "Være i stand til å løpe uten å gå tom for utholdenhet i ${duration} minutter.",
 		more_inventory_space = "Ha ${amount} flere lagringsplasser i inventoryet i ${duration} minutter.",
 
-		buffs_note = "Buffene vil kun bli aktivert når du har forlatt bygningen."
+		buffs_note = "Buffene vil kun bli aktivert når du har forlatt bygningen.",
+
+		press_to_prepare_food = "[${InteractionKey}] Forbered Mat",
+		prepare_food = "Forbered Mat",
+
+		kissaki_kitchen = "Kissaki Kjøkken",
+
+		craft = "Håndverk",
+		starting = "Starter"
 	},
 
 	riot_mode = {

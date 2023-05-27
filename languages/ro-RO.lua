@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["ro-RO"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		put_boombox_in_trunk = "Apasă ~INPUT_ENTER~ pentru a pune boombox-ul în portbagaj.",
 		put_player_in_trunk = "Apasă ~INPUT_ENTER~ pentru a pune jucătorul în portbagaj.",
 		put_player_in_seat = "[${VehicleEnterKey}] Așează în scaun",
+		putting_player_in_seat = "Plasarea în scaun",
 		trunk_interaction_display = "[${VehicleEnterKey}] Ieși din mașină [${InteractionKey}] Deschide/Închide portbagajul",
 		trunk_open_close_display = "[${InteractionKey}] Deschide/Închide portbagajul",
+		trunk_get_out_display = "[${VehicleEnterKey}] Coboară",
 		boombox_already_in_trunk = "Există deja o cutie de sunet în portbagaj.",
 		the_trunk_is_occupied = "Portbagajul este ocupat.",
 		unable_to_toggle_carry = "Vă rugăm să așteptați puțin înainte de a activa/dezactiva capacitatea de a căra.",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		freecam_ban = "Se pare că ai avut o experiență extra-corporeală.",
 		honeypot_ban = "Ai încercat să schimbi modul tău creativ, dar nu aveai permisiunile necesare.",
 		hotwire_driving_ban = "Vroom Vroom, sunt în mașina mamei.",
-		illegal_freeze_ban = "Știi că mâncarea caldă este mult mai bună decât mâncarea înghețată?",
-		illegal_ped_change_ban = "Este periculos să îți faci operații estetice singur.",
+		illegal_freeze_ban = "În timp ce spiritele pot rătăci liber, noi muritorii suntem legați de legile fizicii. Sir Isaac Newton nu ar accepta altfel.",
+		illegal_ped_change_ban = "Furtul de identitate nu e o glumă, Jim! Milioane de personaje suferă în fiecare an.",
 		illegal_spectating_ban = "Trebuie să fiți agent FBI pentru a vizualiza alți jucători sau folosiți comanda /gamemode spectator înainte de a vizualiza.",
 		illegal_vehicle_modifier_ban = "Spre deosebire de Dom Toretto din Fast and Furious, noi nu suntem o familie.",
 		invincibility_ban = "Nu ești Cavalerul Negru, nu poți fi invincibil.",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		vehicle_modification_ban = "Nu ai putut găsi lichidul de faruri pentru mașina ta.",
 		vehicle_spam_ban = "Contratereștii câștigă.",
 		vehicle_spawn_ban = "Ai încercat să folosești redstone pe un minecart, dar nu aveai șine motorizate.",
-		weapon_spawn_ban = "Ați încercat ruta \"Pay to Win\" a FiveM, în care ați plătit pentru a fi interzis.",
+		weapon_spawn_ban = "Am încercat să scoatem un iepure din pălărie, am găsit în schimb un bazooka.",
+		high_damage_ban = "Balanta puterii s-a înclinat prea mult în favoarea ta, perturbând echilibrul universului nostru.",
+		suspicious_explosion_ban = "Scuze, dar acesta nu este un film Michael Bay. Utilizarea exagerată a efectelor pirotehnice nu este permisă.",
 
 		mp_f_freemode_01_label = "Mod liber (feminin)",
 		mp_m_freemode_01_label = "Mod liber (masculin)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} a șocat un jucător la o distanță foarte mare (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} are ${count} cuvinte probleme pe ecranul său.",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} a declanșat o explozie de tipul ${explosionType}.",
 
 		notification_freecam_detected = "Anti-Cheat: Freecam detectat",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Modificator de vehicule ilegal",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		notification_illegal_weapon = "Anti-Cheat: Arma ilegală",
 		notification_spawned_object = "Anti-Cheat: Obiect creat",
 		notification_driving_hotwire = "Anti-Cheat: Conducere în timp ce se făcea Hotwire",
+		notification_semi_godmode = "Anti-Cheat: Semi-Godmode",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Iisus",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		runtime_texture_screenshot = "Anti-Cheat: Textura în timpul rulării (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Anti-Cheat: Cuvânt inadecvat pe ecran (${words})",
 		freecam_detected_screenshot = "Anti-Cheat: Freecam detectat (${distance}m)",
-		driving_hotwire_screenshot = "Anti-Cheat: Conducere în timp ce se fierbe motorul"
+		driving_hotwire_screenshot = "Anti-Cheat: Conducere în timp ce se fierbe motorul",
+		semi_godmode_screenshot = "Anti-Cheat: Semi-Godmode"
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		wipe_command_parameter_ignore_local_entities = "ignoră entitățile locale",
 		wipe_command_parameter_ignore_local_entities_help = "Ignoră entitățile neblocabile? Dacă curățați după un șmecher, este recomandat să setați acest parametru la `true` sau `1`.",
 		wipe_command_parameter_model_name = "nume model",
-		wipe_command_parameter_model_name_help = "Dacă doriți să ștergeți doar entitățile cu un anumit nume de model, introduceți numele modelului aici. În caz contrar, lăsați gol, la `false` sau `0`. De asemenea, puteți seta acest lucru la `vehicles` sau `peds`.",
+		wipe_command_parameter_model_name_help = "Dacă vrei să ștergi doar entitățile cu un nume de model anume, introdu numele aici. În caz contrar, lasă-l gol, `false` sau `0`. Poți seta și `vehicule`, `pedestrians` sau `obiecte`.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "noclip",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "comuta_inventar_mare",
-		toggle_big_inventory_command_help = "Creste temporar numarul de locuri din inventar la 250.",
+		toggle_big_inventory_command_help = "Crește temporar slot-urile inventarului personajului tău la 250. (Acest lucru este TEMPORAR și se va reset la reconectare).",
 		toggle_big_inventory_command_substitutes = "inventar_mare",
 
 		item_lookup_command = "cautare_ob",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		item_lookup_command_parameter_item_id = "id obiect",
 		item_lookup_command_parameter_item_id_help = "ID-ul obiectului cautat.",
 		item_lookup_command_substitutes = "dobanda",
+
+		clear_evidence_command = "clear_evidence",
+		clear_evidence_command_help = "Șterge depozitul de probe specificat. Această acțiune nu poate fi anulată!",
+		clear_evidence_command_parameter_evidence_id = "id-ul probei",
+		clear_evidence_command_parameter_evidence_id_help = "ID-ul depozitului de probe pe care doriți să îl ștergeți.",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "curata_harta",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		battle_royale = "Lupta Regală",
 		arena_gun_game = "Joc de armă în arenă",
 		lottery = "Loterie",
+		jackpot = "Jackpot",
 		daily_tasks = "Sarcini zilnice",
 		categories = "Categorii",
 		refresh = "Reîmprospătează",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		xp = "XP",
 		money_won = "Bani obținuți",
 		average_percentage = "Procent mediu",
-		streak = "Serii de victorii"
+		streak = "Serii de victorii",
+		money_lost = "Bani pierduți",
+		net = "Internet",
+		net_ratio = "Rata internet",
+		items_gambled = "Obiecte jucate la cazinou"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		attachment_label_fmj = "Gloanțe cu Mantale de Metal",
 		attachment_label_scope_nv = "Lunetă cu Vizualizare Nocturnă",
 		attachment_label_scope_thermal = "Lunetă Termală",
+		attachment_label_stock = "Stoc",
 
 		attachment_label_luxury1 = "The Pimp",
 		attachment_label_luxury2 = "The Ballas",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		showing_flags = "Se afișează stegulețele.",
 		not_showing_flags = "Nu se mai afișează stegulețele.",
 
+		flag = "Steag ${flagId}",
+
 		flag_swap_leaderboard = "Clasament schimbare steaguri",
 		ongoing = "În desfășurare",
 		not_ongoing = "Nu este în desfășurare",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "1 steag",
 		flag_count = "${flags} steaguri",
-		players_with_most_flags_will_show_here = "Jucătorii cu cele mai multe steaguri vor fi afișați aici."
+		players_with_most_flags_will_show_here = "Jucătorii cu cele mai multe steaguri vor fi afișați aici.",
+		flags_on_ground = "Steaguri la pământ: ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		los_santos_golf_club = "Club de golf Los Santos",
 		arcade_bar = "Bar Arcade",
 		japanese_restaurant = "Restaurant Japonez",
+		japanese_restaurant_kitchen = "Bucătărie restaurant japonez",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Fabrică de cereale",
 		pd_prefix = "Pol",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		invalid_item_id = "ID de obiect nevalid.",
 		item_not_found = "Nu s-a putut găsi obiectul cu ID-ul `${itemId}`.",
 		item_lookup = "${label} (${itemId}) momentan în ${inventoryName}:${inventorySlot}.",
+
+		invalid_evidence_id = "ID de dovezi nevalid.",
+		not_near_evidence_locker = "Nu ești aproape de dulapul pentru dovezile de evidență.",
+		clear_evidence_success = "Dovada cu ID-ul `${evidenceId}` a fost ștearsă cu succes.",
+		clear_evidence_failed = "Nu s-a putut șterge această dovadă.",
+
+		clear_evidence_logs_title = "Dovede șterse",
+		clear_evidence_logs_details = "${consoleName} a șters dovada cu ID-ul `${evidenceId}`. Au fost șterse ${deleted} elemente și s-au păstrat ${kept}.",
 
 		big_inventory_disabled = "Resetează sloturile inventarului caracterului la valorile implicite.",
 		big_inventory_enabled = "A fost activat temporar extinderea sloturilor din inventarul caracterului.",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		move_to_wash = "Mută-te aici pentru a spăla vehiculul",
 		vehicle_too_clean = "Vehiculul este prea curat pentru a fi spălat",
 		move_to_put_fake_plate = "Mută-te aici pentru a pune o placă de înmatriculare falsă.",
-		unable_to_repair = "Nu poți repara vehiculul când există jucători în interior",
 		failed_lockpicking = "Blocare nereușită",
 		lockpicking_succeeded = "Deschidere cu succes a încuietorii",
 		hotwiring_vehicle = "Pornind vehiculul la cald",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		press_to_deposit = "Apasă ~INPUT_REPLAY_SHOWHOTKEY~ pentru a depune obiecte în Jackpot-ul online.",
 		can_only_withdraw_at_casino = "Poți să retragi doar la Casino.",
 
+		take_fee_no_permissions = "Jucătorul a încercat să ia taxele de la jackpot fără permisiunile adecvate.",
+		took_jackpot_fees = "Taxele de la jackpot au fost luate. Au fost îndepărtate ${removedTotalItems} obiecte în valoare de $${removedTotalWorth} din ${inventories} inventare.",
+
 		jackpot = "Jackpot",
 		inventory = "Inventar",
 		history = "Istoric",
-		no_items_in_inventory = "Se pare că nu aveți obiecte în inventarul virtual.",
-		you_can_deposit_at_the_casino = "Puteți depune obiecte la cazinou.",
-		close = "Închide",
 		bet = "Pariu",
 		your_chance = "Șansa ta: ${chance}%",
-		character_bet = "${characterName} a pariat ${itemAmount} obiect(e) in valoare de $${itemWorth}",
-		pot = "Pot: $${jackpotWorth}",
-		items = "Obiecte: ${jackpotItemAmount}",
-		withdraw = "Retrage (${withdrawAmount})",
-		quick_sell = "Vânzare rapidă ($${quickSellWorth})",
-		inventory_value = "Valoare: $${inventoryWorth}",
-		inventory_total_items = "Total obiecte: ${inventoryTotalItems}",
-		daily_fee_information = "La ora 6AM UTC în fiecare zi, obiectele cu o valoare >= 5% din valoarea totală a inventarului tău vor fi îndepărtate ca taxă de depozitare.",
-
-		take_fee_no_permissions = "Jucătorul a încercat să ia taxele de la jackpot fără permisiunile adecvate.",
-		took_jackpot_fees = "Taxele de la jackpot au fost luate. Au fost îndepărtate ${removedTotalItems} obiecte în valoare de $${removedTotalWorth} din ${inventories} inventare."
+		pot = "Pot: $${pot}",
+		items = "Obiecte: ${items}",
+		time = "Timp: ${time}s",
+		chatters = "Participanți: ${chatters}",
+		send_a_message = "Trimite un mesaj...",
+		bet_placed = "${name} a parcurs ${count} obiect(e) în valoare totală de $${worth}.",
+		bet_item = "${amount}x ${name} ($${worth})",
+		value = "Valoare: $${value}",
+		total_items = "Total obiecte: ${totalItems}",
+		withdraw = "Retragere (${amount})",
+		quick_sell = "Vânzare rapidă ($${worth})",
+		storage_fee_warning = "La fiecare 6 AM UTC, obiectele în valoare de >= 5% din valoarea totală a inventarului dvs. vor fi eliminate în calitate de 'taxă de depozitare'.",
+		item_with_worth = "${label} (${worth} lei)",
+		select_all = "Selectează tot",
+		deselect_all = "Deselectează tot",
+		bet_with_amount = "Pariază (${amount} lei)",
+		close = "Închide",
+		no_items_in_inventory = "Se pare că nu aveți obiecte în inventarul virtual.",
+		deposit_at_casino = "Poți depune obiecte la cazinou.",
+		sort = "Sortare",
+		player_won_pot = "${name} a câștigat ${amount} lei cu o șansă de ${chance}% ${timeAgo}.",
+		the_ticket_was = "Biletul a fost ${ticket}.",
+		recent_pots_will_show_here = "Cea mai recentă oală se va afișa aici."
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		random = "Aleatoriu",
 		beginner = "Începător",
 		custom = "Personalizat",
+
+		job_low = "Loc de muncă ușor",
+		job_medium = "Loc de muncă mediu",
+		job_high = "Loc de muncă dificil",
 
 		appreciated_tier = "Categorie Apreciată",
 		respected_tier = "Categorie Respectată",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		bad_screen_word_title = "Cuvinte Interzise pe Ecran",
 		bad_screen_word_about = "Aici sunt listati toti jucatorii care au fost detectati cu anumite cuvinte pe ecranul lor. Acest lucru ar trebui sa ajute la identificarea jucatorilor care ar putea utiliza moduri pentru a influenta jocul.",
-
-		freecam_detections_title = "Detectari Freecam",
-		freecam_detections_about = "Aici sunt listati toti jucatorii care au fost detectati utilizând freecam-ul. Acest lucru ar trebui sa ajute la identificarea jucatorilor care ar putea utiliza moduri pentru a influenta jocul.",
 
 		damage_modifier_name = "Numele Jucătorului",
 		damage_modifier_expected = "Așteptat",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		better_stamina = "Poți alerga fără să te epuizezi timp de ${duration} minute.",
 		more_inventory_space = "Ai ${amount} sloturi suplimentare în inventar pentru ${duration} minute.",
 
-		buffs_note = "Beneficiile vor fi activate doar după ce părăsești clădirea."
+		buffs_note = "Beneficiile vor fi activate doar după ce părăsești clădirea.",
+
+		press_to_prepare_food = "[${InteractionKey}] Pregătiți mâncare",
+		prepare_food = "Pregătire mâncare",
+
+		kissaki_kitchen = "Bucătărie Kissaki",
+
+		craft = "Craft",
+		starting = "Începere"
 	},
 
 	riot_mode = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["meme-gungan"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		put_boombox_in_trunk = "Press ~INPUT_ENTER~ to put boombox in the trunk.",
 		put_player_in_trunk = "Press ~INPUT_ENTER~ to put the player in the trunk.",
 		put_player_in_seat = "[${VehicleEnterKey}] Place in Seat",
+		putting_player_in_seat = "Placing da playa in seat",
 		trunk_interaction_display = "[${VehicleEnterKey}] Climb Out [${InteractionKey}] Open/Close Trunk",
 		trunk_open_close_display = "[${InteractionKey}] Open/Close Trunk",
+		trunk_get_out_display = "[${VehicleEnterKey}] Climb out",
 		boombox_already_in_trunk = "Mesa already gotna boombox in da trunk.",
 		the_trunk_is_occupied = "Da trunk issen full.",
 		unable_to_toggle_carry = "Wait a bit before ya toggle da carry.",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		freecam_ban = "Yousa seem to be having an out of body experience. Disa is not allowed on disa server.",
 		honeypot_ban = "Yousa try to use creative mode, but yousa no have da permission.",
 		hotwire_driving_ban = "Vroom Vroom, Me in meesa mum's car. But yousa no can drive without permission.",
-		illegal_freeze_ban = "Warm food is betta den frozen food. Yousa no freeze people on disa server.",
-		illegal_ped_change_ban = "It's dangerous to perform surgery on yourself. Yousa no can change who yousa are on disa server.",
+		illegal_freeze_ban = "Whils' spirits may wander freely, us mere mortals are bound by da laws of physics. Sir Isaac Newton wouldn't have it any other way.",
+		illegal_ped_change_ban = "Identity thieft is not a joke, Jim! Millions of characters suffer every year.",
 		illegal_spectating_ban = "Mesa suggest yousa must be FIB Agent to watch other players or use /gamemode spectator before spectating.",
 		illegal_vehicle_modifier_ban = "Unlike Dom Toretto from Fast and Furious, wesa not a family.",
 		invincibility_ban = "Yousa not the Black Knight, yousa may not be invincible.",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		vehicle_modification_ban = "Yousa couldn't finden da headlight fluid for yousa car.",
 		vehicle_spam_ban = "Counter terrorists winsen.",
 		vehicle_spawn_ban = "Yousa tried to usen redstone on a minecart but mesa no have powered rails.",
-		weapon_spawn_ban = "Yousa attempted da \"Pay to Win Route\" of FiveM wheresa yousa now infact paid to get banned.",
+		weapon_spawn_ban = "Attempted to pull a rabbit out of da hat, found a bazooka instead.",
+		high_damage_ban = "Da scales of powa were tilted too far in ya favo, disruptin' da balance of our realm.",
+		suspicious_explosion_ban = "Sorry, but dis isn't a Michael Bay film. Excessive use of pyrotechnics is not permitted.",
 
 		mp_f_freemode_01_label = "Freemode (femalen)",
 		mp_m_freemode_01_label = "Freemode (malen)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} tazed someone over a very large distance (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} hassa ${count} trigger word(s) on their screen.",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} triggered a ${explosionType} explosion.",
 
 		notification_freecam_detected = "Oathee-Cheat: Freecam Datober",
 		notification_illegal_vehicle_modifier = "Oathee-Cheat: Vehicle Modiphiber",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		notification_illegal_weapon = "Oathee-Cheat: Illegal Weapon",
 		notification_spawned_object = "Anti-Cheat: Haga ti-ispawn objeto",
 		notification_driving_hotwire = "Anti-Cheat: Haga ti conduzir mientras Hotwire",
+		notification_semi_godmode = "Anti-Cheat: Semi-Godmode",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		runtime_texture_screenshot = "Binksa Anti-Cheat: Runtime Texture (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Binksa Anti-Cheat: Bad Screen Word (${words})",
 		freecam_detected_screenshot = "Binksa Anti-Cheat: Freecam Detected (${distance}m)",
-		driving_hotwire_screenshot = "Binksa Anti-Cheat: Driving while Hotwire"
+		driving_hotwire_screenshot = "Binksa Anti-Cheat: Driving while Hotwire",
+		semi_godmode_screenshot = "Anti-Cheat: Semi-Godmode"
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		wipe_command_parameter_ignore_local_entities = "ignore local entities",
 		wipe_command_parameter_ignore_local_entities_help = "Ignore non-networked entities? If yousa cleanina up from a cheater, it isa recommended yousa put this to `true` or `1`.",
 		wipe_command_parameter_model_name = "kolosso yoma",
-		wipe_command_parameter_model_name_help = "Mesa suggestin' to delete entities of a certain kolosso yoma model, yousa can inpoot da name o' da model here. Elsewise, ya leave it blank or set it to `false` or `0`. Yousa can also set dis to `vehicles` or `peds`.",
+		wipe_command_parameter_model_name_help = "If ya wantin' to only delete entities of a certain model name, insert a model name here. Otherwise leave blank, at `false` or `0`. Ya can also set dis to `vehicles`, `peds` or `objects`.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "noclip",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "toggle_big_pad",
-		toggle_big_inventory_command_help = "Mesa helpin' yousa to temporarily increase your characters inventory slots to 250.",
+		toggle_big_inventory_command_help = "Yousa can temporarily increases yousa characters inventory slots to 250. (Disa is TEMPORARY and will reset when yousa relog)",
 		toggle_big_inventory_command_substitutes = "big_pad",
 
 		item_lookup_command = "meesa_lookup",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		item_lookup_command_parameter_item_id = "item id",
 		item_lookup_command_parameter_item_id_help = "The ID of the item yousa want to lookup.",
 		item_lookup_command_substitutes = "item",
+
+		clear_evidence_command = "clear_evidence",
+		clear_evidence_command_help = "Clears da specified evidence locker. Disa action cannot be undone!",
+		clear_evidence_command_parameter_evidence_id = "evidence id",
+		clear_evidence_command_parameter_evidence_id_help = "Da ID of da evidence locker yousa want to clear.",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "clear_map",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		battle_royale = "Battle Royale",
 		arena_gun_game = "Arena Gun Game",
 		lottery = "Lottery",
+		jackpot = "Jackpot",
 		daily_tasks = "Daily Tasks",
 		categories = "Categotien",
 		refresh = "Refreshen",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		xp = "XP-sa",
 		money_won = "Money Won-sa",
 		average_percentage = "Average Percentage-sa",
-		streak = "Streak"
+		streak = "Streak",
+		money_lost = "Money Lost",
+		net = "Net",
+		net_ratio = "Net Ratio",
+		items_gambled = "Items Gudoréd"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		attachment_label_fmj = "Yusa Full Metal Jacket Rounds",
 		attachment_label_scope_nv = "Night Vision Scope",
 		attachment_label_scope_thermal = "Thermal Scope",
+		attachment_label_stock = "Gudoré Stock",
 
 		attachment_label_luxury1 = "The Pimpa",
 		attachment_label_luxury2 = "The Ballasa",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		showing_flags = "Mesa showin' da flags.",
 		not_showing_flags = "Mesa no longa showin' da flags.",
 
+		flag = "Flag ${flagId}",
+
 		flag_swap_leaderboard = "Flag Swap Leaderboard",
 		ongoing = "While it happens",
 		not_ongoing = "No happening",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "1 flag",
 		flag_count = "${flags} flags",
-		players_with_most_flags_will_show_here = "Da playas wit da mos' flags, dey be shown here."
+		players_with_most_flags_will_show_here = "Da playas wit da mos' flags, dey be shown here.",
+		flags_on_ground = "Flagsa on groud: ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		los_santos_golf_club = "Los Santos Golf Clubo",
 		arcade_bar = "Arcade Baro",
 		japanese_restaurant = "Japanesey Restauranto",
+		japanese_restaurant_kitchen = "Japoorin Resteront Kichin",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Grain Millen",
 		pd_prefix = "PD",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		invalid_item_id = "Dis item ID no wabba wabba.",
 		item_not_found = "Mesa isa no find item witha ID `${itemId}`.",
 		item_lookup = "${label} (${itemId}) be in ${inventoryName}:${inventorySlot} now.",
+
+		invalid_evidence_id = "Mesa sorry, but dat ID for da evidence issen not valid.",
+		not_near_evidence_locker = "Yousa no nearby da evidence locker.",
+		clear_evidence_success = "Yousa successfully cleared da evidence with ID `${evidenceId}`.",
+		clear_evidence_failed = "Mesa sorry, but mesa no can clear da evidence.",
+
+		clear_evidence_logs_title = "Cleared Evidence",
+		clear_evidence_logs_details = "${consoleName} cleared da evidence with ID `${evidenceId}`. Mesa deleted ${deleted} item(s) and mesa kept ${kept}.",
 
 		big_inventory_disabled = "Reset character inventory slots to default.",
 		big_inventory_enabled = "Yo character inventory slots big now. Mesa gonna change it back later.",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		move_to_wash = "Mesa moveen here to wash da vehicle",
 		vehicle_too_clean = "Da vehicle is too clean to be washed-o.",
 		move_to_put_fake_plate = "Mesa moveen here to put on a fake license plate-o.",
-		unable_to_repair = "Yousa unable to mesa repair da vehicle while there are players inside-o.",
 		failed_lockpicking = "Failed Lockpicking-o.",
 		lockpicking_succeeded = "Lockpicking-o succeeded.",
 		hotwiring_vehicle = "Klankdropin' vehkle",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		press_to_deposit = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to deposit items to the Online Jackpot. *Gungan happy dance*",
 		can_only_withdraw_at_casino = "You can only withdraw at the Casino. *Gungan head scratch*",
 
+		take_fee_no_permissions = "Tesa attempted to take jackpot fees without proper permissions.",
+		took_jackpot_fees = "Tesa took jackpot fees. Removed ${removedTotalItems} items worth $${removedTotalWorth} from ${inventories} inventories.",
+
 		jackpot = "Jackpoth",
 		inventory = "Inventory-h",
 		history = "History-h",
-		no_items_in_inventory = "Mesa-look like yous havena any items in yoursa virtual inventory-h.",
-		you_can_deposit_at_the_casino = "Yous can deposit items at da casino-",
-		close = "Close-h",
 		bet = "Bet-h",
-		your_chance = "Yoursa Chance-h: ${chance}%-h",
-		character_bet = "${characterName} bet ${itemAmount} item(s) mesa-worth $$${itemWorth}",
-		pot = "Pot-h: $$${jackpotWorth}",
-		items = "Items-h: ${jackpotItemAmount}",
-		withdraw = "Withdraw (${withdrawAmount})-h",
-		quick_sell = "Quick Sell ($$${quickSellWorth})-h",
-		inventory_value = "Value: $${inventoryWorth}",
-		inventory_total_items = "Total Items: ${inventoryTotalItems}",
-		daily_fee_information = "At 6AM UTC every day, items worth >= 5% of your total inventory value will be removed as a 'storage fee'.",
-
-		take_fee_no_permissions = "Tesa attempted to take jackpot fees without proper permissions.",
-		took_jackpot_fees = "Tesa took jackpot fees. Removed ${removedTotalItems} items worth $${removedTotalWorth} from ${inventories} inventories."
+		your_chance = "Chance: ${chance}%",
+		pot = "Pot: $${pot}",
+		items = "Items: ${items}",
+		time = "Time: ${time}s",
+		chatters = "Chatters: ${chatters}",
+		send_a_message = "Send a message...",
+		bet_placed = "${name} binks ${count} item(s) worth $${worth}.",
+		bet_item = "${amount}x ${name} ($${worth})",
+		value = "Value: $${value}",
+		total_items = "Total Items: ${totalItems}",
+		withdraw = "Withdraw (${amount})",
+		quick_sell = "Quick Sell ($${worth})",
+		storage_fee_warning = "At 6AM UTC every day, items worth >= 5% of your total inventory value will be removed as a 'storage fee'.",
+		item_with_worth = "${label} (${worth} wonga)",
+		select_all = "Select Bombad All",
+		deselect_all = "Deselect Bombad All",
+		bet_with_amount = "Bet (${amount} wonga)",
+		close = "Close-h",
+		no_items_in_inventory = "Mesa-look like yous havena any items in yoursa virtual inventory-h.",
+		deposit_at_casino = "Yousa can deposit items at the casino.",
+		sort = "Sort Bombad",
+		player_won_pot = "${name} won ${amount} wonga with a ${chance}% chance ${timeAgo} ago.",
+		the_ticket_was = "Da ticket was ${ticket}.",
+		recent_pots_will_show_here = "Recent pots will shoba hia."
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		random = "Randoom",
 		beginner = "Be-giin-ner",
 		custom = "Cuustom",
+
+		job_low = "Low Okeyday Job",
+		job_medium = "Medium Okeyday Job",
+		job_high = "High Okeyday Job",
 
 		appreciated_tier = "Ap-pre-ciia-ted Tier",
 		respected_tier = "Re-spect-ed Tier",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		bad_screen_word_title = "Bad Screen Words",
 		bad_screen_word_about = "Meesa give yousa list of players who have certain words on their screen. Dis should help yousa find players who might be using mods.",
-
-		freecam_detections_title = "Freecam Detections",
-		freecam_detections_about = "Meesa give yousa list of players who have been detected to be using a freecam. Dis should help yousa find players who might be using mods.",
 
 		damage_modifier_name = "Palpatine n'gad",
 		damage_modifier_expected = "Yegityoek",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		better_stamina = "Yousa be able to run without running out of stamina for ${duration} minutes.",
 		more_inventory_space = "Mesa helpin' yousa wif an extra ${amount} space inna yousa inventory fo ${duration} minutes.",
 
-		buffs_note = "Da boosts will only start workin' afta yousa leave da area around da building."
+		buffs_note = "Da boosts will only start workin' afta yousa leave da area around da building.",
+
+		press_to_prepare_food = "[${InteractionKey}] Pepar Food",
+		prepare_food = "Pepar Food",
+
+		kissaki_kitchen = "Kisákí Kichin",
+
+		craft = "Kräft",
+		starting = "Storting"
 	},
 
 	riot_mode = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 8 (do not change)
+-- AUTO LOCALES: 10 (do not change)
 
 OP.Global.Locales.Languages["ko-KR"] = {
 	-- configuration settings for language
@@ -29,8 +29,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		put_boombox_in_trunk = "부름박스를 트렁크에 넣으려면 ~INPUT_ENTER~ 키를 누르세요.",
 		put_player_in_trunk = "플레이어를 트렁크에 넣으려면 ~INPUT_ENTER~ 키를 누르세요.",
 		put_player_in_seat = "[${VehicleEnterKey}] 좌석에 앉히기",
+		putting_player_in_seat = "좌석에 배치 중",
 		trunk_interaction_display = "[${VehicleEnterKey}] 탈출하기 [${InteractionKey}] 트렁크 열기/닫기",
 		trunk_open_close_display = "[${InteractionKey}] 트렁크 열기/닫기",
+		trunk_get_out_display = "[${VehicleEnterKey}] 나가기",
 		boombox_already_in_trunk = "트렁크에 이미 부운박스가 있습니다.",
 		the_trunk_is_occupied = "트렁크가 사용 중입니다.",
 		unable_to_toggle_carry = "잠시 기다린 후에 캐리를 토글할 수 있습니다.",
@@ -691,8 +693,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		freecam_ban = "당신은 육체 이탈 경험을 한 것 같습니다.",
 		honeypot_ban = "창작 모드를 전환하려 했지만 권한이 없습니다.",
 		hotwire_driving_ban = "부릉부릉, 나는 우리 엄마 차에 있어.",
-		illegal_freeze_ban = "따뜻한 음식이 얼어붙은 음식보다 훨씬 좋다는 것을 알고 있나요?",
-		illegal_ped_change_ban = "자신에게 성형을 시도하는 것은 위험합니다.",
+		illegal_freeze_ban = "정신은 자유롭게 돌아다니지만, 우리 인간들은 물리 법칙으로 묶여 있습니다. 아이작 뉴튼은 다른 방법을 허락하지 않았을 겁니다.",
+		illegal_ped_change_ban = "신원 도용은 농담이 아닙니다, Jim! 매년 수백만의 캐릭터가 고통받습니다.",
 		illegal_spectating_ban = "다른 플레이어를 볼려면 FIB 요원이어야 하며, /gamemode spectator 명령어를 사용할 수 있습니다.",
 		illegal_vehicle_modifier_ban = "패스트 앤 더 퓨리어스의 돔 토레토 같은 가족은 아니니 수정할 수 없습니다.",
 		invincibility_ban = "당신은 검은 기사가 아니므로 무적이 될 수 없습니다.",
@@ -705,7 +707,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		vehicle_modification_ban = "귀하의 차량에 대한 헤드 라이트 유체를 찾지 못했습니다.",
 		vehicle_spam_ban = "반란군이 승리하였습니다.",
 		vehicle_spawn_ban = "마인카트에서 레드스톤을 사용하려고 했지만 동력 레일이 없어서 실패했습니다.",
-		weapon_spawn_ban = "FiveM에서 '유료 승리를 위한 루트'를 시도하여 사실상 금을 주고 밴 되었습니다.",
+		weapon_spawn_ban = "토끼를 모자에서 꺼내려다 대신에 대포를 찾았습니다.",
+		high_damage_ban = "권력의 저울이 너무 기울어져 균형이 깨졌습니다. 이로 인해 서버에서 추방되었습니다.",
+		suspicious_explosion_ban = "죄송하지만, 이곳은 마이클 베이 감독의 영화가 아닙니다. 폭동적인 폭발은 금지됩니다.",
 
 		mp_f_freemode_01_label = "프리모드 (여성)",
 		mp_m_freemode_01_label = "프리모드 (남성)",
@@ -715,6 +719,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		notification_distance_taze = "안티-치트: ${displayName} 님이 매우 멀리 (${distance}m) 있는 사람을 테이즈했습니다.",
 		notification_bad_screen_word = "안티-치트: ${displayName} 님의 화면에 ${count}개의 트리거 단어가 있습니다.",
+		notification_suspicious_explosion = "안티-치트: ${displayName} 이(가) ${explosionType} 유형의 폭발을 유발했습니다.",
 
 		notification_freecam_detected = "안티-치트: 프리캠 감지됨",
 		notification_illegal_vehicle_modifier = "안티-치트: 이상한 차량 수정기",
@@ -727,6 +732,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		notification_illegal_weapon = "안티-치트: 불법적인 무기 사용",
 		notification_spawned_object = "안티-치트: 생성된 오브젝트",
 		notification_driving_hotwire = "안티-치트: 핫와이어 중에 운전",
+		notification_semi_godmode = "안티-치트: 반갓모드",
 
 		ig_orleans_label = "사스콰치",
 		u_m_m_jesus_01_label = "예수님",
@@ -776,7 +782,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		runtime_texture_screenshot = "안티 치트: 런타임 텍스처 (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "안티 치트: 부적절한 화면 단어 (${words})",
 		freecam_detected_screenshot = "안티 치트: 프리캠 감지됨 (${distance}m)",
-		driving_hotwire_screenshot = "안티 치트: 핫와이어 중 운전중입니다"
+		driving_hotwire_screenshot = "안티 치트: 핫와이어 중 운전중입니다",
+		semi_godmode_screenshot = "안티-치트: 반갓모드"
 	},
 
 	authentication = {
@@ -919,7 +926,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		wipe_command_parameter_ignore_local_entities = "로컬 개체 무시",
 		wipe_command_parameter_ignore_local_entities_help = "네트워크에 연결되어 있지 않은 개체를 무시하시겠습니까? 체터로부터 정리를 하는 경우 `true` 또는 `1`로 설정하는 것이 권장됩니다.",
 		wipe_command_parameter_model_name = "모델명",
-		wipe_command_parameter_model_name_help = "특정 모델명의 엔티티만 삭제하려면 모델명을 입력하세요. 그렇지 않으면 비워 두세요. `false`나 `0`으로도 설정할 수 있습니다. 또한 `vehicles`(차량) 또는 `peds`(보행자)로 설정할 수도 있습니다.",
+		wipe_command_parameter_model_name_help = "특정 모델명의 엔티티만 삭제하려면 모델명을 입력하세요. 그렇지 않으면 빈 칸, `false` 또는 `0`으로 놓아둬야 합니다. 'vehicles', 'peds' 또는 'objects'로 설정할 수도 있습니다.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "노클립",
@@ -2410,7 +2417,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		refresh_inventory_command_substitutes = "",
 
 		toggle_big_inventory_command = "큰인벤토리전환",
-		toggle_big_inventory_command_help = "캐릭터 인벤토리 슬롯을 250개까지 임시로 증가시킵니다.",
+		toggle_big_inventory_command_help = "임시로 캐릭터 인벤토리 슬롯을 250으로 늘립니다. (이것은 재접속하면 초기화됩니다)",
 		toggle_big_inventory_command_substitutes = "큰인벤토리",
 
 		item_lookup_command = "아이템조회",
@@ -2418,6 +2425,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		item_lookup_command_parameter_item_id = "아이템 아이디",
 		item_lookup_command_parameter_item_id_help = "조회하려는 아이템의 ID입니다.",
 		item_lookup_command_substitutes = "아이템",
+
+		clear_evidence_command = "clear_evidence",
+		clear_evidence_command_help = "지정된 증거 보관함을 지웁니다. 이 작업은 되돌릴 수 없습니다!",
+		clear_evidence_command_parameter_evidence_id = "증거 ID",
+		clear_evidence_command_parameter_evidence_id_help = "지우려는 증거 보관함의 ID입니다.",
+		clear_evidence_command_substitutes = "",
 
 		-- game/items
 		clear_map_command = "맵지우기",
@@ -3973,6 +3986,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		battle_royale = "배틀로얄",
 		arena_gun_game = "아레나 건 게임",
 		lottery = "복권",
+		jackpot = "잭팟",
 		daily_tasks = "일일 퀘스트",
 		categories = "카테고리",
 		refresh = "새로고침",
@@ -4001,7 +4015,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		xp = "경험치",
 		money_won = "획득한 돈",
 		average_percentage = "평균 퍼센트",
-		streak = "연승 기록"
+		streak = "연승 기록",
+		money_lost = "돈을 잃음",
+		net = "순이익",
+		net_ratio = "순이익 비율",
+		items_gambled = "배팅한 아이템"
 	},
 
 	atms = {
@@ -4080,6 +4098,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		attachment_label_fmj = "전폭탄",
 		attachment_label_scope_nv = "야간용 스코프",
 		attachment_label_scope_thermal = "열상용 스코프",
+		attachment_label_stock = "재고",
 
 		attachment_label_luxury1 = "더 피임프",
 		attachment_label_luxury2 = "더 발라스",
@@ -5890,12 +5909,16 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		showing_flags = "플래그 표시 중.",
 		not_showing_flags = "더 이상 플래그를 표시하지 않습니다.",
 
+		flag = "플래그 ${flagId}",
+
 		flag_swap_leaderboard = "깃발 바꾸기 리더보드",
 		ongoing = "진행 중",
 		not_ongoing = "진행 중 아님",
 		position_and_name = "${position}. ${name}",
+		flag_count_one = "1개의 플래그",
 		flag_count = "${flags}개의 깃발",
-		players_with_most_flags_will_show_here = "가장 많은 깃발을 획득한 플레이어들이 이곳에 표시됩니다."
+		players_with_most_flags_will_show_here = "가장 많은 깃발을 획득한 플레이어들이 이곳에 표시됩니다.",
+		flags_on_ground = "땅에 깃발이 있습니다: ${flagsOnGround}"
 	},
 
 	forcefields = {
@@ -6481,6 +6504,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		los_santos_golf_club = "로스 산토스 골프 클럽",
 		arcade_bar = "아케이드 바",
 		japanese_restaurant = "일식당",
+		japanese_restaurant_kitchen = "일식 레스토랑 주방",
 		["945_studios"] = "945 Studios",
 		grain_mill = "곡물 제조소",
 		pd_prefix = "경찰서",
@@ -6508,6 +6532,14 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		invalid_item_id = "유효하지 않은 아이템 ID입니다.",
 		item_not_found = "ID가 `${itemId}`인 아이템을 찾을 수 없습니다.",
 		item_lookup = "${inventoryName}:${inventorySlot}에 있는 ${label}(${itemId}) 아이템입니다.",
+
+		invalid_evidence_id = "올바르지 않은 증거 ID 입니다.",
+		not_near_evidence_locker = "증거 보관함 근처에 있지 않습니다.",
+		clear_evidence_success = "ID `${evidenceId}`를 가진 증거를 성공적으로 처리했습니다.",
+		clear_evidence_failed = "증거 처리에 실패하였습니다.",
+
+		clear_evidence_logs_title = "증거 처리 로그",
+		clear_evidence_logs_details = "${consoleName}님이 ID `${evidenceId}`를 가진 증거를 처리했습니다. ${deleted}개의 항목이 삭제되었고, ${kept}개의 항목은 유지되었습니다.",
 
 		big_inventory_disabled = "캐릭터 인벤토리 슬롯을 기본값으로 재설정했습니다.",
 		big_inventory_enabled = "캐릭터 인벤토리 슬롯을 일시적으로 늘려놓았습니다.",
@@ -7977,7 +8009,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		move_to_wash = "차량 세차를 위해 이곳으로 이동하십시오.",
 		vehicle_too_clean = "이 차량은 세차하기에 너무 깨끗합니다.",
 		move_to_put_fake_plate = "가짜 번호판을 장착하려면 이곳으로 이동하세요.",
-		unable_to_repair = "차량에 플레이어가 탑승 중일 때는 수리할 수 없습니다.",
 		failed_lockpicking = "자물쇠 따기 실패",
 		lockpicking_succeeded = "자물쇠 따기 성공.",
 		hotwiring_vehicle = "핫와이어링 중",
@@ -8025,25 +8056,37 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		press_to_deposit = "온라인 재표에 아이템을 입금하려면 ~INPUT_REPLAY_SHOWHOTKEY~을 누르세요.",
 		can_only_withdraw_at_casino = "카지노에서만 인출이 가능합니다.",
 
+		take_fee_no_permissions = "플레이어가 적절한 권한 없이 잭팟 수수료를 가져가려고 시도하였습니다.",
+		took_jackpot_fees = "잭팟 수수료를 가져갔습니다. 인벤토리 ${inventories}에서 합산 $${removedTotalWorth} (가치: ${removedTotalItems}개 항목)를 제거했습니다.",
+
 		jackpot = "잭팟",
 		inventory = "인벤토리",
 		history = "히스토리",
-		no_items_in_inventory = "가상 인벤토리에 아이템이 없는 것 같습니다.",
-		you_can_deposit_at_the_casino = "카지노에서 아이템을 입금할 수 있습니다.",
-		close = "닫기",
 		bet = "베팅",
-		your_chance = "당신의 찬스: ${chance}%",
-		character_bet = "${characterName}님이 ${itemWorth}달러를 지불하여 ${itemAmount}개의 아이템을 베팅하였습니다.",
-		pot = "상금: $${jackpotWorth}",
-		items = "아이템 수: ${jackpotItemAmount}",
-		withdraw = "인출 (${withdrawAmount})",
-		quick_sell = "빠른 판매 ($${quickSellWorth})",
-		inventory_value = "가치: $${inventoryWorth}",
-		inventory_total_items = "총 아이템 수: ${inventoryTotalItems}",
-		daily_fee_information = "매일 오전 6시 UTC에, 당신의 총 인벤토리 가치의 5% 이상의 아이템이 '보관 수수료'로 제거됩니다.",
-
-		take_fee_no_permissions = "플레이어가 적절한 권한 없이 잭팟 수수료를 가져가려고 시도하였습니다.",
-		took_jackpot_fees = "잭팟 수수료를 가져갔습니다. 인벤토리 ${inventories}에서 합산 $${removedTotalWorth} (가치: ${removedTotalItems}개 항목)를 제거했습니다."
+		your_chance = "확률: ${chance}%",
+		pot = "판돈: $${pot}",
+		items = "보유 중인 아이템: ${items}",
+		time = "시간: ${time}초",
+		chatters = "채팅 참여자: ${chatters}명",
+		send_a_message = "메시지 보내기...",
+		bet_placed = "${name}님은 ${count}개의 아이템으로 $${worth}를 베팅했습니다.",
+		bet_item = "${amount}개의 ${name} ($${worth})",
+		value = "가치: $${value}",
+		total_items = "총 아이템 수: ${totalItems}",
+		withdraw = "인출 (${amount})",
+		quick_sell = "빠른 판매 ($${worth})",
+		storage_fee_warning = "매일 UTC 6AM에 보유중인 아이템 중 가치가 총 보유중인 아이템 가치의 5% 이상인 아이템이 '보관료'로 삭제됩니다.",
+		item_with_worth = "${label} ($${worth})",
+		select_all = "모두 선택",
+		deselect_all = "모두 선택 해제",
+		bet_with_amount = "$${amount}으로 베팅",
+		close = "닫기",
+		no_items_in_inventory = "가상 인벤토리에 아이템이 없는 것 같습니다.",
+		deposit_at_casino = "카지노에 아이템을 입금할 수 있습니다.",
+		sort = "정렬",
+		player_won_pot = "${name} 님이 ${timeAgo} 전에 ${chance}% 확률로 $${amount}를 얻었습니다.",
+		the_ticket_was = "티켓 번호는 ${ticket} 입니다.",
+		recent_pots_will_show_here = "최근 포트는 여기에 표시됩니다."
 	},
 
 	jail = {
@@ -8217,6 +8260,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		random = "랜덤",
 		beginner = "초보자",
 		custom = "커스텀",
+
+		job_low = "낮은 직업",
+		job_medium = "중간 직업",
+		job_high = "높은 직업",
 
 		appreciated_tier = "감사하는 등급",
 		respected_tier = "존경하는 등급",
@@ -8790,9 +8837,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		bad_screen_word_title = "나쁜 화면 단어",
 		bad_screen_word_about = "여기에는 화면에 특정 단어가 나타난 것으로 감지된 모든 플레이어가 나열됩니다. 잠재적인 모더를 찾는 데 도움이 됩니다.",
-
-		freecam_detections_title = "프리캠 감지",
-		freecam_detections_about = "여기에는 프리캠을 사용하는 것으로 감지된 모든 플레이어가 나열됩니다. 잠재적인 모더를 찾는 데 도움이 됩니다.",
 
 		damage_modifier_name = "플레이어 이름",
 		damage_modifier_expected = "예상 대미지",
@@ -9811,7 +9855,15 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		better_stamina = "${duration} 분 동안 스태미너가 바닥나지 않고 계속해서 달릴 수 있습니다.",
 		more_inventory_space = "${duration} 분 동안 추가로 ${amount} 개의 인벤토리 슬롯을 얻을 수 있습니다.",
 
-		buffs_note = "버프는 건물에서 벗어나면 활성화됩니다."
+		buffs_note = "버프는 건물에서 벗어나면 활성화됩니다.",
+
+		press_to_prepare_food = "[${InteractionKey}] 음식 준비",
+		prepare_food = "음식 준비",
+
+		kissaki_kitchen = "키사키 주방",
+
+		craft = "제작",
+		starting = "시작 중"
 	},
 
 	riot_mode = {
