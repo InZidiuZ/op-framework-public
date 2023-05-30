@@ -4002,7 +4002,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		kill = "Kill, like so dead",
 		headshot = "Headshot, like a total boss",
 		killstreak = "Killstreak, like on fire",
-		assist = "Assist" - "Helping hand, yas queen!",
+		assist = "Assist - Helping hand, yas queen!",
 
 		level = "Level, like your status",
 		position = "Position, like your spot",
