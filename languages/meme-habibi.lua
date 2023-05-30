@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["meme-habibi"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		weapon_spawn_ban = "Tried to pull a rabbit out of the hat, ended up with a bazooka.",
 		high_damage_ban = "You abused your power and brought chaos to our realm.",
 		suspicious_explosion_ban = "We do not encourage excessive use of explosions. Please avoid doing so.",
+		semi_godmode_ban = "Your desire for immortality has disturbed the natural order of time. Forever is not as enjoyable as it seems.",
 
 		mp_f_freemode_01_label = "Freemode (female)",
 		mp_m_freemode_01_label = "Freemode (male)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		ragdoll_command = "ragdoll",
 		ragdoll_command_help = "Toggle ragdoll.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "marathon",
+		marathon_command_help = "Activate/deactivate the debug feature 'marathon' to identify walkstyles that need adjustment.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "report",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		wheel_offset_command_parameter_wheels = "front/rear",
 		wheel_offset_command_parameter_wheels_help = "Which wheels you want to modify?",
 		wheel_offset_command_parameter_value = "value",
-		wheel_offset_command_parameter_value_help = "The value you want to modify it by. This can be anywhere from -0.15 to 0.15. A value of 0 restores the default value.",
+		wheel_offset_command_parameter_value_help = "The amount of modification you desire, ranging from -0.15 to 0.2, with 0 being the default.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "shahrat_dohan",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		clothing_bag = "Clothing Bag",
 		clothing_bag_description = "Never stress about fashion mishaps again! The clothing bag allows you to store your favorite outfit and wear it instantly, anywhere you go. It's like having a fairy godmother without the bibbidi-bobbidi-boo.",
 
+		raw_diamond = "Raw Diamond",
+		raw_diamond_description = "A natural uncut diamond, freshly mined.",
 		raw_morganite = "مورجانيت خام",
 		raw_morganite_description = "المورجانيت في شكله الطبيعي، طازج من المنجم.",
 		raw_ruby = "ياقوت خام",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		drank_gasoline_death = "Gasoline Poisoning",
 		drank_bleach_death = "Poisoned with Bleach",
 
+		using_cuffs = "Using Zahmat Al Manacles",
+		you_moved_too_fast = "Aye slow down mate, you moved too fast.",
+
 		failed_burger_shot_delivery = "Could not open meal from Burger Shot.",
 		failed_bean_machine_delivery = "Could not open delivery from Bean Machine.",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		value = "Dan adam: $${value}",
 		total_items = "Adadin sarakin: ${totalItems}",
 		withdraw = "Kawo (${amount})",
+		transfer = "Transfer (${amount})",
 		quick_sell = "Fiye da kudi ($${worth})",
-		storage_fee_warning = "Sai a ran 6am UTC kowane rana, adadin ab'adin da ya fi karfin >= 5% dake jihar sarrafa zai cigaba da a share mataimakin wadda aka rubuta 'storage fee'.",
+		storage_fee_warning = "Listen up, at 6AM UTC every day, items worth >= 5% of your total inventory value will be removed as a 'storage fee'.",
 		item_with_worth = "${label} (${worth} ${currency})",
 		select_all = "Select All",
 		deselect_all = "Deselect All",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		sort = "Sort",
 		player_won_pot = "${name} won ${amount} ${currency} with a ${chance}% chance ${timeAgo} ago.",
 		the_ticket_was = "The ticket was ${ticket}.",
-		recent_pots_will_show_here = "ستعرض الأواني الأخيرة هنا."
+		recent_pots_will_show_here = "ستعرض الأواني الأخيرة هنا.",
+		server_id = "The server ID you want to transfer to...",
+		transfer_items_to_anoter_person = "Transfer items to another homie."
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		mining_mined_title = "Gem Mined",
 		mining_mined_details = "${consoleName} mined a ${output}.",
+		mining_mined_details_nothing = "${consoleName} mined a gemstone but found nothing.",
 
 		mining_exploded_title = "Mining Explosion",
 		mining_exploded_details = "${consoleName} exploded while trying to mine a gem.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		kissaki_kitchen = "مطبخ القص",
 
 		craft = "صُنع",
-		starting = "البدء"
+		putting_down_ingredients = "Putting Down the Good Stuff",
+
+		pick_up = "Pick Up: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Pick Up: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Prepare Rice (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Prepare Rice (${completed}%~s~)",
+		preparing_rice_starting = "Preparing Rice",
+		preparing_rice = "~g~${name}~s~: Preparing Rice... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: Prepare Fillings (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Prepare Fillings (${completed}%~s~)",
+		preparing_fillings_starting = "Preparing Fillings",
+		preparing_fillings = "~g~${name}~s~: Habibi, Preparing Fillings... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Habibi, Prepare Rolling Mat (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Habibi, prepare Rolling Mat (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Preparing Rolling Mat",
+		preparing_rolling_mat = "~g~${name}~s~: Habibi, Preparing Rolling Mat... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Habibi, Assemble Sushi (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Put together sushi (${completed}%~s~)",
+		assembling_sushi_starting = "Putting together sushi",
+		assembling_sushi = "~g~${name}~s~: Putting together sushi... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Roll sushi (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Roll sushi (${completed}%~s~)",
+		rolling_sushi_starting = "Rolling sushi",
+		rolling_sushi = "~g~${name}~s~: Rolling sushi... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Cut sushi (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: قطع السوشي (${completed}%~s~)",
+		slicing_sushi_starting = "بدء قطع السوشي",
+		slicing_sushi = "~g~${name}~s~: قطع السوشي... (${completed}%~s~)",
 	},
 
 	riot_mode = {

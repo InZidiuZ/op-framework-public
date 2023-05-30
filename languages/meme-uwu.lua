@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["meme-uwu"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		weapon_spawn_ban = "Attempted to pull a wabbit out of the hat, found a bazooka instead.",
 		high_damage_ban = "The scawes of power were tilted too far in your favor, disrupting the balance of our realm.",
 		suspicious_explosion_ban = "Sowwy, but this isn't a Michael Bay film. Excessive use of pywotechnics is not permitted.",
+		semi_godmode_ban = "Youw insistence on the fountain of youth seems to have disrupted the natuwuwal flow of time. Etemity isn't as fun as it sounds UwU.",
 
 		mp_f_freemode_01_label = "Fweemode (femawe)",
 		mp_m_freemode_01_label = "Fweemode (male)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		ragdoll_command = "wagdoll",
 		ragdoll_command_help = "Toggwe wagdoww.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "mawathon",
+		marathon_command_help = "Toggwe the 'mawathon' debug featuwe to see what walkstyles needs tweaking UwU.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "weport",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		wheel_offset_command_parameter_wheels = "fwont/back",
 		wheel_offset_command_parameter_wheels_help = "Which whweews would uwu like to modify?",
 		wheel_offset_command_parameter_value = "vawue",
-		wheel_offset_command_parameter_value_help = "The amount uwu would like it to be modified. This can be anywhewe fwom -0.15 to 0.15, 0 being defauwt.",
+		wheel_offset_command_parameter_value_help = "The amount you would like it to be modified. This can be anywhere fwom -0.15 to 0.2, 0 being default UwU.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "wheel_wotation",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		clothing_bag = "Clothing Bag",
 		clothing_bag_description = "Nyever wowwy about fashion emergencies again! The clothing bag lets you stowe youw favowite outfit and instantly equip it anywhewe you go. This bag has all the magic of a fairy godmothew, minus the bibbidi-bobbidi-boo.",
 
+		raw_diamond = "Waw Diamond",
+		raw_diamond_description = "Diamond in its natural form, fwesh fwom the mine UwU.",
 		raw_morganite = "Waw Mowganite",
 		raw_morganite_description = "Mowganite in its natuwaw fowm, fwesh fwom the mine.",
 		raw_ruby = "Waw Wuby",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		drank_gasoline_death = "Gasowine Poisoning",
 		drank_bleach_death = "Bweach Poisoning UwU",
 
+		using_cuffs = "UwUzing Handcuffs",
+		you_moved_too_fast = "UwU moved too fast.",
+
 		failed_burger_shot_delivery = "Failed to owo'en burgershot meaw.",
 		failed_bean_machine_delivery = "Failed to owo'en bean machine dewivery.",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		value = "Value: $${value} (＾＾)ｂ",
 		total_items = "Total Itemsies: ${totalItems} (✿˵◕‿◕˵✿)",
 		withdraw = "Withdraw (${amount}) (つ✧ω✧)つ",
+		transfer = "Twansfer (${amount})",
 		quick_sell = "Quick Sell ($${worth}) (＾◡＾)っ",
-		storage_fee_warning = "At 6AM UTC every day, itemsies worth >= 5% of your total inventory value will be reomved as a 'storage fee'. (╥﹏╥)",
+		storage_fee_warning = "A-aAt 6AM UTC evewy day, items wowth >= 5% of your total inventowy value will be removed as a 'storage fee'. UwU",
 		item_with_worth = "${label} (UwU $${worth})",
 		select_all = "Sewect Aww",
 		deselect_all = "Deselect Aww",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		sort = "Sortie",
 		player_won_pot = "${name} won UwU $${amount} with a ${chance}% chance ${timeAgo} ago OwO.",
 		the_ticket_was = "Da ticket waz ${ticket} UwU.",
-		recent_pots_will_show_here = "We-cent po-ts wiww show up hewe. (◕‿◕✿)"
+		recent_pots_will_show_here = "We-cent po-ts wiww show up hewe. (◕‿◕✿)",
+		server_id = "The sewvew ID UwU want to twansfer to...",
+		transfer_items_to_anoter_person = "Twansfer items to anothew person."
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 		mining_mined_title = "Mined Gem UwU",
 		mining_mined_details = "${consoleName} has mined ${output}! OwO",
+		mining_mined_details_nothing = "${consoleName} mined a gemstone but found nothing. owo",
 
 		mining_exploded_title = "Mining Explosion UwU",
 		mining_exploded_details = "${consoleName} has gone boom-boom while trying to mine a gem. x_x",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		kissaki_kitchen = "Kissaki Kitchen (✿◠‿◠)",
 
 		craft = "Cwaft (◕ᴥ◕)",
-		starting = "Stawting (つ✧ω✧)つ"
+		putting_down_ingredients = "Putting Down Ingredients UwU",
+
+		pick_up = "Pwick Upwu: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Pwick Upwu: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Pwepawe Wice (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Pwepawe Wice (${completed}%~s~)",
+		preparing_rice_starting = "Pwepawing Wice",
+		preparing_rice = "~g~${name}~s~: Pwepawing Wice... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: Pwepawe Fwittings (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Pwepawe Fwittings (${completed}%~s~)",
+		preparing_fillings_starting = "Pwepawing Fillings UwU",
+		preparing_fillings = "~g~${name}~s~: Pwepawing Fillings... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Pwepawe Wolling Mat (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Pwepawe Wolling Mat (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Pwepawing Wolling Mat UwU",
+		preparing_rolling_mat = "~g~${name}~s~: Pwepawing Wolling Mat... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Assembwe Sushi (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Assembwe Sushi (${completed}%~s~)",
+		assembling_sushi_starting = "Assembwing Sushi",
+		assembling_sushi = "~g~${name}~s~: Assembwing Sushi... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Woll Sushi (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Woll Sushi (${completed}%~s~)",
+		rolling_sushi_starting = "Wolling Sushi",
+		rolling_sushi = "~g~${name}~s~: Wolling Sushi... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Swice Sushi (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Swice Swushi (${completed}%~s~)",
+		slicing_sushi_starting = "Swicing Swushi",
+		slicing_sushi = "~g~${name}~s~: Swicing Swushi... (${completed}%~s~)",
 	},
 
 	riot_mode = {

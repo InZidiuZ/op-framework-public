@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["da-DK"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		weapon_spawn_ban = "Forsøgte at trække en kanin ud af hatten, fandt i stedet en bazooka.",
 		high_damage_ban = "Magtbalancen er blevet forstyrret, og du er blevet bannet for at forårsage for meget skade.",
 		suspicious_explosion_ban = "Beklager, men dette er ikke en Michael Bay film. Overdreven brug af pyroteknik er ikke tilladt.",
+		semi_godmode_ban = "Din insisteren på kilde til ungdommen synes at have forstyrret den naturlige flow af tiden. Evighed er ikke så sjovt, som det lyder.",
 
 		mp_f_freemode_01_label = "Freemode (kvinde)",
 		mp_m_freemode_01_label = "Freemode (mand)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["da-DK"] = {
 		ragdoll_command = "dukkehyl",
 		ragdoll_command_help = "Skift mellem ragdoll tilstand.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "marathon",
+		marathon_command_help = "Aktiver/deaktiver 'marathon' debug-funktionen for at se, hvad der skal justeres på gangstile.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "rapport",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		wheel_offset_command_parameter_wheels = "for/bag",
 		wheel_offset_command_parameter_wheels_help = "Hvilke hjul vil du ændre på?",
 		wheel_offset_command_parameter_value = "værdi",
-		wheel_offset_command_parameter_value_help = "Beløbet du ønsker at justere. Dette kan være fra -0.15 til 0.15, 0 er standard.",
+		wheel_offset_command_parameter_value_help = "Beløbet, du ønsker at ændre det. Dette kan ligge mellem -0,15 og 0,2, hvor 0 er standarden.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "hjul_rotation",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		clothing_bag = "Tøjpung",
 		clothing_bag_description = "Vær aldrig bekymret for mode-nødsituationer igen! Tøjpungen lader dig gemme dit yndlingsoutfit og øjeblikkeligt udstyre det, uanset hvor du er. Denne taske har al magien fra en eventyrfe, minus bibbidi-bobbidi-boo.",
 
+		raw_diamond = "Rå Diamant",
+		raw_diamond_description = "Diamant i sin naturlige form, frisk fra minen.",
 		raw_morganite = "Rå Morganit",
 		raw_morganite_description = "Morganit i dets naturlige form, frisk ud af minen.",
 		raw_ruby = "Rå Rubin",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 		drank_gasoline_death = "Benzinforgiftning",
 		drank_bleach_death = "Bleach forgiftning",
 
+		using_cuffs = "Bruger Håndjern",
+		you_moved_too_fast = "Du bevægede dig for hurtigt.",
+
 		failed_burger_shot_delivery = "Kunne ikke åbne burgershot måltid.",
 		failed_bean_machine_delivery = "Kunne ikke åbne bean machine leverance.",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 		value = "Værdi: $${value}",
 		total_items = "Samlede genstande: ${totalItems}",
 		withdraw = "Hæv (${amount})",
+		transfer = "Overfør (${amount})",
 		quick_sell = "Hurtig salg ($${worth})",
-		storage_fee_warning = "Kl. 6:00 UTC hver dag fjernes genstande til en værdi af >= 5% af din samlede beholdningsværdi som en 'opbevaringsafgift'.",
+		storage_fee_warning = "Kl. 6.00 UTC hver dag fjernes genstande på eller over 5% af din samlede inventarværdi som 'opbevaringsgebyr'.",
 		item_with_worth = "${label} (${worth} DKK)",
 		select_all = "Vælg Alle",
 		deselect_all = "Fravælg Alle",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 		sort = "Sorter",
 		player_won_pot = "${name} vandt ${amount} DKK med en ${chance}% chance for ${timeAgo} siden.",
 		the_ticket_was = "Billetten var ${ticket}.",
-		recent_pots_will_show_here = "Seneste puljer vil blive vist her."
+		recent_pots_will_show_here = "Seneste puljer vil blive vist her.",
+		server_id = "Server-ID'en, som du vil overføre til ...",
+		transfer_items_to_anoter_person = "Overfør genstande til en anden person."
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		mining_mined_title = "Mineret Ædelsten",
 		mining_mined_details = "${consoleName} har mineret ${output}.",
+		mining_mined_details_nothing = "${consoleName} mined en ædelsten, men fandt ingenting.",
 
 		mining_exploded_title = "Mineeksplosion",
 		mining_exploded_details = "${consoleName} sprængte sig selv i luften, mens han forsøgte at mine en ædelsten.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["da-DK"] = {
 		kissaki_kitchen = "Kissaki Køkkenet",
 
 		craft = "Fremstil",
-		starting = "Begynder"
+		putting_down_ingredients = "Sætter ingredienser ned",
+
+		pick_up = "Samle op: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Samle op: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Forbered Ris (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Forbered Ris (${completed}%~s~)",
+		preparing_rice_starting = "Forbereder Ris",
+		preparing_rice = "~g~${name}~s~: Forbereder Ris... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: Forbered Fyld (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Forbered Fyld (${completed}%~s~)",
+		preparing_fillings_starting = "Forbereder fyldninger",
+		preparing_fillings = "~g~${name}~s~: Forbereder fyldninger... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Forbereder rulleunderlag (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Forbereder rulleunderlag (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Forbereder rulleunderlag",
+		preparing_rolling_mat = "~g~${name}~s~: Forbereder rulleunderlag... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Samler sushi (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Saml sushi (${completed}%~s~)",
+		assembling_sushi_starting = "Sammensætter sushi",
+		assembling_sushi = "~g~${name}~s~: Sammensætter sushi... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Rul sushi (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Rul sushi (${completed}%~s~)",
+		rolling_sushi_starting = "Ruller sushi",
+		rolling_sushi = "~g~${name}~s~: Ruller sushi... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Skær sushi (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Skær sushi (${completed}%~s~)",
+		slicing_sushi_starting = "Starter skæring af sushi",
+		slicing_sushi = "~g~${name}~s~: Skærer sushi... (${completed}%~s~)",
 	},
 
 	riot_mode = {

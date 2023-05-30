@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["meme-roadman"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		weapon_spawn_ban = "Man thought he was gonna pull a rabbit out of the hat, but ended up with a bazooka instead. Feds ain't having it.",
 		high_damage_ban = "You went too hard, fam. We can't let that slide, unna?",
 		suspicious_explosion_ban = "Allow me to translate, still… You can't be causing explosive scenes like Michael Bay films, innit?",
+		semi_godmode_ban = "Oi mate, the feds caught you trying to cheat death. Time's gotta flow, you can't stop it forever. Enjoy the L.",
 
 		mp_f_freemode_01_label = "Freemode (mandem) (female)",
 		mp_m_freemode_01_label = "Freemode (mandem) (male)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		ragdoll_command = "ragdoll",
 		ragdoll_command_help = "Toggle ragdoll, ya get me?.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "marathon",
+		marathon_command_help = "Toggle the 'marathon' debug ting so you can see how to adjust your swag.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "snitch",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		wheel_offset_command_parameter_wheels = "front/back",
 		wheel_offset_command_parameter_wheels_help = "You want to modify the front or back wheels fam?",
 		wheel_offset_command_parameter_value = "value",
-		wheel_offset_command_parameter_value_help = "How much you want it to be modified? It can be anything from -0.15 to 0.15, 0 being standard.",
+		wheel_offset_command_parameter_value_help = "How much you wanna change it? You can go from -0.15 to 0.2, 0 is default.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "wheel_rotate",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		clothing_bag = "Flex Bag",
 		clothing_bag_description = "Never stress about your fit again! The flex bag lets you stash your best drip and switch it up anytime, anywhere. This bag has all the magic of a fairy godmother, just no bibbidi-bobbidi-boo.",
 
+		raw_diamond = "Grimey Diamond",
+		raw_diamond_description = "Unpolished diamond, straight from the quarry innit.",
 		raw_morganite = "Raw Morganite",
 		raw_morganite_description = "Bruv, this is morganite fresh out the mine innit.",
 		raw_ruby = "Raw Ruby",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		drank_gasoline_death = "Died from drinking gasoline, smh. ",
 		drank_bleach_death = "Man down from drinkin' bleach",
 
+		using_cuffs = "Cuffing up",
+		you_moved_too_fast = "Slow down bruh, you movin' too quick.",
+
 		failed_burger_shot_delivery = "Couldn't open up the burgershite meal, mate.",
 		failed_bean_machine_delivery = "Couldn't open up the tossa's bean machine delivery.",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		value = "Value: $${value}",
 		total_items = "Total Shit: ${totalItems}",
 		withdraw = "Withdraw (${amount})",
+		transfer = "Send dat cash (${amount})",
 		quick_sell = "Quick Flip ($${worth})",
-		storage_fee_warning = "Every day at 6AM (UTC), we're taking types worth >= 5% of your net worth as a 'storage fee'. Cheetahs gotta eat.",
+		storage_fee_warning = "Yo, heads up, every day at 6AM UTC, any items worth more than 5% of yo' total inventory gonna get taken as a 'storage fee'.",
 		item_with_worth = "${label} (££{worth})",
 		select_all = "Select everyone cuz",
 		deselect_all = "Select nae one ya get me",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		sort = "Sort it bruv",
 		player_won_pot = "${name} won ££${amount} with a ${chance}% chance about ${timeAgo}.",
 		the_ticket_was = "The ticket was ${ticket}, ya get me.",
-		recent_pots_will_show_here = "Recent bets will show up here."
+		recent_pots_will_show_here = "Recent bets will show up here.",
+		server_id = "The server ID you tryna move to...",
+		transfer_items_to_anoter_person = "Sendin' stuff to someone else."
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		mining_mined_title = "Scored a Gem",
 		mining_mined_details = "Yo, ${consoleName} just scored ${output}.",
+		mining_mined_details_nothing = "${consoleName} got nothing after mining for a gemstone.",
 
 		mining_exploded_title = "Mining Mishap",
 		mining_exploded_details = "Bruh, ${consoleName} blew up while trying to get a gem.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		kissaki_kitchen = "Kissaki's Kitchen",
 
 		craft = "Make",
-		starting = "Beginning"
+		putting_down_ingredients = "Leaving these ingredients right here",
+
+		pick_up = "Yoink: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Yoink: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Cook dat Rice (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Cook dat Rice (${completed}%~s~)",
+		preparing_rice_starting = "Imma Cookin' Dat Rice",
+		preparing_rice = "~g~${name}~s~: Cookin' Dat Rice... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: Chop Up Dem Fillings (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Chop Up Dem Fillins (${completed}%~s~)",
+		preparing_fillings_starting = "Getting the fillings ready",
+		preparing_fillings = "~g~${name}~s~: Getting those fillings ready... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Prepare the rolling mat, fam (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Press if you're ready to prepare the rolling mat (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Time to roll, fam",
+		preparing_rolling_mat = "~g~${name}~s~: Rolling mat's getting ready... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Assemble the sushi, innit (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Yo, let's assemble some sushi (${completed}%~s~)",
+		assembling_sushi_starting = "Ay look, time to assemble some sushi",
+		assembling_sushi = "~g~${name}~s~: Assembling that sushi... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Time to roll some sushi (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Rollin' up the sushi (${completed}%~s~)",
+		rolling_sushi_starting = "Rollin' up the sushi",
+		rolling_sushi = "~g~${name}~s~: Still rollin' that sushi... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Slice up that sushi, broski (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Slice up that sushi ting (${completed}%~s~)",
+		slicing_sushi_starting = "Man's 'bout to slice up some sushi",
+		slicing_sushi = "~g~${name}~s~: Man's slicing up some sushi... (${completed}%~s~)",
 	},
 
 	riot_mode = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["meme-valleygirl"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		weapon_spawn_ban = "Tried to get a rabbit outta the hat, and ended up with a bazooka? Way harsh!",
 		high_damage_ban = "Uh oh, you did too much damage. You're, like, banned for causing total chaos.",
 		suspicious_explosion_ban = "Sorry, but this isn't like a Michael Bay movie. No crazy pyrotechnics allowed.",
+		semi_godmode_ban = "Oh my gosh! You're, like, totally messing with time and the universe! Being immortal isn't all it's cracked up to be, you know.",
 
 		mp_f_freemode_01_label = "Freemode (female), woo!",
 		mp_m_freemode_01_label = "Freemode (male), dude!",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		ragdoll_command = "ragdoll",
 		ragdoll_command_help = "OMG go limp like a ragdoll, so like, you can like, chill for a sec or whatever.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "marathon",
+		marathon_command_help = "Toggle the 'marathon' debug thingy to see what walkstyles need improving.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "report",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		wheel_offset_command_parameter_wheels = "front/back",
 		wheel_offset_command_parameter_wheels_help = "Which wheels do you want to modify?",
 		wheel_offset_command_parameter_value = "value",
-		wheel_offset_command_parameter_value_help = "The amount you want it modified. It can be anywhere from -0.15 to 0.15. Zero is like the default, y'know?",
+		wheel_offset_command_parameter_value_help = "The amount you want to adjust it by. It can be -0.15 to 0.2 with 0 being the default.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "wheel_rotation",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		clothing_bag = "Clothing Bag, OMG!",
 		clothing_bag_description = "Never worry about fashion emergencies again, girl! The clothing bag lets you store your favorite outfit and instantly equip it anywhere you go. This bag has all the magic of a fairy godmother, minus the bibbidi-bobbidi-boo. Seriously!",
 
+		raw_diamond = "Raw Diamond",
+		raw_diamond_description = "It's, like, a natural diamond straight out of a mine. Fresh, ya know.",
 		raw_morganite = "Like, Raw Morganite",
 		raw_morganite_description = "Morganite in its natural form, fresh from the mine. So totally unprocessed and stuff.",
 		raw_ruby = "Like, Raw Ruby",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		drank_gasoline_death = "Like, you drank gasoline and died. Not totally unexpected tbh.",
 		drank_bleach_death = "OMG! You drank bleach, you're, like, so dead!",
 
+		using_cuffs = "Using Handcuffs, like OMG",
+		you_moved_too_fast = "Ugh, you moved too fast. Slow down, will you?",
+
 		failed_burger_shot_delivery = "Ugh, failed to open the burgershot meal.",
 		failed_bean_machine_delivery = "Failed to open the bean machine delivery.",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		value = "Value: $${value}, like, worth its weight in gold",
 		total_items = "Total Items: ${totalItems}, like, a whole lotta stuff",
 		withdraw = "Withdraw (${amount}), like, I need my money now",
+		transfer = "Transfer (${amount}), like totally",
 		quick_sell = "Quick Sell ($${worth}), like, cha-ching, sold!",
-		storage_fee_warning = "At 6AM UTC every day, items worth >= 5% of your total inventory value will be removed as a 'storage fee'. Just sayin'.",
+		storage_fee_warning = "Warning! Every day at 6AM UTC, they're gonna charge you for 'storage', like seriously. If you have stuff worth >= 5% of your total inventory, it's gonna be removed.",
 		item_with_worth = "${label} (${worth} dollars, like totally)",
 		select_all = "Check 'em all, duh",
 		deselect_all = "Uncheck 'em all, duh",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		sort = "Organize",
 		player_won_pot = "${name} totally scored $${amount} like ${timeAgo} ago, with a ${chance}% chance! Like, awesome!",
 		the_ticket_was = "The ticket was ${ticket}. (da ticket was like ${ticket})",
-		recent_pots_will_show_here = "Recent pots will show up here. (recent bets are here)"
+		recent_pots_will_show_here = "Recent pots will show up here. (recent bets are here)",
+		server_id = "Give me the server ID where you wanna transfer, duh...",
+		transfer_items_to_anoter_person = "Let's transfer stuff to someone else, you know?"
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		mining_mined_title = "Scored a Gem",
 		mining_mined_details = "${consoleName} like totally scored a ${output}.",
+		mining_mined_details_nothing = "${consoleName} mined a gemstone, but it's like nothing came out.",
 
 		mining_exploded_title = "Gem Mining Disaster",
 		mining_exploded_details = "OMG! ${consoleName} like totally blew up while trying to score a gem.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		kissaki_kitchen = "Kissaki Kitchen (a fancy place with delicious food)",
 
 		craft = "Craft (make something cool)",
-		starting = "Starting (getting going)"
+		putting_down_ingredients = "Oh, we're putting down the ingredients now, like, alrighty then.",
+
+		pick_up = "Oh-em-gee, Pick Up: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Pick Up: ~g~${name}, like, ${name} is so fetch",
+
+		prepare_rice = "~g~${name}~s~: Prepare Rice (${completed}%~s~), totally tubular",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Prepare Rice (${completed}%~s~), prepare dat rice, like, ${completed}% done",
+		preparing_rice_starting = "Gettin' ready to prep some rice!",
+		preparing_rice = "~g~${name}~s~: Preparing Rice... (${completed}%~s~), prepping the rice, like, a boss",
+
+		prepare_fillings = "~g~${name}~s~: Prepare Fillings (${completed}%~s~), let's get these fillings ready",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Prepare Fillings (${completed}%~s~), like, ${completed}% of those fillings are done",
+		preparing_fillings_starting = "Like, Preparing Fillings",
+		preparing_fillings = "~g~${name}~s~: Like, Preparing Fillings... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Prepare Rolling Mat (${completed}%~s~) ",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Like, Prepare Rolling Mat (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Like, Preparing Rolling Mat",
+		preparing_rolling_mat = "~g~${name}~s~: Like, Preparing Rolling Mat... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Assemble Sushi (${completed}%~s~) ",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: OMG assemble the sushi (${completed}%~s~)",
+		assembling_sushi_starting = "Starting to assemble the sushi...",
+		assembling_sushi = "~g~${name}~s~: Assembling the sushi... (${completed}%~s~) Like, almost there!",
+
+		roll_sushi = "~g~${name}~s~: Rollin' the sushi (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Rollin' the sushi (${completed}%~s~) OMG so excited!",
+		rolling_sushi_starting = "Starting to roll the sushi...",
+		rolling_sushi = "~g~${name}~s~: Rolling the sushi... (${completed}%~s~) Yes, I'm a pro at this!",
+
+		slice_sushi = "~g~${name}~s~: Cutting the sushi (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Like, let's slice some sushi, duh! (${completed}%~s~)",
+		slicing_sushi_starting = "Slicing Sushi, like, starting...",
+		slicing_sushi = "~g~${name}~s~: Like, slicing sushi...(${completed}%~s~)",
 	},
 
 	riot_mode = {

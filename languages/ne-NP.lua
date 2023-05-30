@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["ne-NP"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		weapon_spawn_ban = "ह्याटबाट खरानी निकाल्ने प्रयास गर्नुभयो, तर साथै बजूकाको खोजी भएको थियो।",
 		high_damage_ban = "तपाईंको फायदा पर्दै व्यवस्थापनको संतुलन विकर्षण गर्दैछ।",
 		suspicious_explosion_ban = "क्षमस्त गर्नुहोस्, यो माइकल बे चलचित्र होइन। पाइरोटेक्निक्सको बहुत अधिक प्रयोग अनुमति भएन।",
+		semi_godmode_ban = "तपाईंको अमरता आवाजाहरू अस्वाभाविक भएर समयको प्राकृतिक बहावमा बाधा परेको छ। अमरताको दुख सुनिश्चित होइन जस्तो छ।",
 
 		mp_f_freemode_01_label = "फ्रीमोड (महिला)",
 		mp_m_freemode_01_label = "फ्रीमोड (पुरुष)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		ragdoll_command = "रैगडॉल",
 		ragdoll_command_help = "चलाउने/रगडोल टगल गर्नुहोस्।",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "म्याराथन",
+		marathon_command_help = "समाकलिन वॉकस्टाइल ठीक गर्न आवश्यक लाग्ने 'म्याराथन' उपकरण सुरु वा बन्द गर्नुहोस्।",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "रिपोर्ट",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		wheel_offset_command_parameter_wheels = "front/back", -- पहिया अफसेट कमान पैरामिटरहरू = "अगाडि / पछाडि",
 		wheel_offset_command_parameter_wheels_help = "Which wheels would you like to modify?", -- तपाईं कुन पहियाहरूलाई सम्पादन गर्न चाहनुहुन्छ? = "तपाईं कुन पहियाहरूलाई सम्पादन गर्न चाहनुहुन्छ?",
 		wheel_offset_command_parameter_value = "value", -- मूल्यको पहिया अफसेट कमान पैरामिटर = "मूल्य",
-		wheel_offset_command_parameter_value_help = "The amount you would like it to be modified. This can be anywhere from -0.15 to 0.15, 0 being default.", -- तपाइँले यति सम्पादन गर्न चाहनुहुन्छ भने। यो कहिँबाट -0.15 देखि 0.15 सम्म कहिँ भइरहेको हुन्छ, 0 मूल हो। = "तपाईंले कती सम्पादन गर्न चाहनुहुन्छ भने। यो कहिँबाट -0.15 देखि 0.15 सम्म कहिँ भइरहेको हुन्छ, 0 मूल हो।",
+		wheel_offset_command_parameter_value_help = "तपाईंले यसलाई सम्पादन गर्न चाहनुभएको मात्रै मात्रै रकम। यो -0.15 देखि 0.2 सम्म कहि पनि हुन सक्छ, 0 पूर्वनिर्धारित हो।",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "चाकाहरुको_घुमाउने",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		clothing_bag = "कपड़ो का थैला",
 		clothing_bag_description = "अब फैशन आपातकाल में कभी चिंता नहीं करनी पड़ेगी! कपड़ो का थैला आपको अपने पसंदीदा आउटफिट को संग्रहित करने और कहीं भी तत्काल इस्तेमाल करने की अनुमति देता है। यह थैला एक परी की तरह चमत्कारी है, बिना बिब्बीडी-बू से।",
 
+		raw_diamond = "प्राकृतिक हीरा",
+		raw_diamond_description = "हीरा खनी बाट तत्काल रूपमा, प्राकृतिक रूपमा।",
 		raw_morganite = "कच्चा मोर्गनाइट",
 		raw_morganite_description = "माइन बाट नयाँ ताजा मोर्गनाइट।",
 		raw_ruby = "कच्चो रुबी",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		drank_gasoline_death = "ग्याँसोलिन जसो",
 		drank_bleach_death = "ब्लिच जसो",
 
+		using_cuffs = "हातमा बेलियो प्रयोग गरिँदै",
+		you_moved_too_fast = "तपाइले धेरै छिटो घुमेर गएका छौ।",
+
 		failed_burger_shot_delivery = "बर्गरशट मील खोल्न सकिएन।",
 		failed_bean_machine_delivery = "बिन मशीन डिलिभरी खोल्न सकिएन।",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		value = "मूल्य: $${value}",
 		total_items = "कुल वस्तुहरु: ${totalItems}",
 		withdraw = "निकास (${amount})",
+		transfer = "हस्तान्तरण (${amount})",
 		quick_sell = "त्वरित बिक्री ($${worth})",
-		storage_fee_warning = "हरेक दिन सुबह 6 बजे UTC मा, तपाईंको कुल वस्तुमूल्यको 5% भन्दा बढी मूल्यको वस्तुहरुलाई 'स्टोरेज फी' को रूपमा हटाइनेछ ।",
+		storage_fee_warning = "6AM UTC प्रत्येक दिन, तपाईंको कुल गार्हस्थ्य भाडा भन्दा >= 5%  मूल्यको वस्तुहरूलाई 'भण्डारण शुल्क' को रूपमा हटाइनेछ।",
 		item_with_worth = "${label} ($${worth})",
 		select_all = "सबै चयन गर्नुहोस्",
 		deselect_all = "सबै चयन हटाउनुहोस्",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		sort = "छान्नुहोस्",
 		player_won_pot = "${name} ले ${chance}% चान्स सहित $${amount} ${timeAgo} अघि जित्नुभयो।",
 		the_ticket_was = "तिकट ${ticket} थियो।",
-		recent_pots_will_show_here = "हालको पट्टीहरू यहाँ देखाएको हुनेछ।"
+		recent_pots_will_show_here = "हालको पट्टीहरू यहाँ देखाएको हुनेछ।",
+		server_id = "तपाईंले हस्तान्तरण गर्न चाहनु भएको सर्भर ID...",
+		transfer_items_to_anoter_person = "अर्को व्यक्तिलाई हस्तान्तरण गर्नुहोस्।"
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 
 		mining_mined_title = "खनिएको रत्न",
 		mining_mined_details = "${consoleName} ले ${output} खनिएको।",
+		mining_mined_details_nothing = "${consoleName} एक ज्वालामुखी खनन गरे, तर कुनै वस्तु प्राप्त नभए।",
 
 		mining_exploded_title = "खनिज विस्फोट",
 		mining_exploded_details = "${consoleName} गहनतासँग खनिज माईन गर्दा विस्फोट गर्ने प्रयास गरेकोमा भोटे",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		kissaki_kitchen = "किसकि किचन",
 
 		craft = "हस्तशिल्प",
-		starting = "सुरूमा"
+		putting_down_ingredients = "घटकहरू तल राख्दै",
+
+		pick_up = "उठाउनुहोस्: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] उठाउनुहोस्: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: भात तयार गर्नुहोस् (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: भात तयार गर्नुहोस् (${completed}%~s~)",
+		preparing_rice_starting = "भात तयार गर्दै",
+		preparing_rice = "~g~${name}~s~: भात तयार गर्दै... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: भरपेट तयार गर्नुहोस् (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: भरपेट तयार गर्नुहोस् (${completed}%~s~)",
+		preparing_fillings_starting = "फिलिङहरू तयार गर्दै",
+		preparing_fillings = "~g~${name}~s~: फिलिङहरू तयार गर्दै... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: रोलिंग म्याट तयार गर्नुहोस् (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: रोलिंग म्याट तयार गर्नुहोस् (${completed}%~s~)",
+		preparing_rolling_mat_starting = "रोलिंग म्याट तयार गर्दै",
+		preparing_rolling_mat = "~g~${name}~s~: रोलिंग म्याट तयार गर्दै... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: सुशी तैयार गर्दै... (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: सुशी समेट्नुहोस् (${completed}%~s~)",
+		assembling_sushi_starting = "सुशी समेट्नुहोस् शुरू हुँदैछ",
+		assembling_sushi = "~g~${name}~s~: सुशी समेट्दै छ... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: सुशी रोल गर्नुहोस् (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: सुशी रोल गर्नुहोस् (${completed}%~s~)",
+		rolling_sushi_starting = "सुशीवालाहरुले सुशी रोल गर्दैछन्",
+		rolling_sushi = "~g~${name}~s~: सुशी रोल गर्दैछ... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: सुशी काट्दै छ... (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: सुशी काट्नुहोस  (${completed}%~s~)",
+		slicing_sushi_starting = "सुशी काट्नुअघि तयारीमा",
+		slicing_sushi = "~g~${name}~s~:  सुशी काट्नुअघि तयारीमा छ ... (${completed}%~s~)",
 	},
 
 	riot_mode = {

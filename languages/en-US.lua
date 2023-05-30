@@ -708,6 +708,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_spawn_ban = "Attempted to pull a rabbit out of the hat, found a bazooka instead.",
 		high_damage_ban = "The scales of power were tilted too far in your favor, disrupting the balance of our realm.",
 		suspicious_explosion_ban = "Sorry, but this isn't a Michael Bay film. Excessive use of pyrotechnics is not permitted.",
+		semi_godmode_ban = "Your insistence on the fountain of youth seems to have disrupted the natural flow of time. Eternity isn't as fun as it sounds.",
 
 		mp_f_freemode_01_label = "Freemode (female)",
 		mp_m_freemode_01_label = "Freemode (male)",
@@ -889,6 +890,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		ragdoll_command = "ragdoll",
 		ragdoll_command_help = "Toggle ragdoll.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "marathon",
+		marathon_command_help = "Toggle the 'marathon' debug feature to see what walkstyles needs tweaking.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "report",
@@ -3469,7 +3475,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		wheel_offset_command_parameter_wheels = "front/back",
 		wheel_offset_command_parameter_wheels_help = "Which wheels would you like to modify?",
 		wheel_offset_command_parameter_value = "value",
-		wheel_offset_command_parameter_value_help = "The amount you would like it to be modified. This can be anywhere from -0.15 to 0.15, 0 being default.",
+		wheel_offset_command_parameter_value_help = "The amount you would like it to be modified. This can be anywhere from -0.15 to 0.2, 0 being default.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "wheel_rotation",
@@ -6770,6 +6776,8 @@ OP.Global.Locales.Languages["en-US"] = {
 		clothing_bag = "Clothing Bag",
 		clothing_bag_description = "Never worry about fashion emergencies again! The clothing bag lets you store your favorite outfit and instantly equip it anywhere you go. This bag has all the magic of a fairy godmother, minus the bibbidi-bobbidi-boo.",
 
+		raw_diamond = "Raw Diamond",
+		raw_diamond_description = "Diamond in its natural form, fresh from the mine.",
 		raw_morganite = "Raw Morganite",
 		raw_morganite_description = "Morganite in its natural form, fresh from the mine.",
 		raw_ruby = "Raw Ruby",
@@ -8029,6 +8037,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		drank_gasoline_death = "Gasoline Poisoning",
 		drank_bleach_death = "Bleach Poisoning",
 
+		using_cuffs = "Using Handcuffs",
+		you_moved_too_fast = "You moved too fast.",
+
 		failed_burger_shot_delivery = "Failed to open burgershot meal.",
 		failed_bean_machine_delivery = "Failed to open bean machine delivery.",
 
@@ -8072,8 +8083,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		value = "Value: $${value}",
 		total_items = "Total Items: ${totalItems}",
 		withdraw = "Withdraw (${amount})",
+		transfer = "Transfer (${amount})",
 		quick_sell = "Quick Sell ($${worth})",
-		storage_fee_warning = "At 6AM UTC every day, items worth >= 5% of your total inventory value will be reomved as a 'storage fee'.",
+		storage_fee_warning = "At 6AM UTC every day, items worth >= 5% of your total inventory value will be removed as a 'storage fee'.",
 		item_with_worth = "${label} ($${worth})",
 		select_all = "Select All",
 		deselect_all = "Deselect All",
@@ -8084,7 +8096,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		sort = "Sort",
 		player_won_pot = "${name} won $${amount} with a ${chance}% chance ${timeAgo} ago.",
 		the_ticket_was = "The ticket was ${ticket}.",
-		recent_pots_will_show_here = "Recent pots will show up here."
+		recent_pots_will_show_here = "Recent pots will show up here.",
+		server_id = "The server ID you want to transfer to...",
+		transfer_items_to_anoter_person = "Transfer items to another person."
 	},
 
 	jail = {
@@ -8431,6 +8445,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		mining_mined_title = "Mined Gem",
 		mining_mined_details = "${consoleName} mined ${output}.",
+		mining_mined_details_nothing = "${consoleName} mined a gemstone but found nothing.",
 
 		mining_exploded_title = "Mining Explosion",
 		mining_exploded_details = "${consoleName} blew up while attempting to mine a gem.",
@@ -9861,7 +9876,40 @@ OP.Global.Locales.Languages["en-US"] = {
 		kissaki_kitchen = "Kissaki Kitchen",
 
 		craft = "Craft",
-		starting = "Starting"
+		putting_down_ingredients = "Putting Down Ingredients",
+
+		pick_up = "Pick Up: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Pick Up: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Prepare Rice (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Prepare Rice (${completed}%~s~)",
+		preparing_rice_starting = "Preparing Rice",
+		preparing_rice = "~g~${name}~s~: Preparing Rice... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: Prepare Fillings (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Prepare Fillings (${completed}%~s~)",
+		preparing_fillings_starting = "Preparing Fillings",
+		preparing_fillings = "~g~${name}~s~: Preparing Fillings... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Prepare Rolling Mat (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Prepare Rolling Mat (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Preparing Rolling Mat",
+		preparing_rolling_mat = "~g~${name}~s~: Preparing Rolling Mat... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Assemble Sushi (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Assemble Sushi (${completed}%~s~)",
+		assembling_sushi_starting = "Assembling Sushi",
+		assembling_sushi = "~g~${name}~s~: Assembling Sushi... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Roll Sushi (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Roll Sushi (${completed}%~s~)",
+		rolling_sushi_starting = "Rolling Sushi",
+		rolling_sushi = "~g~${name}~s~: Rolling Sushi... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Slice Sushi (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Slice Sushi (${completed}%~s~)",
+		slicing_sushi_starting = "Slicing Sushi",
+		slicing_sushi = "~g~${name}~s~: Slicing Sushi... (${completed}%~s~)",
 	},
 
 	riot_mode = {

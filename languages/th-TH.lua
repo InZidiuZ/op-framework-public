@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		weapon_spawn_ban = "พยายามดึงกระต่ายออกจากหมวกจุดหมาย ก็ได้พบปืนใหญ่แทน",
 		high_damage_ban = "ความสามารถของคุณมีความเท่าเทียมกับผู้เล่นอื่น ซึ่งทำให้เกิดการเบียดเสียดและไม่ตรงตามกฎระเบียบของเซิร์ฟเวอร์",
 		suspicious_explosion_ban = "ขออภัย, นี่ไม่ใช่ภาพยนตร์ของ Michael Bay การใช้ระเบิดเป็นจำนวนมากไม่ได้รับอนุญาต",
+		semi_godmode_ban = "ความปรารถนาของคุณที่จะหาน้ำนมชีวิตดูเหมือนว่าจะทำให้กระแสเวลาถูกขัดขวาง การอยู่อมตะไม่ได้มีความสนุกเท่าที่คิด",
 
 		mp_f_freemode_01_label = "Freemode (หญิง)",
 		mp_m_freemode_01_label = "Freemode (ชาย)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		ragdoll_command = "ร่างกายแขนขาสั่น",
 		ragdoll_command_help = "เปิด/ปิด โหมด Ragdoll.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "marathon",
+		marathon_command_help = "เปิด/ปิด 'marathon' debug feature เพื่อดูว่า walkstyles ต้องการการปรับปรุงอะไร",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "รายงาน",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		wheel_offset_command_parameter_wheels = "หน้า/หลัง",
 		wheel_offset_command_parameter_wheels_help = "คุณต้องการปรับเปลี่ยนล้อใด?",
 		wheel_offset_command_parameter_value = "ค่า",
-		wheel_offset_command_parameter_value_help = "จำนวนที่คุณต้องการปรับเปลี่ยน สามารถเป็นได้ที่ระหว่าง -0.15 ถึง 0.15 โดย 0 เป็นค่าเริ่มต้น",
+		wheel_offset_command_parameter_value_help = "จำนวนที่คุณต้องการแก้ไข สามารถเป็นค่าอะไรก็ได้ตั้งแต่ -0.15 ถึง 0.2 โดยค่าเริ่มต้นคือ 0",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "การหมุนล้อ",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		clothing_bag = "ถุงเสื้อผ้า",
 		clothing_bag_description = "ไม่ต้องกังวลเรื่องฟองชี้แฟชั่นอีกต่อไป! ถุงเสื้อผ้าช่วยเก็บเสื้อผ้าที่ชื่นชอบและใช้สวมได้ทุกที่ ถุงนี้มีความสมเหตุสมผลเหมือนเจ้าแม่มดแต่โดยไม่ต้องพูดวิพากษ์วิจารณ์หรือฟูมฟาย",
 
+		raw_diamond = "เพชรดิบ",
+		raw_diamond_description = "เพชรในรูปแบบของมันเอง ถูกขุดออกจากเหมืองล่าสุด",
 		raw_morganite = "มอร์แกนไหม้ดดิ้น",
 		raw_morganite_description = "มอร์แกนไหม้ดดิ้นในรูปแบบธรรมชาติของมัน สดใหม่จากเหมือง",
 		raw_ruby = "ทับทิมดิ้นดิ้น",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		drank_gasoline_death = "ป่วยฉีดน้ำมันเครื่อง",
 		drank_bleach_death = "พิษจากน้ำยาทำความสะอาด",
 
+		using_cuffs = "ใช้มัดมือ",
+		you_moved_too_fast = "คุณเคลื่อนที่เร็วเกินไป",
+
 		failed_burger_shot_delivery = "ไม่สามารถเปิดการจัดส่งอาหาร Burger Shot ได้",
 		failed_bean_machine_delivery = "ไม่สามารถเปิดการจัดส่งอาหาร Bean Machine ได้",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		value = "มูลค่า: $${value}",
 		total_items = "ทั้งหมด: ${totalItems} ชิ้น",
 		withdraw = "ถอนออก (${amount})",
+		transfer = "โอนเงิน (${amount})",
 		quick_sell = "ขายด่วน ($${worth})",
-		storage_fee_warning = "เมื่อเวลา 6 โมงเช้า UTC ทุกวัน ไอเทมที่มีมูลค่า >= 5% ของกล่องของคุณจะถูกลบออกเป็นค่าธรรมเนียมการเก็บเข้า 'storage fee'",
+		storage_fee_warning = "ทุกวัน เวลา 6 โมงเช้า UTC รายการสิ่งของค่าสำหรับเก็บถาวรมูลค่า >= 5% ของยอดสินค้าทั้งหมดจะถูกลบออก",
 		item_with_worth = "${label} ($${worth})",
 		select_all = "Select All",
 		deselect_all = "Deselect All",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		sort = "Sort",
 		player_won_pot = "${name} won $${amount} with a ${chance}% chance ${timeAgo} ago.",
 		the_ticket_was = "The ticket was ${ticket}.",
-		recent_pots_will_show_here = "หม้อล่าสุดจะแสดงที่นี่"
+		recent_pots_will_show_here = "หม้อล่าสุดจะแสดงที่นี่",
+		server_id = "ID เซิร์ฟเวอร์ที่คุณต้องการโอนไป...",
+		transfer_items_to_anoter_person = "โอนสิ่งของไปยังบุคคลอื่น"
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		mining_mined_title = "ขุดแร่สำเร็จ",
 		mining_mined_details = "${consoleName} ขุดแร่ ${output} สำเร็จแล้ว",
+		mining_mined_details_nothing = "${consoleName} ขุดแร่แล้วไม่พบสิ่งของใดๆ.",
 
 		mining_exploded_title = "ระเบิดขณะขุดแร่",
 		mining_exploded_details = "${consoleName} ระเบิดขณะพยายามขุดแร่",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["th-TH"] = {
 		kissaki_kitchen = "ครัว Kissaki",
 
 		craft = "คราฟท์",
-		starting = "เริ่ม"
+		putting_down_ingredients = "วางส่วนผสมลง",
+
+		pick_up = "เก็บของ: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] เก็บของ: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: เตรียมข้าว (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: เตรียมข้าว (${completed}%~s~)",
+		preparing_rice_starting = "กำลังเตรียมข้าว",
+		preparing_rice = "~g~${name}~s~: กำลังเตรียมข้าว... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: เตรียมวัตถุดิบ (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: เตรียมวัตถุดิบ (${completed}%~s~)",
+		preparing_fillings_starting = "เตรียมวัตถุดิบสำหรับฟิลลิ่ง",
+		preparing_fillings = "~g~${name}~s~: เตรียมวัตถุดิบสำหรับฟิลลิ่ง... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: เตรียมเป้ากลางสำหรับโรลลิ่งแป้ง (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: เตรียมเป้ากลางสำหรับโรลลิ่งแป้ง (${completed}%~s~)",
+		preparing_rolling_mat_starting = "เตรียมเป้ากลางสำหรับโรลลิ่งแป้ง",
+		preparing_rolling_mat = "~g~${name}~s~: เตรียมเป้ากลางสำหรับโรลลิ่งแป้ง... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: ประกอบซูชิ (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: ต่อสายเรย์ข้าว (${completed}%~s~)",
+		assembling_sushi_starting = "กำลังต่อสายเรย์ข้าว",
+		assembling_sushi = "~g~${name}~s~: กำลังต่อสายเรย์ข้าว... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: ห่อสูชิ (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: ห่อสูชิ (${completed}%~s~)",
+		rolling_sushi_starting = "กำลังห่อสูชิ",
+		rolling_sushi = "~g~${name}~s~: กำลังห่อสูชิ... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: สเล้าม้วนสูชิ (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: ตัด สูชิ (${completed}%~s~)",
+		slicing_sushi_starting = "เริ่มตัด สูชิ",
+		slicing_sushi = "~g~${name}~s~: กำลังตัด สูชิ... (${completed}%~s~)",
 	},
 
 	riot_mode = {

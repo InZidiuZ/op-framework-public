@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["bn-BD"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		weapon_spawn_ban = "টোপি থেকে একটি খরগোশ তুলতে চেষ্টা করেছিলাম, পাওয়া হল বেজোকা।",
 		high_damage_ban = "আপনি পাওয়ার সাড়া খুব বেশি, আমাদের জগতের একটি সমতার ভাঙ্গা করে দিয়েছেন।",
 		suspicious_explosion_ban = "দুঃখিত, কিন্তু এটি মাইকেল বে ছবি নয়। পাইরোটেকনিকের অতিরিক্ত ব্যবহার অনুমতি দেওয়া হয় না।",
+		semi_godmode_ban = "জীবনের ঝরা ফলের চাহিদা করা আপনার সময়ের প্রবাহ আহত করেছে। অমরত্ব যেমন শোনায় না।",
 
 		mp_f_freemode_01_label = "ফ্রিমোড (মহিলা)",
 		mp_m_freemode_01_label = "ফ্রিমোড (পুরুষ)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		ragdoll_command = "র্যাগডল",
 		ragdoll_command_help = "র্যাগডল চালু / বন্ধ করুন।",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "ম্যারাথন",
+		marathon_command_help = "'ম্যারাথন' ডিবাগ বৈশিষ্ট্য টগল করতে এই কমান্ডটি ব্যবহার করুন যাতে হাঁটার স্টাইল সংশোধনের প্রয়োজন হলে বুঝতে পারেন।",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "রিপোর্ট",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		wheel_offset_command_parameter_wheels = "ফ্রন্ট/ব্যাক",
 		wheel_offset_command_parameter_wheels_help = "আপনি কোন চাকাদানের সংশোধন করতে চান?",
 		wheel_offset_command_parameter_value = "মান",
-		wheel_offset_command_parameter_value_help = "আপনি যে পরিমাণ এটি পরিবর্তন করতে চান। এটি -0.15 থেকে 0.15 পর্যন্ত যেকোন স্থানে থাকতে পারে, 0 মূল্যপ্রাপ্ত।",
+		wheel_offset_command_parameter_value_help = "আপনি যা পরিবর্তন করতে চান তা। এটি -0.15 থেকে 0.2 এর মধ্যে যেকোন জায়গায় হতে পারে, ডিফল্ট হচ্ছে 0।",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "চাকার ঘুরতে কমান",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		clothing_bag = "পোশাকের ব্যাগ",
 		clothing_bag_description = "আপনি কখনই ফ্যাশন জটিলতার কারণে চিন্তা করতে না হবে! কাপড়ের ব্যাগটি আপনার পছন্দের পোশাকটি সংরক্ষণ করতে দেয় এবং যেকোনও জায়গাতে তা ত্বরান্বিতভাবে উপকরণ করতে পারেন। এই ব্যাগে একটি পরীর মতো সমস্ত জাদু রয়েছে, কেবল বিবিডি-ববিডি-বু নেই।",
 
+		raw_diamond = "কাঁচামণি",
+		raw_diamond_description = "খনি থেকে নতুন করে আসা কাঁচামণি এর জন্য ব্যবহৃত করা হয়।",
 		raw_morganite = "রম মরগেনাইট",
 		raw_morganite_description = "মরগেনাইট প্রাকৃতিক উপাদান, মাইন থেকে তাজা আসছে।",
 		raw_ruby = "রম রুবি",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		drank_gasoline_death = "গ্যাসোলিন হারানো হইছে এবং অসুস্থতার কারণে মারা যাচ্ছেন",
 		drank_bleach_death = "ব্লিচ বিষক্ত হওয়া",
 
+		using_cuffs = "হ্যান্ডকাফ ব্যবহার করা হচ্ছে",
+		you_moved_too_fast = "আপনি অত্যন্ত দ্রুত চলে গেলেন।",
+
 		failed_burger_shot_delivery = "Burgershot খাবার নেওয়া ব্যর্থ হয়েছে।",
 		failed_bean_machine_delivery = "বীন মেশিন ডেলিভারি খোলতে ব্যর্থ হয়েছে।",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		value = "মান: $${value}",
 		total_items = "মোট আইটেমগুলি: ${totalItems}",
 		withdraw = "উত্তোলন করুন (${amount})",
+		transfer = "স্থানান্তর (${amount})",
 		quick_sell = "দ্রুত বিক্রি করুন ($${worth})",
-		storage_fee_warning = "প্রতি দিন সকাল 6 টার সময়, আপনার মোট ইনভেন্টরি মূল্যের >= 5% এর মানের আইটেমগুলি রিমুভ করা হবে যেটি সংরক্ষণ ফি হিসেবে হালনাগাদ হবে।",
+		storage_fee_warning = "প্রতিদিন সকাল ৬ টায় UTC সময়ে, আপনার মোট সুবিধার মুল্যের >= 5% উপাদান একটি 'স্টোরেজ ফি' হিসাবে সরিয়ে ফেরা হবে।",
 		item_with_worth = "${label} ($${worth})",
 		select_all = "সব নির্বাচন করুন",
 		deselect_all = "সব নির্বাচন বাতিল করুন",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		sort = "সাজান",
 		player_won_pot = "${name} একটি ${chance}% সুযোগ নিঃশেষে $${amount} জিতেছেন ${timeAgo} পূর্বে।",
 		the_ticket_was = "টিকেটটি ${ticket} ছিল।",
-		recent_pots_will_show_here = "সাম্প্রতিক পটগুলি এখানে দেখানো হবে।"
+		recent_pots_will_show_here = "সাম্প্রতিক পটগুলি এখানে দেখানো হবে।",
+		server_id = "সার্ভার আইডি যা আপনি স্থানান্তর করতে চান...",
+		transfer_items_to_anoter_person = "অন্য ব্যক্তিকে উপাদান স্থানান্তর করুন।"
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		mining_mined_title = "খনি করা জেম",
 		mining_mined_details = "${consoleName} ${output} খনি করেছেন।",
+		mining_mined_details_nothing = "${consoleName} একটি জেমস্টোন খনি করলেন কিন্তু কিছুই পান না।",
 
 		mining_exploded_title = "খনন বিস্ফোরণ",
 		mining_exploded_details = "${consoleName} একটি জেম খননে চেষ্টা করতে গিয়ে বিস্ফোর হয়ে গেছেন।",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		kissaki_kitchen = "কিসাকি রান্নাঘর",
 
 		craft = "ক্রাফট",
-		starting = "শুরু হচ্ছে"
+		putting_down_ingredients = "উপকরণ প্রস্তুত করা হচ্ছে",
+
+		pick_up = "উঠান: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] উঠান: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: ভাত প্রস্তুত করুন (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: ভাত প্রস্তুত করুন (${completed}%~s~)",
+		preparing_rice_starting = "ভাত প্রস্তুত করা হচ্ছে",
+		preparing_rice = "~g~${name}~s~: ভাত প্রস্তুত করা হচ্ছে... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: ফিলিং প্রস্তুত করুন (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: ফিলিং প্রস্তুত করুন (${completed}%~s~)",
+		preparing_fillings_starting = "ভর্তি প্রস্তুত করা হচ্ছে",
+		preparing_fillings = "~g~${name}~s~: ভর্তি প্রস্তুত করা হচ্ছে... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: চক্কম তৈরি করুন (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: চক্কম তৈরি করুন (${completed}%~s~)",
+		preparing_rolling_mat_starting = "চক্কম প্রস্তুত করা হচ্ছে",
+		preparing_rolling_mat = "~g~${name}~s~: চক্কম প্রস্তুত করা হচ্ছে... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: সুশি সংকলিত করা হচ্ছে... (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: সুশি সমষ্টি করুন (${completed}%~s~)",
+		assembling_sushi_starting = "সুশি সমষ্টি করা শুরু হচ্ছে",
+		assembling_sushi = "~g~${name}~s~: সুশি সমষ্টি করা হচ্ছে... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: সুশি রোল করুন (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: সুশি রোল করুন (${completed}%~s~)",
+		rolling_sushi_starting = "সুশি রোল করা হচ্ছে",
+		rolling_sushi = "~g~${name}~s~: সুশি রোল করা হচ্ছে... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: সুশি স্লাইস করুন (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: সুশি কাটা (${completed}%~s~)",
+		slicing_sushi_starting = "সুশি কাটা শুরু হচ্ছে",
+		slicing_sushi = "~g~${name}~s~: সুশি কাটা চলছে... (${completed}%~s~)",
 	},
 
 	riot_mode = {

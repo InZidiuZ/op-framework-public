@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["meme-pirate"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		weapon_spawn_ban = "Attempted t' pull a rabbit out o' de hat, found a bazooka instead, yo ho!",
 		high_damage_ban = "The scales of power were tilted too far in yer favor, disruptin' the balance o' our realm.",
 		suspicious_explosion_ban = "Sorry, but this ain't a Michael Bay film. Excessive use o' pyrotechnics be not permitted.",
+		semi_godmode_ban = "Yer insistence on the fountain o' youth seems to 'ave disrupted thar natural flow o' time. Eternity be not as jolly as it sounds.",
 
 		mp_f_freemode_01_label = "Freemode (lass)",
 		mp_m_freemode_01_label = "Freemode (lad)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		ragdoll_command = "fall like a scallywag",
 		ragdoll_command_help = "Toggle the plank.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "marathon",
+		marathon_command_help = "Toggle th' 'marathon' debug feature t' see what walkstyles needs tweakin'.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "report",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		wheel_offset_command_parameter_wheels = "port/starboard",
 		wheel_offset_command_parameter_wheels_help = "Which wheels would ye like t' modify?",
 		wheel_offset_command_parameter_value = "valuables",
-		wheel_offset_command_parameter_value_help = "The amount ye would like it t' be modified. This can be anywhere from -0.15 t' 0.15, 0 being default.",
+		wheel_offset_command_parameter_value_help = "Thar amount ye would like it t' be modified. This can be anywhere from -0.15 t' 0.2, 0 bein' default.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "wheel_rotation",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		clothing_bag = "Clothing Bag, me bucko!",
 		clothing_bag_description = "Never worry about fashion emergencies again! The clothing bag lets ye store yer favorite outfit and instantly equip it anywhere ye go. This bag has all the magic of a fairy godmother, minus the bibbidi-bobbidi-boo. Aye, hoist the sails, matey!",
 
+		raw_diamond = "Raw Diamond",
+		raw_diamond_description = "Diamond in its natural form, fresh from thar mine.",
 		raw_morganite = "Raw Mor'ganite",
 		raw_morganite_description = "Mor'ganite in its natural form, fresh from th' mine.",
 		raw_ruby = "Raw Ruby",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		drank_gasoline_death = "Gasoline Poisonin'",
 		drank_bleach_death = "Bleach Poisonin' matey!",
 
+		using_cuffs = "Usin' Hookscuffs",
+		you_moved_too_fast = "Ye moved too fast, matey.",
+
 		failed_burger_shot_delivery = "Failed to open burgershot meal, arr!",
 		failed_bean_machine_delivery = "Failed to open bean machine delivery, arr!",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		value = "Value: $${value}",
 		total_items = "Total Items: ${totalItems}",
 		withdraw = "Obtain (${amount})",
+		transfer = "Plunder (${amount})",
 		quick_sell = "Rapid Sell ($${worth})",
-		storage_fee_warning = "Come 6 bells in the morning watch (UTC), port fees shall remove items worth >= 5% of yer booty. Beware!",
+		storage_fee_warning = "At 6AM UTC every day, items worth >= 5% o' yer total inventory value will be removed as a 'storage fee'.",
 		item_with_worth = "${label} ($${worth})",
 		select_all = "Select All, me hearties!",
 		deselect_all = "Deselect All, ye scallywags!",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		sort = "Sort, ye bilge rat!",
 		player_won_pot = "${name} won $${amount} with a ${chance}% chance ${timeAgo} ago, arrr!",
 		the_ticket_was = "The ticket was ${ticket}, me hearty!",
-		recent_pots_will_show_here = "Newest bounties be showin' up here."
+		recent_pots_will_show_here = "Newest bounties be showin' up here.",
+		server_id = "The ship ID ye want to plunder to...",
+		transfer_items_to_anoter_person = "Plunder items to another scallywag."
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		mining_mined_title = "Mined Booty",
 		mining_mined_details = "${consoleName} mined ${output} of the finest quality!",
+		mining_mined_details_nothing = "${consoleName} mined a jewel but found nothin'.",
 
 		mining_exploded_title = "Mining Explosion",
 		mining_exploded_details = "${consoleName} blasted to the depths of Davey Jones' locker while tryin' to mine some booty.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		kissaki_kitchen = "Kissaki's Galley",
 
 		craft = "Craft",
-		starting = "Setting sail"
+		putting_down_ingredients = "Droppin' Ingredients",
+
+		pick_up = "Seize: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Seize: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Prepare Rice (${completed}%~s~ ye)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Sparrow yer Rice (${completed}%~s~)",
+		preparing_rice_starting = "Preparing Rice",
+		preparing_rice = "~g~${name}~s~: Preparing Rice... (${completed}%~s~ ye)",
+
+		prepare_fillings = "~g~${name}~s~: Prepare Fillin's (${completed}%~s~ ye)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Sparrow ye Fillin's (${completed}%~s~)",
+		preparing_fillings_starting = "Preparin' Fillin's",
+		preparing_fillings = "~g~${name}~s~: Preparin' Fillin's... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Prepare Rollin' Mat (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Prepare Rollin' Mat (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Preparin' Rollin' Mat",
+		preparing_rolling_mat = "~g~${name}~s~: Preparin' Rollin' Mat... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Assemble Sushi (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Assemble Me Sushi (${completed}%~s~)",
+		assembling_sushi_starting = "Assembling Me Sushi",
+		assembling_sushi = "~g~${name}~s~: Assembling Me Sushi... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Roll Me Sushi (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Roll Me Sushi (${completed}%~s~)",
+		rolling_sushi_starting = "Rolling Me Sushi",
+		rolling_sushi = "~g~${name}~s~: Rolling Me Sushi... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Slice Me Sushi (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Slice Ye Sushi (${completed}%~s~)",
+		slicing_sushi_starting = "Slice Ye Sushi be startin'",
+		slicing_sushi = "~g~${name}~s~: Slice'n Ye Sushi... (${completed}%~s~)",
 	},
 
 	riot_mode = {

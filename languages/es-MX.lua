@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["es-MX"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		weapon_spawn_ban = "Intenté sacar un conejo del sombrero y en cambio encontré un bazooka.",
 		high_damage_ban = "El equilibrio de nuestro reino ha sido interrumpido por un poder demasiado grande.",
 		suspicious_explosion_ban = "Lo siento, pero esto no es una película de Michael Bay. No se permiten explosiones excesivas de pirotecnia.",
+		semi_godmode_ban = "Tu insistencia en la fuente de la juventud parece haber interrumpido el flujo natural del tiempo. La eternidad no es tan divertida como parece.",
 
 		mp_f_freemode_01_label = "Modo libre (mujer)",
 		mp_m_freemode_01_label = "Modo libre (hombre)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["es-MX"] = {
 		ragdoll_command = "muñeco",
 		ragdoll_command_help = "Activa o desactiva el modo muñeco de trapo.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "maraton",
+		marathon_command_help = "Alternar la función de depuración 'maraton' para ver qué estilos de caminar necesitan ajustes.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "reporte",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		wheel_offset_command_parameter_wheels = "front/back",
 		wheel_offset_command_parameter_wheels_help = "¿Qué ruedas te gustaría modificar? Delanteras o traseras?",
 		wheel_offset_command_parameter_value = "value",
-		wheel_offset_command_parameter_value_help = "La cantidad que te gustaría modificar. Puede ser de -0.15 a 0.15, 0 siendo el valor predeterminado.",
+		wheel_offset_command_parameter_value_help = "La cantidad que te gustaría modificar. Puede ser en cualquier lugar de -0.15 a 0.2, 0 es el valor predeterminado.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "rotacion_ruedas",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["es-MX"] = {
 		clothing_bag = "Bolsa de Ropa",
 		clothing_bag_description = "¡Nunca vuelvas a preocuparte por emergencias de moda! La bolsa de ropa te permite guardar tu outfit favorito y equiparlo instantáneamente en cualquier lugar donde estés. Esta bolsa tiene toda la magia de un hada madrina, sin el bibbidi-bobbidi-boo.",
 
+		raw_diamond = "Diamante en bruto",
+		raw_diamond_description = "Diamante en su forma natural, recién sacado de la mina.",
 		raw_morganite = "Morganita en bruto",
 		raw_morganite_description = "Morganita en su forma natural, recién extraída de la mina.",
 		raw_ruby = "Rubí en bruto",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["es-MX"] = {
 		drank_gasoline_death = "Envenenamiento por gasolina",
 		drank_bleach_death = "Envenenamiento por lejía",
 
+		using_cuffs = "Usando esposas",
+		you_moved_too_fast = "Te moviste demasiado rápido.",
+
 		failed_burger_shot_delivery = "Ha fallado al abrir el pedido de Burgershot.",
 		failed_bean_machine_delivery = "Ha fallado al abrir el pedido de Bean Machine.",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["es-MX"] = {
 		value = "Valor: $${value}",
 		total_items = "Objetos totales: ${totalItems}",
 		withdraw = "Retirar (${amount})",
+		transfer = "Transferir (${amount})",
 		quick_sell = "Vender rápidamente ($${worth})",
-		storage_fee_warning = "A las 6AM UTC de cada día, se eliminarán los objetos por un valor >= 5% del valor total de su inventario como 'tarifa de almacenamiento'.",
+		storage_fee_warning = "A las 6AM UTC todos los días, los objetos con un valor >= 5% del valor total de tu inventario serán eliminados como 'tarifa de almacenamiento'.",
 		item_with_worth = "${label} ($${worth})",
 		select_all = "Seleccionar Todo",
 		deselect_all = "Deseleccionar Todo",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["es-MX"] = {
 		sort = "Ordenar",
 		player_won_pot = "${name} ganó $${amount} con una probabilidad del ${chance}% hace ${timeAgo}.",
 		the_ticket_was = "El boleto fue ${ticket}.",
-		recent_pots_will_show_here = "Las ollas recientes aparecerán aquí."
+		recent_pots_will_show_here = "Las ollas recientes aparecerán aquí.",
+		server_id = "El ID del servidor al que quieres transferir...",
+		transfer_items_to_anoter_person = "Transferir objetos a otra persona."
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 
 		mining_mined_title = "Gema Extraída",
 		mining_mined_details = "${consoleName} extrajo ${output}.",
+		mining_mined_details_nothing = "${consoleName} minó una gema pero no encontró nada.",
 
 		mining_exploded_title = "Explosión en la mina",
 		mining_exploded_details = "${consoleName} explotó mientras intentaba extraer una gema.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["es-MX"] = {
 		kissaki_kitchen = "Cocina de Kissaki",
 
 		craft = "Crear",
-		starting = "Iniciando"
+		putting_down_ingredients = "Poniendo ingredientes",
+
+		pick_up = "Recoger: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Recoger: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Preparar Arroz (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Preparar Arroz (${completed}%~s~)",
+		preparing_rice_starting = "Preparando Arroz",
+		preparing_rice = "~g~${name}~s~: Preparando Arroz... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: Preparar Rellenos (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Preparar Rellenos (${completed}%~s~)",
+		preparing_fillings_starting = "Preparando Rellenos",
+		preparing_fillings = "~g~${name}~s~: Preparando Rellenos... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Preparar el Tapete de Enrollar (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Preparar el Tapete de Enrollar (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Preparando el Tapete de Enrollar",
+		preparing_rolling_mat = "~g~${name}~s~: Preparando el Tapete de Enrollar... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Ensamblar el Sushi (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Ensamblar sushi (${completed}%~s~)",
+		assembling_sushi_starting = "Ensamblar sushi",
+		assembling_sushi = "~g~${name}~s~: Ensamblado sushi... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Enrollar sushi (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Enrollar sushi (${completed}%~s~)",
+		rolling_sushi_starting = "Enrollar sushi",
+		rolling_sushi = "~g~${name}~s~: Enrollando sushi... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Cortar sushi (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Cortar sushi (${completed}%~s~)",
+		slicing_sushi_starting = "Comenzando a cortar sushi",
+		slicing_sushi = "~g~${name}~s~: Cortando sushi... (${completed}%~s~)",
 	},
 
 	riot_mode = {

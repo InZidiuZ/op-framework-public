@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["ar-SA"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		weapon_spawn_ban = "حاولوا سحب أرنب من القبعة، وجدوا بدلاً من ذلك قاذفة صواريخ.",
 		high_damage_ban = "تم انحراف مقاييس القوة بشكل كبير لصالحك، مما يؤثر على توازن عالمنا.",
 		suspicious_explosion_ban = "عذراً، ولكن هذا ليس فيلمًا من إخراج مايكل باي. لا يُسمح باستخدام الألعاب النارية بشكل مفرط.",
+		semi_godmode_ban = "إصرارك على نافورة الشباب يبدو أنها أخلت بتدفق الزمن الطبيعي. الخلود ليس ممتعًا كما يبدو.",
 
 		mp_f_freemode_01_label = "Freemode (أنثى)",
 		mp_m_freemode_01_label = "Freemode (ذكر)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		ragdoll_command = "راجدول",
 		ragdoll_command_help = "تبديل حالة الراجْدول (السقوط المتدحرج).",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "الماراثون",
+		marathon_command_help = "تبديل خاصية التصحيح 'الماراثون' لرؤية التمشيات التي تحتاج للتعديل عليها.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "report",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		wheel_offset_command_parameter_wheels = "أمام/خلف",
 		wheel_offset_command_parameter_wheels_help = "أي الإطارات ترغب في تعديلها؟",
 		wheel_offset_command_parameter_value = "القيمة",
-		wheel_offset_command_parameter_value_help = "المبلغ الذي تريد تعديله. يمكن أن يكون أي مكان من -0.15 إلى 0.15 ، حيث تكون 0 هي القيمة الافتراضية.",
+		wheel_offset_command_parameter_value_help = "الكمية التي تريد تعديلها. يمكن أن تكون أي قيمة بين -0.15 إلى 0.2، و 0 هو الافتراضي.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "تدوير_العجلات",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		clothing_bag = "حقيبة الملابس",
 		clothing_bag_description = "لا تقلق بشأن حالات الطوارئ المتعلقة بالموضة مرة أخرى! تتيح لك حقيبة الملابس تخزين زيك المفضل وتجهيزه على الفور في أي مكان تتواجد فيه. تحتوي هذه الحقيبة على سحر الجنية، باستثناء بيبيدي- بوبيدي-بو.",
 
+		raw_diamond = "الماس الخام",
+		raw_diamond_description = "الماس في شكله الطبيعي، جديد من المنجم.",
 		raw_morganite = "مورغانيت خام",
 		raw_morganite_description = "مورغانيت بشكله الطبيعي، طازج من المنجم.",
 		raw_ruby = "ياقوت خام",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		drank_gasoline_death = "تسمم البنزين",
 		drank_bleach_death = "تسمم بالمبيض",
 
+		using_cuffs = "استخدام الأصفاد",
+		you_moved_too_fast = "لقد تحركت بسرعة كبيرة جداً.",
+
 		failed_burger_shot_delivery = "فشل في فتح وجبة برجر شوت.",
 		failed_bean_machine_delivery = "فشل في فتح خدمة بين ماتشين.",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		value = "القيمة: $${value}",
 		total_items = "مجموع العناصر: ${totalItems}",
 		withdraw = "سحب (${amount})",
+		transfer = "تحويل (${amount})",
 		quick_sell = "البيع السريع ($${worth})",
-		storage_fee_warning = "في الساعة 6 صباحاً بتوقيت UTC سيتم إزالة العناصر التي تزيد قيمتها عن 5٪ من قيمة المخزون الإجمالي كرسوم تخزين.",
+		storage_fee_warning = "يتم في الساعة 6 صباحًا بتوقيت UTC كل يوم إزالة العناصر التي تزيد قيمتها عن أو تساوي 5% من قيمة المخزون الإجمالية الخاصة بك كرسوم للتخزين.",
 		item_with_worth = "${worth} ريال (${label})",
 		select_all = "تحديد الكل",
 		deselect_all = "إلغاء تحديد الكل",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		sort = "ترتيب",
 		player_won_pot = "${name} فاز بمبلغ ${amount} ريال بنسبة ${chance}% قبل ${timeAgo}.",
 		the_ticket_was = "التذكرة كانت ${ticket}.",
-		recent_pots_will_show_here = "ستظهر الأواني الأخيرة هنا"
+		recent_pots_will_show_here = "ستظهر الأواني الأخيرة هنا",
+		server_id = "معرف الخادم الذي تريد التحويل إليه...",
+		transfer_items_to_anoter_person = "تحويل العناصر إلى شخص آخر."
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		mining_mined_title = "تعدين جوهرة",
 		mining_mined_details = "${consoleName} قام بتعدين ${output}.",
+		mining_mined_details_nothing = "${consoleName} لم يعثر على أي شيء عند تعدينه للجوهرة.",
 
 		mining_exploded_title = "انفجار التعدين",
 		mining_exploded_details = "${consoleName} انفجر أثناء محاولته للتعدين على جوهرة.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		kissaki_kitchen = "مطبخ كيساكي",
 
 		craft = "تصنيع",
-		starting = "بدء"
+		putting_down_ingredients = "وضع المكونات",
+
+		pick_up = "للإلتقاط: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] للإلتقاط: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: إعداد الأرز (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: إعداد الأرز (${completed}%~s~)",
+		preparing_rice_starting = "جاري إعداد الأرز",
+		preparing_rice = "~g~${name}~s~: جاري إعداد الأرز ... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: إعداد الحشو (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: إعداد الحشو (${completed}%~s~)",
+		preparing_fillings_starting = "جار إعداد الحشوات",
+		preparing_fillings = "~g~${name}~s~: جار إعداد الحشوات... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: إعداد سجادة اللف (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: إعداد سجادة اللف(${completed}%~s~)",
+		preparing_rolling_mat_starting = "إعداد سجادة اللف",
+		preparing_rolling_mat = "~g~${name}~s~: جار إعداد سجادة اللف... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: تجميع السوشي (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: تجميع السوشي (${completed}%~s~)",
+		assembling_sushi_starting = "جاري تجميع السوشي",
+		assembling_sushi = "~g~${name}~s~: جاري تجميع السوشي... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: لف السوشي (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: لف السوشي (${completed}%~s~)",
+		rolling_sushi_starting = "جاري لف السوشي",
+		rolling_sushi = "~g~${name}~s~: جاري لف السوشي... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: تقطيع السوشي (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: تقطيع السوشي (${completed}%~s~)",
+		slicing_sushi_starting = "بدء تقطيع السوشي",
+		slicing_sushi = "~g~${name}~s~: جاري تقطيع السوشي... (${completed}%~s~)",
 	},
 
 	riot_mode = {

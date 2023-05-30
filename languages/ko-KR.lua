@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["ko-KR"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		weapon_spawn_ban = "토끼를 모자에서 꺼내려다 대신에 대포를 찾았습니다.",
 		high_damage_ban = "권력의 저울이 너무 기울어져 균형이 깨졌습니다. 이로 인해 서버에서 추방되었습니다.",
 		suspicious_explosion_ban = "죄송하지만, 이곳은 마이클 베이 감독의 영화가 아닙니다. 폭동적인 폭발은 금지됩니다.",
+		semi_godmode_ban = "영원함은 생각만큼 즐거운게 아니며, 청춘이 계속되길 원하는 당신의 욕심이 자연스러운 시간의 흐름을 방해한 것 같습니다.",
 
 		mp_f_freemode_01_label = "프리모드 (여성)",
 		mp_m_freemode_01_label = "프리모드 (남성)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		ragdoll_command = "랙돌",
 		ragdoll_command_help = "넘어지기 토글.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "마라톤",
+		marathon_command_help = "'마라톤' 디버그 기능을 전환하여 보행 스타일을 조정하세요.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "신고",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		wheel_offset_command_parameter_wheels = "앞/뒤",
 		wheel_offset_command_parameter_wheels_help = "어느 바퀴를 수정하시겠습니까?",
 		wheel_offset_command_parameter_value = "값",
-		wheel_offset_command_parameter_value_help = "수정할 값입니다. -0.15에서 0.15 사이의 값을 입력할 수 있으며, 0이 기본값입니다.",
+		wheel_offset_command_parameter_value_help = "수정하려는 양입니다. -0.15부터 0.2까지 가능하며, 기본값은 0입니다.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "회전속도",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		clothing_bag = "의류 가방",
 		clothing_bag_description = "패션 긴급 상황에 대해서 다시는 걱정하지 마세요! 의류 가방은 가장 좋아하는 옷을 보관하고 어디에서든지 즉시 입을 수 있도록 해줍니다. 이 가방은 비비디바비디부 요술의 모든 마법을 갖추고 있으며, 옷을 꼭 끼워야 하는 번거로움은 없습니다.",
 
+		raw_diamond = "천연 다이아몬드",
+		raw_diamond_description = "광산에서 채취한 자연 그대로의 다이아몬드입니다.",
 		raw_morganite = "원석 모르간나이트",
 		raw_morganite_description = "새까만 광산에서 캔 모르간나이트를 그대로 가져온 것입니다.",
 		raw_ruby = "원석 루비",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		drank_gasoline_death = "휘발유 중독",
 		drank_bleach_death = "염소산 나트륨 중독",
 
+		using_cuffs = "수갑 사용 중",
+		you_moved_too_fast = "움직임이 너무 빠릅니다.",
+
 		failed_burger_shot_delivery = "버거샷 배달 실패.",
 		failed_bean_machine_delivery = "빈 머신 배달 실패.",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		value = "가치: $${value}",
 		total_items = "총 아이템 수: ${totalItems}",
 		withdraw = "인출 (${amount})",
+		transfer = "이체 (${amount})",
 		quick_sell = "빠른 판매 ($${worth})",
-		storage_fee_warning = "매일 UTC 6AM에 보유중인 아이템 중 가치가 총 보유중인 아이템 가치의 5% 이상인 아이템이 '보관료'로 삭제됩니다.",
+		storage_fee_warning = "매일 오전 6시 UTC에 총 인벤토리 가치의 5% 이상인 아이템이 '저장 비용'으로 제거됩니다.",
 		item_with_worth = "${label} ($${worth})",
 		select_all = "모두 선택",
 		deselect_all = "모두 선택 해제",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		sort = "정렬",
 		player_won_pot = "${name} 님이 ${timeAgo} 전에 ${chance}% 확률로 $${amount}를 얻었습니다.",
 		the_ticket_was = "티켓 번호는 ${ticket} 입니다.",
-		recent_pots_will_show_here = "최근 포트는 여기에 표시됩니다."
+		recent_pots_will_show_here = "최근 포트는 여기에 표시됩니다.",
+		server_id = "전송하려는 서버 ID...",
+		transfer_items_to_anoter_person = "다른 사람에게 아이템 전송"
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		mining_mined_title = "보석 채굴",
 		mining_mined_details = "${consoleName} 님이 ${output}을(를) 채굴하였습니다.",
+		mining_mined_details_nothing = "${consoleName}님이 보석을 캐기는 했지만, 아무것도 찾지 못했습니다.",
 
 		mining_exploded_title = "광산 폭발",
 		mining_exploded_details = "${consoleName}님이 보석 채굴 중 폭발하였습니다.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		kissaki_kitchen = "키사키 주방",
 
 		craft = "제작",
-		starting = "시작 중"
+		putting_down_ingredients = "재료 내려놓기",
+
+		pick_up = "줍기: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] 줍기: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: 밥 준비 (${completed}% 완료~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: 밥 준비 (${completed}% 완료~s~)",
+		preparing_rice_starting = "밥 준비 시작",
+		preparing_rice = "~g~${name}~s~: 밥 준비중... (${completed}% 완료~s~)",
+
+		prepare_fillings = "~g~${name}~s~: 채소 손질 및 재료 준비 (${completed}% 완료~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: 채소 손질 및 재료 준비 (${completed}% 완료~s~)",
+		preparing_fillings_starting = "재료 준비 중",
+		preparing_fillings = "~g~${name}~s~: 재료 준비 중... (${completed}% 완료)",
+
+		prepare_rolling_mat = "~g~${name}~s~: 매트 준비 중 (${completed}% 완료)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: 매트 준비하기 (${completed}% 완료)",
+		preparing_rolling_mat_starting = "매트 준비 중",
+		preparing_rolling_mat = "~g~${name}~s~: 매트 준비 중... (${completed}% 완료)",
+
+		assemble_sushi = "~g~${name}~s~: 스시 조립 중 (${completed}% 완료)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: 스시 조립 (${completed}%~s~)",
+		assembling_sushi_starting = "스시 조립 시작",
+		assembling_sushi = "~g~${name}~s~: 스시 조립 중... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: 스시 말기 (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: 스시 말기 (${completed}%~s~)",
+		rolling_sushi_starting = "스시 말기 시작",
+		rolling_sushi = "~g~${name}~s~: 스시 말기 중... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: 스시 자르기 (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: 초밥 잘라내기 (${completed}%~s~)",
+		slicing_sushi_starting = "초밥 자르기 시작",
+		slicing_sushi = "~g~${name}~s~: 초밥 자르는 중... (${completed}%~s~)",
 	},
 
 	riot_mode = {

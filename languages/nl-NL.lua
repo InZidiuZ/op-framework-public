@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		weapon_spawn_ban = "Probeerde een konijn uit de hoed te toveren, vond in plaats daarvan een bazooka.",
 		high_damage_ban = "De machtsverhoudingen waren te sterk in jouw voordeel, waardoor het evenwicht in onze wereld werd verstoord.",
 		suspicious_explosion_ban = "Sorry, maar dit is geen Michael Bay-film. Overmatig gebruik van pyrotechniek is niet toegestaan.",
+		semi_godmode_ban = "Je vasthouden aan de fontein van de jeugd heeft de natuurlijke loop van de tijd verstoord. Eeuwigheid is niet zo leuk als het klinkt.",
 
 		mp_f_freemode_01_label = "Freemode (vrouw)",
 		mp_m_freemode_01_label = "Freemode (man)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		ragdoll_command = "ragdoll",
 		ragdoll_command_help = "Wissel tussen ragdoll-mode.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "marathon",
+		marathon_command_help = "Schakel de 'marathon'-debugfunctie in om te zien welke loopstijlen moeten worden aangepast.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "rapport",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		wheel_offset_command_parameter_wheels = "voor/achter",
 		wheel_offset_command_parameter_wheels_help = "Welke wielen wil je aanpassen?",
 		wheel_offset_command_parameter_value = "waarde",
-		wheel_offset_command_parameter_value_help = "De waarde waarmee je het wilt aanpassen. Dit kan variëren van -0,15 tot 0,15, 0 is de standaardwaarde.",
+		wheel_offset_command_parameter_value_help = "Het bedrag dat u wilt wijzigen. Dit kan variëren van -0,15 tot 0,2, waarbij 0 de standaardinstelling is.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "wielrotatie",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		clothing_bag = "Kledingtas",
 		clothing_bag_description = "Maak u nooit meer zorgen over mode-noodgevallen! De kledingtas stelt u in staat om uw favoriete outfit op te slaan en overal direct te dragen. Deze tas heeft al de magie van een feeënpeettante, zonder de bibbidi-bobbidi-boo.",
 
+		raw_diamond = "Onbewerkte Diamant",
+		raw_diamond_description = "Diamant in zijn natuurlijke vorm, vers uit de mijn.",
 		raw_morganite = "Ruwe Morganiet",
 		raw_morganite_description = "Morganiet in zijn natuurlijke vorm, vers van de mijn.",
 		raw_ruby = "Ruwe Robijn",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		drank_gasoline_death = "Vergiftiging door benzine",
 		drank_bleach_death = "Vergiftiging door bleekmiddel",
 
+		using_cuffs = "Gebruikt Handboeien",
+		you_moved_too_fast = "Je bewoog te snel.",
+
 		failed_burger_shot_delivery = "Mislukt om de burgershot maaltijd te openen.",
 		failed_bean_machine_delivery = "Mislukt om de bean machine levering te openen.",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		value = "Waarde: $${value}",
 		total_items = "Totaal aantal items: ${totalItems}",
 		withdraw = "Opnemen (${amount})",
+		transfer = "Overdragen (${amount})",
 		quick_sell = "Snel Verkopen ($${worth})",
-		storage_fee_warning = "Om 6.00 uur UTC worden elke dag items die >= 5% van de totale waarde van uw inventaris waard zijn, verwijderd als 'opslagkosten'.",
+		storage_fee_warning = "Om 6 uur 's ochtends UTC worden items die meer dan 5% waard zijn van je totale inventaris verwijderd als 'opslagkosten'.",
 		item_with_worth = "${label} ($${worth})",
 		select_all = "Alles selecteren",
 		deselect_all = "Selectie opheffen",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		sort = "Sorteren",
 		player_won_pot = "${name} won ${amount} met een kans van ${chance}% ${timeAgo} geleden.",
 		the_ticket_was = "Het ticket was ${ticket}.",
-		recent_pots_will_show_here = "Recente potten worden hier getoond."
+		recent_pots_will_show_here = "Recente potten worden hier getoond.",
+		server_id = "Het server-ID waar je naartoe wilt overdragen...",
+		transfer_items_to_anoter_person = "Items overdragen aan een andere persoon."
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		mining_mined_title = "Edelsteen gemijnd",
 		mining_mined_details = "${consoleName} heeft ${output} gemijnd.",
+		mining_mined_details_nothing = "${consoleName} heeft een edelsteen gedolven maar niets gevonden.",
 
 		mining_exploded_title = "Mijnbouwexplosie",
 		mining_exploded_details = "${consoleName} is ontploft tijdens een poging om een edelsteen te delven.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		kissaki_kitchen = "Kissaki Keuken",
 
 		craft = "Maken",
-		starting = "Starten"
+		putting_down_ingredients = "Ingrediënten neerleggen",
+
+		pick_up = "Oppakken: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Oppakken: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Rijst Bereiden (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Rijst Bereiden (${completed}%~s~)",
+		preparing_rice_starting = "Rijst Bereiden",
+		preparing_rice = "~g~${name}~s~: Rijst Bereiden... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: Vulling Bereiden (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Vulling Bereiden (${completed}%~s~)",
+		preparing_fillings_starting = "Vulling voorbereiden",
+		preparing_fillings = "~g~${name}~s~: Vulling voorbereiden... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Rolmat voorbereiden (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Rolmat voorbereiden (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Rolmat voorbereiden",
+		preparing_rolling_mat = "~g~${name}~s~: Rolmat voorbereiden... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Sushi assembleren (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Sushi assembleren (${completed}%~s~)",
+		assembling_sushi_starting = "Sushi assembleren wordt gestart",
+		assembling_sushi = "~g~${name}~s~: Sushi aan het samenstellen... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Sushi rollen (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Sushi rollen (${completed}%~s~)",
+		rolling_sushi_starting = "Sushi rollen wordt gestart",
+		rolling_sushi = "~g~${name}~s~: Sushi aan het rollen... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Sushi snijden (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Sushi snijden (${completed}%~s~)",
+		slicing_sushi_starting = "Sushi snijden begint",
+		slicing_sushi = "~g~${name}~s~: Sushi snijden... (${completed}%~s~)",
 	},
 
 	riot_mode = {

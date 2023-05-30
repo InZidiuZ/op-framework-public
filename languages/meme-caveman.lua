@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["meme-caveman"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		weapon_spawn_ban = "You try magic trick. Pull bunny from hat. Bam! Big boom stick instead. No good!",
 		high_damage_ban = "You Too Strong. Get Out of Cave.",
 		suspicious_explosion_ban = "Ugh, Stop Big Boom Boom. You Ban.",
+		semi_godmode_ban = "Grunts! You hunt for water that is forever young made time go wild. Forever is not good as much as it grunt.",
 
 		mp_f_freemode_01_label = "Free (woman)",
 		mp_m_freemode_01_label = "Free (man)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		ragdoll_command = "me fall down",
 		ragdoll_command_help = "Ugga toggle ragdoll.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "marathon",
+		marathon_command_help = "Ugh ugh! Turn on or off the 'marathon' debug feature to see how walkstyle needs changing.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "report",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		wheel_offset_command_parameter_wheels = "front/back",
 		wheel_offset_command_parameter_wheels_help = "Which wheelz you wanna move?",
 		wheel_offset_command_parameter_value = "value",
-		wheel_offset_command_parameter_value_help = "How much you wanna move? Can go from -0.15 to 0.15, 0 by default.",
+		wheel_offset_command_parameter_value_help = "Ughh... You make wheel move more or less. Can be as small as -0.15 or large as 0.2. 0 is usual.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "ooga_booga_wheel",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		clothing_bag = "Clothes Pouch!",
 		clothing_bag_description = "Never worry about fashion disaster! Clothes pouch store favorite outfit and equip instantly! Like magic! No bibbidi-bobbidi-boo.",
 
+		raw_diamond = "Raw Diamond",
+		raw_diamond_description = "Sparkly rock, fresh from earth belly. Ready to be made pretty.",
 		raw_morganite = "Raw Mog-Nye-Te",
 		raw_morganite_description = "Mog-Nye-Te inna its natural form, fresh from da mine.",
 		raw_ruby = "Raw Ruby",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		drank_gasoline_death = "Me drink gasoline and now me go bye-bye forever",
 		drank_bleach_death = "Ugh! You drink bleach! Grog dizzy now, me see black!",
 
+		using_cuffs = "Me use Handcuffs",
+		you_moved_too_fast = "You move too fast. Me no catch.",
+
 		failed_burger_shot_delivery = "Ugh, burgershot meal no want open for me. Grog angry!",
 		failed_bean_machine_delivery = "Grog frustrated, bean machine delivery no work for me.",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		value = "Value: $${value}",
 		total_items = "Total Stuff: ${totalItems}",
 		withdraw = "Take (${amount})",
+		transfer = "Me give you (${amount})",
 		quick_sell = "Quick Sell ($${worth})",
-		storage_fee_warning = "At sun go up and down (6AM UTC) every day, stuff worth >= 5% of all stuff in your gruntug will get taken as 'storage fee'.",
+		storage_fee_warning = "At sunup every day, items worth >= 5% of your stuffs will be taken as 'storage fee'.",
 		item_with_worth = "${label} (Me give shiny rock ${worth})",
 		select_all = "Me want all",
 		deselect_all = "Me no want any",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		sort = "Sort (Me organize)",
 		player_won_pot = "${name} win big shiny rock $${amount} with a ${chance}% chance ${timeAgo} ago.",
 		the_ticket_was = "Ticket say ${ticket}.",
-		recent_pots_will_show_here = "Recent pots show here."
+		recent_pots_will_show_here = "Recent pots show here.",
+		server_id = "Server ID you want to move to...",
+		transfer_items_to_anoter_person = "Me give things to other person."
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		mining_mined_title = "Muk Muk Gem Mined",
 		mining_mined_details = "${consoleName} has smashed rock and found ${output} gem.",
+		mining_mined_details_nothing = "${consoleName} mine shiny rock but find nothing.",
 
 		mining_exploded_title = "Kaboom! Mining gone wrong",
 		mining_exploded_details = "${consoleName} make big boom, rock explode, no gem found.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		kissaki_kitchen = "Kissaki Kitchen",
 
 		craft = "Craft",
-		starting = "Starting"
+		putting_down_ingredients = "Me put down stuff for recipe.",
+
+		pick_up = "Grog Pick: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Pick Grog: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Mix Water and Rice (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Mix Water and Rice (${completed}%~s~)",
+		preparing_rice_starting = "Preparing Rice",
+		preparing_rice = "~g~${name}~s~: Preparing Rice... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: Gather Meat (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Gather Meat (${completed}%~s~)",
+		preparing_fillings_starting = "Ugga ugga Preparing Fillings",
+		preparing_fillings = "~g~${name}~s~: Preparing Fillings... (${completed}%~s~) Ugga ugga",
+
+		prepare_rolling_mat = "~g~${name}~s~: Prepare Rolling Mat (${completed}%~s~) Unga bunga",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Prepare Rolling Mat (${completed}%~s~) Ooga booga",
+		preparing_rolling_mat_starting = "Ugg Prepare Rolling Mat",
+		preparing_rolling_mat = "~g~${name}~s~: Preparing Rolling Mat... (${completed}%~s~) Ugg Ugg",
+
+		assemble_sushi = "~g~${name}~s~: Assemble Sushi (${completed}%~s~) Uggaug",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Make Sushi (${completed}%~s~)",
+		assembling_sushi_starting = "Me make Sushi",
+		assembling_sushi = "~g~${name}~s~: Me make Sushi... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Roll Sushi (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Sushi Roll (${completed}%~s~)",
+		rolling_sushi_starting = "Sushi Roll Starting",
+		rolling_sushi = "~g~${name}~s~: Me Roll Sushi... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Slice Sushi (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Me Slice Sushi (${completed}%~s~)",
+		slicing_sushi_starting = "Me Start Slicing Sushi",
+		slicing_sushi = "~g~${name}~s~: Me Slicing Sushi... (${completed}%~s~)",
 	},
 
 	riot_mode = {

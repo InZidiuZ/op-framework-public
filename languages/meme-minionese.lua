@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["meme-minionese"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		weapon_spawn_ban = "Underwear! Remember to use only the weapons that you have, not the ones that you get from the magician.",
 		high_damage_ban = "Bello kiwi, bello zusu, bello bako! Bello kiwi, bello zusu, bello bako! Bello kiwi, bello zusu, bello bako!",
 		suspicious_explosion_ban = "Boboisa! Boboisa!",
+		semi_godmode_ban = "Bellooo! Bananaaa? (Translation: You have tried to cheat the natural order of things, and now you must face the consequences. Living forever isn't as exciting as it may seem to some.)",
 
 		mp_f_freemode_01_label = "Freemode (female)",
 		mp_m_freemode_01_label = "Freemode (male)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		ragdoll_command = "baboi",
 		ragdoll_command_help = "Toggle banana language.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "marathon",
+		marathon_command_help = "Toggle the 'marathon' feature to observe how walking styles could be enhanced. (Translation: Toggle the 'marathon' debug feature to see what walkstyles needs tweaking.)",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "bee do bee do",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		wheel_offset_command_parameter_wheels = "da frente/dôz fundô",
 		wheel_offset_command_parameter_wheels_help = "Quais rodês êsse karlê têm pra modificâ?",
 		wheel_offset_command_parameter_value = "valôr",
-		wheel_offset_command_parameter_value_help = "Quantô você quer modificá-Ê-Êlê? Issu pôdi sê de -0.15 até 0.15, 0 ê o padrãum.",
+		wheel_offset_command_parameter_value_help = "Adjusts the offset value of the wheel. The value can range from -0.15 to 0.2, with 0 being the default. (Translation: The amount you would like it to be modified. This can be anywhere from -0.15 to 0.2, 0 being default.)",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "beedo_rotation",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		clothing_bag = "Clothing Bag",
 		clothing_bag_description = "Poulet tikka masala! Never worry about fashion emergencies again! The clothing bag lets you store your favorite outfit and instantly equip it anywhere you go. This bag has all the magic of a fairy godmother, minus the bibbidi-bobbidi-boo.",
 
+		raw_diamond = "Bababa babanana (Translation: Raw Diamond)",
+		raw_diamond_description = "Bababa babananaaa (Translation: Diamond in its natural form, fresh from the mine.)",
 		raw_morganite = "Bellope Bruto",
 		raw_morganite_description = "Bellope en su forma natural, recién extraído de la mina.",
 		raw_ruby = "Rubí Bruto",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		drank_gasoline_death = "BANANA! Me want Banana! Gasoline Poisoning",
 		drank_bleach_death = "Bababa Bo Boo! (Bleach Poisoning)",
 
+		using_cuffs = "Bee Doo Bee Doo Handcuffs",
+		you_moved_too_fast = "Bee Do Bee Do, you moved too fast.",
+
 		failed_burger_shot_delivery = "Me didn't get to open burgershot meal. Me sorry.",
 		failed_bean_machine_delivery = "Me couldn't get the bean machine delivery to open. Ooopsie!",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		value = "Value: $${value} banana.",
 		total_items = "Total Items: ${totalItems} bababa?",
 		withdraw = "Poopaye (${amount})",
+		transfer = "Bananaaaa (${amount})",
 		quick_sell = "Bapple ($${worth})",
-		storage_fee_warning = "At 6AM UTC every day, items worth >= 5% of your total inventory value will be reomved as a 'storage fee' bababa banana.",
+		storage_fee_warning = "Bee Do Bee Do, at 6AM UTC every day, items worth >= 5% of your total inventory value will be removed as a 'storage fee'.",
 		item_with_worth = "${label} (Gelato $${worth})",
 		select_all = "Poppadom",
 		deselect_all = "Hana Kulua",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		sort = "Tulaliloo ti amo!",
 		player_won_pot = "${name} waka-won $${amount} wid a ${chance}% chance ${timeAgo} banana.",
 		the_ticket_was = "Da ticket was ${ticket}.",
-		recent_pots_will_show_here = "Gelato ba nanaaaa!"
+		recent_pots_will_show_here = "Gelato ba nanaaaa!",
+		server_id = "The server ID you want to transfer to...",
+		transfer_items_to_anoter_person = "Bananaaaa items to another Minion."
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		mining_mined_title = "Minionese: Bello Turok",
 		mining_mined_details = "${consoleName} bello turok ${output}.",
+		mining_mined_details_nothing = "${consoleName} mined a gemstone but found nothing. Bello!",
 
 		mining_exploded_title = "Minionese: Babbalabbaloo Explosion",
 		mining_exploded_details = "${consoleName} babbalabbaloo exploshun while trying to bello turok a gem.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		kissaki_kitchen = "Kissaki Peeji",
 
 		craft = "Bananooo",
-		starting = "Begiinooo"
+		putting_down_ingredients = "Putting Down Ingredients. Bello, papple!",
+
+		pick_up = "Bello: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Bello: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Bee Do Bee Do Bee Do (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Bee Do Bee Do Bee Do (${completed}%~s~)",
+		preparing_rice_starting = "Bee Do Bee Do Bee Do",
+		preparing_rice = "~g~${name}~s~: Bee do... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: Prepare Bananas (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Prepare Bananas (${completed}%~s~)",
+		preparing_fillings_starting = "Bello, Gelato Banana!",
+		preparing_fillings = "~g~${name}~s~: Preparing Fillings... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Prepare Rolling Mat (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Prepare Rolling Mat (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Bananaaaa",
+		preparing_rolling_mat = "~g~${name}~s~: Preparing Rolling Mat... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Assembello Sushi (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Bello! Assemble Sushi (${completed}%~s~)",
+		assembling_sushi_starting = "Bip bop bip bip! Assembling Sushi",
+		assembling_sushi = "~g~${name}~s~: Bip bip bop.. Assembling Sushi... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Roll Sushi (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Roll Sushi (${completed}%~s~)",
+		rolling_sushi_starting = "Bip bop bip! Rolling Sushi",
+		rolling_sushi = "~g~${name}~s~: Bip bip bop.. Rolling Sushi... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Slice Sushi (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: tulaliloo Slicer Sushi (${completed}%~s~)",
+		slicing_sushi_starting = "tulaliloo Slicer Sushi",
+		slicing_sushi = "~g~${name}~s~: tulaliloo Slicing Sushi... (${completed}%~s~)",
 	},
 
 	riot_mode = {

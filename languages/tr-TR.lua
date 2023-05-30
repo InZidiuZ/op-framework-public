@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["tr-TR"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		weapon_spawn_ban = "Sihirli şapkasından tavşan çıkarmaya kalkarken bazooka buldu.",
 		high_damage_ban = "Güç ölçekleri sizin lehinize çok fazla eğildi, krallığımızın denge noktasını bozduğu için cezalandırıldınız.",
 		suspicious_explosion_ban = "Üzgünüz, ancak bu bir Michael Bay filmi değil. Aşırı kullanımı yasak olan patlayıcılar kullanmak doğru değil.",
+		semi_godmode_ban = "Gençlik çağının çeşmesine olan ısrarın doğal zaman akışını bozdu gibi görünüyor. Sonsuzluk, düşünüldüğü kadar eğlenceli değil.",
 
 		mp_f_freemode_01_label = "Serbest mod (kadın)",
 		mp_m_freemode_01_label = "Serbest mod (erkek)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		ragdoll_command = "ragdoll",
 		ragdoll_command_help = "Ragdoll'u açıp kapatır.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "maraton",
+		marathon_command_help = "'marathon' hata ayıklama özelliğini açıp, düzenlenmesi gereken yürüyüş stillerini gösterir.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "bildir",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		wheel_offset_command_parameter_wheels = "ön/arka",
 		wheel_offset_command_parameter_wheels_help = "Hangi jantları değiştirmek istersiniz?",
 		wheel_offset_command_parameter_value = "değer",
-		wheel_offset_command_parameter_value_help = "Değiştirilmesini istediğiniz miktar. Bu -0.15 ila 0.15 arasında herhangi bir değer olabilir (0 varsayılan).",
+		wheel_offset_command_parameter_value_help = "Değiştirilmek istenen miktar. -0.15 ile 0.2 arasında herhangi bir değer olabilir, 0 varsayılan değerdir.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "teker_dondur",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		clothing_bag = "Giyim Çantası",
 		clothing_bag_description = "Artık moda ile ilgili acil durumlarla ilgili endişelenmeyin! Giyim çantası, favori kıyafetlerinizi depolamanıza ve herhangi bir yerde hızlıca giyinmenize olanak tanır. Bu çanta, bir peri nin yağmur bazıları ile aynı büyüye sahiptir ama bibbidi-bobbidi-boo olmadan.",
 
+		raw_diamond = "Ham Elmas",
+		raw_diamond_description = "Doğal haliyle elmas, madenden yeni çıkmış halde.",
 		raw_morganite = "Ham Morganit",
 		raw_morganite_description = "Doğal haliyle, madenden yeni çıkmış Morganit.",
 		raw_ruby = "Ham Yakut",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		drank_gasoline_death = "Benzin Zehirlenmesi",
 		drank_bleach_death = "Bleach Zehirlenmesi",
 
+		using_cuffs = "Kelepçe Kullanılıyor",
+		you_moved_too_fast = "Çok hızlı hareket ettin.",
+
 		failed_burger_shot_delivery = "Burger Shot yemeği açılamadı.",
 		failed_bean_machine_delivery = "Bean Machine teslimatı açılamadı.",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		value = "Değer: $${value}",
 		total_items = "Toplam eşya: ${totalItems}",
 		withdraw = "Çek (${amount})",
+		transfer = "Transfer (${amount})",
 		quick_sell = "Hızlı Satış ($${worth})",
-		storage_fee_warning = "Her gün saat 6'da UTC'de, toplam envanter değerinizin >= 5%'i değerindeki eşyalar 'depolama ücreti' olarak silinecektir.",
+		storage_fee_warning = "Her gün saat 6'da UTC'de toplam envanter değerinizin >= 5% değerine sahip olan öğeler 'depolama ücreti' olarak silinecektir.",
 		item_with_worth = "${label} ($${worth})",
 		select_all = "Hepsini Seç",
 		deselect_all = "Hiçbirini Seçme",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		sort = "Sırala",
 		player_won_pot = "${name}, ${timeAgo} önce ${chance}% şans ile $${amount} kazandı.",
 		the_ticket_was = "Bilet ${ticket} idi.",
-		recent_pots_will_show_here = "Son tencereler burada gösterilecek."
+		recent_pots_will_show_here = "Son tencereler burada gösterilecek.",
+		server_id = "Aktarım yapmak istediğiniz sunucu ID'si...",
+		transfer_items_to_anoter_person = "Öğeleri başka bir kişiye aktar"
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		mining_mined_title = "Değerli Taş Bulundu",
 		mining_mined_details = "${consoleName} ${output} değerli taşı buldu.",
+		mining_mined_details_nothing = "${consoleName} bir değerli taş madenciliği yaptı ama hiçbir şey bulamadı.",
 
 		mining_exploded_title = "Patlama Meydana Geldi",
 		mining_exploded_details = "${consoleName} değerli taşın çıkarılması sırasında patlama meydana geldi.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		kissaki_kitchen = "Kissaki Mutfak",
 
 		craft = "El işi",
-		starting = "Başlama"
+		putting_down_ingredients = "Malzemeleri Yere Bırakma",
+
+		pick_up = "Al: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Al: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Pirinç Hazırlanıyor (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Pirinç Hazırlanıyor (${completed}%~s~)",
+		preparing_rice_starting = "Pirinç Hazırlanıyor",
+		preparing_rice = "~g~${name}~s~: Pirinç Hazırlanıyor... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: Malzemeler Hazırlanıyor (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Malzemeler Hazırlanıyor (${completed}%~s~)",
+		preparing_fillings_starting = "Malzemeler Hazırlanıyor",
+		preparing_fillings = "~g~${name}~s~: Malzemeler Hazırlanıyor... (%${completed}~s~ tamamlandı)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Yuvarlama Matı Hazırla (%${completed}~s~ tamamlandı)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Yuvarlama Matı Hazırla (%${completed}~s~ tamamlandı)",
+		preparing_rolling_mat_starting = "Yuvarlama Matı Hazırlanıyor",
+		preparing_rolling_mat = "~g~${name}~s~: Yuvarlama Matı Hazırlanıyor... (%${completed}~s~ tamamlandı)",
+
+		assemble_sushi = "~g~${name}~s~: Sushi Hazırla (%${completed}~s~ tamamlandı)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Sushi Yap (${completed}%~s~)",
+		assembling_sushi_starting = "Sushi Yapma Başlıyor",
+		assembling_sushi = "~g~${name}~s~: Sushi Yapılıyor... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Sushi Sar (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Sushi Sar (${completed}%~s~)",
+		rolling_sushi_starting = "Sushi Sarma Başlıyor",
+		rolling_sushi = "~g~${name}~s~: Sushi Sarılıyor... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Sushi Kes (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Sushi Dilimle (${completed}%~s~)",
+		slicing_sushi_starting = "Sushi Dilimleniyor",
+		slicing_sushi = "~g~${name}~s~: Sushi Dilimleniyor... (${completed}%~s~)",
 	},
 
 	riot_mode = {

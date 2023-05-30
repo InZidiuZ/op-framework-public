@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["sv-SE"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		weapon_spawn_ban = "Försökte dra upp en kanin ur hatten, hittade en bazooka istället.",
 		high_damage_ban = "Makten har gått överstyr och rubbat balansen i vår värld.",
 		suspicious_explosion_ban = "Tyvärr är det inte en Michael Bay-film. Överdriven användning av pyroteknik är inte tillåtet.",
+		semi_godmode_ban = "Din inställning till ungdomens källa verkar ha stört den naturliga tidens gång. Evigheten är inte lika roligt som det låter.",
 
 		mp_f_freemode_01_label = "Fritt läge (kvinnlig)",
 		mp_m_freemode_01_label = "Fritt läge (manlig)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		ragdoll_command = "ragdoll",
 		ragdoll_command_help = "Aktiverar/Avaktiverar slumpmässigt fallande karaktär.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "marathon",
+		marathon_command_help = "Aktivera/deaktivera debug-funktionen 'marathon' för att se vilka walkstyles som behöver justeras.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "rapportera",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		wheel_offset_command_parameter_wheels = "fram/bak",
 		wheel_offset_command_parameter_wheels_help = "Vilka hjul vill du ändra på?",
 		wheel_offset_command_parameter_value = "värde",
-		wheel_offset_command_parameter_value_help = "Beloppet du vill att det ska ändras. Detta kan vara någonstans från -0.15 till 0.15, 0 är standard.",
+		wheel_offset_command_parameter_value_help = "Det belopp du vill ändra det med. Detta kan vara någonstans från -0,15 till 0,2, där 0 är standard.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "hjul_rotation",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		clothing_bag = "Klädpåse",
 		clothing_bag_description = "Oroa dig aldrig igen för mode-nödsituationer! Klädpåsen låter dig lagra din favoritoutfit och omedelbart utrusta den var du än går. Denna påse har all magi som en fe, minus bibbidi-bobbidi-boo.",
 
+		raw_diamond = "Rå diamant",
+		raw_diamond_description = "Diamant i sitt naturliga form, färsk från gruvan.",
 		raw_morganite = "Rå Morganit",
 		raw_morganite_description = "Morganit i dess naturliga form, färsk från gruvan.",
 		raw_ruby = "Rå Rubin",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		drank_gasoline_death = "Bensinförgiftning",
 		drank_bleach_death = "Förgiftning av blekmedel",
 
+		using_cuffs = "Använder Handbojor",
+		you_moved_too_fast = "Du rörde dig för fort.",
+
 		failed_burger_shot_delivery = "Misslyckades att öppna måltid från burgershot.",
 		failed_bean_machine_delivery = "Misslyckades att öppna leverans från bean machine.",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		value = "Värde: $${value}",
 		total_items = "Totalt antal föremål: ${totalItems}",
 		withdraw = "Ta ut (${amount})",
+		transfer = "Överför (${amount})",
 		quick_sell = "Snabbsälj ($${worth})",
-		storage_fee_warning = "Kl. 6:00 UTC varje dag kommer föremål som är värda >= 5% av hela ditt inventarievärde tas bort som 'förvaringsavgift'.",
+		storage_fee_warning = "Klockan 6:00 UTC varje dag, kommer föremål som är värda >= 5 % av din totala inventarievärde att tas bort som en 'förvaringsavgift'.",
 		item_with_worth = "${label} (${worth} SEK)",
 		select_all = "Välj alla",
 		deselect_all = "Avmarkera alla",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		sort = "Sortera",
 		player_won_pot = "${name} vann ${amount} SEK för ${chance}% chans ${timeAgo} sedan.",
 		the_ticket_was = "Biljetten var ${ticket}.",
-		recent_pots_will_show_here = "Senaste potten visas här."
+		recent_pots_will_show_here = "Senaste potten visas här.",
+		server_id = "Server-ID som du vill överföra till...",
+		transfer_items_to_anoter_person = "Överför föremål till en annan person."
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		mining_mined_title = "Brytning av ädelsten",
 		mining_mined_details = "${consoleName} bröt ${output}.",
+		mining_mined_details_nothing = "${consoleName} har brutit en ädelsten men hittade ingenting.",
 
 		mining_exploded_title = "Explosion vid brytning",
 		mining_exploded_details = "${consoleName} sprängdes när de försökte bryta en ädelsten.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		kissaki_kitchen = "Kissaki kök",
 
 		craft = "Tillverka",
-		starting = "Startar"
+		putting_down_ingredients = "Lägger ner ingredienser",
+
+		pick_up = "Plocka upp: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Plocka upp: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Förbereda ris (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Förbereda ris (${completed}%~s~)",
+		preparing_rice_starting = "Förbereder ris",
+		preparing_rice = "~g~${name}~s~: Förbereder ris... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: Förbereda fyllning (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Förbereda fyllning (${completed}%~s~)",
+		preparing_fillings_starting = "Förbereder fyllning",
+		preparing_fillings = "~g~${name}~s~: Förbereder fyllning... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Förbereda rullningsmatta (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Förbereda rullningsmatta (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Förbereder rullningsmatta",
+		preparing_rolling_mat = "~g~${name}~s~: Förbereder rullningsmatta... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Montera sushi (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Montera sushi (${completed}%~s~)",
+		assembling_sushi_starting = "Monterar sushi",
+		assembling_sushi = "~g~${name}~s~: Monterar sushi... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Rulla sushi (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Rulla sushi (${completed}%~s~)",
+		rolling_sushi_starting = "Rullar sushi",
+		rolling_sushi = "~g~${name}~s~: Rullar sushi... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Skär sushi (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Skiva Sushi (${completed}%~s~)",
+		slicing_sushi_starting = "Börjar skiva Sushi",
+		slicing_sushi = "~g~${name}~s~: Skivar Sushi... (${completed}%~s~)",
 	},
 
 	riot_mode = {

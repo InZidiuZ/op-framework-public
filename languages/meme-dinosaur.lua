@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["meme-dinosaur"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		weapon_spawn_ban = "Attempted to pull a rabbit out of the hat, found a bazooka instead.",
 		high_damage_ban = "Your strength has caused an imbalance in our prehistoric realm, resulting in banishment.",
 		suspicious_explosion_ban = "Sorry, but excessive use of fire and explosions is not allowed in this era.",
+		semi_godmode_ban = "Your constant quest for the Great Feast of Eternal Youth has disrupted the natural rhythm of time. Immortality isn't as enjoyable as it sounds.",
 
 		mp_f_freemode_01_label = "Free roam (female)",
 		mp_m_freemode_01_label = "Free roam (male)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		ragdoll_command = "snooze",
 		ragdoll_command_help = "Rawr! Make self go limpy-limp!",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "raptor_run",
+		marathon_command_help = "Toggles the debug feature for raptor running, useful for fixing any running style issues.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "roarport",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		wheel_offset_command_parameter_wheels = "front/back",
 		wheel_offset_command_parameter_wheels_help = "Which wheels you want to modify? The pokey-ones or the stompy-ones?",
 		wheel_offset_command_parameter_value = "value",
-		wheel_offset_command_parameter_value_help = "How much you want to modify it by? -0.15 to 0.15 please. Zero is default.",
+		wheel_offset_command_parameter_value_help = "The degree of modification. It can vary from -0.15 to 0.2, with 0 as the default value.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "roar_rolling_stone",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		clothing_bag = "Clothing Bag (FASHION EMERGENCY)",
 		clothing_bag_description = "Never worry about fashion emergencies again! The clothing bag lets you store your favorite outfit and instantly equip it anywhere you go. This bag has all the magic of a fairy godmother, minus the bibbidi-bobbidi-boo. Look good, feel good, hunt good!",
 
+		raw_diamond = "Unrefined Bite",
+		raw_diamond_description = "This unpolished bite-shaped gemstone is straight out of the quarry.",
 		raw_morganite = "Raw Mogranite",
 		raw_morganite_description = "Mogranite in its natural form, fresh from the quarry.",
 		raw_ruby = "Raw Redclaw",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		drank_gasoline_death = "Me die from drinking gasoline.",
 		drank_bleach_death = "Rawr! Bleach poisoning!",
 
+		using_cuffs = "Using Clawcuffs",
+		you_moved_too_fast = "You sprint too fast.",
+
 		failed_burger_shot_delivery = "Rawr! Failed to open burgershot meal.",
 		failed_bean_machine_delivery = "Rawr! Failed to open bean machine delivery.",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		value = "Rav-rav: $$$${value} (raf-gar)",
 		total_items = "Total Gar-Gar: ${totalItems} (gar-gar)",
 		withdraw = "Wa-Wa (${amount}) (ra-ra)",
+		transfer = "Transfer (${amount})",
 		quick_sell = "Quick-Gar-Gar ($$$${worth}) (raf-gar-gar)",
-		storage_fee_warning = "At Gak-Gak UTC every rar-gargarg, ra-gargarg worth >= 5% of your rar-rafa inventory rav-rav will be reomved as a 'wa-wa-raf'.",
+		storage_fee_warning = "At 6AM UTC everyday, items worth >= 5% of your total inventory value will be removed as a 'storage fee'.",
 		item_with_worth = "${label} (${worth} bones)",
 		select_all = "Me Pick All",
 		deselect_all = "Me No Want All",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		sort = "Me Arrange",
 		player_won_pot = "${name} Won ${amount} bones with a ${chance}% chance ${timeAgo} back.",
 		the_ticket_was = "Ticket Be ${ticket}.",
-		recent_pots_will_show_here = "Recent hot meals for dinos will show up here!"
+		recent_pots_will_show_here = "Recent hot meals for dinos will show up here!",
+		server_id = "Me want to transfer to server ID...",
+		transfer_items_to_anoter_person = "Give things to another dinosaur."
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 		mining_mined_title = "Rawr! Ate Gem",
 		mining_mined_details = "${consoleName} rawr and ate ${output} gem.",
+		mining_mined_details_nothing = "${consoleName} mined a shiny rock, but found nothing.",
 
 		mining_exploded_title = "Boom! Mine Explode",
 		mining_exploded_details = "${consoleName} kaboom while trying to eat gem.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		kissaki_kitchen = "Kissaki Cuisine",
 
 		craft = "Create",
-		starting = "Hatching"
+		putting_down_ingredients = "Dropping ingredients",
+
+		pick_up = "Graah: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Graah: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Prepare Rawr (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Prepare Rawr (${completed}%~s~)",
+		preparing_rice_starting = "Starting Prep Rawr",
+		preparing_rice = "~g~${name}~s~: Preparing Rawr... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: Prepare Yum (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Prepare Yum (${completed}%~s~)",
+		preparing_fillings_starting = "Grooming Fillings",
+		preparing_fillings = "~g~${name}~s~: Grooming Fillings... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Prepare Rolling Mat (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Prepare Rolling Mat (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Grooming Rolling Mat",
+		preparing_rolling_mat = "~g~${name}~s~: Grooming Rolling Mat... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Join Sushi Pieces (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Assemble Sushi (${completed}%~s~)",
+		assembling_sushi_starting = "Me make Sushi",
+		assembling_sushi = "~g~${name}~s~: Me making Sushi... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Roll Sushi (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Roll Sushi (${completed}%~s~)",
+		rolling_sushi_starting = "Me roll Sushi",
+		rolling_sushi = "~g~${name}~s~: Me rolling Sushi... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Slice Sushi (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Grr, Snarl, Slice Sushi (${completed}%~s~)",
+		slicing_sushi_starting = "Grr, Snarl, Starting to Slice Sushi",
+		slicing_sushi = "~g~${name}~s~: Grr, Snarl, Slicing Sushi... (${completed}%~s~)",
 	},
 
 	riot_mode = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["meme-gungan"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		weapon_spawn_ban = "Attempted to pull a rabbit out of da hat, found a bazooka instead.",
 		high_damage_ban = "Da scales of powa were tilted too far in ya favo, disruptin' da balance of our realm.",
 		suspicious_explosion_ban = "Sorry, but dis isn't a Michael Bay film. Excessive use of pyrotechnics is not permitted.",
+		semi_godmode_ban = "Yousa insistence on da fountain of youth seems to have disrupted da natural flow of time. Eternity isn't as fun as it sounds.",
 
 		mp_f_freemode_01_label = "Freemode (femalen)",
 		mp_m_freemode_01_label = "Freemode (malen)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		ragdoll_command = "ragdoll",
 		ragdoll_command_help = "Toggling ragdoll.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "marathon",
+		marathon_command_help = "Toggle da 'marathon' debug feature to see what walkstyles needs tweaking.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "report",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		wheel_offset_command_parameter_wheels = "front/back",
 		wheel_offset_command_parameter_wheels_help = "Which wheels bombad modify?",
 		wheel_offset_command_parameter_value = "value",
-		wheel_offset_command_parameter_value_help = "Da amount yousa would like it to be modified. This can be anywhere from -0.15 to 0.15, 0 bombad default.",
+		wheel_offset_command_parameter_value_help = "Da amount yousa would like it to be modified. This can be anywhere from -0.15 to 0.2, 0 being default.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "sa wheel-o-rotation",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		clothing_bag = "Bagga Clot'in'",
 		clothing_bag_description = "Never worry about fashion eme'gency again! Da clothing bag lets you stowa yosa fav'rite outfit and instantly equip it anywheres yousa go. This bag has all da magic of a fairy godmother, minus da bibbidi-bobbidi-boo.",
 
+		raw_diamond = "Raw Gooberfish",
+		raw_diamond_description = "Gooberfish in its natural form, fresh from da mine.",
 		raw_morganite = "Raw Mantinka",
 		raw_morganite_description = "Mantinka in its natural form, fresh from the mine.",
 		raw_ruby = "Raw Rubinka",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		drank_gasoline_death = "Gasoline poisonin",
 		drank_bleach_death = "Dansen Poisoning",
 
+		using_cuffs = "Mesa usin' shackles",
+		you_moved_too_fast = "Yousa moved too qui-gon.",
+
 		failed_burger_shot_delivery = "Meesa fail to open burgershot meal.",
 		failed_bean_machine_delivery = "Meesa fail to open bean machine delivery.",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		value = "Value: $${value}",
 		total_items = "Total Items: ${totalItems}",
 		withdraw = "Withdraw (${amount})",
+		transfer = "Tranfeesa (${amount})",
 		quick_sell = "Quick Sell ($${worth})",
-		storage_fee_warning = "At 6AM UTC every day, items worth >= 5% of your total inventory value will be removed as a 'storage fee'.",
+		storage_fee_warning = "At 6AM UTC everyday, items worth >= 5% of yousa total inventory value gonna be removed as a 'storage fee'.",
 		item_with_worth = "${label} (${worth} wonga)",
 		select_all = "Select Bombad All",
 		deselect_all = "Deselect Bombad All",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		sort = "Sort Bombad",
 		player_won_pot = "${name} won ${amount} wonga with a ${chance}% chance ${timeAgo} ago.",
 		the_ticket_was = "Da ticket was ${ticket}.",
-		recent_pots_will_show_here = "Recent pots will shoba hia."
+		recent_pots_will_show_here = "Recent pots will shoba hia.",
+		server_id = "Da server ID yousa want to transfer to...",
+		transfer_items_to_anoter_person = "Transfer items to anoosa person."
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		mining_mined_title = "Gat-mapa Mined",
 		mining_mined_details = "${consoleName} mopo ${output}.",
+		mining_mined_details_nothing = "${consoleName} mined a gemstone but found nothing.",
 
 		mining_exploded_title = "Gat-mapa Kaboom",
 		mining_exploded_details = "${consoleName} ka-boomed wesa trying to mine a gem.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		kissaki_kitchen = "Kisákí Kichin",
 
 		craft = "Kräft",
-		starting = "Storting"
+		putting_down_ingredients = "Puttin' Down Ingredients",
+
+		pick_up = "Sa Pick Up: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Sa Pick Up: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Yusa Rice Gawa (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Yusa Rice Gawa (${completed}%~s~)",
+		preparing_rice_starting = "Yusa Rice Gawa",
+		preparing_rice = "~g~${name}~s~: Pinaprepare ya yung Rice... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: Yusa Ang Fillings (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Yusa Ang Fillings (${completed}%~s~)",
+		preparing_fillings_starting = "Muy muy toosa fillings",
+		preparing_fillings = "~g~${name}~s~: Muy muy toosa fillings... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Prepare rolling mat (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Prepare rolling mat (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Muy muy toosa rolling mat",
+		preparing_rolling_mat = "~g~${name}~s~: Muy muy toosa rolling mat... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Assemble sushi (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Doka Sushi Assemble Kokana (${completed}%~s~)",
+		assembling_sushi_starting = "Doka Sushi Assemble Kokana",
+		assembling_sushi = "~g~${name}~s~: Doka Sushi Assemble Kokana... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Sushi Kokana Roll (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Sushi Kokana Roll (${completed}%~s~)",
+		rolling_sushi_starting = "Sushi Kokana Rolling",
+		rolling_sushi = "~g~${name}~s~: Sushi Kokana Rolling... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Sushi Kokana Slice (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Bemeesha Sushi (${completed}%~s~)",
+		slicing_sushi_starting = "Bemeesha Sushi",
+		slicing_sushi = "~g~${name}~s~: Bemeesha Sushi... (${completed}%~s~)",
 	},
 
 	riot_mode = {

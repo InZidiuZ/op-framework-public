@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["meme-klingon"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		weapon_spawn_ban = "'ejqoq Hagh. cha'maH loH qIjvo', bazooka 'e' yImej.",
 		high_damage_ban = "qawHaq 'oH QaQ law' Hoch wIja'chuq. SoHvaD qIb, qun DaQawqulu'.",
 		suspicious_explosion_ban = "bIjatlh 'e' yImev. Dujvam qIb naQchoH.",
+		semi_godmode_ban = "ghobe' yIngu' neH lo'laHbe'chugh, Jojqu' lo'laHbe'chughnej. ghotI' mu'mey lojmeH bIHegh.",
 
 		mp_f_freemode_01_label = "Freemode (puqbe')",
 		mp_m_freemode_01_label = "Freemode (loDHom)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		ragdoll_command = "HIq",
 		ragdoll_command_help = "QaQtlh.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "marathon",
+		marathon_command_help = "'marathon' debug jej wImuv, nuqDaq walkstyles chenmoHmo' chaH.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "Qapla'.",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		wheel_offset_command_parameter_wheels = "naDev/be'logh",
 		wheel_offset_command_parameter_wheels_help = "nuq leghlaHbe'wI' vaj wIq matlh?",
 		wheel_offset_command_parameter_value = "qorDu",
-		wheel_offset_command_parameter_value_help = "qorDu bejta' yIqorDu', -0.15 pa' 0.15, 0 chu'qu'.",
+		wheel_offset_command_parameter_value_help = "ghapHa' 'In, -0.15 to 0.2 range DaSDaj, without modification je.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "yIn nub",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		clothing_bag = "ngIq vaqnay' bagh",
 		clothing_bag_description = "Never worry about fashion emergencies again! The clothing bag lets you store your favorite outfit and instantly equip it anywhere you go. This bag has all the magic of a fairy godmother, minus the bibbidi-bobbidi-boo.",
 
+		raw_diamond = "QIn retlh",
+		raw_diamond_description = "wa' Duj mIllogh jen, QIn nobqu' Suq juHDaq.",
 		raw_morganite = "qeylIS morganite",
 		raw_morganite_description = "Morganite nuqneH qeylIS, cha'logh cha'logh jeb.",
 		raw_ruby = "qeylIS ruby",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		drank_gasoline_death = "Gasoline Poisoning",
 		drank_bleach_death = "QeH HemqaD qeylIS Sogh",
 
+		using_cuffs = "QughHa'moH Handcuffs",
+		you_moved_too_fast = "bIjatlh 'oH tIn!",
+
 		failed_burger_shot_delivery = "burgershot meal pejatlh",
 		failed_bean_machine_delivery = "bean machine delivery pejatlh",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		value = "Qap: $${value}",
 		total_items = "yoS qap: ${totalItems}",
 		withdraw = "qupHa' (${amount})",
+		transfer = "jenwI' (${amount})",
 		quick_sell = "suj qap ($${worth})",
-		storage_fee_warning = "mI'joy' be'logh 6AM UTC cha'maH lojmIt vItlhutlh Sep yejquv 'uDmey Duj' Hoch. Mu'mey qap >= ngutlh vivnegH'a'lu, Hoch 'yorghom Duj' Hoch ghIq tu'lu'.",
+		storage_fee_warning = "cha'logh ghIq 6AM UTC, parmaq vIlo'be' > 5% DIr vay' lo'laHwI' mIw. Dachuy'be'.",
 		item_with_worth = "${label} (${worth} tupno'),", -- "tupno'" means "credits",
 		select_all = "ghIlwI' jabbI'pu'",
 		deselect_all = "ghIlwI' Qatlho'",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		sort = "chetvI'",
 		player_won_pot = "${name} $${amount} qutluchta' qImHa' ${chance}% ropya' ${timeAgo} cha'logh je.", -- "qutluchta'" means "won" and "ropya'" means "chance",
 		the_ticket_was = "Ha'DIbaH DaHoHchugh ticket ${ticket}.", -- "Ha'DIbaH DaHoHchugh" means "the ticket was",
-		recent_pots_will_show_here = "DaH jImej bIrel 'e' vItlhutlh."
+		recent_pots_will_show_here = "DaH jImej bIrel 'e' vItlhutlh.",
+		server_id = "QInDaq tu'lu'be' 'oH jenwI'...",
+		transfer_items_to_anoter_person = "jenwI' 'oH tIq HoHDaj."
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 		mining_mined_title = "Gem Mured",
 		mining_mined_details = "${consoleName} tay'bogh ${output} jatlh.",
+		mining_mined_details_nothing = "${consoleName} neH' Hem pon - nIb juHDaq je bej.",
 
 		mining_exploded_title = "Tay'wIj qaSmin 'utlh",
 		mining_exploded_details = "${consoleName} tay'boghbe'chugh qaS neH tay'wIjma' chenmoHmeH qaStaHvIS lo'laHbe'.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		kissaki_kitchen = "Kissaki QIch",
 
 		craft = "Suv",
-		starting = "mItlhab"
+		putting_down_ingredients = "Sorgh DapI'pu'.",
+
+		pick_up = "qama' qonwI': ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] qama' qonwI': ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: nIvSe' ghItlh (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: nIvSe' ghItlh (${completed}%~s~)",
+		preparing_rice_starting = "nIvSe' ghItlh DaH",
+		preparing_rice = "~g~${name}~s~: nIvSe' ghItlh poQbogh... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: nIQ beqpu' (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: nIQ beqpu' (${completed}%~s~)",
+		preparing_fillings_starting = "qetbogh HaDghach",
+		preparing_fillings = "~g~${name}~s~: qetbogh HaDghach... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: tIn-yuq botlh (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: tIn-yuq botlh HaDghach (${completed}%~s~)",
+		preparing_rolling_mat_starting = "tIn-yuq botlh HaDghach",
+		preparing_rolling_mat = "~g~${name}~s~: tIn-yuq botlh HaDghach... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: ghobe' Sushi (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: qIb jerghItlh Sushi (${completed}%~s~)",
+		assembling_sushi_starting = "qIb jerghItlh Sushi",
+		assembling_sushi = "~g~${name}~s~: qIb jerghItlh Sushi... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: 'IwSo' Sushi (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: 'IwSo' Sushi (${completed}%~s~)",
+		rolling_sushi_starting = "'IwSo' Sushi",
+		rolling_sushi = "~g~${name}~s~: 'IwSo' Sushi... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: qamchoH Sushi (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: pIj lIngta' SuSwI' (${completed}%~s~)",
+		slicing_sushi_starting = "SuSwI' lIngta':",
+		slicing_sushi = "~g~${name}~s~: SuSwI' lIng.... (${completed}%~s~)",
 	},
 
 	riot_mode = {

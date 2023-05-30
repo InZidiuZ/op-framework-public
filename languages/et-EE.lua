@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["et-EE"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		weapon_spawn_ban = "Püüdsin kübarast jänesesid välja võluda, kuid leidsin selle asemel bazooka.",
 		high_damage_ban = "Jõu tasakaal on rikutud. Sul on keelatud mängida selles maailmas nii suure kahju tõttu.",
 		suspicious_explosion_ban = "Vabandust, aga see pole Michael Bay film. Liiga palju plahvatusi pole lubatud.",
+		semi_godmode_ban = "Teie tungimine igavese nooruse allikale on häirinud aja loomulikku voolu. Igavik pole nii lõbus, kui see kõlab.",
 
 		mp_f_freemode_01_label = "Vaba režiim (naine)",
 		mp_m_freemode_01_label = "Vaba režiim (mees)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 		ragdoll_command = "nukk",
 		ragdoll_command_help = "Lülita ragdoll sisse/välja.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "maraton",
+		marathon_command_help = "Lülitage sisse/välja 'maraton' silumisfunktsioon, et näha, milliseid käikuid tuleks parandada.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "teade",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		wheel_offset_command_parameter_wheels = "ees/taga",
 		wheel_offset_command_parameter_wheels_help = "Milliseid rattaid soovid muuta?",
 		wheel_offset_command_parameter_value = "väärtus",
-		wheel_offset_command_parameter_value_help = "Summa (vahemikus -0,15 kuni 0,15), mida soovite muuta. 0 on vaikimisi.",
+		wheel_offset_command_parameter_value_help = "Summa, mille abil soovite seda muuta. See võib olla vahemikus -0,15 kuni 0,2, 0 on vaikimisi.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "ratase_pöörlemine",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		clothing_bag = "Riiete kott",
 		clothing_bag_description = "Ära kunagi enam muretse riietuskriiside pärast! Riiete kotiga saad hoiustada oma lemmikrõivaid ja varustada end nendega koheselt ükskõik kus sa ka ei viibiks. See kott on nagu võluväeloomine ilma bibbidi-bobbidi-boo'ta.",
 
+		raw_diamond = "Tooriktene",
+		raw_diamond_description = "Teemant looduslikul kujul, otse kaevandusest.",
 		raw_morganite = "Toores morganiit",
 		raw_morganite_description = "Morganiidi loomulik vorm, otse kaevandusest.",
 		raw_ruby = "Toores rubiin",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["et-EE"] = {
 		drank_gasoline_death = "Bensiinimürgitus",
 		drank_bleach_death = "Valgendimürgitus",
 
+		using_cuffs = "Kasutab käeraudu",
+		you_moved_too_fast = "Liikusid liiga kiiresti.",
+
 		failed_burger_shot_delivery = "Ei õnnestunud Burgershoti eine avada.",
 		failed_bean_machine_delivery = "Ei õnnestunud Bean Machine'i kohaletoimetamist avada.",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["et-EE"] = {
 		value = "Väärtus: $${value}",
 		total_items = "Kokku esemeid: ${totalItems}",
 		withdraw = "Võta välja (${amount})",
+		transfer = "Ülekanne (${amount})",
 		quick_sell = "Kiirmüük ($${worth})",
-		storage_fee_warning = "Iga päev kell 6 UTC eemaldatakse esemed, mis on väärtusega >= 5% teie koguvarast. Seda nimetatakse 'hoiutasuks'.",
+		storage_fee_warning = "Iga päev kell 6 UTC eemaldatakse esemeid, mis moodustavad >= 5% sinu koguvarastuse väärtusest 'hoiutasu' raames.",
 		item_with_worth = "${label} ($${worth})",
 		select_all = "Vali kõik",
 		deselect_all = "Tühista valik",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["et-EE"] = {
 		sort = "Sordi",
 		player_won_pot = "${name} võitis ${amount} $ ${chance}% tõenäosusega ${timeAgo} tagasi.",
 		the_ticket_was = "Pilet oli ${ticket}.",
-		recent_pots_will_show_here = "Uusimad potid kuvatakse siin."
+		recent_pots_will_show_here = "Uusimad potid kuvatakse siin.",
+		server_id = "Serveri ID, kuhu soovid üle kanda...",
+		transfer_items_to_anoter_person = "Kanna esemed üle teisele isikule."
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		mining_mined_title = "Kaevandatud kivi",
 		mining_mined_details = "${consoleName} kaevandas $ {output}.",
+		mining_mined_details_nothing = "${consoleName} kaevandas vääriskivi, kuid ei leidnud midagi.",
 
 		mining_exploded_title = "Kaevandamise plahvatus",
 		mining_exploded_details = "${consoleName} plahvatas selle ajal, kui püüdis kaevandada vääriskivi.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["et-EE"] = {
 		kissaki_kitchen = "Kissaki köök",
 
 		craft = "Valmistamine",
-		starting = "Alustamine"
+		putting_down_ingredients = "Koostisosade maha panemine",
+
+		pick_up = "Võta üles: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Võta üles: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Valmista riis (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Valmista riis (${completed}%~s~)",
+		preparing_rice_starting = "Riisi valmistamine",
+		preparing_rice = "~g~${name}~s~: Valmistad riisi... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: Valmista täidis (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Valmista täidis (${completed}%~s~)",
+		preparing_fillings_starting = "Täidiste ettevalmistus",
+		preparing_fillings = "~g~${name}~s~: Valmistatakse täidist... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Rullmati ettevalmistus (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Valmistatakse rullmati (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Rullmati ettevalmistus",
+		preparing_rolling_mat = "~g~${name}~s~: Valmistatakse rullmati... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Kokku panemine (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Valmista sushi (${completed}%~s~)",
+		assembling_sushi_starting = "Sushi valmistamine",
+		assembling_sushi = "~g~${name}~s~: Valmistatakse sushit... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Rulli sushi (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Rulli sushi (${completed}%~s~)",
+		rolling_sushi_starting = "Sushi rullimine",
+		rolling_sushi = "~g~${name}~s~: Rullitakse sushit... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Lõika sushi tükkideks (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Tükelda sushi (${completed}%~s~)",
+		slicing_sushi_starting = "Sushi tükeldamine algab",
+		slicing_sushi = "~g~${name}~s~: Tükeldamine... (${completed}%~s~)",
 	},
 
 	riot_mode = {

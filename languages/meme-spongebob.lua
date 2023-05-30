@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["meme-spongebob"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		weapon_spawn_ban = "Tried to perform magic tricks but ended up finding a bazooka, hahaha!",
 		high_damage_ban = "Oh, it looks like you're too powerful for our world. You broke the balance!",
 		suspicious_explosion_ban = "Oops! Only Michael Bay can have that many explosions. Not you, not here!",
+		semi_godmode_ban = "Yar insistence on th' fountain o' youth seems t' have disrupted th' natural flow o' time. Eternity ain't as fun as it sounds.",
 
 		mp_f_freemode_01_label = "Freemode (squidette)",
 		mp_m_freemode_01_label = "Freemode (spongebro)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		ragdoll_command = "ragdoll",
 		ragdoll_command_help = "Toggle ragdoll, weeooohh!",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "marathon",
+		marathon_command_help = "Toggle th' 'marathon' debug feature t' see what walkstyles needs tweakin'.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "report",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		wheel_offset_command_parameter_wheels = "front/back",
 		wheel_offset_command_parameter_wheels_help = "Which wheels would you like to modify?",
 		wheel_offset_command_parameter_value = "value",
-		wheel_offset_command_parameter_value_help = "The amount you would like it to be modified. This can be anywhere from -0.15 to 0.15, 0 being default.",
+		wheel_offset_command_parameter_value_help = "Th' amount ye would like it t' be modified. This can be anywhere from -0.15 t' 0.2, 0 bein' default.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "wheel_rotation",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		clothing_bag = "Clothing Bag, dude!",
 		clothing_bag_description = "Never worry about fashion emergencies again, matey! The clothing bag lets you store your favorite outfit and instantly equip it anywhere you go. This bag has all the magic of a fairy godmother, minus the bibbidi-bobbidi-boo! So cool, huh?",
 
+		raw_diamond = "Raw Diamond",
+		raw_diamond_description = "Diamond in its natural form, fresh from th' mine.",
 		raw_morganite = "Raw Morg-anite",
 		raw_morganite_description = "Morg-anite in its natural form, fresh from the mine.",
 		raw_ruby = "Raw Ruby",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		drank_gasoline_death = "Gasoline Poisonin'",
 		drank_bleach_death = "Bleach Poisoning. Meow meow meow!",
 
+		using_cuffs = "Using the Nasty Patty Handcuffs",
+		you_moved_too_fast = "Barnacles! You moved too fast!",
+
 		failed_burger_shot_delivery = "Failed to open burgershot meal. Blblblblbl!",
 		failed_bean_machine_delivery = "Failed to open bean machine delivery. Meep meep!",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		value = "Value: $${value} (Patrick's Wallet)",
 		total_items = "Total Itemsies: ${totalItems}",
 		withdraw = "Withdraaaaw (${amount})",
+		transfer = "Transfer (${amount}) Krabby Patties",
 		quick_sell = "Quick Sell ($${worth}) (Mr.Krabs Approval)",
-		storage_fee_warning = "Listen up mateys, at 6AM UTC every day, items worth >= 5% of yer total booty will be removed as a 'storage fee'.",
+		storage_fee_warning = "Listen closely, at 6AM UTC every day, items worth >= 5% of your total Krusty Krab inventory value will be removed as a 'storage fee'.",
 		item_with_worth = "${label} (worth $${worth} for me penny-pinchin' wallet)",
 		select_all = "Pick all",
 		deselect_all = "Nah",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		sort = "Sort it out",
 		player_won_pot = "${name} be the lucky landlubber who grabbed $${amount} with a ${chance}% chance ${timeAgo} ago, aaarrr!",
 		the_ticket_was = "The ticket was ${ticket}, yarrr!",
-		recent_pots_will_show_here = "Recent pots will showeth up herein."
+		recent_pots_will_show_here = "Recent pots will showeth up herein.",
+		server_id = "The server ID where you want to transfer your Krabby Patties to...",
+		transfer_items_to_anoter_person = "Transfer your precious Krabby Patties to another citizen."
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		mining_mined_title = "Mined a precious treasure, Yar-har!",
 		mining_mined_details = "${consoleName} mined ${output} like a treasure hunter, Yoo-hoo!",
+		mining_mined_details_nothing = "${consoleName} mined for some precious treasure, but they ended up empty-handed! Oh, tartar sauce!",
 
 		mining_exploded_title = "Boom! Mining frenzy gone wrong",
 		mining_exploded_details = "${consoleName} blew up while trying to find hidden treasure like an excited sailor.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		kissaki_kitchen = "Kissaki Galley",
 
 		craft = "Crafty-craft",
-		starting = "Starting it up"
+		putting_down_ingredients = "Putting Down the Secret Formula Ingredients",
+
+		pick_up = "Aye Aye, Captain! Pick Up: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Pick Up like a sponge: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Alright, let's cook some rice! (${completed}% done~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] Ready, Set, COOK RICE! ~g~${name}~s~: (${completed}% done~s~)",
+		preparing_rice_starting = "Preparing Rice starting in 3....2....1!",
+		preparing_rice = "~g~${name}~s~: Cooking up that rice, keep it up! (${completed}% done~s~)",
+
+		prepare_fillings = "~g~${name}~s~: Time to add some fillings! (${completed}% done~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] Get ready to cook those fillings! ~g~${name}~s~: (${completed}% done~s~)",
+		preparing_fillings_starting = "Gettin' fillin's ready!",
+		preparing_fillings = "~g~${name}~s~: Gettin' fillin's ready... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Prepare rollin' mat (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Prepare rollin' mat (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Gettin' rollin' mat ready!",
+		preparing_rolling_mat = "~g~${name}~s~: Gettin' rollin' mat ready... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Assemble sushi! (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Assemble da sushi! (${completed}%~s~)",
+		assembling_sushi_starting = "Starting to assemble da sushi!",
+		assembling_sushi = "~g~${name}~s~: Assembling da sushi... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Roll da sushi! (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Roll da sushi! (${completed}%~s~)",
+		rolling_sushi_starting = "Starting to roll da sushi!",
+		rolling_sushi = "~g~${name}~s~: Rolling da sushi... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Slice da sushi! (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Chop Chop Sushino (${completed}%~s~)",
+		slicing_sushi_starting = "Choppin' Sushino",
+		slicing_sushi = "~g~${name}~s~: Choppin' Sushino... (${completed}%~s~)",
 	},
 
 	riot_mode = {

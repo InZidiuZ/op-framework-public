@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["meme-rude"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		weapon_spawn_ban = "So, ya thought ya could just pull a rabbit outta the bloody hat, huh ya tosser? Well, looks like ya did one better and found a bloody bazooka. Congrats, you're banned now.",
 		high_damage_ban = "You're Fucking Overpowered. Get Fucking Lost.",
 		suspicious_explosion_ban = "What The Fuck Was That? No Fucking Explosions Allowed!",
+		semi_godmode_ban = "You can't cheat death forever. You messed with the timeline and now you suffer the consequences. Hope eternity ain't boring as shit.",
 
 		mp_f_freemode_01_label = "Freemode (female, don't judge)",
 		mp_m_freemode_01_label = "Freemode (male, if you care)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		ragdoll_command = "ragdoll",
 		ragdoll_command_help = "Toggle fucking ragdoll, bitch.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "marathon",
+		marathon_command_help = "Wanna jog like a superhuman or walk like a sloth? Use this command to tweak your pace to any level of absurdity.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "snitch",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		wheel_offset_command_parameter_wheels = "front/back",
 		wheel_offset_command_parameter_wheels_help = "Which fucking wheels would you like to modify?",
 		wheel_offset_command_parameter_value = "value",
-		wheel_offset_command_parameter_value_help = "The fucking amount you would like it to be modified. This can be anywhere from -0.15 to 0.15, 0 being default.",
+		wheel_offset_command_parameter_value_help = "Adjust the wheels to match the size of your tiny dick or compensate for the lack of it. Use a value between -0.15 to 0.2, with 0 being the inadequate default.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "wheel_rotation",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		clothing_bag = "Clothing Shitbag",
 		clothing_bag_description = "Always look like a badass with this magic bag of clothes. Instantly switch outfits to suit any occasion. No more fashion emergencies, unless you're a pathetic loser who can't find their own style.",
 
+		raw_diamond = "Raw Diamond",
+		raw_diamond_description = "A piece of shiny shit fresh from the dirt, but still worth more than your sorry ass.",
 		raw_morganite = "Raw Morganite",
 		raw_morganite_description = "Fucking Morganite in its natural fucking form, fresh from the fucking mine.",
 		raw_ruby = "Raw Ruby",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		drank_gasoline_death = "You done drank that gasoline like a fuckin' idiot and died. Congrats.",
 		drank_bleach_death = "Fucking Died from Drinking Bleach",
 
+		using_cuffs = "Using Fucking Handcuffs",
+		you_moved_too_fast = "Slow the Fuck Down, You're Moving too Fast.",
+
 		failed_burger_shot_delivery = "Failed to fucking open burgershit meal.",
 		failed_bean_machine_delivery = "Failed to fucking open bean machine delivery.",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		value = "F***ing Value: $${value}",
 		total_items = "Total S***ty Items: ${totalItems}",
 		withdraw = "Take your s***ty items back (${amount})",
+		transfer = "Transfer this Shit (${amount})",
 		quick_sell = "Sell Your S***ty Items for a Crappy $${worth}",
-		storage_fee_warning = "Every f***ing day at 6AM UTC, we're gonna throw away items worth >= 5% of your worthless inventory value as a 'storage fee'. So tough s***.",
+		storage_fee_warning = "Attention Fuckers, every day at 6AM UTC you'll lose any goddamn items worth >= 5% of your fucking inventory value as a 'stupid storage fee'.",
 		item_with_worth = "${label} ($${worth})",
 		select_all = "Select All, You Lazy C**t",
 		deselect_all = "Deselect All, You Tw*t",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		sort = "Sort, You Disorganized F**ker",
 		player_won_pot = "${name} won $${amount} with a f**king ${chance}% chance ${timeAgo} ago. Holy Sh*t, right?",
 		the_ticket_was = "The ticket was ${ticket}. Don't Be a P***y, Take It Now!",
-		recent_pots_will_show_here = "Your Recent Screw-Ups Will Be Displayed Here"
+		recent_pots_will_show_here = "Your Recent Screw-Ups Will Be Displayed Here",
+		server_id = "Type the Fucking server ID you want to transfer to...",
+		transfer_items_to_anoter_person = "Transfer this Shit to Another Fucking Person."
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 		mining_mined_title = "F*cking Mined a Goddamn Gem",
 		mining_mined_details = "${consoleName} just f*cking mined ${output}.",
+		mining_mined_details_nothing = "${consoleName} mined a goddamn gemstone but found jackshit.",
 
 		mining_exploded_title = "F*cking Mining Explosion",
 		mining_exploded_details = "${consoleName} blew the f*ck up while attempting to mine a f*cking gem.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		kissaki_kitchen = "Some Other Asian Kitchen With Fancy Knives",
 
 		craft = "Craft (Are You a Witch?)",
-		starting = "Get Ready to Kick Some Ass"
+		putting_down_ingredients = "Putting Down These Goddamn Ingredients",
+
+		pick_up = "Grab: ~r~${name}",
+		press_to_pick_up = "[${InteractionKey}] Grab: ~r~${name}",
+
+		prepare_rice = "~r~${name}~s~: Get That Rice Cookin' (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~r~${name}~s~: Get That Rice Cookin' (${completed}%~s~)",
+		preparing_rice_starting = "Start Cookin' That Rice!",
+		preparing_rice = "~r~${name}~s~: Cookin' That Rice... (${completed}%~s~)",
+
+		prepare_fillings = "~r~${name}~s~: Choppin' Up Some Fillings (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~r~${name}~s~: Choppin' Up Some Fillings (${completed}%~s~)",
+		preparing_fillings_starting = "Getting shit ready",
+		preparing_fillings = "~g~${name}~s~: Preparing fillings... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Set up that rolling mat (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Prepare the fucking rolling mat (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Getting that fucking rolling mat ready",
+		preparing_rolling_mat = "~g~${name}~s~: Preparing the rolling mat... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Put the damn sushi together (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~r~${name}~s~: Ready to make some fucking sushi (${completed}%~s~)",
+		assembling_sushi_starting = "Time to make some goddamn sushi",
+		assembling_sushi = "~r~${name}~s~: Rolling that sushi dough... (${completed}%~s~)",
+
+		roll_sushi = "~r~${name}~s~: Roll that fucking sushi (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~r~${name}~s~: Roll that fucking sushi (${completed}%~s~)",
+		rolling_sushi_starting = "Rolling the sushi now, bitches",
+		rolling_sushi = "~r~${name}~s~: Bitch I'm rolling that sushi... (${completed}%~s~)",
+
+		slice_sushi = "~r~${name}~s~: Slicing that motherfucking sushi (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~r~${name}~s~: Slice some f*ckin' sushi (${completed}%~s~)",
+		slicing_sushi_starting = "Gettin' ready to slice some good sh*t",
+		slicing_sushi = "~r~${name}~s~: Slicin' dis delicious sh*t... (${completed}%~s~)",
 	},
 
 	riot_mode = {

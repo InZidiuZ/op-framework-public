@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["meme-yoda"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		weapon_spawn_ban = "Pulled a rabbit out of the hat, attempted you did; found a bazooka instead, you did.",
 		high_damage_ban = "Too strong, the force within you is. Disrupting balance of our realm, you are.",
 		suspicious_explosion_ban = "Sorry, a Michael Bay film, this is not. Excessive use of pyrotechnics, not permitted it is.",
+		semi_godmode_ban = "Disrupted the natural flow of time, your insistence on the fountain of youth has. Fun eternity is not, as it sounds.",
 
 		mp_f_freemode_01_label = "Freemode, female is.",
 		mp_m_freemode_01_label = "Freemode, male is.",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		ragdoll_command = "ragdoll, fall like a Jedi you will",
 		ragdoll_command_help = "Ragdoll to toggle, you can.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "Marathon",
+		marathon_command_help = "Toggle 'marathon' debug feature, to tweak the walkstyles see what needs.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "report",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		wheel_offset_command_parameter_wheels = "front/back",
 		wheel_offset_command_parameter_wheels_help = "Which wheels, modify them you want?",
 		wheel_offset_command_parameter_value = "value",
-		wheel_offset_command_parameter_value_help = "Modified amount, anywhere from -0.15 to 0.15, 0 being default. Hmmm.",
+		wheel_offset_command_parameter_value_help = "The amount you want it modified be, this can be anywhere from -0.15 to 0.2, default being 0.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "wheel_rotation",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		clothing_bag = "Clothing Bag, it is",
 		clothing_bag_description = "Never worry about fashion emergencies again! The clothing bag lets you store your favorite outfit and instantly equip it anywhere you go. All the magic of a fairy godmother, minus the bibbidi-bobbidi-boo, this bag has.",
 
+		raw_diamond = "Diamond, raw",
+		raw_diamond_description = "Formed in nature, diamond is. Fresh from mine it is.",
 		raw_morganite = "Raw Morganite, hmm",
 		raw_morganite_description = "Morganite in its natural form, fresh from the mine, hmm",
 		raw_ruby = "Raw Ruby, mm",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		drank_gasoline_death = "Gasoline poisoning, you have.",
 		drank_bleach_death = "Poisoned by bleach, you have been.",
 
+		using_cuffs = "Handcuffs, using them you are.",
+		you_moved_too_fast = "Moved too fast, you have.",
+
 		failed_burger_shot_delivery = "Open burgershot meal, failed have you.",
 		failed_bean_machine_delivery = "Open bean machine delivery, failed have you.",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		value = "Value, it has: $${value}",
 		total_items = "Total items, there are: ${totalItems}",
 		withdraw = "Withdraw (${amount}), you can",
+		transfer = "(${amount}) Transfer, you will.",
 		quick_sell = "Quick sell ($${worth}), you can",
-		storage_fee_warning = "Warning, at 6AM UTC every day, items worth >= 5% of your total inventory value, as 'storage fee' removed, they will be.",
+		storage_fee_warning = "Warn you, we must. At 6AM UTC every day, items worth >= 5% of your total inventory value will be removed as a 'storage fee'.",
 		item_with_worth = "${label} (${worth} credits are worth)",
 		select_all = "All, select",
 		deselect_all = "All, remove selection",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		sort = "Arrange, I shall",
 		player_won_pot = "${name} victory, ${amount} credits won with a ${chance}% chance, ${timeAgo} ago.",
 		the_ticket_was = "The ticket, it was ${ticket}.",
-		recent_pots_will_show_here = "Recent pots, here they will show up"
+		recent_pots_will_show_here = "Recent pots, here they will show up",
+		server_id = "The server ID, transfer to you want...",
+		transfer_items_to_anoter_person = "Transfer items to another person, you can."
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		mining_mined_title = "Gem Mined, You Have",
 		mining_mined_details = "${consoleName} mined ${output}, ${pronoun} did.",
+		mining_mined_details_nothing = "${consoleName} mined a gemstone, but found nothing, they have.",
 
 		mining_exploded_title = "Mining Explosion, There Was",
 		mining_exploded_details = "${consoleName} blew up, ${pronoun} did, while attempting to mine a gem.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		kissaki_kitchen = "Kissaki Kitchen, this is called",
 
 		craft = "Craft, you must",
-		starting = "Starting, it is"
+		putting_down_ingredients = "Ingredients, putting down you are.",
+
+		pick_up = "Pick Up, you shall: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Pick Up, you shall: ~g~${name}",
+
+		prepare_rice = "Rice, you shall prepare, young padawan: ~g~${name}~s~ (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] Prepare Rice, you shall: ~g~${name}~s~ (${completed}%~s~)",
+		preparing_rice_starting = "Preparing Rice, we are",
+		preparing_rice = "Rice, we are preparing, yes: ~g~${name}~s~... (${completed}%~s~)",
+
+		prepare_fillings = "Fillings, you shall prepare, hmmm: ~g~${name}~s~ (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] Prepare Fillings, you shall: ~g~${name}~s~ (${completed}%~s~)",
+		preparing_fillings_starting = "Fillings, preparing are we...",
+		preparing_fillings = "~g~${name}~s~: Fillings, preparing... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Rolling mat, prepare you must (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Rolling mat, prepare you must (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Rolling mat, preparing are we...",
+		preparing_rolling_mat = "~g~${name}~s~: Rolling mat, preparing... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Sushi, assemble we must (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Sushi, assemble (${completed}%~s~)",
+		assembling_sushi_starting = "Sushi, assembling is starting",
+		assembling_sushi = "~g~${name}~s~: Sushi, assembling... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Sushi, roll (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Sushi, roll (${completed}%~s~)",
+		rolling_sushi_starting = "Sushi, rolling is starting",
+		rolling_sushi = "~g~${name}~s~: Sushi, rolling... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Sushi, slice (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Sushi slice, ${completed}%~s~ it is.",
+		slicing_sushi_starting = "Slicing Sushi, starting it is.",
+		slicing_sushi = "~g~${name}~s~: Slicing Sushi, ${completed}%~s~ complete it is.",
 	},
 
 	riot_mode = {

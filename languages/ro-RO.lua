@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 10 (do not change)
+-- AUTO LOCALES: 11 (do not change)
 
 OP.Global.Locales.Languages["ro-RO"] = {
 	-- configuration settings for language
@@ -710,6 +710,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		weapon_spawn_ban = "Am încercat să scoatem un iepure din pălărie, am găsit în schimb un bazooka.",
 		high_damage_ban = "Balanta puterii s-a înclinat prea mult în favoarea ta, perturbând echilibrul universului nostru.",
 		suspicious_explosion_ban = "Scuze, dar acesta nu este un film Michael Bay. Utilizarea exagerată a efectelor pirotehnice nu este permisă.",
+		semi_godmode_ban = "Insistența ta asupra fântânii tinereții pare să fi perturbat fluxul natural al timpului. Eternitatea nu este atât de distractivă pe cât pare.",
 
 		mp_f_freemode_01_label = "Mod liber (feminin)",
 		mp_m_freemode_01_label = "Mod liber (masculin)",
@@ -891,6 +892,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		ragdoll_command = "jucărie",
 		ragdoll_command_help = "Activeaza/dezactiveaza ragdoll.",
 		ragdoll_command_substitutes = "",
+
+		-- animations/walkstyles
+		marathon_command = "maraton",
+		marathon_command_help = "Comută funcția de depanare „maraton” pentru a vedea ce atribute de mers necesită ajustări.",
+		marathon_command_substitutes = "",
 
 		-- base/admin
 		report_command = "report",
@@ -3471,7 +3477,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		wheel_offset_command_parameter_wheels = "față/spate",
 		wheel_offset_command_parameter_wheels_help = "Care roți doresti sa le modifici?",
 		wheel_offset_command_parameter_value = "valoare",
-		wheel_offset_command_parameter_value_help = "Valoarea cu care doresti sa modifieci, poate fi intre -0.15 si 0.15, 0 fiind valoarea implicita.",
+		wheel_offset_command_parameter_value_help = "Valoarea cu care dorești să o modifici. Aceasta poate fi oriunde între -0,15 și 0,2, 0 fiind implicită.",
 		wheel_offset_command_substitutes = "",
 
 		wheel_rotation_command = "rotație_roți",
@@ -6772,6 +6778,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		clothing_bag = "Geantă de haine",
 		clothing_bag_description = "Nu te mai îngrijora niciodată de urgenta modei! Geanta de haine îți permite să stochezi ținuta ta preferată și să o folosești imediat oriunde te duci. Această geantă are toată magia unei zâne mamă, dar fără bibbidi-bobbidi-boo.",
 
+		raw_diamond = "Diamant Brut",
+		raw_diamond_description = "Diamantul în forma sa naturală, proaspăt scos din mină.",
 		raw_morganite = "Morganit brut",
 		raw_morganite_description = "Morganit in forma sa naturala, proaspat scos din mina.",
 		raw_ruby = "Rubin brut",
@@ -8031,6 +8039,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		drank_gasoline_death = "Otrăvire cu benzină",
 		drank_bleach_death = "Otrăvire cu clor",
 
+		using_cuffs = "Se folosesc catusele",
+		you_moved_too_fast = "Te-ai miscat prea repede.",
+
 		failed_burger_shot_delivery = "Eroare la deschiderea pachetului de la Burger Shot.",
 		failed_bean_machine_delivery = "Eroare la deschiderea pachetului de la Bean Machine.",
 
@@ -8074,8 +8085,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		value = "Valoare: $${value}",
 		total_items = "Total obiecte: ${totalItems}",
 		withdraw = "Retragere (${amount})",
+		transfer = "Transfer (${amount})",
 		quick_sell = "Vânzare rapidă ($${worth})",
-		storage_fee_warning = "La fiecare 6 AM UTC, obiectele în valoare de >= 5% din valoarea totală a inventarului dvs. vor fi eliminate în calitate de 'taxă de depozitare'.",
+		storage_fee_warning = "La ora 6 dimineata UTC, in fiecare zi, vor fi eliminate obiectele cu o valoare >= 5% din valoarea totala a inventarului tau ca 'taxa de depozitare'.",
 		item_with_worth = "${label} (${worth} lei)",
 		select_all = "Selectează tot",
 		deselect_all = "Deselectează tot",
@@ -8086,7 +8098,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		sort = "Sortare",
 		player_won_pot = "${name} a câștigat ${amount} lei cu o șansă de ${chance}% ${timeAgo}.",
 		the_ticket_was = "Biletul a fost ${ticket}.",
-		recent_pots_will_show_here = "Cea mai recentă oală se va afișa aici."
+		recent_pots_will_show_here = "Cea mai recentă oală se va afișa aici.",
+		server_id = "ID-ul serverului unde vrei sa faci transferul...",
+		transfer_items_to_anoter_person = "Transfera obiecte altei persoane."
 	},
 
 	jail = {
@@ -8433,6 +8447,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		mining_mined_title = "Gema Minerită",
 		mining_mined_details = "${consoleName} a minerit ${output}.",
+		mining_mined_details_nothing = "${consoleName} a minat o piatra pretioasa, dar nu a gasit nimic.",
 
 		mining_exploded_title = "Explozie la Minerit",
 		mining_exploded_details = "${consoleName} a cauzat o explozie încercând să mineze o gemă.",
@@ -9863,7 +9878,40 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		kissaki_kitchen = "Bucătărie Kissaki",
 
 		craft = "Craft",
-		starting = "Începere"
+		putting_down_ingredients = "Asezarea ingredientelor",
+
+		pick_up = "Ridică: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Ridică: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Pregătește orezul (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Pregătește orezul (${completed}%~s~)",
+		preparing_rice_starting = "Se pregătește orezul",
+		preparing_rice = "~g~${name}~s~: Se pregătește orezul... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: Pregătește umplutura (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Pregătește umplutura (${completed}%~s~)",
+		preparing_fillings_starting = "Se pregătesc umpluturile",
+		preparing_fillings = "~g~${name}~s~: Se pregătesc umpluturile... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Pregătiți suportul de rulare (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Pregătiți suportul de rulare (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Se pregătește suportul de rulare",
+		preparing_rolling_mat = "~g~${name}~s~: Se pregătește suportul de rulare... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Asamblează sushi (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Asamblează sushi (${completed}%~s~)",
+		assembling_sushi_starting = "Se asamblează sushi",
+		assembling_sushi = "~g~${name}~s~: Se assemblează sushi... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Rulează sushi (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Rulează sushi (${completed}%~s~)",
+		rolling_sushi_starting = "Se rulează sushi",
+		rolling_sushi = "~g~${name}~s~: Se rulează sushi...(${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Feliază sushi (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Feliați Sushi (${completed}%~s~)",
+		slicing_sushi_starting = "Se Feliază Sushi",
+		slicing_sushi = "~g~${name}~s~: Se Feliază Sushi... (${completed}%~s~)",
 	},
 
 	riot_mode = {
