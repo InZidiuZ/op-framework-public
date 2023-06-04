@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["meme-rude"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		remain_money = "You still have $${remain}, bitch.",
 		claimed = "Fucking Claimed",
 		claim = "Claim that shit",
-		streak_reward = "When your streak is 7 or higher, you'll get another fucking free daily spin at the Lucky Wheel, ya lucky bastard!",
+		streak_reward_one = "When you hit 7 days straight, you'll get another fucking spin on that goddamn Lucky Wheel.",
+		streak_reward_two = "Get your ass to 30 days straight and you might just win a sweet-ass ride on your fourth task.",
+
+		special_vehicle_won = "Holy fucking shit, you won a special ride! Check that shit out in your damn garage!",
 
 		reset_daily_activities_no_permissions = "Some pussy player tried to reset their daily activities without proper fucking permissions.",
 		reset_daily_activities = "Daily Activities Reset...What a fucking amateur.",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		rpm = "fucking rpm",
 		degrees = " fucking °C",
 		degrees_f = " fucking °F",
+		npc_kills = "You've murdered a staggering ${kills} of these fucking locals.",
 		steps_walked_deaths = "${stepsWalked} fucking steps ~t~/~w~ ${deaths} fucking downs",
 		altitude_temperature = "${altitude} fucking ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Oxygen left: ${timer}, Bitch!",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		invalid_first_name = "What the fuck is wrong with you? Your first name is invalid, dumbass! (2 to 100 characters).",
 		invalid_last_name = "Ha! Your last name is also invalid, idiot! (2 to 100 characters).",
 		invalid_date_of_birth = "No fucking way, your date of birth is missing or invalid.",
-		invalid_backstory = "Your backstory is bullshit! It must be between 1 to 5,000 characters.",
+		weird_date_of_birth = "What the fuck kind of birthday is that shit? Try fucking picking a reasonable date.",
+		invalid_backstory = "You're missing your goddamn backstory or it's too fucking long (max 5,000 characters).",
+		backstory_too_short = "Your fucking backstory is too fucking short (minimum of ${backstory} fucking characters). Fuck off and write something worth reading, asshole.",
 
 		bad_words = "Holy shit! Your character name or backstory is so fucked up with bad words.",
 		disallowed_name = "Your character name contains some fucking disallowed words, you dumbass.",

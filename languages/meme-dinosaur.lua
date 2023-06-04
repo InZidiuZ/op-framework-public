@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["meme-dinosaur"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		remain_money = "$${remain} rawr",
 		claimed = "Roar!",
 		claim = "Roar",
-		streak_reward = "When your streak is 7 or higher, you will get another free daily spin at the Lucky Wheel. Rawr!",
+		streak_reward_one = "When your streak thumps to 7 or higher, you get another free daily spin at the Lucky Wheel.",
+		streak_reward_two = "When your streak bashes 30 or higher, you may win a special vehicle on your 4th errand.",
+
+		special_vehicle_won = "You snatched a special vehicle! Locate it at your cave.",
 
 		reset_daily_activities_no_permissions = "Player attempted to reset their daily activities without proper permissions. Rawr!",
 		reset_daily_activities = "Reset Daily Activities. Rawr!",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		rpm = "rpm. *engine rev*",
 		degrees = "°C. *hiss*",
 		degrees_f = "°F. *roar*",
+		npc_kills = "${kills} local beasts taken down",
 		steps_walked_deaths = "${stepsWalked} steps ~t~/~w~ ${deaths} downs. *shake head*",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}. *exhale*",
 		scuba_timer = "Rawr! Oxygen left: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		invalid_first_name = "Me no understand... Missing or invalid first name (2 to 100 characters).",
 		invalid_last_name = "Me no understand... Missing or invalid last name (2 to 100 characters).",
 		invalid_date_of_birth = "Me no understand... Missing or invalid date of birth.",
-		invalid_backstory = "Me no understand... Missing or invalid backstory (1 to 5,000 characters).",
+		weird_date_of_birth = "Select a sensible hatch-date, will ya?",
+		invalid_backstory = "No or nonsensical backstory (max 5,000 characters).",
+		backstory_too_short = "Rawr! Your backstory too short. Me always hungry. Need ${backstory} characters.",
 
 		bad_words = "Me no happy... There are some bad words in your character name or backstory.",
 		disallowed_name = "Your character name contains words not found in Dino Speak.",

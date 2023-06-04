@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["bn-BD"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		remain_money = "${remain} টাকা অবশিষ্ট",
 		claimed = "দাবি করা হয়েছে",
 		claim = "দাবি করুন",
-		streak_reward = "যখন আপনার সতর্কতা 7 বা তার বেশী হবে, তখন লাকি হুইলে আবার একটি ফ্রি ডেইলি স্পিন পাবেন।",
+		streak_reward_one = "যখন আপনার স্ট্রিক 7 বা তার বেশি হবে, তখন আপনি লাকি ওয়ালের উপর আরও একটি ফ্রি ডেইলি স্পিন পাবেন।",
+		streak_reward_two = "যখন আপনার স্ট্রিক 30 বা তার বেশি হবে, তখন আপনার 4 তম টাস্কে একটি বিশেষ গাড়ি জিতার সুযোগ থাকবে।",
+
+		special_vehicle_won = "আপনি একটি বিশেষ গাড়ি জিতেছেন! আপনি এটি আপনার গ্যারেজে পাবেন।",
 
 		reset_daily_activities_no_permissions = "গ্রাহক প্রয়োজনীয় অনুমতি না থাকে তাদের দৈনন্দিন কাজগুলো রিসেট করার চেষ্টা করেছেন।",
 		reset_daily_activities = "দৈনন্দিন কাজগুলো রিসেট করুন।",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		rpm = "এক মিনিটের সংখ্যাকে নির্দেশ করতে ব্যবহৃত হয়।",
 		degrees = "ডিগ্রি সেলসিয়াস",
 		degrees_f = "ডিগ্রি ফারেনহাইট",
+		npc_kills = "${kills} লোকদের হত্যা করা হয়েছে",
 		steps_walked_deaths = "${stepsWalked} পদক্ষেপ ~t~/~w~ ${deaths} নেতার আসন।",
 		altitude_temperature = "${altitude} ${একক} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "বাকি অক্সিজেন: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		invalid_first_name = "প্রথম নাম অনুপস্থিত বা অবৈধ (২ থেকে ১০০ অক্ষর).",
 		invalid_last_name = "শেষ নাম অনুপস্থিত বা অবৈধ (২ থেকে ১০০ অক্ষর).",
 		invalid_date_of_birth = "জন্ম তারিখ অনুপস্থিত বা অবৈধ।",
-		invalid_backstory = "ব্যাকস্টোরি অনুপস্থিত বা অবৈধ (১ থেকে ৫,০০০ অক্ষর).",
+		weird_date_of_birth = "একটি জায়গাবদ্ধ জন্ম তারিখ নির্বাচন করতে চেষ্টা করুন।",
+		invalid_backstory = "অকার্যকর ব্যাকস্টোরি (সর্বাধিক 5,000 অক্ষর)।",
+		backstory_too_short = "আপনার পূর্বচরিত্রটি অত্যন্ত সংক্ষিপ্ত (সর্বনিম্ন ${backstory} অক্ষর).",
 
 		bad_words = "আপনার চরিত্রের নাম বা ব্যাকস্টোরি এ কিছু খারাপ শব্দ রয়েছে।",
 		disallowed_name = "আপনার চরিত্রের নামে কিছু অনুমোদিত শব্দ নেই।",

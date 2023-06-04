@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["en-GB"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		remain_money = "$${remain} remain",
 		claimed = "Claimed",
 		claim = "Claim",
-		streak_reward = "When your streak is 7 or higher, you will get another free daily spin at the Lucky Wheel.",
+		streak_reward_one = "When your streak is 7 or higher, you will get an additional free daily spin at the Lucky Wheel.",
+		streak_reward_two = "When your streak is 30 or higher, you will have a chance of winning a unique vehicle on your 4th task.",
+
+		special_vehicle_won = "You have won a unique vehicle! You can find it in your garage.",
 
 		reset_daily_activities_no_permissions = "Player attempted to reset their daily activities without proper permissions.",
 		reset_daily_activities = "Reset Daily Activities.",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		rpm = "rpm",
 		degrees = "°C",
 		degrees_f = "°F",
+		npc_kills = "${kills} local residents killed.",
 		steps_walked_deaths = "${stepsWalked} steps ~t~/~w~ ${deaths} downs",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Oxygen left: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		invalid_first_name = "Missing or invalid first name (2 to 100 characters).",
 		invalid_last_name = "Missing or invalid last name (2 to 100 characters).",
 		invalid_date_of_birth = "Missing or invalid date of birth.",
-		invalid_backstory = "Missing or invalid backstory (1 to 5,000 characters).",
+		weird_date_of_birth = "Please choose a sensible date of birth.",
+		invalid_backstory = "Backstory missing or invalid (max 5,000 characters).",
+		backstory_too_short = "Your backstory is too short (minimum ${backstory} characters).",
 
 		bad_words = "There are some bad words in your character name or backstory.",
 		disallowed_name = "There are some disallowed words in your character name.",

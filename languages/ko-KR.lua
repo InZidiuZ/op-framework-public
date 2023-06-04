@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["ko-KR"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		remain_money = "${remain}불 남음",
 		claimed = "수령 완료",
 		claim = "수령",
-		streak_reward = "일일 활동을 7일 이상 연속으로 완료하면, 럭키 휠에서 무료로 또 하나를 돌릴 수 있습니다.",
+		streak_reward_one = "연속으로 7번 이상 참여하면 행운의 바퀴에서 무료 스핀 기회를 더 제공합니다.",
+		streak_reward_two = "연속으로 30번 이상 참여하면 4번째 작업에서 특별 차량을 획득할 기회가 주어집니다.",
+
+		special_vehicle_won = "특별 차량을 획득했습니다! 차고에서 확인하실 수 있습니다.",
 
 		reset_daily_activities_no_permissions = "플레이어가 적절한 권한 없이 일일 활동을 재설정하려고 했습니다.",
 		reset_daily_activities = "일일 활동 초기화",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		rpm = "RPM",
 		degrees = "°C",
 		degrees_f = "°F",
+		npc_kills = "${kills}명의 지역 주민이 살해되었습니다.",
 		steps_walked_deaths = "${stepsWalked} 걸음 ~t~/~w~ 죽은 횟수 ${deaths}",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "남은 산소: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		invalid_first_name = "이름이 누락되었거나 유효하지 않습니다 (2~100자).",
 		invalid_last_name = "성이 누락되었거나 유효하지 않습니다 (2~100자).",
 		invalid_date_of_birth = "생년월일이 누락되었거나 유효하지 않습니다.",
-		invalid_backstory = "배경 이야기가 누락되었거나 유효하지 않습니다 (1~5,000자).",
+		weird_date_of_birth = "적절한 생년월일을 선택해주세요.",
+		invalid_backstory = "누락 및 잘못된 배경 이야기입니다 (최대 5,000자).",
+		backstory_too_short = "당신의 소개는 너무 짧습니다 (최소 ${backstory}자).",
 
 		bad_words = "캐릭터 이름이나 이야기에 비속어가 포함되어 있습니다.",
 		disallowed_name = "캐릭터 이름에 금지된 단어가 포함돼 있습니다.",

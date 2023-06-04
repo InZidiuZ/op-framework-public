@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["pt-BR"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		remain_money = "Restam $${remain}",
 		claimed = "Reivindicado",
 		claim = "Reivindicar",
-		streak_reward = "Quando sua sequência for de 7 ou mais, você receberá outra rodada grátis diária na Roda da Sorte.",
+		streak_reward_one = "Quando a sua sequência for de 7 ou mais, você receberá outra rodada gratuita no Lucky Wheel.",
+		streak_reward_two = "Quando a sua sequência for de 30 ou mais, você terá a chance de ganhar um veículo especial na sua 4ª tarefa.",
+
+		special_vehicle_won = "Você ganhou um veículo especial! Você pode encontrá-lo na sua garagem.",
 
 		reset_daily_activities_no_permissions = "Jogador tentou redefinir suas atividades diárias sem permissão adequada.",
 		reset_daily_activities = "Redefinir Atividades Diárias.",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		rpm = "RPM",
 		degrees = "°C",
 		degrees_f = "°F",
+		npc_kills = "${kills} locais assassinados",
 		steps_walked_deaths = "${stepsWalked} passos ~t~/~w~ ${deaths} mortes",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Oxigênio restante: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		invalid_first_name = "Nome inválido ou faltando (2 a 100 caracteres).",
 		invalid_last_name = "Sobrenome inválido ou faltando (2 a 100 caracteres).",
 		invalid_date_of_birth = "Data de nascimento inválida ou faltando.",
-		invalid_backstory = "História pessoal inválida ou faltando (1 a 5.000 caracteres).",
+		weird_date_of_birth = "Tente escolher uma data de nascimento razoável.",
+		invalid_backstory = "História ausente ou inválida (máx. 5.000 caracteres).",
+		backstory_too_short = "Sua história é muito curta (min ${backstory} caracteres).",
 
 		bad_words = "Existem palavras ofensivas no nome ou história pessoal do personagem.",
 		disallowed_name = "Há algumas palavras não permitidas no nome do seu personagem.",

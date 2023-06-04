@@ -5475,7 +5475,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		remain_money = "$${remain} remain",
 		claimed = "Claimed",
 		claim = "Claim",
-		streak_reward = "When your streak is 7 or higher, you will get another free daily spin at the Lucky Wheel.",
+		streak_reward_one = "When your streak is 7 or higher, you will get another free daily spin at the Lucky Wheel.",
+		streak_reward_two = "When your streak is 30 or higher, you will have a chance of winning a special vehicle on your 4th task.",
+
+		special_vehicle_won = "You have won a special vehicle! You can find it in your garage.",
 
 		reset_daily_activities_no_permissions = "Player attempted to reset their daily activities without proper permissions.",
 		reset_daily_activities = "Reset Daily Activities.",
@@ -6225,6 +6228,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		rpm = "rpm",
 		degrees = "°C",
 		degrees_f = "°F",
+		npc_kills = "${kills} locals murdered",
 		steps_walked_deaths = "${stepsWalked} steps ~t~/~w~ ${deaths} downs",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Oxygen left: ${timer}",
@@ -8242,7 +8246,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		invalid_first_name = "Missing or invalid first name (2 to 100 characters).",
 		invalid_last_name = "Missing or invalid last name (2 to 100 characters).",
 		invalid_date_of_birth = "Missing or invalid date of birth.",
-		invalid_backstory = "Missing or invalid backstory (1 to 5,000 characters).",
+		weird_date_of_birth = "Try picking a reasonable date of birth.",
+		invalid_backstory = "Missing or invalid backstory (max 5,000 characters).",
+		backstory_too_short = "Your backstory is too short (min ${backstory} characters).",
 
 		bad_words = "There are some bad words in your character name or backstory.",
 		disallowed_name = "There are some disallowed words in your character name.",

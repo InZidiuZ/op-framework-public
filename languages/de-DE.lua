@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["de-DE"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["de-DE"] = {
 		remain_money = "Es verbleiben $${remain}",
 		claimed = "Eingefordert",
 		claim = "Einfordern",
-		streak_reward = "Wenn dein Streak 7 oder höher ist, bekommst du einen weiteren kostenlosen täglichen Dreh am Glücksrad.",
+		streak_reward_one = "Wenn dein Strähnen-Bonus 7 oder höher ist, erhältst du einen weiteren kostenlosen täglichen Spin am Glücksrad.",
+		streak_reward_two = "Wenn dein Strähnen-Bonus 30 oder höher ist, hast du die Chance, bei deiner vierten Aufgabe ein spezielles Fahrzeug zu gewinnen.",
+
+		special_vehicle_won = "Du hast ein spezielles Fahrzeug gewonnen! Du findest es in deiner Garage.",
 
 		reset_daily_activities_no_permissions = "Spieler hat versucht, seine täglichen Aktivitäten ohne angemessene Berechtigung zurückzusetzen.",
 		reset_daily_activities = "Tägliche Aktivitäten zurücksetzen.",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["de-DE"] = {
 		rpm = "U/min",
 		degrees = "°C",
 		degrees_f = "°F",
+		npc_kills = "${kills} Einheimische ermordet",
 		steps_walked_deaths = "${stepsWalked} Schritte ~t~/~w~ ${deaths} Tode",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Sauerstoff verbleibend: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["de-DE"] = {
 		invalid_first_name = "Fehlender oder ungültiger Vorname (2 bis 100 Zeichen).",
 		invalid_last_name = "Fehlender oder ungültiger Nachname (2 bis 100 Zeichen).",
 		invalid_date_of_birth = "Fehlendes oder ungültiges Geburtsdatum.",
-		invalid_backstory = "Fehlende oder ungültige Hintergrundgeschichte (1 bis 5.000 Zeichen).",
+		weird_date_of_birth = "Versuche es mit einem vernünftigen Geburtsdatum.",
+		invalid_backstory = "Fehlende oder ungültige Hintergrundgeschichte (maximal 5.000 Zeichen).",
+		backstory_too_short = "Deine Hintergrundgeschichte ist zu kurz (mindestens ${backstory} Zeichen).",
 
 		bad_words = "Es sind einige unangemessene Wörter in Ihrem Charakternamen oder in der Hintergrundgeschichte enthalten.",
 		disallowed_name = "Es gibt einige unzulässige Wörter in Ihrem Charakternamen.",

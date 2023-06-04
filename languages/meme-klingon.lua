@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["meme-klingon"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		remain_money = "vIIngu' ${remain}",
 		claimed = "Quth",
 		claim = "Qum",
-		streak_reward = "QoghQoylu'be' tIn chorgh 7, cha'logh lucky wheel je.",
+		streak_reward_one = "Qapla'! When your streak is 7 or higher, you will get another free daily spin at the Lucky Wheel.",
+		streak_reward_two = "Qapla'! When your streak is 30 or higher, you will have a chance of winning a special vehicle on your 4th task.",
+
+		special_vehicle_won = "Heghlu'meH QaQ jajvam! You have won a special vehicle! You can find it in your garage.",
 
 		reset_daily_activities_no_permissions = "Player ghoghQo' daily activities reSet Qav je ghItlh permissions.",
 		reset_daily_activities = "Daily Activities reSet.",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		rpm = "rpm",
 		degrees = "°C",
 		degrees_f = "°F",
+		npc_kills = "${kills} maHvaD Hurgh 'oH je",
 		steps_walked_deaths = "${stepsWalked} DuQuch ~t~/~w~ ${deaths} 'opDu'",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "loD vIneH: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		invalid_first_name = "roDvam wo' Qapbe' (2 ghopDu'roS je).",
 		invalid_last_name = "qIbDaj wo' Qapbe' (2 ghopDu'roS je).",
 		invalid_date_of_birth = "nobta' wo' Qapbe'.",
-		invalid_backstory = "ghor wo' Qapbe' (1 to 5,000 ghItlhpu' je).",
+		weird_date_of_birth = "yuQjIjDIvI' neH Qay'be'.",
+		invalid_backstory = "vetlh Qob Sep (max 5,000 wIv).",
+		backstory_too_short = "tlhIngan Hol vIjatlhlaHbe'chugh (qaS ${backstory}).",
 
 		bad_words = "roDvam yIn ngeHbe'chughbe'chaj Hoch ghom.",
 		disallowed_name = "qurgh pejatlh Qo'noS laHbe'",

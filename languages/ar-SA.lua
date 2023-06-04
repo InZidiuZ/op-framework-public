@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["ar-SA"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		remain_money = "${remain} دولار تبقى",
 		claimed = "تم الاستلام",
 		claim = "استلام",
-		streak_reward = "عندما تكون السلسلة الخاصة بك 7 أيام أو أكثر ، ستحصل على دورة مجانية إضافية يوميًا في العجلة الحظوظة.",
+		streak_reward_one = "عندما يصل عدد أيامك المتتالية إلى 7 أيام فأعلى، ستحصل على لفة مجانية إضافية عند الدوران على العجلة الحظوظية.",
+		streak_reward_two = "عندما يصل عدد أيامك المتتالية إلى 30 يومًا أو أكثر، سيكون لديك فرصة للفوز بمركبة خاصة في المهمة الرابعة.",
+
+		special_vehicle_won = "لقد فزت بمركبة خاصة! يمكنك العثور عليها في كراجك.",
 
 		reset_daily_activities_no_permissions = "حاول اللاعب إعادة تعيين نشاطاته اليومية بدون أذونات كافية.",
 		reset_daily_activities = "إعادة تعيين النشاطات اليومية.",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		rpm = "د/دقيقة",
 		degrees = "درجة مئوية",
 		degrees_f = "درجة فهرنهايت",
+		npc_kills = "${kills} محليين قتلوا",
 		steps_walked_deaths = "${stepsWalked} خطوةً ~t~/~w~ ${deaths} موت",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "الأكسجين المتبقي: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		invalid_first_name = "اسم الشخصية المتخذة غير صالح أو مفقود (من 2 إلى 100 حرف).",
 		invalid_last_name = "اسم العائلة المتخذ غير صالح أو مفقود (من 2 إلى 100 حرف).",
 		invalid_date_of_birth = "تاريخ الميلاد غير صالح أو مفقود.",
-		invalid_backstory = "حكاية الشخصية المتخذة غير صالحة أو ناقصة (من 1 إلى 5,000 حرف).",
+		weird_date_of_birth = "يرجى اختيار تاريخ ميلاد معقول.",
+		invalid_backstory = "القصة الشخصية غير صحيحة أو ناقصة (يصل إلى 5000 حرف).",
+		backstory_too_short = "السيرة الذاتية الخاصة بك قصيرة جداً (الحد الأدنى ${backstory} حرفًا).",
 
 		bad_words = "يحتوي اسم الشخصية أو حكايتها على كلمات غير مرغوبة.",
 		disallowed_name = "هناك بعض الكلمات الممنوعة في اسم الشخصية الخاصة بك.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["meme-1929"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		remain_money = "Remains $${remain}",
 		claimed = "Claimed",
 		claim = "Claim",
-		streak_reward = "When your streak reaches 7 or more, you will receive an additional free daily spin on the Lucky Wheel.",
+		streak_reward_one = "When your streak reaches 7 or more, you can spin the Lucky Wheel again for free.",
+		streak_reward_two = "When your streak reaches 30 or more, you have a chance to win a special vehicle on your 4th task.",
+
+		special_vehicle_won = "Congratulations! You have won a special vehicle! You can find it in your garage.",
 
 		reset_daily_activities_no_permissions = "Player attempted to reset their daily activities without proper permissions.",
 		reset_daily_activities = "Reset Daily Activities.",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		rpm = "RPM",
 		degrees = "°F",
 		degrees_f = "°C",
+		npc_kills = "${kills} locals have been killed.",
 		steps_walked_deaths = "${stepsWalked} steps ~t~/~w~ ${deaths} deaths",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Oxygen remaining: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		invalid_first_name = "Missing or invalid given name (2 to 100 characters)",
 		invalid_last_name = "Missing or invalid family name (2 to 100 characters)",
 		invalid_date_of_birth = "Missing or invalid date of birth",
-		invalid_backstory = "Missing or invalid personal history (1 to 5,000 characters)",
+		weird_date_of_birth = "Please choose a reasonable date of birth.",
+		invalid_backstory = "Your backstory is either missing or invalid (max 5,000 characters).",
+		backstory_too_short = "Thou hast not shared enough of thy history (min ${backstory} characters art required).",
 
 		bad_words = "There are inappropriate words in your character name or backstory",
 		disallowed_name = "There are some disallowed words in thy moniker.",

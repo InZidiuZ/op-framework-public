@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["ne-NP"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		remain_money = "$${remain} बाँकी",
 		claimed = "अभिकथन गरियो",
 		claim = "अभिकथन गर्नुहोस्",
-		streak_reward = "जब तपाईंको स्ट्रीक 7 वा उच्च भएको हुन्छ, तपाईंलाई लकी व्हिलमा अर्को निःशुल्क दैनिक स्पिन प्राप्त हुनेछ।",
+		streak_reward_one = "तपाईंको सक्रियता 7 वा अधिक भएमा, तपाईंलाई भाग्यशाली चक्रमा फेरि निःशुल्क घुम्ती प्राप्त हुनेछ।",
+		streak_reward_two = "तपाईंको सक्रियता 30 वा अधिक भएमा, तपाइँको 4 औं मामलामा एक विशेष गाडी जित्ने संभावना हुनेछ।",
+
+		special_vehicle_won = "तपाईंले एक विशेष गाडी जित्नु भयो! तपाईंको ग्यारेजमा त्यसलाई पाउन सक्नुहुन्छ।",
 
 		reset_daily_activities_no_permissions = "खिलाडीले उचित अनुमति नभएको कारण वेरिफाई गर्न नसकेको छ, त्यसैले उनले त्यहाँको दैनिक कार्यक्रमहरू रिसेट गर्ने प्रयास गरेका छन्।",
 		reset_daily_activities = "दैनिक क्रियाकलापहरू रिसेट गर्नुहोस्।",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		rpm = "आरपीएम",
 		degrees = "°C",
 		degrees_f = "°F",
+		npc_kills = "${किल्स} स्थानीय नागरिकहरू हत्या गरिएको",
 		steps_walked_deaths = "${stepsWalked} कदम ~t~/~w~ ${deaths} डाउनहरु",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "अक्सिजन बाँकीः ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		invalid_first_name = "पहिलो नाम नभएको वा अवैध छ (२ देखि १०० ​​अक्षरहरू)।",
 		invalid_last_name = "अन्तिम नाम नभएको वा अवैध छ (२ देखि १०० ​​अक्षरहरू)।",
 		invalid_date_of_birth = "जन्म मिति नभएको वा अवैध छ।",
-		invalid_backstory = "ब्याकस्टोरी मिसिंग वा अवैध छ (१ देखि ५,००० अक्षरहरू)।",
+		weird_date_of_birth = "कृपया एक ठीक मिति जन्म चयन गर्नुहोस्।",
+		invalid_backstory = "गाथा नभएको वा अवैध छ (अधिकतम 5,000 वर्णनत्त्यहरू)।",
+		backstory_too_short = "तपाईंको पृष्ठभूमि खाना धेरै छोटो छ (${backstory} अक्षर मिनिमम).",
 
 		bad_words = "तपाईंको कर्यक्रम नाम वा ब्याकस्टोरीमा केहि कुराकानी छन्।",
 		disallowed_name = "तपाईंको नाममा केहीमा रोक छ।",

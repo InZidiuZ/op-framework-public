@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["hi-IN"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		remain_money = "$${remain} शेष है",
 		claimed = "दावा किया गया",
 		claim = "दावा करें",
-		streak_reward = "जब आपकी सत्र का स्ट्रीक 7 या इससे अधिक होता है, तो आपको भाग्यशाली चक्र के लिए एक और नि: शुल्क रोज़ाना स्पिन मिलेगी।",
+		streak_reward_one = "जब आपकी सफलता 7 से अधिक होती है, तो आप Lucky Wheel पर एक और मुफ्त दैनिक स्पिन प्राप्त करेंगे।",
+		streak_reward_two = "जब आपकी सफलता 30 से अधिक होती है, तो आपको आपके 4वें काम पर एक विशेष वाहन जीतने का मौका मिलता है।",
+
+		special_vehicle_won = "आपने एक विशेष वाहन जीत लिया है! आप इसे अपने गैराज में खोज सकते हैं।",
 
 		reset_daily_activities_no_permissions = "खिलाड़ी ने उनकी रोज़ाना गतिविधियों को उचित अनुमतियों के बिना रीसेट करने का प्रयास किया।",
 		reset_daily_activities = "दैनिक गतिविधियों को रीसेट करें।",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		rpm = "आरपीएम",
 		degrees = "°सी",
 		degrees_f = "°एफ",
+		npc_kills = "${kills} लोकल्स को मार गिराया",
 		steps_walked_deaths = "${stepsWalked} कदम ~t~/~w~ ${deaths} डाउन",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "ऑक्सीजन शेष: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		invalid_first_name = "पहला नाम (2 से 100 वर्ण में) गायब या अवैध है।",
 		invalid_last_name = "अंतिम नाम (2 से 100 वर्ण में) गायब या अवैध है।",
 		invalid_date_of_birth = "जन्म तिथि गायब या अवैध है।",
-		invalid_backstory = "बैकस्टोरी गायब या अवैध है (1 से 5,000 वर्ण में)।",
+		weird_date_of_birth = "कोशिश करें एक सार्थक जन्मतिथि चुनें।",
+		invalid_backstory = "अभिवृत्ति अंतर्भाषित या अवैध है (अधिकतम 5,000 वर्ण)।",
+		backstory_too_short = "आपकी पृष्ठभूमि बहुत छोटी है (कम से कम ${backstory} अक्षर).",
 
 		bad_words = "आपके चरित्र के नाम या बैकस्टोरी में कुछ अशुभ शब्द हैं।",
 		disallowed_name = "आपके चरित्र के नाम में कुछ अनुमति नहीं हैं।",

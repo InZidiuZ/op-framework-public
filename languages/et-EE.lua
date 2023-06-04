@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["et-EE"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		remain_money = "${remain} dollarit jäänud",
 		claimed = "Korjatud",
 		claim = "Nõua",
-		streak_reward = "Kui teil on järjestikune päevade arv 7 või suurem, saate tasuta päevase keerutuse õnnelikul rattal.",
+		streak_reward_one = "Kui teie järjestikus on 7 või rohkem, saate veel ühe tasuta päevase keerutuse Lucky Wheel'is.",
+		streak_reward_two = "Kui teie järjestikus on 30 või rohkem, on teil võimalus võita eriline sõiduk oma 4. ülesandega.",
+
+		special_vehicle_won = "Te olete võitnud erilise sõiduki! Leiate selle oma garaažist.",
 
 		reset_daily_activities_no_permissions = "Mängija püüdis lähtestada oma igapäevaseid tegevusi ilma sobivate õigusteta.",
 		reset_daily_activities = "Lähtesta igapäevased tegevused.",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		rpm = "p/min",
 		degrees = "°C",
 		degrees_f = "°F",
+		npc_kills = "${kills} linlast tapetud",
 		steps_walked_deaths = "${stepsWalked} sammu ~t~/~w~ ${deaths} maha jooksu",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Jäänud hapnik: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["et-EE"] = {
 		invalid_first_name = "Puuduv või vale Eesnimi (2 kuni 100 tähemärki).",
 		invalid_last_name = "Puuduv või vale Perekonnanimi (2 kuni 100 tähemärki).",
 		invalid_date_of_birth = "Puuduv või vale sünnikuupäev.",
-		invalid_backstory = "Puuduv või vale taustalugu (1 kuni 5,000 tähemärki).",
+		weird_date_of_birth = "Proovige valida mõistlik sünnikuupäev.",
+		invalid_backstory = "Puuduv või kehtetu taustalugu (max 5,000 märki).",
+		backstory_too_short = "Sinu taustalugu on liiga lühike (min ${backstory} tähemärki).",
 
 		bad_words = "Teie tegelasenime või taustaloo hulgas on mõned halvad sõnad.",
 		disallowed_name = "Sinu tegelase nimes on keelatud sõnu.",

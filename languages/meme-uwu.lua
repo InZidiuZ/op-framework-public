@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["meme-uwu"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		remain_money = "$${remain} wemain",
 		claimed = "Cwaimed",
 		claim = "Cwaim",
-		streak_reward = "When youw stweak is 7 OwO highew, you will get another fwee daily spin at the Wucky Wheew.",
+		streak_reward_one = "When youw stweak is 7 ow highew, you will get anothew fwee daily spin at the Wucky Wheew.",
+		streak_reward_two = "When youw stweak is 30 ow highew, you will have a chance of winning a special vehicle on youw 4th task.",
+
+		special_vehicle_won = "You have won a special vehicle! You can find it in youw garage.",
 
 		reset_daily_activities_no_permissions = "Pwayer attempted to weset their daily activities without pwoper permissions.",
 		reset_daily_activities = "Weset Daily Activities.",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		rpm = "wpm",
 		degrees = "°C",
 		degrees_f = "°F",
+		npc_kills = "${kills} locals muwdewed",
 		steps_walked_deaths = "${stepsWalked} steps *nuzzles* ~t~/~w~ ${deaths} downs",
 		altitude_temperature = "${altitude} ${unit} *pounces* ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "OwOxygen weft: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		invalid_first_name = "Uwuw! Mwissing ow invalid fiwst name (2 tuwu 100 chawactews).",
 		invalid_last_name = "Uwuw! Mwissing ow invalid wast name (2 tuwu 100 chawactews).",
 		invalid_date_of_birth = "Uwuopsie! Mwissing ow invalid date of bith.",
-		invalid_backstory = "Uwuopsie! Mwissing ow invalid backpack stowry (1 tuwu 5,000 chawactews).",
+		weird_date_of_birth = "Twy picking a weasonable date of biwth.",
+		invalid_backstory = "Missing ow invalid backstowy (max 5,000 chawactews).",
+		backstory_too_short = "Youw backstory is too showt (min ${backstowwy} chawactews).",
 
 		bad_words = "Uwuopsie! Thewe awe some bad wowds in youw chawactew name ow backpack stowwy. >_<",
 		disallowed_name = "Thewe awe some disallowed wowds in youw chawactew name. OwO",

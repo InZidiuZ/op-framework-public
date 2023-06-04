@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["meme-yoda"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		remain_money = "Remain, $${remain} does.",
 		claimed = "Claimed, it has been.",
 		claim = "Claim, you may.",
-		streak_reward = "When your streak is 7 or higher, another free daily spin at the Lucky Wheel, you will receive.",
+		streak_reward_one = "Free daily spin at the Lucky Wheel, you will receive when your streak reaches 7 or higher.",
+		streak_reward_two = "Special vehicle, a chance to win on your 4th task, you will have when your streak reaches 30 or higher.",
+
+		special_vehicle_won = "A special vehicle, you have won! In your garage, you can find it.",
 
 		reset_daily_activities_no_permissions = "Proper permissions, player has not. Daily activities reset, they have attempted.",
 		reset_daily_activities = "Reset Daily Activities, you have.",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		rpm = "RPM, it is.",
 		degrees = "°C, it is.",
 		degrees_f = "°F, it is.",
+		npc_kills = "Locals murdered: ${kills}.",
 		steps_walked_deaths = "${stepsWalked} steps you have walked. ${deaths} downs you have.",
 		altitude_temperature = "${altitude} ${unit} you are at. ${temperature}${degrees} it is.",
 		scuba_timer = "Oxygen left, ${timer} is.",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		invalid_first_name = "Missing or invalid, first name, you have (2 to 100 characters)",
 		invalid_last_name = "Missing or invalid, last name, you have (2 to 100 characters)",
 		invalid_date_of_birth = "Missing or invalid, date of birth, you have",
-		invalid_backstory = "Missing or invalid, backstory, you have (1 to 5,000 characters)",
+		weird_date_of_birth = "A reasonable date of birth, you must pick.",
+		invalid_backstory = "Missing or invalid backstory (max 5,000 characters), you have. Hmmm.",
+		backstory_too_short = "Too short, your backstory is (min ${backstory} characters).",
 
 		bad_words = "Bad words in your character name or backstory, there are",
 		disallowed_name = "Some disallowed words in your character name, there are.",

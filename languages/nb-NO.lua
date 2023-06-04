@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["nb-NO"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		remain_money = "${remain}$ gjenstår",
 		claimed = "Hentet",
 		claim = "Hent",
-		streak_reward = "Når du har en rekke på 7 eller høyere, vil du få en annen gratis spin på Lucky Wheel.",
+		streak_reward_one = "Når din strek er på 7 eller høyere, vil du få en ekstra gratis daglig spinn på Lykkehjulet.",
+		streak_reward_two = "Når din strek er på 30 eller høyere, vil du ha sjansen til å vinne et spesielt kjøretøy på din 4. oppgave.",
+
+		special_vehicle_won = "Du har vunnet et spesielt kjøretøy! Du kan finne det i garasjen din.",
 
 		reset_daily_activities_no_permissions = "Spilleren forsøkte å tilbakestille daglige aktiviteter uten tilstrekkelige tillatelser.",
 		reset_daily_activities = "Nullstill daglige aktiviteter.",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		rpm = "omdreininger",
 		degrees = "°C",
 		degrees_f = "°F",
+		npc_kills = "${kills} lokale drept",
 		steps_walked_deaths = "${stepsWalked} skritt ~t~/~w~ ${deaths} nedturer",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Oksygen igjen: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		invalid_first_name = "Manglende eller ugyldig fornavn (2 til 100 tegn).",
 		invalid_last_name = "Manglende eller ugyldig etternavn (2 til 100 tegn).",
 		invalid_date_of_birth = "Manglende eller ugyldig fødselsdato.",
-		invalid_backstory = "Manglende eller ugyldig bakgrunnshistorie (1 til 5 000 tegn).",
+		weird_date_of_birth = "Prøv å velge en rimelig fødselsdato.",
+		invalid_backstory = "Manglende eller ugyldig bakgrunnshistorie (maks 5 000 tegn).",
+		backstory_too_short = "Bakgrunnshistorien din er for kort (minimum ${backstory} tegn).",
 
 		bad_words = "Det er noen stygge ord i karakternavnet eller bakgrunnshistorien din.",
 		disallowed_name = "Det er noen uakseptable ord i karakternavnet ditt.",

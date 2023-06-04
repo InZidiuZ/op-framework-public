@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["tr-TR"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		remain_money = "$${remain} kaldı",
 		claimed = "Talep edildi",
 		claim = "Talep et",
-		streak_reward = "Streak'iniz 7 veya daha fazla olduğunda, Lucky Wheel'de başka bir ücretsiz günlük çark çevirme hakkı kazanırsınız.",
+		streak_reward_one = "Streak'iniz 7 veya daha yüksek olduğunda, Lucky Wheel'de başka ücretsiz bir günlük çevirme hakkı kazanırsınız.",
+		streak_reward_two = "Streak'iniz 30 veya daha yüksek olduğunda, 4. görevinizde özel bir araç kazanma şansınız olacak.",
+
+		special_vehicle_won = "Özel bir araç kazandınız! Garajınızda bulabilirsiniz.",
 
 		reset_daily_activities_no_permissions = "Oyuncu, uygun izinleri olmadan günlük etkinliklerini sıfırlamayı denedi.",
 		reset_daily_activities = "Günlük Etkinlikleri Sıfırla",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		rpm = "dev/dk",
 		degrees = "°C",
 		degrees_f = "°F",
+		npc_kills = "${kills} yerel halk katledildi",
 		steps_walked_deaths = "${stepsWalked} adım ~t~/~w~ ${deaths} ölüm",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Kalan oksijen: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		invalid_first_name = "Geçersiz veya eksik ad (2 ila 100 karakter).",
 		invalid_last_name = "Geçersiz veya eksik soyadı (2 ila 100 karakter).",
 		invalid_date_of_birth = "Geçersiz veya eksik doğum tarihi.",
-		invalid_backstory = "Geçersiz veya eksik arkayüz (1 ila 5.000 karakter).",
+		weird_date_of_birth = "Makul bir doğum tarihi seçmeyi deneyin.",
+		invalid_backstory = "Geçersiz veya eksik hikaye (en fazla 5.000 karakter).",
+		backstory_too_short = "Hikayeniz çok kısa (minimum ${backstory} karakter gereklidir).",
 
 		bad_words = "Karakter adınızda veya arkayüzünüzde bazı kötü kelimeler var.",
 		disallowed_name = "Karakter adınızda bazı yasaklı kelimeler var.",

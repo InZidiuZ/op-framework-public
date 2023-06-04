@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["meme-spongebob"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		remain_money = "$${remain} remainin', meow",
 		claimed = "Claimed, meow",
 		claim = "Claim, meow",
-		streak_reward = "When yer streak be 7 or higher, ya will get another free daily spin at the Lucky Wheel, aye aye!",
+		streak_reward_one = "When yar streak be 7 or high'r, ye will git anoth'r free daily spin at th' Lucky Wheel.",
+		streak_reward_two = "When yar streak be 30 or high'r, ye will 'ave a chance o' winnin' a special vehicle on yar 4th task.",
+
+		special_vehicle_won = "Ye 'ave won a special vehicle! Ye kin find it in yar garage.",
 
 		reset_daily_activities_no_permissions = "Player attempted to reset their daily activities without proper permissions, argh.",
 		reset_daily_activities = "Reset Daily Activities, aye aye!",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		rpm = "RPM, dude!",
 		degrees = "degrees Celsius, dude!",
 		degrees_f = "degrees Fahrenheit, dude!",
+		npc_kills = "${kills} locals murdered",
 		steps_walked_deaths = "${stepsWalked} steps walked ~t~/~w~ ${deaths} times defeated, dude!",
 		altitude_temperature = "${altitude} ${unit} altitude ~t~/~w~ ${temperature}${degrees} temperature, dude!",
 		scuba_timer = "Bubble left: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		invalid_first_name = "Yer first name doesn't fit the bill! (2 to 100 characters please)",
 		invalid_last_name = "Yer last name don't be seaworthy! (2 to 100 characters please)",
 		invalid_date_of_birth = "Ye need to give us a proper date of birth! (DD/MM/YYYY)",
-		invalid_backstory = "Ye need to give us a proper backstory matey! (1 to 5,000 characters please)",
+		weird_date_of_birth = "Try pickin' a reasonable date o' birth.",
+		invalid_backstory = "Missin' or invalid backstory (max 5,000 characters).",
+		backstory_too_short = "Arrgh! Ye backstory be too short (min ${backstory} characters) matey!",
 
 		bad_words = "Shiver me timbers! There are some bad words in yer character name or backstory!",
 		disallowed_name = "Oopsie, yer name has some disallowed words in it!",

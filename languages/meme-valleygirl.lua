@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["meme-valleygirl"] = {
 	-- configuration settings for language
@@ -4002,7 +4002,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		kill = "Kill, like so dead",
 		headshot = "Headshot, like a total boss",
 		killstreak = "Killstreak, like on fire",
-		assist = "Assist - Helping hand, yas queen!",
+		assist = "Assist" - "Helping hand, yas queen!",
 
 		level = "Level, like your status",
 		position = "Position, like your spot",
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		remain_money = "$${remain} like, remain",
 		claimed = "Claimed",
 		claim = "Claim, yas queen!",
-		streak_reward = "OMG, when your streak is 7 or higher, you'll get another free daily spin at the Lucky Wheel. How rad is that?!",
+		streak_reward_one = "Like, when your streak is 7 or higher, you, like, get another free daily spin at the Lucky Wheel.",
+		streak_reward_two = "When your streak is 30 or higher, you have, like, a chance of winning a special vehicle on your 4th task.",
+
+		special_vehicle_won = "You, like, won a special vehicle! You can find it in your garage.",
 
 		reset_daily_activities_no_permissions = "Uh, player tried to reset their daily stuff without permission. So not cool.",
 		reset_daily_activities = "Reset Daily Activities...like, seriously.",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		rpm = "rpm, rev that engine!",
 		degrees = "°C, like, so chilly.",
 		degrees_f = "°F, like, so hot!",
+		npc_kills = "${kills} locals, like, totally murdered",
 		steps_walked_deaths = "Like, you've taken ${stepsWalked} steps ~t~/~w~ and been down ${deaths} times.",
 		altitude_temperature = "The altitude is ${altitude} ${unit} ~t~/~w~ and it's like, ${temperature}${degrees} outside.",
 		scuba_timer = "Oxygen left: ${timer}, like, don't forget to breathe, okay?",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		invalid_first_name = "Uh-oh, your first name be missing or totally invalid (2 to 100 characters).",
 		invalid_last_name = "Your last name is missing or totally invalid, what up? (2 to 100 characters).",
 		invalid_date_of_birth = "Like, your date of birth is missing or totally invalid, eww!",
-		invalid_backstory = "Your backstory is either missing or too short or too long, gotta change it up! (1 to 5,000 characters)",
+		weird_date_of_birth = "Try, like, picking a reasonable date of birth",
+		invalid_backstory = "Missing or invalid backstory, like max 5,000 characters.",
+		backstory_too_short = "Failed to automatically generate translation.",
 
 		bad_words = "Whoa, there are some totally bad words in your character name or backstory. Can't be using that, no way!",
 		disallowed_name = "OMG, there are like, some like totally disallowed words in your character name.",

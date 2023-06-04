@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["meme-habibi"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		remain_money = "${remain}$ باقي",
 		claimed = "تم الاستلام",
 		claim = "استلام",
-		streak_reward = "عندما يصل عدد الأيام المتتالية إلى 7 أو أكثر، سوف تحصل على لفة مجانية أخرى في عجلة الحظ اليومية.",
+		streak_reward_one = "When you reach a streak of 7 or higher, you will receive an additional free spin on the Lucky Wheel daily.",
+		streak_reward_two = "When you reach a streak of 30 or higher, you will have the chance to win a special vehicle on your 4th task.",
+
+		special_vehicle_won = "Congratulations! You have won a special vehicle. You can find it in your garage.",
 
 		reset_daily_activities_no_permissions = "حاول اللاعب إعادة تعيين الأنشطة اليومية بدون الأذونات اللازمة.",
 		reset_daily_activities = "إعادة تعيين الأنشطة اليومية.",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		rpm = "دورة في الدقيقة",
 		degrees = "درجة مئوية",
 		degrees_f = "درجة فهرنهايت",
+		npc_kills = "${kills} locals have been killed.",
 		steps_walked_deaths = "${stepsWalked} خطوة ~t~/~w~ ${deaths} إسقاط",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Oxygen Left: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		invalid_first_name = "اسم الشخصية غير صالح او مفقود (من ٢ الى ١٠٠ حرف).",
 		invalid_last_name = "اسم العائلة غير صالح او مفقود (من ٢ الى ١٠٠ حرف).",
 		invalid_date_of_birth = "تاريخ الميلاد غير صالح او مفقود.",
-		invalid_backstory = "قصة الشخصية غير صالحة او مفقودة (من ١ الى ٥٠٠٠ حرف).",
+		weird_date_of_birth = "Please choose a reasonable date of birth.",
+		invalid_backstory = "Your backstory is missing or invalid. Maximum limit is 5,000 characters.",
+		backstory_too_short = "Yallah, habibi! Your backstory needs to be at least ${backstory} characters long.",
 
 		bad_words = "يوجد كلمات غير لائقة في اسم الشخصية او قصتها.",
 		disallowed_name = "Your character name contains prohibited words.",

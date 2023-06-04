@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		remain_money = "เหลือ $${remain}",
 		claimed = "ยืนยันแล้ว",
 		claim = "ยืนยัน",
-		streak_reward = "เมื่อคุณเคยหมุน Lucky Wheel ต่อเนื่อง 7 ครั้งขึ้นไป คุณจะได้รับสิทธิ์หมุนฟรีอีกครั้ง",
+		streak_reward_one = "เมื่อคุณถึงช่วงระยะ 7 วันหรือมากกว่า คุณจะได้รับการหมุนวงล้อโชคดีฟรีอีกครั้ง",
+		streak_reward_two = "เมื่อคุณถึงช่วงระยะ 30 วันหรือมากกว่า คุณจะมีโอกาสได้รับยานพาหนะพิเศษในการปฏิบัติงานครั้งที่ 4",
+
+		special_vehicle_won = "คุณได้รับยานพาหนะพิเศษแล้ว! คุณสามารถหาได้ที่โรงรถของคุณ",
 
 		reset_daily_activities_no_permissions = "ผู้เล่นพยายามรีเซ็ตกิจกรรมรายวันของตนโดยไม่มีสิทธิ์เข้าถึง",
 		reset_daily_activities = "รีเซ็ตกิจกรรมรายวัน",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		rpm = "รอบต่อนาที",
 		degrees = "°C",
 		degrees_f = "°F",
+		npc_kills = "${kills} ประชาชนถูกฆ่า",
 		steps_walked_deaths = "${stepsWalked} ก้าว ~t~/~w~ ${deaths} ครั้งถูกยิง",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature} องศา",
 		scuba_timer = "เวลาที่เหลือในการหายใจ: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		invalid_first_name = "ชื่อจริงไม่ถูกต้องหรือหายไป (2 ถึง 100 ตัวอักษร)",
 		invalid_last_name = "นามสกุลไม่ถูกต้องหรือหายไป (2 ถึง 100 ตัวอักษร)",
 		invalid_date_of_birth = "วันเกิดไม่ถูกต้องหรือหายไป",
-		invalid_backstory = "เรื่องราวไม่ถูกต้องหรือหายไป (1 ถึง 5,000 ตัวอักษร)",
+		weird_date_of_birth = "โปรดเลือกวันเกิดที่มีเหตุผล",
+		invalid_backstory = "เบื้องหลังไม่ถูกต้องหรือไม่สมบูรณ์ (ขีดจำกัด 5,000 ตัวอักษร)",
+		backstory_too_short = "เรื่องราวประวัติส่วนตัวของคุณสั้นเกินไป (ต้องมีอย่างน้อย ${backstory} ตัวอักษร)",
 
 		bad_words = "ชื่อหรือเรื่องราวของตัวละครคุณมีคำหยาบหรือไม่เหมาะสม",
 		disallowed_name = "มีคำห้ามในชื่อตัวละครของคุณ",
@@ -8522,11 +8528,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		already_using_metric_measurement = "คุณได้เลือกระบบการวัดเป็นเมตริกอยู่แล้ว",
 		already_using_imperial_measurement = "คุณได้เลือกระบบการวัดเป็นอิมพีเรียลอยู่แล้ว",
 		already_using_default_measurement = "คุณใช้ระบบการวัดเริ่มต้นของโลเคชั่นอยู่แล้ว",
-		no_copyright = "Failed to automatically generate translation.",
-		no_copyright_warning = "Failed to automatically generate translation.",
-		no_copyright_enabled = "Failed to automatically generate translation.",
-		no_copyright_disabled = "Failed to automatically generate translation.",
-		server_tps = "Failed to automatically generate translation.",
+		no_copyright = "ไม่มีลิขสิทธิ์",
+		no_copyright_warning = "สวัสดี! คุณเป็น streamer หรือผู้สร้างเนื้อหาที่มีการ DMCA และอาญาสิทธิ์เป็นปัญหาใช่ไหม? หากใช่ เราขอแนะนำให้ใช้คำสั่ง '${noCopyrightCommand}' เพื่อเริ่มต้นการทำงาน",
+		no_copyright_enabled = "ฟีเจอร์ 'No Copyright' ถูกเปิดใช้งานแล้ว",
+		no_copyright_disabled = "ฟีเจอร์ 'No Copyright' ถูกปิดใช้",
+		server_tps = "การทำงานของเซิร์ฟเวอร์ TPS",
 		server_tps_response = "${tps}",
 		license_copied = "คัดลอกไฟล์ลิขสิทธิ์เรียบร้อยแล้ว",
 		uptime = "ออนไลน์มาแล้ว: ${uptime}",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["meme-pirate"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		remain_money = "$${remain} remaineth",
 		claimed = "Claimed, yarr!",
 		claim = "Aye, claim!",
-		streak_reward = "When yer streak be 7 or higher, ye shall get another free daily spin at the Lucky Wheel, me heartie.",
+		streak_reward_one = "W'en yer streak be 7 or highar, ye gunna get anothar free daily spin at tha Lucky Wheel.",
+		streak_reward_two = "W'en yer streak be 30 or highar, ye be havin' a chance o' winnin' a special vessel on yer 4th task.",
+
+		special_vehicle_won = "Ye have won a special vessel! Ye can find it in yer dock.",
 
 		reset_daily_activities_no_permissions = "Ahoy! This scallywag tried to reset their daily activities without proper permissions.",
 		reset_daily_activities = "Reset Daily Activities, me hearty!",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		rpm = "rpm",
 		degrees = "°C",
 		degrees_f = "°F",
+		npc_kills = "${kills} locals murdered",
 		steps_walked_deaths = "${stepsWalked} yeast-covered planks ~t~/~w~ ${deaths} scallywags sent to Davy Jones' Locker",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Oxygen left: ${timer}, arrr!",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		invalid_first_name = "Arrr, missing or invalid first name (2 to 100 characters).",
 		invalid_last_name = "Arrr, missing or invalid last name (2 to 100 characters).",
 		invalid_date_of_birth = "Arrr, missing or invalid date o' birth.",
-		invalid_backstory = "Arrr, missing or invalid backstory (1 to 5,000 characters).",
+		weird_date_of_birth = "Arrr! Try pickin' a reasonable date o' birth.",
+		invalid_backstory = "Missin' or invalid backstory (max 5,000 characters).",
+		backstory_too_short = "Yer backstory be too short, me hearty! (min ${backstory} characters).",
 
 		bad_words = "There be some bad words in yer character name or backstory.",
 		disallowed_name = "There be some disallowed words in yer character name, me hearty.",

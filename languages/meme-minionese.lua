@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["meme-minionese"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		remain_money = "$${remain} boopity boo",
 		claimed = "Bee doo Bee doo",
 		claim = "Bee doo",
-		streak_reward = "Bee doo bee doo bee doo, when your streak is 7 or higher, you will get another free daily spin at the Lucky Wheel.",
+		streak_reward_one = "BANANA! Ke tu dulé matà 7 kalé, kulu siku to bana boboka mwinja pa Lucky Wheel.",
+		streak_reward_two = "BANANA! Ke tu dulé matà 30 kalé, tunakuwa na nafasi ya kupata kareta maalumu kwa kazi yako ya 4.",
+
+		special_vehicle_won = "Uimepata kareta maalumu! Unaweza kuipata kwenye gara.",
 
 		reset_daily_activities_no_permissions = "Bee doo bee doo bee doo, player attempted to reset their daily activities without proper permissions.",
 		reset_daily_activities = "Reset Daily Activities.",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		rpm = "rpm",
 		degrees = "bee-do bee-do-bee-do °C",
 		degrees_f = "bee-do bee-do-bee-do °F",
+		npc_kills = "${kills} watu wa eneo walioliwa",
 		steps_walked_deaths = "${stepsWalked} bee-do bee-do ~t~/~w~ ${deaths} bee-do bee-do",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Pou]i tere: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		invalid_first_name = "OUCH! Missing or invalid first name (2 to 100 characters).",
 		invalid_last_name = "OUCH! Missing or invalid last name (2 to 100 characters).",
 		invalid_date_of_birth = "Bee doo bee doo bee doo... Missing or invalid date of birth.",
-		invalid_backstory = "Bello! Missing or invalid backstory (1 to 5,000 characters).",
+		weird_date_of_birth = "Jarehe ya kuzaliwa isiyo ya kawaida. Jaribu tena.",
+		invalid_backstory = "Kisa au maisha ya chanzo yasiyo sahihi (ikiwa na herufi 5,000 za juu).",
+		backstory_too_short = "Poopaye! Your backstory is too short (min ${backstory} characters).",
 
 		bad_words = "POOPAYE! There are some bad words in your character name or backstory.",
 		disallowed_name = "Bello! There are some disallowed words in your character name.",

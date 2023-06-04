@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["sv-SE"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		remain_money = "${remain} SEK kvar",
 		claimed = "Har hävdat",
 		claim = "Hävda",
-		streak_reward = "När din följd är 7 eller högre, får du en annan gratis daglig spinn på lyckohjulet.",
+		streak_reward_one = "När din dagspelsstreak är 7 eller högre, får du en extra gratis spin på Lucky Wheel.",
+		streak_reward_two = "När din dagspelsstreak är 30 eller högre, har du chans att vinna ett specialfordon på din 4:e uppgift.",
+
+		special_vehicle_won = "Du har vunnit ett specialfordon! Du hittar det i din garage.",
 
 		reset_daily_activities_no_permissions = "Spelaren försökte återställa sina dagliga aktiviteter utan lämpliga behörigheter.",
 		reset_daily_activities = "Återställ dagliga aktiviteter.",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		rpm = "varv/minut",
 		degrees = "°C",
 		degrees_f = "°F",
+		npc_kills = "${kills} lokalinvånare mördade",
 		steps_walked_deaths = "${stepsWalked} steg ~t~/~w~ ${deaths} nedgångar",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Syre kvar: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		invalid_first_name = "Saknas eller ogiltigt förnamn (2 till 100 tecken).",
 		invalid_last_name = "Saknas eller ogiltigt efternamn (2 till 100 tecken).",
 		invalid_date_of_birth = "Saknas eller ogiltigt födelsedatum.",
-		invalid_backstory = "Saknas eller ogiltig bakgrundshistoria (1 till 5 000 tecken).",
+		weird_date_of_birth = "Försök välja ett rimligt födelsedatum.",
+		invalid_backstory = "Saknad eller ogiltig bakgrundshistoria (max 5 000 tecken).",
+		backstory_too_short = "Din bakgrundshistoria är för kort (minst ${backstory} tecken).",
 
 		bad_words = "Det finns några olämpliga ord i ditt karakärsnamn eller i bakgrundshistorian.",
 		disallowed_name = "Det finns vissa oacceptabla ord i ditt karaktärsnamn.",

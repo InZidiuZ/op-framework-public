@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["ro-RO"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		remain_money = "Mai sunt $$${remain}",
 		claimed = "Revendicat",
 		claim = "Revendică",
-		streak_reward = "Când șirul tău are 7 sau mai multe zile, vei primi încă o rotire gratuită pe roata norocului.",
+		streak_reward_one = "Când serie ta ajunge la 7 sau mai mult, vei primi o altă învârtire gratuită la Ruleta norocoasă",
+		streak_reward_two = "Când serie ta ajunge la 30 sau mai mult, vei avea o șansă de a câștiga un vehicul special la a 4-a sarcină",
+
+		special_vehicle_won = "Ai câștigat un vehicul special! Îl poți găsi în garajul tău",
 
 		reset_daily_activities_no_permissions = "Jucătorul încearcă să-și reseteze activitățile zilnice fără permisiunile necesare.",
 		reset_daily_activities = "Resetare Activități Zilnice",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		rpm = "rpm",
 		degrees = "°C",
 		degrees_f = "°F",
+		npc_kills = "${kills} localnici uciși",
 		steps_walked_deaths = "${stepsWalked} pași ~t~/~w~ ${deaths} decese",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Oxigen rămas: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		invalid_first_name = "Lipsește sau este invalid prenumele (2-100 caractere).",
 		invalid_last_name = "Lipsește sau este invalid numele (2-100 caractere).",
 		invalid_date_of_birth = "Lipsește sau este invalidă data nașterii.",
-		invalid_backstory = "Lipsește sau este invalidă povestea (1-5.000 caractere).",
+		weird_date_of_birth = "Încearcă să alegi o dată de naștere rezonabilă",
+		invalid_backstory = "Poveste de viață invalidă sau lipsă (maxim 5,000 de caractere)",
+		backstory_too_short = "Povestea ta este prea scurtă (minim ${backstory} caractere).",
 
 		bad_words = "Există cuvinte neadecvate în numele sau povestea personajului tău.",
 		disallowed_name = "Există câteva cuvinte interzise în numele personajului tău.",

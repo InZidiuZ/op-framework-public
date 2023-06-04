@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["meme-roadman"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		remain_money = "Got $${remain} left in the bank, fam",
 		claimed = "Claimed, blud",
 		claim = "Yo, lemme claim dat",
-		streak_reward = "If yo streak hit 7 or higher, you get anotha free spin on da Lucky Wheel.",
+		streak_reward_one = "If you keep your streak going for 7 days or more, you get another chance to spin the Lucky Wheel for free.",
+		streak_reward_two = "Once your streak hits 30 days or more, you might just get lucky and win a sick ride on task number 4.",
+
+		special_vehicle_won = "Yo! You just scored a special ride, check your garage for it.",
 
 		reset_daily_activities_no_permissions = "Bruv tried to reset their daily stuff without da right permissions.",
 		reset_daily_activities = "Reset Daily Stuff, innit.",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		rpm = "RPMs are up to ${rpm} 💥",
 		degrees = "It's currently ${temp} degrees Celsius 🌡️",
 		degrees_f = "It's currently ${temp} degrees Fahrenheit 🌡️",
+		npc_kills = "You've murked ${kills} locals, man.",
 		steps_walked_deaths = "Man's taken ${stepsWalked} steps, but also went down ${deaths} times 🥴",
 		altitude_temperature = "It's ${altitude} ${unit} up in the air, but it's a ${temperature}${degrees} day down here ☀️",
 		scuba_timer = "Oi, you got ${timer} left of oxygen mate",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		invalid_first_name = "Your first name's either too short or too long, fix up (2 to 100 characters).",
 		invalid_last_name = "Bruv, your last name's not right (2 to 100 characters).",
 		invalid_date_of_birth = "Fix up, your date of birth ain't right.",
-		invalid_backstory = "Your backstory ain't addin' up, sort it out (1 to 5,000 characters).",
+		weird_date_of_birth = "Bruv, pick a normal date of birth, yeah?",
+		invalid_backstory = "Your backstory is either missing or too long, keep it under 5,000 characters, fam.",
+		backstory_too_short = "Failed to automatically generate translation.",
 
 		bad_words = "Fam, there's some dodgy words in your character name or backstory.",
 		disallowed_name = "Yo, your name has some forbidden words, change it up.",

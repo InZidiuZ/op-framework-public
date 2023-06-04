@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["meme-gungan"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		remain_money = "$${remain} watakka remain",
 		claimed = "Claimed",
 		claim = "Tinka",
-		streak_reward = "When your streak is 7 or higher, yousa will gotsa anotha free daily spin at da Lucky Wheel.",
+		streak_reward_one = "Mesa assist you! When yousa streak is 7 or higher, yousa win another free daily spin at da Lucky Wheel.",
+		streak_reward_two = "Mesa assist you! When yousa streak is 30 or higher, yousa have a chance of winning a special vehicle on your 4th task.",
+
+		special_vehicle_won = "Yousa won a special vehicle! You can find it in yoursa garage.",
 
 		reset_daily_activities_no_permissions = "Player attempted to reset their daily activities without proper permissions.",
 		reset_daily_activities = "Reset Daily Activities.",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		rpm = "rpm",
 		degrees = "°C",
 		degrees_f = "°F",
+		npc_kills = "${kills} locals murdered",
 		steps_walked_deaths = "${stepsWalked} steps ~t~/~w~ ${deaths} downs",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Gasa lefta: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		invalid_first_name = "Mesa no findin' or invalid first name (2 to 100 characters).",
 		invalid_last_name = "Mesa no findin' or invalid last name (2 to 100 characters).",
 		invalid_date_of_birth = "Mesa no findin' or invalid date of birth.",
-		invalid_backstory = "Mesa no findin' or invalid backstory (1 to 5,000 characters).",
+		weird_date_of_birth = "Mesa sayin, pickin a reasonable date of birth.",
+		invalid_backstory = "Missing or invalid backstory (max 5,000 characters).",
+		backstory_too_short = "Hayderah backstory is too short (min ${backstory} trahikul).",
 
 		bad_words = "There are some bad words in yousa character name or backstory.",
 		disallowed_name = "Mesa sorry, yousa can't use daten name. Itsa not allowed.",

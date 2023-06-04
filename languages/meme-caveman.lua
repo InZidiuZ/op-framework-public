@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["meme-caveman"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		remain_money = "You still have $${remain}",
 		claimed = "Me take it",
 		claim = "Take",
-		streak_reward = "If you not suck for 7 days straight, you can spin the Lucky Wheel one more time for free.",
+		streak_reward_one = "You get 1 extra spin on Lucky Wheel if you do good job for 7 suns in a row.",
+		streak_reward_two = "If you do good job for 30 suns in a row, you might win special car on 4th job.",
+
+		special_vehicle_won = "You win special car! You find it in your cave!",
 
 		reset_daily_activities_no_permissions = "Ugh. Player no have permission to reset daily stuff.",
 		reset_daily_activities = "Daily stuff reset. Me helpful.",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		rpm = "ugh, RPM!",
 		degrees = " °C",
 		degrees_f = " °F",
+		npc_kills = "${kills} locals killed by you.",
 		steps_walked_deaths = "${stepsWalked} stomps ~t~/~w~ ${deaths} bone brokes",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Oxygen left: ${timer} ugh ugh ugh",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		invalid_first_name = "Me no understand first name (2 to 100 caveletters).",
 		invalid_last_name = "Me no understand last name (2 to 100 caveletters).",
 		invalid_date_of_birth = "Me no understand date of birth.",
-		invalid_backstory = "Me no understand backstory (1 to 5,000 caveletters).",
+		weird_date_of_birth = "You pick weird birth sun. Try again.",
+		invalid_backstory = "No good story or too long story (max 5,000 suns).",
+		backstory_too_short = "Failed to automatically generate translation.",
 
 		bad_words = "Me see bad caveletters in name or backstory.",
 		disallowed_name = "Ugh, you can't use those words in your caveman name.",

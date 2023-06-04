@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 11 (do not change)
+-- AUTO LOCALES: 13 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -5477,7 +5477,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		remain_money = "$${remain} over",
 		claimed = "Geclaimd",
 		claim = "Claim",
-		streak_reward = "Wanneer je streak 7 of hoger is, krijg je nog een gratis dagelijkse draai aan het Lucky Wheel.",
+		streak_reward_one = "Wanneer je een streak van 7 of hoger hebt, krijg je nog een gratis dagelijkse draai aan het Lucky Wheel.",
+		streak_reward_two = "Wanneer je een streak van 30 of hoger hebt, maak je kans op het winnen van een speciaal voertuig na je 4e opdracht.",
+
+		special_vehicle_won = "Je hebt een speciaal voertuig gewonnen! Je kunt dit vinden in je garage.",
 
 		reset_daily_activities_no_permissions = "Speler heeft geprobeerd hun dagelijkse activiteiten te resetten zonder de juiste rechten.",
 		reset_daily_activities = "Dagelijkse activiteiten resetten.",
@@ -6227,6 +6230,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		rpm = "omw/min",
 		degrees = "°C",
 		degrees_f = "°F",
+		npc_kills = "${kills} omgelegde locals",
 		steps_walked_deaths = "${stepsWalked} stappen ~t~/~w~ ${deaths} knock-outs",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Zuurstof over: ${timer}",
@@ -8244,7 +8248,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		invalid_first_name = "Ontbrekende of ongeldige voornaam (2 tot 100 tekens).",
 		invalid_last_name = "Ontbrekende of ongeldige achternaam (2 tot 100 tekens).",
 		invalid_date_of_birth = "Ontbrekende of ongeldige geboortedatum.",
-		invalid_backstory = "Ontbrekende of ongeldige levensverhaal (1 tot 5.000 tekens).",
+		weird_date_of_birth = "Probeer een redelijke geboortedatum te kiezen.",
+		invalid_backstory = "Ontbrekend of ongeldig verhaal (max. 5.000 tekens).",
+		backstory_too_short = "Je achtergrondverhaal is te kort (min ${backstory} tekens).",
 
 		bad_words = "Er zijn enkele scheldwoorden in uw personage naam of levensverhaal.",
 		disallowed_name = "Er zijn enkele verboden woorden in je karaktersnaam.",
