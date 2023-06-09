@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["meme-habibi"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		detection_area_close = "[${InteractionKey}] Remove Detection Area (${areaId})",
 		detection_area = "Detection Area (${areaId})",
 
+		failed_toggle_strict_mode = "Failed to toggle strict mode.",
+		strict_mode_enabled = "Habibi, strict mode has been enabled, alhamdulillah.",
+		strict_mode_disabled = "Habibi, strict mode has been disabled, shukran.",
+
 		ban_notification_title = "Anti-Cheat",
 		ban_notification = "Banned ${consoleName} for `${banReason}`.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} has tazed someone over a very long distance (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} has ${count} trigger word(s) on their screen.",
-		notification_suspicious_explosion = "Anti-Cheat: ${displayName} triggered a ${explosionType} explosion.",
+		notification_suspicious_explosion = "Shun, someone called ${displayName} triggered an explosion of type ${explosionType} (${distance} meters away)!",
 
 		notification_freecam_detected = "Anti-Cheat: Habibi, someone is using freecam!",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Habibi, someone is modifying their vehicle illegally!",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		screen_text_debug_command_help = "Debug the screen-text exclusion rectangles.",
 		screen_text_debug_command_substitutes = "screen_text",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "Ya Habibi, toggles the anti-cheat's strict mode. Be careful, this may trigger more false positives.",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "help",
 		help_command_help = "Show all commands currently available.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		create_airdrop_command_parameter_item_amount = "miqdār al-aslihah",
 		create_airdrop_command_parameter_item_amount_help = "Miqdār al-aslihah al-ladhī yajibu an yahmilahu al-hatf kharj.",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "create_airdrop_custom",
+		create_airdrop_custom_command_help = "Creates an airdrop with customized contents.",
+		create_airdrop_custom_command_parameter_items = "items",
+		create_airdrop_custom_command_parameter_items_help = "A string containing the items and their quantities. The string should look like 'green_apple:5,hamburger:3'.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "itlaq intifāj hawā'ī",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		remove_riot_player_command_parameter_server_id_help = "رقم السيرفر الخاص باللاعب الذي تريد إزالته. اتركه فارغًا للاختيار التلقائي.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "rooms_debug",
+		rooms_debug_command_help = "Debugs all rooms.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "metagame",
 		metagame_command_help = "Toggling this will show/hide player's server IDs.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		voice_debug_command_parameter_server_id_help = "إذا كنت تريد تبديل تفعيل 'تصحيح الصوت' لشخص آخر ، فأدخل رقم خادمه هنا.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "تصحيح_المناطق_المكتومة",
-		muted_areas_debug_command_help = "يقوم برسم جميع المناطق الصوتية المكتومة.",
-		muted_areas_debug_command_substitutes = "مناطق_مكتومة",
-
 		listen_command = "استمع",
 		listen_command_help = "قم بتبديل وضع الاستماع للمستخدم المحدد. (يمكنك الاستماع لما يقوله)",
 		listen_command_parameter_server_id = "رقم الخادم",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		corner_debug_command = "kadah_debug",
 		corner_debug_command_help = "Show all the shirak selling areas.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "drugs_debug",
+		drugs_debug_command_help = "Debugs all locations where drugs are sold.",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "leighs",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "You don't have the permission to create an airdrop.",
-		created_airdrop = "You have successfully created an airdrop with ${itemAmount} item(s) of type `${airdropType}`."
+		create_airdrop_missing_permissions = "Habibi, someone tried to create an airdrop without the proper permissions!",
+		create_airdrop_custom_missing_permissions = "Habibi, someone tried to create a custom airdrop without the proper permissions!",
+		created_airdrop = "You have successfully created an airdrop with ${itemAmount} item(s) of type `${airdropType}`.",
+		no_valid_items_provided = "Habibi, no valid items were provided.",
+		created_airdrop_with_items = "Habibi, an airdrop was created with these items:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "حاول اللاعب إنشاء ضربة جوية ولكن لم يكن لديه الأذونات المطلوبة لذلك.",
+		create_airstrike_missing_permissions = "Habibi, someone tried to create an airstrike without the proper permissions!",
 
 		airstrike_success = "تم إنشاء الضربة الجوية بنجاح.",
 		airstrike_failed = "فشل إنشاء الضربة الجوية."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "حاول اللاعب استدعاء دعم جوي ولكنه لم يكن لديه الأذونات المطلوبة لذلك.",
+		create_airsupport_missing_permissions = "Player tried to request air support without having the necessary permissions.",
 
 		distance = "المسافة: ${distance}${unit}",
 		time_to_impact = "ETI: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		crafting_steel = "Molding ${usedItems} ya habibi",
 		crafted_steel = "Crafted ${usedItems} into steel ya habibi.",
 		failed_craft_steel = "Failed to craft steel ya habibi.",
+
+		craft_aluminium = "Make Aluminium",
+		press_to_craft_aluminium = "[${SeatEjectKey}] Make Aluminium",
+		crafting_aluminium = "Molding ${usedItems}",
+		crafted_aluminium = "Transformed ${usedItems} into aluminium.",
+		failed_craft_aluminium = "Failed to make aluminium.",
 
 		scrapping_item = "Scrapping ${usedItems} ya habibi",
 		scrapped_item = "Extracted scrap metal from ${usedItems} ya habibi.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		discount_store = "متجر الخصم",
 		gun_store_with_shooting_range = "متجر الأسلحة (ويحتوي على مدفعية تمرين)",
 		green_wonderland = "العجائب الخضراء",
+		copy_shop = "Copy Shop",
 		irish_pub = "حانة أيرلندية",
 		bar = "بار",
 		midnight = "ورشة معدلات متأخرة",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		picture = "صورة",
 		picture_description = "جمع كل ذكرياتك مع أصدقائك.",
+		paper = "Paper",
+		paper_description = "A blank piece of paper.",
+		printer = "Printer",
+		printer_description = "لا يوجد فاكس، الطابعة فقط.",
 
 		brochure = "كتيب",
 		brochure_description = "كتيب مفيد لبدء رحلتك في المدينة.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		pole = "Yellow Pole",
 		pole_description = "Perfect for bringing anyone to a screeching halt. Habibi!",
+
+		hiking_backpack = "حقيبة تسلق الجبال",
+		hiking_backpack_description = "تجهز لمغامراتك في الهواء الطلق مع هذه الحقيبة الأنيقة للتسلق. إنه يضيف لمسة من السحر والوعورة على طول ملابسك، على الرغم من أنها مجرد وهم جمالي. تبن روح الاستكشاف وأظهر تأثيرات محبي الهواء الطلق أينما ذهبت!",
 
 		gasoline_bottle = "Gasoline Bottle",
 		gasoline_bottle_description = "Refuel your vehicle or your thirst with this bottle. Ya Habibi!",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		pools_overflowing = "Ya habibi, the pools are overflowing: ~r~${poolsOverflowing}"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] استخدم الطابعة",
+
+		no_paper = "لا يوجد لديك أوراق.",
+		invalid_url = "رابط الصورة غير صالح.",
+		invalid_domain = "هذا المجال غير مسموح به.",
+		print = "بصّ",
+		printing = "جاري الطباعة...",
+
+		printed_logs_title = "الصور المطبوعة",
+		printed_logs_details = "${consoleName} طبع صورة من عنوان الصفحة `${url}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "Habibi, the item id used for the prop is illegal.",
 		spawn_prop_not_staff = "Habibi, you cannot spawn a prop without the proper permissions.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		belt_is_on_and_vehicle_is_locked = "Your belt is on and the vehicle is locked.",
 		belt_is_on = "Habibi your belt is on.",
 		vehicle_is_locked = "Habibi the vehicle is locked.",
+		belt_warning = "حزام الأمان غير مربوط، إضغط ~INPUT_SPECIAL_ABILITY_SECONDARY~ لربطه.",
 
 		nearest_player_not_vehicle = "Habibi the nearest player is not in a vehicle.",
 		no_dead_player_nearby = "Habibi there is no dead player in a vehicle near you.",

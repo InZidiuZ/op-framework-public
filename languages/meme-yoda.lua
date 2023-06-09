@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["meme-yoda"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		detection_area_close = "[${InteractionKey}] Detection Area remove, (${areaId})",
 		detection_area = "Detection Area, (${areaId})",
 
+		failed_toggle_strict_mode = "Failed to toggle strict mode, we have.",
+		strict_mode_enabled = "Strict mode, enabled successfully it has.",
+		strict_mode_disabled = "Strict mode, disabled successfully it has been.",
+
 		ban_notification_title = "Anti-Cheat",
 		ban_notification = "${consoleName} banned, for `${banReason}`.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} tazed someone over a very large distance (${distance}m), ${thisIs}.",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} has ${count} trigger word(s) on their screen, ${thisIs}.",
-		notification_suspicious_explosion = "Anti-Cheat, ${displayName} has triggered a ${explosionType} explosion, suspicious it seems.",
+		notification_suspicious_explosion = "Anti-cheat, ${displayName} has triggered a ${explosionType} explosion, hmmm (~${distance}m).",
 
 		notification_freecam_detected = "Anti-Cheat, detected a freecam has been, hmmm",
 		notification_illegal_vehicle_modifier = "Anti-Cheat, illegal modification to vehicle, detected it has",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		screen_text_debug_command_help = "Exclusion rectangles, debug you can.",
 		screen_text_debug_command_substitutes = "screen_text, use them you may.",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "Toggle the anti-cheat strict mode, making it a lot more agressive. Result in more false-positives, this will most likely.",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "help",
 		help_command_help = "All available commands, this will show you.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		create_airdrop_command_parameter_item_amount = "item amount",
 		create_airdrop_command_parameter_item_amount_help = "The amount of items in the airdrop, you must specify.",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "create_airdrop_custom",
+		create_airdrop_custom_command_help = "An airdrop with customized contents, create, you can.",
+		create_airdrop_custom_command_parameter_items = "items",
+		create_airdrop_custom_command_parameter_items_help = "A string containing what items and how many of them there should be, you must. Like this, the string should look: 'green_apple:5,hamburger:3'.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "call_airstrike",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		remove_riot_player_command_parameter_server_id_help = "Enter the server ID of the player you want to remove. To auto-select yourself, leave this field blank.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "rooms_debug",
+		rooms_debug_command_help = "Debug all rooms, you can.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "metagame",
 		metagame_command_help = "Constant drawing of player's server IDs, toggle.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		voice_debug_command_parameter_server_id_help = "Insert their server id here, you must, if toggle the 'voice debug' for someone else, you are wanting.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "muted_areas_debug",
-		muted_areas_debug_command_help = "All muted voice areas, it draws.",
-		muted_areas_debug_command_substitutes = "muted_areas",
-
 		listen_command = "listen",
 		listen_command_help = "Toggles listening mode for a certain user. (You can hear what they say), it does.",
 		listen_command_parameter_server_id = "id server",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		corner_debug_command = "Corner_debug, you may.",
 		corner_debug_command_help = "Show, all the sell areas, you will.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "drugs_debug",
+		drugs_debug_command_help = "All drug selling locations, debug.",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "Clear, all UI focuses, you must.",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Create an airdrop, player attempted to, but the required permissions, they had not.",
-		created_airdrop = "An airdrop of type `${airdropType}` with a total of ${itemAmount} item(s), created it has."
+		create_airdrop_missing_permissions = "Create airdrop, player attempted, but required permissions, had not they.",
+		create_airdrop_custom_missing_permissions = "Create custom airdrop, player attempted, but required permissions, had not they.",
+		created_airdrop = "An airdrop of type `${airdropType}` with a total of ${itemAmount} item(s), created it has.",
+		no_valid_items_provided = "No valid items provided, hmph.",
+		created_airdrop_with_items = "Created an airdrop, inside following items there are:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Create an airstrike, player attempted but the required permissions, they did not have.",
+		create_airstrike_missing_permissions = "Create airstrike, player attempted, but required permissions, had not they.",
 
 		airstrike_success = "Airstrike created successfully, it was.",
 		airstrike_failed = "Failed to create an airstrike, there was."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Call in air support, player attempted but the required permissions, they did not have.",
+		create_airsupport_missing_permissions = "Called in air support, player did, but required permissions they had not.",
 
 		distance = "Distance, you have: ${distance}${unit}",
 		time_to_impact = "ETI, you have: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		crafting_steel = "Molding ${usedItems}, you are.",
 		crafted_steel = "${usedItems} into steel, you have crafted.",
 		failed_craft_steel = "Failed to craft steel, you have.",
+
+		craft_aluminium = "Aluminium craft",
+		press_to_craft_aluminium = "[${SeatEjectKey}] Aluminium craft, you can",
+		crafting_aluminium = "Molding ${usedItems}, aluminium being",
+		crafted_aluminium = "${usedItems} into aluminium, crafted.",
+		failed_craft_aluminium = "Failed to craft aluminium, we have.",
 
 		scrapping_item = "${usedItems} scrapping, you are.",
 		scrapped_item = "From ${usedItems}, scrap metal extracted, you have.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		discount_store = "Store for discounts, it is",
 		gun_store_with_shooting_range = "Ammu-Nation with range, it is",
 		green_wonderland = "Wonderland Green, it is",
+		copy_shop = "Copy Shop, this is",
 		irish_pub = "Pub Irish, it is",
 		bar = "Bar, it is",
 		midnight = "Tunershop Midnight, it is",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		picture = "Picture, it is",
 		picture_description = "All memories, you collect, of you and your friends.",
+		paper = "Paper, this is",
+		paper_description = "A piece of paper, blank it is.",
+		printer = "Printer, the",
+		printer_description = "No fax, only printer, hmmm.",
 
 		brochure = "Brochure, it is",
 		brochure_description = "Helpful, this brochure is, to get you started in the city.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		pole = "Yellow Pole, this is.",
 		pole_description = "For stopping anyone's tracks perfect it is.",
+
+		hiking_backpack = "Backpack for Hiking",
+		hiking_backpack_description = "For outdoor adventures gear up with this stylish backpack. Adds a touch of rugged charm to your attire, this does, even though cosmetic only it is. The spirit of exploration embrace, and your outdoor enthusiast vibes wherever you go, show off!",
 
 		gasoline_bottle = "Gasoline Bottle",
 		gasoline_bottle_description = "For a quick refill for your car or yourself, this is.",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		pools_overflowing = "Overflowing, pools are: ~r~${poolsOverflowing}"
 	},
 
+	printer = {
+		use_printer = "Use Printer, press [${InteractionKey}] you must.",
+
+		no_paper = "Paper, you have none.",
+		invalid_url = "Invalid Image URL, this is.",
+		invalid_domain = "This domain, not allowed it is.",
+		print = "Print, you must",
+		printing = "Printing, I am...",
+
+		printed_logs_title = "Printed Image, I have",
+		printed_logs_details = "Printed an image, ${consoleName} has. With URL `${url}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "Prop item, illegal item id it has.",
 		spawn_prop_not_staff = "Prop spawning, player tried but required permissions, they have not.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		belt_is_on_and_vehicle_is_locked = "Your belt is on and the vehicle is locked, yes.",
 		belt_is_on = "On your belt, it is.",
 		vehicle_is_locked = "Locked, the vehicle is.",
+		belt_warning = "On, your seatbelt must be. Press ~INPUT_SPECIAL_ABILITY_SECONDARY~ to put it on, you should.",
 
 		nearest_player_not_vehicle = "In a vehicle, nearest player is not.",
 		no_dead_player_nearby = "Nearby, no dead player in a vehicle there is.",

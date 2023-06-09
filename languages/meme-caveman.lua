@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["meme-caveman"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		detection_area_close = "[${InteractionKey}] Me Remove Detection Area (${areaId})",
 		detection_area = "Detection Area (${areaId})",
 
+		failed_toggle_strict_mode = "Ugh, toggle strict mode fail.",
+		strict_mode_enabled = "Me have strict mode on now.",
+		strict_mode_disabled = "Strict mode off. Good.",
+
 		ban_notification_title = "Anti-Cheat",
 		ban_notification = "Me Ban ${consoleName} for `${banReason}`.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} use taze from very far away (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} have ${count} bad word(s) on screen.",
-		notification_suspicious_explosion = "Anti-Cheat: ${displayName} Make Big Boom Boom with ${explosionType}.",
+		notification_suspicious_explosion = "Me catch ${displayName} cheating! They make big ${explosionType} boom (${distance}m).",
 
 		notification_freecam_detected = "Ugg-ugg: Anti-Cheat say you use Freecam!",
 		notification_illegal_vehicle_modifier = "Ugg-ugg: Anti-Cheat say you mess with Car!",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		screen_text_debug_command_help = "Debug the screen-text exclusion rectangles.",
 		screen_text_debug_command_substitutes = "screen_text",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "Me toggle anti-cheat strict mode. It make me catch more cheaters, but may also make mistakes.",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "ugh",
 		help_command_help = "Show all grunt commands.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		create_airdrop_command_parameter_item_amount = "item amount",
 		create_airdrop_command_parameter_item_amount_help = "How many items in airdrop?",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "ug create_airdrop_custom",
+		create_airdrop_custom_command_help = "Me create big stuff drop from sky with stuff you choose.",
+		create_airdrop_custom_command_parameter_items = "grab bag",
+		create_airdrop_custom_command_parameter_items_help = "String with stuff and amount like 'big green berry:5,hungry burger:3'.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "ug-ug call_airstrike",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		remove_riot_player_command_parameter_server_id_help = "Me need server ID of player to remove. If want to remove yourself, leave blank.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "debug for hole room",
+		rooms_debug_command_help = "Debug for all place, make sure safe.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "ugga",
 		metagame_command_help = "Toggle draw of player's IDs. Ugg ugga ugga!",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		voice_debug_command_parameter_server_id_help = "If ooga booga want to turn on 'unga bunga debug' for someone else, put their unga bunga id here.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "muted_areas_debug",
-		muted_areas_debug_command_help = "Show where the unga bunga voice is muted.",
-		muted_areas_debug_command_substitutes = "unga_areas",
-
 		listen_command = "listen",
 		listen_command_help = "Turns on/off hearing what a certain caveperson says.",
 		listen_command_parameter_server_id = "unga bunga id",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		corner_debug_command = "ug-ug debug",
 		corner_debug_command_help = "Show all selling areas.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "debug for weed skull places",
+		drugs_debug_command_help = "Debug for all places to sell weed and other things that make you happy.",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "clear_uis",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Player want make airdrop, but no permission to do that.",
-		created_airdrop = "Ugh, dropped `${airdropType}` with ${itemAmount} things inside."
+		create_airdrop_missing_permissions = "Ugg! Player want make big bird drop shiny thing, but player no have magic word to do it.",
+		create_airdrop_custom_missing_permissions = "Ugg! Player want make special big bird drop shiny thing, but player no have magic word to do it.",
+		created_airdrop = "Ugh, dropped `${airdropType}` with ${itemAmount} things inside.",
+		no_valid_items_provided = "Ugg! No good shiny thing provided.",
+		created_airdrop_with_items = "Ugg! Made big bird drop shiny thing inside:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Player try make airstrike but don't have important permission.",
+		create_airstrike_missing_permissions = "Ugg! Player want make boom boom from sky, but player no have magic word to do it.",
 
 		airstrike_success = "Airstrike work good!",
 		airstrike_failed = "Airstrike no work."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Player want call air help but no have important permission.",
+		create_airsupport_missing_permissions = "Ugga ugga, player try call bird help but no can do, no permission.",
 
 		distance = "Ooh: ${distance}${unit}", -- "ooh" means "distance",
 		time_to_impact = "Soon hit: ${timeToImpact}", -- "soon hit" means "estimated time of impact",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		crafting_steel = "Ughhh me create ${usedItems}!",
 		crafted_steel = "Me craft ${usedItems} into strong steel.",
 		failed_craft_steel = "Me fail to make steel.",
+
+		craft_aluminium = "Craft Shiny Rock",
+		press_to_craft_aluminium = "[${SeatEjectKey}] Craft Shiny Rock",
+		crafting_aluminium = "Me make shiny rock from ${usedItems}.",
+		crafted_aluminium = "Me make ${usedItems} shiny rock.",
+		failed_craft_aluminium = "Me no can make shiny rock.",
 
 		scrapping_item = "Me scrapping ${usedItems}",
 		scrapped_item = "Me extract rock from ${usedItems}.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		discount_store = "Discount Store",
 		gun_store_with_shooting_range = "Ammu-Nation with Range",
 		green_wonderland = "Grrreen Wonderland",
+		copy_shop = "Copy Cave",
 		irish_pub = "Irish Cave Pub",
 		bar = "Cave 'n' Spirits",
 		midnight = "Midnight Cave Tunershop",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		picture = "Picture",
 		picture_description = "Collect all memory of you and cave friend.",
+		paper = "Flat Rock",
+		paper_description = "Flat rock with nothing on it.",
+		printer = "Doodle Machine",
+		printer_description = "No fax, only printer.",
 
 		brochure = "Brochure",
 		brochure_description = "Little helpful rock to get you started in the tribe.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		pole = "Yellow long stick",
 		pole_description = "Gud for stoppin' anyone ded in their tracks.",
+
+		hiking_backpack = "Oog oog Backpack",
+		hiking_backpack_description = "Oog oog, you big chief now! Carrying this oog oog backpack shows you're ready for hunt and adventure. It make you look strong and smart, even though it no make you stronger or smarter. Show other caveman you love great outdoors and they will respect you more!",
 
 		gasoline_bottle = "Gasoline Bottle",
 		gasoline_bottle_description = "Fer a quick refill fer yer car or....uhm.....yerself?",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		pools_overflowing = "Pools Overflowing: ~r~${poolsOverflowing}"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] Use Printer",
+
+		no_paper = "Hmm... no bark to write on.",
+		invalid_url = "You write wrong picture words.",
+		invalid_domain = "Bad tribe. No let you visit that cave.",
+		print = "Ug",
+		printing = "Uggaba...",
+
+		printed_logs_title = "Ugged Imaja",
+		printed_logs_details = "${consoleName} ugged an imaja with the URL `${url}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "Player grunt and try to use a prop item with an illegal item id.",
 		spawn_prop_not_staff = "Player attempt to spawn a prop but they no have permissions to do so.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		belt_is_on_and_vehicle_is_locked = "Belt on, vehicle locked.",
 		belt_is_on = "Ugh. Belt on.",
 		vehicle_is_locked = "Gragh. Car locked.",
+		belt_warning = "Me loincloth not on, press ~INPUT_SPECIAL_ABILITY_SECONDARY~ to put it on.",
 
 		nearest_player_not_vehicle = "Other tribe not in car.",
 		no_dead_player_nearby = "No dead other tribe in car near you.",

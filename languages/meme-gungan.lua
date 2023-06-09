@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["meme-gungan"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		detection_area_close = "[${InteractionKey}] Yusa take off detecten area (${areaId})",
 		detection_area = "Detecten Area (${areaId})",
 
+		failed_toggle_strict_mode = "Meesa no can toggle strict mode.",
+		strict_mode_enabled = "Strict mode issen now enabled.",
+		strict_mode_disabled = "Strict mode issen now disabled.",
+
 		ban_notification_title = "Anti-Cheat",
 		ban_notification = "Banned ${consoleName} fer`${banReason}`.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} tazed someone over a very large distance (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} hassa ${count} trigger word(s) on their screen.",
-		notification_suspicious_explosion = "Anti-Cheat: ${displayName} triggered a ${explosionType} explosion.",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} triggered a ${explosionType} boom-boom (~${distance}m).",
 
 		notification_freecam_detected = "Oathee-Cheat: Freecam Datober",
 		notification_illegal_vehicle_modifier = "Oathee-Cheat: Vehicle Modiphiber",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		screen_text_debug_command_help = "Debug da screen-text exclusion rectangles.",
 		screen_text_debug_command_substitutes = "screen_text",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "Toggle the anti-cheat strict mode, making it a lot more agressive. This will most likely result in more false-positives.",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "help",
 		help_command_help = "Show all available commands.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		create_airdrop_command_parameter_item_amount = "nyonestahs kufah doda",
 		create_airdrop_command_parameter_item_amount_help = "Doda nyonestahs kufah spargaiv leh otómó airdrop.",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "creata airdrop custom",
+		create_airdrop_custom_command_help = "Jar Jar Binks, create an airdrop with customized contents.",
+		create_airdrop_custom_command_parameter_items = "itmes",
+		create_airdrop_custom_command_parameter_items_help = "Meesa suggesta a string containing what items and how many of them there should be. The string should look like 'green_apple:5,hamburger:3'.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "spargaiv sarka nagojéla",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		remove_riot_player_command_parameter_server_id_help = "Da server ID of da player yousa would like to roo-ta. Leave disa blank to auto-select yoosahself.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "roomzas_debugza",
+		rooms_debug_command_help = "Debug all rooms, muy muy.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "metagungan",
 		metagame_command_help = "Mesa togglin constant drawin of player's server IDs.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		voice_debug_command_parameter_server_id_help = "Yousa wantin' to toggla da 'voice debug' fo' someone else, put in their oola id here.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "muted_areas_debug",
-		muted_areas_debug_command_help = "Draws all muted voice areas.",
-		muted_areas_debug_command_substitutes = "muted_areas",
-
 		listen_command = "listen",
 		listen_command_help = "Toggles listening mode for a certain user. (You can hear what they say)",
 		listen_command_parameter_server_id = "oola id",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		corner_debug_command = "jar_debug",
 		corner_debug_command_help = "Show all mesa jare-chabanim areas.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "drugzas_debugza",
+		drugs_debug_command_help = "Debug all drug selling locations, oh ho ho.",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "clear_uis",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Player attempted to create an airdrop but theysa no have da required permissions to do so.",
-		created_airdrop = "Mesa created an airdrop of type `${airdropType}` with a total of ${itemAmount} bombad item(s)."
+		create_airdrop_missing_permissions = "Mooey mooey! Da player attempted to crate an aid-watoo but mesa thinks they no have da permissions mesa. Ouch!",
+		create_airdrop_custom_missing_permissions = "Mooey mooey! Da player attempted to crate a custom aid-watoo but mesa thinks they no have da permissions mesa. Ouch!",
+		created_airdrop = "Mesa created an airdrop of type `${airdropType}` with a total of ${itemAmount} bombad item(s).",
+		no_valid_items_provided = "Mesa sorry but no valid items provided. Oopsie!",
+		created_airdrop_with_items = "Mesa created an aid-watoo with the following items inside:\n${itemsListed}. Okeyday!"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Meesa sorry, but yousa no have da permissions to create an airstrike.",
+		create_airstrike_missing_permissions = "Mooey mooey! Da player attempted to crate an air-strike but mesa thinks they no have da permissions mesa. Ouch!",
 
 		airstrike_success = "Airstrike created mesa-sa success!",
 		airstrike_failed = "Failed to create airstrike, oopsie!"
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Meesa sorry, but yousa no have da permissions to call in air support.",
+		create_airsupport_missing_permissions = "Meesa thinkin' da player attempted to call in air support, but they no have the required permissions to do so.",
 
 		distance = "Distance: ${distance}${unit}",
 		time_to_impact = "ETI: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		crafting_steel = "Muy'sa molding ${usedItems}",
 		crafted_steel = "Muy'sa crafted ${usedItems} into steel.",
 		failed_craft_steel = "Muy'ta failed to craft steel.",
+
+		craft_aluminium = "Craft Aluminium",
+		press_to_craft_aluminium = "[${SeatEjectKey}] Craft Aluminium",
+		crafting_aluminium = "Meesa molding ${usedItems}",
+		crafted_aluminium = "Meesa crafted ${usedItems} into aluminium.",
+		failed_craft_aluminium = "Meesa no coulda craft aluminium.",
 
 		scrapping_item = "Muy'sa scrapping ${usedItems}",
 		scrapped_item = "Muy'sa extracted scrap metal from ${usedItems}.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		discount_store = "Discount Stoa",
 		gun_store_with_shooting_range = "Ammu-Nation with Shuuting Range",
 		green_wonderland = "Shaded Marsh Wonderland",
+		copy_shop = "Copy Shop",
 		irish_pub = "Gungan Pub",
 		bar = "Jolly Drinks Hut",
 		midnight = "Midnight Mod-Shop",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		picture = "Picture",
 		picture_description = "Collectsa all da memories of yousa and youra friends.",
+		paper = "Paper",
+		paper_description = "A blank piece of paper.",
+		printer = "Printer",
+		printer_description = "No fax, only printer.",
 
 		brochure = "Brochure",
 		brochure_description = "A helpful brocure to get yousa started in da city.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		pole = "Yellow Pole",
 		pole_description = "Mesa thinken dis be perfecten for stoppen anyones dead in dere tracks.",
+
+		hiking_backpack = "Hiking Backpack",
+		hiking_backpack_description = "Yousa gotta get ready for adventures outdoors with this stylish hiking backpack. It adds a touch of tough charm to your wardrobe, even though it'sa purely cosmetic. Embrace the spirit of exploration and show off your love for the outdoors wherever you go!",
 
 		gasoline_bottle = "Gasolinosa Bottle",
 		gasoline_bottle_description = "For a quicka refillen for your speedan cart or....uhm.....yourself?",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		pools_overflowing = "Pools Overflowing: ~r~${poolsOverflowing}."
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] Use Printer",
+
+		no_paper = "Yousa don't have any paper.",
+		invalid_url = "Invalid Image URL.",
+		invalid_domain = "Dis domain issa not allowed.",
+		print = "Saip",
+		printing = "Saiping...",
+
+		printed_logs_title = "Saiped Imaj",
+		printed_logs_details = "${consoleName} saiped an imaj with da URL `${url}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "Player attempted to use a prop item with an illegal item id. Mesa no understand.",
 		spawn_prop_not_staff = "Player attempted to spawn a prop but they didn't have the required permissions to do so. You not have the required permissions to do that.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		belt_is_on_and_vehicle_is_locked = "Yousa belt issen on and da vehicle issen locked.",
 		belt_is_on = "Yosa belt issa on.",
 		vehicle_is_locked = "Da vehicle issa locked.",
+		belt_warning = "Yousa seatbelt issa not on, press ~INPUT_SPECIAL_ABILITY_SECONDARY~ to put it on.",
 
 		nearest_player_not_vehicle = "Da nearest player issa not in a vehicle.",
 		no_dead_player_nearby = "There issa no dead player in a vehicle near yousa.",

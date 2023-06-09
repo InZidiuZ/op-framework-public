@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["meme-roadman"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		detection_area_close = "[${InteractionKey}] Get rid of Detection Area (${areaId})",
 		detection_area = "Detection Area (${areaId})",
 
+		failed_toggle_strict_mode = "Barely toggled strict mode innit, didn't work out.",
+		strict_mode_enabled = "Strict mode's been enabled, no messing around now.",
+		strict_mode_disabled = "Strict mode's been turned off, we's playing loose now.",
+
 		ban_notification_title = "Anti-Cheat",
 		ban_notification = "Banned ${consoleName} for `${banReason}` fam.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} tazed someone from a long range (${distance}m). Allow it fam.",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} has ${count} bait word(s) on their screen fam.",
-		notification_suspicious_explosion = "Mandem @ Anti-Cheat: ${displayName} triggered a ${explosionType} explosion.",
+		notification_suspicious_explosion = "Oi, Anti-Cheat alert: ${displayName} went and set off a massive ${explosionType} explosion dumb close (~${distance}m).",
 
 		notification_freecam_detected = "Oi, you're glitchin' bruv: Freecam spotted",
 		notification_illegal_vehicle_modifier = "Oi, that ain't legal: Vehicle modifier found",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		screen_text_debug_command_help = "Debug the screen-text exclusion squares, fam.",
 		screen_text_debug_command_substitutes = "screen_text",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "Toggle the anti-cheat strict mode fam, it's gonna be super aggro. But that could mean some false alarms.",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "help",
 		help_command_help = "Let me educate you on the available commands innit.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		create_airdrop_command_parameter_item_amount = "item amount",
 		create_airdrop_command_parameter_item_amount_help = "The amount of items you want in the air fam.",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "create_airdrop_custom",
+		create_airdrop_custom_command_help = "Bruv, create a sick airdrop with whatever loot you want in it fam.",
+		create_airdrop_custom_command_parameter_items = "items",
+		create_airdrop_custom_command_parameter_items_help = "Type in a string of the items and the amount you want in the airdrop blud. Example: 'bare green apples: 5, hamburgers: 3'.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "call_airstrike",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		remove_riot_player_command_parameter_server_id_help = "The server ID of the player you wanna remove, G. Leave it blank to auto-select yourself.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "rooms_debug",
+		rooms_debug_command_help = "Allow me to debug all the rooms for ya my g.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "meta",
 		metagame_command_help = "Fiq constant drawin' of manz server IDs.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		voice_debug_command_parameter_server_id_help = "If you wanna switch on 'voice debug' for some geeza, put their server id 'ere.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "muted_areas_debug fam",
-		muted_areas_debug_command_help = "Draws all muted voice areas for ya visual pleasure.",
-		muted_areas_debug_command_substitutes = "muted_areas",
-
 		listen_command = "listen up",
 		listen_command_help = "Toggles listening mode for a certain user, so you can hear what they're sayin', ya'getme?",
 		listen_command_parameter_server_id = "server id blud",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		corner_debug_command = "link_debug",
 		corner_debug_command_help = "Display all the areas where selling is possible.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "drugs_debug",
+		drugs_debug_command_help = "Let me debug all the spots where you can sell your gear for money my dude. Gotta stay on top of that hustle.",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "clear_focus",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "This wasteman tried to create an airdrop, but they didn't have the necessary permissions.",
-		created_airdrop = "Yo, I just created an airdrop with ${itemAmount} ting(s) for ya. It's a ${airdropType}."
+		create_airdrop_missing_permissions = "Bruv, player tried to create an airdrop but they don't have the required permissions, innit?",
+		create_airdrop_custom_missing_permissions = "Mandem tried to create a custom airdrop but they don't have the required permissions, what a waste, fam.",
+		created_airdrop = "Yo, I just created an airdrop with ${itemAmount} ting(s) for ya. It's a ${airdropType}.",
+		no_valid_items_provided = "Oi, no valid items were provided, blud!",
+		created_airdrop_with_items = "We just created an airdrop with these items, fam:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "This guy tried to create an airstrike but he ain't got the right clearance.",
+		create_airstrike_missing_permissions = "Player tried to create an airstrike but they don't have the required permissions, proper shame that is.",
 
 		airstrike_success = "Airstrike is live now, innit.",
 		airstrike_failed = "Failed to initiate the airstrike."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "This guy ain't got the clearance to call in dat air support.",
+		create_airsupport_missing_permissions = "Some guy tried to call in air support but he wasn't certified for that kind of thing.",
 
 		distance = "Distance: ${distance}${unit}",
 		time_to_impact = "ETI: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		crafting_steel = "Man's molding ${usedItems}",
 		crafted_steel = "Man's crafted ${usedItems} into steel, innit.",
 		failed_craft_steel = "Nah fam, couldn't craft steel.",
+
+		craft_aluminium = "Whip up some Aluminium",
+		press_to_craft_aluminium = "[${SeatEjectKey}] Whip up some Aluminium",
+		crafting_aluminium = "Melting down ${usedItems}",
+		crafted_aluminium = "Whipped up ${usedItems} into aluminium, fam.",
+		failed_craft_aluminium = "Couldn't make no Aluminium, ya get me?",
 
 		scrapping_item = "Man's scrapping ${usedItems}",
 		scrapped_item = "Man's extracted scrap metal from ${usedItems}.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		discount_store = "Discount Store, for the mandem on a budget",
 		gun_store_with_shooting_range = "Ammu-Nation with Range, bare fun shootin' up some targets in there",
 		green_wonderland = "Green Wonderland",
+		copy_shop = "Cloning Spot",
 		irish_pub = "Irish Pub",
 		bar = "Bar",
 		midnight = "Midnight Tunershop",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		picture = "Flick",
 		picture_description = "Collect all the memories of you and your homies.",
+		paper = "Blank Page",
+		paper_description = "Just a blank page, innit?",
+		printer = "Money Machine",
+		printer_description = "No fax, just a printer, mate.",
 
 		brochure = "Pamphlet",
 		brochure_description = "A helpful pamphlet to get you started in the ends.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		pole = "Yellow Pole",
 		pole_description = "Great for making someone freeze in their tracks, ya know what I'm sayin'?",
+
+		hiking_backpack = "Hikin' Backpack",
+		hiking_backpack_description = "Get ready for some nature action with this fancy hikin' backpack. It adds a touch of roughness to your getup, even though it's just for show-off. Live that adventurous life and show off your outdoor vibes wherever you go, fam!",
 
 		gasoline_bottle = "Gas Bottle",
 		gasoline_bottle_description = "When your ride or your body is runnin' on empty, this'll give it the energy it needs, innit?",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		pools_overflowing = "Fam, too many pools is overflowing init: ~r~${poolsOverflowing}"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] Use Printer",
+
+		no_paper = "Bruv, you ain't got no paper left.",
+		invalid_url = "Invalid Picture URL, innit.",
+		invalid_domain = "This domain ain't allowed, mate.",
+		print = "Sayin'",
+		printing = "Sayin'...",
+
+		printed_logs_title = "Printed",
+		printed_logs_details = "${consoleName} printed an image with the URL: `${url}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "Mandem tryna use an illegal prop item id, smh",
 		spawn_prop_not_staff = "Mandem tryna spawn a prop but they ain't got the permissions for that fam.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		belt_is_on_and_vehicle_is_locked = "Bruv, you got your belt on and the whip is locked.",
 		belt_is_on = "Yo fam, your belt is secured.",
 		vehicle_is_locked = "The whip is on lock, G.",
+		belt_warning = "Yo, put your seatbelt on! Press  ~INPUT_SPECIAL_ABILITY_SECONDARY~ to buckle up.",
 
 		nearest_player_not_vehicle = "Bruv, the closest mandem ain't in a ride.",
 		no_dead_player_nearby = "No dead homies are nearby in a whip fam.",

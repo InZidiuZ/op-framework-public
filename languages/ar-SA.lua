@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["ar-SA"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		detection_area_close = "[${InteractionKey}] إزالة منطقة الكشف (${areaId})",
 		detection_area = "منطقة الكشف (${areaId})",
 
+		failed_toggle_strict_mode = "فشل تبديل وضع الصارم.",
+		strict_mode_enabled = "تم تفعيل وضع الصارم بنجاح.",
+		strict_mode_disabled = "تم تعطيل وضع الصارم بنجاح.",
+
 		ban_notification_title = "منع الغش",
 		ban_notification = "تم حظر ${consoleName} بسبب `${banReason}`.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} قام بإطلاق الرصاص بالتايزر على شخص على بعد مسافة كبيرة للغاية (${distance} متر).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} لديه كلمة كلامية/صورة غير مقبولة على شاشته (${count} كلمات/صور).",
-		notification_suspicious_explosion = "مكافحة الغش: قام ${displayName} بتفجير ${explosionType}.",
+		notification_suspicious_explosion = "مضاد الغش: ${displayName} أحدث انفجارًا ${explosionType} (~${distance} متر).",
 
 		notification_freecam_detected = "مكافحة الغش: كشف تشغيل Freecam",
 		notification_illegal_vehicle_modifier = "مكافحة الغش: تعديل مركبة غير قانوني",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		screen_text_debug_command_help = "تصحيح الإطارات الخاصة بشاشة النصّ التي لا تُظهر.",
 		screen_text_debug_command_substitutes = "screen_text",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "قم بتغيير وضع مضاد الغش الصارم ، حيث سيصبح أكثر عدوانية. سيؤدي هذا على الأرجح إلى زيادة في عدد الأيجابيات الزائفة.",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "help",
 		help_command_help = "عرض كل الأوامر المتاحة.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		create_airdrop_command_parameter_item_amount = "عدد الايتمات",
 		create_airdrop_command_parameter_item_amount_help = "عدد الايتمات التي يجب أن يحتوي عليها الإسقاط الجوي.",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "create_airdrop_custom",
+		create_airdrop_custom_command_help = "إنشاء هبوط جوي يحتوي على محتويات مخصصة.",
+		create_airdrop_custom_command_parameter_items = "items",
+		create_airdrop_custom_command_parameter_items_help = "سلسلة النصية التي تحتوي على العناصر وكمياتها. يجب أن تبدو السلسلة مثل 'green_apple:5,hamburger:3'.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "استدعاء_ضربة_جوية",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		remove_riot_player_command_parameter_server_id_help = "معرّف الخادم الذي تريد إزالة اللاعب منه. اترك هذا الحقل فارغًا لتحديد نفسك أوتوماتيكياً.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "rooms_debug",
+		rooms_debug_command_help = "تصحيح جميع الغرف.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "تشغيل_النظام",
 		metagame_command_help = "تبديل عرض مستمر لمعرفات اللاعبين في الخادم.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		voice_debug_command_parameter_server_id_help = "إذا كنت تريد تبديل حالة 'تصحيح الصوت' لشخص آخر ، فأدخل معرف الخادم الخاص به هنا.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "تصحيح_مناطق_الصوت_المكتومة",
-		muted_areas_debug_command_help = "يقوم برسم جميع مناطق الصوت المكتومة.",
-		muted_areas_debug_command_substitutes = "مناطق_الصوت_المكتومة",
-
 		listen_command = "الاستماع",
 		listen_command_help = "يقوم بتبديل وضع الاستماع لمستخدم معين. (يمكنك الاستماع لما يقولونه)",
 		listen_command_parameter_server_id = "معرف الخادم",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		corner_debug_command = "تصحيح زاوية",
 		corner_debug_command_help = "عرض جميع مناطق البيع.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "drugs_debug",
+		drugs_debug_command_help = "تصحيح جميع مواقع بيع المخدرات.",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "مسح الواجهات",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "حاول اللاعب إنشاء إسقاط جوي لكنه ليس لديه الصلاحيات اللازمة للقيام بذلك.",
-		created_airdrop = "تم إنشاء إسقاط جوي من نوع `${airdropType}` بإجمالي عدد ${itemAmount} من العناصر."
+		create_airdrop_missing_permissions = "حاول اللاعب إنشاء إسقاط هواء ولكنه لم يمتلك الصلاحيات اللازمة لذلك.",
+		create_airdrop_custom_missing_permissions = "حاول اللاعب إنشاء إسقاط هواء مخصص ولكنه لم يمتلك الصلاحيات اللازمة لذلك.",
+		created_airdrop = "تم إنشاء إسقاط جوي من نوع `${airdropType}` بإجمالي عدد ${itemAmount} من العناصر.",
+		no_valid_items_provided = "لم يتم تقديم أي عناصر صالحة.",
+		created_airdrop_with_items = "تم إنشاء إسقاط بالعناصر التالية في الداخل:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["ar-SA"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "حاول اللاعب إنشاء ضربة جوية ولكنه لم يكن لديه الصلاحيات اللازمة لذلك",
+		create_airstrike_missing_permissions = "حاول اللاعب إنشاء إضراب جوي ولكنه لم يمتلك الصلاحيات اللازمة لذلك.",
 
 		airstrike_success = "تم إنشاء ضربة جوية بنجاح",
 		airstrike_failed = "فشل في إنشاء ضربة جوية"
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "حاول اللاعب استدعاء الدعم الجوي ولكنه لم يكن لديه الصلاحيات اللازمة لذلك.",
+		create_airsupport_missing_permissions = "حاول اللاعب استدعاء دعم جوي ولكن ليس لديه الصلاحيات اللازمة لفعل ذلك.",
 
 		distance = "المسافة: ${distance}${unit}",
 		time_to_impact = "الوقت المتبقي: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		crafting_steel = "صنع ${usedItems} مصبوبة",
 		crafted_steel = "صنع ${usedItems} إلى فولاذ.",
 		failed_craft_steel = "فشل في صنع الفولاذ.",
+
+		craft_aluminium = "صنع الألمنيوم",
+		press_to_craft_aluminium = "[${SeatEjectKey}] صنع الألمنيوم",
+		crafting_aluminium = "صنع ${usedItems} من الأشياء المستخدمة",
+		crafted_aluminium = "صُنع ${usedItems} من الأشياء المستخدمة إلى الألمنيوم.",
+		failed_craft_aluminium = "فشل في صنع الألمنيوم.",
 
 		scrapping_item = "تدوير ${usedItems}",
 		scrapped_item = "استخراج معدن الخردة من ${usedItems}.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		discount_store = "متجر الخصم",
 		gun_store_with_shooting_range = "متجر أمو نيشن مع مدفعية",
 		green_wonderland = "عالم جرين",
+		copy_shop = "متجر النسخ",
 		irish_pub = "حانة أيرلندية",
 		bar = "حانة",
 		midnight = "محل تعديل السيارات",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		picture = "صورة",
 		picture_description = "جمع كل ذكرياتك مع أصدقائك.",
+		paper = "ورق",
+		paper_description = "ورقة بيضاء فارغة.",
+		printer = "طابعة",
+		printer_description = "لا فاكس، فقط طابعة.",
 
 		brochure = "كتيب",
 		brochure_description = "دليل مفيد للبدء في المدينة.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		pole = "العامود الأصفر",
 		pole_description = "مثالي لإيقاف أي شخص على الفور.",
+
+		hiking_backpack = "حقيبة المشي للمسافات الطويلة",
+		hiking_backpack_description = "جهز نفسك للمغامرات الخارجية مع هذه الحقيبة الأنيقة للمشي للمسافات الطويلة. إنها تضيف لمسة من الجاذبية الخشنة على ملابسك، على الرغم من أنها زينة فقط. اعتنق روح الاستكشاف وأظهر أنك محب للأنشطة الخارجية أينما تذهب!",
 
 		gasoline_bottle = "زجاجة وقود",
 		gasoline_bottle_description = "لإعادة تعبئة سريعة لسيارتك أو.... أنت؟",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		pools_overflowing = "البرك تفيض: ~r~${poolsOverflowing}"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] استخدم الطابعة",
+
+		no_paper = "ليس لديك أي ورق.",
+		invalid_url = "رابط الصورة غير صالح.",
+		invalid_domain = "هذا النطاق غير مسموح به.",
+		print = "طباعة",
+		printing = "جاري الطباعة...",
+
+		printed_logs_title = "صورة مطبوعة",
+		printed_logs_details = "${consoleName} قام بطباعة صورة بالرابط التالي `${url}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "حاول اللاعب استخدام عنصر الأداة غير القانوني.",
 		spawn_prop_not_staff = "حاول اللاعب إنشاء أداة ولكنه لم يكن لديه الأذونات اللازمة للقيام بذلك.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		belt_is_on_and_vehicle_is_locked = "الحزام مربوط والمركبة مقفّلة.",
 		belt_is_on = "الحزام مشدود.",
 		vehicle_is_locked = "المركبة مقفلة.",
+		belt_warning = "لم تربط حزام الأمان, اضغط ~INPUT_SPECIAL_ABILITY_SECONDARY~ لوضعه.",
 
 		nearest_player_not_vehicle = "أقرب لاعب ليس في مركبة.",
 		no_dead_player_nearby = "لا يوجد لاعب ميت في مركبة بالقرب منك.",

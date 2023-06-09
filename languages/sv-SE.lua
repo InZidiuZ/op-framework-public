@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["sv-SE"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		detection_area_close = "[${InteractionKey}] Ta bort identifieringsområde (${areaId})",
 		detection_area = "Identifieringsområde (${areaId})",
 
+		failed_toggle_strict_mode = "Kunde inte växla till strikt läge.",
+		strict_mode_enabled = "Strikt läge aktiverat.",
+		strict_mode_disabled = "Strikt läge inaktiverat.",
+
 		ban_notification_title = "Anti-Cheat",
 		ban_notification = "Bannlyst ${consoleName} för `${banReason}`.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} taserade någon över ett väldigt stort avstånd (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} har ${count} triggerord på sin skärm.",
-		notification_suspicious_explosion = "Anti-Cheat: ${displayName} utlöste en ${explosionType}-explosion.",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} utlöste en ${explosionType}-explosion (~${distance}m).",
 
 		notification_freecam_detected = "Anti-Cheat: Freecam upptäckt",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Fordonsmodifierare",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		screen_text_debug_command_help = "Felsök uteslutningsrektanglarna för skärmtexterna.",
 		screen_text_debug_command_substitutes = "screen_text",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "Växla anti-cheat till strikt läge, vilket gör den mycket mer aggressiv. Det kommer troligtvis leda till fler falska positiva resultat.",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "hjälp",
 		help_command_help = "Visa alla tillgängliga kommandon.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		create_airdrop_command_parameter_item_amount = "mängd av föremål",
 		create_airdrop_command_parameter_item_amount_help = "Antalet föremål som luftdroppen ska innehålla.",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "skapa_anpassat_lastfall",
+		create_airdrop_custom_command_help = "Skapa ett lastfall med anpassat innehåll.",
+		create_airdrop_custom_command_parameter_items = "föremål",
+		create_airdrop_custom_command_parameter_items_help = "En sträng som innehåller vilka föremål och hur många av dem det ska finnas. Strängen bör se ut som 'grön_äpple:5,hamburgare:3'.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "kalla_ett_flygangrepp",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		remove_riot_player_command_parameter_server_id_help = "Server-ID för spelaren du vill ta bort. Lämna detta tomt för att automatiskt välja dig själv.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "felsök_rum",
+		rooms_debug_command_help = "Felsök alla rum.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "meta",
 		metagame_command_help = "Slå på/av konstant visning av spelares server-ID.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		voice_debug_command_parameter_server_id_help = "Om du vill byta till 'röstdelningssökning' för någon annan, ange deras server-id här.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "muted_areas_debug",
-		muted_areas_debug_command_help = "Ritar alla dämpade röstområden.",
-		muted_areas_debug_command_substitutes = "muted_areas",
-
 		listen_command = "lyssna",
 		listen_command_help = "Växlar lyssningsläge för en viss användare. (Du kan höra vad de säger)",
 		listen_command_parameter_server_id = "Server-id",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		corner_debug_command = "hörn_debug",
 		corner_debug_command_help = "Visa alla säljområden.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "felsök_droger",
+		drugs_debug_command_help = "Felsök alla platser för drogförsäljning.",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "rensa_gränssnitt",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Spelaren försökte skapa ett paket med fallskärm men saknade behörighet för att göra det.",
-		created_airdrop = "Skapade ett paket med fallskärm av typen `${airdropType}` med totalt ${itemAmount} stycken föremål."
+		create_airdrop_missing_permissions = "Spelaren försökte skapa en flygdropsleverans men hade inte tillstånd att göra det.",
+		create_airdrop_custom_missing_permissions = "Spelaren försökte skapa en anpassad flygdropsleverans men hade inte tillräckliga behörigheter att göra det.",
+		created_airdrop = "Skapade ett paket med fallskärm av typen `${airdropType}` med totalt ${itemAmount} stycken föremål.",
+		no_valid_items_provided = "Inga giltiga föremål tillhandahölls.",
+		created_airdrop_with_items = "Skapade en flygdropsleverans med följande föremål:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["sv-SE"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Spelaren försökte skapa en flygbombning men hade inte de nödvändiga behörigheterna för att göra det.",
+		create_airstrike_missing_permissions = "Spelaren försökte skapa en luftattack men hade inte tillstånd att göra det.",
 
 		airstrike_success = "Flygbombning skapad framgångsrikt.",
 		airstrike_failed = "Misslyckades med att skapa en flygbombning."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Spelaren försökte kalla in luftstöd men hade inte de nödvändiga behörigheterna för att göra det.",
+		create_airsupport_missing_permissions = "Spelaren försökte kalla in luftstöd utan rättigheter att göra det.",
 
 		distance = "Avstånd: ${distance}${unit}",
 		time_to_impact = "ETI: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		crafting_steel = "Formar ${usedItems}",
 		crafted_steel = "Har format ${usedItems} till stål.",
 		failed_craft_steel = "Misslyckades med att forma stål.",
+
+		craft_aluminium = "Tillverka aluminium",
+		press_to_craft_aluminium = "[${SeatEjectKey}] Tillverka aluminium",
+		crafting_aluminium = "Formar ${usedItems}",
+		crafted_aluminium = "Tillverkade ${usedItems} till aluminium.",
+		failed_craft_aluminium = "Misslyckades att tillverka aluminium.",
 
 		scrapping_item = "Skrotar ${usedItems}",
 		scrapped_item = "Extraherade skrotmetall från ${usedItems}.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		discount_store = "Rabattbutik",
 		gun_store_with_shooting_range = "Ammu-Nation med Skjutbana",
 		green_wonderland = "Gröna Underlandet",
+		copy_shop = "Kopia Butik",
 		irish_pub = "Irländsk krog",
 		bar = "Bar",
 		midnight = "Midnight Tunershop",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		picture = "Bild",
 		picture_description = "Samlar alla minnen av dig och dina vänner.",
+		paper = "Papper",
+		paper_description = "En tom pappersark.",
+		printer = "Skrivare",
+		printer_description = "Ingen fax, bara skrivare.",
 
 		brochure = "Broschyr",
 		brochure_description = "En hjälpsam broschyr för att komma igång i staden.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		pole = "Gul stolpe",
 		pole_description = "Perfekt för att stoppa vem som helst på deras spår.",
+
+		hiking_backpack = "Vandringsryggsäck",
+		hiking_backpack_description = "Förbered dig för utomhusäventyr med denna stiliga vandringsryggsäck. Den ger en touch av rustik charm till din outfit, även om den bara är kosmetisk. Omfamna utforskningens anda och visa upp din kärlek för utomhuslivet var du än går!",
 
 		gasoline_bottle = "Gasflaska",
 		gasoline_bottle_description = "För en snabb påfyllning till din bil eller ....öh....dig själv?",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		pools_overflowing = "Pooler översvämmade: ~r~${poolsOverflowing}"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] Använd Skrivare",
+
+		no_paper = "Du har inget papper.",
+		invalid_url = "Ogiltig bild-URL.",
+		invalid_domain = "Denna domän är inte tillåten.",
+		print = "Skriv ut",
+		printing = "Skriver ut...",
+
+		printed_logs_title = "Utskrivet Bild",
+		printed_logs_details = "${consoleName} skrev ut en bild med URL:en `${url}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "Spelaren försökte använda en egendomssak med en olaglig sak-id.",
 		spawn_prop_not_staff = "Spelaren försökte spawna en egendom men de hade inte behörighet att göra det.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		belt_is_on_and_vehicle_is_locked = "Ditt bälte är på och fordonet är låst.",
 		belt_is_on = "Ditt bälte är på.",
 		vehicle_is_locked = "Fordonet är låst.",
+		belt_warning = "Ditt säkerhetsbälte är inte på, tryck ~INPUT_SPECIAL_ABILITY_SECONDARY~ för att sätta på det.",
 
 		nearest_player_not_vehicle = "Närmaste spelaren är inte i ett fordon.",
 		no_dead_player_nearby = "Det finns ingen död spelare i ett fordon i närheten av dig.",

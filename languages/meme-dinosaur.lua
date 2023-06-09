@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["meme-dinosaur"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		detection_area_close = "[${KUKU}] Remove Detection Area (${areaId})",
 		detection_area = "Detection Area (${areaId})",
 
+		failed_toggle_strict_mode = "Ungh! Failed to toggle strict mode.",
+		strict_mode_enabled = "Rawr! Successfully enabled strict mode.",
+		strict_mode_disabled = "Rawr! Strict mode disabled.",
+
 		ban_notification_title = "Anti-Cheat",
 		ban_notification = "Banned ${ROARS} for `${banReason}`.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} took down a foe with a taser from a very far distance (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} has seen ${count} concerning word(s) on their screen; please investigate.",
-		notification_suspicious_explosion = "Anti-Cheat: ${displayName} triggered a ${explosionType} explosion.",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} caused a ${explosionType} explosion (~${distance}m) - Suspicious!",
 
 		notification_freecam_detected = "Ruu-speak: Freecam detected! Anti-Cheat activated!",
 		notification_illegal_vehicle_modifier = "Ruu-speak: Vehicle modified illegally! Anti-Cheat activated!",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		screen_text_debug_command_help = "Debug the screen-text exclusion rectangles in Dino-Speak.",
 		screen_text_debug_command_substitutes = "screen_text",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "Rawr! Toggle the anti-cheat strict mode. It catches more bad actions but may also result in more false-positives. Use with caution!",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "help",
 		help_command_help = "Show all commands available in Dinosaur Speak.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		create_airdrop_command_parameter_item_amount = "item meat",
 		create_airdrop_command_parameter_item_amount_help = "The amount of meat-carrying dinos in the airdrop.",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "roar_create_airdrop_custom",
+		create_airdrop_custom_command_help = "Roar! Create big drop from sky with things you want inside, roar!",
+		create_airdrop_custom_command_parameter_items = "speak_items",
+		create_airdrop_custom_command_parameter_items_help = "Roar! List of things and how many you want inside the drop, roar! Format should be like 'green_apple:5,hamburger:3', roar!",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "roar_call_airstrike",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		remove_riot_player_command_parameter_server_id_help = "Me help remove player from 'riot list'. Leave blank to select self.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "roar_rooms_debug",
+		rooms_debug_command_help = "Roar! Debug all rooms, roar!",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "roar",
 		metagame_command_help = "Toggle constant drawing of player's server IDs.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		voice_debug_command_parameter_server_id_help = "If you're wanting to toggle the 'voice debug' for someone else, insert their roar id here.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "muted_areas_debug",
-		muted_areas_debug_command_help = "Draws all muted voice areas.",
-		muted_areas_debug_command_substitutes = "muted_areas",
-
 		listen_command = "sharptooth",
 		listen_command_help = "Toggles listening mode for a certain dinosaur. (You can hear what they say)",
 		listen_command_parameter_server_id = "roar id",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		corner_debug_command = "rawr_debug",
 		corner_debug_command_help = "Show all the selling areas.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "roar_drugs_debug",
+		drugs_debug_command_help = "Roar! Debug all places where you can sell drugs, roar!",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "clear_uis",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Player tried to create an airdrop, but it didn't have enough roar power to do so.",
-		created_airdrop = "Rooar! Airdrop created! Type: `${airdropType}`  Total items: ${itemAmount}"
+		create_airdrop_missing_permissions = "Meatbag tried to make an airdrop but they didn't have the necessary permissions to do so.",
+		create_airdrop_custom_missing_permissions = "Meatbag tried to make a custom airdrop but they didn't have the necessary permissions to do so.",
+		created_airdrop = "Rooar! Airdrop created! Type: `${airdropType}`  Total items: ${itemAmount}",
+		no_valid_items_provided = "No acceptable items provided.",
+		created_airdrop_with_items = "Created an airdrop with the following items:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Player try to make boom but no have enough power to do so.",
+		create_airstrike_missing_permissions = "Meatbag attempted to create an airstrike but they didn't have the necessary permissions to do so.",
 
 		airstrike_success = "BOOM! Airstrike was successful.",
 		airstrike_failed = "BOOM no happen. Airstrike failed."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Player try to call in big flying helpers but no have enough power to do so.",
+		create_airsupport_missing_permissions = "Dino think player try call in sky help, but no have right permission.",
 
 		distance = "Raaaaar: ${distance}${unit}",
 		time_to_impact = "CEC: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		crafting_steel = "Rawr ${usedItems} into steel.",
 		crafted_steel = "${usedItems} now steel!",
 		failed_craft_steel = "Rawr, failed to craft steel.",
+
+		craft_aluminium = "Make Shiny Metal",
+		press_to_craft_aluminium = "[${SeatEjectKey}] Make Shiny Metal",
+		crafting_aluminium = "Squish ${usedItems} for make shiny metal.",
+		crafted_aluminium = "Dino make shiny metal from ${usedItems}.",
+		failed_craft_aluminium = "Oh no! Dino fail make shiny metal.",
 
 		scrapping_item = "Rawr ${usedItems} into scrap.",
 		scrapped_item = "Rawr, scrap extracted from ${usedItems}.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		discount_store = "Savings Cave",
 		gun_store_with_shooting_range = "Roaring Emporium with Thundering Range",
 		green_wonderland = "Green Roarland",
+		copy_shop = "Copy Nest",
 		irish_pub = "Irish Tyrant Tavern",
 		bar = "Thagomizer's Drinking Hole",
 		midnight = "Midnight Raptor Garage",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 		picture = "Mementosaurus",
 		picture_description = "Collect all the memories of you and your dino-friends. (Roarsaurus!)",
+		paper = "Leaf Sheet",
+		paper_description = "Blank leaf sheet for write.",
+		printer = "Color Leaf Machine",
+		printer_description = "Rrrawr, no fax, only printer.",
 
 		brochure = "Brochurosaurus",
 		brochure_description = "A helpful brocurosaurus to get you started in the city. (Roarsaurus!)",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 		pole = "Yellow Skytree",
 		pole_description = "Perfect fer stoppin' anyone dead in their tracks.",
+
+		hiking_backpack = "Hiking Backpack",
+		hiking_backpack_description = "Rrrawr, gear up for outdoor adventures with this stylish hiking backpack. It adds a touch of rugged charm to your attire, even though it's purely cosmetic. Embrace the spirit of exploration and show off your outdoor enthusiast vibes wherever you go!",
 
 		gasoline_bottle = "Gasoline Bottle",
 		gasoline_bottle_description = "Fer a quick refill fer yer car or....uhm.....yerself?",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		pools_overflowing = "Rawr! Pools overflowing: ~r~${poolsOverflowing}."
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] Use Printer",
+
+		no_paper = "Rrrawr, you don't have any paper.",
+		invalid_url = "Rrrawr! Invalid Image URL.",
+		invalid_domain = "This domain is not allowed. Rrrawr.",
+		print = "Rarr",
+		printing = "Roar...",
+
+		printed_logs_title = "Rarr Image",
+		printed_logs_details = "${consoleName} Rarr'd an image with the URL `${url}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "Rawr! Player tried to use a prop item with an illegal item ID.",
 		spawn_prop_not_staff = "Rawr! Player attempted to spawn a prop but they don't have permission to do so.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		belt_is_on_and_vehicle_is_locked = "Your belt is on and the vehicle is locked with a roar.",
 		belt_is_on = "Raaarrrr! Your belt is sturdy.",
 		vehicle_is_locked = "Grrr! Vehicle is unhackable.",
+		belt_warning = "You must strap yourself in, press ~INPUT_SPECIAL_ABILITY_SECONDARY~ to do so.",
 
 		nearest_player_not_vehicle = "Rooaaar! Nearest player out of car.",
 		no_dead_player_nearby = "Hmmph! No dead lizard nearby in a car.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["meme-minionese"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		detection_area_close = "[${InteractionKey}] Removeebay Detection Area (${areaId})",
 		detection_area = "Detection Area (${areaId}) baboi",
 
+		failed_toggle_strict_mode = "Poopaye! Failed to toggle strict mode.",
+		strict_mode_enabled = "Poopaye! Successfully enabled strict mode.",
+		strict_mode_disabled = "Poopaye! Successfully disabled strict mode.",
+
 		ban_notification_title = "Banana Anti-Cheat",
 		ban_notification = "Bapple Banned ${consoleName} for `${banReason}`. Bapple.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		notification_distance_taze = "Bapple! ${displayName} tazed someone from a very far distance (${distance}m). Anti-cheat caught you!",
 		notification_bad_screen_word = "Bapple! ${displayName} has ${count} trigger word(s) on their screen. Anti-cheat caught you!",
-		notification_suspicious_explosion = "Banana-Tiki: ${displayName} taka ${explosionType}.",
+		notification_suspicious_explosion = "Bello! Anti-Cheat: ${displayName} triggered a ${explosionType} BOOM (~${distance}m).",
 
 		notification_freecam_detected = "Bananaaaaa! : Freecam Detected",
 		notification_illegal_vehicle_modifier = "Bananaaaaa! : Vehicle Modifier",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		screen_text_debug_command_help = "Hakiki maeneo ya kuondoa yaliyopo kwenye skrini.",
 		screen_text_debug_command_substitutes = "skrini_maandishi",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "Bello! Toggle da anti-cheat strict mode, making it a lot more agressive. This will most likely result in more false-positives.",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "ayuda",
 		help_command_help = "Muestra todos los comandos disponibles.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		create_airdrop_command_parameter_item_amount = "tu-tu-tu-tu",
 		create_airdrop_command_parameter_item_amount_help = "Tu-tu-tu-tu-bananaaaaaa!",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "create_airdrop_custom",
+		create_airdrop_custom_command_help = "Bello! Create an airdrop with customized contents.",
+		create_airdrop_custom_command_parameter_items = "items",
+		create_airdrop_custom_command_parameter_items_help = "Banaaaana! A string containing what items and how many of them there should be. The string should look like 'green_apple:5,hamburger:3'.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "bananaaa_foolish",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		remove_riot_player_command_parameter_server_id_help = "Whaaat?! Bee-doo id of da player yuuu want to remove. If yuuu no fill dis, it will auto-select yuuurself!",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "rooms_debug",
+		rooms_debug_command_help = "Potahto! Debug all rooms.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "bapple",
 		metagame_command_help = "Bee do bee do, toggle constant drawing of player's server IDs.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		voice_debug_command_parameter_server_id_help = "Bellooo! If yooouuu wan't do toggle the 'voice debug' for someone else, insert their server id here.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "muted_areas_debugo",
-		muted_areas_debug_command_help = "Draws all muted voice areas. Bananaa!",
-		muted_areas_debug_command_substitutes = "muted_areas",
-
 		listen_command = "listenoooo",
 		listen_command_help = "Toggles listening mode for a certain user. (You can hear what they say).",
 		listen_command_parameter_server_id = "server idddddd. ",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		corner_debug_command = "ka-po-ta_debug",
 		corner_debug_command_help = "Baboi! Show all da sell areas.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "drugs_debug",
+		drugs_debug_command_help = "Potato! Debug all drug selling locations.",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "clear_uis",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Bello, player attmepted to create an airdrop but they didn't have the required permissions to do so.",
-		created_airdrop = "Bello, created an airdrop of type `${airdropType}` with a total of ${itemAmount} item(s)."
+		create_airdrop_missing_permissions = "Bello! Player tried to create an airdrop without permission.",
+		create_airdrop_custom_missing_permissions = "Bello! Player tried to create a custom airdrop without permission.",
+		created_airdrop = "Bello, created an airdrop of type `${airdropType}` with a total of ${itemAmount} item(s).",
+		no_valid_items_provided = "Poulet tikka masala! No valid items provided.",
+		created_airdrop_with_items = "Tulaliloo ti amo! Airdrop created with these items:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Player attmepted to create an AAAHHSTRIKE but they didn't have the required permissions to do so.",
+		create_airstrike_missing_permissions = "Papoy! Player tried to create an airstrike without permission.",
 
 		airstrike_success = "AAAHHSTRIKE created successfully.",
 		airstrike_failed = "Failed to create an AAAHHSTRIKE."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Player attmepted to call in air support but they didn't have the required permissions to do so.",
+		create_airsupport_missing_permissions = "Bello! Bababa babanana baba? (Player attempted to call in air support but they didn't have the required permissions to do so.)",
 
 		distance = "Poopaye: ${distance}${unit}",
 		time_to_impact = "ETI: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		crafting_steel = "Bello ${usedItems}",
 		crafted_steel = "Bello ${usedItems} me le steel.",
 		failed_craft_steel = "Le fail! Cannot craft steel.",
+
+		craft_aluminium = "Dulala! Craft Aluminium.",
+		press_to_craft_aluminium = "[${SeatEjectKey}] Dulala! Craft Aluminium.",
+		crafting_aluminium = "Meeh bamboonana ${usedItems}.",
+		crafted_aluminium = "Bababa ${usedItems} po ta-da-lu! (Crafted ${usedItems} into aluminium.)",
+		failed_craft_aluminium = "Uh oh! Ba-na-na! (Failed to craft aluminium.)",
 
 		scrapping_item = "Scrapping ${usedItems}",
 		scrapped_item = "Extracted scrap metal from ${usedItems}.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		discount_store = "Banana Potatoo Discount Store",
 		gun_store_with_shooting_range = "Banana Potatoo Ammu-Nation with Shooting Range",
 		green_wonderland = "Banana Land",
+		copy_shop = "Copy Shop",
 		irish_pub = "O'Pubba",
 		bar = "Bappo",
 		midnight = "Midnight Vroomvroom",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		picture = "Bello Bello",
 		picture_description = "Collect all the memories of you and your friends.",
+		paper = "Baboi? Paper!",
+		paper_description = "Bello! A blank piece of paper.",
+		printer = "Bababa! Printer.",
+		printer_description = "Bello, no fax, only printer.",
 
 		brochure = "Brochura",
 		brochure_description = "A helpful brocure to get you started in the city.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		pole = "Yellow Bello Pole",
 		pole_description = "Bello for stopping anyone dead in their tracks.",
+
+		hiking_backpack = "Hiking Backpacko",
+		hiking_backpack_description = "Gear up for outdoor adventures wit dat stylish hiking backpack. It adds a touch of rugged charm to ya attire, even tho it's purely cosmetic. Embrace da spirit of exploration and show off ya outdoor enthusiast vibes wherever ya go!",
 
 		gasoline_bottle = "Banolta Gasolin",
 		gasoline_bottle_description = "Bello for a quick refill for your car or....uhm.....yourself?",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		pools_overflowing = "Pools Overflowing: ~r~${poolsOverflowing}"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] Use Printer (let's print some bananas)",
+
+		no_paper = "You don't have any banana-paper.",
+		invalid_url = "Invalid Image URL - Uh oh, banana!",
+		invalid_domain = "This domain is not allowed - Boohoo!",
+		print = "Bello",
+		printing = "Babble babble babble...",
+
+		printed_logs_title = "Bello Image",
+		printed_logs_details = "${consoleName} printed an image with the URL `${url}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "Minion attempted to use a prop item with an illegal item id.",
 		spawn_prop_not_staff = "Minion attempted to spawn a prop but they didn't have the required permissions to do so. Bellooo!",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		belt_is_on_and_vehicle_is_locked = "Bee-do, bee-do! Your belt is on and the vehicle is locked.",
 		belt_is_on = "Bello Bello Bello.",
 		vehicle_is_locked = "Tank yu, tank yu.",
+		belt_warning = "Bello! You don't have your seatbelt on! Press ~INPUT_SPECIAL_ABILITY_SECONDARY~ to put it on.",
 
 		nearest_player_not_vehicle = "Baboiiii.",
 		no_dead_player_nearby = "Bee-do Bee-do Bee-do.",

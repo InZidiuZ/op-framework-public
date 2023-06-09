@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["ro-RO"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		detection_area_close = "[${InteractionKey}] Elimină zona de detectare (${areaId})",
 		detection_area = "Zonă de detectare (${areaId})",
 
+		failed_toggle_strict_mode = "Nu am reușit să activez modul strict.",
+		strict_mode_enabled = "Modul strict a fost activat cu succes.",
+		strict_mode_disabled = "Modul strict a fost dezactivat cu succes.",
+
 		ban_notification_title = "Anti-Cheat",
 		ban_notification = "Banat ${consoleName} pentru `${banReason}`.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} a șocat un jucător la o distanță foarte mare (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} are ${count} cuvinte probleme pe ecranul său.",
-		notification_suspicious_explosion = "Anti-Cheat: ${displayName} a declanșat o explozie de tipul ${explosionType}.",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} a declansat o explozie de tipul ${explosionType} (~${distance}m).",
 
 		notification_freecam_detected = "Anti-Cheat: Freecam detectat",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Modificator de vehicule ilegal",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		screen_text_debug_command_help = "Debugează dreptunghiurile de excludere ale textului de pe ecran.",
 		screen_text_debug_command_substitutes = "text_ecran_debug",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "Activează sau dezactivează modul strict al anti-cheat-ului. Acest lucru va duce probabil la un număr mai mare de alarme eronate.",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "ajutor",
 		help_command_help = "Afișează toate comenzile disponibile.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		create_airdrop_command_parameter_item_amount = "cantitatea de obiecte",
 		create_airdrop_command_parameter_item_amount_help = "Cantitatea de obiecte pe care airdrop-ul le va conține.",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "creare_lansare_customizata",
+		create_airdrop_custom_command_help = "Crează o lansare cu conținut personalizat.",
+		create_airdrop_custom_command_parameter_items = "obiecte",
+		create_airdrop_custom_command_parameter_items_help = "Un șir de caractere care conține obiectele și cantitatea acestora. Șirul ar trebui să arate astfel: 'mere_verzi:5,hamburger:3'.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "chemare_aire",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		remove_riot_player_command_parameter_server_id_help = "ID-ul serverului pentru jucătorul pe care doriți să îl eliminați. Lăsați acest câmp necompletat pentru a vă selecta automat.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "debugare_camere",
+		rooms_debug_command_help = "Debugează toate camerele.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "meta",
 		metagame_command_help = "Activează/desactivează afișarea constantă a ID-urilor jucătorilor serverului.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		voice_debug_command_parameter_server_id_help = "Dacă doriți să setați 'debug voce' pentru altcineva, introduceți id-ul lor de server aici.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "muted_areas_debug",
-		muted_areas_debug_command_help = "Desenează toate zonele cu voce dezactivate.",
-		muted_areas_debug_command_substitutes = "zone_voce_dezactivate",
-
 		listen_command = "asculta",
 		listen_command_help = "Comuta modul de ascultare pentru un anumit utilizator. (Puteți auzi ceea ce spun)",
 		listen_command_parameter_server_id = "id server",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		corner_debug_command = "debug_colţul_străzii",
 		corner_debug_command_help = "Afişează toate zonele de vânzare.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "debugare_locatii_vanzare_droguri",
+		drugs_debug_command_help = "Debugează toate locațiile de vânzare de droguri.",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "curăţă_uis",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Jucătorul a încercat să creeze un airdrop, dar nu avea permisiunile necesare să facă asta.",
-		created_airdrop = "A fost creat un airdrop de tipul `${airdropType}` cu un total de ${itemAmount} obiect(e)."
+		create_airdrop_missing_permissions = "Jucătorul a încercat să creeze un aprozar aerian, dar nu avea permisiunile necesare pentru a o face.",
+		create_airdrop_custom_missing_permissions = "Jucătorul a încercat să creeze un aprozar aerian personalizat, dar nu avea permisiunile necesare pentru a o face.",
+		created_airdrop = "A fost creat un airdrop de tipul `${airdropType}` cu un total de ${itemAmount} obiect(e).",
+		no_valid_items_provided = "Nu s-au furnizat elemente valide.",
+		created_airdrop_with_items = "S-a creat un aprozar aerian cu următoarele elemente:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["ro-RO"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Jucătorul a încercat să creeze un bombardament aerian, dar nu avea permisiunile necesare pentru a face acest lucru.",
+		create_airstrike_missing_permissions = "Jucătorul a încercat să creeze un atac aerian, dar nu avea permisiunile necesare pentru a o face.",
 
 		airstrike_success = "Bombardamentul aerian a fost creat cu succes.",
 		airstrike_failed = "Nu s-a reușit crearea bombardamentului aerian."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Jucătorul a încercat să solicite suport aerian, dar nu avea permisiunile necesare pentru a face acest lucru.",
+		create_airsupport_missing_permissions = "Jucătorul a încercat să ceară suport aerian, dar nu avea permisiunile necesare pentru a face acest lucru.",
 
 		distance = "Distanță: ${distance}${unit}",
 		time_to_impact = "Timpul Estimat de Intrare (ETI): ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		crafting_steel = "Modelarea ${usedItems}",
 		crafted_steel = "Ați confecționat ${usedItems} în oțel.",
 		failed_craft_steel = "Eroare la confecționarea oțelului.",
+
+		craft_aluminium = "Fabrică Aluminiu",
+		press_to_craft_aluminium = "[${SeatEjectKey}] Fabrică Aluminiu",
+		crafting_aluminium = "Se topește ${usedItems}",
+		crafted_aluminium = "S-a fabricat ${usedItems} în aluminiu.",
+		failed_craft_aluminium = "Nu s-a reușit fabricarea aluminiului.",
 
 		scrapping_item = "Dismembrarea ${usedItems}",
 		scrapped_item = "Ați extras metal reciclat din ${usedItems}.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		discount_store = "Magazin Reduceri",
 		gun_store_with_shooting_range = "Magazin Arme cu Raion de Tir",
 		green_wonderland = "Green Wonderland",
+		copy_shop = "Magazin de Copiat",
 		irish_pub = "Pub Irlandez",
 		bar = "Bar",
 		midnight = "Tunershop de miezul nopții",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		picture = "Fotografie",
 		picture_description = "Colectează toate amintirile cu tine și prietenii tăi.",
+		paper = "Hârtie",
+		paper_description = "O bucată goală de hârtie.",
+		printer = "Imprimantă",
+		printer_description = "Fără fax, doar imprimantă.",
 
 		brochure = "Brosură",
 		brochure_description = "O broșură utilă pentru a te familiariza cu orașul.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		pole = "Stâlp galben",
 		pole_description = "Perfect pentru oprirea bruscă a oricui.",
+
+		hiking_backpack = "Rucsac de drumeție",
+		hiking_backpack_description = "Echipați-vă cu acest rucsac de drumeție șic pentru aventurile în aer liber. Adaugă un strop de farmec sălbatic îmbrăcămintei tale, chiar dacă este exclusiv cosmetic. Abordați spiritul explorării și arătați-vă vibrațiile pasionatului de activități în aer liber oriunde mergeți!",
 
 		gasoline_bottle = "Butoi de benzină",
 		gasoline_bottle_description = "Pentru reumplerea rapidă a mașinii sau...uhm...a ta?",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		pools_overflowing = "Piscine sufocate: ~r~${poolsOverflowing}"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] Folosește imprimanta",
+
+		no_paper = "Nu aveți hârtie.",
+		invalid_url = "URL-ul imaginii este invalid.",
+		invalid_domain = "Acest domeniu nu este permis.",
+		print = "Printează",
+		printing = "Se printează...",
+
+		printed_logs_title = "Imagine printată",
+		printed_logs_details = "${consoleName} a printat o imagine cu URL-ul `${url}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "Jucătorul a încercat să folosească un obiect de decor cu un id ilegal al obiectului.",
 		spawn_prop_not_staff = "Jucătorul a încercat să invoce un obiect de decor, dar nu avea permisiunile necesare pentru a face acest lucru.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		belt_is_on_and_vehicle_is_locked = "Centura dumneavoastră este pusă și vehiculul este blocat.",
 		belt_is_on = "Centura ta este pusă.",
 		vehicle_is_locked = "Mașina este blocată.",
+		belt_warning = "Centura de siguranță nu este pusă, apasă ~INPUT_SPECIAL_ABILITY_SECONDARY~ pentru a o pune.",
 
 		nearest_player_not_vehicle = "Cel mai apropiat jucător nu se află într-un vehicul.",
 		no_dead_player_nearby = "Nu există jucător mort într-un vehicul în apropierea ta.",

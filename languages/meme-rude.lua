@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["meme-rude"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		detection_area_close = "[${InteractionKey}] Get rid of this fucking detection area (${areaId})",
 		detection_area = "Detection Area (${areaId})",
 
+		failed_toggle_strict_mode = "undefined",
+		strict_mode_enabled = "undefined",
+		strict_mode_disabled = "undefined",
+
 		ban_notification_title = "Anti-Cheat",
 		ban_notification = "We fucking banned ${consoleName} for `${banReason}`. Get your shit together, asshole!",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 		notification_distance_taze = "Breaking News: ${displayName} has demonstrated their exceptional tazing skills by zapping someone from a ridiculous distance of ${distance} meters away, triggering our anti-cheat system.",
 		notification_bad_screen_word = "Our anti-cheat system caught ${displayName} having ${count} forbidden words on their screen. Shameful!",
-		notification_suspicious_explosion = "Anti-Cheat: ${displayName} Triggered A Suspicious Fucking Explosion. Watch Out!",
+		notification_suspicious_explosion = "undefined",
 
 		notification_freecam_detected = "Anti-Cheat: Holy shit, you're using a freecam!",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Hey, fuckface! Quit modifying your goddamn vehicle!",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		screen_text_debug_command_help = "Fucking debug the screen-text exclusion rectangles, asshole.",
 		screen_text_debug_command_substitutes = "screen_text_fucking_debug",
 
+		anti_cheat_strict_mode_command = "undefined",
+		anti_cheat_strict_mode_command_help = "undefined",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "help",
 		help_command_help = "Show all the fucking available commands, you dumbass.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		create_airdrop_command_parameter_item_amount = "item amount",
 		create_airdrop_command_parameter_item_amount_help = "The fucking amount of trash items that the airdrop should contain.",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "undefined",
+		create_airdrop_custom_command_help = "undefined",
+		create_airdrop_custom_command_parameter_items = "undefined",
+		create_airdrop_custom_command_parameter_items_help = "undefined",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "call_airstrike",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		remove_riot_player_command_parameter_server_id_help = "Just give me the server ID of the shitty player you want me to remove. If you don't know it, then leave it blank and I'll kick your ass out of the list.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "undefined",
+		rooms_debug_command_help = "undefined",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "metashit",
 		metagame_command_help = "Fucking turn on/off the constant drawing of player's dumbass server IDs.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		voice_debug_command_parameter_server_id_help = "If you're wanting to toggle the 'voice debug' for some other sod, insert their server id here.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "muted_areas_debug, you knob",
-		muted_areas_debug_command_help = "Draws all the bloody muted voice areas for ya.",
-		muted_areas_debug_command_substitutes = "muted_areas, you tosser",
-
 		listen_command = "listen, you prick",
 		listen_command_help = "Toggles listening mode for a certain tosser. (You can hear what they say)",
 		listen_command_parameter_server_id = "server id, ya bloody tosspot",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		corner_debug_command = "corber_debug",
 		corner_debug_command_help = "Reveal all the areas where you can sell your drugs without any interference from the cops.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "undefined",
+		drugs_debug_command_help = "undefined",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "clear_uis",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["meme-rude"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "What a fucking dumbass. Tried to fucking create an airdrop but doesn't have the fucking permissions to do it.",
-		created_airdrop = "Fucking created an airdrop of type `${airdropType}` with ${itemAmount} fucking item(s)."
+		create_airdrop_missing_permissions = "undefined",
+		create_airdrop_custom_missing_permissions = "undefined",
+		created_airdrop = "Fucking created an airdrop of type `${airdropType}` with ${itemAmount} fucking item(s).",
+		no_valid_items_provided = "undefined",
+		created_airdrop_with_items = "undefined"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["meme-rude"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "The fuckin' player tried to create an airstrike but they didn't have the fuckin' permissions",
+		create_airstrike_missing_permissions = "undefined",
 
 		airstrike_success = "Airstrike created like a boss",
 		airstrike_failed = "Fuckin' shit, the airstrike creation failed"
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "The piece of shit player tried to call in some air support but they can't do that shit without the right fuckin' permissions",
+		create_airsupport_missing_permissions = "Some dumbass tried to call in air support but they don't have the fucking permissions to do so.",
 
 		distance = "Distance: ${distance}${unit}",
 		time_to_impact = "ETI: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		crafting_steel = "Turning ${usedItems} into f*cking steel",
 		crafted_steel = "Holy sh*t, you crafted ${usedItems} into steel?!",
 		failed_craft_steel = "Well, f*ck me, you couldn't even craft that sh*tty steel",
+
+		craft_aluminium = "Craft Some Fucking Aluminium",
+		press_to_craft_aluminium = "[${SeatEjectKey}] Craft Some Fucking Aluminium",
+		crafting_aluminium = "Melting fucking ${usedItems}",
+		crafted_aluminium = "Holy fucking shit, they crafted ${usedItems} into fucking aluminium.",
+		failed_craft_aluminium = "This is embarrassing, they failed at fucking crafting aluminum...",
 
 		scrapping_item = "Ripping apart ${usedItems}",
 		scrapped_item = "You got some f*cking scrap metal from ${usedItems}, finally a useful f*cking creation",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		discount_store = "Cheap Ass Discount Store",
 		gun_store_with_shooting_range = "Ammu-Nation with Fucking Range",
 		green_wonderland = "Fucking Green Wonderland",
+		copy_shop = "Copy Some Shit",
 		irish_pub = "Irish Fucking Pub",
 		bar = "Shitty Bar",
 		midnight = "Fucking Midnight Tunershop",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 		picture = "Fucking Picture",
 		picture_description = "Collect all the memories of you and your sorry-ass friends who you'll probably fucking betray at some point.",
+		paper = "Paper",
+		paper_description = "A piece of fucking blank ass paper.",
+		printer = "Fucking Printer",
+		printer_description = "Ain't no faxin', it's just a damn printer.",
 
 		brochure = "Fucking Brochure",
 		brochure_description = "A fucking useless brochure to get you started in this shithole of a city.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 		pole = "Yellow Pole",
 		pole_description = "Perfect for fucking stopping anyone dead in their tracks.",
+
+		hiking_backpack = "Hiking Backpack",
+		hiking_backpack_description = "Get dressed for yo' damn outdoor shit with this fly-ass hiking backpack. It adds some damn gritty charm to yo' getup, even though it don't do shit. Embrace that explorin' spirit and show off yo' outdoorsy ass vibes wherever the fuck you go!",
 
 		gasoline_bottle = "Gasoline Bottle",
 		gasoline_bottle_description = "For a fucking quick refill for your car or....uhm.....yourself?",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		pools_overflowing = "Shit's fucked up, bruh. Pools Overflowing: ~r~${poolsOverflowing}."
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] Use That Goddamn Printer",
+
+		no_paper = "You ain't got no goddamn paper.",
+		invalid_url = "Fuckin' Invalid Image URL.",
+		invalid_domain = "This goddamn domain ain't allowed.",
+		print = "F\*\*king Print",
+		printing = "F\*\*king Printing...",
+
+		printed_logs_title = "F\*\*king Printed Image",
+		printed_logs_details = "${consoleName} f\*\*king printed an image with the f\*\*king URL `${url}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "Some dipshit tried to use a prop item with an illegal item id. Bravo, moron.",
 		spawn_prop_not_staff = "Some piece of shit tried to spawn a prop, but they didn't have the goddamn permissions to do so. Who the fuck do they think they are?",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		belt_is_on_and_vehicle_is_locked = "Put on your belt, cause' we're driving fast, baby! And the vehicle is locked, so you can't escape this ride.",
 		belt_is_on = "Your fucking belt is on, genius.",
 		vehicle_is_locked = "The damn vehicle is fuckin' locked, dipshit.",
+		belt_warning = "Put on your f\*\*king seatbelt, press ~INPUT_SPECIAL_ABILITY_SECONDARY~ to f\*\*king buckle up.",
 
 		nearest_player_not_vehicle = "The closest motherfucker ain't even in a damn vehicle.",
 		no_dead_player_nearby = "There ain't no dead-ass player in a damn car near your worthless ass.",

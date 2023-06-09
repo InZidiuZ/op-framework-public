@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["meme-1929"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		detection_area_close = "[${InteractionKey}] Remove Detection Area (${areaId})",
 		detection_area = "Detection Area (${areaId})",
 
+		failed_toggle_strict_mode = "Failed to toggle strict mode.",
+		strict_mode_enabled = "Strict mode successfully enabled.",
+		strict_mode_disabled = "Strict mode successfully disabled.",
+
 		ban_notification_title = "Anti-Cheat",
 		ban_notification = "${consoleName} has been banned for the reason `${banReason}`.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} hath tazed someone over a very large distance (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} hath ${count} trigger word(s) on their screen.",
-		notification_suspicious_explosion = "Anti-Cheat: ${displayName} triggered an explosion with ${explosionType}.",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} initiated a ${explosionType} explosion (~${distance}m) that seems suspicious.",
 
 		notification_freecam_detected = "Anti-Cheat: Freecam detected!",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Vehicle modified illegally!",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		screen_text_debug_command_help = "undefined",
 		screen_text_debug_command_substitutes = "undefined",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "Toggle the anti-cheat's strict mode, making it more aggressive. However, this may lead to more false-positives.",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "help",
 		help_command_help = "Exhibit all available orders.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		create_airdrop_command_parameter_item_amount = "item quantity",
 		create_airdrop_command_parameter_item_amount_help = "The quantity of items that the delivery should contain.",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "create_airdrop_custom",
+		create_airdrop_custom_command_help = "Create an air-delivery with customized contents.",
+		create_airdrop_custom_command_parameter_items = "items",
+		create_airdrop_custom_command_parameter_items_help = "A series of items and their quantity specified in a string. The format of the string should be like 'green_apple:5,hamburger:3'.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "call_airstrike",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		remove_riot_player_command_parameter_server_id_help = "The server ID of the player you would like to remove. Leave this blank to automatically select yourself.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "rooms_debug",
+		rooms_debug_command_help = "Debug all rooms.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "meta",
 		metagame_command_help = "Toggle constant display of player's server IDs.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		voice_debug_command_parameter_server_id_help = "If you want to toggle the 'voice debug' for someone else, insert their server ID here.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "muted areas debug",
-		muted_areas_debug_command_help = "Displays all muted voice areas.",
-		muted_areas_debug_command_substitutes = "muted areas",
-
 		listen_command = "listen",
 		listen_command_help = "Toggles listening mode for a specific user. (You can hear what they say)",
 		listen_command_parameter_server_id = "server ID",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		corner_debug_command = "peddle_debug",
 		corner_debug_command_help = "Display all the vended item locations.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "drugs_debug",
+		drugs_debug_command_help = "Debug all drug dealing locations.",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "clear_uis",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["meme-1929"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Player attempted to create an airdrop but they did not have the necessary permissions to do so.",
-		created_airdrop = "Created an airdrop of type `${airdropType}` with a total of ${itemAmount} item(s)."
+		create_airdrop_missing_permissions = "A player has tried to create an airdrop, yet they have not been granted the necessary permissions to do so.",
+		create_airdrop_custom_missing_permissions = "A player has tried to create a custom airdrop, yet they have not been granted the necessary permissions to do so.",
+		created_airdrop = "Created an airdrop of type `${airdropType}` with a total of ${itemAmount} item(s).",
+		no_valid_items_provided = "No valid items have been provided.",
+		created_airdrop_with_items = "An airdrop has been created with the following items inside:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["meme-1929"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Gentleman attempted to create an airstrike but he lacked the necessary permissions.",
+		create_airstrike_missing_permissions = "A player has tried to create an airstrike, yet they have not been granted the necessary permissions to do so.",
 
 		airstrike_success = "Airstrike hath been created successfully.",
 		airstrike_failed = "Failed to create an airstrike."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Gentleman attempted to call in air support but he lacked the necessary permissions to do so.",
+		create_airsupport_missing_permissions = "Player tried to request aerial support, but lacked the necessary permits.",
 
 		distance = "Distance: ${distance}${unit}",
 		time_to_impact = "ETI: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		crafting_steel = "Moulding ${usedItems}",
 		crafted_steel = "Crafted ${usedItems} into steel.",
 		failed_craft_steel = "Failed to mould steel.",
+
+		craft_aluminium = "Create Aluminum",
+		press_to_craft_aluminium = "[${SeatEjectKey}] Create Aluminum",
+		crafting_aluminium = "Melting ${usedItems}",
+		crafted_aluminium = "Transformed ${usedItems} into aluminum.",
+		failed_craft_aluminium = "Failed to create aluminum.",
 
 		scrapping_item = "Scrapping ${usedItems}",
 		scrapped_item = "Extracted scrap metal from ${usedItems}.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		discount_store = "Bargain Basement",
 		gun_store_with_shooting_range = "Gun Shop with Shooting Range",
 		green_wonderland = "Green Wonderland",
+		copy_shop = "Photocopy Shop",
 		irish_pub = "Irish Pub",
 		bar = "Public House",
 		midnight = "Tunershop",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		picture = "Portrait",
 		picture_description = "Gathereth all the memories of thou and thy companions.",
+		paper = "Paper",
+		paper_description = "A blank sheet of paper.",
+		printer = "Printing Machine",
+		printer_description = "No fax, only printer.",
 
 		brochure = "Pamphlet",
 		brochure_description = "A helpful pamphlet to get thee started in the city.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		pole = "Yellow Pole",
 		pole_description = "Ideal for bringing someone to a sudden halt.",
+
+		hiking_backpack = "Hiking Knapsack",
+		hiking_backpack_description = "Prepare for your outdoor escapades with this stylish hiking knapsack. It gives an air of ruggedness to your outfit, but is purely cosmetic. Embrace the essence of exploration and display your outdoor enthusiast vibes wherever you may be!",
 
 		gasoline_bottle = "Petrol Bottle",
 		gasoline_bottle_description = "For a rapid refuel of your car, or....uhm.....yourself?",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		pools_overflowing = "Pools Overflowing: ~r~${poolsOverflowing}"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] Use Printer",
+
+		no_paper = "You're out of paper.",
+		invalid_url = "Invalid Image URL.",
+		invalid_domain = "This domain is unauthorized.",
+		print = "Print",
+		printing = "Printing...",
+
+		printed_logs_title = "Printed Picture",
+		printed_logs_details = "${consoleName} printed a picture with the URL `${url}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "Player attempted to use a prop item with an illegal item id.",
 		spawn_prop_not_staff = "Player attempted to spawn a prop but they didn't have the required permissions to do so.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		belt_is_on_and_vehicle_is_locked = "Thy belt is on and the vehicle is locked.",
 		belt_is_on = "Thy belt is on.",
 		vehicle_is_locked = "The motorcar is locked.",
+		belt_warning = "Fasten thine seatbelt by pressing ~INPUT_SPECIAL_ABILITY_SECONDARY~.",
 
 		nearest_player_not_vehicle = "Nearest knave is not in a motorcar.",
 		no_dead_player_nearby = "There art no dead knaves in a motorcar nigh thee.",

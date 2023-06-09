@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["meme-klingon"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		detection_area_close = "[${InteractionKey}] Remove Detection Area (${areaId})",
 		detection_area = "Detection Area (${areaId})",
 
+		failed_toggle_strict_mode = "wIj yIghojbogh strict mode.",
+		strict_mode_enabled = "Strict mode choHwI' jabbogh.",
+		strict_mode_disabled = "Strict mode choHwI' jeb.",
+
 		ban_notification_title = "Antii-Cheat",
 		ban_notification = "Banned ${consoleName} for `${banReason}`.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} vIghel over qatlh maHvetlh (${distance}m) neH tazev.",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} vIghel vIghel qaSpu'DI' word(s) (${count}) on ghItlh Display.",
-		notification_suspicious_explosion = "Cheghom-Hov: ${displayName} ${explosionType} qIjDI'laHbe'.",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} ${explosionType} ho' {${distance}m} qeylIS Duj.",
 
 		notification_freecam_detected = "Anti-Cheat: Freecam Detected", -- tlhIngan-Hol: yIqImHaq quvHa'pu' yIlo'laHbe'",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Vehicle Modifier", -- tlhIngan-Hol: yIqImHaq quvHa'pu' mach chenmoHwI'",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		screen_text_debug_command_help = "mI' bov ngoQDech bom exclusion rectangles debug.",
 		screen_text_debug_command_substitutes = "mI' bov ngoQDech",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "anti-cheat strict mode toggle wIj joq tlhIngan chovnatlh rur. may' 'oH vIneH.",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "help",
 		help_command_help = "Show all available commands.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		create_airdrop_command_parameter_item_amount = "jImej Dej",
 		create_airdrop_command_parameter_item_amount_help = "yondu wa'logh bochuq vItlhutlh pe'vIlchugh jImej.",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "jIyInghID_Saqmey_yIlo'",
+		create_airdrop_custom_command_help = "Qapla'! jIloh create_airdrop jIrImvoq wejDIch'e'.",
+		create_airdrop_custom_command_parameter_items = "chej",
+		create_airdrop_custom_command_parameter_items_help = "'oH chej wIqah 'ej chaq yIlop. chej ngejmeH DeSbe' QaQqu' 'e' lutlhIj 'oH, chay'pu' lutlhIj mu'mey 'utlh. Example: 'yIbIQ Durol', 'hamburger' 'utlh:3'.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "QeDmey yIvem",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		remove_riot_player_command_parameter_server_id_help = "lo'laHbe' jImej. Qapchu' qaStaHvIS HIq neH 'orwI'vo' yIchelp.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "ghItlhvam_chaH",
+		rooms_debug_command_help = "'aj ghItlhvam jImej.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "metajatlh",
 		metagame_command_help = "Toggle constant drawing of player's server IDs.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		voice_debug_command_parameter_server_id_help = "QIpmeH 'voice debug' jIlo'laHbe'chugh, 'oH ghot'ov Insert kutlh.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "muted_areas_debug",
-		muted_areas_debug_command_help = "muted laryngeal tep ghom chorgh.",
-		muted_areas_debug_command_substitutes = "muted_areas",
-
 		listen_command = "qaw",
 		listen_command_help = "puq chel law' Say' law' ghaH maH.",
 		listen_command_parameter_server_id = "ghItlh qorgh",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		corner_debug_command = "QIn_debug",
 		corner_debug_command_help = "Hoch sell 'e' wa'DIch.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "chechtlhutlh_debug",
+		drugs_debug_command_help = "chechtlhutlh 'utlh jImej.",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "pong pagh_ghItlh",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "jImej vIHoHtaHta' jInmolta' 'e' yIDIlmeH maHegh chep.",
-		created_airdrop = "lojmIt ${airdropType} HoStegh neH je bommey mI'."
+		create_airdrop_missing_permissions = "chogh yIntaHvIS wo' HIq vaj vItlhutlhlaHbe' airdrop chu' Heghlu'meH QaQ",
+		create_airdrop_custom_missing_permissions = "chogh yIntaHvIS wo' HIq vaj vItlhutlhlaHbe' custom airdrop chu' Heghlu'meH QaQ",
+		created_airdrop = "lojmIt ${airdropType} HoStegh neH je bommey mI'.",
+		no_valid_items_provided = "ghItlh vItlhutlhlaH pak ghItlh.",
+		created_airdrop_with_items = "vItlhutlhlaH airdrop SIQvo' vI'ogh choQ:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "O'yinchi havo harakatlari to'g'risida so'rov yuborishga harakat qildi, ammo uning bunday huquqlari yo'q edi.",
+		create_airstrike_missing_permissions = "chogh yIntaHvIS wo' HIq vaj vItlhutlhlaHbe' airstrike chu' Heghlu'meH QaQ",
 
 		airstrike_success = "Havo harakati muvaffaqiyatli bajarildi.",
 		airstrike_failed = "Havo harakati bajarilmadi."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "O'yinchi havo qo'llab-quvvatlashni chaqirgan, ammo uning bunday huquqi yo'q edi.",
+		create_airsupport_missing_permissions = "jol qatlh lo'wI' ghom QeD nIvbogh 'ej batlh HaSta vaj vIDam, nobHa''a'chugh.",
 
 		distance = "Qey: ${distance}${unit}", -- "Qey",
 		time_to_impact = "ETI: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		crafting_steel = "qImroq ${usedItems}",
 		crafted_steel = "DIp ${usedItems} chu' vItlhutlh.",
 		failed_craft_steel = "vItlhutlh qech DIp.",
+
+		craft_aluminium = "muDmo' Aluminium",
+		press_to_craft_aluminium = "[${SeatEjectKey}] muDmo' Aluminium",
+		crafting_aluminium = "ngaDHa' ${usedItems} vItlhutlh.",
+		crafted_aluminium = "${usedItems} vItlhutlh muDmo' Aluminium.",
+		failed_craft_aluminium = "muDmo' Aluminium bIHegh.",
 
 		scrapping_item = "${usedItems} cha'tlhbogh je",
 		scrapped_item = "${usedItems} net cha'tlhbogh jatlh.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		discount_store = "Qupbogh Hem",
 		gun_store_with_shooting_range = "yInwI' Hem vangleS",
 		green_wonderland = "tungDaj Hij",
+		copy_shop = "ngIq nagh beQ",
 		irish_pub = "Irish Pub",
 		bar = "bar",
 		midnight = "tunershop choHwI' be'",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 		picture = "qImHa'",
 		picture_description = "jupwI'pu'jIa' QIn HaqwI'pu'.",
+		paper = "De'wI' lIng",
+		paper_description = "De'wI' lIng pagh.",
+		printer = "chorQugh",
+		printer_description = "QI'lop, 'ej mab DaH jImej.",
 
 		brochure = "pImHaD",
 		brochure_description = "Dochvetlh puS city vItlhutlh.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 		pole = "jeDlaHbe'",
 		pole_description = "Qapla' chaq Hoch! (success in stopping someone)",
+
+		hiking_backpack = "veQDuj cha'logh",
+		hiking_backpack_description = "lum 'ej tayqeq jachjaj cha'logh patlh ghaHvaD Hoch straps je neH. ghIq nuqneH exploration buQ jay' 'ej mauqab taH pagh tay, 'ach DaH 'oH buqchu' 'e' chIS law' Hoch. ",
 
 		gasoline_bottle = "Gasoline Bottle",
 		gasoline_bottle_description = "For a quick refill for your car or....uhm.....yourself? (petaQ!)",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		pools_overflowing = "lojmIt vIro'Hay': ~r~${poolsOverflowing}"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] cha'logh lo'",
+
+		no_paper = "pagh chenmoH.",
+		invalid_url = "chu' wovbe'.",
+		invalid_domain = "mISbe'chugh.",
+		print = "yIlop",
+		printing = "yIlopedia'",
+
+		printed_logs_title = "yIlopped nagh",
+		printed_logs_details = "${consoleName} printfed an image with the URL `${url}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "loDvetlh vItlhapqu' tu'lu' - prop lo'wI'vam vItlhutlh 'ej biqel.",
 		spawn_prop_not_staff = "tu'lu' 'e' vIlo' bI'SoQHa' 'ach bIghojmeH je.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		belt_is_on_and_vehicle_is_locked = "tlhutlh chenmoHwI' 'ej ghojmoHwI'.",
 		belt_is_on = "Heghlu'meH QaQ jajvam.",
 		vehicle_is_locked = "tera' HIqIj.",
+		belt_warning = "tlhoeqqaD Suq vItlhutlh, ~INPUT_SPECIAL_ABILITY_SECONDARY~ nobHa' tlhoqnISbe'.",
 
 		nearest_player_not_vehicle = "yInmey nIvbogh joH'a'.",
 		no_dead_player_nearby = "quvHa' puqloD vIqo' nIvbogh DaH jImej.",

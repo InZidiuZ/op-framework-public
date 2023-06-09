@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["tr-TR"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		detection_area_close = "[${InteractionKey}] Algılama Alanını Kaldır (${areaId})",
 		detection_area = "Algılama Alanı (${areaId})",
 
+		failed_toggle_strict_mode = "Katı kural modu açılamadı.",
+		strict_mode_enabled = "Katı kural modu başarıyla etkinleştirildi.",
+		strict_mode_disabled = "Katı kural modu başarıyla devre dışı bırakıldı.",
+
 		ban_notification_title = "Anti-Hile",
 		ban_notification = "${consoleName} hile sebebi `${banReason}` ile yasaklandı.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		notification_distance_taze = "Anti-Hile: ${displayName} çok uzak bir mesafeden (${distance}m) birini tazelerken tespit edildi.",
 		notification_bad_screen_word = "Anti-Hile: ${displayName}'ın ekranında ${count} tetikleyici kelime tespit edildi.",
-		notification_suspicious_explosion = "Anti-Cheat: ${displayName}, ${explosionType} patlamasına neden oldu.",
+		notification_suspicious_explosion = "Anti-Hile: ${displayName} ${distance}m mesafede ${explosionType} patlatması tespit edildi.",
 
 		notification_freecam_detected = "Anti-Hile: Freecam Tespit Edildi",
 		notification_illegal_vehicle_modifier = "Anti-Hile: Aracı Modifiye Etme",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		screen_text_debug_command_help = "Ekran metni dışlama dikdörtgenlerini hata ayıklar.",
 		screen_text_debug_command_substitutes = "screen_text",
 
+		anti_cheat_strict_mode_command = "anti_hile_katı_kural_modu",
+		anti_cheat_strict_mode_command_help = "Anti-hile katı kural modunu açar ve daha agresif hale getirir. Bu muhtemelen daha fazla yanlış pozitif sonuçlar verecektir.",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "yardım",
 		help_command_help = "Mevcut tüm komutları gösterir.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		create_airdrop_command_parameter_item_amount = "eşya miktarı",
 		create_airdrop_command_parameter_item_amount_help = "Hava indiriminin içermesi gereken eşya miktarı.",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "create_airdrop_custom",
+		create_airdrop_custom_command_help = "Özelleştirilmiş içeriklerle bir hava indirme yaratın.",
+		create_airdrop_custom_command_parameter_items = "eşyalar",
+		create_airdrop_custom_command_parameter_items_help = "Kaç tane ve hangi eşyaların olacağı bir dize girin. Dize 'yesil_elma:5,hamburger:3' şeklinde olmalıdır.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "hava_saldırısı_çağır",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		remove_riot_player_command_parameter_server_id_help = "Kaldırmak istediğiniz oyuncunun sunucu kimliği. Kendinizi otomatik seçmek için bu alana boş bırakın.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "rooms_debug",
+		rooms_debug_command_help = "Tüm odaları hata ayıklama modunda görüntüleyin.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "metaoyun",
 		metagame_command_help = "Oyuncuların server ID'lerinin sürekli çizilmesini açıp kapatır.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		voice_debug_command_parameter_server_id_help = "Başkasının 'ses hata ayıklama' özelliğini açmak/ kapatmak isterseniz, buraya sunucu idlerini girin.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "sesli-yasaklama-hata-ayıklama",
-		muted_areas_debug_command_help = "Sesli yasaklama bölgelerinin tümünü çizer.",
-		muted_areas_debug_command_substitutes = "sesli-yasaklama",
-
 		listen_command = "dinle",
 		listen_command_help = "Belirli bir kullanıcı için dinleme modunu açıp kapatır. (Söylediklerini duyarsınız)",
 		listen_command_parameter_server_id = "sunucu idsi",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		corner_debug_command = "köşe_hata_ayıklama",
 		corner_debug_command_help = "Tüm satış alanlarını gösterir.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "drugs_debug",
+		drugs_debug_command_help = "Tüm uyuşturucu satış noktalarını hata ayıklama modunda görüntüleyin.",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "temizle_arayüzler",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Bir oyuncu bir hava indirimi oluşturmaya çalıştı ancak bunu yapmak için gerekli izinlere sahip değildi.",
-		created_airdrop = "Toplam ${itemAmount} öğe içeren ${airdropType} tipinde bir hava indirimi oluşturuldu."
+		create_airdrop_missing_permissions = "Oyuncu bir hava indirimi oluşturmayı denedi, ancak bunu yapmak için gerekli izinlere sahip değildi.",
+		create_airdrop_custom_missing_permissions = "Oyuncu özel bir hava indirimi oluşturmayı denedi, ancak bunu yapmak için gerekli izinlere sahip değildi.",
+		created_airdrop = "Toplam ${itemAmount} öğe içeren ${airdropType} tipinde bir hava indirimi oluşturuldu.",
+		no_valid_items_provided = "Geçerli bir öğe belirtilmedi.",
+		created_airdrop_with_items = "Aşağıdaki öğeleri içeren bir hava indirimi oluşturuldu:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["tr-TR"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Bir oyuncu hava saldırısı oluşturmaya çalıştı ancak bunu yapmak için gerekli izinlere sahip değillerdi.",
+		create_airstrike_missing_permissions = "Oyuncu bir hava saldırısı oluşturmayı denedi, ancak bunu yapmak için gerekli izinlere sahip değildi.",
 
 		airstrike_success = "Hava saldırısı başarıyla oluşturuldu.",
 		airstrike_failed = "Hava saldırısı oluşturma başarısız oldu."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Bir oyuncu hava desteği çağırmaya çalıştı ancak bunu yapmak için gerekli izinlere sahip değillerdi.",
+		create_airsupport_missing_permissions = "Bir oyuncu hava desteği çağırmayı denedi ancak bunu yapmak için gerekli izinlere sahip değillerdi.",
 
 		distance = "Mesafe: ${distance}${unit}",
 		time_to_impact = "Yaklaşık Varış Süresi: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		crafting_steel = "${usedItems} kalıplama işlemi yapılıyor",
 		crafted_steel = "${usedItems} metal parçaları çelik haline getirildi.",
 		failed_craft_steel = "Çelik yapımı başarısız oldu.",
+
+		craft_aluminium = "Alüminyum Üret",
+		press_to_craft_aluminium = "[${SeatEjectKey}] Alüminyum Üret",
+		crafting_aluminium = "${usedItems} kalıplama",
+		crafted_aluminium = "${usedItems} alüminyuma dönüştürüldü.",
+		failed_craft_aluminium = "Alüminyum üretimi başarısız oldu.",
 
 		scrapping_item = "${usedItems} hurdalanıyor",
 		scrapped_item = "${usedItems} yıkılarak hurda metale dönüştürüldü.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		discount_store = "İndirimli Mağaza",
 		gun_store_with_shooting_range = "Atış Menzilli Silah Dükkanı",
 		green_wonderland = "Yeşil Harikalar Diyarı",
+		copy_shop = "Kopya Dükkanı",
 		irish_pub = "İrlanda Pubı",
 		bar = "Bar",
 		midnight = "Geceyarısı Araç Dükkanı",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		picture = "Resim",
 		picture_description = "Arkadaşlarınızla olan tüm anıları toplayın.",
+		paper = "Kağıt",
+		paper_description = "Boş bir kağıt parçası.",
+		printer = "Yazıcı",
+		printer_description = "Sadece yazıcı, faks yok.",
 
 		brochure = "Broşür",
 		brochure_description = "Şehirde başlamanıza yardımcı olacak yararlı bir broşür.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		pole = "Sarı Direk",
 		pole_description = "Herkesi etkisiz hale getirmek için mükemmel.",
+
+		hiking_backpack = "Dağ Yürüyüşü Sırt Çantası",
+		hiking_backpack_description = "Bu şık dağ yürüyüşü sırt çantasıyla açık hava maceralarına hazırlanın. Sadece kozmetik görünse de kıyafetinize sert bir çekicilik katar. Keşif ruhunu benimseyin ve dış mekan tutkunu tarzınızı her yerde sergileyin!",
 
 		gasoline_bottle = "Benzin Şişesi",
 		gasoline_bottle_description = "Aracınızın ya da kendinizin hızlı bir şekilde yeniden doldurulması için.",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		pools_overflowing = "Havuzlar taşıyor: ~r~${poolsOverflowing}"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] Yazıcıyı Kullan",
+
+		no_paper = "Hiç kağıdınız yok.",
+		invalid_url = "Geçersiz Resim URL'si.",
+		invalid_domain = "Bu domain izin verilmiyor.",
+		print = "Yazdır",
+		printing = "Yazdırılıyor...",
+
+		printed_logs_title = "Yazdırılan İmaj",
+		printed_logs_details = "${consoleName} ${url} adresindeki bir resmi yazdırdı."
+	},
+
 	props = {
 		illegal_prop_item_id = "Oyuncu yasaklı bir öğe kimliği ile bir özellik öğesi kullanmaya çalıştı.",
 		spawn_prop_not_staff = "Oyuncu bir özellik oluşturmaya çalıştı ancak buna yapma izni yoktu.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		belt_is_on_and_vehicle_is_locked = "Kemeriniz takılı ve araç kilitli.",
 		belt_is_on = "Kemeriniz takılı.",
 		vehicle_is_locked = "Araç kilitli.",
+		belt_warning = "Emniyet kemeriniz takılı değil, takmak için ~INPUT_SPECIAL_ABILITY_SECONDARY~ tuşuna basın.",
 
 		nearest_player_not_vehicle = "En yakın oyuncu araçta değil.",
 		no_dead_player_nearby = "Yakınınızda ölmüş bir oyuncu araçta değil.",

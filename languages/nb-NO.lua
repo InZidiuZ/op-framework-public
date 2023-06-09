@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["nb-NO"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		detection_area_close = "[${InteractionKey}] Fjern deteksjonsområde (${areaId})",
 		detection_area = "Deteksjonsområde (${areaId})",
 
+		failed_toggle_strict_mode = "Klarte ikke å bytte til streng modus.",
+		strict_mode_enabled = "Streng modus ble aktivert.",
+		strict_mode_disabled = "Streng modus ble deaktivert.",
+
 		ban_notification_title = "Anti-svindel",
 		ban_notification = "Utestengt ${consoleName} for `${banReason}`.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} tazer noen på en veldig lang avstand (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} har ${count} utløsningsord på skjermen deres.",
-		notification_suspicious_explosion = "Anti-Jukse: ${displayName} utløste en ${explosionType} eksplosjon.",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} utløste en ${explosionType} eksplosjon (~${distance}m).",
 
 		notification_freecam_detected = "Anti-Cheat: Freecam oppdaget",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Ulovlig kjøretøy modifikasjon",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		screen_text_debug_command_help = "Debug skjevelinjer for skjermtekst-utelukkelse.",
 		screen_text_debug_command_substitutes = "screen_text",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "Bytt til anti-cheat streng modus, noe som vil gjøre den mye mer aggressiv. Dette vil mest sannsynlig føre til flere falske positive resultater.",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "hjelp",
 		help_command_help = "Vis alle tilgjengelige kommandoer.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		create_airdrop_command_parameter_item_amount = "gjenstandsmengde",
 		create_airdrop_command_parameter_item_amount_help = "Antallet gjenstander som luftslippet skal inneholde.",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "opprett_ryddeboks_tilpasset",
+		create_airdrop_custom_command_help = "Opprett en ryddeboks med tilpasset innhold.",
+		create_airdrop_custom_command_parameter_items = "gjenstander",
+		create_airdrop_custom_command_parameter_items_help = "En streng som inneholder hvilke gjenstander og hvor mange av dem som skal være med. Strengen skal se ut som 'green_apple:5,hamburger:3'.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "kall_luftangrep",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		remove_riot_player_command_parameter_server_id_help = "Server-IDen til spilleren du vil fjerne. La dette feltet være tomt for å velge deg selv automatisk.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "rom_debug",
+		rooms_debug_command_help = "Feilsøker alle rom.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "metaspill",
 		metagame_command_help = "Slå på og av konstant visning av server-ID til spillere.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		voice_debug_command_parameter_server_id_help = "Hvis du vil slå på/av 'voice debug' for noen andre, sett inn deres server-id her.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "muted_areas_debug",
-		muted_areas_debug_command_help = "Tegner alle dempede stemmeområder.",
-		muted_areas_debug_command_substitutes = "muted_areas",
-
 		listen_command = "lytt",
 		listen_command_help = "Slår på/av lyttemodus for en bestemt spiller. (Du kan høre hva de sier)",
 		listen_command_parameter_server_id = "server-id",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		corner_debug_command = "gate_debug",
 		corner_debug_command_help = "Vis alle salgsområdene.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "narkotika_debug",
+		drugs_debug_command_help = "Feilsøker alle steder hvor narkotika blir solgt.",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "fjern_uis",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Spiller prøvde å opprette en forsyningspakke, men hadde ikke tillatelsen som kreves for å gjøre det.",
-		created_airdrop = "Opprettet en forsyningspakke av type `${airdropType}` med totalt ${itemAmount} gjenstand(er)."
+		create_airdrop_missing_permissions = "Spiller prøvde å opprette et luftslipp, men hadde ikke de nødvendige tillatelsene til å gjøre det.",
+		create_airdrop_custom_missing_permissions = "Spiller prøvde å opprette et tilpasset luftslipp, men hadde ikke de nødvendige tillatelsene til å gjøre det.",
+		created_airdrop = "Opprettet en forsyningspakke av type `${airdropType}` med totalt ${itemAmount} gjenstand(er).",
+		no_valid_items_provided = "Ingen gyldige gjenstander ble oppgitt.",
+		created_airdrop_with_items = "Opprettet et luftslipp med følgende gjenstander inni:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Spiller forsøkte å opprette et luftangrep, men hadde ikke nødvendige tillatelser for å gjøre det.",
+		create_airstrike_missing_permissions = "Spiller prøvde å opprette et luftangrep, men hadde ikke de nødvendige tillatelsene til å gjøre det.",
 
 		airstrike_success = "Luftangrep opprettet vellykket.",
 		airstrike_failed = "Kunne ikke opprette luftangrep."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Spilleren prøvde å kalle inn luftstøtte, men hadde ikke tilgang til å gjøre det.",
+		create_airsupport_missing_permissions = "Spilleren prøvde å be om luftstøtte, men hadde ikke de nødvendige tillatelsene for å gjøre det.",
 
 		distance = "Avstand: ${distance}${unit}",
 		time_to_impact = "Tid til anslag: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		crafting_steel = "Bearbeider ${usedItems}",
 		crafted_steel = "Laget ${usedItems} om til stål.",
 		failed_craft_steel = "Kunne ikke lage stål.",
+
+		craft_aluminium = "Lag aluminium",
+		press_to_craft_aluminium = "[${SeatEjectKey}] Lag aluminium",
+		crafting_aluminium = "Støper ${usedItems}",
+		crafted_aluminium = "Laget ${usedItems} om til aluminium.",
+		failed_craft_aluminium = "Kunne ikke lage aluminium.",
 
 		scrapping_item = "Skroter ${usedItems}",
 		scrapped_item = "Uttrukket skrapmetall fra ${usedItems}.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		discount_store = "Rabattbutikk",
 		gun_store_with_shooting_range = "Ammu-Nation med skytebane",
 		green_wonderland = "Grønt Eventyrland",
+		copy_shop = "Kopibutikk",
 		irish_pub = "Irsk Pub",
 		bar = "Bar",
 		midnight = "Midnight Tunersjappe",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		picture = "Bilde",
 		picture_description = "Samle alle minnene om deg og vennene dine.",
+		paper = "Papir",
+		paper_description = "Et blankt papirark.",
+		printer = "Printer",
+		printer_description = "Ingen faks, bare skriver.",
 
 		brochure = "Brosjyre",
 		brochure_description = "En hjelpsom brosjyre for å komme i gang i byen.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		pole = "Gul stolpe",
 		pole_description = "Perfekt for å stoppe noen i deres spor.",
+
+		hiking_backpack = "Tursekk",
+		hiking_backpack_description = "Forbered deg til utendørs eventyr med denne stilige turssekken. Den gir et snev av en robust sjarm til antrekket ditt, selv om den er kun kosmetisk. Omfavn utforskerens ånd og vis frem din lidenskap for naturen uansett hvor du går!",
 
 		gasoline_bottle = "Bensinflaske",
 		gasoline_bottle_description = "For rask påfylling til bilen eller...ehm...deg selv?",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		pools_overflowing = "Bassenger som renner over: ~r~${poolsOverflowing}"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] Bruk Skriver",
+
+		no_paper = "Du har ingen papir.",
+		invalid_url = "Ugyldig bilde-URL.",
+		invalid_domain = "Dette domenet er ikke tillatt.",
+		print = "Skriv ut",
+		printing = "Skriver ut...",
+
+		printed_logs_title = "Skrive ut bilde",
+		printed_logs_details = "${consoleName} skrev ut et bilde med URL-en `${url}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "Spiller forsøkte å bruke et rekvisitt med en ulovlig gjenstands-ID.",
 		spawn_prop_not_staff = "Spiller forsøkte å spawne et rekvisitt, men hadde ikke nødvendig tillatelse til å gjøre det.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		belt_is_on_and_vehicle_is_locked = "Selen er på og kjøretøyet er låst.",
 		belt_is_on = "Du har på deg beltet ditt.",
 		vehicle_is_locked = "Kjøretøyet er låst.",
+		belt_warning = "Setebeltet ditt er ikke på, trykk ~INPUT_SPECIAL_ABILITY_SECONDARY~ for å sette det på.",
 
 		nearest_player_not_vehicle = "Nærmeste spiller er ikke i et kjøretøy.",
 		no_dead_player_nearby = "Det er ingen døde spillere i et kjøretøy nær deg.",

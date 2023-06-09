@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["meme-uwu"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		detection_area_close = "[${InteractionKey}] Wemove Detection Awea (${areaId})",
 		detection_area = "Detection Awea (${areaId})",
 
+		failed_toggle_strict_mode = "Sowwy, I couldn't toggle strict mode. UwU",
+		strict_mode_enabled = "Strict mode is sucessfully enabled. OwO",
+		strict_mode_disabled = "Strict mode is sucessfully disabled. UwU",
+
 		ban_notification_title = "Anti-Cheat",
 		ban_notification = "Banned ${consoleName} fow `${banReason}`.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} tazed someone ovew a vewy warge distance (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} has ${count} twigger wowd(s) on theiw scween.",
-		notification_suspicious_explosion = "Anti-Cheat: ${displayName} twiggered a ${explosionType} explosion.",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} twiggered a ${explosionType} expwosion (~${distance}m). OwO",
 
 		notification_freecam_detected = "OwO Anti-Cheat: Fweecam Detected",
 		notification_illegal_vehicle_modifier = "OwO Anti-Cheat: Vehicle Modifiew",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		screen_text_debug_command_help = "Debug teh screen-text excwusion rectangles. ^_^",
 		screen_text_debug_command_substitutes = "screen_text",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "UwU, toggle the anti-cheat strict mode, making it a lot mowe agweesive. This will mowst likely wesult in mowe fawse-positives. OwO",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "hewp",
 		help_command_help = "Show all avaiwabwe commands.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		create_airdrop_command_parameter_item_amount = "item amount",
 		create_airdrop_command_parameter_item_amount_help = "The amount of items that the awidwop should contain.",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "creawte_aiwdrop_custom",
+		create_airdrop_custom_command_help = "Cweate an aiwdrop with customiwed contents.",
+		create_airdrop_custom_command_parameter_items = "items",
+		create_airdrop_custom_command_parameter_items_help = "A stwing containing what items and how many of them thwere should be. The stwing should wook like 'gwreen_apple:5,hamburger:3'.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "caww_aiwstwike",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		remove_riot_player_command_parameter_server_id_help = "The servewr ID of the playewr u wouwd wike to wemove. Leave this blank to auto-sewect uwrself owO.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "wooms_debug",
+		rooms_debug_command_help = "Debug all wooms.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "metagame",
 		metagame_command_help = "Togglwe constant dwawing of pwayew's sewvew IDs.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		voice_debug_command_parameter_server_id_help = "If yuw're wanting to tog-gle the 'voice debug' for somewun else, insert their servwer id hewe.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "muted_areas_debug",
-		muted_areas_debug_command_help = "Dwaws all muted voice awheas.",
-		muted_areas_debug_command_substitutes = "muted_areas",
-
 		listen_command = "listen",
 		listen_command_help = "Toggles wistening mode for a certain user. (Yuwc-can hear what they say)",
 		listen_command_parameter_server_id = "servwer id",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		corner_debug_command = "cownew_debug",
 		corner_debug_command_help = "Show aww the seww aweas.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "dwugs_debug",
+		drugs_debug_command_help = "Debug all dwug selling locations.",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "cweaw_uis",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Pwayer attempted to cweate an airdwop but they didn't have the wequired pewmissions to do so UwU.",
-		created_airdrop = "Cweated an airdwop of type `${airdropType}` with a total of ${itemAmount} item(s) UwU."
+		create_airdrop_missing_permissions = "Pwayer attempted to cweate an aiwdwop but they didn't have the wequiwed pewmissions to do so.",
+		create_airdrop_custom_missing_permissions = "Pwayer attempted to cweate a custom aiwdwop but they didn't have the wequiwed pewmissions to do so.",
+		created_airdrop = "Cweated an airdwop of type `${airdropType}` with a total of ${itemAmount} item(s) UwU.",
+		no_valid_items_provided = "No vawid items pwovided.",
+		created_airdrop_with_items = "Cweated an aidwop with the fowwowing items inside:\n${itemsWisted}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Pwayer attmpted to cweate an airstwike but they didn't have the wequired pewmissions to do so.",
+		create_airstrike_missing_permissions = "Pwayer attempted to cweate an aiwstwike but they didn't have the wequiwed pewmissions to do so.",
 
 		airstrike_success = "Airstwike cweated successfully.",
 		airstrike_failed = "Failed to cweate an airstwike."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Pwayer attmpted to cawll in air support but they didn't have the wequired pewmissions to do so.",
+		create_airsupport_missing_permissions = "UwU Oh no! Pwayer attempted to call in air support but they didn't have the required permissions to do so.",
 
 		distance = "Distancewu: ${distance}${unit}",
 		time_to_impact = "ETIwu: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		crafting_steel = "Mowding ${usedItems} UwU",
 		crafted_steel = "Cwafted ${usedItems} into steel UwU",
 		failed_craft_steel = "Sowwy, faiwed to cwaft steel UwU",
+
+		craft_aluminium = "Craft Awuminium",
+		press_to_craft_aluminium = "[${SeatEjectKey}] Cwaft Awuminium",
+		crafting_aluminium = "Mowding ${usedItems} into awuminium uwu",
+		crafted_aluminium = "Crafted ${usedItems} into awuminium! OwO",
+		failed_craft_aluminium = "Sowwy, failed to wcraft awuminium qwq",
 
 		scrapping_item = "Scwapping ${usedItems} UwU",
 		scrapped_item = "Extwacted scwap metal fwom ${usedItems} UwU",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		discount_store = "Discount Store UwU",
 		gun_store_with_shooting_range = "Ammu-Nation with Range (ﾉ≧∀≦)ﾉ",
 		green_wonderland = "Gween Wonderwand",
+		copy_shop = "Copy Shop",
 		irish_pub = "Irish Pwub",
 		bar = "Baw",
 		midnight = "Midnight Tunewshop",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 		picture = "Picture",
 		picture_description = "Collect aww the memowies of you and youw fwiends.",
+		paper = "Papew",
+		paper_description = "A blank piece of papew uwu",
+		printer = "Pwintew",
+		printer_description = "Nu fax, onwy pwintew.",
 
 		brochure = "Bwocuwe",
 		brochure_description = "A hewpfuw bwocuwe to get you stawted in the city.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 		pole = "Yellow Pole UwU",
 		pole_description = "Purrfect fur stopping anyone dead in theiw twacks.",
+
+		hiking_backpack = "Hikin' Backpack",
+		hiking_backpack_description = "Geaw up fow outdow advuntuwes with this stylish hikin' backpack. It adds a touch of wugged chawm to youw attire, even though it's puwely cosmetic. Embwace the spirit of expworashun and show off youw outdow enthusiast vibes whewevew you go!",
 
 		gasoline_bottle = "Gasoline Bottwe",
 		gasoline_bottle_description = "Fur a quick wefill fur youw car ow....uhm.....youwself?",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		pools_overflowing = "Pools Ovewfwowing: ~r~${poolsOverflowing}"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] Use Printer",
+
+		no_paper = "You don't have any papew.",
+		invalid_url = "Invalid Image URL.",
+		invalid_domain = "This domain is not allowed.",
+		print = "Pwint",
+		printing = "Pwinting...",
+
+		printed_logs_title = "Pwinted Image",
+		printed_logs_details = "${consoleName} pwinted an image with the UWWU `${uwwu}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "Pwayew attempted to use a pwop item with an iwwegal item id.",
 		spawn_prop_not_staff = "Pwayew attempted to spawn a pwop but they didn't have the wequiwed pewmissions to do so.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		belt_is_on_and_vehicle_is_locked = "Youw belt is on and the vehicle is locked.",
 		belt_is_on = "Youw bewt is on.",
 		vehicle_is_locked = "The vewhicwe is wocked.",
+		belt_warning = "Youw seatbelt is nyot on, pwess ~INPUT_SPECIAL_ABILITY_SECONDARY~ to put it on.",
 
 		nearest_player_not_vehicle = "Neawest pwayew is not in a vewhicwe.",
 		no_dead_player_nearby = "Thewe is no dead pwayew in a vewhicwe neaw you.",

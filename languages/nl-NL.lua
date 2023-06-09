@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		detection_area_close = "[${InteractionKey}] Verwijder Detectiegebied (${areaId})",
 		detection_area = "Detectiegebied (${areaId})",
 
+		failed_toggle_strict_mode = "Kon de strikte modus niet wijzigen.",
+		strict_mode_enabled = "Strikte modus is succesvol ingeschakeld.",
+		strict_mode_disabled = "Strikte modus is succesvol uitgeschakeld.",
+
 		ban_notification_title = "Anti-Cheat",
 		ban_notification = "${consoleName} is gebanned voor `${banReason}`.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} heeft iemand getaserd over een zeer grote afstand (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} heeft ${count} triggerwoord(en) op hun scherm.",
-		notification_suspicious_explosion = "Anti-Cheat: ${displayName} heeft een ${explosionType}-explosie veroorzaakt.",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} heeft een ${explosionType} explosie veroorzaakt (~${distance}m).",
 
 		notification_freecam_detected = "Anti-Cheat: Freecam Gedetecteerd",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Voertuig Modifier",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		screen_text_debug_command_help = "Bekijk de uitsluitingsrechthoeken van de screen-text voor debuggen.",
 		screen_text_debug_command_substitutes = "screen_text",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "Schakel de anti-cheat strikte modus in, waardoor deze aanzienlijk agressiever wordt. Dit kan waarschijnlijk leiden tot meer vals-positieven.",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "help",
 		help_command_help = "Toon alle beschikbare commando's.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		create_airdrop_command_parameter_item_amount = "item hoeveelheid",
 		create_airdrop_command_parameter_item_amount_help = "Het aantal items dat de luchtaanval moet bevatten.",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "maak_luchtdroppakket_aangepast",
+		create_airdrop_custom_command_help = "Maak een luchtdroppakket met aangepaste inhoud.",
+		create_airdrop_custom_command_parameter_items = "items",
+		create_airdrop_custom_command_parameter_items_help = "Een tekst met daarin welke items en hoeveel van elk er moeten zijn. De tekst moet er als volgt uitzien 'groene_appel:5,hamburger:3'.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "roep_luchtaanval_op",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		remove_riot_player_command_parameter_server_id_help = "De server-ID van de speler die je wilt verwijderen. Laat dit leeg om automatisch jezelf te selecteren.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "kamers_debuggen",
+		rooms_debug_command_help = "Debug alle kamers.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "metaspel",
 		metagame_command_help = "Schakel het continu weergeven van de server-ID's van spelers in of uit.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		voice_debug_command_parameter_server_id_help = "Als u de 'stem debug' van iemand anders wilt in- of uitschakelen, voeg dan hier hun server-id toe.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "muted_areas_debug",
-		muted_areas_debug_command_help = "Tekent alle gedempte stemgebieden.",
-		muted_areas_debug_command_substitutes = "muted_areas",
-
 		listen_command = "luisteren",
 		listen_command_help = "Schakelt luistermodus in of uit voor een bepaalde gebruiker. (U kunt horen wat ze zeggen)",
 		listen_command_parameter_server_id = "server id",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		corner_debug_command = "hoekje_debug",
 		corner_debug_command_help = "Toon alle verkoopgebieden.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "drugs_debuggen",
+		drugs_debug_command_help = "Debug alle locaties voor drugshandel.",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "wis_uis",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Een speler heeft geprobeerd een luchtaanval te creëren maar had niet de vereiste rechten om dit te doen.",
-		created_airdrop = "Een luchtaanval van het type `${airdropType}` is gemaakt met in totaal ${itemAmount} item(s)."
+		create_airdrop_missing_permissions = "Speler probeerde een luchtdropping te creëren, maar had niet de vereiste toestemming om dit te doen.",
+		create_airdrop_custom_missing_permissions = "Speler probeerde een aangepaste luchtdropping te creëren, maar had niet de vereiste toestemming om dit te doen.",
+		created_airdrop = "Een luchtaanval van het type `${airdropType}` is gemaakt met in totaal ${itemAmount} item(s).",
+		no_valid_items_provided = "Geen geldige items opgegeven.",
+		created_airdrop_with_items = "Een luchtdropping is gemaakt met de volgende items erin:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "De speler probeerde een luchtaanval te maken, maar had niet de vereiste toestemming om dit te doen.",
+		create_airstrike_missing_permissions = "Speler probeerde een luchtaanval te creëren, maar had niet de vereiste toestemming om dit te doen.",
 
 		airstrike_success = "Airstrike succesvol gecreëerd.",
 		airstrike_failed = "Kon geen airstrike creëren."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "De speler probeerde luchtsteun te noemen, maar had niet de vereiste machtigingen om dit te doen.",
+		create_airsupport_missing_permissions = "De speler heeft geprobeerd om luchtsteun in te roepen, maar had daarvoor niet de vereiste rechten.",
 
 		distance = "Afstand: ${distance}${unit}",
 		time_to_impact = "ETI: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		crafting_steel = "Vormen van ${usedItems}",
 		crafted_steel = "Gemaakt ${usedItems} in staal.",
 		failed_craft_steel = "Kon geen staal maken.",
+
+		craft_aluminium = "Maak Aluminium",
+		press_to_craft_aluminium = "[${SeatEjectKey}] Maak Aluminium",
+		crafting_aluminium = "Vormen ${usedItems}",
+		crafted_aluminium = "Maakte ${usedItems} in aluminium.",
+		failed_craft_aluminium = "Het maken van aluminium is mislukt.",
 
 		scrapping_item = "Recyclen van ${usedItems}",
 		scrapped_item = "Scrap metaal geëxtraheerd uit ${usedItems}.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		discount_store = "Discountwinkel",
 		gun_store_with_shooting_range = "Wapenwinkel met schietbaan",
 		green_wonderland = "Groen Wonderland",
+		copy_shop = "Kopieerwinkel",
 		irish_pub = "Ierse Pub",
 		bar = "Bar",
 		midnight = "Midnight Tunershop",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		picture = "Afbeelding",
 		picture_description = "Verzamel alle herinneringen van jou en je vrienden.",
+		paper = "Papier",
+		paper_description = "Een blanco vel papier.",
+		printer = "Printer",
+		printer_description = "Alleen printer, geen fax.",
 
 		brochure = "Brochure",
 		brochure_description = "Een behulpzame brochure om je op weg te helpen in de stad.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		pole = "Gele Paal",
 		pole_description = "Perfect om iemand tot stilstand te brengen.",
+
+		hiking_backpack = "Wandelen rugzak",
+		hiking_backpack_description = "Bereid je voor op buitenavonturen met deze stijlvolle wandelrugzak. Het voegt een vleugje robuuste charme toe aan je outfit, hoewel het puur cosmetisch is. Omarm de geest van ontdekking en laat je outdoor enthousiast vibes zien waar je ook gaat!",
 
 		gasoline_bottle = "Benzinefles",
 		gasoline_bottle_description = "Voor een snelle bijvulling van uw auto of... uhmm... uzelf?",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		pools_overflowing = "Zwembaden overstromen: ~r~${poolsOverflowing}"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] Gebruik Printer",
+
+		no_paper = "Je hebt geen papier.",
+		invalid_url = "Ongeldige afbeeldings-URL.",
+		invalid_domain = "Dit domein is niet toegestaan.",
+		print = "Printen",
+		printing = "Aan het printen...",
+
+		printed_logs_title = "Geprinte afbeelding",
+		printed_logs_details = "${consoleName} heeft een afbeelding geprint met de URL `${url}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "Speler probeerde een prop-item te gebruiken met een ongeldig item-ID.",
 		spawn_prop_not_staff = "Speler probeerde een prop te spawnen, maar had niet de vereiste rechten om dit te doen.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		belt_is_on_and_vehicle_is_locked = "Je gordel is om en het voertuig is vergrendeld.",
 		belt_is_on = "Uw gordel is om.",
 		vehicle_is_locked = "Het voertuig is vergrendeld.",
+		belt_warning = "Je veiligheidsgordel is niet om, druk op ~INPUT_SPECIAL_ABILITY_SECONDARY~ om hem om te doen.",
 
 		nearest_player_not_vehicle = "De dichtstbijzijnde speler zit niet in een voertuig.",
 		no_dead_player_nearby = "Er is geen dode speler in een voertuig dichtbij u.",

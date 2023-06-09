@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["meme-valleygirl"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		detection_area_close = "[${InteractionKey}] Oh! Remove Detection Area (${areaId})",
 		detection_area = "Detection Area (${areaId})",
 
+		failed_toggle_strict_mode = "Sorry, girl, couldn't toggle strict mode!",
+		strict_mode_enabled = "OMG, strict mode is totally on now!",
+		strict_mode_disabled = "Chillax, strict mode is totally off now!",
+
 		ban_notification_title = "Anti-Cheat",
 		ban_notification = "Ugh! Banned ${consoleName} for `${banReason}`. So not cool!",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		notification_distance_taze = "Anti-Cheat Alert: ${displayName} totally tazed someone from like really far away (${distance}m), like not cool!",
 		notification_bad_screen_word = "Anti-Cheat Alert: ${displayName} has like ${count} trigger word(s) on their screen, omg that's like so inappropriate!",
-		notification_suspicious_explosion = "Hey, like, heads up: ${displayName} triggered an explosion of the ${explosionType} variety.",
+		notification_suspicious_explosion = "Uh, oh, Anti-Cheat: ${displayName} set off a massive ${explosionType} explosion (${distance}m away).",
 
 		notification_freecam_detected = "OMG! Anti-cheat alert! Someone's using a freecam!",
 		notification_illegal_vehicle_modifier = "Oh no! Someone's messing with their ride! Anti-cheat is on to them.",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		screen_text_debug_command_help = "Debug the screen-text exclusion rectangles, like fixin' stuff!",
 		screen_text_debug_command_substitutes = "screen_text, like just use this",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "Toggle the anti-cheat strict mode, making it, like, totes more aggressive. But, just so you know, it might detect some false-positives.",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "help",
 		help_command_help = "Show all available commands. Like, give me the 411 on all the commands.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		create_airdrop_command_parameter_item_amount = "how much stuff",
 		create_airdrop_command_parameter_item_amount_help = "The total number of items in the airdrop.",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "create_airdrop_custom",
+		create_airdrop_custom_command_help = "Like, create an airdrop with totally customized fab contents.",
+		create_airdrop_custom_command_parameter_items = "items",
+		create_airdrop_custom_command_parameter_items_help = "Like, a string containing what items and how many of them there should be. The string should look like 'green_apple:5,hamburger:3'.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "bring the pain",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		remove_riot_player_command_parameter_server_id_help = "The server ID of the player you wanna remove. Leave it blank to auto-select yourself, duh.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "rooms_debug",
+		rooms_debug_command_help = "Omigod debug all rooms.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "metagame",
 		metagame_command_help = "Like, toggle constant drawing of player's server IDs.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		voice_debug_command_parameter_server_id_help = "If you're wanting to toggle the 'voice debug' for someone else, like, insert their server id here.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "muted_areas_debug",
-		muted_areas_debug_command_help = "Draws all muted voice areas, like, duh.",
-		muted_areas_debug_command_substitutes = "muted_areas",
-
 		listen_command = "listen",
 		listen_command_help = "Toggles listening mode for a certain user, like, so you can hear what they say, ya know?",
 		listen_command_parameter_server_id = "server id, like, totally",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		corner_debug_command = "corner_debug",
 		corner_debug_command_help = "Shows you like all the places where you can sell your stuff, you know?",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "drugs_debug",
+		drugs_debug_command_help = "Check out all the sick drug selling spots, you know?",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "clear_uis",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "OMG, this player tried to make an airdrop but they, like, didn't have the required permissions. Major bummer.",
-		created_airdrop = "Totally created an airdrop of type `${airdropType}` with a total of ${itemAmount} item(s)."
+		create_airdrop_missing_permissions = "OMG, like, player tried to create an airdrop but they didn't have the necessary permissions, ugh!",
+		create_airdrop_custom_missing_permissions = "Ew, like, player tried to create a custom airdrop but they didn't have the necessary permissions, ugghh!",
+		created_airdrop = "Totally created an airdrop of type `${airdropType}` with a total of ${itemAmount} item(s).",
+		no_valid_items_provided = "Ugh, there's like, no valid items provided, like, whatever.",
+		created_airdrop_with_items = "Like, totally created an airdrop and it has the following items inside:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Oh my god, like someone tried to create an airstrike but they were totally not authorized.",
+		create_airstrike_missing_permissions = "Oh my god, player tried to create an airstrike but they didn't have the necessary permissions, like, whatever.",
 
 		airstrike_success = "Airstrike was like a success, yay!",
 		airstrike_failed = "Failed to create the airstrike, bummer!"
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Seriously, like the person who tried to call in air support isn't authorized to do so.",
+		create_airsupport_missing_permissions = "Ugh, that player tried to call in air support, but they didn't get the memo that they needed like, permission to do that.",
 
 		distance = "OMG, like it's like ${distance}${unit} away.",
 		time_to_impact = "OMG, like ETA is in ${timeToImpact}!",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		crafting_steel = "Like, molding ${usedItems}",
 		crafted_steel = "Crafted ${usedItems} into steel. Sweet!",
 		failed_craft_steel = "Failed to craft steel. Bummer!",
+
+		craft_aluminium = "Craft some like, Aluminium",
+		press_to_craft_aluminium = "[${SeatEjectKey}] Hit this to like, Craft Aluminium",
+		crafting_aluminium = "Like, molding ${usedItems}",
+		crafted_aluminium = "Like, you totally turned ${usedItems} into aluminium.",
+		failed_craft_aluminium = "Oopsie, you just failed at crafting aluminium.",
 
 		scrapping_item = "Scrapping ${usedItems}, ya know?",
 		scrapped_item = "Extracted some sick scrap metal from ${usedItems}.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		discount_store = "Discount Store",
 		gun_store_with_shooting_range = "Ammu-Nation with Range",
 		green_wonderland = "Green Wonderland",
+		copy_shop = "Copy Shop",
 		irish_pub = "Irish Pub",
 		bar = "Bar",
 		midnight = "Midnight Tunershop",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		picture = "Picture, totes gotta collect all the memories of you and your squad.",
 		picture_description = "Collect all the memories of you and your friends.",
+		paper = "Paper",
+		paper_description = "A blank piece of paper, duh.",
+		printer = "Printer",
+		printer_description = "No fax, only printer.",
 
 		brochure = "Brochure, for when you're new and don't know anything about the city.",
 		brochure_description = "A helpful brocure to get you started in the city.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		pole = "Yellow Pole, like, whatever",
 		pole_description = "Like, the perfect thing for stopping anyone dead in their tracks.",
+
+		hiking_backpack = "Hiking Backpack",
+		hiking_backpack_description = "Get ready for some outdoor adventures with this cute hiking backpack. It makes your outfit look totally rugged, even though it doesn't actually have any practical use. Just embrace your inner explorer and show off your outdoor enthusiast vibes whenever you go out!",
 
 		gasoline_bottle = "Gasoline Bottle",
 		gasoline_bottle_description = "For a quick refill for your car or like, ya know, for yourself?",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		pools_overflowing = "Pools are Overflowing, like: ~r~${poolsOverflowing}"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] Use the Printer, duh!",
+
+		no_paper = "Ugh, you're all out of paper.",
+		invalid_url = "Gross, that's an invalid image URL.",
+		invalid_domain = "Sorry, that domain is totally not allowed here.",
+		print = "Like, Print",
+		printing = "Printing... OMG",
+
+		printed_logs_title = "Like, Printed Image",
+		printed_logs_details = "${consoleName} like, totally printed an image with the URL `${url}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "Player, like, tried to use an illegal prop item ID.",
 		spawn_prop_not_staff = "Uh-oh, this player like, can't spawn props since they don't have the required permissions.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		belt_is_on_and_vehicle_is_locked = "Your belt is on and the ride's locked, like totally cool.",
 		belt_is_on = "OMG, your belt is like, totally on.",
 		vehicle_is_locked = "Sorry, the car is like, totes locked.",
+		belt_warning = "OMG, your seatbelt is not like, on. Press ~INPUT_SPECIAL_ABILITY_SECONDARY~ to buckle up.",
 
 		nearest_player_not_vehicle = "Uh, the nearest player isn't even in a car.",
 		no_dead_player_nearby = "Like, no one's dead and in a car nearby.",

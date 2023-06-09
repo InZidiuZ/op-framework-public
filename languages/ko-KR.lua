@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["ko-KR"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		detection_area_close = "[${InteractionKey}] 감지 영역 제거 (${areaId})",
 		detection_area = "감지 영역 (${areaId})",
 
+		failed_toggle_strict_mode = "엄격한 모드를 전환하지 못했습니다.",
+		strict_mode_enabled = "엄격한 모드 활성화에 성공했습니다.",
+		strict_mode_disabled = "엄격한 모드 비활성화에 성공했습니다.",
+
 		ban_notification_title = "안티-치트",
 		ban_notification = "${consoleName} 님이 `${banReason}` 으로 인해 벤 되었습니다.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		notification_distance_taze = "안티-치트: ${displayName} 님이 매우 멀리 (${distance}m) 있는 사람을 테이즈했습니다.",
 		notification_bad_screen_word = "안티-치트: ${displayName} 님의 화면에 ${count}개의 트리거 단어가 있습니다.",
-		notification_suspicious_explosion = "안티-치트: ${displayName} 이(가) ${explosionType} 유형의 폭발을 유발했습니다.",
+		notification_suspicious_explosion = "안티-치트: ${displayName}님이 ${explosionType} 폭발을 유발했습니다 (~${distance}m).",
 
 		notification_freecam_detected = "안티-치트: 프리캠 감지됨",
 		notification_illegal_vehicle_modifier = "안티-치트: 이상한 차량 수정기",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		screen_text_debug_command_help = "화면 텍스트 제외 영역을 디버그합니다.",
 		screen_text_debug_command_substitutes = "screen_text",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "안티-치트 엄격한 모드를 전환합니다. 이로 인해 거짓 양성이 더 많이 발생할 수 있습니다.",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "도움말",
 		help_command_help = "사용 가능한 모든 명령어를 표시합니다.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		create_airdrop_command_parameter_item_amount = "아이템 수량",
 		create_airdrop_command_parameter_item_amount_help = "에어드롭에 포함될 아이템의 수량입니다.",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "create_airdrop_custom",
+		create_airdrop_custom_command_help = "커스터마이즈된 내용으로 공수 보급을 생성합니다.",
+		create_airdrop_custom_command_parameter_items = "아이템",
+		create_airdrop_custom_command_parameter_items_help = "'green_apple:5,hamburger:3'와 같은 형식으로 어떤 아이템들과 각각 몇 개씩 들어갈지를 지정하는 문자열입니다.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "공중공격호출",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		remove_riot_player_command_parameter_server_id_help = "제거할 플레이어의 서버 ID입니다. 자신의 ID를 자동 선택하려면 비워 둡니다.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "rooms_debug",
+		rooms_debug_command_help = "모든 방의 디버그 정보를 출력합니다.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "메타게임",
 		metagame_command_help = "서버에 접속한 플레이어의 ID를 지속적으로 표시합니다.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		voice_debug_command_parameter_server_id_help = "'음성 디버그'를 다른 사람에게 토글하려면 그들의 서버 아이디를 여기에 입력하십시오.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "음소거된_지역_디버그",
-		muted_areas_debug_command_help = "모든 음소거된 음성 지역을 그립니다.",
-		muted_areas_debug_command_substitutes = "음소거된_지역",
-
 		listen_command = "청취",
 		listen_command_help = "특정 사용자의 청취 모드를 토글합니다. (그들이 하는 말을 들을 수 있습니다)",
 		listen_command_parameter_server_id = "서버 아이디",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		corner_debug_command = "코너_디버그",
 		corner_debug_command_help = "모든 판매 지역을 표시합니다.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "drugs_debug",
+		drugs_debug_command_help = "모든 마약 판매 위치의 디버그 정보를 출력합니다.",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "ui_초기화",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "플레이어가 공수품을 생성하려고 시도했지만 필요한 권한이 없습니다.",
-		created_airdrop = "`${airdropType}` 타입의 공수품을 총 ${itemAmount}개 아이템과 함께 생성했습니다."
+		create_airdrop_missing_permissions = "플레이어가 공수 지원품 생성을 시도했지만, 요구되는 권한이 없습니다.",
+		create_airdrop_custom_missing_permissions = "플레이어가 커스텀 공수 지원품 생성을 시도했지만, 요구되는 권한이 없습니다.",
+		created_airdrop = "`${airdropType}` 타입의 공수품을 총 ${itemAmount}개 아이템과 함께 생성했습니다.",
+		no_valid_items_provided = "유효한 아이템이 제공되지 않았습니다.",
+		created_airdrop_with_items = "다음의 아이템이 포함된 공수 지원품이 생성되었습니다:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "플레이어가 공습을 생성하려고 했지만 필요한 권한이 없습니다.",
+		create_airstrike_missing_permissions = "플레이어가 공습 생성을 시도했지만, 요구되는 권한이 없습니다.",
 
 		airstrike_success = "공습이 성공적으로 발생했습니다.",
 		airstrike_failed = "공습 생성에 실패했습니다."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "플레이어가 공중 지원 요청을 시도하였으나, 요청할 권한이 없습니다.",
+		create_airsupport_missing_permissions = "플레이어가 공중지원을 호출하려고 했지만 필요한 권한이 없습니다.",
 
 		distance = "거리: ${distance}${unit}",
 		time_to_impact = "도착 예정 시간: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		crafting_steel = "${usedItems} 가공 중",
 		crafted_steel = "${usedItems}을 강철로 제작했습니다.",
 		failed_craft_steel = "강철 제작에 실패했습니다.",
+
+		craft_aluminium = "알루미늄 제작",
+		press_to_craft_aluminium = "[${SeatEjectKey}] 알루미늄 제작",
+		crafting_aluminium = "${usedItems}를 주조 중입니다",
+		crafted_aluminium = "${usedItems}을 알루미늄으로 제작했습니다.",
+		failed_craft_aluminium = "알루미늄 제작에 실패했습니다.",
 
 		scrapping_item = "${usedItems} 분해 중",
 		scrapped_item = "${usedItems}에서 스크랩금속 추출.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		discount_store = "할인점",
 		gun_store_with_shooting_range = "사격장이 있는 총기 상점",
 		green_wonderland = "그린 원더랜드",
+		copy_shop = "복사 가게",
 		irish_pub = "아일랜드 퍼브",
 		bar = "바",
 		midnight = "미드나잇 튜너샵",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		picture = "사진",
 		picture_description = "당신과 당신의 친구들의 추억을 모두 모아보세요.",
+		paper = "종이",
+		paper_description = "비어있는 종이입니다.",
+		printer = "프린터",
+		printer_description = "팩스 없이 프린터만 있습니다.",
 
 		brochure = "안내서",
 		brochure_description = "이 도시에서 시작하기에 도움이되는 유용한 안내서입니다.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		pole = "노란색 기둥",
 		pole_description = "누구든 뚜렷한 경계를 설정할 수 있는 완벽한 아이템입니다.",
+
+		hiking_backpack = "등산용 배낭",
+		hiking_backpack_description = "이 멋진 등산용 배낭으로 야외 모험을 위해 장비를 갖추세요. 단순히 코스메틱인 이 배낭은 rugged한 매력을 더해줄 것입니다. 탐험의 정신을 받아들이고, 야외 열광가의 분위기를 어디서든 보여주세요!",
 
 		gasoline_bottle = "가솔린 박스",
 		gasoline_bottle_description = "차나... 그... 자신을 쉽게 충전할 수 있는 가솔린 박스입니다.",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		pools_overflowing = "풀 오버플로우: ~r~${poolsOverflowing}"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] 프린터를 사용합니다.",
+
+		no_paper = "용지가 없습니다.",
+		invalid_url = "잘못된 이미지 URL 입니다.",
+		invalid_domain = "이 도메인은 허용되지 않습니다.",
+		print = "인쇄",
+		printing = "인쇄 중...",
+
+		printed_logs_title = "인쇄된 이미지",
+		printed_logs_details = "${consoleName} 님이 URL `${url}` 으로 인쇄한 이미지입니다."
+	},
+
 	props = {
 		illegal_prop_item_id = "플레이어가 잘못된 아이템 ID로 소지품 아이템을 사용하려고 시도했습니다.",
 		spawn_prop_not_staff = "플레이어가 소유한 권한이 없는 상태에서 소지품을 소환하려고 시도했습니다.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		belt_is_on_and_vehicle_is_locked = "안전벨트가 단단하게 장착되어 있으며 차량이 잠겨 있습니다.",
 		belt_is_on = "앞선 안전벨트를 착용중입니다.",
 		vehicle_is_locked = "해당 차량은 잠겨있습니다.",
+		belt_warning = "시트 벨트를 착용하지 않았습니다. ~INPUT_SPECIAL_ABILITY_SECONDARY~ 키를 눌러 착용하세요.",
 
 		nearest_player_not_vehicle = "가까운 플레이어가 차량에 탑승 중이 아닙니다.",
 		no_dead_player_nearby = "근처에 차량 내에 사망한 플레이어가 없습니다.",

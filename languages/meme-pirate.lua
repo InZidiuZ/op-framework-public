@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["meme-pirate"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		detection_area_close = "[${InteractionKey}] Be Removin' the Detection Area (${areaId})",
 		detection_area = "Detection Area (${areaId})",
 
+		failed_toggle_strict_mode = "Arrr, Failed to toggle strict mode, matey.",
+		strict_mode_enabled = "Arrr, Ye have successfully enabled strict mode.",
+		strict_mode_disabled = "Arrr, Ye have successfully disabled strict mode.",
+
 		ban_notification_title = "Anti-Cheat",
 		ban_notification = "Walk the plank ${consoleName}! Ye be banned fer `${banReason}`.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} tazed someone o'er a very large distance (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} has ${count} trigger word(s) on their screen.",
-		notification_suspicious_explosion = "Anti-Cheat: ${displayName} triggered a ${explosionType} explosion.",
+		notification_suspicious_explosion = "Aye-aye! Anti-Cheat: ${displayName} be triggerin' a ${explosionType} explosion (~${distance}m)!",
 
 		notification_freecam_detected = "Avast ye! Anti-Cheat: Freecam Detected",
 		notification_illegal_vehicle_modifier = "Ahoy matey! Anti-Cheat: Vehicle Modifier",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		screen_text_debug_command_help = "Debug the exclusion rectangles for screen-text me hearties.",
 		screen_text_debug_command_substitutes = "screen_text",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "Arrr! Toggle the anti-cheat strict mode, makin' it a lot more agressive. This will most likely result in more false-positives.",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "help",
 		help_command_help = "Show all available commands.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		create_airdrop_command_parameter_item_amount = "item amount, me matey!",
 		create_airdrop_command_parameter_item_amount_help = "The number of items that the airdrop should have, arrr!",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "create_airdrop_custom",
+		create_airdrop_custom_command_help = "Shiver me timbers! Create an airdrop with customized contents.",
+		create_airdrop_custom_command_parameter_items = "items",
+		create_airdrop_custom_command_parameter_items_help = "Arrr! A string containing what items and how many of them there should be. The string should look like 'green_apple:5,hamburger:3'.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "call_airstrike, avast!",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		remove_riot_player_command_parameter_server_id_help = "Thar ship ID o' th' pirate ye'd like t' remove. Leave this blank t' auto-select yer own vessel.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "rooms_debug",
+		rooms_debug_command_help = "Avast ye! Debug all rooms.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "plundergame",
 		metagame_command_help = "Toggle constant drawing of pirate's vessel IDs.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		voice_debug_command_parameter_server_id_help = "If ye be wantin' t' toggle th' 'voice debug' fer someone else, insert their ship id here.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "muted_areas_debug",
-		muted_areas_debug_command_help = "Draws all muted pirate voice areas.",
-		muted_areas_debug_command_substitutes = "muted_areas",
-
 		listen_command = "listen",
 		listen_command_help = "Toggles listenin' mode fer a certain matey. (Ye can hear what they say)",
 		listen_command_parameter_server_id = "ship id",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		corner_debug_command = "keelhaul_debug",
 		corner_debug_command_help = "Show all the areas where ye can sell yer grog.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "drugs_debug",
+		drugs_debug_command_help = "Avast ye! Debug all drug selling locations.",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "clear_uis",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Ye tried to create an airdrop but ye be missin' the rights to do so.",
-		created_airdrop = "Created an airdrop of type `${airdropType}` with a total of ${itemAmount} booty(s)."
+		create_airdrop_missing_permissions = "Arr, me matey attempted to create an airdrop but they didn't have the required permissions to do so.",
+		create_airdrop_custom_missing_permissions = "Shivver me timbers! Me matey attempted to create a custom airdrop but they didn't have the required permissions to do so.",
+		created_airdrop = "Created an airdrop of type `${airdropType}` with a total of ${itemAmount} booty(s).",
+		no_valid_items_provided = "Avast ye! No valid items provided.",
+		created_airdrop_with_items = "Shiver me timbers! Created an aidrop with the following items inside:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Arrrr! Ye be needin' permission to call in an airstrike!",
+		create_airstrike_missing_permissions = "Yo ho ho! Me matey attempted to create an airstrike but they didn't have the required permissions to do so.",
 
 		airstrike_success = "Aye, the airstrike be successful!",
 		airstrike_failed = "Shiver me timbers! Could na' create the airstrike."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Blow me down! Ye be needin' permission t' call in air support!",
+		create_airsupport_missing_permissions = "Arrr, me hearty! Ye attempted to call in air support, but ye don't have the required permissions to do so.",
 
 		distance = "Distance: ${distance}${unit}",
 		time_to_impact = "ETI: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		crafting_steel = "Moldin' ${usedItems}",
 		crafted_steel = "Crafted ${usedItems} into steel, arrr.",
 		failed_craft_steel = "Failed to craft steel, ye scurvy dog.",
+
+		craft_aluminium = "Craft Aluminium",
+		press_to_craft_aluminium = "[${SeatEjectKey}] Hoist the black flag and craft ye some aluminium!",
+		crafting_aluminium = "Molding ${usedItems}, arrr!",
+		crafted_aluminium = "Shiver me timbers! Ye crafted ${usedItems} into aluminium.",
+		failed_craft_aluminium = "Ahoy! Ye failed to craft the aluminium.",
 
 		scrapping_item = "Scrappin' ${usedItems}",
 		scrapped_item = "Extracted scrap metal from ${usedItems}, ye be a fine pirate.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		discount_store = "Bargain Bin",
 		gun_store_with_shooting_range = "Gunsmith with Shootin' Range",
 		green_wonderland = "Green Wonderland",
+		copy_shop = "Copy Shop",
 		irish_pub = "Irish Pub",
 		bar = "Tavern",
 		midnight = "Midnight Tunershop",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		picture = "Painting",
 		picture_description = "Collect all the memories of ye and yer mateys.",
+		paper = "Paper",
+		paper_description = "A blank piece of parchment, savvy?",
+		printer = "Printer",
+		printer_description = "No fax, only printer, yaarr.",
 
 		brochure = "Pamphlet",
 		brochure_description = "A helpful pamphlet to get ye started in the port town.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		pole = "Yellow Pole",
 		pole_description = "Perfect fer stoppin' anyone dead in their tracks, argh!",
+
+		hiking_backpack = "Hikin' Sack",
+		hiking_backpack_description = "Prep yerself fer outdoor adventures wit' this stylish hikin' sack. It adds a touch o' rugged charm to yer attire, even though it's purely cosmetic. Embrace the spirit o' exploration and show off yer outdoor enthusiast vibes wherever ye go!",
 
 		gasoline_bottle = "Gasoline Bottle",
 		gasoline_bottle_description = "Fer a quick refill fer yer car or....uhm.....yerself?",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		pools_overflowing = "Pools Overflowing: ~r~${poolsOverflowing}, avast!"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] Use Printer, me hearty!",
+
+		no_paper = "Ye don't have any paper, ye scallywag.",
+		invalid_url = "Invalid Image URL, avast!",
+		invalid_domain = "This domain be not allowed, me bucko.",
+		print = "Scribe",
+		printing = "Scribin'...",
+
+		printed_logs_title = "Scribed Parchment",
+		printed_logs_details = "${consoleName} scrib'd a parchment with the URL `${url}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "Player attempted to use a prop item with an illegal item id, matey.",
 		spawn_prop_not_staff = "Player attempted to spawn a prop but they didn't have the required permissions to do so, ye be warned.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		belt_is_on_and_vehicle_is_locked = "Yarr, yer belt be on and the vessel be locked.",
 		belt_is_on = "Yer belt be on, matey!",
 		vehicle_is_locked = "Arrr, the vessel be locked!",
+		belt_warning = "Yer seatbelt be not on, press ~INPUT_SPECIAL_ABILITY_SECONDARY~ to strap in.",
 
 		nearest_player_not_vehicle = "Ahoy! The nearest crewmate be not aboard a vessel.",
 		no_dead_player_nearby = "Ye don't be seein' any dead crewmate aboard a vessel nearby.",

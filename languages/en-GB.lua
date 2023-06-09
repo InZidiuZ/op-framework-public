@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["en-GB"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		detection_area_close = "[${InteractionKey}] Remove Detection Area (${areaId})",
 		detection_area = "Detection Area (${areaId})",
 
+		failed_toggle_strict_mode = "Failed to toggle strict mode.",
+		strict_mode_enabled = "Successfully enabled strict mode.",
+		strict_mode_disabled = "Successfully disabled strict mode.",
+
 		ban_notification_title = "Anti-Cheat",
 		ban_notification = "Banned ${consoleName} for `${banReason}`.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} tazed someone over a very large distance (${distance}m).",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} has ${count} trigger word(s) on their screen.",
-		notification_suspicious_explosion = "Anti-Cheat: ${displayName} triggered an explosion of type ${explosionType}.",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} triggered an ${explosionType} explosion (~${distance}m).",
 
 		notification_freecam_detected = "Anti-Cheat: Freecam Detected",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Vehicle Modifier",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		screen_text_debug_command_help = "Debug the screen-text exclusion rectangles.",
 		screen_text_debug_command_substitutes = "screen_text",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "Toggle the anti-cheat strict mode, making it a lot more aggressive. This will most likely result in more false positives.",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "help",
 		help_command_help = "Show all available commands.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["en-GB"] = {
 		create_airdrop_command_parameter_item_amount = "item amount",
 		create_airdrop_command_parameter_item_amount_help = "The amount of items that the airdrop should contain.",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "create_airdrop_custom",
+		create_airdrop_custom_command_help = "Create an airdrop with customised contents.",
+		create_airdrop_custom_command_parameter_items = "items",
+		create_airdrop_custom_command_parameter_items_help = "A string containing what items and how many of them should be included. The string should look like 'green_apple:5,hamburger:3'.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "call_airstrike",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		remove_riot_player_command_parameter_server_id_help = "The server ID of the player you would like to remove. Leave this blank to auto-select yourself.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "rooms_debug",
+		rooms_debug_command_help = "Debug all rooms.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "metagame",
 		metagame_command_help = "Toggle constant drawing of player's server IDs.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["en-GB"] = {
 		voice_debug_command_parameter_server_id_help = "If you're wanting to toggle the 'voice debug' for someone else, insert their server id here.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "muted_areas_debug",
-		muted_areas_debug_command_help = "Draws all muted voice areas.",
-		muted_areas_debug_command_substitutes = "muted_areas",
-
 		listen_command = "listen",
 		listen_command_help = "Toggles listening mode for a certain user. (You can hear what they say)",
 		listen_command_parameter_server_id = "server id",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		corner_debug_command = "corner_debug",
 		corner_debug_command_help = "Show all the sell areas.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "drugs_debug",
+		drugs_debug_command_help = "Debug all drug selling locations.",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "clear_uis",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Player attmepted to create an airdrop but they didn't have the required permissions to do so.",
-		created_airdrop = "Created an airdrop of type `${airdropType}` with a total of ${itemAmount} item(s)."
+		create_airdrop_missing_permissions = "The player attempted to create an airdrop, but they did not have the required permissions to do so.",
+		create_airdrop_custom_missing_permissions = "The player attempted to create a custom airdrop, but they did not have the required permissions to do so.",
+		created_airdrop = "Created an airdrop of type `${airdropType}` with a total of ${itemAmount} item(s).",
+		no_valid_items_provided = "No valid items have been provided.",
+		created_airdrop_with_items = "Airdrop was created with the following items inside:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["en-GB"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Player attmepted to create an airstrike but they didn't have the required permissions to do so.",
+		create_airstrike_missing_permissions = "The player attempted to create an airstrike, but they did not have the required permissions to do so.",
 
 		airstrike_success = "Airstrike created successfully.",
 		airstrike_failed = "Failed to create an airstrike."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Player attmepted to call in air support but they didn't have the required permissions to do so.",
+		create_airsupport_missing_permissions = "Player tried to request air support, but they didn't have the necessary permissions to do so.",
 
 		distance = "Distance: ${distance}${unit}",
 		time_to_impact = "ETI: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["en-GB"] = {
 		crafting_steel = "Molding ${usedItems}",
 		crafted_steel = "Crafted ${usedItems} into steel.",
 		failed_craft_steel = "Failed to craft steel.",
+
+		craft_aluminium = "Craft Aluminium",
+		press_to_craft_aluminium = "[${SeatEjectKey}] Craft Aluminium",
+		crafting_aluminium = "Moulding ${usedItems}",
+		crafted_aluminium = "Crafted ${usedItems} into aluminium.",
+		failed_craft_aluminium = "Failed to craft aluminium.",
 
 		scrapping_item = "Scrapping ${usedItems}",
 		scrapped_item = "Extracted scrap metal from ${usedItems}.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		discount_store = "Discount Store",
 		gun_store_with_shooting_range = "Ammu-Nation with Range",
 		green_wonderland = "Green Wonderland",
+		copy_shop = "Copy Shop",
 		irish_pub = "Irish Pub",
 		bar = "Bar",
 		midnight = "Midnight Tunershop",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		picture = "Picture",
 		picture_description = "Collect all the memories of you and your friends.",
+		paper = "Paper",
+		paper_description = "A blank piece of paper.",
+		printer = "Printer",
+		printer_description = "Printer with no fax capability.",
 
 		brochure = "Brochure",
 		brochure_description = "A helpful brocure to get you started in the city.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		pole = "Yellow Pole",
 		pole_description = "Perfect for stopping anyone dead in their tracks.",
+
+		hiking_backpack = "Hiking Rucksack",
+		hiking_backpack_description = "Get ready for outdoor adventures with this trendy hiking rucksack. It adds a touch of roughness to your outfit, but it's only for looks. Immerse yourself in the spirit of exploration and display your love for the outdoors in your every move!",
 
 		gasoline_bottle = "Gasoline Bottle",
 		gasoline_bottle_description = "For a quick refill for your car or....uhm.....yourself?",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["en-GB"] = {
 		pools_overflowing = "Pools Overflowing: ~r~${poolsOverflowing}"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] Use Printer",
+
+		no_paper = "You do not have any paper.",
+		invalid_url = "Invalid Image URL.",
+		invalid_domain = "This domain is not permitted.",
+		print = "Print",
+		printing = "Printing...",
+
+		printed_logs_title = "Printed Image",
+		printed_logs_details = "${consoleName} printed an image with the URL `${url}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "Player attempted to use a prop item with an illegal item id.",
 		spawn_prop_not_staff = "Player attempted to spawn a prop but they didn't have the required permissions to do so.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		belt_is_on_and_vehicle_is_locked = "Your belt is on and the vehicle is locked.",
 		belt_is_on = "Your belt is on.",
 		vehicle_is_locked = "The vehicle is locked.",
+		belt_warning = "Your seatbelt is not fastened, press ~INPUT_SPECIAL_ABILITY_SECONDARY~ to put it on.",
 
 		nearest_player_not_vehicle = "Nearest player is not in a vehicle.",
 		no_dead_player_nearby = "There is no dead player in a vehicle near you.",

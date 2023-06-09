@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["meme-spongebob"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		detection_area_close = "[${InteractionKey}] Take out Detection Area (${areaId})",
 		detection_area = "Detection Area (${areaId}) ready!",
 
+		failed_toggle_strict_mode = "Oopsie! Failed to toggle strict mode, meow.",
+		strict_mode_enabled = "Strict mode is activated, aye aye, captain!",
+		strict_mode_disabled = "Strict mode is deactivated, ready to party!",
+
 		ban_notification_title = "Anti-Cheat Warning",
 		ban_notification = "Ya' banned ${consoleName} for `${banReason}` Yarr.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} zapped someone from really far away (${distance}m) with the jellyfish stinger, wowza!",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} has ${count} booger word(s) on their screen… gross!",
-		notification_suspicious_explosion = "Anti-Cheat Alert: ${displayName} has caused a suspicious ${explosionType} explosion!",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} triggered a ${explosionType} kaboom (~${distance}m), meow.",
 
 		notification_freecam_detected = "Oh no! Plankton's created a F-R-E-E-C-A-M!",
 		notification_illegal_vehicle_modifier = "Uh oh! Someone's been tampering with their boat!",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		screen_text_debug_command_help = "Debug the screen-text exclusion rectangles. This'll help you avoid landing in patchy grass.",
 		screen_text_debug_command_substitutes = "screen_text (meow)",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "Toggle anti-cheat's strict mode, making it a lot more aggressive. This is gonna create more false-positives, good luck soldier!",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "help (Translate: help)",
 		help_command_help = "Show all available commands. (Translate: Show all da commands ya can use.)",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		create_airdrop_command_parameter_item_amount = "item quantity",
 		create_airdrop_command_parameter_item_amount_help = "How much of the item should Sandy deliver?",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "krabby_patty_delivery_custom",
+		create_airdrop_custom_command_help = "Deliver a Krabby Patty with customized ingredients.",
+		create_airdrop_custom_command_parameter_items = "ingredients",
+		create_airdrop_custom_command_parameter_items_help = "A string containing what ingredients and how much of them should be used. The string should look like 'secret_sauce:5,pickles:3'.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "call_krabby_patty_bombardment",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		remove_riot_player_command_parameter_server_id_help = "Da server ID o' da player you would like t' remove. Leave dis blank t' auto-select yourself.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "rooms_debug_kah_ra_ti_duh",
+		rooms_debug_command_help = "Debug all the rooms in Bikini Bottom.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "meta-game",
 		metagame_command_help = "Toggle constant drawing of player's server IDs. (Yay, ID tags!)",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		voice_debug_command_parameter_server_id_help = "If ye be wanting to toggle the 'voice debug' for someone else, insert their server id here (square pants).",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "muted_areas_debug (barnacles)",
-		muted_areas_debug_command_help = "Draws all muted voice areas, ya scallywag.",
-		muted_areas_debug_command_substitutes = "muted_areas (krusty krab)",
-
 		listen_command = "listen (listen closely)",
 		listen_command_help = "Toggles listening mode for a certain user. (Ye can hear what they say, argh)",
 		listen_command_parameter_server_id = "server id (meow)",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		corner_debug_command = "corner_debug",
 		corner_debug_command_help = "Show all the sell areas, ya barnacle brain.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "drugs_debug_bubble_bass_order",
+		drugs_debug_command_help = "Debug all the locations where Bubble Bass sells his burgers.",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "clear_uis",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Aye, this player tried to create an airdrop but they didn't have the proper permissions to do so.",
-		created_airdrop = "Created an airdrop o' type `${airdropType}` with a total of ${itemAmount} booty(s)."
+		create_airdrop_missing_permissions = "Player tried to make an airdrop but don't have the okey-dokey to do so, barnacles!",
+		create_airdrop_custom_missing_permissions = "Player tried to create a custom airdrop, but they don't have the necessary permissions, arr!",
+		created_airdrop = "Created an airdrop o' type `${airdropType}` with a total of ${itemAmount} booty(s).",
+		no_valid_items_provided = "No valid items were given, sorry!",
+		created_airdrop_with_items = "Made an airdrop with these items inside:\n${itemsListed}."
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Arrgh, ya can't create an airstrike without permission, bub.",
+		create_airstrike_missing_permissions = "Player tried to create an airstrike but they don't have the necessary permissions, meow!",
 
 		airstrike_success = "Yay, the airstrike is ready!",
 		airstrike_failed = "Oh no, the airstrike failed."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Hey now, ya can't call in air support without permission!",
+		create_airsupport_missing_permissions = "Player tried to summon air support, but they don't have the necessary permissions to do that. Meow!",
 
 		distance = "Distance: ${distance}${unit}",
 		time_to_impact = "ETI: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		crafting_steel = "Mixing ${usedItems} together like Krabby Patties!",
 		crafted_steel = "Crafted ${usedItems} into steel like a perfect patty.",
 		failed_craft_steel = "Barnacles! Failed to craft steel.",
+
+		craft_aluminium = "Craft me some Aluminium, will ya?",
+		press_to_craft_aluminium = "[${SeatEjectKey}] Press this to start crafting Aluminium, meow!",
+		crafting_aluminium = "Mixing ${usedItems} to craft Aluminium, meow!",
+		crafted_aluminium = "Yaay, we made ${usedItems} into Aluminium! Meow!",
+		failed_craft_aluminium = "Whoops, failed to make Aluminium. Maybe try again? Meow!",
 
 		scrapping_item = "Ripping apart ${usedItems} like a sea monster!",
 		scrapped_item = "Extracted scrap metal from ${usedItems} just like Mr. Krabs collects coins.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		discount_store = "Discount Store, where ya can find a great deal on sea bear repellent",
 		gun_store_with_shooting_range = "Ammu-Nation with Range, where Sandy tests out her newest inventions",
 		green_wonderland = "Green Wonderland",
+		copy_shop = "Copy Shop",
 		irish_pub = "Irish Pub",
 		bar = "Bar",
 		midnight = "Midnight Tunershop",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		picture = "Picture Pirate's Life!",
 		picture_description = "Collect all the memories of ya and yer mates! Arr!",
+		paper = "Paper, meow!",
+		paper_description = "A blank piece of paper, meow.",
+		printer = "Printer, meow!",
+		printer_description = "No fax, only printer.",
 
 		brochure = "Brochure Matey!",
 		brochure_description = "A helpful brocure ta get ye started in the city! Yo ho ho and a bottle of Krabby Patties!",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		pole = "Yellow Pole",
 		pole_description = "Perfect for stopping anyone dead in their tracks, like Squidward when he sees his clarinet destroyed.",
+
+		hiking_backpack = "Hiking Backpack",
+		hiking_backpack_description = "Gear up for outdoor adventures with this stylish hiking backpack. It adds a touch of rugged charm to yer attire, even though it's purely cosmetic. Embrace the spirit of exploration and show off yer outdoor enthusiast vibes wherever ye go, matey!",
 
 		gasoline_bottle = "Gasoline Bottle",
 		gasoline_bottle_description = "For a quick refill for your boat or....uhm.....yourself?",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		pools_overflowing = "Pools Overflowing: ~r~${poolsOverflowing}, uh-oh!"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] Use Printer",
+
+		no_paper = "Ye don't have any paper.",
+		invalid_url = "Barnacle brains! That's an invalid image URL.",
+		invalid_domain = "This domain is not allowed, me hearty.",
+		print = "Bubble",
+		printing = "Blowin' bubbles...",
+
+		printed_logs_title = "Bubble Image",
+		printed_logs_details = "${consoleName} blew an image with the URL `${url}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "Player attempted to use a prop item with an illegal item id, this is bad!",
 		spawn_prop_not_staff = "Player attempted to spawn a prop but they didn't have the required permissions to do so, aww man.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		belt_is_on_and_vehicle_is_locked = "Yer belt is on an' th' vehicle be locked.",
 		belt_is_on = "Yar belt be on, matey!",
 		vehicle_is_locked = "The sea chariot be locked, arr!",
+		belt_warning = "Your floatie belt is not on, press ~INPUT_SPECIAL_ABILITY_SECONDARY~ to put it on.",
 
 		nearest_player_not_vehicle = "The nearest barnacle head ain't in a sea chariot, yar!",
 		no_dead_player_nearby = "There ain't no seaweed brains in a sea chariot near ye, arr!",

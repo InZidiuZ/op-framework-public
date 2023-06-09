@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		detection_area_close = "[${InteractionKey}] ลบพื้นที่ตรวจจับ (${areaId})",
 		detection_area = "พื้นที่ตรวจจับ (${areaId})",
 
+		failed_toggle_strict_mode = "ไม่สามารถเปิดโหมดเข้มงวดได้",
+		strict_mode_enabled = "เปิดโหมดเข้มงวดเรียบร้อยแล้ว",
+		strict_mode_disabled = "ปิดโหมดเข้มงวดเรียบร้อยแล้ว",
+
 		ban_notification_title = "Anti-Cheat",
 		ban_notification = "แบน ${consoleName} เนื่องจาก `${banReason}`.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} ใช้ปืนยางละเมิดกฏหมายต่อผู้อื่นโดยใช้ระยะทางที่ใหญ่มาก (${distance} เมตร)",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName} มีคำไม่เหมาะสม ${count} คำบนหน้าจอของตน",
-		notification_suspicious_explosion = "การตรวจสอบความปลอดภัย: ${displayName} ทำการเกิดเหตุการณ์ ${explosionType}",
+		notification_suspicious_explosion = "Anti-Cheat: ${displayName} สั่งให้เกิดระเบิด ${explosionType} (~${distance} เมตร)",
 
 		notification_freecam_detected = "ป้องกันการโกง: ตรวจพบการใช้งาน Freecam",
 		notification_illegal_vehicle_modifier = "ป้องกันการโกง: การปรับแต่งยานพาหนะผิดกฎหมาย",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		screen_text_debug_command_help = "Debug ของรักษาความปลอดภัยของข้อความบนหน้าจอ",
 		screen_text_debug_command_substitutes = "screen_text",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "เปิด/ปิดโหมดเข้มงวดในการตรวจสอบการโกง อาจเกิดค่าตรวจจับเท็จได้",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "help",
 		help_command_help = "แสดงคำสั่งทั้งหมดที่มีอยู่",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		create_airdrop_command_parameter_item_amount = "จำนวนไอเท็ม",
 		create_airdrop_command_parameter_item_amount_help = "จำนวนไอเท็มที่ควรจะมีในกล่องหล่อเลี่ยง.",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "create_airdrop_custom",
+		create_airdrop_custom_command_help = "สร้างการส่งอากาศตกลงด้วยเนื้อหาที่กำหนดเอง",
+		create_airdrop_custom_command_parameter_items = "items",
+		create_airdrop_custom_command_parameter_items_help = "สตริงที่ประกอบด้วยไอเท็มและจำนวนของไอเท็มต่าง ๆ สตริงควรมีรูปแบบเช่น 'green_apple:5,hamburger:3'",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "เรียกทัพอากาศ",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		remove_riot_player_command_parameter_server_id_help = "ไอดีเซิร์ฟเวอร์ของผู้เล่นที่คุณต้องการลบ หากต้องการเลือกตัวเองให้เว้นว่างไว้",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "rooms_debug",
+		rooms_debug_command_help = "Debug ห้องทั้งหมด",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "metagame",
 		metagame_command_help = "เปิด-ปิดการแสดงผล ID ของผู้เล่นอย่างต่อเนื่อง",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		voice_debug_command_parameter_server_id_help = "หากคุณต้องการเปิดหรือปิดการแสดงผล 'voice debug' ของบุคคลอื่น ๆ โปรดใส่ไอดีเซิร์ฟเวอร์ของเขาที่นี่",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "muted_areas_debug",
-		muted_areas_debug_command_help = "วาดพื้นที่เสียงที่ถูกปิดเสียงทั้งหมด",
-		muted_areas_debug_command_substitutes = "muted_areas",
-
 		listen_command = "listen",
 		listen_command_help = "สลับโหมดฟังสำหรับผู้ใช้ที่กำหนด (คุณสามารถได้ยินสิ่งที่พวกเขาพูด)",
 		listen_command_parameter_server_id = "ไอดีเซิร์ฟเวอร์",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		corner_debug_command = "debug_มุม",
 		corner_debug_command_help = "แสดงบริเวณขายทั้งหมด",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "drugs_debug",
+		drugs_debug_command_help = "Debug สถานที่ขายยาทั้งหมด",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "ล้าง_ui",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "ผู้เล่นพยายามสร้างการห่อลมพานามัย แต่พวกเขาไม่มีสิทธิ์ที่จำเป็นต้องทำเช่นนั้น",
-		created_airdrop = "สร้างการห่อลมพานามัยประเภท `${airdropType}` จำนวนรวม ${itemAmount} รายการ"
+		create_airdrop_missing_permissions = "ผู้เล่นพยายามสร้างการหล่อลื่นแต่ไม่มีสิทธิ์ที่จำเป็นในการดำเนินการ",
+		create_airdrop_custom_missing_permissions = "ผู้เล่นพยายามสร้างการหล่อลื่นที่กำหนดเองแต่ไม่มีสิทธิ์ที่จำเป็นในการดำเนินการ",
+		created_airdrop = "สร้างการห่อลมพานามัยประเภท `${airdropType}` จำนวนรวม ${itemAmount} รายการ",
+		no_valid_items_provided = "ไม่มีไอเทมที่ถูกต้อง",
+		created_airdrop_with_items = "สร้างการหล่อลื่นพร้อมไอเท็มต่อไปนี้:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["th-TH"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "ผู้เล่นพยายามสร้างการระเบิดทางอากาศ แต่พวกไม่มีสิทธิ์ที่จำเป็นที่จะทำได้",
+		create_airstrike_missing_permissions = "ผู้เล่นพยายามสร้างการปฏิบัติการโจมตีทางอากาศแต่ไม่มีสิทธิ์ที่จำเป็นในการดำเนินการ",
 
 		airstrike_success = "สร้างการระเบิดทางอากาศเรียบร้อยแล้ว",
 		airstrike_failed = "ไม่สามารถสร้างการระเบิดทางอากาศได้"
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "ผู้เล่นพยายามเรียก Air Support แต่ไม่มีสิทธิ์ที่จำเป็นที่จะทำได้",
+		create_airsupport_missing_permissions = "ผู้เล่นพยายามเรียกใช้การสนับสนุนทางอากาศ แต่พวกเขาไม่มีสิทธิ์ที่จำเป็นในการดำเนินการดังกล่าว",
 
 		distance = "ระยะทาง: ${distance}${unit}",
 		time_to_impact = "เวลาตกปลายทาง: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		crafting_steel = "กำลังผลิต ${usedItems} เข้ารูปเหล็ก",
 		crafted_steel = "ผสม ${usedItems} เข้ากันได้แล้ว ได้รับเหล็กเป็นผลิตภัณฑ์",
 		failed_craft_steel = "ผิดพลาดในการผลิตเหล็ก",
+
+		craft_aluminium = "การผลิตอลูมิเนียม",
+		press_to_craft_aluminium = "[${SeatEjectKey}] การผลิตอลูมิเนียม",
+		crafting_aluminium = "กำลังหล่อ ${usedItems}",
+		crafted_aluminium = "ผลิต ${usedItems} เป็นอลูมิเนียมแล้ว",
+		failed_craft_aluminium = "การผลิตอลูมิเนียมล้มเหลว",
 
 		scrapping_item = "กำลังแปลง ${usedItems} เป็นเหล็กรีด",
 		scrapped_item = "สกัดเหล็กรีดจาก ${usedItems} แล้ว",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		discount_store = "ร้านส่วนลด",
 		gun_store_with_shooting_range = "ร้านค้าอาวุธและสนามยิง",
 		green_wonderland = "กรีน วันเดอร์แลนด์",
+		copy_shop = "ร้านคัดลอก",
 		irish_pub = "ผับไอริช",
 		bar = "บาร์",
 		midnight = "มิดไนท์ ทูเนอร์ช็อป",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		picture = "รูปถ่าย",
 		picture_description = "สะสมความทรงจำของคุณและเพื่อนของคุณทั้งหมด",
+		paper = "กระดาษ",
+		paper_description = "กล่องกระดาษว่างเปล่า",
+		printer = "เครื่องพิมพ์",
+		printer_description = "ไม่มีแฟกซ์ เป็นเครื่องพิมพ์เท่านั้น",
 
 		brochure = "แผ่นโฆษณา",
 		brochure_description = "แผ่นโฆษณาที่เป็นประโยชน์สำหรับเริ่มต้นในเมือง",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		pole = "เสาสีเหลือง",
 		pole_description = "เหมาะสำหรับหยุดใครก็ตามที่มาทางหน้าอย่างมีประสิทธิภาพ",
+
+		hiking_backpack = "เป้สำหรับเดินป่า",
+		hiking_backpack_description = "เตรียมตัวก่อนออกเดินทางไปผจญภัยกับเป้สำหรับเดินป่าสไตล์นี้ มันจะเพิ่มเสน่ห์ที่โดดเด่นให้กับการแต่งตัวของคุณ บอกลากับการพกพาชุดแฟชั่นที่นุ่มนวล และแสดงให้เห็นถึงความเป็นนักผจญภัยของคุณทุกๆครั้งที่เดินทาง",
 
 		gasoline_bottle = "ขวดน้ำมันเบนซิน",
 		gasoline_bottle_description = "สำหรับเติมน้ำมันให้รถของคุณหรือ...อืม...ตัวเองอย่างรวดเร็ว",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["th-TH"] = {
 		pools_overflowing = "สระน้ำเต็ม: ~r~${poolsOverflowing}"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] ใช้เครื่องพิมพ์",
+
+		no_paper = "คุณไม่มีกระดาษอยู่ในขณะนี้",
+		invalid_url = "URL ของรูปภาพไม่ถูกต้อง",
+		invalid_domain = "โดเมนนี้ไม่ได้รับอนุญาต",
+		print = "พิมพ์",
+		printing = "กำลังพิมพ์...",
+
+		printed_logs_title = "พิมพ์ภาพ",
+		printed_logs_details = "${consoleName} ได้ทำการพิมพ์ภาพด้วย URL `${url}`"
+	},
+
 	props = {
 		illegal_prop_item_id = "ผู้เล่นพยายามใช้ไอเท็มของวัตถุประสงค์กับไอดีที่ถูกต้องไม่ได้",
 		spawn_prop_not_staff = "ผู้เล่นพยายามสร้างวัตถุประสงค์แต่ไม่มีสิทธิ์ที่จำเป็นเพื่อทำเช่นนั้น",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		belt_is_on_and_vehicle_is_locked = "คุณมัดเข็มนิรภัยและยึดตึกของยานพาหนะไว้",
 		belt_is_on = "คุณมีเข็มขัดนิรภัยอยู่",
 		vehicle_is_locked = "ยานพาหนะถูกล็อค",
+		belt_warning = "คุณยังไม่ได้คุณภาพการเข้าร่วมทางบันไดที่นั่งของคุณ กด ~INPUT_SPECIAL_ABILITY_SECONDARY~ เพื่อคุณภาพการเข้าร่วม",
 
 		nearest_player_not_vehicle = "ผู้เล่นที่อยู่ใกล้ที่สุดไม่ได้อยู่ในยานพาหนะ",
 		no_dead_player_nearby = "ไม่มีผู้เล่นที่ตายอยู่ในยานพาหนะใกล้เคียงกับคุณ",

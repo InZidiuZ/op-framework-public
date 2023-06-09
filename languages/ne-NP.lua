@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["ne-NP"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		detection_area_close = "[${InteractionKey}] हेर्ने क्षेत्र हटाउनुहोस् (${areaId})",
 		detection_area = "हेर्ने क्षेत्र (${areaId})",
 
+		failed_toggle_strict_mode = "सख्त मोड टगल गर्न सकिएन।",
+		strict_mode_enabled = "सख्त मोड सफलतापूर्वक सक्षम गरियो।",
+		strict_mode_disabled = "सख्त मोड सफलतापूर्वक असक्षम गरियो।",
+
 		ban_notification_title = "एन्टी-चीट",
 		ban_notification = "ब्यान हुनुभन्दा अगाडि ${consoleName} जसलाई `${banReason}` भएको छ।",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 
 		notification_distance_taze = "एन्टी-चीट: ${displayName} अति दूरीमा कसैलाई taze गरिएको छ (${distance}m)।",
 		notification_bad_screen_word = "एन्टी-चीट: ${displayName} तिनीहरूको स्क्रिनमा ${count} ट्रिगर शब्दहरू छन्।",
-		notification_suspicious_explosion = "एन्टी-चीट: ${displayName}ले ${explosionType} विस्फोट तयार गरियो।",
+		notification_suspicious_explosion = "एन्टी-चीट: ${displayName} बम ब्लास्ट (~${distance}m) गरेको हो।",
 
 		notification_freecam_detected = "एन्टी-चीट: Freecam पत्ता लागेको",
 		notification_illegal_vehicle_modifier = "एन्टी-चीट: गाडी संशोधक",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		screen_text_debug_command_help = "स्क्रीन-टेक्स्ट अपवर्जन रेक्टेंगलहरू डिबग गर्नुहोस्।",
 		screen_text_debug_command_substitutes = "screen_text",
 
+		anti_cheat_strict_mode_command = "anti_cheat_strict_mode",
+		anti_cheat_strict_mode_command_help = "एन्टी-चीट सख्त मोड टगल गर्नुहोस्, यो धेरै आक्रमणकारी हुनेछ। यो संभवतः थुप्रै गलत-सक्त परिणाम हुनेछ।",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "मद्दत",
 		help_command_help = "सबै उपलब्ध आदेशहरू देखाउनुहोस्।",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		create_airdrop_command_parameter_item_amount = "वस्तु मात्रा",
 		create_airdrop_command_parameter_item_amount_help = "एयरड्रपमा वस्तुको मात्रा।",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "create_airdrop_custom",
+		create_airdrop_custom_command_help = "कस्टमाइज गरिएको सामानसहित एयरड्रप सिर्जना गर्नुहोस्।",
+		create_airdrop_custom_command_parameter_items = "items",
+		create_airdrop_custom_command_parameter_items_help = "एक स्ट्रिङ्ग जुन सामानहरू र कति संख्यामा हुनुपर्छ भनेर लेखिएको छ। त्यस्तो स्ट्रिङ्ग यसप्रकार देखिनेछ: 'हरियो_आप्पल:५,ह्याम्बर्गर:३'।",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "हवाई तोपको कामना गर्नुहोस्",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		remove_riot_player_command_parameter_server_id_help = "तपाईं हटाउन चाहनु भएको खेलाडीको सर्भर आईडी। आफ्नो अक्षम छोड्नुहोस्।",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "rooms_debug",
+		rooms_debug_command_help = "सबै कोठाहरूमा डिबग गर्नुहोस्।",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "मेटागेम",
 		metagame_command_help = "खिलाडीहरूको सर्भर आईडी लगातार देखाउने चालू / बन्द गर्नुहोस्।",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		voice_debug_command_parameter_server_id_help = "अगर तपाईं कसैको 'आवाज डिबग' टगल गर्न चाहानुहुन्छ भने, त्यसको सर्भर आईडी यहाँ टाइप गर्नुहोस्।",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "म्युटेड एरियाहरू डिबग",
-		muted_areas_debug_command_help = "सबै म्युटेड भावुकको कुनै कुरा गर्ने एरियाहरू टोल्छ।",
-		muted_areas_debug_command_substitutes = "म्युटेड एरियाहरू",
-
 		listen_command = "सुन्नुहोस्",
 		listen_command_help = "कसै प्रयोगकर्ताको लागि सुनेको मोड चालू/बन्द गर्नुहोस्। (तपाईं जुन सम्भव गर्नुहुन्छ उनलाई के भनिरहेको सुन्न सक्नुहुन्छ।)",
 		listen_command_parameter_server_id = "सर्भर आईडी",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		corner_debug_command = "कौर्नर_debug",
 		corner_debug_command_help = "सबै बेच भएका क्षेत्रहरू देखाउनुहोस्।",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "drugs_debug",
+		drugs_debug_command_help = "सबै दवाखानाहरूमा डिबग गर्नुहोस्।",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "clear_uis",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["ne-NP"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "खेलाडी एयरड्रप तयार गर्न चाहन्थ्यो, तर उनीहरुलाई यो गर्न आवश्यक अनुमति छैन।",
-		created_airdrop = "${airdropType} प्रकारको एयरड्रप तयार गरियो जसमा कुल ${itemAmount} वस्तु(हरू) छन्।"
+		create_airdrop_missing_permissions = "खेलाडीले बनाउने आएरोपमा चेतावनी सन्देश देखाए, तर उनी बनाउन आवश्यक अनुमतिहरू छैनन्।",
+		create_airdrop_custom_missing_permissions = "खेलाडीले अनुकूल आएरोप बनाउन चाहेको छिन्दै चेतावनी सन्देश देखाए, तर उनी बनाउन आवश्यक अनुमतिहरू छैनन्।",
+		created_airdrop = "${airdropType} प्रकारको एयरड्रप तयार गरियो जसमा कुल ${itemAmount} वस्तु(हरू) छन्।",
+		no_valid_items_provided = "कुनै मान्य वस्तुहरू पेश गरिएको छैन।",
+		created_airdrop_with_items = "तल वर्णित वस्तुहरू सहित एउटा आइड्रप बनाइयो:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["ne-NP"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "खेलाडी एयरस्ट्राइक बनाउन चाहन्थे, तर उनीहरुको आवश्यक अनुमति छैन।",
+		create_airstrike_missing_permissions = "खेलाडीले एअरस्ट्राइक बनाउन चाहेको छिन्दै चेतावनी सन्देश देखाए, तर उनी बनाउन आवश्यक अनुमतिहरू छैनन्।",
 
 		airstrike_success = "एयरस्ट्राइक सफलतापूर्वक सिर्जना गरियो।",
 		airstrike_failed = "एयरस्ट्राइक सिर्जना गर्न असफल भयो।"
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "खेलाडीले हवाई सहयोगको आबेदन गरेको थियो तर उनलाई त्यही गर्ने अनुमति छैन।",
+		create_airsupport_missing_permissions = "खेलाडीले एअर सपोर्ट कल गर्न कोशिस गरे, तर उनीहरूलाई त्यसको नियामको आवश्यकता थिएन।",
 
 		distance = "दुरी: ${distance}${unit}",
 		time_to_impact = "आक्रमणमा समय: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		crafting_steel = "${usedItems} मोल्ड गर्दै",
 		crafted_steel = "${usedItems} भित्र इस्पात बनाइयो।",
 		failed_craft_steel = "इस्पात बनाउन असफल भयो।",
+
+		craft_aluminium = "एलुमिनियम निर्मित गर्नुहोस्",
+		press_to_craft_aluminium = "[${SeatEjectKey}] एलुमिनियम निर्मित गर्नुहोस्",
+		crafting_aluminium = "${usedItems} ढलग्यो र ${usedItems} एलुमिनियममा बदलियो।",
+		crafted_aluminium = "${usedItems} एलुमिनियममा बदलियो।",
+		failed_craft_aluminium = "एलुमिनियम निर्मित गर्न असफल।",
 
 		scrapping_item = "${usedItems} फोहोर तार्किक् हुन्छ।",
 		scrapped_item = "${usedItems} तथा फोहोर निकालिएको।",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		discount_store = "छुट विक्रेता",
 		gun_store_with_shooting_range = "गन स्टोर रहेको शूटिंग रेंज सहित",
 		green_wonderland = "हरियो आश्चर्यको संसार",
+		copy_shop = "कपी ठेगाना",
 		irish_pub = "आयरिश पब",
 		bar = "बार",
 		midnight = "मिडनाइट ट्यूनर स्टोर",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["ne-NP"] = {
 
 		picture = "तस्वीर",
 		picture_description = "तपाईं र तपाईंको साथीहरुको सम्झनाहरु जम्मा गर्न।",
+		paper = "कागज",
+		paper_description = "खालि कागजको टुक्रा।",
+		printer = "प्रिन्टर",
+		printer_description = "कुनै फ्याक्स छैन, केवल प्रिन्टर।",
 
 		brochure = "एक सहयोगी ब्रोशर",
 		brochure_description = "शहरमा शुरुवात गर्न तपाईंलाई सहयोगको एक उपयोगी ब्रोशर।",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["ne-NP"] = {
 
 		pole = "पीला खंभा",
 		pole_description = "किसी भी व्यक्ति को अचानक रोकने के लिए पूर्ण है।",
+
+		hiking_backpack = "हाइकिंग ब्याकपैक",
+		hiking_backpack_description = "यो सुसज्जित हाइकिंग ब्याकपैक बाहिरी भ्रमणहरूको लागि एउटा अाकर्षक छिटो प्रभाव गर्दछ। यो केवल सौन्दर्यको लागि मात्र हो, तर यो आपको वस्त्रमा खरोक्टो चर्म थप्छ। अन्वेषण को आत्मा ग्रहण गर्नुहोस् र कहाँबाट पनि बहिराइए क्षेत्र शैली को दोस्रो मौसम लाग्दछ।",
 
 		gasoline_bottle = "गैसोलीन बोतल",
 		gasoline_bottle_description = "अपनी कार या आपके लिए एक त्वरित भराई के लिए।",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		pools_overflowing = "पूलहरू ओभरफ्लो भएको छ: ~r~${poolsOverflowing}"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] प्रिन्टर प्रयोग गर्नुहोस्",
+
+		no_paper = "तपाईंसँग तपाईं जस्तो कुनै कागज छैन।",
+		invalid_url = "अमान्य तस्वीर URL।",
+		invalid_domain = "यो डोमेन अनुमति दिइएको छैन।",
+		print = "प्रिन्ट",
+		printing = "प्रिन्टिंग...",
+
+		printed_logs_title = "प्रिन्टेड इमेज",
+		printed_logs_details = "${consoleName} ले `${url}` URL सहित एक इमेज प्रिन्ट गरेको छ।"
+	},
+
 	props = {
 		illegal_prop_item_id = "खिलौना आइडी नंबर सह प्रयोग गरेको थियो, गैरकानुनी प्रयत्न।",
 		spawn_prop_not_staff = "खिलौना उत्पन्न गर्ने प्रयास गर्नुभयो तर तपाईंलाई त्यहाँ प्रवेश गर्न नपाएको थियो।",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		belt_is_on_and_vehicle_is_locked = "तपाईंको बेल्ट लगेको छ र गाडी लक गरिएको छ।",
 		belt_is_on = "तपाईंको बेल्ट लाग्यो।",
 		vehicle_is_locked = "गाडी लक गरिएको छ।",
+		belt_warning = "तपाईंको सिट बेल्ट लगाएको छैन, यो लगाउन ~INPUT_SPECIAL_ABILITY_SECONDARY~ थिच्नुहोस्।",
 
 		nearest_player_not_vehicle = "नजिकको खेलाडी गाडीमा छैन।",
 		no_dead_player_nearby = "तपाईं नजिकको कुनै मृत प्रयोगकर्ता गाडीमा छैन।",

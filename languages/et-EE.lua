@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 13 (do not change)
+-- AUTO LOCALES: 14 (do not change)
 
 OP.Global.Locales.Languages["et-EE"] = {
 	-- configuration settings for language
@@ -682,6 +682,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		detection_area_close = "[${InteractionKey}] Eemalda avastuse piirkond (${areaId})",
 		detection_area = "Avastuse piirkond (${areaId})",
 
+		failed_toggle_strict_mode = "Viga rangeda range režiimi.",
+		strict_mode_enabled = "Range režiim edukalt sisse lülitatud.",
+		strict_mode_disabled = "Range režiim edukalt välja lülitatud.",
+
 		ban_notification_title = "Anti-Cheat",
 		ban_notification = "Keelatud ${consoleName} põhjusel `${banReason}`.",
 
@@ -720,7 +724,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		notification_distance_taze = "Anti-Cheat: ${displayName} taser kasutanud kedagi väga suure kauguse (${distance}m) tagant.",
 		notification_bad_screen_word = "Anti-Cheat: ${displayName}'i ekraanil tuvastati ${count} tundlikku sõna.",
-		notification_suspicious_explosion = "Cheati tuvastamine: ${displayName} põhjustas plahvatuse tüübiga ${explosionType}.",
+		notification_suspicious_explosion = "Tõrje-Rikkumine: ${displayName} põhjustas ${explosionType} plahvatuse (~${distance}m kaugusel).",
 
 		notification_freecam_detected = "Anti-Cheat: Freecam tuvastatud",
 		notification_illegal_vehicle_modifier = "Anti-Cheat: Sobimatud sõiduki muutjad",
@@ -1448,6 +1452,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		screen_text_debug_command_help = "Ekraaniteksti välistamise ristkülikute silumine.",
 		screen_text_debug_command_substitutes = "ekraanitekst",
 
+		anti_cheat_strict_mode_command = "tõrje_rikkuja_range_rez",
+		anti_cheat_strict_mode_command_help = "Lülita tõrje-rikkumise range režiim välja või sisse. See muudab tõrje veelgi agressiivsemaks ja võib põhjustada rohkem valepositiivseid tulemusi.",
+		anti_cheat_strict_mode_command_substitutes = "",
+
 		-- base/commands
 		help_command = "abi",
 		help_command_help = "Kuvab kõik saadaolevad käsklused.",
@@ -1541,6 +1549,12 @@ OP.Global.Locales.Languages["et-EE"] = {
 		create_airdrop_command_parameter_item_amount = "esemete kogus",
 		create_airdrop_command_parameter_item_amount_help = "Esemete arv, mida langevarjuabi peaks sisaldama.",
 		create_airdrop_command_substitutes = "",
+
+		create_airdrop_custom_command = "loo_airdrop_kohandatud",
+		create_airdrop_custom_command_help = "Tekitab kohandatud sisuga lendava kasti.",
+		create_airdrop_custom_command_parameter_items = "esemed",
+		create_airdrop_custom_command_parameter_items_help = "Sõne, mis sisaldab milliseid esemeid ja mitu neist peaks olema. See peaks välja nägema näiteks 'roheline õun:5,hamburger:3'.",
+		create_airdrop_custom_command_substitutes = "",
 
 		-- game/airstrike
 		call_airstrike_command = "kutsu õhulöök",
@@ -2958,6 +2972,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 		remove_riot_player_command_parameter_server_id_help = "Mängija serveri ID, keda soovite eemaldada. Jätke see tühi, et ise valida.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rooms
+		rooms_debug_command = "tubade_debugimine",
+		rooms_debug_command_help = "Debugib kõik ruumid.",
+		rooms_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "metamäng",
 		metagame_command_help = "Lülitab sisse või välja pideva mängijate serveri ID jälgimise.",
@@ -3203,10 +3222,6 @@ OP.Global.Locales.Languages["et-EE"] = {
 		voice_debug_command_parameter_server_id_help = "Kui soovid kellegi teise 'hääle silumise' olekut muuta, sisesta siia nende serveri ID.",
 		voice_debug_command_substitutes = "",
 
-		muted_areas_debug_command = "vaigistatud_alade_silumine",
-		muted_areas_debug_command_help = "Joonistab kõik vaigistatud häälte alad.",
-		muted_areas_debug_command_substitutes = "vaigistatud_alad",
-
 		listen_command = "kuula",
 		listen_command_help = "Lülitab sisse kuulamisrežiimi kindla kasutaja jaoks. (Saad kuulda, mida nad ütlevad)",
 		listen_command_parameter_server_id = "serveri ID",
@@ -3340,6 +3355,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 		corner_debug_command = "nurgaümbris_debug",
 		corner_debug_command_help = "Näita kõiki müügi alasid.",
 		corner_debug_command_substitutes = "",
+
+		-- illegal/drugs
+		drugs_debug_command = "narkokaubanduse_debugimine",
+		drugs_debug_command_help = "Debugib kõik narkokaubanduse kohad.",
+		drugs_debug_command_substitutes = "",
 
 		-- interfaces/interfaces
 		clear_uis_command = "puhasta_uis",
@@ -3853,8 +3873,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Mängijal ei olnud piisavalt õigusi, et luua langevarjuabi.",
-		created_airdrop = "Loodi langevarjuabi tüübiga `${airdropType}`, mis sisaldas ${itemAmount} eset."
+		create_airdrop_missing_permissions = "Mängija üritas luua langevarju abi, kuid tal ei olnud selleks vajalikke õigusi.",
+		create_airdrop_custom_missing_permissions = "Mängija üritas luua kohandatud langevarju abi, kuid tal ei olnud selleks vajalikke õigusi.",
+		created_airdrop = "Loodi langevarjuabi tüübiga `${airdropType}`, mis sisaldas ${itemAmount} eset.",
+		no_valid_items_provided = "Kehtivaid esemeid ei sisestatud.",
+		created_airdrop_with_items = "Loodi allpool loetletud esemetega langevarju abi:\n${itemsListed}"
 	},
 
 	airports = {
@@ -3878,14 +3901,14 @@ OP.Global.Locales.Languages["et-EE"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Mängija üritas õhurünnakut luua, kuid tal pole selleks piisavalt õigusi.",
+		create_airstrike_missing_permissions = "Mängija üritas luua pommitamise abi, kuid tal ei olnud selleks vajalikke õigusi.",
 
 		airstrike_success = "Õhurünnak loodi edukalt.",
 		airstrike_failed = "Õhurünnaku loomine ebaõnnestus."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Mängija üritas kutsuda lisaõhutuge, kuid tal puudus selleks vajalik luba.",
+		create_airsupport_missing_permissions = "Mängija üritas helistada õhutuge, kuid tal polnud selle tegemiseks nõutavaid õigusi.",
 
 		distance = "Kaugus: ${distance}${unit}",
 		time_to_impact = "Aeg sihtmärgile jõudmiseni: ${timeToImpact}",
@@ -4833,6 +4856,12 @@ OP.Global.Locales.Languages["et-EE"] = {
 		crafting_steel = "Valmistan ${usedItems}",
 		crafted_steel = "Valmistasin ${usedItems} teraseks.",
 		failed_craft_steel = "Ebaõnnestus terase valmistamine.",
+
+		craft_aluminium = "Valmista alumiinium",
+		press_to_craft_aluminium = "[${SeatEjectKey}] Valmista alumiinium",
+		crafting_aluminium = "${usedItems} vormimine",
+		crafted_aluminium = "Valmistati ${usedItems} alumiiniumiks.",
+		failed_craft_aluminium = "Alumiiniumi valmistamine ebaõnnestus.",
 
 		scrapping_item = "Jäätmete sorteerimine: ${usedItems}",
 		scrapped_item = "Ekstraheeritud vanametall ${usedItems}-st.",
@@ -6485,6 +6514,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		discount_store = "Allahindlus pood",
 		gun_store_with_shooting_range = "Relvapood lasketiiruga",
 		green_wonderland = "Roheline Imedemaa",
+		copy_shop = "Kopeeri pood",
 		irish_pub = "Iiri Pubi",
 		bar = "Baar",
 		midnight = "Kesköö Tunershop",
@@ -6745,6 +6775,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		picture = "Pilt",
 		picture_description = "Koguge kõik mälestused enda ja sõpradega.",
+		paper = "Paber",
+		paper_description = "Tühi paberileht.",
+		printer = "Printer",
+		printer_description = "Ei faxi, ainult printer.",
 
 		brochure = "Brošüür",
 		brochure_description = "Abiks olev brošüür linna tutvumisel.",
@@ -7400,6 +7434,9 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		pole = "Kollane post",
 		pole_description = "Täiuslik takistus, mis peatab kellegi kiiresti.",
+
+		hiking_backpack = "Matkakott",
+		hiking_backpack_description = "Valmistu väljasõitudel seiklemiseks selle trendika matkakotiga. See annab sinu riietusele robustse võlu, kuigi see on ainult kosmeetiline. Haara uurimise vaim ja näita kõigile oma väljasõiduhuvilisi!",
 
 		gasoline_bottle = "Bensiinipudel",
 		gasoline_bottle_description = "Kiireks kütuse täiendamiseks oma autole või endale?",
@@ -9712,6 +9749,19 @@ OP.Global.Locales.Languages["et-EE"] = {
 		pools_overflowing = "Basseinid ülevoolavad: ~r~${poolsOverflowing}"
 	},
 
+	printer = {
+		use_printer = "[${InteractionKey}] Kasuta Printerit",
+
+		no_paper = " Sul ei ole paberit.",
+		invalid_url = "Vigane pildi URL.",
+		invalid_domain = "See domeen pole lubatud.",
+		print = "Prindi",
+		printing = "Printimine...",
+
+		printed_logs_title = "Prinditud pilt",
+		printed_logs_details = "${consoleName} prindis pildi URL-iga `${url}`."
+	},
+
 	props = {
 		illegal_prop_item_id = "Mängija üritas kasutada rekvireeritud esemega ebaseaduslikku eseme ID-d.",
 		spawn_prop_not_staff = "Mängija üritas eset tekitada, kuid tal polnud selleks vajalikke õigusi.",
@@ -11452,6 +11502,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		belt_is_on_and_vehicle_is_locked = "Sinu turvavöö on kinnitatud ja sõiduk lukustatud.",
 		belt_is_on = "Teie vöö on kinnitatud.",
 		vehicle_is_locked = "Sõiduk on lukus.",
+		belt_warning = "Turvavöö pole pandud, vajuta ~INPUT_SPECIAL_ABILITY_SECONDARY~, et see kinnitada.",
 
 		nearest_player_not_vehicle = "Lähim mängija ei ole sõidukis.",
 		no_dead_player_nearby = "Sinu läheduses ei ole ühtegi surnud mängijat sõidukis.",
