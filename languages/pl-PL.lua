@@ -5732,7 +5732,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 
 		searching_world = "Przeszukiwanie świata:\n${modelNames}",
 		copied_clipboard = "Skopiowano współrzędne do schowka.",
-	
+
 		saved_vehicle_model_lists_to_file = "Listy modeli pojazdów zostały zapisane do pliku na serwerze.",
 
 		network_debug_logs_title = "Debugowanie Sieciowe Przełączone",
@@ -9933,7 +9933,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		spawn_prop_not_staff = "Gracz próbował zrespić propy nie posiadając do tego uprawnień.",
 		managing_props_help = "W tej chwili włączyłeś menu propów. Podejdź do propu i wciśnij ~INPUT_CONTEXT~ żeby go podnieść.",
 		total_props = "Wszystkie propy: ${count}",
-		active_props = "Aktywne propy: ${count}",			
+		active_props = "Aktywne propy: ${count}",	
 		press_to_pick_up = "[${InteractionKey}] Podnieś",
 		pick_up = "Podnieś",
 		picking_up = "Podnosisz",
@@ -11770,7 +11770,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		infinite_ammo = "Masz nieskończoną amunicję do tej broni.",
 		ammo_count = "Masz ${clips} pełny magazynek (${total} w sumie rund).",
 		ammo_count_loose = "Masz ${clips} pełny magazynek i 1 magazynek z ${loose} rundy (${total} w sumie rund).",
-		
+
 		firing_mode_0 = "Tryb strzelania ustawiony na domyślny.",
 		firing_mode_1 = "Tryb strzelania ustawiony na półautomatyczny.",
 		firing_mode_2 = "Włączono zabezpieczenie broni.",
