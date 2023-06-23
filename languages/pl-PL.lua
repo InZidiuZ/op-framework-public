@@ -10737,7 +10737,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		time_scale_is_already_disabled = "Pomijanie skali czasu jest już wyłączone."
 	},
 
-		titanic = {
+	titanic = {
 		created_titanic = "Stworzył Titanica, który zatonie za ${sinkTime} minut(y).",
 		failed_to_create_titanic = "Nie udało się stworzyc Titanica.",
 		create_titanic_missing_permissions = "Gracz próbował stworzyć Titanica, ale nie miał wymaganych uprawnień."
