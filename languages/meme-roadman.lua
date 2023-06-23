@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 14 (do not change)
+-- AUTO LOCALES: 15 (do not change)
 
 OP.Global.Locales.Languages["meme-roadman"] = {
 	-- configuration settings for language
@@ -37,6 +37,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		the_trunk_is_occupied = "Oi, the trunk's taken already.",
 		unable_to_toggle_carry = "Hold up, you can't just toggle carrying like that.",
 		carry_disabled_animal = "Sorry bro, you can't carry an animal.",
+
+		trunk_hint = "Yo, use \"/door\" to pop open or close the trunk while you're chillin' near it.",
 
 		cancel_piggyback = "Hit ~INPUT_FRONTEND_RRIGHT~ to cancel piggyback.",
 		piggyback_hop_on = "[${InteractionKey}] jump on",
@@ -715,6 +717,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		high_damage_ban = "You went too hard, fam. We can't let that slide, unna?",
 		suspicious_explosion_ban = "Allow me to translate, still… You can't be causing explosive scenes like Michael Bay films, innit?",
 		semi_godmode_ban = "Oi mate, the feds caught you trying to cheat death. Time's gotta flow, you can't stop it forever. Enjoy the L.",
+		invalid_health_ban = "Oi yo, your health bar is lookin' way too stacked, like you've been chuggin' spinach like Popeye.",
 
 		mp_f_freemode_01_label = "Freemode (mandem) (female)",
 		mp_m_freemode_01_label = "Freemode (mandem) (male)",
@@ -738,6 +741,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		notification_spawned_object = "Anti-Cheat: Man's out here spawning objects for fun and that",
 		notification_driving_hotwire = "Anti-Cheat: Man's out here driving while it's hotwyred",
 		notification_semi_godmode = "Safe g, you've activated Semi-Godmode. Anti-Cheat says nah tho.",
+		notification_invalid_health = "Anti-Cheat: Health Bar is Whack",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus",
@@ -786,9 +790,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		invincibility_screenshot = "Anti-Cheat: You can't be touched, innit?",
 		runtime_texture_screenshot = "Anti-Cheat: Some dodgy texture is runnin' (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Oi blud, stop usin' dem bad words (${words})",
-		freecam_detected_screenshot = "Anti-Cheat: You're freelookin' (${distance}m) away",
+		freecam_detected_screenshot = "Anti-Cheat: You're usin' freecam, man!",
 		driving_hotwire_screenshot = "Anti-Cheat: You can't be drivin' while hotwire, fam",
-		semi_godmode_screenshot = "Oi you, thought you could fool Anti-Cheat with that Semi-Godmode? Gotcha now, wasteman!"
+		semi_godmode_screenshot = "Oi you, thought you could fool Anti-Cheat with that Semi-Godmode? Gotcha now, wasteman!",
+		invalid_health_screenshot = "Anti-Cheat: Your health bar is messed up."
 	},
 
 	authentication = {
@@ -839,6 +844,18 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		connection_cancelled = "Sorry bruv, another connection is already active innit. Try again later.",
 		no_reason_provided = "No reason given blud.",
 		discord_whitelist_id_not_found = "We couldn't find your Discord ID fam. Make sure ya got Discord open in the background and that ya let FiveM grab data from it.\n\n${communityDiscord}"
+	},
+
+	characters = {
+		character_refreshed = "Ya character got a nice little refresh, innit.",
+		something_went_wrong = "Fam, somethin' went wrong, blud.",
+		user_does_not_have_sent_character_loaded = "Bruh, the user ain't got their character loaded. Sort it out, man.",
+		user_has_no_character_loaded = "Bruh, this user ain't got no character loaded.",
+		user_not_found = "Yo, we can't find this user on the server fam.",
+		invalid_character_id = "This character id ain't valid bruv.",
+		invalid_license_identifier = "Yo, this license identifier ain't valid innit.",
+
+		your_character_refreshed = "Aight, your character has been refreshed fam."
 	},
 
 	chat = {
@@ -951,8 +968,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		delete_vehicle_command = "delete_vehicle",
 		delete_vehicle_command_help = "Remove the car that's quite near ya.",
-		delete_vehicle_command_parameter_ignore_heading = "yes",
+		delete_vehicle_command_parameter_ignore_heading = "ignore heading",
 		delete_vehicle_command_parameter_ignore_heading_help = "Do you want to ignore the direction you're facing? Type `yes` to ignore, leave blank for `no`.",
+		delete_vehicle_command_parameter_ignore_occupied = "ignore occupied",
+		delete_vehicle_command_parameter_ignore_occupied_help = "You wan' ignore any occupied vehicles fam? If not, just say `no`.",
 		delete_vehicle_command_substitutes = "dv",
 
 		delete_vehicle_interactively_command = "delete_vehicle_interactively",
@@ -1954,6 +1973,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		move_entity_command_parameter_network_id_help = "The network ID of da entity you wanna move.",
 		move_entity_command_parameter_ground = "ground",
 		move_entity_command_parameter_ground_help = "If da entity should roll on the ground properly (only for whips).",
+		move_entity_command_parameter_heading = "directions",
+		move_entity_command_parameter_heading_help = "Like you want the thing to be pointing.",
 		move_entity_command_substitutes = "mv",
 
 		fake_lag_command = "fake_lag",
@@ -2093,6 +2114,12 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		define_area_command = "define_area",
 		define_area_command_help = "Define an area, like a trap house or summin'.",
 		define_area_command_substitutes = "area",
+
+		debug_info_command = "info_bout_this_bruv",
+		debug_info_command_help = "Gather some intel bout a dude.",
+		debug_info_command_parameter_server_id = "server id",
+		debug_info_command_parameter_server_id_help = "The bruv you wanna investigate.",
+		debug_info_command_substitutes = "",
 
 		-- game/debug_menu
 		debug_menu_command = "hacker menu",
@@ -2475,6 +2502,13 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		locate_entity_command_parameter_filter_help = "What filter the entity should match (id:12345, plate:90FMK072, etc.), you get me?",
 		locate_entity_command_substitutes = "le",
 
+		-- game/logs
+		logs_command = "snitches_get_stitches",
+		logs_command_help = "Peep da newest server logs bout a certain bloke.",
+		logs_command_parameter_server_id = "server ID blud",
+		logs_command_parameter_server_id_help = "The server ID of the mandem.",
+		logs_command_substitutes = "",
+
 		-- game/loot
 		loot_debug_command = "loot_debug",
 		loot_debug_command_help = "Allow man to check loot situation cuz.",
@@ -2507,6 +2541,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		check_vehicle_upgrades_command = "check_vehicle_upgrades",
 		check_vehicle_upgrades_command_help = "Check if the nearby whip got an engine 5 upgrade fam.",
 		check_vehicle_upgrades_command_substitutes = "check_upgrades, upgrades",
+
+		-- game/meow
+		meow_command = "meow innit",
+		meow_command_help = "Meow g.",
+		meow_command_substitutes = "",
 
 		-- game/mining
 		mining_debug_command = "mining_debug",
@@ -2863,6 +2902,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		properties_debug_command_help = "Toggle the properties debug innit.",
 		properties_debug_command_substitutes = "props",
 
+		-- game/prop_hide
+		prop_hide_command = "prop_hide fam",
+		prop_hide_command_help = "Toggle the prop hide blud.",
+		prop_hide_command_substitutes = "",
+
 		-- game/props
 		props_manage_command = "manaprops",
 		props_manage_command_help = "Manage dem props around.",
@@ -2877,14 +2921,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		spawn_prop_command_parameter_no_pickup = "no pick",
 		spawn_prop_command_parameter_no_pickup_help = "Only mangs wit super admin powers can pick dis prop up fam.",
 		spawn_prop_command_substitutes = "",
-
-		spawn_exact_prop_command = "spawn_prop",
-		spawn_exact_prop_command_help = "Get a prop spawn right where you at B.",
-		spawn_exact_prop_command_parameter_model_name = "prop name",
-		spawn_exact_prop_command_parameter_model_name_help = "Yo, tell me what prop you wanna spawn fam.",
-		spawn_exact_prop_command_parameter_ground = "ground",
-		spawn_exact_prop_command_parameter_ground_help = "Spawn it on the road or what?",
-		spawn_exact_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
 		props_debug_command_help = "Fam, help me debug all dem props near you.",
@@ -3115,37 +3151,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		tablet_command_substitutes = "",
 
 		-- game/test_server
-		set_vehicle_preset_command = "set_vehicle_preset",
-		set_vehicle_preset_command_help = "Bless up your whip by fully upgrading it and giving it a fresh coat with your chosen swag.",
-		set_vehicle_preset_command_parameter_preset = "preset",
-		set_vehicle_preset_command_parameter_preset_help = "The color preset you want to apply (red, blue, green, yellow, orange, white, black).",
-		set_vehicle_preset_command_substitutes = "vehicle_preset",
-
-		detach_all_doors_command = "detach_all_doors",
-		detach_all_doors_command_help = "Get rid of all doors on your ride.",
-		detach_all_doors_command_substitutes = "",
-
-		pop_all_tires_command = "bus up all dem tires",
-		pop_all_tires_command_help = "Busts all da tires on the whip you're currently drivin'.",
-		pop_all_tires_command_substitutes = "",
-
-		upgrade_vehicle_fully_command = "fully lace up my ride",
-		upgrade_vehicle_fully_command_help = "Fully upgrades the car you're rolling in",
-		upgrade_vehicle_fully_command_substitutes = "",
-
-		random_vehicle_colors_command = "change my whip's colors",
-		random_vehicle_colors_command_help = "Randomizes the color of your ride",
-		random_vehicle_colors_command_parameter_lights = "lights on",
-		random_vehicle_colors_command_parameter_lights_help = "Randomizes the lights on your vehicle as well, including xenon and neon lights.",
-		random_vehicle_colors_command_substitutes = "",
-
-		starve_command = "starve",
-		starve_command_help = "Sets ya food and thirst to 0 fam.",
-		starve_command_substitutes = "",
-
-		car_command = "car",
-		car_command_help = "Spawns in a random whip innit.",
-		car_command_substitutes = "",
+		test_menu_command = "test_menu cuz",
+		test_menu_command_help = "Toggle the test server menu bredrin.",
+		test_menu_command_substitutes = "",
 
 		-- game/time_scale
 		set_time_scale_command = "set_time_scale",
@@ -4061,6 +4069,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		amount = "Cash Amount",
 		target = "Who you sendin' it to?",
 
+		confirm_target = "Suh'mn, you wan' transfer $${amount} to \"${name}\"?",
+		cancel = "Nah, cancel dat",
+		confirm_transfer = "Yeah, send dat",
+
 		failed_deposit = "I couldn't deposit that dough",
 		failed_withdraw = "I couldn't get that cash for ya",
 		failed_transfer = "I couldn't send that money",
@@ -4841,6 +4853,16 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		failed_reconnect = "Bruh, we couldn't reconnect to the command socket."
 	},
 
+	containers = {
+		drill_container = "Press ~INPUT_CONTEXT~ to drill open the container, innit.",
+
+		drilling_container = "Juggin' Box",
+		failed_drill = "Couldn't drill that bad boy open.",
+		drill_success = "Juggin' Box cracked like a boiled egg.",
+
+		container_blip = "Juggin' Box"
+	},
+
 	crafting = {
 		menu_title = "Crafting, innit",
 		close_menu = "Close dis ting",
@@ -5229,6 +5251,24 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		broke_ring = "Man split the ring, innit.",
 		failed_break_ring = "Couldn't do it maan, da ring still whole.",
 
+		mix_lean = "Mix up some lean",
+		press_to_mix_lean = "[${SeatEjectKey}] Mix up that fiyah",
+		mixing_lean = "Cookin' some lean",
+		mixed_lean = "Cooool, we got some lean.",
+		failed_mix_lean = "Sorry B, couldn't cook that up.",
+
+		craft_pager = "Pager Crafting",
+		press_to_craft_pager = "[${SeatEjectKey}] Let's Make a Pager",
+		crafting_pager = "Crafting that Pager",
+		crafted_pager = "Ding! Pager is now a ting.",
+		failed_craft_pager = "Bruv, couldn't cop the pager.",
+
+		craft_multi_tool = "Craft man dem's multi tool",
+		press_to_craft_multi_tool = "[${SeatEjectKey}] Craft man dem's multi tool",
+		crafting_multi_tool = "Cooking up the multi tool, innit",
+		crafted_multi_tool = "Sick mate, you crafted the multi tool!",
+		failed_craft_multi_tool = "Ah, couldn't craft the multi tool mate.",
+
 		no_required_items = "Bruv, you ain't got all the tings you need.",
 
 		debug_multi = "-Multiple Outputs-",
@@ -5498,6 +5538,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	},
 
 	daily_activities = {
+		not_enough_money = "Fam, you broke, you ain't got enough money.",
+
 		press_to_daily_activities = "[${InteractionKey}] Daily Grind",
 		daily_activities = "Daily Grind",
 		resets_in = "Next round in ${resetsIn}...",
@@ -5513,6 +5555,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		reset_daily_activities_no_permissions = "Bruv tried to reset their daily stuff without da right permissions.",
 		reset_daily_activities = "Reset Daily Stuff, innit.",
+
+		task_progress = "Yo, you still got ${remain} ${task} left to do.",
+		task_progress_money = "Complete the ting, you still got $${remain} left for ${task}.",
+		task_finished = "Big up, you finished the ${task}.",
 
 		parachute_from_location = "Jump outta dat plane and parachute from ${location}, G.",
 		gamble_at_blackjack = "Lets put up ${amount} and hit up da Blackjack table.",
@@ -5530,7 +5576,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		dig_up_a_treasure = "Dig up a sick treasure with a map.",
 		refine_gems = "Refine ${amount} gems coz we ain't messing around.",
 		visit_location = "Roll up to ${location}.",
-		visit_the_location = "Roll up to ${location} fam."
+		visit_the_location = "Roll up to ${location} fam.",
+
+		confirm_task_refresh = "Fam, you really wanna refresh dis task? It gon' cost ya $${cost}.",
+		yes = "Yeah",
+		no = "Nah"
 	},
 
 	dashcam = {
@@ -5687,7 +5737,16 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		network_debug_logs_title = "Network Debug Toggled",
 		network_debug_logs_details_on = "${consoleName} switched on their network debug. Allow dem to flex.",
-		network_debug_logs_details_off = "${consoleName} switched off their network debug. No more flexin'."
+		network_debug_logs_details_off = "${consoleName} switched off their network debug. No more flexin'.",
+
+		invalid_server_id = "Bruh, dis server ID aint valid.",
+		debug_info_failed = "Can't collect debug info, sorry.",
+		close = "Shut it down",
+		import = "Import dat",
+		export = "Export dat",
+		copied = "Got it!",
+		invalid_data = "Dat data aint right.",
+		invalid_json = "JSON aint valid, my bad."
 	},
 
 	debug_menu = {
@@ -6105,14 +6164,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		failed_start_run = "Failed to start the gun run.",
 		hack_timeout = "Lost connection to the server, try again bruv.",
 
-		drop_blip = "Place to drop the guns",
-
-		drill_container = "Press ~INPUT_CONTEXT~ to drill into the stash.",
-
-		drilling_container = "Drillin' the stash",
-		failed_drill = "Couldn't crack open the stash, try again.",
-		drill_success = "Man just drilled open the stash and found 1x ${item}.",
-
 		started_run_logs_title = "Lickin' Shots",
 		started_run_logs_details = "${consoleName} kicked off the lickin' shots heist.",
 		finished_run_logs_title = "Gun Run Drop",
@@ -6123,11 +6174,18 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		press_e_to_talk = "Hit ~INPUT_CONTEXT~ to chat with Jim.",
 		trader_closed = "Jim's shop is shut tight right now, fam.",
 
+		sorry_closed = "Ayo, sorry dawg, but we closed.",
+		sorry_closed_hug = "Thanks for the love fam :)",
+		sorry_closed_fight = "Why you tryna start a fight dawg, I aint do nothin.",
+
 		trader_locked = "Jim needs a few things from you before he'll consider unlocking his spot.",
 		unlock_trader = "Slide that item over to Jim.",
 
+		trader_duty = "Sup officer, sorry to disappoint but we closed for now. Come back later!",
+
 		purchase = "Cop some goods",
 		out_of_stock = "Bro, it's gone.",
+		special_offer = "Yo! Check it out, Special Offer innit!",
 
 		failed_trader_closed = "Nah, Jim's shop is closed fam. You can't buy any weapons right now.",
 		failed_no_stock = "Sorry my G, there ain't no more stock of that weapon.",
@@ -6148,7 +6206,13 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		slogan_3 = "When you're not sure what to do...just pull it out mate!",
 		slogan_4 = "Better to have a burner in your hand than to call po-po bruh.",
 
-		copyright = "Copyright © 2009-2016 Jim's Gun Shop NC. All Rights Reserved."
+		copyright = "Copyright © 2009-2016 Jim's Gun Shop NC. All Rights Reserved.",
+
+		remaining_messages = "Yo fam, You got ${messages} messages left.",
+		no_messages_left = "Yo blud, Pager has no messages left init.",
+		just_used_pager = "Bruv, you just used the pager, give it a sec before you hit it again.",
+		page_trader_closed = "Jim aint answering cuh, he must be closed init.",
+		page_success = "Jim sent a ping to his rough location, proper."
 	},
 
 	hacking = {
@@ -6544,7 +6608,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		los_santos_golf_club = "Los Santos Golf Club",
 		arcade_bar = "Arcade Bar",
 		japanese_restaurant = "Sushi Spot",
-		japanese_restaurant_kitchen = "Sushi Bar Kitchen",
 		["945_studios"] = "945 Studios",
 		grain_mill = "The Mill",
 		pd_prefix = "5-0",
@@ -6794,6 +6857,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		cleaning_kit = "Shine Kit",
 		cleaning_kit_description = "Perfect for cleaning your ride, or the bloodstains in your trunk that you never got rid of.",
 
+		multi_tool = "Multi Tool",
+		multi_tool_description = "A tool that can be used for all sorts of tings init.",
+
 		microphone_bug = "Bug Mic",
 		microphone_bug_description = "Used to creep on the mandem's convo.",
 		vehicle_tracker = "Whip tracer",
@@ -6969,6 +7035,15 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		chocolate_milkshake = "Choccy Milkshake",
 		chocolate_milkshake_description = "A banging shake, just make sure no feds are after you before you sip it...",
 
+		burrito = "Burrito",
+		burrito_description = "A burrito is a peng Mexican and Tex-Mex ting, made up of a flour tortilla with bare other ingredients and that.",
+		tostada = "Tosty",
+		tostada_description = "A tosty is a crispy corn tortilla that's dingy or toasted, yeah?",
+		quesadilla = "Quesy",
+		quesadilla_description = "A quesy is a sick Mexican dish, is a kind of taco that's filled with cheese, sometimes some meats, beans, and spices too. Then it's cooked on a grill, innit?",
+		pineapple_cake = "Pinny Cake",
+		pineapple_cake_description = "Pinny Cake is a dessert that's proper popular in Taiwan. It's got a thick filling of pineapple jam that's well sweet and a bit sour, bruv.",
+
 		dog_food = "Doggo Grub",
 		dog_food_description = "Food made just for dogs and their homies, you feel me?",
 		cat_food = "Kitty Chow",
@@ -7093,6 +7168,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		oxy_prescription = "Oxy Prescription",
 		oxy_prescription_description = "Dodgy oxy prescription, ya get me.",
 
+		generic_prescription = "Medz",
+		generic_prescription_description = "Script for meds. Good for a refill.",
+
 		brownies = "Brownies",
 		brownies_description = "These are some mad gooey brownies, fam. Got double the choccy and a lil' extra kick to leave you contemplating all of life.",
 
@@ -7109,6 +7187,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		decryption_key_green_description = "Aight fam, did you know that coke used to be green back in the day?",
 		decryption_key_blue = "Blue Decryption Key, blud.",
 		decryption_key_blue_description = "Oi fam, did you know that there's a bird with blue feet? Peep this: https://en.wikipedia.org/wiki/Blue-footed_booby",
+
+		pager = "Beeper",
+		pager_description = "A beeper with one contact and limited messages.",
 
 		ballistic_shield = "Ballistic Shield, safe G.",
 		ballistic_shield_description = "Use dis shield when goin' into dem ganglands of RP.",
@@ -7142,6 +7223,22 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		shrooms = "Shrooms",
 		shrooms_description = "Some1 said 2 put dese on pizza, but now da pizza is puttin itself on me... wait who am I?",
+
+		lean = "Sizzurp",
+		lean_description = "Drankin' some sizzurp, sip, sip, sippin'..",
+
+		jolly_ranchers = "Jollys",
+		jolly_ranchers_description = "Taste the fruity goodness of Jolly Ranchers, the classic candy.",
+		jolly_rancher_watermelon = "Watermelon Jolly Rancher blud",
+		jolly_rancher_watermelon_description = "Feel the refreshment of watermelon in these sick Jolly Rancher hard candies.",
+		jolly_rancher_raspberry = "Raspberry Jolly Rancher innit",
+		jolly_rancher_raspberry_description = "Enjoy the sweet and sour blend of raspberry flavour in these heavy Jolly Rancher hard candies.",
+		jolly_rancher_apple = "Apple Jolly Rancher bruv",
+		jolly_rancher_apple_description = "Get ready for the crisp and tangy taste of apple in these peng Jolly Rancher hard candies.",
+		jolly_rancher_cherry = "Cherry Jolly",
+		jolly_rancher_cherry_description = "Indulge in the bold and vibrant cherry flavor of these sick Jolly Rancher hard candies.",
+		jolly_rancher_grape = "Grape Jolly",
+		jolly_rancher_grape_description = "Experience the juicy and succulent taste of grape with these mouthwatering Jolly Rancher hard candies, innit.",
 
 		bucket = "Bucket",
 		bucket_description = "Can b used as a makeshift helmet, G.",
@@ -8046,7 +8143,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		weapon_addon_m6ic_description = "The perfect tool for the perfect roadman, just don't forget your tracksuit blud.",
 
 		weapon_addon_hk416 = "H&K 416",
-		weapon_addon_hk416_description = "The H&K 416, the Ferrari of straps - slick, powerful, and guaranteed to draw attention. It's like having a personal trainer for your trigger finger, delivering results that'll make your opps stare. Say hello to your new BFF (Best Firearm Forever)!"
+		weapon_addon_hk416_description = "The H&K 416, the Ferrari of straps - slick, powerful, and guaranteed to draw attention. It's like having a personal trainer for your trigger finger, delivering results that'll make your opps stare. Say hello to your new BFF (Best Firearm Forever)!",
+
+		weapon_addon_680 = "Remington 680",
+		weapon_addon_680_description = "The Remington 680 is a sick pump-action shotty that was developed by Remington Arms in 1950, fam."
 	},
 
 	items = {
@@ -8173,6 +8273,25 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		read_catalog = "Press ~g~${InteractionKey} ~w~to have a quick read fam."
 	},
 
+	lean = {
+		press_to_sell_lean = "Press ~INPUT_CONTEXT~ to sell some Lean cuz.",
+		local_not_interested = "This bloke don't seem interested right now fam.",
+		not_interested = "Nah blud, this loc ain't interested in your Lean.",
+		selling_lean = "Selling the good stuff cuh.",
+
+		no_lean = "You ain't got no Lean on you fam.",
+		no_jolly_ranchers = "You ain't got no Jolly Ranchers manz.",
+		press_to_mix_lean = "[${SeatEjectKey}] Mix up that Lean with some Jolly Ranchers fam.",
+		mix_menu = "Mix that Lean",
+		mix_with = "Mix with some ${flavor} Jolly Ranchers",
+		close_menu = "Close the ting",
+		mix_failed = "Failed to mix up that Lean with some of that Jolly Ranchers fam.",
+
+		mixed_with = "Man's got some ${flavor} in it",
+		mixed_with_label = "Lean (${flavor})",
+		mixing = "Mixing up dat lean"
+	},
+
 	leashes = {
 		press_to_use_leash = "[${InteractionKey}] Use Dog Lead",
 		putting_leash_on = "Putting Dog Lead on fam.",
@@ -8208,10 +8327,15 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		disallowed_words_in_character_name = "You can't use that name fam, it's not allowed: \"${characterName}\"",
 		disallowed_birthday_ban = "Oi, that birthday ain't adding up properly: \"${birthday}\"",
 
+		inventory_help_text = "Press ~INPUT_REPLAY_SHOWHOTKEY~ if you need to grab suttin' from your stash.",
+
 		welcome_to = "Yo, welcome to",
 		press = "Press",
 		enter = "ENTER",
 		to_join = "to join",
+		in_game_time = "It's currently",
+		am = "AM, man",
+		pm = "PM, my guy",
 		changelogs = "What's Changed",
 		fetching_character_data = "Just getting your character info for ya, hold tight...",
 		yes = "Yh",
@@ -8303,7 +8427,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		los_santos_police_dept = "LOS SANTOS PO-LICE DEPT",
 
 		welcome_msg_title = "Yo welcome to ${communityName} blud!",
-		welcome_msg = "We've sorted you out wif some gear to get you started. You can access your gear by usin' the 1-5 keys on your keyboard.\n\n*Press the 1 key to read your brochure fam.*",
+		welcome_msg = "Yo, welcome to the server! We hooked you up with some stuff to get you started. You can use the items in your hotbar usin' the 1-5 keys. \n\nPress **${InventoryKey}** if you need to pull up your stash or press **1** to read your brochure.",
 
 		press_to_go_back_to_menu = "Press ~g~${InteractionKey}~w~ to go back to the menu innit.",
 		go_back_to_menu = "Go back to the menu fam.",
@@ -8327,6 +8451,15 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		heroic_tier = "Top level",
 		legendary_tier = "Savage level",
 		godlike_tier = "Boss level"
+	},
+
+	logs = {
+		invalid_server_id = "Bruv, that server id ain't valid.",
+		logs_failed = "Man couldn't load logs cuz of some issue. Better fix that.",
+
+		close = "Shut it down fam",
+
+		get_logs_no_permissions = "Lmao who dis dude tryna get logs without permission?"
 	},
 
 	loot = {
@@ -8439,6 +8572,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		drill_drops = "You clocked some gems in this peng stone, my G.",
 		used_drill = "Your drill's finished out here, G.",
 		still_shook = "You're still shook from last one and didn't score any gems in this boulder.",
+
+		kill_label = "Explosion ting",
 
 		recharging_scanner = "Meter's recharging, scanning at ${percentage}%, G.",
 		scanning = "Scanning at ${percentage}%, G.",
@@ -8788,6 +8923,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		sound_effect_save = "Save that ting",
 		sound_effect_reset = "Start again",
 
+		disable_tablet_animation = "Stop dat wigglin' on da tablet",
 		staff_notifications_reports = "Man's getting notifications for the reports and that fam",
 		staff_notifications_staff_chat = "Notifications for man's staff chat",
 		staff_notifications_general = "General notifications, innit",
@@ -9573,6 +9709,19 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		failed_pay = "Couldn't pay the parking meter bruv, swear down"
 	},
 
+	pause_menu = {
+		sunday = "Sundeez",
+		monday = "Mundeez",
+		tuesday = "Tuesdeeze",
+		wednesday = "Wednesdeez",
+		thursday = "Thursdeez",
+		friday = "Frideez",
+		saturday = "Saturdeez",
+
+		bank = "Bank ting",
+		cash = "Cash money"
+	},
+
 	pawn_shops = {
 		sell_items = "Sell ${itemLabel} g",
 		press_to_sell_items = "[${InteractionKey}] Sell ${itemLabel} my g",
@@ -9613,7 +9762,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 	ped_objects = {
 		illegal_ped_object = "You tryna add a ped object that's not allowed? Nah fam.",
-		illegal_ped_weapon_object = "You can't add a ped weapon object that's not in the weapon list, waste man."
+		illegal_ped_weapon_object = "You can't add a ped weapon object that's not in the weapon list, waste man.",
+		illegal_raw_ped_object = "Ay fam, you can't be addin' no raw ped object without proper permission"
 	},
 
 	ped_task = {
@@ -9749,6 +9899,16 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		pools_overflowing = "Fam, too many pools is overflowing init: ~r~${poolsOverflowing}"
 	},
 
+	prescriptions = {
+		redeem_prescription = "[${SeatEjectKey}] Go get dat prescription sorted innit",
+
+		redeemed_prescription = "Prescription redeemed init fam.",
+		failed_redeem = "Couldn't redeem the prescription fam.",
+
+		remeeded_prescription_logs_title = "Prescription Redemption",
+		remeeded_prescription_logs_details = "${consoleName} redeemed a prescription and got 1x `${item}` init."
+	},
+
 	printer = {
 		use_printer = "[${InteractionKey}] Use Printer",
 
@@ -9760,6 +9920,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		printed_logs_title = "Printed",
 		printed_logs_details = "${consoleName} printed an image with the URL: `${url}`."
+	},
+
+	prop_hide = {
+		no_model = "~r~No Model innit",
+		status_text = "Prop: ~g~${label}"
 	},
 
 	props = {
@@ -9926,48 +10091,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		better_stamina = "Run fo days witout runnin' outta stamina fo ${duration} mins.",
 		more_inventory_space = "Get an extra ${amount} of space in your pockets for ${duration} minutes, init.",
 
-		buffs_note = "Listen up, dawg. These buffs won't work unless you dip out of the building first.",
-
-		press_to_prepare_food = "[${InteractionKey}] Make Food",
-		prepare_food = "Make Food",
-
-		kissaki_kitchen = "Kissaki's Kitchen",
-
-		craft = "Make",
-		putting_down_ingredients = "Leaving these ingredients right here",
-
-		pick_up = "Yoink: ~g~${name}",
-		press_to_pick_up = "[${InteractionKey}] Yoink: ~g~${name}",
-
-		prepare_rice = "~g~${name}~s~: Cook dat Rice (${completed}%~s~)",
-		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Cook dat Rice (${completed}%~s~)",
-		preparing_rice_starting = "Imma Cookin' Dat Rice",
-		preparing_rice = "~g~${name}~s~: Cookin' Dat Rice... (${completed}%~s~)",
-
-		prepare_fillings = "~g~${name}~s~: Chop Up Dem Fillings (${completed}%~s~)",
-		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Chop Up Dem Fillins (${completed}%~s~)",
-		preparing_fillings_starting = "Getting the fillings ready",
-		preparing_fillings = "~g~${name}~s~: Getting those fillings ready... (${completed}%~s~)",
-
-		prepare_rolling_mat = "~g~${name}~s~: Prepare the rolling mat, fam (${completed}%~s~)",
-		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Press if you're ready to prepare the rolling mat (${completed}%~s~)",
-		preparing_rolling_mat_starting = "Time to roll, fam",
-		preparing_rolling_mat = "~g~${name}~s~: Rolling mat's getting ready... (${completed}%~s~)",
-
-		assemble_sushi = "~g~${name}~s~: Assemble the sushi, innit (${completed}%~s~)",
-		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Yo, let's assemble some sushi (${completed}%~s~)",
-		assembling_sushi_starting = "Ay look, time to assemble some sushi",
-		assembling_sushi = "~g~${name}~s~: Assembling that sushi... (${completed}%~s~)",
-
-		roll_sushi = "~g~${name}~s~: Time to roll some sushi (${completed}%~s~)",
-		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Rollin' up the sushi (${completed}%~s~)",
-		rolling_sushi_starting = "Rollin' up the sushi",
-		rolling_sushi = "~g~${name}~s~: Still rollin' that sushi... (${completed}%~s~)",
-
-		slice_sushi = "~g~${name}~s~: Slice up that sushi, broski (${completed}%~s~)",
-		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Slice up that sushi ting (${completed}%~s~)",
-		slicing_sushi_starting = "Man's 'bout to slice up some sushi",
-		slicing_sushi = "~g~${name}~s~: Man's slicing up some sushi... (${completed}%~s~)",
+		buffs_note = "Listen up, dawg. These buffs won't work unless you dip out of the building first."
 	},
 
 	riot_mode = {
@@ -10000,6 +10124,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		player_list = "Mandem List",
 		players = "G's",
 		total = "Total",
+		total_staff = "Total (Staff) init",
 		recent_disconnections = "Mandem who left recently",
 		disconnected_player = "Mandem left the group",
 		id = "ID number",
@@ -10242,6 +10367,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		armor_ok = "Armor: ~g~${armor} / ${maxArmor}~w~",
 		armor_bad = "Armor: ~r~${armor} / ${maxArmor}~w~",
 
+		vehicle_health = "Vehicle Health: ${percentage} percent",
+
 		speed = "Speed: ${speed}${unit}",
 		speed_mph = "mph",
 		speed_kmh = "kmh",
@@ -10293,10 +10420,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	},
 
 	starter_car = {
-		your_vehicle_is_nearby = "Oi, your whip is parked nearby.",
-		would_you_like_directions = "Do you wanna know how to get to it?",
-		press_to_respond = "Tap ~INPUT_FRONTEND_ACCEPT~ to say yes or ~INPUT_FRONTEND_CANCEL~ to say nah.",
-		follow_the_checkpoints = "Just follow the checkpoints, innit.",
+		follow_the_checkpoints = "Yo, your whip is parked nearby innit. Follow the checkpoints to find it.",
 
 		received_logs_title = "Aye, someone started a car!",
 		received_logs_details = "${consoleName} started a ${modelName} car, init."
@@ -10569,12 +10693,38 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	},
 
 	test_server = {
+		menu_title = "OP-Menu",
+
+		vehicles = "Whips & Rides",
+		spawn_car = "Yo, Summon Car",
+		upgrade_vehicle = "Upgrade Your Whip",
+		pop_tires = "Bust Dem Tires",
+		detach_doors = "Rip Dem Doors Off",
+		damage_vehicle = "Mess Up Your Ride",
+		repair_vehicle = "Fix That Whip",
+		delete_vehicle = "Scrap Your Ride",
+
+		player = "Player Life",
+		starve = "Go Hungry",
+		feed = "Grab a Bite",
+		relief_stress = "Chill Out",
+		reset_health = "Revive Yourself",
+		remove_injuries = "Clean Yourself Up",
+
+		teleport = "Transport",
+		teleport_to = "Slide To",
+		tp_legion = "Legion Square, fam",
+		tp_garage_a = "Garage A, ya get me?",
+		tp_paleto = "Paleto Bay, innit",
+		tp_sandy = "Sandy Shores, bruv",
+		tp_zancudo = "Fort Zancudo, my G",
+		tp_airport = "LS Airport, big man ting",
+		tp_carrier = "Aircraft Carrier, blud",
+		tp_cayo = "Cayo Perico, wasteman",
+
 		you_are_not_in_a_vehicle = "Bruv, you ain't in a whip.",
 		you_are_in_a_vehicle = "Mandem, you're currently in a whip.",
-		invalid_vehicle_preset = "Ay fam, that whip preset don't exist.",
 		fully_upgraded = "Safe bruv, your whip's been upgraded.",
-		applied_preset = "Bless up, whip preset applied.",
-		spawned_car = "Yo, I just spawned a ${modelName} for ya.",
 		just_spawned_a_car = "Hold up, you just spawned a whip. Wait ${time} before you spawn another one."
 	},
 
@@ -11079,16 +11229,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		changed_job_details = "${consoleName} just got a new job, they're now working as `${jobName}`."
 	},
 
-	jobs = {
-		job_refreshed = "Job updated, innit.",
-		something_went_wrong = "Bruh, something went wrong, fam.",
-		user_does_not_have_sent_character_loaded = "Yo, can't find this person's char loaded, innit.",
-		user_has_no_character_loaded = "This person ain't loaded no char, fam.",
-		user_not_found = "Nah, can't find this person on the server, fam.",
-		invalid_character_id = "Aw shit, invalid char id parameter sent, innit.",
-		invalid_license_identifier = "License identifier parameter sent not valid, fam."
-	},
-
 	police = {
 		aim_assist_enabled = "Your aim will now be sick fam.",
 		aim_assist_disabled = "Your aim will now be dead like a wasteman. It's a good idea to turn it back on init.",
@@ -11298,6 +11438,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		helicopter_camera_vehicle_info_imperial = "Speed: ${speed} mp/h\nRide: ${model}\nPlate: ${plate}",
 		helicopter_camera_altitude = "${altitude}ft AGL (that's Above Ground Level)",
 		helicopter_camera_altitude_asl = "${altitude}ft ASL (that's Absolute Sea Level)",
+		helicopter_camera_locked_on = "Locked On, safe",
+		helicopter_camera_not_locked = "Not Locked, uno",
 		unknown = "I dunno, bruv."
 	},
 

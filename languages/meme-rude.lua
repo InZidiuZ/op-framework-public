@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 14 (do not change)
+-- AUTO LOCALES: 15 (do not change)
 
 OP.Global.Locales.Languages["meme-rude"] = {
 	-- configuration settings for language
@@ -37,6 +37,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		the_trunk_is_occupied = "The goddamn trunk is fucking occupied.",
 		unable_to_toggle_carry = "Wait a fucking bit before toggling the motherfucking carry.",
 		carry_disabled_animal = "Fucking Animal Peds can't carry shit.",
+
+		trunk_hint = "Use \"/door\" to open/close the fuckin' trunk while standing near it.",
 
 		cancel_piggyback = "Press ~INPUT_FRONTEND_RRIGHT~ to stop piggybacking like a little bitch.",
 		piggyback_hop_on = "[${InteractionKey}] hop the fuck on",
@@ -715,6 +717,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		high_damage_ban = "You're Fucking Overpowered. Get Fucking Lost.",
 		suspicious_explosion_ban = "What The Fuck Was That? No Fucking Explosions Allowed!",
 		semi_godmode_ban = "You can't cheat death forever. You messed with the timeline and now you suffer the consequences. Hope eternity ain't boring as shit.",
+		invalid_health_ban = "Your fuckin' health bar seems to have had a bit too much of fuckin' spinach, ya fuckin' Popeye.",
 
 		mp_f_freemode_01_label = "Freemode (female, don't judge)",
 		mp_m_freemode_01_label = "Freemode (male, if you care)",
@@ -738,6 +741,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		notification_spawned_object = "Anti-Cheat: Spawned Shit",
 		notification_driving_hotwire = "Anti-Cheat: Driving while Humping the Hotwire",
 		notification_semi_godmode = "Did someone say godmode? Nah mate, it's just some half-assed attempt at cheating. Anti-Cheat: Semi-Godmode activated.",
+		notification_invalid_health = "Anti-Cheat: Invalid Health, you fuckin' cheater.",
 
 		ig_orleans_label = "Bigfoot",
 		u_m_m_jesus_01_label = "Jesus Christ",
@@ -786,9 +790,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		invincibility_screenshot = "Anti-Cheat: Someone's trying to be invincible!",
 		runtime_texture_screenshot = "Anti-Cheat: Someone's using a forbidden texture in-game (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Anti-Cheat: Someone's using Bad Words in the game screen (${words})",
-		freecam_detected_screenshot = "Anti-Cheat: Someone's trying to use Freecam (${distance}m)",
+		freecam_detected_screenshot = "Anti-Cheat: Some fuckin' loser is using a freecam.",
 		driving_hotwire_screenshot = "Anti-Cheat: Someone's trying to drive while Hotwire",
-		semi_godmode_screenshot = "Oi, oi, anti-cheat's got something to show ya. Check out the screenshot of that shady semi-godmode bullshit."
+		semi_godmode_screenshot = "Oi, oi, anti-cheat's got something to show ya. Check out the screenshot of that shady semi-godmode bullshit.",
+		invalid_health_screenshot = "Anti-Cheat: Invalid Health detected, ya cheatin' little shit."
 	},
 
 	authentication = {
@@ -839,6 +844,18 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		connection_cancelled = "Sorry mate, but someone else beat you to it. Try again later.",
 		no_reason_provided = "No explanation? You're killing me here!",
 		discord_whitelist_id_not_found = "We can't find your Discord ID, pal. Make sure you've got Discord running in the background and that you've given FiveM permission to access your Discord client.\n\n${communityDiscord}"
+	},
+
+	characters = {
+		character_refreshed = "Character fuckin' refreshed, nice job.",
+		something_went_wrong = "Something fuckin' went wrong, shit happens.",
+		user_does_not_have_sent_character_loaded = "The user fuckin' does not have the sent fuckin' character loaded, ya dumbass.",
+		user_has_no_character_loaded = "Listen up you piece of sh*t, the user ain't got no f*ckin' character loaded.",
+		user_not_found = "What the f*ck dude?! The user you sent can't be found anywhere on the got-damn server.",
+		invalid_character_id = "Hey a**hole, you sent in a f*ckin' invalid character ID parameter.",
+		invalid_license_identifier = "The f*ck you mean with this invalid license identifier parameter you sent, huh?!",
+
+		your_character_refreshed = "Alert the press! Your character has been f*ckin' refreshed."
 	},
 
 	chat = {
@@ -951,8 +968,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 		delete_vehicle_command = "delete_vehicle",
 		delete_vehicle_command_help = "Delete a nearby fucking vehicle.",
-		delete_vehicle_command_parameter_ignore_heading = "yes",
+		delete_vehicle_command_parameter_ignore_heading = "Ignore heading? What, you can't handle figuring that sh*t out yourself?",
 		delete_vehicle_command_parameter_ignore_heading_help = "Do you wanna fucking ignore your player's heading, asshole? Leaving this fucking empty will act as a `no`.",
+		delete_vehicle_command_parameter_ignore_occupied = "Ignore occupied vehicle? Oh, you need some help making decisions now, huh?",
+		delete_vehicle_command_parameter_ignore_occupied_help = "Sure, I'll f*ckin' help you. If you leave this empty you're basically sayin' 'no', you dumb f*ck.",
 		delete_vehicle_command_substitutes = "dv",
 
 		delete_vehicle_interactively_command = "delete_vehicle_interactively",
@@ -1954,6 +1973,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		move_entity_command_parameter_network_id_help = "The fucking network id of the entity you fucking want to move you dipshit.",
 		move_entity_command_parameter_ground = "ground",
 		move_entity_command_parameter_ground_help = "Whether the damn entity should be properly placed on the motherfucking ground (only applies to fucking vehicles).",
+		move_entity_command_parameter_heading = "fucking direction",
+		move_entity_command_parameter_heading_help = "Tell me if the fucking entity should be placed with the same fucking direction as yours.",
 		move_entity_command_substitutes = "mv",
 
 		fake_lag_command = "fake_lag",
@@ -2093,6 +2114,12 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		define_area_command = "define_area",
 		define_area_command_help = "Defines a fucking area, you shit.",
 		define_area_command_substitutes = "area",
+
+		debug_info_command = "debug_my_ass",
+		debug_info_command_help = "Collect some fucking debugging info about a certain shithead player.",
+		debug_info_command_parameter_server_id = "server id",
+		debug_info_command_parameter_server_id_help = "The fucker you wanna collect debug info for.",
+		debug_info_command_substitutes = "",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
@@ -2475,6 +2502,13 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		locate_entity_command_parameter_filter_help = "What fucking filter the entity should match (id:12345, plate:90FMK072, etc.)",
 		locate_entity_command_substitutes = "le",
 
+		-- game/logs
+		logs_command = "show_fucking_logs",
+		logs_command_help = "Show the latest fucking server logs for a certain annoying player.",
+		logs_command_parameter_server_id = "server id, ya bloody wanker",
+		logs_command_parameter_server_id_help = "The server id of the bloody player, innit?",
+		logs_command_substitutes = "",
+
 		-- game/loot
 		loot_debug_command = "loot_debug",
 		loot_debug_command_help = "Fucking toggle the loot debug, bitch.",
@@ -2507,6 +2541,11 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		check_vehicle_upgrades_command = "check_vehicle_upgrades",
 		check_vehicle_upgrades_command_help = "Checks if the damn vehicle nearby has a fucking engine upgrade level 5.",
 		check_vehicle_upgrades_command_substitutes = "check_upgrades, upgrades",
+
+		-- game/meow
+		meow_command = "meow, ya furry piece of shite",
+		meow_command_help = "Meowwwww, ya damn cat!",
+		meow_command_substitutes = "",
 
 		-- game/mining
 		mining_debug_command = "mining_debug",
@@ -2863,6 +2902,11 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		properties_debug_command_help = "Toggle the properties debug, you cunt.",
 		properties_debug_command_substitutes = "properties, pd",
 
+		-- game/prop_hide
+		prop_hide_command = "prop_hide, ya sneaky bastard",
+		prop_hide_command_help = "Toggle the prop hide, ya bloody genius!",
+		prop_hide_command_substitutes = "",
+
 		-- game/props
 		props_manage_command = "props_fuck_manage",
 		props_manage_command_help = "Manage those fucking props that are nearby you, you cock.",
@@ -2877,14 +2921,6 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		spawn_prop_command_parameter_no_pickup = "no fucking pickup",
 		spawn_prop_command_parameter_no_pickup_help = "Should this piece of shit prop only be picked up by fucking super admins?",
 		spawn_prop_command_substitutes = "",
-
-		spawn_exact_prop_command = "spawn the exact fucking prop",
-		spawn_exact_prop_command_help = "Spawn a goddamn prop right the fuck where you are.",
-		spawn_exact_prop_command_parameter_model_name = "model goddamn name",
-		spawn_exact_prop_command_parameter_model_name_help = "Tell me the f*cking prop model you want to spawn, dipsh*t.",
-		spawn_exact_prop_command_parameter_ground = "ground",
-		spawn_exact_prop_command_parameter_ground_help = "If the prop should be spawned on the f*cking ground or not. Don't be a f*cking idiot.",
-		spawn_exact_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
 		props_debug_command_help = "Debugs all the goddamn props around you. Use it if you're too f*cking stupid to find them yourself.",
@@ -3115,37 +3151,9 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		tablet_command_substitutes = "",
 
 		-- game/test_server
-		set_vehicle_preset_command = "set_vehicle_preset",
-		set_vehicle_preset_command_help = "Upgrade that piece of shit you're driving and slap on some colors from the preset you fucking selected.",
-		set_vehicle_preset_command_parameter_preset = "preset",
-		set_vehicle_preset_command_parameter_preset_help = "The fucking color bullshit you wanna put on (red, blue, green, yellow, orange, white, black).",
-		set_vehicle_preset_command_substitutes = "vehicle_preset",
-
-		detach_all_doors_command = "detach_all_doors",
-		detach_all_doors_command_help = "Rip all the fucking doors off the piece of shit car you're driving like a fucking savage.",
-		detach_all_doors_command_substitutes = "",
-
-		pop_all_tires_command = "pop_all_tires",
-		pop_all_tires_command_help = "Fucks up all tires on the ride you're currently rollin' in.",
-		pop_all_tires_command_substitutes = "",
-
-		upgrade_vehicle_fully_command = "upgrade_vehicle_fully",
-		upgrade_vehicle_fully_command_help = "Maxxes out the vehicle you're currently in. No half-assin' here.",
-		upgrade_vehicle_fully_command_substitutes = "",
-
-		random_vehicle_colors_command = "random_vehicle_colors",
-		random_vehicle_colors_command_help = "Fucks up the ride with random ass colors like a goddamn unicorn vomited all over it.",
-		random_vehicle_colors_command_parameter_lights = "lights",
-		random_vehicle_colors_command_parameter_lights_help = "Randomizes the lights too. Might as well fuck that up too right?",
-		random_vehicle_colors_command_substitutes = "",
-
-		starve_command = "starve",
-		starve_command_help = "Sets your fucking food and thirst to 0, you useless piece of shit.",
-		starve_command_substitutes = "",
-
-		car_command = "car",
-		car_command_help = "Spawns in a motherfucking random car, 'cause you can't be assed to fucking find one yourself.",
-		car_command_substitutes = "",
+		test_menu_command = "test_menu, ya fookin' nerd",
+		test_menu_command_help = "Toggle the test server menu, ya bloody twat.",
+		test_menu_command_substitutes = "",
 
 		-- game/time_scale
 		set_time_scale_command = "set_time_scale",
@@ -4061,6 +4069,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		amount = "Amount (How much filthy cash do you have to give?)",
 		target = "Target (Who do you want to screw over?)",
 
+		confirm_target = "Oi, ya wanna transfer $${amount} to \"${name}\" or what?",
+		cancel = "Nah mate, cancel that shite",
+		confirm_transfer = "Yeah, bloody transfer it already!",
+
 		failed_deposit = "Failed to deposit money (We don't want your dirty money)",
 		failed_withdraw = "Failed to withdraw money (We don't have that kind of cash)",
 		failed_transfer = "Failed to transfer money (We don't want your dirty money either)",
@@ -4841,6 +4853,16 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		failed_reconnect = "F*cking Failed to Reconnect to Command Socket.", --added "F*cking"
 	},
 
+	containers = {
+		drill_container = "Press ~INPUT_CONTEXT~ to drill open the bloody container, ya bloody madlad.",
+
+		drilling_container = "F*cking Container",
+		failed_drill = "F*ck, your a*s couldn't drill open the damn container.",
+		drill_success = "Heck yeah, you drilled that sh*t open!",
+
+		container_blip = "Container"
+	},
+
 	crafting = {
 		menu_title = "Crafting Sh*t", --changed "Crafting" to "Crafting Sh*t",
 		close_menu = "Get the F*ck Outta Here", --changed "Close Menu" to "Get the F*ck Outta Here",
@@ -5229,6 +5251,24 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		broke_ring = "Broke apart ring, Hell yeah! Take that, you piece of shit!",
 		failed_break_ring = "Failed to break apart ring, Fuck!",
 
+		mix_lean = "Mix some f*cking Lean",
+		press_to_mix_lean = "[${SeatEjectKey}] Mix some damn Lean",
+		mixing_lean = "Mixing some f*cking Lean",
+		mixed_lean = "F*ck yeah, you mixed some Lean!",
+		failed_mix_lean = "Damn, you couldn't even mix that sh*t.",
+
+		craft_pager = "Craft a f*cking Pager",
+		press_to_craft_pager = "[${SeatEjectKey}] Craft a f*cking Pager",
+		crafting_pager = "Crafting a damn Pager",
+		crafted_pager = "F*ck yeah, you crafted a Pager.",
+		failed_craft_pager = "Failed to fucking craft a fucking pager, dumbass.",
+
+		craft_multi_tool = "Craft that fucking Multi Tool",
+		press_to_craft_multi_tool = "[${SeatEjectKey}] Fucking craft that Multi Tool",
+		crafting_multi_tool = "Crafting that fucking Multi Tool",
+		crafted_multi_tool = "Fuck yeah, you've crafted that Multi Tool!",
+		failed_craft_multi_tool = "Failed to fucking craft the Multi Tool, you clumsy fuck.",
+
 		no_required_items = "You %@#$ don't have all the &@##$! required items.",
 
 		debug_multi = "-Multiple  %#&@! Outputs-",
@@ -5498,6 +5538,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 	},
 
 	daily_activities = {
+		not_enough_money = "Do you think money grows on fucking trees? You don't have enough, bitch.",
+
 		press_to_daily_activities = "[${InteractionKey}] Daily Bullshit",
 		daily_activities = "Fucking Daily Activities",
 		resets_in = "Resets in about ~${resetsIn} motherfucking seconds...",
@@ -5513,6 +5555,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 		reset_daily_activities_no_permissions = "Some pussy player tried to reset their daily activities without proper fucking permissions.",
 		reset_daily_activities = "Daily Activities Reset...What a fucking amateur.",
+
+		task_progress = "Fucking Progress for that task: ${task} (${remain} fucking left).",
+		task_progress_money = "Fucking Progress for that task: ${task} ($${remain} left), moneybags.",
+		task_finished = "That fucking task is finished: ${task}.",
 
 		parachute_from_location = "Jump fuckin' outta that plane and parachute from ${location}.",
 		gamble_at_blackjack = "Get yo greedy ass over to that Blackjack table and play ${amount} hands.",
@@ -5530,7 +5576,11 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		dig_up_a_treasure = "Find that fucking treasure using a goddamn Treasure Map.",
 		refine_gems = "Get your ass ready to refine ${amount} gems like a fucking pro.",
 		visit_location = "Go fucking visit ${location} you lazy bastard.",
-		visit_the_location = "Go fucking visit the ${location} like a goddamn boss."
+		visit_the_location = "Go fucking visit the ${location} like a goddamn boss.",
+
+		confirm_task_refresh = "You wanna refresh this damn task? That shit's gonna cost you $${cost}.",
+		yes = "Hell yeah",
+		no = "Nah"
 	},
 
 	dashcam = {
@@ -5687,7 +5737,16 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 		network_debug_logs_title = "Toggled Network Debug, Motherfucker",
 		network_debug_logs_details_on = "${consoleName} toggled their bullshit network debug on.",
-		network_debug_logs_details_off = "${consoleName} toggled their goddamn network debug off."
+		network_debug_logs_details_off = "${consoleName} toggled their goddamn network debug off.",
+
+		invalid_server_id = "Invalid server ID. You blind or stupid?",
+		debug_info_failed = "Failed to get any damn debug info.",
+		close = "Get the hell outta here",
+		import = "Import some damn shit",
+		export = "Export some shit outta here",
+		copied = "Copy that shit, homie!",
+		invalid_data = "Invalid worthless data.",
+		invalid_json = "JSON, JSON, what the hell is that shit?"
 	},
 
 	debug_menu = {
@@ -6105,14 +6164,6 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		failed_start_run = "What the fuck! You fucking failed to start the fucking gun run.",
 		hack_timeout = "God fucking damnit! The fucking connection to the fucking server is fucking lost, fucking try again.",
 
-		drop_blip = "Gun Container",
-
-		drill_container = "Press ~INPUT_CONTEXT~ to fucking drill open the fucking container.",
-
-		drilling_container = "Drilling Container",
-		failed_drill = "Fuck me! You fucking failed to drill the fucking container.",
-		drill_success = "Holy fucking shit! You fucking successfully drilled open the motherfucking container and found 1x ${item}.",
-
 		started_run_logs_title = "Gun Run",
 		started_run_logs_details = "${consoleName} fucking started the gun run hack.",
 		finished_run_logs_title = "Gun Run Drop",
@@ -6123,11 +6174,18 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		press_e_to_talk = "Press that fucking ~INPUT_CONTEXT~ to talk to Jim.",
 		trader_closed = "Jim's nasty ass shop is currently closed.",
 
+		sorry_closed = "Sorry motherfucker, this shit is closed right now.",
+		sorry_closed_hug = "Aw, thanks for the damn hug, but still closed.",
+		sorry_closed_fight = "Yo back the hell up, I didn't even do anything.",
+
 		trader_locked = "Jim needs a fucking few things from you before he opens his fucking shop.",
 		unlock_trader = "Give Jim the fucking item.",
 
+		trader_duty = "What the hell do you want, officer? My shit is fucking closed. Try again next time!",
+
 		purchase = "Buy this shit",
 		out_of_stock = "We're Fucking Out of Stock, Fuck Off.",
+		special_offer = "Special Fucking Offer!",
 
 		failed_trader_closed = "Couldn't Fucking Buy the Weapon, Jim's Sleazy-Ass Shop is Fucking Closed.",
 		failed_no_stock = "Couldn't Fucking Buy the Weapon, We're Fucking Out of Stock.",
@@ -6148,7 +6206,13 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		slogan_3 = "When in f*cking doubt...whup it out!",
 		slogan_4 = "A f*cking gun in the hand is better than a cop on the f*cking phone.",
 
-		copyright = "Copyright © 2009-2016 Jim's F*cking Gun Store NC. All Rights Reserved."
+		copyright = "Copyright © 2009-2016 Jim's F*cking Gun Store NC. All Rights Reserved.",
+
+		remaining_messages = "Remaining Messages You Fucking Idiot: ${messages}",
+		no_messages_left = "The fucking pager has no messages left, dumbass.",
+		just_used_pager = "What the fuck did you just do? You just fucking used the pager, wait a fucking bit before using it again, asshole.",
+		page_trader_closed = "Jim is not fucking responding, he's probably fucking closed.",
+		page_success = "Jim fucking sent a ping to his rough fucking location."
 	},
 
 	hacking = {
@@ -6544,7 +6608,6 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		los_santos_golf_club = "Los Santos Golf Suckers",
 		arcade_bar = "Arcade Shitshow",
 		japanese_restaurant = "Japanese Crap Restaurant",
-		japanese_restaurant_kitchen = "Some Oriental Kitchen That Serves Sushi and Stuff",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Grain Turd",
 		pd_prefix = "Pig Department",
@@ -6794,6 +6857,9 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		cleaning_kit = "Cleaning Kit",
 		cleaning_kit_description = "Perfect for cleaning the blood stains you left in the trunk, or your dirty a** car.",
 
+		multi_tool = "Multi Fucking Tool",
+		multi_tool_description = "A fucking tool that can be used for all sorts of fucking things.",
+
 		microphone_bug = "Group Chat Invader",
 		microphone_bug_description = "Used to eavesdrop on b*tches talkin'.",
 		vehicle_tracker = "Vehicle Tracker",
@@ -6969,6 +7035,15 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		chocolate_milkshake = "Chocolate Milkshake",
 		chocolate_milkshake_description = "A fucking amazing shake, just hope the fucking CIA isn't after you before you take a sip... Unless you're into that shit, you sick fuck!",
 
+		burrito = "Fucking Burrito",
+		burrito_description = "A burrito is a fucking dish in Mexican and Tex-Mex cuisine that consists of a fucking flour tortilla with various other fucking ingredients.",
+		tostada = "Fried Tortilla Shit",
+		tostada_description = "A fucking crispy tortilla that's been deep fried or toasted.",
+		quesadilla = "Cheese Filled Bitch",
+		quesadilla_description = "A goddamn Mexican taco stuffed with a tortilla that's filled with cheese, maybe some fucking meat, beans, spices and then cooked on a griddle.",
+		pineapple_cake = "Sweet and Sour Pineapple Shit",
+		pineapple_cake_description = "Pineapple cake is a dessert consumed in Taiwan that tastes fucking sweet and sour. The typical fucking Taiwanese pineapple cake is filled with a thick layer of pineapple jam.",
+
 		dog_food = "Dog Food",
 		dog_food_description = "Dog food is fucking food specifically formulated and intended for consumption by dogs and other related canines. But if you're so hard up that you're eating this shit, maybe you should just fucking end it.",
 		cat_food = "Cat Food",
@@ -7093,6 +7168,9 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		oxy_prescription = "Oxy Prescription",
 		oxy_prescription_description = "Fuckin' sketchy Oxy prescription. Makes you feel amazing though.",
 
+		generic_prescription = "Freaking Boring Prescription",
+		generic_prescription_description = "A piece of crap prescription for some boring-ass medicine. Might be useful for a freaking refill, if you're into that kind of crap.",
+
 		brownies = "Brownies",
 		brownies_description = "These brownies? They're goey as shit, foamy, and have double the amount of chocolate. Oh, and there's just a hint of extra kick to really make you sit back and question all of fucking life.",
 
@@ -7109,6 +7187,9 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		decryption_key_green_description = "FUN FACT: Coke was originally green in color, just like my fucking balls after a long night of partying!",
 		decryption_key_blue = "Motherfucking Blue Decryption Key",
 		decryption_key_blue_description = "FYI, there's a blue-footed booby bird, and if you don't believe me, check this shit out: https://en.wikipedia.org/wiki/Blue-footed_booby",
+
+		pager = "Freaking Pager",
+		pager_description = "A stupid-ass pager. Only has one freakishly boring contact and a prepaid card that lets you send a crappy few messages.",
 
 		ballistic_shield = "Fucking Ballistic Shield",
 		ballistic_shield_description = "This fucking shield should be used when venturing into the fucking ganglands of RP.",
@@ -7142,6 +7223,22 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 		shrooms = "Magical F*cking Shrooms",
 		shrooms_description = "Someone said to put these on pizza, but now the f*cking pizza is putting itself on me... wait who the f*ck am I?",
+
+		lean = "Freaking Lean",
+		lean_description = "Sippin' on that sweet sizzurp, sip, sippin' on that nasty sh*t, sip. Gonna be feeling like a freaking boss after this!",
+
+		jolly_ranchers = "Stupid-Ass Jolly Ranchers",
+		jolly_ranchers_description = "Stuff your stupid crap face with these freaking sweet and tangy Jolly Ranchers, the freaking classic hard candies that burst with freaking fruity goodness. You're welcome.",
+		jolly_rancher_watermelon = "Watermelon Jolly Rancher, because fuck grapes and strawberries.",
+		jolly_rancher_watermelon_description = "Taste the fucking refreshing flavor of watermelon with these delightful fucking hard candies, you fucking buffoon.",
+		jolly_rancher_raspberry = "Raspberry Jolly Rancher, for those who fucking love that sweet and sour shit.",
+		jolly_rancher_raspberry_description = "Savor the fucking luscious blend of sweet and tart raspberry flavor in these fucking Jolly Rancher hard candies, bitch.",
+		jolly_rancher_apple = "Apple Jolly Rancher, for all you fucking basic bitches out there.",
+		jolly_rancher_apple_description = "Enjoy the fucking crisp and tangy taste of apple with these delicious fucking Jolly Rancher hard candies, you fucking pleb.",
+		jolly_rancher_cherry = "Fuckin' Cherry Jolly Rancher",
+		jolly_rancher_cherry_description = "Indulge in the bold and vibrant cherry flavor of these goddamn irresistible Jolly Rancher hard candies.",
+		jolly_rancher_grape = "Grape Jolly Rancher, You Cockroach",
+		jolly_rancher_grape_description = "Experience the juicy and succulent taste of grape with these motherfuckin' mouthwatering Jolly Rancher hard candies.",
 
 		bucket = "F*cking Bucket",
 		bucket_description = "Can be used as a makeshift helmet to protect your f*cking brain.",
@@ -8046,7 +8143,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		weapon_addon_m6ic_description = "The perfect motherfucking gun for the perfect motherfucker, just don't forget to tie your goddamn shoes before kicking your enemies ass with it.",
 
 		weapon_addon_hk416 = "H&K 416, a goddamn Ferrari of firearms.",
-		weapon_addon_hk416_description = "The H&K 416, the Ferrari of firearms - sleek, powerful, and guaranteed to make your goddamn enemies bow down before you. It's like having a goddamn personal trainer for your trigger finger, delivering motherfucking results that'll make your enemies green with fucking envy. Say hello to your new BFF (Best Firearm Forever), you brave son of a bitch!"
+		weapon_addon_hk416_description = "The H&K 416, the Ferrari of firearms - sleek, powerful, and guaranteed to make your goddamn enemies bow down before you. It's like having a goddamn personal trainer for your trigger finger, delivering motherfucking results that'll make your enemies green with fucking envy. Say hello to your new BFF (Best Firearm Forever), you brave son of a bitch!",
+
+		weapon_addon_680 = "Remington 680; For when You Wanna Make a Motherfucking Mess",
+		weapon_addon_680_description = "The Remington 680 is a goddamned fuckin' pump-action shotgun that was developed by Remington Assholes in 1950."
 	},
 
 	items = {
@@ -8173,6 +8273,25 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		read_catalog = "Press ~g~${InteractionKey} ~w~to read the fucking Catalog"
 	},
 
+	lean = {
+		press_to_sell_lean = "Press ~INPUT_CONTEXT~ you miserable tits to sell your fucking Lean.",
+		local_not_interested = "The local seems to be too busy sucking cop's dick right now to give a shit about your Lean.",
+		not_interested = "This fuckin' local doesn't seem to be interested in your Lean garbage.",
+		selling_lean = "Selling your goddamn Lean.",
+
+		no_lean = "You don't have any fucking Lean left, go buy some more from your supplier.",
+		no_jolly_ranchers = "You don't have any Jolly Rancher candy pieces, get 'em before you come back.",
+		press_to_mix_lean = "Mix your worthless Lean with the shitty Jolly Rancher candies. Press the fuckin' [${SeatEjectKey}] key you dumbnuts.",
+		mix_menu = "Fucking Mix your Lean garbage.",
+		mix_with = "Mix with some cheap-ass ${flavor} Jolly Ranchers.",
+		close_menu = "Get the fuck outta here with that weak sauce, close the menu.",
+		mix_failed = "What a waste, you couldn't even mix your Lean with Jolly Ranchers...try again, dumbass.",
+
+		mixed_with = "Mixed with some fucking ${flavor}",
+		mixed_with_label = "Lean as a motherfucker (${flavor})",
+		mixing = "Fucking mixing some Lean"
+	},
+
 	leashes = {
 		press_to_use_leash = "[${InteractionKey}] Fucking Use the Goddamn Leash",
 		putting_leash_on = "Putting the Fucking Leash On",
@@ -8208,10 +8327,15 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		disallowed_words_in_character_name = "Someone tried to create a disrespectful character with a potentially inappropriate name: \"${characterName}\"",
 		disallowed_birthday_ban = "Someone tried to create a disrespectful character with a potentially inappropriate birthday: \"${birthday}\"",
 
+		inventory_help_text = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to fuckin' open your goddamn inventory.",
+
 		welcome_to = "Welcome to the fucking shitshow called",
 		press = "Sit your ass down and",
 		enter = "ENTER THIS MESS",
 		to_join = "if you dare...",
+		in_game_time = "Fucking check the time, it's",
+		am = "in the fucking morning",
+		pm = "at fucking night",
 		changelogs = "Fucking Changelogs",
 		fetching_character_data = "Getting this fucker's character data...",
 		yes = "Yeah, sure",
@@ -8303,7 +8427,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		los_santos_police_dept = "FUCKING LOS SANTOS PIG DEPT",
 
 		welcome_msg_title = "Welcome to this Shithole!",
-		welcome_msg = "You have received some fucking items to help you get started. You can use the items in your hotbar using the 1-5 keys.\n\n*Press the 1 key to read your motherfucking brochure.*",
+		welcome_msg = "You got some shit to start with. Use it with the number keys, bro. \n\nPress **${InventoryKey}** to check your fucking inventory or press **1** to read the shit you were given.",
 
 		press_to_go_back_to_menu = "Press ~g~${InteractionKey}~w~ to go back to the shithole menu.",
 		go_back_to_menu = "Get your ass back to the fucking menu.",
@@ -8327,6 +8451,15 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		heroic_tier = "Badass Tier",
 		legendary_tier = "Legendary Bullsh*t Tier",
 		godlike_tier = "F*cking Godlike Tier"
+	},
+
+	logs = {
+		invalid_server_id = "Dude, that server id ain't fucking valid. Get your shit together.",
+		logs_failed = "Failed to load fucking logs.",
+
+		close = "Close you twat",
+
+		get_logs_no_permissions = "This dickhead tried to get some fucking logs without the proper permissions."
 	},
 
 	loot = {
@@ -8439,6 +8572,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		drill_drops = "Fuck me, you found some fucking gems in this shitty stone.",
 		used_drill = "For fuck's sake, your fucking drill broke.",
 		still_shook = "Jesus fucking Christ, you're still shaken up from that last explosion and didn't find any goddamn gems in this piece of shit stone.",
+
+		kill_label = "Explosion wanker",
 
 		recharging_scanner = "Recharging the fucking scanner, it's at ${percentage}%",
 		scanning = "Scanning this piece of shit, it's at ${percentage}%",
@@ -8788,6 +8923,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		sound_effect_save = "Fucking Save",
 		sound_effect_reset = "Fucking Reset",
 
+		disable_tablet_animation = "Disable that bastard Tablet Animation",
 		staff_notifications_reports = "Fucking Report Notifications",
 		staff_notifications_staff_chat = "Fucking Staff-Chat Notifications",
 		staff_notifications_general = "Fucking General Notifications",
@@ -9573,6 +9709,19 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		failed_pay = "Couldn't Pay The Fucking Parking Meter, Could Ya?"
 	},
 
+	pause_menu = {
+		sunday = "Fucking Sunday",
+		monday = "Bloody Monday",
+		tuesday = "Twat Tuesday",
+		wednesday = "Wanker Wednesday",
+		thursday = "Throwback Thursday",
+		friday = "Fuckhead Friday",
+		saturday = "Suck my balls Saturday",
+
+		bank = "Bloody Bank",
+		cash = "Fucking Cash"
+	},
+
 	pawn_shops = {
 		sell_items = "Sell Yo ${itemLabel}", -- replaced "Sell",
 		press_to_sell_items = "[${InteractionKey}] Sell ${itemLabel}",
@@ -9613,7 +9762,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 	ped_objects = {
 		illegal_ped_object = "What the fuck do you think you're doing? You can't add a fucking ped object that's not on the 'allowed' list!",
-		illegal_ped_weapon_object = "Are you trying to be a smartass? You can't add a fucking ped weapon object that's not on the list of allowed weapons."
+		illegal_ped_weapon_object = "Are you trying to be a smartass? You can't add a fucking ped weapon object that's not on the list of allowed weapons.",
+		illegal_raw_ped_object = "Trying to add a raw ped object without the proper fucking permissions."
 	},
 
 	ped_task = {
@@ -9749,6 +9899,16 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		pools_overflowing = "Shit's fucked up, bruh. Pools Overflowing: ~r~${poolsOverflowing}."
 	},
 
+	prescriptions = {
+		redeem_prescription = "[${SeatEjectKey}] Get your fucking prescription",
+
+		redeemed_prescription = "Prescription fuckin' redeemed, bitches!",
+		failed_redeem = "Failed to redeem that fuckin' prescription, try again.",
+
+		remeeded_prescription_logs_title = "Prescription Fuckin' Redeemed",
+		remeeded_prescription_logs_details = "${consoleName} redeemed a prescription and got 1 fuckin' `${item}`."
+	},
+
 	printer = {
 		use_printer = "[${InteractionKey}] Use That Goddamn Printer",
 
@@ -9760,6 +9920,11 @@ OP.Global.Locales.Languages["meme-rude"] = {
 
 		printed_logs_title = "F\*\*king Printed Image",
 		printed_logs_details = "${consoleName} f\*\*king printed an image with the f\*\*king URL `${url}`."
+	},
+
+	prop_hide = {
+		no_model = "~r~No fuckin' Model found.",
+		status_text = "Prop: ~g~${label}"
 	},
 
 	props = {
@@ -9926,48 +10091,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		better_stamina = "You'll fucking run like a cheetah without running out of stamina for the next ${duration} fucking minutes. Keep running and don't fucking stop!",
 		more_inventory_space = "Have an additional fucking ${amount} inventory slots for ${duration} shitty minutes.",
 
-		buffs_note = "The fucking buffs will only activate once you have left the fucking vicinity of the goddamn building.",
-
-		press_to_prepare_food = "[${InteractionKey}] Prepare Freaking Food, Dumbass",
-		prepare_food = "Prepare Some Freaking Food",
-
-		kissaki_kitchen = "Some Other Asian Kitchen With Fancy Knives",
-
-		craft = "Craft (Are You a Witch?)",
-		putting_down_ingredients = "Putting Down These Goddamn Ingredients",
-
-		pick_up = "Grab: ~r~${name}",
-		press_to_pick_up = "[${InteractionKey}] Grab: ~r~${name}",
-
-		prepare_rice = "~r~${name}~s~: Get That Rice Cookin' (${completed}%~s~)",
-		press_to_prepare_rice = "[${InteractionKey}] ~r~${name}~s~: Get That Rice Cookin' (${completed}%~s~)",
-		preparing_rice_starting = "Start Cookin' That Rice!",
-		preparing_rice = "~r~${name}~s~: Cookin' That Rice... (${completed}%~s~)",
-
-		prepare_fillings = "~r~${name}~s~: Choppin' Up Some Fillings (${completed}%~s~)",
-		press_to_prepare_fillings = "[${InteractionKey}] ~r~${name}~s~: Choppin' Up Some Fillings (${completed}%~s~)",
-		preparing_fillings_starting = "Getting shit ready",
-		preparing_fillings = "~g~${name}~s~: Preparing fillings... (${completed}%~s~)",
-
-		prepare_rolling_mat = "~g~${name}~s~: Set up that rolling mat (${completed}%~s~)",
-		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Prepare the fucking rolling mat (${completed}%~s~)",
-		preparing_rolling_mat_starting = "Getting that fucking rolling mat ready",
-		preparing_rolling_mat = "~g~${name}~s~: Preparing the rolling mat... (${completed}%~s~)",
-
-		assemble_sushi = "~g~${name}~s~: Put the damn sushi together (${completed}%~s~)",
-		press_to_assemble_sushi = "[${InteractionKey}] ~r~${name}~s~: Ready to make some fucking sushi (${completed}%~s~)",
-		assembling_sushi_starting = "Time to make some goddamn sushi",
-		assembling_sushi = "~r~${name}~s~: Rolling that sushi dough... (${completed}%~s~)",
-
-		roll_sushi = "~r~${name}~s~: Roll that fucking sushi (${completed}%~s~)",
-		press_to_roll_sushi = "[${InteractionKey}] ~r~${name}~s~: Roll that fucking sushi (${completed}%~s~)",
-		rolling_sushi_starting = "Rolling the sushi now, bitches",
-		rolling_sushi = "~r~${name}~s~: Bitch I'm rolling that sushi... (${completed}%~s~)",
-
-		slice_sushi = "~r~${name}~s~: Slicing that motherfucking sushi (${completed}%~s~)",
-		press_to_slice_sushi = "[${InteractionKey}] ~r~${name}~s~: Slice some f*ckin' sushi (${completed}%~s~)",
-		slicing_sushi_starting = "Gettin' ready to slice some good sh*t",
-		slicing_sushi = "~r~${name}~s~: Slicin' dis delicious sh*t... (${completed}%~s~)",
+		buffs_note = "The fucking buffs will only activate once you have left the fucking vicinity of the goddamn building."
 	},
 
 	riot_mode = {
@@ -10000,6 +10124,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		player_list = "List of Assholes",
 		players = "Fuckers",
 		total = "Total number of shits",
+		total_staff = "Total (Fucking Staff)",
 		recent_disconnections = "Pussies who rage quit recently",
 		disconnected_player = "Fucking Disconnected Asshole",
 		id = "Fucking ID",
@@ -10242,6 +10367,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		armor_ok = "Armor: ~g~${armor} / ${maxArmor}~w~. You're not a total p*ssy.",
 		armor_bad = "Your armor is ~r~f*cked up~w~: ${armor} / ${maxArmor}",
 
+		vehicle_health = "Vehicle Health: ${percentage}%, 'cause it matters.",
+
 		speed = "You're driving at ${speed}${unit}.",
 		speed_mph = "mph. Slow the f*ck down!",
 		speed_kmh = "kmh. Are you f*cking serious?",
@@ -10293,10 +10420,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 	},
 
 	starter_car = {
-		your_vehicle_is_nearby = "Your fucking ride is parked nearby.",
-		would_you_like_directions = "Want me to tell you how to get to it, you lazy ass?",
-		press_to_respond = "Tap ~INPUT_FRONTEND_ACCEPT~ if you're not a little bitch or ~INPUT_FRONTEND_CANCEL~ if you're too much of a pussy.",
-		follow_the_checkpoints = "Follow the damn checkpoints.",
+		follow_the_checkpoints = "Your goddamn personal vehicle is parked near the shit. Follow the fuckin' checkpoints to find it.",
 
 		received_logs_title = "Congrats Loser, You Got a F*cking Ride",
 		received_logs_details = "${consoleName} received a car that actually runs (Model: ${modelName})."
@@ -10569,12 +10693,38 @@ OP.Global.Locales.Languages["meme-rude"] = {
 	},
 
 	test_server = {
+		menu_title = "OP-Menu",
+
+		vehicles = "Freakin' Ride Options",
+		spawn_car = "Sprout a Car",
+		upgrade_vehicle = "Juice up the Ride",
+		pop_tires = "Burst the Tires",
+		detach_doors = "Detach the Doors",
+		damage_vehicle = "Mess up the Ride",
+		repair_vehicle = "Fix the Freakin' Ride",
+		delete_vehicle = "Destroy the Ride",
+
+		player = "Player Options",
+		starve = "Starve Yourself, MORON",
+		feed = "Feed Yourself, PUNK",
+		relief_stress = "Take a DUMP",
+		reset_health = "Reset to Freakin' Good Health",
+		remove_injuries = "Remove the Freakin' Hurts",
+
+		teleport = "Teleport Options",
+		teleport_to = "Freakin' TP To",
+		tp_legion = "Fucking Legion Square",
+		tp_garage_a = "Garage A, Bunch of Fucking Cars",
+		tp_paleto = "Fucking Paleto Bay",
+		tp_sandy = "Sandy Fucking Shores",
+		tp_zancudo = "Fort Motherfucking Zancudo",
+		tp_airport = "LS Fucking Airport",
+		tp_carrier = "Fucking Aircraft Carrier",
+		tp_cayo = "Cayo Fucking Perico",
+
 		you_are_not_in_a_vehicle = "You're a fucking pedestrian, get in a goddamn car.",
 		you_are_in_a_vehicle = "Holy shit, you're in a car.",
-		invalid_vehicle_preset = "What the hell kind of car is that? Invalid preset, dipshit.",
 		fully_upgraded = "Fuck yeah, your car is upgraded to the tits now.",
-		applied_preset = "Preset applied, no need for your dumbass to do it yourself.",
-		spawned_car = "Oh damn, check out ${modelName}. It just got spawned.",
 		just_spawned_a_car = "Hold the fuck up, you can't spawn another car for ${time}. Chill the fuck out."
 	},
 
@@ -11079,16 +11229,6 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		changed_job_details = "${consoleName} changed their sh*tty job to `${jobName}`."
 	},
 
-	jobs = {
-		job_refreshed = "Job has been f*cking refreshed.",
-		something_went_wrong = "Something went f*cking wrong, bro.",
-		user_does_not_have_sent_character_loaded = "The useless f*cker doesn't even have the sent character loaded, man.",
-		user_has_no_character_loaded = "This a**hole doesn't even have any f*cking character loaded.",
-		user_not_found = "Are you f*cking kidding me? The sent dipsh*t was not found on the f*cking server.",
-		invalid_character_id = "The character id parameter you f*cking sent is invalid.",
-		invalid_license_identifier = "The license identifier parameter that you sent is f*cking invalid, bro."
-	},
-
 	police = {
 		aim_assist_enabled = "Congratulations, your aim will now be imbued with godly powers.",
 		aim_assist_disabled = "Oh no, your aim will now be worse than the average criminal/scumbag. It is highly advised that you re-enable the aim assist at once!",
@@ -11298,6 +11438,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		helicopter_camera_vehicle_info_imperial = "Speed Bitch: ${speed} mp/h\nModel for Assholes: ${model}\nLicense Plate: ${plate}",
 		helicopter_camera_altitude = "${altitude}ft Above Goddamn Ground",
 		helicopter_camera_altitude_asl = "${altitude}ft Above Sea Level like a high motherfucking eagle",
+		helicopter_camera_locked_on = "Fucking Locked On",
+		helicopter_camera_not_locked = "Not Fucking Locked",
 		unknown = "I Don't Fucking Know, Maybe Check Your Damn Self"
 	},
 

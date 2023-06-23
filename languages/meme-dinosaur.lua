@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 14 (do not change)
+-- AUTO LOCALES: 15 (do not change)
 
 OP.Global.Locales.Languages["meme-dinosaur"] = {
 	-- configuration settings for language
@@ -37,6 +37,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		the_trunk_is_occupied = "Rrrowr! The trunk is occupied.",
 		unable_to_toggle_carry = "Please wait a bit before toggling the carry.",
 		carry_disabled_animal = "Rrrowr! Dinosaur peds cannot carry.",
+
+		trunk_hint = "Use \"/rawr\" to open/close the trunk while standing near it.",
 
 		cancel_piggyback = "Press ~INPUT_FRONTEND_RRIGHT~ to cancel piggyback.",
 		piggyback_hop_on = "[${InteractionKey}] Rarrrr! Hop on",
@@ -715,6 +717,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		high_damage_ban = "Your strength has caused an imbalance in our prehistoric realm, resulting in banishment.",
 		suspicious_explosion_ban = "Sorry, but excessive use of fire and explosions is not allowed in this era.",
 		semi_godmode_ban = "Your constant quest for the Great Feast of Eternal Youth has disrupted the natural rhythm of time. Immortality isn't as enjoyable as it sounds.",
+		invalid_health_ban = "Your dino body seems to have had a bit too much of leaves, time to rest",
 
 		mp_f_freemode_01_label = "Free roam (female)",
 		mp_m_freemode_01_label = "Free roam (male)",
@@ -738,6 +741,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		notification_spawned_object = "Argh! Spawned Object",
 		notification_driving_hotwire = "Argh! Driving while Hotwire",
 		notification_semi_godmode = "Anti-Cheat: Semi-Godmode",
+		notification_invalid_health = "Anti-Hunter: Invalid Health",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus (GRRRR)",
@@ -786,9 +790,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		invincibility_screenshot = "Anti-Cheat: Roar! Invincible",
 		runtime_texture_screenshot = "Anti-Cheat: Meep! Runtime Texture (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Anti-Cheat: Hiss! Bad Screen Word (${words})",
-		freecam_detected_screenshot = "Anti-Cheat: Rarr! Freecam Detected (${distance}m)",
+		freecam_detected_screenshot = "Anti-Hunter: Freecam Detected",
 		driving_hotwire_screenshot = "Anti-Cheat: Chomp! Driving while Hotwire",
-		semi_godmode_screenshot = "Anti-Cheat: Semi-Godmode"
+		semi_godmode_screenshot = "Anti-Cheat: Semi-Godmode",
+		invalid_health_screenshot = "Anti-Hunter: Invalid Health"
 	},
 
 	authentication = {
@@ -839,6 +844,18 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		connection_cancelled = "Dino say: Connection cancelled because another is already active. RAWR!",
 		no_reason_provided = "Dino say: No reason given. Grr...",
 		discord_whitelist_id_not_found = "Dino say: Unable to find your discord id. Make sure you have discord open and FiveM can get your data.\n\n${communityDiscord}"
+	},
+
+	characters = {
+		character_refreshed = "Character refreshed, grrooar!",
+		something_went_wrong = "Sauropods and theropods collided, we'll fix it soon!",
+		user_does_not_have_sent_character_loaded = "The dino does not have the sent character loaded, check your eggs",
+		user_has_no_character_loaded = "The dino does not have any character loaded.",
+		user_not_found = "The sent dino was not found on the server.",
+		invalid_character_id = "Invalid character ID parameter sent. Rawr!",
+		invalid_license_identifier = "Invalid license identifier parameter sent. Grr!",
+
+		your_character_refreshed = "Your dino has been refreshed. Roar!"
 	},
 
 	chat = {
@@ -951,8 +968,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 		delete_vehicle_command = "delete_ride",
 		delete_vehicle_command_help = "Rawrr! Delete a nearby ride.",
-		delete_vehicle_command_parameter_ignore_heading = "rawr",
+		delete_vehicle_command_parameter_ignore_heading = "ignore heading",
 		delete_vehicle_command_parameter_ignore_heading_help = "Umm... Rawr?? Should we ignore your gaze direction, young dino? Not rawring will act as a `no`.",
+		delete_vehicle_command_parameter_ignore_occupied = "ignore occupied",
+		delete_vehicle_command_parameter_ignore_occupied_help = "Would you like to ignore any occupied vehicle? Leaving this empty will act as a `no`.",
 		delete_vehicle_command_substitutes = "extinct",
 
 		delete_vehicle_interactively_command = "delete_vehicle_interactively",
@@ -1954,6 +1973,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		move_entity_command_parameter_network_id_help = "The network id of the entity thou desireth to move.",
 		move_entity_command_parameter_ground = "ground",
 		move_entity_command_parameter_ground_help = "If the entity should be placed on the ground properly (vehicles only).",
+		move_entity_command_parameter_heading = "roar",
+		move_entity_command_parameter_heading_help = "If the entity should be placed with the same roar direction as you.",
 		move_entity_command_substitutes = "mv",
 
 		fake_lag_command = "fake_lag",
@@ -2093,6 +2114,12 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		define_area_command = "define_territory",
 		define_area_command_help = "Define a territory.",
 		define_area_command_substitutes = "territory",
+
+		debug_info_command = "debug_info",
+		debug_info_command_help = "Collect some debugging information about a certain dino.",
+		debug_info_command_parameter_server_id = "T-Rex ID",
+		debug_info_command_parameter_server_id_help = "The dino you want to collect debug info for.",
+		debug_info_command_substitutes = "",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
@@ -2475,6 +2502,13 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		locate_entity_command_parameter_filter_help = "Grawwgr what filter the entity should match (id:12345, plate:90FMK072, etc.)",
 		locate_entity_command_substitutes = "le",
 
+		-- game/logs
+		logs_command = "logs",
+		logs_command_help = "Show the latest server logs for a certain dino.",
+		logs_command_parameter_server_id = "rawr id",
+		logs_command_parameter_server_id_help = "The rawr id of the player.",
+		logs_command_substitutes = "",
+
 		-- game/loot
 		loot_debug_command = "loot_debug",
 		loot_debug_command_help = "Toggle the caveman debug.",
@@ -2507,6 +2541,11 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		check_vehicle_upgrades_command = "check_vehicle_upgrades",
 		check_vehicle_upgrades_command_help = "Checks if the nearby vehicle has an engine 5 upgrade. Grrr!",
 		check_vehicle_upgrades_command_substitutes = "check_upgrades, upgrades",
+
+		-- game/meow
+		meow_command = "roar",
+		meow_command_help = "Rawr.",
+		meow_command_substitutes = "",
 
 		-- game/mining
 		mining_debug_command = "mining_debug",
@@ -2863,6 +2902,11 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		properties_debug_command_help = "Toggle the properties debug. Raaaawr!",
 		properties_debug_command_substitutes = "properties",
 
+		-- game/prop_hide
+		prop_hide_command = "prop_hide",
+		prop_hide_command_help = "Toggle the rawring hide.",
+		prop_hide_command_substitutes = "",
+
 		-- game/props
 		props_manage_command = "roar_props_manage",
 		props_manage_command_help = "Manage nearby props. Raaaawr!",
@@ -2877,14 +2921,6 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		spawn_prop_command_parameter_no_pickup = "no nom",
 		spawn_prop_command_parameter_no_pickup_help = "Me no let anyone nom nom my prop, only super smart dinos can nom nom.",
 		spawn_prop_command_substitutes = "",
-
-		spawn_exact_prop_command = "spawn_exact_prop",
-		spawn_exact_prop_command_help = "Me make prop appear where me stand.",
-		spawn_exact_prop_command_parameter_model_name = "prop name",
-		spawn_exact_prop_command_parameter_model_name_help = "The dino model you want to summon.",
-		spawn_exact_prop_command_parameter_ground = "ground",
-		spawn_exact_prop_command_parameter_ground_help = "If the dino should be summoned on the ground or not.",
-		spawn_exact_prop_command_substitutes = "",
 
 		props_debug_command = "roar_at_props",
 		props_debug_command_help = "Scans for all nearby props and roars at them.",
@@ -3115,37 +3151,9 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		tablet_command_substitutes = "",
 
 		-- game/test_server
-		set_vehicle_preset_command = "roar_set_vehicle_preset",
-		set_vehicle_preset_command_help = "Me roar fully upgrades the vehicle you are currently in and applies colors with the specified preset.",
-		set_vehicle_preset_command_parameter_preset = "preset",
-		set_vehicle_preset_command_parameter_preset_help = "Me roar color preset you want to apply (red, blue, green, yellow, orange, white, black).",
-		set_vehicle_preset_command_substitutes = "roar_vehicle_preset",
-
-		detach_all_doors_command = "roar_detach_all_doors",
-		detach_all_doors_command_help = "Me roar detach all doors of the vehicle you are currently in.",
-		detach_all_doors_command_substitutes = "",
-
-		pop_all_tires_command = "rawr_all_tyrannosauruses",
-		pop_all_tires_command_help = "Rawrs all tyrannosauruses of the dinosaur vehicle you are currently in.",
-		pop_all_tires_command_substitutes = "",
-
-		upgrade_vehicle_fully_command = "upgrade_dino_vehicle_fully",
-		upgrade_vehicle_fully_command_help = "Upgrades the dino vehicle you are currently in fully.",
-		upgrade_vehicle_fully_command_substitutes = "",
-
-		random_vehicle_colors_command = "random_dino_skin",
-		random_vehicle_colors_command_help = "Randomizes the skin colors of the dinosaur vehicle you are currently in.",
-		random_vehicle_colors_command_parameter_lights = "shiny_rocks",
-		random_vehicle_colors_command_parameter_lights_help = "If the shiny rocks (crystals and gems) should be randomized as well.",
-		random_vehicle_colors_command_substitutes = "",
-
-		starve_command = "hunger",
-		starve_command_help = "Sets your food and thirst levels to 0.",
-		starve_command_substitutes = "",
-
-		car_command = "dino_car",
-		car_command_help = "Spawns in a random dinosaur-themed car.",
-		car_command_substitutes = "",
+		test_menu_command = "test_menu",
+		test_menu_command_help = "Toggle the rawring test server menu.",
+		test_menu_command_substitutes = "",
 
 		-- game/time_scale
 		set_time_scale_command = "set_dino_time_scale",
@@ -4061,6 +4069,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		amount = "Aaaamount",
 		target = "Taaarget",
 
+		confirm_target = "Do you want to transfer $${amount} to \"${name}\"?",
+		cancel = "No, cancel",
+		confirm_transfer = "Rawr, transfer",
+
 		failed_deposit = "Failed to deeeposit money",
 		failed_withdraw = "Failed to rawwraww money",
 		failed_transfer = "Failed to traanfer money",
@@ -4841,6 +4853,16 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		failed_reconnect = "Failed to reconnect to rawr command socket."
 	},
 
+	containers = {
+		drill_container = "Press ~INPUT_CONTEXT~ to roar open the container.",
+
+		drilling_container = "Rawr! Container with delicious things inside!",
+		failed_drill = "OH NO! Failed to open the container with drill!",
+		drill_success = "RAWR! Successfully opened the container with drill!",
+
+		container_blip = "Container with yummy things!"
+	},
+
 	crafting = {
 		menu_title = "Rawr Crafting",
 		close_menu = "Close Rawr",
@@ -5229,6 +5251,24 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		broke_ring = "Broke apart ring.",
 		failed_break_ring = "Failed to break apart ring.",
 
+		mix_lean = "Mix yum-yum",
+		press_to_mix_lean = "[${SeatEjectKey}] Mix yum-yum",
+		mixing_lean = "Mixing the yum-yum...",
+		mixed_lean = "RAWR! Yum-yum mixed!",
+		failed_mix_lean = "OH NO! Failed to mix the yum-yum...",
+
+		craft_pager = "Create magical pager",
+		press_to_craft_pager = "[${SeatEjectKey}] Create magical pager",
+		crafting_pager = "Creating magical pager...",
+		crafted_pager = "Magical pager created! RAWR!",
+		failed_craft_pager = "Rawr! Failed to craft pager.",
+
+		craft_multi_tool = "Craft Stone Chomper",
+		press_to_craft_multi_tool = "[${SeatEjectKey}] Craft Stone Chomper",
+		crafting_multi_tool = "Crafting Stone Chomper",
+		crafted_multi_tool = "Stone Chomper crafted. Me likes it!",
+		failed_craft_multi_tool = "Oopsie! Failed to craft Stone Chomper.",
+
 		no_required_items = "You don't have all the required items. Rawr!",
 
 		debug_multi = "-Multiple Outputs- Rawrrrr!",
@@ -5498,6 +5538,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 	},
 
 	daily_activities = {
+		not_enough_money = "Grr! You no have enough shiny rocks.",
+
 		press_to_daily_activities = "Rawr-${InteractionKey}] Daily Activities",
 		daily_activities = "Rawr-Daily Activities",
 		resets_in = "Rawr-Resets in ${resetsIn}...",
@@ -5513,6 +5555,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 		reset_daily_activities_no_permissions = "Player attempted to reset their daily activities without proper permissions. Rawr!",
 		reset_daily_activities = "Reset Daily Activities. Rawr!",
+
+		task_progress = "Task Progress: ${task} (${remain} left)",
+		task_progress_money = "Task Progress: ${task} ($${remain} left for this task)",
+		task_finished = "Task Finished: ${task} -- RAWR!",
 
 		parachute_from_location = "Parachute from ${location}. Rawr!",
 		gamble_at_blackjack = "Play ${amount} hands at the Blackjack table. Rawr!",
@@ -5530,7 +5576,11 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		dig_up_a_treasure = "Dig up treasure with map from RoarRaaR.",
 		refine_gems = "Refine ${amount} shiny rocks.",
 		visit_location = "Go to ${location} place.",
-		visit_the_location = "Go to ${location} place."
+		visit_the_location = "Go to ${location} place.",
+
+		confirm_task_refresh = "Raaawr, you refresh task? It cost $${cost} though. Sure?",
+		yes = "Raaawr",
+		no = "Nah"
 	},
 
 	dashcam = {
@@ -5687,7 +5737,16 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 		network_debug_logs_title = "Toggled Network Debug",
 		network_debug_logs_details_on = "${consoleName} toggled their network debug on. Rawr!",
-		network_debug_logs_details_off = "${consoleName} toggled their network debug off. Rawr!"
+		network_debug_logs_details_off = "${consoleName} toggled their network debug off. Rawr!",
+
+		invalid_server_id = "Me no understand that ID. Try again.",
+		debug_info_failed = "Me can't collect debug info. Something wrong.",
+		close = "Close",
+		import = "Import",
+		export = "Export",
+		copied = "Rawr! Copied!",
+		invalid_data = "Invalid data. Me no understand.",
+		invalid_json = "Invalid JSON, me can't read."
 	},
 
 	debug_menu = {
@@ -6105,14 +6164,6 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		failed_start_run = "Failed to start gun run. Maybe the pterodactyls flew away with the guns?",
 		hack_timeout = "Connection to server lost, try again. Maybe use smoke signals instead of hacking?",
 
-		drop_blip = "Gun Container",
-
-		drill_container = "Press ~INPUT_CONTEXT~ to drill open the container, using your mighty jaw.",
-
-		drilling_container = "Drilling Container, just like digging for bones!",
-		failed_drill = "Failed to drill open the container. I guess your bite is not as strong as a T-Rex's.",
-		drill_success = "Successfully drilled open the container and found 1x ${item}. Congratulations, you are a true carnivore!",
-
 		started_run_logs_title = "Chomp Chomp",
 		started_run_logs_details = "${consoleName} chomped the gun run hack.",
 		finished_run_logs_title = "Gun Run Drop",
@@ -6123,11 +6174,18 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		press_e_to_talk = "Press ~INPUT_CONTEXT~ to talk to Jim.",
 		trader_closed = "Jim's cave is currently closed.",
 
+		sorry_closed = "Me sorry, shop closed. Come back later.",
+		sorry_closed_hug = "Thanks for the hug. Me appreciate.",
+		sorry_closed_fight = "Me no want fight. Why you mad, bro?",
+
 		trader_locked = "Jim needs a few things from you before he is willing to open his cave.",
 		unlock_trader = "Provide the item to Jim.",
 
+		trader_duty = "Me see you officer. But me closed shop now. You come back another time, okay?",
+
 		purchase = "Chomp",
 		out_of_stock = "Raargh! Out of Stock!",
+		special_offer = "Sneak Attack!",
 
 		failed_trader_closed = "Me not able to trade weapon. Jim's shop closed.",
 		failed_no_stock = "Me unable to trade weapon, me no have any left.",
@@ -6148,7 +6206,13 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		slogan_3 = "When in doubt...roar it out!",
 		slogan_4 = "A sharp tooth in the hand is better than a T-Rex on the phone.",
 
-		copyright = "Copyright © 2009-2016 Jim's Dino Shop NC. All Rights Reserved."
+		copyright = "Copyright © 2009-2016 Jim's Dino Shop NC. All Rights Reserved.",
+
+		remaining_messages = "Laik Remaining: ${messages}",
+		no_messages_left = "Terminator not got laik.",
+		just_used_pager = "You just used raor, wait time before using again.",
+		page_trader_closed = "Jim sleeping, no talk.",
+		page_success = "Jim sent signal for meeting."
 	},
 
 	hacking = {
@@ -6544,7 +6608,6 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		los_santos_golf_club = "Dino-swing Club",
 		arcade_bar = "Prehistoric Play Pit",
 		japanese_restaurant = "Chomping Grounds Restaurant",
-		japanese_restaurant_kitchen = "Japanese Restaurant Jungle",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Prehistoric Bakery",
 		pd_prefix = "Prehistoric Protectors",
@@ -6794,6 +6857,9 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		cleaning_kit = "Dino Cleaning Kit",
 		cleaning_kit_description = "Perfect to clean your dino mobile, or the food stains you've been letting dry in the back of your trunk.",
 
+		multi_tool = "Multi Chompy",
+		multi_tool_description = "Chompy tool do anything.",
+
 		microphone_bug = "Micro-Roar Bug",
 		microphone_bug_description = "Used to eavesdino on conversations.",
 		vehicle_tracker = "Saurian Stalker",
@@ -6969,6 +7035,15 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		chocolate_milkshake = "Choco Shake-o-saurus",
 		chocolate_milkshake_description = "A delicious looking shake, just make sure there aren't any raptors lurking around before you take a dino sip...",
 
+		burrito = "Chomp Taco",
+		burrito_description = "Taco with lots of chewy things in it.",
+		tostada = "Tostada",
+		tostada_description = "A tostada is a crunchy corn tortilla that has been crisped up or toasted.",
+		quesadilla = "Queasadilla",
+		quesadilla_description = "A quesadilla is a Mexican dish and type of taco, consisting of a tortilla that is filled primarily with cheese, and sometimes meats, beans, and spices, and then cooked on a griddle.",
+		pineapple_cake = "Pineapple Cake",
+		pineapple_cake_description = "Pineapple cake is a dessert consumed in Taiwan. The typical Taiwanese pineapple cake has a filling made from pineapple jam that is thick, sweet, and sour.",
+
 		dog_food = "Rex Chow",
 		dog_food_description = "Rex Chow is specially formulated for the dietary needs of our beloved canine companions.",
 		cat_food = "Sabertooth Chow",
@@ -7093,6 +7168,9 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		oxy_prescription = "Oxy Prescription",
 		oxy_prescription_description = "Sketchy oxy prescription, rawr.",
 
+		generic_prescription = "Generic Prescripshun",
+		generic_prescription_description = "Prescripshun fer sum medicine. Should be good fer a refill.",
+
 		brownies = "Brownies",
 		brownies_description = "Goey, Foamy, and double the amount of chocolate with just a hint of extra kick to really make you sit back and question all of life, rawr.",
 
@@ -7109,6 +7187,9 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		decryption_key_green_description = "SQUAWK! Did you know that ferns were a major source of food for herbivorous dinosaurs, and some may have had green coloration themselves?",
 		decryption_key_blue = "Blue Decryption Key",
 		decryption_key_blue_description = "SQUAWK! Blue is an unusual color in nature, but some dinosaurs like the Troodon may have had blue feathers. Reference: https://en.wikipedia.org/wiki/Troodon",
+
+		pager = "Pager",
+		pager_description = "A pager. Seems t'rex only have a single contact and a prepaid card allowing only a few messages.",
 
 		ballistic_shield = "Dino Shield",
 		ballistic_shield_description = "This shield bellow protect from the claws of the dinos in the RP territory.",
@@ -7142,6 +7223,22 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 		shrooms = "Munchies",
 		shrooms_description = "Dino got stoned, pizza got stoned, everything got stoned...",
+
+		lean = "Lean",
+		lean_description = "Sippin' on some sizzurp, sip, sippin' on some, sip.",
+
+		jolly_ranchers = "Jolly Ranchers",
+		jolly_ranchers_description = "Indulge in the sweet and tangy flavors of Jolly Ranchers, the classic hard candies that burst with fruity goodness.",
+		jolly_rancher_watermelon = "Watermelon Jolly Saurus",
+		jolly_rancher_watermelon_description = "Experience the refreshing taste of watermelon with these delightful Jolly Saurus hard candies.",
+		jolly_rancher_raspberry = "Raspberry Jolly Saurus",
+		jolly_rancher_raspberry_description = "Savor the luscious blend of sweet and tart raspberry flavor in these Jolly Saurus hard candies.",
+		jolly_rancher_apple = "Apple Jolly Saurus",
+		jolly_rancher_apple_description = "Enjoy the crisp and tangy taste of apple with these delicious Jolly Saurus hard candies.",
+		jolly_rancher_cherry = "Cherry Jolly Rarr",
+		jolly_rancher_cherry_description = "Indulge in the bold and vibrant flavor of these irresistible Jolly Rarr hard candies.",
+		jolly_rancher_grape = "Grape Jolly Rarr",
+		jolly_rancher_grape_description = "Experience the juicy and succulent taste of grape with these mouthwatering Jolly Rarr hard candies.",
 
 		bucket = "No-Head-Hurter",
 		bucket_description = "Wear it upside down, no one will know...",
@@ -8046,7 +8143,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		weapon_addon_m6ic_description = "The perfect gun for the perfect raptor, just don't forget the feathers.",
 
 		weapon_addon_hk416 = "H&K 416",
-		weapon_addon_hk416_description = "The H&K 416, the T-Rex of firearms - powerful, sleek, and guaranteed to turn heads. It's like having a personal trainer for your trigger claw, delivering results that'll make your prey jealous. Say hello to your new BFF (Best Firearm Forever)!"
+		weapon_addon_hk416_description = "The H&K 416, the T-Rex of firearms - powerful, sleek, and guaranteed to turn heads. It's like having a personal trainer for your trigger claw, delivering results that'll make your prey jealous. Say hello to your new BFF (Best Firearm Forever)!",
+
+		weapon_addon_680 = "Remington 680",
+		weapon_addon_680_description = "The Remington 680 is a pump-action shotgun that was developed by Remington Arms in 1950."
 	},
 
 	items = {
@@ -8173,6 +8273,25 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		read_catalog = "Munch ~g~${InteractionKey} ~w~to read Catalog"
 	},
 
+	lean = {
+		press_to_sell_lean = "Press ~INPUT_CONTEXT~ to sell Wrawr.",
+		local_not_interested = "The dino doesn't seem to be interested right now.",
+		not_interested = "This dino doesn't seem to be interested in your wrawr.",
+		selling_lean = "Selling Wrawr.",
+
+		no_lean = "You don't have any wrawr.",
+		no_jolly_ranchers = "You don't have any crunchy leaves.",
+		press_to_mix_lean = "[${SeatEjectKey}] Mix Wrawr with Crunchy Leaves",
+		mix_menu = "Mix Wrawr",
+		mix_with = "Mix with ${flavor}",
+		close_menu = "Close Menu",
+		mix_failed = "Failed to mix wrawr with crunchy leaves.",
+
+		mixed_with = "Mixed with ${flavor} into dino juice",
+		mixed_with_label = "Lean (${flavor})",
+		mixing = "Mixing dino juice"
+	},
+
 	leashes = {
 		press_to_use_leash = "[${InteractionKey}] Use Swamp Leash",
 		putting_leash_on = "Putting Swamp Leash On",
@@ -8208,10 +8327,15 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		disallowed_words_in_character_name = "RWAR! You tried to create a character with a name that might not be allowed RWAR!: \"${characterName}\"",
 		disallowed_birthday_ban = "RWAR! You tried to create a character with a birthday that might not be valid RWAR!: \"${birthday}\"",
 
+		inventory_help_text = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to access your stash.",
+
 		welcome_to = "Welcome to",
 		press = "RAWR!",
 		enter = "ENTER",
 		to_join = "to join",
+		in_game_time = "Dino time is currently",
+		am = "AM",
+		pm = "PM",
 		changelogs = "Changelogs",
 		fetching_character_data = "Fetching Character Data...RWAR!",
 		yes = "Yum",
@@ -8303,7 +8427,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		los_santos_police_dept = "LOS SANTOS POLICE DEPT-saur",
 
 		welcome_msg_title = "Raaawr, welcome to ${communityName} Saur-ing!",
-		welcome_msg = "Raaawr, you have received some items to help you get started. You can use the items in your hotbar using the 1-5 keys.\n\n*Rawr, press the 1 key to read your brochure.*",
+		welcome_msg = "You have received some items to help you get started. You can use the items in your hotbar using the 1-5 keys. \n\nPress **${InventoryKey}** to access your stash or press **1** to read your brochure.",
 
 		press_to_go_back_to_menu = "Press ~g~${InteractionKey}~w~ to go back to the menu.",
 		go_back_to_menu = "Go back to the menu.",
@@ -8327,6 +8451,15 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		heroic_tier = "Rawr-rarr! (Heroic Tier)",
 		legendary_tier = "Raaarh! (Legendary Tier)",
 		godlike_tier = "Raaaarh-rarr! (Godlike Tier)"
+	},
+
+	logs = {
+		invalid_server_id = "Invalid dino nest id.",
+		logs_failed = "Raaaaaggghhh, failed to load logs.",
+
+		close = "Close",
+
+		get_logs_no_permissions = "Player attempted to get logs without proper permissions. Roooaaaar!"
 	},
 
 	loot = {
@@ -8439,6 +8572,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		drill_drops = "Rar! You found some shiny gems in this boulder!",
 		used_drill = "Rar! Your drill broke!",
 		still_shook = "Rar! You still shook from the last boom and didn't find any gems in this boulder!",
+
+		kill_label = "Mining Explosion",
 
 		recharging_scanner = "Charging Scanner ${percentage}%",
 		scanning = "Scanning ${percentage}%",
@@ -8788,6 +8923,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		sound_effect_save = "Honk Honk",
 		sound_effect_reset = "Beep Boop",
 
+		disable_tablet_animation = "Disable Tablet Animation",
 		staff_notifications_reports = "Big Scary Thing Notifications",
 		staff_notifications_staff_chat = "Loud Talking Notifications",
 		staff_notifications_general = "General Reptile Thinking Notifications",
@@ -9573,6 +9709,19 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		failed_pay = "Failed to pay parking meter. Grawr"
 	},
 
+	pause_menu = {
+		sunday = "Sunnosaur",
+		monday = "Monosaur",
+		tuesday = "Tuesosaur",
+		wednesday = "Wednesosaur",
+		thursday = "Thursosaur",
+		friday = "Fridinosaur",
+		saturday = "Satursaur",
+
+		bank = "Bankosaurus",
+		cash = "Cashosaurus"
+	},
+
 	pawn_shops = {
 		sell_items = "Sell ${itemLabel} for Bones",
 		press_to_sell_items = "[${InteractionKey}] Sell ${itemLabel} for Bones",
@@ -9613,7 +9762,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 	ped_objects = {
 		illegal_ped_object = "Attempting to add a non-dinosaur object to the game. Screech! This is not allowed.",
-		illegal_ped_weapon_object = "Attempting to add a non-dinosaur weapon object to the game. Screech! This is not allowed."
+		illegal_ped_weapon_object = "Attempting to add a non-dinosaur weapon object to the game. Screech! This is not allowed.",
+		illegal_raw_ped_object = "Attempting to add a raw ped object without proper permissions. Raaawwwrrrr!"
 	},
 
 	ped_task = {
@@ -9749,6 +9899,16 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		pools_overflowing = "Rawr! Pools overflowing: ~r~${poolsOverflowing}."
 	},
 
+	prescriptions = {
+		redeem_prescription = "[${SeatEjectKey}] Redeem Prescription",
+
+		redeemed_prescription = "Roar! Prescription redeemed successfully.",
+		failed_redeem = "Roar... Failed to redeem prescription.",
+
+		remeeded_prescription_logs_title = "Roar! Reedeemed Prescription",
+		remeeded_prescription_logs_details = "${consoleName} redeemed a prescription and received 1x `${item}`. Roar!"
+	},
+
 	printer = {
 		use_printer = "[${InteractionKey}] Use Printer",
 
@@ -9760,6 +9920,11 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 		printed_logs_title = "Rarr Image",
 		printed_logs_details = "${consoleName} Rarr'd an image with the URL `${url}`."
+	},
+
+	prop_hide = {
+		no_model = "~r~No Model. Roar!",
+		status_text = "Prop: ~g~${label}. Roar!"
 	},
 
 	props = {
@@ -9926,48 +10091,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		better_stamina = "Run without getting tired like a T-Rex! Be able to run without running out of stamina for ${duration} minutes.",
 		more_inventory_space = "Have an additional ${amount} inventory slots for ${duration} minutes.",
 
-		buffs_note = "The buffs will only activate once you have left the vicinity of the building.",
-
-		press_to_prepare_food = "[${InteractionKey}] Prepare Fresh Meat",
-		prepare_food = "Prepare Fresh Meat",
-
-		kissaki_kitchen = "Kissaki Cuisine",
-
-		craft = "Create",
-		putting_down_ingredients = "Dropping ingredients",
-
-		pick_up = "Graah: ~g~${name}",
-		press_to_pick_up = "[${InteractionKey}] Graah: ~g~${name}",
-
-		prepare_rice = "~g~${name}~s~: Prepare Rawr (${completed}%~s~)",
-		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Prepare Rawr (${completed}%~s~)",
-		preparing_rice_starting = "Starting Prep Rawr",
-		preparing_rice = "~g~${name}~s~: Preparing Rawr... (${completed}%~s~)",
-
-		prepare_fillings = "~g~${name}~s~: Prepare Yum (${completed}%~s~)",
-		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Prepare Yum (${completed}%~s~)",
-		preparing_fillings_starting = "Grooming Fillings",
-		preparing_fillings = "~g~${name}~s~: Grooming Fillings... (${completed}%~s~)",
-
-		prepare_rolling_mat = "~g~${name}~s~: Prepare Rolling Mat (${completed}%~s~)",
-		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Prepare Rolling Mat (${completed}%~s~)",
-		preparing_rolling_mat_starting = "Grooming Rolling Mat",
-		preparing_rolling_mat = "~g~${name}~s~: Grooming Rolling Mat... (${completed}%~s~)",
-
-		assemble_sushi = "~g~${name}~s~: Join Sushi Pieces (${completed}%~s~)",
-		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Assemble Sushi (${completed}%~s~)",
-		assembling_sushi_starting = "Me make Sushi",
-		assembling_sushi = "~g~${name}~s~: Me making Sushi... (${completed}%~s~)",
-
-		roll_sushi = "~g~${name}~s~: Roll Sushi (${completed}%~s~)",
-		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Roll Sushi (${completed}%~s~)",
-		rolling_sushi_starting = "Me roll Sushi",
-		rolling_sushi = "~g~${name}~s~: Me rolling Sushi... (${completed}%~s~)",
-
-		slice_sushi = "~g~${name}~s~: Slice Sushi (${completed}%~s~)",
-		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Grr, Snarl, Slice Sushi (${completed}%~s~)",
-		slicing_sushi_starting = "Grr, Snarl, Starting to Slice Sushi",
-		slicing_sushi = "~g~${name}~s~: Grr, Snarl, Slicing Sushi... (${completed}%~s~)",
+		buffs_note = "The buffs will only activate once you have left the vicinity of the building."
 	},
 
 	riot_mode = {
@@ -10000,6 +10124,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		player_list = "Scotty List",
 		players = "Scotties",
 		total = "Total",
+		total_staff = "Total (Staff). Roar!",
 		recent_disconnections = "Recent Sleepy Time",
 		disconnected_player = "Phuty thag nituk hu'ut",
 		id = "ROAR",
@@ -10242,6 +10367,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		armor_ok = "Shell: ~g~${armor} / ${maxArmor}~w~",
 		armor_bad = "Shell: ~r~${armor} / ${maxArmor}~w~",
 
+		vehicle_health = "Vehicle Health: ${percentage}. Roar!",
+
 		speed = "Gaaaait: ${speed}${unit}",
 		speed_mph = "roar",
 		speed_kmh = "roar-roar",
@@ -10293,10 +10420,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 	},
 
 	starter_car = {
-		your_vehicle_is_nearby = "Roarrr! Your personal steed is parked nearby.",
-		would_you_like_directions = "Would you like me to give you directions to it?",
-		press_to_respond = "Roaaarrr! Press ~INPUT_FRONTEND_ACCEPT~ to accept or ~INPUT_FRONTEND_CANCEL~ to decline.",
-		follow_the_checkpoints = "Roaaarrr! Follow the footsteps of our ancestors.",
+		follow_the_checkpoints = "Roar! Your personal vehicle is parked nearby. Follow the checkpoints to find it. Roar!",
 
 		received_logs_title = "Roaaaarrr! Received Great Beast",
 		received_logs_details = "${consoleName} received a great beast (Model: ${modelName})."
@@ -10569,12 +10693,38 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 	},
 
 	test_server = {
+		menu_title = "RAWR-Menu",
+
+		vehicles = "Dino Rides",
+		spawn_car = "Hatch Egg",
+		upgrade_vehicle = "Evolve Ride",
+		pop_tires = "Puncture Wheels",
+		detach_doors = "Remove Saddle",
+		damage_vehicle = "Injure Ride",
+		repair_vehicle = "Heal Ride",
+		delete_vehicle = "Extinguish Ride",
+
+		player = "Dino Options",
+		starve = "Hunger",
+		feed = "Feed",
+		relief_stress = "Relax",
+		reset_health = "Heal Self",
+		remove_injuries = "Cure Wounds",
+
+		teleport = "Travel Options",
+		teleport_to = "Go To",
+		tp_legion = "Squawk Legion",
+		tp_garage_a = "Garage Alpha",
+		tp_paleto = "Dino Paleto",
+		tp_sandy = "Raptor Shores",
+		tp_zancudo = "Fort Pterodactyl",
+		tp_airport = "LS Nesting Grounds",
+		tp_carrier = "Flying Dino Carrier",
+		tp_cayo = "Cayo Pterodactyl",
+
 		you_are_not_in_a_vehicle = "You not in big car.",
 		you_are_in_a_vehicle = "You in big car now.",
-		invalid_vehicle_preset = "Bad big car setup.",
 		fully_upgraded = "Big car upgraded much much.",
-		applied_preset = "Setup applied to big car.",
-		spawned_car = "Big car called `${modelName}` appears.",
 		just_spawned_a_car = "You just summoned big car. Wait ${time} before summoning again."
 	},
 
@@ -11079,16 +11229,6 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		changed_job_details = "${consoleName} speak ${jobName} now!"
 	},
 
-	jobs = {
-		job_refreshed = "Job refreshed.",
-		something_went_wrong = "Me not understand, something wrong.",
-		user_does_not_have_sent_character_loaded = "Me no see character! User no load character.",
-		user_has_no_character_loaded = "User no character to load.",
-		user_not_found = "Me no find user on server.",
-		invalid_character_id = "Me no understand, parameter for character id invalid.",
-		invalid_license_identifier = "Me no understand, license identifier invalid."
-	},
-
 	police = {
 		aim_assist_enabled = "Your aim will now be as sharp as a Velociraptor's claws.",
 		aim_assist_disabled = "You will now have the aim of a sleepy Stegosaurus. It is recommended to re-enable the aim assist immediately.",
@@ -11298,6 +11438,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		helicopter_camera_vehicle_info_imperial = "Zoomboom: ${speed} mp/h\nModel: ${model}\nPlate: ${plate}",
 		helicopter_camera_altitude = "${altitude}ft AGL! Unga bunga!",
 		helicopter_camera_altitude_asl = "${altitude}ft ASL! Oogah oogah!",
+		helicopter_camera_locked_on = "Dino Net Locked On",
+		helicopter_camera_not_locked = "Dino Net Not Locked",
 		unknown = "Ungar!"
 	},
 

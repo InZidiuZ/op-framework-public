@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 14 (do not change)
+-- AUTO LOCALES: 15 (do not change)
 
 OP.Global.Locales.Languages["hi-IN"] = {
 	-- configuration settings for language
@@ -37,6 +37,8 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		the_trunk_is_occupied = "ट्रंक भरा हुआ है।",
 		unable_to_toggle_carry = "कृपया कुछ देर पहले अपने carry को टॉगल करने से रोकें।",
 		carry_disabled_animal = "जानवरों को carry नहीं कर सकते।",
+
+		trunk_hint = "इसके पास खड़े होकर ट्रंक खोलने/बंद करने के लिए \"/door\" का उपयोग करें।",
 
 		cancel_piggyback = "पिगीबैक को रद्द करने के लिए ~INPUT_FRONTEND_RRIGHT~ दबाएं।",
 		piggyback_hop_on = "[${InteractionKey}] hop on",
@@ -715,6 +717,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		high_damage_ban = "आपकी शक्ति के मापदंड बहुत अधिक हो गए थे जो हमारी राज्य संस्था को बिगाड़ दिया।",
 		suspicious_explosion_ban = "माफ़ कीजिये, लेकिन यह माइकल बेई फिल्म नहीं है। पायरोटेक्निक का अत्यधिक उपयोग अनुमति नहीं है।",
 		semi_godmode_ban = "आपकी जवानी का स्रोत तलाशने पर आपकी दृढ़ता समय के प्राकृतिक रूप से अवरुद्ध करने लगी है। अमरत्व सुनने से ज्यादा मज़ेदार नहीं है।",
+		invalid_health_ban = "आपके हेल्थ बार को स्पिनैच से ज्यादा बढ़ावा मिला है, पोपाये",
 
 		mp_f_freemode_01_label = "महिला फ्रीमोड",
 		mp_m_freemode_01_label = "पुरुष फ्रीमोड",
@@ -738,6 +741,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		notification_spawned_object = "एंटी-चीट: मूर्ति उत्पन्न की गई",
 		notification_driving_hotwire = "एंटी-चीट: हॉटवायर चलाते समय गाड़ी चलाना",
 		notification_semi_godmode = "एंटी-चीट: सेमी-गॉडमोड",
+		notification_invalid_health = "एंटी-चीट: अमान्य हेल्थ",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "यीशु",
@@ -786,9 +790,10 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		invincibility_screenshot = "एंटी-चीट: अमरत्व",
 		runtime_texture_screenshot = "एंटी-चीट: रनटाइम टेक्सचर (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "एंटी-चीट: बुरे स्क्रीन वर्ड (${words})",
-		freecam_detected_screenshot = "एंटी-चीट: फ्रीकैम का पता लगा (${distance} मीटर)",
+		freecam_detected_screenshot = "एंटी-चीट: फ्रीकैम पहचाना गया",
 		driving_hotwire_screenshot = "एंटी-चीट: हॉटवायर के दौरान गाड़ी चलाना",
-		semi_godmode_screenshot = "एंटी-चीट: सेमी-गॉडमोड"
+		semi_godmode_screenshot = "एंटी-चीट: सेमी-गॉडमोड",
+		invalid_health_screenshot = "एंटी-चीट: अमान्य हेल्थ"
 	},
 
 	authentication = {
@@ -839,6 +844,18 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		connection_cancelled = "इस कनेक्शन को रद्द किया गया क्योंकि दूसरा कनेक्शन पहले से ही सक्रिय है।",
 		no_reason_provided = "कोई कारण नहीं दिया गया।",
 		discord_whitelist_id_not_found = "हम आपकी discord id नहीं ढूंढ पाए। सुनिश्चित करें कि आप discord को पीछे से खोल रहे हैं और कि आपने FiveM को अपने discord client से डेटा निकालने की अनुमति दी है।\n\n${communityDiscord}"
+	},
+
+	characters = {
+		character_refreshed = "चरित्र ताजगी प्राप्त कर रहा है।",
+		something_went_wrong = "कुछ गलत हो गया।",
+		user_does_not_have_sent_character_loaded = "उपयोगकर्ता ने भेजा चरित्र लोड नहीं किया है।",
+		user_has_no_character_loaded = "उपयोगकर्ता के पास कोई चरित्र लोड नहीं है।",
+		user_not_found = "सर्वर पर भेजे गए उपयोगकर्ता को नहीं मिला।",
+		invalid_character_id = "भेजे गए अमान्य चरित्र आईडी पैरामीटर।",
+		invalid_license_identifier = "भेजे गए अमान्य लाइसेंस पहचानकर्ता पैरामीटर।",
+
+		your_character_refreshed = "आपका चरित्र ताजगी प्राप्त कर लिया है।"
 	},
 
 	chat = {
@@ -951,8 +968,10 @@ OP.Global.Locales.Languages["hi-IN"] = {
 
 		delete_vehicle_command = "वाहन_हटाएं",
 		delete_vehicle_command_help = "नजदीकी वाहन को हटा दें।",
-		delete_vehicle_command_parameter_ignore_heading = "हाँ",
+		delete_vehicle_command_parameter_ignore_heading = "शीर्षक को नजरअंदाज़ करें",
 		delete_vehicle_command_parameter_ignore_heading_help = "क्या आप अपने प्लेयर की हेडिंग को नजरअंदाज करना चाहेंगे? इसे खाली छोड़ने से `नहीं`के रूप में काम करेगा।",
+		delete_vehicle_command_parameter_ignore_occupied = "घाटेरे वाहन को नजरअंदाज़ करें",
+		delete_vehicle_command_parameter_ignore_occupied_help = "क्या आप किसी भी वहन के घेरे नजरअंदाज़ करना चाहेंगे? इसे खाली छोड़ने से एक `नहीं` के रूप में काम करेगा।",
 		delete_vehicle_command_substitutes = "वाहन_हटाओ",
 
 		delete_vehicle_interactively_command = "इंटरैक्टिव वाहन हटाओ",
@@ -1954,6 +1973,8 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		move_entity_command_parameter_network_id_help = "एंटिटी की नेटवर्क आईडी जिसे आप ले जाना चाहते हैं।",
 		move_entity_command_parameter_ground = "ग्राउंड",
 		move_entity_command_parameter_ground_help = "यदि एंटिटी जमीन पर ठीक से रखा जाना चाहिए (केवल वाहन।)",
+		move_entity_command_parameter_heading = "हेडिंग",
+		move_entity_command_parameter_heading_help = "यदि एंटिटी आपके साथ एक ही हेडिंग के साथ जगह बदली जानी चाहिए।",
 		move_entity_command_substitutes = "mv",
 
 		fake_lag_command = "fake_lag",
@@ -2093,6 +2114,12 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		define_area_command = "define_area",
 		define_area_command_help = "एक क्षेत्र की परिभाषा करें।",
 		define_area_command_substitutes = "क्षेत्र",
+
+		debug_info_command = "debug_info",
+		debug_info_command_help = "किसी विशिष्ट खिलाड़ी के बारे में कुछ डीबगिंग जानकारी इकट्ठा करें।",
+		debug_info_command_parameter_server_id = "सर्वर आईडी",
+		debug_info_command_parameter_server_id_help = "आप डीबग जानकारी इकट्ठा करना चाहते हैं उस खिलाड़ी के लिए।",
+		debug_info_command_substitutes = "",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
@@ -2475,6 +2502,13 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		locate_entity_command_parameter_filter_help = "जिस फ़िल्टर का अनुसरण किया जाना चाहिए उस इकाई से मेल खाने के लिए (id:12345, plate:90FMK072, इत्यादि)।",
 		locate_entity_command_substitutes = "le",
 
+		-- game/logs
+		logs_command = "लॉग्स",
+		logs_command_help = "एक निश्चित खिलाड़ी के लिए नवीनतम सर्वर लॉग दिखाएं।",
+		logs_command_parameter_server_id = "सर्वर आईडी",
+		logs_command_parameter_server_id_help = "खिलाड़ी का सर्वर आईडी।",
+		logs_command_substitutes = "",
+
 		-- game/loot
 		loot_debug_command = "loot_debug",
 		loot_debug_command_help = "लूट डीबग को टॉगल करें।",
@@ -2507,6 +2541,11 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		check_vehicle_upgrades_command = "check_vehicle_upgrades",
 		check_vehicle_upgrades_command_help = "जांचें कि नज़दीकी वाहन में इंजन 5 अपग्रेड है या नहीं।",
 		check_vehicle_upgrades_command_substitutes = "check_upgrades, upgrades",
+
+		-- game/meow
+		meow_command = "म्याऊं",
+		meow_command_help = "म्याऊं।",
+		meow_command_substitutes = "",
 
 		-- game/mining
 		mining_debug_command = "mining_debug",
@@ -2863,6 +2902,11 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		properties_debug_command_help = "संपत्ति डीबग को सक्षम/अक्षम करें।",
 		properties_debug_command_substitutes = "संपत्ति",
 
+		-- game/prop_hide
+		prop_hide_command = "प्रॉप छुपाएं",
+		prop_hide_command_help = "प्रॉप छुपाने को टॉगल करें।",
+		prop_hide_command_substitutes = "",
+
 		-- game/props
 		props_manage_command = "प्रॉप्स_मैनेज",
 		props_manage_command_help = "निकटवर्ती प्रॉप्स का प्रबंधन करें।",
@@ -2877,14 +2921,6 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		spawn_prop_command_parameter_no_pickup = "खरीद नहीं",
 		spawn_prop_command_parameter_no_pickup_help = "क्या इस प्रॉप को केवल सुपर एडमिन्स द्वारा ही उठाया जा सकता है?",
 		spawn_prop_command_substitutes = "",
-
-		spawn_exact_prop_command = "बिल्कुल ठीक प्रॉप जन्माना",
-		spawn_exact_prop_command_help = "अपने बिल्कुल सही स्थान पर एक प्रॉप जन्माएं।",
-		spawn_exact_prop_command_parameter_model_name = "मॉडल नाम",
-		spawn_exact_prop_command_parameter_model_name_help = "आप जिस प्रोप मॉडल को स्पॉन करना चाहते हैं।",
-		spawn_exact_prop_command_parameter_ground = "जमीन",
-		spawn_exact_prop_command_parameter_ground_help = "वह प्रोप जमीन पर स्पॉन किया जाना चाहिए या नहीं।",
-		spawn_exact_prop_command_substitutes = "",
 
 		props_debug_command = "प्रोप्स डीबग",
 		props_debug_command_help = "आपके आसपास सभी प्रोप्स को डीबग करता है।",
@@ -3115,37 +3151,9 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		tablet_command_substitutes = "",
 
 		-- game/test_server
-		set_vehicle_preset_command = "set_vehicle_preset",
-		set_vehicle_preset_command_help = "आपकी वर्तमान वाहन को पूरी तरह से अपग्रेड करता है और निर्दिष्ट प्रीसेट के साथ रंग लागू करता है।",
-		set_vehicle_preset_command_parameter_preset = "प्रीसेट",
-		set_vehicle_preset_command_parameter_preset_help = "आप लागू करना चाहते हैं की प्रीसेट रंग (लाल, नीला, हरा, पीला, नारंगी, सफेद, काला)।",
-		set_vehicle_preset_command_substitutes = "वाहन_प्रीसेट",
-
-		detach_all_doors_command = "detach_all_doors",
-		detach_all_doors_command_help = "आप वर्तमान में है वाहन के सभी दरवाजों को अलग करता है।",
-		detach_all_doors_command_substitutes = "",
-
-		pop_all_tires_command = "saare_tyre_fod",
-		pop_all_tires_command_help = "Aapke dwara chalai jaane wali gaadi ke saare tyre fod deta hai.",
-		pop_all_tires_command_substitutes = "",
-
-		upgrade_vehicle_fully_command = "gaadi_poori_taraha_se_upgrade_karein",
-		upgrade_vehicle_fully_command_help = "Aapke dwara chalai jaane wali gaadi ko poori taraha se upgrade karta hai.",
-		upgrade_vehicle_fully_command_substitutes = "",
-
-		random_vehicle_colors_command = "gaadi_ke_rang_ko_randomize_karein",
-		random_vehicle_colors_command_help = "Aapke dwara chalai jaane wali gaadi ke rang ko randomize karta hai.",
-		random_vehicle_colors_command_parameter_lights = "lights",
-		random_vehicle_colors_command_parameter_lights_help = "Kya lights bhi randomize honge (xenon aur neon).",
-		random_vehicle_colors_command_substitutes = "",
-
-		starve_command = "bhookamp",
-		starve_command_help = "आपका भोजन व तृष्णा शून्य हो जाएगा।",
-		starve_command_substitutes = "",
-
-		car_command = "गाड़ी",
-		car_command_help = "यह एक यादृच्छिक गाड़ी उत्पन्न करता है।",
-		car_command_substitutes = "",
+		test_menu_command = "टेस्ट मेनू",
+		test_menu_command_help = "टेस्ट सर्वर मेनू को टॉगल करें।",
+		test_menu_command_substitutes = "",
 
 		-- game/time_scale
 		set_time_scale_command = "टाइम स्केल सेट करें",
@@ -4061,6 +4069,10 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		amount = "राशि",
 		target = "लक्ष्य",
 
+		confirm_target = "क्या आप \"${name}\" को $${amount} का ट्रांसफर करना चाहते हैं?",
+		cancel = "नहीं, रद्द करें",
+		confirm_transfer = "हाँ, ट्रांसफर करें",
+
 		failed_deposit = "पैसे जमा करने में विफल",
 		failed_withdraw = "पैसे निकालने में विफल",
 		failed_transfer = "पैसे हस्तांतरित करने में विफल",
@@ -4841,6 +4853,16 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		failed_reconnect = "कमांड सॉकेट से रिकनेक्ट करने में विफल।"
 	},
 
+	containers = {
+		drill_container = "कंटेनर को ड्रिल करने के लिए ~INPUT_CONTEXT~ दबाएँ।",
+
+		drilling_container = "ड्रिलिंग कंटेनर",
+		failed_drill = "कंटेनर को खोलने में विफल रहा ड्रिल।",
+		drill_success = "कंटेनर को सफलतापूर्वक खोल दिया गया।",
+
+		container_blip = "कंटेनर"
+	},
+
 	crafting = {
 		menu_title = "क्राफ्टिंग",
 		close_menu = "मेनू बंद करें",
@@ -5229,6 +5251,24 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		broke_ring = "रिंग ब्रेक हो गया।",
 		failed_break_ring = "रिंग तोड़ने में विफल रहा।",
 
+		mix_lean = "मिक्स लीन",
+		press_to_mix_lean = "[${SeatEjectKey}] मिक्स लीन करें",
+		mixing_lean = "मिक्सिंग लीन",
+		mixed_lean = "लीन मिश्रित कर दी गई।",
+		failed_mix_lean = "लीन मिश्रित करने में विफल रहा।",
+
+		craft_pager = "क्राफ्ट पेजर",
+		press_to_craft_pager = "[${SeatEjectKey}] क्राफ्ट पेजर बनाएं",
+		crafting_pager = "पेजर क्राफ्ट कर रहा है",
+		crafted_pager = "पेजर बनाया गया।",
+		failed_craft_pager = "पेजर बनाने में विफल रहा।",
+
+		craft_multi_tool = "मल्टी टूल बनाएं",
+		press_to_craft_multi_tool = "[${SeatEjectKey}] मल्टी टूल बनाएं",
+		crafting_multi_tool = "मल्टी टूल बनाया जा रहा है।",
+		crafted_multi_tool = "मल्टी टूल बनाया गया।",
+		failed_craft_multi_tool = "मल्टी टूल बनाने में विफल रहा।",
+
 		no_required_items = "आपके पास सभी आवश्यक आइटम नहीं हैं।",
 
 		debug_multi = "-एकाधिक आउटपुट-",
@@ -5498,6 +5538,8 @@ OP.Global.Locales.Languages["hi-IN"] = {
 	},
 
 	daily_activities = {
+		not_enough_money = "आपके पास पर्याप्त धन नहीं है।",
+
 		press_to_daily_activities = "[${InteractionKey}] रोज़ाना गतिविधियाँ",
 		daily_activities = "रोज़ाना गतिविधियाँ",
 		resets_in = "${resetsIn} में रीसेट हो जाएगा...",
@@ -5513,6 +5555,10 @@ OP.Global.Locales.Languages["hi-IN"] = {
 
 		reset_daily_activities_no_permissions = "खिलाड़ी ने उनकी रोज़ाना गतिविधियों को उचित अनुमतियों के बिना रीसेट करने का प्रयास किया।",
 		reset_daily_activities = "दैनिक गतिविधियों को रीसेट करें।",
+
+		task_progress = "कार्य प्रगति: ${task} (${remain} शेष हैं)",
+		task_progress_money = "कार्य प्रगति: ${task} ($${remain} शेष हैं)",
+		task_finished = "कार्य समाप्त: ${task}",
 
 		parachute_from_location = "${location} से पैराशूट झरना।",
 		gamble_at_blackjack = "${amount} हाथ ब्लैकजैक मेज़ पर जुआ खेलें।",
@@ -5530,7 +5576,11 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		dig_up_a_treasure = "एक खजाने को खोदें जिसमें एक खजाने का मानचित्र हो।",
 		refine_gems = "${amount} जेम्स को शुद्ध करें।",
 		visit_location = "${location} जाएं।",
-		visit_the_location = "${location} जाएं।"
+		visit_the_location = "${location} जाएं।",
+
+		confirm_task_refresh = "क्या आप वाकई इस टास्क को रिफ्रेश करना चाहते हैं? इसकी लागत $${cost} है।",
+		yes = "हाँ",
+		no = "नहीं"
 	},
 
 	dashcam = {
@@ -5687,7 +5737,16 @@ OP.Global.Locales.Languages["hi-IN"] = {
 
 		network_debug_logs_title = "नेटवर्क डिबग चालू कर दिया गया",
 		network_debug_logs_details_on = "${consoleName} ने अपना नेटवर्क डिबग चालू किया।",
-		network_debug_logs_details_off = "${consoleName} ने अपना नेटवर्क डिबग बंद किया।"
+		network_debug_logs_details_off = "${consoleName} ने अपना नेटवर्क डिबग बंद किया।",
+
+		invalid_server_id = "अमान्य सर्वर आईडी।",
+		debug_info_failed = "डीबग जानकारी एकत्र करने में विफल।",
+		close = "बंद करें",
+		import = "आयात करें",
+		export = "निर्यात करें",
+		copied = "कॉपी हो गया!",
+		invalid_data = "अमान्य डेटा।",
+		invalid_json = "अमान्य जेसोन।"
 	},
 
 	debug_menu = {
@@ -6105,14 +6164,6 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		failed_start_run = "गन चलाने में विफल हो गया।",
 		hack_timeout = "सर्वर से कनेक्शन खत्म हो गया, दुबारा प्रयास करें।",
 
-		drop_blip = "बंदूक खंड",
-
-		drill_container = "खंड को खोलने के लिए ~INPUT_CONTEXT~ दबाएं।",
-
-		drilling_container = "खंड खोलना",
-		failed_drill = "खंड खोलने में विफल रहा।",
-		drill_success = "खंड को सफलतापूर्वक खोल लिया और 1x ${item} पाया।",
-
 		started_run_logs_title = "बंदूक रन",
 		started_run_logs_details = "${consoleName} ने बंदूक रन हैक शुरू किया।",
 		finished_run_logs_title = "बंदूक रन ड्रॉप",
@@ -6123,11 +6174,18 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		press_e_to_talk = "जिम से बात करने के लिए ~INPUT_CONTEXT~ दबाएँ।",
 		trader_closed = "जिम की दुकान वर्तमान में बंद है।",
 
+		sorry_closed = "माफ़ कीजिये दिल्ली मेरे दोस्त, दुकान बंद है।",
+		sorry_closed_hug = "आपके आलिंगन के लिए धन्यवाद परिवार। :)",
+		sorry_closed_fight = "हे भाई, शांत बैठो। मैंने कुछ नहीं किया।",
+
 		trader_locked = "जिम उसकी दुकान खोलने से पहले कुछ चीजें मांगता है।",
 		unlock_trader = "जिम को चीज प्रदान करें।",
 
+		trader_duty = "हाय ओफिसर, आपको निराश करने के लिए क्षमा करें, लेकिन मैंने अभी दुकान बंद कर दिया है। दूसरी बार वापस आइए!",
+
 		purchase = "खरीद",
 		out_of_stock = "स्टॉक समाप्त",
+		special_offer = "विशेष पेशकश!",
 
 		failed_trader_closed = "हथियार खरीदने में विफल, जिम की दुकान बंद है।",
 		failed_no_stock = "हथियार खरीदने में विफल, कोई स्टॉक शेष नहीं है।",
@@ -6148,7 +6206,13 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		slogan_3 = "जब संदेह हो,.. बाहर निकाल लो!",
 		slogan_4 = "हाथ में बंदूक रखना, फोन पर कॉप से बेहतर है।",
 
-		copyright = "कॉपीराइट © 2009-2016 जिम'स गन शॉप एनसी। सभी अधिकार सुरक्षित"
+		copyright = "कॉपीराइट © 2009-2016 जिम'स गन शॉप एनसी। सभी अधिकार सुरक्षित",
+
+		remaining_messages = "शेष संदेश: ${messages}",
+		no_messages_left = "पेजर शेष संदेश नहीं रहे हैं।",
+		just_used_pager = "आपने अभी पेजर का उपयोग किया है, इसे फिर से उपयोग करने से पहले थोड़ी देर प्रतीक्षा करें।",
+		page_trader_closed = "जिम जवाब नहीं दे रहा है, शायद वह बंद हो गया हो।",
+		page_success = "जिम ने अपनी कठोर स्थान तक पहुंचने का संकेत भेजा है।"
 	},
 
 	hacking = {
@@ -6544,7 +6608,6 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		los_santos_golf_club = "लॉस सैंटोस गोल्फ क्लब",
 		arcade_bar = "आर्केड बार",
 		japanese_restaurant = "जापानी रेस्तरां",
-		japanese_restaurant_kitchen = "जापानी रेस्तरां किचन",
 		["945_studios"] = "945 Studios",
 		grain_mill = "अनाज की चक्की",
 		pd_prefix = "पुलिस विभाग",
@@ -6794,6 +6857,9 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		cleaning_kit = "क्लीनिंग किट",
 		cleaning_kit_description = "अपने वाहन को साफ करने के लिए पूर्ण, या आपके चारों ओर के खून स्थानों को सुखाने के लिए पूर्ण।",
 
+		multi_tool = "मल्टी टूल",
+		multi_tool_description = "एक उपकरण जो विभिन्न चीजों के लिए उपयोग किया जा सकता है।",
+
 		microphone_bug = "माइक्रोफोन बग",
 		microphone_bug_description = "बातचीत में घुसने के लिए उपयोग किया जाता है।",
 		vehicle_tracker = "वाहन ट्रैकर",
@@ -6969,6 +7035,15 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		chocolate_milkshake = "चॉकलेट मिल्कशेक",
 		chocolate_milkshake_description = "एक अद्भुत दिखने वाला शेक, सिर्फ आशा करते हैं कि आप एक सिप लेने से पहले सीआईए के पीछे नहीं होंगे...",
 
+		burrito = "बुरिटो",
+		burrito_description = "एक बुरिटो मेक्सिकन और टेक्स-मेक्स भोजन में एक आटे का टोर्टिला होता है जिसमें विभिन्न अन्य सामग्री होती हैं।",
+		tostada = "टोस्टाडा",
+		tostada_description = "टोस्टाडा एक कॉर्न टॉर्टिला होती है जिसे गहरे तेल में तला जाता है या तोस्ट किया जाता है।",
+		quesadilla = "क्वेसाडिला",
+		quesadilla_description = "क्वेसाडिला मेक्सिकन डिश है जिसमें टॉर्टिला प्रमुखतः पनीर, और कभी-कभी मांस, बीन्स और मसालों से भरी होती है और फिर एक ग्रिडल पर पकाई जाती है।",
+		pineapple_cake = "अनानास केक",
+		pineapple_cake_description = "अनानास केक ताइवान में खाया जाने वाला डिजर्ट है। टिपिकल ताइवानी अनानास केक में एक मोटी परत अनानास जैम से भरी होती है जो बहुत मीठी और खट्टी लगती है।",
+
 		dog_food = "कुत्ते का खाना",
 		dog_food_description = "कुत्तों और अन्य संबंधित श्वानों द्वारा सेवन के लिए विशेष रूप से तैयार और उनके लिए खाद्य पदार्थ होता है।",
 		cat_food = "बिल्ली का भोजन",
@@ -7093,6 +7168,9 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		oxy_prescription = "ऑक्सी नुस्खा",
 		oxy_prescription_description = "असामाजिक ऑक्सी नुस्खा।",
 
+		generic_prescription = "जेनेरिक डाक्तरी नुस्खा",
+		generic_prescription_description = "कुछ दवाओं के लिए डाक्तरी नुस्खा। रिफिल के लिए अच्छा होना चाहिए।",
+
 		brownies = "ब्राउनीज़",
 		brownies_description = "गोय, फोमी, और डबल चॉकलेट की मात्रा, अत्यधिक किक की संकेत तक, आपको वास्तव में बैठ कर सभी जीवन के प्रश्नों पर प्रश्न उठाने पर मजबूर कर दें।",
 
@@ -7109,6 +7187,9 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		decryption_key_green_description = "क्या आप जानते हैं? पहले कोक हरे रंग का था।",
 		decryption_key_blue = "नीली डेक्रिप्शन कुंजी",
 		decryption_key_blue_description = "क्या आप जानते हैं? नीले पैरों वाली एक चील होती है? संदर्भ: https://en.wikipedia.org/wiki/Blue-footed_booby",
+
+		pager = "पेजर",
+		pager_description = "एक पेजर। केवल एक संपर्क और प्रीपेड कार्ड लगने के लिए लगता है जो कुछ संदेश ही भेज सकता है।",
 
 		ballistic_shield = "बैलिस्टिक ढाल",
 		ballistic_shield_description = "यह ढाल आपके गैंगलैंड वाले क्षेत्रों में वेंचर करते समय उपयोग की जानी चाहिए।",
@@ -7142,6 +7223,22 @@ OP.Global.Locales.Languages["hi-IN"] = {
 
 		shrooms = "श्रूम्स",
 		shrooms_description = "कोई ने कहा कि पिज्जा पर इन्हें रखो, लेकिन अब पिज्जा मुझ पर चढ़ रही है ... वेट मैं कौन हूँ?",
+
+		lean = "लीन",
+		lean_description = "थोड़े से सप्पली, सिप, सिप होते हुए कुछ सूक्ष्म टि्का।",
+
+		jolly_ranchers = "जॉली रैंचर्स",
+		jolly_ranchers_description = "जॉली रैंचर्स के मिठास भरे और तलख फलों का आनंद लें, उन शानदार हार्ड कैंडी का भोजन करें जो फलियों के साथ भरा होता है।",
+		jolly_rancher_watermelon = "वाटरमेलन जॉली रैंचर",
+		jolly_rancher_watermelon_description = "इन पसंदीदा जॉली रैंचर हार्ड कैंडी के साथ वाटरमेलन का ताजगी भरा स्वाद अनुभव करें।",
+		jolly_rancher_raspberry = "रसभरी जॉली रैंचर",
+		jolly_rancher_raspberry_description = "इन जॉली रैंचर हार्ड कैंडी में मीठा और खट्टा रसभरी फ्लेवर का स्वाद आनंद लें।",
+		jolly_rancher_apple = "एप्पल जॉली रैंचर",
+		jolly_rancher_apple_description = "इन स्वादिष्ट जॉली रैंचर हार्ड कैंडी के साथ सेब का ताजा और कच्चा स्वाद आनंद लें।",
+		jolly_rancher_cherry = "चेरी जॉली रैंचर",
+		jolly_rancher_cherry_description = "इन अपने दिलचस्प जॉली रैंचर हार्ड कैंडीज़ के साथ जोशीले और जानदार चेरी स्वाद में खुश हों।",
+		jolly_rancher_grape = "अंगूर जॉली रैंचर",
+		jolly_rancher_grape_description = "इन मुँह-पानी आवाज करा देने वाले जॉली रैंचर हार्ड कैंडीज़ के साथ अंगूर के रसीले और स्वादिष्ट स्वाद का अनुभव करें।",
 
 		bucket = "बाल्टी",
 		bucket_description = "एक बनावटी हेलमेट के रूप में उपयोग किया जा सकता है।",
@@ -8046,7 +8143,10 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		weapon_addon_m6ic_description = "पूर्ण व्यक्ति के लिए पूर्ण बंदूक, बस ट्रैकसूट मत भूलना।",
 
 		weapon_addon_hk416 = "एचएंडके 416",
-		weapon_addon_hk416_description = "H&K 416, फायरआर्म्स का फेरारी - चमकदार, शक्तिशाली और पूर्वावलोकन देखते ही लोगों को हक्का-बक्का कर देने वाला। यह आपके ट्रिगर फिंगर के लिए एक व्यक्तिगत प्रशिक्षक जैसा है, जो आपकी शत्रुओं को जलने के लिए परिणाम प्रदान करता है। अपने नए BFF (बेस्ट फायरआर्म पुरे जीवन के लिए) से मिलने के लिए नमस्ते बोलो!"
+		weapon_addon_hk416_description = "H&K 416, फायरआर्म्स का फेरारी - चमकदार, शक्तिशाली और पूर्वावलोकन देखते ही लोगों को हक्का-बक्का कर देने वाला। यह आपके ट्रिगर फिंगर के लिए एक व्यक्तिगत प्रशिक्षक जैसा है, जो आपकी शत्रुओं को जलने के लिए परिणाम प्रदान करता है। अपने नए BFF (बेस्ट फायरआर्म पुरे जीवन के लिए) से मिलने के लिए नमस्ते बोलो!",
+
+		weapon_addon_680 = "रेमिंगटन 680",
+		weapon_addon_680_description = "रेमिंगटन आर्म्स ने 1950 में विकसित एक पंप एक्शन शॉटगन है जो रेमिंगटन 680 कहलाता है।"
 	},
 
 	items = {
@@ -8173,6 +8273,25 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		read_catalog = "कैटलॉग पढ़ने के लिए ~g~${InteractionKey} ~w~दबाएं।"
 	},
 
+	lean = {
+		press_to_sell_lean = "लीन बेचने के लिए ~INPUT_CONTEXT~ दबाएँ।",
+		local_not_interested = "यह स्थानीय अभी इच्छुक नहीं लगता।",
+		not_interested = "यह स्थानीय आपकी लीन में दृष्टिकोण रखने में इच्छुक नहीं लगता है।",
+		selling_lean = "लीन बेच रहा है।",
+
+		no_lean = "आपके पास कोई लीन नहीं है।",
+		no_jolly_ranchers = "आपके पास कोई जॉली रैंचर नहीं हैं।",
+		press_to_mix_lean = "[${SeatEjectKey}] जॉली रैंचर के साथ लीन मिक्स करने के लिए दबाएँ",
+		mix_menu = "लीन मिक्स करें",
+		mix_with = "${flavor} के साथ मिक्स करें",
+		close_menu = "मेनू बंद करें",
+		mix_failed = "लीन को जॉली रैंचर के साथ मिक्स करने में विफल रहा।",
+
+		mixed_with = "${flavor} के साथ मिश्रित",
+		mixed_with_label = "लीन (${flavor})",
+		mixing = "लीन मिश्रण"
+	},
+
 	leashes = {
 		press_to_use_leash = "[${InteractionKey}] लीश उपयोग करें।",
 		putting_leash_on = "लीश पहेंचाई जा रही है।",
@@ -8208,10 +8327,15 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		disallowed_words_in_character_name = "शायद नाम में एक बुरा शब्द के साथ चरित्र बनाने का प्रयास किया गया था: \"${characterName}\"",
 		disallowed_birthday_ban = "शायद जन्मदिन में एक बुरा शब्द शामिल करते हुए चरित्र बनाने का प्रयास किया गया था: \"${birthday}\"",
 
+		inventory_help_text = "अपनी इन्वेंट्री खोलने के लिए ~INPUT_REPLAY_SHOWHOTKEY~ दबाएं।",
+
 		welcome_to = "आपका स्वागत है",
 		press = "दबाएं",
 		enter = "प्रवेश करें",
 		to_join = "शामिल होने के लिए",
+		in_game_time = "शहर का समय अभी है",
+		am = "सुबह",
+		pm = "शाम",
 		changelogs = "बदलाव की लिस्ट",
 		fetching_character_data = "चरित्र डेटा प्राप्त कर रहा है...",
 		yes = "हाँ",
@@ -8303,7 +8427,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		los_santos_police_dept = "लॉस सैंटोस पुलिस डिपार्टमेंट",
 
 		welcome_msg_title = "${communityName} में आपका स्वागत है!",
-		welcome_msg = "आपको शुरुआत में आरंभ करने के लिए कुछ आइटम मिल गए हैं। आप 1-5 की तीव्रता कुंजियों का उपयोग करके अपनी हॉटबार में आइटम उपयोग कर सकते हैं।  \n\n*अपना ब्रोशर पढ़ने के लिए 1 दबाएं *",
+		welcome_msg = "आपको शुरू करने में मदद करने के लिए कुछ आइटम मिले हैं। आप 1-5 कुंजियों का उपयोग करके हॉटबार में आइटम का उपयोग कर सकते हैं।\n\nअपनी इन्वेंट्री खोलने के लिए **${InventoryKey}** दबाएं या फिर **1** दबाएं और अपनी ब्रोशर पढ़ें।",
 
 		press_to_go_back_to_menu = "मेनू पर वापस जाने के लिए ~g~${InteractionKey}~w~ दबाएं।",
 		go_back_to_menu = "मेनू पर वापस जाएं।",
@@ -8327,6 +8451,15 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		heroic_tier = "शूरवीर श्रेणी",
 		legendary_tier = "उपन्यासकार श्रेणी",
 		godlike_tier = "देवतासूची श्रेणी"
+	},
+
+	logs = {
+		invalid_server_id = "अवैध सर्वर आईडी।",
+		logs_failed = "लॉग लोड करने में विफल।",
+
+		close = "बंद करें",
+
+		get_logs_no_permissions = "खिलाड़ी उचित अनुमतियाँ न होने के कारण लॉग प्राप्त करने की कोशिश की।"
 	},
 
 	loot = {
@@ -8439,6 +8572,8 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		drill_drops = "आपने इस पत्थर में कुछ जेम्स पाएं।",
 		used_drill = "आपका ड्रिल टूट गया।",
 		still_shook = "आप अभी भी पिछले विस्फोट से हिला हुए हैं और इस पत्थर में कोई भी रत्न नहीं मिला।",
+
+		kill_label = "खनन विस्फोट",
 
 		recharging_scanner = "स्कैनर रिचार्ज हो रहा है ${percentage}%।",
 		scanning = "स्कैन हो रहा है ${percentage}%।",
@@ -8788,6 +8923,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		sound_effect_save = "सहेजें",
 		sound_effect_reset = "रीसेट करें",
 
+		disable_tablet_animation = "टैबलेट एनिमेशन अक्षम करें",
 		staff_notifications_reports = "रिपोर्ट अधिसूचनाएँ",
 		staff_notifications_staff_chat = "कर्मचारी चैट अधिसूचनाएँ",
 		staff_notifications_general = "सामान्य अधिसूचनाएँ",
@@ -9573,6 +9709,19 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		failed_pay = "पार्किंग मीटर का भुगतान करने में विफल।"
 	},
 
+	pause_menu = {
+		sunday = "रविवार",
+		monday = "सोमवार",
+		tuesday = "मंगलवार",
+		wednesday = "बुधवार",
+		thursday = "गुरुवार",
+		friday = "शुक्रवार",
+		saturday = "शनिवार",
+
+		bank = "बैंक",
+		cash = "नकदी"
+	},
+
 	pawn_shops = {
 		sell_items = "${itemLabel} बेचें",
 		press_to_sell_items = "[${InteractionKey}] ${itemLabel} बेचने के लिए दबाएं",
@@ -9613,7 +9762,8 @@ OP.Global.Locales.Languages["hi-IN"] = {
 
 	ped_objects = {
 		illegal_ped_object = "पेड वस्तुओं की 'अनुमति दी गई' सूची में नहीं होने के कारण पेड वस्तु जोड़ने का प्रयास।",
-		illegal_ped_weapon_object = "हथियार सूची में न होने के कारण पेड हथियार वस्तु जोड़ने का प्रयास।"
+		illegal_ped_weapon_object = "हथियार सूची में न होने के कारण पेड हथियार वस्तु जोड़ने का प्रयास।",
+		illegal_raw_ped_object = "उचित अनुमतियाँ न होने के कारण एक कच्चे पेड ऑब्जेक्ट को जोड़ने की कोशिश की।"
 	},
 
 	ped_task = {
@@ -9749,6 +9899,16 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		pools_overflowing = "पूल ओवरफ्लो: ~r~${poolsOverflowing}"
 	},
 
+	prescriptions = {
+		redeem_prescription = "[${SeatEjectKey}] रेडीम प्रिस्क्रिप्शन",
+
+		redeemed_prescription = "पर्चे को सफलतापूर्वक रिडीम किया गया।",
+		failed_redeem = "पर्चे को रिडीम करने में विफल।",
+
+		remeeded_prescription_logs_title = "रिडीम हुआ पर्चा",
+		remeeded_prescription_logs_details = "${consoleName} ने एक पर्चे को रिडीम कर लिया और 1x `${item}` प्राप्त किया।"
+	},
+
 	printer = {
 		use_printer = "[${InteractionKey}] प्रिंटर का उपयोग करें",
 
@@ -9760,6 +9920,11 @@ OP.Global.Locales.Languages["hi-IN"] = {
 
 		printed_logs_title = "छापी गई छवि",
 		printed_logs_details = "${consoleName} ने `${url}` URL के साथ एक छवि छापी।"
+	},
+
+	prop_hide = {
+		no_model = "~r~कोई मॉडल नहीं",
+		status_text = "संपत्ति: ~g~${label}"
 	},
 
 	props = {
@@ -9926,48 +10091,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		better_stamina = "${duration} मिनट के लिए स्थमित होकर दौड़ सकें।",
 		more_inventory_space = "${duration} मिनट के लिए अतिरिक्त ${amount} इन्वेंटरी स्थान।",
 
-		buffs_note = "बफर सिर्फ इस भवन की परिसर से बाहर जाने के बाद ही सक्रिय होंगे।",
-
-		press_to_prepare_food = "[${InteractionKey}] खाना तैयार करें",
-		prepare_food = "खाना तैयार करें",
-
-		kissaki_kitchen = "किस्साकी किचन",
-
-		craft = "क्राफ्ट",
-		putting_down_ingredients = "सामग्री रख दी जाती है",
-
-		pick_up = "उठाएँ: ~g~${name}",
-		press_to_pick_up = "[${InteractionKey}] उठाएँ: ~g~${name}",
-
-		prepare_rice = "~g~${name}~s~: चावल तैयार करें (${completed}%~s~)",
-		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: चावल तैयार करें (${completed}%~s~)",
-		preparing_rice_starting = "चावल तैयार करना शुरू हो रहा है",
-		preparing_rice = "~g~${name}~s~: चावल तैयार कर रहे हैं... (${completed}%~s~)",
-
-		prepare_fillings = "~g~${name}~s~: भराव तैयार करें (${completed}%~s~)",
-		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: भराव तैयार करें (${completed}%~s~)",
-		preparing_fillings_starting = "भराई तैयार की जा रही है",
-		preparing_fillings = "~g~${name}~s~: भराई तैयार की जा रही है... (${completed}%~s~)",
-
-		prepare_rolling_mat = "~g~${name}~s~: रोलिंग मैट तैयार करें (${completed}%~s~)",
-		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: रोलिंग मैट तैयार करें (${completed}%~s~)",
-		preparing_rolling_mat_starting = "रोलिंग मैट तैयार कर रहे हैं",
-		preparing_rolling_mat = "~g~${name}~s~: रोलिंग मैट तैयार कर रहे हैं... (${completed}%~s~)",
-
-		assemble_sushi = "~g~${name}~s~: सुशी जोड़ें (${completed}%~s~)",
-		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: सुशी ढेर लें (${completed}%~s~)",
-		assembling_sushi_starting = "सुशी ढेर रही हो रही है",
-		assembling_sushi = "~g~${name}~s~: सुशी ढेर रही है... (${completed}%~s~)",
-
-		roll_sushi = "~g~${name}~s~: सुशी रोल करें (${completed}%~s~)",
-		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: सुशी रोल करें (${completed}%~s~)",
-		rolling_sushi_starting = "सुशी रोल करना शुरू किया जा रहा है",
-		rolling_sushi = "~g~${name}~s~: सुशी रोल कर रही है... (${completed}%~s~)",
-
-		slice_sushi = "~g~${name}~s~: सुशी काटें (${completed}%~s~)",
-		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: सुशी काटें (${completed}%~s~)",
-		slicing_sushi_starting = "सुशी काटना शुरू हो रहा है",
-		slicing_sushi = "~g~${name}~s~: सुशी काट रहा है... (${completed}%~s~)",
+		buffs_note = "बफर सिर्फ इस भवन की परिसर से बाहर जाने के बाद ही सक्रिय होंगे।"
 	},
 
 	riot_mode = {
@@ -10000,6 +10124,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		player_list = "खिलाड़ी सूची",
 		players = "खिलाड़ी",
 		total = "कुल",
+		total_staff = "कुल (कर्मचारी)",
 		recent_disconnections = "हाल के डिसकनेक्शन",
 		disconnected_player = "डिसकनेक्ट किया गया खिलाड़ी",
 		id = "आईडी",
@@ -10242,6 +10367,8 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		armor_ok = "आर्मर: ~g~${armor} / ${maxArmor}~w~",
 		armor_bad = "आर्मर: ~r~${armor} / ${maxArmor}~w~",
 
+		vehicle_health = "वाहन स्वास्थ्य: ${percentage}",
+
 		speed = "गति: ${speed}${unit}",
 		speed_mph = "mph",
 		speed_kmh = "kmh",
@@ -10293,10 +10420,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 	},
 
 	starter_car = {
-		your_vehicle_is_nearby = "आपकी निजी गाड़ी निकट है।",
-		would_you_like_directions = "क्या आप इसे खोजने के लिए निर्देश पाना चाहेंगे?",
-		press_to_respond = "स्वीकृति देने के लिए ~INPUT_FRONTEND_ACCEPT~ दबाएं या अस्वीकृति देने के लिए ~INPUT_FRONTEND_CANCEL~ दबाएं।",
-		follow_the_checkpoints = "चेकप्वाइंट्स का पालन करें।",
+		follow_the_checkpoints = "आपकी व्यक्तिगत वाहन पास में पार्क किया गया है। उसे खोजने के लिए चेकपॉइंट का पालन करें।",
 
 		received_logs_title = "प्राप्त शुरू हो रही कार",
 		received_logs_details = "${consoleName} ने एक शुरू हो रही कार प्राप्त की है (मॉडल: ${modelName})।"
@@ -10569,12 +10693,38 @@ OP.Global.Locales.Languages["hi-IN"] = {
 	},
 
 	test_server = {
+		menu_title = "ओपी-मेनू",
+
+		vehicles = "वाहन विकल्प",
+		spawn_car = "कार उत्पन्न करें",
+		upgrade_vehicle = "वाहन अपग्रेड करें",
+		pop_tires = "टायर फटना",
+		detach_doors = "दरवाजे अलग करें",
+		damage_vehicle = "वाहन को नुकसान पहुंचाएं",
+		repair_vehicle = "वाहन को मरम्मत करें",
+		delete_vehicle = "गाड़ी हटाएं",
+
+		player = "खिलाड़ी विकल्प",
+		starve = "भूखे रहें",
+		feed = "खुद को खिलाएं",
+		relief_stress = "तनाव कम करें",
+		reset_health = "स्वस्थ हो जाएं",
+		remove_injuries = "चोटों को हटाएं",
+
+		teleport = "टेलीपोर्ट विकल्प",
+		teleport_to = "टीपी करने के लिए",
+		tp_legion = "लीजियन स्क्वेयर",
+		tp_garage_a = "गेरेज A",
+		tp_paleto = "पालेटो बे",
+		tp_sandy = "सैंडी शोर्स",
+		tp_zancudo = "फोर्ट जांकुडो",
+		tp_airport = "एलएस हवाई अड्डा",
+		tp_carrier = "विमान पहियां",
+		tp_cayo = "कायो पेरीको",
+
 		you_are_not_in_a_vehicle = "आप गाड़ी में नहीं हैं।",
 		you_are_in_a_vehicle = "आप वर्तमान में एक गाड़ी में हैं।",
-		invalid_vehicle_preset = "अवैध वाहन प्रीसेट।",
 		fully_upgraded = "गाड़ी को सफलतापूर्वक अपग्रेड किया गया।",
-		applied_preset = "गाड़ी को सफलतापूर्वक प्रीसेट लागू किया गया।",
-		spawned_car = "${modelName} को उत्पन्न किया गया।",
 		just_spawned_a_car = "आपने एक कार उत्पन्न किया है, अगली बार ${time} इंतजार करें।"
 	},
 
@@ -11079,16 +11229,6 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		changed_job_details = "${consoleName} ने अपनी नौकरी `${jobName}` पर बदल दी।"
 	},
 
-	jobs = {
-		job_refreshed = "नौकरी रिफ्रेश की गई।",
-		something_went_wrong = "कुछ गड़बड़ हो गई।",
-		user_does_not_have_sent_character_loaded = "उपयोगकर्ता द्वारा संदिग्ध व्यक्ति लोड नहीं है।",
-		user_has_no_character_loaded = "उपयोगकर्ता के पास कोई भी व्यक्ति लोड नहीं है।",
-		user_not_found = "सर्वर पर भेजे गए उपयोगकर्ता को नहीं मिला।",
-		invalid_character_id = "अमान्य चरित्र आईडी पैरामीटर भेजा गया है।",
-		invalid_license_identifier = "अमान्य लाइसेंस पहचानकर्ता पैरामीटर भेजा गया है।"
-	},
-
 	police = {
 		aim_assist_enabled = "आपका निशान अब महान क्षमताओं से सज्जित होगा।",
 		aim_assist_disabled = "आप अब अपराधियों/ नीच को से कम नहीं निशाना बनाएँगे। त्वरित रूप से निशान उन्नयन करना सिफारिश किया जाता है।",
@@ -11298,6 +11438,8 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		helicopter_camera_vehicle_info_imperial = "गति: ${speed} मील/घंटा\nमॉडल: ${model}\nप्लेट: ${plate}",
 		helicopter_camera_altitude = "${altitude} फुट AGL",
 		helicopter_camera_altitude_asl = "${altitude} फुट ASL",
+		helicopter_camera_locked_on = "लॉक ऑन",
+		helicopter_camera_not_locked = "लॉक नहीं किया गया है",
 		unknown = "अज्ञात"
 	},
 

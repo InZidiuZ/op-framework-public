@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 14 (do not change)
+-- AUTO LOCALES: 15 (do not change)
 
 OP.Global.Locales.Languages["sv-SE"] = {
 	-- configuration settings for language
@@ -37,6 +37,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		the_trunk_is_occupied = "Bagageutrymmet är upptaget.",
 		unable_to_toggle_carry = "Vänligen vänta en stund innan du byter bärning.",
 		carry_disabled_animal = "Animal Peds kan inte bära.",
+
+		trunk_hint = "Använd \"/door\" för att öppna/stänga bagageluckan när du står nära den.",
 
 		cancel_piggyback = "Tryck på ~INPUT_FRONTEND_RRIGHT~ för att avbryta ryggtransport.",
 		piggyback_hop_on = "[${InteractionKey}] hoppa på",
@@ -715,6 +717,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		high_damage_ban = "Makten har gått överstyr och rubbat balansen i vår värld.",
 		suspicious_explosion_ban = "Tyvärr är det inte en Michael Bay-film. Överdriven användning av pyroteknik är inte tillåtet.",
 		semi_godmode_ban = "Din inställning till ungdomens källa verkar ha stört den naturliga tidens gång. Evigheten är inte lika roligt som det låter.",
+		invalid_health_ban = "Din hälsomätare verkar ha fått i sig lite för mycket spenat, Popeye.",
 
 		mp_f_freemode_01_label = "Fritt läge (kvinnlig)",
 		mp_m_freemode_01_label = "Fritt läge (manlig)",
@@ -738,6 +741,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		notification_spawned_object = "Anti-Cheat: Objekt skapat",
 		notification_driving_hotwire = "Anti-Cheat: Körning vid varningssignal",
 		notification_semi_godmode = "Anti-Cheat: Semi-Gudaläge",
+		notification_invalid_health = "Anti-Cheat: Ogiltig hälsa",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus",
@@ -786,9 +790,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		invincibility_screenshot = "Anticheat: Odödlig",
 		runtime_texture_screenshot = "Anticheat: Körningstextur (${textureDict}, ${textureName})",
 		bad_screen_word_screenshot = "Anticheat: Dåligt skärmsord (${words})",
-		freecam_detected_screenshot = "Anticheat: Freecam upptäckt (${distance}m)",
+		freecam_detected_screenshot = "Anti-Cheat: Freecam upptäckt",
 		driving_hotwire_screenshot = "Anticheat: Körning med startkablar",
-		semi_godmode_screenshot = "Anti-Cheat: Semi-Gudaläge"
+		semi_godmode_screenshot = "Anti-Cheat: Semi-Gudaläge",
+		invalid_health_screenshot = "Anti-Cheat: Ogiltig hälsa upptäckt"
 	},
 
 	authentication = {
@@ -839,6 +844,18 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		connection_cancelled = "Denna anslutning avbröts eftersom en annan redan är aktiv.",
 		no_reason_provided = "Ingen anledning angiven.",
 		discord_whitelist_id_not_found = "Vi kunde inte hitta din Discord-ID. Se till att du har Discord öppet i bakgrunden och att du har tillåtit FiveM att hämta data från din Discord-klient.\n\n${communityDiscord}"
+	},
+
+	characters = {
+		character_refreshed = "Karaktär uppdaterad.",
+		something_went_wrong = "Något gick fel.",
+		user_does_not_have_sent_character_loaded = "Användaren har inte laddat sin karaktär.",
+		user_has_no_character_loaded = "Användaren har ingen karaktär laddad.",
+		user_not_found = "Den skickade användaren hittades inte på servern.",
+		invalid_character_id = "Ogiltigt karaktär-id-parameter skickades.",
+		invalid_license_identifier = "Ogiltigt licensidentifieringsparameter skickades.",
+
+		your_character_refreshed = "Din karaktär har uppdaterats."
 	},
 
 	chat = {
@@ -951,8 +968,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		delete_vehicle_command = "radera_fordon",
 		delete_vehicle_command_help = "Radera ett fordon i närheten.",
-		delete_vehicle_command_parameter_ignore_heading = "ja",
+		delete_vehicle_command_parameter_ignore_heading = "ignorera riktning",
 		delete_vehicle_command_parameter_ignore_heading_help = "Vill du ignorera spelarens riktning? Om du lämnar detta tomt kommer det att fungera som ett `nej`.",
+		delete_vehicle_command_parameter_ignore_occupied = "ignorera upptagen",
+		delete_vehicle_command_parameter_ignore_occupied_help = "Vill du ignorera alla upptagna fordon? Att lämna detta tomt kommer att fungera som `nej`.",
 		delete_vehicle_command_substitutes = "rmb",
 
 		delete_vehicle_interactively_command = "radera_fordon_interaktivt",
@@ -1954,6 +1973,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		move_entity_command_parameter_network_id_help = "Nätverks-ID för enheten du vill flytta.",
 		move_entity_command_parameter_ground = "mark",
 		move_entity_command_parameter_ground_help = "Om enheten ska placeras korrekt på marken (endast fordon).",
+		move_entity_command_parameter_heading = "riktning",
+		move_entity_command_parameter_heading_help = "Om entiteten ska placeras med samma riktning som dig.",
 		move_entity_command_substitutes = "mv",
 
 		fake_lag_command = "fake_lag",
@@ -2093,6 +2114,12 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		define_area_command = "definiera_område",
 		define_area_command_help = "Definiera ett område.",
 		define_area_command_substitutes = "område",
+
+		debug_info_command = "debug_info",
+		debug_info_command_help = "Samla lite debuginfo om en viss spelare.",
+		debug_info_command_parameter_server_id = "server-id",
+		debug_info_command_parameter_server_id_help = "Spelaren du vill samla debuginfo för.",
+		debug_info_command_substitutes = "",
 
 		-- game/debug_menu
 		debug_menu_command = "felsökningsmeny",
@@ -2475,6 +2502,13 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		locate_entity_command_parameter_filter_help = "Vilket filter entiteten ska matcha (id: 12345, plåt: 90FMK072, osv.)",
 		locate_entity_command_substitutes = "le",
 
+		-- game/logs
+		logs_command = "loggar",
+		logs_command_help = "Visa de senaste serverloggar för en viss spelare.",
+		logs_command_parameter_server_id = "server id",
+		logs_command_parameter_server_id_help = "Spelarens server id.",
+		logs_command_substitutes = "",
+
 		-- game/loot
 		loot_debug_command = "loot_debug",
 		loot_debug_command_help = "Toggla loot debuggen.",
@@ -2507,6 +2541,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		check_vehicle_upgrades_command = "check_vehicle_upgrades",
 		check_vehicle_upgrades_command_help = "Kontrollerar om det närliggande fordonet har en motoruppgradering på nivå 5.",
 		check_vehicle_upgrades_command_substitutes = "kolla_uppgraderingar, uppgraderingar",
+
+		-- game/meow
+		meow_command = "mjau",
+		meow_command_help = "Mjau.",
+		meow_command_substitutes = "",
 
 		-- game/mining
 		mining_debug_command = "mining_debug",
@@ -2863,6 +2902,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		properties_debug_command_help = "Aktivera eller avaktivera felsökningsläge för egenskaper.",
 		properties_debug_command_substitutes = "egenskaper",
 
+		-- game/prop_hide
+		prop_hide_command = "prop_hide",
+		prop_hide_command_help = "Växla dolda objekt.",
+		prop_hide_command_substitutes = "",
+
 		-- game/props
 		props_manage_command = "hantera_föremål",
 		props_manage_command_help = "Hantera närliggande föremål.",
@@ -2877,14 +2921,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		spawn_prop_command_parameter_no_pickup = "ingen upphämtning",
 		spawn_prop_command_parameter_no_pickup_help = "Ska detta objekt bara kunna plockas upp av superadmin?",
 		spawn_prop_command_substitutes = "",
-
-		spawn_exact_prop_command = "spawn_ett_exakt_objekt",
-		spawn_exact_prop_command_help = "Skapa ett objekt på din exakta position.",
-		spawn_exact_prop_command_parameter_model_name = "modellnamn",
-		spawn_exact_prop_command_parameter_model_name_help = "Modellen för den prop du vill skapa.",
-		spawn_exact_prop_command_parameter_ground = "mark",
-		spawn_exact_prop_command_parameter_ground_help = "Om propen ska skapas på marken eller inte.",
-		spawn_exact_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
 		props_debug_command_help = "Debuggar alla props omkring dig.",
@@ -3115,37 +3151,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		tablet_command_substitutes = "",
 
 		-- game/test_server
-		set_vehicle_preset_command = "sätt_forvaltning_for_fordon",
-		set_vehicle_preset_command_help = "Uppgraderar fullständigt och applicerar färger med angivet förval för fordonet du befinner dig i.",
-		set_vehicle_preset_command_parameter_preset = "förval",
-		set_vehicle_preset_command_parameter_preset_help = "Färgförval du vill använda (röd, blå, grön, gul, orange, vit, svart).",
-		set_vehicle_preset_command_substitutes = "fordons_forval",
-
-		detach_all_doors_command = "lossa_alla_dorrar",
-		detach_all_doors_command_help = "Lossar alla dörrar på fordonet du befinner dig i.",
-		detach_all_doors_command_substitutes = "",
-
-		pop_all_tires_command = "spräng_alla_däck",
-		pop_all_tires_command_help = "Spränger alla däck på fordonet du befinner dig i.",
-		pop_all_tires_command_substitutes = "",
-
-		upgrade_vehicle_fully_command = "uppgradera_forrdon_fullständigt",
-		upgrade_vehicle_fully_command_help = "Uppgraderar det fordon du befinner dig i fullständigt.",
-		upgrade_vehicle_fully_command_substitutes = "",
-
-		random_vehicle_colors_command = "slumpmässiga_fordonfärger",
-		random_vehicle_colors_command_help = "Slumpmässigt bestämmer färgen på fordonet du befinner dig i.",
-		random_vehicle_colors_command_parameter_lights = "ljus",
-		random_vehicle_colors_command_parameter_lights_help = "Om ljusen på fordonet också ska slumpmässigt bestämmas (xenon och neon).",
-		random_vehicle_colors_command_substitutes = "",
-
-		starve_command = "svälj",
-		starve_command_help = "Sätter din hunger och törst till 0.",
-		starve_command_substitutes = "",
-
-		car_command = "bil",
-		car_command_help = "Spawnar en slumpmässig bil.",
-		car_command_substitutes = "",
+		test_menu_command = "test_menu",
+		test_menu_command_help = "Växla testservermenyn.",
+		test_menu_command_substitutes = "",
 
 		-- game/time_scale
 		set_time_scale_command = "tidskalautställning",
@@ -4061,6 +4069,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		amount = "Belopp",
 		target = "Mottagare",
 
+		confirm_target = "Vill du överföra ${amount} till \"${name}\"?",
+		cancel = "Nej, avbryt",
+		confirm_transfer = "Ja, överför",
+
 		failed_deposit = "Kunde inte sätta in pengar",
 		failed_withdraw = "Kunde inte ta ut pengar",
 		failed_transfer = "Kunde inte överföra pengar",
@@ -4841,6 +4853,16 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		failed_reconnect = "Misslyckades med att återansluta till kommandosocket."
 	},
 
+	containers = {
+		drill_container = "Tryck ~INPUT_CONTEXT~ för att borra upp behållaren.",
+
+		drilling_container = "Borrbehållare",
+		failed_drill = "Misslyckades att borra upp behållaren.",
+		drill_success = "Lyckades borra upp behållaren.",
+
+		container_blip = "Behållare"
+	},
+
 	crafting = {
 		menu_title = "Tillverkning",
 		close_menu = "Stäng Meny",
@@ -5229,6 +5251,24 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		broke_ring = "Bröt isär ring.",
 		failed_break_ring = "Misslyckades med att bryta isär ring.",
 
+		mix_lean = "Blanda Lean",
+		press_to_mix_lean = "[${SeatEjectKey}] Blanda Lean",
+		mixing_lean = "Blandar Lean",
+		mixed_lean = "Lean har blandats.",
+		failed_mix_lean = "Misslyckades att blanda Lean.",
+
+		craft_pager = "Tillverka Pager",
+		press_to_craft_pager = "[${SeatEjectKey}] Tillverka Pager",
+		crafting_pager = "Tillverkar Pager",
+		crafted_pager = "Pager har tillverkats.",
+		failed_craft_pager = "Misslyckades med att tillverka pager.",
+
+		craft_multi_tool = "Tillverka Multiverktyg",
+		press_to_craft_multi_tool = "[${SeatEjectKey}] Tillverka Multiverktyg",
+		crafting_multi_tool = "Tillverkar Multiverktyg",
+		crafted_multi_tool = "Tillverkade multiverktyg.",
+		failed_craft_multi_tool = "Misslyckades med att tillverka multiverktyg.",
+
 		no_required_items = "Du har inte alla nödvändiga föremål.",
 
 		debug_multi = "- Flera utgångar -",
@@ -5498,6 +5538,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 	},
 
 	daily_activities = {
+		not_enough_money = "Du har inte tillräckligt med pengar.",
+
 		press_to_daily_activities = "[${InteractionKey}] Dagliga aktiviteter",
 		daily_activities = "Dagliga aktiviteter",
 		resets_in = "Återställs om ${resetsIn}...",
@@ -5513,6 +5555,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		reset_daily_activities_no_permissions = "Spelaren försökte återställa sina dagliga aktiviteter utan lämpliga behörigheter.",
 		reset_daily_activities = "Återställ dagliga aktiviteter.",
+
+		task_progress = "Uppgiftsframsteg: ${task} (${remain} kvar)",
+		task_progress_money = "Uppgiftsframsteg: ${task} ($${remain} kvar)",
+		task_finished = "Uppgift Avslutad: ${task}",
 
 		parachute_from_location = "Fallskärm från ${location}.",
 		gamble_at_blackjack = "Spela ${amount} händer vid Blackjack-bordet.",
@@ -5530,7 +5576,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		dig_up_a_treasure = "Gräv upp en skatt med hjälp av en skattkarta.",
 		refine_gems = "Förädla ${amount} ädelstenar.",
 		visit_location = "Besök ${location}.",
-		visit_the_location = "Besök ${location}."
+		visit_the_location = "Besök ${location}.",
+
+		confirm_task_refresh = "Är du säker på att du vill uppdatera den här uppgiften? Kostnaden är $${cost}.",
+		yes = "Ja",
+		no = "Nej"
 	},
 
 	dashcam = {
@@ -5687,7 +5737,16 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		network_debug_logs_title = "Växlat nätverksfelsökning",
 		network_debug_logs_details_on = "${consoleName} växlade sin nätverksfelsökning på.",
-		network_debug_logs_details_off = "${consoleName} växlade sin nätverksfelsökning av."
+		network_debug_logs_details_off = "${consoleName} växlade sin nätverksfelsökning av.",
+
+		invalid_server_id = "Ogiltigt server-ID.",
+		debug_info_failed = "Det gick inte att samla in debuginfo.",
+		close = "Stäng",
+		import = "Importera",
+		export = "Exportera",
+		copied = "Kopierad!",
+		invalid_data = "Ogiltig data.",
+		invalid_json = "Ogiltig JSON."
 	},
 
 	debug_menu = {
@@ -6105,14 +6164,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		failed_start_run = "Misslyckades med att starta vapenhandel.",
 		hack_timeout = "Uppkopplingen till servern tappades, försök igen.",
 
-		drop_blip = "Vapencontainer",
-
-		drill_container = "Tryck ~INPUT_CONTEXT~ för att borra upp behållaren.",
-
-		drilling_container = "Borrar upp behållaren",
-		failed_drill = "Misslyckades med att borra upp behållaren.",
-		drill_success = "Lyckades borra upp behållaren och hittade ${item} x1.",
-
 		started_run_logs_title = "Vapenrån",
 		started_run_logs_details = "${consoleName} startade vapenrånshacket.",
 		finished_run_logs_title = "Vapenrån Leverans",
@@ -6123,11 +6174,18 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		press_e_to_talk = "Tryck ~INPUT_CONTEXT~ för att prata med Jim.",
 		trader_closed = "Jims butik är för tillfället stängd.",
 
+		sorry_closed = "Tyvärr, butiken är stängd.",
+		sorry_closed_hug = "Tack för kramen!",
+		sorry_closed_fight = "Lugna dig, jag har inte gjort något.",
+
 		trader_locked = "Jim behöver några saker från dig innan han är villig att öppna sin butik.",
 		unlock_trader = "Ge föremålet till Jim.",
 
+		trader_duty = "Hej officer, ledsen att jag måste göra dig besviken, men jag har just stängt butiken. Kom tillbaka en annan gång!",
+
 		purchase = "Köp",
 		out_of_stock = "Slut på lager.",
+		special_offer = "Specialerbjudande!",
 
 		failed_trader_closed = "Misslyckades att köpa vapen, Jim's butik är stängd.",
 		failed_no_stock = "Misslyckades att köpa vapen, det finns inget lager kvar.",
@@ -6148,7 +6206,13 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		slogan_3 = "När i tvivel ... ta upp den!",
 		slogan_4 = "En pistol i handen är bättre än en polis på telefonen.",
 
-		copyright = "Upphovsrätt © 2009-2016 Jim's Gun Shop NC. Alla rättigheter förbehållna."
+		copyright = "Upphovsrätt © 2009-2016 Jim's Gun Shop NC. Alla rättigheter förbehållna.",
+
+		remaining_messages = "Återstående meddelanden: ${messages}",
+		no_messages_left = "Pagern har inga meddelanden kvar.",
+		just_used_pager = "Du har precis använt pagern, vänta en stund innan du använder den igen.",
+		page_trader_closed = "Jim svarar inte, han måste vara stängd.",
+		page_success = "Jim skickade en ping till sin ungefärliga position."
 	},
 
 	hacking = {
@@ -6544,7 +6608,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		los_santos_golf_club = "Los Santos golfklubb",
 		arcade_bar = "Arkadbaren",
 		japanese_restaurant = "Japansk Restaurang",
-		japanese_restaurant_kitchen = "Japansk restaurangkök",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Kvarn",
 		pd_prefix = "Polis",
@@ -6794,6 +6857,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		cleaning_kit = "Städset",
 		cleaning_kit_description = "Perfekt för att rengöra ditt fordon, eller blodfläckarna som du har låtit torka i bakre delen av bagageutrymmet.",
 
+		multi_tool = "Multiverktyg",
+		multi_tool_description = "Ett verktyg som kan användas till alla möjliga saker.",
+
 		microphone_bug = "Mikrofon Bugg",
 		microphone_bug_description = "Används för att avlyssna samtal.",
 		vehicle_tracker = "Fordons spårare",
@@ -6969,6 +7035,15 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		chocolate_milkshake = "Chokladmilkshake",
 		chocolate_milkshake_description = "En fantastiskt god shake, bara hoppas att CIA inte är efter dig innan du tar första klunken...",
 
+		burrito = "Burrito",
+		burrito_description = "En burrito är en maträtt inom mexikansk och tex-mex-kök som består av en mjöl tortilla med olika andra ingredienser.",
+		tostada = "Tostada",
+		tostada_description = "En tostada är en majstortilla som antingen djupfriteras eller rostas.",
+		quesadilla = "Quesadilla",
+		quesadilla_description = "En quesadilla är en mexikansk maträtt och en typ av taco, som huvudsakligen består av en tortilla som är fylld med ost och ibland kött, bönor och kryddor, och sedan tillagas på en grillpanna.",
+		pineapple_cake = "Ananaskaka",
+		pineapple_cake_description = "Ananaskaka är en efterrätt som konsumeras i Taiwan. Den typiska taiwanesiska ananaskakan är fylld med ett tjockt lager av ananas sylt som smakar mycket sött och surt.",
+
 		dog_food = "Hundmat",
 		dog_food_description = "Hundmat är mat speciellt formulerad och avsedd för konsumtion av hundar och andra relaterade kaniner.",
 		cat_food = "Kattmat",
@@ -7093,6 +7168,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		oxy_prescription = "Oxy-recept",
 		oxy_prescription_description = "Skumt oxy-recept.",
 
+		generic_prescription = "Generisk Recept",
+		generic_prescription_description = "Recept för viss medicin. Ska vara bra för en påfyllning.",
+
 		brownies = "Brownies",
 		brownies_description = "Klibbiga, luftiga och dubbelt så mycket choklad med bara en hint av extra kick för att verkligen få dig att luta dig tillbaka och ifrågasätta hela livet.",
 
@@ -7109,6 +7187,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		decryption_key_green_description = "VISSTE DU? Koks var ursprungligen grön i färg.",
 		decryption_key_blue = "Blå dekrypteringsnyckel",
 		decryption_key_blue_description = "VISSTE DU? Det finns en blåfotad fågel? Referens: https://en.wikipedia.org/wiki/Blue-footed_booby",
+
+		pager = "Pagervibrator",
+		pager_description = "En pagervibrator. Verkar ha en enda kontakt och ett förbetalt kort som bara tillåter några meddelanden.",
 
 		ballistic_shield = "Ballistiskt sköld",
 		ballistic_shield_description = "Denna sköld bör användas när man ger sig ut i RP:s gängområden.",
@@ -7142,6 +7223,22 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		shrooms = "Svampar",
 		shrooms_description = "Någon sa att man skulle lägga dessa på pizza, men nu lägger pizzan sig själv på mig... vänta, vem är jag?",
+
+		lean = "Lean",
+		lean_description = "Sippin på lite sizzurp, sip, sippin på något, sip.",
+
+		jolly_ranchers = "Jolly Ranchers",
+		jolly_ranchers_description = "Unna dig de söta och syrliga smakerna av Jolly Ranchers, de klassiska hårda godisarna som exploderar med fruktig godhet.",
+		jolly_rancher_watermelon = "Jolly Rancher vattenmelon",
+		jolly_rancher_watermelon_description = "Upplev den uppfriskande smaken av vattenmelon med dessa underbara Jolly Rancher-hårda godisar.",
+		jolly_rancher_raspberry = "Jolly Rancher hallon",
+		jolly_rancher_raspberry_description = "Njut av den läcker blandning av söta och sura smaker i dessa Jolly Rancher-hårda godisar.",
+		jolly_rancher_apple = "Jolly Rancher äpple",
+		jolly_rancher_apple_description = "Uppskatta den spröda och sura smaken av äpple med dessa utsökta Jolly Rancher-hårda godisar.",
+		jolly_rancher_cherry = "Cherry Jolly Rancher",
+		jolly_rancher_cherry_description = "Unna dig den djärva och livliga körsbärssmaken av dessa oundvikliga Jolly Rancher hårda godisar.",
+		jolly_rancher_grape = "Grape Jolly Rancher",
+		jolly_rancher_grape_description = "Upplev den saftiga och läckra smaken av druva med dessa mumsiga Jolly Rancher hårda godisar.",
 
 		bucket = "Hink",
 		bucket_description = "Kan användas som improviserad hjälm.",
@@ -8046,7 +8143,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		weapon_addon_m6ic_description = "Den perfekta vapnet för den perfekta personen, glöm bara inte dressen.",
 
 		weapon_addon_hk416 = "H&K 416",
-		weapon_addon_hk416_description = "H&K 416, Ferrari bland skjutvapen - snygg, kraftfull och garanterad att väcka uppmärksamhet. Det är som att ha en personlig tränare för ditt avtryckarfinger, ger resultat som kommer att göra dina fiender avundsjuka. Säg hej till din nya BFF (Best Firearm Forever)!"
+		weapon_addon_hk416_description = "H&K 416, Ferrari bland skjutvapen - snygg, kraftfull och garanterad att väcka uppmärksamhet. Det är som att ha en personlig tränare för ditt avtryckarfinger, ger resultat som kommer att göra dina fiender avundsjuka. Säg hej till din nya BFF (Best Firearm Forever)!",
+
+		weapon_addon_680 = "Remington 680",
+		weapon_addon_680_description = "Remington 680 är en pump-hagelbössa som utvecklades av Remington Arms 1950."
 	},
 
 	items = {
@@ -8173,6 +8273,25 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		read_catalog = "Tryck på ~g~${InteractionKey} ~w~för att läsa katalogen"
 	},
 
+	lean = {
+		press_to_sell_lean = "Tryck ~INPUT_CONTEXT~ för att sälja Lean.",
+		local_not_interested = "Lokalen verkar inte vara intresserad just nu.",
+		not_interested = "Denna lokal verkar inte vara intresserad av din Lean.",
+		selling_lean = "Säljer Lean.",
+
+		no_lean = "Du har ingen Lean.",
+		no_jolly_ranchers = "Du har inga Jolly Rancher.",
+		press_to_mix_lean = "[${SeatEjectKey}] Blanda Lean med Jolly Ranchers",
+		mix_menu = "Blanda Lean",
+		mix_with = "Blanda med ${smak}",
+		close_menu = "Stäng Meny",
+		mix_failed = "Det gick inte att blanda Lean med Jolly Ranchers.",
+
+		mixed_with = "Blandad med ${flavor}",
+		mixed_with_label = "Magert (${flavor})",
+		mixing = "Blandar Magert"
+	},
+
 	leashes = {
 		press_to_use_leash = "[${InteractionKey}] Använd Koppel",
 		putting_leash_on = "Sätter på koppel.",
@@ -8208,10 +8327,15 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		disallowed_words_in_character_name = "Försökte skapa en karaktär med ett eventuellt olämpligt namn: \"${characterName}\"",
 		disallowed_birthday_ban = "Försökte skapa en karaktär med ett eventuellt olämpligt födelsedatum: \"${birthday}\"",
 
+		inventory_help_text = "Tryck på ~INPUT_REPLAY_SHOWHOTKEY~ för att öppna din inventering.",
+
 		welcome_to = "Välkommen till",
 		press = "Tryck",
 		enter = "ENTER",
 		to_join = "för att ansluta",
+		in_game_time = "Stadstiden är för närvarande",
+		am = "FM",
+		pm = "EM",
 		changelogs = "Ändringslogg",
 		fetching_character_data = "Hämtar karaktärsdata...",
 		yes = "Ja",
@@ -8303,7 +8427,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		los_santos_police_dept = "LOS SANTOS POLISAVDELNING",
 
 		welcome_msg_title = "Välkommen till ${communityName}!",
-		welcome_msg = "Du har fått några föremål för att hjälpa dig komma igång. Du kan använda föremålen i din varma lista genom att använda 1-5 tangenter.\n\n*Tryck på tangenten 1 för att läsa din broschyr.*",
+		welcome_msg = "Du har fått vissa föremål för att hjälpa dig komma igång. Du kan använda föremålen i din snabbmeny med knapparna 1-5. \n\nTryck på **${InventoryKey}** för att öppna din inventering eller tryck på **1** för att läsa din broschyr.",
 
 		press_to_go_back_to_menu = "Tryck på ~g~${InteractionKey}~w~ för att återgå till menyn.",
 		go_back_to_menu = "Gå tillbaka till menyn.",
@@ -8327,6 +8451,15 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		heroic_tier = "Hjältemodig nivå",
 		legendary_tier = "Legendarisk nivå",
 		godlike_tier = "Gudaliknande nivå"
+	},
+
+	logs = {
+		invalid_server_id = "Ogiltigt server-id.",
+		logs_failed = "Misslyckades med att ladda loggar.",
+
+		close = "Stäng",
+
+		get_logs_no_permissions = "Spelaren försökte hämta loggar utan korrekt behörighet."
 	},
 
 	loot = {
@@ -8439,6 +8572,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		drill_drops = "Du hittade några ädelstenar i stenen.",
 		used_drill = "Din borr gick sönder.",
 		still_shook = "Du är fortfarande skakad från den senaste explosionen och hittade inga ädelstenar i denna stenen.",
+
+		kill_label = "Gruvexplosion",
 
 		recharging_scanner = "Laddar Scanner ${percentage}%",
 		scanning = "Skannar ${percentage}%",
@@ -8788,6 +8923,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		sound_effect_save = "Spara",
 		sound_effect_reset = "Återställ",
 
+		disable_tablet_animation = "Inaktivera plattanimation",
 		staff_notifications_reports = "Anmälningsnotifikationer",
 		staff_notifications_staff_chat = "Personalchattnotifikationer",
 		staff_notifications_general = "Allmänna notifikationer",
@@ -9573,6 +9709,19 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		failed_pay = "Det gick inte att betala parkeringsautomaten."
 	},
 
+	pause_menu = {
+		sunday = "Söndag",
+		monday = "Måndag",
+		tuesday = "Tisdag",
+		wednesday = "Onsdag",
+		thursday = "Torsdag",
+		friday = "Fredag",
+		saturday = "Lördag",
+
+		bank = "Bank",
+		cash = "Kontanter"
+	},
+
 	pawn_shops = {
 		sell_items = "Sälj ${itemLabel}",
 		press_to_sell_items = "[${InteractionKey}] Sälj ${itemLabel}",
@@ -9613,7 +9762,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 	ped_objects = {
 		illegal_ped_object = "Försöker lägga till ett ped-objekt som inte finns i 'tillåtna' listan över ped-objekt.",
-		illegal_ped_weapon_object = "Försöker lägga till ett ped-vapenobjekt som inte finns i vapenlistan."
+		illegal_ped_weapon_object = "Försöker lägga till ett ped-vapenobjekt som inte finns i vapenlistan.",
+		illegal_raw_ped_object = "Försök att lägga till en rå ped-objekt utan korrekta behörigheter."
 	},
 
 	ped_task = {
@@ -9749,6 +9899,16 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		pools_overflowing = "Pooler översvämmade: ~r~${poolsOverflowing}"
 	},
 
+	prescriptions = {
+		redeem_prescription = "[${SeatEjectKey}] Lösa ut recept",
+
+		redeemed_prescription = "Receptet har lösts in framgångsrikt.",
+		failed_redeem = "Det gick inte att lösa in receptet.",
+
+		remeeded_prescription_logs_title = "Löst in recept",
+		remeeded_prescription_logs_details = "${consoleName} har löst in ett recept och fått 1x `${item}`."
+	},
+
 	printer = {
 		use_printer = "[${InteractionKey}] Använd Skrivare",
 
@@ -9760,6 +9920,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		printed_logs_title = "Utskrivet Bild",
 		printed_logs_details = "${consoleName} skrev ut en bild med URL:en `${url}`."
+	},
+
+	prop_hide = {
+		no_model = "~r~Ingen modell",
+		status_text = "Föremål: ~g~${label}"
 	},
 
 	props = {
@@ -9926,48 +10091,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		better_stamina = "Kunna springa utan att tröttna i ${duration} minuter.",
 		more_inventory_space = "Få ${amount} ytterligare inventarieplatser i ${duration} minuter.",
 
-		buffs_note = "Buffarna aktiveras endast när du har lämnat närheten av byggnaden.",
-
-		press_to_prepare_food = "[${InteractionKey}] Förbered mat",
-		prepare_food = "Förbered mat",
-
-		kissaki_kitchen = "Kissaki kök",
-
-		craft = "Tillverka",
-		putting_down_ingredients = "Lägger ner ingredienser",
-
-		pick_up = "Plocka upp: ~g~${name}",
-		press_to_pick_up = "[${InteractionKey}] Plocka upp: ~g~${name}",
-
-		prepare_rice = "~g~${name}~s~: Förbereda ris (${completed}%~s~)",
-		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Förbereda ris (${completed}%~s~)",
-		preparing_rice_starting = "Förbereder ris",
-		preparing_rice = "~g~${name}~s~: Förbereder ris... (${completed}%~s~)",
-
-		prepare_fillings = "~g~${name}~s~: Förbereda fyllning (${completed}%~s~)",
-		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Förbereda fyllning (${completed}%~s~)",
-		preparing_fillings_starting = "Förbereder fyllning",
-		preparing_fillings = "~g~${name}~s~: Förbereder fyllning... (${completed}%~s~)",
-
-		prepare_rolling_mat = "~g~${name}~s~: Förbereda rullningsmatta (${completed}%~s~)",
-		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Förbereda rullningsmatta (${completed}%~s~)",
-		preparing_rolling_mat_starting = "Förbereder rullningsmatta",
-		preparing_rolling_mat = "~g~${name}~s~: Förbereder rullningsmatta... (${completed}%~s~)",
-
-		assemble_sushi = "~g~${name}~s~: Montera sushi (${completed}%~s~)",
-		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Montera sushi (${completed}%~s~)",
-		assembling_sushi_starting = "Monterar sushi",
-		assembling_sushi = "~g~${name}~s~: Monterar sushi... (${completed}%~s~)",
-
-		roll_sushi = "~g~${name}~s~: Rulla sushi (${completed}%~s~)",
-		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Rulla sushi (${completed}%~s~)",
-		rolling_sushi_starting = "Rullar sushi",
-		rolling_sushi = "~g~${name}~s~: Rullar sushi... (${completed}%~s~)",
-
-		slice_sushi = "~g~${name}~s~: Skär sushi (${completed}%~s~)",
-		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Skiva Sushi (${completed}%~s~)",
-		slicing_sushi_starting = "Börjar skiva Sushi",
-		slicing_sushi = "~g~${name}~s~: Skivar Sushi... (${completed}%~s~)",
+		buffs_note = "Buffarna aktiveras endast när du har lämnat närheten av byggnaden."
 	},
 
 	riot_mode = {
@@ -10000,6 +10124,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		player_list = "Spelarlista",
 		players = "Spelare",
 		total = "Totalt",
+		total_staff = "Totalt (Personal)",
 		recent_disconnections = "Senaste frånkopplingar",
 		disconnected_player = "Frånkopplad spelare",
 		id = "ID",
@@ -10242,6 +10367,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		armor_ok = "Skydd: ~g~${armor} / ${maxArmor}~w~",
 		armor_bad = "Skydd: ~r~${armor} / ${maxArmor}~w~",
 
+		vehicle_health = "Fordons hälsa: ${percentage}",
+
 		speed = "Hastighet: ${speed}${unit}",
 		speed_mph = "mph",
 		speed_kmh = "km/h",
@@ -10293,10 +10420,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 	},
 
 	starter_car = {
-		your_vehicle_is_nearby = "Ditt personliga fordon är parkerat i närheten.",
-		would_you_like_directions = "Vill du ha vägbeskrivning för att hitta det?",
-		press_to_respond = "Tryck på ~INPUT_FRONTEND_ACCEPT~ för att acceptera eller ~INPUT_FRONTEND_CANCEL~ för att avböja.",
-		follow_the_checkpoints = "Följ checkpoints.",
+		follow_the_checkpoints = "Ditt personliga fordon är parkerat i närheten. Följ checkpoints för att hitta det.",
 
 		received_logs_title = "Mottaget startat fordon",
 		received_logs_details = "${consoleName} mottog ett startat fordon (Modell: ${modelName})."
@@ -10569,12 +10693,38 @@ OP.Global.Locales.Languages["sv-SE"] = {
 	},
 
 	test_server = {
+		menu_title = "OP-Meny",
+
+		vehicles = "Fordonsalternativ",
+		spawn_car = "Spawna bil",
+		upgrade_vehicle = "Uppgradera bil",
+		pop_tires = "Spräng däck",
+		detach_doors = "Ta av dörrar",
+		damage_vehicle = "Skada bil",
+		repair_vehicle = "Reparera bil",
+		delete_vehicle = "Ta bort bil",
+
+		player = "Spelaralternativ",
+		starve = "Svälj dig själv",
+		feed = "Ge dig själv mat",
+		relief_stress = "Lindra stress",
+		reset_health = "Återställ hälsa",
+		remove_injuries = "Ta bort skador",
+
+		teleport = "Teleportalternativ",
+		teleport_to = "TP Till",
+		tp_legion = "Legion Square",
+		tp_garage_a = "Garage A",
+		tp_paleto = "Paleto Bay",
+		tp_sandy = "Sandy Shores",
+		tp_zancudo = "Fort Zancudo",
+		tp_airport = "LS Flygplats",
+		tp_carrier = "Flygplanskryssare",
+		tp_cayo = "Cayo Perico",
+
 		you_are_not_in_a_vehicle = "Du sitter inte i ett fordon.",
 		you_are_in_a_vehicle = "Du sitter för närvarande i ett fordon.",
-		invalid_vehicle_preset = "Ogiltigt fordonsförkonfiguration.",
 		fully_upgraded = "Fordonet har uppgraderats.",
-		applied_preset = "Förkonfiguration har tillämpats.",
-		spawned_car = "Spawande `${modelName}`.",
 		just_spawned_a_car = "Du har precis spawat en bil, vänta ${time} innan du spawar en annan."
 	},
 
@@ -11079,16 +11229,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		changed_job_details = "${consoleName} har bytt jobb till `${jobName}`."
 	},
 
-	jobs = {
-		job_refreshed = "Jobb uppdaterat.",
-		something_went_wrong = "Något gick fel.",
-		user_does_not_have_sent_character_loaded = "Användaren har inte laddat sitt karaktär.",
-		user_has_no_character_loaded = "Användaren har ingen karaktär laddad.",
-		user_not_found = "Användaren hittades inte på servern.",
-		invalid_character_id = "Ogiltig karaktär id-parameter har skickats.",
-		invalid_license_identifier = "Ogiltig licensidentifierare-parameter har skickats."
-	},
-
 	police = {
 		aim_assist_enabled = "Ditt sikte kommer nu vara utrustat med fantastiska förmågor.",
 		aim_assist_disabled = "Du kommer nu sikta sämre än brottslingar/slynglar igen. Det rekommenderas att återaktivera siktesstödet omedelbart.",
@@ -11298,6 +11438,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		helicopter_camera_vehicle_info_imperial = "Hastighet: ${speed} mp/h\nModell: ${model}\nReg. nummer: ${plate}",
 		helicopter_camera_altitude = "${altitude}ft över marken",
 		helicopter_camera_altitude_asl = "${altitude}ft över havsytan",
+		helicopter_camera_locked_on = "Låst på",
+		helicopter_camera_not_locked = "Inte låst",
 		unknown = "Okänt"
 	},
 

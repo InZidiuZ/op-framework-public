@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 14 (do not change)
+-- AUTO LOCALES: 15 (do not change)
 
 OP.Global.Locales.Languages["meme-uwu"] = {
 	-- configuration settings for language
@@ -37,6 +37,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		the_trunk_is_occupied = "The twunk is occupied.",
 		unable_to_toggle_carry = "Pwease wait a bit before toggling the carry.",
 		carry_disabled_animal = "Animal Peds cannot carry.",
+
+		trunk_hint = "U-use \"/door\" to owo-pen/cwose the twunk while standing near it.",
 
 		cancel_piggyback = "Pwess ~INPUT_FRONTEND_RRIGHT~ to cancel piggyback.",
 		piggyback_hop_on = "[${InteractionKey}] hop on",
@@ -715,6 +717,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		high_damage_ban = "The scawes of power were tilted too far in your favor, disrupting the balance of our realm.",
 		suspicious_explosion_ban = "Sowwy, but this isn't a Michael Bay film. Excessive use of pywotechnics is not permitted.",
 		semi_godmode_ban = "Youw insistence on the fountain of youth seems to have disrupted the natuwuwal flow of time. Etemity isn't as fun as it sounds UwU.",
+		invalid_health_ban = "Youw health baw seems to have had a bit too much of spinach, Popeye",
 
 		mp_f_freemode_01_label = "Fweemode (femawe)",
 		mp_m_freemode_01_label = "Fweemode (male)",
@@ -738,6 +741,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		notification_spawned_object = "Anti-Cheat: Spawnye Owbject",
 		notification_driving_hotwire = "Anti-Cheat: Dwiving whiwe Hotwiyre",
 		notification_semi_godmode = "Anti-Cheat: Semi-Godmode",
+		notification_invalid_health = "Anti-Cheat: Invalid Health",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus",
@@ -786,9 +790,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		invincibility_screenshot = "Anti-Cheat: Invincibwe OwO",
 		runtime_texture_screenshot = "Anti-Cheat: Wuntime Texture (${textureDict}, ${textureName}) >w<",
 		bad_screen_word_screenshot = "Anti-Cheat: Bad Scween Wowd (${words}) UwU",
-		freecam_detected_screenshot = "Anti-Cheat: Fweecam Detected (${distance}m) owo",
+		freecam_detected_screenshot = "Anti-Cheat: Freecam Detected",
 		driving_hotwire_screenshot = "Anti-Cheat: Dwiving while Hotwire owo",
-		semi_godmode_screenshot = "Anti-Cheat: Semi-Godmode"
+		semi_godmode_screenshot = "Anti-Cheat: Semi-Godmode",
+		invalid_health_screenshot = "Anti-Cheat: Invalid Health"
 	},
 
 	authentication = {
@@ -839,6 +844,18 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		connection_cancelled = "This connection was cancewled as anothew one is already active. UwU",
 		no_reason_provided = "No weason pwovided. OwO",
 		discord_whitelist_id_not_found = "We were unable to find your discord id. Make suwe you have discord open in the backgwound and that you have allowed FiveM to fetch data fwom your discord client.\n\n${communityDiscord} >w<"
+	},
+
+	characters = {
+		character_refreshed = "Chawacter wefweshed.",
+		something_went_wrong = "Something went wwong.",
+		user_does_not_have_sent_character_loaded = "The usew does not have the sent chawacter loaded.",
+		user_has_no_character_loaded = "Da usew does not have any chawactew loaded. UwU",
+		user_not_found = "The sent usew was not found on the sewvew. OwO",
+		invalid_character_id = "Invawid chawactew id pawametew sent. UwU",
+		invalid_license_identifier = "Invawid wicense identifiew pawametew sent. OwO",
+
+		your_character_refreshed = "Youw chawactew has been wefweshed. UwU"
 	},
 
 	chat = {
@@ -951,8 +968,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 		delete_vehicle_command = "dewete_vewicwe",
 		delete_vehicle_command_help = "Dewete a nyewby vewicwe.",
-		delete_vehicle_command_parameter_ignore_heading = "yes",
+		delete_vehicle_command_parameter_ignore_heading = "ignowe heading",
 		delete_vehicle_command_parameter_ignore_heading_help = "Would you wike to ignowe youw pwayew's heading? Weaving this empty wiww act as a `no`.",
+		delete_vehicle_command_parameter_ignore_occupied = "ignowe occupied",
+		delete_vehicle_command_parameter_ignore_occupied_help = "Would you wike to ignowe any occupied vehicle? Weaving this empty will act as a `no`.",
 		delete_vehicle_command_substitutes = "dv",
 
 		delete_vehicle_interactively_command = "delete_vehicle_interactively",
@@ -1954,6 +1973,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		move_entity_command_parameter_network_id_help = "The netwowk id of the entity you want to move.",
 		move_entity_command_parameter_ground = "gwound",
 		move_entity_command_parameter_ground_help = "If the entity should be pwaced on the gwound pwopewwy (vehicles only).",
+		move_entity_command_parameter_heading = "hewding",
+		move_entity_command_parameter_heading_help = "If da entity should be pwaced with da same hewding as u.",
 		move_entity_command_substitutes = "mv",
 
 		fake_lag_command = "fake_lag",
@@ -2093,6 +2114,12 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		define_area_command = "define_area",
 		define_area_command_help = "Define an awea. OwO",
 		define_area_command_substitutes = "area",
+
+		debug_info_command = "debug_info",
+		debug_info_command_help = "Collect some debuggin' info about a certain playew.",
+		debug_info_command_parameter_server_id = "servew id",
+		debug_info_command_parameter_server_id_help = "Da playew u wanna collect debug info for.",
+		debug_info_command_substitutes = "",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
@@ -2475,6 +2502,13 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		locate_entity_command_parameter_filter_help = "What filter da entity should match (id:12345, plate:90FMK072, etc.)",
 		locate_entity_command_substitutes = "le",
 
+		-- game/logs
+		logs_command = "logs",
+		logs_command_help = "Show da latest servew logs for a certain playew.",
+		logs_command_parameter_server_id = "s-suwvew id",
+		logs_command_parameter_server_id_help = "The s-suwvew id of the p-pwayer.",
+		logs_command_substitutes = "",
+
 		-- game/loot
 		loot_debug_command = "loot_debug",
 		loot_debug_command_help = "Toggwe the lwot debug.",
@@ -2507,6 +2541,11 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		check_vehicle_upgrades_command = "check_vehicle_upgrades",
 		check_vehicle_upgrades_command_help = "Checks if teh nearby vehicle has an engine 5 upgrade. OwO",
 		check_vehicle_upgrades_command_substitutes = "check_upgrades, upgrades",
+
+		-- game/meow
+		meow_command = "m-meow",
+		meow_command_help = "Meow. owo",
+		meow_command_substitutes = "",
 
 		-- game/mining
 		mining_debug_command = "mining_debug",
@@ -2863,6 +2902,11 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		properties_debug_command_help = "Toggwe the pwopewties debug.",
 		properties_debug_command_substitutes = "pwopewties",
 
+		-- game/prop_hide
+		prop_hide_command = "pwop_hide",
+		prop_hide_command_help = "T-Togglwe the pwop hide. uwu",
+		prop_hide_command_substitutes = "",
+
 		-- game/props
 		props_manage_command = "pwops_manage",
 		props_manage_command_help = "Manage nyweaby pwops.",
@@ -2877,14 +2921,6 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		spawn_prop_command_parameter_no_pickup = "no picky uppy",
 		spawn_prop_command_parameter_no_pickup_help = "Shouwd this pwop onwy be picky uppy by supew adminy?",
 		spawn_prop_command_substitutes = "",
-
-		spawn_exact_prop_command = "spawn_exact_pwop",
-		spawn_exact_prop_command_help = "Spawn a pwop at youw exact wocation.",
-		spawn_exact_prop_command_parameter_model_name = "modew nyame",
-		spawn_exact_prop_command_parameter_model_name_help = "Da pwop modew you wouwd wike to spawn.",
-		spawn_exact_prop_command_parameter_ground = "gwound",
-		spawn_exact_prop_command_parameter_ground_help = "If teh pwop should be spawned on teh gwound ow not.",
-		spawn_exact_prop_command_substitutes = "",
 
 		props_debug_command = "pwops_debug",
 		props_debug_command_help = "Debugs aww pwops awound yuw.",
@@ -3115,37 +3151,9 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		tablet_command_substitutes = "",
 
 		-- game/test_server
-		set_vehicle_preset_command = "set_vewicle_pwest",
-		set_vehicle_preset_command_help = "F-fuwwy gwades the vewicle yuwu awe cuwwentwy in and applies cowows with the specified pweset.",
-		set_vehicle_preset_command_parameter_preset = "pweset",
-		set_vehicle_preset_command_parameter_preset_help = "The cowow pweset yuwu want to apply (wed, bwue, gween, yewwow, owange, white, bwack).",
-		set_vehicle_preset_command_substitutes = "vewicle_pwest",
-
-		detach_all_doors_command = "detach_all_doors",
-		detach_all_doors_command_help = "Detaches aww dowas of the vewicle yuwu awe cuwwentwy in.",
-		detach_all_doors_command_substitutes = "",
-
-		pop_all_tires_command = "pop_all_tiwes",
-		pop_all_tires_command_help = "Pops aww tiwes of the vehicle you awe cuwwentwy in.",
-		pop_all_tires_command_substitutes = "",
-
-		upgrade_vehicle_fully_command = "upgrade_vehicle_fully",
-		upgrade_vehicle_fully_command_help = "Upgwades the vehicle you awe cuwwentwy in fuwwy.",
-		upgrade_vehicle_fully_command_substitutes = "",
-
-		random_vehicle_colors_command = "wandom_vehicle_cowors",
-		random_vehicle_colors_command_help = "Wandomizes the cowows of the vehicle you awe cuwwentwy in.",
-		random_vehicle_colors_command_parameter_lights = "wights",
-		random_vehicle_colors_command_parameter_lights_help = "If the wights should be wandomized as weww (xenon and neon).",
-		random_vehicle_colors_command_substitutes = "",
-
-		starve_command = "stwawve",
-		starve_command_help = "Sets youw food and thirst to 0 uwu",
-		starve_command_substitutes = "",
-
-		car_command = "caw",
-		car_command_help = "Spawns in a wandom caw uwu",
-		car_command_substitutes = "",
+		test_menu_command = "test_mwenu",
+		test_menu_command_help = "T-Togglwe the test s-suwvew m-menu. OwO",
+		test_menu_command_substitutes = "",
 
 		-- game/time_scale
 		set_time_scale_command = "set_time_scawe",
@@ -4061,6 +4069,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		amount = "Amounty",
 		target = "Tawget",
 
+		confirm_target = "Dwo you w-want to twansfwer $${amount} to \"${name}\"? owo",
+		cancel = "Nyoo, c-cancel",
+		confirm_transfer = "Yyes, twansfwer",
+
 		failed_deposit = "Fewailed to depawsit money",
 		failed_withdraw = "Fewailed to withdwaw money",
 		failed_transfer = "Fewailed to twansfer money",
@@ -4841,6 +4853,16 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		failed_reconnect = "Faiwed to weconnect to command socket."
 	},
 
+	containers = {
+		drill_container = "Pwess ~INPUT_CONTEXT~ to dwill open the container. UwU",
+
+		drilling_container = "Dwilling Containew",
+		failed_drill = "Failed to dwill open the containew.",
+		drill_success = "Successfuwwy dwilled open the containew.",
+
+		container_blip = "Containew"
+	},
+
 	crafting = {
 		menu_title = "Cwafting",
 		close_menu = "Cwose Menu",
@@ -5229,6 +5251,24 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		broke_ring = "Bwoke apawt wing.",
 		failed_break_ring = "Faiwed to bweak apawt wing.",
 
+		mix_lean = "Mix Wean",
+		press_to_mix_lean = "[${SeatEjectKey}] Mix Wean",
+		mixing_lean = "Mixing Wean",
+		mixed_lean = "Mixed wean.",
+		failed_mix_lean = "Failed to mix wean.",
+
+		craft_pager = "Cwaft Pagew",
+		press_to_craft_pager = "[${SeatEjectKey}] Cwaft Pagew",
+		crafting_pager = "Cwafting Pagew",
+		crafted_pager = "Cwafted pagew.",
+		failed_craft_pager = "I'm sowwy, but I wasn't abwe to cwaft the pagew >w<",
+
+		craft_multi_tool = "Cwaft Muwti Tool",
+		press_to_craft_multi_tool = "[${SeatEjectKey}] Cwaft Muwti Tool",
+		crafting_multi_tool = "Cwafting Muwti Tool...",
+		crafted_multi_tool = "Muwti tool has been cwafted! >w<",
+		failed_craft_multi_tool = "Uh oh, it seems that I'm not abwe to cwaft the muwti tool >_<",
+
 		no_required_items = "Uwu don't have all the wequired items. owo",
 
 		debug_multi = "-Multipwe Outputs-",
@@ -5498,6 +5538,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 	},
 
 	daily_activities = {
+		not_enough_money = "Hey! You don't have enough money for that >w<",
+
 		press_to_daily_activities = "[${InteractionKey}] D- D- Dabwy Activities",
 		daily_activities = "Dabwy Activities",
 		resets_in = "Wesets in ${resetsIn}...",
@@ -5513,6 +5555,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 		reset_daily_activities_no_permissions = "Pwayer attempted to weset their daily activities without pwoper permissions.",
 		reset_daily_activities = "Weset Daily Activities.",
+
+		task_progress = "Task Pwogwess: ${task} (${remain} wemain)",
+		task_progress_money = "Task Pwogwess: ${task} ($${remain} wemain)",
+		task_finished = "Task Finished: ${task}! >w<",
 
 		parachute_from_location = "Pawachute fwom ${location}.",
 		gamble_at_blackjack = "Pway ${amount} hands at the Blackjack table.",
@@ -5530,7 +5576,11 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		dig_up_a_treasure = "Diggy diggy up a treasure using a Treasure Map! ^-^",
 		refine_gems = "Refine ${amount} gems to make them shiny and pwetty. uwu",
 		visit_location = "V-visit ${location}. OwO",
-		visit_the_location = "V-visit the ${location}. ^-^"
+		visit_the_location = "V-visit the ${location}. ^-^",
+
+		confirm_task_refresh = "Awe you suwe you wanna wefwesh dis task? Teh cost is $${cost}.",
+		yes = "Yes pwease",
+		no = "No thankies"
 	},
 
 	dashcam = {
@@ -5687,7 +5737,16 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 		network_debug_logs_title = "Toggwed Nyaetwork Debug",
 		network_debug_logs_details_on = "${consoleName} toggled theiw nyaetwork debug on.",
-		network_debug_logs_details_off = "${consoleName} toggled theiw nyaetwork debug off."
+		network_debug_logs_details_off = "${consoleName} toggled theiw nyaetwork debug off.",
+
+		invalid_server_id = "Invawid sewver ID.",
+		debug_info_failed = "Failed to cowwect debug info.",
+		close = "Cwose",
+		import = "Impowt",
+		export = "Expowt",
+		copied = "Copied!",
+		invalid_data = "Invawid data.",
+		invalid_json = "Invawid JSON."
 	},
 
 	debug_menu = {
@@ -6105,14 +6164,6 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		failed_start_run = "Failed to stawt gun wun.",
 		hack_timeout = "Connection to sewvew wost, twy again.",
 
-		drop_blip = "Gun Containew",
-
-		drill_container = "Pwess ~INPUT_CONTEXT~ to dwill open the containew.",
-
-		drilling_container = "Dwilling Containew",
-		failed_drill = "Failed to dwill open the containew.",
-		drill_success = "Successfuwwy dwilled open the containew and found 1x ${item}.",
-
 		started_run_logs_title = "Gun Wun",
 		started_run_logs_details = "${consoleName} started the gun wun hack.",
 		finished_run_logs_title = "Gun Wun Dwop",
@@ -6123,11 +6174,18 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		press_e_to_talk = "Pwess ~INPUT_CONTEXT~ to talk to Jim.",
 		trader_closed = "Jim's shop is cuwwently closed.",
 
+		sorry_closed = "Sowwy dawg, shop is cwosed.",
+		sorry_closed_hug = "Thanks fow the hug fam :)",
+		sorry_closed_fight = "Yo chill dawg, I aint do nothin.",
+
 		trader_locked = "Jim needs a few things fwom you befowe he is willing to open his shop.",
 		unlock_trader = "Pwovide the item to Jim.",
 
+		trader_duty = "Hewwo thewe officer, sowwy to disappoint you but I just cwosed shop. Come back anothew time!",
+
 		purchase = "Puwwchase",
 		out_of_stock = "Out of Stock uwu",
+		special_offer = "Speciaw Offew!",
 
 		failed_trader_closed = "I failed to purchase a weapon ;-; Jim's shop is closed.",
 		failed_no_stock = "I'm so sorry, but there are no weapons left to purchase owo.",
@@ -6148,7 +6206,13 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		slogan_3 = "When in doubt...whup it out!",
 		slogan_4 = "A gun in the hand is better than a cop on the phone.",
 
-		copyright = "Copywight © 2009-2016 Jimmy's Gun Shop NC. All Wights Weserved."
+		copyright = "Copywight © 2009-2016 Jimmy's Gun Shop NC. All Wights Weserved.",
+
+		remaining_messages = "Wemaining Messages: ${messages}",
+		no_messages_left = "The pagew has no messages weft.",
+		just_used_pager = "You just used the pagew, wait a bit befowe using it again.",
+		page_trader_closed = "Jim is not wesponding, he must be closed.",
+		page_success = "Jim sent a ping to his rough wocation."
 	},
 
 	hacking = {
@@ -6544,7 +6608,6 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		los_santos_golf_club = "Los Santos Golf Club owo",
 		arcade_bar = "Arcade Bar owo",
 		japanese_restaurant = "Japanese Restaurant owo",
-		japanese_restaurant_kitchen = "Japanese Westawant Kitchen (＾◡＾)",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Grain Mill owo",
 		pd_prefix = "PD owo",
@@ -6794,6 +6857,9 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		cleaning_kit = "Cleaning Kit",
 		cleaning_kit_description = "Perfect to clean youw vehicle, or the blood stains you've been letting dry in the back of youw twunk uwu.",
 
+		multi_tool = "Muwti Tool",
+		multi_tool_description = "A tool that can be used for all sorts of things.",
+
 		microphone_bug = "Microphone Bug",
 		microphone_bug_description = "Used to creep in on conversations uwu.",
 		vehicle_tracker = "Vehicwe Twacker",
@@ -6969,6 +7035,15 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		chocolate_milkshake = "Chocowate Milkshake",
 		chocolate_milkshake_description = "A wondewful wooking shake, just hope the CIA isn't aftew you befowe you take a sip...",
 
+		burrito = "Buwwito",
+		burrito_description = "A buwwito is a dish in Mexican and Tex-Mex cuisine that consists of a flour tortilla with various other ingredients.",
+		tostada = "Tostwada",
+		tostada_description = "A tostawda is a cown towtilla dat is deep fwiwed ow toasted.",
+		quesadilla = "Queasadilla",
+		quesadilla_description = "A quesadilla is a Mexican dish and type of taco, consisting of a tortilla that is filled pwimarily with cheese, and sometimes meats, beans, and spices, and then cooked on a gwiddule.",
+		pineapple_cake = "Pinyapple Cake",
+		pineapple_cake_description = "Pinyapple cake is a dessert consumed in Taiwan. The typical Taiwanese pinyapple cake is filled with a thick layer of pinyapple jam dat tastes vewy sweet and sour.",
+
 		dog_food = "Dog Food",
 		dog_food_description = "Dog food is food specifically formuwated and intended fow consumption by dogs and othew welated canines.",
 		cat_food = "Cat Food",
@@ -7093,6 +7168,9 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		oxy_prescription = "Oxy Pwescription",
 		oxy_prescription_description = "Sketchy oxy pwescription.",
 
+		generic_prescription = "Gownewic Pwescription",
+		generic_prescription_description = "Pwescription fow some medwicine. Should be good fow a wefill UwU.",
+
 		brownies = "Brownies",
 		brownies_description = "Goey, Foamy, and double the amount of chocowate with just a hint of extwa kick to really make you sit back and question all of life.",
 
@@ -7109,6 +7187,9 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		decryption_key_green_description = "DID U KNYOW? Coke was owiginyally gween in cowor UwU",
 		decryption_key_blue = "Bwu Decwyption Key",
 		decryption_key_blue_description = "DID U KNYOW? Thewe existsh a bwue-footed bird? Weferwence: https://en.wikipedia.org/wiki/Blue-footed_booby UwU",
+
+		pager = "Pager",
+		pager_description = "A pager. Seems to only have a single contact and a pwepaid cawd allowing only a few messages OwO.",
 
 		ballistic_shield = "Bawwistic Shield",
 		ballistic_shield_description = "This shiewd shouwd be used when ventuwing into the ganglands of RP. OwO",
@@ -7142,6 +7223,22 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 		shrooms = "Shwooms",
 		shrooms_description = "Someone said to put these on pizza, but nyow the pizza is putting itself on me... wait who am I?",
+
+		lean = "Lean",
+		lean_description = "Sippin' on some sizzurp, sip, sippin' on some, sip UwU.",
+
+		jolly_ranchers = "Jolly Wanchews",
+		jolly_ranchers_description = "Induwge in the sweet and tangy flavors of Jolly Wanchews, the classic hawd candies that buwst with fwuity goodness ^w^.",
+		jolly_rancher_watermelon = "Watewmelon Jowwy Wanchew",
+		jolly_rancher_watermelon_description = "Experience the wefweshing taste of watewmelon with these dewightful Jowwy Wanchew hawd candies.",
+		jolly_rancher_raspberry = "Waspberry Jowwy Wanchew",
+		jolly_rancher_raspberry_description = "Savor the wuscious blend of sweet and tart waspberry flavor in these Jowwy Wanchew hawd candies.",
+		jolly_rancher_apple = "Appwe Jowwy Wanchew",
+		jolly_rancher_apple_description = "Enjoy the cwisp and tangy taste of apple with these delicious Jowwy Wanchew hawd candies.",
+		jolly_rancher_cherry = "Chewwy Jowwy Wanchew",
+		jolly_rancher_cherry_description = "Indulge in da bowd an' vibwant chewwy flavow of these irresistible Jowwy Wanchew hawd candies.",
+		jolly_rancher_grape = "Gwape Jowwy Wanchew",
+		jolly_rancher_grape_description = "Expewience da juicy an' succulent taste of gwape wif these mouthwatewing Jowwy Wanchew hawd candies.",
 
 		bucket = "Buckety",
 		bucket_description = "Can be used as a makeshift helmet.",
@@ -8046,7 +8143,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		weapon_addon_m6ic_description = "Da perfwect gun fow da perfwect person, juwst don't forget da twacksuit. UwU",
 
 		weapon_addon_hk416 = "H&K 416 (OwO)",
-		weapon_addon_hk416_description = "Da H&K 416, da Ferrawi of fiwearms - sweeek, powewful, and guaranteed to tuwn heads. It's wike having a pewsonal twainer for your twigger fingew, dewivering wesults that'ww make your enemies jeawous. Say hewwo to your new BFF (Best Fiweawm Fowever)! UwU"
+		weapon_addon_hk416_description = "Da H&K 416, da Ferrawi of fiwearms - sweeek, powewful, and guaranteed to tuwn heads. It's wike having a pewsonal twainer for your twigger fingew, dewivering wesults that'ww make your enemies jeawous. Say hewwo to your new BFF (Best Fiweawm Fowever)! UwU",
+
+		weapon_addon_680 = "Wemington 680",
+		weapon_addon_680_description = "Da Wemington 680 is a pump-action shotgun that was developed by Wemington Awms in 1950."
 	},
 
 	items = {
@@ -8173,6 +8273,25 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		read_catalog = "Pwess ~g~${InteractionKey} ~w~to wead Cawalog"
 	},
 
+	lean = {
+		press_to_sell_lean = "Pwess ~INPUT_CONTEXT~ to sell Lean UwU.",
+		local_not_interested = "The wocaw doesn't seem to be interested wight now.",
+		not_interested = "This wocaw doesn't seem to be interested in youw lean UwU.",
+		selling_lean = "Selling Lean UwU.",
+
+		no_lean = "You don't have any lean UwU.",
+		no_jolly_ranchers = "You don't have any jolly wanchews UwU.",
+		press_to_mix_lean = "[${SeatEjectKey}] Mix Lean with Jolly Wanchews UwU",
+		mix_menu = "Mix Lean UwU",
+		mix_with = "Mix with ${flavor} UwU",
+		close_menu = "Close Menu UwU",
+		mix_failed = "Failed to mix lean with jolly wanchews UwU.",
+
+		mixed_with = "Mixed wif ${flavow}",
+		mixed_with_label = "Lean (${flavow})",
+		mixing = "Mixing Lean"
+	},
+
 	leashes = {
 		press_to_use_leash = "[${InteractionKey}] Use Leash",
 		putting_leash_on = "Putting Weash On",
@@ -8208,10 +8327,15 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		disallowed_words_in_character_name = "UwU Attempted to cweate a chawactew with a possibwy bad nyame: \"${characterName}\"",
 		disallowed_birthday_ban = "UwU Attempted to cweate a chawactew with a possibwy bad biwthday: \"${birthday}\"",
 
+		inventory_help_text = "Pwess ~INPUT_REPLAY_SHOWHOTKEY~ to open youw inventowy.",
+
 		welcome_to = "Wewcome to",
 		press = "Pwess",
 		enter = "ENTEW",
 		to_join = "to join",
+		in_game_time = "City time is c-currently",
+		am = "AM",
+		pm = "PM",
 		changelogs = "Changelogs",
 		fetching_character_data = "Fetching Chawactew Data...",
 		yes = "Yesh",
@@ -8303,7 +8427,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		los_santos_police_dept = "LOW SANTOS POLICE DEPT",
 
 		welcome_msg_title = "Welcome to ${communityName}!",
-		welcome_msg = "Yuw have weceived some items to help you get started. Yuw can use the items in youw hotbar using the 1-5 keys.\n\n*Pwess the 1 key to wead youw bwocuwe.*",
+		welcome_msg = "Uwu have weceived some items to hewp uwu get stawted. Uwu can use the items in youw hotbar using the 1-5 keys. \n\nPwess **${InventoryKey}** to open youw inventowy ow pwess **1** to wead youw bwocure.",
 
 		press_to_go_back_to_menu = "Pwess ~g~${InteractionKey}~w~ to go back to the menu.",
 		go_back_to_menu = "Go back to the menu.",
@@ -8327,6 +8451,15 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		heroic_tier = "Hewoic Tier",
 		legendary_tier = "Wegendary Tier",
 		godlike_tier = "Godwike Tier"
+	},
+
+	logs = {
+		invalid_server_id = "Invalid sewver id.",
+		logs_failed = "Sowwy, failed to load logs.",
+
+		close = "Cwose",
+
+		get_logs_no_permissions = "OwO! A player attempted to get logs without pwoper permissions. *giggle*"
 	},
 
 	loot = {
@@ -8439,6 +8572,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		drill_drops = "Nyaa~ Uwu fownd some gwems in this sto-nyaa~n UwU",
 		used_drill = "Yuwuwr dwil bwokes, owo >.<",
 		still_shook = "o(╥﹏╥)o Yuwuwu awe stwill shwaken up fwom tha wast expwosion and didn't fwind any gwems in this sto-nyaa~n, uwu",
+
+		kill_label = "Explosion went boom boom in mining! *giggles*",
 
 		recharging_scanner = "Rechwarging Scannew ${percentage}% OwO",
 		scanning = "Scanning ${percentage}% UwU",
@@ -8788,6 +8923,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		sound_effect_save = "Save",
 		sound_effect_reset = "Weset",
 
+		disable_tablet_animation = "Pwease disable da tablet animation for me! *cute smile*",
 		staff_notifications_reports = "Weport Nyotifications",
 		staff_notifications_staff_chat = "Stwaff-Chat Nyotifications",
 		staff_notifications_general = "Genyeral Nyotifications",
@@ -9573,6 +9709,19 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		failed_pay = "Failed to pay pawking metew."
 	},
 
+	pause_menu = {
+		sunday = "Sund'wy",
+		monday = "Mon'dy",
+		tuesday = "Tues'dy",
+		wednesday = "Wednes'dy",
+		thursday = "Thurs'dy",
+		friday = "Fwiday",
+		saturday = "Sat'dy",
+
+		bank = "Bank uwu",
+		cash = "Cash uwu"
+	},
+
 	pawn_shops = {
 		sell_items = "Seww ${itemLabel}",
 		press_to_sell_items = "[${InteractionKey}] Seww ${itemLabel}",
@@ -9613,7 +9762,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 	ped_objects = {
 		illegal_ped_object = "Attempting to add a ped object not in the 'allowed' wist of ped objects.",
-		illegal_ped_weapon_object = "Attempting to add a ped weapon object not in the weapon wist."
+		illegal_ped_weapon_object = "Attempting to add a ped weapon object not in the weapon wist.",
+		illegal_raw_ped_object = "OwO! Someone is attemptin' to add a raw ped object without pwoper permissions! *surprised face*"
 	},
 
 	ped_task = {
@@ -9749,6 +9899,16 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		pools_overflowing = "Pools Ovewfwowing: ~r~${poolsOverflowing}"
 	},
 
+	prescriptions = {
+		redeem_prescription = "[${SeatEjectKey}] Pwease redeem da prescription uwu *smiling face with hearts*",
+
+		redeemed_prescription = "Successfuwwy weeeemed pwescwiption.",
+		failed_redeem = "Faiwed to weeeem pwescwiption.",
+
+		remeeded_prescription_logs_title = "Weeeemed Pwescwiption",
+		remeeded_prescription_logs_details = "${consoleName} weeeemed a pwescwiption and weceived 1x `${item}`."
+	},
+
 	printer = {
 		use_printer = "[${InteractionKey}] Use Printer",
 
@@ -9760,6 +9920,11 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 		printed_logs_title = "Pwinted Image",
 		printed_logs_details = "${consoleName} pwinted an image with the UWWU `${uwwu}`."
+	},
+
+	prop_hide = {
+		no_model = "~w~Nu  Mowdel UwU",
+		status_text = "Pwop: ~g~${label}"
 	},
 
 	props = {
@@ -9926,48 +10091,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		better_stamina = "You can wun without getting tiwed and without wunning out of stamina fow ${duration} minutes >w<",
 		more_inventory_space = "H-have an additional ${amount} inventowy swots fow ${duration} minutes.",
 
-		buffs_note = "The buffs will only activate once you have weft the vicinity of the building.",
-
-		press_to_prepare_food = "[${IntewactionKey}] Pwepawe Food (っ＾▿＾)",
-		prepare_food = "Pwepawe Food (＾▽＾)",
-
-		kissaki_kitchen = "Kissaki Kitchen (✿◠‿◠)",
-
-		craft = "Cwaft (◕ᴥ◕)",
-		putting_down_ingredients = "Putting Down Ingredients UwU",
-
-		pick_up = "Pwick Upwu: ~g~${name}",
-		press_to_pick_up = "[${InteractionKey}] Pwick Upwu: ~g~${name}",
-
-		prepare_rice = "~g~${name}~s~: Pwepawe Wice (${completed}%~s~)",
-		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Pwepawe Wice (${completed}%~s~)",
-		preparing_rice_starting = "Pwepawing Wice",
-		preparing_rice = "~g~${name}~s~: Pwepawing Wice... (${completed}%~s~)",
-
-		prepare_fillings = "~g~${name}~s~: Pwepawe Fwittings (${completed}%~s~)",
-		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Pwepawe Fwittings (${completed}%~s~)",
-		preparing_fillings_starting = "Pwepawing Fillings UwU",
-		preparing_fillings = "~g~${name}~s~: Pwepawing Fillings... (${completed}%~s~)",
-
-		prepare_rolling_mat = "~g~${name}~s~: Pwepawe Wolling Mat (${completed}%~s~)",
-		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Pwepawe Wolling Mat (${completed}%~s~)",
-		preparing_rolling_mat_starting = "Pwepawing Wolling Mat UwU",
-		preparing_rolling_mat = "~g~${name}~s~: Pwepawing Wolling Mat... (${completed}%~s~)",
-
-		assemble_sushi = "~g~${name}~s~: Assembwe Sushi (${completed}%~s~)",
-		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Assembwe Sushi (${completed}%~s~)",
-		assembling_sushi_starting = "Assembwing Sushi",
-		assembling_sushi = "~g~${name}~s~: Assembwing Sushi... (${completed}%~s~)",
-
-		roll_sushi = "~g~${name}~s~: Woll Sushi (${completed}%~s~)",
-		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Woll Sushi (${completed}%~s~)",
-		rolling_sushi_starting = "Wolling Sushi",
-		rolling_sushi = "~g~${name}~s~: Wolling Sushi... (${completed}%~s~)",
-
-		slice_sushi = "~g~${name}~s~: Swice Sushi (${completed}%~s~)",
-		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Swice Swushi (${completed}%~s~)",
-		slicing_sushi_starting = "Swicing Swushi",
-		slicing_sushi = "~g~${name}~s~: Swicing Swushi... (${completed}%~s~)",
+		buffs_note = "The buffs will only activate once you have weft the vicinity of the building."
 	},
 
 	riot_mode = {
@@ -10000,6 +10124,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		player_list = "Pwayew Wist. UwU",
 		players = "Pwayews. OwO",
 		total = "Totaw. QwQ",
+		total_staff = "Totwal (Staff)",
 		recent_disconnections = "Wecent Disconnections. UwU",
 		disconnected_player = "Disconnywected Pwayer",
 		id = "ID",
@@ -10242,6 +10367,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		armor_ok = "Awrmow: ~g~${armor} / ${maxArmor}~w~",
 		armor_bad = "Awrmow: ~r~${armor} / ${maxArmor}~w~",
 
+		vehicle_health = "Vehicwe Hewalth: ${percentage}",
+
 		speed = "Speedy: ${speed}${unit}",
 		speed_mph = "mph",
 		speed_kmh = "kmh",
@@ -10293,10 +10420,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 	},
 
 	starter_car = {
-		your_vehicle_is_nearby = "UwU, your pewsonal vehicle is parked nearby.",
-		would_you_like_directions = "Would you wike diwections to get to it?",
-		press_to_respond = "Pwess ~INPUT_FRONTEND_ACCEPT~ to accept ow ~INPUT_FRONTEND_CANCEL~ to decwine.",
-		follow_the_checkpoints = "Fowwow the checkpoints.",
+		follow_the_checkpoints = "Youw pewsonal vehicwe is pawked nyabwe. Fowwow the checkpoints 2 find it.",
 
 		received_logs_title = "Received Stawted Car",
 		received_logs_details = "${consoleName} weceived a stawted car (Modew: ${modelName})."
@@ -10569,12 +10693,38 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 	},
 
 	test_server = {
+		menu_title = "OP-Mewnu",
+
+		vehicles = "Vehicwoe Owoptions",
+		spawn_car = "Spawen Caw",
+		upgrade_vehicle = "Upgrade Vehicwe",
+		pop_tires = "Pop Tires",
+		detach_doors = "Detach Doors",
+		damage_vehicle = "Damage Vehicwe",
+		repair_vehicle = "Repair Vehicwe",
+		delete_vehicle = "Dewete Vehicwe",
+
+		player = "Pwayew Owoptions",
+		starve = "Stawve Youwself",
+		feed = "Feed Youwself",
+		relief_stress = "Wewief Stwess",
+		reset_health = "Weset Health",
+		remove_injuries = "Wemove Injuwies",
+
+		teleport = "Tewepowt Owoptions",
+		teleport_to = "TP to",
+		tp_legion = "Wegion Squawe",
+		tp_garage_a = "Gawage A",
+		tp_paleto = "Paweto Bay",
+		tp_sandy = "Sandy Shoews",
+		tp_zancudo = "Fort Zancudo",
+		tp_airport = "LS Aiwpowt",
+		tp_carrier = "Aiwpwane Cawwiew",
+		tp_cayo = "Cayo Pewico",
+
 		you_are_not_in_a_vehicle = "Yu awe not in a vechicwe.",
 		you_are_in_a_vehicle = "Yu awe cuwwentwy in a vechicwe.",
-		invalid_vehicle_preset = "Invawid vechicwe pweset.",
 		fully_upgraded = "Successfuwwy upgwaded vechicwe.",
-		applied_preset = "Successfuwwy appwied pweset.",
-		spawned_car = "Spawned `${modelName}`.",
 		just_spawned_a_car = "Yu jwust spawned a caw, wait ${time} befowe spawning anothew one."
 	},
 
@@ -11079,16 +11229,6 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		changed_job_details = "OwO ${consoleName} changed their job to `${jobName}`!"
 	},
 
-	jobs = {
-		job_refreshed = "Job ish been refreshed!",
-		something_went_wrong = "Nyaa, something went wrong..",
-		user_does_not_have_sent_character_loaded = "O~O The user doesn't have their sent character loaded!",
-		user_has_no_character_loaded = "The user doesn't have any character loaded nya~",
-		user_not_found = "Sorry, I couldn't find the user on the server u_u",
-		invalid_character_id = "Invalid character id parameter sent! Sowwy!",
-		invalid_license_identifier = "Invalid license identifier parameter sent! Uwu"
-	},
-
 	police = {
 		aim_assist_enabled = "Yuw aim wiww now be bestowed with gwate abiwities. OwO",
 		aim_assist_disabled = "Yu will now aim wowse than cwiminaws/scumbags once again. It is recommended tuwu we-enabled the aim assist immediately. UwU",
@@ -11298,6 +11438,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		helicopter_camera_vehicle_info_imperial = "Speedy: ${speed} mp/h\nModew: ${model}\nPwate: ${plate}",
 		helicopter_camera_altitude = "${altitude}ft AGL",
 		helicopter_camera_altitude_asl = "${altitude}ft ASL",
+		helicopter_camera_locked_on = "Wocked On",
+		helicopter_camera_not_locked = "Not Wocked",
 		unknown = "UwUknown"
 	},
 
