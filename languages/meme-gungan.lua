@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["meme-gungan"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "Da intensity yousa would lika to set it to.",
 		set_ocean_scaler_command_substitutes = "ocean_scaler, set_waves_intensity, waves_intensity",
 
+		tsunami_toggle_command = "tsunami_toggle",
+		tsunami_toggle_command_help = "Togala a gradual Tsnuami.",
+		tsunami_toggle_command_parameter_minutes = "minutes",
+		tsunami_toggle_command_parameter_minutes_help = "Da amonut of minutes it should taka bifor da tsunami floods da entire map. Default isa 60.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "padoosa",
 		vdm_command_help = "Mesa helpen yous npc try to padoosa mesa target.",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		join_with_fivem = "Join wit FiveM",
 		discord_guild = "Discord Gilden",
 		richer_presence_on = "Richer presence issen now on.",
-		richer_presence_off = "Richer presence issen now off."
+		richer_presence_off = "Richer presence issen now off.",
+
+		announce_event = "Der isa an event in 15 minutes! Check Discord for more information.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		no_ocean_scaler_intensity_set = "Mesa thinkin dare iss no ocean scaler intensity set yet!",
 		set_ocean_scaler_to = "Set da ocean scaler intensity ta `${intensity}`.",
 		reset_ocean_scaler = "Reset da ocean scaler intenisty.",
-		set_ocean_scaler_no_permission = "Da player no have da required permission ta set da ocean scaler."
+		set_ocean_scaler_no_permission = "Da player no have da required permission ta set da ocean scaler.",
+
+		tsunami_started = "Tsunami started. It wolla taka ${minutes} minutes to flood da map.",
+		tsunami_stopped = "Boompa stopped."
 	},
 
 	tuner_shop = {

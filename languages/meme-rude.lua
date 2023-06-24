@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["meme-rude"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "The intensity ya want that shit set to.",
 		set_ocean_scaler_command_substitutes = "ocean_scaler, set_waves_intensity, waves_intensity",
 
+		tsunami_toggle_command = "tsunami_toggle",
+		tsunami_toggle_command_help = "Toggle a fucking gradual Tsunami, mate.",
+		tsunami_toggle_command_parameter_minutes = "minutes",
+		tsunami_toggle_command_parameter_minutes_help = "The fucking amount of minutes it should take before the tsunami fucking floods the entire map. Default is 60.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "vdm",
 		vdm_command_help = "Fucking hits the stupid cunt player with the specified npc vehicle.",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		join_with_fivem = "Join the Fucking Server with FiveM",
 		discord_guild = "Join Our Goddamn Discord Guild",
 		richer_presence_on = "Richer fucking presence is now on. Hell yeah!",
-		richer_presence_off = "Richer presence is now off, what a fucking shame."
+		richer_presence_off = "Richer presence is now off, what a fucking shame.",
+
+		announce_event = "Oi, you cunts! There's a fucking event in 15 minutes! Check Discord for more fucking information, yeah?\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		no_ocean_scaler_intensity_set = "Yo, there ain't no ocean scaler intensity set. So f*ck off, aight?",
 		set_ocean_scaler_to = "Get yo' sh*t together and set the ocean scaler intensity to `${intensity}`, sh*t nugget.",
 		reset_ocean_scaler = "Gotta reset the ocean scaler intenisty now you punk@ss.",
-		set_ocean_scaler_no_permission = "That filthy player didn't get the goddamn permission to set the ocean scaler. Woops."
+		set_ocean_scaler_no_permission = "That filthy player didn't get the goddamn permission to set the ocean scaler. Woops.",
+
+		tsunami_started = "Shit, lads! The fucking tsunami has started. It will take ${minutes} minutes to flood the entire map. Get to fuckin' higher ground now!",
+		tsunami_stopped = "Fucking tsunami stopped, thank god. About time nature stopped trying to fucking drown us all."
 	},
 
 	tuner_shop = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["meme-spongebob"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "The intensity, meow, you would like to set it to, meow.",
 		set_ocean_scaler_command_substitutes = "ocean_scaler, set_waves_intensity, waves_intensity, meow",
 
+		tsunami_toggle_command = "tsunami_toggle",
+		tsunami_toggle_command_help = "Toggle a gradual Tsnuami, meee boy!",
+		tsunami_toggle_command_parameter_minutes = "minutes",
+		tsunami_toggle_command_parameter_minutes_help = "The amonut of minutes it should take before the tsunami floods the entire map. Defauuuult is 60.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "vdm",
 		vdm_command_help = "Make SpongeBob do his best to crash into the specified player.",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		join_with_fivem = "Join with FiveM, like this: Join da fun wit' FiveM!",
 		discord_guild = "Discord Guild, like this: Hang wit' us at da Discord Guild!",
 		richer_presence_on = "Richer presence is now on, like this: Whoa! Da richer presence is turned ON!",
-		richer_presence_off = "Richer presence is now off, like this: Aww... Da richer presence is turned OFF!"
+		richer_presence_off = "Richer presence is now off, like this: Aww... Da richer presence is turned OFF!",
+
+		announce_event = "There is an event in 15 minutes! Check discord, aaargh, for more information.\n\n${name} @ **${location}**, aaargh!"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		no_ocean_scaler_intensity_set = "There's already no ocean scaler intensity set.",
 		set_ocean_scaler_to = "Set the ocean scaler intensity to `${intensity}`.",
 		reset_ocean_scaler = "Reset the ocean scaler intenisty.",
-		set_ocean_scaler_no_permission = "The player did not have the required permission to set the ocean scaler."
+		set_ocean_scaler_no_permission = "The player did not have the required permission to set the ocean scaler.",
+
+		tsunami_started = "Tsunami started, aaaah. It will take ${minutes} minutes to flood the map, aye aye captain!",
+		tsunami_stopped = "Tsunami stopped, Aye aye captain!"
 	},
 
 	tuner_shop = {

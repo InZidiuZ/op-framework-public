@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["nb-NO"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "Intensiteten du ønsker å sette den til.",
 		set_ocean_scaler_command_substitutes = "ocean_scaler, sett_bølge_intensitet, bølge_intensitet",
 
+		tsunami_toggle_command = "tsunami_toggle",
+		tsunami_toggle_command_help = "Aktiver en gradvis Tsnuami.",
+		tsunami_toggle_command_parameter_minutes = "minutter",
+		tsunami_toggle_command_parameter_minutes_help = "Mengden av minutter det tar før Tsunamien flommer over hele kartet. Standard er 60.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "vdm",
 		vdm_command_help = "Får den angitte NPCen til å forsøke å VDM på målet.",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		join_with_fivem = "Bli med med FiveM",
 		discord_guild = "Discord-gilde",
 		richer_presence_on = "Mer utfyllende tilstedeværelse er nå på.",
-		richer_presence_off = "Mer utfyllende tilstedeværelse er nå av."
+		richer_presence_off = "Mer utfyllende tilstedeværelse er nå av.",
+
+		announce_event = "Det er et arrangement om 15 minutter! Sjekk Discord for mer informasjon.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		no_ocean_scaler_intensity_set = "Det er allerede ingen intensitet satt for havskalering.",
 		set_ocean_scaler_to = "Sett havskalerens intensitet til `${intensity}`.",
 		reset_ocean_scaler = "Tilbakestill havskalerens intensitet.",
-		set_ocean_scaler_no_permission = "Spilleren hadde ikke tilstrekkelig tillatelse til å endre havskalerens intensitet."
+		set_ocean_scaler_no_permission = "Spilleren hadde ikke tilstrekkelig tillatelse til å endre havskalerens intensitet.",
+
+		tsunami_started = "Tsunamien har startet. Det vil ta ${minutes} minutter å oversvømme hele kartet.",
+		tsunami_stopped = "Tsunami stoppet."
 	},
 
 	tuner_shop = {

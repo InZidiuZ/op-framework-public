@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["bn-BD"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "আপনি যা সেট করতে চান সেটির তীব্রতা।",
 		set_ocean_scaler_command_substitutes = "ocean_scaler, set_waves_intensity, waves_intensity",
 
+		tsunami_toggle_command = "সুনামি_টগল_করুন",
+		tsunami_toggle_command_help = "একটি ধীরগতিময় সুনামি টগল করুন।",
+		tsunami_toggle_command_parameter_minutes = "মিনিট",
+		tsunami_toggle_command_parameter_minutes_help = "ম্যাপে সম্পূর্ণ সুনামি লাগানোর আগে কত মিনিট লাগবে তা নির্দেশ করুন। ডিফল্ট ভ্যালুটি 60।",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "ভিডিএম",
 		vdm_command_help = "নির্দিষ্ট এনপিসি ট্রাই করে লক্ষ্যবিহীনভাবে লক্ষ্যবিন্যাস চেষ্টা করবে।",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		join_with_fivem = "FiveM দিয়ে যোগদান করুন",
 		discord_guild = "ডিসকর্ড গিল্ড",
 		richer_presence_on = "মুখ্যমন্ত্রী উপস্থিতি এখন চালু।",
-		richer_presence_off = "মুখ্যমন্ত্রী উপস্থিতি এখন বন্ধ।"
+		richer_presence_off = "মুখ্যমন্ত্রী উপস্থিতি এখন বন্ধ।",
+
+		announce_event = "15 মিনিটের মধ্যে একটি ইভেন্ট আছে! বিস্তারিত জানতে ডিসকর্ড চেক করুন।\n\n${location} @ ${name}"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		no_ocean_scaler_intensity_set = "এখনও কোন সমুদ্রের স্কেলার বিপদ সেট করা হয় নি।",
 		set_ocean_scaler_to = "সমুদ্রের স্কেলার বিপদ সেট করুন `${intensity}`।",
 		reset_ocean_scaler = "সমুদ্রের স্কেলার বিপদ রিসেট করুন।",
-		set_ocean_scaler_no_permission = "খেলোয়ার কাছে সমুদ্রের স্কেলার সেট করার জন্য প্রয়োজনীয় অনুমতি নেই।"
+		set_ocean_scaler_no_permission = "খেলোয়ার কাছে সমুদ্রের স্কেলার সেট করার জন্য প্রয়োজনীয় অনুমতি নেই।",
+
+		tsunami_started = "সুনামি শুরু হয়েছে। ম্যাপের সম্পূর্ণ অংশ প্রবাহিত হওয়ার জন্য ${minutes} মিনিট সময় লাগবে।",
+		tsunami_stopped = "সুনামি বন্ধ হয়েছে।"
 	},
 
 	tuner_shop = {

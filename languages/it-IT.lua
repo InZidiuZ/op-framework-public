@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["it-IT"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "L'intensità che vorresti impostarlo.",
 		set_ocean_scaler_command_substitutes = "ocean_scaler, set_waves_intensity, waves_intensity",
 
+		tsunami_toggle_command = "comando_tsunami_toggle",
+		tsunami_toggle_command_help = "Attiva/disattiva un tsunami graduale.",
+		tsunami_toggle_command_parameter_minutes = "minuti",
+		tsunami_toggle_command_parameter_minutes_help = "Il numero di minuti che ci vorranno prima che l'intera mappa sia sommersa dall'onda anomala. Il valore predefinito è 60.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "vdm",
 		vdm_command_help = "Fa in modo che l'npc specificato tenti di vdm la destinazione.",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 		join_with_fivem = "Unisciti a Fivem",
 		discord_guild = "Community discord",
 		richer_presence_on = "Richer presence e ora on.",
-		richer_presence_off = "Richer presence e ora off."
+		richer_presence_off = "Richer presence e ora off.",
+
+		announce_event = "C'è un evento tra 15 minuti! Controlla Discord per maggiori informazioni.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		no_ocean_scaler_intensity_set = "Non esiste già un set di intensità di scala oceanica.",
 		set_ocean_scaler_to = "Imposta l'intensità di scaler dell'oceano `${intensity}`.",
 		reset_ocean_scaler = "Ripristina l'intensità della scala dell'oceano.",
-		set_ocean_scaler_no_permission = "Il giocatore non aveva l'autorizzazione richiesta per impostare lo scaler dell'oceano."
+		set_ocean_scaler_no_permission = "Il giocatore non aveva l'autorizzazione richiesta per impostare lo scaler dell'oceano.",
+
+		tsunami_started = "Tsunami avviato. Ci vorranno ${minutes} minuti per riempire la mappa d'acqua.",
+		tsunami_stopped = "Tsunami fermato."
 	},
 
 	tuner_shop = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["ro-RO"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "Intensitatea la care doriți să o setați.",
 		set_ocean_scaler_command_substitutes = "scala_oceanului, setează_intensitate_valuri, intensitate_valuri",
 
+		tsunami_toggle_command = "tsunami_toggle",
+		tsunami_toggle_command_help = "Activează/dezactivează un tsunami treptat.",
+		tsunami_toggle_command_parameter_minutes = "minute",
+		tsunami_toggle_command_parameter_minutes_help = "Timpul în minute până când tsunami-ul va inunda întreaga hartă. Valoarea implicită este de 60 de minute.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "vdm",
 		vdm_command_help = "Face ca npc-ul specificat să încerce să lovească ținta (vdm).",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		join_with_fivem = "Conectează-te cu FiveM",
 		discord_guild = "Server Discord",
 		richer_presence_on = "Prezența bogată este activată acum.",
-		richer_presence_off = "Prezența bogată este dezactivată acum."
+		richer_presence_off = "Prezența bogată este dezactivată acum.",
+
+		announce_event = "Există un eveniment în 15 minute! Verificați Discord-ul pentru mai multe informații. \n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		no_ocean_scaler_intensity_set = "Nu există nicio intensitate setată pentru scalarea oceanului.",
 		set_ocean_scaler_to = "Setează intensitatea scalării oceanului la `${intensity}`.",
 		reset_ocean_scaler = "Resetează intensitatea scalării oceanului.",
-		set_ocean_scaler_no_permission = "Jucătorul nu are permisiunea necesară pentru a seta scalarea oceanului."
+		set_ocean_scaler_no_permission = "Jucătorul nu are permisiunea necesară pentru a seta scalarea oceanului.",
+
+		tsunami_started = "Tsunami-ul a început. Va dura ${minutes} minute până când harta va fi inundată.",
+		tsunami_stopped = "Tsunami oprit."
 	},
 
 	tuner_shop = {

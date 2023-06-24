@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["hi-IN"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "आप इसे सेट करना चाहते हैं, उस तीव्रता।",
 		set_ocean_scaler_command_substitutes = "ocean_scaler, set_waves_intensity, waves_intensity",
 
+		tsunami_toggle_command = "tsunami_toggle",
+		tsunami_toggle_command_help = "धीरे-धीरे एक सुनामी टॉगल करें।",
+		tsunami_toggle_command_parameter_minutes = "मिनट",
+		tsunami_toggle_command_parameter_minutes_help = "सुनामी के पूरे मानचित्र को भूमिगत करने से पहले इसमें कितने मिनट लगेंगे। डिफ़ॉल्ट 60 होता है।",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "वीडीएम",
 		vdm_command_help = "निश्चित npc को उनके लक्ष्य को वीडीएम करने का प्रयास करने के लिए।",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		join_with_fivem = "FiveM के साथ शामिल हों",
 		discord_guild = "डिस्कॉर्ड गिल्ड",
 		richer_presence_on = "धनी प्रदर्शन अब चालू है।",
-		richer_presence_off = "धनी प्रदर्शन अब बंद है।"
+		richer_presence_off = "धनी प्रदर्शन अब बंद है।",
+
+		announce_event = "15 मिनट में एक आयोजन होने वाला है! अधिक जानकारी के लिए Discord देखें।\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		no_ocean_scaler_intensity_set = "अभी तक समुद्र स्केलर तीव्रता कोई सेट नहीं है।",
 		set_ocean_scaler_to = "समुद्र स्केलर तीव्रता को `${intensity}` पर सेट करें।",
 		reset_ocean_scaler = "समुद्र स्केलर इंटेंसिटी रीसेट करें।",
-		set_ocean_scaler_no_permission = "खिलाड़ी के पास समुद्र स्केलर सेट करने के लिए आवश्यक अनुमति नहीं थी।"
+		set_ocean_scaler_no_permission = "खिलाड़ी के पास समुद्र स्केलर सेट करने के लिए आवश्यक अनुमति नहीं थी।",
+
+		tsunami_started = "सुनामी शुरू हो गई है। इसमें ${minutes} मिनट लगेंगें ताकि समूचा मानचित्र बदल जाए।",
+		tsunami_stopped = "सुनामी रुक गया।"
 	},
 
 	tuner_shop = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["da-DK"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["da-DK"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "Intensiteten, som du ønsker at indstille den til.",
 		set_ocean_scaler_command_substitutes = "hav_skalering, indstil_bølgeintensitet, bølgeintensitet",
 
+		tsunami_toggle_command = "flodbølge_toggle",
+		tsunami_toggle_command_help = "Aktiver/deaktiver gradvis flodbølge.",
+		tsunami_toggle_command_parameter_minutes = "minutter",
+		tsunami_toggle_command_parameter_minutes_help = "Antallet af minutter, det tager, før flodbølgen oversvømmer hele kortet. Standard er 60.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "vdm",
 		vdm_command_help = "Forsøger at VDM (køre ned med køretøj) den angivne NPC på målet.",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 		join_with_fivem = "Join med FiveM",
 		discord_guild = "Discord Guild",
 		richer_presence_on = "Rigere tilstedeværelse er nu aktiveret.",
-		richer_presence_off = "Rigere tilstedeværelse er nu deaktiveret."
+		richer_presence_off = "Rigere tilstedeværelse er nu deaktiveret.",
+
+		announce_event = "Der er en begivenhed om 15 minutter! Se Discord for mere information.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		no_ocean_scaler_intensity_set = "Der er ikke indstillet nogen skaleringsintensitet for havet.",
 		set_ocean_scaler_to = "Indstil havets skaleringsintensitet til `${intensity}`.",
 		reset_ocean_scaler = "Nulstil havets skaleringsintensitet.",
-		set_ocean_scaler_no_permission = "Spilleren havde ikke den nødvendige tilladelse til at indstille skaleringsintensiteten for havet."
+		set_ocean_scaler_no_permission = "Spilleren havde ikke den nødvendige tilladelse til at indstille skaleringsintensiteten for havet.",
+
+		tsunami_started = "Flodbølge startet. Det vil tage ${minutes} minutter at oversvømme kortet.",
+		tsunami_stopped = "Tsunami stoppet."
 	},
 
 	tuner_shop = {

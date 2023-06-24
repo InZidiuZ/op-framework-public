@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["et-EE"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["et-EE"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "Skaala, mida soovite määrata.",
 		set_ocean_scaler_command_substitutes = "ocean_scaler, set_waves_intensity, waves_intensity",
 
+		tsunami_toggle_command = "tsunami_käivitus",
+		tsunami_toggle_command_help = "Lülitab järk-järgulise tsunami sisse.",
+		tsunami_toggle_command_parameter_minutes = "minutit",
+		tsunami_toggle_command_parameter_minutes_help = "Minutite arv, mis kulub enne kui tsunami üle kogu kaardi ujutab. Vaikimisi on 60 minutit.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "vdm",
 		vdm_command_help = "Selle käsu sisestamisel üritab konkreetne NPC rammida määratud sihtmärki.",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["et-EE"] = {
 		join_with_fivem = "Liitu FiveM-ga",
 		discord_guild = "Discord kogukond",
 		richer_presence_on = "Rikkam kohalolu on aktiveeritud.",
-		richer_presence_off = "Rikkam kohalolu on deaktiveeritud."
+		richer_presence_off = "Rikkam kohalolu on deaktiveeritud.",
+
+		announce_event = "15 minuti pärast toimub üritus! Vaata lisainfot meie Discordis.\n\n${name} asukohas **${location}**."
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		no_ocean_scaler_intensity_set = "Ookeani skaleerimise tugevust ei ole määratud.",
 		set_ocean_scaler_to = "Määra ookeani skaleerimise tugevus väärtusele `${intensity}`.",
 		reset_ocean_scaler = "Lähtesta ookeani skaleerimise tugevus.",
-		set_ocean_scaler_no_permission = "Mängijal polnud piisavalt õigusi ookeani skaleerimise määramiseks."
+		set_ocean_scaler_no_permission = "Mängijal polnud piisavalt õigusi ookeani skaleerimise määramiseks.",
+
+		tsunami_started = "Tsunami on alanud. Kogu kaardi ujutamine võtab aega ${minutes} minutit.",
+		tsunami_stopped = "Tsunami peatus."
 	},
 
 	tuner_shop = {

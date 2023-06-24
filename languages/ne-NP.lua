@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["ne-NP"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "तपाईं त्यसमा सेट गर्न चाहनु भएको तीव्रता।",
 		set_ocean_scaler_command_substitutes = "ओसियन_स्केलर, सेट_तरंग_तीव्रता, तरंग_तीव्रता_सेट_गर्नुहोस्",
 
+		tsunami_toggle_command = "त्सुनामी_टगल_कमान्ड",
+		tsunami_toggle_command_help = "ग्रेजुअल त्सुनामी चलाउनुहोस्।",
+		tsunami_toggle_command_parameter_minutes = "मिनेटहरू",
+		tsunami_toggle_command_parameter_minutes_help = "मैप सम्पूर्ण फलदार बनाउनु अघि कति मिनेट पुग्ने छ। डिफल्ट ६० मिनेट हो।",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "भीडी",
 		vdm_command_help = "निश्चित npcलाई लक्ष्यमा भीडी प्रयास।",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		join_with_fivem = "FiveM संग योजना जोडनुहोस्",
 		discord_guild = "डिस्कोर्ड समूह",
 		richer_presence_on = "धनी प्रदर्शन अब सक्रिय छ।",
-		richer_presence_off = "धनी प्रदर्शन अब बन्द छ।"
+		richer_presence_off = "धनी प्रदर्शन अब बन्द छ।",
+
+		announce_event = "१५ मिनेटमा एक कार्यक्रम हुने छ! थप जानकारीको लागि Discord मा जानुहोस्।\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		no_ocean_scaler_intensity_set = "सागर स्केलर तीव्रता सेट नभएको छ।",
 		set_ocean_scaler_to = "सागर स्केलर तीव्रता लागू गर्न `${intensity}` मा सेट गर्नुहोस्।",
 		reset_ocean_scaler = "सागर स्केलर तीव्रता रीसेट गर्नुहोस्।",
-		set_ocean_scaler_no_permission = "खेलाडीलाई सागर स्केलर सेट गर्न आवश्यक अनुमति छैन।"
+		set_ocean_scaler_no_permission = "खेलाडीलाई सागर स्केलर सेट गर्न आवश्यक अनुमति छैन।",
+
+		tsunami_started = "त्सुनामी सुरु भयो। पूर्ण मैप फ्लड गर्न ${minutes} मिनेट लाग्छ।",
+		tsunami_stopped = "तसुनामी रोकिएको।"
 	},
 
 	tuner_shop = {

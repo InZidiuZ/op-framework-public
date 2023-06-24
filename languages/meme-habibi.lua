@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["meme-habibi"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "The intensity value you want to set it to.",
 		set_ocean_scaler_command_substitutes = "set_waves_intensity, waves_intensity, ocean_scaler",
 
+		tsunami_toggle_command = "tsunami_toggle",
+		tsunami_toggle_command_help = "Toggle a gradual Tsnuami.",
+		tsunami_toggle_command_parameter_minutes = "daqiiqad",
+		tsunami_toggle_command_parameter_minutes_help = "Tiro ahaanshaha daqiiqadka loogu tallo wararka Caalamiga ah. Waa kuwo 60 ah oo kaliya ah.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "hit",
 		vdm_command_help = "Orders the designated NPC to attempt to hit the specified target.",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		join_with_fivem = "Join with FiveM Habibi",
 		discord_guild = "Discord Guild Habibi",
 		richer_presence_on = "Richer presence is now on Habibi.",
-		richer_presence_off = "Richer presence is now off Habibi."
+		richer_presence_off = "Richer presence is now off Habibi.",
+
+		announce_event = "Dhowaan waxaa jiray dhacdo ka dib markii 15 daqiiqo ah laga soo rogay! Si aad u ogaatid runta, soo booqo Discord.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		no_ocean_scaler_intensity_set = "There is no ocean scaler intensity set yet.",
 		set_ocean_scaler_to = "Set the ocean scaler intensity to `${intensity}`.",
 		reset_ocean_scaler = "Reset the ocean scaler intenisty.",
-		set_ocean_scaler_no_permission = "The player does not have the required permission to set the ocean scaler."
+		set_ocean_scaler_no_permission = "The player does not have the required permission to set the ocean scaler.",
+
+		tsunami_started = "Dhacdo ka dib markii aad ubaahaneyso Tsunami la soo dhoweeyey. Wax dhowaan lagu soo waayay waa ${minutes} daqiiqo.",
+		tsunami_stopped = "Tsunami stopped ya habibi."
 	},
 
 	tuner_shop = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["meme-dinosaur"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "Me set ocean scaler intensity to intensity in Dinosaur Speak.",
 		set_ocean_scaler_command_substitutes = "ocean_scaler in Dinosaur Speak, set_waves_intensity in Dinosaur Speak, waves_intensity in Dinosaur Speak",
 
+		tsunami_toggle_command = "tsunami_chomp",
+		tsunami_toggle_command_help = "Toggle a gradual Chomp.",
+		tsunami_toggle_command_parameter_minutes = "minutes",
+		tsunami_toggle_command_parameter_minutes_help = "The amonut of minutes it should take before the chomp floods the entire Dino world. Default is 60.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "roar",
 		vdm_command_help = "Make a mighty dinosaur attempt to roar and intimidate the target.",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		join_with_fivem = "Join with FiveM",
 		discord_guild = "Hatchlings and T-rexes Chatroom",
 		richer_presence_on = "Roar, we are now featured.",
-		richer_presence_off = "Rawr, we are not featured anymore."
+		richer_presence_off = "Rawr, we are not featured anymore.",
+
+		announce_event = "There is a dino event in 15 minutes! Check Dino-chirp for more information.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		no_ocean_scaler_intensity_set = "Roar! Ocean scaler intensity not set.",
 		set_ocean_scaler_to = "Set the ocean scaler intensity to `${intensity}`. Grr!",
 		reset_ocean_scaler = "Reset the ocean scaler intensity. Roar!",
-		set_ocean_scaler_no_permission = "The player did not have the required permission to set the ocean scaler. Grr!"
+		set_ocean_scaler_no_permission = "The player did not have the required permission to set the ocean scaler. Grr!",
+
+		tsunami_started = "Chomp started. It will take ${minutes} dino minutes to flood the map.",
+		tsunami_stopped = "Tsunami stopped."
 	},
 
 	tuner_shop = {

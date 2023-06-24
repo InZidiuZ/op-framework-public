@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["ar-SA"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "الكثافة التي ترغب في تعيينها.",
 		set_ocean_scaler_command_substitutes = "معدل_المحيط،تعيين_شدة_الموج،شدة_الموج",
 
+		tsunami_toggle_command = "تسونامي_تحويل",
+		tsunami_toggle_command_help = "تحويل تسونامي تدريجيًا.",
+		tsunami_toggle_command_parameter_minutes = "الدقائق",
+		tsunami_toggle_command_parameter_minutes_help = "مدة الدقائق اللازمة قبل إغراق الخريطة بالكامل. الإفتراضي هو 60 دقيقة.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "تصادم",
 		vdm_command_help = "يجعل NPC المحدد يحاول تصادم الهدف.",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		join_with_fivem = "الانضمام باستخدام فيفم",
 		discord_guild = "خادم الديسكورد",
 		richer_presence_on = "تم تفعيل الحالة الأكثر تحدثًا.",
-		richer_presence_off = "تم تعطيل الحالة الأكثر تحدثًا."
+		richer_presence_off = "تم تعطيل الحالة الأكثر تحدثًا.",
+
+		announce_event = "يوجد حدث خلال 15 دقيقة! تحقق من الديسكورد للمزيد من المعلومات.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		no_ocean_scaler_intensity_set = "لا يوجد مستوى مقياس الأوشن الخاص بالكثافة مضبوط حالياً.",
 		set_ocean_scaler_to = "ضبط مقياس الأوشن الخاص بكثافة `${intensity}`.",
 		reset_ocean_scaler = "إعادة ضبط مقياس الأوشن الخاص بالكثافة.",
-		set_ocean_scaler_no_permission = "اللاعب لا يملك الصلاحية المطلوبة لضبط مقياس الأوشن الخاص بالكثافة."
+		set_ocean_scaler_no_permission = "اللاعب لا يملك الصلاحية المطلوبة لضبط مقياس الأوشن الخاص بالكثافة.",
+
+		tsunami_started = "بدأ تسونامي. سوف يستغرق ${minutes} دقيقة لإغراق الخريطة.",
+		tsunami_stopped = "تم إيقاف المد البحري (تسونامي)."
 	},
 
 	tuner_shop = {

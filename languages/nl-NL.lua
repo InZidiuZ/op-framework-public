@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "De intensiteit waarnaar je het wilt instellen.",
 		set_ocean_scaler_command_substitutes = "ocean_scaler, set_waves_intensity, waves_intensity",
 
+		tsunami_toggle_command = "tsunami_toggle",
+		tsunami_toggle_command_help = "Schakel een geleidelijke tsunami in.",
+		tsunami_toggle_command_parameter_minutes = "minuten",
+		tsunami_toggle_command_parameter_minutes_help = "Het aantal minuten voordat de tsunami de hele map overspoelt. Standaard is 60.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "vdm",
 		vdm_command_help = "Laat de gespecificeerde npc proberen om het doelwit te vdm'en.",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		join_with_fivem = "Sluit aan met FiveM",
 		discord_guild = "Discord Gild",
 		richer_presence_on = "Rijkere status is nu ingeschakeld.",
-		richer_presence_off = "Rijkere status is nu uitgeschakeld."
+		richer_presence_off = "Rijkere status is nu uitgeschakeld.",
+
+		announce_event = "Er is over 15 minuten een evenement! Controleer Discord voor meer informatie.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		no_ocean_scaler_intensity_set = "Er is al geen intensiteit van de oceaanschaal ingesteld.",
 		set_ocean_scaler_to = "Stel de intensiteit van de oceaanschaal in op `${intensity}`.",
 		reset_ocean_scaler = "Reset de intensiteit van de oceaanschaal.",
-		set_ocean_scaler_no_permission = "De speler had niet de benodigde machtiging om de intensiteit van de oceaanschaal in te stellen."
+		set_ocean_scaler_no_permission = "De speler had niet de benodigde machtiging om de intensiteit van de oceaanschaal in te stellen.",
+
+		tsunami_started = "Tsunami gestart. Het duurt ${minutes} minuten voordat de map overstromingsgevaarlijk is.",
+		tsunami_stopped = "Tsunami gestopt."
 	},
 
 	tuner_shop = {

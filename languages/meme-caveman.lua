@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["meme-caveman"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "The intensity you would like to set it to.",
 		set_ocean_scaler_command_substitutes = "ocean_scaler, set_waves_intensity, waves_intensity",
 
+		tsunami_toggle_command = "tsunami_toggle",
+		tsunami_toggle_command_help = "Me toggle big big water wave slowly come.",
+		tsunami_toggle_command_parameter_minutes = "minutes",
+		tsunami_toggle_command_parameter_minutes_help = "How long me wait before big big water wave flood all map. Default is 60.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "ug vdm",
 		vdm_command_help = "Ug make npc try vdm target.",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		join_with_fivem = "Join tribe with FiveM",
 		discord_guild = "Me Discord tribe",
 		richer_presence_on = "Me have richer presence now.",
-		richer_presence_off = "Me presence not so rich anymore."
+		richer_presence_off = "Me presence not so rich anymore.",
+
+		announce_event = "Me tell you. Event in 15 minutes! Look Discord for more know.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		no_ocean_scaler_intensity_set = "There is no ocean scaler intensity set yet, ugh!",
 		set_ocean_scaler_to = "Ugh! Set ocean scaler intensity to `${intensity}`, ugh!",
 		reset_ocean_scaler = "Reset ocean scaler intensity, ugh!",
-		set_ocean_scaler_no_permission = "Ugh, the player has no permission to set the ocean scaler, ugh!"
+		set_ocean_scaler_no_permission = "Ugh, the player has no permission to set the ocean scaler, ugh!",
+
+		tsunami_started = "Big big water wave started. Me take ${minutes} minutes before it flood all map.",
+		tsunami_stopped = "Failed to automatically generate translation."
 	},
 
 	tuner_shop = {

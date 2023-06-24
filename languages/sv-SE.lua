@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["sv-SE"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "Den intensitet du vill ställa in den på.",
 		set_ocean_scaler_command_substitutes = "ocean_scaler, set_waves_intensity, waves_intensity",
 
+		tsunami_toggle_command = "tsunami_aktivera",
+		tsunami_toggle_command_help = "Aktivera en gradvis Tsunami.",
+		tsunami_toggle_command_parameter_minutes = "minuter",
+		tsunami_toggle_command_parameter_minutes_help = "Antalet minuter det ska ta innan Tsunamin översvämmar hela kartan. Standard är 60.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "påkörning",
 		vdm_command_help = "Försöker få den angivna NPC:n att köra på målet.",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		join_with_fivem = "Gå med med FiveM",
 		discord_guild = "Discord-guild",
 		richer_presence_on = "Mer detaljerad status visas nu.",
-		richer_presence_off = "Mer detaljerad status visas inte längre."
+		richer_presence_off = "Mer detaljerad status visas inte längre.",
+
+		announce_event = "Det är en tillställning om 15 minuter! Kolla Discord för mer information.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		no_ocean_scaler_intensity_set = "Det finns ingen intensitet för ocean scaler inställd.",
 		set_ocean_scaler_to = "Ställ in intensiteten för ocean scaler till `${intensity}`.",
 		reset_ocean_scaler = "Återställ intensiteten för ocean scaler.",
-		set_ocean_scaler_no_permission = "Spelaren saknade den nödvändiga behörigheten för att ställa in ocean scaler."
+		set_ocean_scaler_no_permission = "Spelaren saknade den nödvändiga behörigheten för att ställa in ocean scaler.",
+
+		tsunami_started = "Tsunami startad. Det kommer ta ${minutes} minuter att översvämma hela kartan.",
+		tsunami_stopped = "Tsunamin har slutat."
 	},
 
 	tuner_shop = {

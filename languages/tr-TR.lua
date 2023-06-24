@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["tr-TR"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "Ayarlamak istediğiniz yoğunluk.",
 		set_ocean_scaler_command_substitutes = "ocean_scaler, set_waves_intensity, waves_intensity",
 
+		tsunami_toggle_command = "tsunami_toggle",
+		tsunami_toggle_command_help = "Aşamalı bir Tsnuami'yi açıp kapatın.",
+		tsunami_toggle_command_parameter_minutes = "dakika",
+		tsunami_toggle_command_parameter_minutes_help = "Tüm haritanın sular altında kalması için kaç dakika gerektiğini belirtin. Varsayılan değer 60'tır.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "vdm",
 		vdm_command_help = "Belirtilen npc'nin hedefi çalıştırmaya çalışmasını sağlar.",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		join_with_fivem = "FiveM ile katıl",
 		discord_guild = "Discord Sunucusu",
 		richer_presence_on = "Daha zengin varlık özelliği şimdi açık.",
-		richer_presence_off = "Daha zengin varlık özelliği şimdi kapalı."
+		richer_presence_off = "Daha zengin varlık özelliği şimdi kapalı.",
+
+		announce_event = "15 dakika içinde bir etkinlik var! Daha fazla bilgi için Discord'u kontrol edin.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		no_ocean_scaler_intensity_set = "Zaten herhangi bir okyanus ölçek çarpanı yoğunluğu ayarlanmadı.",
 		set_ocean_scaler_to = "Okyanus ölçek çarpanı yoğunluğunu '${intensity}' olarak ayarla.",
 		reset_ocean_scaler = "Okyanus ölçek çarpanı yoğunluğunu sıfırla.",
-		set_ocean_scaler_no_permission = "Oyuncunun okyanus ölçek çarpanını ayarlamak için gerekli izni yok."
+		set_ocean_scaler_no_permission = "Oyuncunun okyanus ölçek çarpanını ayarlamak için gerekli izni yok.",
+
+		tsunami_started = "Tsunami başladı. Haritanın tamamını su basması ${minutes} dakika sürecek.",
+		tsunami_stopped = "Tsunami durduruldu."
 	},
 
 	tuner_shop = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["es-ES"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "La intensidad que desea establecer.",
 		set_ocean_scaler_command_substitutes = "ocean_scaler, set_waves_intensity, waves_intensity",
 
+		tsunami_toggle_command = "alternar_tsunami",
+		tsunami_toggle_command_help = "Activar/Desactivar un Tsunami gradual.",
+		tsunami_toggle_command_parameter_minutes = "minutos",
+		tsunami_toggle_command_parameter_minutes_help = "La cantidad de minutos antes de que el tsunami inunde todo el mapa. El valor predeterminado es 60.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "vdm",
 		vdm_command_help = "Hace que el NPC especificado intente VDM al objetivo.",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["es-ES"] = {
 		join_with_fivem = "Unirse con FiveM",
 		discord_guild = "Servidor de Discord",
 		richer_presence_on = "Presencia destacada está activada.",
-		richer_presence_off = "Presencia destacada está desactivada."
+		richer_presence_off = "Presencia destacada está desactivada.",
+
+		announce_event = "¡Hay un evento en 15 minutos! Consulta Discord para más información.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 		no_ocean_scaler_intensity_set = "Actualmente no hay una intensidad establecida en el escalador del océano.",
 		set_ocean_scaler_to = "Establecer la intensidad del escalador del océano en `${intensity}`.",
 		reset_ocean_scaler = "Restablecer la intensidad del escalador del océano.",
-		set_ocean_scaler_no_permission = "El jugador no tiene el permiso necesario para establecer la intensidad del escalador del océano."
+		set_ocean_scaler_no_permission = "El jugador no tiene el permiso necesario para establecer la intensidad del escalador del océano.",
+
+		tsunami_started = "Se ha iniciado el tsunami. Tomará ${minutes} minutos para inundar el mapa.",
+		tsunami_stopped = "El tsunami ha parado."
 	},
 
 	tuner_shop = {

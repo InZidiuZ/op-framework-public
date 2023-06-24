@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["en-GB"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["en-GB"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "The intensity you would like to set it to.",
 		set_ocean_scaler_command_substitutes = "ocean_scaler, set_waves_intensity, waves_intensity",
 
+		tsunami_toggle_command = "tsunami_toggle",
+		tsunami_toggle_command_help = "Toggle a gradual Tsunami.",
+		tsunami_toggle_command_parameter_minutes = "minutes",
+		tsunami_toggle_command_parameter_minutes_help = "The amount of minutes it should take before the tsunami floods the entire map. Default is 60.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "vdm",
 		vdm_command_help = "Makes the specified npc attempt to vdm the target.",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		join_with_fivem = "Join with FiveM",
 		discord_guild = "Discord Guild",
 		richer_presence_on = "Richer presence is now on.",
-		richer_presence_off = "Richer presence is now off."
+		richer_presence_off = "Richer presence is now off.",
+
+		announce_event = "There is an event in 15 minutes! Check Discord for more information.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		no_ocean_scaler_intensity_set = "There is already no ocean scaler intensity set.",
 		set_ocean_scaler_to = "Set the ocean scaler intensity to `${intensity}`.",
 		reset_ocean_scaler = "Reset the ocean scaler intenisty.",
-		set_ocean_scaler_no_permission = "The player did not have the required permission to set the ocean scaler."
+		set_ocean_scaler_no_permission = "The player did not have the required permission to set the ocean scaler.",
+
+		tsunami_started = "Tsunami started. It will take ${minutes} minutes to flood the map.",
+		tsunami_stopped = "Tsunami has stopped."
 	},
 
 	tuner_shop = {

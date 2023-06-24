@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "ความเข้มของคลื่นที่คุณต้องการตั้งค่า",
 		set_ocean_scaler_command_substitutes = "ocean_scaler, set_waves_intensity, waves_intensity",
 
+		tsunami_toggle_command = "เปิด/ปิดซูนามิ",
+		tsunami_toggle_command_help = "เปิดหรือปิดการเกิดซูนามิช้าๆ",
+		tsunami_toggle_command_parameter_minutes = "นาที",
+		tsunami_toggle_command_parameter_minutes_help = "จำนวนนาทีที่จะใช้ในการก่อการร้ายทุกไปทุกมา ค่าเริ่มต้นคือ 60.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "vdm",
 		vdm_command_help = "ทำให้ตัวละคร NPC ที่ระบุพยายาม VDM เป้าหมาย",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		join_with_fivem = "เข้าร่วมด้วย FiveM",
 		discord_guild = "Discord เซิร์ฟเวอร์",
 		richer_presence_on = "การเปิดเเสดงสถานะสะท้อนความทรงจำของเกมส์อยู่เเล้ว",
-		richer_presence_off = "การปิดเเสดงสถานะสะท้อนความทรงจำของเกมส์อยู่เเล้ว"
+		richer_presence_off = "การปิดเเสดงสถานะสะท้อนความทรงจำของเกมส์อยู่เเล้ว",
+
+		announce_event = "มีกิจกรรมในอีก 15 นาที! ดูข้อมูลเพิ่มเติมได้ที่ Discord\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		no_ocean_scaler_intensity_set = "ยังไม่ได้ตั้งค่าความหลากหลายของมหาสมุทร",
 		set_ocean_scaler_to = "ตั้งค่าความหลากหลายของมหาสมุทรเป็น `${intensity}`",
 		reset_ocean_scaler = "รีเซ็ตความเข้มของความหลากหลายของมหาสมุทร",
-		set_ocean_scaler_no_permission = "ผู้เล่นไม่มีสิทธิ์เพียงพอที่จะตั้งค่าความหลากหลายของมหาสมุทร"
+		set_ocean_scaler_no_permission = "ผู้เล่นไม่มีสิทธิ์เพียงพอที่จะตั้งค่าความหลากหลายของมหาสมุทร",
+
+		tsunami_started = "เริ่มซูนามิแล้ว จะใช้เวลา ${minutes} นาทีก่อนที่จะเกิดน้ำทะเลท่วมทั้งแผนที่.",
+		tsunami_stopped = "คลื่นยักษ์หยุดทำงานแล้ว"
 	},
 
 	tuner_shop = {

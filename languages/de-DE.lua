@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["de-DE"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["de-DE"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "Die Intensität, auf die Sie sie setzen möchten.",
 		set_ocean_scaler_command_substitutes = "ocean_scaler, setze_wellen_intensität, wellen_intensität",
 
+		tsunami_toggle_command = "tsunami_toggle",
+		tsunami_toggle_command_help = "Aktiviert/deaktiviert einen schrittweisen Tsunami.",
+		tsunami_toggle_command_parameter_minutes = "Minuten",
+		tsunami_toggle_command_parameter_minutes_help = "Die Anzahl der Minuten, die es dauern soll, bevor der Tsunami die gesamte Karte überflutet. Voreinstellung sind 60 Minuten.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "vdm",
 		vdm_command_help = "Versucht den angegebenen NPC dazu zu bringen, das Ziel zu VDMen.",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["de-DE"] = {
 		join_with_fivem = "Mit FiveM verbinden",
 		discord_guild = "Discord-Guild",
 		richer_presence_on = "Richer Presence is jetzt aktiv.",
-		richer_presence_off = "Richer Presence ist jetzt deaktiviert."
+		richer_presence_off = "Richer Presence ist jetzt deaktiviert.",
+
+		announce_event = "In 15 Minuten findet ein Event statt! Überprüfe Discord für weitere Informationen.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["de-DE"] = {
 		no_ocean_scaler_intensity_set = "Es wurde bereits keine Intensität des Meeresmaßstabs eingestellt.",
 		set_ocean_scaler_to = "Stelle die Intensität des Meeresmaßstabs auf `${intensity}` ein.",
 		reset_ocean_scaler = "Setze die Intensität des Meeresmaßstabs zurück.",
-		set_ocean_scaler_no_permission = "Der Spieler hatte nicht die erforderliche Berechtigung, den Meeresmaßstab einzustellen."
+		set_ocean_scaler_no_permission = "Der Spieler hatte nicht die erforderliche Berechtigung, den Meeresmaßstab einzustellen.",
+
+		tsunami_started = "Tsunami gestartet. Es dauert ${minutes} Minuten, um die gesamte Karte zu überfluten.",
+		tsunami_stopped = "Tsunami gestoppt."
 	},
 
 	tuner_shop = {

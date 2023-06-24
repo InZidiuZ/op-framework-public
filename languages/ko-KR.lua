@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["ko-KR"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "설정하려는 강도입니다.",
 		set_ocean_scaler_command_substitutes = "ocean_scaler, set_waves_intensity, waves_intensity",
 
+		tsunami_toggle_command = "쓰나미_전환",
+		tsunami_toggle_command_help = "점진적인 쓰나미를 전환합니다.",
+		tsunami_toggle_command_parameter_minutes = "분",
+		tsunami_toggle_command_parameter_minutes_help = "쓰나미가 전체 맵을 덮을 때까지 걸리는 분 수입니다. 기본값은 60분입니다.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "vdm",
 		vdm_command_help = "지정된 NPC가 대상을 VDM하려고 시도합니다.",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		join_with_fivem = "FiveM으로 참가하기",
 		discord_guild = "디스코드 길드",
 		richer_presence_on = "더 풍부한 프레즌스가 켜졌습니다.",
-		richer_presence_off = "더 풍부한 프레즌스가 꺼졌습니다."
+		richer_presence_off = "더 풍부한 프레즌스가 꺼졌습니다.",
+
+		announce_event = "15분 후 이벤트가 있습니다! 자세한 정보는 디스코드를 확인하세요.\n\n${location}에서 ${name}이(가) 진행됩니다."
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		no_ocean_scaler_intensity_set = "해양 스케일러 강도가 아직 설정되지 않았습니다.",
 		set_ocean_scaler_to = "해양 스케일러 강도를 `${intensity}`(으)로 설정합니다.",
 		reset_ocean_scaler = "해양 스케일러 강도를 초기화 합니다.",
-		set_ocean_scaler_no_permission = "해당 플레이어는 해양 스케일러 강도를 설정할 충분한 권한이 없습니다."
+		set_ocean_scaler_no_permission = "해당 플레이어는 해양 스케일러 강도를 설정할 충분한 권한이 없습니다.",
+
+		tsunami_started = "쓰나미가 시작되었습니다. 맵이 ${minutes}분 동안 물에 잠길 예정입니다.",
+		tsunami_stopped = "쓰나미가 멈췄습니다."
 	},
 
 	tuner_shop = {

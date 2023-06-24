@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["meme-klingon"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "qap Hoch 'Iv choq.",
 		set_ocean_scaler_command_substitutes = "ocean_scaler, Set_waves_intensity, waves_intensity",
 
+		tsunami_toggle_command = "tlhIngan Hol Daghaj toggle",
+		tsunami_toggle_command_help = "tlhIngan Hol Daghaj Sov nuj.",
+		tsunami_toggle_command_parameter_minutes = "taH pagh",
+		tsunami_toggle_command_parameter_minutes_help = "tlhIngan Hol Daghaj moghquv pagh. pagh poH wa' 60.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "vdm",
 		vdm_command_help = "qatlh chenmoH 'ej wa' Huq Dap target vdm laHbe'lu'.",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		join_with_fivem = "FiveM Daqoy",
 		discord_guild = "Discord 'ab",
 		richer_presence_on = "yo'",
-		richer_presence_off = "yo'"
+		richer_presence_off = "yo'",
+
+		announce_event = "wa'logh qonDu' lo'laHbe'chugh qap law' Hoch DIvI'! Discord lIj nIteb'e'"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		no_ocean_scaler_intensity_set = "majQa' ocean scaler intensity set pegh.",
 		set_ocean_scaler_to = "Set ocean scaler 'aw' intensity to `${intensity}`.",
 		reset_ocean_scaler = "Reset 'aw' ocean scaler intensity.",
-		set_ocean_scaler_no_permission = "player cha'DIch vaj permission Hol set ocean scaler."
+		set_ocean_scaler_no_permission = "player cha'DIch vaj permission Hol set ocean scaler.",
+
+		tsunami_started = "tlhIngan Hol Daghajchuq. chenmoH ${minutes} DaH jImej.",
+		tsunami_stopped = "tSuNxI' Doch."
 	},
 
 	tuner_shop = {

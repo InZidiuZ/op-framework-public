@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 15 (do not change)
+-- AUTO LOCALES: 16 (do not change)
 
 OP.Global.Locales.Languages["meme-roadman"] = {
 	-- configuration settings for language
@@ -3210,6 +3210,12 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		set_ocean_scaler_command_parameter_intensity_help = "How intense you want it to be fam.",
 		set_ocean_scaler_command_substitutes = "ocean_scala, set_waves_intensity, waves_intensity",
 
+		tsunami_toggle_command = "tsunami",
+		tsunami_toggle_command_help = "Activates a slow tsunami that will flood the entire map.",
+		tsunami_toggle_command_parameter_minutes = "mins",
+		tsunami_toggle_command_parameter_minutes_help = "Amount of time (in mins) before the tsunami begins. Default is 60.",
+		tsunami_toggle_command_substitutes = "",
+
 		-- game/vdm
 		vdm_command = "wreck",
 		vdm_command_help = "Tell the specified npc to ram the target.",
@@ -3695,7 +3701,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		join_with_fivem = "Link up with FiveM",
 		discord_guild = "Discord Gang",
 		richer_presence_on = "Man dem, we got some richer presence up in here now.",
-		richer_presence_off = "Richer presence, nah mate that's off now."
+		richer_presence_off = "Richer presence, nah mate that's off now.",
+
+		announce_event = "Yo, there's an event happenin' in 15 minutes! Check Discord for more info.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -10884,7 +10892,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		no_ocean_scaler_intensity_set = "Allow it, there is no ocean scaler intensity set.",
 		set_ocean_scaler_to = "Set the ocean scaler intensity to `${intensity}`, fam.",
 		reset_ocean_scaler = "Reset the intensity for the ocean scaler, blud.",
-		set_ocean_scaler_no_permission = "The player did not have the required permission to set the ocean scaler, innit."
+		set_ocean_scaler_no_permission = "The player did not have the required permission to set the ocean scaler, innit.",
+
+		tsunami_started = "Tsunami's startin'! It'll flood the map in ${minutes} minutes.",
+		tsunami_stopped = "Tsunami fully peaky blinding stopped, innit."
 	},
 
 	tuner_shop = {
