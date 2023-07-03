@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 16 (do not change)
+-- AUTO LOCALES: 17 (do not change)
 
 OP.Global.Locales.Languages["bn-BD"] = {
 	-- configuration settings for language
@@ -96,11 +96,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		model_name_not_provided = "কোনও মডেল নাম দেওয়া হয় নি।",
 		model_name_invalid = "মডেল নাম `${modelName}` অবৈধ।",
-		failed_to_spawn_vehicle = "`/spawn_vehicle` কমান্ড ঠিকমত সম্পাদন করা যায় নি।",
-		spawned_vehicle_for_player = "${consoleName}-কে ${modelName} সাফল্যের সাথে স্পম করা হয়েছে।",
+		failed_to_spawn_vehicle = "গাড়ি স্পঁইন করতে ব্যর্থ হয়েছে।",
+		spawned_vehicle_for_player = "${displayName} এর জন্য সফলভাবে গাড়ি স্পঁইন করা হয়েছে: `${modelName}`।",
 		spawned_vehicle_for_everyone = "সবার জন্য সাফল্যের সাথে ${modelName} স্পম করা হয়েছে।",
-		spawn_vehicle_for_player_not_staff = "প্লেয়ার কোন অন্য ব্যক্তিকে গাড়ি স্পউন করতে চেষ্টা করেছিলেন, কিন্তু তাদের এর জন্য প্রয়োজনীয় অনুমতি নেই।",
-		spawn_vehicle_for_self_not_staff = "প্লেয়ার নিজের জন্য গাড়ি স্পউন করতে চেষ্টা করেছিলেন, কিন্তু তাদের এর জন্য প্রয়োজনীয় অনুমতি নেই।",
+		spawn_vehicle_no_permissions = "খেলোয়াড় গাড়ি স্পঁইন করার চেষ্টা করেছেন, কিন্তু এর জন্য প্রয়োজনীয় অনুমতি নেই।",
 		replace_vehicle_no_permissions = "প্লেয়ার তাদের গাড়ি প্রতিস্থাপন করতে চেষ্টা করেছিলেন, কিন্তু তাদের এর জন্য প্রয়োজনীয় অনুমতি নেই।",
 		create_vehicle_no_permissions = "প্লেয়ার একটি গাড়ি তৈরি করতে চেষ্টা করেছিলেন, কিন্তু তাদের এর জন্য প্রয়োজনীয় অনুমতি নেই।",
 		spawned_vehicle_for_self_title = "বাহন উত্পন্ন করা হয়েছে",
@@ -1907,13 +1906,13 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		position_command_parameter_label_help = "গবেষণার সাথে সংরক্ষিত করতে একটি ঐচ্ছিক লেবেল।",
 		position_command_substitutes = "অবস্থান, স্থানান্তর করা",
 
+		copy_ground_command = "copy_ground",
+		copy_ground_command_help = "আপনার বর্তমান অবস্থানের স্থলবৈশিষ্ট্যগুলি ক্লিপবোর্ডে কপি করুন।",
+		copy_ground_command_substitutes = "ground",
+
 		save_commands_list_command = "save_commands_list",
 		save_commands_list_command_help = "সম্ভব সকল উপলভ্য অপ-এফডাব্লিউ কমান্ডের একটি তালিকা সংরক্ষণ করে।",
 		save_commands_list_command_substitutes = "",
-
-		save_vehicle_data_command = "save_vehicle_data",
-		save_vehicle_data_command_help = "যানবাহন সম্পর্কিত তথ্য সংরক্ষণ করে।",
-		save_vehicle_data_command_substitutes = "",
 
 		draw_radius_command = "ব্যাসার্ধ",
 		draw_radius_command_help = "ব্যাসার্ধ আঁকা।",
@@ -2268,6 +2267,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		gun_trader_debug_command = "গান_ট্রেডার_ডিবাগ",
 		gun_trader_debug_command_help = "গান বিক্রেতার বর্তমান অবস্থানে টেক্সট আঁকুন।",
 		gun_trader_debug_command_substitutes = "",
+
+		unlock_gun_trader_command = "unlock_gun_trader",
+		unlock_gun_trader_command_help = "তুরিটি ব্যাবসায়িকভাবে সমাধান করুন।",
+		unlock_gun_trader_command_substitutes = "",
 
 		-- game/gas_masks
 		gas_debug_command = "গ্যাস_ডিবাগ",
@@ -3361,6 +3364,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		entity_states_command_parameter_network_id_help = "এনটিটির নেটওয়ার্ক আইডি।",
 		entity_states_command_substitutes = "",
 
+		draw_entity_states_command = "অবস্থান দেখাও",
+		draw_entity_states_command_help = "১ বা এরও অবস্থা সহ সব সম্পদ দেখায়।",
+		draw_entity_states_command_substitutes = "",
+
 		-- illegal/corner
 		corner_command = "কর্নার",
 		corner_command_help = "নিকটবর্তী ব্যক্তিকে মাদক বিক্রি করুন। আপনি কোন মাদক বিক্রি করছেন তা স্থানের উপর ভিত্তি করে।",
@@ -3415,7 +3422,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		pd_impound_command = "পুলিশ পার্কিং",
 		pd_impound_command_help = "এই কমান্ডটি একজন রেসিং গাড়ির বিশিষ্ট সময়ের জন্য মহাকাশে ধরে রাখে।",
 		pd_impound_command_parameter_minutes = "মিনিট",
-		pd_impound_command_parameter_minutes_help = "(1 মিনিট থেকে 12 ঘন্টা পর্যন্ত) গাড়ি বন্ধ থাকবে কতক্ষণের জন্য?",
+		pd_impound_command_parameter_minutes_help = "যে সময়ক্ষণ গাড়ি বাধ্যতামূলক করা হবে তা (১ মিনিট থেকে ৪৮ ঘন্টা)।",
 		pd_impound_command_substitutes = "",
 
 		dispatch_command = "ডিসপ্যাচ",
@@ -4709,6 +4716,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		outfit_failed = "পোশাক পরিবর্তন করতে ব্যর্থ।",
 		missing_outfit = "অংশগ্রহণযোগ্য পোশাক নেই।",
 		missing_outfit_name = "পোশাকের নাম নেই।",
+		invalid_outfit = "অবৈধ আউটফিট।",
 		no_nearby_clothing_spot = "কোন পোশাকের জন্য স্থান নেই।",
 		trunk_closed = "ট্রাঙ্ক বন্ধ আছে।",
 		trunk_too_far = "আপনি ট্রাঙ্ক থেকে অনেক দূরে রয়েছেন।",
@@ -4739,6 +4747,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		loading_model = "আদর্শ লোড করা হচ্ছে...",
 		loading_spawn = "প্লেয়ার আদর্শ স্পপ হচ্ছে...",
+		loading_preload_data = "পেড ডেটা প্রিলোড হচ্ছে...",
 		loading_set_data = "আদর্শ ডেটা সেট করা হচ্ছে...",
 		loading_tattoos = "ট্যাটু সেট করা হচ্ছে...",
 		loading_finalize = "চূড়ান্ত করা হচ্ছে..."
@@ -5277,6 +5286,12 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		crafted_multi_tool = "মাল্টি টুল তৈরি হয়েছে।",
 		failed_craft_multi_tool = "মাল্টি টুল তৈরি করতে ব্যর্থ হয়েছে।",
 
+		mix_grimace_shake = "মিক্স গ্রিমেস শেক",
+		press_to_mix_grimace_shake = "[${SeatEjectKey}] মিক্স গ্রিমেস শেক",
+		mixing_grimace_shake = "মিক্সিং গ্রিমেস শেক",
+		mixed_grimace_shake = "মিশ্রিত গ্রিমেস শেক।",
+		failed_mix_grimace_shake = "গ্রিমেস শেক মেশ করতে ব্যর্থ হয়েছে।",
+
 		no_required_items = "আপনার সমস্ত প্রয়োজনীয় জিনিসপত্র নেই।",
 
 		debug_multi = "-একাধিক আউটপুট-",
@@ -5293,7 +5308,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 	creation = {
 		turn_right = "ডানদিকে ভাঁজ করো",
-		turn_left = "বাম দিকে তেমন পাল্টো না"
+		turn_left = "বাম দিকে তেমন পাল্টো না",
+		toggle_light = "লাইট টগল করুন"
 	},
 
 	creation_menu = {
@@ -5875,7 +5891,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		floor_containment = "সংযোগ কক্ষ",
 
-		doj_office = "ডিওজে অফিস"
+		doj_office = "ডিওজে অফিস",
+
+		used_elevator_logs_title = "লিফট ব্যবহার করা হয়েছে",
+		used_elevator_logs_details = "${consoleName} এলেভেটর ${elevatorId} ব্যবহার করে ফ্লোর `${floor}` এ যেতে।"
 	},
 
 	emails = {
@@ -6052,6 +6071,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		disabled_freecam = "মুক্তদৃশ্য (freecam) নিষ্ক্রিয় করা হয়েছে।",
 		freecam_failed = "ফ্রি-ক্যাম সক্ষম করা যায়নি। কি আপনার হাতে নোক্ষন বা এর মতোই কম্পিউটারি ফাংশন সক্ষম করা আছে?",
 
+		freecam_no_dead = "আপনি মারা গিয়ে বেক ক্যাম চালু করতে পারবেন না।",
+
 		freecam_logs_title = "মুক্ত ক্যাম চালু করা হয়েছে",
 		freecam_on_logs_details = "${consoleName} তাদের মুক্ত ক্যামটি চালু করেছেন।",
 		freecam_off_logs_details = "${consoleName} তাদের মুক্ত ক্যামটি বন্ধ করেছেন।",
@@ -6092,6 +6113,9 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		shake_tree = "ট্রি ঝকঝক করতে ~INPUT_CONTEXT~ চাপুন।",
 		shaking_tree = "ট্রি ঝকঝক হচ্ছে",
+
+		extract_rubber = "ট্রি থেকে রাবার নিষ্কাশনের জন্য ~INPUT_CONTEXT~ চাপুন।",
+		extracting_rubber = "রাবার নিষ্কাশন করা হচ্ছে",
 
 		tree_klonk = "কিছু ট্রি থেকে আপনার মাথায় পড়েছে।"
 	},
@@ -6184,7 +6208,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		sorry_closed = "দুঃখিত দাদা, দোকান বন্ধ আছে।",
 		sorry_closed_hug = "হাগ দেওয়ার জন্য ধন্যবাদ ভাইয়া :)",
-		sorry_closed_fight = "ভাইয়া আপনি কি মারপিট করছেন? আমি তো কিছুই করিনি।",
+		sorry_closed_finger = "হাই, অসম্ভব আপনি আপনাকে মিঠা দিতে না চাই!",
+		sorry_closed_kiss = "ওহো পক্ষট, আমি এটা সহ নই ...",
+		sorry_closed_dab = "সেই নেটারা হেটার্-রা দিয়েছে, ভাই ভাই, আসলেও ধর!",
+		sorry_closed_fight = "হুম, হোমিও! তোমার জন্য কোন কাজ নেই বলে ছিল তো ...",
 
 		trader_locked = "জিম তাঁর দোকান খোলার আগে কিছু জিনিস প্রয়োজন।",
 		unlock_trader = "জিমকে আইটেম সরবরাহ করুন।",
@@ -6312,8 +6339,6 @@ OP.Global.Locales.Languages["bn-BD"] = {
 	},
 
 	hud = {
-		mph = "মাইল/ঘন্টা",
-		kmh = "কিলোমিটার/ঘন্টা",
 		knots = "নৌবহর",
 		ft = "ফুট",
 		m = "মিটার",
@@ -6335,6 +6360,9 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		steps_walked_deaths = "${stepsWalked} পদক্ষেপ ~t~/~w~ ${deaths} নেতার আসন।",
 		altitude_temperature = "${altitude} ${একক} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "বাকি অক্সিজেন: ${timer}",
+
+		alignment_warning_title = "HUD নির্দেশনা",
+		alignment_warning = "তোমার HUD অংশগুলি পুরোপুরি স্ক্রিনের বাইরে হয়ে গেছে। তুমি এটি পরিষ্কার করতে পারো তোমার \"*ডিসপ্লে*\" সেটিংসের \"*সেফজোনের আয়তন*\" কমিয়ে দিয়ে।",
 
 		muted = "নিঃশব্দভাবে করা হয়েছে",
 
@@ -6365,7 +6393,11 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		hold_to_skin = "[${InteractionKey}] ত্বক সংগ্রহ করতে ধরুন",
 		skinning_animal = "প্রাণী খুন হওয়ার পর ত্বক সংগ্রহ করা হচ্ছে",
 		meat_too_damaged = "এই প্রাণীর মাংস অত্যন্ত ক্ষতিগ্রস্ত।",
-		animal_is_being_skinned = "প্রাণীটি স্কিন করা হচ্ছে।"
+		animal_is_being_skinned = "প্রাণীটি স্কিন করা হচ্ছে।",
+
+		skinned_logs_title = "খাদ্যান্দার",
+		skinned_logs_details = "${consoleName} একটি পশু (${modelName}) খাদ্যান্দার করে নিয়েছেন এবং ${skinnedItems} অর্জন করেছেন।",
+		received_nothing = "কিছুই পাওয়া যায়নি"
 	},
 
 	identification = {
@@ -7234,6 +7266,9 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		lean = "লিন",
 		lean_description = "সিজার্প নিচু খাচ্ছি, সিপ, সিজার্প নিচু খাচ্ছি, সিপ।",
+
+		grimace_shake = "গ্রিমেস শেক",
+		grimace_shake_description = "পাগল? আমি একবার পাগল ছিলাম। তারা আমাকে একটি ককুর ঘরে রেখেছিল। রাবার থলের একটি ঘর। রাত্বির সঙ্গে। এবং এটি ক্ষেত্রে কর্মী তিনি পাগল করে। পাগল? আমি একবার পাগল ছিলাম। তারা আমাকে একটি ককুর ঘরে রেখেছিল। রাবার থলের একটি ঘর। রাত্বির সঙ্গে। এবং এটি ক্ষেত্রে কর্মী তিনি পাগল করে। পাগল? আমি একবার পাগল ছিলাম। তারা আমাকে একটি ককুর ঘরে রেখেছিল। রাবার থলের একটি ঘর। রাত্বির সঙ্গে। এবং এটি ক্ষেত্রে কর্মী তিনি পাগল করে। পাগল? আমি একবার পাগল ছিলাম। তারা আমাকে একটি ককুর ঘরে রেখেছিল। রাবার থলের একটি ঘর। রাত্বির সঙ্গে। এবং এটি ক্ষেত্রে কর্মী তিনি পাগল করে। পাগল? আমি একবার পাগল ছিলাম.....",
 
 		jolly_ranchers = "জলি রঞ্চার",
 		jolly_ranchers_description = "মিষ্টি ও তাজার স্বাদে মজার জলি রঞ্চারগুলি খেতে সময় কাটান। এটি ক্লাসিক হার্ড ক্যান্ডি যা ফলের মধুর বুকে বারবার বুস্তি দেয়।",
@@ -8117,9 +8152,6 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		weapon_addon_berserker = "বার্সার্কার",
 		weapon_addon_berserker_description = "সুন্দর এক্স।",
 
-		weapon_addon_katana = "কাতানা",
-		weapon_addon_katana_description = "নিনজা, হ্যা।",
-
 		weapon_addon_stidvc = "STI DVC 2011",
 		weapon_addon_stidvc_description = "ভবিষ্যত এখন পুরাতন হয়ে গেছে, কেবল একটি ছোট ক্যালিবারে...",
 
@@ -8170,7 +8202,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		lockpicking_succeeded = "তমকপিকিং সফল হয়েছে।",
 		hotwiring_vehicle = "হটওয়ায়ারিং গাড়ি",
 		lockpick_broke = "লকপিক ভেঙ্গে গেছে",
-		failed_hotwire = "হটওয়ায়ার ব্যর্থ হয়েছে",
+		failed_hotwire = "গাড়ি হটওয়ায়ার করতে ব্যর্থ হয়েছে, হঠাৎ কিছু ভাল সরঞ্জাম ব্যবহার করার চেষ্টা করুন।",
 		unpacking_green_rolls = "সবুজ রোল ওপেন করা হচ্ছে",
 		you_do_not_have_enough_rolling_paper = "আপনার যথেষ্ট রোলিং পেপার নেই।",
 		rolling_joint = "জয়েন্ট রোল করা হচ্ছে",
@@ -8413,6 +8445,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		refresh = "রিফ্রেশ করুন",
 		refreshing = "রিফ্রেশ করা হচ্ছে...",
 
+		avoid_repeating_letters = "আপনার প্রথম এবং/অথবা শেষ নামে অল্প ব্যাপার্যই পুনরাবৃত্তির অক্ষরগুলি থাকতে চেষ্টা করুন।",
+
 		missing_character_creation_data = "চরিত্র তৈরির প্রয়োজনীয় তথ্য অনুপস্থিত।",
 		invalid_first_name = "প্রথম নাম অনুপস্থিত বা অবৈধ (২ থেকে ১০০ অক্ষর).",
 		invalid_last_name = "শেষ নাম অনুপস্থিত বা অবৈধ (২ থেকে ১০০ অক্ষর).",
@@ -8561,6 +8595,24 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		no_nearby_vehicle = "কোন নিকটবর্তী গাড়ি নেই।",
 		already_checking_upgrades = "আপনি ইতিমধ্যে একটি গাড়ির টিউনস চেক করছেন।",
 		engine_is_running = "গাড়ির ইঞ্জিন চলছে।"
+	},
+
+	meow = {
+		feed = "[${InteractionKey}] কাও",
+		pet = "[${InteractionKey}] পশুটি স্পর্শ করুন",
+		brush = "[${InteractionKey}] ঘোরান",
+		catnip = "[${InteractionKey}] মাছি দিন",
+		treat = "[${InteractionKey}] বরমান করুন",
+		cuddle = "[${InteractionKey}] আদালত করুন",
+		hug = "[${InteractionKey}] আলিংগন করুন",
+
+		feed_active = "ম্যাক্সওয়েলকে খাওয়ানো হচ্ছে",
+		pet_active = "ম্যাক্সওয়েলকে স্পর্শ করা হচ্ছে",
+		brush_active = "ম্যাক্সওয়েলকে ব্রাশ করছে",
+		catnip_active = "ম্যাক্সওয়েলকে ক্যাটনিপ দিয়ে দিচ্ছে",
+		treat_active = "ম্যাক্সওয়েলকে ট্রিট দিয়ে দিচ্ছে",
+		cuddle_active = "ম্যাক্সওয়েলকে আঁকানো হচ্ছে",
+		hug_active = "ম্যাক্সওয়েলকে আঁকিত হচ্ছে"
 	},
 
 	meth = {
@@ -9656,7 +9708,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		no_warnings = "কোন সতর্কতা নেই",
 		not_shown_warnings = "${count} আরও দেখানো হয়নি",
 		system_issuer = "সিস্টেম",
-		add_warning_title = "সতর্কতা যোগ করুন",
+		add_note_title = "নোট যুক্ত করুন",
 		message_placeholder = "${playerName} একটি ভুল করেছেন...",
 
 		type_note = "নোট",
@@ -9667,7 +9719,11 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		button_cancel = "বাতিল করুন",
 		button_add = "যোগ করুন",
 		button_close = "বন্ধ করুন",
-		button_new = "নতুন",
+		button_new = "নতুন নোট",
+
+		ping = "${ping}মিলিসেকেন্ড",
+		fps = "${fps}ফ্রেম প্রতি সেকেন্ড",
+		playtime = "${time}ঘন্টা খেলেছেন",
 
 		invalid_server_id = "সঠিক সার্ভার আইডি নেই।",
 
@@ -10369,17 +10425,15 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		invincibility_inactive_dead = "অজেয়গ্রস্ততা: ~g~নিষ্ক্রিয়~w~ (মৃত্যু)",
 		invincibility_inactive = "অজেয়গ্রস্ততা: ~g~নিষ্ক্রিয়~w~",
 
-		health_ok = "স্বাস্থ্য: ~g~${health} / ${maxHealth}~w~",
-		health_bad = "স্বাস্থ্য: ~r~${health} / ${maxHealth}~w~",
+		health_ok = "স্বাস্থ্য: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
+		health_bad = "স্বাস্থ্য: ~r~${health} / ${maxHealth}~w~ - ${percentage}",
 
-		armor_ok = "আরমর: ~g~${armor} / ${maxArmor}~w~",
-		armor_bad = "আরমর: ~r~${armor} / ${maxArmor}~w~",
+		armor_ok = "আর্মর: ~g~${armor} / ${maxArmor}~w~ - ${percentage}",
+		armor_bad = "আরমর: ~r~${armor} / ${maxArmor}~w~ - ${percentage}",
 
 		vehicle_health = "যানবহন স্বাস্থ্য: ${percentage}",
 
-		speed = "গতি: ${speed}${unit}",
-		speed_mph = "মাইল/ঘন্টা",
-		speed_kmh = "কিলোমিটার/ঘন্টা",
+		speed = "গতি: ${speed}",
 
 		exit_spectate = "স্পেক্টেটর মোড থেকে বের হতে ~g~${InteractionKey}~w~ চাপুন",
 
@@ -10895,7 +10949,9 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		set_ocean_scaler_no_permission = "খেলোয়ার কাছে সমুদ্রের স্কেলার সেট করার জন্য প্রয়োজনীয় অনুমতি নেই।",
 
 		tsunami_started = "সুনামি শুরু হয়েছে। ম্যাপের সম্পূর্ণ অংশ প্রবাহিত হওয়ার জন্য ${minutes} মিনিট সময় লাগবে।",
-		tsunami_stopped = "সুনামি বন্ধ হয়েছে।"
+		tsunami_stopped = "সুনামি বন্ধ হয়েছে।",
+
+		toggle_tsunami_no_permissions = "উচিত অনুমতি ছাড়া সুনামি চালু করা হয়েছে।"
 	},
 
 	tuner_shop = {
@@ -11111,6 +11167,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		flipped_vehicle_logs_title = "উল্টো গাড়ি",
 		flipped_vehicle_logs_details = "${consoleName} একটি গাড়ি উলটিয়ে ফেলেছে।",
 		failed_to_find_ground = "স্থান খুঁজে না পেয়েছে, সবচেয়ে নিকটবর্তী রাস্তায় টেলিপোর্ট করে দেওয়া হয়েছে।",
+
+		knots = "নোট",
+		mph = "মাইল প্রতি ঘন্টা",
+		kmh = "কিলোমিটার প্রতি ঘন্টা",
 
 		time_in = "${unit} এ ${time} সময়ে",
 		time_ago = "${time} আগে ${unit}"

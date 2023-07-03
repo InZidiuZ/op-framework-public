@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 16 (do not change)
+-- AUTO LOCALES: 17 (do not change)
 
 OP.Global.Locales.Languages["ar-SA"] = {
 	-- configuration settings for language
@@ -96,11 +96,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		model_name_not_provided = "لم يتم تمرير اسم النموذج.",
 		model_name_invalid = "اسم النموذج `${modelName}` غير صالح.",
-		failed_to_spawn_vehicle = "فشل تنفيذ أمر `/spawn_vehicle` بشكل صحيح.",
-		spawned_vehicle_for_player = "تم إنشاء `${modelName}` بنجاح لـ ${consoleName}.",
+		failed_to_spawn_vehicle = "فشل في إنشاء مركبة.",
+		spawned_vehicle_for_player = "تم إنشاء مركبة `${modelName}` بنجاح لـ ${displayName}.",
 		spawned_vehicle_for_everyone = "تم إنشاء `${modelName}` بنجاح للجميع.",
-		spawn_vehicle_for_player_not_staff = "حاول اللاعب إنشاء مركبة لشخص آخر لكنه لم يمتلك الصلاحيات المطلوبة للقيام بذلك.",
-		spawn_vehicle_for_self_not_staff = "حاول اللاعب إنشاء مركبة لنفسه ولكنه لم يمتلك الصلاحيات المطلوبة للقيام بذلك.",
+		spawn_vehicle_no_permissions = "حاول اللاعب إنشاء مركبة ولكنه لم يكن لديه الصلاحيات اللازمة للقيام بذلك.",
 		replace_vehicle_no_permissions = "حاول اللاعب استبدال مركبته ولكنه لم يمتلك الصلاحيات المطلوبة للقيام بذلك.",
 		create_vehicle_no_permissions = "حاول اللاعب إنشاء مركبة ولكنه لم يمتلك الصلاحيات المطلوبة للقيام بذلك.",
 		spawned_vehicle_for_self_title = "تم إنشاء مركبة",
@@ -1907,13 +1906,13 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		position_command_parameter_label_help = "تصنيف اختياري يتم تخزينه مع الموضع.",
 		position_command_substitutes = "موقع, إحداثيات",
 
+		copy_ground_command = "نسخ_الأرض",
+		copy_ground_command_help = "انسخ إحداثيات الأرض الحالية الخاصة بك إلى الحافظة.",
+		copy_ground_command_substitutes = "الأرض",
+
 		save_commands_list_command = "حفظ_قائمة_الأوامر",
 		save_commands_list_command_help = "يحفظ قائمة بجميع أوامر op-fw المتاحة.",
 		save_commands_list_command_substitutes = "",
-
-		save_vehicle_data_command = "حفظ_بيانات_المركبة",
-		save_vehicle_data_command_help = "يحفظ العديد من البيانات المتعلقة بالمركبات.",
-		save_vehicle_data_command_substitutes = "",
 
 		draw_radius_command = "رسم_نصف_القطر",
 		draw_radius_command_help = "يرسم نصف القطر.",
@@ -2268,6 +2267,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		gun_trader_debug_command = "تصحيح_تجار_الأسلحة",
 		gun_trader_debug_command_help = "رسم نص على موقع تجار الأسلحة الحالي.",
 		gun_trader_debug_command_substitutes = "",
+
+		unlock_gun_trader_command = "فتح_بائع_الأسلحة",
+		unlock_gun_trader_command_help = "فتح بائع الأسلحة فوراً.",
+		unlock_gun_trader_command_substitutes = "",
 
 		-- game/gas_masks
 		gas_debug_command = "تصحيح_الغاز",
@@ -3361,6 +3364,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		entity_states_command_parameter_network_id_help = "هوية الشبكة للكيان.",
 		entity_states_command_substitutes = "",
 
+		draw_entity_states_command = "رسم حالات الكائنات",
+		draw_entity_states_command_help = "يعرض جميع الكائنات التي لديها حالات واحدة أو أكثر.",
+		draw_entity_states_command_substitutes = "",
+
 		-- illegal/corner
 		corner_command = "زاوية",
 		corner_command_help = "بيع المخدرات لشخص مجاور. الدواء الذي تبيعه يعتمد على الموقع الذي تتواجد فيه.",
@@ -3415,7 +3422,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		pd_impound_command = "مصادرة_الشرطة",
 		pd_impound_command_help = "يقوم هذا الأمر بمصادرة سيارة اللاعب لفترة محددة من الوقت.",
 		pd_impound_command_parameter_minutes = "دقائق",
-		pd_impound_command_parameter_minutes_help = "مدة احتجاز السيارة (بين دقيقة و 12 ساعة).",
+		pd_impound_command_parameter_minutes_help = "مدة حجز المركبة (بين 1 دقيقة و 48 ساعة).",
 		pd_impound_command_substitutes = "",
 
 		dispatch_command = "الإرسالية",
@@ -4709,6 +4716,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		outfit_failed = "فشل في تطبيق الملابس.",
 		missing_outfit = "الملابس مفقودة.",
 		missing_outfit_name = "اسم الملابس مفقود.",
+		invalid_outfit = "زي غير صالح.",
 		no_nearby_clothing_spot = "لا يوجد مكان للملابس القريب.",
 		trunk_closed = "الخزانة مغلقة.",
 		trunk_too_far = "أنت بعيد جدًا عن الخزانة.",
@@ -4739,6 +4747,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		loading_model = "جارٍ تحميل موديل اللاعب...",
 		loading_spawn = "جارٍ إنشاء موديل اللاعب...",
+		loading_preload_data = "جارٍ تحميل بيانات الشخصية...",
 		loading_set_data = "جارٍ ضبط بيانات اللاعب...",
 		loading_tattoos = "جارٍ تعيين الوشوم...",
 		loading_finalize = "جارٍ إنهاء العملية..."
@@ -5277,6 +5286,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		crafted_multi_tool = "تم تصنيع الأداة المتعددة بنجاح.",
 		failed_craft_multi_tool = "فشلت عملية تصنيع الأداة المتعددة.",
 
+		mix_grimace_shake = "مزج الرهيبة المهزوزة",
+		press_to_mix_grimace_shake = "اضغط على [${SeatEjectKey}] لمزج الرهيبة المهزوزة",
+		mixing_grimace_shake = "جارٍ مزج الرهيبة المهزوزة",
+		mixed_grimace_shake = "تم مزج الرهيبة المهزوزة.",
+		failed_mix_grimace_shake = "فشل في خلط مشروب الاستثارة.",
+
 		no_required_items = "ليس لديك جميع الأدوات المطلوبة.",
 
 		debug_multi = "-إخراج متعدد-",
@@ -5293,7 +5308,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 	creation = {
 		turn_right = "انحني يمينًا",
-		turn_left = "إلتف يساراً"
+		turn_left = "إلتف يساراً",
+		toggle_light = "تبديل الضوء"
 	},
 
 	creation_menu = {
@@ -5605,7 +5621,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		state_seal_three = ".تخضع أي استخدام غير مصرح به لعقوبات رادعة بموجب المادة 502 (أ) من قانون العقوبات السعودي رقم 13",
 
 		kmh = "كم/س",
-		mph = "ميل/س",
+		mph = "ميل في الساعة",
 
 		set_unit_id_to = "تم تعيين رقم وحدتك الآن إلى ${unitId}.",
 		reset_unit_id = "تمت إعادة تعيين رقم وحدتك الآن.",
@@ -5875,7 +5891,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		floor_containment = "غرفة الحجز",
 
-		doj_office = "مكتب دائرة العدالة الأمريكية"
+		doj_office = "مكتب دائرة العدالة الأمريكية",
+
+		used_elevator_logs_title = "استخدم المصعد",
+		used_elevator_logs_details = "${consoleName} استخدم المصعد ${elevatorId} للذهاب إلى الطابق `${floor}`."
 	},
 
 	emails = {
@@ -6052,6 +6071,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		disabled_freecam = "تعطيل Freecam.",
 		freecam_failed = "فشل تمكين Freecam. هل أنت تملك Noclip أو أدوات مشابهة؟",
 
+		freecam_no_dead = "لا يمكنك تمكين الكاميرا الحرة عندما تكون معطلاً.",
+
 		freecam_logs_title = "تشغيل أو تعطيل Freecam المجانية",
 		freecam_on_logs_details = "${consoleName} لقد قام بتشغيل Freecam المجانية.",
 		freecam_off_logs_details = "${consoleName} لقد قام بإيقاف Freecam المجانية.",
@@ -6092,6 +6113,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		shake_tree = "اضغط ~INPUT_CONTEXT~ لهز الشجرة.",
 		shaking_tree = "جاري هز الشجرة",
+
+		extract_rubber = "اضغط ~INPUT_CONTEXT~ لاستخراج المطاط من الشجرة.",
+		extracting_rubber = "استخراج المطاط",
 
 		tree_klonk = "هناك شيء سقط من الشجرة وضرب رأسك."
 	},
@@ -6182,9 +6206,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		press_e_to_talk = "اضغط ~INPUT_CONTEXT~ للتحدث إلى جيم.",
 		trader_closed = "متجر جيم مغلق حاليًا.",
 
-		sorry_closed = "عذراً، المتجر مغلق حالياً.",
+		sorry_closed = "آسف يا صديقي، المتجر مغلق.",
 		sorry_closed_hug = "شكراً للعناق يا صديق :)",
-		sorry_closed_fight = "يا أخي اهدأ شوي، ما قمت بفعل أي شيء.",
+		sorry_closed_finger = "ما هذا! لقد كنت غير مهذبٍ.",
+		sorry_closed_kiss = "عفوًا يا صاحبي، أنا مش مهتم في هذا...",
+		sorry_closed_dab = "حط داب على اللي مش عاجبهم يا رفاق، إصحى صدق على الله!",
+		sorry_closed_fight = "أرجوك رجالة، أنا مافعلت شيء.",
 
 		trader_locked = "يحتاج جيم إلى بعض الأشياء منك حتى يتمكن من فتح متجره.",
 		unlock_trader = "قدم العنصر لجيم.",
@@ -6312,8 +6339,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 	},
 
 	hud = {
-		mph = "م/س",
-		kmh = "كم/س",
 		knots = "عقدة",
 		ft = "قدم",
 		m = "م",
@@ -6335,6 +6360,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		steps_walked_deaths = "${stepsWalked} خطوةً ~t~/~w~ ${deaths} موت",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "الأكسجين المتبقي: ${timer}",
+
+		alignment_warning_title = "محاذاة الواجهة",
+		alignment_warning = "يبدو أن واجهتك جزئيًا خارج الشاشة. يمكنك تعديلها عن طريق تقليل \"حجم المنطقة الآمنة\" في إعدادات \"العرض\".",
 
 		muted = "مكتوم",
 
@@ -6365,7 +6393,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		hold_to_skin = "[${InteractionKey}] اضغط واستمر لنزع الجلد",
 		skinning_animal = "تنزيع جلد الحيوان الميت",
 		meat_too_damaged = "لحم هذا الحيوان تالف للغاية.",
-		animal_is_being_skinned = "جاري نزع جلد الحيوان."
+		animal_is_being_skinned = "جاري نزع جلد الحيوان.",
+
+		skinned_logs_title = "سفين حيوان",
+		skinned_logs_details = "قام ${consoleName} بسفين حيوان (${modelName}) وحصل على ${skinnedItems}.",
+		received_nothing = "لا شيء"
 	},
 
 	identification = {
@@ -7234,6 +7266,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		lean = "الشراب المخدر",
 		lean_description = "يتم استخدامه في كثير من الأحيان كمهدئ للسعال، ويعطل الجهاز العصبي المركزي",
+
+		grimace_shake = "غريماس شيك",
+		grimace_shake_description = "جنون؟ كنت مجنوناً مرة واحدة. قد وضعوني في غرفة. غرفة مطاطية. غرفة مطاطية مع الجرذان. والجرذان تجعلني مجنوناً. جنون؟ كنت مجنوناً مرة واحدة. قد وضعوني في غرفة. غرفة مطاطية. غرفة مطاطية مع الجرذان. والجرذان تجعلني مجنوناً. جنون؟ كنت مجنوناً مرة واحدة. قد وضعوني في غرفة. غرفة مطاطية. غرفة مطاطية مع الجرذان. والجرذان تجعلني مجنوناً. جنون؟ كنت مجنوناً مرة واحدة. قد وضعوني في غرفة. غرفة مطاطية. غرفة مطاطية مع الجرذان. والجرذان تجعلني مجنوناً. جنون؟ كنت مجنوناً مرة واحدة.....",
 
 		jolly_ranchers = "حلوى جولي رانشي",
 		jolly_ranchers_description = "تمتع بنكهات الحلوى الحلوة والحامضة لحلوى جولي رانشرز ، الحلوى الصلبة الكلاسيكية التي تنفجر بالفواكه اللذيذة.",
@@ -8117,9 +8152,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		weapon_addon_berserker = "محارب الغضب",
 		weapon_addon_berserker_description = "فأس رائعة.",
 
-		weapon_addon_katana = "القتانا",
-		weapon_addon_katana_description = "نينجا، أجل.",
-
 		weapon_addon_stidvc = "STI DVC 2011",
 		weapon_addon_stidvc_description = "المستقبل هنا الآن، يا رجل قديم، فقط بعيار أصغر...",
 
@@ -8170,7 +8202,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		lockpicking_succeeded = "تمت عملية الكسر بنجاح",
 		hotwiring_vehicle = "سرقة السيارة",
 		lockpick_broke = "كسر قفل لوكبيك",
-		failed_hotwire = "فشل سرقة السيارة",
+		failed_hotwire = "لقد فشلت في تشغيل سيارة السرقة، قد تحتاج إلى استخدام أدوات أفضل؟",
 		unpacking_green_rolls = "فتح لفائف الأعشاب الخضراء",
 		you_do_not_have_enough_rolling_paper = "لا يوجد لديك كفاية ورق لف",
 		rolling_joint = "لف السجائر",
@@ -8413,6 +8445,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		refresh = "تحديث",
 		refreshing = "جارٍ التحديث...",
 
+		avoid_repeating_letters = "حاول تجنب تكرار الأحرف بشكل كبير في الاسم الأول و/أو الاسم الأخير.",
+
 		missing_character_creation_data = "بيانات إنشاء المحارف ناقصة",
 		invalid_first_name = "اسم الشخصية المتخذة غير صالح أو مفقود (من 2 إلى 100 حرف).",
 		invalid_last_name = "اسم العائلة المتخذ غير صالح أو مفقود (من 2 إلى 100 حرف).",
@@ -8561,6 +8595,24 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		no_nearby_vehicle = "لا يوجد مركبات قريبة.",
 		already_checking_upgrades = "أنت بالفعل تفحص تعديلات المركبة.",
 		engine_is_running = "يعمل محرك السيارة"
+	},
+
+	meow = {
+		feed = "[${InteractionKey}] إطعام",
+		pet = "[${InteractionKey}] تحسين",
+		brush = "[${InteractionKey}] تمشيط",
+		catnip = "[${InteractionKey}] إعطاء القط نعناع",
+		treat = "[${InteractionKey}] إعطاء القط معجب",
+		cuddle = "[${InteractionKey}] عانق",
+		hug = "[${InteractionKey}] عانق",
+
+		feed_active = "إطعام Maxwell",
+		pet_active = "تحسين Maxwell",
+		brush_active = "تنظيف ماكسويل",
+		catnip_active = "إعطاء ماكسويل القطاط",
+		treat_active = "إعطاء ماكسويل حلوى",
+		cuddle_active = "تلاعب مع ماكسويل",
+		hug_active = "عناق مع ماكسويل"
 	},
 
 	meth = {
@@ -9656,7 +9708,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		no_warnings = "لا تحذيرات",
 		not_shown_warnings = "${count} تحذير آخر غير معروض",
 		system_issuer = "النظام",
-		add_warning_title = "إضافة تحذير",
+		add_note_title = "إضافة ملاحظة",
 		message_placeholder = "قام ${playerName} بارتكاب خطأ...",
 
 		type_note = "ملاحظة",
@@ -9667,7 +9719,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		button_cancel = "إلغاء",
 		button_add = "إضافة",
 		button_close = "إغلاق",
-		button_new = "جديد",
+		button_new = "ملاحظة جديدة",
+
+		ping = "مدة الاستجابة: ${ping}ms",
+		fps = "معدل الإطارات: ${fps}fps",
+		playtime = "الوقت الملعوب: ${time}",
 
 		invalid_server_id = "رقم خادم غير صالح.",
 
@@ -10369,17 +10425,15 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		invincibility_inactive_dead = "اللازمية: ~g~غير نشطة~w~ (ميت)",
 		invincibility_inactive = "اللازمية: ~g~غير نشطة~w~",
 
-		health_ok = "الصحة: ~g~${health} / ${maxHealth}~w~",
-		health_bad = "الصحة: ~r~${health} / ${maxHealth}~w~",
+		health_ok = "الصحة: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
+		health_bad = "الصحة: ~r~${health} / ${maxHealth}~w~ - ${percentage}",
 
-		armor_ok = "الدروع: ~g~${armor} / ${maxArmor}~w~",
-		armor_bad = "الدروع: ~r~${armor} / ${maxArmor}~w~",
+		armor_ok = "الدرع: ~g~${armor} / ${maxArmor}~w~ - ${percentage}",
+		armor_bad = "الدروع: ~r~${armor} / ${maxArmor}~w~ - ${percentage}",
 
 		vehicle_health = "صحة المركبة: ${percentage}",
 
-		speed = "السرعة: ${speed}${unit}",
-		speed_mph = "mph",
-		speed_kmh = "kmh",
+		speed = "السرعة: ${speed}",
 
 		exit_spectate = "اضغط على ~g~${InteractionKey}~w~ للخروج من وضع المشاهدة",
 
@@ -10895,7 +10949,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		set_ocean_scaler_no_permission = "اللاعب لا يملك الصلاحية المطلوبة لضبط مقياس الأوشن الخاص بالكثافة.",
 
 		tsunami_started = "بدأ تسونامي. سوف يستغرق ${minutes} دقيقة لإغراق الخريطة.",
-		tsunami_stopped = "تم إيقاف المد البحري (تسونامي)."
+		tsunami_stopped = "تم إيقاف المد البحري (تسونامي).",
+
+		toggle_tsunami_no_permissions = "تم محاولة تبديل التسونامي بدون صلاحيات كافية."
 	},
 
 	tuner_shop = {
@@ -11111,6 +11167,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		flipped_vehicle_logs_title = "انقلاب المركبة",
 		flipped_vehicle_logs_details = "${consoleName} قلب مركبة.",
 		failed_to_find_ground = "فشل في العثور على الأرض، جرى نقلك إلى أقرب طريق.",
+
+		knots = "العقد",
+		mph = "الأميال في الساعة",
+		kmh = "الكيلومترات في الساعة",
 
 		time_in = "في ${time} ${unit}",
 		time_ago = "منذ ${time} ${unit}"

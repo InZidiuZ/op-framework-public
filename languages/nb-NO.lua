@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 16 (do not change)
+-- AUTO LOCALES: 17 (do not change)
 
 OP.Global.Locales.Languages["nb-NO"] = {
 	-- configuration settings for language
@@ -96,11 +96,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		model_name_not_provided = "Ingen modellnavn angitt.",
 		model_name_invalid = "Modellnavnet `${modelName}` er ugyldig.",
-		failed_to_spawn_vehicle = "Kunne ikke utføre `/ spawn_vehicle`-kommandoen korrekt.",
-		spawned_vehicle_for_player = "Vellykket spawnet `${modelName}` for ${consoleName}.",
+		failed_to_spawn_vehicle = "Kunne ikke spawne kjøretøy.",
+		spawned_vehicle_for_player = "Spawnet ${modelName} for ${displayName}.",
 		spawned_vehicle_for_everyone = "Vellykket spawnet `${modelName}` for alle.",
-		spawn_vehicle_for_player_not_staff = "Spilleren forsøkte å spawn et kjøretøy for noen andre, men hadde ikke de nødvendige tillatelsene for å gjøre det.",
-		spawn_vehicle_for_self_not_staff = "Spilleren forsøkte å spawn et kjøretøy for seg selv, men hadde ikke de nødvendige tillatelsene for å gjøre det.",
+		spawn_vehicle_no_permissions = "Spilleren prøvde å spawne et kjøretøy, men hadde ikke nødvendige tillatelser til å gjøre det.",
 		replace_vehicle_no_permissions = "Spilleren forsøkte å erstatte sitt kjøretøy, men hadde ikke de nødvendige tillatelsene for å gjøre det.",
 		create_vehicle_no_permissions = "Spilleren forsøkte å opprette et kjøretøy, men hadde ikke de nødvendige tillatelsene for å gjøre det.",
 		spawned_vehicle_for_self_title = "Spawnede kjøretøy",
@@ -1907,13 +1906,13 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		position_command_parameter_label_help = "En valgfri etikett som skal lagres sammen med posisjonen.",
 		position_command_substitutes = "pos, koordinater",
 
+		copy_ground_command = "kopier_ground",
+		copy_ground_command_help = "Kopier grunnkoordinatene til din nåværende posisjon til utklippstavlen.",
+		copy_ground_command_substitutes = "ground",
+
 		save_commands_list_command = "lagre_kommandoliste",
 		save_commands_list_command_help = "Lagrer en liste over alle tilgjengelige op-fw kommandoer.",
 		save_commands_list_command_substitutes = "",
-
-		save_vehicle_data_command = "lagre_kjøretøydata",
-		save_vehicle_data_command_help = "Lagrer en rekke data om kjøretøy.",
-		save_vehicle_data_command_substitutes = "",
 
 		draw_radius_command = "tegn_radius",
 		draw_radius_command_help = "Tegn en radius.",
@@ -2268,6 +2267,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		gun_trader_debug_command = "våpenhandler_debug",
 		gun_trader_debug_command_help = "Viser en tekst på våpenhandlerens nåværende plassering.",
 		gun_trader_debug_command_substitutes = "",
+
+		unlock_gun_trader_command = "opplås_gun_trader",
+		unlock_gun_trader_command_help = "Låser opp våpenhandleren umiddelbart.",
+		unlock_gun_trader_command_substitutes = "",
 
 		-- game/gas_masks
 		gas_debug_command = "gass_debug",
@@ -3361,6 +3364,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		entity_states_command_parameter_network_id_help = "Nettverks-ID-en til enheten.",
 		entity_states_command_substitutes = "",
 
+		draw_entity_states_command = "tegn_entitet_tilstander",
+		draw_entity_states_command_help = "Viser alle entiteter med 1 eller flere tilstander.",
+		draw_entity_states_command_substitutes = "",
+
 		-- illegal/corner
 		corner_command = "gate",
 		corner_command_help = "Selg narkotika til en person i nærheten. Typen narkotika du selger avhenger av hvor du er.",
@@ -3415,7 +3422,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		pd_impound_command = "pd-inndragning",
 		pd_impound_command_help = "Denne kommandoen inndrar en spillers kjøretøy i en bestemt periode.",
 		pd_impound_command_parameter_minutes = "minutter",
-		pd_impound_command_parameter_minutes_help = "Hvor lenge kjøretøyet skal inndras (mellom 1 minutt og 12 timer).",
+		pd_impound_command_parameter_minutes_help = "Hvor lenge kjøretøyet skal bli beslaglagt (mellom 1 minutt og 48 timer).",
 		pd_impound_command_substitutes = "",
 
 		dispatch_command = "utkalling",
@@ -4709,6 +4716,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		outfit_failed = "Kunne ikke endre antrekk.",
 		missing_outfit = "Mangler antrekk.",
 		missing_outfit_name = "Mangler antrekk navn.",
+		invalid_outfit = "Ugyldig antrekk.",
 		no_nearby_clothing_spot = "Ingen klesplass i nærheten.",
 		trunk_closed = "Bagasjerommet er lukket.",
 		trunk_too_far = "Du er for langt unna bagasjerommet.",
@@ -4739,6 +4747,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		loading_model = "Laster ped-modell...",
 		loading_spawn = "Spawner spiller-ped...",
+		loading_preload_data = "Laster forhåndsinnlastingsdata for karakter...",
 		loading_set_data = "Setter ped-data...",
 		loading_tattoos = "Setter tatoveringer...",
 		loading_finalize = "Fullfører..."
@@ -5277,6 +5286,12 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		crafted_multi_tool = "Multiverktøy laget.",
 		failed_craft_multi_tool = "Kunne ikke lage multiverktøy.",
 
+		mix_grimace_shake = "Bland Grimace Shake",
+		press_to_mix_grimace_shake = "[${SeatEjectKey}] Bland Grimace Shake",
+		mixing_grimace_shake = "Blander Grimace Shake",
+		mixed_grimace_shake = "Blandet grimace shake.",
+		failed_mix_grimace_shake = "Klarte ikke å blande grimasaskeitt.",
+
 		no_required_items = "Du har ikke alle nødvendige gjenstander.",
 
 		debug_multi = "-Flere utganger-",
@@ -5293,7 +5308,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 	creation = {
 		turn_right = "Sving til høyre",
-		turn_left = "Sving til venstre"
+		turn_left = "Sving til venstre",
+		toggle_light = "Skru på/av lys"
 	},
 
 	creation_menu = {
@@ -5605,7 +5621,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		state_seal_three = "All uautorisert bruk kan resultere i høye bøter under 13 S.A. Penn. Kode 502(a).",
 
 		kmh = "km/t",
-		mph = "mp/t",
+		mph = "mph",
 
 		set_unit_id_to = "Enhet ID-en din er nå endret til ${unitId}.",
 		reset_unit_id = "Enhet ID-en din er nå nullstilt.",
@@ -5875,7 +5891,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		floor_containment = "Innesperringrom",
 
-		doj_office = "DOJ-kontor"
+		doj_office = "DOJ-kontor",
+
+		used_elevator_logs_title = "Brukte Heis",
+		used_elevator_logs_details = "${consoleName} brukte heisen ${elevatorId} for å gå til etasje `${floor}`."
 	},
 
 	emails = {
@@ -6052,6 +6071,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		disabled_freecam = "Fri kamera-modus deaktivert.",
 		freecam_failed = "Kunne ikke aktivere fri kamera-modus. Har du noclip eller liknende aktivert?",
 
+		freecam_no_dead = "Du kan ikke aktivere fricam når du er nede.",
+
 		freecam_logs_title = "Fri kamera til/fra satt på",
 		freecam_on_logs_details = "${consoleName} satte på fri kamera.",
 		freecam_off_logs_details = "${consoleName} slo av fri kamera.",
@@ -6092,6 +6113,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		shake_tree = "Trykk ~INPUT_CONTEXT~ for å riste treet.",
 		shaking_tree = "Rister treet",
+
+		extract_rubber = "Trykk ~INPUT_CONTEXT~ for å hente gummi fra treet.",
+		extracting_rubber = "Henter Gummi",
 
 		tree_klonk = "Noe falt fra treet og traff hodet ditt."
 	},
@@ -6184,7 +6208,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		sorry_closed = "Beklager, butikken er stengt.",
 		sorry_closed_hug = "Takk for klemmen!",
-		sorry_closed_fight = "Slapp av, jeg har ikke gjort noe galt.",
+		sorry_closed_finger = "Hva i helvete, det var frekt!",
+		sorry_closed_kiss = "Woah dawg, det er ikke min greie...",
+		sorry_closed_dab = "Dab on the haters yo, fr fr on god!",
+		sorry_closed_fight = "Ro ned kompis, jeg har ikke gjort noe.",
 
 		trader_locked = "Jim trenger noen ting fra deg før han er villig til å åpne butikken sin.",
 		unlock_trader = "Gi gjenstanden til Jim.",
@@ -6312,8 +6339,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	},
 
 	hud = {
-		mph = "miles/t",
-		kmh = "km/t",
 		knots = "knot",
 		ft = "ft",
 		m = "m",
@@ -6335,6 +6360,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		steps_walked_deaths = "${stepsWalked} skritt ~t~/~w~ ${deaths} nedturer",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Oksygen igjen: ${timer}",
+
+		alignment_warning_title = "HUD-justering",
+		alignment_warning = "HUD-en din ser ut til å være delvis utenfor skjermen. Du kan justere den ved å redusere \"*Safezone Size*\" i \"*Display*\"-innstillingene.",
 
 		muted = "Dempet",
 
@@ -6365,7 +6393,11 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		hold_to_skin = "[${InteractionKey}] Hold nede for å flå",
 		skinning_animal = "Flår døde dyr",
 		meat_too_damaged = "Kjøttet til dette dyret er for skadd.",
-		animal_is_being_skinned = "Dyret blir flådd."
+		animal_is_being_skinned = "Dyret blir flådd.",
+
+		skinned_logs_title = "Skrellet dyr",
+		skinned_logs_details = "${consoleName} skrellet et dyr (${modelName}) og fikk ${skinnedItems}.",
+		received_nothing = "ingenting"
 	},
 
 	identification = {
@@ -7234,6 +7266,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		lean = "Lean",
 		lean_description = "Drikker litt sizzurp, slurp, drikker litt, slurp.",
+
+		grimace_shake = "Grimasse-shake",
+		grimace_shake_description = "Gærn? Jeg var gærn en gang. De putta meg på et rom. Et rom av gummi. Et rom av gummi med rotter. Og rotter gjør meg gærn. Gærn? Jeg var gærn en gang. De putta meg på et rom. Et rom av gummi. Et rom av gummi med rotter. Og rotter gjør meg gærn. Gærn? Jeg var gærn en gang. De putta meg på et rom. Et rom av gummi. Et rom av gummi med rotter. Og rotter gjør meg gærn. Gærn? Jeg var gærn en gang. De putta meg på et rom. Et rom av gummi. Et rom av gummi med rotter. Og rotter gjør meg gærn. Gærn? Jeg var gærn en gang.....",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Nyt de søte og syrlige smakene av Jolly Ranchers, de klassiske harde godteriene som spruter med fruktig godhet.",
@@ -8117,9 +8152,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		weapon_addon_berserker = "Berserker",
 		weapon_addon_berserker_description = "Kul øks.",
 
-		weapon_addon_katana = "Katana",
-		weapon_addon_katana_description = "Ninja, ja.",
-
 		weapon_addon_stidvc = "STI DVC 2011",
 		weapon_addon_stidvc_description = "Fremtiden er her, gamle mann, bare med mindre kaliber ...",
 
@@ -8170,7 +8202,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		lockpicking_succeeded = "Låsen ble plukket.",
 		hotwiring_vehicle = "Starte kjøretøy uten nøkkel.",
 		lockpick_broke = "Låsepinnen ble ødelagt.",
-		failed_hotwire = "Feilet i å starte motoren.",
+		failed_hotwire = "Du klarte ikke å forskjere bilen, prøv kanskje å bruke bedre verktøy?",
 		unpacking_green_rolls = "Pakker ut grønne ruller.",
 		you_do_not_have_enough_rolling_paper = "Du har ikke nok rullende papir.",
 		rolling_joint = "Ruller en joint.",
@@ -8413,6 +8445,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		refresh = "Oppdater",
 		refreshing = "Oppdaterer...",
 
+		avoid_repeating_letters = "Prøv å unngå mange gjentakende bokstaver i fornavnet og/eller etternavnet ditt.",
+
 		missing_character_creation_data = "Mangler data for karakteroppdrett.",
 		invalid_first_name = "Manglende eller ugyldig fornavn (2 til 100 tegn).",
 		invalid_last_name = "Manglende eller ugyldig etternavn (2 til 100 tegn).",
@@ -8561,6 +8595,24 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		no_nearby_vehicle = "Ingen kjøretøy i nærheten.",
 		already_checking_upgrades = "Du sjekker allerede en kjøretøysopptuning.",
 		engine_is_running = "Kjøretøyets motor er i gang."
+	},
+
+	meow = {
+		feed = "[${InteractionKey}] Mate",
+		pet = "[${InteractionKey}] Kose",
+		brush = "[${InteractionKey}] Børste",
+		catnip = "[${InteractionKey}] Gi Kattemynte",
+		treat = "[${InteractionKey}] Gi Godbit",
+		cuddle = "[${InteractionKey}] Kose",
+		hug = "[${InteractionKey}] Klem",
+
+		feed_active = "Mate Maxwell",
+		pet_active = "Kose med Maxwell",
+		brush_active = "Børster Maxwell",
+		catnip_active = "Gir Maxwell Kattemynte",
+		treat_active = "Gir Maxwell en godbit",
+		cuddle_active = "Koser med Maxwell",
+		hug_active = "Klemmer Maxwell"
 	},
 
 	meth = {
@@ -9656,7 +9708,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		no_warnings = "Ingen advarsler",
 		not_shown_warnings = "${count} flere advarsler ikke vist",
 		system_issuer = "System",
-		add_warning_title = "Legg til advarsel",
+		add_note_title = "Legg til notat",
 		message_placeholder = "${playerName} har gjort en feil...",
 
 		type_note = "Notat",
@@ -9667,7 +9719,11 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		button_cancel = "Avbryt",
 		button_add = "Legg til",
 		button_close = "Lukk",
-		button_new = "Ny",
+		button_new = "Nytt notat",
+
+		ping = "${ping}ms",
+		fps = "${fps}fps",
+		playtime = "${time} spilt",
 
 		invalid_server_id = "Ugyldig server ID.",
 
@@ -10369,17 +10425,15 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		invincibility_inactive_dead = "Uovervinnelighet: ~g~Inaktiv~w~ (død)",
 		invincibility_inactive = "Uovervinnelighet: ~g~Inaktiv~w~",
 
-		health_ok = "Helse: ~g~${health} / ${maxHealth}~w~",
-		health_bad = "Helse: ~r~${health} / ${maxHealth}~w~",
+		health_ok = "Helse: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
+		health_bad = "Helse: ~r~${health} / ${maxHealth}~w~ - ${percentage}",
 
-		armor_ok = "Beskyttelse: ~g~${armor} / ${maxArmor}~w~",
-		armor_bad = "Beskyttelse: ~r~${armor} / ${maxArmor}~w~",
+		armor_ok = "Rustning: ~g~${armor} / ${maxArmor}~w~ - ${percentage}",
+		armor_bad = "Beskyttelse: ~r~${armor} / ${maxArmor}~w~ - ${percentage}",
 
 		vehicle_health = "Kjøretøyhelse: ${percentage}",
 
-		speed = "Hastighet: ${speed}${unit}",
-		speed_mph = "mph",
-		speed_kmh = "km/t",
+		speed = "Hastighet: ${speed}",
 
 		exit_spectate = "Trykk ~g~${InteractionKey}~w~ for å slutte å se på",
 
@@ -10895,7 +10949,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		set_ocean_scaler_no_permission = "Spilleren hadde ikke tilstrekkelig tillatelse til å endre havskalerens intensitet.",
 
 		tsunami_started = "Tsunamien har startet. Det vil ta ${minutes} minutter å oversvømme hele kartet.",
-		tsunami_stopped = "Tsunami stoppet."
+		tsunami_stopped = "Tsunami stoppet.",
+
+		toggle_tsunami_no_permissions = "Forsøkte å slå på eller av tsunamien uten tilstrekkelige rettigheter."
 	},
 
 	tuner_shop = {
@@ -11111,6 +11167,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		flipped_vehicle_logs_title = "Snudd Kjøretøy",
 		flipped_vehicle_logs_details = "${consoleName} snudde et kjøretøy.",
 		failed_to_find_ground = "Klarte ikke å finne bakken, teleporterte deg til nærmeste vei.",
+
+		knots = "knop",
+		mph = "mph",
+		kmh = "km/t",
 
 		time_in = "om ${time} ${unit}",
 		time_ago = "${time} ${unit} siden"

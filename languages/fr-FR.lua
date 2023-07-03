@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 16 (do not change)
+-- AUTO LOCALES: 17 (do not change)
 
 OP.Global.Locales.Languages["fr-FR"] = {
 	-- configuration settings for language
@@ -96,11 +96,10 @@ OP.Global.Locales.Languages["fr-FR"] = {
 
 		model_name_not_provided = "Aucun nom de modèle n'a été donné.",
 		model_name_invalid = "Le nom du modèle `${modelName}` est invalide.",
-		failed_to_spawn_vehicle = "Impossible d'exécuter correctement la commande `/spawn_vehicle`.",
-		spawned_vehicle_for_player = "Véhicule `${modelName}` créé avec succès pour ${consoleName}.",
+		failed_to_spawn_vehicle = "Échec de la création du véhicule.",
+		spawned_vehicle_for_player = "Véhicule ${modelName} créé avec succès pour ${displayName}.",
 		spawned_vehicle_for_everyone = "Véhicule `${modelName}` créé avec succès pour tout le monde.",
-		spawn_vehicle_for_player_not_staff = "Le joueur a tenté de faire apparaître un véhicule pour quelqu'un d'autre mais n'avait pas les permissions nécessaires pour le faire.",
-		spawn_vehicle_for_self_not_staff = "Le joueur a tenté de faire apparaître un véhicule pour lui-même mais n'avait pas les permissions nécessaires pour le faire.",
+		spawn_vehicle_no_permissions = "Le joueur a tenté de créer un véhicule mais n'avait pas les permissions requises pour le faire.",
 		replace_vehicle_no_permissions = "Le joueur a tenté de remplacer son véhicule mais n'avait pas les permissions nécessaires pour le faire.",
 		create_vehicle_no_permissions = "Le joueur a tenté de créer un véhicule mais n'avait pas les permissions nécessaires pour le faire.",
 		spawned_vehicle_for_self_title = "Véhicule apparu",
@@ -1907,13 +1906,13 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		position_command_parameter_label_help = "Une étiquette facultative à stocker avec la position.",
 		position_command_substitutes = "pos, coords",
 
+		copy_ground_command = "copier_sol",
+		copy_ground_command_help = "Copie les coordonnées au sol de votre position actuelle dans votre presse-papiers.",
+		copy_ground_command_substitutes = "sol",
+
 		save_commands_list_command = "sauvegarder_liste_commandes",
 		save_commands_list_command_help = "Enregistre une liste de toutes les commandes op-fw disponibles.",
 		save_commands_list_command_substitutes = "",
-
-		save_vehicle_data_command = "sauvegarder_donnees_vehicule",
-		save_vehicle_data_command_help = "Enregistre un tas de données sur les véhicules.",
-		save_vehicle_data_command_substitutes = "",
 
 		draw_radius_command = "dessiner_rayon",
 		draw_radius_command_help = "Dessine un rayon.",
@@ -2268,6 +2267,10 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		gun_trader_debug_command = "debug_vendeurs_armes",
 		gun_trader_debug_command_help = "Affiche un texte sur l'emplacement actuel des vendeurs d'armes.",
 		gun_trader_debug_command_substitutes = "",
+
+		unlock_gun_trader_command = "déverrouiller_vendeur_armes",
+		unlock_gun_trader_command_help = "Déverrouille instantanément le vendeur d'armes.",
+		unlock_gun_trader_command_substitutes = "",
 
 		-- game/gas_masks
 		gas_debug_command = "activer_debug_carburant",
@@ -3361,6 +3364,10 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		entity_states_command_parameter_network_id_help = "L'identifiant réseau de l'entité.",
 		entity_states_command_substitutes = "",
 
+		draw_entity_states_command = "afficher_états_entités",
+		draw_entity_states_command_help = "Affiche toutes les entités avec 1 ou plusieurs états.",
+		draw_entity_states_command_substitutes = "",
+
 		-- illegal/corner
 		corner_command = "coin de rue",
 		corner_command_help = "Vendre de la drogue à une personne proche. Le type de drogue vendu dépend de l'endroit où vous vous trouvez.",
@@ -3415,7 +3422,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		pd_impound_command = "fourriere_pd",
 		pd_impound_command_help = "Place le véhicule du joueur en fourrière pour une certaine période de temps.",
 		pd_impound_command_parameter_minutes = "minutes",
-		pd_impound_command_parameter_minutes_help = "Durée d'immobilisation du véhicule (entre 1 minute et 12 heures).",
+		pd_impound_command_parameter_minutes_help = "Pendant combien de temps le véhicule doit être saisi (entre 1 minute et 48 heures).",
 		pd_impound_command_substitutes = "",
 
 		dispatch_command = "envoi_dispatch",
@@ -4709,6 +4716,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		outfit_failed = "Échec de l'application de la tenue.",
 		missing_outfit = "Tenue manquante.",
 		missing_outfit_name = "Nom de tenue manquant.",
+		invalid_outfit = "Tenue invalide.",
 		no_nearby_clothing_spot = "Aucun point de changement de vêtements à proximité.",
 		trunk_closed = "Le coffre est fermé.",
 		trunk_too_far = "Vous êtes trop loin du coffre.",
@@ -4739,6 +4747,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 
 		loading_model = "Chargement du modèle de personnage...",
 		loading_spawn = "Apparition du personnage...",
+		loading_preload_data = "Chargement des données du personnage...",
 		loading_set_data = "Configuration des données du personnage...",
 		loading_tattoos = "Ajout des tatouages...",
 		loading_finalize = "Finalisation..."
@@ -5277,6 +5286,12 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		crafted_multi_tool = "Outil multifonction fabriqué.",
 		failed_craft_multi_tool = "Impossible de fabriquer l'outil multifonction.",
 
+		mix_grimace_shake = "Mélanger Grimace Shake",
+		press_to_mix_grimace_shake = "[${SeatEjectKey}] Mélanger Grimace Shake",
+		mixing_grimace_shake = "Mélange de Grimace Shake",
+		mixed_grimace_shake = "Grimace shake mélangé.",
+		failed_mix_grimace_shake = "Échec de mélange de la boisson grimace shake.",
+
 		no_required_items = "Vous n'avez pas tous les objets requis.",
 
 		debug_multi = "-Sorties multiples-",
@@ -5293,7 +5308,8 @@ OP.Global.Locales.Languages["fr-FR"] = {
 
 	creation = {
 		turn_right = "Tourner à droite",
-		turn_left = "Tourner à gauche"
+		turn_left = "Tourner à gauche",
+		toggle_light = "Activer/Désactiver la lumière"
 	},
 
 	creation_menu = {
@@ -5875,7 +5891,10 @@ OP.Global.Locales.Languages["fr-FR"] = {
 
 		floor_containment = "Salle de Contention",
 
-		doj_office = "Bureau du DOJ"
+		doj_office = "Bureau du DOJ",
+
+		used_elevator_logs_title = "Utilisation de l'ascenseur",
+		used_elevator_logs_details = "${consoleName} a utilisé l'ascenseur ${elevatorId} pour aller à l'étage `${floor}`."
 	},
 
 	emails = {
@@ -6052,6 +6071,8 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		disabled_freecam = "Caméra libre désactivée.",
 		freecam_failed = "Impossible d'activer la caméra libre. Avez-vous noclip ou une commande similaire activée?",
 
+		freecam_no_dead = "Vous ne pouvez pas activer le mode freecam lorsque vous êtes à terre.",
+
 		freecam_logs_title = "Caméra libre activée",
 		freecam_on_logs_details = "${consoleName} a activé sa caméra libre.",
 		freecam_off_logs_details = "${consoleName} a désactivé sa caméra libre.",
@@ -6092,6 +6113,9 @@ OP.Global.Locales.Languages["fr-FR"] = {
 
 		shake_tree = "Appuyez sur ~INPUT_CONTEXT~ pour secouer l'arbre.",
 		shaking_tree = "Secouer l'arbre",
+
+		extract_rubber = "Appuyez sur ~INPUT_CONTEXT~ pour extraire du caoutchouc de l'arbre.",
+		extracting_rubber = "Extraction du caoutchouc",
 
 		tree_klonk = "Quelque chose est tombé de l'arbre et vous a frappé la tête."
 	},
@@ -6182,9 +6206,12 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		press_e_to_talk = "Appuyez sur ~INPUT_CONTEXT~ pour parler à Jim.",
 		trader_closed = "La boutique de Jim est actuellement fermée.",
 
-		sorry_closed = "Désolé, le magasin est fermé.",
+		sorry_closed = "Désolé, la boutique est fermée.",
 		sorry_closed_hug = "Merci pour l'étreinte ! :)",
-		sorry_closed_fight = "Hey, calme-toi, je n'ai rien fait !",
+		sorry_closed_finger = "Qu'est-ce qui ne va pas, mec ? C'est pas sympa ça !",
+		sorry_closed_kiss = "Woah mec, ça ne m'intéresse pas...",
+		sorry_closed_dab = "Dab sur les haters mec, fr fr à Dieu !",
+		sorry_closed_fight = "Calme-toi mec, je n'ai rien fait.",
 
 		trader_locked = "Jim a besoin de quelques choses de votre part avant d'ouvrir sa boutique.",
 		unlock_trader = "Donnez l'objet à Jim.",
@@ -6312,8 +6339,6 @@ OP.Global.Locales.Languages["fr-FR"] = {
 	},
 
 	hud = {
-		mph = "mp/h",
-		kmh = "km/h",
 		knots = "nœuds",
 		ft = "pi",
 		m = "m",
@@ -6335,6 +6360,9 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		steps_walked_deaths = "${stepsWalked} pas ~t~/~w~ ${deaths} morts",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Oxygène restant : ${timer}",
+
+		alignment_warning_title = "Alignement de l'HUD",
+		alignment_warning = "Votre HUD semble partiellement hors écran. Vous pouvez l'ajuster en réduisant la \"*Taille de la zone de sécurité*\" dans les paramètres \"*Affichage*\".",
 
 		muted = "Muet",
 
@@ -6365,7 +6393,11 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		hold_to_skin = "[${ToucheInteraction}] Maintenir pour dépecer",
 		skinning_animal = "Dépeçage de l'animal mort",
 		meat_too_damaged = "La viande de cet animal est trop endommagée.",
-		animal_is_being_skinned = "L'animal est en train d'être dépecé."
+		animal_is_being_skinned = "L'animal est en train d'être dépecé.",
+
+		skinned_logs_title = "Animal écorché",
+		skinned_logs_details = "${consoleName} a écorché un animal (${modelName}) et a obtenu ${skinnedItems}.",
+		received_nothing = "rien"
 	},
 
 	identification = {
@@ -7234,6 +7266,9 @@ OP.Global.Locales.Languages["fr-FR"] = {
 
 		lean = "Purple Drank",
 		lean_description = "Sirotez du Purple Drank, sirotant, sirotant, sirotant.",
+
+		grimace_shake = "Grimace Shake",
+		grimace_shake_description = "Fou ? J'étais fou une fois. Ils m'ont enfermé dans une pièce. Une pièce en caoutchouc. Une pièce en caoutchouc avec des rats. Et les rats me rendent fou. Fou ? J'étais fou une fois. Ils m'ont enfermé dans une pièce. Une pièce en caoutchouc. Une pièce en caoutchouc avec des rats. Et les rats me rendent fou. Fou ? J'étais fou une fois. Ils m'ont enfermé dans une pièce. Une pièce en caoutchouc. Une pièce en caoutchouc avec des rats. Et les rats me rendent fou. Fou ? J'étais fou une fois. Ils m'ont enfermé dans une pièce. Une pièce en caoutchouc. Une pièce en caoutchouc avec des rats. Et les rats me rendent fou. Fou ? J'étais fou une fois.....",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Dégustez les saveurs sucrées et acidulées de Jolly Ranchers, les bonbons durs classiques qui explosent de bonté fruitée.",
@@ -8117,9 +8152,6 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		weapon_addon_berserker = "Berserker",
 		weapon_addon_berserker_description = "Super hache.",
 
-		weapon_addon_katana = "Katana",
-		weapon_addon_katana_description = "Ninja, ouais.",
-
 		weapon_addon_stidvc = "STI DVC 2011",
 		weapon_addon_stidvc_description = "Le futur est maintenant vieux, juste en calibre plus petit...",
 
@@ -8170,7 +8202,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		lockpicking_succeeded = "Crochetage réussi.",
 		hotwiring_vehicle = "Démarrage à chaud du véhicule",
 		lockpick_broke = "Le crochet a cassé",
-		failed_hotwire = "Le démarrage à chaud a échoué",
+		failed_hotwire = "Vous n'avez pas réussi à forcer le démarrage du véhicule, essayez peut-être d'utiliser de meilleurs outils ?",
 		unpacking_green_rolls = "Déballage de rouleaux verts",
 		you_do_not_have_enough_rolling_paper = "Vous n'avez pas assez de papier à rouler.",
 		rolling_joint = "Roulage de joint",
@@ -8413,6 +8445,8 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		refresh = "Actualiser",
 		refreshing = "Actualisation en cours...",
 
+		avoid_repeating_letters = "Essayez d'éviter de nombreuses lettres répétées dans votre prénom ou nom de famille.",
+
 		missing_character_creation_data = "Données de création du personnage manquantes.",
 		invalid_first_name = "Prénom manquant ou invalide (2 à 100 caractères).",
 		invalid_last_name = "Nom de famille manquant ou invalide (2 à 100 caractères).",
@@ -8561,6 +8595,24 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		no_nearby_vehicle = "Aucun véhicule à proximité.",
 		already_checking_upgrades = "Vous vérifiez déjà les mises au point d'un véhicule.",
 		engine_is_running = "Le moteur du véhicule tourne."
+	},
+
+	meow = {
+		feed = "[${InteractionKey}] Nourrir",
+		pet = "[${InteractionKey}] Caresser",
+		brush = "[${InteractionKey}] Brosser",
+		catnip = "[${InteractionKey}] Donner de l'herbe à chat",
+		treat = "[${InteractionKey}] Donner une friandise",
+		cuddle = "[${InteractionKey}] Faire des câlins",
+		hug = "[${InteractionKey}] Faire un câlin",
+
+		feed_active = "Nourrir Maxwell",
+		pet_active = "Caresser Maxwell",
+		brush_active = "Brossage de Maxwell",
+		catnip_active = "Donner de l'herbe à chat à Maxwell",
+		treat_active = "Donner une friandise à Maxwell",
+		cuddle_active = "Câliner avec Maxwell",
+		hug_active = "Faire un câlin à Maxwell"
 	},
 
 	meth = {
@@ -9656,7 +9708,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		no_warnings = "Aucun avertissement",
 		not_shown_warnings = "Encore ${count} avertissements non affichés",
 		system_issuer = "Système",
-		add_warning_title = "Ajouter un avertissement",
+		add_note_title = "Ajouter une note",
 		message_placeholder = "${playerName} a fait une erreur...",
 
 		type_note = "Note",
@@ -9667,7 +9719,11 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		button_cancel = "Annuler",
 		button_add = "Ajouter",
 		button_close = "Fermer",
-		button_new = "Nouveau",
+		button_new = "Nouvelle note",
+
+		ping = "${ping}ms",
+		fps = "${fps}fps",
+		playtime = "${time} joué",
 
 		invalid_server_id = "Identifiant de serveur invalide.",
 
@@ -10369,17 +10425,15 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		invincibility_inactive_dead = "Invincibilité : ~g~Inactive~w~ (mort)",
 		invincibility_inactive = "Invincibilité : ~g~Inactive~w~",
 
-		health_ok = "Santé : ~g~${health} / ${maxHealth}~w~",
-		health_bad = "Santé : ~r~${health} / ${maxHealth}~w~",
+		health_ok = "Santé : ~g~${health} / ${maxHealth}~w~ - ${percentage}",
+		health_bad = "Santé : ~r~${health} / ${maxHealth}~w~ - ${percentage}",
 
-		armor_ok = "Armure : ~g~${armor} / ${maxArmor}~w~",
-		armor_bad = "Armure : ~r~${armor} / ${maxArmor}~w~",
+		armor_ok = "Armure : ~g~${armor} / ${maxArmor}~w~ - ${percentage}",
+		armor_bad = "Armure : ~r~${armor} / ${maxArmor}~w~ - ${percentage}",
 
 		vehicle_health = "Santé du véhicule: ${percentage}",
 
-		speed = "Vitesse : ${speed}${unit}",
-		speed_mph = "mph",
-		speed_kmh = "kmh",
+		speed = "Vitesse : ${speed}",
 
 		exit_spectate = "Appuyez sur ~g~${InteractionKey}~w~ pour quitter le mode spectateur",
 
@@ -10895,7 +10949,9 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		set_ocean_scaler_no_permission = "Le joueur n'avait pas la permission requise pour régler le scaler d'océan.",
 
 		tsunami_started = "Le tsunami a commencé. Il faut ${minutes} minutes pour inonder la carte.",
-		tsunami_stopped = "Le tsunami est terminé."
+		tsunami_stopped = "Le tsunami est terminé.",
+
+		toggle_tsunami_no_permissions = "Tentative de basculer le tsunami sans les autorisations nécessaires."
 	},
 
 	tuner_shop = {
@@ -11111,6 +11167,10 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		flipped_vehicle_logs_title = "Véhicule retourné",
 		flipped_vehicle_logs_details = "${consoleName} a retourné un véhicule.",
 		failed_to_find_ground = "Impossible de trouver une surface, vous avez été téléporté à la route la plus proche.",
+
+		knots = "nœuds",
+		mph = "mph",
+		kmh = "km/h",
 
 		time_in = "dans ${time} ${unit}",
 		time_ago = "il y a ${time} ${unit}"

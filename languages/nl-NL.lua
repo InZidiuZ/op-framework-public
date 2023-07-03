@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 16 (do not change)
+-- AUTO LOCALES: 17 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -96,11 +96,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		model_name_not_provided = "Geen modelnaam doorgegeven.",
 		model_name_invalid = "Modelnaam `${modelName}` is ongeldig.",
-		failed_to_spawn_vehicle = "Het uitvoeren van de `/spawn_vehicle` commando is niet gelukt.",
-		spawned_vehicle_for_player = "Voertuig `${modelName}` is succesvol gespawned voor ${consoleName}.",
+		failed_to_spawn_vehicle = "Kon voertuig niet spawnen.",
+		spawned_vehicle_for_player = "Succesvol `${modelName}` gespawned voor ${displayName}.",
 		spawned_vehicle_for_everyone = "Voertuig `${modelName}` is succesvol gespawned voor iedereen.",
-		spawn_vehicle_for_player_not_staff = "Speler probeerde een voertuig te spawnen voor iemand anders, maar had daar niet de benodigde toestemming voor.",
-		spawn_vehicle_for_self_not_staff = "Speler probeerde een voertuig voor zichzelf te spawnen, maar had daar niet de benodigde toestemming voor.",
+		spawn_vehicle_no_permissions = "Speler probeerde een voertuig te spawnen maar had niet de vereiste rechten om dit te doen.",
 		replace_vehicle_no_permissions = "Speler probeerde hun voertuig te vervangen, maar had daar niet de benodigde toestemming voor.",
 		create_vehicle_no_permissions = "Speler probeerde een voertuig te maken, maar had daar niet de benodigde toestemming voor.",
 		spawned_vehicle_for_self_title = "Voertuig Spawned",
@@ -1907,13 +1906,13 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		position_command_parameter_label_help = "Een optioneel label dat bij de positie opgeslagen moet worden.",
 		position_command_substitutes = "pos, coords",
 
+		copy_ground_command = "kopieer_grond",
+		copy_ground_command_help = "Kopieert de grondcoördinaten van uw huidige positie naar uw klembord.",
+		copy_ground_command_substitutes = "grond",
+
 		save_commands_list_command = "save_commands_list",
 		save_commands_list_command_help = "Slaat een lijst op van alle beschikbare op-fw commando's.",
 		save_commands_list_command_substitutes = "",
-
-		save_vehicle_data_command = "save_vehicle_data",
-		save_vehicle_data_command_help = "Slaat een hoop data op over voertuigen.",
-		save_vehicle_data_command_substitutes = "",
 
 		draw_radius_command = "draw_radius",
 		draw_radius_command_help = "Tekent een straal.",
@@ -2268,6 +2267,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		gun_trader_debug_command = "wapenhandel_debug",
 		gun_trader_debug_command_help = "Tekent een tekst op de huidige locatie van de wapenhandelaar.",
 		gun_trader_debug_command_substitutes = "",
+
+		unlock_gun_trader_command = "ontgrendel_wapenhandelaar",
+		unlock_gun_trader_command_help = "Ontgrendelt onmiddellijk de wapenhandelaar.",
+		unlock_gun_trader_command_substitutes = "",
 
 		-- game/gas_masks
 		gas_debug_command = "gas_debug",
@@ -3361,6 +3364,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		entity_states_command_parameter_network_id_help = "Het netwerk id van de entiteit.",
 		entity_states_command_substitutes = "",
 
+		draw_entity_states_command = "teken_entiteit_staten",
+		draw_entity_states_command_help = "Toont alle entiteiten met 1 of meer staten.",
+		draw_entity_states_command_substitutes = "",
+
 		-- illegal/corner
 		corner_command = "hoekje",
 		corner_command_help = "Verkoop drugs aan iemand in de buurt. De drugs die je verkoopt zijn afhankelijk van de locatie waar je je bevindt.",
@@ -3415,7 +3422,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		pd_impound_command = "pd_inbeslagname",
 		pd_impound_command_help = "Deze opdracht neemt het voertuig van een speler in beslag voor een bepaalde tijd.",
 		pd_impound_command_parameter_minutes = "minuten",
-		pd_impound_command_parameter_minutes_help = "Hoe lang het voertuig in beslag moet worden genomen (tussen 1 minuut en 12 uur).",
+		pd_impound_command_parameter_minutes_help = "Hoe lang het voertuig in beslag moet worden genomen (tussen 1 minuut en 48 uur).",
 		pd_impound_command_substitutes = "",
 
 		dispatch_command = "meldkamer",
@@ -4709,6 +4716,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		outfit_failed = "Outfit kon niet worden toegepast.",
 		missing_outfit = "Outfit ontbreekt.",
 		missing_outfit_name = "Naam kledingset ontbreekt.",
+		invalid_outfit = "Ongeldige outfit.",
 		no_nearby_clothing_spot = "Er is geen kledingwinkel in de buurt.",
 		trunk_closed = "De kofferbak is dicht.",
 		trunk_too_far = "Je bent te ver weg van de kofferbak.",
@@ -4739,6 +4747,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		loading_model = "Laden van ped model...",
 		loading_spawn = "Spawnen van speler ped...",
+		loading_preload_data = "Ped data aan het laden...",
 		loading_set_data = "Ped data instellen...",
 		loading_tattoos = "Tatoeages instellen...",
 		loading_finalize = "Afronden..."
@@ -5277,6 +5286,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		crafted_multi_tool = "Multi tool gemaakt.",
 		failed_craft_multi_tool = "Multi Tool maken mislukt.",
 
+		mix_grimace_shake = "Mix Grimace Shake",
+		press_to_mix_grimace_shake = "[${SeatEjectKey}] Druk op om Grimace Shake te mixen",
+		mixing_grimace_shake = "Grimace Shake aan het mixen",
+		mixed_grimace_shake = "Grimace shake gemixt.",
+		failed_mix_grimace_shake = "Kon Grimace shake niet mixen.",
+
 		no_required_items = "Je hebt niet alle benodigde items.",
 
 		debug_multi = "-Meerdere output-",
@@ -5293,7 +5308,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 	creation = {
 		turn_right = "Rechtsaf slaan.",
-		turn_left = "Linksaf slaan."
+		turn_left = "Linksaf slaan.",
+		toggle_light = "Verlichting aan/uit"
 	},
 
 	creation_menu = {
@@ -5605,7 +5621,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		state_seal_three = "Ongeautoriseerd gebruik kan zware straf opleveren onder de 13 S.A. Pen. Code 502(a).",
 
 		kmh = "km/u",
-		mph = "mi/u",
+		mph = "mph",
 
 		set_unit_id_to = "Uw eenheid ID is nu ingesteld op ${unitId}.",
 		reset_unit_id = "Uw eenheid ID is nu gereset.",
@@ -5875,7 +5891,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		floor_containment = "Controlekamer",
 
-		doj_office = "DOJ Kantoor"
+		doj_office = "DOJ Kantoor",
+
+		used_elevator_logs_title = "Gebruikte lift",
+		used_elevator_logs_details = "${consoleName} heeft lift ${elevatorId} gebruikt om naar verdieping `${floor}` te gaan."
 	},
 
 	emails = {
@@ -6052,6 +6071,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		disabled_freecam = "Freecam uitgeschakeld.",
 		freecam_failed = "Freecam kon niet worden ingeschakeld. Heeft u noclip of iets soortgelijks ingeschakeld?",
 
+		freecam_no_dead = "Je kunt geen freecam inschakelen terwijl je neer bent.",
+
 		freecam_logs_title = "Freecam aan/uit gezet",
 		freecam_on_logs_details = "${consoleName} heeft hun freecam aangezet.",
 		freecam_off_logs_details = "${consoleName} heeft hun freecam uitgezet.",
@@ -6092,6 +6113,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		shake_tree = "Druk op ~INPUT_CONTEXT~ om de boom te schudden.",
 		shaking_tree = "Boom aan het schudden",
+
+		extract_rubber = "Druk op ~INPUT_CONTEXT~ om rubber uit de boom te halen.",
+		extracting_rubber = "Rubber aan het uithalen",
 
 		tree_klonk = "Er viel iets uit de boom en het raakte je hoofd."
 	},
@@ -6182,9 +6206,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		press_e_to_talk = "Druk op ~INPUT_CONTEXT~ om met Jim te praten.",
 		trader_closed = "De winkel van Jim is momenteel gesloten.",
 
-		sorry_closed = "Sorry, de winkel is gesloten.",
+		sorry_closed = "Sorry fam, de winkel is gesloten.",
 		sorry_closed_hug = "Bedankt voor de knuffel!",
-		sorry_closed_fight = "Rustig aan, ik heb niets gedaan.",
+		sorry_closed_finger = "Wat de frick man, dat is grof!",
+		sorry_closed_kiss = "Woah, kerel, daar ben ik niet van...",
+		sorry_closed_dab = "Dab op de haters, serieus serieus, op God!",
+		sorry_closed_fight = "Yo chill, maat, ik heb niks gedaan.",
 
 		trader_locked = "Jim heeft een paar dingen van je nodig voordat hij bereid is zijn winkel te openen.",
 		unlock_trader = "Geef het item aan Jim.",
@@ -6312,8 +6339,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	hud = {
-		mph = "mp/u",
-		kmh = "km/u",
 		knots = "knopen",
 		ft = "ft",
 		m = "m",
@@ -6335,6 +6360,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		steps_walked_deaths = "${stepsWalked} stappen ~t~/~w~ ${deaths} knock-outs",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Zuurstof over: ${timer}",
+
+		alignment_warning_title = "HUD-uitlijning",
+		alignment_warning = "Je HUD lijkt deels buiten het scherm te vallen. Je kunt dit aanpassen door de \"*Safezone-grootte*\" te verkleinen in de \"*Weergave*\" instellingen.",
 
 		muted = "Gedempt",
 
@@ -6365,7 +6393,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		hold_to_skin = "[${InteractionKey}] Houd vast om te villen",
 		skinning_animal = "Huiden van dood dier",
 		meat_too_damaged = "Het vlees van dit dier is te beschadigd.",
-		animal_is_being_skinned = "Het dier wordt gevild."
+		animal_is_being_skinned = "Het dier wordt gevild.",
+
+		skinned_logs_title = "Vergenoegd Dier",
+		skinned_logs_details = "${consoleName} heeft een dier (${modelName}) gevild en kreeg ${skinnedItems}.",
+		received_nothing = "niets"
 	},
 
 	identification = {
@@ -7234,6 +7266,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		lean = "Lean",
 		lean_description = "Sippend aan wat sizzurp, slok, sippend aan wat, slok.",
+
+		grimace_shake = "Gruwel Schud",
+		grimace_shake_description = "Gek? Ik was ooit gek. Ze stopten me in een kamer. Een rubberen kamer. Een rubberen kamer met ratten. En ratten maken me gek. Gek? Ik was ooit gek. Ze stopten me in een kamer. Een rubberen kamer. Een rubberen kamer met ratten. En ratten maken me gek. Gek? Ik was ooit gek. Ze stopten me in een kamer. Een rubberen kamer. Een rubberen kamer met ratten. En ratten maken me gek. Gek? Ik was ooit gek. Ze stopten me in een kamer. Een rubberen kamer. Een rubberen kamer met ratten. En ratten maken me gek. Gek? Ik was ooit gek.....",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Geniet van de zoete en pittige smaken van Jolly Ranchers, de klassieke harde snoepjes die barsten van fruitige goedheid.",
@@ -8117,9 +8152,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		weapon_addon_berserker = "Berserker",
 		weapon_addon_berserker_description = "Vette bijl.",
 
-		weapon_addon_katana = "Katana",
-		weapon_addon_katana_description = "Ninja stijl, ja.",
-
 		weapon_addon_stidvc = "STI DVC 2011",
 		weapon_addon_stidvc_description = "De toekomst is hier, oude man. Alleen in een kleiner kaliber...",
 
@@ -8170,7 +8202,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		lockpicking_succeeded = "Lockpicken Gelukt.",
 		hotwiring_vehicle = "Voertuig Starten zonder Sleutel",
 		lockpick_broke = "Lockpick Gebroken",
-		failed_hotwire = "Starten zonder sleutel mislukt",
+		failed_hotwire = "Het is niet gelukt om de auto te starten. Misschien kun je betere gereedschappen gebruiken?",
 		unpacking_green_rolls = "Unpacken van de Groene Rollen",
 		you_do_not_have_enough_rolling_paper = "Je hebt niet genoeg Rolling Papier.",
 		rolling_joint = "Joint Rollen",
@@ -8413,6 +8445,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		refresh = "Vernieuwen",
 		refreshing = "Bezig met vernieuwen...",
 
+		avoid_repeating_letters = "Probeer herhalende letters zoveel mogelijk te vermijden in je voornaam en/of achternaam.",
+
 		missing_character_creation_data = "Ontbrekende gegevens voor het maken van het personage.",
 		invalid_first_name = "Ontbrekende of ongeldige voornaam (2 tot 100 tekens).",
 		invalid_last_name = "Ontbrekende of ongeldige achternaam (2 tot 100 tekens).",
@@ -8561,6 +8595,24 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		no_nearby_vehicle = "Geen voertuig in de buurt.",
 		already_checking_upgrades = "Je controleert al de aanpassingen van een voertuig.",
 		engine_is_running = "De motor van het voertuig draait."
+	},
+
+	meow = {
+		feed = "[${InteractionKey}] Voeren",
+		pet = "[${InteractionKey}] Aaien",
+		brush = "[${InteractionKey}] Borstelen",
+		catnip = "[${InteractionKey}] Geef Kattenkruid",
+		treat = "[${InteractionKey}] Geef Beloning",
+		cuddle = "[${InteractionKey}] Knuffelen",
+		hug = "[${InteractionKey}] Knuffel",
+
+		feed_active = "Maxwell aan het voeren",
+		pet_active = "Maxwell aan het aaien",
+		brush_active = "Maxwell borstelen",
+		catnip_active = "Maxwell kattenkruid geven",
+		treat_active = "Maxwell een traktatie geven",
+		cuddle_active = "Knuffelen met Maxwell",
+		hug_active = "Maxwell knuffelen"
 	},
 
 	meth = {
@@ -9656,7 +9708,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		no_warnings = "Geen waarschuwingen",
 		not_shown_warnings = "${count} meer niet getoond",
 		system_issuer = "Systeem",
-		add_warning_title = "Waarschuwing toevoegen",
+		add_note_title = "Notitie toevoegen",
 		message_placeholder = "${playerName} heeft een foutje gemaakt...",
 
 		type_note = "Opmerking",
@@ -9667,7 +9719,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		button_cancel = "Annuleren",
 		button_add = "Toevoegen",
 		button_close = "Sluiten",
-		button_new = "Nieuw",
+		button_new = "Nieuwe notitie",
+
+		ping = "${ping}ms",
+		fps = "${fps}fps",
+		playtime = "${time} gespeeld",
 
 		invalid_server_id = "Ongeldige server-ID.",
 
@@ -10369,17 +10425,15 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		invincibility_inactive_dead = "Onsterfelijkheid: ~g~Inactief~w~ (dood)",
 		invincibility_inactive = "Onsterfelijkheid: ~g~Inactief~w~",
 
-		health_ok = "Gezondheid: ~g~${health} / ${maxHealth}~w~",
-		health_bad = "Gezondheid: ~r~${health} / ${maxHealth}~w~",
+		health_ok = "Gezondheid: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
+		health_bad = "Gezondheid: ~r~${health} / ${maxHealth}~w~ - ${percentage}",
 
-		armor_ok = "Pantser: ~g~${armor} / ${maxArmor}~w~",
-		armor_bad = "Pantser: ~r~${armor} / ${maxArmor}~w~",
+		armor_ok = "Pantser: ~g~${armor} / ${maxArmor}~w~ - ${percentage}",
+		armor_bad = "Pantser: ~r~${armor} / ${maxArmor}~w~ - ${percentage}",
 
 		vehicle_health = "Voertuig gezondheid: ${percentage}",
 
-		speed = "Snelheid: ${speed}${unit}",
-		speed_mph = "mph",
-		speed_kmh = "kmh",
+		speed = "Snelheid: ${speed}",
 
 		exit_spectate = "Druk op ~g~${InteractionKey}~w~ om de toeschouwermodus te verlaten",
 
@@ -10895,7 +10949,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		set_ocean_scaler_no_permission = "De speler had niet de benodigde machtiging om de intensiteit van de oceaanschaal in te stellen.",
 
 		tsunami_started = "Tsunami gestart. Het duurt ${minutes} minuten voordat de map overstromingsgevaarlijk is.",
-		tsunami_stopped = "Tsunami gestopt."
+		tsunami_stopped = "Tsunami gestopt.",
+
+		toggle_tsunami_no_permissions = "Poging om de tsunami te activeren zonder de juiste rechten."
 	},
 
 	tuner_shop = {
@@ -11111,6 +11167,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		flipped_vehicle_logs_title = "Omgekeerd Voertuig",
 		flipped_vehicle_logs_details = "${consoleName} heeft een voertuig omgekeerd.",
 		failed_to_find_ground = "Kon geen grond vinden, je bent geteleporteerd naar de dichtstbijzijnde weg.",
+
+		knots = "knopen",
+		mph = "mph",
+		kmh = "km/u",
 
 		time_in = "over ${time} ${unit}",
 		time_ago = "${time} ${unit} geleden"

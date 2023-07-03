@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 16 (do not change)
+-- AUTO LOCALES: 17 (do not change)
 
 OP.Global.Locales.Languages["meme-1929"] = {
 	-- configuration settings for language
@@ -96,11 +96,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		model_name_not_provided = "No model name was provided.",
 		model_name_invalid = "Model name `${modelName}` is incorrect.",
-		failed_to_spawn_vehicle = "Unable to properly execute the `/spawn_vehicle` command.",
-		spawned_vehicle_for_player = "Successfully spawned `${modelName}` for ${consoleName}.",
+		failed_to_spawn_vehicle = "Failed to spawn conveyance.",
+		spawned_vehicle_for_player = "Successfully spawned the `${modelName}` for ${displayName}.",
 		spawned_vehicle_for_everyone = "Successfully spawned `${modelName}` for everyone.",
-		spawn_vehicle_for_player_not_staff = "Player endeavored to spawn a vehicle for someone else, but lacked the necessary permissions to do so.",
-		spawn_vehicle_for_self_not_staff = "Player endeavored to spawn a vehicle for themselves, but lacked the necessary permissions to do so.",
+		spawn_vehicle_no_permissions = "Player attempted to spawn a conveyance but lacked the needed permissions to do so.",
 		replace_vehicle_no_permissions = "Player endeavored to replace their vehicle, but lacked the necessary permissions to do so.",
 		create_vehicle_no_permissions = "Player endeavored to create a vehicle, but lacked the necessary permissions to do so.",
 		spawned_vehicle_for_self_title = "Vehicle Spawned",
@@ -1907,13 +1906,13 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		position_command_parameter_label_help = "An optional label to be associated with the position.",
 		position_command_substitutes = "location, coordinates",
 
+		copy_ground_command = "copy_ground",
+		copy_ground_command_help = "Copy the earth coordinates of your current position to your clipboard.",
+		copy_ground_command_substitutes = "earth",
+
 		save_commands_list_command = "save_commands_list",
 		save_commands_list_command_help = "Saves a list of all available op-fw commands.",
 		save_commands_list_command_substitutes = "",
-
-		save_vehicle_data_command = "save_vehicle_data",
-		save_vehicle_data_command_help = "Saves various data related to automobiles.",
-		save_vehicle_data_command_substitutes = "",
 
 		draw_radius_command = "draw_radius",
 		draw_radius_command_help = "Draw a circle.",
@@ -2268,6 +2267,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		gun_trader_debug_command = "gun_trader_debug",
 		gun_trader_debug_command_help = "Displays a text on the gun trader's current location.",
 		gun_trader_debug_command_substitutes = "",
+
+		unlock_gun_trader_command = "unlock_gun_trader",
+		unlock_gun_trader_command_help = "Instantly unlocks the gun trader.",
+		unlock_gun_trader_command_substitutes = "",
 
 		-- game/gas_masks
 		gas_debug_command = "gas_debug",
@@ -3361,6 +3364,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		entity_states_command_parameter_network_id_help = "The network id of the entity.",
 		entity_states_command_substitutes = "",
 
+		draw_entity_states_command = "draw_entity_status",
+		draw_entity_states_command_help = "Shows all entities with one or more statuses.",
+		draw_entity_states_command_substitutes = "",
+
 		-- illegal/corner
 		corner_command = "peddle",
 		corner_command_help = "Vend drugs to a close individual. The drug you vend is determined by your location.",
@@ -3415,7 +3422,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		pd_impound_command = "police impound",
 		pd_impound_command_help = "This command impounds a player's vehicle for a certain period of time.",
 		pd_impound_command_parameter_minutes = "minutes",
-		pd_impound_command_parameter_minutes_help = "For how long the vehicle should be impounded (between 1 minute and 12 hours).",
+		pd_impound_command_parameter_minutes_help = "For how long the vehicle should be impounded (between 1 minute and 48 hours).",
 		pd_impound_command_substitutes = "",
 
 		dispatch_command = "send dispatch message",
@@ -4709,6 +4716,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		outfit_failed = "Failed t' apply outfit.",
 		missing_outfit = "Missin' outfit.",
 		missing_outfit_name = "Missin' outfit name.",
+		invalid_outfit = "Invalid attire.",
 		no_nearby_clothing_spot = "No clothin' spot nearby.",
 		trunk_closed = "The trunk be closed.",
 		trunk_too_far = "Ye be too far away from the trunk.",
@@ -4739,6 +4747,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		loading_model = "Loading character model...",
 		loading_spawn = "Spawning player character...",
+		loading_preload_data = "Loading character data...",
 		loading_set_data = "Setting character data...",
 		loading_tattoos = "Setting tattoos...",
 		loading_finalize = "Finalizing..."
@@ -5277,6 +5286,12 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		crafted_multi_tool = "undefined",
 		failed_craft_multi_tool = "undefined",
 
+		mix_grimace_shake = "Combine Grimace Shake",
+		press_to_mix_grimace_shake = "[${SeatEjectKey}] Combine Grimace Shake",
+		mixing_grimace_shake = "Mixing Grimace Shake",
+		mixed_grimace_shake = "Mixed grimace shake.",
+		failed_mix_grimace_shake = "Failed tae mix grimace shake.",
+
 		no_required_items = "You don't have all the necessary items.",
 
 		debug_multi = "-Multiple Outputs-",
@@ -5293,7 +5308,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 	creation = {
 		turn_right = "Turn to the right",
-		turn_left = "Turn to the Left"
+		turn_left = "Turn to the Left",
+		toggle_light = "Toggle Licht"
 	},
 
 	creation_menu = {
@@ -5605,7 +5621,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		state_seal_three = "Any unauthorized use is subject to heavy penalty under 13 S.A. Pen. Code 502(a).",
 
 		kmh = "kph",
-		mph = "mph",
+		mph = "m.p.h.",
 
 		set_unit_id_to = "Your badge number has now been set to ${unitId}.",
 		reset_unit_id = "Your badge number has been reset.",
@@ -5875,7 +5891,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		floor_containment = "Containment Room",
 
-		doj_office = "Department of Justice Office"
+		doj_office = "Department of Justice Office",
+
+		used_elevator_logs_title = "Used Lift",
+		used_elevator_logs_details = "${consoleName} used lift ${elevatorId} tae go tae floor `${floor}`."
 	},
 
 	emails = {
@@ -6052,6 +6071,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		disabled_freecam = "Freecam has been disabled.",
 		freecam_failed = "Failed to enable freecam. Check if noclip or similar is enabled.",
 
+		freecam_no_dead = "Ye cannae enable freecam while doon.",
+
 		freecam_logs_title = "Freecam Activated",
 		freecam_on_logs_details = "${consoleName} has activated freecam mode.",
 		freecam_off_logs_details = "${consoleName} has deactivated freecam mode.",
@@ -6092,6 +6113,9 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		shake_tree = "Press ~INPUT_CONTEXT~ to shake the tree.",
 		shaking_tree = "Shaking tree",
+
+		extract_rubber = "Press ~INPUT_CONTEXT~ tae extract rubber frae the tree.",
+		extracting_rubber = "Extracting Rubber",
 
 		tree_klonk = "Something dropped from the tree and hit your head."
 	},
@@ -6182,9 +6206,12 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		press_e_to_talk = "Press ~INPUT_CONTEXT~ to parley with Jim.",
 		trader_closed = "Jim's emporium be currently closed.",
 
-		sorry_closed = "undefined",
+		sorry_closed = "Sorry mate, shop is closed.",
 		sorry_closed_hug = "undefined",
-		sorry_closed_fight = "undefined",
+		sorry_closed_finger = "Whit the frick, that's rude!",
+		sorry_closed_kiss = "Sorry buddy, that's not really my thing...",
+		sorry_closed_dab = "Show them haters what's up, for real though!",
+		sorry_closed_fight = "Hold up, chill out man, I didn't do anything.",
 
 		trader_locked = "Jim needs a few things from ye before he be willing to open his emporium.",
 		unlock_trader = "Provide the item to Jim.",
@@ -6312,8 +6339,6 @@ OP.Global.Locales.Languages["meme-1929"] = {
 	},
 
 	hud = {
-		mph = "MPH",
-		kmh = "KPH",
 		knots = "Knots",
 		ft = "ft",
 		m = "m",
@@ -6335,6 +6360,9 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		steps_walked_deaths = "${stepsWalked} steps ~t~/~w~ ${deaths} deaths",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Oxygen remaining: ${timer}",
+
+		alignment_warning_title = "HUD Alignment",
+		alignment_warning = "Looks like your HUD is partly off-screen. You can fix it by decreasing the \"*Safezone Size*\" in your \"*Display*\" settings.",
 
 		muted = "Muted",
 
@@ -6365,7 +6393,11 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		hold_to_skin = "[${InteractionKey}] Hold to skin",
 		skinning_animal = "Skinning dead animal",
 		meat_too_damaged = "This animal's meat is too damaged.",
-		animal_is_being_skinned = "The animal is being skinned."
+		animal_is_being_skinned = "The animal is being skinned.",
+
+		skinned_logs_title = "Skinned Animal",
+		skinned_logs_details = "${consoleName} skinned an animal (${modelName}) and obtained ${skinnedItems}.",
+		received_nothing = "nuthin'"
 	},
 
 	identification = {
@@ -7234,6 +7266,9 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		lean = "undefined",
 		lean_description = "undefined",
+
+		grimace_shake = "Grimace Shake",
+		grimace_shake_description = "Mad? I was mad once. They threw me in a cell. A padded cell. A padded cell with rats. And rats drive me mad. Mad? I was mad once. They threw me in a cell. A padded cell. A padded cell with rats. And rats drive me mad. Mad? I was mad once. They threw me in a cell. A padded cell. A padded cell with rats. And rats drive me mad. Mad? I was mad once. They threw me in a cell. A padded cell. A padded cell with rats. And rats drive me mad. Mad? I was mad once.....",
 
 		jolly_ranchers = "undefined",
 		jolly_ranchers_description = "undefined",
@@ -8117,9 +8152,6 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		weapon_addon_berserker = "Berserker",
 		weapon_addon_berserker_description = "Cool axe, verily.",
 
-		weapon_addon_katana = "Katana",
-		weapon_addon_katana_description = "Ninja, yeah!",
-
 		weapon_addon_stidvc = "STI DVC 2011",
 		weapon_addon_stidvc_description = "Verily, the future is now, old man, just in a smaller caliber...",
 
@@ -8170,7 +8202,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		lockpicking_succeeded = "Lockpicking Succeeded.",
 		hotwiring_vehicle = "Stealing a Car",
 		lockpick_broke = "Lockpick Failed",
-		failed_hotwire = "Failed to Steal Car",
+		failed_hotwire = "Thou hath failed to hotwire the conveyance, perchance try using some superior implements?",
 		unpacking_green_rolls = "Preparing Green Rolls",
 		you_do_not_have_enough_rolling_paper = "You don't have enough Rolling Paper.",
 		rolling_joint = "Rolling Weed",
@@ -8413,6 +8445,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		refresh = "Refresh",
 		refreshing = "Refreshing...",
 
+		avoid_repeating_letters = "Verily, endeavor to eschew a plethora of repeated letters in thy given and/or surname.",
+
 		missing_character_creation_data = "Missing character creation data",
 		invalid_first_name = "Missing or invalid given name (2 to 100 characters)",
 		invalid_last_name = "Missing or invalid family name (2 to 100 characters)",
@@ -8561,6 +8595,24 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		no_nearby_vehicle = "No vehicle nearby.",
 		already_checking_upgrades = "You are already examining a vehicle's modifications.",
 		engine_is_running = "The locomobile's engine is running."
+	},
+
+	meow = {
+		feed = "[${InteractionKey}] Feed",
+		pet = "[${InteractionKey}] Pet",
+		brush = "[${InteractionKey}] Brush",
+		catnip = "[${InteractionKey}] Give Catnip",
+		treat = "[${InteractionKey}] Give Treat",
+		cuddle = "[${InteractionKey}] Cuddle",
+		hug = "[${InteractionKey}] Hug",
+
+		feed_active = "Feeding Maxwell",
+		pet_active = "Petting Maxwell",
+		brush_active = "Brushing Maxwell",
+		catnip_active = "Giving Maxwell Catnip",
+		treat_active = "Giving Maxwell a Treat",
+		cuddle_active = "Cuddling with Maxwell",
+		hug_active = "Hugging Maxwell"
 	},
 
 	meth = {
@@ -9656,7 +9708,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		no_warnings = "No warnings of misconduct",
 		not_shown_warnings = "There are ${count} additional warnings not shown",
 		system_issuer = "The System",
-		add_warning_title = "Add Warning",
+		add_note_title = "Add Note",
 		message_placeholder = "The Lord's servant, ${playerName}, hath erred...",
 
 		type_note = "Pen a note",
@@ -9667,7 +9719,11 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		button_cancel = "Cancel",
 		button_add = "Add",
 		button_close = "Close",
-		button_new = "New",
+		button_new = "New Note",
+
+		ping = "${ping}ms",
+		fps = "${fps}fps",
+		playtime = "${time} played",
 
 		invalid_server_id = "Invalid server ID.",
 
@@ -10369,17 +10425,15 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		invincibility_inactive_dead = "Invincibility: ~g~Inactive~w~ (dead)",
 		invincibility_inactive = "Invincibility: ~g~Inactive~w~",
 
-		health_ok = "Health: ~g~${health} / ${maxHealth}~w~",
-		health_bad = "Health: ~r~${health} / ${maxHealth}~w~",
+		health_ok = "Health: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
+		health_bad = "Health: ~r~${health} / ${maxHealth}~w~ - ${percentage}",
 
-		armor_ok = "Armour: ~g~${armor} / ${maxArmor}~w~",
-		armor_bad = "Armour: ~r~${armor} / ${maxArmor}~w~",
+		armor_ok = "Armor: ~g~${armor} / ${maxArmor}~w~ - ${percentage}",
+		armor_bad = "Armour: ~r~${armor} / ${maxArmor}~w~ - ${percentage}",
 
 		vehicle_health = "Vehicle Condition: ${percentage}",
 
-		speed = "Speed: ${speed}${unit}",
-		speed_mph = "mph",
-		speed_kmh = "km/h",
+		speed = "Speed: ${speed}",
 
 		exit_spectate = "Press ~g~${InteractionKey}~w~ to exit spectator mode",
 
@@ -10895,7 +10949,9 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		set_ocean_scaler_no_permission = "The player does not have the required permission to set the ocean scaler.",
 
 		tsunami_started = "The Tsunami has started. It will take ${minutes} minutes to flood the map.",
-		tsunami_stopped = "Tsunami hath ceased."
+		tsunami_stopped = "Tsunami hath ceased.",
+
+		toggle_tsunami_no_permissions = "Attempted to toggle the tsunami without proper permissions."
 	},
 
 	tuner_shop = {
@@ -11111,6 +11167,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		flipped_vehicle_logs_title = "Flipped Vehicle",
 		flipped_vehicle_logs_details = "${consoleName} flipped a horseless carriage.",
 		failed_to_find_ground = "Failed to find the earth, teleported thou to the nearest street.",
+
+		knots = "knots",
+		mph = "mph",
+		kmh = "km/h",
 
 		time_in = "in ${time} ${unit}",
 		time_ago = "${time} ${unit} ago"

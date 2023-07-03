@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 16 (do not change)
+-- AUTO LOCALES: 17 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -96,11 +96,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		model_name_not_provided = "ไม่ได้ระบุชื่อโมเดล",
 		model_name_invalid = "ชื่อโมเดล `${modelName}` ไม่ถูกต้อง",
-		failed_to_spawn_vehicle = "ไม่สามารถสร้างพาหนะด้วยคำสั่ง `/spawn_vehicle` ได้",
-		spawned_vehicle_for_player = "สร้างรถ ${modelName} สำเร็จสำหรับ ${consoleName}",
+		failed_to_spawn_vehicle = "ไม่สามารถสร้างยานพาหนะได้",
+		spawned_vehicle_for_player = "สร้างยานพาหนะแบบ ${modelName} สำหรับ ${displayName} สำเร็จแล้ว",
 		spawned_vehicle_for_everyone = "สร้างรถ ${modelName} สำเร็จสำหรับทุกคน",
-		spawn_vehicle_for_player_not_staff = "ผู้เล่นพยายามสร้างรถสำหรับผู้เล่นคนอื่น แต่ไม่มีสิทธิ์ที่จำเป็นในการดำเนินการ",
-		spawn_vehicle_for_self_not_staff = "ผู้เล่นพยายามสร้างรถสำหรับตัวเอง แต่ไม่มีสิทธิ์ที่จำเป็นในการดำเนินการ",
+		spawn_vehicle_no_permissions = "ผู้เล่นพยายามสร้างยานพาหนะแต่ไม่ได้รับอนุญาตที่จำเป็น",
 		replace_vehicle_no_permissions = "ผู้เล่นพยายามเปลี่ยนรถของตนเอง แต่ไม่มีสิทธิ์ที่จำเป็นในการดำเนินการ",
 		create_vehicle_no_permissions = "ผู้เล่นพยายามสร้างยานพาหนะ แต่ไม่มีสิทธิ์ที่จำเป็นในการดำเนินการ",
 		spawned_vehicle_for_self_title = "ยานพาหนะที่สร้างขึ้น",
@@ -1907,13 +1906,13 @@ OP.Global.Locales.Languages["th-TH"] = {
 		position_command_parameter_label_help = "ป้ายชื่อเพิ่มเติมที่จะถูกบันทึกไว้กับตำแหน่ง (ไม่จำเป็นต้องใส่)",
 		position_command_substitutes = "pos, coords",
 
+		copy_ground_command = "คัดลอก_พื้น",
+		copy_ground_command_help = "คัดลอกพิกัดพื้นดินของตำแหน่งปัจจุบันไปยังคลิปบอร์ดของคุณ",
+		copy_ground_command_substitutes = "พื้น",
+
 		save_commands_list_command = "save_commands_list",
 		save_commands_list_command_help = "Saves a list of all available op-fw commands.",
 		save_commands_list_command_substitutes = "",
-
-		save_vehicle_data_command = "save_vehicle_data",
-		save_vehicle_data_command_help = "Saves a bunch of data about vehicles.",
-		save_vehicle_data_command_substitutes = "",
 
 		draw_radius_command = "draw_radius",
 		draw_radius_command_help = "Draw a radius.",
@@ -2268,6 +2267,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		gun_trader_debug_command = "gun_trader_debug",
 		gun_trader_debug_command_help = "วาดข้อความที่ตำแหน่งปัจจุบันของพ่อค้าปืน",
 		gun_trader_debug_command_substitutes = "",
+
+		unlock_gun_trader_command = "ปลดล็อก_ผู้ค้าปืน",
+		unlock_gun_trader_command_help = "ปลดล็อกผู้ค้าปืนทันที",
+		unlock_gun_trader_command_substitutes = "",
 
 		-- game/gas_masks
 		gas_debug_command = "debug_gas",
@@ -3361,6 +3364,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		entity_states_command_parameter_network_id_help = "network id ของสิ่งของ",
 		entity_states_command_substitutes = "",
 
+		draw_entity_states_command = "แสดงสถานะขององค์ประกอบ",
+		draw_entity_states_command_help = "แสดงองค์ประกอบทั้งหมดที่มีสถานะ 1 หรือมากกว่า",
+		draw_entity_states_command_substitutes = "",
+
 		-- illegal/corner
 		corner_command = "มุม",
 		corner_command_help = "ขายยาให้กับคนโดยใกล้เคียง การขายยาขึ้นอยู่กับพื้นที่ที่คุณอยู่",
@@ -3415,7 +3422,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		pd_impound_command = "pd_impound",
 		pd_impound_command_help = "คำสั่งนี้จะยึดยานพาหนะของผู้เล่นไว้เป็นเวลาบางช่วง",
 		pd_impound_command_parameter_minutes = "นาที",
-		pd_impound_command_parameter_minutes_help = "ระบุเวลาที่ต้องการให้ยึดยานพาหนะ (ระหว่าง 1 นาที ถึง 12 ชั่วโมง)",
+		pd_impound_command_parameter_minutes_help = "ระยะเวลาในการยึดยานพาหนะ (ระหว่าง 1 นาทีและ 48 ชั่วโมง)",
 		pd_impound_command_substitutes = "",
 
 		dispatch_command = "dispatch",
@@ -4709,6 +4716,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		outfit_failed = "ไม่สามารถสลับเสื้อผ้าได้",
 		missing_outfit = "เสื้อผ้าหายไป",
 		missing_outfit_name = "ชื่อเสื้อผ้าหายไป",
+		invalid_outfit = "ชุดไม่ถูกต้อง",
 		no_nearby_clothing_spot = "ไม่มีสถานที่เปลี่ยนเสื้อผ้าใกล้เคียง",
 		trunk_closed = "ตู้โดยสารปิดอยู่",
 		trunk_too_far = "คุณอยู่ห่างจากตู้โดยสารเกินไป",
@@ -4739,6 +4747,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		loading_model = "กำลังโหลดโมเดลผู้เล่น...",
 		loading_spawn = "กำลังสร้างตัวละครผู้เล่น...",
+		loading_preload_data = "กำลังโหลดข้อมูลเบื้องต้นของบุคคล...",
 		loading_set_data = "กำลังกำหนดข้อมูลผู้เล่น...",
 		loading_tattoos = "กำลังกำหนดรอยสัก...",
 		loading_finalize = "กำลังทำการสรุป..."
@@ -5277,6 +5286,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		crafted_multi_tool = "สร้างเครื่องมือหลายฟังก์ชันเรียบร้อยแล้ว",
 		failed_craft_multi_tool = "การสร้างเครื่องมือหลายฟังก์ชันล้มเหลว",
 
+		mix_grimace_shake = "ผสมกริมั้นแชเค",
+		press_to_mix_grimace_shake = "[${SeatEjectKey}] กดเพื่อผสมกริมั้นแชเค",
+		mixing_grimace_shake = "กำลังผสมกริมั้นแชเค",
+		mixed_grimace_shake = "ผสมกริมั้นแชเคเรียบร้อย",
+		failed_mix_grimace_shake = "การผสมบุหรี่ไข้เขียวล้มเหลว",
+
 		no_required_items = "คุณไม่มีไอเท็มที่จำเป็นทั้งหมด",
 
 		debug_multi = "-ผลลัพธ์หลายรายการ-",
@@ -5293,7 +5308,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 	creation = {
 		turn_right = "เลี้ยวขวา",
-		turn_left = "เลี้ยวซ้าย"
+		turn_left = "เลี้ยวซ้าย",
+		toggle_light = "เปิด/ปิด ไฟ"
 	},
 
 	creation_menu = {
@@ -5875,7 +5891,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		floor_containment = "ห้องกักกัน",
 
-		doj_office = "ห้องทำงาน DOJ"
+		doj_office = "ห้องทำงาน DOJ",
+
+		used_elevator_logs_title = "ใช้ลิฟท์แล้ว",
+		used_elevator_logs_details = "${consoleName} ใช้ลิฟท์ ${elevatorId} เพื่อไปยังชั้น `${floor}`."
 	},
 
 	emails = {
@@ -6052,6 +6071,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		disabled_freecam = "ปิดใช้งาน freecam",
 		freecam_failed = "ไม่สามารถเปิดใช้งาน freecam ได้ คุณมี noclip หรืออย่างที่เกี่ยวข้องเปิดอยู่หรือไม่?",
 
+		freecam_no_dead = "คุณไม่สามารถเปิดอิสระที่นอนขณะที่ไม่มีสภาพหน้าให้เปลี่ยน",
+
 		freecam_logs_title = "เปิด/ปิดโหมดฟรีแคม",
 		freecam_on_logs_details = "${consoleName} เปิดโหมดฟรีแคม",
 		freecam_off_logs_details = "${consoleName} ปิดโหมดฟรีแคม",
@@ -6092,6 +6113,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		shake_tree = "กด ~INPUT_CONTEXT~ เพื่อโยกต้นไม้",
 		shaking_tree = "กำลังโยกต้นไม้",
+
+		extract_rubber = "กด ~INPUT_CONTEXT~ เพื่อสกัดยางจากต้นไม้",
+		extracting_rubber = "กำลังสกัดยาง",
 
 		tree_klonk = "มีของตกลงมาจากต้นไม้และโดนหัวฉีดใส่"
 	},
@@ -6182,9 +6206,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		press_e_to_talk = "กด ~INPUT_CONTEXT~ เพื่อพูดคุยกับ Jim",
 		trader_closed = "ร้านของ Jim ปิดอยู่ในขณะนี้",
 
-		sorry_closed = "ขอโทษครับ ร้านปิดแล้ว",
+		sorry_closed = "ขออภัยครับ ร้านปิดแล้ว",
 		sorry_closed_hug = "ขอบคุณสำหรับการกอดครับ :)",
-		sorry_closed_fight = "โอ้ยย ช้างตายทั้งตัว!",
+		sorry_closed_finger = "ครับท่านขออภัยครับ ท่านไม่มีการมีเงินเลยมังกร",
+		sorry_closed_kiss = "โว้ย! ผมไม่ชอบแบบนั้น...",
+		sorry_closed_dab = "แด็บกับคนที่เกลียดจะดีเหรอ? จริงจังตรงจริง!",
+		sorry_closed_fight = "เเน่นมา๊ากายึด ผมไม่ได้ทำอะไร.",
 
 		trader_locked = "Jim ต้องการสิ่งบางอย่างจากคุณก่อนที่เขาจะเปิดร้านของเขา",
 		unlock_trader = "ให้สิ่งของแก่ Jim",
@@ -6312,8 +6339,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 	},
 
 	hud = {
-		mph = "ไมล์ต่อชั่วโมง",
-		kmh = "กิโลเมตรต่อชั่วโมง",
 		knots = "กะนั้น",
 		ft = "ฟุต",
 		m = "เมตร",
@@ -6335,6 +6360,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		steps_walked_deaths = "${stepsWalked} ก้าว ~t~/~w~ ${deaths} ครั้งถูกยิง",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature} องศา",
 		scuba_timer = "เวลาที่เหลือในการหายใจ: ${timer}",
+
+		alignment_warning_title = "จัดตำแหน่ง HUD",
+		alignment_warning = "HUD ของคุณดูเหมือนจะเกินขอบจอบางส่วน คุณสามารถแก้ไขได้โดยลด \"*ขนาดโซนปลอบโยน*\" ใน \"*การแสดงผล*\" ของคุณ",
 
 		muted = "ปิดเสียง",
 
@@ -6365,7 +6393,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		hold_to_skin = "[${InteractionKey}] กดค้างเพื่อฝ่าผิว",
 		skinning_animal = "กำลังฝ่าผิวสัตว์ตาย",
 		meat_too_damaged = "เนื้อสัตว์ตัวนี้เสียหายไปแล้วมากเกินไป",
-		animal_is_being_skinned = "กำลังฝ่าผิวสัตว์"
+		animal_is_being_skinned = "กำลังฝ่าผิวสัตว์",
+
+		skinned_logs_title = "หนังสัตว์",
+		skinned_logs_details = "${consoleName} แกะหนังสัตว์ (${modelName}) และได้รับ ${skinnedItems} ตัว.",
+		received_nothing = "ไม่มียอด"
 	},
 
 	identification = {
@@ -7234,6 +7266,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		lean = "Lean",
 		lean_description = "ดื่มยาศรีษะผสมน้ำเปล่าและโค้ก เพื่อผ่อนคลายตัวเอง",
+
+		grimace_shake = "Grimace Shake",
+		grimace_shake_description = "บ้าใช่ไหม? กาลครั้งหนึ่งผมมีบ้านร้าง พวกเขาใส่ผมอยู่ในห้อง ห้องยาง. ห้องยางที่มีหนู. และหนูทำให้ผมบ้า. บ้าใช่ไหม? กาลครั้งหนึ่งผมมีบ้านร้าง พวกเขาใส่ผมอยู่ในห้อง ห้องยาง. ห้องยางที่มีหนู. และหนูทำให้ผมบ้า. บ้าใช่ไหม? กาลครั้งหนึ่งผมมีบ้านร้าง พวกเขาใส่ผมอยู่ในห้วง ห้องยาง. ห้องยางที่มีหนู. และหนูทำให้ผมบ้า. บ้าใช่ไหม? กาลครั้งหนึ่งผมมีบ้านร้าง พวกเขาใส่ผมอยู่ในห้อง ห้องยาง. ห้องยางที่มีหนู. และหนูทำให้ผมบ้า. บ้าใช่ไหม? กาลครั้งหนึ่งผม.....",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "สนุกกับรสชาติหวานและเปรี้ยวของ Jolly Ranchers ลูกอมแข็งคลาสสิกที่เต็มไปด้วยความหอมหวาน",
@@ -8117,9 +8152,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		weapon_addon_berserker = "ขวาน Berserker",
 		weapon_addon_berserker_description = "ขวานมันเจ๋งเลย",
 
-		weapon_addon_katana = "มีด Katana",
-		weapon_addon_katana_description = "Ninja แน่นอน",
-
 		weapon_addon_stidvc = "STI DVC 2011",
 		weapon_addon_stidvc_description = "อนาคตมีอยู่แล้วเก่าแก่ แค่ยิ่งกว่าน้อยลง...",
 
@@ -8170,7 +8202,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		lockpicking_succeeded = "ล็อกพิกกี้สำเร็จ",
 		hotwiring_vehicle = "ทำการเปิดรถโดยไม่มีกุญแจ",
 		lockpick_broke = "ชุดทำคีย์ล็อคแพงไปแล้ว",
-		failed_hotwire = "ทำการเปิดรถไม่สำเร็จ",
+		failed_hotwire = "คุณล้มเหลวในการโฮตไวร์ยานพาหนะ ลองใช้เครื่องมือที่ดีกว่าบ้างหรือเปล่า?",
 		unpacking_green_rolls = "กำลังเปิดกล่องจำหน่ายยา",
 		you_do_not_have_enough_rolling_paper = "คุณมีกระดาษสำหรับห่อยาไม่เพียงพอ",
 		rolling_joint = "กลับยาบุหรี่",
@@ -8413,6 +8445,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		refresh = "รีเฟรช",
 		refreshing = "กำลังรีเฟรช...",
 
+		avoid_repeating_letters = "ลองหลีกเลี่ยงการใช้ตัวอักษรที่ซ้ำซ้อนมากในชื่อและ/หรือนามสกุลของคุณนะคะ",
+
 		missing_character_creation_data = "ข้อมูลสร้างตัวละครหายไป",
 		invalid_first_name = "ชื่อจริงไม่ถูกต้องหรือหายไป (2 ถึง 100 ตัวอักษร)",
 		invalid_last_name = "นามสกุลไม่ถูกต้องหรือหายไป (2 ถึง 100 ตัวอักษร)",
@@ -8561,6 +8595,24 @@ OP.Global.Locales.Languages["th-TH"] = {
 		no_nearby_vehicle = "ไม่มีรถใกล้เคียง",
 		already_checking_upgrades = "คุณกำลังตรวจสอบการปรับแต่งรถของคุณอยู่แล้ว",
 		engine_is_running = "เครื่องยนต์รถทำงานอยู่"
+	},
+
+	meow = {
+		feed = "[${InteractionKey}] ให้อาหาร",
+		pet = "[${InteractionKey}] เลี้ยง",
+		brush = "[${InteractionKey}] แปรงขน",
+		catnip = "[${InteractionKey}] ให้ยาน้ำแมว",
+		treat = "[${InteractionKey}] ให้ขนม",
+		cuddle = "[${InteractionKey}] กอด",
+		hug = "[${InteractionKey}] รักมาก",
+
+		feed_active = "กำลังให้อาหารเมกซ์เวลล์",
+		pet_active = "กำลังเลี้ยงเมกซ์เวลล์",
+		brush_active = "การแปรงขน Maxwell",
+		catnip_active = "การให้ Maxwell แคตนิป",
+		treat_active = "การให้ขนมของ Maxwell",
+		cuddle_active = "การมองดูและกอด Maxwell",
+		hug_active = "การกอด Maxwell"
 	},
 
 	meth = {
@@ -9656,7 +9708,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		no_warnings = "ไม่มีการเตือน",
 		not_shown_warnings = "${count} การเตือนเพิ่มเติมไม่ได้แสดง",
 		system_issuer = "ระบบ",
-		add_warning_title = "เพิ่มการเตือน",
+		add_note_title = "เพิ่มบันทึก",
 		message_placeholder = "${playerName} ทำผิด...",
 
 		type_note = "บันทึก",
@@ -9667,7 +9719,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		button_cancel = "ยกเลิก",
 		button_add = "เพิ่ม",
 		button_close = "ปิด",
-		button_new = "ใหม่",
+		button_new = "บันทึกใหม่",
+
+		ping = "${ping}มิลลิวินาที",
+		fps = "${fps}เฟรมต่อวินาที",
+		playtime = "${time}เล่นแล้ว",
 
 		invalid_server_id = "รหัสเซิร์ฟเวอร์ไม่ถูกต้อง",
 
@@ -10369,17 +10425,15 @@ OP.Global.Locales.Languages["th-TH"] = {
 		invincibility_inactive_dead = "ไม่ตาย: ~g~ปิด~w~ (ตาย)",
 		invincibility_inactive = "ไม่ตาย: ~g~ปิด~w~",
 
-		health_ok = "เลือด: ~g~${health} / ${maxHealth}~w~",
-		health_bad = "สุขภาพ: ~r~${health} / ${maxHealth}~w~",
+		health_ok = "สุขภาพ: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
+		health_bad = "สุขภาพ: ~r~${health} / ${maxHealth}~w~ - ${percentage}",
 
-		armor_ok = "ชุดเกราะ: ~g~${armor} / ${maxArmor}~w~",
-		armor_bad = "ชุดเกราะ: ~r~${armor} / ${maxArmor}~w~",
+		armor_ok = "อุปกรณ์กันกระสุน: ~g~${armor} / ${maxArmor}~w~ - ${percentage}",
+		armor_bad = "เกราะ: ~r~${armor} / ${maxArmor}~w~ - ${percentage}",
 
 		vehicle_health = "สุขภาพของรถยนต์: ${percentage}",
 
-		speed = "ความเร็ว: ${speed}${unit}",
-		speed_mph = "ไมล์ต่อชั่วโมง",
-		speed_kmh = "กิโลเมตรต่อชั่วโมง",
+		speed = "ความเร็ว: ${speed}",
 
 		exit_spectate = "กด ~g~${InteractionKey}~w~ เพื่อออกจากโหมดดูด้วย",
 
@@ -10895,7 +10949,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		set_ocean_scaler_no_permission = "ผู้เล่นไม่มีสิทธิ์เพียงพอที่จะตั้งค่าความหลากหลายของมหาสมุทร",
 
 		tsunami_started = "เริ่มซูนามิแล้ว จะใช้เวลา ${minutes} นาทีก่อนที่จะเกิดน้ำทะเลท่วมทั้งแผนที่.",
-		tsunami_stopped = "คลื่นยักษ์หยุดทำงานแล้ว"
+		tsunami_stopped = "คลื่นยักษ์หยุดทำงานแล้ว",
+
+		toggle_tsunami_no_permissions = "พยายามเปลี่ยนสถานะสึนามิโดยไม่มีสิทธิ์เข้าถึง"
 	},
 
 	tuner_shop = {
@@ -11111,6 +11167,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		flipped_vehicle_logs_title = "ยกแล้ว",
 		flipped_vehicle_logs_details = "${consoleName} ยกแล้วรถ.",
 		failed_to_find_ground = "ไม่พบพื้น, ได้ถูกย้ายไปยังถนนที่ใกล้ที่สุดแล้ว.",
+
+		knots = "เรือยูนต์",
+		mph = "ไมล์ต่อชั่วโมง",
+		kmh = "กิโลเมตรต่อชั่วโมง",
 
 		time_in = "ในอีก ${time} ${unit}",
 		time_ago = "${time} ${unit} ที่ผ่านมา"

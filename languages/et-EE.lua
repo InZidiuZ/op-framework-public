@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 16 (do not change)
+-- AUTO LOCALES: 17 (do not change)
 
 OP.Global.Locales.Languages["et-EE"] = {
 	-- configuration settings for language
@@ -96,11 +96,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		model_name_not_provided = "Modeli nime ei esitatud.",
 		model_name_invalid = "Mudeli nimi `${modelName}` on sobimatu.",
-		failed_to_spawn_vehicle = "Ebaõnnestus käskluse /spawn_vehicle korrektne täitmine.",
-		spawned_vehicle_for_player = "Edukalt ilmus '${modelName}' mängijale ${consoleName}.",
+		failed_to_spawn_vehicle = "Sõiduki loomine ebaõnnestus.",
+		spawned_vehicle_for_player = "Edukalt loodi '${modelName}' mängijale ${displayName} sõiduk.",
 		spawned_vehicle_for_everyone = "Edukalt ilmus '${modelName}' kõigile.",
-		spawn_vehicle_for_player_not_staff = "Mängija üritas sõidukit kellegi teise jaoks tekitada, kuid tal pole selleks vajalikke õigusi.",
-		spawn_vehicle_for_self_not_staff = "Mängija üritas iseendale sõidukit tekitada, kuid tal pole selleks vajalikke õigusi.",
+		spawn_vehicle_no_permissions = "Mängija üritas sõidukit luua, kuid tal polnud vajalikke õigusi.",
 		replace_vehicle_no_permissions = "Mängija üritas oma sõidukit asendada, kuid tal pole selleks vajalikke õigusi.",
 		create_vehicle_no_permissions = "Mängija üritas sõidukit tekitada, kuid tal pole selleks vajalikke õigusi.",
 		spawned_vehicle_for_self_title = "Sõiduki tekitamine",
@@ -1907,13 +1906,13 @@ OP.Global.Locales.Languages["et-EE"] = {
 		position_command_parameter_label_help = "Valikuline silt, mis salvestatakse asukohaga.",
 		position_command_substitutes = "pos, coords",
 
+		copy_ground_command = "kopeeri_maapind",
+		copy_ground_command_help = "Kopeeri oma praeguse asukoha maapinna koordinaadid lõikelauale.",
+		copy_ground_command_substitutes = "maapind",
+
 		save_commands_list_command = "salvesta_käskude_nimekiri",
 		save_commands_list_command_help = "Salvestab kõigi saadaolevate op-fw käskude nimekirja.",
 		save_commands_list_command_substitutes = "",
-
-		save_vehicle_data_command = "salvesta_sõiduki_andmed",
-		save_vehicle_data_command_help = "Salvestab sõidukite kohta hulgaliselt andmeid.",
-		save_vehicle_data_command_substitutes = "",
 
 		draw_radius_command = "joonista_raadius",
 		draw_radius_command_help = "Joonista raadius.",
@@ -2268,6 +2267,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		gun_trader_debug_command = "relvakaupmees_vead",
 		gun_trader_debug_command_help = "Kuva tekst relvakaupleja praeguse asukoha kohta.",
 		gun_trader_debug_command_substitutes = "",
+
+		unlock_gun_trader_command = "ava_relvakaupmees",
+		unlock_gun_trader_command_help = "Avab relvakaupmehe kohe.",
+		unlock_gun_trader_command_substitutes = "",
 
 		-- game/gas_masks
 		gas_debug_command = "gaasi_veaotsing",
@@ -3361,6 +3364,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		entity_states_command_parameter_network_id_help = "Entiteedi võrgu ID.",
 		entity_states_command_substitutes = "",
 
+		draw_entity_states_command = "joonista_olekuid",
+		draw_entity_states_command_help = "Näitab kõiki objekte, millel on vähemalt 1 olek.",
+		draw_entity_states_command_substitutes = "",
+
 		-- illegal/corner
 		corner_command = "nurgaümbris",
 		corner_command_help = "Müü narkootikume lähedalolevale isikule. Müüdav narkootikum sõltub asukohast, kus sa asud.",
@@ -3415,7 +3422,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		pd_impound_command = "pd_hoiulepanek",
 		pd_impound_command_help = "See käsk paneb mängija sõiduki hoiule teatud ajaks.",
 		pd_impound_command_parameter_minutes = "minutid",
-		pd_impound_command_parameter_minutes_help = "Kui kauaks sõiduk hoiule pannakse (1 minuti kuni 12 tunni vahel).",
+		pd_impound_command_parameter_minutes_help = "Kui kauaks sõiduk peaks konfiskeeritud olema (1 minutist kuni 48 tunnini).",
 		pd_impound_command_substitutes = "",
 
 		dispatch_command = "hädaabi",
@@ -4709,6 +4716,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		outfit_failed = "Riietuse rakendamine ebaõnnestus.",
 		missing_outfit = "Puuduva riietuse tõttu olekut ei rakendatud.",
 		missing_outfit_name = "Riietusnime puudu.",
+		invalid_outfit = "Vigane riietus.",
 		no_nearby_clothing_spot = "Läheduses pole ühtegi riietumiskohta.",
 		trunk_closed = "Pagasnik on suletud.",
 		trunk_too_far = "Oled liiga kaugel pagasnikust.",
@@ -4739,6 +4747,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		loading_model = "Laadin mängija mudelit...",
 		loading_spawn = "Loodud mängija mudel...",
+		loading_preload_data = "Laadin pede andmeid...",
 		loading_set_data = "Seadistatakse tegelase andmeid...",
 		loading_tattoos = "Seadistatakse tätoveeringud...",
 		loading_finalize = "Viimistletakse..."
@@ -5277,6 +5286,12 @@ OP.Global.Locales.Languages["et-EE"] = {
 		crafted_multi_tool = "Mitmekülgne tööriist on valmistatud.",
 		failed_craft_multi_tool = "Mitmekülgse tööriista valmistamine ebaõnnestus.",
 
+		mix_grimace_shake = "Sega Grimace Shake",
+		press_to_mix_grimace_shake = "[${SeatEjectKey}] Sega Grimace Shake",
+		mixing_grimace_shake = "Segan Grimace Shake'i",
+		mixed_grimace_shake = "Segatud grimace shake.",
+		failed_mix_grimace_shake = "Ebaõnnestus grimassi shake'i segamine.",
+
 		no_required_items = "Sul pole kõiki vajalikke esemeid.",
 
 		debug_multi = "-Mitmed väljundid-",
@@ -5293,7 +5308,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 	creation = {
 		turn_right = "Pööra paremale",
-		turn_left = "Pööra vasakule"
+		turn_left = "Pööra vasakule",
+		toggle_light = "Lülitada tuli"
 	},
 
 	creation_menu = {
@@ -5605,7 +5621,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		state_seal_three = "Iga volitamata kasutamine on karistatav raskete karistustega vastavalt 13 S.A. Pen. Kood 502(a) punktile.",
 
 		kmh = "km/h",
-		mph = "mi/h",
+		mph = "miili tunnis",
 
 		set_unit_id_to = "Sinu üksuse ID on nüüd määratud kui ${unitId}.",
 		reset_unit_id = "Sinu üksuse ID on nüüd lähtestatud.",
@@ -5875,7 +5891,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		floor_containment = "Tõkestusruum",
 
-		doj_office = "Õigusministeeriumi kantselei"
+		doj_office = "Õigusministeeriumi kantselei",
+
+		used_elevator_logs_title = "Kasutatud lift",
+		used_elevator_logs_details = "${consoleName} kasutas lifti ${elevatorId}, et minna korrusele `${floor}`."
 	},
 
 	emails = {
@@ -6052,6 +6071,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		disabled_freecam = "Vaba kaamera on keelatud.",
 		freecam_failed = "Vaba kaamera lubamine ebaõnnestus. Kas teil on noclip või midagi sarnast lubatud?",
 
+		freecam_no_dead = "Sa ei saa vabakambrit lubada, kui sa oled maha kukkunud.",
+
 		freecam_logs_title = "Vabakäigu režiim lülitatud sisse",
 		freecam_on_logs_details = "${consoleName} lülitas sisse vabakäigu režiimi.",
 		freecam_off_logs_details = "${consoleName} lülitas välja vabakäigu režiimi.",
@@ -6092,6 +6113,9 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		shake_tree = "Vajuta ~INPUT_CONTEXT~, et puud raputada.",
 		shaking_tree = "Puud raputan...",
+
+		extract_rubber = "Vajuta ~INPUT_CONTEXT~, et kummipuu tüvest kummi ekstraheerida.",
+		extracting_rubber = "Kummi ekstraheerimine",
 
 		tree_klonk = "Midagi kukkus puult ja tabas sind peaga."
 	},
@@ -6184,7 +6208,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		sorry_closed = "Vabandust, pood on suletud.",
 		sorry_closed_hug = "Tänan kallistuse eest :)",
-		sorry_closed_fight = "Palun rahunege, ma ei teinud midagi.",
+		sorry_closed_finger = "Mis asja, see on ebaviisakas!",
+		sorry_closed_kiss = "Woah, sõber, ma pole sellest huvitatud...",
+		sorry_closed_dab = "Dab hatersite peale, tõsiselt, ausalt, jumala eest!",
+		sorry_closed_fight = "Rahune maha, sõber, ma pole midagi teinud.",
 
 		trader_locked = "Jim vajab paar asja sinult enne, kui ta on nõus oma poodi avama.",
 		unlock_trader = "Anna ese Jimile.",
@@ -6312,8 +6339,6 @@ OP.Global.Locales.Languages["et-EE"] = {
 	},
 
 	hud = {
-		mph = "miili tunnis",
-		kmh = "km tunnis",
 		knots = "sõlme",
 		ft = "jalg",
 		m = "meeter",
@@ -6335,6 +6360,9 @@ OP.Global.Locales.Languages["et-EE"] = {
 		steps_walked_deaths = "${stepsWalked} sammu ~t~/~w~ ${deaths} maha jooksu",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Jäänud hapnik: ${timer}",
+
+		alignment_warning_title = "HUD-i seadistus",
+		alignment_warning = "Sinu HUD on osaliselt ekraanilt väljas. Sa saad seda reguleerida, vähendades Display seadetes '*Safezone Size*' väärtust.",
 
 		muted = "Vaigistatud",
 
@@ -6365,7 +6393,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 		hold_to_skin = "[${InteractionKey}] Hoia nahastamiseks",
 		skinning_animal = "Surnud looma nahk välja võetud",
 		meat_too_damaged = "Selle looma liha on liiga kahjustatud.",
-		animal_is_being_skinned = "Looma nahka võetakse välja."
+		animal_is_being_skinned = "Looma nahka võetakse välja.",
+
+		skinned_logs_title = "Kooritud loom",
+		skinned_logs_details = "${consoleName} kooris looma (${modelName}) ja sai ${skinnedItems}.",
+		received_nothing = "mitte midagi"
 	},
 
 	identification = {
@@ -7234,6 +7266,9 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		lean = "Lean",
 		lean_description = "Sippin nats sizzurpi, siip, sippin natsi, siip.",
+
+		grimace_shake = "grimass raputus",
+		grimace_shake_description = "Hullumeelne? Olin kunagi hull. Panid mind tuppa. Kummist tuppa. Kummist tuppa rottidega. Ja rotid ajavad mind hulluks. Hullumeelne? Olin kunagi hull. Panid mind tuppa. Kummist tuppa. Kummist tuppa rottidega. Ja rotid ajavad mind hulluks. Hullumeelne? Olin kunagi hull. Panid mind tuppa. Kummist tuppa. Kummist tuppa rottidega. Ja rotid ajavad mind hulluks. Hullumeelne? Olin kunagi hull. Panid mind tuppa. Kummist tuppa. Kummist tuppa rottidega. Ja rotid ajavad mind hulluks. Hullumeelne? Olin kunagi hull.....",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Naudi magusaid ja hapukaid Jolly Ranchersi maitseid, mis on klassikalised kõvakommid ja plahvatavad puuviljase headusega.",
@@ -8117,9 +8152,6 @@ OP.Global.Locales.Languages["et-EE"] = {
 		weapon_addon_berserker = "Berserker",
 		weapon_addon_berserker_description = "Laheda kirvega.",
 
-		weapon_addon_katana = "Katana",
-		weapon_addon_katana_description = "Ninja stiilis, mhm.",
-
 		weapon_addon_stidvc = "STI DVC 2011",
 		weapon_addon_stidvc_description = "Tulevik on nüüd siin, vanamees! Lihtsalt väiksema kaliibriga.",
 
@@ -8170,7 +8202,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		lockpicking_succeeded = "Lukuharjutus õnnestus.",
 		hotwiring_vehicle = "Süütelukklahti rakendamine.",
 		lockpick_broke = "Lukk ei avanenud.",
-		failed_hotwire = "Süütelukklahti rakendamine ebaõnnestus.",
+		failed_hotwire = "Sõiduki kuumustamine ebaõnnestus, proovi paremate tööriistadega?",
 		unpacking_green_rolls = "Pakkides lahti rohelisi rolle.",
 		you_do_not_have_enough_rolling_paper = "Teil pole piisavalt rullpaberit.",
 		rolling_joint = "Sigareti keeramine.",
@@ -8413,6 +8445,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		refresh = "Värskenda",
 		refreshing = "Värskendamine...",
 
+		avoid_repeating_letters = "Võimalusel vältige paljusid korduvaid tähti oma ees- ja/või perekonnanimes.",
+
 		missing_character_creation_data = "Puuduvad tegelase loomise andmed.",
 		invalid_first_name = "Puuduv või vale Eesnimi (2 kuni 100 tähemärki).",
 		invalid_last_name = "Puuduv või vale Perekonnanimi (2 kuni 100 tähemärki).",
@@ -8561,6 +8595,24 @@ OP.Global.Locales.Languages["et-EE"] = {
 		no_nearby_vehicle = "Lähedal ei ole sõidukit.",
 		already_checking_upgrades = "Sa juba kontrollid ühe sõiduki häälestusi.",
 		engine_is_running = "Sõiduki mootor töötab."
+	},
+
+	meow = {
+		feed = "[${InteractionKey}] Sööda",
+		pet = "[${InteractionKey}] Paita",
+		brush = "[${InteractionKey}] Kammi",
+		catnip = "[${InteractionKey}] Anna kassimünti",
+		treat = "[${InteractionKey}] Anna maiust",
+		cuddle = "[${InteractionKey}] Kaisuta",
+		hug = "[${InteractionKey}] Kallista",
+
+		feed_active = "Toitud Maxwellit",
+		pet_active = "Paid Maxwelliga",
+		brush_active = "Maxwelli harjamine",
+		catnip_active = "Maxwellile kassiheinaga mängimine",
+		treat_active = "Maxwellile maiuse andmine",
+		cuddle_active = "Maxwelliga kaisutamine",
+		hug_active = "Maxwelli kallistamine"
 	},
 
 	meth = {
@@ -9656,7 +9708,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		no_warnings = "Hoiatusi pole",
 		not_shown_warnings = "${count} rohkem hoiatusi pole näidatud",
 		system_issuer = "Süsteem",
-		add_warning_title = "Lisa hoiatus",
+		add_note_title = "Märkme lisamine",
 		message_placeholder = "${playerName} tegi oopsie...",
 
 		type_note = "Märkus",
@@ -9667,7 +9719,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 		button_cancel = "Tühista",
 		button_add = "Lisa",
 		button_close = "Sulge",
-		button_new = "Uus",
+		button_new = "Uus märge",
+
+		ping = "${ping}ms",
+		fps = "${fps}fps",
+		playtime = "${time} mängitud",
 
 		invalid_server_id = "Vigane serveri id.",
 
@@ -10369,17 +10425,15 @@ OP.Global.Locales.Languages["et-EE"] = {
 		invincibility_inactive_dead = "Surematuse režiim: ~g~Mitteaktiivne~w~ (surnud)",
 		invincibility_inactive = "Surematuse režiim: ~g~Mitteaktiivne~w~",
 
-		health_ok = "Tervis: ~g~${health} / ${maxHealth}~w~",
-		health_bad = "Tervis: ~r~${health} / ${maxHealth}~w~",
+		health_ok = "Elud: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
+		health_bad = "Elud: ~r~${health} / ${maxHealth}~w~ - ${percentage}",
 
-		armor_ok = "Armor: ~g~${armor} / ${maxArmor}~w~",
-		armor_bad = "Armor: ~r~${armor} / ${maxArmor}~w~",
+		armor_ok = "Rüü: ~g~${armor} / ${maxArmor}~w~ - ${percentage}",
+		armor_bad = "Armor: ~r~${armor} / ${maxArmor}~w~ - ${percentage}",
 
 		vehicle_health = "Sõiduki tervis: ${percentage}",
 
-		speed = "Kiirus: ${speed}${unit}",
-		speed_mph = "mph",
-		speed_kmh = "kmh",
+		speed = "Kiirus: ${speed}",
 
 		exit_spectate = "Väljumiseks suunaga vaatlemise režiimist vajuta ~g~${InteractionKey}~w~.",
 
@@ -10895,7 +10949,9 @@ OP.Global.Locales.Languages["et-EE"] = {
 		set_ocean_scaler_no_permission = "Mängijal polnud piisavalt õigusi ookeani skaleerimise määramiseks.",
 
 		tsunami_started = "Tsunami on alanud. Kogu kaardi ujutamine võtab aega ${minutes} minutit.",
-		tsunami_stopped = "Tsunami peatus."
+		tsunami_stopped = "Tsunami peatus.",
+
+		toggle_tsunami_no_permissions = "Üritatud tsunaamit lülitada ilma õigete õigusteta."
 	},
 
 	tuner_shop = {
@@ -11111,6 +11167,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		flipped_vehicle_logs_title = "Ümberpaisatud sõiduk",
 		flipped_vehicle_logs_details = "${consoleName} ümberpööratud sõiduk.",
 		failed_to_find_ground = "Ei õnnestunud maapinda leida, teleportisin sind lähimasse teele.",
+
+		knots = "sõlme",
+		mph = "mph",
+		kmh = "km/h",
 
 		time_in = "${time} ${unit} pärast",
 		time_ago = "${time} ${unit} tagasi"

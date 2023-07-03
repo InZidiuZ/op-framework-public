@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 16 (do not change)
+-- AUTO LOCALES: 17 (do not change)
 
 OP.Global.Locales.Languages["hi-IN"] = {
 	-- configuration settings for language
@@ -96,11 +96,10 @@ OP.Global.Locales.Languages["hi-IN"] = {
 
 		model_name_not_provided = "मॉडल का नाम नहीं दिया गया है।",
 		model_name_invalid = "मॉडल का नाम `${modelName}` अमान्य है।",
-		failed_to_spawn_vehicle = "वाहन को सही ढंग से नहीं बनाया जा सका `/spawn_vehicle` कमांड को चलाने में विफल रहा।",
-		spawned_vehicle_for_player = "${consoleName} के लिए सफलतापूर्वक `${modelName}` बनाया गया।",
+		failed_to_spawn_vehicle = "वाहन उत्पन्न करने में विफल रहा।",
+		spawned_vehicle_for_player = "सफलतापूर्वक उत्पन्न किया `${modelName}` ${displayName} के लिए।",
 		spawned_vehicle_for_everyone = "हर किसी के लिए सफलतापूर्वक `${modelName}` बनाया गयाः।",
-		spawn_vehicle_for_player_not_staff = "खिलाड़ी ने किसी और के लिए वाहन को उत्पन्न करने का प्रयास किया लेकिन उन्हें इसे करने के लिए आवश्यक अनुमतियां नहीं थीं।",
-		spawn_vehicle_for_self_not_staff = "खिलाड़ी ने खुद के लिए वाहन को उत्पन्न करने का प्रयास किया लेकिन उन्हें इसे करने के लिए आवश्यक अनुमतियां नहीं थीं।",
+		spawn_vehicle_no_permissions = "खिलाड़ी ने वाहन का उत्पन्न करने का प्रयास किया, लेकिन उसके पास ऐसी आवश्यक अनुमतियाँ नहीं थीं।",
 		replace_vehicle_no_permissions = "खिलाड़ी ने अपने वाहन को बदलने का प्रयास करने की कोशिश की लेकिन उन्हें इसे करने के लिए आवश्यक अनुमतियां नहीं थीं।",
 		create_vehicle_no_permissions = "खिलाड़ी ने वाहन बनाने की कोशिश की लेकिन उन्हें इसे करने के लिए आवश्यक अनुमतियां नहीं थीं।",
 		spawned_vehicle_for_self_title = "वाहन जन्मदाता",
@@ -1907,13 +1906,13 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		position_command_parameter_label_help = "स्थिति के साथ संग्रहित करने के लिए एक वैकल्पिक लेबल।",
 		position_command_substitutes = "pos, coords", -- स्थान_कमांड_विकल्प = "pos, coords",
 
+		copy_ground_command = "भूमि_कॉपी करें",
+		copy_ground_command_help = "अपनी मौजूदा स्थिति की भूमि नकल क्लिपबोर्ड में करें।",
+		copy_ground_command_substitutes = "भूमि",
+
 		save_commands_list_command = "save_commands_list", -- कमांड_सूची_को_सहेजें_कमांड = "save_commands_list",
 		save_commands_list_command_help = "Saves a list of all available op-fw commands.", -- "उपलब्ध op-fw कमांडों की सूची को सहेजता है।",
 		save_commands_list_command_substitutes = "",
-
-		save_vehicle_data_command = "save_vehicle_data", -- वाहन_डेटा_को_सहेजें_कमांड = "save_vehicle_data",
-		save_vehicle_data_command_help = "Saves a bunch of data about vehicles.", -- "वाहनों के बारे में बहुत सी डेटा को सहेजता है।",
-		save_vehicle_data_command_substitutes = "",
 
 		draw_radius_command = "draw_radius", -- रेडियस_कमांड = "draw_radius",
 		draw_radius_command_help = "Draw a radius.", -- "एक रेडियस ड्रॉ करें।",
@@ -2268,6 +2267,10 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		gun_trader_debug_command = "गन_ट्रेडर_डीबग",
 		gun_trader_debug_command_help = "गन ट्रेडर के वर्तमान स्थान पर एक टेक्स्ट खींचें।",
 		gun_trader_debug_command_substitutes = "",
+
+		unlock_gun_trader_command = "गन_ट्रेडर_अनलॉक",
+		unlock_gun_trader_command_help = "तुरंत गन ट्रेडर का अनलॉक करें।",
+		unlock_gun_trader_command_substitutes = "",
 
 		-- game/gas_masks
 		gas_debug_command = "gas_debug",
@@ -3361,6 +3364,10 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		entity_states_command_parameter_network_id_help = "एंटिटी का नेटवर्क आईडी।",
 		entity_states_command_substitutes = "",
 
+		draw_entity_states_command = "ऊत्पत्ति अवस्थाएं दिखाएं",
+		draw_entity_states_command_help = "1 या अधिक अवस्थाओं के साथ सभी एन्टिटी दिखाएं।",
+		draw_entity_states_command_substitutes = "",
+
 		-- illegal/corner
 		corner_command = "कॉर्नर",
 		corner_command_help = "एक पास के व्यक्ति को मादक पदार्थ बेचें। आप बेचते हुए दवा का स्थान आपके स्थान पर आधारित होता है।",
@@ -3415,7 +3422,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		pd_impound_command = "pd_impound",
 		pd_impound_command_help = "यह कमांड एक खिलाड़ी की गाड़ी को कुछ समय के लिए बंद कर देता है।",
 		pd_impound_command_parameter_minutes = "मिनट",
-		pd_impound_command_parameter_minutes_help = "गाड़ी कितने समय के लिए बंद की जाएगी (1 मिनट और 12 घंटे के बीच)।",
+		pd_impound_command_parameter_minutes_help = "गाड़ी को कितने समय तक अपहरण किया जाना चाहिए (1 मिनट और 48 घंटे के बीच)।",
 		pd_impound_command_substitutes = "",
 
 		dispatch_command = "डिस्पैच",
@@ -4709,6 +4716,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		outfit_failed = "बाउंड कपड़ों को लागू करने में विफल रहा।",
 		missing_outfit = "कपड़े गायब हैं।",
 		missing_outfit_name = "पहनावे का नाम गुम हुआ है।",
+		invalid_outfit = "अमान्य परिधान है।",
 		no_nearby_clothing_spot = "पास में कपड़े धोने का स्थान नहीं है।",
 		trunk_closed = "ट्रंक बंद है।",
 		trunk_too_far = "आप ट्रंक से बहुत दूर हैं।",
@@ -4739,6 +4747,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 
 		loading_model = "पेड मॉडल लोड हो रहा है...",
 		loading_spawn = "खिलाड़ी पेड को उत्पन्न कर रहा है...",
+		loading_preload_data = "पेड डेटा पूर्व-लोड कर रहा है...",
 		loading_set_data = "पेड़ डेटा सेट किया जा रहा है...",
 		loading_tattoos = "टैटू सेट किया जा रहा है...",
 		loading_finalize = "अंतिम परिष्कृति हो रही है..."
@@ -5277,6 +5286,12 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		crafted_multi_tool = "मल्टी टूल बनाया गया।",
 		failed_craft_multi_tool = "मल्टी टूल बनाने में विफल रहा।",
 
+		mix_grimace_shake = "मेलजोली शेक मिश्रित करें",
+		press_to_mix_grimace_shake = "[${SeatEjectKey}] मेलजोली शेक मिश्रित करें",
+		mixing_grimace_shake = "मेलजोली शेक मिश्रित कर रहे हैं",
+		mixed_grimace_shake = "मेलजोली शेक मिश्रित हो गया।",
+		failed_mix_grimace_shake = "ग्रिमेस शेक मिक्स करने में विफल रहा।",
+
 		no_required_items = "आपके पास सभी आवश्यक आइटम नहीं हैं।",
 
 		debug_multi = "-एकाधिक आउटपुट-",
@@ -5293,7 +5308,8 @@ OP.Global.Locales.Languages["hi-IN"] = {
 
 	creation = {
 		turn_right = "दाहिने मुड़े",
-		turn_left = "बाएं मुड़े"
+		turn_left = "बाएं मुड़े",
+		toggle_light = "रोशनी टॉगल करें"
 	},
 
 	creation_menu = {
@@ -5605,7 +5621,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		state_seal_three = "कोई अनधिकृत उपयोग 13 एस.ए. पेन. कोड 502 (ए) के तहत भारी जुर्माने का सामना करेगा।",
 
 		kmh = "किलोमीटर/घंटा",
-		mph = "मील/घंटा",
+		mph = "मील प्रति घंटा",
 
 		set_unit_id_to = "आपकी यूनिट आईडी अब ${unitId} पर सेट की गई है।",
 		reset_unit_id = "आपकी यूनिट आईडी अब रीसेट कर दी गई है।",
@@ -5875,7 +5891,10 @@ OP.Global.Locales.Languages["hi-IN"] = {
 
 		floor_containment = "नियंत्रण कक्ष",
 
-		doj_office = "डीओजे कार्यालय"
+		doj_office = "डीओजे कार्यालय",
+
+		used_elevator_logs_title = "उपयोग किया लिफ्ट",
+		used_elevator_logs_details = "${consoleName} ने लिफ्ट ${elevatorId} का उपयोग `${floor}` मंजिल पर जाने के लिए किया।"
 	},
 
 	emails = {
@@ -6052,6 +6071,8 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		disabled_freecam = "फ्रीकैम को अक्षम कर दिया गया।",
 		freecam_failed = "फ्रीकैम को सक्षम करने में विफल। क्या आपके पास नोक्लिप या समरूप प्रणाली सक्षम हैं?",
 
+		freecam_no_dead = "आप मरे हुए होने पर मुफ्त कैमरा सक्षम नहीं कर सकते।",
+
 		freecam_logs_title = "फ्रीकैम टॉगल किया गया",
 		freecam_on_logs_details = "${consoleName} ने अपना फ्रीकैम टॉगल किया।",
 		freecam_off_logs_details = "${consoleName} ने अपना फ्रीकैम बंद कर दिया।",
@@ -6092,6 +6113,9 @@ OP.Global.Locales.Languages["hi-IN"] = {
 
 		shake_tree = "पेड़ को हिलाने के लिए ~INPUT_CONTEXT~ दबाएँ।",
 		shaking_tree = "पेड़ को हिलाया जा रहा है",
+
+		extract_rubber = "रबर को पेड़ से निकालने के लिए ~INPUT_CONTEXT~ दबाएं।",
+		extracting_rubber = "रबर निकाल रहे हैं",
 
 		tree_klonk = "पेड़ से कुछ गिरा और आपके सिर पर गिर गया।"
 	},
@@ -6182,9 +6206,12 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		press_e_to_talk = "जिम से बात करने के लिए ~INPUT_CONTEXT~ दबाएँ।",
 		trader_closed = "जिम की दुकान वर्तमान में बंद है।",
 
-		sorry_closed = "माफ़ कीजिये दिल्ली मेरे दोस्त, दुकान बंद है।",
+		sorry_closed = "माफ़ कीजिए, दुकान बंद है।",
 		sorry_closed_hug = "आपके आलिंगन के लिए धन्यवाद परिवार। :)",
-		sorry_closed_fight = "हे भाई, शांत बैठो। मैंने कुछ नहीं किया।",
+		sorry_closed_finger = "अरे भाई, यह निरादर है।",
+		sorry_closed_kiss = "वाह दोस्त, मुझे वह पसंद नहीं है...",
+		sorry_closed_dab = "हेटर्स को इंधन मेरी तरफ बचाएं, ईश्वर के लिए!",
+		sorry_closed_fight = "यो ठंडा रह दोस्त, मैंने कुछ नहीं किया है।",
 
 		trader_locked = "जिम उसकी दुकान खोलने से पहले कुछ चीजें मांगता है।",
 		unlock_trader = "जिम को चीज प्रदान करें।",
@@ -6312,8 +6339,6 @@ OP.Global.Locales.Languages["hi-IN"] = {
 	},
 
 	hud = {
-		mph = "मील/घंटा",
-		kmh = "किमी/घंटा",
 		knots = "नॉट्स",
 		ft = "फीट",
 		m = "मीटर",
@@ -6335,6 +6360,9 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		steps_walked_deaths = "${stepsWalked} कदम ~t~/~w~ ${deaths} डाउन",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "ऑक्सीजन शेष: ${timer}",
+
+		alignment_warning_title = "HUD सारेखीकरण",
+		alignment_warning = "आपका HUD अंशतः स्क्रीन के बाहर है। आप अपने \"*प्रदर्शन*\" सेटिंग में \"*सुरक्षित क्षेत्र आकार*\" को कम करके इसे समायोजित कर सकते हैं।",
 
 		muted = "म्यूटेड",
 
@@ -6365,7 +6393,11 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		hold_to_skin = "[${InteractionKey}] खाद्य चुनिए",
 		skinning_animal = "मृत्यु पाया जानवर चमड़ा उतार रहा है।",
 		meat_too_damaged = "यह जानवर का मांस बहुत नुकसान पहुंच चुका है।",
-		animal_is_being_skinned = "जानवर का चमड़ा उतारा जा रहा है।"
+		animal_is_being_skinned = "जानवर का चमड़ा उतारा जा रहा है।",
+
+		skinned_logs_title = "चमड़े उत्पाद",
+		skinned_logs_details = "${consoleName} ने एक जानवर (${modelName}) का चमड़ा निकाला और ${skinnedItems} प्राप्त किया।",
+		received_nothing = "कुछ नहीं"
 	},
 
 	identification = {
@@ -7234,6 +7266,9 @@ OP.Global.Locales.Languages["hi-IN"] = {
 
 		lean = "लीन",
 		lean_description = "थोड़े से सप्पली, सिप, सिप होते हुए कुछ सूक्ष्म टि्का।",
+
+		grimace_shake = "ग्रिमीस शेक",
+		grimace_shake_description = "पागल हुआ? मैं पागल था एक समय। उन्होंने मुझे एक कमरे में रखा। एक रबर कमरा। एक रबर कमरा जहां चूहे होते हैं। और चूहे मुझे पागल बनाते हैं। पागल हुआ? मैं पागल था एक समय। उन्होंने मुझे एक कमरे में रखा। एक रबर कमरा। एक रबर कमरा जिसमें चूहे होते हैं। और चूहे मुझे पागल बनाते हैं। पागल हुआ? मैं पागल था एक समय। उन्होंने मुझे एक कमरे में रखा। एक रबर कमरा। एक रबर कमरा जिसमें चूहे होते हैं। और चूहे मुझे पागल बनाते हैं। पागल हुआ? मैं पागल था एक समय।.....",
 
 		jolly_ranchers = "जॉली रैंचर्स",
 		jolly_ranchers_description = "जॉली रैंचर्स के मिठास भरे और तलख फलों का आनंद लें, उन शानदार हार्ड कैंडी का भोजन करें जो फलियों के साथ भरा होता है।",
@@ -8117,9 +8152,6 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		weapon_addon_berserker = "बरसर्कर",
 		weapon_addon_berserker_description = "सुंदर तलवार।",
 
-		weapon_addon_katana = "कताना",
-		weapon_addon_katana_description = "निंजा की तलवार, हाँ।",
-
 		weapon_addon_stidvc = "STI DVC 2011",
 		weapon_addon_stidvc_description = "भविष्य अब हमारे सामने है।, बस एक छोटे कैलिबर में ...",
 
@@ -8170,7 +8202,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		lockpicking_succeeded = "लॉक पिकिंग सफल रही।",
 		hotwiring_vehicle = "वाहन को हॉटवायर कर रहें हो।",
 		lockpick_broke = "लॉकपिक टूट गया।",
-		failed_hotwire = "हॉटवायर करने में विफल रहा।",
+		failed_hotwire = "आप वाहन को हॉटवायर करने में विफल रहे, शायद कुछ बेहतर उपकरण का प्रयोग करें?",
 		unpacking_green_rolls = "हरे रोल्स को खोलना।",
 		you_do_not_have_enough_rolling_paper = "आपके पास पर्याप्त रोलिंग पेपर नहीं है।",
 		rolling_joint = "जॉइंट रोल कर रहा है।",
@@ -8413,6 +8445,8 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		refresh = "ताज़ा करें",
 		refreshing = "ताज़ा हो रहा है...",
 
+		avoid_repeating_letters = "अपने पहले और/या अंतिम नाम में बहुत सारी पुनरावृत्ति युक्त अक्षरों से बचें।",
+
 		missing_character_creation_data = "चरित्र निर्माण डेटा गायब है।",
 		invalid_first_name = "पहला नाम (2 से 100 वर्ण में) गायब या अवैध है।",
 		invalid_last_name = "अंतिम नाम (2 से 100 वर्ण में) गायब या अवैध है।",
@@ -8561,6 +8595,24 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		no_nearby_vehicle = "नो निकटवर्ती वाहन।",
 		already_checking_upgrades = "आप पहले से ही वाहन की ट्यूनिंग की जांच कर रहे हैं।",
 		engine_is_running = "वाहन का इंजन चल रहा है।"
+	},
+
+	meow = {
+		feed = "[${InteractionKey}] खिलाना",
+		pet = "[${InteractionKey}] प्यार से हाथ से सहलाना",
+		brush = "[${InteractionKey}] सफाई करना",
+		catnip = "[${InteractionKey}] बिल्ली को कैटनिप देना",
+		treat = "[${InteractionKey}] तोहफा देना",
+		cuddle = "[${InteractionKey}] गले लगाना",
+		hug = "[${InteractionKey}] गले लगाना",
+
+		feed_active = "मैक्सवेल को खिलाना",
+		pet_active = "मैक्सवेल को सहलाना",
+		brush_active = "मैक्सवेल को ब्रशिंग कर रहा है",
+		catnip_active = "मैक्सवेल को कैटनिप दे रहा है",
+		treat_active = "मैक्सवेल को एक ट्रीट दे रहा है",
+		cuddle_active = "मैक्सवेल के साथ संगम कर रहा है",
+		hug_active = "मैक्सवेल को गले लगा रहा है"
 	},
 
 	meth = {
@@ -9656,7 +9708,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		no_warnings = "कोई चेतावनी नहीं",
 		not_shown_warnings = "और ${count} चेतावनियां अभी तक दिखाई नहीं दी",
 		system_issuer = "सिस्टम",
-		add_warning_title = "चेतावनी जोड़ें",
+		add_note_title = "नोट जोड़ें",
 		message_placeholder = "${playerName} ने एक गलती की है...",
 
 		type_note = "नोट",
@@ -9667,7 +9719,11 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		button_cancel = "रद्द करें",
 		button_add = "जोड़ें",
 		button_close = "बंद करें",
-		button_new = "नया",
+		button_new = "नया नोट",
+
+		ping = "${ping}मिलीसेकंड",
+		fps = "${fps}फ्रेम प्रति सेकंड",
+		playtime = "${time} चला है",
 
 		invalid_server_id = "अमान्य सर्वर ID.",
 
@@ -10369,17 +10425,15 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		invincibility_inactive_dead = "अटूटता: ~g~निष्क्रिय~w~ (मृत)",
 		invincibility_inactive = "अटूटता: ~g~निष्क्रिय~w~",
 
-		health_ok = "स्वास्थ्य: ~g~${health} / ${maxHealth}~w~",
-		health_bad = "स्वास्थ्य: ~r~${health} / ${maxHealth}~w~",
+		health_ok = "स्वास्थ्य: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
+		health_bad = "स्वास्थ्य: ~r~${health} / ${maxHealth}~w~ - ${percentage}",
 
-		armor_ok = "आर्मर: ~g~${armor} / ${maxArmor}~w~",
-		armor_bad = "आर्मर: ~r~${armor} / ${maxArmor}~w~",
+		armor_ok = "आर्मर: ~g~${armor} / ${maxArmor}~w~ - ${percentage}",
+		armor_bad = "कवच: ~r~${armor} / ${maxArmor}~w~ - ${percentage}",
 
 		vehicle_health = "वाहन स्वास्थ्य: ${percentage}",
 
-		speed = "गति: ${speed}${unit}",
-		speed_mph = "mph",
-		speed_kmh = "kmh",
+		speed = "गति: ${speed}",
 
 		exit_spectate = "बाहर निकलने के लिए ~g~${InteractionKey}~w~ दबाएँ",
 
@@ -10895,7 +10949,9 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		set_ocean_scaler_no_permission = "खिलाड़ी के पास समुद्र स्केलर सेट करने के लिए आवश्यक अनुमति नहीं थी।",
 
 		tsunami_started = "सुनामी शुरू हो गई है। इसमें ${minutes} मिनट लगेंगें ताकि समूचा मानचित्र बदल जाए।",
-		tsunami_stopped = "सुनामी रुक गया।"
+		tsunami_stopped = "सुनामी रुक गया।",
+
+		toggle_tsunami_no_permissions = "योग्य अनुमतियों के बिना सुनामी को टॉगल करने का प्रयास किया गया।"
 	},
 
 	tuner_shop = {
@@ -11111,6 +11167,10 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		flipped_vehicle_logs_title = "उलटी गाड़ी",
 		flipped_vehicle_logs_details = "${consoleName} ने एक वाहन को उलटा दिया।",
 		failed_to_find_ground = "जमीन नहीं मिली, आपको सबसे करीबी सड़क पर ले जाया गया।",
+
+		knots = "नौटिक बाध",
+		mph = "मील प्रति घंटा",
+		kmh = "किलोमीटर प्रति घंटा",
 
 		time_in = "${time} ${unit} में",
 		time_ago = "${time} ${unit} पहले"

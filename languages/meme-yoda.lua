@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 16 (do not change)
+-- AUTO LOCALES: 17 (do not change)
 
 OP.Global.Locales.Languages["meme-yoda"] = {
 	-- configuration settings for language
@@ -96,11 +96,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		model_name_not_provided = "Model name, passed it was not.",
 		model_name_invalid = "Invalid, model name it is. ${modelName} it is.",
-		failed_to_spawn_vehicle = "Failed to execute `/spawn_vehicle` command correctly, we have.",
-		spawned_vehicle_for_player = "Successfully spawned, ${consoleName}, for vehicle `${modelName}` it is.",
+		failed_to_spawn_vehicle = "Vehicle, failed to spawn.",
+		spawned_vehicle_for_player = "Successfully spawned, ${modelName} for ${displayName}.",
 		spawned_vehicle_for_everyone = "Everyone's vehicle `${modelName}` has been spawned successfully, it is.",
-		spawn_vehicle_for_player_not_staff = "Spawn vehicle for another, player tried, but permissions lacked they did.",
-		spawn_vehicle_for_self_not_staff = "Own vehicle spawn, player tried, but permissions lacked they did.",
+		spawn_vehicle_no_permissions = "Player, a vehicle spawn attempted but did not have required permissions to do so.",
 		replace_vehicle_no_permissions = "Vehicle replace attempt, player did, but permissions lacked they had.",
 		create_vehicle_no_permissions = "Vehicle creation attempt, player did, but permissions lacked they had.",
 		spawned_vehicle_for_self_title = "Vehicle spawned is, yes",
@@ -1907,13 +1906,13 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		position_command_parameter_label_help = "An optional label that will be stored with the position.",
 		position_command_substitutes = "pos, coords",
 
+		copy_ground_command = "copy_ground",
+		copy_ground_command_help = "The ground coordinates of your current position, copy to your clipboard.",
+		copy_ground_command_substitutes = "ground",
+
 		save_commands_list_command = "save_commands_list",
 		save_commands_list_command_help = "List of available op-fw commands, save, this will.",
 		save_commands_list_command_substitutes = "",
-
-		save_vehicle_data_command = "save_vehicle_data",
-		save_vehicle_data_command_help = "Data about vehicles, bunch of, save, this will.",
-		save_vehicle_data_command_substitutes = "",
 
 		draw_radius_command = "draw_radius",
 		draw_radius_command_help = "A radius, draw, this will.",
@@ -2268,6 +2267,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		gun_trader_debug_command = "gun_trader_debug, hrmmm",
 		gun_trader_debug_command_help = "The gun traders current location, a text on it will be drawn, hmm.",
 		gun_trader_debug_command_substitutes = "",
+
+		unlock_gun_trader_command = "unlock_gun_trader",
+		unlock_gun_trader_command_help = "The gun trader, instantly unlock.",
+		unlock_gun_trader_command_substitutes = "",
 
 		-- game/gas_masks
 		gas_debug_command = "debug_gas",
@@ -3361,6 +3364,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		entity_states_command_parameter_network_id_help = "The network id of the entity, this is.",
 		entity_states_command_substitutes = "",
 
+		draw_entity_states_command = "draw_entity_states",
+		draw_entity_states_command_help = "Shows all entities with 1 or more states.",
+		draw_entity_states_command_substitutes = "",
+
 		-- illegal/corner
 		corner_command = "Corner, you must.",
 		corner_command_help = "Sell drugs nearby, to a person. Drug, location where you are, based on it is.",
@@ -3415,7 +3422,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		pd_impound_command = "pd_impound",
 		pd_impound_command_help = "Impounds the vehicle of a player, this command does, for a certain period of time.",
 		pd_impound_command_parameter_minutes = "minutes",
-		pd_impound_command_parameter_minutes_help = "Period of time for impoundment, you may choose (between 1 minute and 12 hours).",
+		pd_impound_command_parameter_minutes_help = "For how long the vehicle should be impounded (between 1 minute and 48 hours).",
 		pd_impound_command_substitutes = "",
 
 		dispatch_command = "dispatch",
@@ -4709,6 +4716,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		outfit_failed = "Failed to apply outfit, you have.",
 		missing_outfit = "Missing outfit, you are.",
 		missing_outfit_name = "Missing outfit name, you are.",
+		invalid_outfit = "Invalid outfit.",
 		no_nearby_clothing_spot = "No clothing spot nearby, there is.",
 		trunk_closed = "The trunk is closed, it is.",
 		trunk_too_far = "You are too far away from the trunk, you are.",
@@ -4739,6 +4747,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		loading_model = "Ped model, loading...",
 		loading_spawn = "Player ped, spawning...",
+		loading_preload_data = "Preloading ped data...",
 		loading_set_data = "Ped data, setting...",
 		loading_tattoos = "Tattoos, setting...",
 		loading_finalize = "Finalizing, we are..."
@@ -5277,6 +5286,12 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		crafted_multi_tool = "Multi tool, crafted it has.",
 		failed_craft_multi_tool = "Craft, multi tool could not be.",
 
+		mix_grimace_shake = "Mix Grimace Shake",
+		press_to_mix_grimace_shake = "[${SeatEjectKey}] Mix Grimace Shake",
+		mixing_grimace_shake = "Mixing Grimace Shake",
+		mixed_grimace_shake = "Mixed grimace shake.",
+		failed_mix_grimace_shake = "Failed to mix, grimace shake has.",
+
 		no_required_items = "All the required items, you do not have.",
 
 		debug_multi = "-Multiple Outputs-, debug mode is on.",
@@ -5293,7 +5308,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 	creation = {
 		turn_right = "Right, turn.",
-		turn_left = "Turn left, you must."
+		turn_left = "Turn left, you must.",
+		toggle_light = "Light Toggle"
 	},
 
 	creation_menu = {
@@ -5605,7 +5621,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		state_seal_three = "Subject to heavy penalty under 13 S.A. Pen. Code 502(a), any unauthorized use is.",
 
 		kmh = "km/h",
-		mph = "mp/h",
+		mph = "mph",
 
 		set_unit_id_to = "To ${unitId} set, your unit ID has been.",
 		reset_unit_id = "Now reset, your unit ID has been.",
@@ -5875,7 +5891,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		floor_containment = "Containment Room, this is.",
 
-		doj_office = "DOJ Office, this is."
+		doj_office = "DOJ Office, this is.",
+
+		used_elevator_logs_title = "Elevator Used",
+		used_elevator_logs_details = "${consoleName} elevator ${elevatorId} to floor `${floor}` go."
 	},
 
 	emails = {
@@ -6052,6 +6071,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		disabled_freecam = "Freecam, disabled it has been.",
 		freecam_failed = "Failed to enable the freecam, have noclip or similar enabled, you do?",
 
+		freecam_no_dead = "Enable freecam not can you while down.",
+
 		freecam_logs_title = "Freecam toggled, hmm",
 		freecam_on_logs_details = "${consoleName} toggled their freecam on, young padawan.",
 		freecam_off_logs_details = "${consoleName} toggled their freecam off, wise decision it is.",
@@ -6092,6 +6113,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		shake_tree = "~INPUT_CONTEXT~ press, shake the tree you will.",
 		shaking_tree = "Shaking the tree, I am.",
+
+		extract_rubber = "Press ~INPUT_CONTEXT~ to rubber extract from the tree.",
+		extracting_rubber = "Rubber extracting",
 
 		tree_klonk = "Something fell from the tree, hit your head it did."
 	},
@@ -6182,9 +6206,12 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		press_e_to_talk = "To Jim, speak by pressing ~INPUT_CONTEXT~.",
 		trader_closed = "Jim's shop, closed it is.",
 
-		sorry_closed = "Sorry dawg, closed the shop is.",
+		sorry_closed = "Sorry fam, closed shop is.",
 		sorry_closed_hug = "Thanks for the hug fam, appreciate it, I do. Hmmmm.",
-		sorry_closed_fight = "Yo chill dawg, I aint do nothin. Relax, young Jedi.",
+		sorry_closed_finger = "What the frick yo, rude that is!",
+		sorry_closed_kiss = "Woah dawg, into that I am not...",
+		sorry_closed_dab = "Dab on the haters, fr fr on god, do I!",
+		sorry_closed_fight = "Chill, homie. Nothing I did.",
 
 		trader_locked = "Few things Jim needs from you, before his shop he opens.",
 		unlock_trader = "The item, provide to Jim you must",
@@ -6312,8 +6339,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	hud = {
-		mph = "mp/h",
-		kmh = "km/h",
 		knots = "knots, they are.",
 		ft = "ft",
 		m = "m",
@@ -6335,6 +6360,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		steps_walked_deaths = "${stepsWalked} steps you have walked. ${deaths} downs you have.",
 		altitude_temperature = "${altitude} ${unit} you are at. ${temperature}${degrees} it is.",
 		scuba_timer = "Oxygen left, ${timer} is.",
+
+		alignment_warning_title = "HUD Alignment, there is a problem",
+		alignment_warning = "Partially off-screen, your HUD seems to be. Adjust it, you can, by reducing the \"*Safezone Size*\" in your \"*Display*\" settings.",
 
 		muted = "Muted, you are.",
 
@@ -6365,7 +6393,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		hold_to_skin = "[${InteractionKey}] Hold, you must, to skin.",
 		skinning_animal = "Dead animal, skinning, I am.",
 		meat_too_damaged = "Too damaged, this animal's meat is.",
-		animal_is_being_skinned = "Skinning, the animal is."
+		animal_is_being_skinned = "Skinning, the animal is.",
+
+		skinned_logs_title = "Skinned Animal, there is",
+		skinned_logs_details = "${consoleName} an animal (${modelName}) skinned and obtained ${skinnedItems}.",
+		received_nothing = "nothing"
 	},
 
 	identification = {
@@ -7234,6 +7266,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		lean = "Lean",
 		lean_description = "Sizzurp sippin', sip, some sippin', sip.",
+
+		grimace_shake = "Shake Grimace",
+		grimace_shake_description = "Crazy? Once crazy I was. In a room they locked me. A rubber room. With rats it had. And rats, they make me crazy. Crazy? Once crazy I was. Locked me in a room they did. A rubber room. With rats it had. And rats, they make me crazy. Crazy? Once crazy I was. Locked me in a room they did. A rubber room. With rats it had. And rats, they make me crazy. Crazy? Once crazy I was. Locked me in a room they did. A rubber room. With rats it had. And rats, they make me crazy. Crazy? Once crazy I was.....",
 
 		jolly_ranchers = "Ranchers Jolly",
 		jolly_ranchers_description = "Indulge in flavor sweet and tangy of Jolly Ranchers, hard candies classic bursting with fruity goodness they are.",
@@ -8117,9 +8152,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		weapon_addon_berserker = "Berserker, this is.",
 		weapon_addon_berserker_description = "Cool axe, this is.",
 
-		weapon_addon_katana = "Katana, this is.",
-		weapon_addon_katana_description = "Ninja, it is. Yeah.",
-
 		weapon_addon_stidvc = "STI DVC 2011, this is.",
 		weapon_addon_stidvc_description = "The future, now it is old man. Just in a smaller caliber, it is... Hmm.",
 
@@ -8170,7 +8202,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		lockpicking_succeeded = "Lockpicking succeeded, it has",
 		hotwiring_vehicle = "Vehicle hotwiring, I am",
 		lockpick_broke = "Lockpick, it broke",
-		failed_hotwire = "Hotwire, I failed",
+		failed_hotwire = "Failed to hotwire the vehicle, maybe try better tools, you should.",
 		unpacking_green_rolls = "Green rolls, unpacking them, I am",
 		you_do_not_have_enough_rolling_paper = "Enough rolling paper, you do not have",
 		rolling_joint = "Joint, I am rolling",
@@ -8413,6 +8445,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		refresh = "Refresh, I will",
 		refreshing = "Refreshing, I am...",
 
+		avoid_repeating_letters = "Repeating letters in your first and/or last name, avoid, you must.",
+
 		missing_character_creation_data = "Missing, character creation data, you are",
 		invalid_first_name = "Missing or invalid, first name, you have (2 to 100 characters)",
 		invalid_last_name = "Missing or invalid, last name, you have (2 to 100 characters)",
@@ -8561,6 +8595,24 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		no_nearby_vehicle = "No nearby vehicle, there is.",
 		already_checking_upgrades = "Checking the tunes, you already are, hmmm.",
 		engine_is_running = "Running, the vehicle's engine is."
+	},
+
+	meow = {
+		feed = "[${InteractionKey}] Feed, you shall.",
+		pet = "[${InteractionKey}] Pet, you shall.",
+		brush = "[${InteractionKey}] Brush, you shall.",
+		catnip = "[${InteractionKey}] Give Catnip, you shall.",
+		treat = "[${InteractionKey}] Give Treat, you shall.",
+		cuddle = "[${InteractionKey}] Cuddle, you shall.",
+		hug = "[${InteractionKey}] Hug, you shall.",
+
+		feed_active = "Maxwell, feeding active.",
+		pet_active = "Maxwell, petting active.",
+		brush_active = "Brushing, Maxwell is",
+		catnip_active = "Catnip, Maxwell is being given",
+		treat_active = "A treat, Maxwell is being given",
+		cuddle_active = "With Maxwell, cuddling is",
+		hug_active = "Maxwell, hugging is"
 	},
 
 	meth = {
@@ -9656,7 +9708,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		no_warnings = "No warnings, there are.",
 		not_shown_warnings = "${count} more, not shown they are.",
 		system_issuer = "System, the issuer is.",
-		add_warning_title = "Warning, add it I will.",
+		add_note_title = "Note, add",
 		message_placeholder = "${playerName} did an oopsie, they have...",
 
 		type_note = "Note, you must type.",
@@ -9667,7 +9719,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		button_cancel = "Cancel, you will?",
 		button_add = "Add, you must.",
 		button_close = "Close, you shall.",
-		button_new = "New, create you will.",
+		button_new = "New Note",
+
+		ping = "Ping: ${ping}ms",
+		fps = "FPS: ${fps}",
+		playtime = "Played: ${time}",
 
 		invalid_server_id = "Invalid server id, this is.",
 
@@ -10369,17 +10425,15 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		invincibility_inactive_dead = "Inactive, invincibility is. (Dead)",
 		invincibility_inactive = "Inactive, invincibility is.",
 
-		health_ok = "Health: ~g~${health} / ${maxHealth}~w~",
-		health_bad = "Health: ~r~${health} / ${maxHealth}~w~",
+		health_ok = "Health: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
+		health_bad = "Health: ~r~${health} / ${maxHealth}~w~ - ${percentage}",
 
-		armor_ok = "Armor: ~g~${armor} / ${maxArmor}~w~",
-		armor_bad = "Armor: ~r~${armor} / ${maxArmor}~w~",
+		armor_ok = "Armor: ~g~${armor} / ${maxArmor}~w~ - ${percentage}",
+		armor_bad = "Armor: ~r~${armor} / ${maxArmor}~w~ - ${percentage}",
 
 		vehicle_health = "Vehicle health: ${percentage}% it is.",
 
-		speed = "Speed: ${unit} ${speed}",
-		speed_mph = "mph",
-		speed_kmh = "kmh",
+		speed = "Speed: ${speed}",
 
 		exit_spectate = "Exit spectator mode, press ~g~${InteractionKey}~w~ you must",
 
@@ -10895,7 +10949,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		set_ocean_scaler_no_permission = "The required permission to set the ocean scaler, the player does not have.",
 
 		tsunami_started = "Started, the Tsunami has. It will take ${minutes} minutes for the map to get flooded.",
-		tsunami_stopped = "Stopped, the tsunami has."
+		tsunami_stopped = "Stopped, the tsunami has.",
+
+		toggle_tsunami_no_permissions = "Tsunami toggle, attempted without proper permissions."
 	},
 
 	tuner_shop = {
@@ -11111,6 +11167,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		flipped_vehicle_logs_title = "Flipped, the vehicle has been",
 		flipped_vehicle_logs_details = "A vehicle, ${consoleName} has flipped, hmmm.",
 		failed_to_find_ground = "Ground, failed to find. Closest road, teleported you have been.",
+
+		knots = "knots",
+		mph = "mph",
+		kmh = "km/h",
 
 		time_in = "in ${time} ${unit}, it is",
 		time_ago = "${time} ${unit} ago, it was"

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 16 (do not change)
+-- AUTO LOCALES: 17 (do not change)
 
 OP.Global.Locales.Languages["ko-KR"] = {
 	-- configuration settings for language
@@ -96,11 +96,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		model_name_not_provided = "모델 이름이 제공되지 않았습니다.",
 		model_name_invalid = "모델 이름 `${modelName}` 은(는) 잘못되었습니다.",
-		failed_to_spawn_vehicle = "`/spawn_vehicle` 명령을 올바르게 실행하지 못했습니다.",
-		spawned_vehicle_for_player = "${consoleName} 님을 위해 ${modelName}을(를) 성공적으로 생성하였습니다.",
+		failed_to_spawn_vehicle = "차량을 생성하는데 실패했습니다.",
+		spawned_vehicle_for_player = "${displayName}님을 위해 ${modelName} 차량을 성공적으로 생성하였습니다.",
 		spawned_vehicle_for_everyone = "모든 플레이어를 위해 ${modelName}을(를) 성공적으로 생성하였습니다.",
-		spawn_vehicle_for_player_not_staff = "플레이어가 다른 사람을 위해 차량을 소환하려 하였으나 필요한 권한이 없습니다.",
-		spawn_vehicle_for_self_not_staff = "플레이어가 자신을 위해 차량을 소환하려 하였으나 필요한 권한이 없습니다.",
+		spawn_vehicle_no_permissions = "플레이어가 차량을 생성하려고 시도했으나 필요한 권한이 없습니다.",
 		replace_vehicle_no_permissions = "플레이어가 자신의 차량을 교체하려 하였으나 필요한 권한이 없습니다.",
 		create_vehicle_no_permissions = "플레이어가 차량을 생성하려 하였으나 필요한 권한이 없습니다.",
 		spawned_vehicle_for_self_title = "차량 소환 완료",
@@ -1907,13 +1906,13 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		position_command_parameter_label_help = "위치와 함께 저장할 선택적 라벨입니다.",
 		position_command_substitutes = "pos, coords",
 
+		copy_ground_command = "copy_ground",
+		copy_ground_command_help = "현재 위치의 지면 좌표를 클립보드에 복사합니다.",
+		copy_ground_command_substitutes = "ground",
+
 		save_commands_list_command = "save_commands_list",
 		save_commands_list_command_help = "Saves a list of all available op-fw commands.",
 		save_commands_list_command_substitutes = "",
-
-		save_vehicle_data_command = "save_vehicle_data",
-		save_vehicle_data_command_help = "Saves a bunch of data about vehicles.",
-		save_vehicle_data_command_substitutes = "",
 
 		draw_radius_command = "draw_radius",
 		draw_radius_command_help = "Draw a radius.",
@@ -2268,6 +2267,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		gun_trader_debug_command = "gun_trader_debug",
 		gun_trader_debug_command_help = "총 상인의 현재 위치에 텍스트를 그립니다.",
 		gun_trader_debug_command_substitutes = "",
+
+		unlock_gun_trader_command = "unlock_gun_trader",
+		unlock_gun_trader_command_help = "총기 상인 잠금을 즉시 해제합니다.",
+		unlock_gun_trader_command_substitutes = "",
 
 		-- game/gas_masks
 		gas_debug_command = "가스_디버그",
@@ -3361,6 +3364,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		entity_states_command_parameter_network_id_help = "엔티티의 네트워크 ID입니다.",
 		entity_states_command_substitutes = "",
 
+		draw_entity_states_command = "draw_entity_states",
+		draw_entity_states_command_help = "모든 상태가 1개 이상인 개체를 표시합니다.",
+		draw_entity_states_command_substitutes = "",
+
 		-- illegal/corner
 		corner_command = "코너",
 		corner_command_help = "근처 사람에게 마약을 판매합니다. 판매하는 마약은 위치에 따라 달라집니다.",
@@ -3415,7 +3422,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		pd_impound_command = "경찰차_절도",
 		pd_impound_command_help = "이 명령어는 일정 기간 동안 차량을 압류합니다.",
 		pd_impound_command_parameter_minutes = "분",
-		pd_impound_command_parameter_minutes_help = "차량을 압류할 시간 (1분에서 12시간 사이).",
+		pd_impound_command_parameter_minutes_help = "차량이 압수될 시간을 지정합니다 (1분에서 48시간 사이).",
 		pd_impound_command_substitutes = "",
 
 		dispatch_command = "경찰출동",
@@ -4709,6 +4716,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		outfit_failed = "의상 적용에 실패하였습니다.",
 		missing_outfit = "의상이 없습니다.",
 		missing_outfit_name = "의상 이름이 누락되었습니다.",
+		invalid_outfit = "잘못된 의상입니다.",
 		no_nearby_clothing_spot = "근처에 의류 교환 공간이 없습니다.",
 		trunk_closed = "트렁크가 닫혀있습니다.",
 		trunk_too_far = "트렁크에서 너무 멀리 떨어졌습니다.",
@@ -4739,6 +4747,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		loading_model = "모델을 로드하는 중...",
 		loading_spawn = "플레이어 모델 생성 중...",
+		loading_preload_data = "PED 데이터를 미리 로딩중...",
 		loading_set_data = "캐릭터 데이터 설정 중...",
 		loading_tattoos = "타투 설정 중...",
 		loading_finalize = "완료 중..."
@@ -5277,6 +5286,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		crafted_multi_tool = "멀티툴을 제작했습니다.",
 		failed_craft_multi_tool = "멀티툴 제작에 실패했습니다.",
 
+		mix_grimace_shake = "그림 계란 흔들기",
+		press_to_mix_grimace_shake = "[${SeatEjectKey}] 그림 계란 흔들기",
+		mixing_grimace_shake = "그림 계란 흔들고 있습니다",
+		mixed_grimace_shake = "그림 계란 흔들기 완료.",
+		failed_mix_grimace_shake = "그림치즈 쉐이크를 혼합하는 데 실패했습니다.",
+
 		no_required_items = "필요한 모든 아이템이 없습니다.",
 
 		debug_multi = "-여러 출력-",
@@ -5293,7 +5308,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 	creation = {
 		turn_right = "오른쪽으로 돌기",
-		turn_left = "왼쪽으로 돌기"
+		turn_left = "왼쪽으로 돌기",
+		toggle_light = "빛 켜기/끄기"
 	},
 
 	creation_menu = {
@@ -5605,7 +5621,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		state_seal_three = "무단으로 사용할 시 13 S.A. Pen. Code 502(a)에 따른 엄청난 벌금이 부과됩니다.",
 
 		kmh = "km/h",
-		mph = "mp/h",
+		mph = "mph",
 
 		set_unit_id_to = "당신의 단위 ID가 ${unitId}(으)로 설정되었습니다.",
 		reset_unit_id = "당신의 단위 ID가 초기화되었습니다.",
@@ -5875,7 +5891,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		floor_containment = "격리실",
 
-		doj_office = "법무부 사무실"
+		doj_office = "법무부 사무실",
+
+		used_elevator_logs_title = "엘리베이터 사용됨",
+		used_elevator_logs_details = "${consoleName}님이 ${elevatorId}번 엘리베이터를 이용하여 `${floor}`층으로 이동하였습니다."
 	},
 
 	emails = {
@@ -6052,6 +6071,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		disabled_freecam = "프리캠이 비활성화되었습니다.",
 		freecam_failed = "프리캠을 활성화하는 데 실패했습니다. 무중력이 켜져 있는지 확인해 주세요.",
 
+		freecam_no_dead = "다운된 상태에서 프리캠을 사용할 수 없습니다.",
+
 		freecam_logs_title = "자유 시점 토글됨",
 		freecam_on_logs_details = "${consoleName} 님이 자유 시점을 활성화하였습니다.",
 		freecam_off_logs_details = "${consoleName} 님이 자유 시점을 비활성화하였습니다.",
@@ -6092,6 +6113,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		shake_tree = "나무를 흔들려면 ~INPUT_CONTEXT~를 누르세요.",
 		shaking_tree = "나무를 흔드는 중",
+
+		extract_rubber = "나무에서 고무 추출을 위해 ~INPUT_CONTEXT~를 누르세요.",
+		extracting_rubber = "고무 추출 중",
 
 		tree_klonk = "나무에서 뭔가가 떨어져 당신의 머리를 맞췄습니다."
 	},
@@ -6182,9 +6206,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		press_e_to_talk = "Jim와 이야기하려면 ~INPUT_CONTEXT~ 키를 누르세요.",
 		trader_closed = "Jim의 상점은 현재 문이 닫혀있습니다.",
 
-		sorry_closed = "죄송합니다, 상점이 닫혀 있습니다.",
+		sorry_closed = "죄송합니다. 가게가 닫혔습니다.",
 		sorry_closed_hug = "감사합니다! 포옹해주셔서 :)",
-		sorry_closed_fight = "어이쿠, 제가 이상한 짓은 안 했는데 왜 싸우시죠?",
+		sorry_closed_finger = "프릭한건 거절하시고 예절을 갖춰주세요!",
+		sorry_closed_kiss = "자네야, 거기에는 흥미 없어…",
+		sorry_closed_dab = "댄서인척 하지마, 쓰닌에게 물어나라",
+		sorry_closed_fight = "친구야, 진정해. 난 아무것도 안 했어.",
 
 		trader_locked = "Jim은 상점을 열기 전에 몇 가지 물건이 필요합니다.",
 		unlock_trader = "물건을 Jim에게 제공하세요.",
@@ -6312,8 +6339,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	},
 
 	hud = {
-		mph = "마일/시간",
-		kmh = "킬로미터/시간",
 		knots = "노트",
 		ft = "피트",
 		m = "미터",
@@ -6335,6 +6360,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		steps_walked_deaths = "${stepsWalked} 걸음 ~t~/~w~ 죽은 횟수 ${deaths}",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "남은 산소: ${timer}",
+
+		alignment_warning_title = "HUD 정렬",
+		alignment_warning = "HUD가 일부분만 화면에 보입니다. \"*표시*\" 설정에서 \"*안전 지역 크기*\"를 줄여 조정할 수 있습니다.",
 
 		muted = "음소거",
 
@@ -6365,7 +6393,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		hold_to_skin = "[${InteractionKey}] 누르고 있으면 동물 가죽 제거",
 		skinning_animal = "사냥한 동물 가죽 제거 중",
 		meat_too_damaged = "이 동물은 너무 손상되어 있습니다.",
-		animal_is_being_skinned = "동물이 가죽 제거 중입니다."
+		animal_is_being_skinned = "동물이 가죽 제거 중입니다.",
+
+		skinned_logs_title = "게임 테마 동물 사냥",
+		skinned_logs_details = "${consoleName}님이 동물 (${modelName})을 사냥하여 ${skinnedItems}을(를) 획득하였습니다.",
+		received_nothing = "아무것도 받지 못함"
 	},
 
 	identification = {
@@ -7234,6 +7266,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		lean = "린",
 		lean_description = "시즈럽을 마시면서 즐기는 린입니다.",
+
+		grimace_shake = "거북목 흔들기",
+		grimace_shake_description = "미친 거야? 한번은 내가 미쳤지. 그들은 나를 한 방에 넣었어. 고무방. 쥐들이 있는 고무방. 그리고 쥐들은 나를 미치게 만들어. 미친 거야? 한번은 내가 미쳤지. 그들은 나를 한 방에 넣었어. 고무방. 쥐들이 있는 고무방. 그리고 쥐들은 나를 미치게 만들어. 미친 거야? 한번은 내가 미쳤지. 그들은 나를 한 방에 넣었어. 고무방. 쥐들이 있는 고무방. 그리고 쥐들은 나를 미치게 만들어. 미친 거야? 한번은 내가 미쳤지. 그들은 나를 한 방에 넣었어. 고무방. 쥐들이 있는 고무방. 그리고 쥐들은 나를 미치게 만들어. 미친 거야? 한번은 내가 미쳤지....",
 
 		jolly_ranchers = "졸리랜처스",
 		jolly_ranchers_description = "과일 맛이 가득한 클래식 하드 캔디인 졸리랜처스의 달콤하고 시원한 맛을 즐겨보세요.",
@@ -8117,9 +8152,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		weapon_addon_berserker = "버서커",
 		weapon_addon_berserker_description = "멋진 도끼입니다.",
 
-		weapon_addon_katana = "카타나",
-		weapon_addon_katana_description = "닌자 무기, 그래요.",
-
 		weapon_addon_stidvc = "STI DVC 2011",
 		weapon_addon_stidvc_description = "미래는 이제 옛날, 그러나 더 작은 구경의 총입니다...",
 
@@ -8170,7 +8202,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		lockpicking_succeeded = "자물쇠 따기 성공.",
 		hotwiring_vehicle = "핫와이어링 중",
 		lockpick_broke = "자물쇠 따기 도구가 부러졌습니다.",
-		failed_hotwire = "핫와이어링 실패",
+		failed_hotwire = "차량을 시동걸기에 실패했습니다. 좀 더 좋은 도구를 사용해 보시는 건 어떨까요?",
 		unpacking_green_rolls = "그린 롤 지급 중",
 		you_do_not_have_enough_rolling_paper = "롤링 페이퍼가 충분하지 않습니다.",
 		rolling_joint = "마리화나 롤링 중",
@@ -8413,6 +8445,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		refresh = "새로고침",
 		refreshing = "새로고침 중...",
 
+		avoid_repeating_letters = "이름에 너무 많은 반복된 글자를 사용하는 것을 피해보세요.",
+
 		missing_character_creation_data = "캐릭터 생성 데이터가 누락되었습니다.",
 		invalid_first_name = "이름이 누락되었거나 유효하지 않습니다 (2~100자).",
 		invalid_last_name = "성이 누락되었거나 유효하지 않습니다 (2~100자).",
@@ -8561,6 +8595,24 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		no_nearby_vehicle = "주변에 차량이 없습니다.",
 		already_checking_upgrades = "이미 차량을 확인 중입니다.",
 		engine_is_running = "차량 엔진이 실행 중입니다."
+	},
+
+	meow = {
+		feed = "[${InteractionKey}] 먹이주기",
+		pet = "[${InteractionKey}] 쓰다듬기",
+		brush = "[${InteractionKey}] 빗기",
+		catnip = "[${InteractionKey}] 고양이 붕대주기",
+		treat = "[${InteractionKey}] 간식주기",
+		cuddle = "[${InteractionKey}] 껴안다",
+		hug = "[${InteractionKey}] 껴안다",
+
+		feed_active = "맥스웰에게 먹이주기 중",
+		pet_active = "맥스웰을 쓰다듬는 중",
+		brush_active = "맥스웰 업으로 손질 중",
+		catnip_active = "맥스웰에게 고양이 멘토 줌",
+		treat_active = "맥스웰에게 간식 주기",
+		cuddle_active = "맥스웰과 함께 허전한",
+		hug_active = "맥스웰 포옹"
 	},
 
 	meth = {
@@ -9656,7 +9708,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		no_warnings = "경고 없음",
 		not_shown_warnings = "더 보이지 않는 경고 ${count} 개 더 있음",
 		system_issuer = "시스템",
-		add_warning_title = "경고 추가",
+		add_note_title = "메모 추가",
 		message_placeholder = "${playerName} 이(가) 실수를 했어요...",
 
 		type_note = "노트",
@@ -9667,7 +9719,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		button_cancel = "취소",
 		button_add = "추가",
 		button_close = "닫기",
-		button_new = "새로 만들기",
+		button_new = "새로운 메모",
+
+		ping = "${ping}밀리초",
+		fps = "${fps}프레임",
+		playtime = "${time} 플레이함",
 
 		invalid_server_id = "잘못된 서버 ID 입니다.",
 
@@ -10369,17 +10425,15 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		invincibility_inactive_dead = "무적: ~g~비활성화~w~ (사망)",
 		invincibility_inactive = "무적: ~g~비활성화~w~",
 
-		health_ok = "체력: ~g~${health} / ${maxHealth}~w~",
-		health_bad = "체력: ~r~${health} / ${maxHealth}~w~",
+		health_ok = "체력: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
+		health_bad = "체력: ~r~${health} / ${maxHealth}~w~ - ${percentage}",
 
-		armor_ok = "아머: ~g~${armor} / ${maxArmor}~w~",
-		armor_bad = "아머: ~r~${armor} / ${maxArmor}~w~",
+		armor_ok = "방어도: ~g~${armor} / ${maxArmor}~w~ - ${percentage}",
+		armor_bad = "방어력: ~r~${armor} / ${maxArmor}~w~ - ${percentage}",
 
 		vehicle_health = "차량 체력: ${percentage}",
 
-		speed = "속도: ${speed}${unit}",
-		speed_mph = "mph",
-		speed_kmh = "kmh",
+		speed = "속도: ${speed}",
 
 		exit_spectate = "구경 모드에서 나가려면 ~g~${InteractionKey}~w~를 누르세요",
 
@@ -10895,7 +10949,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		set_ocean_scaler_no_permission = "해당 플레이어는 해양 스케일러 강도를 설정할 충분한 권한이 없습니다.",
 
 		tsunami_started = "쓰나미가 시작되었습니다. 맵이 ${minutes}분 동안 물에 잠길 예정입니다.",
-		tsunami_stopped = "쓰나미가 멈췄습니다."
+		tsunami_stopped = "쓰나미가 멈췄습니다.",
+
+		toggle_tsunami_no_permissions = "적절한 권한 없이 쓰나미를 전환하려고 했습니다."
 	},
 
 	tuner_shop = {
@@ -11111,6 +11167,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		flipped_vehicle_logs_title = "차량 전복",
 		flipped_vehicle_logs_details = "${consoleName} 님이 차량을 전복시켰습니다.",
 		failed_to_find_ground = "지면을 찾지 못하였습니다. 가장 가까운 도로로 이동합니다.",
+
+		knots = "노트",
+		mph = "마일/시간",
+		kmh = "킬로미터/시간",
 
 		time_in = "${time} ${unit} 이내",
 		time_ago = "${time} ${unit} 전"

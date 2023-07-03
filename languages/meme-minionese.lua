@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 16 (do not change)
+-- AUTO LOCALES: 17 (do not change)
 
 OP.Global.Locales.Languages["meme-minionese"] = {
 	-- configuration settings for language
@@ -96,11 +96,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		model_name_not_provided = "bananaaaa! Oops, sorry, no model name was provided.",
 		model_name_invalid = "Sorry, the model name `${modelName}` is not valid.",
-		failed_to_spawn_vehicle = "Ooops bananaaa! The command `/spawn_vehicle` failed to execute correctly.",
-		spawned_vehicle_for_player = "Congratulations! You have spawned a `${modelName}` vehicle for ${consoleName}.",
+		failed_to_spawn_vehicle = "Bello! Failed to spawn vehicle.",
+		spawned_vehicle_for_player = "Bello! Successfully spawned `${modelName}` for ${displayName}.",
 		spawned_vehicle_for_everyone = "Excellent! A `${modelName}` vehicle has been spawned for everyone.",
-		spawn_vehicle_for_player_not_staff = "Bello! Player tried to spawn a vehicle for someone else but they don't have the permission to do that.",
-		spawn_vehicle_for_self_not_staff = "Me want! Player tried to spawn a vehicle for themselves but they don't have permission to do that.",
+		spawn_vehicle_no_permissions = "Bello! Player attempted to spawn a vehicle but didn't have the required permissions to do so.",
 		replace_vehicle_no_permissions = "Uh oh! Player tried to replace their vehicle, but they don't have the permission to do that.",
 		create_vehicle_no_permissions = "Banana! Player tried to create a vehicle, but they don't have the permission to do that.",
 		spawned_vehicle_for_self_title = "Bello Bananu Caro",
@@ -1907,13 +1906,13 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		position_command_parameter_label_help = "Optional label ha ha.",
 		position_command_substitutes = "papoy, kowalski",
 
+		copy_ground_command = "kopioi_maapohja",
+		copy_ground_command_help = "Kopioi nykyisen sijaintisi maapohjakoordinaatit leikepöydälle.",
+		copy_ground_command_substitutes = "maapohja",
+
 		save_commands_list_command = "banana_babbler",
 		save_commands_list_command_help = "Bello, saves a list of all available op-fw commands.",
 		save_commands_list_command_substitutes = "",
-
-		save_vehicle_data_command = "banana_nana",
-		save_vehicle_data_command_help = "Saves a bunch of data about vehicles in Minionese.",
-		save_vehicle_data_command_substitutes = "",
 
 		draw_radius_command = "banana_rama",
 		draw_radius_command_help = "Draw a banana-shaped radius.",
@@ -2268,6 +2267,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		gun_trader_debug_command = "la-ba-nah-na_gun_trader_debug",
 		gun_trader_debug_command_help = "La-ba-nah-nah! Draws a text on the gun trader's current location.",
 		gun_trader_debug_command_substitutes = "",
+
+		unlock_gun_trader_command = "avaa_asekauppias",
+		unlock_gun_trader_command_help = "Avaa asekauppias välittömästi.",
+		unlock_gun_trader_command_substitutes = "",
 
 		-- game/gas_masks
 		gas_debug_command = "bello_gas_debug",
@@ -3361,6 +3364,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		entity_states_command_parameter_network_id_help = "Bababa sad kekaboo.",
 		entity_states_command_substitutes = "",
 
+		draw_entity_states_command = "draw_entity_states",
+		draw_entity_states_command_help = "Shows all entities with 1 or more states.",
+		draw_entity_states_command_substitutes = "",
+
 		-- illegal/corner
 		corner_command = "ka-po-ta",
 		corner_command_help = "Bello! Sell drugs tu a nearby henchman. Da drug tu sell iz based on da location you are in.",
@@ -3415,7 +3422,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		pd_impound_command = "impound",
 		pd_impound_command_help = "Bido (this commands) impounds a players vehicle for a certain period of time.",
 		pd_impound_command_parameter_minutes = "kutitipi",
-		pd_impound_command_parameter_minutes_help = "Kutitipi (For how long) the vehicle should be impounded (between 1 minute and 12 hours).",
+		pd_impound_command_parameter_minutes_help = "For how long the vehicle should be impounded (between 1 minute and 48 hours).",
 		pd_impound_command_substitutes = "",
 
 		dispatch_command = "kye-doo",
@@ -4709,6 +4716,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		outfit_failed = "Meep meep banana.",
 		missing_outfit = "Baboi baboi!",
 		missing_outfit_name = "Potato na.",
+		invalid_outfit = "Invalid outfit.",
 		no_nearby_clothing_spot = "Me want clothes, me no find.",
 		trunk_closed = "Tank yu, closed.",
 		trunk_too_far = "Too far, too far... poof!",
@@ -4739,6 +4747,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		loading_model = "BEE DO! Bee doo bee doo bee doo... (Loading ped model)...",
 		loading_spawn = "BEE DO! Bee doo bee doo bee doo... (Spawning player ped)...",
+		loading_preload_data = "Preloading ped data...",
 		loading_set_data = "GELATO! (Setting ped data)...",
 		loading_tattoos = "POTATO! Po ta to! (Setting tattoos)...",
 		loading_finalize = "MUAK MUAK MUAK! (Finalizing)..."
@@ -5277,6 +5286,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		crafted_multi_tool = "Me want banana! (Translation: Crafted multi tool.)",
 		failed_craft_multi_tool = "Ahahahaha! (Translation: Failed to craft multi tool.)",
 
+		mix_grimace_shake = "Mix Grimace Shake",
+		press_to_mix_grimace_shake = "[${SeatEjectKey}] Mix Grimace Shake",
+		mixing_grimace_shake = "Mixing Grimace Shake",
+		mixed_grimace_shake = "Mixed grimace shake.",
+		failed_mix_grimace_shake = "Bello! Failed to mix grimace shake.",
+
 		no_required_items = "Tank yu, but yu don't have all the required items.",
 
 		debug_multi = "-Banana? Potato?-",
@@ -5293,7 +5308,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 	creation = {
 		turn_right = "Turn banana to right side.",
-		turn_left = "Bello Hana"
+		turn_left = "Bello Hana",
+		toggle_light = "Toggle Light (Ti woo)"
 	},
 
 	creation_menu = {
@@ -5605,7 +5621,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		state_seal_three = "Me nanaire use jokery yipi hana toli 13 S.A. Pen. Code 502(a).",
 
 		kmh = "kilo-banana/h",
-		mph = "mele-banana/h",
+		mph = "mph (bee do bee do bee do)",
 
 		set_unit_id_to = "Me quited unit-ID bello ${unitId}.",
 		reset_unit_id = "Me quited unit-ID.",
@@ -5875,7 +5891,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		floor_containment = "Containment Bello",
 
-		doj_office = "DOJ Bello"
+		doj_office = "DOJ Bello",
+
+		used_elevator_logs_title = "Used Elevator (Bee da loo bee loo)",
+		used_elevator_logs_details = "${consoleName} used elevator ${elevatorId} to go to floor `${floor}`. (Gelato!)"
 	},
 
 	emails = {
@@ -6052,6 +6071,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		disabled_freecam = "Disabled freecam. Poopaye!",
 		freecam_failed = "Failed to enable the freecam. Do you have noclip or similar enabled? Hana dul sae...",
 
+		freecam_no_dead = "You cannot enable freecam while down. (Para la tu)",
+
 		freecam_logs_title = "Toggled Freecam",
 		freecam_on_logs_details = "${consoleName} toggled banana freecam.",
 		freecam_off_logs_details = "${consoleName} stopped the banana freecam.",
@@ -6092,6 +6113,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		shake_tree = "Ito press ~INPUT_CONTEXT~ para igalaw yung puno",
 		shaking_tree = "Nilalangaw yung puno",
+
+		extract_rubber = "Press ~INPUT_CONTEXT~ to extract rubber from the tree. (Bee do bee do)",
+		extracting_rubber = "Extracting Rubber (Bananoooo!)",
 
 		tree_klonk = "Yung nakakabanging bagay nahulog mula sa puno at nabigla ka."
 	},
@@ -6182,9 +6206,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		press_e_to_talk = "Baboi, press ~INPUT_CONTEXT~ to chit-chat with Jerry.",
 		trader_closed = "Jerry's shop is closed banana hoo.",
 
-		sorry_closed = "Bee Do Bee Do Bee Do. Sorry boss, shop is closed.",
+		sorry_closed = "Sorry fam, shop is closed. (Poopaye!)",
 		sorry_closed_hug = "Bee do bee do bee do. Thank yoo for the hug fam :)",
-		sorry_closed_fight = "Bee do bee do bee do. Yo gotta chill, I aint do nothin.",
+		sorry_closed_finger = "What the frick yo, thats rude! (Chiki chiki goo!)",
+		sorry_closed_kiss = "Ta-da bee do, bosko! Tuba wala ku po ba...",
+		sorry_closed_dab = "Dabba dabba bee do, bello! Tatata on fr fr on god!",
+		sorry_closed_fight = "Tulaliloo ti amo, kampa homie! Tuba wala da bappo.",
 
 		trader_locked = "Jerry wants some goodies from you before he opens his shop banana hoo.",
 		unlock_trader = "Give Jerry the banana hoo item.",
@@ -6312,8 +6339,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	},
 
 	hud = {
-		mph = "be-do-be-do mp/h",
-		kmh = "ka-po-lo-ka-po-lo km/h",
 		knots = "knots",
 		ft = "be-do-be-do ft",
 		m = "la",
@@ -6335,6 +6360,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		steps_walked_deaths = "${stepsWalked} bee-do bee-do ~t~/~w~ ${deaths} bee-do bee-do",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Pou]i tere: ${timer}",
+
+		alignment_warning_title = "HUD Alignment",
+		alignment_warning = "Bello! Da HUD la boda tu. Bello pa pooka \"*Safezone Size*\" da \"*Display*\".",
 
 		muted = "Bwi bwi",
 
@@ -6365,7 +6393,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		hold_to_skin = "[${InteractionKey}] Hold to bapple.",
 		skinning_animal = "Bapple dead baboony.",
 		meat_too_damaged = "Poopaye! Baboony meat too damaged.",
-		animal_is_being_skinned = "The baboony is being bappled."
+		animal_is_being_skinned = "The baboony is being bappled.",
+
+		skinned_logs_title = "Skinned Animal",
+		skinned_logs_details = "${consoleName} da bannana skinned an animal (${modelName}) da got ${skinnedItems}.",
+		received_nothing = "banana"
 	},
 
 	identification = {
@@ -7234,6 +7266,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		lean = "Banana Juice",
 		lean_description = "Sippin on some sizzurp, ba-ba-ba-na-na, ba-ba-ba-na-na-na.",
+
+		grimace_shake = "Bee-do Shake",
+		grimace_shake_description = "Bello? Me bello once. Poopaye poopa! Me bello once. They put me in a pothole. A pothole with bapple. And bapple make me bello. Bello? Me bello once. Poopaye poopa! Me bello once. They put me in a pothole. A pothole with bapple. And bapple make me bello. Bello? Me bello once. Poopaye poopa! Me bello once. They put me in a pothole. A pothole with bapple. And bapple make me bello. Bello? Me bello once. Poopaye poopa! Me bello once.....",
 
 		jolly_ranchers = "Jelly Jigglers",
 		jolly_ranchers_description = "Indulge in the sweet and tangy flavors of Jelly Jigglers, the classic hard candies that burst with fruity goodness.",
@@ -8117,9 +8152,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		weapon_addon_berserker = "Berserker",
 		weapon_addon_berserker_description = "Poopaye! Cool axe.",
 
-		weapon_addon_katana = "Katana",
-		weapon_addon_katana_description = "Ninja, yeah. Poopaye!",
-
 		weapon_addon_stidvc = "STI DVC 2011",
 		weapon_addon_stidvc_description = "Bello! The future is now old man, just in a smaller caliber... Bababa Bananana!",
 
@@ -8170,7 +8202,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		lockpicking_succeeded = "Bee-do Bee-do Lockpicking Succeeded Bee-do!",
 		hotwiring_vehicle = "Bello ta-wirin Vehicle",
 		lockpick_broke = "Lockpick Bapoo",
-		failed_hotwire = "Failed ta-wirin",
+		failed_hotwire = "Banana-lalalalala! You failed to hotwire the vehicle, tulaliloo ti amo! Maybe try using some better tools, banana!?",
 		unpacking_green_rolls = "Unpacking Green Bamoo",
 		you_do_not_have_enough_rolling_paper = "You no have enough Takee takee fo' Rolling Paper.",
 		rolling_joint = "Rolling Joint",
@@ -8413,6 +8445,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		refresh = "Potato! Refresh!",
 		refreshing = "Bananaaaa! Refreshing...",
 
+		avoid_repeating_letters = "Bapple-bapple! Try to avoid lots of repeating letters in your first and/or last name, baboi!",
+
 		missing_character_creation_data = "Bee doo bee doo bee doo... Missing character creation data.",
 		invalid_first_name = "OUCH! Missing or invalid first name (2 to 100 characters).",
 		invalid_last_name = "OUCH! Missing or invalid last name (2 to 100 characters).",
@@ -8561,6 +8595,24 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		no_nearby_vehicle = "Me no see car.",
 		already_checking_upgrades = "Bee do bee do, you already check tunes.",
 		engine_is_running = "Banaanee wala gaadi chal raha hai."
+	},
+
+	meow = {
+		feed = "[${InteractionKey}] Bapple!",
+		pet = "[${InteractionKey}] Tiki-tiki!",
+		brush = "[${InteractionKey}] Brush, baboi!",
+		catnip = "[${InteractionKey}] Give Catnip, bababa!",
+		treat = "[${InteractionKey}] Give Treat, bapple!",
+		cuddle = "[${InteractionKey}] Cuddle, bababa!",
+		hug = "[${InteractionKey}] Hug, baboi!",
+
+		feed_active = "Bapple! Feeding Maxwell, baboi!",
+		pet_active = "Tiki-tiki! Petting Maxwell, bababa!",
+		brush_active = "Banana Banana Banana",
+		catnip_active = "Bello Banana Banana",
+		treat_active = "Bello Banana Bello",
+		cuddle_active = "Babo Bananana",
+		hug_active = "Babo Bananana"
 	},
 
 	meth = {
@@ -9656,7 +9708,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		no_warnings = "No booboos",
 		not_shown_warnings = "${count} more booboos not shown",
 		system_issuer = "System",
-		add_warning_title = "Add Booboo",
+		add_note_title = "Add Banana",
 		message_placeholder = "${playerName} did oopsie...",
 
 		type_note = "Banana",
@@ -9667,7 +9719,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		button_cancel = "Nopa",
 		button_add = "Poopaye!",
 		button_close = "Baboi",
-		button_new = "Tulaliloo",
+		button_new = "Banana Banana",
+
+		ping = "Banana ${ping}ms",
+		fps = "Banana ${fps}fps",
+		playtime = "Banana ${time} played",
 
 		invalid_server_id = "Invalido server id.",
 
@@ -10369,17 +10425,15 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		invincibility_inactive_dead = "Invincibility: ~g~Bee do!~w~ (dead)",
 		invincibility_inactive = "Invincibility: ~g~Bee do!~w~",
 
-		health_ok = "Health: ~g~${health} / ${maxHealth}~w~ Banana!",
-		health_bad = "Bello: ~r~${health} / ${maxHealth}~w~",
+		health_ok = "Bello Bello: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
+		health_bad = "Bello Bello: ~r~${health} / ${maxHealth}~w~ - ${percentage}",
 
-		armor_ok = "Banana: ~g~${armor} / ${maxArmor}~w~",
-		armor_bad = "Banana: ~r~${armor} / ${maxArmor}~w~",
+		armor_ok = "Bello Bello: ~g~${armor} / ${maxArmor}~w~ - ${percentage}",
+		armor_bad = "Bello: ~r~${armor} / ${maxArmor}~w~ - ${percentage}",
 
 		vehicle_health = "Vehicle Health: ${percentage}%. Me want? Me want!",
 
-		speed = "Bananina: ${speed}${unit}",
-		speed_mph = "mph",
-		speed_kmh = "kmh",
+		speed = "Bello: ${speed}",
 
 		exit_spectate = "Baboi! Press ~g~${InteractionKey}~w~ to exit spectator mode",
 
@@ -10895,7 +10949,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		set_ocean_scaler_no_permission = "Ahhh...The player did not have the required permission to set the ocean scaler. Nah nah nah nah nah!.",
 
 		tsunami_started = "Bananaaa! Tsunami started. It will take ${minutes} minutes to flood the map.",
-		tsunami_stopped = "Bananaaaa stopped."
+		tsunami_stopped = "Bananaaaa stopped.",
+
+		toggle_tsunami_no_permissions = "No able to toggle the tsuanmi, sorry."
 	},
 
 	tuner_shop = {
@@ -11111,6 +11167,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		flipped_vehicle_logs_title = "Flipped Vehicle",
 		flipped_vehicle_logs_details = "${consoleName} flipped a vehicle.",
 		failed_to_find_ground = "Bello, failed to find ground, teleported you to the closest road.",
+
+		knots = "banana",
+		mph = "mph",
+		kmh = "km/h",
 
 		time_in = "in ${time} ${unit}",
 		time_ago = "${time} ${unit} ago"

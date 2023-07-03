@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 16 (do not change)
+-- AUTO LOCALES: 17 (do not change)
 
 OP.Global.Locales.Languages["meme-pirate"] = {
 	-- configuration settings for language
@@ -96,11 +96,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		model_name_not_provided = "Ye didn't provide a name for the model.",
 		model_name_invalid = "The name '${modelName}' be an invalid one for our ship.",
-		failed_to_spawn_vehicle = "Aye, we be havin' trouble executin' the `/spawn_vehicle` command.",
-		spawned_vehicle_for_player = "We be successful in spawnin' the `${modelName}` for ${consoleName}.",
+		failed_to_spawn_vehicle = "Failed to hoist vessel, arrr!",
+		spawned_vehicle_for_player = "Successfully hoisted `${modelName}` for ${displayName}, arrr!",
 		spawned_vehicle_for_everyone = "We be successful in spawnin' the `${modelName}` for all o' yer mateys.",
-		spawn_vehicle_for_player_not_staff = "Arrr! Th' scallywag tried t' summon a vessel fer someone else, but they didn't have th' proper permissions t' do so.",
-		spawn_vehicle_for_self_not_staff = "Blimey! Th' player tried t' summon a vessel fer themselves, but they didn't have th' proper permissions t' do so.",
+		spawn_vehicle_no_permissions = "Bilge rat attempted to hoist a vessel but didn't have the required permissions to do so, arrr!",
 		replace_vehicle_no_permissions = "Avast! Th' player tried t' replace their vessel, but they didn't have th' proper permissions t' do so.",
 		create_vehicle_no_permissions = "Shiver me timbers! Th' player tried t' make a vessel, but they didn't have th' proper permissions t' do so.",
 		spawned_vehicle_for_self_title = "Spawned Ship",
@@ -1907,13 +1906,13 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		position_command_parameter_label_help = "Aye optional label t' be stored wit' th' position.",
 		position_command_substitutes = "pos, coords",
 
+		copy_ground_command = "copy_ground",
+		copy_ground_command_help = "Copy the land coordinates of yer current position to yer clipboard, arrr!",
+		copy_ground_command_substitutes = "ground",
+
 		save_commands_list_command = "save_commands_list",
 		save_commands_list_command_help = "Saves a list o' all available op-fw commands.",
 		save_commands_list_command_substitutes = "",
-
-		save_vehicle_data_command = "save_vehicle_data",
-		save_vehicle_data_command_help = "Saves a bunch o' data about vessels.",
-		save_vehicle_data_command_substitutes = "",
 
 		draw_radius_command = "draw_radius",
 		draw_radius_command_help = "Draw a radius.",
@@ -2268,6 +2267,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		gun_trader_debug_command = "gun_trader_debug",
 		gun_trader_debug_command_help = "Draws a scroll on th' gun traders current location.",
 		gun_trader_debug_command_substitutes = "",
+
+		unlock_gun_trader_command = "unlock_gun_trader",
+		unlock_gun_trader_command_help = "Instantly unlocks the blunderbuss trader, arrr!",
+		unlock_gun_trader_command_substitutes = "",
 
 		-- game/gas_masks
 		gas_debug_command = "gas_debug",
@@ -3361,6 +3364,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		entity_states_command_parameter_network_id_help = "Th' network id o' th' entity, matey.",
 		entity_states_command_substitutes = "",
 
+		draw_entity_states_command = "draw_entity_states",
+		draw_entity_states_command_help = "Shows all entities with 1 or more states.",
+		draw_entity_states_command_substitutes = "",
+
 		-- illegal/corner
 		corner_command = "keelhaul",
 		corner_command_help = "Peddle grog to a nearby scallywag. The grog ye sell be based on the location ye be in.",
@@ -3415,7 +3422,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		pd_impound_command = "bilge_rat_impound",
 		pd_impound_command_help = "This commands impounds a scallywag's vessel for a certain period o' time.",
 		pd_impound_command_parameter_minutes = "minutes",
-		pd_impound_command_parameter_minutes_help = "For how long the vessel should be impounded (between 1 minute and 12 hours).",
+		pd_impound_command_parameter_minutes_help = "Fer how long the vessel should be impounded (between 1 minute and 48 hours).",
 		pd_impound_command_substitutes = "",
 
 		dispatch_command = "dispatch",
@@ -4709,6 +4716,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		outfit_failed = "Failed to apply me outfit.",
 		missing_outfit = "Missing me outfit.",
 		missing_outfit_name = "Missing me outfit name.",
+		invalid_outfit = "Invalid outfit, matey.",
 		no_nearby_clothing_spot = "No clothin' spot nearby.",
 		trunk_closed = "The trunk be closed.",
 		trunk_too_far = "Ye be too far away from the trunk.",
@@ -4739,6 +4747,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		loading_model = "Loadin' matey model...",
 		loading_spawn = "Spawning pirate ped...",
+		loading_preload_data = "Preloadin' ped data...",
 		loading_set_data = "Settin' pirate data...",
 		loading_tattoos = "Settin' tattoos...",
 		loading_finalize = "Finalizin'..."
@@ -5277,6 +5286,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		crafted_multi_tool = "Crafted multi tool, arr!",
 		failed_craft_multi_tool = "Failed t' craft multi tool, me hearty.",
 
+		mix_grimace_shake = "Mix Grimace Shake",
+		press_to_mix_grimace_shake = "[${SeatEjectKey}] Mix Grimace Shake",
+		mixing_grimace_shake = "Mixing Grimace Shake",
+		mixed_grimace_shake = "Mixed grimace shake.",
+		failed_mix_grimace_shake = "Failed to mix grimace shake, arrr!",
+
 		no_required_items = "Yer missing some important loot.",
 
 		debug_multi = "-Multin' Outputs-",
@@ -5293,7 +5308,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 	creation = {
 		turn_right = "Turn to starboard!",
-		turn_left = "Portside, mate!"
+		turn_left = "Portside, mate!",
+		toggle_light = "Toggle Light, me hearties!"
 	},
 
 	creation_menu = {
@@ -5605,7 +5621,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		state_seal_three = "Any unathorized use be subject t' heavy penalty under 13 S.A. Pen. Code 502(a).",
 
 		kmh = "knots/hour",
-		mph = "knots/hour",
+		mph = "knots",
 
 		set_unit_id_to = "Yer unit ID has now been set t' ${unitId}.",
 		reset_unit_id = "Yer unit ID has now been reset.",
@@ -5875,7 +5891,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		floor_containment = "Containment Room (Watch yer step)",
 
-		doj_office = "DOJ Office Matey"
+		doj_office = "DOJ Office Matey",
+
+		used_elevator_logs_title = "Used Elevator, me matey",
+		used_elevator_logs_details = "Arr, ${consoleName} used the elevator ${elevatorId} to sail to floor `${floor}`."
 	},
 
 	emails = {
@@ -6052,6 +6071,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		disabled_freecam = "Disabled freecam, ye scallywag.",
 		freecam_failed = "Shiver me timbers! Failed to enable th' freecam. Do ye have noclip or similar enabled?",
 
+		freecam_no_dead = "Ye cannot enable freecam while down, me bucko.",
+
 		freecam_logs_title = "Toggled me Freecam",
 		freecam_on_logs_details = "${consoleName} toggled their freecam on, arrr.",
 		freecam_off_logs_details = "${consoleName} toggled their freecam off, aye.",
@@ -6092,6 +6113,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		shake_tree = "Press ~INPUT_CONTEXT~ to shake the tree.",
 		shaking_tree = "Shakin' Tree",
+
+		extract_rubber = "Press ~INPUT_CONTEXT~ to extract rubber from the tree, me hearty.",
+		extracting_rubber = "Extracting Rubber, arrr!",
 
 		tree_klonk = "Somethin' fell from the tree and hit yer noggin."
 	},
@@ -6182,9 +6206,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		press_e_to_talk = "Press ~INPUT_CONTEXT~ to parley with Jim.",
 		trader_closed = "Ahoy! Jim's shop be closed, come back later.",
 
-		sorry_closed = "Ahoy matey, the shop be closed for now.",
+		sorry_closed = "Sorry crew, shop be closed.",
 		sorry_closed_hug = "Thanks fer the hug matey :)",
-		sorry_closed_fight = "Woah, hold yer fire matey, I didn't do nothin'.",
+		sorry_closed_finger = "What the scallywag! Ye be rude!",
+		sorry_closed_kiss = "Blimey, I be not into that...",
+		sorry_closed_dab = "Dab on the scallywags, yo, fr fr on god!",
+		sorry_closed_fight = "Arr matey, chill out, I be not causin' no trouble.",
 
 		trader_locked = "Jim be needin' a few things from ye before he's willin' to open his shop.",
 		unlock_trader = "Provide the item to Jim, arr!",
@@ -6312,8 +6339,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	},
 
 	hud = {
-		mph = "mp/h",
-		kmh = "km/h",
 		knots = "knots",
 		ft = "ft",
 		m = "m",
@@ -6335,6 +6360,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		steps_walked_deaths = "${stepsWalked} yeast-covered planks ~t~/~w~ ${deaths} scallywags sent to Davy Jones' Locker",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Oxygen left: ${timer}, arrr!",
+
+		alignment_warning_title = "HUD Ahoy",
+		alignment_warning = "Yarrr HUD be partially off-screen. Ye can adjust it by reducin' th' \"*Safezone Size*\" in yer \"*Display*\" settings.",
 
 		muted = "Silenced, arrr!",
 
@@ -6365,7 +6393,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		hold_to_skin = "[${InteractionKey}] Arrr! Hold to skin",
 		skinning_animal = "Ahoy! Skinning dead animal",
 		meat_too_damaged = "Shiver me timbers! This animal's meat be too damaged.",
-		animal_is_being_skinned = "The animal be being skinned."
+		animal_is_being_skinned = "The animal be being skinned.",
+
+		skinned_logs_title = "Skinned Beastie",
+		skinned_logs_details = "${consoleName} skinned a beastie (${modelName}) and obtained ${skinnedItems}.",
+		received_nothing = "nuthin'"
 	},
 
 	identification = {
@@ -7234,6 +7266,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		lean = "Sip-sip, pass",
 		lean_description = "Sippin' on some sizzurp, sip, sippin' on some, sip.",
+
+		grimace_shake = "Grimace Shake",
+		grimace_shake_description = "Crazy? I was crazed once. They put me in a room. A rubber room. A rubber room with rats. And rats make me crazed. Crazed? I was crazed once. They put me in a room. A rubber room. A rubber room with rats. And rats make me crazed. Crazed? I was crazed once. They put me in a room. A rubber room. A rubber room with rats. And rats make me crazed. Crazed? I was crazed once. They put me in a room. A rubber room. A rubber room with rats. And rats make me crazed. Crazed? I was crazed once.....",
 
 		jolly_ranchers = "Jolly Cattle Rustlers",
 		jolly_ranchers_description = "Indulge in the sweet and tangy flavors of Jolly Ranchers, the classic hard candies that burst with fruity goodness, me hearty.",
@@ -8117,9 +8152,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		weapon_addon_berserker = "Berserker",
 		weapon_addon_berserker_description = "Cool axe, me matey!",
 
-		weapon_addon_katana = "Katana",
-		weapon_addon_katana_description = "Ninja, aye!",
-
 		weapon_addon_stidvc = "STI DVC 2011",
 		weapon_addon_stidvc_description = "The future be now old salt, just in a smaller caliber...",
 
@@ -8170,7 +8202,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		lockpicking_succeeded = "Lockpickin' Successful.",
 		hotwiring_vehicle = "Hotwirin' Vessel",
 		lockpick_broke = "Lockpick Be Shiverin'",
-		failed_hotwire = "Failed Hotwirin'",
+		failed_hotwire = "Ye failed to hotwire the vessel, maybe try using some better tools, matey?",
 		unpacking_green_rolls = "Unpackin' Green Rolls",
 		you_do_not_have_enough_rolling_paper = "Ye do not have enough Rollin' Paper.",
 		rolling_joint = "Rollin' Joint",
@@ -8413,6 +8445,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		refresh = "Refresh",
 		refreshing = "Refreshin'...",
 
+		avoid_repeating_letters = "Arrr, try to be avoidin' lots of repeatin' letters in yer first and/or last name.",
+
 		missing_character_creation_data = "Arrr, missin' character creation data.",
 		invalid_first_name = "Arrr, missing or invalid first name (2 to 100 characters).",
 		invalid_last_name = "Arrr, missing or invalid last name (2 to 100 characters).",
@@ -8561,6 +8595,24 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		no_nearby_vehicle = "Arrr, there be no nearby vessel.",
 		already_checking_upgrades = "Ye be already checkin' a ship's tunes.",
 		engine_is_running = "Arrr! The ship's engine be runnin'."
+	},
+
+	meow = {
+		feed = "[${InteractionKey}] Feed",
+		pet = "[${InteractionKey}] Pet",
+		brush = "[${InteractionKey}] Brush",
+		catnip = "[${InteractionKey}] Give Catnip",
+		treat = "[${InteractionKey}] Give Treat",
+		cuddle = "[${InteractionKey}] Cuddle",
+		hug = "[${InteractionKey}] Hug",
+
+		feed_active = "Feedin' Maxwell",
+		pet_active = "Petting Maxwell",
+		brush_active = "Brushin' Maxwell",
+		catnip_active = "Givin' Maxwell Catnip",
+		treat_active = "Givin' Maxwell a Treat",
+		cuddle_active = "Cuddlin' with Maxwell",
+		hug_active = "Huggin' Maxwell"
 	},
 
 	meth = {
@@ -9656,7 +9708,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		no_warnings = "No warnings, me hearty",
 		not_shown_warnings = "Arrr! ${count} more not shown",
 		system_issuer = "The ship",
-		add_warning_title = "Add a Warning",
+		add_note_title = "Add Note",
 		message_placeholder = "Ahoy! ${playerName} made an oopsie...",
 
 		type_note = "Take heed",
@@ -9667,7 +9719,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		button_cancel = "Avast! Cancel",
 		button_add = "Add to the booty",
 		button_close = "Shut the port",
-		button_new = "Hoist a new sail",
+		button_new = "New Note",
+
+		ping = "${ping}ms",
+		fps = "${fps}fps",
+		playtime = "${time} played",
 
 		invalid_server_id = "Belay that! Invalid ship id.",
 
@@ -10369,17 +10425,15 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		invincibility_inactive_dead = "Invincibility: ~g~Inactive~w~ (dead)",
 		invincibility_inactive = "Invincibility: ~g~Inactive~w~",
 
-		health_ok = "Health: ~g~${health} / ${maxHealth}~w~",
-		health_bad = "Health: ~r~${health} / ${maxHealth}~w~",
+		health_ok = "Health: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
+		health_bad = "Health: ~r~${health} / ${maxHealth}~w~ - ${percentage}",
 
-		armor_ok = "Armor: ~g~${armor} / ${maxArmor}~w~",
-		armor_bad = "Armor: ~r~${armor} / ${maxArmor}~w~",
+		armor_ok = "Armor: ~g~${armor} / ${maxArmor}~w~ - ${percentage}",
+		armor_bad = "Armor: ~r~${armor} / ${maxArmor}~w~ - ${percentage}",
 
 		vehicle_health = "Ship Health: ${percentage}",
 
-		speed = "Speed: ${speed}${unit}",
-		speed_mph = "kno",
-		speed_kmh = "kph",
+		speed = "Speed: ${speed}",
 
 		exit_spectate = "Press ~g~${InteractionKey}~w~ to abandon landlubber watch",
 
@@ -10895,7 +10949,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		set_ocean_scaler_no_permission = "Thar swabbie did not have thar required permission to set thar ocean scaler.",
 
 		tsunami_started = "Tsunami started. It will take ${minutes} minutes to flood the map, ye scallywag.",
-		tsunami_stopped = "Arrr, the mighty tsunami be stopped."
+		tsunami_stopped = "Arrr, the mighty tsunami be stopped.",
+
+		toggle_tsunami_no_permissions = "Attempted to toggle the tsuanmi without proper permissions."
 	},
 
 	tuner_shop = {
@@ -11111,6 +11167,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		flipped_vehicle_logs_title = "Flipped Ship",
 		flipped_vehicle_logs_details = "${consoleName} flipped a ship.",
 		failed_to_find_ground = "Failed to find ground, teleported ye to the closest road.",
+
+		knots = "knots",
+		mph = "m'ph",
+		kmh = "km/h",
 
 		time_in = "in ${time} ${unit}",
 		time_ago = "${time} ${unit} ago"
