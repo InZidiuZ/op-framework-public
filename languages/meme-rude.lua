@@ -9979,11 +9979,11 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		no_paper = "You ain't got no goddamn paper.",
 		invalid_url = "Fuckin' Invalid Image URL.",
 		invalid_domain = "This goddamn domain ain't allowed.",
-		print = "F\*\*king Print",
-		printing = "F\*\*king Printing...",
+		print = "F**king Print",
+		printing = "F**king Printing...",
 
-		printed_logs_title = "F\*\*king Printed Image",
-		printed_logs_details = "${consoleName} f\*\*king printed an image with the f\*\*king URL `${url}`."
+		printed_logs_title = "F**king Printed Image",
+		printed_logs_details = "${consoleName} f**king printed an image with the f**king URL `${url}`."
 	},
 
 	prop_hide = {
@@ -11715,7 +11715,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		belt_is_on_and_vehicle_is_locked = "Put on your belt, cause' we're driving fast, baby! And the vehicle is locked, so you can't escape this ride.",
 		belt_is_on = "Your fucking belt is on, genius.",
 		vehicle_is_locked = "The damn vehicle is fuckin' locked, dipshit.",
-		belt_warning = "Put on your f\*\*king seatbelt, press ~INPUT_SPECIAL_ABILITY_SECONDARY~ to f\*\*king buckle up.",
+		belt_warning = "Put on your f**king seatbelt, press ~INPUT_SPECIAL_ABILITY_SECONDARY~ to f**king buckle up.",
 
 		nearest_player_not_vehicle = "The closest motherfucker ain't even in a damn vehicle.",
 		no_dead_player_nearby = "There ain't no dead-ass player in a damn car near your worthless ass.",
