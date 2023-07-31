@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 17 (do not change)
+-- AUTO LOCALES: 18 (do not change)
 
 OP.Global.Locales.Languages["meme-yoda"] = {
 	-- configuration settings for language
@@ -17,10 +17,12 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		warning = "Careful you must be",
 		invalid_input = "Invalid Input, this is",
 		missing_input = "Missing Input, you have",
+		missing_or_invalid_input = "Input, missing or invalid, is.",
 		player_not_found = "With server ID `${serverId}`, player you seek, found not, hmmm",
 		something_went_wrong = "Something went wrong, hmmm. Please, try again you must",
 		yes = "Yes, hmmm",
-		no = "No, hmmm"
+		no = "No, hmmm",
+		n_a = "N/A, it is."
 	},
 
 	-- animations/*
@@ -178,10 +180,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		announcement_logs_details = "Broadcasted by ${consoleName}, this message was, to the entire server: `${announcementMessage}`, hmmm",
 		announcement_not_admin = "Post a staff announcement, you cannot, hmmm.",
 
-		announcement_maintenance = "Going down, the server is, for maintenance in ${minutes} minutes, hmmm.",
-		announcement_update = "Going down, the server is, for update in ${minutes} minutes, hmmm.",
-		announcement_restart = "Going down, server will be, in ${minutes} minutes for a restart, hmm.",
-
 		posted_announcement = "Announcement message, posted it has.",
 		posted_announcement_locale = "Announcement message, posted it has from locale.",
 		failed_to_post_announcement = "Failed to post announcement message, as no message was added, hmm.",
@@ -221,7 +219,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		missing_valid_license_identifier_parameter = "Valid 'licenseIdentifier' parameter, missing it is.",
 
 		illegal_entity_wipe = "Wipe entities, permissions you have not.",
-		wiped_entities = "Entities wiped, hmmm.",
+		wiped_entities = "Entities wiped. ${deletedEntities} networked entities, deleted, have been.",
 		wipe_entities_logs_title = "Entities Wiped, Logs",
 		wipe_entities_logs_details = "Entity wipe issued by ${consoleName} with the following configuration: distance = `${distance}`, ignoreLocalEntities = `${ignoreLocalEntities}`, modelName = `${modelName}`. Hmmm.",
 
@@ -284,13 +282,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		staff_feature_unavailable = "Unavailable, this feature is while your staff availability is toggled off.",
 
-		failed_toggle_tracker = "Failed to toggle player tracker, hmmm.",
-		unable_track_player = "Track player, unable to, hmmm.",
-		success_enable_tracker = "Player tracker for ${playerName}, successfully enabled it has.",
-		success_disable_tracker = "Player tracker, successfully disabled it is.",
-		not_tracking_player = "A player, you are not tracking.",
-		already_tracking_player = "Tracking a player, you already are.",
-
 		toggle_player_track_no_permissions = "Proper permissions, you do not have to toggle player tracking, hmmm.",
 		set_job_no_permissions = "Set a job, without proper permissions you tried, hmmm.",
 		toggle_reflection_no_permissions = "Without proper permissions, toggle damage reflection you have attempted.",
@@ -307,8 +298,18 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		headache_logs_details = "${consoleName} has triggered a headache for ${targetConsoleName}.",
 		trigger_headache_no_permissions = "Proper permissions, you do not have. Attempt to trigger a headache failed it has.",
 
+		super_jump_logs_title = "Super Jump Toggled",
+		super_jump_logs_details_on = "Super jump, toggled on, ${consoleName} has.",
+		super_jump_logs_details_off = "Super jump, toggled off, ${consoleName} has.",
+		toggle_super_jump_no_permissions = "Super jump, their attempt to toggle, without proper permissions it was.",
+
 		success_trigger_headache = "Headache for ${playerName}, successfully triggered it has been.",
 		failed_trigger_headache = "Fail to trigger a headache, it did.",
+
+		set_spawn_success = "Spawn point, fixed to your current position, is now.",
+		set_spawn_failed = "Failed, set spawnpoint, I have.",
+		reset_spawn_success = "Successfully, spawnpoint reset, we have.",
+		reset_spawn_failed = "Failed, spawnpoint reset, we have.",
 
 		protective_mode_not_staff = "Without proper permissions, toggle the server's protective mode you attempted.",
 		protective_mode_toggled_on = "Enabled, the server's protective mode has been. Required playtime to connect to the server has been set to `${playtime}`.",
@@ -345,8 +346,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		no_nearby_vehicles_off = "'No Nearby Vehicles' toggled off, it is.",
 		speed_up_progress_bar_on = "'Speed Up Progress Bar' toggled on, it is.",
 		speed_up_progress_bar_off = "'Speed Up Progress Bar' toggled off, it is.",
-		invisibility_on = "'Invisibility' toggled on, it is.",
-		invisibility_off = "'Invisibility' toggled off, it is.",
 		wallhack_on = "'Wallhack' toggled on, it is.",
 		wallhack_off = "'Wallhack' toggled off, it is.",
 		aimbot_on = "Toggled 'Aimbot' On, I have.",
@@ -428,6 +427,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		fortnite_feature = "Fortnite, we play.",
 		reflection_feature = "Damage Reflection",
 		stable_cam_feature = "Cam Stable, toggled it shall be.",
+		super_jump_feature = "Super Jump, feature this is.",
+		server_id_hidden_feature = "Server-ID, hidden, feature this is.",
+		fake_disconnect_feature = "Fake-DC, feature this is.",
 
 		you_are_not_in_a_vehicle = "Not in a vehicle, you are.",
 		repaired_vehicle = "Repaired the vehicle, I have.",
@@ -710,37 +712,59 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		text_entry_ban = "Inspecting Element, not permitted it is on this browser.",
 		thermal_night_vision_ban = "Allowed, Brighter Nights, it is not.",
 		vehicle_modification_ban = "Headlight fluid for your car, find, you could not.",
-		vehicle_spam_ban = "Win, counter terrorists do.",
 		vehicle_spawn_ban = "Redstone on a minecart you tried to use, but powered rails have you not.",
 		weapon_spawn_ban = "Pulled a rabbit out of the hat, attempted you did; found a bazooka instead, you did.",
 		high_damage_ban = "Too strong, the force within you is. Disrupting balance of our realm, you are.",
 		suspicious_explosion_ban = "Sorry, a Michael Bay film, this is not. Excessive use of pyrotechnics, not permitted it is.",
 		semi_godmode_ban = "Disrupted the natural flow of time, your insistence on the fountain of youth has. Fun eternity is not, as it sounds.",
 		invalid_health_ban = "A bit too much spinach, your health bar seems to have had, Popeye.",
+		clear_tasks_ban = "Not a Jedi mind trick training center, this is. Your efforts to influence free will, noted they are... and rejected.",
+		projectile_event_ban = "Not Hogwarts, this is. Not Harry Potter, you are. The indiscriminate casting of spells - or projectiles - not allowed here.",
+		illegal_native_ban = "A spell that you haven't learned yet, you can't use...",
+
+		type_aimbot = "Aimbot, it is",
+		type_bad_creation = "Bad Creation, this is",
+		type_bad_screen_word = "Bad Screen Word, it is",
+		type_blacklisted_command = "Blacklisted Command, this is",
+		type_clear_tasks = "Tasks clear, they are",
+		type_damage_modifier = "Damage Modifier, it is",
+		type_distance_taze = "Distance Taze, this is",
+		type_driving_hotwire = "Driving Hotwire, this is",
+		type_fast_movement = "Fast Movement, it is",
+		type_freecam_detected = "Freecam Detected, it is",
+		type_high_damage = "High Damage, it is",
+		type_honeypot = "Honeypot, it is",
+		type_illegal_event = "Illegal Client Event",
+		type_illegal_freeze = "Illegal Freeze",
+		type_illegal_ped_spawn = "Spawned Ped",
+		type_illegal_server_event = "Illegal Server Event",
+		type_illegal_vehicle_modifier = "Vehicle Modifier",
+		type_illegal_vehicle_spawn = "Spawned Vehicle",
+		type_illegal_weapon = "Weapon Spawn",
+		type_invalid_health = "Invalid Health",
+		type_invincibility = "Invincibility",
+		type_modified_fov = "Modified FOV",
+		type_ped_change = "Ped Change",
+		type_player_blips = "Player Blips",
+		type_projectile_event = "Projectile Event",
+		type_runtime_texture = "Texture of the Runtime",
+		type_semi_godmode = "Semi-Godmode",
+		type_spawned_object = "Object that was Spawned",
+		type_spectate = "Spectate",
+		type_spiked_resource = "Resource that Spiked",
+		type_suspicious_explosion = "Suspicious Explosion",
+		type_text_entry = "Text Entry",
+		type_thermal_night_vision = "Thermal/Night Vision",
+		type_vehicle_modification = "Modification of the Vehicle",
+		type_illegal_native = "Illegal Native Call",
+
+		event_prefix = "${type} Events:",
 
 		mp_f_freemode_01_label = "Freemode, female is.",
 		mp_m_freemode_01_label = "Freemode, male is.",
 		player_one_label = "Franklin, you are.",
 		player_two_label = "Trevor, you are.",
 		player_zero_label = "Michael, you are.",
-
-		notification_distance_taze = "Anti-Cheat: ${displayName} tazed someone over a very large distance (${distance}m), ${thisIs}.",
-		notification_bad_screen_word = "Anti-Cheat: ${displayName} has ${count} trigger word(s) on their screen, ${thisIs}.",
-		notification_suspicious_explosion = "Anti-cheat, ${displayName} has triggered a ${explosionType} explosion, hmmm (~${distance}m).",
-
-		notification_freecam_detected = "Anti-Cheat, detected a freecam has been, hmmm",
-		notification_illegal_vehicle_modifier = "Anti-Cheat, illegal modification to vehicle, detected it has",
-		notification_illegal_vehicle_spawn = "Anti-Cheat: Vehicle spawned it has.",
-		notification_fast_movement = "Anti-Cheat, detected fast movement, hmmm",
-		notification_illegal_freeze = "Anti-Cheat, illegal freeze, detected it has",
-		notification_invincibility = "Anti-Cheat, detected invincibility, hmmm",
-		notification_vehicle_modification = "Anti-Cheat, detected vehicle modification, hmmm",
-		notification_damage_modifier = "Anti-Cheat, detected damage modifier, hmmm",
-		notification_illegal_weapon = "Anti-Cheat, illegal weapon detected, hmmm",
-		notification_spawned_object = "Anti-Cheat: Object Spawned, hmmm",
-		notification_driving_hotwire = "Anti-Cheat: Driving while hotwire, reckless you are",
-		notification_semi_godmode = "Anti-Cheat: Semi-Godmode, this is.",
-		notification_invalid_health = "Anti-Cheat: Invalid Health, it is.",
 
 		ig_orleans_label = "Sasquatch, he is",
 		u_m_m_jesus_01_label = "Jesus, be with you",
@@ -770,29 +794,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		fast_movement_warning = "Flagged for moving too fast, you have been! To a developer, let know, you must. Cause of it, tell them too. This chat message, you should not receive.",
 		invincibility_warning = "Flagged for being invincible, you have been! To a developer, let know, you must. Cause of it, tell them too. This chat message, you should not receive.",
 		damage_modifier_warning = "Flagged for having an invalid damage modifier, you have been! To a developer, let know, you must. Cause of it, tell them too. This chat message, you should not receive.",
-		freeze_warning = "Frozen, you have been flagged for. Not supposed to be frozen, you are! Inform a developer and disclose what you were doing that caused this, you must. This message, you should not be receiving.",
-
-		distance_taze_screenshot = "Anti-Cheat, it is: Distance Taze (${distance}m)",
-		spectating_screenshot = "Anti-Cheat, it is: Spectating",
-		fast_movement_screenshot = "Anti-Cheat, it is: Fast Movement",
-		illegal_freeze_screenshot = "Anti-Cheat, it is: Illegal Freeze",
-		illegal_vehicle_modifier_screenshot = "Anti-Cheat, it is: Vehicle Modifier (${modifierName} = ${modifierValue})",
-		damage_modifier_screenshot = "Anti-Cheat: Modifier of damage invalid (${activeModifier}/${currentModifier})",
-		illegal_weapon_screenshot = "Anti-Cheat: Weapon spawned illegal (${weaponLabel})",
-		illegal_vehicle_spawn_screenshot = "Anti-Cheat: Vehicle spawned illegal (${modelName})",
-		vehicle_modification_screenshot = "Anti-Cheat: Vehicle modified (${types})",
-		thermal_night_vision_screenshot = "Anti-Cheat: Vision of thermal/night (${nativeName})",
-		text_entry_screenshot = "Anti-Cheat: Text entry (${textEntry})",
-		player_blips_screenshot = "Anti-Cheat: Blips of players",
-		modified_fov_screenshot = "Anti-Cheat, FOV modified, it has been. (${fov})",
-		ped_change_screenshot = "Anti-Cheat, illegal Ped change, detected it has.",
-		invincibility_screenshot = "Anti-Cheat, invincible, you are.",
-		runtime_texture_screenshot = "Anti-Cheat, runtime texture (${textureDict}, ${textureName}) detected it has.",
-		bad_screen_word_screenshot = "Anti-Cheat, bad screen word (${words}) detected it has.",
-		freecam_detected_screenshot = "Anti-Cheat: Detected Freecam, it has.",
-		driving_hotwire_screenshot = "Anti-Cheat, driving while hotwire, you were.",
-		semi_godmode_screenshot = "Anti-Cheat: Semi-Godmode, this is.",
-		invalid_health_screenshot = "Anti-Cheat: Invalid Health, detected it was."
+		freeze_warning = "Frozen, you have been flagged for. Not supposed to be frozen, you are! Inform a developer and disclose what you were doing that caused this, you must. This message, you should not be receiving."
 	},
 
 	authentication = {
@@ -905,8 +907,21 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		sit_command = "sit, attempt to",
 		sit_command_help = "On a nearby chair, sit down you will try.",
 		sit_command_parameter_variation = "variation, what animation",
-		sit_command_parameter_variation_help = "(1-6), play you want",
+		sit_command_parameter_variation_help = "Help with choosing a sit animation (1 - 6).",
 		sit_command_substitutes = "chair",
+
+		-- animations/couches
+		sleep_command = "snooze",
+		sleep_command_help = "Attempt to snooze on nearby couch or ground.",
+		sleep_command_parameter_variation = "variation",
+		sleep_command_parameter_variation_help = "What variation of snooze animation to play (1 - 2).",
+		sleep_command_substitutes = "lay_down",
+
+		couch_offset_command = "couch_offset",
+		couch_offset_command_help = "Copy the offset to a nearby couch of a specific model.",
+		couch_offset_command_parameter_model_name = "model name",
+		couch_offset_command_parameter_model_name_help = "The model name of the couch to copy the offset of.",
+		couch_offset_command_substitutes = "",
 
 		-- animations/emotes
 		ragdoll_command = "ragdoll, fall like a Jedi you will",
@@ -1111,12 +1126,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		infinite_ammo_command_help = "Toggles infinite ammo.",
 		infinite_ammo_command_substitutes = "",
 
-		track_player_command = "player track",
-		track_player_command_help = "Tracker for certain player toggles. Hmmm.",
-		track_player_command_parameter_server_id = "server id",
-		track_player_command_parameter_server_id_help = "ID of player you want to track. Leave blank to disable, yes.",
-		track_player_command_substitutes = "",
-
 		reflect_damage_command = "reflect_damage",
 		reflect_damage_command_help = "Damage reflection toggles. (Anyone who damages you will be damaged themselves)",
 		reflect_damage_command_substitutes = "reflection",
@@ -1126,6 +1135,18 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		trigger_headache_command_parameter_server_id = "Server ID, you must provide",
 		trigger_headache_command_parameter_server_id_help = "The player's server ID, you are wanting to trigger a headache for.",
 		trigger_headache_command_substitutes = "Headache, you may",
+
+		super_jump_command = "jumptastic",
+		super_jump_command_help = "Your super-jump, toggles it.",
+		super_jump_command_substitutes = "",
+
+		set_spawnpoint_command = "set_spawnpoint",
+		set_spawnpoint_command_help = "Always be your current position, sets your characters spawnpoint.",
+		set_spawnpoint_command_substitutes = "set_spawn",
+
+		reset_spawnpoint_command = "reset_spawnpoint",
+		reset_spawnpoint_command_help = "Using /set_spawnpoint, reset your characters spawnpoint.",
+		reset_spawnpoint_command_substitutes = "reset_spawn",
 
 		stick_command = "stick",
 		stick_command_help = "Stick to the car, you must.",
@@ -1158,12 +1179,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		speed_up_progress_bar_command_parameter_server_id = "server id",
 		speed_up_progress_bar_command_parameter_server_id_help = "If for another you want to toggle the 'speed up progress bar', their server id here insert.",
 		speed_up_progress_bar_command_substitutes = "speed_up",
-
-		invisibility_command = "invisibility",
-		invisibility_command_help = "Toggle the power of 'invisibility', you can.",
-		invisibility_command_parameter_server_id = "server id",
-		invisibility_command_parameter_server_id_help = "Insert the server id of another player if you wish to toggle their 'invisibility'.",
-		invisibility_command_substitutes = "inv, invis, invisible",
 
 		add_cash_command = "add_cash",
 		add_cash_command_help = "Adds cash to a character.",
@@ -1673,6 +1688,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		bed_command_help = "Nearest bed, attempt to lay down in.",
 		bed_command_substitutes = "",
 
+		-- game/bills
+		create_bill_command = "create_bill",
+		create_bill_command_help = "Another player bill a certain amount of money, you can.",
+		create_bill_command_substitutes = "bill, player bill",
+
 		-- game/bombs
 		toggle_bombs_command = "toggle_bombs",
 		toggle_bombs_command_help = "Toggles the bombs on your current aircraft.",
@@ -1747,12 +1767,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		cayo_perico_command_substitutes = "",
 
 		-- game/cinema
-		cinema_blacklist_add_command = "cinema_blacklist_add",
-		cinema_blacklist_add_command_help = "To the local cinema blacklist, add a video you can.",
-		cinema_blacklist_add_command_parameter_video_key = "Video key, you must provide.",
-		cinema_blacklist_add_command_parameter_video_key_help = "The key of the video, for the video you wish to blacklist, put you must. Example: 'youtube:dQw4w9WgXcQ'",
-		cinema_blacklist_add_command_substitutes = "",
-
 		cinema_screens_debug_command = "cinema_screens_debug",
 		cinema_screens_debug_command_help = "Debug cinema screens, you can.",
 		cinema_screens_debug_command_substitutes = "",
@@ -1976,6 +1990,12 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		move_entity_command_parameter_heading_help = "With the same heading as you, placed the entity should be.",
 		move_entity_command_substitutes = "mv",
 
+		server_entity_command = "server_entity",
+		server_entity_command_help = "Server information about an entity, debugs it does.",
+		server_entity_command_parameter_network_id = "network id",
+		server_entity_command_parameter_network_id_help = "The network id of the entity, it is.",
+		server_entity_command_substitutes = "",
+
 		fake_lag_command = "fake_lag",
 		fake_lag_command_help = "Fake lag, create you can.",
 		fake_lag_command_parameter_counter = "counter",
@@ -2100,11 +2120,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		ped_bone_command_parameter_bone_name_help = "Debug, you want to, the bone name.",
 		ped_bone_command_substitutes = "",
 
-		edit_marker_command = "edit_marker",
-		edit_marker_command_help = "Place or modify, a marker's position this will.",
-		edit_marker_command_parameter_marker_name = "Marker's name, you must input.",
-		edit_marker_command_parameter_marker_name_help = "The marker you want to modify, leave empty to place a new marker, you must.",
-		edit_marker_command_substitutes = "",
+		rotate_marker_command = "rotate_marker",
+		rotate_marker_command_help = "A markers rotation, edit it can.",
+		rotate_marker_command_parameter_marker_name = "marker name",
+		rotate_marker_command_parameter_marker_name_help = "Edit, you want to, the marker.",
+		rotate_marker_command_substitutes = "",
 
 		rectangle_command = "rectangle",
 		rectangle_command_help = "Create, in 3D space, a rectangle this will.",
@@ -2347,6 +2367,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		death_timer_command_parameter_time_help = "The amount of time in seconds you want to set the timer to. To remove the override, leave this blank.",
 		death_timer_command_substitutes = "",
 
+		cpr_command = "cpr",
+		cpr_command_help = "Perform CPR on the nearest ped or player, you will.",
+		cpr_command_substitutes = "",
+
 		-- game/hitmarkers
 		hitmarkers_command = "Hitmarkers, toggle you can.",
 		hitmarkers_command_help = "Toggle hitmarker sounds, this command will turn them on or off it will.",
@@ -2481,6 +2505,13 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		clear_evidence_command_parameter_evidence_id = "Evidence ID, hmmm.",
 		clear_evidence_command_parameter_evidence_id_help = "The ID of the evidence locker you want to clear, hmmm.",
 		clear_evidence_command_substitutes = "",
+
+		-- game/invisibility
+		invisibility_command = "invisibility",
+		invisibility_command_help = "Toggle your invisibility, you can.",
+		invisibility_command_parameter_server_id = "server id",
+		invisibility_command_parameter_server_id_help = "Toggle, you can, someone else's invisibility, if wanting.",
+		invisibility_command_substitutes = "inv, invis, invisible",
 
 		-- game/items
 		clear_map_command = "clear_map",
@@ -2676,14 +2707,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		give_cash_command_parameter_amount = "amount",
 		give_cash_command_parameter_amount_help = "The amount of cash you want to give to the player.",
 		give_cash_command_substitutes = "",
-
-		bill_player_command = "bill_player",
-		bill_player_command_help = "Another player, bill you can with an amount of money.",
-		bill_player_command_parameter_server_id = "server id",
-		bill_player_command_parameter_server_id_help = "The player's server id, determine it you must.",
-		bill_player_command_parameter_amount = "amount",
-		bill_player_command_parameter_amount_help = "The amount of cash you want to bill the player, hmmm.",
-		bill_player_command_substitutes = "bill",
 
 		-- game/notepads
 		notepad_command = "note toggle",
@@ -3021,6 +3044,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		metagame_command_help = "Constant drawing of player's server IDs, toggle.",
 		metagame_command_substitutes = "meta, m",
 
+		hide_server_id_command = "hide_server_id",
+		hide_server_id_command_help = "Hide or unhide, your server id, from above your head, you will.",
+		hide_server_id_command_substitutes = "dontmindme",
+
 		-- game/security_cameras
 		security_cameras_command = "security_cameras",
 		security_cameras_command_help = "Toggle, the security cameras will be.",
@@ -3058,6 +3085,13 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		draw_shroom_areas_command = "draw_shroom_areas",
 		draw_shroom_areas_command_help = "All shroom areas draw, add more we can.",
 		draw_shroom_areas_command_substitutes = "shroom_areas",
+
+		-- game/sound_effects
+		play_sound_command = "play_sound",
+		play_sound_command_help = "A sound effect at your location, plays.",
+		play_sound_command_parameter_sound = "sound",
+		play_sound_command_parameter_sound_help = "The name of the sound effect, you want to play.",
+		play_sound_command_substitutes = "",
 
 		-- game/spying
 		search_for_devices_command = "search_for_devices, we must.",
@@ -3250,6 +3284,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		toggle_voice_mute_command_parameter_server_id = "server id",
 		toggle_voice_mute_command_parameter_server_id_help = "The one you want to mute/unmute, young Jedi.",
 		toggle_voice_mute_command_substitutes = "voice_mute",
+
+		change_voice_mode_command = "change_voice_mode",
+		change_voice_mode_command_help = "'Music' voice input mode, on/off, it toggles. Noise removal and echo cancellation, it will disable, clearer music it allows.",
+		change_voice_mode_command_substitutes = "voice_mode",
 
 		-- game/wizard
 		wizard_command = "wizard",
@@ -3702,6 +3740,12 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		version = "Version, hmm"
 	},
 
+	couches = {
+		model_not_found = "Model name, invalid it is.",
+		object_not_found = "Near you, object of that model not found, it is.",
+		offset_copied = "Copied, the offset has been."
+	},
+
 	discord = {
 		one_player = "1 player, there is",
 		multiple_players = "${playerAmount} players, there are",
@@ -3776,22 +3820,36 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	restart = {
-		restart_30_minutes = "In 30 minutes, the server will restart!",
-		restart_15_minutes = "In 15 minutes, the server will restart!",
-		restart_10_minutes = "In 10 minutes, the server will restart!",
-		restart_5_minutes = "In 5 minutes, the server will restart!",
-		restart_3_minutes = "In 3 minutes, the server will restart!",
-		restart_2_minutes = "In 2 minutes, the server will restart!",
-		restart_1_minute = "In 1 minute, restart the server will!",
+		announcement_restart = "In ${minutes} minutes, the server will restart.",
+		announcement_restart_one_minute = "In 1 minute, the server will restart.",
+
+		announcement_update = "${minutes} minutes, for an update, the server will be going down.",
+		announcement_update_one_minute = "For an update, in 1 minute, the server will be going down.",
+
+		announcement_maintenance = "${minutes} minutes, for maintenance, the server will be going down.",
+		announcement_maintenance_one_minute = "In 1 minute for maintenance, the server will be going down, hmmm?",
+
+		restart_cancelled = "Cancelled, the server restart has been.",
+
 		server_restarting = "Restarting, the server is. In a few minutes, rejoin, you may.",
+
 		executed_restart_command = "The restart command, executed it has.",
-		already_executed_restart_command = "Already executed, the restart command has been."
+		already_executed_restart_command = "Already executed, the restart command has been.",
+		restart_planned_earlier = "There is a restart planned earlier than the given time, hmm?",
+		no_restart_planned = "Planned, there is no restart.",
+		posted_restart_warning_message = "Posted, a restart warning message has been.",
+		cancelled_restart = "Restart, cancelled it has."
 	},
 
 	routes = {
 		route_not_found = "Route ${route} not found, it is.",
 		route_restricted = "Route ${route} is restricted, it is.",
 		internal_server_error = "Internal server error, there is."
+	},
+
+	twitch = {
+		streaming_state_already_set_to_target = "Already set to the target state provided, the user's streaming state is, hmmm?",
+		streaming_state_changed = "Changed, the user's streaming state has to the target state provided."
 	},
 
 	users = {
@@ -4367,6 +4425,44 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		press_to_leave_bed = "Press ~INPUT_CONTEXT~ to leave the bed, hmmm."
 	},
 
+	bills = {
+		select_player = "Player Select",
+		no_nearby_players = "Billable players near you, there are none.",
+
+		amount = "Amount",
+		reason = "Reason",
+		bill_title = "New Bill received",
+		sender = "Sender",
+		amount = "Amount",
+		reason = "Reason",
+		no_receipt = "No Receipt",
+		yes_receipt = "Receipt",
+		tip = "Tip",
+		none = "None",
+
+		close = "Close",
+		back = "Back",
+		send = "Send",
+		pay = "Pay",
+
+		receipt = "Receipt (${name})",
+		receipt_text = "Bill from ${name}\n\nAmount: $${amount}\nReason: ${reason}",
+
+		invalid_player = "Player is offline or too far away, they are.",
+		bill_created = "Successfully sent bill, $${amount} to ${name} I have.",
+		failed_create_bill = "Failed to send bill, $${amount} to ${name} I have.",
+		no_reason = "No reason provided, there is.",
+		failed_pay_bill = "Failed to pay bill, I have.",
+		not_enough_money = "Enough money, you do not have, to pay this bill.",
+		bill_paid = "Successfully paid $${amount}, to ${name} I have.",
+		bill_paid_notification = "Paid your bill, ${name} has, with a ${tip}% tip.",
+
+		paid_bill_title = "Paid Bill, I have.",
+		paid_bill_details = "${consoleName} paid the $${amount} (with a ${tip}% tip) bill, by ${targetName} they did.",
+		bill_created_title = "Bill Created",
+		bill_created_details = "${consoleName}, a bill for $${amount} to ${targetName} with reason `${reason}` sent."
+	},
+
 	blackjack = {
 		play_blackjack = "Press ~INPUT_CONTEXT~ to play Blackjack, a game of chance it is.",
 		play_blackjack_high_limit = "To play High-Limit Blackjack, press ~INPUT_CONTEXT~ you should."
@@ -4659,7 +4755,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		screen_model_size = "Size, x: ${sizeX}, y: ${sizeY}.",
 		screen_model_offset = "Offset, x: ${offsetX}, y: ${offsetY}, z: ${offsetZ}.",
-		screen_model_rotation = "Rotation, ${rotation} it is.",
+		screen_model_rotation = "Rotation: x: ${rotationX}, y: ${rotationY}, z: ${rotationZ}",
 		screen_model_volume = "Volume, ${volumeRadius} (${volumeCutOffRadius}).",
 		screen_model_model = "Model, ${modelName}.",
 
@@ -4678,7 +4774,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		cinema = "Cinema, this is.",
 		doppler_cinema = "Doppler Cinema, this is.",
-		sandy_cinema = "Sandy Cinema, this is.",
+		sandy_cinema = "Cinema, Sandy",
 		tv = "Television, this is.",
 		monitor = "Monitor, this is.",
 		laptop = "Laptop it is",
@@ -4696,7 +4792,26 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		author = "Author,  who did this, know you do?",
 		queue = "Queue,  add it to the list, you must",
 		search_through_library = "Through the library, search you can...",
-		add_to_library = "Video to the library, add you can... (URL)"
+		add_to_library = "Video to the library, add you can... (URL)",
+
+		share_your_screen = "Share your screen, you must",
+		how_to_share_screen = "With OBS, stream you must:",
+		how_to_share_screen_part_1 = "OBS open and settings go you must.",
+		how_to_share_screen_part_2 = "'Stream' section under, 'Custom...' as the service choose you must.",
+		how_to_share_screen_part_3 = "Input the values below.",
+		how_to_share_screen_part_4 = "Start streaming in OBS.",
+		how_to_share_screen_part_5 = "Click 'Go Live!' below.",
+		server = "Server",
+		stream_key = "Stream Key",
+		cancel = "Cancel",
+		go_live = "Go Live!",
+		copied = "Copied!",
+		low_latency = "Reducing Stream Latency:",
+		how_to_reduce_latency_part_1 = "Open OBS and go to the settings.",
+		how_to_reduce_latency_part_2 = "Select the advanced option in the 'Output Mode' under the 'Output' section.",
+		how_to_reduce_latency_part_3 = "Look for the Keyframe Interval setting in the Encoder Settings.",
+		how_to_reduce_latency_part_4 = "The Keyframe Interval to 1s, set. Hmm.",
+		custom_stream = "Custom Stream, it is."
 	},
 
 	cinematic = {
@@ -5537,7 +5652,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		secondary_offset = "Secondary Offset, it is.",
 		rotation = "Rotation, hmmm",
 		color = "Color, yes",
-		duration = "Duration, in milliseconds, hmmmm"
+		duration = "Duration, in milliseconds, hmmmm",
+
+		flash_no_image = "With a custom image, the kill flash does not work, it does not.",
+		do_flash = "Do Flash, you must.",
+		flashing = "Flashing, it is."
 	},
 
 	clip_saver = {
@@ -5645,7 +5764,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		no_states = "No states, there are.",
 		entity_health = "Health ${health}/${maxHealth}, the entity has.",
 		owned_by_server = "Server, it is.",
+		owned_by_you = "You, it is owned by.",
 		first_owned_short = "First Owner: ${firstOwned}, it was.",
+		current_owned_short = "Current Owner, it is: ${currentOwner}.",
 		network_id_side = "Network ID, it has. ${networkId}, hmmm.",
 		no_target = "Target, there is none.",
 		invalid_radius_parameter = "Invalid parameter, `radius` is.",
@@ -5697,6 +5818,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		delete_entity_success = "Successfully deleted entity, network id ${networkId} it had.",
 		delete_entity_failed = "Failed to delete entity, we have. Hmmm.",
 		delete_entity_no_permissions = "Proper permission, the player has not. Attempt to delete an entity, they did.",
+
+		failed_entity_info = "Failed, entity information to get.",
+		printed_entity_info = "Printed entity server information, in F8, it is.",
 
 		move_entity_success = "Entity with network id ${networkId}, successfully moved it has.",
 		move_entity_failed = "Failed to move entity, we have. Hmmm.",
@@ -6008,6 +6132,13 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		purchase_success = "Fake-ID, purchased successfully for $3,000."
 	},
 
+	farming = {
+		milk_cow_interact = "[${InteractionKey}], Milk Cow, you must.",
+		milking_cow = "Cow, milking, it is.",
+		milking_cow_moved = "The cow, moved away it seems.",
+		milking_cow_failed = "Failed to milk cow, I have."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Fingerprint, taking it is.",
 		already_fingerprinting = "Taking a fingerprint of a player, you already are.",
@@ -6076,12 +6207,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		freecam_logs_title = "Freecam toggled, hmm",
 		freecam_on_logs_details = "${consoleName} toggled their freecam on, young padawan.",
 		freecam_off_logs_details = "${consoleName} toggled their freecam off, wise decision it is.",
-
-		track_player_logs_title = "Tracking, hmm",
-		track_player_logs_details = "${consoleName} set their tracking target to ${targetName} using the orbitcam, yes.",
-
-		freecam_no_permission = "Attempted to toggle their freecam without required permissions, pfft.",
-		track_player_no_permission = "Attempted to track a player using the freecam without required permissions, dangerous it is.",
 
 		freecam_inactive = "Currently in freecam, you are not.",
 		added_point = "Camera point added, index ${index} (Transition: ${transition}ms).",
@@ -6326,11 +6451,20 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		death_timer_override_removed = "Removed, the death timer override has been.",
 		no_death_timer_override_set = "Death timer override set, there is none.",
 
+		no_nearby_ped = "Nearby ped, there is none.",
+		ped_not_dead = "Dead, the ped is not.",
+		performing_cpr = "CPR, performing I am.",
+
 		invalid_distance = "Revive range invalid, between 1 and 50 it must be.",
 		no_players_in_range = "Downed players, there are not. Within a radius of ${distance}m, there are none.",
 		successfully_revived_range = "Players, ${amount} in number, successfully revived within a ${distance}m radius.",
 		failed_revive_range = "Revival of players, failed it has.",
-		range_revive_not_staff = "Revive players within a certain range, player attempted but correct permissions had, they did not."
+		range_revive_not_staff = "Revive players within a certain range, player attempted but correct permissions had, they did not.",
+
+		cpr_ped_logs_title = "Ped CPRed",
+		cpr_ped_logs_details = "${consoleName} performed CPR on a ped and received ${money}$.logs",
+		cpr_player_logs_title = "Player CPRed",
+		cpr_player_logs_details = "${consoleName} performed CPR on ${targetConsoleName}.logs"
 	},
 
 	hitmarkers = {
@@ -6365,6 +6499,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		alignment_warning = "Partially off-screen, your HUD seems to be. Adjust it, you can, by reducing the \"*Safezone Size*\" in your \"*Display*\" settings.",
 
 		muted = "Muted, you are.",
+		tx = "TX",
+		rx = "RX",
 
 		fps_unit = "fps, the framerate is.",
 		ping_unit = "ms, the ping is.",
@@ -6648,6 +6784,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		los_santos_golf_club = "Los Santos Golf Club",
 		arcade_bar = "Arcade Bar",
 		japanese_restaurant = "Japanese Restaurant",
+		japanese_restaurant_kitchen = "Japanese Restaurant Kitchen",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Grain Mill",
 		pd_prefix = "PD",
@@ -6668,7 +6805,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		nameable_title = "Item Name, nameable, is:",
 
-		locker_restricted = "Your locker, this item, does not fit.",
+		locker_restricted = "Item into that inventory, move this, you cannot.",
 
 		press_to_access_shredder = "[${InteractionKey}], shredder, access.",
 
@@ -7417,6 +7554,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		pigeon_milk = "Pigeon Milk, strong you will be if drink it, yes.",
 		pigeon_milk_description = "\"Shoulda drank pigeon milk that stuff will knock you right out\"\nMilk extracted by Vedder with love, hmmm.",
 
+		milk = "Milk",
+		milk_description = "Regular cow milk extracted with love.",
+
 		bandana = "Bandana, whole lotta gang shit it is. (Bloods win), yes.",
 		bandana_description = "Wear it with pride, yes.",
 
@@ -7537,6 +7677,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		traffic_barrel_description = "Hittable it looks, but don't... unless?",
 		pedestrian_barrier = "Pedestrian Barrier",
 		pedestrian_barrier_description = "Great to have, unless a Travis Scott concert it is...",
+		wheel_clamp = "Wheel Clamp",
+		wheel_clamp_description = "Business means, the Wheel Clamp does. Firmly secure vehicles in place, unauthorized movement ends. A silent enforcer, this heavy-duty contraption is. Respect and follow parking rules, it ensures.",
 
 		bandit_1 = "Bandit 1",
 		bandit_1_description = "Anywhere in the world, can be placed.",
@@ -7888,6 +8030,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		weapon_gadgetpistol = "Pistol Perico",
 		weapon_stungun_mp = "Stun Gun (MP)",
 		weapon_pistolxm3 = "Pistol WM 29",
+		weapon_tecpistol = "Tactical SMG",
 
 		weapon_microsmg = "Micro Blaster",
 		weapon_smg = "Blaster SMG",
@@ -8011,6 +8154,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		weapon_gadgetpistol_description = "A deadly shot, this is. Don't be precious. The titanium nitride finish, you won't scuff, hmmm.",
 		weapon_stungun_mp_description = "Zaptastic fun for the whole family, this weapon is.",
 		weapon_pistolxm3_description = "Compact and lightweight, this pistol is. Fires 9mm rounds, it does. Very effective for close range encounters, it is.",
+		weapon_tecpistol_description = "A fully automatic handgun with a large magazine capacity and a high rate of fire. 33 rounds of 9mm ammunition, it holds.",
 
 		weapon_microsmg_description = "Compact design, this weapon has. High rate of fire at approximately 700-900 rounds per minute, it has. ",
 		weapon_smg_description = "Good all-around submachine gun, this is known. Lightweight and accurate sight, it has. Magazine capacity of 30 rounds, it does.",
@@ -8118,7 +8262,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		weapon_addon_sentinelbbshotgun = "Shotgun Beanbag",
 		weapon_addon_sentinelbbshotgun_description = "Bags of fun, it has",
 
-		-- TODO: Add a description for this one
 		weapon_addon_stungun = "Stun Gun Coil",
 		weapon_addon_stungun_description = "Fun zaptastic, for family whole!",
 
@@ -8189,6 +8332,21 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		weapon_addon_680_description = "The Remington 680 is a pump-action shotgun that was developed by Remington Arms in 1950, hmmm."
 	},
 
+	invisibility = {
+		invisibility_on = "Invisibility toggled on, it has.",
+		invisibility_off = "Invisibility toggled off, it has.",
+
+		invalid_server_id = "Invalid Server ID, it is.",
+
+		toggled_invisibility = "Invisibility of ${displayName} toggled successfully, it has.",
+		failed_invisibility = "Failed to toggle invisibility of ${displayName}, it has.",
+
+		invisibility_logs_title = "Invisibility Toggled, it has.",
+		invisibility_on_logs_details = "${consoleName} their invisibility toggled on, they have.",
+		invisibility_off_logs_details = "${consoleName} their invisibility toggled off, they have.",
+		invisibility_other_logs_details = "${consoleName} ${targetConsoleName}'s invisibility toggled, they have."
+	},
+
 	items = {
 		move_to_repair = "Here, move to repair vehicle, you must.",
 		repairing_vehicle = "Vehicle, repairing I am",
@@ -8219,6 +8377,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		just_used_bandage = "Wait a bit before using another first aid kit, you must.",
 		drank_gasoline_death = "Gasoline poisoning, you have.",
 		drank_bleach_death = "Poisoned by bleach, you have been.",
+		finished_joint = "Finished your joint, you have.",
 
 		using_cuffs = "Handcuffs, using them you are.",
 		you_moved_too_fast = "Moved too fast, you have.",
@@ -8446,6 +8605,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		refreshing = "Refreshing, I am...",
 
 		avoid_repeating_letters = "Repeating letters in your first and/or last name, avoid, you must.",
+		backstory_empty = "Empty, your backstory cannot be.",
 
 		missing_character_creation_data = "Missing, character creation data, you are",
 		invalid_first_name = "Missing or invalid, first name, you have (2 to 100 characters)",
@@ -8612,7 +8772,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		catnip_active = "Catnip, Maxwell is being given",
 		treat_active = "A treat, Maxwell is being given",
 		cuddle_active = "With Maxwell, cuddling is",
-		hug_active = "Maxwell, hugging is"
+		hug_active = "Maxwell, hugging is",
+
+		maxwell_appeared = "Near you, Maxwell has appeared."
 	},
 
 	meth = {
@@ -8792,21 +8954,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		not_close_enough = "Close enough, you are not, to the player.",
 		user_not_available = "Not available, the user is.",
 
-		bill_received = "${displayName} has sent you a bill for $${amount}. Accept it, you will, by typing `/yes` . Decline it, you will, by typing `/no` .",
-		bill_expired = "Expired, your bill from ${displayName} has.",
-		bill_declined = "Declined, the bill from ${displayName} you have.",
-		failed_bill_payment = "Failed, the bill payment has.",
-		bill_success = "$${amount} bill from ${displayName}, paid successfully it has been.",
-		bill_created = "$${amount} bill to ${displayName}, you have created.",
-
 		givecash_success = "$${amount}, given to ${displayName} it has been.",
 
 		give_cash_title = "Cash Transfer, this is.",
-		give_cash_details = "${consoleName} transferred $${amount} to ${targetConsoleName}, ${it is}.",
-		paid_bill_title = "Bill Paid is",
-		paid_bill_details = "${consoleName} paid the bill of $${amount} for ${targetConsoleName} did.",
-		bill_created_title = "Bill Created, it was",
-		bill_created_details = "${consoleName} created a bill of $${amount} for ${targetConsoleName} did."
+		give_cash_details = "${consoleName} transferred $${amount} to ${targetConsoleName}, ${it is}."
 	},
 
 	moonshine = {
@@ -9082,12 +9233,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		ped_models_about = "Here listed every player who not freemode character model uses. Helps finding players who troll or potential modders are, it should.",
 		local_ped_models_title = "Local Ped models, listed they are",
 		animal_ped_models_title = "Animal Ped models, listed they are",
-
-		fast_movement_title = "Fast Movement, listed it is",
-		fast_movement_about = "Here listed every player who flagged for moving too fast. Potential modders, they may be.",
-
-		damage_modifier_title = "Damage Modifiers, listed players are",
-		damage_modifier_about = "Listed, players who detected, have changed damage modifier. Potential modders, they may be.",
 
 		bad_screen_word_title = "Bad Screen Words, listed players are",
 		bad_screen_word_about = "Listed, players who detected, have certain words on their screen. Potential modders, they may be.",
@@ -9705,6 +9850,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		was_banned = "Banned, you are.",
 		loading = "Player data, loading it is...",
+		loading_screenshot = "Screenshot loading...",
+		screenshot_failed = "Failed to take screenshot, we have.",
+		player_no_character = "Loaded, character player has not.",
 		no_warnings = "No warnings, there are.",
 		not_shown_warnings = "${count} more, not shown they are.",
 		system_issuer = "System, the issuer is.",
@@ -9720,6 +9868,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		button_add = "Add, you must.",
 		button_close = "Close, you shall.",
 		button_new = "New Note",
+		button_back = "Back, you should.",
+		button_screenshot = "Screenshot, you should take.",
 
 		ping = "Ping: ${ping}ms",
 		fps = "FPS: ${fps}",
@@ -10155,7 +10305,48 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		better_stamina = "Run without running out of stamina for ${duration} minutes, you will be able to.",
 		more_inventory_space = "Additional inventory slots, you have. ${amount} slots for ${duration} minutes.",
 
-		buffs_note = "Activate, the buffs will, only after leaving the building."
+		buffs_note = "Activate, the buffs will, only after leaving the building.",
+
+		press_to_prepare_food = "[${InteractionKey}] Food, prepare you should.",
+		prepare_food = "Food, prepare you should.",
+
+		kissaki_kitchen = "Kissaki Kitchen, it is.",
+
+		craft = "Craft, you must.",
+		putting_down_ingredients = "Putting Down Ingredients",
+
+		pick_up = "Pick Up: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Pick Up: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Rice, prepare must you (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Rice, prepare must you (${completed}%~s~)",
+		preparing_rice_starting = "Preparing Rice, Starting...",
+		preparing_rice = "~g~${name}~s~: Rice, preparing... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: Fillings, prepare must you (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Fillings, prepare must you (${completed}%~s~)",
+		preparing_fillings_starting = "Fillings, preparing",
+		preparing_fillings = "~g~${name}~s~: Fillings, preparing... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Rolling mat, prepare (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Rolling mat, prepare (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Rolling mat, preparing",
+		preparing_rolling_mat = "~g~${name}~s~: Rolling mat, preparing... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Sushi, assemble (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Sushi assemble, you must (${completed}%~s~)",
+		assembling_sushi_starting = "Sushi assemble, starting it is",
+		assembling_sushi = "~g~${name}~s~: Sushi assemble, I am... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Sushi roll, I must (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Sushi roll, you should (${completed}%~s~)",
+		rolling_sushi_starting = "Sushi roll, starting it is",
+		rolling_sushi = "~g~${name}~s~: Sushi roll, I am... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Sushi slice, I must (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Sushi Slice, you must (${completed}%~s~)",
+		slicing_sushi_starting = "Slicing Sushi, I am",
+		slicing_sushi = "~g~${name}~s~: Slicing Sushi, I am... (${completed}%~s~)"
 	},
 
 	riot_mode = {
@@ -10198,7 +10389,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		time_since_disconnection = "Time since disconnection, this is.",
 
 		you_are_now_metagaming = "Metagaming, you are now.",
-		you_are_no_longer_metagaming = "Metagaming, you no longer are."
+		you_are_no_longer_metagaming = "Metagaming, you no longer are.",
+
+		server_id_hide_failed = "Failed to hide server id, it has.",
+		server_id_hidden = "Hidden, your server id is now.",
+		server_id_not_hidden = "Hidden no more, your server id is."
 	},
 
 	screenshots = {
@@ -10216,7 +10411,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		screenshot_error_user_not_found = "User, found not it has been.",
 		screenshot_error_user_developer = "Developer, the user is.",
 		screenshot_error_no_token = "Failed to get opfw token, we have.",
-		screenshot_timeout = "Screenshot request timed out, it has."
+		screenshot_timeout = "Screenshot request timed out, it has.",
+		screenshot_error_character_unloaded = "User left or character unloaded, they have."
 	},
 
 	scuba = {
@@ -10361,13 +10557,19 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		use_blender = "[${InteractionKey}] Blender, use you must",
 		blending = "Blending, in progress it is",
+		no_ingredients = "Smoothie make, no ingredients you have.",
 
+		milkshake_label = "Milkshake (${flavors})",
 		smoothie_label = "Smoothie, it is (${flavors} ${seperator} ${flavors})",
 		seperator = "and"
 	},
 
 	snow = {
 		hold_to_pick_up_snowballs = "Hold ~INPUT_CONTEXT~ to pick up snowballs, you must"
+	},
+
+	sound_effects = {
+		invalid_sound = "Sound invalid, it is."
 	},
 
 	spawn = {
@@ -10416,7 +10618,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		player_not_exist = "Offline, this player is.",
 		no_character_loaded = "Character, this player does not have loaded.",
 		not_same_instance = "Not in the same instance as you, this player is.",
+		no_user_or_character = "Player offline or character not loaded, they are.",
 
+		resolving_player = "Player resolving...",
 		loading_coords = "Coords, loading them, I am",
 		preloading_area = "Area, preloading it, I am",
 		finding_player = "Player, finding, I am",
@@ -10427,11 +10631,14 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		health_ok = "Health: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
 		health_bad = "Health: ~r~${health} / ${maxHealth}~w~ - ${percentage}",
+		bleeding = "~w~ - ~r~Bleeding",
 
 		armor_ok = "Armor: ~g~${armor} / ${maxArmor}~w~ - ${percentage}",
 		armor_bad = "Armor: ~r~${armor} / ${maxArmor}~w~ - ${percentage}",
 
-		vehicle_health = "Vehicle health: ${percentage}% it is.",
+		vehicle_health_fuel = "Vehicle - Fuel: ${health} ~w~- ${fuel}",
+		can_respawn = "Respawn, you can: ${remaining}",
+		yes = "~g~Yes",
 
 		speed = "Speed: ${speed}",
 
@@ -11029,6 +11236,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		target_radius = "Target Radius is: ${targetRadius}, it is.",
 		actual_radius = "Actual Radius is: ${actualRadius}, it is.",
 
+		intent_music = "Voice input mode to 'music' set.",
+		intent_speech = "'Speech' voice input mode set back to.",
+		music_mode = "Music-Mode",
+
 		invalid_server_id = "Invalid server id, that is.",
 		failed_toggle_listen = "Failed to toggle listening status, we have.",
 		listeners = "Listeners, there are:",
@@ -11041,7 +11252,19 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		affected_by_jammer = "Affected by a jammer, your radio seems to be.",
 
 		listening_missing_permissions = "Player has not the permissions required, toggle their listening status they attempted.",
-		voice_mute_missing_permissions = "Player has not the permissions required, toggle the muted status of another they attempted."
+		voice_mute_missing_permissions = "Player has not the permissions required, toggle the muted status of another they attempted.",
+
+		music_mode_logs_title = "Voice mode toggled",
+		music_mode_logs_details_on = "${consoleName} their voice input mode to 'music' changed.",
+		music_mode_logs_details_off = "${consoleName} their voice input mode to 'speech' changed.",
+
+		listening_logs_title = "Listening",
+		stopped_listening_logs_details = "${consoleName} to ${targetConsoleName} listening started.",
+		started_listening_logs_details = "${consoleName} to ${targetConsoleName} listening stopped.",
+
+		muted_logs_title = "Muted Voice",
+		muted_logs_details = "${consoleName} ${targetConsoleName} from voice chat muted.",
+		unmuted_logs_details = "${consoleName} unmuted ${targetConsoleName} from voice chat."
 	},
 
 	washrooms = {
@@ -11064,7 +11287,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		ragdoll_player = "Ragdoll, you will.",
 		ragdoll_player_force = "Ragdoll, you will. Force, use if necessary.",
 		punch_player = "Force punch, you shall.",
-		taze_player = "Tase, use if violent they are.",
 		exit_vehicle_player = "Vehicle, exit! Quickly, you must.",
 		yank_steering_wheel_player = "Steering wheel yank, you will",
 		flashbang_player = "Flashbang, use, you must",
@@ -11150,6 +11372,26 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	functions = {
+		unknown = "Unknown",
+		flipped_vehicle_logs_title = "Flipped, the vehicle has been",
+		flipped_vehicle_logs_details = "A vehicle, ${consoleName} has flipped, hmmm.",
+		failed_to_find_ground = "Ground, failed to find. Closest road, teleported you have been.",
+
+		knots = "knots",
+		mph = "mph",
+		kmh = "km/h"
+	},
+
+	states = {
+		invalid_network_id = "Network id invalid, it is.",
+		debug_states_failed = "Failed to debug this entity's states, we have.",
+		no_states = "No states set for this entity, it has.",
+		printed_states = "States of entity ${networkId} printed, they were.",
+
+		get_entity_states_missing_permissions = "Proper permissions, the player has not, tried to get a specific entity's states, they did."
+	},
+
+	time = {
 		year = "year",
 		years = "years",
 		month = "month",
@@ -11163,26 +11405,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		second = "second",
 		seconds = "seconds",
 		just_now = "just now",
-		unknown = "Unknown",
-		flipped_vehicle_logs_title = "Flipped, the vehicle has been",
-		flipped_vehicle_logs_details = "A vehicle, ${consoleName} has flipped, hmmm.",
-		failed_to_find_ground = "Ground, failed to find. Closest road, teleported you have been.",
 
-		knots = "knots",
-		mph = "mph",
-		kmh = "km/h",
-
-		time_in = "in ${time} ${unit}, it is",
-		time_ago = "${time} ${unit} ago, it was"
-	},
-
-	states = {
-		invalid_network_id = "Network id invalid, it is.",
-		debug_states_failed = "Failed to debug this entity's states, we have.",
-		no_states = "No states set for this entity, it has.",
-		printed_states = "States of entity ${networkId} printed, they were.",
-
-		get_entity_states_missing_permissions = "Proper permissions, the player has not, tried to get a specific entity's states, they did."
+		time_in = "in ${time} ${unit}",
+		time_ago = "${time} ${unit} ago"
 	},
 
 	-- illegal/*
@@ -11220,6 +11445,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		reward_gold_bar = "A gold bar, you have grabbed.",
 		reward_cash = "Cash, you have grabbed.",
 		reward_keycard_red = "A Red Keycard, you have grabbed.",
+		reward_treasure_map_piece = "A Treasure Map Piece, you have grabbed.",
 
 		stockade_logs_title = "Stockade, activated it has.",
 		stockade_logs_details = "Activated by ${consoleName}, the stockade has been."
@@ -11470,6 +11696,19 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		use_launch = "To launch, press ~INPUT_VEH_HANDBRAKE~ you must."
 	},
 
+	clamps = {
+		no_vehicle_near = "A vehicles left-rear wheel, you are not near.",
+		vehicle_not_driveable = "Attach clamp to a broken vehicle, you cannot.",
+		clamping = "Clamping, I am.",
+		removing_clamp = "Removing Clamp, I am.",
+		remove_clamp = "[${InteractionKey}] Remove Clamp, you must.",
+
+		clamped_log_title = "Attached Clamp, I have.",
+		clamped_log_details = "${consoleName} a wheel clamp, attached to a vehicle with plate `${plate}`.",
+		unclamped_log_title = "Removed Clamp, I have.",
+		unclamped_log_details = "${consoleName} a wheel clamp, removed from a vehicle with plate `${plate}`."
+	},
+
 	damage = {
 		vehicle = "Vehicle-ID, it is: ${entity}",
 		general = "General, this is: ${value}",
@@ -11505,8 +11744,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	gadgets = {
-		helicopter_camera_vehicle_info_metric = "Speed: ${speed} km/h\nModel: ${model}\nPlate: ${plate}",
-		helicopter_camera_vehicle_info_imperial = "Speed: ${speed} mp/h\nModel: ${model}\nPlate: ${plate}",
+		helicopter_camera_vehicle_info = "Speed: ${speed}\nModel: ${model}\nPlate: ${plate}, it is.",
 		helicopter_camera_altitude = "AGL altitude: ${altitude}ft it is",
 		helicopter_camera_altitude_asl = "ASL altitude: ${altitude}ft it is",
 		helicopter_camera_locked_on = "Locked on, the camera is.",

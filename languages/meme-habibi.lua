@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 17 (do not change)
+-- AUTO LOCALES: 18 (do not change)
 
 OP.Global.Locales.Languages["meme-habibi"] = {
 	-- configuration settings for language
@@ -17,10 +17,12 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		warning = "تحذير",
 		invalid_input = "إدخال غير صالح.",
 		missing_input = "الإدخال مفقود.",
+		missing_or_invalid_input = "مفقود أو غير صحيح.",
 		player_not_found = "ﻻ يمكن العثور على اللاعب برقم التعريف `${serverId}`.",
 		something_went_wrong = "حدث خطأ ما. الرجاء المحاولة مرة أخرى.",
 		yes = "نعم",
-		no = "لا"
+		no = "لا",
+		n_a = "غير متوفر"
 	},
 
 	-- animations/*
@@ -178,10 +180,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		announcement_logs_details = "${consoleName} قام ببث الرسالة التالية لكامل الخادم: `${announcementMessage}`",
 		announcement_not_admin = "تم محاولة إرسال إعلان من قبل شخص غير مسؤول في الفريق الإداري.",
 
-		announcement_maintenance = "سيتم إيقاف الخادم خلال ${minutes} دقائق للصيانة.",
-		announcement_update = "سيتم إيقاف الخادم خلال ${minutes} دقائق للتحديث.",
-		announcement_restart = "Yo, the server's gonna be down in ${minutes} minutes for a quick restart. Sorry for the inconvenience, Habibi.",
-
 		posted_announcement = "Aight, announcement message has been sent.",
 		posted_announcement_locale = "The message from that locale has been sent, Habibi.",
 		failed_to_post_announcement = "Sorry, I can't post the announcement message without a message included.",
@@ -221,7 +219,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		missing_valid_license_identifier_parameter = "Please provide a valid 'licenseIdentifier' parameter.",
 
 		illegal_entity_wipe = "You do not have permission to wipe entities.",
-		wiped_entities = "Entities wiped successfully!",
+		wiped_entities = "تم حذف الكائنات. تم حذف ${deletedEntities} من الكائنات المشتركة.",
 		wipe_entities_logs_title = "Entities Wiped",
 		wipe_entities_logs_details = "${consoleName} performed an entity wipe with the following settings: distance = `${distance}`, ignoreLocalEntities = `${ignoreLocalEntities}`, modelName = `${modelName}`",
 
@@ -284,13 +282,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		staff_feature_unavailable = "This feature is not available while thy staff availability is toggled off.",
 
-		failed_toggle_tracker = "Ma nqdrsh nl9aw player tracker.",
-		unable_track_player = "Ma nqdrsh ntrakkroch.",
-		success_enable_tracker = "Hadak 9adal player tracker bzf li `${playerName}`.",
-		success_disable_tracker = "Hadak tn9ss player tracker.",
-		not_tracking_player = "Mashi bghit ntrakkroch player.",
-		already_tracking_player = "Katrkko player hadak chi bl3alm.",
-
 		toggle_player_track_no_permissions = "Makaynch lkhouya les permissions bach nl9aw player tracker.",
 		set_job_no_permissions = "Makaynch lkhouya les permissions bach n9dro n7to 7ogra.",
 		toggle_reflection_no_permissions = "You do not have the proper permissions to toggle damage reflection.",
@@ -307,8 +298,18 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		headache_logs_details = "${consoleName} has caused ${targetConsoleName} to feel a headache.",
 		trigger_headache_no_permissions = "You do not have the proper permissions to trigger a headache.",
 
+		super_jump_logs_title = "تم تبديل القفزة الخارقة",
+		super_jump_logs_details_on = "لقد قام ${consoleName} بتفعيل قفزة الخارقة لديه.",
+		super_jump_logs_details_off = "لقد قام ${consoleName} بإيقاف قفزة الخارقة لديه.",
+		toggle_super_jump_no_permissions = "محاولة تبديل قفزة الخارقة بدون الصلاحيات المناسبة.",
+
 		success_trigger_headache = "Successfully caused ${playerName} to feel a headache.",
 		failed_trigger_headache = "Failed to cause a headache.",
+
+		set_spawn_success = "تم تحديد نقطة الظهور الخاصة بك إلى موضعك الحالي.",
+		set_spawn_failed = "من فشل في تعيين نقطة الظهور.",
+		reset_spawn_success = "قد تم إعادة تعيين نقطة الظهور بنجاح.",
+		reset_spawn_failed = "فشل في إعادة تعيين نقطة الظهور.",
 
 		protective_mode_not_staff = "Sorry Habibi, you cannot turn on the server's protective mode without proper permissions.",
 		protective_mode_toggled_on = "Alhamdulillah! The server's protective mode is on now. The required playtime to join the server has been set to `${playtime}`.",
@@ -345,8 +346,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		no_nearby_vehicles_off = "تم إيقاف 'لا يوجد مركبات بالقرب'.",
 		speed_up_progress_bar_on = "تم تفعيل 'تسريع شريط الإنجاز'.",
 		speed_up_progress_bar_off = "تم إيقاف 'تسريع شريط الإنجاز'.",
-		invisibility_on = "تم تفعيل 'الخفاء'.",
-		invisibility_off = "تم إيقاف 'الخفاء'.",
 		wallhack_on = "تم تفعيل 'وول هاك'.",
 		wallhack_off = "تم إيقاف 'وول هاك'.",
 		aimbot_on = "Aimbot On activated.",
@@ -428,6 +427,9 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		fortnite_feature = "Fortnite",
 		reflection_feature = "Damage Reflection",
 		stable_cam_feature = "Stable Cam",
+		super_jump_feature = "قفزة خارقة",
+		server_id_hidden_feature = "إخفاء هوية السيرفر",
+		fake_disconnect_feature = "فصل وهمي",
 
 		you_are_not_in_a_vehicle = "You're not in a vehicle Habibi.",
 		repaired_vehicle = "Vehicle has been repaired Habibi.",
@@ -710,37 +712,59 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		text_entry_ban = "You are not allowed to use Inspect Element on this browser.",
 		thermal_night_vision_ban = "The use of Brighter Nights is not permitted.",
 		vehicle_modification_ban = "You can't find headlight fluid for your car.",
-		vehicle_spam_ban = "Counter terrorists win. (You have been banned for spamming vehicle spawn)",
 		vehicle_spawn_ban = "You tried using redstone on a minecart, but forgot to add powered rails. (You have been banned for improper vehicle spawning)",
 		weapon_spawn_ban = "Tried to pull a rabbit out of the hat, ended up with a bazooka.",
 		high_damage_ban = "You abused your power and brought chaos to our realm.",
 		suspicious_explosion_ban = "We do not encourage excessive use of explosions. Please avoid doing so.",
 		semi_godmode_ban = "Your desire for immortality has disturbed the natural order of time. Forever is not as enjoyable as it seems.",
 		invalid_health_ban = "Your health bar seems to have had a bit too much of spinach, Popeye",
+		clear_tasks_ban = "هذه ليست مركزًا لتدريب أعمال العقل للجيدي. لقد لاحظنا جهودك في التأثير على إرادة الآخرين بحرية... وتم رفضها.",
+		projectile_event_ban = "هذا ليس هوغوارتس وأنت لست هاري بوتر. لا يُسمح بالقاء التعويذات - أو المشاريع - هنا.",
+		illegal_native_ban = "Ya habibi, you can't use a spell that you haven't learned yet...",
+
+		type_aimbot = "Aimbot",
+		type_bad_creation = "Bad Creation",
+		type_bad_screen_word = "Bad Screen Word",
+		type_blacklisted_command = "Blacklisted Command",
+		type_clear_tasks = "Clear Tasks",
+		type_damage_modifier = "Damage Modifier",
+		type_distance_taze = "Distance Taze",
+		type_driving_hotwire = "Driving Hotwire",
+		type_fast_movement = "Fast Movement",
+		type_freecam_detected = "Freecam Detected",
+		type_high_damage = "High Damage",
+		type_honeypot = "Honeypot",
+		type_illegal_event = "حدث غير قانوني للعميل",
+		type_illegal_freeze = "تجميد غير قانوني",
+		type_illegal_ped_spawn = "قام بإنشاء راكب",
+		type_illegal_server_event = "حدث غير قانوني للخادم",
+		type_illegal_vehicle_modifier = "تعديل مركبة غير قانوني",
+		type_illegal_vehicle_spawn = "قام بإنشاء مركبة",
+		type_illegal_weapon = "إنشاء سلاح",
+		type_invalid_health = "صحة غير صالحة",
+		type_invincibility = "اللانقاذ",
+		type_modified_fov = "تعديل الزاوية المتعددة",
+		type_ped_change = "تغيير راكب",
+		type_player_blips = "بصمات اللاعب",
+		type_projectile_event = "حدث قذيفة",
+		type_runtime_texture = "ランタイムテクスチャ",
+		type_semi_godmode = "セミ神モード",
+		type_spawned_object = "生成されたオブジェクト",
+		type_spectate = "観戦",
+		type_spiked_resource = "改ざんリソース",
+		type_suspicious_explosion = "怪しい爆発",
+		type_text_entry = "テキスト入力",
+		type_thermal_night_vision = "サーマル/ナイトビジョン",
+		type_vehicle_modification = "車両改造",
+		type_illegal_native = "不正なネイティブコール",
+
+		event_prefix = "アンチチート: ${type}",
 
 		mp_f_freemode_01_label = "Freemode (female)",
 		mp_m_freemode_01_label = "Freemode (male)",
 		player_one_label = "Franklin",
 		player_two_label = "Trevor",
 		player_zero_label = "Michael",
-
-		notification_distance_taze = "Anti-Cheat: ${displayName} has tazed someone over a very long distance (${distance}m).",
-		notification_bad_screen_word = "Anti-Cheat: ${displayName} has ${count} trigger word(s) on their screen.",
-		notification_suspicious_explosion = "Shun, someone called ${displayName} triggered an explosion of type ${explosionType} (${distance} meters away)!",
-
-		notification_freecam_detected = "Anti-Cheat: Habibi, someone is using freecam!",
-		notification_illegal_vehicle_modifier = "Anti-Cheat: Habibi, someone is modifying their vehicle illegally!",
-		notification_illegal_vehicle_spawn = "Habibi, someone spawned a haram vehicle. Anti-Cheat is active.",
-		notification_fast_movement = "Anti-Cheat: Habibi, someone is moving too fast!",
-		notification_illegal_freeze = "Anti-Cheat: Habibi, someone is freezing others illegally!",
-		notification_invincibility = "Anti-Cheat: Habibi, someone is invincible!",
-		notification_vehicle_modification = "Anti-Cheat: Habibi, someone is modifying their vehicle!",
-		notification_damage_modifier = "Anti-Cheat: Habibi, someone is modifying damage!",
-		notification_illegal_weapon = "Anti-Cheat: Habibi, someone is using an illegal weapon!",
-		notification_spawned_object = "Anti-Cheat: Object spawned",
-		notification_driving_hotwire = "Anti-Cheat: Driving while hotwiring",
-		notification_semi_godmode = "Anti-Cheat: Semi-Godmode",
-		notification_invalid_health = "Anti-Cheat: Invalid Health",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus",
@@ -770,29 +794,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		fast_movement_warning = "يتم تحذيرك للإشارة إلى حركتك السريعة جدًا! يرجى إبلاغ المطور واخبارهم بما كنت تفعله لحدوث ذلك، لأنه لا يجب أن تتلقى هذه الرسالة في الدردشة.",
 		invincibility_warning = "تم تحذيرك بأنك غير قابل للضرر! يرجى إبلاغ المطور واخبارهم بما كنت تفعله لحدوث ذلك، لأنه لا يجب أن تتلقى هذه الرسالة في الدردشة.",
 		damage_modifier_warning = "تم تحذيرك بأن لديك معدل ضرر غير صالح! يرجى إبلاغ المطور واخبارهم بما كنت تفعله لحدوث ذلك، لأنه لا يجب أن تتلقى هذه الرسالة في الدردشة.",
-		freeze_warning = "You have been flagged for being frozen while you are not supposed to be! Please let a developer know and tell them what you were doing to make this happen as you should not be receiving this chat message. (Translation: تم تمييزك لكونك مجمدًا عندما لا ينبغي أن تكون كذلك! يرجى إخبار مطور وإخبارهم ما كنت تفعله لجعل هذا يحدث حيث لا يجب أن تتلقى هذه الرسالة في الدردشة.)",
-
-		distance_taze_screenshot = "Anti-Cheat: Distance Taze (${distance}m) (Translation: الغش: مسافة شوكة الكهربائية (${distance} مترًا))",
-		spectating_screenshot = "Anti-Cheat: Spectating (Translation: الغش: المشاهدة)",
-		fast_movement_screenshot = "Anti-Cheat: Fast Movement (Translation: الغش: الحركة السريعة)",
-		illegal_freeze_screenshot = "Anti-Cheat: Illegal Freeze (Translation: الغش: تجمد غير مشروع)",
-		illegal_vehicle_modifier_screenshot = "Anti-Cheat: Vehicle Modifier (${modifierName} = ${modifierValue}) (Translation: الغش: تعديل المركبة (${modifierName} = ${modifierValue}))",
-		damage_modifier_screenshot = "Anti-Cheat: Invalid Damage Modifier (${activeModifier}/${currentModifier})",
-		illegal_weapon_screenshot = "Anti-Cheat: Spawned Weapon (${weaponLabel})",
-		illegal_vehicle_spawn_screenshot = "Anti-Cheat: Spawned Vehicle (${modelName})",
-		vehicle_modification_screenshot = "Anti-Cheat: Modified Vehicle (${types})",
-		thermal_night_vision_screenshot = "Anti-Cheat: Thermal/Night Vision (${nativeName})",
-		text_entry_screenshot = "Anti-Cheat: Text Entry (${textEntry})",
-		player_blips_screenshot = "Anti-Cheat: Player Blips",
-		modified_fov_screenshot = "Anti-Cheat: FOV Modified (${fov})",
-		ped_change_screenshot = "Anti-Cheat: Illegal Ped Change Detected",
-		invincibility_screenshot = "Anti-Cheat: Player Invincibility Detected",
-		runtime_texture_screenshot = "Anti-Cheat: Runtime Texture Modified (${textureDict}, ${textureName})",
-		bad_screen_word_screenshot = "Anti-Cheat: Inappropriate Language Detected (${words})",
-		freecam_detected_screenshot = "Anti-Cheat: Freecam Detected",
-		driving_hotwire_screenshot = "Anti-Cheat: Hotwiring while Driving Detected",
-		semi_godmode_screenshot = "Anti-Cheat: Semi-Godmode",
-		invalid_health_screenshot = "Anti-Cheat: Invalid Health"
+		freeze_warning = "You have been flagged for being frozen while you are not supposed to be! Please let a developer know and tell them what you were doing to make this happen as you should not be receiving this chat message. (Translation: تم تمييزك لكونك مجمدًا عندما لا ينبغي أن تكون كذلك! يرجى إخبار مطور وإخبارهم ما كنت تفعله لجعل هذا يحدث حيث لا يجب أن تتلقى هذه الرسالة في الدردشة.)"
 	},
 
 	authentication = {
@@ -905,8 +907,21 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		sit_command = "i'nis",
 		sit_command_help = "Try to sit on a nearby chair.",
 		sit_command_parameter_variation = "tafwid",
-		sit_command_parameter_variation_help = "Which sitting animation to use (1 - 6)",
+		sit_command_parameter_variation_help = "再生する座るアニメーション(1 - 6)はどれですか。",
 		sit_command_substitutes = "kursi",
+
+		-- animations/couches
+		sleep_command = "nayem",
+		sleep_command_help = "Attempt to nayem on a nearby couch or the ground.",
+		sleep_command_parameter_variation = "variation",
+		sleep_command_parameter_variation_help = "What nayem animation to play (1 - 2).",
+		sleep_command_substitutes = "lay_down",
+
+		couch_offset_command = "couch_offset",
+		couch_offset_command_help = "Copy the offset to a nearby couch of a specific model.",
+		couch_offset_command_parameter_model_name = "model name",
+		couch_offset_command_parameter_model_name_help = "The model name of the couch to copy the offset of.",
+		couch_offset_command_substitutes = "",
 
 		-- animations/emotes
 		ragdoll_command = "ragdoll",
@@ -1111,12 +1126,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		infinite_ammo_command_help = "Toggles infinite ammo.",
 		infinite_ammo_command_substitutes = "",
 
-		track_player_command = "habeer player",
-		track_player_command_help = "Toggles a tracker for a certain player.",
-		track_player_command_parameter_server_id = "server id",
-		track_player_command_parameter_server_id_help = "The player's server ID you are wanting to track. Leave blank to disable.",
-		track_player_command_substitutes = "",
-
 		reflect_damage_command = "reflect_damage",
 		reflect_damage_command_help = "Toggles damage reflection. (Any player who damages you will be damaged themselves)",
 		reflect_damage_command_substitutes = "reflect",
@@ -1126,6 +1135,18 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		trigger_headache_command_parameter_server_id = "server id",
 		trigger_headache_command_parameter_server_id_help = "The server ID of the player you want to trigger a migraine for.",
 		trigger_headache_command_substitutes = "migra",
+
+		super_jump_command = "tarzan_jump",
+		super_jump_command_help = "Toggle your tarzan-jump.",
+		super_jump_command_substitutes = "",
+
+		set_spawnpoint_command = "yaan_betta3_elwakhm",
+		set_spawnpoint_command_help = "Set elwakhm betta3ak aktar wakhta metla she3rek.",
+		set_spawnpoint_command_substitutes = "settft", -- substitute for "set_spawn",
+
+		reset_spawnpoint_command = "shelwakhm",
+		reset_spawnpoint_command_help = "Brej3 elwakhm betta3ak li ktabtlo bel /yaan_betta3_elwakhm.",
+		reset_spawnpoint_command_substitutes = "shwft", -- substitute for "reset_spawn",
 
 		stick_command = "halek",
 		stick_command_help = "Stick to the car you're ontop of.",
@@ -1158,12 +1179,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		speed_up_progress_bar_command_parameter_server_id = "Server ID",
 		speed_up_progress_bar_command_parameter_server_id_help = "If you want to toggle the 'speed up progress bar' feature for someone else, insert their server ID here.",
 		speed_up_progress_bar_command_substitutes = "speed_up",
-
-		invisibility_command = "invisibility",
-		invisibility_command_help = "Toggle 'invisibility' feature.",
-		invisibility_command_parameter_server_id = "id خادم",
-		invisibility_command_parameter_server_id_help = "إذا كنت ترغب في تفعيل/إلغاء تفعيل الخفاء لشخص آخر، ضع هنا معرف الخادم الخاص بهم.",
-		invisibility_command_substitutes = "خفاء, غير مرئي",
 
 		add_cash_command = "add_cash",
 		add_cash_command_help = "إضافة نقود إلى شخصية لاعب.",
@@ -1673,6 +1688,11 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		bed_command_help = "Attempt to rest in the nearest bed.",
 		bed_command_substitutes = "",
 
+		-- game/bills
+		create_bill_command = "eshtere3_hesab",
+		create_bill_command_help = "Bill another player a certain amount of money.",
+		create_bill_command_substitutes = "bill, bill_player",
+
 		-- game/bombs
 		toggle_bombs_command = "toggle_bombs",
 		toggle_bombs_command_help = "Toggles the bombs on your current aircraft.",
@@ -1747,12 +1767,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		cayo_perico_command_substitutes = "",
 
 		-- game/cinema
-		cinema_blacklist_add_command = "cinema_blacklist_add",
-		cinema_blacklist_add_command_help = "Add a video to the list of banned videos for the local cinema.",
-		cinema_blacklist_add_command_parameter_video_key = "video key",
-		cinema_blacklist_add_command_parameter_video_key_help = "The video's unique key to blacklist. Example: 'youtube:dQw4w9WgXcQ'",
-		cinema_blacklist_add_command_substitutes = "",
-
 		cinema_screens_debug_command = "cinema_screens_debug",
 		cinema_screens_debug_command_help = "Debug cinema screens.",
 		cinema_screens_debug_command_substitutes = "",
@@ -1976,6 +1990,12 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		move_entity_command_parameter_heading_help = "The direction in degrees the entity should be placed.",
 		move_entity_command_substitutes = "mv (تحريك)",
 
+		server_entity_command = "server_entity",
+		server_entity_command_help = "Debugs server information about an entity.",
+		server_entity_command_parameter_network_id = "network id",
+		server_entity_command_parameter_network_id_help = "The network id of the entity.",
+		server_entity_command_substitutes = "",
+
 		fake_lag_command = "fake_lag (تأخير مزيف)",
 		fake_lag_command_help = "Create fake lag. (إنشاء تأخير مزيفة)",
 		fake_lag_command_parameter_counter = "arbaa",
@@ -2100,11 +2120,11 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		ped_bone_command_parameter_bone_name_help = "The bone you want to debug.",
 		ped_bone_command_substitutes = "",
 
-		edit_marker_command = "edit_marker",
-		edit_marker_command_help = "Edi' a marker's position or place a new marker.",
-		edit_marker_command_parameter_marker_name = "marker name",
-		edit_marker_command_parameter_marker_name_help = "The marker you want to edit (leave empty to place new marker).",
-		edit_marker_command_substitutes = "",
+		rotate_marker_command = "rotate_marker",
+		rotate_marker_command_help = "Edit a marker's rotation.",
+		rotate_marker_command_parameter_marker_name = "marker name",
+		rotate_marker_command_parameter_marker_name_help = "Da marker youse wanna edit, habibi.",
+		rotate_marker_command_substitutes = "",
 
 		rectangle_command = "rectangle",
 		rectangle_command_help = "Create a rectangle in 3D space.",
@@ -2347,6 +2367,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		death_timer_command_parameter_time_help = "The amount of time in seconds you want to set the timer to. To remove the override, leave this blank.",
 		death_timer_command_substitutes = "",
 
+		cpr_command = "cpr",
+		cpr_command_help = "Do CPR on da nearest ped or player, habibi.",
+		cpr_command_substitutes = "",
+
 		-- game/hitmarkers
 		hitmarkers_command = "hitmarkers",
 		hitmarkers_command_help = "Toggle hitmarker sounds.",
@@ -2481,6 +2505,13 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		clear_evidence_command_parameter_evidence_id = "هوية الدليل",
 		clear_evidence_command_parameter_evidence_id_help = "هوية خزانة الأدلة التي تريد محوها.",
 		clear_evidence_command_substitutes = "",
+
+		-- game/invisibility
+		invisibility_command = "invisibility",
+		invisibility_command_help = "Toggle yo invisibility, habibi.",
+		invisibility_command_parameter_server_id = "id خادم",
+		invisibility_command_parameter_server_id_help = "If yo wanna toggle someone else's invisibility, habibi.",
+		invisibility_command_substitutes = "خفاء, غير مرئي",
 
 		-- game/items
 		clear_map_command = "habibi_clear_map",
@@ -2676,14 +2707,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		give_cash_command_parameter_amount = "المبلغ",
 		give_cash_command_parameter_amount_help = "The amount of cash you want to give to the player.",
 		give_cash_command_substitutes = "",
-
-		bill_player_command = "bill_player",
-		bill_player_command_help = "Bill another player a certain amount of money.",
-		bill_player_command_parameter_server_id = "server id",
-		bill_player_command_parameter_server_id_help = "The ID of the player you want to send the bill to.",
-		bill_player_command_parameter_amount = "amount",
-		bill_player_command_parameter_amount_help = "The amount of cash you want to bill the player.",
-		bill_player_command_substitutes = "bargain",
 
 		-- game/notepads
 		notepad_command = "juzur",
@@ -3021,6 +3044,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		metagame_command_help = "Toggling this will show/hide player's server IDs.",
 		metagame_command_substitutes = "meta, m",
 
+		hide_server_id_command = "hide_server_id",
+		hide_server_id_command_help = "Hide or unhide yo server id from above yo head, habibi.",
+		hide_server_id_command_substitutes = "dontmindme",
+
 		-- game/security_cameras
 		security_cameras_command = "security_cameras",
 		security_cameras_command_help = "Toggling this will show/hide the security cameras.",
@@ -3058,6 +3085,13 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		draw_shroom_areas_command = "draw_shroom_areas",
 		draw_shroom_areas_command_help = "Draw all da shroom areas and add more.",
 		draw_shroom_areas_command_substitutes = "shroom_areas",
+
+		-- game/sound_effects
+		play_sound_command = "bil3ab_sawt",
+		play_sound_command_help = "Biyjouz inshoo awaad sawt fi makanak.",
+		play_sound_command_parameter_sound = "sawt",
+		play_sound_command_parameter_sound_help = "Esm el awaad elly 3ayez teidy.",
+		play_sound_command_substitutes = "",
 
 		-- game/spying
 		search_for_devices_command = "search_for_devices",
@@ -3250,6 +3284,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		toggle_voice_mute_command_parameter_server_id = "person",
 		toggle_voice_mute_command_parameter_server_id_help = "The person you want to mute/unmute.",
 		toggle_voice_mute_command_substitutes = "mute_voice",
+
+		change_voice_mode_command = "بدل_نظام_الصوت",
+		change_voice_mode_command_help = "تبديل وضع الصوت 'الموسيقى' للتحكم فيه. هذا الوضع يعطل إزالة الضوضاء وإلغاء الصدى، مما يسمح بصوت أوضح للموسيقى.",
+		change_voice_mode_command_substitutes = "نظام_الصوت",
 
 		-- game/wizard
 		wizard_command = "wizard",
@@ -3702,6 +3740,12 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		version = "Version Habibi"
 	},
 
+	couches = {
+		model_not_found = "Habibi, I can't find that model name yaani.",
+		object_not_found = "There's no object of that model nearby, ya habibi.",
+		offset_copied = "Offset copied, yaani."
+	},
+
 	discord = {
 		one_player = "1 player Habibi",
 		multiple_players = "${playerAmount} players Habibi",
@@ -3776,22 +3820,36 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 	},
 
 	restart = {
-		restart_30_minutes = "The server will restart in 30 minutes!",
-		restart_15_minutes = "The server will restart in 15 minutes!",
-		restart_10_minutes = "The server will restart in 10 minutes!",
-		restart_5_minutes = "The server will restart in 5 minutes!",
-		restart_3_minutes = "The server will restart in 3 minutes!",
-		restart_2_minutes = "The server will restart in 2 minutes!",
-		restart_1_minute = "The server will restart in 1 minute, my dear!",
+		announcement_restart = "Ya habibi, the server will restart in ${minutes} minutes.",
+		announcement_restart_one_minute = "Ya habibi, the server will restart in 1 minute.",
+
+		announcement_update = "Ya habibi, the server will go down in ${minutes} minutes for an update.",
+		announcement_update_one_minute = "Ya habibi, the server will go down in 1 minute for an update.",
+
+		announcement_maintenance = "Ya habibi, the server will go down in ${minutes} minutes for maintenance.",
+		announcement_maintenance_one_minute = "١ دقيقة لإيقاف الخادم للصيانة.",
+
+		restart_cancelled = "تم إلغاء إعادة تشغيل الخادم.",
+
 		server_restarting = "The server is restarting. You can join again in a few minutes, Habibi!",
+
 		executed_restart_command = "I executed the restart command, Habibi.",
-		already_executed_restart_command = "The restart command was already executed, Habibi."
+		already_executed_restart_command = "The restart command was already executed, Habibi.",
+		restart_planned_earlier = "هناك إعادة تشغيل مخططة قبل الوقت المحدد.",
+		no_restart_planned = "لا يوجد إعادة تشغيل مخططة.",
+		posted_restart_warning_message = "تم نشر رسالة تحذير بإعادة التشغيل.",
+		cancelled_restart = "تم إلغاء إعادة التشغيل."
 	},
 
 	routes = {
 		route_not_found = "I'm sorry, I couldn't find the route ${route}.",
 		route_restricted = "I'm sorry, you do not have access to the route ${route}, Habibi.",
 		internal_server_error = "There seems to be an internal server error, my dear Habibi."
+	},
+
+	twitch = {
+		streaming_state_already_set_to_target = "تم تعيين حالة البث الحية للمستخدم بالفعل على الحالة المستهدفة المقدمة.",
+		streaming_state_changed = "Teh user's streaming state has been changed to the target state provided."
 	},
 
 	users = {
@@ -4367,6 +4425,44 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		press_to_leave_bed = "Press ~INPUT_CONTEXT~ to leave the bed Habibi."
 	},
 
+	bills = {
+		select_player = "Select Player",
+		no_nearby_players = "No billable players near you.",
+
+		amount = "Amount",
+		reason = "Reason",
+		bill_title = "New Bill received",
+		sender = "Sender",
+		amount = "Amount",
+		reason = "Reason",
+		no_receipt = "No Receipt",
+		yes_receipt = "Receipt",
+		tip = "Tip",
+		none = "None",
+
+		close = "Close",
+		back = "Back",
+		send = "Send",
+		pay = "Pay",
+
+		receipt = "Receipt (${name})",
+		receipt_text = "Bill from ${name}\n\nAmount: $${amount}\nReason: ${reason}",
+
+		invalid_player = "Habibi, the player is offline or too far away.",
+		bill_created = "Habibi, the bill for $${amount} has been successfully sent to ${name}.",
+		failed_create_bill = "Habibi, failed to send the bill for $${amount} to ${name}.",
+		no_reason = "Habibi, no reason provided.",
+		failed_pay_bill = "Habibi, failed to pay the bill.",
+		not_enough_money = "Habibi, you do not have enough money to pay this bill.",
+		bill_paid = "Habibi, you have successfully paid $${amount} to ${name}.",
+		bill_paid_notification = "${name} paid your bill with a ${tip}% tip, Habibi.",
+
+		paid_bill_title = "Paid Bill",
+		paid_bill_details = "Habibi, ${consoleName} paid the $${amount} (with a ${tip}% tip) bill by ${targetName}.",
+		bill_created_title = "Bill Created Habibi",
+		bill_created_details = "${targetName} ya sadiq, ${consoleName} laid a bill on your doorstep. It's for $${amount} and the reason behind it is `${reason}`."
+	},
+
 	blackjack = {
 		play_blackjack = "Press ~INPUT_CONTEXT~ to play Blackjack Habibi.",
 		play_blackjack_high_limit = "Press ~INPUT_CONTEXT~ to play High-Limit Blackjack."
@@ -4659,7 +4755,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		screen_model_size = "Sa3a: x: ${sizeX}, y: ${sizeY}",
 		screen_model_offset = "Offset: x: ${offsetX}, y: ${offsetY}, z: ${offsetZ}",
-		screen_model_rotation = "Doura: ${rotation}",
+		screen_model_rotation = "Rotation Habibi: x: ${rotationX}, y: ${rotationY}, z: ${rotationZ}",
 		screen_model_volume = "Mudde: ${volumeRadius} (${volumeCutOffRadius})",
 		screen_model_model = "Model: ${modelName}",
 
@@ -4678,7 +4774,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		cinema = "صالة سينما",
 		doppler_cinema = "صالة سينما دوبلر",
-		sandy_cinema = "صالة سينما ساندي",
+		sandy_cinema = "Sandy Cinema Habibi",
 		tv = "التلفزيون",
 		monitor = "المراقب الإلكتروني",
 		laptop = "Laptop",
@@ -4696,7 +4792,26 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		author = "Author",
 		queue = "Queue",
 		search_through_library = "Search through library...",
-		add_to_library = "Add video to library (URL)..."
+		add_to_library = "Add video to library (URL)...",
+
+		share_your_screen = "Share your screen Habibi",
+		how_to_share_screen = "Streaming with OBS Habibi:",
+		how_to_share_screen_part_1 = "Open OBS and head to the settings Ya Muhemmed.",
+		how_to_share_screen_part_2 = "Under the 'Stream' section, select 'Custom...' as the service.",
+		how_to_share_screen_part_3 = "أدخِل القيَم أدناه.",
+		how_to_share_screen_part_4 = "ابدأ البث في OBS.",
+		how_to_share_screen_part_5 = "انقُر على 'ابدأ البث!' أدناه.",
+		server = "الخادم",
+		stream_key = "مفتاح البث",
+		cancel = "إلغاء",
+		go_live = "ابدأ البث!",
+		copied = "تم النسخ!",
+		low_latency = "خفض تأخير البث:",
+		how_to_reduce_latency_part_1 = "افتح OBS واذهب إلى الإعدادات.",
+		how_to_reduce_latency_part_2 = "حدد الخيار المتقدم في 'وضع الإخراج' تحت قسم 'الإخراج'.",
+		how_to_reduce_latency_part_3 = "ابحث عن إعداد مفتاح الإطار في إعدادات الرمز.",
+		how_to_reduce_latency_part_4 = "Set da Keyframe Interval to 1s, Habibi.",
+		custom_stream = "Custom Stream"
 	},
 
 	cinematic = {
@@ -5537,7 +5652,11 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		secondary_offset = "Secondary Offset",
 		rotation = "Rotation",
 		color = "Color",
-		duration = "Duration (ms)"
+		duration = "Duration (ms)",
+
+		flash_no_image = "Da kill flash don't work wit a custom image, Habibi.",
+		do_flash = "Do Flash",
+		flashing = "Flashing"
 	},
 
 	clip_saver = {
@@ -5645,7 +5764,9 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		no_states = "No States",
 		entity_health = "Health ${health}/${maxHealth}",
 		owned_by_server = "Server",
+		owned_by_you = "You",
 		first_owned_short = "First Owner: ${firstOwned}",
+		current_owned_short = "Current Owner: ${currentOwner}",
 		network_id_side = "Habibi, network ID: ${networkId}",
 		no_target = "Ma'indha yaara ma'mur",
 		invalid_radius_parameter = "Habibi, the `radius` be messed up.",
@@ -5697,6 +5818,9 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		delete_entity_success = "تم حذف الكيان بنجاح مع معرف الشبكة ${networkId}.",
 		delete_entity_failed = "Sorry habibi, could not delete entity.",
 		delete_entity_no_permissions = "Sorry habibi, you don't have enough permission to delete an entity.",
+
+		failed_entity_info = "Failed to get entity information.",
+		printed_entity_info = "Printed entity server information in F8.",
 
 		move_entity_success = "Successfully moved the entity with network id ${networkId}, habibi.",
 		move_entity_failed = "Sorry habibi, failed to move entity.",
@@ -6008,6 +6132,13 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		purchase_success = "تم شراء بطاقة هوية مزيفة بنجاح بقيمة 3,000 دولار."
 	},
 
+	farming = {
+		milk_cow_interact = "[${InteractionKey}] Milk Cow",
+		milking_cow = "Milking Cow",
+		milking_cow_moved = "Da cow seemed to have moved away, Habibi.",
+		milking_cow_failed = "Failed to milk cow."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "جاري الحصول على البصمات الإلكترونية",
 		already_fingerprinting = "You are already taking a fingerprint of a player, habibi.",
@@ -6076,12 +6207,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		freecam_logs_title = "Freecam Toggled",
 		freecam_on_logs_details = "${consoleName} toggled their freecam on.",
 		freecam_off_logs_details = "${consoleName} toggled their freecam off.",
-
-		track_player_logs_title = "Tracking",
-		track_player_logs_details = "${consoleName} is tracking ${targetName} using the orbitcam.",
-
-		freecam_no_permission = "You don't have the required permissions to toggle your freecam.",
-		track_player_no_permission = "You don't have the required permissions to track players using your freecam.",
 
 		freecam_inactive = "You're not in freecam mode at the moment, habibi.",
 		added_point = "Camera point added to index ${index} (Transition time: ${transition}ms), habibi.",
@@ -6326,11 +6451,20 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		death_timer_override_removed = "The death timer override has been lifted, habibi.",
 		no_death_timer_override_set = "Mafi mushkil noos, there is no death timer override set.",
 
+		no_nearby_ped = "Habibi, there is no nearby person.",
+		ped_not_dead = "Habibi, the person is not dead.",
+		performing_cpr = "Performing CPR",
+
 		invalid_distance = "Ya haram, invalid revive range (Has to be between 1 and 50).",
 		no_players_in_range = "Ya Sidi, there are no downed players within a ${distance}m radius.",
 		successfully_revived_range = "Great news! Successfully revived ${amount} player(s) in a ${distance}m radius.",
 		failed_revive_range = "Ayyoob, failed to revive players.",
-		range_revive_not_staff = "Baba, Player attempted to revive players in a certain range, but didn't have correct permissions to do so."
+		range_revive_not_staff = "Baba, Player attempted to revive players in a certain range, but didn't have correct permissions to do so.",
+
+		cpr_ped_logs_title = "Resuscitated Person",
+		cpr_ped_logs_details = "${consoleName} resuscitated a person and received $${money}.",
+		cpr_player_logs_title = "Resuscitated Player",
+		cpr_player_logs_details = "${consoleName} resuscitated ${targetConsoleName}."
 	},
 
 	hitmarkers = {
@@ -6365,6 +6499,8 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		alignment_warning = "Your HUD appears to be partially off-screen. You can adjust it by reducing the \"*Safezone Size*\" in your \"*Display*\" settings.",
 
 		muted = "Muted",
+		tx = "TX",
+		rx = "RX",
 
 		fps_unit = "fps",
 		ping_unit = "ms",
@@ -6648,6 +6784,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		los_santos_golf_club = "نادي الغولف لوس سانتوس",
 		arcade_bar = "نادي الالعاب",
 		japanese_restaurant = "مطعم ياباني",
+		japanese_restaurant_kitchen = "Japanese Restaurant Kitchen",
 		["945_studios"] = "945 Studios",
 		grain_mill = "مطحنة الحبوب",
 		pd_prefix = "شرطة",
@@ -6668,7 +6805,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		nameable_title = "Ism Al-ashiya Al-mumkin Altuhfa:",
 
-		locker_restricted = "Laa yببدو هذا العنصر مناسباً في خزانة الملابس الخاصة بك.",
+		locker_restricted = "Habibi, you cannot move this item into that inventory.",
 
 		press_to_access_shredder = "[${InteractionKey}] Al-dakhil 'ala shirddir.",
 
@@ -7417,6 +7554,9 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		pigeon_milk = "حليب الحمام",
 		pigeon_milk_description = "\"يجب شرب حليب الحمام، هذا الشيء سيجعلك تنام مثل الطفل\"\nحليب يستخرجه Vedder بكل حب.",
 
+		milk = "حليب",
+		milk_description = "حليب البقر العادي المستخرج بحب.",
+
 		bandana = "باندانا",
 		bandana_description = "قائمة طويلة من أعمال العصابات. (فوز الـ Bloods)",
 
@@ -7537,6 +7677,8 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		traffic_barrel_description = "يبدو قابلًا للصدمة ، ولكن لا تفعل ... ما لم يكن هناك سبب.",
 		pedestrian_barrier = "حاجز المشاة",
 		pedestrian_barrier_description = "رائع للحصول عليه ما لم يكن حفل ترافيس سكوت...",
+		wheel_clamp = "قفل العجلة",
+		wheel_clamp_description = "لا سيارات هاربة هنا! قفل العجلة يعني جدية، حيث يثبت المركبات بشكل قوي ويضع حداً للحركة غير المصرح بها. هذا الجهاز الثقيل الواجب يضمن احترام ومتابعة قواعد وقوانين وقواميس الوقوف بالسيارات.",
 
 		bandit_1 = "بانديت 1",
 		bandit_1_description = "يمكن وضعه في أي مكان في العالم.",
@@ -7888,6 +8030,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		weapon_gadgetpistol = "Perico Pistol",
 		weapon_stungun_mp = "Stun Gun (MP)",
 		weapon_pistolxm3 = "WM 29 Pistol",
+		weapon_tecpistol = "مسدس تكتيكي",
 
 		weapon_microsmg = "Micro SMG",
 		weapon_smg = "SMG",
@@ -8011,6 +8154,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		weapon_gadgetpistol_description = "A lethal shot that shouldn't be taken lightly! Don't worry about damaging the titanium nitride finish.",
 		weapon_stungun_mp_description = "Funzaptastic for the whole extended family!",
 		weapon_pistolxm3_description = "Small and light pistol that uses 9mm bullets. Perfect for up close encounters.",
+		weapon_tecpistol_description = "مسدس آلي بسعة كبيرة للمخازن ومعدل نار عالٍ. يحتوي على 33 طلقة من ذخيرة 9 ملم.",
 
 		weapon_microsmg_description = "Compact design with high rate of fire, fires 700-900 rounds per minute.",
 		weapon_smg_description = "Fantastic overall submachine gun. Lightweight with accurate sight and can hold up to 30 rounds in the magazine.",
@@ -8118,7 +8262,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		weapon_addon_sentinelbbshotgun = "Beanbag Shotgun",
 		weapon_addon_sentinelbbshotgun_description = "Bags of laughter.",
 
-		-- TODO: Add a description for this one
 		weapon_addon_stungun = "Coil Stun Gun",
 		weapon_addon_stungun_description = "متعة تأشير ديناميكية للعائلة بأكملها!",
 
@@ -8189,6 +8332,21 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		weapon_addon_680_description = "ريمنجتون 680 هو بندقية ضغط الغليان التي تم تطويرها من قبل شركة ريمنجتون آرمز في عام 1950."
 	},
 
+	invisibility = {
+		invisibility_on = "Toggled invisibility on. (Toglet invisibility en.)",
+		invisibility_off = "Toggled invisibility off. (Toglet invisibility off.)",
+
+		invalid_server_id = "Invalid Server ID. (Invalid Server ID.)",
+
+		toggled_invisibility = "Successfully toggled ${displayName}'s invisibility. (Invisibility toggled successfully for ${displayName}.)",
+		failed_invisibility = "Failed to toggle ${displayName}'s invisibility. (Failed to toggle invisibility for ${displayName}.)",
+
+		invisibility_logs_title = "Toggled Invisibliity. (Invisibility Toglet.)",
+		invisibility_on_logs_details = "${consoleName} toggled their invisibility on. (${consoleName} has toggled their invisibility on.)",
+		invisibility_off_logs_details = "${consoleName} toggled their invisibility off. (${consoleName} has toggled their invisibility off.)",
+		invisibility_other_logs_details = "${consoleName} toggled ${targetConsoleName}'s invisibility. (${consoleName} has toggled ${targetConsoleName}'s invisibility.)"
+	},
+
 	items = {
 		move_to_repair = "Come here Habibi to fix the car.",
 		repairing_vehicle = "تصليح السيارة",
@@ -8219,6 +8377,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		just_used_bandage = "You just used a first aid kit, wait a bit before using another one.",
 		drank_gasoline_death = "Gasoline Poisoning",
 		drank_bleach_death = "Poisoned with Bleach",
+		finished_joint = "Ahlan, you finished your joint.",
 
 		using_cuffs = "Using Zahmat Al Manacles",
 		you_moved_too_fast = "Aye slow down mate, you moved too fast.",
@@ -8446,6 +8605,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		refreshing = "جاري التحديث...",
 
 		avoid_repeating_letters = "Ya habibi, try to avoid lots of repeating letters in your ism al-awwal (first name) and/or ism akhir (last name).",
+		backstory_empty = "Ya habibi, your backstory cannot be empty.",
 
 		missing_character_creation_data = "بيانات انشاء الشخصية مفقودة",
 		invalid_first_name = "اسم الشخصية غير صالح او مفقود (من ٢ الى ١٠٠ حرف).",
@@ -8612,7 +8772,9 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		catnip_active = "إعطاء ماكسويل القطاني النعناع",
 		treat_active = "إعطاء ماكسويل حبة",
 		cuddle_active = "التقبيل مع ماكسويل",
-		hug_active = "عناق ماكسويل"
+		hug_active = "عناق ماكسويل",
+
+		maxwell_appeared = "MashaAllah, Maxwell has appeared near you."
 	},
 
 	meth = {
@@ -8792,21 +8954,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		not_close_enough = "أنت لست قريباً بما فيه الكفاية من اللاعب.",
 		user_not_available = "اللاعب غير متاح.",
 
-		bill_received = "${displayName} أرسل لك فاتورة بمبلغ $${amount}. اكتب `/yes` للموافقة عليها ، و` /no` للرفض.",
-		bill_expired = "Your bill from ${displayName} has expired, habibi.",
-		bill_declined = "You have declined the bill from ${displayName}, habibi.",
-		failed_bill_payment = "Failed to pay the bill, habibi.",
-		bill_success = "Successfully paid the $${amount} bill from ${displayName}, habibi.",
-		bill_created = "You have created a bill for $${amount} to ${displayName}, habibi.",
-
 		givecash_success = "You gave ${displayName} $${amount}, habibi.",
 
 		give_cash_title = "Cash Transfer, habibi",
-		give_cash_details = "${consoleName} transferred $${amount} to ${targetConsoleName}, habibi.",
-		paid_bill_title = "Bill Paid",
-		paid_bill_details = "${consoleName} paid ${targetConsoleName} $${amount} for a bill.",
-		bill_created_title = "Bill Created",
-		bill_created_details = "${consoleName} created a $${amount} bill for ${targetConsoleName}."
+		give_cash_details = "${consoleName} transferred $${amount} to ${targetConsoleName}, habibi."
 	},
 
 	moonshine = {
@@ -9082,12 +9233,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		ped_models_about = "تم إدراج كل لاعب لديه نموذج لاعب غير مجاني هنا. يجب أن يساعد هذا في العثور على اللاعبين الذين هم هنا للتخريب أو المشغلين الآخرين المحتملين.",
 		local_ped_models_title = "نماذج لاعب محلي",
 		animal_ped_models_title = "نماذج حيوانية",
-
-		fast_movement_title = "حركة سريعة",
-		fast_movement_about = "تم إدراج كل لاعب تم علامته بطريقة ما بأنه يتحرك بسرعة كبيرة هنا. يجب أن يساعد هذا في العثور على اللاعبين المشغلين المحتملين.",
-
-		damage_modifier_title = "Taqdirat al-iDha'at",
-		damage_modifier_about = "In here, kulli laeib alladhi yurfa' annahu yamlik taqdirat al-iDha'at al-mughayyira yuQaal fi-hi. Haadha yasaa'du fi Hudhur al-laeib alladhi yurwunatan lada-hu bi-annahu mumkin an yakun taGhiyrat al-nashat 'an al-laeib",
 
 		bad_screen_word_title = "Kalimaat Siyaahiyya Maa-aSira",
 		bad_screen_word_about = "In here, kulli laeib alladhi yurfa' annahu yamlik kalimaat maa-aSira mawquufat 'ala SharTat-hi yuQaal fi-hi. Haadha yasaa'du fi Hudhur al-laeib alladhi yurwunatan lada-hu bi-annahu mumkin an yakun shakhsan mumawwidhan li-l-laeib.",
@@ -9705,6 +9850,9 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		was_banned = "Banned",
 		loading = "Loading player's data...",
+		loading_screenshot = "Loading screenshot...",
+		screenshot_failed = "Astaghfirullah, failed to take screenshot.",
+		player_no_character = "The player has no character loaded, habibi.",
 		no_warnings = "No warnings",
 		not_shown_warnings = "${count} more warning(s) not shown",
 		system_issuer = "System",
@@ -9720,6 +9868,8 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		button_add = "إضافة",
 		button_close = "إغلاق",
 		button_new = "ملاحظة جديدة",
+		button_back = "Wara'a",
+		button_screenshot = "Eshtakal Screenshot",
 
 		ping = "البنغ: ${ping} مللي ثانية",
 		fps = "الإطار: ${fps} فريم في الثانية",
@@ -10155,7 +10305,48 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		better_stamina = "You will be able to run without getting tired for ${duration} minutes.",
 		more_inventory_space = "You now have ${amount} more inventory slots for ${duration} minutes.",
 
-		buffs_note = "The buffs will only take effect once you leave the building's area."
+		buffs_note = "The buffs will only take effect once you leave the building's area.",
+
+		press_to_prepare_food = "[${InteractionKey}] Ibtadal al-Ta'am",
+		prepare_food = "Ibtadal al-Ta'am",
+
+		kissaki_kitchen = "Mutaabbidetti Kissaki",
+
+		craft = "Hasil",
+		putting_down_ingredients = "Placing Ingredients Down",
+
+		pick_up = "Pick Up: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Pick Up: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Prepare Rice (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Prepare Rice (${completed}%~s~)",
+		preparing_rice_starting = "Preparing Rice",
+		preparing_rice = "~g~${name}~s~: Preparing Rice... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: Prepare Fillings (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Prepare Fillings (${completed}%~s~)",
+		preparing_fillings_starting = "Preparing Fillings",
+		preparing_fillings = "~g~${name}~s~: Preparing Fillings... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Prepare Rolling Mat (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Prepare Rolling Mat (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Preparing Rolling Mat",
+		preparing_rolling_mat = "~g~${name}~s~: Preparing Rolling Mat... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Assemble Sushi (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Assemble Sushi (${completed}%~s~)",
+		assembling_sushi_starting = "Assembling Sushi",
+		assembling_sushi = "~g~${name}~s~: Assembling Sushi... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Roll Sushi (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Roll Sushi (${completed}%~s~)",
+		rolling_sushi_starting = "Rolling Sushi",
+		rolling_sushi = "~g~${name}~s~: Rolling Sushi... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Slice Sushi (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Slice Sushi (${completed}%~s~)",
+		slicing_sushi_starting = "Slicing Sushi",
+		slicing_sushi = "~g~${name}~s~: Slicing Sushi... (${completed}%~s~)"
 	},
 
 	riot_mode = {
@@ -10198,7 +10389,11 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		time_since_disconnection = "Time since disconnection",
 
 		you_are_now_metagaming = "You are now engaging in Habibi Roleplay.",
-		you_are_no_longer_metagaming = "You are no longer engaging in Habibi Roleplay."
+		you_are_no_longer_metagaming = "You are no longer engaging in Habibi Roleplay.",
+
+		server_id_hide_failed = "Failed to toggle server-id hide.",
+		server_id_hidden = "Your server id is now hidden.",
+		server_id_not_hidden = "Your server id is no longer hidden."
 	},
 
 	screenshots = {
@@ -10216,7 +10411,8 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		screenshot_error_user_not_found = "User not found. يا حبيبي، المستخدم المطلوب غير موجود.",
 		screenshot_error_user_developer = "User is a developer.",
 		screenshot_error_no_token = "Failed to get opfw token.",
-		screenshot_timeout = "Screenshot request timed out."
+		screenshot_timeout = "Screenshot request timed out.",
+		screenshot_error_character_unloaded = "User left the server or unloaded their character."
 	},
 
 	scuba = {
@@ -10361,13 +10557,19 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		use_blender = "[${InteractionKey}] Ista'mal Blender",
 		blending = "Yablindi",
+		no_ingredients = "You don't have any ingredients to make a smoothie.",
 
+		milkshake_label = "Milkshake (${flavors})",
 		smoothie_label = "Sama'ed (${flavors})",
 		seperator = "w"
 	},
 
 	snow = {
 		hold_to_pick_up_snowballs = "Uddam ~INPUT_CONTEXT~ li jitbah tasajjarati thawbah."
+	},
+
+	sound_effects = {
+		invalid_sound = "Invalid Sound."
 	},
 
 	spawn = {
@@ -10416,7 +10618,9 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		player_not_exist = "Il-loghba m'intix online.",
 		no_character_loaded = "L-Loghba m'ghandha xejn imhatriaħ.",
 		not_same_instance = "Il-loghba ma hiex fil-istess istanza bħalik.",
+		no_user_or_character = "Habibi is offline or does not have a character loaded.",
 
+		resolving_player = "Resolving Habibi",
 		loading_coords = "جاري التحميل للإحداثيات",
 		preloading_area = "جاري تحميل المنطقة السابقة",
 		finding_player = "جاري البحث عن اللاعب",
@@ -10427,11 +10631,14 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		health_ok = "الصحة: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
 		health_bad = "الصحة: ~r~${health} / ${maxHealth}~w~ - ${percentage}",
+		bleeding = "~w~ - ~r~Bleeding",
 
 		armor_ok = "الدروع: ~g~${armor} / ${maxArmor}~w~ - ${percentage}",
 		armor_bad = "Hijab: ~r~${armor} / ${maxArmor}~w~ - ${percentage}",
 
-		vehicle_health = "Vehicle Health: ${percentage}, mate.",
+		vehicle_health_fuel = "Vehicle - Fuel: ${health} ~w~- ${fuel}",
+		can_respawn = "Can Respawn: ${remaining}",
+		yes = "~g~Yes",
 
 		speed = "Speed: ${speed}",
 
@@ -11029,6 +11236,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		target_radius = "Radius il-wa7d il-ma3lum: ${targetRadius}",
 		actual_radius = "Radius il-hali: ${actualRadius}",
 
+		intent_music = "Set voice input mode to 'music'.",
+		intent_speech = "Set voice input mode back to 'speech'.",
+		music_mode = "Music-Mode",
+
 		invalid_server_id = "Id il server ma3roof mish sa7i7.",
 		failed_toggle_listen = "Mish 9adar tibdal il hall il-istima3.",
 		listeners = "Samieen:",
@@ -11041,7 +11252,19 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		affected_by_jammer = "Your yapwa seems to be affected by a jammer or some kind.",
 
 		listening_missing_permissions = "Yalla, this player tried to toggle their listening status but they don't have the required permissions.",
-		voice_mute_missing_permissions = "Friend, this player attempted to toggle another player's muted status, but they don't have the required permissions."
+		voice_mute_missing_permissions = "Friend, this player attempted to toggle another player's muted status, but they don't have the required permissions.",
+
+		music_mode_logs_title = "Toggled Voice Mode",
+		music_mode_logs_details_on = "${consoleName} changed their voice input mode to 'music'.",
+		music_mode_logs_details_off = "${consoleName} بدّل وضع إدخال الصوت إلى 'كلام'.",
+
+		listening_logs_title = "الإستماع",
+		stopped_listening_logs_details = "${consoleName} بدأ في الاستماع إلى ${targetConsoleName}.",
+		started_listening_logs_details = "${consoleName} توقف عن الاستماع إلى ${targetConsoleName}.",
+
+		muted_logs_title = "صوت مكتوم",
+		muted_logs_details = "${consoleName} عطل الصوت لـ ${targetConsoleName} على المكالمات الصوتية.",
+		unmuted_logs_details = "${consoleName} banfa2 ${targetConsoleName} min chat ilu le7Sasa."
 	},
 
 	washrooms = {
@@ -11064,7 +11287,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		ragdoll_player = "Cast Ragdoll Spell",
 		ragdoll_player_force = "Cast Stronger Ragdoll Spell",
 		punch_player = "Cast Force Punch Spell",
-		taze_player = "Cast Taze Spell",
 		exit_vehicle_player = "Cast Exit Vehicle Spell",
 		yank_steering_wheel_player = "Yank steering wheel",
 		flashbang_player = "Flashbang",
@@ -11150,19 +11372,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 	},
 
 	functions = {
-		year = "sana",
-		years = "sinin",
-		month = "شهر",
-		months = "أشهر",
-		day = "يوم",
-		days = "أيام",
-		hour = "ساعة",
-		hours = "ساعات",
-		minute = "دقيقة",
-		minutes = "دقائق",
-		second = "ثانية",
-		seconds = "ثواني",
-		just_now = "الآن للتو",
 		unknown = "غير معروف",
 		flipped_vehicle_logs_title = "سيارة انقلبت",
 		flipped_vehicle_logs_details = "${consoleName} اقلب سيارة",
@@ -11170,10 +11379,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		knots = "knots",
 		mph = "mph",
-		kmh = "km/h",
-
-		time_in = "في خلال ${time} ${unit}",
-		time_ago = "منذ ${time} ${unit}"
+		kmh = "km/h"
 	},
 
 	states = {
@@ -11183,6 +11389,25 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		printed_states = "Printed states of entity ${networkId}.",
 
 		get_entity_states_missing_permissions = "Player attempted to get a specific entities states without proper permissions."
+	},
+
+	time = {
+		year = "sana",
+		years = "seneen",
+		month = "shahr",
+		months = "ashhur",
+		day = "yawm",
+		days = "ayyam",
+		hour = "saa",
+		hours = "saat",
+		minute = "dakika",
+		minutes = "dakayeq",
+		second = "sekunde",
+		seconds = "sekundat",
+		just_now = "bass ma ha2a",
+
+		time_in = "fi ${time} ${unit}",
+		time_ago = "min zaman ${time} ${unit}"
 	},
 
 	-- illegal/*
@@ -11220,6 +11445,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		reward_gold_bar = "You got your hands on a gold bar.",
 		reward_cash = "You got some cash.",
 		reward_keycard_red = "You obtained the Red Keycard.",
+		reward_treasure_map_piece = "2ehet \"Treasure Map Piece\" min honak.",
 
 		stockade_logs_title = "Stockade Activated",
 		stockade_logs_details = "${consoleName} activated a stockade."
@@ -11470,6 +11696,19 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		use_launch = "Press ~INPUT_VEH_HANDBRAKE~ to launch."
 	},
 
+	clamps = {
+		no_vehicle_near = "Mafish wa7ed moter deymanak tsawa bel motor ma3eish akhadin.",
+		vehicle_not_driveable = "Mabeysh tistathem ilizziq clamp li maglub akwa.",
+		clamping = "Alqaad",
+		removing_clamp = "Tanziil Alqaad",
+		remove_clamp = "[${InteractionKey}] Izli Alqaad",
+
+		clamped_log_title = "Clamp Biljawaase",
+		clamped_log_details = "${consoleName} zarrek clamp cleavel il seyyaara bilplaka `${plate}`.",
+		unclamped_log_title = "Ezal Alqaad",
+		unclamped_log_details = "${consoleName} ezal clamp min il seyyaara bilplaka `${plate}`."
+	},
+
 	damage = {
 		vehicle = "Vehicle-ID: ${entity}",
 		general = "Overall: ${value}",
@@ -11505,8 +11744,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 	},
 
 	gadgets = {
-		helicopter_camera_vehicle_info_metric = "Speed: ${speed} km/h\nModel: ${model}\nPlate: ${plate}",
-		helicopter_camera_vehicle_info_imperial = "Speed: ${speed} mp/h\nModel: ${model}\nPlate: ${plate}",
+		helicopter_camera_vehicle_info = "Soraa: ${speed}\nMithl: ${model}\nPlaka: ${plate}",
 		helicopter_camera_altitude = "${altitude}ft AGL",
 		helicopter_camera_altitude_asl = "${altitude}ft ASL",
 		helicopter_camera_locked_on = "مغلق عليه",

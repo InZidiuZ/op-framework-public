@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 17 (do not change)
+-- AUTO LOCALES: 18 (do not change)
 
 OP.Global.Locales.Languages["sv-SE"] = {
 	-- configuration settings for language
@@ -17,10 +17,12 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		warning = "Varning",
 		invalid_input = "Ogiltigt inmatning.",
 		missing_input = "Saknad inmatning.",
+		missing_or_invalid_input = "Saknad eller ogiltig inmatning.",
 		player_not_found = "Kunde inte hitta spelaren med server-ID `${serverId}`.",
 		something_went_wrong = "Något gick fel. Försök igen.",
 		yes = "Ja",
-		no = "Nej"
+		no = "Nej",
+		n_a = "N/A"
 	},
 
 	-- animations/*
@@ -178,10 +180,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		announcement_logs_details = "${consoleName} skickade följande meddelande till hela servern: '${announcementMessage}'",
 		announcement_not_admin = "Försök att skicka ut ett personalmeddelande trots att du inte är personal.",
 
-		announcement_maintenance = "Servern kommer att stängas ner om ${minutes} minuter för underhåll.",
-		announcement_update = "Servern kommer att stängas ner om ${minutes} minuter för uppdatering.",
-		announcement_restart = "Servern kommer att stängas av om ${minutes} minuter för omstart.",
-
 		posted_announcement = "Meddelande tillkännagivet.",
 		posted_announcement_locale = "Meddelande tillkännagivet från språkområdet.",
 		failed_to_post_announcement = "Det gick inte att tillkännage meddelandet eftersom inget meddelande lades till.",
@@ -221,7 +219,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		missing_valid_license_identifier_parameter = "Saknar giltig parameter för 'licenseIdentifier'.",
 
 		illegal_entity_wipe = "Spelaren försökte rensa entiteter, men hade inte behörighet.",
-		wiped_entities = "Rensade entiteter",
+		wiped_entities = "Raderade enheter. Borttagna ${deletedEntities} nätverksenheter.",
 		wipe_entities_logs_title = "Rensade entiteter",
 		wipe_entities_logs_details = "${consoleName} utförde en rensning av entiteter med följande konfiguration: avstånd = `${distance}`, ignorera lokala entiteter = `${ignoreLocalEntities}`, modellnamn = `${modelName}`.",
 
@@ -284,13 +282,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		staff_feature_unavailable = "Denna funktion är otillgänglig när din tillgänglighet som personal är avstängd.",
 
-		failed_toggle_tracker = "Kunde inte växla spelartracker.",
-		unable_track_player = "Kan inte spåra spelaren.",
-		success_enable_tracker = "Spelartracker aktiverad för `${playerName}`.",
-		success_disable_tracker = "Spelartracker avaktiverad.",
-		not_tracking_player = "Du spårar inte en spelare.",
-		already_tracking_player = "Du spårar redan en spelare.",
-
 		toggle_player_track_no_permissions = "Försökte växla spelarspårning utan korrekta behörigheter.",
 		set_job_no_permissions = "Försökte sätta yrke utan korrekta behörigheter.",
 		toggle_reflection_no_permissions = "Försökte aktivera skadereflektion utan tillräckliga behörigheter.",
@@ -307,8 +298,18 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		headache_logs_details = "${consoleName} har utlöst huvudvärk för ${targetConsoleName}.",
 		trigger_headache_no_permissions = "Försökte utlösa huvudvärk utan korrekta rättigheter.",
 
+		super_jump_logs_title = "Slå på/av Super Hopp",
+		super_jump_logs_details_on = "${consoleName} har slagit på sitt super hopp.",
+		super_jump_logs_details_off = "${consoleName} har slagit av sitt super hopp.",
+		toggle_super_jump_no_permissions = "Försökte slå på/av sitt super hopp utan tillräckliga behörigheter.",
+
 		success_trigger_headache = "Lyckades utlösa huvudvärk för ${playerName}.",
 		failed_trigger_headache = "Kunde inte utlösa huvudvärk.",
+
+		set_spawn_success = "Din spawnplats är nu fixerad till din nuvarande position.",
+		set_spawn_failed = "Misslyckades att sätta spawnpunkt.",
+		reset_spawn_success = "Återställde spawnpunkt framgångsrikt.",
+		reset_spawn_failed = "Misslyckades att återställa spawnpunkt.",
 
 		protective_mode_not_staff = "Försökte aktivera serverns skyddsläge utan tillräckliga behörigheter.",
 		protective_mode_toggled_on = "Serverns skyddsläge har nu aktiverats. Krävd mängd speltid för att ansluta till servern har satts till `${playtime}`.",
@@ -345,8 +346,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		no_nearby_vehicles_off = "Avaktiverade 'Inga Närliggande Fordon'.",
 		speed_up_progress_bar_on = "Aktiverade 'Snabba upp framstegsindikatorn'.",
 		speed_up_progress_bar_off = "Avaktiverade 'Snabba upp framstegsindikatorn'.",
-		invisibility_on = "Aktiverade 'Osynlighet'.",
-		invisibility_off = "Avaktiverade 'Osynlighet'.",
 		wallhack_on = "Aktiverade 'Wallhack'.",
 		wallhack_off = "Avaktiverade 'Wallhack'.",
 		aimbot_on = "Aktiverade 'Aimbot'.",
@@ -428,6 +427,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		fortnite_feature = "Fortnite",
 		reflection_feature = "Skadereflektion",
 		stable_cam_feature = "Stallningskamera",
+		super_jump_feature = "Superhopp",
+		server_id_hidden_feature = "Server-ID Dolt",
+		fake_disconnect_feature = "Fejkad-D/C",
 
 		you_are_not_in_a_vehicle = "Du är inte i ett fordon.",
 		repaired_vehicle = "Reparerade fordonet.",
@@ -710,37 +712,59 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		text_entry_ban = "Att inspektera element är inte tillåtet i den här webbläsaren.",
 		thermal_night_vision_ban = "Brighter Nights är inte tillåtet.",
 		vehicle_modification_ban = "Du kunde inte hitta strålkastarvätskan till din bil.",
-		vehicle_spam_ban = "Counter terrorists win.",
 		vehicle_spawn_ban = "Du försökte använda redstone på en gruvtunnelvagn men hade ingen strömskena.",
 		weapon_spawn_ban = "Försökte dra upp en kanin ur hatten, hittade en bazooka istället.",
 		high_damage_ban = "Makten har gått överstyr och rubbat balansen i vår värld.",
 		suspicious_explosion_ban = "Tyvärr är det inte en Michael Bay-film. Överdriven användning av pyroteknik är inte tillåtet.",
 		semi_godmode_ban = "Din inställning till ungdomens källa verkar ha stört den naturliga tidens gång. Evigheten är inte lika roligt som det låter.",
 		invalid_health_ban = "Din hälsomätare verkar ha fått i sig lite för mycket spenat, Popeye.",
+		clear_tasks_ban = "Det här är inte en Jedi tankekontrollträningscenter. Dina försök att påverka andras fria vilja har noterats... och avvisats.",
+		projectile_event_ban = "Det här är inte Hogwarts och du är inte Harry Potter. Oaktande användning av trollformler - eller projektiler - tillåts inte här.",
+		illegal_native_ban = "Du kan inte använda en förmåga som du inte har lärt dig än...",
+
+		type_aimbot = "Aimbot",
+		type_bad_creation = "Dålig Skapelse",
+		type_bad_screen_word = "Dåligt Skärminnehåll",
+		type_blacklisted_command = "Bannlyst Kommando",
+		type_clear_tasks = "Rensa Uppgifter",
+		type_damage_modifier = "Skademodifikator",
+		type_distance_taze = "Distansstun",
+		type_driving_hotwire = "Körning avlåsning",
+		type_fast_movement = "Snabb Rörelse",
+		type_freecam_detected = "Freecam Upptäckt",
+		type_high_damage = "Hög Skada",
+		type_honeypot = "Honungsfälla",
+		type_illegal_event = "Olovligt klientevent",
+		type_illegal_freeze = "Olovlig frysning",
+		type_illegal_ped_spawn = "Spawna ped",
+		type_illegal_server_event = "Olovligt serverevent",
+		type_illegal_vehicle_modifier = "Forfordonsmodifierare",
+		type_illegal_vehicle_spawn = "Spawna fordon",
+		type_illegal_weapon = "Vapenspawning",
+		type_invalid_health = "Ogiltigt liv",
+		type_invincibility = "Oövervinnlighet",
+		type_modified_fov = "Modifierat FOV",
+		type_ped_change = "Pedbyte",
+		type_player_blips = "Spelarmarkörer",
+		type_projectile_event = "Projektilhändelse",
+		type_runtime_texture = "Exekveringstextur",
+		type_semi_godmode = "Halvgudsläge",
+		type_spawned_object = "Spawnd objekt",
+		type_spectate = "Spectate",
+		type_spiked_resource = "Manipulerad resurs",
+		type_suspicious_explosion = "Misstänkt explosion",
+		type_text_entry = "Textinmatning",
+		type_thermal_night_vision = "Termiskt/nattsyn",
+		type_vehicle_modification = "Fordon modifiering",
+		type_illegal_native = "Illegal anrop till native",
+
+		event_prefix = "Anti-Cheat: ${type}",
 
 		mp_f_freemode_01_label = "Fritt läge (kvinnlig)",
 		mp_m_freemode_01_label = "Fritt läge (manlig)",
 		player_one_label = "Franklin",
 		player_two_label = "Trevor",
 		player_zero_label = "Michael",
-
-		notification_distance_taze = "Anti-Cheat: ${displayName} taserade någon över ett väldigt stort avstånd (${distance}m).",
-		notification_bad_screen_word = "Anti-Cheat: ${displayName} har ${count} triggerord på sin skärm.",
-		notification_suspicious_explosion = "Anti-Cheat: ${displayName} utlöste en ${explosionType}-explosion (~${distance}m).",
-
-		notification_freecam_detected = "Anti-Cheat: Freecam upptäckt",
-		notification_illegal_vehicle_modifier = "Anti-Cheat: Fordonsmodifierare",
-		notification_illegal_vehicle_spawn = "Anti-Cheat: Fordon Spawnaed",
-		notification_fast_movement = "Anti-Cheat: Snabb rörelse",
-		notification_illegal_freeze = "Anti-Cheat: Olagligt frysa",
-		notification_invincibility = "Anti-Cheat: Oövervinnlighet",
-		notification_vehicle_modification = "Anti-Cheat: Fordonsmodifiering",
-		notification_damage_modifier = "Anti-Cheat: Skadomodifiering",
-		notification_illegal_weapon = "Anti-Cheat: Olagligt vapen",
-		notification_spawned_object = "Anti-Cheat: Objekt skapat",
-		notification_driving_hotwire = "Anti-Cheat: Körning vid varningssignal",
-		notification_semi_godmode = "Anti-Cheat: Semi-Gudaläge",
-		notification_invalid_health = "Anti-Cheat: Ogiltig hälsa",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus",
@@ -770,29 +794,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		fast_movement_warning = "Du har flaggats för att röra dig för snabbt! Vänligen meddela en utvecklare och berätta vad du gjorde då detta hände eftersom du inte borde ta emot detta chattmeddelande.",
 		invincibility_warning = "Du har flaggats för att vara oövervinnlig! Vänligen meddela en utvecklare och berätta vad du gjorde då detta hände eftersom du inte borde ta emot detta chattmeddelande.",
 		damage_modifier_warning = "Du har flaggats för att ha en ogiltig skademodifierare! Vänligen meddela en utvecklare och berätta vad du gjorde då detta hände eftersom du inte borde ta emot detta chattmeddelande.",
-		freeze_warning = "Du har blivit flaggad för att vara nedfryst när du inte ska vara det! Vänligen meddela en utvecklare och berätta vad du gjorde som orsakade detta, eftersom du inte borde få detta chattmeddelande.",
-
-		distance_taze_screenshot = "Anti-Cheat: Taze på avstånd (${distance}m)",
-		spectating_screenshot = "Anti-Cheat: Tittar på",
-		fast_movement_screenshot = "Anti-Cheat: Snabb rörelse",
-		illegal_freeze_screenshot = "Anti-Cheat: Olovlig nedfrysning",
-		illegal_vehicle_modifier_screenshot = "Anti-Cheat: Fordonsmodifierare (${modifierName} = ${modifierValue})",
-		damage_modifier_screenshot = "Anti-Cheat: ogiltig skademodifierare (${activeModifier}/${currentModifier})",
-		illegal_weapon_screenshot = "Anti-Cheat: olagligt vapen (${weaponLabel})",
-		illegal_vehicle_spawn_screenshot = "Anti-Cheat: olagligt fordon (${modelName})",
-		vehicle_modification_screenshot = "Anti-Cheat: modifierat fordon (${types})",
-		thermal_night_vision_screenshot = "Anti-Cheat: Termiskt/nattseende (${nativeName})",
-		text_entry_screenshot = "Anti-Cheat: textinmatning (${textEntry})",
-		player_blips_screenshot = "Anti-Cheat: spelarikoner",
-		modified_fov_screenshot = "Anticheat: Modifierad FOV (${fov})",
-		ped_change_screenshot = "Anticheat: Olagligt Pedbyte",
-		invincibility_screenshot = "Anticheat: Odödlig",
-		runtime_texture_screenshot = "Anticheat: Körningstextur (${textureDict}, ${textureName})",
-		bad_screen_word_screenshot = "Anticheat: Dåligt skärmsord (${words})",
-		freecam_detected_screenshot = "Anti-Cheat: Freecam upptäckt",
-		driving_hotwire_screenshot = "Anticheat: Körning med startkablar",
-		semi_godmode_screenshot = "Anti-Cheat: Semi-Gudaläge",
-		invalid_health_screenshot = "Anti-Cheat: Ogiltig hälsa upptäckt"
+		freeze_warning = "Du har blivit flaggad för att vara nedfryst när du inte ska vara det! Vänligen meddela en utvecklare och berätta vad du gjorde som orsakade detta, eftersom du inte borde få detta chattmeddelande."
 	},
 
 	authentication = {
@@ -905,8 +907,21 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		sit_command = "sitt",
 		sit_command_help = "Försök att sätta dig på en närliggande stol.",
 		sit_command_parameter_variation = "variation",
-		sit_command_parameter_variation_help = "Vilken sittande animationsvariation som ska spelas (1-6).",
+		sit_command_parameter_variation_help = "Vilken sittyta att använda (1 - 6).",
 		sit_command_substitutes = "stol",
+
+		-- animations/couches
+		sleep_command = "sova",
+		sleep_command_help = "Försök att sova på en närliggande soffa eller på marken.",
+		sleep_command_parameter_variation = "variation",
+		sleep_command_parameter_variation_help = "Vilken sov-animationsvariation som ska spelas (1 - 2).",
+		sleep_command_substitutes = "lägga_sig",
+
+		couch_offset_command = "soffa_offset",
+		couch_offset_command_help = "Kopiera offseten till en närliggande soffa av en specifik modell.",
+		couch_offset_command_parameter_model_name = "modellnamn",
+		couch_offset_command_parameter_model_name_help = "Modellnamnet för soffan att kopiera offseten av.",
+		couch_offset_command_substitutes = "",
 
 		-- animations/emotes
 		ragdoll_command = "ragdoll",
@@ -1111,12 +1126,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		infinite_ammo_command_help = "Växlar mellan oändlig amunition.",
 		infinite_ammo_command_substitutes = "",
 
-		track_player_command = "spåra_spelare",
-		track_player_command_help = "Slår på spårning för en viss spelare.",
-		track_player_command_parameter_server_id = "server id",
-		track_player_command_parameter_server_id_help = "Spelarens server-ID du vill spåra. Lämna tomt för att stänga av.",
-		track_player_command_substitutes = "",
-
 		reflect_damage_command = "reflektera_skada",
 		reflect_damage_command_help = "Växlar skadereflektion. (Alla spelare som skadar dig kommer att skadas själva)",
 		reflect_damage_command_substitutes = "reflektera",
@@ -1126,6 +1135,18 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		trigger_headache_command_parameter_server_id = "server id",
 		trigger_headache_command_parameter_server_id_help = "Server-ID för spelaren som du vill utlösa huvudvärk för.",
 		trigger_headache_command_substitutes = "huvudvärk",
+
+		super_jump_command = "super_jump",
+		super_jump_command_help = "Växlar din superhopp.",
+		super_jump_command_substitutes = "",
+
+		set_spawnpoint_command = "set_spawnpoint",
+		set_spawnpoint_command_help = "Sätter din karaktärs spawnpunkt till din nuvarande position.",
+		set_spawnpoint_command_substitutes = "set_spawn",
+
+		reset_spawnpoint_command = "reset_spawnpoint",
+		reset_spawnpoint_command_help = "Återställer din karaktärs spawnpunkt som sattes med /set_spawnpoint.",
+		reset_spawnpoint_command_substitutes = "reset_spawn",
 
 		stick_command = "fastna",
 		stick_command_help = "Fäst på bilen du är ovanpå.",
@@ -1158,12 +1179,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		speed_up_progress_bar_command_parameter_server_id = "server-id",
 		speed_up_progress_bar_command_parameter_server_id_help = "Om du vill aktivera alternativet 'hastighetsfaktor_fortsättningsfält' för någon annan, ange deras server-id här.",
 		speed_up_progress_bar_command_substitutes = "hastighetsfaktor",
-
-		invisibility_command = "osynlighet",
-		invisibility_command_help = "Aktiverar alternativet 'osynlighet'.",
-		invisibility_command_parameter_server_id = "servers ID",
-		invisibility_command_parameter_server_id_help = "Om du vill aktivera/daktivera 'osynlighet' för någon annan, ange deras servers ID här.",
-		invisibility_command_substitutes = "inv, osynlig, osynlighet",
 
 		add_cash_command = "lägg_till_pengar",
 		add_cash_command_help = "Lägg till pengar till en annan spelares karaktär.",
@@ -1673,6 +1688,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		bed_command_help = "Försök att lägga dig i närmaste säng.",
 		bed_command_substitutes = "",
 
+		-- game/bills
+		create_bill_command = "create_bill",
+		create_bill_command_help = "Skapa en faktura till en annan spelare för en viss summa pengar.",
+		create_bill_command_substitutes = "faktura, fakturera_spelare",
+
 		-- game/bombs
 		toggle_bombs_command = "växla_bomber",
 		toggle_bombs_command_help = "Aktiverar/deaktiverar bomberna på ditt nuvarande flygplan.",
@@ -1747,12 +1767,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		cayo_perico_command_substitutes = "",
 
 		-- game/cinema
-		cinema_blacklist_add_command = "cinema_blacklist_lägg_till",
-		cinema_blacklist_add_command_help = "Lägg till en video i den lokala filmförbudslistan.",
-		cinema_blacklist_add_command_parameter_video_key = "video nyckel",
-		cinema_blacklist_add_command_parameter_video_key_help = "Videonyckeln för videon du vill svartlista. Exempel: 'youtube:dQw4w9WgXcQ'",
-		cinema_blacklist_add_command_substitutes = "",
-
 		cinema_screens_debug_command = "cinema_screens_debug",
 		cinema_screens_debug_command_help = "Felsök bioskärmar.",
 		cinema_screens_debug_command_substitutes = "",
@@ -1976,6 +1990,12 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		move_entity_command_parameter_heading_help = "Om entiteten ska placeras med samma riktning som dig.",
 		move_entity_command_substitutes = "mv",
 
+		server_entity_command = "server_entity",
+		server_entity_command_help = "Felsök serverinformation om en entitet.",
+		server_entity_command_parameter_network_id = "nätverks-id",
+		server_entity_command_parameter_network_id_help = "Entitetens nätverks-id.",
+		server_entity_command_substitutes = "",
+
 		fake_lag_command = "fake_lag",
 		fake_lag_command_help = "Skapar falsk fördröjning.",
 		fake_lag_command_parameter_counter = "räknare",
@@ -2100,11 +2120,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		ped_bone_command_parameter_bone_name_help = "Benet du vill felsöka.",
 		ped_bone_command_substitutes = "",
 
-		edit_marker_command = "redigera_markerare",
-		edit_marker_command_help = "Redigera en markörs position eller placera en ny markör.",
-		edit_marker_command_parameter_marker_name = "markeringsnamn",
-		edit_marker_command_parameter_marker_name_help = "Markören du vill redigera (lämna tom för att placera en ny markör).",
-		edit_marker_command_substitutes = "",
+		rotate_marker_command = "rotate_marker",
+		rotate_marker_command_help = "Redigera en markörs rotation.",
+		rotate_marker_command_parameter_marker_name = "markörsnamn",
+		rotate_marker_command_parameter_marker_name_help = "Den markör du vill redigera.",
+		rotate_marker_command_substitutes = "",
 
 		rectangle_command = "rektangel",
 		rectangle_command_help = "Skapa en rektangel i 3D-rymden.",
@@ -2347,6 +2367,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		death_timer_command_parameter_time_help = "Tiden i sekunder du vill ställa in timern till. För att ta bort översättningen, lämna detta tomt.",
 		death_timer_command_substitutes = "",
 
+		cpr_command = "hlr",
+		cpr_command_help = "Utför hjärt-lungräddning på den närmaste NPC:en eller spelaren.",
+		cpr_command_substitutes = "",
+
 		-- game/hitmarkers
 		hitmarkers_command = "träffmarkeringar",
 		hitmarkers_command_help = "Slå på eller av ljud för träffmarkeringar.",
@@ -2481,6 +2505,13 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		clear_evidence_command_parameter_evidence_id = "bevis-id",
 		clear_evidence_command_parameter_evidence_id_help = "ID för bevislådan som du vill rensa.",
 		clear_evidence_command_substitutes = "",
+
+		-- game/invisibility
+		invisibility_command = "osynlighet",
+		invisibility_command_help = "Växla mellan synlighet och osynlighet.",
+		invisibility_command_parameter_server_id = "servers ID",
+		invisibility_command_parameter_server_id_help = "Om du vill växla osynligheten för någon annan.",
+		invisibility_command_substitutes = "inv, osynlig, osynlighet",
 
 		-- game/items
 		clear_map_command = "rensa_karta",
@@ -2676,14 +2707,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		give_cash_command_parameter_amount = "mängd",
 		give_cash_command_parameter_amount_help = "Beloppet som du vill ge till spelaren i kontanter.",
 		give_cash_command_substitutes = "",
-
-		bill_player_command = "skicka_räkning",
-		bill_player_command_help = "Skicka en viss summa pengar som en räkning till en annan spelare.",
-		bill_player_command_parameter_server_id = "server id",
-		bill_player_command_parameter_server_id_help = "Server-ID för spelaren som du vill skicka räkningen till.",
-		bill_player_command_parameter_amount = "belopp",
-		bill_player_command_parameter_amount_help = "Beloppet för kontanter som du vill fakturera spelaren.",
-		bill_player_command_substitutes = "bill",
 
 		-- game/notepads
 		notepad_command = "anteckningsbok",
@@ -3021,6 +3044,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		metagame_command_help = "Slå på/av konstant visning av spelares server-ID.",
 		metagame_command_substitutes = "metaspel, m",
 
+		hide_server_id_command = "dölj_server_id",
+		hide_server_id_command_help = "Döljer eller visar ditt server-id ovanför ditt huvud.",
+		hide_server_id_command_substitutes = "struntaikillen",
+
 		-- game/security_cameras
 		security_cameras_command = "kameror",
 		security_cameras_command_help = "Slå på/av kamerorna.",
@@ -3058,6 +3085,13 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		draw_shroom_areas_command = "rita_svampområden",
 		draw_shroom_areas_command_help = "Rita alla svampområden och lägg till fler.",
 		draw_shroom_areas_command_substitutes = "svampområden",
+
+		-- game/sound_effects
+		play_sound_command = "spela_ljud",
+		play_sound_command_help = "Spelar en ljudeffekt vid din position.",
+		play_sound_command_parameter_sound = "ljud",
+		play_sound_command_parameter_sound_help = "Namnet på ljudeffekten du vill spela.",
+		play_sound_command_substitutes = "",
 
 		-- game/spying
 		search_for_devices_command = "sök_efter_enheter",
@@ -3250,6 +3284,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		toggle_voice_mute_command_parameter_server_id = "server id",
 		toggle_voice_mute_command_parameter_server_id_help = "Användaren du vill tysta/av-tysta.",
 		toggle_voice_mute_command_substitutes = "voice_mute",
+
+		change_voice_mode_command = "ändra_röstläge",
+		change_voice_mode_command_help = "Slår på/av 'musik' läget för röstinspelning. Detta läge inaktiverar brusreducering och ekkontroll för klarare musik.",
+		change_voice_mode_command_substitutes = "röstläge",
 
 		-- game/wizard
 		wizard_command = "wizard",
@@ -3702,6 +3740,12 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		version = "Version"
 	},
 
+	couches = {
+		model_not_found = "Ogiltigt modellnamn.",
+		object_not_found = "Ingen objekt av den modellen i närheten.",
+		offset_copied = "Offset kopierad."
+	},
+
 	discord = {
 		one_player = "1 spelare",
 		multiple_players = "${playerAmount} spelare",
@@ -3776,22 +3820,36 @@ OP.Global.Locales.Languages["sv-SE"] = {
 	},
 
 	restart = {
-		restart_30_minutes = "Servern kommer att starta om om 30 minuter!",
-		restart_15_minutes = "Servern kommer att starta om om 15 minuter!",
-		restart_10_minutes = "Servern kommer att starta om om 10 minuter!",
-		restart_5_minutes = "Servern kommer att starta om om 5 minuter!",
-		restart_3_minutes = "Servern kommer att starta om om 3 minuter!",
-		restart_2_minutes = "Servern kommer att starta om om 2 minuter!",
-		restart_1_minute = "Servern kommer att starta om om 1 minut!",
+		announcement_restart = "Servern kommer starta om om ${minutes} minuter.",
+		announcement_restart_one_minute = "Servern kommer starta om om 1 minut.",
+
+		announcement_update = "Servern kommer stängas av om ${minutes} minuter för en uppdatering.",
+		announcement_update_one_minute = "Servern kommer stängas av om 1 minut för en uppdatering.",
+
+		announcement_maintenance = "Servern kommer stängas av om ${minutes} minuter för underhåll.",
+		announcement_maintenance_one_minute = "Servern kommer att stängas av om 1 minut för underhåll.",
+
+		restart_cancelled = "Omstarten av servern har blivit avbruten.",
+
 		server_restarting = "Servern startar om. Du kan återansluta om några minuter.",
+
 		executed_restart_command = "Restartkommandot utfört.",
-		already_executed_restart_command = "Restartkommandot har redan utförts."
+		already_executed_restart_command = "Restartkommandot har redan utförts.",
+		restart_planned_earlier = "Det finns en omstart planerad tidigare än den angivna tiden.",
+		no_restart_planned = "Det finns ingen omstart planerad.",
+		posted_restart_warning_message = "Publicerade en varningsmeddelande om omstart.",
+		cancelled_restart = "Avbruten omstart."
 	},
 
 	routes = {
 		route_not_found = "Rutt ${route} hittades inte.",
 		route_restricted = "Rutt ${route} är begränsad.",
 		internal_server_error = "Internt serverfel."
+	},
+
+	twitch = {
+		streaming_state_already_set_to_target = "Användarens streaming-status är redan satt till den angivna målstaten.",
+		streaming_state_changed = "Användarens sändningsstatus har ändrats till den angivna målstatusen."
 	},
 
 	users = {
@@ -4367,6 +4425,44 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		press_to_leave_bed = "Tryck ~INPUT_CONTEXT~ för att lämna sängen."
 	},
 
+	bills = {
+		select_player = "Välj spelare",
+		no_nearby_players = "Inga fakturerbara spelare i närheten av dig.",
+
+		amount = "Belopp",
+		reason = "Orsak",
+		bill_title = "Ny faktura mottagen",
+		sender = "Avsändare",
+		amount = "Belopp",
+		reason = "Orsak",
+		no_receipt = "Ingen kvittens",
+		yes_receipt = "Kvittens",
+		tip = "Tips",
+		none = "Ingen",
+
+		close = "Stäng",
+		back = "Tillbaka",
+		send = "Skicka",
+		pay = "Betala",
+
+		receipt = "Kvittens (${name})",
+		receipt_text = "Faktura från ${name}\n\nBelopp: ${amount} kr\nOrsak: ${reason}",
+
+		invalid_player = "Spelaren är offline eller för långt bort.",
+		bill_created = "Faktura för $${amount} har skickats till ${name}.",
+		failed_create_bill = "Misslyckades med att skicka faktura för $${amount} till ${name}.",
+		no_reason = "Inget skäl angivet.",
+		failed_pay_bill = "Misslyckades med att betala fakturan.",
+		not_enough_money = "Du har inte tillräckligt med pengar för att betala denna faktura.",
+		bill_paid = "Betald $${amount} till ${name} framgångsrikt.",
+		bill_paid_notification = "${name} betalde din faktura med en ${tip}% dricks.",
+
+		paid_bill_title = "Betald Faktura",
+		paid_bill_details = "${consoleName} betalade $${amount} (med en ${tip}% dricks) fakturan av ${targetName}.",
+		bill_created_title = "Faktura Skapad",
+		bill_created_details = "${consoleName} skickade en faktura på $${amount} till ${targetName} med anledning `${reason}`."
+	},
+
 	blackjack = {
 		play_blackjack = "Tryck ~INPUT_CONTEXT~ för att spela Blackjack.",
 		play_blackjack_high_limit = "Tryck ~INPUT_CONTEXT~ för att spela på höginsats blackjack."
@@ -4659,7 +4755,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		screen_model_size = "Storlek: x: ${sizeX}, y: ${sizeY}",
 		screen_model_offset = "Förflyttning: x: ${offsetX}, y: ${offsetY}, z: ${offsetZ}",
-		screen_model_rotation = "Rotation: ${rotation}",
+		screen_model_rotation = "Rotation: x: ${rotationX}, y: ${rotationY}, z: ${rotationZ}",
 		screen_model_volume = "Volym: ${volumeRadius} (${volumeCutOffRadius})",
 		screen_model_model = "Modell: ${modelName}",
 
@@ -4678,7 +4774,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		cinema = "Biograf",
 		doppler_cinema = "Dopplerbiograf",
-		sandy_cinema = "Sandybiograf",
+		sandy_cinema = "Sandy Cinema",
 		tv = "TV",
 		monitor = "Skärm",
 		laptop = "Laptop",
@@ -4696,7 +4792,26 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		author = "Författare",
 		queue = "Kö",
 		search_through_library = "Sök i biblioteket...",
-		add_to_library = "Lägg till video i biblioteket (URL)..."
+		add_to_library = "Lägg till video i biblioteket (URL)...",
+
+		share_your_screen = "Dela din skärm",
+		how_to_share_screen = "Streama med OBS:",
+		how_to_share_screen_part_1 = "Öppna OBS och gå till inställningarna.",
+		how_to_share_screen_part_2 = "Under avsnittet 'Stream', välj 'Anpassad...' som tjänst.",
+		how_to_share_screen_part_3 = "Ange värdena nedan.",
+		how_to_share_screen_part_4 = "Börja strömma i OBS.",
+		how_to_share_screen_part_5 = "Klicka på 'Starta live!' nedan.",
+		server = "Server",
+		stream_key = "Strömnyckel",
+		cancel = "Avbryt",
+		go_live = "Starta live!",
+		copied = "Kopierad!",
+		low_latency = "Minska strömfördröjning:",
+		how_to_reduce_latency_part_1 = "Öppna OBS och gå till inställningarna.",
+		how_to_reduce_latency_part_2 = "Välj avancerat alternativ i 'Output Mode' under avsnittet 'Output'.",
+		how_to_reduce_latency_part_3 = "Letar efter inställningen för Keyframe Interval i kodarerinställningarna.",
+		how_to_reduce_latency_part_4 = "Ställ in nyckelintervall till 1 sekund.",
+		custom_stream = "Anpassad ström"
 	},
 
 	cinematic = {
@@ -5537,7 +5652,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		secondary_offset = "Sekundär Förskjutning",
 		rotation = "Rotation",
 		color = "Färg",
-		duration = "Varaktighet (ms)"
+		duration = "Varaktighet (ms)",
+
+		flash_no_image = "Dödsblinket fungerar inte med en anpassad bild.",
+		do_flash = "Gör Blink",
+		flashing = "Blinkar"
 	},
 
 	clip_saver = {
@@ -5645,7 +5764,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		no_states = "Inga tillstånd",
 		entity_health = "Hälsa ${health}/${maxHealth}",
 		owned_by_server = "Server",
+		owned_by_you = "Ägd av dig",
 		first_owned_short = "Första ägare: ${firstOwned}",
+		current_owned_short = "Nuvarande ägare: ${currentOwner}",
 		network_id_side = "Nätverks-ID: ${networkId}",
 		no_target = "Inget mål",
 		invalid_radius_parameter = "Ogiltigt `radius`-parameter.",
@@ -5697,6 +5818,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		delete_entity_success = "Lyckades ta bort enhet med nätverks ID ${networkId}.",
 		delete_entity_failed = "Det gick inte att radera objektet.",
 		delete_entity_no_permissions = "Spelaren försökte radera ett objekt utan tillräcklig behörighet.",
+
+		failed_entity_info = "Det gick inte att hämta enhetsinformation.",
+		printed_entity_info = "Skrev ut serverinformation för enheten i F8.",
 
 		move_entity_success = "Objektet med nätverks-ID ${networkId} flyttades framgångsrikt.",
 		move_entity_failed = "Det gick inte att flytta objektet.",
@@ -6008,6 +6132,13 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		purchase_success = "Köpte en Falsk-ID för $3 000."
 	},
 
+	farming = {
+		milk_cow_interact = "[${InteractionKey}] Stryk Ko",
+		milking_cow = "Mjölkar Ko",
+		milking_cow_moved = "Kon verkar ha flyttat sig.",
+		milking_cow_failed = "Misslyckades att mjölka ko."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Tar fingeravtryck",
 		already_fingerprinting = "Du tar redan fingeravtryck på en spelare.",
@@ -6076,12 +6207,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		freecam_logs_title = "Bytte frikamera",
 		freecam_on_logs_details = "${consoleName} aktiverade sitt frikamera.",
 		freecam_off_logs_details = "${consoleName} inaktiverade sitt frikamera.",
-
-		track_player_logs_title = "Spårning",
-		track_player_logs_details = "${consoleName} spårar ${targetName} med orbitkameran.",
-
-		freecam_no_permission = "Försökte aktivera frikamera utan nödvändiga rättigheter.",
-		track_player_no_permission = "Försökte spåra en spelare med frikameran utan nödvändiga rättigheter.",
 
 		freecam_inactive = "Du är inte i frikamera just nu.",
 		added_point = "Lade till kamerapunkt vid index ${index} (Transition: ${transition}ms).",
@@ -6326,11 +6451,20 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		death_timer_override_removed = "Överstyrningen för dödstimern har tagits bort.",
 		no_death_timer_override_set = "Det finns ingen återställning av dödstimern inställd.",
 
+		no_nearby_ped = "Ingen närliggande NPC.",
+		ped_not_dead = "NPC är inte död.",
+		performing_cpr = "Utför CPR",
+
 		invalid_distance = "Ogiltigt område för återupplivning (måste vara mellan 1 och 50).",
 		no_players_in_range = "Det finns inga nedslagna spelare inom en radie på ${distance}m.",
 		successfully_revived_range = "Lyckades återuppliva ${amount} spelare inom en radie på ${distance}m.",
 		failed_revive_range = "Misslyckades med att återuppliva spelare.",
-		range_revive_not_staff = "Spelaren försökte återuppliva spelare inom en viss radie, men hade inte rätt behörigheter för att göra det."
+		range_revive_not_staff = "Spelaren försökte återuppliva spelare inom en viss radie, men hade inte rätt behörigheter för att göra det.",
+
+		cpr_ped_logs_title = "NPC:en fick CPR",
+		cpr_ped_logs_details = "${consoleName} utförde CPR på en NPC och fick $${money}.",
+		cpr_player_logs_title = "Spelaren fick CPR",
+		cpr_player_logs_details = "${consoleName} utförde CPR på ${targetConsoleName}."
 	},
 
 	hitmarkers = {
@@ -6365,6 +6499,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		alignment_warning = "Din HUD verkar delvis vara utanför skärmen. Du kan justera den genom att minska \"*Säkerhetszon*\" i dina \"*Display*-inställningar.",
 
 		muted = "Muterad",
+		tx = "TX",
+		rx = "RX",
 
 		fps_unit = "fps",
 		ping_unit = "ms",
@@ -6648,6 +6784,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		los_santos_golf_club = "Los Santos golfklubb",
 		arcade_bar = "Arkadbaren",
 		japanese_restaurant = "Japansk Restaurang",
+		japanese_restaurant_kitchen = "Japansk restaurangkök",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Kvarn",
 		pd_prefix = "Polis",
@@ -6668,7 +6805,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		nameable_title = "Namn på föremål:",
 
-		locker_restricted = "Det här föremålet verkar inte passa i din förvaring.",
+		locker_restricted = "Du kan inte flytta den här föremålet till den inventeringen.",
 
 		press_to_access_shredder = "[${InteractionKey}] Öppna dokumentförstöraren.",
 
@@ -7417,6 +7554,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		pigeon_milk = "Duvemjölk",
 		pigeon_milk_description = "\"Borde ha druckit duvemjölk den där saken kommer att knocka dig rätt ut\"\nMjölk extraherad av Vedder med kärlek.",
 
+		milk = "Mjölk",
+		milk_description = "Vanlig ko mjölk utvunnen med kärlek.",
+
 		bandana = "Bandana",
 		bandana_description = "Massa gang-historia. (Bloods vinner)",
 
@@ -7537,6 +7677,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		traffic_barrel_description = "Det ser ut att vara möjligt att slå sönder, men låt bli... eller?",
 		pedestrian_barrier = "Gångbarriär",
 		pedestrian_barrier_description = "Bra att ha om inte det är en Travis Scott-konsert...",
+		wheel_clamp = "Hjulklämma",
+		wheel_clamp_description = "Inga flyktbilar här! Hjulklämman menar allvar och säkrar fordonet på plats för att förhindra obehörig förflyttning. Denna robusta apparat agerar tystlåtet och ser till att parkeringsreglerna respekteras och efterföljs.",
 
 		bandit_1 = "Bandit 1",
 		bandit_1_description = "Kan placeras var som helst i världen.",
@@ -7888,6 +8030,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		weapon_gadgetpistol = "Perico-pistol",
 		weapon_stungun_mp = "Elchockare (MP)",
 		weapon_pistolxm3 = "WM 29-pistol",
+		weapon_tecpistol = "Taktiskt SMG",
 
 		weapon_microsmg = "Micro-PSG",
 		weapon_smg = "PSG",
@@ -8011,6 +8154,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		weapon_gadgetpistol_description = "Ett dödligt skott. Var inte ömtålig. Du kommer inte skrapa upp titan-nitrid-finishen.",
 		weapon_stungun_mp_description = "Zaptastiskt kul för hela familjen!",
 		weapon_pistolxm3_description = "En kompakt, lätt pistol som avfyrar 9mm kulor. Mycket effektiv på nära håll.",
+		weapon_tecpistol_description = "En helautomatisk pistol med stor magasinkapacitet och hög eldhastighet. Rymmer 33 skott av 9 mm ammunition.",
 
 		weapon_microsmg_description = "Kombinerar kompakt design med hög eldhastighet på cirka 700-900 skott per minut.",
 		weapon_smg_description = "Detta är känt som en bra allroundkulspruta. Lätt och med en noggrann kikarsikte och magasinkapacitet på 30 skott.",
@@ -8118,7 +8262,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		weapon_addon_sentinelbbshotgun = "Beanbag-geväret",
 		weapon_addon_sentinelbbshotgun_description = "Leksak för vuxna.",
 
-		-- TODO: Add a description for this one
 		weapon_addon_stungun = "Coil Elektroschockpistol",
 		weapon_addon_stungun_description = "Zaptastiskt roligt för hela familjen!",
 
@@ -8189,6 +8332,21 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		weapon_addon_680_description = "Remington 680 är en pump-hagelbössa som utvecklades av Remington Arms 1950."
 	},
 
+	invisibility = {
+		invisibility_on = "Osynlighet aktiverad.",
+		invisibility_off = "Osynlighet avaktiverad.",
+
+		invalid_server_id = "Ogiltigt server-ID.",
+
+		toggled_invisibility = "Osynligheten har framgångsrikt aktiverats för ${displayName}.",
+		failed_invisibility = "Det gick inte att aktivera osynlighet för ${displayName}.",
+
+		invisibility_logs_title = "Osynlighet växlad",
+		invisibility_on_logs_details = "${consoleName} aktiverade sin osynlighet.",
+		invisibility_off_logs_details = "${consoleName} avaktiverade sin osynlighet.",
+		invisibility_other_logs_details = "${consoleName} aktiverade ${targetConsoleName}'s osynlighet."
+	},
+
 	items = {
 		move_to_repair = "Flytta hit för att reparera fordonet.",
 		repairing_vehicle = "Reparerar fordon",
@@ -8219,6 +8377,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		just_used_bandage = "Du använde just en första hjälpen-remedier. Vänta en stund innan du använder en annan.",
 		drank_gasoline_death = "Bensinförgiftning",
 		drank_bleach_death = "Förgiftning av blekmedel",
+		finished_joint = "Du har rökt klart din joint.",
 
 		using_cuffs = "Använder Handbojor",
 		you_moved_too_fast = "Du rörde dig för fort.",
@@ -8446,6 +8605,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		refreshing = "Uppdaterar...",
 
 		avoid_repeating_letters = "Försök undvika upprepande bokstäver i ditt förnamn och/eller efternamn.",
+		backstory_empty = "Din bakgrundshistoria kan inte vara tom.",
 
 		missing_character_creation_data = "Saknar data för karaktärsskapande.",
 		invalid_first_name = "Saknas eller ogiltigt förnamn (2 till 100 tecken).",
@@ -8612,7 +8772,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		catnip_active = "Ge Maxwell kattmynta",
 		treat_active = "Ge Maxwell en godbit",
 		cuddle_active = "Kela med Maxwell",
-		hug_active = "Krama Maxwell"
+		hug_active = "Krama Maxwell",
+
+		maxwell_appeared = "Maxwell har dykt upp nära dig."
 	},
 
 	meth = {
@@ -8792,21 +8954,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		not_close_enough = "Du är inte tillräckligt nära spelaren.",
 		user_not_available = "Användaren är inte tillgänglig.",
 
-		bill_received = "${displayName} har skickat en faktura på $${amount}. Skriv \"/yes\" för att godkänna eller \"/no\" för att avböja.",
-		bill_expired = "Din räkning från ${displayName} har gått ut.",
-		bill_declined = "Du har avböjt räkningen från ${displayName}.",
-		failed_bill_payment = "Misslyckades med att betala räkningen.",
-		bill_success = "Betalt $${amount} räkning till ${displayName} framgångsrikt.",
-		bill_created = "Du har skapat en räkning på $${amount} till ${displayName}.",
-
 		givecash_success = "Du gav ${displayName} $${amount}.",
 
 		give_cash_title = "Kontantöverföring",
-		give_cash_details = "${consoleName} överförde $${amount} till ${targetConsoleName}.",
-		paid_bill_title = "Betald Räkning",
-		paid_bill_details = "${consoleName} betalade räkningen på $${amount} till ${targetConsoleName}.",
-		bill_created_title = "Räkning Skapad",
-		bill_created_details = "${consoleName} skapade en räkning på $${amount} till ${targetConsoleName}."
+		give_cash_details = "${consoleName} överförde $${amount} till ${targetConsoleName}."
 	},
 
 	moonshine = {
@@ -9082,12 +9233,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		ped_models_about = "Här listas varje spelare som inte använder en freemode-karaktärsmodell. Detta kan hjälpa till att hitta spelare som bara är här för att störa eller potentiella modders.",
 		local_ped_models_title = "Lokala ped modeller",
 		animal_ped_models_title = "Djurs ped modeller",
-
-		fast_movement_title = "Snabb rörelse",
-		fast_movement_about = "Här listas varje spelare som har flaggats för att röra sig för snabbt. Detta kan hjälpa till att hitta spelare som är potentiella modders.",
-
-		damage_modifier_title = "Skadereglerare",
-		damage_modifier_about = "Här listas alla spelare som har upptäckts ha modifierat sin skada. Detta kan hjälpa till att identifiera spelare som kan vara moddare.",
 
 		bad_screen_word_title = "Olämpliga ord på skärmen",
 		bad_screen_word_about = "Här listas alla spelare som har upptäckts ha vissa ord på skärmen. Detta kan hjälpa till att identifiera spelare som kan vara moddare.",
@@ -9705,6 +9850,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		was_banned = "Bannad",
 		loading = "Laddar spelardata...",
+		loading_screenshot = "Laddar skärmdump...",
+		screenshot_failed = "Det gick inte att ta skärmdump.",
+		player_no_character = "Spelaren har ingen laddad karaktär.",
 		no_warnings = "Inga varningar",
 		not_shown_warnings = "${count} fler visas inte",
 		system_issuer = "Systemet",
@@ -9720,6 +9868,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		button_add = "Lägg till",
 		button_close = "Stäng",
 		button_new = "Ny anteckning",
+		button_back = "Tillbaka",
+		button_screenshot = "Skärmdump",
 
 		ping = "${ping}ms",
 		fps = "${fps}fps",
@@ -10155,7 +10305,48 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		better_stamina = "Kunna springa utan att tröttna i ${duration} minuter.",
 		more_inventory_space = "Få ${amount} ytterligare inventarieplatser i ${duration} minuter.",
 
-		buffs_note = "Buffarna aktiveras endast när du har lämnat närheten av byggnaden."
+		buffs_note = "Buffarna aktiveras endast när du har lämnat närheten av byggnaden.",
+
+		press_to_prepare_food = "[${InteractionKey}] Förbered Mat",
+		prepare_food = "Förbered Mat",
+
+		kissaki_kitchen = "Kissaki Kök",
+
+		craft = "Tillverka",
+		putting_down_ingredients = "Lägger ner ingredienser",
+
+		pick_up = "Plocka upp: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Plocka upp: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Förbereda ris (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Förbereda ris (${completed}%~s~)",
+		preparing_rice_starting = "Förbereder ris",
+		preparing_rice = "~g~${name}~s~: Förbereder ris... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: Förbereda fyllning (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Förbereda fyllning (${completed}%~s~)",
+		preparing_fillings_starting = "Förbereder fyllningen",
+		preparing_fillings = "~g~${name}~s~: Förbereder fyllningen... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Förbered rullningsmattan (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Förbered rullningsmattan (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Förbereder rullningsmattan",
+		preparing_rolling_mat = "~g~${name}~s~: Förbereder rullningsmattan... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Montera sushi (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Montera sushi (${completed}%~s~)",
+		assembling_sushi_starting = "Monterar sushi",
+		assembling_sushi = "~g~${name}~s~: Monterar sushi... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Rulla sushi (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Rulla sushi (${completed}%~s~)",
+		rolling_sushi_starting = "Rullar sushi",
+		rolling_sushi = "~g~${name}~s~: Rullar sushi... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Skär sushi (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Skär Sushi (${completed}%~s~)",
+		slicing_sushi_starting = "Skär Sushi",
+		slicing_sushi = "~g~${name}~s~: Skär Sushi... (${completed}%~s~)"
 	},
 
 	riot_mode = {
@@ -10198,7 +10389,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		time_since_disconnection = "Tid sedan frånkoppling",
 
 		you_are_now_metagaming = "Du Metagamar nu.",
-		you_are_no_longer_metagaming = "Du Metagamar inte längre."
+		you_are_no_longer_metagaming = "Du Metagamar inte längre.",
+
+		server_id_hide_failed = "Det gick inte att dölja server-id.",
+		server_id_hidden = "Ditt server-id är nu dolt.",
+		server_id_not_hidden = "Ditt server-id är inte längre dolt."
 	},
 
 	screenshots = {
@@ -10216,7 +10411,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		screenshot_error_user_not_found = "Användaren hittades inte.",
 		screenshot_error_user_developer = "Användaren är en utvecklare.",
 		screenshot_error_no_token = "Det gick inte att hämta opfw-token.",
-		screenshot_timeout = "Tidsgränsen för begäran om skärmdump har löpt ut."
+		screenshot_timeout = "Tidsgränsen för begäran om skärmdump har löpt ut.",
+		screenshot_error_character_unloaded = "Användaren har lämnat servern eller avläst sin karaktär."
 	},
 
 	scuba = {
@@ -10361,13 +10557,19 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		use_blender = "[${InteractionKey}] Använd Mixer",
 		blending = "Blandning",
+		no_ingredients = "Du har inga ingredienser för att göra en smoothie.",
 
+		milkshake_label = "Milkshake (${flavors})",
 		smoothie_label = "Smoothie (${flavors})",
 		seperator = "och"
 	},
 
 	snow = {
 		hold_to_pick_up_snowballs = "Håll ~INPUT_CONTEXT~ för att plocka upp snöbollar."
+	},
+
+	sound_effects = {
+		invalid_sound = "Ogiltigt ljud."
 	},
 
 	spawn = {
@@ -10416,7 +10618,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		player_not_exist = "Spelaren är offline.",
 		no_character_loaded = "Spelaren har ingen karaktär laddad.",
 		not_same_instance = "Spelaren är inte i samma instans som du.",
+		no_user_or_character = "Spelaren är offline eller har ingen laddad karaktär.",
 
+		resolving_player = "Löser spelare",
 		loading_coords = "Laddar koordinater",
 		preloading_area = "Förvärlar område",
 		finding_player = "Letar efter spelare",
@@ -10427,11 +10631,14 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		health_ok = "Hälsa: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
 		health_bad = "Hälsa: ~r~${health} / ${maxHealth}~w~ - ${percentage}",
+		bleeding = "~w~ - ~r~Blödning",
 
 		armor_ok = "Skydd: ~g~${armor} / ${maxArmor}~w~ - ${percentage}",
 		armor_bad = "Skydd: ~r~${armor} / ${maxArmor}~w~ - ${procent}",
 
-		vehicle_health = "Fordons hälsa: ${percentage}",
+		vehicle_health_fuel = "Fordon - Bränsle: ${health} ~w~- ${fuel}",
+		can_respawn = "Kan återuppstå: ${remaining}",
+		yes = "~g~Ja",
 
 		speed = "Hastighet: ${speed}",
 
@@ -11029,6 +11236,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		target_radius = "Målradius: ${targetRadius}",
 		actual_radius = "Aktuell Radius: ${actualRadius}",
 
+		intent_music = "Ställ in röstläget till 'musik'.",
+		intent_speech = "Ställ in röstläget tillbaka till 'tal'.",
+		music_mode = "Musikläge",
+
 		invalid_server_id = "Ogiltigt server-ID.",
 		failed_toggle_listen = "Misslyckades med att växla lyssnande status.",
 		listeners = "Lyssnare:",
@@ -11041,7 +11252,19 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		affected_by_jammer = "Din radio verkar påverkas av en störare eller liknande.",
 
 		listening_missing_permissions = "Spelare försökte växla sin lyssningsstatus men hade inte tillräckligt med behörighet.",
-		voice_mute_missing_permissions = "Spelare försökte växla stumma status på en annan spelare men hade inte tillräckligt med behörighet."
+		voice_mute_missing_permissions = "Spelare försökte växla stumma status på en annan spelare men hade inte tillräckligt med behörighet.",
+
+		music_mode_logs_title = "Växlade röstläge",
+		music_mode_logs_details_on = "${consoleName} ändrade sin röstingångsläge till 'musik'.",
+		music_mode_logs_details_off = "${consoleName} ändrade sin röstingångsläge till 'tal'.",
+
+		listening_logs_title = "Lyssnar",
+		stopped_listening_logs_details = "${consoleName} började lyssna på ${targetConsoleName}.",
+		started_listening_logs_details = "${consoleName} slutade lyssna på ${targetConsoleName}.",
+
+		muted_logs_title = "Tystad Röst",
+		muted_logs_details = "${consoleName} tystade ${targetConsoleName} från röstchatten.",
+		unmuted_logs_details = "${consoleName} avdämpade röstchatten för ${targetConsoleName}."
 	},
 
 	washrooms = {
@@ -11064,7 +11287,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		ragdoll_player = "Ragdoll",
 		ragdoll_player_force = "Ragdoll (Med Kraft)",
 		punch_player = "Kraftfull Punch",
-		taze_player = "Stunpistol",
 		exit_vehicle_player = "Gå ur fordon",
 		yank_steering_wheel_player = "Riv ratten",
 		flashbang_player = "Flashbang",
@@ -11150,6 +11372,26 @@ OP.Global.Locales.Languages["sv-SE"] = {
 	},
 
 	functions = {
+		unknown = "Okänd",
+		flipped_vehicle_logs_title = "Vänt fordon",
+		flipped_vehicle_logs_details = "${consoleName} vände ett fordon.",
+		failed_to_find_ground = "Kunde inte hitta mark, teletransporterade dig till närmaste väg.",
+
+		knots = "knop",
+		mph = "mph",
+		kmh = "km/h"
+	},
+
+	states = {
+		invalid_network_id = "Ogiltigt nätverks-ID.",
+		debug_states_failed = "Misslyckades med att felsöka denna enhets tillstånd.",
+		no_states = "Denna enhet har inga tillstånd inställda.",
+		printed_states = "Tillstånd för enhet ${networkId} skrivna.",
+
+		get_entity_states_missing_permissions = "Spelaren försökte hämta ett specifikt enhetstillstånd utan korrekta behörigheter."
+	},
+
+	time = {
 		year = "år",
 		years = "år",
 		month = "månad",
@@ -11163,26 +11405,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		second = "sekund",
 		seconds = "sekunder",
 		just_now = "just nu",
-		unknown = "Okänd",
-		flipped_vehicle_logs_title = "Vänt fordon",
-		flipped_vehicle_logs_details = "${consoleName} vände ett fordon.",
-		failed_to_find_ground = "Kunde inte hitta mark, teletransporterade dig till närmaste väg.",
-
-		knots = "knop",
-		mph = "mph",
-		kmh = "km/h",
 
 		time_in = "om ${time} ${unit}",
 		time_ago = "${time} ${unit} sedan"
-	},
-
-	states = {
-		invalid_network_id = "Ogiltigt nätverks-ID.",
-		debug_states_failed = "Misslyckades med att felsöka denna enhets tillstånd.",
-		no_states = "Denna enhet har inga tillstånd inställda.",
-		printed_states = "Tillstånd för enhet ${networkId} skrivna.",
-
-		get_entity_states_missing_permissions = "Spelaren försökte hämta ett specifikt enhetstillstånd utan korrekta behörigheter."
 	},
 
 	-- illegal/*
@@ -11220,6 +11445,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		reward_gold_bar = "Du har tagit en guldbar.",
 		reward_cash = "Du har tagit lite kontanter.",
 		reward_keycard_red = "Du har tagit en röd nyckelkort.",
+		reward_treasure_map_piece = "Du fick en bit av en skattkarta.",
 
 		stockade_logs_title = "Stockade Aktiverad",
 		stockade_logs_details = "${consoleName} aktiverade en stockade."
@@ -11470,6 +11696,19 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		use_launch = "Tryck på ~INPUT_VEH_HANDBRAKE~ för att starta."
 	},
 
+	clamps = {
+		no_vehicle_near = "Du är inte nära bakhjulet på ett fordon.",
+		vehicle_not_driveable = "Kan inte fästa klämma på ett trasigt fordon.",
+		clamping = "Fäster klämma",
+		removing_clamp = "Tar bort klämma",
+		remove_clamp = "[${InteractionKey}] Ta bort klämma",
+
+		clamped_log_title = "Fäst klämma",
+		clamped_log_details = "${consoleName} fäste en hjulklämma på ett fordon med registreringsskylt `${plate}`.",
+		unclamped_log_title = "Tog bort klämma",
+		unclamped_log_details = "${consoleName} tog bort en hjulklämma från ett fordon med registreringsskylt `${plate}`."
+	},
+
 	damage = {
 		vehicle = "Fordon-ID: ${entity}",
 		general = "Allmän: ${value}",
@@ -11505,8 +11744,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 	},
 
 	gadgets = {
-		helicopter_camera_vehicle_info_metric = "Hastighet: ${speed} km/h\nModell: ${model}\nReg. nummer: ${plate}",
-		helicopter_camera_vehicle_info_imperial = "Hastighet: ${speed} mp/h\nModell: ${model}\nReg. nummer: ${plate}",
+		helicopter_camera_vehicle_info = "Hastighet: ${speed}\nModell: ${model}\nRegistreringsskylt: ${plate}",
 		helicopter_camera_altitude = "${altitude}ft över marken",
 		helicopter_camera_altitude_asl = "${altitude}ft över havsytan",
 		helicopter_camera_locked_on = "Låst på",

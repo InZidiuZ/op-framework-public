@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 17 (do not change)
+-- AUTO LOCALES: 18 (do not change)
 
 OP.Global.Locales.Languages["meme-roadman"] = {
 	-- configuration settings for language
@@ -17,10 +17,12 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		warning = "Oi, listen up",
 		invalid_input = "Bruv, that input ain't valid fam.",
 		missing_input = "Nah, you forgot to enter something innit.",
+		missing_or_invalid_input = "Bruv, you missed or messed up the input.",
 		player_not_found = "Oi, couldn't find that player with server ID `${serverId}` mate.",
 		something_went_wrong = "Mad ting, something went wrong innit. Try again fam.",
 		yes = "Yeah fam",
-		no = "Nah blud"
+		no = "Nah blud",
+		n_a = "N/A"
 	},
 
 	-- animations/*
@@ -178,10 +180,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		announcement_logs_details = "${consoleName} sent this message to the whole endz: `${announcementMessage}`",
 		announcement_not_admin = "You can't send a mandem announcement, bruh.",
 
-		announcement_maintenance = "Allow it fam, the server's going down in ${minutes} mins for maintenance.",
-		announcement_update = "Yo, the server's going down in ${minutes} minutes for an update.",
-		announcement_restart = "Yo fam, the server's gonna be down in ${minutes} minutes for a quick restart.",
-
 		posted_announcement = "Aight fam, posted your message for everyone to see.",
 		posted_announcement_locale = "Yo fam, just posted a message in Roadman Speak.",
 		failed_to_post_announcement = "Bruv, you didn't even put a message for me to post.",
@@ -221,7 +219,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		missing_valid_license_identifier_parameter = "Bruv, you're missing a valid 'licenseIdentifier' parameter.",
 
 		illegal_entity_wipe = "Oi fam, you can't wipe dem entities without permissions.",
-		wiped_entities = "Wiped out dem entities, innit.",
+		wiped_entities = "Man just wiped dem neeky entities. Deleted ${deletedEntities} networked entities.",
 		wipe_entities_logs_title = "Oi fam, we wiped dem entities.",
 		wipe_entities_logs_details = "The big man, ${consoleName}, wiped entities using this setup: distance = `${distance}`, ignoreLocalEntities = `${ignoreLocalEntities}`, modelName = `${modelName}`",
 
@@ -284,13 +282,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		staff_feature_unavailable = "You can't use that feature while your staff ting's off, fam.",
 
-		failed_toggle_tracker = "Man couldn't toggle player tracker, innit.",
-		unable_track_player = "Sorry fam, couldn't find no trace of that player.",
-		success_enable_tracker = "Safe, player tracker enabled for `${playerName}`.",
-		success_disable_tracker = "Player tracker disabled, no worries.",
-		not_tracking_player = "You ain't even tracking no player, my G.",
-		already_tracking_player = "You already tracking somebody, relax.",
-
 		toggle_player_track_no_permissions = "Bruv, you don't have the permissions to toggle player tracking.",
 		set_job_no_permissions = "You don't have the permissions to set a job, fam.",
 		toggle_reflection_no_permissions = "Oi fam, you can't toggle the reflect ting without the rights.",
@@ -307,8 +298,18 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		headache_logs_details = "${consoleName} done caused a headache for ${targetConsoleName}.",
 		trigger_headache_no_permissions = "You can't be tryna trigger a headache without the proper clearance, fam.",
 
+		super_jump_logs_title = "Toggle Super Jump fam",
+		super_jump_logs_details_on = "${consoleName} just turned on their super jump ya get me.",
+		super_jump_logs_details_off = "${consoleName} just turned off their super jump innit.",
+		toggle_super_jump_no_permissions = "Tried to toggle their super jump but they ain't got the proper permissions fam.",
+
 		success_trigger_headache = "Mad ting, initiated a headache for ${playerName}.",
 		failed_trigger_headache = "Gahdamn, couldn't initiate no headache.",
+
+		set_spawn_success = "Your spawn point is set to where you is right now fam.",
+		set_spawn_failed = "Man couldn't set spawnpoint, you get me?",
+		reset_spawn_success = "Swag, spawnpoint resetted bruv.",
+		reset_spawn_failed = "Man failed at resetting the damn spawnpoint.",
 
 		protective_mode_not_staff = "Bruv, you can't turn on the server protective mode without proper permissions.",
 		protective_mode_toggled_on = "Alrite blud, server protective mode has been turned on. You gotta have played for `${playtime}` before you can connect to the server now.",
@@ -345,8 +346,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		no_nearby_vehicles_off = "Man's just toggled 'No Nearby Vehicles' off.",
 		speed_up_progress_bar_on = "Man's just hit the 'Speed Up Progress Bar' button.",
 		speed_up_progress_bar_off = "Man's just turned off the 'Speed Up Progress Bar'.",
-		invisibility_on = "Man's just gone invisible.",
-		invisibility_off = "Man's just turned off the 'Invisibility'.",
 		wallhack_on = "Man's just turned on 'Wallhack'.",
 		wallhack_off = "Man's just turned off 'Wallhack'.",
 		aimbot_on = "Man's toggled 'Aimbot' on.",
@@ -428,6 +427,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		fortnite_feature = "Fortnite, blud.",
 		reflection_feature = "Damage Reflection",
 		stable_cam_feature = "Stable Cam, innit",
+		super_jump_feature = "Ay fam, we got that mad super jump ting.",
+		server_id_hidden_feature = "Bare man can't even see your server ID, it's hidden like a ninja fam.",
+		fake_disconnect_feature = "Fam, we can fake a DC if you want. Just to mess with dem man.",
 
 		you_are_not_in_a_vehicle = "Bruv, you ain't in a whip.",
 		repaired_vehicle = "Sorted, the whip's good as new.",
@@ -710,37 +712,59 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		text_entry_ban = "You can't be inspecting the element up in here, you get me?",
 		thermal_night_vision_ban = "Nah blud, Brighter Nights ain't allowed round here.",
 		vehicle_modification_ban = "Bruh, you couldn't even find headlight fluid for your ride.",
-		vehicle_spam_ban = "Yo, Counter Terrorists win or whatever.",
 		vehicle_spawn_ban = "Lol, you tried to use redstone on a minecart but you didn't even have powered rails. L.",
 		weapon_spawn_ban = "Man thought he was gonna pull a rabbit out of the hat, but ended up with a bazooka instead. Feds ain't having it.",
 		high_damage_ban = "You went too hard, fam. We can't let that slide, unna?",
 		suspicious_explosion_ban = "Allow me to translate, still… You can't be causing explosive scenes like Michael Bay films, innit?",
 		semi_godmode_ban = "Oi mate, the feds caught you trying to cheat death. Time's gotta flow, you can't stop it forever. Enjoy the L.",
 		invalid_health_ban = "Oi yo, your health bar is lookin' way too stacked, like you've been chuggin' spinach like Popeye.",
+		clear_tasks_ban = "Bruv, this ain't no Jedi mind trick playground. Your attempts to control man's free will is not allowed here.",
+		projectile_event_ban = "This ain't Hogwarts innit? You can't be casting spells or launching projectiles like Harry Potter round here, fam.",
+		illegal_native_ban = "You nahh can't use a spell that you ain't learned yet...",
+
+		type_aimbot = "Aimbotting",
+		type_bad_creation = "Dead creation",
+		type_bad_screen_word = "Dead Screen Word",
+		type_blacklisted_command = "Blocked Command",
+		type_clear_tasks = "Clearin' Tasks",
+		type_damage_modifier = "Damage Boosta",
+		type_distance_taze = "Taze from afar",
+		type_driving_hotwire = "Hotwirin' Rides",
+		type_fast_movement = "Speedy Movements",
+		type_freecam_detected = "We spotted a Freecam",
+		type_high_damage = "Massive Damage",
+		type_honeypot = "Trapt Out",
+		type_illegal_event = "Madman Shabeen Event",
+		type_illegal_freeze = "Freeze the Tings",
+		type_illegal_ped_spawn = "Summoned Man Dem",
+		type_illegal_server_event = "Illegal Server Shenanigans",
+		type_illegal_vehicle_modifier = "Vehicle Mods",
+		type_illegal_vehicle_spawn = "Summoned Whip",
+		type_illegal_weapon = "Weapon Ting",
+		type_invalid_health = "Dead Man Walking",
+		type_invincibility = "Invincible",
+		type_modified_fov = "Messing with My Vision",
+		type_ped_change = "Switch Up My Appearance",
+		type_player_blips = "Showing Man's Location",
+		type_projectile_event = "Projectile Madness",
+		type_runtime_texture = "Runtim Ting",
+		type_semi_godmode = "Semi-G Gawdmode",
+		type_spawned_object = "Spawned Obj",
+		type_spectate = "Spectayte",
+		type_spiked_resource = "Spiked Resouwce",
+		type_suspicious_explosion = "Suspicious Bwoom",
+		type_text_entry = "Text Entry",
+		type_thermal_night_vision = "Therm/Night Viz",
+		type_vehicle_modification = "Vehicle Mods",
+		type_illegal_native = "Deadly Skrilla Call",
+
+		event_prefix = "Anti-Cheat: ${type}",
 
 		mp_f_freemode_01_label = "Freemode (mandem) (female)",
 		mp_m_freemode_01_label = "Freemode (mandem) (male)",
 		player_one_label = "Franklin",
 		player_two_label = "Trevor",
 		player_zero_label = "Michael",
-
-		notification_distance_taze = "Anti-Cheat: ${displayName} tazed someone from a long range (${distance}m). Allow it fam.",
-		notification_bad_screen_word = "Anti-Cheat: ${displayName} has ${count} bait word(s) on their screen fam.",
-		notification_suspicious_explosion = "Oi, Anti-Cheat alert: ${displayName} went and set off a massive ${explosionType} explosion dumb close (~${distance}m).",
-
-		notification_freecam_detected = "Oi, you're glitchin' bruv: Freecam spotted",
-		notification_illegal_vehicle_modifier = "Oi, that ain't legal: Vehicle modifier found",
-		notification_illegal_vehicle_spawn = "Oi, you're not slick, we caught you spawning illegal whips!",
-		notification_fast_movement = "Oi, slow down fam: Fast movement detected",
-		notification_illegal_freeze = "Oi, what's goin' on?: Illegal freeze detected",
-		notification_invincibility = "Oi, you can't be hurt: Invincibility detected",
-		notification_vehicle_modification = "Oi, what did you do to your ride?: Vehicle modification found",
-		notification_damage_modifier = "Oi, it's not fair: Damage modifier found",
-		notification_illegal_weapon = "Oi, that ain't allowed: Illegal weapon detected",
-		notification_spawned_object = "Anti-Cheat: Man's out here spawning objects for fun and that",
-		notification_driving_hotwire = "Anti-Cheat: Man's out here driving while it's hotwyred",
-		notification_semi_godmode = "Safe g, you've activated Semi-Godmode. Anti-Cheat says nah tho.",
-		notification_invalid_health = "Anti-Cheat: Health Bar is Whack",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus",
@@ -770,29 +794,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		fast_movement_warning = "Yo fam, you're moving too quick! You've been flagged so holla at a dev and let them know what you was doing to make this happen. You ain't supposed to be getting this message, ya feel?",
 		invincibility_warning = "Bruh, you've been flagged for being invincible! Let a dev know ASAP and tell them what you were doing to cause this. You ain't supposed to be seeing this message, ya kna mean?",
 		damage_modifier_warning = "Ayy, you've been flagged for having some messed up damage modifier! Hit up a dev and let them know what you were doing to cause this cuz you should not be seeing this message, ya dig?",
-		freeze_warning = "Oi fam, you've been flagged for getting frozen when you ain't supposed to be! Let a developer know what you was doing to cause this, coz you shouldn't be seeing this message in the chat, innit?",
-
-		distance_taze_screenshot = "Anti-Cheat: Man was tazed from ${distance} meters away",
-		spectating_screenshot = "Anti-Cheat: Man was watching from the sidelines",
-		fast_movement_screenshot = "Anti-Cheat: Man was moving too quick, like Sonic or suttin'",
-		illegal_freeze_screenshot = "Anti-Cheat: Man got frozen but it ain't allowed",
-		illegal_vehicle_modifier_screenshot = "Anti-Cheat: This blud messed with the ride's ${modifierName} (${modifierValue}) and that ain't allowed, init",
-		damage_modifier_screenshot = "Oi bruv, Anti-Cheat caught ya with an invalid damage modifier (${activeModifier}/${currentModifier})",
-		illegal_weapon_screenshot = "Oi blud, Anti-Cheat caught ya spawning a whack weapon (${weaponLabel})",
-		illegal_vehicle_spawn_screenshot = "Oi fam, Anti-Cheat caught ya spawning a peak vehicle (${modelName})",
-		vehicle_modification_screenshot = "Cheeky one innit? Anti-Cheat caught ya modifying a vehicle (${types})",
-		thermal_night_vision_screenshot = "Oi bossman, Anti-Cheat caught ya using thermal or night vision goggles (${nativeName})",
-		text_entry_screenshot = "Allow me blud, Anti-Cheat caught ya typing (${textEntry})",
-		player_blips_screenshot = "Listen up geez, Anti-Cheat caught ya with player blips",
-		modified_fov_screenshot = "Nah mate, stop trying to mess with your FOV (${fov})",
-		ped_change_screenshot = "Oi mate, don't be changin' yor ped like that",
-		invincibility_screenshot = "Anti-Cheat: You can't be touched, innit?",
-		runtime_texture_screenshot = "Anti-Cheat: Some dodgy texture is runnin' (${textureDict}, ${textureName})",
-		bad_screen_word_screenshot = "Oi blud, stop usin' dem bad words (${words})",
-		freecam_detected_screenshot = "Anti-Cheat: You're usin' freecam, man!",
-		driving_hotwire_screenshot = "Anti-Cheat: You can't be drivin' while hotwire, fam",
-		semi_godmode_screenshot = "Oi you, thought you could fool Anti-Cheat with that Semi-Godmode? Gotcha now, wasteman!",
-		invalid_health_screenshot = "Anti-Cheat: Your health bar is messed up."
+		freeze_warning = "Oi fam, you've been flagged for getting frozen when you ain't supposed to be! Let a developer know what you was doing to cause this, coz you shouldn't be seeing this message in the chat, innit?"
 	},
 
 	authentication = {
@@ -905,8 +907,21 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		sit_command = "sit",
 		sit_command_help = "Chill on a chair nearby.",
 		sit_command_parameter_variation = "variation",
-		sit_command_parameter_variation_help = "Which chair animation you wanna do (1 - 6)",
+		sit_command_parameter_variation_help = "Wha sit anim to play (1 - 6).",
 		sit_command_substitutes = "chair",
+
+		-- animations/couches
+		sleep_command = "snooze",
+		sleep_command_help = "Tryna catch some Z's on a nearby couch or the floor, innit.",
+		sleep_command_parameter_variation = "flex",
+		sleep_command_parameter_variation_help = "Which sleep animation to do (1 - 2).",
+		sleep_command_substitutes = "lie_down",
+
+		couch_offset_command = "couch_offset",
+		couch_offset_command_help = "Jot down the offset for a nearby couch of a specific model.",
+		couch_offset_command_parameter_model_name = "model_name",
+		couch_offset_command_parameter_model_name_help = "The model name of the couch to jot down the offset of.",
+		couch_offset_command_substitutes = "",
 
 		-- animations/emotes
 		ragdoll_command = "ragdoll",
@@ -1111,12 +1126,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		infinite_ammo_command_help = "Toggles infinite ammo, never run outta bullets, ya get me?",
 		infinite_ammo_command_substitutes = "",
 
-		track_player_command = "chg tracka",
-		track_player_command_help = "Turns on/off a GPS tracker for a certain mandem.",
-		track_player_command_parameter_server_id = "server id",
-		track_player_command_parameter_server_id_help = "The mandem's server ID you want to track. Leave blank to disable.",
-		track_player_command_substitutes = "",
-
 		reflect_damage_command = "reflect damage",
 		reflect_damage_command_help = "Toggle damage reflection. (Anyone who damages you will also get damaged)",
 		reflect_damage_command_substitutes = "reflect",
@@ -1126,6 +1135,18 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		trigger_headache_command_parameter_server_id = "server id",
 		trigger_headache_command_parameter_server_id_help = "The server ID of the player you want to lag-out.",
 		trigger_headache_command_substitutes = "headache",
+
+		super_jump_command = "s-jump",
+		super_jump_command_help = "Lifts you up like a boss.",
+		super_jump_command_substitutes = "",
+
+		set_spawnpoint_command = "set_spawn",
+		set_spawnpoint_command_help = "Secures your starting point to wherever you at.",
+		set_spawnpoint_command_substitutes = "set_point",
+
+		reset_spawnpoint_command = "reset_spawn",
+		reset_spawnpoint_command_help = "Unties your starting point previously set with /set_spawnpoint.",
+		reset_spawnpoint_command_substitutes = "reset_point",
 
 		stick_command = "holdup",
 		stick_command_help = "Hold onto the whip you're ontop of.",
@@ -1158,12 +1179,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		speed_up_progress_bar_command_parameter_server_id = "server id",
 		speed_up_progress_bar_command_parameter_server_id_help = "If you want to toggle 'speed up progress bar' for someone else, insert their server id here.",
 		speed_up_progress_bar_command_substitutes = "fast_bar",
-
-		invisibility_command = "disappear",
-		invisibility_command_help = "Allows you to toggle 'invisibility'.",
-		invisibility_command_parameter_server_id = "server id bruv",
-		invisibility_command_parameter_server_id_help = "If ya wanna toggle 'invisibility' for someone else, put their server id in here fam.",
-		invisibility_command_substitutes = "inv, invis, invisible",
 
 		add_cash_command = "add_cash",
 		add_cash_command_help = "Add some cash to a man's character.",
@@ -1673,6 +1688,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		bed_command_help = "Tryna get some rest in the nearest bed, innit.",
 		bed_command_substitutes = "",
 
+		-- game/bills
+		create_bill_command = "create_cash",
+		create_bill_command_help = "Mandem, bill another brudda a certain amount of funds.",
+		create_bill_command_substitutes = "bill, bill_player",
+
 		-- game/bombs
 		toggle_bombs_command = "toggle_bombs",
 		toggle_bombs_command_help = "Allows you to toggle the bombs on your current aircraft, innit.",
@@ -1747,12 +1767,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		cayo_perico_command_substitutes = "",
 
 		-- game/cinema
-		cinema_blacklist_add_command = "cinema_blacklist_add",
-		cinema_blacklist_add_command_help = "Bruh, add a video to the local cinema blacklist.",
-		cinema_blacklist_add_command_parameter_video_key = "video key",
-		cinema_blacklist_add_command_parameter_video_key_help = "Yo, enter the video key for the vid you wanna blacklist like this: 'youtube:dQw4w9WgXcQ'",
-		cinema_blacklist_add_command_substitutes = "",
-
 		cinema_screens_debug_command = "cinema_screens_debug",
 		cinema_screens_debug_command_help = "Time to debug the cinema screens bruv.",
 		cinema_screens_debug_command_substitutes = "",
@@ -1976,6 +1990,12 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		move_entity_command_parameter_heading_help = "Like you want the thing to be pointing.",
 		move_entity_command_substitutes = "mv",
 
+		server_entity_command = "server_entity",
+		server_entity_command_help = "Blud, debugs server information about an entity fam.",
+		server_entity_command_parameter_network_id = "network id",
+		server_entity_command_parameter_network_id_help = "The network id of the entity innit.",
+		server_entity_command_substitutes = "",
+
 		fake_lag_command = "fake_lag",
 		fake_lag_command_help = "Create some sick fake lag, ya dig?",
 		fake_lag_command_parameter_counter = "counter",
@@ -2100,11 +2120,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		ped_bone_command_parameter_bone_name_help = "The ting you wanna debug, allow me blud it's the bone name init.",
 		ped_bone_command_substitutes = "",
 
-		edit_marker_command = "edit_marker",
-		edit_marker_command_help = "Fix up a marker's position or place a new one.",
-		edit_marker_command_parameter_marker_name = "marker name",
-		edit_marker_command_parameter_marker_name_help = "Which marker you wanna fix (leave empty if you wanna drop a new one).",
-		edit_marker_command_substitutes = "",
+		rotate_marker_command = "rotate_marker",
+		rotate_marker_command_help = "Ay fam, edit a markers rotation real quick.",
+		rotate_marker_command_parameter_marker_name = "marker name",
+		rotate_marker_command_parameter_marker_name_help = "The ting you wanna edit fam.",
+		rotate_marker_command_substitutes = "",
 
 		rectangle_command = "rectangle",
 		rectangle_command_help = "Build a rectangle in 3D space innit.",
@@ -2347,6 +2367,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		death_timer_command_parameter_time_help = "Yo G, how long you want the timer to be in seconds? If you don't wanna set one, just leave it blank.",
 		death_timer_command_substitutes = "",
 
+		cpr_command = "cpr",
+		cpr_command_help = "Bring someone back to life innit.",
+		cpr_command_substitutes = "",
+
 		-- game/hitmarkers
 		hitmarkers_command = "hitmarkers",
 		hitmarkers_command_help = "Turn the hitmarker sounds off and on, you feel me?",
@@ -2481,6 +2505,13 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		clear_evidence_command_parameter_evidence_id = "evidence ID",
 		clear_evidence_command_parameter_evidence_id_help = "That ID thing for the evidence locker that needs clearing.",
 		clear_evidence_command_substitutes = "",
+
+		-- game/invisibility
+		invisibility_command = "disappear",
+		invisibility_command_help = "Toggle your invisibility fam.",
+		invisibility_command_parameter_server_id = "server id bruv",
+		invisibility_command_parameter_server_id_help = "If you're trying to toggle someone else's invisibility bruv.",
+		invisibility_command_substitutes = "inv, invis, invisible",
 
 		-- game/items
 		clear_map_command = "clear map",
@@ -2676,14 +2707,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		give_cash_command_parameter_amount = "amount",
 		give_cash_command_parameter_amount_help = "How much p you wanna give dem.",
 		give_cash_command_substitutes = "",
-
-		bill_player_command = "bill_player",
-		bill_player_command_help = "Bill a mandem a certain amount of p.",
-		bill_player_command_parameter_server_id = "server id",
-		bill_player_command_parameter_server_id_help = "The server id of the mandem you wanna send the bill to.",
-		bill_player_command_parameter_amount = "amount",
-		bill_player_command_parameter_amount_help = "How much p you wanna bill the mandem.",
-		bill_player_command_substitutes = "pay",
 
 		-- game/notepads
 		notepad_command = "note",
@@ -3021,6 +3044,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		metagame_command_help = "Fiq constant drawin' of manz server IDs.",
 		metagame_command_substitutes = "mg",
 
+		hide_server_id_command = "hide_server_id",
+		hide_server_id_command_help = "Cover up or show your server id above your head man.",
+		hide_server_id_command_substitutes = "dontmindme",
+
 		-- game/security_cameras
 		security_cameras_command = "cams",
 		security_cameras_command_help = "Toggle the sec cams.",
@@ -3058,6 +3085,13 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		draw_shroom_areas_command = "draw_shroom_areas",
 		draw_shroom_areas_command_help = "Draw all shroom areas and add more.",
 		draw_shroom_areas_command_substitutes = "shroom_areas",
+
+		-- game/sound_effects
+		play_sound_command = "blast",
+		play_sound_command_help = "Blasts a sick tune nearby.",
+		play_sound_command_parameter_sound = "tune",
+		play_sound_command_parameter_sound_help = "The name of the sick tune you want to blast.",
+		play_sound_command_substitutes = "",
 
 		-- game/spying
 		search_for_devices_command = "search_for_devices",
@@ -3250,6 +3284,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		toggle_voice_mute_command_parameter_server_id = "server id",
 		toggle_voice_mute_command_parameter_server_id_help = "The mandem you want to put on mute or un-mute, fam.",
 		toggle_voice_mute_command_substitutes = "voice_mute",
+
+		change_voice_mode_command = "switch_voice_mode",
+		change_voice_mode_command_help = "Toggles the 'music' voice input mode on/off. That mode will disable noise removal and echo cancellation, allowing for clearer music.",
+		change_voice_mode_command_substitutes = "voice_mode",
 
 		-- game/wizard
 		wizard_command = "wizard",
@@ -3702,6 +3740,12 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		version = "Version"
 	},
 
+	couches = {
+		model_not_found = "Bruv, that model name ain't valid innit.",
+		object_not_found = "Nah fam, no object of that model anywhere near you.",
+		offset_copied = "Offset copied, ya get me?"
+	},
+
 	discord = {
 		one_player = "1 mandem",
 		multiple_players = "${playerAmount} mandem",
@@ -3776,22 +3820,36 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	},
 
 	restart = {
-		restart_30_minutes = "Yo pay attention cuz the server gonna restart in 30 minutes!",
-		restart_15_minutes = "You mans need to dip cause the server restarting in 15 minutes!",
-		restart_10_minutes = "Oi! The server’s gonna restart in 10 minutes!",
-		restart_5_minutes = "5 minutes left brehs! Save ya work and shut down the computer.",
-		restart_3_minutes = "Yo, I hope ya'll saved ya work cause the server's restartin' in 3 minutes!",
-		restart_2_minutes = "Oi fam! 2 minutes left, save ya game! It's gonna restart soon!",
-		restart_1_minute = "Yo, listen up! The server's gonna restart in a minute innit!",
+		announcement_restart = "Allow it, fam. The server's gonna restart in ${minutes} minutes.",
+		announcement_restart_one_minute = "Yo fam, the server's gonna restart in 1 minute.",
+
+		announcement_update = "Listen up, blud. The server's gonna be down in ${minutes} minutes for an update.",
+		announcement_update_one_minute = "Oi, listen up. The server's gonna be down in 1 minute for an update.",
+
+		announcement_maintenance = "Hold tight, fam. The server's gonna be down in ${minutes} minutes for some maintenance.",
+		announcement_maintenance_one_minute = "Yo mandem, the server is about to go down in 1 minute fam, for some maintenance ting innit.",
+
+		restart_cancelled = "Safe, the server restart ting got cancelled fam.",
+
 		server_restarting = "Oi, the server's restartin' fam. You can rejoin in a few minutes.",
+
 		executed_restart_command = "Aight, I executed that restart command for ya.",
-		already_executed_restart_command = "I already executed that restart command innit."
+		already_executed_restart_command = "I already executed that restart command innit.",
+		restart_planned_earlier = "Bruv, there's a restart planned earlier than the time you mentioned.",
+		no_restart_planned = "Allow it fam, there ain't no restart planned.",
+		posted_restart_warning_message = "Just put out a warning message about the restart fam.",
+		cancelled_restart = "Man cancelled the restart ting innit."
 	},
 
 	routes = {
 		route_not_found = "Yo, can't find that route ${route} fam.",
 		route_restricted = "Nah g, you can't take that route ${route} cuz it's restricted.",
 		internal_server_error = "Blood, there's an internal server error. Fix up!"
+	},
+
+	twitch = {
+		streaming_state_already_set_to_target = "Bruv, the user's streaming state is already set to the target state you provided.",
+		streaming_state_changed = "Yoo, the mandem's streaming state has been changed to the target state provided."
 	},
 
 	users = {
@@ -4367,6 +4425,44 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		press_to_leave_bed = "Press ~INPUT_CONTEXT~ to bounce off da bed."
 	},
 
+	bills = {
+		select_player = "Choose a Player",
+		no_nearby_players = "Bruv, there ain't no billable mandem near you.",
+
+		amount = "P's",
+		reason = "Reason",
+		bill_title = "New Bill dropped fam",
+		sender = "Mandem Who Sent It",
+		amount = "P's",
+		reason = "Reason",
+		no_receipt = "No Receipt",
+		yes_receipt = "Receipt",
+		tip = "Bakshish",
+		none = "Nah",
+
+		close = "Shut It",
+		back = "Go Back",
+		send = "Send It",
+		pay = "Pay Up",
+
+		receipt = "Receipt (${name})",
+		receipt_text = "Bill from ${name}\n\nAmount: $${amount}\nReason: ${reason}",
+
+		invalid_player = "Man's gone offline or he's too far fam.",
+		bill_created = "Bare safe, I just sent a bill for $${amount} to ${name}.",
+		failed_create_bill = "Bruv, I couldn't send the bill for $${amount} to ${name}. That's peak.",
+		no_reason = "Man didn't provide a reason, innit.",
+		failed_pay_bill = "Peak fam, I couldn't pay the bill.",
+		not_enough_money = "You ain't got enough dough to pay this bill, my G.",
+		bill_paid = "Safe one, you paid $${amount} to ${name}.",
+		bill_paid_notification = "${name} paid your bill with a ${tip}% tip, mandem.",
+
+		paid_bill_title = "Paid Bill",
+		paid_bill_details = "${consoleName} paid the $${amount} (with a ${tip}% tip) bill by ${targetName}.",
+		bill_created_title = "Mandem created a bill",
+		bill_created_details = "${consoleName} sent a bill for $${amount} to ${targetName} with the reason `${reason}`."
+	},
+
 	blackjack = {
 		play_blackjack = "Press ~INPUT_CONTEXT~ to play Blackjack.",
 		play_blackjack_high_limit = "Press ~INPUT_CONTEXT~ fam to play High-Limit Blackjack."
@@ -4659,7 +4755,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		screen_model_size = "Size: x: ${sizeX}, y: ${sizeY}",
 		screen_model_offset = "Offset: x: ${offsetX}, y: ${offsetY}, z: ${offsetZ}",
-		screen_model_rotation = "Rotation: ${rotation}",
+		screen_model_rotation = "Rotation: x: ${rotationX}, y: ${rotationY}, z: ${rotationZ}",
 		screen_model_volume = "Volume: ${volumeRadius} (${volumeCutOffRadius}), it's lit.",
 		screen_model_model = "Model: ${modelName}",
 
@@ -4678,7 +4774,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		cinema = "Flicks",
 		doppler_cinema = "Doppler Flicks",
-		sandy_cinema = "Sanny Flicks",
+		sandy_cinema = "Sandy Cinema",
 		tv = "Telly",
 		monitor = "Screen",
 		laptop = "Lappy",
@@ -4696,7 +4792,26 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		author = "Author fam",
 		queue = "Queue it up",
 		search_through_library = "Search through da library blud...",
-		add_to_library = "Add video to da library (URL)..."
+		add_to_library = "Add video to da library (URL)...",
+
+		share_your_screen = "Baremen, share your screen",
+		how_to_share_screen = "How to share your screen wagwan:",
+		how_to_share_screen_part_1 = "Open OBS and go to the settings innit.",
+		how_to_share_screen_part_2 = "Under the 'Stream' section, choose 'Custom...' as the service, you get me.",
+		how_to_share_screen_part_3 = "Allow me to chat manz down with the mandem.",
+		how_to_share_screen_part_4 = "Bust open OBS and start streaming innit.",
+		how_to_share_screen_part_5 = "Click 'Go Live!' fam.",
+		server = "Endz",
+		stream_key = "Stream Key",
+		cancel = "Nah bruv",
+		go_live = "Let's get it poppin'!",
+		copied = "Safe g!",
+		low_latency = "Bare manz don't like stream delay:",
+		how_to_reduce_latency_part_1 = "Open up OBS and find dem settings.",
+		how_to_reduce_latency_part_2 = "Select the advanced option under 'Output Mode' in the 'Output' section.",
+		how_to_reduce_latency_part_3 = "Find the Keyframe Interval setting in the Encoder Settings.",
+		how_to_reduce_latency_part_4 = "Man like set the Keyframe Interval to 1s innit.",
+		custom_stream = "Custom Stream"
 	},
 
 	cinematic = {
@@ -5537,7 +5652,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		secondary_offset = "Extra Offset",
 		rotation = "Spin it",
 		color = "Colour",
-		duration = "Duration (in ms)"
+		duration = "Duration (in ms)",
+
+		flash_no_image = "The kill flash don't work with a custom image fam.",
+		do_flash = "Do Flash",
+		flashing = "Flashing"
 	},
 
 	clip_saver = {
@@ -5645,7 +5764,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		no_states = "Nuttin'",
 		entity_health = "Condition ${health}/${maxHealth}",
 		owned_by_server = "The mandem up top own this.",
+		owned_by_you = "You",
 		first_owned_short = "The OG who first copped it was ${firstOwned}.",
+		current_owned_short = "Current Owner: ${currentOwner}",
 		network_id_side = "Network ID: ${networkId}. You feel me?",
 		no_target = "No one there, blud",
 		invalid_radius_parameter = "Yo bruv, the `radius` you entered don't make sense. Try again.",
@@ -5697,6 +5818,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		delete_entity_success = "Safe g, just deleted the entity with network id ${networkId}.",
 		delete_entity_failed = "Man couldn't delete the ting.",
 		delete_entity_no_permissions = "You could tell the player ain't got the permissions to delete a ting.",
+
+		failed_entity_info = "Couldn't grab the info on that ting fam.",
+		printed_entity_info = "Printed the server info for that ting in F8.",
 
 		move_entity_success = "Moved the ting with network id ${networkId} like a boss.",
 		move_entity_failed = "Couldn't move the ting, ya get me?",
@@ -6008,6 +6132,13 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		purchase_success = "Safe g, just copped a Fake-ID for $3,000."
 	},
 
+	farming = {
+		milk_cow_interact = "[${InteractionKey}] Milk Cow",
+		milking_cow = "Milking Cow",
+		milking_cow_moved = "The cow might have skrrted off fam.",
+		milking_cow_failed = "Failed to squeeze dat cow, fam."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Man's takin' your fingerprint fam",
 		already_fingerprinting = "You already fingyin' a player, bruv.",
@@ -6076,12 +6207,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		freecam_logs_title = "Activated Freecam",
 		freecam_on_logs_details = "${consoleName} been toggling their freecam on.",
 		freecam_off_logs_details = "${consoleName} been toggling their freecam off.",
-
-		track_player_logs_title = "Following",
-		track_player_logs_details = "${consoleName} used the orbitcam to start following ${targetName}.",
-
-		freecam_no_permission = "You don't have enough clout to toggle your freecam.",
-		track_player_no_permission = "You don't have enough clout to follow a player using the freecam.",
 
 		freecam_inactive = "Bruv, you're not even in freecam mode right now.",
 		added_point = "Man just added a camera point at index ${index} (Transition: ${transition}ms).",
@@ -6326,11 +6451,20 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		death_timer_override_removed = "Got it, I removed the death timer override for you.",
 		no_death_timer_override_set = "Yo, there ain't no death timer override set fam.",
 
+		no_nearby_ped = "Nah, there ain't no ped nearby, fam.",
+		ped_not_dead = "Bruv, this ped ain't dead, innit.",
+		performing_cpr = "Back at it with the CPR, blud.",
+
 		invalid_distance = "Bruh, that revive distance ain't valid (It gotta be between 1 and 50).",
 		no_players_in_range = "There ain't no homies down within ${distance} meters from you.",
 		successfully_revived_range = "Aight, you successfully revived ${amount} players within ${distance} meters from you.",
 		failed_revive_range = "Yo, you couldn't bring back anyone from the dead.",
-		range_revive_not_staff = "Yo fam, you ain't got the permissions to bring back the dead within a certain range."
+		range_revive_not_staff = "Yo fam, you ain't got the permissions to bring back the dead within a certain range.",
+
+		cpr_ped_logs_title = "CPRed Ped, fam",
+		cpr_ped_logs_details = "${consoleName} done some mad CPR on a ped and got themselves $${money}.",
+		cpr_player_logs_title = "CPRed Player, fam",
+		cpr_player_logs_details = "${consoleName} performed some CPR on ${targetConsoleName}, innit."
 	},
 
 	hitmarkers = {
@@ -6365,6 +6499,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		alignment_warning = "Your HUD is kinda off-screen, fam. Adjust it by reducing the \"*Safezone Size*\" in your \"*Display*\" settings.",
 
 		muted = "Silent ting",
+		tx = "Transmitting, fam",
+		rx = "Receiving, blud",
 
 		fps_unit = "fps innit",
 		ping_unit = "ms bloke",
@@ -6648,6 +6784,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		los_santos_golf_club = "Los Santos Golf Club",
 		arcade_bar = "Arcade Bar",
 		japanese_restaurant = "Sushi Spot",
+		japanese_restaurant_kitchen = "Japanese Restaurant Kitchen, man's hungry innit",
 		["945_studios"] = "945 Studios",
 		grain_mill = "The Mill",
 		pd_prefix = "5-0",
@@ -6668,7 +6805,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		nameable_title = "Item Name You Can Rename:",
 
-		locker_restricted = "This item ain't gon' fit in yo' locker.",
+		locker_restricted = "Allow me to explain, blud. You can't move dis item into that inventory, fam.",
 
 		press_to_access_shredder = "[${InteractionKey}] Access tha' shredder.",
 
@@ -7417,6 +7554,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		pigeon_milk = "Pigeon Milk",
 		pigeon_milk_description = "\"Shoulda drank pigeon milk that stuff will knock you right out, blud\"\nMilk extracted by Vedder with love.",
 
+		milk = "Mandem Cow Juice",
+		milk_description = "Regular cow juice extracted with mad love.",
+
 		bandana = "Bandana",
 		bandana_description = "Whole lotta gang shit. (Bloods winning init)",
 
@@ -7537,6 +7677,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		traffic_barrel_description = "It looks hittable, but don't do it unless you tryna catch a case.",
 		pedestrian_barrier = "Pedestrian Barrier",
 		pedestrian_barrier_description = "Great to have unless it's a Travis Scott concert... You know what I'm sayin'.",
+		wheel_clamp = "Wheel Man's Trap",
+		wheel_clamp_description = "No getaway whips here! The Wheel Man's Trap means big business, securing whips firm and putting an end to any unauthorized movements. This heavy-duty piece of kit is a silent enforcer, making sure mans respect and follow the parking rules.",
 
 		bandit_1 = "Man like Bandit 1",
 		bandit_1_description = "Can be put anywhere init, ya get me?",
@@ -7888,6 +8030,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		weapon_gadgetpistol = "Perico Pistol",
 		weapon_stungun_mp = "Stun Gun (MP)",
 		weapon_pistolxm3 = "WM 29 Pistol",
+		weapon_tecpistol = "Tactical Piece",
 
 		weapon_microsmg = "Micro Techs",
 		weapon_smg = "Tech-9",
@@ -8011,6 +8154,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		weapon_gadgetpistol_description = "This pistol is no joke. With a titanium nitride finish, you better not be too precious with it because it's a deadly shot.",
 		weapon_stungun_mp_description = "Electric vibes for the mandem!",
 		weapon_pistolxm3_description = "A small ting that shoots 9mm rounds. Perfect for getting up in someone's face.",
+		weapon_tecpistol_description = "A fully automatic burner with a big mag and a rapid fire rate. Holds 33 shots of 9mm rounds.",
 
 		weapon_microsmg_description = "A little ting that sprays and slaps at a rate of 700 to 900 rounds per minute.",
 		weapon_smg_description = "A good all-rounder, lightweight with a accurate sight and 30 shots in the mag.",
@@ -8118,7 +8262,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		weapon_addon_sentinelbbshotgun = "Beanbag Shotgun",
 		weapon_addon_sentinelbbshotgun_description = "Bags of fun for dealing with unruly mandem.",
 
-		-- TODO: Add a description for this one
 		weapon_addon_stungun = "Coil Stun Gun",
 		weapon_addon_stungun_description = "Electric vibes for tha fam!",
 
@@ -8189,6 +8332,21 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		weapon_addon_680_description = "The Remington 680 is a sick pump-action shotty that was developed by Remington Arms in 1950, fam."
 	},
 
+	invisibility = {
+		invisibility_on = "Man's gone invisible, fam.",
+		invisibility_off = "Man's back visible, innit.",
+
+		invalid_server_id = "Dat server ID ain't valid, bruv.",
+
+		toggled_invisibility = "Man dem toggled ${displayName}'s invisibility, you get me.",
+		failed_invisibility = "Ay, couldn't toggle ${displayName}'s invisibility, fam.",
+
+		invisibility_logs_title = "Man dem toggled invisibility, blud.",
+		invisibility_on_logs_details = "${consoleName} went invisible, init.",
+		invisibility_off_logs_details = "${consoleName} ain't invisible no more, fam.",
+		invisibility_other_logs_details = "${consoleName} toggled ${targetConsoleName}'s invisibility, bloodclart."
+	},
+
 	items = {
 		move_to_repair = "Roll up to this spot to fix up the whips blud.",
 		repairing_vehicle = "Sorting out the whip",
@@ -8219,6 +8377,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		just_used_bandage = "Yo, just used a first aid kit, wait a bit before using another.",
 		drank_gasoline_death = "Died from drinking gasoline, smh. ",
 		drank_bleach_death = "Man down from drinkin' bleach",
+		finished_joint = "You mashed dat zoot, innit.",
 
 		using_cuffs = "Cuffing up",
 		you_moved_too_fast = "Slow down bruh, you movin' too quick.",
@@ -8446,6 +8605,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		refreshing = "Hold up, refreshing...",
 
 		avoid_repeating_letters = "Try not to repeat bare letters in ya first or last name.",
+		backstory_empty = "Bruv, don't leave ya backstory empty init.",
 
 		missing_character_creation_data = "Oi, the ting's missin' character creation data",
 		invalid_first_name = "Your first name's either too short or too long, fix up (2 to 100 characters).",
@@ -8612,7 +8772,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		catnip_active = "Givin' Maxwell Catnip",
 		treat_active = "Givin' Maxwell a Treat",
 		cuddle_active = "Cuddlin' with Maxwell",
-		hug_active = "Huggin' Maxwell"
+		hug_active = "Huggin' Maxwell",
+
+		maxwell_appeared = "Maxwell jus' showed up near ya, fam."
 	},
 
 	meth = {
@@ -8792,21 +8954,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		not_close_enough = "Bruv, you aint close enough to the player.",
 		user_not_available = "Geeza, the user aint available.",
 
-		bill_received = "Yo, ${displayName} sent you a bill for $${amount}. Type `/yes` to pay it or `/no` to decline it.",
-		bill_expired = "Oi blud, your bill from ${displayName} has expired.",
-		bill_declined = "Nah fam, you declined the bill from ${displayName}.",
-		failed_bill_payment = "Sorry bruv, payment for the bill didn't go through.",
-		bill_success = "Safe! You paid $${amount} to ${displayName} for the bill.",
-		bill_created = "Bruv, you just created a bill for $${amount} to ${displayName}.",
-
 		givecash_success = "You blessed ${displayName} with $${amount}.",
 
 		give_cash_title = "Cash Transfer",
-		give_cash_details = "${consoleName} transferred $${amount} to ${targetConsoleName}.",
-		paid_bill_title = "Bill Paid, Innit",
-		paid_bill_details = "${consoleName} paid up ${targetConsoleName} £${amount}.",
-		bill_created_title = "New Bill Created, Fam",
-		bill_created_details = "${consoleName} made a bill for £${amount} for ${targetConsoleName}."
+		give_cash_details = "${consoleName} transferred $${amount} to ${targetConsoleName}."
 	},
 
 	moonshine = {
@@ -9082,12 +9233,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		ped_models_about = "Yo, in here you can see all the wastemen not using a basic mandem skin. Could help ya spot wallad or yutes with dodgy mods, innit?",
 		local_ped_models_title = "Ends Skins",
 		animal_ped_models_title = "Animal Skins",
-
-		fast_movement_title = "Quick steps",
-		fast_movement_about = "Oi oi, this be the list of players moving way too fast. Might be a sign of a madman modder, bruv.",
-
-		damage_modifier_title = "Damage Levels",
-		damage_modifier_about = "All players with modified damage levels displayed here. Detects potential modders.",
 
 		bad_screen_word_title = "Profanity Filter",
 		bad_screen_word_about = "List of players with profanities detected on their screen. Detects potential modders.",
@@ -9705,6 +9850,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		was_banned = "Got banned",
 		loading = "Bout to load player data...",
+		loading_screenshot = "Man's takin' a screenshot, blud...",
+		screenshot_failed = "Bare man can't take no screenshot, bloodclart.",
+		player_no_character = "Brudda ain't got no character loaded, ya get me.",
 		no_warnings = "No warnings fam",
 		not_shown_warnings = "${count} more not shown innit",
 		system_issuer = "System",
@@ -9720,6 +9868,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		button_add = "Let's add dat",
 		button_close = "Time to bounce, close this",
 		button_new = "New Note",
+		button_back = "Back ya get me fam",
+		button_screenshot = "Screenshot dis, blood.",
 
 		ping = "${ping}ms",
 		fps = "${fps}fps",
@@ -10155,7 +10305,48 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		better_stamina = "Run fo days witout runnin' outta stamina fo ${duration} mins.",
 		more_inventory_space = "Get an extra ${amount} of space in your pockets for ${duration} minutes, init.",
 
-		buffs_note = "Listen up, dawg. These buffs won't work unless you dip out of the building first."
+		buffs_note = "Listen up, dawg. These buffs won't work unless you dip out of the building first.",
+
+		press_to_prepare_food = "[${InteractionKey}] Whip up some munch, bruv",
+		prepare_food = "Prepare Food, my g.",
+
+		kissaki_kitchen = "Kissaki Kitchen, ya get me?",
+
+		craft = "Craft that ting, innit.",
+		putting_down_ingredients = "Puttin' Down Ingredients",
+
+		pick_up = "Pick Up: ~g~${name}",
+		press_to_pick_up = "[${InteractionKey}] Pick Up: ~g~${name}",
+
+		prepare_rice = "~g~${name}~s~: Prepare Rice (${completed}%~s~)",
+		press_to_prepare_rice = "[${InteractionKey}] ~g~${name}~s~: Prepare Rice (${completed}%~s~)",
+		preparing_rice_starting = "Preppin' Rice",
+		preparing_rice = "~g~${name}~s~: Preppin' Rice... (${completed}%~s~)",
+
+		prepare_fillings = "~g~${name}~s~: Prepare Fillings (${completed}%~s~)",
+		press_to_prepare_fillings = "[${InteractionKey}] ~g~${name}~s~: Prepare Fillings (${completed}%~s~)",
+		preparing_fillings_starting = "Grafting Fillings",
+		preparing_fillings = "~g~${name}~s~: Grafting Fillings... (${completed}%~s~)",
+
+		prepare_rolling_mat = "~g~${name}~s~: Arm up Rolling Mat (${completed}%~s~)",
+		press_to_prepare_rolling_mat = "[${InteractionKey}] ~g~${name}~s~: Arm up Rolling Mat (${completed}%~s~)",
+		preparing_rolling_mat_starting = "Grafting Rolling Mat",
+		preparing_rolling_mat = "~g~${name}~s~: Grafting Rolling Mat... (${completed}%~s~)",
+
+		assemble_sushi = "~g~${name}~s~: Build Sushi (${completed}%~s~)",
+		press_to_assemble_sushi = "[${InteractionKey}] ~g~${name}~s~: Assemble Sushi (${completed}%~s~)",
+		assembling_sushi_starting = "Assembling Sushi",
+		assembling_sushi = "~g~${name}~s~: Assembling Sushi... (${completed}%~s~)",
+
+		roll_sushi = "~g~${name}~s~: Roll Sushi (${completed}%~s~)",
+		press_to_roll_sushi = "[${InteractionKey}] ~g~${name}~s~: Roll Sushi (${completed}%~s~)",
+		rolling_sushi_starting = "Rolling Sushi",
+		rolling_sushi = "~g~${name}~s~: Rolling Sushi... (${completed}%~s~)",
+
+		slice_sushi = "~g~${name}~s~: Slice Sushi (${completed}%~s~)",
+		press_to_slice_sushi = "[${InteractionKey}] ~g~${name}~s~: Chop Sushi (${completed}%~s~)",
+		slicing_sushi_starting = "Chop Sushi, blud",
+		slicing_sushi = "~g~${name}~s~: Choppin' Sushi... (${completed}%~s~)"
 	},
 
 	riot_mode = {
@@ -10198,7 +10389,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		time_since_disconnection = "Time since mandem left",
 
 		you_are_now_metagaming = "You're on that outside talk now fam.",
-		you_are_no_longer_metagaming = "You're safe now brudda, no need to metagame."
+		you_are_no_longer_metagaming = "You're safe now brudda, no need to metagame.",
+
+		server_id_hide_failed = "Couldn't hide server-id, fam.",
+		server_id_hidden = "Man's server id is hidden now.",
+		server_id_not_hidden = "Man's server id ain't hidden no more."
 	},
 
 	screenshots = {
@@ -10216,7 +10411,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		screenshot_error_user_not_found = "Ayo, can't find that user g.",
 		screenshot_error_user_developer = "Bruv, this guy's a developer.",
 		screenshot_error_no_token = "Nah fam, failed to get opfw token.",
-		screenshot_timeout = "Yo, screenshot request timed out."
+		screenshot_timeout = "Yo, screenshot request timed out.",
+		screenshot_error_character_unloaded = "Mandem left the server or unloaded their character, innit."
 	},
 
 	scuba = {
@@ -10361,13 +10557,19 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		use_blender = "[${InteractionKey}] Use Mixer",
 		blending = "Mixing",
+		no_ingredients = "You ain't got no ingredients to make a smoothie, fam.",
 
+		milkshake_label = "Milkshake (${flavors} fam)",
 		smoothie_label = "Smoothie (${flavors})",
 		seperator = "n'"
 	},
 
 	snow = {
 		hold_to_pick_up_snowballs = "Hold ~INPUT_CONTEXT~ to cop snowballs."
+	},
+
+	sound_effects = {
+		invalid_sound = "Nah, that sound ain't legit."
 	},
 
 	spawn = {
@@ -10416,7 +10618,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		player_not_exist = "Yo, that player ain't on this street.",
 		no_character_loaded = "That playa ain't got no character loaded, fam.",
 		not_same_instance = "Yo, that player ain't chillin' in the same instance as you.",
+		no_user_or_character = "Bruv, dat player aint online or don't have a character.",
 
+		resolving_player = "Finding dat player",
 		loading_coords = "Loading dem coords",
 		preloading_area = "Preloading area innit",
 		finding_player = "Looking for my man dem",
@@ -10427,11 +10631,14 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		health_ok = "Health: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
 		health_bad = "Health: ~r~${health} / ${maxHealth}~w~ - ${percentage}",
+		bleeding = "~w~ - ~r~Bleeding fam",
 
 		armor_ok = "Armor: ~g~${armor} / ${maxArmor}~w~ - ${percentage}",
 		armor_bad = "Armour: ~r~${armor} / ${maxArmor}~w~ - ${percentage}",
 
-		vehicle_health = "Vehicle Health: ${percentage} percent",
+		vehicle_health_fuel = "Vehicle - Fuel: ${health} ~w~- ${fuel}",
+		can_respawn = "Aight, can respawn in: ${remaining}",
+		yes = "~g~Yea fam",
 
 		speed = "Bare quickness: ${speed}",
 
@@ -11029,6 +11236,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		target_radius = "Target Radius: ${targetRadius}, fam",
 		actual_radius = "Actual Radius: ${actualRadius}, you get me?",
 
+		intent_music = "Switching voice input mode to 'music'.",
+		intent_speech = "Switching voice input mode back to 'speech'.",
+		music_mode = "Music Mode",
+
 		invalid_server_id = "Oi, that server ID ain't valid.",
 		failed_toggle_listen = "Could nah toggle if you listenin' or not.",
 		listeners = "List of people listenin':",
@@ -11041,7 +11252,19 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		affected_by_jammer = "Bruv, your radio's getting jammed or something.",
 
 		listening_missing_permissions = "Oi, this player tried to toggle their listening status but ain't got the right permissions.",
-		voice_mute_missing_permissions = "Oi, this player tried to mute someone else's voice but ain't got the right permissions."
+		voice_mute_missing_permissions = "Oi, this player tried to mute someone else's voice but ain't got the right permissions.",
+
+		music_mode_logs_title = "Toggled Voice Mode blood",
+		music_mode_logs_details_on = "${consoleName} changed their voice input mode to 'man's not hot'.",
+		music_mode_logs_details_off = "${consoleName} changed their voice input mode to 'man's talking'.",
+
+		listening_logs_title = "Jacked In",
+		stopped_listening_logs_details = "${consoleName} started listening to ${targetConsoleName}.",
+		started_listening_logs_details = "${consoleName} stopped listening to ${targetConsoleName}.",
+
+		muted_logs_title = "Silenced",
+		muted_logs_details = "${consoleName} muted ${targetConsoleName} from voice chat.",
+		unmuted_logs_details = "${consoleName} deaded ${targetConsoleName} from voice chat, fam."
 	},
 
 	washrooms = {
@@ -11064,7 +11287,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		ragdoll_player = "Ragdoll dem",
 		ragdoll_player_force = "Ragdoll (Brutal)",
 		punch_player = "Force Punch",
-		taze_player = "Tase that fool",
 		exit_vehicle_player = "Hop Outta Car",
 		yank_steering_wheel_player = "Jank Steering Wheel, cuz.",
 		flashbang_player = "Flashbang, blinding em.",
@@ -11150,19 +11372,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	},
 
 	functions = {
-		year = "year blad",
-		years = "years blad",
-		month = "month fam",
-		months = "months fam",
-		day = "day fam",
-		days = "days fam",
-		hour = "hour g",
-		hours = "hours g",
-		minute = "minute yute",
-		minutes = "minutes yute",
-		second = "second secz",
-		seconds = "seconds secz",
-		just_now = "just now fam",
 		unknown = "Unknown init",
 		flipped_vehicle_logs_title = "Flipped Vehicle cuz",
 		flipped_vehicle_logs_details = "${consoleName} flipped a vehicle madting.",
@@ -11170,10 +11379,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		knots = "knots",
 		mph = "mph",
-		kmh = "km/h",
-
-		time_in = "in ${time} ${unit} blud",
-		time_ago = "${time} ${unit} ago blud"
+		kmh = "km/h"
 	},
 
 	states = {
@@ -11183,6 +11389,25 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		printed_states = "Printed the states for entity ${networkId}.",
 
 		get_entity_states_missing_permissions = "Yo, a player tried to peep the states of a certain entity without the proper permissions."
+	},
+
+	time = {
+		year = "year",
+		years = "years",
+		month = "month",
+		months = "months",
+		day = "day",
+		days = "days",
+		hour = "hour",
+		hours = "hours",
+		minute = "minute",
+		minutes = "minutes",
+		second = "second",
+		seconds = "seconds",
+		just_now = "just now",
+
+		time_in = "in ${time} ${unit}, blud",
+		time_ago = "${time} ${unit} ago, fam"
 	},
 
 	-- illegal/*
@@ -11220,6 +11445,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		reward_gold_bar = "You just got a gold bar, mate.",
 		reward_cash = "You got some cash, blud.",
 		reward_keycard_red = "You got a red keycard, safe.",
+		reward_treasure_map_piece = "You man grabbed a Treasure Map Piece, innit.",
 
 		stockade_logs_title = "The Stockade is active now",
 		stockade_logs_details = "${consoleName} started the Stockade."
@@ -11470,6 +11696,19 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		use_launch = "Press ~INPUT_VEH_HANDBRAKE~ to blast off, homie."
 	},
 
+	clamps = {
+		no_vehicle_near = "You ain't near a whip's left-rear wheel, fam.",
+		vehicle_not_driveable = "Man can't put clamp on a mash up whip.",
+		clamping = "Clampin'",
+		removing_clamp = "Lifting Clamp",
+		remove_clamp = "[${InteractionKey}] Lift Clamp",
+
+		clamped_log_title = "Attached Clamp",
+		clamped_log_details = "${consoleName} slapped a wheel clamp on a whip with the plate `${plate}`.",
+		unclamped_log_title = "Removed Clamp",
+		unclamped_log_details = "${consoleName} lifted a wheel clamp off a whip with the plate `${plate}`."
+	},
+
 	damage = {
 		vehicle = "Whip-ID: ${entity}",
 		general = "General: ${value}",
@@ -11505,8 +11744,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	},
 
 	gadgets = {
-		helicopter_camera_vehicle_info_metric = "Speed: ${speed} km/h\nRide: ${model}\nPlate: ${plate}",
-		helicopter_camera_vehicle_info_imperial = "Speed: ${speed} mp/h\nRide: ${model}\nPlate: ${plate}",
+		helicopter_camera_vehicle_info = "Speed: ${speed}\nModel: ${model}\nPlate: ${plate}",
 		helicopter_camera_altitude = "${altitude}ft AGL (that's Above Ground Level)",
 		helicopter_camera_altitude_asl = "${altitude}ft ASL (that's Absolute Sea Level)",
 		helicopter_camera_locked_on = "Locked On, safe",

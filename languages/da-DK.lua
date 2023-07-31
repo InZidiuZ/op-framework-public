@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 17 (do not change)
+-- AUTO LOCALES: 18 (do not change)
 
 OP.Global.Locales.Languages["da-DK"] = {
 	-- configuration settings for language
@@ -17,10 +17,12 @@ OP.Global.Locales.Languages["da-DK"] = {
 		warning = "Advarsel",
 		invalid_input = "Ugyldig Indtastning.",
 		missing_input = "Manglende Indtastning.",
+		missing_or_invalid_input = "Manglende eller ugyldig indtastning.",
 		player_not_found = "Kunne ikke finde spilleren med server ID `${serverId}`.",
 		something_went_wrong = "Noget gik galt. Prøv igen.",
 		yes = "Ja",
-		no = "Nej"
+		no = "Nej",
+		n_a = "N/A"
 	},
 
 	-- animations/*
@@ -178,10 +180,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		announcement_logs_details = "${consoleName} sendte følgende besked til hele serveren: `${announcementMessage}`",
 		announcement_not_admin = "Forsøgte at sende en personalemeddelelse.",
 
-		announcement_maintenance = "Serveren vil blive lukket ned om ${minutes} minutter på grund af vedligeholdelse.",
-		announcement_update = "Serveren vil blive lukket ned om ${minutes} minutter på grund af en opdatering.",
-		announcement_restart = "Serveren går ned om ${minutes} minutter til en genstart.",
-
 		posted_announcement = "Indlæg besked meddelse.",
 		posted_announcement_locale = "Indlæg besked meddelse fra locale.",
 		failed_to_post_announcement = "Kunne ikke indlægge besked meddelse da der ikke blev tilføjet nogen besked.",
@@ -221,7 +219,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		missing_valid_license_identifier_parameter = "Mangler en gyldig 'licenseIdentifier' parameter.",
 
 		illegal_entity_wipe = "Spiller forsøgte at slette entities, men havde ikke tilladelse til det.",
-		wiped_entities = "Slettet Entities",
+		wiped_entities = "Slettede enheder. Slettet ${deletedEntities} netværksenheder.",
 		wipe_entities_logs_title = "Slettet Entities",
 		wipe_entities_logs_details = "${consoleName} udførte en entity-sletning med følgende konfiguration: distance = `${distance}`, ignoreLocalEntities = `${ignoreLocalEntities}`, modelName = `${modelName}`",
 
@@ -284,13 +282,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		staff_feature_unavailable = "Denne funktion er utilgængelig, mens din stabilitet er slået fra.",
 
-		failed_toggle_tracker = "Det var ikke muligt at skifte spiller-sporing.",
-		unable_track_player = "Det er ikke muligt at spore spilleren.",
-		success_enable_tracker = "Spiller-sporingen for `${playerName}` er blevet aktiveret.",
-		success_disable_tracker = "Spiller-sporingen er blevet deaktiveret.",
-		not_tracking_player = "Du sporer ikke en spiller.",
-		already_tracking_player = "Du sporer allerede en spiller.",
-
 		toggle_player_track_no_permissions = "Der blev forsøgt at skifte spiller-sporing uden tilstrækkelige tilladelser.",
 		set_job_no_permissions = "Der blev forsøgt at tildele et job uden tilstrækkelige tilladelser.",
 		toggle_reflection_no_permissions = "Forsøgte at skifte skadeafspejling uden tilstrækkelige tilladelser.",
@@ -307,8 +298,18 @@ OP.Global.Locales.Languages["da-DK"] = {
 		headache_logs_details = "${consoleName} har udløst hovedpine for ${targetConsoleName}.",
 		trigger_headache_no_permissions = "Forsøgt at udløse hovedpine uden tilstrækkelige tilladelser.",
 
+		super_jump_logs_title = "Aktiveret Super Hop",
+		super_jump_logs_details_on = "${consoleName} har aktiveret deres super hop.",
+		super_jump_logs_details_off = "${consoleName} har deaktiveret deres super hop.",
+		toggle_super_jump_no_permissions = "Forsøgte at aktivere deres super hop uden korrekte tilladelser.",
+
 		success_trigger_headache = "Hovedpine udløst succesfuldt for ${playerName}.",
 		failed_trigger_headache = "Udløsning af hovedpine mislykkedes.",
+
+		set_spawn_success = "Dit spawn-punkt er nu fastsat til din aktuelle position.",
+		set_spawn_failed = "Kunne ikke indstille spawnpoint.",
+		reset_spawn_success = "Spawnpoint blev nulstillet med succes.",
+		reset_spawn_failed = "Kunne ikke nulstille spawnpoint.",
 
 		protective_mode_not_staff = "Forsøgte at ændre serverens beskyttelses-tilstand uden korrekte tilladelser.",
 		protective_mode_toggled_on = "Serverens beskyttelses-tilstand er nu blevet aktiveret. Krævet antal af spilletid for at kunne tilslutte sig serveren er blevet sat til `${playtime}`.",
@@ -345,8 +346,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		no_nearby_vehicles_off = "Slukkede 'Ingen Nærliggende Køretøjer'.",
 		speed_up_progress_bar_on = "Tændte 'Fremskynd Fremgangslinjen'.",
 		speed_up_progress_bar_off = "Slukkede 'Fremskynd Fremgangslinjen'.",
-		invisibility_on = "Tændte 'Usynlighed'.",
-		invisibility_off = "Slukkede 'Usynlighed'.",
 		wallhack_on = "Tændte 'Wallhack'.",
 		wallhack_off = "Slukkede 'Wallhack'.",
 		aimbot_on = "Aimbot tændt.",
@@ -428,6 +427,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 		fortnite_feature = "Fortnite",
 		reflection_feature = "Skadeafspejling",
 		stable_cam_feature = "Stabiliseringskamera",
+		super_jump_feature = "Super Hop",
+		server_id_hidden_feature = "Skjult server-ID",
+		fake_disconnect_feature = "Falsk afbrydelse",
 
 		you_are_not_in_a_vehicle = "Du er ikke i et køretøj.",
 		repaired_vehicle = "Køretøj repareret.",
@@ -710,37 +712,59 @@ OP.Global.Locales.Languages["da-DK"] = {
 		text_entry_ban = "At inspicere elementer er ikke tilladt på denne browser.",
 		thermal_night_vision_ban = "Brighter Nights er ikke tilladt.",
 		vehicle_modification_ban = "Du kunne ikke finde forlygtevæsken til din bil.",
-		vehicle_spam_ban = "Counter terrorists win.",
 		vehicle_spawn_ban = "Du forsøgte at bruge redstone på en minecart, men havde ikke betjente skinner.",
 		weapon_spawn_ban = "Forsøgte at trække en kanin ud af hatten, fandt i stedet en bazooka.",
 		high_damage_ban = "Magtbalancen er blevet forstyrret, og du er blevet bannet for at forårsage for meget skade.",
 		suspicious_explosion_ban = "Beklager, men dette er ikke en Michael Bay film. Overdreven brug af pyroteknik er ikke tilladt.",
 		semi_godmode_ban = "Din insisteren på kilde til ungdommen synes at have forstyrret den naturlige flow af tiden. Evighed er ikke så sjovt, som det lyder.",
 		invalid_health_ban = "Din sundhedsbar ser ud til at have fået lidt for meget spinat, Popeye",
+		clear_tasks_ban = "Dette er ikke et Jedi sindetræningscenter. Dine forsøg på at påvirke andres frie vilje er blevet bemærket... og afvist.",
+		projectile_event_ban = "Dette er ikke Hogwarts, og du er ikke Harry Potter. Den vilkårlige kasting af trolddom - eller projektiler - er ikke tilladt her.",
+		illegal_native_ban = "Du kan ikke bruge en trylleformular, som du endnu ikke har lært...",
+
+		type_aimbot = "Aimbot",
+		type_bad_creation = "Dårlig skabelse",
+		type_bad_screen_word = "Dårligt skærmbillede ord",
+		type_blacklisted_command = "Sortlistet kommando",
+		type_clear_tasks = "Ryd opgaver",
+		type_damage_modifier = "Skadesmodifikator",
+		type_distance_taze = "Afstandstaser",
+		type_driving_hotwire = "Kørsel hotwire",
+		type_fast_movement = "Hurtig bevægelse",
+		type_freecam_detected = "Freecam opdaget",
+		type_high_damage = "Høj skade",
+		type_honeypot = "Honeypot",
+		type_illegal_event = "Uløvlige klientbegivenhed",
+		type_illegal_freeze = "Uløvlig fryseøbning",
+		type_illegal_ped_spawn = "Født Ped",
+		type_illegal_server_event = "Uløvlig serverbegivenhed",
+		type_illegal_vehicle_modifier = "Køretøj Modifikator",
+		type_illegal_vehicle_spawn = "Født køretøj",
+		type_illegal_weapon = "Våbenfødsel",
+		type_invalid_health = "Ugyldig sundhed",
+		type_invincibility = "Uovervindelighed",
+		type_modified_fov = "Ændret FOV",
+		type_ped_change = "Pedændring",
+		type_player_blips = "Spiller blips",
+		type_projectile_event = "Projektilbegivenhed",
+		type_runtime_texture = "Løbetids tekstur",
+		type_semi_godmode = "Semi-guddommelighed",
+		type_spawned_object = "Spawnet objekt",
+		type_spectate = "Spectate",
+		type_spiked_resource = "Spiket ressource",
+		type_suspicious_explosion = "Mistænkelig eksplosion",
+		type_text_entry = "Tekstindtastning",
+		type_thermal_night_vision = "Termisk/natvisning",
+		type_vehicle_modification = "Køretøj tilpasning",
+		type_illegal_native = "Ullovligt Native-kald",
+
+		event_prefix = "Anti-Cheat: ${type}",
 
 		mp_f_freemode_01_label = "Freemode (kvinde)",
 		mp_m_freemode_01_label = "Freemode (mand)",
 		player_one_label = "Franklin",
 		player_two_label = "Trevor",
 		player_zero_label = "Michael",
-
-		notification_distance_taze = "Anti-Cheat: ${displayName} tasede nogen på en meget lang afstand (${distance}m).",
-		notification_bad_screen_word = "Anti-Cheat: ${displayName} har ${count} triggerord på deres skærm.",
-		notification_suspicious_explosion = "Anti-Snyd: ${displayName} udløste en ${explosionType} eksplosion (~${distance}m).",
-
-		notification_freecam_detected = "Anti-Cheat: Fricam opdaget",
-		notification_illegal_vehicle_modifier = "Anti-Cheat: Ulovlig køretøjsmodifikation",
-		notification_illegal_vehicle_spawn = "Anti-Cheat: Køretøj Spawnet",
-		notification_fast_movement = "Anti-Cheat: Hurtig bevægelse",
-		notification_illegal_freeze = "Anti-Cheat: Ulovlig fryse",
-		notification_invincibility = "Anti-Cheat: Usårlighed",
-		notification_vehicle_modification = "Anti-Cheat: Køretøjsmodifikation",
-		notification_damage_modifier = "Anti-Cheat: Skademodifikator",
-		notification_illegal_weapon = "Anti-Cheat: Ulovligt våben",
-		notification_spawned_object = "Anti-Cheat: Genstand spawnet",
-		notification_driving_hotwire = "Anti-Cheat: Kører mens der hotwires",
-		notification_semi_godmode = "Anti-Cheat: Semi-Gudemode",
-		notification_invalid_health = "Anti-Cheat: Ugyldig helbredstilstand",
 
 		ig_orleans_label = "Sasquatch",
 		u_m_m_jesus_01_label = "Jesus",
@@ -770,29 +794,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		fast_movement_warning = "Du er blevet markeret for at bevæge dig for hurtigt! Venligst informer en udvikler og fortæl dem, hvad du gjorde for at få denne meddelelse, da du ikke skal modtage denne chatbesked.",
 		invincibility_warning = "Du er markeret for at være uovervindelig! Venligst informer en udvikler og fortæl dem, hvad du gjorde for at få denne meddelelse, da du ikke skal modtage denne chatbesked.",
 		damage_modifier_warning = "Du er markeret for at have en ugyldig skademodificator! Venligst informer en udvikler og fortæl dem, hvad du gjorde for at få denne meddelelse, da du ikke skal modtage denne chatbesked.",
-		freeze_warning = "Du er blevet markeret for at være frosset, når du ikke skulle være det! Venligst informer en udvikler om hvad du gjorde, da du modtog denne meddelelse, da du ikke burde modtage denne chatbesked.",
-
-		distance_taze_screenshot = "Anti-Cheat: Afstand Taze (${distance}m)",
-		spectating_screenshot = "Anti-Cheat: Tager Kig",
-		fast_movement_screenshot = "Anti-Cheat: Hurtig Bevægelse",
-		illegal_freeze_screenshot = "Anti-Cheat: Illegal Frysning",
-		illegal_vehicle_modifier_screenshot = "Anti-Cheat: Køretøjs-modificering (${modifierName} = ${modifierValue})",
-		damage_modifier_screenshot = "Anti-Cheat: Ugyldig skadejustering (${activeModifier}/${currentModifier})",
-		illegal_weapon_screenshot = "Anti-Cheat: Spawnet våben (${weaponLabel})",
-		illegal_vehicle_spawn_screenshot = "Anti-Cheat: Spawnet køretøj (${modelName})",
-		vehicle_modification_screenshot = "Anti-Cheat: Modificeret køretøj (${types})",
-		thermal_night_vision_screenshot = "Anti-Cheat: Termisk/Nat vision (${nativeName})",
-		text_entry_screenshot = "Anti-Cheat: Tekstindtastning (${textEntry})",
-		player_blips_screenshot = "Anti-Cheat: Spillermarkører",
-		modified_fov_screenshot = "Anti-Cheat: Ændret FOV (${fov})",
-		ped_change_screenshot = "Anti-Cheat: Ulovligt Karakter Skift",
-		invincibility_screenshot = "Anti-Cheat: Uovervindelig",
-		runtime_texture_screenshot = "Anti-Cheat: Kørselsmæssig tekstur (${textureDict}, ${textureName})",
-		bad_screen_word_screenshot = "Anti-Cheat: Dårligt Skærmord (${words})",
-		freecam_detected_screenshot = "Anti-Cheat: Fri kamera opdaget",
-		driving_hotwire_screenshot = "Anti-Cheat: Kørsel under Hotwiring",
-		semi_godmode_screenshot = "Anti-Cheat: Semi-Gudemode",
-		invalid_health_screenshot = "Anti-Cheat: Ugyldig helbredstilstand"
+		freeze_warning = "Du er blevet markeret for at være frosset, når du ikke skulle være det! Venligst informer en udvikler om hvad du gjorde, da du modtog denne meddelelse, da du ikke burde modtage denne chatbesked."
 	},
 
 	authentication = {
@@ -905,8 +907,21 @@ OP.Global.Locales.Languages["da-DK"] = {
 		sit_command = "sid",
 		sit_command_help = "Forsøg at sætte dig ned på en nærliggende stol.",
 		sit_command_parameter_variation = "variation",
-		sit_command_parameter_variation_help = "Hvilken sidde-animationsvariant der skal afspilles (1 - 6)",
+		sit_command_parameter_variation_help = "Hvilken siddeanimation der skal afspilles (1 - 6).",
 		sit_command_substitutes = "stol",
+
+		-- animations/couches
+		sleep_command = "sove",
+		sleep_command_help = "Forsøg at sove på en nærliggende sofa eller på jorden.",
+		sleep_command_parameter_variation = "variation",
+		sleep_command_parameter_variation_help = "Hvilken soveanimation der skal afspilles (1 - 2).",
+		sleep_command_substitutes = "læg_mig",
+
+		couch_offset_command = "sofa_offset",
+		couch_offset_command_help = "Kopier offsettet til en nærliggende sofa af en bestemt model.",
+		couch_offset_command_parameter_model_name = "model navn",
+		couch_offset_command_parameter_model_name_help = "Modelnavnet på sofaen, som offsettet skal kopieres fra.",
+		couch_offset_command_substitutes = "",
 
 		-- animations/emotes
 		ragdoll_command = "dukkehyl",
@@ -1111,12 +1126,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		infinite_ammo_command_help = "Toggler uendelig ammunition.",
 		infinite_ammo_command_substitutes = "",
 
-		track_player_command = "spor_spiller",
-		track_player_command_help = "Aktiverer en tracker for en bestemt spiller.",
-		track_player_command_parameter_server_id = "server-id",
-		track_player_command_parameter_server_id_help = "Server-ID'en for den spiller, du ønsker at spore. Lad feltet være tomt for at deaktivere funktionen.",
-		track_player_command_substitutes = "",
-
 		reflect_damage_command = "vis_skade_refleksion",
 		reflect_damage_command_help = "Skifter til og fra skaderefleksion. (Enhver spiller, der skader dig, vil selv blive skadet)",
 		reflect_damage_command_substitutes = "refleksion",
@@ -1126,6 +1135,18 @@ OP.Global.Locales.Languages["da-DK"] = {
 		trigger_headache_command_parameter_server_id = "server-id",
 		trigger_headache_command_parameter_server_id_help = "Server-ID'en for spilleren, som du vil få til at opleve en hovedpine.",
 		trigger_headache_command_substitutes = "hovedpine",
+
+		super_jump_command = "super_hop",
+		super_jump_command_help = "Aktiverer din superhop.",
+		super_jump_command_substitutes = "",
+
+		set_spawnpoint_command = "set_spawnpoint",
+		set_spawnpoint_command_help = "Sætter din karakters spawnsted til altid at være din nuværende position.",
+		set_spawnpoint_command_substitutes = "set_spawn",
+
+		reset_spawnpoint_command = "reset_spawnpoint",
+		reset_spawnpoint_command_help = "Nulstiller din karakters spawnsted, som blev sat ved brug af /set_spawnpoint.",
+		reset_spawnpoint_command_substitutes = "reset_spawn",
 
 		stick_command = "fastgør",
 		stick_command_help = "Fastgør dig til bilen, du er på toppen af.",
@@ -1158,12 +1179,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		speed_up_progress_bar_command_parameter_server_id = "server id",
 		speed_up_progress_bar_command_parameter_server_id_help = "Hvis du vil aktivere 'fremryk fremgangsindikator' for en anden spiller, skal du indsætte deres server-id her.",
 		speed_up_progress_bar_command_substitutes = "hurtig_fremrykning",
-
-		invisibility_command = "usynlighed",
-		invisibility_command_help = "Aktiver 'usynlighed'.",
-		invisibility_command_parameter_server_id = "server id",
-		invisibility_command_parameter_server_id_help = "Hvis du vil skifte 'usynlighed' for en anden person, så indtast deres server id her.",
-		invisibility_command_substitutes = "inv, invis, invisible",
 
 		add_cash_command = "tilføj_penge",
 		add_cash_command_help = "Tilføj penge til en karakter.",
@@ -1673,6 +1688,11 @@ OP.Global.Locales.Languages["da-DK"] = {
 		bed_command_help = "Forsøger at lægge dig i den nærmeste seng.",
 		bed_command_substitutes = "",
 
+		-- game/bills
+		create_bill_command = "lav_regning",
+		create_bill_command_help = "undefined",
+		create_bill_command_substitutes = "undefined",
+
 		-- game/bombs
 		toggle_bombs_command = "toggle_bombs",
 		toggle_bombs_command_help = "Ændrer status for bomberne på dit aktuelle fly.",
@@ -1747,12 +1767,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		cayo_perico_command_substitutes = "",
 
 		-- game/cinema
-		cinema_blacklist_add_command = "tilføj_cinema_blacklist",
-		cinema_blacklist_add_command_help = "Tilføj en video til den lokale biograf blacklist.",
-		cinema_blacklist_add_command_parameter_video_key = "video_nøgle",
-		cinema_blacklist_add_command_parameter_video_key_help = "Video-nøglen for den video, du ønsker at blacklist. Eksempel: 'youtube:dQw4w9WgXcQ'",
-		cinema_blacklist_add_command_substitutes = "",
-
 		cinema_screens_debug_command = "cinema_screens_debug",
 		cinema_screens_debug_command_help = "Debug biografskærme.",
 		cinema_screens_debug_command_substitutes = "",
@@ -1976,6 +1990,12 @@ OP.Global.Locales.Languages["da-DK"] = {
 		move_entity_command_parameter_heading_help = "Hvis entiteten skal placeres med samme hovedretning som dig.",
 		move_entity_command_substitutes = "mv",
 
+		server_entity_command = "undefined",
+		server_entity_command_help = "undefined",
+		server_entity_command_parameter_network_id = "undefined",
+		server_entity_command_parameter_network_id_help = "undefined",
+		server_entity_command_substitutes = "",
+
 		fake_lag_command = "falsk_lag",
 		fake_lag_command_help = "Opretter falsk lag.",
 		fake_lag_command_parameter_counter = "tæller",
@@ -2100,11 +2120,11 @@ OP.Global.Locales.Languages["da-DK"] = {
 		ped_bone_command_parameter_bone_name_help = "Knoglen, du vil debugge.",
 		ped_bone_command_substitutes = "",
 
-		edit_marker_command = "rediger_marker",
-		edit_marker_command_help = "Rediger en markørs position eller placer en ny markør.",
-		edit_marker_command_parameter_marker_name = "markørnavn",
-		edit_marker_command_parameter_marker_name_help = "Markøren, du vil redigere (lad den stå tom for at placere en ny markør).",
-		edit_marker_command_substitutes = "",
+		rotate_marker_command = "undefined",
+		rotate_marker_command_help = "undefined",
+		rotate_marker_command_parameter_marker_name = "undefined",
+		rotate_marker_command_parameter_marker_name_help = "undefined",
+		rotate_marker_command_substitutes = "",
 
 		rectangle_command = "rektangel",
 		rectangle_command_help = "Opret et rektangel i 3D-rummet.",
@@ -2347,6 +2367,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		death_timer_command_parameter_time_help = "Antallet af sekunder, du vil indstille timeren til. Hvis du vil fjerne overridningen, skal du lade dette felt være tomt.",
 		death_timer_command_substitutes = "",
 
+		cpr_command = "undefined",
+		cpr_command_help = "undefined",
+		cpr_command_substitutes = "",
+
 		-- game/hitmarkers
 		hitmarkers_command = "hitmarkers",
 		hitmarkers_command_help = "Skift hitmarker-lyde til/fra.",
@@ -2481,6 +2505,13 @@ OP.Global.Locales.Languages["da-DK"] = {
 		clear_evidence_command_parameter_evidence_id = "bevis-id",
 		clear_evidence_command_parameter_evidence_id_help = "ID'et på det bevislås, du vil rydde.",
 		clear_evidence_command_substitutes = "",
+
+		-- game/invisibility
+		invisibility_command = "usynlighed",
+		invisibility_command_help = "undefined",
+		invisibility_command_parameter_server_id = "server id",
+		invisibility_command_parameter_server_id_help = "undefined",
+		invisibility_command_substitutes = "inv, invis, invisible",
 
 		-- game/items
 		clear_map_command = "ryd_kort",
@@ -2676,14 +2707,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		give_cash_command_parameter_amount = "beløb",
 		give_cash_command_parameter_amount_help = "Beløbet af kontanter, som du vil give til spilleren.",
 		give_cash_command_substitutes = "",
-
-		bill_player_command = "seddel_spiller",
-		bill_player_command_help = "Send en faktura til en anden spiller på et visst beløb.",
-		bill_player_command_parameter_server_id = "server-id",
-		bill_player_command_parameter_server_id_help = "Server-id'et for den spiller, du vil sende fakturaen til.",
-		bill_player_command_parameter_amount = "beløb",
-		bill_player_command_parameter_amount_help = "Beløbet af kontanter, som du vil fakturere spilleren for.",
-		bill_player_command_substitutes = "regning",
 
 		-- game/notepads
 		notepad_command = "notesblok",
@@ -3021,6 +3044,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		metagame_command_help = "Ændrer konstant tegning af spilleres server ID.",
 		metagame_command_substitutes = "meta, m",
 
+		hide_server_id_command = "undefined",
+		hide_server_id_command_help = "undefined",
+		hide_server_id_command_substitutes = "undefined",
+
 		-- game/security_cameras
 		security_cameras_command = "overvågningskameraer",
 		security_cameras_command_help = "Ændrer overvågningskameraerne.",
@@ -3058,6 +3085,13 @@ OP.Global.Locales.Languages["da-DK"] = {
 		draw_shroom_areas_command = "tegn_chamus_areas",
 		draw_shroom_areas_command_help = "Tegn alle Chamus områder og tilføj flere.",
 		draw_shroom_areas_command_substitutes = "chamus_områder",
+
+		-- game/sound_effects
+		play_sound_command = "undefined",
+		play_sound_command_help = "undefined",
+		play_sound_command_parameter_sound = "undefined",
+		play_sound_command_parameter_sound_help = "undefined",
+		play_sound_command_substitutes = "",
 
 		-- game/spying
 		search_for_devices_command = "søg_efter_enheder",
@@ -3250,6 +3284,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		toggle_voice_mute_command_parameter_server_id = "server id",
 		toggle_voice_mute_command_parameter_server_id_help = "Brugeren du vil slå lyden fra eller til for.",
 		toggle_voice_mute_command_substitutes = "voice_mute",
+
+		change_voice_mode_command = "undefined",
+		change_voice_mode_command_help = "undefined",
+		change_voice_mode_command_substitutes = "undefined",
 
 		-- game/wizard
 		wizard_command = "wizard",
@@ -3702,6 +3740,12 @@ OP.Global.Locales.Languages["da-DK"] = {
 		version = "Version"
 	},
 
+	couches = {
+		model_not_found = "undefined",
+		object_not_found = "undefined",
+		offset_copied = "undefined"
+	},
+
 	discord = {
 		one_player = "1 spiller",
 		multiple_players = "${playerAmount} spillere",
@@ -3776,22 +3820,36 @@ OP.Global.Locales.Languages["da-DK"] = {
 	},
 
 	restart = {
-		restart_30_minutes = "Serveren vil genstarte om 30 minutter!",
-		restart_15_minutes = "Serveren vil genstarte om 15 minutter!",
-		restart_10_minutes = "Serveren vil genstarte om 10 minutter!",
-		restart_5_minutes = "Serveren vil genstarte om 5 minutter!",
-		restart_3_minutes = "Serveren vil genstarte om 3 minutter!",
-		restart_2_minutes = "Serveren vil genstarte om 2 minutter!",
-		restart_1_minute = "Serveren vil genstarte om 1 minut!",
+		announcement_restart = "undefined",
+		announcement_restart_one_minute = "undefined",
+
+		announcement_update = "undefined",
+		announcement_update_one_minute = "undefined",
+
+		announcement_maintenance = "undefined",
+		announcement_maintenance_one_minute = "undefined",
+
+		restart_cancelled = "undefined",
+
 		server_restarting = "Serveren genstarter. Du kan genindtræde om et par minutter.",
+
 		executed_restart_command = "Genstartkommandoen er blevet udført.",
-		already_executed_restart_command = "Genstartkommandoen er allerede blevet udført."
+		already_executed_restart_command = "Genstartkommandoen er allerede blevet udført.",
+		restart_planned_earlier = "undefined",
+		no_restart_planned = "undefined",
+		posted_restart_warning_message = "undefined",
+		cancelled_restart = "undefined"
 	},
 
 	routes = {
 		route_not_found = "Ruten ${route} blev ikke fundet.",
 		route_restricted = "Ruten ${route} er begrænset adgang.",
 		internal_server_error = "Intern serverfejl."
+	},
+
+	twitch = {
+		streaming_state_already_set_to_target = "undefined",
+		streaming_state_changed = "undefined"
 	},
 
 	users = {
@@ -4367,6 +4425,44 @@ OP.Global.Locales.Languages["da-DK"] = {
 		press_to_leave_bed = "Tryk ~INPUT_CONTEXT~ for at forlade sengen."
 	},
 
+	bills = {
+		select_player = "undefined",
+		no_nearby_players = "undefined",
+
+		amount = "undefined",
+		reason = "undefined",
+		bill_title = "undefined",
+		sender = "undefined",
+		amount = "undefined",
+		reason = "undefined",
+		no_receipt = "undefined",
+		yes_receipt = "undefined",
+		tip = "undefined",
+		none = "undefined",
+
+		close = "undefined",
+		back = "undefined",
+		send = "undefined",
+		pay = "undefined",
+
+		receipt = "undefined",
+		receipt_text = "undefined",
+
+		invalid_player = "undefined",
+		bill_created = "undefined",
+		failed_create_bill = "undefined",
+		no_reason = "undefined",
+		failed_pay_bill = "undefined",
+		not_enough_money = "undefined",
+		bill_paid = "undefined",
+		bill_paid_notification = "undefined",
+
+		paid_bill_title = "undefined",
+		paid_bill_details = "undefined",
+		bill_created_title = "undefined",
+		bill_created_details = "undefined"
+	},
+
 	blackjack = {
 		play_blackjack = "Tryk ~INPUT_CONTEXT~ for at spille Blackjack.",
 		play_blackjack_high_limit = "Tryk på ~INPUT_CONTEXT~ for at spille High-Limit Blackjack."
@@ -4659,7 +4755,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		screen_model_size = "Størrelse: x: ${sizeX}, y: ${sizeY}",
 		screen_model_offset = "Forskydning: x: ${offsetX}, y: ${offsetY}, z: ${offsetZ}",
-		screen_model_rotation = "Rotation: ${rotation}",
+		screen_model_rotation = "undefined",
 		screen_model_volume = "Volumen: ${volumeRadius} (${volumeCutOffRadius})",
 		screen_model_model = "Model: ${modelName}",
 
@@ -4678,7 +4774,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		cinema = "Biograf",
 		doppler_cinema = "Doppler Biograf",
-		sandy_cinema = "Sandy Biograf",
+		sandy_cinema = "undefined",
 		tv = "TV",
 		monitor = "Skærm",
 		laptop = "Bærbar computer",
@@ -4696,7 +4792,26 @@ OP.Global.Locales.Languages["da-DK"] = {
 		author = "Forfatter",
 		queue = "Kø",
 		search_through_library = "Søg i bibliotek...",
-		add_to_library = "Tilføj video til bibliotek (URL)..."
+		add_to_library = "Tilføj video til bibliotek (URL)...",
+
+		share_your_screen = "undefined",
+		how_to_share_screen = "undefined",
+		how_to_share_screen_part_1 = "undefined",
+		how_to_share_screen_part_2 = "undefined",
+		how_to_share_screen_part_3 = "undefined",
+		how_to_share_screen_part_4 = "undefined",
+		how_to_share_screen_part_5 = "undefined",
+		server = "undefined",
+		stream_key = "undefined",
+		cancel = "undefined",
+		go_live = "undefined",
+		copied = "undefined",
+		low_latency = "undefined",
+		how_to_reduce_latency_part_1 = "undefined",
+		how_to_reduce_latency_part_2 = "undefined",
+		how_to_reduce_latency_part_3 = "undefined",
+		how_to_reduce_latency_part_4 = "undefined",
+		custom_stream = "undefined"
 	},
 
 	cinematic = {
@@ -5537,7 +5652,11 @@ OP.Global.Locales.Languages["da-DK"] = {
 		secondary_offset = "Sekundær forskydning",
 		rotation = "Rotation",
 		color = "Farve",
-		duration = "Varighed (ms)"
+		duration = "Varighed (ms)",
+
+		flash_no_image = "undefined",
+		do_flash = "undefined",
+		flashing = "undefined"
 	},
 
 	clip_saver = {
@@ -5645,7 +5764,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 		no_states = "Ingen tilstande",
 		entity_health = "Sundhed ${health}/${maxHealth}",
 		owned_by_server = "Server",
+		owned_by_you = "undefined",
 		first_owned_short = "Første Ejer: ${firstOwned}",
+		current_owned_short = "undefined",
 		network_id_side = "Netværks-ID: ${networkId}",
 		no_target = "Ingen Mål",
 		invalid_radius_parameter = "Ugyldig `radius` parameter.",
@@ -5697,6 +5818,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 		delete_entity_success = "Entity med netværks-ID ${networkId} blev slettet succesfuldt.",
 		delete_entity_failed = "Sletning af entitet mislykkedes.",
 		delete_entity_no_permissions = "Spilleren forsøgte at slette en entitet uden korrekt tilladelse.",
+
+		failed_entity_info = "undefined",
+		printed_entity_info = "undefined",
 
 		move_entity_success = "Entitet med netværks-id ${networkId} er blevet flyttet med succes.",
 		move_entity_failed = "Flytning af entitet mislykkedes.",
@@ -6008,6 +6132,13 @@ OP.Global.Locales.Languages["da-DK"] = {
 		purchase_success = "Du har med succes købt en falsk ID-kort til $3,000."
 	},
 
+	farming = {
+		milk_cow_interact = "undefined",
+		milking_cow = "undefined",
+		milking_cow_moved = "undefined",
+		milking_cow_failed = "undefined"
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Tager fingeraftryk",
 		already_fingerprinting = "Du tager allerede fingeraftryk af en spiller.",
@@ -6076,12 +6207,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		freecam_logs_title = "Toggled Freecam",
 		freecam_on_logs_details = "${consoleName} tændte deres freecam.",
 		freecam_off_logs_details = "${consoleName} slukkede deres freecam.",
-
-		track_player_logs_title = "Tracker",
-		track_player_logs_details = "${consoleName} satte deres tracker mål til ${targetName} ved hjælp af orbitcam.",
-
-		freecam_no_permission = "Forsøgte at tænde/slukke deres freecam uden de nødvendige tilladelser.",
-		track_player_no_permission = "Forsøgte at tracke en spiller ved hjælp af freecam uden de nødvendige tilladelser.",
 
 		freecam_inactive = "Du er i øjeblikket ikke i frikameraet.",
 		added_point = "Tilføjet kamerapunkt på index ${index} (Transaktion: ${transition}ms).",
@@ -6326,11 +6451,20 @@ OP.Global.Locales.Languages["da-DK"] = {
 		death_timer_override_removed = "Dødstimerens overskrivning er blevet fjernet.",
 		no_death_timer_override_set = "Der er ikke indstillet en overskrivning af dødsklokken.",
 
+		no_nearby_ped = "undefined",
+		ped_not_dead = "undefined",
+		performing_cpr = "undefined",
+
 		invalid_distance = "Ugyldigt genoplivningsområde (skal være mellem 1 og 50).",
 		no_players_in_range = "Der er ingen nedlagte spillere inden for en ${distance}m radius.",
 		successfully_revived_range = "Genoplivning af ${amount} spiller(e) lykkedes inden for en ${distance}m radius.",
 		failed_revive_range = "Kunne ikke genoplive spillere.",
-		range_revive_not_staff = "En spiller forsøgte at genoplive spillere inden for et bestemt område, men havde ikke de korrekte tilladelser til at gøre det."
+		range_revive_not_staff = "En spiller forsøgte at genoplive spillere inden for et bestemt område, men havde ikke de korrekte tilladelser til at gøre det.",
+
+		cpr_ped_logs_title = "undefined",
+		cpr_ped_logs_details = "undefined",
+		cpr_player_logs_title = "undefined",
+		cpr_player_logs_details = "undefined"
 	},
 
 	hitmarkers = {
@@ -6365,6 +6499,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		alignment_warning = "Dit HUD ser ud til at være delvist uden for skærmen. Du kan justere det ved at reducere \"*Safezone-størrelse*\" i dine \"*Skærm*\" indstillinger.",
 
 		muted = "Muted",
+		tx = "undefined",
+		rx = "undefined",
 
 		fps_unit = "fps",
 		ping_unit = "ms",
@@ -6648,6 +6784,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		los_santos_golf_club = "Los Santos Golf Klub",
 		arcade_bar = "Arcade Bar",
 		japanese_restaurant = "Japansk Restaurant",
+		japanese_restaurant_kitchen = "undefined",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Kornmølle",
 		pd_prefix = "Politi",
@@ -6668,7 +6805,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		nameable_title = "Navngivne Emne-navn:",
 
-		locker_restricted = "Denne genstand ser ikke ud til at passe i dit skab.",
+		locker_restricted = "undefined",
 
 		press_to_access_shredder = "[${InteractionKey}] Åbn makulator.",
 
@@ -7417,6 +7554,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 		pigeon_milk = "DuerMælk",
 		pigeon_milk_description = "\"Skulle have drukket duer mælk, det slår dig omkuld.\"\nMælk udvundet af Vedder med kærlighed.",
 
+		milk = "undefined",
+		milk_description = "undefined",
+
 		bandana = "Bandana",
 		bandana_description = "Masser af bande shit. (Bloods vinder)",
 
@@ -7537,6 +7677,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		traffic_barrel_description = "Det ser rambar ud, men lad være med at ramme det... medmindre?",
 		pedestrian_barrier = "Fodgængerbarriere",
 		pedestrian_barrier_description = "God at have, medmindre det er til en Travis Scott-koncert...",
+		wheel_clamp = "undefined",
+		wheel_clamp_description = "undefined",
 
 		bandit_1 = "Bandit 1",
 		bandit_1_description = "Kan placeres hvor som helst i verdenen.",
@@ -7888,6 +8030,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		weapon_gadgetpistol = "Perico Pistol",
 		weapon_stungun_mp = "Taser (MP)",
 		weapon_pistolxm3 = "WM 29 Pistol",
+		weapon_tecpistol = "undefined",
 
 		weapon_microsmg = "Micro SMG",
 		weapon_smg = "SMG",
@@ -8011,6 +8154,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		weapon_gadgetpistol_description = "Et dødeligt skud. Vær ikke alt for forsigtig. Du vil ikke ridse titanium-nitriden overfladen.",
 		weapon_stungun_mp_description = "Sjovt zaptastisk våben for hele familien!",
 		weapon_pistolxm3_description = "En kompakt og letvægts pistol som skyder 9mm patroner. Meget effektiv i nærkamp.",
+		weapon_tecpistol_description = "undefined",
 
 		weapon_microsmg_description = "Kombinerer en kompakt design med en høj hastighed på ca. 700-900 runder i minuttet.",
 		weapon_smg_description = "Dette er kendt som en god alt-i-et maskinpistol. Letvægts med en præcis sigte og en kapacitet på 30 patroner.",
@@ -8118,7 +8262,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		weapon_addon_sentinelbbshotgun = "Bønne Pølse Haglgevær",
 		weapon_addon_sentinelbbshotgun_description = "Masser af sjov.",
 
-		-- TODO: Add a description for this one
 		weapon_addon_stungun = "Coil Elektroschock Pistol",
 		weapon_addon_stungun_description = "Sjov for hele familien med zaptastisk sjov!",
 
@@ -8189,6 +8332,21 @@ OP.Global.Locales.Languages["da-DK"] = {
 		weapon_addon_680_description = "Remington 680 er en pumpeaction haglgevær udviklet af Remington Arms i 1950."
 	},
 
+	invisibility = {
+		invisibility_on = "undefined",
+		invisibility_off = "undefined",
+
+		invalid_server_id = "undefined",
+
+		toggled_invisibility = "undefined",
+		failed_invisibility = "undefined",
+
+		invisibility_logs_title = "undefined",
+		invisibility_on_logs_details = "undefined",
+		invisibility_off_logs_details = "undefined",
+		invisibility_other_logs_details = "undefined"
+	},
+
 	items = {
 		move_to_repair = "Flyt hertil for at reparere køretøjet.",
 		repairing_vehicle = "Reparer Køretøj",
@@ -8219,6 +8377,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		just_used_bandage = "Du har lige brugt et førstehjælpskit, vent lidt før du bruger et nyt.",
 		drank_gasoline_death = "Benzinforgiftning",
 		drank_bleach_death = "Bleach forgiftning",
+		finished_joint = "undefined",
 
 		using_cuffs = "Bruger Håndjern",
 		you_moved_too_fast = "Du bevægede dig for hurtigt.",
@@ -8446,6 +8605,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		refreshing = "Opdaterer...",
 
 		avoid_repeating_letters = "Prøv at undgå mange gentagende bogstaver i dit for- og/eller efternavn.",
+		backstory_empty = "undefined",
 
 		missing_character_creation_data = "Mangler oplysninger om karakteroprettelse.",
 		invalid_first_name = "Mangler eller ugyldigt fornavn (2 til 100 tegn).",
@@ -8612,7 +8772,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 		catnip_active = "Giver Maxwell Kattemynte",
 		treat_active = "Giver Maxwell en godbid",
 		cuddle_active = "Koser med Maxwell",
-		hug_active = "Krammer Maxwell"
+		hug_active = "Krammer Maxwell",
+
+		maxwell_appeared = "undefined"
 	},
 
 	meth = {
@@ -8792,21 +8954,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		not_close_enough = "Du er ikke tæt nok på spilleren.",
 		user_not_available = "Brugeren er ikke tilgængelig.",
 
-		bill_received = "${displayName} har sendt dig en regning på $${amount}. Skriv `/yes` for at acceptere den eller `/no` for at afvise den.",
-		bill_expired = "Din regning fra ${displayName} er udløbet.",
-		bill_declined = "Du har afvist regningen fra ${displayName}.",
-		failed_bill_payment = "Betalingen af regningen mislykkedes.",
-		bill_success = "Regningen på $${amount} fra ${displayName} blev betalt succesfuldt.",
-		bill_created = "Du har oprettet en regning på $${amount} til ${displayName}.",
-
 		givecash_success = "Du gav ${displayName} $${amount}.",
 
 		give_cash_title = "Overførsel af kontanter",
-		give_cash_details = "${consoleName} overførte $${amount} til ${targetConsoleName}.",
-		paid_bill_title = "Betalt Regning",
-		paid_bill_details = "${consoleName} betalte ${amount}$ for regningen til ${targetConsoleName}.",
-		bill_created_title = "Regning Oprettet",
-		bill_created_details = "${consoleName} oprettede en regning på ${amount}$ til ${targetConsoleName}."
+		give_cash_details = "${consoleName} overførte $${amount} til ${targetConsoleName}."
 	},
 
 	moonshine = {
@@ -9082,12 +9233,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		ped_models_about = "Her er alle spillere der ikke bruger en freemode character model listet. Dette kan hjælpe med at finde spillere der er her bare for at skabe problemer eller potentielle modders.",
 		local_ped_models_title = "Lokale Ped modeller",
 		animal_ped_models_title = "Dyr Ped modeller",
-
-		fast_movement_title = "Hurtig bevægelse",
-		fast_movement_about = "Her er alle spillere der er markeret for at bevæge sig for hurtigt listet. Dette kan hjælpe med at finde potentielle modders.",
-
-		damage_modifier_title = "Skadeændringsmodifikatorer",
-		damage_modifier_about = "Her er hver spiller opført, som det er blevet opdaget, har ændret skadeændringsmodifikatorene. Dette bør hjælpe med at finde spillere, som potentielt snyder.",
 
 		bad_screen_word_title = "Fornærmende Skærmord",
 		bad_screen_word_about = "Her er hver spiller opført, som det er blevet opdaget, har bestemte ord på deres skærm. Dette bør hjælpe med at finde spillere, som potentielt snyder.",
@@ -9705,6 +9850,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		was_banned = "Udelukket",
 		loading = "Indlæser spillerdata...",
+		loading_screenshot = "undefined",
+		screenshot_failed = "undefined",
+		player_no_character = "undefined",
 		no_warnings = "Ingen advarsler",
 		not_shown_warnings = "${count} flere advarsler ikke vist",
 		system_issuer = "System",
@@ -9720,6 +9868,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		button_add = "Tilføj",
 		button_close = "Luk",
 		button_new = "Ny Note",
+		button_back = "undefined",
+		button_screenshot = "undefined",
 
 		ping = "${ping}ms",
 		fps = "${fps}fps",
@@ -10155,7 +10305,48 @@ OP.Global.Locales.Languages["da-DK"] = {
 		better_stamina = "Kan løbe uden at løbe tør for styrke i ${duration} minutter.",
 		more_inventory_space = "Få yderligere ${amount} inventarpladser i ${duration} minutter.",
 
-		buffs_note = "Buffene vil kun blive aktiveret, når du forlader bygningen."
+		buffs_note = "Buffene vil kun blive aktiveret, når du forlader bygningen.",
+
+		press_to_prepare_food = "undefined",
+		prepare_food = "undefined",
+
+		kissaki_kitchen = "undefined",
+
+		craft = "undefined",
+		putting_down_ingredients = "undefined",
+
+		pick_up = "undefined",
+		press_to_pick_up = "undefined",
+
+		prepare_rice = "undefined",
+		press_to_prepare_rice = "undefined",
+		preparing_rice_starting = "undefined",
+		preparing_rice = "undefined",
+
+		prepare_fillings = "undefined",
+		press_to_prepare_fillings = "undefined",
+		preparing_fillings_starting = "undefined",
+		preparing_fillings = "undefined",
+
+		prepare_rolling_mat = "undefined",
+		press_to_prepare_rolling_mat = "undefined",
+		preparing_rolling_mat_starting = "undefined",
+		preparing_rolling_mat = "undefined",
+
+		assemble_sushi = "undefined",
+		press_to_assemble_sushi = "undefined",
+		assembling_sushi_starting = "undefined",
+		assembling_sushi = "undefined",
+
+		roll_sushi = "undefined",
+		press_to_roll_sushi = "undefined",
+		rolling_sushi_starting = "undefined",
+		rolling_sushi = "undefined",
+
+		slice_sushi = "undefined",
+		press_to_slice_sushi = "undefined",
+		slicing_sushi_starting = "undefined",
+		slicing_sushi = "undefined"
 	},
 
 	riot_mode = {
@@ -10198,7 +10389,11 @@ OP.Global.Locales.Languages["da-DK"] = {
 		time_since_disconnection = "Tid siden afbrydelse",
 
 		you_are_now_metagaming = "Du er nu Metagaming.",
-		you_are_no_longer_metagaming = "Du er ikke længere Metagaming."
+		you_are_no_longer_metagaming = "Du er ikke længere Metagaming.",
+
+		server_id_hide_failed = "undefined",
+		server_id_hidden = "undefined",
+		server_id_not_hidden = "undefined"
 	},
 
 	screenshots = {
@@ -10216,7 +10411,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		screenshot_error_user_not_found = "Bruger ikke fundet.",
 		screenshot_error_user_developer = "Brugeren er en udvikler.",
 		screenshot_error_no_token = "Kunne ikke hente opfw token.",
-		screenshot_timeout = "Tidsgrænse for skærmbilledanmodning er overskredet."
+		screenshot_timeout = "Tidsgrænse for skærmbilledanmodning er overskredet.",
+		screenshot_error_character_unloaded = "undefined"
 	},
 
 	scuba = {
@@ -10361,13 +10557,19 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		use_blender = "[${InteractionKey}] Brug Blender",
 		blending = "Blender",
+		no_ingredients = "undefined",
 
+		milkshake_label = "undefined",
 		smoothie_label = "Smoothie (${flavors})",
 		seperator = "og"
 	},
 
 	snow = {
 		hold_to_pick_up_snowballs = "Hold ~INPUT_CONTEXT~ for at samle snebolde op."
+	},
+
+	sound_effects = {
+		invalid_sound = "undefined"
 	},
 
 	spawn = {
@@ -10416,7 +10618,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 		player_not_exist = "Spilleren er offline.",
 		no_character_loaded = "Spilleren har ikke indlæst en karakter.",
 		not_same_instance = "Spilleren er ikke i samme instans som dig.",
+		no_user_or_character = "undefined",
 
+		resolving_player = "undefined",
 		loading_coords = "Indlæser koordinater",
 		preloading_area = "Forudindlæser område",
 		finding_player = "Finder spiller",
@@ -10427,11 +10631,14 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		health_ok = "Sundhed: ~g~${health}/${maxHealth}~w~ - ${percentage}",
 		health_bad = "Sundhed: ~r~${health}/${maxHealth}~w~ - ${percentage}",
+		bleeding = "undefined",
 
 		armor_ok = "Panser: ~g~${armor}/${maxArmor}~w~ - ${percentage}",
 		armor_bad = "Panser: ~r~${armor} / ${maxArmor}~w~ - ${percentage}",
 
-		vehicle_health = "Køretøjssundhed: ${percentage}",
+		vehicle_health_fuel = "undefined",
+		can_respawn = "undefined",
+		yes = "undefined",
 
 		speed = "Hastighed: ${speed}",
 
@@ -11029,6 +11236,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		target_radius = "Mål Radius: ${targetRadius}",
 		actual_radius = "Aktuel Radius: ${actualRadius}",
 
+		intent_music = "undefined",
+		intent_speech = "undefined",
+		music_mode = "undefined",
+
 		invalid_server_id = "Ugyldigt server id.",
 		failed_toggle_listen = "Kunne ikke skifte lytte-status.",
 		listeners = "Lyttere:",
@@ -11041,7 +11252,19 @@ OP.Global.Locales.Languages["da-DK"] = {
 		affected_by_jammer = "Din radio virker til at blive påvirket af en jammer eller noget lignende.",
 
 		listening_missing_permissions = "Spilleren forsøgte at skifte deres lytte status men havde ikke de nødvendige tilladelser.",
-		voice_mute_missing_permissions = "Spilleren forsøgte at skifte en anden spillers lydløse status, men havde ikke de nødvendige tilladelser."
+		voice_mute_missing_permissions = "Spilleren forsøgte at skifte en anden spillers lydløse status, men havde ikke de nødvendige tilladelser.",
+
+		music_mode_logs_title = "undefined",
+		music_mode_logs_details_on = "undefined",
+		music_mode_logs_details_off = "undefined",
+
+		listening_logs_title = "undefined",
+		stopped_listening_logs_details = "undefined",
+		started_listening_logs_details = "undefined",
+
+		muted_logs_title = "undefined",
+		muted_logs_details = "undefined",
+		unmuted_logs_details = "undefined"
 	},
 
 	washrooms = {
@@ -11064,7 +11287,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		ragdoll_player = "Fald sammen",
 		ragdoll_player_force = "Fald sammen (Tvungen)",
 		punch_player = "Tvungen Slå",
-		taze_player = "Tæs",
 		exit_vehicle_player = "Forlad Køretøj",
 		yank_steering_wheel_player = "Rive rattet væk",
 		flashbang_player = "Flashbang",
@@ -11150,19 +11372,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 	},
 
 	functions = {
-		year = "år",
-		years = "år",
-		month = "måned",
-		months = "måneder",
-		day = "dag",
-		days = "dage",
-		hour = "time",
-		hours = "timer",
-		minute = "minut",
-		minutes = "minutter",
-		second = "sekund",
-		seconds = "sekunder",
-		just_now = "lige nu",
 		unknown = "Ukendt",
 		flipped_vehicle_logs_title = "Vendt køretøj",
 		flipped_vehicle_logs_details = "${consoleName} vendte et køretøj.",
@@ -11170,10 +11379,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		knots = "knob",
 		mph = "mph",
-		kmh = "km/t",
-
-		time_in = "om ${time} ${unit}",
-		time_ago = "${time} ${unit} siden"
+		kmh = "km/t"
 	},
 
 	states = {
@@ -11183,6 +11389,25 @@ OP.Global.Locales.Languages["da-DK"] = {
 		printed_states = "Udskrev tilstandene for enhed ${networkId}.",
 
 		get_entity_states_missing_permissions = "Spiller forsøgte at hente tilstande for en bestemt enhed uden de nødvendige tilladelser."
+	},
+
+	time = {
+		year = "undefined",
+		years = "undefined",
+		month = "undefined",
+		months = "undefined",
+		day = "undefined",
+		days = "undefined",
+		hour = "undefined",
+		hours = "undefined",
+		minute = "undefined",
+		minutes = "undefined",
+		second = "undefined",
+		seconds = "undefined",
+		just_now = "undefined",
+
+		time_in = "undefined",
+		time_ago = "undefined"
 	},
 
 	-- illegal/*
@@ -11220,6 +11445,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		reward_gold_bar = "Du fik fat i en guldbar.",
 		reward_cash = "Du fik fat i nogle penge.",
 		reward_keycard_red = "Du fik fat i en rød nøglekort.",
+		reward_treasure_map_piece = "undefined",
 
 		stockade_logs_title = "Stockade aktiveret",
 		stockade_logs_details = "${consoleName} aktiverede en Stockade."
@@ -11470,6 +11696,19 @@ OP.Global.Locales.Languages["da-DK"] = {
 		use_launch = "Tryk på ~INPUT_VEH_HANDBRAKE~ for at starte affyringen."
 	},
 
+	clamps = {
+		no_vehicle_near = "undefined",
+		vehicle_not_driveable = "undefined",
+		clamping = "undefined",
+		removing_clamp = "undefined",
+		remove_clamp = "undefined",
+
+		clamped_log_title = "undefined",
+		clamped_log_details = "undefined",
+		unclamped_log_title = "undefined",
+		unclamped_log_details = "undefined"
+	},
+
 	damage = {
 		vehicle = "Køretøj-ID: ${entity}",
 		general = "Generelt: ${value}",
@@ -11505,8 +11744,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 	},
 
 	gadgets = {
-		helicopter_camera_vehicle_info_metric = "Hastighed: ${speed} km/t\nModel: ${model}\nNummerplade: ${plate}",
-		helicopter_camera_vehicle_info_imperial = "Hastighed: ${speed} mp/t\nModel: ${model}\nNummerplade: ${plate}",
+		helicopter_camera_vehicle_info = "undefined",
 		helicopter_camera_altitude = "${altitude}ft AGL",
 		helicopter_camera_altitude_asl = "${altitude}ft ASL",
 		helicopter_camera_locked_on = "Låst på",
