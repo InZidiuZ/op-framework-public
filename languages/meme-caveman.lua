@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 18 (do not change)
+-- AUTO LOCALES: 19 (do not change)
 
 OP.Global.Locales.Languages["meme-caveman"] = {
 	-- configuration settings for language
@@ -61,7 +61,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		you_are_not_being_carried = "Ugh! You not carried now.",
 		successfully_uncarried = "Ugh! You drop now.",
 		failed_uncarried = "Ugh! Cannot drop.",
-		uncarry_missing_permissions = "Ugh! You no have permission to drop.",
+		uncarry_missing_permissions = "Ugh! Not allowed to stop carry without big boss permission.",
 
 		uncarry_logs_title = "Force Uncarry",
 		uncarry_logs_details = "${consoleName} force ${targetName} drop them.",
@@ -78,7 +78,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 	-- base/*
 	admin = {
-		feature_toggle_not_admin = "You want to change '${featureName}', but no power to do. Go ask chief.",
 		feature_toggle_activated_logs_title = "Magic Power Activated",
 		feature_toggle_activated_logs_details_state = "${consoleName} toggled `${featureName}` ${newState} for player ${targetConsoleName}.",
 		feature_toggle_activated_all_logs_title = "Ugg Ugg! Tamedeen toggled Something For All!",
@@ -101,9 +100,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		failed_to_spawn_vehicle = "Ugh... could not make vehicle appear.",
 		spawned_vehicle_for_player = "Hooray! Me just make `${modelName}` for ${displayName}.",
 		spawned_vehicle_for_everyone = "Made `${modelName}` for all people.",
-		spawn_vehicle_no_permissions = "Player try to make vehicle appear, but no have permission.",
-		replace_vehicle_no_permissions = "Failed to automatically generate translation.",
-		create_vehicle_no_permissions = "Failed to automatically generate translation.",
 		spawned_vehicle_for_self_title = "Ugg Ugg Me Spawn Vehicle",
 		spawned_vehicle_for_self_details = "${consoleName} spawn car with name `${modelName}`.",
 		spawned_vehicle_for_player_title = "Ugg Ugg Me Spawn Vehicle For Player",
@@ -113,6 +109,26 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		vehicle_created = "Me make vehicle! Good job!",
 		failed_vehicle_creation = "Me no make vehicle! Sad!",
+
+		-- NOTE: `add_vehicle` command:
+		add_vehicle_added_vehicle_for_everyone = "Ugh! Added big new car with name `${modelName}` for everyone.",
+		add_vehicle_added_vehicle_for_player = "Ugh! Added big new car with name `${modelName}` for ${consoleName}.",
+		add_vehicle_added_vehicle = "Ugh! Added big new car with name `${modelName}`.",
+		add_vehicle_character_not_loaded = "Ugh! Target player has no loaded characters.",
+		add_vehicle_target_user_not_found = "Ugh! Can't find target user.",
+		add_vehicle_invalid_input = "Ugga bugga.",
+		add_vehicle_no_permissions = "No rights.",
+		add_vehicle_user_not_found = "User not stonk.",
+		add_vehicle_invalid_player = "Me no find player with server ID `${serverId}`.",
+		add_vehicle_invalid_model_name = "Model name `${modelName}` not good.",
+		add_vehicle_no_model_name = "No model name given.",
+
+		added_vehicle_for_everyone_logs_title = "Ugga bugga! Added vehicle for everyone!",
+		added_vehicle_for_everyone_logs_details = "${consoleName} put vehicle `${modelName}` in everyone's garages.",
+		added_vehicle_for_player_logs_title = "Me Added Vehicle For Player",
+		added_vehicle_for_player_logs_details = "${consoleName} added big stick with name `${modelName}` to ${targetConsoleName}'s cave.",
+		added_vehicle_logs_title = "Me Added Vehicle",
+		added_vehicle_logs_details = "${consoleName} added big stick with name `${modelName}` to me cave.",
 
 		invalid_amount = "Me no understand how much.",
 
@@ -160,8 +176,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		removed_bank_from_player = "Me remove $${amount} from ${targetConsoleName}'s bank.",
 		removed_bank_from_everyone = "Me remove $${amount} from every caveman's bank.",
 
-		money_event_not_admin = "Me no can toggle money event `${moneyEvent}`.",
-
 		spawned_item_title = "Me spawned item",
 		spawned_item_details = "${consoleName} spawned in ${amount}x `${itemName}` for themselves.",
 		spawned_item_for_player_title = "Spawned Big Thing for Caveman",
@@ -178,7 +192,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		announcement_logs_title = "Big Ugg Ugg Announcement",
 		announcement_logs_details = "${consoleName} yells this to all server: `${announcementMessage}`",
-		announcement_not_admin = "You not Ugg Ugg enough to say this.",
 
 		posted_announcement = "Announcement put up. Me help.",
 		posted_announcement_locale = "Announcement put up, but me do not understand some words.",
@@ -188,7 +201,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		staff_title = "STAFF ${staffName}",
 		staff_message_logs_title = "Staff Message History. Me see all.",
 		staff_message_logs_details = "${consoleName} grunt the following message in staff chat: `${staffMessage}`",
-		staff_message_illegal = "Ugh player try send message in staff chat, but not staff.",
 
 		staff_pm_title = "STAFF PM ${transmissionTitle}",
 		staff_pm_logs_title = "Staff PM",
@@ -218,7 +230,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		missing_valid_license_identifier_parameter = "Uggh, missing 'licenseIdentifier'!",
 
-		illegal_entity_wipe = "No, no! Player not allowed to destroy things!",
 		wiped_entities = "Entities gone. Me delete ${deletedEntities} networked entities.",
 		wipe_entities_logs_title = "Destroyed everything!",
 		wipe_entities_logs_details = "${consoleName} destroyed everything with these settings: distance = `${distance}`, ignoreLocalEntities = `${ignoreLocalEntities}`, modelName = `${modelName}`",
@@ -261,12 +272,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		ban_quadrouple_kill = "😨 FOUR KILLS!! Me hide now!",
 		ban_killing_spree = "🤯 Killing spree (${count})!!",
 
-		kick_player_not_staff = "Me no let non-staff kick other players! No fair!",
-		ban_player_not_staff = "Ugh! Try to ban player, but you no have permission.",
-
-		hide_staff_not_staff = "Grr! You no have permission to hide your staff status.",
-		toggle_staff_not_staff = "Ugh! You no Chief, so you no can switch staff availability.",
-
 		logs_hide_staff_title = "Staff Hidden",
 		logs_hide_staff_hidden_details = "${consoleName} grunt hide staff status.",
 		logs_hide_staff_shown_details = "${consoleName} grunt show staff status.",
@@ -282,10 +287,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		staff_feature_unavailable = "You need to turn on staff availability first to use this feature.",
 
-		toggle_player_track_no_permissions = "You no have permission to track.",
-		set_job_no_permissions = "You no have permission to set job.",
-		toggle_reflection_no_permissions = "Ugg not allowed to change damage reflection.",
-
 		success_enable_reflection = "Ugg successfully made things bounce off us.",
 		success_disable_reflection = "Ugg successfully made things hurt us.",
 		failed_toggle_reflection = "Ugg failed to toggle reflection.",
@@ -296,12 +297,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		headache_logs_title = "Headache Triggered",
 		headache_logs_details = "${consoleName} has triggered a headache for ${targetConsoleName}.",
-		trigger_headache_no_permissions = "You no have permission to trigger headache!",
 
 		super_jump_logs_title = "Me toggle Super Jump",
 		super_jump_logs_details_on = "${consoleName} toggle their super jump on.",
 		super_jump_logs_details_off = "${consoleName} toggle their super jump off.",
-		toggle_super_jump_no_permissions = "Me try toggle super jump without proper permissions.",
 
 		success_trigger_headache = "Headache successfully triggered for ${playerName}.",
 		failed_trigger_headache = "Failed to trigger the headache.",
@@ -311,7 +310,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		reset_spawn_success = "Successfully reset spawnpoint. Grug like!",
 		reset_spawn_failed = "Failed to reset spawnpoint. Grug not happy.",
 
-		protective_mode_not_staff = "Ugh! You try toggle server protective mode without me say so. No can do.",
 		protective_mode_toggled_on = "Server protective mode now on! You need `${playtime}` playtime to join.",
 		protective_mode_toggled_off = "Server protective mode now off!",
 		protective_mode_already_on = "Server protective mode already on. Playtime needed is `${playtime}`.",
@@ -320,13 +318,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		logs_protective_mode_on = "${consoleName} toggled ugga protect mode with required playtime: `${playtime}`.",
 		logs_protective_mode_off = "${consoleName} toggled ugga protect mode off.",
 
-		spawn_item_not_staff = "You not berry important! No spawn item for you!",
 		no_item_name = "You forget item name!",
 		invalid_item_name = "${itemName} not good item name.",
 		item_spawned = "Spawned ${amount}x `${itemName}` for ${consoleName}.",
 		item_spawned_for_everyone = "Ugh, me make appear ${amount}x `${itemName}` for everyone.",
 
-		set_warning_message_not_staff = "Ugh, you no chief, no can set big warning message.",
 		warning_message_set_to = "Big warning message now say `${warningMessage}`.",
 		warning_message_removed = "Big warning message gone.",
 		warning_message_error = "Ugh, big problem! Error setting warning message.",
@@ -368,6 +364,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		evidence_view_details_on = "${consoleName} show fancy evidence.",
 		evidence_view_details_off = "${consoleName} no show fancy evidence.",
 
+		tracker_turned_on = "Me tracker has been turned on.",
+		tracker_turned_off = "Me tracker has been turned off.",
+
 		report_muted_no_reason = "Grug no let you report. No reason given.",
 		report_muted = "Grug no let you report. Reason: `${reason}`.",
 
@@ -388,9 +387,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		teleported_to_waypoint_logs_title = "Teleported To Waypoint.",
 		teleported_to_waypoint_logs_details = "${consoleName} teleported to waypoint at ${locationLabel}. Ugh Ugh!",
 
-		teleport_to_coordinates_not_staff = "Player try teleport to some coordinats. No staff! Ugh Ugh!",
-		teleport_to_waypoint_not_staff = "Ugh. You no staff. You no can teleport to rock. Bah.",
-
 		failed_isolate = "Ugh. Failed to separate caveperson from tribe.",
 		invalid_server_id = "Caveperson say that server not exist. Me think they eat too many mushrooms.",
 		isolate_success_on = "Hoo hoo! Me separated ${consoleName} from tribe. They alone now.",
@@ -402,8 +398,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		population_density_set_off = "Ugh, population too crowded. Turn off.",
 		population_density_is_not_on = "Population density not on. Ugh.",
 		population_density_already_set_to = "Population already ${multiplierLabel}% so no need to change. Ugh.",
-
-		population_density_not_super_admin = "You not chief. Cannot change population density. Ugh.",
 
 		enabled_features_list = "Things working:",
 		aimbot_feature = "Magic arrow",
@@ -448,8 +442,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		vehicle_smoke_invalid_class = "Cannot make smoke for this kind of big thing.",
 
-		repair_vehicle_not_super_admin = "Player not strong enough to fix big thing.",
-
 		repaired_vehicle_logs_title = "Fixed Big Thing",
 		repaired_vehicle_logs_details = "${consoleName} fix vehicle them was in.",
 
@@ -464,9 +456,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		set_vehicle_livery_logs_title = "Ugga Ugga Gug Set Vehicle Livery",
 		set_vehicle_livery_logs_details = "${consoleName} ugga ugga gug the vehicle ugga the plate `${vehiclePlate}` to livery `${liveryIndex}`.",
-
-		set_livery_missing_permissions = "Player try ugga the livery ugga the vehicle without caveman permissions.",
-		set_modifications_missing_permissions = "Player try ugga a modification ugga the vehicle without caveman permissions.",
 
 		set_vehicle_modification = "Ugga vehicle modification ugga vehicle for mod type `${modType}` to index `${modIndex}`. (Custom Tires: ${customTires}) Gug Gug Gug",
 		mod_index_invalid_for_type = "Ugg-ugg! Mod index `${modIndex}` not good for mod type `${modType}`.",
@@ -486,15 +475,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		invalid_dirt_level = "Dirt level not good.",
 		set_dirt_level = "Vehicle now look `${dirtLevel}` dirty.",
 
-		set_dirt_level_not_super_admin = "You no have power to make vehicle dirty.",
-
-		set_fake_plate_not_super_admin = "You no have power to change plate number of vehicle.",
-
 		already_fake_disconnecting = "Ugg already try run away. Wait!",
 		started_fake_disconnect = "Me start running away. Say again to stop.",
 		stopped_fake_disconnect = "Me stop running. Me not afraid.",
-
-		fake_disconnect_not_super_admin = "Player try run away without right permission.",
 
 		disabled_idle_cam = "Me no longer watch sky.",
 		enabled_idle_cam = "Me watch sky again.",
@@ -502,12 +485,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		created_vehicle_smoke_for_player_logs_title = "Me make smoke come out of vehicle.",
 		created_vehicle_smoke_for_player_logs_details = "${consoleName} make smoke come out of vehicle.",
 
-		player_info_not_staff = "Ugh, you try to know ${consoleName}'s character without being told?",
 		player_info_title = "${consoleName}",
 		player_info = "${fullName} #${characterId}\nMe play ${playtime} very long time.\n${jobName}, ${departmentName}, ${positionName}\n\n${backstory}",
 
 		inventory_name_missing = "Uh oh, me no see inventory name.",
-		force_inventory_missing_perms = "You no have right to look inside. Me catch you.",
 
 		auto_driving_engaged = "Me drive now (Style: ${style}). Big brain caveman.",
 		auto_driving_updated = "Ugga ugga, auto driving speed/location updated.",
@@ -538,9 +519,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		tint_set = "Grock! Successfully set weapon tint to `${tint}` (${tintIndex}).",
 		no_weapon_tint = "Ugg! This weapon no have tints.",
 
-		weapon_attachment_missing_perms = "Me not allowed to toggle a weapon attachment.",
-		weapon_tint_missing_perms = "Me not allowed to set a weapon tint.",
-
 		no_attachments = "Ugga ugga no attachments",
 		available_attachments = "Ugga ugga attachments available",
 		current_attachments = "Ugga ugga current attachments",
@@ -557,14 +535,14 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		cleaned_ped_self = "Ugg ugg! Ped cleaned! Now me like new.",
 		clean_ped_failed = "Ugh, cleaning failed. Me ped still dirty.",
 		cleaned_ped_for_all = "All peds cleaned! Everyone look so fresh now.",
-		clean_ped_no_permission = "Me no have permission to clean other player's ped. Me sorry.",
+		clean_ped_no_permission = "Me tried to clean player's stinky ape without grunt grunt permissions.",
 
 		item_durability_set_success = "Me set ${amount}% durability for item in slot ${slotId}. Item strong now!",
 		item_durability_set_failed = "Hmm, me no able to set durability. Something went wrong.",
 		item_durability_invalid_amount = "Ugh, me no understand how much durability do you want. Only numbers between 0 and 100 allowed!",
-		item_durability_set_no_permission = "Me no able to set durability for item, me no have permission.",
+		item_durability_set_no_permission = "Ugh, me no allowed to change thing's durability.",
 
-		item_metadata_set_no_permission = "Ugh. Me not allowed to change item metadata. No permission!",
+		item_metadata_set_no_permission = "Me no allowed to change thing's extra info.",
 		item_metadata_invalid_metadata = "Gah. This item metadata no good. Invalid!",
 		item_metadata_set_success = "Ooga booga! Successfully changed item metadata in slot ${slotId}.",
 		item_metadata_set_failed = "Ugh. Me not able to change metadata. Failed!",
@@ -589,8 +567,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		scoop_invalid = "Me no scoop anyone. Try again maybe?",
 		unscooped_players = "Me put down ${amount} of ${total} player(s).",
 		unscoop_failed = "Me can't put down players. Something wrong!",
-
-		unscoop_missing_permissions = "You no have permission to put down players.",
 
 		toggle_collisions_missing_permissions = "You no have permission to turn off collisions.",
 		wipe_first_owned_missing_permissions = "Ugh. Player try wipe entities, but no right. Dumb dumb.",
@@ -678,10 +654,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		model_already_added_to_list = "Hunter already have `${modelName}` (${modelHash}).",
 		removed_model_to_list = "Hunter remove `${modelName}` (${modelHash}) from his list.",
 		model_not_in_list = "Ugh, us no recognize model `${modelName}` (${modelHash}).",
-		set_model_detected_not_staff = "Player try to add model to list, but no have right to do so. Ugh.",
-		set_model_undetected_not_staff = "Player try to remove model from list, but no have right to do so. Ugh.",
-		add_detection_area_not_staff = "Player try to add detection area, but no have right to do so. Ugh.",
-		remove_detection_area_not_staff = "Player try to remove detection area, but no have right to do so. Ugh.",
 		detection_area_close = "[${InteractionKey}] Me Remove Detection Area (${areaId})",
 		detection_area = "Detection Area (${areaId})",
 
@@ -721,6 +693,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		clear_tasks_ban = "This not Jedi mind trick training. You cannot control others. Grug not happy.",
 		projectile_event_ban = "This not Hogwarts. No casting spells or throwing things here. Grug no like.",
 		illegal_native_ban = "You no can use magic you no learn yet...",
+		underground_ban = "You fall into deep, dark hole. Trouble!",
+		infinite_ammo_ban = "No such thing as forever ammo. We take away your magic bag.",
 
 		type_aimbot = "Sharpeye",
 		type_bad_creation = "Bad Build",
@@ -757,6 +731,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		type_thermal_night_vision = "Hot/Cold Eyes",
 		type_vehicle_modification = "Change Ride",
 		type_illegal_native = "No-No Call",
+		type_underground = "Deep below",
+		type_infinite_ammo = "No run out",
 
 		event_prefix = "Ugh-Cheat: ${type}",
 
@@ -825,6 +801,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		job_low = "easy work",
 		job_medium = "good work",
 		job_high = "hard work",
+
+		banned_no_permissions = "Me get in trouble for trying to `${reason}` without permission.",
 
 		banned_globally = "You no can play any OP-FW servers no more, because you got banned.\n\nBan Hash: ${banHash}\nBan Reason: ${banReason}\n\nIf you think that is wrong, go talk to OP-FW discord guild for information on how to say sorry and maybe play again at ${frameworkDiscord}",
 		banned_locally = "You got banned from ${communityName}.\n\nBan Hash: ${banHash}\nBanned By: ${creatorName}\nBan Reason: ${banReason}\nTimestamp: ${timestamp}\n\n${indefiniteOrExpires}\n\nGo join community discord guild so you can ask how to say sorry and maybe be unbanned, ${communityDiscord}.",
@@ -963,7 +941,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		wipe_command = "wipe",
 		wipe_command_help = "Ug-Ug Wipe unwanted entities from map.",
 		wipe_command_parameter_distance = "ug-ug",
-		wipe_command_parameter_distance_help = "ugs? If only want wipe entities within certain grunt distance, then ug-ug here. Leave it at `false` or `0` for entire map.",
+		wipe_command_parameter_distance_help = "If you only want entities within a certain grunt to delete, insert a gronk here. Put `-1` for the whole map.",
 		wipe_command_parameter_ignore_local_entities = "ug-ug no-see entities",
 		wipe_command_parameter_ignore_local_entities_help = "Ug-Ug no-see? If cleaning up from cheat-ug-ug, then recommend putting to `true` or `1`.",
 		wipe_command_parameter_model_name = "ug-ug ug-ug name",
@@ -1047,6 +1025,14 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		replace_vehicle_command_parameter_model_name = "model name",
 		replace_vehicle_command_parameter_model_name_help = "Ugh. What name of car want you spawn?",
 		replace_vehicle_command_substitutes = "rv",
+
+		add_vehicle_command = "add_vehicle",
+		add_vehicle_command_help = "Me put car in cave for someone.",
+		add_vehicle_command_parameter_model = "model",
+		add_vehicle_command_parameter_model_help = "Name of the big thing or small thing you want in cave.",
+		add_vehicle_command_parameter_server_id = "server id",
+		add_vehicle_command_parameter_server_id_help = "The ID of the tribe leader. If you no type, me think you want for yourself.",
+		add_vehicle_command_substitutes = "",
 
 		aimbot_command = "aimbot",
 		aimbot_command_help = "Toggle 'aimbot'.",
@@ -1998,8 +1984,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		fake_lag_command = "fake_lag",
 		fake_lag_command_help = "Make connection bad like sloth signal.",
-		fake_lag_command_parameter_counter = "ug ug",
-		fake_lag_command_parameter_counter_help = "Ug ug counter used to make lag happen. The ug ug this number is, the slower things happen. To make lag go away, leave this blank or say `ug`.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "The target grunt (>= 1).",
 		fake_lag_command_substitutes = "lag",
 
 		view_weapon_command = "view_weapon",
@@ -2481,7 +2467,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		wipe_ground_inventories_command = "wipe_ground_inventories",
 		wipe_ground_inventories_command_help = "Me wipe ground inventories.",
 		wipe_ground_inventories_command_parameter_radius = "ug-ug",
-		wipe_ground_inventories_command_parameter_radius_help = "Me wipe radius. Leave blank for auto-select `100`. Valid values above `0`, also `0` and `-1` select all inventories.",
+		wipe_ground_inventories_command_parameter_radius_help = "The wipe grunt. Leaving this as blank will auto-select `5`. Valid gronk are above `0`, as well as `0` and `-1` which will select all inventories.",
 		wipe_ground_inventories_command_substitutes = "wipeinvs, wipe_inventories, wipe_ground",
 
 		refresh_inventory_command = "refresh_rock_sack",
@@ -3266,6 +3252,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		vdm_clear_command_help = "Clears all of ug vdm targets.",
 		vdm_clear_command_substitutes = "",
 
+		steal_vehicle_command = "steal_vehicle",
+		steal_vehicle_command_help = "Ooga! Makes closest caveman steal target vehicle.",
+		steal_vehicle_command_parameter_network_id = "network id",
+		steal_vehicle_command_parameter_network_id_help = "Ooga! The vehicle's network id.",
+		steal_vehicle_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "ug voice_debug",
 		voice_debug_command_help = "Ug toggle voice debug.",
@@ -3661,14 +3653,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		speed_limiter_command_help = "Me help you go only fast slow. Me change limit of speedy thing.",
 		speed_limiter_command_substitutes = "sl, cc, cruise_control",
 
-		add_vehicle_command = "add_vehicle",
-		add_vehicle_command_help = "Me put car in cave for someone.",
-		add_vehicle_command_parameter_model = "model",
-		add_vehicle_command_parameter_model_help = "Name of the big thing or small thing you want in cave.",
-		add_vehicle_command_parameter_server_id = "server id",
-		add_vehicle_command_parameter_server_id_help = "The ID of the tribe leader. If you no type, me think you want for yourself.",
-		add_vehicle_command_substitutes = "",
-
 		toggle_vehicle_weapons_command = "toggle_vehicle_weapons",
 		toggle_vehicle_weapons_command_help = "Me make weapons on car work or not work.",
 		toggle_vehicle_weapons_command_parameter_server_id = "server id",
@@ -3759,7 +3743,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 	emojis = {
 		emoji_list = "${emojis}",
-		refresh_emojis_no_permissions = "Me no allowed to refresh emojis, ugga ugga.",
 		api_reported_no_updates = "Huh? Discord API no updates in emoji list.",
 		emojis_added = "Me added ${added} emoji(s).",
 		emojis_removed = "Me removed ${removed} emoji(s).",
@@ -3779,7 +3762,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	},
 
 	ping = {
-		get_pings_missing_permissions = "Player try get pings but no have right permissions to do it.",
 		getting_pings = "Getting pings from all players. Wait a bit.",
 		host_data = "${position}. ${location} - ${averagePing} Munga Munga Ping (hunga bunga ${totalPings} hoo hoos), Unga Bunga 10% Low: ${averagePingLow}, Unga Bunga 10% High: ${averagePingHigh}",
 		list_hosts = "${listHosts}"
@@ -3891,7 +3873,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		package_same_remaining_time = "Your package is `${packageName}`. It will expire in ${remainingTime} ugh.",
 		no_package = "You no have package.",
 		fetching_package_error = "Error occurred while try fetch package data.",
-		check_playtime_not_staff = "Player try check someone else playtime, but no have right permissions to do so.",
 		reason_unknown = "Reason no know.",
 
 		unloaded_character = "Character unloaded.",
@@ -3900,8 +3881,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		user_not_found = "Grrr... Me no find user on server.",
 		invalid_character_id = "Ugh... Character id no good.",
 		invalid_license_identifier = "Me no understand license identifier.",
-
-		unload_character_not_staff = "Player try unload character, but player no staff.",
 
 		unloaded_character_for_player_logs_title = "Player character unloaded",
 		unloaded_character_for_player_logs_details = "${consoleName} unloaded ${targetConsoleName}'s character ${characterFullName} (${characterId}) with reason: `${message}`.",
@@ -3942,9 +3921,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		invalid_destination_server_id = "No good! Destination server id not caveman enough.",
 		invalid_source_server_id = "Not caveman speak! Source server id invalid.",
 		failed_teleport_player_to_player = "Me not get it! Failed to teleport player to player.",
-		teleported_player_to_player = "Nice! Player go zoom zoom to other player.",
-
-		teleport_player_missing_permissions = "Puny player try to teleport other player, but no have permission."
+		teleported_player_to_player = "Nice! Player go zoom zoom to other player."
 	},
 
 	afk = {
@@ -3954,8 +3931,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Ugg! Player want make big bird drop shiny thing, but player no have magic word to do it.",
-		create_airdrop_custom_missing_permissions = "Ugg! Player want make special big bird drop shiny thing, but player no have magic word to do it.",
 		created_airdrop = "Ugh, dropped `${airdropType}` with ${itemAmount} things inside.",
 		no_valid_items_provided = "Ugg! No good shiny thing provided.",
 		created_airdrop_with_items = "Ugg! Made big bird drop shiny thing inside:\n${itemsListed}"
@@ -3982,15 +3957,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Ugg! Player want make boom boom from sky, but player no have magic word to do it.",
-
 		airstrike_success = "Airstrike work good!",
 		airstrike_failed = "Airstrike no work."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Ugga ugga, player try call bird help but no can do, no permission.",
-
 		distance = "Ooh: ${distance}${unit}", -- "ooh" means "distance",
 		time_to_impact = "Soon hit: ${timeToImpact}", -- "soon hit" means "estimated time of impact",
 
@@ -4020,9 +3991,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		show_alert_success = "Alert show good to player!",
 		show_alert_everyone_success = "Me successfully show message to whole tribe.",
-		show_alert_failed = "Me failed to show message to player.",
-
-		show_alert_missing_permissions = "Player try show message to another player, but they no have permission to do so."
+		show_alert_failed = "Me failed to show message to player."
 	},
 
 	arcade = {
@@ -4303,10 +4272,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 	audio = {
 		audio_id = "Arooga ${audioId}",
-		illegal_sound_effect = "Me no like when you try to make others play bad sound.",
+		illegal_sound_effect = "Unga bunga! Tried tell other cavemen to play bang bang noise without permission.",
 		url_invalid = "URL not right. It must be safe (https://)",
 		url_missing = "Me no hear sound! Please add URL!",
-		play_audio_no_permissions = "You no have permission to play sound.",
 		played_audio_for_self = "Me play sound for me.",
 		played_audio_for_player = "Me play sound for ${consoleName}.",
 		played_audio_for_everyone = "Me play sound for everyone.",
@@ -4542,7 +4510,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		illegal_boombox_item_id = "Uggabugga! Illegal Uggabugga box!",
 		logs_attempted_to_add_song_title = "Unga bunga! Attempted to add song",
 		logs_attempted_to_add_song_details = "${consoleName} Uggabugga! Attempted to add song with video URL `${url}` to Uggabugga box with ID `${boomboxId}`.",
-		wipe_boomboxes_not_staff = "Ugh. Player try to wipe boomboxes, but no have permission to do. Me no let!",
 		logs_wiped_all_boomboxes_title = "Ugh. Wiped All Boomboxes",
 		logs_wiped_all_boomboxes_details = "${consoleName} wipe all boomboxes.",
 		logs_wiped_nearby_boomboxes_title = "Wiped Nearby Boomboxes",
@@ -4634,8 +4601,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		spawned_contract = "Me help, me spawned a contract for you.",
 		spawned_contract_for = "Ugh! Contract successfully spawned for ${displayName}.",
 
-		spawn_contract_no_permissions = "Ugh! You no have permissions to spawn boosting contract.",
-
 		already_max_vin_scratched_vehicles = "Ugh! You have too many scratched vehicles in cave.",
 		contract_has_expired = "Uh-oh! Contract old like dinosaur bones.",
 		you_already_have_a_contract_started = "Ugh! You already doing a contract."
@@ -4685,8 +4650,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	},
 
 	cargo = {
-		start_cargo_no_permissions = "Player try start Cargo heist, but player no have permissions.",
-		end_cargo_no_permissions = "Ugg Ugg! Player try end Cargo heist but no have permissions.",
 		cargo_already_active = "Ugg! Cargo already happening.",
 		started_cargo = "Ugg! Cargo started!",
 		cargo_not_active = "Ugg... Cargo not happening.",
@@ -4699,7 +4662,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	},
 
 	casino = {
-		set_casino_screen_id_not_staff = "Ooga booga! Player try set casino screen id, but no have permission to do so.",
 		successfully_set_screen_label = "Me good helper! Set screen to `${screenLabel}`.",
 		successfully_queued_screen_label = "Me do good job! Queued up screen `${screenLabel}`.",
 		failed_to_set_screen_label = "Me sorry. Failed to set screen to `${screenLabel}`.",
@@ -4767,8 +4729,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		blacklisted_video = "Ugh! Video with key `${videoKey}` bad bad!",
 		failed_to_blacklist_video = "Me no can blacklist video with key `${videoKey}`. Error happen.",
 		video_is_already_blacklisted = "That video with key `${videoKey}` already bad bad!",
-
-		blacklist_video_missing_permissions = "You no have permission to blacklist video. Me no let you do.",
 
 		watching_movie = "Me watch ${title}",
 
@@ -4942,8 +4902,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		barber_menu_success = "Ugga ugga, me failed to switch baber shop menu.",
 		failed_toggle_barber_menu = "Ugga ugga, me open baber shop menu for ${consoleName}.",
 		invalid_server_id = "Ugga, invalid id for server.",
-
-		clothing_menu_missing_permissions = "Ugga ugga, player try to open clothin' menu for fellow player, but no permission to do so.",
 
 		hats_and_helmets = "Head thingies",
 		glasses = "Eyewear",
@@ -5696,7 +5654,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		special_vehicle_won = "You win special car! You find it in your cave!",
 
-		reset_daily_activities_no_permissions = "Ugh. Player no have permission to reset daily stuff.",
 		reset_daily_activities = "Daily stuff reset. Me helpful.",
 
 		task_progress = "Task Getting Done: ${task} (${remain} left)",
@@ -5770,7 +5727,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		network_id_side = "Network mark: ${networkId}",
 		no_target = "Ugg Ugg, No Target",
 		invalid_radius_parameter = "Ugh! Radius wrong.",
-		inject_code_not_developer = "Me think player try to do funny thing, but no developer.",
 		inject_code_invalid_player = "No players with id `${serverId}`.",
 		inject_code_success_for_everyone = "Code injected for everyone! Yay!",
 		inject_code_success_for_player = "Code injected for ${consoleName}!",
@@ -5817,21 +5773,18 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		invalid_network_id = "No understand. Network ID invalid.",
 		delete_entity_success = "Ugh. Entity with network id ${networkId} gone.",
 		delete_entity_failed = "Ugh! Failed to delete thingy.",
-		delete_entity_no_permissions = "You no able to delete thingy without proper grunt.",
+		delete_entity_no_permissions = "Unga! Tried delete big rock without permission.",
 
 		failed_entity_info = "Ugh ugh ugh. Failed to get entity information.",
 		printed_entity_info = "Ugh ugh. Printed entity server information in F8.",
 
 		move_entity_success = "You move thingy with network id ${networkId}.",
 		move_entity_failed = "Thingy no move.",
-		move_entity_no_permissions = "You no able to move thingy without proper grunt.",
+		move_entity_no_permissions = "Ooga! Tried push big rock without permission.",
 
-		fake_lag_updated = "Me make fake lag counter `${counter}`.",
-		fake_lag_already_set_to = "Fake lag counter already `${counter}`.",
-		fake_lag_enabled = "Me fake lag is now on wit counter `${counter}`.",
-		fake_lag_invalid_counter_value = "Me counter `${counter}` is no good for me fake lag.",
+		fake_lag_invalid_fps = "Ugg. Invalid fps.",
+		fake_lag_clamp = "Ugg. Clamping fps below ${fps}.",
 		fake_lag_disabled = "Me fake lag is now off.",
-		fake_lag_not_enabled = "Me fake lag not on, can't turn it off.",
 
 		weapon_name_missing = "Me need name of weapon.",
 		weapon_name_invalid = "`${weaponName}` is not weapon name me know.",
@@ -5860,7 +5813,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		disabled_network_debug = "Ugg! Entity network debuggery disabled.",
 		failed_network_debug = "Oops! Failed to enable entity network debuggery.",
 
-		network_owner_subscription_no_permissions = "Ugga bugga! Tried to subscribe to entity network owners without proper permission.",
+		network_owner_subscription_no_permissions = "Ugg. Attempted to subscribe to entity network owners without proper permissions.",
 
 		missing_ipl = "Me no see ipl parameter.",
 		enabled_ipl = "Me make ipl `${ipl}` work goodly.",
@@ -6156,8 +6109,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	},
 
 	flag_swap = {
-		toggle_flag_swap_no_permissions = "Me no have permission to swap flags.",
-
 		toggled_flag_swap_on = "Me toggled flag swap on.",
 		toggled_flag_swap_off = "Flag swap turned off. Ugg ugg.",
 
@@ -6181,16 +6132,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		failed_create = "Ugh, me no can create forcefield.",
 		forcefield_marker = "ID: ${id}",
 		invalid_forcefield_id = "Forcefield ID not good.",
-		failed_destroy = "Me fail destroy forcefield.",
-
-		create_forcefield_no_permissions = "Player want make forcefield but no permission.",
-		destroy_forcefield_no_permissions = "Player want destroy forcefield but no permission."
+		failed_destroy = "Me fail destroy forcefield."
 	},
 
 	fortnite = {
-		add_building_no_permissions = "Player want add Fortnite house but no permission.",
-		wipe_buildings_no_permissions = "Player try to wipe Fortnite buildings but no have permission. Grog say no.",
-
 		no_buildings_in_radius = "No buildings in radius of ${radius}. Grog see nothing.",
 		no_buildings = "No buildings. Grog see nothing.",
 		wiped_buildings_in_radius = "Grog wipe ${removedBuildings} buildings in radius of ${radius}. No more buildings there.",
@@ -6402,7 +6347,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		press_to_exit_locker = "Ugh ~INPUT_CONTEXT~ to leave the safe cave.",
 		failed_to_start_escape_room = "Failed to start escape room. Bad.",
 		started_escape_room = "Started escape room with ${playerAmount} big cave people.",
-		start_escape_room_missing_permissions = "Cave person tried to start escape room, but no permission. Nuh-uh.",
 		escape_instructions = "Do challenge, doors unlock, leave big building. Easy for cavemen. Hehe.",
 		answer_the_phone = "Ug. Talk on rock.",
 
@@ -6416,8 +6360,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		successfully_revived_everyone = "Ugh, everyone revived.",
 		successfully_revived_everyone_removed_injuries = "Ugh, everyone revived an' injuries fixed.",
 		failed_to_revive = "Ugh, `/revive` not workin'.",
-		revive_player_not_staff = "Ugh, not allowed to revive others.",
-		revive_self_not_staff = "Ugh. Player try revive self, but no permission. Grrr.",
 		revived_self_removed_injuries_title = "Me alive again! Injuries gone!",
 		revived_self_removed_injuries_details = "${consoleName} revived self and no more boo-boos!",
 		revived_self_title = "Me alive again!",
@@ -6430,8 +6372,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		revived_player_removed_injuries_details = "${consoleName} ug revive ${targetConsoleName} and remove their ouchies.",
 		revived_player_title = "Ug Revive Player",
 		revived_player_details = "${consoleName} ug revive ${targetConsoleName}.",
-		get_recent_deaths_not_staff = "Ug Player try get recent deaths, but no have right tools to do so.",
-		get_player_last_death_not_staff = "Ugh! Player attempt to get othar player's last death, but no have right permission.",
 		recent_deaths = "Deaths Dat Happen Lately",
 		no_recent_deaths = "No deaths lately.",
 		recent_deaths_list_entry = "${recentDeathId}. ${consoleName} get dead like ${timer} sunsets ago.",
@@ -6459,7 +6399,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		no_players_in_range = "No downed players nearby within ${distance}m distance.",
 		successfully_revived_range = "Groog! Successful ${amount} player(s) revived within ${distance}m range!",
 		failed_revive_range = "Failed to revive players. Grug... :(",
-		range_revive_not_staff = "Player try to revive players in that range, but no have right permissions to do so. Me not happy.",
 
 		cpr_ped_logs_title = "CPRed Grunt",
 		cpr_ped_logs_details = "${consoleName} perform CPR on grunt and get $${money}.",
@@ -6577,6 +6516,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		pilot_license_details = "Flyin' License | ${firstName} ${lastName} | Caveman ID: ${characterId}",
 		weapon_license = "Weapons License",
 		weapon_license_details = "Weapons License | ${firstName} ${lastName} | Caveman ID: ${characterId}",
+		mining_license = "Minung License",
+		mining_license_details = "Minung License | ${firstName} ${lastName} | Ugg ID: ${characterId}",
 		just_showed_license = "Ug. You show License. Wait.",
 
 		just_showed_badge = "Ug. You show Badge. Wait.",
@@ -6710,13 +6651,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		failed_to_get_instance_players = "Ugh. Failed to get players in instance.",
 		no_players = "No players. Ugh.",
 
-		instance_hud = "Instance ID: ${instanceId}",
-
-		create_instance_not_developer = "Player tried to create instance but not developer. Ugh.",
-		destroy_instance_not_developer = "Ugh! Player try destroy instance but not developer.",
-		add_player_to_instance_not_developer = "Me see player try add player to instance but not developer.",
-		remove_player_from_instance_not_developer = "Player want remove other player from instance but not developer.",
-		get_players_from_instance_not_developer = "Player try find who in instance but not developer."
+		instance_hud = "Instance ID: ${instanceId}"
 	},
 
 	interiors = {
@@ -6892,8 +6827,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		no_ground_inventories = "No ground possessions. Nothing to wipe.",
 		no_ground_inventories_within_radius = "No ground possessions to wipe within area of ${radius} paces.",
 
-		wipe_inventories_not_staff = "Me not allow player to wipe possessions. Permission not granted.",
-
 		logs_wiped_all_ground_inventories_title = "All Ground Possessions wiped out",
 		logs_wiped_all_ground_inventories_details = "${consoleName} wiped out all ground possessions. Good job!",
 
@@ -6955,6 +6888,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		pilot_license_description = "License for flying planes and other big birds. Sky high!",
 		weapon_license = "Weapons License",
 		weapon_license_description = "License for carrying strong weapons. Me smash good!",
+		mining_license = "Minung License",
+		mining_license_description = "A minung license for minung.",
 
 		sasp_badge = "Ugga ugga SASP Badge",
 		sasp_badge_description = "A badge for big strong hunters of San Andreas Police Department.",
@@ -7033,6 +6968,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		advanced_lockpick_description = "Hide Yo Kids, Hide Yo Wife",
 		cleaning_kit = "Me cleany kit (Cleaning Kit)",
 		cleaning_kit_description = "Perfect to clean your vehicle, or the blood stains you've been letting dry in the back of your trunk.",
+		scratch_remover = "Scratch Remover",
+		scratch_remover_description = "Used to remove bumps & scratches from wheeld vehicles.",
 
 		multi_tool = "All in One Tool",
 		multi_tool_description = "One thing, do everything.",
@@ -7657,6 +7594,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		cone_description = "Me put anywhere!",
 		spike_strips = "Me Make Flat Stick With Pointy Rocks! (Spike Strips)",
 		spike_strips_description = "Me put anywhere!",
+		spike_strips_large = "Big Pointy Sticks",
+		spike_strips_large_description = "Can be put wherever in the world.",
 		floodlight = "Light for see far",
 		floodlight_description = "Put anywhere to make big bright",
 		left_diversion_sign = "Go left",
@@ -7719,6 +7658,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		hiking_backpack = "Oog oog Backpack",
 		hiking_backpack_description = "Oog oog, you big chief now! Carrying this oog oog backpack shows you're ready for hunt and adventure. It make you look strong and smart, even though it no make you stronger or smarter. Show other caveman you love great outdoors and they will respect you more!",
+		green_hiking_backpack = "Green Bag for Hiking",
+		green_hiking_backpack_description = "Get set for outside wanderings with this cool bag for hiking. It adds a pinch of tough appeal to your clothes, albeit just for show. Embrace the feeling of exploring and flaunt your love for the open air wherever you're going!",
+		blue_hiking_backpack = "Blue Bag for Hiking",
+		blue_hiking_backpack_description = "Get set for outside wanderings with this cool bag for hiking. It adds a pinch of tough appeal to your clothes, albeit just for show. Embrace the feeling of exploring and flaunt your love for the open air wherever you're going!",
 
 		gasoline_bottle = "Gasoline Bottle",
 		gasoline_bottle_description = "Fer a quick refill fer yer car or....uhm.....yerself?",
@@ -8350,6 +8293,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	items = {
 		move_to_repair = "Go here to make car good again.",
 		repairing_vehicle = "Grock Repairing Vehicle",
+		fix_visual_damage = "Me make pretty thing not broken no more",
 		using_first_aid_kit = "Grock Using First Aid Kit",
 		using_bandages = "Grock Using Bandages",
 		using_ifak = "Grock Using IFAK",
@@ -8407,7 +8351,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		press_to_deposit = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to put goodies in the Online Jackpot.",
 		can_only_withdraw_at_casino = "No way jose, you can only get goods from Casino.",
 
-		take_fee_no_permissions = "Me no let player take jackpot fees without permission.",
 		took_jackpot_fees = "Me took jackpot fees. Me removed ${removedTotalItems} things worth $${removedTotalWorth} from ${inventories} inventories.",
 
 		jackpot = "Big Win",
@@ -8513,7 +8456,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		something_went_wrong = "Ugh, could not find the thing!",
 		locate_success = "Me find thing you want! Look (${x}, ${y}, ${z}) (instance = ${instance}), like you asked (${filter}).",
 
-		locate_entity_no_permissions = "You no permission to find thing!",
+		locate_entity_no_permissions = "Me no find thing because no permission",
 
 		locate_entity_logs_title = "Me find thing!",
 		locate_entity_logs_details = "${consoleName} - me ground and find `${filterType}` with value `${filterValue}`."
@@ -8596,6 +8539,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		queue = "Line",
 		queue_position_with_priority = "🐌 You in line ${queuePosition}/${queueTotal}. Waiting time 🕐${queueTime} with ${queuePriorityName} importance. ",
 		queue_position_without_priority = "🐌 You waiting. You line number ${queuePosition}/${queueTotal}. Waiting Time🕐 ${queueTime}.",
+		live_on_twitch = "Me tell you watch streamer, you get not bored!",
+		live = "Live",
 		you_are_through = "You can play now!",
 		join_server = "Join Hunt!",
 		tired_of_queueing = "Are you tired of waiting? Help us and get in line faster!",
@@ -8614,6 +8559,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		weird_date_of_birth = "You pick weird birth sun. Try again.",
 		invalid_backstory = "No good story or too long story (max 5,000 suns).",
 		backstory_too_short = "Failed to automatically generate translation.",
+
+		invalid_date = "You bad at telling when you born",
+		date_not_future = "You no can be born in future",
+		date_too_old = "You no can be older than 100 suns",
 
 		bad_words = "Me see bad caveletters in name or backstory.",
 		disallowed_name = "Ugh, you can't use those words in your caveman name.",
@@ -8659,9 +8608,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		invalid_server_id = "Booga! Server id not good.",
 		logs_failed = "Ugh, logs no load.",
 
-		close = "Make fire go away",
-
-		get_logs_no_permissions = "Me no let you see logs without permission."
+		close = "Make fire go away"
 	},
 
 	loot = {
@@ -8706,8 +8653,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	magazines = {
 		issue_id = "Ugg ugg #${issueId}",
 		releases_updated = "Releases change.",
-		no_release_changes = "No change.",
-		refresh_magazines_no_permissions = "Player no have permission to refresh magazines."
+		no_release_changes = "No change."
 	},
 
 	mdt = {
@@ -8889,15 +8835,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		bad_ped_message = "Grug try to create bad ped message: \"${pedMessage}\"",
 		bad_twitter_post = "Grug try to create bad message in Rockbird: \"${twitterPost}\"",
 		bad_phone_message = "Me no understand tweet: \"${message}\". Me think bad.",
-		mute_toggle_not_staff = "You no have permission to mute player.",
-		unmute_toggle_not_staff = "You no have permission to unmute player.",
 		user_not_found = "Me no find user with ID `${serverId}`.",
 		player_already_muted = "${consoleName} already muted.",
 		player_has_been_muted_no_reason = "${consoleName} muted for no reason.",
 		player_has_been_muted = "${consoleName} grunt now been muted with reason: `${reason}`.",
 		player_not_muted = "${consoleName} not grunt.",
 		player_has_been_unmuted = "${consoleName} grunt now been unmuted.",
-		clear_chat_not_admin = "Player grunt clear chat for all grunt, but no permission.",
 		ooc_clear_chat_title = "Chat Cleared",
 		ooc_clear_chat_details = "${consoleName} grunt chat cleared for everyone.",
 		muted_player = "Muted Player",
@@ -9880,8 +9823,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		failed_load_player = "Me Failed to load player data. Did you enter a valid server id? Uhh...",
 		failed_add_warning = "Me Failed to add warning. Ugg.",
 
-		get_info_no_permissions = "Me not have permission to get info about a player. Ugh!",
-
 		user_indefinitely_banned_warning_no_reason = "Me indefinitely banned this caveman without a reason. This warning was generated automatically as a result of the ban. Unga Bunga.",
 		user_indefinitely_banned_warning = "Me ban person for good with reason `${reason}`. Me tell you so you know. Ban happen all by itself.",
 		user_temporarily_banned_warning_no_reason = "Me ban person for ${displayTime} without no reason. Me tell you so you know. Ban happen all by itself.",
@@ -10006,11 +9947,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		missing_emote = "You no tell me which emote you want ped to do. Emote parameter missing.",
 
 		emote_list = "These are the emotes you can teach your ped: ${list}. Choose wisely!",
-		task_list = "Me help: ${list} tasks for ped.",
-
-		spawn_ped_missing_perms = "Me try to spawn ped, but me no have permission.",
-		remove_peds_missing_perms = "Me try to remove own ped, but me no can do that.",
-		ped_assign_task_missing_perms = "Me try to give task to own ped, but me no have permission."
+		task_list = "Me help: ${list} tasks for ped."
 	},
 
 	ped_steal = {
@@ -10067,7 +10004,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 	player_control = {
 		unable_to_drive_for_yourself = "You no can drive for yourself.",
-		drive_for_player_no_permissions = "Me see player try to drive for other player, but no permission for that.",
 		player_is_not_nearby = "Player with server ID ${serverId} not close by.",
 		player_is_not_the_drive_of_a_vehicle = "Player with server ID ${serverId} no drive vehicle.",
 		press_to_stop_drive_for = "Press ~INPUT_FRONTEND_CANCEL~ to stop driving for other player."
@@ -10088,7 +10024,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	player_stats = {
 		hp = "HP",
 		armor = "Armor",
-		toggle_player_stats_no_permissions = "You no allowed to see stats.",
 		updated_render_range = "See far: ${renderRange}.",
 		turned_player_stats_on = "Stats on.",
 		turned_player_stats_off = "Stats off."
@@ -10143,7 +10078,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 	props = {
 		illegal_prop_item_id = "Player grunt and try to use a prop item with an illegal item id.",
-		spawn_prop_not_staff = "Player attempt to spawn a prop but they no have permissions to do so.",
 		managing_props_help = "Ugh ugh. You currently managing props. Walk up to a prop and press ~INPUT_CONTEXT~ to pick it up.",
 		total_props = "Your collection of Props: ${count}",
 		active_props = "Props in use: ${count}",
@@ -10172,7 +10106,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		invalid_wipe_radius = "That wipe radius not good. Must be between 1 and 100.",
 		wipe_successful = "Props wiped good. No more prop!",
-		wipe_props_missing_permissions = "Player want to wipe props but me no let them do it. No permission.",
 
 		placing_prop = "Grug put block",
 		pickup_prop = "Grug pick up block",
@@ -10209,7 +10142,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		radio_debug_off = "Radio debug off! Ughh!",
 		radio_debug_on = "Radio debug on! Ughh!",
 
-		radio_debug_no_permissions = "Caveman not allowed to toggle radio debug.",
+		radio_debug_no_permissions = "Me no can play with radio, no permission",
 
 		decrypt_frequency = "[${InteractionKey}] Decrypt Frequency",
 		decrypting_frequency = "Me decrypting frequency.",
@@ -10246,8 +10179,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	reskin = {
 		plastic_surgery = "Plastic Magic",
 		los_santos_police_dept = "POLICE OF LOS SANTOS",
-
-		reskin_player_no_permissions = "Player try to use radio debug without right permission.",
 
 		triggered_reskin_for_player = "Me give new skin to ${consoleName}.",
 
@@ -10353,13 +10284,13 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		riot_mode_enabled = "Ug successfully start big fight.",
 		riot_mode_disabled = "Ug successfully stop fight. Aggressive pebbles still fight until they become mammoth food.",
 		riot_mode_failed = "Ug failed to start fight.",
-		riot_mode_missing_perms = "Ug try to start fight without enough power.",
+		riot_mode_missing_perms = "Me no make riot without permission",
 
 		riot_mode_enabled_help = "Ugh! Riot mode activated.",
 		riot_mode_disabled_help = "Riot mode stopped. Ugh impressed.",
 
-		add_riot_player_no_permissions = "No permission to put player in riot list. Ugh confused.",
-		remove_riot_player_no_permissions = "No permission to remove player from riot list. Ugh confused.",
+		add_riot_player_no_permissions = "Ugga ugga! Tried to add a player to the riot list without proper permissions.",
+		remove_riot_player_no_permissions = "Ugga ugga! Tried to remove a player from the riot list without proper permissions.",
 
 		player_already_in_riot_list = "Ugh! ${consoleName} already in riot list.",
 		player_not_in_riot_list = "Ugh. ${consoleName} not found in riot list.",
@@ -10626,7 +10557,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		finding_player = "Me searching for ug player",
 
 		invincibility_active = "You have big invincible skin: ~r~Active~w~",
-		invincibility_inactive_dead = "You no invincible, because you dead: ~g~Inactive~w~",
+		invincibility_inactive_dead = "Ugga! Invincibility: ~g~Active~w~ (dead)",
+		invincibility_inactive_trunk = "Ugga! Invincibility: ~g~Active~w~ (trunk)",
 		invincibility_inactive = "No invincible: ~g~Inactive~w~",
 
 		health_ok = "Ugga: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
@@ -10698,7 +10630,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	status = {
 		status_reset = "Ugh, reset status for ${consoleName} successful.",
 		status_reset_failed = "No find user with ID `${serverId}`. Me no understand.",
-		reset_status_not_staff = "You no have permission to reset status.",
 		status_reset_for_all = "Ugh, reset status for everyone successful.",
 		status_disabled = "Statuses (stress, hunger and thirst) disabled.",
 		status_enabled = "Statuses (stress, hunger and thirst) enabled.",
@@ -10711,8 +10642,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		set_body_armor_level_everyone_details = "${consoleName} change everyone's body armor level to `${bodyArmorLevel}`.",
 		set_body_armor_level_player_title = "Ugga Set Body Armor Level For Player",
 		set_body_armor_level_player_details = "${consoleName} ugga ${targetConsoleName} and set body armor level to `${bodyArmorLevel}`.",
-		set_body_armor_level_player_not_staff = "Ugga! Player try set other player's body armor but no permission.",
-		set_body_armor_level_self_not_staff = "Ugga! Player try set own body armor but no permission.",
 		stress_level_warning = "You feel angst! Smoke Cigarettes, Joints, or do Yoga to feel good."
 	},
 
@@ -10725,7 +10654,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		missing_hour = "Me no see hour.",
 		invalid_hour = "Me no know that time. Must be between 0:00 and 23:59.",
 		hour_changed = "Time now ${hour}.",
-		set_hour_not_staff = "No permission to change time.",
 
 		local_time_override_enabled = "Set time to ${hour}:${minute}.",
 		local_time_override_disabled = "Ugh, time go back to normal.",
@@ -10735,27 +10663,21 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		missing_minute = "Me no know minute.",
 		invalid_minute = "Minute `${minute}` no good. Number must be between 0 and 59.",
 		minute_changed = "Me set minute to `${minute}`.",
-		set_minute_not_staff = "Me no have permission to set minute.",
 
 		missing_weather = "Me no know weather.",
 		invalid_weather = "Ugh! `${weatherName}` not good. Valid weathers are CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT and BLIZZARD.",
 		weather_changed = "Weather now `${weatherName}`.",
 		weather_advanced = "Weather go up to `${weatherName}`.",
 		weather_advance_fail = "Weather not change by natural means. Ugh!",
-		set_weather_not_staff = "You no have permission to change weather. Ugh!",
-		advance_weather_not_staff = "You no have permission to change weather forward. Ugh!",
 
 		time_frozen = "Ug time not move now.",
 		time_unfrozen = "Ug time can move now.",
-		freeze_time_not_staff = "Me try freeze time, but no power.",
 
 		weather_frozen = "Ug sky not change now.",
 		weather_unfrozen = "Ug sky can change now.",
-		freeze_weather_not_staff = "Me try freeze sky, but no power.",
 
 		blackout_enabled = "Ug city in darkness now.",
 		blackout_disabled = "Ug city see light again.",
-		blackout_not_staff = "Me try turn on/off darkness, but no power.",
 
 		weather_changed_title = "Weather Grrunt",
 		weather_changed_details = "${consoleName} changed the cold-time to `${weatherName}`.",
@@ -11109,8 +11031,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	},
 
 	trains = {
-		spawn_train_missing_permissions = "UGG? PLAYER WANT TO SPAWN TRAIN, BUT NO PERMISSION!",
-
 		invalid_track_id = "UGG! INVALID TRACK ID!",
 		spawned_train_on_track = "UGG! SPAWNED TRAIN ON TRACK ${trackId}!",
 		failed_to_spawn_train = "UGG... FAILED TO SPAWN TRAIN!"
@@ -11126,7 +11046,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	treasure_maps = {
 		no_treasure_map_with_tier = "No map of hidden treasure with tier ${mapTier}!",
 		treasure_map_does_not_have_piece = "Map of hidden treasure with tier ${mapTier} doesn't have piece ${pieceNumber}.",
-		spawn_map_piece_missing_permissions = "Me no see permission. Player try to spawn map piece anyway!",
 
 		sketchy_map = "Sketchy Map",
 		worn_map = "Worn Map",
@@ -11156,9 +11075,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		set_ocean_scaler_no_permission = "Ugh, the player has no permission to set the ocean scaler, ugh!",
 
 		tsunami_started = "Big big water wave started. Me take ${minutes} minutes before it flood all map.",
-		tsunami_stopped = "Failed to automatically generate translation.",
-
-		toggle_tsunami_no_permissions = "Me try toggle the big water wave, but me no have right to do so."
+		tsunami_stopped = "Failed to automatically generate translation."
 	},
 
 	tuner_shop = {
@@ -11195,8 +11112,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		cleared_vdm = "Me cleared ${amount} VDM targets.",
 		failed_vdm_clear = "Me no clear VDM targets, failed.",
 		added_vdm_target = "NPC with network id ${networkId} now targeting ${target}.",
-
-		vdm_no_permissions = "You try to run VDM, but me no think you have permission."
+		no_ped_available = "Ugga ugga! No nearby caveman is available.",
+		failed_steal = "Ugga! Failed to steal big rock on wheels.",
+		stealing_vehicle = "Ugga! Nearby caveman was told to steal the big rock on wheels (${distance}m)."
 	},
 
 	vending_machines = {
@@ -11278,10 +11196,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	},
 
 	wizard = {
-		action_missing_permissions = "Ugh! You no have permission to do wizard action.",
-		action_radius_missing_permissions = "Ugh! You no have permission to make tribe members in that area do wizard actions.",
-		run_as_missing_permissions = "Ugh! You no have permission to command other tribe members.",
-
 		menu_title = "Shaman",
 
 		ragdoll_player = "Unconscious",
@@ -11367,8 +11281,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		invalid_explosion_type = "Type of kaboom `${explosionType}` not good.",
 		invalid_camera_shake = "Shakey shakey `${cameraShake}` not good.",
 		invalid_damage_scale = "Damage scale `${damageScale}` not good.",
-		created_explosion = "Me made a big boom called `${explosionTypeName}` with `${damageScale}` power and shake called `${cameraShake}`.",
-		create_explosion_not_developer = "Player try to make boom but not big boss."
+		created_explosion = "Me made a big boom called `${explosionTypeName}` with `${damageScale}` power and shake called `${cameraShake}`."
 	},
 
 	functions = {
@@ -11489,7 +11402,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	},
 
 	duty = {
-		toggle_duty_status_no_permissions = "Ugh, You no have permission to start/stop hunt.",
+		toggle_duty_status_no_permissions = "Ugh! Tried to switch on duty status but no permission!",
 
 		duty_status_on = "Me hunt like big caveman now.",
 		duty_status_off = "Me finish hunt for today.",
@@ -11604,6 +11517,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		license_hunting = "Hunt Birdie License",
 		license_fishing = "Fishy Water License",
 		license_weapon = "Grrr... Big Stick License",
+		license_mining = "Rock License",
 		gave_character_license = "Me give ${characterName} license `${licenseLabel}`. Ugga ugga!",
 		character_already_has_license = "${characterName} already have `${licenseLabel}` license. No need give again.",
 		removed_character_license = "Removed `${licenseLabel}` license from ${characterName}. Me strongest!",
@@ -11737,8 +11651,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		not_in_a_vehicle = "Ugg not in vehicle.",
 		vehicle_engine_on = "Fire stick is still burning.",
 
-		set_fuel_no_permissions = "Ugg try set fuel level without caveman chief permissions.",
-
 		vehicle_exploded_logs_title = "Ugg Vehicle Exploded",
 		vehicle_exploded_logs_details = "${consoleName} ugged a vehicle and triggered big boom because engine was running."
 	},
@@ -11834,11 +11746,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "Garage debug on now!",
 		toggle_garage_debug_toggled_off = "Garage debug off now!"
-	},
-
-	handlings = {
-		set_handling_override_not_super_admin = "Ug player try set handling override without proper permissions.",
-		remove_handling_override_not_super_admin = "Ug player try remove handling override without proper permissions."
 	},
 
 	keys = {
@@ -11965,31 +11872,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		toggle_brakes_off = "Stopping tool on.",
 		failed_modify_brakes = "No fix stopping tool!",
 
-		toggle_disabled_brakes_no_permissions = "Ugga ugga! Player try stop car with magic, but no permission!",
-
-		-- NOTE: `add_vehicle` command:
-		add_vehicle_not_super_admin = "Ugga! Player try give fancy new car to cavebro without permission!",
-		add_vehicle_added_vehicle_for_everyone = "Me add stonemobile with name `${modelName}`. Everyone happy!",
-		add_vehicle_added_vehicle_for_player = "Me add stonemobile with name `${modelName}`. ${consoleName} happy!",
-		add_vehicle_added_vehicle = "Me add stonemobile with name `${modelName}`.",
-		add_vehicle_character_not_loaded = "Target player no have characters ready.",
-		add_vehicle_target_user_not_found = "Target user lost in time.",
-		add_vehicle_invalid_input = "Me no understand.",
-		add_vehicle_no_permissions = "You no have power.",
-		add_vehicle_user_not_found = "User not found in tribe.",
-		add_vehicle_invalid_player = "No players with ID `${serverId}` in the cave.",
-		add_vehicle_invalid_model_name = "`${modelName}` no good model name.",
-		add_vehicle_no_model_name = "No model name added, me confused.",
-
-		added_vehicle_for_everyone_logs_title = "Ugga ugga bunga! Added Vehicle For Everyone",
-		added_vehicle_for_everyone_logs_details = "${consoleName} add vehicle with model name `${modelName}` to everyone's garages. Unga bunga!",
-		added_vehicle_for_player_logs_title = "Ugga ugga bunga! Added Vehicle For Player",
-		added_vehicle_for_player_logs_details = "${consoleName} add vehicle with model name `${modelName}` to ${targetConsoleName}'s garage. Unga bunga!",
-		added_vehicle_logs_title = "Ugga ugga bunga! Added Vehicle",
-		added_vehicle_logs_details = "${consoleName} add vehicle with model name `${modelName}` to their garage. Unga bunga!",
-
 		-- NOTE: `toggle_vehicle_weapons` command:
-		toggle_vehicle_weapons_not_super_admin = "Ugh! Player try to change weapon thingy on car without permission.",
 		toggled_vehicle_weapons_on = "Me use big stick on car, now it can shoot.",
 		toggled_vehicle_weapons_off = "Me take stick away from car, now it can no shoot.",
 		toggled_vehicle_weapons_vehicle_is_not_networked = "The car you in not connected to tribe.",
@@ -12144,6 +12027,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		ems_boat_hq = "EMS big hut on water",
 		ems_garage = "EMS cave for cars",
 		e_to_get_treated = "[Ugh] Get healed - 1250 shiny rocks",
+		e_check_in_player = "[E] Check-in Paleolithic Pal - 1250 shiny rocks",
+		check_in_blocked = "Check-in is blocked",
 		get_treated = "Get fixed - 1250 shiny rocks",
 		you_are_being_treated = "You being fixed now",
 		being_treated = "Being fixed",

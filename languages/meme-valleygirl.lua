@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 18 (do not change)
+-- AUTO LOCALES: 19 (do not change)
 
 OP.Global.Locales.Languages["meme-valleygirl"] = {
 	-- configuration settings for language
@@ -61,7 +61,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		you_are_not_being_carried = "Ohmigod, you're like, not even being carried right now.",
 		successfully_uncarried = "Carry stopped successfully! Yay! 😊",
 		failed_uncarried = "I'm sorry, but I totes failed to stop the carry. 🙁",
-		uncarry_missing_permissions = "Ugh, you don't even have the right permissions to like, stop the carry. 🙅‍♀️",
+		uncarry_missing_permissions = "Like, sorry, but you can't, like, stop carrying stuff without the right permissions.",
 
 		uncarry_logs_title = "Stop Carry Log",
 		uncarry_logs_details = "${consoleName} forced ${targetName} to like, totally stop carrying them. 💁‍♀️",
@@ -78,7 +78,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 	-- base/*
 	admin = {
-		feature_toggle_not_admin = "Uh-mazing! You tried to change a feature, but you don't have the power. So not cool!",
 		feature_toggle_activated_logs_title = "Feature remotely changed!",
 		feature_toggle_activated_logs_details_state = "${consoleName} toggled `${featureName}` ${newState} for player ${targetConsoleName}.",
 		feature_toggle_activated_all_logs_title = "Remotely Toggled Feature For Everyone",
@@ -101,9 +100,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		failed_to_spawn_vehicle = "Totally bummer! Couldn't spawn the vehicle.",
 		spawned_vehicle_for_player = "Like, OMG! Successfully spawned `${modelName}` for ${displayName}.",
 		spawned_vehicle_for_everyone = "Spawned `${modelName}` for everyone, woohoo!",
-		spawn_vehicle_no_permissions = "Ugh, this player tried to spawn a vehicle but, like, totally doesn't have the required permissions.",
-		replace_vehicle_no_permissions = "That player wants to upgrade their whip, but like, they don't even have the clearance to do so.",
-		create_vehicle_no_permissions = "Wait, what? That player is trying to make a car from scratch? Sorry, no can do without the right permissions.",
 		spawned_vehicle_for_self_title = "Got a new ride!",
 		spawned_vehicle_for_self_details = "${consoleName} just spawned a totally rad vehicle with the name `${modelName}`!",
 		spawned_vehicle_for_player_title = "Got a new ride from ${consoleName}!",
@@ -113,6 +109,26 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		vehicle_created = "Yass! Successfully created your ride, hun.",
 		failed_vehicle_creation = "Uh-oh, failed to create your wheels.",
+
+		-- NOTE: `add_vehicle` command:
+		add_vehicle_added_vehicle_for_everyone = "Oh em gee! Added a totally rad vehicle with model name `${modelName}` for, like, everyone.",
+		add_vehicle_added_vehicle_for_player = "Added a super cool vehicle with model name `${modelName}` for ${consoleName}.",
+		add_vehicle_added_vehicle = "Added a totally awesome vehicle with model name `${modelName}`.",
+		add_vehicle_character_not_loaded = "Uh oh! The player you're trying to add a vehicle for, like, hasn't loaded any characters.",
+		add_vehicle_target_user_not_found = "Sorry, but the user you're trying to add a vehicle for couldn't be found. Bummer!",
+		add_vehicle_invalid_input = "Like, that input is totally bogus.",
+		add_vehicle_no_permissions = "Sorry, but you don't have the right to do that.",
+		add_vehicle_user_not_found = "Ugh, I couldn't find that user anywhere.",
+		add_vehicle_invalid_player = "Oh my gosh, there's no players with server ID `${serverId}`.",
+		add_vehicle_invalid_model_name = "Umm, `${modelName}` is like not a valid model, like, at all.",
+		add_vehicle_no_model_name = "Oops, you forgot to add the model name.",
+
+		added_vehicle_for_everyone_logs_title = "Added Vehicle For Everyone",
+		added_vehicle_for_everyone_logs_details = "${consoleName} added a vehicle with model name `${modelName}` to everyone's garages, like, so cool, right?",
+		added_vehicle_for_player_logs_title = "Like, Added Vehicle For Player",
+		added_vehicle_for_player_logs_details = "${consoleName}, like, added a vehicle with model name `${modelName}` to ${targetConsoleName}'s garage.",
+		added_vehicle_logs_title = "Like, Added Vehicle",
+		added_vehicle_logs_details = "${consoleName}, like, added a vehicle with model name `${modelName}` to their garage.",
 
 		invalid_amount = "Like, that's not a valid amount, sorry.",
 
@@ -160,8 +176,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		removed_bank_from_player = "Like, $${amount} was removed from ${targetConsoleName}'s bank.",
 		removed_bank_from_everyone = "Like, everyone got $${amount} removed from their bank.",
 
-		money_event_not_admin = "Sorry, you're not, like, authorized to change the `${moneyEvent}` event.",
-
 		spawned_item_title = "Spawned New Stuff",
 		spawned_item_details = "${consoleName} spawned ${amount} `${itemName}` pieces for, like, themselves.",
 		spawned_item_for_player_title = "Spawned Item For Player",
@@ -178,7 +192,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		announcement_logs_title = "Whole Server Listen Up",
 		announcement_logs_details = "${consoleName} just spilled the tea to the whole server: `${announcementMessage}`",
-		announcement_not_admin = "Uh-uh, you can't post a staff announcement, hun.",
 
 		posted_announcement = "Message like, totally posted.",
 		posted_announcement_locale = "Message to the squad, posted in the local lingo.",
@@ -188,7 +201,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		staff_title = "STAFF ${staffName}",
 		staff_message_logs_title = "Staff Message History",
 		staff_message_logs_details = "${consoleName} like, sent the following message in the staff chat: `${staffMessage}`",
-		staff_message_illegal = "Oh my gosh, like, you can't send messages in the staff chat if you're not like, staff.",
 
 		staff_pm_title = "STAFF PM ${transmissionTitle}",
 		staff_pm_logs_title = "Staff PM",
@@ -218,7 +230,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		missing_valid_license_identifier_parameter = "Uh, you forgot to add a valid 'licenseIdentifier' parameter.",
 
-		illegal_entity_wipe = "OMG, like the player tried to wipe some entities without permission? Rude.",
 		wiped_entities = "Oh-em-gee! All the entities are like, totally gone. I, like, deleted ${deletedEntities} networked entities.",
 		wipe_entities_logs_title = "Wiped Entities",
 		wipe_entities_logs_details = "${consoleName} was like, \"Bye Felicia\" and wiped some entities. Here's the deets: distance = `${distance}`, ignoreLocalEntities = `${ignoreLocalEntities}`, modelName = `${modelName}`",
@@ -261,12 +272,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		ban_quadrouple_kill = "😨 QUADROUPLE KILL!!!!!! OMG, that's like, so intense!",
 		ban_killing_spree = "🤯 KILLING SPREE (${count})!!!!!! Like, watch out everyone, this player is killing it!",
 
-		kick_player_not_staff = "Trying to kick someone without proper permissions? Not chill, dude.",
-		ban_player_not_staff = "Tried to like, ban a player without being a badass staff member.",
-
-		hide_staff_not_staff = "Dude, like tried to hide their staff status without proper permissions. So not cool.",
-		toggle_staff_not_staff = "Uh, like tried to toggle staff availability without being a legit staff member.",
-
 		logs_hide_staff_title = "Staff Hidden",
 		logs_hide_staff_hidden_details = "${consoleName} like totally went incognito on their staff status.",
 		logs_hide_staff_shown_details = "${consoleName} like totally went public with their staff status.",
@@ -282,10 +287,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		staff_feature_unavailable = "Sorry, but you can't do that right now because your staffiness is, like, turned off.",
 
-		toggle_player_track_no_permissions = "No way, like you're not allowed to toggle player tracking!",
-		set_job_no_permissions = "Sorry, can't change jobs without the proper clearance.",
-		toggle_reflection_no_permissions = "Like, you can't toggle damage reflection without, like, proper permissions, duh.",
-
 		success_enable_reflection = "Yay, you've, like, successfully enabled reflection!",
 		success_disable_reflection = "Boohoo, reflection's, like, successfully disabled, bummer!",
 		failed_toggle_reflection = "Uh-oh, like, reflection toggling has failed, that's so not hot!",
@@ -296,12 +297,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		headache_logs_title = "Major Headache Alert!",
 		headache_logs_details = "${consoleName} has like, totally triggered a major headache for ${targetConsoleName}.",
-		trigger_headache_no_permissions = "Like, sorry not sorry, you ain't got the perms to trigger a headache!",
 
 		super_jump_logs_title = "Yasss! Super Jump is like, totally toggled",
 		super_jump_logs_details_on = "${consoleName} just, like, turned on their super jump.",
 		super_jump_logs_details_off = "${consoleName} just, like, turned off their super jump.",
-		toggle_super_jump_no_permissions = "Um, you can't, like, toggle your super jump without proper permissions.",
 
 		success_trigger_headache = "Like, woohoo! You like, totally triggered a headache for ${playerName}.",
 		failed_trigger_headache = "Ugh, like dang, we can't trigger a headache. Bummer.",
@@ -311,7 +310,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		reset_spawn_success = "Success! Spawnpoint has been reset.",
 		reset_spawn_failed = "Oopsie daisy! Couldn't reset spawnpoint.",
 
-		protective_mode_not_staff = "Like, you can't toggle the server protective mode without proper permissions, sorry.",
 		protective_mode_toggled_on = "Oh-em-gee, server protective mode has like, totally been enabled. You'll need to have played for, like, ${playtime} hours to connect to the server now.",
 		protective_mode_toggled_off = "Uh, protective mode has been like, turned off!",
 		protective_mode_already_on = "Seriously, server protective mode is already on and requires a playtime of like, ${playtime} hours.",
@@ -320,13 +318,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		logs_protective_mode_on = "${consoleName} totally turned on the server's protective mode with required playtime: `${playtime}`.",
 		logs_protective_mode_off = "${consoleName} totally turned off the server's protective mode.",
 
-		spawn_item_not_staff = "Like, you can't spawn items without being staff, duh!",
 		no_item_name = "Umm, what item were you trying to spawn?",
 		invalid_item_name = "Ugh, `${itemName}` isn't a valid item name, try again.",
 		item_spawned = "Yas girl, spawned ${amount}x `${itemName}` for ${consoleName}.",
 		item_spawned_for_everyone = "Like, I spawned ${amount}x `${itemName}` for everyone. Awesome, right?",
 
-		set_warning_message_not_staff = "Oopsie, you can't set the server's warning message without proper permissions.",
 		warning_message_set_to = "Rad, the warning message has been set to `${warningMessage}`.",
 		warning_message_removed = "The warning message has been totally removed. No more warnings!",
 		warning_message_error = "Ugh, sorry but there was an error trying to set the warning message.",
@@ -368,6 +364,9 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		evidence_view_details_on = "${consoleName} toggled the totally advanced evidence view on, so extra.",
 		evidence_view_details_off = "${consoleName} toggled the advanced evidence view off, ya know?",
 
+		tracker_turned_on = "So, like, your tracker has been turned on.",
+		tracker_turned_off = "So, like, your tracker has been turned off.",
+
 		report_muted_no_reason = "Like, you're muted from the report command but they didn't say why. Rude!",
 		report_muted = "You're muted from the report command with the reason: `${reason}`. Seriously? Ugh!",
 
@@ -388,9 +387,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		teleported_to_waypoint_logs_title = "Teleported To My Mark",
 		teleported_to_waypoint_logs_details = "${consoleName} just teleported to the marked location, ${locationLabel}. Way cool!",
 
-		teleport_to_coordinates_not_staff = "Ugh, that person tried to teleport to some coordinates like a staff, but they are not part of the club, so whatever.",
-		teleport_to_waypoint_not_staff = "Ugh, like, you can't teleport to a waypoint if you're not staff, duh.",
-
 		failed_isolate = "Oopsies, like, couldn't isolate the player.",
 		invalid_server_id = "Umm, that's not a valid server ID.",
 		isolate_success_on = "Yas, successfully isolated ${consoleName}.",
@@ -402,8 +398,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		population_density_set_off = "Like, the population density thingy was turned off or whatever.",
 		population_density_is_not_on = "Duh, the population density thingy ain't even on, like, hello?",
 		population_density_already_set_to = "Ugh, the population density thingy is already set to, like, ${multiplierLabel}%.",
-
-		population_density_not_super_admin = "OMG, some player is trying to mess with the population density without, like, being a super cool admin.",
 
 		enabled_features_list = "OMG, these are the things that are totally enabled:",
 		aimbot_feature = "Aimbot, like, hello?",
@@ -448,8 +442,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		vehicle_smoke_invalid_class = "Sorry, but you can't add smoke to this kind of vehicle!",
 
-		repair_vehicle_not_super_admin = "Sorry, but you can't repair vehicles without mad permissions!",
-
 		repaired_vehicle_logs_title = "Vehicle Repaired, like, finally!",
 		repaired_vehicle_logs_details = "${consoleName} like, totally fixed the car they was in.",
 
@@ -464,9 +456,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		set_vehicle_livery_logs_title = "New Livery for My Ride",
 		set_vehicle_livery_logs_details = "${consoleName} totally switched up the look of a car with plate `${vehiclePlate}` to `${liveryIndex}`.",
-
-		set_livery_missing_permissions = "Oopsies! You don't have the power to change the look of a car.",
-		set_modifications_missing_permissions = "Sorry, you can't change anything on this ride. You don't have the right permissions.",
 
 		set_vehicle_modification = "Upgraded my car babe! Added mod type `${modType}` and index `${modIndex}`. (Custom Tires: ${customTires})",
 		mod_index_invalid_for_type = "Ugh, like the mod index `${modIndex}` just doesn't work with the mod type `${modType}`, like duh.",
@@ -486,15 +475,9 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		invalid_dirt_level = "Tsk tsk, that dirt level is not valid.",
 		set_dirt_level = "Like, the dirt level of the ride was set to `${dirtLevel}`.",
 
-		set_dirt_level_not_super_admin = "The player tried to set the dirt level of a car, but they don't have the right permissions.",
-
-		set_fake_plate_not_super_admin = "The player tried to set a fake plate for the ride without the proper permissions.",
-
 		already_fake_disconnecting = "You are, like, already trying to fake disconnect. Just, like, chill for a sec, ok?",
 		started_fake_disconnect = "Started faking a disconnect. Repeat the command to, like, stop it, k?",
 		stopped_fake_disconnect = "Stopped faking the disconnect. Phew, that was totally stressing me out, lol.",
-
-		fake_disconnect_not_super_admin = "Um, player tried to fake disconnect without, you know, proper permissions. Rude much?",
 
 		disabled_idle_cam = "Disabled the idle cam. Finally, I can, like, get my groove on without any interruptions.",
 		enabled_idle_cam = "Re-enabled the idle cam. Oh, yeah, baby! Let's get this party started!",
@@ -502,12 +485,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		created_vehicle_smoke_for_player_logs_title = "Created Vehicle Smoke",
 		created_vehicle_smoke_for_player_logs_details = "${consoleName} created some dank vehicle smoke. So sick!", -- (Note: "dank" means "cool" or "awesome",
 
-		player_info_not_staff = "Uh oh, someone's trying to get a player's info without permission.",
 		player_info_title = "${consoleName} (like, duh)",
 		player_info = "${fullName} #${characterId}\nHas played for ${playtime}. That's, like, ${playtime} of my lifetime!\n${jobName}, ${departmentName}, ${positionName}\n\n${backstory} T.T",
 
 		inventory_name_missing = "Yo, you forgot the name for the inventory. Can't make miracles here.",
-		force_inventory_missing_perms = "No way, you don't have the permission to force-open an inventory.",
 
 		auto_driving_engaged = "OMG, auto driving is now ON (Style: ${style}). Let's, like, cruise and blast some tunes!",
 		auto_driving_updated = "Auto driving speed/location has been, like, updated.",
@@ -538,9 +519,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		tint_set = "Oh sweet, we set the weapon tint to `${tint}` (${tintIndex}). So rad!",
 		no_weapon_tint = "Uh-oh, this weapon doesn't have tints. That's a total bummer!",
 
-		weapon_attachment_missing_perms = "Duh, you don't have permission to toggle a weapon attachment. Get with the program!",
-		weapon_tint_missing_perms = "Sorry, you can't set a weapon tint without permission. Gosh!",
-
 		no_attachments = "No Attachments",
 		available_attachments = "Like, attachments that are totally available:",
 		current_attachments = "Current attachments, check it out:",
@@ -557,14 +535,14 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		cleaned_ped_self = "O-M-G, you totally cleaned your ped!",
 		clean_ped_failed = "Ugh, couldn't clean your ped.",
 		cleaned_ped_for_all = "Like, for sure, all peds are clean now!",
-		clean_ped_no_permission = "Sorry, you can't clean someone else's ped.",
+		clean_ped_no_permission = "Tried to clean a player's ped without, like, proper permissions.",
 
 		item_durability_set_success = "Wow, durability set to ${amount}% for items in slot ${slotId}.",
 		item_durability_set_failed = "Dang, couldn't set durability.",
 		item_durability_invalid_amount = "No way! Durability must be between 0 and 100!",
-		item_durability_set_no_permission = "You can't set durability without permission, duh!",
+		item_durability_set_no_permission = "Like, you can't change an item's durability without, like, permission and stuff.",
 
-		item_metadata_set_no_permission = "Ugh, you can't set an item's info if you don't have permission, like totally.",
+		item_metadata_set_no_permission = "Trying to change an item's metadata? Uh, no way, dude, you need permission for that.",
 		item_metadata_invalid_metadata = "Oh no, the item's info is totally bogus.",
 		item_metadata_set_success = "Yes, queen! You totally changed the info for the item in slot ${slotId}.",
 		item_metadata_set_failed = "Uh oh, setting the metadata for the item totally failed.",
@@ -589,8 +567,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		scoop_invalid = "Wait, what? You didn't scoop up any players. Lame.",
 		unscooped_players = "Dropped off ${amount} out of ${total} player(s). Totes efficient!",
 		unscoop_failed = "Oopsie, couldn't unscoop players. My bad.",
-
-		unscoop_missing_permissions = "Ugh, like as if that player even has permission to unscoop. As if!",
 
 		toggle_collisions_missing_permissions = "No way, like that player totally tried to mess with their own collisions without permission. What a poser!",
 		wipe_first_owned_missing_permissions = "Ugh, this player tried to like totally scrub their own stuff without having the right permissions. Lame.",
@@ -678,10 +654,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		model_already_added_to_list = "Oops, `${modelName}` (${modelHash}) is already in the detection list.",
 		removed_model_to_list = "Removed `${modelName}` (${modelHash}) from the detection list. Whatever.",
 		model_not_in_list = "Ugh, like, that model (${modelName}) with the ID (${modelHash}) isn't even on the list, super annoying!",
-		set_model_detected_not_staff = "OMG, that player tried to add a model to the list but didn't have the right permissions, like, hello?",
-		set_model_undetected_not_staff = "That player tried to remove a model from the detection list, but like, they weren't authorized to do so, major bummer.",
-		add_detection_area_not_staff = "NO way, that player tried to add a detection area without the right permissions, don't they know the rules?",
-		remove_detection_area_not_staff = "Uh, did you see that? That player tried to remove a detection area without the right permissions, so lame!",
 		detection_area_close = "[${InteractionKey}] Oh! Remove Detection Area (${areaId})",
 		detection_area = "Detection Area (${areaId})",
 
@@ -721,6 +693,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		clear_tasks_ban = "Ugh, seriously? This isn't a Jedi mind trick training center, okay? Your lame attempts to control others' free will have been noticed... and rejected.",
 		projectile_event_ban = "Listen up, you're not a wizard at Hogwarts and this ain't no spellcasting zone, kay? The reckless throwing of spells - or projectiles - isn't, like, allowed here.",
 		illegal_native_ban = "Like, you can't use a spell that you, like, haven't learned yet...",
+		underground_ban = "Whoa, looks like you've taken a gnarly trip down the rabbit hole. Bummer.",
+		infinite_ammo_ban = "Sorry to burst your bubble, but even here we gotta follow the rules of nature. We had to confiscate your magic ammo pouch.",
 
 		type_aimbot = "Aimbot, duh",
 		type_bad_creation = "Total fail of a creation",
@@ -757,6 +731,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		type_thermal_night_vision = "Thermal/Night Vision, so cool",
 		type_vehicle_modification = "Vehicle Modification, like, pimp my ride",
 		type_illegal_native = "Illegal Native Call, not legit",
+		type_underground = "Underground",
+		type_infinite_ammo = "Infinite Ammo",
 
 		event_prefix = "Anti-Cheat: ${type}, oh em gee",
 
@@ -825,6 +801,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		job_low = "low job",
 		job_medium = "medium job",
 		job_high = "high job",
+
+		banned_no_permissions = "Tried to `${reason}` without the proper permissions. Way uncool, dude.",
 
 		banned_globally = "Oh my god, you've been banned from every single OP-FW server in the world!\n\nBan Hash: ${banHash}\nBan Reason: ${banReason}\n\nIf you think this is totally bogus, then check out the OP-FW discord guild and like, appeal it at ${frameworkDiscord}",
 		banned_locally = "Sorry girlfriend, but you're banned from ${communityName}.\n\nBan Hash: ${banHash}\nBanned By: ${creatorName}\nBan Reason: ${banReason}\nTimestamp: ${timestamp}\n\n${indefiniteOrExpires}\n\nCome to our discord guild if you wanna know how to appeal it at ${communityDiscord}.",
@@ -963,7 +941,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		wipe_command = "POOF",
 		wipe_command_help = "Make those unwanted entities like disappear from the map.",
 		wipe_command_parameter_distance = "proximity",
-		wipe_command_parameter_distance_help = "If you only want entities within a certain vibe to delete, insert a proximity here. Leave it at `false` or `0` for the whole map.",
+		wipe_command_parameter_distance_help = "If you, like, only wanna delete entities within a certain range, you gotta, like, insert a distance here. Put `-1` for the whole map, duh.",
 		wipe_command_parameter_ignore_local_entities = "like ignore local stuff",
 		wipe_command_parameter_ignore_local_entities_help = "Like, ignore non-networked entities? If you're cleaning up from a cheater, it is recommended you put this to `true` or `1`. Ugh, eww no cheats allowed!",
 		wipe_command_parameter_model_name = "model name",
@@ -1047,6 +1025,14 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		replace_vehicle_command_parameter_model_name = "the new model name, you know",
 		replace_vehicle_command_parameter_model_name_help = "Like, the name of the car you, like, wanna spawn, y'know?",
 		replace_vehicle_command_substitutes = "rv",
+
+		add_vehicle_command = "add_vehicle",
+		add_vehicle_command_help = "Add like, a vehicle to someone's garage.",
+		add_vehicle_command_parameter_model = "model",
+		add_vehicle_command_parameter_model_help = "The model name or model hash of the vehicle you want to add, duh.",
+		add_vehicle_command_parameter_server_id = "server id",
+		add_vehicle_command_parameter_server_id_help = "The server ID of the player you want to give a vehicle to. If you leave this blank, it'll automatically give you one, obvs.",
+		add_vehicle_command_substitutes = "",
 
 		aimbot_command = "aimbot",
 		aimbot_command_help = "Like, toggle the 'aimbot', duh! ",
@@ -1998,8 +1984,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		fake_lag_command = "fake_lag",
 		fake_lag_command_help = "Like, create fake lag. So annoying, am I right?",
-		fake_lag_command_parameter_counter = "counter, like oh my gosh",
-		fake_lag_command_parameter_counter_help = "The counter used to create the lag. The higher this value is, the slower it will be. To disable, just like, leave this blank or type `0`, y'know?",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "The target fps, babe (>= 1).",
 		fake_lag_command_substitutes = "lag, duh",
 
 		view_weapon_command = "view_weapon",
@@ -2481,7 +2467,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		wipe_ground_inventories_command = "wipe_ground_inventories",
 		wipe_ground_inventories_command_help = "Like wipe ground inventories, duh!",
 		wipe_ground_inventories_command_parameter_radius = "radius",
-		wipe_ground_inventories_command_parameter_radius_help = "The wipe radius. If ya don't specify, it's like totally set to `100`. But if you wanna, you can set it to `0`, `-1`, or above `0` to select all the inventories.",
+		wipe_ground_inventories_command_parameter_radius_help = "The wipe radius, honey. If you, like, leave this blank, it'll choose `5` automatically. Valid values are above `0`, and also `0` and `-1`, which will select all inventories, obvi.",
 		wipe_ground_inventories_command_substitutes = "wipeinvs, wipe_inventories, wipe_ground",
 
 		refresh_inventory_command = "refresh_inventory",
@@ -3266,6 +3252,12 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		vdm_clear_command_help = "Clears all your target hits.",
 		vdm_clear_command_substitutes = "",
 
+		steal_vehicle_command = "steal_vehicle",
+		steal_vehicle_command_help = "Like, totally makes the closest npc steal the target vehicle.",
+		steal_vehicle_command_parameter_network_id = "network id",
+		steal_vehicle_command_parameter_network_id_help = "The vehicles network id, duh.",
+		steal_vehicle_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "debug_voice",
 		voice_debug_command_help = "Toggle the voice debug, duh.",
@@ -3661,14 +3653,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		speed_limiter_command_help = "Like, override the normal behavior of the speed limiter by pre-setting the speed limit.",
 		speed_limiter_command_substitutes = "sl, cc, cruise_control",
 
-		add_vehicle_command = "add_vehicle",
-		add_vehicle_command_help = "Add like, a vehicle to someone's garage.",
-		add_vehicle_command_parameter_model = "model",
-		add_vehicle_command_parameter_model_help = "The model name or model hash of the vehicle you want to add, duh.",
-		add_vehicle_command_parameter_server_id = "server id",
-		add_vehicle_command_parameter_server_id_help = "The server ID of the player you want to give a vehicle to. If you leave this blank, it'll automatically give you one, obvs.",
-		add_vehicle_command_substitutes = "",
-
 		toggle_vehicle_weapons_command = "toggle_vehicle_weapons",
 		toggle_vehicle_weapons_command_help = "Like, turn on or off whether, like, the weapons on a car can be used.",
 		toggle_vehicle_weapons_command_parameter_server_id = "server id",
@@ -3759,7 +3743,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 	emojis = {
 		emoji_list = "Here's your emojis, enjoy: ${emojis}",
-		refresh_emojis_no_permissions = "Sweetie, you can't refresh emojis without permission.",
 		api_reported_no_updates = "Like, the Discord API is, like, totally saying no updates in the emoji list.",
 		emojis_added = "Just added, like, ${added} new emoji(s).",
 		emojis_removed = "Ugh, like, removed, like, ${removed} emoji(s) from the list.",
@@ -3779,7 +3762,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	},
 
 	ping = {
-		get_pings_missing_permissions = "Uh, sorry but you don't have the right permissions to like, get pings.",
 		getting_pings = "Retrieving pings from everyone. It's gonna take a minute or two.",
 		host_data = "${position}. ${location} - ${averagePing} Average Ping (based on ${totalPings} clients), 10% Low: ${averagePingLow}, 10% High: ${averagePingHigh}",
 		list_hosts = "${listHosts}"
@@ -3891,7 +3873,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		package_same_remaining_time = "Your package is still `${packageName}`, it expires in ${remainingTime} though.",
 		no_package = "Sorry, but like, you do not have a package.",
 		fetching_package_error = "So, an error occurred while trying to fetch your package data.",
-		check_playtime_not_staff = "That player tried to check someone else's playtime, but like, they didn't have the correct permissions to do so.",
 		reason_unknown = "Like, I have no clue why.",
 
 		unloaded_character = "Like, your character has been unloaded.",
@@ -3900,8 +3881,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		user_not_found = "Oh em gee, we can't find that user on the server. So sorry!",
 		invalid_character_id = "Uh, I'm like pretty sure you sent an invalid character ID or something. Like, not cool.",
 		invalid_license_identifier = "Ugh, you sent an invalid license identifier. Can you please be more careful next time?",
-
-		unload_character_not_staff = "Okay, like this player totally tried to unload someone's character, but they're not even staff. How lame.",
 
 		unloaded_character_for_player_logs_title = "Player's Character Unloaded",
 		unloaded_character_for_player_logs_details = "${consoleName} unloaded ${targetConsoleName}'s character ${characterFullName} (${characterId}) because, like, ${message}.",
@@ -3942,9 +3921,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		invalid_destination_server_id = "Duh, that's not a valid destination server id.",
 		invalid_source_server_id = "Umm, yeah, that's not a valid source server id.",
 		failed_teleport_player_to_player = "Oh my God, I, like, totally failed at teleporting the player to the other player.",
-		teleported_player_to_player = "Yasss! I, like, teleported the player to the other player!",
-
-		teleport_player_missing_permissions = "Like, OMG, the player tried to teleport another player but, like, didn't have the right permissions to do so. Lame!"
+		teleported_player_to_player = "Yasss! I, like, teleported the player to the other player!"
 	},
 
 	afk = {
@@ -3954,8 +3931,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "OMG, like, player tried to create an airdrop but they didn't have the necessary permissions, ugh!",
-		create_airdrop_custom_missing_permissions = "Ew, like, player tried to create a custom airdrop but they didn't have the necessary permissions, ugghh!",
 		created_airdrop = "Totally created an airdrop of type `${airdropType}` with a total of ${itemAmount} item(s).",
 		no_valid_items_provided = "Ugh, there's like, no valid items provided, like, whatever.",
 		created_airdrop_with_items = "Like, totally created an airdrop and it has the following items inside:\n${itemsListed}"
@@ -3982,15 +3957,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Oh my god, player tried to create an airstrike but they didn't have the necessary permissions, like, whatever.",
-
 		airstrike_success = "Airstrike was like a success, yay!",
 		airstrike_failed = "Failed to create the airstrike, bummer!"
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Ugh, that player tried to call in air support, but they didn't get the memo that they needed like, permission to do that.",
-
 		distance = "OMG, like it's like ${distance}${unit} away.",
 		time_to_impact = "OMG, like ETA is in ${timeToImpact}!",
 
@@ -4020,9 +3991,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		show_alert_success = "OMG, like the player was totally alerted or whatever.",
 		show_alert_everyone_success = "OMG, like everyone saw the alert. Totes successful!",
-		show_alert_failed = "Oops, couldn't show alert to player. So not cool.",
-
-		show_alert_missing_permissions = "Ugh, like the player tried to show an alert to someone else but they didn't have the permission. So bogus."
+		show_alert_failed = "Oops, couldn't show alert to player. So not cool."
 	},
 
 	arcade = {
@@ -4303,10 +4272,9 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 	audio = {
 		audio_id = "Ugh, audio ${audioId}",
-		illegal_sound_effect = "Tried to play, like, an external audio without permission.",
+		illegal_sound_effect = "Tried to tell other clients to play an external audio without, like, proper permissions.",
 		url_invalid = "The provided URL is not valid. It must be uploaded on a secure connection. (https://)",
 		url_missing = "Please add the URL to the audio you are trying to play.",
-		play_audio_no_permissions = "Player thought they could play an audio but, like, they didn't have the required permissions or whatever.",
 		played_audio_for_self = "Played audio for, like, yourself.",
 		played_audio_for_player = "Played audio for ${consoleName}, ya know.",
 		played_audio_for_everyone = "Played audio for, like, everyone!",
@@ -4542,7 +4510,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		illegal_boombox_item_id = "What are you trying to do...that's an illegal Boombox item ID!",
 		logs_attempted_to_add_song_title = "Tried to add a song to the Boombox",
 		logs_attempted_to_add_song_details = "${consoleName} tried to add a sick new jam with video URL `${url}` to the Boombox with ID `${boomboxId}`.",
-		wipe_boomboxes_not_staff = "OMG, that player tried to delete all the boomboxes but like they didn't have the right permissions, so I had to say, 'Uh, no way, Jose.'",
 		logs_wiped_all_boomboxes_title = "Deleted All the Boomboxes",
 		logs_wiped_all_boomboxes_details = "${consoleName} totally deleted all the boomboxes.",
 		logs_wiped_nearby_boomboxes_title = "Deleted Nearby Boomboxes",
@@ -4634,8 +4601,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		spawned_contract = "I, like, spawned a contract for ya.",
 		spawned_contract_for = "Yass, just spawned a contract for ${displayName}.",
 
-		spawn_contract_no_permissions = "Ugh, like sorry not sorry, but you can't spawn a boosting contract without the proper permissions.",
-
 		already_max_vin_scratched_vehicles = "OMG, you like totally already have the maximum amount of VIN scratched vehicles in your garage.",
 		contract_has_expired = "Uh oh, this contract has totally expired.",
 		you_already_have_a_contract_started = "Like OMG, you already have a contract started."
@@ -4685,8 +4650,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	},
 
 	cargo = {
-		start_cargo_no_permissions = "So this player wanted to start the Cargo heist, but, like, they didn't have permission.",
-		end_cargo_no_permissions = "Like, Player tried to end the Cargo heist but they, like, totally didn't have the permissions to do that.",
 		cargo_already_active = "Umm, Cargo is like, already active.",
 		started_cargo = "Cargo has been, like, totally started.",
 		cargo_not_active = "Cargo is, like, not active or whatever.",
@@ -4699,7 +4662,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	},
 
 	casino = {
-		set_casino_screen_id_not_staff = "Like, omg, this like player just tried to set the casino screen id without having the right permissions. What a bummer!",
 		successfully_set_screen_label = "Yasss, you totally set the screens to the one with the label `${screenLabel}`. That's so rad!",
 		successfully_queued_screen_label = "You successfully added the screen with label `${screenLabel}` to the queue. So clutch!",
 		failed_to_set_screen_label = "Oops, we couldn't set the screens to the one with the label `${screenLabel}`. Sorry, not sorry.",
@@ -4767,8 +4729,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		blacklisted_video = "Ew, that video with key `${videoKey}` is totally blacklisted.",
 		failed_to_blacklist_video = "Bummer, we couldn't blacklist that video with key `${videoKey}`.",
 		video_is_already_blacklisted = "Gross, that video with key `${videoKey}` is already blacklisted.",
-
-		blacklist_video_missing_permissions = "That player's like trying to blacklist a video... but they're totes missing the required permissions!",
 
 		watching_movie = "Chillin' and watching ${title} RN!",
 
@@ -4942,8 +4902,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		barber_menu_success = "OMG, couldn't like toggle the barber shop menu.",
 		failed_toggle_barber_menu = "${consoleName}'s barber shop menu like opened and stuff. So bomb!",
 		invalid_server_id = "That server id is like totally not legit.",
-
-		clothing_menu_missing_permissions = "This player tried to like open another player's clothing menu without the right permissions. Not cool!",
 
 		hats_and_helmets = "Hats/Helmets",
 		glasses = "Sunnies",
@@ -5696,7 +5654,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		special_vehicle_won = "You, like, won a special vehicle! You can find it in your garage.",
 
-		reset_daily_activities_no_permissions = "Uh, player tried to reset their daily stuff without permission. So not cool.",
 		reset_daily_activities = "Reset Daily Activities...like, seriously.",
 
 		task_progress = "You're ${remain} steps away from finishing task ${task}.",
@@ -5770,7 +5727,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		network_id_side = "Network ID, like, is ${networkId}.",
 		no_target = "Ugh, no target",
 		invalid_radius_parameter = "Omg, you entered like an invalid `radius` parameter. Totes not cool.",
-		inject_code_not_developer = "Like seriously, the player tried to inject code, but like they're not a developer. *eye roll*",
 		inject_code_invalid_player = "Ugh, there's like no players with server id `${serverId}`. Get it together.",
 		inject_code_success_for_everyone = "Yay, like successfully injected code for everyone. Get your geek on!",
 		inject_code_success_for_player = "Awesome, like successfully injected code for ${consoleName}.",
@@ -5817,21 +5773,18 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		invalid_network_id = "Invalid network ID - like, not cool!",
 		delete_entity_success = "Peaced out ${networkId} - totally deleted!",
 		delete_entity_failed = "Couldn't delete that thing.",
-		delete_entity_no_permissions = "Sorry, you can't delete stuff without permission.",
+		delete_entity_no_permissions = "Tried to delete an entity without, like, proper permissions.",
 
 		failed_entity_info = "Failed to get entity deets.",
 		printed_entity_info = "Printed entity server info in F8.",
 
 		move_entity_success = "Got that thing moved with ID ${networkId}.",
 		move_entity_failed = "Tried to move it but no dice.",
-		move_entity_no_permissions = "Oops, you don't have permission to move things around.",
+		move_entity_no_permissions = "Tried to move an entity without, like, proper permissions.",
 
-		fake_lag_updated = "Your fake lag is now sooo ${counter}.",
-		fake_lag_already_set_to = "Your fake lag is already at ${counter}.",
-		fake_lag_enabled = "OMG, we have like totally enabled fake lag with a counter of `${counter}`!",
-		fake_lag_invalid_counter_value = "Oops, `${counter}` is not a valid counter for fake lag.",
+		fake_lag_invalid_fps = "Like, that fps isn't cool, try another one.",
+		fake_lag_clamp = "Gonna make sure the fps is, like, below ${fps}.",
 		fake_lag_disabled = "Ugh, we turned off fake lag.",
-		fake_lag_not_enabled = "Sorry, but fake lag is not even enabled.",
 
 		weapon_name_missing = "Excuse me, but you've forgotten the weapon's name.",
 		weapon_name_invalid = "Uh, `${weaponName}` isn't even a legit weapon name.",
@@ -5860,7 +5813,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		disabled_network_debug = "Entity network debugging is, like, totally disabled.",
 		failed_network_debug = "Ugh, failed to enable entity network debugging.",
 
-		network_owner_subscription_no_permissions = "You can't subscribe to entity network owners without, like, proper permission. Duh!",
+		network_owner_subscription_no_permissions = "Tried to, like, subscribe to entity network owners but, like, no permissions.",
 
 		missing_ipl = "Missing the ipl parameter, like, I have no idea what to do!",
 		enabled_ipl = "Successfully enabled ipl `${ipl}`. Yay!",
@@ -6156,8 +6109,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	},
 
 	flag_swap = {
-		toggle_flag_swap_no_permissions = "Like, you're not even allowed to toggle flag swaps, so get outta here!",
-
 		toggled_flag_swap_on = "Flag swap is like, totally on now. Groovy!",
 		toggled_flag_swap_off = "Like, you turned off flag swapping.",
 
@@ -6181,16 +6132,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		failed_create = "Sorry, could not create forcefield.",
 		forcefield_marker = "Forcefield ID is: ${id}",
 		invalid_forcefield_id = "Oops, that's not a valid forcefield ID.",
-		failed_destroy = "Oh no, could not destroy forcefield.",
-
-		create_forcefield_no_permissions = "Umm, excuse me! You don't have permission to create a forcefield.",
-		destroy_forcefield_no_permissions = "Seriously, you can't destroy a forcefield without permission."
+		failed_destroy = "Oh no, could not destroy forcefield."
 	},
 
 	fortnite = {
-		add_building_no_permissions = "No way, you can't add a Fortnite building without permission.",
-		wipe_buildings_no_permissions = "OMG, like, this player tried to wipe out the Fortnite buildings but they didn't have the right permissions, so no can do.",
-
 		no_buildings_in_radius = "Sorry, babe, but there aren't any buildings within a ${radius} radius.",
 		no_buildings = "Sorry, can't help ya, there are like, no buildings.",
 		wiped_buildings_in_radius = "OMG, we totally wiped out ${removedBuildings} buildings within a ${radius} radius!",
@@ -6402,7 +6347,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		press_to_exit_locker = "Press ~INPUT_CONTEXT~ to exit the locker, uhm, duh.",
 		failed_to_start_escape_room = "Failed to start the escape room, like, bummer.",
 		started_escape_room = "Started the escape room with ${playerAmount} players, so groovy.",
-		start_escape_room_missing_permissions = "This player tried to start the escape room, but they didn't have the required permissions, like, seriously?",
 		escape_instructions = "Once you finish, the doors will unlock and you'll be able to jet outta here, like, totally.",
 		answer_the_phone = "Like, answer the phone.",
 
@@ -6416,8 +6360,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		successfully_revived_everyone = "Succesfully revived everyone! That's so cool!",
 		successfully_revived_everyone_removed_injuries = "Successfully revived and removed like, everyone's injuries. That's totally rad!",
 		failed_to_revive = "Oops, like, couldn't execute the `/revive` command correctly. Bummer!",
-		revive_player_not_staff = "They tried to revive another player but like, they didn't have the right permissions to do so. Lame sauce.",
-		revive_self_not_staff = "The player tried to bring themselves back to life, but like, they didn't have the power to do that.",
 		revived_self_removed_injuries_title = "Brought Myself Back From the Dead and Healed My Bod",
 		revived_self_removed_injuries_details = "${consoleName} brought themselves back to life and healed their bod. Cool, huh?",
 		revived_self_title = "Brought Myself Back From the Dead",
@@ -6430,8 +6372,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		revived_player_removed_injuries_details = "Hey, ${consoleName} just revived ${targetConsoleName} and fixed 'em right up!",
 		revived_player_title = "Revived Player, Amazing!",
 		revived_player_details = "Check it out, ${consoleName} just revived ${targetConsoleName}, cool!",
-		get_recent_deaths_not_staff = "Uh-uh, Player tried to get recent deaths, but didn't have the right permissions. Rude much?",
-		get_player_last_death_not_staff = "Like omg, like someone tried to get a player's last death, but didn't have the right permissions to do so.",
 		recent_deaths = "Recent Deaths",
 		no_recent_deaths = "Ugh, there are no recent deaths.",
 		recent_deaths_list_entry = "${recentDeathId}. ${consoleName} totally died ${timer} seconds ago.",
@@ -6459,7 +6399,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		no_players_in_range = "No one's down and out within ${distance}m. Major bummer.",
 		successfully_revived_range = "Yaaaaas! Totally brought back ${amount} peeps in a ${distance}m zone.",
 		failed_revive_range = "Ugh, couldn't revive anyone. Like, so not cool.",
-		range_revive_not_staff = "Some dude tried to bring players back within a certain distance but, like, doesn't have the proper permissions. Can't even.",
 
 		cpr_ped_logs_title = "Like, CPRed Ped",
 		cpr_ped_logs_details = "${consoleName} performed CPR on a ped and, like, received $${money}.",
@@ -6577,6 +6516,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		pilot_license_details = "Pilotin' License | ${firstName} ${lastName} | Citizen ID: ${characterId}",
 		weapon_license = "Weapons License",
 		weapon_license_details = "Weapons License | ${firstName} ${lastName} | Citizen ID: ${characterId}",
+		mining_license = "Mining License, you know?",
+		mining_license_details = "Mining License | ${firstName} ${lastName} | Citizen ID: ${characterId}",
 		just_showed_license = "Oh em gee, like, you just showed a license. Like, hold on a hot minute.",
 
 		just_showed_badge = "Whoa, you just showed a badge. Chillax for a sec, k?",
@@ -6710,13 +6651,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		failed_to_get_instance_players = "I can't, like, get the players from the instance. Soz.",
 		no_players = "Nobody is chillin' in this instance.",
 
-		instance_hud = "Instance ID: ${instanceId}",
-
-		create_instance_not_developer = "Uh, like, that player can't create an instance because they're not a developer. Stay in your lane, hun.",
-		destroy_instance_not_developer = "OMG the player tried to wreck an instance but they ain't a developer!",
-		add_player_to_instance_not_developer = "The player tried to add someone to an instance but they ain't a developer!",
-		remove_player_from_instance_not_developer = "Ugh, the player attempted to kick someone out of an instance but they ain't a developer.",
-		get_players_from_instance_not_developer = "Ugh, the player tried to check out who's in an instance but they ain't a developer."
+		instance_hud = "Instance ID: ${instanceId}"
 	},
 
 	interiors = {
@@ -6892,8 +6827,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		no_ground_inventories = "Oops, there's no ground inventories to wipe.",
 		no_ground_inventories_within_radius = "No ground inventories to wipe within, like, a ${radius} mile radius.",
 
-		wipe_inventories_not_staff = "Umm, did you really just try to wipe inventories when you're not authorized to do so?",
-
 		logs_wiped_all_ground_inventories_title = "Just Wiped All Ground Inventories",
 		logs_wiped_all_ground_inventories_details = "${consoleName} just wiped out all ground inventories.",
 
@@ -6955,6 +6888,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		pilot_license_description = "A pilot license for, like, flyin' planes and stuff.",
 		weapon_license = "Weapons License, like, loadin' up!",
 		weapon_license_description = "A weapons license for, like, possessin' and carryin' higher class weaponry, ya know?",
+		mining_license = "Mining License",
+		mining_license_description = "A license for, like, mining and stuff.",
 
 		sasp_badge = "SASP Badge, like, don't you forget it!",
 		sasp_badge_description = "A badge for officers of the San Andreas Police Department, yo.",
@@ -7033,6 +6968,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		advanced_lockpick_description = "Hide Yo Kids, Hide Yo Wife",
 		cleaning_kit = "Cleaning Kit",
 		cleaning_kit_description = "Perfect to clean your car, or the blood stains you've been letting dry in the back of your trunk.",
+		scratch_remover = "Scratch Remover",
+		scratch_remover_description = "Used to, like, remove those gross bumps & scratches from cars.",
 
 		multi_tool = "Multi Tasking Tool",
 		multi_tool_description = "This tool is like, totally versatile and super useful in so many ways. *ok hand emoji*",
@@ -7657,6 +7594,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		cone_description = "Can be placed anywhere in the world.",
 		spike_strips = "Spike Strips",
 		spike_strips_description = "Can be placed anywhere in the world.",
+		spike_strips_large = "Like, Totally Huge Spike Strips",
+		spike_strips_large_description = "You can, like, put these anywhere in the world.",
 		floodlight = "Floodlight, like, duh!",
 		floodlight_description = "You can, like, totally place it wherever you want in the world.",
 		left_diversion_sign = "Lef Turn Sign, totes important",
@@ -7719,6 +7658,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		hiking_backpack = "Hiking Backpack",
 		hiking_backpack_description = "Get ready for some outdoor adventures with this cute hiking backpack. It makes your outfit look totally rugged, even though it doesn't actually have any practical use. Just embrace your inner explorer and show off your outdoor enthusiast vibes whenever you go out!",
+		green_hiking_backpack = "Green Hiking Backpack, Like, OMG",
+		green_hiking_backpack_description = "Get ready for outdoor adventures with this, like, totally stylish hiking backpack. It adds, like, a touch of rugged charm to your outfit, even though it's, like, totally just for looks. Embrace the spirit of exploration and show off your outdoor enthusiast vibes wherever you go, like, seriously!",
+		blue_hiking_backpack = "Blue Hiking Backpack, Like, Totally!",
+		blue_hiking_backpack_description = "Get ready for outdoor adventures with this, like, totally stylish hiking backpack. It adds, like, a touch of rugged charm to your outfit, even though it's, like, totally just for looks. Embrace the spirit of exploration and show off your outdoor enthusiast vibes wherever you go, like, for sure!",
 
 		gasoline_bottle = "Gasoline Bottle",
 		gasoline_bottle_description = "For a quick refill for your car or like, ya know, for yourself?",
@@ -8350,6 +8293,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	items = {
 		move_to_repair = "Move here to repair the whip.",
 		repairing_vehicle = "Fixing the car, like totally",
+		fix_visual_damage = "Fixing Visual Damage, like, duh!",
 		using_first_aid_kit = "Like, using a first aid kit",
 		using_bandages = "Putting on band-aids, duh",
 		using_ifak = "Using IFAK, so pro",
@@ -8407,7 +8351,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		press_to_deposit = "Like, press ~INPUT_REPLAY_SHOWHOTKEY~ to deposit items to the Online Jackpot.",
 		can_only_withdraw_at_casino = "Sorry not sorry, but you can only withdraw at the Casino. Sucks, I know.",
 
-		take_fee_no_permissions = "Player like, tried to take jackpot fees without proper permissions. Rude!",
 		took_jackpot_fees = "Took jackpot fees. Removed ${removedTotalItems} items worth like, $${removedTotalWorth} from ${inventories} inventories. So extra!",
 
 		jackpot = "Awesome Sauce Jackpot!",
@@ -8513,7 +8456,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		something_went_wrong = "OMG, can't find the thing, so like, IDK what to do.",
 		locate_success = "Yasss, found something matching `${filter}` at (${x}, ${y}, ${z}) (instance = ${instance}).",
 
-		locate_entity_no_permissions = "Ugh, you can't locate stuff without like, the proper permissions and stuff.",
+		locate_entity_no_permissions = "OMG, like, you tried to locate an entity without, like, proper permissions!",
 
 		locate_entity_logs_title = "Located Entity",
 		locate_entity_logs_details = "${consoleName} tried to locate stuff of type `${filterType}` with the value `${filterValue}`."
@@ -8596,6 +8539,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		queue = "Queue, just chill and wait",
 		queue_position_with_priority = "🐌 Like you're number ${queuePosition} out of ${queueTotal} with like super awesome ${queuePriorityName} priority. 🕐${queueTime}",
 		queue_position_without_priority = "🐌 You're like number ${queuePosition} out of ${queueTotal}. 🕐${queueTime}",
+		live_on_twitch = "Like, are you bored? Check out these streamers OMG!",
+		live = "OMG, like, totally live!",
 		you_are_through = "OMG you're like in!",
 		join_server = "Join the Server",
 		tired_of_queueing = "Like so over waiting? Support the server and get priority queueing, duh",
@@ -8614,6 +8559,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		weird_date_of_birth = "Try, like, picking a reasonable date of birth",
 		invalid_backstory = "Missing or invalid backstory, like max 5,000 characters.",
 		backstory_too_short = "Failed to automatically generate translation.",
+
+		invalid_date = "Ew, like, your date of birth is, like, totally invalid!",
+		date_not_future = "Oh-em-gee, like, your date of birth, like, can't be in the future!",
+		date_too_old = "Ew, like, your date of birth, like, can't be older than, like, 100 years!",
 
 		bad_words = "Whoa, there are some totally bad words in your character name or backstory. Can't be using that, no way!",
 		disallowed_name = "OMG, there are like, some like totally disallowed words in your character name.",
@@ -8659,9 +8608,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		invalid_server_id = "Ugh, that server id is not valid.",
 		logs_failed = "OMG! Failed to load logs. Like, that's mad wack.",
 
-		close = "As if, close",
-
-		get_logs_no_permissions = "Ugh, like this player tried to get logs without the proper permissions. So bogus."
+		close = "As if, close"
 	},
 
 	loot = {
@@ -8706,8 +8653,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	magazines = {
 		issue_id = "Issue #${issueId}, like, hello?",
 		releases_updated = "Releases like, totally updated.",
-		no_release_changes = "There were, like, totally no release changes.",
-		refresh_magazines_no_permissions = "This player tried to refresh the magazines without proper like, permissions, ugh!"
+		no_release_changes = "There were, like, totally no release changes."
 	},
 
 	mdt = {
@@ -8889,15 +8835,12 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		bad_ped_message = "Uh oh, trying to make a ped message that's like, not cool or something: \"${pedMessage}\". Don't be a poser!",
 		bad_twitter_post = "Uh oh, trying to make a twitter post that's like, bad news: \"${twitterPost}\". That's, like, totally not okay!",
 		bad_phone_message = "Like, omg! Tried to create, like, a totes sketch tweet: \"${message}\"",
-		mute_toggle_not_staff = "Ugh, that player can't mute another player without, like, major permissions.",
-		unmute_toggle_not_staff = "Sorry not sorry, that player can't unmute another player without, like, major permissions.",
 		user_not_found = "Uh, like, we couldn't find a person with server ID `${serverId}`.",
 		player_already_muted = "As if! ${consoleName} has already been, like, muted.",
 		player_has_been_muted_no_reason = "Whatever, ${consoleName} has been muted without an explanation. Rude!",
 		player_has_been_muted = "${consoleName} has like, totally been muted coz: `${reason}`.",
 		player_not_muted = "${consoleName} ain't muted, duh!",
 		player_has_been_unmuted = "${consoleName} has been like, totally unmuted, yay!",
-		clear_chat_not_admin = "Ummm, sorry but you're not like, powerful enough to clear everyone's chat, k?",
 		ooc_clear_chat_title = "Chat Cleared, lol",
 		ooc_clear_chat_details = "${consoleName} cleared the chat for, like, everyone. So cool, huh?",
 		muted_player = "Muted Player, obvs",
@@ -9880,8 +9823,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		failed_load_player = "Sorry, couldn't load player data. Did you enter, like, a valid server id?",
 		failed_add_warning = "No way, couldn't add that warning.",
 
-		get_info_no_permissions = "Uh, that player isn't your BFF so you can't get their info.",
-
 		user_indefinitely_banned_warning_no_reason = "I mean, I banned this person without a good reason. This warning like, happened 'cause of that ban, ya know?",
 		user_indefinitely_banned_warning = "OMG, I, like, totally banned this person forever with the reason `${reason}`. This warning, like, came up automatically cause I banned them.",
 		user_temporarily_banned_warning_no_reason = "I banned this person, like, without a reason for ${displayTime}. This warning, like, came up automatically cause of the ban.",
@@ -10006,11 +9947,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		missing_emote = "You forgot to tell me what emote you want the peds to play, duh.",
 
 		emote_list = "Listen up, these are the ped emotes you can use: ${list}.",
-		task_list = "Here are the tasks available for peds: ${list}, Du-uh.",
-
-		spawn_ped_missing_perms = "Like, sorry, but you can't spawn a ped without permission, Du-uh.",
-		remove_peds_missing_perms = "You can't remove spawned peds without permission, just sayin'.",
-		ped_assign_task_missing_perms = "Trying to make spawned peds do stuff without permission? So not cool!"
+		task_list = "Here are the tasks available for peds: ${list}, Du-uh."
 	},
 
 	ped_steal = {
@@ -10067,7 +10004,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 	player_control = {
 		unable_to_drive_for_yourself = "Ummmm, you can't drive for yourself, duh.",
-		drive_for_player_no_permissions = "Like, that player totally tried to drive for someone else but they didn't have, like, the right permissions or whatever.",
 		player_is_not_nearby = "OMG, the player with server ID ${serverId} isn't even close by, like, at all.",
 		player_is_not_the_drive_of_a_vehicle = "The player with server ID ${serverId} isn't even the driver of, like, any vehicle or whatever.",
 		press_to_stop_drive_for = "Press ~INPUT_FRONTEND_CANCEL~ to, like, stop driving for that player."
@@ -10088,7 +10024,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	player_stats = {
 		hp = "HP",
 		armor = "Armor",
-		toggle_player_stats_no_permissions = "Umm sorry, you're not allowed to toggle player stats.",
 		updated_render_range = "So, just updated your wow factor to ${renderRange}.",
 		turned_player_stats_on = "Activated player stats, like totally awesome!",
 		turned_player_stats_off = "Turned off player stats, bummer."
@@ -10143,7 +10078,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 	props = {
 		illegal_prop_item_id = "Player, like, tried to use an illegal prop item ID.",
-		spawn_prop_not_staff = "Uh-oh, this player like, can't spawn props since they don't have the required permissions.",
 		managing_props_help = "OMG, you're totally managing the props right now. Just, like, walk up to a prop and press ~INPUT_CONTEXT~ to pick it up.",
 		total_props = "Total Props: ${count} (duh)",
 		active_props = "Active Props: ${count} (duh)",
@@ -10172,7 +10106,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		invalid_wipe_radius = "Seriously, that's like, an invalid radius (1 to 100 only).",
 		wipe_successful = "Props got wiped, we did it!",
-		wipe_props_missing_permissions = "Duh, you don't have the permissions to wipe props. Come on!",
 
 		placing_prop = "Placing Prop, like oh my god!",
 		pickup_prop = "Picking Up Prop, yay!",
@@ -10209,7 +10142,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		radio_debug_off = "Yay! Successfully turned off radio debug.",
 		radio_debug_on = "Yay! Successfully turned on radio debug.",
 
-		radio_debug_no_permissions = "Uh, what are you trying to do, toggle the radio debug without proper permission? Not cool!",
+		radio_debug_no_permissions = "Like, you totally tried to toggle the radio debug without having the, like, proper permissions!",
 
 		decrypt_frequency = "[${InteractionKey}] Decrypt Frequency",
 		decrypting_frequency = "Deciphering Frequency... like, totally!",
@@ -10246,8 +10179,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	reskin = {
 		plastic_surgery = "Plastic Surgery, duh!",
 		los_santos_police_dept = "Like, welcome to the LS Police Dept!",
-
-		reskin_player_no_permissions = "Like, this player is trying to toggle radio debug without permission.",
 
 		triggered_reskin_for_player = "OMG, totally reskinned ${consoleName}!",
 
@@ -10353,13 +10284,13 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		riot_mode_enabled = "Yass, riot mode activated! Time to get lit!",
 		riot_mode_disabled = "Riot mode deactivated, but, like, some super aggro peds might still be fighting.",
 		riot_mode_failed = "Oops, couldn't activate or deactivate riot mode.",
-		riot_mode_missing_perms = "Like, you can't toggle riot mode without the right permissions. Obvi.",
+		riot_mode_missing_perms = "Ew, like, you're attempting to toggle riot mode without having, like, the proper permissions!",
 
 		riot_mode_enabled_help = "OMG, like, there's a riot goin' on!",
 		riot_mode_disabled_help = "Phew, the riots are over!",
 
-		add_riot_player_no_permissions = "Uh, you don't have the cred to add players to the riot list. Sorry!",
-		remove_riot_player_no_permissions = "You can't take players off the riot list unless you have mad respect. I'm sorry!",
+		add_riot_player_no_permissions = "Like, you can't add a player to the riot list without the right permissions, duh.",
+		remove_riot_player_no_permissions = "OMG, you're trying to remove a player from the riot list without the proper permissions.",
 
 		player_already_in_riot_list = "${consoleName} is already on the riot list. Like, duh!",
 		player_not_in_riot_list = "Sorry, ${consoleName} isn't on the riot list. Maybe they haven't earned their street cred yet.",
@@ -10626,7 +10557,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		finding_player = "Looking for the Player",
 
 		invincibility_active = "OMG, like, you're totally invincible right now! Yas!",
-		invincibility_inactive_dead = "Invincibility: ~g~Inactive~w~ (dead)",
+		invincibility_inactive_dead = "Invincibility: ~g~Active~w~ (dead). Totally invincible, even when you're dead.",
+		invincibility_inactive_trunk = "Invincibility: ~g~Active~w~ (trunk). inviincible in the trunk of the vehicle, how cool is that?",
 		invincibility_inactive = "Invincibility: ~g~Inactive~w~",
 
 		health_ok = "Health: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
@@ -10698,7 +10630,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	status = {
 		status_reset = "Like, I totally reset the status for ${consoleName}.",
 		status_reset_failed = "Sorry, but I couldn't find any user with server ID `${serverId}`. Bummer!",
-		reset_status_not_staff = "Ugh, you're so not authorized to reset this player's status.",
 		status_reset_for_all = "Radical! I reset the status for everyone.",
 		status_disabled = "Just disabled the statuses (stress, hunger and thirst).",
 		status_enabled = "Just enabled the statuses (stress, hunger and thirst).",
@@ -10711,8 +10642,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		set_body_armor_level_everyone_details = "${consoleName} set everyone's body armor level to `${bodyArmorLevel}`. #teamwork",
 		set_body_armor_level_player_title = "Like, Set Body Armor Level For Player",
 		set_body_armor_level_player_details = "${consoleName} just updated ${targetConsoleName} and set their body armor level to `${bodyArmorLevel}`. So rad!",
-		set_body_armor_level_player_not_staff = "Oopsies! You can't set another player's body armor level, ${consoleName}. Better ask for permissions or something.",
-		set_body_armor_level_self_not_staff = "OMG! You can't even set your own body armor level, ${consoleName}? That's such a bummer.",
 		stress_level_warning = "OMG, you're totally stressed! Chill out by smoking Cigs, Joints, or doing stuff like Yoga."
 	},
 
@@ -10725,7 +10654,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		missing_hour = "Can't even tell time without an hour provided.",
 		invalid_hour = "Uh-oh, the time you entered is totes bogus. It should be between 0:00 and 23:59.",
 		hour_changed = "Your new clock says it's like, ${hour} now.",
-		set_hour_not_staff = "Sorry, you don't have the cred to change the time.",
 
 		local_time_override_enabled = "Set local time for ${hour}:${minute}.",
 		local_time_override_disabled = "Ugh, just set the time back to how it was.",
@@ -10735,27 +10663,21 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		missing_minute = "Like, no minute was given. Duh!",
 		invalid_minute = "Ew, that's not a valid minute. It should be, like, between 0 and 59.",
 		minute_changed = "Cool, the minute is now `${minute}`.",
-		set_minute_not_staff = "Ugh, sorry, you don't have the power to change the minute.",
 
 		missing_weather = "No weather? How am I supposed to know what to change it to? Sheesh.",
 		invalid_weather = "Oh em gee! The weather `${weatherName}` is not like, valid or whatever. Valid weather names are CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT, and BLIZZARD.",
 		weather_changed = "Yas! The weather has been like, totally set to `${weatherName}`.",
 		weather_advanced = "The weather has been like, advanced to `${weatherName}`.",
 		weather_advance_fail = "Ugh, like, the weather failed to advance naturally.",
-		set_weather_not_staff = "Like, why you trying to set the weather without permission? You ain't got the proper staff status or whatever.",
-		advance_weather_not_staff = "You're like, not staff, so like, stop trying to advance the weather or whatever.",
 
 		time_frozen = "OMG, the time has like totally been frozen!",
 		time_unfrozen = "The time is no longer frozen, how lame.",
-		freeze_time_not_staff = "Ew, trying to freeze the time without the right permissions? Not cool.",
 
 		weather_frozen = "The weather is now totally frozen, like a popsicle.",
 		weather_unfrozen = "Ugh, the weather isn't frozen anymore. So basic.",
-		freeze_weather_not_staff = "Trying to freeze the weather without the right permissions? Like, whatever.",
 
 		blackout_enabled = "Like, there's a total blackout in the city now. So lit!",
 		blackout_disabled = "The city is no longer in a blackout. How dull.",
-		blackout_not_staff = "Uh, attempting to cause a blackout without the necessary permissions? No way.",
 
 		weather_changed_title = "Weather Changed, Duh!",
 		weather_changed_details = "${consoleName} changed the weather to `${weatherName}`, OMG!",
@@ -11109,8 +11031,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	},
 
 	trains = {
-		spawn_train_missing_permissions = "Ugh, so this player tried to like, spawn a train but didn't have the required permissions? Lame!",
-
 		invalid_track_id = "That track ID is like, totally invalid. Try again!",
 		spawned_train_on_track = "OMG, we totally spawned a train on track ${trackId}! So rad!",
 		failed_to_spawn_train = "Ugh, it like, didn't work. Can't spawn that train."
@@ -11126,7 +11046,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	treasure_maps = {
 		no_treasure_map_with_tier = "Uh, there's no map with like tier ${mapTier}.",
 		treasure_map_does_not_have_piece = "The map with tier ${mapTier} doesn't have like piece ${pieceNumber}.",
-		spawn_map_piece_missing_permissions = "This player tried to spawn a piece of the map without, like, the proper permissions.",
 
 		sketchy_map = "Totally sketchy map",
 		worn_map = "Like, worn out map",
@@ -11156,9 +11075,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		set_ocean_scaler_no_permission = "The player, like, totally did not have the required permission to set the ocean scaler.",
 
 		tsunami_started = "Tsunami started, like OMG. It'll take ${minutes} minutes to flood the whole map.",
-		tsunami_stopped = "Tsunami is totally, like, finished dude.",
-
-		toggle_tsunami_no_permissions = "Tried to like, toggle the tsuanmi without the right permissions."
+		tsunami_stopped = "Tsunami is totally, like, finished dude."
 	},
 
 	tuner_shop = {
@@ -11195,8 +11112,9 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		cleared_vdm = "Cleared ${amount} vdm targets. Gag me!",
 		failed_vdm_clear = "Failed to clear vdm targets. So not awesome!",
 		added_vdm_target = "Ew, that NPC with network id ${networkId} is now targeting ${target}.",
-
-		vdm_no_permissions = "Player attempted to run the vdm command without proper permission. So totally not cool!"
+		no_ped_available = "Ummm, like there's no nearby peeps available. Sorry.",
+		failed_steal = "Failed to like, steal the vehicle. That didn't go as planned.",
+		stealing_vehicle = "A nearby peep was, like, instructed to steal the vehicle (${distance}m). Ready for some ultimate joyriding!"
 	},
 
 	vending_machines = {
@@ -11278,10 +11196,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	},
 
 	wizard = {
-		action_missing_permissions = "Tried to make a player do a wizard action without the right perms, like oh my god!",
-		action_radius_missing_permissions = "Tried to make players nearby do wizard actions without proper perms, like totally not cool!",
-		run_as_missing_permissions = "Tried to run a command as another player without the right perms, rude!",
-
 		menu_title = "Wizard, duh!",
 
 		ragdoll_player = "Like, make player all limp and floppy",
@@ -11367,8 +11281,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		invalid_explosion_type = "Uh-oh, that explosion type `${explosionType}` ain't valid.",
 		invalid_camera_shake = "Sorry, but the camera shake option `${cameraShake}` ain't gonna work.",
 		invalid_damage_scale = "That damage scale `${damageScale}` isn't valid, hun.",
-		created_explosion = "Boom! We just created an explosion of type `${explosionTypeName}` with a damage scale of `${damageScale}` and camera shake of `${cameraShake}`.",
-		create_explosion_not_developer = "Hold up, sis. You can't create an explosion if you're not a developer."
+		created_explosion = "Boom! We just created an explosion of type `${explosionTypeName}` with a damage scale of `${damageScale}` and camera shake of `${cameraShake}`."
 	},
 
 	functions = {
@@ -11489,7 +11402,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	},
 
 	duty = {
-		toggle_duty_status_no_permissions = "Oh em gee, the player tried to like toggle their duty status but they don't even have the permissions. Rude.",
+		toggle_duty_status_no_permissions = "Like, oh em gee, you tried to like, toggle on duty status using this command without, like, proper permissions.",
 
 		duty_status_on = "Like, so totally on duty now. Yay!",
 		duty_status_off = "Oh my god, totally off duty now. Bye!",
@@ -11604,6 +11517,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		license_hunting = "Hunting License, because we gotta hunt for success!",
 		license_fishing = "Fishing License, let's catch some waves, dude!",
 		license_weapon = "Weapons License, like, ya know?",
+		license_mining = "Mining License, like totally",
 		gave_character_license = "OMG, like I gave ${characterName} the license `${licenseLabel}`.",
 		character_already_has_license = "Duh, ${characterName} already has the `${licenseLabel}` license.",
 		removed_character_license = "I, like, totally removed `${licenseLabel}` license from ${characterName}.",
@@ -11737,8 +11651,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		not_in_a_vehicle = "You're not even in a vehicle, like, where do you think you're gonna put that gas?",
 		vehicle_engine_on = "Uh, hello! You still have the engine on!",
 
-		set_fuel_no_permissions = "Like, you don't have permission to set the vehicles fuel level, so don't even try.",
-
 		vehicle_exploded_logs_title = "Oh My God, the Car Exploded",
 		vehicle_exploded_logs_details = "${consoleName} put gas in the car and, like, set it on fire because they left the car running."
 	},
@@ -11834,11 +11746,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "Toggled the garage debug on, you guys!",
 		toggle_garage_debug_toggled_off = "Toggled the garage debug off, bye!"
-	},
-
-	handlings = {
-		set_handling_override_not_super_admin = "Like, that player tried to totally adjust the car's handling without the right permissions. Major bummer dude!",
-		remove_handling_override_not_super_admin = "That player tried to take away the car's handling override without being a super admin. Not cool!"
 	},
 
 	keys = {
@@ -11965,31 +11872,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		toggle_brakes_off = "Brakes are back on, woohoo!",
 		failed_modify_brakes = "Couldn't modify the brakes, sorry.",
 
-		toggle_disabled_brakes_no_permissions = "Ugh, like, that player totally tried to disable brakes without permission. Rude much?",
-
-		-- NOTE: `add_vehicle` command:
-		add_vehicle_not_super_admin = "OMG, that player is, like, totally trying to add a vehicle to someone's garage without permission. So not chill!",
-		add_vehicle_added_vehicle_for_everyone = "Yasss, added vehicle with model name `${modelName}` for everyone. So dope!",
-		add_vehicle_added_vehicle_for_player = "Like, added vehicle with model name `${modelName}` for ${consoleName}.",
-		add_vehicle_added_vehicle = "Added vehicle with model name `${modelName}`. Totes rad!",
-		add_vehicle_character_not_loaded = "Uh oh, the target player doesn't have any characters loaded.",
-		add_vehicle_target_user_not_found = "Oopsies, we couldn't find the target user.",
-		add_vehicle_invalid_input = "That's not a valid input, like, at all.",
-		add_vehicle_no_permissions = "You don't have the permissions to do that, sorry.",
-		add_vehicle_user_not_found = "Sorry babes, we couldn't find that user.",
-		add_vehicle_invalid_player = "Like, there's no players with that server ID `${serverId}`.",
-		add_vehicle_invalid_model_name = "The model name `${modelName}` is so not a valid model, sorry.",
-		add_vehicle_no_model_name = "You forgot to add the model name, silly goose!",
-
-		added_vehicle_for_everyone_logs_title = "Like, Added Wheels For Everyone",
-		added_vehicle_for_everyone_logs_details = "${consoleName} added, like, a sweet new ride with model name `${modelName}` to everyone's garages.",
-		added_vehicle_for_player_logs_title = "Like, Added Wheels For Player",
-		added_vehicle_for_player_logs_details = "${consoleName} added, like, a sick new ride with model name `${modelName}` to ${targetConsoleName}'s garage.",
-		added_vehicle_logs_title = "Added Wheels",
-		added_vehicle_logs_details = "${consoleName} added, like, a totally awesome new ride with model name `${modelName}` to their garage.",
-
 		-- NOTE: `toggle_vehicle_weapons` command:
-		toggle_vehicle_weapons_not_super_admin = "Like, the player tried to toggle the weapons on a vehicle but, like, they don't have the right permissions.",
 		toggled_vehicle_weapons_on = "Weapons toggled on! Yay!",
 		toggled_vehicle_weapons_off = "Oh snap, weapons toggled off!",
 		toggled_vehicle_weapons_vehicle_is_not_networked = "Err, the car you're in isn’t like, networked, so we can't access the weapons.",
@@ -12144,6 +12027,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		ems_boat_hq = "EMS Boat HQ, that's like so cool",
 		ems_garage = "EMS Garage, duh!",
 		e_to_get_treated = "Press [E] to like get treated - it'll cost you $1250",
+		e_check_in_player = "[E] Check-in Carried Player - $1250, you know?",
+		check_in_blocked = "Check-in is, like, totally occupied, sorry!",
 		get_treated = "Get Treated - $1250, totes worth it",
 		you_are_being_treated = "Like OMG, you are being treated right now",
 		being_treated = "Being Treated, chillax",

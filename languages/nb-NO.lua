@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 18 (do not change)
+-- AUTO LOCALES: 19 (do not change)
 
 OP.Global.Locales.Languages["nb-NO"] = {
 	-- configuration settings for language
@@ -61,7 +61,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		you_are_not_being_carried = "Du blir ikke båret for øyeblikket.",
 		successfully_uncarried = "Bæringen ble avbrutt.",
 		failed_uncarried = "Kunne ikke avbryte bæringen.",
-		uncarry_missing_permissions = "Prøvde å avbryte bæringen uten tillatelse.",
+		uncarry_missing_permissions = "Forsøkte å stoppe bæring uten tilstrekkelige tillatelser.",
 
 		uncarry_logs_title = "Avbryt bæring",
 		uncarry_logs_details = "${consoleName} tvang ${targetName} til å slutte å bære dem.",
@@ -78,7 +78,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 	-- base/*
 	admin = {
-		feature_toggle_not_admin = "Forsøkte å aktivere/deaktivere '${featureName}' for dem selv eller noen andre, men hadde ikke tilstrekkelige tillatelser til å gjøre det.",
 		feature_toggle_activated_logs_title = "Fjernstyrte en Egenskap",
 		feature_toggle_activated_logs_details_state = "${consoleName} aktiverer/deaktiverer `${featureName}` ${newState} for spiller ${targetConsoleName}.",
 		feature_toggle_activated_all_logs_title = "Deaktivert/Eaktivert Funksjon for alle",
@@ -101,9 +100,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		failed_to_spawn_vehicle = "Kunne ikke spawne kjøretøy.",
 		spawned_vehicle_for_player = "Spawnet ${modelName} for ${displayName}.",
 		spawned_vehicle_for_everyone = "Vellykket spawnet `${modelName}` for alle.",
-		spawn_vehicle_no_permissions = "Spilleren prøvde å spawne et kjøretøy, men hadde ikke nødvendige tillatelser til å gjøre det.",
-		replace_vehicle_no_permissions = "Spilleren forsøkte å erstatte sitt kjøretøy, men hadde ikke de nødvendige tillatelsene for å gjøre det.",
-		create_vehicle_no_permissions = "Spilleren forsøkte å opprette et kjøretøy, men hadde ikke de nødvendige tillatelsene for å gjøre det.",
 		spawned_vehicle_for_self_title = "Spawnede kjøretøy",
 		spawned_vehicle_for_self_details = "${consoleName} har spawnet et kjøretøy med modellnavn `${modelName}`.",
 		spawned_vehicle_for_player_title = "Spawnede kjøretøy for spiller",
@@ -113,6 +109,26 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		vehicle_created = "Kjøretøyet er opprettet.",
 		failed_vehicle_creation = "Kunne ikke opprette kjøretøy.",
+
+		-- NOTE: `add_vehicle` command:
+		add_vehicle_added_vehicle_for_everyone = "La til kjøretøy med modellnavn `${modelName}` for alle.",
+		add_vehicle_added_vehicle_for_player = "La til kjøretøy med modellnavn `${modelName}` for ${consoleName}.",
+		add_vehicle_added_vehicle = "La til kjøretøy med modellnavn `${modelName}`.",
+		add_vehicle_character_not_loaded = "Målkarakteren hadde ingen lastede karakterer.",
+		add_vehicle_target_user_not_found = "Finner ikke målnavnet.",
+		add_vehicle_invalid_input = "Ugyldig inndata.",
+		add_vehicle_no_permissions = "Ingen tillatelser.",
+		add_vehicle_user_not_found = "Brukeren ble ikke funnet.",
+		add_vehicle_invalid_player = "Det var ingen spillere med server ID `${serverId}`.",
+		add_vehicle_invalid_model_name = "Modellnavnet `${modelName}` er ikke en gyldig modell.",
+		add_vehicle_no_model_name = "Ingen modellnavn lagt til.",
+
+		added_vehicle_for_everyone_logs_title = "La til kjøretøy for alle",
+		added_vehicle_for_everyone_logs_details = "${consoleName} la til et kjøretøy med modellnavnet `${modelName}` i alles garasjer.",
+		added_vehicle_for_player_logs_title = "Lagt til kjøretøy for spiller",
+		added_vehicle_for_player_logs_details = "${consoleName} la til et kjøretøy med modellnavn `${modelName}` i ${targetConsoleName}s garasje.",
+		added_vehicle_logs_title = "Lagt til kjøretøy",
+		added_vehicle_logs_details = "${consoleName} la til et kjøretøy med modellnavn `${modelName}` i garasjen sin.",
 
 		invalid_amount = "Ugyldig beløp.",
 
@@ -160,8 +176,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		removed_bank_from_player = "Fjernet $${amount} fra bankkontoen til ${targetConsoleName}.",
 		removed_bank_from_everyone = "Fjernet $${amount} fra bankkontoen til alle.",
 
-		money_event_not_admin = "Forsøkte å endre pengearrangementet `${moneyEvent}` uten å ha tilgang.",
-
 		spawned_item_title = "Spawnet gjenstand",
 		spawned_item_details = "${consoleName} spawnet ${amount}x `${itemName}` til seg selv.",
 		spawned_item_for_player_title = "Spawnet Gjenstand for Spiller",
@@ -178,7 +192,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		announcement_logs_title = "SERVERBREDD ANNONSE",
 		announcement_logs_details = "${consoleName} sendte følgende melding til hele serveren: `${announcementMessage}`",
-		announcement_not_admin = "Forsøk på å sende ut en staff-annonse.",
 
 		posted_announcement = "La ut melding til kunngjøringene.",
 		posted_announcement_locale = "La ut melding til kunngjøringene fra lokalene.",
@@ -188,7 +201,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		staff_title = "STAB ${staffName}",
 		staff_message_logs_title = "Ansattmeldinger",
 		staff_message_logs_details = "${consoleName} sendte følgende melding i stabschatten: `${staffMessage}`",
-		staff_message_illegal = "Spiller forsøkte å sende en melding i stabschatten, men var ikke stab.",
 
 		staff_pm_title = "STAB PM ${transmissionTitle}",
 		staff_pm_logs_title = "Stab PM",
@@ -218,7 +230,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		missing_valid_license_identifier_parameter = "Mangler en gyldig 'licenseIdentifier' parameter.",
 
-		illegal_entity_wipe = "Spiller forsøkte å slette enheter, men hadde ikke tillatelser.",
 		wiped_entities = "Slettet enheter. Slettet ${deletedEntities} nettverksenheter.",
 		wipe_entities_logs_title = "Slettet enheter",
 		wipe_entities_logs_details = "${consoleName} utførte en enhetssletting med følgende konfigurasjon: avstand = `${distance}`, ignorer lokale enheter = `${ignoreLocalEntities}`, modellnavn = `${modelName}`",
@@ -261,12 +272,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		ban_quadrouple_kill = "😨 FIRDRAP!!!!!",
 		ban_killing_spree = "🤯 DRAPSSPREE (${count})!!!!!!",
 
-		kick_player_not_staff = "Forsøkte å sparke en spiller uten tilstrekkelig tillatelser.",
-		ban_player_not_staff = "Forsøkte å banne en spiller uten tilstrekkelige tillatelser.",
-
-		hide_staff_not_staff = "Forsøkte å skjule sin stabellhet uten tilstrekkelige tillatelser.",
-		toggle_staff_not_staff = "Forsøkte å endre stabellighet uten tilstrekkelige tillatelser.",
-
 		logs_hide_staff_title = "Skjult stabellhet",
 		logs_hide_staff_hidden_details = "${consoleName} har gjort sin stabellhet skjult.",
 		logs_hide_staff_shown_details = "${consoleName} har gjort sin stabellhet synlig.",
@@ -282,10 +287,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		staff_feature_unavailable = "Denne funksjonen er utilgjengelig når tilgjengeligheten din som ansatt er slått av.",
 
-		toggle_player_track_no_permissions = "Forsøkte å slå på/av spiller-sporing uten tilstrekkelige tillatelser.",
-		set_job_no_permissions = "Forsøkte å sette en jobb uten tilstrekkelige tillatelser.",
-		toggle_reflection_no_permissions = "Prøvde å aktivere skadedemping uten tilstrekkelige tillatelser.",
-
 		success_enable_reflection = "Skadedemping ble aktivert.",
 		success_disable_reflection = "Skadedemping ble deaktivert.",
 		failed_toggle_reflection = "Kunne ikke aktivere/deaktivere skadedemping.",
@@ -296,12 +297,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		headache_logs_title = "Trigget hodepine",
 		headache_logs_details = "${consoleName} har trigget hodepine for ${targetConsoleName}.",
-		trigger_headache_no_permissions = "Forsøkte å trigge hodepine uten tilstrekkelige tillatelser.",
 
 		super_jump_logs_title = "Byttet Super Jump",
 		super_jump_logs_details_on = "${consoleName} har slått på superhoppingen sin.",
 		super_jump_logs_details_off = "${consoleName} har slått av superhoppingen sin.",
-		toggle_super_jump_no_permissions = "Forsøkte å aktivere superhoppingen uten tilstrekkelige rettigheter.",
 
 		success_trigger_headache = "Hodepine ble vellykket trigget for ${playerName}.",
 		failed_trigger_headache = "Klarte ikke å trigge hodepine.",
@@ -311,7 +310,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		reset_spawn_success = "Spawnpunktet er tilbakestilt.",
 		reset_spawn_failed = "Kunne ikke tilbakestille spawnpunktet.",
 
-		protective_mode_not_staff = "Forsøkte å aktivere serverens beskyttelsesmodus uten nødvendige tillatelser.",
 		protective_mode_toggled_on = "Serverens beskyttelsesmodus er nå aktivert. Nødvendig spilletid før tilkobling til serveren er satt til `${playtime}`.",
 		protective_mode_toggled_off = "Serverens beskyttelsesmodus er nå deaktivert.",
 		protective_mode_already_on = "Serverens beskyttelsesmodus er allerede aktivert med nødvendig spilletid på `${playtime}`.",
@@ -320,13 +318,11 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		logs_protective_mode_on = "${consoleName} aktiverte serverens beskyttelsesmodus med påkrevd spilltid: `${playtime}`.",
 		logs_protective_mode_off = "${consoleName} deaktiverte serverens beskyttelsesmodus.",
 
-		spawn_item_not_staff = "Forsøkte å spawne et objekt uten riktige tillatelser.",
 		no_item_name = "Ingen objektnavn oppgitt.",
 		invalid_item_name = "${itemName} er ikke et gyldig objektnavn.",
 		item_spawned = "Spawnet ${amount}x `${itemName}` for ${consoleName}.",
 		item_spawned_for_everyone = "Spawnet ${amount}x `${itemName}` for alle.",
 
-		set_warning_message_not_staff = "Forsøkte å sette serverens advarselsmelding uten tilstrekkelige rettigheter.",
 		warning_message_set_to = "Advarselsmeldingen har blitt satt til `${warningMessage}`.",
 		warning_message_removed = "Advarselsmeldingen har blitt fjernet.",
 		warning_message_error = "En feil oppstod mens du prøvde å sette advarselsmeldingen.",
@@ -368,6 +364,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		evidence_view_details_on = "${consoleName} skrudde på avansert bevisvisning.",
 		evidence_view_details_off = "${consoleName} skrudde av avansert bevisvisning.",
 
+		tracker_turned_on = "Trackeren din har blitt slått på.",
+		tracker_turned_off = "Trackeren din har blitt slått av.",
+
 		report_muted_no_reason = "Du har blitt mutet fra rapportkommandoen uten en spesifisert grunn.",
 		report_muted = "Du har blitt mutet fra rapportkommandoen for grunnen `${reason}`.",
 
@@ -388,9 +387,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		teleported_to_waypoint_logs_title = "Teleportert til veipunkt",
 		teleported_to_waypoint_logs_details = "${consoleName} teleportert til et veipunkt på ${locationLabel}.",
 
-		teleport_to_coordinates_not_staff = "Spilleren forsøkte å teleportere seg til noen koordinater, men de var ikke en ansatt.",
-		teleport_to_waypoint_not_staff = "Spilleren forsøkte å teleportere til et veipunkt, men de er ikke en ansatt.",
-
 		failed_isolate = "Klarte ikke å isolere spilleren.",
 		invalid_server_id = "Ugyldig server-ID.",
 		isolate_success_on = "Isolerte ${consoleName} vellykket.",
@@ -402,8 +398,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		population_density_set_off = "Multiplikator for folketetthet er slått av.",
 		population_density_is_not_on = "Multiplikator for folketetthet er ikke på.",
 		population_density_already_set_to = "Multiplikator for folketetthet er allerede satt til ${multiplierLabel} %.",
-
-		population_density_not_super_admin = "Spiller forsøkte å endre folketetthet uten nødvendige tillatelser.",
 
 		enabled_features_list = "Aktiverte funksjoner:",
 		aimbot_feature = "Aimbot",
@@ -448,8 +442,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		vehicle_smoke_invalid_class = "Kjøretøy-røyk kan ikke aktiveres for denne kjøretøyklassen.",
 
-		repair_vehicle_not_super_admin = "Spilleren prøvde å reparere et kjøretøy uten de nødvendige tillatelsene.",
-
 		repaired_vehicle_logs_title = "Reparert kjøretøy",
 		repaired_vehicle_logs_details = "${consoleName} reparerte kjøretøyet de var i.",
 
@@ -464,9 +456,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		set_vehicle_livery_logs_title = "Endre kjøretøyets dekor",
 		set_vehicle_livery_logs_details = "${consoleName} endret dekoren til et kjøretøy med skiltnummer `${vehiclePlate}` til `${liveryIndex}`.",
-
-		set_livery_missing_permissions = "Spilleren forsøkte å endre dekoren til et kjøretøy uten tilstrekkelige tillatelser.",
-		set_modifications_missing_permissions = "Spilleren forsøkte å legge til en modifikasjon på et kjøretøy uten tilstrekkelige tillatelser.",
 
 		set_vehicle_modification = "La til modifikasjon på kjøretøy for modifikasjonstype `${modType}` med indeks `${modIndex}`. (Egendefinerte dekk: ${customTires})",
 		mod_index_invalid_for_type = "Mod indeksen `${modIndex}` er ugyldig for modtype `${modType}`.",
@@ -486,15 +475,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		invalid_dirt_level = "Ugyldig skitnivå.",
 		set_dirt_level = "Kjøretøyets skitnivå ble satt til `${dirtLevel}`.",
 
-		set_dirt_level_not_super_admin = "Spiller forsøkte å sette skitnivået til et kjøretøy uten tilstrekkelige tillatelser.",
-
-		set_fake_plate_not_super_admin = "Spiller forsøkte å sette et falskt skilt for et kjøretøy uten tilstrekkelige tillatelser.",
-
 		already_fake_disconnecting = "Du prøver allerede å fake en frakobling. Vennligst vent.",
 		started_fake_disconnect = "Begynte å fake en frakobling. Gjenta kommandoen for å stoppe.",
 		stopped_fake_disconnect = "Stoppet fake frakobling.",
-
-		fake_disconnect_not_super_admin = "Spilleren prøvde å fake en frakobling uten tilstrekkelige tillatelser.",
 
 		disabled_idle_cam = "Deaktivert idle-kamera.",
 		enabled_idle_cam = "Gjenopprettet idle-kameraet.",
@@ -502,12 +485,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		created_vehicle_smoke_for_player_logs_title = "Opprettet kjøretøy-røyk",
 		created_vehicle_smoke_for_player_logs_details = "${consoleName} opprettet røyk for kjøretøyet.",
 
-		player_info_not_staff = "Forsøkte å få karakterinformasjonen til en spiller uten tillatelse.",
 		player_info_title = "${consoleName}",
 		player_info = "${fullName} #${characterId}\nHar spilt i ${playtime}.\n${jobName}, ${departmentName}, ${positionName}\n\n${backstory}",
 
 		inventory_name_missing = "Mangler navn på inventory parameter.",
-		force_inventory_missing_perms = "Forsøkte å tvingeåpne et inventory uten riktig tillatelse.",
 
 		auto_driving_engaged = "Auto-kjøring er aktivert (Stil: ${style}).",
 		auto_driving_updated = "Automatisk kjørehastighet/-posisjon har blitt oppdatert.",
@@ -538,9 +519,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		tint_set = "Våpentint satt til `${tint}` (${tintIndex}).",
 		no_weapon_tint = "Dette våpenet har ingen tints.",
 
-		weapon_attachment_missing_perms = "Prøvde å slå av/på våpenvedlegg uten nødvendig tillatelse.",
-		weapon_tint_missing_perms = "Prøvde å sette våpentint uten nødvendig tillatelse.",
-
 		no_attachments = "Ingen vedlegg",
 		available_attachments = "Tilgjengelige Vedlegg",
 		current_attachments = "Gjeldende Vedlegg",
@@ -557,14 +535,14 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		cleaned_ped_self = "Pedet ditt er nå renset.",
 		clean_ped_failed = "Kunne ikke rense ped.",
 		cleaned_ped_for_all = "Alle sine peder er nå renset.",
-		clean_ped_no_permission = "Forsøkte å rense en annen spiller sin ped uten nødvendig tillatelse.",
+		clean_ped_no_permission = "Forsøkte å rense en spillers ped uten riktige tillatelser.",
 
 		item_durability_set_success = "Durabiliteten er nå satt til ${amount}% for gjenstander i spalte ${slotId}.",
 		item_durability_set_failed = "Kunne ikke sette durabilitet.",
 		item_durability_invalid_amount = "Ugyldig durabilitetsbeløp (0 <> 100).",
-		item_durability_set_no_permission = "Forsøkte å sette durabilitet for en gjenstand uten nødvendig tillatelse.",
+		item_durability_set_no_permission = "Forsøkte å endre holdbarheten til et objekt uten tilstrekkelige tillatelser.",
 
-		item_metadata_set_no_permission = "Forsøkte å endre et gjenstandsmetadatas uten nødvendige tillatelser.",
+		item_metadata_set_no_permission = "Forsøkte å endre metadata til et objekt uten tilstrekkelige tillatelser.",
 		item_metadata_invalid_metadata = "Ugyldig gjenstandsmetadata.",
 		item_metadata_set_success = "Metadata for gjenstander i slot ${slotId} ble endret.",
 		item_metadata_set_failed = "Kunne ikke endre metadata.",
@@ -589,8 +567,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		scoop_invalid = "Du har ikke plukket opp noen spillere.",
 		unscooped_players = "Fjernet ${amount} av ${total} spiller(e).",
 		unscoop_failed = "Kunne ikke fjerne spillere.",
-
-		unscoop_missing_permissions = "Spilleren prøvde å fjerne spillere uten riktige tillatelser.",
 
 		toggle_collisions_missing_permissions = "Spilleren prøvde å slå av/på sin kollisjon uten riktige tillatelser.",
 		wipe_first_owned_missing_permissions = "Spilleren prøvde å slette sine egne objekter uten tilstrekkelig tillatelser.",
@@ -678,10 +654,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		model_already_added_to_list = "Modell `${modelName}` (${modelHash}) er allerede lagt til i oppdagelseslisten.",
 		removed_model_to_list = "Fjernet modell `${modelName}` (${modelHash}) fra oppdagelseslisten.",
 		model_not_in_list = "Modellen `${modelName}` (${modelHash}) er ikke lagt til på oppdagelseslisten.",
-		set_model_detected_not_staff = "Spilleren prøvde å legge til en modell på oppdagelseslisten, men hadde ikke riktig tillatelse til å gjøre det.",
-		set_model_undetected_not_staff = "Spilleren prøvde å fjerne en modell fra oppdagelseslisten, men hadde ikke riktig tillatelse til å gjøre det.",
-		add_detection_area_not_staff = "Spilleren prøvde å legge til et oppdagelsesområde, men hadde ikke riktig tillatelse til å gjøre det.",
-		remove_detection_area_not_staff = "Spilleren prøvde å fjerne et oppdagelsesområde, men hadde ikke riktig tillatelse til å gjøre det.",
 		detection_area_close = "[${InteractionKey}] Fjern deteksjonsområde (${areaId})",
 		detection_area = "Deteksjonsområde (${areaId})",
 
@@ -721,6 +693,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		clear_tasks_ban = "Dette er ikke et Jedi sinnetriksetreningssenter. Dine forsøk på å påvirke andres frie vilje er notert... og avvist.",
 		projectile_event_ban = "Dette er ikke Hogwarts og du er ikke Harry Potter. Vilkårlig bruk av trylleformler - eller prosjektiler - er ikke tillatt her.",
 		illegal_native_ban = "Du kan ikke bruke en trylleformel du ikke har lært ennå...",
+		underground_ban = "Du ser ut til å ha falt ned i et kaninhull.",
+		infinite_ammo_ban = "Til tross for populær tro, gjelder loven om bevaring også her. Den magiske ammunisjonspungen er beslaglagt.",
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Dårlig opprettelse",
@@ -757,6 +731,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		type_thermal_night_vision = "Termisk/Nattsyn",
 		type_vehicle_modification = "Kjøretøy Tilpasning",
 		type_illegal_native = "Ulovlig Native-kall",
+		type_underground = "Underjordisk",
+		type_infinite_ammo = "Uendelig ammunisjon",
 
 		event_prefix = "Anti-Cheat: ${type}",
 
@@ -825,6 +801,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		job_low = "lav jobb",
 		job_medium = "middels jobb",
 		job_high = "høy jobb",
+
+		banned_no_permissions = "Forsøkte å ${reason} uten tilstrekkelige tillatelser.",
 
 		banned_globally = "Du har blitt globalt utestengt fra alle OP-FW servere.\n\nUtvisnings-hash: ${banHash}\nUtestengelsesårsak: ${banReason}\n\nHvis du tror dette er en feil utestengelse, kan du bli med i OP-FW sin discord-guild for informasjon om hvordan du kan anke på ${frameworkDiscord}",
 		banned_locally = "Du har blitt utestengt fra ${communityName}.\n\nUtestengings-hash: ${banHash}\nUtestengt av: ${creatorName}\nUtestengingsgrunn: ${banReason}\nTidspunkt: ${timestamp}\n\n${indefiniteOrExpires}\n\nBesøk vår discord-server for informasjon om hvordan du kan anke på ${communityDiscord}.",
@@ -963,7 +941,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		wipe_command = "slett",
 		wipe_command_help = "Slett uønskede enheter fra kartet.",
 		wipe_command_parameter_distance = "avstand",
-		wipe_command_parameter_distance_help = "Hvis du kun ønsker å slette enheter innenfor en viss avstand, skriv inn en avstand her. La den være `false` eller `0` for hele kartet.",
+		wipe_command_parameter_distance_help = "Hvis du bare vil slette enheter innenfor en viss avstand, skriv inn en avstand her. Sett `-1` for hele kartet.",
 		wipe_command_parameter_ignore_local_entities = "ignorer lokale enheter",
 		wipe_command_parameter_ignore_local_entities_help = "Ignorer ikke-nettverksenheter? Hvis du rydder opp etter en juksemaker, anbefales det at du setter dette til `true` eller `1`.",
 		wipe_command_parameter_model_name = "modellnavn",
@@ -1047,6 +1025,14 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		replace_vehicle_command_parameter_model_name = "modellnavn",
 		replace_vehicle_command_parameter_model_name_help = "Modellnavnet på kjøretøyet du vil spawne.",
 		replace_vehicle_command_substitutes = "rv",
+
+		add_vehicle_command = "legg_til_kjøretøy",
+		add_vehicle_command_help = "Legg til et kjøretøy i noen sin garasje.",
+		add_vehicle_command_parameter_model = "modell",
+		add_vehicle_command_parameter_model_help = "Modellnavn eller modell hash av kjøretøyet du ønsker å legge til.",
+		add_vehicle_command_parameter_server_id = "server id",
+		add_vehicle_command_parameter_server_id_help = "Spillerens server-ID du ønsker å gi et kjøretøy til. Hvis du lar dette stå blankt vil det automatisk velge deg selv.",
+		add_vehicle_command_substitutes = "",
 
 		aimbot_command = "aimbot",
 		aimbot_command_help = "Slår 'aimbot' av og på.",
@@ -1998,8 +1984,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		fake_lag_command = "forfalsk_lag",
 		fake_lag_command_help = "Opprett forfalsket lag.",
-		fake_lag_command_parameter_counter = "teller",
-		fake_lag_command_parameter_counter_help = "Telleren som brukes til å skape forsinkelsen. Jo høyere denne verdien er, jo langsommere vil det være. For å deaktivere, la dette feltet være blankt eller skriv `0`.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "Mål-bildeoppdateringsfrekvensen (>= 1).",
 		fake_lag_command_substitutes = "forsinkelse",
 
 		view_weapon_command = "vis_våpen",
@@ -2481,7 +2467,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		wipe_ground_inventories_command = "slett_bakkeinventar",
 		wipe_ground_inventories_command_help = "Slett bakkeinventarer.",
 		wipe_ground_inventories_command_parameter_radius = "radius",
-		wipe_ground_inventories_command_parameter_radius_help = "Rensingsradius. Hvis du ikke fyller inn noe her, velges automatisk `100`. Gyldige verdier er `0` og høyere, samt `-1` som vil velge alle inventar.",
+		wipe_ground_inventories_command_parameter_radius_help = "Slett radiusen. Hvis dette er tomt, vil `5` bli automatisk valgt. Gyldige verdier er over `0`, samt `0` og `-1`, som vil velge alle inventar.",
 		wipe_ground_inventories_command_substitutes = "slett_inventar_på_bakken, slett_bakkeinv",
 
 		refresh_inventory_command = "oppdater_lager",
@@ -3266,6 +3252,12 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		vdm_clear_command_help = "Fjerner alle VDM-mål.",
 		vdm_clear_command_substitutes = "",
 
+		steal_vehicle_command = "stjel_kjøretøy",
+		steal_vehicle_command_help = "Får den nærmeste npc-en til å stjele målkjøretøyet.",
+		steal_vehicle_command_parameter_network_id = "nettverks-id",
+		steal_vehicle_command_parameter_network_id_help = "Kjøretøyets nettverks-id.",
+		steal_vehicle_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "voice_debug",
 		voice_debug_command_help = "Aktiver/deaktiver talefeilfeilsøking.",
@@ -3661,14 +3653,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		speed_limiter_command_help = "Overstyr hastighetsbegrensningens normale oppførsel for å forhåndsbestemme hastighetsgrensen.",
 		speed_limiter_command_substitutes = "sl, cc, cruise_control",
 
-		add_vehicle_command = "legg_til_kjøretøy",
-		add_vehicle_command_help = "Legg til et kjøretøy i noen sin garasje.",
-		add_vehicle_command_parameter_model = "modell",
-		add_vehicle_command_parameter_model_help = "Modellnavn eller modell hash av kjøretøyet du ønsker å legge til.",
-		add_vehicle_command_parameter_server_id = "server id",
-		add_vehicle_command_parameter_server_id_help = "Spillerens server-ID du ønsker å gi et kjøretøy til. Hvis du lar dette stå blankt vil det automatisk velge deg selv.",
-		add_vehicle_command_substitutes = "",
-
 		toggle_vehicle_weapons_command = "skift_kjøretøy_våpen",
 		toggle_vehicle_weapons_command_help = "Slår av/på bruk av våpen på et kjøretøy.",
 		toggle_vehicle_weapons_command_parameter_server_id = "server id",
@@ -3759,7 +3743,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 	emojis = {
 		emoji_list = "${emojis}",
-		refresh_emojis_no_permissions = "Spiller forsøkte å oppdatere emojis uten tilstrekkelige tillatelser.",
 		api_reported_no_updates = "Discord API rapporterte ingen oppdateringer i emojilisten.",
 		emojis_added = "La til ${added} emoji(er).",
 		emojis_removed = "Fjernet ${removed} emoji(er).",
@@ -3779,7 +3762,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	},
 
 	ping = {
-		get_pings_missing_permissions = "Spilleren prøvde å hente ping-ene, men hadde ikke de nødvendige tillatelsene for å gjøre det.",
 		getting_pings = "Henter ping-er fra alle spillerne. Dette kan ta noen sekunder.",
 		host_data = "${position}. ${location} - ${averagePing} Gjennomsnittlig ping (basert på ${totalPings} spillere), 10% lavt: ${averagePingLow}, 10% høyt: ${averagePingHigh}",
 		list_hosts = "${listHosts}"
@@ -3891,7 +3873,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		package_same_remaining_time = "Din pakke er `${packageName}`. Det vil utløpe om ${remainingTime}.",
 		no_package = "Du har ingen pakke.",
 		fetching_package_error = "En feil oppstod mens du prøvde å hente pakkeinformasjonen din.",
-		check_playtime_not_staff = "Spilleren prøvde å sjekke noen andres spilletid, men hadde ikke riktig tillatelse til å gjøre det.",
 		reason_unknown = "Årsak ukjent.",
 
 		unloaded_character = "Løste karakter.",
@@ -3900,8 +3881,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		user_not_found = "Den sendte brukeren ble ikke funnet på serveren.",
 		invalid_character_id = "Ugyldig karakter-ID-parameter sendt.",
 		invalid_license_identifier = "Ugyldig lisensidentifikatorparameter sendt.",
-
-		unload_character_not_staff = "Spilleren prøvde å fjerne en spillers karakter, men de hadde ikke tilstrekkelige rettigheter.",
 
 		unloaded_character_for_player_logs_title = "Fjernet karakter for spiller",
 		unloaded_character_for_player_logs_details = "${consoleName} fjernet ${targetConsoleName}'s karakter ${characterFullName} (${characterId}) med grunnen `${message}`.",
@@ -3942,9 +3921,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		invalid_destination_server_id = "Ugyldig destinasjon server-id.",
 		invalid_source_server_id = "Ugyldig kilde server-id.",
 		failed_teleport_player_to_player = "Klarte ikke å teleportere spiller til spiller.",
-		teleported_player_to_player = "Teleporterte spiller til spiller.",
-
-		teleport_player_missing_permissions = "Spiller forsøkte å teleportere en annen spiller, men hadde ikke de nødvendige tillatelsene til å gjøre det."
+		teleported_player_to_player = "Teleporterte spiller til spiller."
 	},
 
 	afk = {
@@ -3954,8 +3931,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Spiller prøvde å opprette et luftslipp, men hadde ikke de nødvendige tillatelsene til å gjøre det.",
-		create_airdrop_custom_missing_permissions = "Spiller prøvde å opprette et tilpasset luftslipp, men hadde ikke de nødvendige tillatelsene til å gjøre det.",
 		created_airdrop = "Opprettet en forsyningspakke av type `${airdropType}` med totalt ${itemAmount} gjenstand(er).",
 		no_valid_items_provided = "Ingen gyldige gjenstander ble oppgitt.",
 		created_airdrop_with_items = "Opprettet et luftslipp med følgende gjenstander inni:\n${itemsListed}"
@@ -3982,15 +3957,11 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Spiller prøvde å opprette et luftangrep, men hadde ikke de nødvendige tillatelsene til å gjøre det.",
-
 		airstrike_success = "Luftangrep opprettet vellykket.",
 		airstrike_failed = "Kunne ikke opprette luftangrep."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Spilleren prøvde å be om luftstøtte, men hadde ikke de nødvendige tillatelsene for å gjøre det.",
-
 		distance = "Avstand: ${distance}${unit}",
 		time_to_impact = "Tid til anslag: ${timeToImpact}",
 
@@ -4020,9 +3991,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		show_alert_success = "Varselen ble vist til spilleren.",
 		show_alert_everyone_success = "Varselen ble vist til alle.",
-		show_alert_failed = "Klarte ikke å vise varsel til spilleren.",
-
-		show_alert_missing_permissions = "Spilleren prøvde å vise et varsel til en annen spiller, men hadde ikke nødvendige tillatelser for å gjøre det."
+		show_alert_failed = "Klarte ikke å vise varsel til spilleren."
 	},
 
 	arcade = {
@@ -4303,10 +4272,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 	audio = {
 		audio_id = "Lyd ${audioId}",
-		illegal_sound_effect = "Forsøkte å sende instruksjoner til andre klienter for å spille av et eksternt lydeffekt.",
+		illegal_sound_effect = "Forsøkte å få andre klienter til å spille av en ekstern lyd uten riktige tillatelser.",
 		url_invalid = "Den oppgitte URL-en er ikke gyldig. Den må lastes opp på en sikker tilkobling. (https://)",
 		url_missing = "Vennligst legg til URL-en for lyden du prøver å spille av.",
-		play_audio_no_permissions = "Spiller forsøkte å spille av en lyd, men hadde ikke de nødvendige tillatelsene til å gjøre det.",
 		played_audio_for_self = "Spilte av lyd for deg selv.",
 		played_audio_for_player = "Spilte av lyd for ${consoleName}.",
 		played_audio_for_everyone = "Spilte av lyd for alle.",
@@ -4542,7 +4510,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		illegal_boombox_item_id = "Prøver å bruke en Boombox-gjenstand med en ugyldig gjenstand-id.",
 		logs_attempted_to_add_song_title = "Forsøkte å legge til sang",
 		logs_attempted_to_add_song_details = "${consoleName} forsøkte å legge til en sang med video-URL `${url}` til boombox med ID `${boomboxId}`.",
-		wipe_boomboxes_not_staff = "Spilleren forsøkte å slette boomboxes, men hadde ikke tillatelse til å gjøre det.",
 		logs_wiped_all_boomboxes_title = "Slettet alle boomboxes",
 		logs_wiped_all_boomboxes_details = "${consoleName} slettet alle boomboxes.",
 		logs_wiped_nearby_boomboxes_title = "Slettet nærliggende boomboxes",
@@ -4634,8 +4601,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		spawned_contract = "Kontrakt ble opprettet.",
 		spawned_contract_for = "Kontrakt ble opprettet for ${displayName}.",
 
-		spawn_contract_no_permissions = "Spilleren forsøkte å opprette en boost-kontrakt uten riktig tillatelse.",
-
 		already_max_vin_scratched_vehicles = "Du har allerede maksimalt antall VIN-skadete kjøretøy i garasjen din.",
 		contract_has_expired = "Denne kontrakten har utløpt.",
 		you_already_have_a_contract_started = "Du har allerede en pågående kontrakt."
@@ -4685,8 +4650,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	},
 
 	cargo = {
-		start_cargo_no_permissions = "Spilleren prøvde å starte lasttyveri, men hadde ikke tillatelse til å gjøre det.",
-		end_cargo_no_permissions = "Spilleren prøvde å avslutte lasttyveri, men hadde ikke tillatelse til å gjøre det.",
 		cargo_already_active = "Lasten er allerede aktiv.",
 		started_cargo = "Lastetyveri har begynt.",
 		cargo_not_active = "Lastetyveri er ikke aktiv.",
@@ -4699,7 +4662,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	},
 
 	casino = {
-		set_casino_screen_id_not_staff = "Spilleren prøvde å sette casino-skjerm-ID-en, men hadde ikke tillatelse til å gjøre det.",
 		successfully_set_screen_label = "Skjemalabelen '${screenLabel}' ble satt vellykket.",
 		successfully_queued_screen_label = "Skjermen med etikett `${screenLabel}` ble lagt til i køen.",
 		failed_to_set_screen_label = "Klarte ikke å sette skjermen til skjermen med etikett `${screenLabel}`.",
@@ -4767,8 +4729,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		blacklisted_video = "Svartelistet video med nøkkel `${videoKey}`.",
 		failed_to_blacklist_video = "Kunne ikke svarteliste video med nøkkel `${videoKey}`.",
 		video_is_already_blacklisted = "Videoen med nøkkel `${videoKey}` er allerede svartelistet.",
-
-		blacklist_video_missing_permissions = "Spilleren forsøkte å svarteliste en video, men har ikke de nødvendige tillatelsene.",
 
 		watching_movie = "Ser på ${title}",
 
@@ -4942,8 +4902,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		barber_menu_success = "Klarte ikke å veksle frisørsalongmeny.",
 		failed_toggle_barber_menu = "Åpnet frisørsalongmeny for ${consoleName}.",
 		invalid_server_id = "Ugyldig server-ID.",
-
-		clothing_menu_missing_permissions = "Spiller prøvde å åpne klesmenyen for en annen spiller, men hadde ikke nødvendige tillatelser.",
 
 		hats_and_helmets = "Hatter/Hjelmer",
 		glasses = "Briller",
@@ -5696,7 +5654,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		special_vehicle_won = "Du har vunnet et spesielt kjøretøy! Du kan finne det i garasjen din.",
 
-		reset_daily_activities_no_permissions = "Spilleren forsøkte å tilbakestille daglige aktiviteter uten tilstrekkelige tillatelser.",
 		reset_daily_activities = "Nullstill daglige aktiviteter.",
 
 		task_progress = "Oppgaveprogresjon: ${task} (${remain} gjenstår)",
@@ -5770,7 +5727,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		network_id_side = "Nettverks-ID: ${networkId}",
 		no_target = "Ingen mål",
 		invalid_radius_parameter = "Ugyldig `radius` parameter.",
-		inject_code_not_developer = "Spilleren prøvde å injisere kode, men de er ikke en utvikler.",
 		inject_code_invalid_player = "Det er ingen spillere med server id `${serverId}`.",
 		inject_code_success_for_everyone = "Koden ble vellykket injisert for alle.",
 		inject_code_success_for_player = "Koden ble vellykket injisert for ${consoleName}.",
@@ -5817,21 +5773,18 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		invalid_network_id = "Ugyldig nettverks-ID.",
 		delete_entity_success = "Vellykket slettet enhet med nettverks-ID ${networkId}.",
 		delete_entity_failed = "Klarte ikke slette enheten.",
-		delete_entity_no_permissions = "Spilleren prøvde å slette en enhet uten riktig tillatelse.",
+		delete_entity_no_permissions = "Forsøkte å slette et objekt uten riktige tillatelser.",
 
 		failed_entity_info = "Klarte ikke å hente informasjon om objektet.",
 		printed_entity_info = "Skrev ut objektets serverinformasjon i F8.",
 
 		move_entity_success = "Enhetsflyttingen av nettverks-ID-en ${networkId} ble vellykket.",
 		move_entity_failed = "Kunne ikke bevege enheten.",
-		move_entity_no_permissions = "Spilleren prøvde å flytte en enhet uten riktig tillatelse.",
+		move_entity_no_permissions = "Forsøkte å flytte et objekt uten riktige tillatelser.",
 
-		fake_lag_updated = "Falsk ventetid teller er oppdatert til `${counter}`.",
-		fake_lag_already_set_to = "Falsk ventetid teller er allerede satt til `${counter}`.",
-		fake_lag_enabled = "Falsk ventetid er aktivert med teller `${counter}`.",
-		fake_lag_invalid_counter_value = "Verdien `${counter}` er ikke en gyldig verdi for fake lag.",
+		fake_lag_invalid_fps = "Ugyldig fps.",
+		fake_lag_clamp = "Klamper fps til å være under ${fps}.",
 		fake_lag_disabled = "Fake lag er deaktivert.",
-		fake_lag_not_enabled = "Fake lag er ikke aktivert.",
 
 		weapon_name_missing = "Mangler navn på våpenparameter.",
 		weapon_name_invalid = "`${weaponName}` er ikke et gyldig navn på et våpen.",
@@ -5860,7 +5813,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		disabled_network_debug = "Nettverksfeilsøking for enheter er deaktivert.",
 		failed_network_debug = "Kunne ikke aktivere nettverksfeilsøking for enheter.",
 
-		network_owner_subscription_no_permissions = "Forsøkte å abonnere på enhetenes nettverkseiere uten tilstrekkelig tillatelse.",
+		network_owner_subscription_no_permissions = "Forsøkte å abonnere på nettverkseiere uten riktig tillatelser.",
 
 		missing_ipl = "Mangler parameteren ipl.",
 		enabled_ipl = "Ipl `${ipl}` er aktivert.",
@@ -6156,8 +6109,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	},
 
 	flag_swap = {
-		toggle_flag_swap_no_permissions = "Forsøkte å veksle flaggutvekslinger uten tilstrekkelige tillatelser.",
-
 		toggled_flag_swap_on = "Vekslet flaggutvekslinger på.",
 		toggled_flag_swap_off = "Byttet flaggbytte av.",
 
@@ -6181,16 +6132,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		failed_create = "Kunne ikke opprette kraftfelt.",
 		forcefield_marker = "ID: ${id}",
 		invalid_forcefield_id = "Ugyldig forcefield ID.",
-		failed_destroy = "Kunne ikke ødelegge forcefield.",
-
-		create_forcefield_no_permissions = "Spiller prøvde å opprette en forcefield, men hadde ikke tillatelse til å gjøre det.",
-		destroy_forcefield_no_permissions = "Spiller prøvde å ødelegge en forcefield, men hadde ikke tillatelse til å gjøre det."
+		failed_destroy = "Kunne ikke ødelegge forcefield."
 	},
 
 	fortnite = {
-		add_building_no_permissions = "Spiller prøvde å legge til en Fortnite-bygning, men hadde ikke tillatelse til å gjøre det.",
-		wipe_buildings_no_permissions = "Spilleren forsøkte å fjerne Fortnite-bygninger, men hadde ikke nødvendige tillatelser for å gjøre det.",
-
 		no_buildings_in_radius = "Det finnes ingen bygninger innenfor en radius på ${radius}.",
 		no_buildings = "Det finnes ingen bygninger.",
 		wiped_buildings_in_radius = "Fjernet ${removedBuildings} bygninger innenfor en radius på ${radius}.",
@@ -6402,7 +6347,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		press_to_exit_locker = "Trykk ~INPUT_CONTEXT~ for å forlate skapet.",
 		failed_to_start_escape_room = "Kunne ikke starte rømningsrom.",
 		started_escape_room = "Startet rømningsrom med ${playerAmount} spillere.",
-		start_escape_room_missing_permissions = "Spilleren prøvde å starte et rømningsrom, men hadde ikke de nødvendige tillatelsene til å gjøre det.",
 		escape_instructions = "Når du er ferdig, vil dørene låse opp og du vil kunne forlate bygningen.",
 		answer_the_phone = "Svar på telefonen.",
 
@@ -6416,8 +6360,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		successfully_revived_everyone = "Alle ble gjenopplivet.",
 		successfully_revived_everyone_removed_injuries = "Alle ble gjenopplivet og skadene ble fjernet.",
 		failed_to_revive = "Klarte ikke å utføre `/revive`-kommandoen riktig.",
-		revive_player_not_staff = "Spilleren forsøkte å gjenopplive en annen spiller, men hadde ikke de nødvendige tillatelsene til å gjøre det.",
-		revive_self_not_staff = "Spilleren forsøkte å gjenopplive seg selv, men hadde ikke de nødvendige tillatelsene til å gjøre det.",
 		revived_self_removed_injuries_title = "Gjenopplivet seg selv og fjernet skader",
 		revived_self_removed_injuries_details = "${consoleName} gjenopplivet seg selv og fjernet sine skader.",
 		revived_self_title = "Vekket til live selv",
@@ -6430,8 +6372,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		revived_player_removed_injuries_details = "${consoleName} har vekket ${targetConsoleName} og fjernet deres skader.",
 		revived_player_title = "Gjenopplivet spiller",
 		revived_player_details = "${consoleName} gjenopplivet ${targetConsoleName}.",
-		get_recent_deaths_not_staff = "Spilleren forsøkte å se nylige dødsfall, men hadde ikke riktige tillatelser.",
-		get_player_last_death_not_staff = "Spilleren forsøkte å se en spillers siste død, men hadde ikke riktige tillatelser.",
 		recent_deaths = "Nylige dødsfall",
 		no_recent_deaths = "Det er ingen nylige dødsfall.",
 		recent_deaths_list_entry = "${recentDeathId}. ${consoleName} døde for ${timer} sekunder siden.",
@@ -6459,7 +6399,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		no_players_in_range = "Ingen spillere i nærheten innenfor en radius på ${distance}m som er nede.",
 		successfully_revived_range = "Har vekket til live ${amount} spiller(e) i en ${distance}m radius.",
 		failed_revive_range = "Feilet å gjenopplive spillere.",
-		range_revive_not_staff = "Spilleren prøvde å gjenopplive spillere innenfor et visst område, men hadde ikke tillatelse til å gjøre det.",
 
 		cpr_ped_logs_title = "HLR-ete NPC",
 		cpr_ped_logs_details = "${consoleName} utførte HLR på en NPC og mottok $${money}.",
@@ -6577,6 +6516,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		pilot_license_details = "Flysertifikat | ${firstName} ${lastName} | Person-ID: ${characterId}",
 		weapon_license = "Våpenlisens",
 		weapon_license_details = "Våpenlisens | ${firstName} ${lastName} | Person-ID: ${characterId}",
+		mining_license = "Gruvedriftslisens",
+		mining_license_details = "Gruvedriftslisens | ${firstName} ${lastName} | Borger ID: ${characterId}",
 		just_showed_license = "Du viste akkurat et førerkort. Vennligst vent litt.",
 
 		just_showed_badge = "Du viste akkurat et legitimasjonsbevis. Vennligst vent litt.",
@@ -6710,13 +6651,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		failed_to_get_instance_players = "Kunne ikke hente spillere fra instansen.",
 		no_players = "Ingen spillere.",
 
-		instance_hud = "Instans ID: ${instanceId}",
-
-		create_instance_not_developer = "Spilleren forsøkte å opprette en instans, men hadde ikke rettigheter som utvikler.",
-		destroy_instance_not_developer = "Spilleren prøvde å ødelegge en instans, men de var ikke en utvikler.",
-		add_player_to_instance_not_developer = "Spilleren prøvde å legge til en spiller i en instans, men de var ikke en utvikler.",
-		remove_player_from_instance_not_developer = "Spilleren prøvde å fjerne en spiller fra en instans, men de var ikke en utvikler.",
-		get_players_from_instance_not_developer = "Spilleren prøvde å få spillere fra en instans, men de var ikke en utvikler."
+		instance_hud = "Instans ID: ${instanceId}"
 	},
 
 	interiors = {
@@ -6892,8 +6827,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		no_ground_inventories = "Det var ingen inventar på bakken å slette.",
 		no_ground_inventories_within_radius = "Det var ingen inventar på bakken å slette innenfor en radius på `${radius}`.",
 
-		wipe_inventories_not_staff = "Spilleren prøvde å slette inventar, men hadde ikke tilstrekkelige tillatelser til å gjøre det.",
-
 		logs_wiped_all_ground_inventories_title = "Slettet alle inventarer på bakken",
 		logs_wiped_all_ground_inventories_details = "${consoleName} slettet alle inventarer på bakken.",
 
@@ -6955,6 +6888,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		pilot_license_description = "En pilotlisens for å fly fly og annet.",
 		weapon_license = "Våpenlisens",
 		weapon_license_description = "En våpenlisens for å eie og bære høyere klassifiserte våpen.",
+		mining_license = "Gruvedriftslisens",
+		mining_license_description = "En gruvedriftslisens for gruvedrift.",
 
 		sasp_badge = "SASP merke",
 		sasp_badge_description = "Et merke for offiserer i San Andreas politidepartement.",
@@ -7033,6 +6968,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		advanced_lockpick_description = "Skjul barna dine, skjul kona di",
 		cleaning_kit = "Rengjøringssett",
 		cleaning_kit_description = "Perfekt for å rengjøre kjøretøyet ditt, eller blodflekkene du har latt tørke bak i bagasjerommet.",
+		scratch_remover = "Riperfjerner",
+		scratch_remover_description = "Brukes for å fjerne bulker og riper fra kjøretøyer.",
 
 		multi_tool = "Multiverktøy",
 		multi_tool_description = "Et verktøy som kan brukes til alle slags ting.",
@@ -7657,6 +7594,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		cone_description = "Kan plasseres hvor som helst.",
 		spike_strips = "Spikematte",
 		spike_strips_description = "Kan plasseres hvor som helst i verden.",
+		spike_strips_large = "Store punkteringsstrimler",
+		spike_strips_large_description = "Kan plasseres hvor som helst i verden.",
 		floodlight = "Flomlys",
 		floodlight_description = "Kan plasseres hvor som helst i verden.",
 		left_diversion_sign = "Skilt for venstre omkjøring",
@@ -7719,6 +7658,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		hiking_backpack = "Tursekk",
 		hiking_backpack_description = "Forbered deg til utendørs eventyr med denne stilige turssekken. Den gir et snev av en robust sjarm til antrekket ditt, selv om den er kun kosmetisk. Omfavn utforskerens ånd og vis frem din lidenskap for naturen uansett hvor du går!",
+		green_hiking_backpack = "Grønn Turlig Ryggsekk",
+		green_hiking_backpack_description = "Gjør deg klar for utendørs eventyr med denne stilige turryggsekken. Den gir et snev av robust sjarm til antrekket ditt, selv om den kun er kosmetisk. Omfavn utforskningens ånd og vis frem din utendørseentusiastiske stemning uansett hvor du går!",
+		blue_hiking_backpack = "Blå Turlig Ryggsekk",
+		blue_hiking_backpack_description = "Gjør deg klar for utendørs eventyr med denne stilige turryggsekken. Den gir et snev av robust sjarm til antrekket ditt, selv om den kun er kosmetisk. Omfavn utforskningens ånd og vis frem din utendørseentusiastiske stemning uansett hvor du går!",
 
 		gasoline_bottle = "Bensinflaske",
 		gasoline_bottle_description = "For rask påfylling til bilen eller...ehm...deg selv?",
@@ -8350,6 +8293,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	items = {
 		move_to_repair = "Flytt deg hit for å reparere kjøretøyet.",
 		repairing_vehicle = "Reparerer kjøretøy",
+		fix_visual_damage = "Reparerer visuell skade",
 		using_first_aid_kit = "Bruker førstehjelpspakke",
 		using_bandages = "Bruker bandasjer",
 		using_ifak = "Bruker IFAK",
@@ -8407,7 +8351,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		press_to_deposit = "Trykk ~INPUT_REPLAY_SHOWHOTKEY~ for å sette inn gjenstander i Online Jackpot.",
 		can_only_withdraw_at_casino = "Du kan bare ta ut penger på kasinoet.",
 
-		take_fee_no_permissions = "Spiller forsøkte å ta jackpot-avgifter uten riktig tillatelser.",
 		took_jackpot_fees = "Tok jackpot-avgifter. Fjernet ${removedTotalItems} gjenstander verdt $${removedTotalWorth} fra ${inventories} inventarer.",
 
 		jackpot = "Jackpot",
@@ -8513,7 +8456,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		something_went_wrong = "Klarte ikke å finne enheten.",
 		locate_success = "Fant enhet som samsvarer med `${filter}` på (${x}, ${y}, ${z}) (instans = ${instance}).",
 
-		locate_entity_no_permissions = "Spilleren forsøkte å lokalisere en enhet uten tilstrekkelige tillatelser.",
+		locate_entity_no_permissions = "Forsøkte å lokalisere en enhet uten tilstrekkelige tillatelser.",
 
 		locate_entity_logs_title = "Lokalisert enhet",
 		locate_entity_logs_details = "${consoleName} forsøkte å finne enhetstype `${filterType}` med verdi `${filterValue}`."
@@ -8596,6 +8539,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		queue = "Kø",
 		queue_position_with_priority = "🐌 Du er ${queuePosition}/${queueTotal} i køen med ${queuePriorityName} prioritet. 🕐${queueTime}",
 		queue_position_without_priority = "🐌 Du er ${queuePosition}/${queueTotal} i køen. 🕐${queueTime}",
+		live_on_twitch = "Kjeder du deg? Sjekk ut disse streamerne!",
+		live = "Direkte",
 		you_are_through = "Du er inne!",
 		join_server = "Bli med på serveren",
 		tired_of_queueing = "Gått lei av å stå i kø? Støtt oss for køprioritet!",
@@ -8614,6 +8559,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		weird_date_of_birth = "Prøv å velge en rimelig fødselsdato.",
 		invalid_backstory = "Manglende eller ugyldig bakgrunnshistorie (maks 5 000 tegn).",
 		backstory_too_short = "Bakgrunnshistorien din er for kort (minimum ${backstory} tegn).",
+
+		invalid_date = "Ugyldig fødselsdato.",
+		date_not_future = "Din fødselsdato kan ikke være i fremtiden.",
+		date_too_old = "Din fødselsdato kan ikke være eldre enn 100 år.",
 
 		bad_words = "Det er noen stygge ord i karakternavnet eller bakgrunnshistorien din.",
 		disallowed_name = "Det er noen uakseptable ord i karakternavnet ditt.",
@@ -8659,9 +8608,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		invalid_server_id = "Ugyldig server-ID.",
 		logs_failed = "Kunne ikke laste inn logger.",
 
-		close = "Lukk",
-
-		get_logs_no_permissions = "Spiller prøvde å hente logger uten korrekte tillatelser."
+		close = "Lukk"
 	},
 
 	loot = {
@@ -8706,8 +8653,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	magazines = {
 		issue_id = "Problem #${issueId}",
 		releases_updated = "Oppdateringer lagt til.",
-		no_release_changes = "Ingen endringer ble gjort.",
-		refresh_magazines_no_permissions = "Spiller forsøkte å oppdatere magasiner uten nødvendige tillatelser."
+		no_release_changes = "Ingen endringer ble gjort."
 	},
 
 	mdt = {
@@ -8889,15 +8835,12 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		bad_ped_message = "Forsøkte å opprette en potensielt dårlig ped-melding: \"${pedMessage}\"",
 		bad_twitter_post = "Forsøkte å opprette en potensielt dårlig twittermelding: \"${twitterPost}\"",
 		bad_phone_message = "Forsøkte å opprette en potensielt dårlig telefonmelding: \"${message}\"",
-		mute_toggle_not_staff = "Spilleren forsøkte å mute en annen spiller, men hadde ikke tilstrekkelige rettigheter til å gjøre det.",
-		unmute_toggle_not_staff = "Spilleren forsøkte å unmute en annen spiller, men hadde ikke tilstrekkelige rettigheter til å gjøre det.",
 		user_not_found = "Vi kunne ikke finne en bruker med server-ID `${serverId}`.",
 		player_already_muted = "${consoleName} har allerede blitt satt på mute.",
 		player_has_been_muted_no_reason = "${consoleName} har nå blitt satt på mute uten en spesifisert grunn.",
 		player_has_been_muted = "${consoleName} har nå blitt satt på mute med grunn: `${reason}`.",
 		player_not_muted = "${consoleName} er ikke satt på mute.",
 		player_has_been_unmuted = "${consoleName} er nå ikke lenger satt på mute.",
-		clear_chat_not_admin = "Spiller forsøkte å slette chatten for alle spillere, men hadde ikke tilstrekkelige tillatelser for å gjøre det.",
 		ooc_clear_chat_title = "Chat Cleared",
 		ooc_clear_chat_details = "${consoleName} tømte chatten for alle.",
 		muted_player = "Spiller dempet",
@@ -9880,8 +9823,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		failed_load_player = "Klarte ikke å laste inn spillerdata. Har du skrevet inn en gyldig server ID?",
 		failed_add_warning = "Kunne ikke legge til advarsel.",
 
-		get_info_no_permissions = "Spilleren forsøkte å hente informasjon om en annen spiller uten tilstrekkelige tillatelser.",
-
 		user_indefinitely_banned_warning_no_reason = "Jeg har uendelig utestengt denne personen uten en spesifisert grunn. Denne advarselen ble generert automatisk som et resultat av utestengelsen.",
 		user_indefinitely_banned_warning = "Jeg har uendelig utestengt denne personen med grunnen `${reason}`. Denne advarselen ble generert automatisk som et resultat av utestengelsen.",
 		user_temporarily_banned_warning_no_reason = "Jeg har utestengt denne personen uten en spesifisert grunn for ${displayTime}. Denne advarselen ble generert automatisk som et resultat av utestengelsen.",
@@ -10006,11 +9947,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		missing_emote = "Mangler emote parameter.",
 
 		emote_list = "Tilgjengelige NPC emotes: ${list}.",
-		task_list = "Tilgjengelige NPC tasks: ${list}.",
-
-		spawn_ped_missing_perms = "Prøvde å spawne en NPC uten tilstrekkelige tillatelser.",
-		remove_peds_missing_perms = "Prøvde å fjerne spawnet NPC'er uten tilstrekkelige tillatelser.",
-		ped_assign_task_missing_perms = "Forsøkte å tildele oppgave til spawnet ped uten tilstrekkelige tillatelser."
+		task_list = "Tilgjengelige NPC tasks: ${list}."
 	},
 
 	ped_steal = {
@@ -10067,7 +10004,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 	player_control = {
 		unable_to_drive_for_yourself = "Du kan ikke ta over for deg selv.",
-		drive_for_player_no_permissions = "Spiller prøvde å kjøre for en annen spiller, men hadde ikke de nødvendige tillatelsene for å gjøre det.",
 		player_is_not_nearby = "Spilleren med server-ID-en ${serverId} er ikke i nærheten.",
 		player_is_not_the_drive_of_a_vehicle = "Spilleren med server-ID-en ${serverId} er ikke sjåføren i et kjøretøy.",
 		press_to_stop_drive_for = "Trykk ~INPUT_FRONTEND_CANCEL~ for å stoppe kjøringen for spilleren."
@@ -10088,7 +10024,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	player_stats = {
 		hp = "HP",
 		armor = "Panser",
-		toggle_player_stats_no_permissions = "Spilleren forsøkte å slå på/av spiller statistikk uten tilstrekkelig tillatelse.",
 		updated_render_range = "Oppdaterte renderavstand til ${renderRange}.",
 		turned_player_stats_on = "Skrudd på spillerstatistikk.",
 		turned_player_stats_off = "Skrudd av spillerstatistikk."
@@ -10143,7 +10078,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 	props = {
 		illegal_prop_item_id = "Spiller forsøkte å bruke et rekvisitt med en ulovlig gjenstands-ID.",
-		spawn_prop_not_staff = "Spiller forsøkte å spawne et rekvisitt, men hadde ikke nødvendig tillatelse til å gjøre det.",
 		managing_props_help = "Du administrerer for øyeblikket rekvisitter. Gå bort til en rekvisitt og trykk på ~INPUT_CONTEXT~ for å plukke den opp.",
 		total_props = "Totalt antall rekvisitter: ${count}",
 		active_props = "Aktive rekvisitter: ${count}",
@@ -10172,7 +10106,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		invalid_wipe_radius = "Ugyldig slette-radius (mellom 1 og 100).",
 		wipe_successful = "Gjenstander ble slettet.",
-		wipe_props_missing_permissions = "Spiller forsøkte å slette gjenstander, men hadde ikke nødvendige tillatelser.",
 
 		placing_prop = "Plasserer gjenstand",
 		pickup_prop = "Plukker opp gjenstand",
@@ -10209,7 +10142,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		radio_debug_off = "Radio debug er skrudd av.",
 		radio_debug_on = "Radiodebugging skrudd på.",
 
-		radio_debug_no_permissions = "Forsøkte å skru på radiodebugging uten nødvendige tillatelser.",
+		radio_debug_no_permissions = "Forsøkte å slå av/på radio-debugging uten tilstrekkelige tillatelser.",
 
 		decrypt_frequency = "[${InteractionKey}] Dekryptér Frekvens",
 		decrypting_frequency = "Dekrypterer Frekvens",
@@ -10246,8 +10179,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	reskin = {
 		plastic_surgery = "Plastisk Kirurgi",
 		los_santos_police_dept = "LOS SANTOS POLITIDEPARTMENT",
-
-		reskin_player_no_permissions = "Spilleren prøvde å veksle radio debug uten riktig tillatelse.",
 
 		triggered_reskin_for_player = "Triggret reskin for ${consoleName}.",
 
@@ -10353,13 +10284,13 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		riot_mode_enabled = "Riotmodus aktivert.",
 		riot_mode_disabled = "Riot-modus deaktivert. Allerede aggressive personer vil fortsette å kjempe til de er døde.",
 		riot_mode_failed = "Kunne ikke bytte til Riot-modus.",
-		riot_mode_missing_perms = "Forsøkt å bytte til Riot-modus uten tilstrekkelig tillatelse.",
+		riot_mode_missing_perms = "Forsøkte å slå av/på opptøyer-modus uten tilstrekkelige tillatelser.",
 
 		riot_mode_enabled_help = "Riot-modus er nå aktivert.",
 		riot_mode_disabled_help = "Riot-modus er nå deaktivert.",
 
-		add_riot_player_no_permissions = "Forsøkt å legge til en spiller på Riot-lista uten tilstrekkelig tillatelse.",
-		remove_riot_player_no_permissions = "Forsøkt å fjerne en spiller fra Riot-lista uten tilstrekkelig tillatelse.",
+		add_riot_player_no_permissions = "Forsøkte å legge til en spiller på opprørslisten uten tilstrekkelige rettigheter.",
+		remove_riot_player_no_permissions = "Forsøkte å fjerne en spiller fra opprørslisten uten tilstrekkelige rettigheter.",
 
 		player_already_in_riot_list = "${consoleName} er allerede på opptøyslisten.",
 		player_not_in_riot_list = "${consoleName} er ikke på opptøyslisten.",
@@ -10626,7 +10557,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		finding_player = "Leter etter spiller",
 
 		invincibility_active = "Uovervinnelighet: ~r~Aktiv~w~",
-		invincibility_inactive_dead = "Uovervinnelighet: ~g~Inaktiv~w~ (død)",
+		invincibility_inactive_dead = "Uovervinnelighet: ~g~Aktiv~w~ (død)",
+		invincibility_inactive_trunk = "Uovervinnelighet: ~g~Aktiv~w~ (bagasjerom)",
 		invincibility_inactive = "Uovervinnelighet: ~g~Inaktiv~w~",
 
 		health_ok = "Helse: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
@@ -10698,7 +10630,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	status = {
 		status_reset = "Statusen for ${consoleName} har blitt tilbakestilt.",
 		status_reset_failed = "Ingen bruker med server ID `${serverId}` ble funnet.",
-		reset_status_not_staff = "Forsøkte å tilbakestille en spiller sin status uten nødvendige tillatelser.",
 		status_reset_for_all = "Alle sine status er nå tilbakestilt.",
 		status_disabled = "Slått av statusene (stress, sult og tørst).",
 		status_enabled = "Slått på statusene (stress, sult og tørst).",
@@ -10711,8 +10642,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		set_body_armor_level_everyone_details = "${consoleName} satte kroppspansernivået for alle til `${bodyArmorLevel}`.",
 		set_body_armor_level_player_title = "Sett Kroppsbeskyttelsesnivå For Spiller",
 		set_body_armor_level_player_details = "${consoleName} oppdaterte ${targetConsoleName} og satte kroppsbeskyttelsesnivået deres til `${bodyArmorLevel}`.",
-		set_body_armor_level_player_not_staff = "Spilleren forsøkte å endre en annen spillers kroppsbeskyttelsesnivå, men hadde ikke tilstrekkelige tillatelser til å gjøre det.",
-		set_body_armor_level_self_not_staff = "Spilleren forsøkte å endre sitt eget kroppsbeskyttelsesnivå, men hadde ikke tilstrekkelige tillatelser til å gjøre det.",
 		stress_level_warning = "Du er stresset! Senk stressnivået ved å røyke sigaretter, joints eller gjøre aktiviteter som yoga."
 	},
 
@@ -10725,7 +10654,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		missing_hour = "Ingen time oppgitt.",
 		invalid_hour = "Lokal tid-overskrivning er ugyldig. Verdien må være en tid mellom 0:00 og 23:59.",
 		hour_changed = "Timen er nå satt til `${hour}`.",
-		set_hour_not_staff = "Forsøkte å endre tid uten nødvendige tillatelser.",
 
 		local_time_override_enabled = "Lokal tid er satt til ${hour}:${minute}.",
 		local_time_override_disabled = "Tilbakestill lokaltiden til standard.",
@@ -10735,27 +10663,21 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		missing_minute = "Ingen minutter angitt.",
 		invalid_minute = "Minutten `${minute}` er ugyldig. Verdien bør være mellom 0 og 59.",
 		minute_changed = "Minuttet er nå satt til `${minute}`.",
-		set_minute_not_staff = "Forsøkte å sette minuttet uten nødvendige tillatelser.",
 
 		missing_weather = "Ingen værtype angitt.",
 		invalid_weather = "Været `${weatherName}` er ikke gyldig. Gyldige værnavn er KLART, EKSTRASOL, SKYER, OVERSKYET, REGN, OPPLYSNING, TORDEN, SMOG, TÅKETE, JULETID, SNØLYS og SNØSTORM.",
 		weather_changed = "Været er nå endret til `${weatherName}`.",
 		weather_advanced = "Været er nå avansert til `${weatherName}`.",
 		weather_advance_fail = "Kunne ikke endre været naturlig.",
-		set_weather_not_staff = "Forsøkte å endre været uten nødvendig tillatelse.",
-		advance_weather_not_staff = "Forsøkte å avansere været uten nødvendig tillatelse.",
 
 		time_frozen = "Tiden er nå fryst.",
 		time_unfrozen = "Tiden er ikke lenger fryst.",
-		freeze_time_not_staff = "Forsøkte å fryse tiden uten nødvendige tillatelser.",
 
 		weather_frozen = "Været er nå fryst.",
 		weather_unfrozen = "Været er ikke lenger fryst.",
-		freeze_weather_not_staff = "Forsøkte å fryse været uten nødvendige tillatelser.",
 
 		blackout_enabled = "Det er nå strømbrudd i byen.",
 		blackout_disabled = "Byen har ikke lenger strømbrudd.",
-		blackout_not_staff = "Forsøkte å slå på eller av strømbrudd uten nødvendige tillatelser.",
 
 		weather_changed_title = "Været har endret seg",
 		weather_changed_details = "${consoleName} endret været til `${weatherName}`.",
@@ -11109,8 +11031,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	},
 
 	trains = {
-		spawn_train_missing_permissions = "Spiller forsøkte å spawne et tog, men hadde ikke tilstrekkelige tillatelser til å gjøre det.",
-
 		invalid_track_id = "Ugyldig spor-ID oppgitt.",
 		spawned_train_on_track = "Spawnet et tog på spor ${trackId}.",
 		failed_to_spawn_train = "Kunne ikke spawne et tog."
@@ -11126,7 +11046,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	treasure_maps = {
 		no_treasure_map_with_tier = "Det finnes ingen skattekart med nivå ${mapTier}.",
 		treasure_map_does_not_have_piece = "Skattekart med nivå ${mapTier} har ikke stykke ${pieceNumber}.",
-		spawn_map_piece_missing_permissions = "Spiller forsøkte å spawne et kartstykke uten tilstrekkelige tillatelser.",
 
 		sketchy_map = "Skisseaktig kart",
 		worn_map = "Slitt kart",
@@ -11156,9 +11075,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		set_ocean_scaler_no_permission = "Spilleren hadde ikke tilstrekkelig tillatelse til å endre havskalerens intensitet.",
 
 		tsunami_started = "Tsunamien har startet. Det vil ta ${minutes} minutter å oversvømme hele kartet.",
-		tsunami_stopped = "Tsunami stoppet.",
-
-		toggle_tsunami_no_permissions = "Forsøkte å slå på eller av tsunamien uten tilstrekkelige rettigheter."
+		tsunami_stopped = "Tsunami stoppet."
 	},
 
 	tuner_shop = {
@@ -11195,8 +11112,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		cleared_vdm = "Fjernet ${amount} vdm-mål.",
 		failed_vdm_clear = "Kunne ikke fjerne vdm-mål.",
 		added_vdm_target = "NPC med nettverks ID ${networkId} målretter nå ${target}.",
-
-		vdm_no_permissions = "Spiller forsøkte å bruke vdm-kommandoen uten tilstrekkelig tillatelse."
+		no_ped_available = "Ingen nærliggende person er tilgjengelig.",
+		failed_steal = "Kunne ikke stjele kjøretøy.",
+		stealing_vehicle = "En nærliggende person ble instruert om å stjele kjøretøyet (${distance}m)."
 	},
 
 	vending_machines = {
@@ -11278,10 +11196,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	},
 
 	wizard = {
-		action_missing_permissions = "Prøvde å la en spiller gjøre en wizard handling uten tilstrekkelige tillatelser.",
-		action_radius_missing_permissions = "Forsøkte å få spillere innenfor et visst område til å utføre trollmannsaksjoner uten riktige tillatelser.",
-		run_as_missing_permissions = "Forsøkte å utføre en kommando som en annen spiller uten riktige tillatelser.",
-
 		menu_title = "Trollmann",
 
 		ragdoll_player = "Gi seg",
@@ -11367,8 +11281,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		invalid_explosion_type = "Eksplosjonstypen '${explosionType}' er ikke gyldig.",
 		invalid_camera_shake = "Kamerabevegelse `${cameraShake}` er ikke gyldig.",
 		invalid_damage_scale = "Skade skala `${damageScale}` er ikke gyldig.",
-		created_explosion = "Skapte en eksplosjon av typen `${explosionTypeName}` med en skade skala på `${damageScale}` og kamerabevegelse på `${cameraShake}`.",
-		create_explosion_not_developer = "Spiller forsøkte å skape en eksplosjon, men de var ikke en utvikler."
+		created_explosion = "Skapte en eksplosjon av typen `${explosionTypeName}` med en skade skala på `${damageScale}` og kamerabevegelse på `${cameraShake}`."
 	},
 
 	functions = {
@@ -11489,7 +11402,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	},
 
 	duty = {
-		toggle_duty_status_no_permissions = "Spilleren prøvde å slå på duty status via kommando uten tilstrekkelige tillatelser.",
+		toggle_duty_status_no_permissions = "Forsøkte å slå av/på tjenestestatusen via kommando uten tilstrekkelige tillatelser.",
 
 		duty_status_on = "Du er nå på tjeneste.",
 		duty_status_off = "Du er nå ute av tjeneste.",
@@ -11604,6 +11517,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		license_hunting = "Jaktkort",
 		license_fishing = "Fiskekort",
 		license_weapon = "Våpenlisens",
+		license_mining = "Gravlisens",
 		gave_character_license = "Ga ${characterName} lisens `${licenseLabel}`.",
 		character_already_has_license = "${characterName} har allerede lisensen `${licenseLabel}`.",
 		removed_character_license = "Fjernet lisens `${licenseLabel}` fra ${characterName}.",
@@ -11737,8 +11651,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		not_in_a_vehicle = "Du er ikke i et kjøretøy.",
 		vehicle_engine_on = "Motoren kjører fortsatt.",
 
-		set_fuel_no_permissions = "Spilleren prøvde å sette bensinmengden på en bil uten riktige tillatelser.",
-
 		vehicle_exploded_logs_title = "Kjøretøy eksploderte",
 		vehicle_exploded_logs_details = "${consoleName} fylte på et kjøretøy og utløste en eksplosjon på grunn av en igangkjørt motor."
 	},
@@ -11834,11 +11746,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "Skrudd på garasje-feilsøking.",
 		toggle_garage_debug_toggled_off = "Skrudd av garasje-feilsøking."
-	},
-
-	handlings = {
-		set_handling_override_not_super_admin = "Spilleren forsøkte å endre kjøretøyets egenskaper uten riktig tillatelse.",
-		remove_handling_override_not_super_admin = "Spilleren forsøkte å fjerne endringer i kjøretøyets egenskaper uten riktig tillatelse."
 	},
 
 	keys = {
@@ -11965,31 +11872,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		toggle_brakes_off = "Satt på bremsene.",
 		failed_modify_brakes = "Kunne ikke endre bremsene.",
 
-		toggle_disabled_brakes_no_permissions = "Spiller forsøkte å endre deaktivering av bremser via kommando uten riktig tillatelser.",
-
-		-- NOTE: `add_vehicle` command:
-		add_vehicle_not_super_admin = "Spilleren forsøkte å legge til et kjøretøy til en annen spillers garasje uten riktig tillatelser.",
-		add_vehicle_added_vehicle_for_everyone = "La til kjøretøy med modellnavn `${modelName}` for alle.",
-		add_vehicle_added_vehicle_for_player = "La til kjøretøy med modellnavn `${modelName}` for ${consoleName}.",
-		add_vehicle_added_vehicle = "La til kjøretøy med modellnavn `${modelName}`.",
-		add_vehicle_character_not_loaded = "Målspilleren hadde ingen aktive karakterer.",
-		add_vehicle_target_user_not_found = "Målbrukeren kunne ikke bli funnet.",
-		add_vehicle_invalid_input = "Ugyldig input.",
-		add_vehicle_no_permissions = "Ingen tillatelser.",
-		add_vehicle_user_not_found = "Brukeren kunne ikke bli funnet.",
-		add_vehicle_invalid_player = "Det er ingen spillere med server-ID `${serverId}`.",
-		add_vehicle_invalid_model_name = "Modell navnet `${modelName}` er ikke gyldig.",
-		add_vehicle_no_model_name = "Ingen modellnavn lagt til.",
-
-		added_vehicle_for_everyone_logs_title = "La til kjøretøy for alle",
-		added_vehicle_for_everyone_logs_details = "${consoleName} la til et kjøretøy med modellnavn `${modelName}` i alles garasjer.",
-		added_vehicle_for_player_logs_title = "La til kjøretøy for spiller",
-		added_vehicle_for_player_logs_details = "${consoleName} la til et kjøretøy med modellnavn `${modelName}` i ${targetConsoleName}s garasje.",
-		added_vehicle_logs_title = "La til kjøretøy",
-		added_vehicle_logs_details = "${consoleName} la til kjøretøy med modellnavn `${modelName}` i sin garasje.",
-
 		-- NOTE: `toggle_vehicle_weapons` command:
-		toggle_vehicle_weapons_not_super_admin = "Spilleren forsøkte å aktivere/koble av våpen på et kjøretøy uten tilstrekkelige tillatelser.",
 		toggled_vehicle_weapons_on = "Aktiverte våpen på kjøretøy.",
 		toggled_vehicle_weapons_off = "Koblet av våpen fra kjøretøy.",
 		toggled_vehicle_weapons_vehicle_is_not_networked = "Kjøretøyet du er i er ikke tilkoblet nettverket.",
@@ -12144,6 +12027,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		ems_boat_hq = "EMS Båtbase",
 		ems_garage = "EMS Garasje",
 		e_to_get_treated = "[E] Behandling - $1250",
+		e_check_in_player = "[E] Sjekk inn medbrakt spiller - $1250",
+		check_in_blocked = "Sjekk inn er opptatt",
 		get_treated = "Få behandling - $1250",
 		you_are_being_treated = "Du blir behandlet",
 		being_treated = "Behandles",

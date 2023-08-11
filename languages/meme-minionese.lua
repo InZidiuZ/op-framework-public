@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 18 (do not change)
+-- AUTO LOCALES: 19 (do not change)
 
 OP.Global.Locales.Languages["meme-minionese"] = {
 	-- configuration settings for language
@@ -61,7 +61,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		you_are_not_being_carried = "Bello, you not being carried right now!",
 		successfully_uncarried = "Aha! Force stopped carry successfully.",
 		failed_uncarried = "Aww... Failed to force stop carry.",
-		uncarry_missing_permissions = "Me attempted to force stop carry without proper permission.",
+		uncarry_missing_permissions = "Bee-do! Attempted to force stop carry without proper permissions.",
 
 		uncarry_logs_title = "Force Uncarry",
 		uncarry_logs_details = "${consoleName} forced ${targetName} to stop carrying them.",
@@ -78,7 +78,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 	-- base/*
 	admin = {
-		feature_toggle_not_admin = "Me want banana! Attempted to toggle their own or someone else's '${featureName}', but didn't have proper permissions to do so.",
 		feature_toggle_activated_logs_title = "Remotely Toggled Feature. Bello!",
 		feature_toggle_activated_logs_details_state = "${consoleName} gobbledygooked `${featureName}` ${newState} for player ${targetConsoleName}.",
 		feature_toggle_activated_all_logs_title = "Remotely Gobbledygooked Feature For Everyone",
@@ -101,9 +100,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		failed_to_spawn_vehicle = "Bello! Failed to spawn vehicle.",
 		spawned_vehicle_for_player = "Bello! Successfully spawned `${modelName}` for ${displayName}.",
 		spawned_vehicle_for_everyone = "Excellent! A `${modelName}` vehicle has been spawned for everyone.",
-		spawn_vehicle_no_permissions = "Bello! Player attempted to spawn a vehicle but didn't have the required permissions to do so.",
-		replace_vehicle_no_permissions = "Uh oh! Player tried to replace their vehicle, but they don't have the permission to do that.",
-		create_vehicle_no_permissions = "Banana! Player tried to create a vehicle, but they don't have the permission to do that.",
 		spawned_vehicle_for_self_title = "Bello Bananu Caro",
 		spawned_vehicle_for_self_details = "${consoleName} tuba tuba tuba tuba tuba tuba tuba tuba tuba tuba tuba tuba tuba tuba tuba tuba tuba tuba tuba tuba tuba tuba tuba tuba tuba ${modelName}.",
 		spawned_vehicle_for_player_title = "Bello Bananu Caro for Minion",
@@ -113,6 +109,26 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		vehicle_created = "Poppadom poppa! Successfully created vehicle.",
 		failed_vehicle_creation = "Ahh... Sorry boss, creation of vehicle failed.",
+
+		-- NOTE: `add_vehicle` command:
+		add_vehicle_added_vehicle_for_everyone = "Bello! Added vehicle with model name `${modelName}` for everyone.",
+		add_vehicle_added_vehicle_for_player = "Bello! Added vehicle with model name `${modelName}` for ${consoleName}.",
+		add_vehicle_added_vehicle = "Bello! Added vehicle with model name `${modelName}`.",
+		add_vehicle_character_not_loaded = "Bee-do! The target player had no characters loaded.",
+		add_vehicle_target_user_not_found = "Bee-do! The target user could not be found.",
+		add_vehicle_invalid_input = "Bellopo inputpo.",
+		add_vehicle_no_permissions = "No nopopo.",
+		add_vehicle_user_not_found = "Userpo not noundfo.",
+		add_vehicle_invalid_player = "There were no players with server ID `${serverId}`. Gelatooo!",
+		add_vehicle_invalid_model_name = "The model name `${modelName}` is not a valid model. Banana!",
+		add_vehicle_no_model_name = "No modelo namepo addedpo. Gelatooo!",
+
+		added_vehicle_for_everyone_logs_title = "Added Vehicle For Everyone",
+		added_vehicle_for_everyone_logs_details = "${consoleName} addedpo a vehicle with model name `${modelName}` to everyone's garages. Minion bopadoo!",
+		added_vehicle_for_player_logs_title = "Tulaliloo ti Amoeba Tally Man",
+		added_vehicle_for_player_logs_details = "${consoleName} tulaliloo a vehicle with model name `${modelName}` to ${targetConsoleName}'s garage.",
+		added_vehicle_logs_title = "Tulaliloo ti Amoeba",
+		added_vehicle_logs_details = "${consoleName} tulaliloo a vehicle with model name `${modelName}` to their garage.",
 
 		invalid_amount = "Bananaaaa? Invalid amount. (Translation: Sorry, the amount you entered is invalid.)",
 
@@ -160,8 +176,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		removed_bank_from_player = "Bee doo bee doo bee doo removed $${amount} bank from ${targetConsoleName}.",
 		removed_bank_from_everyone = "Bee doo bee doo bee doo removed $${amount} bank from everyone.",
 
-		money_event_not_admin = "Me no understand banana language. Cannot toggle money event `${moneyEvent}`.",
-
 		spawned_item_title = "Spawned Item",
 		spawned_item_details = "${consoleName} spawned in ${amount}x `${itemName}` for themselves.",
 		spawned_item_for_player_title = "Bello! Tasanvalia Ile Poopaye!",
@@ -178,7 +192,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		announcement_logs_title = "Bello Server Wide Announcement",
 		announcement_logs_details = "${consoleName} bello-broadcasted the following message to the entire server: `${announcementMessage}`",
-		announcement_not_admin = "Bello-attempted to post a staff announcement.",
 
 		posted_announcement = "Bee-doo! Posted announcement message.",
 		posted_announcement_locale = "Bee-do Bee-do! Posted announcement message from locale.",
@@ -188,7 +201,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		staff_title = "BA-NA-NA ${staffName}",
 		staff_message_logs_title = "Staff Message",
 		staff_message_logs_details = "${consoleName} bah dah bee doh-ed the following message in da staff chat: `${staffMessage}`",
-		staff_message_illegal = "Bee doh, bee doh! Player attempted sending a message in da staff chat, but wasn't staff.",
 
 		staff_pm_title = "STAFF PM ${transmissionTitle}",
 		staff_pm_logs_title = "Staff PM",
@@ -218,7 +230,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		missing_valid_license_identifier_parameter = "Me want bananaaaa! Missing a valid 'licenseIdentifier' parameter.",
 
-		illegal_entity_wipe = "Me not happy! Player attempted to wipe entities, but didn't have permissions.",
 		wiped_entities = "Balloo. Delete ${deletedEntities} boom-boom entities.",
 		wipe_entities_logs_title = "Bababa! Wiped Entities",
 		wipe_entities_logs_details = "${consoleName} asked for a bananaaaa! Me issued an entity wipe with the following configuration: distance = `${distance}`, ignoreLocalEntities = `${ignoreLocalEntities}`, modelName = `${modelName}`",
@@ -261,12 +272,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		ban_quadrouple_kill = "😨 BANANA BANANA BANANA BANANA!!!!!!",
 		ban_killing_spree = "🤯 BANANA BANANA BANANA (${count})!!!!!!",
 
-		kick_player_not_staff = "Banana banana banana, banana boopity boopity boo, banana without proper permissions.",
-		ban_player_not_staff = "Babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble",
-
-		hide_staff_not_staff = "Bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa",
-		toggle_staff_not_staff = "Bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa bababa",
-
 		logs_hide_staff_title = "Staff Hidden",
 		logs_hide_staff_hidden_details = "${consoleName} has hidden their staff status in Minionese language.(Note: The words may not be exact translations if translated using an automatic translator)",
 		logs_hide_staff_shown_details = "${consoleName} has shown their staff status in Minionese language.(Note: The words may not be exact translations if translated using an automatic translator)",
@@ -282,10 +287,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		staff_feature_unavailable = "Bello! Pwaa! Pwaa! Pwaa! Pwaa! Pwaa! Pwaa! This feature is unavailable while your staff availability is toggled off.",
 
-		toggle_player_track_no_permissions = "Sinubukan na paganahin ang player tracking ng walang naaangkop na pahintulot.",
-		set_job_no_permissions = "Sinubukan na maglagay ng trabaho nang walang naaangkop na pahintulot.",
-		toggle_reflection_no_permissions = "Bello! Attempted to toggle damage reflection without proper permissions.",
-
 		success_enable_reflection = "Bello! Successfully enabled reflection.",
 		success_disable_reflection = "Bello! Successfully disabled reflection.",
 		failed_toggle_reflection = "Bello! Failed to toggle reflection.",
@@ -296,12 +297,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		headache_logs_title = "Bello-triggered Headache",
 		headache_logs_details = "${consoleName} has triggered a headache for ${targetConsoleName}. Bello-bello!",
-		trigger_headache_no_permissions = "Boop-boop! You don't have permission to trigger a headache. Bello!",
 
 		super_jump_logs_title = "Banana! Super Jump toggled!",
 		super_jump_logs_details_on = "${consoleName} has bee-boo toggled their super jump on.",
 		super_jump_logs_details_off = "${consoleName} has bee-boo toggled their super jump off.",
-		toggle_super_jump_no_permissions = "Banana! Attempted to toggle their super jump without banana permissions.",
 
 		success_trigger_headache = "Successfully triggered a headache for ${playerName}. Bello-bello!",
 		failed_trigger_headache = "Failed to trigger a headache. Oopsie-doopsie. Bello!",
@@ -311,7 +310,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		reset_spawn_success = "Tulala set spawnkup legoya.",
 		reset_spawn_failed = "Bello tulala reset spawnkup!",
 
-		protective_mode_not_staff = "Bello! Attempted ta toggle da server's protective mode without da proper permissions.",
 		protective_mode_toggled_on = "Da server's protective mode has been toggled on! Required playtime to connect to da server is now set to `${playtime}`.",
 		protective_mode_toggled_off = "Da server's protective mode has been toggled off!",
 		protective_mode_already_on = "Server's protective mode already on with required playtime at `${playtime}`.",
@@ -320,13 +318,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		logs_protective_mode_on = "${consoleName} toggled banana language protective mode on with required playtime: `${playtime}`.",
 		logs_protective_mode_off = "${consoleName} toggled banana language protective mode off.",
 
-		spawn_item_not_staff = "Bababa Lala Bello Underweaaar Banana Nanaa!",
 		no_item_name = "No item banana banana.",
 		invalid_item_name = "${itemName} is not a valid chasy name.",
 		item_spawned = "Spotted ${amount}x `${itemName}` for ${consoleName}.",
 		item_spawned_for_everyone = "Bee-do Bee-do ${amount}x `${itemName}` for everyone.",
 
-		set_warning_message_not_staff = "Bello! Attempted to set the server's warning message without proper permissions.",
 		warning_message_set_to = "Bee-do Bee-do! The warning message has been set to `${warningMessage}`.",
 		warning_message_removed = "Bee-do! The warning message been removed.",
 		warning_message_error = "Baboi! An error occurred while trying to set the warning message.",
@@ -368,6 +364,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		evidence_view_details_on = "${consoleName} turned on the advanced evidence view. Bee-do!",
 		evidence_view_details_off = "${consoleName} turned off the advanced evidence view. Bee-do, Bee-do!",
 
+		tracker_turned_on = "Bello, bello! Bananaaaa! Your tracker has been turned on.",
+		tracker_turned_off = "Para la banana! Your tracker has been turned off.",
+
 		report_muted_no_reason = "Bee-do. You got muted from sending reports without a reason. Bee-do!",
 		report_muted = "You are muted from sending reports for the reason: '${reason}'. Bee-do!",
 
@@ -388,9 +387,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		teleported_to_waypoint_logs_title = "Teleported To Waypoint (Translated in Minionese)",
 		teleported_to_waypoint_logs_details = "${consoleName} teleported to a waypoint at ${locationLabel}. Oh la la!",
 
-		teleport_to_coordinates_not_staff = "Sorry, only minions can teleport through coordinates. Bananaaa!",
-		teleport_to_waypoint_not_staff = "Bello! The player tried to teleport to a waypoint but they are not a staff minion.",
-
 		failed_isolate = "Bababa! Failed to isolate player.",
 		invalid_server_id = "Baboi! Invalid server id.",
 		isolate_success_on = "Poopaye! Successfully isolated ${consoleName}.",
@@ -402,8 +398,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		population_density_set_off = "Bello! The population density multiplier override has been turned off.",
 		population_density_is_not_on = "Me want banana! The population density multiplier override is not on.",
 		population_density_already_set_to = "POOPAYE! The population density multiplier override is already set to ${multiplierLabel}%",
-
-		population_density_not_super_admin = "Bee do bee do! Player attempted to set the population density without proper permissions.",
 
 		enabled_features_list = "Bello! Enabled Features:",
 		aimbot_feature = "Aimbot",
@@ -448,8 +442,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		vehicle_smoke_invalid_class = "Bababa! Vehicle smoke cannot be enabled for this vehicle class.",
 
-		repair_vehicle_not_super_admin = "Mwahahahaha! Player attempted to repair a vehicle without proper permissions.",
-
 		repaired_vehicle_logs_title = "Vehicle has been repaired",
 		repaired_vehicle_logs_details = "${consoleName} bee doh bee doh the vehicle they were in.",
 
@@ -464,9 +456,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		set_vehicle_livery_logs_title = "Poopaye Vehicle Livery",
 		set_vehicle_livery_logs_details = "${consoleName} set the livery of a vehicle with the plate `${vehiclePlate}` to `${liveryIndex}`. (Bello!)",
-
-		set_livery_missing_permissions = "Baboi! Player attempted to set the livery of a vehicle without proper permissions.",
-		set_modifications_missing_permissions = "Baboi! Player attempted to set a modification of a vehicle without proper permissions.",
 
 		set_vehicle_modification = "Set vehicle modification for vehicle for mod type `${modType}` to index `${modIndex}`. (Custom Tires: ${customTires}) Bello!",
 		mod_index_invalid_for_type = "Belloo banaaaanaaa `${modIndex}` is invalid for mod type `${modType}`.",
@@ -486,15 +475,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		invalid_dirt_level = "Aiya! Dirt level is not valid.",
 		set_dirt_level = "Mwah! Dirt level of car is now `${dirtLevel}`.",
 
-		set_dirt_level_not_super_admin = "Huh? This player tried to set the dirt level of a car without permission.",
-
-		set_fake_plate_not_super_admin = "Ugh! This player tried to set a fake plate for a car without permission.",
-
 		already_fake_disconnecting = "Belloo belloo belloo, yon already attempting to faykay disconnect. Tank yu.",
 		started_fake_disconnect = "Started faykay disconnect. Repeat da command to stop.",
 		stopped_fake_disconnect = "Stopped faykay disconnect. Belloo!",
-
-		fake_disconnect_not_super_admin = "Player attempted to faykay disconnect without proper permissions. Bananna!",
 
 		disabled_idle_cam = "Disabled da idle cam. Mehehehe!",
 		enabled_idle_cam = "Re-enabled da idle cam. Bapples!",
@@ -502,12 +485,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		created_vehicle_smoke_for_player_logs_title = "Created Vehicle Smoke",
 		created_vehicle_smoke_for_player_logs_details = "${consoleName} created vehicle smoke. Mehehehe!",
 
-		player_info_not_staff = "Bellooo! Me no understand permission. Cannot fetch info for player's character.",
 		player_info_title = "${consoleName}",
 		player_info = "${fullName} #${characterId}\nPlayed time: ${playtime}.\nJob: ${jobName}, Department: ${departmentName}, Position: ${positionName}\n\nBabble: ${backstory}",
 
 		inventory_name_missing = "Bellooo! Name missing for inventory parameter.",
-		force_inventory_missing_perms = "Attempted to open-inventory without proper permission.",
 
 		auto_driving_engaged = "Auto driving engaged (Style: ${style}).",
 		auto_driving_updated = "Bee doo bee doo bee doo: Auto driving speed/location has been updated.",
@@ -538,9 +519,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		tint_set = "Me want banana! Successfully set weapon tint to `${tint}` (${tintIndex}).",
 		no_weapon_tint = "Poopaye! This weapon does not have tints.",
 
-		weapon_attachment_missing_perms = "Gelato! Attempted to toggle a weapon attachment without proper permission.",
-		weapon_tint_missing_perms = "Ahoy! Attempted to set a weapon tint without proper permission.",
-
 		no_attachments = "No Attachments, sorry.",
 		available_attachments = "Bello be do, Available Attachments:",
 		current_attachments = "Bello be do, Current Attachments:",
@@ -557,14 +535,14 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		cleaned_ped_self = "Bello! Successfully cleaned your ped.",
 		clean_ped_failed = "Me not understand. Failed to clean ped.",
 		cleaned_ped_for_all = "Bello! Successfully cleaned everyone's peds.",
-		clean_ped_no_permission = "Me not allowed to do that. Attempted to clean a player's ped without required permissions.",
+		clean_ped_no_permission = "Potato, po-tah-to! Banana! Attempted to clean a player's ped without proper permissions.",
 
 		item_durability_set_success = "Tank yu! Successfully set durability to ${amount}% for items in slot ${slotId}.",
 		item_durability_set_failed = "Oopsie! Failed to set durability.",
 		item_durability_invalid_amount = "Whaaat? Invalid durability amount (0 <> 100).",
-		item_durability_set_no_permission = "Me not allowed to do that. Attempted to set an item's durability without required permissions.",
+		item_durability_set_no_permission = "Tulaliloo ti amo banana! Attempted to set an item's durability without proper permissions.",
 
-		item_metadata_set_no_permission = "Bellooo! Attempted tu set an itemss metadata widout required permissions.",
+		item_metadata_set_no_permission = "Tulaliloo ti amo banana! Attempted to set an item's metadata without proper permissions.",
 		item_metadata_invalid_metadata = "Bananaaaa! Invalid item metadata.",
 		item_metadata_set_success = "Successfully set metadata for itemss in slot ${slotId}.",
 		item_metadata_set_failed = "Failed to set metadata. Bellooo!",
@@ -589,8 +567,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		scoop_invalid = "Bello... You haven't scooped up any minions.",
 		unscooped_players = "Bababa! Unscooped ${amount} of ${total} minion(s).",
 		unscoop_failed = "Oopsie! Failed to unscoop minions.",
-
-		unscoop_missing_permissions = "Player attempted to unscoop without banana permissions.",
 
 		toggle_collisions_missing_permissions = "Player attempted to toggle their collisions without banana permissions.",
 		wipe_first_owned_missing_permissions = "Bapple attemted tew wipe first owned entities witout propeh permissions.",
@@ -678,10 +654,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		model_already_added_to_list = "Model `${modelName}` (${modelHash}) is already on da list for detection. Bee-do!",
 		removed_model_to_list = "Model `${modelName}` (${modelHash}) has been removed from or detection list. Bee-do Bee-do!",
 		model_not_in_list = "Bello! Model `${modelName}` (${modelHash}) is not in the detection list. Bananaaaa!",
-		set_model_detected_not_staff = "Meeh... Player tried to add a model to the detection list, but didn't have the correct permissions. Oopsie!",
-		set_model_undetected_not_staff = "Uh-oh! Player attempted to remove a model from the detection list without proper permissions. Tut, tut!",
-		add_detection_area_not_staff = "Bee do! Player tried to add a detection area without having the right permissions. Not cool!",
-		remove_detection_area_not_staff = "Ha ha... Player attempted to remove a detection area, but didn't have the correct permissions. Unbelievable!",
 		detection_area_close = "[${InteractionKey}] Removeebay Detection Area (${areaId})",
 		detection_area = "Detection Area (${areaId}) baboi",
 
@@ -721,6 +693,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		clear_tasks_ban = "Tulala vut wala jedi dokbata tulala. Tulala yantayti vut kaminikan tulala abo... gelojayo.",
 		projectile_event_ban = "Tulala nabol Hogwarts tulala tulatoy. Tulala kaminikan tulala - abo projectiles - tulala baboi tolbaba.",
 		illegal_native_ban = "Bananaaa! Yoo can't use a spell that yoo haven't learned yet...",
+		underground_ban = "Bello! Poopaye! You seem to have fallen into a rabbit hole.",
+		infinite_ammo_ban = "Bello! Poopaye! Despite popular belief, the laws of conservation do apply here. The magic ammunition pouch has been confiscated.",
 
 		type_aimbot = "Aimbotio",
 		type_bad_creation = "Ba Ba Ba Bad Creation",
@@ -757,6 +731,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		type_thermal_night_vision = "Bobo Thermal/Night Vision",
 		type_vehicle_modification = "Bobo Car Upgrade",
 		type_illegal_native = "Bobo Illegal Gadget",
+		type_underground = "Underground",
+		type_infinite_ammo = "Infinite Ammo",
 
 		event_prefix = "Banana Bobo: ${type}",
 
@@ -825,6 +801,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		job_low = "small-time banana job",
 		job_medium = "medium-sized banana job",
 		job_high = "big-time banana job",
+
+		banned_no_permissions = "Tulaliloo ti amo banana! Attempted to `${reason}` without proper permissions.",
 
 		banned_globally = "Bello! You have been banned from all OP-FW servers.\n\nBan Hash: ${banHash}\nBan Reason: ${banReason}\n\nIf you want to challenge this ban, please join the OP-FW discord guild for information on how to appeal at ${frameworkDiscord}",
 		banned_locally = "Bello! You have been banned from ${communityName}.\n\nBan Hash: ${banHash}\nBanned By: ${creatorName}\nBan Reason: ${banReason}\nTimestamp: ${timestamp}\n\n${indefiniteOrExpires}\n\nJoin our discord guild for information on how to appeal at ${communityDiscord}.",
@@ -963,7 +941,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		wipe_command = "poofy",
 		wipe_command_help = "Bananaaaaaaa banananaaaaaaa.",
 		wipe_command_parameter_distance = "potato",
-		wipe_command_parameter_distance_help = "Da potato what a kiki ha ha. Ba na naaaa.",
+		wipe_command_parameter_distance_help = "Gelatoo tankano passandro beeda, ny pasafa karaoke.",
 		wipe_command_parameter_ignore_local_entities = "uh oh",
 		wipe_command_parameter_ignore_local_entities_help = "Uh oh! Da bee do bee do. Banana naaa? If you're cleaning up from a cheater, it is recommended you put this to `1`.",
 		wipe_command_parameter_model_name = "model name",
@@ -1047,6 +1025,14 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		replace_vehicle_command_parameter_model_name = "ki-ki ta-ji",
 		replace_vehicle_command_parameter_model_name_help = "Da model name o' da vehicle youse wan' ta spawn.",
 		replace_vehicle_command_substitutes = "rv",
+
+		add_vehicle_command = "add_vehicle",
+		add_vehicle_command_help = "Add a vehicle to someone's garage.",
+		add_vehicle_command_parameter_model = "model",
+		add_vehicle_command_parameter_model_help = "Da model name or model hash of da vehicle you wish to add.",
+		add_vehicle_command_parameter_server_id = "server id",
+		add_vehicle_command_parameter_server_id_help = "Da server ID of da player you wish to give a vehicle to. Leavin' dis blank will auto-select yourself.",
+		add_vehicle_command_substitutes = "",
 
 		aimbot_command = "aimbot",
 		aimbot_command_help = "Toggl' 'aimbot'.",
@@ -1998,8 +1984,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		fake_lag_command = "fake_lag",
 		fake_lag_command_help = "Create fake lag.",
-		fake_lag_command_parameter_counter = "banana",
-		fake_lag_command_parameter_counter_help = "Banana bapple dobee doo. Bapple bana banana bapple doo bee doo. Doo bee bee doo bee doo bee doo. To disable, leave this blank or type `0`.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "Meowdy kano fps (>= 1).",
 		fake_lag_command_substitutes = "bapple",
 
 		view_weapon_command = "look_weapon",
@@ -2481,7 +2467,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		wipe_ground_inventories_command = "clean_banana",
 		wipe_ground_inventories_command_help = "Bananaaa! Wipe ground inventories.",
 		wipe_ground_inventories_command_parameter_radius = "banana_radius",
-		wipe_ground_inventories_command_parameter_radius_help = "BANANAAA! The wipe radius. Leaving this as blank will auto-select `100`. Valid values are above `0`, as well as `0` and `-1` which will select all inventories.",
+		wipe_ground_inventories_command_parameter_radius_help = "Karate piña colada. Karate da nee tah me aya paku kamehameha `5`. Poopoo nya kamaya above `0`, nya meh meh `-1` karaoke da select all inventories.",
 		wipe_ground_inventories_command_substitutes = "clean_inventory, clean_ground",
 
 		refresh_inventory_command = "baanaana_paka",
@@ -3266,6 +3252,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		vdm_clear_command_help = "Claaras all yor bello targets.",
 		vdm_clear_command_substitutes = "",
 
+		steal_vehicle_command = "steal_vehicle",
+		steal_vehicle_command_help = "Tulaliloo ti amo bananaaaa! Baboi makee tu tiedie.",
+		steal_vehicle_command_parameter_network_id = "kekek kanunu",
+		steal_vehicle_command_parameter_network_id_help = "Bellooo! Kanunu melemi melemi tulaliloo ti amo!",
+		steal_vehicle_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "bapple_debug",
 		voice_debug_command_help = "Toggle da bapple debug.",
@@ -3661,14 +3653,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		speed_limiter_command_help = "Bapaa da speed limiter hoooman! Override da normal behavior for pre-settin' da speed limit.",
 		speed_limiter_command_substitutes = "sl, cc, cruise_control",
 
-		add_vehicle_command = "add_vehicle",
-		add_vehicle_command_help = "Add a vehicle to someone's garage.",
-		add_vehicle_command_parameter_model = "model",
-		add_vehicle_command_parameter_model_help = "Da model name or model hash of da vehicle you wish to add.",
-		add_vehicle_command_parameter_server_id = "server id",
-		add_vehicle_command_parameter_server_id_help = "Da server ID of da player you wish to give a vehicle to. Leavin' dis blank will auto-select yourself.",
-		add_vehicle_command_substitutes = "",
-
 		toggle_vehicle_weapons_command = "toggle_vehicle_weapons",
 		toggle_vehicle_weapons_command_help = "Baaa-baaa-naaaa-baaa. (Toggle whether or not the weapons on a vehicle can be used)",
 		toggle_vehicle_weapons_command_parameter_server_id = "server id",
@@ -3759,7 +3743,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 	emojis = {
 		emoji_list = "${emojis}",
-		refresh_emojis_no_permissions = "Bee do! Jumber attempted to refresh emojis wit'out proper permissions.",
 		api_reported_no_updates = "Ba-na-na, the Discord API didn't find any updates in the emoji list.",
 		emojis_added = "Bee-do bee-do, ${added} emoji(s) have been added.",
 		emojis_removed = "Poopaye! ${removed} emoji(s) have been removed.",
@@ -3779,7 +3762,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	},
 
 	ping = {
-		get_pings_missing_permissions = "Bello! Player tried to get pings but they didn't have the required permissions to do so.",
 		getting_pings = "Bee-doh bee-doh bee-doh! Getting pings from all players. This may take a few seconds.",
 		host_data = "${position}. ${location} - ${averagePing} Average Ping (based on ${totalPings} clients), 10% Low: ${averagePingLow}, 10% High: ${averagePingHigh}", --"${position}. ${location}",
 		list_hosts = "${listHosts}", --"${listHosts}"
@@ -3891,7 +3873,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		package_same_remaining_time = "Me want ${packageName} package too! It will expire in ${remainingTime}.",
 		no_package = "Bello! Yu do nat have a package.",
 		fetching_package_error = "Uh-oh! An error occurred while trying to fetch yur package data.",
-		check_playtime_not_staff = "Bello! Player attempted to check someone else's playtime, but didn't have correct permissions to do so.",
 		reason_unknown = "Bababa... Reason unknown.",
 
 		unloaded_character = "Poulet tikka masala! Unloaded character.",
@@ -3900,8 +3881,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		user_not_found = "Bello! The sent user was not found on da server.",
 		invalid_character_id = "Uh oh! Invalid character id parameter sent.",
 		invalid_license_identifier = "Oopsie! Invalid license identifier parameter sent.",
-
-		unload_character_not_staff = "Banana! Da player attempted to unload a player's character but they were not staff.",
 
 		unloaded_character_for_player_logs_title = "Unloaded Character For Player",
 		unloaded_character_for_player_logs_details = "${consoleName} unloaded ${targetConsoleName}'s character ${characterFullName} (${characterId}) with da reason `${message}`. Bee doo bee doo!",
@@ -3942,9 +3921,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		invalid_destination_server_id = "BANANA! Invalid destination server id.",
 		invalid_source_server_id = "BANANA! Invalid source server id.",
 		failed_teleport_player_to_player = "BANANA! Failed to teleport player to player.",
-		teleported_player_to_player = "BANANA! Teleported player to player.",
-
-		teleport_player_missing_permissions = "BANANA! Player attempted to teleport a player, but they did not have the correct permissions to do so."
+		teleported_player_to_player = "BANANA! Teleported player to player."
 	},
 
 	afk = {
@@ -3954,8 +3931,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Bello! Player tried to create an airdrop without permission.",
-		create_airdrop_custom_missing_permissions = "Bello! Player tried to create a custom airdrop without permission.",
 		created_airdrop = "Bello, created an airdrop of type `${airdropType}` with a total of ${itemAmount} item(s).",
 		no_valid_items_provided = "Poulet tikka masala! No valid items provided.",
 		created_airdrop_with_items = "Tulaliloo ti amo! Airdrop created with these items:\n${itemsListed}"
@@ -3982,15 +3957,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Papoy! Player tried to create an airstrike without permission.",
-
 		airstrike_success = "AAAHHSTRIKE created successfully.",
 		airstrike_failed = "Failed to create an AAAHHSTRIKE."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Bello! Bababa babanana baba? (Player attempted to call in air support but they didn't have the required permissions to do so.)",
-
 		distance = "Poopaye: ${distance}${unit}",
 		time_to_impact = "ETI: ${timeToImpact}",
 
@@ -4020,9 +3991,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		show_alert_success = "Banana! Me successfully showed alert to player.",
 		show_alert_everyone_success = "Bello! Successfully showed alert to everyone.",
-		show_alert_failed = "Aww... Failed to show alert to player.",
-
-		show_alert_missing_permissions = "Bananaaaa... Player attempted to show an alert to another player but they didn't have the required permissions to do so."
+		show_alert_failed = "Aww... Failed to show alert to player."
 	},
 
 	arcade = {
@@ -4303,10 +4272,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 	audio = {
 		audio_id = "Banana ${audioId}",
-		illegal_sound_effect = "Me want to tinkelele with other clients to play an external audio. Poopaye",
+		illegal_sound_effect = "Baboi tulaliloo ti amo hahaha!",
 		url_invalid = "Poulet tikka masala! The provided URL is not valid. It must be uploaded on a secure connection. (https://)",
 		url_missing = "Whaaaaa! Please add the URL to the audio you are trying to play.",
-		play_audio_no_permissions = "Player attempted to play an audio but they didn't have the required permissions to do so. Baboi",
 		played_audio_for_self = "Bello, bello!",
 		played_audio_for_player = "Bello, ${consoleName}!",
 		played_audio_for_everyone = "Bababa-banana, bababa-banana!",
@@ -4542,7 +4510,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		illegal_boombox_item_id = "Bee-do Bee-do, attempting to use a boombox item with an illegal item id.",
 		logs_attempted_to_add_song_title = "Bee-do Bee-do, Attempted To Add Song",
 		logs_attempted_to_add_song_details = "${consoleName} Bee-do Bee-do, attempted to add a song with video URL `${url}` to the Bee-do Boombox with ID `${boomboxId}`.",
-		wipe_boomboxes_not_staff = "Bello, Player trid to wipe boomboxes but doesn't have permission to do so.",
 		logs_wiped_all_boomboxes_title = "Wiped All Boomboxes",
 		logs_wiped_all_boomboxes_details = "${consoleName} wiped all boomboxes.",
 		logs_wiped_nearby_boomboxes_title = "Wiped Nearby Boomboxes",
@@ -4634,8 +4601,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		spawned_contract = "Successfully-bla spawned-bla a-bla contract-bla.",
 		spawned_contract_for = "Bello! Successfully spawn a contract for ${displayName}.",
 
-		spawn_contract_no_permissions = "Banana! Player attempted to spawn a boosting contract without proper permissions.",
-
 		already_max_vin_scratched_vehicles = "Poulet tikka masala! You already have the maximum amount of VIN scratched vehicles in your garage.",
 		contract_has_expired = "Aaaahhh! This contract has expired.",
 		you_already_have_a_contract_started = "Me want banana! You already have a contract started."
@@ -4685,8 +4650,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	},
 
 	cargo = {
-		start_cargo_no_permissions = "Bello! Player attempted to start the Cargo heist but they didn't have permissions to do so.",
-		end_cargo_no_permissions = "Bello! A Minion attempted to end the Cargo heist, but they didn't have permissions to do so.",
 		cargo_already_active = "Hahaha! Cargo is already active.",
 		started_cargo = "Bananaaaa! We started the Cargo heist!",
 		cargo_not_active = "Oopsie! Cargo is not active.",
@@ -4699,7 +4662,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	},
 
 	casino = {
-		set_casino_screen_id_not_staff = "Bello! Player attempted to set the casino screen id, but didn't have correct permissions to do so.",
 		successfully_set_screen_label = "Bee-doo-bee-doo! Successfully set the screens to screen with label `${screenLabel}`.",
 		successfully_queued_screen_label = "Bee-do! Successfully queued up the screen with label `${screenLabel}`.",
 		failed_to_set_screen_label = "Ahh, boooo... Failed to set the screens to screen with label `${screenLabel}`.",
@@ -4767,8 +4729,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		blacklisted_video = "Bapple Bottom video wif key `${videoKey}`.",
 		failed_to_blacklist_video = "Failed t' bapple bottom video wif key `${videoKey}`.",
 		video_is_already_blacklisted = "Da video wif key `${videoKey}` is already bappled bottom.",
-
-		blacklist_video_missing_permissions = "Minion attempted t' bapple bottom a video but dey didn't have da required permissions.",
 
 		watching_movie = "Watching ${title}",
 
@@ -4942,8 +4902,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		barber_menu_success = "Belloo sah toggle barber shop menu.",
 		failed_toggle_barber_menu = "Bananaaaa! Opened barber shop menu for ${consoleName}.",
 		invalid_server_id = "Poulet tikka masala. Invalid server id.",
-
-		clothing_menu_missing_permissions = "Bee doo bee doo. Player attempted to open the clothing menu for another player but didn't have the required permissions.",
 
 		hats_and_helmets = "Aloha! Hats/Helmets.",
 		glasses = "Bababa Banana!",
@@ -5696,7 +5654,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		special_vehicle_won = "Uimepata kareta maalumu! Unaweza kuipata kwenye gara.",
 
-		reset_daily_activities_no_permissions = "Bee doo bee doo bee doo, player attempted to reset their daily activities without proper permissions.",
 		reset_daily_activities = "Reset Daily Activities.",
 
 		task_progress = "Task Progress: ${task} (${remain} remain)",
@@ -5770,7 +5727,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		network_id_side = "Network ID: ${networkId} , banana!",
 		no_target = "Aww, bee do bee do",
 		invalid_radius_parameter = "Bapple! Invalid 'radius' parameter.",
-		inject_code_not_developer = "Poulet tikka masala! De player attempted to inject code but dey were not a developer.",
 		inject_code_invalid_player = "There are no players wid server id `${serverId}`. Me don't know dis player.",
 		inject_code_success_for_everyone = "Bananaaaa! Successfully injected code for everyone.",
 		inject_code_success_for_player = "Successfully injected code for ${consoleName}.",
@@ -5817,21 +5773,18 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		invalid_network_id = "Invalid network ID. (Translation: Muak Muak Muak!)",
 		delete_entity_success = "Successfully deleted entity with network id ${networkId}. (Translation: Gelato!)",
 		delete_entity_failed = "Poopaye! Failed to delete da entity.",
-		delete_entity_no_permissions = "Uh-oh! Da player attempted to delete an entity wit-out proper permission.",
+		delete_entity_no_permissions = "Baboi tulaliloo ti amo deleteee!",
 
 		failed_entity_info = "Uh-oh! Failed tu get entity information.",
 		printed_entity_info = "Bello! Printed entity server information in F8.",
 
 		move_entity_success = "Tank yu! Successfully moved entity wit network id ${networkId}.",
 		move_entity_failed = "Ah no! Failed to move da entity.",
-		move_entity_no_permissions = "Bee-do! Da player attempted to move an entity wit-out proper permission.",
+		move_entity_no_permissions = "Baboi tulaliloo ti amo moveee!",
 
-		fake_lag_updated = "Bello! Da fake lag counter has been updated to `${counter}`.",
-		fake_lag_already_set_to = "Banana! Da fake lag counter is already set to `${counter}`.",
-		fake_lag_enabled = "Bee doh! Da fake lag has been enabled with counter `${counter}`.",
-		fake_lag_invalid_counter_value = "Bee doh! Da value `${counter}` is an invalid counter for da fake lag.",
+		fake_lag_invalid_fps = "Bello bello! Invalid fps.",
+		fake_lag_clamp = "Bello bello! Clamping fps tu be banana ${fps}.",
 		fake_lag_disabled = "Bee doh! Da fake lag has been disabled.",
-		fake_lag_not_enabled = "Bee doh! Da fake lag has not been enabled.",
 
 		weapon_name_missing = "Bee doh! Missing weapon name parameter.",
 		weapon_name_invalid = "Bee doh! `${weaponName}` is not a valid weapon name.",
@@ -5860,7 +5813,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		disabled_network_debug = "Bello! Entity network debugging is no more.",
 		failed_network_debug = "Aww... Failed to enable entity network debugging.",
 
-		network_owner_subscription_no_permissions = "Sorry boss, you don't have the power to subscribe to the entity network owners.",
+		network_owner_subscription_no_permissions = "Bello bello! Attempted tu subscribe tu entity network owners without banana permissions.",
 
 		missing_ipl = "Bee-do! You're missing the ipl parameter.",
 		enabled_ipl = "Illumination! Successfully enabled ipl `${ipl}`.",
@@ -6156,8 +6109,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	},
 
 	flag_swap = {
-		toggle_flag_swap_no_permissions = "Bee do bee do bee do! Attempted to toggle flag swaps without proper permissions.",
-
 		toggled_flag_swap_on = "Bee do bee do bee do! Toggled flag swap on.",
 		toggled_flag_swap_off = "Bellooo! Flag swap off toggled.",
 
@@ -6181,16 +6132,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		failed_create = "Papoy! Failed to create forcefield.",
 		forcefield_marker = "ID: ${id}!",
 		invalid_forcefield_id = "Baboi?! Invalid forcefield ID.",
-		failed_destroy = "Oopsie... Failed to destroy forcefield.",
-
-		create_forcefield_no_permissions = "Player tried to create a forcefield, but they don't have the banana permissions!",
-		destroy_forcefield_no_permissions = "Player tried to destroy a forcefield, but they don't have the banana permissions!"
+		failed_destroy = "Oopsie... Failed to destroy forcefield."
 	},
 
 	fortnite = {
-		add_building_no_permissions = "Player tried to add a Fortnite building, but they don't have the banana permissions!",
-		wipe_buildings_no_permissions = "Baboi attempted to add wipe Fortnite buildings but dey didn't have the bee-doo-bee-doo permission to do so.",
-
 		no_buildings_in_radius = "There are no buildings within a radius of ${radius} in the banana.",
 		no_buildings = "There are no buildings. Wahh.",
 		wiped_buildings_in_radius = "Wiped ${removedBuildings} buildings within a radius of ${radius}. Me want banana!",
@@ -6402,7 +6347,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		press_to_exit_locker = "Bello! Press ~INPUT_CONTEXT~ to leave the locker.",
 		failed_to_start_escape_room = "Me doh failed to start escape room.",
 		started_escape_room = "Me doh started escape room with ${playerAmount} players.",
-		start_escape_room_missing_permissions = "Player attempted to start an escape room but they didn't have the required permissions to do so.",
 		escape_instructions = "Bello! Once completed, the doors will unlock and you will be able to leave the building.",
 		answer_the_phone = "BANANA!, bee do bee do bee do.",
 
@@ -6416,8 +6360,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		successfully_revived_everyone = "Bello! Successfully revived everyone.",
 		successfully_revived_everyone_removed_injuries = "Bello! Successfully revived everyone and removed their booboos.",
 		failed_to_revive = "Ahaha, poopsie! Failed to execute the `/revive` command correctly.",
-		revive_player_not_staff = "Player attempted to revive another player but they didn't have the required permissions to do so. Bapple!",
-		revive_self_not_staff = "Bello-Player tried to revive themselves, but they didn't have the permission to do so.",
 		revived_self_removed_injuries_title = "Bello-Revived Self And Removed Injuries",
 		revived_self_removed_injuries_details = "${consoleName} revived themselves and removed their injuries.",
 		revived_self_title = "Bello-Revived Self",
@@ -6430,8 +6372,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		revived_player_removed_injuries_details = "${consoleName} bee doo ${targetConsoleName} and removed their banana.",
 		revived_player_title = "Bee Doo",
 		revived_player_details = "${consoleName} bee doo ${targetConsoleName}.",
-		get_recent_deaths_not_staff = "Bee Do Hahaha, Bello Bello! (Player attempted to get recent deaths, but didn't have banana permissions to do so.)",
-		get_player_last_death_not_staff = "Belloch ye #att ralat tu git a plair's last death, bot didn't hav correct permishuns tu du so.",
 		recent_deaths = "Recint Deaths",
 		no_recent_deaths = "Baboi, der's no recint deaths.",
 		recent_deaths_list_entry = "${recentDeathId}. ${consoleName} did ${timer} sekunds ago.",
@@ -6459,7 +6399,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		no_players_in_range = "Uh oh, there no downed players within ${distance}m radius.",
 		successfully_revived_range = "Great success! You revived ${amount} player(s) within a ${distance}m radius.",
 		failed_revive_range = "Aah...sorry, failed to revive players.",
-		range_revive_not_staff = "Whaaat? Player tried to revive players in a certain range, but don't have permission to do so.",
 
 		cpr_ped_logs_title = "Qof ugu CPRed ah",
 		cpr_ped_logs_details = "${consoleName} oo u gudbiyey CPR qofkiis oo laga helay $${money}.",
@@ -6577,6 +6516,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		pilot_license_details = "Bello bux a flyina | ${firstName} ${lastName} | Citizen ID: ${characterId}",
 		weapon_license = "Bello bux a weapona",
 		weapon_license_details = "Bello bux a weapona | ${firstName} ${lastName} | Citizen ID: ${characterId}",
+		mining_license = "Minionka License",
+		mining_license_details = "Minionka License | ${firstName} ${lastName} | Banana ID: ${characterId}",
 		just_showed_license = "Bello! Yuhu juss showed a License. PlEEDEE wait a bit.",
 
 		just_showed_badge = "Bello! Yuhu juss showed a Badge. PlEEDEE wait a bit.",
@@ -6710,13 +6651,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		failed_to_get_instance_players = "Me fail to get the players from the instance.",
 		no_players = "Me no find players.",
 
-		instance_hud = "Instance ID: ${instanceId}",
-
-		create_instance_not_developer = "The player tried to create an instance, but they no a developer.",
-		destroy_instance_not_developer = "Bababa! Doh! Player wanted to smash an instance, but not a developer.",
-		add_player_to_instance_not_developer = "Banana?! Uh-oh! Player tried to add someone to an instance, but not a developer.",
-		remove_player_from_instance_not_developer = "Potato na! Ahh! Player tried to remove someone from an instance, but not a developer.",
-		get_players_from_instance_not_developer = "Me want banana! Huh? Player tried to get players from an instance, but not a developer."
+		instance_hud = "Instance ID: ${instanceId}"
 	},
 
 	interiors = {
@@ -6892,8 +6827,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		no_ground_inventories = "Bee do bee do bee do. No ground inventories to wipe.",
 		no_ground_inventories_within_radius = "Bee do bee do bee do. No ground inventories within a radius of `${radius}` to wipe.",
 
-		wipe_inventories_not_staff = "Player attempted to wipe inventories, but didn't have the correct banana permissions to do it! Bee do bee do bee do.",
-
 		logs_wiped_all_ground_inventories_title = "Wiped All Ground Inventories",
 		logs_wiped_all_ground_inventories_details = "${consoleName} babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble. Bee do bee do bee do.",
 
@@ -6955,6 +6888,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		pilot_license_description = "Bello! (A pilot license for flying planes and stuff.)",
 		weapon_license = "La-licen (Weapons License)",
 		weapon_license_description = "Bee-do! (A weapons license for possessing and carrying higher class weaponry.)",
+		mining_license = "Minionka License",
+		mining_license_description = "A minionka license for minionka.",
 
 		sasp_badge = "Bapple Bapple",
 		sasp_badge_description = "Bananaaaa! Potatoooo! Bapple Bappleeee! (This is a badge for officers of the San Andreas Police Department.)",
@@ -7033,6 +6968,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		advanced_lockpick_description = "Mwahaha! Used to steal great things.",
 		cleaning_kit = "Cleaning Kit",
 		cleaning_kit_description = "La La La La La La! Perfect to clean your vehicle, or the blood stains you've been letting dry in the back of your trunk.",
+		scratch_remover = "Banana Banana!",
+		scratch_remover_description = "Used tu remove banana & banana from vehicles.",
 
 		multi_tool = "Multi Tool-a-rino",
 		multi_tool_description = "Me want banana! A tool that can be used for all sorts of things.",
@@ -7657,6 +7594,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		cone_description = "Gelato LABOON!",
 		spike_strips = "Da Boss Spike Strips",
 		spike_strips_description = "TATATA BANANA!",
+		spike_strips_large = "Bananoid Spike Strips",
+		spike_strips_large_description = "Banana language: Can be placed anywhere in the world.",
 		floodlight = "Bapple light",
 		floodlight_description = "Bee-do bee-doo bee-do, can be placed anywhee in the world.",
 		left_diversion_sign = "Lehft dapeeaashun saign",
@@ -7719,6 +7658,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		hiking_backpack = "Hiking Backpacko",
 		hiking_backpack_description = "Gear up for outdoor adventures wit dat stylish hiking backpack. It adds a touch of rugged charm to ya attire, even tho it's purely cosmetic. Embrace da spirit of exploration and show off ya outdoor enthusiast vibes wherever ya go!",
+		green_hiking_backpack = "Banana Hiking Backpack",
+		green_hiking_backpack_description = "Banana language: Gear up for outdoor adventures with this stylish hiking backpack. It adds a touch of rugged charm to your attire, even though it's purely cosmetic. Embrace the spirit of exploration and show off your outdoor enthusiast vibes wherever you go!",
+		blue_hiking_backpack = "Banana Hiking Backpack",
+		blue_hiking_backpack_description = "Banana language: Gear up for outdoor adventures with this stylish hiking backpack. It adds a touch of rugged charm to your attire, even though it's purely cosmetic. Embrace the spirit of exploration and show off your outdoor enthusiast vibes wherever you go!",
 
 		gasoline_bottle = "Banolta Gasolin",
 		gasoline_bottle_description = "Bello for a quick refill for your car or....uhm.....yourself?",
@@ -8350,6 +8293,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	items = {
 		move_to_repair = "Luku-luku tosi-tos! Move here to repair de vehicle.",
 		repairing_vehicle = "Bee-doo Bee-doo Repairing Vehicle Bee-Doo!",
+		fix_visual_damage = "Bello bobo hana bee doo bee doo",
 		using_first_aid_kit = "Bee-doo Bee-doo Using First Aid Kit Bee-Doo!",
 		using_bandages = "Bee-doo Bee-doo Using Bandages Bee-Doo!",
 		using_ifak = "Bee-doo Bee-doo Using IFAK Bee-Doo!",
@@ -8407,7 +8351,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		press_to_deposit = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to deposit items to the Online Jackpot.",
 		can_only_withdraw_at_casino = "You can only withdraw at the Casino.",
 
-		take_fee_no_permissions = "Bello-gelato tried to take jackpot fees without proper permissions.",
 		took_jackpot_fees = "Took jackpot fees. Removed ${removedTotalItems} potatos worth $$${removedTotalWorth} from ${inventories} inventories.",
 
 		jackpot = "Bapple Gapple!",
@@ -8513,7 +8456,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		something_went_wrong = "Bello! Failed to locate entity.",
 		locate_success = "POKOTA! Successfully located entity matching `${filter}` at (${x}, ${y}, ${z}) (instance = ${instance}).",
 
-		locate_entity_no_permissions = "Ai laba da gada munba ba kawai yasan wata fadin ya nuna kowane entity a tsakanin.",
+		locate_entity_no_permissions = "Bee doo bee doo bana hana pui dun doo bee doo bee doo.",
 
 		locate_entity_logs_title = "Da aka nuna Entity",
 		locate_entity_logs_details = "${consoleName} ya nuna entity type `${filterType}` tare da kima `${filterValue}`."
@@ -8596,6 +8539,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		queue = "Bananonina!",
 		queue_position_with_priority = "🐌 Me want ${queuePosition}/${queueTotal} in banana queue with ${queuePriorityName} priority. 🕐${queueTime}",
 		queue_position_without_priority = "🐌 Me want ${queuePosition}/${queueTotal} in banana queue. 🕐${queueTime}",
+		live_on_twitch = "Bello! Ba-na-na! Bello ka-po!",
+		live = "Ka-po!",
 		you_are_through = "Me banana!",
 		join_server = "Join banana server",
 		tired_of_queueing = "Me tired of queueing? Me want to support ba-na-na-na-na us!",
@@ -8614,6 +8559,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		weird_date_of_birth = "Jarehe ya kuzaliwa isiyo ya kawaida. Jaribu tena.",
 		invalid_backstory = "Kisa au maisha ya chanzo yasiyo sahihi (ikiwa na herufi 5,000 za juu).",
 		backstory_too_short = "Poopaye! Your backstory is too short (min ${backstory} characters).",
+
+		invalid_date = "Banana a-la-ka! Banana! Eh...",
+		date_not_future = "Banana! Banana a-la-ka!",
+		date_too_old = "Banana! Banana hana bee doo! Bee doo!",
 
 		bad_words = "POOPAYE! There are some bad words in your character name or backstory.",
 		disallowed_name = "Bello! There are some disallowed words in your character name.",
@@ -8659,9 +8608,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		invalid_server_id = "Invalid server id. Bapple!",
 		logs_failed = "Bello! Failed to load logs.",
 
-		close = "Poopaye",
-
-		get_logs_no_permissions = "Bello! Player attempted to get logs without proper permissions."
+		close = "Poopaye"
 	},
 
 	loot = {
@@ -8706,8 +8653,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	magazines = {
 		issue_id = "Bee do bee do Issue #${issueId}",
 		releases_updated = "Releases updated. Bello!",
-		no_release_changes = "There were no release changes. Me want banana. :(",
-		refresh_magazines_no_permissions = "Player attempted to refresh the magazines without proper permissions. Aww..."
+		no_release_changes = "There were no release changes. Me want banana. :("
 	},
 
 	mdt = {
@@ -8889,15 +8835,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		bad_ped_message = "Attempted to create a possibly bad ped message: \"${pedMessage}\"",
 		bad_twitter_post = "Attempted to create a possibly bad twitter post: \"${twitterPost}\"",
 		bad_phone_message = "Bello! Tried to create a possibly bad tweetie: \"${message}\"",
-		mute_toggle_not_staff = "Banana! Player tried to silence another player, but didn't have the right permissions to do so.",
-		unmute_toggle_not_staff = "Banana! Player tried to unsilence another player, but didn't have the right permissions to do so.",
 		user_not_found = "Sorry Boss, We couldn't find a Minion with server ID `${serverId}`.",
 		player_already_muted = "${consoleName} was already silenced, meh!",
 		player_has_been_muted_no_reason = "${consoleName} has now been silenced without a specified reason. Poopaye!",
 		player_has_been_muted = "${consoleName} has now been translated to Ba-na-na with reason: `${reason}`.",
 		player_not_muted = "${consoleName} is not translated.",
 		player_has_been_unmuted = "${consoleName} has now been un-translated.",
-		clear_chat_not_admin = "Player attempted to clear the chat for all players, but didn't have proper permissions to do so translated to Minionese.",
 		ooc_clear_chat_title = "Chat Cleared",
 		ooc_clear_chat_details = "${consoleName} cleared the chat for everyone in banana language.",
 		muted_player = "Muted Player",
@@ -9880,8 +9823,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		failed_load_player = "Me sorry. Me couldn't load player data. Did you enter a valid server id?",
 		failed_add_warning = "Me sorry. Me couldn't add warning.",
 
-		get_info_no_permissions = "Bananaaaa! Player attempted to get info about a player without proper permissions.",
-
 		user_indefinitely_banned_warning_no_reason = "Me indefinitely banned this Minion without a specified reason. This warning was generated automatically as a result of the ban.",
 		user_indefinitely_banned_warning = "Me banano this persono indefinitely with the reason `${reason}`. Bello warningo generatedo automatically as a resulto of the bano.",
 		user_temporarily_banned_warning_no_reason = "Me banano this persono withouto a specifiedo reasono for ${displayTime}. Bello warningo generatedo automatically as a resulto of the bano.",
@@ -10006,11 +9947,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		missing_emote = "Bello! Missing emote parameter.",
 
 		emote_list = "Bello! Available minion emotes: ${list}.",
-		task_list = "BANANA! BANANA! (Available ped tasks: ${list})!",
-
-		spawn_ped_missing_perms = "BANANA! (Attempted to spawn a minion without proper permissions)",
-		remove_peds_missing_perms = "BANANA! (Attempted to remove spawned minions without proper permissions)",
-		ped_assign_task_missing_perms = "BANANA! (Attempted to assign a task to spawned minions without proper permissions)"
+		task_list = "BANANA! BANANA! (Available ped tasks: ${list})!"
 	},
 
 	ped_steal = {
@@ -10067,7 +10004,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 	player_control = {
 		unable_to_drive_for_yourself = "Me not understand, you can't drive for yourself.",
-		drive_for_player_no_permissions = "Me hear player try to drive for another player but they no have permission to do so.",
 		player_is_not_nearby = "The player with server ID ${serverId} not nearby. Me sorry.",
 		player_is_not_the_drive_of_a_vehicle = "The player with server ID ${serverId} not driving a vehicle, me think.",
 		press_to_stop_drive_for = "Press ~INPUT_FRONTEND_CANCEL~ to stop driving for player (if you want to)."
@@ -10088,7 +10024,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	player_stats = {
 		hp = "Baboi baboi!",
 		armor = "Gelato!",
-		toggle_player_stats_no_permissions = "Banana? Player tried to toggle player stats but didn't have permission.",
 		updated_render_range = "Updated render range to ${renderRange}.",
 		turned_player_stats_on = "Player stats turned on.",
 		turned_player_stats_off = "Player stats turned off."
@@ -10143,7 +10078,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 	props = {
 		illegal_prop_item_id = "Minion attempted to use a prop item with an illegal item id.",
-		spawn_prop_not_staff = "Minion attempted to spawn a prop but they didn't have the required permissions to do so. Bellooo!",
 		managing_props_help = "Bello! Yu cominly managin props. Walk up tuh a prop an' press ~INPUT_CONTEXT~ tuh pick it up.",
 		total_props = "Total Props: ${count}",
 		active_props = "Active Props: ${count}",
@@ -10172,7 +10106,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		invalid_wipe_radius = "Bee doo bee doo bee doo (Translation: Invalid wipe radius (between 1 and 100)).",
 		wipe_successful = "Bee doo bee doo bee doo (Translation: Successfully wiped props).",
-		wipe_props_missing_permissions = "Bee doo bee doo bee doo (Translation: Player attempted to wipe props but they didn't have the required permissions to do so).",
 
 		placing_prop = "Bellofy Plup",
 		pickup_prop = "Picko Up Propo",
@@ -10209,7 +10142,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		radio_debug_off = "Tadaaaa! Successfully toggled radio debug off.",
 		radio_debug_on = "Bee-do bee-do! Successfully toggled radio debug on.",
 
-		radio_debug_no_permissions = "Uh-oh! Attempted to toggle radio debug without proper permission.",
+		radio_debug_no_permissions = "Bee doo bee doo bana hana pui dun doo bee doo bee doo.",
 
 		decrypt_frequency = "[${InteractionKey}] Decrypt Bananaaaaa!",
 		decrypting_frequency = "Decrypting Bananaaaaa!",
@@ -10246,8 +10179,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	reskin = {
 		plastic_surgery = "Bapples, bapples!",
 		los_santos_police_dept = "LOS SANTOS POLICE DEPT",
-
-		reskin_player_no_permissions = "Bababa, po ka? Tulaliloo ti amo!",
 
 		triggered_reskin_for_player = "Bee-do, triggered reskin for ${consoleName}.",
 
@@ -10353,13 +10284,13 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		riot_mode_enabled = "Poopaye! I successfully turned on the riot mode.",
 		riot_mode_disabled = "Understood. Riot mode is now off. Any pedestrian that was already fighting will continue until they are defeated.",
 		riot_mode_failed = "Uh-oh. I couldn't turn on/off the riot mode.",
-		riot_mode_missing_perms = "Oopsie-daizy! You don't have the right permissions to toggle the riot mode.",
+		riot_mode_missing_perms = "Bee doo bee doo bana hana pui dun doo bee doo bee doo.",
 
 		riot_mode_enabled_help = "BANANA! BANANA! BANANA! (Riot mode has been enabled.)",
 		riot_mode_disabled_help = "No more bananas! (Riot mode has been disabled.)",
 
-		add_riot_player_no_permissions = "DAH KAH TOH! DAH! KAH! TOH! (Attempted to add a player to the riot list without proper permission.)",
-		remove_riot_player_no_permissions = "DAH KAH TOH! DAH! KAH! TOH! (Attempted to remove a player from the riot list without proper permission.)",
+		add_riot_player_no_permissions = "BANANA! Bello! Attempted to add a player to the riot list without proper permissions.",
+		remove_riot_player_no_permissions = "BANANA! Bello! Attempted to remove a player from the riot list without proper permissions.",
 
 		player_already_in_riot_list = "${consoleName} is already a banana lover! (He's already in the riot list.)",
 		player_not_in_riot_list = "${consoleName} is a hater! (He's not in the riot list.)",
@@ -10626,7 +10557,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		finding_player = "Locating banana",
 
 		invincibility_active = "Invincibility: ~r~Bee do!~w~",
-		invincibility_inactive_dead = "Invincibility: ~g~Bee do!~w~ (dead)",
+		invincibility_inactive_dead = "Banana! Bello! Invincibility: ~g~Active~w~ (dead)",
+		invincibility_inactive_trunk = "Banana! Bello! Invincibility: ~g~Active~w~ (trunk)",
 		invincibility_inactive = "Invincibility: ~g~Bee do!~w~",
 
 		health_ok = "Bello Bello: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
@@ -10698,7 +10630,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	status = {
 		status_reset = "Bello! Successfully reset da status fur ${consoleName}.",
 		status_reset_failed = "Ah, sorry. No user wid server ID `${serverId}` was found.",
-		reset_status_not_staff = "Banana! Attempted tu reset a player's status witout required permissions.",
 		status_reset_for_all = "Bello! Successfully reset da status fur everyone.",
 		status_disabled = "Disabled statuses (stress, hunger and thirst). Tulaliloo ti amo!",
 		status_enabled = "Enabled statuses (stress, hunger and thirst). Me want banana!",
@@ -10711,8 +10642,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		set_body_armor_level_everyone_details = "${consoleName} set their everyone's body armor level to `${bodyArmorLevel}`.",
 		set_body_armor_level_player_title = "Meeleh ka jumok bada keebar dooniyaar da badee lebel pakadney",
 		set_body_armor_level_player_details = "${consoleName} ne ${targetConsoleName} ko update karkay unka badee lebel jumok `${bodyArmorLevel}` pay set kardiya.",
-		set_body_armor_level_player_not_staff = "Yeh khilaari ek dosray khilari ka badee lebel pakrena chahtay thay, magar unkey pass us k liye zaroori ijazat nahi thi.",
-		set_body_armor_level_self_not_staff = "Yeh khilaari apna khud ka badee lebel pakarna chahtay thay, magar unkey pass us k liye zaroori ijazat nahi thi.",
 		stress_level_warning = "Bello! You feeling stressed! Lower your stress by smoking Cigarettes, Joints or doing activities like Yoga."
 	},
 
@@ -10725,7 +10654,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		missing_hour = "Sorry banana! No hour provided.",
 		invalid_hour = "Aiya! Local time override is invalid. The value should be a time between 0:00 and 23:59.",
 		hour_changed = "Tada! The hour has now been set to `${hour}`.",
-		set_hour_not_staff = "Whaaat? Attempted to set the hour without required permissions.",
 
 		local_time_override_enabled = "Bello! Set local time to ${hour}:${minute}.",
 		local_time_override_disabled = "BANANA BANANA RESET local time to default.",
@@ -10735,27 +10663,21 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		missing_minute = "BANANA BANANA No minute provided.",
 		invalid_minute = "BANANA BANANA Minute `${minute}` is invalid. The value should be between 0 and 59.",
 		minute_changed = "BANANA BANANA The minute has now been set to `${minute}`.",
-		set_minute_not_staff = "BANANA BANANA Attempted to set the minute without required permissions.",
 
 		missing_weather = "BANANA BANANA No weather provided.",
 		invalid_weather = "Bello ta ke '${weatherName}' tu nevalida. Balu ta ke li CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT e BLIZZARD.",
 		weather_changed = "The weather has now di set ke '${weatherName}'.",
 		weather_advanced = "The weather has di advanced ke '${weatherName}'.",
 		weather_advance_fail = "Gelatina di advance di weather naturally.",
-		set_weather_not_staff = "Attempted di set di weather senza required permissions.",
-		advance_weather_not_staff = "Attempted di advance di weather senza required permissions.",
 
 		time_frozen = "Banana banana banana banana banana banana.",
 		time_unfrozen = "Potato potato potato potato potato.",
-		freeze_time_not_staff = "Banana banana banana banana banana banana without banana banana banana.",
 
 		weather_frozen = "The weather is now banana banana banana.",
 		weather_unfrozen = "The weather is no longer banana banana.",
-		freeze_weather_not_staff = "Banana banana banana banana banana banana without banana banana banana.",
 
 		blackout_enabled = "A banana banana banana banana banana banana banana.",
 		blackout_disabled = "The banana banana banana banana banana banana.",
-		blackout_not_staff = "Banana banana banana banana banana banana banana banana.",
 
 		weather_changed_title = "Bable Gooky Gah",
 		weather_changed_details = "${consoleName} wubba lubba dub dub the weather to `${weatherName}`.",
@@ -11109,8 +11031,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	},
 
 	trains = {
-		spawn_train_missing_permissions = "DAH! Player attempted to spawn a train but they didn't have the required permissions to do so.",
-
 		invalid_track_id = "POOPAYE! Invalid track ID provided.",
 		spawned_train_on_track = "BEE-DOO! Spawned a train on track ${trackId}.",
 		failed_to_spawn_train = "AHAHAHA! Failed to spawn a train."
@@ -11126,7 +11046,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	treasure_maps = {
 		no_treasure_map_with_tier = "Bello! There is no treasure map with tier ${mapTier}.",
 		treasure_map_does_not_have_piece = "Treasure map wit' tier ${mapTier} doesn't have piece ${pieceNumber}.",
-		spawn_map_piece_missing_permissions = "Banana! Player attempted to spawn a map piece without proper permissions.",
 
 		sketchy_map = "Bababa, Sketchy Map",
 		worn_map = "Bee do bee do, Worn Map",
@@ -11156,9 +11075,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		set_ocean_scaler_no_permission = "Ahhh...The player did not have the required permission to set the ocean scaler. Nah nah nah nah nah!.",
 
 		tsunami_started = "Bananaaa! Tsunami started. It will take ${minutes} minutes to flood the map.",
-		tsunami_stopped = "Bananaaaa stopped.",
-
-		toggle_tsunami_no_permissions = "No able to toggle the tsuanmi, sorry."
+		tsunami_stopped = "Bananaaaa stopped."
 	},
 
 	tuner_shop = {
@@ -11195,8 +11112,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		cleared_vdm = "Papoy! Cleared ${amount} vdm targets.",
 		failed_vdm_clear = "Aah no good! Failed to clear vdm targets.",
 		added_vdm_target = "Bee-do Bee-do! NPC with network id ${networkId} is now targetting ${target}.",
-
-		vdm_no_permissions = "Malay Na Gah! Player attempted to run the vdm command without proper permission."
+		no_ped_available = "BANANA! Bello! No nearby minion is available.",
+		failed_steal = "BANANA! Bello! Failed to steal vehicle.",
+		stealing_vehicle = "BANANA! Bello! A nearby minion was instructed to steal the vehicle (${distance}m)."
 	},
 
 	vending_machines = {
@@ -11278,10 +11196,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	},
 
 	wizard = {
-		action_missing_permissions = "Bolottogalada je kele kdala papoi, pojito jiola kedo elo noi.",
-		action_radius_missing_permissions = "Bolottogalada je kele kdala papoi weleki jedeti, pojito jiola kedo elo noi.",
-		run_as_missing_permissions = "Jiolo kele fo kele gugato ja uno bolottoga, pojito jiola kedo elo noi.",
-
 		menu_title = "Bob",
 
 		ragdoll_player = "Bobobo",
@@ -11367,8 +11281,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		invalid_explosion_type = "Sorry, the type of the explosion `${explosionType}` is not valid in Minionese.",
 		invalid_camera_shake = "Oopsie daisy! The camera shake `${cameraShake}` is not valid in Minionese.",
 		invalid_damage_scale = "Ay yai yai! The damage scale `${damageScale}` is not valid in Minionese.",
-		created_explosion = "Bee-do! Created an explosion of type `${explosionTypeName}` with a damage scale of `${damageScale}` and camera shake of `${cameraShake}`.",
-		create_explosion_not_developer = "Bananaaaa! A player attempted to create an explosion, but they were not a developer."
+		created_explosion = "Bee-do! Created an explosion of type `${explosionTypeName}` with a damage scale of `${damageScale}` and camera shake of `${cameraShake}`."
 	},
 
 	functions = {
@@ -11489,7 +11402,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	},
 
 	duty = {
-		toggle_duty_status_no_permissions = "Me want bananaaaa! Player attempted to toggle on duty status via command without proper permissions tulaloo!",
+		toggle_duty_status_no_permissions = "Attempted to toggle on duty status via command without proper permissions. Banana!",
 
 		duty_status_on = "Bee do bee do bee do, Successfully went on duty tulaloo bananaaaa!",
 		duty_status_off = "Bee do bee do bee do, Successfully went off duty tulaloo bananaaaa!",
@@ -11604,6 +11517,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		license_hunting = "Hunting Bee-do License",
 		license_fishing = "Fishing Bee-do License",
 		license_weapon = "Bellopi pidipi-bop Weapons License",
+		license_mining = "Mining License. Ba-ba-na-na!",
 		gave_character_license = "Bapadoodoo ${characterName} license `${licenseLabel}`.",
 		character_already_has_license = "${characterName} bababa-bellopi has license `${licenseLabel}`",
 		removed_character_license = "Bababa-bellopi removed license `${licenseLabel}` from ${characterName}.",
@@ -11737,8 +11651,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		not_in_a_vehicle = "Mwah? You are not in a bable-bable.",
 		vehicle_engine_on = "Banana! The bable is still running.",
 
-		set_fuel_no_permissions = "Player attempted to set a bable's bable level without proper bable-bable.",
-
 		vehicle_exploded_logs_title = "Bee-do, bee-do!",
 		vehicle_exploded_logs_details = "${consoleName} refueled a vehicle and triggered an explosion due to a running engine. Banannaaaa!"
 	},
@@ -11834,11 +11746,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "Bukas na ang pagsasaayos ng garahe.",
 		toggle_garage_debug_toggled_off = "Sarado na ang pagsasaayos ng garahe."
-	},
-
-	handlings = {
-		set_handling_override_not_super_admin = "Bello, the player tried to set a handling override without proper permission.",
-		remove_handling_override_not_super_admin = "Papoy, the player tried to remove a handling override without proper permission."
 	},
 
 	keys = {
@@ -11965,31 +11872,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		toggle_brakes_off = "Me want bananaaaa!",
 		failed_modify_brakes = "Uh oh... Cheesecake!",
 
-		toggle_disabled_brakes_no_permissions = "Bello! Player attempted to toggle disabled brakes via command without proper permissions.",
-
-		-- NOTE: `add_vehicle` command:
-		add_vehicle_not_super_admin = "Tank yu! The player attempted to add a vehicle to someone's garage without proper permissions.",
-		add_vehicle_added_vehicle_for_everyone = "Poopaye! Added vehicle with model name `${modelName}` for everyone.",
-		add_vehicle_added_vehicle_for_player = "Papoy! Added vehicle with model name `${modelName}` for ${consoleName}.",
-		add_vehicle_added_vehicle = "Bello! Added vehicle with model name `${modelName}`.",
-		add_vehicle_character_not_loaded = "bello. Pãtlle pl̃yeer hæd nu chãractẽr lõded.",
-		add_vehicle_target_user_not_found = "mẽẽm̃m̃h! Tãrget ũzer kũd nut beẽ phaund.",
-		add_vehicle_invalid_input = "tulaliloo! Invalid inepput.",
-		add_vehicle_no_permissions = "Põlu! Nũ pẽrmishunz.",
-		add_vehicle_user_not_found = "Aaaah... ũzer nut phaund.",
-		add_vehicle_invalid_player = "sorry. Tẽr wær nõ pl̃yeerz wɪð surver ID `${serverId}`.",
-		add_vehicle_invalid_model_name = "Hahaha... ruppu-kitsu! Tẽ mõdel nẽmɛ `${modelName}` iz nut a valid mõdel.",
-		add_vehicle_no_model_name = "Nõ mõdel nẽmɛ addẽd. Lalala...",
-
-		added_vehicle_for_everyone_logs_title = "Bee-do Bee-do: Added Vehicle for All",
-		added_vehicle_for_everyone_logs_details = "${consoleName} added a vehicle with the model name `${modelName}` to everyone's garage. Bello!",
-		added_vehicle_for_player_logs_title = "Bee-do Bee-do: Added Vehicle for Player",
-		added_vehicle_for_player_logs_details = "${consoleName} added a vehicle with the model name `${modelName}` to ${targetConsoleName}'s garage. Gelato!",
-		added_vehicle_logs_title = "Bee-do Bee-do: Added Vehicle",
-		added_vehicle_logs_details = "${consoleName} added a vehicle with the model name `${modelName}` to their garage. Bello!",
-
 		-- NOTE: `toggle_vehicle_weapons` command:
-		toggle_vehicle_weapons_not_super_admin = "Bello! The player tried to toggle the weapons of a vehicle without the correct permissions.",
 		toggled_vehicle_weapons_on = "Taco-la-mu! Toggled the weapons on.",
 		toggled_vehicle_weapons_off = "Hana dul sae! Toggled the weapons off.",
 		toggled_vehicle_weapons_vehicle_is_not_networked = "Me want banana! The vehicle you are in is not connected.",
@@ -12144,6 +12027,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		ems_boat_hq = "EMS Boat HQ - la kasa de los Minions del agua",
 		ems_garage = "Garaje de los Minions EMS",
 		e_to_get_treated = "[E] Verikasha! Treated for $1250!",
+		e_check_in_player = "[E] Check-in Carried Player - $1250. Bello!",
+		check_in_blocked = "Check-in is occupied. Ba-na-na-ba-ba-na!",
 		get_treated = "Verikasha! Treated for $1250!",
 		you_are_being_treated = "Bee doh bee doh! You are being treated.",
 		being_treated = "Bee doh bee doh! You are being treated.",

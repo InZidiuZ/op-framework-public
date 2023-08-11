@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 18 (do not change)
+-- AUTO LOCALES: 19 (do not change)
 
 OP.Global.Locales.Languages["meme-gungan"] = {
 	-- configuration settings for language
@@ -61,7 +61,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		you_are_not_being_carried = "Yousa not bein' carried right now.",
 		successfully_uncarried = "Successfully stopped bein' carried.",
 		failed_uncarried = "Mesa sorry, failed to stop bein' carried.",
-		uncarry_missing_permissions = "Yousa no havin' da permission to stop bein' carried.",
+		uncarry_missing_permissions = "Jar-Jar tinked to stop carry wesaout proper permissionsa.",
 
 		uncarry_logs_title = "Stop Carry Force",
 		uncarry_logs_details = "${consoleName} forced ${targetName} to stop carryin' dem.",
@@ -78,7 +78,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 	-- base/*
 	admin = {
-		feature_toggle_not_admin = "Attempted to toggle their own or someone else's '${featureName}', but didn't have proper permissions to do so.",
 		feature_toggle_activated_logs_title = "Remotely Toggled Feature",
 		feature_toggle_activated_logs_details_state = "${consoleName} mesa toggle `${featureName}` ${newState} por playa ${targetConsoleName}.",
 		feature_toggle_activated_all_logs_title = "Remotely Toggled Feature For Everyone",
@@ -101,9 +100,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		failed_to_spawn_vehicle = "Boomsa jar jar magoo ono spuna vehicle.",
 		spawned_vehicle_for_player = "Successfully spuna '${modelName}' for ${displayName}.",
 		spawned_vehicle_for_everyone = "Successfully spawned `${modelName}` for everyone.",
-		spawn_vehicle_no_permissions = "Mesa no have da permissions to spuna a vehicle.",
-		replace_vehicle_no_permissions = "Player tryin to replace dey vehicle but dey no gotsa da permission to do dat.",
-		create_vehicle_no_permissions = "Player tryin to make a vehicle but dey no gotsa da permission to do dat.",
 		spawned_vehicle_for_self_title = "Mesa Guna Anoka",
 		spawned_vehicle_for_self_details = "${consoleName} maloka una mesa gungan anoka na nomba modelo `${modelName}`.",
 		spawned_vehicle_for_player_title = "Mesa Guna Anoka para el jugador",
@@ -113,6 +109,26 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		vehicle_created = "Messaged Naboo: Successfully created vehicle.",
 		failed_vehicle_creation = "Failed to create vehicle. Mesa sorry.",
+
+		-- NOTE: `add_vehicle` command:
+		add_vehicle_added_vehicle_for_everyone = "Added vehicle with model name `${modelName}` for everyonesa.",
+		add_vehicle_added_vehicle_for_player = "Added vehicle with model name `${modelName}` for ${consoleName}.",
+		add_vehicle_added_vehicle = "Added vehicle with model name `${modelName}`.",
+		add_vehicle_character_not_loaded = "Da target playa had no characters loaded.",
+		add_vehicle_target_user_not_found = "Da target user could not be found.",
+		add_vehicle_invalid_input = "Blargatch!",
+		add_vehicle_no_permissions = "Mesa no hebben permissons.",
+		add_vehicle_user_not_found = "Mesa no finden der user.",
+		add_vehicle_invalid_player = "There no players with server ID `${serverId}`.",
+		add_vehicle_invalid_model_name = "Da model name `${modelName}` bombad no good.",
+		add_vehicle_no_model_name = "Mesa no added der model name.",
+
+		added_vehicle_for_everyone_logs_title = "Added Vehicle For Everyone",
+		added_vehicle_for_everyone_logs_details = "${consoleName} added a vehicle with model name `${modelName}` to everyone's garages.",
+		added_vehicle_for_player_logs_title = "Gallo Nappa For Usatoir",
+		added_vehicle_for_player_logs_details = "${consoleName} sez a Gallo Nappa with model name `${modelName}` to ${targetConsoleName}'s garage.",
+		added_vehicle_logs_title = "Gallo Nappa For Jeep",
+		added_vehicle_logs_details = "${consoleName} sez Gallo Nappa with model name `${modelName}` to their garage.",
 
 		invalid_amount = "Mesa no understand. Invalid amount.",
 
@@ -160,8 +176,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		removed_bank_from_player = "Mesa removed $${amount} bank from ${targetConsoleName}.",
 		removed_bank_from_everyone = "Mesa removed $${amount} bank from everyone.",
 
-		money_event_not_admin = "Mesa attempted to toggle money event `${moneyEvent}`.",
-
 		spawned_item_title = "Mess-en item",
 		spawned_item_details = "${consoleName} spawned in ${amount}x `${itemName}` for themselves.",
 		spawned_item_for_player_title = "Spawned Item For Gungan",
@@ -178,7 +192,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		announcement_logs_title = "Server-wide announcement",
 		announcement_logs_details = "${consoleName} broadcast the following message to all: `${announcementMessage}`",
-		announcement_not_admin = "You no have power to post staff announcement. Sorry!",
 
 		posted_announcement = "Posted announcement message.",
 		posted_announcement_locale = "Posted announcement message from locale.",
@@ -188,7 +201,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		staff_title = "STAFF ${staffName}",
 		staff_message_logs_title = "Staff Message",
 		staff_message_logs_details = "${consoleName} mesa-sent da mesa-age in da staff mesa-chat: `${staffMessage}`",
-		staff_message_illegal = "Mesa thinks dat player no be staff, but be attempted mesa-sending mesa-message in da staff mesa-chat.",
 
 		staff_pm_title = "STAFF PM ${transmissionTitle}",
 		staff_pm_logs_title = "Staff PM",
@@ -218,7 +230,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		missing_valid_license_identifier_parameter = "Missing a valid 'licenseIdentifier' parameter.",
 
-		illegal_entity_wipe = "Player attempted to wipe entities, but didn't have permissions.",
 		wiped_entities = "Entity opeesa wiped. Deleted ${deletedEntities} networked entities.",
 		wipe_entities_logs_title = "Wiped Entities",
 		wipe_entities_logs_details = "${consoleName} mesa issued an entity wipe with da following configuration: distance = `${distance}`, ignoreLocalEntities = `${ignoreLocalEntities}`, modelName = `${modelName}`",
@@ -261,12 +272,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		ban_quadrouple_kill = "😨 QUADROUPLE KILL!!!!!! Painful death!",
 		ban_killing_spree = "🤯 KILLING SPREE (${count})!!!!!! Mesa cant take it anymore! Aaaaa!",
 
-		kick_player_not_staff = "Attempted to kick a player without proper permissions. Mesa no lika dis. Ban dem if they messa round like dis again.",
-		ban_player_not_staff = "Mesa not allowen to ban a playa witout da propa permissions.",
-
-		hide_staff_not_staff = "Mesa not allowen to hide mesa staff status witout da propa permissions.",
-		toggle_staff_not_staff = "Mesa not allowen to toggle mesa staff availability witout da propa permissions.",
-
 		logs_hide_staff_title = "Staffa gone hide",
 		logs_hide_staff_hidden_details = "${consoleName} has made their staffa status hidden.",
 		logs_hide_staff_shown_details = "${consoleName} has made their staffa status show.",
@@ -282,10 +287,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		staff_feature_unavailable = "Disa feature is unavailable while yousa staff availability is toggled off.",
 
-		toggle_player_track_no_permissions = "Jar Jar Binks says: Mesa no can toggle player trackin' without proper permissions.",
-		set_job_no_permissions = "Jar Jar Binks says: Mesa no can set a job without proper permissions.",
-		toggle_reflection_no_permissions = "Meesa tried to toggle damage reflection mesaout proper permissions.",
-
 		success_enable_reflection = "Reflection mesa enabled successfully.",
 		success_disable_reflection = "Reflection mesa disabled successfully.",
 		failed_toggle_reflection = "Meesa failed to toggle reflection.",
@@ -296,12 +297,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		headache_logs_title = "Triggered Headache",
 		headache_logs_details = "${consoleName} has triggered a headache for ${targetConsoleName}.",
-		trigger_headache_no_permissions = "Mesa sorry, but yousa no have da right permissions to triggah a headache.",
 
 		super_jump_logs_title = "Super Jump toggled",
 		super_jump_logs_details_on = "${consoleName} has toggled their super jump on.",
 		super_jump_logs_details_off = "${consoleName} has toggled their super jump off.",
-		toggle_super_jump_no_permissions = "Attemptsa to toggle their super jump without proper permissions.",
 
 		success_trigger_headache = "Successfully triggered a headache for ${playerName}.",
 		failed_trigger_headache = "Mesa no able to triggah da headache, mesa sorry.",
@@ -311,7 +310,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		reset_spawn_success = "Meesa successfully reset spawnpoint.",
 		reset_spawn_failed = "Meesa no could reset spawnpoint.",
 
-		protective_mode_not_staff = "Mesa no allowed togey toggly server protective mode without da grand big boss's permissions, okeyday?",
 		protective_mode_toggled_on = "Yousa mesa happy to tell that server protective mode have been enabled. Da required amount of playtime to connect to da server is now set to `${playtime}`.",
 		protective_mode_toggled_off = "Server protective mode has now been disabled.",
 		protective_mode_already_on = "Mesa sorry, but server protective mode already been enabled with required playtime at `${playtime}`.",
@@ -320,13 +318,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		logs_protective_mode_on = "${consoleName} toggled the server protective mode on with required playtime: `${playtime}`. MuiMesa happy for the extra protection.",
 		logs_protective_mode_off = "${consoleName} toggled the server protective mode off. MuiMesa no need be protective for now.",
 
-		spawn_item_not_staff = "Mooey Mooey... Attempted to spawn an item without proper permissions.",
 		no_item_name = "Exsqueeze me... No item name provided.",
 		invalid_item_name = "${itemName} is not a valid item name. TisnoTisno.",
 		item_spawned = "Spawned ${amount}x `${itemName}` for ${consoleName}. MuiMesa proud to be helping.",
 		item_spawned_for_everyone = "Meesa spawned ${amount}x `${itemName}` for everyone.",
 
-		set_warning_message_not_staff = "Meesa no have da proper permissions to set da server's warning message.",
 		warning_message_set_to = "Da warning message has been set to `${warningMessage}`.",
 		warning_message_removed = "Da warning message been removed.",
 		warning_message_error = "An error occurred while trying to set da warning message.",
@@ -368,6 +364,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		evidence_view_details_on = "${consoleName} toggleden theen advanceden evidence viewen onn.",
 		evidence_view_details_off = "${consoleName} toggleden theen advanceden evidence viewen offen.",
 
+		tracker_turned_on = "Yousa tracker has been turned on.",
+		tracker_turned_off = "Yousa tracker has been turned off.",
+
 		report_muted_no_reason = "Yousa been muted fromen da report commando withouten a specified reasoning.",
 		report_muted = "Yousa been muted fromen da report commando for reason ${reason}.",
 
@@ -388,9 +387,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		teleported_to_waypoint_logs_title = "Teleported To Waypoint",
 		teleported_to_waypoint_logs_details = "${consoleName} teleported to a waypoint at ${locationLabel}.",
 
-		teleport_to_coordinates_not_staff = "Da player attempted to teleport to somesa coordinates but they wassen not staff.",
-		teleport_to_waypoint_not_staff = "Da playa attempted to teleport to a waypoint but dey were not staff.",
-
 		failed_isolate = "Failed to isolate playa.",
 		invalid_server_id = "Invalid server id.",
 		isolate_success_on = "Successfully isolated ${consoleName}.",
@@ -402,8 +398,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		population_density_set_off = "Da populashun density multipli'r overrida has beena turned off.",
 		population_density_is_not_on = "Da populashun density multipli'r overrida issa not on.",
 		population_density_already_set_to = "Da populashun density multipli'r overrida issa already set to ${multiplierLabel}%.",
-
-		population_density_not_super_admin = "Playa attempted to set da populashun density without propa permissions.",
 
 		enabled_features_list = "Enabl'd Featur's:",
 		aimbot_feature = "Aimbot",
@@ -448,8 +442,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		vehicle_smoke_invalid_class = "Vehicle smoke no can be enabled fo dis vehicle class. Oke-day?",
 
-		repair_vehicle_not_super_admin = "Da playa attempted to repair a vehicle without da proper permissions. Biiiiiig problem!",
-
 		repaired_vehicle_logs_title = "Repaired Vehicle logs",
 		repaired_vehicle_logs_details = "${consoleName} repaired da vehicle theys be in.",
 
@@ -464,9 +456,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		set_vehicle_livery_logs_title = "Mesa Vehicle Livery",
 		set_vehicle_livery_logs_details = "${consoleName} mesa livery ka vehicle na plate `${vehiclePlate}` ku `${liveryIndex}`.",
-
-		set_livery_missing_permissions = "Bombad tried mesa livery ka vehicle without da proper permissions.",
-		set_modifications_missing_permissions = "Bombad tried mesa modification ka vehicle without da proper permissions.",
 
 		set_vehicle_modification = "Mesa modification mo vehicle for modification type `${modType}` ku index `${modIndex}`. (Custom Tires: ${customTires})",
 		mod_index_invalid_for_type = "Mod indéx `${modIndex}` est invalid pour le type de mod `${modType}`.",
@@ -486,15 +475,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		invalid_dirt_level = "Meesa not be understanding dis dirt level.",
 		set_dirt_level = "Vehicle's dirt level was set to `${dirtLevel}`.",
 
-		set_dirt_level_not_super_admin = "Dis plaaya not be having proper permissions to set the dirt level of a vehicle.",
-
-		set_fake_plate_not_super_admin = "Dis plaaya not be having proper permissions to set the fake plate of a vehicle.",
-
 		already_fake_disconnecting = "Yousa already attempting to fake disconnect. Please waita.",
 		started_fake_disconnect = "Staated fake disconnect. Repeat da command to stop.",
 		stopped_fake_disconnect = "Stopped fake disconnect.",
-
-		fake_disconnect_not_super_admin = "Player attempted to fake disconnect without proper permissions.",
 
 		disabled_idle_cam = "Disabled da idle cam.",
 		enabled_idle_cam = "Re-enabled da idle cam.",
@@ -502,12 +485,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		created_vehicle_smoke_for_player_logs_title = "Created vehicle smoke.",
 		created_vehicle_smoke_for_player_logs_details = "${consoleName} created vehicle smoke.",
 
-		player_info_not_staff = "Yousa attempted to get a playa's characta information without propa permission.",
 		player_info_title = "${consoleName}",
 		player_info = "${fullName} #${characterId}\nHas ${playtime} played.\n${jobName}, ${departmentName}, ${positionName}\n\n${backstory}",
 
 		inventory_name_missing = "Missing inventory name parametesa.",
-		force_inventory_missing_perms = "Yousa attempted to force-open an inventory without propa permission.",
 
 		auto_driving_engaged = "Auto driving has been engaged (Style: ${style}).",
 		auto_driving_updated = "Yousa auto driving speed/location has been updated.",
@@ -538,9 +519,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		tint_set = "Mesa successfully set weapon tint to `${tint}` (${tintIndex}).",
 		no_weapon_tint = "Dis weapon no have tints, wesa sorry.",
 
-		weapon_attachment_missing_perms = "Mesa attempted to toggle a weapon attachment without proper permission, exsqueeze mesa.",
-		weapon_tint_missing_perms = "Mesa attempted to set a weapon tint without proper permission, exsqueeze mesa.",
-
 		no_attachments = "No Attachments, mesa sorry.",
 		available_attachments = "Mesa hesa avaiable.",
 		current_attachments = "Mesa hesa current.",
@@ -557,14 +535,14 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		cleaned_ped_self = "Meesa succesfully cleanin' yousa ped.",
 		clean_ped_failed = "Oopsie Jar Jar, meesa no able to clean yousa ped.",
 		cleaned_ped_for_all = "Meesa succesfully cleanin' everyone's peds.",
-		clean_ped_no_permission = "Meesa no havin' permission to clean a player's ped.",
+		clean_ped_no_permission = "Attempted to clean a player's ped withouten proper permissions.",
 
 		item_durability_set_success = "Meesa succesfully set durability to ${amount}% for items in slot ${slotId}.",
 		item_durability_set_failed = "Oopsie Jar Jar, meesa no able to set durability.",
 		item_durability_invalid_amount = "Invalid durability amount (0 <> 100).",
-		item_durability_set_no_permission = "Meesa no havin' permission to set an item's durability.",
+		item_durability_set_no_permission = "Yousa no have da permission to set an item's durability.",
 
-		item_metadata_set_no_permission = "Meesa tryin' to set an items metadata without da required permissions.",
+		item_metadata_set_no_permission = "Yousa no have da permission to set an item's metadata.",
 		item_metadata_invalid_metadata = "Disa invalid item metadata.",
 		item_metadata_set_success = "Mesa set metadata for items in slot ${slotId}. It's a success!",
 		item_metadata_set_failed = "Mesa failed to set metadata.",
@@ -589,8 +567,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		scoop_invalid = "Yousa haven't scooped up any playas.",
 		unscooped_players = "Unscooped ${amount} of ${total} playa(s).",
 		unscoop_failed = "Meesa failed to unscoop playas.",
-
-		unscoop_missing_permissions = "Playa attempted to unscoop without proper permissions.",
 
 		toggle_collisions_missing_permissions = "Playa attempted to toggle their collisions without proper permissions.",
 		wipe_first_owned_missing_permissions = "Meesa sorry, cannot wipe first owned creature witout permission.",
@@ -678,10 +654,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		model_already_added_to_list = "Model `${modelName}` (${modelHash}) issen already added to the detection list.",
 		removed_model_to_list = "Removed model `${modelName}` (${modelHash}) from the detection list.",
 		model_not_in_list = "Dis model '${modelName}' (${modelHash}) issa not added to da detection list.",
-		set_model_detected_not_staff = "Da player attempted to add a model to da detection list, but didn't have da correct permissions to do so.",
-		set_model_undetected_not_staff = "Da player attempted to remove a model from da detection list, but didn't have da correct permissions to do so.",
-		add_detection_area_not_staff = "Da player attempted to add a detection area, but didn't have da correct permissions to do so.",
-		remove_detection_area_not_staff = "Da player attempted to remove a detection area, but didn't have da correct permissions to do so.",
 		detection_area_close = "[${InteractionKey}] Yusa take off detecten area (${areaId})",
 		detection_area = "Detecten Area (${areaId})",
 
@@ -721,6 +693,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		clear_tasks_ban = "Dis no mesa Jedi mind trick training center. Yousa efforts to influence da free will of others has been noted... and rejected.",
 		projectile_event_ban = "Dis no Hogwarts and yousa no Harry Potter. Da indiscriminate casting of spells - or projectiles - isn't allowed here.",
 		illegal_native_ban = "Meesa no can use a spell dat meesa haven't learned yet...",
+		underground_ban = "Yousa seem to have fallen into da opee opee.",
+		infinite_ammo_ban = "Despite da popular belief, da laws of conservation do apply here. Da magic ammunition pouch has been taken away.",
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Bad Creation",
@@ -757,6 +731,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		type_thermal_night_vision = "Gungan Meeta/Night Vision",
 		type_vehicle_modification = "Gungan Bongo Matingo",
 		type_illegal_native = "Gungan Woosha Call",
+		type_underground = "Ooroo Gungan",
+		type_infinite_ammo = "Infinite Ammo",
 
 		event_prefix = "Anti-Cheat: ${type}",
 
@@ -825,6 +801,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		job_low = "low job",
 		job_medium = "medium job",
 		job_high = "high job",
+
+		banned_no_permissions = "Attempted to `${reason}` without proper permissions.",
 
 		banned_globally = "Mesa deeply sorry, but mesa must inform ya that yousa bein' banned from all OP-FW servers.\n\nBan Hash: ${banHash}\nBan Reason: ${banReason}\n\nIf yousa bombad really believe this ban to be a false one, then please join the OP-FW discord guild for information on how to appeal at ${frameworkDiscord}",
 		banned_locally = "Yousa banned from ${communityName}.\n\nBan Hash: ${banHash}\nBanned By: ${creatorName}\nBan Reason: ${banReason}\nTimestamp: ${timestamp}\n\n${indefiniteOrExpires}\n\nPlease join our discord guild for information on how to appeal at ${communityDiscord}.",
@@ -963,7 +941,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		wipe_command = "wipe",
 		wipe_command_help = "Wipe unwanted entities from da map.",
 		wipe_command_parameter_distance = "distance",
-		wipe_command_parameter_distance_help = "If yousa only want entities within a certain range to delete, inserta a distance here. Leave it at `false` or `0` for da entire map.",
+		wipe_command_parameter_distance_help = "If you only want entities within a certain range to delete, insert a distance here. Put `-1` for da entire map.",
 		wipe_command_parameter_ignore_local_entities = "ignore local entities",
 		wipe_command_parameter_ignore_local_entities_help = "Ignore non-networked entities? If yousa cleanina up from a cheater, it isa recommended yousa put this to `true` or `1`.",
 		wipe_command_parameter_model_name = "kolosso yoma",
@@ -1047,6 +1025,14 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		replace_vehicle_command_parameter_model_name = "Model name",
 		replace_vehicle_command_parameter_model_name_help = "Youse need to tell me the name of the thing you wanna spawn, okiday?",
 		replace_vehicle_command_substitutes = "rv",
+
+		add_vehicle_command = "add_vehicle",
+		add_vehicle_command_help = "Add a vehicle to someone's garage.",
+		add_vehicle_command_parameter_model = "model",
+		add_vehicle_command_parameter_model_help = "Da name or hash o' da model o' da vehicle yousa want to add.",
+		add_vehicle_command_parameter_server_id = "server id",
+		add_vehicle_command_parameter_server_id_help = "Da server ID o' da player yousa want to give a vehicle to. If yousa leave dis blank, it will auto-select yousa.",
+		add_vehicle_command_substitutes = "",
 
 		aimbot_command = "aimbot",
 		aimbot_command_help = "Toggle 'aimbot' on or off. Meesa can help with that!",
@@ -1998,8 +1984,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		fake_lag_command = "fake_lag",
 		fake_lag_command_help = "Create fake lag.",
-		fake_lag_command_parameter_counter = "bombad_laggen_counter",
-		fake_lag_command_parameter_counter_help = "Counts to create lag. Da bigga da numba, da slowa da laggen be. To turn off, leave dis blank or type `0`.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "Da target fps (>= 1).",
 		fake_lag_command_substitutes = "laggen",
 
 		view_weapon_command = "view_weapon",
@@ -2481,7 +2467,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		wipe_ground_inventories_command = "wesa wipe ground inventories",
 		wipe_ground_inventories_command_help = "Messa wipe ground inventories.",
 		wipe_ground_inventories_command_parameter_radius = "bombad-radius",
-		wipe_ground_inventories_command_parameter_radius_help = "Da bombad-radius messa choose. Leaving this as blank will auto-select `100`. Valid values are above `0`, as well as `0` and `-1` which will select all inventories.",
+		wipe_ground_inventories_command_parameter_radius_help = "Da wipe radius. Leavin' dis as blank will auto-select `5`. Valid values are above `0`, as well as `0` and `-1` which will select all inventories.",
 		wipe_ground_inventories_command_substitutes = "wipe-inventories, wesa-wipe-invs, wipe_ground",
 
 		refresh_inventory_command = "refresh_sanatize",
@@ -3266,6 +3252,12 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		vdm_clear_command_help = "Mesa clear all yous padoosa targets.",
 		vdm_clear_command_substitutes = "",
 
+		steal_vehicle_command = "steal_vehicle",
+		steal_vehicle_command_help = "Mesa Jar-Jar the closest npc *steal* the target vehicle.",
+		steal_vehicle_command_parameter_network_id = "network id",
+		steal_vehicle_command_parameter_network_id_help = "Da vehicles network id.",
+		steal_vehicle_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "voice_debug",
 		voice_debug_command_help = "Mesa toggle da voice debug.",
@@ -3661,14 +3653,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		speed_limiter_command_help = "Meesa help you pre-set da speed limit by ovverridin' da normal behavior o' da speed limiter.",
 		speed_limiter_command_substitutes = "sl, cc, cruise_control",
 
-		add_vehicle_command = "add_vehicle",
-		add_vehicle_command_help = "Add a vehicle to someone's garage.",
-		add_vehicle_command_parameter_model = "model",
-		add_vehicle_command_parameter_model_help = "Da name or hash o' da model o' da vehicle yousa want to add.",
-		add_vehicle_command_parameter_server_id = "server id",
-		add_vehicle_command_parameter_server_id_help = "Da server ID o' da player yousa want to give a vehicle to. If yousa leave dis blank, it will auto-select yousa.",
-		add_vehicle_command_substitutes = "",
-
 		toggle_vehicle_weapons_command = "toggle_vehicle_weapons",
 		toggle_vehicle_weapons_command_help = "Mooey whether mooy nuna weapons on a veesha can be used.",
 		toggle_vehicle_weapons_command_parameter_server_id = "server id",
@@ -3759,7 +3743,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 	emojis = {
 		emoji_list = "${emojis}",
-		refresh_emojis_no_permissions = "Meesa sniffen da refreshin' of emojis without da proper permissions.",
 		api_reported_no_updates = "Mesa no gettin any updates in the emoji list from Discord API.",
 		emojis_added = "Mesa added ${added} of themsa emojis.",
 		emojis_removed = "Mesa removed ${removed} of themsa emojis.",
@@ -3779,7 +3762,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	},
 
 	ping = {
-		get_pings_missing_permissions = "Dis playa tryin' to get pings but no have enough permissions to doin' it.",
 		getting_pings = "Mesa gettin' pings from alla da playas. Dissen might take a few seconds.",
 		host_data = "${position}. ${location} - ${averagePing} Average Ping (based on ${totalPings} clients), 10% Low: ${averagePingLow}, 10% High: ${averagePingHigh}",
 		list_hosts = "${listHosts}"
@@ -3891,7 +3873,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		package_same_remaining_time = "Yousa package is `${packageName}`. It will expire in ${remainingTime}.",
 		no_package = "Yousa do not have a package.",
 		fetching_package_error = "Mesa bombad error occurred while tryin to fetch yousa package data.",
-		check_playtime_not_staff = "Mesa sorry, but yousa no have permissions to check playtimes for others.",
 		reason_unknown = "Mmm, reason unknown. ",
 
 		unloaded_character = "Unloaded character. ",
@@ -3900,8 +3881,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		user_not_found = "Meesa couldn't find the sent user on da server.",
 		invalid_character_id = "Invalid cha-racter id parameter sent. Mesa no understand.",
 		invalid_license_identifier = "Invalid license identifier parameter sent. Mesa no know what dat means.",
-
-		unload_character_not_staff = "Dis player tryin' to unload a player's cha-racter but they no staff.",
 
 		unloaded_character_for_player_logs_title = "Unloaded Cha-racter For Player",
 		unloaded_character_for_player_logs_details = "${consoleName} unloaded ${targetConsoleName}'s cha-racter ${characterFullName} (${characterId}) with da reason: `${message}`.",
@@ -3942,9 +3921,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		invalid_destination_server_id = "Meesa sorry, that destination server id is invalid.",
 		invalid_source_server_id = "Meesa sorry, that source server id is invalid.",
 		failed_teleport_player_to_player = "Meesa sorry, meesa could not teleport yousa to play with that player.",
-		teleported_player_to_player = "Yousa have been teleported to play with dat player.",
-
-		teleport_player_missing_permissions = "Yousa cannot teleport that player, yousa do not have da correct permissions."
+		teleported_player_to_player = "Yousa have been teleported to play with dat player."
 	},
 
 	afk = {
@@ -3954,8 +3931,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Mooey mooey! Da player attempted to crate an aid-watoo but mesa thinks they no have da permissions mesa. Ouch!",
-		create_airdrop_custom_missing_permissions = "Mooey mooey! Da player attempted to crate a custom aid-watoo but mesa thinks they no have da permissions mesa. Ouch!",
 		created_airdrop = "Mesa created an airdrop of type `${airdropType}` with a total of ${itemAmount} bombad item(s).",
 		no_valid_items_provided = "Mesa sorry but no valid items provided. Oopsie!",
 		created_airdrop_with_items = "Mesa created an aid-watoo with the following items inside:\n${itemsListed}. Okeyday!"
@@ -3982,15 +3957,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Mooey mooey! Da player attempted to crate an air-strike but mesa thinks they no have da permissions mesa. Ouch!",
-
 		airstrike_success = "Airstrike created mesa-sa success!",
 		airstrike_failed = "Failed to create airstrike, oopsie!"
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Meesa thinkin' da player attempted to call in air support, but they no have the required permissions to do so.",
-
 		distance = "Distance: ${distance}${unit}",
 		time_to_impact = "ETI: ${timeToImpact}",
 
@@ -4020,9 +3991,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		show_alert_success = "Successfully showed alert to player.",
 		show_alert_everyone_success = "Icky icky, alart successully showed to every Gungan.",
-		show_alert_failed = "Ooopa, beep beep! Failed to showed alart to Gungan.",
-
-		show_alert_missing_permissions = "Mesa sorry, but yousa no have da permissions to show an alart to anoda Gungan."
+		show_alert_failed = "Ooopa, beep beep! Failed to showed alart to Gungan."
 	},
 
 	arcade = {
@@ -4303,10 +4272,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 	audio = {
 		audio_id = "Audio ${audioId}",
-		illegal_sound_effect = "Meesa attempted to tell other clients to play an external audio.",
+		illegal_sound_effect = "Mesa tried to tell other clients to play an external audio without proper permissions.",
 		url_invalid = "Da provided URL isa not valid. It must be uploaded on a secure connection. (https://)",
 		url_missing = "Yousa need to add da URL to da audio yousa are trying to play.",
-		play_audio_no_permissions = "Played attempted to play an audio but theysa didn't have the required permissions to do so.",
 		played_audio_for_self = "Mesa played audio for mesa selves.",
 		played_audio_for_player = "Mesa played audio for ${consoleName}!",
 		played_audio_for_everyone = "Mesa played audio for everyones!",
@@ -4542,7 +4510,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		illegal_boombox_item_id = "Meesa solten no be tryin' to use a bumgong item with an illegal item id.",
 		logs_attempted_to_add_song_title = "Attempten To Adden Song",
 		logs_attempted_to_add_song_details = "${consoleName} attempted to adden a song with video URL `${url}` to da bumgong with ID `${bumgongId}`.",
-		wipe_boomboxes_not_staff = "Yousa attempted to wipe boomboxes, but no have permission to do so.",
 		logs_wiped_all_boomboxes_title = "Wiped All Boomboxes",
 		logs_wiped_all_boomboxes_details = "${consoleName} wiped all boomboxes.",
 		logs_wiped_nearby_boomboxes_title = "Wiped Nearby Boomboxes",
@@ -4634,8 +4601,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		spawned_contract = "Wesa spawned a contract. Yousa ready to go.",
 		spawned_contract_for = "Mesa succesfullee spawned a contract for ${displayName}.",
 
-		spawn_contract_no_permissions = "Yousa player attempted to spawn a boostin' contract widout proper permissions.",
-
 		already_max_vin_scratched_vehicles = "Yousa already have da maximum amount of VIN scratched vehicles in yousa garash.",
 		contract_has_expired = "Disa contract has expired.",
 		you_already_have_a_contract_started = "Yousa already have a contract started."
@@ -4685,8 +4650,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	},
 
 	cargo = {
-		start_cargo_no_permissions = "Player attempted to start da Cargo heist but they didn't have permissions to do so. Mesa suggetsta talk to da boss to gain permission.",
-		end_cargo_no_permissions = "Mesa believin' to end the Cargo heist but mesa no have permissions to do so.",
 		cargo_already_active = "Cargo already happening.",
 		started_cargo = "Cargo has begun.",
 		cargo_not_active = "Cargo no happening.",
@@ -4699,7 +4662,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	},
 
 	casino = {
-		set_casino_screen_id_not_staff = "Jar Jar Binks, mesa thinkin' dat player no have correct permissions to set da casino screen id.",
 		successfully_set_screen_label = "Muy muy successfully set da screens to screen with label `${screenLabel}`.",
 		successfully_queued_screen_label = "Muy muy successfully queued up da screen with label `${screenLabel}`.",
 		failed_to_set_screen_label = "Failed to set da screens to screen with label `${screenLabel}`. Yousa might wanna check mesa logs.",
@@ -4767,8 +4729,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		blacklisted_video = "Da video wit key `${videoKey}` is not allowed.",
 		failed_to_blacklist_video = "Mesa failed to ban da video wit key `${videoKey}`.",
 		video_is_already_blacklisted = "Da video wit key `${videoKey}` issen already banned.",
-
-		blacklist_video_missing_permissions = "Player issen tryin to ban a video but theysa no have da required permissions.",
 
 		watching_movie = "Watching ${title}",
 
@@ -4942,8 +4902,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		barber_menu_success = "Meesa sorry, me cannot toggle barber shop menu.",
 		failed_toggle_barber_menu = "Meesa open barber shop menu for ${consoleName}.",
 		invalid_server_id = "Invalid server id. Mesa no understand.",
-
-		clothing_menu_missing_permissions = "Player tried to open clothing menu for another player. Mesa cannot allow.",
 
 		hats_and_helmets = "Heads and hats",
 		glasses = "Goggles",
@@ -5696,7 +5654,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		special_vehicle_won = "Yousa won a special vehicle! You can find it in yoursa garage.",
 
-		reset_daily_activities_no_permissions = "Player attempted to reset their daily activities without proper permissions.",
 		reset_daily_activities = "Reset Daily Activities.",
 
 		task_progress = "Task Progress: ${task} (${remain} remain)",
@@ -5770,7 +5727,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		network_id_side = "Network ID: ${networkId}",
 		no_target = "Meesa no find target",
 		invalid_radius_parameter = "Mesa think `radius` parameter is not working.",
-		inject_code_not_developer = "Yousa tryin to inject code, but you not a developer.",
 		inject_code_invalid_player = "No players with server id `${serverId}`.",
 		inject_code_success_for_everyone = "Yousa injected code sucesso for everyone.",
 		inject_code_success_for_player = "Yousa injected code sucesso for ${consoleName}.",
@@ -5817,21 +5773,18 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		invalid_network_id = "Mooey mooey, invalid network ID.",
 		delete_entity_success = "Mui mui, successfully deleted entity with network id ${networkId}.",
 		delete_entity_failed = "Mesa no can delete entity.",
-		delete_entity_no_permissions = "Da playah tryin to delete entity without propah permission.",
+		delete_entity_no_permissions = "Mesa tried to delete an entity without proper permissions.",
 
 		failed_entity_info = "Failed ta get entity information.",
 		printed_entity_info = "Printed entity server information in F8.",
 
 		move_entity_success = "Successfully moved entity with network id ${networkId}.",
 		move_entity_failed = "Mesa no can move entity.",
-		move_entity_no_permissions = "Da playah tryin to move entity without propah permission.",
+		move_entity_no_permissions = "Mesa tried to move an entity without proper permissions.",
 
-		fake_lag_updated = "Da fake lag counter has been updated to `${counter}`.",
-		fake_lag_already_set_to = "Da fake lag counter issa already set to `${counter}`.",
-		fake_lag_enabled = "Mesa enable da fake lag wit counter `${counter}`.",
-		fake_lag_invalid_counter_value = "Disa value `${counter}` isa invalid counter for da fake lag.",
+		fake_lag_invalid_fps = "Gaa gaa, invalid fps.",
+		fake_lag_clamp = "Clamping fps to be below ${fps}.",
 		fake_lag_disabled = "Mesa disable da fake lag.",
-		fake_lag_not_enabled = "Da fake lag no enable.",
 
 		weapon_name_missing = "Missing weapon name parameter.",
 		weapon_name_invalid = "`${weaponName}` isa not a valid weapon name.",
@@ -5860,7 +5813,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		disabled_network_debug = "Mesa entity network debugging disabled.",
 		failed_network_debug = "Jar Jar Binks failed to enable entity network debugging.",
 
-		network_owner_subscription_no_permissions = "Yousa attempted to subscribe to entity network owners without proper permission.",
+		network_owner_subscription_no_permissions = "Mesa tried to subscribe to entity network owners but mesa no have proper permissions.",
 
 		missing_ipl = "Missing ipl bombad parameter.",
 		enabled_ipl = "Yousa successfully enabled ipl `${ipl}`.",
@@ -6156,8 +6109,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	},
 
 	flag_swap = {
-		toggle_flag_swap_no_permissions = "Me no have permissions to swap flags.",
-
 		toggled_flag_swap_on = "Swapped flags, meesa did it.",
 		toggled_flag_swap_off = "Yousa turned off flag swap.",
 
@@ -6181,16 +6132,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		failed_create = "Meesa sorry, mesa failed to create forcefield.",
 		forcefield_marker = "ID: ${id}",
 		invalid_forcefield_id = "Invalid forcefield ID. Mesa no understand.",
-		failed_destroy = "Meesa sorry, mesa failed to destroy forcefield.",
-
-		create_forcefield_no_permissions = "Player no have the required permissions to create a forcefield. Mesa no can do that.",
-		destroy_forcefield_no_permissions = "Player no have the necessary permissions to destroy a forcefield. Mesa no can do that."
+		failed_destroy = "Meesa sorry, mesa failed to destroy forcefield."
 	},
 
 	fortnite = {
-		add_building_no_permissions = "Player no have the required permissions to add a Fortnite building. Mesa no can do that.",
-		wipe_buildings_no_permissions = "Mesa thinks dis player tryin' ta wipe out Fortnite buildings but they no have da permissions ta do dat.",
-
 		no_buildings_in_radius = "Muyang no see any buildings within ${radius} distance.",
 		no_buildings = "Mesa see no buildings.",
 		wiped_buildings_in_radius = "Mesa wiped out ${removedBuildings} buildings within ${radius} distance.",
@@ -6402,7 +6347,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		press_to_exit_locker = "Press ~INPUT_CONTEXT~ to exit the locker. (Gungan: Pussta ~INPUT_CONTEXT~ to leave-tha locca.)",
 		failed_to_start_escape_room = "Failed to start escape room. (Gungan: Failen tu staht escappen room.)",
 		started_escape_room = "Started escape room with ${playerAmount} players. (Gungan: Stahten escappen room wif ${playerAmount} belongas.)",
-		start_escape_room_missing_permissions = "Player attempted to start an escape room but they didn't have the required permissions to do so. (Gungan: Playa tryied tu staht escappen room but didn't have deh-needen permissions tu do it.)",
 		escape_instructions = "Once completed, the doors will unlock and you will be able to leave the building. (Gungan: Afta yousa finishen deh-task, da doors will unlocken anna yousa cun leave deh builden.)",
 		answer_the_phone = "Meesa answer da phone.",
 
@@ -6416,8 +6360,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		successfully_revived_everyone = "Meesa successfully revived everyone.",
 		successfully_revived_everyone_removed_injuries = "Meesa successfully revived and removed everyone's injuries.",
 		failed_to_revive = "Failed to execute da `/revive` command correctly.",
-		revive_player_not_staff = "Player attempted to revive another player but they didn't have da required permissions to do so.",
-		revive_self_not_staff = "Meesa sorry, yousa no have permission to revive mesa, okeeday?",
 		revived_self_removed_injuries_title = "Mesa revived selbst and mesa's injuries be gone",
 		revived_self_removed_injuries_details = "${consoleName} did a boompa and revived mesa and mesa's injuries go sway sway.",
 		revived_self_title = "Mesa revived mesa",
@@ -6430,8 +6372,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		revived_player_removed_injuries_details = "${consoleName} reviven-en ${targetConsoleName} ann removeden es injuren.",
 		revived_player_title = "Reviveden Person",
 		revived_player_details = "${consoleName} reviven-en ${targetConsoleName}.",
-		get_recent_deaths_not_staff = "Yusa trien-ta getten-en da recenten deaths, boot yusa haven't done it wit da permissen.",
-		get_player_last_death_not_staff = "Mesa tinka da un-useful boten tryin' to get a player's last death, but didn't have correct permissions to do so.",
 		recent_deaths = "Recent Bombad Deaths",
 		no_recent_deaths = "There's no bombadly recent Deathsa.",
 		recent_deaths_list_entry = "${recentDeathId}. ${consoleName} died ${timer} seconds ago.",
@@ -6459,7 +6399,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		no_players_in_range = "Meesa sorry, dar are no downed players within a ${distance}m radius.",
 		successfully_revived_range = "Meesa happy to inform yousa that meesa successfully revived ${amount} player(s) in a ${distance}m radius.",
 		failed_revive_range = "Meesa sorry, meesa failed to revive players.",
-		range_revive_not_staff = "Player attempted to revive players in a certain range, but didn't have correct permissions to do so. Meesa suggest to give correct permissions.",
 
 		cpr_ped_logs_title = "Ped CPRed",
 		cpr_ped_logs_details = "${consoleName} performin' CPR on a ped and gettin' $${money}.",
@@ -6577,6 +6516,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		pilot_license_details = "Pilot Licensesa | ${firstName} ${lastName} | Citizen ID: ${characterId}",
 		weapon_license = "Weapons Licensesa",
 		weapon_license_details = "Weapons Licensesa | ${firstName} ${lastName} | Citizen ID: ${characterId}",
+		mining_license = "Mesa Mining License",
+		mining_license_details = "Mesa Mining License | ${firstName} ${lastName} | Citizen ID: ${characterId}",
 		just_showed_license = " Mee-sa think yousa just showed a License. Pleasa wait a bit.",
 
 		just_showed_badge = " Mee-sa think yousa just showed a Badge. Pleasa wait a bit.",
@@ -6710,13 +6651,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		failed_to_get_instance_players = "Failed to get da players from da instance.",
 		no_players = "No mesa see players.",
 
-		instance_hud = "This is da ID of only one instance: ${instanceId}",
-
-		create_instance_not_developer = "Mesa sorry, but yousa can't create an instance because yousa not a developer.",
-		destroy_instance_not_developer = "Mesa helpin' translate. Da playa tryin to destroy an instance, but dey not a developer.",
-		add_player_to_instance_not_developer = "Mesa helpin' translate. Da playa tryin to add a playa to an instance, but dey not a developer.",
-		remove_player_from_instance_not_developer = "Mesa helpin' translate. Da playa tryin to remove a playa from an instance, but dey not a developer.",
-		get_players_from_instance_not_developer = "Mesa helpin' translate. Da playa tryin to get da playas from an instance, but dey not a developer."
+		instance_hud = "This is da ID of only one instance: ${instanceId}"
 	},
 
 	interiors = {
@@ -6892,8 +6827,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		no_ground_inventories = "There no ground inventories to wipe, sir.",
 		no_ground_inventories_within_radius = "There no ground inventories within a radius of `${radius}` mesa could wipe sir.",
 
-		wipe_inventories_not_staff = "Meesa sorry sir, Player attempted to wipe inventories, but didn't have correct permissions to do so.",
-
 		logs_wiped_all_ground_inventories_title = "Wiped All Ground Inventories",
 		logs_wiped_all_ground_inventories_details = "${consoleName} wiped all ground inventories. Meesa thinkin' it was for the better.",
 
@@ -6955,6 +6888,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		pilot_license_description = "A piloten license for flyin' planes and stuffs.",
 		weapon_license = "Weapons License",
 		weapon_license_description = "A weapons license for posessin' and carryin' higher class weaponry.",
+		mining_license = "Mesa Mining License",
+		mining_license_description = "A mining license for mining.",
 
 		sasp_badge = "SASP Badge",
 		sasp_badge_description = "Mooiege gurfan dalopu'le kosa fada tolu San Andreas Police Department.",
@@ -7033,6 +6968,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		advanced_lockpick_description = "Hiden Yo Mui Mui, Hiden Yo Lady Mui Mui",
 		cleaning_kit = "Scrubba Kit",
 		cleaning_kit_description = "Perfect tada clean yo vehicle, ora da blood stains yousa been lettin' dryin in da back of yo trunk.",
+		scratch_remover = "Mesa Scratch Remover",
+		scratch_remover_description = "Used to remove bumps & scratches from vehicles.",
 
 		multi_tool = "Multi-Bongo",
 		multi_tool_description = "A bongo dat can be used for all sorts of tings.",
@@ -7657,6 +7594,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		cone_description = "Lussa jahatkan ka uyotah mee noonga.",
 		spike_strips = "Gajasar Stripsin",
 		spike_strips_description = "Lussa gajasar stripsin ka uyotah mee noonga.",
+		spike_strips_large = "Large Squerrich Strips",
+		spike_strips_large_description = "Linwoo placey nummies anywheres in tha world.",
 		floodlight = "Kreen chaka",
 		floodlight_description = "Mesa moolee cha placing anywheres in da world",
 		left_diversion_sign = "Signa da Left Diversion",
@@ -7719,6 +7658,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		hiking_backpack = "Hiking Backpack",
 		hiking_backpack_description = "Yousa gotta get ready for adventures outdoors with this stylish hiking backpack. It adds a touch of tough charm to your wardrobe, even though it'sa purely cosmetic. Embrace the spirit of exploration and show off your love for the outdoors wherever you go!",
+		green_hiking_backpack = "Green Hiking Backplatik",
+		green_hiking_backpack_description = "Getz yerself ready for dem outdoor adventures wid dis fancy hiking backplatik. It adds a touch of rugged charm to yer attire, even though it's purely cosmetic. Embrace da spirit of exploration and show off yer outdoor enthusiast vibes no matter wheres ya go!",
+		blue_hiking_backpack = "Blue Hiking Backplatik",
+		blue_hiking_backpack_description = "Getz yerself ready for dem outdoor adventures wid dis fancy hiking backplatik. It adds a touch of rugged charm to yer attire, even though it's purely cosmetic. Embrace da spirit of exploration and show off yer outdoor enthusiast vibes no matter wheres ya go!",
 
 		gasoline_bottle = "Gasolinosa Bottle",
 		gasoline_bottle_description = "For a quicka refillen for your speedan cart or....uhm.....yourself?",
@@ -8350,6 +8293,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	items = {
 		move_to_repair = "Mesa here fer repair da vehicle.",
 		repairing_vehicle = "Mesa repairing vehicle",
+		fix_visual_damage = "Soleen visual damage",
 		using_first_aid_kit = "Mesa using first aid kit",
 		using_bandages = "Mesa using bandages",
 		using_ifak = "Mesa using IFAK",
@@ -8407,7 +8351,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		press_to_deposit = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to deposit items to the Online Jackpot. *Gungan happy dance*",
 		can_only_withdraw_at_casino = "You can only withdraw at the Casino. *Gungan head scratch*",
 
-		take_fee_no_permissions = "Tesa attempted to take jackpot fees without proper permissions.",
 		took_jackpot_fees = "Tesa took jackpot fees. Removed ${removedTotalItems} items worth $${removedTotalWorth} from ${inventories} inventories.",
 
 		jackpot = "Jackpoth",
@@ -8513,7 +8456,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		something_went_wrong = "Mesa no find entity.",
 		locate_success = "Yousa got the entity matching `${filter}` at (${x}, ${y}, ${z}) (instance = ${instance}).",
 
-		locate_entity_no_permissions = "Thissa player no gots permission to locate an entity.",
+		locate_entity_no_permissions = "Da attempt been made ta locate'n entity without gud permissions.",
 
 		locate_entity_logs_title = "Located Entity",
 		locate_entity_logs_details = "${consoleName} attempted to locate entity type `${filterType}` with value `${filterValue}`."
@@ -8596,6 +8539,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		queue = "Qwewe",
 		queue_position_with_priority = "🐌 Yosa are ${queuePosition}/${queueTotal} en da qwewe with ${queuePriorityName} priority. 🕐${queueTime}",
 		queue_position_without_priority = "🐌 Yosa are ${queuePosition}/${queueTotal} en da qwewe. 🕐${queueTime}",
+		live_on_twitch = "Yousa bored? Check out these streamers!",
+		live = "Live",
 		you_are_through = "Yosa are through!",
 		join_server = "Join-la Server",
 		tired_of_queueing = "Tired-en of queueing? Supporto us-en for queue priority-o!",
@@ -8614,6 +8559,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		weird_date_of_birth = "Mesa sayin, pickin a reasonable date of birth.",
 		invalid_backstory = "Missing or invalid backstory (max 5,000 characters).",
 		backstory_too_short = "Hayderah backstory is too short (min ${backstory} trahikul).",
+
+		invalid_date = "Invalid birth date.",
+		date_not_future = "Yousa birth date can not be in da future.",
+		date_too_old = "Yousa birth date can not be olden than 100 years.",
 
 		bad_words = "There are some bad words in yousa character name or backstory.",
 		disallowed_name = "Mesa sorry, yousa can't use daten name. Itsa not allowed.",
@@ -8659,9 +8608,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		invalid_server_id = "Invalid server id.",
 		logs_failed = "Mesa no able to da load logs.",
 
-		close = "Close",
-
-		get_logs_no_permissions = "Da player try to get da logs without da proper permissions."
+		close = "Close"
 	},
 
 	loot = {
@@ -8706,8 +8653,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	magazines = {
 		issue_id = "Gefello Issue #${issueId}",
 		releases_updated = "Releases updated.",
-		no_release_changes = "Meesa no see any changes in da releases.",
-		refresh_magazines_no_permissions = "Player trieden to refresh their magazines without da proper permissions."
+		no_release_changes = "Meesa no see any changes in da releases."
 	},
 
 	mdt = {
@@ -8889,15 +8835,12 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		bad_ped_message = "Mesa tryin' to make a meesoojah dat might be bombad ped meesoojah: \"${pedMessage}\"",
 		bad_twitter_post = "Mesa tryin' to make a meesoojah dat might be bombad twitter post: \"${twitterPost}\"",
 		bad_phone_message = "Meesa seein' a bad twitter post: \"${message}\"",
-		mute_toggle_not_staff = "Player tryin' to mute anova player but noosa gots da right permissions to do so.",
-		unmute_toggle_not_staff = "Player tryin' to unmute anova player but noosa gots da right permissions to do so.",
 		user_not_found = "Wesa no findin' a user with server ID `${serverId}`.",
 		player_already_muted = "${consoleName} isa already muted.",
 		player_has_been_muted_no_reason = "${consoleName} has now been muted without a specified reason.",
 		player_has_been_muted = "${consoleName} ish now been mute-ed witt reason: `${reason}`.",
 		player_not_muted = "${consoleName} ish not mute-ed.",
 		player_has_been_unmuted = "${consoleName} ish now free to speak ees freely.",
-		clear_chat_not_admin = "Player attempted to clear the chat for all players, but didn't have proper permissions to do so.",
 		ooc_clear_chat_title = "Chat Cleared",
 		ooc_clear_chat_details = "${consoleName} cleared da chat for everyone.",
 		muted_player = "Mute-ed Player",
@@ -9880,8 +9823,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		failed_load_player = "Failed to load player data. Did you enter a valid server id? Mesa don't unerstan.",
 		failed_add_warning = "Failed to add warning. Uh oh. Meesa made a mistake!",
 
-		get_info_no_permissions = "Player attempted to get info about a player without proper permissions. Mesa no think yousa allowed to do dis.",
-
 		user_indefinitely_banned_warning_no_reason = "I indefinitely banned this person without a specified reason. This warning was generated automatically as a result of the ban. Uh oh. Mesa did someting bad.",
 		user_indefinitely_banned_warning = "Meesa bin ban dissa person forever wif da reason `${reason}`. Dis warning was made by da system cuz of da ban.",
 		user_temporarily_banned_warning_no_reason = "Meesa ban dissa person wifout any reason for ${displayTime}. Dis warning was made by da system cuz of da ban.",
@@ -10006,11 +9947,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		missing_emote = "Missing emote parameter. Yousa must provide it.",
 
 		emote_list = "Available ped emotes: ${list}.",
-		task_list = "Mesa available ped tasks: ${list}.",
-
-		spawn_ped_missing_perms = "Mesa tryin to spawn a new ped, but mesa no have da permissions.",
-		remove_peds_missing_perms = "Mesa no let remove da peds mesa spawned witout da permissions.",
-		ped_assign_task_missing_perms = "Mesa no allowed to assign tasks to da spawned peds witout da permissions."
+		task_list = "Mesa available ped tasks: ${list}."
 	},
 
 	ped_steal = {
@@ -10067,7 +10004,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 	player_control = {
 		unable_to_drive_for_yourself = "Yousa unable to take over for yourself.",
-		drive_for_player_no_permissions = "Player attempted to drive for player but theysa didn't have da required permissions to do so.",
 		player_is_not_nearby = "Da player with server ID ${serverId} isa not nearby.",
 		player_is_not_the_drive_of_a_vehicle = "Da player with server ID ${serverId} isa not da driver of a vehicle.",
 		press_to_stop_drive_for = "Press ~INPUT_FRONTEND_CANCEL~ to stop driving for player."
@@ -10088,7 +10024,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	player_stats = {
 		hp = "HHP",
 		armor = "Armah",
-		toggle_player_stats_no_permissions = "Mesa people not allowed to toggle player stats.",
 		updated_render_range = "Mesa updated render range to ${renderRange}.",
 		turned_player_stats_on = "Mesa turned on player stats.",
 		turned_player_stats_off = "Mesa turned off player stats."
@@ -10143,7 +10078,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 	props = {
 		illegal_prop_item_id = "Player attempted to use a prop item with an illegal item id. Mesa no understand.",
-		spawn_prop_not_staff = "Player attempted to spawn a prop but they didn't have the required permissions to do so. You not have the required permissions to do that.",
 		managing_props_help = "Yousa currently managin props. Walk up to a prop and press ~INPUT_CONTEXT~ to pick it up.",
 		total_props = "Total Props: ${count}",
 		active_props = "Active Props: ${count}",
@@ -10172,7 +10106,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		invalid_wipe_radius = "Invalid wipe radius (between 1 and 100).",
 		wipe_successful = "Successfully wiped props.",
-		wipe_props_missing_permissions = "Player attempted to wipe props but they didn't have the required permissions to do so.",
 
 		placing_prop = "Placinka Prop",
 		pickup_prop = "Pickinka Up Prop",
@@ -10209,7 +10142,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		radio_debug_off = "Successfully toggled radio debug off.",
 		radio_debug_on = "Successfully toggled radio debug on.",
 
-		radio_debug_no_permissions = "Mesa attempted to toggle da radio debug without proper permission.",
+		radio_debug_no_permissions = "Da attempt been made ta toggle da radio debug without gud permissions.",
 
 		decrypt_frequency = "[${InteractionKey}] Decrypt Frequency",
 		decrypting_frequency = "Decrypting Frequency",
@@ -10246,8 +10179,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	reskin = {
 		plastic_surgery = "Jub jub plastik surgery",
 		los_santos_police_dept = "LOS SANTOS POLICE DEPT",
-
-		reskin_player_no_permissions = "Dis player noes have da permission to changeta da radio debug.",
 
 		triggered_reskin_for_player = "Mesa triggered reskin for ${consoleName}.",
 
@@ -10353,13 +10284,13 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		riot_mode_enabled = "Riot mode activated!",
 		riot_mode_disabled = "Riot mode disabled. Any monsters dat already aggressive will keep fightin' until der end.",
 		riot_mode_failed = "Mesa nah suceeded inna togglin' da riot mode.",
-		riot_mode_missing_perms = "Yousa no havin' enough permission to turn onna riot mode.",
+		riot_mode_missing_perms = "Da attempt been made ta toggle da riot mode without gud permissions.",
 
 		riot_mode_enabled_help = "Mooey-mooey! Riot mode has been enabled.",
 		riot_mode_disabled_help = "Mesa feliz. Riot mode has been disabled.",
 
-		add_riot_player_no_permissions = "Yousa no have permissions bombad! Tried to add a player to the riot list.",
-		remove_riot_player_no_permissions = "Yousa no have permissions bombad! Tried to remove a player from the riot list.",
+		add_riot_player_no_permissions = "Bossa happening to adden a playen to da riot list without miseese permissionsa.",
+		remove_riot_player_no_permissions = "Bossa happening to adden a playen to da riot list without miseese permissionsa.",
 
 		player_already_in_riot_list = "${consoleName} issa already in the riot list.",
 		player_not_in_riot_list = "${consoleName} issa not in the riot list.",
@@ -10626,7 +10557,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		finding_player = "Findinga Playera",
 
 		invincibility_active = "Yusa is invincible: ~r~Active~w~",
-		invincibility_inactive_dead = "Yusa is invincible: ~g~Inactive~w~ (dead)",
+		invincibility_inactive_dead = "Invincibility: ~g~Active~w~ (dead)",
+		invincibility_inactive_trunk = "Invincibility: ~g~Active~w~ (tronka)",
 		invincibility_inactive = "Yusa is invincible: ~g~Inactive~w~",
 
 		health_ok = "Gungan: Health: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
@@ -10698,7 +10630,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	status = {
 		status_reset = "Meesa successfully reset the status for ${consoleName}.",
 		status_reset_failed = "Meesa no find any user with server ID `${serverId}`.",
-		reset_status_not_staff = "Meesa attempted to reset a player's status without required permissions.",
 		status_reset_for_all = "Meesa successfully reset the status for everyone.",
 		status_disabled = "Disabled statuses (stress, hunger and thirst).",
 		status_enabled = "Enabled statuses (stress, hunger and thirst).",
@@ -10711,8 +10642,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		set_body_armor_level_everyone_details = "${consoleName} set body armor level for every Gungan to `${bodyArmorLevel}`.",
 		set_body_armor_level_player_title = "Mesa Set Body Armor Level For Player",
 		set_body_armor_level_player_details = "${consoleName} updayed ${targetConsoleName} and set der body armor level to `${bodyArmorLevel}`.",
-		set_body_armor_level_player_not_staff = "Yousa gotta be in da boss' club to change another player's body armor level.",
-		set_body_armor_level_self_not_staff = "Yousa no be in da boss' club to change mesa own body armor level.",
 		stress_level_warning = "Yousa too stressed! Lower yousa stress by smoking Cigarettes, Joints or doing activities like Yoga."
 	},
 
@@ -10725,7 +10654,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		missing_hour = "No hour provided.",
 		invalid_hour = "Local time override is invalid. Da value should be a time between 0:00 and 23:59.",
 		hour_changed = "Da hour has now been set to `${hour}`.",
-		set_hour_not_staff = "Attempted to set da hour without required permissions.",
 
 		local_time_override_enabled = "Set local time to ${hour}:${minute}.",
 		local_time_override_disabled = "Meesa reset local time to default.",
@@ -10735,27 +10663,21 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		missing_minute = "No minute provided.",
 		invalid_minute = "Minute `${minute}` is invalid. Da value should be between 0 and 59.",
 		minute_changed = "Da minute has now been set to `${minute}`.",
-		set_minute_not_staff = "Meesa attempted to set da minute without required permissions.",
 
 		missing_weather = "No weather provided.",
 		invalid_weather = "Mesa no undastan '${weatherName}'. Value mesa weather names are CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT, and BLIZZARD.",
 		weather_changed = "Mesa setten da weather to '${weatherName}'.",
 		weather_advanced = "Mesa advanced da weather to '${weatherName}'.",
 		weather_advance_fail = "Oh no, mesa no could advance da weather naturally.",
-		set_weather_not_staff = "Yousa no have da permissions to set da weather.",
-		advance_weather_not_staff = "Yousa no have da permissions to advance da weather.",
 
 		time_frozen = "Da tomeesa shud be frozen now.",
 		time_unfrozen = "Da tomeesa no be frozen anymore.",
-		freeze_time_not_staff = "Ex-squeeze me, yousa no be authorized to freeze da tomeesa.",
 
 		weather_frozen = "Da weadas be frozen now.",
 		weather_unfrozen = "Da weadas no be frozen anymore.",
-		freeze_weather_not_staff = "Ex-squeeze me, yousa no be authorized to freeze da weadas.",
 
 		blackout_enabled = "Mesa seein' a blackout in da city now.",
 		blackout_disabled = "Da blackout no be present in da city anymore.",
-		blackout_not_staff = "Ex-squeeze me, yousa no be authorized to toggle a blackout.",
 
 		weather_changed_title = "Wetha Changed",
 		weather_changed_details = "${consoleName} changed da wetha to `${weatherName}`.",
@@ -11109,8 +11031,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	},
 
 	trains = {
-		spawn_train_missing_permissions = "Mm, mesa no spawna train. No permitten",
-
 		invalid_track_id = "Yousa give invalid track ID. Not good!",
 		spawned_train_on_track = "Okeeday, mesa spawned train on track ${trackId}.",
 		failed_to_spawn_train = "Oooh mooey mooey, mesa no can spawn train."
@@ -11126,7 +11046,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	treasure_maps = {
 		no_treasure_map_with_tier = "Err no treasure map witta tier ${mapTier}.",
 		treasure_map_does_not_have_piece = "Treasure map witta tier ${mapTier} don't gots piece ${pieceNumber}.",
-		spawn_map_piece_missing_permissions = "Player trynna spawn a map piece wit no propa permissions.",
 
 		sketchy_map = "Sketchy Map",
 		worn_map = "Worn Map",
@@ -11156,9 +11075,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		set_ocean_scaler_no_permission = "Da player no have da required permission ta set da ocean scaler.",
 
 		tsunami_started = "Tsunami started. It wolla taka ${minutes} minutes to flood da map.",
-		tsunami_stopped = "Boompa stopped.",
-
-		toggle_tsunami_no_permissions = "Ouch! Failed to toggle the tsuanmi without gud enough permissions."
+		tsunami_stopped = "Boompa stopped."
 	},
 
 	tuner_shop = {
@@ -11195,8 +11112,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		cleared_vdm = "${amount} vdm targets cleared.",
 		failed_vdm_clear = "Meesa failed to clear vdm targets.",
 		added_vdm_target = "NPC with network id ${networkId} is now targetting ${target}.",
-
-		vdm_no_permissions = "Player attempted to run the vdm command without proper permission."
+		no_ped_available = "Yousa seein no nearby ped is available.",
+		failed_steal = "Failed to steala vehicle.",
+		stealing_vehicle = "A nearby ped wasa instructed to steala da vehicle (${distance}m)."
 	},
 
 	vending_machines = {
@@ -11278,10 +11196,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	},
 
 	wizard = {
-		action_missing_permissions = "Mesa attempted to make a playa do a wizard action without proper permissions.",
-		action_radius_missing_permissions = "Mesa attempted to make playas in a certain radius do wizard actions without proper permissions.",
-		run_as_missing_permissions = "Mesa attempted to run a command as another playa without proper permissions.",
-
 		menu_title = "Da Wizard",
 
 		ragdoll_player = "Ragdoll",
@@ -11367,8 +11281,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		invalid_explosion_type = "Boom type `${explosionType}` issa not valid.",
 		invalid_camera_shake = "Camera shake `${cameraShake}` issa not valid.",
 		invalid_damage_scale = "Damage scale `${damageScale}` issa not valid.",
-		created_explosion = "Mesa created a boom of type `${explosionTypeName}` with a damage scale of `${damageScale}` and camera shake of `${cameraShake}`.",
-		create_explosion_not_developer = "Player attempted to create a boom but they were not a developer."
+		created_explosion = "Mesa created a boom of type `${explosionTypeName}` with a damage scale of `${damageScale}` and camera shake of `${cameraShake}`."
 	},
 
 	functions = {
@@ -11489,7 +11402,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	},
 
 	duty = {
-		toggle_duty_status_no_permissions = "Mesa no allowed to togglen on duty status via mesa command.",
+		toggle_duty_status_no_permissions = "Meesa no have da proper permissions to toggle on duty status.",
 
 		duty_status_on = "Mesa successfully wenten on duty.",
 		duty_status_off = "Mesa successfully wenten off duty.",
@@ -11604,6 +11517,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		license_hunting = "Hunting License",
 		license_fishing = "Fishing License",
 		license_weapon = "Gungan Daraja ya Silaha",
+		license_mining = "Mining License",
 		gave_character_license = "Messeji kwa ${characterName} imepewa daraja ya `${licenseLabel}`.",
 		character_already_has_license = "${characterName} tayari ana daraja ya `${licenseLabel}`",
 		removed_character_license = "Messeji kwa `${characterName}` imeondoa daraja ya `${licenseLabel}`.",
@@ -11737,8 +11651,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		not_in_a_vehicle = "Yousen not in a vehicle.",
 		vehicle_engine_on = "Da engine is still-a running.",
 
-		set_fuel_no_permissions = "Da player attempted to set a vehicle's fuel level  without proper permissions.",
-
 		vehicle_exploded_logs_title = "Mesa Mess Messed Up!",
 		vehicle_exploded_logs_details = "${consoleName} refueled a mesa and boom-boomed it because of the vroom-vroom."
 	},
@@ -11834,11 +11746,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "Mesa toggled da garage debug on.",
 		toggle_garage_debug_toggled_off = "Mesa toggled da garage debug off."
-	},
-
-	handlings = {
-		set_handling_override_not_super_admin = "Da playah attempted to set a handlin' override without propa permissions.",
-		remove_handling_override_not_super_admin = "Da playah attempted to remove a handlin' override without propa permissions."
 	},
 
 	keys = {
@@ -11965,31 +11872,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		toggle_brakes_off = "Yosa toggles brakes on.",
 		failed_modify_brakes = "Failed to modify brakes.",
 
-		toggle_disabled_brakes_no_permissions = "Meesa no tink thissa allow. Player tried to toggle disabled brakes witout correct permissions.",
-
-		-- NOTE: `add_vehicle` command:
-		add_vehicle_not_super_admin = "Player tried to add vehicle to someone's garage witout proper permissions.",
-		add_vehicle_added_vehicle_for_everyone = "Meesa ready! Added vehicle wid model name `${modelName}` for everyone.",
-		add_vehicle_added_vehicle_for_player = "Added vehicle wid model name `${modelName}` for ${consoleName}.",
-		add_vehicle_added_vehicle = "Meesa got it! Added vehicle wid model name `${modelName}`.",
-		add_vehicle_character_not_loaded = "Mesa thinks yousa didn't load any characters.",
-		add_vehicle_target_user_not_found = "Mesa not find the target user.",
-		add_vehicle_invalid_input = "Sorry, mesa not understand. Invalid input.",
-		add_vehicle_no_permissions = "No permissions to do that.",
-		add_vehicle_user_not_found = "User not found in mesa database.",
-		add_vehicle_invalid_player = "Jeesa sorry. Mesa not find a player with server ID `${serverId}`.",
-		add_vehicle_invalid_model_name = "Mesa not think `${modelName}` is a valid model name.",
-		add_vehicle_no_model_name = "Picture not added. Please add a model name.",
-
-		added_vehicle_for_everyone_logs_title = "Meesa Added Vehicle Foh Ev'ryone",
-		added_vehicle_for_everyone_logs_details = "${consoleName} added a vehicle with model name `${modelName}` to everyones's garages.",
-		added_vehicle_for_player_logs_title = "Meesa Added Vehicle Foh Playa",
-		added_vehicle_for_player_logs_details = "${consoleName} added a vehicle with model name `${modelName}` to ${targetConsoleName}'s garage.",
-		added_vehicle_logs_title = "Meesa Added Vehicle",
-		added_vehicle_logs_details = "${consoleName} added vehicle with model name `${modelName}` to their garage.",
-
 		-- NOTE: `toggle_vehicle_weapons` command:
-		toggle_vehicle_weapons_not_super_admin = "Mesa helpin', but dis playa tryin to toggle vehicle weapons witout da right permissions.",
 		toggled_vehicle_weapons_on = "Mesa toggled vehicle weapons on.",
 		toggled_vehicle_weapons_off = "Mesa toggled vehicle weapons off.",
 		toggled_vehicle_weapons_vehicle_is_not_networked = "Da vehicle yousa in is not networked.",
@@ -12144,6 +12027,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		ems_boat_hq = "EMS Boat HQ",
 		ems_garage = "EMS Garage",
 		e_to_get_treated = "[E] Get Treated - $1250",
+		e_check_in_player = "[E] Check-in Carried Player - $1250",
+		check_in_blocked = "Check-in issa occupied",
 		get_treated = "Get Treated - $1250",
 		you_are_being_treated = "Yousa being treated",
 		being_treated = "Being Treated",

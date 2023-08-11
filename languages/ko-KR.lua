@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 18 (do not change)
+-- AUTO LOCALES: 19 (do not change)
 
 OP.Global.Locales.Languages["ko-KR"] = {
 	-- configuration settings for language
@@ -61,7 +61,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		you_are_not_being_carried = "당신은 현재 운반 중이 아닙니다.",
 		successfully_uncarried = "강제로 운반을 중지했습니다.",
 		failed_uncarried = "운반 중지에 실패했습니다.",
-		uncarry_missing_permissions = "적절한 권한 없이 강제로 운반을 중지하려 시도했습니다.",
+		uncarry_missing_permissions = "올바른 권한 없이 캐리 강제 중단을 시도했습니다.",
 
 		uncarry_logs_title = "운반 강제 중지",
 		uncarry_logs_details = "${consoleName} 님이 ${targetName} 님의 운반을 강제로 중지했습니다.",
@@ -78,7 +78,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 	-- base/*
 	admin = {
-		feature_toggle_not_admin = "'${featureName}'을 다른 사용자나 본인의 것으로 변경하려 했지만 권한이 부족하여 변경할 수 없습니다.",
 		feature_toggle_activated_logs_title = "원격으로 기능 전환",
 		feature_toggle_activated_logs_details_state = "${targetConsoleName} 플레이어를 위해 ${consoleName}이(가) `${featureName}` 기능을 ${newState} 토글했습니다.",
 		feature_toggle_activated_all_logs_title = "모두에게 원격으로 토글된 기능",
@@ -101,9 +100,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		failed_to_spawn_vehicle = "차량을 생성하는데 실패했습니다.",
 		spawned_vehicle_for_player = "${displayName}님을 위해 ${modelName} 차량을 성공적으로 생성하였습니다.",
 		spawned_vehicle_for_everyone = "모든 플레이어를 위해 ${modelName}을(를) 성공적으로 생성하였습니다.",
-		spawn_vehicle_no_permissions = "플레이어가 차량을 생성하려고 시도했으나 필요한 권한이 없습니다.",
-		replace_vehicle_no_permissions = "플레이어가 자신의 차량을 교체하려 하였으나 필요한 권한이 없습니다.",
-		create_vehicle_no_permissions = "플레이어가 차량을 생성하려 하였으나 필요한 권한이 없습니다.",
 		spawned_vehicle_for_self_title = "차량 소환 완료",
 		spawned_vehicle_for_self_details = "${consoleName}님이 모델명이 `${modelName}`인 차량을 소환하였습니다.",
 		spawned_vehicle_for_player_title = "플레이어용 차량 소환 완료",
@@ -113,6 +109,26 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		vehicle_created = "차량 생성 성공.",
 		failed_vehicle_creation = "차량 생성 실패.",
+
+		-- NOTE: `add_vehicle` command:
+		add_vehicle_added_vehicle_for_everyone = "모델 이름이 `${modelName}`인 차량을 모두를 위해 추가했습니다.",
+		add_vehicle_added_vehicle_for_player = "${consoleName}님을 위해 모델 이름이 `${modelName}`인 차량을 추가했습니다.",
+		add_vehicle_added_vehicle = "모델 이름이 `${modelName}`인 차량을 추가했습니다.",
+		add_vehicle_character_not_loaded = "대상 플레이어에게 로드된 캐릭터가 없습니다.",
+		add_vehicle_target_user_not_found = "대상 사용자를 찾을 수 없습니다.",
+		add_vehicle_invalid_input = "유효하지 않은 입력입니다.",
+		add_vehicle_no_permissions = "권한이 없습니다.",
+		add_vehicle_user_not_found = "사용자를 찾을 수 없습니다.",
+		add_vehicle_invalid_player = "서버 ID `${serverId}`와 일치하는 플레이어가 없습니다.",
+		add_vehicle_invalid_model_name = "모델 이름 `${modelName}`은(는) 유효한 모델이 아닙니다.",
+		add_vehicle_no_model_name = "모델 이름이 추가되지 않았습니다.",
+
+		added_vehicle_for_everyone_logs_title = "모두에게 차량 추가",
+		added_vehicle_for_everyone_logs_details = "${consoleName} 님이 모델 이름이 `${modelName}`인 차량을 모두의 차고에 추가했습니다.",
+		added_vehicle_for_player_logs_title = "플레이어에게 차량 추가",
+		added_vehicle_for_player_logs_details = "${consoleName} 님이 `${modelName}` 모델 이름의 차량을 ${targetConsoleName} 님의 차고에 추가했습니다.",
+		added_vehicle_logs_title = "차량 추가됨",
+		added_vehicle_logs_details = "${consoleName} 님이 `${modelName}` 모델 이름의 차량을 자신의 차고에 추가했습니다.",
 
 		invalid_amount = "잘못된 금액입니다.",
 
@@ -160,8 +176,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		removed_bank_from_player = "${targetConsoleName}(이)가 $${amount} 은행을 제거했습니다.",
 		removed_bank_from_everyone = "모두의 $${amount} 은행이 제거되었습니다.",
 
-		money_event_not_admin = "관리자 권한이 없어 `${moneyEvent}` 금전 행사를 토글할 수 없습니다.",
-
 		spawned_item_title = "아이템 소환됨",
 		spawned_item_details = "${consoleName} 님이 `${itemName}` ${amount}개를 소환했습니다.",
 		spawned_item_for_player_title = "플레이어에게 스폰된 아이템",
@@ -178,7 +192,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		announcement_logs_title = "전체 공지",
 		announcement_logs_details = "${consoleName}님이 서버 전체에 다음과 같은 메시지를 알렸습니다: `${announcementMessage}`",
-		announcement_not_admin = "스태프 공지를 작성하려 했지만 권한이 없습니다.",
 
 		posted_announcement = "알림 메시지를 게시했습니다.",
 		posted_announcement_locale = "로케일에서 알림 메시지를 게시했습니다.",
@@ -188,7 +201,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		staff_title = "스태프 ${staffName}",
 		staff_message_logs_title = "스태프 메시지",
 		staff_message_logs_details = "${consoleName}님이 스탭 톡에서 다음과 같은 메시지를 보냈습니다: `${staffMessage}`",
-		staff_message_illegal = "플레이어가 스탭이 아닌데 스탭 채팅에 메시지를 보내려고 시도했습니다.",
 
 		staff_pm_title = "스태프 개인 메시지 ${transmissionTitle}",
 		staff_pm_logs_title = "스태프 개인 메시지",
@@ -218,7 +230,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		missing_valid_license_identifier_parameter = "유효한 'licenseIdentifier' 매개 변수가 없습니다.",
 
-		illegal_entity_wipe = "플레이어가 이사벨리시를 가지고 있지 않아 entity wipe를 시도했습니다.",
 		wiped_entities = "삭제된 개체 정보. ${deletedEntities} 개의 네트워크 개체가 삭제되었습니다.",
 		wipe_entities_logs_title = "엔티티 삭제됨",
 		wipe_entities_logs_details = "${consoleName}이(가) 다음 구성으로 엔티티 삭제를 실행했습니다.: 거리 = `${distance}`, ignoreLocalEntities = `${ignoreLocalEntities}`, modelName = `${modelName}`.",
@@ -261,12 +272,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		ban_quadrouple_kill = "😨 쿼드루플 킬!!!!!!",
 		ban_killing_spree = "🤯 킬 스프리 (${count})!!!!!!",
 
-		kick_player_not_staff = "권한이 충분하지 않아 플레이어 추방을 시도할 수 없습니다.",
-		ban_player_not_staff = "적절한 권한 없이 플레이어를 차단하려고 하였습니다.",
-
-		hide_staff_not_staff = "적절한 권한 없이 자신의 스탭 상태를 숨기려고 하였습니다.",
-		toggle_staff_not_staff = "적절한 권한 없이 스탭 가용성을 전환하려고 하였습니다.",
-
 		logs_hide_staff_title = "스태프 숨김",
 		logs_hide_staff_hidden_details = "${consoleName} 님이 스탭 상태를 숨겼습니다.",
 		logs_hide_staff_shown_details = "${consoleName} 님이 스탭 상태를 공개했습니다.",
@@ -282,10 +287,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		staff_feature_unavailable = "스탭 이용 가능성을 끈 상태에서 이 기능을 이용할 수 없습니다.",
 
-		toggle_player_track_no_permissions = "적절한 권한 없이 플레이어 추적을 전환하려고 시도했습니다.",
-		set_job_no_permissions = "적절한 권한 없이 직업을 설정하려고 시도했습니다.",
-		toggle_reflection_no_permissions = "적절한 권한 없이 데미지 반사를 전환하려 했습니다.",
-
 		success_enable_reflection = "데미지 반사가 성공적으로 활성화되었습니다.",
 		success_disable_reflection = "데미지 반사가 성공적으로 비활성화되었습니다.",
 		failed_toggle_reflection = "데미지 반사 전환에 실패했습니다.",
@@ -296,12 +297,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		headache_logs_title = "두통 발생",
 		headache_logs_details = "${consoleName} 님이 ${targetConsoleName} 님에게 두통을 일으켰습니다.",
-		trigger_headache_no_permissions = "권한 없이 두통을 일으켜 보려 했습니다.",
 
 		super_jump_logs_title = "슈퍼 점프 전환됨",
 		super_jump_logs_details_on = "${consoleName}님이 슈퍼 점프를 켰습니다.",
 		super_jump_logs_details_off = "${consoleName}님이 슈퍼 점프를 껐습니다.",
-		toggle_super_jump_no_permissions = "적절한 권한 없이 슈퍼 점프 전환을 시도했습니다.",
 
 		success_trigger_headache = "${playerName} 님에게 두통을 성공적으로 일으켰습니다.",
 		failed_trigger_headache = "두통을 일으키지 못했습니다.",
@@ -311,7 +310,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		reset_spawn_success = "스폰 지점을 재설정했습니다.",
 		reset_spawn_failed = "스폰 지점을 재설정하지 못했습니다.",
 
-		protective_mode_not_staff = "올바른 권한 없이 서버 방어 모드를 전환하려 했습니다.",
 		protective_mode_toggled_on = "서버 방어 모드가 활성화되었습니다. 서버에 연결하려면 필요한 플레이 시간은 `${playtime}`입니다.",
 		protective_mode_toggled_off = "서버 방어 모드가 비활성화되었습니다.",
 		protective_mode_already_on = "이미 서버 방어 모드가 `${playtime}`의 필요한 플레이 시간으로 활성화되었습니다.",
@@ -320,13 +318,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		logs_protective_mode_on = "${consoleName}이(가) 서버 보호 모드를 `${playtime}`이상의 필요한 플레이 시간으로 켰습니다.",
 		logs_protective_mode_off = "${consoleName}이(가) 서버 보호 모드를 끕니다.",
 
-		spawn_item_not_staff = "권한이 없이 아이템을 소환시도했습니다.",
 		no_item_name = "아이템 이름이 제공되지 않았습니다.",
 		invalid_item_name = "${itemName}은(는) 유효한 아이템 이름이 아닙니다.",
 		item_spawned = "${consoleName}이(가) `${itemName}` ${amount}개를 소환했습니다.",
 		item_spawned_for_everyone = "모두를 위해 ${amount}개의 `${itemName}`을(를) 소환했습니다.",
 
-		set_warning_message_not_staff = "적절한 권한 없이 서버의 경고 메시지를 설정하려고 시도했습니다.",
 		warning_message_set_to = "경고 메시지가 `${warningMessage}`(으)로 설정되었습니다.",
 		warning_message_removed = "경고 메시지가 제거되었습니다.",
 		warning_message_error = "경고 메시지를 설정하는 동안 오류가 발생했습니다.",
@@ -368,6 +364,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		evidence_view_details_on = "${consoleName} 님이 고급 증거 보기를 토글하였습니다.",
 		evidence_view_details_off = "${consoleName} 님이 고급 증거 보기를 해제하였습니다.",
 
+		tracker_turned_on = "트래커가 켜졌습니다.",
+		tracker_turned_off = "트래커가 꺼졌습니다.",
+
 		report_muted_no_reason = "이유 없이 신고 명령어 사용이 금지되었습니다.",
 		report_muted = "신고 명령어 사용이 '${reason}' 이유로 금지되었습니다.",
 
@@ -388,9 +387,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		teleported_to_waypoint_logs_title = "경로지점으로 이동됨",
 		teleported_to_waypoint_logs_details = "${consoleName} 님이 ${locationLabel} 위치에 있는 경로지점으로 이동하였습니다.",
 
-		teleport_to_coordinates_not_staff = "이 플레이어는 스태프가 아닌데도 좌표를 이동하려고 시도하였습니다.",
-		teleport_to_waypoint_not_staff = "플레이어가 스텝이 아닌데 웨이포인트로 이동하려고 시도했습니다.",
-
 		failed_isolate = "플레이어 격리에 실패했습니다.",
 		invalid_server_id = "잘못된 서버 ID 입니다.",
 		isolate_success_on = "${consoleName}님을 성공적으로 격리했습니다.",
@@ -402,8 +398,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		population_density_set_off = "인구 밀도 곱셈기능이 비활성화되었습니다.",
 		population_density_is_not_on = "인구 밀도 곱셈기능이 활성화되어 있지 않습니다.",
 		population_density_already_set_to = "인구 밀도 곱셈기능이 이미 ${multiplierLabel}% 로 설정되어 있습니다.",
-
-		population_density_not_super_admin = "권한이 부족하여 인구 밀도를 설정할 수 없습니다.",
 
 		enabled_features_list = "사용 가능한 기능:",
 		aimbot_feature = "에임봇",
@@ -448,8 +442,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		vehicle_smoke_invalid_class = "이 차량 클래스에는 차량 연기를 활성화할 수 없습니다.",
 
-		repair_vehicle_not_super_admin = "플레이어가 적절한 권한 없이 차량을 수리하려고 시도했습니다.",
-
 		repaired_vehicle_logs_title = "수리된 차량",
 		repaired_vehicle_logs_details = "${consoleName}이(가) 자신이 타고 있던 차량을 수리했습니다.",
 
@@ -464,9 +456,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		set_vehicle_livery_logs_title = "차량 라이버리 설정",
 		set_vehicle_livery_logs_details = "${consoleName} 님이 번호판이 `${vehiclePlate}`인 차량의 라이버리를 `${liveryIndex}`로 설정하였습니다.",
-
-		set_livery_missing_permissions = "플레이어가 적절한 권한 없이 차량의 라이버리를 설정하려고 시도하였습니다.",
-		set_modifications_missing_permissions = "플레이어가 적절한 권한 없이 차량의 수정을 설정하려고 시도하였습니다.",
 
 		set_vehicle_modification = "차량 수정 `${modType}`을/를 `${modIndex}`로 설정하였습니다. (커스텀 타이어: ${customTires})",
 		mod_index_invalid_for_type = "모드 인덱스 `${modIndex}`는 모드 타입 `${modType}`에 대해 유효하지 않습니다.",
@@ -486,15 +475,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		invalid_dirt_level = "유효하지 않은 차량 더러움 수치입니다.",
 		set_dirt_level = "차량의 더러움 수치가 `${dirtLevel}`(으)로 설정되었습니다.",
 
-		set_dirt_level_not_super_admin = "플레이어가 충분한 권한 없이 차량의 더러움 수치를 설정하려고 시도했습니다.",
-
-		set_fake_plate_not_super_admin = "플레이어가 충분한 권한 없이 차량의 가짜 번호판을 설정하려고 시도했습니다.",
-
 		already_fake_disconnecting = "이미 가짜 연결 끊기를 시도중입니다. 잠시 기다려주세요.",
 		started_fake_disconnect = "가짜 연결 끊기 시작됨. 다시 입력하여 중지하세요.",
 		stopped_fake_disconnect = "가짜 연결 끊기 중지됨.",
-
-		fake_disconnect_not_super_admin = "플레이어가 적절한 권한 없이 가짜 연결 끊기를 시도했습니다.",
 
 		disabled_idle_cam = "아이들 카메라 비활성화됨.",
 		enabled_idle_cam = "아이들 카메라 다시 활성화됨.",
@@ -502,12 +485,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		created_vehicle_smoke_for_player_logs_title = "차량 연기 생성",
 		created_vehicle_smoke_for_player_logs_details = "${consoleName}이(가) 차량 연기를 생성했습니다.",
 
-		player_info_not_staff = "적절한 권한 없이 플레이어 캐릭터 정보를 가져오려고 시도했습니다.",
 		player_info_title = "${consoleName}",
 		player_info = "${fullName} #${characterId}\n${playtime} 플레이함.\n${jobName}, ${departmentName}, ${positionName}\n\n${backstory}",
 
 		inventory_name_missing = "인벤토리 이름 매개변수가 누락되었습니다.",
-		force_inventory_missing_perms = "적절한 권한 없이 인벤토리를 강제로 열려고 시도했습니다.",
 
 		auto_driving_engaged = "자동 운전이 실행되었습니다 (스타일: ${style}).",
 		auto_driving_updated = "자동 운전 속도/위치가 업데이트되었습니다.",
@@ -538,9 +519,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		tint_set = "무기 테마를 성공적으로 `${tint}` (${tintIndex})로 설정했습니다.",
 		no_weapon_tint = "이 무기에는 테마가 없습니다.",
 
-		weapon_attachment_missing_perms = "무기 부착물을 전환하려고 할 때 적절한 권한이 없습니다.",
-		weapon_tint_missing_perms = "무기 테마를 설정하려고 할 때 적절한 권한이 없습니다.",
-
 		no_attachments = "부착물 없음",
 		available_attachments = "사용 가능한 부착물",
 		current_attachments = "현재 부착물",
@@ -557,14 +535,14 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		cleaned_ped_self = "성공적으로 자신의 캐릭터를 청소했습니다.",
 		clean_ped_failed = "캐릭터 청소에 실패했습니다.",
 		cleaned_ped_for_all = "모든 플레이어의 캐릭터를 성공적으로 청소했습니다.",
-		clean_ped_no_permission = "필요한 권한 없이 플레이어 캐릭터를 청소하려고 시도했습니다.",
+		clean_ped_no_permission = "권한이 없어 플레이어의 페드를 정리하려고 시도했습니다.",
 
 		item_durability_set_success = "${slotId} 슬롯에 있는 아이템 내구성을 ${amount}% 으로 설정했습니다.",
 		item_durability_set_failed = "내구성 설정에 실패했습니다.",
 		item_durability_invalid_amount = "유효하지 않은 내구성 양입니다 (0 <> 100).",
-		item_durability_set_no_permission = "필요한 권한 없이 아이템 내구성을 설정하려고 시도했습니다.",
+		item_durability_set_no_permission = "올바른 권한 없이 아이템 내구도를 설정하려고 시도했습니다.",
 
-		item_metadata_set_no_permission = "필요한 권한이 없는 상태에서 아이템 메타데이터를 설정하려고 시도했습니다.",
+		item_metadata_set_no_permission = "올바른 권한 없이 아이템 메타데이터를 설정하려고 시도했습니다.",
 		item_metadata_invalid_metadata = "잘못된 아이템 메타데이터입니다.",
 		item_metadata_set_success = "슬롯 ${slotId}에 있는 아이템의 메타데이터를 성공적으로 설정했습니다.",
 		item_metadata_set_failed = "메타데이터 설정에 실패했습니다.",
@@ -589,8 +567,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		scoop_invalid = "아무 플레이어도 잡지 않았습니다.",
 		unscooped_players = "${total} 명 중 ${amount} 명의 플레이어를 놓았습니다.",
 		unscoop_failed = "플레이어를 놓는 데 실패했습니다.",
-
-		unscoop_missing_permissions = "적절한 권한 없이 언스쿱을 시도했습니다.",
 
 		toggle_collisions_missing_permissions = "적절한 권한 없이 콜리전 토글 시도했습니다.",
 		wipe_first_owned_missing_permissions = "플레이어가 적절한 권한 없이 첫 번째 소유 엔티티를 삭제하려 시도했습니다.",
@@ -678,10 +654,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		model_already_added_to_list = "모델 `${modelName}` (${modelHash})은(는) 이미 검출 목록에 추가되어 있습니다.",
 		removed_model_to_list = "모델 `${modelName}` (${modelHash})이(가) 검출 목록에서 제거되었습니다.",
 		model_not_in_list = "${modelName} 모델 (${modelHash})은(는) 감지 목록에 추가되어 있지 않습니다.",
-		set_model_detected_not_staff = "플레이어가 모델을 감지 목록에 추가하려 했지만, 권한이 없습니다.",
-		set_model_undetected_not_staff = "플레이어가 모델을 감지 목록에서 제거하려 했지만, 권한이 없습니다.",
-		add_detection_area_not_staff = "플레이어가 감지 영역을 추가하려 했지만, 권한이 없습니다.",
-		remove_detection_area_not_staff = "플레이어가 감지 영역을 제거하려 했지만, 권한이 없습니다.",
 		detection_area_close = "[${InteractionKey}] 감지 영역 제거 (${areaId})",
 		detection_area = "감지 영역 (${areaId})",
 
@@ -721,6 +693,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		clear_tasks_ban = "이곳은 제다이 마음의 트릭 훈련 센터가 아닙니다. 다른 사람의 자유 의지에 영향을 주려는 당신의 시도가 확인되었고, 거절되었습니다.",
 		projectile_event_ban = "이곳은 호그와트도 아니고, 당신은 해리 포터도 아닙니다. 주문이나 발사체를 무차별로 사용하는 것은 허용되지 않습니다.",
 		illegal_native_ban = "아직 배우지 않은 주문은 사용할 수 없습니다...",
+		underground_ban = "토끼굴에 빠진 것 같습니다.",
+		infinite_ammo_ban = "인기있는 믿음과 달리, 보존의 법칙은 여기에도 적용됩니다. 마법의 탄약 주머니가 압수되었습니다.",
 
 		type_aimbot = "에임봇",
 		type_bad_creation = "잘못된 창조물",
@@ -757,6 +731,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		type_thermal_night_vision = "열화상 / 야간 시력",
 		type_vehicle_modification = "차량 수정",
 		type_illegal_native = "불법 네이티브 호출",
+		type_underground = "지하",
+		type_infinite_ammo = "무한 탄약",
 
 		event_prefix = "안티-치트: ${type}",
 
@@ -825,6 +801,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		job_low = "저급 직업",
 		job_medium = "중급 직업",
 		job_high = "고급 직업",
+
+		banned_no_permissions = "올바른 권한 없이 `${reason}`하려고 시도했습니다.",
 
 		banned_globally = "OP-FW 서버에서 글로벌 밴 당하였습니다.\n\n밴 해쉬: ${banHash}\n밴 사유: ${banReason}\n\n이게 거짓밴이라고 생각한다면, ${frameworkDiscord}에서 항소방법을 알아보세요.",
 		banned_locally = "${communityName}에서 차단되셨습니다.\n\n밴 해시: ${banHash}\n밴 당한 이유: ${banReason}\n밴 시간: ${timestamp}\n\n${indefiniteOrExpires}\n\n${communityDiscord}에서 항소에 대한 정보를 얻으려면 디스코드 길드에 참여하세요.",
@@ -963,7 +941,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		wipe_command = "지우기",
 		wipe_command_help = "맵에서 삭제할 원치 않는 오브젝트를 제거합니다.",
 		wipe_command_parameter_distance = "거리",
-		wipe_command_parameter_distance_help = "특정 범위 내의 개체만 삭제하려면 거리를 삽입하십시오. 전체 맵을 삭제하려면 `false` 또는 `0`을 남겨두십시오.",
+		wipe_command_parameter_distance_help = "일정 범위 내의 엔티티만 삭제하려면 여기에 거리를 입력하십시오. 전체 맵을 삭제하려면 `-1`을 입력하십시오.",
 		wipe_command_parameter_ignore_local_entities = "로컬 개체 무시",
 		wipe_command_parameter_ignore_local_entities_help = "네트워크에 연결되어 있지 않은 개체를 무시하시겠습니까? 체터로부터 정리를 하는 경우 `true` 또는 `1`로 설정하는 것이 권장됩니다.",
 		wipe_command_parameter_model_name = "모델명",
@@ -1047,6 +1025,14 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		replace_vehicle_command_parameter_model_name = "모델 이름",
 		replace_vehicle_command_parameter_model_name_help = "원하는 차량의 모델 이름을 입력하세요.",
 		replace_vehicle_command_substitutes = "rv",
+
+		add_vehicle_command = "add_vehicle",
+		add_vehicle_command_help = "누군가의 차고에 차량을 추가합니다.",
+		add_vehicle_command_parameter_model = "모델",
+		add_vehicle_command_parameter_model_help = "추가하려는 차량의 모델 이름 또는 모델 해시.",
+		add_vehicle_command_parameter_server_id = "서버 ID",
+		add_vehicle_command_parameter_server_id_help = "차량을 전달할 플레이어의 서버 ID입니다. 이 값을 비워두면 자동으로 자신을 선택합니다.",
+		add_vehicle_command_substitutes = "",
 
 		aimbot_command = "에임봇",
 		aimbot_command_help = "에임봇을 켜거나 끕니다.",
@@ -1998,8 +1984,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		fake_lag_command = "fake_lag",
 		fake_lag_command_help = "가짜 랙을 만듭니다.",
-		fake_lag_command_parameter_counter = "카운터",
-		fake_lag_command_parameter_counter_help = "랙을 생성하는 데 사용되는 카운터 값입니다. 값이 높을수록 랙이 더 느려집니다. 비활성화하려면 이 부분을 비워두거나 '0'을 입력하세요.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "대상 fps (>= 1).",
 		fake_lag_command_substitutes = "랙",
 
 		view_weapon_command = "무기보기",
@@ -2481,7 +2467,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		wipe_ground_inventories_command = "장소 인벤토리 삭제",
 		wipe_ground_inventories_command_help = "장소 인벤토리를 삭제합니다.",
 		wipe_ground_inventories_command_parameter_radius = "반경",
-		wipe_ground_inventories_command_parameter_radius_help = "삭제 반경. 이것을 비워두면 `100`이 자동 선택됩니다. 유효한 값은 `0` 이상, 그리고 `0`과 `-1`은 모든 인벤토리를 선택합니다.",
+		wipe_ground_inventories_command_parameter_radius_help = "완전 삭제 반경. 비워 두면 `5`를 자동으로 선택합니다. 유효한 값은 `0`보다 크며, `0` 및 `-1`도 모든 인벤토리를 선택합니다.",
 		wipe_ground_inventories_command_substitutes = "장소인벤삭제, 지면인벤삭제, 지면인벤토리삭제",
 
 		refresh_inventory_command = "인벤토리재고갱신",
@@ -3266,6 +3252,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		vdm_clear_command_help = "모든 VDM 대상을 지웁니다.",
 		vdm_clear_command_substitutes = "",
 
+		steal_vehicle_command = "차량을 훔치다",
+		steal_vehicle_command_help = "가장 가까운 npc가 대상 차량을 훔칩니다.",
+		steal_vehicle_command_parameter_network_id = "네트워크 ID",
+		steal_vehicle_command_parameter_network_id_help = "차량의 네트워크 ID입니다.",
+		steal_vehicle_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "voice_debug",
 		voice_debug_command_help = "음성 디버그를 토글합니다.",
@@ -3661,14 +3653,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		speed_limiter_command_help = "속도 제한기의 기본 작동을 무시하여 사전 설정된 속도 제한을 설정합니다.",
 		speed_limiter_command_substitutes = "sl, cc, cruise_control",
 
-		add_vehicle_command = "add_vehicle",
-		add_vehicle_command_help = "누군가의 차고에 차량을 추가합니다.",
-		add_vehicle_command_parameter_model = "모델",
-		add_vehicle_command_parameter_model_help = "추가하려는 차량의 모델 이름 또는 모델 해시.",
-		add_vehicle_command_parameter_server_id = "서버 ID",
-		add_vehicle_command_parameter_server_id_help = "차량을 전달할 플레이어의 서버 ID입니다. 이 값을 비워두면 자동으로 자신을 선택합니다.",
-		add_vehicle_command_substitutes = "",
-
 		toggle_vehicle_weapons_command = "차량무기사용여부전환",
 		toggle_vehicle_weapons_command_help = "차량의 무기 사용 여부를 전환합니다.",
 		toggle_vehicle_weapons_command_parameter_server_id = "서버 아이디",
@@ -3759,7 +3743,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 	emojis = {
 		emoji_list = "${emojis}",
-		refresh_emojis_no_permissions = "플레이어가 적절한 권한 없이 이모지를 새로고침하려고 했습니다.",
 		api_reported_no_updates = "디스코드 API에서 이모지 목록의 업데이트를 보고하지 않았습니다.",
 		emojis_added = "${added}개의 이모지가 추가되었습니다.",
 		emojis_removed = "${removed}개의 이모지가 제거되었습니다.",
@@ -3779,7 +3762,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	},
 
 	ping = {
-		get_pings_missing_permissions = "플레이어가 핑을 가져오려고 했지만 필요한 권한이 없습니다.",
 		getting_pings = "모든 플레이어의 핑을 가져오는 중입니다. 이 작업은 몇 초 정도 소요될 수 있습니다.",
 		host_data = "${position}. ${location} - ${totalPings}명의 클라이언트 기준 ${averagePing}ms 평균 핑, 하위 10%: ${averagePingLow}ms, 상위 10%: ${averagePingHigh}ms",
 		list_hosts = "${listHosts}"
@@ -3891,7 +3873,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		package_same_remaining_time = "귀하의 패키지는 `${packageName}`입니다. 유효기간이 ${remainingTime} 동안 남았습니다.",
 		no_package = "패키지가 없습니다.",
 		fetching_package_error = "패키지 데이터를 가져오는 동안 오류가 발생했습니다.",
-		check_playtime_not_staff = "플레이 시간을 확인하려는 플레이어가 권한이 없습니다.",
 		reason_unknown = "사유를 알 수 없습니다.",
 
 		unloaded_character = "언로드된 캐릭터입니다.",
@@ -3900,8 +3881,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		user_not_found = "서버에 해당 유저가 존재하지 않습니다.",
 		invalid_character_id = "잘못된 캐릭터 id가 전송되었습니다.",
 		invalid_license_identifier = "라이센스 식별자 매개 변수가 올바르지 않습니다.",
-
-		unload_character_not_staff = "플레이어가 스태프가 아닌데 플레이어의 캐릭터를 언로드하려고 시도했습니다.",
 
 		unloaded_character_for_player_logs_title = "플레이어 캐릭터 언로드됨",
 		unloaded_character_for_player_logs_details = "${consoleName}님이 '${message}'라는 이유로 ${targetConsoleName}의 캐릭터 ${characterFullName} (${characterId})를 언로드했습니다.",
@@ -3942,9 +3921,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		invalid_destination_server_id = "잘못된 대상 서버 ID입니다.",
 		invalid_source_server_id = "잘못된 출발 서버 ID입니다.",
 		failed_teleport_player_to_player = "플레이어를 다른 플레이어에게 이동하지 못했습니다.",
-		teleported_player_to_player = "플레이어를 다른 플레이어에게 이동했습니다.",
-
-		teleport_player_missing_permissions = "플레이어가 다른 플레이어를 이동하려고 했지만, 이를 수행하기 위한 적절한 권한이 없습니다."
+		teleported_player_to_player = "플레이어를 다른 플레이어에게 이동했습니다."
 	},
 
 	afk = {
@@ -3954,8 +3931,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "플레이어가 공수 지원품 생성을 시도했지만, 요구되는 권한이 없습니다.",
-		create_airdrop_custom_missing_permissions = "플레이어가 커스텀 공수 지원품 생성을 시도했지만, 요구되는 권한이 없습니다.",
 		created_airdrop = "`${airdropType}` 타입의 공수품을 총 ${itemAmount}개 아이템과 함께 생성했습니다.",
 		no_valid_items_provided = "유효한 아이템이 제공되지 않았습니다.",
 		created_airdrop_with_items = "다음의 아이템이 포함된 공수 지원품이 생성되었습니다:\n${itemsListed}"
@@ -3982,15 +3957,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "플레이어가 공습 생성을 시도했지만, 요구되는 권한이 없습니다.",
-
 		airstrike_success = "공습이 성공적으로 발생했습니다.",
 		airstrike_failed = "공습 생성에 실패했습니다."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "플레이어가 공중지원을 호출하려고 했지만 필요한 권한이 없습니다.",
-
 		distance = "거리: ${distance}${unit}",
 		time_to_impact = "도착 예정 시간: ${timeToImpact}",
 
@@ -4020,9 +3991,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		show_alert_success = "플레이어에게 알림을 성공적으로 보냈습니다.",
 		show_alert_everyone_success = "모든 플레이어에게 알림을 성공적으로 보냈습니다.",
-		show_alert_failed = "플레이어에게 알림을 보내는 데 실패했습니다.",
-
-		show_alert_missing_permissions = "플레이어가 다른 플레이어에게 알림을 보내려고 시도했지만, 필요한 권한이 없습니다."
+		show_alert_failed = "플레이어에게 알림을 보내는 데 실패했습니다."
 	},
 
 	arcade = {
@@ -4303,10 +4272,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 	audio = {
 		audio_id = "오디오 ${audioId}",
-		illegal_sound_effect = "다른 클라이언트에게 외부 오디오를 재생하도록 시도했습니다.",
+		illegal_sound_effect = "적절한 권한 없이 다른 클라이언트에게 외부 오디오를 재생하도록 시도했습니다.",
 		url_invalid = "제공된 URL이 유효하지 않습니다. 안전한 연결 (https://)에서 업로드해야합니다.",
 		url_missing = "재생하려는 오디오의 URL을 추가해주세요.",
-		play_audio_no_permissions = "플레이어가 오디오를 재생하려고 시도했지만 필요한 권한이 없습니다.",
 		played_audio_for_self = "자신을 위해 오디오를 재생했습니다.",
 		played_audio_for_player = "${consoleName}을(를) 위해 오디오를 재생했습니다.",
 		played_audio_for_everyone = "모두에게 오디오 재생이 완료되었습니다.",
@@ -4542,7 +4510,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		illegal_boombox_item_id = "잘못된 아이템 ID로 붐박스 아이템을 사용하려고 시도합니다.",
 		logs_attempted_to_add_song_title = "노래 추가 시도",
 		logs_attempted_to_add_song_details = "${consoleName} 님이 동영상 URL이 `${url}` 인 Boombox에 노래를 추가하려고 시도했습니다. Boombox ID: `${boomboxId}`",
-		wipe_boomboxes_not_staff = "플레이어가 Boombox를 삭제하려고 했지만 적절한 권한이 없습니다.",
 		logs_wiped_all_boomboxes_title = "모든 Boombox 삭제",
 		logs_wiped_all_boomboxes_details = "${consoleName} 님이 모든 Boombox를 삭제했습니다.",
 		logs_wiped_nearby_boomboxes_title = "인근 Boombox 삭제",
@@ -4634,8 +4601,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		spawned_contract = "계약을 성공적으로 생성했습니다.",
 		spawned_contract_for = "${displayName}님을 위한 계약을 성공적으로 생성했습니다.",
 
-		spawn_contract_no_permissions = "플레이어가 적절한 권한 없이 부스팅 계약을 생성하려고 시도했습니다.",
-
 		already_max_vin_scratched_vehicles = "이미 차고에 VIN스크래치된 차량이 최대치입니다.",
 		contract_has_expired = "이 계약의 유효기간이 지났습니다.",
 		you_already_have_a_contract_started = "이미 계약이 진행중입니다."
@@ -4685,8 +4650,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	},
 
 	cargo = {
-		start_cargo_no_permissions = "플레이어가 화물 강도 작업을 시작하려고 했지만 권한이 없습니다.",
-		end_cargo_no_permissions = "플레이어가 화물 강도 작업을 끝내려고 했지만 권한이 없습니다.",
 		cargo_already_active = "화물 강도 작업이 이미 활성화되었습니다.",
 		started_cargo = "화물 강도 작업이 시작되었습니다.",
 		cargo_not_active = "현재 화물 강도 작업이 활성화되어 있지 않습니다.",
@@ -4699,7 +4662,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	},
 
 	casino = {
-		set_casino_screen_id_not_staff = "플레이어가 카지노 화면 ID를 설정하려고 했지만, 권한이 없습니다.",
 		successfully_set_screen_label = "성공적으로 `${screenLabel}` 라벨을 가진 화면으로 설정했습니다.",
 		successfully_queued_screen_label = "`${screenLabel}` 화면을 성공적으로 대기열에 추가했습니다.",
 		failed_to_set_screen_label = "`${screenLabel}` 화면을 설정하지 못했습니다.",
@@ -4767,8 +4729,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		blacklisted_video = "블랙리스트에 있는 비디오 키 `${videoKey}`입니다.",
 		failed_to_blacklist_video = "비디오 키 `${videoKey}`를 블랙리스트에 추가하는 데 실패했습니다.",
 		video_is_already_blacklisted = "키 값이 `${videoKey}`인 비디오는 이미 블랙리스트되어 있습니다.",
-
-		blacklist_video_missing_permissions = "플레이어가 비디오를 블랙리스트하려 했지만, 요구되는 권한이 없습니다.",
 
 		watching_movie = "${title}을(를) 보는 중",
 
@@ -4942,8 +4902,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		barber_menu_success = "이발소 메뉴 전환에 실패했습니다.",
 		failed_toggle_barber_menu = "${consoleName}의 이발소 메뉴를 열지 못했습니다.",
 		invalid_server_id = "잘못된 서버 아이디입니다.",
-
-		clothing_menu_missing_permissions = "플레이어가 다른 플레이어의 의상 메뉴를 열려고 했지만 필요한 권한이 없습니다.",
 
 		hats_and_helmets = "모자/헬멧",
 		glasses = "안경",
@@ -5696,7 +5654,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		special_vehicle_won = "특별 차량을 획득했습니다! 차고에서 확인하실 수 있습니다.",
 
-		reset_daily_activities_no_permissions = "플레이어가 적절한 권한 없이 일일 활동을 재설정하려고 했습니다.",
 		reset_daily_activities = "일일 활동 초기화",
 
 		task_progress = "작업 진행 상황: ${task} (${remain} 남음)",
@@ -5770,7 +5727,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		network_id_side = "네트워크 ID: ${networkId}",
 		no_target = "대상 없음",
 		invalid_radius_parameter = "유효하지 않은 `반경` 매개 변수입니다.",
-		inject_code_not_developer = "플레이어가 코드를 삽입하려고 했지만 개발자가 아닙니다.",
 		inject_code_invalid_player = "서버 ID `${serverId}`을(를) 가진 플레이어가 없습니다.",
 		inject_code_success_for_everyone = "모두에게 성공적으로 코드를 삽입했습니다.",
 		inject_code_success_for_player = "${consoleName}에 대해 코드를 성공적으로 삽입했습니다.",
@@ -5817,21 +5773,18 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		invalid_network_id = "유효하지 않은 네트워크 ID입니다.",
 		delete_entity_success = "네트워크 ID가 ${networkId}인 엔티티가 성공적으로 삭제되었습니다.",
 		delete_entity_failed = "엔티티 삭제에 실패했습니다.",
-		delete_entity_no_permissions = "플레이어가 적절한 권한 없이 엔티티를 삭제하려고 시도했습니다.",
+		delete_entity_no_permissions = "적절한 권한 없이 엔티티를 삭제하려고 시도했습니다.",
 
 		failed_entity_info = "엔티티 정보를 가져오는 데 실패했습니다.",
 		printed_entity_info = "엔티티 서버 정보를 F8에 출력했습니다.",
 
 		move_entity_success = "네트워크 ID가 ${networkId}인 엔티티를 성공적으로 이동했습니다.",
 		move_entity_failed = "엔티티 이동에 실패했습니다.",
-		move_entity_no_permissions = "플레이어가 적절한 권한 없이 엔티티를 이동하려고 시도했습니다.",
+		move_entity_no_permissions = "적절한 권한 없이 엔티티를 이동하려고 시도했습니다.",
 
-		fake_lag_updated = "가짜 랙 카운터가 `${counter}`(으)로 업데이트되었습니다.",
-		fake_lag_already_set_to = "가짜 랙 카운터는 이미 `${counter}`(으)로 설정되어 있습니다.",
-		fake_lag_enabled = "가짜 랙이 `${counter}`(으)로 활성화되었습니다.",
-		fake_lag_invalid_counter_value = "${counter} 값은 가짜 지연(Fake Lag)에 대한 무효한 카운터 값입니다.",
+		fake_lag_invalid_fps = "유효하지 않은 fps입니다.",
+		fake_lag_clamp = "fps를 ${fps} 이하로 제한합니다.",
 		fake_lag_disabled = "가짜 지연(Fake Lag)이 비활성화되었습니다.",
-		fake_lag_not_enabled = "가짜 지연(Fake Lag)이 활성화되지 않았습니다.",
 
 		weapon_name_missing = "무기 이름 매개 변수가 누락되었습니다.",
 		weapon_name_invalid = "${weaponName}은(는) 유효한 무기 이름이 아닙니다.",
@@ -5860,7 +5813,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		disabled_network_debug = "엔티티 네트워크 디버깅이 비활성화되었습니다.",
 		failed_network_debug = "엔티티 네트워크 디버깅을 활성화하는 데 실패했습니다.",
 
-		network_owner_subscription_no_permissions = "엔티티 네트워크 소유자에게 구독하려고 했지만 적절한 권한이 없습니다.",
+		network_owner_subscription_no_permissions = "적절한 권한 없이 엔티티의 네트워크 소유자 구독을 시도했습니다.",
 
 		missing_ipl = "ipl 매개 변수가 없습니다.",
 		enabled_ipl = "ipl `${ipl}`이(가) 성공적으로 활성화되었습니다.",
@@ -6156,8 +6109,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	},
 
 	flag_swap = {
-		toggle_flag_swap_no_permissions = "적절한 권한 없이 교환 국기를 전환하려고 했습니다.",
-
 		toggled_flag_swap_on = "교환 국기 전환을 전환했습니다.",
 		toggled_flag_swap_off = "토글된 국기 교체를 끕니다.",
 
@@ -6181,16 +6132,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		failed_create = "포스 필드 생성에 실패했습니다.",
 		forcefield_marker = "ID: ${id}",
 		invalid_forcefield_id = "잘못된 forcefield ID 입니다.",
-		failed_destroy = "forcefield 파괴에 실패했습니다.",
-
-		create_forcefield_no_permissions = "플레이어가 forcefield를 생성하려 했지만 필요한 권한이 없습니다.",
-		destroy_forcefield_no_permissions = "플레이어가 forcefield를 파괴하려 했지만 필요한 권한이 없습니다."
+		failed_destroy = "forcefield 파괴에 실패했습니다."
 	},
 
 	fortnite = {
-		add_building_no_permissions = "플레이어가 포트나이트 건축물을 추가하려 했지만 필요한 권한이 없습니다.",
-		wipe_buildings_no_permissions = "플레이어가 포트나이트 건물 제거를 시도했지만 필요한 권한이 없습니다.",
-
 		no_buildings_in_radius = "${radius} 반경 내에 건물이 없습니다.",
 		no_buildings = "건물이 없습니다.",
 		wiped_buildings_in_radius = "반경 ${radius} 내에서 건물 ${removedBuildings} 개를 제거했습니다.",
@@ -6402,7 +6347,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		press_to_exit_locker = "사물함에서 나오려면 ~INPUT_CONTEXT~ 를 누르세요.",
 		failed_to_start_escape_room = "탈출방을 시작하는데 실패하였습니다.",
 		started_escape_room = "${playerAmount} 명의 플레이어들과 탈출방을 시작하였습니다.",
-		start_escape_room_missing_permissions = "플레이어가 탈출방을 시작하려 했지만 필요한 권한이 없습니다.",
 		escape_instructions = "작업 완료 시 문이 열리며 건물을 떠날 수 있습니다.",
 		answer_the_phone = "전화 받기.",
 
@@ -6416,8 +6360,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		successfully_revived_everyone = "모든 인원을 성공적으로 부활시켰습니다.",
 		successfully_revived_everyone_removed_injuries = "모든 인원을 성공적으로 부활시키고 부상도 치료했습니다.",
 		failed_to_revive = "`/revive` 명령어를 올바르게 실행하지 못했습니다.",
-		revive_player_not_staff = "플레이어가 다른 플레이어를 부활시키려 했지만 필요한 권한이 없습니다.",
-		revive_self_not_staff = "플레이어가 스스로 부활시키려 했지만 필요한 권한이 없습니다.",
 		revived_self_removed_injuries_title = "자가 부활 및 부상 제거",
 		revived_self_removed_injuries_details = "${consoleName} 님이 자신을 부활시키고 부상을 제거했습니다.",
 		revived_self_title = "자가 부활",
@@ -6430,8 +6372,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		revived_player_removed_injuries_details = "${consoleName}님이 ${targetConsoleName}님을 부활시키고 부상을 회복시켰습니다.",
 		revived_player_title = "부활한 플레이어",
 		revived_player_details = "${consoleName}님이 ${targetConsoleName}님을 부활시켰습니다.",
-		get_recent_deaths_not_staff = "해당 권한이 없어 최근 사망자 정보를 확인하지 못했습니다.",
-		get_player_last_death_not_staff = "해당 권한이 없어 플레이어의 마지막 사망 정보를 확인하지 못했습니다.",
 		recent_deaths = "최근 사망자 목록",
 		no_recent_deaths = "최근 사망자가 없습니다.",
 		recent_deaths_list_entry = "${recentDeathId}. ${consoleName}님이 ${timer}초 전 죽었습니다.",
@@ -6459,7 +6399,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		no_players_in_range = "${distance}m 반경 내에 유저가 다운되어 있지 않습니다.",
 		successfully_revived_range = "${distance}m 반경 내에서 ${amount}명의 유저가 부활 되었습니다.",
 		failed_revive_range = "플레이어 부활에 실패했습니다.",
-		range_revive_not_staff = "일부 플레이어를 부활시키려고 했지만 권한이 없습니다.",
 
 		cpr_ped_logs_title = "심폐소생술된 보행자",
 		cpr_ped_logs_details = "${consoleName} 님이 보행자에게 심폐소생술을 시행하였고, $${money}를 받았습니다.",
@@ -6577,6 +6516,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		pilot_license_details = "파일럿 면허증 | ${firstName} ${lastName} | 시민 ID: ${characterId}",
 		weapon_license = "무기 소지 면허증",
 		weapon_license_details = "무기 소지 면허증 | ${firstName} ${lastName} | 시민 ID: ${characterId}",
+		mining_license = "광업 허가증",
+		mining_license_details = "광업 허가증 | ${firstName} ${lastName} | 주민등록번호: ${characterId}",
 		just_showed_license = "면허증을 제시했습니다. 잠시 기다려주세요.",
 
 		just_showed_badge = "배지를 제시했습니다. 잠시 기다려주세요.",
@@ -6710,13 +6651,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		failed_to_get_instance_players = "인스턴스에서 플레이어를 가져올 수 없습니다.",
 		no_players = "플레이어 없음.",
 
-		instance_hud = "인스턴스 ID: ${instanceId}",
-
-		create_instance_not_developer = "해당 플레이어는 개발자가 아닌데 인스턴스를 생성하려고 시도했습니다.",
-		destroy_instance_not_developer = "해당 플레이어는 개발자가 아님에도 불구하고 인스턴스를 삭제하려고 시도했습니다.",
-		add_player_to_instance_not_developer = "해당 플레이어는 개발자가 아님에도 불구하고 플레이어를 인스턴스에 추가하려고 시도했습니다.",
-		remove_player_from_instance_not_developer = "해당 플레이어는 개발자가 아님에도 불구하고 플레이어를 인스턴스에서 제거하려고 시도했습니다.",
-		get_players_from_instance_not_developer = "해당 플레이어는 개발자가 아님에도 불구하고 인스턴스에서 플레이어를 가져오려고 시도했습니다."
+		instance_hud = "인스턴스 ID: ${instanceId}"
 	},
 
 	interiors = {
@@ -6892,8 +6827,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		no_ground_inventories = "지울 땅에 있는 인벤토리가 없습니다.",
 		no_ground_inventories_within_radius = "반경 `${radius}` 내에 지울 땅에 있는 인벤토리가 없습니다.",
 
-		wipe_inventories_not_staff = "플레이어가 인벤토리를 지우려 했지만, 해당 권한이 없습니다.",
-
 		logs_wiped_all_ground_inventories_title = "모든 땅에 있는 인벤토리를 지웠습니다.",
 		logs_wiped_all_ground_inventories_details = "${consoleName}님이 모든 땅에 있는 인벤토리를 지웠습니다.",
 
@@ -6955,6 +6888,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		pilot_license_description = "비행기 운전 및 관련 작업을 위한 파일럿 면허증입니다.",
 		weapon_license = "무기 소지 및 운반 면허증",
 		weapon_license_description = "고급 무기 소지 및 운반을 위한 무기 소지 면허증입니다.",
+		mining_license = "광업 허가증",
+		mining_license_description = "광업을 위한 허가증입니다.",
 
 		sasp_badge = "SASP 배지",
 		sasp_badge_description = "샌 안드레아스 경찰국 공무원을 위한 배지입니다.",
@@ -7033,6 +6968,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		advanced_lockpick_description = "어린아이는 숨어라",
 		cleaning_kit = "청소 키트",
 		cleaning_kit_description = "차량을 청소하거나 트렁크 뒷부분의 말린 피를 청소하는 데 완벽합니다.",
+		scratch_remover = "스크래치 제거제",
+		scratch_remover_description = "차량의 충돌과 긁힘을 제거하는데 사용됩니다.",
 
 		multi_tool = "다기능 도구",
 		multi_tool_description = "모든 종류의 일에 사용할 수 있는 도구입니다.",
@@ -7657,6 +7594,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		cone_description = "모든 장소에 놓을 수 있습니다.",
 		spike_strips = "스파이크 스트립",
 		spike_strips_description = "세상 어디든 놓을 수 있습니다.",
+		spike_strips_large = "큰 스파이크 스트립",
+		spike_strips_large_description = "세계 어디든지 설치할 수 있습니다.",
 		floodlight = "홍수 조명",
 		floodlight_description = "세상 어디든 놓을 수 있습니다.",
 		left_diversion_sign = "왼쪽 방향 변경 표지판",
@@ -7719,6 +7658,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		hiking_backpack = "등산용 배낭",
 		hiking_backpack_description = "이 멋진 등산용 배낭으로 야외 모험을 위해 장비를 갖추세요. 단순히 코스메틱인 이 배낭은 rugged한 매력을 더해줄 것입니다. 탐험의 정신을 받아들이고, 야외 열광가의 분위기를 어디서든 보여주세요!",
+		green_hiking_backpack = "녹색 하이킹 배낭",
+		green_hiking_backpack_description = "스타일리시한 하이킹 배낭으로야외 모험에 장비를 갖추세요. 완전히 장식 용이지만 당신의 복장에 격식을 더해줍니다. 탐험의 정신을 받아들이고 어디서든 당신의 야외 열정을 공표하세요!",
+		blue_hiking_backpack = "파랑색 하이킹 배낭",
+		blue_hiking_backpack_description = "스타일리시한 하이킹 배낭으로야외 모험에 장비를 갖추세요. 완전히 장식 용이지만 당신의 복장에 격식을 더해줍니다. 탐험의 정신을 받아들이고 어디서든 당신의 야외 열정을 공표하세요!",
 
 		gasoline_bottle = "가솔린 박스",
 		gasoline_bottle_description = "차나... 그... 자신을 쉽게 충전할 수 있는 가솔린 박스입니다.",
@@ -8350,6 +8293,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	items = {
 		move_to_repair = "차량 수리를 위해 이곳으로 이동하십시오.",
 		repairing_vehicle = "차량 수리 중",
+		fix_visual_damage = "시각적인 손상을 고치는 중입니다",
 		using_first_aid_kit = "응급 처치 키트를 사용 중",
 		using_bandages = "붕대를 사용 중",
 		using_ifak = "IFAK를 사용 중",
@@ -8407,7 +8351,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		press_to_deposit = "온라인 재표에 아이템을 입금하려면 ~INPUT_REPLAY_SHOWHOTKEY~을 누르세요.",
 		can_only_withdraw_at_casino = "카지노에서만 인출이 가능합니다.",
 
-		take_fee_no_permissions = "플레이어가 적절한 권한 없이 잭팟 수수료를 가져가려고 시도하였습니다.",
 		took_jackpot_fees = "잭팟 수수료를 가져갔습니다. 인벤토리 ${inventories}에서 합산 $${removedTotalWorth} (가치: ${removedTotalItems}개 항목)를 제거했습니다.",
 
 		jackpot = "잭팟",
@@ -8513,7 +8456,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		something_went_wrong = "엔티티를 찾을 수 없습니다.",
 		locate_success = "`${filter}`과(와) 일치하는 엔티티 위치를 찾았습니다. 좌표: (${x}, ${y}, ${z}) (인스턴스: ${instance}).",
 
-		locate_entity_no_permissions = "플레이어가 적절한 권한 없이 엔티티를 찾으려고 시도했습니다.",
+		locate_entity_no_permissions = "적절한 권한 없이 개체를 찾으려고 시도했습니다.",
 
 		locate_entity_logs_title = "엔티티 찾기",
 		locate_entity_logs_details = "${consoleName}님이 '${filterType}' 유형의 엔티티를 '${filterValue}'로 찾으려고 시도했습니다."
@@ -8596,6 +8539,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		queue = "대기열",
 		queue_position_with_priority = "🐌 현재 대기열 ${queueTotal}명 중 ${queuePosition}번째이며, ${queuePriorityName} 우선권을 가지고 있습니다. 🕐${queueTime}",
 		queue_position_without_priority = "🐌 현재 대기열 ${queueTotal}명 중 ${queuePosition}번째입니다. 🕐${queueTime}",
+		live_on_twitch = "지루하신가요? 이 스트리머들을 확인해보세요!",
+		live = "실시간",
 		you_are_through = "접속에 성공하셨습니다!",
 		join_server = "서버 입장",
 		tired_of_queueing = "대기열에 지쳤나요? 우선권을 위해 서버를 지원해주세요!",
@@ -8614,6 +8559,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		weird_date_of_birth = "적절한 생년월일을 선택해주세요.",
 		invalid_backstory = "누락 및 잘못된 배경 이야기입니다 (최대 5,000자).",
 		backstory_too_short = "당신의 소개는 너무 짧습니다 (최소 ${backstory}자).",
+
+		invalid_date = "유효하지 않은 생년월일입니다.",
+		date_not_future = "생년월일은 미래일 수 없습니다.",
+		date_too_old = "생년월일은 100년 이상 될 수 없습니다.",
 
 		bad_words = "캐릭터 이름이나 이야기에 비속어가 포함되어 있습니다.",
 		disallowed_name = "캐릭터 이름에 금지된 단어가 포함돼 있습니다.",
@@ -8659,9 +8608,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		invalid_server_id = "잘못된 서버 ID입니다.",
 		logs_failed = "로그를 불러오는데 실패했습니다.",
 
-		close = "닫기",
-
-		get_logs_no_permissions = "플레이어가 적절한 권한 없이 로그를 보려고 시도했습니다."
+		close = "닫기"
 	},
 
 	loot = {
@@ -8706,8 +8653,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	magazines = {
 		issue_id = "이슈 #${issueId}",
 		releases_updated = "릴리즈가 업데이트되었습니다.",
-		no_release_changes = "릴리즈 변경사항이 없습니다.",
-		refresh_magazines_no_permissions = "플레이어가 적당한 권한 없이 탄창을 새로고침하려고 하였습니다."
+		no_release_changes = "릴리즈 변경사항이 없습니다."
 	},
 
 	mdt = {
@@ -8889,15 +8835,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		bad_ped_message = "\"${pedMessage}\"는 유독한 행동(Malicious Behavior)으로 인한 ped 메시지로 의심됩니다.",
 		bad_twitter_post = "\"${twitterPost}\"는 유독한 행동(Malicious Behavior)으로 인한 트위터 메시지로 의심됩니다.",
 		bad_phone_message = "\"${message}\"는 유독한 행동(Malicious Behavior)으로 인한 전화 메시지로 의심됩니다.",
-		mute_toggle_not_staff = "플레이어가 뮤트를 시도했지만 권한이 없습니다.",
-		unmute_toggle_not_staff = "플레이어가 언뮤트를 시도했지만 권한이 없습니다.",
 		user_not_found = "서버 ID `${serverId}`를 가진 사용자를 찾을 수 없습니다.",
 		player_already_muted = "${consoleName}님은 이미 음소거 상태입니다.",
 		player_has_been_muted_no_reason = "${consoleName}님은 이제 사유 없이 음소거 상태입니다.",
 		player_has_been_muted = "${consoleName}님은 이제 `${reason}` 이유로 음소거 상태입니다.",
 		player_not_muted = "${consoleName}님은 음소거 상태가 아닙니다.",
 		player_has_been_unmuted = "${consoleName}님의 음소거 상태가 해제되었습니다.",
-		clear_chat_not_admin = "해당 플레이어는 모든 플레이어의 채팅을 삭제할 권한이 없습니다.",
 		ooc_clear_chat_title = "채팅 삭제됨",
 		ooc_clear_chat_details = "${consoleName}가 대화 창을 모두 지웠습니다.",
 		muted_player = "음소거된 플레이어",
@@ -9880,8 +9823,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		failed_load_player = "플레이어 데이터를 불러오지 못했습니다. 올바른 서버 ID 를 입력했는지 확인하세요.",
 		failed_add_warning = "경고 추가에 실패했습니다.",
 
-		get_info_no_permissions = "플레이어가 적절한 권한 없이 다른 플레이어 정보를 조회하려고했습니다.",
-
 		user_indefinitely_banned_warning_no_reason = "이 사람이 지정된 이유없이 영구히 차단되었습니다. 이 경고는 자동으로 생성된 차단 결과입니다.",
 		user_indefinitely_banned_warning = "이 사람이 '${reason}'으로 영구히 차단되었습니다. 이 경고는 자동으로 생성된 차단 결과입니다.",
 		user_temporarily_banned_warning_no_reason = "이 사람이 ${displayTime} 동안 지정된 이유 없이 차단되었습니다. 이 경고는 자동으로 생성된 차단 결과입니다.",
@@ -10006,11 +9947,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		missing_emote = "감정 표현 파라미터가 누락되었습니다.",
 
 		emote_list = "사용 가능한 캐릭터 감정 표현: ${list}.",
-		task_list = "사용 가능한 캐릭터 작업: ${list}.",
-
-		spawn_ped_missing_perms = "캐릭터를 생성할 권한이 없습니다.",
-		remove_peds_missing_perms = "생성된 캐릭터를 제거할 권한이 없습니다.",
-		ped_assign_task_missing_perms = "스폰된 NPC에게 권한 없이 작업을 할당하는 시도가 있었습니다."
+		task_list = "사용 가능한 캐릭터 작업: ${list}."
 	},
 
 	ped_steal = {
@@ -10067,7 +10004,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 	player_control = {
 		unable_to_drive_for_yourself = "본인 대신 운전할 수 없습니다.",
-		drive_for_player_no_permissions = "플레이어가 다른 플레이어를 대신해서 운전하고자 시도했지만, 이를 수행할 권한이 없습니다.",
 		player_is_not_nearby = "서버 아이디가 ${serverId}인 플레이어가 근처에 없습니다.",
 		player_is_not_the_drive_of_a_vehicle = "서버 아이디가 ${serverId}인 플레이어가 차량을 운전 중이 아닙니다.",
 		press_to_stop_drive_for = "플레이어 운전을 멈추려면 ~INPUT_FRONTEND_CANCEL~ 키를 누르세요."
@@ -10088,7 +10024,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	player_stats = {
 		hp = "체력",
 		armor = "아머",
-		toggle_player_stats_no_permissions = "플레이어는 적절한 권한 없이 플레이어 스탯을 전환시도하였습니다.",
 		updated_render_range = "${renderRange}만큼 렌더링 범위를 업데이트했습니다.",
 		turned_player_stats_on = "플레이어 스탯을 켰습니다.",
 		turned_player_stats_off = "플레이어 스탯을 껐습니다."
@@ -10143,7 +10078,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 	props = {
 		illegal_prop_item_id = "플레이어가 잘못된 아이템 ID로 소지품 아이템을 사용하려고 시도했습니다.",
-		spawn_prop_not_staff = "플레이어가 소유한 권한이 없는 상태에서 소지품을 소환하려고 시도했습니다.",
 		managing_props_help = "현재 소지품을 관리 중입니다. 소지품에 가까이 가서 ~INPUT_CONTEXT~을 눌러서 집어 들어주세요.",
 		total_props = "소지품 총 개수: ${count}",
 		active_props = "사용 가능한 소지품 개수: ${count}",
@@ -10172,7 +10106,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		invalid_wipe_radius = "올바르지 않은 소멸 반경입니다 (1에서 100 사이).",
 		wipe_successful = "소품이 성공적으로 소멸되었습니다.",
-		wipe_props_missing_permissions = "플레이어가 필요한 권한이 없어 소품을 소멸시키기를 시도했습니다.",
 
 		placing_prop = "소품 배치 중",
 		pickup_prop = "소품 집어들기 중",
@@ -10209,7 +10142,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		radio_debug_off = "라디오 디버그를 성공적으로 끄는 중입니다.",
 		radio_debug_on = "무전기 디버그가 성공적으로 전환되었습니다.",
 
-		radio_debug_no_permissions = "올바른 권한 없이 무전기 디버그를 전환하려 했습니다.",
+		radio_debug_no_permissions = "적절한 권한 없이 라디오 디버그를 토글하려고 시도했습니다.",
 
 		decrypt_frequency = "[${InteractionKey}] 주파수 해독",
 		decrypting_frequency = "주파수를 해독 중입니다.",
@@ -10246,8 +10179,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	reskin = {
 		plastic_surgery = "성형 수술",
 		los_santos_police_dept = "로스 산토스 경찰서",
-
-		reskin_player_no_permissions = "플레이어가 적절한 권한 없이 라디오 디버그를 전환하려고했습니다.",
 
 		triggered_reskin_for_player = "${consoleName}의 스킨을 변경했습니다.",
 
@@ -10358,8 +10289,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		riot_mode_enabled_help = "폭동 모드가 활성화되었습니다.",
 		riot_mode_disabled_help = "폭동 모드가 비활성화되었습니다.",
 
-		add_riot_player_no_permissions = "적절한 권한이 없이 폭동 대상 목록에 플레이어를 추가하려고 시도했습니다.",
-		remove_riot_player_no_permissions = "적절한 권한이 없이 폭동 대상 목록에서 플레이어를 제거하려고 시도했습니다.",
+		add_riot_player_no_permissions = "권한 없이 폭동 목록에 플레이어를 추가하려고 했습니다.",
+		remove_riot_player_no_permissions = "권한 없이 폭동 목록에서 플레이어를 제거하려고 했습니다.",
 
 		player_already_in_riot_list = "${consoleName}은(는) 이미 폭동 명단에 있습니다.",
 		player_not_in_riot_list = "${consoleName}은(는) 폭동 명단에 없습니다.",
@@ -10626,7 +10557,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		finding_player = "플레이어 찾는 중",
 
 		invincibility_active = "무적: ~r~활성화~w~",
-		invincibility_inactive_dead = "무적: ~g~비활성화~w~ (사망)",
+		invincibility_inactive_dead = "무적 상태: ~g~활성화~w~ (죽음)",
+		invincibility_inactive_trunk = "무적 상태: ~g~활성화~w~ (트렁크)",
 		invincibility_inactive = "무적: ~g~비활성화~w~",
 
 		health_ok = "체력: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
@@ -10698,7 +10630,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	status = {
 		status_reset = "${consoleName}의 상태를 성공적으로 초기화했습니다.",
 		status_reset_failed = "서버 ID `${serverId}`를 가진 사용자를 찾을 수 없습니다.",
-		reset_status_not_staff = "필요한 권한 없이 플레이어의 상태를 초기화하려고했습니다.",
 		status_reset_for_all = "모든 사용자의 상태를 성공적으로 초기화했습니다.",
 		status_disabled = "상태 (스트레스, 배고픔 및 갈증)가 비활성화되었습니다.",
 		status_enabled = "상태 (스트레스, 배고픔 및 갈증)가 활성화되었습니다.",
@@ -10711,8 +10642,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		set_body_armor_level_everyone_details = "${consoleName}이(가) 모두의 방탄복 레벨을 `${bodyArmorLevel}`으로 설정했습니다.",
 		set_body_armor_level_player_title = "플레이어의 방탄복 레벨 설정",
 		set_body_armor_level_player_details = "${consoleName}님이 ${targetConsoleName}님의 방탄복 레벨을 `${bodyArmorLevel}`(으)로 설정하였습니다.",
-		set_body_armor_level_player_not_staff = "플레이어가 다른 플레이어의 방탄복 레벨을 설정하려고 했지만 필요한 권한이 없습니다.",
-		set_body_armor_level_self_not_staff = "플레이어가 자신의 방탄복 레벨을 설정하려고 했지만 필요한 권한이 없습니다.",
 		stress_level_warning = "스트레스가 높습니다! 담배, 마리화나 피우기, 요가 등 활동을 통해 스트레스를 줄이세요."
 	},
 
@@ -10725,7 +10654,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		missing_hour = "시간이 제공되지 않았습니다.",
 		invalid_hour = "현지 시간 재설정이 잘못되었습니다. 값은 0:00에서 23:59 사이의 시간이어야 합니다.",
 		hour_changed = "시간이 ${hour}로 변경되었습니다.",
-		set_hour_not_staff = "필요한 권한 없이 시간을 설정하려는 시도가 있었습니다.",
 
 		local_time_override_enabled = "현지 시간이 ${hour}:${minute}로 설정되었습니다.",
 		local_time_override_disabled = "로컬 시간이 기본값으로 재설정되었습니다.",
@@ -10735,27 +10663,21 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		missing_minute = "분이 제공되지 않았습니다.",
 		invalid_minute = "분 `${minute}`은(는) 잘못되었습니다. 값은 0에서 59 사이어야합니다.",
 		minute_changed = "분이 이제 `${minute}`(으)로 설정되었습니다.",
-		set_minute_not_staff = "필요한 권한이 없어 시간을 설정할 수 없습니다.",
 
 		missing_weather = "날씨가 제공되지 않았습니다.",
 		invalid_weather = "`${weatherName}` 날씨는 유효하지 않습니다. 올바른 날씨 이름은 CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT 및 BLIZZARD입니다.",
 		weather_changed = "날씨가 `${weatherName}`(으)로 변경되었습니다.",
 		weather_advanced = "날씨가 `${weatherName}`(으)로 변경되었습니다.",
 		weather_advance_fail = "날씨를 자연스럽게 변경하는 데 실패했습니다.",
-		set_weather_not_staff = "필요한 권한 없이 날씨를 설정하려고 했습니다.",
-		advance_weather_not_staff = "필요한 권한 없이 날씨를 변경하려고 했습니다.",
 
 		time_frozen = "시간이 멈춰졌습니다.",
 		time_unfrozen = "시간이 다시 흐르기 시작했습니다.",
-		freeze_time_not_staff = "권한이 없어 시간을 정지할 수 없습니다.",
 
 		weather_frozen = "날씨가 얼렸습니다.",
 		weather_unfrozen = "날씨가 다시 움직입니다.",
-		freeze_weather_not_staff = "권한이 없어 날씨를 얼릴 수 없습니다.",
 
 		blackout_enabled = "도시에 블랙아웃이 걸렸습니다.",
 		blackout_disabled = "도시 블랙아웃이 해제되었습니다.",
-		blackout_not_staff = "권한이 없어 블랙아웃을 토글할 수 없습니다.",
 
 		weather_changed_title = "날씨 변경됨",
 		weather_changed_details = "${consoleName} 님이 `${weatherName}` 날씨로 변경하였습니다.",
@@ -11109,8 +11031,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	},
 
 	trains = {
-		spawn_train_missing_permissions = "플레이어가 열차를 소환하려 했지만 필요한 권한이 없습니다.",
-
 		invalid_track_id = "잘못된 트랙 ID가 제공되었습니다.",
 		spawned_train_on_track = "${trackId}번 트랙에 열차를 소환했습니다.",
 		failed_to_spawn_train = "열차 소환에 실패했습니다."
@@ -11126,7 +11046,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	treasure_maps = {
 		no_treasure_map_with_tier = "${mapTier} 단계의 보물 지도가 없습니다.",
 		treasure_map_does_not_have_piece = "${mapTier} 단계의 보물 지도에 ${pieceNumber} 조각이 없습니다.",
-		spawn_map_piece_missing_permissions = "플레이어가 적절한 권한 없이 지도 조각을 소환하려고 시도했습니다.",
 
 		sketchy_map = "잡지근한 지도",
 		worn_map = "낡은 지도",
@@ -11156,9 +11075,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		set_ocean_scaler_no_permission = "해당 플레이어는 해양 스케일러 강도를 설정할 충분한 권한이 없습니다.",
 
 		tsunami_started = "쓰나미가 시작되었습니다. 맵이 ${minutes}분 동안 물에 잠길 예정입니다.",
-		tsunami_stopped = "쓰나미가 멈췄습니다.",
-
-		toggle_tsunami_no_permissions = "적절한 권한 없이 쓰나미를 전환하려고 했습니다."
+		tsunami_stopped = "쓰나미가 멈췄습니다."
 	},
 
 	tuner_shop = {
@@ -11195,8 +11112,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		cleared_vdm = "${amount}개의 vdm 대상을 삭제했습니다.",
 		failed_vdm_clear = "vdm 대상 삭제에 실패했습니다.",
 		added_vdm_target = "네트워크 id가 ${networkId}인 NPC가 ${target}을(를) 대상으로 설정했습니다.",
-
-		vdm_no_permissions = "플레이어가 적절한 권한 없이 vdm 명령어를 실행하려고 시도했습니다."
+		no_ped_available = "주변에 사용할 수 있는 보행자가 없습니다.",
+		failed_steal = "차량을 훔치는데 실패했습니다.",
+		stealing_vehicle = "주변 보행자에게 차량을 훔치도록 지시했습니다 (거리: ${distance}m)."
 	},
 
 	vending_machines = {
@@ -11278,10 +11196,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	},
 
 	wizard = {
-		action_missing_permissions = "적절한 권한없이 플레이어에게 마법사 동작을 수행하려고했습니다.",
-		action_radius_missing_permissions = "적절한 권한 없이 일정 범위 내 플레이어에게 마법사 액션을 수행하려 하였습니다.",
-		run_as_missing_permissions = "적절한 권한 없이 다른 플레이어로 명령을 실행하려 하였습니다.",
-
 		menu_title = "마법사",
 
 		ragdoll_player = "넘어지기",
@@ -11367,8 +11281,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		invalid_explosion_type = "폭발 유형 ${explosionType}이(가) 유효하지 않습니다.",
 		invalid_camera_shake = "카메라 흔들림 `${cameraShake}`은(는) 유효하지 않습니다.",
 		invalid_damage_scale = "데미지 배율 `${damageScale}`은(는) 유효하지 않습니다.",
-		created_explosion = "`${explosionTypeName}` 유형의 폭발을 생성하였으며 데미지 배율은 `${damageScale}`이며 카메라 흔들림은 `${cameraShake}`입니다.",
-		create_explosion_not_developer = "플레이어가 폭발을 생성하려 하였으나 개발자가 아닙니다."
+		created_explosion = "`${explosionTypeName}` 유형의 폭발을 생성하였으며 데미지 배율은 `${damageScale}`이며 카메라 흔들림은 `${cameraShake}`입니다."
 	},
 
 	functions = {
@@ -11489,7 +11402,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	},
 
 	duty = {
-		toggle_duty_status_no_permissions = "플레이어가 적당한 권한 없이 명령어를 통해 근무 상태를 전환하려고 시도했습니다.",
+		toggle_duty_status_no_permissions = "권한 없이 명령어를 통해 근무 상태를 전환하려고 시도했습니다.",
 
 		duty_status_on = "성공적으로 근무를 시작했습니다.",
 		duty_status_off = "성공적으로 근무를 종료했습니다.",
@@ -11604,6 +11517,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		license_hunting = "사냥 면허",
 		license_fishing = "낚시 면허",
 		license_weapon = "무기 면허",
+		license_mining = "채굴 면허",
 		gave_character_license = "${characterName} 님에게 면허 `${licenseLabel}`을 지급하였습니다.",
 		character_already_has_license = "${characterName} 님은 이미 면허 `${licenseLabel}`이 있습니다.",
 		removed_character_license = "${characterName} 님의 면허 `${licenseLabel}`을 제거하였습니다.",
@@ -11737,8 +11651,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		not_in_a_vehicle = "차량에 탑승하지 않았습니다.",
 		vehicle_engine_on = "엔진이 이미 가동 중입니다.",
 
-		set_fuel_no_permissions = "권한이 없는 플레이어가 차량 연료 수위를 설정하려 시도했습니다.",
-
 		vehicle_exploded_logs_title = "차량 폭발",
 		vehicle_exploded_logs_details = "${consoleName}이(가) 작동 중인 엔진으로 차량을 보충한 후 폭발을 일으켰습니다."
 	},
@@ -11834,11 +11746,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "차고 디버그 켜짐.",
 		toggle_garage_debug_toggled_off = "차고 디버그 꺼짐."
-	},
-
-	handlings = {
-		set_handling_override_not_super_admin = "플레이어가 적절한 권한 없이 핸들링 오버라이드를 설정하려고 시도했습니다.",
-		remove_handling_override_not_super_admin = "플레이어가 적절한 권한 없이 핸들링 오버라이드를 제거하려고 시도했습니다."
 	},
 
 	keys = {
@@ -11965,31 +11872,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		toggle_brakes_off = "브레이크를 작동하였습니다.",
 		failed_modify_brakes = "브레이크를 수정하지 못했습니다.",
 
-		toggle_disabled_brakes_no_permissions = "플레이어가 적절한 권한 없이 명령어를 통해 비활성화된 브레이크를 전환하려고 시도하였습니다.",
-
-		-- NOTE: `add_vehicle` command:
-		add_vehicle_not_super_admin = "플레이어가 적절한 권한 없이 다른 유저의 차고에 차량을 추가하려고 시도하였습니다.",
-		add_vehicle_added_vehicle_for_everyone = "모델명이 `${modelName}`인 차량을 모두를 위해 추가하였습니다.",
-		add_vehicle_added_vehicle_for_player = "모델명이 `${modelName}`인 차량을 ${consoleName}님을 위해 추가하였습니다.",
-		add_vehicle_added_vehicle = "모델명이 `${modelName}`인 차량을 추가하였습니다.",
-		add_vehicle_character_not_loaded = "대상 플레이어는 캐릭터를 로드하지 않았습니다.",
-		add_vehicle_target_user_not_found = "대상 사용자를 찾을 수 없습니다.",
-		add_vehicle_invalid_input = "잘못된 입력입니다.",
-		add_vehicle_no_permissions = "권한이 없습니다.",
-		add_vehicle_user_not_found = "사용자를 찾을 수 없습니다.",
-		add_vehicle_invalid_player = "서버 ID `${serverId}`와 일치하는 플레이어가 없습니다.",
-		add_vehicle_invalid_model_name = "모델 이름 `${modelName}`은(는) 유효한 모델이 아닙니다.",
-		add_vehicle_no_model_name = "모델 이름이 추가되지 않았습니다.",
-
-		added_vehicle_for_everyone_logs_title = "모든 플레이어 차량 추가됨",
-		added_vehicle_for_everyone_logs_details = "${consoleName} 님이 모델명 `${modelName}` 의 차량을 모든 플레이어의 차고에 추가했습니다.",
-		added_vehicle_for_player_logs_title = "플레이어 차량 추가됨",
-		added_vehicle_for_player_logs_details = "${consoleName} 님이 모델명 `${modelName}` 의 차량을 ${targetConsoleName} 님의 차고에 추가했습니다.",
-		added_vehicle_logs_title = "차량 추가됨",
-		added_vehicle_logs_details = "${consoleName} 님이 모델명 `${modelName}` 의 차량을 자신의 차고에 추가했습니다.",
-
 		-- NOTE: `toggle_vehicle_weapons` command:
-		toggle_vehicle_weapons_not_super_admin = "유저가 적절한 권한 없이 차량 무기를 토글하려고 시도했습니다.",
 		toggled_vehicle_weapons_on = "차량 무기를 켰습니다.",
 		toggled_vehicle_weapons_off = "차량 무기를 껐습니다.",
 		toggled_vehicle_weapons_vehicle_is_not_networked = "현재 탑승중인 차량이 네트워크에 연결되어 있지 않습니다.",
@@ -12144,6 +12027,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		ems_boat_hq = "EMS 해상 구조대",
 		ems_garage = "EMS 차고",
 		e_to_get_treated = "[E] 치료받기 - $1250",
+		e_check_in_player = "[E] 플레이어 인출 - $1250",
+		check_in_blocked = "인출이 점유되어 있습니다",
 		get_treated = "치료 받기 - $1250",
 		you_are_being_treated = "치료 중입니다",
 		being_treated = "치료 중",

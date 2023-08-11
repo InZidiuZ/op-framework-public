@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 18 (do not change)
+-- AUTO LOCALES: 19 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -61,7 +61,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		you_are_not_being_carried = "Je wordt op dit moment niet gedragen.",
 		successfully_uncarried = "Gedwongen stop dragen succesvol.",
 		failed_uncarried = "Kon het dragen niet stoppen.",
-		uncarry_missing_permissions = "Poging tot gedwongen stoppen dragen zonder de juiste toestemming.",
+		uncarry_missing_permissions = "Er is geprobeerd om het dragen te stoppen zonder de juiste toestemming.",
 
 		uncarry_logs_title = "Gedwongen stop draagactie",
 		uncarry_logs_details = "${consoleName} heeft gedwongen ${targetName} gestopt met dragen.",
@@ -78,7 +78,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 	-- base/*
 	admin = {
-		feature_toggle_not_admin = "Probeert zijn eigen of iemand anders '${featureName}' in te schakelen, maar heeft niet de juiste bevoegdheden om dit te doen.",
 		feature_toggle_activated_logs_title = "Functie op afstand ingeschakeld",
 		feature_toggle_activated_logs_details_state = "${consoleName} heeft `${featureName}` ${newState} geschakeld voor speler ${targetConsoleName}.",
 		feature_toggle_activated_all_logs_title = "Functie voor iedereen op afstand ingeschakeld",
@@ -101,9 +100,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		failed_to_spawn_vehicle = "Kon voertuig niet spawnen.",
 		spawned_vehicle_for_player = "Succesvol `${modelName}` gespawned voor ${displayName}.",
 		spawned_vehicle_for_everyone = "Voertuig `${modelName}` is succesvol gespawned voor iedereen.",
-		spawn_vehicle_no_permissions = "Speler probeerde een voertuig te spawnen maar had niet de vereiste rechten om dit te doen.",
-		replace_vehicle_no_permissions = "Speler probeerde hun voertuig te vervangen, maar had daar niet de benodigde toestemming voor.",
-		create_vehicle_no_permissions = "Speler probeerde een voertuig te maken, maar had daar niet de benodigde toestemming voor.",
 		spawned_vehicle_for_self_title = "Voertuig Spawned",
 		spawned_vehicle_for_self_details = "${consoleName} heeft een voertuig gespawned met modelnaam `${modelName}`.",
 		spawned_vehicle_for_player_title = "Voertuig Gespawned Voor Speler",
@@ -113,6 +109,26 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		vehicle_created = "Voertuig succesvol aangemaakt.",
 		failed_vehicle_creation = "Kan voertuig niet aanmaken.",
+
+		-- NOTE: `add_vehicle` command:
+		add_vehicle_added_vehicle_for_everyone = "Voertuig met modelnaam `${modelName}` is toegevoegd voor iedereen.",
+		add_vehicle_added_vehicle_for_player = "Voertuig met modelnaam `${modelName}` is toegevoegd voor ${consoleName}.",
+		add_vehicle_added_vehicle = "Voertuig met modelnaam `${modelName}` is toegevoegd.",
+		add_vehicle_character_not_loaded = "De doelwit speler heeft geen personage geladen.",
+		add_vehicle_target_user_not_found = "De doelwit gebruiker kan niet worden gevonden.",
+		add_vehicle_invalid_input = "Ongeldige invoer.",
+		add_vehicle_no_permissions = "Geen toestemming.",
+		add_vehicle_user_not_found = "Gebruiker niet gevonden.",
+		add_vehicle_invalid_player = "Er waren geen spelers met server-ID `${serverId}`.",
+		add_vehicle_invalid_model_name = "De modelnaam `${modelName}` is geen geldig model.",
+		add_vehicle_no_model_name = "Geen modelnaam toegevoegd.",
+
+		added_vehicle_for_everyone_logs_title = "Voertuig toegevoegd voor iedereen",
+		added_vehicle_for_everyone_logs_details = "${consoleName} heeft een voertuig met modelnaam `${modelName}` toegevoegd aan ieders garage.",
+		added_vehicle_for_player_logs_title = "Voertuig Toegevoegd Voor Speler",
+		added_vehicle_for_player_logs_details = "${consoleName} heeft een voertuig met modelnaam `${modelName}` toegevoegd aan de garage van ${targetConsoleName}.",
+		added_vehicle_logs_title = "Voertuig Toegevoegd",
+		added_vehicle_logs_details = "${consoleName} heeft een voertuig met modelnaam `${modelName}` toegevoegd aan hun garage.",
 
 		invalid_amount = "Ongeldig bedrag.",
 
@@ -160,8 +176,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		removed_bank_from_player = "$${amount} bank verwijderd van ${targetConsoleName}.",
 		removed_bank_from_everyone = "$${amount} bank verwijderd van iedereen.",
 
-		money_event_not_admin = "Poging om geld event `${moneyEvent}` te activeren als niet-beheerder.",
-
 		spawned_item_title = "Item gespawned",
 		spawned_item_details = "${consoleName} heeft ${amount}x `${itemName}` gespawned voor zichzelf.",
 		spawned_item_for_player_title = "Item gespawnd voor speler",
@@ -178,7 +192,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		announcement_logs_title = "Server Brede Aankondiging",
 		announcement_logs_details = "${consoleName} heeft het volgende bericht naar de hele server gestuurd: `${announcementMessage}`",
-		announcement_not_admin = "Er is geprobeerd een staff aankondiging te plaatsen.",
 
 		posted_announcement = "Bericht van kennisgeving geplaatst.",
 		posted_announcement_locale = "Bericht van kennisgeving geplaatst vanuit taal.",
@@ -188,7 +201,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		staff_title = "STAFF ${staffName}",
 		staff_message_logs_title = "Logboek van berichten van personeel",
 		staff_message_logs_details = "${consoleName} heeft het volgende bericht verstuurd in de staff chat: `${staffMessage}`",
-		staff_message_illegal = "Een speler heeft geprobeerd een bericht te versturen in de staff chat, maar heeft niet de juiste rechten.",
 
 		staff_pm_title = "STAFF PM ${transmissionTitle}",
 		staff_pm_logs_title = "Staff PM",
@@ -218,7 +230,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		missing_valid_license_identifier_parameter = "Ontbrekende geldige 'licenseIdentifier' parameter.",
 
-		illegal_entity_wipe = "Speler heeft geprobeerd de entiteiten te wissen, maar had geen toestemming.",
 		wiped_entities = "Entiteiten gewist. ${deletedEntities} netwerkentiteiten verwijderd.",
 		wipe_entities_logs_title = "Entiteiten gewist",
 		wipe_entities_logs_details = "${consoleName} heeft een entiteiten-wisopdracht gegeven met de volgende configuratie: afstand = '${distance}', negeer lokale entiteiten = '${ignoreLocalEntities}', modelnaam = '${modelName}'",
@@ -261,12 +272,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		ban_quadrouple_kill = "😨 VIJFVOUDIGE MOORD!!!!!!",
 		ban_killing_spree = "🤯 MOORDSPREEK (${count})!!!!!!",
 
-		kick_player_not_staff = "Er is geprobeerd een speler te kicken zonder de juiste machtigingen.",
-		ban_player_not_staff = "Poging gedaan om een speler te verbannen zonder de juiste machtigingen.",
-
-		hide_staff_not_staff = "Poging gedaan om de staff-status te verbergen zonder de juiste machtigingen.",
-		toggle_staff_not_staff = "Poging gedaan om de beschikbaarheid van de staff te wijzigen zonder de juiste machtigingen.",
-
 		logs_hide_staff_title = "Staff verborgen",
 		logs_hide_staff_hidden_details = "${consoleName} heeft zijn staff-status verborgen.",
 		logs_hide_staff_shown_details = "${consoleName} heeft zijn staff-status getoond.",
@@ -282,10 +287,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		staff_feature_unavailable = "Deze functie is niet beschikbaar wanneer je beschikbaarheid als medewerker is uitgeschakeld.",
 
-		toggle_player_track_no_permissions = "Poging om speler tracking in- of uit te schakelen zonder de juiste rechten.",
-		set_job_no_permissions = "Poging om een job in te stellen zonder de juiste rechten.",
-		toggle_reflection_no_permissions = "Poging om schade reflectie te activeren zonder de juiste toestemming.",
-
 		success_enable_reflection = "Schade reflectie is succesvol ingeschakeld.",
 		success_disable_reflection = "Schade reflectie is succesvol uitgeschakeld.",
 		failed_toggle_reflection = "Het activeren van schade reflectie is mislukt.",
@@ -296,12 +297,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		headache_logs_title = "Hoofdpijn Geactiveerd",
 		headache_logs_details = "${consoleName} heeft hoofdpijn geactiveerd voor ${targetConsoleName}.",
-		trigger_headache_no_permissions = "Poging om hoofdpijn te activeren zonder de juiste toestemming.",
 
 		super_jump_logs_title = "Super Jump in- of uitgeschakeld",
 		super_jump_logs_details_on = "${consoleName} heeft hun super jump ingeschakeld.",
 		super_jump_logs_details_off = "${consoleName} heeft hun super jump uitgeschakeld.",
-		toggle_super_jump_no_permissions = "Poging om super jump in te schakelen zonder de juiste rechten.",
 
 		success_trigger_headache = "Hoofdpijn is succesvol geactiveerd voor ${playerName}.",
 		failed_trigger_headache = "Kon hoofdpijn niet activeren.",
@@ -311,7 +310,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		reset_spawn_success = "Spawnpoint succesvol gereset.",
 		reset_spawn_failed = "Kan spawnpoint niet resetten.",
 
-		protective_mode_not_staff = "Er is geprobeerd om de beschermingsmodus van de server in te schakelen zonder de juiste machtigingen.",
 		protective_mode_toggled_on = "De beschermingsmodus van de server is nu ingeschakeld. De vereiste hoeveelheid speeltijd om verbinding te maken met de server is ingesteld op `${playtime}`.",
 		protective_mode_toggled_off = "De beschermingsmodus van de server is nu uitgeschakeld.",
 		protective_mode_already_on = "De beschermingsmodus van de server is al ingeschakeld met een vereiste speeltijd van `${playtime}`.",
@@ -320,13 +318,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		logs_protective_mode_on = "${consoleName} heeft de server beschermings modus aangezet met de vereiste speeltijd van: `${playtime}`.",
 		logs_protective_mode_off = "${consoleName} heeft de server beschermings modus uitgezet.",
 
-		spawn_item_not_staff = "Een poging tot het spawnen van een item zonder juiste permissies",
 		no_item_name = "Er is geen itemnaam opgegeven.",
 		invalid_item_name = "${itemName} is geen geldige itemnaam.",
 		item_spawned = "${consoleName} heeft ${amount}x `${itemName}` gespawned.",
 		item_spawned_for_everyone = "Voor iedereen is `${itemName}` ${amount}x gespawned.",
 
-		set_warning_message_not_staff = "Poging om het waarschuwingsbericht van de server in te stellen zonder de juiste toestemming.",
 		warning_message_set_to = "Het waarschuwingsbericht is ingesteld op `${warningMessage}`.",
 		warning_message_removed = "Het waarschuwingsbericht is verwijderd.",
 		warning_message_error = "Er is een fout opgetreden bij het instellen van het waarschuwingsbericht.",
@@ -368,6 +364,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		evidence_view_details_on = "${consoleName} heeft de geavanceerde bewijsweergave ingeschakeld.",
 		evidence_view_details_off = "${consoleName} heeft de geavanceerde bewijsweergave uitgeschakeld.",
 
+		tracker_turned_on = "Je tracker is ingeschakeld.",
+		tracker_turned_off = "Je tracker is uitgeschakeld.",
+
 		report_muted_no_reason = "Je bent gedempt van het report commando zonder opgave van reden.",
 		report_muted = "Je bent gedempt van het report commando met de reden `${reason}`.",
 
@@ -388,9 +387,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		teleported_to_waypoint_logs_title = "Teleporteer naar Waypoint",
 		teleported_to_waypoint_logs_details = "${consoleName} is geteleporteerd naar een waypoint bij ${locationLabel}.",
 
-		teleport_to_coordinates_not_staff = "De speler heeft geprobeerd om te teleporteren naar bepaalde coördinaten, maar ze waren geen staff.",
-		teleport_to_waypoint_not_staff = "De speler probeerde te teleporteren naar een waypoint, maar is geen stafflid.",
-
 		failed_isolate = "Kon de speler niet isoleren.",
 		invalid_server_id = "Ongeldige server-id.",
 		isolate_success_on = "${consoleName} is succesvol geïsoleerd.",
@@ -402,8 +398,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		population_density_set_off = "Het overschrijven van de bevolkingsdichtheid vermenigvuldiger is uitgeschakeld.",
 		population_density_is_not_on = "Het overschrijven van de bevolkingsdichtheid vermenigvuldiger is niet ingeschakeld.",
 		population_density_already_set_to = "Het overschrijven van de bevolkingsdichtheid vermenigvuldiger is al ingesteld op ${multiplierLabel}%.",
-
-		population_density_not_super_admin = "De speler heeft geprobeerd om de bevolkingsdichtheid in te stellen zonder de juiste rechten.",
 
 		enabled_features_list = "Ingeschakelde functies:",
 		aimbot_feature = "Aimbot",
@@ -448,8 +442,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		vehicle_smoke_invalid_class = "Voertuig rook kan niet worden ingeschakeld voor deze voertuigklasse.",
 
-		repair_vehicle_not_super_admin = "Speler heeft geprobeerd een voertuig te repareren zonder de juiste rechten.",
-
 		repaired_vehicle_logs_title = "Voertuig gerepareerd",
 		repaired_vehicle_logs_details = "${consoleName} heeft het voertuig waarin zij zich bevonden gerepareerd.",
 
@@ -464,9 +456,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		set_vehicle_livery_logs_title = "Voertuigbelettering instellen",
 		set_vehicle_livery_logs_details = "${consoleName} heeft de belettering van het voertuig met kenteken `${vehiclePlate}` ingesteld op `${liveryIndex}`.",
-
-		set_livery_missing_permissions = "Speler heeft geprobeerd de belettering van een voertuig in te stellen zonder de juiste machtigingen.",
-		set_modifications_missing_permissions = "Speler heeft geprobeerd een modificatie van een voertuig in te stellen zonder de juiste machtigingen.",
 
 		set_vehicle_modification = "Voertuigmodificatie ingesteld voor voertuig voor mod type `${modType}` naar index `${modIndex}`. (Op maat gemaakte banden: ${customTires})",
 		mod_index_invalid_for_type = "Mod index `${modIndex}` is ongeldig voor mod type `${modType}`.",
@@ -486,15 +475,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		invalid_dirt_level = "Ongeldig vuilniveau.",
 		set_dirt_level = "Het vuilniveau van het voertuig is ingesteld op `${dirtLevel}`.",
 
-		set_dirt_level_not_super_admin = "De speler probeerde het vuilniveau van een voertuig in te stellen zonder de juiste rechten.",
-
-		set_fake_plate_not_super_admin = "De speler probeerde het valse kenteken van een voertuig in te stellen zonder de juiste rechten.",
-
 		already_fake_disconnecting = "Je bent al bezig met een valse disconnectie. Wacht even.",
 		started_fake_disconnect = "Valse disconnectie gestart. Herhaal het commando om te stoppen.",
 		stopped_fake_disconnect = "Valse disconnectie gestopt.",
-
-		fake_disconnect_not_super_admin = "Speler probeerde een valse disconnectie uit te voeren zonder de juiste toestemming.",
 
 		disabled_idle_cam = "Idle cam uitgeschakeld.",
 		enabled_idle_cam = "Idle cam opnieuw ingeschakeld.",
@@ -502,12 +485,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		created_vehicle_smoke_for_player_logs_title = "Voertuigrook Gecreërd",
 		created_vehicle_smoke_for_player_logs_details = "${consoleName} creëerde voertuigrook.",
 
-		player_info_not_staff = "Poging tot het verkrijgen van de karakter informatie van een speler zonder de juiste toestemming.",
 		player_info_title = "${consoleName}",
 		player_info = "${fullName} #${characterId}\nHeeft ${playtime} gespeeld.\n${jobName}, ${departmentName}, ${positionName}\n\n${backstory}",
 
 		inventory_name_missing = "Ontbrekende inventarisnaam parameter.",
-		force_inventory_missing_perms = "Poging om een inventaris te openen zonder de juiste toestemming.",
 
 		auto_driving_engaged = "Auto rijden is ingeschakeld (Stijl: ${style}).",
 		auto_driving_updated = "De automatische rij-snelheid/locatie is bijgewerkt.",
@@ -538,9 +519,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		tint_set = "Wapenkleur succesvol ingesteld op `${tint}` (${tintIndex}).",
 		no_weapon_tint = "Dit wapen heeft geen kleuropties.",
 
-		weapon_attachment_missing_perms = "Er is geprobeerd een wapenbijlage te activeren zonder de juiste rechten.",
-		weapon_tint_missing_perms = "Er is geprobeerd om een wapenkleur in te stellen zonder de juiste rechten.",
-
 		no_attachments = "Geen Bijlagen",
 		available_attachments = "Beschikbare Bijlagen",
 		current_attachments = "Huidige Bijlagen",
@@ -557,14 +535,14 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		cleaned_ped_self = "Je ped is met succes schoongemaakt.",
 		clean_ped_failed = "Kon ped niet schoonmaken.",
 		cleaned_ped_for_all = "Iedereens ped is schoongemaakt.",
-		clean_ped_no_permission = "Poging om de ped van een speler schoon te maken zonder vereiste toestemming.",
+		clean_ped_no_permission = "Er is geprobeerd om het personage van een speler schoon te maken zonder de juiste rechten.",
 
 		item_durability_set_success = "Succesvol de duurzaamheid van items in sleuf ${slotId} ingesteld op ${amount}%",
 		item_durability_set_failed = "Kon duurzaamheid niet instellen.",
 		item_durability_invalid_amount = "Ongeldig duurzaamheidsbedrag (0 <> 100).",
-		item_durability_set_no_permission = "Poging om de duurzaamheid van een item in te stellen zonder vereiste toestemming.",
+		item_durability_set_no_permission = "Poging om de duurzaamheid van een item in te stellen zonder de juiste machtigingen.",
 
-		item_metadata_set_no_permission = "Poging gedaan om de metadata van een item in te stellen zonder de vereiste toestemming.",
+		item_metadata_set_no_permission = "Poging om de metadata van een item in te stellen zonder de juiste machtigingen.",
 		item_metadata_invalid_metadata = "Ongeldige item metadata.",
 		item_metadata_set_success = "Metadata succesvol ingesteld voor items in slot ${slotId}.",
 		item_metadata_set_failed = "Metadata instellen gefaald.",
@@ -589,8 +567,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		scoop_invalid = "Je hebt geen spelers opgepakt.",
 		unscooped_players = "${amount} van ${total} speler(s) vrijgelaten.",
 		unscoop_failed = "Het vrijlaten van spelers is mislukt.",
-
-		unscoop_missing_permissions = "Speler heeft geprobeerd om spelers vrij te laten zonder de juiste rechten.",
 
 		toggle_collisions_missing_permissions = "Speler heeft geprobeerd hun botsingen te wijzigen zonder de juiste rechten.",
 		wipe_first_owned_missing_permissions = "Speler probeerde eerste eigendom entiteiten te wissen zonder de juiste toestemming.",
@@ -678,10 +654,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		model_already_added_to_list = "Model `${modelName}` (${modelHash}) staat al op de detectielijst.",
 		removed_model_to_list = "Model `${modelName}` (${modelHash}) is verwijderd van de detectielijst.",
 		model_not_in_list = "Model `${modelName}` (${modelHash}) staat niet op de detectielijst.",
-		set_model_detected_not_staff = "Een speler heeft geprobeerd om een model toe te voegen aan de detectielijst, maar had niet de juiste rechten om dit te doen.",
-		set_model_undetected_not_staff = "Een speler heeft geprobeerd om een model van de detectielijst te verwijderen, maar had niet de juiste rechten om dit te doen.",
-		add_detection_area_not_staff = "Een speler heeft geprobeerd om een detectiegebied toe te voegen, maar had niet de juiste rechten om dit te doen.",
-		remove_detection_area_not_staff = "Een speler heeft geprobeerd om een detectiegebied te verwijderen, maar had niet de juiste rechten om dit te doen.",
 		detection_area_close = "[${InteractionKey}] Verwijder Detectiegebied (${areaId})",
 		detection_area = "Detectiegebied (${areaId})",
 
@@ -721,6 +693,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		clear_tasks_ban = "Dit is geen Jedi mind trick-trainingscentrum. Jouw pogingen om de vrije wil van anderen te beïnvloeden zijn opgemerkt... en afgewezen.",
 		projectile_event_ban = "Dit is geen Zweinstein en jij bent geen Harry Potter. Het willekeurig afschieten van spreuken - of projectielen - is hier niet toegestaan.",
 		illegal_native_ban = "Je kunt geen spreuk gebruiken die je nog niet hebt geleerd...",
+		underground_ban = "Het lijkt erop dat je in een konijnenhol bent gevallen.",
+		infinite_ammo_ban = "Ondanks wat men denkt, zijn de wetten van behoud hier wel van toepassing. De magische munitiezak is in beslag genomen.",
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Slechte Creatie",
@@ -757,6 +731,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		type_thermal_night_vision = "Thermisch/Nachtzicht",
 		type_vehicle_modification = "Voertuigaanpassing",
 		type_illegal_native = "Illegale Native-aanroep",
+		type_underground = "Ondergronds",
+		type_infinite_ammo = "Oneindige munitie",
 
 		event_prefix = "Anti-Cheat: ${type}",
 
@@ -825,6 +801,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		job_low = "laag betaald werk",
 		job_medium = "middelmatig betaald werk",
 		job_high = "hoog betaald werk",
+
+		banned_no_permissions = "Poging om `${reason}` uit te voeren zonder de juiste machtigingen.",
 
 		banned_globally = "Je bent wereldwijd verbannen van alle OP-FW servers.\n\nBan Hash: ${banHash}\nBan Reden: ${banReason}\n\nAls je van mening bent dat dit een onterechte ban is, sluit je dan aan bij de OP-FW Discord-gilde voor informatie over hoe je in beroep kunt gaan bij ${frameworkDiscord}",
 		banned_locally = "Je bent verbannen van ${communityName}.\n\nBan Hash: ${banHash}\nVerbannen door: ${creatorName}\nBan Reden: ${banReason}\nTijdstip: ${timestamp}\n\n${indefiniteOrExpires}\n\nGa naar onze discord server voor informatie over hoe je in beroep kunt gaan via ${communityDiscord}.",
@@ -963,7 +941,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		wipe_command = "veeg",
 		wipe_command_help = "Ongepaste objecten van de map verwijderen.",
 		wipe_command_parameter_distance = "afstand",
-		wipe_command_parameter_distance_help = "Als je alleen objecten binnen een bepaald bereik wilt verwijderen, voeg dan hier een afstand toe. Laat het op `false` of `0` staan voor de hele map.",
+		wipe_command_parameter_distance_help = "Als je alleen entiteiten binnen een bepaalde afstand wilt verwijderen, voeg dan hier een afstand in. Zet `-1` voor de hele map.",
 		wipe_command_parameter_ignore_local_entities = "negeer lokale objecten",
 		wipe_command_parameter_ignore_local_entities_help = "Lokale objecten negeren? Als je aan het opruimen bent van een cheater, wordt aanbevolen dit op `true` of `1` te zetten.",
 		wipe_command_parameter_model_name = "modelnaam",
@@ -1047,6 +1025,14 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		replace_vehicle_command_parameter_model_name = "modelnaam",
 		replace_vehicle_command_parameter_model_name_help = "De modelnaam van het voertuig dat je wilt spawnen.",
 		replace_vehicle_command_substitutes = "rv",
+
+		add_vehicle_command = "voertuig_toevoegen",
+		add_vehicle_command_help = "Voeg een voertuig toe aan de garage van iemand.",
+		add_vehicle_command_parameter_model = "model",
+		add_vehicle_command_parameter_model_help = "De modelnaam of modelhash van het voertuig dat je wilt toevoegen.",
+		add_vehicle_command_parameter_server_id = "server-id",
+		add_vehicle_command_parameter_server_id_help = "De server-ID van de speler aan wie je een voertuig wilt geven. Laat dit leeg om automatisch jezelf te selecteren.",
+		add_vehicle_command_substitutes = "",
 
 		aimbot_command = "aimbot",
 		aimbot_command_help = "'aimbot' aan/uit zetten.",
@@ -1998,8 +1984,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		fake_lag_command = "fake_lag",
 		fake_lag_command_help = "Creëert nep lag.",
-		fake_lag_command_parameter_counter = "teller",
-		fake_lag_command_parameter_counter_help = "Het getal dat wordt gebruikt om de lag te creëren. Hoe hoger dit getal is, hoe langzamer het wordt. Om uit te schakelen, laat dit leeg of typ `0`.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "Het doel fps (>= 1).",
 		fake_lag_command_substitutes = "lag",
 
 		view_weapon_command = "bekijk_wapen",
@@ -2481,7 +2467,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		wipe_ground_inventories_command = "veeg_inventarissen_op_straat",
 		wipe_ground_inventories_command_help = "Veeg inventarissen op straat schoon.",
 		wipe_ground_inventories_command_parameter_radius = "straal",
-		wipe_ground_inventories_command_parameter_radius_help = "De schoonmaakstraal. Als deze leeg is, wordt automatisch `100` geselecteerd. Geldige waarden zijn hoger dan `0`, en ook `0` en `-1` om alle inventarissen te selecteren.",
+		wipe_ground_inventories_command_parameter_radius_help = "De wisstraal. Als je dit leeg laat, wordt `5` automatisch geselecteerd. Geldige waarden zijn boven `0`, evenals `0` en `-1` die alle inventarissen selecteren.",
 		wipe_ground_inventories_command_substitutes = "veeginvs, veeg_inventarissen_op_straat, veeg_op_straat",
 
 		refresh_inventory_command = "ververs_inventaris",
@@ -3266,6 +3252,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		vdm_clear_command_help = "Maakt al uw vdm-doelwitten leeg.",
 		vdm_clear_command_substitutes = "",
 
+		steal_vehicle_command = "steal_vehicle",
+		steal_vehicle_command_help = "Laat de dichtstbijzijnde npc de doelwitvoertuig stelen.",
+		steal_vehicle_command_parameter_network_id = "netwerk-id",
+		steal_vehicle_command_parameter_network_id_help = "De netwerk-id van het voertuig.",
+		steal_vehicle_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "voice_debug",
 		voice_debug_command_help = "Schakel de stemopsporingsmodus in of uit.",
@@ -3661,14 +3653,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		speed_limiter_command_help = "Overschrijf het normale gedrag van de snelheidsbegrenzer om de snelheidslimiet vooraf in te stellen.",
 		speed_limiter_command_substitutes = "sl, cc, cruise_control",
 
-		add_vehicle_command = "voertuig_toevoegen",
-		add_vehicle_command_help = "Voeg een voertuig toe aan de garage van iemand.",
-		add_vehicle_command_parameter_model = "model",
-		add_vehicle_command_parameter_model_help = "De modelnaam of modelhash van het voertuig dat je wilt toevoegen.",
-		add_vehicle_command_parameter_server_id = "server-id",
-		add_vehicle_command_parameter_server_id_help = "De server-ID van de speler aan wie je een voertuig wilt geven. Laat dit leeg om automatisch jezelf te selecteren.",
-		add_vehicle_command_substitutes = "",
-
 		toggle_vehicle_weapons_command = "toggle_vehicle_weapons",
 		toggle_vehicle_weapons_command_help = "Schakel in of uit of de wapens op een voertuig gebruikt kunnen worden.",
 		toggle_vehicle_weapons_command_parameter_server_id = "server id",
@@ -3759,7 +3743,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 	emojis = {
 		emoji_list = "${emojis}",
-		refresh_emojis_no_permissions = "Speler probeerde de emojis te vernieuwen zonder de juiste rechten.",
 		api_reported_no_updates = "De Discord API heeft geen updates gemeld in de emoji-lijst.",
 		emojis_added = "${added} emoji('s) toegevoegd.",
 		emojis_removed = "${removed} emoji('s) verwijderd.",
@@ -3779,7 +3762,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	ping = {
-		get_pings_missing_permissions = "Speler probeerde pings te krijgen maar had niet de benodigde toestemming om dit te doen.",
 		getting_pings = "Pings ophalen van alle spelers. Dit kan enkele seconden duren.",
 		host_data = "${position}. ${location} - Gemiddelde Ping: ${averagePing} (gebaseerd op ${totalPings} spelers), 10% Low: ${averagePingLow}, 10% High: ${averagePingHigh}",
 		list_hosts = "${listHosts}"
@@ -3891,7 +3873,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		package_same_remaining_time = "Uw pakket is '${packageName}'. Het verloopt over ${remainingTime}.",
 		no_package = "U heeft geen pakket.",
 		fetching_package_error = "Er is een fout opgetreden bij het ophalen van uw pakketgegevens.",
-		check_playtime_not_staff = "Speler heeft geprobeerd de speeltijd van iemand anders te bekijken, maar had daar geen toestemming voor.",
 		reason_unknown = "Reden onbekend.",
 
 		unloaded_character = "Personage niet geladen.",
@@ -3900,8 +3881,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		user_not_found = "De verzonden gebruiker is niet gevonden op de server.",
 		invalid_character_id = "Ongeldige personage ID-parameter verzonden.",
 		invalid_license_identifier = "Ongeldige licentie identificatieparameter verzonden.",
-
-		unload_character_not_staff = "De speler probeerde het personage van een speler te ontladen, maar was geen personeel.",
 
 		unloaded_character_for_player_logs_title = "Personage van speler ontladen",
 		unloaded_character_for_player_logs_details = "${consoleName} heeft het personage ${characterFullName} (${characterId}) van ${targetConsoleName} ontladen met de reden `${message}`.",
@@ -3942,9 +3921,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		invalid_destination_server_id = "Ongeldige bestemmings-server ID.",
 		invalid_source_server_id = "Ongeldige bron-server ID.",
 		failed_teleport_player_to_player = "Kan de speler niet teleporteren naar de andere speler.",
-		teleported_player_to_player = "Speler is succesvol geteleporteerd naar de andere speler.",
-
-		teleport_player_missing_permissions = "De speler had niet de juiste rechten om een andere speler te teleporteren."
+		teleported_player_to_player = "Speler is succesvol geteleporteerd naar de andere speler."
 	},
 
 	afk = {
@@ -3954,8 +3931,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Speler probeerde een luchtdropping te creëren, maar had niet de vereiste toestemming om dit te doen.",
-		create_airdrop_custom_missing_permissions = "Speler probeerde een aangepaste luchtdropping te creëren, maar had niet de vereiste toestemming om dit te doen.",
 		created_airdrop = "Een luchtaanval van het type `${airdropType}` is gemaakt met in totaal ${itemAmount} item(s).",
 		no_valid_items_provided = "Geen geldige items opgegeven.",
 		created_airdrop_with_items = "Een luchtdropping is gemaakt met de volgende items erin:\n${itemsListed}"
@@ -3982,15 +3957,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Speler probeerde een luchtaanval te creëren, maar had niet de vereiste toestemming om dit te doen.",
-
 		airstrike_success = "Airstrike succesvol gecreëerd.",
 		airstrike_failed = "Kon geen airstrike creëren."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "De speler heeft geprobeerd om luchtsteun in te roepen, maar had daarvoor niet de vereiste rechten.",
-
 		distance = "Afstand: ${distance}${unit}",
 		time_to_impact = "ETI: ${timeToImpact}",
 
@@ -4020,9 +3991,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		show_alert_success = "Melding succesvol getoond aan speler.",
 		show_alert_everyone_success = "Melding succesvol getoond aan iedereen.",
-		show_alert_failed = "Kon melding niet tonen aan speler.",
-
-		show_alert_missing_permissions = "Een speler probeerde een melding te tonen aan een andere speler, maar had niet de vereiste machtigingen om dit te doen."
+		show_alert_failed = "Kon melding niet tonen aan speler."
 	},
 
 	arcade = {
@@ -4303,10 +4272,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 	audio = {
 		audio_id = "Audio ${audioId}",
-		illegal_sound_effect = "Er is geprobeerd om andere clients te vertellen om een extern audio af te spelen.",
+		illegal_sound_effect = "Poging om andere clients opdracht te geven een externe audio af te spelen zonder de juiste toestemming.",
 		url_invalid = "De verstrekte URL is niet geldig. Het moet worden geüpload op een beveiligde verbinding. (https://)",
 		url_missing = "Voeg de URL toe aan het audiofragment dat je wilt afspelen.",
-		play_audio_no_permissions = "Speler heeft geprobeerd om een audiofragment af te spelen, maar had niet de vereiste bevoegdheden om dit te doen.",
 		played_audio_for_self = "Je hebt een audiofragment afgespeeld voor jezelf.",
 		played_audio_for_player = "Je hebt een audiofragment afgespeeld voor ${consoleName}.",
 		played_audio_for_everyone = "Audio afgespeeld voor iedereen.",
@@ -4542,7 +4510,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		illegal_boombox_item_id = "Er wordt geprobeerd om een boombox-item te gebruiken met een ongeldige item-ID.",
 		logs_attempted_to_add_song_title = "Poging om nummer toe te voegen",
 		logs_attempted_to_add_song_details = "${consoleName} heeft geprobeerd een liedje met videolink `${url}` toe te voegen aan boombox met ID `${boomboxId}`.",
-		wipe_boomboxes_not_staff = "Speler heeft geprobeerd boomboxes te wissen, maar had niet de juiste rechten om dit te doen.",
 		logs_wiped_all_boomboxes_title = "Alle boomboxes gewist",
 		logs_wiped_all_boomboxes_details = "${consoleName} heeft alle boomboxes gewist.",
 		logs_wiped_nearby_boomboxes_title = "In de buurt gelegen boomboxes gewist",
@@ -4634,8 +4601,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		spawned_contract = "Succesvol een contract gespawned.",
 		spawned_contract_for = "Succesvol een contract gespawned voor ${displayName}.",
 
-		spawn_contract_no_permissions = "De speler heeft geprobeerd een opvoercontract te spawnen zonder de juiste toestemming.",
-
 		already_max_vin_scratched_vehicles = "Je hebt al het maximale aantal VIN gekraste voertuigen in je garage.",
 		contract_has_expired = "Dit contract is verlopen.",
 		you_already_have_a_contract_started = "Je hebt al een contract gestart."
@@ -4685,8 +4650,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	cargo = {
-		start_cargo_no_permissions = "Een speler heeft geprobeerd de Cargo-overval te starten, maar had geen toestemming om dit te doen.",
-		end_cargo_no_permissions = "Een speler heeft geprobeerd de Cargo-overval te beëindigen, maar had geen toestemming om dit te doen.",
 		cargo_already_active = "De Cargo-overval is al actief.",
 		started_cargo = "De Cargo-overval is gestart.",
 		cargo_not_active = "De Cargo-overval is niet actief.",
@@ -4699,7 +4662,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	casino = {
-		set_casino_screen_id_not_staff = "Een speler probeerde het scherm-id van het casino in te stellen, maar had niet de juiste rechten om dit te doen.",
 		successfully_set_screen_label = "De schermen zijn succesvol ingesteld op het scherm met label `${screenLabel}`.",
 		successfully_queued_screen_label = "Het scherm met de aanduiding `${screenLabel}` is succesvol in de wachtrij geplaatst.",
 		failed_to_set_screen_label = "Kon het scherm met de aanduiding `${screenLabel}` niet instellen.",
@@ -4767,8 +4729,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		blacklisted_video = "Video op blacklist met code `${videoKey}`.",
 		failed_to_blacklist_video = "Kon video met code ${videoKey} niet op de blacklist zetten.",
 		video_is_already_blacklisted = "De video met sleutel ${videoKey} staat al op de zwarte lijst.",
-
-		blacklist_video_missing_permissions = "De speler probeerde een video op de zwarte lijst te zetten, maar had daar niet de vereiste machtigingen voor.",
 
 		watching_movie = "Kijkt naar ${title}",
 
@@ -4942,8 +4902,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		barber_menu_success = "Kap- en schoonheidssalon menu kan niet worden geopend.",
 		failed_toggle_barber_menu = "Kap- en schoonheidssalon menu geopend voor ${consoleName}.",
 		invalid_server_id = "Ongeldige server ID.",
-
-		clothing_menu_missing_permissions = "Speler heeft geprobeerd het kleding menu te openen voor een andere speler, maar had niet de benodigde rechten.",
 
 		hats_and_helmets = "Hoeden/Helmen",
 		glasses = "Brillen",
@@ -5696,7 +5654,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		special_vehicle_won = "Je hebt een speciaal voertuig gewonnen! Je kunt dit vinden in je garage.",
 
-		reset_daily_activities_no_permissions = "Speler heeft geprobeerd hun dagelijkse activiteiten te resetten zonder de juiste rechten.",
 		reset_daily_activities = "Dagelijkse activiteiten resetten.",
 
 		task_progress = "Taak voortgang: ${task} (${remain} blijven)",
@@ -5770,7 +5727,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		network_id_side = "Netwerk-ID: ${networkId}",
 		no_target = "Geen Doelwit",
 		invalid_radius_parameter = "Ongeldige `radius` parameter.",
-		inject_code_not_developer = "De speler probeerde code te injecteren, maar is geen developer.",
 		inject_code_invalid_player = "Er zijn geen spelers met server id `${serverId}`.",
 		inject_code_success_for_everyone = "Code succesvol geïnjecteerd voor iedereen.",
 		inject_code_success_for_player = "Code succesvol geïnjecteerd voor ${consoleName}.",
@@ -5817,21 +5773,18 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		invalid_network_id = "Ongeldige netwerk-ID.",
 		delete_entity_success = "Entiteit met netwerk-ID ${networkId} succesvol verwijderd.",
 		delete_entity_failed = "Verwijderen van entiteit mislukt.",
-		delete_entity_no_permissions = "De speler heeft geprobeerd een entiteit te verwijderen zonder de juiste toestemming.",
+		delete_entity_no_permissions = "Poging om een entiteit te verwijderen zonder de juiste toestemming.",
 
 		failed_entity_info = "Kan geen informatie over het object krijgen.",
 		printed_entity_info = "Objectserverinformatie weergegeven in F8.",
 
 		move_entity_success = "Entiteit met netwerk-ID ${networkId} is succesvol verplaatst.",
 		move_entity_failed = "Het is niet gelukt om de entiteit te verplaatsen.",
-		move_entity_no_permissions = "De speler heeft geprobeerd een entiteit te verplaatsen zonder de juiste toestemming.",
+		move_entity_no_permissions = "Poging om een entiteit te verplaatsen zonder de juiste toestemming.",
 
-		fake_lag_updated = "De nep-lag-teller is bijgewerkt naar `${counter}`.",
-		fake_lag_already_set_to = "De nep-lag-teller is al ingesteld op `${counter}`.",
-		fake_lag_enabled = "De nep-lag is ingeschakeld met de teller `${counter}`.",
-		fake_lag_invalid_counter_value = "De waarde `${counter}` is geen geldige teller voor de nep-vertraging.",
+		fake_lag_invalid_fps = "Ongeldige fps.",
+		fake_lag_clamp = "Fps wordt begrensd op minder dan ${fps}.",
 		fake_lag_disabled = "De nep-vertraging is uitgeschakeld.",
-		fake_lag_not_enabled = "De nep-vertraging is niet ingeschakeld.",
 
 		weapon_name_missing = "Missende wapennaam parameter.",
 		weapon_name_invalid = "`${weaponName}` is geen geldige wapennaam.",
@@ -5860,7 +5813,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		disabled_network_debug = "Entiteit netwerk debuggen uitgeschakeld.",
 		failed_network_debug = "Kon entiteit netwerk debuggen niet inschakelen.",
 
-		network_owner_subscription_no_permissions = "Poging om te abonneren op entiteit netwerkeigenaren zonder de juiste toestemming.",
+		network_owner_subscription_no_permissions = "Poging tot abonneren op entiteiteneigenaars in het netwerk zonder de juiste rechten.",
 
 		missing_ipl = "Ontbrekende ipl-parameter.",
 		enabled_ipl = "Ipl '${ipl}' succesvol ingeschakeld.",
@@ -6156,8 +6109,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	flag_swap = {
-		toggle_flag_swap_no_permissions = "Er is geprobeerd de vlagwisselingen te wijzigen zonder de juiste toestemming.",
-
 		toggled_flag_swap_on = "Vlagwisselingen zijn gewijzigd.",
 		toggled_flag_swap_off = "Vlag-'swap' uitgezet.",
 
@@ -6181,16 +6132,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		failed_create = "Kon geen krachtveld creëren.",
 		forcefield_marker = "ID: ${id}",
 		invalid_forcefield_id = "Ongeldige forcefield-ID.",
-		failed_destroy = "Kan forcefield niet vernietigen.",
-
-		create_forcefield_no_permissions = "Speler heeft geprobeerd een forcefield te maken maar heeft niet de vereiste machtigingen om dit te doen.",
-		destroy_forcefield_no_permissions = "Speler heeft geprobeerd een forcefield te vernietigen maar heeft niet de vereiste machtigingen om dit te doen."
+		failed_destroy = "Kan forcefield niet vernietigen."
 	},
 
 	fortnite = {
-		add_building_no_permissions = "Speler heeft geprobeerd een Fortnite-gebouw toe te voegen maar heeft niet de vereiste machtigingen om dit te doen.",
-		wipe_buildings_no_permissions = "Speler heeft geprobeerd Fortnite-gebouwen te wissen, maar had geen toestemming om dit te doen.",
-
 		no_buildings_in_radius = "Er zijn geen gebouwen binnen een straal van ${radius}.",
 		no_buildings = "Er zijn geen gebouwen.",
 		wiped_buildings_in_radius = "${removedBuildings} gebouwen gewist binnen een straal van ${radius}.",
@@ -6402,7 +6347,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		press_to_exit_locker = "Druk op ~INPUT_CONTEXT~ om de locker te verlaten.",
 		failed_to_start_escape_room = "Kon escape room niet starten.",
 		started_escape_room = "Started escape room met ${playerAmount} spelers.",
-		start_escape_room_missing_permissions = "Speler probeerde escape room te starten, maar had niet de vereiste rechten om dit te doen.",
 		escape_instructions = "Zodra voltooid, zullen de deuren ontgrendelen en kunt u het gebouw verlaten.",
 		answer_the_phone = "Neem de telefoon op.",
 
@@ -6416,8 +6360,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		successfully_revived_everyone = "Iedereen is succesvol gereanimeerd.",
 		successfully_revived_everyone_removed_injuries = "Iedereen is succesvol gereanimeerd en hun verwondingen zijn verwijderd.",
 		failed_to_revive = "Kon het `/revive` commando niet correct uitvoeren.",
-		revive_player_not_staff = "Speler probeerde een andere speler te reanimeren, maar had de vereiste toestemming niet.",
-		revive_self_not_staff = "Speler probeerde zichzelf te reanimeren, maar had de vereiste toestemming niet.",
 		revived_self_removed_injuries_title = "Zelf gereanimeerd en verwondingen verwijderd",
 		revived_self_removed_injuries_details = "${consoleName} heeft zichzelf gereanimeerd en zijn verwondingen verwijderd.",
 		revived_self_title = "Zelf gereanimeerd",
@@ -6430,8 +6372,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		revived_player_removed_injuries_details = "${consoleName} heeft ${targetConsoleName} gereanimeerd en hun letsel verwijderd.",
 		revived_player_title = "Speler gereanimeerd",
 		revived_player_details = "${consoleName} heeft ${targetConsoleName} gereanimeerd.",
-		get_recent_deaths_not_staff = "Een speler probeerde recente overlijdens op te vragen, maar had niet de juiste bevoegdheden.",
-		get_player_last_death_not_staff = "Een speler probeerde het laatste overlijden van een andere speler op te vragen, maar had niet de juiste bevoegdheden.",
 		recent_deaths = "Recente Overlijdens",
 		no_recent_deaths = "Er zijn geen recente overlijdens.",
 		recent_deaths_list_entry = "${recentDeathId}. ${consoleName} overleed ${timer} seconden geleden.",
@@ -6459,7 +6399,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		no_players_in_range = "Er zijn geen bewusteloze spelers binnen een straal van ${distance}m.",
 		successfully_revived_range = "Succesvol ${amount} speler(s) hersteld binnen een bereik van ${distance}m.",
 		failed_revive_range = "Kon spelers niet reanimeren.",
-		range_revive_not_staff = "Speler probeerde spelers binnen een bepaald bereik te reanimeren, maar had niet de juiste toestemming om dit te doen.",
 
 		cpr_ped_logs_title = "Burger gereanimeerd",
 		cpr_ped_logs_details = "${consoleName} heeft een burger gereanimeerd en ontving $${money}.",
@@ -6577,6 +6516,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		pilot_license_details = "Vliegbrevet | ${firstName} ${lastName} | Burger ID: ${characterId}",
 		weapon_license = "Wapenvergunning",
 		weapon_license_details = "Wapenvergunning | ${firstName} ${lastName} | Burger ID: ${characterId}",
+		mining_license = "Mijnvergunning",
+		mining_license_details = "Mijnvergunning | ${voornaam} ${achternaam} | Burger-ID: ${characterId}",
 		just_showed_license = "Je hebt zojuist een licentie laten zien. Wacht even.",
 
 		just_showed_badge = "Je hebt zojuist een badge laten zien. Wacht even.",
@@ -6710,13 +6651,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		failed_to_get_instance_players = "Het is niet gelukt om de spelers van de instantie te krijgen.",
 		no_players = "Geen spelers.",
 
-		instance_hud = "Instantie ID: ${instanceId}",
-
-		create_instance_not_developer = "De speler heeft geprobeerd om een instantie te maken zonder een ontwikkelaar te zijn.",
-		destroy_instance_not_developer = "De speler probeerde een instantie te vernietigen, maar was geen ontwikkelaar.",
-		add_player_to_instance_not_developer = "De speler probeerde een speler toe te voegen aan een instantie, maar was geen ontwikkelaar.",
-		remove_player_from_instance_not_developer = "De speler probeerde een speler uit een instantie te verwijderen, maar was geen ontwikkelaar.",
-		get_players_from_instance_not_developer = "De speler probeerde de spelers op te halen uit een instantie, maar was geen ontwikkelaar."
+		instance_hud = "Instantie ID: ${instanceId}"
 	},
 
 	interiors = {
@@ -6892,8 +6827,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		no_ground_inventories = "Er was geen grond inventaris om te wissen.",
 		no_ground_inventories_within_radius = "Er was geen grond inventaris om te wissen binnen een straal van `${radius}`.",
 
-		wipe_inventories_not_staff = "Speler probeerde inventarissen te wissen, maar had niet de juiste toestemmingen om dit te doen.",
-
 		logs_wiped_all_ground_inventories_title = "Alle grond inventarissen gewist",
 		logs_wiped_all_ground_inventories_details = "${consoleName} heeft alle grond inventarissen gewist.",
 
@@ -6955,6 +6888,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		pilot_license_description = "Een pilootvergunning voor het vliegen van vliegtuigen en dergelijke.",
 		weapon_license = "Wapen Vergunning",
 		weapon_license_description = "Een wapenvergunning voor het bezitten en dragen van zwaardere wapens.",
+		mining_license = "Mijnvergunning",
+		mining_license_description = "Een mijnvergunning voor het delven van grondstoffen.",
 
 		sasp_badge = "SASP-insigne",
 		sasp_badge_description = "Een insigne voor agenten van de San Andreas Police Department.",
@@ -7033,6 +6968,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		advanced_lockpick_description = "Verstop je kinderen, verstop je vrouw",
 		cleaning_kit = "Schoonmaakkit",
 		cleaning_kit_description = "Perfect om je voertuig schoon te maken, of om de bloedvlekken in je kofferbak weg te werken.",
+		scratch_remover = "Krassenverwijderaar",
+		scratch_remover_description = "Gebruikt om deuken en krassen van voertuigen te verwijderen.",
 
 		multi_tool = "Multitool",
 		multi_tool_description = "Een gereedschap dat voor allerlei zaken kan worden gebruikt.",
@@ -7657,6 +7594,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		cone_description = "Kan overal in de wereld worden geplaatst.",
 		spike_strips = "Spijkerstrips",
 		spike_strips_description = "Kan overal in de wereld worden geplaatst.",
+		spike_strips_large = "Grote Spike Strips",
+		spike_strips_large_description = "Kan overal in de wereld worden geplaatst.",
 		floodlight = "Schenklicht",
 		floodlight_description = "Kan overal in de wereld worden geplaatst.",
 		left_diversion_sign = "Omleidingsbord - Links",
@@ -7719,6 +7658,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		hiking_backpack = "Wandelen rugzak",
 		hiking_backpack_description = "Bereid je voor op buitenavonturen met deze stijlvolle wandelrugzak. Het voegt een vleugje robuuste charme toe aan je outfit, hoewel het puur cosmetisch is. Omarm de geest van ontdekking en laat je outdoor enthousiast vibes zien waar je ook gaat!",
+		green_hiking_backpack = "Groene Wandelrugzak",
+		green_hiking_backpack_description = "Maak je klaar voor outdoor avonturen met deze stijlvolle wandelrugzak. Het voegt een vleugje robuuste charme toe aan je outfit, hoewel het puur cosmetisch is. Omarm de geest van het verkennen en laat je outdoor enthousiasme zien, waar je ook gaat!",
+		blue_hiking_backpack = "Blauwe Wandelrugzak",
+		blue_hiking_backpack_description = "Maak je klaar voor outdoor avonturen met deze stijlvolle wandelrugzak. Het voegt een vleugje robuuste charme toe aan je outfit, hoewel het puur cosmetisch is. Omarm de geest van het verkennen en laat je outdoor enthousiasme zien, waar je ook gaat!",
 
 		gasoline_bottle = "Benzinefles",
 		gasoline_bottle_description = "Voor een snelle bijvulling van uw auto of... uhmm... uzelf?",
@@ -8350,6 +8293,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	items = {
 		move_to_repair = "Verplaats hierheen om het voertuig te repareren.",
 		repairing_vehicle = "Voertuig aan het repareren",
+		fix_visual_damage = "Herstellen van visuele schade",
 		using_first_aid_kit = "Gebruikt de Eerste Hulp Kit",
 		using_bandages = "Gebruikt Verband",
 		using_ifak = "Gebruikt IFAK",
@@ -8407,7 +8351,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		press_to_deposit = "Druk op ~INPUT_REPLAY_SHOWHOTKEY~ om items naar de Online Jackpot te storten.",
 		can_only_withdraw_at_casino = "Je kunt alleen opnemen in het Casino.",
 
-		take_fee_no_permissions = "Speler probeerde jackpotkosten te nemen zonder de juiste toestemmingen.",
 		took_jackpot_fees = "Jackpotkosten genomen. ${removedTotalItems} items ter waarde van $${removedTotalWorth} zijn verwijderd uit ${inventories} inventoires.",
 
 		jackpot = "Jackpot",
@@ -8513,7 +8456,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		something_went_wrong = "Kon entiteit niet vinden.",
 		locate_success = "Entiteit gevonden die overeenkomt met `${filter}` op (${x}, ${y}, ${z}) (instantie = ${instance}).",
 
-		locate_entity_no_permissions = "De speler probeerde een entiteit te lokaliseren zonder de juiste toestemming.",
+		locate_entity_no_permissions = "Poging om een entiteit te lokaliseren zonder de juiste machtigingen.",
 
 		locate_entity_logs_title = "Entiteit gevonden",
 		locate_entity_logs_details = "${consoleName} probeerde een entiteit van het type `${filterType}` te vinden met waarde `${filterValue}`."
@@ -8596,6 +8539,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		queue = "Rij",
 		queue_position_with_priority = "🐌 Je bent ${queuePosition}/${queueTotal} in de rij met ${queuePriorityName} prioriteit. 🕐${queueTime}",
 		queue_position_without_priority = "🐌 Je bent ${queuePosition}/${queueTotal} in de rij. 🕐${queueTime}",
+		live_on_twitch = "Verveel je je? Bekijk deze streamers!",
+		live = "Live",
 		you_are_through = "Je bent er doorheen!",
 		join_server = "Verbinden met Server",
 		tired_of_queueing = "Genoeg van in de rij staan? Steun ons voor prioriteit in de rij!",
@@ -8614,6 +8559,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		weird_date_of_birth = "Probeer een redelijke geboortedatum te kiezen.",
 		invalid_backstory = "Ontbrekend of ongeldig verhaal (max. 5.000 tekens).",
 		backstory_too_short = "Je achtergrondverhaal is te kort (min ${backstory} tekens).",
+
+		invalid_date = "Ongeldige geboortedatum.",
+		date_not_future = "Je geboortedatum kan niet in de toekomst liggen.",
+		date_too_old = "Je geboortedatum kan niet ouder zijn dan 100 jaar.",
 
 		bad_words = "Er zijn enkele scheldwoorden in uw personage naam of levensverhaal.",
 		disallowed_name = "Er zijn enkele verboden woorden in je karaktersnaam.",
@@ -8659,9 +8608,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		invalid_server_id = "Ongeldige server-ID.",
 		logs_failed = "Kan logs niet laden.",
 
-		close = "Sluiten",
-
-		get_logs_no_permissions = "Speler probeerde logs op te halen zonder de juiste rechten."
+		close = "Sluiten"
 	},
 
 	loot = {
@@ -8706,8 +8653,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	magazines = {
 		issue_id = "Probleem #${issueId}",
 		releases_updated = "Updates uitgevoerd.",
-		no_release_changes = "Er waren geen updates.",
-		refresh_magazines_no_permissions = "De speler heeft geprobeerd om het magazijn te verversen zonder de juiste rechten."
+		no_release_changes = "Er waren geen updates."
 	},
 
 	mdt = {
@@ -8889,15 +8835,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		bad_ped_message = "Er is geprobeerd mogelijk een slechte ped-bericht te maken: \"${pedMessage}\"",
 		bad_twitter_post = "Er is geprobeerd mogelijk een slechte twitter-post te maken: \"${twitterPost}\"",
 		bad_phone_message = "Er is geprobeerd mogelijk een slecht telefoonbericht te maken: \"${message}\"",
-		mute_toggle_not_staff = "De speler heeft geprobeerd een andere speler te dempen, maar had hiervoor geen juiste toestemming.",
-		unmute_toggle_not_staff = "De speler heeft geprobeerd een andere speler te dempen, maar had hiervoor geen juiste toestemming.",
 		user_not_found = "We konden geen gebruiker vinden met server-ID `${serverId}`.",
 		player_already_muted = "${consoleName} is al gemute.",
 		player_has_been_muted_no_reason = "${consoleName} is nu gemute zonder opgegeven reden.",
 		player_has_been_muted = "${consoleName} is nu gemute met reden: `${reason}`.",
 		player_not_muted = "${consoleName} is niet gemute.",
 		player_has_been_unmuted = "${consoleName} is nu geunmute.",
-		clear_chat_not_admin = "Een speler heeft geprobeerd de chat voor alle spelers te wissen, maar had hiervoor niet de juiste machtigingen.",
 		ooc_clear_chat_title = "Chat gewist",
 		ooc_clear_chat_details = "${consoleName} heeft de chat voor iedereen leeg gemaakt.",
 		muted_player = "Speler Gestraft",
@@ -9880,8 +9823,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		failed_load_player = "Kon spelergegevens niet laden. Heb je een geldige server-id ingevoerd?",
 		failed_add_warning = "Het toevoegen van de waarschuwing is mislukt.",
 
-		get_info_no_permissions = "De speler heeft geprobeerd informatie over een andere speler op te vragen zonder de juiste machtigingen.",
-
 		user_indefinitely_banned_warning_no_reason = "Ik heb deze persoon voor onbepaalde tijd verbannen zonder opgave van reden. Deze waarschuwing is automatisch gegenereerd als gevolg van de ban.",
 		user_indefinitely_banned_warning = "Ik heb deze persoon voor onbepaalde tijd verbannen met de reden `${reason}`. Deze waarschuwing is automatisch gegenereerd als gevolg van de ban.",
 		user_temporarily_banned_warning_no_reason = "Ik heb deze persoon tijdelijk verbannen zonder opgave van reden gedurende ${displayTime}. Deze waarschuwing is automatisch gegenereerd als gevolg van de ban.",
@@ -10006,11 +9947,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		missing_emote = "Emote parameter ontbreekt.",
 
 		emote_list = "Beschikbare emotes voor personages: ${list}.",
-		task_list = "Beschikbare taken voor personages: ${list}.",
-
-		spawn_ped_missing_perms = "Poging tot spawnen van een personage zonder juiste toestemming.",
-		remove_peds_missing_perms = "Poging tot verwijderen van gespawnede personages zonder juiste toestemming.",
-		ped_assign_task_missing_perms = "Poging om een taak toe te wijzen aan spawned peds zonder de juiste rechten."
+		task_list = "Beschikbare taken voor personages: ${list}."
 	},
 
 	ped_steal = {
@@ -10067,7 +10004,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 	player_control = {
 		unable_to_drive_for_yourself = "Je kunt geen chauffeur voor jezelf zijn.",
-		drive_for_player_no_permissions = "Speler probeerde voor een andere speler te rijden, maar had niet de benodigde machtigingen om dit te doen.",
 		player_is_not_nearby = "De speler met server-ID ${serverId} is niet in de buurt.",
 		player_is_not_the_drive_of_a_vehicle = "De speler met server-ID ${serverId} is geen bestuurder van een voertuig.",
 		press_to_stop_drive_for = "Druk op ~INPUT_FRONTEND_CANCEL~ om te stoppen met rijden voor de speler."
@@ -10088,7 +10024,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	player_stats = {
 		hp = "HP",
 		armor = "Pantser",
-		toggle_player_stats_no_permissions = "Speler probeerde spelerstatistieken te wijzigen zonder de juiste toestemming.",
 		updated_render_range = "Render afstand gewijzigd naar ${renderRange}.",
 		turned_player_stats_on = "Speler statistieken aan gezet.",
 		turned_player_stats_off = "Speler statistieken uit gezet."
@@ -10143,7 +10078,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 	props = {
 		illegal_prop_item_id = "Speler probeerde een prop-item te gebruiken met een ongeldig item-ID.",
-		spawn_prop_not_staff = "Speler probeerde een prop te spawnen, maar had niet de vereiste rechten om dit te doen.",
 		managing_props_help = "Je beheert momenteel props. Loop naar een prop en druk op ~INPUT_CONTEXT~ om het op te pakken.",
 		total_props = "Totaal aantal props: ${count}",
 		active_props = "Actieve props: ${count}",
@@ -10172,7 +10106,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		invalid_wipe_radius = "Ongeldige afstand om op te ruimen (tussen 1 en 100).",
 		wipe_successful = "Props succesvol opgeruimd.",
-		wipe_props_missing_permissions = "Speler probeerde props op te ruimen maar had niet de benodigde rechten om dit te doen.",
 
 		placing_prop = "Prop plaatsen",
 		pickup_prop = "Prop opnemen",
@@ -10209,7 +10142,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		radio_debug_off = "Radio debug succesvol uitgeschakeld.",
 		radio_debug_on = "Radio debug succesvol ingeschakeld.",
 
-		radio_debug_no_permissions = "Poging tot inschakelen van radio debug zonder de juiste toestemming.",
+		radio_debug_no_permissions = "Poging om de radio-debug zonder de juiste machtigingen in- of uit te schakelen.",
 
 		decrypt_frequency = "[${InteractionKey}] Frequentie decoderen",
 		decrypting_frequency = "Frequentie decoderen",
@@ -10246,8 +10179,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	reskin = {
 		plastic_surgery = "Plastische chirurgie",
 		los_santos_police_dept = "POLITIE DEPT VAN LOS SANTOS",
-
-		reskin_player_no_permissions = "Speler heeft geprobeerd de radio debug in te schakelen zonder de juiste toestemming.",
 
 		triggered_reskin_for_player = "Reskin geactiveerd voor ${consoleName}.",
 
@@ -10353,13 +10284,13 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		riot_mode_enabled = "Rellen modus is succesvol ingeschakeld.",
 		riot_mode_disabled = "Rellenmodus succesvol uitgeschakeld. Al agressieve personages blijven vechten totdat ze dood zijn.",
 		riot_mode_failed = "Kon relmodus niet inschakelen.",
-		riot_mode_missing_perms = "Poging tot het in- of uitschakelen van de rellenmodus zonder de juiste toestemming.",
+		riot_mode_missing_perms = "Poging om de oproermodus in- of uit te schakelen zonder de juiste machtigingen.",
 
 		riot_mode_enabled_help = "Rellenmodus is ingeschakeld.",
 		riot_mode_disabled_help = "Rellenmodus is uitgeschakeld.",
 
-		add_riot_player_no_permissions = "Poging om een ​​speler toe te voegen aan de rellenlijst zonder de juiste toestemming.",
-		remove_riot_player_no_permissions = "Poging om een ​​speler te verwijderen van de rellenlijst zonder de juiste toestemming.",
+		add_riot_player_no_permissions = "Poging om een speler aan de rel-lijst toe te voegen zonder de juiste toestemming.",
+		remove_riot_player_no_permissions = "Poging om een speler van de rel-lijst te verwijderen zonder de juiste toestemming.",
 
 		player_already_in_riot_list = "${consoleName} staat al op de rel lijst.",
 		player_not_in_riot_list = "${consoleName} staat niet op de rel lijst.",
@@ -10626,7 +10557,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		finding_player = "Speler zoeken",
 
 		invincibility_active = "Onsterfelijkheid: ~r~Actief~w~",
-		invincibility_inactive_dead = "Onsterfelijkheid: ~g~Inactief~w~ (dood)",
+		invincibility_inactive_dead = "Onkwetsbaarheid: ~g~Actief~w~ (dood)",
+		invincibility_inactive_trunk = "Onkwetsbaarheid: ~g~Actief~w~ (kofferbak)",
 		invincibility_inactive = "Onsterfelijkheid: ~g~Inactief~w~",
 
 		health_ok = "Gezondheid: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
@@ -10698,7 +10630,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	status = {
 		status_reset = "De status van ${consoleName} is succesvol gereset.",
 		status_reset_failed = "Er is geen gebruiker gevonden met server-ID `${serverId}`.",
-		reset_status_not_staff = "Er is geprobeerd de status van een speler te resetten zonder de benodigde toestemming.",
 		status_reset_for_all = "De status van iedereen is succesvol gereset.",
 		status_disabled = "Statussen uitgeschakeld (stress, honger en dorst).",
 		status_enabled = "Statussen ingeschakeld (stress, honger en dorst).",
@@ -10711,8 +10642,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		set_body_armor_level_everyone_details = "${consoleName} heeft het pantser niveau van iedereen ingesteld op `${bodyArmorLevel}`.",
 		set_body_armor_level_player_title = "Stel Het Niveau van Lichaamspantser In voor Speler",
 		set_body_armor_level_player_details = "${consoleName} heeft ${targetConsoleName} bijgewerkt en hun niveau van lichaamspantser ingesteld op `${bodyArmorLevel}`.",
-		set_body_armor_level_player_not_staff = "De speler heeft geprobeerd om het niveau van lichaamspantser van een andere speler in te stellen, maar had niet de vereiste toestemming om dit te doen.",
-		set_body_armor_level_self_not_staff = "De speler heeft geprobeerd om hun eigen niveau van lichaamspantser in te stellen, maar had niet de vereiste toestemming om dit te doen.",
 		stress_level_warning = "Je bent gestrest! Verlaag je stressniveau door sigaretten, joints te roken of activiteiten zoals yoga te doen."
 	},
 
@@ -10725,7 +10654,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		missing_hour = "Geen uur opgegeven.",
 		invalid_hour = "Lokale tijd overschrijven is ongeldig. De waarde moet een tijd zijn tussen 0:00 en 23:59.",
 		hour_changed = "Het uur is nu ingesteld op `${hour}`.",
-		set_hour_not_staff = "Poging om het uur in te stellen zonder vereiste toestemming.",
 
 		local_time_override_enabled = "Lokale tijd ingesteld op ${hour}:${minute}.",
 		local_time_override_disabled = "Lokale tijd teruggezet naar standaard.",
@@ -10735,27 +10663,21 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		missing_minute = "Geen minuut opgegeven.",
 		invalid_minute = "Minuut `${minute}` is ongeldig. De waarde moet tussen 0 en 59 liggen.",
 		minute_changed = "De minuut is nu ingesteld op `${minute}`.",
-		set_minute_not_staff = "Poging om de minuut in te stellen zonder de vereiste bevoegdheden.",
 
 		missing_weather = "Geen weer opgegeven.",
 		invalid_weather = "Weertype `${weatherName}` is niet geldig. De geldige weertypes zijn CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT en BLIZZARD.",
 		weather_changed = "Het weertype is veranderd naar `${weatherName}`.",
 		weather_advanced = "Het weertype is geavanceerd naar `${weatherName}`.",
 		weather_advance_fail = "Het is niet gelukt om het weer op natuurlijke wijze te laten veranderen.",
-		set_weather_not_staff = "Er is geprobeerd om het weer aan te passen zonder de vereiste toestemming.",
-		advance_weather_not_staff = "Er is geprobeerd om het weer op te 'avanceren' zonder de vereiste toestemming.",
 
 		time_frozen = "De tijd is nu bevroren.",
 		time_unfrozen = "De tijd is niet langer bevroren.",
-		freeze_time_not_staff = "Poging om de tijd te bevriezen zonder vereiste machtigingen.",
 
 		weather_frozen = "Het weer is nu bevroren.",
 		weather_unfrozen = "Het weer is niet langer bevroren.",
-		freeze_weather_not_staff = "Poging om het weer te bevriezen zonder vereiste machtigingen.",
 
 		blackout_enabled = "Er is nu een stroomstoring in de stad.",
 		blackout_disabled = "De stad heeft geen stroomstoring meer.",
-		blackout_not_staff = "Poging om een stroomstoring in te schakelen zonder vereiste machtigingen.",
 
 		weather_changed_title = "Weer gewijzigd",
 		weather_changed_details = "${consoleName} heeft het weer gewijzigd naar `${weatherName}`.",
@@ -11109,8 +11031,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	trains = {
-		spawn_train_missing_permissions = "Speler probeerde een trein te spawnen, maar had niet de vereiste machtigingen om dit te doen.",
-
 		invalid_track_id = "Ongeldige track-ID opgegeven.",
 		spawned_train_on_track = "Een trein is gespawned op track ${trackId}.",
 		failed_to_spawn_train = "Kon geen trein spawnen."
@@ -11126,7 +11046,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	treasure_maps = {
 		no_treasure_map_with_tier = "Er is geen schatkaart met niveau ${mapTier}.",
 		treasure_map_does_not_have_piece = "Schatkaart met niveau ${mapTier} heeft geen deel ${pieceNumber}.",
-		spawn_map_piece_missing_permissions = "Speler probeerde een kaartdeel te spawnen zonder de juiste rechten.",
 
 		sketchy_map = "Schetsmatige Kaart",
 		worn_map = "Versleten Kaart",
@@ -11156,9 +11075,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		set_ocean_scaler_no_permission = "De speler had niet de benodigde machtiging om de intensiteit van de oceaanschaal in te stellen.",
 
 		tsunami_started = "Tsunami gestart. Het duurt ${minutes} minuten voordat de map overstromingsgevaarlijk is.",
-		tsunami_stopped = "Tsunami gestopt.",
-
-		toggle_tsunami_no_permissions = "Poging om de tsunami te activeren zonder de juiste rechten."
+		tsunami_stopped = "Tsunami gestopt."
 	},
 
 	tuner_shop = {
@@ -11195,8 +11112,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		cleared_vdm = "${amount} aan vdm doelwitten opgeschoond.",
 		failed_vdm_clear = "Kan vdm doelwitten niet opschonen.",
 		added_vdm_target = "NPC met netwerk-ID ${networkId} richt zich nu op ${target}.",
-
-		vdm_no_permissions = "Speler heeft geen toestemming om het vdm-commando uit te voeren."
+		no_ped_available = "Er is geen nabije voetganger beschikbaar.",
+		failed_steal = "Kon het voertuig niet stelen.",
+		stealing_vehicle = "Er is een nabije voetganger geïnstrueerd om het voertuig te stelen (${afstand}m)."
 	},
 
 	vending_machines = {
@@ -11278,10 +11196,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	wizard = {
-		action_missing_permissions = "Er is geprobeerd om een speler een tovenaarsactie te laten uitvoeren zonder de juiste machtigingen.",
-		action_radius_missing_permissions = "Poging om spelers binnen een bepaalde straal tovenaar acties te laten doen zonder de juiste toestemming.",
-		run_as_missing_permissions = "Poging om een commando als een andere speler uit te voeren zonder de juiste toestemming.",
-
 		menu_title = "Tovenaar",
 
 		ragdoll_player = "Op de grond vallen",
@@ -11367,8 +11281,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		invalid_explosion_type = "Explosietype '${explosionType}' is ongeldig.",
 		invalid_camera_shake = "Camera shake `${cameraShake}` is niet geldig.",
 		invalid_damage_scale = "Schadeverdeling `${damageScale}` is niet geldig.",
-		created_explosion = "Er is een explosie van het type `${explosionTypeName}` gemaakt met een schadeverdeling van `${damageScale}` en een camerabeweging van `${cameraShake}`.",
-		create_explosion_not_developer = "Een speler heeft geprobeerd een explosie te veroorzaken, maar is geen ontwikkelaar."
+		created_explosion = "Er is een explosie van het type `${explosionTypeName}` gemaakt met een schadeverdeling van `${damageScale}` en een camerabeweging van `${cameraShake}`."
 	},
 
 	functions = {
@@ -11489,7 +11402,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	duty = {
-		toggle_duty_status_no_permissions = "Speler heeft geprobeerd hun dienst status te wisselen via commando zonder de juiste permissies.",
+		toggle_duty_status_no_permissions = "Poging om de dienststatus te wijzigen via een commando zonder juiste rechten.",
 
 		duty_status_on = "Succesvol dienst status veranderd naar aanwezig.",
 		duty_status_off = "Succesvol dienst status veranderd naar afwezig.",
@@ -11604,6 +11517,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		license_hunting = "Jachtvergunning",
 		license_fishing = "Visvergunning",
 		license_weapon = "Wapenvergunning",
+		license_mining = "Mijnbouwvergunning",
 		gave_character_license = "Heeft ${characterName} vergunning `${licenseLabel}` gegeven.",
 		character_already_has_license = "${characterName} heeft al vergunning `${licenseLabel}`.",
 		removed_character_license = "Vergunning `${licenseLabel}` is verwijderd van ${characterName}.",
@@ -11737,8 +11651,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		not_in_a_vehicle = "Je zit niet in een voertuig.",
 		vehicle_engine_on = "De motor draait nog steeds.",
 
-		set_fuel_no_permissions = "Speler heeft geprobeerd om het brandstofniveau van een voertuig in te stellen zonder de juiste rechten.",
-
 		vehicle_exploded_logs_title = "Voertuig ontploft",
 		vehicle_exploded_logs_details = "${consoleName} heeft een voertuig bijgetankt en veroorzaakte een explosie door een lopende motor."
 	},
@@ -11834,11 +11746,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "Debug mode voor garage aangezet.",
 		toggle_garage_debug_toggled_off = "Debug mode voor garage uitgezet."
-	},
-
-	handlings = {
-		set_handling_override_not_super_admin = "De speler heeft geprobeerd om een handling override in te stellen zonder de juiste toestemming.",
-		remove_handling_override_not_super_admin = "De speler heeft geprobeerd om een handling override te verwijderen zonder de juiste toestemming."
 	},
 
 	keys = {
@@ -11965,31 +11872,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		toggle_brakes_off = "Remmen ingeschakeld.",
 		failed_modify_brakes = "Aanpassen van remmen mislukt.",
 
-		toggle_disabled_brakes_no_permissions = "Speler heeft geprobeerd om de uitgeschakelde remmen te activeren via commando zonder de juiste rechten.",
-
-		-- NOTE: `add_vehicle` command:
-		add_vehicle_not_super_admin = "De speler heeft geprobeerd om een voertuig toe te voegen aan iemands garages zonder de juiste rechten.",
-		add_vehicle_added_vehicle_for_everyone = "Voertuig met modelnaam `${modelName}` is toegevoegd voor iedereen.",
-		add_vehicle_added_vehicle_for_player = "Voertuig met modelnaam `${modelName}` is toegevoegd voor ${consoleName}.",
-		add_vehicle_added_vehicle = "Voertuig met modelnaam `${modelName}` is toegevoegd.",
-		add_vehicle_character_not_loaded = "De doelwit speler had geen karakters geladen.",
-		add_vehicle_target_user_not_found = "De doelwit gebruiker kon niet gevonden worden.",
-		add_vehicle_invalid_input = "Ongeldige invoer.",
-		add_vehicle_no_permissions = "Geen rechten.",
-		add_vehicle_user_not_found = "Gebruiker niet gevonden.",
-		add_vehicle_invalid_player = "Er waren geen spelers met server-ID `${serverId}`.",
-		add_vehicle_invalid_model_name = "De modelnaam `${modelName}` is geen geldig model.",
-		add_vehicle_no_model_name = "Geen modelnaam toegevoegd.",
-
-		added_vehicle_for_everyone_logs_title = "Voertuig toegevoegd voor iedereen",
-		added_vehicle_for_everyone_logs_details = "${consoleName} heeft een voertuig met modelnaam `${modelName}` toegevoegd aan de garages van iedereen.",
-		added_vehicle_for_player_logs_title = "Voertuig toegevoegd voor speler",
-		added_vehicle_for_player_logs_details = "${consoleName} heeft een voertuig met modelnaam `${modelName}` toegevoegd aan de garage van ${targetConsoleName}.",
-		added_vehicle_logs_title = "Voertuig toegevoegd",
-		added_vehicle_logs_details = "${consoleName} heeft een voertuig met modelnaam `${modelName}` toegevoegd aan hun eigen garage.",
-
 		-- NOTE: `toggle_vehicle_weapons` command:
-		toggle_vehicle_weapons_not_super_admin = "De speler heeft geprobeerd om voertuigwapens te activeren op een voertuig zonder de juiste rechten.",
 		toggled_vehicle_weapons_on = "Voertuigwapens ingeschakeld.",
 		toggled_vehicle_weapons_off = "Voertuigwapens uitgeschakeld.",
 		toggled_vehicle_weapons_vehicle_is_not_networked = "Het voertuig waarin je zit is niet mondiale netwerkverbinding.",
@@ -12144,6 +12027,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		ems_boat_hq = "EMS Boat HQ",
 		ems_garage = "EMS garage",
 		e_to_get_treated = "[E] Behandeling krijgen - $1250",
+		e_check_in_player = "[E] Inchecken Vervoerde Speler - $1250",
+		check_in_blocked = "Inchecken is bezet",
 		get_treated = "Behandeld worden - $1250",
 		you_are_being_treated = "Je wordt behandeld",
 		being_treated = "Wordt behandeld",

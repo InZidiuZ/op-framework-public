@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 18 (do not change)
+-- AUTO LOCALES: 19 (do not change)
 
 OP.Global.Locales.Languages["meme-yoda"] = {
 	-- configuration settings for language
@@ -61,7 +61,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		you_are_not_being_carried = "Currently carried, you are not.",
 		successfully_uncarried = "Carry stopped by force, successfully.",
 		failed_uncarried = "Failed, carry force stop did not.",
-		uncarry_missing_permissions = "Permission, proper, not had for force stop carry attempt.",
+		uncarry_missing_permissions = "Force stop carry attempted without proper permissions, you have.",
 
 		uncarry_logs_title = "Force Uncarry",
 		uncarry_logs_details = "${consoleName}, ${targetName} forced to stop carrying them.",
@@ -78,7 +78,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 	-- base/*
 	admin = {
-		feature_toggle_not_admin = "Toggled their own or someone else's '${featureName}', attempted they did. Proper permissions, they did not have.",
 		feature_toggle_activated_logs_title = "Feature toggled remotely, it was.",
 		feature_toggle_activated_logs_details_state = "Toggled, ${consoleName} has, `${featureName}` ${newState} for player ${targetConsoleName}.",
 		feature_toggle_activated_all_logs_title = "Feature Toggled For All, It Has Been",
@@ -101,9 +100,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		failed_to_spawn_vehicle = "Vehicle, failed to spawn.",
 		spawned_vehicle_for_player = "Successfully spawned, ${modelName} for ${displayName}.",
 		spawned_vehicle_for_everyone = "Everyone's vehicle `${modelName}` has been spawned successfully, it is.",
-		spawn_vehicle_no_permissions = "Player, a vehicle spawn attempted but did not have required permissions to do so.",
-		replace_vehicle_no_permissions = "Vehicle replace attempt, player did, but permissions lacked they had.",
-		create_vehicle_no_permissions = "Vehicle creation attempt, player did, but permissions lacked they had.",
 		spawned_vehicle_for_self_title = "Vehicle spawned is, yes",
 		spawned_vehicle_for_self_details = "Model name `${modelName}` spawned, ${consoleName} has.",
 		spawned_vehicle_for_player_title = "Vehicle spawned for player, hmmm",
@@ -113,6 +109,26 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		vehicle_created = "Vehicle created, successfully created I have.",
 		failed_vehicle_creation = "Failed to create vehicle, we have.",
+
+		-- NOTE: `add_vehicle` command:
+		add_vehicle_added_vehicle_for_everyone = "Added vehicle with model name `${modelName}` for everyone, it has.",
+		add_vehicle_added_vehicle_for_player = "Added vehicle with model name `${modelName}` for ${consoleName}, I have.",
+		add_vehicle_added_vehicle = "Added vehicle with model name `${modelName}`, I have.",
+		add_vehicle_character_not_loaded = "No characters loaded, the target player had.",
+		add_vehicle_target_user_not_found = "The target user, found it could not be.",
+		add_vehicle_invalid_input = "Invalid input, this is.",
+		add_vehicle_no_permissions = "No permissions, you have.",
+		add_vehicle_user_not_found = "User, not found, they are.",
+		add_vehicle_invalid_player = "There were no players with server ID `${serverId}`, hmmm.",
+		add_vehicle_invalid_model_name = "The model name `${modelName}`, a valid model it is not.",
+		add_vehicle_no_model_name = "No model name added, there is.",
+
+		added_vehicle_for_everyone_logs_title = "Added Vehicle For Everyone, mmhmm",
+		added_vehicle_for_everyone_logs_details = "${consoleName} added a vehicle with model name `${modelName}` to everyone's garages, they did.",
+		added_vehicle_for_player_logs_title = "Vehicle Added For Player",
+		added_vehicle_for_player_logs_details = "${consoleName} added a vehicle with model name `${modelName}` to ${targetConsoleName}'s garage.",
+		added_vehicle_logs_title = "Vehicle Added",
+		added_vehicle_logs_details = "${consoleName} added a vehicle with model name `${modelName}` to their garage.",
 
 		invalid_amount = "Invalid amount, this is.",
 
@@ -160,8 +176,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		removed_bank_from_player = "From ${targetConsoleName}, removed $$${amount} bank.",
 		removed_bank_from_everyone = "From everyone, removed $$${amount} bank.",
 
-		money_event_not_admin = "Money event `${moneyEvent}` toggling, attempted without admin's permission, hmmm.",
-
 		spawned_item_title = "Spawned Item, you have.",
 		spawned_item_details = "${consoleName} has spawned ${amount}x `${itemName}` for themselves, yes.",
 		spawned_item_for_player_title = "Spawned Item Speaketh For Player",
@@ -178,7 +192,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		announcement_logs_title = "Announcement, wide the server is",
 		announcement_logs_details = "Broadcasted by ${consoleName}, this message was, to the entire server: `${announcementMessage}`, hmmm",
-		announcement_not_admin = "Post a staff announcement, you cannot, hmmm.",
 
 		posted_announcement = "Announcement message, posted it has.",
 		posted_announcement_locale = "Announcement message, posted it has from locale.",
@@ -188,7 +201,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		staff_title = "STAFF ${staffName}, title it is.",
 		staff_message_logs_title = "Staff message logs, hmmm.",
 		staff_message_logs_details = "${consoleName}, the following message sent in the staff chat: `${staffMessage}` became it.",
-		staff_message_illegal = "Sending a message in the staff chat, player attempted. But, staff, they are not.",
 
 		staff_pm_title = "STAFF PM ${transmissionTitle}",
 		staff_pm_logs_title = "Staff PM, this is.",
@@ -218,7 +230,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		missing_valid_license_identifier_parameter = "Valid 'licenseIdentifier' parameter, missing it is.",
 
-		illegal_entity_wipe = "Wipe entities, permissions you have not.",
 		wiped_entities = "Entities wiped. ${deletedEntities} networked entities, deleted, have been.",
 		wipe_entities_logs_title = "Entities Wiped, Logs",
 		wipe_entities_logs_details = "Entity wipe issued by ${consoleName} with the following configuration: distance = `${distance}`, ignoreLocalEntities = `${ignoreLocalEntities}`, modelName = `${modelName}`. Hmmm.",
@@ -261,12 +272,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		ban_quadrouple_kill = "😨 QUADROUPLE KILL, you have!!!!!!",
 		ban_killing_spree = "🤯 KILLING SPREE (${count}), you have!!!!!!",
 
-		kick_player_not_staff = "Kick a player without proper permissions, you attempted to.",
-		ban_player_not_staff = "Attempted to ban a player without proper permissions, hmmm.",
-
-		hide_staff_not_staff = "Without proper permissions, hide their staff status they attempted, hmmmm.",
-		toggle_staff_not_staff = "Staff availability toggle without proper permissions, attempted they have, hmmm.",
-
 		logs_hide_staff_title = "Hidden, Staff is",
 		logs_hide_staff_hidden_details = "${consoleName} has made their staff status hidden, hmmm.",
 		logs_hide_staff_shown_details = "${consoleName} their staff status show, hmmm.",
@@ -282,10 +287,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		staff_feature_unavailable = "Unavailable, this feature is while your staff availability is toggled off.",
 
-		toggle_player_track_no_permissions = "Proper permissions, you do not have to toggle player tracking, hmmm.",
-		set_job_no_permissions = "Set a job, without proper permissions you tried, hmmm.",
-		toggle_reflection_no_permissions = "Without proper permissions, toggle damage reflection you have attempted.",
-
 		success_enable_reflection = "Reflection enabled, successfully it has been.",
 		success_disable_reflection = "Reflection disabled, successfully it has been.",
 		failed_toggle_reflection = "Failed to toggle reflection, we have.",
@@ -296,12 +297,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		headache_logs_title = "Headache, Triggered It Has",
 		headache_logs_details = "${consoleName} has triggered a headache for ${targetConsoleName}.",
-		trigger_headache_no_permissions = "Proper permissions, you do not have. Attempt to trigger a headache failed it has.",
 
 		super_jump_logs_title = "Super Jump Toggled",
 		super_jump_logs_details_on = "Super jump, toggled on, ${consoleName} has.",
 		super_jump_logs_details_off = "Super jump, toggled off, ${consoleName} has.",
-		toggle_super_jump_no_permissions = "Super jump, their attempt to toggle, without proper permissions it was.",
 
 		success_trigger_headache = "Headache for ${playerName}, successfully triggered it has been.",
 		failed_trigger_headache = "Fail to trigger a headache, it did.",
@@ -311,7 +310,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		reset_spawn_success = "Successfully, spawnpoint reset, we have.",
 		reset_spawn_failed = "Failed, spawnpoint reset, we have.",
 
-		protective_mode_not_staff = "Without proper permissions, toggle the server's protective mode you attempted.",
 		protective_mode_toggled_on = "Enabled, the server's protective mode has been. Required playtime to connect to the server has been set to `${playtime}`.",
 		protective_mode_toggled_off = "Disabled, the server's protective mode has been.",
 		protective_mode_already_on = "With required playtime at `${playtime}`, server protective mode already has been enabled.",
@@ -320,13 +318,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		logs_protective_mode_on = "${consoleName} toggled on the server protective mode, required playtime: `${playtime}`.",
 		logs_protective_mode_off = "${consoleName} toggled off the server protective mode, mm?",
 
-		spawn_item_not_staff = "Attempted to spawn an item without proper permissions, hmmm.",
 		no_item_name = "Provided name of item, you have not.",
 		invalid_item_name = "Invalid, '${itemName}' is.",
 		item_spawned = "Spawned, ${amount}x `${itemName}` for ${consoleName}, have you.",
 		item_spawned_for_everyone = "Spawned, ${amount}x `${itemName}` for everyone, I have.",
 
-		set_warning_message_not_staff = "Proper permissions, you do not have. Set the server's warning message, you cannot.",
 		warning_message_set_to = "The warning message, set to `${warningMessage}` it has been.",
 		warning_message_removed = "The warning message, removed it has been.",
 		warning_message_error = "An error occurred, while trying to set the warning message, there has been.",
@@ -368,6 +364,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		evidence_view_details_on = "Advanced evidence view on, toggled it has by ${consoleName}.",
 		evidence_view_details_off = "Advanced evidence view off, toggled it has by ${consoleName}.",
 
+		tracker_turned_on = "Turned on, your tracker has been.",
+		tracker_turned_off = "Turned off, your tracker has been.",
+
 		report_muted_no_reason = "Report command, without specific reason, muted you have been.",
 		report_muted = "Report command, for reason `${reason}`, muted you have been.",
 
@@ -388,9 +387,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		teleported_to_waypoint_logs_title = "Teleported to Waypoint, I have.",
 		teleported_to_waypoint_logs_details = "${consoleName}, to a waypoint teleported they have. ${locationLabel} is.",
 
-		teleport_to_coordinates_not_staff = "Not staff, the player is. Coordinates, they attempted to teleport to.",
-		teleport_to_waypoint_not_staff = "Teleport to a waypoint, the player attempted but staff, they were not.",
-
 		failed_isolate = "Player isolation, failed it has.",
 		invalid_server_id = "Server ID, invalid it is.",
 		isolate_success_on = "${consoleName}, isolated successfully you have.",
@@ -402,8 +398,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		population_density_set_off = "Turned off, the population density multiplier override has been.",
 		population_density_is_not_on = "Not on, the population density multiplier override is.",
 		population_density_already_set_to = "Already set to, the population density multiplier override is ${multiplierLabel}%",
-
-		population_density_not_super_admin = "Attempted to set the population density without proper permissions, the player has.",
 
 		enabled_features_list = "List of Features Enabled:",
 		aimbot_feature = "Feature of Aimbot",
@@ -448,8 +442,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		vehicle_smoke_invalid_class = "Vehicle class, this vehicle belongs to, smoke cannot be enabled, hmmm.",
 
-		repair_vehicle_not_super_admin = "Permissions, this player does not have, to repair vehicle, hmmm.",
-
 		repaired_vehicle_logs_title = "Vehicle, repaired it has been, hmmm.",
 		repaired_vehicle_logs_details = "The vehicle they were in, ${consoleName}, has been repaired.",
 
@@ -464,9 +456,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		set_vehicle_livery_logs_title = "Livery of Vehicle Set",
 		set_vehicle_livery_logs_details = "${consoleName} has set the livery of a vehicle with the plate `${vehiclePlate}` to `${liveryIndex}`.",
-
-		set_livery_missing_permissions = "Without proper permissions, player attempted to set the livery of a vehicle.",
-		set_modifications_missing_permissions = "Without proper permissions, player attempted to set a modification of a vehicle.",
 
 		set_vehicle_modification = "Modified vehicle for mod type `${modType}` has been set to index `${modIndex}`. (Custom Tires: ${customTires})",
 		mod_index_invalid_for_type = "Mod type, invalid is the mod index ${modIndex}.",
@@ -486,15 +475,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		invalid_dirt_level = "Dirt level, invalid it is.",
 		set_dirt_level = "Vehicle's dirt level, set to `${dirtLevel}` it was.",
 
-		set_dirt_level_not_super_admin = "Without proper permissions, the dirt level of a vehicle tried to be set.",
-
-		set_fake_plate_not_super_admin = "Without proper permissions, the fake plate of a vehicle tried to be set by a player.",
-
 		already_fake_disconnecting = "Already attempting to fake disconnect, you are. Wait, you must.",
 		started_fake_disconnect = "Fake disconnect, started it has. Repeat command, you must, to stop.",
 		stopped_fake_disconnect = "Fake disconnect, stopped it has.",
-
-		fake_disconnect_not_super_admin = "Without proper permissions, player attempted to fake disconnect, hmm.",
 
 		disabled_idle_cam = "The idle cam, disabled it has.",
 		enabled_idle_cam = "Re-enabled the idle cam, I have.",
@@ -502,12 +485,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		created_vehicle_smoke_for_player_logs_title = "Vehicle Smoke, created it has.",
 		created_vehicle_smoke_for_player_logs_details = "${consoleName} created vehicle smoke, he/she did.",
 
-		player_info_not_staff = "Without proper permission, attempted to get the character information of a player, hmmm.",
 		player_info_title = "${consoleName}",
 		player_info = "${fullName} #${characterId}\nPlayed, ${playtime} has.\n${jobName}, ${departmentName}, ${positionName}\n\n${backstory}, hmmm.",
 
 		inventory_name_missing = "Missing, the inventory name parameter is.",
-		force_inventory_missing_perms = "Without proper permission, tried to force-open an inventory, hmmm.",
 
 		auto_driving_engaged = "Auto driving has been engaged (Style: ${style}), hmmm.",
 		auto_driving_updated = "Updated, auto driving speed and location have.",
@@ -538,9 +519,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		tint_set = "Weapon tint set to `${tint}` (${tintIndex}) successfully, hmmm.",
 		no_weapon_tint = "Tints, this weapon does not have.",
 
-		weapon_attachment_missing_perms = "Weapon attachment toggling attempted without proper permission, hmmm.",
-		weapon_tint_missing_perms = "Weapon tint setting attempted without proper permission, hmmm.",
-
 		no_attachments = "No attachments, there are.",
 		available_attachments = "Attachments Available, hm",
 		current_attachments = "Current Attachments, hm",
@@ -557,14 +535,14 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		cleaned_ped_self = "Successfully, clean your ped, I have.",
 		clean_ped_failed = "Failed to clean, ped whoopsie, I did.",
 		cleaned_ped_for_all = "Successfully, everyone's peds, cleaned I have.",
-		clean_ped_no_permission = "Needed permission, you have, to clean a player's ped.",
+		clean_ped_no_permission = "Attempted to clean a player's ped without proper permissions.",
 
 		item_durability_set_success = "Durability, set to ${amount}%, I have. In slot ${slotId} the items are.",
 		item_durability_set_failed = "Failed to set, durability, I did.",
 		item_durability_invalid_amount = "Invalid durability amount, this is. Range 0 <> 100 it should be.",
-		item_durability_set_no_permission = "Without permission, attempted to set an item's durability, you have.",
+		item_durability_set_no_permission = "Attempted to set an items durability without proper permissions, you did.",
 
-		item_metadata_set_no_permission = "Attempted to set metadata of an item, without required permissions, you have.",
+		item_metadata_set_no_permission = "Attempted to set an items metadata without proper permissions, you did.",
 		item_metadata_invalid_metadata = "Invalid item metadata, this is.",
 		item_metadata_set_success = "Metadata, set for items in slot ${slotId}, has been.",
 		item_metadata_set_failed = "Failed to set metadata, we have.",
@@ -589,8 +567,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		scoop_invalid = "You haven't scooped up any players. Hmmmm.",
 		unscooped_players = "${amount} of ${total} player(s), unscooped they have been. Hmmm.",
 		unscoop_failed = "Failed to unscoop players. Failed, the unscoop has.",
-
-		unscoop_missing_permissions = "Player attempted to unscoop without proper permissions. Mmmm, proper permissions they have not.",
 
 		toggle_collisions_missing_permissions = "Player attempted to toggle their collisions without proper permissions. Without proper permissions, toggle their collisions, the player attempted. Hmmm.",
 		wipe_first_owned_missing_permissions = "Player, without proper permissions, attempt to wipe first owned entities, mm?",
@@ -678,10 +654,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		model_already_added_to_list = "Model name `${modelName}` (${modelHash}) already added to detection list, hmmm.",
 		removed_model_to_list = "Model name `${modelName}` (${modelHash}) removed from detection list, hmmm.",
 		model_not_in_list = "Model ${modelName} (${modelHash}) not added to detection list it is.",
-		set_model_detected_not_staff = "Add model to detection list, correct permissions player did not have.",
-		set_model_undetected_not_staff = "Remove model from detection list, correct permissions player did not have.",
-		add_detection_area_not_staff = "Add detection area, correct permissions player did not have.",
-		remove_detection_area_not_staff = "Remove detection area, correct permissions player did not have.",
 		detection_area_close = "[${InteractionKey}] Detection Area remove, (${areaId})",
 		detection_area = "Detection Area, (${areaId})",
 
@@ -721,6 +693,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		clear_tasks_ban = "Not a Jedi mind trick training center, this is. Your efforts to influence free will, noted they are... and rejected.",
 		projectile_event_ban = "Not Hogwarts, this is. Not Harry Potter, you are. The indiscriminate casting of spells - or projectiles - not allowed here.",
 		illegal_native_ban = "A spell that you haven't learned yet, you can't use...",
+		underground_ban = "Fallen into a rabbit hole, you seem to have.",
+		infinite_ammo_ban = "Apply, the laws of conservation do here, despite popular belief. The magic ammunition pouch, confiscated it has been.",
 
 		type_aimbot = "Aimbot, it is",
 		type_bad_creation = "Bad Creation, this is",
@@ -757,6 +731,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		type_thermal_night_vision = "Thermal/Night Vision",
 		type_vehicle_modification = "Modification of the Vehicle",
 		type_illegal_native = "Illegal Native Call",
+		type_underground = "Underground, it is.",
+		type_infinite_ammo = "Infinite Ammo, it is.",
 
 		event_prefix = "${type} Events:",
 
@@ -825,6 +801,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		job_low = "Low job, it is.",
 		job_medium = "Medium job, it is.",
 		job_high = "High job, it is.",
+
+		banned_no_permissions = "Attempted to `${reason}` without proper permissions, you did.",
 
 		banned_globally = "Globally banned, you are, from all OP-FW servers.\n\nBan Hash, you have: ${banHash}\nReason for ban, you know: ${banReason}\n\nFalse ban, you believe it is, join OP-FW discord guild for information on how to appeal at ${frameworkDiscord}, you can.",
 		banned_locally = "${communityName}, you have been banned from.\n\nBan Hash, you have: ${banHash}\nBanned By: ${creatorName}\nReason for ban, you know: ${banReason}\nTimestamp, it is: ${timestamp}\n\n${indefiniteOrExpires}\n\nTo appeal, join our discord guild at ${communityDiscord}, you must.",
@@ -963,7 +941,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		wipe_command = "wipe",
 		wipe_command_help = "Wipe unwanted entities from the map.",
 		wipe_command_parameter_distance = "distance",
-		wipe_command_parameter_distance_help = "Entities within a certain range to delete, if delete everything insert `0`. If delete specific range, insert distance here.",
+		wipe_command_parameter_distance_help = "If entities within a certain range you want to delete, insert a distance here. `-1` for the entire map, put.",
 		wipe_command_parameter_ignore_local_entities = "ignore local entities",
 		wipe_command_parameter_ignore_local_entities_help = "Non-networked entities ignore, you must. If cleaning up after a cheater, recommended to set to `true` or `1`.",
 		wipe_command_parameter_model_name = "name of model",
@@ -1047,6 +1025,14 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		replace_vehicle_command_parameter_model_name = "model name",
 		replace_vehicle_command_parameter_model_name_help = "Model name of vehicle, you're wanting to spawn, this is.",
 		replace_vehicle_command_substitutes = "rv",
+
+		add_vehicle_command = "add_vehicle",
+		add_vehicle_command_help = "Addeth a vehicle to someone's garage, hmm.",
+		add_vehicle_command_parameter_model = "model",
+		add_vehicle_command_parameter_model_help = "The model name or model hash of the vehicle thou wisheth to addeth.",
+		add_vehicle_command_parameter_server_id = "server id",
+		add_vehicle_command_parameter_server_id_help = "The server ID of the player thou wisheth to giveth a vehicle to. Leaving this blank shall auto-select thee.",
+		add_vehicle_command_substitutes = "",
 
 		aimbot_command = "aimbot",
 		aimbot_command_help = "Toggle 'aimbot', you may.",
@@ -1998,8 +1984,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		fake_lag_command = "fake_lag",
 		fake_lag_command_help = "Fake lag, create you can.",
-		fake_lag_command_parameter_counter = "counter",
-		fake_lag_command_parameter_counter_help = "The counter used to create the lag. The higher this value is, the slower it will be. To disable, leave this blank or type `0`.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "The target fps (>= 1).",
 		fake_lag_command_substitutes = "lag",
 
 		view_weapon_command = "view_weapon",
@@ -2481,7 +2467,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		wipe_ground_inventories_command = "wipe_ground_inventories",
 		wipe_ground_inventories_command_help = "Wipe ground inventories, you will.",
 		wipe_ground_inventories_command_parameter_radius = "radius",
-		wipe_ground_inventories_command_parameter_radius_help = "The wipe radius, you must specify. `100` selected automatically if left blank. `0` and `-1` select all inventories, they do.",
+		wipe_ground_inventories_command_parameter_radius_help = "The wipe radius. `5` will auto-select if left blank. Values above `0` are valid, as well as `0` and `-1` which will select all inventories.",
 		wipe_ground_inventories_command_substitutes = "wipeinvs, wipe_inventories, wipe_ground",
 
 		refresh_inventory_command = "refresh_inventory",
@@ -3266,6 +3252,12 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		vdm_clear_command_help = "To use, clear get rid of all the targets, hmmm.",
 		vdm_clear_command_substitutes = "",
 
+		steal_vehicle_command = "vehicle steal",
+		steal_vehicle_command_help = "Makes the closest npc steal the target vehicle, it does.",
+		steal_vehicle_command_parameter_network_id = "network id, it does",
+		steal_vehicle_command_parameter_network_id_help = "The vehicles network id, it is.",
+		steal_vehicle_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "Debug the voice, toggle this on or off, hmmm.",
 		voice_debug_command_help = "To use, describe in detail the voice debug, hmmm.",
@@ -3661,14 +3653,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		speed_limiter_command_help = "Override the speed limiter's normal behavior in order to pre-set the speed limit.",
 		speed_limiter_command_substitutes = "sl, cc, cruise_control",
 
-		add_vehicle_command = "add_vehicle",
-		add_vehicle_command_help = "Addeth a vehicle to someone's garage, hmm.",
-		add_vehicle_command_parameter_model = "model",
-		add_vehicle_command_parameter_model_help = "The model name or model hash of the vehicle thou wisheth to addeth.",
-		add_vehicle_command_parameter_server_id = "server id",
-		add_vehicle_command_parameter_server_id_help = "The server ID of the player thou wisheth to giveth a vehicle to. Leaving this blank shall auto-select thee.",
-		add_vehicle_command_substitutes = "",
-
 		toggle_vehicle_weapons_command = "toggle_vehicle_weapons",
 		toggle_vehicle_weapons_command_help = "Whether or not the weapons on a vehicle can be used, toggle. Hmmm.",
 		toggle_vehicle_weapons_command_parameter_server_id = "server id",
@@ -3759,7 +3743,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 	emojis = {
 		emoji_list = "${emojis}, these are the emojis.",
-		refresh_emojis_no_permissions = "Refresh, emojis cannot be. Proper permissions, you must have.",
 		api_reported_no_updates = "No updates in the emoji list, the Discord API has reported.",
 		emojis_added = "${added} emoji(s) added, have we.",
 		emojis_removed = "${removed} emoji(s) removed, they have been.",
@@ -3779,7 +3762,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	ping = {
-		get_pings_missing_permissions = "Get pings, attempted Player did but the required permissions to do so, have they not.",
 		getting_pings = "Getting pings from all players. This may take a few seconds, hmmm.",
 		host_data = "${position}. ${location}, mmmm - ${averagePing} Average Ping (based on ${totalPings} clients), ${averagePingLow} Low, 10% High: ${averagePingHigh} high it is.",
 		list_hosts = "${listHosts}"
@@ -3891,7 +3873,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		package_same_remaining_time = "Same, your package is, `${packageName}`, ${remainingTime} it will expire in.",
 		no_package = "Package, you do not have.",
 		fetching_package_error = "Error, occurred while attempting to fetch package data, it has.",
-		check_playtime_not_staff = "Player attempted to check someone else's playtime, did not have correct permissions, hmmm?",
 		reason_unknown = "Reason, unknown it is.",
 
 		unloaded_character = "Character, unloaded it has.",
@@ -3900,8 +3881,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		user_not_found = "Found, the sent user was not.",
 		invalid_character_id = "Wrong, the character id parameter is.",
 		invalid_license_identifier = "Wrong, the license identifier parameter is.",
-
-		unload_character_not_staff = "Not staff, the player attempted to unload a player's character.",
 
 		unloaded_character_for_player_logs_title = "Unloaded Character For Player, logs",
 		unloaded_character_for_player_logs_details = "${consoleName} unloaded ${targetConsoleName}'s character ${characterFullName} (${characterId}) with the reason `${message}`.",
@@ -3942,9 +3921,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		invalid_destination_server_id = "Invalid, the destination server id is.",
 		invalid_source_server_id = "Invalid, the source server id is.",
 		failed_teleport_player_to_player = "Failed to teleport player to player, we have.",
-		teleported_player_to_player = "Player to player, teleported successfully, they were.",
-
-		teleport_player_missing_permissions = "Attempt to teleport a player, one has, but the correct permissions, they had not."
+		teleported_player_to_player = "Player to player, teleported successfully, they were."
 	},
 
 	afk = {
@@ -3954,8 +3931,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Create airdrop, player attempted, but required permissions, had not they.",
-		create_airdrop_custom_missing_permissions = "Create custom airdrop, player attempted, but required permissions, had not they.",
 		created_airdrop = "An airdrop of type `${airdropType}` with a total of ${itemAmount} item(s), created it has.",
 		no_valid_items_provided = "No valid items provided, hmph.",
 		created_airdrop_with_items = "Created an airdrop, inside following items there are:\n${itemsListed}"
@@ -3982,15 +3957,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Create airstrike, player attempted, but required permissions, had not they.",
-
 		airstrike_success = "Airstrike created successfully, it was.",
 		airstrike_failed = "Failed to create an airstrike, there was."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Called in air support, player did, but required permissions they had not.",
-
 		distance = "Distance, you have: ${distance}${unit}",
 		time_to_impact = "ETI, you have: ${timeToImpact}",
 
@@ -4020,9 +3991,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		show_alert_success = "Alert to player, successfully showed it was.",
 		show_alert_everyone_success = "Alert to everyone, successfully shown it has been.",
-		show_alert_failed = "Failed to show alert to this player, we have.",
-
-		show_alert_missing_permissions = "Required permissions, player did not have, attempted to show an alert to another player, they did."
+		show_alert_failed = "Failed to show alert to this player, we have."
 	},
 
 	arcade = {
@@ -4303,10 +4272,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 	audio = {
 		audio_id = "Audio, ${audioId} is.",
-		illegal_sound_effect = "External audio, attempted to play, you have.",
+		illegal_sound_effect = "Attempted to tell other clients to play an external audio without proper permissions, it was.",
 		url_invalid = "Invalid, the provided URL is. Uploaded on a secure connection, it must be. (https://)",
 		url_missing = "URL, please add to the audio you are trying to play.",
-		play_audio_no_permissions = "Player attempted to play an audio, but the required permissions they had not.",
 		played_audio_for_self = "Audio, played for yourself, you have.",
 		played_audio_for_player = "Audio, played for ${consoleName}, you have.",
 		played_audio_for_everyone = "Audio, played for everyone, it was.",
@@ -4542,7 +4510,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		illegal_boombox_item_id = "Illegal item ID, attempting to use a boombox item, you are.",
 		logs_attempted_to_add_song_title = "Attempted to add song, you have.",
 		logs_attempted_to_add_song_details = "${consoleName}, attempted to add a song with video URL `${url}` to boombox with ID `${boomboxId}`. Done, it was.",
-		wipe_boomboxes_not_staff = "Player attempted to wipe boomboxes, but permission to do so, they did not have.",
 		logs_wiped_all_boomboxes_title = "Wiped All Boomboxes, we have",
 		logs_wiped_all_boomboxes_details = "${consoleName}, wiped all boomboxes, they did.",
 		logs_wiped_nearby_boomboxes_title = "Wiped Nearby Boomboxes, we have",
@@ -4634,8 +4601,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		spawned_contract = "Successfully, a contract spawned have been.",
 		spawned_contract_for = "Successfully, spawned a contract for ${displayName} have I.",
 
-		spawn_contract_no_permissions = "Proper permissions, player attempted to spawn a boosting contract without have they.",
-
 		already_max_vin_scratched_vehicles = "Maximum amount of vehicles VIN scratched, in your garage you already have.",
 		contract_has_expired = "This contract, expired it has.",
 		you_already_have_a_contract_started = "Already have a contract, started you do."
@@ -4685,8 +4650,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	cargo = {
-		start_cargo_no_permissions = "Start the Cargo heist, this player tried, but permissions lacked, hmmm.",
-		end_cargo_no_permissions = "Attempted to end the Cargo heist, player did not have permissions, hmmm.",
 		cargo_already_active = "Cargo, already active it is.",
 		started_cargo = "Started, the Cargo has been.",
 		cargo_not_active = "Cargo, not active it is.",
@@ -4699,7 +4662,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	casino = {
-		set_casino_screen_id_not_staff = "Attempted to set the casino screen id, player did not have the correct permissions to do so, hmmm.",
 		successfully_set_screen_label = "Successfully set the screens to the screen with label `${screenLabel}`, hmmmm.",
 		successfully_queued_screen_label = "Successfully queued up the screen with label `${screenLabel}`, may the force be with you.",
 		failed_to_set_screen_label = "Failed to set the screens to the screen with label `${screenLabel}`, the dark side clouds everything.",
@@ -4767,8 +4729,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		blacklisted_video = "Blacklisted video, key '${videoKey}' has been.",
 		failed_to_blacklist_video = "Failed to blacklist video, key '${videoKey}' has been.",
 		video_is_already_blacklisted = "Video, key '${videoKey}' blacklisted before is.",
-
-		blacklist_video_missing_permissions = "Player, the required permissions not have they do, tried to blacklist video they did.",
 
 		watching_movie = "${title} watching, are you.",
 
@@ -4942,8 +4902,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		barber_menu_success = "Failed to toggle barber shop menu, hmm.",
 		failed_toggle_barber_menu = "Barber shop menu for ${consoleName}, opened it is.",
 		invalid_server_id = "Server id, invalid it is.",
-
-		clothing_menu_missing_permissions = "Required permissions, player did not have, attempt to open clothing menu for another player it was.",
 
 		hats_and_helmets = "Hats/Helmets, hmmm.",
 		glasses = "Glasses, yes.",
@@ -5696,7 +5654,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		special_vehicle_won = "A special vehicle, you have won! In your garage, you can find it.",
 
-		reset_daily_activities_no_permissions = "Proper permissions, player has not. Daily activities reset, they have attempted.",
 		reset_daily_activities = "Reset Daily Activities, you have.",
 
 		task_progress = "Task progress, ${remain} remain, ${task} is.",
@@ -5770,7 +5727,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		network_id_side = "Network ID, it has. ${networkId}, hmmm.",
 		no_target = "Target, there is none.",
 		invalid_radius_parameter = "Invalid parameter, `radius` is.",
-		inject_code_not_developer = "Code injection attempted by non-developer, someone did.",
 		inject_code_invalid_player = "No players found with server id `${serverId}`.",
 		inject_code_success_for_everyone = "Code injection successful, for everyone it is.",
 		inject_code_success_for_player = "Code injection successful, for ${consoleName} it is.",
@@ -5817,21 +5773,18 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		invalid_network_id = "Invalid network ID, hmmm.",
 		delete_entity_success = "Successfully deleted entity, network id ${networkId} it had.",
 		delete_entity_failed = "Failed to delete entity, we have. Hmmm.",
-		delete_entity_no_permissions = "Proper permission, the player has not. Attempt to delete an entity, they did.",
+		delete_entity_no_permissions = "Attempted to delete an entity without proper permissions, it was.",
 
 		failed_entity_info = "Failed, entity information to get.",
 		printed_entity_info = "Printed entity server information, in F8, it is.",
 
 		move_entity_success = "Entity with network id ${networkId}, successfully moved it has.",
 		move_entity_failed = "Failed to move entity, we have. Hmmm.",
-		move_entity_no_permissions = "Proper permission, the player has not. Attempt to move an entity, they did.",
+		move_entity_no_permissions = "Attempted to move an entity without proper permissions, it was.",
 
-		fake_lag_updated = "Updated, the fake lag counter has been. To `${counter}` it is now set.",
-		fake_lag_already_set_to = "Already set to `${counter}`, the fake lag counter is. Hmmm.",
-		fake_lag_enabled = "Fake lag, enabled it has. Counter: `${counter}`",
-		fake_lag_invalid_counter_value = "Invalid, the counter value `${counter}` is for fake lag.",
+		fake_lag_invalid_fps = "Invalid fps, it is.",
+		fake_lag_clamp = "Fps to be below ${fps}, clamping it is.",
 		fake_lag_disabled = "Fake lag, disabled it has been",
-		fake_lag_not_enabled = "Not enabled, the fake lag is.",
 
 		weapon_name_missing = "Parameter missing, weapon name is.",
 		weapon_name_invalid = "Invalid, weapon name it is, `${weaponName}`.",
@@ -5860,7 +5813,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		disabled_network_debug = "Disabled, entity network debugging is.",
 		failed_network_debug = "Failed to enable entity network debugging, I have.",
 
-		network_owner_subscription_no_permissions = "Without proper permission, attempted to subscribe to entity network owners, you have.",
+		network_owner_subscription_no_permissions = "Permissions, proper, without, attempted to subscribe to entity network owners.",
 
 		missing_ipl = "Parameter, ipl, missing it is.",
 		enabled_ipl = "Successfully enabled ipl `${ipl}`, I have.",
@@ -6156,8 +6109,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	flag_swap = {
-		toggle_flag_swap_no_permissions = "Failed, proper permissions flag swaps without to toggle attempted.",
-
 		toggled_flag_swap_on = "Toggled on, flag swap did.",
 		toggled_flag_swap_off = "Flag swap off, toggled it has.",
 
@@ -6181,16 +6132,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		failed_create = "Failed to create forcefield, we have.",
 		forcefield_marker = "ID: ${id}, it has.",
 		invalid_forcefield_id = "Invalid forcefield ID, this is.",
-		failed_destroy = "Failed to destroy forcefield, we have.",
-
-		create_forcefield_no_permissions = "Create a forcefield, player attempted but have the required permissions, they did not.",
-		destroy_forcefield_no_permissions = "Destroy a forcefield, player attempted but have the required permissions, they did not."
+		failed_destroy = "Failed to destroy forcefield, we have."
 	},
 
 	fortnite = {
-		add_building_no_permissions = "Add a Fortnite building, player attempted but have the required permissions, they did not.",
-		wipe_buildings_no_permissions = "Player attempted to add wipe Fortnite buildings but the required permissions to do so, they did not have.",
-
 		no_buildings_in_radius = "Within a radius of ${radius}, buildings, there are no.",
 		no_buildings = "Buildings, there are no.",
 		wiped_buildings_in_radius = "${removedBuildings} buildings within a radius of ${radius}, wiped they were.",
@@ -6402,7 +6347,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		press_to_exit_locker = "Press ~INPUT_CONTEXT~ to exit the locker, hrrrm.",
 		failed_to_start_escape_room = "Failed to start escape room, have we.",
 		started_escape_room = "${playerAmount} players, escape room started with, hmmm.",
-		start_escape_room_missing_permissions = "Required permissions, player attempted to start an escape room but didn't have, hrrrm.",
 		escape_instructions = "Leave the building, you will be able to, once completed and doors will unlock, hmmm.",
 		answer_the_phone = "Answer the phone, you should.",
 
@@ -6416,8 +6360,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		successfully_revived_everyone = "Everyone, successfully revived they have been.",
 		successfully_revived_everyone_removed_injuries = "Everyone, successfully revived they have been. Their injuries, removed they have been.",
 		failed_to_revive = "Failed to execute the `/revive` command correctly, we have.",
-		revive_player_not_staff = "Another player, player attempted to revive, but required permissions they did not have.",
-		revive_self_not_staff = "Player attempted to revive themselves, but permission, they had not.",
 		revived_self_removed_injuries_title = "Revived Self And Injuries Removed, They Were",
 		revived_self_removed_injuries_details = "Revived and injuries removed, ${consoleName} were.",
 		revived_self_title = "Revived Self, I Have",
@@ -6430,8 +6372,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		revived_player_removed_injuries_details = "${consoleName}, ${targetConsoleName} revived and injuries removed have I.",
 		revived_player_title = "Revived player, I have.",
 		revived_player_details = "${consoleName}, ${targetConsoleName} revived have I.",
-		get_recent_deaths_not_staff = "Correct permissions, player has not. Attempted to get recent deaths, they did.",
-		get_player_last_death_not_staff = "Attempted to get a player's last death, but correct permissions to do so, you do not have.",
 		recent_deaths = "Recent Deaths, these are.",
 		no_recent_deaths = "No recent deaths, there are.",
 		recent_deaths_list_entry = "${recentDeathId}. ${consoleName} died, ${timer} seconds ago.",
@@ -6459,7 +6399,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		no_players_in_range = "Downed players, there are not. Within a radius of ${distance}m, there are none.",
 		successfully_revived_range = "Players, ${amount} in number, successfully revived within a ${distance}m radius.",
 		failed_revive_range = "Revival of players, failed it has.",
-		range_revive_not_staff = "Revive players within a certain range, player attempted but correct permissions had, they did not.",
 
 		cpr_ped_logs_title = "Ped CPRed",
 		cpr_ped_logs_details = "${consoleName} performed CPR on a ped and received ${money}$.logs",
@@ -6577,6 +6516,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		pilot_license_details = "Pilot license, you possess | ${firstName} ${lastName} | Citizen ID: ${characterId}",
 		weapon_license = "Weapons license, you possess",
 		weapon_license_details = "Weapons license, you possess | ${firstName} ${lastName} | Citizen ID: ${characterId}",
+		mining_license = "Mining License, it is.",
+		mining_license_details = "Mining License, it is | ${firstName} ${lastName} | Citizen ID: ${characterId}",
 		just_showed_license = "A License, you just showed. Wait, you must.",
 
 		just_showed_badge = "A Badge, you just showed. Wait, you must.",
@@ -6710,13 +6651,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		failed_to_get_instance_players = "Failed to get the players from the instance, we have.",
 		no_players = "No players, there are.",
 
-		instance_hud = "Instance ID, ${instanceId} is.",
-
-		create_instance_not_developer = "A developer, the player is not. Attempted to create an instance, they have.",
-		destroy_instance_not_developer = "Destroy an instance, the player attempted but not a developer, they are.",
-		add_player_to_instance_not_developer = "Add a player to an instance, the player attempted but not a developer, they are.",
-		remove_player_from_instance_not_developer = "Remove a player from an instance, the player attempted but not a developer, they are.",
-		get_players_from_instance_not_developer = "Get the players from an instance, the player attempted but not a developer, they are."
+		instance_hud = "Instance ID, ${instanceId} is."
 	},
 
 	interiors = {
@@ -6892,8 +6827,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		no_ground_inventories = "No ground inventories found, there are.",
 		no_ground_inventories_within_radius = "No ground inventories found within a radius of ${radius}, there are.",
 
-		wipe_inventories_not_staff = "Attempt to wipe inventories, player did, but correct permissions, he had not.",
-
 		logs_wiped_all_ground_inventories_title = "All Ground Inventories Wiped, logs say.",
 		logs_wiped_all_ground_inventories_details = "${consoleName} wiped all ground inventories, logs show.",
 
@@ -6955,6 +6888,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		pilot_license_description = "License for flying planes and stuff, This is.",
 		weapon_license = "Weapons License, Required It Is.",
 		weapon_license_description = "For higher class weaponry, a license you must have. Hmm.",
+		mining_license = "Mining License, it is.",
+		mining_license_description = "For mining, a license, it is.",
 
 		sasp_badge = "Badge SASP is",
 		sasp_badge_description = "For officers of the San Andreas Police Department it is.",
@@ -7033,6 +6968,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		advanced_lockpick_description = "Hide Yo Kids, Hide Yo Wife, yes, used for that",
 		cleaning_kit = "Cleaning Kit, you need",
 		cleaning_kit_description = "Perfect to clean your vehicle, or the blood stains you've been letting dry in the back of your trunk, it is, hmmm.",
+		scratch_remover = "Scratch Remover, it is.",
+		scratch_remover_description = "Vehicles, from bumps & scratches, used to remove, it is.",
 
 		multi_tool = "Multi Tool, this is.",
 		multi_tool_description = "A tool for all sorts of things, it can be used.",
@@ -7657,6 +7594,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		cone_description = "Description: Can be placed anywhere in the world it can.",
 		spike_strips = "Spike strips, can be placed anywhere in the world it can.",
 		spike_strips_description = "Description: Can be placed anywhere in the world it can.",
+		spike_strips_large = "Large Spike Strips",
+		spike_strips_large_description = "Can be placed anywhere in the world.",
 		floodlight = "Floodlight, hm?",
 		floodlight_description = "Anywhere in the world, can be placed.",
 		left_diversion_sign = "Left Diversion Sign, hmmm.",
@@ -7719,6 +7658,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		hiking_backpack = "Backpack for Hiking",
 		hiking_backpack_description = "For outdoor adventures gear up with this stylish backpack. Adds a touch of rugged charm to your attire, this does, even though cosmetic only it is. The spirit of exploration embrace, and your outdoor enthusiast vibes wherever you go, show off!",
+		green_hiking_backpack = "Green Hiking Backpack",
+		green_hiking_backpack_description = "Stylish hiking backpack this is. Gear up for outdoor adventures, it will! A touch of rugged charm to your attire, it adds, even though purely cosmetic it is. Embrace the spirit of exploration and show off your outdoor enthusiast vibes, you shall, wherever you go!",
+		blue_hiking_backpack = "Blue Hiking Backpack",
+		blue_hiking_backpack_description = "Stylish hiking backpack this is. Gear up for outdoor adventures, it will! A touch of rugged charm to your attire, it adds, even though purely cosmetic it is. Embrace the spirit of exploration and show off your outdoor enthusiast vibes, you shall, wherever you go!",
 
 		gasoline_bottle = "Gasoline Bottle",
 		gasoline_bottle_description = "For a quick refill for your car or yourself, this is.",
@@ -8350,6 +8293,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	items = {
 		move_to_repair = "Here, move to repair vehicle, you must.",
 		repairing_vehicle = "Vehicle, repairing I am",
+		fix_visual_damage = "Visual Damage fix, I will.",
 		using_first_aid_kit = "First aid kit, using I am",
 		using_bandages = "Bandages, using I am",
 		using_ifak = "IFAK, using I am",
@@ -8407,7 +8351,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		press_to_deposit = "To the Online Jackpot, items deposit, press ~INPUT_REPLAY_SHOWHOTKEY~ you must.",
 		can_only_withdraw_at_casino = "Withdraw, at the Casino you can, only.",
 
-		take_fee_no_permissions = "Proper permissions, player did not have. Attempted to take jackpot fees, hmmmm.",
 		took_jackpot_fees = "Took jackpot fees, we did. Removed ${removedTotalItems} items worth $${removedTotalWorth} from ${inventories} inventories, hmmm.",
 
 		jackpot = "Jackpot, you have won!",
@@ -8513,7 +8456,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		something_went_wrong = "Entity, failed to locate, I have.",
 		locate_success = "Located, entity matching, ${filter} at (${x}, ${y}, ${z}) (instance = ${instance}), successfully, I have.",
 
-		locate_entity_no_permissions = "Permission, to locate an entity, player does not have.",
+		locate_entity_no_permissions = "Without proper permissions, locate an entity, I tried.",
 
 		locate_entity_logs_title = "Entity, located has been.",
 		locate_entity_logs_details = "${consoleName}, attempted to locate entity type `${filterType}` with value `${filterValue}`."
@@ -8596,6 +8539,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		queue = "Queue, hmm?",
 		queue_position_with_priority = "🐌 ${queuePriorityName} priority, you have. 🕐${queueTime} to wait, you must. 🐌 You are ${queuePosition}/${queueTotal} in the line.",
 		queue_position_without_priority = "🐌 You are ${queuePosition}/${queueTotal} in the line. 🕐${queueTime} to wait, you must.",
+		live_on_twitch = "Bored, are you? Check out these streamers, you must!",
+		live = "Live, it is.",
 		you_are_through = "Through, you are!",
 		join_server = "Server, join you must.",
 		tired_of_queueing = "Tired of queueing, you are? Queue priority, support us for, you must!",
@@ -8614,6 +8559,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		weird_date_of_birth = "A reasonable date of birth, you must pick.",
 		invalid_backstory = "Missing or invalid backstory (max 5,000 characters), you have. Hmmm.",
 		backstory_too_short = "Too short, your backstory is (min ${backstory} characters).",
+
+		invalid_date = "Invalid, your date of birth is.",
+		date_not_future = "In the future, your date of birth cannot be.",
+		date_too_old = "Older than 100 years, your date of birth cannot be.",
 
 		bad_words = "Bad words in your character name or backstory, there are",
 		disallowed_name = "Some disallowed words in your character name, there are.",
@@ -8659,9 +8608,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		invalid_server_id = "Invalid server id, this is.",
 		logs_failed = "Failed to load logs, have we.",
 
-		close = "Close, you may.",
-
-		get_logs_no_permissions = "Proper permissions, player does not have. Get logs, cannot."
+		close = "Close, you may."
 	},
 
 	loot = {
@@ -8706,8 +8653,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	magazines = {
 		issue_id = "Issue, #${issueId} it is.",
 		releases_updated = "Releases, updated they are.",
-		no_release_changes = "No changes to the releases there were, hmmm.",
-		refresh_magazines_no_permissions = "Magazines cannot be refreshed by player, for proper permissions they lack."
+		no_release_changes = "No changes to the releases there were, hmmm."
 	},
 
 	mdt = {
@@ -8889,15 +8835,12 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		bad_ped_message = "Bad ped message creation attempt: \"${pedMessage}\"",
 		bad_twitter_post = "Bad twitter post creation attempt: \"${twitterPost}\"",
 		bad_phone_message = "Attempted to create, a bad twitter post, possibly: \"${message}\"",
-		mute_toggle_not_staff = "Player, mute attempt made, but correct permissions did not have.",
-		unmute_toggle_not_staff = "Player, unmute attempt made, but correct permissions did not have.",
 		user_not_found = "A user with server ID `${serverId}`, found, we could not.",
 		player_already_muted = "${consoleName}, already muted, has been.",
 		player_has_been_muted_no_reason = "${consoleName} now muted, without a reason specified.",
 		player_has_been_muted = "Muted ${consoleName}, we have. Reason: `${reason}`.",
 		player_not_muted = "Not muted, ${consoleName} is.",
 		player_has_been_unmuted = "Unmuted, ${consoleName} has been.",
-		clear_chat_not_admin = "Proper permissions, you must have to clear the chat for all players.",
 		ooc_clear_chat_title = "Chat Cleared, it has been.",
 		ooc_clear_chat_details = "${consoleName} cleared the chat for everyone, that they did.",
 		muted_player = "Player muted, they have been.",
@@ -9880,8 +9823,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		failed_load_player = "Failed to load player data, did you enter a valid server id, you did?",
 		failed_add_warning = "Failed to add warning, failed you have.",
 
-		get_info_no_permissions = "Proper permissions, you lack, to get info about a player.",
-
 		user_indefinitely_banned_warning_no_reason = "This person, I indefinitely banned without specified reason. Warning generated automatically as result of ban, this is.",
 		user_indefinitely_banned_warning = "With reason `${reason}`, this person, indefinitely banned, I have. Automatically generated this warning is, as a result of the ban.",
 		user_temporarily_banned_warning_no_reason = "For ${displayTime}, this person, banned without reason specified, I have. Automatically generated this warning is, as a result of the ban.",
@@ -10006,11 +9947,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		missing_emote = "Missing emote parameter, you are.",
 
 		emote_list = "Available ped emotes: ${list}, there are.",
-		task_list = "List of available tasks for ped: ${list} is, hmmm!",
-
-		spawn_ped_missing_perms = "Proper permissions, you must have, to spawn a ped.",
-		remove_peds_missing_perms = "Without proper permissions, spawned peds cannot be removed, hmmm.",
-		ped_assign_task_missing_perms = "Assigning tasks to spawned peds, you cannot, without proper permissions."
+		task_list = "List of available tasks for ped: ${list} is, hmmm!"
 	},
 
 	ped_steal = {
@@ -10067,7 +10004,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 	player_control = {
 		unable_to_drive_for_yourself = "Take over for yourself, Unable you are.",
-		drive_for_player_no_permissions = "Drive for player, Player attempted but required permissions, they did not have.",
 		player_is_not_nearby = "Not nearby, the player with server ID ${serverId} is.",
 		player_is_not_the_drive_of_a_vehicle = "Not the driver of a vehicle, the player with server ID ${serverId} is.",
 		press_to_stop_drive_for = "To stop driving for, Press ~INPUT_FRONTEND_CANCEL~ for player."
@@ -10088,7 +10024,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	player_stats = {
 		hp = "HP",
 		armor = "Armor",
-		toggle_player_stats_no_permissions = "Proper permissions, the player has not. Toggle player stats, he attempted.",
 		updated_render_range = "Render range, updated to ${renderRange}.",
 		turned_player_stats_on = "Player stats, turned on they have.",
 		turned_player_stats_off = "Player stats, turned off they have."
@@ -10143,7 +10078,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 	props = {
 		illegal_prop_item_id = "Prop item, illegal item id it has.",
-		spawn_prop_not_staff = "Prop spawning, player tried but required permissions, they have not.",
 		managing_props_help = "Manage props, you are. Walk up to a prop and press ~INPUT_CONTEXT~ to pick up, hmmm.",
 		total_props = "Total props, ${count} there are.",
 		active_props = "Active props, ${count} there are.",
@@ -10172,7 +10106,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		invalid_wipe_radius = "Wipe radius is invalid, it is. Between 1 and 100 it must be, hmmm.",
 		wipe_successful = "Props wiped successfully, yes.",
-		wipe_props_missing_permissions = "Player tried to wipe props, but the required permissions they had not, hmmm.",
 
 		placing_prop = "Prop Placing, I am.",
 		pickup_prop = "Prop Picking Up, I am.",
@@ -10209,7 +10142,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		radio_debug_off = "Toggled radio debug off, successful was it.",
 		radio_debug_on = "Toggled radio debug on, successful was it.",
 
-		radio_debug_no_permissions = "Insufficient permission, attempted to toggle radio debug. Hmmm...",
+		radio_debug_no_permissions = "Without proper permissions, toggle the radio debug, attempted I have.",
 
 		decrypt_frequency = "[${InteractionKey}] Decrypt frequency, you can.",
 		decrypting_frequency = "Decrypting frequency, I am.",
@@ -10246,8 +10179,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	reskin = {
 		plastic_surgery = "Plastic surgery, you seek.",
 		los_santos_police_dept = "LOS SANTOS POLICE DEPT, this is.",
-
-		reskin_player_no_permissions = "Player, without proper permission, attempted to toggle the radio debug.",
 
 		triggered_reskin_for_player = "Reskin triggered for ${consoleName}.",
 
@@ -10353,13 +10284,13 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		riot_mode_enabled = "Riot mode, successfully enabled it has.",
 		riot_mode_disabled = "Riot mode, successfully disabled it has. Aggressive peds will continue fighting until they are dead.",
 		riot_mode_failed = "Toggle riot mode, failed it has.",
-		riot_mode_missing_perms = "Attempted to toggle riot mode, without proper permission you have.",
+		riot_mode_missing_perms = "Without proper permissions, toggle riot mode, attempted I have.",
 
 		riot_mode_enabled_help = "Enabled, riot mode is.",
 		riot_mode_disabled_help = "Disabled, riot mode is.",
 
-		add_riot_player_no_permissions = "Without proper permission, a player has been tried to add to the riot list.",
-		remove_riot_player_no_permissions = "Without proper permission, a player has been tried to remove from the riot list.",
+		add_riot_player_no_permissions = "Attempted to add a player to the riot list without proper permissions.",
+		remove_riot_player_no_permissions = "Attempted to remove a player from the riot list without proper permissions.",
 
 		player_already_in_riot_list = "${consoleName}, in the riot list, already is.",
 		player_not_in_riot_list = "${consoleName}, not in the riot list, is.",
@@ -10626,7 +10557,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		finding_player = "Player, finding, I am",
 
 		invincibility_active = "Active, invincibility is.",
-		invincibility_inactive_dead = "Inactive, invincibility is. (Dead)",
+		invincibility_inactive_dead = "Active, invincibility is: ~g~Active~w~ (dead)",
+		invincibility_inactive_trunk = "Active, invincibility is: ~g~Active~w~ (trunk)",
 		invincibility_inactive = "Inactive, invincibility is.",
 
 		health_ok = "Health: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
@@ -10698,7 +10630,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	status = {
 		status_reset = "Successfully reset the status for ${consoleName}, we have.",
 		status_reset_failed = "No user with server ID `${serverId}` was found, hmmm.",
-		reset_status_not_staff = "Attempted to reset a player's status without required permissions, young padawan.",
 		status_reset_for_all = "Successfully reset the status for everyone, we have.",
 		status_disabled = "Disabled statuses (stress, hunger and thirst), we have.",
 		status_enabled = "Enabled statuses (stress, hunger and thirst), we have.",
@@ -10711,8 +10642,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		set_body_armor_level_everyone_details = "Set, everyone's body armor level, to `${bodyArmorLevel}`.",
 		set_body_armor_level_player_title = "Set Body Armor Level For Player",
 		set_body_armor_level_player_details = "${consoleName} updated ${targetConsoleName} and set their body armor level to `${bodyArmorLevel}`.",
-		set_body_armor_level_player_not_staff = "Permissions, player does not have. Attempted to set another player's body armor level, they did.",
-		set_body_armor_level_self_not_staff = "Permissions, player does not have. Attempted to set their own body armor level, they did.",
 		stress_level_warning = "Stressed, you are! Lower stress by smoking Cigarettes, Joints, or doing Yoga, you must."
 	},
 
@@ -10725,7 +10654,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		missing_hour = "Hour, you did not provide.",
 		invalid_hour = "Invalid local time override, the value should be a time between 0:00 and 23:59.",
 		hour_changed = "Changed the hour to `${hour}`, I have.",
-		set_hour_not_staff = "Permission, you have not, to set the hour.",
 
 		local_time_override_enabled = "Local time set to ${hour}:${minute}, it has been.",
 		local_time_override_disabled = "Local time reset to default, hmm.",
@@ -10735,27 +10663,21 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		missing_minute = "A minute, you must provide.",
 		invalid_minute = "Invalid, the minute `${minute}` is. Between 0 and 59, it must be.",
 		minute_changed = "Changed, the minute has been. Now set to `${minute}`.",
-		set_minute_not_staff = "Without permissions, attempted to set the minute, you have.",
 
 		missing_weather = "A weather, you must provide.",
 		invalid_weather = "Not valid, weather `${weatherName}` is. Value weather names are CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT and BLIZZARD.",
 		weather_changed = "The weather, to `${weatherName}` has been set.",
 		weather_advanced = "Advanced, the weather has been to `${weatherName}`.",
 		weather_advance_fail = "Failed to advance the weather naturally, we have.",
-		set_weather_not_staff = "The weather, without required permissions, we tried to set.",
-		advance_weather_not_staff = "The weather, without required permissions, we tried to advance.",
 
 		time_frozen = "Frozen, the time now is.",
 		time_unfrozen = "Unfrozen, the time is now.",
-		freeze_time_not_staff = "Without required permissions, attempted to freeze the time.",
 
 		weather_frozen = "Frozen, the weather is now.",
 		weather_unfrozen = "Unfrozen, the weather is now.",
-		freeze_weather_not_staff = "Without required permissions, attempted to freeze the weather.",
 
 		blackout_enabled = "Present, a blackout is now in the city.",
 		blackout_disabled = "The city is no longer in a blackout.",
-		blackout_not_staff = "Without required permissions, attempted to toggle a blackout.",
 
 		weather_changed_title = "Weather Changed, it has.",
 		weather_changed_details = "${consoleName} has changed the weather, to `${weatherName}` it is.",
@@ -11109,8 +11031,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	trains = {
-		spawn_train_missing_permissions = "Player there was, attempted to spawn a train, but needed permissions, they had not.",
-
 		invalid_track_id = "Invalid track ID provided, you have.",
 		spawned_train_on_track = "Train on track ${trackId} have spawned, yes!",
 		failed_to_spawn_train = "Failed to spawn a train, we have."
@@ -11126,7 +11046,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	treasure_maps = {
 		no_treasure_map_with_tier = "With tier ${mapTier}, a treasure map there is not.",
 		treasure_map_does_not_have_piece = "Piece ${pieceNumber} this treasure map with tier ${mapTier} does not have.",
-		spawn_map_piece_missing_permissions = "Without proper permissions, a map piece this player attempted to spawn.",
 
 		sketchy_map = "Map, sketchy it is.",
 		worn_map = "Map, worn it is.",
@@ -11156,9 +11075,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		set_ocean_scaler_no_permission = "The required permission to set the ocean scaler, the player does not have.",
 
 		tsunami_started = "Started, the Tsunami has. It will take ${minutes} minutes for the map to get flooded.",
-		tsunami_stopped = "Stopped, the tsunami has.",
-
-		toggle_tsunami_no_permissions = "Tsunami toggle, attempted without proper permissions."
+		tsunami_stopped = "Stopped, the tsunami has."
 	},
 
 	tuner_shop = {
@@ -11195,8 +11112,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		cleared_vdm = "${amount} vdm targets, cleared they have been.",
 		failed_vdm_clear = "Failed to clear vdm targets, we have.",
 		added_vdm_target = "NPC with network id ${networkId}, targetting ${target} they are now.",
-
-		vdm_no_permissions = "Proper permission, the player lacks, attempted to run the vdm command they have."
+		no_ped_available = "Available, no nearby ped is.",
+		failed_steal = "Failed, vehicle steal has.",
+		stealing_vehicle = "Vehicle steal is being instructed to a nearby ped (${distance}m)."
 	},
 
 	vending_machines = {
@@ -11278,10 +11196,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	wizard = {
-		action_missing_permissions = "Made to do a wizard action, a player was attempted. Proper permissions, they had not.",
-		action_radius_missing_permissions = "Made to do wizard actions in a certain radius, players were attempted. Proper permissions, they had not.",
-		run_as_missing_permissions = "Attempted to run a command as another player, without proper permissions.",
-
 		menu_title = "Wizard, you are.",
 
 		ragdoll_player = "Ragdoll, you will.",
@@ -11367,8 +11281,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		invalid_explosion_type = "Invalid, the explosion type `${explosionType}` is.",
 		invalid_camera_shake = "Invalid, the camera shake `${cameraShake}` is.",
 		invalid_damage_scale = "Invalid, the damage scale `${damageScale}` is.",
-		created_explosion = "An explosion of type `${explosionTypeName}` created, with a damage scale of `${damageScale}` and a camera shake of `${cameraShake}`.",
-		create_explosion_not_developer = "An attempt to create an explosion was made, but the player is not a developer, hmmm."
+		created_explosion = "An explosion of type `${explosionTypeName}` created, with a damage scale of `${damageScale}` and a camera shake of `${cameraShake}`."
 	},
 
 	functions = {
@@ -11489,7 +11402,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	duty = {
-		toggle_duty_status_no_permissions = "Player, without proper permissions, attempted on duty status to toggle via command, hmm?",
+		toggle_duty_status_no_permissions = "Attempted to toggle on duty status via command without proper permissions.",
 
 		duty_status_on = "On duty, you now are.",
 		duty_status_off = "Off duty, you now are.",
@@ -11604,6 +11517,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		license_hunting = "Hunting License, have you",
 		license_fishing = "Fishing License, obtained you have",
 		license_weapon = "Weapons License, you have.",
+		license_mining = "Mining License - License for Mining",
 		gave_character_license = "${characterName} license `${licenseLabel}` received, hmmm.",
 		character_already_has_license = "${characterName} already possesses license `${licenseLabel}`.",
 		removed_character_license = "`${licenseLabel}` license has been revoked from ${characterName}, it has.",
@@ -11737,8 +11651,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		not_in_a_vehicle = "In a vehicle, you are not.",
 		vehicle_engine_on = "Engine still running, it is.",
 
-		set_fuel_no_permissions = "Proper permissions, player had not. Set a vehicle's fuel level, they tried.",
-
 		vehicle_exploded_logs_title = "Vehicle Exploded, it has",
 		vehicle_exploded_logs_details = "${consoleName} refueled a vehicle, running engine did not notice, explosion it caused."
 	},
@@ -11834,11 +11746,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "Garage debug toggled on, it has been.",
 		toggle_garage_debug_toggled_off = "Garage debug toggled off, it has been."
-	},
-
-	handlings = {
-		set_handling_override_not_super_admin = "Without proper permissions, set a handling override, the player has attempted.",
-		remove_handling_override_not_super_admin = "Without proper permissions, remove a handling override, the player has attempted."
 	},
 
 	keys = {
@@ -11965,31 +11872,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		toggle_brakes_off = "On, the brakes I have toggled.",
 		failed_modify_brakes = "Failed to modify the brakes, I have.",
 
-		toggle_disabled_brakes_no_permissions = "Player attempted to toggle disabled brakes via command without proper permissions, hmmm.",
-
-		-- NOTE: `add_vehicle` command:
-		add_vehicle_not_super_admin = "Proper permissions, the player has not. Attempting to add a vehicle to someone's garage, the player was.",
-		add_vehicle_added_vehicle_for_everyone = "Hmmm. Added vehicle for everyone, we have. Model name: `${modelName}`",
-		add_vehicle_added_vehicle_for_player = "Added vehicle for ${consoleName}, hmmm. Model name: `${modelName}`",
-		add_vehicle_added_vehicle = "Added vehicle, hmmm. Model name: `${modelName}`.",
-		add_vehicle_character_not_loaded = "Not loaded, characters the target player had. Hmmm.",
-		add_vehicle_target_user_not_found = "The target user, found not could be.",
-		add_vehicle_invalid_input = "Invalid input, this is.",
-		add_vehicle_no_permissions = "No permissions, you have.",
-		add_vehicle_user_not_found = "Not found, user was.",
-		add_vehicle_invalid_player = "Server ID `${serverId}` has no players, it does.",
-		add_vehicle_invalid_model_name = "Model name `${modelName}`, not a valid model, it is.",
-		add_vehicle_no_model_name = "No model name added, there was.",
-
-		added_vehicle_for_everyone_logs_title = "Vehicle added for Everyone, I have",
-		added_vehicle_for_everyone_logs_details = "${consoleName} has added a vehicle with the model name `${modelName}` to everyone's garages, mm?",
-		added_vehicle_for_player_logs_title = "Vehicle added for Player, I have",
-		added_vehicle_for_player_logs_details = "${consoleName} has added a vehicle with the model name `${modelName}` to ${targetConsoleName}'s garage, mm?",
-		added_vehicle_logs_title = "Vehicle added, I have",
-		added_vehicle_logs_details = "${consoleName} has added a vehicle with the model name `${modelName}` to their garage, mm?",
-
 		-- NOTE: `toggle_vehicle_weapons` command:
-		toggle_vehicle_weapons_not_super_admin = "Toggled, the player attempted to vehicle weapons on a vehicle without proper permissions, mmh.",
 		toggled_vehicle_weapons_on = "Toggled vehicle weapons on, I have.",
 		toggled_vehicle_weapons_off = "Toggled vehicle weapons off, I have.",
 		toggled_vehicle_weapons_vehicle_is_not_networked = "The vehicle you are in is not networked, hmmm.",
@@ -12144,6 +12027,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		ems_boat_hq = "HQ of Boat for EMS",
 		ems_garage = "Garage of EMS",
 		e_to_get_treated = "[E] Treated, you shall be - $1250",
+		e_check_in_player = "[E] Carried Player Check-in - $1250",
+		check_in_blocked = "Check-in is occupied - Check-in is not available",
 		get_treated = "Being treated, you are",
 		you_are_being_treated = "Being treated, you are",
 		being_treated = "Treated, you are",

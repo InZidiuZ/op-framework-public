@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 18 (do not change)
+-- AUTO LOCALES: 19 (do not change)
 
 OP.Global.Locales.Languages["da-DK"] = {
 	-- configuration settings for language
@@ -61,7 +61,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		you_are_not_being_carried = "Du bliver i øjeblikket ikke båret.",
 		successfully_uncarried = "Tvungen stop af bæreprocessen gennemført med succes.",
 		failed_uncarried = "Kunne ikke stoppe bæreprocessen.",
-		uncarry_missing_permissions = "Forsøgte at stoppe bæreprocessen uden de nødvendige tilladelser.",
+		uncarry_missing_permissions = "Forsøgte at stoppe bæringen uden korrekte tilladelser.",
 
 		uncarry_logs_title = "Tvungen stop af bæreproces",
 		uncarry_logs_details = "${consoleName} tvang ${targetName} til at stoppe med at bære dem.",
@@ -78,7 +78,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 	-- base/*
 	admin = {
-		feature_toggle_not_admin = "Forsøgte at aktivere eller deaktivere '${featureName}' for sig selv eller en anden, men havde ikke de nødvendige tilladelser.",
 		feature_toggle_activated_logs_title = "Fjernaktiverede funktion",
 		feature_toggle_activated_logs_details_state = "${consoleName} aktiverede/deaktiverede `${featureName}` ${newState} for spilleren ${targetConsoleName}.",
 		feature_toggle_activated_all_logs_title = "Fjernstyrede funktioner for alle",
@@ -101,9 +100,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		failed_to_spawn_vehicle = "Fejl ved at spawn køretøj.",
 		spawned_vehicle_for_player = "Køretøjet `${modelName}` blev succesfuldt spawnet til ${displayName}.",
 		spawned_vehicle_for_everyone = "Lykkedes i at spawne `${modelName}` for alle.",
-		spawn_vehicle_no_permissions = "Spilleren forsøgte at spawn et køretøj, men havde ikke de nødvendige tilladelser til at gøre det.",
-		replace_vehicle_no_permissions = "En spiller forsøgte at erstatte deres køretøj, men havde ikke tilladelse til det.",
-		create_vehicle_no_permissions = "En spiller forsøgte at oprette et køretøj, men havde ikke tilladelse til det.",
 		spawned_vehicle_for_self_title = "Spawnet køretøj",
 		spawned_vehicle_for_self_details = "${consoleName} spawnet et køretøj med modelnavn `${modelName}`.",
 		spawned_vehicle_for_player_title = "Spawnet køretøj til spiller",
@@ -113,6 +109,26 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		vehicle_created = "Køretøjet blev oprettet med succes.",
 		failed_vehicle_creation = "Kunne ikke oprette køretøjet.",
+
+		-- NOTE: `add_vehicle` command:
+		add_vehicle_added_vehicle_for_everyone = "Tilføjede køretøj med modelnavnet `${modelName}` til alle.",
+		add_vehicle_added_vehicle_for_player = "Tilføjede køretøj med modelnavnet `${modelName}` til ${consoleName}.",
+		add_vehicle_added_vehicle = "Tilføjede køretøj med modelnavnet `${modelName}`.",
+		add_vehicle_character_not_loaded = "Den målrettede spiller havde ingen indlæste karakterer.",
+		add_vehicle_target_user_not_found = "Den målrettede bruger kunne ikke findes.",
+		add_vehicle_invalid_input = "Ugyldig indtastning.",
+		add_vehicle_no_permissions = "Ingen tilladelser.",
+		add_vehicle_user_not_found = "Bruger blev ikke fundet.",
+		add_vehicle_invalid_player = "Der var ingen spillere med server ID `${serverId}`.",
+		add_vehicle_invalid_model_name = "Modelnavnet `${modelName}` er ikke en gyldig model.",
+		add_vehicle_no_model_name = "Intet modelnavn tilføjet.",
+
+		added_vehicle_for_everyone_logs_title = "Tilføjet køretøj til alle",
+		added_vehicle_for_everyone_logs_details = "${consoleName} tilføjede et køretøj med modelnavnet `${modelName}` til alles garager.",
+		added_vehicle_for_player_logs_title = "Tilføjede køretøj til spiller",
+		added_vehicle_for_player_logs_details = "${consoleName} tilføjede et køretøj med modelnavnet `${modelName}` til ${targetConsoleName}'s garage.",
+		added_vehicle_logs_title = "Tilføjede køretøj",
+		added_vehicle_logs_details = "${consoleName} tilføjede et køretøj med modelnavnet `${modelName}` til deres garage.",
 
 		invalid_amount = "Ugyldigt beløb.",
 
@@ -160,8 +176,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		removed_bank_from_player = "Fjernet $${amount} fra ${targetConsoleName}s bankkonto.",
 		removed_bank_from_everyone = "Fjernet $${amount} fra alles bankkonto.",
 
-		money_event_not_admin = "Forsøgte at aktivere pengearrangementet `${moneyEvent}` uden at have administratorrettigheder.",
-
 		spawned_item_title = "Spawnet genstand",
 		spawned_item_details = "${consoleName} spawnet ${amount}x `${itemName}` for sig selv.",
 		spawned_item_for_player_title = "Genstand spawnet for spiller",
@@ -178,7 +192,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		announcement_logs_title = "Serverbred meddelelse",
 		announcement_logs_details = "${consoleName} sendte følgende besked til hele serveren: `${announcementMessage}`",
-		announcement_not_admin = "Forsøgte at sende en personalemeddelelse.",
 
 		posted_announcement = "Indlæg besked meddelse.",
 		posted_announcement_locale = "Indlæg besked meddelse fra locale.",
@@ -188,7 +201,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		staff_title = "PERSONALE ${staffName}",
 		staff_message_logs_title = "Personalebesked",
 		staff_message_logs_details = "${consoleName} sendte følgende besked i personalechat: `${staffMessage}`",
-		staff_message_illegal = "Spiller forsøgte at sende en besked i personalechat, men var ikke personale.",
 
 		staff_pm_title = "PERSONALE PM ${transmissionTitle}",
 		staff_pm_logs_title = "Personale PM",
@@ -218,7 +230,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		missing_valid_license_identifier_parameter = "Mangler en gyldig 'licenseIdentifier' parameter.",
 
-		illegal_entity_wipe = "Spiller forsøgte at slette entities, men havde ikke tilladelse til det.",
 		wiped_entities = "Slettede enheder. Slettet ${deletedEntities} netværksenheder.",
 		wipe_entities_logs_title = "Slettet Entities",
 		wipe_entities_logs_details = "${consoleName} udførte en entity-sletning med følgende konfiguration: distance = `${distance}`, ignoreLocalEntities = `${ignoreLocalEntities}`, modelName = `${modelName}`",
@@ -261,12 +272,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		ban_quadrouple_kill = "😨 QUADROUPLE-drab!!!!!!",
 		ban_killing_spree = "🤯 MORDSPREE (${count})!!!!!!",
 
-		kick_player_not_staff = "Der forsøges at sparke en spiller uden de nødvendige tilladelser.",
-		ban_player_not_staff = "Forsøgt at banlyse en spiller uden de nødvendige tilladelser.",
-
-		hide_staff_not_staff = "Forsøgt at skjule deres staff-status uden de nødvendige tilladelser.",
-		toggle_staff_not_staff = "Forsøgt at ændre muligheden for staff-tilgængelighed uden de nødvendige tilladelser.",
-
 		logs_hide_staff_title = "Staff Skjult",
 		logs_hide_staff_hidden_details = "${consoleName} har gjort deres staff-status skjult.",
 		logs_hide_staff_shown_details = "${consoleName} har gjort deres staff-status synlig.",
@@ -282,10 +287,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		staff_feature_unavailable = "Denne funktion er utilgængelig, mens din stabilitet er slået fra.",
 
-		toggle_player_track_no_permissions = "Der blev forsøgt at skifte spiller-sporing uden tilstrækkelige tilladelser.",
-		set_job_no_permissions = "Der blev forsøgt at tildele et job uden tilstrækkelige tilladelser.",
-		toggle_reflection_no_permissions = "Forsøgte at skifte skadeafspejling uden tilstrækkelige tilladelser.",
-
 		success_enable_reflection = "Skadeafspejling aktiveret med succes.",
 		success_disable_reflection = "Skadeafspejling deaktiveret med succes.",
 		failed_toggle_reflection = "Kunne ikke skifte skadeafspejling.",
@@ -296,12 +297,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		headache_logs_title = "Udløst hovedpine",
 		headache_logs_details = "${consoleName} har udløst hovedpine for ${targetConsoleName}.",
-		trigger_headache_no_permissions = "Forsøgt at udløse hovedpine uden tilstrækkelige tilladelser.",
 
 		super_jump_logs_title = "Aktiveret Super Hop",
 		super_jump_logs_details_on = "${consoleName} har aktiveret deres super hop.",
 		super_jump_logs_details_off = "${consoleName} har deaktiveret deres super hop.",
-		toggle_super_jump_no_permissions = "Forsøgte at aktivere deres super hop uden korrekte tilladelser.",
 
 		success_trigger_headache = "Hovedpine udløst succesfuldt for ${playerName}.",
 		failed_trigger_headache = "Udløsning af hovedpine mislykkedes.",
@@ -311,7 +310,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		reset_spawn_success = "Spawnpoint blev nulstillet med succes.",
 		reset_spawn_failed = "Kunne ikke nulstille spawnpoint.",
 
-		protective_mode_not_staff = "Forsøgte at ændre serverens beskyttelses-tilstand uden korrekte tilladelser.",
 		protective_mode_toggled_on = "Serverens beskyttelses-tilstand er nu blevet aktiveret. Krævet antal af spilletid for at kunne tilslutte sig serveren er blevet sat til `${playtime}`.",
 		protective_mode_toggled_off = "Serverens beskyttelses-tilstand er nu blevet deaktiveret.",
 		protective_mode_already_on = "Serverens beskyttelses-tilstand er allerede aktiveret med krævet spilletid på `${playtime}`.",
@@ -320,13 +318,11 @@ OP.Global.Locales.Languages["da-DK"] = {
 		logs_protective_mode_on = "${consoleName} aktiverede serverens beskyttelses tilstand med påkrævet spilletid: `${playtime}`.",
 		logs_protective_mode_off = "${consoleName} deaktiverede serverens beskyttelses tilstand.",
 
-		spawn_item_not_staff = "Der blev forsøgt at tilgå spawn item funktionen uden de nødvendige tilladelser",
 		no_item_name = "Intet itemnavn angivet.",
 		invalid_item_name = "${itemName} er ikke et gyldigt itemnavn.",
 		item_spawned = "Spawnede ${amount}x `${itemName}` for ${consoleName}.",
 		item_spawned_for_everyone = "Spawnet ${amount}x `${itemName}` til alle.",
 
-		set_warning_message_not_staff = "Forsøgte at ændre serverens advarsel uden de rette tilladelser.",
 		warning_message_set_to = "Advarslen er blevet ændret til `${warningMessage}`.",
 		warning_message_removed = "Advarslen er blevet fjernet.",
 		warning_message_error = "Der opstod en fejl under forsøget på at ændre advarslen.",
@@ -368,6 +364,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 		evidence_view_details_on = "${consoleName} har slået avanceret Bevismateriale visning til.",
 		evidence_view_details_off = "${consoleName} har slået avanceret bevismateriale visning fra.",
 
+		tracker_turned_on = "Din tracker er blevet slået til.",
+		tracker_turned_off = "Din tracker er blevet slået fra.",
+
 		report_muted_no_reason = "Du er blevet mutet fra rapport kommandoen uden angivelse af årsag.",
 		report_muted = "Du er blevet mutet fra rapport kommandoen på grund af `${reason}`.",
 
@@ -388,9 +387,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		teleported_to_waypoint_logs_title = "Teleporteret til rutevejledning",
 		teleported_to_waypoint_logs_details = "${consoleName} blev teleporteret til en rutevejledning ved ${locationLabel}.",
 
-		teleport_to_coordinates_not_staff = "Spilleren forsøgte at teleportere til nogle koordinater, men de var ikke personale.",
-		teleport_to_waypoint_not_staff = "Spilleren forsøgte at teleportere til et markør, men de er ikke stab.",
-
 		failed_isolate = "Kunne ikke isolere spilleren.",
 		invalid_server_id = "Ugyldigt server-id.",
 		isolate_success_on = "Isolerede med succes ${consoleName}.",
@@ -402,8 +398,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		population_density_set_off = "Multiplikatoren for befolkningstæthed er slået fra.",
 		population_density_is_not_on = "Multiplikatoren for befolkningstæthed er ikke aktiveret.",
 		population_density_already_set_to = "Multiplikatoren for befolkningstæthed er allerede sat til ${multiplierLabel}%",
-
-		population_density_not_super_admin = "Spiller forsøgte at ændre befolkningstæthedens multiplikator uden korrekt tilladelse.",
 
 		enabled_features_list = "Aktiverede funktioner:",
 		aimbot_feature = "Aimbot",
@@ -448,8 +442,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		vehicle_smoke_invalid_class = "Bilrøg kan ikke aktiveres for denne type køretøj.",
 
-		repair_vehicle_not_super_admin = "Spiller forsøgte at reparere et køretøj uden de rette tilladelser.",
-
 		repaired_vehicle_logs_title = "Repareret køretøj",
 		repaired_vehicle_logs_details = "${consoleName} reparerede det køretøj, de var i.",
 
@@ -464,9 +456,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		set_vehicle_livery_logs_title = "Indstil køretøjets dekoration",
 		set_vehicle_livery_logs_details = "${consoleName} indstillede dekorationen af et køretøj med nummerpladen `${vehiclePlate}` til `${liveryIndex}`.",
-
-		set_livery_missing_permissions = "Spiller forsøgte at indstille dekorationen af et køretøj uden de rette tilladelser.",
-		set_modifications_missing_permissions = "Spiller forsøgte at ændre en modifikation af et køretøj uden de rette tilladelser.",
 
 		set_vehicle_modification = "Indstil ændringen af køretøj for mod type `${modType}` til indeks `${modIndex}`. (Tilpassede dæk: ${customTires})",
 		mod_index_invalid_for_type = "Mod-indekset `${modIndex}` er ugyldigt for modtypen `${modType}`.",
@@ -486,15 +475,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 		invalid_dirt_level = "Ugyldigt snavsniveau.",
 		set_dirt_level = "Snavsniveauet for køretøjet blev sat til `${dirtLevel}`.",
 
-		set_dirt_level_not_super_admin = "Spiller forsøgte at ændre snavsniveauet for et køretøj uden de nødvendige tilladelser.",
-
-		set_fake_plate_not_super_admin = "Spiller forsøgte at ændre en falsk nummerplade for et køretøj uden de nødvendige tilladelser.",
-
 		already_fake_disconnecting = "Du forsøger allerede at fake en forbindelsesafbrydelse. Vær venlig at vente.",
 		started_fake_disconnect = "Startede fake forbindelsesafbrydelse. Gentag kommandoen for at stoppe.",
 		stopped_fake_disconnect = "Stoppede fake forbindelsesafbrydelse.",
-
-		fake_disconnect_not_super_admin = "Spilleren forsøgte at fake en forbindelsesafbrydelse uden de nødvendige tilladelser.",
 
 		disabled_idle_cam = "Slået idle kameraet fra.",
 		enabled_idle_cam = "Aktiveret idle kameraet igen.",
@@ -502,12 +485,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		created_vehicle_smoke_for_player_logs_title = "Oprettet køretøjets røg",
 		created_vehicle_smoke_for_player_logs_details = "${consoleName} oprettede køretøjets røg.",
 
-		player_info_not_staff = "Forsøgte at få en spillers karakterinformation uden passende tilladelse.",
 		player_info_title = "${consoleName}",
 		player_info = "${fullName} #${characterId}\nHar spillet i ${playtime}.\n${jobName}, ${departmentName}, ${positionName}\n\n${backstory}",
 
 		inventory_name_missing = "Manglede navn på inventar-parameter.",
-		force_inventory_missing_perms = "Forsøgte at tvinge-åbne et inventar uden passende tilladelse.",
 
 		auto_driving_engaged = "Automatisk kørsel er blevet aktiveret (Stil: ${style}).",
 		auto_driving_updated = "Automatisk kørsel hastighed / placering er blevet opdateret.",
@@ -538,9 +519,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		tint_set = "Våbenfarvetonen blev sat til `${tint}` (${tintIndex}) med succes.",
 		no_weapon_tint = "Dette våben har ingen farvetoner.",
 
-		weapon_attachment_missing_perms = "Forsøgte at skifte et våbenudstyr uden passende tilladelser.",
-		weapon_tint_missing_perms = "Forsøgte at sætte en våbenfarvetone uden passende tilladelser.",
-
 		no_attachments = "Ingen udstyr",
 		available_attachments = "Tilgængelige Vedhæftninger",
 		current_attachments = "Aktuelle Vedhæftninger",
@@ -557,14 +535,14 @@ OP.Global.Locales.Languages["da-DK"] = {
 		cleaned_ped_self = "Din figur er nu renset.",
 		clean_ped_failed = "Fejl ved rensning af figur.",
 		cleaned_ped_for_all = "Alle spilleres figurer er nu renset.",
-		clean_ped_no_permission = "Du har ikke tilstrækkelige tilladelser til at rense andres figurer.",
+		clean_ped_no_permission = "Forsøgte at rense en spillerens ped uden tilstrækkelige rettigheder.",
 
 		item_durability_set_success = "Holdbarheden af genstandene i slot ${slotId} er nu sat til ${amount}%",
 		item_durability_set_failed = "Kunne ikke ændre holdbarheden af genstanden.",
 		item_durability_invalid_amount = "Ugyldig holdbarhed (0 <> 100).",
-		item_durability_set_no_permission = "Du har ikke tilstrækkelige tilladelser til at ændre en genstands holdbarhed.",
+		item_durability_set_no_permission = "Forsøgte at sætte holdbarheden på et objekt uden korrekte tilladelser.",
 
-		item_metadata_set_no_permission = "Forsøgte at sætte metadata på et item uden nødvendige tilladelser.",
+		item_metadata_set_no_permission = "Forsøgte at sætte metadataen på et objekt uden korrekte tilladelser.",
 		item_metadata_invalid_metadata = "Ugyldig metadata for itemet.",
 		item_metadata_set_success = "Metadata blev succesfuldt sat på itemet i slot ${slotId}.",
 		item_metadata_set_failed = "Fejl ved sætning af metadata.",
@@ -589,8 +567,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		scoop_invalid = "Du har ikke samlet nogen spillere op.",
 		unscooped_players = "${amount} af ${total} spiller(e) sat fri.",
 		unscoop_failed = "Kunne ikke sætte spillere fri.",
-
-		unscoop_missing_permissions = "Spiller forsøgte at frigøre samlede spillere uden de nødvendige tilladelser.",
 
 		toggle_collisions_missing_permissions = "Spiller forsøgte at ændre deres kollision uden de nødvendige tilladelser.",
 		wipe_first_owned_missing_permissions = "Spiller forsøgte at slette sine første ejet enheder uden passende tilladelser.",
@@ -678,10 +654,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		model_already_added_to_list = "Modellen `${modelName}` (${modelHash}) er allerede tilføjet til listen over registreringsenheder.",
 		removed_model_to_list = "Fjernede model `${modelName}` (${modelHash}) fra listen over registreringsenheder.",
 		model_not_in_list = "Modellen ${modelName} (${modelHash}) er ikke tilføjet til registreringslisten.",
-		set_model_detected_not_staff = "Spiller forsøgte at tilføje en model til registreringslisten, men havde ikke de nødvendige tilladelser til at gøre det.",
-		set_model_undetected_not_staff = "Spiller forsøgte at fjerne en model fra registreringslisten, men havde ikke de nødvendige tilladelser til at gøre det.",
-		add_detection_area_not_staff = "Spiller forsøgte at tilføje et registreringsområde, men havde ikke de nødvendige tilladelser til at gøre det.",
-		remove_detection_area_not_staff = "Spiller forsøgte at fjerne et registreringsområde, men havde ikke de nødvendige tilladelser til at gøre det.",
 		detection_area_close = "[${InteractionKey}] Fjern Detektionsområde (${areaId})",
 		detection_area = "Detektionsområde (${areaId})",
 
@@ -721,6 +693,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		clear_tasks_ban = "Dette er ikke et Jedi sindetræningscenter. Dine forsøg på at påvirke andres frie vilje er blevet bemærket... og afvist.",
 		projectile_event_ban = "Dette er ikke Hogwarts, og du er ikke Harry Potter. Den vilkårlige kasting af trolddom - eller projektiler - er ikke tilladt her.",
 		illegal_native_ban = "Du kan ikke bruge en trylleformular, som du endnu ikke har lært...",
+		underground_ban = "Du ser ud til at være faldet ned i et kaninhul.",
+		infinite_ammo_ban = "Trods populær tro gælder loven om bevarelse også her. Den magiske ammunitionstaske er blevet konfiskeret.",
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Dårlig skabelse",
@@ -757,6 +731,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		type_thermal_night_vision = "Termisk/natvisning",
 		type_vehicle_modification = "Køretøj tilpasning",
 		type_illegal_native = "Ullovligt Native-kald",
+		type_underground = "Undergrund",
+		type_infinite_ammo = "Ubegrænset ammunition",
 
 		event_prefix = "Anti-Cheat: ${type}",
 
@@ -825,6 +801,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		job_low = "lavt job",
 		job_medium = "middel job",
 		job_high = "højt job",
+
+		banned_no_permissions = "Forsøgte at `${reason}` uden korrekte tilladelser.",
 
 		banned_globally = "Du er blevet globalt banned fra alle OP-FW servere.\n\nBan Hash: ${banHash}\nBan Årsag: ${banReason}\n\nHvis du tror dette er en falsk ban, så venligst kontakt OP-FW Discord guild for information om hvordan du appellerer på ${frameworkDiscord}",
 		banned_locally = "Du er blevet banned fra ${communityName}.\n\nBan Hash: ${banHash}\nBanned af: ${creatorName}\nBan Årsag: ${banReason}\nTimestamp: ${timestamp}\n\n${indefiniteOrExpires}\n\nTjek vores Discord guild for information om hvordan du appellerer på ${communityDiscord}.",
@@ -963,7 +941,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		wipe_command = "ryd",
 		wipe_command_help = "Ryd uønskede enheder fra kortet.",
 		wipe_command_parameter_distance = "afstand",
-		wipe_command_parameter_distance_help = "Hvis du kun ønsker at slette enheder inden for en bestemt afstand, indsæt en afstand her. Lad den være på `false` eller `0` for hele kortet.",
+		wipe_command_parameter_distance_help = "Hvis du kun vil slette enheder inden for en bestemt afstand, indsæt en afstand her. Indsæt `-1` for hele kortet.",
 		wipe_command_parameter_ignore_local_entities = "ignorér lokale enheder",
 		wipe_command_parameter_ignore_local_entities_help = "Ignorér ikke-netværksforbundne enheder? Hvis du rydder op efter en snyder, anbefales det, at du sætter denne til `true` eller `1`.",
 		wipe_command_parameter_model_name = "modelnavn",
@@ -1047,6 +1025,14 @@ OP.Global.Locales.Languages["da-DK"] = {
 		replace_vehicle_command_parameter_model_name = "model navn",
 		replace_vehicle_command_parameter_model_name_help = "Navnet på modellen af ​​køretøjet, du vil spawnere.",
 		replace_vehicle_command_substitutes = "rv",
+
+		add_vehicle_command = "tilføj_køretøj",
+		add_vehicle_command_help = "Tilføj et køretøj til en persons garage.",
+		add_vehicle_command_parameter_model = "model",
+		add_vehicle_command_parameter_model_help = "Navnet eller hashen for modellen på det køretøj, du ønsker at tilføje.",
+		add_vehicle_command_parameter_server_id = "server id",
+		add_vehicle_command_parameter_server_id_help = "Server ID for spilleren, som du ønsker at give et køretøj til. Hvis du lader dette feltet være tomt, vælger den automatisk dig selv.",
+		add_vehicle_command_substitutes = "",
 
 		aimbot_command = "aimbot",
 		aimbot_command_help = "Aktiver/deaktiver 'aimbot'.",
@@ -1998,8 +1984,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		fake_lag_command = "falsk_lag",
 		fake_lag_command_help = "Opretter falsk lag.",
-		fake_lag_command_parameter_counter = "tæller",
-		fake_lag_command_parameter_counter_help = "Tælleren brugt til at skabe lag. Jo højere denne værdi er, jo langsommere vil det være. For at deaktivere, lad dette være blank eller skriv `0`.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "Målet fps (>= 1).",
 		fake_lag_command_substitutes = "lag",
 
 		view_weapon_command = "vis_vaaben",
@@ -2481,7 +2467,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		wipe_ground_inventories_command = "slet_ground_inventories",
 		wipe_ground_inventories_command_help = "Slet ground inventories.",
 		wipe_ground_inventories_command_parameter_radius = "radius",
-		wipe_ground_inventories_command_parameter_radius_help = "Sletningsradius. Hvis der ikke indtastes en værdi, vil `100` automatisk blive valgt. Gyldige værdier er tal over `0`, samt `0` og `-1`, som vil vælge alle inventories.",
+		wipe_ground_inventories_command_parameter_radius_help = "Slet radius. Hvis dette er blankt, vælges `5` automatisk. Gyldige værdier er over `0`, samt `0` og `-1`, der vælger alle inventarer.",
 		wipe_ground_inventories_command_substitutes = "sletinvs, slet_inventories, slet_ground",
 
 		refresh_inventory_command = "opdater_inventar",
@@ -3266,6 +3252,12 @@ OP.Global.Locales.Languages["da-DK"] = {
 		vdm_clear_command_help = "Renser alle dine VDM-mål.",
 		vdm_clear_command_substitutes = "",
 
+		steal_vehicle_command = "stjæl_køretøj",
+		steal_vehicle_command_help = "Får den nærmeste NPC til at stjæle køretøjet på målet.",
+		steal_vehicle_command_parameter_network_id = "netværks-id",
+		steal_vehicle_command_parameter_network_id_help = "Køretøjets netværks-id.",
+		steal_vehicle_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "voice_debug",
 		voice_debug_command_help = "Skifter stemmeafspilnings-debugging til/fra.",
@@ -3661,14 +3653,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		speed_limiter_command_help = "Ændrer hastighedsbegrænserens normale adfærd for at sætte prædefineret hastighedsbegrænsning.",
 		speed_limiter_command_substitutes = "sl, cc, cruise_control",
 
-		add_vehicle_command = "tilføj_køretøj",
-		add_vehicle_command_help = "Tilføj et køretøj til en persons garage.",
-		add_vehicle_command_parameter_model = "model",
-		add_vehicle_command_parameter_model_help = "Navnet eller hashen for modellen på det køretøj, du ønsker at tilføje.",
-		add_vehicle_command_parameter_server_id = "server id",
-		add_vehicle_command_parameter_server_id_help = "Server ID for spilleren, som du ønsker at give et køretøj til. Hvis du lader dette feltet være tomt, vælger den automatisk dig selv.",
-		add_vehicle_command_substitutes = "",
-
 		toggle_vehicle_weapons_command = "skift_køretøjsvåben",
 		toggle_vehicle_weapons_command_help = "Aktiverer/deaktiverer muligheden for at bruge køretøjets våben.",
 		toggle_vehicle_weapons_command_parameter_server_id = "server-id",
@@ -3759,7 +3743,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 	emojis = {
 		emoji_list = "${emojis}",
-		refresh_emojis_no_permissions = "Spiller forsøgte at genopfriske emojis uden korrekte tilladelser.",
 		api_reported_no_updates = "Discord API'en rapporterede ingen opdateringer i emoji listen.",
 		emojis_added = "${added} emoji(er) blev tilføjet.",
 		emojis_removed = "${removed} emoji(er) blev fjernet.",
@@ -3779,7 +3762,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 	},
 
 	ping = {
-		get_pings_missing_permissions = "Spiller forsøgte at få ping, men havde ikke de nødvendige tilladelser til at gøre det.",
 		getting_pings = "Får ping fra alle spillere. Dette kan tage et par sekunder.",
 		host_data = "${position}. ${location} - ${averagePing} gennemsnitlig ping (baseret på ${totalPings} klienter), 10% lav: ${averagePingLow}, 10% høj: ${averagePingHigh}",
 		list_hosts = "${listHosts}"
@@ -3891,7 +3873,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		package_same_remaining_time = "Din pakke er `${packageName}`. Den udløber om ${remainingTime}.",
 		no_package = "Du har ikke en pakke.",
 		fetching_package_error = "Der opstod en fejl under hentning af din pakkedata.",
-		check_playtime_not_staff = "Spiller forsøgte at tjekke en andens spilletid, men havde ikke de korrekte tilladelser til at gøre det.",
 		reason_unknown = "Årsagen er ukendt.",
 
 		unloaded_character = "Aflæsset karakter.",
@@ -3900,8 +3881,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		user_not_found = "Den sendte bruger blev ikke fundet på serveren.",
 		invalid_character_id = "Ugyldig karakter-id-parameter blev sendt.",
 		invalid_license_identifier = "Ugyldigt licensidentifieringsparameter blev sendt.",
-
-		unload_character_not_staff = "Spilleren forsøgte at aflæsse en anden spilleders karakter, men de var ikke personale.",
 
 		unloaded_character_for_player_logs_title = "Aflæsset Karakter Til Spiller",
 		unloaded_character_for_player_logs_details = "${consoleName} aflæssede ${targetConsoleName}'s karakter ${characterFullName} (${characterId}) med begrundelsen `${message}`.",
@@ -3942,9 +3921,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		invalid_destination_server_id = "Ugyldigt destinations server id.",
 		invalid_source_server_id = "Ugyldigt kilde server id.",
 		failed_teleport_player_to_player = "Kunne ikke teleportere spiller til spiller.",
-		teleported_player_to_player = "Teleporterede spiller til spiller.",
-
-		teleport_player_missing_permissions = "Spiller forsøgte at teleportere en anden spiller, men havde ikke de rette tilladelser til at gøre det."
+		teleported_player_to_player = "Teleporterede spiller til spiller."
 	},
 
 	afk = {
@@ -3954,8 +3931,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Spiller forsøgte at oprette et luftforsyningsfald, men de havde ikke de nødvendige tilladelser til at gøre det.",
-		create_airdrop_custom_missing_permissions = "Spiller forsøgte at oprette et brugerdefineret luftforsyningsfald, men de havde ikke de nødvendige tilladelser til at gøre det.",
 		created_airdrop = "Oprettede en luftforsyning af typen `${airdropType}` med et samlet antal på ${itemAmount} element(er).",
 		no_valid_items_provided = "Ingen gyldige genstande blev angivet.",
 		created_airdrop_with_items = "Oprettede et luftforsyningsfald med følgende genstande indenfor:\n${itemsListed}"
@@ -3982,15 +3957,11 @@ OP.Global.Locales.Languages["da-DK"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Spiller forsøgte at oprette en luftangreb, men de havde ikke de nødvendige tilladelser til at gøre det.",
-
 		airstrike_success = "Luftangrebet blev oprettet succesfuldt.",
 		airstrike_failed = "Det var ikke muligt at oprette luftangreb."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Spiller forsøgte at tilkalde luftstøtte, men havde ikke de nødvendige tilladelser til at gøre det.",
-
 		distance = "Afstand: ${distance}${unit}",
 		time_to_impact = "Tid til impact: ${timeToImpact}",
 
@@ -4020,9 +3991,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		show_alert_success = "Viste advarsel til spilleren med succes.",
 		show_alert_everyone_success = "Besked succesfuldt vist for alle.",
-		show_alert_failed = "Kunne ikke vise besked til spiller.",
-
-		show_alert_missing_permissions = "Spiller forsøgte at vise en besked til en anden spiller, men de havde ikke de nødvendige tilladelser til at gøre det."
+		show_alert_failed = "Kunne ikke vise besked til spiller."
 	},
 
 	arcade = {
@@ -4303,10 +4272,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 	audio = {
 		audio_id = "Audio ${audioId}",
-		illegal_sound_effect = "Forsøg på at bede andre spillere om at afspille en ekstern audiofil.",
+		illegal_sound_effect = "Forsøg på at få andre klienter til at afspille en ekstern lyd uden korrekte tilladelser.",
 		url_invalid = "Den angivne URL er ikke gyldig. Den skal være uploadet på en sikker forbindelse. (https://)",
 		url_missing = "Venligst tilføj URL'en til den audiofil, du forsøger at afspille.",
-		play_audio_no_permissions = "Spilleren forsøgte at afspille en audiofil, men havde ikke de nødvendige tilladelser til at gøre det.",
 		played_audio_for_self = "Afspillede lyd til dig selv.",
 		played_audio_for_player = "Afspillede lyd til ${consoleName}.",
 		played_audio_for_everyone = "Afspillede lyd til alle.",
@@ -4542,7 +4510,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		illegal_boombox_item_id = "Forsøger at bruge en boombox med et ulovligt item ID.",
 		logs_attempted_to_add_song_title = "Forsøg på at tilføje sang",
 		logs_attempted_to_add_song_details = "${consoleName} forsøgte at tilføje en sang med video URL `${url}` til boomboxen med ID `${boomboxId}`.",
-		wipe_boomboxes_not_staff = "Spiller forsøgte at slette boomboxes, men havde ikke tilladelse til det.",
 		logs_wiped_all_boomboxes_title = "Slettede alle boomboxes",
 		logs_wiped_all_boomboxes_details = "${consoleName} slettede alle boomboxes.",
 		logs_wiped_nearby_boomboxes_title = "Slettede nærvedliggende boomboxes",
@@ -4634,8 +4601,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		spawned_contract = "Kontrakt blev oprettet med success.",
 		spawned_contract_for = "Kontrakten er blevet oprettet for ${displayName} med succes.",
 
-		spawn_contract_no_permissions = "Spilleren forsøgte at oprette en boosting kontrakt uden de nødvendige tilladelser.",
-
 		already_max_vin_scratched_vehicles = "Du har allerede det maksimale antal VIN-ridsede køretøjer i din garage.",
 		contract_has_expired = "Denne kontrakt er udløbet.",
 		you_already_have_a_contract_started = "Du har allerede en igangværende kontrakt."
@@ -4685,8 +4650,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 	},
 
 	cargo = {
-		start_cargo_no_permissions = "Spiller forsøgte at starte Cargo-raubtier, men de havde ikke tilladelse til det.",
-		end_cargo_no_permissions = "Spiller forsøgte at afslutte Cargo røveriet, men havde ikke tilladelse til det.",
 		cargo_already_active = "Cargo er allerede aktiv.",
 		started_cargo = "Cargo er blevet startet.",
 		cargo_not_active = "Cargo er ikke aktiv.",
@@ -4699,7 +4662,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 	},
 
 	casino = {
-		set_casino_screen_id_not_staff = "Spiller forsøgte at ændre casino skærm id, men havde ikke tilladelse til at gøre sådan.",
 		successfully_set_screen_label = "Skærmene blev med succes sat til skærmen med label `${screenLabel}`.",
 		successfully_queued_screen_label = "Skærmen med label `${screenLabel}` blev med succes sat i kø.",
 		failed_to_set_screen_label = "Fejl under forsøg på at sætte skærmene til skærmen med label `${screenLabel}`.",
@@ -4767,8 +4729,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		blacklisted_video = "Video med nøgle `${videoKey}` er på listen over forbudte videoer.",
 		failed_to_blacklist_video = "Kunne ikke tilføje video med nøgle `${videoKey}` til listen over forbudte videoer.",
 		video_is_already_blacklisted = "Videoen med nøgle `${videoKey}` er allerede på listen over forbudte videoer.",
-
-		blacklist_video_missing_permissions = "Spilleren forsøgte at tilføje en video til listen over forbudte videoer, men havde ikke de nødvendige tilladelser.",
 
 		watching_movie = "Ser ${title}",
 
@@ -4942,8 +4902,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		barber_menu_success = "Kunne ikke skifte frisørsalonen menuen.",
 		failed_toggle_barber_menu = "Åbnede frisørsalonen menuen for ${consoleName}.",
 		invalid_server_id = "Ugyldigt server ID.",
-
-		clothing_menu_missing_permissions = "Spiller forsøgte at åbne tøjmenuen for en anden spiller, men havde ikke de nødvendige tilladelser.",
 
 		hats_and_helmets = "Hatte/Hjelme",
 		glasses = "Briller",
@@ -5696,7 +5654,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		special_vehicle_won = "Du har vundet et specielt køretøj! Du kan finde det i din garage.",
 
-		reset_daily_activities_no_permissions = "Spiller forsøgte at nulstille deres daglige aktiviteter uden tilstrækkelige tilladelser.",
 		reset_daily_activities = "Nulstil Daglige Aktiviteter.",
 
 		task_progress = "Opgave fremgang: ${task} (${remain} tilbage)",
@@ -5770,7 +5727,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		network_id_side = "Netværks-ID: ${networkId}",
 		no_target = "Ingen Mål",
 		invalid_radius_parameter = "Ugyldig `radius` parameter.",
-		inject_code_not_developer = "Spilleren forsøgte at indsætte kode, men de var ikke en udvikler.",
 		inject_code_invalid_player = "Der er ingen spillere med server-ID `${serverId}`.",
 		inject_code_success_for_everyone = "Kodeindsættelse lykkedes for alle.",
 		inject_code_success_for_player = "Kodeindsættelse lykkedes for ${consoleName}.",
@@ -5817,21 +5773,18 @@ OP.Global.Locales.Languages["da-DK"] = {
 		invalid_network_id = "Ugyldigt netværks-ID.",
 		delete_entity_success = "Entity med netværks-ID ${networkId} blev slettet succesfuldt.",
 		delete_entity_failed = "Sletning af entitet mislykkedes.",
-		delete_entity_no_permissions = "Spilleren forsøgte at slette en entitet uden korrekt tilladelse.",
+		delete_entity_no_permissions = "Forsøg på at slette en enhed uden korrekte tilladelser.",
 
 		failed_entity_info = "undefined",
 		printed_entity_info = "undefined",
 
 		move_entity_success = "Entitet med netværks-id ${networkId} er blevet flyttet med succes.",
 		move_entity_failed = "Flytning af entitet mislykkedes.",
-		move_entity_no_permissions = "Spilleren forsøgte at flytte en entitet uden korrekt tilladelse.",
+		move_entity_no_permissions = "Forsøg på at flytte en enhed uden korrekte tilladelser.",
 
-		fake_lag_updated = "Falsk forsinkelses tælleren er blevet opdateret til `${counter}`.",
-		fake_lag_already_set_to = "Falsk forsinkelses tælleren er allerede sat til `${counter}`.",
-		fake_lag_enabled = "Den falske lag er blevet aktiveret med tæller `${counter}`.",
-		fake_lag_invalid_counter_value = "Værdien `${counter}` er en ugyldig tæller for den falske lag.",
+		fake_lag_invalid_fps = "Ugyldig fps.",
+		fake_lag_clamp = "Begrænser fps til at være under ${fps}.",
 		fake_lag_disabled = "Den falske lag er blevet deaktiveret.",
-		fake_lag_not_enabled = "Den falske lag er ikke blevet aktiveret.",
 
 		weapon_name_missing = "Mangler våben navn parameter.",
 		weapon_name_invalid = "`${weaponName}` er ikke et gyldigt våben navn.",
@@ -5860,7 +5813,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		disabled_network_debug = "Fejlfinding af netværk for entiteter er deaktiveret.",
 		failed_network_debug = "Kunne ikke aktivere fejlfinding af netværk for entiteter.",
 
-		network_owner_subscription_no_permissions = "Forsøgte at abonnere på netværksejere uden korrekte tilladelser.",
+		network_owner_subscription_no_permissions = "Forsøgte at abonnere på enhedsnetværksejere uden korrekte tilladelser.",
 
 		missing_ipl = "Manglende ipl-parameter.",
 		enabled_ipl = "Ipl `${ipl}` aktiv med succes.",
@@ -6156,8 +6109,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 	},
 
 	flag_swap = {
-		toggle_flag_swap_no_permissions = "Forsøgte at skifte flag uden de nødvendige tilladelser.",
-
 		toggled_flag_swap_on = "Aktiverede flag skift.",
 		toggled_flag_swap_off = "Flag skift deaktiveret.",
 
@@ -6181,16 +6132,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		failed_create = "Kunne ikke oprette kraftfelt.",
 		forcefield_marker = "ID: ${id}",
 		invalid_forcefield_id = "Ugyldigt kraftfelt ID.",
-		failed_destroy = "Kunne ikke ødelægge kraftfelt.",
-
-		create_forcefield_no_permissions = "Spilleren forsøgte at oprette et kraftfelt, men havde ikke de nødvendige tilladelser til at gøre det.",
-		destroy_forcefield_no_permissions = "Spilleren forsøgte at ødelægge et kraftfelt, men havde ikke de nødvendige tilladelser til at gøre det."
+		failed_destroy = "Kunne ikke ødelægge kraftfelt."
 	},
 
 	fortnite = {
-		add_building_no_permissions = "Spilleren forsøgte at tilføje en Fortnite-bygning, men havde ikke de nødvendige tilladelser til at gøre det.",
-		wipe_buildings_no_permissions = "Spiller forsøgte at tilføje sletning af Fortnite-bygninger, men de havde ikke tilladelserne til at gøre det.",
-
 		no_buildings_in_radius = "Der er ingen bygninger inden for en radius af ${radius}.",
 		no_buildings = "Der er ingen bygninger.",
 		wiped_buildings_in_radius = "Slettede ${removedBuildings} bygninger inden for en radius af ${radius}.",
@@ -6402,7 +6347,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		press_to_exit_locker = "Tryk på ~INPUT_CONTEXT~ for at forlade skabet.",
 		failed_to_start_escape_room = "Kunne ikke starte flugt-rummet.",
 		started_escape_room = "Startede flugt-rummet med ${playerAmount} spillere.",
-		start_escape_room_missing_permissions = "Spiller forsøgte at starte et flugt-rum, men havde ikke de nødvendige tilladelser til at gøre det.",
 		escape_instructions = "Når du er færdig, låser dørene op, og du kan forlade bygningen.",
 		answer_the_phone = "Besvar telefonen.",
 
@@ -6416,8 +6360,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		successfully_revived_everyone = "Alle blev genoplivet.",
 		successfully_revived_everyone_removed_injuries = "Alle blev genoplivet og deres skader blev fjernet.",
 		failed_to_revive = "Fejl ved udførslen af ​​kommandoen `/revive`.",
-		revive_player_not_staff = "Spilleren forsøgte at genoplive en anden spiller, men havde ikke de nødvendige tilladelser til at gøre det.",
-		revive_self_not_staff = "Spiller forsøgte at genoplive sig selv, men havde ikke tilstrækkelige tilladelser til at gøre det.",
 		revived_self_removed_injuries_title = "Genoplivet Selv Og Fjernet Skader",
 		revived_self_removed_injuries_details = "${consoleName} genoplivede sig selv og fjernede deres skader.",
 		revived_self_title = "Genoplivet Selv",
@@ -6430,8 +6372,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		revived_player_removed_injuries_details = "${consoleName} har genoplivet ${targetConsoleName} og fjernet deres skader.",
 		revived_player_title = "Genoplivet spiller",
 		revived_player_details = "${consoleName} har genoplivet ${targetConsoleName}.",
-		get_recent_deaths_not_staff = "Spiller forsøgte at få de seneste dødsfald, men havde ikke de korrekte tilladelser til at gøre det.",
-		get_player_last_death_not_staff = "Spiller forsøgte at få en andens sidste død, men havde ikke tilladelse til at gøre det.",
 		recent_deaths = "Seneste Dødsfald",
 		no_recent_deaths = "Der er ingen seneste dødsfald.",
 		recent_deaths_list_entry = "${recentDeathId}. ${consoleName} døde for ${timer} sekunder siden.",
@@ -6459,7 +6399,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		no_players_in_range = "Der er ingen nedlagte spillere inden for en ${distance}m radius.",
 		successfully_revived_range = "Genoplivning af ${amount} spiller(e) lykkedes inden for en ${distance}m radius.",
 		failed_revive_range = "Kunne ikke genoplive spillere.",
-		range_revive_not_staff = "En spiller forsøgte at genoplive spillere inden for et bestemt område, men havde ikke de korrekte tilladelser til at gøre det.",
 
 		cpr_ped_logs_title = "undefined",
 		cpr_ped_logs_details = "undefined",
@@ -6577,6 +6516,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		pilot_license_details = "Pilotlicens | ${firstName} ${lastName} | Borger ID: ${characterId}",
 		weapon_license = "Våbenlicens",
 		weapon_license_details = "Våbenlicens | ${firstName} ${lastName} | Borger ID: ${characterId}",
+		mining_license = "Minetilladelse",
+		mining_license_details = "Minetilladelse | ${firstName} ${lastName} | Borger ID: ${characterId}",
 		just_showed_license = "Du har lige vist et kørekort. Vent venligst et øjeblik.",
 
 		just_showed_badge = "Du har lige vist et mærke. Vent venligst et øjeblik.",
@@ -6710,13 +6651,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		failed_to_get_instance_players = "Kunne ikke hente spillere fra instansen.",
 		no_players = "Ingen spillere.",
 
-		instance_hud = "Instans ID: ${instanceId}",
-
-		create_instance_not_developer = "Spilleren forsøgte at oprette en instans, men de var ikke udvikler.",
-		destroy_instance_not_developer = "Spilleren forsøgte at ødelægge en instans, men de var ikke en udvikler.",
-		add_player_to_instance_not_developer = "Spilleren forsøgte at tilføje en spiller til en instans, men de var ikke en udvikler.",
-		remove_player_from_instance_not_developer = "Spilleren forsøgte at fjerne en spiller fra en instans, men de var ikke en udvikler.",
-		get_players_from_instance_not_developer = "Spilleren forsøgte at hente spillere fra en instans, men de var ikke en udvikler."
+		instance_hud = "Instans ID: ${instanceId}"
 	},
 
 	interiors = {
@@ -6892,8 +6827,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		no_ground_inventories = "Der var ingen jord-inventarer at slette.",
 		no_ground_inventories_within_radius = "Der var ingen jord-inventarer at slette inden for en radius af `${radius}`.",
 
-		wipe_inventories_not_staff = "Spiller forsøgte at slette inventarer, men havde ikke tilladelse til at gøre det.",
-
 		logs_wiped_all_ground_inventories_title = "Slettede alle jord-inventarer",
 		logs_wiped_all_ground_inventories_details = "${consoleName} slettede alle jord-inventarer.",
 
@@ -6955,6 +6888,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		pilot_license_description = "En pilotlicens til at flyve fly og lignende.",
 		weapon_license = "Våbenlicens",
 		weapon_license_description = "En våbenlicens til besiddelse og bæring af højere klasse våben.",
+		mining_license = "Minetilladelse",
+		mining_license_description = "En minetilladelse til mining.",
 
 		sasp_badge = "SASP Badge",
 		sasp_badge_description = "En badge til betjente i San Andreas Politi Departementet.",
@@ -7033,6 +6968,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		advanced_lockpick_description = "Skjul dine børn, skjul din kone.",
 		cleaning_kit = "Rengøringssæt",
 		cleaning_kit_description = "Perfekt til at gøre din bil ren, eller fjerne blodpletterne du har ladet tørre i bagagerummet.",
+		scratch_remover = "Ridsfjerner",
+		scratch_remover_description = "Bruges til at fjerne buler og ridser fra køretøjer.",
 
 		multi_tool = "Multiværktøj",
 		multi_tool_description = "Et værktøj, der kan bruges til alle mulige ting.",
@@ -7657,6 +7594,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		cone_description = "Kan placeres hvor som helst i verden.",
 		spike_strips = "Dækspiger",
 		spike_strips_description = "Kan placeres hvor som helst i verden.",
+		spike_strips_large = "Store Spike Strips",
+		spike_strips_large_description = "Kan placeres hvor som helst i verdenen.",
 		floodlight = "Flomlys",
 		floodlight_description = "Kan placeres hvor som helst i verden.",
 		left_diversion_sign = "Venstre Omvejsskilt",
@@ -7719,6 +7658,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		hiking_backpack = "Vandreturs-rygsæk",
 		hiking_backpack_description = "Gør dig klar til udendørs eventyr med denne stilfulde vandreturs-rygsæk. Den tilføjer en rustik charme til dit tøj, selvom den kun er kosmetisk. Omfavn udforskerånden og vis din glæde ved udendørs oplevelser, uanset hvor du er!",
+		green_hiking_backpack = "Grøn vandredrygsæk",
+		green_hiking_backpack_description = "Udstyr dig til udendørs eventyr med denne stilfulde vandredrygsæk. Den tilføjer et strejf af robust charme til din påklædning, selvom den kun er kosmetisk. Indtag udforskningsånden og vis din passion for udendørsliv, uanset hvor du går hen!",
+		blue_hiking_backpack = "Blå vandredrygsæk",
+		blue_hiking_backpack_description = "Udstyr dig til udendørs eventyr med denne stilfulde vandredrygsæk. Den tilføjer et strejf af robust charme til din påklædning, selvom den kun er kosmetisk. Indtag udforskningsånden og vis din passion for udendørsliv, uanset hvor du går hen!",
 
 		gasoline_bottle = "Gasflaske",
 		gasoline_bottle_description = "Til en hurtig påfyldning til din bil eller... øhm... dig selv?",
@@ -8350,6 +8293,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 	items = {
 		move_to_repair = "Flyt hertil for at reparere køretøjet.",
 		repairing_vehicle = "Reparer Køretøj",
+		fix_visual_damage = "Reparerer visuel skade",
 		using_first_aid_kit = "Bruger Førstehjælpskasse",
 		using_bandages = "Bruger Bandager",
 		using_ifak = "Bruger IFAK",
@@ -8407,7 +8351,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		press_to_deposit = "Tryk ~INPUT_REPLAY_SHOWHOTKEY~ for at indsætte genstande i Online Jackpot.",
 		can_only_withdraw_at_casino = "Du kan kun hæve penge i casinoet.",
 
-		take_fee_no_permissions = "Spiller forsøgte at tage jackpot gebyrer uden de korrekte tilladelser.",
 		took_jackpot_fees = "Tog jackpot gebyrer. Fjernede ${removedTotalItems} varer til en samlet værdi af $${removedTotalWorth} fra ${inventories} inventories.",
 
 		jackpot = "Jackpot",
@@ -8513,7 +8456,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		something_went_wrong = "Kunne ikke finde enheden.",
 		locate_success = "Enhed fundet der matcher `${filter}` på positionen (${x}, ${y}, ${z}) (instance = ${instance}).",
 
-		locate_entity_no_permissions = "Spilleren forsøgte at finde en enhed uden korrekt tilladelse.",
+		locate_entity_no_permissions = "Forsøgte at finde en enhed uden ordentlige tilladelser.",
 
 		locate_entity_logs_title = "Fundet enhed",
 		locate_entity_logs_details = "${consoleName} forsøgte at finde enhed af typen `${filterType}` med værdien `${filterValue}`."
@@ -8596,6 +8539,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		queue = "Kø",
 		queue_position_with_priority = "🐌 Du er ${queuePosition}/${queueTotal} i køen med ${queuePriorityName} prioritet. 🕐${queueTime}",
 		queue_position_without_priority = "🐌 Du er ${queuePosition}/${queueTotal} i køen. 🕐${queueTime}",
+		live_on_twitch = "Keder du dig? Se disse streamere!",
+		live = "Live",
 		you_are_through = "Du er igennem!",
 		join_server = "Tilslut Serveren",
 		tired_of_queueing = "Træt af at stå i kø? Støt os og få prioritet i køen!",
@@ -8614,6 +8559,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		weird_date_of_birth = "Prøv at vælge en passende fødselsdato.",
 		invalid_backstory = "Manglende eller ugyldig baggrundshistorie (maks. 5.000 tegn).",
 		backstory_too_short = "Din baggrundshistorie er for kort (mindst ${backstory} tegn).",
+
+		invalid_date = "Ugyldig fødselsdato.",
+		date_not_future = "Din fødselsdato kan ikke være i fremtiden.",
+		date_too_old = "Din fødselsdato kan ikke være ældre end 100 år.",
 
 		bad_words = "Der er nogle dårlige ord i dit karakternavn eller baggrundshistorie.",
 		disallowed_name = "Der er nogle ikke-tilladte ord i dit karakternavn.",
@@ -8659,9 +8608,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		invalid_server_id = "Ugyldigt server-id.",
 		logs_failed = "Kunne ikke indlæse logfiler.",
 
-		close = "Luk",
-
-		get_logs_no_permissions = "Spiller forsøgte at få logfiler uden tilstrækkelige tilladelser."
+		close = "Luk"
 	},
 
 	loot = {
@@ -8706,8 +8653,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 	magazines = {
 		issue_id = "Problem #${issueId}",
 		releases_updated = "Opdaterede udgivelser.",
-		no_release_changes = "Der var ingen ændringer i udgivelsen.",
-		refresh_magazines_no_permissions = "Spiller forsøgte at opdatere magasiner uden de nødvendige tilladelser."
+		no_release_changes = "Der var ingen ændringer i udgivelsen."
 	},
 
 	mdt = {
@@ -8889,15 +8835,12 @@ OP.Global.Locales.Languages["da-DK"] = {
 		bad_ped_message = "Der blev forsøgt at oprette en muligvis dårlig PED besked: \"${pedMessage}\"",
 		bad_twitter_post = "Der blev forsøgt at oprette et muligvis dårligt Twitter opslag: \"${twitterPost}\"",
 		bad_phone_message = "Forsøgte at oprette en muligvis dårlig Twitter-post: \"${message}\"",
-		mute_toggle_not_staff = "Spiller forsøgte at mute en anden spiller, men havde ikke de nødvendige tilladelser til at gøre det.",
-		unmute_toggle_not_staff = "Spiller forsøgte at afmute en anden spiller, men havde ikke de nødvendige tilladelser til at gøre det.",
 		user_not_found = "Vi kunne ikke finde en bruger med server ID '${serverId}'.",
 		player_already_muted = "${consoleName} er allerede blevet mutet.",
 		player_has_been_muted_no_reason = "${consoleName} er nu blevet mutet uden angivelse af en grund.",
 		player_has_been_muted = "${consoleName} er nu blevet mutet med årsagen: `${reason}`.",
 		player_not_muted = "${consoleName} er ikke mutet.",
 		player_has_been_unmuted = "${consoleName} er nu blevet umutet.",
-		clear_chat_not_admin = "Spiller forsøgte at rydde chatten for alle spillere, men havde ikke tilladelse til at gøre det.",
 		ooc_clear_chat_title = "Chat Ryddet",
 		ooc_clear_chat_details = "${consoleName} ryddede chatten for alle.",
 		muted_player = "Mutet Spiller",
@@ -9880,8 +9823,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		failed_load_player = "Kunne ikke loade spillerdata. Har du indtastet et gyldigt server id?",
 		failed_add_warning = "Kunne ikke tilføje advarsel.",
 
-		get_info_no_permissions = "Spiller forsøgte at få information om en anden spiller uden de nødvendige tilladelser.",
-
 		user_indefinitely_banned_warning_no_reason = "Jeg har uendeligt forbudt denne person uden en angivet grund. Denne advarsel blev genereret automatisk som følge af forbuddet.",
 		user_indefinitely_banned_warning = "Jeg har uendeligt banlyst denne person med årsagen `${reason}`. Advarslen blev genereret automatisk som en følge af forbuddet.",
 		user_temporarily_banned_warning_no_reason = "Jeg har midlertidigt banlyst denne person uden en angivet grund for ${displayTime}. Advarslen blev genereret automatisk som en følge af forbuddet.",
@@ -10006,11 +9947,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		missing_emote = "Mangler emote parameter.",
 
 		emote_list = "Tilgængelige npc emotes: ${list}.",
-		task_list = "Tilgængelige ped opgaver: ${list}.",
-
-		spawn_ped_missing_perms = "Forsøgte at spawne en ped uden de nødvendige tilladelser.",
-		remove_peds_missing_perms = "Forsøgte at fjerne spawned peds uden de nødvendige tilladelser.",
-		ped_assign_task_missing_perms = "Forsøgte at tildele en opgave til spawned peds uden de nødvendige tilladelser."
+		task_list = "Tilgængelige ped opgaver: ${list}."
 	},
 
 	ped_steal = {
@@ -10067,7 +10004,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 	player_control = {
 		unable_to_drive_for_yourself = "Du kan ikke overtage styringen af dig selv.",
-		drive_for_player_no_permissions = "Spiller forsøgte at køre for en anden spiller, men havde ikke tilladelse til at gøre det.",
 		player_is_not_nearby = "Spilleren med server ID ${serverId} er ikke i nærheden.",
 		player_is_not_the_drive_of_a_vehicle = "Spilleren med server ID ${serverId} er ikke føreren af et køretøj.",
 		press_to_stop_drive_for = "Tryk ~INPUT_FRONTEND_CANCEL~ for at stoppe med at køre for spilleren."
@@ -10088,7 +10024,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 	player_stats = {
 		hp = "HP",
 		armor = "Panser",
-		toggle_player_stats_no_permissions = "Spiller forsøgte at skifte spillerstatistik uden korrekte tilladelser.",
 		updated_render_range = "Opdateret renderingsområde til ${renderRange}.",
 		turned_player_stats_on = "Tændte spillerstatistik.",
 		turned_player_stats_off = "Slukkede spillerstatistik."
@@ -10143,7 +10078,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 	props = {
 		illegal_prop_item_id = "Spiller forsøgte at bruge et rekvisit med et ulovligt genstand id.",
-		spawn_prop_not_staff = "Spiller forsøgte at tilkalde en rekvisit, men de havde ikke tilladelse til at gøre det.",
 		managing_props_help = "Du styrer i øjeblikket rekvisitter. Gå hen til en rekvisit og tryk på ~INPUT_CONTEXT~ for at samle den op.",
 		total_props = "Antal rekvisitter: ${count}",
 		active_props = "Aktive rekvisitter: ${count}",
@@ -10172,7 +10106,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		invalid_wipe_radius = "Ugyldig radius til fjernelse (mellem 1 og 100).",
 		wipe_successful = "Rekvisitten blev fjernet med succes.",
-		wipe_props_missing_permissions = "Spiller forsøgte at slette rekvisitter, men havde ikke de nødvendige tilladelser til dette.",
 
 		placing_prop = "Placering af rekvisitter",
 		pickup_prop = "Henter rekvisitter",
@@ -10209,7 +10142,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		radio_debug_off = "Radio debug tilstand er nu slået fra.",
 		radio_debug_on = "Radio debug tilstand er nu slået til.",
 
-		radio_debug_no_permissions = "Forsøgte at ændre radio debug uden tilstrækkelige tilladelser.",
+		radio_debug_no_permissions = "Forsøgte at skifte til radio-debuggen uden ordentlige tilladelser.",
 
 		decrypt_frequency = "[${InteractionKey}] Dekrypter Frekvens",
 		decrypting_frequency = "Dekrypterer frekvens...",
@@ -10246,8 +10179,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 	reskin = {
 		plastic_surgery = "Plastisk kirurgi",
 		los_santos_police_dept = "LOS SANTOS POLITIAFDELING",
-
-		reskin_player_no_permissions = "Spiller forsøgte at omstille radiodebug uden korrekt tilladelse.",
 
 		triggered_reskin_for_player = "Udløste omstilling for ${consoleName}.",
 
@@ -10353,13 +10284,13 @@ OP.Global.Locales.Languages["da-DK"] = {
 		riot_mode_enabled = "Riot mode aktiveret.",
 		riot_mode_disabled = "Riot mode deaktiveret. Allerede aggressive personer vil fortsætte med at kæmpe indtil de er døde.",
 		riot_mode_failed = "Kunne ikke aktivere/deaktivere riot mode.",
-		riot_mode_missing_perms = "Forsøgte at aktivere/deaktivere riot mode uden passende tilladelse.",
+		riot_mode_missing_perms = "Forsøgte at skifte til urolighedstilstand uden ordentlige tilladelser.",
 
 		riot_mode_enabled_help = "Riottilstand er blevet aktiveret.",
 		riot_mode_disabled_help = "Riottilstand er blevet deaktiveret.",
 
-		add_riot_player_no_permissions = "Forsøgte at tilføje en spiller til røgterlisten uden de rette tilladelser.",
-		remove_riot_player_no_permissions = "Forsøgte at fjerne en spiller fra røgterlisten uden de rette tilladelser.",
+		add_riot_player_no_permissions = "Forsøgte at tilføje en spiller til oprørslisten uden korrekte tilladelser.",
+		remove_riot_player_no_permissions = "Forsøgte at fjerne en spiller fra oprørslisten uden korrekte tilladelser.",
 
 		player_already_in_riot_list = "${consoleName} er allerede på røgterlisten.",
 		player_not_in_riot_list = "${consoleName} er ikke på røgterlisten.",
@@ -10626,7 +10557,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		finding_player = "Finder spiller",
 
 		invincibility_active = "Usårlighed: ~r~Aktiv~w~",
-		invincibility_inactive_dead = "Usårlighed: ~g~Inaktiv~w~ (død)",
+		invincibility_inactive_dead = "Uovervindelighed: ~g~Aktiv~w~ (død)",
+		invincibility_inactive_trunk = "Uovervindelighed: ~g~Aktiv~w~ (bagagerum)",
 		invincibility_inactive = "Usårlighed: ~g~Inaktiv~w~",
 
 		health_ok = "Sundhed: ~g~${health}/${maxHealth}~w~ - ${percentage}",
@@ -10698,7 +10630,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 	status = {
 		status_reset = "Status for ${consoleName} blev nulstillet succesfuldt.",
 		status_reset_failed = "Ingen bruger med server ID `${serverId}` blev fundet.",
-		reset_status_not_staff = "Forsøgte at nulstille en spillers status uden de nødvendige tilladelser.",
 		status_reset_for_all = "Status for alle blev nulstillet succesfuldt.",
 		status_disabled = "Statusser er slået fra (stress, sult og tørst).",
 		status_enabled = "Statusser er slået til (stress, sult og tørst).",
@@ -10711,8 +10642,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		set_body_armor_level_everyone_details = "${consoleName} satte alle's body armor niveau til `${bodyArmorLevel}`.",
 		set_body_armor_level_player_title = "Indstil kropsrustningsniveau for spilleren",
 		set_body_armor_level_player_details = "${consoleName} opdaterede ${targetConsoleName} og indstillede deres kropsrustningsniveau til `${bodyArmorLevel}`.",
-		set_body_armor_level_player_not_staff = "Spiller forsøgte at indstille en anden spillers kropsrustningsniveau, men de havde ikke de nødvendige tilladelser til at gøre det.",
-		set_body_armor_level_self_not_staff = "Spiller forsøgte at indstille deres eget kropsrustningsniveau, men de havde ikke de nødvendige tilladelser til at gøre det.",
 		stress_level_warning = "Du er stresset! Sænk dit stressniveau ved at ryge cigaretter, joints eller ved at dyrke aktiviteter såsom yoga."
 	},
 
@@ -10725,7 +10654,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		missing_hour = "Ingen time angivet.",
 		invalid_hour = "Lokal tidsændring er ugyldig. Værdien skal være en tid mellem 0:00 og 23:59.",
 		hour_changed = "Tiden er nu ændret til `${hour}`.",
-		set_hour_not_staff = "Forsøgte at ændre tiden uden nødvendige tilladelser.",
 
 		local_time_override_enabled = "Sat lokal tid til ${hour}:${minute}.",
 		local_time_override_disabled = "Nulstil den lokale tid til standard.",
@@ -10735,27 +10663,21 @@ OP.Global.Locales.Languages["da-DK"] = {
 		missing_minute = "Ingen minut angivet.",
 		invalid_minute = "Minut `${minute}` er ugyldigt. Værdien skal ligge mellem 0 og 59.",
 		minute_changed = "Minut er nu sat til `${minute}`.",
-		set_minute_not_staff = "Forsøg på at ændre minut uden de nødvendige tilladelser.",
 
 		missing_weather = "Ingen vejr type angivet.",
 		invalid_weather = "Vejret `${weatherName}` er ikke gyldigt. Gyldige vejrnavne er CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT og BLIZZARD.",
 		weather_changed = "Vejret er nu sat til `${weatherName}`.",
 		weather_advanced = "Vejret er nu ændret til `${weatherName}`.",
 		weather_advance_fail = "Kunne ikke ændre vejret på naturlig vis.",
-		set_weather_not_staff = "Forsøgte at ændre vejret uden de nødvendige tilladelser.",
-		advance_weather_not_staff = "Forsøgte at ændre vejret til en anden tilstand uden de nødvendige tilladelser.",
 
 		time_frozen = "Tiden er nu blevet frosset.",
 		time_unfrozen = "Tiden er ikke længere frosset.",
-		freeze_time_not_staff = "Der blev forsøgt at fryse tiden uden de nødvendige tilladelser.",
 
 		weather_frozen = "Vejret er nu frosset.",
 		weather_unfrozen = "Vejret er ikke længere frosset.",
-		freeze_weather_not_staff = "Der blev forsøgt at fryse vejret uden de nødvendige tilladelser.",
 
 		blackout_enabled = "Der er nu strømsvigt i byen.",
 		blackout_disabled = "Byen er ikke længere i strømsvigt.",
-		blackout_not_staff = "Der blev forsøgt at slå strømsvigt til eller fra uden de nødvendige tilladelser.",
 
 		weather_changed_title = "Vejret har ændret sig",
 		weather_changed_details = "${consoleName} har ændret vejret til `${weatherName}`.",
@@ -11109,8 +11031,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 	},
 
 	trains = {
-		spawn_train_missing_permissions = "Spiller forsøgte at spawn en togsæt, men havde ikke tilladelse til at gøre det.",
-
 		invalid_track_id = "Ugyldigt togsæts ID blev angivet.",
 		spawned_train_on_track = "Spawnet et togsæt på spor ${trackId}.",
 		failed_to_spawn_train = "Fejlede i at spawne et togsæt."
@@ -11126,7 +11046,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 	treasure_maps = {
 		no_treasure_map_with_tier = "Der er ingen skattekort med niveau ${mapTier}.",
 		treasure_map_does_not_have_piece = "Skattekort med niveau ${mapTier} har ikke del ${pieceNumber}.",
-		spawn_map_piece_missing_permissions = "Spilleren forsøgte at spawne en kortdel uden de rette tilladelser.",
 
 		sketchy_map = "Lurvet Kort",
 		worn_map = "Slidt Kort",
@@ -11156,9 +11075,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		set_ocean_scaler_no_permission = "Spilleren havde ikke den nødvendige tilladelse til at indstille skaleringsintensiteten for havet.",
 
 		tsunami_started = "Flodbølge startet. Det vil tage ${minutes} minutter at oversvømme kortet.",
-		tsunami_stopped = "Tsunami stoppet.",
-
-		toggle_tsunami_no_permissions = "Forsøgte at skifte tsunami uden de rette tilladelser."
+		tsunami_stopped = "Tsunami stoppet."
 	},
 
 	tuner_shop = {
@@ -11195,8 +11112,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 		cleared_vdm = "Nulstillede ${amount} VDM mål.",
 		failed_vdm_clear = "Kunne ikke nulstille VDM mål.",
 		added_vdm_target = "NPC med netværks-id ${networkId} fokuserer nu på ${target}.",
-
-		vdm_no_permissions = "Spiller forsøgte at køre VDM kommandoen uden tilladelse."
+		no_ped_available = "Ingen tilgængelige personer i nærheden.",
+		failed_steal = "Det lykkedes ikke at stjæle køretøjet.",
+		stealing_vehicle = "En person i nærheden blev instrueret til at stjæle køretøjet (${distance}m)."
 	},
 
 	vending_machines = {
@@ -11278,10 +11196,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 	},
 
 	wizard = {
-		action_missing_permissions = "Forsøgte at lave en wizard handling på en spiller uden korrekte tilladelser.",
-		action_radius_missing_permissions = "Forsøgte at lave en wizard handling på spillere i en bestemt radius uden korrekte tilladelser.",
-		run_as_missing_permissions = "Forsøgte at køre en kommando som en anden spiller uden korrekte tilladelser.",
-
 		menu_title = "Wizard",
 
 		ragdoll_player = "Fald sammen",
@@ -11367,8 +11281,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		invalid_explosion_type = "Eksplosions typen '${explosionType}' er ikke gyldig.",
 		invalid_camera_shake = "Kamera rystelser '${cameraShake}' er ikke gyldige.",
 		invalid_damage_scale = "Skade skalaen '${damageScale}' er ikke gyldig.",
-		created_explosion = "Oprettet en eksplosion af typen '${explosionTypeName}' med en skade skala på '${damageScale}' og kamera rystelser på '${cameraShake}'.",
-		create_explosion_not_developer = "Spilleren prøvede at oprette en eksplosion, men de var ikke en udvikler."
+		created_explosion = "Oprettet en eksplosion af typen '${explosionTypeName}' med en skade skala på '${damageScale}' og kamera rystelser på '${cameraShake}'."
 	},
 
 	functions = {
@@ -11489,7 +11402,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 	},
 
 	duty = {
-		toggle_duty_status_no_permissions = "Spilleren forsøgte at skifte sin arbejdstatus ved hjælp af en kommando uden tilstrækkelige tilladelser.",
+		toggle_duty_status_no_permissions = "Forsøgte at skifte tjeneste status via kommando uden tilstrækkelig tilladelse.",
 
 		duty_status_on = "Arbejdstilstanden er blevet skiftet til 'på arbejde'.",
 		duty_status_off = "Arbejdstilstanden er blevet skiftet til 'ikke på arbejde'.",
@@ -11604,6 +11517,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		license_hunting = "Jagtlicens",
 		license_fishing = "Fiskelicens",
 		license_weapon = "Våben licens",
+		license_mining = "Minetilladelse",
 		gave_character_license = "Gav ${characterName} licens til `${licenseLabel}`.",
 		character_already_has_license = "${characterName} har allerede licens til `${licenseLabel}`",
 		removed_character_license = "Fjernede licensen `${licenseLabel}` fra ${characterName}.",
@@ -11737,8 +11651,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		not_in_a_vehicle = "Du sidder ikke i et køretøj.",
 		vehicle_engine_on = "Motoren kører stadigvæk.",
 
-		set_fuel_no_permissions = "Spiller forsøgte at sætte benzinniveau på køretøj uden korrekte tilladelser.",
-
 		vehicle_exploded_logs_title = "Køretøj eksploderet",
 		vehicle_exploded_logs_details = "${consoleName} tankede et køretøj og udløste en eksplosion på grund af en kørende motor."
 	},
@@ -11834,11 +11746,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "Tændte garage-debug.",
 		toggle_garage_debug_toggled_off = "Slukkede garage-debug."
-	},
-
-	handlings = {
-		set_handling_override_not_super_admin = "Spilleren forsøgte at ændre håndteringen uden at have tilladelse.",
-		remove_handling_override_not_super_admin = "Spilleren forsøgte at fjerne håndteringsoverstyring uden at have tilladelse."
 	},
 
 	keys = {
@@ -11965,31 +11872,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		toggle_brakes_off = "Slået bremser til.",
 		failed_modify_brakes = "Kunne ikke modificere bremser.",
 
-		toggle_disabled_brakes_no_permissions = "Spiller forsøgte at aktivere deaktiverede bremser via kommando uden korrekte tilladelser.",
-
-		-- NOTE: `add_vehicle` command:
-		add_vehicle_not_super_admin = "Spilleren forsøgte at tilføje et køretøj til en andens garage uden korrekte tilladelser.",
-		add_vehicle_added_vehicle_for_everyone = "Tilføjede køretøj med modelnavn `${modelName}` til alle.",
-		add_vehicle_added_vehicle_for_player = "Tilføjede køretøj med modelnavn `${modelName}` til ${consoleName}.",
-		add_vehicle_added_vehicle = "Tilføjede køretøj med modelnavn `${modelName}`.",
-		add_vehicle_character_not_loaded = "Målspilleren havde ingen indlæste karakterer.",
-		add_vehicle_target_user_not_found = "Målbrugeren kunne ikke findes.",
-		add_vehicle_invalid_input = "Ugyldigt input.",
-		add_vehicle_no_permissions = "Ingen tilladelser.",
-		add_vehicle_user_not_found = "Brugeren blev ikke fundet.",
-		add_vehicle_invalid_player = "Der var ingen spillere med server ID `${serverId}`.",
-		add_vehicle_invalid_model_name = "Modelnavnet `${modelName}` er ikke en gyldig model.",
-		add_vehicle_no_model_name = "Intet modelnavn tilføjet.",
-
-		added_vehicle_for_everyone_logs_title = "Tilføjet køretøj til alle",
-		added_vehicle_for_everyone_logs_details = "${consoleName} har tilføjet et køretøj med modelnavnet `${modelName}` til alles garager.",
-		added_vehicle_for_player_logs_title = "Tilføjet køretøj til spiller",
-		added_vehicle_for_player_logs_details = "${consoleName} har tilføjet et køretøj med modelnavnet `${modelName}` til ${targetConsoleName}s garage.",
-		added_vehicle_logs_title = "Tilføjet køretøj",
-		added_vehicle_logs_details = "${consoleName} har tilføjet et køretøj med modelnavnet `${modelName}` til deres garage.",
-
 		-- NOTE: `toggle_vehicle_weapons` command:
-		toggle_vehicle_weapons_not_super_admin = "Spilleren forsøgte at aktivere køretøjsvåben på et køretøj uden korrekte tilladelser.",
 		toggled_vehicle_weapons_on = "Aktiverede køretøjsvåben på.",
 		toggled_vehicle_weapons_off = "Deaktiverede køretøjsvåben.",
 		toggled_vehicle_weapons_vehicle_is_not_networked = "Det køretøj, du er i, er ikke netværksforbundet.",
@@ -12144,6 +12027,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		ems_boat_hq = "EMS Båd HQ",
 		ems_garage = "EMS Garage",
 		e_to_get_treated = "[E] Modtag behandling - $1250",
+		e_check_in_player = "[E] Tjek ind af båret spiller - $1250",
+		check_in_blocked = "Check-in er optaget",
 		get_treated = "Modtag behandling - $1250",
 		you_are_being_treated = "Du bliver behandlet",
 		being_treated = "Bliver behandlet",

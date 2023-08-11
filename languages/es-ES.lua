@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 18 (do not change)
+-- AUTO LOCALES: 19 (do not change)
 
 OP.Global.Locales.Languages["es-ES"] = {
 	-- configuration settings for language
@@ -61,7 +61,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		you_are_not_being_carried = "Actualmente no te están cargando.",
 		successfully_uncarried = "Se detuvo con éxito la carga forzada.",
 		failed_uncarried = "No se pudo detener la carga forzada.",
-		uncarry_missing_permissions = "Se intentó detener la carga forzada sin los permisos adecuados.",
+		uncarry_missing_permissions = "Intento de detener forzadamente el transporte sin permisos adecuados.",
 
 		uncarry_logs_title = "Detener la carga forzada",
 		uncarry_logs_details = "${consoleName} ha forzado a ${targetName} a dejar de cargarlos.",
@@ -78,7 +78,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 	-- base/*
 	admin = {
-		feature_toggle_not_admin = "Intentaste cambiar el estado de '${featureName}', tuyo o de alguien más, pero no tenías los permisos necesarios.",
 		feature_toggle_activated_logs_title = "Cambio Remoto de Función",
 		feature_toggle_activated_logs_details_state = "${consoleName} ha cambiado el estado de `${featureName}` a ${newState} para el jugador ${targetConsoleName}.",
 		feature_toggle_activated_all_logs_title = "Función Activada Remotamente Para Todos",
@@ -101,9 +100,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		failed_to_spawn_vehicle = "Error al generar vehículo.",
 		spawned_vehicle_for_player = "Se ha generado exitosamente un ${modelName} para ${displayName}.",
 		spawned_vehicle_for_everyone = "Vehículo `${modelName}` creado con éxito para todos.",
-		spawn_vehicle_no_permissions = "El jugador intentó generar un vehículo pero no tenía los permisos necesarios para hacerlo.",
-		replace_vehicle_no_permissions = "El jugador intentó reemplazar su vehículo, pero no tenía los permisos necesarios para hacerlo.",
-		create_vehicle_no_permissions = "El jugador intentó crear un vehículo, pero no tenía los permisos necesarios para hacerlo.",
 		spawned_vehicle_for_self_title = "Vehículo Generado",
 		spawned_vehicle_for_self_details = "${consoleName} ha generado un vehículo con el nombre de modelo `${modelName}`.",
 		spawned_vehicle_for_player_title = "Vehículo Generado Para Jugador",
@@ -113,6 +109,26 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		vehicle_created = "Vehículo creado con éxito.",
 		failed_vehicle_creation = "Error al crear vehículo.",
+
+		-- NOTE: `add_vehicle` command:
+		add_vehicle_added_vehicle_for_everyone = "Se añadió el vehículo con nombre de modelo `${modelName}` para todos.",
+		add_vehicle_added_vehicle_for_player = "Se añadió el vehículo con nombre de modelo `${modelName}` para ${consoleName}.",
+		add_vehicle_added_vehicle = "Se añadió el vehículo con nombre de modelo `${modelName}`.",
+		add_vehicle_character_not_loaded = "El jugador objetivo no tenía personajes cargados.",
+		add_vehicle_target_user_not_found = "No se pudo encontrar al usuario objetivo.",
+		add_vehicle_invalid_input = "Entrada no válida.",
+		add_vehicle_no_permissions = "Sin permisos.",
+		add_vehicle_user_not_found = "Usuario no encontrado.",
+		add_vehicle_invalid_player = "No hay jugadores con ID de servidor `${serverId}`.",
+		add_vehicle_invalid_model_name = "El nombre del modelo `${modelName}` no es un modelo válido.",
+		add_vehicle_no_model_name = "No se ha agregado un nombre de modelo.",
+
+		added_vehicle_for_everyone_logs_title = "Vehículo añadido para todos",
+		added_vehicle_for_everyone_logs_details = "${consoleName} agregó un vehículo con el nombre del modelo `${modelName}` en los garajes de todos.",
+		added_vehicle_for_player_logs_title = "Vehículo Añadido para el Jugador",
+		added_vehicle_for_player_logs_details = "${consoleName} añadió un vehículo con nombre de modelo `${modelName}` al garaje de ${targetConsoleName}.",
+		added_vehicle_logs_title = "Vehículo Añadido",
+		added_vehicle_logs_details = "${consoleName} añadió un vehículo con nombre de modelo `${modelName}` a su garaje.",
 
 		invalid_amount = "Cantidad no válida.",
 
@@ -160,8 +176,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		removed_bank_from_player = "Se han eliminado $${amount} del banco de ${targetConsoleName}.",
 		removed_bank_from_everyone = "Se han eliminado $${amount} del banco de todos.",
 
-		money_event_not_admin = "Intento de activar el evento de dinero `${moneyEvent}` sin ser Administrador.",
-
 		spawned_item_title = "Objeto Generado",
 		spawned_item_details = "${consoleName} ha generado ${amount}x `${itemName}` para sí mismo/a.",
 		spawned_item_for_player_title = "Objeto generado para jugador",
@@ -178,7 +192,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		announcement_logs_title = "Anuncio de todo el servidor",
 		announcement_logs_details = "${consoleName} difundió el siguiente mensaje a todo el servidor: `${announcementMessage}`",
-		announcement_not_admin = "Intento de publicar un anuncio del personal.",
 
 		posted_announcement = "Mensaje de anuncio publicado.",
 		posted_announcement_locale = "Mensaje de anuncio publicado según el idioma de la localización.",
@@ -188,7 +201,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		staff_title = "PERSONAL ${staffName}",
 		staff_message_logs_title = "Registro de mensajes del personal",
 		staff_message_logs_details = "${consoleName} envió el siguiente mensaje en el chat de staff: `${staffMessage}`",
-		staff_message_illegal = "El jugador intentó enviar un mensaje en el chat de staff, pero no es personal del staff.",
 
 		staff_pm_title = "PM DE STAFF ${transmissionTitle}",
 		staff_pm_logs_title = "PM de Staff",
@@ -218,7 +230,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		missing_valid_license_identifier_parameter = "Falta un parámetro válido de 'identificador de licencia'.",
 
-		illegal_entity_wipe = "El jugador intentó eliminar entidades, pero no tenía permisos.",
 		wiped_entities = "Entidades borradas. ${deletedEntities} entidades en red borradas.",
 		wipe_entities_logs_title = "Entidades Eliminadas",
 		wipe_entities_logs_details = "${consoleName} emitió una eliminación de entidades con la siguiente configuración: distancia = `${distance}`, ignoreLocalEntities = `${ignoreLocalEntities}`, modelName = `${modelName}`",
@@ -261,12 +272,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		ban_quadrouple_kill = "😨 ¡CUÁDRUPLE MUERTE!!!!!!",
 		ban_killing_spree = "🤯 RACHA DE MUERTES (${count})!!!!!!",
 
-		kick_player_not_staff = "Intento de expulsar a un jugador sin permisos adecuados.",
-		ban_player_not_staff = "Intentó banear a un jugador sin permisos adecuados.",
-
-		hide_staff_not_staff = "Intentó esconder su estado de staff sin permisos adecuados.",
-		toggle_staff_not_staff = "Intentó cambiar la disponibilidad del staff sin permisos adecuados.",
-
 		logs_hide_staff_title = "El staff se ha escondido",
 		logs_hide_staff_hidden_details = "${consoleName} ha ocultado su estado de staff.",
 		logs_hide_staff_shown_details = "${consoleName} ha mostrado su estado de staff.",
@@ -282,10 +287,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		staff_feature_unavailable = "Esta función no está disponible mientras tu disponibilidad como personal de staff está desactivada.",
 
-		toggle_player_track_no_permissions = "Se ha intentado cambiar el rastreo de jugador sin los permisos necesarios.",
-		set_job_no_permissions = "Se ha intentado establecer un trabajo sin los permisos necesarios.",
-		toggle_reflection_no_permissions = "Intentaste activar la reflexión de daño sin permisos adecuados.",
-
 		success_enable_reflection = "Reflexión activada exitosamente.",
 		success_disable_reflection = "Reflexión desactivada exitosamente.",
 		failed_toggle_reflection = "No se pudo activar/desactivar la reflexión.",
@@ -296,12 +297,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		headache_logs_title = "Desencadenado dolor de cabeza",
 		headache_logs_details = "${consoleName} ha desencadenado un dolor de cabeza para ${targetConsoleName}.",
-		trigger_headache_no_permissions = "Intento de desencadenar un dolor de cabeza sin permisos adecuados.",
 
 		super_jump_logs_title = "Activado el Súper Salto",
 		super_jump_logs_details_on = "${consoleName} ha activado su súper salto.",
 		super_jump_logs_details_off = "${consoleName} ha desactivado su súper salto.",
-		toggle_super_jump_no_permissions = "Se intentó activar o desactivar el súper salto sin los permisos necesarios.",
 
 		success_trigger_headache = "Se ha desencadenado con éxito un dolor de cabeza para ${playerName}.",
 		failed_trigger_headache = "No se pudo desencadenar el dolor de cabeza.",
@@ -311,7 +310,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		reset_spawn_success = "Punto de aparición restablecido correctamente.",
 		reset_spawn_failed = "Error al restablecer el punto de aparición.",
 
-		protective_mode_not_staff = "Se ha intentado activar el modo de protección del servidor sin los permisos necesarios.",
 		protective_mode_toggled_on = "El modo de protección del servidor ha sido activado. El tiempo mínimo de juego requerido para poder conectarse al servidor se ha establecido en `${playtime}`.",
 		protective_mode_toggled_off = "El modo de protección del servidor ha sido desactivado.",
 		protective_mode_already_on = "El modo de protección del servidor ya está activado con un tiempo mínimo de juego requerido de `${playtime}`.",
@@ -320,13 +318,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 		logs_protective_mode_on = "${consoleName} ha activado el modo protector del servidor con tiempo de juego requerido: `${playtime}`.",
 		logs_protective_mode_off = "${consoleName} ha desactivado el modo protector del servidor.",
 
-		spawn_item_not_staff = "Intento de invocar un objeto sin los permisos adecuados",
 		no_item_name = "No se ha proporcionado un nombre de objeto.",
 		invalid_item_name = "${itemName} no es un nombre de objeto válido.",
 		item_spawned = "Invocado ${amount}x `${itemName}` para ${consoleName}.",
 		item_spawned_for_everyone = "Se han creado ${amount}x `${itemName}` para todos.",
 
-		set_warning_message_not_staff = "Se ha intentado establecer el mensaje de advertencia del servidor sin permisos apropiados.",
 		warning_message_set_to = "El mensaje de advertencia se ha establecido como `${warningMessage}`.",
 		warning_message_removed = "El mensaje de advertencia ha sido eliminado.",
 		warning_message_error = "Se ha producido un error al intentar establecer el mensaje de advertencia.",
@@ -368,6 +364,9 @@ OP.Global.Locales.Languages["es-ES"] = {
 		evidence_view_details_on = "${consoleName} ha activado la vista detallada de evidencia.",
 		evidence_view_details_off = "${consoleName} ha desactivado la vista detallada de evidencia.",
 
+		tracker_turned_on = "Se ha encendido tu rastreador.",
+		tracker_turned_off = "Se ha apagado tu rastreador.",
+
 		report_muted_no_reason = "Se te ha silenciado del comando de reporte sin una razón especificada.",
 		report_muted = "Se te ha silenciado del comando de reporte por la razón `${reason}`.",
 
@@ -388,9 +387,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		teleported_to_waypoint_logs_title = "Teletransportado a Marcador",
 		teleported_to_waypoint_logs_details = "${consoleName} ha sido teletransportado a un marcador en ${locationLabel}.",
 
-		teleport_to_coordinates_not_staff = "El jugador intentó teletransportarse a unas coordenadas pero no tenía permisos de staff.",
-		teleport_to_waypoint_not_staff = "El jugador intentó teleportarse al waypoint pero no era miembro del personal.",
-
 		failed_isolate = "No se pudo aislar al jugador.",
 		invalid_server_id = "ID de servidor inválido.",
 		isolate_success_on = "Se ha aislado correctamente a ${consoleName}.",
@@ -402,8 +398,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		population_density_set_off = "La multiplicación de la densidad de población se ha desactivado.",
 		population_density_is_not_on = "La multiplicación de la densidad de población no está activada.",
 		population_density_already_set_to = "La multiplicación de la densidad de población ya está establecida en ${multiplierLabel}%.",
-
-		population_density_not_super_admin = "El jugador intentó configurar la multiplicación de la densidad de población sin los permisos adecuados.",
 
 		enabled_features_list = "Características habilitadas:",
 		aimbot_feature = "Aimbot",
@@ -448,8 +442,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		vehicle_smoke_invalid_class = "No se puede activar el humo del vehículo para esta clase de vehículo.",
 
-		repair_vehicle_not_super_admin = "El jugador intentó reparar un vehículo sin los permisos necesarios.",
-
 		repaired_vehicle_logs_title = "Vehículo reparado",
 		repaired_vehicle_logs_details = "${consoleName} ha reparado el vehículo en el que estaba.",
 
@@ -464,9 +456,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		set_vehicle_livery_logs_title = "Establecer Livrea del Vehículo",
 		set_vehicle_livery_logs_details = "${consoleName} ha establecido la livrea del vehículo con la matrícula `${vehiclePlate}` en `${liveryIndex}`.",
-
-		set_livery_missing_permissions = "El jugador intentó establecer la livrea de un vehículo sin los permisos adecuados.",
-		set_modifications_missing_permissions = "El jugador intentó establecer una modificación de un vehículo sin los permisos adecuados.",
 
 		set_vehicle_modification = "Se estableció la modificación del vehículo para el tipo de mod `${modType}` en el índice `${modIndex}`. (Neumáticos Personalizados: ${customTires})",
 		mod_index_invalid_for_type = "El índice de mod `${modIndex}` no es válido para el tipo de mod `${modType}`.",
@@ -486,15 +475,9 @@ OP.Global.Locales.Languages["es-ES"] = {
 		invalid_dirt_level = "Nivel de suciedad inválido.",
 		set_dirt_level = "El nivel de suciedad del vehículo se ha establecido en `${dirtLevel}`.",
 
-		set_dirt_level_not_super_admin = "El jugador intentó cambiar el nivel de suciedad de un vehículo sin los permisos necesarios.",
-
-		set_fake_plate_not_super_admin = "El jugador intentó cambiar la placa del vehículo sin los permisos necesarios.",
-
 		already_fake_disconnecting = "Ya estás intentando desconectar falsamente. Por favor, espera.",
 		started_fake_disconnect = "Has comenzado a desconectar falsamente. Repite el comando para detenerlo.",
 		stopped_fake_disconnect = "Has dejado de desconectar falsamente.",
-
-		fake_disconnect_not_super_admin = "El jugador intentó desconectar falsamente sin los permisos adecuados.",
 
 		disabled_idle_cam = "Se ha desactivado la cámara en espera.",
 		enabled_idle_cam = "Se ha vuelto a activar la cámara en espera.",
@@ -502,12 +485,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 		created_vehicle_smoke_for_player_logs_title = "Humo del Vehículo Creado",
 		created_vehicle_smoke_for_player_logs_details = "${consoleName} creó humo del vehículo.",
 
-		player_info_not_staff = "Se ha intentado obtener la información de un personaje de un jugador sin el permiso adecuado.",
 		player_info_title = "${consoleName}",
 		player_info = "${fullName} #${characterId}\nHa jugado durante ${playtime}.\n${jobName}, ${departmentName}, ${positionName}\n\n${backstory}",
 
 		inventory_name_missing = "Falta el parámetro del nombre del inventario.",
-		force_inventory_missing_perms = "Se ha intentado forzar la apertura de un inventario sin el permiso adecuado.",
 
 		auto_driving_engaged = "El modo de conducción automático ha sido activado (Estilo: ${style}).",
 		auto_driving_updated = "La velocidad/ubicación del auto-conducción se ha actualizado.",
@@ -538,9 +519,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		tint_set = "Se ha establecido con éxito el tinte del arma a `${tint}` (${tintIndex}).",
 		no_weapon_tint = "Esta arma no tiene tintes.",
 
-		weapon_attachment_missing_perms = "Se intentó cambiar un accesorio del arma sin el permiso adecuado.",
-		weapon_tint_missing_perms = "Se intentó establecer el tinte de un arma sin el permiso adecuado.",
-
 		no_attachments = "No hay accesorios",
 		available_attachments = "Accesorios Disponibles",
 		current_attachments = "Accesorios Actuales",
@@ -557,14 +535,14 @@ OP.Global.Locales.Languages["es-ES"] = {
 		cleaned_ped_self = "Tu personaje se ha limpiado correctamente.",
 		clean_ped_failed = "Error al intentar limpiar al personaje.",
 		cleaned_ped_for_all = "Todos los personajes han sido limpiados correctamente.",
-		clean_ped_no_permission = "No tienes permisos para limpiar el personaje de otro jugador.",
+		clean_ped_no_permission = "Se intentó limpiar el personaje de un jugador sin los permisos adecuados.",
 
 		item_durability_set_success = "La durabilidad del objeto en el slot ${slotId} se ha establecido correctamente en ${amount}%",
 		item_durability_set_failed = "Error al intentar establecer la durabilidad del objeto.",
 		item_durability_invalid_amount = "Cantidad de durabilidad inválida (debe ser entre 0 y 100).",
-		item_durability_set_no_permission = "No tienes permisos para establecer la durabilidad de un objeto.",
+		item_durability_set_no_permission = "Intento de cambiar la durabilidad de un objeto sin permisos suficientes.",
 
-		item_metadata_set_no_permission = "Se intentó establecer los metadatos de un objeto sin los permisos necesarios.",
+		item_metadata_set_no_permission = "Intento de cambiar los metadatos de un objeto sin permisos suficientes.",
 		item_metadata_invalid_metadata = "Metadatos del objeto no válidos.",
 		item_metadata_set_success = "Se establecieron correctamente los metadatos del objeto en la ranura ${slotId}.",
 		item_metadata_set_failed = "No se pudieron establecer los metadatos del objeto.",
@@ -589,8 +567,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		scoop_invalid = "No has recogido a ningún jugador.",
 		unscooped_players = "No recogidos ${amount} de ${total} jugador(es).",
 		unscoop_failed = "Error al dejar a los jugadores en el suelo.",
-
-		unscoop_missing_permissions = "El jugador intentó dejar a los jugadores en el suelo sin los permisos necesarios.",
 
 		toggle_collisions_missing_permissions = "El jugador intentó toggle sus colisiones sin los permisos necesarios.",
 		wipe_first_owned_missing_permissions = "El jugador intentó eliminar todas las entidades que posee sin los permisos necesarios.",
@@ -678,10 +654,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		model_already_added_to_list = "El modelo `${modelName}` (${modelHash}) ya ha sido añadido a la lista de detección.",
 		removed_model_to_list = "Eliminado modelo `${modelName}` (${modelHash}) de la lista de detección.",
 		model_not_in_list = "El modelo `${modelName}` (${modelHash}) no está añadido a la lista de detección.",
-		set_model_detected_not_staff = "El jugador intentó añadir un modelo a la lista de detección, pero no tenía los permisos necesarios para hacerlo.",
-		set_model_undetected_not_staff = "El jugador intentó eliminar un modelo de la lista de detección, pero no tenía los permisos necesarios para hacerlo.",
-		add_detection_area_not_staff = "El jugador intentó añadir un área de detección, pero no tenía los permisos necesarios para hacerlo.",
-		remove_detection_area_not_staff = "El jugador intentó eliminar un área de detección, pero no tenía los permisos necesarios para hacerlo.",
 		detection_area_close = "[${InteractionKey}] Quitar Área de Detección (${areaId})",
 		detection_area = "Área de Detección (${areaId})",
 
@@ -721,6 +693,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		clear_tasks_ban = "Esto no es un centro de entrenamiento de trucos de la mente Jedi. Se ha registrado y rechazado tus intentos de influir en la libre voluntad de los demás.",
 		projectile_event_ban = "Esto no es Hogwarts y tú no eres Harry Potter. No se permite el lanzamiento indiscriminado de hechizos - o proyectiles - aquí.",
 		illegal_native_ban = "No puedes usar un hechizo que aún no has aprendido...",
+		underground_ban = "Parece que has caído en un agujero de conejo.",
+		infinite_ammo_ban = "A pesar de la creencia popular, las leyes de conservación también se aplican aquí. Se ha confiscado la bolsa de munición mágica.",
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Creación Incorrecta",
@@ -757,6 +731,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		type_thermal_night_vision = "Visión Térmica/Visión Nocturna",
 		type_vehicle_modification = "Modificación de Vehículo",
 		type_illegal_native = "Llamada Nativa Ilegal",
+		type_underground = "Subterráneo",
+		type_infinite_ammo = "Munición Infinita",
 
 		event_prefix = "Anti-Cheat: ${type}",
 
@@ -825,6 +801,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		job_low = "trabajo sencillo",
 		job_medium = "trabajo medio",
 		job_high = "trabajo exigente",
+
+		banned_no_permissions = "Intento de `${reason}` sin permisos suficientes.",
 
 		banned_globally = "Has sido baneado globalmente de todos los servidores de OP-FW.\n\nHash del Baneo: ${banHash}\nMotivo del Baneo: ${banReason}\n\nSi crees que ha sido un baneo falso, porfavor unete al servidor de Discord de OP-FW para obtener información sobre cómo apelar en ${frameworkDiscord}.",
 		banned_locally = "Has sido baneado de ${communityName}.\n\nHash del Baneo: ${banHash}\nBaneado Por: ${creatorName}\nMotivo del Baneo: ${banReason}\nFecha y Hora: ${timestamp}\n\n${indefiniteOrExpires}\n\nÚnete a nuestro servidor de Discord para obtener información sobre cómo apelar en ${communityDiscord}.",
@@ -963,7 +941,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		wipe_command = "borrar",
 		wipe_command_help = "Borrar entidades no deseadas del mapa.",
 		wipe_command_parameter_distance = "distancia",
-		wipe_command_parameter_distance_help = "Si solo desea eliminar entidades dentro de un cierto rango, inserte una distancia aquí. Déjelo en `false` o` 0` para todo el mapa.",
+		wipe_command_parameter_distance_help = "Si solo quieres eliminar entidades dentro de un rango específico, inserta aquí una distancia. Pon `-1` para el mapa entero.",
 		wipe_command_parameter_ignore_local_entities = "ignorar entidades locales",
 		wipe_command_parameter_ignore_local_entities_help = "¿Ignorar entidades no conectadas a la red? Si está limpiando a un tramposo, se recomienda que establezca esto en `true` o` 1`.",
 		wipe_command_parameter_model_name = "nombre de modelo",
@@ -1047,6 +1025,14 @@ OP.Global.Locales.Languages["es-ES"] = {
 		replace_vehicle_command_parameter_model_name = "nombre del modelo",
 		replace_vehicle_command_parameter_model_name_help = "El nombre del modelo del vehículo que deseas hacer aparecer.",
 		replace_vehicle_command_substitutes = "rv",
+
+		add_vehicle_command = "añadir_vehiculo",
+		add_vehicle_command_help = "Añade un vehículo al garaje de alguien.",
+		add_vehicle_command_parameter_model = "modelo",
+		add_vehicle_command_parameter_model_help = "El nombre del modelo o hash del modelo del vehículo que deseas añadir.",
+		add_vehicle_command_parameter_server_id = "ID del servidor",
+		add_vehicle_command_parameter_server_id_help = "La ID del servidor del jugador al que deseas darle un vehículo. Si lo dejas en blanco, se te seleccionará automáticamente a ti mismo.",
+		add_vehicle_command_substitutes = "",
 
 		aimbot_command = "apuntar",
 		aimbot_command_help = "Activa o desactiva el 'apuntar'.",
@@ -1998,8 +1984,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		fake_lag_command = "falsa_latencia",
 		fake_lag_command_help = "Crea una falsa latencia.",
-		fake_lag_command_parameter_counter = "contador",
-		fake_lag_command_parameter_counter_help = "El contador utilizado para crear el lag. Cuanto más alto sea este valor, más lento será. Para desactivar, deja esto en blanco o escribe `0`.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "Los fps objetivo (>= 1).",
 		fake_lag_command_substitutes = "lag",
 
 		view_weapon_command = "ver_armamento",
@@ -2481,7 +2467,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		wipe_ground_inventories_command = "limpiar_inventarios_suelo",
 		wipe_ground_inventories_command_help = "Borrar inventarios del suelo.",
 		wipe_ground_inventories_command_parameter_radius = "radio",
-		wipe_ground_inventories_command_parameter_radius_help = "El radio de borrado. Si se deja en blanco se seleccionará automáticamente `100`. Los valores válidos son mayores a `0`, además de `0` y `-1` que seleccionan todos los inventarios.",
+		wipe_ground_inventories_command_parameter_radius_help = "El radio de eliminación. Dejar en blanco seleccionará automáticamente `5`. Los valores válidos son superiores a `0`, así como `0` y `-1` que seleccionarán todos los inventarios.",
 		wipe_ground_inventories_command_substitutes = "limpiarinvs, limpiar_inventarios, limpiar_suelo",
 
 		refresh_inventory_command = "actualizar_inventario",
@@ -3266,6 +3252,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 		vdm_clear_command_help = "Borra todos tus objetivos VDM.",
 		vdm_clear_command_substitutes = "",
 
+		steal_vehicle_command = "robar_vehículo",
+		steal_vehicle_command_help = "Hace que el npc más cercano robe el vehículo objetivo.",
+		steal_vehicle_command_parameter_network_id = "ID de red",
+		steal_vehicle_command_parameter_network_id_help = "La ID de red del vehículo.",
+		steal_vehicle_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "voice_debug",
 		voice_debug_command_help = "Alternar la depuración de voz.",
@@ -3661,14 +3653,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		speed_limiter_command_help = "Anula el comportamiento normal del limitador de velocidad para preajustar el límite de velocidad.",
 		speed_limiter_command_substitutes = "sl, cc, control_de_crucero",
 
-		add_vehicle_command = "añadir_vehiculo",
-		add_vehicle_command_help = "Añade un vehículo al garaje de alguien.",
-		add_vehicle_command_parameter_model = "modelo",
-		add_vehicle_command_parameter_model_help = "El nombre del modelo o hash del modelo del vehículo que deseas añadir.",
-		add_vehicle_command_parameter_server_id = "ID del servidor",
-		add_vehicle_command_parameter_server_id_help = "La ID del servidor del jugador al que deseas darle un vehículo. Si lo dejas en blanco, se te seleccionará automáticamente a ti mismo.",
-		add_vehicle_command_substitutes = "",
-
 		toggle_vehicle_weapons_command = "alternar_armas_de_vehículo",
 		toggle_vehicle_weapons_command_help = "Alterna si las armas de un vehículo pueden ser utilizadas o no.",
 		toggle_vehicle_weapons_command_parameter_server_id = "id del servidor",
@@ -3759,7 +3743,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 	emojis = {
 		emoji_list = "${emojis}",
-		refresh_emojis_no_permissions = "El jugador intentó actualizar los emojis sin permisos adecuados.",
 		api_reported_no_updates = "La API de Discord no reportó actualizaciones en la lista de emojis.",
 		emojis_added = "Se añadieron ${added} emoji(s).",
 		emojis_removed = "Se eliminaron ${removed} emoji(s).",
@@ -3779,7 +3762,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 	},
 
 	ping = {
-		get_pings_missing_permissions = "El jugador intentó obtener los pings pero no tenía los permisos necesarios para hacerlo.",
 		getting_pings = "Obteniendo pings de todos los jugadores. Esto puede tardar unos segundos.",
 		host_data = "${position}. ${location} - ${averagePing} Ping medio (basado en ${totalPings} jugadores), 10% bajo: ${averagePingLow}, 10% alto: ${averagePingHigh}",
 		list_hosts = "${listHosts}"
@@ -3891,7 +3873,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		package_same_remaining_time = "Tu paquete es `${packageName}`. Expirará en ${remainingTime}.",
 		no_package = "No tienes ningún paquete.",
 		fetching_package_error = "Se ha producido un error al intentar obtener los datos de tu paquete.",
-		check_playtime_not_staff = "El jugador intentó verificar el tiempo de juego de otra persona, pero no tenía los permisos necesarios para hacerlo.",
 		reason_unknown = "Motivo desconocido.",
 
 		unloaded_character = "Personaje descargado.",
@@ -3900,8 +3881,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		user_not_found = "No se encontró al usuario enviado en el servidor.",
 		invalid_character_id = "Se envió un parámetro de ID de personaje no válido.",
 		invalid_license_identifier = "Se envió un parámetro de identificador de licencia no válido.",
-
-		unload_character_not_staff = "El jugador intentó descargar el personaje de otro jugador pero no es miembro del staff.",
 
 		unloaded_character_for_player_logs_title = "Personaje descargado para jugador",
 		unloaded_character_for_player_logs_details = "${consoleName} descargó el personaje ${characterFullName} (${characterId}) de ${targetConsoleName} con la razón `${message}`.",
@@ -3942,9 +3921,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		invalid_destination_server_id = "Id del servidor de destino no válido.",
 		invalid_source_server_id = "Id del servidor de origen no válido.",
 		failed_teleport_player_to_player = "Falló al teleportar al jugador al jugador.",
-		teleported_player_to_player = "Teleportado jugador al jugador.",
-
-		teleport_player_missing_permissions = "El jugador intentó teleportar a otro jugador, pero no tenía los permisos necesarios para hacerlo."
+		teleported_player_to_player = "Teleportado jugador al jugador."
 	},
 
 	afk = {
@@ -3954,8 +3931,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "El jugador intentó crear un airdrop pero no tenía los permisos necesarios para hacerlo.",
-		create_airdrop_custom_missing_permissions = "El jugador intentó crear un airdrop personalizado pero no tenía los permisos necesarios para hacerlo.",
 		created_airdrop = "Se creó un suministro aéreo del tipo `${airdropType}` con un total de ${itemAmount} artículo(s).",
 		no_valid_items_provided = "No se proporcionaron elementos válidos.",
 		created_airdrop_with_items = "Se ha creado un airdrop con los siguientes elementos en su interior:\n${itemsListed}"
@@ -3982,15 +3957,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "El jugador intentó crear un bombardeo aéreo pero no tenía los permisos necesarios para hacerlo.",
-
 		airstrike_success = "Ataque aéreo creado exitosamente.",
 		airstrike_failed = "No se pudo crear el ataque aéreo."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "El jugador intentó solicitar apoyo aéreo, pero no tenía los permisos requeridos para hacerlo.",
-
 		distance = "Distancia: ${distance}${unit}",
 		time_to_impact = "TTI: ${timeToImpact}",
 
@@ -4020,9 +3991,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		show_alert_success = "Alerta mostrada exitosamente al jugador.",
 		show_alert_everyone_success = "Alerta enviada con éxito a todos.",
-		show_alert_failed = "Error al intentar mostrar alerta al jugador.",
-
-		show_alert_missing_permissions = "El jugador intentó mostrar alerta a otro jugador sin tener los permisos necesarios"
+		show_alert_failed = "Error al intentar mostrar alerta al jugador."
 	},
 
 	arcade = {
@@ -4303,10 +4272,9 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 	audio = {
 		audio_id = "Audio ${audioId}",
-		illegal_sound_effect = "Se ha intentado ordenar a otros clientes que reproduzcan un audio externo.",
+		illegal_sound_effect = "Intento de hacer que otros clientes reproduzcan un audio externo sin los permisos adecuados.",
 		url_invalid = "La URL proporcionada no es válida. Debe subirse en una conexión segura. (https://)",
 		url_missing = "Por favor, agregue la URL del audio que está intentando reproducir.",
-		play_audio_no_permissions = "El jugador intentó reproducir un audio pero no tenía los permisos necesarios para hacerlo.",
 		played_audio_for_self = "Reproduciendo audio para ti mismo.",
 		played_audio_for_player = "Reproduciendo audio para ${consoleName}.",
 		played_audio_for_everyone = "Reproduciendo audio para todos.",
@@ -4542,7 +4510,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		illegal_boombox_item_id = "Se intentó utilizar una radio portátil con un ID de objeto ilegal.",
 		logs_attempted_to_add_song_title = "Intento de añadir canción",
 		logs_attempted_to_add_song_details = "${consoleName} intentó añadir una canción con la URL del video `${url}` a la radio portátil con ID `${boomboxId}`.",
-		wipe_boomboxes_not_staff = "El jugador intentó eliminar todas las radios, pero no tenía los permisos necesarios para hacerlo.",
 		logs_wiped_all_boomboxes_title = "Radios eliminadas",
 		logs_wiped_all_boomboxes_details = "${consoleName} ha eliminado todas las radios.",
 		logs_wiped_nearby_boomboxes_title = "Radios cercanas eliminadas",
@@ -4634,8 +4601,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		spawned_contract = "Contrato generado exitosamente.",
 		spawned_contract_for = "Contrato para ${displayName} creado con éxito.",
 
-		spawn_contract_no_permissions = "El jugador intentó crear un contrato de impulso sin los permisos necesarios.",
-
 		already_max_vin_scratched_vehicles = "Ya tienes la cantidad máxima de vehículos con VIN rayado en tu garaje.",
 		contract_has_expired = "Este contrato ha expirado.",
 		you_already_have_a_contract_started = "Ya tienes un contrato en proceso."
@@ -4685,8 +4650,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 	},
 
 	cargo = {
-		start_cargo_no_permissions = "El jugador intentó iniciar el robo de cargamento pero no tenía permisos para hacerlo.",
-		end_cargo_no_permissions = "El jugador intentó terminar el robo de carga pero no tenía permisos para hacerlo.",
 		cargo_already_active = "La carga ya está activa.",
 		started_cargo = "Se ha iniciado la carga.",
 		cargo_not_active = "La carga no está activa.",
@@ -4699,7 +4662,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 	},
 
 	casino = {
-		set_casino_screen_id_not_staff = "El jugador intentó establecer la identificación de pantalla del casino, pero no tenía los permisos correctos para hacerlo.",
 		successfully_set_screen_label = "Se establecieron correctamente las pantallas en la pantalla con la etiqueta `${screenLabel}`.",
 		successfully_queued_screen_label = "Se encoló correctamente la pantalla con la etiqueta `${screenLabel}`.",
 		failed_to_set_screen_label = "Error al establecer las pantallas en la pantalla con la etiqueta `${screenLabel}`.",
@@ -4767,8 +4729,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		blacklisted_video = "Video (${videoKey}) en la lista negra.",
 		failed_to_blacklist_video = "Error al añadir video (${videoKey}) en la lista negra.",
 		video_is_already_blacklisted = "El video (${videoKey}) ya está en la lista negra.",
-
-		blacklist_video_missing_permissions = "El jugador intentó añadir un video en la lista negra pero no tiene los permisos necesarios.",
 
 		watching_movie = "Viendo ${title}.",
 
@@ -4942,8 +4902,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		barber_menu_success = "No se pudo alternar el menú de la peluquería.",
 		failed_toggle_barber_menu = "Se abrió el menú de la peluquería para ${consoleName}.",
 		invalid_server_id = "ID del servidor inválida.",
-
-		clothing_menu_missing_permissions = "El jugador intentó abrir el menú de ropa de otro jugador pero no tenía los permisos necesarios.",
 
 		hats_and_helmets = "Sombreros y cascos",
 		glasses = "Gafas",
@@ -5696,7 +5654,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		special_vehicle_won = "¡Has ganado un vehículo especial! Lo puedes encontrar en tu garaje.",
 
-		reset_daily_activities_no_permissions = "El jugador intentó restablecer sus actividades diarias sin los permisos adecuados.",
 		reset_daily_activities = "Restablecer Actividades Diarias.",
 
 		task_progress = "Progreso de la tarea: ${task} (${remain} restantes)",
@@ -5770,7 +5727,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		network_id_side = "ID de red: ${networkId}",
 		no_target = "Sin objetivo",
 		invalid_radius_parameter = "Parámetro `radio` inválido.",
-		inject_code_not_developer = "El jugador intentó inyectar código pero no es desarrollador.",
 		inject_code_invalid_player = "No hay jugadores con el ID de servidor `${serverId}`.",
 		inject_code_success_for_everyone = "Código inyectado con éxito para todos.",
 		inject_code_success_for_player = "Código inyectado con éxito para ${consoleName}.",
@@ -5817,21 +5773,18 @@ OP.Global.Locales.Languages["es-ES"] = {
 		invalid_network_id = "ID de red no válida.",
 		delete_entity_success = "Entidad con ID de red ${networkId} ha sido eliminada exitosamente.",
 		delete_entity_failed = "No se ha podido eliminar la entidad.",
-		delete_entity_no_permissions = "El jugador intentó eliminar una entidad sin los permisos necesarios.",
+		delete_entity_no_permissions = "Intento de eliminar una entidad sin los permisos adecuados.",
 
 		failed_entity_info = "Error al obtener información de la entidad.",
 		printed_entity_info = "Información de la entidad impresa en el servidor en F8.",
 
 		move_entity_success = "Se ha movido correctamente la entidad con el ID de red ${networkId}.",
 		move_entity_failed = "No se ha podido mover la entidad.",
-		move_entity_no_permissions = "El jugador intentó mover una entidad sin los permisos necesarios.",
+		move_entity_no_permissions = "Intento de mover una entidad sin los permisos adecuados.",
 
-		fake_lag_updated = "El contador de falsa latencia se ha actualizado a `${counter}`.",
-		fake_lag_already_set_to = "El contador de falsa latencia ya está configurado en `${counter}`.",
-		fake_lag_enabled = "La falsa latencia ha sido activada con el contador `${counter}`.",
-		fake_lag_invalid_counter_value = "El valor `${counter}` no es un contador válido para la falsa latencia.",
+		fake_lag_invalid_fps = "Fps inválido.",
+		fake_lag_clamp = "Limitando el fps a estar por debajo de ${fps}.",
 		fake_lag_disabled = "La falsa latencia ha sido desactivada.",
-		fake_lag_not_enabled = "La falsa latencia no ha sido activada.",
 
 		weapon_name_missing = "Falta el parámetro del nombre del arma.",
 		weapon_name_invalid = "`${weaponName}` no es un nombre válido de arma.",
@@ -5860,7 +5813,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		disabled_network_debug = "Depuración de red de entidades desactivada.",
 		failed_network_debug = "No se pudo activar la depuración de red de entidades.",
 
-		network_owner_subscription_no_permissions = "Se intentó suscribir al propietario de la red de entidades sin permiso apropiado.",
+		network_owner_subscription_no_permissions = "Se intentó suscribir al propietario de la red de entidades sin permisos adecuados.",
 
 		missing_ipl = "Falta parámetro ipl.",
 		enabled_ipl = "Ipl `${ipl}` habilitado con éxito.",
@@ -6156,8 +6109,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 	},
 
 	flag_swap = {
-		toggle_flag_swap_no_permissions = "Se intentó cambiar la bandera de intercambio sin permisos adecuados.",
-
 		toggled_flag_swap_on = "Cambiado el intercambio de bandera en.",
 		toggled_flag_swap_off = "Intercambio de bandera desactivado.",
 
@@ -6181,16 +6132,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 		failed_create = "Falló al crear el campo de fuerza.",
 		forcefield_marker = "ID: ${id}",
 		invalid_forcefield_id = "ID del campo de fuerza no válida.",
-		failed_destroy = "Falló al destruir el campo de fuerza.",
-
-		create_forcefield_no_permissions = "El jugador intentó crear un campo de fuerza pero no tenía los permisos necesarios para hacerlo.",
-		destroy_forcefield_no_permissions = "El jugador intentó destruir un campo de fuerza pero no tenía los permisos necesarios para hacerlo."
+		failed_destroy = "Falló al destruir el campo de fuerza."
 	},
 
 	fortnite = {
-		add_building_no_permissions = "El jugador intentó agregar un edificio de Fortnite pero no tenía los permisos necesarios para hacerlo.",
-		wipe_buildings_no_permissions = "El jugador intentó eliminar los edificios de Fortnite pero no tenía los permisos necesarios para hacerlo.",
-
 		no_buildings_in_radius = "No hay edificios dentro de un radio de ${radius}.",
 		no_buildings = "No hay edificios.",
 		wiped_buildings_in_radius = "Se eliminaron ${removedBuildings} edificios dentro de un radio de ${radius}.",
@@ -6402,7 +6347,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		press_to_exit_locker = "Presiona ~INPUT_CONTEXT~ para salir del armario.",
 		failed_to_start_escape_room = "Fallo al comenzar la sala de escape.",
 		started_escape_room = "Se empezó la sala de escape con ${playerAmount} jugadores.",
-		start_escape_room_missing_permissions = "El jugador intentó empezar una sala de escape pero no tenía los permisos necesarios para hacerlo.",
 		escape_instructions = "Al completarla, las puertas se abrirán y podrás salir del edificio.",
 		answer_the_phone = "Contestar el teléfono.",
 
@@ -6416,8 +6360,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		successfully_revived_everyone = "Todos los jugadores revividos exitosamente.",
 		successfully_revived_everyone_removed_injuries = "Todos los jugadores revividos exitosamente y se les quitaron sus lesiones.",
 		failed_to_revive = "No se pudo ejecutar el comando `/revive` correctamente.",
-		revive_player_not_staff = "El jugador intentó revivir a otro jugador pero no tenía los permisos necesarios para hacerlo.",
-		revive_self_not_staff = "El jugador intentó revivir a sí mismo otravez, pero no tiene los permisos necesarios para hacerlo.",
 		revived_self_removed_injuries_title = "Se revivió a sí mismo y se eliminaron las lesiones",
 		revived_self_removed_injuries_details = "${consoleName} se revivió a sí mismo y eliminó sus lesiones.",
 		revived_self_title = "Se revivió a sí mismo",
@@ -6430,8 +6372,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		revived_player_removed_injuries_details = "${consoleName} ha revivido a ${targetConsoleName} y eliminado sus lesiones.",
 		revived_player_title = "Revivido Jugador",
 		revived_player_details = "${consoleName} ha revivido a ${targetConsoleName}.",
-		get_recent_deaths_not_staff = "El jugador ha intentado obtener las muertes recientes, pero no tenía los permisos necesarios para hacerlo.",
-		get_player_last_death_not_staff = "El jugador intentó obtener la última muerte de otro jugador, pero no tenía los permisos necesarios para hacerlo.",
 		recent_deaths = "Muertes Recientes",
 		no_recent_deaths = "No hay muertes recientes.",
 		recent_deaths_list_entry = "${recentDeathId}. ${consoleName} murió hace ${timer} segundos.",
@@ -6459,7 +6399,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		no_players_in_range = "No hay jugadores desmayados dentro de un radio de ${distance}m.",
 		successfully_revived_range = "Se ha revivido exitosamente a ${amount} jugador(es) en un radio de ${distance}m.",
 		failed_revive_range = "Fallo al revivir jugadores.",
-		range_revive_not_staff = "El jugador intentó revivir a jugadores en un cierto rango, pero no tenía los permisos correctos para hacerlo.",
 
 		cpr_ped_logs_title = "Ped RCPeado",
 		cpr_ped_logs_details = "${consoleName} realizó RCP a un ped y recibió $${money}.",
@@ -6577,6 +6516,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		pilot_license_details = "Licencia de piloto | ${firstName} ${lastName} | ID de ciudadano: ${characterId}",
 		weapon_license = "Licencia de armas",
 		weapon_license_details = "Licencia de armas | ${firstName} ${lastName} | ID de ciudadano: ${characterId}",
+		mining_license = "Licencia de Minería",
+		mining_license_details = "Licencia de Minería | ${firstName} ${lastName} | ID del Ciudadano: ${characterId}",
 		just_showed_license = "Acabas de mostrar una licencia. Por favor espera un momento.",
 
 		just_showed_badge = "Acabas de mostrar una insignia. Por favor espera un momento.",
@@ -6710,13 +6651,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		failed_to_get_instance_players = "No se pudieron obtener los jugadores de la instancia.",
 		no_players = "No hay jugadores.",
 
-		instance_hud = "ID de la instancia: ${instanceId}",
-
-		create_instance_not_developer = "El jugador intentó crear una instancia pero no es un desarrollador.",
-		destroy_instance_not_developer = "El jugador intentó destruir una instancia pero no era un desarrollador.",
-		add_player_to_instance_not_developer = "El jugador intentó agregar a otro jugador a una instancia pero no era un desarrollador.",
-		remove_player_from_instance_not_developer = "El jugador intentó eliminar a otro jugador de una instancia pero no era un desarrollador.",
-		get_players_from_instance_not_developer = "El jugador intentó obtener los jugadores de una instancia pero no era un desarrollador."
+		instance_hud = "ID de la instancia: ${instanceId}"
 	},
 
 	interiors = {
@@ -6892,8 +6827,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		no_ground_inventories = "No hay inventarios en el suelo para limpiar.",
 		no_ground_inventories_within_radius = "No hay inventarios en el suelo que limpiar dentro de un radio de `${radius}`.",
 
-		wipe_inventories_not_staff = "El jugador intentó limpiar inventarios, pero no tenía los permisos necesarios para hacerlo.",
-
 		logs_wiped_all_ground_inventories_title = "Inventarios en Suelo Limpiados",
 		logs_wiped_all_ground_inventories_details = "${consoleName} ha limpiado todos los inventarios en el suelo.",
 
@@ -6955,6 +6888,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		pilot_license_description = "Una licencia de piloto para volar aviones y cosas.",
 		weapon_license = "Licencia de Armas",
 		weapon_license_description = "Una licencia de armas para poseer y llevar armamento de mayor categoría.",
+		mining_license = "Licencia de Minería",
+		mining_license_description = "Una licencia de minería para la extracción.",
 
 		sasp_badge = "Placa de la SASP",
 		sasp_badge_description = "Una placa para los oficiales del Departamento de Policía de San Andreas.",
@@ -7033,6 +6968,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		advanced_lockpick_description = "Esconde a tus hijos, esconde a tu esposa.",
 		cleaning_kit = "Kit de Limpieza",
 		cleaning_kit_description = "Perfecto para limpiar tu vehículo, o las manchas de sangre que has dejado secar en la parte trasera de tu maletero.",
+		scratch_remover = "Removedor de Arañazos",
+		scratch_remover_description = "Se utiliza para eliminar baches y arañazos de los vehículos.",
 
 		multi_tool = "Herramienta Multiusos",
 		multi_tool_description = "Una herramienta que se puede usar para todo tipo de cosas.",
@@ -7657,6 +7594,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		cone_description = "Se puede colocar en cualquier lugar del mundo.",
 		spike_strips = "Tiras de pinchos",
 		spike_strips_description = "Se pueden colocar en cualquier lugar del mundo.",
+		spike_strips_large = "Grandes Clavos de Púas",
+		spike_strips_large_description = "Se pueden colocar en cualquier parte del mundo.",
 		floodlight = "Foco proyector",
 		floodlight_description = "Se puede colocar en cualquier lugar del mundo.",
 		left_diversion_sign = "Señal de desvío a la izquierda",
@@ -7719,6 +7658,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		hiking_backpack = "Mochila de senderismo",
 		hiking_backpack_description = "Prepárate para aventuras al aire libre con esta elegante mochila de senderismo. Agrega un toque de encanto rústico a tu atuendo, aunque es puramente decorativo. ¡Abraza el espíritu de la exploración y muestra tus vibraciones de entusiasta del aire libre donde quiera que vayas!",
+		green_hiking_backpack = "Mochila de Senderismo Verde",
+		green_hiking_backpack_description = "Prepárate para aventuras al aire libre con esta elegante mochila de senderismo. Añade un toque de encanto rústico a tu atuendo, aunque es puramente estético. ¡Abraza el espíritu de la exploración y muestra tus vibras de entusiasta del aire libre dondequiera que vayas!",
+		blue_hiking_backpack = "Mochila de Senderismo Azul",
+		blue_hiking_backpack_description = "Prepárate para aventuras al aire libre con esta elegante mochila de senderismo. Añade un toque de encanto rústico a tu atuendo, aunque es puramente estético. ¡Abraza el espíritu de la exploración y muestra tus vibras de entusiasta del aire libre dondequiera que vayas!",
 
 		gasoline_bottle = "Botella de Gasolina",
 		gasoline_bottle_description = "Para una rápida recarga de tu auto o...ehm...de ti mismo?",
@@ -8350,6 +8293,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 	items = {
 		move_to_repair = "Muévase aquí para reparar el vehículo.",
 		repairing_vehicle = "Reparando vehículo",
+		fix_visual_damage = "Arreglando daño visual",
 		using_first_aid_kit = "Usando botiquín de primeros auxilios",
 		using_bandages = "Usando vendas",
 		using_ifak = "Usando IFAK",
@@ -8407,7 +8351,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		press_to_deposit = "Presiona ~INPUT_REPLAY_SHOWHOTKEY~ para depositar elementos en el bote en línea.",
 		can_only_withdraw_at_casino = "Sólo puedes retirar dinero en el Casino.",
 
-		take_fee_no_permissions = "El jugador intentó tomar las tarifas del jackpot sin los permisos adecuados.",
 		took_jackpot_fees = "Tomó las tarifas del jackpot. Se han retirado ${removedTotalItems} objetos por un valor total de $${removedTotalWorth} de los inventarios de ${inventories}.",
 
 		jackpot = "Premio gordo",
@@ -8513,7 +8456,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		something_went_wrong = "No se pudo encontrar la entidad.",
 		locate_success = "Entidad localizada exitosamente coincidiendo con `${filter}` en (${x}, ${y}, ${z}) (instancia = ${instance}).",
 
-		locate_entity_no_permissions = "El jugador intentó localizar una entidad sin permiso adecuado.",
+		locate_entity_no_permissions = "Se intentó localizar una entidad sin permisos adecuados.",
 
 		locate_entity_logs_title = "Entidad localizada",
 		locate_entity_logs_details = "${consoleName} intentó localizar una entidad tipo `${filterType}` con valor `${filterValue}`."
@@ -8596,6 +8539,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		queue = "Cola",
 		queue_position_with_priority = "🐌 Estás en la posición ${queuePosition}/${queueTotal} en la cola con prioridad ${queuePriorityName}. 🕐${queueTime}",
 		queue_position_without_priority = "🐌 Estás en la posición ${queuePosition}/${queueTotal} en la cola. 🕐${queueTime}",
+		live_on_twitch = "¿Estás aburrido? ¡Mira a estos streamers!",
+		live = "En vivo",
 		you_are_through = "¡Estás adentro!",
 		join_server = "Unirse al Servidor",
 		tired_of_queueing = "¿Cansado de esperar en la cola? ¡Apóyanos para prioridad en la cola!",
@@ -8614,6 +8559,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 		weird_date_of_birth = "Intenta elegir una fecha de nacimiento razonable.",
 		invalid_backstory = "Historia faltante o inválida (máximo 5,000 caracteres).",
 		backstory_too_short = "Tu historia de fondo es demasiado corta (mínimo ${backstory} caracteres).",
+
+		invalid_date = "Fecha de nacimiento inválida.",
+		date_not_future = "Tu fecha de nacimiento no puede ser en el futuro.",
+		date_too_old = "Tu fecha de nacimiento no puede ser mayor de 100 años.",
 
 		bad_words = "Hay palabras ofensivas en tu nombre de personaje o historial.",
 		disallowed_name = "Hay algunas palabras no permitidas en tu nombre de personaje.",
@@ -8659,9 +8608,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		invalid_server_id = "Id de servidor inválida.",
 		logs_failed = "Fallo al cargar los registros.",
 
-		close = "Cerrar",
-
-		get_logs_no_permissions = "El jugador intentó obtener registros sin los permisos adecuados."
+		close = "Cerrar"
 	},
 
 	loot = {
@@ -8706,8 +8653,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 	magazines = {
 		issue_id = "Problema #${issueId}",
 		releases_updated = "Actualizaciones disponibles.",
-		no_release_changes = "No hay cambios en las actualizaciones.",
-		refresh_magazines_no_permissions = "El jugador intentó recargar las municiónes sin los permisos necesarios."
+		no_release_changes = "No hay cambios en las actualizaciones."
 	},
 
 	mdt = {
@@ -8889,15 +8835,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 		bad_ped_message = "Se ha intentado crear un mensaje posiblemente inapropiado del personaje: \"${pedMessage}\"",
 		bad_twitter_post = "Se ha intentado crear un post posiblemente inapropiado en Twitter: \"${twitterPost}\"",
 		bad_phone_message = "Se ha intentado crear un posible tweet inapropiado: \"${message}\"",
-		mute_toggle_not_staff = "El jugador intentó silenciar a otro jugador, pero no tenía los permisos necesarios para hacerlo.",
-		unmute_toggle_not_staff = "El jugador intentó quitarle el silencio a otro jugador, pero no tenía los permisos necesarios para hacerlo.",
 		user_not_found = "No hemos podido encontrar a ningún usuario con la ID del servidor `${serverId}`.",
 		player_already_muted = "${consoleName} ya está en silencio.",
 		player_has_been_muted_no_reason = "${consoleName} ha sido silenciado ahora sin una razón especificada.",
 		player_has_been_muted = "${consoleName} ha sido silenciado con motivo: `${reason}`.",
 		player_not_muted = "${consoleName} no está silenciado.",
 		player_has_been_unmuted = "${consoleName} se ha dessilenciado.",
-		clear_chat_not_admin = "El jugador intentó limpiar el chat para todos los jugadores, pero no tenía los permisos necesarios para hacerlo.",
 		ooc_clear_chat_title = "Chat Limpiado",
 		ooc_clear_chat_details = "${consoleName} limpió el chat para todos.",
 		muted_player = "Jugador Silenciado",
@@ -9880,8 +9823,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		failed_load_player = "Error al cargar los datos del jugador. ¿Ingresaste una identificación de servidor válida?",
 		failed_add_warning = "Error al agregar la advertencia.",
 
-		get_info_no_permissions = "El jugador intentó obtener información de un jugador sin los permisos necesarios.",
-
 		user_indefinitely_banned_warning_no_reason = "He bloqueado indefinidamente a esta persona sin motivo especificado. Esta advertencia se generó automáticamente como resultado del bloqueo.",
 		user_indefinitely_banned_warning = "He baneado indefinidamente a esta persona con la razón `${reason}`. Esta advertencia fue generada automáticamente como resultado del baneo.",
 		user_temporarily_banned_warning_no_reason = "He baneado temporalmente a esta persona sin una razón específica por ${displayTime}. Esta advertencia fue generada automáticamente como resultado del baneo.",
@@ -10006,11 +9947,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		missing_emote = "Parámetro de emote faltante.",
 
 		emote_list = "Emotes de ped disponibles: ${list}.",
-		task_list = "Tareas de peatones disponibles: ${list}.",
-
-		spawn_ped_missing_perms = "Intento de generar un peatón sin los permisos adecuados.",
-		remove_peds_missing_perms = "Intento de eliminar los peatones generados sin los permisos adecuados.",
-		ped_assign_task_missing_perms = "Intento de asignar una tarea a los peatones generados sin los permisos adecuados."
+		task_list = "Tareas de peatones disponibles: ${list}."
 	},
 
 	ped_steal = {
@@ -10067,7 +10004,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 	player_control = {
 		unable_to_drive_for_yourself = "No puedes conducir por ti mismo.",
-		drive_for_player_no_permissions = "El jugador intentó conducir para otro jugador, pero no tenía los permisos necesarios para hacerlo.",
 		player_is_not_nearby = "El jugador con ID de servidor ${serverId} no está cerca.",
 		player_is_not_the_drive_of_a_vehicle = "El jugador con ID de servidor ${serverId} no es el conductor de un vehículo.",
 		press_to_stop_drive_for = "Presiona ~ INPUT_FRONTEND_CANCEL ~ para dejar de conducir para el jugador."
@@ -10088,7 +10024,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 	player_stats = {
 		hp = "Vida",
 		armor = "Armadura",
-		toggle_player_stats_no_permissions = "El jugador intentó cambiar las estadísticas del jugador sin permiso.",
 		updated_render_range = "Se actualizó el rango de renderizado a ${renderRange}.",
 		turned_player_stats_on = "Se han activado las estadísticas del jugador.",
 		turned_player_stats_off = "Se han desactivado las estadísticas del jugador."
@@ -10143,7 +10078,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 	props = {
 		illegal_prop_item_id = "El jugador intentó usar un objeto de utilería con un identificador de objeto ilegal.",
-		spawn_prop_not_staff = "El jugador intentó crear un objeto de utilería pero no tenía los permisos necesarios para hacerlo.",
 		managing_props_help = "Actualmente estás gestionando props. Acércate a un prop y presiona ~INPUT_CONTEXT~ para recogerlo.",
 		total_props = "Total Props: ${count}",
 		active_props = "Props activos: ${count}",
@@ -10172,7 +10106,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		invalid_wipe_radius = "Radio de limpieza inválido (entre 1 y 100).",
 		wipe_successful = "Los objetos han sido eliminados correctamente.",
-		wipe_props_missing_permissions = "El jugador ha intentado eliminar objetos, pero no tenía los permisos necesarios para hacerlo.",
 
 		placing_prop = "Colocando Prop",
 		pickup_prop = "Recogiendo Prop",
@@ -10209,7 +10142,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		radio_debug_off = "Se desactivó correctamente la depuración de la radio.",
 		radio_debug_on = "Se activó correctamente la depuración de la radio.",
 
-		radio_debug_no_permissions = "Se intentó cambiar la depuración de la radio sin permiso adecuado.",
+		radio_debug_no_permissions = "Se intentó activar o desactivar la depuración de radio sin permisos adecuados.",
 
 		decrypt_frequency = "[${InteractionKey}] Descifrar frecuencia",
 		decrypting_frequency = "Descifrando frecuencia",
@@ -10246,8 +10179,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 	reskin = {
 		plastic_surgery = "Cirugía plástica",
 		los_santos_police_dept = "DEPARTAMENTO DE POLICÍA DE LOS SANTOS",
-
-		reskin_player_no_permissions = "El jugador intentó activar el depurador de radio sin permiso adecuado.",
 
 		triggered_reskin_for_player = "Activó cambio de piel para ${consoleName}.",
 
@@ -10353,13 +10284,13 @@ OP.Global.Locales.Languages["es-ES"] = {
 		riot_mode_enabled = "Modo de disturbios activado correctamente.",
 		riot_mode_disabled = "Modo de disturbios desactivado correctamente. Los NPC agresivos seguirán combatiendo hasta su muerte.",
 		riot_mode_failed = "No se pudo cambiar el modo de disturbios.",
-		riot_mode_missing_perms = "Intentaste cambiar el modo de disturbios sin permiso suficiente.",
+		riot_mode_missing_perms = "Se intentó activar o desactivar el modo disturbio sin permisos adecuados.",
 
 		riot_mode_enabled_help = "El modo disturbios ha sido activado.",
 		riot_mode_disabled_help = "El modo disturbios ha sido desactivado.",
 
-		add_riot_player_no_permissions = "Intento de agregar un jugador a la lista de disturbios sin los permisos necesarios.",
-		remove_riot_player_no_permissions = "Intento de eliminar un jugador de la lista de disturbios sin los permisos necesarios.",
+		add_riot_player_no_permissions = "Se intentó agregar un jugador a la lista de disturbios sin los permisos adecuados.",
+		remove_riot_player_no_permissions = "Se intentó eliminar un jugador de la lista de disturbios sin los permisos adecuados.",
 
 		player_already_in_riot_list = "${consoleName} ya está en la lista de disturbios.",
 		player_not_in_riot_list = "${consoleName} no está en la lista de disturbios.",
@@ -10626,7 +10557,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		finding_player = "Buscando jugador",
 
 		invincibility_active = "Invencibilidad: ~r~Activa~w~",
-		invincibility_inactive_dead = "Invencibilidad: ~g~Inactiva~w~ (muerto)",
+		invincibility_inactive_dead = "Invencibilidad: ~g~Activa~w~ (muerto)",
+		invincibility_inactive_trunk = "Invencibilidad: ~g~Activa~w~ (baúl)",
 		invincibility_inactive = "Invencibilidad: ~g~Inactiva~w~",
 
 		health_ok = "Salud: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
@@ -10698,7 +10630,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 	status = {
 		status_reset = "Se ha restablecido correctamente el estado de ${consoleName}.",
 		status_reset_failed = "No se ha encontrado ningún usuario con ID de servidor `${serverId}`.",
-		reset_status_not_staff = "Se ha intentado restablecer el estado de un jugador sin los permisos necesarios.",
 		status_reset_for_all = "Se ha restablecido correctamente el estado de todos.",
 		status_disabled = "Se han desactivado los estados (estrés, hambre y sed).",
 		status_enabled = "Se han activado los estados (estrés, hambre y sed).",
@@ -10711,8 +10642,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		set_body_armor_level_everyone_details = "${consoleName} estableció el nivel de protección corporal de todos en `${bodyArmorLevel}`.",
 		set_body_armor_level_player_title = "Establecer nivel de chaleco antibalas para jugador",
 		set_body_armor_level_player_details = "${consoleName} ha actualizado a ${targetConsoleName} y ha establecido su nivel de chaleco antibalas en `${bodyArmorLevel}`.",
-		set_body_armor_level_player_not_staff = "El jugador intentó establecer el nivel de chaleco antibalas de otro jugador pero no tenía los permisos necesarios para hacerlo.",
-		set_body_armor_level_self_not_staff = "El jugador intentó establecer su propio nivel de chaleco antibalas pero no tenía los permisos necesarios para hacerlo.",
 		stress_level_warning = "Estás estresado! Reduce tu estrés fumando Cigarros, Porros o haciendo actividades como Yoga."
 	},
 
@@ -10725,7 +10654,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		missing_hour = "Hora no proporcionada.",
 		invalid_hour = "La hora local es inválida. El valor debe ser una hora entre 0:00 y 23:59.",
 		hour_changed = "La hora se ha establecido en `${hour}`.",
-		set_hour_not_staff = "Se intentó establecer la hora sin los permisos necesarios.",
 
 		local_time_override_enabled = "La hora local se ha establecido en ${hour}:${minute}.",
 		local_time_override_disabled = "Hora local restablecida a la predeterminada.",
@@ -10735,27 +10663,21 @@ OP.Global.Locales.Languages["es-ES"] = {
 		missing_minute = "Minuto no proporcionado.",
 		invalid_minute = "El minuto `${minute}` no es válido. El valor debería estar entre 0 y 59.",
 		minute_changed = "El minuto ahora se ha establecido en `${minute}`.",
-		set_minute_not_staff = "Se intentó establecer el minuto sin los permisos necesarios.",
 
 		missing_weather = "Clima no proporcionado.",
 		invalid_weather = "El clima `${weatherName}` no es válido. Los valores válidos para el clima son CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT y BLIZZARD.",
 		weather_changed = "El clima ahora se ha establecido como `${weatherName}`.",
 		weather_advanced = "El clima se ha avanzado a `${weatherName}`.",
 		weather_advance_fail = "No se pudo avanzar el clima de forma natural.",
-		set_weather_not_staff = "Se intentó establecer el clima sin los permisos requeridos.",
-		advance_weather_not_staff = "Se intentó avanzar el clima sin los permisos requeridos.",
 
 		time_frozen = "El tiempo ha sido congelado.",
 		time_unfrozen = "El tiempo ya no está congelado.",
-		freeze_time_not_staff = "Se intentó congelar el tiempo sin los permisos necesarios.",
 
 		weather_frozen = "El clima está congelado.",
 		weather_unfrozen = "El clima ya no está congelado.",
-		freeze_weather_not_staff = "Se intentó congelar el clima sin los permisos necesarios.",
 
 		blackout_enabled = "Hay un apagón en la ciudad.",
 		blackout_disabled = "La ciudad ya no está en apagón.",
-		blackout_not_staff = "Se intentó activar/desactivar un apagón sin los permisos necesarios.",
 
 		weather_changed_title = "Cambio de clima",
 		weather_changed_details = "${consoleName} cambió el clima a `${weatherName}`.",
@@ -11109,8 +11031,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 	},
 
 	trains = {
-		spawn_train_missing_permissions = "El jugador intentó crear un tren pero no tenía los permisos necesarios para hacerlo.",
-
 		invalid_track_id = "ID de pista inválida proporcionada.",
 		spawned_train_on_track = "Se ha creado un tren en la pista ${trackId}.",
 		failed_to_spawn_train = "No se pudo crear el tren."
@@ -11126,7 +11046,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 	treasure_maps = {
 		no_treasure_map_with_tier = "No hay un mapa del tesoro con el nivel ${mapTier}.",
 		treasure_map_does_not_have_piece = "El mapa del tesoro con el nivel ${mapTier} no tiene la pieza ${pieceNumber}.",
-		spawn_map_piece_missing_permissions = "El jugador intentó generar una pieza del mapa sin los permisos necesarios.",
 
 		sketchy_map = "Mapa Dibujado",
 		worn_map = "Mapa Desgastado",
@@ -11156,9 +11075,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		set_ocean_scaler_no_permission = "El jugador no tiene el permiso necesario para establecer la intensidad del escalador del océano.",
 
 		tsunami_started = "Se ha iniciado el tsunami. Tomará ${minutes} minutos para inundar el mapa.",
-		tsunami_stopped = "El tsunami ha parado.",
-
-		toggle_tsunami_no_permissions = "Se intentó activar o desactivar el tsunami sin los permisos adecuados."
+		tsunami_stopped = "El tsunami ha parado."
 	},
 
 	tuner_shop = {
@@ -11195,8 +11112,9 @@ OP.Global.Locales.Languages["es-ES"] = {
 		cleared_vdm = "Borrados ${amount} objetivos de VDM.",
 		failed_vdm_clear = "No se pudo borrar objetivos de VDM.",
 		added_vdm_target = "El NPC con la ID de red ${networkId} ahora está apuntando a ${target}.",
-
-		vdm_no_permissions = "El jugador intentó usar el comando de VDM sin los permisos necesarios."
+		no_ped_available = "No hay ningún peatón disponible cerca.",
+		failed_steal = "Fallo al robar el vehículo.",
+		stealing_vehicle = "Se ha instruido a un peatón cercano que robe el vehículo (${distance}m)."
 	},
 
 	vending_machines = {
@@ -11278,10 +11196,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 	},
 
 	wizard = {
-		action_missing_permissions = "Intento de hacer que un jugador realice una acción de hechicería sin permisos adecuados.",
-		action_radius_missing_permissions = "Intento de hacer que los jugadores en un cierto radio hagan acciones de hechicería sin permisos adecuados.",
-		run_as_missing_permissions = "Intento de ejecutar un comando como otro jugador sin permisos adecuados.",
-
 		menu_title = "Hechicero",
 
 		ragdoll_player = "Desmayar",
@@ -11367,8 +11281,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		invalid_explosion_type = "El tipo de explosión `${explosionType}` no es válido.",
 		invalid_camera_shake = "La sacudida de cámara `${cameraShake}` no es válida.",
 		invalid_damage_scale = "La escala de daño `${damageScale}` no es válida.",
-		created_explosion = "Se ha creado una explosión de tipo `${explosionTypeName}` con una escala de daño de `${damageScale}` y sacudida de cámara de `${cameraShake}`.",
-		create_explosion_not_developer = "El jugador intentó crear una explosión pero no es un desarrollador."
+		created_explosion = "Se ha creado una explosión de tipo `${explosionTypeName}` con una escala de daño de `${damageScale}` y sacudida de cámara de `${cameraShake}`."
 	},
 
 	functions = {
@@ -11489,7 +11402,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 	},
 
 	duty = {
-		toggle_duty_status_no_permissions = "El jugador intentó activar el estado de servicio a través del comando sin los permisos adecuados.",
+		toggle_duty_status_no_permissions = "Intento de cambiar el estado de servicio mediante el comando sin los permisos adecuados.",
 
 		duty_status_on = "Se ha activado el estado de servicio con éxito.",
 		duty_status_off = "Se ha desactivado el estado de servicio con éxito.",
@@ -11604,6 +11517,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		license_hunting = "Licencia de caza",
 		license_fishing = "Licencia de pesca",
 		license_weapon = "Licencia de Armas",
+		license_mining = "Licencia de Minero",
 		gave_character_license = "Se otorgó la licencia `${licenseLabel}` a ${characterName}.",
 		character_already_has_license = "${characterName} ya tiene la licencia `${licenseLabel}`",
 		removed_character_license = "Se quitó la licencia `${licenseLabel}` de ${characterName}.",
@@ -11737,8 +11651,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		not_in_a_vehicle = "No estás en un vehículo.",
 		vehicle_engine_on = "El motor todavía está encendido.",
 
-		set_fuel_no_permissions = "El jugador intentó establecer el nivel de gasolina de un vehículo sin los permisos adecuados.",
-
 		vehicle_exploded_logs_title = "Vehículo Explotado",
 		vehicle_exploded_logs_details = "${consoleName} reabasteció un vehículo y provocó una explosión debido a que el motor estaba en marcha."
 	},
@@ -11834,11 +11746,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "Se ha activado la depuración en el garaje.",
 		toggle_garage_debug_toggled_off = "Se ha desactivado la depuración en el garaje."
-	},
-
-	handlings = {
-		set_handling_override_not_super_admin = "El jugador intentó establecer una anulación de manejo sin permisos adecuados.",
-		remove_handling_override_not_super_admin = "El jugador intentó remover una anulación de manejo sin permisos adecuados."
 	},
 
 	keys = {
@@ -11965,31 +11872,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		toggle_brakes_off = "Frenos activados.",
 		failed_modify_brakes = "Error al modificar los frenos.",
 
-		toggle_disabled_brakes_no_permissions = "El jugador intentó cambiar los frenos desactivados mediante un comando sin los permisos necesarios.",
-
-		-- NOTE: `add_vehicle` command:
-		add_vehicle_not_super_admin = "El jugador intentó agregar un vehículo al garaje de alguien sin los permisos necesarios.",
-		add_vehicle_added_vehicle_for_everyone = "Se ha agregado el vehículo con nombre de modelo `${modelName}` para todos.",
-		add_vehicle_added_vehicle_for_player = "Se ha agregado el vehículo con nombre de modelo`${modelName}` para ${consoleName}.",
-		add_vehicle_added_vehicle = "Se ha agregado un vehículo con nombre de modelo `${modelName}`.",
-		add_vehicle_character_not_loaded = "El jugador objetivo no tiene personajes cargados.",
-		add_vehicle_target_user_not_found = "No se ha encontrado al usuario objetivo.",
-		add_vehicle_invalid_input = "Entrada inválida.",
-		add_vehicle_no_permissions = "Sin permisos.",
-		add_vehicle_user_not_found = "Usuario no encontrado.",
-		add_vehicle_invalid_player = "No hay jugadores con ID de servidor `${serverId}`.",
-		add_vehicle_invalid_model_name = "El nombre del modelo `${modelName}` no es un modelo válido.",
-		add_vehicle_no_model_name = "No se ha agregado ningún nombre de modelo.",
-
-		added_vehicle_for_everyone_logs_title = "Vehículo añadido para todos",
-		added_vehicle_for_everyone_logs_details = "${consoleName} ha añadido un vehículo con nombre de modelo `${modelName}` al garaje de todos.",
-		added_vehicle_for_player_logs_title = "Vehículo añadido para un jugador",
-		added_vehicle_for_player_logs_details = "${consoleName} ha añadido un vehículo con nombre de modelo `${modelName}` al garaje de ${targetConsoleName}.",
-		added_vehicle_logs_title = "Vehículo añadido",
-		added_vehicle_logs_details = "${consoleName} ha añadido un vehículo con nombre de modelo `${modelName}` a su garaje.",
-
 		-- NOTE: `toggle_vehicle_weapons` command:
-		toggle_vehicle_weapons_not_super_admin = "El jugador intentó activar o desactivar las armas del vehículo sin los permisos necesarios.",
 		toggled_vehicle_weapons_on = "Se activaron las armas del vehículo.",
 		toggled_vehicle_weapons_off = "Se desactivaron las armas del vehículo.",
 		toggled_vehicle_weapons_vehicle_is_not_networked = "El vehículo en el que te encuentras no está en red.",
@@ -12144,6 +12027,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		ems_boat_hq = "Sede de EMS Marítimo",
 		ems_garage = "Garaje de EMS",
 		e_to_get_treated = "[E] Ser tratado - $1250",
+		e_check_in_player = "[E] Registrarse jugador - $1250",
+		check_in_blocked = "Registro ocupado",
 		get_treated = "Ser tratado - $1250",
 		you_are_being_treated = "Estás siendo tratado",
 		being_treated = "Siendo tratado",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 18 (do not change)
+-- AUTO LOCALES: 19 (do not change)
 
 OP.Global.Locales.Languages["meme-spongebob"] = {
 	-- configuration settings for language
@@ -61,7 +61,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		you_are_not_being_carried = "You're not being carried anywhere, silly.",
 		successfully_uncarried = "Success! You're no longer being carried!",
 		failed_uncarried = "Oh no! We couldn't stop the carry.",
-		uncarry_missing_permissions = "Oopsies! You don't have the permission to stop someone from carrying you.",
+		uncarry_missing_permissions = "Attempted to force stop carry without proper permissions, doodle.",
 
 		uncarry_logs_title = "Force Uncarry Log",
 		uncarry_logs_details = "${consoleName} forced ${targetName} to stop carrying them. How rude!",
@@ -78,7 +78,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 	-- base/*
 	admin = {
-		feature_toggle_not_admin = "Tried to mess with someone else's or their own '${featureName}' like a plankton, meow, but didn't have permission, meow.",
 		feature_toggle_activated_logs_title = "Toggled Features from afar, meow",
 		feature_toggle_activated_logs_details_state = "${consoleName} toggled `${featureName}` ${newState} for player ${targetConsoleName}.",
 		feature_toggle_activated_all_logs_title = "Remotely Toggled Feature For Everyone",
@@ -101,9 +100,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		failed_to_spawn_vehicle = "Oopsie daisy! I couldn't create a vehicle.",
 		spawned_vehicle_for_player = "Ta-da! I've conjured a `${modelName}` for ${displayName}.",
 		spawned_vehicle_for_everyone = "Everybody rejoice! We just spawned `${modelName}` for all citizens of Bikini Bottom.",
-		spawn_vehicle_no_permissions = "Uh-oh! Someone tried to spawn a vehicle without the right magic words.",
-		replace_vehicle_no_permissions = "Blisterin' barnacles! That player tried to replace their vehicle, but they didn't have the proper permissions to do so.",
-		create_vehicle_no_permissions = "Fishpaste! That player tried to create a vehicle, but they didn't have the proper permissions to do so.",
 		spawned_vehicle_for_self_title = "Fabulous New Set of Wheels!",
 		spawned_vehicle_for_self_details = "${consoleName} got a new ride! It's a ${modelName}. Sweet!",
 		spawned_vehicle_for_player_title = "Sweet Gift for Player",
@@ -113,6 +109,26 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		vehicle_created = "Successfully created boatmobile me boy!",
 		failed_vehicle_creation = "Oh no! I couldn't make this plankton trap car!",
+
+		-- NOTE: `add_vehicle` command:
+		add_vehicle_added_vehicle_for_everyone = "Added vehicle with model name `${modelName}` for everyone, jellyfish.",
+		add_vehicle_added_vehicle_for_player = "Added vehicle with model name `${modelName}` for ${consoleName}, jellyfish.",
+		add_vehicle_added_vehicle = "Added vehicle with model name `${modelName}`, jellyfish.",
+		add_vehicle_character_not_loaded = "The target player had no characters loaded, barnacle head.",
+		add_vehicle_target_user_not_found = "The target user couldn't be found, barnacle head.",
+		add_vehicle_invalid_input = "Invalid input, meow.",
+		add_vehicle_no_permissions = "No permissions, meow.",
+		add_vehicle_user_not_found = "User not found, meow.",
+		add_vehicle_invalid_player = "There were no players with server ID `${serverId}`, meow.",
+		add_vehicle_invalid_model_name = "The model name `${modelName}` is not a valid model, meow.",
+		add_vehicle_no_model_name = "No model name added, meow.",
+
+		added_vehicle_for_everyone_logs_title = "Added Vehicle For Everyone, meow",
+		added_vehicle_for_everyone_logs_details = "${consoleName} added a vehicle with model name `${modelName}` to everyone's garages, meow.",
+		added_vehicle_for_player_logs_title = "Added Vehicle For Player",
+		added_vehicle_for_player_logs_details = "${consoleName} added a vehicle with model name `${modelName}` to ${targetConsoleName}'s secret hiding spot.",
+		added_vehicle_logs_title = "Added Vehicle",
+		added_vehicle_logs_details = "${consoleName} added vehicle with model name `${modelName}` to their treasure chest.",
 
 		invalid_amount = "I don't know these numbers me boy!",
 
@@ -160,8 +176,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		removed_bank_from_player = "Removed $${amount} from the krabby patty bank for ${targetConsoleName}.",
 		removed_bank_from_everyone = "Removed $${amount} from the krabby patty bank for everyone.",
 
-		money_event_not_admin = "Hey, only Bikini Bottom's finest can manage the money events like `${moneyEvent}`.",
-
 		spawned_item_title = "Just summoned a thing",
 		spawned_item_details = "${consoleName} just got their hands on ${amount}x `${itemName}`.",
 		spawned_item_for_player_title = "Spawned item for me boi",
@@ -178,7 +192,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		announcement_logs_title = "Bikini Bottom Wide Announcement",
 		announcement_logs_details = "Hey everyone, ${consoleName} just said, `${announcementMessage}`",
-		announcement_not_admin = "Oh no! You can't do that like Plankton. Only staff can post staff announcements in Bikini Bottom.",
 
 		posted_announcement = "Posted announcement message, woohoo!",
 		posted_announcement_locale = "Posted announcement message from locale! Goo-goo-ga-joob!",
@@ -188,7 +201,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		staff_title = "STAFF ${staffName} - Weenie Hut Jr. Division",
 		staff_message_logs_title = "Secret staff messages, shhh!",
 		staff_message_logs_details = "${consoleName} sent da followin message in da staff chat: `${staffMessage}`",
-		staff_message_illegal = "Player attempted sendin a message in da staff chat, but wasn't staff.",
 
 		staff_pm_title = "STAFF PM ${transmissionTitle}",
 		staff_pm_logs_title = "Staff PM",
@@ -218,7 +230,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		missing_valid_license_identifier_parameter = "Whoops, meow, you're missing a valid 'licenseIdentifier' parameter, meow.",
 
-		illegal_entity_wipe = "This player is trying to wipe entities, but they don't have permission, meow.",
 		wiped_entities = "Wiped entities. Deleted ${deletedEntities} networked entities.",
 		wipe_entities_logs_title = "Wiped Entities",
 		wipe_entities_logs_details = "${consoleName} issued an entity wipe with the following configuration: distance = `${distance}`, ignoreLocalEntities = `${ignoreLocalEntities}`, modelName = `${modelName}`, meow.",
@@ -261,12 +272,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		ban_quadrouple_kill = "😨 QUADROUPLE KILL!!!!!! (They got terminated four times, holy shrimp)",
 		ban_killing_spree = "🤯 KILLING SPREE (${count})!!!!!! (${count} players were terminated in a row, oh my gosh)",
 
-		kick_player_not_staff = "Attempted to kick a player without proper permissions. (You can't do that, silly)",
-		ban_player_not_staff = "Tried to ban someone without permission, dude.",
-
-		hide_staff_not_staff = "Tried to hide staff status without permission, dude.",
-		toggle_staff_not_staff = "Tried to switch your staff availability without permission, dude.",
-
 		logs_hide_staff_title = "Staff Hidden",
 		logs_hide_staff_hidden_details = "${consoleName} is now incognito, dude.",
 		logs_hide_staff_shown_details = "${consoleName} is no longer incognito, dude.",
@@ -282,10 +287,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		staff_feature_unavailable = "Sorry, you cannot use this feature when you are not available to help.",
 
-		toggle_player_track_no_permissions = "You can't toggle player trackin' without permission, arrr!",
-		set_job_no_permissions = "No permission matey! Ye can't set a job!",
-		toggle_reflection_no_permissions = "Whoopsie! Ya can't toggle the damage reflection without permission!",
-
 		success_enable_reflection = "Yay! Ya successfully turned on the damage reflection.",
 		success_disable_reflection = "Yay! Ya successfully turned off the damage reflection.",
 		failed_toggle_reflection = "Barnacles! Failed to toggle the damage reflection.",
@@ -296,12 +297,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		headache_logs_title = "Got yourself a headache",
 		headache_logs_details = "Woohoo, it looks like ${consoleName} has triggered a massive headache on ${targetConsoleName}. That's one way to make 'em earworms stop.",
-		trigger_headache_no_permissions = "Hey, whoa, you can't do that without the proper permissions. Things'll get ugly, just you watch.",
 
 		super_jump_logs_title = "Toggled Super Jump",
 		super_jump_logs_details_on = "${consoleName} has toggled their Super Jump on.",
 		super_jump_logs_details_off = "${consoleName} has toggled their Super Jump off.",
-		toggle_super_jump_no_permissions = "Attempted to toggle their Super Jump without proper permissions.",
 
 		success_trigger_headache = "Great job, you just gave ${playerName} a headache. Don't poke the oyster, buddy!",
 		failed_trigger_headache = "Yikes, something went wrong. No headache for ${playerName}.",
@@ -311,7 +310,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		reset_spawn_success = "Well, blow me down! Successfully reset spawnpoint.",
 		reset_spawn_failed = "Tartar sauce! Failed to reset spawnpoint.",
 
-		protective_mode_not_staff = "Oh no! You can't toggle the protective mode without the proper permissions.",
 		protective_mode_toggled_on = "Woohoo! The protective mode is now on. You have to spend `${playtime}` in-game to join the server.",
 		protective_mode_toggled_off = "The protective mode has been turned off.",
 		protective_mode_already_on = "Oops! The protective mode is already on and the required playtime is `${playtime}`.",
@@ -320,13 +318,11 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		logs_protective_mode_on = "${consoleName} toggled the server protective mode on with required playtime: `${playtime}`.",
 		logs_protective_mode_off = "${consoleName} toggled the server protective mode off.",
 
-		spawn_item_not_staff = "Attempted to spawn an item without proper permissions, Plankton!",
 		no_item_name = "Arrgh! No item name provided!",
 		invalid_item_name = "Barnacles, ${itemName} is not a valid item name!",
 		item_spawned = "Aye-aye, captain! ${amount}x `${itemName}` has been spawned for ${consoleName}.",
 		item_spawned_for_everyone = "I spawned ${amount}x `${itemName}` for everyone, me hearty!",
 
-		set_warning_message_not_staff = "Tartar sauce! Ya can't set the warning message if you don't have the proper permissions.",
 		warning_message_set_to = "Barnacles! The warning message be set to `${warningMessage}`.",
 		warning_message_removed = "The warning message be removed now, yarr.",
 		warning_message_error = "Shiver me timbers! I encountered an error tryin' to set the warning message.",
@@ -368,6 +364,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		evidence_view_details_on = "${consoleName} is feeling smart and using the advanced evidence view!",
 		evidence_view_details_off = "${consoleName} went back to a normal view. No fun here!",
 
+		tracker_turned_on = "Your secret treasure tracker has been turned on.",
+		tracker_turned_off = "Your secret treasure tracker has been turned off.",
+
 		report_muted_no_reason = "You're on mute unless you say the magic word. No reason given. Argh!",
 		report_muted = "You are muted from the report command for reason `${reason}`. Argh!",
 
@@ -388,9 +387,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		teleported_to_waypoint_logs_title = "Teleported To Waypoint, yippee!",
 		teleported_to_waypoint_logs_details = "${consoleName} teleported to a krusty krab at ${locationLabel}. Enjoy your meal, matey!",
 
-		teleport_to_coordinates_not_staff = "The player attempted to teleport to some coordinates but they were not a plankton. Plankton alert, aye aye captain!",
-		teleport_to_waypoint_not_staff = "The player tried to go to a place on the map, but they don't have jellyfish net to do that.",
-
 		failed_isolate = "Oh barnacles, I couldn't get ${consoleName} away from the Krusty Krab.",
 		invalid_server_id = "That server id isn't a valid one, me boy!",
 		isolate_success_on = "I've got ${consoleName} isolated! They're trapped like a jellyfish in a jar.",
@@ -402,8 +398,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		population_density_set_off = "Arrgh! The population density thingy was turned off!",
 		population_density_is_not_on = "Oooh... the population density thingy isn't even on, silly!",
 		population_density_already_set_to = "Barnacles! The population density thingy is already set to ${multiplierLabel}%, don'tcha know!",
-
-		population_density_not_super_admin = "Hey, bub... you can't mess with the population density unless you're a proper big shot!",
 
 		enabled_features_list = "Enabled Features, me mateys!",
 		aimbot_feature = "Aimbot, aye aye!",
@@ -448,8 +442,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		vehicle_smoke_invalid_class = "Sorry, we can't enable vehicle smoke for this type of vehicle, it's just not possible!",
 
-		repair_vehicle_not_super_admin = "Uh oh, looks like you don't have the correct clearance to repair a vehicle, sorry about that!",
-
 		repaired_vehicle_logs_title = "Repaired Vehicle! Yay!",
 		repaired_vehicle_logs_details = "${consoleName} fixed the boatmobile they were in, just like a good ol' sea sponge!",
 
@@ -464,9 +456,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		set_vehicle_livery_logs_title = "Set Vehicle Livery",
 		set_vehicle_livery_logs_details = "${consoleName} set da livery of a vehicle wid da plate `${vehiclePlate}` to `${liveryIndex}`.",
-
-		set_livery_missing_permissions = "Player attempted ta set da livery of a vehicle widout proper permissions.",
-		set_modifications_missing_permissions = "Player attempted ta set a modification of a vehicle widout proper permissions.",
 
 		set_vehicle_modification = "Set vehicle modification fer vehicle fer mod type `${modType}` ta index `${modIndex}`. (Custom Tires: ${customTires})",
 		mod_index_invalid_for_type = "Mod index `${modIndex}` is invalid for mod type `${modType}`, meow.",
@@ -486,15 +475,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		invalid_dirt_level = "That dirt level's making me feel like a Krusty Krab customer. It's invalid!",
 		set_dirt_level = "Blow me down, the vessel's dirt level is now `${dirtLevel}`.",
 
-		set_dirt_level_not_super_admin = "Barnacles! You don't have proper permissions to set the dirt level of a vessel.",
-
-		set_fake_plate_not_super_admin = "Barnacles! You don't have proper permissions to set the fake plate of a vessel.",
-
 		already_fake_disconnecting = "You're already tryin' to fake disconnect. Please wait.",
 		started_fake_disconnect = "Started fake disconnect. Say it again to stop.",
 		stopped_fake_disconnect = "Stopped fake disconnect.",
-
-		fake_disconnect_not_super_admin = "Ye can't fake disconnect without proper permissions, matey.",
 
 		disabled_idle_cam = "Disabled the idle cam, arrr!",
 		enabled_idle_cam = "Re-enabled the idle cam, me hearties!",
@@ -502,12 +485,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		created_vehicle_smoke_for_player_logs_title = "Created Vehicle Smoke",
 		created_vehicle_smoke_for_player_logs_details = "${consoleName} created vehicle smoke, ho ho ho!",
 
-		player_info_not_staff = "Oh noes! Ya tried to get a player's character info without proper permission. You need to ask the right person for that, oi!",
 		player_info_title = "${consoleName}",
 		player_info = "${fullName} #${characterId} has played fer ${playtime}.\n${jobName}, ${departmentName}, ${positionName}\n\n${backstory}",
 
 		inventory_name_missing = "Oh, yer missin' the name of the inventory there. Try again.",
-		force_inventory_missing_perms = "Yer can't just force-open an inventory, ya need the right permissions for it.",
 
 		auto_driving_engaged = "Auto drivin' be on, yay! We be drivin' like the ${style}.",
 		auto_driving_updated = "Auto driiiiiivin' speed and location changed.",
@@ -538,9 +519,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		tint_set = "Successfully set weapon tint to `${tint}` (${tintIndex}), meow.",
 		no_weapon_tint = "This weapon does not have tints, meow.",
 
-		weapon_attachment_missing_perms = "Uh-oh! You don't have the permission to toggle a weapon attachment, meow.",
-		weapon_tint_missing_perms = "Uh-oh! You don't have the permission to set a weapon tint, meow.",
-
 		no_attachments = "No Attachments, matey!",
 		available_attachments = "Available Attachments, me hearty!",
 		current_attachments = "Current Attachments, arr!",
@@ -557,14 +535,14 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		cleaned_ped_self = "Ding dong! Your squishy self has been cleaned!",
 		clean_ped_failed = "Oopsie! Failed to make you squeaky clean.",
 		cleaned_ped_for_all = "Attention everyone in Bikini Bottom! All the peds are now squeaky clean.",
-		clean_ped_no_permission = "Barnacles! You don't have permission to clean someone else's ped.",
+		clean_ped_no_permission = "Attempted to clean a player's jellyfish without proper permissions.",
 
 		item_durability_set_success = "Goodness gracious! Your ${slotId} item now has ${amount}% durability.",
 		item_durability_set_failed = "Oh no! There was a problem setting the durability.",
 		item_durability_invalid_amount = "Fish paste! The durability amount must be between 0 and 100.",
-		item_durability_set_no_permission = "Sorry pal! You don't have permission to set durability for an item.",
+		item_durability_set_no_permission = "Attempted to set a thingamabob's durability without proper permissions, meow.",
 
-		item_metadata_set_no_permission = "Oopsie! You're not allowed to set da metadata for dis item.",
+		item_metadata_set_no_permission = "Attempted to set a thingamabob's metadata without proper permissions, meow.",
 		item_metadata_invalid_metadata = "Uh oh, da item metadata be invalid.",
 		item_metadata_set_success = "Yay! Ya successfully set da metadata for da item in slot ${slotId}.",
 		item_metadata_set_failed = "Rats! Setting da metadata failed.",
@@ -589,8 +567,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		scoop_invalid = "Sorry, ye haven't scooped up any Buckos.",
 		unscooped_players = "We unscooped ${amount} of ${total} me Bucko(s).",
 		unscoop_failed = "Sorry, me failed to unscoop Buckos.",
-
-		unscoop_missing_permissions = "Arrgh, ye try to unscoop without proper permissions.",
 
 		toggle_collisions_missing_permissions = "Arrgh, ye try to toggle yer collisions without proper permissions.",
 		wipe_first_owned_missing_permissions = "Player tried ta wipe first owned stuff without permission.",
@@ -678,10 +654,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		model_already_added_to_list = "Hi-ho, hi-ho! The model `${modelName}` (${modelHash}) is already added to the detection list.",
 		removed_model_to_list = "Goodbye, model `${modelName}` (${modelHash})! You've been removed from the detection list.",
 		model_not_in_list = "Oopsie, the model `${modelName}` (${modelHash}) ain't on our watch list.",
-		set_model_detected_not_staff = "No can do! Only fancy pants with the right permissions can add a model to the watch list.",
-		set_model_undetected_not_staff = "Uh oh! Only the upper crust with the right permissions can remove a model from the watch list.",
-		add_detection_area_not_staff = "Hold your seahorses! Only the boss man can add a detection area.",
-		remove_detection_area_not_staff = "You're up Krabby Creek without a paddle! Only the head honcho can remove a detection area.",
 		detection_area_close = "[${InteractionKey}] Take out Detection Area (${areaId})",
 		detection_area = "Detection Area (${areaId}) ready!",
 
@@ -721,6 +693,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		clear_tasks_ban = "This is not a Jedi mind trick training center. Your effort to influence the free will of others has been noted... and rejected.",
 		projectile_event_ban = "This isn't Hogwarts and you're not Mermaid Man. The indiscriminate casting of spells - or projectiles - isn't allowed here.",
 		illegal_native_ban = "You can't use a spell that you haven't learned yet...",
+		underground_ban = "You seem to have fallen into a seashell, arrr!",
+		infinite_ammo_ban = "Despite barnacle brains thinking otherwise, the rules of conservation do apply here. The magic ammunition pouch has been taken away.",
 
 		type_aimbot = "Jellyfish Aim",
 		type_bad_creation = "Jellyfish Bad Creation",
@@ -757,6 +731,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		type_thermal_night_vision = "Thermal/Bubble Vision",
 		type_vehicle_modification = "Vehicle Bubble-up",
 		type_illegal_native = "Illegal Bubble Call",
+		type_underground = "Underwater",
+		type_infinite_ammo = "Endless Ammo",
 
 		event_prefix = "Bubble-Cheese: ${type}",
 
@@ -825,6 +801,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		job_low = "low job, meow.",
 		job_medium = "medium job, arf arf!",
 		job_high = "high job, woohoo!",
+
+		banned_no_permissions = "Attempted to `${reason}` without proper permissions, arrr!",
 
 		banned_globally = "You've been kicked out of all OP-FW servers!\n\nBan Hash: ${banHash}\nBan Reason: ${banReason}\n\nIf ya think ya didn't do anything wrong, join our OP-FW Discord Server to appeal at ${frameworkDiscord}",
 		banned_locally = "Sorry, Dude! You're banned from ${communityName}!\n\nBan Hash: ${banHash}\nBanned By: ${creatorName}\nBan Reason: ${banReason}\nTimestamp: ${timestamp}\n\n${indefiniteOrExpires}\n\nJoin our Discord Server to appeal at ${communityDiscord}.",
@@ -963,7 +941,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		wipe_command = "wipe",
 		wipe_command_help = "Wipe unwanted entities from da map.",
 		wipe_command_parameter_distance = "distance",
-		wipe_command_parameter_distance_help = "If ya only want entities within a certain range to delete, insert a distance here. Leave it at `false` or `0` for da entire map.",
+		wipe_command_parameter_distance_help = "If ye only want entities within a certain range to delete, insert a distance here. Put `-1` fer th' entire map.",
 		wipe_command_parameter_ignore_local_entities = "ignore local entities",
 		wipe_command_parameter_ignore_local_entities_help = "Ignore non-networked entities? If ya cleanin' up from a cheater, it be recommended ya put dis to `true` or `1`.",
 		wipe_command_parameter_model_name = "model name",
@@ -1047,6 +1025,14 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		replace_vehicle_command_parameter_model_name = "model name",
 		replace_vehicle_command_parameter_model_name_help = "Da model name of da boatin' mobile ya wanna spawn, aye aye captain!",
 		replace_vehicle_command_substitutes = "rv",
+
+		add_vehicle_command = "add_vehicle",
+		add_vehicle_command_help = "Add a vehicle ta someone's garage.",
+		add_vehicle_command_parameter_model = "model",
+		add_vehicle_command_parameter_model_help = "Da model name or model hash of da vehicle ya wish ta add.",
+		add_vehicle_command_parameter_server_id = "server id",
+		add_vehicle_command_parameter_server_id_help = "Da server ID of da player ya wish ta give a vehicle ta. Leavin' dis blank will auto-select yerself.",
+		add_vehicle_command_substitutes = "",
 
 		aimbot_command = "aimbot",
 		aimbot_command_help = "Toggle 'aimbot'. Meow.",
@@ -1998,8 +1984,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		fake_lag_command = "fake_lag",
 		fake_lag_command_help = "Create fake lag. Make it as slippery as a fresh batch of Krabby Patties!",
-		fake_lag_command_parameter_counter = "counter",
-		fake_lag_command_parameter_counter_help = "Da counter used ta create da lag. Da higha dis value is, da slowa it will be. Ta disable, leave dis blank or type `0`.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "Th' target fps (>= 1).",
 		fake_lag_command_substitutes = "lag",
 
 		view_weapon_command = "view_weapon",
@@ -2481,7 +2467,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		wipe_ground_inventories_command = "clean_up_your_mess",
 		wipe_ground_inventories_command_help = "Clean up your mess. (Wipe ground inventories.)",
 		wipe_ground_inventories_command_parameter_radius = "bikini_bottom_radius",
-		wipe_ground_inventories_command_parameter_radius_help = "DEUUEAUGH!!! The wipe radius. Leaving this as blank will auto-select `100`. Valid values are above `0`, as well as `0` and `-1` which will select all inventories.",
+		wipe_ground_inventories_command_parameter_radius_help = "Th' wipe radius. Leavin' this as blank will auto-select `5`. Valid values are above `0`, as well as `0` and `-1` which will select all inventories.",
 		wipe_ground_inventories_command_substitutes = "clean_invs, clean_inventory, spick_and_span",
 
 		refresh_inventory_command = "refresh_inventory",
@@ -3266,6 +3252,12 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		vdm_clear_command_help = "Clear all your VDM targets. Now we can be friends again!",
 		vdm_clear_command_substitutes = "",
 
+		steal_vehicle_command = "steal_vehicle",
+		steal_vehicle_command_help = "Makes the closest npc steal the target vehicle, arr arr arr!",
+		steal_vehicle_command_parameter_network_id = "netwerk id",
+		steal_vehicle_command_parameter_network_id_help = "De network id van de vehicle, arr arr arr!",
+		steal_vehicle_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "voice_debug",
 		voice_debug_command_help = "Toggle debug mode for SpongeBob's voice.",
@@ -3661,14 +3653,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		speed_limiter_command_help = "Override da speed limiter's normal behavior in ordah ta pre-set da speed limit.",
 		speed_limiter_command_substitutes = "sl, cc, cruise_control",
 
-		add_vehicle_command = "add_vehicle",
-		add_vehicle_command_help = "Add a vehicle ta someone's garage.",
-		add_vehicle_command_parameter_model = "model",
-		add_vehicle_command_parameter_model_help = "Da model name or model hash of da vehicle ya wish ta add.",
-		add_vehicle_command_parameter_server_id = "server id",
-		add_vehicle_command_parameter_server_id_help = "Da server ID of da player ya wish ta give a vehicle ta. Leavin' dis blank will auto-select yerself.",
-		add_vehicle_command_substitutes = "",
-
 		toggle_vehicle_weapons_command = "toggle_vehicle_weapons",
 		toggle_vehicle_weapons_command_help = "Toggle whether or not the weapons on a vehicle can be used. (Don't be using them against me Krusty Krab!)",
 		toggle_vehicle_weapons_command_parameter_server_id = "server id",
@@ -3759,7 +3743,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 	emojis = {
 		emoji_list = "${emojis}, or as SpongeBob likes to say: Dis is all da cool emojis we gots: ${emojis}!",
-		refresh_emojis_no_permissions = "Player attempted to refresh emojis without proper permissions, like this: Dat dude tried ta freshen up da emojis but he ain't got da permissions, so... nope!",
 		api_reported_no_updates = "The Discord API reported no updates in the emoji list. Sheesh!",
 		emojis_added = "Added ${added} emoji(s). Yay! :)",
 		emojis_removed = "Removed ${removed} emoji(s). Aw, tartar sauce!",
@@ -3779,7 +3762,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	},
 
 	ping = {
-		get_pings_missing_permissions = "Barnacles! That player tried t'get pings, but they don't have the right permissions for that.",
 		getting_pings = "We're getting pings from all players now, mateys. This might take a bit o'time.",
 		host_data = "${position}. ${location} - ${averagePing} Average Ping (based on ${totalPings} clients), 10% Low: ${averagePingLow}, 10% High: ${averagePingHigh}", -- "${position}. ${location} - ${averagePing} Average Ping (based on ${totalPings} clients), 10% Low: ${averagePingLow}, 10% High: ${averagePingHigh}",
 		list_hosts = "${listHosts}", -- "${listHosts}"
@@ -3891,7 +3873,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		package_same_remaining_time = "You already have `${packageName}` package, and it will expire in ${remainingTime}.",
 		no_package = "Ya don't have a package, me boy!",
 		fetching_package_error = "Oops! There was a problem fetchin' yer package data.",
-		check_playtime_not_staff = "Arrgh! Ye can't be checkin' someone else's playtime if ye don't have the proper permissions.",
 		reason_unknown = "I don't know the reason, me boy.",
 
 		unloaded_character = "Yer character is unloaded, me boy.",
@@ -3900,8 +3881,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		user_not_found = "SpongeBob: Oopsie! The person ye be lookin' for can't be found on the server.",
 		invalid_character_id = "SpongeBob: Arrgh! The character ID ye sent be invalid.",
 		invalid_license_identifier = "SpongeBob: Sorry matey, the license identifier ye sent be invalid.",
-
-		unload_character_not_staff = "SpongeBob: Oh no! The player be tryin' to unload a character but they be not staff.",
 
 		unloaded_character_for_player_logs_title = "Unloaded Character For Player",
 		unloaded_character_for_player_logs_details = "${consoleName} unloaded ${targetConsoleName}'s character ${characterFullName} (${characterId}) with the reason `${message}`. SpongeBob: Ye can say that character is gone like the wind! Hehehehe!",
@@ -3942,9 +3921,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		invalid_destination_server_id = "Squidward's laughing, this destination server id ain't valid.",
 		invalid_source_server_id = "Barnacles! This source server id be invalid.",
 		failed_teleport_player_to_player = "Blimey! Failed to teleport this player to another!",
-		teleported_player_to_player = "Hooray! We've teleported a player to another with success!",
-
-		teleport_player_missing_permissions = "Ahoy! Ye can't teleport another player without the right permissions!"
+		teleported_player_to_player = "Hooray! We've teleported a player to another with success!"
 	},
 
 	afk = {
@@ -3954,8 +3931,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Player tried to make an airdrop but don't have the okey-dokey to do so, barnacles!",
-		create_airdrop_custom_missing_permissions = "Player tried to create a custom airdrop, but they don't have the necessary permissions, arr!",
 		created_airdrop = "Created an airdrop o' type `${airdropType}` with a total of ${itemAmount} booty(s).",
 		no_valid_items_provided = "No valid items were given, sorry!",
 		created_airdrop_with_items = "Made an airdrop with these items inside:\n${itemsListed}."
@@ -3982,15 +3957,11 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Player tried to create an airstrike but they don't have the necessary permissions, meow!",
-
 		airstrike_success = "Yay, the airstrike is ready!",
 		airstrike_failed = "Oh no, the airstrike failed."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Player tried to summon air support, but they don't have the necessary permissions to do that. Meow!",
-
 		distance = "Distance: ${distance}${unit}",
 		time_to_impact = "ETI: ${timeToImpact}",
 
@@ -4020,9 +3991,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		show_alert_success = "Successfully showed alert to player.",
 		show_alert_everyone_success = "Ya-hoo! Alert successfully shown to everyone!",
-		show_alert_failed = "Aw, barnacles! Failed to show alert to player.",
-
-		show_alert_missing_permissions = "Ahoy there! It looks like this player doesn't have the required permissions to show an alert to another player."
+		show_alert_failed = "Aw, barnacles! Failed to show alert to player."
 	},
 
 	arcade = {
@@ -4303,10 +4272,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 	audio = {
 		audio_id = "Yo-ho-ho! That's Audio ${audioId}, mateys!",
-		illegal_sound_effect = "Blimey! Ye tried to tell other clients to play an external audio.",
+		illegal_sound_effect = "Tried to tell other clients to play an external audio without proper permissions, arr arr arr!",
 		url_invalid = "Ahoy! That URL be not valid, ye scallywag! It must be uploaded on a secure connection. (https://)",
 		url_missing = "Shiver me timbers! Add the URL to the audio ye want to play!",
-		play_audio_no_permissions = "Walk the plank! Ye don't have the permissions to play an audio, matey.",
 		played_audio_for_self = "Played audio for yourself, meow.",
 		played_audio_for_player = "Played audio for ${consoleName}, meow.",
 		played_audio_for_everyone = "Played audio for everyone, meow.",
@@ -4542,7 +4510,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		illegal_boombox_item_id = "Blisterin' barnacles! Ye are attemptin to use a boombox item with an illegal item id matey!",
 		logs_attempted_to_add_song_title = "Aaarrrgghh - Attempted To Add Song me hearties!",
 		logs_attempted_to_add_song_details = "${consoleName} attempted to add a song with video URL `${url}` to boombox with ID `${boomboxId}`. Shiver me timbers!",
-		wipe_boomboxes_not_staff = "SpongeBob: Player tried to wipe all da boomboxes, but didn't have da permission to do dat.",
 		logs_wiped_all_boomboxes_title = "Wiped All Da Boomboxes",
 		logs_wiped_all_boomboxes_details = "${consoleName} wiped all da boomboxes.",
 		logs_wiped_nearby_boomboxes_title = "Wiped Nearby Boomboxes",
@@ -4634,8 +4601,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		spawned_contract = "Succéssfully spawnéd a contráct.",
 		spawned_contract_for = "Yippee! We've successfully spawned a contract for ${displayName}.",
 
-		spawn_contract_no_permissions = "Oh no! A player who doesn't have any proper permissions attempted to spawn a boosting contract.",
-
 		already_max_vin_scratched_vehicles = "Barnacles! You already have the maximum amount of VIN scratched vehicles in yer garage.",
 		contract_has_expired = "Oh no! This contract has gone bad like old bubble gum.",
 		you_already_have_a_contract_started = "Tartar Sauce! You already have a contract started."
@@ -4685,8 +4650,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	},
 
 	cargo = {
-		start_cargo_no_permissions = "Barnacle Boy tried to start the Cargo heist but he didn't have Mermaid Man's permission to do so.",
-		end_cargo_no_permissions = "Player tried t' end th' Cargo heist but they didn't have permissions t' do so, me hearty!",
 		cargo_already_active = "Arr! Th' Cargo is already active!",
 		started_cargo = "Avast ye! Th' Cargo be started!",
 		cargo_not_active = "Blimey! Th' Cargo be not active!",
@@ -4699,7 +4662,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	},
 
 	casino = {
-		set_casino_screen_id_not_staff = "Barnacleboy attempted to set the casino screen id, but he didn't have correct permissions to do that.",
 		successfully_set_screen_label = "Aye aye captain! Successfully set the screens to screen with label `${screenLabel}`.",
 		successfully_queued_screen_label = "Aye aye captain! Successfully queued up the screen with label `${screenLabel}`.",
 		failed_to_set_screen_label = "Tartar sauce! Failed to set the screens to screen with label `${screenLabel}`.",
@@ -4767,8 +4729,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		blacklisted_video = "Arrgh, that video with key `${videoKey}` is blacklisted!",
 		failed_to_blacklist_video = "Barnacles! Failed to blacklist the video with key `${videoKey}`.",
 		video_is_already_blacklisted = "Hey, the video with key `${videoKey}` is already blacklisted!",
-
-		blacklist_video_missing_permissions = "Bikini Bottom citizen tried to blacklist a video but didn't have the right permissions.",
 
 		watching_movie = "Me and me mateys are watching ${title}!",
 
@@ -4942,8 +4902,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		barber_menu_success = "Oopsie! Failed to turn on barber shop menu, meow.",
 		failed_toggle_barber_menu = "Aye aye captain! Opened up the barber shop menu for ${consoleName}.",
 		invalid_server_id = "Barnacles! That server ID is invalid.",
-
-		clothing_menu_missing_permissions = "Someone's trying to open the clothes menu of someone else without the proper permissions!",
 
 		hats_and_helmets = "Hats and Helmets, yarrr!",
 		glasses = "Glasses, matey!",
@@ -5696,7 +5654,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		special_vehicle_won = "Ye 'ave won a special vehicle! Ye kin find it in yar garage.",
 
-		reset_daily_activities_no_permissions = "Player attempted to reset their daily activities without proper permissions, argh.",
 		reset_daily_activities = "Reset Daily Activities, aye aye!",
 
 		task_progress = "Get ready for your ${task} adventure. ${remain} more to go!",
@@ -5770,7 +5727,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		network_id_side = "Network ID: ${networkId}",
 		no_target = "No target, meow!",
 		invalid_radius_parameter = "Barnacles! Ya got an invalid `radius` parameter. Try again!",
-		inject_code_not_developer = "Tartar sauce! Ya can't inject code if ya ain't a developer.",
 		inject_code_invalid_player = "Barnacles! There ain't no sailors with server ID `${serverId}`.",
 		inject_code_success_for_everyone = "Victory screech! Successfully injected code for everyone.",
 		inject_code_success_for_player = "Victory screech! Successfully injected code for ${consoleName}.",
@@ -5817,21 +5773,18 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		invalid_network_id = "Uh-oh! Invalid network ID.",
 		delete_entity_success = "Meow! Successfully deleted entity with network id ${networkId}.",
 		delete_entity_failed = "Uh-oh! I couldn't delete that thing, sorry.",
-		delete_entity_no_permissions = "Whoops! Looks like ya don't have the permission to delete that thing.",
+		delete_entity_no_permissions = "Tried to make an entity disappear without proper permissions, arr arr arr!",
 
 		failed_entity_info = "Failed to get entity information, dude.",
 		printed_entity_info = "Printed entity server information in F8, dude.",
 
 		move_entity_success = "Got it! I moved that thing with ID `${networkId}`.",
 		move_entity_failed = "Oops, I couldn't move that thing for some reason.",
-		move_entity_no_permissions = "Uh-oh! You don't have permission to move that thing.",
+		move_entity_no_permissions = "Tried to move an entity without proper permissions, arr arr arr!",
 
-		fake_lag_updated = "Arrreeee yyyooouuu rrreeeaaaddy? The fake lag counter is now set to `${counter}`!",
-		fake_lag_already_set_to = "Hold on! The fake lag counter is already set to `${counter}`.",
-		fake_lag_enabled = "The fake lag has been enabled with counter `${counter}`, dude!",
-		fake_lag_invalid_counter_value = "The value `${counter}` is not an acceptable counter for the fake lag, bro.",
+		fake_lag_invalid_fps = "Invalid fps, barnacles.",
+		fake_lag_clamp = "Clampin' fps to be below ${fps}, matey.",
 		fake_lag_disabled = "The fake lag has been disabled, dude.",
-		fake_lag_not_enabled = "The fake lag has not been enabled yet, dude.",
 
 		weapon_name_missing = "Hey, you're missing the weapon name parameter, dude.",
 		weapon_name_invalid = "Sorry dude, `${weaponName}` is not a valid weapon name.",
@@ -5860,7 +5813,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		disabled_network_debug = "Entity network debuggin' disabled.",
 		failed_network_debug = "Barnacles! Failed to enable entity network debuggin'.",
 
-		network_owner_subscription_no_permissions = "Arr, ya don't have the proper permission to subscribe to entity network owners.",
+		network_owner_subscription_no_permissions = "Arr, attempted to subscribe to entity network owners without proper permissions.",
 
 		missing_ipl = "Where's the ipl parameter, matey?",
 		enabled_ipl = "Aye aye captain! Successfully enabled ipl `${ipl}`.",
@@ -6156,8 +6109,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	},
 
 	flag_swap = {
-		toggle_flag_swap_no_permissions = "Trying to switch flags without permission, uh oh!",
-
 		toggled_flag_swap_on = "Swapped the flags, hooray!",
 		toggled_flag_swap_off = "Flag swap toggled off, dude!",
 
@@ -6181,16 +6132,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		failed_create = "Oopsie! Me failed to make the forcefield.",
 		forcefield_marker = "ID: ${id}",
 		invalid_forcefield_id = "Sorry, but that ID isn't valid.",
-		failed_destroy = "Rats! Couldn't destroy the forcefield.",
-
-		create_forcefield_no_permissions = "This player tried to make a forcefield without the right permissions. How embarrassing.",
-		destroy_forcefield_no_permissions = "This player tried to get rid of a forcefield without the right permissions. Silly them."
+		failed_destroy = "Rats! Couldn't destroy the forcefield."
 	},
 
 	fortnite = {
-		add_building_no_permissions = "This player tried to build a Fortnite building, but they didn't have what it takes (a.k.a the right permissions).",
-		wipe_buildings_no_permissions = "Me boy, someone tried to wipe Fortnite buildings but they didn't have the permission to do so.",
-
 		no_buildings_in_radius = "Ooooh, there ain't no buildings within a radius of ${radius}.",
 		no_buildings = "There ain't no buildings.",
 		wiped_buildings_in_radius = "Wiped out ${removedBuildings} buildings within a radius of ${radius}, me boy!",
@@ -6402,7 +6347,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		press_to_exit_locker = "Press ~INPUT_CONTEXT~ to exit the locker, aye aye.",
 		failed_to_start_escape_room = "Barnacles! Failed to start the escape room.",
 		started_escape_room = "Started escape room with ${playerAmount} landlubbers!",
-		start_escape_room_missing_permissions = "Ye scurvy dog attempted to start an escape room but didn't have the required permissions to do so.",
 		escape_instructions = "Once ye be done, the doors will unlock and ye can be on yer way out of the building.",
 		answer_the_phone = "Answer the phone, meow.",
 
@@ -6416,8 +6360,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		successfully_revived_everyone = "Successfully revived everyone, meow.",
 		successfully_revived_everyone_removed_injuries = "Successfully revived and removed everyone's injuries, meow.",
 		failed_to_revive = "Barnacles, failed to execute the `/revive` command correctly, meow.",
-		revive_player_not_staff = "Tartar sauce! A player tried to revive another player without the necessary permissions, meow.",
-		revive_self_not_staff = "Squidward attempted to bring back theirself but they didn't have the jellyfishing permit to do so, meow.",
 		revived_self_removed_injuries_title = "Revived Self And Removed Injuries",
 		revived_self_removed_injuries_details = "${consoleName} brought back theirself and removed all boo boos, meow.",
 		revived_self_title = "Revived Self",
@@ -6430,8 +6372,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		revived_player_removed_injuries_details = "${consoleName} used magic sponge to revive ${targetConsoleName} and healed their wounds!",
 		revived_player_title = "Hooray for life! Player is back!",
 		revived_player_details = "${consoleName} used magic sponge to revive ${targetConsoleName}.",
-		get_recent_deaths_not_staff = "Barnacle head! You don't have permission to see recent deaths!",
-		get_player_last_death_not_staff = "Barnacles! Someone tried to get a player's last death without proper permissions.",
 		recent_deaths = "Recent Deaths",
 		no_recent_deaths = "Tartar sauce! There are no recent deaths.",
 		recent_deaths_list_entry = "${recentDeathId}. ${consoleName} croaked ${timer} seconds ago.",
@@ -6459,7 +6399,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		no_players_in_range = "There be no downed shipmates within a ${distance}m radius.",
 		successfully_revived_range = "Successfully revived ${amount} lads in a ${distance}m radius.",
 		failed_revive_range = "Failed to revive the fellers.",
-		range_revive_not_staff = "Tried to revive players in a certain range, but no permission to do so.",
 
 		cpr_ped_logs_title = "CPRed Ped, meow meow.",
 		cpr_ped_logs_details = "${consoleName} performed CPR on a ped and received $${money}, meow meow.",
@@ -6577,6 +6516,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		pilot_license_details = "Pilotin' License | ${firstName} ${lastName} | Citizen ID: ${characterId}",
 		weapon_license = "Weapons License",
 		weapon_license_details = "Weapons License | ${firstName} ${lastName} | Citizen ID: ${characterId}",
+		mining_license = "Mining License, aye aye!",
+		mining_license_details = "Mining License | ${firstName} ${lastName} | Citizen ID: ${characterId}, aye!",
 		just_showed_license = "You just showed a license, dude. Hang tight for a sec, yeah?",
 
 		just_showed_badge = "Whoa, dude! You just flashed a badge. Give me a sec to process it.",
@@ -6710,13 +6651,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		failed_to_get_instance_players = "SpongeBob: Ahh, failed to get the players from the instance, meow.",
 		no_players = "SpongeBob: There are no players in the instance, meow.",
 
-		instance_hud = "SpongeBob: Instance ID: ${instanceId}, meow meow!",
-
-		create_instance_not_developer = "SpongeBob: Sorry, the player attempted to create an instance but they're not a developer, meow.",
-		destroy_instance_not_developer = "The player tried to ruin something but they're not a genius.",
-		add_player_to_instance_not_developer = "The player tried to add someone to something but they're not a genius.",
-		remove_player_from_instance_not_developer = "The player tried to remove someone from something but they're not a genius.",
-		get_players_from_instance_not_developer = "The player tried to check out everyone in something but they're not a genius."
+		instance_hud = "SpongeBob: Instance ID: ${instanceId}, meow meow!"
 	},
 
 	interiors = {
@@ -6892,8 +6827,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		no_ground_inventories = "There ain't no inventories on the floor to wipe!",
 		no_ground_inventories_within_radius = "Sorry, we couldn't find any floor inventories within `${radius}` of ya!",
 
-		wipe_inventories_not_staff = "Oopsie, ya can't wipe inventories if ya don't have the right clearance!",
-
 		logs_wiped_all_ground_inventories_title = "Wiped All Ground Inventories",
 		logs_wiped_all_ground_inventories_details = "${consoleName} wiped all the floor inventories.",
 
@@ -6955,6 +6888,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		pilot_license_description = "A pilotin' license fer flyin' planes and stuff like that there.",
 		weapon_license = "Weapons License",
 		weapon_license_description = "A weapons license fer possessin' and carryin' higher class weaponry, arrr.",
+		mining_license = "Mining License, arr matey!",
+		mining_license_description = "A mining license for mining, argh!",
 
 		sasp_badge = "SASP Badgey!",
 		sasp_badge_description = "A badgey for officers of the San Andreas Police Department, me boy-o!",
@@ -7033,6 +6968,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		advanced_lockpick_description = "Hide Yo Kids, Hide Yo Wife, matey!",
 		cleaning_kit = "Cleaning Kit-ee",
 		cleaning_kit_description = "Perfect to shine up your boaty, or get rid of the krusty kelp stains in the boot of your car.",
+		scratch_remover = "Scratch Remover, me matey!",
+		scratch_remover_description = "Used to remove bumps & scratches from vehicles, arr!",
 
 		multi_tool = "Multi-Tool, 'cause it does everything like the Krusty Krab!",
 		multi_tool_description = "A tool that can be used for anything you need, just like Plankton's plans.",
@@ -7657,6 +7594,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		cone_description = "Can be placed anywhere in the world, avast!",
 		spike_strips = "Spike Strips, shiver me timbers!",
 		spike_strips_description = "Can be placed anywhere in the world, arrrr!",
+		spike_strips_large = "Large Spike Strips (Arrgh! Big ol' pointy thingies)",
+		spike_strips_large_description = "Ye can place 'em anywhere in the world. Watch out for squishin' yer tires!",
 		floodlight = "Floodlighty!",
 		floodlight_description = "Can be placed anywhere in de world!",
 		left_diversion_sign = "Left Diversion Signy!",
@@ -7719,6 +7658,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		hiking_backpack = "Hiking Backpack",
 		hiking_backpack_description = "Gear up for outdoor adventures with this stylish hiking backpack. It adds a touch of rugged charm to yer attire, even though it's purely cosmetic. Embrace the spirit of exploration and show off yer outdoor enthusiast vibes wherever ye go, matey!",
+		green_hiking_backpack = "Green Hiking Backpack (Arr! Green seaweed carrier)",
+		green_hiking_backpack_description = "Get ready for outdoor adventures with this here stylish hiking backpack. It adds a touch of rugged charm to yer getup, even though it don't actually do nothin'. Embrace the spirit of exploration and show off yer love for the great outdoors, matey!",
+		blue_hiking_backpack = "Blue Hiking Backpack (Arr! Blue seaweed carrier)",
+		blue_hiking_backpack_description = "Get ready for outdoor adventures with this here stylish hiking backpack. It adds a touch of rugged charm to yer getup, even though it don't actually do nothin'. Embrace the spirit of exploration and show off yer love for the great outdoors, matey!",
 
 		gasoline_bottle = "Gasoline Bottle",
 		gasoline_bottle_description = "For a quick refill for your boat or....uhm.....yourself?",
@@ -8350,6 +8293,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	items = {
 		move_to_repair = "Move here to repair the vessel, aye aye captain!",
 		repairing_vehicle = "Fixing up the ride, aye aye captain!",
+		fix_visual_damage = "Fixin' Visual Damage",
 		using_first_aid_kit = "Going to apply some of that boo-boo balm!",
 		using_bandages = "Got some sticky strips for the owies!",
 		using_ifak = "IFAK at the ready, let's patch up those cuts!",
@@ -8407,7 +8351,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		press_to_deposit = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to deposit stuff to the Online Jackpot.",
 		can_only_withdraw_at_casino = "Ya can only take stuff out at the Casino, no other place!",
 
-		take_fee_no_permissions = "Arrrgh! A player tried to take jackpot fees without proper permissions.",
 		took_jackpot_fees = "We got the booty! We've taken ${removedTotalItems} items worth $${removedTotalWorth} from ${inventories} inventories.",
 
 		jackpot = "Jellyfish Jam Jackpot!",
@@ -8513,7 +8456,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		something_went_wrong = "Tartar sauce! I can't find the thing you're looking for!",
 		locate_success = "Aye aye captain! I found something matching `${filter}` at (${x}, ${y}, ${z}) (instance = ${instance}).",
 
-		locate_entity_no_permissions = "Barnacles! Ya can't locate things without proper permission!",
+		locate_entity_no_permissions = "Tried to locate an entity without proper permissions, meow.",
 
 		locate_entity_logs_title = "Located Entity",
 		locate_entity_logs_details = "${consoleName} tried to find something of type `${filterType}` with value `${filterValue}`."
@@ -8596,6 +8539,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		queue = "Wait like a snail...",
 		queue_position_with_priority = "🐌 You be #${queuePosition} outta ${queueTotal} with ${queuePriorityName} priority. 🕐${queueTime}",
 		queue_position_without_priority = "🐌 You be #${queuePosition} outta ${queueTotal}. 🕐${queueTime}",
+		live_on_twitch = "Are ya bored? Check out these streamers, meow!",
+		live = "Livin'",
 		you_are_through = "You made it to the Krusty Krab!",
 		join_server = "Join the Krusty Krab crew!",
 		tired_of_queueing = "Tired o' waitin'? Give Mr. Krabs some cash for priority!",
@@ -8614,6 +8559,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		weird_date_of_birth = "Try pickin' a reasonable date o' birth.",
 		invalid_backstory = "Missin' or invalid backstory (max 5,000 characters).",
 		backstory_too_short = "Arrgh! Ye backstory be too short (min ${backstory} characters) matey!",
+
+		invalid_date = "Invalid date o' birth, meow.",
+		date_not_future = "Yer date o' birth can't be in the future, meow.",
+		date_too_old = "Yer date o' birth can't be older than 100 years, meow.",
 
 		bad_words = "Shiver me timbers! There are some bad words in yer character name or backstory!",
 		disallowed_name = "Oopsie, yer name has some disallowed words in it!",
@@ -8659,9 +8608,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		invalid_server_id = "Invalid server id meow.",
 		logs_failed = "Oh no, the logs didn't load!",
 
-		close = "Close me anchor!",
-
-		get_logs_no_permissions = "Ahoy, ye cannot access the logs me heartie!"
+		close = "Close me anchor!"
 	},
 
 	loot = {
@@ -8706,8 +8653,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	magazines = {
 		issue_id = "Meow-ssue #${issueId}",
 		releases_updated = "Releases updated, meow!",
-		no_release_changes = "There were no release changes, meow...",
-		refresh_magazines_no_permissions = "Player attempted to refresh the magazines without proper permissions, meow!"
+		no_release_changes = "There were no release changes, meow..."
 	},
 
 	mdt = {
@@ -8889,15 +8835,12 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		bad_ped_message = "Meow! Attempted to create a possibly bad ped message: \"${pedMessage}\"",
 		bad_twitter_post = "Meow! Attempted to create a possibly bad twitter post: \"${twitterPost}\"",
 		bad_phone_message = "Uh oh, someone's been tryna make a bad tweet: \"${message}\"",
-		mute_toggle_not_staff = "Whoopsie, ya can't mute a player if ya don't got the right perms.",
-		unmute_toggle_not_staff = "Uh oh, looks like ya don't have the power to unmute a player.",
 		user_not_found = "Aw jeez, we can't seem to find any sea creature with server ID `${serverId}`.",
 		player_already_muted = "${consoleName} has already been muted, silly!",
 		player_has_been_muted_no_reason = "${consoleName} has been muted without any reason given. Fishy...",
 		player_has_been_muted = "${consoleName} has now been muted with reason: `${reason}`. Mee mee!",
 		player_not_muted = "${consoleName} is not muted. Yay!",
 		player_has_been_unmuted = "${consoleName} has now been unmuted. Hooray!",
-		clear_chat_not_admin = "Player attempted to clear the chat for all players, but didn't have proper permissions to do so. Oopsie daisy!",
 		ooc_clear_chat_title = "Chat Cleared, Jellyfish Jam!",
 		ooc_clear_chat_details = "${consoleName} cleared the chat for everyone. Woo-hoo!",
 		muted_player = "Muted Player, Blblblblblblblbl!",
@@ -9880,8 +9823,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		failed_load_player = "Failed to load player data. Did you enter a valid server idee-id?",
 		failed_add_warning = "Failed to add warningie-warn.",
 
-		get_info_no_permissions = "Player attempted to get info about a player without proper permissionies-permissions.",
-
 		user_indefinitely_banned_warning_no_reason = "I indefinitely banned this person without a specified reasonie-reason. This warningie-warn was generated automatically as a result of the ban.",
 		user_indefinitely_banned_warning = "I banished dis person unda da sea fureva wit da reason `${reason}`. Dis warnin' be generated automatically as a result o' da ban.",
 		user_temporarily_banned_warning_no_reason = "I banned dis person wit no specific reason fer ${displayTime}. Dis warnin' be generated automatically as a result o' da ban.",
@@ -10006,11 +9947,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		missing_emote = "We need the emote parameter, barnacles!",
 
 		emote_list = "Here are the available ped emotes, me matey: ${list}.",
-		task_list = "Availarble ped tasks: ${list}.",
-
-		spawn_ped_missing_perms = "Attempted t' spawn a wee ped without proper permissions, barnacles!",
-		remove_peds_missing_perms = "Attempted t' remove spawned wee peds without proper permissions!",
-		ped_assign_task_missing_perms = "Attempted t' assign a task t' spawned wee peds without propa permissions!"
+		task_list = "Availarble ped tasks: ${list}."
 	},
 
 	ped_steal = {
@@ -10067,7 +10004,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 	player_control = {
 		unable_to_drive_for_yourself = "You can't drive for yourself, silly goose!",
-		drive_for_player_no_permissions = "Barnacles! You can't drive for that player, you don't have the permission!",
 		player_is_not_nearby = "Oh fish paste! That player (${serverId}) is not nearby, try again!",
 		player_is_not_the_drive_of_a_vehicle = "Oopsie! that player (${serverId}) is not driving a vehicle, try another player!",
 		press_to_stop_drive_for = "Press ~INPUT_FRONTEND_CANCEL~ to stop driving for that player."
@@ -10088,7 +10024,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	player_stats = {
 		hp = "Happiness Points",
 		armor = "Sponge Shields",
-		toggle_player_stats_no_permissions = "Arr! Ye tried to toggle player stats without proper permissions.",
 		updated_render_range = "Aye aye captain! I've updated the render range to ${renderRange}.",
 		turned_player_stats_on = "Hoist the colors! Ye turned player stats on.",
 		turned_player_stats_off = "Shiver me timbers! Ye turned player stats off."
@@ -10143,7 +10078,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 	props = {
 		illegal_prop_item_id = "Player attempted to use a prop item with an illegal item id, this is bad!",
-		spawn_prop_not_staff = "Player attempted to spawn a prop but they didn't have the required permissions to do so, aww man.",
 		managing_props_help = "You're currently managing props, dude! Walk up to a prop and press ~INPUT_CONTEXT~ to grab it.",
 		total_props = "Total Props: ${count}, dude!",
 		active_props = "Active Props: ${count}, dude!",
@@ -10172,7 +10106,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		invalid_wipe_radius = "That's not a valid radius for throwin' out thingamajigs (between 1 and 100).",
 		wipe_successful = "Successfully thrown out all the thingamajigs.",
-		wipe_props_missing_permissions = "This player is tryin' to throw out thingamajigs without the right permissions.",
 
 		placing_prop = "Plankton's Prop Placing",
 		pickup_prop = "Picking Up Prop, Ay Ay Captain!",
@@ -10209,7 +10142,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		radio_debug_off = "Successfully toggled radio debug off, yay!",
 		radio_debug_on = "Successfully toggled radio debug on, woohoo!",
 
-		radio_debug_no_permissions = "You don't have the magic word to toggle the radio debug, sorry!",
+		radio_debug_no_permissions = "Tried to toggle the radio debug without proper permissions, meow.",
 
 		decrypt_frequency = "[${InteractionKey}] Decrypt the frequency, meow!",
 		decrypting_frequency = "Decrypting frequency, ready for launch!",
@@ -10246,8 +10179,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	reskin = {
 		plastic_surgery = "Fancy some plastic surgery, me heartie?, meow!",
 		los_santos_police_dept = "LOS SANTOS POLICE DEPT... under the sea, meow!",
-
-		reskin_player_no_permissions = "Barnacles! This landlubber attempted to toggle the radio debug without proper permission, meow!",
 
 		triggered_reskin_for_player = "Arrr... triggered reskin for ${consoleName}, me heartie! Let's see what we can do, meow!",
 
@@ -10353,13 +10284,13 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		riot_mode_enabled = "Arrr! Riot mode be activated. Prepare yerself for a good brawl!",
 		riot_mode_disabled = "Riot mode be ye disabled. But ye should know that already aggressive peds will continue fighting until they walk the plank.",
 		riot_mode_failed = "Failed to toggle riot mode, sorry pal.",
-		riot_mode_missing_perms = "Ye dare to toggle riot mode without proper permission? Walk the plank ye scallywag!",
+		riot_mode_missing_perms = "Tried to toggle riot mode without proper permissions, meow.",
 
 		riot_mode_enabled_help = "Riot mode has been activated, get ready for some kickin' chaos!",
 		riot_mode_disabled_help = "Riot mode has been turned off, back to being boring again!",
 
-		add_riot_player_no_permissions = "You can't add players to the riot list without proper permissions!",
-		remove_riot_player_no_permissions = "You can't remove players from the riot list without proper permissions!",
+		add_riot_player_no_permissions = "Tried to add a player to the riot list without the right stuff.",
+		remove_riot_player_no_permissions = "Tried to remove a player from the riot list without the right stuff.",
 
 		player_already_in_riot_list = "${consoleName} is already causing trouble, they're already on the list!",
 		player_not_in_riot_list = "${consoleName} is not on the list, they are behaving themselves for now.",
@@ -10626,7 +10557,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		finding_player = "Finding Player",
 
 		invincibility_active = "Invincibility: ~r~Poppin' like a jellyfish~w~",
-		invincibility_inactive_dead = "Invincibility: ~g~Inactive~w~ (dead), jellyfishing wasn't a good idea.",
+		invincibility_inactive_dead = "Invincibility: ~g~On~w~ (dead)",
+		invincibility_inactive_trunk = "Invincibility: ~g~On~w~ (trunk)",
 		invincibility_inactive = "Invincibility: ~g~Inactive~w~, get ready to be whacked!",
 
 		health_ok = "Health: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
@@ -10698,7 +10630,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	status = {
 		status_reset = "Successfully resetted the status for ${consoleName}, woohoo!",
 		status_reset_failed = "Oopsie, no user with server ID `${serverId}` was found. Try again!",
-		reset_status_not_staff = "Sorry, buddy, but you don't have the permission to reset another player's status. Don't be a Squidward!",
 		status_reset_for_all = "Successfully resetted the status for everyone on Bikini Bottom!",
 		status_disabled = "Barnacles! We disabled the statuses (stress, hunger and thirst)!",
 		status_enabled = "Shiver me timbers! We enabled the statuses (stress, hunger and thirst) again!",
@@ -10711,8 +10642,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		set_body_armor_level_everyone_details = "${consoleName} set their everyone's body armor level to `${bodyArmorLevel}`. We're ready to go, captain!",
 		set_body_armor_level_player_title = "Set Body Armor Level For Player",
 		set_body_armor_level_player_details = "${consoleName} updated ${targetConsoleName} and gave them a ${bodyArmorLevel} armor, ahoy!",
-		set_body_armor_level_player_not_staff = "Arr, ye scallywag! Ye be tryin' to give a body armor level to another player, but ye don't have the permission to do it!",
-		set_body_armor_level_self_not_staff = "Ahoy matey! Ye be tryin' to give yerself a body armor level, but ye don't have the permission to do it.",
 		stress_level_warning = "You're getting too worked up! Take it easy by lighting up a Cigarette, Joint, or doing Yoga."
 	},
 
@@ -10725,7 +10654,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		missing_hour = "The hour wasn't provided.",
 		invalid_hour = "Invalid override time. The time should be between 0:00 and 23:59.",
 		hour_changed = "The hour is now ${hour}.",
-		set_hour_not_staff = "You can't set the hour without the necessary permissions.",
 
 		local_time_override_enabled = "Current local time: ${hour}:${minute}.",
 		local_time_override_disabled = "Reset local time to default. Okey-dokey!",
@@ -10735,27 +10663,21 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		missing_minute = "No minute provided. I can't do nothin' without a minute.",
 		invalid_minute = "Minute `${minute}` is invalid. The value should be between 0 and 59. That's not a valid minute, try again!",
 		minute_changed = "The minute has now been set to `${minute}`. It's ${minute} minutes later now!",
-		set_minute_not_staff = "Attempted to set the minute without required permissions. You're not the captain of this ship!",
 
 		missing_weather = "No weather provided. What kind of weather do you want?",
 		invalid_weather = "Oops! The wacky weather of `${weatherName}` isn't in Bikini Bottom. Try CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT or BLIZZARD.",
 		weather_changed = "The krusty weather is now `${weatherName}`.",
 		weather_advanced = "The weather has advanced to `${weatherName}`.",
 		weather_advance_fail = "Seems like we couldn't naturally advance the weather today.",
-		set_weather_not_staff = "Sorry pal, you can't change the weather unless you're a Krusty Krab staff member.",
-		advance_weather_not_staff = "Only Krusty Krab staff members can advance the weather in Bikini Bottom!",
 
 		time_frozen = "The ti-i-ime has now been frozen.",
 		time_unfrozen = "The ti-i-ime is no longer frozen.",
-		freeze_time_not_staff = "Attempted to freeze the ti-i-ime without required permissions.",
 
 		weather_frozen = "The wea-ea-eather is now frozen.",
 		weather_unfrozen = "The wea-ea-eather is no longer frozen.",
-		freeze_weather_not_staff = "Attempted to freeze the wea-ea-eather without required permissions.",
 
 		blackout_enabled = "A blackout is now pre-e-e-sent in the city.",
 		blackout_disabled = "The city is no longer in a blackout.",
-		blackout_not_staff = "Attempted to toggle a blackout without required permissions.",
 
 		weather_changed_title = "Weather Changed, Aye Aye Captain!",
 		weather_changed_details = "${consoleName} changed the weather to `${weatherName}`, oh boy!",
@@ -11109,8 +11031,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	},
 
 	trains = {
-		spawn_train_missing_permissions = "Player attempted to spawn a choo choo but they didn't have the required permissions to do so.",
-
 		invalid_track_id = "Invalid track ID provided, meow.",
 		spawned_train_on_track = "Spawned a choo choo on track ${trackId}.",
 		failed_to_spawn_train = "Failed to spawn a choo choo, oopsie daisy!"
@@ -11126,7 +11046,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	treasure_maps = {
 		no_treasure_map_with_tier = "There be no treasure map with tier ${mapTier}, matey.",
 		treasure_map_does_not_have_piece = "This treasure map with tier ${mapTier} does not have piece ${pieceNumber}. Arr!",
-		spawn_map_piece_missing_permissions = "Ye scallywag! Ye don't have the proper permissions to spawn a map piece.",
 
 		sketchy_map = "Arr, this be a sketchy map!",
 		worn_map = "This map looks like it's been through a lot of adventures.",
@@ -11156,9 +11075,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		set_ocean_scaler_no_permission = "The player did not have the required permission to set the ocean scaler.",
 
 		tsunami_started = "Tsunami started, aaaah. It will take ${minutes} minutes to flood the map, aye aye captain!",
-		tsunami_stopped = "Tsunami stopped, Aye aye captain!",
-
-		toggle_tsunami_no_permissions = "Arr, ye tried t' toggle the tsuanmi without proper permissions, matey!"
+		tsunami_stopped = "Tsunami stopped, Aye aye captain!"
 	},
 
 	tuner_shop = {
@@ -11195,8 +11112,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		cleared_vdm = "Aye aye captain! We cleared ${amount} VDM targets for you.",
 		failed_vdm_clear = "We're having trouble clearing VDM targets right now.",
 		added_vdm_target = "NPC with network id ${networkId} is after ${target} now.",
-
-		vdm_no_permissions = "Sorry, you don't have the right permission to trigger VDM."
+		no_ped_available = "No dude nearby is available.",
+		failed_steal = "Failed to snag the vehicle.",
+		stealing_vehicle = "A dude nearby was told to yoink the vehicle (${distance}m)."
 	},
 
 	vending_machines = {
@@ -11278,10 +11196,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	},
 
 	wizard = {
-		action_missing_permissions = "Tried to make a SpongeBob do a magic trick without having the magic powers.",
-		action_radius_missing_permissions = "Tried to make SpongeBobs in a certain area perform magic tricks without having the magic powers.",
-		run_as_missing_permissions = "Tried to act as another SpongeBob without having the permission to do so.",
-
 		menu_title = "Magic Wizard",
 
 		ragdoll_player = "Turn into a noodle",
@@ -11367,8 +11281,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		invalid_explosion_type = "Barnacles! That's not a valid type of explosion, me boy-o. (${explosionType})",
 		invalid_camera_shake = "Sorry, me bucko, but there's no camera shake called `${cameraShake}`.",
 		invalid_damage_scale = "That damage scale (`${damageScale}`) just isn't gonna work, I'm afraid.",
-		created_explosion = "Kaboom! Just created an ${explosionTypeName} explosion with a damage scale of `${damageScale}` and camera shake of `${cameraShake}`!",
-		create_explosion_not_developer = "You're not a developer, so unfortunately you're not allowed to make things go boom."
+		created_explosion = "Kaboom! Just created an ${explosionTypeName} explosion with a damage scale of `${damageScale}` and camera shake of `${cameraShake}`!"
 	},
 
 	functions = {
@@ -11489,7 +11402,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	},
 
 	duty = {
-		toggle_duty_status_no_permissions = "Player attempted to toggle on duty status via command without proper permissions. No can do, little dude!",
+		toggle_duty_status_no_permissions = "Attempted to toggle on fry cook status via command without proper jellyfishing nets.",
 
 		duty_status_on = "I'm ready, I'm ready, I'm on duty!",
 		duty_status_off = "I guess it's time to chill at home, off duty!",
@@ -11604,6 +11517,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		license_hunting = "Huntin' License",
 		license_fishing = "Fishin' License",
 		license_weapon = "Weaponz License",
+		license_mining = "Mining Licen-SEE!",
 		gave_character_license = "Gave ${characterName} a license for the `${licenseLabel}`, ahoy!",
 		character_already_has_license = "Blimey! ${characterName} already had the `${licenseLabel}` license!",
 		removed_character_license = "Scurvy! The `${licenseLabel}` license was removed from ${characterName}.",
@@ -11737,8 +11651,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		not_in_a_vehicle = "Ya not in a boat mobile.",
 		vehicle_engine_on = "Da engine is still runnin'.",
 
-		set_fuel_no_permissions = "Some lousy player tried ta set a vehicle's gahs level without proper permissions.",
-
 		vehicle_exploded_logs_title = "Vehicle go boom-boom!",
 		vehicle_exploded_logs_details = "${consoleName} filled up the tank of a vehicle and caused a big big kaboom because the engine was still running."
 	},
@@ -11834,11 +11746,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "Yippie! The debug mode for garages has been turned on!",
 		toggle_garage_debug_toggled_off = "Aw, tartar sauce! The debug mode for garages has been turned off."
-	},
-
-	handlings = {
-		set_handling_override_not_super_admin = "Arrghh! That scallywag tried to change the handling of a vehicle without proper permissions!",
-		remove_handling_override_not_super_admin = "Shiver me timbers! That landlubber tried to remove the handling override of a vehicle without proper permissions!"
 	},
 
 	keys = {
@@ -11965,31 +11872,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		toggle_brakes_off = "Ahoy! Toggled on the brakes, arr!",
 		failed_modify_brakes = "Arr, couldn't modify the brakes.",
 
-		toggle_disabled_brakes_no_permissions = "Player tried to turn off the stoppers without permission. What a rusty meme!",
-
-		-- NOTE: `add_vehicle` command:
-		add_vehicle_not_super_admin = "The player tried to hook someone up with a vehicle without having the shellback credentials.",
-		add_vehicle_added_vehicle_for_everyone = "Bikini Bottomites are rocking with the new ride! I just added a ${modelName} for everyone.",
-		add_vehicle_added_vehicle_for_player = "The ${consoleName} is in the game with a new ride, a ${modelName}. Thanks to my help!",
-		add_vehicle_added_vehicle = "I just added a new ride and it's a ${modelName}.",
-		add_vehicle_character_not_loaded = "Da target playah had no charactahs loaded, oopsie!",
-		add_vehicle_target_user_not_found = "Da target usah could not be found, uh oh!",
-		add_vehicle_invalid_input = "Invalid input, barnacles!",
-		add_vehicle_no_permissions = "No permissions, arrr!",
-		add_vehicle_user_not_found = "Usah not found, me boy!",
-		add_vehicle_invalid_player = "There were no playahs with server ID `${serverId}`, yar!",
-		add_vehicle_invalid_model_name = "The model name `${modelName}` is not a valid model, shiver me timbers!",
-		add_vehicle_no_model_name = "No model name added, oh no!",
-
-		added_vehicle_for_everyone_logs_title = "Added New Ride For Everyone!",
-		added_vehicle_for_everyone_logs_details = "${consoleName} brought a ${modelName} and gave everyone a copy of it!",
-		added_vehicle_for_player_logs_title = "Added New Ride For Player",
-		added_vehicle_for_player_logs_details = "${consoleName} bestowed upon ${targetConsoleName} a ${modelName} for their garage!",
-		added_vehicle_logs_title = "Added New Ride",
-		added_vehicle_logs_details = "${consoleName} just bought a ${modelName} and added it to their garage!",
-
 		-- NOTE: `toggle_vehicle_weapons` command:
-		toggle_vehicle_weapons_not_super_admin = "Squidward: The player tried to use weapons in a boat without permission, what a krusty krab!",
 		toggled_vehicle_weapons_on = "Patrick: Yay! We can now shoot stuff out of the boat!",
 		toggled_vehicle_weapons_off = "Patrick: Oops, I think I accidentally turned off the weapons...",
 		toggled_vehicle_weapons_vehicle_is_not_networked = "Sandy: This boat is not connected to the network, y'all.",
@@ -12144,6 +12027,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		ems_boat_hq = "EMS boaty boaty boaty headquarters",
 		ems_garage = "EMS Garage - home of the lifesaving rides.",
 		e_to_get_treated = "[E] Sell your soul for $1250",
+		e_check_in_player = "[E] Check-in Squared Partner - $1250",
+		check_in_blocked = "Check-in is being swarmed by anchovies",
 		get_treated = "Got ouchies? Purchase a speedy recovery for just $1250!",
 		you_are_being_treated = "Hold on tight! You're getting fixed up now!",
 		being_treated = "Hanging out with the docs",

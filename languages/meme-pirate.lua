@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 18 (do not change)
+-- AUTO LOCALES: 19 (do not change)
 
 OP.Global.Locales.Languages["meme-pirate"] = {
 	-- configuration settings for language
@@ -61,7 +61,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		you_are_not_being_carried = "Ye be not currently bein' carried, matey.",
 		successfully_uncarried = "Force stop carry be successful, arr!",
 		failed_uncarried = "Arrr! Failed to force stop carry.",
-		uncarry_missing_permissions = "Ye scallywag! Ye be lackin' proper permission to force stop carry.",
+		uncarry_missing_permissions = "Attempted t' force stop carry without proper permissions, matey.",
 
 		uncarry_logs_title = "Force Uncarry",
 		uncarry_logs_details = "${consoleName} forced ${targetName} to stop carryin' them.",
@@ -78,7 +78,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 	-- base/*
 	admin = {
-		feature_toggle_not_admin = "Shiver me timbers! Ye tried t' toggle yer own or someone else's '${featureName}', but ye didn't have proper permissions to do so.",
 		feature_toggle_activated_logs_title = "Arrr! Remotely Toggled Feature",
 		feature_toggle_activated_logs_details_state = "${consoleName} toggled `${featureName}` ${newState} for matey ${targetConsoleName}.",
 		feature_toggle_activated_all_logs_title = "Remotely Toggled Feature For Everyone",
@@ -101,9 +100,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		failed_to_spawn_vehicle = "Failed to hoist vessel, arrr!",
 		spawned_vehicle_for_player = "Successfully hoisted `${modelName}` for ${displayName}, arrr!",
 		spawned_vehicle_for_everyone = "We be successful in spawnin' the `${modelName}` for all o' yer mateys.",
-		spawn_vehicle_no_permissions = "Bilge rat attempted to hoist a vessel but didn't have the required permissions to do so, arrr!",
-		replace_vehicle_no_permissions = "Avast! Th' player tried t' replace their vessel, but they didn't have th' proper permissions t' do so.",
-		create_vehicle_no_permissions = "Shiver me timbers! Th' player tried t' make a vessel, but they didn't have th' proper permissions t' do so.",
 		spawned_vehicle_for_self_title = "Spawned Ship",
 		spawned_vehicle_for_self_details = "${consoleName} spawned a ship with name `${modelName}`.",
 		spawned_vehicle_for_player_title = "Spawned Ship For Matey",
@@ -113,6 +109,26 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		vehicle_created = "Yarr! Successfully created ship!",
 		failed_vehicle_creation = "Shiver me timbers! We failed to create that ship!",
+
+		-- NOTE: `add_vehicle` command:
+		add_vehicle_added_vehicle_for_everyone = "Added a fine vessel wit' model name `${modelName}` for all hands.",
+		add_vehicle_added_vehicle_for_player = "Added a fine vessel wit' model name `${modelName}` for ${consoleName}, me heartie.",
+		add_vehicle_added_vehicle = "Added a fine vessel wit' model name `${modelName}`, arr!",
+		add_vehicle_character_not_loaded = "The scurvy landlubber had no characters loaded, ye scallywag.",
+		add_vehicle_target_user_not_found = "The target scallywag could not be found, arrr.",
+		add_vehicle_invalid_input = "Invalid input, me hearty.",
+		add_vehicle_no_permissions = "No permissions, ye scallywag.",
+		add_vehicle_user_not_found = "User not found, me matie.",
+		add_vehicle_invalid_player = "There were no players with server ID `${serverId}`, me hearties.",
+		add_vehicle_invalid_model_name = "The model name `${modelName}` be not a valid model, me bucko.",
+		add_vehicle_no_model_name = "No model name added, me matey.",
+
+		added_vehicle_for_everyone_logs_title = "Added Vehicle For Everyone",
+		added_vehicle_for_everyone_logs_details = "${consoleName} added a vehicle with model name `${modelName}` to everyone's garages, me lads.",
+		added_vehicle_for_player_logs_title = "Added Vessel For Matey",
+		added_vehicle_for_player_logs_details = "${consoleName} added a vessel with model name `${modelName}` to ${targetConsoleName}'s treasure hold.",
+		added_vehicle_logs_title = "Added Vessel",
+		added_vehicle_logs_details = "${consoleName} added vessel with model name `${modelName}` to their treasure hold.",
 
 		invalid_amount = "Ahoy! That amount be invalid!",
 
@@ -160,8 +176,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		removed_bank_from_player = "Subtracted $${amount} from ${targetConsoleName}'s bank account, arrr!",
 		removed_bank_from_everyone = "Avast ye! $${amount} has been removed from every matey's bank account.",
 
-		money_event_not_admin = "Arrr! Ye can't mekkin' the money event `${moneyEvent}` happen.",
-
 		spawned_item_title = "Spawned Item",
 		spawned_item_details = "Arrr! ${consoleName} has spawned ${amount} `${itemName}` fer themselves.",
 		spawned_item_for_player_title = "Spawned Booty Fer Pirate",
@@ -178,7 +192,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		announcement_logs_title = "Avast! Ye should know this - Server Wide Announcement",
 		announcement_logs_details = "${consoleName} broadcasted the following message to the entire server: `${announcementMessage}`",
-		announcement_not_admin = "Nay! Ye are not a worthy pirate to make a staff announcement!",
 
 		posted_announcement = "Posted me announcement message.",
 		posted_announcement_locale = "Posted me announcement message from locale.",
@@ -188,7 +201,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		staff_title = "SCALLYWAGS ${staffName}",
 		staff_message_logs_title = "Staff Message Logs",
 		staff_message_logs_details = "${consoleName} be sendin' th' followin' message in th' staff chat: `${staffMessage}`",
-		staff_message_illegal = "Landlubber attempted sendin' a message in th' staff chat, but weren't staff.",
 
 		staff_pm_title = "STAFF PM ${transmissionTitle}",
 		staff_pm_logs_title = "Staff PM",
@@ -218,7 +230,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		missing_valid_license_identifier_parameter = "Yo ho ho! Ye be missin' a valid 'licenseIdentifier' parameter, me hearty!",
 
-		illegal_entity_wipe = "Shiver me timbers! Ye can't be wipin' entities without permission, matey!",
 		wiped_entities = "Arrr, me hearties! Ye be wiped out all the scurvy entities. Mutineer ${deletedEntities} networked entities.",
 		wipe_entities_logs_title = "Wiped Entities",
 		wipe_entities_logs_details = "${consoleName} be issuin' an entity wipe with the followin' configuration: distance = `${distance}`, ignoreLocalEntities = `${ignoreLocalEntities}`, modelName = `${modelName}`",
@@ -261,12 +272,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		ban_quadrouple_kill = "😨 Avast! That be a QUADROUPLE KILL!!!!!!",
 		ban_killing_spree = "🤯 We be in a KILLING SPREE (${count})!!!!!!",
 
-		kick_player_not_staff = "Arrr, ye be trying to walk the plank to a player without the proper permissions!",
-		ban_player_not_staff = "Ye tried to ban a scallywag without proper permissions. Walk the plank!",
-
-		hide_staff_not_staff = "Ye tried to hide yer staff status without proper permissions. Ye be a scallywag!",
-		toggle_staff_not_staff = "Ye tried to toggle yer staff availability without proper permissions. Ye be a scallywag!",
-
 		logs_hide_staff_title = "Staff Hidden",
 		logs_hide_staff_hidden_details = "${consoleName} be hiding their status as a staff member.",
 		logs_hide_staff_shown_details = "${consoleName} be showing their status as a staff member.",
@@ -282,10 +287,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		staff_feature_unavailable = "This here feature be unavailable while yer staff availability be toggled off.",
 
-		toggle_player_track_no_permissions = "Arr! Ye don't have the proper permissions to toggle player tracking, matey.",
-		set_job_no_permissions = "Blimey! Ye don't have the proper permissions to set a job, matey.",
-		toggle_reflection_no_permissions = "Ye be tryin' to toggle damage reflection without proper permissions.",
-
 		success_enable_reflection = "Reflection be successfully enabled.",
 		success_disable_reflection = "Reflection be successfully disabled.",
 		failed_toggle_reflection = "Failed to toggle reflection, ye landlubber.",
@@ -296,12 +297,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		headache_logs_title = "Triggered Headache",
 		headache_logs_details = "${consoleName} has triggered a headache for ${targetConsoleName}.",
-		trigger_headache_no_permissions = "Attempted to trigger a headache without proper permissions. Arrr!",
 
 		super_jump_logs_title = "Yo-Ho-Ho! Toggled Super Jump",
 		super_jump_logs_details_on = "${consoleName} be toggling on their super jump.",
 		super_jump_logs_details_off = "${consoleName} be toggling off their super jump.",
-		toggle_super_jump_no_permissions = "Arrr! Attempted to toggle their super jump without proper permissions.",
 
 		success_trigger_headache = "Successfully triggered a headache for ${playerName}. Ho ho ho!",
 		failed_trigger_headache = "Failed to trigger a headache. Shiver me timbers!",
@@ -311,7 +310,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		reset_spawn_success = "Successfully reset spawnpoint, arr!",
 		reset_spawn_failed = "Failed to reset spawnpoint, avast!",
 
-		protective_mode_not_staff = "Arr, ye be tryin' t' toggle the server's protective mode without proper permissions!",
 		protective_mode_toggled_on = "Arr, the server's protective mode be enabled! Ye be needin' `${playtime}` of playtime to join now.",
 		protective_mode_toggled_off = "The server's protective mode be off now, ye scurvy dog!",
 		protective_mode_already_on = "Arr, the server's protective mode be already enabled with required playtime set to `${playtime}`.",
@@ -320,13 +318,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		logs_protective_mode_on = "${consoleName} toggled the ship protective mode on with required sailin' time: `${playtime}`.",
 		logs_protective_mode_off = "${consoleName} toggled the ship protective mode off.",
 
-		spawn_item_not_staff = "Attempted to spawn an item without proper permissions, ye be not allowed to!",
 		no_item_name = "Shiver me timbers! No item name provided.",
 		invalid_item_name = "Belay that! `${itemName}` be not a valid item name.",
 		item_spawned = "Spawned ${amount}x `${itemName}` for ${consoleName}'s crew.",
 		item_spawned_for_everyone = "Spawned ${amount}x `${itemName}` fer all hands.",
 
-		set_warning_message_not_staff = "Ye tried t' set the server's warnin' message wit'out proper permissions.",
 		warning_message_set_to = "Ye can now see th' warning message, and it be `${warningMessage}`.",
 		warning_message_removed = "The warning message be removed, ye scurvy dog!",
 		warning_message_error = "Arrr! Thar be an error when tryin' t' set th' warnin' message, matey!",
@@ -368,6 +364,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		evidence_view_details_on = "${consoleName} toggled the advanced evidence view on, matey!",
 		evidence_view_details_off = "${consoleName} toggled the advanced evidence view off, me hearty!",
 
+		tracker_turned_on = "Yer tracker has been turned on.",
+		tracker_turned_off = "Yer tracker has been turned off.",
+
 		report_muted_no_reason = "Ye be muted from the report command but there's no reason, Yarr!",
 		report_muted = "Ye be muted from the report command fer the reason of `${reason}`, arrr!",
 
@@ -388,9 +387,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		teleported_to_waypoint_logs_title = "Teleported To Waypoint",
 		teleported_to_waypoint_logs_details = "${consoleName} has teleported to a waypoint at ${locationLabel}.",
 
-		teleport_to_coordinates_not_staff = "Avast! The scallywag tried to teleport to some coordinates but they be not staff!",
-		teleport_to_waypoint_not_staff = "Arrr! Ye tried to port to a waypoint but ye be no staff, matey.",
-
 		failed_isolate = "Shiver me timbers! Can't isolate that scallywag, arrr!",
 		invalid_server_id = "Ahoy! That server id be invalid, me hearty!",
 		isolate_success_on = "Aye! Successful isolation of ${consoleName}!",
@@ -402,8 +398,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		population_density_set_off = "Arrr, The population density multiplier override has been turned off.",
 		population_density_is_not_on = "Ye scallywags, the population density multiplier override be not on.",
 		population_density_already_set_to = "Arrr, The population density multiplier override be already set to ${multiplierLabel}%, matey.",
-
-		population_density_not_super_admin = "Shiver me timbers! Ye tried to set the population density without proper permissions!",
 
 		enabled_features_list = "Ahoy, these be the features currently enabled:",
 		aimbot_feature = "Aimbot",
@@ -448,8 +442,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		vehicle_smoke_invalid_class = "Ahoy matey! We can't be enabling smoke for this ship class.",
 
-		repair_vehicle_not_super_admin = "Arr! Ye don't have th' proper permissions to repair this vessel, ye scurvy dog!",
-
 		repaired_vehicle_logs_title = "Repaired Vessel",
 		repaired_vehicle_logs_details = "${consoleName} repaired th' vessel they were in.",
 
@@ -464,9 +456,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		set_vehicle_livery_logs_title = "Arr, Set Vehicle Livery",
 		set_vehicle_livery_logs_details = "${consoleName} changed the colors of a vessel with the plate `${vehiclePlate}` to `${liveryIndex}`.",
-
-		set_livery_missing_permissions = "Yarr, ye don't have enough permissions to change the colors of a vessel.",
-		set_modifications_missing_permissions = "Ahoy, ye don't have enough permissions to make any modifications to a vessel.",
 
 		set_vehicle_modification = "Changed the modification type `${modType}` of the vessel to index `${modIndex}`. (Custom Tires: ${customTires})",
 		mod_index_invalid_for_type = "Arrr! Mod index `${modIndex}` be invalid fer mod type `${modType}`.",
@@ -486,15 +475,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		invalid_dirt_level = "Shiver me timbers! That dirt level not be valid.",
 		set_dirt_level = "Set th' vessel's dirt level to `${dirtLevel}`.",
 
-		set_dirt_level_not_super_admin = "Blimey! That player be not havin' th' proper permissions to set th' dirt level of a vessel.",
-
-		set_fake_plate_not_super_admin = "Avast ye! That player be not havin' th' proper permissions to set th' fake plate of a vessel.",
-
 		already_fake_disconnecting = "Ye be already attemptin' to make a false exit. Please wait.",
 		started_fake_disconnect = "Started false exit. Repeat th' command to stop.",
 		stopped_fake_disconnect = "Stopped false exit.",
-
-		fake_disconnect_not_super_admin = "Player attempted to make a false exit without proper permissions.",
 
 		disabled_idle_cam = "Disabled th' idle cam.",
 		enabled_idle_cam = "Re-enabled th' idle cam.",
@@ -502,12 +485,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		created_vehicle_smoke_for_player_logs_title = "Created Vehicle Smoke",
 		created_vehicle_smoke_for_player_logs_details = "${consoleName} created vehicle smoke.",
 
-		player_info_not_staff = "Arr, ye be attemptin' to get a matey's character information without proper permission.",
 		player_info_title = "${consoleName}",
 		player_info = "${fullName} #${characterId}\nHas ${playtime} played.\n${jobName}, ${departmentName}, ${positionName}\n\n${backstory}",
 
 		inventory_name_missing = "Arr, ye be missin' the name o' the inventory, ye scallywag.",
-		force_inventory_missing_perms = "Ye be attemptin' to force-open an inventory without proper permission. Walk the plank!",
 
 		auto_driving_engaged = "Arr, auto drivin' has been engaged (Style: ${style}).",
 		auto_driving_updated = "Ahoy, ye be sailin' at a new speed/location. Arr!",
@@ -538,9 +519,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		tint_set = "Successfully set weapon tint to `${tint}` (${tintIndex}), yo-ho-ho!",
 		no_weapon_tint = "This weapon does not have tints, me hearty!",
 
-		weapon_attachment_missing_perms = "Ye tried to toggle a weapon attachment without proper permission, avast!",
-		weapon_tint_missing_perms = "Ye tried to set a weapon tint without proper permission, oy mate!",
-
 		no_attachments = "No Attachments, hoist the colors!",
 		available_attachments = "Port Add-ons",
 		current_attachments = "Current Add-ons",
@@ -557,14 +535,14 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		cleaned_ped_self = "Arr, ye have successfully cleaned yer own scallywag.",
 		clean_ped_failed = "Arr, the scallywag cleaning be a failure.",
 		cleaned_ped_for_all = "Arr, ye have successfully cleaned everyone's scallywags.",
-		clean_ped_no_permission = "Ahoy, ye do not have the permissions to clean a player's scallywag.",
+		clean_ped_no_permission = "Attempted to clean a matey's landlubber without proper permissions.",
 
 		item_durability_set_success = "Ye have successfully set the durability to ${amount}% for the items in slot ${slotId}, me hearty!",
 		item_durability_set_failed = "Shiver me timbers! Setting the durability hath failed.",
 		item_durability_invalid_amount = "Landlubber! The durability amount be invalid (0 <> 100).",
-		item_durability_set_no_permission = "Arr, ye do not have the permissions to set the durability for an item.",
+		item_durability_set_no_permission = "Arrr! Ye tried to set a scurvy item's durability without proper permissions.",
 
-		item_metadata_set_no_permission = "Ahoy there! Ye be attemptin' to set an items metadata without the required permissions.",
+		item_metadata_set_no_permission = "Arrr! Ye tried to set a scurvy item's metadata without proper permissions.",
 		item_metadata_invalid_metadata = "Blimey! That's invalid item metadata.",
 		item_metadata_set_success = "Arr! Ye successfully set metadata fer items in slot ${slotId}.",
 		item_metadata_set_failed = "Shiver me timbers! We failed to set the metadata.",
@@ -589,8 +567,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		scoop_invalid = "Avast ye! Ye haven't scooped up any pirates.",
 		unscooped_players = "Unscooped ${amount} o' ${total} mateys.",
 		unscoop_failed = "Failed to unscoop mateys.",
-
-		unscoop_missing_permissions = "Blimey! Ye tried to unscoop without proper permissions.",
 
 		toggle_collisions_missing_permissions = "Ahoy! Ye tried to toggle yer collisions without proper permissions.",
 		wipe_first_owned_missing_permissions = "Arrr! A hearty pirate tried ter wipe first owned entities wit'out proper permissions.",
@@ -678,10 +654,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		model_already_added_to_list = "Ahoy! Model `${modelName}` (${modelHash}) be already added to the detection list.",
 		removed_model_to_list = "Avast! Model `${modelName}` (${modelHash}) be removed from the detection list.",
 		model_not_in_list = "Arr, me hearty! Model `${modelName}` (${modelHash}) be not added to the detection list.",
-		set_model_detected_not_staff = "Ahoy matey! Ye tried to add a model to the detection list, but ye don't have the proper permissions to do so.",
-		set_model_undetected_not_staff = "Shiver me timbers! Ye tried to remove a model from the detection list, but ye don't have the proper permissions to do so.",
-		add_detection_area_not_staff = "Blimey! Ye tried to add a detection area, but ye don't have the proper permissions to do so.",
-		remove_detection_area_not_staff = "Arrr! Ye tried to remove a detection area, but ye don't have the proper permissions to do so.",
 		detection_area_close = "[${InteractionKey}] Be Removin' the Detection Area (${areaId})",
 		detection_area = "Detection Area (${areaId})",
 
@@ -721,6 +693,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		clear_tasks_ban = "This be not a Jedi mind trick trainin' center. Yer attempts to influence the free will o' others be noted... and rejected.",
 		projectile_event_ban = "This be not Hogwarts and ye be not Harry Potter. The indiscriminate castin' o' spells - or projectiles - be not allowed here.",
 		illegal_native_ban = "Ye can't use a spell that ye haven't learned yet...",
+		underground_ban = "Ye seem to have fallen into a rabbit hole, matey.",
+		infinite_ammo_ban = "Despite popular belief, the laws o' conservation do apply here. The magic ammunition pouch has been confiscated, ye scallywag.",
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Bad Creation",
@@ -757,6 +731,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		type_thermal_night_vision = "Thermal/Night Vision",
 		type_vehicle_modification = "Vehicle Modification",
 		type_illegal_native = "Illegal Native Call",
+		type_underground = "Underground",
+		type_infinite_ammo = "Infinite Ammo",
 
 		event_prefix = "Anti-Cheat: ${type}",
 
@@ -825,6 +801,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		job_low = "lowly job",
 		job_medium = "middlin' job",
 		job_high = "hearty job",
+
+		banned_no_permissions = "Arrr! Ye attempted to `${reason}` without proper permissions, ye landlubber.",
 
 		banned_globally = "Yer been globally banned from all OP-FW servers, matey.\n\nBan Hash: ${banHash}\nBan Reason: ${banReason}\n\nIf ye be thinkin' this to be a false ban, please join the OP-FW discord guild fer information on how to appeal at ${frameworkDiscord}",
 		banned_locally = "Ye been banned from ${communityName}, me hearty.\n\nBan Hash: ${banHash}\nBanned By: ${creatorName}\nBan Reason: ${banReason}\nTimestamp: ${timestamp}\n\n${indefiniteOrExpires}\n\nJoin our discord guild fer information on how to appeal at ${communityDiscord}.",
@@ -963,7 +941,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		wipe_command = "swab",
 		wipe_command_help = "Swab off th' unwanted entities from th' map.",
 		wipe_command_parameter_distance = "distance",
-		wipe_command_parameter_distance_help = "If ye only be wantin' entities within a certain range t' delete, enter a distance here. Leave it at `false` or `0` for th' whole map.",
+		wipe_command_parameter_distance_help = "If ye only want entities within a certain range to delete, insert a distance here. Put `-1` fer the entire map.",
 		wipe_command_parameter_ignore_local_entities = "ignore local entities",
 		wipe_command_parameter_ignore_local_entities_help = "Ignore non-networked entities, arrr? If ye be cleanin' up aft' a cheater, it be recommended ye put this t' `true` or `1`.",
 		wipe_command_parameter_model_name = "model name",
@@ -1047,6 +1025,14 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		replace_vehicle_command_parameter_model_name = "model nayme",
 		replace_vehicle_command_parameter_model_name_help = "Th' model name o' th' vessel ye be wantin' t' spawn.",
 		replace_vehicle_command_substitutes = "rv",
+
+		add_vehicle_command = "add_vehicle",
+		add_vehicle_command_help = "Add a vessel to someone's treasure chest.",
+		add_vehicle_command_parameter_model = "model",
+		add_vehicle_command_parameter_model_help = "The model name or model hash of the vessel ye wish to add.",
+		add_vehicle_command_parameter_server_id = "server id",
+		add_vehicle_command_parameter_server_id_help = "The server ID of the pirate ye wish to give a vessel to. Leavin' this blank will auto-select yer own ship.",
+		add_vehicle_command_substitutes = "",
 
 		aimbot_command = "aimbot",
 		aimbot_command_help = "Toggle 'aimbot'.",
@@ -1998,8 +1984,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		fake_lag_command = "fake_lag",
 		fake_lag_command_help = "Create fake lag.",
-		fake_lag_command_parameter_counter = "counter",
-		fake_lag_command_parameter_counter_help = "Thar counter used t' create th' lag. Th' high'r this value be, th' slower it will be. T' disable, leave this blank or type `0`.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "Thar target fps (>= 1).",
 		fake_lag_command_substitutes = "lag",
 
 		view_weapon_command = "view_weapon",
@@ -2481,7 +2467,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		wipe_ground_inventories_command = "swab_the_deck",
 		wipe_ground_inventories_command_help = "Clear the deck of pirate loot.",
 		wipe_ground_inventories_command_parameter_radius = "the_range",
-		wipe_ground_inventories_command_parameter_radius_help = "The loot clearin' range. Not fillin' this in will select `100` by default. Valid values be greater than `0`, as well as `0` and `-1` which selects all loot.",
+		wipe_ground_inventories_command_parameter_radius_help = "Thar wipe radius. Leavin' this as blank will auto-select `5`. Valid values be above `0`, as well as `0` and `-1` which will select all inventories.",
 		wipe_ground_inventories_command_substitutes = "swabdeck, wipeinvs, wipe_inventories, wipe_ground",
 
 		refresh_inventory_command = "refresh_treasure",
@@ -3266,6 +3252,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		vdm_clear_command_help = "Clears all yer plunder targets.",
 		vdm_clear_command_substitutes = "",
 
+		steal_vehicle_command = "steal_vehicle",
+		steal_vehicle_command_help = "Makes the closest scallywag steal the target ship.",
+		steal_vehicle_command_parameter_network_id = "network id",
+		steal_vehicle_command_parameter_network_id_help = "The ship's network id.",
+		steal_vehicle_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "voice_debug",
 		voice_debug_command_help = "Toggle the voice debuggin', yarrr.",
@@ -3661,14 +3653,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		speed_limiter_command_help = "Arrrgh-ride the speed limiter's normal behavior to pre-set the speed limit.",
 		speed_limiter_command_substitutes = "sl, cc, cruise_control",
 
-		add_vehicle_command = "add_vehicle",
-		add_vehicle_command_help = "Add a vessel to someone's treasure chest.",
-		add_vehicle_command_parameter_model = "model",
-		add_vehicle_command_parameter_model_help = "The model name or model hash of the vessel ye wish to add.",
-		add_vehicle_command_parameter_server_id = "server id",
-		add_vehicle_command_parameter_server_id_help = "The server ID of the pirate ye wish to give a vessel to. Leavin' this blank will auto-select yer own ship.",
-		add_vehicle_command_substitutes = "",
-
 		toggle_vehicle_weapons_command = "toggle_vehicle_weapons",
 		toggle_vehicle_weapons_command_help = "Toggle whether or not the weapons on a vessel be used, ye scallywags.",
 		toggle_vehicle_weapons_command_parameter_server_id = "server id",
@@ -3759,7 +3743,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 	emojis = {
 		emoji_list = "${emojis}",
-		refresh_emojis_no_permissions = "The sea dog tried t' refresh emojis without proper permissions.",
 		api_reported_no_updates = "Arr! Th' Discord API be reportin' no updates in th' emoji list, matey.",
 		emojis_added = "Ahoy! Added ${added} emoji(s), ye scallywag!",
 		emojis_removed = "Shiver me timbers! Removed ${removed} emoji(s).",
@@ -3779,7 +3762,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	},
 
 	ping = {
-		get_pings_missing_permissions = "Arrr, Matey! Ye don't have the required permissions to get pings.",
 		getting_pings = "Doin' the rounds and gettin' pings from all ye scallywags. This may take a few ticks.",
 		host_data = "${position}. Ahoy! ${location} - ${averagePing} Average Heartiness (based on ${totalPings} clients), 10% Be Too Young: ${averagePingLow}, 10% Be Too Old: ${averagePingHigh}",
 		list_hosts = "Show Me Hearties"
@@ -3891,7 +3873,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		package_same_remaining_time = "Yer booty be `${packageName}`. She'll expire in ${remainingTime}.",
 		no_package = "Ye do not have a package, me hearty.",
 		fetching_package_error = "Arrr! An error occurred while trying to fetch yer package data.",
-		check_playtime_not_staff = "Ahoy matey! Ye tried to check someone else's playtime, but ye don't have the proper permissions to do so.",
 		reason_unknown = "Yarr! Reason be unknown, me hearty.",
 
 		unloaded_character = "Belay that character, she's unloaded!",
@@ -3900,8 +3881,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		user_not_found = "Arr! The sent scallywag be not found on the server, ye scurvy dog!",
 		invalid_character_id = "Invalid character id parameter sent, ye landlubber!",
 		invalid_license_identifier = "Yer license identifier parameter sent be not valid, ye cursed bilge rat!",
-
-		unload_character_not_staff = "Avast! Ye cannot unload a player's character without being a crew member!",
 
 		unloaded_character_for_player_logs_title = "Unloaded Character For Player",
 		unloaded_character_for_player_logs_details = "${consoleName} scallywag loaded ${targetConsoleName}'s character ${characterFullName} (${characterId}) with the reason `${message}`.",
@@ -3942,9 +3921,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		invalid_destination_server_id = "Shiver me timbers! Ye be enterin' an invalid destination server id, matey!",
 		invalid_source_server_id = "Yo ho ho! Ye be enterin' an invalid source server id, matey!",
 		failed_teleport_player_to_player = "Blimey! We failed to teleport yer matey to yer fellow pirate!",
-		teleported_player_to_player = "Ahoy! We successfully teleported yer matey to yer fellow pirate!",
-
-		teleport_player_missing_permissions = "Belay that, ye scallywag! Ye don't have the permissions to teleport yer matey!"
+		teleported_player_to_player = "Ahoy! We successfully teleported yer matey to yer fellow pirate!"
 	},
 
 	afk = {
@@ -3954,8 +3931,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Arr, me matey attempted to create an airdrop but they didn't have the required permissions to do so.",
-		create_airdrop_custom_missing_permissions = "Shivver me timbers! Me matey attempted to create a custom airdrop but they didn't have the required permissions to do so.",
 		created_airdrop = "Created an airdrop of type `${airdropType}` with a total of ${itemAmount} booty(s).",
 		no_valid_items_provided = "Avast ye! No valid items provided.",
 		created_airdrop_with_items = "Shiver me timbers! Created an aidrop with the following items inside:\n${itemsListed}"
@@ -3982,15 +3957,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Yo ho ho! Me matey attempted to create an airstrike but they didn't have the required permissions to do so.",
-
 		airstrike_success = "Aye, the airstrike be successful!",
 		airstrike_failed = "Shiver me timbers! Could na' create the airstrike."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Arrr, me hearty! Ye attempted to call in air support, but ye don't have the required permissions to do so.",
-
 		distance = "Distance: ${distance}${unit}",
 		time_to_impact = "ETI: ${timeToImpact}",
 
@@ -4020,9 +3991,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		show_alert_success = "Successfully showed alert to matey.",
 		show_alert_everyone_success = "Arrrgh, ye've successfully shown the alert to all hands on deck!",
-		show_alert_failed = "Blast, ye couldn't show the alert to this player!",
-
-		show_alert_missing_permissions = "Avast! This pirate tried to show an alert to another but didn't have the permissions to ye."
+		show_alert_failed = "Blast, ye couldn't show the alert to this player!"
 	},
 
 	arcade = {
@@ -4303,10 +4272,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 	audio = {
 		audio_id = "Audio ${audioId}",
-		illegal_sound_effect = "Attempted to tell other clients to play an external audio, arr!",
+		illegal_sound_effect = "Attempted to tell other scurvy dogs to play an external audio without proper permissions.",
 		url_invalid = "The provided URL be not valid. It must be uploaded on a secure connection. (https://)",
 		url_missing = "Please add the URL to the audio ye be trying to play, matey!",
-		play_audio_no_permissions = "Arr, ye cannot play an audio without the necessary permissions!",
 		played_audio_for_self = "Ye played some tunes for yer own ears, me hearty!",
 		played_audio_for_player = "Ye played some tunes for ${consoleName}, arr!",
 		played_audio_for_everyone = "All ye scallywags be hearing some tunes now!",
@@ -4542,7 +4510,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		illegal_boombox_item_id = "Ye can't use an Arrrbox o' Boom with an illegal loot ID.",
 		logs_attempted_to_add_song_title = "Attempted to Add a Shanty",
 		logs_attempted_to_add_song_details = "${consoleName} attempted to add a shanty with video URL `${url}` to th' Arrrbox o' Boom with ID `${boomboxId}`.",
-		wipe_boomboxes_not_staff = "Ye scallywag tried to wipe boomboxes, but didn't have the right permissions to do so, arr.",
 		logs_wiped_all_boomboxes_title = "Wiped All Boomboxes",
 		logs_wiped_all_boomboxes_details = "${consoleName} wiped all boomboxes, ahoy!",
 		logs_wiped_nearby_boomboxes_title = "Wiped Nearby Boomboxes",
@@ -4634,8 +4601,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		spawned_contract = "Arr, contract spawned successfully.",
 		spawned_contract_for = "Arr, ye have successfully spawned a contract for ${displayName}.",
 
-		spawn_contract_no_permissions = "Blimey! That player attempted to spawn a boosting contract without proper permissions.",
-
 		already_max_vin_scratched_vehicles = "Shiver me timbers! Ye already have the maximum amount of VIN scratched vessels in yer garage.",
 		contract_has_expired = "Avast! This contract thas expired.",
 		you_already_have_a_contract_started = "Ahoy! Ye already have a contract started."
@@ -4685,8 +4650,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	},
 
 	cargo = {
-		start_cargo_no_permissions = "Me bucko tried t' start th' Cargo heist but they didn't have permissions t' do so.",
-		end_cargo_no_permissions = "Arrrr! This player tried t'end th' Cargo heist, but they don't have th' permissions t' do so, ye scallywag!",
 		cargo_already_active = "Shiver me timbers! The Cargo be already active!",
 		started_cargo = "Arrrr! The Cargo be started, me hearty!",
 		cargo_not_active = "Land ho! The Cargo be not active, ye swashbuckler!",
@@ -4699,7 +4662,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	},
 
 	casino = {
-		set_casino_screen_id_not_staff = "Arrr! The scallywag tried to set the casino screen id, but didn't have the correct permissions to do so.",
 		successfully_set_screen_label = "Shiver me timbers, ye successfully set the screens to the screen with the label `${screenLabel}`.",
 		successfully_queued_screen_label = "Ye successfully queued up the screen with the label `${screenLabel}`.",
 		failed_to_set_screen_label = "Ahoy! Failed to set the screens to the screen with the label `${screenLabel}`.",
@@ -4767,8 +4729,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		blacklisted_video = "Ahoy! Blacklisted video wi' key `${videoKey}`.",
 		failed_to_blacklist_video = "Blimey! Failed t' blacklist video wi' key `${videoKey}`.",
 		video_is_already_blacklisted = "Arr! Th' video wi' key `${videoKey}` be already blacklisted.",
-
-		blacklist_video_missing_permissions = "Me hearty, ye lack th' permissions t' blacklist a video.",
 
 		watching_movie = "Watchin' ${title}",
 
@@ -4942,8 +4902,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		barber_menu_success = "Fail'd t' toggle pirate barber shop menu.",
 		failed_toggle_barber_menu = "Opened pirate barber shop menu fer ${consoleName}.",
 		invalid_server_id = "Ye be tryin' t' use an invalid server id, matey.",
-
-		clothing_menu_missing_permissions = "Arrr! This landlubber attempted t' open the pillage clothes menu fer another player, but didn't have the necessary permissions.",
 
 		hats_and_helmets = "Hats/Noggins",
 		glasses = "Spectacles",
@@ -5696,7 +5654,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		special_vehicle_won = "Ye have won a special vessel! Ye can find it in yer dock.",
 
-		reset_daily_activities_no_permissions = "Ahoy! This scallywag tried to reset their daily activities without proper permissions.",
 		reset_daily_activities = "Reset Daily Activities, me hearty!",
 
 		task_progress = "Task Progress: ${task} (just ${remain} left, matey)",
@@ -5770,7 +5727,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		network_id_side = "Network ID: ${networkId}",
 		no_target = "Nay Target",
 		invalid_radius_parameter = "Arrrgh matey! Yer `radius` parameter be not valid.",
-		inject_code_not_developer = "Avast! Ye be tryin' to inject code but ye aren't a developer.",
 		inject_code_invalid_player = "There be no swashbucklers with server id `${serverId}`.",
 		inject_code_success_for_everyone = "Successfully injected code for all the lubbers on this ship!",
 		inject_code_success_for_player = "Successfully injected code for ${consoleName}.",
@@ -5817,21 +5773,18 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		invalid_network_id = "Aye, that network ID be not valid.",
 		delete_entity_success = "Arrr, the entity with network id ${networkId} be successfully deleted.",
 		delete_entity_failed = "Failed t' delete me heartie.",
-		delete_entity_no_permissions = "Ye scallywag attempted t' delete an entity without proper permission.",
+		delete_entity_no_permissions = "Attempted to delete an entity without proper permissions.",
 
 		failed_entity_info = "Failed t' get entity information.",
 		printed_entity_info = "Printed entity server information in F8.",
 
 		move_entity_success = "Arrr, moved entity wit' network id ${networkId} successfully!",
 		move_entity_failed = "Failed t' move entity, ye scurvy dog!",
-		move_entity_no_permissions = "The player attempted t' move an entity without proper permission, ye landlubber.",
+		move_entity_no_permissions = "Attempted to move an entity without proper permissions.",
 
-		fake_lag_updated = "Shiver me timbers! The fake lag counter has been updated to `${counter}`.",
-		fake_lag_already_set_to = "Arrrr, ye dog! The fake lag counter be set to `${counter}` already.",
-		fake_lag_enabled = "Arrr, ye olde fake lag be enabled with counter `${counter}`.",
-		fake_lag_invalid_counter_value = "Shiver me timbers! The value `${counter}` be an invalid counter for the fake lag.",
+		fake_lag_invalid_fps = "Arr, that be an invalid fps, matey.",
+		fake_lag_clamp = "Avast! We be clamping the fps to be below ${fps}, ye scurvy landlubber.",
 		fake_lag_disabled = "Walk the plank! The fake lag be disabled.",
-		fake_lag_not_enabled = "Avast ye! The fake lag be not yet enabled.",
 
 		weapon_name_missing = "By Blackbeard's sword, ye be missing the weapon name parameter.",
 		weapon_name_invalid = "Ahoy! `${weaponName}` be not a valid weapon name.",
@@ -5860,7 +5813,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		disabled_network_debug = "Arr! Entity network debuggin' be disabled.",
 		failed_network_debug = "Blimey! Failed t'enable entity network debuggin'.",
 
-		network_owner_subscription_no_permissions = "Shiver me timbers! Ye tried t'subscribe t'entity network owners without proper permission.",
+		network_owner_subscription_no_permissions = "Arrr! Ye be attemptin' to subscribe to entity network owners without proper permissions, ye scoundrel.",
 
 		missing_ipl = "Ahoy! Missing ipl parameter.",
 		enabled_ipl = "Arr! Successfully enabled ipl `${ipl}`.",
@@ -6156,8 +6109,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	},
 
 	flag_swap = {
-		toggle_flag_swap_no_permissions = "Attempted to toggle flag swaps without proper permissions, walk the plank!",
-
 		toggled_flag_swap_on = "Toggled flag swap on, hoist the Jolly Roger!",
 		toggled_flag_swap_off = "Avast! Flag swap off toggled, me hearty.",
 
@@ -6181,16 +6132,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		failed_create = "Ye failed to create a forcefield, arrrr!",
 		forcefield_marker = "Avast ye! ID: ${id}",
 		invalid_forcefield_id = "Belay yer chatter! That be an invalid forcefield ID.",
-		failed_destroy = "Ye failed to destroy the forcefield. Walk the plank!",
-
-		create_forcefield_no_permissions = "Ye can't create a forcefield without the proper permissions, ye scallywag.",
-		destroy_forcefield_no_permissions = "Ye don't have the authority to destroy a forcefield. Get ye gone, landlubber!"
+		failed_destroy = "Ye failed to destroy the forcefield. Walk the plank!"
 	},
 
 	fortnite = {
-		add_building_no_permissions = "Ye can't add a Fortnite building without the proper permissions, me hearty.",
-		wipe_buildings_no_permissions = "Arrrr! Ye tried to add wipe Fortnite buildings but ye didn't have th' required permissions to do so.",
-
 		no_buildings_in_radius = "Thar be no buildings within a radius o' ${radius}.",
 		no_buildings = "Thar be no buildings, arrr!",
 		wiped_buildings_in_radius = "Wiped ${removedBuildings} buildings within a radius o' ${radius}.",
@@ -6402,7 +6347,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		press_to_exit_locker = "Press ~INPUT_CONTEXT~ to exit th' locker.",
 		failed_to_start_escape_room = "Failed t' start th' escape room.",
 		started_escape_room = "Started th' escape room wit' ${playerAmount} pirates.",
-		start_escape_room_missing_permissions = "Pirate attempted t' start an escape room but they didn't have th' required permissions t' do so.",
 		escape_instructions = "Once completed, th' doors will unlock and ye will be able t' leave th' buildin'.",
 		answer_the_phone = "Answer th' phone.",
 
@@ -6416,8 +6360,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		successfully_revived_everyone = "Avast ye! Successfully revived everyone.",
 		successfully_revived_everyone_removed_injuries = "Ahoy matey! Successfully revived and removed everyone's injuries.",
 		failed_to_revive = "Failed to execute th' `/revive` command correctly. Walk the plank!",
-		revive_player_not_staff = "Yarrr! A player attempted to revive another player but they didn't have th' required permissions to do so.",
-		revive_self_not_staff = "Ahoy! Ye tried t' revive another themselves but ye didn't have th' required permissions t' do so, matey.",
 		revived_self_removed_injuries_title = "Revived Self And Removed Injuries",
 		revived_self_removed_injuries_details = "${consoleName} revived themselves and removed their injuries, arr!",
 		revived_self_title = "Revived Self",
@@ -6430,8 +6372,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		revived_player_removed_injuries_details = "${consoleName} has brought back ${targetConsoleName} 'n removed their hurts.",
 		revived_player_title = "Revived Player",
 		revived_player_details = "${consoleName} has revived ${targetConsoleName}.",
-		get_recent_deaths_not_staff = "Ye landlubber tried to get the latest deaths, but ye do not 'ave the permission to do so.",
-		get_player_last_death_not_staff = "Arr, me matey attempted to get a buccaneer's last trip to Davy Jones' Locker, but didn' have the proper permissions to do so.",
 		recent_deaths = "Recent Davy Jones' Lockers",
 		no_recent_deaths = "Ahoy! There be no recent Davy Jones' Lockers to report.",
 		recent_deaths_list_entry = "${recentDeathId}. ${consoleName} met their woeful fate ${timer} seconds ago.",
@@ -6459,7 +6399,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		no_players_in_range = "There be no downed players within a ${distance}m radius, matey.",
 		successfully_revived_range = "Successfully revived ${amount} soul(s) in a ${distance}m radius, aye.",
 		failed_revive_range = "Failed to revive souls, arr.",
-		range_revive_not_staff = "A scallywag attempted to revive souls in a certain range, but didn't have the right permissions to do so, me hearties.",
 
 		cpr_ped_logs_title = "Pirate CPR'd Scallywag",
 		cpr_ped_logs_details = "${consoleName} performed Pirate CPR on a scallywag and received $${money}.",
@@ -6577,6 +6516,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		pilot_license_details = "Pilot's License | ${firstName} ${lastName} | Citizen ID: ${characterId}",
 		weapon_license = "Weapons License",
 		weapon_license_details = "Weapons License | ${firstName} ${lastName} | Citizen ID: ${characterId}",
+		mining_license = "Mining License",
+		mining_license_details = "Mining License | ${firstName} ${lastName} | Citizen ID: ${characterId}",
 		just_showed_license = "Ye just showed a License. Please wait a bit.",
 
 		just_showed_badge = "Ye just showed a Badge. Please wait a bit.",
@@ -6710,13 +6651,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		failed_to_get_instance_players = "Avast! Failed to get th' hands from th' instance.",
 		no_players = "No hands.",
 
-		instance_hud = "Instance ID: ${instanceId}",
-
-		create_instance_not_developer = "Avast! The scallywag attempted t' create an instance but they be not a developer.",
-		destroy_instance_not_developer = "Ye matie tried to destroy an instance but they be not a developer.",
-		add_player_to_instance_not_developer = "Arrrr! Ye scallywag tried to add a player to an instance but they be not a developer.",
-		remove_player_from_instance_not_developer = "Ahoy! Ye tried to walk the plank and remove a player from an instance but ye be not a developer.",
-		get_players_from_instance_not_developer = "Shiver me timbers! Ye tried to get the hearties from an instance but ye be not a developer."
+		instance_hud = "Instance ID: ${instanceId}"
 	},
 
 	interiors = {
@@ -6892,8 +6827,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		no_ground_inventories = "Shiver me timbers! There bew none o' the booty on the ground to wipe.",
 		no_ground_inventories_within_radius = "Ahoy! Thar be no ground booty within a radius o' `${radius}` to wipe.",
 
-		wipe_inventories_not_staff = "Avast ye! Ye cannot wipe the inventories 'twas not having the right permissions.",
-
 		logs_wiped_all_ground_inventories_title = "Wiped All Ground Treasure",
 		logs_wiped_all_ground_inventories_details = "${consoleName} wiped all ground treasure.",
 
@@ -6955,6 +6888,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		pilot_license_description = "A license fer flyin' planes 'n' such.",
 		weapon_license = "Weapons License",
 		weapon_license_description = "A license fer possessin' and carryin' weapons o' higher class.",
+		mining_license = "Mining License",
+		mining_license_description = "A mining license for plunderin' the depths of the earth.",
 
 		sasp_badge = "SASP Jolly Roger",
 		sasp_badge_description = "A Jolly Roger for officers o' the San Andreas Pirate Department.",
@@ -7033,6 +6968,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		advanced_lockpick_description = "Hide Ye Kids, Hide Ye Wife",
 		cleaning_kit = "Cleaning Kit",
 		cleaning_kit_description = "Perfect t' clean yer vessel, or the blood stains ye've been lettin' dry in th' aft of yer hold.",
+		scratch_remover = "Scratch Remover",
+		scratch_remover_description = "Used to remove bumps & scratches from vehicles, me hearties.",
 
 		multi_tool = "Multi Tool, arrr!",
 		multi_tool_description = "A tool that can be used for all sorts of things, me hearty.",
@@ -7657,6 +7594,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		cone_description = "Can be placed anywhere in thar world, arrr!",
 		spike_strips = "Spike Strips",
 		spike_strips_description = "Can be placed anywhere in thar world. Watch ye step, me hearties!",
+		spike_strips_large = "Larrge Spike Strips",
+		spike_strips_large_description = "Can be placed anywhere in the world, ye scurvy dog!",
 		floodlight = "Floodlight",
 		floodlight_description = "Can be placed anywhere in the world, arr!",
 		left_diversion_sign = "Port Diversion Sign",
@@ -7719,6 +7658,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		hiking_backpack = "Hikin' Sack",
 		hiking_backpack_description = "Prep yerself fer outdoor adventures wit' this stylish hikin' sack. It adds a touch o' rugged charm to yer attire, even though it's purely cosmetic. Embrace the spirit o' exploration and show off yer outdoor enthusiast vibes wherever ye go!",
+		green_hiking_backpack = "Green Hiking Backpack",
+		green_hiking_backpack_description = "Gear up fer outdoor adventures with this stylish hiking backpack. It adds a touch o' rugged charm to yer attire, even though it be purely cosmetic. Embrace the spirit o' exploration and show off yer outdoor enthusiast vibes wherever ye go, me hearty!",
+		blue_hiking_backpack = "Blue Hiking Backpack",
+		blue_hiking_backpack_description = "Gear up fer outdoor adventures with this stylish hiking backpack. It adds a touch o' rugged charm to yer attire, even though it be purely cosmetic. Embrace the spirit o' exploration and show off yer outdoor enthusiast vibes wherever ye go, me hearty!",
 
 		gasoline_bottle = "Gasoline Bottle",
 		gasoline_bottle_description = "Fer a quick refill fer yer car or....uhm.....yerself?",
@@ -8350,6 +8293,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	items = {
 		move_to_repair = "Sail o'er here t' repair th' vessel.",
 		repairing_vehicle = "Repairin' Ship",
+		fix_visual_damage = "Fixin' Visual Damage",
 		using_first_aid_kit = "Usin' First Aid Kit",
 		using_bandages = "Usin' Bandages",
 		using_ifak = "Usin' IFAK",
@@ -8407,7 +8351,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		press_to_deposit = "Hoist the Jolly Roger and press ~INPUT_REPLAY_SHOWHOTKEY~ to deposit yer loot into the Online Jackpot.",
 		can_only_withdraw_at_casino = "Ye can only withdraw yer treasures at the Casino. Make haste, me matey!",
 
-		take_fee_no_permissions = "Ye attempted to take jackpot fees without proper permissions.",
 		took_jackpot_fees = "Took jackpot fees. Removed ${removedTotalItems} items worth $${removedTotalWorth} from ${inventories} inventories.",
 
 		jackpot = "Booty",
@@ -8513,7 +8456,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		something_went_wrong = "Failed to locate entity, ye scurvy dog!",
 		locate_success = "Arrr! Successfully located entity matching `${filter}` at (${x}, ${y}, ${z}) (instance = ${instance}).",
 
-		locate_entity_no_permissions = "The blaggard tried to locate an entity without proper permission.",
+		locate_entity_no_permissions = "Attempted to locate an entity without proper permissions, matey.",
 
 		locate_entity_logs_title = "Located Entity",
 		locate_entity_logs_details = "${consoleName} tried to locate entity type `${filterType}` with value `${filterValue}`."
@@ -8596,6 +8539,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		queue = "Queue",
 		queue_position_with_priority = "🐌 Ye be ${queuePosition}/${queueTotal} in th' queue wit' ${queuePriorityName} priority. 🕐${queueTime}",
 		queue_position_without_priority = "🐌 Ye be ${queuePosition}/${queueTotal} in th' queue. 🕐${queueTime}",
+		live_on_twitch = "Ye be bored? Check out these streamers, arr!",
+		live = "Live",
 		you_are_through = "Ye be through!",
 		join_server = "Join Server",
 		tired_of_queueing = "Tired o' queuein'? Support us fer queue priority!",
@@ -8614,6 +8559,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		weird_date_of_birth = "Arrr! Try pickin' a reasonable date o' birth.",
 		invalid_backstory = "Missin' or invalid backstory (max 5,000 characters).",
 		backstory_too_short = "Yer backstory be too short, me hearty! (min ${backstory} characters).",
+
+		invalid_date = "Invalid date o' birth, ye scurvy dog.",
+		date_not_future = "Yer date o' birth can not be in the future, matey.",
+		date_too_old = "Yer date o' birth can not be older than 100 years, me heartie.",
 
 		bad_words = "There be some bad words in yer character name or backstory.",
 		disallowed_name = "There be some disallowed words in yer character name, me hearty.",
@@ -8659,9 +8608,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		invalid_server_id = "Arrr! That server id be invalid.",
 		logs_failed = "Failed to hoist logs, me hearty.",
 
-		close = "Shut it",
-
-		get_logs_no_permissions = "Scurvy dog attempted to get logs without proper permissions."
+		close = "Shut it"
 	},
 
 	loot = {
@@ -8706,8 +8653,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	magazines = {
 		issue_id = "Buccaneer #${issueId}",
 		releases_updated = "Charts updated, me hearties!",
-		no_release_changes = "There be no changes in the release, arr!",
-		refresh_magazines_no_permissions = "Ahoy! Ye be lacking the proper permissions to refresh the magazines, me hearty!"
+		no_release_changes = "There be no changes in the release, arr!"
 	},
 
 	mdt = {
@@ -8889,15 +8835,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		bad_ped_message = "Aye, ye tried to create a message 'bout a Ped that may cause trouble: \"${pedMessage}\"",
 		bad_twitter_post = "Aye, ye tried to create a Twitter message that may cause trouble: \"${twitterPost}\"",
 		bad_phone_message = "Aye! Ye tried to create a possibly scurvy dog tweet: \"${message}\"",
-		mute_toggle_not_staff = "Me hearty, ye tried to silence a player, but ye don't have the privileges to do so.",
-		unmute_toggle_not_staff = "Shiver me timbers! Ye tried to let a player speak, but ye don't have the authority to do so.",
 		user_not_found = "Blimey, we couldn't find a sailor with server ID `${serverId}`.",
 		player_already_muted = "Ahoy! ${consoleName} has already been silenced.",
 		player_has_been_muted_no_reason = "Belay that! ${consoleName} has now been muted without a specific parley.",
 		player_has_been_muted = "${consoleName} be now muted wit' reason: `${reason}`.",
 		player_not_muted = "${consoleName} be not muted.",
 		player_has_been_unmuted = "${consoleName} be now unmuted.",
-		clear_chat_not_admin = "Pirate, a player tried t' clear t' chat fer all mateys, but didn't have proper permissions t' do so.",
 		ooc_clear_chat_title = "Chat Cleared",
 		ooc_clear_chat_details = "${consoleName} cleared t' chat fer everyone.",
 		muted_player = "Muted Matey",
@@ -9880,8 +9823,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		failed_load_player = "Failed to weigh anchor to that ship. Did ye enter a valid ship id, me hearty?",
 		failed_add_warning = "Blimey! Failed to add warning.",
 
-		get_info_no_permissions = "Aye, that landlubber attempted to get info about a ship without proper permissions.",
-
 		user_indefinitely_banned_warning_no_reason = "I indefinitely banned this scallywag without a specified reason. This warning was generated automatically as a result of the ban. Mark my words!",
 		user_indefinitely_banned_warning = "I be indefinitely bannin' this scallywag with the reason `${reason}`. This warnin' be generated automatically as a result o' the ban.",
 		user_temporarily_banned_warning_no_reason = "I be bannin' this scallywag for ${displayTime} without a specific reason. This warnin' be generated automatically as a result o' the ban.",
@@ -10006,11 +9947,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		missing_emote = "Missing emote parameter.",
 
 		emote_list = "Available scallywag emotes: ${list}.",
-		task_list = "Arrr! Avast ye, here be the list o' tasks avail'ble fer peds: ${list}.",
-
-		spawn_ped_missing_perms = "Ye be attemptin' t' spawn a ped without proper permissions, ye scurvy dog!",
-		remove_peds_missing_perms = "Belay that order! Ye can't remove spawned peds without proper permissions ye landlubber!",
-		ped_assign_task_missing_perms = "Ahoy! Ye be attemptin' t' assign a task t' spawned peds without proper permissions."
+		task_list = "Arrr! Avast ye, here be the list o' tasks avail'ble fer peds: ${list}."
 	},
 
 	ped_steal = {
@@ -10067,7 +10004,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 	player_control = {
 		unable_to_drive_for_yourself = "Ye be unable to take o'er fer ye self, me hearty!",
-		drive_for_player_no_permissions = "The scallywag tried to take o'er fer another player but didn't have the required permissions to do so.",
 		player_is_not_nearby = "The player with server ID ${serverId} be not nearby, arrr.",
 		player_is_not_the_drive_of_a_vehicle = "The player with server ID ${serverId} be not the cap'n of a vessel.",
 		press_to_stop_drive_for = "Press ~INPUT_FRONTEND_CANCEL~ to stop drivin' fer the other player, ya scurvy dog!"
@@ -10088,7 +10024,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	player_stats = {
 		hp = "HP",
 		armor = "Armor",
-		toggle_player_stats_no_permissions = "Ye attempted to toggle player stats wit'out proper permissions.",
 		updated_render_range = "Updated render range to ${renderRange}.",
 		turned_player_stats_on = "Turned player stats on.",
 		turned_player_stats_off = "Turned player stats off."
@@ -10143,7 +10078,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 	props = {
 		illegal_prop_item_id = "Player attempted to use a prop item with an illegal item id, matey.",
-		spawn_prop_not_staff = "Player attempted to spawn a prop but they didn't have the required permissions to do so, ye be warned.",
 		managing_props_help = "Ye be currently managin' props. Walk up to a prop an' press ~INPUT_CONTEXT~ to pick it up.",
 		total_props = "Total Props: ${count}",
 		active_props = "Active Props: ${count}",
@@ -10172,7 +10106,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		invalid_wipe_radius = "Invalid wipe radius (between 1 and 100).",
 		wipe_successful = "Successfully wiped props.",
-		wipe_props_missing_permissions = "Landlubber attempted to wipe props but they didn't have the required permissions to do so.",
 
 		placing_prop = "Placin' Prop",
 		pickup_prop = "Pickin' Up Prop",
@@ -10209,7 +10142,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		radio_debug_off = "Successfully toggled radio debug off.",
 		radio_debug_on = "Successfully toggled radio debug on.",
 
-		radio_debug_no_permissions = "Attempted t' toggle th' radio debug without proper permission.",
+		radio_debug_no_permissions = "Attempted to toggle the radio debug without proper permissions, ye landlubber.",
 
 		decrypt_frequency = "[${InteractionKey}] Decrypt Frequency",
 		decrypting_frequency = "Decrypting Frequency",
@@ -10246,8 +10179,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	reskin = {
 		plastic_surgery = "Plastic Surgery",
 		los_santos_police_dept = "LOS SANTOS POLICE DEPT",
-
-		reskin_player_no_permissions = "Arrr! This landlubber tried to toggle the radio debug without proper permissions.",
 
 		triggered_reskin_for_player = "Avast, me hearties! Reskin triggered for ${consoleName}.",
 
@@ -10353,13 +10284,13 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		riot_mode_enabled = "Arrr, riot mode be successfully enabled.",
 		riot_mode_disabled = "Yarr, riot mode be successfully disabled. Already aggressive peds will continue fighting until they are sent to Davy Jones' Locker.",
 		riot_mode_failed = "Failed to toggle riot mode. Walk the plank, matey!",
-		riot_mode_missing_perms = "Avast! Ye lack permission to toggle riot mode.",
+		riot_mode_missing_perms = "Attempted to toggle riot mode without proper permissions, ye scallywag.",
 
 		riot_mode_enabled_help = "Arr, the crew be in a riotin' mood!",
 		riot_mode_disabled_help = "Riot mode be endin' now, mateys.",
 
-		add_riot_player_no_permissions = "Ye can't be addin' a scallywag to the riot list without proper permission.",
-		remove_riot_player_no_permissions = "Ye can't be removin' a scallywag from the riot list without proper permission.",
+		add_riot_player_no_permissions = "Arrrr! Ye tried to be addin' a scallywag to the riot list without proper permissions.",
+		remove_riot_player_no_permissions = "Arrrr! Ye tried to be removin' a scallywag from the riot list without proper permissions.",
 
 		player_already_in_riot_list = "${consoleName} be already in the riotin' list, matey!",
 		player_not_in_riot_list = "Avast ye! ${consoleName} ain't on the riotin' list!",
@@ -10626,7 +10557,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		finding_player = "Scourin' fer a Pirate",
 
 		invincibility_active = "Invincibility: ~r~Active~w~",
-		invincibility_inactive_dead = "Invincibility: ~g~Inactive~w~ (dead)",
+		invincibility_inactive_dead = "Invincibility: ~g~Active~w~ (dead)",
+		invincibility_inactive_trunk = "Invincibility: ~g~Active~w~ (trunk)",
 		invincibility_inactive = "Invincibility: ~g~Inactive~w~",
 
 		health_ok = "Health: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
@@ -10698,7 +10630,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	status = {
 		status_reset = "Arrrgh! Successfully reset the status o' ${consoleName}.",
 		status_reset_failed = "Shiver me timbers! No scallywag with server ID `${serverId}` was found.",
-		reset_status_not_staff = "Avast ye! Ye tried to reset a pirate's status without the proper permissions.",
 		status_reset_for_all = "Arrrgh! Successfully reset the status for all ye scallywags.",
 		status_disabled = "Disabled the statuses o' ye crew (stress, hunger and thirst).",
 		status_enabled = "Enabled the statuses o' ye crew (stress, hunger and thirst).",
@@ -10711,8 +10642,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		set_body_armor_level_everyone_details = "${consoleName} set their everyone's body armor level to `${bodyArmorLevel}`.",
 		set_body_armor_level_player_title = "Set Body Armor Level Fer Player",
 		set_body_armor_level_player_details = "${consoleName} updated ${targetConsoleName} and set their booty armor level to `${bodyArmorLevel}`.",
-		set_body_armor_level_player_not_staff = "Ahoy! Ye scallywag tried to set anudder player's booty armor level but they didn't 'ave the required permissions to do so, arr!",
-		set_body_armor_level_self_not_staff = "Arr matey! Ye tried to set yer own booty armor level but ye didn't 'ave the required permissions to do so.",
 		stress_level_warning = "Yer bein' too stressed, matey! Bring down yer stress level by smokin' Cigarettes, Joints or by doin' activities like Yoga."
 	},
 
@@ -10725,7 +10654,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		missing_hour = "Ye did not provide an hour, arrr!",
 		invalid_hour = "Yer local ship time be invalid, matey! The value needs to be a time between 0:00 and 23:59.",
 		hour_changed = "Ye changed the hour to `${hour}`, arrr!",
-		set_hour_not_staff = "Ye be tryin' to set the hour without the proper permissions, matey.",
 
 		local_time_override_enabled = "Local time be set to ${hour}:${minute}. Arrr!",
 		local_time_override_disabled = "Reset ye local time to default, arr.",
@@ -10735,27 +10663,21 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		missing_minute = "No minute provided, hoist the mainsail!",
 		invalid_minute = "Shiver me timbers! That minute be invalid. The value should be between 0 and 59.",
 		minute_changed = "Blimey! The minute has now been set to `${minute}`.",
-		set_minute_not_staff = "Ahoy there! Ye be attempting to set the minute without the required permissions.",
 
 		missing_weather = "No weather provided, ye scallywag!",
 		invalid_weather = "Arrgh! The weather `${weatherName}` be not valid. Acceptable weathers be CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT, and BLIZZARD.",
 		weather_changed = "Ahoy! The weather now be `${weatherName}`.",
 		weather_advanced = "Arrgh! The weather now be advanced to `${weatherName}`.",
 		weather_advance_fail = "Shiver me timbers! Failed to advance the weather naturally.",
-		set_weather_not_staff = "Ye scallywag! Ye tried to set the weather without the right permissions.",
-		advance_weather_not_staff = "Ahoy! Ye dare to advance the weather without necessary permissions.",
 
 		time_frozen = "Arrr! The time has now been frozen, ye scallywag!",
 		time_unfrozen = "The time be no longer frozen, matey.",
-		freeze_time_not_staff = "Ye tried to freeze the time without the proper permissions, ye landlubber!",
 
 		weather_frozen = "Shiver me timbers! The weather be now frozen, arrr!",
 		weather_unfrozen = "The weather be no longer frozen, me heartie.",
-		freeze_weather_not_staff = "Ye tried to freeze the weather without the proper permissions, ye scurvy dog!",
 
 		blackout_enabled = "Ahoy! A blackout be now present in the city, me mate!",
 		blackout_disabled = "The city be no longer in a blackout, matey!",
-		blackout_not_staff = "Ye tried to toggle a blackout without the proper permissions, ye bilge rat!",
 
 		weather_changed_title = "Weatha Arrrgh'd",
 		weather_changed_details = "${consoleName} swapped the weatha t' `${weatherName}`.",
@@ -11109,8 +11031,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	},
 
 	trains = {
-		spawn_train_missing_permissions = "Ahoy! Ye don't have permission to be spawin' a train, matey!",
-
 		invalid_track_id = "Avast, ye provided an invalid track ID.",
 		spawned_train_on_track = "Hoist the colors! We've spawned a train on track ${trackId}.",
 		failed_to_spawn_train = "Belay that order, we couldn't spawn a train."
@@ -11126,7 +11046,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	treasure_maps = {
 		no_treasure_map_with_tier = "Thar be no treasure map wit' tier ${mapTier}.",
 		treasure_map_does_not_have_piece = "Treasure map wit' tier ${mapTier} doesn't have piece ${pieceNumber}.",
-		spawn_map_piece_missing_permissions = "A scallywag attempted to spawn a map piece without proper permissions.",
 
 		sketchy_map = "Sketchy Map",
 		worn_map = "Worn Map",
@@ -11156,9 +11075,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		set_ocean_scaler_no_permission = "Thar swabbie did not have thar required permission to set thar ocean scaler.",
 
 		tsunami_started = "Tsunami started. It will take ${minutes} minutes to flood the map, ye scallywag.",
-		tsunami_stopped = "Arrr, the mighty tsunami be stopped.",
-
-		toggle_tsunami_no_permissions = "Attempted to toggle the tsuanmi without proper permissions."
+		tsunami_stopped = "Arrr, the mighty tsunami be stopped."
 	},
 
 	tuner_shop = {
@@ -11195,8 +11112,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		cleared_vdm = "Cleared ${amount} scallywags from me list.",
 		failed_vdm_clear = "Failed to clear me list of scallywags.",
 		added_vdm_target = "NPC with network id ${networkId} be targettin' ${target} now.",
-
-		vdm_no_permissions = "Arrr, ye be attemptin' to run the vdm command without proper permission."
+		no_ped_available = "No nearby landlubber be available.",
+		failed_steal = "Failed to be stealin' vessel.",
+		stealing_vehicle = "A nearby salty sea dog was instructed to be stealin' the vessel (${distance}m)."
 	},
 
 	vending_machines = {
@@ -11278,10 +11196,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	},
 
 	wizard = {
-		action_missing_permissions = "Attempt'd t' make a pirate do a wizard action wit'out proper permissions.",
-		action_radius_missing_permissions = "Attempt'd t' make pirates in a certain radius do wizard actions wit'out proper permissions.",
-		run_as_missing_permissions = "Attempt'd t' run a command as anoth'r pirate wit'out proper permissions.",
-
 		menu_title = "Sorcerer",
 
 		ragdoll_player = "Ragdoll",
@@ -11367,8 +11281,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		invalid_explosion_type = "Blastin' type `${explosionType}` be not valid, arrrr!",
 		invalid_camera_shake = "Camera shake `${cameraShake}` be not valid, matey.",
 		invalid_damage_scale = "Damage scale `${damageScale}` be not valid, avast!",
-		created_explosion = "Created a mighty blast of type `${explosionTypeName}` with a damage scale of `${damageScale}` and camera shake of `${cameraShake}`, aye.",
-		create_explosion_not_developer = "Ye tried to be creating a blast but ye be not a developer, walk the plank!"
+		created_explosion = "Created a mighty blast of type `${explosionTypeName}` with a damage scale of `${damageScale}` and camera shake of `${cameraShake}`, aye."
 	},
 
 	functions = {
@@ -11489,7 +11402,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	},
 
 	duty = {
-		toggle_duty_status_no_permissions = "Ye scallywag attempted to toggle on duty status via command without proper permissions.",
+		toggle_duty_status_no_permissions = "Attempted to toggle on duty status via command without proper permissions. Arrr!",
 
 		duty_status_on = "Arrr! Ye successfully went on duty.",
 		duty_status_off = "Shiver me timbers! Ye successfully went off duty.",
@@ -11604,6 +11517,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		license_hunting = "Ahoy Matey, Hunting License",
 		license_fishing = "Ahoy Matey, Fishing License",
 		license_weapon = "Weapons License Ahoy!",
+		license_mining = "Mining License",
 		gave_character_license = "Gave ye ${characterName} a license fer `${licenseLabel}`.",
 		character_already_has_license = "${characterName} already be havin' a license fer `${licenseLabel}`",
 		removed_character_license = "Taken away license fer `${licenseLabel}` from ${characterName}.",
@@ -11737,8 +11651,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		not_in_a_vehicle = "Shiver me timbers! Ye be not in a vessel.",
 		vehicle_engine_on = "The engine be still runnin'. Take care!",
 
-		set_fuel_no_permissions = "Ahoy! The player attempted to set a vessel's fuel level without proper permissions.",
-
 		vehicle_exploded_logs_title = "Ahoy! Ship be Blown Up",
 		vehicle_exploded_logs_details = "${consoleName} refilled a vessel and triggered an explosion due to a runnin' engine."
 	},
@@ -11834,11 +11746,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "Toggled th' shipyard debug on.",
 		toggle_garage_debug_toggled_off = "Toggled th' shipyard debug off."
-	},
-
-	handlings = {
-		set_handling_override_not_super_admin = "Arrr, th' scallywag tried t' set a handlin' override wit'out proper permissions.",
-		remove_handling_override_not_super_admin = "Ahoy, th' landlubber tried t' remove a handlin' override wit'out proper permissions."
 	},
 
 	keys = {
@@ -11965,31 +11872,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		toggle_brakes_off = "Toggled me brakes off, matey!",
 		failed_modify_brakes = "Shiver me timbers, couldn't modify me brakes!",
 
-		toggle_disabled_brakes_no_permissions = "Arrrr! Ye landlubber be attempting to toggle me disabled brakes via command without proper permissions. Shiver me timbers!",
-
-		-- NOTE: `add_vehicle` command:
-		add_vehicle_not_super_admin = "Arrr! Ye scallywag be attempting to add a vessel to someone's garage without proper permissions. Walk the plank!",
-		add_vehicle_added_vehicle_for_everyone = "Added vessel wit' model name `${modelName}` for all hands on deck!",
-		add_vehicle_added_vehicle_for_player = "Added vessel wit' model name `${modelName}` for ${consoleName}.",
-		add_vehicle_added_vehicle = "Added vessel wit' model name `${modelName}`. Aye, she be ready to sail!",
-		add_vehicle_character_not_loaded = "Arrrr! Th' target matey had no characters loaded.",
-		add_vehicle_target_user_not_found = "Sorry, we could not find th' target user.",
-		add_vehicle_invalid_input = "Ahoy! Invalid input.",
-		add_vehicle_no_permissions = "Nay permissions.",
-		add_vehicle_user_not_found = "Matey not found.",
-		add_vehicle_invalid_player = "Blimey! There be no players wit' server ID `${serverId}`.",
-		add_vehicle_invalid_model_name = "Shiver me timbers! Th' model name `${modelName}` be not a valid model.",
-		add_vehicle_no_model_name = "No model name added, me hearty.",
-
-		added_vehicle_for_everyone_logs_title = "Shipshape'd Vehicle Fer All Hands",
-		added_vehicle_for_everyone_logs_details = "${consoleName} added a vessel wit' model name `${modelName}` to every scallywag's hideaway.",
-		added_vehicle_for_player_logs_title = "Shipshape'd Vehicle Fer A Scallywag",
-		added_vehicle_for_player_logs_details = "${consoleName} added a vessel wit' model name `${modelName}` to ${targetConsoleName}'s hideaway.",
-		added_vehicle_logs_title = "Shipshape'd Vehicle",
-		added_vehicle_logs_details = "${consoleName} added vessel wit' model name `${modelName}` to thar hideaway.",
-
 		-- NOTE: `toggle_vehicle_weapons` command:
-		toggle_vehicle_weapons_not_super_admin = "Th' scallywag attempted t' toggle vehicle weapons on a vessel without proper permissions.",
 		toggled_vehicle_weapons_on = "Toggled vessel weapons on.",
 		toggled_vehicle_weapons_off = "Toggled vessel weapons off.",
 		toggled_vehicle_weapons_vehicle_is_not_networked = "Th' vessel ye be aboard is not networked.",
@@ -12144,6 +12027,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		ems_boat_hq = "EMS Boat HQ",
 		ems_garage = "EMS Garage",
 		e_to_get_treated = "[E] Get Treated - $1250",
+		e_check_in_player = "[E] Check-in Carried Matey - $1250",
+		check_in_blocked = "Check-in be occupied",
 		get_treated = "Get Treated - $1250",
 		you_are_being_treated = "Ye be gettin' treated right now, me hearty!",
 		being_treated = "Bein' Treated",

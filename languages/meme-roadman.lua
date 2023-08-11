@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 18 (do not change)
+-- AUTO LOCALES: 19 (do not change)
 
 OP.Global.Locales.Languages["meme-roadman"] = {
 	-- configuration settings for language
@@ -61,7 +61,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		you_are_not_being_carried = "Bruv, you ain't getting piggybacked right now.",
 		successfully_uncarried = "You're no longer getting carried, bro. Force stopped it safely.",
 		failed_uncarried = "Couldn't force stop your carry, brudda.",
-		uncarry_missing_permissions = "Oi! You don't have enough permissions to stop the carry like that.",
+		uncarry_missing_permissions = "Man tried to force stop carry and got no clout.",
 
 		uncarry_logs_title = "Force Uncarry",
 		uncarry_logs_details = "${consoleName} forced ${targetName} to stop giving them piggyback.",
@@ -78,7 +78,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 	-- base/*
 	admin = {
-		feature_toggle_not_admin = "Tried to switch their own or someone else's '${featureName}', but didn't have the bossman's permission, innit.",
 		feature_toggle_activated_logs_title = "Switched up the ting remotely",
 		feature_toggle_activated_logs_details_state = "${consoleName} flipped the switch for `${targetConsoleName}` on `${featureName}`. It's now ${newState}, innit.",
 		feature_toggle_activated_all_logs_title = "Ya Mas, Toggled Feature For Everyone",
@@ -101,9 +100,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		failed_to_spawn_vehicle = "Man couldn't spawn the whip fam.",
 		spawned_vehicle_for_player = "Safe, man spawned a ${modelName} for ${displayName}.",
 		spawned_vehicle_for_everyone = "We spawned `${modelName}` for everyone, fam.",
-		spawn_vehicle_no_permissions = "Bruv tried to bless the whip but ain't got the mandem permissions innit.",
-		replace_vehicle_no_permissions = "Bruh tried to swap his ride, but he ain't got the drip to do that.",
-		create_vehicle_no_permissions = "Bruh tried to make a whip from scratch, but he ain't got the drip to do that.",
 		spawned_vehicle_for_self_title = "Whipped a new ride",
 		spawned_vehicle_for_self_details = "${consoleName} just whipped up a ${modelName}.",
 		spawned_vehicle_for_player_title = "Whipped a new ride for player",
@@ -113,6 +109,26 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		vehicle_created = "Sick, we made that whip!",
 		failed_vehicle_creation = "Na, we couldn't make that whip.",
+
+		-- NOTE: `add_vehicle` command:
+		add_vehicle_added_vehicle_for_everyone = "Blessed everyone with a whip called `${modelName}`.",
+		add_vehicle_added_vehicle_for_player = "Blessed ${consoleName} with a whip called `${modelName}`.",
+		add_vehicle_added_vehicle = "Blessed with a whip called `${modelName}`.",
+		add_vehicle_character_not_loaded = "The target mandem doesn't even have a character loaded.",
+		add_vehicle_target_user_not_found = "Couldn't link up with the target person, fam.",
+		add_vehicle_invalid_input = "Man said input dun messed up.",
+		add_vehicle_no_permissions = "No powers fam.",
+		add_vehicle_user_not_found = "Donny ain't there innit.",
+		add_vehicle_invalid_player = "Couldn't find no geezers with server ID `${serverId}`.",
+		add_vehicle_invalid_model_name = "The model name `${modelName}` ain't a valid ting bruv.",
+		add_vehicle_no_model_name = "Forgot to put a model name fam.",
+
+		added_vehicle_for_everyone_logs_title = "Added Vehicle For Everyone",
+		added_vehicle_for_everyone_logs_details = "${consoleName} went and added a whip with model name `${modelName}` to everyone's garages.",
+		added_vehicle_for_player_logs_title = "Blacked Out Vehicle For Mandem",
+		added_vehicle_for_player_logs_details = "${consoleName} banged in a whip wid da model name `${modelName}` for ${targetConsoleName}'s garage.",
+		added_vehicle_logs_title = "Blacked Out Vehicle",
+		added_vehicle_logs_details = "${consoleName} banged in a whip wid da model name `${modelName}` for their garage.",
 
 		invalid_amount = "Fam, that amount ain't right.",
 
@@ -160,8 +176,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		removed_bank_from_player = "Took $${amount} from ${targetConsoleName}'s bank account, that's peak fam.",
 		removed_bank_from_everyone = "It's a robbery! Everyone just lost $${amount} from their bank accounts.",
 
-		money_event_not_admin = "Aight, only admins can toggle the money event called `${moneyEvent}`.",
-
 		spawned_item_title = "New Item Alert",
 		spawned_item_details = "${consoleName} just got ${amount}x `${itemName}` spawned in for themselves, don't get too gassed fam.",
 		spawned_item_for_player_title = "Man brought out items",
@@ -178,7 +192,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		announcement_logs_title = "Globally Gassed Announcement",
 		announcement_logs_details = "${consoleName} sent this message to the whole endz: `${announcementMessage}`",
-		announcement_not_admin = "You can't send a mandem announcement, bruh.",
 
 		posted_announcement = "Aight fam, posted your message for everyone to see.",
 		posted_announcement_locale = "Yo fam, just posted a message in Roadman Speak.",
@@ -188,7 +201,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		staff_title = "STAFF ${staffName}",
 		staff_message_logs_title = "Staff Message Logs",
 		staff_message_logs_details = "${consoleName} was chattin' in the staff chat sayin': `${staffMessage}`",
-		staff_message_illegal = "Oi, mate! You can't be chattin' in the staff chat if you ain't staff.",
 
 		staff_pm_title = "STAFF PM ${transmissionTitle}",
 		staff_pm_logs_title = "Staff PM",
@@ -218,7 +230,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		missing_valid_license_identifier_parameter = "Bruv, you're missing a valid 'licenseIdentifier' parameter.",
 
-		illegal_entity_wipe = "Oi fam, you can't wipe dem entities without permissions.",
 		wiped_entities = "Man just wiped dem neeky entities. Deleted ${deletedEntities} networked entities.",
 		wipe_entities_logs_title = "Oi fam, we wiped dem entities.",
 		wipe_entities_logs_details = "The big man, ${consoleName}, wiped entities using this setup: distance = `${distance}`, ignoreLocalEntities = `${ignoreLocalEntities}`, modelName = `${modelName}`",
@@ -261,12 +272,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		ban_quadrouple_kill = "😨 QUADROUPLE KILL!!!!!! This is madting, fam!",
 		ban_killing_spree = "🤯 KILLING SPREE (${count})!!!!!! Man's on a roll, innit!",
 
-		kick_player_not_staff = "Ay fam, you can't be kicking man unless you got the proper permissions, you get me?!",
-		ban_player_not_staff = "Man tried to ban a wasteman without the right clearance.",
-
-		hide_staff_not_staff = "Man tried to hide their staff status without the right clearance.",
-		toggle_staff_not_staff = "Man tried to switch up their staff status without the right clearance.",
-
 		logs_hide_staff_title = "Staff Movement",
 		logs_hide_staff_hidden_details = "${consoleName} went incognito and hid their staff status.",
 		logs_hide_staff_shown_details = "${consoleName} came out of the shadows and made their staff status visible.",
@@ -282,10 +287,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		staff_feature_unavailable = "You can't use that feature while your staff ting's off, fam.",
 
-		toggle_player_track_no_permissions = "Bruv, you don't have the permissions to toggle player tracking.",
-		set_job_no_permissions = "You don't have the permissions to set a job, fam.",
-		toggle_reflection_no_permissions = "Oi fam, you can't toggle the reflect ting without the rights.",
-
 		success_enable_reflection = "Ya ya, reflection enabled now innit.",
 		success_disable_reflection = "Safe, reflection disabled now.",
 		failed_toggle_reflection = "Mad ting, couldn't toggle reflection still.",
@@ -296,12 +297,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		headache_logs_title = "Headache Initiated",
 		headache_logs_details = "${consoleName} done caused a headache for ${targetConsoleName}.",
-		trigger_headache_no_permissions = "You can't be tryna trigger a headache without the proper clearance, fam.",
 
 		super_jump_logs_title = "Toggle Super Jump fam",
 		super_jump_logs_details_on = "${consoleName} just turned on their super jump ya get me.",
 		super_jump_logs_details_off = "${consoleName} just turned off their super jump innit.",
-		toggle_super_jump_no_permissions = "Tried to toggle their super jump but they ain't got the proper permissions fam.",
 
 		success_trigger_headache = "Mad ting, initiated a headache for ${playerName}.",
 		failed_trigger_headache = "Gahdamn, couldn't initiate no headache.",
@@ -311,7 +310,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		reset_spawn_success = "Swag, spawnpoint resetted bruv.",
 		reset_spawn_failed = "Man failed at resetting the damn spawnpoint.",
 
-		protective_mode_not_staff = "Bruv, you can't turn on the server protective mode without proper permissions.",
 		protective_mode_toggled_on = "Alrite blud, server protective mode has been turned on. You gotta have played for `${playtime}` before you can connect to the server now.",
 		protective_mode_toggled_off = "Server protective mode has been turned off.",
 		protective_mode_already_on = "Oi bruv, the server protective mode is already on with the required playtime set to `${playtime}`.",
@@ -320,13 +318,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		logs_protective_mode_on = "${consoleName} set the server to safe mode, playtime needed: `${playtime}`.",
 		logs_protective_mode_off = "${consoleName} turned off the safe mode, we rollin again.",
 
-		spawn_item_not_staff = "No permission to spawn items G",
 		no_item_name = "Name of the item ain't been given boss.",
 		invalid_item_name = "${itemName} ain't no valid item fam.",
 		item_spawned = "${consoleName} spawned ${amount}x `${itemName}`.",
 		item_spawned_for_everyone = "Yo, I spawned ${amount} ${itemName} for everyone. Get lit!",
 
-		set_warning_message_not_staff = "Ey, you can't be changing the warning message if you ain't staff.",
 		warning_message_set_to = "The warning message is now: ${warningMessage}.",
 		warning_message_removed = "Aight, I removed the warning message.",
 		warning_message_error = "Bruh, something went wrong while tryna set the warning message.",
@@ -368,6 +364,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		evidence_view_details_on = "${consoleName} toggled the advanced evidence view for real G's only, innit.",
 		evidence_view_details_off = "${consoleName} turned off advanced evidence view - back to basics now.",
 
+		tracker_turned_on = "Yo fam, your tracker is active now.",
+		tracker_turned_off = "Your tracker is off fam.",
+
 		report_muted_no_reason = "Bruv, you've been muted from reporting 'cos some wasteman didn't think to give a reason.",
 		report_muted = "You can't report right now. You've been muted 'cos of: `${reason}`.",
 
@@ -388,9 +387,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		teleported_to_waypoint_logs_title = "Teleported To Waypoint",
 		teleported_to_waypoint_logs_details = "${consoleName} got teleported to a waypoint at ${locationLabel}, safe.",
 
-		teleport_to_coordinates_not_staff = "Bruv, this person tried to teleport to some coordinates but they ain't staff, wagwan.",
-		teleport_to_waypoint_not_staff = "The mandem tried to move to a waypoint but they ain't staff.",
-
 		failed_isolate = "Couldn't isolate that player, fam.",
 		invalid_server_id = "That server ID ain't even valid.",
 		isolate_success_on = "Successfully isolated ${consoleName}. Safe.",
@@ -402,8 +398,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		population_density_set_off = "Ay fam, we turned off the population density thing.",
 		population_density_is_not_on = "Yo there, the population density thing ain't even on.",
 		population_density_already_set_to = "Yo fam, the population density thing already at ${multiplierLabel}%.",
-
-		population_density_not_super_admin = "Bruh really tried to set the population density without being the boss man.",
 
 		enabled_features_list = "Features that are on:",
 		aimbot_feature = "Aimbot",
@@ -448,8 +442,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		vehicle_smoke_invalid_class = "Nah we can't put smoke on this kind of whip.",
 
-		repair_vehicle_not_super_admin = "This fool tried to fix a car without proper permissions.",
-
 		repaired_vehicle_logs_title = "Fixed Whip",
 		repaired_vehicle_logs_details = "${consoleName} sorted the whip they was in.",
 
@@ -464,9 +456,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		set_vehicle_livery_logs_title = "Allow me to change da clothes on dis whip",
 		set_vehicle_livery_logs_details = "${consoleName} changed the outfit of a whip with da license plate `${vehiclePlate}` to `${liveryIndex}`.",
-
-		set_livery_missing_permissions = "Oi fam, you don't got da clearance to change da fit of dis whip.",
-		set_modifications_missing_permissions = "Nah bruv, you can't customize dis ride without proper permissions.",
 
 		set_vehicle_modification = "Fixed the whip up with mod type `${modType}` to index `${modIndex}`. (Custom Tires: ${customTires})",
 		mod_index_invalid_for_type = "Fam, the mod index `${modIndex}` ain't right for the mod type `${modType}`.",
@@ -486,15 +475,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		invalid_dirt_level = "Nah man, dat dirt level ain't right.",
 		set_dirt_level = "I gotchu fam, I set dat whip's dirt level to `${dirtLevel}`.",
 
-		set_dirt_level_not_super_admin = "Sorry fam, you ain't got the power to set a vehicle's dirt level.",
-
-		set_fake_plate_not_super_admin = "Sorry fam, you ain't got the power to set a vehicle's fake plate.",
-
 		already_fake_disconnecting = "You already tryna fake disconnect, chill out.",
 		started_fake_disconnect = "Just faked disconnect. Type the command again to stop.",
 		stopped_fake_disconnect = "Stopped faking the disconnect, safe.",
-
-		fake_disconnect_not_super_admin = "Oi, you can't fake disconnect without proper permission bruv.",
 
 		disabled_idle_cam = "Idle cam off, innit.",
 		enabled_idle_cam = "Idle cam back on, fam.",
@@ -502,12 +485,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		created_vehicle_smoke_for_player_logs_title = "Made vehicle smoke",
 		created_vehicle_smoke_for_player_logs_details = "${consoleName} created dat sweet sweet vehicle smoke.",
 
-		player_info_not_staff = "Yo fam, you can't get a player's character info without permission.",
 		player_info_title = "${consoleName}",
 		player_info = "${fullName} #${characterId} has been in the game for ${playtime}.\nWorks as a ${positionName} for ${departmentName} and their backstory is:\n${backstory}",
 
 		inventory_name_missing = "Oi, you forgot to specify the inventory name.",
-		force_inventory_missing_perms = "You don't have permission to force-open an inventory, innit.",
 
 		auto_driving_engaged = "Auto driving is active (Style: ${style}). Safe ride, fam.",
 		auto_driving_updated = "Yo car be rollin' fasterrr and in a new spot.",
@@ -538,9 +519,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		tint_set = "Bet, successfully set that weapon tint to `${tint}` (${tintIndex}).",
 		no_weapon_tint = "This weapon ain't even got no tints, chief.",
 
-		weapon_attachment_missing_perms = "You can't toggle a weapon attachment without the proper connect Gs permission.",
-		weapon_tint_missing_perms = "No cap, you don't have permission to set weapon tints.",
-
 		no_attachments = "Nah, no attachments available for this weapon.",
 		available_attachments = "Man's got options:",
 		current_attachments = "Chosen attachments:",
@@ -557,14 +535,14 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		cleaned_ped_self = "Sorted out your ped, init.",
 		clean_ped_failed = "Couldn't sort out your ped, tuh.",
 		cleaned_ped_for_all = "Sorted out everyone's peds, safe.",
-		clean_ped_no_permission = "Tried to sort out a player's ped without the proper clearance, wasteman move.",
+		clean_ped_no_permission = "Tried to clean a wasteman's ped without the right permissions.",
 
 		item_durability_set_success = "Loud, set the durability to ${amount}% for the items in slot ${slotId}.",
 		item_durability_set_failed = "Nah fam, couldn't set the durability.",
 		item_durability_invalid_amount = "Dead, durability amount has to be between 0 and 100, safe.",
-		item_durability_set_no_permission = "Tried to set an item's durability without the proper clearance, allow it.",
+		item_durability_set_no_permission = "Man tried to set an item's durability without the right permissions, fam.",
 
-		item_metadata_set_no_permission = "You ain't got the juice to change the item data, fam.",
+		item_metadata_set_no_permission = "Man tried to set an item's metadata without the right permissions, ya know.",
 		item_metadata_invalid_metadata = "Bruh, this item metadata ain't legit.",
 		item_metadata_set_success = "The item data for slot ${slotId} has been updated, innit.",
 		item_metadata_set_failed = "Couldn't update the item data, that's peak.",
@@ -589,8 +567,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		scoop_invalid = "Nah fam, you haven't scooped up anyone yet.",
 		unscooped_players = "Unscooped ${amount} of ${total} player(s).",
 		unscoop_failed = "Fam, couldn't unscoop players right now.",
-
-		unscoop_missing_permissions = "Oi, you don't have the permission to unscoop players.",
 
 		toggle_collisions_missing_permissions = "Bruv, you ain't got the permission to turn your collisions on and off.",
 		wipe_first_owned_missing_permissions = "Yo fam, someone tried to wipe the tingz they ownin' but they don't have the proper permissions.",
@@ -678,10 +654,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		model_already_added_to_list = "Oi, Model `${modelName}` (${modelHash}) is already on the detection list.",
 		removed_model_to_list = "Removed model `${modelName}` (${modelHash}) from the detection list, ya get me?",
 		model_not_in_list = "Yo, the model `${modelName}` (${modelHash}) ain't on the list for detection. Add it, fam.",
-		set_model_detected_not_staff = "Bruh, a player ain't got the right permissions to add a model to the detection list.",
-		set_model_undetected_not_staff = "Ayo, a player can't remove a model from the detection list without the correct permissions.",
-		add_detection_area_not_staff = "This dude ain't got the right permissions to add a detection area. Get someone else.",
-		remove_detection_area_not_staff = "Yo, why is this joker tryna remove a detection area when they ain't got the right permissions for that? Smh.",
 		detection_area_close = "[${InteractionKey}] Get rid of Detection Area (${areaId})",
 		detection_area = "Detection Area (${areaId})",
 
@@ -721,6 +693,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		clear_tasks_ban = "Bruv, this ain't no Jedi mind trick playground. Your attempts to control man's free will is not allowed here.",
 		projectile_event_ban = "This ain't Hogwarts innit? You can't be casting spells or launching projectiles like Harry Potter round here, fam.",
 		illegal_native_ban = "You nahh can't use a spell that you ain't learned yet...",
+		underground_ban = "Bruh, you done gone into a rabbit hole, innit.",
+		infinite_ammo_ban = "Despite what people think, we gotta follow the laws of conservation, fam. We took away the magic ammo pouch.",
 
 		type_aimbot = "Aimbotting",
 		type_bad_creation = "Dead creation",
@@ -757,6 +731,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		type_thermal_night_vision = "Therm/Night Viz",
 		type_vehicle_modification = "Vehicle Mods",
 		type_illegal_native = "Deadly Skrilla Call",
+		type_underground = "Underground ting, ya get me?",
+		type_infinite_ammo = "Infinite Ammo, ya feel?",
 
 		event_prefix = "Anti-Cheat: ${type}",
 
@@ -825,6 +801,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		job_low = "dead end job",
 		job_medium = "decent gig",
 		job_high = "big bucks job",
+
+		banned_no_permissions = "Man tried to ${reason}, but he ain't got the right permissions, fam.",
 
 		banned_globally = "Man's got you banned worldwide from all OP-FW servers, blud.\n\nBan Hash: ${banHash}\nBan Reason: ${banReason}\n\nIf you think this was a mistake or something, hit up the OP-FW discord ting for info on how to get unbanned at ${frameworkDiscord}",
 		banned_locally = "Bruv, you've been banned from ${communityName}.\n\nBan Hash: ${banHash}\nBanned By: ${creatorName}\nBan Reason: ${banReason}\nTimestamp: ${timestamp}\n\n${indefiniteOrExpires}\n\nLink up with our discord fam for info on how to get unbanned at ${communityDiscord}.",
@@ -963,7 +941,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		wipe_command = "wipe",
 		wipe_command_help = "Get rid of all the dead tingz off the map.",
 		wipe_command_parameter_distance = "distance",
-		wipe_command_parameter_distance_help = "If you only want to delete the tingz within a certain range, put the number of yards here. If you wanna wipe the whole ting, just leave it at `0`.",
+		wipe_command_parameter_distance_help = "If you only want manz in a certain ends to delete, put a distance here innit. Put `-1` for the whole map.",
 		wipe_command_parameter_ignore_local_entities = "no local manz",
 		wipe_command_parameter_ignore_local_entities_help = "You wanna ignore the un-networked tingz? If some wasteman's cheating, set this to `true` or `1`.",
 		wipe_command_parameter_model_name = "model name",
@@ -1047,6 +1025,14 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		replace_vehicle_command_parameter_model_name = "ride name",
 		replace_vehicle_command_parameter_model_name_help = "The name of the whip you wanna flex.",
 		replace_vehicle_command_substitutes = "rv",
+
+		add_vehicle_command = "add_vehicle",
+		add_vehicle_command_help = "Add a whi whip to someone's garage.",
+		add_vehicle_command_parameter_model = "model",
+		add_vehicle_command_parameter_model_help = "The model name or model hash of the car you tryna add.",
+		add_vehicle_command_parameter_server_id = "server id",
+		add_vehicle_command_parameter_server_id_help = "The server ID of the mandem you tryna give the ride to. Leave it blank if it's for you.",
+		add_vehicle_command_substitutes = "",
 
 		aimbot_command = "aimbot",
 		aimbot_command_help = "Toggle 'aimbot'.",
@@ -1998,8 +1984,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		fake_lag_command = "fake_lag",
 		fake_lag_command_help = "Create some sick fake lag, ya dig?",
-		fake_lag_command_parameter_counter = "counter",
-		fake_lag_command_parameter_counter_help = "The ting used to create the lag. The higher this value is, the slower it will be. To disable, leave this blank or type `0`.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "The target fps (>= 1).",
 		fake_lag_command_substitutes = "lag",
 
 		view_weapon_command = "view_weapon",
@@ -2481,7 +2467,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		wipe_ground_inventories_command = "wipe_ground_inventories",
 		wipe_ground_inventories_command_help = "Wipe dem inventories off the ground.",
 		wipe_ground_inventories_command_parameter_radius = "radius",
-		wipe_ground_inventories_command_parameter_radius_help = "The radius to wipe. Leave it blank and we'll do `100`. Can be `0`, `-1` or any positive number to select inventories.",
+		wipe_ground_inventories_command_parameter_radius_help = "The wipe radius fam. Leave this blank and it'll auto-select `5`. Valid values are above `0`, as well as `0` and `-1` which will select all inventories.",
 		wipe_ground_inventories_command_substitutes = "wipeinvs, wipe_inventories, wipe_ground",
 
 		refresh_inventory_command = "freshen up",
@@ -3266,6 +3252,12 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		vdm_clear_command_help = "Get rid of all your wreck targets.",
 		vdm_clear_command_substitutes = "",
 
+		steal_vehicle_command = "steal_vehicle",
+		steal_vehicle_command_help = "Man's tryna make the closest mandem jack the target whip.",
+		steal_vehicle_command_parameter_network_id = "network id",
+		steal_vehicle_command_parameter_network_id_help = "The whip's network id bruv.",
+		steal_vehicle_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "voice_debug",
 		voice_debug_command_help = "Switches on/off the voice debug mode.",
@@ -3661,14 +3653,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		speed_limiter_command_help = "Ovahride the speed limiter's normal behavior so that you can set the speed limit.",
 		speed_limiter_command_substitutes = "sl, cc, cruise_control",
 
-		add_vehicle_command = "add_vehicle",
-		add_vehicle_command_help = "Add a whi whip to someone's garage.",
-		add_vehicle_command_parameter_model = "model",
-		add_vehicle_command_parameter_model_help = "The model name or model hash of the car you tryna add.",
-		add_vehicle_command_parameter_server_id = "server id",
-		add_vehicle_command_parameter_server_id_help = "The server ID of the mandem you tryna give the ride to. Leave it blank if it's for you.",
-		add_vehicle_command_substitutes = "",
-
 		toggle_vehicle_weapons_command = "toggle_vehicle_weapons",
 		toggle_vehicle_weapons_command_help = "Allow or disallow peeps to use the weapons on a whip.",
 		toggle_vehicle_weapons_command_parameter_server_id = "server id",
@@ -3759,7 +3743,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 	emojis = {
 		emoji_list = "${emojis}",
-		refresh_emojis_no_permissions = "Bro tried to refresh emojis when he didn't have the power to do so.",
 		api_reported_no_updates = "Big man, can't find any updates in the emoji list, innit.",
 		emojis_added = "I just added ${added} more emojis, bruv.",
 		emojis_removed = "Got rid of ${removed} wack emojis.",
@@ -3779,7 +3762,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	},
 
 	ping = {
-		get_pings_missing_permissions = "Oi blud, you can't get pings without the proper permissions.",
 		getting_pings = "Imma grab all the pings from mandem, give me a sec.",
 		host_data = "${position}. ${location} - ${averagePing} Average Ping (based on ${totalPings} clients), 10% Low: ${averagePingLow}, 10% High: ${averagePingHigh}",
 		list_hosts = "${listHosts}"
@@ -3891,7 +3873,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		package_same_remaining_time = "Your ting is still `${packageName}`. You got ${remainingTime} left.",
 		no_package = "Bruv you don't have a package.",
 		fetching_package_error = "Oi, an error 'appened tryna fetch your package data.",
-		check_playtime_not_staff = "Allow it fam, you can't check someone else's playtime if you don't have the permission.",
 		reason_unknown = "No idea why fam.",
 
 		unloaded_character = "Yo, the character be unloaded.",
@@ -3900,8 +3881,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		user_not_found = "Yo fam, couldn't find the user you were lookin' for on the server.",
 		invalid_character_id = "Bruh, you sent an invalid character ID parameter.",
 		invalid_license_identifier = "Nah fam, you sent an invalid license identifier parameter.",
-
-		unload_character_not_staff = "Ay yo, you can't unload a player's character if you ain't staff.",
 
 		unloaded_character_for_player_logs_title = "Unloaded Character For Player",
 		unloaded_character_for_player_logs_details = "${consoleName} just unloaded ${targetConsoleName}'s character ${characterFullName} (${characterId}) for the reason `${message}`.",
@@ -3942,9 +3921,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		invalid_destination_server_id = "The destination server id you entered is wack, bruh.",
 		invalid_source_server_id = "The source server id is a no go, homie.",
 		failed_teleport_player_to_player = "Can't teleport the homie to the other homie, that's a fail, G.",
-		teleported_player_to_player = "The homie has been teleported to the other homie, that's lit!",
-
-		teleport_player_missing_permissions = "The player tried to teleport another player, but they ain't got the right permissions, fam."
+		teleported_player_to_player = "The homie has been teleported to the other homie, that's lit!"
 	},
 
 	afk = {
@@ -3954,8 +3931,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	},
 
 	airdrops = {
-		create_airdrop_missing_permissions = "Bruv, player tried to create an airdrop but they don't have the required permissions, innit?",
-		create_airdrop_custom_missing_permissions = "Mandem tried to create a custom airdrop but they don't have the required permissions, what a waste, fam.",
 		created_airdrop = "Yo, I just created an airdrop with ${itemAmount} ting(s) for ya. It's a ${airdropType}.",
 		no_valid_items_provided = "Oi, no valid items were provided, blud!",
 		created_airdrop_with_items = "We just created an airdrop with these items, fam:\n${itemsListed}"
@@ -3982,15 +3957,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	},
 
 	airstrike = {
-		create_airstrike_missing_permissions = "Player tried to create an airstrike but they don't have the required permissions, proper shame that is.",
-
 		airstrike_success = "Airstrike is live now, innit.",
 		airstrike_failed = "Failed to initiate the airstrike."
 	},
 
 	airsupport = {
-		create_airsupport_missing_permissions = "Some guy tried to call in air support but he wasn't certified for that kind of thing.",
-
 		distance = "Distance: ${distance}${unit}",
 		time_to_impact = "ETI: ${timeToImpact}",
 
@@ -4020,9 +3991,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		show_alert_success = "I blasted a message to that player for you fam.",
 		show_alert_everyone_success = "Man showed the alert to the mandem and it's all good.",
-		show_alert_failed = "Couldn't show alert to the brudda init.",
-
-		show_alert_missing_permissions = "This lad tried to show an alert to another man but he ain't got the clearance for that."
+		show_alert_failed = "Couldn't show alert to the brudda init."
 	},
 
 	arcade = {
@@ -4303,10 +4272,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 	audio = {
 		audio_id = "Ayo, play that track ${audioId}",
-		illegal_sound_effect = "Bruh, you can't be tellin' others to play some outside audio.",
+		illegal_sound_effect = "Man's tryna blast a tune to everyone without permission fam.",
 		url_invalid = "Oi blud, that URL ain't valid. It gotta be secure and start with 'https://'",
 		url_missing = "Yo, where the URL at for that sick track you tryna play?",
-		play_audio_no_permissions = "Bro, you don't have the proper clearance to play that audio. Get out of here.",
 		played_audio_for_self = "Blasted some sick beats for yourself innit.",
 		played_audio_for_player = "Blasted some sick beats for ${consoleName}.",
 		played_audio_for_everyone = "Blasted some sick beats for everyone.",
@@ -4542,7 +4510,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		illegal_boombox_item_id = "Bruv, you're tryna use a beatbox with a dodgy ID.",
 		logs_attempted_to_add_song_title = "Trying to add a banger",
 		logs_attempted_to_add_song_details = "${consoleName} was tryna add a sick tune with video URL `${url}` to beatbox ID `${boomboxId}`.",
-		wipe_boomboxes_not_staff = "Yo, someone tried to delete all da boomboxes but they ain't got da privileges to do dat.",
 		logs_wiped_all_boomboxes_title = "Finito: All Boomboxes Wiped",
 		logs_wiped_all_boomboxes_details = "${consoleName} just erased every single boombox from existence.",
 		logs_wiped_nearby_boomboxes_title = "Removed Nearby Boomboxes",
@@ -4634,8 +4601,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		spawned_contract = "Linked up with the plug and got a new hustle.",
 		spawned_contract_for = "Yo, just spawned a contract for ${displayName}.",
 
-		spawn_contract_no_permissions = "Bruh, this player tried to spawn a boosting contract without the proper permissions.",
-
 		already_max_vin_scratched_vehicles = "Fam, you got the max amount of scratched cars in your garage already.",
 		contract_has_expired = "This contract's expired, fam.",
 		you_already_have_a_contract_started = "Aight, you already got a contract started."
@@ -4685,8 +4650,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	},
 
 	cargo = {
-		start_cargo_no_permissions = "My mans tried to start up the Cargo heist but didn't have the rights to do it.",
-		end_cargo_no_permissions = "Bruv tried to end the Cargo heist but he ain't got the permissions, ya get me?",
 		cargo_already_active = "Fam, Cargo's already active.",
 		started_cargo = "Yo, we started the Cargo fam.",
 		cargo_not_active = "Ayy, the Cargo ain't active right now.",
@@ -4699,7 +4662,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	},
 
 	casino = {
-		set_casino_screen_id_not_staff = "Yo a wasteman tried to set the casino screen ID but ain't got the proper permissions for that, innit.",
 		successfully_set_screen_label = "Ey fam, I successfully set the screens to the one with the label `${screenLabel}`, ya get me?",
 		successfully_queued_screen_label = "I queued up the screen with the label `${screenLabel}` fam, all good.",
 		failed_to_set_screen_label = "Bruh I couldn't set the screens to the one with the label `${screenLabel}`, suttin went wrong.",
@@ -4767,8 +4729,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		blacklisted_video = "That vid's on the blocklist cuz it's too dodgy (${videoKey}).",
 		failed_to_blacklist_video = "Couldn't add the vid to the blocklist (${videoKey}).",
 		video_is_already_blacklisted = "That vid's already on the blocklist (${videoKey}).",
-
-		blacklist_video_missing_permissions = "You can't add vids to the blocklist.",
 
 		watching_movie = "Imma watchin' ${title}.",
 
@@ -4942,8 +4902,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		barber_menu_success = "Nah blud, couldn't toggle the barber shop menu innit.",
 		failed_toggle_barber_menu = "Aight, we opened the barber shop menu for ${consoleName}.",
 		invalid_server_id = "Sorry fam, that server id ain't valid.",
-
-		clothing_menu_missing_permissions = "Wagwan, this player tried to open the clothing menu for another player but they don't have the mandem permissions.",
 
 		hats_and_helmets = "Lids and helmets",
 		glasses = "Shades",
@@ -5696,7 +5654,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		special_vehicle_won = "Yo! You just scored a special ride, check your garage for it.",
 
-		reset_daily_activities_no_permissions = "Bruv tried to reset their daily stuff without da right permissions.",
 		reset_daily_activities = "Reset Daily Stuff, innit.",
 
 		task_progress = "Yo, you still got ${remain} ${task} left to do.",
@@ -5770,7 +5727,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		network_id_side = "Network ID: ${networkId}. You feel me?",
 		no_target = "No one there, blud",
 		invalid_radius_parameter = "Yo bruv, the `radius` you entered don't make sense. Try again.",
-		inject_code_not_developer = "Oi mate, you ain't a dev so you can't inject code. Nice try tho.",
 		inject_code_invalid_player = "Sorry bruv, can't find a player with server id `${serverId}`. Check again.",
 		inject_code_success_for_everyone = "Code injected for all the mandem, big up.",
 		inject_code_success_for_player = "Code injected for ${consoleName}. Respect.",
@@ -5817,21 +5773,18 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		invalid_network_id = "Yo, the network ID ain't valid!",
 		delete_entity_success = "Safe g, just deleted the entity with network id ${networkId}.",
 		delete_entity_failed = "Man couldn't delete the ting.",
-		delete_entity_no_permissions = "You could tell the player ain't got the permissions to delete a ting.",
+		delete_entity_no_permissions = "Man's tryna delete somethin' without the proper clearance.",
 
 		failed_entity_info = "Couldn't grab the info on that ting fam.",
 		printed_entity_info = "Printed the server info for that ting in F8.",
 
 		move_entity_success = "Moved the ting with network id ${networkId} like a boss.",
 		move_entity_failed = "Couldn't move the ting, ya get me?",
-		move_entity_no_permissions = "The player tried to move a ting without the proper permissions, waste man.",
+		move_entity_no_permissions = "Man's tryna shift somethin' without the  proper permission fam.",
 
-		fake_lag_updated = "Rah, the fake lag counter has been set to `${counter}`.",
-		fake_lag_already_set_to = "Bruv, the fake lag counter is already set to `${counter}`.",
-		fake_lag_enabled = "Safe G, fake lag's been enabled with counter `${counter}`.",
-		fake_lag_invalid_counter_value = "Ahaha, wagwan bruv, the value `${counter}` ain't no valid counter for the fake lag.",
+		fake_lag_invalid_fps = "Dead ting fps, mate.",
+		fake_lag_clamp = "Clamping fps to be as dead as ${fps}.",
 		fake_lag_disabled = "No more fake lag ting, it's been disabled.",
-		fake_lag_not_enabled = "Safe, no fake lag's even been enabled fam.",
 
 		weapon_name_missing = "Oi, you forgot to tell me the weapon name blud.",
 		weapon_name_invalid = "Allow dat `${weaponName}` weapon name fam, it ain't valid.",
@@ -5860,7 +5813,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		disabled_network_debug = "Entity netwok debuggings off.",
 		failed_network_debug = "Sorry, I couldn't turn on entity network debugging.",
 
-		network_owner_subscription_no_permissions = "You don't have the proper permissions to subscribe to entity network owners. Try again, fam.",
+		network_owner_subscription_no_permissions = "Man tried to subscribe to entity network owners without proper levels.",
 
 		missing_ipl = "Yo, you forgot to include the ipl parameter.",
 		enabled_ipl = "Ayy, we enabled ipl `${ipl}`.",
@@ -6156,8 +6109,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	},
 
 	flag_swap = {
-		toggle_flag_swap_no_permissions = "You ain't got the permissions to mess with flag swaps.",
-
 		toggled_flag_swap_on = "Flag swap turned on, ya get me?",
 		toggled_flag_swap_off = "Flag swap off, innit.",
 
@@ -6181,16 +6132,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		failed_create = "Man couldn't create a forcefield, bruv.",
 		forcefield_marker = "ID: ${id}",
 		invalid_forcefield_id = "That forcefield ID ain't valid, fam.",
-		failed_destroy = "Man couldn't destroy the forcefield, innit.",
-
-		create_forcefield_no_permissions = "Bruv, player tried to make a forcefield but they ain't got permission still.",
-		destroy_forcefield_no_permissions = "Player tried to smash a forcefield but they ain't got permission to do that, fam."
+		failed_destroy = "Man couldn't destroy the forcefield, innit."
 	},
 
 	fortnite = {
-		add_building_no_permissions = "Player tried to build a Fortnite building but they ain't got permission, innit.",
-		wipe_buildings_no_permissions = "Yo G, this player tried to wipe Fortnite buildings but ain't got the power for it.",
-
 		no_buildings_in_radius = "No buildings in a ${radius} radius fam.",
 		no_buildings = "Nah bruh, there ain't no buildings around here.",
 		wiped_buildings_in_radius = "Man just wiped out ${removedBuildings} buildings in a ${radius} radius.",
@@ -6402,7 +6347,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		press_to_exit_locker = "Press ~INPUT_CONTEXT~ to ditch the locker.",
 		failed_to_start_escape_room = "Couldn't kick off the escape room.",
 		started_escape_room = "Started escape room with ${playerAmount} heads.",
-		start_escape_room_missing_permissions = "Bruv tried to start an escape room but they don't have the necessary permissions.",
 		escape_instructions = "Once you done, the doors will unlock so you can dip out the spot.",
 		answer_the_phone = "Pick up the blower.",
 
@@ -6416,8 +6360,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		successfully_revived_everyone = "Revived every mandem, nice one.",
 		successfully_revived_everyone_removed_injuries = "Revived all the mandem and healed them up, big up.",
 		failed_to_revive = "Couldn't execute the `/revive` command correctly, sorry fam.",
-		revive_player_not_staff = "Mandem tried to revive someone but they ain't got the permissions for it innit.",
-		revive_self_not_staff = "Bruv tried to revive himself but ain't got the permissions for it.",
 		revived_self_removed_injuries_title = "Revived Self and Cleared Up The Beatings",
 		revived_self_removed_injuries_details = "${consoleName} brought himself back to life and fixed his injuries.",
 		revived_self_title = "Revived Self",
@@ -6430,8 +6372,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		revived_player_removed_injuries_details = "${consoleName} brought ${targetConsoleName} back to life and sorted their injuries, big up!",
 		revived_player_title = "Revived player",
 		revived_player_details = "${consoleName} brought ${targetConsoleName} back to life, innit!",
-		get_recent_deaths_not_staff = "My man tried to see recent deaths but didn't have the permission for that, wagwan?",
-		get_player_last_death_not_staff = "Bruh, someone tried to find out when a homie last died but didn't have the right permissions to do so.",
 		recent_deaths = "Recent Homies Who Bit The Dust",
 		no_recent_deaths = "No homies died recently, we good.",
 		recent_deaths_list_entry = "${recentDeathId}. ${consoleName} died ${timer} seconds ago, rest in peace my G.",
@@ -6459,7 +6399,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		no_players_in_range = "There ain't no homies down within ${distance} meters from you.",
 		successfully_revived_range = "Aight, you successfully revived ${amount} players within ${distance} meters from you.",
 		failed_revive_range = "Yo, you couldn't bring back anyone from the dead.",
-		range_revive_not_staff = "Yo fam, you ain't got the permissions to bring back the dead within a certain range.",
 
 		cpr_ped_logs_title = "CPRed Ped, fam",
 		cpr_ped_logs_details = "${consoleName} done some mad CPR on a ped and got themselves $${money}.",
@@ -6577,6 +6516,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		pilot_license_details = "Pilot Card | ${firstName} ${lastName} | ID: ${characterId}",
 		weapon_license = "Weapons Card",
 		weapon_license_details = "Weapons Card | ${firstName} ${lastName} | ID: ${characterId}",
+		mining_license = "Mining License, fam",
+		mining_license_details = "Mining License | ${firstName} ${lastName} | Citizen ID: ${characterId}, innit",
 		just_showed_license = "Yo fam, you just showed a license innit. Just chill for a sec.",
 
 		just_showed_badge = "My bro, you just showed a badge. Hold tight for a minute.",
@@ -6710,13 +6651,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		failed_to_get_instance_players = "Couldn't grab mandem in instance.",
 		no_players = "No mandem in the instance, init",
 
-		instance_hud = "Instance ID: ${instanceId}",
-
-		create_instance_not_developer = "Bruh tried to make an instance but they ain't no developer tho.",
-		destroy_instance_not_developer = "Man tried to destroy suttin' but he ain't no dev.",
-		add_player_to_instance_not_developer = "Man tried to add a player to suttin' but he ain't no dev.",
-		remove_player_from_instance_not_developer = "Man tried to remove a player from suttin' but he ain't no dev.",
-		get_players_from_instance_not_developer = "Man tried to get the players from suttin' but he ain't no dev."
+		instance_hud = "Instance ID: ${instanceId}"
 	},
 
 	interiors = {
@@ -6892,8 +6827,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		no_ground_inventories = "Yo, ain't no ground inventories to wipe fam.",
 		no_ground_inventories_within_radius = "No ground inventories inside a radius of `${radius}` fam.",
 
-		wipe_inventories_not_staff = "Some dude tried to wipe the inventories but didn't have the rights to do it.",
-
 		logs_wiped_all_ground_inventories_title = "Wiped All Dem Ground Inventories",
 		logs_wiped_all_ground_inventories_details = "${consoleName} got rid of all them ground inventories in a jiffy.",
 
@@ -6955,6 +6888,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		pilot_license_description = "A license for flyin' planes and whatnot.",
 		weapon_license = "Gun License",
 		weapon_license_description = "A license for possessin' and carryin' top-tier weapons.",
+		mining_license = "Mining License, G",
+		mining_license_description = "License for mining, mandem.",
 
 		sasp_badge = "SASP Bling",
 		sasp_badge_description = "A shiny bling for fam from San Andreas Police Department.",
@@ -7033,6 +6968,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		advanced_lockpick_description = "Keep it low-key, fam.",
 		cleaning_kit = "Shine Kit",
 		cleaning_kit_description = "Perfect for cleaning your ride, or the bloodstains in your trunk that you never got rid of.",
+		scratch_remover = "Scratch Remover, bruv",
+		scratch_remover_description = "Used to take out the bumps & scratches from whips, you get me.",
 
 		multi_tool = "Multi Tool",
 		multi_tool_description = "A tool that can be used for all sorts of tings init.",
@@ -7657,6 +7594,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		cone_description = "Can be dropped like a beat anywhere in the world.",
 		spike_strips = "Spike Strips",
 		spike_strips_description = "Can be poked anywhere in the world.",
+		spike_strips_large = "Mandem Spiky Strips",
+		spike_strips_large_description = "You can dash dem anywhere in the ends.",
 		floodlight = "Fam, dem floodlights",
 		floodlight_description = "Put it anywhere fam.",
 		left_diversion_sign = "Lef sign sayin' go dat way",
@@ -7719,6 +7658,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		hiking_backpack = "Hikin' Backpack",
 		hiking_backpack_description = "Get ready for some nature action with this fancy hikin' backpack. It adds a touch of roughness to your getup, even though it's just for show-off. Live that adventurous life and show off your outdoor vibes wherever you go, fam!",
+		green_hiking_backpack = "Green Hiking Pouch",
+		green_hiking_backpack_description = "Get ready for roadman hikes with this sick hiking pouch. It adds bare rugged vibes to your outfit, even tho it's just for show. Fully embrace the spirit of exploration and flex your love for the outdoors everywhere!",
+		blue_hiking_backpack = "Blue Hiking Pouch",
+		blue_hiking_backpack_description = "Get ready for roadman hikes with this sick hiking pouch. It adds bare rugged vibes to your outfit, even tho it's just for show. Fully embrace the spirit of exploration and flex your love for the outdoors everywhere!",
 
 		gasoline_bottle = "Gas Bottle",
 		gasoline_bottle_description = "When your ride or your body is runnin' on empty, this'll give it the energy it needs, innit?",
@@ -8350,6 +8293,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	items = {
 		move_to_repair = "Roll up to this spot to fix up the whips blud.",
 		repairing_vehicle = "Sorting out the whip",
+		fix_visual_damage = "Fixin' Visual Damage",
 		using_first_aid_kit = "Fixing up with a first aid kit",
 		using_bandages = "Wrapping the wounds with bandages",
 		using_ifak = "Using an IFAK to patch it up",
@@ -8407,7 +8351,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		press_to_deposit = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to deposit items to the Online Jackpot.",
 		can_only_withdraw_at_casino = "Listen mate, you can only withdraw at the Casino, innit.",
 
-		take_fee_no_permissions = "Oi, this ain't your jackpot to take mate. Get the proper permissions first.",
 		took_jackpot_fees = "We took the jackpot fees. We removed ${removedTotalItems} bits worth ££{removedTotalWorth} from ${inventories} inventories.",
 
 		jackpot = "The big one",
@@ -8513,7 +8456,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		something_went_wrong = "Bruv, couldn't find that thing.",
 		locate_success = "Got it! Found an entity that matches `${filter}` at (${x}, ${y}, ${z}) (instance = ${instance}).",
 
-		locate_entity_no_permissions = "Oi, this player tried to locate something without permission.",
+		locate_entity_no_permissions = "Man tried to locate an entity without the right permissions.",
 
 		locate_entity_logs_title = "Located Entity",
 		locate_entity_logs_details = "${consoleName} tried to find '${filterType}' with value '${filterValue}'."
@@ -8596,6 +8539,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		queue = "Queue",
 		queue_position_with_priority = "🐌 You are ${queuePosition}/${queueTotal} in the queue with ${queuePriorityName} priority. 🕐${queueTime}",
 		queue_position_without_priority = "🐌 You are ${queuePosition}/${queueTotal} in the queue. 🕐${queueTime}",
+		live_on_twitch = "Yo, you bored? Check out these streamers!",
+		live = "Live",
 		you_are_through = "You made it!",
 		join_server = "Join Da Server",
 		tired_of_queueing = "Bored of waiting? Support us for priority queue blud!",
@@ -8614,6 +8559,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		weird_date_of_birth = "Bruv, pick a normal date of birth, yeah?",
 		invalid_backstory = "Your backstory is either missing or too long, keep it under 5,000 characters, fam.",
 		backstory_too_short = "Failed to automatically generate translation.",
+
+		invalid_date = "Bruh, that's an invalid date of birth.",
+		date_not_future = "Nah fam, your date of birth can't be in the future.",
+		date_too_old = "You can't be older than 100, fam.",
 
 		bad_words = "Fam, there's some dodgy words in your character name or backstory.",
 		disallowed_name = "Yo, your name has some forbidden words, change it up.",
@@ -8659,9 +8608,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		invalid_server_id = "Bruv, that server id ain't valid.",
 		logs_failed = "Man couldn't load logs cuz of some issue. Better fix that.",
 
-		close = "Shut it down fam",
-
-		get_logs_no_permissions = "Lmao who dis dude tryna get logs without permission?"
+		close = "Shut it down fam"
 	},
 
 	loot = {
@@ -8706,8 +8653,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	magazines = {
 		issue_id = "Yo, issue number ${issueId} fam!",
 		releases_updated = "Aight, releases updated.",
-		no_release_changes = "Nah fam, there ain't no changes in the releases.",
-		refresh_magazines_no_permissions = "Yo, this playa tried to refresh the mags without the proper permissions."
+		no_release_changes = "Nah fam, there ain't no changes in the releases."
 	},
 
 	mdt = {
@@ -8889,15 +8835,12 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		bad_ped_message = "Ya tried to write a messed up ped message: \"${pedMessage}\".",
 		bad_twitter_post = "Ya tried to write a messed up tweet: \"${twitterPost}\".",
 		bad_phone_message = "Yo fam, someone tried to post a suspect tweet: \"${message}\"",
-		mute_toggle_not_staff = "Ain't no way you can mute dat playa if you ain't got the right credentials.",
-		unmute_toggle_not_staff = "You can't unmute dat playa fam, unless you got the right permissions.",
 		user_not_found = "Bruh, we couldn't find no playa with server ID `${serverId}`.",
 		player_already_muted = "${consoleName} is already on mute, you heard?",
 		player_has_been_muted_no_reason = "We put ${consoleName} on mute, but we didn't add no special reason.",
 		player_has_been_muted = "Yo ${consoleName}, you've been muted cuz of ${reason}.",
 		player_not_muted = "Bruv, ${consoleName} ain't muted.",
 		player_has_been_unmuted = "Yo ${consoleName}, you've been unmuted!",
-		clear_chat_not_admin = "The man who tried to clear chat for everyone ain't got the permission to do so.",
 		ooc_clear_chat_title = "Chat's been Cleared",
 		ooc_clear_chat_details = "${consoleName} cleared the chat for everyone.",
 		muted_player = "Muted Player",
@@ -9880,8 +9823,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		failed_load_player = "Sorry fam, couldn't load player data. You sure that server id is accurate?",
 		failed_add_warning = "Ah man, couldn't add dat warning",
 
-		get_info_no_permissions = "Yo, you ain't got the authority to get info 'bout other players",
-
 		user_indefinitely_banned_warning_no_reason = "I banned this person forever yo, but ain't got no specific reason. This warning was generated automatically due to the ban.",
 		user_indefinitely_banned_warning = "Man's been banned forever cuz he dun messed up with the reason `${reason}`. This warning is cuz of the ban, innit?",
 		user_temporarily_banned_warning_no_reason = "Bruv, I banned this man for ${displayTime} with no reason given. This warning is cuz of the ban.",
@@ -10006,11 +9947,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		missing_emote = "Oi, you need to tell us which emote you want them to play.",
 
 		emote_list = "These are the available emotes for the mans: ${list}.",
-		task_list = "Yo bro, here's the available tasks for peds: ${list}.",
-
-		spawn_ped_missing_perms = "Oi, you don't have the right permissions to spawn a ped mate.",
-		remove_peds_missing_perms = "Bruv, you can't remove spawned peds without the proper permissions innit.",
-		ped_assign_task_missing_perms = "Yo fam, you can't assign a task to spawned peds without the proper permissions."
+		task_list = "Yo bro, here's the available tasks for peds: ${list}."
 	},
 
 	ped_steal = {
@@ -10067,7 +10004,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 	player_control = {
 		unable_to_drive_for_yourself = "Bruv, you can't swap seats with yourself, you get me?",
-		drive_for_player_no_permissions = "Oi, this player tried to take control of another player's ride but didn't have the right permissions.",
 		player_is_not_nearby = "Ayo, the player with ID ${serverId} ain't nearby, you get me?",
 		player_is_not_the_drive_of_a_vehicle = "Yo, the player with ID ${serverId} ain't driving any whip right now, innit?",
 		press_to_stop_drive_for = "Press ~INPUT_FRONTEND_CANCEL~ to stop drivin' for the player, bruv."
@@ -10088,7 +10024,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	player_stats = {
 		hp = "HP",
 		armor = "Armor",
-		toggle_player_stats_no_permissions = "Oi, this player tried to toggle their stats without permission.",
 		updated_render_range = "Safe, we updated the render range to ${renderRange}.",
 		turned_player_stats_on = "Allow me to switch on player stats.",
 		turned_player_stats_off = "Time to switch off player stats."
@@ -10143,7 +10078,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 	props = {
 		illegal_prop_item_id = "Mandem tryna use an illegal prop item id, smh",
-		spawn_prop_not_staff = "Mandem tryna spawn a prop but they ain't got the permissions for that fam.",
 		managing_props_help = "Yo, you're currently dealing with props. Walk up to a prop and press ~INPUT_CONTEXT~ to snatch it.",
 		total_props = "Total Props: ${count}",
 		active_props = "Active Props: ${count}",
@@ -10172,7 +10106,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		invalid_wipe_radius = "The radius you specified is whack, it should be between 1 and 100.",
 		wipe_successful = "You've done a solid job and wiped all the props, well done!",
-		wipe_props_missing_permissions = "Oi, that dipstick tried to wipe the props but they ain't got the required permissions. Smh.",
 
 		placing_prop = "Puttin' down some ting",
 		pickup_prop = "Picking up some ting",
@@ -10209,7 +10142,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		radio_debug_off = "Safe, radio debug is now off.",
 		radio_debug_on = "Mandem, radio debug is now on.",
 
-		radio_debug_no_permissions = "Oi, you can't switch on radio debug without permission.",
+		radio_debug_no_permissions = "Tried to toggle radio debug without the right permissions.",
 
 		decrypt_frequency = "[${InteractionKey}] Decrypt Frequency",
 		decrypting_frequency = "Decrypting the frequency, hold up.",
@@ -10246,8 +10179,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	reskin = {
 		plastic_surgery = "Rebranding",
 		los_santos_police_dept = "MAN LIKE LSPD",
-
-		reskin_player_no_permissions = "Man don't have the right permissions to mess with the radio debug.",
 
 		triggered_reskin_for_player = "Reskinning ${consoleName} like a don.",
 
@@ -10353,13 +10284,13 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		riot_mode_enabled = "Riot mode's about to go down, bruv. It's active now.",
 		riot_mode_disabled = "Riot mode's no longer on the scene, fam. If aggressors are still alive, they gonna come at you.",
 		riot_mode_failed = "Couldn't activate riot mode, innit.",
-		riot_mode_missing_perms = "You ain't got the permissions to activate riot mode, blud.",
+		riot_mode_missing_perms = "You can't toggle riot mode without proper permissions, fam.",
 
 		riot_mode_enabled_help = "The gaff is goin' mental, bruv. Riot mode's been turned on.",
 		riot_mode_disabled_help = "Calm down now, the riot's over. Riot mode's been turned off.",
 
-		add_riot_player_no_permissions = "Oi, you can't add a geezer to the riot list unless you got permission.",
-		remove_riot_player_no_permissions = "Oi, you can't remove a geezer from the riot list unless you got permission.",
+		add_riot_player_no_permissions = "Yo fam, tried to add a wasteman to the riot list without the right permissions.",
+		remove_riot_player_no_permissions = "Yo fam, tried to remove a wasteman from the riot list without the right permissions.",
 
 		player_already_in_riot_list = "Oi, ${consoleName} is already on the riot list.",
 		player_not_in_riot_list = "Oi, ${consoleName} ain't on the riot list.",
@@ -10626,7 +10557,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		finding_player = "Looking for my man dem",
 
 		invincibility_active = "Invincibility: ~r~On fleek, homie~w~",
-		invincibility_inactive_dead = "Invincibility: ~g~Dead, fam~w~",
+		invincibility_inactive_dead = "Invincibility: ~g~Active~w~ (man's dead fam)",
+		invincibility_inactive_trunk = "Invincibility: ~g~Active~w~ (man's in the trunk fam)",
 		invincibility_inactive = "Invincibility: ~g~Inactive, bro~w~",
 
 		health_ok = "Health: ~g~${health} / ${maxHealth}~w~ - ${percentage}",
@@ -10698,7 +10630,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	status = {
 		status_reset = "Yo, just cleared the vibes for ${consoleName}.",
 		status_reset_failed = "Man, couldn't find no player with ID `${serverId}`.",
-		reset_status_not_staff = "Bruh, you tryna reset another players vibes without permission.",
 		status_reset_for_all = "Just cleared the vibes for everyone, y'know.",
 		status_disabled = "Just disabled vibes (stress, hunger and thirst).",
 		status_enabled = "Enabled vibes (stress, hunger and thirst).",
@@ -10711,8 +10642,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		set_body_armor_level_everyone_details = "${consoleName} set everyone's armor ting to `${bodyArmorLevel}`. Safe fam.",
 		set_body_armor_level_player_title = "Set Man's Armours For Brehs",
 		set_body_armor_level_player_details = "${consoleName} just updated ${targetConsoleName}'s armours level to `${bodyArmorLevel}` init.",
-		set_body_armor_level_player_not_staff = "Oi, that bloke tried to set someone else's armours level but they ain't got the rights for it.",
-		set_body_armor_level_self_not_staff = "Bruh, you can't even set your own armours level if you don't have the permissions for it.",
 		stress_level_warning = "Yo, you feeling hella stressed bro! Chillax by smoking Cigarettes, Joints or doing activities like Yoga."
 	},
 
@@ -10725,7 +10654,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		missing_hour = "Yo, didn't get no hour.",
 		invalid_hour = "Yo, local time override ain't valid. Make sure it's a time between 0:00 and 23:59.",
 		hour_changed = "It's now ${hour} homie.",
-		set_hour_not_staff = "Yo, you can't be changing the hour without the right perms.",
 
 		local_time_override_enabled = "Time set to ${hour}:${minute} in this area.",
 		local_time_override_disabled = "Yo, the time been reset to default.",
@@ -10735,27 +10663,21 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		missing_minute = "You forgot to provide the minute, homie.",
 		invalid_minute = "Bruh, `${minute}` ain't a valid minute. Needs to be between 0 and 59.",
 		minute_changed = "Minute be set to `${minute}` now.",
-		set_minute_not_staff = "You ain't got the permission to change the minute.",
 
 		missing_weather = "You need to tell me which weather you want, fam.",
 		invalid_weather = "Oi blud, the weather type `${weatherName}` ain't valid. Valid weather types are CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT and BLIZZARD fam.",
 		weather_changed = "The wavey weather's now set to `${weatherName}` bruv.",
 		weather_advanced = "The weather's been turned up a notch to `${weatherName}` innit.",
 		weather_advance_fail = "It didn't work innit, the weather won't budge from where it's at fam.",
-		set_weather_not_staff = "Oi you ain't got the stripes to change the weather, allow it blud.",
-		advance_weather_not_staff = "Nah fam, you ain't got the juice to level up the weather, back off bruv.",
 
 		time_frozen = "Ayo, the time be frozen now.",
 		time_unfrozen = "Time ain't frozen no more fam.",
-		freeze_time_not_staff = "Bruh, you ain't got dem right permissions to freeze time.",
 
 		weather_frozen = "The weather be frozen now like ice.",
 		weather_unfrozen = "Weather ain't frozen no more.",
-		freeze_weather_not_staff = "Sorry bruv, only dem with da permissions can freeze the weather.",
 
 		blackout_enabled = "Yo, there be a blackout in the city now.",
 		blackout_disabled = "No more blackout in da city, fam.",
-		blackout_not_staff = "You can't toggle a blackout without da proper permissions fam.",
 
 		weather_changed_title = "Mad weather inna di area",
 		weather_changed_details = "${consoleName} change up di weather to `${weatherName}`.",
@@ -11109,8 +11031,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	},
 
 	trains = {
-		spawn_train_missing_permissions = "Bruv tried to spawn a train but they ain't got the peng permissions to do that.",
-
 		invalid_track_id = "Bruv, that track ID ain't valid init.",
 		spawned_train_on_track = "Man just spawned a train on track ${trackId}, wagwan.",
 		failed_to_spawn_train = "Bruv, it's peak, the train ain't gonna spawn."
@@ -11126,7 +11046,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	treasure_maps = {
 		no_treasure_map_with_tier = "Bruv, there ain't no treasure map that's tier ${mapTier}.",
 		treasure_map_does_not_have_piece = "Bruv, the treasure map that's tier ${mapTier} doesn't have the ${pieceNumber} piece.",
-		spawn_map_piece_missing_permissions = "Yo, this player tried to spawn a map piece without the proper permissions.",
 
 		sketchy_map = "Sketchy Map",
 		worn_map = "Worn Map",
@@ -11156,9 +11075,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		set_ocean_scaler_no_permission = "The player did not have the required permission to set the ocean scaler, innit.",
 
 		tsunami_started = "Tsunami's startin'! It'll flood the map in ${minutes} minutes.",
-		tsunami_stopped = "Tsunami fully peaky blinding stopped, innit.",
-
-		toggle_tsunami_no_permissions = "Man tried to turn on the tsunami but man don't have the rights for that."
+		tsunami_stopped = "Tsunami fully peaky blinding stopped, innit."
 	},
 
 	tuner_shop = {
@@ -11195,8 +11112,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		cleared_vdm = "Cleared ${amount} targets for road rage, you get me?",
 		failed_vdm_clear = "Failed to clear any targets, somethin' ain't right.",
 		added_vdm_target = "The feds with network ID ${networkId} are now after ${target}.",
-
-		vdm_no_permissions = "Oi, you tryna run the VDM command without proper clearance? Not on my watch."
+		no_ped_available = "Nah blud, there ain't no peng ped nearby.",
+		failed_steal = "Brah, tried to jack the whip but can't do it fam.",
+		stealing_vehicle = "One of them mandem nearby was told to jack the whip (${distance}m away)."
 	},
 
 	vending_machines = {
@@ -11278,10 +11196,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	},
 
 	wizard = {
-		action_missing_permissions = "Yo man, you can't make a player do a wizard action without the proper permissions.",
-		action_radius_missing_permissions = "You can't make players in a certain area do wizard actions without the right permissions.",
-		run_as_missing_permissions = "You can't run a command as another player without the right permissions fam.",
-
 		menu_title = "Wizard",
 
 		ragdoll_player = "Ragdoll dem",
@@ -11367,8 +11281,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		invalid_explosion_type = "Nah bruv, that explosion type `${explosionType}` ain't valid.",
 		invalid_camera_shake = "That camera shake `${cameraShake}` ain't legit my guy.",
 		invalid_damage_scale = "That damage scale `${damageScale}` ain't valid innit.",
-		created_explosion = "Man just created an explosion of type `${explosionTypeName}` with a damage scale of `${damageScale}` and camera shake of `${cameraShake}`.",
-		create_explosion_not_developer = "This wasteman tried to create an explosion but they ain't no dev."
+		created_explosion = "Man just created an explosion of type `${explosionTypeName}` with a damage scale of `${damageScale}` and camera shake of `${cameraShake}`."
 	},
 
 	functions = {
@@ -11489,7 +11402,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	},
 
 	duty = {
-		toggle_duty_status_no_permissions = "Bruv, you don't have the authority to go on or off duty.",
+		toggle_duty_status_no_permissions = "Man tried to go on duty without the stripes, but he ain't got the permissions, fam.",
 
 		duty_status_on = "You're now on duty, innit.",
 		duty_status_off = "You're off duty now.",
@@ -11604,6 +11517,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		license_hunting = "Hunting License",
 		license_fishing = "Fishing License",
 		license_weapon = "Weaponz License",
+		license_mining = "Mining License",
 		gave_character_license = "Yo I just gave ${characterName} a license for `${licenseLabel}`.",
 		character_already_has_license = "Bruv, ${characterName} already has a license for `${licenseLabel}`",
 		removed_character_license = "I just took away ${characterName}'s license for `${licenseLabel}`.",
@@ -11737,8 +11651,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		not_in_a_vehicle = "Bruv, you ain't even in a whip.",
 		vehicle_engine_on = "Bloodclaat, the engine still runnin'.",
 
-		set_fuel_no_permissions = "Oi, this wasteman tried to set a vehicle's fuel level without permission.",
-
 		vehicle_exploded_logs_title = "Big oof, car blow up!",
 		vehicle_exploded_logs_details = "${consoleName} put gas in a car while it was still running and it went kaboom!"
 	},
@@ -11834,11 +11746,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "Now we're talkin'! Toggled the garage debug on.",
 		toggle_garage_debug_toggled_off = "Back to basics, toggled the garage debug off."
-	},
-
-	handlings = {
-		set_handling_override_not_super_admin = "Yo, bruv. That player tried to change the way the car drives without permission.",
-		remove_handling_override_not_super_admin = "Oi, that player tried to undo a handling override without permission."
 	},
 
 	keys = {
@@ -11965,31 +11872,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		toggle_brakes_off = "Enabled the brakes like a real G.",
 		failed_modify_brakes = "Couldn't change the brakes, something went wrong.",
 
-		toggle_disabled_brakes_no_permissions = "Bruh tried to turn off the brakes without permission.",
-
-		-- NOTE: `add_vehicle` command:
-		add_vehicle_not_super_admin = "This guy tried to add a whip to someone's garage without permission.",
-		add_vehicle_added_vehicle_for_everyone = "Pulled up with the ${modelName} for the squad.",
-		add_vehicle_added_vehicle_for_player = "Pulled up with the ${modelName} for ${consoleName}.",
-		add_vehicle_added_vehicle = "Pulled up with the ${modelName}.",
-		add_vehicle_character_not_loaded = "Bruv, the target wasteman ain't got no characters loaded.",
-		add_vehicle_target_user_not_found = "Oi, man can't find the target user.",
-		add_vehicle_invalid_input = "That input ain't valid, fam.",
-		add_vehicle_no_permissions = "Nah bruv, you ain't got the permissions for that.",
-		add_vehicle_user_not_found = "Sorry fam, can't find that user.",
-		add_vehicle_invalid_player = "Bloodclaat, there's no players with server ID `${serverId}`.",
-		add_vehicle_invalid_model_name = "Yo, the model name `${modelName}` ain't valid.",
-		add_vehicle_no_model_name = "Oi, no model name added, init.",
-
-		added_vehicle_for_everyone_logs_title = "Man Like Gave Everyone a Whip",
-		added_vehicle_for_everyone_logs_details = "${consoleName} gave everyone a whip with the name `${modelName}` in their garages.",
-		added_vehicle_for_player_logs_title = "Man Like Gave Specific Player a Whip",
-		added_vehicle_for_player_logs_details = "${consoleName} gave ${targetConsoleName} a whip with the name `${modelName}`.",
-		added_vehicle_logs_title = "Man Like Gave Self a Whip",
-		added_vehicle_logs_details = "${consoleName} got themselves a whip with the name `${modelName}`.",
-
 		-- NOTE: `toggle_vehicle_weapons` command:
-		toggle_vehicle_weapons_not_super_admin = "Allow brudda didn't have the proper permissions to turn on the ting on the whip.",
 		toggled_vehicle_weapons_on = "Yo, the ting is on now.",
 		toggled_vehicle_weapons_off = "Got the ting to turn off.",
 		toggled_vehicle_weapons_vehicle_is_not_networked = "Bruv, the whip you in ain't even networked.",
@@ -12144,6 +12027,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		ems_boat_hq = "EMS Boat HQ, fam",
 		ems_garage = "EMS Garage, blud",
 		e_to_get_treated = "Press [E] to get treated - cost: $1250",
+		e_check_in_player = "[E] Check-in my brudda - $1250",
+		check_in_blocked = "Someone's already checkin' in, fam.",
 		get_treated = "Get treated - cost: $1250",
 		you_are_being_treated = "Fam, you're getting treated right now",
 		being_treated = "Bruv, you're being treated",
