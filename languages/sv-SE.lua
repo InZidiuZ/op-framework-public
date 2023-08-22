@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 19 (do not change)
+-- AUTO LOCALES: 20 (do not change)
 
 OP.Global.Locales.Languages["sv-SE"] = {
 	-- configuration settings for language
@@ -498,10 +498,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		reset_auto_drive_speed = "Återställ automatisk körningshastighet till standard.",
 		set_auto_drive_speed = "Sätt automatisk körningshastighet till ${speed} mph.",
 
-		disable_collisions_on = "Dina kollisioner är nu avstängda.",
-		disable_collisions_off = "Dina kollisioner är nu aktiverade.",
-		failed_toggle_collisions = "Kunde inte växla avstängda kollisioner.",
-
 		disabled_recoil_on = "Rekyl avstängd.",
 		disabled_recoil_off = "Rekyl aktiverad.",
 
@@ -628,10 +624,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		clean_ped_logs_title = "Rengjord Ped",
 		clean_ped_logs_details = "${consoleName} rensade ${targetName}s ped.",
-
-		collisions_logs_title = "Kollisioner",
-		collisions_off_logs_details = "${consoleName} stängde av kollisioner.",
-		collisions_on_logs_details = "${consoleName} slog på kollisioner.",
 
 		invalid_job_search = "Ogiltig sökning efter jobb (måste vara minst 3 tecken).",
 		failed_job_search = "Kunde inte söka efter jobb.",
@@ -1077,10 +1069,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		no_nearby_vehicles_command_parameter_server_id = "server id",
 		no_nearby_vehicles_command_parameter_server_id_help = "Om du vill aktivera eller inaktivera 'ingen närliggande fordon' för någon annan, skriv in deras server id här.",
 		no_nearby_vehicles_command_substitutes = "",
-
-		disable_collisions_command = "avaktivera_kollisioner",
-		disable_collisions_command_help = "Avaktivera kollisioner med fordon och människor i en 10 meter radie.",
-		disable_collisions_command_substitutes = "kollisioner",
 
 		ghost_command = "spöke",
 		ghost_command_help = "Denna kommando gör att du kan använda /titta, bli osynlig och /kollisioner.",
@@ -1706,6 +1694,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		spawn_contract_command_parameter_server_id_help = "Server-ID:t du vill skapa ett kontrakt för. Det väljer automatiskt dig själv om du lämnar fältet tomt.",
 		spawn_contract_command_substitutes = "",
 
+		-- game/buddy_pass
+		buddy_pass_command = "buddy_pass",
+		buddy_pass_command_help = "Öppna användargränssnittet för buddy passet.",
+		buddy_pass_command_substitutes = "",
+
 		-- game/cache
 		cache_assets_command = "cache_assets",
 		cache_assets_command_help = "Tvingar framför en nedladdning av de mest strömda tillgångarna (fordon, objekt och kläder). Detta rekommenderas inte om du har en snabb anslutning och tillgångarna laddar ner tillräckligt snabbt on demand för att vara sömlösa. Detta kan också orsaka klientkrascher medan det är i förväg.",
@@ -1829,6 +1822,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		outfits_command = "klädsel_list",
 		outfits_command_help = "Listar alla dina sparade klädsel.",
 		outfits_command_substitutes = "",
+
+		-- game/collisions
+		disable_collisions_command = "avaktivera_kollisioner",
+		disable_collisions_command_help = "Inaktivera kollisioner med fordon och fotgängare inom en radie av 25 meter (Endast lokalt för dig).",
+		disable_collisions_command_substitutes = "kollisioner",
 
 		-- game/command_socket
 		reconnect_command_socket_command = "återanslut_kommando_socket",
@@ -1981,12 +1979,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		server_entity_command_parameter_network_id = "nätverks-id",
 		server_entity_command_parameter_network_id_help = "Entitetens nätverks-id.",
 		server_entity_command_substitutes = "",
-
-		fake_lag_command = "fake_lag",
-		fake_lag_command_help = "Skapar falsk fördröjning.",
-		fake_lag_command_parameter_fps = "fps",
-		fake_lag_command_parameter_fps_help = "Önskad fps (>= 1).",
-		fake_lag_command_substitutes = "fördröjning",
 
 		view_weapon_command = "se_vapen",
 		view_weapon_command_help = "Skapar en objekt med det angivna modellnamnet och placerar det perfekt för skärmdumpar.",
@@ -2514,6 +2506,13 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		jackpot_take_fees_command = "jackpot_take_fees",
 		jackpot_take_fees_command_help = "Ta en avgift från alla jackpot-inventarier.",
 		jackpot_take_fees_command_substitutes = "",
+
+		-- game/lag
+		fake_lag_command = "fake_lag",
+		fake_lag_command_help = "Skapar falsk fördröjning.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "Önskad fps (>= 1).",
+		fake_lag_command_substitutes = "fördröjning",
 
 		-- game/locate
 		locate_entity_command = "hitta_entitet",
@@ -4639,6 +4638,29 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		closing_sentence = "Det finns mycket mer att göra i staden! Fråga runt och skaffa några vänner ;)"
 	},
 
+	buddy_pass = {
+		buddy_pass = "Buddy Pass",
+		information_part_1 = "Tryck omedelbart in din vän i kön med en buddy pass!",
+		information_part_2 = "Alla användare med ett God Tier-avtal har tillgång till den här funktionen med en gratis passering.",
+		information_part_3 = "Passet är aktivt tills din vän kopplar ifrån servern. Du kan sedan trycka igenom någon annan.",
+		information_part_4 = "Be om deras kö-PIN för att låta dem gå förbi kön!",
+		queue_pin = "Kö-PIN",
+		available = "Tillgänglig",
+		close = "Stäng",
+		webstore = "Webbshop",
+		buddy_passes = "Buddy-pass",
+		push_through = "Låt gå förbi!",
+		queue_pin_not_set = "Du måste ange en kö-PIN.",
+		queue_pin_is_a_4_digit_pin = "En kö-PIN är en fyrsiffrig PIN.",
+		no_buddy_passes = "Du har inga buddy-pass.",
+		no_buddy_passes_available = "Du har inga tillgängliga buddy-pass.",
+		no_queue_with_queue_pin = "Det fanns ingen i kön med angiven PIN.",
+		buddy_pushed_through = "Du tryckte igenom ${playerName} i kön!",
+
+		buddy_pass_used_logs_title = "Buddy Pass används",
+		buddy_pass_used_logs_details = "${consoleName} använde sin Buddy Pass för att trycka igenom ${targetConsoleName}."
+	},
+
 	cache = {
 		download_progress = "Nedladdningsframsteg:\n- Fordon: ${vehiclesDone}/${vehiclesTotal}\n- Objekt: ${objectsDone}/${objectsTotal}\n- Personer: ${pedsDone}/${pedsTotal}\n- Kläder: ${clothingRequested}/${clothingTotal}",
 		slow_download_enabled = "Långsam nedladdning har aktiverats.",
@@ -4935,6 +4957,15 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		chest_hair = "Brösthår",
 		body_blemishes = "Kroppsskador",
 		add_body_blemish = "Lägg till kroppsskada"
+	},
+
+	collisions = {
+		disable_collisions_on = "Dina kollisioner är nu avaktiverade.",
+		disable_collisions_off = "Dina kollisioner är nu aktiverade.",
+
+		collisions_logs_title = "Kollisioner",
+		collisions_off_logs_details = "${consoleName} avaktiverade sina kollisioner.",
+		collisions_on_logs_details = "${consoleName} aktiverade sina kollisioner."
 	},
 
 	command_socket = {
@@ -5782,10 +5813,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		move_entity_failed = "Det gick inte att flytta objektet.",
 		move_entity_no_permissions = "Försökte flytta en entitet utan tillräckliga behörigheter.",
 
-		fake_lag_invalid_fps = "Ogiltigt fps.",
-		fake_lag_clamp = "Begränsar fps till att vara under ${fps}.",
-		fake_lag_disabled = "Falsk fördröjning har avaktiverats.",
-
 		weapon_name_missing = "Saknad vapenparametrar.",
 		weapon_name_invalid = "`${weaponName}` är inte ett giltigt vapennamn.",
 		model_name_missing = "Saknad modellnamnsparameter.",
@@ -6020,17 +6047,20 @@ OP.Global.Locales.Languages["sv-SE"] = {
 	},
 
 	exclusive_dealership = {
-		marker_label = "${label} | $${price}",
-		marker_label_purchase = "[${SeatEjectKey}] Köp ${label} för $${price}",
+		cost_money = "${price} kr",
+		cost_points = "${points} OP-poäng",
+
+		marker_label = "${label} | ${cost}",
+		marker_label_purchase = "[${SeatEjectKey}] Köp ${label} för ${cost}",
 
 		confirm_purchase = "Bekräfta köp",
-		confirm_purchase_label = "${label} | $${price}",
+		confirm_purchase_label = "${label} | ${cost}",
 
 		deny_purchase = "Glöm det, jag vill inte köpa det",
 		accept_purchase = "Ja, jag vill köpa det",
 		accept_purchase_info = "Är du säker på att du vill köpa detta fordon? Denna åtgärd kan inte ångras.",
 
-		purchased_vehicle = "Köpte en ${label} för $${price}.",
+		purchased_vehicle = "Köpt en ${label} för ${cost}.",
 		insufficient_funds = "Otillräckliga pengar.",
 		area_not_clear = "Området där du vill spawn av fordonet är inte tomt.",
 		invalid_package = "Fel supporter donation.",
@@ -6045,7 +6075,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		buyback_vehicle_help = "Tryck på ~INPUT_CONTEXT~ för att få tillgång till utbytet.",
 		buyback_title = "Prestige Wheels Exchange",
-		sell_closest_vehicle = "Sälj din ${label} för $${price} (${percent}% av dess pris)?",
+		sell_closest_vehicle = "Sälj din ${label} för ${price} kr (${percent}% av dess värde)?",
 		deny_sale = "Glöm det, jag vill behålla den.",
 		accept_sale = "Ja, jag är säker.",
 		accept_sale_description = "Är du säker på att du vill sälja ditt fordon för $${price}? Detta kan inte ångras.",
@@ -6058,7 +6088,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		sale_log_description = "${consoleName} sålde deras `${label}` för $${price}.",
 
 		log_title = "Köp hos EDM",
-		log_description = "Köpte `${label}` för $${price}."
+		log_description = "Köpte `${label}` för ${cost}."
 	},
 
 	failures = {
@@ -6675,7 +6705,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		gas_station_backdoor = "Bensinstationens Bakre Ingång",
 		cleaning_station = "Städstationen",
 		grocery_store = "Livsmedelsbutik",
-		penthouse_fridge = "Kylskåp",
+		penthouse_fridge = "Penthouse Kylskåp",
 		mug_shots = "Mug Shots",
 		prison_store = "Fängelseaffären",
 		fruit_vendor = "Frukthandlare",
@@ -6847,6 +6877,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		dumpster_brownies = "Uttorkade brownies",
 		dumpster_pizza_slice = "Möglig pizzaslice",
 		dumpster_banana = "Hårig banan (mycket mosig)",
+		dumpster_almond_milk = "Sur Mandelmjölk",
 
 		-- items & item descriptions
 		body_armor = "Kroppsskydd",
@@ -6996,6 +7027,16 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		clothing_bag = "Klädpåse",
 		clothing_bag_description = "Oroa dig aldrig igen för mode-nödsituationer! Klädpåsen låter dig lagra din favoritoutfit och omedelbart utrusta den var du än går. Denna påse har all magi som en fe, minus bibbidi-bobbidi-boo.",
 
+		magnifying_glass = "Förstoringsglas",
+		magnifying_glass_description = "Ett förstoringsglas för alla dina detektivbehov. Kanske hittar du en fyrklöver i gräset eller en liten groda i leran?",
+
+		clover = "Fyrklöver",
+		clover_description = "En sällsynt fyrklöver för lycka. Du kan hitta dessa i gräset om du letar tillräckligt noggrant.",
+		small_frog = "Liten Groda",
+		small_frog_description = "Bara en liten groda. Titta på den lilla killen, han är så söt!",
+		seashell = "Snäcka",
+		seashell_description = "En snäcka från stranden. Du kan höra havet om du lägger den mot ditt öra.",
+
 		raw_diamond = "Rå diamant",
 		raw_diamond_description = "Diamant i sitt naturliga form, färsk från gruvan.",
 		raw_morganite = "Rå Morganit",
@@ -7126,8 +7167,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		donut_description = "Varför finns det ett hål mitt i bwo",
 		green_apple = "Grön Äpple",
 		green_apple_description = "Det är som en Red Bull men det fanns inga objekt i spelet som matchade en Red Bull burk.",
-		sandwich = "Smörgås",
-		sandwich_description = "Det är veganskt.",
+		sandwich = "Skinksmörgås",
+		sandwich_description = "En läcker smörgås med skinka och ost.",
+		vegan_sandwich = "Vegansk Smörgås",
+		vegan_sandwich_description = "Ja, det här är bokstavligen bara ett löv sallad och några tomater mellan två bitar fullkornsbröd. (Jag vet inte varför du skulle äta detta)",
 		taco = "Taco",
 		taco_description = "El Brayans specialitet.",
 		smores = "S'mores",
@@ -7137,7 +7180,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		pizza_slice = "Pizzabit",
 		pizza_slice_description = "En liten bit av pizzan för dig.",
 		hot_dog = "Korv med Bröd",
-		hot_dog_description = "Skynda att äta denna festmåltid.",
+		hot_dog_description = "Glufs i dig denna korv som om det vore din sista.",
 		nachos = "Nachos",
 		nachos_description = "Nachos bra nog för Encarnación!",
 		vanilla_ice_cream = "Vaniljglass",
@@ -7493,6 +7536,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		milk = "Mjölk",
 		milk_description = "Vanlig ko mjölk utvunnen med kärlek.",
+
+		almond_milk = "Mandelmjölk",
+		almond_milk_description = "Hur i helvete mjölkade de mandlar??????",
 
 		bandana = "Bandana",
 		bandana_description = "Massa gang-historia. (Bloods vinner)",
@@ -8272,7 +8318,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		weapon_addon_hk416_description = "H&K 416, Ferrari bland skjutvapen - snygg, kraftfull och garanterad att väcka uppmärksamhet. Det är som att ha en personlig tränare för ditt avtryckarfinger, ger resultat som kommer att göra dina fiender avundsjuka. Säg hej till din nya BFF (Best Firearm Forever)!",
 
 		weapon_addon_680 = "Remington 680",
-		weapon_addon_680_description = "Remington 680 är en pump-hagelbössa som utvecklades av Remington Arms 1950."
+		weapon_addon_680_description = "Remington 680 är en pump-hagelbössa som utvecklades av Remington Arms 1950.",
+
+		weapon_addon_honey = "Honungsgrävling",
+		weapon_addon_honey_description = "AAC Honey Badger PDW är ett personligt försvarsvapen som ofta används i ett tystat konfiguration och är baserad på AR-15. Den är kalibrerad i .300 AAC Blackout och producerades ursprungligen av Advanced Armament Corporation (AAC)."
 	},
 
 	invisibility = {
@@ -8415,6 +8464,12 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		read_catalog = "Tryck på ~g~${InteractionKey} ~w~för att läsa katalogen"
 	},
 
+	lag = {
+		fake_lag_invalid_fps = "Ogiltig fps.",
+		fake_lag_clamp = "Begränsar fps till att vara under ${fps}.",
+		fake_lag_disabled = "Den falska laten har inaktiverats."
+	},
+
 	lean = {
 		press_to_sell_lean = "Tryck ~INPUT_CONTEXT~ för att sälja Lean.",
 		local_not_interested = "Lokalen verkar inte vara intresserad just nu.",
@@ -8513,6 +8568,23 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		start_download = "Starta Nerladdning",
 		slow_download = "Långsam Nerladdning",
 		regular_download = "Vanlig Nerladdning",
+		purchases = "Inköp",
+		pledges = "Löften",
+		packages = "Paket",
+		points = "Poäng",
+		appreciated_tier = "Uppskattad nivå",
+		respected_tier = "Respekterad nivå",
+		heroic_tier = "Hjältemodig nivå",
+		legendary_tier = "Legendarisk nivå",
+		god_tier = "Gudanivå",
+		custom_plate = "Anpassad plåt",
+		custom_character_id = "Anpassat karaktärs-ID",
+		custom_phone_number = "Anpassat telefonnummer",
+		reskin = "Omdesigna",
+		webstore = "Webbaffären",
+		none = "Ingen",
+		queue_pin = "PIN-kod: ${queuePIN}",
+		copied = "Kopierat!",
 		back = "Tillbaka",
 		copy_license = "Licens-ID",
 		copy_license_success = "Kopierat!",
@@ -8601,7 +8673,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		respected_tier = "Respekterad nivå",
 		heroic_tier = "Hjältemodig nivå",
 		legendary_tier = "Legendarisk nivå",
-		godlike_tier = "Gudaliknande nivå"
+		godlike_tier = "Gudaliknande nivå",
+
+		buddy_passed_through = "${playerName} använde sin Buddy Pass för att hjälpa dig igenom!"
 	},
 
 	logs = {
@@ -8654,6 +8728,27 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		issue_id = "Problem #${issueId}",
 		releases_updated = "Utgåvor uppdaterade.",
 		no_release_changes = "Inga utgivningsändringar"
+	},
+
+	magnifying_glass = {
+		searching = "Söker igenom marken",
+
+		too_fast = "Du rör dig för fort.",
+		failed_search = "Misslyckades att söka igenom marken.",
+		found_nothing = "Du hittade ingenting här.",
+		already_searched = "Det verkar som om detta område redan har sökts igenom.",
+		found_item = "Du hittade en ${item}.",
+
+		press_to_sell_items = "Tryck ~INPUT_CONTEXT~ för att sälja föremål.",
+		no_items_to_sell = "Du har inga föremål att sälja.",
+		menu_title = "Sällsynta föremål",
+		exit_shop = "Avsluta Butik",
+		failed_sell = "Misslyckades att sälja föremål.",
+
+		found_item_logs_title = "Hittade föremål på marken",
+		found_item_logs_details = "${consoleName} hittade en ${item} på marken (${ground}).",
+		sold_item_logs_title = "Såldes Sällsynt Föremål",
+		sold_item_logs_details = "${consoleName} sålde en ${item} för $${price}."
 	},
 
 	mdt = {
@@ -11449,7 +11544,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		npc_vehicle = "Detta fordon tillhör inte en spelare.",
 		not_in_a_vehicle = "Du kör för närvarande inte ett fordon.",
-		invalid_minutes = "Ogiltig tid (mellan 1 minut och 12 timmar).",
+		invalid_minutes = "Ogiltig tid (mellan 1 minut och 48 timmar).",
 
 		not_on_duty = "Du är inte i tjänst.",
 		failed_impound = "Misslyckades att beslagta fordonet.",
@@ -11816,6 +11911,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		spawner_burger_shot = "Burger Shot Leveransfordon",
 		spawner_bean_machine = "Bean Machine Leveransfordon",
 		spawner_weazel_news = "Weazel News Fordon",
+		spawner_state = "Statliga fordon",
 		close_menu = "Stäng Meny",
 		vehicle_list = "Fordon Lista",
 		park_vehicle = "Parkerad Fordon",

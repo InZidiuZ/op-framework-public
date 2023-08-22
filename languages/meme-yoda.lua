@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 19 (do not change)
+-- AUTO LOCALES: 20 (do not change)
 
 OP.Global.Locales.Languages["meme-yoda"] = {
 	-- configuration settings for language
@@ -498,10 +498,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		reset_auto_drive_speed = "Reset auto drive speed to default, we have.",
 		set_auto_drive_speed = "Set auto drive speed to ${speed} mph, we have.",
 
-		disable_collisions_on = "Disabled, your collisions now are.",
-		disable_collisions_off = "Enabled, your collisions now are.",
-		failed_toggle_collisions = "Failed, disabled collisions to toggle.",
-
 		disabled_recoil_on = "Recoil, disabled it is.",
 		disabled_recoil_off = "Recoil, enabled it is.",
 
@@ -628,10 +624,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		clean_ped_logs_title = "Ped Cleaned",
 		clean_ped_logs_details = "${consoleName} has cleaned the ped of ${targetName}.",
-
-		collisions_logs_title = "Collisions",
-		collisions_off_logs_details = "Disabled collisions off, ${consoleName} has toggled.",
-		collisions_on_logs_details = "Disabled collisions on, ${consoleName} has toggled.",
 
 		invalid_job_search = "Invalid job search, you have (at least 3 characters required).",
 		failed_job_search = "Failed to search for jobs, we have.",
@@ -1077,10 +1069,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		no_nearby_vehicles_command_parameter_server_id = "server id, insert",
 		no_nearby_vehicles_command_parameter_server_id_help = "If for someone else, toggle the 'no nearby vehicles', their server id here you must insert.",
 		no_nearby_vehicles_command_substitutes = "",
-
-		disable_collisions_command = "disable_collisions, collisions you will disable.",
-		disable_collisions_command_help = "With vehicles and pedestrians, collisions disable within a 10 meter radius you can.",
-		disable_collisions_command_substitutes = "collisions",
 
 		ghost_command = "ghost",
 		ghost_command_help = "Invisibility, /peek and /disable_collisions this command will enable.",
@@ -1706,6 +1694,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		spawn_contract_command_parameter_server_id_help = "Server ID, for which you want contract spawned. If blank, yours it will be.",
 		spawn_contract_command_substitutes = "",
 
+		-- game/buddy_pass
+		buddy_pass_command = "buddy_pass",
+		buddy_pass_command_help = "Open the buddy pass UI.",
+		buddy_pass_command_substitutes = "",
+
 		-- game/cache
 		cache_assets_command = "cache_assets",
 		cache_assets_command_help = "Forcefully, download and request most streamed assets you will (Vehicles, objects and clothing). Not recommended, this is, unless your connection is slow and assets do not download fast enough on demand for seamless experience. This may also cause crashes while in action, it can.",
@@ -1829,6 +1822,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		outfits_command = "outfits",
 		outfits_command_help = "List all saved outfits, do I.",
 		outfits_command_substitutes = "",
+
+		-- game/collisions
+		disable_collisions_command = "disable_collisions, collisions you will disable.",
+		disable_collisions_command_help = "Disable collisions with vehicles and peds in a 25 meter radius (Only locally for you).",
+		disable_collisions_command_substitutes = "collisions",
 
 		-- game/command_socket
 		reconnect_command_socket_command = "reconnect_command_socket",
@@ -1981,12 +1979,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		server_entity_command_parameter_network_id = "network id",
 		server_entity_command_parameter_network_id_help = "The network id of the entity, it is.",
 		server_entity_command_substitutes = "",
-
-		fake_lag_command = "fake_lag",
-		fake_lag_command_help = "Fake lag, create you can.",
-		fake_lag_command_parameter_fps = "fps",
-		fake_lag_command_parameter_fps_help = "The target fps (>= 1).",
-		fake_lag_command_substitutes = "lag",
 
 		view_weapon_command = "view_weapon",
 		view_weapon_command_help = "Spawns an object with the given model name and positions it perfectly for screenshots.",
@@ -2514,6 +2506,13 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		jackpot_take_fees_command = "jackpot_take_fees",
 		jackpot_take_fees_command_help = "All jackpot inventories, fee take you will.",
 		jackpot_take_fees_command_substitutes = "",
+
+		-- game/lag
+		fake_lag_command = "fake_lag",
+		fake_lag_command_help = "Fake lag, create you can.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "The target fps (>= 1).",
+		fake_lag_command_substitutes = "lag",
 
 		-- game/locate
 		locate_entity_command = "locate_entity",
@@ -4639,6 +4638,29 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		closing_sentence = "A lot more to do in the city there is! Ask around and make some friends, hmmm ;)"
 	},
 
+	buddy_pass = {
+		buddy_pass = "Buddy Pass",
+		information_part_1 = "Your friend through the queue instantly push with a Buddy Pass!",
+		information_part_2 = "Access to this feature with one free pass has all users with a God Tier pledge.",
+		information_part_3 = "Active until your friend disconnects from the server, the 'pass' is. Then, someone else through you can push.",
+		information_part_4 = "Ask for their PIN in the queue, you must, to push them through!",
+		queue_pin = "Queue PIN, you have.",
+		available = "Available, it is.",
+		close = "Close, you must.",
+		webstore = "Webstore, it is.",
+		buddy_passes = "Buddy Passes, you have.",
+		push_through = "Push Through, you must!",
+		queue_pin_not_set = "A queue PIN, you have to add.",
+		queue_pin_is_a_4_digit_pin = "A 4-digit PIN, a queue PIN is.",
+		no_buddy_passes = "No buddy passes, you have.",
+		no_buddy_passes_available = "No buddy passes available, you have.",
+		no_queue_with_queue_pin = "No one in the queue with the provided PIN, there was.",
+		buddy_pushed_through = "Through the queue, ${playerName} you pushed!",
+
+		buddy_pass_used_logs_title = "Buddy Pass Used, it was",
+		buddy_pass_used_logs_details = "${consoleName} used the Buddy Pass, pushed through ${targetConsoleName}."
+	},
+
 	cache = {
 		download_progress = "Download progress, we are tracking:\n- Vehicles: ${vehiclesDone}/${vehiclesTotal}\n- Objects: ${objectsDone}/${objectsTotal}\n- Peds: ${pedsDone}/${pedsTotal}\n- Clothing: ${clothingRequested}/${clothingTotal}",
 		slow_download_enabled = "Slow download, enabled it has been.",
@@ -4935,6 +4957,15 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		chest_hair = "Chest hair, hm?",
 		body_blemishes = "Body blemishes, mmm",
 		add_body_blemish = "Add body blemish, yes."
+	},
+
+	collisions = {
+		disable_collisions_on = "Disabled your collisions, now they are.",
+		disable_collisions_off = "Enabled your collisions, now they are.",
+
+		collisions_logs_title = "Collisions, it is",
+		collisions_off_logs_details = "${consoleName} toggled their disabled collisions off, they did.",
+		collisions_on_logs_details = "${consoleName} toggled their disabled collisions on, they did."
 	},
 
 	command_socket = {
@@ -5782,10 +5813,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		move_entity_failed = "Failed to move entity, we have. Hmmm.",
 		move_entity_no_permissions = "Attempted to move an entity without proper permissions, it was.",
 
-		fake_lag_invalid_fps = "Invalid fps, it is.",
-		fake_lag_clamp = "Fps to be below ${fps}, clamping it is.",
-		fake_lag_disabled = "Fake lag, disabled it has been",
-
 		weapon_name_missing = "Parameter missing, weapon name is.",
 		weapon_name_invalid = "Invalid, weapon name it is, `${weaponName}`.",
 		model_name_missing = "Parameter missing, model name is.",
@@ -6020,17 +6047,20 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	exclusive_dealership = {
-		marker_label = "${label} | $${price}, hmmm",
-		marker_label_purchase = "[${SeatEjectKey}] Purchase ${label} for $${price}, you will?",
+		cost_money = "${price} I have | Hmmmm",
+		cost_points = "${points} OP Points you have | Hmmmm",
+
+		marker_label = "${label} | ${cost} it is",
+		marker_label_purchase = "[${SeatEjectKey}] Purchase ${label} for ${cost} you can | Hmmmm",
 
 		confirm_purchase = "Confirm Purchase, do you?",
-		confirm_purchase_label = "${label} | $${price}, this will be.",
+		confirm_purchase_label = "${label} | ${cost} it is",
 
 		deny_purchase = "Mmm, nevermind, want it, I do not", --Yoda Speak equivalent of "Nevermind, I don't want it",
 		accept_purchase = "Yes, buy it, I will", --Yoda Speak equivalent of "Yes, I want to buy it",
 		accept_purchase_info = "Sure, purchase this vehicle, you want? Cannot undo, this action is.", --Yoda Speak equivalent of "Are you sure you want to purchase this vehicle? This action cannot be undone.",
 
-		purchased_vehicle = "${label}, you have bought for ${price} dollars.", --Yoda Speak equivalent of "Purchased a ${label} for $${price}.",
+		purchased_vehicle = "${label} purchased for ${cost} it has been | Hmmmm",
 		insufficient_funds = "Funds, insufficient, you have.", --Yoda Speak equivalent of "Insufficient funds.",
 		area_not_clear = "Spawn area, not clear, it is.", --Yoda Speak equivalent of "Spawn area is not clear.",
 		invalid_package = "Wrong supporter pledge, this is.", --Yoda Speak equivalent of "Incorrect supporter pledge.",
@@ -6045,7 +6075,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		buyback_vehicle_help = "Access exchange, press ~INPUT_CONTEXT~ you must.",
 		buyback_title = "Exchange of Prestige Wheels, title this is.",
-		sell_closest_vehicle = "Your ${label} for $${price} (${percent}% of its value) sell, hmm?",
+		sell_closest_vehicle = "Sell your ${label} you can for $${price} it is (${percent}% of its worth)? | Hmmmm",
 		deny_sale = "Nevermind, keep it, I will",
 		accept_sale = "Yes, sure, I am",
 		accept_sale_description = "For $${price} your vehicle, sell you want? Hmm, certain you are? Cannot be undone, this action.",
@@ -6058,7 +6088,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		sale_log_description = "Sold their `${label}` for $${price}, ${consoleName} has.",
 
 		log_title = "Purchase, EDM",
-		log_description = "The `${label}` purchased, $${price} it was."
+		log_description = "Purchased the `${label}` for ${cost} I have | Hmmmm"
 	},
 
 	failures = {
@@ -6675,7 +6705,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		gas_station_backdoor = "Backdoor of gas station, it is",
 		cleaning_station = "Cleaning station, it is",
 		grocery_store = "Store for groceries, it is",
-		penthouse_fridge = "Fridge in the penthouse, it is",
+		penthouse_fridge = "Penthouse Fridge it is",
 		mug_shots = "Place for mug shots, it is",
 		prison_store = "Store in the prison, it is",
 		fruit_vendor = "Vendor selling fruits, he is",
@@ -6847,6 +6877,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		dumpster_brownies = "Dried up brownies, they are.",
 		dumpster_pizza_slice = "Moldy pizza slice, it is.",
 		dumpster_banana = "Hairy banana, very mushy it is.",
+		dumpster_almond_milk = "Sour Almond Milk it is",
 
 		-- items & item descriptions
 		body_armor = "Body armor, it is.",
@@ -6996,6 +7027,16 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		clothing_bag = "Clothing Bag, it is",
 		clothing_bag_description = "Never worry about fashion emergencies again! The clothing bag lets you store your favorite outfit and instantly equip it anywhere you go. All the magic of a fairy godmother, minus the bibbidi-bobbidi-boo, this bag has.",
 
+		magnifying_glass = "Magnifying Glass, it is",
+		magnifying_glass_description = "For all your detective needs, a magnifying glass it be. In the grass, a 4 leaf clover you might find or a small frog in the mud, perhaps?",
+
+		clover = "4 Leaf Clover, it is",
+		clover_description = "Good luck, a rare 4 leaf clover it be. In the grass, if you look hard enough, find it you can.",
+		small_frog = "Small Frog, it is",
+		small_frog_description = "Just a small frog, it be. Look at the little guy, so cute he is!",
+		seashell = "Seashell, it is",
+		seashell_description = "From the beach, a seashell it be. If you put it up to your ear, the ocean you will hear.",
+
 		raw_diamond = "Diamond, raw",
 		raw_diamond_description = "Formed in nature, diamond is. Fresh from mine it is.",
 		raw_morganite = "Raw Morganite, hmm",
@@ -7126,8 +7167,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		donut_description = "Why in the middle is there a hole, bwo.",
 		green_apple = "Green Apple",
 		green_apple_description = "Like a Red Bull, it is. But, in the game, no objects existed that matched a Red Bull can.",
-		sandwich = "Sandwich",
-		sandwich_description = "Vegan, it is.",
+		sandwich = "Ham Sandwich",
+		sandwich_description = "A delicious sandwich with ham and cheese.",
+		vegan_sandwich = "Vegan Sandwich",
+		vegan_sandwich_description = "Yeah this is literally just a piece of lettuce and a few tomatoes between two pieces of wholegrain bread. (Idk why you'd ever eat this)",
 		taco = "Taco",
 		taco_description = "Speciality of El Brayan, it is.",
 		smores = "S'mores",
@@ -7137,7 +7180,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		pizza_slice = "Pizza Slice",
 		pizza_slice_description = "A lil slice of the Za for ya, hmm.",
 		hot_dog = "Hot Dog, hmmm.",
-		hot_dog_description = "Gobble up this Glizzy like it will be your last, hmmm.",
+		hot_dog_description = "Gobble up this glizzy like it'll be your last.",
 		nachos = "Nachos, hmmm.",
 		nachos_description = "Nachos good enough for Encarnación, hmmm!",
 		vanilla_ice_cream = "Vanilla Ice Cream, hmmm.",
@@ -7493,6 +7536,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		milk = "Milk",
 		milk_description = "Regular cow milk extracted with love.",
+
+		almond_milk = "Milk of Almonds",
+		almond_milk_description = "How the fuck did they milk almonds??????",
 
 		bandana = "Bandana, whole lotta gang shit it is. (Bloods win), yes.",
 		bandana_description = "Wear it with pride, yes.",
@@ -8272,7 +8318,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		weapon_addon_hk416_description = "H&K 416, Ferrari of firearms it is - sleek, powerful, impress your foes it will. Personal trainer for your trigger finger, results it delivers that'll make your enemies jealous. Say hello to your new BFF (Best Firearm Forever)!",
 
 		weapon_addon_680 = "Remington 680, it is",
-		weapon_addon_680_description = "The Remington 680 is a pump-action shotgun that was developed by Remington Arms in 1950, hmmm."
+		weapon_addon_680_description = "The Remington 680 is a pump-action shotgun that was developed by Remington Arms in 1950, hmmm.",
+
+		weapon_addon_honey = "Honey Badger",
+		weapon_addon_honey_description = "The personal defense weapon, AAC Honey Badger PDW, frequently used in a suppressed configuration, based on AR-15 it is. Chambered in .300 AAC Blackout and originally produced by Advanced Armament Corporation (AAC), it was."
 	},
 
 	invisibility = {
@@ -8415,6 +8464,12 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		read_catalog = "Catalog to read, press ~g~${InteractionKey} ~w~you must."
 	},
 
+	lag = {
+		fake_lag_invalid_fps = "Invalid fps, this is.",
+		fake_lag_clamp = "To be below ${fps}, fps we must clamp.",
+		fake_lag_disabled = "Disabled, the fake lag has been."
+	},
+
 	lean = {
 		press_to_sell_lean = "Press ~INPUT_CONTEXT~ to sell Lean, hmmm.",
 		local_not_interested = "The local, interested not, seems to be, hmmm.",
@@ -8513,6 +8568,23 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		start_download = "Download start, you will",
 		slow_download = "Slow dowload, choose you can",
 		regular_download = "Regular download, select you will",
+		purchases = "Purchases, these are.",
+		pledges = "Pledges, these are.",
+		packages = "Packages, these are.",
+		points = "Points, these are.",
+		appreciated_tier = "Appreciated, you are",
+		respected_tier = "Respected, you are",
+		heroic_tier = "Heroic, you are",
+		legendary_tier = "Legendary, you are",
+		god_tier = "Tier of the Gods",
+		custom_plate = "Plate Custom",
+		custom_character_id = "ID Custom Character",
+		custom_phone_number = "Number Custom Plate",
+		reskin = "Reskin",
+		webstore = "Store Web",
+		none = "None",
+		queue_pin = "PIN: ${queuePIN}",
+		copied = "Copied!",
 		back = "Back",
 		copy_license = "ID of License",
 		copy_license_success = "Copied, it has been!",
@@ -8601,7 +8673,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		respected_tier = "Respected, you are",
 		heroic_tier = "Heroic, you are",
 		legendary_tier = "Legendary, you are",
-		godlike_tier = "Godlike, you are"
+		godlike_tier = "Godlike, you are",
+
+		buddy_passed_through = "${playerName} used their Buddy Pass to push you through!"
 	},
 
 	logs = {
@@ -8654,6 +8728,27 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		issue_id = "Issue, #${issueId} it is.",
 		releases_updated = "Releases, updated they are.",
 		no_release_changes = "No changes to the releases there were, hmmm."
+	},
+
+	magnifying_glass = {
+		searching = "Searching The Ground",
+
+		too_fast = "Too fast, you are moving.",
+		failed_search = "Failed to search the ground.",
+		found_nothing = "Nothing here, you did not find.",
+		already_searched = "Already searched, this area seems.",
+		found_item = "A ${item}, you have found.",
+
+		press_to_sell_items = "To sell items, press ~INPUT_CONTEXT~ you must.",
+		no_items_to_sell = "No items to sell, you have.",
+		menu_title = "Items of Rarity",
+		exit_shop = "Shop exit.",
+		failed_sell = "Sell item, failed it has.",
+
+		found_item_logs_title = "Item Found on Ground",
+		found_item_logs_details = "On the ground, ${consoleName} found a ${item} (${ground}).",
+		sold_item_logs_title = "Rare Item Sold",
+		sold_item_logs_details = "${consoleName} sold a ${item} for $${price}."
 	},
 
 	mdt = {
@@ -11449,7 +11544,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		npc_vehicle = "Not a player owned vehicle, this is.",
 		not_in_a_vehicle = "Currently not driving a vehicle, you are.",
-		invalid_minutes = "Invalid time, between 1 minute and 12 hours it must be.",
+		invalid_minutes = "Invalid time, between 1 minute and 48 hours, it must be.",
 
 		not_on_duty = "On duty, you are not.",
 		failed_impound = "Vehicle impound, failed it has.",
@@ -11816,6 +11911,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		spawner_burger_shot = "Delivery Vehicles, Burger Shot",
 		spawner_bean_machine = "Delivery Vehicles, Bean Machine",
 		spawner_weazel_news = "Vehicles, Weazel News",
+		spawner_state = "Vehicles state, it is.",
 		close_menu = "Menu, close",
 		vehicle_list = "List, vehicle",
 		park_vehicle = "Vehicle, park",

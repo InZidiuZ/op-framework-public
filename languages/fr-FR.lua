@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 19 (do not change)
+-- AUTO LOCALES: 20 (do not change)
 
 OP.Global.Locales.Languages["fr-FR"] = {
 	-- configuration settings for language
@@ -498,10 +498,6 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		reset_auto_drive_speed = "La vitesse de conduite automatique a été réinitialisée par défaut.",
 		set_auto_drive_speed = "La vitesse de conduite automatique a été réglée sur ${speed} mph.",
 
-		disable_collisions_on = "Vos collisions sont désactivées.",
-		disable_collisions_off = "Vos collisions sont maintenant activées.",
-		failed_toggle_collisions = "Impossible de désactiver les collisions.",
-
 		disabled_recoil_on = "Recul désactivé.",
 		disabled_recoil_off = "Recul activé.",
 
@@ -628,10 +624,6 @@ OP.Global.Locales.Languages["fr-FR"] = {
 
 		clean_ped_logs_title = "Entretien du personnage",
 		clean_ped_logs_details = "${consoleName} a nettoyé le personnage de ${targetName}.",
-
-		collisions_logs_title = "Collisions",
-		collisions_off_logs_details = "${consoleName} a désactivé leurs collisions désactivées.",
-		collisions_on_logs_details = "${consoleName} a activé leurs collisions activées.",
 
 		invalid_job_search = "Recherche d'emploi invalide (doit comporter au moins 3 caractères).",
 		failed_job_search = "Échec de la recherche d'emplois.",
@@ -1077,10 +1069,6 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		no_nearby_vehicles_command_parameter_server_id = "id serveur",
 		no_nearby_vehicles_command_parameter_server_id_help = "Si vous souhaitez activer ou désactiver 'pas de véhicules à proximité' pour quelqu'un d'autre, insérez son identifiant de serveur ici.",
 		no_nearby_vehicles_command_substitutes = "",
-
-		disable_collisions_command = "désactiver_les_collisions",
-		disable_collisions_command_help = "Désactive les collisions avec les véhicules et les piétons dans un rayon de 10 mètres.",
-		disable_collisions_command_substitutes = "collisions",
 
 		ghost_command = "invisible",
 		ghost_command_help = "Cette commande permet d'activer /peek, l'invisibilité et /disable_collisions.",
@@ -1706,6 +1694,11 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		spawn_contract_command_parameter_server_id_help = "L'ID du serveur pour lequel vous souhaitez faire apparaître un contrat. S'il est laissé vide, cela va automatiquement sélectionner votre ID de serveur.",
 		spawn_contract_command_substitutes = "",
 
+		-- game/buddy_pass
+		buddy_pass_command = "buddy_pass",
+		buddy_pass_command_help = "Ouvrez l'interface du Buddy Pass.",
+		buddy_pass_command_substitutes = "",
+
 		-- game/cache
 		cache_assets_command = "cache_assets",
 		cache_assets_command_help = "Forcer la demande et le téléchargement des actifs les plus diffusés (véhicules, objets et vêtements). Ce n'est pas recommandé à moins que vous n'ayez une connexion lente et que les actifs ne se téléchargent pas suffisamment rapidement pour être transparents. Cela peut également provoquer des crashes des clients pendant l'opération.",
@@ -1829,6 +1822,11 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		outfits_command = "tenues",
 		outfits_command_help = "Lister toutes vos tenues enregistrées.",
 		outfits_command_substitutes = "",
+
+		-- game/collisions
+		disable_collisions_command = "désactiver_les_collisions",
+		disable_collisions_command_help = "Désactivez les collisions avec les véhicules et les piétons dans un rayon de 25 mètres (uniquement localement pour vous).",
+		disable_collisions_command_substitutes = "collisions",
 
 		-- game/command_socket
 		reconnect_command_socket_command = "reconnecter_commande_socket",
@@ -1981,12 +1979,6 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		server_entity_command_parameter_network_id = "ID réseau",
 		server_entity_command_parameter_network_id_help = "L'ID réseau de l'entité.",
 		server_entity_command_substitutes = "",
-
-		fake_lag_command = "fake_lag",
-		fake_lag_command_help = "Crée de faux délais.",
-		fake_lag_command_parameter_fps = "fps",
-		fake_lag_command_parameter_fps_help = "Le nombre d'images par seconde cible (>= 1).",
-		fake_lag_command_substitutes = "lag",
 
 		view_weapon_command = "voir_arme",
 		view_weapon_command_help = "Fait apparaître un objet avec le modèle donné et le positionne parfaitement pour les captures d'écran.",
@@ -2514,6 +2506,13 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		jackpot_take_fees_command = "jackpot_take_fees",
 		jackpot_take_fees_command_help = "Prélever une commission sur tous les inventaires du jackpot.",
 		jackpot_take_fees_command_substitutes = "",
+
+		-- game/lag
+		fake_lag_command = "fake_lag",
+		fake_lag_command_help = "Crée de faux délais.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "Le nombre d'images par seconde cible (>= 1).",
+		fake_lag_command_substitutes = "lag",
 
 		-- game/locate
 		locate_entity_command = "locate_entity",
@@ -4639,6 +4638,29 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		closing_sentence = "Il y a beaucoup plus à faire dans la ville ! Demandez autour de vous et faites-vous des amis ;)"
 	},
 
+	buddy_pass = {
+		buddy_pass = "Buddy Pass",
+		information_part_1 = "Poussez instantanément votre ami dans la file d'attente avec un Buddy Pass !",
+		information_part_2 = "Tous les utilisateurs ayant un engagement de type God Tier ont accès à cette fonctionnalité avec un pass gratuit.",
+		information_part_3 = "Le 'pass' est actif jusqu'à ce que votre ami se déconnecte du serveur. Vous pouvez ensuite faire passer quelqu'un d'autre.",
+		information_part_4 = "Demandez-leur leur code PIN de file d'attente pour les faire passer !",
+		queue_pin = "Code PIN de file d'attente",
+		available = "Disponible",
+		close = "Fermer",
+		webstore = "Boutique en ligne",
+		buddy_passes = "Passes amis",
+		push_through = "Faire passer !",
+		queue_pin_not_set = "Vous devez ajouter un code PIN de file d'attente.",
+		queue_pin_is_a_4_digit_pin = "Un code PIN de file d'attente est un code PIN à 4 chiffres.",
+		no_buddy_passes = "Vous n'avez aucun passe ami.",
+		no_buddy_passes_available = "Vous n'avez aucun passe ami disponible.",
+		no_queue_with_queue_pin = "Il n'y avait personne dans la file d'attente avec le code PIN fourni.",
+		buddy_pushed_through = "Vous avez poussé ${playerName} à travers la file d'attente !",
+
+		buddy_pass_used_logs_title = "Passe d'ami utilisée",
+		buddy_pass_used_logs_details = "${consoleName} a utilisé sa Passe d'ami pour pousser ${targetConsoleName}."
+	},
+
 	cache = {
 		download_progress = "Téléchargement en cours :\n- Véhicules : ${vehiclesDone}/${vehiclesTotal}\n- Objets : ${objectsDone}/${objectsTotal}\n- PNJ : ${pedsDone}/${pedsTotal}\n- Vêtements : ${clothingRequested}/${clothingTotal}",
 		slow_download_enabled = "Le téléchargement lent a été activé.",
@@ -4935,6 +4957,15 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		chest_hair = "Poils de poitrine",
 		body_blemishes = "Imperfections du corps",
 		add_body_blemish = "Ajouter une imperfection corporelle"
+	},
+
+	collisions = {
+		disable_collisions_on = "Vos collisions sont maintenant désactivées.",
+		disable_collisions_off = "Vos collisions sont maintenant activées.",
+
+		collisions_logs_title = "Collisions",
+		collisions_off_logs_details = "${consoleName} a désactivé ses collisions.",
+		collisions_on_logs_details = "${consoleName} a activé ses collisions."
 	},
 
 	command_socket = {
@@ -5782,10 +5813,6 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		move_entity_failed = "Impossible de déplacer l'entité.",
 		move_entity_no_permissions = "Tentative de déplacer une entité sans les permissions appropriées.",
 
-		fake_lag_invalid_fps = "Fps invalide.",
-		fake_lag_clamp = "Limitation des fps à une valeur inférieure à ${fps}.",
-		fake_lag_disabled = "Le faux lag a été désactivé.",
-
 		weapon_name_missing = "Paramètre de nom d'arme manquant.",
 		weapon_name_invalid = "`${weaponName}` n'est pas un nom d'arme valide.",
 		model_name_missing = "Paramètre de nom de modèle manquant.",
@@ -6020,17 +6047,20 @@ OP.Global.Locales.Languages["fr-FR"] = {
 	},
 
 	exclusive_dealership = {
-		marker_label = "${label} | $${price}",
-		marker_label_purchase = "[${SeatEjectKey}] Acheter ${label} pour $${price}",
+		cost_money = "${price} €",
+		cost_points = "${points} points OP",
+
+		marker_label = "${label} | ${cost}",
+		marker_label_purchase = "[${SeatEjectKey}] Acheter ${label} pour ${cost}",
 
 		confirm_purchase = "Confirmer l'achat",
-		confirm_purchase_label = "${label} | $${price}",
+		confirm_purchase_label = "${label} | ${cost}",
 
 		deny_purchase = "Non, je ne le veux pas",
 		accept_purchase = "Oui, je veux l'acheter",
 		accept_purchase_info = "Êtes-vous sûr de vouloir acheter ce véhicule ? Cette action ne peut pas être annulée.",
 
-		purchased_vehicle = "Acheté un(e) ${label} pour ${price}$.",
+		purchased_vehicle = "Achat d'un(e) ${label} pour ${cost}.",
 		insufficient_funds = "Fonds insuffisants.",
 		area_not_clear = "Zone de spawn non dégagée.",
 		invalid_package = "Offre de supporter incorrecte.",
@@ -6045,7 +6075,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 
 		buyback_vehicle_help = "Appuyez sur ~INPUT_CONTEXT~ pour accéder à l'échange.",
 		buyback_title = "Échange de Roues de Prestige",
-		sell_closest_vehicle = "Vendre votre ${label} pour $${price} (${percent}% de son prix) ?",
+		sell_closest_vehicle = "Voulez-vous vendre votre ${label} pour ${price} € (${percent}% de sa valeur)?",
 		deny_sale = "Non, je veux le garder",
 		accept_sale = "Oui, je suis sûr",
 		accept_sale_description = "Êtes-vous sûr de vouloir vendre votre véhicule pour $${price} ? Cette action ne peut pas être annulée.",
@@ -6058,7 +6088,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		sale_log_description = "${consoleName} a vendu leur `${label}` pour $${price}.",
 
 		log_title = "Achat EDM",
-		log_description = "A acheté `${label}` pour $${price}."
+		log_description = "Achat du `${label}` pour ${cost}."
 	},
 
 	failures = {
@@ -6675,7 +6705,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		gas_station_backdoor = "Porte arrière de la station-service",
 		cleaning_station = "Station de nettoyage",
 		grocery_store = "Épicerie",
-		penthouse_fridge = "Réfrigérateur",
+		penthouse_fridge = "Réfrigérateur Penthouse",
 		mug_shots = "Photos d'identité",
 		prison_store = "Boutique de prison",
 		fruit_vendor = "Vendeur de fruits",
@@ -6847,6 +6877,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		dumpster_brownies = "Brownies desséchés",
 		dumpster_pizza_slice = "Tranche de pizza moisie",
 		dumpster_banana = "Banane poilue (très molle)",
+		dumpster_almond_milk = "Lait d'amande rance",
 
 		-- items & item descriptions
 		body_armor = "Gilet pare-balles",
@@ -6996,6 +7027,16 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		clothing_bag = "Sac à vêtements",
 		clothing_bag_description = "Ne vous inquiétez plus jamais des urgences mode ! Le sac à vêtements vous permet de stocker votre tenue préférée et de l'équiper instantanément où que vous alliez. Ce sac a toute la magie d'une marraine la bonne fée, en moins de bibbidi-bobbidi-boo.",
 
+		magnifying_glass = "Loupe",
+		magnifying_glass_description = "Une loupe pour tous vos besoins de détective. Peut-être trouverez-vous un trèfle à quatre feuilles dans l'herbe ou une petite grenouille dans la boue?",
+
+		clover = "Trèfle à quatre feuilles",
+		clover_description = "Un rare trèfle à quatre feuilles pour la bonne chance. Vous pouvez en trouver dans l'herbe si vous regardez assez attentivement.",
+		small_frog = "Petite grenouille",
+		small_frog_description = "Juste une petite grenouille. Regardez ce petit gars, il est tellement mignon!",
+		seashell = "Coquillage",
+		seashell_description = "Un coquillage de la plage. Vous pouvez entendre l'océan si vous le mettez près de votre oreille.",
+
 		raw_diamond = "Diamant brut",
 		raw_diamond_description = "Diamant sous sa forme naturelle, fraîchement extrait de la mine.",
 		raw_morganite = "Morganite brut",
@@ -7126,8 +7167,10 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		donut_description = "Pourquoi y-a-t-il un trou au milieu bwo",
 		green_apple = "Pomme verte",
 		green_apple_description = "C'est comme un Red Bull, mais il n'y avait pas d'objet dans le jeu qui correspondait à une canette de Red Bull.",
-		sandwich = "Sandwich",
-		sandwich_description = "C'est vegan.",
+		sandwich = "Sandwich au jambon",
+		sandwich_description = "Un délicieux sandwich avec du jambon et du fromage.",
+		vegan_sandwich = "Sandwich végétalien",
+		vegan_sandwich_description = "Oui, c'est littéralement juste une feuille de laitue et quelques tomates entre deux tranches de pain complet. (Je ne sais pas pourquoi vous mangeriez ça)",
 		taco = "Taco",
 		taco_description = "La spécialité d'El Brayan.",
 		smores = "S'mores",
@@ -7137,7 +7180,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		pizza_slice = "Tranche de pizza",
 		pizza_slice_description = "Une petite part de pizza pour toi.",
 		hot_dog = "Hot Dog",
-		hot_dog_description = "Dévore ce hot dog comme si ça serait ton dernier.",
+		hot_dog_description = "Dévorez ce hot-dog comme s'il était le dernier.",
 		nachos = "Nachos",
 		nachos_description = "Des nachos assez bons pour Encarnación!",
 		vanilla_ice_cream = "Glace à la vanille",
@@ -7493,6 +7536,9 @@ OP.Global.Locales.Languages["fr-FR"] = {
 
 		milk = "Lait",
 		milk_description = "Lait de vache régulier extrait avec amour.",
+
+		almond_milk = "Lait d'amande",
+		almond_milk_description = "Comment ont-ils traire les amandes ??????",
 
 		bandana = "Bandana",
 		bandana_description = "Symbole de gang. (Les Bloods gagnent)",
@@ -8272,7 +8318,10 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		weapon_addon_hk416_description = "Le H&K 416, la Ferrari des armes à feu - élégante, puissante et garantie pour attirer les regards. C'est comme avoir un entraîneur personnel pour votre doigt de gâchette, offrant des résultats qui feront des envieux de vos ennemis. Dites bonjour à votre nouveau BFF (Best Firearm Forever) !",
 
 		weapon_addon_680 = "Remington 680",
-		weapon_addon_680_description = "Le Remington 680 est un fusil à pompe développé par Remington Arms en 1950."
+		weapon_addon_680_description = "Le Remington 680 est un fusil à pompe développé par Remington Arms en 1950.",
+
+		weapon_addon_honey = "Honey Badger (Miel)",
+		weapon_addon_honey_description = "La AAC Honey Badger PDW est une arme de défense personnelle, souvent utilisée dans une configuration réduite au silence et basée sur l'AR-15. Elle est chambrée en .300 AAC Blackout et a été initialement produite par Advanced Armament Corporation (AAC)."
 	},
 
 	invisibility = {
@@ -8415,6 +8464,12 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		read_catalog = "Appuyez sur ~g~${InteractionKey}~w~ pour lire le catalogue"
 	},
 
+	lag = {
+		fake_lag_invalid_fps = "Framerate invalide.",
+		fake_lag_clamp = "Le framerate est limité en dessous de ${fps}.",
+		fake_lag_disabled = "Le faux délai a été désactivé."
+	},
+
 	lean = {
 		press_to_sell_lean = "Appuyez sur ~INPUT_CONTEXT~ pour vendre du Lean.",
 		local_not_interested = "Le client n'a pas l'air intéressé pour le moment.",
@@ -8513,6 +8568,23 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		start_download = "Démarrer le téléchargement",
 		slow_download = "Téléchargement lent",
 		regular_download = "Téléchargement normal",
+		purchases = "Achats",
+		pledges = "Promesses",
+		packages = "Forfaits",
+		points = "Points",
+		appreciated_tier = "Niveau Apprécié",
+		respected_tier = "Niveau Respecté",
+		heroic_tier = "Niveau Héroïque",
+		legendary_tier = "Niveau Légendaire",
+		god_tier = "Niveau supérieur",
+		custom_plate = "Plaque personnalisée",
+		custom_character_id = "Identifiant personnalisé",
+		custom_phone_number = "Numéro de téléphone personnalisé",
+		reskin = "Changement d'apparence",
+		webstore = "Boutique en ligne",
+		none = "Aucun",
+		queue_pin = "PIN : ${queuePIN}",
+		copied = "Copié !",
 		back = "Retour",
 		copy_license = "Identifiant de licence",
 		copy_license_success = "Copié !",
@@ -8601,7 +8673,9 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		respected_tier = "Niveau Respecté",
 		heroic_tier = "Niveau Héroïque",
 		legendary_tier = "Niveau Légendaire",
-		godlike_tier = "Niveau Divin"
+		godlike_tier = "Niveau Divin",
+
+		buddy_passed_through = "${playerName} a utilisé son Buddy Pass pour vous aider à avancer !"
 	},
 
 	logs = {
@@ -8654,6 +8728,27 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		issue_id = "Problème #${issueId}",
 		releases_updated = "Mises à jour publiées.",
 		no_release_changes = "Il n'y a eu aucun changement."
+	},
+
+	magnifying_glass = {
+		searching = "Recherche en cours",
+
+		too_fast = "Vous vous déplacez trop vite.",
+		failed_search = "Échec de la recherche au sol.",
+		found_nothing = "Vous n'avez rien trouvé ici.",
+		already_searched = "Cette zone semble avoir déjà été fouillée.",
+		found_item = "Vous avez trouvé un/une ${item}.",
+
+		press_to_sell_items = "Appuyez sur ~INPUT_CONTEXT~ pour vendre des objets.",
+		no_items_to_sell = "Vous n'avez aucun objet à vendre.",
+		menu_title = "Objets Rares",
+		exit_shop = "Quitter le Magasin",
+		failed_sell = "Impossible de vendre l'objet.",
+
+		found_item_logs_title = "Objet trouvé par terre",
+		found_item_logs_details = "${consoleName} a trouvé un/une ${item} par terre (${ground}).",
+		sold_item_logs_title = "Objet Rare Vendu",
+		sold_item_logs_details = "${consoleName} a vendu un/une ${item} pour $${price}."
 	},
 
 	mdt = {
@@ -11449,7 +11544,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 
 		npc_vehicle = "Ce véhicule n'appartient pas à un joueur.",
 		not_in_a_vehicle = "Vous ne conduisez actuellement aucun véhicule.",
-		invalid_minutes = "Temps invalide (entre 1 minute et 12 heures).",
+		invalid_minutes = "Temps invalide (entre 1 minute et 48 heures).",
 
 		not_on_duty = "Vous n'êtes pas en service.",
 		failed_impound = "Impossible de mettre le véhicule en fourrière.",
@@ -11816,6 +11911,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		spawner_burger_shot = "Véhicules de livraison Burger Shot",
 		spawner_bean_machine = "Véhicules de livraison Bean Machine",
 		spawner_weazel_news = "Véhicules de Weazel News",
+		spawner_state = "Véhicules d'État",
 		close_menu = "Fermer le menu",
 		vehicle_list = "Liste de véhicules",
 		park_vehicle = "Garer le véhicule",

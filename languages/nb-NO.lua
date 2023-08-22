@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 19 (do not change)
+-- AUTO LOCALES: 20 (do not change)
 
 OP.Global.Locales.Languages["nb-NO"] = {
 	-- configuration settings for language
@@ -498,10 +498,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		reset_auto_drive_speed = "Nullstill automatisk kjørehastighet til standard.",
 		set_auto_drive_speed = "Sett automatisk kjørehastighet til ${speed} mph.",
 
-		disable_collisions_on = "Kollisjoner er nå deaktivert for deg.",
-		disable_collisions_off = "Kollisjoner er nå aktivert for deg.",
-		failed_toggle_collisions = "Kunne ikke slå av/på deaktiverte kollisjoner.",
-
 		disabled_recoil_on = "Recoil deaktivert.",
 		disabled_recoil_off = "Recoil aktivert.",
 
@@ -628,10 +624,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		clean_ped_logs_title = "Renset ped",
 		clean_ped_logs_details = "${consoleName} renset ${targetName}s ped.",
-
-		collisions_logs_title = "Sammenstøt",
-		collisions_off_logs_details = "${consoleName} skrudde av sammenstøt som var deaktivert.",
-		collisions_on_logs_details = "${consoleName} skrudde på sammenstøt som var deaktivert.",
 
 		invalid_job_search = "Ugyldig jobbsøk (må være minst 3 tegn).",
 		failed_job_search = "Klarte ikke å søke etter jobber.",
@@ -1077,10 +1069,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		no_nearby_vehicles_command_parameter_server_id = "server id",
 		no_nearby_vehicles_command_parameter_server_id_help = "Hvis du ønsker å aktivere/deaktivere 'ingen nærliggende kjøretøy' for noen andre, sett inn vedkommendes Server ID her.",
 		no_nearby_vehicles_command_substitutes = "",
-
-		disable_collisions_command = "deaktiver_kollisjoner",
-		disable_collisions_command_help = "Deaktiver kollisjoner med kjøretøy og personer i en radius på 10 meter.",
-		disable_collisions_command_substitutes = "kollisjoner",
 
 		ghost_command = "spøkelse",
 		ghost_command_help = "Dette kommandoen vil aktivere /titt, usynlighet og /kollisjoner.",
@@ -1706,6 +1694,11 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		spawn_contract_command_parameter_server_id_help = "Server-ID'en du ønsker å spawne en kontrakt for. Den vil automatisk velge deg selv hvis den er tom.",
 		spawn_contract_command_substitutes = "",
 
+		-- game/buddy_pass
+		buddy_pass_command = "kamerat_pass",
+		buddy_pass_command_help = "Åpne kamerat pass UI.",
+		buddy_pass_command_substitutes = "",
+
 		-- game/cache
 		cache_assets_command = "cache_assets",
 		cache_assets_command_help = "Tvunget forespørsel og nedlasting av mest strømmet ressurser (kjøretøy, objekter og klær). Dette anbefales ikke med mindre du har en treg tilkobling og ressurser ikke utfører en jevn installasjon. Dette kan også føre til at klienten krasjer mens det er i drift.",
@@ -1829,6 +1822,11 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		outfits_command = "antrekk",
 		outfits_command_help = "List opp alle dine lagrede antrekk.",
 		outfits_command_substitutes = "",
+
+		-- game/collisions
+		disable_collisions_command = "deaktiver_kollisjoner",
+		disable_collisions_command_help = "Deaktiver kollisjoner med kjøretøy og fotgjengere i en radius på 25 meter (kun lokalt for deg).",
+		disable_collisions_command_substitutes = "kollisjoner",
 
 		-- game/command_socket
 		reconnect_command_socket_command = "koble_til_command_socket",
@@ -1981,12 +1979,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		server_entity_command_parameter_network_id = "nettverks-ID",
 		server_entity_command_parameter_network_id_help = "Nettverks-IDen til objektet.",
 		server_entity_command_substitutes = "",
-
-		fake_lag_command = "forfalsk_lag",
-		fake_lag_command_help = "Opprett forfalsket lag.",
-		fake_lag_command_parameter_fps = "fps",
-		fake_lag_command_parameter_fps_help = "Mål-bildeoppdateringsfrekvensen (>= 1).",
-		fake_lag_command_substitutes = "forsinkelse",
 
 		view_weapon_command = "vis_våpen",
 		view_weapon_command_help = "Gjengir et objekt med den angitte modellnavnet og posisjonerer det perfekt for skjermbilder.",
@@ -2514,6 +2506,13 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		jackpot_take_fees_command = "jackpot_take_fees",
 		jackpot_take_fees_command_help = "Ta et gebyr fra alle jackpot-lagre.",
 		jackpot_take_fees_command_substitutes = "",
+
+		-- game/lag
+		fake_lag_command = "forfalsk_lag",
+		fake_lag_command_help = "Opprett forfalsket lag.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "Mål-bildeoppdateringsfrekvensen (>= 1).",
+		fake_lag_command_substitutes = "forsinkelse",
 
 		-- game/locate
 		locate_entity_command = "lokalisere_entitet",
@@ -4639,6 +4638,29 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		closing_sentence = "Det er mye mer å gjøre i byen! Spør rundt og få noen venner ;)"
 	},
 
+	buddy_pass = {
+		buddy_pass = "Kamerat Pass",
+		information_part_1 = "Skyv vennen din umiddelbart gjennom køen med et Kamerat Pass!",
+		information_part_2 = "Alle brukere med et God Tier bidrag har tilgang til denne funksjonen med en gratis pass.",
+		information_part_3 = "'Passet' er aktivt til vennen din kobler fra serveren. Du kan deretter skyve noen andre gjennom.",
+		information_part_4 = "Be om deres kø-PIN for å skyve dem gjennom!",
+		queue_pin = "Kø-PIN",
+		available = "Tilgjengelig",
+		close = "Lukk",
+		webstore = "Nettbutikk",
+		buddy_passes = "Buddy-pass",
+		push_through = "Skyv gjennom!",
+		queue_pin_not_set = "Du må legge til en kø-PIN.",
+		queue_pin_is_a_4_digit_pin = "En kø-PIN er en 4-sifret PIN-kode.",
+		no_buddy_passes = "Du har ingen buddy-pass.",
+		no_buddy_passes_available = "Du har ingen buddy-pass tilgjengelig.",
+		no_queue_with_queue_pin = "Det var ingen i køen med den angitte PIN-koden.",
+		buddy_pushed_through = "Du dyttet ${playerName} gjennom køen!",
+
+		buddy_pass_used_logs_title = "Buddy Pass Brukt",
+		buddy_pass_used_logs_details = "${consoleName} brukte sin Buddy Pass for å dytte gjennom ${targetConsoleName}."
+	},
+
 	cache = {
 		download_progress = "Nedlastningsprogresjon:\n- Kjøretøy: ${vehiclesDone}/${vehiclesTotal}\n- Objekter: ${objectsDone}/${objectsTotal}\n- Personer: ${pedsDone}/${pedsTotal}\n- Klær: ${clothingRequested}/${clothingTotal}",
 		slow_download_enabled = "Treg nedlasting er aktivert.",
@@ -4935,6 +4957,15 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		chest_hair = "Brystbehåring",
 		body_blemishes = "Kroppshudfeil",
 		add_body_blemish = "Legg til kroppshudfeil"
+	},
+
+	collisions = {
+		disable_collisions_on = "Kollisjonene dine er nå deaktivert.",
+		disable_collisions_off = "Kollisjonene dine er nå aktivert.",
+
+		collisions_logs_title = "Kollisjoner",
+		collisions_off_logs_details = "${consoleName} skrudde av sine deaktiverte kollisjoner.",
+		collisions_on_logs_details = "${consoleName} skrudde på sine deaktiverte kollisjoner."
 	},
 
 	command_socket = {
@@ -5782,10 +5813,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		move_entity_failed = "Kunne ikke bevege enheten.",
 		move_entity_no_permissions = "Forsøkte å flytte et objekt uten riktige tillatelser.",
 
-		fake_lag_invalid_fps = "Ugyldig fps.",
-		fake_lag_clamp = "Klamper fps til å være under ${fps}.",
-		fake_lag_disabled = "Fake lag er deaktivert.",
-
 		weapon_name_missing = "Mangler navn på våpenparameter.",
 		weapon_name_invalid = "`${weaponName}` er ikke et gyldig navn på et våpen.",
 		model_name_missing = "Mangler navn på modellparameter.",
@@ -6020,17 +6047,20 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	},
 
 	exclusive_dealership = {
-		marker_label = "${label} | $${price}",
-		marker_label_purchase = "[${SeatEjectKey}] Kjøp ${label} for $${price}",
+		cost_money = "${price} kr",
+		cost_points = "${points} OP-poeng",
+
+		marker_label = "${label} | ${cost}",
+		marker_label_purchase = "[${SeatEjectKey}] Kjøp ${label} for ${cost}",
 
 		confirm_purchase = "Bekreft kjøp",
-		confirm_purchase_label = "${label} | $${price}",
+		confirm_purchase_label = "${label} | ${cost}",
 
 		deny_purchase = "Aldri sinn, jeg vil ikke ha det",
 		accept_purchase = "Ja, jeg vil kjøpe den",
 		accept_purchase_info = "Er du sikker på at du vil kjøpe dette kjøretøyet? Denne handlingen kan ikke angres.",
 
-		purchased_vehicle = "Kjøpt en ${label} for $${price}.",
+		purchased_vehicle = "Kjøpte en ${label} for ${cost}.",
 		insufficient_funds = "Dårlig med midler.",
 		area_not_clear = "Området for å spawne kjøretøyet er ikke klart.",
 		invalid_package = "Feil supporter-pakke.",
@@ -6045,7 +6075,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		buyback_vehicle_help = "Trykk ~INPUT_CONTEXT~ for å åpne Exchange.",
 		buyback_title = "Prestige Wheels Exchange",
-		sell_closest_vehicle = "Vil du selge ${label}-en din for $${price} (${percent}% av prisen)?",
+		sell_closest_vehicle = "Selg din ${label} for ${price} kr (${percent}% av verdien)?",
 		deny_sale = "Nei, jeg vil beholde den",
 		accept_sale = "Ja, jeg er sikker",
 		accept_sale_description = "Er du sikker på at du vil selge kjøretøyet ditt for $${price}? Dette kan ikke angres.",
@@ -6058,7 +6088,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		sale_log_description = "${consoleName} solgte deres `${label}` for $${price}.",
 
 		log_title = "EDM Kjøp",
-		log_description = "Kjøpt `${label}` for $${price}."
+		log_description = "Kjøpte `${label}` for ${cost}."
 	},
 
 	failures = {
@@ -6675,7 +6705,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		gas_station_backdoor = "Bakdør til bensinstasjon",
 		cleaning_station = "Rengjøringsstasjon",
 		grocery_store = "Matbutikk",
-		penthouse_fridge = "Kjøleskap",
+		penthouse_fridge = "Leilighetskjøleskap",
 		mug_shots = "Mugshot-fotografering",
 		prison_store = "Fengselsbutikk",
 		fruit_vendor = "Fruktforhandler",
@@ -6847,6 +6877,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		dumpster_brownies = "Tørkede brownies",
 		dumpster_pizza_slice = "Muggen pizzabit",
 		dumpster_banana = "Hårete banan (veldig myk)",
+		dumpster_almond_milk = "Sur Mandelmelk",
 
 		-- items & item descriptions
 		body_armor = "Kroppsbeskyttelse",
@@ -6996,6 +7027,16 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		clothing_bag = "Klespose",
 		clothing_bag_description = "Ikke bekymre deg for mote-nødssituasjoner igjen! Klesposen lar deg lagre ditt favorittantrekk og umiddelbart utstyre det hvor som helst du går. Denne posen har all magien til en fe-gudmor, minus bibbidi-bobbidi-boo.",
 
+		magnifying_glass = "Forstørrelsesglass",
+		magnifying_glass_description = "Et forstørrelsesglass for alle dine detektivbehov. Kanskje finner du en firekløver i gresset eller en liten frosk i gjørmen?",
+
+		clover = "Firekløver",
+		clover_description = "En sjelden firekløver for lykke. Du kan finne disse i gresset hvis du ser godt nok.",
+		small_frog = "Liten Frosk",
+		small_frog_description = "Bare en liten frosk. Se på den lille fyren, han er så søt!",
+		seashell = "Skjell",
+		seashell_description = "Et skjell fra stranden. Du kan høre havet hvis du holder det opp til øret.",
+
 		raw_diamond = "Uforarbeidet diamant",
 		raw_diamond_description = "Diamant i sin naturlige form, rett fra gruven.",
 		raw_morganite = "Rå Morganitt",
@@ -7126,8 +7167,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		donut_description = "Hvorfor er det et hull i midten bwo",
 		green_apple = "Grønt eple",
 		green_apple_description = "Det er som en Red Bull, men det var ikke noen objekter i spillet som matchet en Red Bull-boks.",
-		sandwich = "Sandwich",
-		sandwich_description = "Den er vegansk.",
+		sandwich = "Skinke Sandwich",
+		sandwich_description = "En deilig sandwich med skinke og ost.",
+		vegan_sandwich = "Vegansk Sandwich",
+		vegan_sandwich_description = "Ja, dette er bokstavelig talt bare en bit salat og noen tomater mellom to skiver helkornbrød. (Jeg vet ikke hvorfor noen ville spise dette)",
 		taco = "Taco",
 		taco_description = "El Brayans spesialitet.",
 		smores = "S'mores",
@@ -7137,7 +7180,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		pizza_slice = "Pizzastykke",
 		pizza_slice_description = "En liten skive med pizza for deg.",
 		hot_dog = "Pølse",
-		hot_dog_description = "Gap opp denne glizzyen som om det var din siste.",
+		hot_dog_description = "Slug denne pølsa som om det var din siste.",
 		nachos = "Nachos",
 		nachos_description = "Nachos gode nok for Encarnación!!",
 		vanilla_ice_cream = "Vaniljeis",
@@ -7493,6 +7536,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		milk = "Melk",
 		milk_description = "Vanlig kumelk utvunnet med kjærlighet.",
+
+		almond_milk = "Mandelmelk",
+		almond_milk_description = "Hvordan i alle dager melker de mandler??????",
 
 		bandana = "Bandana",
 		bandana_description = "Mye gjengaktivitet. (Bloods vinner)",
@@ -8272,7 +8318,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		weapon_addon_hk416_description = "H&K 416, Ferrarien av skytevåpen - elegant, kraftig og garantert å vekke oppsikt. Det er som å ha en personlig trener for fingeren din, som gir resultater som vil gjøre fiendene dine misunnelige. Si hallo til din nye BFF (Beste Skytevåpen For Alltid)!",
 
 		weapon_addon_680 = "Remington 680",
-		weapon_addon_680_description = "Remington 680 er et hagle som drives av pumpemekanisme, utviklet av Remington Arms i 1950."
+		weapon_addon_680_description = "Remington 680 er et hagle som drives av pumpemekanisme, utviklet av Remington Arms i 1950.",
+
+		weapon_addon_honey = "Harepus",
+		weapon_addon_honey_description = "AAC Honey Badger PDW er en personlig forsvarsvåpen som ofte brukes med dempet lyd og er basert på AR-15. Den er kamret for .300 AAC Blackout og ble opprinnelig produsert av Advanced Armament Corporation (AAC)."
 	},
 
 	invisibility = {
@@ -8415,6 +8464,12 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		read_catalog = "Trykk ~g~${InteractionKey} ~w~for å lese katalog"
 	},
 
+	lag = {
+		fake_lag_invalid_fps = "Ugyldig fps.",
+		fake_lag_clamp = "Klamper fps for å være under ${fps}.",
+		fake_lag_disabled = "Den falske forsinkelsen har blitt deaktivert."
+	},
+
 	lean = {
 		press_to_sell_lean = "Trykk ~INPUT_CONTEXT~ for å selge Lean.",
 		local_not_interested = "Lokalen virker ikke interessert akkurat nå.",
@@ -8513,6 +8568,23 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		start_download = "Start nedlasting",
 		slow_download = "Treg nedlasting",
 		regular_download = "Vanlig nedlasting",
+		purchases = "Kjøp",
+		pledges = "Forpliktelser",
+		packages = "Pakker",
+		points = "Poeng",
+		appreciated_tier = "Verdsatt nivå",
+		respected_tier = "Respektert nivå",
+		heroic_tier = "Heroisk nivå",
+		legendary_tier = "Legendarisk nivå",
+		god_tier = "Gudetier",
+		custom_plate = "Tilpasset plate",
+		custom_character_id = "Tilpasset karakter-ID",
+		custom_phone_number = "Tilpasset telefonnummer",
+		reskin = "Ny utseende",
+		webstore = "Nettbutikk",
+		none = "Ingen",
+		queue_pin = "PIN: ${queuePIN}",
+		copied = "Kopiert!",
 		back = "Tilbake",
 		copy_license = "Lisens-ID",
 		copy_license_success = "Kopiert!",
@@ -8601,7 +8673,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		respected_tier = "Respektert nivå",
 		heroic_tier = "Heroisk nivå",
 		legendary_tier = "Legendarisk nivå",
-		godlike_tier = "Gudefullt nivå"
+		godlike_tier = "Gudefullt nivå",
+
+		buddy_passed_through = "${playerName} brukte Buddy Passen sin for å dytte deg gjennom!"
 	},
 
 	logs = {
@@ -8654,6 +8728,27 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		issue_id = "Problem #${issueId}",
 		releases_updated = "Oppdateringer lagt til.",
 		no_release_changes = "Ingen endringer ble gjort."
+	},
+
+	magnifying_glass = {
+		searching = "Søker på bakken",
+
+		too_fast = "Du beveger deg for fort.",
+		failed_search = "Klarte ikke å søke på bakken.",
+		found_nothing = "Du fant ingenting her.",
+		already_searched = "Dette området ser ut til å ha blitt søkt allerede.",
+		found_item = "Du fant en ${item}.",
+
+		press_to_sell_items = "Trykk ~INPUT_CONTEXT~ for å selge gjenstander.",
+		no_items_to_sell = "Du har ingen gjenstander å selge.",
+		menu_title = "Sjeldne gjenstander",
+		exit_shop = "Avslutt butikk",
+		failed_sell = "Kunne ikke selge gjenstanden.",
+
+		found_item_logs_title = "Funnet gjenstand på bakken",
+		found_item_logs_details = "${consoleName} fant en ${item} på bakken (${ground}).",
+		sold_item_logs_title = "Solgte sjelden gjenstand",
+		sold_item_logs_details = "${consoleName} solgte en ${item} for $${price}."
 	},
 
 	mdt = {
@@ -11449,7 +11544,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		npc_vehicle = "Dette kjøretøyet tilhører ikke en spiller.",
 		not_in_a_vehicle = "Du kjører ikke et kjøretøy for øyeblikket.",
-		invalid_minutes = "Ugyldig tid (mellom 1 minutt og 12 timer).",
+		invalid_minutes = "Ugyldig tid (mellom 1 minutt og 48 timer).",
 
 		not_on_duty = "Du er ikke på vakt.",
 		failed_impound = "Kunne ikke beslaglegge kjøretøy.",
@@ -11816,6 +11911,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		spawner_burger_shot = "Burger Shot leveringskjøretøy",
 		spawner_bean_machine = "Bean Machine leveringskjøretøy",
 		spawner_weazel_news = "Weazel News kjøretøy",
+		spawner_state = "Statlige kjøretøy",
 		close_menu = "Lukk meny",
 		vehicle_list = "Kjøretøyliste",
 		park_vehicle = "Parkér kjøretøy",

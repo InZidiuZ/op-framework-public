@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 19 (do not change)
+-- AUTO LOCALES: 20 (do not change)
 
 OP.Global.Locales.Languages["meme-gungan"] = {
 	-- configuration settings for language
@@ -498,10 +498,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		reset_auto_drive_speed = "Reset auto drive speed to default.",
 		set_auto_drive_speed = "Set auto drive speed to ${speed} mph.",
 
-		disable_collisions_on = "Yousa collisions are now disabled.",
-		disable_collisions_off = "Yousa collisions are now enabled.",
-		failed_toggle_collisions = "Failed to toggle disabled collisions.",
-
 		disabled_recoil_on = "Meesa disable recoil.",
 		disabled_recoil_off = "Meesa enable recoil.",
 
@@ -628,10 +624,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		clean_ped_logs_title = "Cleana-da ped",
 		clean_ped_logs_details = "${consoleName} mesa da cleana-da ${targetName}'s ped.",
-
-		collisions_logs_title = "Collisions",
-		collisions_off_logs_details = "${consoleName} mesa da toggala-da disabled collisions off.",
-		collisions_on_logs_details = "${consoleName} mesa da toggala-da disabled collisions on.",
 
 		invalid_job_search = "Mesa da thinka yousa search isa invalid (has to be at least 3 characters).",
 		failed_job_search = "Failed to searcha-da for jobs.",
@@ -1077,10 +1069,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		no_nearby_vehicles_command_parameter_server_id = "server id",
 		no_nearby_vehicles_command_parameter_server_id_help = "If yousa wanting to toggle the 'no nearby vehicles' for someone else, insert their server id here.",
 		no_nearby_vehicles_command_substitutes = "",
-
-		disable_collisions_command = "disable_collisions",
-		disable_collisions_command_help = "Disable collisions with vehicles and peds in a 10 meter radius.",
-		disable_collisions_command_substitutes = "mee-sa bumbadisabul!",
 
 		ghost_command = "oo-moo!",
 		ghost_command_help = "Disa commando will enable /peek, invisibility and /disable_collisions.",
@@ -1706,6 +1694,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		spawn_contract_command_parameter_server_id_help = "Yousa server ID yousa would like to spawn a contract for. It will auto-select yourself it left blank. (Yousa server ID, mesa decided mesa's doing)",
 		spawn_contract_command_substitutes = "",
 
+		-- game/buddy_pass
+		buddy_pass_command = "buddy_pass",
+		buddy_pass_command_help = "Open the buddy pass UI.",
+		buddy_pass_command_substitutes = "",
+
 		-- game/cache
 		cache_assets_command = "yousa_cache_assets",
 		cache_assets_command_help = "Forcefully request and download most streamed assets (yousa vehicles, objects, and clothing). This is not recommended unless yousa have a slow connection and assets don't download fast enough on demand to be seamless. This may also cause client crashes while it's in action. (Download and install most streamed assets)",
@@ -1829,6 +1822,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		outfits_command = "outfits",
 		outfits_command_help = "List all yousa saved outfits.",
 		outfits_command_substitutes = "",
+
+		-- game/collisions
+		disable_collisions_command = "disable_collisions",
+		disable_collisions_command_help = "Disable collisions with vehicles and peds in a 25 meter radius (Only locally for you).",
+		disable_collisions_command_substitutes = "mee-sa bumbadisabul!",
 
 		-- game/command_socket
 		reconnect_command_socket_command = "reconnect_command_socket",
@@ -1981,12 +1979,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		server_entity_command_parameter_network_id = "network id",
 		server_entity_command_parameter_network_id_help = "Da network id of da entity.",
 		server_entity_command_substitutes = "",
-
-		fake_lag_command = "fake_lag",
-		fake_lag_command_help = "Create fake lag.",
-		fake_lag_command_parameter_fps = "fps",
-		fake_lag_command_parameter_fps_help = "Da target fps (>= 1).",
-		fake_lag_command_substitutes = "laggen",
 
 		view_weapon_command = "view_weapon",
 		view_weapon_command_help = "Spawn an object wif da givin' name n' positon it perfecto for screenshotin'.",
@@ -2514,6 +2506,13 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		jackpot_take_fees_command = "jackpot_take_fees",
 		jackpot_take_fees_command_help = "Meesa takin' a fee from all jackpot inventories.",
 		jackpot_take_fees_command_substitutes = "",
+
+		-- game/lag
+		fake_lag_command = "fake_lag",
+		fake_lag_command_help = "Create fake lag.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "Da target fps (>= 1).",
+		fake_lag_command_substitutes = "laggen",
 
 		-- game/locate
 		locate_entity_command = "locate_entity",
@@ -4639,6 +4638,29 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		closing_sentence = "Mesa gotsa lotsa more to do in da city! Ask around and make somesa friendsa ;)"
 	},
 
+	buddy_pass = {
+		buddy_pass = "Yousa Buddy Pass",
+		information_part_1 = "Instantly push yoursa friend through the queue with a Buddy Pass!",
+		information_part_2 = "All usersa with a God Tier pledge has access to this feature with onesa free pass.",
+		information_part_3 = "The 'pass' issa active until yoursa friend disconnects from the server. Yousa can then push someone else through.",
+		information_part_4 = "Numba Four :: Ask for deir queue PIN to push dem through!",
+		queue_pin = "Queue PIN :: Queue PIN *",
+		available = "Available :: Ready",
+		close = "Close :: Shut",
+		webstore = "Webstore :: Store Ona-Line",
+		buddy_passes = "Buddy Passes :: Passes Wif Buddies",
+		push_through = "Push Through! :: Shove Ahead!",
+		queue_pin_not_set = "Yousa hasta add a queue PIN. :: Yousa gotta add a queue PIN.",
+		queue_pin_is_a_4_digit_pin = "A queue PIN is a 4-digit PIN. :: A queue PIN is a 4-digit PIN.",
+		no_buddy_passes = "You do not have any buddy passes. :: Yousa no gots any buddy passes.",
+		no_buddy_passes_available = "You do not have any buddy passes available. :: Yousa no gots any buddy passes available.",
+		no_queue_with_queue_pin = "Theres was no one in the queue wif de provided PIN. :: Deres no one in the queue wif de provided PIN.",
+		buddy_pushed_through = "Yousa pushed ${playerName} through da queue!",
+
+		buddy_pass_used_logs_title = "Buddy Pass Used",
+		buddy_pass_used_logs_details = "${consoleName} used der Buddy Pass to push through ${targetConsoleName}."
+	},
+
 	cache = {
 		download_progress = "Download Progress:\n- Vehicleesa: ${vehiclesDone}/${vehiclesTotal}\n- Objectssa: ${objectsDone}/${objectsTotal}\n- Pedsssa: ${pedsDone}/${pedsTotal}\n- Clothingsa: ${clothingRequested}/${clothingTotal}",
 		slow_download_enabled = "Slow download has been enabled. Yousa gonna wait longer!",
@@ -4935,6 +4957,15 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		chest_hair = "Chest Hair",
 		body_blemishes = "Body Blemisches",
 		add_body_blemish = "Add Body Blemish"
+	},
+
+	collisions = {
+		disable_collisions_on = "Yousa collisions are now disabled.",
+		disable_collisions_off = "Yousa collisions are now enabled.",
+
+		collisions_logs_title = "Collisions",
+		collisions_off_logs_details = "${consoleName} toggled their disabled collisions off.",
+		collisions_on_logs_details = "${consoleName} toggled their disabled collisions on."
 	},
 
 	command_socket = {
@@ -5782,10 +5813,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		move_entity_failed = "Mesa no can move entity.",
 		move_entity_no_permissions = "Mesa tried to move an entity without proper permissions.",
 
-		fake_lag_invalid_fps = "Gaa gaa, invalid fps.",
-		fake_lag_clamp = "Clamping fps to be below ${fps}.",
-		fake_lag_disabled = "Mesa disable da fake lag.",
-
 		weapon_name_missing = "Missing weapon name parameter.",
 		weapon_name_invalid = "`${weaponName}` isa not a valid weapon name.",
 		model_name_missing = "Missing model name parameter.",
@@ -6020,17 +6047,20 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	},
 
 	exclusive_dealership = {
-		marker_label = "${label} | $${price}",
-		marker_label_purchase = "[${SeatEjectKey}] Yousa purchase ${label} for $${price}",
+		cost_money = "${price} cha-chingas",
+		cost_points = "${points} OP Puntos",
+
+		marker_label = "${label} | ${cost}",
+		marker_label_purchase = "[${SeatEjectKey}] Compraren ${label} por ${cost}",
 
 		confirm_purchase = "Mooey mooey, mesa ganna buy dis.",
-		confirm_purchase_label = "${label} | $${price}",
+		confirm_purchase_label = "${label} | ${cost}",
 
 		deny_purchase = "Meesa okeyday, mesa no want it",
 		accept_purchase = "Yousa wanth buy it?",
 		accept_purchase_info = "Yousa shure yousawanth purchase dis vehicle? Dis cannot be undone.",
 
-		purchased_vehicle = "Mesa purchased a ${label} for $${price}.",
+		purchased_vehicle = "Comprared a ${label} por ${cost}.",
 		insufficient_funds = "Nosa havvem enough monies.",
 		area_not_clear = "Spawn area issen't clear nuff",
 		invalid_package = "Dis no da pledge wesa lookin for",
@@ -6045,7 +6075,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		buyback_vehicle_help = "Press ~INPUT_CONTEXT~ to accessa prestigio wheels exchange.",
 		buyback_title = "Prestige Wheels of Mesa Exchange",
-		sell_closest_vehicle = "Meesa Nabee Sellin' yer ${label} for $${price} (${percent}% mula)?",
+		sell_closest_vehicle = "Venden tu ${label} por $${price} (${percent}% de su valor)?",
 		deny_sale = "Noo-noo, Meesa keepin' it",
 		accept_sale = "Yessa, Meesa shore",
 		accept_sale_description = "Yousa sure yousa wanna sell de vehicle for $${price}? Disen action no can undone.",
@@ -6058,7 +6088,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		sale_log_description = "${consoleName} solda their `${label}` for $${price}.",
 
 		log_title = "EDM Purchase",
-		log_description = "Nabbedda the `${label}` for $${price}."
+		log_description = "Comprared el `${label}` por ${cost}."
 	},
 
 	failures = {
@@ -6675,7 +6705,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		gas_station_backdoor = "Gasun Steshun Baccdoor",
 		cleaning_station = "Cleana Steshun",
 		grocery_store = "Grocery Stoa",
-		penthouse_fridge = "Fridge",
+		penthouse_fridge = "Nevera Penthouse",
 		mug_shots = "Mug Shopi",
 		prison_store = "Prison Stoa",
 		fruit_vendor = "Fruit Vendor",
@@ -6847,6 +6877,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		dumpster_brownies = "Musha Brownies",
 		dumpster_pizza_slice = "Moldy Pizza Slice",
 		dumpster_banana = "Kajin Banana (Reddy Mushy)",
+		dumpster_almond_milk = "Leche de Almendra Agria",
 
 		-- items & item descriptions
 		body_armor = "Shin Oom Clothes",
@@ -6996,6 +7027,16 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		clothing_bag = "Bagga Clot'in'",
 		clothing_bag_description = "Never worry about fashion eme'gency again! Da clothing bag lets you stowa yosa fav'rite outfit and instantly equip it anywheres yousa go. This bag has all da magic of a fairy godmother, minus da bibbidi-bobbidi-boo.",
 
+		magnifying_glass = "Sattafishin Glass",
+		magnifying_glass_description = "A sattafishin glass for all yousa detective needs. Maybosa yousa gonna find a 4 leaf clover in de grass or a small frog in de mudo?",
+
+		clover = "4 Leaf Clover",
+		clover_description = "A rare 4 leaf clover for good luck. Yousa can find these in de grass if yousa look hard enough.",
+		small_frog = "Small Frog",
+		small_frog_description = "Mesa just a small frog. Look at de little guy, hesa sooo cute!",
+		seashell = "Seashell",
+		seashell_description = "A seashell from de beach. Yousa gonna hear de ocean if yousa put it up to yousa ear.",
+
 		raw_diamond = "Raw Gooberfish",
 		raw_diamond_description = "Gooberfish in its natural form, fresh from da mine.",
 		raw_morganite = "Raw Mantinka",
@@ -7126,8 +7167,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		donut_description = "Mesa no know why theres a hole in da middle bwo",
 		green_apple = "Green Apple",
 		green_apple_description = "It's like a red gull but theren't no objects in da game that matchen a red gull can.",
-		sandwich = "Sandwich",
-		sandwich_description = "It's vegan.",
+		sandwich = "Booma Sandwich",
+		sandwich_description = "A yummy booma with ham and cheese. ",
+		vegan_sandwich = "Vegan Booma",
+		vegan_sandwich_description = "Mesa no understand why you'd wanna eat this, but it's just a lettuce and tomato mesa tween two pieces of wholegrain bread.",
 		taco = "Taco",
 		taco_description = "El Brayan's specialty.",
 		smores = "S'mores",
@@ -7137,7 +7180,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		pizza_slice = "Pizza Slice",
 		pizza_slice_description = "Yoo-sa want a tiny slice of za.",
 		hot_dog = "Hot Dog",
-		hot_dog_description = "Gurggle up this glizzy like it'll be your last.",
+		hot_dog_description = "Gobble up this gobbler like it's your last.",
 		nachos = "Nachos",
 		nachos_description = "Nachos so good for Encarnación!!",
 		vanilla_ice_cream = "Vanilla Ice Cream",
@@ -7493,6 +7536,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		milk = "Meesa",
 		milk_description = "Regular cow milk extracted with loosa.",
+
+		almond_milk = "Almond Milk",
+		almond_milk_description = "How in the waters did they milk them almonds??????",
 
 		bandana = "Bandana",
 		bandana_description = "Whole lotta gang shaa. (Bloods win)",
@@ -8272,7 +8318,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		weapon_addon_hk416_description = "Da H&K 416, da Ferrari ob firearms - sleek, powerful, and guaranteed to turn heads. It's like havin' a personal trainer fer yer trigger finger, delivering results dat'll make yer enemies jealous. Say hello to yer new BFF (Best Firearm Forever)!",
 
 		weapon_addon_680 = "Remington 680",
-		weapon_addon_680_description = "De Remington 680 be a pump-action shotgun dat was developed by Remington Arms in 1950."
+		weapon_addon_680_description = "De Remington 680 be a pump-action shotgun dat was developed by Remington Arms in 1950.",
+
+		weapon_addon_honey = "Honey Badger",
+		weapon_addon_honey_description = "Da AAC Honey Badger PDW is a personal defense weapon, frequently used in a suppressed configuration and is based on da AR-15. It is chambered in .300 AAC Blackout and was originally produced by Advanced Armament Corporation (AAC)."
 	},
 
 	invisibility = {
@@ -8415,6 +8464,12 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		read_catalog = "Meesa press ~g~${InteractionKey} ~w~to read Catalog"
 	},
 
+	lag = {
+		fake_lag_invalid_fps = "Invalid fps.",
+		fake_lag_clamp = "Clamping fps to be below ${fps}.",
+		fake_lag_disabled = "Da fake lag has been disabled."
+	},
+
 	lean = {
 		press_to_sell_lean = "Yousa press ~INPUT_CONTEXT~ to sell Lean.",
 		local_not_interested = "Da local doesn't seem to be interested rightinow.",
@@ -8513,6 +8568,23 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		start_download = "Start downloadin",
 		slow_download = "Slow downloadin",
 		regular_download = "Regular downloadin",
+		purchases = "Oodas",
+		pledges = "Pledges",
+		packages = "Packages",
+		points = "Points",
+		appreciated_tier = "Ap-pre-ciia-ted Tier",
+		respected_tier = "Re-spect-ed Tier",
+		heroic_tier = "He-ro-ic Tier",
+		legendary_tier = "Le-gen-dar-y Tier",
+		god_tier = "Godd Thier",
+		custom_plate = "Custom Plaite",
+		custom_character_id = "Custom Charracter ID",
+		custom_phone_number = "Custom Plaite Numbarr",
+		reskin = "Resskin",
+		webstore = "Wepstore",
+		none = "Nun",
+		queue_pin = "PIN: ${queuePIN}",
+		copied = "Copied!",
 		back = "Ohh-nay",
 		copy_license = "License ID",
 		copy_license_success = "Meesa copied it!",
@@ -8601,7 +8673,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		respected_tier = "Re-spect-ed Tier",
 		heroic_tier = "He-ro-ic Tier",
 		legendary_tier = "Le-gen-dar-y Tier",
-		godlike_tier = "God-liik-e Tier"
+		godlike_tier = "God-liik-e Tier",
+
+		buddy_passed_through = "${playerName} used their Buddy Pass tu push you through!"
 	},
 
 	logs = {
@@ -8654,6 +8728,27 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		issue_id = "Gefello Issue #${issueId}",
 		releases_updated = "Releases updated.",
 		no_release_changes = "Meesa no see any changes in da releases."
+	},
+
+	magnifying_glass = {
+		searching = "Searchin The Ground",
+
+		too_fast = "Yousa movin too fast.",
+		failed_search = "Failed tu search da ground.",
+		found_nothing = "Yousa didn't find anyting here.",
+		already_searched = "Da area seems to have been searched already.",
+		found_item = "Yousa found a ${item}.",
+
+		press_to_sell_items = "Press ~INPUT_CONTEXT~ to sell items.",
+		no_items_to_sell = "Yousa don't have any items to sell.",
+		menu_title = "Rare Items",
+		exit_shop = "Exit Shop",
+		failed_sell = "Failed to sell item.",
+
+		found_item_logs_title = "Found Item On Ground",
+		found_item_logs_details = "${consoleName} found a ${item} on da ground (${ground}).",
+		sold_item_logs_title = "Sold Rare Item",
+		sold_item_logs_details = "${consoleName} sold a ${item} for $${price}."
 	},
 
 	mdt = {
@@ -11449,7 +11544,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		npc_vehicle = "Disa vehicle issen noten player owned vehicle.",
 		not_in_a_vehicle = "Yousa noten currently driven a vehicle.",
-		invalid_minutes = "Meesa sorry, dat be invalid time! (between 1 minute and 12 hours).",
+		invalid_minutes = "Meeza-sa tinkin validen time (between 1 minute aan 48 hours).",
 
 		not_on_duty = "Yousa no on duty.",
 		failed_impound = "Meesa sorry, meesa no able to impound vehicle.",
@@ -11816,6 +11911,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		spawner_burger_shot = "Burger Shot Delivery Tings-en",
 		spawner_bean_machine = "Bean Machine Delivery Tings-en",
 		spawner_weazel_news = "Weazel News Tings-en",
+		spawner_state = "Gungan Vehicles",
 		close_menu = "Close Moolah-Moolaha",
 		vehicle_list = "List-en of Vehicle Tings",
 		park_vehicle = "Parken Vehicle Ting-en",

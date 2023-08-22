@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 19 (do not change)
+-- AUTO LOCALES: 20 (do not change)
 
 OP.Global.Locales.Languages["meme-klingon"] = {
 	-- configuration settings for language
@@ -498,10 +498,6 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		reset_auto_drive_speed = "QIDSI' lojta' lo'quv De'HomchoH.",
 		set_auto_drive_speed = "QIDSI' lojta' lo'quvyar chenmoH ${speed} mph.",
 
-		disable_collisions_on = "yIngu'meH SeH'o' pabmoHta':",
-		disable_collisions_off = "yIngu'meH SeH'o' pablo'na':",
-		failed_toggle_collisions = "yIngu'meH SeH'o' neqta' Ha'DIbaH.",
-
 		disabled_recoil_on = "QIlDI' tIv!.", --"Disabled recoil.",
 		disabled_recoil_off = "QIlDI' Ha'!", --"Enabled recoil.",
 
@@ -628,10 +624,6 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 		clean_ped_logs_title = "QachDaq Ped",
 		clean_ped_logs_details = "${consoleName} qachDaq ${targetName} ped.",
-
-		collisions_logs_title = "YItlhutlh Logs",
-		collisions_off_logs_details = "${consoleName} toggle tlhaghtlhutlh yItlhutlh Daq lo'laHbe'",
-		collisions_on_logs_details = "${consoleName} toggle tlhaghtlhutlh yItlhutlh Daq chu'",
 
 		invalid_job_search = "ghu'vammo' 'oH qap search (cha' Hoch tlhIngan 'Iw HIq 3 lo'.)",
 		failed_job_search = "Qap search vIqonlu'.",
@@ -1077,10 +1069,6 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		no_nearby_vehicles_command_parameter_server_id = "server id",
 		no_nearby_vehicles_command_parameter_server_id_help = "If you're wanting to toggle the 'no nearby vehicles' for someone else, insert their server id here.",
 		no_nearby_vehicles_command_substitutes = "",
-
-		disable_collisions_command = "ghom HaqwI'qu'",
-		disable_collisions_command_help = "Disable collisions with vehicles and peds in a 10 meter radius.",
-		disable_collisions_command_substitutes = "vItlhIch",
 
 		ghost_command = "boqvam",
 		ghost_command_help = "vaj boqvam /peek, ngImHa' 'ej /vItlhIch pej.",
@@ -1706,6 +1694,11 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		spawn_contract_command_parameter_server_id_help = "Server ID Hoch qen ngop 'Iw joq ghoStaHvIS. HoS qagh ghobe' laHbe'chugh je.",
 		spawn_contract_command_substitutes = "",
 
+		-- game/buddy_pass
+		buddy_pass_command = "buddy_pass",
+		buddy_pass_command_help = "HeghDI' buddy pass UI.",
+		buddy_pass_command_substitutes = "",
+
 		-- game/cache
 		cache_assets_command = "chuvmey Daq",
 		cache_assets_command_help = "chuvmey Daq, vI'elDI' HoStaHvIS, qutDaj DeSDu'vo' (veQmoHwI', qay' 'ej luchDaj). vaj pelaD chuvmey yuQjIjDI' maH jImej ngoQ HoS 'oH. chaq, HIq vItlhutlh client crashes vItlhutlh 'oH neH chu' cha'Hom vIneH.",
@@ -1829,6 +1822,11 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		outfits_command = "SojHa'",
 		outfits_command_help = "lIst DuHIvDI' SojHa'mey.",
 		outfits_command_substitutes = "",
+
+		-- game/collisions
+		disable_collisions_command = "ghom HaqwI'qu'",
+		disable_collisions_command_help = "jImejDaq QIbHur puS tu'lu'be'lu'pu' (DaHmey jImejDaq nuvpu').",
+		disable_collisions_command_substitutes = "vItlhIch",
 
 		-- game/command_socket
 		reconnect_command_socket_command = "tughHa'Daq vIchal",
@@ -1981,12 +1979,6 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		server_entity_command_parameter_network_id = "network raS",
 		server_entity_command_parameter_network_id_help = "network raS entity.",
 		server_entity_command_substitutes = "",
-
-		fake_lag_command = "qeleq_lag",
-		fake_lag_command_help = "qeleq lag lISuch.",
-		fake_lag_command_parameter_fps = "fps",
-		fake_lag_command_parameter_fps_help = "Qav (>= 1) target fps.",
-		fake_lag_command_substitutes = "tIv",
 
 		view_weapon_command = "view_weapon",
 		view_weapon_command_help = "DaH BejtaHvIS pon 'un weapon model ghItlhvam jajlo'ghach. ghItlh qaStaHvIS boH chuq.",
@@ -2514,6 +2506,13 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		jackpot_take_fees_command = "jackpot_take_fees",
 		jackpot_take_fees_command_help = "gher Take 'ejwI' jaghpuwavmo' Dologh jackpot cha'logh",
 		jackpot_take_fees_command_substitutes = "",
+
+		-- game/lag
+		fake_lag_command = "qeleq_lag",
+		fake_lag_command_help = "qeleq lag lISuch.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "Qav (>= 1) target fps.",
+		fake_lag_command_substitutes = "tIv",
 
 		-- game/locate
 		locate_entity_command = "locate_entity",
@@ -4639,6 +4638,29 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		closing_sentence = "qoq 'oH HujDaq ghu'vammeH pep vIlo'ta'! pIjHa' wIbuSHa' je ;)"
 	},
 
+	buddy_pass = {
+		buddy_pass = "buddy pass",
+		information_part_1 = "ngoDloghvo' SIbI' Dalo'lu'chugh 'ej Buddy Pass SoHmeH information.",
+		information_part_2 = "wa'vatlh DIvI' nga'chuq God Tier 'ach yIpoQmoH je lop.",
+		information_part_3 = "DaHutlh SoHmeH Dalo'lu'; ta' SoHbe'. Hur pongtaHvIS ta' je.",
+		information_part_4 = "chay' tlhInganHol yImev 'ej pushvam 'ach tIvoqQo'!",
+		queue_pin = "tIqvoj PIN",
+		available = "maH",
+		close = "Hurgh",
+		webstore = "webstore",
+		buddy_passes = "'oHu' yoS",
+		push_through = "push qar'a'!",
+		queue_pin_not_set = "tIqvoj PIN lo'laHbe'",
+		queue_pin_is_a_4_digit_pin = "tIqvoj PIN DuHIvDI' 'uDnol.",
+		no_buddy_passes = "yoS ghajbe'be' 'oleb.",
+		no_buddy_passes_available = "yoS ghajbe'be' pagh.",
+		no_queue_with_queue_pin = "tIqvoj PIN jImej Daqatlh ghu'vetlh.",
+		buddy_pushed_through = "nuqneH ${playerName} reH ghItlhbe'!",
+
+		buddy_pass_used_logs_title = "Buddy Pass juHDaq",
+		buddy_pass_used_logs_details = "${consoleName} Buddy Pass DujwI' qet rop'a' ${targetConsoleName} jatlh."
+	},
+
 	cache = {
 		download_progress = "lutlhpu' tIn: \n- lojmIt: ${vehiclesDone}/${vehiclesTotal}\n- DejHa'chuq: ${objectsDone}/${objectsTotal}\n- Duj: ${pedsDone}/${pedsTotal}\n- maj: ${clothingRequested}/${clothingTotal}",
 		slow_download_enabled = "Soch ghaHvaD cha'logh cha'logh je.",
@@ -4935,6 +4957,15 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		chest_hair = "pejmaHwI'",
 		body_blemishes = "qemDu'",
 		add_body_blemish = "qemDu' chenmoH"
+	},
+
+	collisions = {
+		disable_collisions_on = "qutluchqu' jIHlaw' HoS.",
+		disable_collisions_off = "qutluchqu' rur jIHlaw'",
+
+		collisions_logs_title = "qutluchqu'",
+		collisions_off_logs_details = "${consoleName} toggled yInagh qutluchqu' rur.",
+		collisions_on_logs_details = "${consoleName} toggled yInagh qutluchqu' HoS."
 	},
 
 	command_socket = {
@@ -5782,10 +5813,6 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		move_entity_failed = "jey vItlhutlh Qapbe'chugh vItlhutlh.",
 		move_entity_no_permissions = "qaStaHvIS jangpu'pu' lIchuv neH Daghoj.",
 
-		fake_lag_invalid_fps = "nuq 'oH neH.",
-		fake_lag_clamp = "tlhutlhchoH fps vItlhutlh.",
-		fake_lag_disabled = "QeH'e' naQmeyraD, fake lag tI'In needs ghaH.",
-
 		weapon_name_missing = "Qaw' weapon name parameter.",
 		weapon_name_invalid = "`${weaponName}` weapon name validnetlh lo'laHbe’.",
 		model_name_missing = "Qaw' model name parameter.",
@@ -6020,17 +6047,20 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 	},
 
 	exclusive_dealership = {
-		marker_label = "${label} | $${price}",
-		marker_label_purchase = "[${SeatEjectKey}] potlh '${label}' yIqImHa' $${price}",
+		cost_money = "${price} vItlhutlh",
+		cost_points = "${points} OP neD",
+
+		marker_label = "${label} | ${cost}",
+		marker_label_purchase = "[${SeatEjectKey}] ${label} tlhap ${cost}",
 
 		confirm_purchase = "yInar",
-		confirm_purchase_label = "${label} | $${price}",
+		confirm_purchase_label = "${label} | ${cost}",
 
 		deny_purchase = "qamuSHa', QIch  'oH",
 		accept_purchase = "HIq, jImej",
 		accept_purchase_info = "lIjchoHbe'chugh, 'Iv jImej vIghItlh vIghaj. mach, qarDaSmo' vItlhutlh.",
 
-		purchased_vehicle = "${label} tIq ghun yI'vetlh $${price}.",
+		purchased_vehicle = "${label} tlhapta' ${cost}.",
 		insufficient_funds = "chenmoHwI' SaS.",
 		area_not_clear = "'achDaq vIHech.",
 		invalid_package = "'ay'  qarDaS chu' yIngu'",
@@ -6045,7 +6075,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 		buyback_vehicle_help = "Qapla' lut vItlhutlh!",
 		buyback_title = "chuvmey chImwI' joHwI'",
-		sell_closest_vehicle = "qaStaHvIS ${label} wIpoQ $${price} (${percent}% chenmoH)?",
+		sell_closest_vehicle = "${label} be' reH ${price} vInep (\%${percent} vorgh)?",
 		deny_sale = "QaparHa', jatlhbe'chugh",
 		accept_sale = "Heghlu'meH QaQ jajvam",
 		accept_sale_description = "Hoch $${price} laH wIpe'meH qaStaHvIS wIqaw'egh? be'joy' qa' nobwI'.",
@@ -6058,7 +6088,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		sale_log_description = "${consoleName} qo'vvo'${label}-yo' tIqDaq $${price}.",
 
 		log_title = "choHwI' qutlh",
-		log_description = "choHwI' `${label}` Dap bom ${price} wov."
+		log_description = "`${label}` tlhapta' ${cost}."
 	},
 
 	failures = {
@@ -6675,7 +6705,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		gas_station_backdoor = "QeH tetlhDaq bo'Degh",
 		cleaning_station = "qech_bIQ",
 		grocery_store = "qevHom Sa'moHwI'",
-		penthouse_fridge = "HIl qorDaq",
+		penthouse_fridge = "Penthouse chadmer",
 		mug_shots = "mugh Shots",
 		prison_store = "QongDaq jInmol",
 		fruit_vendor = "chav vendor",
@@ -6847,6 +6877,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		dumpster_brownies = "Dried Up Brownies",
 		dumpster_pizza_slice = "Moldy Pizza Slice",
 		dumpster_banana = "Hairy Banana (Very Mushy)",
+		dumpster_almond_milk = "tI'vavlI' SoD Hoch jatlh",
 
 		-- items & item descriptions
 		body_armor = "Body Armor",
@@ -6996,6 +7027,16 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		clothing_bag = "ngIq vaqnay' bagh",
 		clothing_bag_description = "Never worry about fashion emergencies again! The clothing bag lets you store your favorite outfit and instantly equip it anywhere you go. This bag has all the magic of a fairy godmother, minus the bibbidi-bobbidi-boo.",
 
+		magnifying_glass = "tugh cha'tlha'",
+		magnifying_glass_description = "tugh cha'tlha' DI'onmeH QaQ poStaHvIS lo'taHvIS. pegh lo'taHvIS HIq patlh qem ro'Qe'Qa' cha' tlhagh.",
+
+		clover = "maqwew poS",
+		clover_description = "neH ghIq maqwew poS - qelIq Shor'a' reH DI'onmeH.",
+		small_frog = "rep waw'",
+		small_frog_description = "rep waw' tIb.\" reprupwaw'e', repqa' tu'lu'bej tIn law' Hoch.",
+		seashell = "dIngvammo'",
+		seashell_description = "bIr dIngvammo' Huch jaj pongwIj 'ej 'oH Sud jImej.",
+
 		raw_diamond = "QIn retlh",
 		raw_diamond_description = "wa' Duj mIllogh jen, QIn nobqu' Suq juHDaq.",
 		raw_morganite = "qeylIS morganite",
@@ -7126,8 +7167,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		donut_description = "QeQ vItlhutlh bIHegh",
 		green_apple = "loS 'Iw ghung",
 		green_apple_description = "loS qetbogh DaH jajvam jImej.",
-		sandwich = "Sa'nob",
-		sandwich_description = "Vegan jIH.",
+		sandwich = "Ham Sandwich",
+		sandwich_description = "QItlhutlh sandwich vItlhutlh ghewmeyvam.",
+		vegan_sandwich = "Vegan Sandwich",
+		vegan_sandwich_description = "qaStaHvIS tI' vay' bot lettuce 'ej ngav tomatoes cha'log qonlu'val 'ay' vItlhutlh ghojmoH.",
 		taco = "Taq'o'",
 		taco_description = "QIn'e' neH El Brayan.",
 		smores = "S'mores",
@@ -7137,7 +7180,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		pizza_slice = "Pizza Slice",
 		pizza_slice_description = "pa’ Hem jaghpu’ je leghlu’, cha’logh Sor'Ha’.",
 		hot_dog = "Hot Dog",
-		hot_dog_description = "QIch wIv chu’ Qay’be'.",
+		hot_dog_description = "glizzy chaHlaH like 'e' yInID.",
 		nachos = "Nachos",
 		nachos_description = "cha'logh yIbuSQo' Encarnación!!",
 		vanilla_ice_cream = "Vanilla Ice Cream",
@@ -7493,6 +7536,9 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 		milk = "HIq",
 		milk_description = "Iv ghoj qogh jach.",
+
+		almond_milk = "Almond Milk",
+		almond_milk_description = "chImHom bad 'ej wIlo' 'e' vItlhutlh?",
 
 		bandana = "bandana",
 		bandana_description = "nIvbogh gang po",
@@ -8272,7 +8318,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		weapon_addon_hk416_description = "H&K 416, lo'law''e' DaSop 'ISmey neH qonqa' maQmIgh - pagh, nargh, 'ej yIjaHbe' lung. tIq DawIvpu', qeH Hoch ghaH jabbI' ghaH quvmeH tIn SIbI'qa' lubagh. HIq vIneH niDDan (logh Firearm Forever) taHjaj!",
 
 		weapon_addon_680 = "Remington 680",
-		weapon_addon_680_description = "Remington Arms 1950 'e' vItlhutlh pump-action shotgun."
+		weapon_addon_680_description = "Remington Arms 1950 'e' vItlhutlh pump-action shotgun.",
+
+		weapon_addon_honey = "qaD Honey",
+		weapon_addon_honey_description = "pIn pongaD Badger PDW tIq je personal defense weapon, vaj mu' qan audioch configuration vIchuy'choH. gun laD gun 'ej bay ghu'wI' je Advanced Armament Corporation (AAC) chenmoH. .300 AAC Blackout vItlhutlh ngeD."
 	},
 
 	invisibility = {
@@ -8415,6 +8464,12 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		read_catalog = "Doch ~g~${InteractionKey} ~w~Catalog."
 	},
 
+	lag = {
+		fake_lag_invalid_fps = "fps pagh qatlh.",
+		fake_lag_clamp = "fps pagh rap Ha'. ${fps} 'ej HoHneh.",
+		fake_lag_disabled = "The fake lag has been disabled."
+	},
+
 	lean = {
 		press_to_sell_lean = "QIch ~INPUT_CONTEXT~ ghopwI' Lean be'Hom vItlhobchoH.",
 		local_not_interested = "be'Hom vaj SeQ luSIchDaq Duj.",
@@ -8513,6 +8568,23 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		start_download = "ngeHbe' Sovchu'",
 		slow_download = "qatlh Sovchu'",
 		regular_download = "choH Sovchu'",
+		purchases = "pItlh",
+		pledges = "chedbogh",
+		packages = "packages",
+		points = "qIm",
+		appreciated_tier = "Qaw'lu'ta'",
+		respected_tier = "qay'be'",
+		heroic_tier = "Hurgh'ragh",
+		legendary_tier = "quvHaghach",
+		god_tier = "Qo'noS",
+		custom_plate = "De'jen meb",
+		custom_character_id = "De'jen poH",
+		custom_phone_number = "De'jen Duy'",
+		reskin = "reskin",
+		webstore = "vabDot",
+		none = "pagh",
+		queue_pin = "PIN: ${queuePIN}",
+		copied = "Qapla'",
 		back = "qaleghneS", -- "qaleghneS" means "go back",
 		copy_license = "License ID", -- "QInDuqwI' ID" means "license ID",
 		copy_license_success = "Copied!", -- "'achDaq jIlembe'" means "copied successfully",
@@ -8601,7 +8673,9 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		respected_tier = "qay'be'",
 		heroic_tier = "Hurgh'ragh",
 		legendary_tier = "quvHaghach",
-		godlike_tier = "Qun'a'-'ut"
+		godlike_tier = "Qun'a'-'ut",
+
+		buddy_passed_through = "${playerName} machob Qugh jImej!"
 	},
 
 	logs = {
@@ -8654,6 +8728,27 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		issue_id = "Issue #${issueId}", -- issue_id = "be'logh #${issueId}",
 		releases_updated = "Releases updated.", -- releases_updated = "QIchDIchvo' HolchoHlaHbe'",
 		no_release_changes = "There were no release changes.", -- no_release_changes = "QIchDIchvo' jImej chalchajlo'"
+	},
+
+	magnifying_glass = {
+		searching = "yItlhutlh",
+
+		too_fast = "tlhIngan Hol qoraS",
+		failed_search = "yItlhutlh Qo'",
+		found_nothing = "yIqImHa' jatlhbe'.",
+		already_searched = "tlhIngan Hol: DaqvaD yaS:",
+		found_item = "tlhIngan Hol: qaSpu'DI' ${item}.",
+
+		press_to_sell_items = "tlhIngan Hol: chevwI' ~INPUT_CONTEXT~ to sell items.",
+		no_items_to_sell = "tlhIngan Hol: chevwI': pa'logh DIS.",
+		menu_title = "Qarbej Qapla'",
+		exit_shop = "Qapla'",
+		failed_sell = "tlhIngan Hol: qaSpu'DI': jImej.",
+
+		found_item_logs_title = "qaSpu'DI' lo'",
+		found_item_logs_details = "tlhIngan Hol: qaSpu'DI' ${consoleName} ${item} lo' ${ground}.",
+		sold_item_logs_title = "qaSpu'DI' Qapla'",
+		sold_item_logs_details = "tlhIngan Hol: qaSpu'DI' ${consoleName} $${price} laH ${item} Qapla'."
 	},
 
 	mdt = {
@@ -11449,7 +11544,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 		npc_vehicle = "Heghlu'meH QaQ jajvam! This vehicle is not a player owned vehicle.",
 		not_in_a_vehicle = "qaStaHvIS yIn 'ej chep! You are not currently driving a vehicle.",
-		invalid_minutes = "Doch not 'uch (between 1 minute and 12 hours).",
+		invalid_minutes = "loS jaj (loSDIch Hurgh wa' jaj je boQwI').",
 
 		not_on_duty = "jIyajbe'.",
 		failed_impound = "Qotlh batlh DochwI' ID chal.",
@@ -11816,6 +11911,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		spawner_burger_shot = "Burger Shot yetkazib berish transportlari",
 		spawner_bean_machine = "Bean Machine yetkazib berish transportlari",
 		spawner_weazel_news = "Weazel News transportlari",
+		spawner_state = "vay' Vehicles",
 		close_menu = "Menyuni yopish",
 		vehicle_list = "Transportlar ro'yxati",
 		park_vehicle = "Transportni park qilish",

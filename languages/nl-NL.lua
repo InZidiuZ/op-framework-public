@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 19 (do not change)
+-- AUTO LOCALES: 20 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -498,10 +498,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		reset_auto_drive_speed = "Automatische rij-snelheid teruggezet naar standaardwaarde.",
 		set_auto_drive_speed = "Automatische rij-snelheid ingesteld op ${speed} mijl per uur.",
 
-		disable_collisions_on = "Je botsingen zijn nu uitgeschakeld.",
-		disable_collisions_off = "Je botsingen zijn nu ingeschakeld.",
-		failed_toggle_collisions = "Kon uitgeschakelde botsingen niet omzetten.",
-
 		disabled_recoil_on = "Terugslag uitgeschakeld.",
 		disabled_recoil_off = "Terugslag ingeschakeld.",
 
@@ -628,10 +624,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		clean_ped_logs_title = "Gereinigde Ped",
 		clean_ped_logs_details = "${consoleName} heeft de ped van ${targetName} gereinigd.",
-
-		collisions_logs_title = "Botsingen",
-		collisions_off_logs_details = "${consoleName} heeft hun uitgeschakelde botsingen uitgeschakeld.",
-		collisions_on_logs_details = "${consoleName} heeft hun uitgeschakelde botsingen ingeschakeld.",
 
 		invalid_job_search = "Ongeldige zoekopdracht voor baan (moet minimaal 3 tekens bevatten).",
 		failed_job_search = "Zoeken naar banen is mislukt.",
@@ -1077,10 +1069,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		no_nearby_vehicles_command_parameter_server_id = "server id",
 		no_nearby_vehicles_command_parameter_server_id_help = "Als je 'geen nabije voertuigen' voor iemand anders wilt in-/uitschakelen, voer dan hun server id hier in.",
 		no_nearby_vehicles_command_substitutes = "",
-
-		disable_collisions_command = "uitschakelen_collisies",
-		disable_collisions_command_help = "Schakel de botsingen met voertuigen en voetgangers binnen een straal van 10 meter uit.",
-		disable_collisions_command_substitutes = "botsingen",
 
 		ghost_command = "geest",
 		ghost_command_help = "Deze commando zal /gluren, onzichtbaarheid en /botsingen uitschakelen.",
@@ -1706,6 +1694,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		spawn_contract_command_parameter_server_id_help = "De server-ID waarvoor u een contract wilt aanmaken. Als het leeg is, wordt automatisch voor uzelf geselecteerd.",
 		spawn_contract_command_substitutes = "",
 
+		-- game/buddy_pass
+		buddy_pass_command = "maatje_pas",
+		buddy_pass_command_help = "Open de maatje pas UI.",
+		buddy_pass_command_substitutes = "",
+
 		-- game/cache
 		cache_assets_command = "cache_assets",
 		cache_assets_command_help = "Dwingend verzoek en download meest gestreamde activa (voertuigen, objecten en kleding). Dit wordt niet aanbevolen tenzij u een trage verbinding hebt en activa niet snel genoeg kunt downloaden om naadloos te zijn. Dit kan er ook voor zorgen dat de client vastloopt terwijl het bezig is.",
@@ -1829,6 +1822,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		outfits_command = "outfits",
 		outfits_command_help = "Toon alle opgeslagen outfits.",
 		outfits_command_substitutes = "",
+
+		-- game/collisions
+		disable_collisions_command = "uitschakelen_collisies",
+		disable_collisions_command_help = "Schakel de botsingen uit met voertuigen en personages in een straal van 25 meter (alleen lokaal voor jou).",
+		disable_collisions_command_substitutes = "botsingen",
 
 		-- game/command_socket
 		reconnect_command_socket_command = "reconnect_command_socket",
@@ -1981,12 +1979,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		server_entity_command_parameter_network_id = "netwerk id",
 		server_entity_command_parameter_network_id_help = "Het netwerk id van de entiteit.",
 		server_entity_command_substitutes = "",
-
-		fake_lag_command = "fake_lag",
-		fake_lag_command_help = "Creëert nep lag.",
-		fake_lag_command_parameter_fps = "fps",
-		fake_lag_command_parameter_fps_help = "Het doel fps (>= 1).",
-		fake_lag_command_substitutes = "lag",
 
 		view_weapon_command = "bekijk_wapen",
 		view_weapon_command_help = "Maakt een object aan met de opgegeven model naam en positioneert het perfect voor screenshots.",
@@ -2514,6 +2506,13 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		jackpot_take_fees_command = "jackpot_take_fees",
 		jackpot_take_fees_command_help = "Neem een ​​vergoeding van alle jackpot-inventarissen.",
 		jackpot_take_fees_command_substitutes = "",
+
+		-- game/lag
+		fake_lag_command = "fake_lag",
+		fake_lag_command_help = "Creëert nep lag.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "Het doel fps (>= 1).",
+		fake_lag_command_substitutes = "lag",
 
 		-- game/locate
 		locate_entity_command = "locate_entity",
@@ -4639,6 +4638,29 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		closing_sentence = "Er is nog veel meer te doen in de stad! Vraag rond en maak wat vrienden ;)"
 	},
 
+	buddy_pass = {
+		buddy_pass = "Maatje Pas",
+		information_part_1 = "Duw je vriend direct door de wachtrij met een Maatje Pas!",
+		information_part_2 = "Alle gebruikers met een God Tier bijdrage hebben toegang tot deze functie met één gratis pas.",
+		information_part_3 = "De 'pas' is actief totdat je vriend de server verlaat. Daarna kun je iemand anders door laten gaan.",
+		information_part_4 = "Vraag om hun wachtrij-PIN om ze door te duwen!",
+		queue_pin = "Wachtrij-PIN",
+		available = "Beschikbaar",
+		close = "Sluiten",
+		webstore = "Webwinkel",
+		buddy_passes = "Vriendenpasjes",
+		push_through = "Doorduwen!",
+		queue_pin_not_set = "Je moet een wachtrij-PIN toevoegen.",
+		queue_pin_is_a_4_digit_pin = "Een wachtrij-PIN is een 4-cijferige code.",
+		no_buddy_passes = "Je hebt geen vriendenpasjes.",
+		no_buddy_passes_available = "Je hebt geen vriendenpasjes beschikbaar.",
+		no_queue_with_queue_pin = "Er stond niemand in de wachtrij met de opgegeven PIN.",
+		buddy_pushed_through = "Je hebt ${playerName} door de wachtrij geduwd!",
+
+		buddy_pass_used_logs_title = "Buddy Pass Gebruikt",
+		buddy_pass_used_logs_details = "${consoleName} heeft hun Buddy Pass gebruikt om ${targetConsoleName} door te duwen."
+	},
+
 	cache = {
 		download_progress = "Downloadvoortgang:\n- Voertuigen: ${vehiclesDone}/${vehiclesTotal}\n- Objecten: ${objectsDone}/${objectsTotal}\n- Peds: ${pedsDone}/${pedsTotal}\n- Kleding: ${clothingRequested}/${clothingTotal}",
 		slow_download_enabled = "Langzame download is ingeschakeld.",
@@ -4935,6 +4957,15 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		chest_hair = "Borsthaar",
 		body_blemishes = "Lichaamsvlekjes",
 		add_body_blemish = "Voeg lichaamsvlekje toe"
+	},
+
+	collisions = {
+		disable_collisions_on = "Je botsingen zijn nu uitgeschakeld.",
+		disable_collisions_off = "Je botsingen zijn nu ingeschakeld.",
+
+		collisions_logs_title = "Botsingen",
+		collisions_off_logs_details = "${consoleName} heeft hun uitgeschakelde botsingen uitgezet.",
+		collisions_on_logs_details = "${consoleName} heeft hun uitgeschakelde botsingen aangezet."
 	},
 
 	command_socket = {
@@ -5782,10 +5813,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		move_entity_failed = "Het is niet gelukt om de entiteit te verplaatsen.",
 		move_entity_no_permissions = "Poging om een entiteit te verplaatsen zonder de juiste toestemming.",
 
-		fake_lag_invalid_fps = "Ongeldige fps.",
-		fake_lag_clamp = "Fps wordt begrensd op minder dan ${fps}.",
-		fake_lag_disabled = "De nep-vertraging is uitgeschakeld.",
-
 		weapon_name_missing = "Missende wapennaam parameter.",
 		weapon_name_invalid = "`${weaponName}` is geen geldige wapennaam.",
 		model_name_missing = "Missende modelnaam parameter.",
@@ -6020,17 +6047,20 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	exclusive_dealership = {
-		marker_label = "${label} | $${price}",
-		marker_label_purchase = "[${SeatEjectKey}] Koop ${label} voor $${price}",
+		cost_money = "€${price}",
+		cost_points = "${points} OP Punten",
+
+		marker_label = "${label} | ${cost}",
+		marker_label_purchase = "[${SeatEjectKey}] Koop ${label} voor ${cost}",
 
 		confirm_purchase = "Bevestig Aankoop",
-		confirm_purchase_label = "${label} | $${price}",
+		confirm_purchase_label = "${label} | ${cost}",
 
 		deny_purchase = "Toch maar niet, ik wil het niet kopen.",
 		accept_purchase = "Ja, ik wil het kopen",
 		accept_purchase_info = "Weet je zeker dat je dit voertuig wilt kopen? Deze actie kan niet ongedaan worden gemaakt.",
 
-		purchased_vehicle = "Gekocht: ${label} voor $${price}.",
+		purchased_vehicle = "Heb een ${label} gekocht voor ${cost}.",
 		insufficient_funds = "Niet genoeg geld.",
 		area_not_clear = "Spawn-gebied is niet vrij.",
 		invalid_package = "Incorrect supporter-aanbod.",
@@ -6045,7 +6075,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		buyback_vehicle_help = "Druk op ~INPUT_CONTEXT~ om de ruil te openen.",
 		buyback_title = "Prestige Wheels Ruil",
-		sell_closest_vehicle = "Verkoop je ${label} voor $${price} (${percent}% van zijn waarde)?",
+		sell_closest_vehicle = "Verkoop je ${label} voor €${price} (${percent}% van de waarde)?",
 		deny_sale = "Nee, ik wil het behouden",
 		accept_sale = "Ja, ik weet het zeker",
 		accept_sale_description = "Weet je zeker dat je je voertuig wilt verkopen voor $${price}? Deze actie kan niet ongedaan worden gemaakt.",
@@ -6058,7 +6088,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		sale_log_description = "${consoleName} heeft hun `${label}` verkocht voor $${price}.",
 
 		log_title = "EDM Aankoop",
-		log_description = "De `${label}` gekocht voor $${price}."
+		log_description = "Heb de `${label}` gekocht voor ${cost}."
 	},
 
 	failures = {
@@ -6675,7 +6705,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		gas_station_backdoor = "Achterdeur tankstation",
 		cleaning_station = "Schoonmaakstation",
 		grocery_store = "Supermarkt",
-		penthouse_fridge = "Koelkast",
+		penthouse_fridge = "Penthouse Koelkast",
 		mug_shots = "Mugshots",
 		prison_store = "Gevangeniswinkel",
 		fruit_vendor = "Fruitverkoper",
@@ -6847,6 +6877,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		dumpster_brownies = "Uitgedroogde Brownies",
 		dumpster_pizza_slice = "Beschimmelde Pizzapunt",
 		dumpster_banana = "Harige Banaan (Erg Zacht)",
+		dumpster_almond_milk = "Zure Amandelmelk",
 
 		-- items & item descriptions
 		body_armor = "Kogelvrij Vest",
@@ -6996,6 +7027,16 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		clothing_bag = "Kledingtas",
 		clothing_bag_description = "Maak u nooit meer zorgen over mode-noodgevallen! De kledingtas stelt u in staat om uw favoriete outfit op te slaan en overal direct te dragen. Deze tas heeft al de magie van een feeënpeettante, zonder de bibbidi-bobbidi-boo.",
 
+		magnifying_glass = "Vergrootglas",
+		magnifying_glass_description = "Een vergrootglas voor al uw detective behoeften. Misschien vindt u een klavertje vier in het gras of een kleine kikker in de modder?",
+
+		clover = "Klavertje Vier",
+		clover_description = "Een zeldzaam klavertje vier voor geluk. Je kunt ze vinden in het gras als je goed genoeg zoekt.",
+		small_frog = "Kleine Kikker",
+		small_frog_description = "Gewoon een kleine kikker. Kijk naar dat kleine kereltje, hij is zo schattig!",
+		seashell = "Zeester",
+		seashell_description = "Een zeester van het strand. Je kunt de oceaan horen als je hem tegen je oor houdt.",
+
 		raw_diamond = "Onbewerkte Diamant",
 		raw_diamond_description = "Diamant in zijn natuurlijke vorm, vers uit de mijn.",
 		raw_morganite = "Ruwe Morganiet",
@@ -7126,8 +7167,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		donut_description = "Waarom zit er een gat in het midden, bwo",
 		green_apple = "Groene Appel",
 		green_apple_description = "Het is als een Red Bull, maar er waren geen objecten in het spel die overeenkwamen met een Red Bull blikje.",
-		sandwich = "Sandwich",
-		sandwich_description = "Het is veganistisch.",
+		sandwich = "Ham Sandwich",
+		sandwich_description = "Een heerlijke sandwich met ham en kaas.",
+		vegan_sandwich = "Veganistische Sandwich",
+		vegan_sandwich_description = "Ja, dit is letterlijk maar een stukje sla en een paar tomaten tussen twee sneetjes volkorenbrood. (Geen idee waarom je dit zou eten)",
 		taco = "Taco",
 		taco_description = "De specialiteit van El Brayan.",
 		smores = "S'mores",
@@ -7493,6 +7536,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		milk = "Melk",
 		milk_description = "Gewone koeienmelk geëxtraheerd met liefde.",
+
+		almond_milk = "Amandelmelk",
+		almond_milk_description = "Hoe hebben ze in hemelsnaam amandelen gemolken??????",
 
 		bandana = "Bandana",
 		bandana_description = "Een heleboel bendegedoe. (De Bloods winnen)",
@@ -8272,7 +8318,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		weapon_addon_hk416_description = "De H&K 416, de Ferrari van vuurwapens - slank, krachtig, en gegarandeerd om hoofden te laten draaien. Het is alsof je een personal trainer hebt voor je vinger, met resultaten die je vijanden jaloers maken. Zeg hallo tegen je nieuwe BFF (Best Firearm Forever)!",
 
 		weapon_addon_680 = "Remington 680",
-		weapon_addon_680_description = "De Remington 680 is een pompactie-shotgun die in 1950 is ontwikkeld door Remington Arms."
+		weapon_addon_680_description = "De Remington 680 is een pompactie-shotgun die in 1950 is ontwikkeld door Remington Arms.",
+
+		weapon_addon_honey = "Honingdas",
+		weapon_addon_honey_description = "De AAC Honey Badger PDW is een persoonlijk verdedigingswapen dat vaak wordt gebruikt in een onderdrukte configuratie en is gebaseerd op de AR-15. Het is gehuisvest in .300 AAC Blackout en werd oorspronkelijk geproduceerd door Advanced Armament Corporation (AAC)."
 	},
 
 	invisibility = {
@@ -8415,6 +8464,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		read_catalog = "Druk op ~g~${InteractionKey} ~w~om de catalogus te lezen."
 	},
 
+	lag = {
+		fake_lag_invalid_fps = "Ongeldige fps.",
+		fake_lag_clamp = "Fps wordt beperkt tot onder ${fps}.",
+		fake_lag_disabled = "De valse vertraging is uitgeschakeld."
+	},
+
 	lean = {
 		press_to_sell_lean = "Druk op ~INPUT_CONTEXT~ om lean te verkopen.",
 		local_not_interested = "De lokale persoon lijkt op dit moment niet geïnteresseerd te zijn.",
@@ -8513,6 +8568,23 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		start_download = "Download Starten",
 		slow_download = "Langzame Download",
 		regular_download = "Normale Download",
+		purchases = "Aankopen",
+		pledges = "Beloftes",
+		packages = "Pakketten",
+		points = "Punten",
+		appreciated_tier = "Gewaardeerde tier",
+		respected_tier = "Gerespecteerde tier",
+		heroic_tier = "Heldhaftige tier",
+		legendary_tier = "Legendarische tier",
+		god_tier = "Godenniveau",
+		custom_plate = "Aangepaste kentekenplaat",
+		custom_character_id = "Aangepast personage ID",
+		custom_phone_number = "Aangepast telefoonnummer",
+		reskin = "Reskin",
+		webstore = "Webwinkel",
+		none = "Geen",
+		queue_pin = "PIN: ${queuePIN}",
+		copied = "Gekopieerd!",
 		back = "Terug",
 		copy_license = "Licentie ID",
 		copy_license_success = "Gekopieerd!",
@@ -8601,7 +8673,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		respected_tier = "Gerespecteerde tier",
 		heroic_tier = "Heldhaftige tier",
 		legendary_tier = "Legendarische tier",
-		godlike_tier = "Goddelijke tier"
+		godlike_tier = "Goddelijke tier",
+
+		buddy_passed_through = "${playerName} heeft zijn/haar Buddy Pass gebruikt om je door te duwen!"
 	},
 
 	logs = {
@@ -8654,6 +8728,27 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		issue_id = "Probleem #${issueId}",
 		releases_updated = "Updates uitgevoerd.",
 		no_release_changes = "Er waren geen updates."
+	},
+
+	magnifying_glass = {
+		searching = "De grond doorzoeken",
+
+		too_fast = "Je beweegt te snel.",
+		failed_search = "Kan de grond niet doorzoeken.",
+		found_nothing = "Je hebt hier niets gevonden.",
+		already_searched = "Dit gebied lijkt al doorzocht te zijn.",
+		found_item = "Je hebt een ${item} gevonden.",
+
+		press_to_sell_items = "Druk op ~INPUT_CONTEXT~ om items te verkopen.",
+		no_items_to_sell = "Je hebt geen items om te verkopen.",
+		menu_title = "Zeldzame Items",
+		exit_shop = "Winkel verlaten",
+		failed_sell = "Het is niet gelukt om het item te verkopen.",
+
+		found_item_logs_title = "Item Gevonden Op Grond",
+		found_item_logs_details = "${consoleName} heeft een ${item} gevonden op de grond (${ground}).",
+		sold_item_logs_title = "Zeldzaam Item Verkocht",
+		sold_item_logs_details = "${consoleName} heeft een ${item} verkocht voor $${price}."
 	},
 
 	mdt = {
@@ -11449,7 +11544,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		npc_vehicle = "Deze voertuig is niet van een speler",
 		not_in_a_vehicle = "Je zit momenteel niet in een voertuig.",
-		invalid_minutes = "Tijd ongeldig (tussen 1 minuut en 12 uur).",
+		invalid_minutes = "Ongeldige tijd (tussen 1 minuut en 48 uur).",
 
 		not_on_duty = "Je bent niet aan het werk.",
 		failed_impound = "Voertuig in beslag nemen mislukt.",
@@ -11816,6 +11911,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		spawner_burger_shot = "Burger Shot Bezorgvoertuigen",
 		spawner_bean_machine = "Bean Machine Bezorgvoertuigen",
 		spawner_weazel_news = "Weazel News Voertuigen",
+		spawner_state = "Staatsvoertuigen",
 		close_menu = "Sluit Menu",
 		vehicle_list = "Voertuigenlijst",
 		park_vehicle = "Parkeer Voertuig",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 19 (do not change)
+-- AUTO LOCALES: 20 (do not change)
 
 OP.Global.Locales.Languages["meme-1929"] = {
 	-- configuration settings for language
@@ -498,10 +498,6 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		reset_auto_drive_speed = "Reset auto drive speed to default.",
 		set_auto_drive_speed = "Set auto drive speed to ${speed} miles per hour.",
 
-		disable_collisions_on = "Your collisions are now disabled.",
-		disable_collisions_off = "Your collisions are now enabled.",
-		failed_toggle_collisions = "Failed to toggle disabled collisions.",
-
 		disabled_recoil_on = "Recoil disabled.",
 		disabled_recoil_off = "Recoil enabled.",
 
@@ -628,10 +624,6 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		clean_ped_logs_title = "Cleaned Ped",
 		clean_ped_logs_details = "${consoleName} cleaned ${targetName}'s ped.",
-
-		collisions_logs_title = "Collisions",
-		collisions_off_logs_details = "${consoleName} toggled off the disabled collision.",
-		collisions_on_logs_details = "${consoleName} toggled on the disabled collision.",
 
 		invalid_job_search = "Invalid job search (should have at least 3 characters).",
 		failed_job_search = "Failed to search for jobs.",
@@ -1077,10 +1069,6 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		no_nearby_vehicles_command_parameter_server_id = "server id",
 		no_nearby_vehicles_command_parameter_server_id_help = "If you're wanting to toggle the 'no nearby vehicles' for someone else, insert their server id here.",
 		no_nearby_vehicles_command_substitutes = "",
-
-		disable_collisions_command = "disable_collisions",
-		disable_collisions_command_help = "Disable collisions with vehicles and people in a 10 meter radius.",
-		disable_collisions_command_substitutes = "collisions",
 
 		ghost_command = "ghost",
 		ghost_command_help = "This command will enable /peek, invisibility and /disable_collisions.",
@@ -1706,6 +1694,11 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		spawn_contract_command_parameter_server_id_help = "The server ID for which you want to spawn the contract for. If left blank, it will automatically select your own server ID.",
 		spawn_contract_command_substitutes = "",
 
+		-- game/buddy_pass
+		buddy_pass_command = "buddy_pass",
+		buddy_pass_command_help = "Open the buddy pass UI.",
+		buddy_pass_command_substitutes = "",
+
 		-- game/cache
 		cache_assets_command = "cache_assets",
 		cache_assets_command_help = "Request and download the most streamed assets (vehicles, objects, and clothing) forcefully. This is not recommended unless you have a slow connection and the assets are not downloading fast enough on demand, causing non-seamless experience. This command may also cause client crashes while it's in action.",
@@ -1829,6 +1822,11 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		outfits_command = "garments",
 		outfits_command_help = "Roll all thy saved garments.",
 		outfits_command_substitutes = "",
+
+		-- game/collisions
+		disable_collisions_command = "disable_collisions",
+		disable_collisions_command_help = "Disable collisions with vehicles and individuals in a 25 meter radius (Only locally for you).",
+		disable_collisions_command_substitutes = "collisions",
 
 		-- game/command_socket
 		reconnect_command_socket_command = "reconnect_command_socket",
@@ -1981,12 +1979,6 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		server_entity_command_parameter_network_id = "network id",
 		server_entity_command_parameter_network_id_help = "The network id of the entity.",
 		server_entity_command_substitutes = "",
-
-		fake_lag_command = "fake_lag",
-		fake_lag_command_help = "Simulate lag on purpose.",
-		fake_lag_command_parameter_fps = "fps",
-		fake_lag_command_parameter_fps_help = "The target frames per second (>= 1).",
-		fake_lag_command_substitutes = "lag",
 
 		view_weapon_command = "view_weapon",
 		view_weapon_command_help = "Spawns an object with th' given model name an' positions it perfectly fer screenshots.",
@@ -2514,6 +2506,13 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		jackpot_take_fees_command = "jackpot_take_fees",
 		jackpot_take_fees_command_help = "Take a commission from all jackpot inventories.",
 		jackpot_take_fees_command_substitutes = "",
+
+		-- game/lag
+		fake_lag_command = "fake_lag",
+		fake_lag_command_help = "Simulate lag on purpose.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "The target frames per second (>= 1).",
+		fake_lag_command_substitutes = "lag",
 
 		-- game/locate
 		locate_entity_command = "locate_entity",
@@ -4639,6 +4638,29 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		closing_sentence = "There be a lot more t' do in the city! Ask 'round and make some mates ;)"
 	},
 
+	buddy_pass = {
+		buddy_pass = "Buddy Pass",
+		information_part_1 = "Immediately propel your friend through the queue with a Buddy Pass!",
+		information_part_2 = "All users with a God Tier pledge has access to this feature with one free pass.",
+		information_part_3 = "The 'pass' remains active until your friend disconnects from the server. You can then allow someone else through.",
+		information_part_4 = "Asketh f'r their queue PIN to pusheth them through!",
+		queue_pin = "Queue PIN",
+		available = "Available",
+		close = "Close",
+		webstore = "Webstore",
+		buddy_passes = "Buddy Passes",
+		push_through = "Pusheth Through!",
+		queue_pin_not_set = "Thee hast to addeth a queue PIN.",
+		queue_pin_is_a_4_digit_pin = "A queue PIN is a 4-digit PIN.",
+		no_buddy_passes = "Thee doth not has't any buddy passes.",
+		no_buddy_passes_available = "Thee doth not has't any buddy passes available.",
+		no_queue_with_queue_pin = "There wast nay one in the queue with the provid'd PIN.",
+		buddy_pushed_through = "Thou didst push ${playerName} through the queue!",
+
+		buddy_pass_used_logs_title = "Buddy Pass Used",
+		buddy_pass_used_logs_details = "${consoleName} hath used their Buddy Pass to push through ${targetConsoleName}."
+	},
+
 	cache = {
 		download_progress = "Downloadin' Progress:\n- Boats: ${vehiclesDone}/${vehiclesTotal}\n- Objects: ${objectsDone}/${objectsTotal}\n- Blokes: ${pedsDone}/${pedsTotal}\n- Clothing: ${clothingRequested}/${clothingTotal}",
 		slow_download_enabled = "Slow download be enabled.",
@@ -4935,6 +4957,15 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		chest_hair = "Chest Fuzz",
 		body_blemishes = "Body Imperfections",
 		add_body_blemish = "Add Body Imperfection"
+	},
+
+	collisions = {
+		disable_collisions_on = "Thy collisions art now disabled.",
+		disable_collisions_off = "Thy collisions art now enabled.",
+
+		collisions_logs_title = "Collisions",
+		collisions_off_logs_details = "${consoleName} toggled their disabled collisions off.",
+		collisions_on_logs_details = "${consoleName} toggled their disabled collisions on."
 	},
 
 	command_socket = {
@@ -5782,10 +5813,6 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		move_entity_failed = "Failed to move object.",
 		move_entity_no_permissions = "Tried to shift an object without proper permissions.",
 
-		fake_lag_invalid_fps = "Invalid frames per second.",
-		fake_lag_clamp = "Clamping frames per second to be below ${fps}.",
-		fake_lag_disabled = "The artificial delay has been disabled.",
-
 		weapon_name_missing = "Missing weapon name.",
 		weapon_name_invalid = "`${weaponName}` is not a valid weapon name.",
 		model_name_missing = "Missing model name.",
@@ -6020,17 +6047,20 @@ OP.Global.Locales.Languages["meme-1929"] = {
 	},
 
 	exclusive_dealership = {
-		marker_label = "${label} | $${price}",
-		marker_label_purchase = "[${SeatEjectKey}] Purchase ${label} for $${price}",
+		cost_money = "${price} dollars",
+		cost_points = "${points} OP Points",
+
+		marker_label = "${label} | ${cost}",
+		marker_label_purchase = "[${SeatEjectKey}] Purchase ${label} for ${cost}",
 
 		confirm_purchase = "Confirm Purchase",
-		confirm_purchase_label = "${label} | $${price}",
+		confirm_purchase_label = "${label} | ${cost}",
 
 		deny_purchase = "Nevermind, I don't want it",
 		accept_purchase = "Yes, I want to buy it",
 		accept_purchase_info = "Art thou sure thou would purchase this carriage? Thou canst not undo this action.",
 
-		purchased_vehicle = "Purchased a ${label} for $${price}.",
+		purchased_vehicle = "Purchased a ${label} for ${cost}.",
 		insufficient_funds = "Insufficient funds.",
 		area_not_clear = "Spawn area is not clear.",
 		invalid_package = "Incorrect supporter pledge.",
@@ -6045,7 +6075,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		buyback_vehicle_help = "Presseth ~INPUT_CONTEXT~ to accesseth the exchange.",
 		buyback_title = "Exchange of Prestige Wheels",
-		sell_closest_vehicle = "Do you want to sell your ${label} for $${price} (${percent}% of its original price)?",
+		sell_closest_vehicle = "Sell your ${label} for ${price} dollars (${percent}% of its worth)?",
 		deny_sale = "No, I changed my mind.",
 		accept_sale = "Yes, I am sure.",
 		accept_sale_description = "Are you certain you want to sell your vehicle for $${price}? This action cannot be undone.",
@@ -6058,7 +6088,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		sale_log_description = "${consoleName} hath sold their `${label}` for $$${price}.",
 
 		log_title = "EDM Purchase",
-		log_description = "Purchased the `${label}` for $${price}."
+		log_description = "Purchased the `${label}` for ${cost}."
 	},
 
 	failures = {
@@ -6675,7 +6705,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		gas_station_backdoor = "Gas Station Back Entrance",
 		cleaning_station = "Cleaning Station",
 		grocery_store = "Grocery Market",
-		penthouse_fridge = "Icebox",
+		penthouse_fridge = "Penthouse Fridge",
 		mug_shots = "Mug Shots",
 		prison_store = "Convict Store",
 		fruit_vendor = "Fruit Vendor",
@@ -6847,6 +6877,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		dumpster_brownies = "Desiccated Brownies",
 		dumpster_pizza_slice = "Mildewy Pizza Slice",
 		dumpster_banana = "Furry Banana (Very Mushy)",
+		dumpster_almond_milk = "Sour Almond Milk",
 
 		-- items & item descriptions
 		body_armor = "Body Armour",
@@ -6996,6 +7027,16 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		clothing_bag = "Clothing Bag",
 		clothing_bag_description = "Never worry about clothing emergencies again! The clothing bag allows you to store your favourite attire and instantly equip it wherever you go. This bag possesses all the magic of a fairy godmother, minus the bibbidi-bobbidi-boo.",
 
+		magnifying_glass = "Detective's Glass",
+		magnifying_glass_description = "A detective's tool for investigating. Maybe thou shalt find a 4 leaf clover in the meadows or a tadpole in the mire?",
+
+		clover = "4 Leaf Clover",
+		clover_description = "A rare 4 leaf clover for fortune. Thou can findeth these in the meadows if thou looketh hard enough.",
+		small_frog = "Tiny Frog",
+		small_frog_description = "A wee frog. Behold the little fellow, he's quite charming!",
+		seashell = "Sea Shell",
+		seashell_description = "A shell from the shore. Thou canst hear the ocean by holding it to thine ear.",
+
 		raw_diamond = "Raw Diamond",
 		raw_diamond_description = "Diamond in its natural form, fresh from the mine.",
 		raw_morganite = "Unpolished Morganite",
@@ -7126,8 +7167,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		donut_description = "Why is there a hole in the middle, my dear sir?",
 		green_apple = "Green Apple",
 		green_apple_description = "It's similar to an apple but green, my good sir.",
-		sandwich = "Sandwich",
-		sandwich_description = "It's a vegan delight!",
+		sandwich = "Ham Sanger",
+		sandwich_description = "A jolly good sanger with lovely ham and cheese.",
+		vegan_sandwich = "Vegan Sanger",
+		vegan_sandwich_description = "Yeah this is literally just a piece of lettuce and a few tomatoes betwixt two pieces of wholegrain bread. (Idk why you'd ever eat this)",
 		taco = "Taco",
 		taco_description = "El Brayan's specialty, old bean.",
 		smores = "S'mores",
@@ -7137,7 +7180,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		pizza_slice = "Pizza Slice",
 		pizza_slice_description = "A small piece of pizza for you.",
 		hot_dog = "Hot Dog",
-		hot_dog_description = "Eat this hot dog quickly as if it's your last meal.",
+		hot_dog_description = "Gobble up this glizzy like it'll be your last.",
 		nachos = "Nachos",
 		nachos_description = "Nachos delicious enough for even the pickiest eaters.",
 		vanilla_ice_cream = "Vanilla Ice Cream",
@@ -7493,6 +7536,9 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		milk = "Milk",
 		milk_description = "Regular bovine milk extracted with ardor.",
+
+		almond_milk = "Almond's Milk",
+		almond_milk_description = "How the blazes did they milk almonds??????",
 
 		bandana = "Bandana",
 		bandana_description = "Whole lotta gang shit. (Bloods win)",
@@ -8272,7 +8318,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		weapon_addon_hk416_description = "The H&K 416, the Ferrari of firearms - sleek, powerful, and guaranteed to turn heads. It's like having a personal trainer for your trigger finger, delivering results that'll make your enemies jealous. Say hello to your new BFF (Best Firearm Forever)!",
 
 		weapon_addon_680 = "undefined",
-		weapon_addon_680_description = "undefined"
+		weapon_addon_680_description = "undefined",
+
+		weapon_addon_honey = "Bee's Knees",
+		weapon_addon_honey_description = "The AAC Honey Badger PDW is a personal defence weapon, frequently used in a suppressed configuration and is based on the AR-15. It is chambered in .300 AAC Blackout and was originally produced by Advanced Armament Corporation (AAC)."
 	},
 
 	invisibility = {
@@ -8415,6 +8464,12 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		read_catalog = "Press ~g~${InteractionKey} ~w~to peruse Catalog"
 	},
 
+	lag = {
+		fake_lag_invalid_fps = "Invalid fps.",
+		fake_lag_clamp = "Clamping fps to be below ${fps}.",
+		fake_lag_disabled = "The fake lag has been disabled."
+	},
+
 	lean = {
 		press_to_sell_lean = "undefined",
 		local_not_interested = "undefined",
@@ -8513,6 +8568,23 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		start_download = "Start Download",
 		slow_download = "Slower Download",
 		regular_download = "Regular Download",
+		purchases = "Acquisitions",
+		pledges = "Commitments",
+		packages = "Packages",
+		points = "Score",
+		appreciated_tier = "Favored Tier",
+		respected_tier = "Respected Tier",
+		heroic_tier = "Heroic Tier",
+		legendary_tier = "Legendary Tier",
+		god_tier = "God Tier",
+		custom_plate = "1929 Custom Plate",
+		custom_character_id = "1929 Custom Character ID",
+		custom_phone_number = "1929 Custom Plate Number",
+		reskin = "Reskin",
+		webstore = "Webstore",
+		none = "None",
+		queue_pin = "PIN: ${queuePIN}",
+		copied = "Copied!",
 		back = "Go Back",
 		copy_license = "License ID",
 		copy_license_success = "Successfully Copied!",
@@ -8601,7 +8673,9 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		respected_tier = "Respected Tier",
 		heroic_tier = "Heroic Tier",
 		legendary_tier = "Legendary Tier",
-		godlike_tier = "Godlike Tier"
+		godlike_tier = "Godlike Tier",
+
+		buddy_passed_through = "${playerName} used their Buddy Pass to push thee through!"
 	},
 
 	logs = {
@@ -8654,6 +8728,27 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		issue_id = "Issue #${issueId}",
 		releases_updated = "Releases be updated.",
 		no_release_changes = "There wert nay release changes."
+	},
+
+	magnifying_glass = {
+		searching = "Searching The Ground",
+
+		too_fast = "Thou art moving too fast.",
+		failed_search = "Failed to search the ground.",
+		found_nothing = "Thee didst not find aught here.",
+		already_searched = "This area seems to have been searched already.",
+		found_item = "Thou hast found a ${item}.",
+
+		press_to_sell_items = "Press ~INPUT_CONTEXT~ to sell thy items.",
+		no_items_to_sell = "Thou hast no items to sell.",
+		menu_title = "Rare Artifactes",
+		exit_shop = "Exit Shop",
+		failed_sell = "Failed to sell thine item.",
+
+		found_item_logs_title = "Found Artifact On Ground",
+		found_item_logs_details = "${consoleName} found a ${item} on the ground (${ground}).",
+		sold_item_logs_title = "Sold Rare Artifact",
+		sold_item_logs_details = "${consoleName} sold a ${item} for $${price}."
 	},
 
 	mdt = {
@@ -11449,7 +11544,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		npc_vehicle = "This vehicle is not owned by a player.",
 		not_in_a_vehicle = "Thou art not currently piloting a vehicle.",
-		invalid_minutes = "Invalid time (between 1 minute and 12 hours).",
+		invalid_minutes = "Invalid time (between 1 minute and 48 hours).",
 
 		not_on_duty = "Thou art not on duty.",
 		failed_impound = "Failed to impound vehicle, verily!",
@@ -11816,6 +11911,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		spawner_burger_shot = "Burger Shot Delivery Carriages",
 		spawner_bean_machine = "Bean Machine Delivery Carriages",
 		spawner_weazel_news = "Weazel News Carriages",
+		spawner_state = "State Motors",
 		close_menu = "Close Menu",
 		vehicle_list = "Carriage List",
 		park_vehicle = "Park Carriage",

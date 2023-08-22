@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 19 (do not change)
+-- AUTO LOCALES: 20 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -498,10 +498,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		reset_auto_drive_speed = "รีเซ็ตความเร็วของการขับรถอัตโนมัติเป็นค่าเริ่มต้น",
 		set_auto_drive_speed = "ตั้งค่าความเร็วของการขับรถอัตโนมัติเป็น ${speed} ไมล์ต่อชั่วโมง",
 
-		disable_collisions_on = "การชนของคุณได้ถูกปิดใช้งานแล้ว",
-		disable_collisions_off = "การชนของคุณได้ถูกเปิดใช้งานแล้ว",
-		failed_toggle_collisions = "ไม่สามารถสลับการชนที่ถูกปิดใช้งานได้",
-
 		disabled_recoil_on = "ปิดการสั่งยิงโน้ต",
 		disabled_recoil_off = "เปิดการสั่งยิงโน้ต",
 
@@ -628,10 +624,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		clean_ped_logs_title = "ทำความสะอาดเป็ด",
 		clean_ped_logs_details = "${consoleName} ทำความสะอาดเป็ดของ ${targetName}",
-
-		collisions_logs_title = "การชน",
-		collisions_off_logs_details = "${consoleName} เปลี่ยนการใช้งานการชนของพวกเขาเป็นปิด",
-		collisions_on_logs_details = "${consoleName} เปลี่ยนการใช้งานการชนของพวกเขาเป็นเปิด",
 
 		invalid_job_search = "การค้นหางานไม่ถูกต้อง (ต้องมีอย่างน้อย 3 ตัวอักษร)",
 		failed_job_search = "การค้นหางานล้มเหลว",
@@ -1077,10 +1069,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		no_nearby_vehicles_command_parameter_server_id = "server id",
 		no_nearby_vehicles_command_parameter_server_id_help = "หากคุณต้องการเปิด/ปิด 'no nearby vehicles' สำหรับผู้เล่นคนอื่น โปรดใส่ server id ของพวกเขาที่นี่",
 		no_nearby_vehicles_command_substitutes = "",
-
-		disable_collisions_command = "disable_collisions",
-		disable_collisions_command_help = "ปิดใช้งานการชนกับยานพาหนะและบุคคลในรัศมี 10 เมตร",
-		disable_collisions_command_substitutes = "collisions",
 
 		ghost_command = "ghost",
 		ghost_command_help = "คำสั่งนี้จะเปิดใช้งาน /peek, ความไม่มองเห็น และ /disable_collisions",
@@ -1706,6 +1694,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		spawn_contract_command_parameter_server_id_help = "ไอดีเซิร์ฟเวอร์ที่คุณต้องการสร้างสัญญาสำหรับ หากเว้นว่างไว้จะเลือกตัวคุณเองอัตโมมัติ",
 		spawn_contract_command_substitutes = "",
 
+		-- game/buddy_pass
+		buddy_pass_command = "buddy_pass",
+		buddy_pass_command_help = "เปิดหน้าต่าง Buddy Pass.",
+		buddy_pass_command_substitutes = "",
+
 		-- game/cache
 		cache_assets_command = "แคชทรัพยากร",
 		cache_assets_command_help = "การร้องขอและดาวน์โหลดทรัพยากรที่ถูกสตรีมมิ่งมากที่สุด (ยานพาหนะ วัตถุ และเสื้อผ้า) นี่ไม่เป็นทางการแนะนำนอกจากคุณมีการเชื่อมต่อช้าและทรัพยากรไม่สามารถดาวน์โหลดได้อย่างราบรื่น เพื่อป้องกันไม่ให้เกิดการล็อคไคลเอ็นต์ขณะทำงาน นี่อาจทำให้เกิดอุบัติเหตุได้",
@@ -1829,6 +1822,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		outfits_command = "ชุดแต่งตัว",
 		outfits_command_help = "แสดงรายการชุดแต่งตัวที่บันทึกไว้ทั้งหมดของคุณ",
 		outfits_command_substitutes = "",
+
+		-- game/collisions
+		disable_collisions_command = "disable_collisions",
+		disable_collisions_command_help = "ปิดการชนกับยานพาหนะและบุคคลสร้างความสะดวกในรัศมี 25 เมตร (เฉพาะในเครื่องคอมพิวเตอร์ของคุณเท่านั้น).",
+		disable_collisions_command_substitutes = "collisions",
 
 		-- game/command_socket
 		reconnect_command_socket_command = "เชื่อมต่อคำสั่งซ็อกเก็ตอีกครั้ง",
@@ -1981,12 +1979,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		server_entity_command_parameter_network_id = "network id",
 		server_entity_command_parameter_network_id_help = "network id ของ entity ที่ต้องการ",
 		server_entity_command_substitutes = "",
-
-		fake_lag_command = "fake_lag",
-		fake_lag_command_help = "สร้างแล็กแบบปลอม",
-		fake_lag_command_parameter_fps = "fps",
-		fake_lag_command_parameter_fps_help = "จำนวน fps ที่ต้องการ (≥ 1)",
-		fake_lag_command_substitutes = "lag",
 
 		view_weapon_command = "view_weapon",
 		view_weapon_command_help = "สร้างวัตถุด้วยชื่อแบบ (model name) แล้วจัดตำแหน่งให้อยู่ในตำแหน่งที่เหมาะสมสำหรับการถ่ายภาพ",
@@ -2514,6 +2506,13 @@ OP.Global.Locales.Languages["th-TH"] = {
 		jackpot_take_fees_command = "jackpot_take_fees",
 		jackpot_take_fees_command_help = "เก็บค่าธรรมเนียมจากสินค้าทั้งหมดของจังหวะ",
 		jackpot_take_fees_command_substitutes = "",
+
+		-- game/lag
+		fake_lag_command = "fake_lag",
+		fake_lag_command_help = "สร้างแล็กแบบปลอม",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "จำนวน fps ที่ต้องการ (≥ 1)",
+		fake_lag_command_substitutes = "lag",
 
 		-- game/locate
 		locate_entity_command = "locate_entity",
@@ -4639,6 +4638,29 @@ OP.Global.Locales.Languages["th-TH"] = {
 		closing_sentence = "มีอะไรหลายอย่างที่สามารถทำได้ในเมือง! คุณสามารถถามรายละเอียดเพิ่มเติมและหาเพื่อนได้เลย ;)"
 	},
 
+	buddy_pass = {
+		buddy_pass = "Buddy Pass",
+		information_part_1 = "ผ่านชิ้นส่วนของการพลังที่เป็นเพื่อนของคุณผ่านคิวได้ทันทีด้วย Buddy Pass!",
+		information_part_2 = "ผู้ใช้งานทุกรายที่มีคำสั่ง God Tier สามารถใช้ฟีเจอร์นี้ได้โดยมี Buddy Pass 1 ครั้งฟรี",
+		information_part_3 = "Buddy Pass จะใช้งานได้จนกระทั่งเพื่อนของคุณตัดการเชื่อมต่อออกจากเซิร์ฟเวอร์ คุณสามารถดึงคนอื่นเข้ามาผ่าน Buddy Pass ได้",
+		information_part_4 = "ขอให้พวกเขาแจ้ง Queue PIN เพื่อที่จะผ่านพวกเขา!",
+		queue_pin = "Queue PIN",
+		available = "ใช้งานได้",
+		close = "ปิด",
+		webstore = "ร้านค้าออนไลน์",
+		buddy_passes = "บัตรเพื่อน",
+		push_through = "ผ่านไป!",
+		queue_pin_not_set = "คุณต้องเพิ่ม Queue PIN",
+		queue_pin_is_a_4_digit_pin = "Queue PIN เป็นรหัสแบบ 4 หลัก",
+		no_buddy_passes = "คุณไม่มีบัตรเพื่อนใด ๆ",
+		no_buddy_passes_available = "คุณไม่มีบัตรเพื่อนที่ใช้งานได้",
+		no_queue_with_queue_pin = "ไม่มีคนในคิวที่ระบุ PIN",
+		buddy_pushed_through = "คุณผลัก ${playerName} ผ่านคิวแล้ว!",
+
+		buddy_pass_used_logs_title = "ใช้ Buddy Pass",
+		buddy_pass_used_logs_details = "${consoleName} ใช้ Buddy Pass เพื่อผลักผ่าน ${targetConsoleName}"
+	},
+
 	cache = {
 		download_progress = "ดาวน์โหลดไปแล้ว:\n- ยานพาหนะ: ${vehiclesDone}/${vehiclesTotal}\n- วัตถุ: ${objectsDone}/${objectsTotal}\n- ตัวละคร NPC: ${pedsDone}/${pedsTotal}\n- เสื้อผ้า: ${clothingRequested}/${clothingTotal}",
 		slow_download_enabled = "การดาวน์โหลดช้าถูกเปิดใช้งาน",
@@ -4935,6 +4957,15 @@ OP.Global.Locales.Languages["th-TH"] = {
 		chest_hair = "ขนหน้าอก",
 		body_blemishes = "รอยด่างจุดบนร่างกาย",
 		add_body_blemish = "เพิ่มรอยด่างจุดบนร่างกาย"
+	},
+
+	collisions = {
+		disable_collisions_on = "การชนของคุณถูกปิดการใช้งานแล้ว",
+		disable_collisions_off = "การชนของคุณเปิดการใช้งานอีกครั้งแล้ว",
+
+		collisions_logs_title = "การชน",
+		collisions_off_logs_details = "${consoleName} เปิดใช้งานการชนที่ถูกปิดของตัวเอง",
+		collisions_on_logs_details = "${consoleName} ปิดใช้งานการชนที่ถูกปิดของตัวเอง"
 	},
 
 	command_socket = {
@@ -5782,10 +5813,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		move_entity_failed = "ไม่สามารถย้ายออบเจ็กต์ได้",
 		move_entity_no_permissions = "พยายามย้ายองค์ประกอบ entity โดยไม่มีสิทธิ์เข้าถึง",
 
-		fake_lag_invalid_fps = "ค่า fps ไม่ถูกต้อง",
-		fake_lag_clamp = "จำกัด fps ให้อยู่ในระดับต่ำกว่า ${fps}",
-		fake_lag_disabled = "การใช้งานการล่าช้าได้ถูกปิดใช้งานแล้ว",
-
 		weapon_name_missing = "ระบุชื่ออาวุธไม่ได้",
 		weapon_name_invalid = "`${weaponName}` ไม่ใช่ชื่ออาวุธที่ถูกต้อง",
 		model_name_missing = "ระบุชื่อโมเดลไม่ได้",
@@ -6020,17 +6047,20 @@ OP.Global.Locales.Languages["th-TH"] = {
 	},
 
 	exclusive_dealership = {
-		marker_label = "${label} | $${price}",
-		marker_label_purchase = "[${SeatEjectKey}] ซื้อ ${label} ราคา $${price}",
+		cost_money = "${price} บาท",
+		cost_points = "${points} แต้ม OP Points",
+
+		marker_label = "${label} | ${cost}",
+		marker_label_purchase = "[${SeatEjectKey}] ซื้อ ${label} ในราคา ${cost}",
 
 		confirm_purchase = "ยืนยันการซื้อ",
-		confirm_purchase_label = "${label} | $${price}",
+		confirm_purchase_label = "${label} | ${cost}",
 
 		deny_purchase = "ไม่เป็นไร ฉันไม่ต้องการ",
 		accept_purchase = "ใช่ ฉันต้องการซื้อ",
 		accept_purchase_info = "คุณแน่ใจหรือไม่ว่าต้องการซื้อยานพาหนะรุ่นนี้? การดำเนินการนี้ไม่สามารถยกเลิกได้.",
 
-		purchased_vehicle = "ซื้อ ${label} ในราคา $${price} เสร็จสมบูรณ์",
+		purchased_vehicle = "ซื้อ ${label} ในราคา ${cost} แล้ว",
 		insufficient_funds = "เงินไม่พอ",
 		area_not_clear = "พื้นที่ไม่สะอาดเพียงพอในการเกิด",
 		invalid_package = "ยอดผู้สนับสนุนไม่ถูกต้อง",
@@ -6045,7 +6075,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		buyback_vehicle_help = "กด ~INPUT_CONTEXT~ เพื่อเข้าถึง Prestige Wheels Exchange",
 		buyback_title = "Prestige Wheels Exchange",
-		sell_closest_vehicle = "คุณต้องการขาย ${label} ของคุณใช่ไหม ราคา $${price} (${percent}% ของราคา)?",
+		sell_closest_vehicle = "ขาย ${label} ของคุณในราคา $${price} (${percent}% ของมูลค่า)",
 		deny_sale = "ไม่เป็นไร ฉันต้องการเก็บรักษา",
 		accept_sale = "ใช่ ฉันแน่ใจ",
 		accept_sale_description = "คุณแน่ใจหรือไม่ว่าต้องการขาย ${label} ไปในราคา $${price} การดำเนินการนี้ไม่สามารถยกเลิกได้.",
@@ -6058,7 +6088,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		sale_log_description = "${consoleName} ขาย `${label}` ของตนเองไปให้ร้านเพื่อรับเงิน $${price} บาท",
 
 		log_title = "การซื้อ EDM",
-		log_description = "ซื้อ `${label}` ในราคา $${price}"
+		log_description = "ซื้อ `${label}` ในราคา ${cost}"
 	},
 
 	failures = {
@@ -6675,7 +6705,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		gas_station_backdoor = "หลังร้านน้ำมัน",
 		cleaning_station = "สถานีทำความสะอาด",
 		grocery_store = "ร้านขายของชำ",
-		penthouse_fridge = "ตู้เย็น",
+		penthouse_fridge = "ตู้เย็นระบบ Penthouse",
 		mug_shots = "ถ่ายรูปประจำตัว",
 		prison_store = "ร้านขายของคุมขัง",
 		fruit_vendor = "ร้านค้าผลไม้",
@@ -6847,6 +6877,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		dumpster_brownies = "บราวนี่แห้งเกิน",
 		dumpster_pizza_slice = "พิซซ่าแถบ (ที่มีรสกลิ่น)",
 		dumpster_banana = "กล้วยที่มีขน (แห้งเปื่อย)",
+		dumpster_almond_milk = "นมอัลมอนด์ที่เป่าเป็นเป็นรสซอย",
 
 		-- items & item descriptions
 		body_armor = "เกราะกันกระสุน",
@@ -6996,6 +7027,16 @@ OP.Global.Locales.Languages["th-TH"] = {
 		clothing_bag = "ถุงเสื้อผ้า",
 		clothing_bag_description = "ไม่ต้องกังวลเรื่องฟองชี้แฟชั่นอีกต่อไป! ถุงเสื้อผ้าช่วยเก็บเสื้อผ้าที่ชื่นชอบและใช้สวมได้ทุกที่ ถุงนี้มีความสมเหตุสมผลเหมือนเจ้าแม่มดแต่โดยไม่ต้องพูดวิพากษ์วิจารณ์หรือฟูมฟาย",
 
+		magnifying_glass = "แว่นขยาย",
+		magnifying_glass_description = "แว่นขยายสำหรับการเป็นนักสืบของคุณทั้งหมด บางทีคุณอาจพบใบโปรยล่องหน่อยในหญ้า หรือกบเล็กน้อยในโคลน?",
+
+		clover = "ใบโปรยสี่ใบ",
+		clover_description = "ใบโปรยสี่ใบที่หายากสำหรับโชคดี คุณสามารถหาพวกเขาในหญ้าถ้าคุณมองอย่างมาก",
+		small_frog = "กบเล็ก",
+		small_frog_description = "กบเล็กๆ เพียงตัวคุณมองดูมัน มันน่ารักมาก!",
+		seashell = "เปลือกหอย",
+		seashell_description = "เปลือกหอยจากชายหาด คุณสามารถได้ยินเสียงน้ำทะเลถ้าคุณวางไว้ที่หู",
+
 		raw_diamond = "เพชรดิบ",
 		raw_diamond_description = "เพชรในรูปแบบของมันเอง ถูกขุดออกจากเหมืองล่าสุด",
 		raw_morganite = "มอร์แกนไหม้ดดิ้น",
@@ -7126,8 +7167,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		donut_description = "ทำไมมันมีรูท่ามกลางละครับ",
 		green_apple = "แอปเปิ้ลสีเขียว",
 		green_apple_description = "เหมือนเป็ดแดง แต่ไม่มีอะไรตรงกับกระป๋องเป็ดแดงในเกม",
-		sandwich = "แซนวิช",
-		sandwich_description = "มันเป็นอาหารเจ",
+		sandwich = "แซนวิชแฮม",
+		sandwich_description = "แซนวิชอร่อยที่มีแฮมและชีส",
+		vegan_sandwich = "แซนวิชเจ",
+		vegan_sandwich_description = "แค่ชิ้นใบกาดหนึบๆกับมะเขือเทศบางๆอยู่ระหว่างขนมปัง",
 		taco = "ทาโก้",
 		taco_description = "ของพิเศษของเอล ไบรัน",
 		smores = "สมอร์ส",
@@ -7137,7 +7180,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		pizza_slice = "ชิ้นพิซซ่า",
 		pizza_slice_description = "ชิ้นพิซซ่าเล็กน้อยสำหรับคุณ",
 		hot_dog = "ฮอตดอก",
-		hot_dog_description = "กินลงเบาๆ ไม่ก็จะเป็นจานสุดท้ายของคุณ",
+		hot_dog_description = "กินฮอตด็อกไปเถอะ คือเลิซซี่ในโอกาสสุดท้ายของคุณ",
 		nachos = "นาโชส์",
 		nachos_description = "นาโชส์ที่ดีพอสำหรับเอ็นคาร์นาซิออน!!",
 		vanilla_ice_cream = "ไอศกรีมวนิลา",
@@ -7493,6 +7536,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		milk = "นม",
 		milk_description = "นมจากวัวทั่วไปที่ได้ถูกแยมคลายออกมาด้วยความรัก",
+
+		almond_milk = "นมอัลมอนด์",
+		almond_milk_description = "ทำยังไงในสามารถเอานมจากอัลมอนด์หะว่า?",
 
 		bandana = "ผ้าคลุมหัว",
 		bandana_description = "มีความสำคัญมากกับแก๊งบลัด (แบล็คชิดชนะ)",
@@ -8272,7 +8318,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		weapon_addon_hk416_description = "H&K 416 รถแห่งปืนพลังงาน - กระชับและทรงพลัง และรับประกันว่าจะทำให้คุณและศัตรูของคุณได้เห็นเสมอ กลายเป็นเพื่อนที่ดีที่สุดของปืนของคุณ!",
 
 		weapon_addon_680 = "ปืนไรเฟิล Remington 680",
-		weapon_addon_680_description = "Remington 680 เป็นปืนลูกซองที่พัฒนาโดย Remington Arms เมื่อปี 1950"
+		weapon_addon_680_description = "Remington 680 เป็นปืนลูกซองที่พัฒนาโดย Remington Arms เมื่อปี 1950",
+
+		weapon_addon_honey = "honey badge",
+		weapon_addon_honey_description = "เอไอซี ฮันนี่ แบดเจอร์ เป็นอาวุธป้องกันส่วนตัวที่ใช้บ่อยในรูปแบบรุกอัดเสียงและอิงตามพื้นฐานของ AR-15 มีลำกล้องหลอดมู่ลี่เป็นจำนวนมาก และเป็นชิ้นส่วนกำเนิดจาก  Advanced Armament Corporation (AAC) หน้าแรก"
 	},
 
 	invisibility = {
@@ -8415,6 +8464,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		read_catalog = "กด ~g~${InteractionKey} ~w~เพื่ออ่านแคตตาล็อก"
 	},
 
+	lag = {
+		fake_lag_invalid_fps = "fps ไม่ถูกต้อง",
+		fake_lag_clamp = "การจำกัด fps เพื่อที่จะต่ำกว่า ${fps}",
+		fake_lag_disabled = "การปลดล็อกการจำลองความหล่อเหลืองแบบเท็จ"
+	},
+
 	lean = {
 		press_to_sell_lean = "กด ~INPUT_CONTEXT~ เพื่อขาย Lean",
 		local_not_interested = "คนในพื้นที่นี้ดูไม่สนใจในขณะนี้",
@@ -8513,6 +8568,23 @@ OP.Global.Locales.Languages["th-TH"] = {
 		start_download = "เริ่มต้นการดาวน์โหลด",
 		slow_download = "ดาวน์โหลดช้า",
 		regular_download = "ดาวน์โหลดปกติ",
+		purchases = "การสั่งซื้อ",
+		pledges = "สัญญา",
+		packages = "แพคเกจ",
+		points = "คะแนน",
+		appreciated_tier = "ระดับที่น่าประทับใจ",
+		respected_tier = "ระดับที่เคารพ",
+		heroic_tier = "ระดับฮีโร่",
+		legendary_tier = "ระดับตำนาน",
+		god_tier = "ระดับพระเจ้า",
+		custom_plate = "ทะเบียนรถที่กำหนดเอง",
+		custom_character_id = "รหัสตัวละครที่กำหนดเอง",
+		custom_phone_number = "หมายเลขโทรศัพท์ที่กำหนดเอง",
+		reskin = "เปลี่ยนลักษณะ",
+		webstore = "ร้านค้าออนไลน์",
+		none = "ไม่มี",
+		queue_pin = "รหัส PIN: ${queuePIN}",
+		copied = "คัดลอกแล้ว!",
 		back = "กลับ",
 		copy_license = "หมายเลขใบอนุญาต",
 		copy_license_success = "คัดลอกแล้ว!",
@@ -8601,7 +8673,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		respected_tier = "ระดับที่เคารพ",
 		heroic_tier = "ระดับฮีโร่",
 		legendary_tier = "ระดับตำนาน",
-		godlike_tier = "ระดับเจ้าเทพ"
+		godlike_tier = "ระดับเจ้าเทพ",
+
+		buddy_passed_through = "${playerName} ใช้ Buddy Pass เพื่อผ่านคุณ!"
 	},
 
 	logs = {
@@ -8654,6 +8728,27 @@ OP.Global.Locales.Languages["th-TH"] = {
 		issue_id = "ปัญหา #${issueId}",
 		releases_updated = "อัปเดตการเปิดตัวแล้ว",
 		no_release_changes = "ไม่มีการเปลี่ยนแปลงการเปิดตัว"
+	},
+
+	magnifying_glass = {
+		searching = "กำลังค้นหาบนพื้น",
+
+		too_fast = "คุณกำลังเคลื่อนที่อยู่รวดเร็วเกินไป",
+		failed_search = "ไม่สามารถค้นหาบนพื้นได้",
+		found_nothing = "คุณไม่พบอะไรที่นี่",
+		already_searched = "พื้นที่นี้ดูเหมือนจะถูกค้นหาแล้ว",
+		found_item = "คุณพบ ${item}",
+
+		press_to_sell_items = "กด ~INPUT_CONTEXT~ เพื่อขายไอเท็ม",
+		no_items_to_sell = "คุณไม่มีไอเท็มที่จะขาย",
+		menu_title = "ไอเท็มหายาก",
+		exit_shop = "ออกจากร้านค้า",
+		failed_sell = "ขายไอเท็มไม่สำเร็จ",
+
+		found_item_logs_title = "พบไอเท็มบนพื้น",
+		found_item_logs_details = "${consoleName} พบ ${item} บนพื้น (${ground})",
+		sold_item_logs_title = "ขายไอเท็มหายาก",
+		sold_item_logs_details = "${consoleName} ขาย ${item} ได้ราคา $${price}"
 	},
 
 	mdt = {
@@ -11449,7 +11544,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		npc_vehicle = "ยานพาหนะนี้ไม่ได้เป็นของผู้เล่น",
 		not_in_a_vehicle = "คุณไม่ได้ขับยานพาหนะใด ๆ ในขณะนี้",
-		invalid_minutes = "เวลาไม่ถูกต้อง (ระหว่าง 1 นาทีถึง 12 ชั่วโมง)",
+		invalid_minutes = "เวลาไม่ถูกต้อง (ระหว่าง 1 นาทีและ 48 ชั่วโมง)",
 
 		not_on_duty = "คุณไม่ได้เปิดใช้งานบริการ",
 		failed_impound = "ล้มเหลวในการอุปถัมภ์ยานพาหนะ",
@@ -11816,6 +11911,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		spawner_burger_shot = "ยานพาหนะการจัดส่งร้าน เบอร์เกอร์ช็อต",
 		spawner_bean_machine = "ยานพาหนะการจัดส่งร้าน บีนแมชชีน",
 		spawner_weazel_news = "ยานพาหนะข่าว Weazel News",
+		spawner_state = "ยานพาหนะของรัฐ",
 		close_menu = "ปิดเมนู",
 		vehicle_list = "รายการยานพาหนะ",
 		park_vehicle = "จอดยานพาหนะ",

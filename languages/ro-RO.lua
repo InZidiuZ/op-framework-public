@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 19 (do not change)
+-- AUTO LOCALES: 20 (do not change)
 
 OP.Global.Locales.Languages["ro-RO"] = {
 	-- configuration settings for language
@@ -498,10 +498,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		reset_auto_drive_speed = "Viteza de autocondus a fost resetata la cea implicita.",
 		set_auto_drive_speed = "Viteza de autocondus a fost setata la ${speed} mph.",
 
-		disable_collisions_on = "Coliziunile sunt dezactivate.",
-		disable_collisions_off = "Coliziunile sunt activate.",
-		failed_toggle_collisions = "Nu s-a putut dezactiva/activa coliziunile.",
-
 		disabled_recoil_on = "Reculul dezactivat.",
 		disabled_recoil_off = "Reculul activat.",
 
@@ -628,10 +624,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		clean_ped_logs_title = "Ped curățat",
 		clean_ped_logs_details = "${consoleName} a curățat ped-ul lui ${targetName}.",
-
-		collisions_logs_title = "Coliziuni",
-		collisions_off_logs_details = "${consoleName} a dezactivat coliziunile lor.",
-		collisions_on_logs_details = "${consoleName} a activat coliziunile lor.",
 
 		invalid_job_search = "Căutarea de job-uri este invalidă (trebuie să conțină cel puțin 3 caractere).",
 		failed_job_search = "Căutarea de job-uri a eșuat.",
@@ -1077,10 +1069,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		no_nearby_vehicles_command_parameter_server_id = "id-server",
 		no_nearby_vehicles_command_parameter_server_id_help = "Daca doresti sa activezi/dezactivezi 'fara masini aproape' pentru altcineva, introdu id-ul lor de server aici.",
 		no_nearby_vehicles_command_substitutes = "",
-
-		disable_collisions_command = "dezactiveaza_coliziuni",
-		disable_collisions_command_help = "Dezactiveaza coliziunile cu vehiculele si pietonii intr-un raza de 10 metri.",
-		disable_collisions_command_substitutes = "collision",
 
 		ghost_command = "fantoma",
 		ghost_command_help = "Acest comandă va activa /privire, invizibilitatea și /disable_collisions.",
@@ -1706,6 +1694,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		spawn_contract_command_parameter_server_id_help = "ID-ul serverului pe care doriți să generați un contract. Se va selecta automat dacă este lăsat gol.",
 		spawn_contract_command_substitutes = "",
 
+		-- game/buddy_pass
+		buddy_pass_command = "buddy_pass",
+		buddy_pass_command_help = "Deschide interfața Buddy Pass.",
+		buddy_pass_command_substitutes = "",
+
 		-- game/cache
 		cache_assets_command = "cacheaza_asset-uri",
 		cache_assets_command_help = "Solicitați și descărcați forcibil cele mai utilizate asset-uri (vehicule, obiecte și îmbrăcăminte). Nu este recomandat decât dacă aveți o conexiune lentă și asset-urile nu sunt descărcate destul de rapid pentru ca experiența să fie fără probleme. Acest lucru poate cauza, de asemenea, blocări ale clientului în timpul acțiunii.",
@@ -1829,6 +1822,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		outfits_command = "ținute",
 		outfits_command_help = "Afișează toate ținutele salvate.",
 		outfits_command_substitutes = "",
+
+		-- game/collisions
+		disable_collisions_command = "dezactiveaza_coliziuni",
+		disable_collisions_command_help = "Dezactivează coliziunile cu vehiculele și pietonii într-un raza de 25 de metri (doar local pentru tine).",
+		disable_collisions_command_substitutes = "collision",
 
 		-- game/command_socket
 		reconnect_command_socket_command = "reconectare_socket_comanda",
@@ -1981,12 +1979,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		server_entity_command_parameter_network_id = "ID rețea",
 		server_entity_command_parameter_network_id_help = "ID-ul rețelei a entității.",
 		server_entity_command_substitutes = "",
-
-		fake_lag_command = "fals_lag",
-		fake_lag_command_help = "Creează o întrerupere falsă în conexiune.",
-		fake_lag_command_parameter_fps = "fps",
-		fake_lag_command_parameter_fps_help = "FPS-ul țintă (>= 1).",
-		fake_lag_command_substitutes = "întârziere",
 
 		view_weapon_command = "vezi_armă",
 		view_weapon_command_help = "Generează un obiect cu numele modelului dat și îl poziționează perfect pentru capturi de ecran.",
@@ -2514,6 +2506,13 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		jackpot_take_fees_command = "jackpot_take_fees",
 		jackpot_take_fees_command_help = "Se percepe o taxă din toate inventarele de jackpot.",
 		jackpot_take_fees_command_substitutes = "",
+
+		-- game/lag
+		fake_lag_command = "fals_lag",
+		fake_lag_command_help = "Creează o întrerupere falsă în conexiune.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "FPS-ul țintă (>= 1).",
+		fake_lag_command_substitutes = "întârziere",
 
 		-- game/locate
 		locate_entity_command = "locate_entity",
@@ -4639,6 +4638,29 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		closing_sentence = "Există mult mai multe activități de făcut în oraș! Întreabă în jur și fă-ți câțiva prieteni ;)"
 	},
 
+	buddy_pass = {
+		buddy_pass = "Buddy Pass",
+		information_part_1 = "Împinge instantaneu prietenul tău în coadă cu un Buddy Pass!",
+		information_part_2 = "Toți utilizatorii cu o donație de nivel God au acces la această funcționalitate cu un singur pass gratuit.",
+		information_part_3 = "Pass-ul este activ până când prietenul tău se deconectează de pe server. După aceea, poți împinge pe cineva altcineva.",
+		information_part_4 = "Cereți PIN-ul lor de la coadă pentru a-i trece mai departe!",
+		queue_pin = "PIN la coadă",
+		available = "Disponibil",
+		close = "Închide",
+		webstore = "Magazin online",
+		buddy_passes = "Permisiuni de a invita prieteni",
+		push_through = "Treceți mai departe!",
+		queue_pin_not_set = "Trebuie să adăugați un PIN la coadă.",
+		queue_pin_is_a_4_digit_pin = "Un PIN la coadă are 4 cifre.",
+		no_buddy_passes = "Nu aveți nicio permisiune de a invita prieteni.",
+		no_buddy_passes_available = "Nu aveți nicio permisiune de a invita prieteni disponibilă.",
+		no_queue_with_queue_pin = "Nu exista nimeni în coadă cu PIN-ul furnizat.",
+		buddy_pushed_through = "Ai împins pe ${playerName} prin coadă!",
+
+		buddy_pass_used_logs_title = "Buddy Pass utilizat",
+		buddy_pass_used_logs_details = "${consoleName} a utilizat Buddy Pass-ul pentru a împinge pe ${targetConsoleName}."
+	},
+
 	cache = {
 		download_progress = "Progresul descărcării:\n- Vehicule: ${vehiclesDone}/${vehiclesTotal}\n- Obiecte: ${objectsDone}/${objectsTotal}\n- Peds: ${pedsDone}/${pedsTotal}\n- Îmbrăcăminte: ${clothingRequested}/${clothingTotal}",
 		slow_download_enabled = "Descărcarea lentă a fost activată.",
@@ -4935,6 +4957,15 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		chest_hair = "Păr pe piept",
 		body_blemishes = "Imperfecțiuni pe corp",
 		add_body_blemish = "Adaugă imperfecțiune pe corp"
+	},
+
+	collisions = {
+		disable_collisions_on = "Coliziunile tale sunt acum dezactivate.",
+		disable_collisions_off = "Coliziunile tale sunt acum activate.",
+
+		collisions_logs_title = "Coliziuni",
+		collisions_off_logs_details = "${consoleName} a dezactivat coliziunile lor.",
+		collisions_on_logs_details = "${consoleName} a activat coliziunile lor dezactivate."
 	},
 
 	command_socket = {
@@ -5782,10 +5813,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		move_entity_failed = "Mutarea entității a eșuat.",
 		move_entity_no_permissions = "S-a încercat să se mute o entitate fără permisiunile necesare.",
 
-		fake_lag_invalid_fps = "Fps invalid.",
-		fake_lag_clamp = "Limitare fps sub ${fps}.",
-		fake_lag_disabled = "Simularea lag-ului a fost dezactivată.",
-
 		weapon_name_missing = "Lipsește numele parametrului de armă.",
 		weapon_name_invalid = "`${weaponName}` nu este un nume de armă valid.",
 		model_name_missing = "Lipsește numele parametrului de model.",
@@ -6020,17 +6047,20 @@ OP.Global.Locales.Languages["ro-RO"] = {
 	},
 
 	exclusive_dealership = {
-		marker_label = "${label} | $${price}",
-		marker_label_purchase = "[${SeatEjectKey}] Cumpără ${label} pentru $${price}",
+		cost_money = "${price} lei",
+		cost_points = "${points} puncte OP",
+
+		marker_label = "${label} | ${cost}",
+		marker_label_purchase = "[${SeatEjectKey}] Cumpără ${label} pentru ${cost}",
 
 		confirm_purchase = "Confirmă Cumpărarea",
-		confirm_purchase_label = "${label} | $${price}",
+		confirm_purchase_label = "${label} | ${cost}",
 
 		deny_purchase = "Nu mai vreau",
 		accept_purchase = "Da, vreau să cumpăr",
 		accept_purchase_info = "Sunteți sigur că doriți să cumpărați acest vehicul? Această acțiune nu poate fi anulată.",
 
-		purchased_vehicle = "Ați achiziționat un ${label} pentru $${price}.",
+		purchased_vehicle = "Ai cumpărat un/una ${label} pentru ${cost}.",
 		insufficient_funds = "Fonduri insuficiente.",
 		area_not_clear = "Zona de spawnare nu este curată.",
 		invalid_package = "Pachet de sprijinitor incorect.",
@@ -6045,7 +6075,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		buyback_vehicle_help = "Apăsați tasta ~INPUT_CONTEXT~ pentru a accesa schimbul de anvelope.",
 		buyback_title = "Schimb de anvelope Prestige",
-		sell_closest_vehicle = "Doriți să vindeți ${label}-ul pentru $${price} (${percent}% din prețul său)?",
+		sell_closest_vehicle = "Vinde ${label} pentru ${price} lei (${percent}% din valoarea sa)?",
 		deny_sale = "Nu contează, vreau să-l păstrez",
 		accept_sale = "Da, sunt sigur",
 		accept_sale_description = "Sunteți sigur că doriți să vindeți vehiculul dumneavoastră pentru $${price}? Această acțiune nu poate fi anulată.",
@@ -6058,7 +6088,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		sale_log_description = "${consoleName} a vândut `${label}` pentru $${price}.",
 
 		log_title = "Cumpărare EDM",
-		log_description = "Achiziționat `${label}` cu ${price}$."
+		log_description = "Ai cumpărat `${label}` pentru ${cost}."
 	},
 
 	failures = {
@@ -6675,7 +6705,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		gas_station_backdoor = "Intrare Discreta Benzinarie",
 		cleaning_station = "Statie Spalare",
 		grocery_store = "Magazin alimentar",
-		penthouse_fridge = "Frigider",
+		penthouse_fridge = "Frigider Penthouse",
 		mug_shots = "Poze Infractori",
 		prison_store = "Magazin inchisoare",
 		fruit_vendor = "Vanzator fructe",
@@ -6847,6 +6877,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		dumpster_brownies = "Napolitane Uscate",
 		dumpster_pizza_slice = "Felie de Pizza Cu Mohorât",
 		dumpster_banana = "Banana Cu Păr That (Foarte Moale)",
+		dumpster_almond_milk = "Lapte de migdale fermentat",
 
 		-- items & item descriptions
 		body_armor = "Armură De Corp",
@@ -6996,6 +7027,16 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		clothing_bag = "Geantă de haine",
 		clothing_bag_description = "Nu te mai îngrijora niciodată de urgenta modei! Geanta de haine îți permite să stochezi ținuta ta preferată și să o folosești imediat oriunde te duci. Această geantă are toată magia unei zâne mamă, dar fără bibbidi-bobbidi-boo.",
 
+		magnifying_glass = "Lupă",
+		magnifying_glass_description = "O lupă pentru toate nevoile de detectiv. Poate veți găsi o trifoi cu patru foi în iarbă sau o broască mică în noroi?",
+
+		clover = "Trifoi cu patru foi",
+		clover_description = "Un trifoi cu patru foi rar pentru noroc. Puteți găsi acestea în iarbă dacă căutați destul de atent.",
+		small_frog = "Broască mică",
+		small_frog_description = "Doar o broască mică. Uitați-vă la micuțul, este atât de drăguț!",
+		seashell = "Scoică",
+		seashell_description = "O scoică de pe plajă. Puteți auzi oceanul dacă o puneți la ureche.",
+
 		raw_diamond = "Diamant Brut",
 		raw_diamond_description = "Diamantul în forma sa naturală, proaspăt scos din mină.",
 		raw_morganite = "Morganit brut",
@@ -7126,8 +7167,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		donut_description = "De ce e un gol în mijloc bwo",
 		green_apple = "Măr verde",
 		green_apple_description = "Este ca un Red Bull dar jocul nu are o sticlă care să semene cu o sticlă de Red Bull.",
-		sandwich = "Sendviș",
-		sandwich_description = "Este vegan.",
+		sandwich = "Sandviș cu șuncă",
+		sandwich_description = "Un sandviș delicios cu șuncă și brânză.",
+		vegan_sandwich = "Sandviș vegan",
+		vegan_sandwich_description = "Da, asta este pur și simplu o bucată de salată și câteva roșii între două felii de pâine integrală. (Nu știu de ce ai mânca așa ceva)",
 		taco = "Taco",
 		taco_description = "Specialitatea lui El Brayan.",
 		smores = "S'mores",
@@ -7137,7 +7180,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		pizza_slice = "Felie de pizza",
 		pizza_slice_description = "O mică felie de pizza pentru tine.",
 		hot_dog = "Câine Cald",
-		hot_dog_description = "Înghite această gustare chiar ca și cum ar fi ultima ta.",
+		hot_dog_description = "Înghiți acest hot dog ca și cum ar fi ultimul.",
 		nachos = "Nachos",
 		nachos_description = "Nachos destul de buni pentru Encarnacion!!",
 		vanilla_ice_cream = "Înghețată de Vanilie",
@@ -7493,6 +7536,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		milk = "Lapte",
 		milk_description = "Lapte de vacă obișnuit extras cu dragoste.",
+
+		almond_milk = "Lapte de migdale",
+		almond_milk_description = "Cum dracu i-au muls migdalele??????",
 
 		bandana = "Bandana",
 		bandana_description = "Multe chestii de bandă. (Bloods câștigă)",
@@ -8272,7 +8318,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		weapon_addon_hk416_description = "H&K 416, Ferrari-ul armelor - elegant, puternic și garantat să atragă atenția. Este ca și cum ai avea un antrenor personal pentru degetul pe tragaci, oferind rezultate care îi vor face pe inamicii tăi invidioși. Salută-ți noul cel mai bun prieten (Best Firearm Forever)!",
 
 		weapon_addon_680 = "Remington 680",
-		weapon_addon_680_description = "Remington 680 este o pusca cu pompa dezvoltata de Remington Arms in anul 1950."
+		weapon_addon_680_description = "Remington 680 este o pusca cu pompa dezvoltata de Remington Arms in anul 1950.",
+
+		weapon_addon_honey = "Bursuc de miere",
+		weapon_addon_honey_description = "AAC Honey Badger PDW este o armă de apărare personală, adesea utilizată într-o configurație suprimată și este bazată pe AR-15. Este încărcată în calibrul .300 AAC Blackout și a fost produsă inițial de Advanced Armament Corporation (AAC)."
 	},
 
 	invisibility = {
@@ -8415,6 +8464,12 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		read_catalog = "Apăsați ~g~${InteractionKey} ~w~pentru a citi Catalogul"
 	},
 
+	lag = {
+		fake_lag_invalid_fps = "FPS invalid.",
+		fake_lag_clamp = "Încadrarea FPS-ului sub ${fps}.",
+		fake_lag_disabled = "Întârzierea falsă a fost dezactivată."
+	},
+
 	lean = {
 		press_to_sell_lean = "Apasă ~INPUT_CONTEXT~ pentru a vinde Lean.",
 		local_not_interested = "Locuitorul nu pare interesat în acest moment.",
@@ -8513,6 +8568,23 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		start_download = "Începeți descărcarea",
 		slow_download = "Descărcare lentă",
 		regular_download = "Descărcare obișnuită",
+		purchases = "Achiziții",
+		pledges = "Promisiuni",
+		packages = "Pachete",
+		points = "Puncte",
+		appreciated_tier = "Categorie Apreciată",
+		respected_tier = "Categorie Respectată",
+		heroic_tier = "Categorie Eroică",
+		legendary_tier = "Categorie Legendară",
+		god_tier = "Nivelul Divin",
+		custom_plate = "Placă Personalizată",
+		custom_character_id = "ID Caracter Personalizat",
+		custom_phone_number = "Număr de Telefon Personalizat",
+		reskin = "Reskin",
+		webstore = "Magazin online",
+		none = "Nimic",
+		queue_pin = "PIN: ${queuePIN}",
+		copied = "Copiat!",
 		back = "Înapoi",
 		copy_license = "ID-ul permisului",
 		copy_license_success = "Copiat!",
@@ -8601,7 +8673,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		respected_tier = "Categorie Respectată",
 		heroic_tier = "Categorie Eroică",
 		legendary_tier = "Categorie Legendară",
-		godlike_tier = "Categorie Divină"
+		godlike_tier = "Categorie Divină",
+
+		buddy_passed_through = "${playerName} a folosit Buddy Pass-ul lor pentru a te trage înăuntru!"
 	},
 
 	logs = {
@@ -8654,6 +8728,27 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		issue_id = "Problemă #${issueId}",
 		releases_updated = "Versiunile au fost actualizate.",
 		no_release_changes = "Nu au existat schimbări la versiuni."
+	},
+
+	magnifying_glass = {
+		searching = "Căutând pe Pământ",
+
+		too_fast = "Te deplasezi prea rapid.",
+		failed_search = "Căutarea pe pământ a eșuat.",
+		found_nothing = "Nu ai găsit nimic aici.",
+		already_searched = "Această zonă pare să fi fost căutată deja.",
+		found_item = "Ai găsit un ${item}.",
+
+		press_to_sell_items = "Apasă ~INPUT_CONTEXT~ pentru a vinde obiecte.",
+		no_items_to_sell = "Nu ai niciun obiect de vândut.",
+		menu_title = "Obiecte Rare",
+		exit_shop = "Ieși din Magazin",
+		failed_sell = "Nu s-a putut vinde obiectul.",
+
+		found_item_logs_title = "Obiect Găsit Pe Pământ",
+		found_item_logs_details = "${consoleName} a găsit un ${item} pe pământ (${ground}).",
+		sold_item_logs_title = "Vândut Obiect Rare",
+		sold_item_logs_details = "${consoleName} a vândut un ${item} pentru $${price}."
 	},
 
 	mdt = {
@@ -11449,7 +11544,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		npc_vehicle = "Acest vehicul nu aparține unui jucător.",
 		not_in_a_vehicle = "Nu conduci un vehicul în acest moment.",
-		invalid_minutes = "Timp invalid (între 1 minut și 12 ore).",
+		invalid_minutes = "Timp invalid (între 1 minut și 48 de ore).",
 
 		not_on_duty = "Nu ești în serviciu.",
 		failed_impound = "Eșec la reținerea vehiculului.",
@@ -11816,6 +11911,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		spawner_burger_shot = "Vehiculele de livrare Burger Shot",
 		spawner_bean_machine = "Vehiculele de livrare Bean Machine",
 		spawner_weazel_news = "Vehiculele Weazel News",
+		spawner_state = "Vehicule de stat",
 		close_menu = "Închide",
 		vehicle_list = "Lista de vehicule",
 		park_vehicle = "Parcare vehicul",

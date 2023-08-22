@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 19 (do not change)
+-- AUTO LOCALES: 20 (do not change)
 
 OP.Global.Locales.Languages["meme-habibi"] = {
 	-- configuration settings for language
@@ -498,10 +498,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		reset_auto_drive_speed = "Reset auto drive speed to default.",
 		set_auto_drive_speed = "Set auto drive speed to ${speed} mph.",
 
-		disable_collisions_on = "Your collisions are now disabled.",
-		disable_collisions_off = "Your collisions are now enabled.",
-		failed_toggle_collisions = "Failed to toggle disabled collisions.",
-
 		disabled_recoil_on = "Recoil has been disabled.",
 		disabled_recoil_off = "Recoil has been enabled.",
 
@@ -628,10 +624,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		clean_ped_logs_title = "Cleaned Ped",
 		clean_ped_logs_details = "${consoleName} cleaned ${targetName]'s ped.",
-
-		collisions_logs_title = "Collisions",
-		collisions_off_logs_details = "${consoleName} toggled their disabled collisions off.",
-		collisions_on_logs_details = "${consoleName} toggled their disabled collisions on.",
 
 		invalid_job_search = "Invalid job search (has to be at least 3 characters).",
 		failed_job_search = "Failed to search for jobs.",
@@ -1077,10 +1069,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		no_nearby_vehicles_command_parameter_server_id = "server id",
 		no_nearby_vehicles_command_parameter_server_id_help = "If you're wanting to toggle the 'no nearby vehicles' for someone else, insert their server id here.",
 		no_nearby_vehicles_command_substitutes = "",
-
-		disable_collisions_command = "disable_collisions",
-		disable_collisions_command_help = "Disable collisions with vehicles and peds in a 10 meter radius.",
-		disable_collisions_command_substitutes = "intsarab al-iitijazat",
 
 		ghost_command = "ruh",
 		ghost_command_help = "This command will enable /nazar, al-ghaybah and /intsarab_al-iitijazat.",
@@ -1706,6 +1694,11 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		spawn_contract_command_parameter_server_id_help = "The ID of the server you want to spawn the contract on. It will automatically select your own server if left blank.",
 		spawn_contract_command_substitutes = "",
 
+		-- game/buddy_pass
+		buddy_pass_command = "habibi_pass",
+		buddy_pass_command_help = "Open the habibi pass UI.",
+		buddy_pass_command_substitutes = "",
+
 		-- game/cache
 		cache_assets_command = "cache_assets",
 		cache_assets_command_help = "Forcefully download most streamed assets such as vehicles, objects, and clothing. This is not recommended unless you have a slow internet connection and assets don't load fast enough on demand. It can also cause client crashes while in progress.",
@@ -1829,6 +1822,11 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		outfits_command = "libasat",
 		outfits_command_help = "A'lak jami' libasatik almuhfazah.",
 		outfits_command_substitutes = "",
+
+		-- game/collisions
+		disable_collisions_command = "disable_collisions",
+		disable_collisions_command_help = "Disable collisions with vehicles and peds in a 25 meter radius (Only locally for you).",
+		disable_collisions_command_substitutes = "intsarab al-iitijazat",
 
 		-- game/command_socket
 		reconnect_command_socket_command = "yareet_iktilat_al_amr_tawasil_mara_taniya",
@@ -1981,12 +1979,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		server_entity_command_parameter_network_id = "network id",
 		server_entity_command_parameter_network_id_help = "The network id of the entity.",
 		server_entity_command_substitutes = "",
-
-		fake_lag_command = "fake_lag (تأخير مزيف)",
-		fake_lag_command_help = "Create fake lag. (إنشاء تأخير مزيفة)",
-		fake_lag_command_parameter_fps = "fps",
-		fake_lag_command_parameter_fps_help = "The target fps (>= 1).",
-		fake_lag_command_substitutes = "l-a-g",
 
 		view_weapon_command = "view_weapon",
 		view_weapon_command_help = "Spawns an object with the given model name and positions it perfectly for screenshots.",
@@ -2514,6 +2506,13 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		jackpot_take_fees_command = "jackpot_take_fees",
 		jackpot_take_fees_command_help = "Take a fee from all jackpot inventories.",
 		jackpot_take_fees_command_substitutes = "",
+
+		-- game/lag
+		fake_lag_command = "fake_lag (تأخير مزيف)",
+		fake_lag_command_help = "Create fake lag. (إنشاء تأخير مزيفة)",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "The target fps (>= 1).",
+		fake_lag_command_substitutes = "l-a-g",
 
 		-- game/locate
 		locate_entity_command = "locate_entity",
@@ -4639,6 +4638,29 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		closing_sentence = "Habibi, there's so much more to explore in the city! Ask around and make some friends ;)"
 	},
 
+	buddy_pass = {
+		buddy_pass = "Habibi Pass",
+		information_part_1 = "Instantly push your habibi through the queue with a Habibi Pass!",
+		information_part_2 = "All users with a God Tier pledge has access to this feature with one free pass.",
+		information_part_3 = "The 'pass' is active until your habibi disconnects from the server. You can then push someone else through.",
+		information_part_4 = "إسأل عن رقم الدخول الخاص بهم لدفعهم!",
+		queue_pin = "رقم الدخول",
+		available = "مُتاح",
+		close = "إغلاق",
+		webstore = "المتجر الإلكتروني",
+		buddy_passes = "تذاكر الأصدقاء",
+		push_through = "دفع بسرعة!",
+		queue_pin_not_set = "يجب عليك إضافة رقم دخول.",
+		queue_pin_is_a_4_digit_pin = "رقم الدخول يتكون من 4 أرقام.",
+		no_buddy_passes = "لا يوجد لديك أي تذاكر أصدقاء.",
+		no_buddy_passes_available = "لا يتوفر لديك أي تذاكر أصدقاء.",
+		no_queue_with_queue_pin = "لم يكن هناك أي شخص في الطابور برقم الدخول المُقدم.",
+		buddy_pushed_through = "You pushed ${playerName} through the queue, habibi!",
+
+		buddy_pass_used_logs_title = "Buddy Pass Used, Habibi",
+		buddy_pass_used_logs_details = "${consoleName} used their Buddy Pass to push through ${targetConsoleName}, habibi."
+	},
+
 	cache = {
 		download_progress = "Progress of Downloading:\n- Vehicles: ${vehiclesDone}/${vehiclesTotal}\n- Objects: ${objectsDone}/${objectsTotal}\n- Peds: ${pedsDone}/${pedsTotal}\n- Clothing: ${clothingRequested}/${clothingTotal}",
 		slow_download_enabled = "Download in the slow mode has been enabled.",
@@ -4935,6 +4957,15 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		chest_hair = "شعر الصدر",
 		body_blemishes = "عيوب الجسم",
 		add_body_blemish = "إضافة عيب للجسم"
+	},
+
+	collisions = {
+		disable_collisions_on = "Your collisions are now disabled, habibi.",
+		disable_collisions_off = "Your collisions are now enabled, habibi.",
+
+		collisions_logs_title = "Collisions, Habibi",
+		collisions_off_logs_details = "${consoleName} toggled their disabled collisions off, habibi.",
+		collisions_on_logs_details = "${consoleName} toggled their disabled collisions on, habibi."
 	},
 
 	command_socket = {
@@ -5782,10 +5813,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		move_entity_failed = "Sorry habibi, failed to move entity.",
 		move_entity_no_permissions = "Aywa attempted to move an entity without proper permissions.",
 
-		fake_lag_invalid_fps = "معدل إطارات غير صالح.",
-		fake_lag_clamp = "تقييد معدل الإطارات إلى أقل من ${fps}.",
-		fake_lag_disabled = "The fake lag has been deactivated.",
-
 		weapon_name_missing = "Oh no! You forgot to input the weapon name parameter!",
 		weapon_name_invalid = "Akal mayt. `${weaponName}` is not a name of a weapon we carry.",
 		model_name_missing = "You didn't give me the name of the model I'm looking for!",
@@ -6020,17 +6047,20 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 	},
 
 	exclusive_dealership = {
-		marker_label = "${label}, El price is $${price} habibi!",
-		marker_label_purchase = "[${SeatEjectKey}] Buy ${label} for $${price} habibi!",
+		cost_money = "£${price}",
+		cost_points = "${points} OP Points",
+
+		marker_label = "${label} | £${cost}",
+		marker_label_purchase = "[${SeatEjectKey}] Buy ${label} for £${cost}",
 
 		confirm_purchase = "Confirm Purchase",
-		confirm_purchase_label = "${label} for $${price} habibi! Are you sure you want to buy it?",
+		confirm_purchase_label = "${label} | £${cost}",
 
 		deny_purchase = "La, nevermind. I don't want it.",
 		accept_purchase = "Yes, I want to buy it.",
 		accept_purchase_info = "Are you sure you want to buy this vehicle? This action cannot be undone.",
 
-		purchased_vehicle = "I just bought a ${label} car for $${price}.",
+		purchased_vehicle = "Bought a ${label} for £${cost}.",
 		insufficient_funds = "Not enough funds man.",
 		area_not_clear = "Spawn area is not clear, Habibi.",
 		invalid_package = "Incorrect supporter pledge, sorry.",
@@ -6045,7 +6075,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		buyback_vehicle_help = "Press ~INPUT_CONTEXT~ to access the exchange.",
 		buyback_title = "Prestigious Wheels Exchange",
-		sell_closest_vehicle = "Do you want to sell your ${label} for $${price} (${percent}% of its original price)?",
+		sell_closest_vehicle = "Sell your ${label} for £${price} (${percent}% of its value)?",
 		deny_sale = "No, I want to keep it",
 		accept_sale = "Yes, I'm sure",
 		accept_sale_description = "Are you sure you want to sell your vehicle for $${price}? This action cannot be undone.",
@@ -6058,7 +6088,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		sale_log_description = "${consoleName} sold their `${label}` for $${price}.",
 
 		log_title = "شراء EDM",
-		log_description = "تم شراء `${label}` بقيمة $${price}."
+		log_description = "Purchased the `${label}` for £${cost}."
 	},
 
 	failures = {
@@ -6675,7 +6705,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		gas_station_backdoor = "باب الخلفي لمحطة الوقود",
 		cleaning_station = "محطة التنظيف",
 		grocery_store = "متجر البقالة",
-		penthouse_fridge = "الثلاجة في البنتهاوس",
+		penthouse_fridge = "Penthouse Fridge",
 		mug_shots = "صور القبض",
 		prison_store = "متجر السجن",
 		fruit_vendor = "بائع الفاكهة",
@@ -6847,6 +6877,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		dumpster_brownies = "Brwnies Makhdootha (Dried Up Brownies)",
 		dumpster_pizza_slice = "Fatayer Bizza (Moldy Pizza Slice)",
 		dumpster_banana = "Mawz Mushy (Very Mushy)",
+		dumpster_almond_milk = "Sour Almond Milk",
 
 		-- items & item descriptions
 		body_armor = "Qunfudh Badan",
@@ -6996,6 +7027,16 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		clothing_bag = "Clothing Bag",
 		clothing_bag_description = "Never stress about fashion mishaps again! The clothing bag allows you to store your favorite outfit and wear it instantly, anywhere you go. It's like having a fairy godmother without the bibbidi-bobbidi-boo.",
 
+		magnifying_glass = "Magnifying Glass",
+		magnifying_glass_description = "A magnifying glass for all your detective needs. Maybe you'll find a 4 leaf clover in the grass or a small frog in the mud?",
+
+		clover = "Clover",
+		clover_description = "A rare four-leaf clover for good luck. You can find these in the grass if you look hard enough.",
+		small_frog = "Small Frog",
+		small_frog_description = "Just a small frog. Look at the little guy, he's so cute!",
+		seashell = "Seashell",
+		seashell_description = "A seashell from the shore. You can hear the ocean if you put it up to your ear.",
+
 		raw_diamond = "Raw Diamond",
 		raw_diamond_description = "A natural uncut diamond, freshly mined.",
 		raw_morganite = "مورجانيت خام",
@@ -7126,8 +7167,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		donut_description = "لماذا هناك ثقب في الوسط بو؟",
 		green_apple = "تفاح أخضر",
 		green_apple_description = "انها مثل ريد بول لكن لم يكن هناك أي أجسام في اللعبة تطابق علبة ريد بول.",
-		sandwich = "ساندويتش",
-		sandwich_description = "هو نباتي.",
+		sandwich = "ساندويتش لحم الخنزير",
+		sandwich_description = "ساندويتش لذيذ يحتوي على لحم الخنزير والجبن.",
+		vegan_sandwich = "ساندويتش نباتي",
+		vegan_sandwich_description = "نعم هذا حقًا قطعة من الخس وبعض الطماطم بين قطعتي خبز كامل الحبة. (لا أعرف لماذا تأكل هذا أبدًا)",
 		taco = "تاكو",
 		taco_description = "تخصص إل برايان.",
 		smores = "سمورز",
@@ -7137,7 +7180,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		pizza_slice = "شريحة بيتزا",
 		pizza_slice_description = "A small piece of pizza for you.",
 		hot_dog = "Hot Dog",
-		hot_dog_description = "Eat this hot dog like it's your last meal.",
+		hot_dog_description = "اجعل هذا الفرنكفورت يختفي في فمك كما لو كان آخر مرة لك.",
 		nachos = "Nachos",
 		nachos_description = "Nachos good enough for Encarnación!!",
 		vanilla_ice_cream = "Vanilla Ice Cream",
@@ -7493,6 +7536,9 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		milk = "حليب",
 		milk_description = "حليب البقر العادي المستخرج بحب.",
+
+		almond_milk = "حليب اللوز",
+		almond_milk_description = "كيف شيء فطري كاللوز عن طريق اللهب؟؟؟؟",
 
 		bandana = "باندانا",
 		bandana_description = "قائمة طويلة من أعمال العصابات. (فوز الـ Bloods)",
@@ -8272,7 +8318,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		weapon_addon_hk416_description = "The H&K 416, the Ferrari of firearms. Sleek, powerful, and guaranteed to turn heads, it's like having a personal trainer for your trigger finger, delivering results that'll make your enemies jealous. Say hello to your new BFF (Best Firearm Forever)!",
 
 		weapon_addon_680 = "ريمنجتون 680",
-		weapon_addon_680_description = "ريمنجتون 680 هو بندقية ضغط الغليان التي تم تطويرها من قبل شركة ريمنجتون آرمز في عام 1950."
+		weapon_addon_680_description = "ريمنجتون 680 هو بندقية ضغط الغليان التي تم تطويرها من قبل شركة ريمنجتون آرمز في عام 1950.",
+
+		weapon_addon_honey = "ثعلب العسل",
+		weapon_addon_honey_description = "The AAC Honey Badger PDW is a personal defense weapon, frequently used in a suppressed configuration and is based on the AR-15. It is chambered in .300 AAC Blackout and was originally produced by Advanced Armament Corporation (AAC)."
 	},
 
 	invisibility = {
@@ -8415,6 +8464,12 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		read_catalog = "Press ~g~${InteractionKey} ~w~to read Catalog (إضغط ~g~${InteractionKey} ~w~لقراءة الكتالوج)."
 	},
 
+	lag = {
+		fake_lag_invalid_fps = "Invalid fps, habibi.",
+		fake_lag_clamp = "Clamping fps to be below ${fps}, habibi.",
+		fake_lag_disabled = "The fake lag has been disabled, habibi."
+	},
+
 	lean = {
 		press_to_sell_lean = "Press ~INPUT_CONTEXT~ to sell Lean, habibi.",
 		local_not_interested = "The local doesn't seem to be interested right now, habibi.",
@@ -8513,6 +8568,23 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		start_download = "بدء التحميل",
 		slow_download = "تحميل بطيء",
 		regular_download = "تحميل عادي",
+		purchases = "Habibi's Purchases",
+		pledges = "Habibi's Pledges",
+		packages = "Habibi's Packages",
+		points = "Habibi's Points",
+		appreciated_tier = "دَرَجَة مُقَدَّرَة",
+		respected_tier = "دَرَجَة مُحْتَرَمَة",
+		heroic_tier = "دَرَجَة بَطَل",
+		legendary_tier = "دَرَجَة أُسْطُورِيّ",
+		god_tier = "Habibi Tier",
+		custom_plate = "Habibi Plate",
+		custom_character_id = "Habibi Character ID",
+		custom_phone_number = "Habibi Plate Number",
+		reskin = "Habibi Reskin",
+		webstore = "Habibi Webstore",
+		none = "None",
+		queue_pin = "PIN: ${queuePIN}",
+		copied = "Copied!",
 		back = "رجوع",
 		copy_license = "رقم الترخيص",
 		copy_license_success = "تم النسخ!",
@@ -8601,7 +8673,9 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		respected_tier = "دَرَجَة مُحْتَرَمَة",
 		heroic_tier = "دَرَجَة بَطَل",
 		legendary_tier = "دَرَجَة أُسْطُورِيّ",
-		godlike_tier = "دَرَجَة إلهِيّة"
+		godlike_tier = "دَرَجَة إلهِيّة",
+
+		buddy_passed_through = "${playerName} used their Buddy Pass to Habibify you!"
 	},
 
 	logs = {
@@ -8654,6 +8728,27 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		issue_id = "Issue #${issueId}",
 		releases_updated = "Releases updated.",
 		no_release_changes = "There were no release changes."
+	},
+
+	magnifying_glass = {
+		searching = "Habibi the Ground",
+
+		too_fast = "You are moving too fast, Habibi.",
+		failed_search = "Failed to Habibi the ground.",
+		found_nothing = "You didn't Habibi anything here.",
+		already_searched = "Yallah, looks like someone already searched this area habibi.",
+		found_item = "Mashallah, you found a ${item} habibi.",
+
+		press_to_sell_items = "Press ~INPUT_CONTEXT~ to sell your precious items habibi.",
+		no_items_to_sell = "Astagfirullah, you don't have any items to sell habibi.",
+		menu_title = "Gems From Heaven",
+		exit_shop = "Exit Shop",
+		failed_sell = "Astaghfirullah, failed to sell item habibi.",
+
+		found_item_logs_title = "A Precious Discovery",
+		found_item_logs_details = "${consoleName} discovered a ${item} on the ground (${ground}) habibi.",
+		sold_item_logs_title = "A Rare Treasure Sold",
+		sold_item_logs_details = "${consoleName} sold a ${item} for $${price} habibi."
 	},
 
 	mdt = {
@@ -11449,7 +11544,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 
 		npc_vehicle = "This vehicle is not owned by a player, Habibi.",
 		not_in_a_vehicle = "You are not currently driving a vehicle, Habibi.",
-		invalid_minutes = "Invalid time (between 1 minute and 12 hours).",
+		invalid_minutes = "Invalid time (between 1 minute and 48 hours).",
 
 		not_on_duty = "Lah kint mualaf.",
 		failed_impound = "Mashii maqtoo3 yimpound il car.",
@@ -11816,6 +11911,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		spawner_burger_shot = "Burger Shot Delivery Vehicles",
 		spawner_bean_machine = "Bean Machine Delivery Vehicles",
 		spawner_weazel_news = "Weazel News Vehicles",
+		spawner_state = "State Vehicles",
 		close_menu = "Close Menu",
 		vehicle_list = "Vehicle List",
 		park_vehicle = "Park Vehicle",

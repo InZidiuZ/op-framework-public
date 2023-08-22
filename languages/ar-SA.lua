@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 19 (do not change)
+-- AUTO LOCALES: 20 (do not change)
 
 OP.Global.Locales.Languages["ar-SA"] = {
 	-- configuration settings for language
@@ -498,10 +498,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		reset_auto_drive_speed = "إعادة تعيين سرعة القيادة التلقائية إلى الإعداد الافتراضي.",
 		set_auto_drive_speed = "تعيين سرعة القيادة التلقائية على ${speed} ميل في الساعة.",
 
-		disable_collisions_on = "تم تعطيل الاصطدامات الخاصة بك الآن.",
-		disable_collisions_off = "أصبحت الاصطدامات الخاصة بك ممكّنة الآن.",
-		failed_toggle_collisions = "فشل في تبديل الاصطدامات المعطلة.",
-
 		disabled_recoil_on = "تم تعطيل إثارة السلاح.",
 		disabled_recoil_off = "تم تفعيل إثارة السلاح.",
 
@@ -628,10 +624,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		clean_ped_logs_title = "تنظيف الشخصية",
 		clean_ped_logs_details = "${consoleName} قام بتنظيف شخصية ${targetName}.",
-
-		collisions_logs_title = "التصادمات",
-		collisions_off_logs_details = "${consoleName} قام بتعطيل التصادمات.",
-		collisions_on_logs_details = "${consoleName} قام بتفعيل التصادمات.",
 
 		invalid_job_search = "بحث عمل غير صالح (يجب أن يكون ثلاثة أحرف على الأقل).",
 		failed_job_search = "فشل البحث عن الوظائف.",
@@ -1077,10 +1069,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		no_nearby_vehicles_command_parameter_server_id = "server id",
 		no_nearby_vehicles_command_parameter_server_id_help = "إذا كنت تريد تبديل حالة 'لا توجد سيارات قريبة' لشخص آخر ، أدخل معرف الخادم هنا.", -- نص التعليمات للمعامل "server id",
 		no_nearby_vehicles_command_substitutes = "",
-
-		disable_collisions_command = "disable_collisions",
-		disable_collisions_command_help = "تعطيل التصادم مع المركبات والأفراد في نطاق 10 مترًا.", -- نص التعليمات لأمر "disable_collisions",
-		disable_collisions_command_substitutes = "collisions",
 
 		ghost_command = "ghost",
 		ghost_command_help = "هذا الأمر سيتيح /peek، الاختفاء، و/disable_collisions.",
@@ -1706,6 +1694,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		spawn_contract_command_parameter_server_id_help = "رقم السيرفر الذي تريد إنشاء العقد له. سيتم اختيار خادمك تلقائيًا إذا تركته فارغًا.",
 		spawn_contract_command_substitutes = "",
 
+		-- game/buddy_pass
+		buddy_pass_command = "بادئة_الصديق",
+		buddy_pass_command_help = "افتح واجهة المرور مع صديقك.",
+		buddy_pass_command_substitutes = "",
+
 		-- game/cache
 		cache_assets_command = "cache_assets",
 		cache_assets_command_help = "طلب وتحميل الأصول الأكثر تدفقًا بالقوة (المركبات والأجسام والملابس). هذا ليس مستحسنًا إلا إذا كانت لديك اتصال بطيء ولا تتم تنزيل الأصول بما يكفي عند الطلب لتكون سلسة. قد يؤدي هذا أيضًا إلى تعطل العميل بينما يعمل. ",
@@ -1829,6 +1822,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		outfits_command = "الملابس",
 		outfits_command_help = "عرض جميع الملابس المحفوظة الخاصة بك.",
 		outfits_command_substitutes = "",
+
+		-- game/collisions
+		disable_collisions_command = "disable_collisions",
+		disable_collisions_command_help = "تعطيل التصادم مع المركبات والمشاة في نصف قطر 25 مترًا (فقط محليًا لك).",
+		disable_collisions_command_substitutes = "collisions",
 
 		-- game/command_socket
 		reconnect_command_socket_command = "إعادة الاتصال بمقبس الأمر",
@@ -1981,12 +1979,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		server_entity_command_parameter_network_id = "معرف الشبكة",
 		server_entity_command_parameter_network_id_help = "معرف الشبكة للكيان.",
 		server_entity_command_substitutes = "",
-
-		fake_lag_command = "fake_lag",
-		fake_lag_command_help = "ينشئ تأخيرًا وهميًا.",
-		fake_lag_command_parameter_fps = "عدد الإطارات في الثانية (fps)",
-		fake_lag_command_parameter_fps_help = "عدد الإطارات المستهدف (>= 1).",
-		fake_lag_command_substitutes = "تقليد",
 
 		view_weapon_command = "عرض_سلاح",
 		view_weapon_command_help = "ينشئ جسمًا ثلاثي الأبعاد بنموذج السلاح المحدد ويوضع في مكان مناسب للتقاط الصور.",
@@ -2514,6 +2506,13 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		jackpot_take_fees_command = "jackpot_take_fees",
 		jackpot_take_fees_command_help = "استخراج رسوم من جميع مخزونات الجائزة الكبرى.",
 		jackpot_take_fees_command_substitutes = "",
+
+		-- game/lag
+		fake_lag_command = "fake_lag",
+		fake_lag_command_help = "ينشئ تأخيرًا وهميًا.",
+		fake_lag_command_parameter_fps = "عدد الإطارات في الثانية (fps)",
+		fake_lag_command_parameter_fps_help = "عدد الإطارات المستهدف (>= 1).",
+		fake_lag_command_substitutes = "تقليد",
 
 		-- game/locate
 		locate_entity_command = "locate_entity",
@@ -4639,6 +4638,29 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		closing_sentence = "هناك الكثير من الأشياء التي يمكن القيام بها في المدينة! اسأل حولك وتعرف على بعض الأصدقاء ;)"
 	},
 
+	buddy_pass = {
+		buddy_pass = "بادئة الصديق",
+		information_part_1 = "قم بدفع صديقك على الفور من خلال قائمة الانتظار مع بادئة الصديق!",
+		information_part_2 = "يحصل جميع المستخدمين الذين يدعمون رتبة الله على وصول إلى هذه الميزة بتذكرة مجانية واحدة.",
+		information_part_3 = "التذكرة سارية حتى يقوم صديقك بالاتصال من الخادم. بعد ذلك يمكنك دفع شخص آخر من خلالها.",
+		information_part_4 = "اسأل عن رقم الانتظار الخاص بهم لدفعهم!",
+		queue_pin = "رقم الانتظار",
+		available = "متاح",
+		close = "إغلاق",
+		webstore = "متجر الإنترنت",
+		buddy_passes = "تذاكر الأصدقاء",
+		push_through = "دفع!",
+		queue_pin_not_set = "يجب أن تضيف رقم انتظار.",
+		queue_pin_is_a_4_digit_pin = "رقم انتظار هو رقم مكون من 4 أرقام.",
+		no_buddy_passes = "ليس لديك أي تذاكر للأصدقاء.",
+		no_buddy_passes_available = "ليس لديك أي تذاكر للأصدقاء متاحة.",
+		no_queue_with_queue_pin = "لم يكن هناك أي شخص في الانتظار بالرقم المذكور.",
+		buddy_pushed_through = "لقد دفعت ${playerName} من خلال قائمة الانتظار!",
+
+		buddy_pass_used_logs_title = "استخدام تذكرة الصديق",
+		buddy_pass_used_logs_details = "استخدم ${consoleName} تذكرته لدفع ${targetConsoleName} من خلال."
+	},
+
 	cache = {
 		download_progress = "تقدم التحميل:\n- المركبات: ${vehiclesDone}/${vehiclesTotal}\n- الأشياء: ${objectsDone}/${objectsTotal}\n- الأشخاص: ${pedsDone}/${pedsTotal}\n- الملابس: ${clothingRequested}/${clothingTotal}",
 		slow_download_enabled = "تم تفعيل تحميل البطئ.",
@@ -4935,6 +4957,15 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		chest_hair = "شعر الصدر",
 		body_blemishes = "عيوب الجسم",
 		add_body_blemish = "إضافة عيب جسدي"
+	},
+
+	collisions = {
+		disable_collisions_on = "تم تعطيل التصادمات الخاصة بك الآن.",
+		disable_collisions_off = "تم تمكين التصادمات الخاصة بك الآن.",
+
+		collisions_logs_title = "التصادمات",
+		collisions_off_logs_details = "قام ${consoleName} بإيقاف تشغيل تعطيل التصادمات الخاصة به.",
+		collisions_on_logs_details = "قام ${consoleName} بتشغيل تعطيل التصادمات الخاصة به."
 	},
 
 	command_socket = {
@@ -5782,10 +5813,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		move_entity_failed = "فشل في نقل الكيان.",
 		move_entity_no_permissions = "محاولة نقل كيان بدون الأذونات المناسبة.",
 
-		fake_lag_invalid_fps = "قيمة fps غير صالحة.",
-		fake_lag_clamp = "تثبيت قيمة fps لتكون أقل من ${fps}.",
-		fake_lag_disabled = "تم إيقاف تفعيل تأخير مزيف.",
-
 		weapon_name_missing = "مفقود معلمة اسم السلاح.",
 		weapon_name_invalid = "اسم السلاح `${weaponName}` غير صالح.",
 		model_name_missing = "مفقود معلمة اسم النموذج.",
@@ -6020,17 +6047,20 @@ OP.Global.Locales.Languages["ar-SA"] = {
 	},
 
 	exclusive_dealership = {
-		marker_label = "${label} | $${price}",
-		marker_label_purchase = "[${SeatEjectKey}] شراء ${label} بمبلغ $${price}",
+		cost_money = "${price} ريال",
+		cost_points = "${points} نقطة OP",
+
+		marker_label = "${label} | ${cost}",
+		marker_label_purchase = "[${SeatEjectKey}] اشتري ${label} بقيمة ${cost}",
 
 		confirm_purchase = "تأكيد الشراء",
-		confirm_purchase_label = "${label} | $${price}",
+		confirm_purchase_label = "${label} | ${cost}",
 
 		deny_purchase = "لا يهمني، لا أريد شرائها",
 		accept_purchase = "نعم، أريد شرائها",
 		accept_purchase_info = "هل أنت متأكد من شراء هذه السيارة؟ هذا الإجراء لا يمكن التراجع عنه.",
 
-		purchased_vehicle = "تم شراء ${label} بقيمة $${price}.",
+		purchased_vehicle = "تم شراء ${label} بقيمة ${cost}",
 		insufficient_funds = "الأموال غير كافية.",
 		area_not_clear = "منطقة الإنزال غير واضحة.",
 		invalid_package = "دفعة داعمة غير صحيحة.",
@@ -6045,7 +6075,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		buyback_vehicle_help = "اضغط ~INPUT_CONTEXT~ للوصول إلى الصرافة.",
 		buyback_title = "صرافة عجلات Prestige",
-		sell_closest_vehicle = "هل ترغب في بيع ${label} الخاص بك مقابل ${price}$ (${percent}% من قيمتها)؟",
+		sell_closest_vehicle = "هل ترغب في بيع ${label} الخاصة بك بقيمة $${price} (${percent}% من قيمتها؟)",
 		deny_sale = "لا شكرا ، أرغب في الاحتفاظ به",
 		accept_sale = "نعم، أنا متأكد",
 		accept_sale_description = "هل أنت متأكد من رغبتك في بيع مركبتك مقابل ${price}$؟ هذه العملية لا يمكن التراجع عنها.",
@@ -6058,7 +6088,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		sale_log_description = "${consoleName} قام ببيع `${label}` بمبلغ ${price}$.",
 
 		log_title = "شراء من متجر EDM",
-		log_description = "تم شراء `${label}` بقيمة $${price}."
+		log_description = "تم شراء `${label}` بقيمة ${cost}"
 	},
 
 	failures = {
@@ -6675,7 +6705,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		gas_station_backdoor = "باب خلفي لمحطة الوقود",
 		cleaning_station = "محطة تنظيف",
 		grocery_store = "متجر بقالة",
-		penthouse_fridge = "الثلاجة",
+		penthouse_fridge = "ثلاجة البنتهاوس",
 		mug_shots = "صور القلاع",
 		prison_store = "متجر السجن",
 		fruit_vendor = "بائع الفواكه",
@@ -6847,6 +6877,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		dumpster_brownies = "براونيز جافة",
 		dumpster_pizza_slice = "شريحة بيتزا معفنة",
 		dumpster_banana = "موز مجعد (ناعم للغاية)",
+		dumpster_almond_milk = "حليب اللوز الحامض",
 
 		-- items & item descriptions
 		body_armor = "درع الجسم",
@@ -6996,6 +7027,16 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		clothing_bag = "حقيبة الملابس",
 		clothing_bag_description = "لا تقلق بشأن حالات الطوارئ المتعلقة بالموضة مرة أخرى! تتيح لك حقيبة الملابس تخزين زيك المفضل وتجهيزه على الفور في أي مكان تتواجد فيه. تحتوي هذه الحقيبة على سحر الجنية، باستثناء بيبيدي- بوبيدي-بو.",
 
+		magnifying_glass = "عدسة مكبرة",
+		magnifying_glass_description = "عدسة مكبرة لجميع احتياجاتك كمحقق. ربما تجد أربع ورقات نبات النفل في العشب أو ضفدع صغير في الطين؟",
+
+		clover = "نبات النفل ذو الأربع ورقات",
+		clover_description = "نبات نفل نادر ذو أربع ورقات للحظ السعيد. يمكنك العثور على هذه النباتات في العشب إذا بحثت بجدية.",
+		small_frog = "ضفدع صغير",
+		small_frog_description = "مجرد ضفدع صغير. أنظر إلى هذا الكائن الصغير، إنه لطيف جدًا!",
+		seashell = "صدفة",
+		seashell_description = "صدفة من الشاطئ. يمكنك سماع صوت البحر عند وضعها بجانب أذنك.",
+
 		raw_diamond = "الماس الخام",
 		raw_diamond_description = "الماس في شكله الطبيعي، جديد من المنجم.",
 		raw_morganite = "مورغانيت خام",
@@ -7126,8 +7167,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		donut_description = "لماذا يوجد فجوة في الوسط؟",
 		green_apple = "تفاح أخضر",
 		green_apple_description = "هو مثل ريد بول، ولكن لم يكن هناك أجسام في اللعبة تتطابق مع علبة ريد بول.",
-		sandwich = "ساندويتش",
-		sandwich_description = "نباتي.",
+		sandwich = "ساندويتش الخنزير المقدد",
+		sandwich_description = "ساندويتش لذيذ مع لحم الخنزير المقدد والجبن.",
+		vegan_sandwich = "ساندويتش نباتي",
+		vegan_sandwich_description = "نعم، هذا حقًا قطعة خس وبعض الطماطم ما بين قطعتين من الخبز الكامل. (لا أعرف لماذا ستتناول هذا أبدًا)",
 		taco = "تاكو",
 		taco_description = "تخصص إل برايان.",
 		smores = "سمورز",
@@ -7137,7 +7180,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		pizza_slice = "شريحة بيتزا",
 		pizza_slice_description = "قطعة صغيرة من البيتزا لك.",
 		hot_dog = "هوت دوج",
-		hot_dog_description = "تناول هذا النقانق وكأنها آخر وجبة لديك.",
+		hot_dog_description = "تناول هذا النقانق مثلما سيكون آخر وجبة لديك.",
 		nachos = "ناتشوز",
 		nachos_description = "ناتشوز جيده بما يكفي لتجعلك تشعر كأنك في المكسيك!!",
 		vanilla_ice_cream = "ايس كريم الفانيليا",
@@ -7493,6 +7536,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		milk = "حليب",
 		milk_description = "حليب عادي من آبار الأبقار بالحب.",
+
+		almond_milk = "حليب اللوز",
+		almond_milk_description = "كيف تحلبون حليب اللوز؟؟؟؟؟",
 
 		bandana = "بندانا",
 		bandana_description = "منظمة عصابية (أنصار الدم يفوزون)",
@@ -8272,7 +8318,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		weapon_addon_hk416_description = "H&K 416، فيراري الأسلحة النارية - أنيق وقوي، ومضمون لجذب الأنظار. إنها مثل وجود مدرب شخصي لإصبع الزناد الخاص بك، وتقدم نتائج ستجعل أعدائك يحسدونك. قل مرحباً بصديقك الجديد (أفضل سلاح على الإطلاق)!",
 
 		weapon_addon_680 = "ريمنغتون 680",
-		weapon_addon_680_description = "ريمنغتون 680 هو بندقية شوتجن يقودها المستخدم الذي تم تطويرها من قبل شركة ريمنغتون أرمز في عام 1950."
+		weapon_addon_680_description = "ريمنغتون 680 هو بندقية شوتجن يقودها المستخدم الذي تم تطويرها من قبل شركة ريمنغتون أرمز في عام 1950.",
+
+		weapon_addon_honey = "ملحق النحل",
+		weapon_addon_honey_description = "سلاح AAC Honey Badger PDW هو سلاح دفاع شخصي يستخدم بشكل متكرر في تكوين مكتوم ومبني على AR-15. وهو مزود بمجموعة العيار .300 AAC Blackout وتم إنتاجه أصلاً بواسطة Advanced Armament Corporation (AAC)."
 	},
 
 	invisibility = {
@@ -8415,6 +8464,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		read_catalog = "اضغط على ~g~${InteractionKey} ~w~لقراءة الكتالوج"
 	},
 
+	lag = {
+		fake_lag_invalid_fps = "اطارات في الثانية غير صالحة.",
+		fake_lag_clamp = "إحصار الإطارات في الثانية لتكون أقل من ${fps}.",
+		fake_lag_disabled = "تم تعطيل التأخير المزيف."
+	},
+
 	lean = {
 		press_to_sell_lean = "اضغط ~INPUT_CONTEXT~ لبيع المخدر.",
 		local_not_interested = "يبدو أن المحلي ليس مهتمًا الآن.",
@@ -8513,6 +8568,23 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		start_download = "بدء التحميل",
 		slow_download = "تحميل بطيء",
 		regular_download = "تحميل عادي",
+		purchases = "المشتريات",
+		pledges = "التعهدات",
+		packages = "الحزم",
+		points = "النقاط",
+		appreciated_tier = "الطبقة المقدرة",
+		respected_tier = "الطبقة المحترمة",
+		heroic_tier = "الطبقة البطولية",
+		legendary_tier = "الطبقة الأسطورية",
+		god_tier = "المستوى الإلهي",
+		custom_plate = "رقم لوحة مخصص",
+		custom_character_id = "معرف شخصية مخصص",
+		custom_phone_number = "رقم لوحة هاتف مخصص",
+		reskin = "تغيير المظهر",
+		webstore = "متجر الويب",
+		none = "لا شيء",
+		queue_pin = "رمز PIN: ${queuePIN}",
+		copied = "تم النسخ!",
 		back = "السابق",
 		copy_license = "رقم الرخصة",
 		copy_license_success = "تم النسخ!",
@@ -8601,7 +8673,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		respected_tier = "الطبقة المحترمة",
 		heroic_tier = "الطبقة البطولية",
 		legendary_tier = "الطبقة الأسطورية",
-		godlike_tier = "الطبقة الإلهية"
+		godlike_tier = "الطبقة الإلهية",
+
+		buddy_passed_through = "استخدم ${playerName} Buddy Pass لدفعك إلى الأمام!"
 	},
 
 	logs = {
@@ -8654,6 +8728,27 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		issue_id = "المسألة #${issueId}",
 		releases_updated = "تم تحديث الإصدارات.",
 		no_release_changes = "لم يتم إجراء أي تغييرات في الإصدار."
+	},
+
+	magnifying_glass = {
+		searching = "البحث في الأرض",
+
+		too_fast = "أنت تتحرك بسرعة كبيرة.",
+		failed_search = "فشل في البحث في الأرض.",
+		found_nothing = "لم تجد أي شيء هنا.",
+		already_searched = "يبدو أن هذا المنطقة تم البحث فيها بالفعل.",
+		found_item = "لقد وجدت ${item}.",
+
+		press_to_sell_items = "اضغط ~INPUT_CONTEXT~ لبيع العناصر.",
+		no_items_to_sell = "ليس لديك أي عناصر للبيع.",
+		menu_title = "العناصر النادرة",
+		exit_shop = "الخروج من المتجر",
+		failed_sell = "فشل في بيع العنصر.",
+
+		found_item_logs_title = "وجد عنصر على الأرض",
+		found_item_logs_details = "عثر ${consoleName} على ${item} على الأرض (${ground}).",
+		sold_item_logs_title = "تم بيع عنصر نادر",
+		sold_item_logs_details = "قام ${consoleName} ببيع ${item} مقابل $${price}."
 	},
 
 	mdt = {
@@ -11449,7 +11544,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		npc_vehicle = "هذه السيارة ليست مملوكة لاعب.",
 		not_in_a_vehicle = "أنت لا تقود سيارة حاليًا.",
-		invalid_minutes = "وقت غير صالح (بين دقيقة واحدة و 12 ساعة).",
+		invalid_minutes = "وقت غير صالح (ما بين دقيقة واحدة و48 ساعة).",
 
 		not_on_duty = "أنت لست في الخدمة.",
 		failed_impound = "فشل في حجز المركبة.",
@@ -11816,6 +11911,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		spawner_burger_shot = "مركبات توصيل برجر شوت",
 		spawner_bean_machine = "مركبات توصيل بين ماشين",
 		spawner_weazel_news = "مركبات ويزيل نيوز",
+		spawner_state = "مركبات الدولة",
 		close_menu = "إغلاق القائمة",
 		vehicle_list = "قائمة المركبات",
 		park_vehicle = "وقوف المركبة",

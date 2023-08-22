@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 19 (do not change)
+-- AUTO LOCALES: 20 (do not change)
 
 OP.Global.Locales.Languages["meme-valleygirl"] = {
 	-- configuration settings for language
@@ -498,10 +498,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		reset_auto_drive_speed = "Reset auto drive speed to default, like, whatever.",
 		set_auto_drive_speed = "Set your, like, auto drive speed to ${speed} mph.",
 
-		disable_collisions_on = "Your, like, collisions are now disabled.",
-		disable_collisions_off = "Your, like, collisions are now, like, enabled.",
-		failed_toggle_collisions = "Failed to, like, toggle disabled collisions, sorry.",
-
 		disabled_recoil_on = "Recoil, gag me with a spoon.",
 		disabled_recoil_off = "No more chill vibes for recoil.",
 
@@ -628,10 +624,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		clean_ped_logs_title = "Cleaned Ped",
 		clean_ped_logs_details = "${consoleName} cleaned up ${targetName}'s ped, like ew.",
-
-		collisions_logs_title = "Collisions",
-		collisions_off_logs_details = "${consoleName} turned off their disabled collisions, like whatever.",
-		collisions_on_logs_details = "${consoleName} turned on their disabled collisions, like duh.",
 
 		invalid_job_search = "Invalid job search? That's, like, so not cool. It has to be at least 3 characters, hello?",
 		failed_job_search = "Ugh, like, I totes failed to find any jobs. So lame.",
@@ -1077,10 +1069,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		no_nearby_vehicles_command_parameter_server_id = "server id",
 		no_nearby_vehicles_command_parameter_server_id_help = "If you wanna toggle 'no cars near me' for someone else, put their server id here.",
 		no_nearby_vehicles_command_substitutes = "",
-
-		disable_collisions_command = "no_crash_zone",
-		disable_collisions_command_help = "Makes it so cars and peeps within a 10 meter radius just pass through you. Cool, huh?",
-		disable_collisions_command_substitutes = "colli",
 
 		ghost_command = "spooky",
 		ghost_command_help = "OMG, using this command will like make it so you can /peek, go invisible and walk through other players and cars!",
@@ -1706,6 +1694,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		spawn_contract_command_parameter_server_id_help = "You gotta put in the server ID for the contract you want to, like, spawn, or it will auto-select your own server, you know?",
 		spawn_contract_command_substitutes = "",
 
+		-- game/buddy_pass
+		buddy_pass_command = "bff",
+		buddy_pass_command_help = "Like, open the bff UI.",
+		buddy_pass_command_substitutes = "",
+
 		-- game/cache
 		cache_assets_command = "cache_assets, totally",
 		cache_assets_command_help = "So, like, if you want to get all the cars, objects, and clothes, just type this command and it will, like, download and cache them. But, girl, only do this if you have a slow connection and assets can't download fast enough, okay? And it might crash your game while it's doing its thing.",
@@ -1829,6 +1822,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		outfits_command = "outfits",
 		outfits_command_help = "OMG! Just, like, list all your saved outfits.",
 		outfits_command_substitutes = "",
+
+		-- game/collisions
+		disable_collisions_command = "no_crash_zone",
+		disable_collisions_command_help = "Whatever, disable like, collisions with cars and people in a 25 meter radius (Only locally for you).",
+		disable_collisions_command_substitutes = "colli",
 
 		-- game/command_socket
 		reconnect_command_socket_command = "reconnect_command_socket",
@@ -1981,12 +1979,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		server_entity_command_parameter_network_id = "network id",
 		server_entity_command_parameter_network_id_help = "The network id of the, like, entity.",
 		server_entity_command_substitutes = "",
-
-		fake_lag_command = "fake_lag",
-		fake_lag_command_help = "Like, create fake lag. So annoying, am I right?",
-		fake_lag_command_parameter_fps = "fps",
-		fake_lag_command_parameter_fps_help = "The target fps, babe (>= 1).",
-		fake_lag_command_substitutes = "lag, duh",
 
 		view_weapon_command = "view_weapon",
 		view_weapon_command_help = "Like, spawns an object with the given model name and positions it perfectly for screenshots. So, so awesome!",
@@ -2514,6 +2506,13 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		jackpot_take_fees_command = "jackpot_take_fees",
 		jackpot_take_fees_command_help = "Take a fee from all those jackpot inventories, ya know.",
 		jackpot_take_fees_command_substitutes = "",
+
+		-- game/lag
+		fake_lag_command = "fake_lag",
+		fake_lag_command_help = "Like, create fake lag. So annoying, am I right?",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "The target fps, babe (>= 1).",
+		fake_lag_command_substitutes = "lag, duh",
 
 		-- game/locate
 		locate_entity_command = "locate_entity",
@@ -4639,6 +4638,29 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		closing_sentence = "There's, like, so much more to do in the city! Don't be shy, ask around and make some friends ;)"
 	},
 
+	buddy_pass = {
+		buddy_pass = "BFF Pass",
+		information_part_1 = "Like, totally shove your friend in front of the line with a BFF Pass!",
+		information_part_2 = "All users with a God Tier pledge has access to this feature with one free pass.",
+		information_part_3 = "The 'pass' is active until your friend bails on the server. You can then push someone else through.",
+		information_part_4 = "Like, ask for their queue PIN to, like, push them through!",
+		queue_pin = "Queue PIN",
+		available = "Totally available",
+		close = "Buh-bye",
+		webstore = "Webstore",
+		buddy_passes = "Buddy Passes",
+		push_through = "Push Through!",
+		queue_pin_not_set = "Oh-em-gee, you gotta, like, add a queue PIN.",
+		queue_pin_is_a_4_digit_pin = "A queue PIN is, like, a 4-digit PIN.",
+		no_buddy_passes = "I mean, you do not have any buddy passes.",
+		no_buddy_passes_available = "You do not have any buddy passes available, like, at all.",
+		no_queue_with_queue_pin = "Ugh, there was no one in the queue with the, like, provided PIN.",
+		buddy_pushed_through = "Omigod, you like totally pushed ${playerName} to the front of the line!",
+
+		buddy_pass_used_logs_title = "Buddy Pass, OMG!",
+		buddy_pass_used_logs_details = "${consoleName} used their Buddy Pass to, like, push ${targetConsoleName}. Like, so extra!"
+	},
+
 	cache = {
 		download_progress = "Download Progress:\n- Cars: ${vehiclesDone}/${vehiclesTotal}\n- Stuff: ${objectsDone}/${objectsTotal}\n- Peeps: ${pedsDone}/${pedsTotal}\n- Clothes: ${clothingRequested}/${clothingTotal}",
 		slow_download_enabled = "The download is, like, going to take longer, but it's worth it!",
@@ -4935,6 +4957,15 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		chest_hair = "Chest Hair",
 		body_blemishes = "Body Blemishes",
 		add_body_blemish = "Add Body Blemish"
+	},
+
+	collisions = {
+		disable_collisions_on = "Ugh, like, your collisions are like, totally turned off now.",
+		disable_collisions_off = "OMG, your collisions are like, totally back on now!",
+
+		collisions_logs_title = "Collisions, like, duh!",
+		collisions_off_logs_details = "${consoleName} like, turned off their collisions. Major bummer!",
+		collisions_on_logs_details = "${consoleName} like, turned on their collisions again. Like, finally!"
 	},
 
 	command_socket = {
@@ -5782,10 +5813,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		move_entity_failed = "Tried to move it but no dice.",
 		move_entity_no_permissions = "Tried to move an entity without, like, proper permissions.",
 
-		fake_lag_invalid_fps = "Like, that fps isn't cool, try another one.",
-		fake_lag_clamp = "Gonna make sure the fps is, like, below ${fps}.",
-		fake_lag_disabled = "Ugh, we turned off fake lag.",
-
 		weapon_name_missing = "Excuse me, but you've forgotten the weapon's name.",
 		weapon_name_invalid = "Uh, `${weaponName}` isn't even a legit weapon name.",
 		model_name_missing = "Hey, where's the model name parameter?",
@@ -6020,17 +6047,20 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	},
 
 	exclusive_dealership = {
-		marker_label = "${label} | $${price} #SoExpensive",
-		marker_label_purchase = "[${SeatEjectKey}] Buy ${label} for $${price} and add it to your bag!",
+		cost_money = "Like, $${price}",
+		cost_points = "${points} OP Points, duh",
+
+		marker_label = "${label}, like, ${cost}",
+		marker_label_purchase = "[${SeatEjectKey}] Buy ${label} for ${cost}",
 
 		confirm_purchase = "Confirm Purchase",
-		confirm_purchase_label = "${label} | $${price} #DoIReallyWantThis",
+		confirm_purchase_label = "${label}, like, ${cost}",
 
 		deny_purchase = "Forget it, I don't want it",
 		accept_purchase = "Yeah, I wanna buy it",
 		accept_purchase_info = "Are you sure you wanna snag this ride? Can't undo this move, okay?",
 
-		purchased_vehicle = "Got me a ${label} for $${price}, like, totally!",
+		purchased_vehicle = "OMG! I, like, totally bought a ${label} for ${cost}.",
 		insufficient_funds = "Uh, you don't have enough cash.",
 		area_not_clear = "Spawn area isn't clear, like, move over.",
 		invalid_package = "Uh, wrong supporter pledge, try again.",
@@ -6045,7 +6075,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		buyback_vehicle_help = "Press ~INPUT_CONTEXT~ to, like, access the exchange.",
 		buyback_title = "Prestige Wheels Exchange, y'know",
-		sell_closest_vehicle = "Do you, like, wanna sell your ${label} for $${price} (${percent}% of its value)?",
+		sell_closest_vehicle = "Wanna sell your ${label} for, like, $${price} (${percent}% of what it's worth)?",
 		deny_sale = "No way, I wanna keep it!",
 		accept_sale = "Totally!",
 		accept_sale_description = "Are you sure you wanna sell your vehicle for $${price}? This can't be undone.",
@@ -6058,7 +6088,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		sale_log_description = "${consoleName} omg, sold their `${label}` for $${price}.",
 
 		log_title = "Yaaas! Your EDM Purchase",
-		log_description = "Like, you just got your hands on the `${label}` for only $${price}!"
+		log_description = "Just, like, bought `${label}` for ${cost}, you know?"
 	},
 
 	failures = {
@@ -6675,7 +6705,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		gas_station_backdoor = "Gas Station Backdoor",
 		cleaning_station = "Cleaning Station",
 		grocery_store = "Grocery Store",
-		penthouse_fridge = "Fridge",
+		penthouse_fridge = "Penthouse Fridge, OMG!",
 		mug_shots = "Mug Shots",
 		prison_store = "Prison Store",
 		fruit_vendor = "Fruit Vendor",
@@ -6847,6 +6877,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		dumpster_brownies = "Dried Up Brownies",
 		dumpster_pizza_slice = "Moldy Pizza Slice",
 		dumpster_banana = "Hairy Banana (Very Mushy)",
+		dumpster_almond_milk = "Like, Sour Almond Milk from the Dumpster",
 
 		-- items & item descriptions
 		body_armor = "Body Armor",
@@ -6996,6 +7027,16 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		clothing_bag = "Clothing Bag, OMG!",
 		clothing_bag_description = "Never worry about fashion emergencies again, girl! The clothing bag lets you store your favorite outfit and instantly equip it anywhere you go. This bag has all the magic of a fairy godmother, minus the bibbidi-bobbidi-boo. Seriously!",
 
+		magnifying_glass = "Like, Magnifying Glass",
+		magnifying_glass_description = "A magnifying glass for all your detective needs. Maybe you'll find a 4 leaf clover in the grass or a small frog in the mud?",
+
+		clover = "4 Leaf Clover",
+		clover_description = "A rare 4 leaf clover for good luck. You can find these in the grass if you look hard enough.",
+		small_frog = "Small Frog",
+		small_frog_description = "Just a small frog. Look at the little guy, he's so cute!",
+		seashell = "Seashell",
+		seashell_description = "A seashell from the beach. You can hear the ocean if you put it up to your ear.",
+
 		raw_diamond = "Raw Diamond",
 		raw_diamond_description = "It's, like, a natural diamond straight out of a mine. Fresh, ya know.",
 		raw_morganite = "Like, Raw Morganite",
@@ -7126,8 +7167,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		donut_description = "Like, why is there a hole in the middle, seriously?",
 		green_apple = "Green Apple",
 		green_apple_description = "It's like, just like a Red Bull, but there, like, wasn't anything like a Red Bull can in the game or whatever.",
-		sandwich = "Sandwich",
-		sandwich_description = "It's vegan, like, obviously.",
+		sandwich = "Totally tubular Ham Sandwich",
+		sandwich_description = "Like, a super yummy sandwich with ham and cheese.",
+		vegan_sandwich = "Veggie Delight",
+		vegan_sandwich_description = "OMG, this is like just a leaf of lettuce and a few tomatoes between two pieces of hippie bread. (I don't get why anyone would eat this)",
 		taco = "Taco",
 		taco_description = "It's like, the specialty of El Brayan, you know?",
 		smores = "S'mores",
@@ -7137,7 +7180,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		pizza_slice = "Pizza Slice",
 		pizza_slice_description = "Just a lil' slice of yummy pizza, y'know?",
 		hot_dog = "Hot Dog",
-		hot_dog_description = "Chow down on this wiener like your life depends on it.",
+		hot_dog_description = "Chow down on this gnarly glizzy like it's your last bite.",
 		nachos = "Nachos",
 		nachos_description = "These nachos are so good, they're like, Encarnación-level good.",
 		vanilla_ice_cream = "Vanilla Ice Cream",
@@ -7493,6 +7536,9 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		milk = "Milk",
 		milk_description = "Like, the raddest cow juice ever! Totally extracted with love, you know?",
+
+		almond_milk = "Almond Bliss",
+		almond_milk_description = "Like, how did they even milk those almonds??????",
 
 		bandana = "Bandana",
 		bandana_description = "Whole lot of gang shit. (Bloods rule!)",
@@ -8272,7 +8318,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		weapon_addon_hk416_description = "The H&K 416, the Ferrari of firearms - so sleek and powerful, and guaranteed to turn heads. It's like, having a personal trainer for your trigger finger, delivering results that'll make your enemies like, totally jealous. Say hello to your new BFF (Best Firearm Forever)!",
 
 		weapon_addon_680 = "Remington 680, the ultimate shotgun",
-		weapon_addon_680_description = "The Remington 680 is a super cool pump-action shotgun developed by Remington Arms in 1950. It's, like, totally bitchin'."
+		weapon_addon_680_description = "The Remington 680 is a super cool pump-action shotgun developed by Remington Arms in 1950. It's, like, totally bitchin'.",
+
+		weapon_addon_honey = "Honey Badger",
+		weapon_addon_honey_description = "Like, the AAC Honey Badger PDW is totally, like, a personal defense weapon, you know? It's like, often used with a suppressor and it's based on the AR-15. It's like, chambered in .300 AAC Blackout and was, like, originally made by Advanced Armament Corporation (AAC), you know?"
 	},
 
 	invisibility = {
@@ -8415,6 +8464,12 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		read_catalog = "Press ~g~${InteractionKey} ~w~to read Catalog, how major."
 	},
 
+	lag = {
+		fake_lag_invalid_fps = "Ugh, like, invalid fps.",
+		fake_lag_clamp = "So, like, clamping the fps to be, like, below ${fps}.",
+		fake_lag_disabled = "The fake lag has been, like, totally disabled."
+	},
+
 	lean = {
 		press_to_sell_lean = "Like, press ~INPUT_CONTEXT~ to sell some Lean, babe.",
 		local_not_interested = "Sorry, like, the local isn't digging it right now.",
@@ -8513,6 +8568,23 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		start_download = "Start the download, like now!",
 		slow_download = "Download like, super slow for me!",
 		regular_download = "Just download at like, a regular pace or something!",
+		purchases = "Purchases",
+		pledges = "Pledges",
+		packages = "Packages",
+		points = "Points",
+		appreciated_tier = "Appreciated Tier, you're appreciated but not quite there yet, ya feel?",
+		respected_tier = "Respected Tier, like totally respectable, ya know?",
+		heroic_tier = "Heroic Tier, like you're a hero, but not quite a legend yet, ya feel?",
+		legendary_tier = "Legendary Tier, like omg you're a legend in this game!",
+		god_tier = "Like, OMG Tier",
+		custom_plate = "Totally Custom Plate",
+		custom_character_id = "Totally Custom Character ID",
+		custom_phone_number = "Totally Custom Plate Number",
+		reskin = "Total Reskin",
+		webstore = "Webstore, duh",
+		none = "Like, None",
+		queue_pin = "PIN: ${queuePIN}",
+		copied = "Copied, for sure!",
 		back = "OMG, like go back",
 		copy_license = "License ID, like duh.",
 		copy_license_success = "Copied! You're, like, totally welcome.",
@@ -8601,7 +8673,9 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		respected_tier = "Respected Tier, like totally respectable, ya know?",
 		heroic_tier = "Heroic Tier, like you're a hero, but not quite a legend yet, ya feel?",
 		legendary_tier = "Legendary Tier, like omg you're a legend in this game!",
-		godlike_tier = "Godlike Tier, like you're a freakin' god at this game, ya know?"
+		godlike_tier = "Godlike Tier, like you're a freakin' god at this game, ya know?",
+
+		buddy_passed_through = "${playerName} used their Buddy Pass to, like, totally push you through!"
 	},
 
 	logs = {
@@ -8654,6 +8728,27 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		issue_id = "Issue #${issueId}, like, hello?",
 		releases_updated = "Releases like, totally updated.",
 		no_release_changes = "There were, like, totally no release changes."
+	},
+
+	magnifying_glass = {
+		searching = "Searching The Ground, like, totally",
+
+		too_fast = "OMG, you're moving too fast.",
+		failed_search = "Failed to search the ground, ugh.",
+		found_nothing = "You, like, totally didn't find anything here.",
+		already_searched = "Like, it looks like this area has already been totally searched.",
+		found_item = "OMG, you, like, found a ${item}.",
+
+		press_to_sell_items = "Press, like, ~INPUT_CONTEXT~ to, you know, sell stuff.",
+		no_items_to_sell = "Sorry, babe, but you don't have, like, anything to sell.",
+		menu_title = "Rare Items, duh",
+		exit_shop = "Exit the Shop",
+		failed_sell = "Oops, like, failed to sell the item.",
+
+		found_item_logs_title = "Found Something Cool on the Ground",
+		found_item_logs_details = "${consoleName} totally found a ${item} on the ground (${ground}).",
+		sold_item_logs_title = "Sold Something Mega Rare",
+		sold_item_logs_details = "${consoleName} sold a ${item} for, like, $${price}."
 	},
 
 	mdt = {
@@ -11449,7 +11544,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		npc_vehicle = "Sorry babe, this ride is not player-owned.",
 		not_in_a_vehicle = "You are totally not in a car right now, duh.",
-		invalid_minutes = "Bummer, your time is bogus! It should be between 1 minute and 12 hours.",
+		invalid_minutes = "Like, totally bogus time (between 1 minute and 48 hours).",
 
 		not_on_duty = "Sorry boo, you ain't on duty.",
 		failed_impound = "Dang it! Couldn't impound the car.",
@@ -11816,6 +11911,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		spawner_burger_shot = "Burger Shot Delivery Vehicles, nom nom!",
 		spawner_bean_machine = "Bean Machine Delivery Vehicles, gotta have that java fix.",
 		spawner_weazel_news = "Weazel News Vehicles, reporting live and on fleek.",
+		spawner_state = "Rad Vehicles",
 		close_menu = "Close Menu, ttyl!",
 		vehicle_list = "Vehicle List, check it out.",
 		park_vehicle = "Park Vehicle, chill mode engaged.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 19 (do not change)
+-- AUTO LOCALES: 20 (do not change)
 
 OP.Global.Locales.Languages["et-EE"] = {
 	-- configuration settings for language
@@ -498,10 +498,6 @@ OP.Global.Locales.Languages["et-EE"] = {
 		reset_auto_drive_speed = "Lähtesta autojuhtimise kiirus vaikimisi.",
 		set_auto_drive_speed = "Määra autojuhtimise kiirus ${speed} miili tunnis.",
 
-		disable_collisions_on = "Sinu kokkupõrgete funktsionaalsus on nüüd keelatud.",
-		disable_collisions_off = "Sinu kokkupõrgete funktsionaalsus on nüüd lubatud.",
-		failed_toggle_collisions = "Kokkupõrgete lülitamine keelatud ebaõnnestus.",
-
 		disabled_recoil_on = "Püstolirekli keelatud.",
 		disabled_recoil_off = "Püstolirekli lubatud.",
 
@@ -628,10 +624,6 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		clean_ped_logs_title = "Ped-i puhastamine",
 		clean_ped_logs_details = "${consoleName} puhastas ${targetName} ped-i.",
-
-		collisions_logs_title = "Kokkupõrked",
-		collisions_off_logs_details = "${consoleName} lülitas välja kokkupõrgete vältimise.",
-		collisions_on_logs_details = "${consoleName} lülitas sisse kokkupõrgete vältimise.",
 
 		invalid_job_search = "Vigane töökoha otsing (peab olema vähemalt 3 tähemärki).",
 		failed_job_search = "Töökohtade otsimine ebaõnnestus.",
@@ -1077,10 +1069,6 @@ OP.Global.Locales.Languages["et-EE"] = {
 		no_nearby_vehicles_command_parameter_server_id = "serveri-ID",
 		no_nearby_vehicles_command_parameter_server_id_help = "Kui soovite kellegi teise jaoks lähedal asuvaid sõidukeid välja või sisse lülitada, sisestage siia nende serveri-ID.",
 		no_nearby_vehicles_command_substitutes = "",
-
-		disable_collisions_command = "keela kokkupõrked",
-		disable_collisions_command_help = "Keela kokkupõrked sõidukite ja jalakäijatega 10-meetrises raadiuses.",
-		disable_collisions_command_substitutes = "kokkupõrked",
 
 		ghost_command = "kummitus",
 		ghost_command_help = "See käsk võimaldab /peek, nähtamatuks muutumise ja /disable_collisions.",
@@ -1706,6 +1694,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 		spawn_contract_command_parameter_server_id_help = "Serveri ID, mille jaoks soovid lepingut spawndata. Kui jäetakse tühjaks, siis valitakse automaatselt sinu enda server.",
 		spawn_contract_command_substitutes = "",
 
+		-- game/buddy_pass
+		buddy_pass_command = "sõbra_pääse",
+		buddy_pass_command_help = "Ava sõbra pääsme liidest.",
+		buddy_pass_command_substitutes = "",
+
 		-- game/cache
 		cache_assets_command = "limi_resursid",
 		cache_assets_command_help = "Sunnib serverit küsima ja alla laadima enamasti kasutatavad ressursid (sõidukid, objektid ja rõivad). Seda ei soovitata, välja arvatud siis, kui sul on aeglane ühendus ja ressursid ei laadu piisavalt kiiresti, et olla ilma katkestusteta. See võib ka põhjustada klientide jaoks probleeme ning lõpetada nende kokkuvarisemisega.",
@@ -1829,6 +1822,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 		outfits_command = "rõivakomplektid",
 		outfits_command_help = "Loetleb kõik salvestatud rõivakomplektid.",
 		outfits_command_substitutes = "",
+
+		-- game/collisions
+		disable_collisions_command = "keela kokkupõrked",
+		disable_collisions_command_help = "Keela kokkupõrked sõidukite ja jalakäijatega 25 meetri raadiuses (ainult sinu enda jaoks kohalikult).",
+		disable_collisions_command_substitutes = "kokkupõrked",
 
 		-- game/command_socket
 		reconnect_command_socket_command = "ühendus_käsu_pistikuga_uuesti",
@@ -1981,12 +1979,6 @@ OP.Global.Locales.Languages["et-EE"] = {
 		server_entity_command_parameter_network_id = "võrgu ID",
 		server_entity_command_parameter_network_id_help = "Olemuse võrgu ID.",
 		server_entity_command_substitutes = "",
-
-		fake_lag_command = "vale_lag",
-		fake_lag_command_help = "Loo vale võrkude aeglustumine.",
-		fake_lag_command_parameter_fps = "kaadrisagedus",
-		fake_lag_command_parameter_fps_help = "Sihtkaadrisagedus (>= 1).",
-		fake_lag_command_substitutes = "lagi",
 
 		view_weapon_command = "vaata_relva",
 		view_weapon_command_help = "Spawnib objekti määratud mudelinimega ja paigutab selle täpselt ekraanipildi jaoks.",
@@ -2514,6 +2506,13 @@ OP.Global.Locales.Languages["et-EE"] = {
 		jackpot_take_fees_command = "võta_jackpoti_tasud",
 		jackpot_take_fees_command_help = "Võta tasud kõigilt jackpoti laoruumidelt.",
 		jackpot_take_fees_command_substitutes = "",
+
+		-- game/lag
+		fake_lag_command = "vale_lag",
+		fake_lag_command_help = "Loo vale võrkude aeglustumine.",
+		fake_lag_command_parameter_fps = "kaadrisagedus",
+		fake_lag_command_parameter_fps_help = "Sihtkaadrisagedus (>= 1).",
+		fake_lag_command_substitutes = "lagi",
 
 		-- game/locate
 		locate_entity_command = "asukoht",
@@ -4639,6 +4638,29 @@ OP.Global.Locales.Languages["et-EE"] = {
 		closing_sentence = "Linnas on palju teisigi asju teha! Küsige ringi ja leidke sõpru ;)"
 	},
 
+	buddy_pass = {
+		buddy_pass = "Sõbra Pääse",
+		information_part_1 = "Pushige oma sõber järjekorras koheselt sõbra pääsmega!",
+		information_part_2 = "Kõigil God Tieri toetajatel on see funktsioon tasuta üks kord kasutada.",
+		information_part_3 = "'Pääse' on aktiivne kuni teie sõber katkestab ühenduse serveriga. Seejärel saate teise inimese läbi lasta.",
+		information_part_4 = "Küsi neilt järjekorra PIN-koodi, et nad edasi lükata!",
+		queue_pin = "Järjekorra PIN-kood",
+		available = "Saadaval",
+		close = "Sulge",
+		webstore = "Veebipood",
+		buddy_passes = "Sõbrapiletid",
+		push_through = "Lükka edasi!",
+		queue_pin_not_set = "Sa pead lisama järjekorra PIN-koodi.",
+		queue_pin_is_a_4_digit_pin = "Järjekorra PIN-kood on 4-kohaline kood.",
+		no_buddy_passes = "Sul pole ühtegi sõbrapiletit.",
+		no_buddy_passes_available = "Sul pole ühtegi saadaolevat sõbrapiletit.",
+		no_queue_with_queue_pin = "Järjekorras ei olnud kedagi selle koodiga.",
+		buddy_pushed_through = "Sa surusid ${playerName} järjekorrast läbi!",
+
+		buddy_pass_used_logs_title = "Buddy Pass'i kasutati",
+		buddy_pass_used_logs_details = "${consoleName} kasutas oma Buddy Pass'it, et lükata läbi ${targetConsoleName}."
+	},
+
 	cache = {
 		download_progress = "Allalaadimise edenemine:\n- Sõidukid: ${vehiclesDone}/${vehiclesTotal}\n- Objektid: ${objectsDone}/${objectsTotal}\n- NPC-d: ${pedsDone}/${pedsTotal}\n- Riided: ${clothingRequested}/${clothingTotal}",
 		slow_download_enabled = "Aeglane allalaadimine on lubatud.",
@@ -4935,6 +4957,15 @@ OP.Global.Locales.Languages["et-EE"] = {
 		chest_hair = "Rinnakarvad",
 		body_blemishes = "Keha plekid",
 		add_body_blemish = "Lisa keha plekk"
+	},
+
+	collisions = {
+		disable_collisions_on = "Sinu kokkupõrked on nüüd keelatud.",
+		disable_collisions_off = "Sinu kokkupõrked on nüüd lubatud.",
+
+		collisions_logs_title = "Kokkupõrked",
+		collisions_off_logs_details = "${consoleName} lülitas oma keelatud kokkupõrked välja.",
+		collisions_on_logs_details = "${consoleName} lülitas oma keelatud kokkupõrked sisse."
 	},
 
 	command_socket = {
@@ -5782,10 +5813,6 @@ OP.Global.Locales.Languages["et-EE"] = {
 		move_entity_failed = "Ese liigutamine ebaõnnestus.",
 		move_entity_no_permissions = "Üritati liigutada üksust ilma nõuetekohaste õigusteta.",
 
-		fake_lag_invalid_fps = "Vigane kaadrisagedus.",
-		fake_lag_clamp = "Piirata kaadrisagedust alla ${fps}.",
-		fake_lag_disabled = "Vale viivitus(fake lag) on keelatud.",
-
 		weapon_name_missing = "Relva nimi puudub parameetritest.",
 		weapon_name_invalid = "`${weaponName}` ei ole kehtiv relva nimi.",
 		model_name_missing = "Mudeli nimi puudub parameetritest.",
@@ -6020,17 +6047,20 @@ OP.Global.Locales.Languages["et-EE"] = {
 	},
 
 	exclusive_dealership = {
-		marker_label = "${label} | $${price}",
-		marker_label_purchase = "[${SeatEjectKey}] Osta ${label} hinnaga $${price}",
+		cost_money = "${price} eurot",
+		cost_points = "${points} OP punktid",
+
+		marker_label = "${label} | ${cost}",
+		marker_label_purchase = "[${SeatEjectKey}] Osta ${label} summas ${cost}",
 
 		confirm_purchase = "Kinnita Ost",
-		confirm_purchase_label = "${label} | $${price}",
+		confirm_purchase_label = "${label} | ${cost}",
 
 		deny_purchase = "Mõtlesin ümber, ei soovi seda osta",
 		accept_purchase = "Jah, ma soovin seda osta",
 		accept_purchase_info = "Kas olete kindel, et soovite selle sõiduki osta? Seda toimingut ei saa tagasi võtta.",
 
-		purchased_vehicle = "Osteti ${label} hinnaga $${price}.",
+		purchased_vehicle = "Ostetud ${label} summas ${cost}.",
 		insufficient_funds = "Ebapiisav raha.",
 		area_not_clear = "Sünnitusala pole selge.",
 		invalid_package = "Vale toetaja lubadus.",
@@ -6045,7 +6075,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		buyback_vehicle_help = "Vajuta ~INPUT_CONTEXT~, et vahetusele juurde pääseda.",
 		buyback_title = "Prestiižirataste vahetus",
-		sell_closest_vehicle = "Kas sa tahad müüa oma ${label} ${price} dollari eest (${percent}% tema hinnast)?",
+		sell_closest_vehicle = "Kas soovite müüa oma ${label} summas $${price} (${percent}% selle väärtusest)?",
 		deny_sale = "Ei, ma tahan seda alles hoida",
 		accept_sale = "Jah, ma olen kindel",
 		accept_sale_description = "Kas olete kindel, et soovite oma sõiduki müüa ${price} dollari eest? See toiming on pöördumatu.",
@@ -6058,7 +6088,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		sale_log_description = "${consoleName} müüs `${label}` tagasi $${price} eest.",
 
 		log_title = "EDM Ost",
-		log_description = "Ostetud `${label}` hinnaga $${price}."
+		log_description = "Ostetud `${label}` summas ${cost}."
 	},
 
 	failures = {
@@ -6675,7 +6705,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		gas_station_backdoor = "Bensiinijaama tagauks",
 		cleaning_station = "Puhastusjaam",
 		grocery_store = "Toidupood",
-		penthouse_fridge = "Külmkapp",
+		penthouse_fridge = "Luksuskorteri külmik",
 		mug_shots = "Mug Shot'id",
 		prison_store = "Vangla pood",
 		fruit_vendor = "Puuvilja müüja",
@@ -6847,6 +6877,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		dumpster_brownies = "Kuivanud pruunid koogid",
 		dumpster_pizza_slice = "Hallitanud pitsatükk",
 		dumpster_banana = "Karvane banaan (vesine)",
+		dumpster_almond_milk = "Katkine mandlipiim",
 
 		-- items & item descriptions
 		body_armor = "Kere rüü",
@@ -6996,6 +7027,16 @@ OP.Global.Locales.Languages["et-EE"] = {
 		clothing_bag = "Riiete kott",
 		clothing_bag_description = "Ära kunagi enam muretse riietuskriiside pärast! Riiete kotiga saad hoiustada oma lemmikrõivaid ja varustada end nendega koheselt ükskõik kus sa ka ei viibiks. See kott on nagu võluväeloomine ilma bibbidi-bobbidi-boo'ta.",
 
+		magnifying_glass = "Luup",
+		magnifying_glass_description = "Luup kõigi teie detektiivivajaduste jaoks. Ehk leiad nelja lehega ristiku murult või väikese konnakese mudast?",
+
+		clover = "Nelja Lehega Ristik",
+		clover_description = "Haruldane nelja lehega ristik hea õnne jaoks. Sa saad neid leida murult, kui piisavalt hästi otsid.",
+		small_frog = "Väike Konn",
+		small_frog_description = "Lihtsalt väike konnake. Vaata, kui armas ta on!",
+		seashell = "Merikarp",
+		seashell_description = "Merikarp rannast. Kui paned selle kõrva juurde, kuuled ookeani.",
+
 		raw_diamond = "Tooriktene",
 		raw_diamond_description = "Teemant looduslikul kujul, otse kaevandusest.",
 		raw_morganite = "Toores morganiit",
@@ -7126,8 +7167,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		donut_description = "Miks on sõõriku keskel auk bwo",
 		green_apple = "Roheline õun",
 		green_apple_description = "See on nagu Red Bull, kuid mängus ei olnud ühtegi eset, mis meenutaks Red Bulli purki.",
-		sandwich = "Vegan võileib",
-		sandwich_description = "See on vegan.",
+		sandwich = "Sink võileib",
+		sandwich_description = "Maitsvat võileiba singi ja juustuga.",
+		vegan_sandwich = "Taimetoitlane võileib",
+		vegan_sandwich_description = "Jah, see on tegelikult lihtsalt üks lehtsalat ja mõned tomatid kahe täisteraleiva vahel. (Ma ei tea, miks keegi seda kunagi sööks)",
 		taco = "Taco",
 		taco_description = "El Brayan'i eripära.",
 		smores = "S'mores",
@@ -7137,7 +7180,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		pizza_slice = "Pizza viil",
 		pizza_slice_description = "Veidi pitsat sinu jaoks.",
 		hot_dog = "Hot Dog",
-		hot_dog_description = "Söö seda glizzyt, nagu see oleks sinu viimane.",
+		hot_dog_description = "Naudi seda glizzit nagu see oleks su viimane.",
 		nachos = "Nachod",
 		nachos_description = "Nachod, mis on head isegi Encarnacióni jaoks!!",
 		vanilla_ice_cream = "Vaniljejäätis",
@@ -7493,6 +7536,9 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		milk = "Piim",
 		milk_description = "Tavaline lehmapiim, mis on toodetud armastusega.",
+
+		almond_milk = "Mandlipiim",
+		almond_milk_description = "Kuidas kurat nad mandleid lüpsavad??????",
 
 		bandana = "Bandana",
 		bandana_description = "Palju jõugutegemist. (Bloods võidab)",
@@ -8272,7 +8318,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		weapon_addon_hk416_description = "H&K 416, tulirelvade Ferrari - terav, võimsa ja garanteeritud tähelepanu äratav. See on justkui isiklik treener sinu päästikusõrmes, pakkudes tulemusi, mis muudavad su vaenlased kadedaks. Tere tulemast oma uue BFF-i (Parima Tulerelva Sõbra) juurde!",
 
 		weapon_addon_680 = "Remington 680",
-		weapon_addon_680_description = "Remington 680 on pumpputoiminen haulikko, joka kehitettiin Remington Arms-yrityksessä vuonna 1950."
+		weapon_addon_680_description = "Remington 680 on pumpputoiminen haulikko, joka kehitettiin Remington Arms-yrityksessä vuonna 1950.",
+
+		weapon_addon_honey = "Meemäger",
+		weapon_addon_honey_description = "AAC Honey Badger PDW on isikukaitse relv, mida sageli kasutatakse summutiga konfiguratsioonis ning see põhineb AR-15-l. Selle kaliiber on .300 AAC Blackout ja seda toodeti algselt ettevõtte Advanced Armament Corporation (AAC) poolt."
 	},
 
 	invisibility = {
@@ -8415,6 +8464,12 @@ OP.Global.Locales.Languages["et-EE"] = {
 		read_catalog = "Vajutage ~g~${InteractionKey} ~w~, et kataloogi lugeda"
 	},
 
+	lag = {
+		fake_lag_invalid_fps = "Vigane kaadrisagedus.",
+		fake_lag_clamp = "Limiitimine kaadrisageduse alla ${fps}.",
+		fake_lag_disabled = "Valeviide on keelatud."
+	},
+
 	lean = {
 		press_to_sell_lean = "Vajuta ~INPUT_CONTEXT~, et müüa lean'i.",
 		local_not_interested = "Kohalik ei paista hetkel huvitatud olevat.",
@@ -8513,6 +8568,23 @@ OP.Global.Locales.Languages["et-EE"] = {
 		start_download = "Alusta allalaadimist",
 		slow_download = "Aeglane allalaadimine",
 		regular_download = "Tavaline allalaadimine",
+		purchases = "Ostud",
+		pledges = "Tõotused",
+		packages = "Paketid",
+		points = "Punktid",
+		appreciated_tier = "Hinnatud tase",
+		respected_tier = "Austatud tase",
+		heroic_tier = "Kangelaslik tase",
+		legendary_tier = "Legendne tase",
+		god_tier = "Jumala tase",
+		custom_plate = "Kohandatud numbrimärk",
+		custom_character_id = "Kohandatud tegelase ID",
+		custom_phone_number = "Kohandatud telefoninumber",
+		reskin = "Ümberkujundamine",
+		webstore = "Veebipood",
+		none = "Puudub",
+		queue_pin = "PIN-kood: ${queuePIN}",
+		copied = "Kopeeritud!",
 		back = "Tagasi",
 		copy_license = "Litsentsi identifikaator",
 		copy_license_success = "Kopeeritud!",
@@ -8601,7 +8673,9 @@ OP.Global.Locales.Languages["et-EE"] = {
 		respected_tier = "Austatud tase",
 		heroic_tier = "Kangelaslik tase",
 		legendary_tier = "Legendne tase",
-		godlike_tier = "Jumalik tase"
+		godlike_tier = "Jumalik tase",
+
+		buddy_passed_through = "${playerName} kasutas Buddy Pass'i, et sind läbi lükata!"
 	},
 
 	logs = {
@@ -8654,6 +8728,27 @@ OP.Global.Locales.Languages["et-EE"] = {
 		issue_id = "Probleemi nr ${issueId}",
 		releases_updated = "Väljalasked on uuendatud.",
 		no_release_changes = "Väljalaskete muudatusi pole."
+	},
+
+	magnifying_glass = {
+		searching = "Otsin maad",
+
+		too_fast = "Liigud liiga kiiresti.",
+		failed_search = "Ei õnnestunud maaotsingut teha.",
+		found_nothing = "Sa ei leidnud siit midagi.",
+		already_searched = "Seda piirkonda tundub juba olevat otsitud.",
+		found_item = "Leidsid ${item}.",
+
+		press_to_sell_items = "Vajuta ~INPUT_CONTEXT~, et esemeid müüa.",
+		no_items_to_sell = "Sul ei ole esemeid müümiseks.",
+		menu_title = "Haruldased esemed",
+		exit_shop = "Välju poest",
+		failed_sell = "Eseme müük ebaõnnestus.",
+
+		found_item_logs_title = "Leitud ese maal",
+		found_item_logs_details = "${consoleName} leidis ${item} maalt (${ground}).",
+		sold_item_logs_title = "Müüdud haruldane ese",
+		sold_item_logs_details = "${consoleName} müüs ${item} hinnaga $${price}."
 	},
 
 	mdt = {
@@ -11449,7 +11544,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 
 		npc_vehicle = "See sõiduk ei ole mängija omatud sõiduk.",
 		not_in_a_vehicle = "Sa ei sõida praegu üheski sõidukis.",
-		invalid_minutes = "Vigane aeg (vahemikus 1 minut kuni 12 tundi).",
+		invalid_minutes = "Vigane aeg (1 minuti ja 48 tunni vahel).",
 
 		not_on_duty = "Sa ei ole tööl.",
 		failed_impound = "Sõiduki arestimine ebaõnnestus.",
@@ -11816,6 +11911,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		spawner_burger_shot = "Burger Shoti kullerisõidukid",
 		spawner_bean_machine = "Bean Machine'i kullerisõidukid",
 		spawner_weazel_news = "Weazel Newsi kullerisõidukid",
+		spawner_state = "Seisundis olevad sõidukid",
 		close_menu = "Sule menüü",
 		vehicle_list = "Sõidukite nimekiri",
 		park_vehicle = "Pargi sõiduk",

@@ -496,10 +496,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		reset_auto_drive_speed = "Reset auto drive speed to default.",
 		set_auto_drive_speed = "Set auto drive speed to ${speed} mph.",
 
-		disable_collisions_on = "Your collisions are now disabled.",
-		disable_collisions_off = "Your collisions are now enabled.",
-		failed_toggle_collisions = "Failed to toggle disabled collisions.",
-
 		disabled_recoil_on = "Disabled recoil.",
 		disabled_recoil_off = "Enabled recoil.",
 
@@ -626,10 +622,6 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		clean_ped_logs_title = "Cleaned Ped",
 		clean_ped_logs_details = "${consoleName} cleaned ${targetName]'s ped.",
-
-		collisions_logs_title = "Collisions",
-		collisions_off_logs_details = "${consoleName} toggled their disabled collisions off.",
-		collisions_on_logs_details = "${consoleName} toggled their disabled collisions on.",
 
 		invalid_job_search = "Invalid job search (has to be at least 3 characters).",
 		failed_job_search = "Failed to search for jobs.",
@@ -1075,10 +1067,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		no_nearby_vehicles_command_parameter_server_id = "server id",
 		no_nearby_vehicles_command_parameter_server_id_help = "If you're wanting to toggle the 'no nearby vehicles' for someone else, insert their server id here.",
 		no_nearby_vehicles_command_substitutes = "",
-
-		disable_collisions_command = "disable_collisions",
-		disable_collisions_command_help = "Disable collisions with vehicles and peds in a 10 meter radius.",
-		disable_collisions_command_substitutes = "collisions",
 
 		ghost_command = "ghost",
 		ghost_command_help = "This command will enable /peek, invisibility and /disable_collisions.",
@@ -1704,6 +1692,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		spawn_contract_command_parameter_server_id_help = "The server ID you would like to spawn a contract for. It will auto-select yourself it left blank.",
 		spawn_contract_command_substitutes = "",
 
+		-- game/buddy_pass
+		buddy_pass_command = "buddy_pass",
+		buddy_pass_command_help = "Open the buddy pass UI.",
+		buddy_pass_command_substitutes = "",
+
 		-- game/cache
 		cache_assets_command = "cache_assets",
 		cache_assets_command_help = "Forcefully request and download most streamed assets (vehicles, objects and clothing). This is not recommended unless you have a slow connection and assets don't download fast enough on demand to be seamless. This may also cause client crashes while it's in action.",
@@ -1827,6 +1820,11 @@ OP.Global.Locales.Languages["en-US"] = {
 		outfits_command = "outfits",
 		outfits_command_help = "List all your saved outfits.",
 		outfits_command_substitutes = "",
+
+		-- game/collisions
+		disable_collisions_command = "disable_collisions",
+		disable_collisions_command_help = "Disable collisions with vehicles and peds in a 25 meter radius (Only locally for you).",
+		disable_collisions_command_substitutes = "collisions",
 
 		-- game/command_socket
 		reconnect_command_socket_command = "reconnect_command_socket",
@@ -1979,12 +1977,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		server_entity_command_parameter_network_id = "network id",
 		server_entity_command_parameter_network_id_help = "The network id of the entity.",
 		server_entity_command_substitutes = "",
-
-		fake_lag_command = "fake_lag",
-		fake_lag_command_help = "Create fake lag.",
-		fake_lag_command_parameter_fps = "fps",
-		fake_lag_command_parameter_fps_help = "The target fps (>= 1).",
-		fake_lag_command_substitutes = "lag",
 
 		view_weapon_command = "view_weapon",
 		view_weapon_command_help = "Spawns an object with the given model name and positions it perfectly for screenshots.",
@@ -2512,6 +2504,13 @@ OP.Global.Locales.Languages["en-US"] = {
 		jackpot_take_fees_command = "jackpot_take_fees",
 		jackpot_take_fees_command_help = "Take a fee from all jackpot inventories.",
 		jackpot_take_fees_command_substitutes = "",
+
+		-- game/lag
+		fake_lag_command = "fake_lag",
+		fake_lag_command_help = "Create fake lag.",
+		fake_lag_command_parameter_fps = "fps",
+		fake_lag_command_parameter_fps_help = "The target fps (>= 1).",
+		fake_lag_command_substitutes = "lag",
 
 		-- game/locate
 		locate_entity_command = "locate_entity",
@@ -4637,6 +4636,29 @@ OP.Global.Locales.Languages["en-US"] = {
 		closing_sentence = "There's a lot more to do in the city! Ask around and make some friends ;)"
 	},
 
+	buddy_pass = {
+		buddy_pass = "Buddy Pass",
+		information_part_1 = "Instantly push your friend through the queue with a Buddy Pass!",
+		information_part_2 = "All users with a God Tier pledge has access to this feature with one free pass.",
+		information_part_3 = "The 'pass' is active until your friend disconnects from the server. You can then push someone else through.",
+		information_part_4 = "Ask for their queue PIN to push them through!",
+		queue_pin = "Queue PIN",
+		available = "Available",
+		close = "Close",
+		webstore = "Webstore",
+		buddy_passes = "Buddy Passes",
+		push_through = "Push Through!",
+		queue_pin_not_set = "You have to add a queue PIN.",
+		queue_pin_is_a_4_digit_pin = "A queue PIN is a 4-digit PIN.",
+		no_buddy_passes = "You do not have any buddy passes.",
+		no_buddy_passes_available = "You do not have any buddy passes available.",
+		no_queue_with_queue_pin = "There was no one in the queue with the provided PIN.",
+		buddy_pushed_through = "You pushed ${playerName} through the queue!",
+
+		buddy_pass_used_logs_title = "Buddy Pass Used",
+		buddy_pass_used_logs_details = "${consoleName} used their Buddy Pass to push through ${targetConsoleName}."
+	},
+
 	cache = {
 		download_progress = "Download Progress:\n- Vehicles: ${vehiclesDone}/${vehiclesTotal}\n- Objects: ${objectsDone}/${objectsTotal}\n- Peds: ${pedsDone}/${pedsTotal}\n- Clothing: ${clothingRequested}/${clothingTotal}",
 		slow_download_enabled = "Slow download has been enabled.",
@@ -4933,6 +4955,15 @@ OP.Global.Locales.Languages["en-US"] = {
 		chest_hair = "Chest Hair",
 		body_blemishes = "Body Blemishes",
 		add_body_blemish = "Add Body Blemish"
+	},
+
+	collisions = {
+		disable_collisions_on = "Your collisions are now disabled.",
+		disable_collisions_off = "Your collisions are now enabled.",
+
+		collisions_logs_title = "Collisions",
+		collisions_off_logs_details = "${consoleName} toggled their disabled collisions off.",
+		collisions_on_logs_details = "${consoleName} toggled their disabled collisions on."
 	},
 
 	command_socket = {
@@ -5780,10 +5811,6 @@ OP.Global.Locales.Languages["en-US"] = {
 		move_entity_failed = "Failed to move entity.",
 		move_entity_no_permissions = "Attempted to move an entity without proper permissions.",
 
-		fake_lag_invalid_fps = "Invalid fps.",
-		fake_lag_clamp = "Clamping fps to be below ${fps}.",
-		fake_lag_disabled = "The fake lag has been disabled.",
-
 		weapon_name_missing = "Missing weapon name parameter.",
 		weapon_name_invalid = "`${weaponName}` is not a valid weapon name.",
 		model_name_missing = "Missing model name parameter.",
@@ -6018,17 +6045,20 @@ OP.Global.Locales.Languages["en-US"] = {
 	},
 
 	exclusive_dealership = {
-		marker_label = "${label} | $${price}",
-		marker_label_purchase = "[${SeatEjectKey}] Purchase ${label} for $${price}",
+		cost_money = "$${price}",
+		cost_points = "${points} OP Points",
+
+		marker_label = "${label} | ${cost}",
+		marker_label_purchase = "[${SeatEjectKey}] Purchase ${label} for ${cost}",
 
 		confirm_purchase = "Confirm Purchase",
-		confirm_purchase_label = "${label} | $${price}",
+		confirm_purchase_label = "${label} | ${cost}",
 
 		deny_purchase = "Nevermind, I don't want it",
 		accept_purchase = "Yes, I want to buy it",
 		accept_purchase_info = "Are you sure you want to purchase this vehicle? This action cannot be undone.",
 
-		purchased_vehicle = "Purchased a ${label} for $${price}.",
+		purchased_vehicle = "Purchased a ${label} for ${cost}.",
 		insufficient_funds = "Insufficient funds.",
 		area_not_clear = "Spawn area is not clear.",
 		invalid_package = "Incorrect supporter pledge.",
@@ -6043,7 +6073,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		buyback_vehicle_help = "Press ~INPUT_CONTEXT~ to access the exchange.",
 		buyback_title = "Prestige Wheels Exchange",
-		sell_closest_vehicle = "Sell your ${label} for $${price} (${percent}% of its price)?",
+		sell_closest_vehicle = "Sell your ${label} for $${price} (${percent}% of its worth)?",
 		deny_sale = "Nevermind, I wanna keep it",
 		accept_sale = "Yes, i am sure",
 		accept_sale_description = "Are you sure you want to sell your vehicle for $${price}? This action cannot be undone.",
@@ -6056,7 +6086,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		sale_log_description = "${consoleName} sold their `${label}` for $${price}.",
 
 		log_title = "EDM Purchase",
-		log_description = "Purchased the `${label}` for $${price}."
+		log_description = "Purchased the `${label}` for ${cost}."
 	},
 
 	failures = {
@@ -6673,7 +6703,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		gas_station_backdoor = "Gas Station Backdoor",
 		cleaning_station = "Cleaning Station",
 		grocery_store = "Grocery Store",
-		penthouse_fridge = "Fridge",
+		penthouse_fridge = "Penthouse Fridge",
 		mug_shots = "Mug Shots",
 		prison_store = "Prison Store",
 		fruit_vendor = "Fruit Vendor",
@@ -6845,6 +6875,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		dumpster_brownies = "Dried Up Brownies",
 		dumpster_pizza_slice = "Moldy Pizza Slice",
 		dumpster_banana = "Hairy Banana (Very Mushy)",
+		dumpster_almond_milk = "Sour Almond Milk",
 
 		-- items & item descriptions
 		body_armor = "Body Armor",
@@ -6994,6 +7025,16 @@ OP.Global.Locales.Languages["en-US"] = {
 		clothing_bag = "Clothing Bag",
 		clothing_bag_description = "Never worry about fashion emergencies again! The clothing bag lets you store your favorite outfit and instantly equip it anywhere you go. This bag has all the magic of a fairy godmother, minus the bibbidi-bobbidi-boo.",
 
+		magnifying_glass = "Magnifying Glass",
+		magnifying_glass_description = "A magnifying glass for all your detective needs. Maybe you'll find a 4 leaf clover in the grass or a small frog in the mud?",
+
+		clover = "4 Leaf Clover",
+		clover_description = "A rare 4 leaf clover for good luck. You can find these in the grass if you look hard enough.",
+		small_frog = "Small Frog",
+		small_frog_description = "Just a small frog. Look at the little guy, he's so cute!",
+		seashell = "Seashell",
+		seashell_description = "A seashell from the beach. You can hear the ocean if you put it up to your ear.",
+
 		raw_diamond = "Raw Diamond",
 		raw_diamond_description = "Diamond in its natural form, fresh from the mine.",
 		raw_morganite = "Raw Morganite",
@@ -7124,8 +7165,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		donut_description = "Why is there a hole in the middle bwo",
 		green_apple = "Green Apple",
 		green_apple_description = "It's like a red bull but there were no objects in the game that matched a red bull can.",
-		sandwich = "Sandwich",
-		sandwich_description = "It's vegan.",
+		sandwich = "Ham Sandwich",
+		sandwich_description = "A delicious sandwich with ham and cheese.",
+		vegan_sandwich = "Vegan Sandwich",
+		vegan_sandwich_description = "Yeah this is literally just a piece of lettuce and a few tomatoes between two pieces of wholegrain bread. (Idk why you'd ever eat this)",
 		taco = "Taco",
 		taco_description = "El Brayan's speciality.",
 		smores = "S'mores",
@@ -7135,7 +7178,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		pizza_slice = "Pizza Slice",
 		pizza_slice_description = "A Lil slice of the Za for ya.",
 		hot_dog = "Hot Dog",
-		hot_dog_description = "Gobble up this glizzy like it’ll be your last.",
+		hot_dog_description = "Gobble up this glizzy like it'll be your last.",
 		nachos = "Nachos",
 		nachos_description = "Nachos good enough for Encarnación!!",
 		vanilla_ice_cream = "Vanilla Ice Cream",
@@ -7491,6 +7534,9 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		milk = "Milk",
 		milk_description = "Regular cow milk extracted with love.",
+
+		almond_milk = "Almond Milk",
+		almond_milk_description = "How the fuck did they milk almonds??????",
 
 		bandana = "Bandana",
 		bandana_description = "Whole lotta gang shit. (Bloods win)",
@@ -8270,7 +8316,10 @@ OP.Global.Locales.Languages["en-US"] = {
 		weapon_addon_hk416_description = "The H&K 416, the Ferrari of firearms - sleek, powerful, and guaranteed to turn heads. It's like having a personal trainer for your trigger finger, delivering results that'll make your enemies jealous. Say hello to your new BFF (Best Firearm Forever)!",
 
 		weapon_addon_680 = "Remington 680",
-		weapon_addon_680_description = "The Remington 680 is a pump-action shotgun that was developed by Remington Arms in 1950."
+		weapon_addon_680_description = "The Remington 680 is a pump-action shotgun that was developed by Remington Arms in 1950.",
+
+		weapon_addon_honey = "Honey Badger",
+		weapon_addon_honey_description = "The AAC Honey Badger PDW is a personal defense weapon, frequently used in a suppressed configuration and is based on the AR-15. It is chambered in .300 AAC Blackout and was originally produced by Advanced Armament Corporation (AAC)."
 	},
 
 	invisibility = {
@@ -8413,6 +8462,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		read_catalog = "Press ~g~${InteractionKey} ~w~to read Catalog"
 	},
 
+	lag = {
+		fake_lag_invalid_fps = "Invalid fps.",
+		fake_lag_clamp = "Clamping fps to be below ${fps}.",
+		fake_lag_disabled = "The fake lag has been disabled."
+	},
+
 	lean = {
 		press_to_sell_lean = "Press ~INPUT_CONTEXT~ to sell Lean.",
 		local_not_interested = "The local doesn't seem to be interested right now.",
@@ -8511,6 +8566,23 @@ OP.Global.Locales.Languages["en-US"] = {
 		start_download = "Start Download",
 		slow_download = "Slow Download",
 		regular_download = "Regular Download",
+		purchases = "Purchases",
+		pledges = "Pledges",
+		packages = "Packages",
+		points = "Points",
+		appreciated_tier = "Appreciated Tier",
+		respected_tier = "Respected Tier",
+		heroic_tier = "Heroic Tier",
+		legendary_tier = "Legendary Tier",
+		god_tier = "God Tier",
+		custom_plate = "Custom Plate",
+		custom_character_id = "Custom Character ID",
+		custom_phone_number = "Custom Plate Number",
+		reskin = "Reskin",
+		webstore = "Webstore",
+		none = "None",
+		queue_pin = "PIN: ${queuePIN}",
+		copied = "Copied!",
 		back = "Back",
 		copy_license = "License ID",
 		copy_license_success = "Copied!",
@@ -8599,7 +8671,9 @@ OP.Global.Locales.Languages["en-US"] = {
 		respected_tier = "Respected Tier",
 		heroic_tier = "Heroic Tier",
 		legendary_tier = "Legendary Tier",
-		godlike_tier = "Godlike Tier"
+		godlike_tier = "Godlike Tier",
+
+		buddy_passed_through = "${playerName} used their Buddy Pass to push you through!"
 	},
 
 	logs = {
@@ -8652,6 +8726,27 @@ OP.Global.Locales.Languages["en-US"] = {
 		issue_id = "Issue #${issueId}",
 		releases_updated = "Releases updated.",
 		no_release_changes = "There were no release changes."
+	},
+
+	magnifying_glass = {
+		searching = "Searching The Ground",
+
+		too_fast = "You are moving too fast.",
+		failed_search = "Failed to search the ground.",
+		found_nothing = "You didn't find anything here.",
+		already_searched = "This area seems to have been searched already.",
+		found_item = "You found a ${item}.",
+
+		press_to_sell_items = "Press ~INPUT_CONTEXT~ to sell items.",
+		no_items_to_sell = "You don't have any items to sell.",
+		menu_title = "Rare Items",
+		exit_shop = "Exit Shop",
+		failed_sell = "Failed to sell item.",
+
+		found_item_logs_title = "Found Item On Ground",
+		found_item_logs_details = "${consoleName} found a ${item} on the ground (${ground}).",
+		sold_item_logs_title = "Sold Rare Item",
+		sold_item_logs_details = "${consoleName} sold a ${item} for $${price}."
 	},
 
 	mdt = {
@@ -11447,7 +11542,7 @@ OP.Global.Locales.Languages["en-US"] = {
 
 		npc_vehicle = "This vehicle is not a player owned vehicle.",
 		not_in_a_vehicle = "You are not currently driving a vehicle.",
-		invalid_minutes = "Invalid time (between 1 minute and 12 hours).",
+		invalid_minutes = "Invalid time (between 1 minute and 48 hours).",
 
 		not_on_duty = "You are not on duty.",
 		failed_impound = "Failed to impound vehicle.",
@@ -11814,6 +11909,7 @@ OP.Global.Locales.Languages["en-US"] = {
 		spawner_burger_shot = "Burger Shot Delivery Vehicles",
 		spawner_bean_machine = "Bean Machine Delivery Vehicles",
 		spawner_weazel_news = "Weazel News Vehicles",
+		spawner_state = "State Vehicles",
 		close_menu = "Close Menu",
 		vehicle_list = "Vehicle List",
 		park_vehicle = "Park Vehicle",
