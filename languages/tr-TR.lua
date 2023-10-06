@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 20 (do not change)
+-- AUTO LOCALES: 21 (do not change)
 
 OP.Global.Locales.Languages["tr-TR"] = {
 	-- configuration settings for language
@@ -73,7 +73,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		cant_struggle_dead = "Ölüyken sıkışmazsın.",
 		struggle_to_quick = "Sıkışıp kurtulduktan sonra yorgun düştün, biraz bekleyip tekrar dene.",
 		struggle_logs_title = "Kurtarıldı",
-		struggle_logs_details = "${consoleName}, taşıyan kişiden (${targetName}) sıkışıp kurtuldu."
+		struggle_logs_details = "${consoleName}, taşıyan kişiden (${targetName}) sıkışıp kurtuldu.",
+
+		invalid_server_id = "Geçersiz sunucu ID'si.",
+		ragdolled_player = "${displayName} bayıltıldı."
 	},
 
 	-- base/*
@@ -298,25 +301,15 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		headache_logs_title = "Baş Ağrısı Tetiklendi",
 		headache_logs_details = "${consoleName}, ${targetConsoleName} için baş ağrısı tetikledi.",
 
+		spawn_logs_title = "Spawna Teleport Edildi",
+		spawn_logs_details = "${consoleName}, spawna (personel kulesine) teleport edildi.",
+
 		super_jump_logs_title = "Süper Atlamayı Değiştirildi",
 		super_jump_logs_details_on = "${consoleName}, süper atlama özelliğini açtı.",
 		super_jump_logs_details_off = "${consoleName}, süper atlama özelliğini kapattı.",
 
 		success_trigger_headache = "${playerName} için baş ağrısı başarıyla tetiklendi.",
 		failed_trigger_headache = "Baş ağrısı tetikleyemedi.",
-
-		set_spawn_success = "Doğma noktanız şu anki konumunuza sabitlendi.",
-		set_spawn_failed = "Doğum noktası ayarlanamadı.",
-		reset_spawn_success = "Doğum noktası başarıyla sıfırlandı.",
-		reset_spawn_failed = "Doğum noktası sıfırlanamadı.",
-
-		protective_mode_toggled_on = "Sunucu koruyucu modu etkinleştirildi. Sunucuya bağlanmak için gereken oynama süresi `${playtime}` olarak ayarlandı.",
-		protective_mode_toggled_off = "Sunucu koruyucu modu devre dışı bırakıldı.",
-		protective_mode_already_on = "Sunucu koruyucu modu zaten `${playtime}` oynama süresi gerektirerek etkinleştirilmiş durumda.",
-		protective_mode_already_off = "Sunucu koruyucu modu zaten devre dışı bırakılmıştır.",
-		logs_protective_mode = "Sunucu Koruma Modu",
-		logs_protective_mode_on = "${consoleName} sunucu koruma modunu etkinleştirdi, gerekli oynama süresi: `${playtime}`.",
-		logs_protective_mode_off = "${consoleName} sunucu koruma modunu devre dışı bıraktı.",
 
 		no_item_name = "Hiçbir öğe adı belirtilmedi.",
 		invalid_item_name = "${itemName} geçerli bir öğe adı değil.",
@@ -364,9 +357,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		evidence_view_details_on = "${consoleName}, gelişmiş kanıt görünümünü açtı.",
 		evidence_view_details_off = "${consoleName}, gelişmiş kanıt görünümünü kapattı.",
 
-		tracker_turned_on = "Takip cihazınız açıldı.",
-		tracker_turned_off = "Takip cihazınız kapatıldı.",
-
 		report_muted_no_reason = "Rapor komutundan neden belirtilmeden susturuldunuz.",
 		report_muted = "Rapor komutundan '${reason}' sebebiyle susturuldunuz.",
 
@@ -386,13 +376,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		teleported_to_coordinates_logs_details = "${consoleName}, X: ${x}, Y: ${y}, Z: ${z} koordinatlarına teleporte edildi.",
 		teleported_to_waypoint_logs_title = "Rotaya Teleport Edildi",
 		teleported_to_waypoint_logs_details = "${consoleName}, ${locationLabel} adresindeki rotaya teleporte edildi.",
-
-		failed_isolate = "Oyuncu izole edilemedi.",
-		invalid_server_id = "Geçersiz sunucu kimliği.",
-		isolate_success_on = "${consoleName} başarıyla izole edildi.",
-		isolate_success_off = "${consoleName} izolasyonu durduruldu.",
-
-		isolate_missing_permissions = "Oyuncu uygun izinlere sahip olmadan başka bir oyuncuyu izole etmeye çalıştı.",
 
 		population_density_set_to = "Nüfus yoğunluğu çarpanı yazılımı ${multiplierLabel}% olarak ayarlandı.",
 		population_density_set_off = "Nüfus yoğunluğu çarpanı devre dışı bırakıldı.",
@@ -424,6 +407,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		super_jump_feature = "Süper Zıplama",
 		server_id_hidden_feature = "Sunucu Kimliği Gizli",
 		fake_disconnect_feature = "Sahte Bağlantı Kesme",
+		brighter_nights_feature = "DA",
 
 		you_are_not_in_a_vehicle = "Araçta değilsiniz.",
 		repaired_vehicle = "Araç tamir edildi.",
@@ -595,10 +579,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		refill_nitro_logs_title = "Nitro Seviyesi Tamamlandı",
 		refill_nitro_logs_details = "${consoleName} nitro seviyesini doldurdu.",
 
-		isolated_logs_title = "Oyuncu İzolasyonu",
-		isolated_off_logs_details = "${consoleName}, ${targetName}'nin izolasyonunu kapatıldı.",
-		isolated_on_logs_details = "${consoleName}, ${targetName}'nin izolasyonunu açıldı.",
-
 		character_data_logs_title = "Karakter Verileri",
 		character_data_logs_details = "${consoleName}, ${targetName}'nin karakter verilerini kontrol etti (CID: ${characterId}).",
 
@@ -635,9 +615,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 	},
 
 	anti_cheat = {
-		illegal_client_event = "Direkt olarak hapse gidin. Gitmek istemeyenler için $200 gibi bir para dağıtılmayacaktır.",
-		illegal_server_event = "Direkt olarak hapse gidin. Gitmek istemeyenler için $200 gibi bir para dağıtılmayacaktır.",
-		bad_entity_spawn = "Model adı `${modelName}` olan bir varlık oluşturuldu.",
 		bad_entity_title = "Kötü Varlık Doğuruldu",
 		bad_entity_message = "${consoleName} ${modelName} model adlı varlığı doğurdu.",
 		detected_entity_title = "Algılanan Varlık Doğuruldu",
@@ -649,6 +626,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		detection_area_close = "[${InteractionKey}] Algılama Alanını Kaldır (${areaId})",
 		detection_area = "Algılama Alanı (${areaId})",
 
+		suspicious_transfer_title = "Şüpheli Transfer",
+		suspicious_transfer_message = "${from}, ${to}'ya $${amount} aktardı.",
+
 		failed_toggle_strict_mode = "Katı kural modu açılamadı.",
 		strict_mode_enabled = "Katı kural modu başarıyla etkinleştirildi.",
 		strict_mode_disabled = "Katı kural modu başarıyla devre dışı bırakıldı.",
@@ -656,37 +636,43 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		ban_notification_title = "Anti-Hile",
 		ban_notification = "${consoleName} hile sebebi `${banReason}` ile yasaklandı.",
 
+		suspicious_transfer_title = "Şüpheli Transfer",
+		suspicious_transfer_details = "${consoleName}, ${targetConsoleName}'a $${amount} aktardı.",
+
+		-- GPT-4 generated ban messages
+		bad_entity_spawn = "Ah, eski yada benzersiz bir `${modelName}`'yi çağırmaya mı çalışıyorsun? Bu bir \"Antiques Roadshow\" bölümü değil ve o kalıntı kasa içinde kalacak.",
 		bad_screen_word_ban = "Açık kitap sınavlarını duymuştuk ama bu absürt.",
 		blacklisted_command_ban = "Üzgünüz, fakat bu komutu gerçekleştirmek için yetkiniz yok. Eğer bu bir hata olduğunu düşünüyorsanız lütfen sunucu yöneticileri ile iletişime geçin.",
+		clear_tasks_ban = "Bu bir Jedi düşünce numarası eğitim merkezi değildir. Diğerlerinin özgür iradesini etkilemeye yönelik çabanız kaydedildi... ve reddedildi.",
 		damage_modifier_ban = "Güç seviyeniz 9000'in üzerinde olamaz.",
 		distance_taze_ban = "Uzaktan yaptığın şoklamalar diğerlerini rahatsız etti.",
 		fast_movement_ban = "Uçma özelliği bu sunucuda etkinleştirilmemiştir.",
 		freecam_ban = "Dışarıdan bir deneyim yaşadığın için engellendin.",
 		honeypot_ban = "Yaratıcı modu açmaya çalıştın ama iznin yoktu.",
-		hotwire_driving_ban = "Vroom Vroom, ben annemin arabasındayım.",
+		illegal_client_event = "Ah, gizli `${eventName}` frekansına mı ayarlanmaya çalışıyorsun? Bu gizli bir radyo istasyonu değil ve o şarkı bizim çalma listemizde yok.",
+		illegal_damage_ban = "Güç dengesini çok fazla bozdun, bizim alanımızın denge durumunu bozdun.",
 		illegal_freeze_ban = "Ruhlar özgürce dolaşabilirken, biz sıradan insanlar fizik kanunlarına bağlıyız. Sir Isaac Newton başka türlü istemezdi.",
+		illegal_global_ban = "Matrix'e bağlanmayı denedin değil mi? Neo etkilenebilir, ama biz etkilenmeyiz.",
+		illegal_native_ban = "Dijital alemin ruhlarıyla fısıldamak mı istedin? Maalesef bu seans reddedildi. Eğer etereo düzlemde daha iyi şansın varsa.",
 		illegal_ped_change_ban = "Kimlik hırsızlığı şaka değil, Jim! Her yıl milyonlarca karakter bundan muzdariptir.",
-		illegal_spectating_ban = "Diğer oyuncuları izlemek için FIB Ajanı olmanız veya /gamemode spectator komutunu kullanmanız gerekiyor.",
+		illegal_server_event = "${eventName}'ın duyulmamış ritmiyle dans etmek mi istedin? Bu gizli bir balo salonu değil ve o dans hareketleri? Kesinlikle izin verilmez.",
+		illegal_spectating_ban = "Ruhların gözetleme yetenekleri hayaletli malikaneler için ayrılmıştır. Astral projeksiyon yeteneklerin not edildi, ama hoş karşılanmadı.",
 		illegal_vehicle_modifier_ban = "Fast and Furious'taki Dom Toretto gibi aile değiliz.",
+		infinite_ammo_ban = "Popüler inanışın aksine, koruma yasaları burada da geçerlidir. Sihirli mühimmat poşeti el konulmuştur.",
+		invalid_health_ban = "Sağlık çubuğunuz roka yemiş gibi görünüyor, Popeye",
 		invincibility_ban = "Siyah Şövalye değilsiniz, ölümsüz olamazsınız.",
-		ped_spawn_ban = "Mitoz yapmayı denediniz, ancak fotosentez için yeterli güneş ışığı yoktu.",
+		ped_spawn_ban = "Ah, '${modelName}'in efsanevi figürünü çağırmayı umuyordun, değil mi? Bu Hollywood seçmeleri değil ve o yıldız sahnede değil.",
 		player_blips_ban = "Hava sahası dolu olduğundan UAV kullanılamıyor.",
 		runtime_texture_ban = "Mod menüsüne sahipsiniz ama kullanamazsınız.",
-		spiked_resource_ban = "İzin olmadan betiği değiştirmeye çalışmak, hikayenin sonunu beğenmediğiniz için değiştirmeye çalışmak gibidir.",
+		semi_godmode_ban = "Gençlik çağının çeşmesine olan ısrarın doğal zaman akışını bozdu gibi görünüyor. Sonsuzluk, düşünüldüğü kadar eğlenceli değil.",
+		suspicious_explosion_ban = "Üzgünüz, ancak bu bir Michael Bay filmi değil. Aşırı kullanımı yasak olan patlayıcılar kullanmak doğru değil.",
 		text_entry_ban = "Bu tarayıcıda \"Inspect Element\" işlemi izin verilmez.",
 		thermal_night_vision_ban = "Daha parlak geceler izin verilmez.",
-		vehicle_modification_ban = "Arabanızın far sıvısını bulamadınız.",
-		vehicle_spawn_ban = "Maden arabasında redstone kullanmaya çalıştınız ancak motorlu raylarınız yoktu.",
-		weapon_spawn_ban = "Sihirli şapkasından tavşan çıkarmaya kalkarken bazooka buldu.",
-		high_damage_ban = "Güç ölçekleri sizin lehinize çok fazla eğildi, krallığımızın denge noktasını bozduğu için cezalandırıldınız.",
-		suspicious_explosion_ban = "Üzgünüz, ancak bu bir Michael Bay filmi değil. Aşırı kullanımı yasak olan patlayıcılar kullanmak doğru değil.",
-		semi_godmode_ban = "Gençlik çağının çeşmesine olan ısrarın doğal zaman akışını bozdu gibi görünüyor. Sonsuzluk, düşünüldüğü kadar eğlenceli değil.",
-		invalid_health_ban = "Sağlık çubuğunuz roka yemiş gibi görünüyor, Popeye",
-		clear_tasks_ban = "Bu bir Jedi düşünce numarası eğitim merkezi değildir. Diğerlerinin özgür iradesini etkilemeye yönelik çabanız kaydedildi... ve reddedildi.",
-		projectile_event_ban = "Burası Hogwarts değil ve sen Harry Potter değilsin. Sihir veya cisim fırlatmanın keyfi yapılması burada izin verilmemektedir.",
-		illegal_native_ban = "Henüz öğrenmediğiniz bir büyüyü kullanamazsınız...",
 		underground_ban = "Bir tavşan deliğine düşmüş gibi görünüyorsunuz.",
-		infinite_ammo_ban = "Popüler inanışın aksine, koruma yasaları burada da geçerlidir. Sihirli mühimmat poşeti el konulmuştur.",
+		vehicle_modification_ban = "Arabanızın far sıvısını bulamadınız.",
+		vehicle_spawn_ban = "Ah, `${modelName}` ile keyifli bir sürüşe mi hayal ediyordun? Burası bir showroom değil ve o özel model? Sonsuz bir bekleme listesinde!",
+		weapon_spawn_ban = "${weaponName}'ı arzuluyor muydun? Burası bir cephanelik değil ve o parça? Hala demirde.",
+		advanced_noclip_ban = "Gizli koridorlardan sızmak için gizli bir kayma mı deniyorsun? Burası bir hayalet vals değil ve bu hamle? Dans programımızda yok.",
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Kötü Yaratma",
@@ -695,36 +681,36 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		type_clear_tasks = "Görevleri Temizle",
 		type_damage_modifier = "Hasar Değiştirici",
 		type_distance_taze = "Uzaktan Elektrikle Vurma",
-		type_driving_hotwire = "Jant Kırmak",
 		type_fast_movement = "Hızlı Hareket",
 		type_freecam_detected = "Freecam Algılandı",
-		type_high_damage = "Yüksek Hasar",
 		type_honeypot = "Bal Kavanozu",
+		type_illegal_damage = "Yasadışı Hasar",
 		type_illegal_event = "Yasa Dışı İstemci Olayı",
 		type_illegal_freeze = "Yasa Dışı Donma",
+		type_illegal_global = "Yasadışı Genel Kullanım",
+		type_illegal_native = "Yasadışı Native Çağrısı",
 		type_illegal_ped_spawn = "Oluşturulan Ped",
 		type_illegal_server_event = "Yasa Dışı Sunucu Olayı",
 		type_illegal_vehicle_modifier = "Araç Düzenleyici",
 		type_illegal_vehicle_spawn = "Oluşturulan Araç",
 		type_illegal_weapon = "Silah Oluştur",
+		type_infinite_ammo = "Sınırsız Mühimmat",
+		type_advanced_noclip = "Gelişmiş Noclip",
 		type_invalid_health = "Geçersiz Sağlık",
 		type_invincibility = "Ölümsüzlük",
 		type_modified_fov = "Değiştirilmiş FOV",
 		type_ped_change = "Ped Değiştirme",
 		type_player_blips = "Oyuncu İşaretleri",
-		type_projectile_event = "Mermi Olayı",
 		type_runtime_texture = "Çalışma Zamanı Dokusu",
 		type_semi_godmode = "Yarı-Tanrı Modu",
 		type_spawned_object = "Oluşturulmuş Nesne",
 		type_spectate = "İzleme",
-		type_spiked_resource = "Zehirli Kaynak",
 		type_suspicious_explosion = "Şüpheli Patlama",
+		type_suspicious_transfer = "Şüpheli Transfer",
 		type_text_entry = "Metin Girişi",
 		type_thermal_night_vision = "Termal/Gece Görüşü",
-		type_vehicle_modification = "Araç Modifikasyonu",
-		type_illegal_native = "Yasadışı Native Çağrısı",
 		type_underground = "Yeraltı",
-		type_infinite_ammo = "Sınırsız Mühimmat",
+		type_vehicle_modification = "Araç Modifikasyonu",
 
 		event_prefix = "Hile Önleme: ${type}",
 
@@ -766,55 +752,35 @@ OP.Global.Locales.Languages["tr-TR"] = {
 	},
 
 	authentication = {
-		ip_not_found = "IP adresinizi alamadık.",
-		authenticating_local_server = "Yerel sunucu ile kimlik doğrulama yapılıyor...",
-		authenticating_global_server = "OP-FW sunucuları ile kimlik doğrulama yapılıyor...",
-		error_fetching_data = "Verileriniz alınırken bir hata oluştu.",
-		region_blocked = "Bu sunucu, bağlanmaya çalıştığınız bölgeyi engelledi.",
-		server_config_not_loaded = "Sunucu yapılandırması yüklenmedi.",
-		something_went_horribly_wrong = "Bir şeyler çok kötü gitti. Lütfen tekrar deneyin.",
-		local_firewall_enabled = "Yerel güvenlik duvarı etkinleştirildi.",
+		waiting_for_server = "Sunucu hazırlanıyor, bekleniyor...",
+		authenticating_with_server = "Sunucuyla kimlik doğrulama gerçekleştiriliyor...",
 
-		local_firewall_on = "Bloke mesajı `${blockMessage}` ile yerel güvenlik duvarı etkinleştirildi.",
-		local_firewall_re_enabled = "${blockMessage}'li blokaj mesajı ile yerel duvarı yeniden etkinleştirildi.",
-		local_firewall_off = "Yerel duvar devre dışı bırakıldı.",
-		local_firewall_blocked = "Yerel Duvar: ${playerName} (${licenseIdentifier}) blokaj yapıldı.",
+		failed_to_get_global_user = "Global kullanıcı alınamadı.",
+		failed_to_get_local_user = "Yerel kullanıcı alınamadı.",
+		failed_to_get_local_ban = "Yerel ban durumu alınamadı.",
 
-		developer = "geliştirici",
-		super_admin = "süper yönetici",
-		staff = "personel",
-		reconnect = "yeniden bağlan",
-		random = "rastgele",
-		beginner = "yeni başlayan",
-		custom = "özel",
-		christmas = "noel",
-		casino = "kumarhane",
+		global_ban = "Tüm OP-FW sunucularından global olarak yasaklandınız.\n\nBan Hash: ${banHash}\nBan Sebebi: ${reason}\n\nEğer bu yanlış bir ban olduğuna inanıyorsanız, itiraz etmek için OP-FW Discord sunucusuna katılın. Daha fazla bilgi için ${frameworkDiscord} adresine başvurun.",
+		local_ban = "Bu sunucudan yasaklandınız: ${communityName}.\n\nYasaklama Kodu: ${banHash}\nYasaklama Sebebi: ${reason}\nYasaklayan: ${creatorName}\nTarih: ${timestamp}\n\n${indefiniteOrExpires}\n\nYasaklanma hakkında bilgi almak ve itiraz etmek için Discord sunucumuza katılın: ${communityDiscord}",
+		local_ban_no_creator = "Bu sunucudan yasaklandınız: ${communityName}.\n\nYasaklama Kodu: ${banHash}\nYasaklama Sebebi: ${reason}\nTarih: ${timestamp}\n\n${indefiniteOrExpires}\n\nYasaklanma hakkında bilgi almak ve itiraz etmek için Discord sunucumuza katılın: ${communityDiscord}",
 
-		job_low = "düşük iş",
-		job_medium = "orta iş",
-		job_high = "yüksek iş",
-
-		banned_no_permissions = "Uygun izin olmadan `${reason}` denemeye çalışıldı.",
-
-		banned_globally = "Tüm OP-FW sunucularından küresel olarak yasaklandınız.\n\nYasaklama Kodu: ${banHash}\nYasaklama Sebebi: ${banReason}\n\nEğer yanlış bir yasaklama olduğunu düşünüyorsanız, ${frameworkDiscord} adresinden OP-FW Discord sunucusuna katılarak nasıl itiraz edeceğiniz hakkında bilgi edinebilirsiniz.",
-		banned_locally = "${communityName} sunucusundan yasaklandınız.\n\nYasaklama Kodu: ${banHash}\nYasaklayan: ${creatorName}\nYasaklama Sebebi: ${banReason}\nZaman Damgası: ${timestamp}\n\n${indefiniteOrExpires}\n\nİtiraz etmek için, ${communityDiscord} adresindeki Discord sunucumuza katılabilirsiniz.",
-		banned_locally_no_creator = "${communityName} sunucusundan yasaklandınız.\n\nYasak Kodu: ${banHash}\nYasak Sebebi: ${banReason}\nZaman Damgası: ${timestamp}\n\n${indefiniteOrExpires}\n\nItiraz için discord sunucumuza katılın: ${communityDiscord}.",
 		ban_indefinite = "Bu yasak süresizdir.",
 		ban_expires = "Bu yasak ${timeLeft} kaldıktan sonra sona erecektir.",
-		not_whitelisted = "Bu sunucuda whitelistli değilsiniz. Başvuru için discord sunucumuza katılın.\n\n${communityDiscord}",
-		api_error = "Verileriniz alınırken bir hata oluştu. (hata kodu ${errorCode})",
+
 		pepega_moderate = "Belirtilen herhangi bir sebep olmadan tüm OP-FW sunucularından global olarak yasaklandınız.",
 		pepega_ultimate = "Bu sunucudan yasaklandınız.",
-		ban_code_not_found = "Tüm OP-FW sunucularından global bir şekilde yasaklandınız. Yasaklama kodunuz için herhangi bir veri bulunamadı.",
-		fraud_chargeback = "Dolandırıcılık / İptal",
-		threatening_ddos = "Altyapımızı tehdit etmek.",
-		unknown = "Bilinmeyen",
-		api_offline = "Arka plan hizmetimiz şu anda kullanılamıyor ve verilerinizi alamıyoruz. Lütfen tekrar deneyin.",
-		protective_mode_on = "Sunucu Koruyucu Modu şu anda bu sunucuda etkin, bu da yalnızca belirli bir oynama süresine sahip oyuncuların sunucuya bağlanabileceği anlamına gelir. Bu sadece geçicidir ve sunucu yakında normale dönecektir.\n\nBu durum hakkında daha fazla bilgi için ${communityDiscord} discorduna katılın.",
-		server_restarting = "Sunucu şu anda yeniden başlıyor. Lütfen birkaç dakika içinde tekrar deneyin.",
-		connection_cancelled = "Başka bir bağlantı zaten etkin olduğu için bu bağlantı iptal edildi.",
-		no_reason_provided = "Sebep belirtilmedi.",
-		discord_whitelist_id_not_found = "Discord kimliğinizi bulamadık. Discord'u arka planda açtığınızdan ve FiveM'in discord istemcinizden veri almasına izin verdiğinizden emin olun.\n\n${communityDiscord}"
+
+		welcome_to = "Hoşgeldiniz",
+
+		connection_rejected_logs_title = "Bağlantı Reddedildi",
+		connection_rejected_logs_details = "${consoleName}, ${rejectCode} nedeniyle bağlanma işleminde reddedildi.",
+
+		connection_accepted_logs_title = "Bağlantı Kabul Edildi",
+		connection_accepted_logs_details = "${consoleName} bağlanma işlemi kabul edildi."
+	},
+
+	bans = {
+		banned_no_permissions = "Uygun izin olmadan `${reason}` denemesi yapıldı.",
+		fraud_chargeback = "Sahtekarlık / Geri Ödeme"
 	},
 
 	characters = {
@@ -896,6 +862,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		-- animations/emotes
 		ragdoll_command = "ragdoll",
 		ragdoll_command_help = "Ragdoll'u açıp kapatır.",
+		ragdoll_command_parameter_server_id = "sunucu idsi",
+		ragdoll_command_parameter_server_id_help = "Başka bir oyuncuyu gaz alma için bir sunucu kimliği belirtin.",
 		ragdoll_command_substitutes = "",
 
 		-- animations/walkstyles
@@ -937,7 +905,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		wipe_command_parameter_ignore_local_entities = "yerel nesneleri yok say",
 		wipe_command_parameter_ignore_local_entities_help = "Ağa bağlı olmayan nesneleri dikkate almak istemiyorsanız, burayı `true` veya `1` olarak ayarlamanız önerilir. Bir hileciyi temizliyorsanız bunu bu şekilde ayarlayın.",
 		wipe_command_parameter_model_name = "model ismi",
-		wipe_command_parameter_model_name_help = "Yalnızca belirli bir model adındaki öğeleri silmek istiyorsanız, buraya bir model adı yazın. Aksi takdirde boş bırakın, `false` veya `0`. Ayrıca bunu `vehicles`, `peds` veya `objects` olarak ayarlayabilirsiniz.",
+		wipe_command_parameter_model_name_help = "Yalnızca belirli bir model ismini olan varlıkları silmek istiyorsanız, buraya bir model ismi ekleyin. Aksi takdirde boş bırakın, `false` veya `0` olarak belirtin. Ayrıca bunu `araçlar`, `pedler`, `cisimler` veya `kapılar` olarak ayarlayabilirsiniz.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "geçiş",
@@ -987,14 +955,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		staff_toggle_command = "personel_durumu",
 		staff_toggle_command_help = "Personel durumunuzu açıp kapatın. Kapatmak, raporların, personel PM'lerinin ve personel mesajlarının görünmesini engeller.",
 		staff_toggle_command_substitutes = "",
-
-		protective_mode_command = "koruyucu_mod",
-		protective_mode_command_help = "Sunucu koruyucu modunu açıp kapatın. Bu, belirli bir oynama süresinin altındaki oyuncuların yeni bağlantılarını iptal edecektir. Bu kontrol, personel üyeleri ve sunucu destekçileri hariçtir.",
-		protective_mode_command_parameter_enabled = "etkin",
-		protective_mode_command_parameter_enabled_help = "Kontrol etmenin etkinleştirilip etkinleştirilmeyeceği? Geçerli girişler şunlardır: `true`, `false`, `1` ve `0`.",
-		protective_mode_command_parameter_playtime = "oynama süresi",
-		protective_mode_command_parameter_playtime_help = "Yeni bir bağlantı kabul etmek için gereken oynama süresi (saniye).",
-		protective_mode_command_substitutes = "",
 
 		spawn_vehicle_command = "araç_oluştur",
 		spawn_vehicle_command_help = "Araç oluşturur.",
@@ -1070,10 +1030,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		no_nearby_vehicles_command_parameter_server_id_help = "Başkası için 'yakındaki araçları kapat'ı açıp kapatmak istiyorsanız, burada sunucu id'sini ekleyin.",
 		no_nearby_vehicles_command_substitutes = "",
 
-		ghost_command = "hayalet",
-		ghost_command_help = "Bu komut /peek, görünmezlik ve /çarpışmaları devre dışı bırakacaktır.",
-		ghost_command_substitutes = "",
-
 		job_command = "meslek",
 		job_command_help = "Aramaya dayalı olarak birinin mesleğini günceller.",
 		job_command_parameter_server_id = "sunucu id",
@@ -1114,13 +1070,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		super_jump_command_help = "Süper zıplamayı açıp kapatır.",
 		super_jump_command_substitutes = "",
 
-		set_spawnpoint_command = "spawn_noktası_ayarla",
-		set_spawnpoint_command_help = "Karakterinizin doğma noktasını her zaman mevcut konumunuza ayarlar.",
-		set_spawnpoint_command_substitutes = "spawn_ayarla",
-
-		reset_spawnpoint_command = "spawn_noktasını_sıfırla",
-		reset_spawnpoint_command_help = "Set_spawnpoint komutuyla ayarlanan doğma noktanızı sıfırlar.",
-		reset_spawnpoint_command_substitutes = "spawn_sıfırla",
+		spawn_command = "doğ",
+		spawn_command_help = "Sizinizi personel kulesine teleport eder.",
+		spawn_command_substitutes = "",
 
 		stick_command = "yapış",
 		stick_command_help = "Üzerinde olduğunuz araca yapışır.",
@@ -1217,12 +1169,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		tp_waypoint_command = "tp_waypoint",
 		tp_waypoint_command_help = "Ayarladığınız rota noktasına gitmek için kullanılır.",
 		tp_waypoint_command_substitutes = "tp_isaretci, tp",
-
-		isolate_player_command = "oyuncu_izole_et",
-		isolate_player_command_help = "Bir oyuncuyu izole eder, yapmaya çalıştıkları her şeyi reddeder.",
-		isolate_player_command_parameter_server_id = "sunucu kimliği",
-		isolate_player_command_parameter_server_id_help = "Hedef oyuncu.",
-		isolate_player_command_substitutes = "izole",
 
 		show_all_evidence_command = "tüm_delilleri_göster",
 		show_all_evidence_command_help = "Yakındaki tüm mermi kovanı delillerini gösterir.",
@@ -1823,11 +1769,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		outfits_command_help = "Kaydedilmiş tüm kıyafetlerinizi listeler.",
 		outfits_command_substitutes = "",
 
-		-- game/collisions
-		disable_collisions_command = "çarpışmaları_devre_dışı_bırak",
-		disable_collisions_command_help = "25 metrelik bir yarıçap içinde araçlar ve yayalar ile çarpışmaları devre dışı bırakır (Sadece sizin için yerel olarak).",
-		disable_collisions_command_substitutes = "çarpışmalar",
-
 		-- game/command_socket
 		reconnect_command_socket_command = "yeniden_bağlan_komut_yuvası",
 		reconnect_command_socket_command_help = "Komut yuvasına yeniden bağlanmayı dener.",
@@ -1885,6 +1826,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		npc_debug_command = "npc_hata_ayıklama",
 		npc_debug_command_help = "Çevrenizdeki tüm hayvan olmayan npc'lere hata ayıklama yapar.",
 		npc_debug_command_substitutes = "npcs",
+
+		vehicle_debug_command = "araç_hata_giderme",
+		vehicle_debug_command_help = "Etrafınızda bulunan tüm hayvan olmayan araçları hata giderir.",
+		vehicle_debug_command_substitutes = "araclar",
 
 		network_debug_command = "network_debug",
 		network_debug_command_help = "Varlık ağı hata ayıklama aracını açar/kapatır. Bu, baktığın varlık hakkında bazı ağ bilgilerini gösterir.",
@@ -2491,6 +2436,13 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		invisibility_command_parameter_server_id_help = "Başka birinin görünmezliğini açmak veya kapatmak istiyorsanız.",
 		invisibility_command_substitutes = "görünmez, görünürlük, gizlilik",
 
+		-- game/isolation
+		isolate_player_command = "oyuncu_izole_et",
+		isolate_player_command_help = "Bir oyuncuyu izole eder, yapmaya çalıştıkları her şeyi reddeder.",
+		isolate_player_command_parameter_server_id = "sunucu kimliği",
+		isolate_player_command_parameter_server_id_help = "Hedef oyuncu.",
+		isolate_player_command_substitutes = "izole",
+
 		-- game/items
 		clear_map_command = "haritayı_temizle",
 		clear_map_command_help = "Bir haritanın saklanan konumunu temizler.",
@@ -3071,6 +3023,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		draw_shroom_areas_command_help = "Tüm mantar alanlarını çiz ve daha fazlasını ekleyin.",
 		draw_shroom_areas_command_substitutes = "mantar_alanları",
 
+		-- game/smell
+		smell_command = "koku",
+		smell_command_help = "Etrafınızdaki herhangi bir olağandışılığı koklayın.",
+		smell_command_substitutes = "",
+
 		-- game/sound_effects
 		play_sound_command = "ses_oynat",
 		play_sound_command_help = "Ses efekti oynatır.",
@@ -3286,28 +3243,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		wizard_command_parameter_server_id = "sunucu kimliği",
 		wizard_command_parameter_server_id_help = "Menüde belirli bir oyuncu seçin (isteğe bağlı).",
 		wizard_command_substitutes = "",
-
-		ragdoll_player_command = "oyuncu_bebek",
-		ragdoll_player_command_help = "Bir oyuncuyu bebek yapar.",
-		ragdoll_player_command_parameter_server_id = "sunucu kimliği",
-		ragdoll_player_command_parameter_server_id_help = "Bebek yapmak istediğiniz oyuncunun sunucu kimliği.",
-		ragdoll_player_command_parameter_force = "zorlama",
-		ragdoll_player_command_parameter_force_help = "Oyuncuyu bebek yapmadan sonra rastgele bir kuvvet uygulayın.",
-		ragdoll_player_command_substitutes = "",
-
-		ragdoll_radius_command = "ragdoll_yarıçapı",
-		ragdoll_radius_command_help = "Verilen yarıçap içindeki tüm oyuncuları rastgele ragdoll durumuna sokar.",
-		ragdoll_radius_command_parameter_radius = "yarıçap",
-		ragdoll_radius_command_parameter_radius_help = "Oyuncuların ragdoll durumuna geçeceği yarıçap.",
-		ragdoll_radius_command_parameter_force = "güç",
-		ragdoll_radius_command_parameter_force_help = "Oyuncuları ragdoll yapmadan önce rastgele bir güç uygulayın.",
-		ragdoll_radius_command_substitutes = "",
-
-		punch_radius_command = "yumruk_yarıçapı",
-		punch_radius_command_help = "Verilen yarıçap içindeki tüm oyuncuları rastgele yumruk atmak için zorlar.",
-		punch_radius_command_parameter_radius = "yarıçap",
-		punch_radius_command_parameter_radius_help = "Oyuncuların rastgele yumruklama yapacağı yarıçap.",
-		punch_radius_command_substitutes = "",
 
 		flashbang_command = "flashbang",
 		flashbang_command_help = "Belirli bir oyuncuya flaş bombası atar.",
@@ -3541,6 +3476,12 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		pickup_keys_command_help = "En yakın aracın anahtarlarını almanızı sağlar.",
 		pickup_keys_command_substitutes = "",
 
+		keys_command = "anahtarlar",
+		keys_command_help = "Bulunduğunuz araca anahtar alın.",
+		keys_command_parameter_server_id = "sunucu id",
+		keys_command_parameter_server_id_help = "Başka bir oyuncuya bulunduğu aracın anahtarını verin.",
+		keys_command_substitutes = "",
+
 		-- vehicles/modifications
 		wheel_offset_command = "jant_ayarı",
 		wheel_offset_command_help = "Bir aracın jantlarının ayarını değiştirir.",
@@ -3689,9 +3630,18 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		aim_down_sight_command_help = "Üçüncü kişi kamerada olsanız bile, sağ tıklama yaparken otomatik olarak nişan almanızı sağlar.",
 		aim_down_sight_command_substitutes = "ads",
 
+		-- weapons/throwables
+		throw_weapon_command = "silah_at",
+		throw_weapon_command_help = "Şu anda kullandığınız silahı atın.",
+		throw_weapon_command_substitutes = "fırlat, at",
+
+		throwables_debug_command = "throwables_hata_ayıklama",
+		throwables_debug_command_help = "Yakınındaki tüm atılabilir nesnelerin hatalarını ayıkla.",
+		throwables_debug_command_substitutes = "",
+
 		-- weapons/weapons
 		check_ammo_command = "mühimmat_kontrolü",
-		check_ammo_command_help = "Şu anda tuttuğunuz silah için toplamda kaç mühimmatınız olduğunu kontrol eder.",
+		check_ammo_command_help = "Toplamda kaç mermiye sahip olduğunu kontrol eder.",
 		check_ammo_command_substitutes = "mühimmat",
 
 		toggle_airsoft_mode_command_command = "havali_tüfek_modunu_aç/kapat",
@@ -3760,6 +3710,15 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		error_occured_information = "Bu, bir şeyin düzgün çalışmadığını veya amaçlanan şekilde çalışmadığını gösterir. Bu hatanın tetiklendiği sırada ne yaptığınıza dair ek ayrıntılar sağlayarak bize bu sorunu çözmeye yardımcı olmanızı istirham ediyoruz."
 	},
 
+	firewall = {
+		local_firewall_enabled = "Yerel güvenlik duvarı etkin.",
+
+		local_firewall_on = "Yerel güvenlik duvarını `${blockMessage}` engelleme mesajıyla etkinleştirdi.",
+		local_firewall_re_enabled = "Yerel güvenlik duvarını `${blockMessage}` engelleme mesajıyla tekrar etkinleştirdi.",
+		local_firewall_off = "Yerel güvenlik duvarı devre dışı.",
+		local_firewall_blocked = "Yerel Güvenlik Duvarı: ${playerName} (${licenseIdentifier}) engellendi."
+	},
+
 	ping = {
 		getting_pings = "Tüm oyunculardan ping'ler alınıyor. Bu birkaç saniye sürebilir.",
 		host_data = "${position}. ${location} - ${totalPings} müşteri için ${averagePing} Ortalama Ping, %10 Düşük: ${averagePingLow}, %10 Yüksek: ${averagePingHigh}",
@@ -3771,33 +3730,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		profile_debug_disabled = "Profil hata ayıklama devre dışı bırakıldı."
 	},
 
-	queue = {
-		joining_the_queue = "Sıraya katılıyor...",
-		timed_out_before_joining = "Sunucuya katılmadan önce zaman aşımına uğradınız.",
-		server_reload_while_in_loading = "Sunucunun çekirdeği yeniden başlatılıyor ve düzgün yüklenemediğiniz için otomatik olarak atıldınız.",
-		server_reload_while_in_queue = "Sunucu yeniden başlatılıyor. Lütfen yeniden sıraya girin.",
-		took_too_long_to_connect = "Bağlanmak için çok uzun süre beklediniz!",
-		queue_position_with_priority = "🐌 ${priorityName} önceliğiyle ${queueLength} kişilik kuyrukta ${queueEntryId}. sırasındasın. 🕐${queueTime}${liveOnTwitch}",
-		queue_position_without_priority = "🐌 ${queueLength} kişilik kuyrukta ${queueEntryId}. sırasındasın. 🕐${queueTime}\nSıra beklemeden oyuna girmek istiyorsan bizi destekleyebilirsin!\n\n${webstoreURL}${liveOnTwitch}",
-		live_on_twitch = "\n\nSıkıldın mı? Bu yayıncılara göz at!\n${streamers}",
-		server_is_starting = "Sunucu başlatılıyor...",
-		cancelled_before_server_start = "Sunucu başlatılmadan bağlantı kesildi.",
-		kicked_from_queue = "Sıradan `${reason}` nedeniyle atıldın.",
-		kicked_from_queue_no_reason = "Belirtilmeyen bir nedenle sıradan atıldın.",
-		missing_slots_parameter = "`slots` parametresi eksik.",
-		invalid_slots_parameter = "Geçersiz `slots` parametresi.",
-		slots_parameter_out_of_range = "The `slots` parameter has to be between `0` and `1025`.",
-		slots_already_set_to = "The server slots are already set to `${slots}`.",
-		slots_set_to = "The server slots have now been set to `${slots}`.",
-
-		invalid_license_identifier_parameter = "Missing or invalid 'licenseIdentifier' parameter.",
-		invalid_target_position_parameter = "Missing or invalid 'targetPosition' parameter.",
-		player_not_found_in_queue = "The player was not found in the queue.",
-		player_queue_moved_success = "The player's position in the queue has been updated.",
-		player_queue_skipped_success = "Oyuncu sırayı başarıyla atladı.",
-		queue_is_not_ready = "Sıra hazır değil, bu yüzden atlanamaz.",
-
-		welcome_to = "Hoş geldiniz"
+	proxy = {
+		proxied_via_logs_title = "Aracılık Yoluyla",
+		proxied_via_logs_details = "${consoleName}, `${serverName}` üzerinden aracılık yoluyla bağlandı."
 	},
 
 	restart = {
@@ -3846,6 +3781,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		logs_user_joined_details = "${consoleName} sunucuya katıldı.",
 		logs_user_dropped_title = "Kullanıcı Bağlantısı Kesildi",
 		logs_user_dropped_details = "${consoleName} ${playtime} oynadıktan sonra `${reason}` nedeniyle sunucudan bağlantısını kesti.",
+		logs_user_dropped_proxied_details = "${consoleName}, ${playtime} oynadıktan sonra `${reason}` nedeniyle sunucudan ayrıldı. Kendisi `${serverName}` üzerinden aracılık yoluyla bağlanmıştı.",
 		logs_character_loaded_title = "Karakter Yüklendi",
 		logs_character_loaded_details = "${consoleName} adlı kullanıcı ${fullName} (${characterId}) karakterini yükledi.",
 		logs_character_unloaded_title = "Karakter Yüklemesi Kaldırıldı",
@@ -3905,7 +3841,14 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		respected_tier = "Saygıdeğer Tier",
 		heroic_tier = "Kahramanca Tier",
 		legendary_tier = "Efsanevi Tier",
-		godlike_tier = "Tanrısal Tier"
+		godlike_tier = "Tanrısal Tier",
+
+		dropped_timed_out_player_logs_title = "Süresi Dolduğu İçin Kullanıcı Atıldı",
+		dropped_timed_out_player_logs_details = "${consoleName}, uzun süredir çerçeveye yanıt vermeyen bir kullanıcı olduğu için manuel olarak atıldı."
+	},
+
+	whitelist = {
+		not_whitelisted = "Bu sunucuda whitelist'e alınmadınız.\n\nBaşvuru yapma bilgileri için Discord sunucumuza katılın: ${communityDiscord}"
 	},
 
 	-- game/*
@@ -4366,12 +4309,13 @@ OP.Global.Locales.Languages["tr-TR"] = {
 	},
 
 	bazaar = {
-		access_bazaar = "Basın ~INPUT_CONTEXT~ bu mağazaya erişmek için.",
+		access_bazaar = "Pazara erişmek için ~INPUT_CONTEXT~ tuşuna basın.",
 
 		bazaar_blip = "Baraz",
 
 		no_items = "Burada satmak için hiçbir şeyiniz yok.",
-		price_about = "yaklaşık ${price} $",
+		price_total = "${price} toplam",
+		price_per = "${price} başına",
 
 		sold_logs_title = "Bazaar Satışı",
 		sold_logs_details = "${consoleName} ${amount} adet `${itemName}` ürününü $${price} fiyatına sattı.",
@@ -4379,10 +4323,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		sold_items = "${amount} adet ${label} ürününü $${money} fiyatına sattınız.",
 		failed_sell_items = "Ürünleri satmak başarısız oldu.",
 
-		junk_collector = "Çöp Toplayıcı",
-		tool_collector = "Araç Gereç Toplayıcı",
-		waste_collector = "Atık Toplayıcı",
-		ammo_collector = "Mühimmat Toplayıcı",
+		store_title = "Pazar Mağazası",
 
 		close_menu = "Menüyü Kapat"
 	},
@@ -4406,6 +4347,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		yes_receipt = "Fiş",
 		tip = "İpucu",
 		none = "Hiçbiri",
+		custom = "Özel",
+		custom_tip = "Özel Tavsiye (dolar cinsinden)",
 
 		close = "Kapat",
 		back = "Geri",
@@ -4422,10 +4365,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		failed_pay_bill = "Fatura ödeme başarısız.",
 		not_enough_money = "Bu faturayı ödemek için yeterli paranız yok.",
 		bill_paid = "${name}'e $${amount} tutarında ödeme başarıyla yapıldı.",
-		bill_paid_notification = "${name}, faturanıza ${tip}% bahşiş ile ödeme yaptı.",
+		bill_paid_notification = "${name}, $${tip} bahşiş ile faturanızı ödedi.",
 
 		paid_bill_title = "Ödenmiş Fatura",
-		paid_bill_details = "${targetName} tarafından ${consoleName}, $${amount} (bahşiş olarak ${tip}%) tutarındaki faturayı ödedi.",
+		paid_bill_details = "${consoleName}, ${targetName} tarafından $${amount} (bir $${tip} bahşiş ile) faturasını ödedi.",
 		bill_created_title = "Fatura Oluşturuldu",
 		bill_created_details = "${consoleName}, ${targetName}'ye ${amount}$ tutarında bir fatura gönderdi. Fatura sebebi: `${reason}`."
 	},
@@ -4959,15 +4902,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		add_body_blemish = "Vücut Lekesi Ekle"
 	},
 
-	collisions = {
-		disable_collisions_on = "Çarpışmalarınız şimdi devre dışı bırakıldı.",
-		disable_collisions_off = "Çarpışmalarınız şimdi etkinleştirildi.",
-
-		collisions_logs_title = "Çarpışmalar",
-		collisions_off_logs_details = "${consoleName}, devre dışı bırakılmış çarpışmalarını açtı.",
-		collisions_on_logs_details = "${consoleName}, etkinleştirilmiş çarpışmalarını kapattı."
-	},
-
 	command_socket = {
 		connected = "Komut soketine bağlanıldı.",
 		disconnected = "Komut soketinden bağlantı kesildi.",
@@ -4988,26 +4922,17 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		menu_title = "El İşi",
 		close_menu = "Menüyü Kapat",
 
-		smelt_glass = "Kırık Şişeleri Erit",
-		press_to_smelt_glass = "[${SeatEjectKey}] Kırık Şişeleri Erit",
-		smelting_glass = "${usedItems} eritiliyor.",
-		smelted_glass = "${usedItems} eritilerek cam elde edildi.",
-		failed_smelt_glass = "Cam eritme başarısız oldu.",
+		smelt_materials = "Materyalleri Erit",
+		press_to_smelt_materials = "[${SeatEjectKey}] Materyalleri Erit",
 
-		craft_steel = "Çelik Üret",
-		press_to_craft_steel = "[${SeatEjectKey}] Çelik Üret",
-		crafting_steel = "${usedItems} kalıplama işlemi yapılıyor",
-		crafted_steel = "${usedItems} metal parçaları çelik haline getirildi.",
-		failed_craft_steel = "Çelik yapımı başarısız oldu.",
+		glass_recipe = "Cam Erit",
+		steel_recipe = "Çelik Erit",
+		scrap_metal_recipe = "Hurda Metal Erit",
+		aluminium_recipe = "Alüminyum Erit",
 
-		craft_aluminium = "Alüminyum Üret",
-		press_to_craft_aluminium = "[${SeatEjectKey}] Alüminyum Üret",
-		crafting_aluminium = "${usedItems} kalıplama",
-		crafted_aluminium = "${usedItems} alüminyuma dönüştürüldü.",
-		failed_craft_aluminium = "Alüminyum üretimi başarısız oldu.",
-
-		scrapping_item = "${usedItems} hurdalanıyor",
-		scrapped_item = "${usedItems} yıkılarak hurda metale dönüştürüldü.",
+		smelting_materials = "Eritme işlemi yapılıyor: ${usedItems}",
+		smelted_materials = "${usedItems} eritildi.",
+		failed_smelt_materials = "Malzemelerin eritme işlemi başarısız oldu.",
 
 		scrap_knife = "Hurda Bıçak",
 		press_to_scrap_knife = "[${SeatEjectKey}] Hurda Bıçak",
@@ -5396,6 +5321,30 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		mixed_grimace_shake = "Karışık grimace sallama yapılıyor.",
 		failed_mix_grimace_shake = "Grimace sarsıntısı karıştırılamadı.",
 
+		deconstruct_ammo = "Mermileri Ayır",
+		press_to_deconstruct_ammo = "[${SeatEjectKey}] Mermileri Ayır",
+
+		pistol_deconstruct_recipe = "Tabanca Mermisi Ayır",
+		shotgun_deconstruct_recipe = "Kaşık Mermisi Ayır",
+		sub_deconstruct_recipe = "Hafif Makineli Tüfek Mermisi Ayır",
+		rifle_deconstruct_recipe = "Tüfek Cephane Yıkmak",
+
+		deconstructing_ammo = "Cephane Yıkılıyor",
+		deconstructed_ammo = "Cephane yıkıldı.",
+		failed_deconstruct_ammo = "Cephane yıkma başarısız oldu.",
+
+		craft_ammo = "Cephane Yap",
+		press_to_craft_ammo = "[${SeatEjectKey}] Cephane Yap",
+
+		pistol_ammo_recipe = "Tabanca Cephane Yap",
+		shotgun_ammo_recipe = "Tüfek Cephane Yap",
+		sub_ammo_recipe = "Makineli Tüfek Cephane Yap",
+		rifle_ammo_recipe = "Tüfek Cephane Yap",
+
+		crafting_ammo = "Cephane Yapılıyor",
+		crafted_ammo = "Cephane yapıldı.",
+		failed_craft_ammo = "Cephane yapma başarısız oldu.",
+
 		no_required_items = "Tüm gerekli öğeleriniz yok.",
 
 		debug_multi = "-Birden Fazla Çıkış-",
@@ -5407,7 +5356,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 	crashes = {
 		crash_failed = "${consoleName} adlı kişinin çökertilmesi başarısız oldu.",
 		crash_success = "${consoleName} adlı kişinin çökertilmesi başarıyla gerçekleşti.",
-		server_id_invalid = "Geçersiz sunucu ID'si."
+		server_id_invalid = "Geçersiz sunucu kimliği."
 	},
 
 	creation = {
@@ -5711,7 +5660,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		confirm_task_refresh = "Bu görevi yenilemek istediğinizden emin misiniz? Maliyeti $${cost} kadardır.",
 		yes = "Evet",
-		no = "Hayır"
+		no = "Hayır",
+
+		logs_daily_streak_changed_title = "Günlük Seri Değişti",
+		logs_daily_streak_changed_details = "${consoleName} artık günlük bir seriye sahip: `${streak}.`"
 	},
 
 	dashcam = {
@@ -5750,6 +5702,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		one_state_set = "1 Durum Ayarlandı",
 		many_states_set = "${count} Durumlar Ayarlandı",
 		no_states = "Durum Yok",
+		addon_model = "${modelName} (Eklenti)",
 		entity_health = "Sağlık ${health}/${maxHealth}",
 		owned_by_server = "Sunucu",
 		owned_by_you = "Sizin",
@@ -5757,6 +5710,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		current_owned_short = "Mevcut Sahibi: ${currentOwner}",
 		network_id_side = "Ağ ID'si: ${networkId}",
 		no_target = "Hedef Yok",
+		loading_owner = "Kayıtlı ~y~Yükleniyor...",
+		owner_npc = "Kayıtlı ~b~${fullName} oyuncusu",
+		owner_player = "Kayıtlı ~g~${fullName} oyuncusu",
+		character_known = "Karakter: ~g~${fullName}",
+		character_unknown = "Karakter: ~r~Bilinmiyor",
 		invalid_radius_parameter = "Geçersiz `yarıçapı` parametresi.",
 		inject_code_invalid_player = "Sunucu Kimliği `${serverId}` olan oyuncu bulunamadı.",
 		inject_code_success_for_everyone = "Herkes için kod başarıyla enjekte edildi.",
@@ -5773,6 +5731,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		ped_config_flags = "Ped Yapılandırma Bayrakları:",
 		ped_is = "Ped:",
 		vehicle_is = "Araç:",
+		controls = "Kontroller: ${controls}",
 		native_calls = "Doğal Araçlar : ${trueNativeCallsLastFrame} (${totalNativeCalls})",
 		player_speed = "Oyuncu Hızı:${playerSpeed}",
 		player_ped = "Oyuncu Pedi: ${playerPedId}",
@@ -5915,7 +5874,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		debug_doors_on = "Kapı hata ayıklama açık.",
 		debug_doors_off = "Kapı hata ayıklama kapalı.",
-		doors_no_job = "Mevcut değil."
+		doors_no_job = "Mevcut değil.",
+
+		unlocks = "Kilit Açılıyor: <i>${cluster}</i>."
 	},
 
 	elevators = {
@@ -6071,21 +6032,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		next_rotation_in = "${time} sonra bir sonraki dönüşüm.",
 
 		exclusive_dealership_blip = "Özel Deluxe Motorsport",
-		exclusive_buyback_blip = "Prestij Jant Takas",
 
-		buyback_vehicle_help = "Değiş tokuşa erişmek için ~INPUT_CONTEXT~ tuşuna basın.",
-		buyback_title = "Prestij Jant Takası",
-		sell_closest_vehicle = "${label} ${price} TL (${percent}% değerinde) karşılığında satılsın mı?",
-		deny_sale = "Hayır, satmak istemiyorum",
-		accept_sale = "Evet, eminim",
-		accept_sale_description = "Bu aracınızı $${price}'a satmak istediğinizden emin misiniz? Bu işlem geri alınamaz.",
-		are_you_sure_sell = "Satmak istediğinizden emin misiniz?",
-		no_vehicle_to_sell = "Satılabilir araç yok.",
-		vehicle_not_owned = "Bu araca sahip değilsiniz.",
-		sale_success = "Başarıyla `${label}` aracınızı $${price}'a sattınız.",
-
-		sale_log_title = "EDM Geri Satın Alma",
-		sale_log_description = "${consoleName}, `${label}` adlı eşyasını $${price} fiyatıyla sattı.",
+		buyback_closed = "Değişim kapalı. Araçlarınızı uygun seviyede olan başka bir oyuncuya satabilirsiniz.",
 
 		log_title = "EDM Satın Alma",
 		log_description = "${cost} karşılığında `${label}` satın alındı."
@@ -6170,6 +6118,13 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		no_buildings = "Hiç bina yok.",
 		wiped_buildings_in_radius = "${radius} yarıçapı içinde ${removedBuildings} bina silindi.",
 		wiped_buildings = "${removedBuildings} bina silindi."
+	},
+
+	fortune_cookies = {
+		opened_cookie_logs_title = "Kısmet Kurabiyesi Açıldı",
+		opened_cookie_logs_details = "${consoleName} bir kısmet kurabiyesi açtı ve `${fortune}` buldu.",
+
+		failed_open = "Kısmet kurabiyesi açma başarısız oldu."
 	},
 
 	freecam = {
@@ -6446,7 +6401,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		ft = "ft",
 		m = "m",
 		belt = "KEMER",
+		oil = "YAĞ",
 		limiter = "LİMİTER",
+		gear_uc = "VİTES",
 		fuel = "yakıt",
 		nitro = "nitro",
 		battery = "pil",
@@ -6720,6 +6677,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		gun_store_with_shooting_range = "Atış Menzilli Silah Dükkanı",
 		green_wonderland = "Yeşil Harikalar Diyarı",
 		copy_shop = "Kopya Dükkanı",
+		astrology_stand = "Astroloji Standı",
 		irish_pub = "İrlanda Pubı",
 		bar = "Bar",
 		midnight = "Geceyarısı Araç Dükkanı",
@@ -7001,6 +6959,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		cleaning_kit_description = "Araç temizliği ve arka bagajda kurumaya bıraktığınız kan lekelerini temizlemek için mükemmeldir.",
 		scratch_remover = "Çizik Giderici",
 		scratch_remover_description = "Araçlardaki çıkıntı ve çizikleri gidermek için kullanılır.",
+		motor_oil = "Motor Yağı",
+		motor_oil_description = "Motorunuzu pürüzsüz çalıştırmak için kullanılır.",
 
 		multi_tool = "Çok Amaçlı Alet",
 		multi_tool_description = "Her türlü iş için kullanılabilen bir araç.",
@@ -7036,6 +6996,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		small_frog_description = "Sadece küçük bir kurbağa. Bakın, cici mi gözüküyor!",
 		seashell = "Deniz Kabuğu",
 		seashell_description = "Plajdan bir deniz kabuğu. Denize kulağınızı dayarsanız okyanusu duyabilirsiniz.",
+
+		keys = "Anahtarlar",
+		keys_description = "Bir yerlerdeki bazı kapılara açılan bir çift anahtar.",
 
 		raw_diamond = "Ham Elmas",
 		raw_diamond_description = "Doğal haliyle elmas, madenden yeni çıkmış halde.",
@@ -7150,6 +7113,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		gumball = "Sakız Topu",
 		gumball_description = "Bir sakız topu, başka ne söyleyebilirim ki?",
+
+		chorus_fruit = "Orkestra Meyvesi",
+		chorus_fruit_description = "Sizi rastgele bir yere taşıyabilen bir meyve.",
 
 		water = "Su",
 		water_description = "Tehlike! Dihidrojen monoksit renksiz ve kokusuzdur. DHM'nin kazara solunması ölümcül olabilir. Katı formuyla uzun süre maruz kalma ciddi doku hasarına neden olur. DHMO tüketiminin belirtileri aşırı terleme ve idrara çıkma, gaz şişkinliği, bulantı, kusma ve vücut elektrolit dengesizliği olabilir.",
@@ -7367,6 +7333,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		pet_mouse_description = "Bu yuvarlak ve tüylü küçük şincila her macera için mükemmel bir arkadaştır. Yumuşak tüyleri ve oyunbaz kişiliği onu mükemmel bir yastık arkadaşı yapar ve gün boyunca omzunuzda mutlu bir şekilde duracaktır.",
 		pet_raccoon = "Rascal, Rakunum",
 		pet_raccoon_description = "Tanışın Rascal, maceraya her zaman hazır tüylü rakun. Tombul fiziği ve yaramaz kişiliğiyle omzunuzda oturarak size hazineleri aramanıza yardımcı olacak. Hazır mısınız maceraya?",
+		pet_pingu = "Pingu",
+		pet_pingu_description = "Bu sevimli küçük penguen, her macera için mükemmel bir arkadaştır. Yumuşak tüyleri ve oyunbaz kişiliği ile siz gününüzü geçerken omzunuzda mutlu bir şekilde oturacaktır.",
+		pet_banana_cat = "Muz Kedisi",
+		pet_banana_cat_description = "Meyveli kedi dostunuz! Muzlu kedi omzunuzda konaklar, gününüze oyunbaz bir cazibe katar. Hayatınıza hayalperest bir dokunuş için mükemmel bir aksesuardır.",
 
 		hotwheels_mcqueen = "Sürat Şimşek",
 		hotwheels_mcqueen_description = "Ben hızım, Cadillac gibi yüzer ama BMW gibi sokarım. KATCHOW KATCHOW KATCHOW",
@@ -7464,6 +7434,13 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		sniper_ammo_description = "Acele et!",
 		shotgun_ammo = "Yivli Tüfek Mermisi",
 		shotgun_ammo_description = "İnsanlar bunların içinde barut olduğunu düşünüyorlar! Palyaçolar... onlar sevgi ve neşeyle dolu.",
+
+		gunpowder = "Barut",
+		gunpowder_description = "Kurşun yapmak için kullanılan bir toz.",
+		projectile = "Mermi",
+		projectile_description = "Kurşun yapmak için kullanılan bir mermi.",
+		casing = "Kovan",
+		casing_description = "Kurşun yapmak için kullanılan bir kovan.",
 
 		silver_watches = "Gümüş Saatler",
 		silver_watches_description = "Dikkatli ol!",
@@ -7693,6 +7670,13 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		tv_stand_description = "Televizyonu istediğiniz herhangi bir yere sabitlemek için kullanılır.",
 		tv_remote = "Televizyon Kumandası",
 		tv_remote_description = "Universal kumanda (Kuantum piller dahil değildir).",
+
+		magic_ball = "Sihirli 8'li Top",
+		magic_ball_description = "Bir soru sorun, sallayın ve çevirin. Sorunuza cevap sihirli pencerenin içinde belirir! Çok kolay, inanmayacaksınız!",
+		fortune_cookie = "Şans Kurabiyesi",
+		fortune_cookie_description = "İçinde bir gelecek kehaneti bulunan lezzetli bir kurabiye. Kır ve geleceğin ne getireceğini gör!",
+		fortune_paper = "Kader Kağıdı",
+		fortune_paper_description = "Üzerinde bir kader yazılı küçük bir kağıt parçası.",
 
 		firework_rocket = "Havai Fişek Roketi",
 		firework_rocket_description = "Basit bir havai fişek roketi. 4 Temmuz için harika.",
@@ -8328,7 +8312,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		invisibility_on = "Görünmezlik açıldı.",
 		invisibility_off = "Görünmezlik kapatıldı.",
 
-		invalid_server_id = "Geçersiz Sunucu ID'si.",
+		invalid_server_id = "Geçersiz sunucu ID'si.",
 
 		toggled_invisibility = "${displayName}'ın görünmezliği başarıyla değiştirildi.",
 		failed_invisibility = "${displayName}'ın görünmezliğini değiştirmek başarısız oldu.",
@@ -8337,6 +8321,18 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		invisibility_on_logs_details = "${consoleName} görünmezliğini açtı.",
 		invisibility_off_logs_details = "${consoleName} görünmezliğini kapattı.",
 		invisibility_other_logs_details = "${consoleName}, ${targetConsoleName}'in görünmezliğini değiştirdi."
+	},
+
+	isolation = {
+		failed_isolate = "Oyuncuyu izole etme başarısız oldu.",
+		invalid_server_id = "Geçersiz sunucu ID'si.",
+		isolate_success_on = "${consoleName} başarıyla izole edildi.",
+		isolate_success_off = "${consoleName} izole etme işlemi başarıyla durduruldu.",
+
+		isolated_logs_title = "Oyuncu İzolasyonu",
+		isolated_off_logs_details = "${consoleName} ${targetName}'in izolasyonunu kapatıldı.",
+		isolated_on_logs_details = "${consoleName} ${targetName}'in izolasyonunu açıldı.",
+		isolated = "İzole edildiniz."
 	},
 
 	items = {
@@ -8675,11 +8671,23 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		legendary_tier = "Efsanevi Seviye",
 		godlike_tier = "Tanrısal Seviye",
 
-		buddy_passed_through = "${playerName}, seni itmek için Buddy Pass'ını kullandı!"
+		buddy_passed_through = "${playerName}, seni itmek için Buddy Pass'ını kullandı!",
+
+		queuer_not_found = "Kuyruk bulunamadı.",
+		queuer_skipped_queue = "Kuyruğu atlayan kişi.",
+
+		slots_set_to = "Sunucu slotları `${slots}` olarak ayarlandı.",
+		slots_already_set_to = "Sunucu slotları zaten `${slots}` olarak ayarlı.",
+
+		death = "Ölüm",
+		normal = "Normal",
+		one_life = "Tek Hayat",
+		one_life_information = "Bu seçenği seçmek, karakterinizin sadece bir hayata sahip olacağı anlamına gelir. Eğer hastaneye götürülmeden ölürseniz, karakterinizi kaybedeceksiniz.",
+		one_life_are_you_sure = "Bunu yapmak istediğinizden emin misiniz?"
 	},
 
 	logs = {
-		invalid_server_id = "Geçersiz sunucu kimliği.",
+		invalid_server_id = "Geçersiz sunucu ID'si.",
 		logs_failed = "Günlükler yüklenemedi.",
 
 		close = "Kapat"
@@ -8804,18 +8812,27 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		brush = "[${InteractionKey}] Tarama",
 		catnip = "[${InteractionKey}] Kedi Nanesi Ver",
 		treat = "[${InteractionKey}] Ödül Ver",
-		cuddle = "[${InteractionKey}] Kucakla",
-		hug = "[${InteractionKey}] Sarıl",
+		check_up = "[${InteractionKey}] Kontrol Et",
+		chill = "[${InteractionKey}] Gevşe",
+		meditate = "[${InteractionKey}] Meditasyon yap",
+		salute = "[${InteractionKey}] Selam ver",
+		stretch = "[${InteractionKey}] Gerin",
+		think = "[${InteractionKey}] Düşün",
 
 		feed_active = "Maxwell'a yemek veriliyor",
 		pet_active = "Maxwell okşanıyor",
 		brush_active = "Maxwell'i fırçalıyorsun",
 		catnip_active = "Maxwell'e kedi nanesi veriyorsun",
 		treat_active = "Maxwell'e ödül veriyorsun",
-		cuddle_active = "Maxwell ile sarılıyorsun",
-		hug_active = "Maxwell'i kucaklıyorsun",
+		check_up_active = "Maxwell'i kontrol etme",
+		chill_active = "Maxwell ile rahatlama",
+		meditate_active = "Maxwell ile meditasyon yapma",
+		salute_active = "Maxwell'a selam verme",
+		stretch_active = "Maxwell ile gerinme",
+		think_active = "Maxwell hakkında düşünme",
 
-		maxwell_appeared = "Maxwell size yakın bir yerde göründü."
+		maxwell_appeared = "Maxwell size yakın bir yerde göründü.",
+		maxwell_shot = "Maxwell vuruldu"
 	},
 
 	meth = {
@@ -9284,8 +9301,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		freecam_detections_name = "Oyuncu İsmi",
 		freecam_detections_distance = "Maksimum Mesafe",
-
-		hotwire_driving_detections_name = "Oyuncu İsmi",
 
 		model = "Model",
 		label = "Etiket",
@@ -9913,7 +9928,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		fps = "${fps}fps",
 		playtime = "${time} oynandı",
 
-		invalid_server_id = "Geçersiz sunucu id'si.",
+		invalid_server_id = "Geçersiz sunucu ID'si.",
 
 		failed_load_player = "Oyuncu verileri yüklenemedi. Geçerli bir sunucu id'si girdiniz mi?",
 		failed_add_warning = "Uyarı eklenemedi.",
@@ -10007,7 +10022,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		description_message_chat_title = "/açıklama [${serverId}]",
 		message_too_long = "Mesaj çok fazla karakter veya satır içeriyor!",
 		card_command_wait = "Bir kart çektiniz, başka bir kart çekmeden önce biraz bekleyin.",
-		ped_message_timeout = "Yavaşlayın, başka bir mesaj göndermeden önce biraz bekleyin."
+		ped_message_duplicate = "Bu mesajı yeni gönderdiniz, tekrar göndermeden önce biraz bekleyin."
 	},
 
 	ped_objects = {
@@ -10050,7 +10065,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		ped_steal_success = "Ped kostümü başarıyla çalındı.",
 		ped_steal_failed = "Ped kostümü çalınamadı.",
 		ped_not_found = "Oyuncu pedi bulunamadı.",
-		invalid_server_id = "Geçersiz sunucu kimliği."
+		invalid_server_id = "Geçersiz sunucu ID'si."
 	},
 
 	ped_takeover = {
@@ -10063,7 +10078,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 	peds = {
 		ped_robbing_injection = "Aşırı ped soygunu! (Sunucu zaman aşımı atlatıldı, muhtemelen bir enjektör kullanılarak gerçekleştirildi.)",
 		robbed_ped_logs_title = "Soyulan Ped",
-		robbed_ped_logs_details = "${consoleName} bir pedi soydu ve $${payout} aldı."
+		robbed_ped_logs_details = "${consoleName} bir pedi soydu ve $${payout} aldı.",
+
+		nancy = "~b~Dr. Nancy"
 	},
 
 	pepper_spray = {
@@ -10200,7 +10217,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		prop_deleted = "${propId} kimliğiyle prop silindi.",
 
 		invalid_wipe_radius = "Geçersiz silme yarıçapı (1 ile 100 arasında).",
-		wipe_successful = "Prop'lar başarıyla silindi.",
+		wipe_successful = "${amount} nesne başarıyla silindi.",
+		wipe_failed = "Prop temizlenemedi.",
 
 		placing_prop = "Eşya Yerleştiriliyor",
 		pickup_prop = "Eşya Toplanıyor",
@@ -10577,6 +10595,20 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		skylift_attached_vehicle_logs_details = "${consoleName}, Skylift'e araç bağladı."
 	},
 
+	smell = {
+		smelling = "Koku tespit ediliyor",
+
+		smell_1 = "hafif",
+		smell_2 = "orta",
+		smell_3 = "yoğun",
+		smell_4 = "baskın",
+
+		smell_weed = "Esrar kokusu alıyorsunuz. Kokunun yoğunluğu ${intensity}.",
+		smell_alcohol = "Alkol kokusu alıyorsunuz. Kokunun yoğunluğu ${intensity}.",
+
+		smell_nothing = "Normalden farklı bir koku yok."
+	},
+
 	smoothies = {
 		blend = "Karıştır",
 		close = "Kapat",
@@ -10609,10 +10641,12 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		mission_row_police_station = "Mission Row Polis Merkezi",
 		sandy_police_station = "Sandy Shores Polis Merkezi",
 		paleto_police_station = "Paleto Körfezi Polis Merkezi",
+		cayo_police_station = "Cayo Perico Polis Merkezi",
 
 		mount_zonah = "Zonah Dağı",
 		sandy_hospital = "Sandy Shores Hastanesi",
 		paleto_hospital = "Paleto Körfezi Hastanesi",
+		cayo_station = "Cayo Tıp İstasyonu",
 
 		battle_royale = "Savaş Royale"
 	},
@@ -10804,6 +10838,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		folder_games = "Oyunlar",
 		folder_productivity = "Üretkenlik",
 
+		high_scores = "Yüksek Skorlar",
+
 		snake_title = "Yılan",
 		snake_description = "Yukarı, aşağı, sol ve sağ tuşları ile hareket edin.",
 		snake_start_game = "Oyuna Başla",
@@ -10835,13 +10871,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		chess_difficulty = "Zorluk:",
 		chess_difficulty_level = "Seviye ${level}",
 		chess_start = "Oyunu Başlat",
-
-		minesweeper_title = "Mayın Tarlası",
-		minesweeper_win = "Kazandınız",
-		minesweeper_loose = "Kaybettiniz",
-		minesweeper_difficulty = "Zorluk:",
-		minesweeper_start = "Oyunu Başlat",
-		minesweeper_flags_used = "${used}/${total} Bayrak Kullanıldı",
 
 		flappy_bird_title = "Uçan Kuş",
 		flappy_bird_score = "Son Skorunuz:",
@@ -11253,7 +11282,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		intent_speech = "Ses giriş modunu 'konuşma' olarak geri ayarla.",
 		music_mode = "Müzik Modu",
 
-		invalid_server_id = "Geçersiz sunucu ID'si.",
+		invalid_server_id = "Geçersiz sunucu kimliği.",
 		failed_toggle_listen = "Dinleme durumu değiştirilemedi.",
 		listeners = "Dinleyiciler:",
 		listening_to = "Dinlenenler:",
@@ -11314,9 +11343,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		invalid_radius = "Geçersiz yarıçap",
 		invalid_server_id = "Geçersiz sunucu kimliği.",
 
-		ragdoll_failed = "Oyuncuyu yere düşürme başarısız oldu.",
-		ragdoll_success = "${consoleName} başarıyla yere düşürüldü.",
-
 		punch_success = "${consoleName} başarıyla yumruklandı.",
 		punch_failed = "Oyuncunun yumruklanması başarısız oldu.",
 
@@ -11325,12 +11351,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		ignite_success = "${consoleName} başarıyla ateşe verildi.",
 		ignite_failed = "Oyuncunun ateşe verilmesi başarısız oldu.",
-
-		punch_radius_failed = "Yarıçap içindeki oyuncuların yumruk atan başarısız oldu.",
-		punch_radius_success = "Başarıyla ${radius} yarıçapındaki oyuncuları yumruk attırdı.",
-
-		ragdoll_radius_success = "${radius} mesafe içindeki oyuncular başarıyla ragdoll yapıldı.",
-		ragdoll_radius_failed = "Mesafedeki oyuncuların ragdoll yapılması başarısız oldu.",
 
 		flashbang_success = "${consoleName} başarıyla flashbang yapıldı.",
 		flashbang_failed = "Oyuncuya flashbang yapma başarısız oldu.",
@@ -11377,6 +11397,17 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		invalid_camera_shake = "Kamera sarsıntısı `${cameraShake}` geçersiz.",
 		invalid_damage_scale = "Hasar ölçeği `${damageScale}` geçersiz.",
 		created_explosion = "`${explosionTypeName}` patlaması oluşturuldu. Hasar ölçeği `${damageScale}`, kamera sarsıntısı `${cameraShake}` olarak ayarlandı."
+	},
+
+	exports = {
+		player_killed = "Oyuncu Öldürüldü",
+		player_killed_details = "${consoleName}, ${killerConsoleName} tarafından öldürüldü. Ölüm sebebi: `${deathCause}`.",
+
+		killed_player = "Oyuncu Öldürdü",
+		killed_player_details = "${killerConsoleName}, ${consoleName}'i öldürdü. Ölüm sebebi: `${deathCause}`. (Bu, öldürülen oyuncunun istemcisi tarafından sağlanır ve sahte olabilir, unutmayın)",
+
+		player_died = "Oyuncu Öldü",
+		player_died_details = "${consoleName} öldü. Ölüm sebebi: `${deathCause}`."
 	},
 
 	functions = {
@@ -11858,7 +11889,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		unable_to_hotwire_vehicle = "Araç bağlanamadı.",
 		picked_up_keys = "${plate} plakalı aracın anahtarları alındı.",
 		invalid_server_id = "Geçersiz sunucu numarası.",
-		hotwired_vehicle_for_player = "${displayName} araçlarını zorla çalıştırmaları için teşvik edildi."
+		hotwired_vehicle_for_player = "${displayName} araçlarını zorla çalıştırmaları için teşvik edildi.",
+		gave_keys_success = "Başarıyla ${displayName}'a aracın anahtarlarını verildi.",
+		gave_keys_failure = "${displayName} adlı kişiye araç anahtarları verilemedi."
 	},
 
 	modifications = {
@@ -11869,6 +11902,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		wheels_none_valid_specified = "Geçerli tekerlek belirtilmedi.",
 		not_in_a_car = "Arabanın içinde değilsin.",
 		invalid_value = "Geçersiz değer."
+	},
+
+	oil = {
+		move_to_change = "Araçta yağ değiştirmek için buraya gelin.",
+		changing_oil = "Yağ Değiştiriyor"
 	},
 
 	plates = {
@@ -12044,6 +12082,21 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		fill_ammo_failed = "Mermiler doldurulamadı."
 	},
 
+	throwables = {
+		pick_up_weapon = "[${InteractionKey}] Silahı Al",
+
+		no_weapon_equipped = "Bir silah takılı değil.",
+		cant_throw_weapon = "Bu silahı atamazsınız.",
+		keybind_description = "Silahınızı atın",
+
+		total_throwables = "Atılabilirler: ${count}",
+
+		threw_weapon_logs_title = "Silah Atıldı",
+		threw_weapon_logs_details = "${consoleName} adlı kişi ${item}(${coords}) silahını attı.",
+		picked_up_weapon_logs_title = "Silah Alındı",
+		picked_up_weapon_logs_details = "${consoleName}, ${item} (${coords}) adlı bir silah aldı."
+	},
+
 	weapons = {
 		pick_up_fire_extinguisher = "Yangın söndürücüyü almak için ~INPUT_CONTEXT~ tuşuna basın.",
 		press_to_drop_fire_extinguisher = "Yangın söndürücüyü bırakmak için ~INPUT_FRONTEND_RRIGHT~ tuşuna basın.",
@@ -12054,10 +12107,16 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		airsoft_mode_failed = "Airsoft modu değiştirilemedi.",
 
 		no_weapon_equipped = "Hiçbir silahınız yok.",
-		no_ammo = "Bu silah için mermi yok.",
-		infinite_ammo = "Bu silah için sonsuz mermiye sahipsiniz.",
-		ammo_count = "${clips} tam şarjörünüz var (${total} toplam mermi).",
-		ammo_count_loose = "${clips} tam şarjörünüz ve ${loose} mermili 1 şarjörünüz var (${total} toplam mermi).",
+		ammo_count_title = "Mermi Sayısı",
+		no_ammo = "Herhangi bir mermiye sahip değilsiniz.",
+		ammo_count = "**${ammoType}:** *x${ammoCount}*",
+
+		ammo_pistol = "Tabanca",
+		ammo_shotgun = "Yivli Tüfek",
+		ammo_smg = "MP",
+		ammo_rifle = "Tüfek",
+		ammo_sniper = "Susturuculu Tüfek",
+		ammo_stungun = "Elektroşok Cihazı",
 
 		firing_mode_0 = "Ateşleme modu varsayılan olarak ayarlandı.",
 		firing_mode_1 = "Atış modu Tek Atış olarak ayarlandı.",
@@ -12153,7 +12212,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		bleeding_with_injury = "${label} yaralanması ile kanıyorsun",
 		bleeding_reduced = "Kanama azaltıldı",
 		bleeding_self_stopped = "Kanama kendiliğinden durdu",
-		thanks_for_loot = "Baygınken soyuldun. Bazı eşyalar kayıp olabilir.",
+		thanks_for_loot = "Bilincinizi kaybederken soyulmuşsunuz. Bazı eşyalar eksik olabilir. Dedikoduya göre Nancy yapmış.",
 		serial_number = "Seri Numarası: ${serialNumber}<br>Bu silah ${fullName} (#${characterId}) tarafından kayıt edilmiştir.",
 		serial_number_unknown = "Seri Numarası: Bilinmiyor.",
 		badge_owner = "<i>Bu rozet <b>${fullName} (${positionName})</b> tarafından kullanılıyor.</i>",

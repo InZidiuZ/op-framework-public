@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 20 (do not change)
+-- AUTO LOCALES: 21 (do not change)
 
 OP.Global.Locales.Languages["nb-NO"] = {
 	-- configuration settings for language
@@ -73,7 +73,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		cant_struggle_dead = "Du kan ikke motkjempe når du er død.",
 		struggle_to_quick = "Du føler deg utmattet etter å ha kjempet nylig, vent litt og prøv igjen.",
 		struggle_logs_title = "Kjempet Mot og Kom Fri",
-		struggle_logs_details = "${consoleName} kjempet seg fri fra ${targetName} mens de ble båret."
+		struggle_logs_details = "${consoleName} kjempet seg fri fra ${targetName} mens de ble båret.",
+
+		invalid_server_id = "Ugyldig server ID.",
+		ragdolled_player = "Fikk ${displayName} til å falle."
 	},
 
 	-- base/*
@@ -298,25 +301,15 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		headache_logs_title = "Trigget hodepine",
 		headache_logs_details = "${consoleName} har trigget hodepine for ${targetConsoleName}.",
 
+		spawn_logs_title = "Teleportert til spawn",
+		spawn_logs_details = "${consoleName} ble teleportert til spawn (stabstårnet).",
+
 		super_jump_logs_title = "Byttet Super Jump",
 		super_jump_logs_details_on = "${consoleName} har slått på superhoppingen sin.",
 		super_jump_logs_details_off = "${consoleName} har slått av superhoppingen sin.",
 
 		success_trigger_headache = "Hodepine ble vellykket trigget for ${playerName}.",
 		failed_trigger_headache = "Klarte ikke å trigge hodepine.",
-
-		set_spawn_success = "Ditt spawnpunkt er nå satt til din nåværende posisjon.",
-		set_spawn_failed = "Kunne ikke sette spawnpunkt.",
-		reset_spawn_success = "Spawnpunktet er tilbakestilt.",
-		reset_spawn_failed = "Kunne ikke tilbakestille spawnpunktet.",
-
-		protective_mode_toggled_on = "Serverens beskyttelsesmodus er nå aktivert. Nødvendig spilletid før tilkobling til serveren er satt til `${playtime}`.",
-		protective_mode_toggled_off = "Serverens beskyttelsesmodus er nå deaktivert.",
-		protective_mode_already_on = "Serverens beskyttelsesmodus er allerede aktivert med nødvendig spilletid på `${playtime}`.",
-		protective_mode_already_off = "Serverens beskyttelsesmodus er allerede deaktivert.",
-		logs_protective_mode = "Server Beskyttelsesmodus",
-		logs_protective_mode_on = "${consoleName} aktiverte serverens beskyttelsesmodus med påkrevd spilltid: `${playtime}`.",
-		logs_protective_mode_off = "${consoleName} deaktiverte serverens beskyttelsesmodus.",
 
 		no_item_name = "Ingen objektnavn oppgitt.",
 		invalid_item_name = "${itemName} er ikke et gyldig objektnavn.",
@@ -364,9 +357,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		evidence_view_details_on = "${consoleName} skrudde på avansert bevisvisning.",
 		evidence_view_details_off = "${consoleName} skrudde av avansert bevisvisning.",
 
-		tracker_turned_on = "Trackeren din har blitt slått på.",
-		tracker_turned_off = "Trackeren din har blitt slått av.",
-
 		report_muted_no_reason = "Du har blitt mutet fra rapportkommandoen uten en spesifisert grunn.",
 		report_muted = "Du har blitt mutet fra rapportkommandoen for grunnen `${reason}`.",
 
@@ -386,13 +376,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		teleported_to_coordinates_logs_details = "${consoleName} teleportert til koordinater X: ${x}, Y: ${y}, Z: ${z}.",
 		teleported_to_waypoint_logs_title = "Teleportert til veipunkt",
 		teleported_to_waypoint_logs_details = "${consoleName} teleportert til et veipunkt på ${locationLabel}.",
-
-		failed_isolate = "Klarte ikke å isolere spilleren.",
-		invalid_server_id = "Ugyldig server-ID.",
-		isolate_success_on = "Isolerte ${consoleName} vellykket.",
-		isolate_success_off = "Sluttet å isolere ${consoleName} vellykket.",
-
-		isolate_missing_permissions = "Spilleren forsøkte å isolere en annen spiller uten tilstrekkelige tillatelser.",
 
 		population_density_set_to = "Multiplikatoren for befolkningstetthet har blitt satt til ${multiplierLabel}%.",
 		population_density_set_off = "Multiplikator for folketetthet er slått av.",
@@ -424,6 +407,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		super_jump_feature = "Superhopp",
 		server_id_hidden_feature = "Skjult server-ID",
 		fake_disconnect_feature = "Falsk frakobling",
+		brighter_nights_feature = "BN",
 
 		you_are_not_in_a_vehicle = "Du er ikke i et kjøretøy.",
 		repaired_vehicle = "Kjøretøyet er reparert.",
@@ -595,10 +579,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		refill_nitro_logs_title = "Påfylte nitro",
 		refill_nitro_logs_details = "${consoleName} fylte på nitroen sin.",
 
-		isolated_logs_title = "Isolert spiller",
-		isolated_off_logs_details = "${consoleName} slått av isolasjonen til ${targetName}.",
-		isolated_on_logs_details = "${consoleName} slo på isolasjonen til ${targetName}.",
-
 		character_data_logs_title = "Karakterdata",
 		character_data_logs_details = "${consoleName} sjekket ${targetName}s karakterdata (CID: ${characterId}).",
 
@@ -635,9 +615,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	},
 
 	anti_cheat = {
-		illegal_client_event = "Gå direkte i fengsel. Ikke pass Go. Ikke motta $200.",
-		illegal_server_event = "Gå direkte i fengsel. Ikke pass Go. Ikke motta $200.",
-		bad_entity_spawn = "Spawnet inn en entitet med modellnavn `${modelName}`.",
 		bad_entity_title = "Dårlig enhet spawnet",
 		bad_entity_message = "${consoleName} spawnet enhet med modellnavn `${modelName}`.",
 		detected_entity_title = "Oppdaget enhet spawnet",
@@ -649,6 +626,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		detection_area_close = "[${InteractionKey}] Fjern deteksjonsområde (${areaId})",
 		detection_area = "Deteksjonsområde (${areaId})",
 
+		suspicious_transfer_title = "Mistenkelig overføring",
+		suspicious_transfer_message = "${from} overførte nettopp $${amount} til ${to}.",
+
 		failed_toggle_strict_mode = "Klarte ikke å bytte til streng modus.",
 		strict_mode_enabled = "Streng modus ble aktivert.",
 		strict_mode_disabled = "Streng modus ble deaktivert.",
@@ -656,37 +636,43 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		ban_notification_title = "Anti-svindel",
 		ban_notification = "Utestengt ${consoleName} for `${banReason}`.",
 
+		suspicious_transfer_title = "Mistenkelig overføring",
+		suspicious_transfer_details = "${consoleName} overførte $${amount} til ${targetConsoleName}.",
+
+		-- GPT-4 generated ban messages
+		bad_entity_spawn = "Åh, prøver du å framkalle den antikke gjenstanden `${modelName}`? Dette er ikke en episode av Antiques Roadshow, og den gjenstanden blir værende i hvelvet.",
 		bad_screen_word_ban = "Vi har hørt om åpne bok-eksamener, men dette er latterlig.",
 		blacklisted_command_ban = "Beklager, men du har ikke tillatelse til å utføre dette kommandoen. Vennligst kontakt serveradministratorene hvis du tror dette er en feil.",
+		clear_tasks_ban = "Dette er ikke et Jedi sinnetriksetreningssenter. Dine forsøk på å påvirke andres frie vilje er notert... og avvist.",
 		damage_modifier_ban = "Din kraftnivå kan ikke være over 9000.",
 		distance_taze_ban = "Din forbløffende opptreden på avstand ble ikke verdsatt.",
 		fast_movement_ban = "Flyging er ikke aktivert på denne serveren.",
 		freecam_ban = "Det ser ut til at du har hatt en utenomkroppslig opplevelse.",
 		honeypot_ban = "Du prøvde å aktivere kreativ modus, men hadde ikke tillatelse til å gjøre det.",
-		hotwire_driving_ban = "Vroom Vroom, jeg er i pappas bil.",
+		illegal_client_event = "Åh, prøver du å stemme deg inn på den skjulte frekvensen til `${eventName}`? Dette er ikke en hemmelig radiostasjon, og den sangen er ikke på spillelisten vår.",
+		illegal_damage_ban = "Maktbalansen ble forstyrret for mye i din favør, og forstyrret balansen i vårt rike.",
 		illegal_freeze_ban = "Mens ånder kan vandre fritt, er vi dødelige bundet av fysikkens lover. Sir Isaac Newton ville ikke ha det annerledes.",
+		illegal_global_ban = "Prøvde du å tappe inn i matrisen? Neo hadde kanskje vært imponert, men vi er det ikke.",
+		illegal_native_ban = "Prøvde vi å hviske til åndene i den digitale verden? Dessverre har denne seansen blitt avslått. Lykke til i den åndelige verden.",
 		illegal_ped_change_ban = "Identitetstyveri er ikke en spøk! Millioner av karakterer lider hvert år.",
-		illegal_spectating_ban = "Du må være en FIB-agent for å overvåke andre spillere eller bruke /gamemode spectator før du overvåker.",
+		illegal_server_event = "Ønsket å danse til den uhørte rytmen av `${eventName}`, gjorde vi? Dette er ikke en hemmelig ballsal, og de dansebevegelsene? Strengt forbudt.",
+		illegal_spectating_ban = "Spøkelsesaktige ånder er reservert for hjemsøkte herskapshus, ikke her. Dine astrale projeksjonsferdigheter ble merket, men ikke ønsket velkommen.",
 		illegal_vehicle_modifier_ban = "I motsetning til Dom Toretto fra Fast and Furious, er vi ikke familie.",
+		infinite_ammo_ban = "Til tross for populær tro, gjelder loven om bevaring også her. Den magiske ammunisjonspungen er beslaglagt.",
+		invalid_health_ban = "Helsebaren din virker å ha drukket litt for mye spinat, Popeye",
 		invincibility_ban = "Du er ikke Den svarte ridderen, du kan ikke være udødelig.",
-		ped_spawn_ban = "Du prøvde å utføre mitose, men det var ikke nok sol for fotosyntese.",
+		ped_spawn_ban = "Ah, håpet på å påkalle den legendariske figuren `${modelName}`, gjorde du? Dette er ikke en Hollywood-kasting, og den stjernen blir værende utenfor scenen.",
 		player_blips_ban = "Luftrommet er fullt, UAV er utilgjengelig.",
 		runtime_texture_ban = "Mod-menyen du har, bruk den du ikke kan.",
-		spiked_resource_ban = "Å endre skriptet uten tillatelse er som å prøve å endre slutten på en historie bare fordi du ikke liker den.",
+		semi_godmode_ban = "Din insistering på kilden til evig ungdom synes å ha forstyrret den naturlige flyten av tiden. Evigheten er ikke så gøy som det høres ut som.",
+		suspicious_explosion_ban = "Beklager, men dette er ikke en Michael Bay-film. Overdreven bruk av pyroteknikk er ikke tillatt.",
 		text_entry_ban = "Undersøkelse av elementer er ikke tillatt i denne nettleseren.",
 		thermal_night_vision_ban = "Brighter Nights er ikke tillatt.",
-		vehicle_modification_ban = "Du kunne ikke finne frontlysevæsken til bilen din.",
-		vehicle_spawn_ban = "Du prøvde å bruke rødsten på en gruvevogn, men hadde ikke aktiverte skinner.",
-		weapon_spawn_ban = "Forsøkte å trylle fram en kanin fra hatten, fant en bazooka i stedet.",
-		high_damage_ban = "Skalaene av makt var vippet for mye i din favør og forstyrret balansen i vår verden.",
-		suspicious_explosion_ban = "Beklager, men dette er ikke en Michael Bay-film. Overdreven bruk av pyroteknikk er ikke tillatt.",
-		semi_godmode_ban = "Din insistering på kilden til evig ungdom synes å ha forstyrret den naturlige flyten av tiden. Evigheten er ikke så gøy som det høres ut som.",
-		invalid_health_ban = "Helsebaren din virker å ha drukket litt for mye spinat, Popeye",
-		clear_tasks_ban = "Dette er ikke et Jedi sinnetriksetreningssenter. Dine forsøk på å påvirke andres frie vilje er notert... og avvist.",
-		projectile_event_ban = "Dette er ikke Hogwarts og du er ikke Harry Potter. Vilkårlig bruk av trylleformler - eller prosjektiler - er ikke tillatt her.",
-		illegal_native_ban = "Du kan ikke bruke en trylleformel du ikke har lært ennå...",
 		underground_ban = "Du ser ut til å ha falt ned i et kaninhull.",
-		infinite_ammo_ban = "Til tross for populær tro, gjelder loven om bevaring også her. Den magiske ammunisjonspungen er beslaglagt.",
+		vehicle_modification_ban = "Du kunne ikke finne frontlysevæsken til bilen din.",
+		vehicle_spawn_ban = "Å drømme om en gledestur med `${modelName}`, gjorde du det? Dette er ikke en utstilling, og den modellen der? Den er på en evig venteliste!",
+		weapon_spawn_ban = "Lengter du etter `${weaponName}`, gjorde du det? Dette er ikke en våpenlager, og det våpenet? Det er fortsatt i smien.",
+		advanced_noclip_ban = "Prøver du en hemmelig gli gjennom usynlige korridorer? Dette er ikke en spøkelsesvalsen, og den bevegelsen? Den står ikke på vår dansekort.",
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Dårlig opprettelse",
@@ -695,36 +681,36 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		type_clear_tasks = "Tøm oppgaver",
 		type_damage_modifier = "Skademodifikator",
 		type_distance_taze = "Støt på avstand",
-		type_driving_hotwire = "Kjøre oppheting",
 		type_fast_movement = "Rask bevegelse",
 		type_freecam_detected = "Freecam oppdaget",
-		type_high_damage = "Høy skade",
 		type_honeypot = "Honeypot",
+		type_illegal_damage = "Ulovlig skade",
 		type_illegal_event = "Ulovlig klienthendelse",
 		type_illegal_freeze = "Ulovlig frysing",
+		type_illegal_global = "Ulovlig global bruk",
+		type_illegal_native = "Ulovlig Native-kall",
 		type_illegal_ped_spawn = "Spawnet NPC",
 		type_illegal_server_event = "Ulovlig serverhendelse",
 		type_illegal_vehicle_modifier = "Kjøretøyendringer",
 		type_illegal_vehicle_spawn = "Spawnet kjøretøy",
 		type_illegal_weapon = "Våpnenspawning",
+		type_infinite_ammo = "Uendelig ammunisjon",
+		type_advanced_noclip = "Avansert Noclip",
 		type_invalid_health = "Ugyldig helse",
 		type_invincibility = "Uovervinnelighet",
 		type_modified_fov = "Endret synsfelt",
 		type_ped_change = "NPC-endring",
 		type_player_blips = "Spillermarkører",
-		type_projectile_event = "Prosjektilhendelse",
 		type_runtime_texture = "Runtime Tekstur",
 		type_semi_godmode = "Halvguddommelig Modus",
 		type_spawned_object = "Spawnet Objekt",
 		type_spectate = "Spectate",
-		type_spiked_resource = "Spiked-resurs",
 		type_suspicious_explosion = "Mistenkelig Eksplosjon",
+		type_suspicious_transfer = "Mistenkelig Overføring",
 		type_text_entry = "Tekstinndata",
 		type_thermal_night_vision = "Termisk/Nattsyn",
-		type_vehicle_modification = "Kjøretøy Tilpasning",
-		type_illegal_native = "Ulovlig Native-kall",
 		type_underground = "Underjordisk",
-		type_infinite_ammo = "Uendelig ammunisjon",
+		type_vehicle_modification = "Kjøretøy Tilpasning",
 
 		event_prefix = "Anti-Cheat: ${type}",
 
@@ -766,55 +752,35 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	},
 
 	authentication = {
-		ip_not_found = "Vi kunne ikke hente IP-adressen din.",
-		authenticating_local_server = "Autentiserer med lokal server...",
-		authenticating_global_server = "Autentiserer med OP-FW servere...",
-		error_fetching_data = "En feil oppstod under henting av dataene dine.",
-		region_blocked = "Denne serveren har blokkert området du kobler fra.",
-		server_config_not_loaded = "Serverkonfigurasjonen har ikke blitt lastet inn.",
-		something_went_horribly_wrong = "Noe gikk fryktelig galt. Vennligst prøv igjen.",
-		local_firewall_enabled = "Den lokale brannmuren er aktivert.",
+		waiting_for_server = "Venter på at serveren skal bli klar...",
+		authenticating_with_server = "Autentiserer med serveren...",
 
-		local_firewall_on = "Aktivert den lokale brannmuren med blokkeringsmeldingen `${blockMessage}`.",
-		local_firewall_re_enabled = "Aktiverte den lokale brannmuren på nytt med blokkeringsmeldingen `${blockMessage}`.",
-		local_firewall_off = "Deaktiverte den lokale brannmur.",
-		local_firewall_blocked = "Lokal brannmur: Blokkert ${playerName} (${licenseIdentifier})",
+		failed_to_get_global_user = "Klarte ikke å hente global bruker.",
+		failed_to_get_local_user = "Klarte ikke å hente lokal bruker.",
+		failed_to_get_local_ban = "Klarte ikke å hente lokal ban-status.",
 
-		developer = "utvikler",
-		super_admin = "super admin",
-		staff = "personale",
-		reconnect = "koble til igjen",
-		random = "tilfeldig",
-		beginner = "nybegynner",
-		custom = "tilpasset",
-		christmas = "jul",
-		casino = "kasino",
+		global_ban = "Du har blitt globalt utestengt fra alle OP-FW-servere.\n\nBan Hash: ${banHash}\nBan Årsak: ${reason}\n\nHvis du tror dette er en feilaktig utestengelse, kan du bli med i OP-FW Discord-guildet for informasjon om hvordan du kan anke på ${frameworkDiscord}",
+		local_ban = "Du har blitt utestengt fra ${communityName}.\n\nUtestengelses Hash: ${banHash}\nUtestengelsesårsak: ${reason}\nUtestengt av: ${creatorName}\nTidsstempel: ${timestamp}\n\n${indefiniteOrExpires}\n\nBli med i vår Discord-guild for informasjon om hvordan du kan anke på ${communityDiscord}",
+		local_ban_no_creator = "Du har blitt utestengt fra ${communityName}.\n\nUtestengelses Hash: ${banHash}\nUtestengelsesårsak: ${reason}\nTidsstempel: ${timestamp}\n\n${indefiniteOrExpires}\n\nBli med i vår Discord-guild for informasjon om hvordan du kan anke på ${communityDiscord}",
 
-		job_low = "lav jobb",
-		job_medium = "middels jobb",
-		job_high = "høy jobb",
-
-		banned_no_permissions = "Forsøkte å ${reason} uten tilstrekkelige tillatelser.",
-
-		banned_globally = "Du har blitt globalt utestengt fra alle OP-FW servere.\n\nUtvisnings-hash: ${banHash}\nUtestengelsesårsak: ${banReason}\n\nHvis du tror dette er en feil utestengelse, kan du bli med i OP-FW sin discord-guild for informasjon om hvordan du kan anke på ${frameworkDiscord}",
-		banned_locally = "Du har blitt utestengt fra ${communityName}.\n\nUtestengings-hash: ${banHash}\nUtestengt av: ${creatorName}\nUtestengingsgrunn: ${banReason}\nTidspunkt: ${timestamp}\n\n${indefiniteOrExpires}\n\nBesøk vår discord-server for informasjon om hvordan du kan anke på ${communityDiscord}.",
-		banned_locally_no_creator = "Du har blitt utestengt fra ${communityName}.\n\nUtestengings-hash: ${banHash}\nUtestengingsgrunn: ${banReason}\nTidspunkt: ${timestamp}\n\n${indefiniteOrExpires}\n\nBesøk vår discord-server for informasjon om hvordan du kan anke på ${communityDiscord}.",
 		ban_indefinite = "Dette banet er uendelig.",
 		ban_expires = "Dette banet vil utløpe om ${timeLeft}.",
-		not_whitelisted = "Du har ikke lov til å spille på denne serveren. For informasjon om hvordan du kan søke, kan du bli med i vår discord-server.\n\n${communityDiscord}",
-		api_error = "En feil oppsto under henting av dataene dine. (feilkode ${errorCode})",
+
 		pepega_moderate = "Du har blitt globalt bannet fra alle OP-FW-servere uten noen spesifiserte grunner.",
 		pepega_ultimate = "Du har blitt bannet fra denne serveren.",
-		ban_code_not_found = "Du har blitt globalt bannet fra alle OP-FW-servere. Vi klarte ikke å finne noen data for ditt ban-kode.",
-		fraud_chargeback = "Svindel / tilbakeføring",
-		threatening_ddos = "Truer med å angripe vår infrastruktur.",
-		unknown = "Ukjent",
-		api_offline = "Tjenesten vår er for øyeblikket utilgjengelig og dermed ikke i stand til å hente dataene dine. Vennligst prøv igjen snart.",
-		protective_mode_on = "Serverbeskyttelsesmodus er for øyeblikket aktivert på denne serveren, noe som betyr at bare spillere med en visst antall spilletid kan koble til serveren. Dette er bare midlertidig, og serveren bør gå tilbake til normalt snart.\n\nDeltag vår discord for mer informasjon om dette på ${communityDiscord}.",
-		server_restarting = "Serveren starter på nytt. Vennligst prøv igjen om noen minutter.",
-		connection_cancelled = "Denne tilkoblingen ble avbrutt fordi en annen allerede er aktiv.",
-		no_reason_provided = "Ingen grunn oppgitt.",
-		discord_whitelist_id_not_found = "Vi kunne ikke finne din discord-id. Sørg for at du har discord åpnet i bakgrunnen, og at du har gitt FiveM tillatelse til å hente data fra din discord-klient.\n\n${communityDiscord}"
+
+		welcome_to = "Velkommen til",
+
+		connection_rejected_logs_title = "Tilkobling avvist",
+		connection_rejected_logs_details = "${consoleName} ble avvist ved tilkobling av grunn `${rejectCode}`.",
+
+		connection_accepted_logs_title = "Tilkobling akseptert",
+		connection_accepted_logs_details = "${consoleName} ble akseptert ved tilkobling."
+	},
+
+	bans = {
+		banned_no_permissions = "Forsøkte å `${reason}` uten tilstrekkelige tillatelser.",
+		fraud_chargeback = "Svindel / Tilbakebelastning"
 	},
 
 	characters = {
@@ -896,6 +862,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		-- animations/emotes
 		ragdoll_command = "ragdoll",
 		ragdoll_command_help = "Slå av/på ragdoll.",
+		ragdoll_command_parameter_server_id = "server-id",
+		ragdoll_command_parameter_server_id_help = "Spesifiser en server-ID for å ragdoll en annen spiller.",
 		ragdoll_command_substitutes = "",
 
 		-- animations/walkstyles
@@ -937,7 +905,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		wipe_command_parameter_ignore_local_entities = "ignorer lokale enheter",
 		wipe_command_parameter_ignore_local_entities_help = "Ignorer ikke-nettverksenheter? Hvis du rydder opp etter en juksemaker, anbefales det at du setter dette til `true` eller `1`.",
 		wipe_command_parameter_model_name = "modellnavn",
-		wipe_command_parameter_model_name_help = "Hvis du kun vil slette enheter av en bestemt modellnavn, skriv modellnavnet her. Ellers la det være tomt, `false` eller `0`. Du kan også sette dette til `kjøretøy`, `peds` eller `objekter`.",
+		wipe_command_parameter_model_name_help = "Hvis du bare ønsker å slette enheter av en bestemt modellnavn, legg inn modellnavnet her. Ellers la det være tomt, som `false` eller `0`. Du kan også sette dette til `kjøretøy`, `personer`, `objekter` eller `dører`.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "noclip",
@@ -987,14 +955,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		staff_toggle_command = "ansatt_toggling",
 		staff_toggle_command_help = "Slå av/på din ansatt tilgjengelighet. Å slå den av vil hindre rapporter, ansatt PM-er og ansatt meldinger fra å dukke opp.",
 		staff_toggle_command_substitutes = "",
-
-		protective_mode_command = "beskyttelsesmodus",
-		protective_mode_command_help = "Slå av/på serverens beskyttelsesmodus. Dette vil hindre nye tilkoblinger fra spillere med mindre enn den spesifiserte mengden påkrevede spilltid. Dette sjekk er ekskludert for stab-medlemmer og server-støtte.",
-		protective_mode_command_parameter_enabled = "aktivert",
-		protective_mode_command_parameter_enabled_help = "Skal sjekken være aktivert? Gyldige input er: `true`, `false`, `1` og `0`.",
-		protective_mode_command_parameter_playtime = "spilletid",
-		protective_mode_command_parameter_playtime_help = "Den nødvendige mengden spilletid (sekunder) for å akseptere en ny tilkobling.",
-		protective_mode_command_substitutes = "",
 
 		spawn_vehicle_command = "spawn_kjøretøy",
 		spawn_vehicle_command_help = "Spawn et kjøretøy.",
@@ -1070,10 +1030,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		no_nearby_vehicles_command_parameter_server_id_help = "Hvis du ønsker å aktivere/deaktivere 'ingen nærliggende kjøretøy' for noen andre, sett inn vedkommendes Server ID her.",
 		no_nearby_vehicles_command_substitutes = "",
 
-		ghost_command = "spøkelse",
-		ghost_command_help = "Dette kommandoen vil aktivere /titt, usynlighet og /kollisjoner.",
-		ghost_command_substitutes = "",
-
 		job_command = "jobb",
 		job_command_help = "Endrer noen sin jobb basert på søk.",
 		job_command_parameter_server_id = "server-id",
@@ -1114,13 +1070,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		super_jump_command_help = "Aktiverer eller deaktiverer superhopp.",
 		super_jump_command_substitutes = "",
 
-		set_spawnpoint_command = "set_spawnpoint",
-		set_spawnpoint_command_help = "Setter spawnpunktet ditt til å være din nåværende posisjon.",
-		set_spawnpoint_command_substitutes = "set_spawn",
-
-		reset_spawnpoint_command = "reset_spawnpoint",
-		reset_spawnpoint_command_help = "Tilbakestiller spawnpunktet ditt som ble satt ved bruk av /set_spawnpoint.",
-		reset_spawnpoint_command_substitutes = "reset_spawn",
+		spawn_command = "spawn",
+		spawn_command_help = "Teleporterer deg til stabstårnet.",
+		spawn_command_substitutes = "",
 
 		stick_command = "fest",
 		stick_command_help = "Fest deg til bilen du står oppå.",
@@ -1217,12 +1169,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		tp_waypoint_command = "tp_waypoint",
 		tp_waypoint_command_help = "Teleporter til merke på kartet.",
 		tp_waypoint_command_substitutes = "tp_marker, tp",
-
-		isolate_player_command = "isoler_spiller",
-		isolate_player_command_help = "Isolerer en spiller, avviser alt de prøver å gjøre.",
-		isolate_player_command_parameter_server_id = "server id",
-		isolate_player_command_parameter_server_id_help = "Målets spiller.",
-		isolate_player_command_substitutes = "isoler",
 
 		show_all_evidence_command = "vis_all_evidens",
 		show_all_evidence_command_help = "Viser all nærliggende bevis på kulehylser.",
@@ -1823,11 +1769,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		outfits_command_help = "List opp alle dine lagrede antrekk.",
 		outfits_command_substitutes = "",
 
-		-- game/collisions
-		disable_collisions_command = "deaktiver_kollisjoner",
-		disable_collisions_command_help = "Deaktiver kollisjoner med kjøretøy og fotgjengere i en radius på 25 meter (kun lokalt for deg).",
-		disable_collisions_command_substitutes = "kollisjoner",
-
 		-- game/command_socket
 		reconnect_command_socket_command = "koble_til_command_socket",
 		reconnect_command_socket_command_help = "Forsøker å koble til på nytt til kommando-socketen.",
@@ -1885,6 +1826,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		npc_debug_command = "npc_debug",
 		npc_debug_command_help = "Feilsøker alle ikke-dyrenpc-er rundt deg.",
 		npc_debug_command_substitutes = "npc-er",
+
+		vehicle_debug_command = "vehicle_debug",
+		vehicle_debug_command_help = "Detekterer feil på alle kjøretøy (unntatt dyr) rundt deg.",
+		vehicle_debug_command_substitutes = "kjøretøy",
 
 		network_debug_command = "nettverk_debug",
 		network_debug_command_help = "Bytt til entitet-nettverks-debugger. Dette vil vise noe nettverksinformasjon om entiteten du ser på.",
@@ -2491,6 +2436,13 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		invisibility_command_parameter_server_id_help = "Hvis du ønsker å slå av/på usynligheten til en annen spiller.",
 		invisibility_command_substitutes = "inv, invis, usynlig",
 
+		-- game/isolation
+		isolate_player_command = "isoler_spiller",
+		isolate_player_command_help = "Isolerer en spiller, avviser alt de prøver å gjøre.",
+		isolate_player_command_parameter_server_id = "server id",
+		isolate_player_command_parameter_server_id_help = "Målets spiller.",
+		isolate_player_command_substitutes = "isoler",
+
 		-- game/items
 		clear_map_command = "fjern_kart",
 		clear_map_command_help = "Fjerner den lagrede lokasjonen til et kart.",
@@ -3071,6 +3023,11 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		draw_shroom_areas_command_help = "Tegn alle sopp-områder og legg til flere.",
 		draw_shroom_areas_command_substitutes = "sopp_områder",
 
+		-- game/smell
+		smell_command = "lukt",
+		smell_command_help = "Lukt i området rundt deg etter noe uvanlig.",
+		smell_command_substitutes = "",
+
 		-- game/sound_effects
 		play_sound_command = "spill_lyd",
 		play_sound_command_help = "Spiller av en lydeffekt på din plassering.",
@@ -3286,28 +3243,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		wizard_command_parameter_server_id = "server id",
 		wizard_command_parameter_server_id_help = "Velg en spiller fra menyen (valgfritt).",
 		wizard_command_substitutes = "",
-
-		ragdoll_player_command = "ragdoll_spiller",
-		ragdoll_player_command_help = "Får en spiller til å bli ragdollet.",
-		ragdoll_player_command_parameter_server_id = "server id",
-		ragdoll_player_command_parameter_server_id_help = "Server-IDen til spilleren du vil gjøre ragdollet.",
-		ragdoll_player_command_parameter_force = "kraft",
-		ragdoll_player_command_parameter_force_help = "Påfør en tilfeldig kraft til spilleren etter at de er blitt ragdollet.",
-		ragdoll_player_command_substitutes = "",
-
-		ragdoll_radius_command = "ragdoll_radius",
-		ragdoll_radius_command_help = "Tvinger alle spillere innenfor en gitt radius til å ragdoll tilfeldig.",
-		ragdoll_radius_command_parameter_radius = "radius",
-		ragdoll_radius_command_parameter_radius_help = "Radiusen der spillerne vil ragdoll.",
-		ragdoll_radius_command_parameter_force = "kraft",
-		ragdoll_radius_command_parameter_force_help = "Legg til en tilfeldig kraft på spilleren etter at de har ragdollet.",
-		ragdoll_radius_command_substitutes = "",
-
-		punch_radius_command = "punch_radius",
-		punch_radius_command_help = "Tvinger alle spillere innenfor en gitt radius til å slå tilfeldig.",
-		punch_radius_command_parameter_radius = "radius",
-		punch_radius_command_parameter_radius_help = "Radiusen som spillerne vil slå tilfeldigvis innenfor.",
-		punch_radius_command_substitutes = "",
 
 		flashbang_command = "flashbang",
 		flashbang_command_help = "Flashbang en bestemt spiller.",
@@ -3541,6 +3476,12 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		pickup_keys_command_help = "Får deg til å plukke opp nøklene til det nærmeste kjøretøyet.",
 		pickup_keys_command_substitutes = "",
 
+		keys_command = "nøkler",
+		keys_command_help = "Få nøklene til kjøretøyet du er i.",
+		keys_command_parameter_server_id = "server-id",
+		keys_command_parameter_server_id_help = "Gi en annen spiller nøklene til kjøretøyet de er i.",
+		keys_command_substitutes = "",
+
 		-- vehicles/modifications
 		wheel_offset_command = "hjul_forflytning",
 		wheel_offset_command_help = "Endrer hjulenes forflytning på et kjøretøy.",
@@ -3689,9 +3630,18 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		aim_down_sight_command_help = "Automatisk sikte ned når du høyreklikker, selv om du er i tredjepersonsperspektiv.",
 		aim_down_sight_command_substitutes = "sikt_ne",
 
+		-- weapons/throwables
+		throw_weapon_command = "kast_våpen",
+		throw_weapon_command_help = "Kast våpenet du har utstyrt.",
+		throw_weapon_command_substitutes = "kast, yeet",
+
+		throwables_debug_command = "kastbar_debug",
+		throwables_debug_command_help = "Feilsøker alle nærliggende kastbare gjenstander.",
+		throwables_debug_command_substitutes = "",
+
 		-- weapons/weapons
 		check_ammo_command = "sjanse_ammo",
-		check_ammo_command_help = "Sjekker hvor mye ammunisjon du har totalt for våpenet du holder.",
+		check_ammo_command_help = "Sjekker hvor mye ammunisjon du har totalt.",
 		check_ammo_command_substitutes = "ammo",
 
 		toggle_airsoft_mode_command_command = "bytte_airsoft_modus",
@@ -3760,6 +3710,15 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		error_occured_information = "Dette indikerer at noe ikke fungerer som det skal. Vi ber deg om å hjelpe oss med å løse dette problemet ved å gi oss mer informasjon om hva du gjorde da denne feilen ble utløst."
 	},
 
+	firewall = {
+		local_firewall_enabled = "Den lokale brannmuren er aktivert.",
+
+		local_firewall_on = "Aktiverte den lokale brannmuren med blokkeringsmeldingen `${blockMessage}`.",
+		local_firewall_re_enabled = "Gjenaktiverte den lokale brannmuren med blokkeringsmeldingen `${blockMessage}`.",
+		local_firewall_off = "Deaktiverte den lokale brannmuren.",
+		local_firewall_blocked = "Lokal brannmur: Blokkert ${playerName} (${licenseIdentifier})"
+	},
+
 	ping = {
 		getting_pings = "Henter ping-er fra alle spillerne. Dette kan ta noen sekunder.",
 		host_data = "${position}. ${location} - ${averagePing} Gjennomsnittlig ping (basert på ${totalPings} spillere), 10% lavt: ${averagePingLow}, 10% høyt: ${averagePingHigh}",
@@ -3771,33 +3730,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		profile_debug_disabled = "Profilfeilsøkingen er deaktivert."
 	},
 
-	queue = {
-		joining_the_queue = "Berg å stå i kø...",
-		timed_out_before_joining = "Tiden din gikk ut før du kunne bli med på serveren.",
-		server_reload_while_in_loading = "Serverens kjerne restartes, og siden du ikke ble lastet inn ordentlig, ble du automatisk kastet ut.",
-		server_reload_while_in_queue = "Kjernen til serveren blir restartet. Vennligst koble til køen igjen.",
-		took_too_long_to_connect = "Du brukte for lang tid på å koble deg til!",
-		queue_position_with_priority = "🐌 Du er ${queueEntryId}/${queueLength} i køen med ${priorityName}-prioritet. 🕐${queueTime}${liveOnTwitch}",
-		queue_position_without_priority = "🐌 Du er ${queueEntryId}/${queueLength} i køen. 🕐${queueTime}\nLedd av å vente i kø? Støtt oss for køprioritet!\n\n${webstoreURL}${liveOnTwitch}",
-		live_on_twitch = "\n\nEr du kjedelig? Sjekk ut disse streamerne!\n${streamers}",
-		server_is_starting = "Venter på at serveren skal starte...",
-		cancelled_before_server_start = "Tilkoblingen ble avbrutt før serveren hadde startet.",
-		kicked_from_queue = "Du har blitt sparket ut av køen på grunn av `${reason}`.",
-		kicked_from_queue_no_reason = "Du har blitt sparket ut av køen uten angitt årsak.",
-		missing_slots_parameter = "Mangler `slots` parameter.",
-		invalid_slots_parameter = "Ugyldig `slots` parameter.",
-		slots_parameter_out_of_range = "Parameteret `slots` må være mellom `0` og `1025`.",
-		slots_already_set_to = "Server-plassene er allerede satt til `${slots}`.",
-		slots_set_to = "Server-plassene er nå satt til `${slots}`.",
-
-		invalid_license_identifier_parameter = "Mangler eller ugyldig parameter for 'licenseIdentifier'.",
-		invalid_target_position_parameter = "Mangler eller ugyldig parameter for 'targetPosition'.",
-		player_not_found_in_queue = "Spilleren ble ikke funnet i køen.",
-		player_queue_moved_success = "Spillerens posisjon i køen er oppdatert.",
-		player_queue_skipped_success = "Spilleren har hoppet over køen vellykket.",
-		queue_is_not_ready = "Køen er ikke klar, så den kan ikke hoppes over.",
-
-		welcome_to = "Velkommen til"
+	proxy = {
+		proxied_via_logs_title = "Proxyet Via",
+		proxied_via_logs_details = "${consoleName} ble proxyet via `${serverName}`."
 	},
 
 	restart = {
@@ -3846,6 +3781,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		logs_user_joined_details = "${consoleName} har koblet til serveren.",
 		logs_user_dropped_title = "Bruker frakoblet",
 		logs_user_dropped_details = "${consoleName} har koblet fra serveren etter å ha spilt i ${playtime} med grunn: `${reason}`.",
+		logs_user_dropped_proxied_details = "${consoleName} har koblet fra serveren etter å ha spilt i ${playtime} med grunn: `${reason}`. De ble proxyet via `${serverName}`.",
 		logs_character_loaded_title = "Karakter lastet",
 		logs_character_loaded_details = "${consoleName} har lastet karakteren ${fullName} (${characterId}).",
 		logs_character_unloaded_title = "Karakter avlastet",
@@ -3905,7 +3841,14 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		respected_tier = "Respektert nivå",
 		heroic_tier = "Heroisk nivå",
 		legendary_tier = "Legendarisk Tier",
-		godlike_tier = "Guddommelig Tier"
+		godlike_tier = "Guddommelig Tier",
+
+		dropped_timed_out_player_logs_title = "Kastet ut spiller som har tidsavbrudd",
+		dropped_timed_out_player_logs_details = "${consoleName} ble manuelt kastet ut fordi de ikke hadde sendt forespørsel til rammeverket på lang tid."
+	},
+
+	whitelist = {
+		not_whitelisted = "Du har ikke tillatelse til å være med på denne serveren.\n\nGå inn i vår Discord-kanal for informasjon om hvordan du søker på ${communityDiscord}"
 	},
 
 	-- game/*
@@ -3985,7 +3928,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		alert_title = "Varsel",
 
-		invalid_server_id = "Ugyldig server-id.",
+		invalid_server_id = "Ugyldig server-ID.",
 		missing_content = "Manglende innhold.",
 
 		show_alert_success = "Varselen ble vist til spilleren.",
@@ -4366,12 +4309,13 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	},
 
 	bazaar = {
-		access_bazaar = "Trykk ~INPUT_CONTEXT~ for å få tilgang til denne butikken.",
+		access_bazaar = "Trykk ~INPUT_CONTEXT~ for å få tilgang til basaren.",
 
 		bazaar_blip = "Bazaar",
 
 		no_items = "Du har ingenting å selge her.",
-		price_about = "omtrent $${price}",
+		price_total = "$${price} totalt",
+		price_per = "$${price} per",
 
 		sold_logs_title = "Bazaarsalg",
 		sold_logs_details = "${consoleName} solgte ${amount}x `${itemName}` for $${price}.",
@@ -4379,10 +4323,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		sold_items = "Du solgte ${amount}x ${label} for $${money}.",
 		failed_sell_items = "Kunne ikke selge gjenstandene.",
 
-		junk_collector = "Søppelsamler",
-		tool_collector = "Verktøysamler",
-		waste_collector = "Avfallssamler",
-		ammo_collector = "Ammunisjonssamler",
+		store_title = "Bazarbutikk",
 
 		close_menu = "Lukk meny"
 	},
@@ -4406,6 +4347,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		yes_receipt = "Kvittering",
 		tip = "Tips",
 		none = "Ingen",
+		custom = "Tilpasset",
+		custom_tip = "Tilpasset tips (i $)",
 
 		close = "Lukk",
 		back = "Tilbake",
@@ -4422,10 +4365,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		failed_pay_bill = "Klarte ikke å betale regningen.",
 		not_enough_money = "Du har ikke nok penger til å betale denne regningen.",
 		bill_paid = "Betalt $$${amount} til ${name}.",
-		bill_paid_notification = "${name} betalte regningen din med en tip på ${tip}%",
+		bill_paid_notification = "${name} betalte regningen din med en ${tip}-dollar tips.",
 
 		paid_bill_title = "Betalt Regning",
-		paid_bill_details = "${consoleName} betalte regningen på $$${amount} (med en tip på ${tip}%) fra ${targetName}.",
+		paid_bill_details = "${consoleName} betalte regningen på $${amount} (med en ${tip}-dollar tips) fra ${targetName}.",
 		bill_created_title = "Faktura Opprettet",
 		bill_created_details = "${consoleName} sendte en faktura på $${amount} til ${targetName} med grunn `${reason}`."
 	},
@@ -4959,15 +4902,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		add_body_blemish = "Legg til kroppshudfeil"
 	},
 
-	collisions = {
-		disable_collisions_on = "Kollisjonene dine er nå deaktivert.",
-		disable_collisions_off = "Kollisjonene dine er nå aktivert.",
-
-		collisions_logs_title = "Kollisjoner",
-		collisions_off_logs_details = "${consoleName} skrudde av sine deaktiverte kollisjoner.",
-		collisions_on_logs_details = "${consoleName} skrudde på sine deaktiverte kollisjoner."
-	},
-
 	command_socket = {
 		connected = "Koblet til kommandosocket.",
 		disconnected = "Frakoblet fra kommandosocket.",
@@ -4988,26 +4922,17 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		menu_title = "Håndverk",
 		close_menu = "Lukk Meny",
 
-		smelt_glass = "Smelt Knust Glass",
-		press_to_smelt_glass = "[${SeatEjectKey}] Smelt Knust Glass",
-		smelting_glass = "Smelter ${usedItems}",
-		smelted_glass = "Smeltet ${usedItems} om til glass.",
-		failed_smelt_glass = "Kunne ikke smelte glass.",
+		smelt_materials = "Smelt materialer",
+		press_to_smelt_materials = "[${SeatEjectKey}] Smelt materialer",
 
-		craft_steel = "Lag Stål",
-		press_to_craft_steel = "[${SeatEjectKey}] Lag Stål",
-		crafting_steel = "Bearbeider ${usedItems}",
-		crafted_steel = "Laget ${usedItems} om til stål.",
-		failed_craft_steel = "Kunne ikke lage stål.",
+		glass_recipe = "Smelt Glass",
+		steel_recipe = "Smelt Steel",
+		scrap_metal_recipe = "Smelt Scrap Metal",
+		aluminium_recipe = "Smelt Aluminium",
 
-		craft_aluminium = "Lag aluminium",
-		press_to_craft_aluminium = "[${SeatEjectKey}] Lag aluminium",
-		crafting_aluminium = "Støper ${usedItems}",
-		crafted_aluminium = "Laget ${usedItems} om til aluminium.",
-		failed_craft_aluminium = "Kunne ikke lage aluminium.",
-
-		scrapping_item = "Skroter ${usedItems}",
-		scrapped_item = "Uttrukket skrapmetall fra ${usedItems}.",
+		smelting_materials = "Smelter ${usedItems}",
+		smelted_materials = "Smeltet ${usedItems}.",
+		failed_smelt_materials = "Klarte ikke å smelte materialer.",
 
 		scrap_knife = "Skrapkniver",
 		press_to_scrap_knife = "[${SeatEjectKey}] Skrap kniver",
@@ -5396,6 +5321,30 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		mixed_grimace_shake = "Blandet grimace shake.",
 		failed_mix_grimace_shake = "Klarte ikke å blande grimasaskeitt.",
 
+		deconstruct_ammo = "Demontere ammunisjon",
+		press_to_deconstruct_ammo = "[${SeatEjectKey}] Demontere ammunisjon",
+
+		pistol_deconstruct_recipe = "Demontere pistolammunisjon",
+		shotgun_deconstruct_recipe = "Demontere hagleammunisjon",
+		sub_deconstruct_recipe = "Demontere sub-ammunisjon",
+		rifle_deconstruct_recipe = "Demonter Rifle Ammo",
+
+		deconstructing_ammo = "Demonterer Ammo",
+		deconstructed_ammo = "Ammo demontert.",
+		failed_deconstruct_ammo = "Kunne ikke demontere ammo.",
+
+		craft_ammo = "Lag Ammo",
+		press_to_craft_ammo = "[${SeatEjectKey}] Lag Ammo",
+
+		pistol_ammo_recipe = "Lag Pistol Ammo",
+		shotgun_ammo_recipe = "Lag Shotgun Ammo",
+		sub_ammo_recipe = "Lag Sub Ammo",
+		rifle_ammo_recipe = "Lag Rifle Ammo",
+
+		crafting_ammo = "Lager Ammo",
+		crafted_ammo = "Ammo laget.",
+		failed_craft_ammo = "Kunne ikke lage ammunisjon.",
+
 		no_required_items = "Du har ikke alle nødvendige gjenstander.",
 
 		debug_multi = "-Flere utganger-",
@@ -5407,7 +5356,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	crashes = {
 		crash_failed = "Feilet å skape en krasj for ${consoleName}.",
 		crash_success = "Krasj for ${consoleName} ble vellykket.",
-		server_id_invalid = "Ugyldig server-ID."
+		server_id_invalid = "Ugyldig server ID."
 	},
 
 	creation = {
@@ -5711,7 +5660,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		confirm_task_refresh = "Er du sikker på at du vil oppdatere denne oppgaven? Kostnaden er $${cost}.",
 		yes = "Ja",
-		no = "Nei"
+		no = "Nei",
+
+		logs_daily_streak_changed_title = "Daglig Streak Endret",
+		logs_daily_streak_changed_details = "${consoleName} har nå en daglig streak på `${streak}.`"
 	},
 
 	dashcam = {
@@ -5750,6 +5702,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		one_state_set = "1 Status Oppdatert",
 		many_states_set = "${count} Statusoppdateringer",
 		no_states = "Ingen status",
+		addon_model = "${modelName} (Addon)",
 		entity_health = "Helse ${health}/${maxHealth}",
 		owned_by_server = "Server",
 		owned_by_you = "Eid av deg",
@@ -5757,6 +5710,11 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		current_owned_short = "Nåværende eier: ${currentOwner}",
 		network_id_side = "Nettverks-ID: ${networkId}",
 		no_target = "Ingen mål",
+		loading_owner = "Registrert på ~y~Laster...",
+		owner_npc = "Registrert på ~b~${fullName}",
+		owner_player = "Registrert på ~g~${fullName}",
+		character_known = "Karakter: ~g~${fullName}",
+		character_unknown = "Karakter: ~r~Ukjent",
 		invalid_radius_parameter = "Ugyldig `radius` parameter.",
 		inject_code_invalid_player = "Det er ingen spillere med server id `${serverId}`.",
 		inject_code_success_for_everyone = "Koden ble vellykket injisert for alle.",
@@ -5773,6 +5731,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		ped_config_flags = "Ped config-flagg:",
 		ped_is = "Ped er:",
 		vehicle_is = "Kjøretøy er:",
+		controls = "Kontroller: ${controls}",
 		native_calls = "Nativ Forespørsler: ${trueNativeCallsLastFrame} (${totalNativeCalls})",
 		player_speed = "Spillerhastighet: ${playerSpeed}",
 		player_ped = "Spillerkontroll: ${playerPedId}",
@@ -5915,7 +5874,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		debug_doors_on = "Dørsøking slått på.",
 		debug_doors_off = "Dørsøking slått av.",
-		doors_no_job = "N/A"
+		doors_no_job = "N/A",
+
+		unlocks = "Åpner: <i>${cluster}</i>."
 	},
 
 	elevators = {
@@ -6071,21 +6032,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		next_rotation_in = "Neste rotasjon om: ${time}",
 
 		exclusive_dealership_blip = "Eksklusivt Deluxe Bilverksted",
-		exclusive_buyback_blip = "Prestige Wheels Exchange",
 
-		buyback_vehicle_help = "Trykk ~INPUT_CONTEXT~ for å åpne Exchange.",
-		buyback_title = "Prestige Wheels Exchange",
-		sell_closest_vehicle = "Selg din ${label} for ${price} kr (${percent}% av verdien)?",
-		deny_sale = "Nei, jeg vil beholde den",
-		accept_sale = "Ja, jeg er sikker",
-		accept_sale_description = "Er du sikker på at du vil selge kjøretøyet ditt for $${price}? Dette kan ikke angres.",
-		are_you_sure_sell = "Er du sikker på at du vil selge kjøretøyet?",
-		no_vehicle_to_sell = "Ingen kjøretøy i nærheten for salg.",
-		vehicle_not_owned = "Du eier ikke dette kjøretøyet.",
-		sale_success = "Du har solgt `${label}`-en din for $${price} suksessfullt.",
-
-		sale_log_title = "EDM Tilbakekjøp",
-		sale_log_description = "${consoleName} solgte deres `${label}` for $${price}.",
+		buyback_closed = "Byttestasjonen er stengt. Du kan selge kjøretøyet ditt til en annen spiller med riktig nivå i stedet.",
 
 		log_title = "EDM Kjøp",
 		log_description = "Kjøpte `${label}` for ${cost}."
@@ -6170,6 +6118,13 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		no_buildings = "Det finnes ingen bygninger.",
 		wiped_buildings_in_radius = "Fjernet ${removedBuildings} bygninger innenfor en radius på ${radius}.",
 		wiped_buildings = "Fjernet ${removedBuildings} bygninger."
+	},
+
+	fortune_cookies = {
+		opened_cookie_logs_title = "Åpnet Lykkepose",
+		opened_cookie_logs_details = "${consoleName} åpnet en lykkepose og fikk `${fortune}`.",
+
+		failed_open = "Klarte ikke å åpne lykkepose."
 	},
 
 	freecam = {
@@ -6261,7 +6216,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		gravity_success_off = "Slått på tyngdekraften igjen for ${consoleName}.",
 		gravity_client_failed = "Klarte ikke å bytte tyngdekraft for ${consoleName}.",
 		gravity_failed = "Noe gikk galt ved forsøk på å bytte tyngdekraft.",
-		invalid_server_id = "Ugyldig server-id.",
+		invalid_server_id = "Ugyldig server-ID.",
 		yourself = "deg selv"
 	},
 
@@ -6446,7 +6401,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		ft = "ft",
 		m = "m",
 		belt = "BELTE",
+		oil = "OLJE",
 		limiter = "STYRER",
+		gear_uc = "GEAR",
 		fuel = "drivstoff",
 		nitro = "nitro",
 		battery = "batteri",
@@ -6720,6 +6677,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		gun_store_with_shooting_range = "Ammu-Nation med skytebane",
 		green_wonderland = "Grønt Eventyrland",
 		copy_shop = "Kopibutikk",
+		astrology_stand = "Astrologistativ",
 		irish_pub = "Irsk Pub",
 		bar = "Bar",
 		midnight = "Midnight Tunersjappe",
@@ -7001,6 +6959,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		cleaning_kit_description = "Perfekt for å rengjøre kjøretøyet ditt, eller blodflekkene du har latt tørke bak i bagasjerommet.",
 		scratch_remover = "Riperfjerner",
 		scratch_remover_description = "Brukes for å fjerne bulker og riper fra kjøretøyer.",
+		motor_oil = "Motorolje",
+		motor_oil_description = "Brukes for å holde motoren din i god stand.",
 
 		multi_tool = "Multiverktøy",
 		multi_tool_description = "Et verktøy som kan brukes til alle slags ting.",
@@ -7036,6 +6996,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		small_frog_description = "Bare en liten frosk. Se på den lille fyren, han er så søt!",
 		seashell = "Skjell",
 		seashell_description = "Et skjell fra stranden. Du kan høre havet hvis du holder det opp til øret.",
+
+		keys = "Nøkler",
+		keys_description = "Et par nøkler til noen dører et sted.",
 
 		raw_diamond = "Uforarbeidet diamant",
 		raw_diamond_description = "Diamant i sin naturlige form, rett fra gruven.",
@@ -7150,6 +7113,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		gumball = "Tyggegummi",
 		gumball_description = "En tyggegummi, hva mer vil du at jeg skal si?",
+
+		chorus_fruit = "Korfrukt",
+		chorus_fruit_description = "En frukt som kan teleportere deg til en tilfeldig lokasjon.",
 
 		water = "Vann",
 		water_description = "Fare! Dihydrogenmonoksid er fargeløs og luktfri. Uhell med inhalering av DHMO kan være dødelig. Langvarig eksponering for dens faste form forårsaker alvorlig skade på vevet. Symptomer på inntak av DHMO kan inkludere overdreven svetting og urinering, og muligens en oppblåst følelse, kvalme, oppkast og ubalansering av kroppens elektrolytter.",
@@ -7367,6 +7333,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		pet_mouse_description = "Denne runde og lodne lille chinchillaen er den perfekte følgesvennen for ethvert eventyr. Dens myke pels og lekne personlighet gjør den til den perfekte kosekameraten, og den vil gjerne sitte på skulderen din mens du går om dagen din.",
 		pet_raccoon = "Rascal vaskebjørn",
 		pet_raccoon_description = "Møt Rascal, den lodne vaskebjørnen som alltid er klar for eventyr. Med en plump kropp og en rampete personlighet vil han gjerne sitte på skulderen din og hjelpe deg med å lete etter skatter. Klar til å bli med på din reise?",
+		pet_pingu = "Pingu",
+		pet_pingu_description = "Denne søte lille pingvinen er den perfekte følgesvennen for ethvert eventyr. Med sitt myke pels og lekne personlighet, vil den gjerne sitte på skulderen din mens du går om dagene dine.",
+		pet_banana_cat = "Bananakatt",
+		pet_banana_cat_description = "Din fruktige kattungevenn! Banan Katten sitter på skulderen din og legger til en dose leken sjarm til dagen din. Det er den perfekte tilbehøret for en sjarmerende touch i livet ditt.",
 
 		hotwheels_mcqueen = "Lyntoget McQueen",
 		hotwheels_mcqueen_description = "Hastighet Jeg er hastighet, svever som en Cadillac stikker som en Beemer. KATCHOW KATCHOW KATCHOW",
@@ -7464,6 +7434,13 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		sniper_ammo_description = "Drit i initieringen din!",
 		shotgun_ammo = "Shotgun Ammo",
 		shotgun_ammo_description = "Folk tror det er krutt i disse! Klovner... de er fylt med kjærlighet og glede.",
+
+		gunpowder = "Krutt",
+		gunpowder_description = "Et pulver som brukes til å lage kuler.",
+		projectile = "Prosjektil",
+		projectile_description = "Et prosjektil som brukes til å lage kuler.",
+		casing = "Hylse",
+		casing_description = "En hylse brukt til å lage kuler.",
 
 		silver_watches = "Sølvklokker",
 		silver_watches_description = "Pass på!",
@@ -7693,6 +7670,13 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		tv_stand_description = "Bruk dette til å plassere en TV hvor som helst du vil.",
 		tv_remote = "TV-fjernkontroll",
 		tv_remote_description = "Universal fjernkontroll (kvantumbatterier ikke inkludert).",
+
+		magic_ball = "Magisk 8-Ball",
+		magic_ball_description = "Still et spørsmål, rist den og snu den. Svaret på spørsmålet ditt dukker magisk opp i vinduet! Det er så enkelt at du ikke vil tro det!",
+		fortune_cookie = "Lykkepose",
+		fortune_cookie_description = "En deilig kake med en lykke inni. Knus den opp og se hva fremtiden har å tilby!",
+		fortune_paper = "Lykkepapir",
+		fortune_paper_description = "En liten lapp med en lykke skrevet på den.",
 
 		firework_rocket = "Fyrverkerirakett",
 		firework_rocket_description = "En enkel fyrverkerirakett. Perfekt for 4. juli-feiringer.",
@@ -8339,6 +8323,18 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		invisibility_other_logs_details = "${consoleName} endrer skjult modus for ${targetConsoleName}."
 	},
 
+	isolation = {
+		failed_isolate = "Klarte ikke å isolere spilleren.",
+		invalid_server_id = "Ugyldig server-ID.",
+		isolate_success_on = "Spilleren ${consoleName} er suksessfullt isolert.",
+		isolate_success_off = "Isoleringen av spilleren ${consoleName} er stoppet.",
+
+		isolated_logs_title = "Spillerisolering",
+		isolated_off_logs_details = "${consoleName} skrudde av isoleringen til ${targetName}.",
+		isolated_on_logs_details = "${consoleName} skrudde på isoleringen til ${targetName}.",
+		isolated = "Du er isolert."
+	},
+
 	items = {
 		move_to_repair = "Flytt deg hit for å reparere kjøretøyet.",
 		repairing_vehicle = "Reparerer kjøretøy",
@@ -8675,7 +8671,19 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		legendary_tier = "Legendarisk nivå",
 		godlike_tier = "Gudefullt nivå",
 
-		buddy_passed_through = "${playerName} brukte Buddy Passen sin for å dytte deg gjennom!"
+		buddy_passed_through = "${playerName} brukte Buddy Passen sin for å dytte deg gjennom!",
+
+		queuer_not_found = "Køer ikke funnet.",
+		queuer_skipped_queue = "Køer hoppet over.",
+
+		slots_set_to = "Serverplassene er satt til `${slots}`.",
+		slots_already_set_to = "Serverplassene er allerede satt til `${slots}`.",
+
+		death = "Død",
+		normal = "Normal",
+		one_life = "Ett Liv",
+		one_life_information = "Hvis du velger dette alternativet, vil karakteren din bare ha ett liv. Hvis du dør uten å bli tatt til sykehuset, vil du miste karakteren din.",
+		one_life_are_you_sure = "Er du sikker på at du vil ha dette?"
 	},
 
 	logs = {
@@ -8804,18 +8812,27 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		brush = "[${InteractionKey}] Børste",
 		catnip = "[${InteractionKey}] Gi Kattemynte",
 		treat = "[${InteractionKey}] Gi Godbit",
-		cuddle = "[${InteractionKey}] Kose",
-		hug = "[${InteractionKey}] Klem",
+		check_up = "[${InteractionKey}] Sjekk",
+		chill = "[${InteractionKey}] Slapp av",
+		meditate = "[${InteractionKey}] Mediter",
+		salute = "[${InteractionKey}] Hilse",
+		stretch = "[${InteractionKey}] Tøye",
+		think = "[${InteractionKey}] Tenke",
 
 		feed_active = "Mate Maxwell",
 		pet_active = "Kose med Maxwell",
 		brush_active = "Børster Maxwell",
 		catnip_active = "Gir Maxwell Kattemynte",
 		treat_active = "Gir Maxwell en godbit",
-		cuddle_active = "Koser med Maxwell",
-		hug_active = "Klemmer Maxwell",
+		check_up_active = "Sjekker opp på Maxwell",
+		chill_active = "Slapper av med Maxwell",
+		meditate_active = "Meditere med Maxwell",
+		salute_active = "Hilser på Maxwell",
+		stretch_active = "Tøyer med Maxwell",
+		think_active = "Tenker på Maxwell",
 
-		maxwell_appeared = "Maxwell har dukket opp i nærheten av deg."
+		maxwell_appeared = "Maxwell har dukket opp i nærheten av deg.",
+		maxwell_shot = "Skjøt Maxwell"
 	},
 
 	meth = {
@@ -9284,8 +9301,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		freecam_detections_name = "Spiller Navn",
 		freecam_detections_distance = "Maksimum Avstand",
-
-		hotwire_driving_detections_name = "Spiller Navn",
 
 		model = "Modell",
 		label = "Merkelapp",
@@ -9913,7 +9928,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		fps = "${fps}fps",
 		playtime = "${time} spilt",
 
-		invalid_server_id = "Ugyldig server ID.",
+		invalid_server_id = "Ugyldig server-ID.",
 
 		failed_load_player = "Klarte ikke å laste inn spillerdata. Har du skrevet inn en gyldig server ID?",
 		failed_add_warning = "Kunne ikke legge til advarsel.",
@@ -10007,7 +10022,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		description_message_chat_title = "/beskrivelse [${serverId}]",
 		message_too_long = "Meldingen inneholder for mange tegn eller linjer!",
 		card_command_wait = "Du trakk nettopp et kort, vent litt før du trekker et nytt.",
-		ped_message_timeout = "Sakte ned, vent litt før du sender en annen melding."
+		ped_message_duplicate = "Du har nettopp sendt den meldingen, vent litt før du sender den igjen."
 	},
 
 	ped_objects = {
@@ -10050,7 +10065,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		ped_steal_success = "Ped-skinn er stjålet.",
 		ped_steal_failed = "Kunne ikke stjele ped-skinn.",
 		ped_not_found = "Spillerens ped er ikke funnet.",
-		invalid_server_id = "Ugyldig server-id."
+		invalid_server_id = "Ugyldig server-ID."
 	},
 
 	ped_takeover = {
@@ -10063,7 +10078,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	peds = {
 		ped_robbing_injection = "Overdreven ped-ran! (Bypasset server-timeout, sannsynligvis ved bruk av en injektor.)",
 		robbed_ped_logs_title = "Ranet ped",
-		robbed_ped_logs_details = "${consoleName} ranet en ped og mottok $${payout}."
+		robbed_ped_logs_details = "${consoleName} ranet en ped og mottok $${payout}.",
+
+		nancy = "~b~Dr. Nancy"
 	},
 
 	pepper_spray = {
@@ -10200,7 +10217,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		prop_deleted = "Gjenstand med id ${propId} ble slettet.",
 
 		invalid_wipe_radius = "Ugyldig slette-radius (mellom 1 og 100).",
-		wipe_successful = "Gjenstander ble slettet.",
+		wipe_successful = "Fjernet ${amount} objekt(er) vellykket.",
+		wipe_failed = "Klarte ikke å fjerne objekter.",
 
 		placing_prop = "Plasserer gjenstand",
 		pickup_prop = "Plukker opp gjenstand",
@@ -10577,6 +10595,20 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		skylift_attached_vehicle_logs_details = "${consoleName} festet et kjøretøy til deres Skylift."
 	},
 
+	smell = {
+		smelling = "Lukter",
+
+		smell_1 = "svak",
+		smell_2 = "moderat",
+		smell_3 = "intens",
+		smell_4 = "overveldende",
+
+		smell_weed = "Du kan lukte weed. Lukten er ${intensity}.",
+		smell_alcohol = "Du kan lukte alkohol. Lukten er ${intensity}.",
+
+		smell_nothing = "Det lukter ingenting uvanlig."
+	},
+
 	smoothies = {
 		blend = "Blande",
 		close = "Lukk",
@@ -10609,10 +10641,12 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		mission_row_police_station = "Mission Row Politistasjon",
 		sandy_police_station = "Sandy Shores Politistasjon",
 		paleto_police_station = "Paleto Bay Politistasjon",
+		cayo_police_station = "Cayo Perico politistasjon",
 
 		mount_zonah = "Mount Zonah",
 		sandy_hospital = "Sandy Shores Sykehus",
 		paleto_hospital = "Paleto Bay Sykehus",
+		cayo_station = "Cayo medisinstasjon",
 
 		battle_royale = "Slagkamp Royale"
 	},
@@ -10804,6 +10838,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		folder_games = "Spill",
 		folder_productivity = "Produktivitet",
 
+		high_scores = "Toppscorer",
+
 		snake_title = "Slange",
 		snake_description = "Bruk piltastene for å bevege deg opp, ned, til venstre og til høyre.",
 		snake_start_game = "Start spill",
@@ -10835,13 +10871,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		chess_difficulty = "Vanskelighetsgrad:",
 		chess_difficulty_level = "Nivå ${level}",
 		chess_start = "Start spill",
-
-		minesweeper_title = "Minesveiper",
-		minesweeper_win = "Du vant",
-		minesweeper_loose = "Du tapte",
-		minesweeper_difficulty = "Vanskelighetsgrad:",
-		minesweeper_start = "Start spill",
-		minesweeper_flags_used = "${used}/${total} flagget",
 
 		flappy_bird_title = "Flappy Bird",
 		flappy_bird_score = "Sluttpoengsum:",
@@ -11253,7 +11282,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		intent_speech = "Sett taleinndata modus tilbake til 'tale'.",
 		music_mode = "Musikk-modus",
 
-		invalid_server_id = "Ugyldig server-id.",
+		invalid_server_id = "Ugyldig server-ID.",
 		failed_toggle_listen = "Kunne ikke bytte lyttingstatus.",
 		listeners = "Lyttetil:",
 		listening_to = "Lytter til:",
@@ -11314,9 +11343,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		invalid_radius = "Ugyldig radius",
 		invalid_server_id = "Ugyldig server-ID.",
 
-		ragdoll_failed = "Kunne ikke få spilleren til å ragdoll.",
-		ragdoll_success = "Spilleren ${consoleName} ble vellykket ragdollet.",
-
 		punch_success = "Spilleren ${consoleName} slo vellykket.",
 		punch_failed = "Klarte ikke å få spilleren til å slå.",
 
@@ -11325,12 +11351,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		ignite_success = "Vellykket: ${consoleName} ble satt i brann.",
 		ignite_failed = "Klarte ikke å tenne på spilleren.",
-
-		punch_radius_failed = "Klarte ikke å få spillerne i radius til å slå.",
-		punch_radius_success = "Vellykket: Spillere i en ${radius} radius ble tvunget til å slå.",
-
-		ragdoll_radius_success = "Vellykket: Spillere i en ${radius} radius ble tvunget til å ragdoll.",
-		ragdoll_radius_failed = "Feilet i å gjøre spillere i radiusen ragdoll.",
 
 		flashbang_success = "Vellykket flashbang på ${consoleName}.",
 		flashbang_failed = "Kunne ikke flashbang spilleren.",
@@ -11377,6 +11397,17 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		invalid_camera_shake = "Kamerabevegelse `${cameraShake}` er ikke gyldig.",
 		invalid_damage_scale = "Skade skala `${damageScale}` er ikke gyldig.",
 		created_explosion = "Skapte en eksplosjon av typen `${explosionTypeName}` med en skade skala på `${damageScale}` og kamerabevegelse på `${cameraShake}`."
+	},
+
+	exports = {
+		player_killed = "Spiller drept",
+		player_killed_details = "${consoleName} ble drept av ${killerConsoleName}. Dødsårsak: `${deathCause}`.",
+
+		killed_player = "Drepte spilleren",
+		killed_player_details = "${killerConsoleName} drepte ${consoleName}. Dødsårsak: `${deathCause}`. (Dette er i henhold til den drepte spillerens klient, noe som kan forfalskes, husk det)",
+
+		player_died = "Spiller døde",
+		player_died_details = "${consoleName} døde. Dødsårsak: `${deathCause}`."
 	},
 
 	functions = {
@@ -11858,7 +11889,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		unable_to_hotwire_vehicle = "Kunne ikke starte kjøretøy.",
 		picked_up_keys = "Plukket opp nøkler for `${plate}`.",
 		invalid_server_id = "Ugyldig server-ID.",
-		hotwired_vehicle_for_player = "${displayName} har varmet opp kjøretøyet de sitter i."
+		hotwired_vehicle_for_player = "${displayName} har varmet opp kjøretøyet de sitter i.",
+		gave_keys_success = "Ga vellykket ${displayName} nøklene til kjøretøyet deres.",
+		gave_keys_failure = "Kunne ikke gi ${displayName} nøklene til kjøretøyet."
 	},
 
 	modifications = {
@@ -11869,6 +11902,11 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		wheels_none_valid_specified = "Ingen gyldige hjul spesifisert.",
 		not_in_a_car = "Du er ikke i en bil.",
 		invalid_value = "Ugyldig verdi."
+	},
+
+	oil = {
+		move_to_change = "Gå hit for å skifte olje på kjøretøyet.",
+		changing_oil = "Skifter Olje"
 	},
 
 	plates = {
@@ -12044,6 +12082,21 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		fill_ammo_failed = "Kunne ikke fylle ammunisjon."
 	},
 
+	throwables = {
+		pick_up_weapon = "[${InteractionKey}] Plukk opp",
+
+		no_weapon_equipped = "Du har ingen våpen utrustet.",
+		cant_throw_weapon = "Du kan ikke kaste dette våpenet.",
+		keybind_description = "Kast våpenet ditt",
+
+		total_throwables = "Kastbare gjenstander: ${count}",
+
+		threw_weapon_logs_title = "Kastet Våpen",
+		threw_weapon_logs_details = "${consoleName} kastet sin ${item} (${coords}).",
+		picked_up_weapon_logs_title = "Plukket opp våpen",
+		picked_up_weapon_logs_details = "${consoleName} plukket opp et ${item} (${coords})."
+	},
+
 	weapons = {
 		pick_up_fire_extinguisher = "Hold ~INPUT_CONTEXT~ for å plukke opp brannslukningsapparatet.",
 		press_to_drop_fire_extinguisher = "Trykk ~INPUT_FRONTEND_RRIGHT~ for å slippe brannslukingsapparatet.",
@@ -12054,10 +12107,16 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		airsoft_mode_failed = "Kunne ikke endre airsoft-modus.",
 
 		no_weapon_equipped = "Ingen våpen utstyrt.",
-		no_ammo = "Ingen ammunisjon for dette våpenet.",
-		infinite_ammo = "Du har uendelig med ammunisjon for dette våpenet.",
-		ammo_count = "Du har ${clips} fulle magasiner (${total} skudd totalt).",
-		ammo_count_loose = "Du har ${clips} fulle magasiner og 1 magasin med ${loose} skudd (${total} skudd totalt).",
+		ammo_count_title = "Ammunisjonstelling",
+		no_ammo = "Du har ingen ammunisjon.",
+		ammo_count = "**${ammoType}:** *x${ammoCount}*",
+
+		ammo_pistol = "Pistol",
+		ammo_shotgun = "Hagle",
+		ammo_smg = "SMG",
+		ammo_rifle = "Rifle",
+		ammo_sniper = "Snikskytterrifle",
+		ammo_stungun = "Stun Gun",
 
 		firing_mode_0 = "Skytemodus satt til standard.",
 		firing_mode_1 = "Skytemodus satt til halvautomatisk.",
@@ -12153,7 +12212,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		bleeding_with_injury = "blør med ${label} skade",
 		bleeding_reduced = "Blødning redusert",
 		bleeding_self_stopped = "Blødning stoppet av seg selv",
-		thanks_for_loot = "Du ble ranet mens du var bevisstløs. Noen gjenstander kan mangle.",
+		thanks_for_loot = "Du ble ranet mens du var bevisstløs. Noen gjenstander kan mangle. Ryktene sier det var Nancy.",
 		serial_number = "Serienummer: ${serialNumber}<br>Denne våpenet er registrert til ${fullName} (#${characterId}).",
 		serial_number_unknown = "Serienummer: Ukjent.",
 		badge_owner = "<i>Dette merket tilhører <b>${fullName} (${positionName})</b>.</i>",

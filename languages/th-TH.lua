@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 20 (do not change)
+-- AUTO LOCALES: 21 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -73,7 +73,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		cant_struggle_dead = "คุณไม่สามารถต่อสู้ได้เมื่อตายแล้ว",
 		struggle_to_quick = "คุณรู้สึกเหนื่อยหลังจากที่ต่อสู้ไปแล้ว โปรดรอสักครู่และลองใหม่",
 		struggle_logs_title = "ต่อสู้ได้รับการปลดเเอก",
-		struggle_logs_details = "${consoleName} ทำการต่อสู้ได้รับการปลดเเอกออกจาก ${targetName} ที่ถูกฝืนความสามารถในการเคลื่อนไหว"
+		struggle_logs_details = "${consoleName} ทำการต่อสู้ได้รับการปลดเเอกออกจาก ${targetName} ที่ถูกฝืนความสามารถในการเคลื่อนไหว",
+
+		invalid_server_id = "รหัสเซิร์ฟเวอร์ไม่ถูกต้อง",
+		ragdolled_player = "ทำให้ ${displayName} เป็นรากดอลล์"
 	},
 
 	-- base/*
@@ -298,25 +301,15 @@ OP.Global.Locales.Languages["th-TH"] = {
 		headache_logs_title = "เปิดการทำงานโหมดปวดหัว",
 		headache_logs_details = "${consoleName} ได้เปิดการทำงานโหมดปวดหัวของ ${targetConsoleName} แล้ว.",
 
+		spawn_logs_title = "เคลื่อนย้ายไปที่จุดเกิด",
+		spawn_logs_details = "${consoleName} เคลื่อนย้ายไปที่จุดเกิด (ตึกเจ้าหน้าที่)",
+
 		super_jump_logs_title = "เปิด/ปิดการกระโดดสูง",
 		super_jump_logs_details_on = "${consoleName} เปิดใช้งานการกระโดดสูง",
 		super_jump_logs_details_off = "${consoleName} ปิดใช้งานการกระโดดสูง",
 
 		success_trigger_headache = "เปิดการทำงานโหมดปวดหัวสำเร็จสำหรับ ${playerName}.",
 		failed_trigger_headache = "ไม่สามารถเปิดการทำงานโหมดปวดหัวได้.",
-
-		set_spawn_success = "จุดเกิดของคุณถูกตั้งค่าใหม่แล้ว อยู่ที่ตำแหน่งปัจจุบันของคุณ",
-		set_spawn_failed = "การตั้งค่าจุดเกิดล้มเหลว",
-		reset_spawn_success = "รีเซ็ตจุดเกิดสำเร็จ",
-		reset_spawn_failed = "รีเซ็ตจุดเกิดล้มเหลว",
-
-		protective_mode_toggled_on = "โหมดป้องกันเซิร์ฟเวอร์ถูกเปิดแล้ว ระยะเวลาการเล่นที่จำเป็นเพื่อเข้าเซิร์ฟเวอร์ถูกตั้งเป็น `${playtime}`",
-		protective_mode_toggled_off = "โหมดป้องกันเซิร์ฟเวอร์ถูกปิดแล้ว",
-		protective_mode_already_on = "โหมดป้องกันเซิร์ฟเวอร์ถูกเปิดไว้แล้ว ระยะเวลาการเล่นที่จำเป็นต้องมีค่าเป็น `${playtime}`",
-		protective_mode_already_off = "โหมดป้องกันเซิร์ฟเวอร์ถูกปิดอยู่แล้ว",
-		logs_protective_mode = "โหมดป้องกันเซิร์ฟเวอร์",
-		logs_protective_mode_on = "${consoleName} เปิดโหมดป้องกันเซิร์ฟเวอร์และต้องใช้เวลาเล่น: `${playtime}`.",
-		logs_protective_mode_off = "${consoleName} ปิดโหมดป้องกันเซิร์ฟเวอร์",
 
 		no_item_name = "ไม่ได้ระบุชื่อไอเท็ม",
 		invalid_item_name = "${itemName} ไม่ใช่ชื่อไอเท็มที่ถูกต้อง",
@@ -364,9 +357,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		evidence_view_details_on = "${consoleName} เปิดการแสดงรายละเอียดขั้นสูงของพยาน",
 		evidence_view_details_off = "${consoleName} ปิดการแสดงรายละเอียดขั้นสูงของพยาน",
 
-		tracker_turned_on = "แทร็กเกอร์ของคุณถูกเปิดใช้งานแล้ว",
-		tracker_turned_off = "แทร็กเกอร์ของคุณถูกปิดใช้งานแล้ว",
-
 		report_muted_no_reason = "คุณได้ถูกปิดเสียงจากคำสั่งรายงานโดยไม่ระบุเหตุผล",
 		report_muted = "คุณได้ถูกปิดเสียงจากคำสั่งรายงานเนื่องจาก ${reason}",
 
@@ -386,13 +376,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		teleported_to_coordinates_logs_details = "${consoleName} เลื่อนที่ไปยังพิกัด X: ${x}, Y: ${y}, Z: ${z}",
 		teleported_to_waypoint_logs_title = "เลื่อนที่ไปยังจุดปลายทาง",
 		teleported_to_waypoint_logs_details = "${consoleName} เลื่อนที่ไปยังจุดปลายทางที่ ${locationLabel}",
-
-		failed_isolate = "ไม่สามารถแยกผู้เล่นได้",
-		invalid_server_id = "ไอดีเซิร์ฟเวอร์ไม่ถูกต้อง",
-		isolate_success_on = "แยก ${consoleName} สำเร็จ",
-		isolate_success_off = "หยุดแยก ${consoleName} สำเร็จ",
-
-		isolate_missing_permissions = "ผู้เล่นพยายามแยกผู้เล่นคนอื่นโดยไม่มีสิทธิ์ที่เหมาะสม",
 
 		population_density_set_to = "การแทนที่การโปรแกรมความหนาแน่นของประชากรถูกตั้งค่าเป็น ${multiplierLabel}%.",
 		population_density_set_off = "การเข้ามาแทนที่ตัวคูณความหนาแน่นประชากรถูกปิดแล้ว",
@@ -424,6 +407,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		super_jump_feature = "การกระโดดสูง",
 		server_id_hidden_feature = "การซ่อนไอดีเซิร์ฟเวอร์",
 		fake_disconnect_feature = "การตัดการเชื่อมต่อแบบปลอม",
+		brighter_nights_feature = "การเพิ่มความสว่างให้กับคืน",
 
 		you_are_not_in_a_vehicle = "คุณไม่ได้อยู่ในยานพาหนะ",
 		repaired_vehicle = "ซ่อมแซมยานพาหนะเรียบร้อยแล้ว",
@@ -595,10 +579,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		refill_nitro_logs_title = "เติมนิตรอ์ใหม่",
 		refill_nitro_logs_details = "${consoleName} เติมนิตรอ์ใหม่",
 
-		isolated_logs_title = "การแยกจากผู้เล่น",
-		isolated_off_logs_details = "${consoleName} ปิดการแยก ${targetName}",
-		isolated_on_logs_details = "${consoleName} เปิดการแยก ${targetName}",
-
 		character_data_logs_title = "ข้อมูลตัวละคร",
 		character_data_logs_details = "${consoleName} เช็กข้อมูลตัวละครของ ${targetName} (CID: ${characterId})",
 
@@ -635,9 +615,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 	},
 
 	anti_cheat = {
-		illegal_client_event = "ไปตรงเรือนจำทันที ไม่ต้องผ่านสนามกอล์ฟ ไม่ได้รับเงินรางวัล 200$",
-		illegal_server_event = "ไปตรงเรือนจำทันที ไม่ต้องผ่านสนามกอล์ฟ ไม่ได้รับเงินรางวัล 200$",
-		bad_entity_spawn = "เกิดความผิดพลาดในการสร้างปรากฏการณ์ ${modelName}",
 		bad_entity_title = "เกิดการสร้าง Entity ที่ไม่เหมาะสม",
 		bad_entity_message = "${consoleName} ได้สร้าง entity โดยใช้ชื่อโมเดล `${modelName}`",
 		detected_entity_title = "ตรวจพบการสร้าง Entity",
@@ -649,6 +626,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		detection_area_close = "[${InteractionKey}] ลบพื้นที่ตรวจจับ (${areaId})",
 		detection_area = "พื้นที่ตรวจจับ (${areaId})",
 
+		suspicious_transfer_title = "การโอนที่น่าสงสัย",
+		suspicious_transfer_message = "${from} แปลงดอลลาร์ ${amount} เพื่อ ${to}",
+
 		failed_toggle_strict_mode = "ไม่สามารถเปิดโหมดเข้มงวดได้",
 		strict_mode_enabled = "เปิดโหมดเข้มงวดเรียบร้อยแล้ว",
 		strict_mode_disabled = "ปิดโหมดเข้มงวดเรียบร้อยแล้ว",
@@ -656,37 +636,43 @@ OP.Global.Locales.Languages["th-TH"] = {
 		ban_notification_title = "Anti-Cheat",
 		ban_notification = "แบน ${consoleName} เนื่องจาก `${banReason}`.",
 
+		suspicious_transfer_title = "การโอนที่น่าสงสัย",
+		suspicious_transfer_details = "${consoleName} แปลงดอลลาร์ ${amount} เพื่อ ${targetConsoleName}",
+
+		-- GPT-4 generated ban messages
+		bad_entity_spawn = "อาโฟเป็นพยานพยานที่พยายามสร้างสิ่งที่เป็นมงคลแห่ง '${modelName}' ใช่ไหม? นี่ไม่ใช่รายการ Antiques Roadshow และสิ่งมงคลนั้นจะอยู่ในห้องเฝ้าระวัง",
 		bad_screen_word_ban = "เราได้ยินเรื่องการสอบแบบเปิดหนังสือ แต่สิ่งนี้คือเรื่องเหลือเชื่อ",
 		blacklisted_command_ban = "ขออภัย คุณไม่มีสิทธิ์ทำคำสั่งนี้ กรุณาติดต่อผู้ดูแลเซิร์ฟเวอร์หากคุณเชื่อว่านี่เป็นข้อผิดพลาด",
+		clear_tasks_ban = "นี่ไม่ใช่สถานที่ฝึกสอนความคิดตามสมควรแบบ Jedi ความพยายามของคุณที่จะส่งผลต่ออิสระในการตัดสินใจของผู้อื่นได้รับการบันทึก...และถูกปฏิเสธ",
 		damage_modifier_ban = "พลังของคุณต้องไม่เกิน 9000",
 		distance_taze_ban = "การออกแบบการกระชากจากระยะไกลของคุณไม่ได้รับการนับถือ",
 		fast_movement_ban = "การบินไม่ได้รับการเปิดใช้งานบนเซิร์ฟเวอร์นี้",
 		freecam_ban = "คุณดูเหมือนว่าจะมีประสบการณ์ออกจากร่างกายของตัวเอง",
 		honeypot_ban = "คุณพยายามเปิดโหมดสร้างสรรค์ของคุณ แต่ไม่มีสิทธิ์ที่จะทำได้",
-		hotwire_driving_ban = "วุ่มวาม! ผมอยู่ในรถของแม่ผม",
+		illegal_client_event = "อาโฟเป็นพยานที่พยายามที่จะเปิดฟังคลื่นลับของ '${eventName}' ใช่ไหม? นี่ไม่ใช่สถานีวิทยุลับและเพลงนั้นไม่ได้อยู่ในรายการเพลงของเรา",
+		illegal_damage_ban = "ตัวเราถูกเอียงลงไปในทิศทางที่ไม่ถูกต้องมากเกินไป ซึ่งทำให้สมดุลของทวีปของเราเสียเปรียบ",
 		illegal_freeze_ban = "แม้ว่าจะมีจิตวิญญาณวิ่งไปตามอิสระ แต่เรามนุษย์งามต้องเชื่อฟังกับกฎหมายของฟิสิกส์ คุณซิร์ อิสาค นิวตันก็อยากจะให้เราเชื่อฟังเช่นกัน",
+		illegal_global_ban = "พยายามเชื่อมต่อเข้ากับเมตริกซ์เป็นบางคน ใช่ใช่หรือไม่? หนุ่ม Ne อาจประทับใจ แต่เราไม่ได้",
+		illegal_native_ban = "พยายามส่งคำกริยาไปหาจิตวิญญาณในโลกดิจิตอลใช่ไหม? เสียใจที่ศาสตร์พิสูจน์นี้ถูกปฏิเสธ อาจมีโอกาสดีขึ้นในโดมปริศนาระดับเทพลวงตา",
 		illegal_ped_change_ban = "การขโมยตัวตนไม่ใช่การล้อเล่น นับล้านตัวละครประสบความเสียหายทุกปี",
-		illegal_spectating_ban = "คุณต้องเป็นเอเจนต์ FIB เพื่อดูผู้เล่นคนอื่น หรือใช้คำสั่ง /gamemode spectator ก่อนที่จะดู.",
+		illegal_server_event = "อยากจะเต้นรำตามจังหวะที่ไม่เคยได้ยินของ `${eventName}` เหรอ? นี่ไม่ใช่ที่เต้นรำความลับ และการเต้นรำนั้น? ไม่ได้รับอนุญาตอย่างเคร่งครัด",
+		illegal_spectating_ban = "วิญญาณจิตพิสดารถูกสงัดสรรค์เพื่อบ้านหลอน ไม่ใช่ที่นี่ ความสามารถในการโยกย้ายอารมณ์ของคุณถูกบันทึกไว้ แต่ไม่มีการต้อนรับ",
 		illegal_vehicle_modifier_ban = "ไม่เหมือนกับ Dom Toretto จาก Fast and Furious, เราไม่ใช่ครอบครัว.",
+		infinite_ammo_ban = "ไม่ว่าเชื่อเสียงใดๆ กฏแห่งการอนุรักษ์ก็ใช้งานได้ที่นี่ กระเป๋ากระสุนเวทย์มนต์ถูกยึดครอง",
+		invalid_health_ban = "เกิดข้อผิดพลาดในแถบสุขภาพของคุณ",
 		invincibility_ban = "คุณไม่ใช่ Black Knight, คุณไม่สามารถที่จะไม่ตายได้.",
-		ped_spawn_ban = "คุณพยายามจะเลี้ยงเป็นก้อนเนื้ออัตโนมัติ แต่มีแสงไม่พอสำหรับการสังเคราะห์แสง.",
+		ped_spawn_ban = "อาหารยังมาตราฐานสูงหวยใหญ่ของ `${modelName}`ใช่ไหม? นี่ไม่ใช่การอัคราษฎร์พระราชดาสู่ฮอลลีวูด และดาวในนั้นจะอยู่ในลานออกแสง",
 		player_blips_ban = "พื้นที่บริเวณอากาศเต็มแล้ว ไม่สามารถใช้ UAV ได้",
 		runtime_texture_ban = "มี mod menu ของคุณ ใช้ไม่ได้เนื่องจากถูกห้าม.",
-		spiked_resource_ban = "พยายามเปลี่ยนสคริปต์โดยไม่ได้รับอนุญาตเหมือนกับการพยายามเปลี่ยนจุดจบของเรื่องเพียงเพราะคุณไม่ชอบ",
+		semi_godmode_ban = "ความปรารถนาของคุณที่จะหาน้ำนมชีวิตดูเหมือนว่าจะทำให้กระแสเวลาถูกขัดขวาง การอยู่อมตะไม่ได้มีความสนุกเท่าที่คิด",
+		suspicious_explosion_ban = "ขออภัย, นี่ไม่ใช่ภาพยนตร์ของ Michael Bay การใช้ระเบิดเป็นจำนวนมากไม่ได้รับอนุญาต",
 		text_entry_ban = "การตรวจสอบ Element ไม่ได้รับอนุญาตบนเบราว์เซอร์นี้",
 		thermal_night_vision_ban = "การใช้ Brighter Nights ไม่ได้รับอนุญาต",
-		vehicle_modification_ban = "คุณไม่สามารถหาน้ำมันไฟฉายสำหรับรถของคุณได้",
-		vehicle_spawn_ban = "คุณพยายามใช้ redstone กับ minecart แต่ไม่ได้มี powered rail",
-		weapon_spawn_ban = "พยายามดึงกระต่ายออกจากหมวกจุดหมาย ก็ได้พบปืนใหญ่แทน",
-		high_damage_ban = "ความสามารถของคุณมีความเท่าเทียมกับผู้เล่นอื่น ซึ่งทำให้เกิดการเบียดเสียดและไม่ตรงตามกฎระเบียบของเซิร์ฟเวอร์",
-		suspicious_explosion_ban = "ขออภัย, นี่ไม่ใช่ภาพยนตร์ของ Michael Bay การใช้ระเบิดเป็นจำนวนมากไม่ได้รับอนุญาต",
-		semi_godmode_ban = "ความปรารถนาของคุณที่จะหาน้ำนมชีวิตดูเหมือนว่าจะทำให้กระแสเวลาถูกขัดขวาง การอยู่อมตะไม่ได้มีความสนุกเท่าที่คิด",
-		invalid_health_ban = "เกิดข้อผิดพลาดในแถบสุขภาพของคุณ",
-		clear_tasks_ban = "นี่ไม่ใช่สถานที่ฝึกสอนความคิดตามสมควรแบบ Jedi ความพยายามของคุณที่จะส่งผลต่ออิสระในการตัดสินใจของผู้อื่นได้รับการบันทึก...และถูกปฏิเสธ",
-		projectile_event_ban = "นี่ไม่ใช่โรงเรียนโฮกวอตส์และคุณไม่ใช่แฮร์รี่ พอตเตอร์ การใช้เวทมนตร์ที่ไม่เลือกทั้งนั้นไม่ได้รับอนุญาตที่นี่",
-		illegal_native_ban = "คุณไม่สามารถใช้สกิลที่คุณยังไม่ได้เรียนรู้ได้...",
 		underground_ban = "คุณดูเหมือนตกอยู่ในรูปหนึ่ง",
-		infinite_ammo_ban = "ไม่ว่าเชื่อเสียงใดๆ กฏแห่งการอนุรักษ์ก็ใช้งานได้ที่นี่ กระเป๋ากระสุนเวทย์มนต์ถูกยึดครอง",
+		vehicle_modification_ban = "คุณไม่สามารถหาน้ำมันไฟฉายสำหรับรถของคุณได้",
+		vehicle_spawn_ban = "โฉมหน้าของ `${modelName}` เลย เธออยากได้ออกนอกรถสนามแฮงสตายหรือ? ที่นี่ไม่ใช่โชว์รูม และรุ่นนั้น? มันอยู่ในรายการรอไม่มีที่สิ้นสุดอยู่แล้ว!",
+		weapon_spawn_ban = "กำลังอยากได้อาวุธ `${weaponName}` เหรอ? ที่นี่ไม่ใช่ที่จัดเก็บอาวุธ และชิ้นส่วนนั้นยังอยู่ในการป้องกันอยู่",
+		advanced_noclip_ban = "พยายามผ่านทางลับผ่านทางทางที่ไม่มีใครเห็น? ที่นี่ไม่ใช่การเต้นระเบิดลับละคร และการกระทำนั้น? ไม่ได้จัดให้เต้นกับเรา",
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "สร้างของไม่ดี",
@@ -695,36 +681,36 @@ OP.Global.Locales.Languages["th-TH"] = {
 		type_clear_tasks = "ล้างงานทั้งหมด",
 		type_damage_modifier = "การปรับแต่งความเสียหาย",
 		type_distance_taze = "การใช้ไฟบริสุทธิ์ให้เจ็บ",
-		type_driving_hotwire = "การใช้สายไฟลับในการขับรถ",
 		type_fast_movement = "การเคลื่อนไหวอย่างรวดเร็ว",
 		type_freecam_detected = "ตรวจพบ Freecam",
-		type_high_damage = "ความเสียหายสูง",
 		type_honeypot = "Honeypot",
+		type_illegal_damage = "การทำความเสียหายที่ผิดกฎหมาย",
 		type_illegal_event = "เหตุการณ์ผิดกฏหมายของไคลเอ็นต์",
 		type_illegal_freeze = "การหยุดยางผิดกฏหมาย",
+		type_illegal_global = "การใช้งานส่วนกลางที่ผิดกฎหมาย",
+		type_illegal_native = "การเรียกใช้ฟังก์ชันในรูปแบบที่ผิดกฎหมาย",
 		type_illegal_ped_spawn = "เกิด Ped ผิดกฏหมาย",
 		type_illegal_server_event = "เหตุการณ์ผิดกฏหมายของเซิร์ฟเวอร์",
 		type_illegal_vehicle_modifier = "การปรับเปลี่ยนยานพาหนะผิดกฏหมาย",
 		type_illegal_vehicle_spawn = "การเกิดยานพาหนะผิดกฏหมาย",
 		type_illegal_weapon = "การเกิดอาวุธผิดกฏหมาย",
+		type_infinite_ammo = "กระสุนไม่จำกัด",
+		type_advanced_noclip = "ระบบน็อคล้างสถานที่ขั้นสูง",
 		type_invalid_health = "สุขภาพไม่ถูกต้อง",
 		type_invincibility = "ความไม่สามารถที่จะทำลายได้",
 		type_modified_fov = "การปรับเปลี่ยน FOV",
 		type_ped_change = "การเปลี่ยนแปลง Ped",
 		type_player_blips = "Player Blips",
-		type_projectile_event = "เหตุการณ์กระสุน",
 		type_runtime_texture = "แสดงผลรันไทม์",
 		type_semi_godmode = "เซมิ-โกด์โหมด",
 		type_spawned_object = "วัตถุที่สร้างขึ้น",
 		type_spectate = "ดูแบบกวาดระหว่างการเล่น",
-		type_spiked_resource = "แหล่งข้อมูลที่ถูกแทรก",
 		type_suspicious_explosion = "ระเบิดที่น่าสงสัย",
+		type_suspicious_transfer = "การโอนเงินที่น่าสงสัย",
 		type_text_entry = "การป้อนข้อความ",
 		type_thermal_night_vision = "การมองด้วยเทอร์มอล/วิวชายฝั่งหัวข้อวิสัย",
-		type_vehicle_modification = "การปรับแต่งรถยนต์",
-		type_illegal_native = "การเรียกใช้ฟังก์ชันในรูปแบบที่ผิดกฎหมาย",
 		type_underground = "ใต้ดิน",
-		type_infinite_ammo = "กระสุนไม่จำกัด",
+		type_vehicle_modification = "การปรับแต่งรถยนต์",
 
 		event_prefix = "ป้องกันการโกหก: ${type}",
 
@@ -766,55 +752,35 @@ OP.Global.Locales.Languages["th-TH"] = {
 	},
 
 	authentication = {
-		ip_not_found = "ไม่สามารถดึงข้อมูล IP ของคุณได้",
-		authenticating_local_server = "กำลังตรวจสอบความถูกต้องกับเซิร์ฟเวอร์ภายใน...",
-		authenticating_global_server = "กำลังตรวจสอบความถูกต้องกับเซิร์ฟเวอร์ OP-FW...",
-		error_fetching_data = "เกิดข้อผิดพลาดขณะดึงข้อมูลของคุณ",
-		region_blocked = "เซิร์ฟเวอร์นี้ได้บล็อกภูมิภาคที่คุณเชื่อมต่อมาจาก",
-		server_config_not_loaded = "กำหนดค่าเซิร์ฟเวอร์ไม่ได้ถูกโหลด",
-		something_went_horribly_wrong = "บางอย่างผิดพลาดอย่างหนัก โปรดลองใหม่อีกครั้ง",
-		local_firewall_enabled = "ไฟร์วอลล์ของระบบภายในเปิดใช้งานอยู่",
+		waiting_for_server = "กำลังรอเซิร์ฟเวอร์พร้อมใช้งาน...",
+		authenticating_with_server = "กำลังยืนยันตัวตนกับเซิร์ฟเวอร์...",
 
-		local_firewall_on = "เปิดใช้งานไฟร์วอลล์ของระบบภายในพร้อมกับข้อความบล็อก `${blockMessage}`.",
-		local_firewall_re_enabled = "เปิดใช้งานไฟวอลล์ภายในอีกครั้งพร้อมข้อความปิดใช้งาน `${blockMessage}`",
-		local_firewall_off = "ปิดใช้งานไฟวอลล์ภายใน",
-		local_firewall_blocked = "ไฟวอลล์ภายใน: บล็อก ${playerName} (${licenseIdentifier})",
+		failed_to_get_global_user = "ไม่สามารถรับผู้ใช้ทั่วโลกได้",
+		failed_to_get_local_user = "ไม่สามารถรับผู้ใช้ท้องถิ่นได้",
+		failed_to_get_local_ban = "ไม่สามารถรับสถานะการแบนท้องถิ่นได้",
 
-		developer = "นักพัฒนา",
-		super_admin = "ซุปเปอร์แอดมิน",
-		staff = "เจ้าหน้าที่",
-		reconnect = "เชื่อมต่ออีกครั้ง",
-		random = "สุ่ม",
-		beginner = "ผู้เริ่มต้น",
-		custom = "กำหนดเอง",
-		christmas = "คริสต์มาส",
-		casino = "คาสิโน",
+		global_ban = "คุณถูกแบนทั่วโลกจากเซิร์ฟเวอร์ OP-FW ทั้งหมด.\n\nหมายเลขแบน: ${banHash}\nเหตุผลในการแบน: ${reason}\n\nหากคุณเชื่อว่านี่คือแบนเท็จโกง กรุณาเข้าร่วมกิลด์ Discord ของ OP-FW เพื่อขอข้อมูลการเรียกคืนที่ ${frameworkDiscord}",
+		local_ban = "คุณถูกแบนจาก ${communityName}.\n\nรหัสแบน: ${banHash}\nเหตุผลการแบน: ${reason}\nการแบนโดย: ${creatorName}\nเวลา: ${timestamp}\n\n${indefiniteOrExpires}\n\nเข้าร่วมดิสคอร์ดของเราเพื่อขอคืนบัญชีที่ ${communityDiscord}",
+		local_ban_no_creator = "คุณถูกแบนจาก ${communityName}.\n\nรหัสแบน: ${banHash}\nเหตุผลการแบน: ${reason}\nเวลา: ${timestamp}\n\n${indefiniteOrExpires}\n\nเข้าร่วมดิสคอร์ดของเราเพื่อขอคืนบัญชีที่ ${communityDiscord}",
 
-		job_low = "งานระดับต่ำ",
-		job_medium = "งานระดับกลาง",
-		job_high = "งานระดับสูง",
-
-		banned_no_permissions = "พยายาม `${reason}` โดยไม่มีสิทธิ์เพียงพอ",
-
-		banned_globally = "คุณได้ถูกแบนโดยสากลจากเซิร์ฟเวอร์ OP-FW ทุกเซิร์ฟเวอร์\n\nรหัสแบน: ${banHash}\nเหตุผลการแบน: ${banReason}\n\nหากคุณเชื่อว่าการแบนนี้เป็นเท็จโปรดเข้าร่วมกิลด์ Discord OP-FW เพื่อขออุทธรณ์ที่ ${frameworkDiscord}",
-		banned_locally = "คุณถูกแบนจาก ${communityName}.\n\nรหัสแบน: ${banHash}\nถูกแบนโดย: ${creatorName}\nเหตุผลการแบน: ${banReason}\nเวลาสร้าง: ${timestamp}\n\n${indefiniteOrExpires}\n\nเข้าร่วมกิลด์ Discord เพื่อขออุทธรณ์ที่ ${communityDiscord}.",
-		banned_locally_no_creator = "คุณถูกแบนจาก ${communityName}\n\nหมายเลขแบน: ${banHash}\nเหตุผลในการแบน: ${banReason}\nเวลา: ${timestamp}\n\n${indefiniteOrExpires}\n\nเข้าร่วมดิสคอร์ดของเราเพื่อดูข้อมูลการอุตสาหกรรมที่ ${communityDiscord} เพื่อยื่นขอเรียกคืนสิทธิ์",
 		ban_indefinite = "แบนนี้ถูกกำหนดอย่างไม่มีกำหนดเวลา",
 		ban_expires = "แบนนี้จะหมดอายุใน ${timeLeft}",
-		not_whitelisted = "คุณไม่ได้รับการรับรองสีขาวบนเซิร์ฟเวอร์นี้ เพื่อดูข้อมูลเพิ่มเติมเกี่ยวกับการสมัคร กรุณาเข้าร่วมดิสคอร์ดของเราที่ ${communityDiscord}",
-		api_error = "เกิดข้อผิดพลาดขณะดึงข้อมูลของคุณ (รหัสข้อผิดพลาด ${errorCode})",
+
 		pepega_moderate = "คุณถูกแบนบนเซิร์ฟเวอร์ OP-FW ทั้งหมดโดยไม่ได้ระบุเหตุผลใด ๆ",
 		pepega_ultimate = "คุณถูกแบนจากเซิร์ฟเวอร์นี้",
-		ban_code_not_found = "คุณถูกแบนโดยรวมบนเซิร์ฟเวอร์ OP-FW ทั้งหมด ไม่สามารถค้นหาข้อมูลใด ๆ สำหรับรหัสแบนของคุณ",
-		fraud_chargeback = "การฉ้อโกง / การเรียกร้องเงินคืน",
-		threatening_ddos = "อายุ่นที่จะโจมตีโครงสร้างพื้นฐานของเรา",
-		unknown = "ไม่ระบุ",
-		api_offline = "บริการหลังบ้านของเรายังไม่พร้อมใช้งานในขณะนี้ ไม่สามารถดึงข้อมูลของคุณได้ โปรดลองอีกครั้งในเร็ว ๆ นี้",
-		protective_mode_on = "โหมดคุ้มกันเซิร์ฟเวอร์ถูกเปิดใช้งานในขณะนี้บนเซิร์ฟเวอร์นี้ หมายความว่าผู้เล่นที่มีเวลาเล่นเซิร์ฟเวอร์บางจำนวนเท่านั้นที่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้ นี่เป็นเพียงชั่วคราวและเซิร์ฟเวอร์จะกลับมาเป็นปกติในเร็ว ๆ นี้\n\nเข้าร่วม Discord เพื่อข้อมูลเพิ่มเติมเกี่ยวกับเหตุการณ์นี้ที่ ${communityDiscord}",
-		server_restarting = "เซิร์ฟเวอร์กำลังรีสตาร์ทในขณะนี้ โปรดลองอีกครั้งในไม่กี่นาที",
-		connection_cancelled = "การเชื่อมต่อนี้ถูกยกเลิกเนื่องจากมีการเชื่อมต่ออื่นที่กำลังดำเนินอยู่แล้ว",
-		no_reason_provided = "ไม่มีสาเหตุที่ระบุ",
-		discord_whitelist_id_not_found = "เราไม่สามารถค้นหา Discord ID ของคุณได้ โปรดตรวจสอบว่าคุณได้เปิด Discord อยู่หรือไม่ และคุณได้อนุญาตให้ FiveM เรียกข้อมูลจาก client Discord ของคุณแล้ว\n\n${communityDiscord}"
+
+		welcome_to = "ยินดีต้อนรับสู่",
+
+		connection_rejected_logs_title = "การเชื่อมต่อถูกปฏิเสธ",
+		connection_rejected_logs_details = "การเชื่อมต่อของ ${consoleName} ถูกปฏิเสธเนื่องจากเหตุผล `${rejectCode}`.",
+
+		connection_accepted_logs_title = "การเชื่อมต่อได้รับการยอมรับ",
+		connection_accepted_logs_details = "การเชื่อมต่อของ ${consoleName} ได้รับการยอมรับ"
+	},
+
+	bans = {
+		banned_no_permissions = "พยายาม `${reason}` โดยไม่มีสิทธิ์ที่เหมาะสม",
+		fraud_chargeback = "การฉ้อโกง / การยกเลิกการชำระเงิน"
 	},
 
 	characters = {
@@ -896,6 +862,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		-- animations/emotes
 		ragdoll_command = "ร่างกายแขนขาสั่น",
 		ragdoll_command_help = "เปิด/ปิด โหมด Ragdoll.",
+		ragdoll_command_parameter_server_id = "ไอดีเซิร์ฟเวอร์",
+		ragdoll_command_parameter_server_id_help = "ระบุ Server ID เพื่อทำให้ผู้เล่นคนอื่นตกได้",
 		ragdoll_command_substitutes = "",
 
 		-- animations/walkstyles
@@ -937,7 +905,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		wipe_command_parameter_ignore_local_entities = "ไม่สนใจสิ่งของท้องถิ่น",
 		wipe_command_parameter_ignore_local_entities_help = "ไม่สนใจสิ่งของที่ไม่ได้รับการเชื่อมต่อเครือข่ายหรือไม่? หากคุณต้องการทำความสะอาดจากผู้ใช้ที่มีการซ่อมแซม แนะนำให้ใช้ `true` หรือ `1`",
 		wipe_command_parameter_model_name = "ชื่อโมเดล",
-		wipe_command_parameter_model_name_help = "หากคุณต้องการลบองค์ประกอบเฉพาะชนิดใดชนิดหนึ่งเท่านั้น ให้ใส่ชื่อโมเดลที่นี่ ไม่เช่นนั้นเว้นว่างไว้ที่ `false` หรือ `0` คุณยังสามารถตั้งค่าได้เป็น `vehicles` `peds` หรือ `objects`",
+		wipe_command_parameter_model_name_help = "หากคุณต้องการลบเฉพาะสิ่งประดิษฐ์ที่มีชื่อรุ่นที่บางอย่างเท่านั้น ให้ใส่ชื่อรุ่นที่นี่ มิเช่นนั้นให้เว้นว่างไว้, เป็น `false` หรือ `0` คุณยังสามารถตั้งค่าค่านี้ได้เป็น `vehicles`, `peds`, `objects` หรือ `doors`",
 		wipe_command_substitutes = "",
 
 		noclip_command = "noclip",
@@ -987,14 +955,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		staff_toggle_command = "staff_toggle",
 		staff_toggle_command_help = "สลับสถานะการพร้อมให้บริการของพนักงาน ถ้าให้เป็นปิดจะไม่แสดงรายงาน ข้อความ PM และข้อความพนักงาน",
 		staff_toggle_command_substitutes = "",
-
-		protective_mode_command = "protective_mode",
-		protective_mode_command_help = "สลับโหมดความปลอดภัยของเซิร์ฟเวอร์ โดยเมื่อเปิดแล้วจะยกเลิกการเชื่อมต่อของผู้เล่นที่มียอดการเล่นต่ำกว่าที่กำหนดไว้ โดยจะไม่มีการตรวจสอบกับพนักงานและผู้สนับสนุนสิทธิ์ของเซิร์ฟเวอร์",
-		protective_mode_command_parameter_enabled = "เปิด",
-		protective_mode_command_parameter_enabled_help = "ต้องการเปิดการตรวจสอบหรือไม่? ข้อมูลที่ถูกต้อง: `true` , `false`, `1` และ `0`.",
-		protective_mode_command_parameter_playtime = "เวลาที่เล่น",
-		protective_mode_command_parameter_playtime_help = "เวลาเล่นที่ต้องการ (วินาที) เพื่อยอมรับการเชื่อมต่อใหม่",
-		protective_mode_command_substitutes = "",
 
 		spawn_vehicle_command = "spawn_vehicle",
 		spawn_vehicle_command_help = "สร้างยานพาหนะ",
@@ -1070,10 +1030,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		no_nearby_vehicles_command_parameter_server_id_help = "หากคุณต้องการเปิด/ปิด 'no nearby vehicles' สำหรับผู้เล่นคนอื่น โปรดใส่ server id ของพวกเขาที่นี่",
 		no_nearby_vehicles_command_substitutes = "",
 
-		ghost_command = "ghost",
-		ghost_command_help = "คำสั่งนี้จะเปิดใช้งาน /peek, ความไม่มองเห็น และ /disable_collisions",
-		ghost_command_substitutes = "",
-
 		job_command = "job",
 		job_command_help = "ปรับปรุงงานของบุคคลตามการค้นหา",
 		job_command_parameter_server_id = "server id",
@@ -1114,13 +1070,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		super_jump_command_help = "เปิด/ปิด การกระโดดสูงโดยใช้ความสามารถพิเศษ",
 		super_jump_command_substitutes = "",
 
-		set_spawnpoint_command = "set_spawnpoint",
-		set_spawnpoint_command_help = "ตั้งตำแหน่งเกิดใหม่ของตัวละครเป็นตำแหน่งปัจจุบันของคุณเสมอ",
-		set_spawnpoint_command_substitutes = "set_spawn",
-
-		reset_spawnpoint_command = "reset_spawnpoint",
-		reset_spawnpoint_command_help = "รีเซ็ตตำแหน่งเกิดใหม่ของตัวละครที่ถูกตั้งค่าโดยใช้ /set_spawnpoint",
-		reset_spawnpoint_command_substitutes = "reset_spawn",
+		spawn_command = "spawn",
+		spawn_command_help = "ย้ายคุณไปที่หอคำสั่งของเจ้าหน้าที่",
+		spawn_command_substitutes = "",
 
 		stick_command = "ติดตามรถ",
 		stick_command_help = "ติดตามรถที่คุณอยู่ด้านบน",
@@ -1217,12 +1169,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		tp_waypoint_command = "tp_waypoint",
 		tp_waypoint_command_help = "กระโดดไปยังจุดหมายของคุณ",
 		tp_waypoint_command_substitutes = "tp_marker, tp",
-
-		isolate_player_command = "isolate_player",
-		isolate_player_command_help = "แยกออกจากผู้เล่น ไม่อนุญาตให้ทำอะไร",
-		isolate_player_command_parameter_server_id = "server id",
-		isolate_player_command_parameter_server_id_help = "ผู้เล่นเป้าหมาย",
-		isolate_player_command_substitutes = "isolate",
 
 		show_all_evidence_command = "show_all_evidence",
 		show_all_evidence_command_help = "แสดงหลักฐานกระสุนที่อยู่ใกล้เคียงทั้งหมด",
@@ -1823,11 +1769,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		outfits_command_help = "แสดงรายการชุดแต่งตัวที่บันทึกไว้ทั้งหมดของคุณ",
 		outfits_command_substitutes = "",
 
-		-- game/collisions
-		disable_collisions_command = "disable_collisions",
-		disable_collisions_command_help = "ปิดการชนกับยานพาหนะและบุคคลสร้างความสะดวกในรัศมี 25 เมตร (เฉพาะในเครื่องคอมพิวเตอร์ของคุณเท่านั้น).",
-		disable_collisions_command_substitutes = "collisions",
-
 		-- game/command_socket
 		reconnect_command_socket_command = "เชื่อมต่อคำสั่งซ็อกเก็ตอีกครั้ง",
 		reconnect_command_socket_command_help = "พยายามเชื่อมต่อคำสั่งซ็อกเก็ตอีกครั้ง",
@@ -1885,6 +1826,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		npc_debug_command = "npc_debug",
 		npc_debug_command_help = "ดีบั๊กทุกตัวละคร NPC ที่ไม่ใช่สัตว์รอบตัวคุณ",
 		npc_debug_command_substitutes = "npcs",
+
+		vehicle_debug_command = "vehicle_debug",
+		vehicle_debug_command_help = "ตรวจสอบข้อบกพร่องของยานพาหนะที่ไม่ใช่สัตว์รอบคุณ",
+		vehicle_debug_command_substitutes = "vehicles",
 
 		network_debug_command = "network_debug",
 		network_debug_command_help = "เปิด/ปิดการแสดงข้อมูลเครือข่ายของวัตถุ ซึ่งจะแสดงข้อมูลเครือข่ายเกี่ยวกับวัตถุที่คุณกำลังมองอยู่",
@@ -2491,6 +2436,13 @@ OP.Global.Locales.Languages["th-TH"] = {
 		invisibility_command_parameter_server_id_help = "หากคุณต้องการสลับสถานะการมองเห็นของบุคคลอื่น",
 		invisibility_command_substitutes = "inv, invis, invisible",
 
+		-- game/isolation
+		isolate_player_command = "isolate_player",
+		isolate_player_command_help = "แยกออกจากผู้เล่น ไม่อนุญาตให้ทำอะไร",
+		isolate_player_command_parameter_server_id = "server id",
+		isolate_player_command_parameter_server_id_help = "ผู้เล่นเป้าหมาย",
+		isolate_player_command_substitutes = "isolate",
+
 		-- game/items
 		clear_map_command = "ล้างแผนที่",
 		clear_map_command_help = "ล้างตำแหน่งที่จัดเก็บของแผนที่",
@@ -3071,6 +3023,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		draw_shroom_areas_command_help = "วาดพื้นที่เห็ดและเพิ่มเติม",
 		draw_shroom_areas_command_substitutes = "shroom_areas",
 
+		-- game/smell
+		smell_command = "หมดกลิ่น",
+		smell_command_help = "สำรวจบริเวณรอบๆคุณหากลิ่นอื่น ๆ ที่ผิดปรกติ",
+		smell_command_substitutes = "",
+
 		-- game/sound_effects
 		play_sound_command = "play_sound",
 		play_sound_command_help = "เล่นเอฟเฟกต์เสียงที่ตำแหน่งของคุณ",
@@ -3286,28 +3243,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		wizard_command_parameter_server_id = "server id",
 		wizard_command_parameter_server_id_help = "เลือกผู้เล่นบางคนในเมนู (ไม่จำเป็น).",
 		wizard_command_substitutes = "",
-
-		ragdoll_player_command = "ragdoll_player",
-		ragdoll_player_command_help = "ทำให้ผู้เล่นตกหลุมพรม.",
-		ragdoll_player_command_parameter_server_id = "server id",
-		ragdoll_player_command_parameter_server_id_help = "ไอดีเซิร์ฟเวอร์ของผู้เล่นที่คุณต้องการให้ตกหลุมพรม.",
-		ragdoll_player_command_parameter_force = "force",
-		ragdoll_player_command_parameter_force_help = "ใช้กำลังสุ่มให้กับผู้เล่นหลังจากทำให้พวกเขาตกหลุมพรม.",
-		ragdoll_player_command_substitutes = "",
-
-		ragdoll_radius_command = "ragdoll_radius",
-		ragdoll_radius_command_help = "บังคับให้ผู้เล่นทุกคนในรัศมีที่กำหนดตกลงมาเป็นร่างกายหมากรุกแบบสุ่ม",
-		ragdoll_radius_command_parameter_radius = "รัศมี",
-		ragdoll_radius_command_parameter_radius_help = "รัศมีที่ผู้เล่นจะเป็นร่างกายหมากรุก",
-		ragdoll_radius_command_parameter_force = "แรงขับดัน",
-		ragdoll_radius_command_parameter_force_help = "ใช้แรงขับดันสุ่มให้กับผู้เล่นหลังจากทำให้เขาเป็นร่างกายหมากรุก",
-		ragdoll_radius_command_substitutes = "",
-
-		punch_radius_command = "punch_radius",
-		punch_radius_command_help = "บังคับให้ผู้เล่นทุกคนในรัศมีที่กำหนดตีลูกกวาดไปสุ่ม",
-		punch_radius_command_parameter_radius = "รัศมี",
-		punch_radius_command_parameter_radius_help = "รัศมีที่ผู้เล่นจะตีกันแบบสุ่ม",
-		punch_radius_command_substitutes = "",
 
 		flashbang_command = "flashbang",
 		flashbang_command_help = "ใช้แฟลชแบงค์กับผู้เล่นคนหนึ่ง",
@@ -3541,6 +3476,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		pickup_keys_command_help = "จะทำให้คุณเก็บกุญแจของยานพาหนะที่อยู่ใกล้ที่สุด",
 		pickup_keys_command_substitutes = "",
 
+		keys_command = "แก้ว",
+		keys_command_help = "รับแก้วสำหรับรถที่คุณอยู่ในปัจจุบัน",
+		keys_command_parameter_server_id = "server id",
+		keys_command_parameter_server_id_help = "ให้กุญแจรถให้ผู้เล่นคนอื่นสำหรับรถที่พวกเขาอยู่",
+		keys_command_substitutes = "",
+
 		-- vehicles/modifications
 		wheel_offset_command = "wheel_offset",
 		wheel_offset_command_help = "ปรับเปลี่ยนตำแหน่งของล้อรถ",
@@ -3689,9 +3630,18 @@ OP.Global.Locales.Languages["th-TH"] = {
 		aim_down_sight_command_help = "การเล็งมุมอัตโนมัติเมื่อคลิกขวาดูไปที่กล้องไฟฉายหรือแม้กระทั่งหมวกหนังสือ",
 		aim_down_sight_command_substitutes = "ads",
 
+		-- weapons/throwables
+		throw_weapon_command = "ขว้างหน้าอาวุธ",
+		throw_weapon_command_help = "ขว้างอาวุธที่คุณมีอยู่ในขณะนี้",
+		throw_weapon_command_substitutes = "เถียง, ขว้าง",
+
+		throwables_debug_command = "throwables_debug",
+		throwables_debug_command_help = "Debug ไอเทมที่สามารถปาได้ที่อยู่ใกล้เคียงทั้งหมด",
+		throwables_debug_command_substitutes = "",
+
 		-- weapons/weapons
 		check_ammo_command = "เช็คกระสุน",
-		check_ammo_command_help = "ตรวจสอบว่าหน้างานคุณมีกระสุนเท่าไรสำหรับอาวุธที่คุณถืออยู่",
+		check_ammo_command_help = "ตรวจสอบจำนวนกระสุนที่คุณมีทั้งหมด",
 		check_ammo_command_substitutes = "กระสุน",
 
 		toggle_airsoft_mode_command_command = "สลับโหมดแอร์ซอฟต์",
@@ -3760,6 +3710,15 @@ OP.Global.Locales.Languages["th-TH"] = {
 		error_occured_information = "สิ่งนี้แสดงว่ามีอะไรไม่ทำงานอย่างถูกต้องหรือตามที่ต้องการ โปรดช่วยเราแก้ไขปัญหานี้โดยการให้ข้อมูลเพิ่มเติมว่าคุณทำอะไรเมื่อเกิดข้อผิดพลาดนี้"
 	},
 
+	firewall = {
+		local_firewall_enabled = "ไฟร์วอลท้อลในเครื่องเปิดใช้งานแล้ว",
+
+		local_firewall_on = "เปิดใช้งานไฟร์วอลท้อลในเครื่องพร้อมกับข้อความบล็อก `${blockMessage}`",
+		local_firewall_re_enabled = "เปิดใช้งานไฟร์วอลท้อลในเครื่องอีกครั้งพร้อมกับข้อความบล็อก `${blockMessage}`",
+		local_firewall_off = "ปิดการใช้งานไฟร์วอลท้อลในเครื่อง",
+		local_firewall_blocked = "ไฟร์วอลท้อล: บล็อก ${playerName} (${licenseIdentifier})"
+	},
+
 	ping = {
 		getting_pings = "กำลังเรียกใช้ pings จากผู้เล่นทั้งหมด กรุณารอสักครู่",
 		host_data = "${position}. ${location} - ค่าเฉลี่ยของแป้นพิง ${averagePing} (จาก ${totalPings} คนเชื่อมต่อ), 10% ต่ำสุด: ${averagePingLow}, 10% สูงสุด: ${averagePingHigh}",
@@ -3771,33 +3730,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		profile_debug_disabled = "ประสิทธิภาพดีบั๊กถูกปิดใช้งานแล้ว."
 	},
 
-	queue = {
-		joining_the_queue = "กำลังเข้ารอบคิว...",
-		timed_out_before_joining = "คุณเกินกำหนดเวลาก่อนที่จะเข้าร่วมเซิร์ฟเวอร์",
-		server_reload_while_in_loading = "เซิร์ฟเวอร์กำลังรีโหลดแกนกลางและเนื่องจากคุณยังไม่ได้โหลดเข้าสู่เซิร์ฟเวอร์อย่างสมบูรณ์ จึงถูกลบจากเซิร์ฟเวอร์โดยอัตโนมัติ",
-		server_reload_while_in_queue = "กำลังรีโหลดคอร์ไฟล์เซิร์ฟเวอร์ โปรดเชื่อมต่ออีกครั้งเพื่อเข้าคิว",
-		took_too_long_to_connect = "คุณใช้เวลาเชื่อมต่อนานเกินไป!",
-		queue_position_with_priority = "🐌 คุณอยู่อันดับที่ ${queueEntryId}/${queueLength} ในคิว  ความสำคัญ ${priorityName} 🕐${queueTime}${liveOnTwitch}",
-		queue_position_without_priority = "🐌 คุณอยู่อันดับที่ ${queueEntryId}/${queueLength} ในคิว 🕐${queueTime}\nเบื่อคิว? สนับสนุนเราเพื่อรับความสำคัญในคิว!\n\n${webstoreURL}${liveOnTwitch}",
-		live_on_twitch = "\n\nรู้สึกเบื่อหรือยัง? มาดูสตรีมเมอร์เหล่านี้เถอะ!\n${streamers}",
-		server_is_starting = "กำลังรอเซิร์ฟเวอร์เริ่มต้น...",
-		cancelled_before_server_start = "การเชื่อมต่อถูกยกเลิกก่อนที่เซิร์ฟเวอร์จะเริ่มต้น",
-		kicked_from_queue = "คุณได้ถูกเตะออกจากคิวเนื่องจาก `${reason}`.",
-		kicked_from_queue_no_reason = "คุณได้ถูกเตะออกจากคิวโดยไม่ระบุเหตุผล",
-		missing_slots_parameter = "พารามิเตอร์ `slots` หายไป",
-		invalid_slots_parameter = "พารามิเตอร์ `slots` ไม่ถูกต้อง",
-		slots_parameter_out_of_range = "พารามิเตอร์ `slots` ต้องอยู่ระหว่าง `0` และ `1025`",
-		slots_already_set_to = "สล็อตของเซิร์ฟเวอร์ถูกตั้งค่าไว้แล้วที่ `${slots}`",
-		slots_set_to = "สล็อตของเซิร์ฟเวอร์ได้ถูกตั้งค่าเป็น `${slots}` แล้ว",
-
-		invalid_license_identifier_parameter = "พารามิเตอร์ 'licenseIdentifier' ไม่ถูกต้องหรือไม่ได้ระบุ",
-		invalid_target_position_parameter = "พารามิเตอร์ 'targetPosition' ไม่ถูกต้องหรือไม่ได้ระบุ",
-		player_not_found_in_queue = "ไม่พบผู้เล่นในคิว",
-		player_queue_moved_success = "ตำแหน่งของผู้เล่นในคิวถูกอัพเดทเรียบร้อยแล้ว",
-		player_queue_skipped_success = "ผู้เล่นได้ข้ามคิวเรียบร้อยแล้ว",
-		queue_is_not_ready = "คิวยังไม่พร้อมที่จะข้ามได้",
-
-		welcome_to = "ยินดีต้อนรับสู่"
+	proxy = {
+		proxied_via_logs_title = "ถูกลากย้อนกลับผ่าน",
+		proxied_via_logs_details = "${consoleName} ถูกลากย้อนกลับผ่าน `${serverName}`"
 	},
 
 	restart = {
@@ -3846,6 +3781,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		logs_user_joined_details = "${consoleName} เข้าร่วมเซิร์ฟเวอร์แล้ว",
 		logs_user_dropped_title = "ผู้ใช้ตัดการเชื่อมต่อ",
 		logs_user_dropped_details = "${consoleName} ตัดการเชื่อมต่อจากเซิร์ฟเวอร์หลังจากเล่นเป็นเวลา ${playtime} เนื่องจาก `${reason}`",
+		logs_user_dropped_proxied_details = "${consoleName} ออกจากเซิร์ฟเวอร์หลังจากเล่นเป็นเวลา ${playtime} ด้วยเหตุผล: `${reason}` พวกเขาถูกลากย้อนกลับผ่าน `${serverName}`",
 		logs_character_loaded_title = "โหลดตัวละคร",
 		logs_character_loaded_details = "${consoleName} โหลดตัวละคร ${fullName} (${characterId}) เรียบร้อยแล้ว",
 		logs_character_unloaded_title = "ปล่อยตัวละคร",
@@ -3905,7 +3841,14 @@ OP.Global.Locales.Languages["th-TH"] = {
 		respected_tier = "ระดับ Respected",
 		heroic_tier = "ระดับ Heroic",
 		legendary_tier = "ระดับ Legendary",
-		godlike_tier = "ระดับ Godlike"
+		godlike_tier = "ระดับ Godlike",
+
+		dropped_timed_out_player_logs_title = "ชื่อผู้เล่นค้างสัญญาณหลุด",
+		dropped_timed_out_player_logs_details = "${consoleName} ถูกถอดออกด้วยการไม่ส่งสัญญาณให้ภาษาระบบนานเกินไป"
+	},
+
+	whitelist = {
+		not_whitelisted = "คุณไม่ได้รับอนุญาตให้ใช้งานเซิร์ฟเวอร์นี้.\n\nเข้าร่วม Discord เพื่อข้อมูลเพิ่มเติมเกี่ยวกับวิธีการสมัครที่ ${communityDiscord}"
 	},
 
 	-- game/*
@@ -3985,7 +3928,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		alert_title = "แจ้งเตือน",
 
-		invalid_server_id = "ID เซิร์ฟเวอร์ไม่ถูกต้อง",
+		invalid_server_id = "รหัสเซิร์ฟเวอร์ไม่ถูกต้อง",
 		missing_content = "ไม่มีเนื้อหา",
 
 		show_alert_success = "แสดงข้อความแจ้งเตือนให้กับผู้เล่นสำเร็จ",
@@ -4366,12 +4309,13 @@ OP.Global.Locales.Languages["th-TH"] = {
 	},
 
 	bazaar = {
-		access_bazaar = "กด ~INPUT_CONTEXT~ เพื่อเข้าถึงร้านค้านี้",
+		access_bazaar = "กด ~INPUT_CONTEXT~ เพื่อเข้าถึงตลาด",
 
 		bazaar_blip = "ตลาด",
 
 		no_items = "คุณไม่มีสิ่งของใดๆ เพื่อขายที่นี่",
-		price_about = "ประมาณ ${price} บาท",
+		price_total = "ราคาทั้งหมด $${price}",
+		price_per = "ราคาต่อหน่วย $${price}",
 
 		sold_logs_title = "การขายตลาด",
 		sold_logs_details = "${consoleName} ขาย ${amount}x `${itemName}` ในราคา $${price} บาท",
@@ -4379,10 +4323,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		sold_items = "คุณขาย ${amount}x ${label} ในราคา $${money} บาท",
 		failed_sell_items = "ไม่สามารถขายไอเท็มได้",
 
-		junk_collector = "เก็บของเสีย",
-		tool_collector = "เก็บเครื่องมือ",
-		waste_collector = "เก็บขยะ",
-		ammo_collector = "เก็บกระสุน",
+		store_title = "ร้านค้าตลาด",
 
 		close_menu = "ปิดเมนู"
 	},
@@ -4406,6 +4347,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		yes_receipt = "ใบเสร็จ",
 		tip = "เคล็ดลับ",
 		none = "ไม่มี",
+		custom = "กำหนดเอง",
+		custom_tip = "ค่าตอบแทนที่กำหนดเอง (ใน $)",
 
 		close = "ปิด",
 		back = "ย้อนกลับ",
@@ -4422,10 +4365,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		failed_pay_bill = "ไม่สามารถชำระบิลได้",
 		not_enough_money = "คุณมีเงินไม่พอที่จะชำระบิลนี้",
 		bill_paid = "ชำระบิล $${amount} ให้แก่ ${name} สำเร็จ",
-		bill_paid_notification = "${name} ได้ชำระบิลของคุณพร้อมเงินเบี้ยประมาณ ${tip}%",
+		bill_paid_notification = "${name} ชำระบิลของคุณพร้อมเคล็ดลับ $${tip}",
 
 		paid_bill_title = "ชำระบิลแล้ว",
-		paid_bill_details = "${consoleName} ชำระบิล ${targetName} ในจำนวน $${amount} (พร้อมเงินเบี้ยประมาณ ${tip}%)",
+		paid_bill_details = "${consoleName} จ่ายบิล $${amount} (พร้อมเคล็ดลับ $${tip}) จาก ${targetName}",
 		bill_created_title = "สร้างบิลแล้ว",
 		bill_created_details = "${consoleName} ส่งบิลให้ ${targetName} ในจำนวนเงิน $${amount} ด้วยเหตุผล `${reason}`."
 	},
@@ -4923,7 +4866,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		clothing_menu_success = "เปิดเมนูเสื้อผ้าสำหรับ ${consoleName} เรียบร้อย",
 		barber_menu_success = "ไม่สามารถเปิดเมนูร้านตัดผมได้",
 		failed_toggle_barber_menu = "เปิดเมนูร้านตัดผมสำหรับ ${consoleName} ไม่สำเร็จ",
-		invalid_server_id = "ไอดีเซิร์ฟเวอร์ไม่ถูกต้อง",
+		invalid_server_id = "รหัสเซิร์ฟเวอร์ไม่ถูกต้อง",
 
 		hats_and_helmets = "หมวก/หมวกกันน็อค",
 		glasses = "แว่นตา",
@@ -4959,15 +4902,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		add_body_blemish = "เพิ่มรอยด่างจุดบนร่างกาย"
 	},
 
-	collisions = {
-		disable_collisions_on = "การชนของคุณถูกปิดการใช้งานแล้ว",
-		disable_collisions_off = "การชนของคุณเปิดการใช้งานอีกครั้งแล้ว",
-
-		collisions_logs_title = "การชน",
-		collisions_off_logs_details = "${consoleName} เปิดใช้งานการชนที่ถูกปิดของตัวเอง",
-		collisions_on_logs_details = "${consoleName} ปิดใช้งานการชนที่ถูกปิดของตัวเอง"
-	},
-
 	command_socket = {
 		connected = "เชื่อมต่อกับคอมมานด์ซ็อกเก็ตแล้ว",
 		disconnected = "ตัดการเชื่อมต่อจากคอมมานด์ซ็อกเก็ตแล้ว",
@@ -4988,26 +4922,17 @@ OP.Global.Locales.Languages["th-TH"] = {
 		menu_title = "การคราฟต์",
 		close_menu = "ปิดเมนู",
 
-		smelt_glass = "ละลายขวดแตก",
-		press_to_smelt_glass = "[${SeatEjectKey}] ละลายขวดแตก",
-		smelting_glass = "กำลังละลาย ${usedItems}",
-		smelted_glass = "ละลาย ${usedItems} เป็นแก้วแล้ว",
-		failed_smelt_glass = "ละลายขวดแตกไม่สำเร็จ",
+		smelt_materials = "หลอมวัสดุ",
+		press_to_smelt_materials = "[${SeatEjectKey}] หลอมวัสดุ",
 
-		craft_steel = "คราฟเหล็ก",
-		press_to_craft_steel = "[${SeatEjectKey}] คราฟเหล็ก",
-		crafting_steel = "กำลังผลิต ${usedItems} เข้ารูปเหล็ก",
-		crafted_steel = "ผสม ${usedItems} เข้ากันได้แล้ว ได้รับเหล็กเป็นผลิตภัณฑ์",
-		failed_craft_steel = "ผิดพลาดในการผลิตเหล็ก",
+		glass_recipe = "หลอมแก้ว",
+		steel_recipe = "หลอมเหล็ก",
+		scrap_metal_recipe = "หลอมโลหะรีไซเคิล",
+		aluminium_recipe = "หลอมอลูมิเนียม",
 
-		craft_aluminium = "การผลิตอลูมิเนียม",
-		press_to_craft_aluminium = "[${SeatEjectKey}] การผลิตอลูมิเนียม",
-		crafting_aluminium = "กำลังหล่อ ${usedItems}",
-		crafted_aluminium = "ผลิต ${usedItems} เป็นอลูมิเนียมแล้ว",
-		failed_craft_aluminium = "การผลิตอลูมิเนียมล้มเหลว",
-
-		scrapping_item = "กำลังแปลง ${usedItems} เป็นเหล็กรีด",
-		scrapped_item = "สกัดเหล็กรีดจาก ${usedItems} แล้ว",
+		smelting_materials = "กำลังหลอม ${usedItems}",
+		smelted_materials = "หลอม ${usedItems} แล้ว",
+		failed_smelt_materials = "การหลอมวัตถุดิบล้มเหลว",
 
 		scrap_knife = "มีดรีด",
 		press_to_scrap_knife = "[${SeatEjectKey}] รีดมีด",
@@ -5396,6 +5321,30 @@ OP.Global.Locales.Languages["th-TH"] = {
 		mixed_grimace_shake = "ผสมกริมั้นแชเคเรียบร้อย",
 		failed_mix_grimace_shake = "การผสมบุหรี่ไข้เขียวล้มเหลว",
 
+		deconstruct_ammo = "แยกชิ้นส่วนกระสุน",
+		press_to_deconstruct_ammo = "[${SeatEjectKey}] แยกชิ้นส่วนกระสุน",
+
+		pistol_deconstruct_recipe = "แยกชิ้นส่วนกระสุนปืนพก",
+		shotgun_deconstruct_recipe = "แยกชิ้นส่วนกระสุนปืนลูกซอง",
+		sub_deconstruct_recipe = "แยกชิ้นส่วนกระสุนปืนกล",
+		rifle_deconstruct_recipe = "แยกชิ้นส่วนกระสุนสำหรับไรเฟิล",
+
+		deconstructing_ammo = "กำลังแยกชิ้นส่วนกระสุน",
+		deconstructed_ammo = "แยกชิ้นส่วนกระสุนแล้ว",
+		failed_deconstruct_ammo = "ไม่สามารถแยกชิ้นส่วนกระสุนได้",
+
+		craft_ammo = "สร้างกระสุน",
+		press_to_craft_ammo = "[${SeatEjectKey}] สร้างกระสุน",
+
+		pistol_ammo_recipe = "สร้างกระสุนปืนพก",
+		shotgun_ammo_recipe = "สร้างกระสุนปืนลูกซอง",
+		sub_ammo_recipe = "สร้างกระสุนปืนยาว",
+		rifle_ammo_recipe = "สร้างกระสุนแบบไรเฟิล",
+
+		crafting_ammo = "กำลังสร้างกระสุน",
+		crafted_ammo = "สร้างกระสุนแล้ว",
+		failed_craft_ammo = "การสร้างกระสุนล้มเหลว",
+
 		no_required_items = "คุณไม่มีไอเท็มที่จำเป็นทั้งหมด",
 
 		debug_multi = "-ผลลัพธ์หลายรายการ-",
@@ -5407,7 +5356,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 	crashes = {
 		crash_failed = "การเรียกใช้การล้มเหลวสำหรับ ${consoleName}。",
 		crash_success = "การเรียกใช้การล้มเหลวสำเร็จสำหรับ ${consoleName}。",
-		server_id_invalid = "รหัสเซิร์ฟเวอร์ไม่ถูกต้อง"
+		server_id_invalid = "ไอดีเซิร์ฟเวอร์ไม่ถูกต้อง"
 	},
 
 	creation = {
@@ -5711,7 +5660,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		confirm_task_refresh = "คุณแน่ใจที่จะรีเฟรชงานนี้หรือไม่? ราคาคือ $${cost}",
 		yes = "ใช่",
-		no = "ไม่ใช่"
+		no = "ไม่ใช่",
+
+		logs_daily_streak_changed_title = "เปลี่ยนแปลง Daily Streak",
+		logs_daily_streak_changed_details = "${consoleName} ตอนนี้มี Daily Streak เป็น `${streak}`."
 	},
 
 	dashcam = {
@@ -5750,6 +5702,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		one_state_set = "ตั้งค่าสถานะ 1 รายการ",
 		many_states_set = "ตั้งค่าสถานะ ${count} รายการ",
 		no_states = "ไม่มีสถานะ",
+		addon_model = "${modelName} (เพิ่มเข้ามา)",
 		entity_health = "เลือด ${health}/${maxHealth}",
 		owned_by_server = "เซิร์ฟเวอร์",
 		owned_by_you = "คุณเป็นเจ้าของ",
@@ -5757,6 +5710,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		current_owned_short = "เจ้าของปัจจุบัน: ${currentOwner}",
 		network_id_side = "ID เครือข่าย: ${networkId}",
 		no_target = "ไม่มีเป้าหมาย",
+		loading_owner = "ลงทะเบียนกับ ~y~Loading...",
+		owner_npc = "ลงทะเบียนกับ ~b~${fullName}",
+		owner_player = "ลงทะเบียนกับ ~g~${fullName}",
+		character_known = "ตัวละคร: ~g~${fullName}",
+		character_unknown = "ตัวละคร: ~r~ไม่ทราบ",
 		invalid_radius_parameter = "พารามิเตอร์ `รัศมี` ไม่ถูกต้อง",
 		inject_code_invalid_player = "ไม่มีผู้เล่นที่มี ID เซิร์ฟเวอร์ `${serverId}`",
 		inject_code_success_for_everyone = "เข้าโค้ดสำเร็จสำหรับทุกคน",
@@ -5773,6 +5731,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		ped_config_flags = "พนักงานกำหนดค่าธง:",
 		ped_is = "พืชแตกออกถูกปกคลุมไปด้วย:",
 		vehicle_is = "ยานพาหนะได้รับการ:",
+		controls = "Controls: ${controls}",
 		native_calls = "การโทรหาธรรมชาติ: ${trueNativeCallsLastFrame} (${totalNativeCalls})",
 		player_speed = "ความเร็วของผู้เล่น: ${playerSpeed}",
 		player_ped = "ตัวละครของผู้เล่น: ${playerPedId}",
@@ -5915,7 +5874,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		debug_doors_on = "เปิดการดีบั๊กประตู",
 		debug_doors_off = "ปิดการดีบั๊กประตู",
-		doors_no_job = "ไม่มี"
+		doors_no_job = "ไม่มี",
+
+		unlocks = "Unlocks: <i>${cluster}</i>."
 	},
 
 	elevators = {
@@ -6071,21 +6032,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		next_rotation_in = "การหมุนต่อไปใน: ${time}",
 
 		exclusive_dealership_blip = "Exclusive Deluxe Motorsport",
-		exclusive_buyback_blip = "Prestige Wheels Exchange",
 
-		buyback_vehicle_help = "กด ~INPUT_CONTEXT~ เพื่อเข้าถึง Prestige Wheels Exchange",
-		buyback_title = "Prestige Wheels Exchange",
-		sell_closest_vehicle = "ขาย ${label} ของคุณในราคา $${price} (${percent}% ของมูลค่า)",
-		deny_sale = "ไม่เป็นไร ฉันต้องการเก็บรักษา",
-		accept_sale = "ใช่ ฉันแน่ใจ",
-		accept_sale_description = "คุณแน่ใจหรือไม่ว่าต้องการขาย ${label} ไปในราคา $${price} การดำเนินการนี้ไม่สามารถยกเลิกได้.",
-		are_you_sure_sell = "คุณแน่ใจหรือไม่ว่าต้องการขาย?",
-		no_vehicle_to_sell = "ไม่มียานพาหนะที่ขายได้ในบริเวณใกล้เคียง",
-		vehicle_not_owned = "คุณไม่ได้เป็นเจ้าของยานพาหนะนี้",
-		sale_success = "นำ ${label} ของคุณไปขายเรียบร้อยแล้ว ราคา $${price}",
-
-		sale_log_title = "บันทึกการขาย EDM",
-		sale_log_description = "${consoleName} ขาย `${label}` ของตนเองไปให้ร้านเพื่อรับเงิน $${price} บาท",
+		buyback_closed = "The exchange is closed. You can sell your vehicle to another player with the correct tier instead.",
 
 		log_title = "การซื้อ EDM",
 		log_description = "ซื้อ `${label}` ในราคา ${cost}"
@@ -6170,6 +6118,13 @@ OP.Global.Locales.Languages["th-TH"] = {
 		no_buildings = "ไม่มีตึก",
 		wiped_buildings_in_radius = "ล้าง ${removedBuildings} ตึกภายในรัศมี ${radius}",
 		wiped_buildings = "ล้าง ${removedBuildings} ตึก"
+	},
+
+	fortune_cookies = {
+		opened_cookie_logs_title = "Opened Fortune Cookie",
+		opened_cookie_logs_details = "${consoleName} opened a fortune cookie and got `${fortune}`.",
+
+		failed_open = "Failed to open fortune cookie."
 	},
 
 	freecam = {
@@ -6261,7 +6216,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		gravity_success_off = "เปิดแรงโน้มถ่วงสำหรับ ${consoleName} เรียบร้อยแล้ว",
 		gravity_client_failed = "ไม่สามารถเปิด/ปิดแรงโน้มถ่วงสำหรับ ${consoleName} ได้",
 		gravity_failed = "มีบางอย่างผิดพลาดขณะพยายามเปิด/ปิดแรงโน้มถ่วง",
-		invalid_server_id = "ID เซิร์ฟเวอร์ไม่ถูกต้อง",
+		invalid_server_id = "Invalid server ID.",
 		yourself = "ตัวเอง"
 	},
 
@@ -6446,7 +6401,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		ft = "ฟุต",
 		m = "เมตร",
 		belt = "สายนิรภัย",
+		oil = "OIL",
 		limiter = "จำกัดความเร็ว",
+		gear_uc = "GEAR",
 		fuel = "น้ำมัน",
 		nitro = "ไนโตร",
 		battery = "แบตเตอรี",
@@ -6720,6 +6677,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		gun_store_with_shooting_range = "ร้านค้าอาวุธและสนามยิง",
 		green_wonderland = "กรีน วันเดอร์แลนด์",
 		copy_shop = "ร้านคัดลอก",
+		astrology_stand = "Astrology Stand",
 		irish_pub = "ผับไอริช",
 		bar = "บาร์",
 		midnight = "มิดไนท์ ทูเนอร์ช็อป",
@@ -7001,6 +6959,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		cleaning_kit_description = "เหมาะสำหรับทำความสะอาดยานพาหนะของคุณ หรือเลือดที่คุณไว้ให้แห้งเลนไว้ในท้ายรถของคุณ",
 		scratch_remover = "น้ำยาลบรอยขูด",
 		scratch_remover_description = "น้ำยาที่ใช้ลบรอยขูดและรอยถลอกจากรถยนต์",
+		motor_oil = "Motor Oil",
+		motor_oil_description = "ใช้เพื่อให้เครื่องยนต์ของคุณทำงานอย่างราบรื่น",
 
 		multi_tool = "เครื่องมือหลายประโยชน์",
 		multi_tool_description = "เครื่องมือที่ใช้สำหรับทุกสิ่งอย่าง",
@@ -7036,6 +6996,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		small_frog_description = "กบเล็กๆ เพียงตัวคุณมองดูมัน มันน่ารักมาก!",
 		seashell = "เปลือกหอย",
 		seashell_description = "เปลือกหอยจากชายหาด คุณสามารถได้ยินเสียงน้ำทะเลถ้าคุณวางไว้ที่หู",
+
+		keys = "กุญแจ",
+		keys_description = "คู่กุญแจที่ใช้เปิดประตูบางแห่ง",
 
 		raw_diamond = "เพชรดิบ",
 		raw_diamond_description = "เพชรในรูปแบบของมันเอง ถูกขุดออกจากเหมืองล่าสุด",
@@ -7150,6 +7113,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		gumball = "ลูกกลิ้ง",
 		gumball_description = "ลูกกลิ้ง, อยากบอกอะไรมากกว่านี้แค่ไหน",
+
+		chorus_fruit = "ลูกเพลง",
+		chorus_fruit_description = "ลูกไม้ที่สามารถพาคุณข้ามพื้นที่ไปยังสถานที่สุ่ม",
 
 		water = "น้ำ",
 		water_description = "อันตราย! Dihydrogen monoxide ไม่มีสีและไม่มีกลิ่น การหายใจบางครั้งใน DHMO อาจเป็นสาเหตุสำคัญของการตาย การสัมผัสต่อเนื่องกับรูปแบบของสารผสมก็สามารถทำให้เกิดความเสียหายบนเนื้อเยื่อได้ อาการของการแยกวิกฤตของ DHMO สามารถรวมถึงการเหงื่ออย่างมาก ขับสารของเหลวออกจากร่างกายเยอะเหมือนหน้าม้า ปวดท้อง คลื่นไส้อาเจียนและความไม่สมดุลของไฟฟ้าในร่างกาย",
@@ -7367,6 +7333,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		pet_mouse_description = "แชมเปี้ยนเล็กๆ ที่เดินทางไปกับคุณได้ทุกการผจญภัย เส้นขนนุ่มนิ่มและมีบุคลิกภาพตลกขบขัน จะเป็นเพื่อนร่วมผจญภัยของคุณและชวนคุณมาเล่นไปด้วยกันตลอดเวลา",
 		pet_raccoon = "Rascal แรคคูน",
 		pet_raccoon_description = "แนะนำ Rascal แรคคูนที่น่ารัก มีเสน่ห์ และพร้อมที่จะเก็บของร่วมผจญภัยกับคุณ เขามีร่างกายอวบนุ่มและบุคลิกที่ขี้หลงมาก พร้อมนั่งอยู่บนไหล่ของคุณและช่วยคุณเก็บเรื่องราว เตรียมพร้อมร่วมการผจญภัยไหม?",
+		pet_pingu = "ปิงกู",
+		pet_pingu_description = "เพนกวินเล็กน้อยน่ารักนี้เป็นเพื่อนที่สมบูรณ์แบบสำหรับการผจญภัยใด ๆ กับขนนุ่มและบุคลิกลางจนวางท่าอยู่บนไหล่ของคุณเมื่อคุณทำกิจวัตรประจำวันของคุณ",
+		pet_banana_cat = "แมวกล้วย",
+		pet_banana_cat_description = "เพื่อนแมวผลไม้ของคุณ! แมวกล้วยจะยืนอยู่บนหัวไหล่ของคุณ ให้ความสนุกสนานและมีเสน่ห์ในชีวิตของคุณ เป็นอุปกรณ์ที่ลงตัวสำหรับแต่งตัวในสไตล์อลังการ",
 
 		hotwheels_mcqueen = "ไฟแรง แมคควีน",
 		hotwheels_mcqueen_description = "ความเร็ว... ฉันเป็นความเร็ว การลอยเวียนเหมือนแคดิลแล็ค แสงเหมือนลิงค์ ศิลปะเฉียงเทียน KATCHOW KATCHOW KATCHOW",
@@ -7464,6 +7434,13 @@ OP.Global.Locales.Languages["th-TH"] = {
 		sniper_ammo_description = "ไม่ต้องสนใจแรงกดดันอัตโนมัติ!",
 		shotgun_ammo = "กระสุนช็อตกัน",
 		shotgun_ammo_description = "คนอื่นคิดว่ามันมีดินปืนอยู่ในนี้ แต่มันเต็มไปด้วยความรักและความสุข",
+
+		gunpowder = "ไฟปืน",
+		gunpowder_description = "ผงที่ใช้ในการทำกระสุน",
+		projectile = "กระสุน",
+		projectile_description = "กระสุนที่ใช้ในการทำกระสุน",
+		casing = "ฝาด",
+		casing_description = "ฝาดที่ใช้ในการทำกระสุน",
 
 		silver_watches = "นาฬิกาเงิน",
 		silver_watches_description = "ระวังด้วยนะ!",
@@ -7693,6 +7670,13 @@ OP.Global.Locales.Languages["th-TH"] = {
 		tv_stand_description = "ใช้วางทีวีได้ทุกที่ตามที่คุณต้องการ",
 		tv_remote = "รีโมททีวี",
 		tv_remote_description = "รีโมทสำหรับใช้กับทีวี (ไม่รวมแบตเตอรี่ควอนตัม)",
+
+		magic_ball = "ลูกบอลวิเศษ 8 ด้าน",
+		magic_ball_description = "ถามคำถามเข้าไปในลูกบอล แล้วสั่งเขย่า พอเอามือมาทางด้านล่าง คำตอบจะปรากฏอยู่ในหน้าต่าง! ง่ายมากเลย คุณไม่เชื่อแน่!",
+		fortune_cookie = "ขนมเค้กคำทำนาย",
+		fortune_cookie_description = "คุกกี้อร่อยที่มีคำทำนายภายใน แตกเป็นสองแฉกเพื่อดูสิ่งที่อนาคตเก็บไว้!",
+		fortune_paper = "กระดาษคำทำนาย",
+		fortune_paper_description = "แผ่นกระดาษเล็กๆ มีคำทำนายเขียนอยู่บนนั้น",
 
 		firework_rocket = "ดอกไม้ไฟ",
 		firework_rocket_description = "ดอกไม้ไฟธรรมดา น่าใช้ในงานฉลองวันอินดี้",
@@ -8328,7 +8312,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		invisibility_on = "เปิดโหมดล่องหน",
 		invisibility_off = "ปิดโหมดล่องหน",
 
-		invalid_server_id = "รหัสเซิร์ฟเวอร์ไม่ถูกต้อง",
+		invalid_server_id = "ID เซิร์ฟเวอร์ไม่ถูกต้อง",
 
 		toggled_invisibility = "เปิดโหมดล่องหนของ ${displayName} สำเร็จ",
 		failed_invisibility = "ไม่สามารถเปิดโหมดล่องหนของ ${displayName} ได้",
@@ -8337,6 +8321,18 @@ OP.Global.Locales.Languages["th-TH"] = {
 		invisibility_on_logs_details = "${consoleName} เปิดโหมดล่องหนของตัวเอง",
 		invisibility_off_logs_details = "${consoleName} ปิดโหมดล่องหนของตัวเอง",
 		invisibility_other_logs_details = "${consoleName} เปลี่ยนโหมดล่องหนของ ${targetConsoleName}"
+	},
+
+	isolation = {
+		failed_isolate = "ไม่สามารถแยกผู้เล่นได้",
+		invalid_server_id = "ID เซิร์ฟเวอร์ไม่ถูกต้อง",
+		isolate_success_on = "แยก ${consoleName} เรียบร้อยแล้ว",
+		isolate_success_off = "หยุดแยก ${consoleName} เรียบร้อยแล้ว",
+
+		isolated_logs_title = "การแยกผู้เล่น",
+		isolated_off_logs_details = "${consoleName} เปิดการแยก ${targetName}.",
+		isolated_on_logs_details = "${consoleName} ปิดการแยก ${targetName}.",
+		isolated = "คุณอยู่ในสถานะแยกออก"
 	},
 
 	items = {
@@ -8675,7 +8671,19 @@ OP.Global.Locales.Languages["th-TH"] = {
 		legendary_tier = "ระดับตำนาน",
 		godlike_tier = "ระดับเจ้าเทพ",
 
-		buddy_passed_through = "${playerName} ใช้ Buddy Pass เพื่อผ่านคุณ!"
+		buddy_passed_through = "${playerName} ใช้ Buddy Pass เพื่อผ่านคุณ!",
+
+		queuer_not_found = "ไม่พบคิวเพื่อเข้าเกม",
+		queuer_skipped_queue = "คนเข้าเกมข้ามคิว",
+
+		slots_set_to = "ทำการตั้งค่าแหล่งที่มาของแมพเป็น `${slots}` แล้ว",
+		slots_already_set_to = "แหล่งที่มาของแมพถูกตั้งค่าเป็น `${slots}` อยู่แล้ว",
+
+		death = "ตาย",
+		normal = "ปกติ",
+		one_life = "ชีวิตหนึ่งครั้ง",
+		one_life_information = "เลือกตัวเลือกนี้จะทำให้ตัวละครของคุณมีชีวิตเพียงชีวิตเดียวเท่านั้น หากคุณตายโดยไม่ได้รับการนำสู่โรงพยาบาล คุณจะสูญเสียตัวละครนั้น",
+		one_life_are_you_sure = "คุณแน่ใจว่าต้องการนี้หรือไม่?"
 	},
 
 	logs = {
@@ -8804,18 +8812,27 @@ OP.Global.Locales.Languages["th-TH"] = {
 		brush = "[${InteractionKey}] แปรงขน",
 		catnip = "[${InteractionKey}] ให้ยาน้ำแมว",
 		treat = "[${InteractionKey}] ให้ขนม",
-		cuddle = "[${InteractionKey}] กอด",
-		hug = "[${InteractionKey}] รักมาก",
+		check_up = "[${InteractionKey}] ตรวจสุขภาพ",
+		chill = "[${InteractionKey}] พักผ่อน",
+		meditate = "[${InteractionKey}] ปฏิบัติสมาธิ",
+		salute = "[${InteractionKey}] ยกมือทักทาย",
+		stretch = "[${InteractionKey}] ยืดกล้ามเนื้อ",
+		think = "[${InteractionKey}] คิด",
 
 		feed_active = "กำลังให้อาหารเมกซ์เวลล์",
 		pet_active = "กำลังเลี้ยงเมกซ์เวลล์",
 		brush_active = "การแปรงขน Maxwell",
 		catnip_active = "การให้ Maxwell แคตนิป",
 		treat_active = "การให้ขนมของ Maxwell",
-		cuddle_active = "การมองดูและกอด Maxwell",
-		hug_active = "การกอด Maxwell",
+		check_up_active = "ตรวจสอบความสบายของ Maxwell",
+		chill_active = "พักผ่อนกับ Maxwell",
+		meditate_active = "ฝึกสมาธิกับ Maxwell",
+		salute_active = "ทักทาย Maxwell",
+		stretch_active = "ยืดกล้ามเนื้อกับ Maxwell",
+		think_active = "คิดถึง Maxwell",
 
-		maxwell_appeared = "Maxwell ปรากฏตัวใกล้คุณ"
+		maxwell_appeared = "Maxwell ปรากฏตัวใกล้คุณ",
+		maxwell_shot = "ยิง Maxwell"
 	},
 
 	meth = {
@@ -9284,8 +9301,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		freecam_detections_name = "ชื่อผู้เล่น",
 		freecam_detections_distance = "ระยะทางสูงสุด",
-
-		hotwire_driving_detections_name = "ชื่อผู้เล่น",
 
 		model = "โมเดล",
 		label = "ป้ายชื่อ",
@@ -10007,7 +10022,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		description_message_chat_title = "/ลักษณะ [${serverId}]",
 		message_too_long = "ข้อความมีจำนวนตัวอักษรหรือบรรทัดมากเกินไป!",
 		card_command_wait = "คุณได้รับการสุ่มไพ่ไปแล้ว โปรดรอสักครู่ก่อนสุ่มอีกครั้ง",
-		ped_message_timeout = "โปรดรอสักครู่ก่อนส่งข้อความอีกครั้ง"
+		ped_message_duplicate = "คุณส่งข้อความนี้ไปเมื่อสักครู่, รอสักพักก่อนที่จะส่งอีกครั้ง"
 	},
 
 	ped_objects = {
@@ -10063,7 +10078,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 	peds = {
 		ped_robbing_injection = "การปล้นแอบอาชีพเกินไป! (โดยเปิดตัวเต็มเพื่อป้องกันการห้ามใช้งานจากเซิร์ฟเวอร์ โปรดใช้โปรแกรมปกติเท่านั้น)",
 		robbed_ped_logs_title = "ผู้ปล้นตัวละคร",
-		robbed_ped_logs_details = "${consoleName} ปล้นตัวละครและได้รับเงิน $${payout} "
+		robbed_ped_logs_details = "${consoleName} ปล้นตัวละครและได้รับเงิน $${payout} ",
+
+		nancy = "~b~ดร. แนนซี่"
 	},
 
 	pepper_spray = {
@@ -10200,7 +10217,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		prop_deleted = "ลบสิ่งของที่มีรหัส ${propId} เรียบร้อยแล้ว.",
 
 		invalid_wipe_radius = "รัศมีการลบไม่ถูกต้อง (ตั้งแต่ 1 ถึง 100).",
-		wipe_successful = "ล้างสิ่งของเรียบร้อยแล้ว.",
+		wipe_successful = "ล้างสำเร็จ ${amount} อุปกรณ์(s).",
+		wipe_failed = "ล้มเหลวในการล้างออก",
 
 		placing_prop = "วางวัตถุ",
 		pickup_prop = "เก็บวัตถุ",
@@ -10577,6 +10595,20 @@ OP.Global.Locales.Languages["th-TH"] = {
 		skylift_attached_vehicle_logs_details = "${consoleName} เหนี่ยวยานพาหนะไปยัง Skylift ของตนเอง."
 	},
 
+	smell = {
+		smelling = "กลิ่น",
+
+		smell_1 = "อ่อน",
+		smell_2 = "ปานกลาง",
+		smell_3 = "รุนแรง",
+		smell_4 = "หนักจนเกินไป",
+
+		smell_weed = "คุณสามารถได้กลิ่นของกัญชา กลิ่นมีความรุนแรง ${intensity}",
+		smell_alcohol = "คุณสามารถได้กลิ่นของแอลกอฮอล์ กลิ่นมีความรุนแรง ${intensity}",
+
+		smell_nothing = "ไม่มีกลิ่นประหลาดประหลาดอะไร"
+	},
+
 	smoothies = {
 		blend = "ผสม",
 		close = "ปิด",
@@ -10609,10 +10641,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		mission_row_police_station = "สถานีตำรวจเขตมิชชันโรว์",
 		sandy_police_station = "สถานีตำรวจแห่งซานดี้ชอร์ส",
 		paleto_police_station = "สถานีตำรวจเขตเพลโทบิว(Paleto Bay PD)",
+		cayo_police_station = "สถานีตำรวจ Cayo Perico",
 
 		mount_zonah = "โรงพยาบาลเฟซฯ Mount Zonah",
 		sandy_hospital = "โรงพยาบาลเซนดี้ชอร์ส(Sandy Shores Hospital)",
 		paleto_hospital = "โรงพยาบาลเพลโทบิว(Paleto Bay Hospital)",
+		cayo_station = "สถานีการแพทย์ Cayo Perico",
 
 		battle_royale = "Battle Royale"
 	},
@@ -10804,6 +10838,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		folder_games = "เกม",
 		folder_productivity = "ผลิตภัณฑ์",
 
+		high_scores = "คะแนนสูง",
+
 		snake_title = "เกมงู",
 		snake_description = "ใช้ปุ่มลูกศรเพื่อเคลื่อนที่ขึ้น,ลง,ซ้าย,ขวา",
 		snake_start_game = "เริ่มเกม",
@@ -10835,13 +10871,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		chess_difficulty = "ความยาก:",
 		chess_difficulty_level = "ระดับ ${level}",
 		chess_start = "เริ่มเกม",
-
-		minesweeper_title = "เกมต่อยตุง",
-		minesweeper_win = "คุณชนะ",
-		minesweeper_loose = "คุณแพ้",
-		minesweeper_difficulty = "ความยาก:",
-		minesweeper_start = "เริ่มเกม",
-		minesweeper_flags_used = "${used}/${total} ติดธง",
 
 		flappy_bird_title = "นก Flappy",
 		flappy_bird_score = "คะแนนสูงสุด:",
@@ -11253,7 +11282,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		intent_speech = "เปลี่ยนโหมดเสียงรับเสียงกลับไปเป็น 'สนทนา'",
 		music_mode = "โหมดเพลง",
 
-		invalid_server_id = "รหัสเซิร์ฟเวอร์ไม่ถูกต้อง",
+		invalid_server_id = "ID เซิร์ฟเวอร์ไม่ถูกต้อง",
 		failed_toggle_listen = "ไม่สามารถเปลี่ยนสถานะการฟังได้",
 		listeners = "ผู้ฟัง:",
 		listening_to = "กำลังฟัง:",
@@ -11314,9 +11343,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		invalid_radius = "รัศมีไม่ถูกต้อง",
 		invalid_server_id = "ID เซิร์ฟเวอร์ไม่ถูกต้อง",
 
-		ragdoll_failed = "ไม่สามารถทำให้ผู้เล่นเป็นกองทัพได้",
-		ragdoll_success = "ทำให้ ${consoleName} ล้มลงได้สำเร็จแล้ว",
-
 		punch_success = "ทำให้ ${consoleName} ต่อยได้สำเร็จแล้ว",
 		punch_failed = "ไม่สามารถทำให้ผู้เล่นต่อยได้",
 
@@ -11325,12 +11351,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		ignite_success = "ทำให้ ${consoleName} ไฟไหม้ได้สำเร็จแล้ว",
 		ignite_failed = "ไม่สามารถทำให้ผู้เล่นไฟไหม้ได้",
-
-		punch_radius_failed = "ไม่สามารถทำให้ผู้เล่นในรัศมีต่อยได้",
-		punch_radius_success = "ทำให้ผู้เล่นในรัศมี ${radius} มีการต่อยได้สำเร็จแล้ว",
-
-		ragdoll_radius_success = "ทำให้ผู้เล่นที่อยู่ในรัศมี ${radius} เหยียดหกเรียบร้อยแล้ว",
-		ragdoll_radius_failed = "ไม่สามารถทำให้ผู้เล่นที่อยู่ในรัศมีนี้เหยียดหกได้",
 
 		flashbang_success = "โยนแฟลชแบงค์ลงตัวผู้เล่น ${consoleName} สำเร็จ",
 		flashbang_failed = "ไม่สามารถโยนแฟลชแบงค์ต่อผู้เล่นได้",
@@ -11377,6 +11397,17 @@ OP.Global.Locales.Languages["th-TH"] = {
 		invalid_camera_shake = "เสียงสั่นของกล้อง `${cameraShake}` ไม่ถูกต้อง",
 		invalid_damage_scale = "ขนาดความเสียหาย `${damageScale}` ไม่ถูกต้อง",
 		created_explosion = "สร้างการปะทุด้วยประเภท `${explosionTypeName}` ด้วยขนาดความเสียหาย `${damageScale}` และเสียงสั่นของกล้อง `${cameraShake}` เรียบร้อยแล้ว"
+	},
+
+	exports = {
+		player_killed = "ผู้เล่นถูกฆ่า",
+		player_killed_details = "${consoleName} ถูกฆ่าโดย ${killerConsoleName} สาเหตุการตาย: `${deathCause}`.",
+
+		killed_player = "ฆ่าผู้เล่น",
+		killed_player_details = "${killerConsoleName} ฆ่า ${consoleName} สาเหตุการตาย: `${deathCause}`. (ข้อมูลนี้มาจากเครื่องลูกของผู้ถูกฆ่า ซึ่งอาจถูกปลอมได้ ระวัง)",
+
+		player_died = "ผู้เล่นตาย",
+		player_died_details = "${consoleName} ตาย สาเหตุการตาย: `${deathCause}`."
 	},
 
 	functions = {
@@ -11858,7 +11889,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		unable_to_hotwire_vehicle = "ไม่สามารถแฮกไฟรถได้",
 		picked_up_keys = "รับกุญแจสำหรับ `${plate}` แล้ว",
 		invalid_server_id = "รหัสเซิร์ฟเวอร์ไม่ถูกต้อง",
-		hotwired_vehicle_for_player = "ทำให้ ${displayName} เรียกใช้รถยนต์โดยไม่ได้รับอนุญาต"
+		hotwired_vehicle_for_player = "ทำให้ ${displayName} เรียกใช้รถยนต์โดยไม่ได้รับอนุญาต",
+		gave_keys_success = "ส่งกุญแจของรถของ ${displayName} สำเร็จ.",
+		gave_keys_failure = "Izolare jucător"
 	},
 
 	modifications = {
@@ -11869,6 +11902,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		wheels_none_valid_specified = "ไม่ได้ระบุล้อที่ถูกต้อง",
 		not_in_a_car = "คุณไม่ได้อยู่ในรถ",
 		invalid_value = "ค่าไม่ถูกต้อง"
+	},
+
+	oil = {
+		move_to_change = "${consoleName} a dezactivat izolarea pentru ${targetName}.",
+		changing_oil = "${consoleName} a activat izolarea pentru ${targetName}."
 	},
 
 	plates = {
@@ -12044,6 +12082,21 @@ OP.Global.Locales.Languages["th-TH"] = {
 		fill_ammo_failed = "ไม่สามารถเติมกระสุนได้"
 	},
 
+	throwables = {
+		pick_up_weapon = "Ești izolat.",
+
+		no_weapon_equipped = "Jucătorul în așteptare nu a fost găsit.",
+		cant_throw_weapon = "Jucătorul în așteptare a trecut peste coadă.",
+		keybind_description = "Numărul de sloturi server a fost setat la `${slots}`.",
+
+		total_throwables = "Numărul de sloturi server este deja setat la `${slots}`.",
+
+		threw_weapon_logs_title = "Deces",
+		threw_weapon_logs_details = "Normal",
+		picked_up_weapon_logs_title = "หยิบอาวุธขึ้นมา",
+		picked_up_weapon_logs_details = "${consoleName} หยิบ ${item} (${coords})."
+	},
+
 	weapons = {
 		pick_up_fire_extinguisher = "กด ~INPUT_CONTEXT~ เพื่อหยิบถังดับเพลิง",
 		press_to_drop_fire_extinguisher = "กด ~INPUT_FRONTEND_RRIGHT~ เพื่อวางถังดับเพลิง",
@@ -12054,10 +12107,16 @@ OP.Global.Locales.Languages["th-TH"] = {
 		airsoft_mode_failed = "ไม่สามารถเปลี่ยนโหมดแอร์ซอฟได้",
 
 		no_weapon_equipped = "ไม่มีอาวุธ",
-		no_ammo = "ไม่มีกระสุนสำหรับอาวุธนี้",
-		infinite_ammo = "คุณมีกระสุนไม่จำกัดสำหรับอาวุธนี้",
-		ammo_count = "คุณมี ${clips} ชุดกระสุน (${total} นัดทั้งหมด)",
-		ammo_count_loose = "คุณมี ${clips} ชุดกระสุนเต็ม และ 1 ชุดกระสุนมี ${loose} นัด (${total} นัดทั้งหมด)",
+		ammo_count_title = "จำนวนกระสุน",
+		no_ammo = "คุณไม่มีกระสุนใดๆ",
+		ammo_count = "**${ammoType}:** *x${ammoCount}*",
+
+		ammo_pistol = "ปืนพิสตอล",
+		ammo_shotgun = "ปืนลูกซอง",
+		ammo_smg = "ปืนเล็กผสม",
+		ammo_rifle = "ไรเฟิล",
+		ammo_sniper = "สไนเปอร์",
+		ammo_stungun = "ปืนดับเพลิง",
 
 		firing_mode_0 = "ตั้งค่าโหมดการยิงกลับเป็นค่าเริ่มต้น",
 		firing_mode_1 = "ตั้งโหมดการยิงเป็น Semi-Automatic",
@@ -12153,7 +12212,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		bleeding_with_injury = "เลือดไหลพร้อมบาดเจ็บที่ ${label}",
 		bleeding_reduced = "การไหลเลือดลดลง",
 		bleeding_self_stopped = "เลือดหยุดไหลเอง",
-		thanks_for_loot = "คุณถูกขโมยขณะที่อยู่ในสภาพปากกาแล้ว บางไอเท็มอาจหายไป",
+		thanks_for_loot = "คุณได้ถูกปล้นในขณะเสียสติ บางรายการอาจหายไป มีข่าวว่าเป็น Nancy.",
 		serial_number = "หมายเลขอุปกรณ์: ${serialNumber}<br>อาวุธนี้ลงทะเบียนไว้กับ ${fullName} (#${characterId})",
 		serial_number_unknown = "หมายเลขอุปกรณ์: ไม่ทราบ",
 		badge_owner = "<i>บัตรนี้เป็นของ <b>${fullName} (${positionName})</b> ค่ะ</i>",
