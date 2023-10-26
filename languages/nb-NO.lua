@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 21 (do not change)
+-- AUTO LOCALES: 22 (do not change)
 
 OP.Global.Locales.Languages["nb-NO"] = {
 	-- configuration settings for language
@@ -22,7 +22,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		something_went_wrong = "Noe gikk galt. Vennligst prøv igjen.",
 		yes = "Ja",
 		no = "Nei",
-		n_a = "Ikke tilgjengelig"
+		n_a = "Ikke tilgjengelig",
+		invalid_server_id = "Ugyldig server-ID."
 	},
 
 	-- animations/*
@@ -75,7 +76,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		struggle_logs_title = "Kjempet Mot og Kom Fri",
 		struggle_logs_details = "${consoleName} kjempet seg fri fra ${targetName} mens de ble båret.",
 
-		invalid_server_id = "Ugyldig server ID.",
 		ragdolled_player = "Fikk ${displayName} til å falle."
 	},
 
@@ -214,6 +214,12 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		staff_pm_unable_to_message_self = "Du kan ikke sende meldinger til deg selv.",
 		staff_pm_warning = "Advarsel om ansattprivatmelding",
 		staff_pm_first_time = "Vi ser at du aldri har brukt ansattprivatmelding før. For å svare på en ansattmelding, bruk /staffpm-kommandoen.",
+
+		important_staff_pm_title = "!STAFF PM Du -> ${recipient}",
+		close_staffpm = "Lukk",
+		staffpm_from = "StaffPM fra <i>${fra}</i>",
+		important_staff_pm_logs_title = "Viktig Staff PM",
+		important_staff_pm_logs_details = "${senderConsoleName} sendte følgende viktige melding til ${recipientConsoleName}: `${message}`",
 
 		external_staff_message = "Ekstern ansattmelding",
 		external_staff_message_from_player = "Ekstern ansattmelding fra ${playerName}",
@@ -611,7 +617,34 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		job_search_results = "Satt ${consoleName}s jobb til \"${jobName}, ${departmentName}, ${positionName}\" (Score: ${score}).",
 
 		job_reset_success = "Jobben til ${consoleName} ble tilbakestilt.",
-		failed_job_reset = "Klarte ikke å tilbakestille jobben."
+		failed_job_reset = "Klarte ikke å tilbakestille jobben.",
+
+		create_vehicle_logs_title = "Opprettet kjøretøy",
+		create_vehicle_logs_details = "${consoleName} opprettet et kjøretøy med modellnavn `${modelName}`.",
+
+		replace_vehicle_logs_title = "Byttet kjøretøy",
+		replace_vehicle_logs_details = "${consoleName} byttet sitt `${oldModelName}` med `${modelName}`.",
+
+		set_durability_logs_title = "Sett gjenstandsholdbarhet",
+		set_durability_logs_details = "${consoleName} satte holdbarheten for gjenstanden i spor ${slot} til ${durability}.",
+
+		set_metadata_logs_title = "Sett gjenstandsmetadata",
+		set_metadata_logs_details = "${consoleName} satte metadataene til gjenstanden i spor ${slot} til `${metadata}`.",
+
+		registered_weapon_logs_title = "Registrerte våpen",
+		registered_weapon_logs_details = "${consoleName} registrerte et våpen med serienummer `${serialNumber}` til karakteren med karakter-id `${characterId}`.",
+
+		wipe_first_owned_logs_title = "Slettet først eid",
+		wipe_first_owned_logs_details = "${consoleName} slettet ${amount} enheter eid av spilleren med server-id `${serverId}` i en radius på ${range}m.",
+
+		unscoop_logs_title = "Urettet spillere",
+		unscoop_logs_details = "${consoleName} fjernet ${amount} spillere ved `${coords}`.",
+
+		set_job_logs_title = "Sett jobb",
+		set_job_logs_details = "${consoleName} satte ${targetConsoleName} (#${characterId}) jobben til `${jobName}, ${departmentName}, ${positionName}` (Poeng: ${score}, Søk: `${search}`).",
+
+		reset_job_logs_title = "Nullstill Jobb",
+		reset_job_logs_details = "${consoleName} nullstilte ${targetConsoleName} (#${characterId}) jobben."
 	},
 
 	anti_cheat = {
@@ -891,6 +924,14 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		staff_pm_command_parameter_message = "melding",
 		staff_pm_command_parameter_message_help = "Meldingen du vil sende.",
 		staff_pm_command_substitutes = "ansattmelding",
+
+		important_staff_pm_command = "viktig_personale_pm",
+		important_staff_pm_command_help = "Send en viktig melding til en spiller som personale.",
+		important_staff_pm_command_parameter_server_id = "server ID",
+		important_staff_pm_command_parameter_server_id_help = "Spillerens server-ID du prøver å sende melding til.",
+		important_staff_pm_command_parameter_message = "melding",
+		important_staff_pm_command_parameter_message_help = "Den viktige meldingen du ønsker å sende.",
+		important_staff_pm_command_substitutes = "!staffpm, !staff_pm",
 
 		staff_command = "ansatte",
 		staff_command_help = "Send en melding til alle aktive ansatte.",
@@ -1519,15 +1560,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		airsupport_command_help = "Kaller inn luftstøtte.",
 		airsupport_command_substitutes = "",
 
-		-- game/alerts
-		show_alert_command = "vis_varsel",
-		show_alert_command_help = "Viser et varsel for en spesifikk spiller (eller alle).",
-		show_alert_command_parameter_server_id = "server-ID",
-		show_alert_command_parameter_server_id_help = "Spillerens server-ID som du ønsker å vise varselet til.",
-		show_alert_command_parameter_content = "innhold",
-		show_alert_command_parameter_content_help = "Innholdet i varselet.",
-		show_alert_command_substitutes = "varsling",
-
 		-- game/archives
 		create_archive_command = "opprett_arkiv",
 		create_archive_command_help = "Oppretter en ny sak i arkivet du står nærmest.",
@@ -1543,8 +1575,12 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		-- game/arena
 		respawn_command = "gjenoppliv",
-		respawn_command_help = "Drapsmetode (for arena)",
+		respawn_command_help = "Drep deg selv. (i spillet) (for arena)",
 		respawn_command_substitutes = "selvmord",
+
+		arena_menu_command = "arena_meny",
+		arena_menu_command_help = "Slå på eller av aktivering av Arena-menyen.",
+		arena_menu_command_substitutes = "arena",
 
 		-- game/audio
 		audio_debug_command = "lyd_feilsøk",
@@ -1651,6 +1687,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		cache_assets_command_parameter_slow_download = "treg nedlasting",
 		cache_assets_command_parameter_slow_download_help = "Vil du laste ned ressursene sakte? Dette vil ta mye lengre tid, men vil også redusere sjansen for krasj.",
 		cache_assets_command_substitutes = "last_ned_cache, forhåndslast_cache, last_cache",
+
+		cache_join_toggle_command = "aktiv_forspørsel_om_bli_med_oppramsing",
+		cache_join_toggle_command_help = "Slå av/på automatisk oppramsing av noen ressurser hver gang du blir med på serveren.",
+		cache_join_toggle_command_substitutes = "",
 
 		-- game/camera
 		stable_cam_command = "stabil_kam",
@@ -2272,18 +2312,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		range_revive_command_parameter_distance_help = "Avstanden du vil gjenopplive spillere på (mellom 1 og 200).",
 		range_revive_command_substitutes = "gjenoppliv_avstand",
 
-		recent_deaths_command = "nylige_dødsfall",
-		recent_deaths_command_help = "Få de nyeste dødsfallene.",
-		recent_deaths_command_parameter_amount = "antall",
-		recent_deaths_command_parameter_amount_help = "Antall dødsfall du ønsker å motta. Gyldige verdier er mellom `1` og `100`. Hvis du ikke angir et tall, vil systemet velge `20` automatisk.",
-		recent_deaths_command_substitutes = "sjekk_døde",
-
-		player_death_command = "spiller_død",
-		player_death_command_help = "Få informasjon om en spillers nylige dødsfall.",
-		player_death_command_parameter_server_id = "server id",
-		player_death_command_parameter_server_id_help = "Spillerens server-ID. Hvis du ikke fyller inn noe her, vil den automatisk velge din egen ID.",
-		player_death_command_substitutes = "sjekk_død",
-
 		death_timer_command = "dødstimer",
 		death_timer_command_help = "Overstyr tiden for tiden det tar å respawnere etter døden.",
 		death_timer_command_parameter_time = "tid",
@@ -2517,6 +2545,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		meow_command = "mjau",
 		meow_command_help = "Mjau.",
 		meow_command_substitutes = "",
+
+		maxwell_debug_command = "maxwell_feilsøking",
+		maxwell_debug_command_help = "Feilsøk Maxwells plassering.",
+		maxwell_debug_command_substitutes = "",
 
 		-- game/mining
 		mining_debug_command = "mining_debug",
@@ -2865,6 +2897,12 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		properties_debug_command_help = "Slå på/av feilsøking for eiendommer.",
 		properties_debug_command_substitutes = "egenskaper",
 
+		property_locate_command = "eiendom_lokalisere",
+		property_locate_command_help = "Finn en eiendom.",
+		property_locate_command_parameter_address = "adresse",
+		property_locate_command_parameter_address_help = "Adressen til eiendommen du ønsker å finne.",
+		property_locate_command_substitutes = "lokalisere",
+
 		-- game/prop_hide
 		prop_hide_command = "skjul_egen_gjenstand",
 		prop_hide_command_help = "Skjul eller vis egen gjenstand.",
@@ -2975,6 +3013,17 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		rooms_debug_command = "rom_debug",
 		rooms_debug_command_help = "Feilsøker alle rom.",
 		rooms_debug_command_substitutes = "",
+
+		-- game/rules
+		explain_rule_command = "forklar_regel",
+		explain_rule_command_help = "Vis forklaringen på en bestemt regel.",
+		explain_rule_command_parameter_number = "nummer",
+		explain_rule_command_parameter_number_help = "Nummeret til regelen (eksempel: 1.1)",
+		explain_rule_command_substitutes = "regel",
+
+		rules_command = "regler",
+		rules_command_help = "Åpner fellesskapets regler i nettleseren din.",
+		rules_command_substitutes = "",
 
 		-- game/scoreboard
 		metagame_command = "metaspill",
@@ -3162,17 +3211,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		trackers_split_command_help = "Skifter mellom å ha sporinger sortert i kategorier på kartet og å ha dem delt.",
 		trackers_split_command_substitutes = "",
 
-		-- game/trains
-		trains_debug_command = "toggele_tog_debug",
-		trains_debug_command_help = "Slå togfeilsøking av og på.",
-		trains_debug_command_substitutes = "",
-
-		spawn_train_command = "spawn_tog",
-		spawn_train_command_help = "Spawner et tog.",
-		spawn_train_command_parameter_track_id = "spor id",
-		spawn_train_command_parameter_track_id_help = "Spor som du vil at toget skal spawne på. (1 til 12)",
-		spawn_train_command_substitutes = "",
-
 		-- game/treasure_maps
 		spawn_map_piece_command = "spawn_kart_del",
 		spawn_map_piece_command_help = "Spawner en skattekart-del.",
@@ -3201,7 +3239,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		vdm_command_parameter_target = "mål",
 		vdm_command_parameter_target_help = "Målets spillerserver-ID.",
 		vdm_command_parameter_network_id = "nettverks-ID",
-		vdm_command_parameter_network_id_help = "Lokal nettverks-ID (eller kjøretøyet).",
+		vdm_command_parameter_network_id_help = "Nettverks-IDen til kjøretøyet som forårsaker VDM (hvis tom, velger nærmeste kjøretøy til deg).",
 		vdm_command_substitutes = "",
 
 		vdm_clear_command = "vdm_clear",
@@ -3332,15 +3370,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		draw_entity_states_command_help = "Viser alle entiteter med 1 eller flere tilstander.",
 		draw_entity_states_command_substitutes = "",
 
-		-- illegal/corner
-		corner_command = "gate",
-		corner_command_help = "Selg narkotika til en person i nærheten. Typen narkotika du selger avhenger av hvor du er.",
-		corner_command_substitutes = "",
-
-		corner_debug_command = "gate_debug",
-		corner_debug_command_help = "Vis alle salgsområdene.",
-		corner_debug_command_substitutes = "",
-
 		-- illegal/drugs
 		drugs_debug_command = "narkotika_debug",
 		drugs_debug_command_help = "Feilsøker alle steder hvor narkotika blir solgt.",
@@ -3458,6 +3487,12 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		toggle_garage_debug_command = "toggle_garage_debug",
 		toggle_garage_debug_command_help = "Aktiverer/deaktiverer garasjen for debugging.",
 		toggle_garage_debug_command_substitutes = "garasjedebugg",
+
+		garage_vehicle_command = "garasje_kjøretøy",
+		garage_vehicle_command_help = "Slett et kjøretøy og send det til garasjen.",
+		garage_vehicle_command_parameter_network_id = "nettverks-id",
+		garage_vehicle_command_parameter_network_id_help = "Nettverks-id-en til kjøretøyet du ønsker å sende til garasjen. Hvis den er tom, vil det nærmeste kjøretøyet bli valgt.",
+		garage_vehicle_command_substitutes = "garasje",
 
 		-- vehicles/keys
 		give_key_command = "gi_nøkkel",
@@ -3763,6 +3798,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		internal_server_error = "Intern serverfeil."
 	},
 
+	session = {
+		connecting_from_new_session = "Du kobler til fra en ny økt."
+	},
+
 	twitch = {
 		streaming_state_already_set_to_target = "Brukerens strømningsstatus er allerede satt til måltilstanden som ble oppgitt.",
 		streaming_state_changed = "Brukerens strømmetilstand har blitt endret til måltilstanden som er angitt."
@@ -3844,7 +3883,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		godlike_tier = "Guddommelig Tier",
 
 		dropped_timed_out_player_logs_title = "Kastet ut spiller som har tidsavbrudd",
-		dropped_timed_out_player_logs_details = "${consoleName} ble manuelt kastet ut fordi de ikke hadde sendt forespørsel til rammeverket på lang tid."
+		dropped_timed_out_player_logs_details = "${consoleName} ble manuelt kastet ut fordi de ikke hadde sendt forespørsel til rammeverket på lang tid.",
+
+		critical_error_while_loading_data = "Det oppstod en alvorlig feil under lasting av dataene dine."
 	},
 
 	whitelist = {
@@ -3923,19 +3964,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		drunk_state_4 = "Du er farlig full."
 	},
 
-	alerts = {
-		close = "Lukk",
-
-		alert_title = "Varsel",
-
-		invalid_server_id = "Ugyldig server-ID.",
-		missing_content = "Manglende innhold.",
-
-		show_alert_success = "Varselen ble vist til spilleren.",
-		show_alert_everyone_success = "Varselen ble vist til alle.",
-		show_alert_failed = "Klarte ikke å vise varsel til spilleren."
-	},
-
 	arcade = {
 		use_arcade_machine = "Trykk på ~INPUT_CONTEXT~ for å bruke arkadespillet. Prisen er $${cost}.",
 		finished_arcade_logs_title = "Fullført arkadespill",
@@ -4009,6 +4037,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		lottery = "Lotto",
 		jackpot = "Jackpot",
 		daily_tasks = "Daglige Oppgaver",
+		screenshots = "Skjermbilder",
 		categories = "Kategorier",
 		refresh = "Oppdater",
 		refreshing = "Oppdaterer...",
@@ -4040,7 +4069,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		money_lost = "Penger tapt",
 		net = "Nettverk",
 		net_ratio = "Nettverksforhold",
-		items_gambled = "Gamblede varer"
+		items_gambled = "Gamblede varer",
+		screenshots_taken = "Skjermbilder Tatt"
 	},
 
 	atms = {
@@ -4414,10 +4444,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		ems_garage = "Ambulansegarasje"
 	},
 
-	blockage = {
-		restricted_area = "Dette er et begrenset område. Vennligst returner!"
-	},
-
 	bombs = {
 		not_in_plane = "Du er ikke i et fly.",
 		not_in_plane_anymore = "Du er ikke lenger i et fly.",
@@ -4607,7 +4633,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	cache = {
 		download_progress = "Nedlastningsprogresjon:\n- Kjøretøy: ${vehiclesDone}/${vehiclesTotal}\n- Objekter: ${objectsDone}/${objectsTotal}\n- Personer: ${pedsDone}/${pedsTotal}\n- Klær: ${clothingRequested}/${clothingTotal}",
 		slow_download_enabled = "Treg nedlasting er aktivert.",
-		slow_download_disabled = "Treg nedlasting er deaktivert."
+		slow_download_disabled = "Treg nedlasting er deaktivert.",
+
+		join_cache_disabled = "Join-cache deaktivert.",
+		join_cache_enable = "Join-cache aktivert."
 	},
 
 	capri_sun = {
@@ -4772,7 +4801,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		failed_delete_outfit_doesnt_exists = "Kunne ikke slette antrekk, `${name}` eksisterer ikke.",
 		failed_delete_outfit = "Kunne ikke slette antrekk.",
 
-		invalid_server_id = "Ugyldig eller manglende server-id.",
 		player_model_missmatch = "Du kan ikke dele antrekket ditt med denne spilleren.",
 		player_too_far = "Spilleren er for langt unna.",
 		shared_outfit_too_far = "${displayName} delte et antrekk med deg, men du er ikke i nærheten av et klesstativ.",
@@ -4826,6 +4854,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		secondary_color = "Sekundær farge",
 		opacity = "Gjennomsiktighet",
 
+		limited_customization = "Denne karakteren har begrensede tilpasningsmuligheter.",
+
 		press_to_access = "Trykk ~INPUT_CONTEXT~ for å få tilgang til klesbutikken.",
 		press_no_freemode = "Denne figuren kan ikke få tilgang til klesbutikken.",
 		press_no_freemode_barber = "Denne modellen kan ikke bruke frisørsalongen.",
@@ -4866,7 +4896,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		clothing_menu_success = "Åpnet klesmeny for ${consoleName}.",
 		barber_menu_success = "Klarte ikke å veksle frisørsalongmeny.",
 		failed_toggle_barber_menu = "Åpnet frisørsalongmeny for ${consoleName}.",
-		invalid_server_id = "Ugyldig server-ID.",
 
 		hats_and_helmets = "Hatter/Hjelmer",
 		glasses = "Briller",
@@ -5355,8 +5384,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 	crashes = {
 		crash_failed = "Feilet å skape en krasj for ${consoleName}.",
-		crash_success = "Krasj for ${consoleName} ble vellykket.",
-		server_id_invalid = "Ugyldig server ID."
+		crash_success = "Krasj for ${consoleName} ble vellykket."
 	},
 
 	creation = {
@@ -5663,7 +5691,13 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		no = "Nei",
 
 		logs_daily_streak_changed_title = "Daglig Streak Endret",
-		logs_daily_streak_changed_details = "${consoleName} har nå en daglig streak på `${streak}.`"
+		logs_daily_streak_changed_details = "${consoleName} har nå en daglig streak på `${streak}.`",
+
+		restore_streak = "Gjenopprett rekke av ${streak}",
+		confirm_streak_restore = "Er du sikker på at du vil gjenopprette rekken din på ${streak} dager? Kostnaden er ${cost} OP-poeng.",
+
+		not_enough_op_points = "Du trenger ${cost} OP-poeng for å gjenopprette rekken din. Du har ${points} OP-poeng.",
+		streak_restored = "Din rekke på ${streak} dager har blitt gjenopprettet for ${cost} OP-poeng."
 	},
 
 	dashcam = {
@@ -5731,13 +5765,16 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		ped_config_flags = "Ped config-flagg:",
 		ped_is = "Ped er:",
 		vehicle_is = "Kjøretøy er:",
+		world_is = "Verden:",
 		controls = "Kontroller: ${controls}",
-		native_calls = "Nativ Forespørsler: ${trueNativeCallsLastFrame} (${totalNativeCalls})",
+		tasks = "Oppgaveanrop: ${calls} (${total})",
+		native_calls = "Nativt anrop: ${calls} (${total})",
 		player_speed = "Spillerhastighet: ${playerSpeed}",
 		player_ped = "Spillerkontroll: ${playerPedId}",
 		heading = "Retning: ${heading}",
 		coords = "Koordinater: ${coords}",
 		rotation = "Rotasjon: ${rotation}",
+		normal = "Overflate: ${normal}",
 		velocity = "Fart: ${velocity}",
 		ground_material = "Underlag: ${material}",
 		g_force = "G-Kraft: ${force}",
@@ -5826,7 +5863,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		network_debug_logs_details_on = "${consoleName} aktiverte enhetsnettverk feilsøking.",
 		network_debug_logs_details_off = "${consoleName} deaktiverte enhetsnettverk feilsøking.",
 
-		invalid_server_id = "Ugyldig server ID.",
 		debug_info_failed = "Kunne ikke samle feilsøkingsinformasjon.",
 		close = "Lukk",
 		import = "Importer",
@@ -5855,6 +5891,23 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		evidence_failed = "Klarte ikke å ta DNA-bevis.",
 
 		evidence_text = "Bevistype: DNA-bevis\nDNA samlet inn fra ${fullName} #${characterId}\n\nAnnen informasjon:\n • Tidsstempel for henting: ${time}"
+	},
+
+	docks = {
+		press_to_access_spawner = "Trykk ~INPUT_CONTEXT~ for å åpne kjøretøy-spawneren.",
+		boat_dock = "Båtkaia",
+		vehicle_list = "Kjøretøyliste",
+		park_boat = "Parkèr båt",
+		close_menu = "Lukk meny",
+		main_menu = "Hovedmeny",
+		deposit = "$${amount} Innskudd",
+		no_deposit = "Ingen innskudd",
+		area_not_clear = "Området er ikke klart.",
+		no_vehicle_park = "Det er ingen kjøretøy å parkere.",
+		failed_park = "Klarte ikke å parkere båten.",
+		deposit_not_enough_money = "Du har ikke nok penger til å betale depositumet.",
+		failed_spawn = "Klarte ikke å spawne båten.",
+		vehicle_anchor = "Båten din ble spawnet og ankret, du kan bruke /anchor for å løfte ankeret."
 	},
 
 	doors = {
@@ -6216,7 +6269,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		gravity_success_off = "Slått på tyngdekraften igjen for ${consoleName}.",
 		gravity_client_failed = "Klarte ikke å bytte tyngdekraft for ${consoleName}.",
 		gravity_failed = "Noe gikk galt ved forsøk på å bytte tyngdekraft.",
-		invalid_server_id = "Ugyldig server-ID.",
 		yourself = "deg selv"
 	},
 
@@ -6357,16 +6409,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		revived_player_removed_injuries_details = "${consoleName} har vekket ${targetConsoleName} og fjernet deres skader.",
 		revived_player_title = "Gjenopplivet spiller",
 		revived_player_details = "${consoleName} gjenopplivet ${targetConsoleName}.",
-		recent_deaths = "Nylige dødsfall",
-		no_recent_deaths = "Det er ingen nylige dødsfall.",
-		recent_deaths_list_entry = "${recentDeathId}. ${consoleName} døde for ${timer} sekunder siden.",
-		target_user_not_found = "Målbruker ikke funnet.",
-		no_server_id_sent = "Ingen server-ID sendt.",
-		no_permissions = "Ingen tillatelser.",
-		user_not_found = "Bruker ikke funnet.",
-		player_death = "Spillerdød",
-		player_death_recent = "${consoleName} døde sist for ${timer} sekunder siden.",
-		no_recent_death = "${consoleName} har ikke dødd nylig.",
 		death_alcohol_poisoning = "Du besvimte på grunn av alkoholforgiftning.",
 		character_has_hardcore_died = "${fullName} har dødd. Du kan velge en annen karakter.",
 
@@ -6495,6 +6537,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		citizen_card_details = "${firstName} ${lastName} | Fødselsdato: ${dateOfBirth} | Kjønn: ${gender} | Borger-ID: ${characterId}",
 		just_showed_citizen_card = "Du viste akkurat et borgerkort. Vennligst vent en stund.",
 
+		boat_license = "Båtførerbevis",
+		boat_license_details = "Båtførerbevis | ${firstName} ${lastName} | Personnummer: ${characterId}",
 		hunting_license = "Jaktkort",
 		hunting_license_details = "Jaktkort | ${firstName} ${lastName} | Person-ID: ${characterId}",
 		fishing_license = "Fiskekort",
@@ -6662,6 +6706,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		gas_station_backdoor = "Bakdør til bensinstasjon",
 		cleaning_station = "Rengjøringsstasjon",
 		grocery_store = "Matbutikk",
+		dons_country_store = "Don's Country Store",
 		penthouse_fridge = "Leilighetskjøleskap",
 		mug_shots = "Mugshot-fotografering",
 		prison_store = "Fengselsbutikk",
@@ -6723,6 +6768,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		inspect_weapon = "Serienummeret til ${itemName} ser ut til å være `${itemId}`.",
 		inspect_weapon_broken = "Serienummeret til ${itemName} ser ut til å være `${itemId}`, og det virker som om det er helt ødelagt.",
+		inspect_bank_gold_bar = "Denne gullbaren er merket som eiendom til ${bank} Bank.",
+		inspect_gold_bar = "Denne gullbaren ser ikke ut til å ha noen merker på seg.",
 
 		searching_dumpster = "Søker i søppelcontaineren",
 
@@ -6869,6 +6916,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		boosting_tablet = "Boosting-nettbrett",
 		boosting_tablet_description = "Brukes for å skaffe _helt_ lovlige kontrakter.",
 
+		boat_license = "Båtførerbevis",
+		boat_license_description = "En båtførerbevis for å kjøre båter.",
 		hunting_license = "Jaktlisens",
 		hunting_license_description = "En jaktlisens for jakt.",
 		fishing_license = "Fiskelisens",
@@ -6980,6 +7029,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		burger_shot_delivery_description = "En fantastisk samling av alle de saftige kjøttgodbitene de serverer.",
 		bean_machine_delivery = "Bean Machine-levering",
 		bean_machine_delivery_description = "En pose full av herlige godsaker fra en liten kaffebar i uptown.",
+		kissaki_delivery = "Kissaki-måltid",
+		kissaki_delivery_description = "En deilig samling av sushi og andre japanske delikatesser.",
 
 		ear_defenders = "Øreklokker",
 		ear_defenders_description = "Brukes til å beskytte ørene mot høye lyder.",
@@ -7346,7 +7397,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		boxing_gloves = "Boksehansker",
 		boxing_gloves_description = "Gjør deg til Rocky, men du kommer sannsynligvis ikke til å få en oppfølger...",
 		leash = "Bånd",
-		leash_description = "Ingen vil vite hvorfor du kjøpte dette, men de vil definitivt dømme deg for å ha det.",
+		leash_description = "\"Uansett hvor svak, uansett hvor sterk, i båndet er der dere alle hører hjemme.\" - Tiquon Cox",
 
 		shrooms = "Sopper",
 		shrooms_description = "Noen sa at man kan putte disse på pizza, men nå putter pizzaen seg selv på meg... vent, hvem er jeg?",
@@ -7785,6 +7836,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		cheetos_description = "Den beste snacksen for gaming-økter.",
 		peanuts = "Saltede peanøtter",
 		peanuts_description = "En boks med saltede peanøtter, perfekt for å snackse på.",
+		olives = "Oliven",
+		olives_description = "En liten skål med oliven, den perfekte snacken for en fest.",
 
 		rice = "Ris",
 		rice_description = "Det er bøtter med fluffy korn.",
@@ -7831,11 +7884,11 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		electric_fuse = "Elektrisk Sikring",
 		electric_fuse_description = "Elektrisk sikring er et nødvendig element for heistrummene. Den må plasseres i sikringsboksen for å kunne aktivere nøkkelkortlåsen.",
 		keycard_green = "Grønn nøkkelkort",
-		keycard_green_description = "Brukes for å åpne lagre med medisinsk utstyr.",
+		keycard_green_description = "Brukes for å åpne lager fylt med medisinsk utstyr. Tilhører Los Santos Fleeca Bank.",
 		keycard_blue = "Blått nøkkelkort",
-		keycard_blue_description = "Brukes for å åpne lagre med teknisk utstyr.",
+		keycard_blue_description = "Brukes for å åpne lager fylt med teknisk utstyr. Tilhører Los Santos Fleeca Bank.",
 		keycard_red = "Rødt nøkkelkort",
-		keycard_red_description = "Brukes til å åpne et våpenlager.",
+		keycard_red_description = "Brukes for å åpne et våpenlager. Tilhører Los Santos Fleeca Bank.",
 
 		magazine = "Magasin",
 		magazine_description = "Et magasin.",
@@ -8312,8 +8365,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		invisibility_on = "Skjult modus aktivert.",
 		invisibility_off = "Skjult modus deaktivert.",
 
-		invalid_server_id = "Ugyldig server-ID.",
-
 		toggled_invisibility = "Skjult modus har blitt aktivert for ${displayName}.",
 		failed_invisibility = "Kunne ikke aktivere skjult modus for ${displayName}.",
 
@@ -8325,7 +8376,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 	isolation = {
 		failed_isolate = "Klarte ikke å isolere spilleren.",
-		invalid_server_id = "Ugyldig server-ID.",
 		isolate_success_on = "Spilleren ${consoleName} er suksessfullt isolert.",
 		isolate_success_off = "Isoleringen av spilleren ${consoleName} er stoppet.",
 
@@ -8373,9 +8423,11 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		failed_burger_shot_delivery = "Kunne ikke åpne leveransen fra Burgershot.",
 		failed_bean_machine_delivery = "Kunne ikke åpne leveransen fra Bean Machine.",
+		failed_kissaki_delivery = "Klarte ikke å åpne kissaki-måltidet.",
 
 		burger_shot_delivery_empty = "Det virker som om måltidet fra Burgershot var tomt.",
 		bean_machine_delivery_empty = "Denne Bean Machine-leveringen virket tom.",
+		kissaki_delivery_empty = "Det virket som om kissaki-måltidet var tomt.",
 
 		logs_used_weather_spell_title = "Brukte værformelen",
 		logs_used_weather_spell_details = "${consoleName} brukte værformelen `${itemName}`.",
@@ -8683,11 +8735,26 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		normal = "Normal",
 		one_life = "Ett Liv",
 		one_life_information = "Hvis du velger dette alternativet, vil karakteren din bare ha ett liv. Hvis du dør uten å bli tatt til sykehuset, vil du miste karakteren din.",
-		one_life_are_you_sure = "Er du sikker på at du vil ha dette?"
+		one_life_are_you_sure = "Er du sikker på at du vil ha dette?",
+
+		screenshots = "Skjermbilder",
+		start_screenshotting = "Start å ta skjermbilder",
+		what_is_this_title = "Hva er dette",
+		what_is_this_text_part_1 = "I mange funksjoner i rammeverket, liker vi å kunne bruke høykvalitets portretter av spillernes karakterer.",
+		what_is_this_text_part_2 = "Måten vi tidligere oppnådde dette på, var ved å ha en enkelt klient online 24/7 som ville ta 'jobber' og opprette portretter når det ble forespurt. Dette var VELDIG utsatt for feil, og det skalerte ikke veldig bra.",
+		help_out_title = "Hjelp ut",
+		help_out_text_part_1 = "For å gjøre det mer skalerbart og pålitelig, genereres portrettene nå av villige klienter.",
+		help_out_text_part_2 = "Hvis du ønsker å hjelpe til også (hvis du for eksempel går AFK), vil det bli satt stor pris på om du går hit og klikker 'Start Screenshotting'. Det vil tone ned spillet ditt og sette deg i standby-modus, klar til å opprette bilder.",
+		help_out_text_part_3 = " Du kan klikke 'stopp screenshotting' når som helst.",
+		reward_title = "Belønning",
+		reward_text_part_1 = "De som hjelper til vil bli belønnet ",
+		reward_text_part_2 = " OP-poeng for hver opprettet bilde, samt ",
+		reward_text_part_3 = " OP-poeng for hver time du er på vent.",
+
+		exiting_login_ui = "Avslutter (Innloggings UI)"
 	},
 
 	logs = {
-		invalid_server_id = "Ugyldig server-ID.",
 		logs_failed = "Kunne ikke laste inn logger.",
 
 		close = "Lukk"
@@ -8714,13 +8781,14 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	},
 
 	lucky_wheel = {
-		hold_to_spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ for å spinne Lykkehjulet. Kostnaden er $${cost}.",
+		hold_to_spin_lucky_wheel = "Hold ~INPUT_CONTEXT~ for å spinne Lykkehjulet. Kostnaden er ${cost} OP-poeng. Gratis spinn om ${time}.",
 		hold_to_spin_lucky_wheel_free_one_left = "Hold ~INPUT_CONTEXT~ for å spinne Lykkehjulet. Du har 1 gratis spinn igjen i dag.",
 		hold_to_spin_lucky_wheel_free_multiple_left = "Hold ~INPUT_CONTEXT~ for å spinne Lykkehjulet. Du har ${spins} gratis spinn igjen i dag.",
 		continue_holding_to_spin_lucky_wheel = "Fortsett å holde ~INPUT_CONTEXT~ for å spinne Lykkehjulet.",
-		unable_to_spin_lucky_wheel = "Du har allerede spunnet Lykkehjulet så mye som tillatt i dag. Neste spinn tilgjengelig om ${time}.",
-		not_enough_balance_to_spin = "Du har ikke nok penger til å snurre hjulet. Kostnaden er $${cost}.",
 		lucky_wheel_is_occupied = "Lykkehjulet er for øyeblikket opptatt. Vennligst vent.",
+		not_enough_op_points = "Du trenger ${cost} OP-poeng for å spinne Lykkehjulet. Du har ${points} OP-poeng.",
+		used_op_points = "Du brukte ${cost} OP-poeng. Du har nå ${points} OP-poeng igjen.",
+		vehicle_won_tweet = "Noen har nettopp truffet gull ved lykkehjulet og sikret seg den ultra-sjeldne ${modelDisplayName}! Hvem er den heldige vinneren? Ta turen dit nå og hent premien din.",
 
 		logs_lucky_wheel_reward_title = "Lykkehjulets premie",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} har spunnet hjulet og vunnet et kjøretøy.",
@@ -8817,7 +8885,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		meditate = "[${InteractionKey}] Mediter",
 		salute = "[${InteractionKey}] Hilse",
 		stretch = "[${InteractionKey}] Tøye",
-		think = "[${InteractionKey}] Tenke",
 
 		feed_active = "Mate Maxwell",
 		pet_active = "Kose med Maxwell",
@@ -8829,7 +8896,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		meditate_active = "Meditere med Maxwell",
 		salute_active = "Hilser på Maxwell",
 		stretch_active = "Tøyer med Maxwell",
-		think_active = "Tenker på Maxwell",
 
 		maxwell_appeared = "Maxwell har dukket opp i nærheten av deg.",
 		maxwell_shot = "Skjøt Maxwell"
@@ -8996,13 +9062,11 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		auto_run_set_to = "Auto-kjøring er satt til å kontrollere ${controlId}.",
 		auto_run_unset = "Auto-kjøring har blitt avslått.",
 
-		invalid_server_id = "Ugyldig server-ID.",
 		walk_forwards_success = "Toggling av å gå fremover for ${displayName} var vellykket.",
 		walk_forwards_failed = "Toggling av å gå fremover for ${displayName} mislyktes."
 	},
 
 	money = {
-		invalid_server_id = "Ugyldig server-ID.",
 		invalid_amount = "Ugyldig beløp.",
 		something_went_wrong = "Noe gikk galt.",
 		not_enough_cash = "Du har ikke nok kontanter.",
@@ -9184,6 +9248,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		about_sound_effects_text = "Disse feltene lar deg overstyre noen lydeffekter. De krever en kobling til en .oog fil for å fungere ordentlig. Det må også være en https:// URL og ikke en http://. En enkel måte å laste opp en fil ville være å laste den opp til discord, deretter kopiere koblingen og sette den inn i feltene her.",
 		radio_mic_click_on = "Radio Mikrofon Klikk (På)",
 		radio_mic_click_off = "Radio Mikrofon Klikk (Av)",
+		lean_cam_mode = "Luta-aim Kamera",
+		lean_option_1 = "Hold for å bytte",
+		lean_option_2 = "Trykk for å bytte",
+		lean_option_3 = "Av",
 		clipboard_animation = "Clipboard Animasjon",
 		sound_effect_placeholder = "URL til .oog fil...",
 		sound_effect_save = "Lagre",
@@ -9928,8 +9996,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		fps = "${fps}fps",
 		playtime = "${time} spilt",
 
-		invalid_server_id = "Ugyldig server-ID.",
-
 		failed_load_player = "Klarte ikke å laste inn spillerdata. Har du skrevet inn en gyldig server ID?",
 		failed_add_warning = "Kunne ikke legge til advarsel.",
 
@@ -9989,7 +10055,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 	pawn_shops = {
 		sell_items = "Selg ${itemLabel}",
-		press_to_sell_items = "[${InteractionKey}] Selg ${itemLabel}",
+		press_to_sell_items = "[${InteractionKey}] Selg ${amount}x ${itemLabel}",
 		sold_items = "Solgte ${sellAmount}x ${itemLabel} for $${sellPrice}.",
 		no_items_to_sell = "Du har ingen ${itemLabel} å selge.",
 		daily_limit_reached = "Du har nådd ditt daglige salgsmaksimum, selgeren kjøper ikke flere varer.",
@@ -10064,8 +10130,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		ped_steal_reset = "Spillerens ped er tilbakestilt.",
 		ped_steal_success = "Ped-skinn er stjålet.",
 		ped_steal_failed = "Kunne ikke stjele ped-skinn.",
-		ped_not_found = "Spillerens ped er ikke funnet.",
-		invalid_server_id = "Ugyldig server-ID."
+		ped_not_found = "Spillerens ped er ikke funnet."
 	},
 
 	ped_takeover = {
@@ -10186,6 +10251,13 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	prop_hide = {
 		no_model = "~r~Ingen Modell",
 		status_text = "Gjenstand: ~g~${label}"
+	},
+
+	properties = {
+		no_address_set = "Ingen adresse satt.",
+		no_address_found = "Ingen adresse funnet på '${address}'.",
+		marker_set = "Markør og veipunkt satt til ${address}.",
+		removed_marker = "Fjernet markør for ${address}."
 	},
 
 	props = {
@@ -10413,6 +10485,13 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		failed_to_remove_riot_player = "Kunne ikke fjerne ${consoleName} fra opptøyslisten."
 	},
 
+	rules = {
+		invalid_rule = "Ugyldig regel ID.",
+
+		rule_title = "Regel ${number}",
+		rule_details = "*${rule}*"
+	},
+
 	safes = {
 		how_to_use = "Bruk \"A\" og \"D\" tastene for å rotere safen til du finner riktig kombinasjon. Start med å trykke på \"D\".",
 		lock_open = "Ulåst",
@@ -10456,7 +10535,27 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		screenshot_error_user_developer = "Brukeren er en utvikler.",
 		screenshot_error_no_token = "Klarte ikke å hente opfw-token.",
 		screenshot_timeout = "Tidsavbrudd for skjermbilde forespørsel.",
-		screenshot_error_character_unloaded = "Brukeren forlot serveren eller lastet ut karakteren sin."
+		screenshot_error_character_unloaded = "Brukeren forlot serveren eller lastet ut karakteren sin.",
+		screenshot_error_blackscreen = "Kan ikke ta skjermbilde av brukeren på grunn av svart skjerm.",
+		screenshot_error_invalid_response = "Ugyldig API-respons."
+	},
+
+	screenshots_create = {
+		on_standby = "Tar skjermbilder (På vent)",
+		paused = "Tar skjermbilder (Pauset)",
+		screenshots_taken = "Du har tatt ${screenshotsTaken} skjermbilde(r). Av disse ble ${screenshotsTakenNow} tatt nå.",
+		press_to_exit = "Hold ESC for å stoppe å ta skjermbilder.",
+		keep_holding_to_exit = "Hold ESC (${seconds}) for å avslutte skjermbilder.",
+		exiting = "Avslutter...",
+		problems = "Problemer:",
+		profile_gamma_not_18 = "Din 'gamma'-innstilling er ikke satt til standardverdien. Dette reduserer konsekvensen og kvaliteten på bildene som genereres av klienten din. For å fikse dette, skriv 'profile_gamma 18' i F8-konsollen. Du vil ikke få jobber før dette er gjort. Du må være på 'beta' eller 'latest' versjonen av FiveM for å kunne gjøre dette. Du kan endre det i hovedmenyen til FiveM.",
+		screenshot_blackscreen = "Skjermbildene dine viser en svart skjerm. Du må fikse problemet med at spillet ikke kan ta skjermbilder før du får flere jobber. Dette kan skyldes antivirusprogramvare. For å prøve å lage bilder igjen, gå tilbake til denne menyen.",
+
+		screenshotting_start_logs_title = "Start skjermbilder",
+		screenshotting_start_logs_details = "${consoleName} startet å ta skjermbilder.",
+
+		screenshotting_stop_logs_title = "Stopp skjermbilder",
+		screenshotting_stop_logs_details = "${consoleName} stoppet å ta skjermbilder."
 	},
 
 	scuba = {
@@ -10540,7 +10639,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		not_a_self_driving_vehicle = "Kjøretøyet du kjører støtter ikke autopilot.",
 		no_waypoint_set = "Vennligst sett et veipunkt for å markere destinasjonen din.",
 		invalid_waypoint_set = "Det pekepunktet du satte kan ikke kjøres til automatisk.",
-		self_driving_engaged = "Autopiloten er aktivert. Trykk ~INPUT_SPRINT~ og ~INPUT_DUCK~ for å kontrollere cruisefarten.",
+		self_driving_engaged = "Autopilot er aktivert. Trykk SHIFT og CTRL for å kontrollere cruisefarten.",
 		self_driving_disengaged = "Autopiloten er deaktivert.",
 		destination_too_close = "Målet du har merket er for nærme.",
 		self_driving_could_not_be_engaged = "Autopiloten kunne ikke aktiveres."
@@ -10557,7 +10656,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		shockwave_success = "Sjokkbølge opprettet.",
 		shockwave_failed = "Kunne ikke opprette sjokkbølge.",
 
-		invalid_server_id = "Ugyldig server-ID.",
 		push_player_success = "Spilleren ble vellykket dyttet.",
 		push_player_failed = "Kunne ikke dytte spilleren."
 	},
@@ -10684,6 +10782,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		loading_coords = "Laster koordinater",
 		preloading_area = "Forhåndslasting av område",
 		finding_player = "Leter etter spiller",
+
+		character_unloaded = "~r~Karakteren er ikke lastet inn~w~",
+		character_spawning = "~y~Karakteren blir lastet inn~w~",
 
 		invincibility_active = "Uovervinnelighet: ~r~Aktiv~w~",
 		invincibility_inactive_dead = "Uovervinnelighet: ~g~Aktiv~w~ (død)",
@@ -11061,7 +11162,12 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	top_down = {
 		not_in_valid_vehicle = "Du er ikke i et gyldig kjøretøy (kun biler/motorsykler).",
 		top_down_on = "Topp-ned-visning aktivert.",
-		top_down_off = "Topp-ned-visning deaktivert."
+		top_down_off = "Topp-ned-visning deaktivert.",
+
+		top_down_enabled_logs_title = "Topp ned aktivert",
+		top_down_enabled_logs_details = "${consoleName} aktiverte kameraet med top-down-visning.",
+		top_down_disabled_logs_title = "Topp ned deaktivert",
+		top_down_disabled_logs_details = "${consoleName} deaktiverte kameraet med top-down-visning."
 	},
 
 	trackers = {
@@ -11154,12 +11260,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		defenders_won = "Forsvarerne vant!"
 	},
 
-	trains = {
-		invalid_track_id = "Ugyldig spor-ID oppgitt.",
-		spawned_train_on_track = "Spawnet et tog på spor ${trackId}.",
-		failed_to_spawn_train = "Kunne ikke spawne et tog."
-	},
-
 	traps = {
 		rearming = "Lasting",
 		press_to_rearm = "[${InteractionKey}] Last",
@@ -11231,7 +11331,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	vdm = {
 		failed_vdm = "Kunne ikke VDM spilleren.",
 		invalid_entity = "Kunne ikke finne kjøretøy eller sjåfør.",
-		invalid_network_id = "Ugyldig nettverks-ID.",
 		invalid_target = "Ugyldig mål.",
 		cleared_vdm = "Fjernet ${amount} vdm-mål.",
 		failed_vdm_clear = "Kunne ikke fjerne vdm-mål.",
@@ -11282,7 +11381,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		intent_speech = "Sett taleinndata modus tilbake til 'tale'.",
 		music_mode = "Musikk-modus",
 
-		invalid_server_id = "Ugyldig server-ID.",
 		failed_toggle_listen = "Kunne ikke bytte lyttingstatus.",
 		listeners = "Lyttetil:",
 		listening_to = "Lytter til:",
@@ -11324,7 +11422,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		ragdoll_player = "Gi seg",
 		ragdoll_player_force = "Gi seg (tvang)",
+		jump_player = "Hopp",
 		punch_player = "Slå til med makt",
+		enter_vehicle_player = "Gå inn i nærmeste kjøretøy",
 		exit_vehicle_player = "Gå ut av kjøretøy",
 		yank_steering_wheel_player = "Trekke rattet",
 		flashbang_player = "Flashbang",
@@ -11341,7 +11441,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		play_sound_twitter = "Twitter",
 
 		invalid_radius = "Ugyldig radius",
-		invalid_server_id = "Ugyldig server-ID.",
 
 		punch_success = "Spilleren ${consoleName} slo vellykket.",
 		punch_failed = "Klarte ikke å få spilleren til å slå.",
@@ -11450,17 +11549,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	},
 
 	-- illegal/*
-	corner = {
-		corner_ped = "Hjørne Ped - ${cornerPedDistance}m (${cornerPedTimer})",
-		corner_ped_title = "Hjørne Ped",
-		corner_ped_already_active = "Det er allerede en hjørne ped som venter på deg.",
-		no_node_found = "Ingen nærliggende noder for peds funnet.",
-		no_sell_area = "Du er ikke i et område der peds er interessert i narkotika.",
-		inside_areas_none = "Ingen innendørs områder",
-		inside_areas = "Inne områder: ${insideAreas}",
-		not_able_to_sell = "Du kan ikke selge nå. Gå rundt litt før du prøver igjen."
-	},
-
 	stockade = {
 		dispatch = "[Dispatch]",
 		status_1a = "10-78, en Stockade har trykket på nødknappen og ber om backup i ${streetName}.",
@@ -11640,6 +11728,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		license_management = "Ledelse",
 		license_military = "Militær",
 		license_special = "Spesiell luftfartøy",
+		license_boat = "Båtførerbevis",
 		license_hunting = "Jaktkort",
 		license_fishing = "Fiskekort",
 		license_weapon = "Våpenlisens",
@@ -11871,7 +11960,12 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 		-- NOTE: `toggle_garage_debug` command:
 		toggle_garage_debug_toggled_on = "Skrudd på garasje-feilsøking.",
-		toggle_garage_debug_toggled_off = "Skrudd av garasje-feilsøking."
+		toggle_garage_debug_toggled_off = "Skrudd av garasje-feilsøking.",
+
+		invalid_vehicle = "Ingen eller ugyldig kjøretøy.",
+		not_owned_vehicle = "Kjøretøyet tilhører ingen.",
+		vehicle_garaged = "Kjøretøyet ble suksessfullt plassert i garasjen.",
+		garaged_failed = "Kunne ikke plassere kjøretøyet i garasjen."
 	},
 
 	keys = {
@@ -11888,7 +11982,6 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		hotwired_vehicle_with_plate_number = "Startet kjøretøy med registreringsnummer '${plateNumber}'.",
 		unable_to_hotwire_vehicle = "Kunne ikke starte kjøretøy.",
 		picked_up_keys = "Plukket opp nøkler for `${plate}`.",
-		invalid_server_id = "Ugyldig server-ID.",
 		hotwired_vehicle_for_player = "${displayName} har varmet opp kjøretøyet de sitter i.",
 		gave_keys_success = "Ga vellykket ${displayName} nøklene til kjøretøyet deres.",
 		gave_keys_failure = "Kunne ikke gi ${displayName} nøklene til kjøretøyet."
@@ -11906,7 +11999,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 
 	oil = {
 		move_to_change = "Gå hit for å skifte olje på kjøretøyet.",
-		changing_oil = "Skifter Olje"
+		changing_oil = "Skifter Olje",
+		low_oil = "Kjøretøyet ditt trenger oljeskift!"
 	},
 
 	plates = {
@@ -11995,6 +12089,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		belt_is_on = "Du har på deg beltet ditt.",
 		vehicle_is_locked = "Kjøretøyet er låst.",
 		belt_warning = "Setebeltet ditt er ikke på, trykk ~INPUT_SPECIAL_ABILITY_SECONDARY~ for å sette det på.",
+		supporter_vehicle = "Supporterkjøretøy",
 
 		nearest_player_not_vehicle = "Nærmeste spiller er ikke i et kjøretøy.",
 		no_dead_player_nearby = "Det er ingen døde spillere i et kjøretøy nær deg.",
