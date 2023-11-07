@@ -6577,7 +6577,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		meat_too_damaged = "Gyvūno mėsa buvo per daug sugadinta, kad būtų galima ją išnaudoti.",
 
 		skinned_logs_title = "Odelės žvėrys",
-		skinned_logs_details = "${consoleName} odelės\(o) žvėrį (${modelName}) ir gavo ${skinnedItems}.",
+		skinned_logs_details = "${consoleName} odelės(o) žvėrį (${modelName}) ir gavo ${skinnedItems}.",
 		received_nothing = "nieko"
 	},
 
