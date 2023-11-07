@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 22 (do not change)
+-- AUTO LOCALES: 23 (do not change)
 
 OP.Global.Locales.Languages["meme-caveman"] = {
 	-- configuration settings for language
@@ -341,12 +341,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		no_nearby_vehicles_off = "Me turned off 'No Nearby Vehicles'.",
 		speed_up_progress_bar_on = "Me turned on 'Speed Up Progress Bar'.",
 		speed_up_progress_bar_off = "Me turned off 'Speed Up Progress Bar'.",
-		wallhack_on = "Me turned on 'Wallhack'.",
-		wallhack_off = "Me turned off 'Wallhack'.",
 		aimbot_on = "Me toggle 'Aimbot.' On.",
 		aimbot_off = "Me toggle 'Aimbot' Off.",
-		player_bones_on = "Me toggle 'Player Bones' On.",
-		player_bones_off = "Me toggle 'Player Bones' Off.",
 		vehicle_smoke_on = "Me toggle 'Vehicle Smoke' On.",
 		vehicle_smoke_off = "Me toggle 'Vehicle Smoke' Off.",
 
@@ -706,6 +702,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		vehicle_spawn_ban = "Ugh, dreaming of a joyride with `${modelName}`, were you? This not shiny cave to show off, and that type? Still waiting forever!",
 		weapon_spawn_ban = "Wanting the `${weaponName}`, were you? This not weapon stash, and that stick? Still in the fire pit.",
 		advanced_noclip_ban = "Trying sneaky slide through dark paths? This not ghost dance, and that move? Not our dance.",
+		illegal_local_vehicle_ban = "Ugh! You find the invisible steed of Lord Mirage! Ooga booga! This magic ride only for the big ghost parade.",
 
 		type_aimbot = "Sharpeye",
 		type_bad_creation = "Bad Build",
@@ -744,6 +741,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		type_thermal_night_vision = "Hot/Cold Eyes",
 		type_underground = "Deep below",
 		type_vehicle_modification = "Change Ride",
+		type_illegal_local_vehicle = "Using Not-Networked Vehicle",
 
 		event_prefix = "Ugh-Cheat: ${type}",
 
@@ -813,7 +811,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 	bans = {
 		banned_no_permissions = "Attempted to `${reason}` without proper permissions.",
-		fraud_chargeback = "Fraud / Chargeback"
+		fraud_chargeback = "Fraud / Chargeback",
+		none_provided = "None grunt."
 	},
 
 	characters = {
@@ -1034,18 +1033,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		aimbot_command_parameter_targets = "targets",
 		aimbot_command_parameter_targets_help = "Target server ids (only works if you toggle for self). (Targets only cavemen with these server ids)",
 		aimbot_command_substitutes = "",
-
-		player_bones_debug_command = "ug-ug debug_player_bones",
-		player_bones_debug_command_help = "Ug-ug toggle player bones debugger.",
-		player_bones_debug_command_parameter_server_id = "lug id",
-		player_bones_debug_command_parameter_server_id_help = "If you want to ug-ug toggle player bones debugger for someone else, insert their lug id here.",
-		player_bones_debug_command_substitutes = "ug-ug bones",
-
-		wallhack_command = "wallhack",
-		wallhack_command_help = "Ug-ug toggle 'wallhack'.",
-		wallhack_command_parameter_server_id = "lug id",
-		wallhack_command_parameter_server_id_help = "Ugh if you want to make someone's eyes go beyond rock walls, put their server ID here.",
-		wallhack_command_substitutes = "",
 
 		speed_boost_command = "go_fast",
 		speed_boost_command_help = "Toggle the 'speed boost' grunt grunt.",
@@ -2526,6 +2513,13 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		roll_lottery_command_help = "Roll da lottery manually.",
 		roll_lottery_command_substitutes = "",
 
+		-- game/lucky_wheel
+		set_podium_vehicle_command = "set_podium_vehicle",
+		set_podium_vehicle_command_help = "Me change the winnable podium ride at casino.",
+		set_podium_vehicle_command_parameter_model_name = "model name",
+		set_podium_vehicle_command_parameter_model_name_help = "The name of the ride you want to change it to.",
+		set_podium_vehicle_command_substitutes = "",
+
 		-- game/magazines
 		refresh_magazines_command = "refresh_magazines",
 		refresh_magazines_command_help = "Refresh da magazines if dere be changes in da database.",
@@ -2939,6 +2933,69 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		wipe_props_command_parameter_radius_help = "Me radius for da wipe (1-250).",
 		wipe_props_command_substitutes = "",
 
+		-- game/racing
+		race_leave_command = "unrace",
+		race_leave_command_help = "Unrace yourself from current race.",
+		race_leave_command_substitutes = "exit_race",
+
+		race_share_command = "share_race",
+		race_share_command_help = "Share a racetrack with another player.",
+		race_share_command_parameter_server_id = "player_id",
+		race_share_command_parameter_server_id_help = "The player ID of the caveman you want to share the racetrack with.",
+		race_share_command_parameter_track_name = "track_name",
+		race_share_command_parameter_track_name_help = "The name of the racetrack you want to share.",
+		race_share_command_substitutes = "",
+
+		race_record_command = "ugh_ugh",
+		race_record_command_help = "Ugh ugh ugh ugh.",
+		race_record_command_substitutes = "",
+
+		race_save_command = "ugh_save",
+		race_save_command_help = "Ugh ugh ugh.",
+		race_save_command_parameter_track_name = "ugh name",
+		race_save_command_parameter_track_name_help = "Ugh ugh ugh ugh ugh ugh.",
+		race_save_command_parameter_track_type = "ugh type",
+		race_save_command_parameter_track_type_help = "Ugh ugh ugh ugh ugh.",
+		race_save_command_substitutes = "",
+
+		race_delete_command = "ugh_delete",
+		race_delete_command_help = "Ugh ugh ugh ugh.",
+		race_delete_command_parameter_track_name = "track oogabooga",
+		race_delete_command_parameter_track_name_help = "Oogabooga track you want to unga bunga.",
+		race_delete_command_substitutes = "",
+
+		race_list_command = "race_list",
+		race_list_command_help = "Unga bunga all your saved oogabooga.",
+		race_list_command_substitutes = "",
+
+		race_load_command = "race_load",
+		race_load_command_help = "Unga bunga an oogabooga.",
+		race_load_command_parameter_track_name = "track oogabooga",
+		race_load_command_parameter_track_name_help = "The oogabooga of the track you want to unga bunga.",
+		race_load_command_substitutes = "",
+
+		race_start_command = "race_start",
+		race_start_command_help = "Unga bunga an oogabooga.",
+		race_start_command_parameter_amount = "cost",
+		race_start_command_parameter_amount_help = "Ugga ugga. The cost for entering the race.",
+		race_start_command_parameter_start_delay = "ug start_delay",
+		race_start_command_parameter_start_delay_help = "Ugga ugga. The start delay in sunsets.",
+		race_start_command_parameter_laps = "ug laps",
+		race_start_command_parameter_laps_help = "Ugga ugga. The number of laps.",
+		race_start_command_substitutes = "",
+
+		race_cancel_command = "cancel_race",
+		race_cancel_command_help = "Ugga ugga. Cancel a race.",
+		race_cancel_command_substitutes = "",
+
+		race_checkpoints_command = "toggle_checkpoints",
+		race_checkpoints_command_help = "Ugga ugga. Toggle checkpoints.",
+		race_checkpoints_command_substitutes = "",
+
+		race_sounds_command = "grug_sounds",
+		race_sounds_command_help = "Grug make sounds.",
+		race_sounds_command_substitutes = "",
+
 		-- game/radio
 		radio_command = "Me want listen to noises.",
 		radio_command_help = "Me turn on/off the radio so me can listen to noises.",
@@ -3173,6 +3230,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		blackout_command_help = "Toggle if bright light go bye bye",
 		blackout_command_substitutes = "",
 
+		toggle_developer_ambience_command = "toggle_developer_ambience",
+		toggle_developer_ambience_command_help = "Grug toggle developer ambience.",
+		toggle_developer_ambience_command_substitutes = "",
+
 		-- game/tablet
 		tablet_command = "tablet",
 		tablet_command_help = "Open fancy tablet (if you have magic rock)",
@@ -3274,6 +3335,13 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		change_voice_mode_command = "change_voice_ug",
 		change_voice_mode_command_help = "Toggle 'ug-ug' voice grunt on/off. That grunt will remove noise and make voice clearer.",
 		change_voice_mode_command_substitutes = "change_ug_voice",
+
+		-- game/wallhack
+		wallhack_command = "wallhack",
+		wallhack_command_help = "Grug toggle wallhack.",
+		wallhack_command_parameter_server_id = "lug id",
+		wallhack_command_parameter_server_id_help = "If Grug want to toggle wallhack for someone else, Grug put their server id here.",
+		wallhack_command_substitutes = "",
 
 		-- game/wizard
 		wizard_command = "wizard",
@@ -3722,7 +3790,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		richer_presence_on = "Me have richer presence now.",
 		richer_presence_off = "Me presence not so rich anymore.",
 
-		announce_event = "Me tell you. Event in 15 minutes! Look Discord for more know.\n\n${name} @ **${location}**"
+		announce_event = "There is an event in ${minutes} moons! Check Discord for more cavemore.\n\n${name} @ **${location}**",
+		announce_event_starting_now = "Many bonk bonk happening now! Look at Discord for more grunts.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -5691,7 +5760,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		no = "No",
 
 		logs_daily_streak_changed_title = "Daily Streak Changed",
-		logs_daily_streak_changed_details = "${consoleName} now has a daily streak of `${streak}.`",
+		logs_daily_streak_changed_details = "${consoleName} now has a daily streak of `${streak}`.",
+
+		logs_daily_task_completed_title = "Daily Task Completed",
+		logs_daily_task_completed_details = "${consoleName} do it! Completed a daily task with the name of `${taskName}`.",
 
 		restore_streak = "Ooga ooga ooga ${streak}",
 		confirm_streak_restore = "Ooga ooga ooga ooga ooga ${streak} days? Cost is ${cost} OP Points. Ooga booga?",
@@ -6496,8 +6568,13 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	hunting = {
 		hold_to_skin = "[${InteractionKey}] Hold to skin",
 		skinning_animal = "Skin dead animal",
-		meat_too_damaged = "This animal meat no good.",
 		animal_is_being_skinned = "Animal getting skinned now.",
+
+		hold_to_remove = "[${InteractionKey}] Hold to get rid of dead animal",
+		removing_carcass = "Taking out hurt animal",
+		carcass_damaged = "The dead animal too hurt, can't skin it.",
+
+		meat_too_damaged = "The animal big meat was too damaged to be gathered.",
 
 		skinned_logs_title = "Animal Skinned",
 		skinned_logs_details = "${consoleName} skinned animal (${modelName}) and got ${skinnedItems}.",
@@ -6673,7 +6750,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		instance_destroyed = "Ugh. Destroy instance with ID `${instanceId}`.",
 		instance_destruction_failed = "Ugh. Failed to destroy instance.",
 		instance_id_parameter_invalid = "Ugh. Instance ID not good.",
-		added_player_to_instance = "Ugh. ${consoleName} added to instance with ID `${instanceId}.`",
+		added_player_to_instance = "Added ${consoleName} to the instance with ID `${instanceId}`.",
 		failed_to_add_player_to_instance = "Ugh. Failed to add player to instance.",
 		server_id_parameter_invalid = "Ugh. Server ID not good.",
 		removed_player_from_instance = "Ugg. ${consoleName} go bye-bye from instance with ID `${instanceId}`.",
@@ -6987,9 +7064,13 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		glass_breaker_description = "Use smash smash to break car window in case of crash.",
 
 		picture = "Picture",
-		picture_description = "Collect all memory of you and cave friend.",
-		paper = "Flat Rock",
-		paper_description = "Flat rock with nothing on it.",
+		picture_description = "Collect all the memories of you and your friends. (Size: 1x1)",
+		printed_card = "Hard Paper Like Rock",
+		printed_card_description = "A small flat rock, could be useful as a card. (Size: 9x5)",
+		paper = "Thin Bark",
+		paper_description = "A plain piece of bark for drawing pictures.",
+		card_paper = "Thick Bark",
+		card_paper_description = "A plain piece of thick bark for printing cards.",
 		printer = "Doodle Machine",
 		printer_description = "No fax, only printer.",
 
@@ -7433,6 +7514,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		gold_bar = "Shiny rock",
 		gold_bar_description = "Me use for fix and make things.",
+
+		ancient_ring = "Ugga Ugga Ring",
+		ancient_ring_description = "Ugga ugga ugga ugga ugga ugga, ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga. Ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga, ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga",
+		ancient_coin = "Ugga Ugga Coin",
+		ancient_coin_description = "Ugga ugga ugga ugga ugga ugga ugga ugga, ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga ugga",
 
 		aluminium = "Ugly metal",
 		aluminium_description = "Me use for fix and make things.",
@@ -8788,7 +8874,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		lucky_wheel_is_occupied = "Grr! Wheel occupied. Wait your turn.",
 		not_enough_op_points = "Ugga need ${cost} Grog Points to spin the Lucky Wheel. You have ${points} Grog Points.",
 		used_op_points = "Ugga used ${cost} Grog Points. You now have ${points} Grog Points left.",
+		casino_company_name = "The Rock Casino & Resort",
 		vehicle_won_tweet = "Ooga booga! Someone just find shiny rock at the Lucky Wheel and get the ultrasome ${modelDisplayName}! Who's the lucky one? Go there now and take your prize.",
+		vehicle_is_not_in_cdimage = "This vehicle not exist.",
+		podium_vehicle_set_to = "The best ride be `${modelLabel}`.",
 
 		logs_lucky_wheel_reward_title = "Lucky Wheel Reward",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} spin wheel and get car.",
@@ -10054,12 +10143,18 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	},
 
 	pawn_shops = {
+		pawn_shop = "Trade Cave",
+		pawn_shop_far = "Go to Trade Cave",
+		pawn_shop_near = "[${InteractionKey}] Go to Trade Cave",
+		no_items_to_sell = "You no have ${itemLabel} to sell.",
+		close_menu = "Close Menu",
+
 		sell_items = "Sell ${itemLabel}, make shiny rock",
 		press_to_sell_items = "[${InteractionKey}] Give away ${amount}x ${itemLabel}",
 		sold_items = "Trader buy ${sellAmount}x ${itemLabel}, pay $${sellPrice}. Shiny rock from sky.",
-		no_items_to_sell = "You no have ${itemLabel} to sell.",
 		daily_limit_reached = "You've reached limit for today, vendor no buy more items.",
 		illegal_pawn_shop_id = "You try to pass values for pawn shop no exist.",
+
 		used_pawn_shop_title = "Used Pawn Shop",
 		used_pawn_shop_details = "${consoleName} use pawn shop and sell ${sellAmount} `${itemLabel}` and get $${sellPrice}."
 	},
@@ -10237,6 +10332,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 	printer = {
 		use_printer = "[${InteractionKey}] Use Printer",
+		failed_to_print = "No can express.",
 
 		no_paper = "Hmm... no bark to write on.",
 		invalid_url = "You write wrong picture words.",
@@ -10245,7 +10341,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		printing = "Uggaba...",
 
 		printed_logs_title = "Ugged Imaja",
-		printed_logs_details = "${consoleName} ugged an imaja with the URL `${url}`."
+		printed_logs_details = "${consoleName} made `${itemName}` with `${paperType}` and this picture `${url}`."
 	},
 
 	prop_hide = {
@@ -10257,7 +10353,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		no_address_set = "No cave marked.",
 		no_address_found = "Can't find cave with words '${address}'.",
 		marker_set = "Cave and pointer set to ${address}.",
-		removed_marker = "Ugh! ${address} gone."
+		removed_marker = "Ugh! ${address} gone.",
+		entrance = "Enterance",
+		back_entrance = "Derp Durp",
+		garage = "Grunge Hole"
 	},
 
 	props = {
@@ -10549,13 +10648,20 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		exiting = "Me go bye-bye...",
 		problems = "Problems:",
 		profile_gamma_not_18 = "Your 'gamma' setting no be set to default value. This make images from your squishy box not look good. To fix, type 'profile_gamma 18' in squishy box console. Me no give you job until you do. You need 'beta' or 'latest' version of FiveM. Change in FiveM main meat menu.",
-		screenshot_blackscreen = "Ugh! Your pictures go kaput, look all black. You need to fix your game so it can take pictures again, or else no more jobs for you. Problem might be caused by mean antivirus. To try taking pictures again, go back to this fancy UI.",
+		banned = "Ooga:",
+		banned_information = "Some cavepeople make cavepaintings that no good. This make cavepaintings different from each other. Sometimes cavepeople use small picture sizes, bad graphic settings or use visual mods. Visual mods okay, but no oversaturated or undersaturated visuals. Visual mods can make too much color or no color (make cavepeople look dead in cavepaintings).",
+		banned_unban = "Ugh. If you want to keep takin' pictures, you can unban yerself up to 3 times. But, before ye do that, ye should make yer game look better so ye don't get banned 'gain. Makin' the graphics better and turnin' down the fancy visual mods should help.",
+		unban = "Unban (${unbansLeft} left)",
 
 		screenshotting_start_logs_title = "Picture-Taking Beginning",
 		screenshotting_start_logs_details = "Ooga ${consoleName} started taking pictures.",
 
 		screenshotting_stop_logs_title = "Picture-Taking Done",
-		screenshotting_stop_logs_details = "Ooga ${consoleName} stopped taking pictures."
+		screenshotting_stop_logs_details = "Ooga ${consoleName} stopped taking pictures.",
+
+		user_does_not_exist = "Ugh. This user not here.",
+		screenshotter_already_banned = "The picture taker already in ban land.",
+		screenshotter_banned = "Yup, the picture taker be banned now."
 	},
 
 	scuba = {
@@ -10667,8 +10773,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		speed = "Ugh, Speed (${speedLevel})",
 		rotation = "Ugh, Rotation (${rotationLevel})",
 		clear_bullet_impacts = "Ugh, Clear the Bullet Impacts",
-		illegal_shooting_spot_value = "Ugh, You try to give me invalid values for shooting spots.",
-		illegal_shooting_spot_id = "Ugh, This shooting spot doesn't even exist. What you want me to do with it?",
 		not_enough_cash = "Ugh, not enough shiny rocks for you."
 	},
 
@@ -10920,7 +11024,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		time_parameters_invalid = "Me no understand the hour or minute.",
 		time_currently_transitioning = "Me changing time. Wait for a bit.",
 		time_successfully_transitioned = "Ugh, time now `${hour}:${minute}`.",
-		time_successfully_set = "Ugh, time set to `${hour}:${minute}` good."
+		time_successfully_set = "Ugh, time set to `${hour}:${minute}` good.",
+
+		developer_ambience_on = "Ugg developer ambience toggled on.",
+		developer_ambience_off = "Ugg developer ambience toggled off."
 	},
 
 	tablet = {
@@ -11137,6 +11244,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		tp_airport = "LS Airport",
 		tp_carrier = "Aircraft Carrier",
 		tp_cayo = "Cayo Perico",
+
+		actions = "Ugga ugga",
+		wander_around = "Ugga around",
+		speed_around = "Ugga fast",
+		clear_tasks = "Clear ugga",
 
 		you_are_not_in_a_vehicle = "You not ride in vehicle.",
 		you_are_in_a_vehicle = "You in vehicle now.",
@@ -11405,6 +11517,23 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		muted_logs_title = "Muted Grunts",
 		muted_logs_details = "${consoleName} muted ${targetConsoleName} from grunt chat.",
 		unmuted_logs_details = "${consoleName} ungrog ${targetConsoleName} from voice grunt."
+	},
+
+	wallhack = {
+		wallhack_on = "Ugg wallhack enabled.",
+		wallhack_off = "Ugg wallhack disabled.",
+
+		wallhack_failed = "Ugg failed to toggle wallhack.",
+		wallhack_everyone = "Ugg toggled wallhack for everyone.",
+		wallhack_self = "Ugg toggled wallhack for yourself.",
+		wallhack_player = "Ugg toggled wallhack for ${displayName}.",
+
+		wallhack_everyone_logs_title = "Ugg Ugg Wallhack For Everyone",
+		wallhack_everyone_logs_details = "${consoleName} ugg ugg wallhack for everyone.",
+		wallhack_player_logs_title = "Ugg Ugg Wallhack For Player",
+		wallhack_player_logs_details = "${consoleName} ugg ugg wallhack for ${targetConsoleName}.",
+		wallhack_self_logs_title = "Ugg Ugg Wallhack For Self",
+		wallhack_self_logs_details = "${consoleName} ugg ugg wallhack for themselves."
 	},
 
 	washrooms = {
@@ -11726,6 +11855,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		license_utility = "Fly Useful Birdie",
 		license_commercial = "Fly Money Birdie",
 		license_management = "Fly Stick Boss",
+		license_passenger = "Ugg",
 		license_military = "Fly War Birdie",
 		license_special = "Fly Special Rock Birdie",
 		license_boat = "Boat Paper",
@@ -11890,10 +12020,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		vehicle_at_police_impound = "Your thing on wheels is stuck in Oogabooga Jail Lot.",
 		vehicle_at_impound = "Your thing on wheels is in Oogabooga Lot.",
 		waypoint_to_impound = "Me marked map to Oogabooga Lot on your rock finder.",
-		unable_to_withdraw = "Me can't give you thing on wheels now, it still stick in ${location}.",
-		waypoint_to_vehicle = "Me marked way to your thing on wheels on your rock finder.",
-		vehicle_currently_at = "Ugga ugga, your thing with wheels is currently located at ${location}.",
-		vehicle_in_garage = "Ugga, your thing with wheels is located in ${garageName}.",
+		unable_to_withdraw = "Ung Ung, unable to withdraw vehicle as it can currently out.",
+		vehicle_in_garage = "Ugga ugga! Yer wheel-buggy be in ${garageName}. Me drew pointy rock on map.",
 		insufficient_funds = "Ugga ugga, you no have enough shiny rocks to withdraw this thing with wheels.",
 		error_withdrawing = "Ugga, something bad happened when trying to get your thing with wheels.",
 		withdraw_timeout = "Ugga ugga, wait a little before trying to get another thing with wheels.",
@@ -11924,15 +12052,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		garage = "Ugg Gar",
 		retrieved_vehicle_logs_title = "Ugg Me Get Vehicle",
 		retrieved_vehicle_logs_details = "${consoleName} ugg me get vehicle with plate `${plate}` for ${price}.",
+		no_vehicles_to_sell = "Ugga ugga! No wheel-buggies to trade.",
 
 		state_loading_model = "Ugg Model Loading...",
 		state_withdrawing = "Me Take Thing...",
-
-		state_retrieve_searching = "Ugg Search...",
 		state_retrieving = "Me Get Thing...",
-
 		state_storing = "Me Store Thing...",
-
 		state_loading = "Ugg Loading...",
 
 		vehicle_weight = "Thing Weight: ${weight}",

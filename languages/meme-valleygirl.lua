@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 22 (do not change)
+-- AUTO LOCALES: 23 (do not change)
 
 OP.Global.Locales.Languages["meme-valleygirl"] = {
 	-- configuration settings for language
@@ -341,12 +341,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		no_nearby_vehicles_off = "No More Hermit Life, Nearby Vehicles Mode Off.",
 		speed_up_progress_bar_on = "Ooooh, Speed Up Progress Bar On!",
 		speed_up_progress_bar_off = "Boooo, Speed Up Progress Bar Off.",
-		wallhack_on = "Like, Totally Have Wallhack On!",
-		wallhack_off = "Wallhack Off! Bummer.",
 		aimbot_on = "O-M-G, 'Aimbot' is, like, totally on now!",
 		aimbot_off = "Aww, 'Aimbot' is like, totally off now.",
-		player_bones_on = "Player Bones? Like, that's on now.",
-		player_bones_off = "Sorry, Player Bones is off now.",
 		vehicle_smoke_on = "Vroom vroom! 'Vehicle Smoke' is on!",
 		vehicle_smoke_off = "Boo, 'Vehicle Smoke' is off now.",
 
@@ -706,6 +702,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		vehicle_spawn_ban = "Ohmygosh, like, you totally thought you could take `${modelName}` for a spin, didn't you? Ugh, sorry, but we're not a fancy car showroom, and that model? It's, like, totally sold out forever!",
 		weapon_spawn_ban = "O-M-G, like, you seriously wanted the `${weaponName}`? Sorry, but this place is, like, not an armory, and that weapon? Still being made, duh.",
 		advanced_noclip_ban = "Wait, are you, like, trying to sneak around in secret passageways? Girl, this isn't some spooky ghost party, and that move? Not on our dance card, sorry.",
+		illegal_local_vehicle_ban = "Oh my gosh, you totally stumbled upon like the invisible ride of Lord Mirage! But, uh oh, this magical ride is, like, only for the annual phantom parade.",
 
 		type_aimbot = "Aimbot, duh",
 		type_bad_creation = "Total fail of a creation",
@@ -744,6 +741,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		type_thermal_night_vision = "Thermal/Night Vision, so cool",
 		type_underground = "Underground",
 		type_vehicle_modification = "Vehicle Modification, like, pimp my ride",
+		type_illegal_local_vehicle = "Using a Not-Networked Vehicle",
 
 		event_prefix = "Anti-Cheat: ${type}, oh em gee",
 
@@ -813,7 +811,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 	bans = {
 		banned_no_permissions = "Attempted to `${reason}` without, like, proper permissions.",
-		fraud_chargeback = "Fraud / Chargeback"
+		fraud_chargeback = "Fraud / Chargeback",
+		none_provided = "None provided, duh."
 	},
 
 	characters = {
@@ -1034,18 +1033,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		aimbot_command_parameter_targets = "targets",
 		aimbot_command_parameter_targets_help = "Server ids of, like, targets to aim for (only works when you're using it for yourself). (Will, like, filter targets and select only players with these server ids. Duh!)",
 		aimbot_command_substitutes = "",
-
-		player_bones_debug_command = "player_bones_debug",
-		player_bones_debug_command_help = "OMG, activate the player bones debugger!",
-		player_bones_debug_command_parameter_server_id = "ID of the person",
-		player_bones_debug_command_parameter_server_id_help = "If you're wanting to activate the player bones debugger for your BFF, insert their server ID here.",
-		player_bones_debug_command_substitutes = "player_bones",
-
-		wallhack_command = "wallhack",
-		wallhack_command_help = "Toggle 'wallhack', like whatever!",
-		wallhack_command_parameter_server_id = "ID of the person",
-		wallhack_command_parameter_server_id_help = "If you're, like, wanting to toggle the 'wallhack' for someone else, insert their server id here, hun.",
-		wallhack_command_substitutes = "",
 
 		speed_boost_command = "speed_boost",
 		speed_boost_command_help = "Toggle 'speed boost', ya know?",
@@ -2526,6 +2513,13 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		roll_lottery_command_help = "Like, roll the lottery manually or something.",
 		roll_lottery_command_substitutes = "",
 
+		-- game/lucky_wheel
+		set_podium_vehicle_command = "set_podium_vehicle",
+		set_podium_vehicle_command_help = "Set, like, the totally rad winnable podium vehicle at the casino.",
+		set_podium_vehicle_command_parameter_model_name = "model name",
+		set_podium_vehicle_command_parameter_model_name_help = "The model name of, like, the vehicle you want to change it to.",
+		set_podium_vehicle_command_substitutes = "",
+
 		-- game/magazines
 		refresh_magazines_command = "refresh_magazines",
 		refresh_magazines_command_help = "Refresh the magazines if there's been changes in the database. Obvi.",
@@ -2939,6 +2933,69 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		wipe_props_command_parameter_radius_help = "The like, radius for the wipe (1-250).",
 		wipe_props_command_substitutes = "",
 
+		-- game/racing
+		race_leave_command = "race_leave",
+		race_leave_command_help = "Like, totally bounce from the race you're in.",
+		race_leave_command_substitutes = "race_clear",
+
+		race_share_command = "race_share",
+		race_share_command_help = "Share a totally rad race track with another player.",
+		race_share_command_parameter_server_id = "server id",
+		race_share_command_parameter_server_id_help = "The server ID of the player you wanna share an epic track with.",
+		race_share_command_parameter_track_name = "track name",
+		race_share_command_parameter_track_name_help = "The name of the track you wanna share, duh.",
+		race_share_command_substitutes = "",
+
+		race_record_command = "race_like, seriously",
+		race_record_command_help = "Record, like, a race.",
+		race_record_command_substitutes = "",
+
+		race_save_command = "race_save, like",
+		race_save_command_help = "Save a race, you know?",
+		race_save_command_parameter_track_name = "track name, duh",
+		race_save_command_parameter_track_name_help = "The name you want to save it as, like, totally.",
+		race_save_command_parameter_track_type = "track type, whatever",
+		race_save_command_parameter_track_type_help = "The track type of the race, OMG.",
+		race_save_command_substitutes = "",
+
+		race_delete_command = "race_delete, bye",
+		race_delete_command_help = "Delete a race, haha.",
+		race_delete_command_parameter_track_name = "track name",
+		race_delete_command_parameter_track_name_help = "The name of the track you wanna delete.",
+		race_delete_command_substitutes = "",
+
+		race_list_command = "race_list",
+		race_list_command_help = "List all your, like, saved races.",
+		race_list_command_substitutes = "",
+
+		race_load_command = "race_load",
+		race_load_command_help = "Load a race, you know?",
+		race_load_command_parameter_track_name = "track name",
+		race_load_command_parameter_track_name_help = "The name of the track you wanna, like, load.",
+		race_load_command_substitutes = "",
+
+		race_start_command = "race_start",
+		race_start_command_help = "Start a race, like, duh.",
+		race_start_command_parameter_amount = "amount",
+		race_start_command_parameter_amount_help = "The moolah for entering the race.",
+		race_start_command_parameter_start_delay = "start delay",
+		race_start_command_parameter_start_delay_help = "The start delay in seconds, like, you know.",
+		race_start_command_parameter_laps = "laps",
+		race_start_command_parameter_laps_help = "The number of laps, duh.",
+		race_start_command_substitutes = "",
+
+		race_cancel_command = "race_cancel",
+		race_cancel_command_help = "Cancel a race, because, like, boring.",
+		race_cancel_command_substitutes = "",
+
+		race_checkpoints_command = "race_checkpoints",
+		race_checkpoints_command_help = "Toggle checkpoints, whatever that means.",
+		race_checkpoints_command_substitutes = "",
+
+		race_sounds_command = "race_sounds",
+		race_sounds_command_help = "Toggle sounds, like, duh.",
+		race_sounds_command_substitutes = "",
+
 		-- game/radio
 		radio_command = "radio",
 		radio_command_help = "Toggle the radio UI like, for real.",
@@ -3173,6 +3230,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		blackout_command_help = "Toggle whether a blackout is active or not.",
 		blackout_command_substitutes = "",
 
+		toggle_developer_ambience_command = "toggle_developer_ambience",
+		toggle_developer_ambience_command_help = "Toggle the developer ambience, like, totally.",
+		toggle_developer_ambience_command_substitutes = "",
+
 		-- game/tablet
 		tablet_command = "tablet",
 		tablet_command_help = "Opens the tablet UI (if you have a tablet).",
@@ -3274,6 +3335,13 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		change_voice_mode_command = "change_voice_mode",
 		change_voice_mode_command_help = "Toggles the 'music' voice input mode, like, on/off. That mode will, like, disable noise removal and echo cancellation, allowing for, like, clearer music.",
 		change_voice_mode_command_substitutes = "voice_mode",
+
+		-- game/wallhack
+		wallhack_command = "wallhack",
+		wallhack_command_help = "Toggle wallhack, you know, see through walls.",
+		wallhack_command_parameter_server_id = "ID of the person",
+		wallhack_command_parameter_server_id_help = "If you're wanting to toggle the wallhack for someone else, insert their server id here, ya know.",
+		wallhack_command_substitutes = "",
 
 		-- game/wizard
 		wizard_command = "wizard",
@@ -3722,7 +3790,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		richer_presence_on = "Richer presence is like, totally on now.",
 		richer_presence_off = "Richer presence is like, totally off now.",
 
-		announce_event = "There's like an event in 15 minutes! Check Discord for more info.\n\n${name} @ **${location}**"
+		announce_event = "There is an event in like, ${minutes} minutes! Check Discord for more information.\n\n${name} @ **${location}**",
+		announce_event_starting_now = "Like, there's, like, an event starting right now! Check Discord for, like, more deets.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -5691,7 +5760,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		no = "Nah",
 
 		logs_daily_streak_changed_title = "OMG! Daily Streak Changed",
-		logs_daily_streak_changed_details = "${consoleName} now has a, like, daily streak of `${streak}.`",
+		logs_daily_streak_changed_details = "${consoleName} now has a daily streak of `${streak}`. Gag me with a spoon!",
+
+		logs_daily_task_completed_title = "Daily Task, like, Totally Completed",
+		logs_daily_task_completed_details = "${consoleName} completed a daily task with, like, the name of `${taskName}`.",
 
 		restore_streak = "Restore, like, streak of ${streak}",
 		confirm_streak_restore = "Are you sure you want to, like, restore your streak of ${streak} days? The cost is ${cost} OP Points.",
@@ -6496,8 +6568,13 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	hunting = {
 		hold_to_skin = "[${InteractionKey}] Hold up to skin",
 		skinning_animal = "Skinning this, like, dead animal now",
-		meat_too_damaged = "This animal's meat is, like, totally damaged.",
 		animal_is_being_skinned = "This animal is like, totally being skinned.",
+
+		hold_to_remove = "[${InteractionKey}] Hold to, like, totally remove carcass",
+		removing_carcass = "Removing, like, totally damaged carcass",
+		carcass_damaged = "The carcass, like, is too damaged to skin. Bummer!",
+
+		meat_too_damaged = "Oh em gee, like the animal's meat was, like, totally trashed and couldn't be harvested.",
 
 		skinned_logs_title = "Skinned Animal",
 		skinned_logs_details = "${consoleName} totally skinned an animal (${modelName}) and, like, got ${skinnedItems}.",
@@ -6673,7 +6750,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		instance_destroyed = "I just, like, totally destroyed the instance with the ID `${instanceId}`.",
 		instance_destruction_failed = "Oopsie, I couldn't destroy that instance!",
 		instance_id_parameter_invalid = "Ugh, the instance ID you entered is not valid.",
-		added_player_to_instance = "Totally added ${consoleName} to the instance with ID `${instanceId}.`",
+		added_player_to_instance = "Added ${consoleName} to the instance with, like, ID `${instanceId}`.",
 		failed_to_add_player_to_instance = "Sorry, it looks like I couldn't add the player to the instance.",
 		server_id_parameter_invalid = "Hmmm, the server ID parameter is totally invalid!",
 		removed_player_from_instance = "OMG, I totally removed ${consoleName} from the instance with ID `${instanceId}`.",
@@ -6987,9 +7064,13 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		glass_breaker_description = "Used to break car windows in case of emergency.",
 
 		picture = "Picture, totes gotta collect all the memories of you and your squad.",
-		picture_description = "Collect all the memories of you and your friends.",
-		paper = "Paper",
-		paper_description = "A blank piece of paper, duh.",
+		picture_description = "Collect all the memories of you and your friends. (Size: 1x1)",
+		printed_card = "Printed Card",
+		printed_card_description = "Like, a small printed card, maybe like a business card? (Size: 9x5)",
+		paper = "Photo Paper",
+		paper_description = "Like, a blank piece of paper for, like, printing pictures.",
+		card_paper = "Card Paper",
+		card_paper_description = "Like, a blank piece of paper for, like, printing business cards.",
 		printer = "Printer",
 		printer_description = "No fax, only printer.",
 
@@ -7433,6 +7514,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		gold_bar = "Gold Bar, duh!",
 		gold_bar_description = "Used for, like, repairs and crafting and stuff.",
+
+		ancient_ring = "Like, Ancient Ring",
+		ancient_ring_description = "OMG, this old gold ring is, like, totally worn down and stuff. The fancy designs on it are all faded and junk, hinting at like, love and loyalty from, like, a really long time back. It used to be, like, a symbol of forever love, but now it's just, like, super intriguing and reminds us of, like, totally epic stories and lost civilizations.",
+		ancient_coin = "Like, Ancient Coin",
+		ancient_coin_description = "This coin is, like, so ancient, it's beyond ancient. The gold surface is all tarnished from, like, the salty sea air and sandy beaches. It's, like, carrying the weight of centuries in its design. The design on it is, like, a symbol of some empire's power and how money passes through history, you know? It's, like, so cool and stuff.",
 
 		aluminium = "Crude Aluminium, ew!",
 		aluminium_description = "Used for, like, repairs and crafting and such.",
@@ -8788,7 +8874,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		lucky_wheel_is_occupied = "Sorry, the Lucky Wheel is taken at the moment. Please wait.",
 		not_enough_op_points = "You need ${cost} OP Points to spin the Lucky Wheel. You only got ${points} OP Points.",
 		used_op_points = "Like, you just used ${cost} OP Points. Now you got ${points} OP Points left.",
+		casino_company_name = "The Diamond Casino & Resort, like, totally",
 		vehicle_won_tweet = "Like, someone just hit the jackpot at the Lucky Wheel and scored the totally rare ${modelDisplayName}! Who's the lucky winner? Go claim your prize ASAP!",
+		vehicle_is_not_in_cdimage = "Um, this ride is not in the game files.",
+		podium_vehicle_set_to = "The podium vehicle has been set to `${modelLabel}`, duh.",
 
 		logs_lucky_wheel_reward_title = "Lucky Wheel Prize",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} spun the wheel and got a sweet ride.",
@@ -10054,12 +10143,18 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	},
 
 	pawn_shops = {
+		pawn_shop = "Pawn Shop",
+		pawn_shop_far = "Access Pawn Shop",
+		pawn_shop_near = "[${InteractionKey}] Access Pawn Shop",
+		no_items_to_sell = "Sorry, girlfriend, you don't have any ${itemLabel} to sell. Bummer!",
+		close_menu = "Close Menu",
+
 		sell_items = "Sell ${itemLabel}",
 		press_to_sell_items = "Press [${InteractionKey}] to sell, like, ${amount}x ${itemLabel}",
 		sold_items = "Sold ${sellAmount}x ${itemLabel} for $${sellPrice}.",
-		no_items_to_sell = "Sorry, girlfriend, you don't have any ${itemLabel} to sell. Bummer!",
 		daily_limit_reached = "Chillax babe, you've hit your daily limit, so the vendor is not buying any more stuff. Come back tomorrow to sell again!",
 		illegal_pawn_shop_id = "Uh-oh, it looks like you're trying to pawn off items at a store that doesn't even exist. Not cool!",
+
 		used_pawn_shop_title = "Pimped Out Pawn Shop",
 		used_pawn_shop_details = "Hey, check it, ${consoleName} hit up the pawn shop and sold ${sellAmount} `${itemLabel}` for a cool $${sellPrice}. What a boss!"
 	},
@@ -10237,6 +10332,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 	printer = {
 		use_printer = "[${InteractionKey}] Use the Printer, duh!",
+		failed_to_print = "Um, like, printing failed.",
 
 		no_paper = "Ugh, you're all out of paper.",
 		invalid_url = "Gross, that's an invalid image URL.",
@@ -10245,7 +10341,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		printing = "Printing... OMG",
 
 		printed_logs_title = "Like, Printed Image",
-		printed_logs_details = "${consoleName} like, totally printed an image with the URL `${url}`."
+		printed_logs_details = "${consoleName} printed a `${itemName}` using `${paperType}` with the image URL `${url}`, oh my gosh."
 	},
 
 	prop_hide = {
@@ -10257,7 +10353,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		no_address_set = "No address set, like, duh!",
 		no_address_found = "No address found under '${address}', like, seriously.",
 		marker_set = "Marker and waypoint set to ${address}, like, totally.",
-		removed_marker = "Like, I totally removed the marker for ${address}."
+		removed_marker = "Like, I totally removed the marker for ${address}.",
+		entrance = "Entrance",
+		back_entrance = "Like, Back Entrance",
+		garage = "Garage, duh"
 	},
 
 	props = {
@@ -10549,13 +10648,20 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		exiting = "Exiting...",
 		problems = "Problems:",
 		profile_gamma_not_18 = "OMG, your 'gamma' setting, like, isn't set to the default value. This, like, reduces the consistency and quality of images generated by your client. To fix this, type 'profile_gamma 18' in your F8 console. You will, like, not be given jobs until you do this. You need to be on the 'beta' or 'latest' version of FiveM to be able to do that. You can, like, change it in the FiveM main menu.",
-		screenshot_blackscreen = "OMG, like your screenshots are, like, totally coming out black. You gotta fix your game so it can be screenshot-worthy, otherwise you won't get any more jobs. This could be caused by, like, your anti-virus or something. To, like, try creating images again, just, like, go back into this UI.",
+		banned = "Totally banned:",
+		banned_information = "Like, some players create images that doesn't meet expectations, ya know? This totally messes up the consistency on the portraits and selfies. Like, it usually happens when your resolution is too low, graphic settings are too low or you're using some lame visual mods. While visual mods are, like, acceptable, really intense or dull colors are not cool. Visual mods often make, like, super intense colors or make characters look totally dead on the portraits, ew.",
+		banned_unban = "Like, if you wanna keep like, screenshotting and stuff, then you can, like, unban yourself up to, like, 3 times. But, before you do that, you should, like, totally improve your game visuals so you don't get banned again, you know? Like, increasing the graphic settings and, like, toning down on the visual mods will help, for sure.",
+		unban = "Unban (${unbansLeft} left)",
 
 		screenshotting_start_logs_title = "OMG, Starting Screenshotting!",
 		screenshotting_start_logs_details = "${consoleName} is, like, totally starting to take screenshots.",
 
 		screenshotting_stop_logs_title = "OMG, Stopping Screenshotting!",
-		screenshotting_stop_logs_details = "${consoleName} is, like, totally stopping the screenshotting madness."
+		screenshotting_stop_logs_details = "${consoleName} is, like, totally stopping the screenshotting madness.",
+
+		user_does_not_exist = "Ugh, this user doesn't even exist.",
+		screenshotter_already_banned = "Oh em gee, this screenshoter is like, already banned.",
+		screenshotter_banned = "Duh, the screenshoter is, like, so totally banned now."
 	},
 
 	scuba = {
@@ -10667,8 +10773,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		speed = "Speed (${speedLevel})",
 		rotation = "Rotation (${rotationLevel})",
 		clear_bullet_impacts = "Clear Bullet Impacts",
-		illegal_shooting_spot_value = "Like, don't even try to pass invalid shooting spot values!",
-		illegal_shooting_spot_id = "Oh, you're passing values to a non-existent shooting spot? How bogus.",
 		not_enough_cash = "You don't have enough cash, like totally."
 	},
 
@@ -10920,7 +11024,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		time_parameters_invalid = "Invalid hour or minute parameter. Please enter valid numbers, TYSM!",
 		time_currently_transitioning = "Hold on, the time is currently transitioning LOL, Wait it out.",
 		time_successfully_transitioned = "OMG! Successfully transitioned the time to `${hour}:${minute}`.",
-		time_successfully_set = "OMG! Successfully set the time to `${hour}:${minute}`."
+		time_successfully_set = "OMG! Successfully set the time to `${hour}:${minute}`.",
+
+		developer_ambience_on = "Like, omigod! Boogie down with the developer ambience, like, totally on.",
+		developer_ambience_off = "Ugh, like, no more developer ambience. It's, like, totally off now."
 	},
 
 	tablet = {
@@ -11137,6 +11244,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		tp_airport = "LS Airport, the bomb",
 		tp_carrier = "Aircraft Carrier, like, on a boat",
 		tp_cayo = "Cayo Perico, like, paradise found",
+
+		actions = "Gnarly things to do",
+		wander_around = "Wander Around",
+		speed_around = "Speed Around",
+		clear_tasks = "Like, totally clear tasks",
 
 		you_are_not_in_a_vehicle = "Ugh, you're not even in a car, like, get on it!",
 		you_are_in_a_vehicle = "You're currently cruising in a car, like, duh!",
@@ -11405,6 +11517,23 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		muted_logs_title = "Muted Voice",
 		muted_logs_details = "${consoleName} totes muted ${targetConsoleName} from voice chat.",
 		unmuted_logs_details = "${consoleName} like, unmuted ${targetConsoleName} from voice chat."
+	},
+
+	wallhack = {
+		wallhack_on = "Wallhack, like, totally activated. No walls can, like, stop you now!",
+		wallhack_off = "Wallhack, like, totally deactivated. Walls are, like, sooo back in the game.",
+
+		wallhack_failed = "Oh my gosh, like, totally failed to toggle wallhack. Bummer!",
+		wallhack_everyone = "Successfully toggled wallhack for everyone. Everyone's, like, totally invincible!",
+		wallhack_self = "Successfully toggled wallhack for yourself. Walls are, like, sooo overrated.",
+		wallhack_player = "Successfully toggled wallhack for ${displayName}. ${displayName} is, like, totally unstoppable now!",
+
+		wallhack_everyone_logs_title = "Like, Toggled Wallhack For Everyone",
+		wallhack_everyone_logs_details = "${consoleName} toggled wallhack for everyone. For real.",
+		wallhack_player_logs_title = "Toggled Wallhack For Player, OMG!",
+		wallhack_player_logs_details = "${consoleName} toggled wallhack for ${targetConsoleName}. You've got to see it!",
+		wallhack_self_logs_title = "Toggled Wallhack For Self, Like, Totally!",
+		wallhack_self_logs_details = "${consoleName} toggled wallhack for themselves. For real, it's like magic!"
 	},
 
 	washrooms = {
@@ -11726,6 +11855,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		license_utility = "Utility, like, useful and stuff!",
 		license_commercial = "Commercial, like, all about business!",
 		license_management = "Management, because someone's gotta manage this chaos!",
+		license_passenger = "Passenger, Duh!",
 		license_military = "Military, like, hardcore and stuff!",
 		license_special = "Special Aircraft, like, special snowflakes but with wings!",
 		license_boat = "Boating certificate",
@@ -11890,10 +12020,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		vehicle_at_police_impound = "Your ride is stuck on police hold, I'm sorry",
 		vehicle_at_impound = "Your car is chillin' at the Impound Lot",
 		waypoint_to_impound = "Don't trip, I marked the Impound Lot on your GPS",
-		unable_to_withdraw = "Sorry babe, I can't get your car from ${location} right now",
-		waypoint_to_vehicle = "I gotchu, I marked your ride's location on your GPS",
-		vehicle_currently_at = "OMG your ride is totally parked at ${location}.",
-		vehicle_in_garage = "Your wheels are chillin' in ${garageName}.",
+		unable_to_withdraw = "Unable to withdraw vehicle as it can currently out. Bummer.",
+		vehicle_in_garage = "Like, your ride is, like, totally in ${garageName}. I've, like, set a waypoint on your map.",
 		insufficient_funds = "Ugh, you don't even have enough cash to pull this car out.",
 		error_withdrawing = "Like, something went wrong while trying to get your ride back.",
 		withdraw_timeout = "Seriously, gotta wait a sec before trying to get another car.",
@@ -11924,15 +12052,12 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		garage = "Like, Garage",
 		retrieved_vehicle_logs_title = "Got My Ride",
 		retrieved_vehicle_logs_details = "${consoleName} got their ride with plate `${plate}` for ${price}.",
+		no_vehicles_to_sell = "OMG, you, like, have no cars to sell, like, at all.",
 
 		state_loading_model = "Loading Model... Ugh, so boring",
 		state_withdrawing = "Gonna take it out...",
-
-		state_retrieve_searching = "Searching... Like, where is it?",
 		state_retrieving = "Retrieving... Almost got it!",
-
 		state_storing = "Gonna store it now...",
-
 		state_loading = "Loading... Can we, like, get on with this?",
 
 		vehicle_weight = "Weight: ${weight} Ugh, heavy",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 22 (do not change)
+-- AUTO LOCALES: 23 (do not change)
 
 OP.Global.Locales.Languages["meme-1929"] = {
 	-- configuration settings for language
@@ -341,12 +341,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		no_nearby_vehicles_off = "Toggled 'No Nearby Vehicles' Off.",
 		speed_up_progress_bar_on = "Toggled 'Speed Up Progress Bar' On.",
 		speed_up_progress_bar_off = "Toggled 'Speed Up Progress Bar' Off.",
-		wallhack_on = "Toggled 'Wallhack' On.",
-		wallhack_off = "Toggled 'Wallhack' Off.",
 		aimbot_on = "Enabled 'Aimbot'.",
 		aimbot_off = "Disabled 'Aimbot'.",
-		player_bones_on = "Enabled 'Player Bones'.",
-		player_bones_off = "Disabled 'Player Bones'.",
 		vehicle_smoke_on = "Enabled 'Vehicle Smoke'.",
 		vehicle_smoke_off = "Disabled 'Vehicle Smoke'.",
 
@@ -706,6 +702,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		vehicle_spawn_ban = "undefined",
 		weapon_spawn_ban = "undefined",
 		advanced_noclip_ban = "undefined",
+		illegal_local_vehicle_ban = "undefined",
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Bad Creation",
@@ -744,6 +741,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		type_thermal_night_vision = "Thermal/Night Vision",
 		type_underground = "Subterranean",
 		type_vehicle_modification = "Vehicle Modification",
+		type_illegal_local_vehicle = "undefined",
 
 		event_prefix = "Anti-Cheat: ${type}",
 
@@ -813,7 +811,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 	bans = {
 		banned_no_permissions = "undefined",
-		fraud_chargeback = "undefined"
+		fraud_chargeback = "undefined",
+		none_provided = "undefined"
 	},
 
 	characters = {
@@ -1034,18 +1033,6 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		aimbot_command_parameter_targets = "targets",
 		aimbot_command_parameter_targets_help = "Target server ids (only works at the time of toggeling f'r thyself). (Wilt filter targets to only beest players with these server ids)",
 		aimbot_command_substitutes = "",
-
-		player_bones_debug_command = "player_bones_debug",
-		player_bones_debug_command_help = "Toggle the player bones debugger.",
-		player_bones_debug_command_parameter_server_id = "server id",
-		player_bones_debug_command_parameter_server_id_help = "If thou art wanting to toggle the player bones debugger for someone else, insert their server id hither.",
-		player_bones_debug_command_substitutes = "player_bones",
-
-		wallhack_command = "wallhack",
-		wallhack_command_help = "Toggle 'wallhack'.",
-		wallhack_command_parameter_server_id = "server id",
-		wallhack_command_parameter_server_id_help = "If thee art wanting to toggle the 'wallhack' f'r someone else, inserteth their serv'r id hither.",
-		wallhack_command_substitutes = "",
 
 		speed_boost_command = "speed_boost",
 		speed_boost_command_help = "Toggle 'speed boost'.",
@@ -2526,6 +2513,13 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		roll_lottery_command_help = "Roll the lottery manually.",
 		roll_lottery_command_substitutes = "",
 
+		-- game/lucky_wheel
+		set_podium_vehicle_command = "undefined",
+		set_podium_vehicle_command_help = "undefined",
+		set_podium_vehicle_command_parameter_model_name = "undefined",
+		set_podium_vehicle_command_parameter_model_name_help = "undefined",
+		set_podium_vehicle_command_substitutes = "",
+
 		-- game/magazines
 		refresh_magazines_command = "refresh_magazines",
 		refresh_magazines_command_help = "Refresh the magazines if there hast been changes in the database.",
@@ -2939,6 +2933,69 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		wipe_props_command_parameter_radius_help = "The radius fur the wipe (1-250).",
 		wipe_props_command_substitutes = "",
 
+		-- game/racing
+		race_leave_command = "undefined",
+		race_leave_command_help = "undefined",
+		race_leave_command_substitutes = "undefined",
+
+		race_share_command = "undefined",
+		race_share_command_help = "undefined",
+		race_share_command_parameter_server_id = "undefined",
+		race_share_command_parameter_server_id_help = "undefined",
+		race_share_command_parameter_track_name = "undefined",
+		race_share_command_parameter_track_name_help = "undefined",
+		race_share_command_substitutes = "",
+
+		race_record_command = "undefined",
+		race_record_command_help = "undefined",
+		race_record_command_substitutes = "",
+
+		race_save_command = "undefined",
+		race_save_command_help = "undefined",
+		race_save_command_parameter_track_name = "undefined",
+		race_save_command_parameter_track_name_help = "undefined",
+		race_save_command_parameter_track_type = "undefined",
+		race_save_command_parameter_track_type_help = "undefined",
+		race_save_command_substitutes = "",
+
+		race_delete_command = "undefined",
+		race_delete_command_help = "undefined",
+		race_delete_command_parameter_track_name = "undefined",
+		race_delete_command_parameter_track_name_help = "undefined",
+		race_delete_command_substitutes = "",
+
+		race_list_command = "undefined",
+		race_list_command_help = "undefined",
+		race_list_command_substitutes = "",
+
+		race_load_command = "undefined",
+		race_load_command_help = "undefined",
+		race_load_command_parameter_track_name = "undefined",
+		race_load_command_parameter_track_name_help = "undefined",
+		race_load_command_substitutes = "",
+
+		race_start_command = "undefined",
+		race_start_command_help = "undefined",
+		race_start_command_parameter_amount = "undefined",
+		race_start_command_parameter_amount_help = "undefined",
+		race_start_command_parameter_start_delay = "undefined",
+		race_start_command_parameter_start_delay_help = "undefined",
+		race_start_command_parameter_laps = "undefined",
+		race_start_command_parameter_laps_help = "undefined",
+		race_start_command_substitutes = "",
+
+		race_cancel_command = "undefined",
+		race_cancel_command_help = "undefined",
+		race_cancel_command_substitutes = "",
+
+		race_checkpoints_command = "undefined",
+		race_checkpoints_command_help = "undefined",
+		race_checkpoints_command_substitutes = "",
+
+		race_sounds_command = "undefined",
+		race_sounds_command_help = "undefined",
+		race_sounds_command_substitutes = "",
+
 		-- game/radio
 		radio_command = "radio",
 		radio_command_help = "Turns the radio interface on and off.",
@@ -3173,6 +3230,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		blackout_command_help = "Toggle whether a blackout is active or not.", -- "Toggle if blackout is active or not.",
 		blackout_command_substitutes = "",
 
+		toggle_developer_ambience_command = "undefined",
+		toggle_developer_ambience_command_help = "undefined",
+		toggle_developer_ambience_command_substitutes = "",
+
 		-- game/tablet
 		tablet_command = "tablet",
 		tablet_command_help = "Opens the tablet UI (if you have a tablet).", -- "Open the tablet user interface (if you have one).",
@@ -3274,6 +3335,13 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		change_voice_mode_command = "change_voice_mode",
 		change_voice_mode_command_help = "Toggles the 'music' voice input mode on/off. That mode will disable noise removal and echo cancellation, allowing for clearer music.",
 		change_voice_mode_command_substitutes = "voice_mode",
+
+		-- game/wallhack
+		wallhack_command = "wallhack",
+		wallhack_command_help = "undefined",
+		wallhack_command_parameter_server_id = "server id",
+		wallhack_command_parameter_server_id_help = "undefined",
+		wallhack_command_substitutes = "",
 
 		-- game/wizard
 		wizard_command = "wizard",
@@ -3722,7 +3790,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		richer_presence_on = "Richer presence now enabled.",
 		richer_presence_off = "Richer presence now disabled.",
 
-		announce_event = "A special event will happen in 15 minutes! Check Discord for more information.\n\n${name} located at **${location}**"
+		announce_event = "undefined",
+		announce_event_starting_now = "undefined"
 	},
 
 	emojis = {
@@ -5693,6 +5762,9 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		logs_daily_streak_changed_title = "undefined",
 		logs_daily_streak_changed_details = "undefined",
 
+		logs_daily_task_completed_title = "undefined",
+		logs_daily_task_completed_details = "undefined",
+
 		restore_streak = "Restore streak of ${streak}",
 		confirm_streak_restore = "Do you wish to restore your streak of ${streak} days? The charge is ${cost} Points of Originality.",
 
@@ -6496,8 +6568,13 @@ OP.Global.Locales.Languages["meme-1929"] = {
 	hunting = {
 		hold_to_skin = "[${InteractionKey}] Hold to skin",
 		skinning_animal = "Skinning dead animal",
-		meat_too_damaged = "This animal's meat is too damaged.",
 		animal_is_being_skinned = "The animal is being skinned.",
+
+		hold_to_remove = "undefined",
+		removing_carcass = "undefined",
+		carcass_damaged = "undefined",
+
+		meat_too_damaged = "undefined",
 
 		skinned_logs_title = "Skinned Animal",
 		skinned_logs_details = "${consoleName} skinned an animal (${modelName}) and obtained ${skinnedItems}.",
@@ -6673,7 +6750,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		instance_destroyed = "Destroy instance with ID `${instanceId}`.",
 		instance_destruction_failed = "Failed to destroy the instance.",
 		instance_id_parameter_invalid = "The instance ID parameter is invalid.",
-		added_player_to_instance = "${consoleName} added to instance with ID `${instanceId}.`",
+		added_player_to_instance = "undefined",
 		failed_to_add_player_to_instance = "Failed to add player to the instance.",
 		server_id_parameter_invalid = "The server ID parameter is invalid.",
 		removed_player_from_instance = "${consoleName} hath been removed from the instance with the ID `${instanceId}`.",
@@ -6987,9 +7064,13 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		glass_breaker_description = "Used to break car windows in case of emergency.",
 
 		picture = "Portrait",
-		picture_description = "Gathereth all the memories of thou and thy companions.",
-		paper = "Paper",
-		paper_description = "A blank sheet of paper.",
+		picture_description = "undefined",
+		printed_card = "undefined",
+		printed_card_description = "undefined",
+		paper = "undefined",
+		paper_description = "undefined",
+		card_paper = "undefined",
+		card_paper_description = "undefined",
 		printer = "Printing Machine",
 		printer_description = "No fax, only printer.",
 
@@ -7433,6 +7514,11 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		gold_bar = "Gilded Bar",
 		gold_bar_description = "Utilized for mending and crafting.",
+
+		ancient_ring = "undefined",
+		ancient_ring_description = "undefined",
+		ancient_coin = "undefined",
+		ancient_coin_description = "undefined",
 
 		aluminium = "Raw Aluminum",
 		aluminium_description = "Utilized for mending and crafting.",
@@ -8788,7 +8874,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		lucky_wheel_is_occupied = "The Lucky Wheel is currently occupied. Please tarry.",
 		not_enough_op_points = "You need ${cost} OP Points to spin the Lucky Wheel. You have ${points} OP Points.",
 		used_op_points = "You used ${cost} OP Points. You now have ${points} OP Points left.",
+		casino_company_name = "undefined",
 		vehicle_won_tweet = "Someone hath struck gold at the Lucky Wheel and secured the ultra-rare ${modelDisplayName}! Who's the fortunate winner? Headeth ov'r anon and claim thy prize.",
+		vehicle_is_not_in_cdimage = "undefined",
+		podium_vehicle_set_to = "undefined",
 
 		logs_lucky_wheel_reward_title = "Lucky Wheel Reward",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} hath spun the wheel and won a horseless carriage.",
@@ -10054,12 +10143,18 @@ OP.Global.Locales.Languages["meme-1929"] = {
 	},
 
 	pawn_shops = {
+		pawn_shop = "undefined",
+		pawn_shop_far = "undefined",
+		pawn_shop_near = "undefined",
+		no_items_to_sell = "Thou hast no ${itemLabel} to sell.",
+		close_menu = "undefined",
+
 		sell_items = "Sell ${itemLabel}",
 		press_to_sell_items = "[${InteractionKey}] Sell ${amount}x ${itemLabel}",
 		sold_items = "Sold ${sellAmount}x ${itemLabel} for $${sellPrice}.",
-		no_items_to_sell = "Thou hast no ${itemLabel} to sell.",
 		daily_limit_reached = "Thou hast reached thy daily limit, the vendor is not buying any more items.",
 		illegal_pawn_shop_id = "Attempting to pass values for a pawn shop that dostn't exist.",
+
 		used_pawn_shop_title = "Used Pawn Shop",
 		used_pawn_shop_details = "${consoleName} hath used a pawn shop and sold ${sellAmount} `${itemLabel}` and received $${sellPrice}."
 	},
@@ -10237,6 +10332,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 	printer = {
 		use_printer = "[${InteractionKey}] Use Printer",
+		failed_to_print = "undefined",
 
 		no_paper = "You're out of paper.",
 		invalid_url = "Invalid Image URL.",
@@ -10245,7 +10341,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		printing = "Printing...",
 
 		printed_logs_title = "Printed Picture",
-		printed_logs_details = "${consoleName} printed a picture with the URL `${url}`."
+		printed_logs_details = "undefined"
 	},
 
 	prop_hide = {
@@ -10257,7 +10353,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		no_address_set = "No address set.",
 		no_address_found = "No address found under '${address}'.",
 		marker_set = "Marker and waypoint set to ${address}.",
-		removed_marker = "Marker removed for ${address}."
+		removed_marker = "Marker removed for ${address}.",
+		entrance = "undefined",
+		back_entrance = "undefined",
+		garage = "undefined"
 	},
 
 	props = {
@@ -10549,13 +10648,20 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		exiting = "Leaving...",
 		problems = "Issues:",
 		profile_gamma_not_18 = "Your 'gamma' setting is not set to the default value. This diminishes the consistency and quality of images produced by your client. To resolve this, input 'profile_gamma 18' in your F8 console. You will not receive assignments until this is completed. You must be on the 'beta' or 'latest' version of FiveM to be able to modify this. You can alter it in the FiveM main menu.",
-		screenshot_blackscreen = "Yʊŗ sċřęěήšħơțş áŗę ŕēťűŗŋıņġ á ɓłáċķşċřęęņ. Yőű mųšt ƒıӿ ȳőűŗ ģąɱě ŋőť ɓēıņġ şċřęęňşħőŧŧáɓļę ɓēƒőŗē ȳőų ŵıłł ɓē ģıʋęņ mōŗę ĵőɓş. Ťħış ćāŋ Ƅē čáűşěď ƀŷ áŋţı-ṽįŕűş. Ťő ŧřȳ čřēáţıņġ įmąģęş áĝäıŋ, řē-ęŋţęŗ ŧħıŝ ůı.",
+		banned = "undefined",
+		banned_information = "undefined",
+		banned_unban = "undefined",
+		unban = "undefined",
 
 		screenshotting_start_logs_title = "Ščřęęņşĥőŧŧıņğ Šťářŧ",
 		screenshotting_start_logs_details = "${consoleName} ŝťáŗťęď ščřęęņşħőŧŧıņğ.",
 
 		screenshotting_stop_logs_title = "Šćřęęņşĥőťţıņĝ Şťőƥ",
-		screenshotting_stop_logs_details = "${consoleName} şŧőƥƥēď ščřęęώŧıņğ."
+		screenshotting_stop_logs_details = "${consoleName} şŧőƥƥēď ščřęęώŧıņğ.",
+
+		user_does_not_exist = "undefined",
+		screenshotter_already_banned = "undefined",
+		screenshotter_banned = "undefined"
 	},
 
 	scuba = {
@@ -10667,8 +10773,6 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		speed = "Speed (${speedLevel})",
 		rotation = "Rotation (${rotationLevel})",
 		clear_bullet_impacts = "Clear Bullet Impacts",
-		illegal_shooting_spot_value = "Attempting to pass invalid values for shooting spots.",
-		illegal_shooting_spot_id = "Attempting to pass values for a shooting spot that doesn't exist.",
 		not_enough_cash = "Thou dost not have sufficient coin."
 	},
 
@@ -10920,7 +11024,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		time_parameters_invalid = "Invalid hour or minute parameter.",
 		time_currently_transitioning = "The time is currently transitioning, pray wait.",
 		time_successfully_transitioned = "Time successfully changed to `${hour}:${minute}`.",
-		time_successfully_set = "Time successfully set to `${hour}:${minute}`."
+		time_successfully_set = "Time successfully set to `${hour}:${minute}`.",
+
+		developer_ambience_on = "undefined",
+		developer_ambience_off = "undefined"
 	},
 
 	tablet = {
@@ -11137,6 +11244,11 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		tp_airport = "LS Airport",
 		tp_carrier = "Aircraft Carrier",
 		tp_cayo = "Cayo Perico",
+
+		actions = "undefined",
+		wander_around = "undefined",
+		speed_around = "undefined",
+		clear_tasks = "undefined",
 
 		you_are_not_in_a_vehicle = "Thou art not in a carriage.",
 		you_are_in_a_vehicle = "Thou art presently in a carriage.",
@@ -11405,6 +11517,23 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		muted_logs_title = "Muted Voice",
 		muted_logs_details = "${consoleName} hath muted ${targetConsoleName} from voice chat.",
 		unmuted_logs_details = "${consoleName} unmuted ${targetConsoleName} from voice chat."
+	},
+
+	wallhack = {
+		wallhack_on = "undefined",
+		wallhack_off = "undefined",
+
+		wallhack_failed = "undefined",
+		wallhack_everyone = "undefined",
+		wallhack_self = "undefined",
+		wallhack_player = "undefined",
+
+		wallhack_everyone_logs_title = "undefined",
+		wallhack_everyone_logs_details = "undefined",
+		wallhack_player_logs_title = "undefined",
+		wallhack_player_logs_details = "undefined",
+		wallhack_self_logs_title = "undefined",
+		wallhack_self_logs_details = "undefined"
 	},
 
 	washrooms = {
@@ -11726,6 +11855,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		license_utility = "Usefulness",
 		license_commercial = "Trade",
 		license_management = "Administrative",
+		license_passenger = "undefined",
 		license_military = "Soldierly",
 		license_special = "Extraordinary Aircraft",
 		license_boat = "Boat License",
@@ -11890,10 +12020,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		vehicle_at_police_impound = "Your automobile is currently in the custody of the law enforcement.",
 		vehicle_at_impound = "Your automobile is located in the Pound.",
 		waypoint_to_impound = "A waypoint to the Pound has been marked on your Geographical Positioning System.",
-		unable_to_withdraw = "Unable to withdraw automobile as it can currently be found at ${location}.",
-		waypoint_to_vehicle = "A waypoint to your automobile has been marked on your GPS.",
-		vehicle_currently_at = "Thy motorcar can presently be found at ${location}.",
-		vehicle_in_garage = "Thy motorcar is located in ${garageName}.",
+		unable_to_withdraw = "undefined",
+		vehicle_in_garage = "Yer vehicle is located in ${garageName}. A waypoint has been marked on yer map.",
 		insufficient_funds = "Thee dost not hath enow coin to withdraw this carriage.",
 		error_withdrawing = "An error hath occurred whilst trying to withdraw thy motorcar.",
 		withdraw_timeout = "Pray tarry a moment ere trying to withdraw another motorcar.",
@@ -11924,15 +12052,12 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		garage = "Automobile House",
 		retrieved_vehicle_logs_title = "Retrieved Automobile",
 		retrieved_vehicle_logs_details = "${consoleName} retrieved automobile with plate `${plate}` for ${price}.",
+		no_vehicles_to_sell = "Ye have no vehicles to sell.",
 
 		state_loading_model = "Loading Model...",
 		state_withdrawing = "Withdrawing...",
-
-		state_retrieve_searching = "Searching...",
 		state_retrieving = "Retrieving...",
-
 		state_storing = "Storing...",
-
 		state_loading = "Loading...",
 
 		vehicle_weight = "Weight: ${weight}",

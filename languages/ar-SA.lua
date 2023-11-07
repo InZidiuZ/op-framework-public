@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 22 (do not change)
+-- AUTO LOCALES: 23 (do not change)
 
 OP.Global.Locales.Languages["ar-SA"] = {
 	-- configuration settings for language
@@ -341,12 +341,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		no_nearby_vehicles_off = "تم إيقاف 'عدم وجود مركبات قريبة'.",
 		speed_up_progress_bar_on = "تم تشغيل 'تسريع شريط الإنجاز'.",
 		speed_up_progress_bar_off = "تم إيقاف 'تسريع شريط الإنجاز'.",
-		wallhack_on = "تم تشغيل 'والهاك'.",
-		wallhack_off = "تم إيقاف 'والهاك'.",
 		aimbot_on = "تم تبديل 'Aimbot' للتشغيل.",
 		aimbot_off = "تم تبديل 'Aimbot' للإيقاف.",
-		player_bones_on = "تم تبديل 'Player Bones' للتشغيل.",
-		player_bones_off = "تم تبديل 'Player Bones' للإيقاف.",
 		vehicle_smoke_on = "تم تبديل 'Vehicle Smoke' للتشغيل.",
 		vehicle_smoke_off = "تم تبديل 'Vehicle Smoke' للإيقاف.",
 
@@ -706,6 +702,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		vehicle_spawn_ban = "أها، تحلم برحلة ممتعة مع `${modelName}`؟ هذه ليست صالة عرض، وذلك الطراز بالتحديد؟ إنه في قائمة الانتظار الأبدية!",
 		weapon_spawn_ban = "تتوق لـ `${weaponName}`؟ هذه ليست ترسانة، وتلك القطعة؟ لا تزال في الفرن.",
 		advanced_noclip_ban = "تحاول الانزلاق السري عبر الممرات غير المرئية؟ هذه ليست رقصة مهرجان، وتلك الحركة؟ ليست في جدول رقصنا.",
+		illegal_local_vehicle_ban = "يبدو أنك وجدت حصان الأمير/الملك الخفي! للأسف، هذه الركوبة السحرية محجوزة لموكب الأشباح السنوي.",
 
 		type_aimbot = "إيمبوت",
 		type_bad_creation = "إنشاء سيء",
@@ -744,6 +741,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		type_thermal_night_vision = "رؤية حرارية / ليلية",
 		type_underground = "تحت الأرض",
 		type_vehicle_modification = "تعديل المركبة",
+		type_illegal_local_vehicle = "استخدام مركبة غير متصلة بالشبكة",
 
 		event_prefix = "منع الغش: ${type}",
 
@@ -813,7 +811,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 	bans = {
 		banned_no_permissions = "تمت محاولة `${reason}` بدون الحصول على الأذونات اللازمة.",
-		fraud_chargeback = "احتيال / استرداد المبالغ المدفوعة"
+		fraud_chargeback = "احتيال / استرداد المبالغ المدفوعة",
+		none_provided = "لم يتم توفير أي معلومات."
 	},
 
 	characters = {
@@ -1034,18 +1033,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		aimbot_command_parameter_targets = "أهداف",
 		aimbot_command_parameter_targets_help = "معرفات أهداف اللاعبين (يعمل فقط عندما تبديلها بنفسك). (سيتم تصفية الأهداف لتكون فقط اللاعبين الذين لديهم هذه المعرفات)",
 		aimbot_command_substitutes = "",
-
-		player_bones_debug_command = "تصحيح_عظام_اللاعب",
-		player_bones_debug_command_help = "تبديل وضع تصحيح عظام اللاعب.",
-		player_bones_debug_command_parameter_server_id = "معرف الخادم",
-		player_bones_debug_command_parameter_server_id_help = "إذا كنت تريد تبديل وضع تصحيح عظام اللاعب لشخص آخر ، فأدخل معرف خادمهم هنا.",
-		player_bones_debug_command_substitutes = "تصحيح_عظام_اللاعب",
-
-		wallhack_command = "كشف_الجدران",
-		wallhack_command_help = "تبديل وضع 'كشف الجدران'.",
-		wallhack_command_parameter_server_id = "معرف الخادم",
-		wallhack_command_parameter_server_id_help = "إذا كنت ترغب في تبديل تفعيل ' wallhack ' لشخص آخر ، فأدخل معرف الخادم الخاص بهم هنا.",
-		wallhack_command_substitutes = "",
 
 		speed_boost_command = "speed_boost",
 		speed_boost_command_help = "تبديل 'زيادة السرعة'.",
@@ -2526,6 +2513,13 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		roll_lottery_command_help = "دردشة المشرفين وادخال الأرقام ودوران اليانصيب يدويًا.",
 		roll_lottery_command_substitutes = "",
 
+		-- game/lucky_wheel
+		set_podium_vehicle_command = "set_podium_vehicle",
+		set_podium_vehicle_command_help = "تعيين سيارة الفوز في المنصة في الكازينو.",
+		set_podium_vehicle_command_parameter_model_name = "اسم النموذج",
+		set_podium_vehicle_command_parameter_model_name_help = "اسم النموذج للسيارة التي ترغب في تغييرها إليه.",
+		set_podium_vehicle_command_substitutes = "",
+
 		-- game/magazines
 		refresh_magazines_command = "تحديث المجلات",
 		refresh_magazines_command_help = "تحديث المجلات وفقًا لأي تغييرات في قاعدة البيانات.",
@@ -2939,6 +2933,69 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		wipe_props_command_parameter_radius_help = "نطاق المسح (1-250).",
 		wipe_props_command_substitutes = "",
 
+		-- game/racing
+		race_leave_command = "مغادرة_سباق",
+		race_leave_command_help = "مغادرة السباق الذي تشارك فيه.",
+		race_leave_command_substitutes = "مسح_السباق",
+
+		race_share_command = "مشاركة_سباق",
+		race_share_command_help = "مشاركة مسار سباق مع لاعب آخر.",
+		race_share_command_parameter_server_id = "معرّف الخادم",
+		race_share_command_parameter_server_id_help = "معرّف الخادم للّاعب الذي تريد مشاركة المسار معه.",
+		race_share_command_parameter_track_name = "اسم المسار",
+		race_share_command_parameter_track_name_help = "اسم المسار الذي تريد مشاركته.",
+		race_share_command_substitutes = "",
+
+		race_record_command = "تسجيل_سباق",
+		race_record_command_help = "تسجيل سباق.",
+		race_record_command_substitutes = "",
+
+		race_save_command = "حفظ_سباق",
+		race_save_command_help = "حفظ سباق.",
+		race_save_command_parameter_track_name = "اسم_المضمار",
+		race_save_command_parameter_track_name_help = "الاسم الذي تريد حفظه به.",
+		race_save_command_parameter_track_type = "نوع_المضمار",
+		race_save_command_parameter_track_type_help = "نوع المضمار للسباق.",
+		race_save_command_substitutes = "",
+
+		race_delete_command = "حذف_سباق",
+		race_delete_command_help = "حذف سباق.",
+		race_delete_command_parameter_track_name = "اسم المضمار",
+		race_delete_command_parameter_track_name_help = "اسم المضمار الذي ترغب في حذفه.",
+		race_delete_command_substitutes = "",
+
+		race_list_command = "race_list",
+		race_list_command_help = "عرض جميع المضامير المحفوظة الخاصة بك.",
+		race_list_command_substitutes = "",
+
+		race_load_command = "race_load",
+		race_load_command_help = "تحميل مضمار.",
+		race_load_command_parameter_track_name = "اسم المضمار",
+		race_load_command_parameter_track_name_help = "اسم المضمار الذي ترغب في تحميله.",
+		race_load_command_substitutes = "",
+
+		race_start_command = "race_start",
+		race_start_command_help = "بدء مضمار.",
+		race_start_command_parameter_amount = "مبلغ",
+		race_start_command_parameter_amount_help = "تكلفة الدخول في السباق.",
+		race_start_command_parameter_start_delay = "تأخير البدء",
+		race_start_command_parameter_start_delay_help = "تأخير البدء بالثواني.",
+		race_start_command_parameter_laps = "لفات",
+		race_start_command_parameter_laps_help = "عدد اللفات.",
+		race_start_command_substitutes = "",
+
+		race_cancel_command = "race_cancel",
+		race_cancel_command_help = "إلغاء السباق.",
+		race_cancel_command_substitutes = "",
+
+		race_checkpoints_command = "race_checkpoints",
+		race_checkpoints_command_help = "تبديل نقاط التحقق.",
+		race_checkpoints_command_substitutes = "",
+
+		race_sounds_command = "أصوات_السباق",
+		race_sounds_command_help = "تبديل الأصوات.",
+		race_sounds_command_substitutes = "",
+
 		-- game/radio
 		radio_command = "الراديو",
 		radio_command_help = "لتبديل واجهة راديو.",
@@ -3173,6 +3230,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		blackout_command_help = "تبديل انقطاع الكهرباء(متوفر/غير متوفر).",
 		blackout_command_substitutes = "",
 
+		toggle_developer_ambience_command = "تبديل_أجواء_المطور",
+		toggle_developer_ambience_command_help = "تبديل أجواء المطور.",
+		toggle_developer_ambience_command_substitutes = "",
+
 		-- game/tablet
 		tablet_command = "جهاز_اللوحي",
 		tablet_command_help = "فتح واجهة جهاز اللوحي (إن وجد).",
@@ -3274,6 +3335,13 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		change_voice_mode_command = "تغيير_وضع_الصوت",
 		change_voice_mode_command_help = "تبديل وضع إدخال الصوت 'الموسيقى' تشغيل / إيقاف تشغيل. هذا الوضع سوف يعطل إزالة الضجيج وإزالة الترددات المتكررة، مما يسمح بصوت واضحة للموسيقى.",
 		change_voice_mode_command_substitutes = "وضع_الصوت",
+
+		-- game/wallhack
+		wallhack_command = "كشف_الجدران",
+		wallhack_command_help = "تبديل والهاك.",
+		wallhack_command_parameter_server_id = "معرف الخادم",
+		wallhack_command_parameter_server_id_help = "إذا كنت ترغب في تبديل والهاك لشخص آخر ، أدخل هنا معرف الخادم الخاص بهم.",
+		wallhack_command_substitutes = "",
 
 		-- game/wizard
 		wizard_command = "ساحر",
@@ -3722,7 +3790,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		richer_presence_on = "تم تفعيل الحالة الأكثر تحدثًا.",
 		richer_presence_off = "تم تعطيل الحالة الأكثر تحدثًا.",
 
-		announce_event = "يوجد حدث خلال 15 دقيقة! تحقق من الديسكورد للمزيد من المعلومات.\n\n${name} @ **${location}**"
+		announce_event = "هناك حدث خلال ${minutes} دقائق! تحقق من ديسكورد لمزيد من المعلومات.\n\n${name} @ **${location}**",
+		announce_event_starting_now = "الآن بدء فعالية! تحقق من ديسكورد لمزيد من المعلومات.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -5691,7 +5760,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		no = "لا",
 
 		logs_daily_streak_changed_title = "تغيير السلسلة اليومية",
-		logs_daily_streak_changed_details = "لديك الآن سلسلة يومية بقيمة `${streak}`.",
+		logs_daily_streak_changed_details = "${consoleName} لديه الآن سلسلة يومية بقيمة `${streak}`.",
+
+		logs_daily_task_completed_title = "تم إكمال المهمة اليومية",
+		logs_daily_task_completed_details = "${consoleName} أكمل مهمة يومية بعنوان `${taskName}`.",
 
 		restore_streak = "استعد الاستمرار لمدة ${streak} يومًا",
 		confirm_streak_restore = "هل أنت متأكد من رغبتك في استعادة استمرارك لمدة ${streak} يومًا؟ التكلفة هي ${cost} نقطة OP.",
@@ -6496,8 +6568,13 @@ OP.Global.Locales.Languages["ar-SA"] = {
 	hunting = {
 		hold_to_skin = "[${InteractionKey}] اضغط واستمر لنزع الجلد",
 		skinning_animal = "تنزيع جلد الحيوان الميت",
-		meat_too_damaged = "لحم هذا الحيوان تالف للغاية.",
 		animal_is_being_skinned = "جاري نزع جلد الحيوان.",
+
+		hold_to_remove = "[${InteractionKey}] اضغط لإزالة الجسم الضائع",
+		removing_carcass = "جارٍ إزالة الجسم الضائع المتضرر",
+		carcass_damaged = "الجسم الضائع تالف جدًا ليتم تجليده.",
+
+		meat_too_damaged = "تضررت لحمة الحيوان بشكل كبير لا يمكن استخدامها.",
 
 		skinned_logs_title = "سفين حيوان",
 		skinned_logs_details = "قام ${consoleName} بسفين حيوان (${modelName}) وحصل على ${skinnedItems}.",
@@ -6673,7 +6750,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		instance_destroyed = "تم تدمير المثيل بمعرف `${instanceId}`.",
 		instance_destruction_failed = "فشل في تدمير المثيل.",
 		instance_id_parameter_invalid = "معرف المثيل غير صالح.",
-		added_player_to_instance = "تمت إضافة ${consoleName} إلى المثيل بمعرف `${instanceId}`.",
+		added_player_to_instance = "تمت إضافة ${consoleName} إلى النسخة ذات الهوية `${instanceId}`.",
 		failed_to_add_player_to_instance = "فشل في إضافة اللاعب إلى المثيل.",
 		server_id_parameter_invalid = "معرف الخادم غير صالح.",
 		removed_player_from_instance = "تمت إزالة ${consoleName} من المثال رقم `${instanceId}`.",
@@ -6987,9 +7064,13 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		glass_breaker_description = "يستخدم لكسر الزجاج في السيارات في حالات الطوارئ.",
 
 		picture = "صورة",
-		picture_description = "جمع كل ذكرياتك مع أصدقائك.",
-		paper = "ورق",
-		paper_description = "ورقة بيضاء فارغة.",
+		picture_description = "اجمع كل الذكريات لك ولأصدقائك. (الحجم: 1x1)",
+		printed_card = "بطاقة مطبوعة",
+		printed_card_description = "بطاقة مطبوعة صغيرة، بطاقة عمل ربما؟ (الحجم: 9x5)",
+		paper = "ورق صور",
+		paper_description = "قطعة ورق فارغة لطباعة الصور.",
+		card_paper = "ورق بطاقات",
+		card_paper_description = "قطعة ورق فارغة لطباعة بطاقات العمل.",
 		printer = "طابعة",
 		printer_description = "لا فاكس، فقط طابعة.",
 
@@ -7433,6 +7514,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		gold_bar = "قلم ذهبي",
 		gold_bar_description = "يستخدم للإصلاحات والصنع",
+
+		ancient_ring = "الخاتم القديم",
+		ancient_ring_description = "خاتم ذهبي متعهد بتنفيذ الإشارات المعقدة الباهتة بفضل الزمن والمد والجزر، وينمو الهوى والولاء من عصور مضت. كما يعد رمزًا للروابط الأبدية، فهو الآن يستدر بجاذبية القصص المذكورة والحضارات المفقودة.",
+		ancient_coin = "العملة القديمة",
+		ancient_coin_description = "تحمل هذه العملة علامات التجارة القديمة، حيث تم أذابة سطحها الذهبي بملوحة البحر ورماله، وتحمل الأثقال منذ قرون بتصميمها. الرمز الذي تم نقشه على العملة يتحدث عن امتداد إمبراطورية وحركة تاريخية تمرر الثروة من يد إلى أخرى.",
 
 		aluminium = "ألومنيوم خام",
 		aluminium_description = "يستخدم للإصلاحات والصنع",
@@ -8788,7 +8874,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		lucky_wheel_is_occupied = "العجلة الحظية مشغولة حاليا. الرجاء الانتظار.",
 		not_enough_op_points = "تحتاج إلى ${cost} نقطة إنشاء الصورة لتدوير العجلة المحظوظة. لديك ${points} نقطة إنشاء الصورة.",
 		used_op_points = "لقد استخدمت ${cost} نقطة إنشاء الصورة. لديك الآن ${points} نقطة إنشاء الصورة متبقية.",
+		casino_company_name = "كازينو ومنتجع الألماس",
 		vehicle_won_tweet = "شخص ما فاز بجائزة كبرى في العجلة الحظ وحصل على نموذج ${modelDisplayName} الفريد من نوعه! من هو الفائز المحظوظ؟ توجه الآن واستلم جائزتك.",
+		vehicle_is_not_in_cdimage = "هذه السيارة غير موجودة في ملفات اللعبة.",
+		podium_vehicle_set_to = "تم تعيين السيارة على المنصة إلى `${modelLabel}`.",
 
 		logs_lucky_wheel_reward_title = "جائزة العجلة الحظية",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} قام بتدوير العجلة وفاز بسيارة.",
@@ -10054,12 +10143,18 @@ OP.Global.Locales.Languages["ar-SA"] = {
 	},
 
 	pawn_shops = {
+		pawn_shop = "متجر الرهن",
+		pawn_shop_far = "الوصول إلى متجر الرهن",
+		pawn_shop_near = "[${InteractionKey}] الوصول إلى متجر الرهن",
+		no_items_to_sell = "لا يوجد لديك أي ${itemLabel} للبيع.",
+		close_menu = "إغلاق القائمة",
+
 		sell_items = "بيع ${itemLabel}",
 		press_to_sell_items = "[${InteractionKey}] بيع ${amount}x من ${itemLabel}",
 		sold_items = "تم بيع ${sellAmount}x ${itemLabel} لـ $${sellPrice}.",
-		no_items_to_sell = "لا يوجد لديك أي ${itemLabel} للبيع.",
 		daily_limit_reached = "لقد وصلت إلى الحد اليومي المسموح به، لن يقبل البائع المزيد من العناصر.",
 		illegal_pawn_shop_id = "محاولة إرسال قيم لمحل رهن لا يوجد.",
+
 		used_pawn_shop_title = "محل رهن مستعمل",
 		used_pawn_shop_details = "${consoleName} استخدم محل رهن وباع ${sellAmount} `${itemLabel}` واستلم $${sellPrice}."
 	},
@@ -10237,6 +10332,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 	printer = {
 		use_printer = "[${InteractionKey}] استخدم الطابعة",
+		failed_to_print = "فشلت عملية الطباعة.",
 
 		no_paper = "ليس لديك أي ورق.",
 		invalid_url = "رابط الصورة غير صالح.",
@@ -10245,7 +10341,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		printing = "جاري الطباعة...",
 
 		printed_logs_title = "صورة مطبوعة",
-		printed_logs_details = "${consoleName} قام بطباعة صورة بالرابط التالي `${url}`."
+		printed_logs_details = "قام ${consoleName} بطباعة `${itemName}` باستخدام ورقة `${paperType}` بعنوان URL `${url}`."
 	},
 
 	prop_hide = {
@@ -10257,7 +10353,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		no_address_set = "لم يتم تحديد عنوان.",
 		no_address_found = "لم يتم العثور على عنوان تحت '${address}'.",
 		marker_set = "تم تحديد نقطة وعلامة لدى ${address}.",
-		removed_marker = "تمت إزالة العلامة للعنوان ${address}."
+		removed_marker = "تمت إزالة العلامة للعنوان ${address}.",
+		entrance = "المدخل",
+		back_entrance = "المدخل الخلفي",
+		garage = "الجراج"
 	},
 
 	props = {
@@ -10549,13 +10648,20 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		exiting = "جاري الخروج...",
 		problems = "مشاكل:",
 		profile_gamma_not_18 = "إعداد 'التغيير في السطوع' الخاص بك غير مضبوط على القيمة الافتراضية. يؤدي ذلك إلى تخفيض الاتساق وجودة الصور المولدة من العميل الخاص بك. لحل هذه المشكلة ، اكتب 'profile_gamma 18' في واجهة التحكم F8 الخاصة بك. لن يتم منحك أي وظائف حتى يتم القيام بذلك. يجب أن تكون على الإصدار 'beta' أو 'latest' من FiveM لتتمكن من فعل ذلك. يمكنك تغييره في قائمة FiveM الرئيسية.",
-		screenshot_blackscreen = "الصور الخاصة بك تعود بشاشة سوداء. يجب أن تقوم بإصلاح مشكلة عدم قدرة اللعبة على التقاط اللقطات قبل تلقي المزيد من الوظائف. يمكن أن يكون السبب في ذلك برنامج مكافحة الفيروسات. لمحاولة إنشاء الصور مرة أخرى، قم بإعادة دخول واجهة المستخدم هذه.",
+		banned = "محظور:",
+		banned_information = "بعض اللاعبين يقومون بإنشاء صور لا تلبي التوقعات. يؤدي ذلك إلى عدم اتساق الصور الشخصية والصور الذاتية. يحدث هذا عادة عندما تكون دقة الشاشة منخفضة جدًا، أو تكون إعدادات الرسومات منخفضة، أو يتم استخدام تعديلات بصرية. على الرغم من أن التعديلات البصرية مقبولة، إلا أن الألوان المفرطة أو القليلة ليست مقبولة. غالبًا ما تقوم التعديلات البصرية إما بجعل الألوان مفرطة للغاية، أو ألوان فاتحة جدًا (مما يجعل الشخصيات تبدو ميتة على الصور).",
+		banned_unban = "إذا كنت ترغب في الاستمرار في التقاط لقطات الشاشة، فبإمكانك إلغاء حظر نفسك حتى 3 مرات. قبل ذلك، يجب عليك تحسين جودة الرسومات في اللعبة لتجنب الحظر مرة أخرى. زيادة إعدادات الرسومات وتقليل شدة التعديلات البصرية ستساعدك في ذلك.",
+		unban = "إلغاء الحظر (${unbansLeft} متبقي)",
 
 		screenshotting_start_logs_title = "بدء التقاط الصور",
 		screenshotting_start_logs_details = "بدأ ${consoleName} بالتقاط الصور.",
 
 		screenshotting_stop_logs_title = "إنهاء التقاط الصور",
-		screenshotting_stop_logs_details = "أوقف ${consoleName} التقاط الصور."
+		screenshotting_stop_logs_details = "أوقف ${consoleName} التقاط الصور.",
+
+		user_does_not_exist = "هذا المستخدم غير موجود.",
+		screenshotter_already_banned = "هذا المصور للشاشة محظور بالفعل.",
+		screenshotter_banned = "تم حظر هذا المصور للشاشة الآن."
 	},
 
 	scuba = {
@@ -10667,8 +10773,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		speed = "السرعة (${speedLevel})",
 		rotation = "الدوران (${rotationLevel})",
 		clear_bullet_impacts = "مسح آثار الطلقات",
-		illegal_shooting_spot_value = "محاولة تمرير قيم غير صالحة لأماكن إطلاق النار.",
-		illegal_shooting_spot_id = "محاولة تمرير قيم لموقع للإطلاق النار غير موجود.",
 		not_enough_cash = "ليس لديك ما يكفي من النقود."
 	},
 
@@ -10920,7 +11024,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		time_parameters_invalid = "معلمة الساعة أو الدقيقة غير صحيحة.",
 		time_currently_transitioning = "الوقت يتحول حاليًا، يرجى الانتظار.",
 		time_successfully_transitioned = "تمّ الانتقال بنجاح إلى وقت ${hour}:${minute}.",
-		time_successfully_set = "تم تعيين الوقت بنجاح إلى ${hour}:${minute}."
+		time_successfully_set = "تم تعيين الوقت بنجاح إلى ${hour}:${minute}.",
+
+		developer_ambience_on = "تم تفعيل أجواء المطور.",
+		developer_ambience_off = "تم إيقاف أجواء المطور."
 	},
 
 	tablet = {
@@ -11137,6 +11244,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		tp_airport = "مطار لوس سانتوس",
 		tp_carrier = "حاملة طائرات",
 		tp_cayo = "جزيرة كايو بيريكو",
+
+		actions = "الإجراءات",
+		wander_around = "روح بين الأماكن",
+		speed_around = "تجوال بسرعة",
+		clear_tasks = "مسح المهام",
 
 		you_are_not_in_a_vehicle = "أنت لست في مركبة.",
 		you_are_in_a_vehicle = "أنت حالياً في مركبة.",
@@ -11405,6 +11517,23 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		muted_logs_title = "كتم الصوت",
 		muted_logs_details = "${consoleName} كتم صوت ${targetConsoleName} في الدردشة الصوتية.",
 		unmuted_logs_details = "${consoleName} قام بإلغاء كتم ${targetConsoleName} من المحادثة الصوتية."
+	},
+
+	wallhack = {
+		wallhack_on = "تم تفعيل الرؤية خلف الجدران.",
+		wallhack_off = "تم تعطيل الرؤية خلف الجدران.",
+
+		wallhack_failed = "فشل في تفعيل الرؤية خلف الجدران.",
+		wallhack_everyone = "تم تفعيل الرؤية خلف الجدران للجميع بنجاح.",
+		wallhack_self = "تم تفعيل الرؤية خلف الجدران لنفسك بنجاح.",
+		wallhack_player = "تم تفعيل الرؤية خلف الجدران لـ ${displayName} بنجاح.",
+
+		wallhack_everyone_logs_title = "تبديل وولهاك للجميع",
+		wallhack_everyone_logs_details = "${consoleName} قام بتبديل وولهاك للجميع.",
+		wallhack_player_logs_title = "تبديل وولهاك للاعب",
+		wallhack_player_logs_details = "${consoleName} قام بتبديل وولهاك لـ ${targetConsoleName}.",
+		wallhack_self_logs_title = "تبديل وولهاك للنفس",
+		wallhack_self_logs_details = "${consoleName} قام بتبديل وولهاك لنفسهم."
 	},
 
 	washrooms = {
@@ -11726,6 +11855,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		license_utility = "أدوات",
 		license_commercial = "تجاري",
 		license_management = "إدارة",
+		license_passenger = "راكب",
 		license_military = "عسكري",
 		license_special = "طائرات خاصة",
 		license_boat = "رخصة قوارب",
@@ -11890,10 +12020,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		vehicle_at_police_impound = "تم حجز مركبتك حالياً من قبل الشرطة.",
 		vehicle_at_impound = "تم حجز مركبتك في موقف الحجز.",
 		waypoint_to_impound = "تم وضع علامة على خريطتك للوصول إلى موقف الحجز.",
-		unable_to_withdraw = "عفواً، لا يمكن سحب المركبة لأنها موجودة حالياً في ${location}.",
-		waypoint_to_vehicle = "تم وضع علامة على خريطتك للوصول إلى مركبتك.",
-		vehicle_currently_at = "يمكن العثور حاليًا على مركبتك في ${location}.",
-		vehicle_in_garage = "تقع مركبتك في ${garageName}.",
+		unable_to_withdraw = "غير قادر على سحب المركبة حاليًا.",
+		vehicle_in_garage = "سيارتك موجودة في ${garageName}. تم تعيين نقطة الوجهة على الخريطة.",
 		insufficient_funds = "ليس لديك ما يكفي من المال لسحب هذه المركبة.",
 		error_withdrawing = "حدث خطأ أثناء محاولة سحب مركبتك.",
 		withdraw_timeout = "يرجى الانتظار قليلاً قبل محاولة سحب مركبة أخرى.",
@@ -11924,15 +12052,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		garage = "المرآب",
 		retrieved_vehicle_logs_title = "إستعادة المركبة",
 		retrieved_vehicle_logs_details = "${consoleName} استعاد المركبة ذات اللوحة '$ {الرقم_المعرف_للمركبة}' بمبلغ ${price}.",
+		no_vehicles_to_sell = "لا يوجد لديك سيارات للبيع.",
 
 		state_loading_model = "جاري تحميل النموذج...",
 		state_withdrawing = "جاري سحب المركبة...",
-
-		state_retrieve_searching = "جاري البحث...",
 		state_retrieving = "جاري استعادة المركبة...",
-
 		state_storing = "جاري تخزين المركبة...",
-
 		state_loading = "جاري التحميل...",
 
 		vehicle_weight = "الوزن: ${weight}",

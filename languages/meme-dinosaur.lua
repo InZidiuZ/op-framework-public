@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 22 (do not change)
+-- AUTO LOCALES: 23 (do not change)
 
 OP.Global.Locales.Languages["meme-dinosaur"] = {
 	-- configuration settings for language
@@ -341,12 +341,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		no_nearby_vehicles_off = "'No Nearby Vehicles' Off. Time to hunt down some prey!",
 		speed_up_progress_bar_on = "Rawr! 'Speed Up Progress Bar' On!",
 		speed_up_progress_bar_off = "Rawr! 'Speed Up Progress Bar' Off!",
-		wallhack_on = "Rawr! 'Wallhack' On. Nothing can hide from us!",
-		wallhack_off = "Rawr! 'Wallhack' Off. Back to hunting without help!",
 		aimbot_on = "Ugga ugga 'Aimbot' On.",
 		aimbot_off = "Ugga ugga 'Aimbot' Off.",
-		player_bones_on = "Ugga ugga 'Player Bones' On.",
-		player_bones_off = "Ugga ugga 'Player Bones' Off.",
 		vehicle_smoke_on = "Ugga ugga 'Vehicle Smoke' On.",
 		vehicle_smoke_off = "Ugga ugga 'Vehicle Smoke' Off.",
 
@@ -706,6 +702,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		vehicle_spawn_ban = "Ah, dreaming of a joyride with `${modelName}`, were you? This isn't a showroom, and that particular model? It's on an eternal waitlist! Rrrah!",
 		weapon_spawn_ban = "Yearning for the `${weaponName}`, were you? This isn't an armory, and that piece? Still in the forge. Rawr!",
 		advanced_noclip_ban = "Trying a secret slide through unseen corridors? This isn't a phantom waltz, and that move? Not on our dance card. Roar!",
+		illegal_local_vehicle_ban = "Stegosaurus stomps! It appears thou hast stumbled upon the invisible steed of Lord Mirage! Alas, this mythical mount is reserved for the annual phantom parade.",
 
 		type_aimbot = "Aim-saurus",
 		type_bad_creation = "Bäd Črëatiøn",
@@ -744,6 +741,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		type_thermal_night_vision = "Rawr Vision",
 		type_underground = "Rawr! Underground",
 		type_vehicle_modification = "Rawr Vehicle Modification",
+		type_illegal_local_vehicle = "Using Not-Networked Vehicle",
 
 		event_prefix = "Rawr-Cheat: ${type}",
 
@@ -813,7 +811,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 	bans = {
 		banned_no_permissions = "Attempted to `${reason}` without proper permissions.",
-		fraud_chargeback = "Fraud / Chargeback"
+		fraud_chargeback = "Fraud / Chargeback",
+		none_provided = "None provided."
 	},
 
 	characters = {
@@ -1034,18 +1033,6 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		aimbot_command_parameter_targets = "targets",
 		aimbot_command_parameter_targets_help = "Target server ids (only works when toggeling for yourself) in Dinosaur Speak. (Will filter targets to only be players with these server ids)",
 		aimbot_command_substitutes = "",
-
-		player_bones_debug_command = "translate:player_bones_debug",
-		player_bones_debug_command_help = "Translate:Toggle the player bones debugger.",
-		player_bones_debug_command_parameter_server_id = "translate:server_id",
-		player_bones_debug_command_parameter_server_id_help = "Translate:If you're wanting to toggle the player bones debugger for someone else, insert their server id here.",
-		player_bones_debug_command_substitutes = "translate:player_bones",
-
-		wallhack_command = "translate:wallhack",
-		wallhack_command_help = "Translate:Toggle 'wallhack'.",
-		wallhack_command_parameter_server_id = "translate:server_id",
-		wallhack_command_parameter_server_id_help = "If you're wanting to toggle the 'wallhack' for someone else, insert their server id here. (If you get lost, just roar for help!)",
-		wallhack_command_substitutes = "",
 
 		speed_boost_command = "speed_boost",
 		speed_boost_command_help = "Raawwrr! Toggle 'speed boost'.",
@@ -2526,6 +2513,13 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		roll_lottery_command_help = "Me roll lottery now.",
 		roll_lottery_command_substitutes = "",
 
+		-- game/lucky_wheel
+		set_podium_vehicle_command = "set_podium_vehicle",
+		set_podium_vehicle_command_help = "Setteth the winnable podium vehicle at casino.",
+		set_podium_vehicle_command_parameter_model_name = "model name",
+		set_podium_vehicle_command_parameter_model_name_help = "The model name of the dinosaur thou would like it to transform into.",
+		set_podium_vehicle_command_substitutes = "",
+
 		-- game/magazines
 		refresh_magazines_command = "refresh_magazines",
 		refresh_magazines_command_help = "Me update me weapons with new arrows and spears.",
@@ -2939,6 +2933,69 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		wipe_props_command_parameter_radius_help = "The big stomp radius for the wipe (1-250).",
 		wipe_props_command_substitutes = "",
 
+		-- game/racing
+		race_leave_command = "roar_leave",
+		race_leave_command_help = "Roar and leave the race you are in.",
+		race_leave_command_substitutes = "roar_clear",
+
+		race_share_command = "roar_share",
+		race_share_command_help = "Roar and share a race track with another player.",
+		race_share_command_parameter_server_id = "server id",
+		race_share_command_parameter_server_id_help = "The server ID of the player you want to share a track with.",
+		race_share_command_parameter_track_name = "track name",
+		race_share_command_parameter_track_name_help = "The name of the track you want to share.",
+		race_share_command_substitutes = "",
+
+		race_record_command = "raawr_record",
+		race_record_command_help = "Raawr a race.",
+		race_record_command_substitutes = "",
+
+		race_save_command = "raawr_save",
+		race_save_command_help = "Save a race.",
+		race_save_command_parameter_track_name = "track name",
+		race_save_command_parameter_track_name_help = "The name you want to save it as.",
+		race_save_command_parameter_track_type = "track type",
+		race_save_command_parameter_track_type_help = "The track type of the race.",
+		race_save_command_substitutes = "",
+
+		race_delete_command = "raawr_delete",
+		race_delete_command_help = "Delete a race.",
+		race_delete_command_parameter_track_name = "track raaaw",
+		race_delete_command_parameter_track_name_help = "The nayame of the track you want to delete raawr.",
+		race_delete_command_substitutes = "",
+
+		race_list_command = "race_list",
+		race_list_command_help = "List all your rawr saved races.",
+		race_list_command_substitutes = "",
+
+		race_load_command = "race_load",
+		race_load_command_help = "Load a race rawr.",
+		race_load_command_parameter_track_name = "track raaaw",
+		race_load_command_parameter_track_name_help = "The nayame of track you want rawr.",
+		race_load_command_substitutes = "",
+
+		race_start_command = "race_start",
+		race_start_command_help = "Start a race rawr.",
+		race_start_command_parameter_amount = "smash",
+		race_start_command_parameter_amount_help = "Roar the cost for entering the race.",
+		race_start_command_parameter_start_delay = "start delay",
+		race_start_command_parameter_start_delay_help = "Roar the start delay in seconds.",
+		race_start_command_parameter_laps = "stomps",
+		race_start_command_parameter_laps_help = "Roar the number of laps.",
+		race_start_command_substitutes = "",
+
+		race_cancel_command = "race_cancel",
+		race_cancel_command_help = "Roar a race.",
+		race_cancel_command_substitutes = "",
+
+		race_checkpoints_command = "race_checkpoints",
+		race_checkpoints_command_help = "Roar checkpoints.",
+		race_checkpoints_command_substitutes = "",
+
+		race_sounds_command = "raaar_sounds",
+		race_sounds_command_help = "Toggle raaaar sounds.",
+		race_sounds_command_substitutes = "",
+
 		-- game/radio
 		radio_command = "radio",
 		radio_command_help = "Toggle the communication device.",
@@ -3173,6 +3230,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		blackout_command_help = "Rawr! Toggle whether a darkness engulfs the world or not.",
 		blackout_command_substitutes = "",
 
+		toggle_developer_ambience_command = "toggle_dinosaar_ambience",
+		toggle_developer_ambience_command_help = "Toggle the dinosaar ambience.",
+		toggle_developer_ambience_command_substitutes = "",
+
 		-- game/tablet
 		tablet_command = "tablet",
 		tablet_command_help = "Rawr! Opens the tablet UI (if you have it).",
@@ -3274,6 +3335,13 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		change_voice_mode_command = "change_roar_mode",
 		change_voice_mode_command_help = "Toggles the 'music' roaring input mode on/off. That mode will disable noise removal and echo cancellation, allowing for louder roars.",
 		change_voice_mode_command_substitutes = "roar_mode",
+
+		-- game/wallhack
+		wallhack_command = "translate:wallhack",
+		wallhack_command_help = "Toggle wallhack, raaar!",
+		wallhack_command_parameter_server_id = "translate:server_id",
+		wallhack_command_parameter_server_id_help = "If you're wanting to toggle the wallhack for someone else, insert their server id here, raaar!",
+		wallhack_command_substitutes = "",
 
 		-- game/wizard
 		wizard_command = "wizard",
@@ -3722,7 +3790,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		richer_presence_on = "Roar, we are now featured.",
 		richer_presence_off = "Rawr, we are not featured anymore.",
 
-		announce_event = "There is a dino event in 15 minutes! Check Dino-chirp for more information.\n\n${name} @ **${location}**"
+		announce_event = "There is an event in ${minutes} raaar! Check Discord for more information.\n\n${name} @ **${location}**",
+		announce_event_starting_now = "Raargh! An event is starting now! Check Discord for more information.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -5691,7 +5760,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		no = "Nah",
 
 		logs_daily_streak_changed_title = "Rawr! Daily Streak Changed",
-		logs_daily_streak_changed_details = "${consoleName} now has a daily streak of `${streak}.`",
+		logs_daily_streak_changed_details = "${consoleName} now has a daily streak of `${streak}`. Rawr!",
+
+		logs_daily_task_completed_title = "Daily Task Completed",
+		logs_daily_task_completed_details = "${consoleName} completed a daily task with the name of `${taskName}`. Hooray!",
 
 		restore_streak = "Restore grrrrreat streak of ${streak}",
 		confirm_streak_restore = "Are you rawrrrrsolutely sure you want to restore your grrrrreat streak of ${streak} days? The cost is ${cost} OP Points.",
@@ -6496,8 +6568,13 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 	hunting = {
 		hold_to_skin = "[${InteractionKey}] Hooollld to skin",
 		skinning_animal = "Meat-ing dead animal",
-		meat_too_damaged = "Meat not yummy, too damaged.",
 		animal_is_being_skinned = "Meat being removed from animal.",
+
+		hold_to_remove = "[${InteractionKey}] Hold to remove carcass",
+		removing_carcass = "Removing damaged carcass. Chomp chomp.",
+		carcass_damaged = "The carcass is too damaged to skin. Grrr!",
+
+		meat_too_damaged = "Rawr! The dinosaur's meat was too damaged to be harvested.",
 
 		skinned_logs_title = "Skinned Animal",
 		skinned_logs_details = "${consoleName} skinned an animal (${modelName}) and obtained ${skinnedItems}.",
@@ -6673,7 +6750,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		instance_destroyed = "Destroy instance with ID `${instanceId}`. Goodbye!",
 		instance_destruction_failed = "Uh oh... Failed to destroy instance!",
 		instance_id_parameter_invalid = "Err. Invalid instance ID entered...",
-		added_player_to_instance = "${consoleName} added to instance `${instanceId}`. Welcome to the pack!",
+		added_player_to_instance = "Rawr! Added ${consoleName} to the instance with ID `${instanceId}`.",
 		failed_to_add_player_to_instance = "Oh no! Failed to add player to instance.",
 		server_id_parameter_invalid = "Err. Invalid server ID entered...",
 		removed_player_from_instance = "Removed ${consoleName} from the instance with ID `${instanceId}`.",
@@ -6987,9 +7064,13 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		glass_breaker_description = "Used to break car windows in case of dinosaur emergency. (Roarsaurus!)",
 
 		picture = "Mementosaurus",
-		picture_description = "Collect all the memories of you and your dino-friends. (Roarsaurus!)",
-		paper = "Leaf Sheet",
-		paper_description = "Blank leaf sheet for write.",
+		picture_description = "Rawr! Collect all the memories of you and your friends. (Size: 1x1)",
+		printed_card = "Rawr! Printed Card",
+		printed_card_description = "Rawr! A small printed card, a business card maybe? (Size: 9x5)",
+		paper = "Rawr! Photo Paper",
+		paper_description = "Rawr! A blank piece of paper for printing pictures.",
+		card_paper = "Rawr! Card Paper",
+		card_paper_description = "Rawr! A blank piece of paper for printing business cards.",
 		printer = "Color Leaf Machine",
 		printer_description = "Rrrawr, no fax, only printer.",
 
@@ -7433,6 +7514,11 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 		gold_bar = "Dino Nugget",
 		gold_bar_description = "Used for fixing and building things. Rawr!",
+
+		ancient_ring = "Zilantir Ring",
+		ancient_ring_description = "A weathered gold ring, its intricate etchings faded by time and tide, whispers of love and loyalty from a bygone era. Once a symbol of eternal bond, it now beckons with the allure of untold stories and lost civilizations.",
+		ancient_coin = "Zilantir Coin",
+		ancient_coin_description = "This coin bears the marks of ancient commerce, its gold surface tarnished by the salt and sands of the sea, holding the weight of centuries in its design. The emblem engraved upon it speaks of an empire's reach and the fluid hand of history that passes wealth from palm to palm.",
 
 		aluminium = "Scratched Metal Leaf",
 		aluminium_description = "Used for repairs and craftwork. Rawrr!",
@@ -8788,7 +8874,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		lucky_wheel_is_occupied = "The Lucky Wheel is currently occupied. Please wait your turn!",
 		not_enough_op_points = "You need ${cost} OP Points to spin the Rawrsome Wheel. You have ${points} OP Points.",
 		used_op_points = "You used ${cost} OP Points. You now have ${points} OP Points left.",
+		casino_company_name = "The Ferocious Claw Casino & Resort",
 		vehicle_won_tweet = "Roar! Someone just struck gold at the Lucky Wheel and secured the ultra-rare ${modelDisplayName}! Who's the fortunate winner? Head over now and claim your prize.",
+		vehicle_is_not_in_cdimage = "Thy mighty beast is not in the game files.",
+		podium_vehicle_set_to = "Thy mighty beast atop the podium hath been set to `${modelLabel}`.",
 
 		logs_lucky_wheel_reward_title = "Roar! Lucky Wheel Reward",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} has hunted for lucky wheel and earned a vehicle!",
@@ -10054,12 +10143,18 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 	},
 
 	pawn_shops = {
+		pawn_shop = "Ancient Treasures",
+		pawn_shop_far = "Access Ancient Treasures",
+		pawn_shop_near = "[${InteractionKey}] Access Ancient Treasures",
+		no_items_to_sell = "You no have ${itemLabel} to sell.",
+		close_menu = "Close Menu",
+
 		sell_items = "Sell ${itemLabel} for Bones",
 		press_to_sell_items = "[${InteractionKey}] Roar! Sell ${amount}x ${itemLabel}",
 		sold_items = "Sold ${sellAmount}x ${itemLabel} for $${sellPrice} Bones. Raaawr",
-		no_items_to_sell = "You no have ${itemLabel} to sell.",
 		daily_limit_reached = "You reach daily limit, vendor no buy more items.",
 		illegal_pawn_shop_id = "Attempting to pass values for a pawn shop that no exist.",
+
 		used_pawn_shop_title = "Used Pawn Shop",
 		used_pawn_shop_details = "${consoleName} use pawn shop and sell ${sellAmount} `${itemLabel}` and receive $${sellPrice}."
 	},
@@ -10237,6 +10332,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 
 	printer = {
 		use_printer = "[${InteractionKey}] Use Printer",
+		failed_to_print = "Failed to paint on ancient canvas.",
 
 		no_paper = "Rrrawr, you don't have any paper.",
 		invalid_url = "Rrrawr! Invalid Image URL.",
@@ -10245,7 +10341,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		printing = "Roar...",
 
 		printed_logs_title = "Rarr Image",
-		printed_logs_details = "${consoleName} Rarr'd an image with the URL `${url}`."
+		printed_logs_details = "${consoleName} hath painted a `${itemName}` using `${paperType}` with the image URL `${url}`."
 	},
 
 	prop_hide = {
@@ -10257,7 +10353,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		no_address_set = "Roar! No address set.",
 		no_address_found = "Roar! No address found under '${address}'.",
 		marker_set = "Roar! Marker and waypoint set to ${address}.",
-		removed_marker = "Removed markaaar for ${address}."
+		removed_marker = "Removed markaaar for ${address}.",
+		entrance = "Entrance",
+		back_entrance = "Swampy Den",
+		garage = "Stomping Ground"
 	},
 
 	props = {
@@ -10549,13 +10648,20 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		exiting = "Roaring...",
 		problems = "Problems:",
 		profile_gamma_not_18 = "Your 'gamma' setting is not set to the default value. This reduces the consistency and quality of images generated by your client. To fix this, type 'profile_gamma 18' in your F8 console. You will not be given jobs until this has been done. You need to be on the 'beta' or 'latest' version of FiveM to be able to do that. You can change it in the FiveM main menu.",
-		screenshot_blackscreen = "Rrrawwrr! Your snapshots come back all black. You must fix your game so it can be snapshot-ready before more tasks will be given to you. This might be caused by an anti-volcanus system. To attempt capturing images again, re-enter this UI.",
+		banned = "Gone Extinct:",
+		banned_information = "Some dinos be creatin' images that don't meet expectations. This messes with the consistenty of portraits and selfies. It usually happens when yer resolution is too low, graphic settings are too low, or yer usin' visual mods. Visual mods be fine, but oversaturated or undersaturated visuals ain't. Visual mods often make colors too vibrant or too dull (makin' characters look lifeless in portraits).",
+		banned_unban = "Y'know, if ya wanna keep takin' those snapshots, ya can lift yer own ban up t'ree times. But before ya do that, ya gotta make yer game look better so ya don't get banned again. Crank up yer graphics settings an' tone down them visual mods.",
+		unban = "Unban (${unbansLeft} left)",
 
 		screenshotting_start_logs_title = "Snapshotting Start",
 		screenshotting_start_logs_details = "${consoleName} began snapshotting.",
 
 		screenshotting_stop_logs_title = "Snapshotting Stop",
-		screenshotting_stop_logs_details = "${consoleName} ceased snapshotting."
+		screenshotting_stop_logs_details = "${consoleName} ceased snapshotting.",
+
+		user_does_not_exist = "This dino does not exist.",
+		screenshotter_already_banned = "This snapshotter is already banned.",
+		screenshotter_banned = "This snapshotter has now been banned."
 	},
 
 	scuba = {
@@ -10667,8 +10773,6 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		speed = "Me run (${speedLevel}), RAAWR!",
 		rotation = "Me rotate (${rotationLevel}), GRR!",
 		clear_bullet_impacts = "Me clear bullet impacts.",
-		illegal_shooting_spot_value = "Me no understand. Invalid values for shootings spots.",
-		illegal_shooting_spot_id = "Me no see that spot. Values for shootings spots not recognized.",
 		not_enough_cash = "Rrraaarrr! You not have enough mammoth meat."
 	},
 
@@ -10920,7 +11024,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		time_parameters_invalid = "Invalid hour or minute parameter. Please provide accurate hour and minute values.",
 		time_currently_transitioning = "The time is currently transitioning, please wait until time travel finishes. Rawrgh!",
 		time_successfully_transitioned = "Gnarly! Successfully transitioned the Sun and Moon to `${hour}:${minute}`.",
-		time_successfully_set = "Gnarly! Successfully set the Sun and Moon to `${hour}:${minute}`."
+		time_successfully_set = "Gnarly! Successfully set the Sun and Moon to `${hour}:${minute}`.",
+
+		developer_ambience_on = "Stomping mode engaged!",
+		developer_ambience_off = "Stomping mode disengaged."
 	},
 
 	tablet = {
@@ -11137,6 +11244,11 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		tp_airport = "LS Nesting Grounds",
 		tp_carrier = "Flying Dino Carrier",
 		tp_cayo = "Cayo Pterodactyl",
+
+		actions = "Actions",
+		wander_around = "Roam the land",
+		speed_around = "Swiftly move about",
+		clear_tasks = "Clear tasks",
 
 		you_are_not_in_a_vehicle = "You not in big car.",
 		you_are_in_a_vehicle = "You in big car now.",
@@ -11405,6 +11517,23 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		muted_logs_title = "Muted Voice",
 		muted_logs_details = "${consoleName} muted ${targetConsoleName} from rawring chat.",
 		unmuted_logs_details = "${consoleName} rawrs ${targetConsoleName} from voice chat."
+	},
+
+	wallhack = {
+		wallhack_on = "See through walls activated!",
+		wallhack_off = "See through walls deactivated.",
+
+		wallhack_failed = "Failed to activate wall vision.",
+		wallhack_everyone = "Successfully enabled wall vision for all dinosaurs.",
+		wallhack_self = "Successfully enabled wall vision for yourself.",
+		wallhack_player = "Successfully enabled wall vision for ${displayName}.",
+
+		wallhack_everyone_logs_title = "Tog-Galak Wallhack For Everyone",
+		wallhack_everyone_logs_details = "${consoleName} tog-galaked wallhack for everyone.",
+		wallhack_player_logs_title = "Tog-Galak Wallhack For Player",
+		wallhack_player_logs_details = "${consoleName} tog-galaked wallhack for ${targetConsoleName}.",
+		wallhack_self_logs_title = "Tog-Galak Wallhack For Self",
+		wallhack_self_logs_details = "${consoleName} tog-galaked wallhack for themselves."
 	},
 
 	washrooms = {
@@ -11726,6 +11855,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		license_utility = "Pterodactyl for Utility Work",
 		license_commercial = "Commercial Pterodactyl",
 		license_management = "Pterodactyl for Management",
+		license_passenger = "Galgan",
 		license_military = "Military Pterodactyl",
 		license_special = "Special Pterodactyl",
 		license_boat = "Boating Roar",
@@ -11890,10 +12020,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		vehicle_at_police_impound = "Roar! Your car is like a prisoner with the police.",
 		vehicle_at_impound = "Rawr! Your car is trapped in the impound lot.",
 		waypoint_to_impound = "Rawr! Follow the map to get to the impound lot.",
-		unable_to_withdraw = "Rawr! Can't get car because it's in ${location}.",
-		waypoint_to_vehicle = "Rawr! Follow map to your car location.",
-		vehicle_currently_at = "Your dinosaur mobile can be currently found at ${location}.",
-		vehicle_in_garage = "Your dino ride is resting in ${garageName}.",
+		unable_to_withdraw = "Unable to gallo-ulu vehicle as it can currently out.",
+		vehicle_in_garage = "Rawr! Your stompy-wompy vehicle is located in ${garageName}. A tasty little waypoint has been marked on your map.",
 		insufficient_funds = "You do not have enough shiny stones to call upon this dinosaur.",
 		error_withdrawing = "An angry T-Rex is blocking the way to your dino vehicle.",
 		withdraw_timeout = "Please wait a bit before calling upon another dinosaur ride.",
@@ -11924,15 +12052,12 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		garage = "Raaar!",
 		retrieved_vehicle_logs_title = "Raaar! Retrieved Vehicle",
 		retrieved_vehicle_logs_details = "${consoleName} raaar! retrieved vehicle with plate `${plate}` for ${price}.",
+		no_vehicles_to_sell = "Rawr! You no have any vehicles to sell. Time to find more stompy-wompies.",
 
 		state_loading_model = "Raaar! Loading Model...",
 		state_withdrawing = "Raaar! Withdrawing...",
-
-		state_retrieve_searching = "Raaar! Searching...",
 		state_retrieving = "Raaar! Retrieving...",
-
 		state_storing = "Raaar! Storing...",
-
 		state_loading = "Raaar! Loading...",
 
 		vehicle_weight = "Raaar! Weight: ${weight}",

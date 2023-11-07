@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 22 (do not change)
+-- AUTO LOCALES: 23 (do not change)
 
 OP.Global.Locales.Languages["fr-FR"] = {
 	-- configuration settings for language
@@ -341,12 +341,8 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		no_nearby_vehicles_off = "La fonction 'Pas de véhicules à proximité' a été désactivée.",
 		speed_up_progress_bar_on = "La fonction 'Accélérer la barre de progression' a été activée.",
 		speed_up_progress_bar_off = "La fonction 'Accélérer la barre de progression' a été désactivée.",
-		wallhack_on = "La fonction 'Wallhack' a été activée.",
-		wallhack_off = "La fonction 'Wallhack' a été désactivée.",
 		aimbot_on = "Aimbot activé.",
 		aimbot_off = "Aimbot désactivé.",
-		player_bones_on = "Les 'Os du joueur' ont été activés.",
-		player_bones_off = "Les 'Os du joueur' ont été désactivés.",
 		vehicle_smoke_on = "La 'Fumée du véhicule' a été activée.",
 		vehicle_smoke_off = "La 'Fumée du véhicule' a été désactivée.",
 
@@ -706,6 +702,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		vehicle_spawn_ban = "Ah, rêviez-vous d'une virée avec `${modelName}`? Ce n'est pas une salle d'exposition et ce modèle en particulier ? Il est sur une liste d'attente éternelle !",
 		weapon_spawn_ban = "Vous avez envie de `${weaponName}` ? Ce n'est pas un arsenal et cette pièce ? Elle est toujours en forge.",
 		advanced_noclip_ban = "Vous essayez de vous faufiler dans des couloirs invisibles ? Ce n'est pas une valse fantomatique et ce mouvement ? Il n'est pas inscrit à notre programme de danse.",
+		illegal_local_vehicle_ban = "Il semble que vous ayez trouvé le destrier invisible du Seigneur Mirage ! Hélas, cette monture mystique est réservée à la parade annuelle des fantômes.",
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Création Mauvaise",
@@ -744,6 +741,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		type_thermal_night_vision = "Vision thermique/nocturne",
 		type_underground = "Souterrain",
 		type_vehicle_modification = "Modification de véhicule",
+		type_illegal_local_vehicle = "Utilisation d'un véhicule non réseauté",
 
 		event_prefix = "Anti-Triche : ${type}",
 
@@ -813,7 +811,8 @@ OP.Global.Locales.Languages["fr-FR"] = {
 
 	bans = {
 		banned_no_permissions = "Tentative de `${reason}` sans les permissions nécessaires.",
-		fraud_chargeback = "Fraude / Répudiation de paiement"
+		fraud_chargeback = "Fraude / Répudiation de paiement",
+		none_provided = "Aucune information fournie."
 	},
 
 	characters = {
@@ -1034,18 +1033,6 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		aimbot_command_parameter_targets = "cibles",
 		aimbot_command_parameter_targets_help = "ID de serveur des cibles (ne fonctionne que lorsque vous activez/désactivez l'« aimbot » pour vous-même). (Filtrera les cibles pour n'inclure que les joueurs ayant ces ID de serveur)",
 		aimbot_command_substitutes = "",
-
-		player_bones_debug_command = "debug_bones_joueur",
-		player_bones_debug_command_help = "Active/désactive le débogage des os du joueur.",
-		player_bones_debug_command_parameter_server_id = "identifiant du serveur",
-		player_bones_debug_command_parameter_server_id_help = "Si vous voulez activer/désactiver le débogage des os du joueur pour quelqu'un d'autre, insérez leur identifiant de serveur ici.",
-		player_bones_debug_command_substitutes = "os_joueur",
-
-		wallhack_command = "mur_invisible",
-		wallhack_command_help = "Active/désactive le 'mur invisible'.",
-		wallhack_command_parameter_server_id = "identifiant du serveur",
-		wallhack_command_parameter_server_id_help = "Si vous souhaitez activer/désactiver le 'wallhack' pour quelqu'un d'autre, insérez leur identifiant de serveur ici.",
-		wallhack_command_substitutes = "",
 
 		speed_boost_command = "acceleration",
 		speed_boost_command_help = "Activer/désactiver l''accéleration'.",
@@ -2526,6 +2513,13 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		roll_lottery_command_help = "Lancer la loterie manuellement.",
 		roll_lottery_command_substitutes = "",
 
+		-- game/lucky_wheel
+		set_podium_vehicle_command = "set_podium_vehicle",
+		set_podium_vehicle_command_help = "Définir le véhicule sur le podium pouvant être gagné au casino.",
+		set_podium_vehicle_command_parameter_model_name = "nom du modèle",
+		set_podium_vehicle_command_parameter_model_name_help = "Le nom du modèle du véhicule que vous souhaitez changer.",
+		set_podium_vehicle_command_substitutes = "",
+
 		-- game/magazines
 		refresh_magazines_command = "rafraîchir_chargeurs",
 		refresh_magazines_command_help = "Actualiser les chargeurs s'il y a eu des modifications dans la base de données.",
@@ -2939,6 +2933,69 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		wipe_props_command_parameter_radius_help = "Le rayon pour le nettoyage (1-250).",
 		wipe_props_command_substitutes = "",
 
+		-- game/racing
+		race_leave_command = "course_quitter",
+		race_leave_command_help = "Quitter la course en cours.",
+		race_leave_command_substitutes = "course_effacer",
+
+		race_share_command = "course_partager",
+		race_share_command_help = "Partager une piste de course avec un autre joueur.",
+		race_share_command_parameter_server_id = "ID serveur",
+		race_share_command_parameter_server_id_help = "L'ID serveur du joueur avec qui vous souhaitez partager une piste.",
+		race_share_command_parameter_track_name = "nom de la piste",
+		race_share_command_parameter_track_name_help = "Le nom de la piste que vous souhaitez partager.",
+		race_share_command_substitutes = "",
+
+		race_record_command = "course_enregistrer",
+		race_record_command_help = "Enregistrer une course.",
+		race_record_command_substitutes = "",
+
+		race_save_command = "course_sauvegarder",
+		race_save_command_help = "Sauvegarder une course.",
+		race_save_command_parameter_track_name = "nom de la piste",
+		race_save_command_parameter_track_name_help = "Le nom sous lequel vous souhaitez l'enregistrer.",
+		race_save_command_parameter_track_type = "type de piste",
+		race_save_command_parameter_track_type_help = "Le type de piste de la course.",
+		race_save_command_substitutes = "",
+
+		race_delete_command = "course_supprimer",
+		race_delete_command_help = "Supprimer une course.",
+		race_delete_command_parameter_track_name = "nom de la piste",
+		race_delete_command_parameter_track_name_help = "Le nom de la piste que vous souhaitez supprimer.",
+		race_delete_command_substitutes = "",
+
+		race_list_command = "race_liste",
+		race_list_command_help = "Listez toutes vos courses enregistrées.",
+		race_list_command_substitutes = "",
+
+		race_load_command = "race_charger",
+		race_load_command_help = "Chargez une course.",
+		race_load_command_parameter_track_name = "nom de la piste",
+		race_load_command_parameter_track_name_help = "Le nom de la piste que vous souhaitez charger.",
+		race_load_command_substitutes = "",
+
+		race_start_command = "race_demarrer",
+		race_start_command_help = "Démarrez une course.",
+		race_start_command_parameter_amount = "montant",
+		race_start_command_parameter_amount_help = "Le coût pour participer à la course.",
+		race_start_command_parameter_start_delay = "délai de départ",
+		race_start_command_parameter_start_delay_help = "Le délai de départ en secondes.",
+		race_start_command_parameter_laps = "tours",
+		race_start_command_parameter_laps_help = "Le nombre de tours.",
+		race_start_command_substitutes = "",
+
+		race_cancel_command = "race_annuler",
+		race_cancel_command_help = "Annuler une course.",
+		race_cancel_command_substitutes = "",
+
+		race_checkpoints_command = "race_pointsdecontrole",
+		race_checkpoints_command_help = "Activer/désactiver les points de contrôle.",
+		race_checkpoints_command_substitutes = "",
+
+		race_sounds_command = "sons_course",
+		race_sounds_command_help = "Activer ou désactiver les sons.",
+		race_sounds_command_substitutes = "",
+
 		-- game/radio
 		radio_command = "radio",
 		radio_command_help = "Activer ou désactiver l'interface radio.",
@@ -3173,6 +3230,10 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		blackout_command_help = "Active ou désactive la coupure de courant.",
 		blackout_command_substitutes = "",
 
+		toggle_developer_ambience_command = "activer_ambiance_developpeur",
+		toggle_developer_ambience_command_help = "Activer ou désactiver l'ambiance développeur.",
+		toggle_developer_ambience_command_substitutes = "",
+
 		-- game/tablet
 		tablet_command = "tablette",
 		tablet_command_help = "Ouvre l'interface de la tablette (si vous avez une tablette).",
@@ -3274,6 +3335,13 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		change_voice_mode_command = "changer_mode_voix",
 		change_voice_mode_command_help = "Active ou désactive le mode d'entrée vocale 'musique'. Ce mode désactive la suppression du bruit et la réduction de l'écho, permettant une musique plus claire.",
 		change_voice_mode_command_substitutes = "mode_voix",
+
+		-- game/wallhack
+		wallhack_command = "mur_invisible",
+		wallhack_command_help = "Activer ou désactiver le wallhack.",
+		wallhack_command_parameter_server_id = "identifiant du serveur",
+		wallhack_command_parameter_server_id_help = "Si vous souhaitez activer ou désactiver le wallhack pour quelqu'un d'autre, insérez son identifiant de serveur ici.",
+		wallhack_command_substitutes = "",
 
 		-- game/wizard
 		wizard_command = "wizard",
@@ -3722,7 +3790,8 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		richer_presence_on = "La présence améliorée est activée.",
 		richer_presence_off = "La présence améliorée est désactivée.",
 
-		announce_event = "Il y a un événement dans 15 minutes ! Consultez Discord pour plus d'informations.\n\n${name} @ **${location}**"
+		announce_event = "Il y a un événement dans ${minutes} minutes ! Consultez Discord pour plus d'informations.\n\n${name} @ **${location}**",
+		announce_event_starting_now = "Un événement commence maintenant ! Consultez Discord pour plus d'informations.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -5691,7 +5760,10 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		no = "Non",
 
 		logs_daily_streak_changed_title = "Changement de série quotidienne",
-		logs_daily_streak_changed_details = "${consoleName} a maintenant une série quotidienne de `${streak}.`",
+		logs_daily_streak_changed_details = "${consoleName} a maintenant une série quotidienne de `${streak}`.",
+
+		logs_daily_task_completed_title = "Tâche quotidienne accomplie",
+		logs_daily_task_completed_details = "${consoleName} a terminé une tâche quotidienne avec le nom de `${taskName}`.",
 
 		restore_streak = "Restaurer une série de ${streak}",
 		confirm_streak_restore = "Êtes-vous sûr de vouloir restaurer votre série de ${streak} jours ? Cela coûtera ${cost} points OP.",
@@ -6496,8 +6568,13 @@ OP.Global.Locales.Languages["fr-FR"] = {
 	hunting = {
 		hold_to_skin = "[${ToucheInteraction}] Maintenir pour dépecer",
 		skinning_animal = "Dépeçage de l'animal mort",
-		meat_too_damaged = "La viande de cet animal est trop endommagée.",
 		animal_is_being_skinned = "L'animal est en train d'être dépecé.",
+
+		hold_to_remove = "[${InteractionKey}] Maintenez pour enlever la carcasse",
+		removing_carcass = "Enlèvement de la carcasse endommagée",
+		carcass_damaged = "La carcasse est trop endommagée pour être dépouillée.",
+
+		meat_too_damaged = "La viande de l'animal était trop abîmée pour être récoltée.",
 
 		skinned_logs_title = "Animal écorché",
 		skinned_logs_details = "${consoleName} a écorché un animal (${modelName}) et a obtenu ${skinnedItems}.",
@@ -6673,7 +6750,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		instance_destroyed = "Détruire l'instance avec l'ID `${instanceId}`.",
 		instance_destruction_failed = "Impossible de détruire l'instance.",
 		instance_id_parameter_invalid = "Le paramètre d'ID de l'instance n'est pas valide.",
-		added_player_to_instance = "Ajouté ${consoleName} à l'instance avec l'ID `${instanceId}.`",
+		added_player_to_instance = "Ajouté(e) ${consoleName} à l'instance avec l'ID `${instanceId}`.",
 		failed_to_add_player_to_instance = "Impossible d'ajouter le joueur à l'instance.",
 		server_id_parameter_invalid = "Le paramètre d'ID du serveur n'est pas valide.",
 		removed_player_from_instance = "Le joueur ${consoleName} a été retiré de l'instance avec l'ID `${instanceId}`.",
@@ -6987,9 +7064,13 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		glass_breaker_description = "Utilisé pour briser les vitres de voiture en cas d'urgence.",
 
 		picture = "Photo",
-		picture_description = "Collectez tous les souvenirs de vous et de vos amis.",
-		paper = "Papier",
-		paper_description = "Une feuille de papier vierge.",
+		picture_description = "Collectionnez tous les souvenirs de vous et de vos amis. (Taille : 1x1)",
+		printed_card = "Carte Imprimée",
+		printed_card_description = "Une petite carte imprimée, une carte de visite peut-être ? (Taille : 9x5)",
+		paper = "Papier Photo",
+		paper_description = "Une feuille de papier vierge pour imprimer des photos.",
+		card_paper = "Papier pour Carte",
+		card_paper_description = "Une feuille de papier vierge pour imprimer des cartes de visite.",
 		printer = "Imprimante",
 		printer_description = "Pas de fax, seulement une imprimante.",
 
@@ -7433,6 +7514,11 @@ OP.Global.Locales.Languages["fr-FR"] = {
 
 		gold_bar = "Barre d'or",
 		gold_bar_description = "Utilisée pour les réparations et l'artisanat.",
+
+		ancient_ring = "Bague antique",
+		ancient_ring_description = "Une bague en or vieilli, ses motifs complexes estompés par le temps et les marées, murmure d'amour et de loyauté d'une époque révolue. Autrefois symbole d'un lien éternel, elle attire aujourd'hui avec le charme d'histoires innombrables et de civilisations perdues.",
+		ancient_coin = "Pièce antique",
+		ancient_coin_description = "Cette pièce porte les traces d'un commerce antique, sa surface en or ternie par le sel et les sables de la mer, portant le poids des siècles dans son design. L'emblème gravé sur elle témoigne de l'étendue d'un empire et de la main fluide de l'histoire qui fait passer la richesse de main en main.",
 
 		aluminium = "Aluminium brut",
 		aluminium_description = "Utilisé pour les réparations et l'artisanat.",
@@ -8788,7 +8874,10 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		lucky_wheel_is_occupied = "La Roue de la Fortune est actuellement en cours d'utilisation. Veuillez patienter.",
 		not_enough_op_points = "Vous avez besoin de ${cost} Points de fidélité pour faire tourner la Roue de la Chance. Vous avez ${points} Points de fidélité.",
 		used_op_points = "Vous avez utilisé ${cost} Points de fidélité. Vous avez maintenant ${points} Points de fidélité restants.",
+		casino_company_name = "Le Casino & Resort Diamond",
 		vehicle_won_tweet = "Quelqu'un vient de frapper le jackpot à la Roue de la Fortune et a sécurisé l'ultra-rare ${modelDisplayName} ! Qui est le chanceux gagnant ? Rendez-vous maintenant et réclamez votre prix.",
+		vehicle_is_not_in_cdimage = "Ce véhicule ne se trouve pas dans les fichiers du jeu.",
+		podium_vehicle_set_to = "Le véhicule sur le podium a été défini sur « ${modelLabel} ».",
 
 		logs_lucky_wheel_reward_title = "Récompense de la Roue de la Fortune",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} a fait tourner la roue et a gagné un véhicule.",
@@ -10054,12 +10143,18 @@ OP.Global.Locales.Languages["fr-FR"] = {
 	},
 
 	pawn_shops = {
+		pawn_shop = "Bijouterie",
+		pawn_shop_far = "Accéder à la bijouterie",
+		pawn_shop_near = "[${InteractionKey}] Accéder à la bijouterie",
+		no_items_to_sell = "Vous n'avez pas de ${itemLabel} à vendre.",
+		close_menu = "Fermer le menu",
+
 		sell_items = "Vend ${itemLabel}",
 		press_to_sell_items = "[${InteractionKey}] Vendre ${amount}x ${itemLabel}",
 		sold_items = "${sellAmount}x ${itemLabel} vendu(s) pour $${sellPrice}.",
-		no_items_to_sell = "Vous n'avez pas de ${itemLabel} à vendre.",
 		daily_limit_reached = "Vous avez atteint votre limite quotidienne, le vendeur n'achète plus d'articles.",
 		illegal_pawn_shop_id = "Tentative de passer des valeurs pour une boutique qui n'existe pas.",
+
 		used_pawn_shop_title = "Boutique de prêt sur gages d'occasion",
 		used_pawn_shop_details = "${consoleName} a utilisé une boutique de prêt sur gages d'occasion et a vendu ${sellAmount} `${itemLabel}` et a reçu ${sellPrice}$."
 	},
@@ -10237,6 +10332,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 
 	printer = {
 		use_printer = "[${InteractionKey}] Utiliser l'imprimante",
+		failed_to_print = "Échec de l'impression.",
 
 		no_paper = "Vous n'avez pas de papier.",
 		invalid_url = "URL de l'image invalide.",
@@ -10245,7 +10341,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		printing = "Impression en cours...",
 
 		printed_logs_title = "Image imprimée",
-		printed_logs_details = "${consoleName} a imprimé une image avec l'URL `${url}`."
+		printed_logs_details = "${consoleName} a imprimé un(e) « ${itemName} » en utilisant le papier de type « ${paperType} » avec l'URL de l'image « ${url} »."
 	},
 
 	prop_hide = {
@@ -10257,7 +10353,10 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		no_address_set = "Aucune adresse définie.",
 		no_address_found = "Aucune adresse trouvée sous '${address}'.",
 		marker_set = "Marqueur et itinéraire définis sur ${address}.",
-		removed_marker = "Marqueur supprimé pour ${address}."
+		removed_marker = "Marqueur supprimé pour ${address}.",
+		entrance = "Entrée",
+		back_entrance = "Entrée arrière",
+		garage = "Garage"
 	},
 
 	props = {
@@ -10549,13 +10648,20 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		exiting = "Fermeture...",
 		problems = "Problèmes :",
 		profile_gamma_not_18 = "Votre réglage 'gamma' n'est pas défini sur la valeur par défaut. Cela réduit la cohérence et la qualité des images générées par votre client. Pour résoudre ce problème, saisissez 'profile_gamma 18' dans votre console F8. Vous ne recevrez pas de travail tant que cela n'aura pas été fait. Vous devez être sur la version 'beta' ou 'latest' de FiveM pour pouvoir le faire. Vous pouvez le changer dans le menu principal de FiveM.",
-		screenshot_blackscreen = "Vos captures d'écran affichent un écran noir. Vous devez résoudre le problème pour pouvoir obtenir plus de missions. Cela peut être causé par un antivirus. Pour essayer de créer à nouveau des images, ré-entrez cette interface.",
+		banned = "Banni :",
+		banned_information = "Certains joueurs créent des images qui ne correspondent pas aux attentes. Cela réduit la cohérence des portraits et des selfies. Cela se produit généralement lorsque votre résolution est trop basse, que les paramètres graphiques sont trop bas ou que des mods visuels sont utilisés. Bien que les mods visuels soient acceptables, les visuels sur-saturés ou sous-saturés ne le sont pas. Les mods visuels rendent souvent les couleurs très excessives ou très fades (rendant les personnages morts sur les portraits).",
+		banned_unban = "Si vous souhaitez continuer à faire des captures d'écran, vous pouvez vous auto-débannir jusqu'à 3 fois. Toutefois, avant de le faire, vous devriez améliorer les paramètres graphiques de votre jeu afin d'éviter d'être banni à nouveau. Augmenter les paramètres graphiques et réduire l'intensité des mods visuels vous aidera.",
+		unban = "Débannir (${unbansLeft} restantes)",
 
 		screenshotting_start_logs_title = "Démarrage de la capture d'écran",
 		screenshotting_start_logs_details = "${consoleName} a commencé à prendre des captures d'écran.",
 
 		screenshotting_stop_logs_title = "Arrêt de la capture d'écran",
-		screenshotting_stop_logs_details = "${consoleName} a arrêté de prendre des captures d'écran."
+		screenshotting_stop_logs_details = "${consoleName} a arrêté de prendre des captures d'écran.",
+
+		user_does_not_exist = "Cet utilisateur n'existe pas.",
+		screenshotter_already_banned = "Ce preneur de captures d'écran est déjà banni.",
+		screenshotter_banned = "Ce preneur de captures d'écran a maintenant été banni."
 	},
 
 	scuba = {
@@ -10667,8 +10773,6 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		speed = "Vitesse (${speedLevel})",
 		rotation = "Rotation (${rotationLevel})",
 		clear_bullet_impacts = "Effacer les impacts de balle",
-		illegal_shooting_spot_value = "Tentative de passage de valeurs non valides pour les spots de tirs.",
-		illegal_shooting_spot_id = "Tentative de passage de valeurs pour un spot de tir qui n'existe pas.",
 		not_enough_cash = "Vous n'avez pas assez d'argent."
 	},
 
@@ -10920,7 +11024,10 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		time_parameters_invalid = "Paramètre heure ou minute invalide.",
 		time_currently_transitioning = "Le temps est en train de transitionner, veuillez patienter.",
 		time_successfully_transitioned = "Heure modifiée avec succès pour ${hour}:${minute}.",
-		time_successfully_set = "Heure définie avec succès à ${hour}:${minute}."
+		time_successfully_set = "Heure définie avec succès à ${hour}:${minute}.",
+
+		developer_ambience_on = "Ambiance de développeur activée.",
+		developer_ambience_off = "Ambiance de développeur désactivée."
 	},
 
 	tablet = {
@@ -11137,6 +11244,11 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		tp_airport = "Aéroport de LS",
 		tp_carrier = "Porte-avions",
 		tp_cayo = "Cayo Perico",
+
+		actions = "Actions",
+		wander_around = "Errer",
+		speed_around = "Se déplacer rapidement",
+		clear_tasks = "Effacer les tâches",
 
 		you_are_not_in_a_vehicle = "Vous n'êtes pas dans un véhicule.",
 		you_are_in_a_vehicle = "Vous êtes actuellement dans un véhicule.",
@@ -11405,6 +11517,23 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		muted_logs_title = "Voix en sourdine",
 		muted_logs_details = "${consoleName} a mis ${targetConsoleName} en sourdine dans le chat vocal.",
 		unmuted_logs_details = "${consoleName} a réactivé le chat vocal pour ${targetConsoleName}."
+	},
+
+	wallhack = {
+		wallhack_on = "Wallhack activé.",
+		wallhack_off = "Wallhack désactivé.",
+
+		wallhack_failed = "Impossible d'activer le wallhack.",
+		wallhack_everyone = "Wallhack activé pour tout le monde avec succès.",
+		wallhack_self = "Wallhack activé pour vous-même avec succès.",
+		wallhack_player = "Wallhack activé pour ${displayName} avec succès.",
+
+		wallhack_everyone_logs_title = "Mur Invisible Activé pour Tout le Monde",
+		wallhack_everyone_logs_details = "${consoleName} a activé le mur invisible pour tout le monde.",
+		wallhack_player_logs_title = "Mur Invisible Activé pour le Joueur",
+		wallhack_player_logs_details = "${consoleName} a activé le mur invisible pour ${targetConsoleName}.",
+		wallhack_self_logs_title = "Mur Invisible Activé pour Soi",
+		wallhack_self_logs_details = "${consoleName} a activé le mur invisible pour eux-mêmes."
 	},
 
 	washrooms = {
@@ -11726,6 +11855,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		license_utility = "Utilitaire",
 		license_commercial = "Commercial",
 		license_management = "Gestion",
+		license_passenger = "Passager",
 		license_military = "Militaire",
 		license_special = "Aéronefs spéciaux",
 		license_boat = "Permis de bateau",
@@ -11890,10 +12020,8 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		vehicle_at_police_impound = "Votre véhicule est actuellement en garde à vue par la police.",
 		vehicle_at_impound = "Votre véhicule est situé à la fourrière.",
 		waypoint_to_impound = "Un waypoint vers la fourrière a été marqué sur votre GPS.",
-		unable_to_withdraw = "Impossible de retirer le véhicule car il se trouve actuellement à ${location}.",
-		waypoint_to_vehicle = "Un waypoint vers votre véhicule a été marqué sur votre GPS.",
-		vehicle_currently_at = "Votre véhicule est actuellement situé à ${location}.",
-		vehicle_in_garage = "Votre véhicule se trouve dans ${garageName}.",
+		unable_to_withdraw = "Impossible de retirer le véhicule car il est actuellement occupé.",
+		vehicle_in_garage = "Votre véhicule se trouve dans ${garageName}. Un waypoint a été marqué sur votre carte.",
 		insufficient_funds = "Vous n'avez pas suffisamment d'argent pour sortir ce véhicule.",
 		error_withdrawing = "Une erreur est survenue lors de la sortie de votre véhicule.",
 		withdraw_timeout = "Veuillez attendre un moment avant d'essayer de sortir un autre véhicule.",
@@ -11924,15 +12052,12 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		garage = "Garage",
 		retrieved_vehicle_logs_title = "Véhicule récupéré",
 		retrieved_vehicle_logs_details = "${consoleName} a récupéré le véhicule immatriculé `${plate}` pour ${price}.",
+		no_vehicles_to_sell = "Vous n'avez aucun véhicule à vendre.",
 
 		state_loading_model = "Chargement du modèle...",
 		state_withdrawing = "Retrait...",
-
-		state_retrieve_searching = "Recherche...",
 		state_retrieving = "Récupération...",
-
 		state_storing = "Stockage...",
-
 		state_loading = "Chargement...",
 
 		vehicle_weight = "Poids : ${weight}",

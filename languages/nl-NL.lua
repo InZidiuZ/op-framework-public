@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 22 (do not change)
+-- AUTO LOCALES: 23 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -341,12 +341,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		no_nearby_vehicles_off = "'Geen nabije voertuigen' uitgeschakeld.",
 		speed_up_progress_bar_on = "'Versnel voortgangsbalk' ingeschakeld.",
 		speed_up_progress_bar_off = "'Versnel voortgangsbalk' uitgeschakeld.",
-		wallhack_on = "'Wallhack' ingeschakeld.",
-		wallhack_off = "'Wallhack' uitgeschakeld.",
 		aimbot_on = "'Aimbot' Aan gezet.",
 		aimbot_off = "'Aimbot' Uit gezet.",
-		player_bones_on = "'Speler botten' Aan gezet.",
-		player_bones_off = "'Speler botten' Uit gezet.",
 		vehicle_smoke_on = "'Voertuig rook' Aan gezet.",
 		vehicle_smoke_off = "'Voertuig rook' Uit gezet.",
 
@@ -706,6 +702,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		vehicle_spawn_ban = "Ah, droomde je van een vrolijke rit met `${modelName}`? Dit is geen showroom en dat specifieke model? Het staat op een eeuwige wachtlijst!",
 		weapon_spawn_ban = "Verlangend naar de `${weaponName}`? Dit is geen wapenarsenaal en dat wapen? Nog in de smidse.",
 		advanced_noclip_ban = "Probeer je een geheime doorgang door ongezien gangenstelsel? Dit is geen magische wals en die beweging? Niet op onze danskaart.",
+		illegal_local_vehicle_ban = "Het lijkt erop dat je het onzichtbare ros van Lord Mirage hebt gevonden! Helaas is deze mystieke rit gereserveerd voor de jaarlijkse spookparade.",
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Slechte Creatie",
@@ -744,6 +741,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		type_thermal_night_vision = "Thermisch/Nachtzicht",
 		type_underground = "Ondergronds",
 		type_vehicle_modification = "Voertuigaanpassing",
+		type_illegal_local_vehicle = "Gebruik van niet-netwerkvoertuig",
 
 		event_prefix = "Anti-Cheat: ${type}",
 
@@ -813,7 +811,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 	bans = {
 		banned_no_permissions = "Poging tot `${reason}` zonder de juiste rechten.",
-		fraud_chargeback = "Fraude / Terugboeking"
+		fraud_chargeback = "Fraude / Terugboeking",
+		none_provided = "Niet opgegeven."
 	},
 
 	characters = {
@@ -1034,18 +1033,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		aimbot_command_parameter_targets = "doelwitten",
 		aimbot_command_parameter_targets_help = "Server-IDs van doelwitten (werkt alleen wanneer je het voor jezelf aan- of uitzet). (Filtert doelwitten op alleen spelers met deze server-IDs)",
 		aimbot_command_substitutes = "",
-
-		player_bones_debug_command = "speler_botten_debug",
-		player_bones_debug_command_help = "Schakel de speler botten debugger in of uit.",
-		player_bones_debug_command_parameter_server_id = "server id",
-		player_bones_debug_command_parameter_server_id_help = "Als je de speler botten debugger voor iemand anders wilt inschakelen, voer dan hier hun server id in.",
-		player_bones_debug_command_substitutes = "speler_botten",
-
-		wallhack_command = "muurhack",
-		wallhack_command_help = "Schakel 'muurhack' in of uit.",
-		wallhack_command_parameter_server_id = "server id",
-		wallhack_command_parameter_server_id_help = "Als je de 'wallhack' voor iemand anders wilt inschakelen, vul dan hier hun server-id in.",
-		wallhack_command_substitutes = "",
 
 		speed_boost_command = "snelheidsboost",
 		speed_boost_command_help = "Schakel 'snelheidsboost' in of uit.",
@@ -2526,6 +2513,13 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		roll_lottery_command_help = "Rol de loterij handmatig.",
 		roll_lottery_command_substitutes = "",
 
+		-- game/lucky_wheel
+		set_podium_vehicle_command = "set_podium_vehicle",
+		set_podium_vehicle_command_help = "Stel het winnende podiumvoertuig in bij het casino.",
+		set_podium_vehicle_command_parameter_model_name = "modelnaam",
+		set_podium_vehicle_command_parameter_model_name_help = "De modelnaam van het voertuig waarnaar je het wilt wijzigen.",
+		set_podium_vehicle_command_substitutes = "",
+
 		-- game/magazines
 		refresh_magazines_command = "vernieuw_magazines",
 		refresh_magazines_command_help = "Vernieuw de magazines als er veranderingen zijn geweest in de database.",
@@ -2939,6 +2933,69 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		wipe_props_command_parameter_radius_help = "De straal voor het wissen (1-250).",
 		wipe_props_command_substitutes = "",
 
+		-- game/racing
+		race_leave_command = "race_verlaten",
+		race_leave_command_help = "Verlaat de race waar je aan deelneemt.",
+		race_leave_command_substitutes = "race_annuleren",
+
+		race_share_command = "race_delen",
+		race_share_command_help = "Deel een racebaan met een andere speler.",
+		race_share_command_parameter_server_id = "server id",
+		race_share_command_parameter_server_id_help = "De server-ID van de speler waarmee je een baan wilt delen.",
+		race_share_command_parameter_track_name = "baannaam",
+		race_share_command_parameter_track_name_help = "De naam van de baan die je wilt delen.",
+		race_share_command_substitutes = "",
+
+		race_record_command = "race_record",
+		race_record_command_help = "Registreer een race.",
+		race_record_command_substitutes = "",
+
+		race_save_command = "race_save",
+		race_save_command_help = "Sla een race op.",
+		race_save_command_parameter_track_name = "baannaam",
+		race_save_command_parameter_track_name_help = "De naam waaronder u het wilt opslaan.",
+		race_save_command_parameter_track_type = "baantype",
+		race_save_command_parameter_track_type_help = "Het baantype van de race.",
+		race_save_command_substitutes = "",
+
+		race_delete_command = "race_delete",
+		race_delete_command_help = "Verwijder een race.",
+		race_delete_command_parameter_track_name = "track naam",
+		race_delete_command_parameter_track_name_help = "De naam van de track die je wilt verwijderen.",
+		race_delete_command_substitutes = "",
+
+		race_list_command = "race_lijst",
+		race_list_command_help = "Lijst van al je opgeslagen races.",
+		race_list_command_substitutes = "",
+
+		race_load_command = "race_laden",
+		race_load_command_help = "Laad een race.",
+		race_load_command_parameter_track_name = "track naam",
+		race_load_command_parameter_track_name_help = "De naam van de track die je wilt laden.",
+		race_load_command_substitutes = "",
+
+		race_start_command = "race_start",
+		race_start_command_help = "Start een race.",
+		race_start_command_parameter_amount = "bedrag",
+		race_start_command_parameter_amount_help = "De kosten voor deelname aan de race.",
+		race_start_command_parameter_start_delay = "startvertraging",
+		race_start_command_parameter_start_delay_help = "De startvertraging in seconden.",
+		race_start_command_parameter_laps = "rondes",
+		race_start_command_parameter_laps_help = "Het aantal rondes.",
+		race_start_command_substitutes = "",
+
+		race_cancel_command = "race_annuleren",
+		race_cancel_command_help = "Annuleer een race.",
+		race_cancel_command_substitutes = "",
+
+		race_checkpoints_command = "race_checkpointpunten",
+		race_checkpoints_command_help = "Schakel checkpointpunten in/uit.",
+		race_checkpoints_command_substitutes = "",
+
+		race_sounds_command = "race_geluiden",
+		race_sounds_command_help = "Geluiden aan/uit zetten.",
+		race_sounds_command_substitutes = "",
+
 		-- game/radio
 		radio_command = "radio",
 		radio_command_help = "Schakel de radio UI in of uit.",
@@ -3173,6 +3230,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		blackout_command_help = "Schakel in of uit of er een stroomstoring is.",
 		blackout_command_substitutes = "",
 
+		toggle_developer_ambience_command = "toggle_ontwikkelaar_ambiance",
+		toggle_developer_ambience_command_help = "Ontwikkelaars ambiance aan/uit zetten.",
+		toggle_developer_ambience_command_substitutes = "",
+
 		-- game/tablet
 		tablet_command = "tablet",
 		tablet_command_help = "Opent de tablet UI (als je een tablet hebt).",
@@ -3274,6 +3335,13 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		change_voice_mode_command = "verander_stemmodus",
 		change_voice_mode_command_help = "Schakelt de 'muziek' steminvoermodus aan/uit. Deze modus schakelt ruisverwijdering en galmannulering uit, zodat muziek helderder klinkt.",
 		change_voice_mode_command_substitutes = "stemmodus",
+
+		-- game/wallhack
+		wallhack_command = "muurhack",
+		wallhack_command_help = "Wallhack aan/uit zetten.",
+		wallhack_command_parameter_server_id = "server id",
+		wallhack_command_parameter_server_id_help = "Als je de wallhack voor iemand anders wilt aan/uit zetten, voer dan hier zijn server id in.",
+		wallhack_command_substitutes = "",
 
 		-- game/wizard
 		wizard_command = "wizard",
@@ -3722,7 +3790,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		richer_presence_on = "Rijkere status is nu ingeschakeld.",
 		richer_presence_off = "Rijkere status is nu uitgeschakeld.",
 
-		announce_event = "Er is over 15 minuten een evenement! Controleer Discord voor meer informatie.\n\n${name} @ **${location}**"
+		announce_event = "Er is een evenement over ${minutes} minuten! Check Discord voor meer informatie.\n\n${name} @ **${location}**",
+		announce_event_starting_now = "Een evenement begint nu! Check Discord voor meer informatie.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -5691,7 +5760,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		no = "Nee",
 
 		logs_daily_streak_changed_title = "Dagelijkse Streak Veranderd",
-		logs_daily_streak_changed_details = "${consoleName} heeft nu een dagelijkse streak van `${streak}.`",
+		logs_daily_streak_changed_details = "${consoleName} heeft nu een dagelijkse reeks van `${streak}`.",
+
+		logs_daily_task_completed_title = "Dagelijkse Taak Voltooid",
+		logs_daily_task_completed_details = "${consoleName} heeft een dagelijkse taak voltooid met de naam `${taskName}`.",
 
 		restore_streak = "Herstel reeks van ${streak}",
 		confirm_streak_restore = "Weet je zeker dat je je reeks van ${streak} dagen wilt herstellen? De kosten zijn ${cost} OP-punten.",
@@ -6496,8 +6568,13 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	hunting = {
 		hold_to_skin = "[${InteractionKey}] Houd vast om te villen",
 		skinning_animal = "Huiden van dood dier",
-		meat_too_damaged = "Het vlees van dit dier is te beschadigd.",
 		animal_is_being_skinned = "Het dier wordt gevild.",
+
+		hold_to_remove = "[${InteractionKey}] Houd vast om karkas te verwijderen",
+		removing_carcass = "Verwijderen van beschadigd karkas",
+		carcass_damaged = "Het karkas is te beschadigd om te villen.",
+
+		meat_too_damaged = "Het vlees van het dier was te beschadigd om te worden geoogst.",
 
 		skinned_logs_title = "Vergenoegd Dier",
 		skinned_logs_details = "${consoleName} heeft een dier (${modelName}) gevild en kreeg ${skinnedItems}.",
@@ -6673,7 +6750,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		instance_destroyed = "Vernietig instantie met ID `${instanceId}`.",
 		instance_destruction_failed = "Het vernietigen van de instantie is mislukt.",
 		instance_id_parameter_invalid = "De instantie-ID-parameter is ongeldig.",
-		added_player_to_instance = "${consoleName} is toegevoegd aan de instantie met ID `${instanceId}`.",
+		added_player_to_instance = "Speler ${consoleName} toegevoegd aan de instantie met ID `${instanceId}`.",
 		failed_to_add_player_to_instance = "Het toevoegen van de speler aan de instantie is mislukt.",
 		server_id_parameter_invalid = "De server-ID-parameter is ongeldig.",
 		removed_player_from_instance = "${consoleName} is verwijderd uit de instantie met ID `${instanceId}`.",
@@ -6987,9 +7064,13 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		glass_breaker_description = "Gebruikt om autoruiten te breken in geval van nood.",
 
 		picture = "Afbeelding",
-		picture_description = "Verzamel alle herinneringen van jou en je vrienden.",
-		paper = "Papier",
-		paper_description = "Een blanco vel papier.",
+		picture_description = "Verzamel alle herinneringen aan jou en je vrienden. (Grootte: 1x1)",
+		printed_card = "Gedrukte Kaart",
+		printed_card_description = "Een kleine gedrukte kaart, misschien een visitekaartje? (Grootte: 9x5)",
+		paper = "Fotopapier",
+		paper_description = "Een leeg vel papier voor het afdrukken van foto's.",
+		card_paper = "Kaartpapier",
+		card_paper_description = "Een leeg vel papier voor het afdrukken van visitekaartjes.",
 		printer = "Printer",
 		printer_description = "Alleen printer, geen fax.",
 
@@ -7433,6 +7514,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		gold_bar = "Goudstaaf",
 		gold_bar_description = "Gebruikt voor reparaties en ambachtelijke doeleinden.",
+
+		ancient_ring = "Oude Ring",
+		ancient_ring_description = "Een verweerde gouden ring, waarvan de ingewikkelde gravures vervaagd zijn door de tijd en de getijden, fluistert over liefde en loyaliteit uit een vervlogen tijdperk. Ooit een symbool van eeuwige verbondenheid, lokt het nu met de allure van ontelbare verhalen en verloren beschavingen.",
+		ancient_coin = "Oude Munt",
+		ancient_coin_description = "Deze munt draagt de sporen van oude handel, het gouden oppervlak aangetast door het zout en zand van de zee, met het gewicht van eeuwen in zijn ontwerp. Het embleem gegraveerd erop spreekt van de reikwijdte van een rijk en de stromende hand van geschiedenis die rijkdom van handpalm tot handpalm doorgeeft.",
 
 		aluminium = "Onbewerkt aluminium",
 		aluminium_description = "Gebruikt voor reparaties en ambachtelijke doeleinden.",
@@ -8788,7 +8874,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		lucky_wheel_is_occupied = "Het Lucky Wheel is momenteel bezet. Wacht alstublieft.",
 		not_enough_op_points = "Je hebt ${cost} OP Punten nodig om het Geluksrad te draaien. Je hebt ${points} OP Punten.",
 		used_op_points = "Je hebt ${cost} OP Punten gebruikt. Je hebt nu nog ${points} OP Punten over.",
+		casino_company_name = "Het Diamond Casino & Resort",
 		vehicle_won_tweet = "Iemand heeft zojuist goud gewonnen bij het Lucky Wheel en heeft de zeer zeldzame ${modelDisplayName} in handen gekregen! Wie is de gelukkige winnaar? Ga er nu heen en claim je prijs.",
+		vehicle_is_not_in_cdimage = "Deze vehicle staat niet in de spelbestanden.",
+		podium_vehicle_set_to = "De podium vehicle is ingesteld op `${modelLabel}`.",
 
 		logs_lucky_wheel_reward_title = "Lucky Wheel Beloning",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} heeft aan het rad gedraaid en heeft een voertuig gewonnen.",
@@ -10054,12 +10143,18 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	pawn_shops = {
+		pawn_shop = "Lommerd",
+		pawn_shop_far = "Toegang tot de Lommerd",
+		pawn_shop_near = "[${InteractionKey}] Toegang tot de Lommerd",
+		no_items_to_sell = "Je hebt geen ${itemLabel} om te verkopen.",
+		close_menu = "Menu sluiten",
+
 		sell_items = "Verkoop ${itemLabel}",
 		press_to_sell_items = "[${InteractionKey}] Verkoop ${amount}x ${itemLabel}",
 		sold_items = "${sellAmount}x ${itemLabel} verkocht voor $${sellPrice}.",
-		no_items_to_sell = "Je hebt geen ${itemLabel} om te verkopen.",
 		daily_limit_reached = "Je hebt je dagelijkse limiet bereikt, de verkoper koopt geen items meer.",
 		illegal_pawn_shop_id = "Poging om waarden door te passen voor een pandjeshuis dat niet bestaat.",
+
 		used_pawn_shop_title = "Gebruikte Pandjeshop",
 		used_pawn_shop_details = "${consoleName} heeft iets verkocht aan de pandjeshop. ${sellAmount} `${itemLabel}` verkocht voor $${sellPrice}."
 	},
@@ -10237,6 +10332,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 	printer = {
 		use_printer = "[${InteractionKey}] Gebruik Printer",
+		failed_to_print = "Printen mislukt.",
 
 		no_paper = "Je hebt geen papier.",
 		invalid_url = "Ongeldige afbeeldings-URL.",
@@ -10245,7 +10341,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		printing = "Aan het printen...",
 
 		printed_logs_title = "Geprinte afbeelding",
-		printed_logs_details = "${consoleName} heeft een afbeelding geprint met de URL `${url}`."
+		printed_logs_details = "${consoleName} heeft een `${itemName}` geprint met `${paperType}` en de afbeeldings-URL `${url}`."
 	},
 
 	prop_hide = {
@@ -10257,7 +10353,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		no_address_set = "Geen adres ingesteld.",
 		no_address_found = "Geen adres gevonden onder '${address}'.",
 		marker_set = "Marker en waypoint ingesteld op ${address}.",
-		removed_marker = "Marker verwijderd voor ${address}."
+		removed_marker = "Marker verwijderd voor ${address}.",
+		entrance = "Ingang",
+		back_entrance = "Achter Ingang",
+		garage = "Garage"
 	},
 
 	props = {
@@ -10549,13 +10648,20 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		exiting = "Afsluiten...",
 		problems = "Problemen:",
 		profile_gamma_not_18 = "Je 'gamma' instelling staat niet op de standaard waarde. Dit vermindert de consistentie en kwaliteit van afbeeldingen die door je client worden gegenereerd. Om dit op te lossen, typ 'profile_gamma 18' in je F8 console. Je kunt geen banen krijgen totdat dit is gedaan. Je moet de 'beta' of 'latest' versie van FiveM gebruiken om dit te kunnen doen. Je kunt dit wijzigen in het FiveM hoofdmenu.",
-		screenshot_blackscreen = "Je screenshots geven een zwartscherm weer. Je moet je game zo aanpassen dat er screenshots kunnen worden gemaakt voordat je meer opdrachten krijgt. Dit kan veroorzaakt worden door antivirussoftware. Om opnieuw afbeeldingen te maken, moet je deze gebruikersinterface opnieuw openen.",
+		banned = "Verbannen:",
+		banned_information = "Sommige spelers maken afbeeldingen die niet aan de verwachtingen voldoen. Dit vermindert consistentie bij de portretten en selfies. Dit gebeurt meestal wanneer je resolutie te laag is, grafische instellingen te laag zijn of visuele modificaties worden gebruikt. Terwijl visuele modificaties acceptabel zijn, zijn oververzadigde of onderverzadigde beelden dat niet. Visuele modificaties maken vaak zeer extreme kleuren of juist hele matte kleuren (maakt personages eruit zien als dood op de portretten).",
+		banned_unban = "Als je door wilt gaan met het maken van screenshots, dan kun je tot 3 keer zelf unban aanvragen. Voordat je dat doet, moet je echter je spelbeelden verbeteren om te voorkomen dat je opnieuw wordt verbannen. Het verhogen van de grafische instellingen en het verminderen van de intensiteit van visuele mods zal helpen.",
+		unban = "Unban (${unbansLeft} over)",
 
 		screenshotting_start_logs_title = "Starten met screenshots maken",
 		screenshotting_start_logs_details = "${consoleName} is begonnen met het maken van screenshots.",
 
 		screenshotting_stop_logs_title = "Stoppen met screenshots maken",
-		screenshotting_stop_logs_details = "${consoleName} is gestopt met het maken van screenshots."
+		screenshotting_stop_logs_details = "${consoleName} is gestopt met het maken van screenshots.",
+
+		user_does_not_exist = "Deze gebruiker bestaat niet.",
+		screenshotter_already_banned = "Deze screenshoter is al verbannen.",
+		screenshotter_banned = "Deze screenshoter is nu verbannen."
 	},
 
 	scuba = {
@@ -10667,8 +10773,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		speed = "Snelheid (${speedLevel})",
 		rotation = "Rotatie (${rotationLevel})",
 		clear_bullet_impacts = "Kogelinslagen verwijderen",
-		illegal_shooting_spot_value = "Proberen ongeldige waardes door te geven voor schietplekken.",
-		illegal_shooting_spot_id = "Proberen waardes door te geven voor een schietplek die niet bestaat.",
 		not_enough_cash = "Je hebt niet genoeg geld."
 	},
 
@@ -10920,7 +11024,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		time_parameters_invalid = "Ongeldige waarde voor uur of minuut.",
 		time_currently_transitioning = "Tijd is momenteel in overgang, even wachten a.u.b.",
 		time_successfully_transitioned = "De tijd is succesvol overgezet naar `${hour}:${minute}`.",
-		time_successfully_set = "De tijd is succesvol ingesteld op `${hour}:${minute}`."
+		time_successfully_set = "De tijd is succesvol ingesteld op `${hour}:${minute}`.",
+
+		developer_ambience_on = "Ontwikkelaars ambiance ingeschakeld.",
+		developer_ambience_off = "Ontwikkelaars ambiance uitgeschakeld."
 	},
 
 	tablet = {
@@ -11137,6 +11244,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		tp_airport = "LS Luchthaven",
 		tp_carrier = "Vliegdekschip",
 		tp_cayo = "Cayo Perico",
+
+		actions = "Acties",
+		wander_around = "Rondlopen",
+		speed_around = "Snel rondrijden",
+		clear_tasks = "Taken wissen",
 
 		you_are_not_in_a_vehicle = "Je zit niet in een voertuig.",
 		you_are_in_a_vehicle = "Je zit momenteel in een voertuig.",
@@ -11405,6 +11517,23 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		muted_logs_title = "Gedempte Spraak",
 		muted_logs_details = "${consoleName} heeft de spraakchat van ${targetConsoleName} gedempt.",
 		unmuted_logs_details = "${consoleName} heeft ${targetConsoleName} gedempt in de spraakchat."
+	},
+
+	wallhack = {
+		wallhack_on = "Wallhack ingeschakeld.",
+		wallhack_off = "Wallhack uitgeschakeld.",
+
+		wallhack_failed = "Het inschakelen van wallhack is mislukt.",
+		wallhack_everyone = "Wallhack succesvol ingeschakeld voor iedereen.",
+		wallhack_self = "Wallhack succesvol ingeschakeld voor jezelf.",
+		wallhack_player = "Wallhack succesvol ingeschakeld voor ${displayName}.",
+
+		wallhack_everyone_logs_title = "Wallhack voor iedereen aan/uit geschakeld",
+		wallhack_everyone_logs_details = "${consoleName} heeft wallhack voor iedereen aan/uit geschakeld.",
+		wallhack_player_logs_title = "Wallhack voor speler aan/uit geschakeld",
+		wallhack_player_logs_details = "${consoleName} heeft wallhack voor ${targetConsoleName} aan/uit geschakeld.",
+		wallhack_self_logs_title = "Wallhack voor zichzelf aan/uit geschakeld",
+		wallhack_self_logs_details = "${consoleName} heeft wallhack voor zichzelf aan/uit geschakeld."
 	},
 
 	washrooms = {
@@ -11726,6 +11855,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		license_utility = "Hulpdienst",
 		license_commercial = "Commercieel",
 		license_management = "Management",
+		license_passenger = "Passagier",
 		license_military = "Militair",
 		license_special = "Speciaal Vliegtuig",
 		license_boat = "Vaarbewijs",
@@ -11890,10 +12020,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		vehicle_at_police_impound = "Je voertuig wordt momenteel vastgehouden door de politie.",
 		vehicle_at_impound = "Je voertuig bevindt zich op de Inbeslagnameplaats.",
 		waypoint_to_impound = "Een routepunt naar de Inbeslagnameplaats is gemarkeerd op je GPS.",
-		unable_to_withdraw = "Kan het voertuig niet ophalen omdat het momenteel te vinden is op ${location}.",
-		waypoint_to_vehicle = "Een routepunt naar jouw voertuig is gemarkeerd op je GPS.",
-		vehicle_currently_at = "Uw voertuig kan momenteel gevonden worden op ${location}.",
-		vehicle_in_garage = "Uw voertuig bevindt zich in ${garageName}.",
+		unable_to_withdraw = "Kan het voertuig momenteel niet opvragen omdat het al in gebruik is.",
+		vehicle_in_garage = "Je voertuig bevindt zich in ${garageName}. Er is een routebeschrijving toegevoegd aan je kaart.",
 		insufficient_funds = "U heeft niet genoeg geld om dit voertuig te kunnen terugnemen.",
 		error_withdrawing = "Er is een fout opgetreden tijdens het terughalen van uw voertuig.",
 		withdraw_timeout = "Wacht even voordat u een ander voertuig probeert terug te nemen.",
@@ -11924,15 +12052,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		garage = "Garage",
 		retrieved_vehicle_logs_title = "Opgehaald voertuig",
 		retrieved_vehicle_logs_details = "${consoleName} heeft voertuig met kenteken `${plate}` opgehaald voor ${price}.",
+		no_vehicles_to_sell = "Je hebt geen voertuigen om te verkopen.",
 
 		state_loading_model = "Model wordt geladen...",
 		state_withdrawing = "Bezig met terugtrekken...",
-
-		state_retrieve_searching = "Bezig met zoeken...",
 		state_retrieving = "Bezig met ophalen...",
-
 		state_storing = "Bezig met opslaan...",
-
 		state_loading = "Bezig met laden...",
 
 		vehicle_weight = "Gewicht: ${weight}",

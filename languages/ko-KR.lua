@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 22 (do not change)
+-- AUTO LOCALES: 23 (do not change)
 
 OP.Global.Locales.Languages["ko-KR"] = {
 	-- configuration settings for language
@@ -341,12 +341,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		no_nearby_vehicles_off = "주변 차량 없음 꺼짐.",
 		speed_up_progress_bar_on = "진행바 가속 켜짐.",
 		speed_up_progress_bar_off = "진행바 가속 꺼짐.",
-		wallhack_on = "벽 투시 켜짐.",
-		wallhack_off = "벽 투시 꺼짐.",
 		aimbot_on = "에임봇을 켰습니다.",
 		aimbot_off = "에임봇을 껐습니다.",
-		player_bones_on = "플레이어 본을 켰습니다.",
-		player_bones_off = "플레이어 본을 껐습니다.",
 		vehicle_smoke_on = "차량 연기를 켰습니다.",
 		vehicle_smoke_off = "차량 연기를 껐습니다.",
 
@@ -706,6 +702,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		vehicle_spawn_ban = "아, '${modelName}'과(와) 함께 즐거운 단체 주행을 꿈꾸셨나요? 이곳은 쇼룸이 아니며, 그 특정 모델은 영원한 대기 목록에 있습니다!",
 		weapon_spawn_ban = "'${weaponName}'을(를) 간절히 원하셨나요? 이곳은 무기고가 아니며, 그 무기는 아직 제작 과정 중입니다.",
 		advanced_noclip_ban = "숨은 통로를 통해 몰래 슬라이드를 시도하고 계셨나요? 이곳은 환상의 왈츠가 아니며, 그런 동작은 우리의 댄스 카드에 없습니다.",
+		illegal_local_vehicle_ban = "감히 로드 미라지의 보이지 않는 군마를 발견한 것 같군요! 안타깝게도, 이 신비로운 탈 것은 연례 유령 퍼레이드를 위해 예약되어 있습니다.",
 
 		type_aimbot = "에임봇",
 		type_bad_creation = "잘못된 창조물",
@@ -744,6 +741,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		type_thermal_night_vision = "열화상 / 야간 시력",
 		type_underground = "지하",
 		type_vehicle_modification = "차량 수정",
+		type_illegal_local_vehicle = "네트워크 연결되지 않은 차량 사용",
 
 		event_prefix = "안티-치트: ${type}",
 
@@ -813,7 +811,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 	bans = {
 		banned_no_permissions = "권한 없이 `${reason}` 시도함.",
-		fraud_chargeback = "사기 / 환불"
+		fraud_chargeback = "사기 / 환불",
+		none_provided = "제공된 내용이 없습니다."
 	},
 
 	characters = {
@@ -1034,18 +1033,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		aimbot_command_parameter_targets = "대상 서버 아이디들",
 		aimbot_command_parameter_targets_help = "자신을 대상으로 에임봇을 켤 경우, 해당 플레이어를 지정할 수 있습니다. (입력한 서버 아이디들로 필터링됩니다)",
 		aimbot_command_substitutes = "",
-
-		player_bones_debug_command = "player_bones_debug",
-		player_bones_debug_command_help = "플레이어 본 디버거를 켜거나 끕니다.",
-		player_bones_debug_command_parameter_server_id = "서버 ID",
-		player_bones_debug_command_parameter_server_id_help = "다른 플레이어의 본 디버거를 켜거나 끄려면 해당 서버 ID를 입력하세요.",
-		player_bones_debug_command_substitutes = "player_bones",
-
-		wallhack_command = "wallhack",
-		wallhack_command_help = "'월확(Wallhack)' 기능을 켜거나 끕니다.",
-		wallhack_command_parameter_server_id = "서버 ID",
-		wallhack_command_parameter_server_id_help = "'월홀'을 다른 플레이어에게 적용하기를 원하면, 해당 플레이어의 서버 아이디(server id)를 여기에 입력하세요.",
-		wallhack_command_substitutes = "",
 
 		speed_boost_command = "speed_boost",
 		speed_boost_command_help = "'스피드 부스트'를 켜거나 끄세요.",
@@ -2526,6 +2513,13 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		roll_lottery_command_help = "복권을 수동으로 던집니다.",
 		roll_lottery_command_substitutes = "",
 
+		-- game/lucky_wheel
+		set_podium_vehicle_command = "set_podium_vehicle",
+		set_podium_vehicle_command_help = "카지노에서 승리 가능한 포디움 차량을 설정합니다.",
+		set_podium_vehicle_command_parameter_model_name = "모델 이름",
+		set_podium_vehicle_command_parameter_model_name_help = "변경하려는 차량의 모델 이름입니다.",
+		set_podium_vehicle_command_substitutes = "",
+
 		-- game/magazines
 		refresh_magazines_command = "탄창_새로고침",
 		refresh_magazines_command_help = "데이터베이스에 변경 사항이 있으면 탄창을 새로 고칩니다.",
@@ -2939,6 +2933,69 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		wipe_props_command_parameter_radius_help = "제거 반경 (1-250).",
 		wipe_props_command_substitutes = "",
 
+		-- game/racing
+		race_leave_command = "race_leave",
+		race_leave_command_help = "현재 진행 중인 레이스에서 나갑니다.",
+		race_leave_command_substitutes = "race_clear",
+
+		race_share_command = "race_share",
+		race_share_command_help = "다른 플레이어와 레이스 트랙을 공유합니다.",
+		race_share_command_parameter_server_id = "서버 ID",
+		race_share_command_parameter_server_id_help = "트랙을 공유하고자 하는 플레이어의 서버 ID입니다.",
+		race_share_command_parameter_track_name = "트랙 이름",
+		race_share_command_parameter_track_name_help = "공유하고자 하는 트랙의 이름입니다.",
+		race_share_command_substitutes = "",
+
+		race_record_command = "경주_녹화",
+		race_record_command_help = "경주를 녹화합니다.",
+		race_record_command_substitutes = "",
+
+		race_save_command = "경주_저장",
+		race_save_command_help = "경주를 저장합니다.",
+		race_save_command_parameter_track_name = "트랙 이름",
+		race_save_command_parameter_track_name_help = "저장할 경주의 이름입니다.",
+		race_save_command_parameter_track_type = "트랙 유형",
+		race_save_command_parameter_track_type_help = "경주의 트랙 유형입니다.",
+		race_save_command_substitutes = "",
+
+		race_delete_command = "경주_삭제",
+		race_delete_command_help = "경주를 삭제합니다.",
+		race_delete_command_parameter_track_name = "트랙 이름",
+		race_delete_command_parameter_track_name_help = "삭제하려는 트랙의 이름입니다.",
+		race_delete_command_substitutes = "",
+
+		race_list_command = "race_list",
+		race_list_command_help = "저장된 모든 레이스를 나열합니다.",
+		race_list_command_substitutes = "",
+
+		race_load_command = "race_load",
+		race_load_command_help = "레이스를 불러옵니다.",
+		race_load_command_parameter_track_name = "트랙 이름",
+		race_load_command_parameter_track_name_help = "불러올 트랙의 이름입니다.",
+		race_load_command_substitutes = "",
+
+		race_start_command = "race_start",
+		race_start_command_help = "레이스를 시작합니다.",
+		race_start_command_parameter_amount = "금액",
+		race_start_command_parameter_amount_help = "레이스에 참가하는데 필요한 비용입니다.",
+		race_start_command_parameter_start_delay = "시작 지연",
+		race_start_command_parameter_start_delay_help = "시작 지연 시간(초)입니다.",
+		race_start_command_parameter_laps = "랩 수",
+		race_start_command_parameter_laps_help = "랩 수입니다.",
+		race_start_command_substitutes = "",
+
+		race_cancel_command = "race_cancel",
+		race_cancel_command_help = "레이스를 취소합니다.",
+		race_cancel_command_substitutes = "",
+
+		race_checkpoints_command = "race_checkpoints",
+		race_checkpoints_command_help = "체크포인트를 토글합니다.",
+		race_checkpoints_command_substitutes = "",
+
+		race_sounds_command = "레이스 소리",
+		race_sounds_command_help = "소리를 전환합니다.",
+		race_sounds_command_substitutes = "",
+
 		-- game/radio
 		radio_command = "radio",
 		radio_command_help = "라디오 UI를 토글합니다.",
@@ -3173,6 +3230,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		blackout_command_help = "정전이 활성화되었는지 여부를 전환합니다.",
 		blackout_command_substitutes = "",
 
+		toggle_developer_ambience_command = "개발자 분위기 전환",
+		toggle_developer_ambience_command_help = "개발자 분위기를 전환합니다.",
+		toggle_developer_ambience_command_substitutes = "",
+
 		-- game/tablet
 		tablet_command = "태블릿",
 		tablet_command_help = "태블릿 UI를 엽니다. (태블릿이 있는 경우) ",
@@ -3274,6 +3335,13 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		change_voice_mode_command = "음성모드변경",
 		change_voice_mode_command_help = "'음악' 음성 입력 모드를 켜거나 끕니다. 해당 모드는 잡음 제거 및 반향 제거를 비활성화하여 더욱 선명한 음악을 가능하게 합니다.",
 		change_voice_mode_command_substitutes = "음성모드",
+
+		-- game/wallhack
+		wallhack_command = "wallhack",
+		wallhack_command_help = "벽 투시를 전환합니다.",
+		wallhack_command_parameter_server_id = "서버 ID",
+		wallhack_command_parameter_server_id_help = "다른 사람의 벽투시를 전환하려면, 해당 사용자의 서버 ID를 여기에 입력하세요.",
+		wallhack_command_substitutes = "",
 
 		-- game/wizard
 		wizard_command = "wizard",
@@ -3722,7 +3790,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		richer_presence_on = "더 풍부한 프레즌스가 켜졌습니다.",
 		richer_presence_off = "더 풍부한 프레즌스가 꺼졌습니다.",
 
-		announce_event = "15분 후 이벤트가 있습니다! 자세한 정보는 디스코드를 확인하세요.\n\n${location}에서 ${name}이(가) 진행됩니다."
+		announce_event = "${minutes} 분 후 이벤트가 시작됩니다! Discord에서 자세한 정보를 확인하세요.\n\n${location}에서 ${name}님이 기다리고 있습니다.",
+		announce_event_starting_now = "이벤트가 지금 시작됩니다! 자세한 정보는 Discord에서 확인하세요.\n\n${location}에서 ${name} 님이 진행됩니다."
 	},
 
 	emojis = {
@@ -5691,7 +5760,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		no = "아니요",
 
 		logs_daily_streak_changed_title = "일일 연속 로그가 변경되었습니다.",
-		logs_daily_streak_changed_details = "${consoleName} 님의 일일 연속 로그가 `${streak}`로 변경되었습니다.",
+		logs_daily_streak_changed_details = "${consoleName} 님의 연속 일일 업적 횟수가 `${streak}`으로 변경되었습니다.",
+
+		logs_daily_task_completed_title = "일일 업적 완료",
+		logs_daily_task_completed_details = "${consoleName} 님이 `${taskName}`라는 일일 업적을 완료하였습니다.",
 
 		restore_streak = "${streak}일 연속 달성현황을 복구합니다.",
 		confirm_streak_restore = "${streak}일 연속 달성현황을 복구하시겠습니까? 비용은 ${cost} OP 포인트입니다.",
@@ -6496,8 +6568,13 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	hunting = {
 		hold_to_skin = "[${InteractionKey}] 누르고 있으면 동물 가죽 제거",
 		skinning_animal = "사냥한 동물 가죽 제거 중",
-		meat_too_damaged = "이 동물은 너무 손상되어 있습니다.",
 		animal_is_being_skinned = "동물이 가죽 제거 중입니다.",
+
+		hold_to_remove = "[${InteractionKey}] 교체를 제거하려면 길게 누르세요",
+		removing_carcass = "손상된 시체 제거 중",
+		carcass_damaged = "시체가 너무 손상되어 무두질할 수 없습니다.",
+
+		meat_too_damaged = "동물의 고기가 너무 손상되어 수확할 수 없습니다.",
 
 		skinned_logs_title = "게임 테마 동물 사냥",
 		skinned_logs_details = "${consoleName}님이 동물 (${modelName})을 사냥하여 ${skinnedItems}을(를) 획득하였습니다.",
@@ -6673,7 +6750,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		instance_destroyed = "${instanceId} ID를 가진 인스턴스를 삭제하였습니다.",
 		instance_destruction_failed = "인스턴스 삭제에 실패하였습니다.",
 		instance_id_parameter_invalid = "인스턴스 ID 매개변수가 잘못되었습니다.",
-		added_player_to_instance = "${consoleName}을(를) ${instanceId} ID를 가진 인스턴스에 추가하였습니다.",
+		added_player_to_instance = "${consoleName}님을 ID `${instanceId}`를 가진 인스턴스에 추가하였습니다.",
 		failed_to_add_player_to_instance = "플레이어를 인스턴스에 추가하는 데 실패하였습니다.",
 		server_id_parameter_invalid = "서버 ID 매개변수가 잘못되었습니다.",
 		removed_player_from_instance = "${consoleName}님을 ID가 `${instanceId}`인 인스턴스에서 제거하였습니다.",
@@ -6987,9 +7064,13 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		glass_breaker_description = "비상 상황에서 차 창문을 깨는 데 사용됩니다.",
 
 		picture = "사진",
-		picture_description = "당신과 당신의 친구들의 추억을 모두 모아보세요.",
-		paper = "종이",
-		paper_description = "비어있는 종이입니다.",
+		picture_description = "친구들과 함께한 모든 추억을 수집하세요. (크기: 1x1)",
+		printed_card = "인쇄된 카드",
+		printed_card_description = "작은 인쇄된 카드입니다, 사명 카드일까요? (크기: 9x5)",
+		paper = "사진용 종이",
+		paper_description = "사진을 인쇄하기 위한 빈 종이입니다.",
+		card_paper = "명함 용지",
+		card_paper_description = "비워진 명함 용지입니다.",
 		printer = "프린터",
 		printer_description = "팩스 없이 프린터만 있습니다.",
 
@@ -7433,6 +7514,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		gold_bar = "금바",
 		gold_bar_description = "수리 및 제작용으로 사용됩니다.",
+
+		ancient_ring = "고대 반지",
+		ancient_ring_description = "시간과 파도에 의해 진한 금색 반지, 과거의 사랑과 충성의 속삭임이 희미해진 정교한 실장에 담겨져 있으며, 영원한 결합의 상징이었던 반지는 이제 새로운 이야기와 잃어버린 문명의 아름다움을 암시합니다.",
+		ancient_coin = "고대 동전",
+		ancient_coin_description = "이 동전은 고대 상업의 흔적을 간직하고 있으며, 바다의 염분과 모래로 인해 변색한 금색 표면에는 세기의 무게를 지니고 있습니다. 동전에 새겨진 문장은 제국의 영향력과 부와 함께 손 손으로 전해지는 역사의 유동적인 손길을 상징합니다.",
 
 		aluminium = "천연 알루미늄",
 		aluminium_description = "수리 및 제작용으로 사용됩니다.",
@@ -8788,7 +8874,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		lucky_wheel_is_occupied = "행운의 바퀴가 현재 사용 중입니다. 기다려주세요.",
 		not_enough_op_points = "Lucky Wheel을 돌리려면 ${cost} OP 포인트가 필요합니다. 현재 ${points} OP 포인트를 보유하고 있습니다.",
 		used_op_points = "${cost} OP 포인트를 사용했습니다. 현재 ${points} OP 포인트가 남아 있습니다.",
+		casino_company_name = "다이아몬드 카지노 & 리조트",
 		vehicle_won_tweet = "다른 사람이 럭키 휠에서 행운의 차량 ${modelDisplayName}을(를) 얻었습니다! 누가 행운의 주인공일까요? 지금 바로 가서 상금을 수령하세요.",
+		vehicle_is_not_in_cdimage = "이 차량은 게임 파일에 없습니다.",
+		podium_vehicle_set_to = "포디움 차량이 `${modelLabel}`(으)로 설정되었습니다.",
 
 		logs_lucky_wheel_reward_title = "행운의 바퀴 보상",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName}님이 럭키 휠을 돌려 차량을 획득하였습니다.",
@@ -10054,12 +10143,18 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	},
 
 	pawn_shops = {
+		pawn_shop = "전당포",
+		pawn_shop_far = "전당포 입장",
+		pawn_shop_near = "[${InteractionKey}] 전당포 입장",
+		no_items_to_sell = "판매할 ${itemLabel}이 없습니다.",
+		close_menu = "메뉴 닫기",
+
 		sell_items = "${itemLabel} 판매",
 		press_to_sell_items = "[${InteractionKey}] ${amount}개의 ${itemLabel} 판매",
 		sold_items = "${sellAmount}개의 ${itemLabel}을(를) $${sellPrice}에 판매하였습니다.",
-		no_items_to_sell = "판매할 ${itemLabel}이 없습니다.",
 		daily_limit_reached = "하루 판매 한도에 도달했습니다. 해당 상인은 더 이상 물건을 사지 않습니다.",
 		illegal_pawn_shop_id = "존재하지 않는 전당포의 값 전달을 시도하고 있습니다.",
+
 		used_pawn_shop_title = "중고 악보점",
 		used_pawn_shop_details = "${consoleName} 님이 악보점에서 `${itemLabel}` 를 ${sellAmount}개 판매하여 $${sellPrice}를 수령했습니다."
 	},
@@ -10237,6 +10332,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 	printer = {
 		use_printer = "[${InteractionKey}] 프린터를 사용합니다.",
+		failed_to_print = "인쇄에 실패했습니다.",
 
 		no_paper = "용지가 없습니다.",
 		invalid_url = "잘못된 이미지 URL 입니다.",
@@ -10245,7 +10341,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		printing = "인쇄 중...",
 
 		printed_logs_title = "인쇄된 이미지",
-		printed_logs_details = "${consoleName} 님이 URL `${url}` 으로 인쇄한 이미지입니다."
+		printed_logs_details = "${consoleName} 님이 `${paperType}` 종이와 `${url}` 이미지 URL을 사용하여 `${itemName}` 을(를) 인쇄했습니다."
 	},
 
 	prop_hide = {
@@ -10257,7 +10353,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		no_address_set = "주소가 설정되지 않음",
 		no_address_found = "'${address}'에서 주소를 찾을 수 없음",
 		marker_set = "마커와 웨이포인트가 ${address}(으)로 설정됨",
-		removed_marker = "${address} 주소의 마커가 제거되었습니다."
+		removed_marker = "${address} 주소의 마커가 제거되었습니다.",
+		entrance = "입구",
+		back_entrance = "뒷문",
+		garage = "차고"
 	},
 
 	props = {
@@ -10549,13 +10648,20 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		exiting = "종료 중...",
 		problems = "문제점:",
 		profile_gamma_not_18 = "현재 '감마' 설정이 기본 값으로 설정되어 있지 않습니다. 이로 인해 클라이언트에서 생성되는 이미지의 일관성과 품질이 저하됩니다. 이를 해결하기 위해 F8 콘솔에서 'profile_gamma 18'을 입력해주세요. 이 작업이 완료되기 전까지 직업을 받을 수 없습니다. '베타' 또는 '최신' 버전의 FiveM을 사용해야 합니다. FiveM 메인 메뉴에서 설정을 변경할 수 있습니다.",
-		screenshot_blackscreen = "스크린샷이 블랙스크린으로 반환됩니다. 일을 더 받기 전에 게임의 스크린샷을 불가능하게 하는 문제를 해결해야 합니다. 이는 백신으로 인해 발생할 수 있습니다. 이미지를 다시 만들어보려면 이 UI를 다시 입력하세요.",
+		banned = "밴:",
+		banned_information = "일부 플레이어들은 기대에 맞지 않는 이미지를 제작합니다. 이는 초상화와 셀카의 일관성을 감소시킵니다. 보통 이런 일이 발생하는 경우 해상도가 너무 낮거나 그래픽 설정이 낮거나 시각적인 모드를 사용했을 때 발생합니다. 시각적인 모드는 허용되지만, 색감이 지나치게 과잉 또는 무미건조한 시각적인 효과는 허용되지 않습니다. 시각적인 모드는 종종 지나치게 선명한 색상이나 지루한 색상을 생성할 수 있습니다 (초상화에서 캐릭터가 망가져 보이게 만듦).",
+		banned_unban = "스크린샷을 계속 찍고 싶다면, 최대 3회까지 자체 풀기 기능을 사용할 수 있습니다. 하지만 그 전에 게임의 시각적인 품질을 개선하여 다시 밴되는 것을 피하는 것이 좋습니다. 그래픽 설정을 높이고 시각적 모드의 강도를 낮추는 것이 도움이 됩니다.",
+		unban = "풀기 (${unbansLeft}회 남음)",
 
 		screenshotting_start_logs_title = "스크린샷 시작",
 		screenshotting_start_logs_details = "${consoleName}님이 스크린샷을 시작했습니다.",
 
 		screenshotting_stop_logs_title = "스크린샷 종료",
-		screenshotting_stop_logs_details = "${consoleName}님이 스크린샷을 종료했습니다."
+		screenshotting_stop_logs_details = "${consoleName}님이 스크린샷을 종료했습니다.",
+
+		user_does_not_exist = "해당 사용자가 존재하지 않습니다.",
+		screenshotter_already_banned = "이 스크린샷 찍는 사람은 이미 밴되었습니다.",
+		screenshotter_banned = "이 스크린샷 찍는 사람은 이제 밴되었습니다."
 	},
 
 	scuba = {
@@ -10667,8 +10773,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		speed = "스피드 (${speedLevel})",
 		rotation = "회전 (${rotationLevel})",
 		clear_bullet_impacts = "총알 충돌 흔적 지우기",
-		illegal_shooting_spot_value = "유효하지 않은 사격 위치 값 전달 시도.",
-		illegal_shooting_spot_id = "존재하지 않는 사격 위치에 대한 값 전달 시도.",
 		not_enough_cash = "현금이 충분하지 않습니다."
 	},
 
@@ -10920,7 +11024,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		time_parameters_invalid = "유효하지 않은 시간 또는 분 매개변수입니다.",
 		time_currently_transitioning = "현재 시간이 전환 중입니다. 잠시 기다려주세요.",
 		time_successfully_transitioned = "${hour}:${minute}시로 시간이 성공적으로 전환되었습니다.",
-		time_successfully_set = "${hour}:${minute}시로 시간이 성공적으로 설정되었습니다."
+		time_successfully_set = "${hour}:${minute}시로 시간이 성공적으로 설정되었습니다.",
+
+		developer_ambience_on = "개발자 분위기 켜짐.",
+		developer_ambience_off = "개발자 분위기 꺼짐."
 	},
 
 	tablet = {
@@ -11137,6 +11244,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		tp_airport = "LS 공항",
 		tp_carrier = "항공모함",
 		tp_cayo = "카요 페리코",
+
+		actions = "동작",
+		wander_around = "배회하기",
+		speed_around = "빠르게 이동하기",
+		clear_tasks = "작업 초기화",
 
 		you_are_not_in_a_vehicle = "차량에 탑승하지 않았습니다.",
 		you_are_in_a_vehicle = "현재 차량에 탑승 중입니다.",
@@ -11405,6 +11517,23 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		muted_logs_title = "음성 차단됨",
 		muted_logs_details = "${consoleName}님이 ${targetConsoleName}님의 음성 대화를 차단했습니다.",
 		unmuted_logs_details = "${consoleName}이/가 ${targetConsoleName}의 음성 대화를 해제했습니다."
+	},
+
+	wallhack = {
+		wallhack_on = "월홀성능이 활성화되었습니다.",
+		wallhack_off = "월홀성능이 비활성화되었습니다.",
+
+		wallhack_failed = "월홀성능을 전환하는데 실패했습니다.",
+		wallhack_everyone = "모두를 위해 월홀성능을 성공적으로 전환했습니다.",
+		wallhack_self = "본인을 위해 월홀성능을 성공적으로 전환했습니다.",
+		wallhack_player = "${displayName} 님을 위해 월홀성능을 성공적으로 전환했습니다.",
+
+		wallhack_everyone_logs_title = "모두의 월헥 토글됨",
+		wallhack_everyone_logs_details = "${consoleName}님이 모두의 월헥을 토글했습니다.",
+		wallhack_player_logs_title = "플레이어의 월헥 토글됨",
+		wallhack_player_logs_details = "${consoleName}님이 ${targetConsoleName}님의 월헥을 토글했습니다.",
+		wallhack_self_logs_title = "본인의 월헥 토글됨",
+		wallhack_self_logs_details = "${consoleName}님이 본인의 월헥을 토글했습니다."
 	},
 
 	washrooms = {
@@ -11726,6 +11855,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		license_utility = "유틸리티 면허",
 		license_commercial = "상업 운전 면허",
 		license_management = "관리",
+		license_passenger = "승객",
 		license_military = "군사",
 		license_special = "특수 비행기",
 		license_boat = "보트 면허",
@@ -11890,10 +12020,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		vehicle_at_police_impound = "귀하의 차량이 현재 경찰 출입금지 중입니다.",
 		vehicle_at_impound = "귀하의 차량은 검색 차고에 있습니다.",
 		waypoint_to_impound = "검색 차고로의 길 안내가 GPS에 설정되었습니다.",
-		unable_to_withdraw = "${location}에서 차량을 확인할 수 있기 때문에 차량을 인계할 수 없습니다.",
-		waypoint_to_vehicle = "귀하의 차량으로의 길 안내가 GPS에 설정되었습니다.",
-		vehicle_currently_at = "현재 차량은 ${location}(으)로 이동 중입니다.",
-		vehicle_in_garage = "차량이 ${garageName}(에) 있습니다.",
+		unable_to_withdraw = "현재 차량 사용 중이라 차량을 인출할 수 없습니다.",
+		vehicle_in_garage = "${garageName}에 차량이 있습니다. 지도에 마커가 표시되었습니다.",
 		insufficient_funds = "차량을 출고하기에 충분한 돈이 없습니다.",
 		error_withdrawing = "차량 출고 중 오류가 발생했습니다.",
 		withdraw_timeout = "차량 출고 후 다시 시도하기 전 잠시 기다려주세요.",
@@ -11924,15 +12052,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		garage = "차고지",
 		retrieved_vehicle_logs_title = "복구된 차량",
 		retrieved_vehicle_logs_details = "${consoleName} 님이 ${price}의 가격으로 번호판이 `${plate}` 인 차량을 복구했습니다.",
+		no_vehicles_to_sell = "판매할 차량이 없습니다.",
 
 		state_loading_model = "모델 불러오는중...",
 		state_withdrawing = "인출중...",
-
-		state_retrieve_searching = "검색중...",
 		state_retrieving = "복구중...",
-
 		state_storing = "저장중...",
-
 		state_loading = "불러오는중...",
 
 		vehicle_weight = "무게: ${weight}",

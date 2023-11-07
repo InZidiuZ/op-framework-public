@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 22 (do not change)
+-- AUTO LOCALES: 23 (do not change)
 
 OP.Global.Locales.Languages["meme-minionese"] = {
 	-- configuration settings for language
@@ -341,12 +341,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		no_nearby_vehicles_off = "Bee Do Bee Do Bee Do 'No Nearby Vehicles' Off.",
 		speed_up_progress_bar_on = "Bee Do Bee Do Bee Do 'Speed Up Progress Bar' On.",
 		speed_up_progress_bar_off = "Bee Do Bee Do Bee Do 'Speed Up Progress Bar' Off.",
-		wallhack_on = "Bee Do Bee Do Bee Do 'Wallhack' On.",
-		wallhack_off = "Bee Do Bee Do Bee Do 'Wallhack' Off.",
 		aimbot_on = "Bee-do Bee-do Bee-do 'Aimbot' On.",
 		aimbot_off = "Bee-do Bee-do Bee-do 'Aimbot' Off.",
-		player_bones_on = "Bello Bello Bello 'Player Bones' On.",
-		player_bones_off = "Bello Bello Bello 'Player Bones' Off.",
 		vehicle_smoke_on = "Me want banana! 'Vehicle Smoke' On.",
 		vehicle_smoke_off = "Me no like 'Vehicle Smoke' Off.",
 
@@ -706,6 +702,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		vehicle_spawn_ban = "Bello, dreaming of a joyride with `${modelName}`? Poopaye! Dis no be a car exhibition, and that model? It's on an eternal waitlist!",
 		weapon_spawn_ban = "Bello, yearning for the `${weaponName}`? Poopaye! Dis no be a weapon storeroom, and that piece? Still in the forge.",
 		advanced_noclip_ban = "Bello, trying a secret slide through unseen corridors? Poopaye! Dis no be a phantom waltz, and that move? Not on our dance card.",
+		illegal_local_vehicle_ban = "Bello! You've discovered the hidden unicorn of Meester Mirage! Oh, but this enchanting ride is only for the annual ghostly parade.",
 
 		type_aimbot = "Aimbotio",
 		type_bad_creation = "Ba Ba Ba Bad Creation",
@@ -744,6 +741,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		type_thermal_night_vision = "Bobo Thermal/Night Vision",
 		type_underground = "Underground",
 		type_vehicle_modification = "Bobo Car Upgrade",
+		type_illegal_local_vehicle = "Using Non-Networked Vehicle",
 
 		event_prefix = "Banana Bobo: ${type}",
 
@@ -813,7 +811,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 	bans = {
 		banned_no_permissions = "Attempted to `${reason}` without proper permissions. (Banananaaa!)",
-		fraud_chargeback = "Fraud / Chargeback"
+		fraud_chargeback = "Fraud / Chargeback",
+		none_provided = "Banana! No dunga!"
 	},
 
 	characters = {
@@ -1034,18 +1033,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		aimbot_command_parameter_targets = "targets",
 		aimbot_command_parameter_targets_help = "Target server ids (only works when toggling fer yourself). (Will filter targets ta only be minions wit' dese server ids)",
 		aimbot_command_substitutes = "",
-
-		player_bones_debug_command = "banana hahahahaha",
-		player_bones_debug_command_help = "Bello, toggle da player bones debugger.",
-		player_bones_debug_command_parameter_server_id = "server id",
-		player_bones_debug_command_parameter_server_id_help = "If you're wanting to toggle da player bones debugger for someone else, insert their server id here. Bello!",
-		player_bones_debug_command_substitutes = "banana",
-
-		wallhack_command = "whattabutt",
-		wallhack_command_help = "Toggle 'wallhack'. Hahaha.",
-		wallhack_command_parameter_server_id = "server id",
-		wallhack_command_parameter_server_id_help = "Bee Do, Bee Do! If you want to toggle the 'wallhack' for someone else, insert their server id here.",
-		wallhack_command_substitutes = "",
 
 		speed_boost_command = "speed_boost",
 		speed_boost_command_help = "Toggle 'speed boost'.",
@@ -2526,6 +2513,13 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		roll_lottery_command_help = "Bello, roll da lottery manually.",
 		roll_lottery_command_substitutes = "",
 
+		-- game/lucky_wheel
+		set_podium_vehicle_command = "set_podium_vehicle",
+		set_podium_vehicle_command_help = "Banana! Set the winnable podium vehicle at the casino.",
+		set_podium_vehicle_command_parameter_model_name = "model name",
+		set_podium_vehicle_command_parameter_model_name_help = "Banana! The model name of the vehicle you want to change it to.",
+		set_podium_vehicle_command_substitutes = "",
+
 		-- game/magazines
 		refresh_magazines_command = "refresh_magazines",
 		refresh_magazines_command_help = "Bello, refresh da magazines if there has been changes in da database.",
@@ -2939,6 +2933,69 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		wipe_props_command_parameter_radius_help = "Da radius fur da wipe (1-250).",
 		wipe_props_command_substitutes = "",
 
+		-- game/racing
+		race_leave_command = "banana_ba_na",
+		race_leave_command_help = "Ba_na ba_nanaaa ba nana ba_na!",
+		race_leave_command_substitutes = "ba_na_ba_nana",
+
+		race_share_command = "banana_mee_moo",
+		race_share_command_help = "Mee_moo banana ba_na na_mee_moo.",
+		race_share_command_parameter_server_id = "mee_moo_id",
+		race_share_command_parameter_server_id_help = "Ba_na mee_moo ba_na_mee_moo ba_nanaaa na_mee_moo ba_na na_mee_moo.",
+		race_share_command_parameter_track_name = "ba_na_ka",
+		race_share_command_parameter_track_name_help = "Ba_nanaaa ba_na ba_nana ba_na_mee_moo na_mee_moo.",
+		race_share_command_substitutes = "",
+
+		race_record_command = "bello_record_race",
+		race_record_command_help = "Bello a race.",
+		race_record_command_substitutes = "",
+
+		race_save_command = "bello_save_race",
+		race_save_command_help = "Bello a race.",
+		race_save_command_parameter_track_name = "track bello",
+		race_save_command_parameter_track_name_help = "Bello you want to save it as.",
+		race_save_command_parameter_track_type = "track bello",
+		race_save_command_parameter_track_type_help = "The track bello of the race.",
+		race_save_command_substitutes = "",
+
+		race_delete_command = "bello_delete_race",
+		race_delete_command_help = "Bello a race.",
+		race_delete_command_parameter_track_name = "banana gun",
+		race_delete_command_parameter_track_name_help = "Bello tuba tun banana.",
+		race_delete_command_substitutes = "",
+
+		race_list_command = "race_list",
+		race_list_command_help = "List all your potato races.",
+		race_list_command_substitutes = "",
+
+		race_load_command = "race_load",
+		race_load_command_help = "Tapok a la banana.",
+		race_load_command_parameter_track_name = "banana gun",
+		race_load_command_parameter_track_name_help = "Bello tuba tun banana.",
+		race_load_command_substitutes = "",
+
+		race_start_command = "race_start",
+		race_start_command_help = "Pouletaaa!",
+		race_start_command_parameter_amount = "bahasa",
+		race_start_command_parameter_amount_help = "Tu bi to stul moopaya tulod tulid.",
+		race_start_command_parameter_start_delay = "dalay tu fry",
+		race_start_command_parameter_start_delay_help = "Tu dalay tu fry in bannotu.",
+		race_start_command_parameter_laps = "laps",
+		race_start_command_parameter_laps_help = "Tu nubmer uf laps.",
+		race_start_command_substitutes = "",
+
+		race_cancel_command = "bahenda_cancela",
+		race_cancel_command_help = "Cancala a bahenda.",
+		race_cancel_command_substitutes = "",
+
+		race_checkpoints_command = "bahenda_checkpoints",
+		race_checkpoints_command_help = "Doggul toggul checkpoints.",
+		race_checkpoints_command_substitutes = "",
+
+		race_sounds_command = "bee_do_race_sounds",
+		race_sounds_command_help = "Switch bee-do sounds.",
+		race_sounds_command_substitutes = "",
+
 		-- game/radio
 		radio_command = "Banana",
 		radio_command_help = "Toggle da radio UI.",
@@ -3173,6 +3230,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		blackout_command_help = "Toggle jiji, papoy blackout or not.",
 		blackout_command_substitutes = "",
 
+		toggle_developer_ambience_command = "toggle_developer_ambience",
+		toggle_developer_ambience_command_help = "Switch the buuut ambience.",
+		toggle_developer_ambience_command_substitutes = "",
+
 		-- game/tablet
 		tablet_command = "bee do bee do tablet",
 		tablet_command_help = "Poopaye, tae po ah mah tablet UI (jiji, if you have a tablet).",
@@ -3274,6 +3335,13 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		change_voice_mode_command = "chachange_voicemodo",
 		change_voice_mode_command_help = "Bello! Toggleso the 'music-cha' voice-cha inputo modedo on/offo. Thato modedo will disableo noiseo removalo ando echo-cha cancella-chan, allowingo for clearer-cha music-cha.",
 		change_voice_mode_command_substitutes = "voicemodo",
+
+		-- game/wallhack
+		wallhack_command = "whattabutt",
+		wallhack_command_help = "Switch wallhack, po ka ra.",
+		wallhack_command_parameter_server_id = "server id",
+		wallhack_command_parameter_server_id_help = "If bee do want to switch wallhack for someone else, insert their server id here.",
+		wallhack_command_substitutes = "",
 
 		-- game/wizard
 		wizard_command = "wizard",
@@ -3722,7 +3790,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		richer_presence_on = "Bee do! Richer presence is now on.",
 		richer_presence_off = "Bee do! Richer presence is now off.",
 
-		announce_event = "Bababa? There is an event in 15 minutes! Check Discord for more information.\n\n${name} @ **${location}**"
+		announce_event = "Bee-do! Bee-do! Bee-do! There is an event in ${minutes} minutes! Check Discord for more information.\n\n${name} @ **${location}**",
+		announce_event_starting_now = "Banana banana! Belloooo! An event is starting now! Check Discord for more information.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -5691,7 +5760,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		no = "Nah",
 
 		logs_daily_streak_changed_title = "Bello Streak Changed",
-		logs_daily_streak_changed_details = "${consoleName} noo has a bello daily streak of `${streak}.`",
+		logs_daily_streak_changed_details = "${consoleName} banana has a daily streak of `${streak}`.",
+
+		logs_daily_task_completed_title = "Banana Task Completed",
+		logs_daily_task_completed_details = "${consoleName} banana completed a daily task with the name of `${taskName}`.",
 
 		restore_streak = "Banana banana banana ${streak}",
 		confirm_streak_restore = "Banana banana banana banana banana banana banana ${streak} banana? Banana banana ${cost} OP Points.",
@@ -6496,8 +6568,13 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	hunting = {
 		hold_to_skin = "[${InteractionKey}] Hold to bapple.",
 		skinning_animal = "Bapple dead baboony.",
-		meat_too_damaged = "Poopaye! Baboony meat too damaged.",
 		animal_is_being_skinned = "The baboony is being bappled.",
+
+		hold_to_remove = "[${InteractionKey}] Banana banana! Hold to remove carcass",
+		removing_carcass = "Bananaaaa! Removing damaged carcass",
+		carcass_damaged = "Bananonoooo! The carcass is too damaged to skin.",
+
+		meat_too_damaged = "Bello! Bello! Bello! Ke ha ha ha! Bello! Ke ha ha ha! Ke ha ha ha! Bello! Bello! Bello! (La carne dell'animale era demasio dannage per essere raccolta.)",
 
 		skinned_logs_title = "Skinned Animal",
 		skinned_logs_details = "${consoleName} da bannana skinned an animal (${modelName}) da got ${skinnedItems}.",
@@ -6673,7 +6750,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		instance_destroyed = "Sayonara instance wid ID `${instanceId}`.",
 		instance_destruction_failed = "Oopsie... Failed to destroy the instance.",
 		instance_id_parameter_invalid = "Me not understand. The instance ID parameter is invalid.",
-		added_player_to_instance = "Bananaaaa! Added ${consoleName} to the instance wid ID `${instanceId}.`",
+		added_player_to_instance = "Bello! Bello! Ke ha ha ha! Bello! Ke ha ha ha! Ke ha ha ha! Bello! Bello! Bello! (Aggiinto ${consoleName} a l'istanza con ID `${instanceId}`.)",
 		failed_to_add_player_to_instance = "Bee-doo-bee-doo... Failed to add player to the instance.",
 		server_id_parameter_invalid = "Uh-oh... The server ID parameter is invalid.",
 		removed_player_from_instance = "Bello ${consoleName} from the instance with ID `${instanceId}`.",
@@ -6987,9 +7064,13 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		glass_breaker_description = "Used to break car windows in case of emergency.",
 
 		picture = "Bello Bello",
-		picture_description = "Collect all the memories of you and your friends.",
-		paper = "Baboi? Paper!",
-		paper_description = "Bello! A blank piece of paper.",
+		picture_description = "Bello! Bello! Ke ha ha ha! Bello! Ke ha ha ha! Ke ha ha ha! Bello! Bello! Bello! (Raccogli tutte le minnoni di te e ttuoi amici. (Dimezione: 1x1))",
+		printed_card = "Bello! Bello! Ke ha ha ha! Bello! Ke ha ha ha! Ke ha ha ha! Bello! Bello! Bello! (Stampato Card)",
+		printed_card_description = "Bello! Bello! Ke ha ha ha! Bello! Ke ha ha ha! Ke ha ha ha! Bello! Bello! Bello! (Un pezzioolo di carta stampato, forse un biglietto da visita? (Dimezione: 9x5))",
+		paper = "Bello! Bello! Ke ha ha ha! Bello! Ke ha ha ha! Ke ha ha ha! Bello! Bello! Bello! (Carta Fotografica)",
+		paper_description = "Bello! Bello! Ke ha ha ha! Bello! Ke ha ha ha! Ke ha ha ha! Bello! Bello! Bello! (Un pezzo di carta vuota per stampare minnoni.)",
+		card_paper = "Bello! Bello! Ke ha ha ha! Bello! Ke ha ha ha! Ke ha ha ha! Bello! Bello! Bello! (Carta per Biglietti)",
+		card_paper_description = "Bello! Bello! Ke ha ha ha! Bello! Ke ha ha ha! Ke ha ha ha! Bello! Bello! Bello! (Un pezzioolo di carta vuota per stampare biglietti da visita.)",
 		printer = "Bababa! Printer.",
 		printer_description = "Bello, no fax, only printer.",
 
@@ -7433,6 +7514,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		gold_bar = "Bapple Bar",
 		gold_bar_description = "Bapple Bar used for fixing and crafting.",
+
+		ancient_ring = "Banana Ring",
+		ancient_ring_description = "Bello, bello! A banana ring that looks like it has been through a lot, with its tiresome etchings all faded away. It chatters about love and loyalty from a long time ago. Before it symbolized eternal commitment, now it wants to tell you tales of forgotten civilizations and stories beyond imagination.",
+		ancient_coin = "Banana Coin",
+		ancient_coin_description = "Bello! This coin is not any ordinary coin, it's a banana coin! It carries the marks of long gone banana trade, its golden surface all tarnished by the salty sea and sandy beach. It's like a treasure from the ancient times, passing from one paw to another, telling the tales of an empire's banana reach and the mighty hand of history.",
 
 		aluminium = "Bapplely Aluminum",
 		aluminium_description = "Bapplely Aluminum used for fixing and crafting.",
@@ -8788,7 +8874,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		lucky_wheel_is_occupied = "Bee-doh! Someone is currently spinning the Lucky Wheel. Please wait.",
 		not_enough_op_points = "You neeed ${cost} Bob Points tuu spiiin the Lucky Wheeel. You got ${points} Bob Points.",
 		used_op_points = "You used ${cost} Bob Points. You got ${points} Bob Points leeft.",
+		casino_company_name = "Banana Resort & Casino",
 		vehicle_won_tweet = "Bello! Someone just struck gold at the Lucky Wheel and secured the ultra-rare ${modelDisplayName}! Who's the fortunate winner? Head over now and claim your prize.",
+		vehicle_is_not_in_cdimage = "Bello! Dis vehicle is not in da game files.",
+		podium_vehicle_set_to = "Bello! Da podium vehicle has been set to `${modelLabel}`.",
 
 		logs_lucky_wheel_reward_title = "Lucky Wheel Reward",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} haa spun da wheel an' won a vehicle.",
@@ -10054,12 +10143,18 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	},
 
 	pawn_shops = {
+		pawn_shop = "Bello! Pawn Shop",
+		pawn_shop_far = "Bello! Access Pawn Shop",
+		pawn_shop_near = "[${InteractionKey}] Bello! Access Pawn Shop",
+		no_items_to_sell = "Bello! You don't have any ${itemLabel} to sell.",
+		close_menu = "Bello! Close Menu",
+
 		sell_items = "Sell ${itemLabel}",
 		press_to_sell_items = "[${InteractionKey}] Sell ${amount}x ${itemLabel}",
 		sold_items = "Sold ${sellAmount}x ${itemLabel} for $${sellPrice}.",
-		no_items_to_sell = "Bello! You don't have any ${itemLabel} to sell.",
 		daily_limit_reached = "Bee do bee do bee do! You've reached your daily limit, the vendor is not buying any more items.",
 		illegal_pawn_shop_id = "Me want banana! Attempting to pass values for a pawn shop that doesn't exist.",
+
 		used_pawn_shop_title = "Used Bappleshop",
 		used_pawn_shop_details = "${consoleName} used a bappleshop and sold ${sellAmount} `${itemLabel}` and received $${sellPrice}."
 	},
@@ -10237,6 +10332,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 	printer = {
 		use_printer = "[${InteractionKey}] Use Printer (let's print some bananas)",
+		failed_to_print = "Bello! Failed to print.",
 
 		no_paper = "You don't have any banana-paper.",
 		invalid_url = "Invalid Image URL - Uh oh, banana!",
@@ -10245,7 +10341,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		printing = "Babble babble babble...",
 
 		printed_logs_title = "Bello Image",
-		printed_logs_details = "${consoleName} printed an image with the URL `${url}`."
+		printed_logs_details = "${consoleName} printed a `${itemName}` using `${paperType}` with da image URL `${url}`."
 	},
 
 	prop_hide = {
@@ -10257,7 +10353,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		no_address_set = "Banana address set.",
 		no_address_found = "Banana address not found under '${address}'.",
 		marker_set = "Markero and waypointo set to ${address}.",
-		removed_marker = "Potato-banana marker-ay for ${address}!"
+		removed_marker = "Potato-banana marker-ay for ${address}!",
+		entrance = "Bello! Entrance",
+		back_entrance = "Bello Kaap",
+		garage = "Garej"
 	},
 
 	props = {
@@ -10549,13 +10648,20 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		exiting = "Bello...",
 		problems = "Banana:",
 		profile_gamma_not_18 = "Banana 'gamma' settin' is not in default value. This makes pictures generated by yer client less good and more chaotic. To fix t'is, type 'profile_gamma 18' in yer F8 console. You can't take jobs til' you do t'is. Yer needin' to be on 'beta' or 'latest' version of FiveM to do t'is. You can chang'it in FiveM main menu.",
-		screenshot_blackscreen = "Bello! Your screenshots are returning a blackscreen. You need to fix your game from not being screenshottable before more jobs will be given to you. This could be caused by anti-virus. To try creating images again, re-enter this UI.",
+		banned = "Bello tan",
+		banned_information = "Bello tan: Tuko tin pelemiwatoo, weeda na foop. Tulalai nahana banana la balle, teka-litti na yippit la balle tu maca-litti. Tusday wuv kiat na yippit, balle blummai maca-litti tu banana la balle (tuko-nayoi plaa tii-li blummai maca-litti na foop).",
+		banned_unban = "Bello! If yuoo want to continue screenshotting, then yuoo are able to self-unban up to 3 times. Befoor doing that tadoo, yuoo should eemprove yuoor game visuals to avooid getting banned again. Increasing graphic settings as well as reducing the intensity of visual mods will halp.",
+		unban = "Unban (${unbansLeft} luft)",
 
 		screenshotting_start_logs_title = "Banana! Screenshotting Start",
 		screenshotting_start_logs_details = "${consoleName} has started screenshotting.",
 
 		screenshotting_stop_logs_title = "Banana? Screenshotting Stop",
-		screenshotting_stop_logs_details = "${consoleName} has stopped screenshotting."
+		screenshotting_stop_logs_details = "${consoleName} has stopped screenshotting.",
+
+		user_does_not_exist = "Bello! This user does not eexist.",
+		screenshotter_already_banned = "Bello! This screenshoter is already banned.",
+		screenshotter_banned = "Bello! This screenshoter has now been banned."
 	},
 
 	scuba = {
@@ -10667,8 +10773,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		speed = "Boo Boo Bap (${speedLevel})",
 		rotation = "Bap Bap Bap (${rotationLevel})",
 		clear_bullet_impacts = "Clear Babble Babble Babble Babble Babble Babble",
-		illegal_shooting_spot_value = "Oh no! Invalid values detected for shooting spots. Cannot proceed.",
-		illegal_shooting_spot_id = "Uh-oh! Trying to create a shooting spot that does not exist.",
 		not_enough_cash = "Bello! You no banana enough banana money."
 	},
 
@@ -10920,7 +11024,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		time_parameters_invalid = "Poopaye! Invalid hour or minute parameter.",
 		time_currently_transitioning = "Baboi! The time is currently transitioning, please wait.",
 		time_successfully_transitioned = "Bello Transitionedla the timela to `${hour}:${minute}`.",
-		time_successfully_set = "Bello Settala the timela to `${hour}:${minute}`."
+		time_successfully_set = "Bello Settala the timela to `${hour}:${minute}`.",
+
+		developer_ambience_on = "Banana Banago talope.",
+		developer_ambience_off = "Banana Banago talufi."
 	},
 
 	tablet = {
@@ -11137,6 +11244,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		tp_airport = "Aeropuerto de LS",
 		tp_carrier = "Portaaviones",
 		tp_cayo = "Isla de Cayo Perico",
+
+		actions = "Tulaliloo ti amo tie.",
+		wander_around = "Lukutataketa.",
+		speed_around = "Tulala.",
+		clear_tasks = "Bananonina Gomene.",
 
 		you_are_not_in_a_vehicle = "Bello! You're not in a vehicle",
 		you_are_in_a_vehicle = "Baboi! You're in a vehicle right now",
@@ -11405,6 +11517,23 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		muted_logs_title = "Banana da-da",
 		muted_logs_details = "${consoleName} banana ${targetConsoleName} from banana da-da.",
 		unmuted_logs_details = "${consoleName} untung ${targetConsoleName} tuh chat pandai."
+	},
+
+	wallhack = {
+		wallhack_on = "Dabamo.",
+		wallhack_off = "Laloco.",
+
+		wallhack_failed = "Balalao luco wallhack.",
+		wallhack_everyone = "Banana balalao wallhack.",
+		wallhack_self = "Banana balalao luco wallhack.",
+		wallhack_player = "Banana balalao luco wallhack ba ${displayName}.",
+
+		wallhack_everyone_logs_title = "Ti-Tooklet Wallhack longtime For Everyone",
+		wallhack_everyone_logs_details = "${consoleName} tooklet wallhack longtime for everyone.",
+		wallhack_player_logs_title = "Ti-Tooklet Wallhack longtime For Player",
+		wallhack_player_logs_details = "${consoleName} tooklet wallhack longtime for ${targetConsoleName}.",
+		wallhack_self_logs_title = "Ti-Tooklet Wallhack longtime For Self",
+		wallhack_self_logs_details = "${consoleName} tooklet wallhack longtime for ereon. *banana*"
 	},
 
 	washrooms = {
@@ -11726,6 +11855,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		license_utility = "Bee-do Utility",
 		license_commercial = "Commercial Bee-do",
 		license_management = "Bee-do Manager",
+		license_passenger = "Bobo",
 		license_military = "Military Bee-do",
 		license_special = "Special Bee-do Aircraft",
 		license_boat = "Layshka Badaa",
@@ -11890,10 +12020,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		vehicle_at_police_impound = "Me sorry, your vehicle is currently on police hold.",
 		vehicle_at_impound = "Me found your vehicle at Bellovile.",
 		waypoint_to_impound = "Me marked Bellovile on your GPS.",
-		unable_to_withdraw = "Me sorry, me unable to withdraw vehicle as it can currently be found at ${location}.",
-		waypoint_to_vehicle = "Me marked your vehicle on your GPS.",
-		vehicle_currently_at = "Bello! Your vehicle can be found at ${location}.",
-		vehicle_in_garage = "Your vehicle is located in ${garageName}, po ka!",
+		unable_to_withdraw = "Bello! Unable to withdraw vehicle as it can currently out.",
+		vehicle_in_garage = "Bello! Your vehicle iz located in ${garageName}. A waypoint haz been marked on your mapo.",
 		insufficient_funds = "Sorry, you don't have enough money to withdraw this vehicle. No bananaaaa!",
 		error_withdrawing = "Uh oh, an error occurred while trying to withdraw your vehicle.",
 		withdraw_timeout = "Please wait a bit before trying to withdraw another vehicle. Bababa...",
@@ -11924,15 +12052,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		garage = "Bello-Tech",
 		retrieved_vehicle_logs_title = "Bee-Do-Bee-Do",
 		retrieved_vehicle_logs_details = "${consoleName} retrieved vehicle with plate `${plate}` for ${price}.",
+		no_vehicles_to_sell = "Banana! You have no vehicles to sell.",
 
 		state_loading_model = "Baboi! Loading Model...",
 		state_withdrawing = "Bee-Do! Bee-Do! Withdrawing...",
-
-		state_retrieve_searching = "Bello! Ba-Bello! Searching...",
 		state_retrieving = "Bellow Bello! Retrieving...",
-
 		state_storing = "Bello! Storing...",
-
 		state_loading = "Bee-Do Bee-Do! Loading...",
 
 		vehicle_weight = "BANANA! Weight: ${weight}",

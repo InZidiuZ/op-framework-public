@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 22 (do not change)
+-- AUTO LOCALES: 23 (do not change)
 
 OP.Global.Locales.Languages["sv-SE"] = {
 	-- configuration settings for language
@@ -341,12 +341,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		no_nearby_vehicles_off = "Avaktiverade 'Inga Närliggande Fordon'.",
 		speed_up_progress_bar_on = "Aktiverade 'Snabba upp framstegsindikatorn'.",
 		speed_up_progress_bar_off = "Avaktiverade 'Snabba upp framstegsindikatorn'.",
-		wallhack_on = "Aktiverade 'Wallhack'.",
-		wallhack_off = "Avaktiverade 'Wallhack'.",
 		aimbot_on = "Aktiverade 'Aimbot'.",
 		aimbot_off = "Stängde av 'Aimbot'.",
-		player_bones_on = "Aktiverade 'Spelarben'.",
-		player_bones_off = "Stängde av 'Spelarben'.",
 		vehicle_smoke_on = "Aktiverade 'Fordonsrök'.",
 		vehicle_smoke_off = "Stängde av 'Fordonsrök'.",
 
@@ -706,6 +702,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		vehicle_spawn_ban = "Åh, drömmer du om en glädjestund med `${modelName}`? Det här är inte en utställningshall, och den modellen? Den står på en evig väntelista!",
 		weapon_spawn_ban = "Försöker du få tag på `${weaponName}`? Det här är inte ett vapenförråd, och det vapnet? Det är fortfarande under tillverkning.",
 		advanced_noclip_ban = "Försöker du smyga igenom osynliga korridorer? Det här är inte en spökvals, och den rörelsen? Den finns inte i vårt dansprogram.",
+		illegal_local_vehicle_ban = "Det verkar som att du har hittat Lord Mirages osynliga häst! Tyvärr är denna mystiska ridfärd reserverad för den årliga fantomparaden.",
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Dålig Skapelse",
@@ -744,6 +741,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		type_thermal_night_vision = "Termiskt/nattsyn",
 		type_underground = "Underjordisk",
 		type_vehicle_modification = "Fordon modifiering",
+		type_illegal_local_vehicle = "Använder ej-nätverksfordon",
 
 		event_prefix = "Anti-Cheat: ${type}",
 
@@ -813,7 +811,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 	bans = {
 		banned_no_permissions = "Försökte `${reason}` utan korrekta behörigheter.",
-		fraud_chargeback = "Bedrägeri / Betalningsåterställning"
+		fraud_chargeback = "Bedrägeri / Betalningsåterställning",
+		none_provided = "Inget angivet."
 	},
 
 	characters = {
@@ -1034,18 +1033,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		aimbot_command_parameter_targets = "mål",
 		aimbot_command_parameter_targets_help = "Målsätt server id (fungerar endast när du ändrar för dig själv). (Kommer filtrera mål endast till spelare med dessa server id)",
 		aimbot_command_substitutes = "",
-
-		player_bones_debug_command = "spelarben-debug",
-		player_bones_debug_command_help = "Aktivera/deaktivera spelarben-debuggaren.",
-		player_bones_debug_command_parameter_server_id = "server-id",
-		player_bones_debug_command_parameter_server_id_help = "Om du vill aktivera/deaktivera spelarben-debuggaren för någon annan, fyll i deras server-id här.",
-		player_bones_debug_command_substitutes = "spelarben",
-
-		wallhack_command = "vägggenomskådning",
-		wallhack_command_help = "Aktivera/deaktivera 'vägggenomskådning'.",
-		wallhack_command_parameter_server_id = "server-id",
-		wallhack_command_parameter_server_id_help = "Om du vill aktivera 'wallhack' för någon annan, ange deras server-ID här.",
-		wallhack_command_substitutes = "",
 
 		speed_boost_command = "hastighets_boost",
 		speed_boost_command_help = "Aktivera/daktivera 'hastighets boost'.",
@@ -2526,6 +2513,13 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		roll_lottery_command_help = "Rulla lotteriet manuellt.",
 		roll_lottery_command_substitutes = "",
 
+		-- game/lucky_wheel
+		set_podium_vehicle_command = "set_podium_vehicle",
+		set_podium_vehicle_command_help = "Ställ in det vinstgivande podiumfordonet på casinot.",
+		set_podium_vehicle_command_parameter_model_name = "modellnamn",
+		set_podium_vehicle_command_parameter_model_name_help = "Modellnamnet på det fordon du vill ändra till.",
+		set_podium_vehicle_command_substitutes = "",
+
 		-- game/magazines
 		refresh_magazines_command = "uppdatera_magasin",
 		refresh_magazines_command_help = "Uppdatera magasinen om det har skett ändringar i databasen.",
@@ -2939,6 +2933,69 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		wipe_props_command_parameter_radius_help = "Radien för rensning (1-250).",
 		wipe_props_command_substitutes = "",
 
+		-- game/racing
+		race_leave_command = "avsluta_lopp",
+		race_leave_command_help = "Lämna det lopp du deltar i.",
+		race_leave_command_substitutes = "avsluta_loppet",
+
+		race_share_command = "dela_lopp",
+		race_share_command_help = "Dela en racerbana med en annan spelare.",
+		race_share_command_parameter_server_id = "server-id",
+		race_share_command_parameter_server_id_help = "Server-ID för spelaren du vill dela banan med.",
+		race_share_command_parameter_track_name = "bana namn",
+		race_share_command_parameter_track_name_help = "Namnet på banan du vill dela.",
+		race_share_command_substitutes = "",
+
+		race_record_command = "race_record",
+		race_record_command_help = "Spela in en tävling.",
+		race_record_command_substitutes = "",
+
+		race_save_command = "race_save",
+		race_save_command_help = "Spara en tävling.",
+		race_save_command_parameter_track_name = "bana namn",
+		race_save_command_parameter_track_name_help = "Namn du vill spara den som.",
+		race_save_command_parameter_track_type = "ban typ",
+		race_save_command_parameter_track_type_help = "Tävlingens bantyp.",
+		race_save_command_substitutes = "",
+
+		race_delete_command = "race_delete",
+		race_delete_command_help = "Radera en tävling.",
+		race_delete_command_parameter_track_name = "bana namn",
+		race_delete_command_parameter_track_name_help = "Namnet på banan du vill ta bort.",
+		race_delete_command_substitutes = "",
+
+		race_list_command = "race_lista",
+		race_list_command_help = "Visa alla dina sparade banor.",
+		race_list_command_substitutes = "",
+
+		race_load_command = "race_ladda",
+		race_load_command_help = "Ladda en bana.",
+		race_load_command_parameter_track_name = "bana namn",
+		race_load_command_parameter_track_name_help = "Namnet på banan du vill ladda.",
+		race_load_command_substitutes = "",
+
+		race_start_command = "race_start",
+		race_start_command_help = "Starta en bana.",
+		race_start_command_parameter_amount = "belopp",
+		race_start_command_parameter_amount_help = "Kostanden för att delta i racet.",
+		race_start_command_parameter_start_delay = "startfördröjning",
+		race_start_command_parameter_start_delay_help = "Startfördröjningen i sekunder.",
+		race_start_command_parameter_laps = "varv",
+		race_start_command_parameter_laps_help = "Antalet varv.",
+		race_start_command_substitutes = "",
+
+		race_cancel_command = "race_cancel",
+		race_cancel_command_help = "Avbryt ett race.",
+		race_cancel_command_substitutes = "",
+
+		race_checkpoints_command = "race_checkpoints",
+		race_checkpoints_command_help = "Växla checkpoints.",
+		race_checkpoints_command_substitutes = "",
+
+		race_sounds_command = "race_ljud",
+		race_sounds_command_help = "Växla ljud.",
+		race_sounds_command_substitutes = "",
+
 		-- game/radio
 		radio_command = "radio",
 		radio_command_help = "Aktiverar eller avaktiverar radio-gränssnittet.",
@@ -3173,6 +3230,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		blackout_command_help = "Växla om en svart ut är aktiv eller inte.",
 		blackout_command_substitutes = "",
 
+		toggle_developer_ambience_command = "växla_utvecklarbakgrundsljud",
+		toggle_developer_ambience_command_help = "Växla utvecklarbakgrundsljudet.",
+		toggle_developer_ambience_command_substitutes = "",
+
 		-- game/tablet
 		tablet_command = "surfplatta",
 		tablet_command_help = "Öppnar surfplatta UI (om du har en surfplatta).",
@@ -3274,6 +3335,13 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		change_voice_mode_command = "ändra_röstläge",
 		change_voice_mode_command_help = "Slår på/av 'musik' läget för röstinspelning. Detta läge inaktiverar brusreducering och ekkontroll för klarare musik.",
 		change_voice_mode_command_substitutes = "röstläge",
+
+		-- game/wallhack
+		wallhack_command = "vägggenomskådning",
+		wallhack_command_help = "Växla genomskinning.",
+		wallhack_command_parameter_server_id = "server-id",
+		wallhack_command_parameter_server_id_help = "Om du vill växla genomskinning för någon annan, ange deras server-ID här.",
+		wallhack_command_substitutes = "",
 
 		-- game/wizard
 		wizard_command = "wizard",
@@ -3722,7 +3790,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		richer_presence_on = "Mer detaljerad status visas nu.",
 		richer_presence_off = "Mer detaljerad status visas inte längre.",
 
-		announce_event = "Det är en tillställning om 15 minuter! Kolla Discord för mer information.\n\n${name} @ **${location}**"
+		announce_event = "Det är en händelse om ${minutes} minuter! Kolla Discord för mer information.\n\n${name} @ **${location}**",
+		announce_event_starting_now = "En händelse börjar nu! Kolla på Discord för mer information.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -5691,7 +5760,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		no = "Nej",
 
 		logs_daily_streak_changed_title = "Dagligt streck ändrat",
-		logs_daily_streak_changed_details = "${consoleName} har nu ett dagligt streck på `${streak}.`",
+		logs_daily_streak_changed_details = "${consoleName} har nu en daglig svit på `${streak}`.",
+
+		logs_daily_task_completed_title = "Daglig Uppgift Avklarad",
+		logs_daily_task_completed_details = "${consoleName} avklarade en daglig uppgift med namnet `${taskName}`.",
 
 		restore_streak = "Återställ streaken av ${streak}",
 		confirm_streak_restore = "Är du säker på att du vill återställa din streak av ${streak} dagar? Kostnaden är ${cost} OP-poäng.",
@@ -6496,8 +6568,13 @@ OP.Global.Locales.Languages["sv-SE"] = {
 	hunting = {
 		hold_to_skin = "[${InteractionKey}] Håll inne för att flå.",
 		skinning_animal = "Flår dött djur.",
-		meat_too_damaged = "Köttet från detta djur är för skadat.",
 		animal_is_being_skinned = "Djuret blir flått.",
+
+		hold_to_remove = "[${InteractionKey}] Håll in för att ta bort kadaver",
+		removing_carcass = "Tar bort skadat kadaver",
+		carcass_damaged = "Kadavern är för skadat för att flå.",
+
+		meat_too_damaged = "Djurets kött var för skadat för att kunna skördas.",
 
 		skinned_logs_title = "Skinnad djur",
 		skinned_logs_details = "${consoleName} har skinnat ett djur (${modelName}) och fått ${skinnedItems}.",
@@ -6673,7 +6750,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		instance_destroyed = "Förstör instans med ID ${instanceId}.",
 		instance_destruction_failed = "Misslyckades med att förstöra instans.",
 		instance_id_parameter_invalid = "Instans-ID-parametern är ogiltig.",
-		added_player_to_instance = "Lade till ${consoleName} till instansen med ID ${instanceId}.",
+		added_player_to_instance = "Lade till ${consoleName} i instansen med ID `${instanceId}`.",
 		failed_to_add_player_to_instance = "Misslyckades med att lägga till spelaren till instansen.",
 		server_id_parameter_invalid = "Server-ID-parametern är ogiltig.",
 		removed_player_from_instance = "Tog bort ${consoleName} från instansen med ID `${instanceId}`.",
@@ -6987,9 +7064,13 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		glass_breaker_description = "Används för att krossa bilfönster i nödsituationer.",
 
 		picture = "Bild",
-		picture_description = "Samlar alla minnen av dig och dina vänner.",
-		paper = "Papper",
-		paper_description = "En tom pappersark.",
+		picture_description = "Samlar alla minnen av dig och dina vänner. (Storlek: 1x1)",
+		printed_card = "Tryckt kort",
+		printed_card_description = "Ett litet tryckt kort, kanske ett visitkort? (Storlek: 9x5)",
+		paper = "Fotopapper",
+		paper_description = "En blank pappersbit att skriva ut bilder på.",
+		card_paper = "Visitkortspapper",
+		card_paper_description = "En blank pappersbit att skriva ut visitkort på.",
 		printer = "Skrivare",
 		printer_description = "Ingen fax, bara skrivare.",
 
@@ -7433,6 +7514,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 		gold_bar = "Guldstång",
 		gold_bar_description = "Används för reparationer och hantverk.",
+
+		ancient_ring = "Antikt Ring",
+		ancient_ring_description = "En väderbiten guldring, vars intrikata etsningar har bleknat av tidens och tidvattnets gång, viskar om kärlek och lojalitet från en svunnen era. En gång en symbol för evig förbindelse, lockar den nu med allure av otaliga berättelser och förlorade civilisationer.",
+		ancient_coin = "Antik Mynt",
+		ancient_coin_description = "Detta mynt bär märken av forna handelsfärder, dess gulda yta försutten av salt och sand från havet, och bär tyngden av århundraden i sin design. Emblemet ingraverat på det talar om ett imperiums räckvidd och historiens flytande hand som förmer rikedom från handflata till handflata.",
 
 		aluminium = "Rå aluminium",
 		aluminium_description = "Används för reparationer och hantverk.",
@@ -8788,7 +8874,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		lucky_wheel_is_occupied = "Lyckohjulet är för närvarande upptaget. Vänligen vänta.",
 		not_enough_op_points = "Du behöver ${cost} OP-poäng för att snurra på Lyckohjulet. Du har ${points} OP-poäng.",
 		used_op_points = "Du använde ${cost} OP-poäng. Du har nu ${points} OP-poäng kvar.",
+		casino_company_name = "The Diamond Casino & Resort",
 		vehicle_won_tweet = "Någon har precis lyckats pricka in jackpotten på Lucky Wheel och säkrat den extremt sällsynta ${modelDisplayName}! Vem är den lyckliga vinnaren? Skynda dig dit och hämta ditt pris.",
+		vehicle_is_not_in_cdimage = "Detta fordon finns inte i spelens filer.",
+		podium_vehicle_set_to = "Podiumfordonet har ställts in på `${modelLabel}`.",
 
 		logs_lucky_wheel_reward_title = "Lyckohjulets Belöning",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} har snurrat på hjulet och vann en bil.",
@@ -10054,12 +10143,18 @@ OP.Global.Locales.Languages["sv-SE"] = {
 	},
 
 	pawn_shops = {
+		pawn_shop = "Låna-butik",
+		pawn_shop_far = "Tillgång till Låna-butik",
+		pawn_shop_near = "[${InteractionKey}] Tillgång till Låna-butik",
+		no_items_to_sell = "Du har inga ${itemLabel} att sälja.",
+		close_menu = "Stäng meny",
+
 		sell_items = "Sälj ${itemLabel}",
 		press_to_sell_items = "[${InteractionKey}] Sälj ${amount} st ${itemLabel}",
 		sold_items = "Sålde ${sellAmount}x ${itemLabel} för $${sellPrice}.",
-		no_items_to_sell = "Du har inga ${itemLabel} att sälja.",
 		daily_limit_reached = "Du har nått din dagliga gräns, försäljaren köper inte fler objekt.",
 		illegal_pawn_shop_id = "Försöker skicka värden för en pantbank som inte finns.",
+
 		used_pawn_shop_title = "Använd Pantbank",
 		used_pawn_shop_details = "${consoleName} använde en pantbank och sålde ${sellAmount} `${itemLabel}` och fick $${sellPrice}."
 	},
@@ -10237,6 +10332,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 
 	printer = {
 		use_printer = "[${InteractionKey}] Använd Skrivare",
+		failed_to_print = "Misslyckades med att skriva ut.",
 
 		no_paper = "Du har inget papper.",
 		invalid_url = "Ogiltig bild-URL.",
@@ -10245,7 +10341,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		printing = "Skriver ut...",
 
 		printed_logs_title = "Utskrivet Bild",
-		printed_logs_details = "${consoleName} skrev ut en bild med URL:en `${url}`."
+		printed_logs_details = "${consoleName} skrev ut en `${itemName}` med hjälp av `${paperType}` med bild-URL `${url}`."
 	},
 
 	prop_hide = {
@@ -10257,7 +10353,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		no_address_set = "Ingen adress bestämd.",
 		no_address_found = "Ingen adress hittades under '${address}'.",
 		marker_set = "Markör och vägbeskrivning satt till ${address}.",
-		removed_marker = "Borttagen markör för ${address}."
+		removed_marker = "Borttagen markör för ${address}.",
+		entrance = "Ingång",
+		back_entrance = "Bakdörr",
+		garage = "Garage"
 	},
 
 	props = {
@@ -10549,13 +10648,20 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		exiting = "Avslutar...",
 		problems = "Problem:",
 		profile_gamma_not_18 = "Din 'gamma' inställning är inte satt till standardvärdet. Detta minskar konsekvensen och kvaliteten på bilderna som genereras av din klient. För att åtgärda detta, skriv 'profile_gamma 18' i din F8 konsol. Du kommer inte få jobb innan detta är gjort. Du behöver vara på 'beta' eller 'senaste' versionen av FiveM för att kunna göra det. Du kan ändra detta i FiveM huvudmenyn.",
-		screenshot_blackscreen = "Dina skärmbilder visar en svart skärm. Du måste fixa problemet med att kunna ta skärmdumpar i ditt spel innan du kan få fler jobb. Detta kan orsakas av antivirusprogram. För att försöka skapa bilder igen, ange detta gränssnitt igen.",
+		banned = "Bannad:",
+		banned_information = "Vissa spelare skapar bilder som inte uppfyller förväntningarna. Detta minskar konsekvensen i porträtten och selfiesna. Detta händer vanligtvis när upplösningen är för låg, grafikinställningarna är för låga eller visuella moddar används. Medan visuella moddar är acceptabla, är övermättade eller undermättade visuella effekter inte det. Visuella moddar gör ofta alltför starka färger eller mycket tråkiga färger (som får karaktärerna att se döda ut i porträtten).",
+		banned_unban = "Om du vill fortsätta ta skärmdumpar kan du själv avbanna dig upp till 3 gånger. Innan du gör det bör du dock förbättra dina spelgrafik för att undvika att bli bannad igen. Att höja grafikinställningarna samt minska intensiteten på visuella moddar kommer att hjälpa.",
+		unban = "Avbanna (${unbansLeft} kvar)",
 
 		screenshotting_start_logs_title = "Startar skärmdumpar",
 		screenshotting_start_logs_details = "${consoleName} startade skärmdumpar.",
 
 		screenshotting_stop_logs_title = "Stoppa skärmdumpar",
-		screenshotting_stop_logs_details = "${consoleName} slutade ta skärmdumpar."
+		screenshotting_stop_logs_details = "${consoleName} slutade ta skärmdumpar.",
+
+		user_does_not_exist = "Den här användaren existerar inte.",
+		screenshotter_already_banned = "Denna skärmdumpare är redan bannad.",
+		screenshotter_banned = "Denna skärmdumpare har nu blivit bannad."
 	},
 
 	scuba = {
@@ -10667,8 +10773,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		speed = "Hastighet (${speedLevel})",
 		rotation = "Rotation (${rotationLevel})",
 		clear_bullet_impacts = "Rensa skotthål",
-		illegal_shooting_spot_value = "Försöker skicka ogiltiga värden för skottplatser.",
-		illegal_shooting_spot_id = "Försöker skicka värden för en skjutplats som inte finns.",
 		not_enough_cash = "Du har inte tillräckligt med kontanter."
 	},
 
@@ -10920,7 +11024,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		time_parameters_invalid = "Ogiltigt timme- eller minutparameter.",
 		time_currently_transitioning = "Tiden övergår för närvarande, vänligen vänta.",
 		time_successfully_transitioned = "Tiden har framgångsrikt övergått till `${hour}:${minute}`.",
-		time_successfully_set = "Tiden har framgångsrikt satts till `${hour}:${minute}`."
+		time_successfully_set = "Tiden har framgångsrikt satts till `${hour}:${minute}`.",
+
+		developer_ambience_on = "Utvecklarstämning aktiverad.",
+		developer_ambience_off = "Utvecklarstämning avaktiverad."
 	},
 
 	tablet = {
@@ -11137,6 +11244,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		tp_airport = "LS Flygplats",
 		tp_carrier = "Flygplanskryssare",
 		tp_cayo = "Cayo Perico",
+
+		actions = "Åtgärder",
+		wander_around = "Vandra omkring",
+		speed_around = "Löpa omkring",
+		clear_tasks = "Rensa uppgifter",
 
 		you_are_not_in_a_vehicle = "Du sitter inte i ett fordon.",
 		you_are_in_a_vehicle = "Du sitter för närvarande i ett fordon.",
@@ -11405,6 +11517,23 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		muted_logs_title = "Tystad Röst",
 		muted_logs_details = "${consoleName} tystade ${targetConsoleName} från röstchatten.",
 		unmuted_logs_details = "${consoleName} avdämpade röstchatten för ${targetConsoleName}."
+	},
+
+	wallhack = {
+		wallhack_on = "Wallhack aktiverad.",
+		wallhack_off = "Wallhack avaktiverad.",
+
+		wallhack_failed = "Det gick inte att aktivera wallhack.",
+		wallhack_everyone = "Wallhack aktiverad för alla.",
+		wallhack_self = "Wallhack aktiverad för dig själv.",
+		wallhack_player = "Wallhack aktiverad för ${displayName}.",
+
+		wallhack_everyone_logs_title = "Aktiverade wallhack för alla",
+		wallhack_everyone_logs_details = "${consoleName} aktiverade wallhack för alla.",
+		wallhack_player_logs_title = "Aktiverade wallhack för spelare",
+		wallhack_player_logs_details = "${consoleName} aktiverade wallhack för ${targetConsoleName}.",
+		wallhack_self_logs_title = "Aktiverade wallhack för sig själv",
+		wallhack_self_logs_details = "${consoleName} aktiverade wallhack för sig själv."
 	},
 
 	washrooms = {
@@ -11726,6 +11855,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		license_utility = "Användning",
 		license_commercial = "Kommeriell",
 		license_management = "Ledning",
+		license_passenger = "Passagerare",
 		license_military = "Militär",
 		license_special = "Särskilda luftfartyg",
 		license_boat = "Båtkörkort",
@@ -11890,10 +12020,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		vehicle_at_police_impound = "Ditt fordon är för tillfället beslagtaget av polisen.",
 		vehicle_at_impound = "Ditt fordon finns på förrådet.",
 		waypoint_to_impound = "En vägbeskrivning till förrådet har markerats på GPS:en.",
-		unable_to_withdraw = "Det går inte att hämta ut ditt fordon då det är placerat på ${location}.",
-		waypoint_to_vehicle = "En vägbeskrivning till ditt fordon har markerats på GPS:en.",
-		vehicle_currently_at = "Ditt fordon kan för närvarande hittas på ${location}.",
-		vehicle_in_garage = "Ditt fordon finns i ${garageName}.",
+		unable_to_withdraw = "Kan inte ta ut fordonet för tillfället.",
+		vehicle_in_garage = "Din bil finns i ${garageName}. En vägpunkt har markerats på din karta.",
 		insufficient_funds = "Du har inte tillräckligt med pengar för att ta ut detta fordon.",
 		error_withdrawing = "Ett fel uppstod när du försökte ta ut ditt fordon.",
 		withdraw_timeout = "Vänligen vänta ett tag innan du försöker ta ut ett annat fordon.",
@@ -11924,15 +12052,12 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		garage = "Garage",
 		retrieved_vehicle_logs_title = "Återlämnat fordon",
 		retrieved_vehicle_logs_details = "${consoleName} återlämnade fordonet med registreringsnummer `${plate}` för ${price}.",
+		no_vehicles_to_sell = "Du har inga fordon att sälja.",
 
 		state_loading_model = "Laddar modell...",
 		state_withdrawing = "Hämtar...",
-
-		state_retrieve_searching = "Söker...",
 		state_retrieving = "Hämtar...",
-
 		state_storing = "Lagrar...",
-
 		state_loading = "Laddar...",
 
 		vehicle_weight = "Vikt: ${weight}",

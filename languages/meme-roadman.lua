@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 22 (do not change)
+-- AUTO LOCALES: 23 (do not change)
 
 OP.Global.Locales.Languages["meme-roadman"] = {
 	-- configuration settings for language
@@ -341,12 +341,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		no_nearby_vehicles_off = "Man's just toggled 'No Nearby Vehicles' off.",
 		speed_up_progress_bar_on = "Man's just hit the 'Speed Up Progress Bar' button.",
 		speed_up_progress_bar_off = "Man's just turned off the 'Speed Up Progress Bar'.",
-		wallhack_on = "Man's just turned on 'Wallhack'.",
-		wallhack_off = "Man's just turned off 'Wallhack'.",
 		aimbot_on = "Man's toggled 'Aimbot' on.",
 		aimbot_off = "Man's toggled 'Aimbot' off.",
-		player_bones_on = "Man's toggled 'Player Bones' on.",
-		player_bones_off = "Man's toggled 'Player Bones' off.",
 		vehicle_smoke_on = "Man's toggled 'Vehicle Smoke' on.",
 		vehicle_smoke_off = "Man's toggled 'Vehicle Smoke' off.",
 
@@ -706,6 +702,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		vehicle_spawn_ban = "Yo fam, you tryna take `${modelName}` for a mad cruise? Sorry bruv, this ain't no showroom, and that whip? It's been waitin' forever!",
 		weapon_spawn_ban = "You fancyin' the `${weaponName}`, innit? This ain't no armory, and that ting? Still bein' forged.",
 		advanced_noclip_ban = "You tryna sneak around like a ghost, fam? This ain't no phantom dance, and that move? Nah, not on our block.",
+		illegal_local_vehicle_ban = "undefined",
 
 		type_aimbot = "Aimbotting",
 		type_bad_creation = "Dead creation",
@@ -744,6 +741,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		type_thermal_night_vision = "Therm/Night Viz",
 		type_underground = "Underground ting, ya get me?",
 		type_vehicle_modification = "Vehicle Mods",
+		type_illegal_local_vehicle = "undefined",
 
 		event_prefix = "Anti-Cheat: ${type}",
 
@@ -813,7 +811,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 	bans = {
 		banned_no_permissions = "Tried to `${reason}` but man don't have the right permissions innit.",
-		fraud_chargeback = "Man's saying fraud / chargeback fam"
+		fraud_chargeback = "Man's saying fraud / chargeback fam",
+		none_provided = "undefined"
 	},
 
 	characters = {
@@ -1034,18 +1033,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		aimbot_command_parameter_targets = "targets",
 		aimbot_command_parameter_targets_help = "Names of the opps you wanna chef (only works when toggelin' for yourself). (Will filter targets to only be players with these server ids)",
 		aimbot_command_substitutes = "",
-
-		player_bones_debug_command = "man dem bones",
-		player_bones_debug_command_help = "Turn on/off the player bones debugger.",
-		player_bones_debug_command_parameter_server_id = "server id",
-		player_bones_debug_command_parameter_server_id_help = "If you want to toggle the bones debugger for someone else, insert their server id here innit.",
-		player_bones_debug_command_substitutes = "bones_debug",
-
-		wallhack_command = "wallhack",
-		wallhack_command_help = "Toggle 'wallhack'.",
-		wallhack_command_parameter_server_id = "server id",
-		wallhack_command_parameter_server_id_help = "If yo want to change the 'wallhack' status for someone else, put their server ID here bruv.",
-		wallhack_command_substitutes = "",
 
 		speed_boost_command = "speed_boost",
 		speed_boost_command_help = "Toggle 'speed boost', innit.",
@@ -2526,6 +2513,13 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		roll_lottery_command_help = "Roll that lottery manually if you feelin' lucky fam.",
 		roll_lottery_command_substitutes = "",
 
+		-- game/lucky_wheel
+		set_podium_vehicle_command = "undefined",
+		set_podium_vehicle_command_help = "undefined",
+		set_podium_vehicle_command_parameter_model_name = "undefined",
+		set_podium_vehicle_command_parameter_model_name_help = "undefined",
+		set_podium_vehicle_command_substitutes = "",
+
 		-- game/magazines
 		refresh_magazines_command = "refresh_magazines",
 		refresh_magazines_command_help = "Make sure your mags are up to date if there be changes in the database yadadamean?",
@@ -2939,6 +2933,69 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		wipe_props_command_parameter_radius_help = "The radius for the wipe (1-250), innit.",
 		wipe_props_command_substitutes = "",
 
+		-- game/racing
+		race_leave_command = "undefined",
+		race_leave_command_help = "undefined",
+		race_leave_command_substitutes = "undefined",
+
+		race_share_command = "undefined",
+		race_share_command_help = "undefined",
+		race_share_command_parameter_server_id = "undefined",
+		race_share_command_parameter_server_id_help = "undefined",
+		race_share_command_parameter_track_name = "undefined",
+		race_share_command_parameter_track_name_help = "undefined",
+		race_share_command_substitutes = "",
+
+		race_record_command = "undefined",
+		race_record_command_help = "undefined",
+		race_record_command_substitutes = "",
+
+		race_save_command = "undefined",
+		race_save_command_help = "undefined",
+		race_save_command_parameter_track_name = "undefined",
+		race_save_command_parameter_track_name_help = "undefined",
+		race_save_command_parameter_track_type = "undefined",
+		race_save_command_parameter_track_type_help = "undefined",
+		race_save_command_substitutes = "",
+
+		race_delete_command = "undefined",
+		race_delete_command_help = "undefined",
+		race_delete_command_parameter_track_name = "undefined",
+		race_delete_command_parameter_track_name_help = "undefined",
+		race_delete_command_substitutes = "",
+
+		race_list_command = "undefined",
+		race_list_command_help = "undefined",
+		race_list_command_substitutes = "",
+
+		race_load_command = "undefined",
+		race_load_command_help = "undefined",
+		race_load_command_parameter_track_name = "undefined",
+		race_load_command_parameter_track_name_help = "undefined",
+		race_load_command_substitutes = "",
+
+		race_start_command = "undefined",
+		race_start_command_help = "undefined",
+		race_start_command_parameter_amount = "undefined",
+		race_start_command_parameter_amount_help = "undefined",
+		race_start_command_parameter_start_delay = "undefined",
+		race_start_command_parameter_start_delay_help = "undefined",
+		race_start_command_parameter_laps = "undefined",
+		race_start_command_parameter_laps_help = "undefined",
+		race_start_command_substitutes = "",
+
+		race_cancel_command = "undefined",
+		race_cancel_command_help = "undefined",
+		race_cancel_command_substitutes = "",
+
+		race_checkpoints_command = "undefined",
+		race_checkpoints_command_help = "undefined",
+		race_checkpoints_command_substitutes = "",
+
+		race_sounds_command = "undefined",
+		race_sounds_command_help = "undefined",
+		race_sounds_command_substitutes = "",
+
 		-- game/radio
 		radio_command = "radio",
 		radio_command_help = "Toggle the radio UI, bruv.",
@@ -3173,6 +3230,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		blackout_command_help = "Toggle whether there's a blackout, fam.",
 		blackout_command_substitutes = "",
 
+		toggle_developer_ambience_command = "undefined",
+		toggle_developer_ambience_command_help = "undefined",
+		toggle_developer_ambience_command_substitutes = "",
+
 		-- game/tablet
 		tablet_command = "tablet",
 		tablet_command_help = "Open the tablet UI (if you got a tablet), bro.",
@@ -3274,6 +3335,13 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		change_voice_mode_command = "switch_voice_mode",
 		change_voice_mode_command_help = "Toggles the 'music' voice input mode on/off. That mode will disable noise removal and echo cancellation, allowing for clearer music.",
 		change_voice_mode_command_substitutes = "voice_mode",
+
+		-- game/wallhack
+		wallhack_command = "wallhack",
+		wallhack_command_help = "undefined",
+		wallhack_command_parameter_server_id = "server id",
+		wallhack_command_parameter_server_id_help = "undefined",
+		wallhack_command_substitutes = "",
 
 		-- game/wizard
 		wizard_command = "wizard",
@@ -3722,7 +3790,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		richer_presence_on = "Man dem, we got some richer presence up in here now.",
 		richer_presence_off = "Richer presence, nah mate that's off now.",
 
-		announce_event = "Yo, there's an event happenin' in 15 minutes! Check Discord for more info.\n\n${name} @ **${location}**"
+		announce_event = "undefined",
+		announce_event_starting_now = "undefined"
 	},
 
 	emojis = {
@@ -5691,7 +5760,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		no = "Nah",
 
 		logs_daily_streak_changed_title = "Streak Changed, fam",
-		logs_daily_streak_changed_details = "${consoleName} now on a ${streak} day streak, blud.",
+		logs_daily_streak_changed_details = "undefined",
+
+		logs_daily_task_completed_title = "undefined",
+		logs_daily_task_completed_details = "undefined",
 
 		restore_streak = "Reboot streak of ${streak}",
 		confirm_streak_restore = "You good fam? You really wanna reboot your streak of ${streak} days? It's gonna cost you ${cost} OP Points.",
@@ -6496,8 +6568,13 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	hunting = {
 		hold_to_skin = "[${InteractionKey}]  Hold to quickly remove a mans skin",
 		skinning_animal = "Aye big man, I'm taking the skin off that dead animal there",
-		meat_too_damaged = "Can't use this dead animal's meat cuz its been messed up",
 		animal_is_being_skinned = "Hold up, I'm trying to take the skin off this animal",
+
+		hold_to_remove = "undefined",
+		removing_carcass = "undefined",
+		carcass_damaged = "undefined",
+
+		meat_too_damaged = "undefined",
 
 		skinned_logs_title = "Skinned Animal",
 		skinned_logs_details = "${consoleName} skinned an animal (${modelName}) and got ${skinnedItems}.",
@@ -6673,7 +6750,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		instance_destroyed = "I've just destroyed instance with ID '${instanceId}', safe my man.",
 		instance_destruction_failed = "Bruh, I couldn't destroy that instance.",
 		instance_id_parameter_invalid = "Aye yo, the instance ID parameter you provided ain't valid.",
-		added_player_to_instance = "Yo, I just added ${consoleName} to the instance with ID '${instanceId}', they're in the mix now.",
+		added_player_to_instance = "undefined",
 		failed_to_add_player_to_instance = "Sorry fam, couldn't add that player to the instance.",
 		server_id_parameter_invalid = "The server ID you provided ain't valid, fix it up my dude.",
 		removed_player_from_instance = "Man just kicked ${consoleName} outta instance ${instanceId}.",
@@ -6987,9 +7064,13 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		glass_breaker_description = "Used to smash car windows in case of emergency.",
 
 		picture = "Flick",
-		picture_description = "Collect all the memories of you and your homies.",
-		paper = "Blank Page",
-		paper_description = "Just a blank page, innit?",
+		picture_description = "undefined",
+		printed_card = "undefined",
+		printed_card_description = "undefined",
+		paper = "undefined",
+		paper_description = "undefined",
+		card_paper = "undefined",
+		card_paper_description = "undefined",
 		printer = "Money Machine",
 		printer_description = "No fax, just a printer, mate.",
 
@@ -7433,6 +7514,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 		gold_bar = "GOLD BRICK",
 		gold_bar_description = "Use dis for fixing up and makin' stuff.",
+
+		ancient_ring = "undefined",
+		ancient_ring_description = "undefined",
+		ancient_coin = "undefined",
+		ancient_coin_description = "undefined",
 
 		aluminium = "CRUDE ALUMINIUM",
 		aluminium_description = "Use dis for fixing up and makin' stuff.",
@@ -8788,7 +8874,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		lucky_wheel_is_occupied = "The Lucky Wheel's busy right now. Chill for a bit.",
 		not_enough_op_points = "You need ${cost} mandem points to spin the Lucky Wheel. You have ${points} mandem points.",
 		used_op_points = "You banged out ${cost} mandem points. You now have ${points} mandem points left.",
+		casino_company_name = "undefined",
 		vehicle_won_tweet = "Yo bruv, someone just hit the jackpot at the Lucky Wheel and copped the mad rare ${modelDisplayName}! Who's the lucky winner? Link up and claim your prize, fam.",
+		vehicle_is_not_in_cdimage = "undefined",
+		podium_vehicle_set_to = "undefined",
 
 		logs_lucky_wheel_reward_title = "Lucky Wheel Bless-up",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} just spun the wheel and got a fresh ride.",
@@ -10054,12 +10143,18 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	},
 
 	pawn_shops = {
+		pawn_shop = "undefined",
+		pawn_shop_far = "undefined",
+		pawn_shop_near = "undefined",
+		no_items_to_sell = "Bruh, you ain't got no ${itemLabel} to sell.",
+		close_menu = "undefined",
+
 		sell_items = "Sell ${itemLabel} g",
 		press_to_sell_items = "[${InteractionKey}] Sell ${amount}x ${itemLabel}",
 		sold_items = "${sellAmount}x ${itemLabel} sold for ${sellPrice}. Mandems can pattern you up with that",
-		no_items_to_sell = "Bruh, you ain't got no ${itemLabel} to sell.",
 		daily_limit_reached = "Oi, you reached ya daily limit innit. The vendor ain't tryna buy no more stuff.",
 		illegal_pawn_shop_id = "Oi, you tryna make up a pawn shop that don't even exist?",
+
 		used_pawn_shop_title = "Used Pawn Shop",
 		used_pawn_shop_details = "${consoleName} went to the pawn shop, sold ${sellAmount} `$(itemLabel)`, and got $${sellPrice}."
 	},
@@ -10237,6 +10332,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 
 	printer = {
 		use_printer = "[${InteractionKey}] Use Printer",
+		failed_to_print = "undefined",
 
 		no_paper = "Bruv, you ain't got no paper left.",
 		invalid_url = "Invalid Picture URL, innit.",
@@ -10245,7 +10341,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		printing = "Sayin'...",
 
 		printed_logs_title = "Printed",
-		printed_logs_details = "${consoleName} printed an image with the URL: `${url}`."
+		printed_logs_details = "undefined"
 	},
 
 	prop_hide = {
@@ -10257,7 +10353,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		no_address_set = "Nothing set fam.",
 		no_address_found = "Bruv, can't find no address for '${address}'.",
 		marker_set = "Dropped a marker and set the ting to ${address}.",
-		removed_marker = "Man took off marker for ${address}."
+		removed_marker = "Man took off marker for ${address}.",
+		entrance = "undefined",
+		back_entrance = "undefined",
+		garage = "undefined"
 	},
 
 	props = {
@@ -10549,13 +10648,20 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		exiting = "Bouncing...",
 		problems = "Issues:",
 		profile_gamma_not_18 = "Your 'gamma' setting is not set to the peng ting value. This downgrades the consistency and quality of images generated by your plug. To fix that, type 'profile_gamma 18' in your F8 console blud. You won't get any jobs until you sort that out. You need to be on the 'beta' or 'latest' version of the plug to be able to do that. You can change it in the plug main menu.",
-		screenshot_blackscreen = "Bruv, your screenshots are coming out all black. Sort out your game so it can actually take screenshots before you get more jobs. This might be because of your anti-virus. To try taking pictures again, just come back to this menu, innit.",
+		banned = "undefined",
+		banned_information = "undefined",
+		banned_unban = "undefined",
+		unban = "undefined",
 
 		screenshotting_start_logs_title = "Start Taking Snapz",
 		screenshotting_start_logs_details = "${consoleName} started taking snapz.",
 
 		screenshotting_stop_logs_title = "Stop Taking Snapz",
-		screenshotting_stop_logs_details = "${consoleName} stopped taking snapz."
+		screenshotting_stop_logs_details = "${consoleName} stopped taking snapz.",
+
+		user_does_not_exist = "undefined",
+		screenshotter_already_banned = "undefined",
+		screenshotter_banned = "undefined"
 	},
 
 	scuba = {
@@ -10667,8 +10773,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		speed = "Speed (${speedLevel})",
 		rotation = "Rotation (${rotationLevel})",
 		clear_bullet_impacts = "Cancel Bullet Holes",
-		illegal_shooting_spot_value = "You're tryna send bogus info for shooting spots.",
-		illegal_shooting_spot_id = "You're tryna send info for a shooting spot that don't exist.",
 		not_enough_cash = "Yo, you broke. Get more cash."
 	},
 
@@ -10920,7 +11024,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		time_parameters_invalid = "What time you say it is? That's not real bruh.",
 		time_currently_transitioning = "Hold on, di time ah change right now, wait a sec.",
 		time_successfully_transitioned = "Time has been succesfully moved to `${hour}:${minute}`, ya get me?",
-		time_successfully_set = "The time has been properly set to `${hour}:${minute}`, fam."
+		time_successfully_set = "The time has been properly set to `${hour}:${minute}`, fam.",
+
+		developer_ambience_on = "undefined",
+		developer_ambience_off = "undefined"
 	},
 
 	tablet = {
@@ -11137,6 +11244,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		tp_airport = "LS Airport, big man ting",
 		tp_carrier = "Aircraft Carrier, blud",
 		tp_cayo = "Cayo Perico, wasteman",
+
+		actions = "undefined",
+		wander_around = "undefined",
+		speed_around = "undefined",
+		clear_tasks = "undefined",
 
 		you_are_not_in_a_vehicle = "Bruv, you ain't in a whip.",
 		you_are_in_a_vehicle = "Mandem, you're currently in a whip.",
@@ -11405,6 +11517,23 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		muted_logs_title = "Silenced",
 		muted_logs_details = "${consoleName} muted ${targetConsoleName} from voice chat.",
 		unmuted_logs_details = "${consoleName} deaded ${targetConsoleName} from voice chat, fam."
+	},
+
+	wallhack = {
+		wallhack_on = "undefined",
+		wallhack_off = "undefined",
+
+		wallhack_failed = "undefined",
+		wallhack_everyone = "undefined",
+		wallhack_self = "undefined",
+		wallhack_player = "undefined",
+
+		wallhack_everyone_logs_title = "undefined",
+		wallhack_everyone_logs_details = "undefined",
+		wallhack_player_logs_title = "undefined",
+		wallhack_player_logs_details = "undefined",
+		wallhack_self_logs_title = "undefined",
+		wallhack_self_logs_details = "undefined"
 	},
 
 	washrooms = {
@@ -11726,6 +11855,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		license_utility = "Useful ting",
 		license_commercial = "Money ting",
 		license_management = "Bossman ting",
+		license_passenger = "undefined",
 		license_military = "Army ting",
 		license_special = "Special ops ting",
 		license_boat = "Boatin' License",
@@ -11890,10 +12020,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		vehicle_at_police_impound = "Your ride's currently on police lock down.",
 		vehicle_at_impound = "Your whip is at The Pound.",
 		waypoint_to_impound = "We've marked a waypoint to The Pound on your GPS.",
-		unable_to_withdraw = "Can't get your ride right now man, it's still at ${location}.",
-		waypoint_to_vehicle = "We've marked a waypoint to your ride on your GPS.",
-		vehicle_currently_at = "Your whip is currently posted at ${location} fam.",
-		vehicle_in_garage = "Your ride is chillin' in ${garageName} fam.",
+		unable_to_withdraw = "undefined",
+		vehicle_in_garage = "Your whip is located in ${garageName}. A waypoint has been marked on your map.",
 		insufficient_funds = "You broke as hell, don't have enough cash to withdraw this whip.",
 		error_withdrawing = "Bruh, something went wrong while trying to get your ride back.",
 		withdraw_timeout = "Hold up, wait a minute before trying to pull out another ride.",
@@ -11924,15 +12052,12 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		garage = "Gaff",
 		retrieved_vehicle_logs_title = "Whipped Vehicle",
 		retrieved_vehicle_logs_details = "Mandem ${consoleName} whipped vehicle with plate `${plate}` for ${price}.",
+		no_vehicles_to_sell = "You ain't got no whips to sell.",
 
 		state_loading_model = "Loading Model blud...",
 		state_withdrawing = "Widrawin...",
-
-		state_retrieve_searching = "Searchin...",
 		state_retrieving = "Retrieving...",
-
 		state_storing = "Storing...",
-
 		state_loading = "Loading...",
 
 		vehicle_weight = "Weight: ${weight}",

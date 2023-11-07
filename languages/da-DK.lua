@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 22 (do not change)
+-- AUTO LOCALES: 23 (do not change)
 
 OP.Global.Locales.Languages["da-DK"] = {
 	-- configuration settings for language
@@ -341,12 +341,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		no_nearby_vehicles_off = "Slukkede 'Ingen Nærliggende Køretøjer'.",
 		speed_up_progress_bar_on = "Tændte 'Fremskynd Fremgangslinjen'.",
 		speed_up_progress_bar_off = "Slukkede 'Fremskynd Fremgangslinjen'.",
-		wallhack_on = "Tændte 'Wallhack'.",
-		wallhack_off = "Slukkede 'Wallhack'.",
 		aimbot_on = "Aimbot tændt.",
 		aimbot_off = "Aimbot slukket.",
-		player_bones_on = "Spillerbensætning tændt.",
-		player_bones_off = "Spillerbensætning slukket.",
 		vehicle_smoke_on = "Køretøjsrøg tændt.",
 		vehicle_smoke_off = "Køretøjsrøg slukket.",
 
@@ -706,6 +702,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		vehicle_spawn_ban = "Åh, drømte du om en fornøjelsestur med `${modelName}`? Dette er ikke en udstillingssal, og den specifikke model? Den er på en evig venteliste!",
 		weapon_spawn_ban = "Længtes du efter `${weaponName}`? Dette er ikke et arsenal, og det våben? Det er stadig i smedjen.",
 		advanced_noclip_ban = "Prøver du at glide gennem usete korridorer? Dette er ikke en fantomvals, og den bevægelse? Den er ikke på vores dansekort.",
+		illegal_local_vehicle_ban = "Det ser ud til, at du har fundet den usynlige hingst af Lord Mirage! Desværre er denne mystiske tur forbeholdt den årlige fantomparade.",
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Dårlig skabelse",
@@ -744,6 +741,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		type_thermal_night_vision = "Termisk/natvisning",
 		type_underground = "Undergrund",
 		type_vehicle_modification = "Køretøj tilpasning",
+		type_illegal_local_vehicle = "Bruger ikke-netværkskøretøj",
 
 		event_prefix = "Anti-Cheat: ${type}",
 
@@ -813,7 +811,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 	bans = {
 		banned_no_permissions = "Forsøgte at `${reason}` uden korrekte tilladelser.",
-		fraud_chargeback = "Svindel / Tilbagebetaling"
+		fraud_chargeback = "Svindel / Tilbagebetaling",
+		none_provided = "Ingen angivet."
 	},
 
 	characters = {
@@ -1034,18 +1033,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		aimbot_command_parameter_targets = "mål",
 		aimbot_command_parameter_targets_help = "Mål server-id'er (virker kun når du aktiverer/deaktiverer for dig selv). (Vil filtrere mål til kun at være spillere med disse server-id'er)",
 		aimbot_command_substitutes = "",
-
-		player_bones_debug_command = "afspiller_knogler_debug",
-		player_bones_debug_command_help = "Skifter afspiller knogler debuggeren til/fra.",
-		player_bones_debug_command_parameter_server_id = "server-id",
-		player_bones_debug_command_parameter_server_id_help = "Hvis du vil skifte afspiller knogler debuggeren for en anden spiller, indsæt deres server-id her.",
-		player_bones_debug_command_substitutes = "afspiller_knogler",
-
-		wallhack_command = "vægvisning",
-		wallhack_command_help = "Skifter 'vægvisning' til/fra.",
-		wallhack_command_parameter_server_id = "server-id",
-		wallhack_command_parameter_server_id_help = "Hvis du vil aktivere/deaktivere 'wallhack' for en anden spiller, så indsæt deres server-id her.",
-		wallhack_command_substitutes = "",
 
 		speed_boost_command = "speed_boost",
 		speed_boost_command_help = "Aktiver/deaktiver 'speed boost'.",
@@ -2526,6 +2513,13 @@ OP.Global.Locales.Languages["da-DK"] = {
 		roll_lottery_command_help = "Rul lotteriet manuelt.",
 		roll_lottery_command_substitutes = "",
 
+		-- game/lucky_wheel
+		set_podium_vehicle_command = "set_podium_vehicle",
+		set_podium_vehicle_command_help = "Sæt det vindbare podiekøretøj på kasinoet.",
+		set_podium_vehicle_command_parameter_model_name = "modelnavn",
+		set_podium_vehicle_command_parameter_model_name_help = "Modelnavnet på det køretøj, du ønsker, at det skal ændres til.",
+		set_podium_vehicle_command_substitutes = "",
+
 		-- game/magazines
 		refresh_magazines_command = "opdater_magasiner",
 		refresh_magazines_command_help = "Opdater magasinerne, hvis der har været ændringer i databasen.",
@@ -2939,6 +2933,69 @@ OP.Global.Locales.Languages["da-DK"] = {
 		wipe_props_command_parameter_radius_help = "Radius for at fjerne genstande (1-250).",
 		wipe_props_command_substitutes = "",
 
+		-- game/racing
+		race_leave_command = "race_afslut",
+		race_leave_command_help = "Afslut det løb, du er i.",
+		race_leave_command_substitutes = "race_ryd",
+
+		race_share_command = "race_del",
+		race_share_command_help = "Del en racerute med en anden spiller.",
+		race_share_command_parameter_server_id = "server id",
+		race_share_command_parameter_server_id_help = "Server ID'en for den spiller, du vil dele en racerute med.",
+		race_share_command_parameter_track_name = "racerutenavn",
+		race_share_command_parameter_track_name_help = "Navnet på den racerute, du vil dele.",
+		race_share_command_substitutes = "",
+
+		race_record_command = "løb_optag",
+		race_record_command_help = "Optag et løb.",
+		race_record_command_substitutes = "",
+
+		race_save_command = "løb_gem",
+		race_save_command_help = "Gem et løb.",
+		race_save_command_parameter_track_name = "banel navn",
+		race_save_command_parameter_track_name_help = "Navnet du vil gemme det som.",
+		race_save_command_parameter_track_type = "banel type",
+		race_save_command_parameter_track_type_help = "Banel typen for løbet.",
+		race_save_command_substitutes = "",
+
+		race_delete_command = "løb_slet",
+		race_delete_command_help = "Slet et løb.",
+		race_delete_command_parameter_track_name = "banenavn",
+		race_delete_command_parameter_track_name_help = "Navnet på banen, du ønsker at slette.",
+		race_delete_command_substitutes = "",
+
+		race_list_command = "race_liste",
+		race_list_command_help = "Vis alle dine gemte løb.",
+		race_list_command_substitutes = "",
+
+		race_load_command = "race_hent",
+		race_load_command_help = "Hent et løb.",
+		race_load_command_parameter_track_name = "banenavn",
+		race_load_command_parameter_track_name_help = "Navnet på banen, du ønsker at hente.",
+		race_load_command_substitutes = "",
+
+		race_start_command = "race_start",
+		race_start_command_help = "Start et løb.",
+		race_start_command_parameter_amount = "mængde",
+		race_start_command_parameter_amount_help = "Omkostningen for at deltage i racen.",
+		race_start_command_parameter_start_delay = "startforsinkelse",
+		race_start_command_parameter_start_delay_help = "Startforsinkelsen i sekunder.",
+		race_start_command_parameter_laps = "omgange",
+		race_start_command_parameter_laps_help = "Antallet af omgange.",
+		race_start_command_substitutes = "",
+
+		race_cancel_command = "race_annullere",
+		race_cancel_command_help = "Annuller en race.",
+		race_cancel_command_substitutes = "",
+
+		race_checkpoints_command = "race_checkpoints",
+		race_checkpoints_command_help = "Skift checkpoints.",
+		race_checkpoints_command_substitutes = "",
+
+		race_sounds_command = "lyde_til_ræs",
+		race_sounds_command_help = "Tænd/Sluk lyde.",
+		race_sounds_command_substitutes = "",
+
 		-- game/radio
 		radio_command = "radio",
 		radio_command_help = "Aktiver/deaktiver radio UI.",
@@ -3173,6 +3230,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		blackout_command_help = "Skift om der er en strømafbrydelse eller ej.",
 		blackout_command_substitutes = "",
 
+		toggle_developer_ambience_command = "skift_udvikler_omgivelse",
+		toggle_developer_ambience_command_help = "Tænd/Sluk udvikler omgivelse.",
+		toggle_developer_ambience_command_substitutes = "",
+
 		-- game/tablet
 		tablet_command = "tablet",
 		tablet_command_help = "Åbner tabletbrugerfladen (hvis du har en tablet).",
@@ -3274,6 +3335,13 @@ OP.Global.Locales.Languages["da-DK"] = {
 		change_voice_mode_command = "undefined",
 		change_voice_mode_command_help = "undefined",
 		change_voice_mode_command_substitutes = "undefined",
+
+		-- game/wallhack
+		wallhack_command = "vægvisning",
+		wallhack_command_help = "Tænd/Sluk wallhack.",
+		wallhack_command_parameter_server_id = "server-id",
+		wallhack_command_parameter_server_id_help = "Hvis du vil slå wallhack til/fra for en anden spiller, indtast deres server id her.",
+		wallhack_command_substitutes = "",
 
 		-- game/wizard
 		wizard_command = "wizard",
@@ -3722,7 +3790,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		richer_presence_on = "Rigere tilstedeværelse er nu aktiveret.",
 		richer_presence_off = "Rigere tilstedeværelse er nu deaktiveret.",
 
-		announce_event = "Der er en begivenhed om 15 minutter! Se Discord for mere information.\n\n${name} @ **${location}**"
+		announce_event = "Der er et event om ${minutes} minutter! Tjek Discord for mere information.\n\n${name} @ **${location}**",
+		announce_event_starting_now = "En begivenhed starter nu! Tjek Discord for mere information.\n\n${name} @ **${location}**"
 	},
 
 	emojis = {
@@ -5691,7 +5760,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		no = "Nej",
 
 		logs_daily_streak_changed_title = "Daglig Streak Ændret",
-		logs_daily_streak_changed_details = "${consoleName} har nu en daglig streak på `${streak}.`",
+		logs_daily_streak_changed_details = "${consoleName} har nu en daglig stime på `${streak}`.",
+
+		logs_daily_task_completed_title = "Daglig Opgave Udført",
+		logs_daily_task_completed_details = "${consoleName} fuldførte en daglig opgave med navnet `${taskName}`.",
 
 		restore_streak = "Gendan rækkefølgen af ${streak}",
 		confirm_streak_restore = "Er du sikker på, at du vil gendanne din rækkefølge af ${streak} dage? Prisen er ${cost} OP Points.",
@@ -6496,8 +6568,13 @@ OP.Global.Locales.Languages["da-DK"] = {
 	hunting = {
 		hold_to_skin = "[${InteractionKey}] Hold for at flå.",
 		skinning_animal = "Flår død animal.",
-		meat_too_damaged = "Kødet på dette dyr er for beskadiget.",
 		animal_is_being_skinned = "Dyret bliver flået.",
+
+		hold_to_remove = "[${InteractionKey}] Hold for at fjerne kadaver",
+		removing_carcass = "Fjerner beskadiget kadaver",
+		carcass_damaged = "Kadaveret er for beskadiget til at flå.",
+
+		meat_too_damaged = "Dyrets kød var for beskadiget til at blive høstet.",
 
 		skinned_logs_title = "Flået dyr",
 		skinned_logs_details = "${consoleName} flåede et dyr (${modelName}) og fik ${skinnedItems}.",
@@ -6673,7 +6750,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		instance_destroyed = "Fjern instans med ID `${instanceId}`.",
 		instance_destruction_failed = "Fejl ved fjernelse af instans.",
 		instance_id_parameter_invalid = "Instans ID-parametret er ugyldigt.",
-		added_player_to_instance = "Tilføjede ${consoleName} til instansen med ID `${instanceId}.`",
+		added_player_to_instance = "Tilføjede ${consoleName} til instansen med ID `${instanceId}`.",
 		failed_to_add_player_to_instance = "Kunne ikke tilføje spiller til instansen.",
 		server_id_parameter_invalid = "Serverens ID-parameter er ugyldig.",
 		removed_player_from_instance = "${consoleName} blev fjernet fra instansen med ID `${instanceId}`.",
@@ -6987,9 +7064,13 @@ OP.Global.Locales.Languages["da-DK"] = {
 		glass_breaker_description = "Bruges til at knuse bilruder i tilfælde af nødsituation.",
 
 		picture = "Billede",
-		picture_description = "Saml alle minderne om dig og dine venner.",
-		paper = "Papir",
-		paper_description = "Et blankt stykke papir.",
+		picture_description = "Saml alle minderne om dig og dine venner. (Størrelse: 1x1)",
+		printed_card = "Trykt kort",
+		printed_card_description = "Et lille trykt kort, måske et visitkort? (Størrelse: 9x5)",
+		paper = "Foto papir",
+		paper_description = "Et blankt stykke papir til at printe billeder.",
+		card_paper = "Visitkort papir",
+		card_paper_description = "Et blankt stykke papir til at printe visitkort.",
 		printer = "Printer",
 		printer_description = "Ingen fax, kun printer.",
 
@@ -7433,6 +7514,11 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		gold_bar = "Guldbarre",
 		gold_bar_description = "Bruges til reparation og crafting.",
+
+		ancient_ring = "Ældgammel Ring",
+		ancient_ring_description = "En nedslidt guldring, hvis intrikate graveringer er blevet blegede af tid og tide, hvisker om kærlighed og loyalitet fra en svunden æra. Engang et symbol på evig bånd, lokker den nu med tiltrækningskraften af utallige historier og tabte civilisationer.",
+		ancient_coin = "Ældgammel Mønt",
+		ancient_coin_description = "Denne mønt bærer mærker fra ældgamle handelsruter, dens guldsurfacen er blevet mat af salt og sand fra havet, og den bærer århundreders vægt i sit design. Symbolet indgraveret på den vidner om et imperiums rækkevidde og historiens flydende hånd, der overfører rigdom fra håndflade til håndflade.",
 
 		aluminium = "Råt aluminium",
 		aluminium_description = "Bruges til reparation og crafting.",
@@ -8788,7 +8874,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		lucky_wheel_is_occupied = "Heldspillet er i øjeblikket optaget. Vent venligst.",
 		not_enough_op_points = "Du har brug for ${cost} OP-point for at spinde Lykkehjulet. Du har ${points} OP-point.",
 		used_op_points = "Du brugte ${cost} OP-point. Du har nu ${points} OP-point tilbage.",
+		casino_company_name = "The Diamond Casino & Resort",
 		vehicle_won_tweet = "Nogen fik netop guld ved Lucky Wheel og sikrede sig den ultraraske ${modelDisplayName}! Hvem er den heldige vinder? Kom forbi nu og kræv din præmie.",
+		vehicle_is_not_in_cdimage = "Dette køretøj er ikke i spilfilerne.",
+		podium_vehicle_set_to = "Podie-køretøjet er blevet sat til `${modelLabel}`.",
 
 		logs_lucky_wheel_reward_title = "Belønning fra heldspillet",
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} har drejet hjulet og har vundet et køretøj.",
@@ -10054,12 +10143,18 @@ OP.Global.Locales.Languages["da-DK"] = {
 	},
 
 	pawn_shops = {
+		pawn_shop = "Låneværdi",
+		pawn_shop_far = "Tilgang til Låneværdi",
+		pawn_shop_near = "[${InteractionKey}] Tilgang til Låneværdi",
+		no_items_to_sell = "Du har ingen ${itemLabel} til salg.",
+		close_menu = "Luk Menu",
+
 		sell_items = "Sælg ${itemLabel}",
 		press_to_sell_items = "[${InteractionKey}] Sælg ${amount}x ${itemLabel}",
 		sold_items = "Solgte ${sellAmount}x ${itemLabel} for $${sellPrice}.",
-		no_items_to_sell = "Du har ingen ${itemLabel} til salg.",
 		daily_limit_reached = "Du har nået din daglige grænse, sælgeren køber ikke flere varer.",
 		illegal_pawn_shop_id = "Forsøg på at tilføje værdier til en pantebutik, der ikke eksisterer.",
+
 		used_pawn_shop_title = "Brugt Pantebutik",
 		used_pawn_shop_details = "${consoleName} brugte en pantebutik og solgte ${sellAmount} `${itemLabel}` og modtog $${sellPrice}."
 	},
@@ -10237,6 +10332,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 	printer = {
 		use_printer = "[${InteractionKey}] Brug Printer",
+		failed_to_print = "Fejl ved udskrivning.",
 
 		no_paper = "Du har ikke noget papir.",
 		invalid_url = "Ugyldig billed-URL.",
@@ -10245,7 +10341,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		printing = "Printer...",
 
 		printed_logs_title = "Printet billede",
-		printed_logs_details = "${consoleName} har printet et billede med URL'en `${url}`."
+		printed_logs_details = "${consoleName} printede et `${itemName}` ved hjælp af `${paperType}` med billed-URL'en `${url}`."
 	},
 
 	prop_hide = {
@@ -10257,7 +10353,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		no_address_set = "Ingen adresse angivet.",
 		no_address_found = "Ingen adresse fundet på '${address}'.",
 		marker_set = "Marker og vejpunkt sat til ${address}.",
-		removed_marker = "Fjerner markering for ${address}."
+		removed_marker = "Fjerner markering for ${address}.",
+		entrance = "Indgang",
+		back_entrance = "Bagindgang",
+		garage = "Garage"
 	},
 
 	props = {
@@ -10549,13 +10648,20 @@ OP.Global.Locales.Languages["da-DK"] = {
 		exiting = "Forlader...",
 		problems = "Problemer:",
 		profile_gamma_not_18 = "Din 'gamma' indstilling er ikke sat til standardværdien. Dette reducerer konsistensen og kvaliteten af ​​billeder genereret af din klient. For at rette dette, skriv 'profile_gamma 18' i din F8-konsol. Du vil ikke få job, før dette er gjort. Du skal være på 'beta' eller 'latest' versionen af FiveM for at kunne gøre dette. Du kan ændre det i FiveM hovedmenuen.",
-		screenshot_blackscreen = "Dine skærmbilleder viser en sort skærm. Du skal løse problemet med, at dit spil ikke kan tages skærmbilleder, før du kan få flere job. Dette kan skyldes antivirus. For at prøve at oprette billeder igen, skal du indtaste dette interface igen.",
+		banned = "Udelukket:",
+		banned_information = "Nogle spillere skaber billeder, der ikke lever op til forventningerne. Dette reducerer konsekvensen på portrætterne og selfies'ene. Dette sker normalt, når din opløsning er for lav, grafiske indstillinger er for lave eller der bruges visuelle modifikationer. Mens visuelle modifikationer er acceptable, er oversaturatede eller undersaturatede visuelle effekter ikke. Visuelle modifikationer gør ofte farverne meget ekstreme eller meget triste (får karaktererne til at se døde ud på portrætterne).",
+		banned_unban = "Hvis du ønsker at fortsætte med at tage skærmbilleder, kan du selv fjerne dit ban op til 3 gange. Inden du gør det, bør du dog forbedre dit spilgrafik for at undgå at blive banned igen. Øge grafiske indstillinger samt reducere intensiteten af ​​visuelle mods vil hjælpe.",
+		unban = "Fjern ban (${unbansLeft} tilbage)",
 
 		screenshotting_start_logs_title = "Start af Skærmbilleder",
 		screenshotting_start_logs_details = "${consoleName} startede med at tage skærmbilleder.",
 
 		screenshotting_stop_logs_title = "Stop af Skærmbilleder",
-		screenshotting_stop_logs_details = "${consoleName} stoppede med at tage skærmbilleder."
+		screenshotting_stop_logs_details = "${consoleName} stoppede med at tage skærmbilleder.",
+
+		user_does_not_exist = "Denne bruger findes ikke.",
+		screenshotter_already_banned = "Denne skærmbilledet er allerede banned.",
+		screenshotter_banned = "Denne skærmbilledet er nu banned."
 	},
 
 	scuba = {
@@ -10667,8 +10773,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		speed = "Hastighed (${speedLevel})",
 		rotation = "Rotation (${rotationLevel})",
 		clear_bullet_impacts = "Fjern kuglehuller",
-		illegal_shooting_spot_value = "Forsøger at overføre ugyldige værdier for skydesteder.",
-		illegal_shooting_spot_id = "Forsøger at overføre værdier for et skydested, der ikke eksisterer.",
 		not_enough_cash = "Du har ikke nok kontanter."
 	},
 
@@ -10920,7 +11024,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		time_parameters_invalid = "Ugyldige time- eller minute-parametre.",
 		time_currently_transitioning = "Tiden er i øjeblikket i overgang, vent venligst.",
 		time_successfully_transitioned = "Tiden blev skiftet til '${hour}:${minute}' med succes.",
-		time_successfully_set = "Tiden blev sat til '${hour}:${minute}' med succes."
+		time_successfully_set = "Tiden blev sat til '${hour}:${minute}' med succes.",
+
+		developer_ambience_on = "Udvikler atmosfære tændt.",
+		developer_ambience_off = "Udvikler atmosfære slukket."
 	},
 
 	tablet = {
@@ -11137,6 +11244,11 @@ OP.Global.Locales.Languages["da-DK"] = {
 		tp_airport = "LS Lufthavn",
 		tp_carrier = "Flydebro",
 		tp_cayo = "Cayo Perico",
+
+		actions = "Handlinger",
+		wander_around = "Gå rundt",
+		speed_around = "Hurtig rundt",
+		clear_tasks = "Ryd opgaver",
 
 		you_are_not_in_a_vehicle = "Du er ikke i et køretøj.",
 		you_are_in_a_vehicle = "Du er i øjeblikket i et køretøj.",
@@ -11405,6 +11517,23 @@ OP.Global.Locales.Languages["da-DK"] = {
 		muted_logs_title = "undefined",
 		muted_logs_details = "undefined",
 		unmuted_logs_details = "undefined"
+	},
+
+	wallhack = {
+		wallhack_on = "Wallhack aktiv.",
+		wallhack_off = "Wallhack deaktiveret.",
+
+		wallhack_failed = "Kunne ikke aktivere wallhack.",
+		wallhack_everyone = "Wallhack aktiveret for alle.",
+		wallhack_self = "Wallhack aktiveret for dig selv.",
+		wallhack_player = "Wallhack aktiveret for ${displayName}.",
+
+		wallhack_everyone_logs_title = "Aktiverede Wallhack for alle",
+		wallhack_everyone_logs_details = "${consoleName} aktiverede wallhack for alle.",
+		wallhack_player_logs_title = "Aktiverede Wallhack for spiller",
+		wallhack_player_logs_details = "${consoleName} aktiverede wallhack for ${targetConsoleName}.",
+		wallhack_self_logs_title = "Aktiverede Wallhack for selv",
+		wallhack_self_logs_details = "${consoleName} aktiverede wallhack for sig selv."
 	},
 
 	washrooms = {
@@ -11726,6 +11855,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		license_utility = "Hjælpeprogram",
 		license_commercial = "Erhvervsmæssig",
 		license_management = "Ledelse",
+		license_passenger = "Passager",
 		license_military = "Militær",
 		license_special = "Særligt Fly",
 		license_boat = "Bådlicens",
@@ -11890,10 +12020,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		vehicle_at_police_impound = "Dit køretøj er i øjeblikket beslaglagt af politiet.",
 		vehicle_at_impound = "Dit køretøj befinder sig på beslaglæggelsesområdet.",
 		waypoint_to_impound = "En rutevejledning til beslaglæggelsesområdet er blevet markeret på din GPS.",
-		unable_to_withdraw = "Kan ikke hente køretøjet, da det i øjeblikket befinder sig på ${location}.",
-		waypoint_to_vehicle = "En rutevejledning til dit køretøj er blevet markeret på din GPS.",
-		vehicle_currently_at = "Dit køretøj kan for øjeblikket findes på ${location}.",
-		vehicle_in_garage = "Dit køretøj er placeret i ${garageName}.",
+		unable_to_withdraw = "Kan ikke trække køretøjet tilbage, da det er pt. ude.",
+		vehicle_in_garage = "Dit køretøj befinder sig i ${garageName}. Et waypoint er blevet markeret på din kort.",
 		insufficient_funds = "Du har ikke nok penge til at tage dette køretøj ud.",
 		error_withdrawing = "Der opstod en fejl, da du forsøgte at tage dit køretøj ud.",
 		withdraw_timeout = "Vent venligst lidt, før du forsøger at tage et andet køretøj ud.",
@@ -11924,15 +12052,12 @@ OP.Global.Locales.Languages["da-DK"] = {
 		garage = "Garage",
 		retrieved_vehicle_logs_title = "Hentet Køretøj",
 		retrieved_vehicle_logs_details = "${consoleName} har hentet køretøjet med nummerplade `${plate}` for ${price}.",
+		no_vehicles_to_sell = "Du har ingen køretøjer at sælge.",
 
 		state_loading_model = "Indlæser Model...",
 		state_withdrawing = "Hæver...",
-
-		state_retrieve_searching = "Søger...",
 		state_retrieving = "Henter...",
-
 		state_storing = "Opbevarer...",
-
 		state_loading = "Indlæser...",
 
 		vehicle_weight = "Vægt: ${weight}",
