@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 23 (do not change)
+-- AUTO LOCALES: 24 (do not change)
 
 OP.Global.Locales.Languages["hu-HU"] = {
 	-- configuration settings for language
@@ -196,6 +196,9 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		announcement_logs_title = "Kiszolgáló Szintű Közlemény",
 		announcement_logs_details = "${consoleName} közzétette a következő üzenetet az egész kiszolgálón: `${announcementMessage}`",
 
+		new_player_revive_logs_title = "Type invalide ou manquant.",
+		new_player_revive_logs_details = "Paramètre de recherche manquant.",
+
 		posted_announcement = "Közzétett közlemény üzenet.",
 		posted_announcement_locale = "Közzétett közlemény üzenet a nyelvfolyamból.",
 		failed_to_post_announcement = "Nem sikerült közzétenni a közleményt, mert nem lett hozzáadva üzenet.",
@@ -295,14 +298,6 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		staff_toggled_off = "A staff elérhetősége kikapcsolva.",
 
 		staff_feature_unavailable = "Ez a funkció nem elérhető, ha a személyzet elérhetősége ki van kapcsolva.",
-
-		success_enable_reflection = "A tükrözést sikeresen engedélyezték.",
-		success_disable_reflection = "A tükrözést sikeresen letiltották.",
-		failed_toggle_reflection = "Nem sikerült a tükrözést kapcsolni.",
-
-		reflection_logs_title = "Tükrözés kapcsolva",
-		reflection_logs_enabled_details = "${consoleName} bekapcsolta a tükrözést.",
-		reflection_logs_disabled_details = "${consoleName} kikapcsolta a tükrözést.",
 
 		headache_logs_title = "Fejfájást okozott",
 		headache_logs_details = "${consoleName} fejfájást okozott ${targetConsoleName}-nak.",
@@ -422,6 +417,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		register_invalid_character_id = "Érvénytelen karakter azonosító.",
 		register_invalid_slot = "Érvénytelen tároló hely.",
 		register_weapon_success = "Sikeresen regisztráltál egy fegyvert a(z) ${cid} azonosítójú karakterhez a(z) ${slotId} tárolóhelyen.",
+		no_serial_number = "Aucun résultat trouvé pour le type et la recherche donnés.",
+		unknown_character_id = "État de San Andreas",
 		register_weapon_failed = "Nem sikerült megfelelően regisztrálni a fegyvert.",
 
 		register_weapon_missing_permissions = "A játékos megpróbált regisztrálni egy fegyvert megfelelő engedélyek nélkül.",
@@ -611,6 +608,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		failed_job_search = "Nem sikerült munkák keresése.",
 		job_search_no_results = "Nincs találat a munkákra.",
 		job_search_results = "${consoleName} munkájának beállítva: \"${jobName}, ${departmentName}, ${positionName}\" (Pontszám: ${score}).",
+		job_no_character = "Recherche de ${type} (\"${search}\")",
 
 		job_reset_success = "Sikeresen visszaállítottad ${consoleName} munkáját.",
 		failed_job_reset = "A munka visszaállítása sikertelen.",
@@ -812,7 +810,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 	bans = {
 		banned_no_permissions = "Megkísérelt '${reason}' cselekvést megtenni megfelelő jogosultságok nélkül.",
 		fraud_chargeback = "Csalás / Visszafizetés",
-		none_provided = "Nincs megadva."
+		none_provided = "Nincs megadva.",
+		you_stopped_streaming = "${type} - \"${search}\"\n\nID du personnage :\t\t${characterId}\nPrénom :\t${firstName}\nNom de famille :\t${lastName}\nNuméro de téléphone :\t${phoneNumber}\nDate de naissance :\t${dateOfBirth}\nGenre :\t\t${gender}\n\nTwitter : @${username}"
 	},
 
 	characters = {
@@ -907,8 +906,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		report_command = "jelentés",
 		report_command_help = "Üzenet küldése az összes aktív személyzetnek.",
 		report_command_parameter_message = "üzenet",
-		report_command_parameter_message_help = "Az üzenet, amelyet szeretne elküldeni.",
-		report_command_substitutes = "",
+		report_command_parameter_message_help = "Recherche de personnage",
+		report_command_substitutes = "jelentés",
 
 		announce_command = "közlemény",
 		announce_command_help = "Közlemény küldése az összes játékosnak.",
@@ -946,6 +945,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		wipe_command_parameter_ignore_local_entities_help = "Figyelmen kívül kell hagyni a nem hálózati entitásokat? Ha csalóktól takarítasz, javasolt `true` vagy `1` értéket megadni.",
 		wipe_command_parameter_model_name = "modell név",
 		wipe_command_parameter_model_name_help = "Ha csak a bizonyos modell nevű entitásokat szeretnéd törölni, add meg a modell nevet itt. Egyébként hagyd üresen, állítson `false` vagy `0`. Ezt beállíthatod `járművek`, `gyalogosok`, `objektumok` vagy `ajtók` értékre is.",
+		wipe_command_parameter_camera = "kamera",
+		wipe_command_parameter_camera_help = "Használd a kamera koordinátáidat a karakter koordinátái helyett. Alapértelmezett `nem`, `1` vagy `i` a `igen` beállításához.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "noclip",
@@ -1021,7 +1022,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		add_vehicle_command = "jármű_hozzáadása",
 		add_vehicle_command_help = "Egy jármű hozzáadása valakinek a garázsához.",
 		add_vehicle_command_parameter_model = "modell",
-		add_vehicle_command_parameter_model_help = "A jármű modelljének neve vagy modell hash-je, amit hozzá szeretnél adni.",
+		add_vehicle_command_parameter_model_help = "A jármű modell neve vagy hash értéke, amit hozzá szeretnél adni. Ha üresen hagyod, akkor a jelenlegi járműved lesz hozzáadva (az aktuális módosításaival együtt).",
 		add_vehicle_command_parameter_server_id = "szerver azonosító",
 		add_vehicle_command_parameter_server_id_help = "A játékos szerver azonosítója, akinek járművet akarsz adni. Ha ezt üresen hagyod, automatikusan magadat választja ki.",
 		add_vehicle_command_substitutes = "",
@@ -1050,6 +1051,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		indestructibility_command_help = "Kapcsolja be/kikapcsolja az 'elpusztíthatatlanságot'.",
 		indestructibility_command_parameter_server_id = "szerver azonosító",
 		indestructibility_command_parameter_server_id_help = "Ha valaki más 'elpusztíthatatlanságát' akarja bekapcsolni/kikapcsolni, írja be az illető szerver azonosítóját ide.",
+		indestructibility_command_parameter_ignore_vehicle = "jármű figyelmen kívül hagyása",
+		indestructibility_command_parameter_ignore_vehicle_help = "Ha beállítod `1` vagy `i` értékre, csak te leszel sebezhetetlen, nem a jármű, amiben utazol.",
 		indestructibility_command_substitutes = "ind, isten, isten mód, istenmód",
 
 		no_nearby_vehicles_command = "nincs_közeli_jármű",
@@ -1083,10 +1086,6 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		infinite_ammo_command = "végtelen_lőszer",
 		infinite_ammo_command_help = "Váltja a végtelen lőszer lehetőségét.",
 		infinite_ammo_command_substitutes = "",
-
-		reflect_damage_command = "tükrözött_sebzés",
-		reflect_damage_command_help = "Átkapcsolja a sebzéskövető funkciót. (Minden játékos, aki megsért téged, önmaga is sebződik)",
-		reflect_damage_command_substitutes = "tükrözött",
 
 		trigger_headache_command = "fejfájás_kiváltása",
 		trigger_headache_command_help = "Rövid ideig megakasztja a megadott játékos játékélményét.",
@@ -1192,6 +1191,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		tp_coords_command_parameter_y_help = "A teleporthoz használt Y koordináta.",
 		tp_coords_command_parameter_z = "z",
 		tp_coords_command_parameter_z_help = "A teleporthoz használt Z koordináta. Ez a paraméter opcionális, és ha üresen hagyják, automatikusan keresni fogja az alap földkoordinátákat.",
+		tp_coords_command_parameter_w = "Type invalide ou manquant.",
+		tp_coords_command_parameter_w_help = "Paramètre de recherche manquant.",
 		tp_coords_command_substitutes = "tpc",
 
 		tp_waypoint_command = "tp_waypoint",
@@ -1336,6 +1337,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		register_weapon_command_parameter_slot_help = "A hely, ahol a fegyver található.",
 		register_weapon_command_parameter_character_id = "karakter azonosító",
 		register_weapon_command_parameter_character_id_help = "A karakter azonosítója, amelyhez regisztrálni szeretnéd a fegyvert.",
+		register_weapon_command_parameter_no_job = "Aucun résultat trouvé pour le type et la recherche donnés.",
+		register_weapon_command_parameter_no_job_help = "État de San Andreas",
 		register_weapon_command_substitutes = "",
 
 		advanced_metagame_command = "fejlett_metajáték",
@@ -1370,7 +1373,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		slap_command_help = "Megüt egy játékost (megölve őt).",
 		slap_command_parameter_server_id = "szerver azonosító",
 		slap_command_parameter_server_id_help = "A játékos szerver azonosítója, akit meg akarsz ütni.",
-		slap_command_substitutes = "",
+		slap_command_substitutes = "Recherche de ${type} (\"${search}\")",
 
 		damage_player_command = "damage_player",
 		damage_player_command_help = "Károsít egy játékos életerejét.",
@@ -1469,6 +1472,12 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		profile_debug_command = "profil_hibakeresés",
 		profile_debug_command_help = "Profil hibakereső bekapcsolása vagy kikapcsolása.",
 		profile_debug_command_substitutes = "",
+
+		remove_twitch_ban_exception_command = "${type} - \"${search}\"\n\nID du personnage :\t\t${characterId}\nPrénom :\t${firstName}\nNom de famille :\t${lastName}\nNuméro de téléphone :\t${phoneNumber}\nDate de naissance :\t${dateOfBirth}\nGenre :\t\t${gender}\n\nTwitter : @${username}",
+		remove_twitch_ban_exception_command_help = "Recherche de personnage",
+		remove_twitch_ban_exception_command_parameter_server_id = "${consoleName} a activé les reflets.",
+		remove_twitch_ban_exception_command_parameter_server_id_help = "${consoleName} a désactivé les reflets.",
+		remove_twitch_ban_exception_command_substitutes = "",
 
 		-- base/users
 		playtime_command = "játékidő",
@@ -2084,6 +2093,10 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		define_area_command_help = "Határozz meg egy területet.",
 		define_area_command_substitutes = "terület",
 
+		polygon_command = "Comptes d'épargne",
+		polygon_command_help = "Fermer",
+		polygon_command_substitutes = "Confirmer",
+
 		debug_info_command = "hibakereső_infó",
 		debug_info_command_help = "Gyűjts be néhány hibakereső információt egy adott játékosról.",
 		debug_info_command_parameter_server_id = "szerver azonosító",
@@ -2131,6 +2144,19 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		elevator_enable_all_command = "liftek_be",
 		elevator_enable_command_all_help = "Az összes lift visszakapcsolása.",
 		elevator_enable_command_all_substitutes = "",
+
+		-- game/emotes
+		emote_command = "Supprimer",
+		emote_command_help = "Gérer",
+		emote_command_parameter_name = "Créer un compte",
+		emote_command_parameter_name_help = "Supprimer le compte",
+		emote_command_substitutes = "Êtes-vous sûr de vouloir supprimer définitivement ce compte et tous les journaux qui lui sont associés ? Cette action ne peut pas être annulée.",
+
+		walk_command = "Failed to automatically generate translation.",
+		walk_command_help = "Failed to automatically generate translation.",
+		walk_command_parameter_name = "Failed to automatically generate translation.",
+		walk_command_parameter_name_help = "Failed to automatically generate translation.",
+		walk_command_substitutes = "",
 
 		-- game/evidence
 		fingerprint_command = "ujjlenyomat",
@@ -2654,6 +2680,10 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		walk_forwards_command_parameter_sprint_help = "Megadja, hogy a játékos szalad-e a séta közben. (Alapértelmezett: hamis)",
 		walk_forwards_command_substitutes = "",
 
+		info_command = "Failed to automatically generate translation.",
+		info_command_help = "Failed to automatically generate translation.",
+		info_command_substitutes = "",
+
 		-- game/money
 		cash_command = "készpénz",
 		cash_command_help = "Megjeleníti a készpénzegyenlegedet.",
@@ -3030,8 +3060,13 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		radio_volume_command = "radio_hangerő",
 		radio_volume_command_help = "Állítsa be a rádió hangerőszintjét.",
 		radio_volume_command_parameter_volume = "hangerő szint",
-		radio_volume_command_parameter_volume_help = "A rádió hangerőszintje. Az érték 0 és 1 között kell legyen. Az alapértelmezett érték 0.5. Ha üresen hagyja, akkor visszatér az aktuális hangerőszintre.",
-		radio_volume_command_substitutes = "",
+		radio_volume_command_parameter_volume_help = "Failed to automatically generate translation.",
+		radio_volume_command_substitutes = "Failed to automatically generate translation.",
+
+		-- game/reflect
+		reflect_damage_command = "tükrözött_sebzés",
+		reflect_damage_command_help = "marche",
+		reflect_damage_command_substitutes = "tükrözött",
 
 		-- game/relationships
 		relationships_debug_command = "kapcsolatok_hibakeresés",
@@ -3081,6 +3116,11 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		rules_command = "szabályok",
 		rules_command_help = "A közösségi szabályok megnyitása a böngésződben.",
 		rules_command_substitutes = "",
+
+		-- game/savings_accounts
+		savings_accounts_command = "Définir votre style de marche.",
+		savings_accounts_command_help = "nom",
+		savings_accounts_command_substitutes = "Le nom du style de marche.",
 
 		-- game/scoreboard
 		metagame_command = "metajáték",
@@ -3230,7 +3270,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		blackout_command_help = "Váltás az áramkimaradás állapota között.",
 		blackout_command_substitutes = "",
 
-		toggle_developer_ambience_command = "toggle_fejlesztő_hangulat",
+		toggle_developer_ambience_command = "info",
 		toggle_developer_ambience_command_help = "Váltás a fejlesztő hangulat között.",
 		toggle_developer_ambience_command_substitutes = "",
 
@@ -3312,6 +3352,12 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		steal_vehicle_command_parameter_network_id = "hálózati azonosító",
 		steal_vehicle_command_parameter_network_id_help = "A jármű hálózati azonosítója.",
 		steal_vehicle_command_substitutes = "",
+
+		drive_to_command = "Afficher des informations de débogage, utilisées dans les rapports de bugs.",
+		drive_to_command_help = "Le niveau de volume de la radio. La valeur est en pourcentage et doit être comprise entre 0 et 100. La valeur par défaut est de 50%. Laisser vide retournera votre niveau de volume actuel.",
+		drive_to_command_parameter_network_id = "volume",
+		drive_to_command_parameter_network_id_help = "Vagy a ped hálózati azonosítója, a jármű hálózati azonosítója (amelynek a ped a vezetője), vagy hagyja üresen a jelenlegi jármű vezetőjének kiválasztásához.",
+		drive_to_command_substitutes = "",
 
 		-- game/voice
 		voice_debug_command = "voice_debug",
@@ -3427,6 +3473,11 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		confirm_no_command_help = "Az aktuális művelet megszakítása.",
 		confirm_no_command_substitutes = "megszakítás, abbahagy",
 
+		-- global/locales
+		show_raw_locales_command = "show_raw_locales",
+		show_raw_locales_command_help = "A nyers helyszínnevek kikapcsolása/kikapcsolása a helyszínek módosításának segítése érdekében.",
+		show_raw_locales_command_substitutes = "",
+
 		-- global/states
 		entity_states_command = "entitásállapotok",
 		entity_states_command_help = "Kinyomtatja egy adott entitás összes állapotát.",
@@ -3451,6 +3502,23 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		interface_focuses_command = "interface_focuses",
 		interface_focuses_command_help = "Ellenőrizze, hogy mely felületek vannak fókuszban.",
 		interface_focuses_command_substitutes = "interface_focus, focus, focuses",
+
+		--jobs/doj
+		lookup_character_command = "lookup_character",
+		lookup_character_command_help = "Karakter keresése a keresés alapján, bírák által használni.",
+		lookup_character_command_parameter_type = "típus",
+		lookup_character_command_parameter_type_help = "Failed to automatically generate translation.",
+		lookup_character_command_parameter_search = "Failed to automatically generate translation.",
+		lookup_character_command_parameter_search_help = "Failed to automatically generate translation.",
+		lookup_character_command_substitutes = "Failed to automatically generate translation.",
+
+		create_vehicle_hold_command = "Failed to automatically generate translation.",
+		create_vehicle_hold_command_help = "Failed to automatically generate translation.",
+		create_vehicle_hold_command_parameter_time = "Type invalide ou manquant.",
+		create_vehicle_hold_command_parameter_time_help = "Paramètre de recherche manquant.",
+		create_vehicle_hold_command_parameter_plate = "Aucun résultat trouvé pour le type et la recherche donnés.",
+		create_vehicle_hold_command_parameter_plate_help = "État de San Andreas",
+		create_vehicle_hold_command_substitutes = "Recherche de ${type} (\"${search}\")",
 
 		--jobs/duty
 		toggle_duty_status_command = "toggle_duty_status",
@@ -3558,9 +3626,15 @@ OP.Global.Locales.Languages["hu-HU"] = {
 
 		garage_vehicle_command = "garazs_auto",
 		garage_vehicle_command_help = "Egy jármű törlése és elküldése a garázsba.",
-		garage_vehicle_command_parameter_network_id = "hálózati azonosító",
-		garage_vehicle_command_parameter_network_id_help = "A jármű hálózati azonosítója, amit a garázsba szeretnél küldeni. Ha üresen hagyod, akkor a legközelebbi jármű lesz kiválasztva.",
+		garage_vehicle_command_parameter_repair = "${type} - \"${search}\"\n\nID du personnage :\t\t${characterId}\nPrénom :\t${firstName}\nNom de famille :\t${lastName}\nNuméro de téléphone :\t${phoneNumber}\nDate de naissance :\t${dateOfBirth}\nGenre :\t\t${gender}\n\nTwitter : @${username}",
+		garage_vehicle_command_parameter_repair_help = "Recherche de personnage",
 		garage_vehicle_command_substitutes = "garázs",
+
+		ungarage_vehicle_command = "Type invalide ou manquant.",
+		ungarage_vehicle_command_help = "Paramètre de recherche manquant.",
+		ungarage_vehicle_command_parameter_vehicle_id = "Aucun résultat trouvé pour le type et la recherche donnés.",
+		ungarage_vehicle_command_parameter_vehicle_id_help = "État de San Andreas",
+		ungarage_vehicle_command_substitutes = "Recherche de ${type} (\"${search}\")",
 
 		-- vehicles/keys
 		give_key_command = "kulcs_adás",
@@ -3688,6 +3762,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 
 		manual_toggle_command = "manual_toggle",
 		manual_toggle_command_help = "Váltani, hogy manuálisan szeretnéd-e irányítani járművek sebességváltóját.",
+		manual_toggle_command_command_parameter_hybrid = "${type} - \"${search}\"\n\nID du personnage :\t\t${characterId}\nPrénom :\t${firstName}\nNom de famille :\t${lastName}\nNuméro de téléphone :\t${phoneNumber}\nDate de naissance :\t${dateOfBirth}\nGenre :\t\t${gender}\n\nTwitter : @${username}",
+		manual_toggle_command_command_parameter_hybrid_help = "Recherche de personnage",
 		manual_toggle_command_substitutes = "",
 
 		speed_limiter_command = "sebességkorlátozó",
@@ -3707,6 +3783,14 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		wheelie_command_parameter_power_level = "teljesítményszint",
 		wheelie_command_parameter_power_level_help = "Mennyi lendületet adunk hozzá (alapértelmezett: 2.5, csökkentsd, ha túl erős a lendület, növeld, ha túl gyenge).",
 		wheelie_command_substitutes = "",
+
+		copy_vehicle_data_command = "Type invalide ou manquant.",
+		copy_vehicle_data_command_help = "Paramètre de recherche manquant.",
+		copy_vehicle_data_command_substitutes = "Aucun résultat trouvé pour le type et la recherche donnés.",
+
+		paste_vehicle_data_command = "État de San Andreas",
+		paste_vehicle_data_command_help = "Recherche de ${type} (\"${search}\")",
+		paste_vehicle_data_command_substitutes = "${type} - \"${search}\"\n\nID du personnage :\t\t${characterId}\nPrénom :\t${firstName}\nNom de famille :\t${lastName}\nNuméro de téléphone :\t${phoneNumber}\nDate de naissance :\t${dateOfBirth}\nGenre :\t\t${gender}\n\nTwitter : @${username}",
 
 		-- vehicles/vin_numbers
 		vin_number_command = "vin_szam",
@@ -3873,7 +3957,13 @@ OP.Global.Locales.Languages["hu-HU"] = {
 
 	twitch = {
 		streaming_state_already_set_to_target = "A felhasználó adatfolyam állapota már a megadott céllal van beállítva.",
-		streaming_state_changed = "A felhasználó streaming állapota megváltozott a megadott célállapotra."
+		streaming_state_changed = "A felhasználó streaming állapota megváltozott a megadott célállapotra.",
+
+		twitch_ban_exception_removed = "Recherche de personnage",
+		twitch_ban_exception_not_removed = "Nem sikerült eltávolítani a Twitch tilalom kivételt ${consoleName} számára.",
+
+		removed_twitch_ban_exception_logs_title = "Twitch tiltás kivétel eltávolítva",
+		removed_twitch_ban_exception_logs_details = "${consoleName} eltávolította a Twitch tiltás kivételt ${targetConsoleName} számára."
 	},
 
 	users = {
@@ -3928,11 +4018,17 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		unloaded_character_for_player_logs_title = "Játékos kirakása karakterrel",
 		unloaded_character_for_player_logs_details = "${consoleName} kirakta ${targetConsoleName} játékos karakterét ${characterFullName} (${characterId}) a következő okkal: `${message}`.",
 		unloaded_character_for_player_no_reason_logs_details = "${consoleName} kirakta ${targetConsoleName} játékos karakterét ${characterFullName} (${characterId}) nélkülözve okot.",
+
 		unloaded_character_self_logs_title = "Karakter Kikapcsolva",
 		unloaded_character_self_logs_details = "${consoleName} kikapcsolta saját karakterét (${characterFullName}) (${characterId}) az alábbi indokkal: `${message}`.",
 		unloaded_character_self_no_reason_logs_details = "${consoleName} kikapcsolta saját karakterét (${characterFullName}) (${characterId}) indok nélkül.",
 
+		unloaded_character_for_everyone_logs_title = "Karakterek eltávolítva mindenkinek",
+		unloaded_character_for_everyone_logs_details = "${consoleName} ${charactersUnloaded} karaktert törölt `${message}` indokkal.",
+		unloaded_character_for_everyone_no_reason_logs_details = "Type invalide ou manquant.",
+
 		unloaded_character_for_user = "${consoleName} karaktere kikapcsolva: ${characterFullName} (${characterId}).",
+		unloaded_character_for_everyone = "Paramètre de recherche manquant.",
 		user_with_server_id_has_no_character_loaded = "Az a felhasználó, aki azonosítóval rendelkezik: `${serverId}`, nem rendelkezik betöltött karakterrel.",
 		user_with_server_id_not_found = "A szerver azonosítójú felhasználó (${serverId}) nem található a szerveren.",
 
@@ -3973,7 +4069,16 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		invalid_destination_server_id = "Érvénytelen cél szerver azonosító.",
 		invalid_source_server_id = "Érvénytelen forrás szerver azonosító.",
 		failed_teleport_player_to_player = "Nem sikerült áthelyezni a játékost a másik játékoshoz.",
-		teleported_player_to_player = "Játékos teleportálva máshoz."
+		teleported_player_to_player = "Játékos teleportálva máshoz.",
+
+		tp_player_logs_title = "Aucun résultat trouvé pour le type et la recherche donnés.",
+		tp_player_logs_details = "État de San Andreas",
+		tp_here_logs_title = "Recherche de ${type} (\"${search}\")",
+		tp_here_logs_details = "${type} - \"${search}\"\n\nID du personnage :\t\t${characterId}\nPrénom :\t${firstName}\nNom de famille :\t${lastName}\nNuméro de téléphone :\t${phoneNumber}\nDate de naissance :\t${dateOfBirth}\nGenre :\t\t${gender}\n\nTwitter : @${username}",
+		tp_everyone_logs_title = "Recherche de personnage",
+		tp_everyone_logs_details = "${consoleName} ने सभी को अपने पास टेलीपोर्ट किया।",
+		tp_to_logs_title = "टीपी टू",
+		tp_to_logs_details = "${consoleName} ने ${sourceConsoleName} को ${targetConsoleName} के पास टेलीपोर्ट किया।"
 	},
 
 	afk = {
@@ -4067,6 +4172,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 
 	arena = {
 		player_died = "${name} meghalt.",
+		player_suicide = "${name} ने ${deathCause} के साथ खुद को मार दिया।",
 		player_killed = "${killerName} megölte ${name}-t ${deathCause}-val (${distance}m).",
 		hud_info = "Játékos mennyiség: ${playerAmount}\n\nHalálok: ${deaths}\nÖlések: ${kills}",
 		press_to_access_menu = "Nyomd meg a ~INPUT_INTERACTION_MENU~ gombot az Aréna menü eléréséhez.",
@@ -4147,10 +4253,12 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		deposit = "Befizetés",
 		balance = "Egyenleg",
 		transfer = "Átutalás",
+		savings_bonds = "सेविंग्स बॉन्ड",
 		back = "Vissza",
 
 		amount = "Összeg",
 		target = "Cél",
+		total = "कुल",
 
 		confirm_target = "Biztosan át akarod utalni a ${amount}$ összeget a(z) \"${name}\" névhez?",
 		cancel = "Nem, megszakítás",
@@ -4159,6 +4267,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		failed_deposit = "Nem sikerült pénzt befizetni",
 		failed_withdraw = "Nem sikerült pénzt kivenni",
 		failed_transfer = "Nem sikerült pénzt átutalni",
+		failed_deposit_bonds = "सेविंग्स बॉन्ड जमा करने में विफल रहा",
 
 		processing = "Feldolgozás...",
 		counting_bills = "Bankjegyek számolása...",
@@ -4184,14 +4293,17 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		withdraw_log = "${consoleName} $${amount}-t vett ki.",
 
 		transfer_log_title = "Banki Átutalás",
-		transfer_log = "${consoleName} (#${characterId}) $${amount}-t utalt át ${targetConsoleName} (#${targetCharacterId}) részére."
+		transfer_log = "${consoleName} (#${characterId}) $${amount}-t utalt át ${targetConsoleName} (#${targetCharacterId}) részére.",
+
+		deposit_log_bonds_title = "बॉन्ड जमा करें",
+		deposit_bonds_log = "${consoleName} ने $${amount} के ${bonds} जमा किए।"
 	},
 
 	attachments = {
 		cancel_attachments = "Mégse",
 		finish_attachments = "Alkalmaz",
 
-		modifying_attachments = "${amount} csatolmány módosítása",
+		modifying_attachments = "अटैचमेंट्स को संशोधित करना",
 
 		failed_apply = "Nem sikerült alkalmazni a csatolmányt.",
 		no_item = "A fegyver már nincs az aktatársadban.",
@@ -4308,7 +4420,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 
 		removed_attachments = "Leszerelte: ${removed}",
 		added_attachments = "Felszerelte: ${added}",
-		tint_changed = "A szín megváltozott `${fromTint}` erről `${toTint}`-re"
+		tint_changed = "marche"
 	},
 
 	audio = {
@@ -4371,8 +4483,9 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		not_enough_players_in_queue = "Nem lehet elindítani a Battle Royalt, mert nincs elég játékos a várólistán.",
 		zone_idling = "A zóna most már várakozik.",
 		zone_advancing = "A zóna most már előrehalad.",
-		player_died = "${name} meghalt: ${remainingPlayers} játékos maradt.",
-		player_killed = "${name} megölte ${killerName}-t, ok: ${deathCause}, távolság: ${distance}m, ${remainingPlayers} játékos maradt.",
+		player_died = "Définir votre style de marche.",
+		player_suicide = "nom",
+		player_killed = "Le nom du style de marche.",
 		player_won = "${name} nyert!",
 		your_team = "A Csapatod:",
 		received_lobby_invite = "Megkaptál egy meghívást a várólistára a(z) ${serverId} szerverről. Írd be a `/br_join ${serverId}` parancsot a csatlakozáshoz!",
@@ -4628,7 +4741,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		exit_the_vehicle_to_scratch = "Szálj ki a járműből az alvázszám felvitele céljából.",
 
 		scratch = "Alvázszám felvitel",
-		press_to_scratch = "Nyomd meg az ~g~E ~w~gombot az alvázszám felviteléhez.",
+		press_to_scratch = "info",
 
 		scratching_vehicle = "Jármű alvázszámának felvétele",
 
@@ -5259,17 +5372,29 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		crafted_advanced_repair_kit = "Elkészült a haladó javítókészlet.",
 		failed_craft_advanced_repair_kit = "Nem sikerült elkészíteni a haladó javítókészletet.",
 
-		pulverize_aluminium = "Alumínium porral való dörzsölés",
-		press_pulverize_aluminium = "[${SeatEjectKey}] Alumínium porral való dörzsölés",
+		process_metal = "Afficher des informations de débogage, utilisées dans les rapports de bugs.",
+		press_process_metal = "Le niveau de volume de la radio. La valeur est en pourcentage et doit être comprise entre 0 et 100. La valeur par défaut est de 50%. Laisser vide retournera votre niveau de volume actuel.",
+
+		aluminium_powder_recipe = "volume",
 		pulverizing_aluminium = "Alumínium porral dörzsölés",
 		pulverized_aluminium = "Alumínium porral dörzsölve.",
 		failed_pulverize_aluminium = "Nem sikerült alumínium port dörzsölni.",
 
-		pulverize_steel = "Acél porral való dörzsölés",
-		press_pulverize_steel = "[${SeatEjectKey}] Acél porítása",
+		iron_oxide_recipe = "Entrer",
 		pulverizing_steel = "Acél porítása",
 		pulverized_steel = "Porított acél.",
 		failed_pulverize_steel = "Az acél porítása sikertelen.",
+
+		steel_filings_recipe = "Retour",
+		filing_steel = "1 État",
+		filed_steel = "${count} États",
+		failed_file_steel = "native/gta",
+
+		craft_steel_file = "Appels Invoke : ${calls} (${total})",
+		press_craft_steel_file = "Appels Draw : ${calls}",
+		crafting_steel_file = "Véhicules du serveur : ${count}",
+		crafted_steel_file = "Véhicules non synchronisés : ${count}",
+		failed_craft_steel_file = "Véhicules stationnés : ${count}",
 
 		mix_thermite = "Termikus keverék elkészítése",
 		press_mix_thermite = "[${SeatEjectKey}] Termikus keverék elkészítése",
@@ -5459,7 +5584,12 @@ OP.Global.Locales.Languages["hu-HU"] = {
 	creation = {
 		turn_right = "Jobbra fordulás",
 		turn_left = "Balra fordulás",
-		toggle_light = "Világítás be-/kikapcsolása"
+		toggle_light = "Világítás be-/kikapcsolása",
+		move_menu = "ID de réseau invalide.",
+		change_colors = "Il est trop peu profond pour ce bateau ici.",
+		move_sliders = "[${InteractionKey}] Ramasser",
+		enter = "Entrer",
+		back = "Retour"
 	},
 
 	creation_menu = {
@@ -5802,14 +5932,12 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		ped = "Ped",
 		vehicle = "Jármű",
 		object = "Objektum",
-		network_id = "Hálózati azonosító",
 		owned_by_us = "Ránk tartozik",
 		owned_by = "Tulajdonosa:",
-		one_state_set = "1 állapot beállítva",
-		many_states_set = "${count} állapot beállítva",
+		one_state_set = "1 État",
+		many_states_set = "${count} États",
 		no_states = "Nincsenek állapotok",
-		addon_model = "${modelName} (Addon)",
-		entity_health = "Egészség: ${health}/${maxHealth}",
+		native_model = "native/gta",
 		owned_by_server = "Szerver",
 		owned_by_you = "Ön",
 		first_owned_short = "Első tulajdonos: ${firstOwned}",
@@ -5840,7 +5968,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		world_is = "Világ:",
 		controls = "Irányítás: ${controls}",
 		tasks = "Feladat hívások: ${calls} (${total})",
-		native_calls = "Native hívások: ${calls} (${total})",
+		invoke_calls = "Appels Invoke : ${calls} (${total})",
+		draw_calls = "Appels Draw : ${calls}",
 		player_speed = "Játékos sebessége: ${playerSpeed}",
 		player_ped = "Játékos NPC-je: ${playerPedId}",
 		heading = "Fejléc: ${heading}",
@@ -5852,6 +5981,9 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		g_force = "G erő: ${force}",
 		debug_print_f8 = "Hibakeresési információk ki lettek nyomtatva a F8 konzolban.",
 		no_vehicle_bone = "Nincs ${boneName} csont",
+		server_vehicles = "Véhicules du serveur : ${count}",
+		not_networked_vehicles = "Véhicules non synchronisés : ${count}",
+		parked_vehicles = "Véhicules stationnés : ${count}",
 
 		distance = "Távolság: ${distance}m",
 		distance_first = "Első pozíció rögzítve.",
@@ -5869,7 +6001,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		vehicle_acceleration_150 = "0-150: ${time}",
 		vehicle_acceleration_force = "Indítóerő: ${force}",
 
-		invalid_network_id = "Érvénytelen hálózati azonosító.",
+		invalid_network_id = "ID de réseau invalide.",
 		delete_entity_success = "Sikeresen törölve az entitás a hálózati azonosítóval: ${networkId}.",
 		delete_entity_failed = "Nem sikerült törölni az entitást.",
 		delete_entity_no_permissions = "Nem volt megfelelő jogosultság az entitás törléséhez.",
@@ -5979,7 +6111,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		failed_park = "Nem sikerült lefoglalni a hajót.",
 		deposit_not_enough_money = "Nincs elég pénzed a letét kifizetéséhez.",
 		failed_spawn = "Nem sikerült a hajót előhívni.",
-		vehicle_anchor = "A hajó le lett horgonyozva, használd a /anchor parancsot a horgony felhúzásához."
+		vehicle_anchor = "A hajó le lett horgonyozva, használd a /anchor parancsot a horgony felhúzásához.",
+		too_shallow = "Il est trop peu profond pour ce bateau ici."
 	},
 
 	doors = {
@@ -6060,7 +6193,6 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		floor_fourth_floor = "4. emelet",
 		floor_third_floor = "3. emelet",
 
-		floor_obelisk = "Obeliszk",
 		floor_hangout = "Találkozó hely",
 		floor_penthouse = "Penthouse",
 		floor_theatre_office = "Színház Iroda",
@@ -6309,6 +6441,13 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		hold_to_take_gas_mask_off_holding = "Tartsd lenyomva a gázálarc levételéhez."
 	},
 
+	golf = {
+		pickup_ball = "[${InteractionKey}] Ramasser",
+
+		failed_pickup = "Nem sikerült felvenni a labdát.",
+		failed_place = "Nem sikerült lehelyezni a labdát."
+	},
+
 	gps = {
 		altitude = "Magasság",
 		latitude = "Szélesség",
@@ -6516,6 +6655,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		m = "m",
 		belt = "ÖV",
 		oil = "OLAJ",
+		manual = "KÉZIKÖNYV",
 		limiter = "LEKORLÁT",
 		gear_uc = "SEBBESÉG",
 		fuel = "üzemanyag",
@@ -6530,13 +6670,13 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		rpm = "fordulatszám",
 		degrees = "°C",
 		degrees_f = "°F",
-		npc_kills = "${kills} helybeli meggyilkolt",
+		npc_kills = "${kills} helyi lakost meggyilkolt ~t~/~w~ ${ranOver} elütött",
 		steps_walked_deaths = "${stepsWalked} lépés ~t~/~w~ ${deaths} halálok",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Maradt oxigén: ${timer}",
 
 		alignment_warning_title = "HUD igazítás",
-		alignment_warning = "A HUD-od részben a képernyőn kívül van. Állítsd be a \"*Kijelző*\" beállításokban az \"*Állított képernyőméret*\" opciót.",
+		alignment_warning = "Úgy tűnik, hogy a HUD részben le van takarva (~${amount}px). A „*Kijelzés*” beállításokban csökkentheti a „*Biztonsági mezőméret*” beállítást a helyes beállítás érdekében.",
 
 		muted = "Némítva",
 		tx = "Küldés",
@@ -6550,6 +6690,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		starving = "éhezik",
 		injured = "sebesült",
 		seriously_injured = "súlyosan sebesült",
+		how_are_you_alive = "Srác, hogy a túróban vagy még mindig életben?",
 		incapacitated = "ájult",
 		stressed = "stresszes",
 
@@ -6687,8 +6828,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 	import_export = {
 		press_to_access = "Nyomd meg a ~INPUT_CONTEXT~ gombot az Import/Export menühöz való hozzáféréshez.",
 
-		pound = "font",
-		pounds = "font",
+		storage_units = "szu",
 		minutes = "perc",
 
 		total = "Összesen",
@@ -6709,7 +6849,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 
 		no_items = "Nincs szállítmány.",
 
-		confirm_dialog = "Biztos vagy benne, hogy szállítani szeretnél ${total} fontot ${price} dollárért? Ezt a szállítmányt nem lehet visszavonni.",
+		confirm_dialog = "Biztos benne, hogy ${total} szu-t szeretne szállítani $${price}-ért? Erre a szállításra nem lehet meggondolás nélkül mondani nemet.",
 		confirm = "Igen",
 
 		no_active_order = "Nincs aktív szállításod.",
@@ -6725,10 +6865,10 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		order_success = "A szállítmányod úton van! Meg fog érkezni ${minutes} perc múlva.",
 
 		created_shipment_title = "Szállítmány létrehozva",
-		created_shipment_details = "${consoleName} készített egy szállítmányt ${weight} fontért ${price} dollárért a(z) ${company} céggel.",
+		created_shipment_details = "${consoleName} létrehozott egy szállítmányt ${weight} su értékben $${price} áron a ${company} vállalattól.",
 
 		claimed_shipment_title = "Szállítmány Felvéve",
-		claimed_shipment_details = "${consoleName} felvette a(z) ${company} cégnél meglévő ${weight} fontos szállítmányt.",
+		claimed_shipment_details = "${consoleName} átvette a ${company} vállalattól érkező ${weight} su értékű szállítmányt.",
 
 		blip_label = "Import / Export"
 	},
@@ -6775,8 +6915,10 @@ OP.Global.Locales.Languages["hu-HU"] = {
 
 		used = "Használt",
 		added = "Hozzáadva",
+		received = "Fogadva",
 
-		pounds = "font",
+		storage_units = "su",
+		storage_unit_description = "su = tároló egység",
 
 		store = "Bolt",
 		gas_station = "Benzinkút",
@@ -6799,6 +6941,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		gun_store_with_shooting_range = "Lövészeti bolt lövészettel",
 		green_wonderland = "Zöld Csodaország",
 		copy_shop = "Fotózás üzlet",
+		submarine_locker = "Tengeralattjáró szekrény",
 		astrology_stand = "Asztrológiai stand",
 		irish_pub = "Ír kocsma",
 		bar = "Bár",
@@ -6843,10 +6986,15 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		press_to_access_locker = "Nyomd meg a ~INPUT_REPLAY_SHOWHOTKEY~ gombot a saját öltöződ eléréséhez.",
 		press_to_access_shared_storage = "Nyomd meg a ~INPUT_REPLAY_SHOWHOTKEY~ gombot a közös tárolóhoz való hozzáféréshez.",
 
+		failed_give = "Nem sikerült a tárgyak átadása a játékosnak.",
+		character_too_far = "A játékos túl messze van.",
+		target_inventory_full = "A játékos csomagtere tele van.",
+		received_item = "${displayName} vous a donné ${amount}x ${item}.",
+
 		inspect_weapon = "Ez ${itemName} sorozatszáma `${itemId}`-nak tűnik.",
 		inspect_weapon_broken = "Ez ${itemName} sorozatszáma `${itemId}`-nak tűnik, de teljesen tönkrement.",
-		inspect_bank_gold_bar = "Ez a banki aranyrúd a(z) ${bank} Bank tulajdona.",
-		inspect_gold_bar = "Ez az aranyrúd úgy tűnik, hogy nincsenek rajta semmilyen jelölések.",
+		inspect_bank_property = "Ce ${item} est propriété de la banque ${bank}.",
+		inspect_no_property = "Ce ${item} ne semble pas avoir de marquage de propriété.",
 
 		searching_dumpster = "Szemetesböngészés",
 
@@ -6899,11 +7047,17 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		craft_combine = "Készítés: <i>${output}</i>",
 		combining = "Készítés",
 
+		file_serial = "Numéro de série du fichier",
+		filing_off_serial_number = "Effacer le numéro de série",
+		filed_serial_number = "Numéro de série effacé avec succès.",
+		failed_file_serial_number = "Impossible d'effacer le numéro de série.",
+
 		carve_jack_o_lantern = "Fekete ördög kivájása: <i>Jack-o-lantern</i>",
 		crush_cocoa_beans = "Kakaóbab összetörése: <i>Cocoa Beans</i>",
 		mix_hot_chocolate = "Forró csokoládé keverése: <i>Hot Chocolate</i>",
 		crush_raw_ruby = "Nyers rubin összetörése: <i>Raw Ruby</i>",
 		crush_raw_sapphire = "Zúzott <i>Nyers zafír</i>",
+		break_apart_weed = "Dissocier <i>1oz d'herbe</i>",
 
 		search = "Keresés",
 		amount = "Mennyiség",
@@ -6945,8 +7099,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		logs_wiped_nearby_ground_inventories_title = "Közeli talajon lévő tárolók törölve",
 		logs_wiped_nearby_ground_inventories_details = "${consoleName} törölte az összes talajon lévő tárolót `${radius}` méteres sugárban.",
 
-		logs_combined_title = "Kombinált Tárgyak",
-		logs_combined_details = "${consoleName} összekapcsolt ${inputs}-t, hogy létrehozzon 1x ${output}-t.",
+		inventory_crafting_logs_title = "Journal de fabrication d'inventaire",
+		inventory_crafting_logs_details = "${consoleName} használta a(z) ${inputs} itemet ${amount} darab ${output} létrehozásához.",
 
 		press_use_campfire = "[${InteractionKey}] Használd a tábortüzet",
 		use_campfire = "Tábortűz Használata",
@@ -6960,6 +7114,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		dumpster_pizza_slice = "Penészes Pizzaszem",
 		dumpster_banana = "Tüsi Banán (Nagyon Puhás)",
 		dumpster_almond_milk = "Savanyú mandulatej",
+		dumpster_knife = "Rozsdás Penge",
 
 		-- items & item descriptions
 		body_armor = "Testvértő",
@@ -6983,6 +7138,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		smart_watch_description = "Szeretted leszámolni a készpénzel fizetéssel? Egyszerűen használd az okos órádat! Beépített iránymutatóval, órával, GPS-el és lépésszámlálóval is rendelkezik! Csak ne fuss el 2 órakor.",
 		tablet = "Tablet",
 		tablet_description = "Nagyon nagy telefon.",
+		wallet = "Pénztárca",
+		wallet_description = "Minden készpénzed és kártyádhoz.",
 
 		gps = "GPS",
 		gps_description = "Elégítse ki minden készülékigényét.",
@@ -7067,10 +7224,14 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		picture_description = "Gyűjtsd össze az összes emlékedet a barátaiddal. (Méret: 1x1)",
 		printed_card = "Nyomtatott Kártya",
 		printed_card_description = "Egy kicsi nyomtatott kártya, lehet egy névjegykártya? (Méret: 9x5)",
+		printed_document = "Nyomtatott Dokumentum",
+		printed_document_description = "Egy nyomtatott dokumentum, esetleg egy levél? (Méret: 21x28)",
 		paper = "Fényképező Papír",
-		paper_description = "Egy üres papírlap fényképek nyomtatásához.",
+		paper_description = "Egy üres papírlap képek nyomtatásához. (Méret: 1x1)",
 		card_paper = "Kártya Papír",
-		card_paper_description = "Egy üres papírlap névjegykártyák nyomtatásához.",
+		card_paper_description = "Egy üres papírlap névjegykártya nyomtatásához. (Méret: 9x5)",
+		document_paper = "Dokumentum Papír",
+		document_paper_description = "Type invalide ou manquant.",
 		printer = "Nyomtató",
 		printer_description = "Csak nyomtatás, faxolás nélkül.",
 
@@ -7257,6 +7418,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		belgian_fries_description = "Az íz fokozásához, üzenj @Giv3n#0753 -nak \"fritas\" szóban.",
 		coke = "Kóla",
 		coke_description = "Pablo?",
+		pepsi = "Paramètre de recherche manquant.",
+		pepsi_description = "Aucun résultat trouvé pour le type et la recherche donnés.",
 		wonder_waffle = "Csodás Gofri",
 		wonder_waffle_description = "Vegán, laktózmentes, tejmentes, tojásmentes, gluténmentes, bio, antibiotikummentes, szója mentes, fruktózmentes, diómentes, nem GMA, cukormentes, zsírmentes és kevés szénhidrátot tartalmaz",
 		cheeseburger = "Sajtburger",
@@ -7469,6 +7632,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		pet_pingu_description = "Ez a kedves kis pingvin tökéletes társ bármilyen kalandhoz. Puha szőrén és játékos személyiségénél fogva boldogan ül válladon, amint végzed a mindennapjaidat.",
 		pet_banana_cat = "Banana Cat",
 		pet_banana_cat_description = "Gyümölcsös cicás barátod! A Banánmacska válladon foglal helyet, hozva egy adag játékos bájot a mindennapjaidhoz. Ez a tökéletes kiegészítő az életedben.",
+		pet_snowman = "État de San Andreas",
+		pet_snowman_description = "Recherche de ${type} (\"${search}\")",
 
 		hotwheels_mcqueen = "Villám McQueen",
 		hotwheels_mcqueen_description = "Sebesség, én vagyok a Sebesség, Úszok, mint egy Cadillac, Szúrok, mint egy Beemer. KATCHOW KATCHOW KATCHOW",
@@ -7511,6 +7676,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		aluminium_powder_description = "Egy sokoldalú por, amely széles körben használatos ipari és vegyi alkalmazásokban. Bizonyos összetevőkkel kombinálva lehetővé teszi a rendkívül reaktív térmit reakciók létrehozását, amelyek intenzív hőt és fényt hoznak létre.",
 		iron_oxide = "Vasoxid Por",
 		iron_oxide_description = "Egy gyakori por, amely vas- és oxigénmolekulákból áll, különböző ipari folyamatokban használják. Bizonyos anyagokkal keverve nagyon exotermikus reakciókban vehet részt, hőt és energiát felszabadítva.",
+		steel_filings = "${type} - \"${search}\"\n\nID du personnage :\t\t${characterId}\nPrénom :\t${firstName}\nNom de famille :\t${lastName}\nNuméro de téléphone :\t${phoneNumber}\nDate de naissance :\t${dateOfBirth}\nGenre :\t\t${gender}\n\nTwitter : @${username}",
+		steel_filings_description = "Recherche de personnage",
 
 		gold_bar = "Aranyrúd",
 		gold_bar_description = "Felhasználható javításokhoz és készítéshez.",
@@ -7543,7 +7710,9 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		refined_steel_description = "Professzionális javításokhoz használt.",
 
 		power_saw = "Szikkasztólapát",
-		power_saw_description = "Használatos valaminek az átvágásához.",
+		power_saw_description = "Type invalide ou manquant.",
+		steel_file = "Paramètre de recherche manquant.",
+		steel_file_description = "Aucun résultat trouvé pour le type et la recherche donnés.",
 
 		thermite = "Termitt",
 		thermite_description = "Nagyon instabil por, ne szagolgasd.",
@@ -7587,6 +7756,15 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		gold_watches_description = "És... honnan szerezted ezeket, pontosan?",
 		diamonds = "Gyémántok",
 		diamonds_description = "24-re van szükséged, hogy teljes páncélot készíts. Ajánlom, hogy szerezz be 27-et, hogy legyen egy kalapácsod is.",
+
+		savings_bond_200 = "État de San Andreas",
+		savings_bond_200_description = "Recherche de ${type} (\"${search}\")",
+		savings_bond_500 = "${type} - \"${search}\"\n\nID du personnage :\t\t${characterId}\nPrénom :\t${firstName}\nNom de famille :\t${lastName}\nNuméro de téléphone :\t${phoneNumber}\nDate de naissance :\t${dateOfBirth}\nGenre :\t\t${gender}\n\nTwitter : @${username}",
+		savings_bond_500_description = "Recherche de personnage",
+		savings_bond_1000 = "Failed to automatically generate translation.",
+		savings_bond_1000_description = "Failed to automatically generate translation.",
+		savings_bond_2000 = "Failed to automatically generate translation.",
+		savings_bond_2000_description = "Failed to automatically generate translation.",
 
 		weather_spell_snow = "Időjárás varázslat (Hó)",
 		weather_spell_snow_description = "Használd ezt az eszközt a időjárás ideiglenes kontrolálásához és hóesést idézni elő! Egyszer használható, tehát óvatosan bánj vele. Ha egyszerre két időjárás varázslatot használsz, a második egyszerűen sorban áll.",
@@ -7668,6 +7846,9 @@ OP.Global.Locales.Languages["hu-HU"] = {
 
 		boombox = "Boombox",
 		boombox_description = "Játszd le a zenét és legyél zavaró bárhol, bármikor!",
+
+		microphone_stand = "${displayName} vous a donné ${amount}x ${item}.",
+		microphone_stand_description = "Ce ${item} est propriété de la banque ${bank}.",
 
 		lighter = "Öngyújtó",
 		lighter_description = "Néhány ember csak azt akarja látni, hogy világok égnek",
@@ -7871,6 +8052,12 @@ OP.Global.Locales.Languages["hu-HU"] = {
 
 		irish_coffee = "Ír kávé",
 		irish_coffee_description = "Frissen főzött kávé, hozzáadva némi eredeti ír whiskeyt.",
+		guinness_beer = "Ce ${item} ne semble pas avoir de marquage de propriété.",
+		guinness_beer_description = "Numéro de série du fichier",
+		jameson_whiskey = "Effacer le numéro de série",
+		jameson_whiskey_description = "Numéro de série effacé avec succès.",
+		tayto_chips = "Impossible d'effacer le numéro de série.",
+		tayto_chips_description = "Dissocier <i>1oz d'herbe</i>",
 
 		chip_10 = "$10 érme",
 		chip_10_description = "Egy szerencsejáték érme. Használható szerencsejátékra. A tárgyat pénzre válthatod a kaszinóban.",
@@ -8444,7 +8631,10 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		weapon_addon_680_description = "A Remington 680 egy pumpa-puskát, amelyet a Remington Arms fejlesztett ki 1950-ben.",
 
 		weapon_addon_honey = "Honey Badger",
-		weapon_addon_honey_description = "Az AAC Honey Badger PDW egy személyes védelemre szolgáló fegyver, gyakran használják elnyomott konfigurációban és az AR-15 alapján készült. .300 AAC Blackout talpat használ és eredetileg az Advanced Armament Corporation (AAC) által volt gyártva."
+		weapon_addon_honey_description = "Az AAC Honey Badger PDW egy személyes védelemre szolgáló fegyver, gyakran használják elnyomott konfigurációban és az AR-15 alapján készült. .300 AAC Blackout talpat használ és eredetileg az Advanced Armament Corporation (AAC) által volt gyártva.",
+
+		weapon_addon_glock18c = "Journal de fabrication d'inventaire",
+		weapon_addon_glock18c_description = "Type invalide ou manquant."
 	},
 
 	invisibility = {
@@ -8620,7 +8810,10 @@ OP.Global.Locales.Languages["hu-HU"] = {
 
 		mixed_with = "Keverve ${flavor}-val",
 		mixed_with_label = "Hajlítás (${flavor})",
-		mixing = "Hajlítás keverése"
+		mixing = "Hajlítás keverése",
+
+		sold_lean_logs_title = "Paramètre de recherche manquant.",
+		sold_lean_logs_details = "Aucun résultat trouvé pour le type et la recherche donnés."
 	},
 
 	leashes = {
@@ -8837,6 +9030,18 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		reward_text_part_2 = " OP Pointot kapsz minden létrehozott képekért, valamint ",
 		reward_text_part_3 = " OP Pointot kapsz minden készülékkel töltött óráért.",
 
+		expired = "État de San Andreas",
+		upgrade = "Recherche de ${type} (\"${search}\")",
+		upgrade_pledge = "${type} - \"${search}\"\n\nID du personnage :\t\t${characterId}\nPrénom :\t${firstName}\nNom de famille :\t${lastName}\nNuméro de téléphone :\t${phoneNumber}\nDate de naissance :\t${dateOfBirth}\nGenre :\t\t${gender}\n\nTwitter : @${username}",
+		upgrade_pledge_information = "Recherche de personnage",
+		upgrading_following_pledge = "${consoleName} ने सभी को अपने पास टेलीपोर्ट किया।",
+		available_upgrades = "टीपी टू",
+		cost_points = "${consoleName} ने ${sourceConsoleName} को ${targetConsoleName} के पास टेलीपोर्ट किया।",
+		buy = "${name} ने ${deathCause} के साथ खुद को मार दिया।",
+		confirm_pledge_upgrade = "सेविंग्स बॉन्ड",
+		confirm_pledge_upgrade_text = "कुल",
+		upgrading_pledge = "सेविंग्स बॉन्ड जमा करने में विफल रहा",
+
 		exiting_login_ui = "Kilépés (Bejelentkezési UI)"
 	},
 
@@ -8993,7 +9198,14 @@ OP.Global.Locales.Languages["hu-HU"] = {
 	meth = {
 		press_to_sell_meth = "Nyomd meg a ~INPUT_CONTEXT~ gombot, hogy eladd a Meth-et.",
 		local_not_interested = "Úgy tűnik, a helyiek jelenleg nem érdeklődnek.",
-		selling_meth = "Meth eladása."
+		selling_meth = "Meth eladása.",
+
+		sold_meth_logs_title = "बॉन्ड जमा करें",
+		sold_meth_logs_details = "${consoleName} ने $${amount} के ${bonds} जमा किए।"
+	},
+
+	microphone_stand = {
+		active = "अटैचमेंट्स को संशोधित करना"
 	},
 
 	mining = {
@@ -9152,7 +9364,15 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		auto_run_unset = "Az automatikus futás le lett állítva.",
 
 		walk_forwards_success = "Sikeresen átváltottál járásra ${displayName}-nél.",
-		walk_forwards_failed = "Nem sikerült átváltani járásra ${displayName}-nél."
+		walk_forwards_failed = "Nem sikerült átváltani járásra ${displayName}-nél.",
+
+		info_title = "Failed to automatically generate translation.",
+		info_character = "Failed to automatically generate translation.",
+		info_job_data = "Failed to automatically generate translation.",
+		info_job_data_none = "Failed to automatically generate translation.",
+		info_licenses = "Failed to automatically generate translation.",
+		info_licenses_none = "Failed to automatically generate translation.",
+		info_timestamp = "Failed to automatically generate translation."
 	},
 
 	money = {
@@ -9181,7 +9401,13 @@ OP.Global.Locales.Languages["hu-HU"] = {
 
 		press_to_sell_moonshine = "Nyomd meg a ~INPUT_CONTEXT~ gombot a pálinka eladásához.",
 		local_not_interested = "Az illető jelenleg nem mutat érdeklődést.",
-		selling_moonshine = "Pálinka eladása."
+		selling_moonshine = "Pálinka eladása.",
+
+		sold_moonshine_logs_title = "Failed to automatically generate translation.",
+		sold_moonshine_logs_details = "Failed to automatically generate translation.",
+
+		emptied_cooker_logs_title = "Failed to automatically generate translation.",
+		emptied_cooker_logs_details = "Failed to automatically generate translation."
 	},
 
 	nos = {
@@ -10238,9 +10464,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 	peds = {
 		ped_robbing_injection = "Túlzottan sok NPC kirablása! (Bypasszolták a szerver időkorlátot, valószínűleg injektorral történt.)",
 		robbed_ped_logs_title = "Kirabolt NPC",
-		robbed_ped_logs_details = "${consoleName} kirabolt egy NPC-t és ${payout}$-t kapott.",
-
-		nancy = "~b~Dr. Nancy"
+		robbed_ped_logs_details = "${consoleName} kirabolt egy NPC-t és ${payout}$-t kapott."
 	},
 
 	pepper_spray = {
@@ -10356,7 +10580,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		removed_marker = "Eltávolítottuk a megjelölőt a(z) '${address}' címről.",
 		entrance = "Bejárat",
 		back_entrance = "Hátsó bejárat",
-		garage = "Garázs"
+		garage = "Garázs",
+		located_address = "डैमेज प्रतिबिंब टॉगल करें। (आपको किसी भी संविधि ने जो आपको क्षति पहुंचाई है, वह खुद को क्षति पहुंचाएगा)"
 	},
 
 	props = {
@@ -10409,10 +10634,10 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		frequency_set_to_streamer = "A frekvencia be lett állítva.",
 		frequency_set_to = "A frekvencia be lett állítva erre: ${frequency}.",
 		frequency_already_set_to = "A frekvencia már be van állítva erre: ${frequency}.",
-		radio_volume_same = "A rádió hangerő már be van állítva erre: `${radioVolume}`.",
+		radio_volume_same = "सेविंग्स खाते",
 		radio_volume_reset = "A rádió hangerő vissza lett állítva.",
-		radio_volume_set = "A rádió hangerő be lett állítva erre: `${radioVolume}`.",
-		radio_volume_current = "A jelenlegi rádió hangerőd erre van állítva: `${radioVolume}`.",
+		radio_volume_set = "अपने सभी सेविंग्स खातों को देखें और प्रबंधित करें।",
+		radio_volume_current = "सेविंग्स, खाते",
 		radio_volume_current_default = "A jelenlegi rádió hangerőd az alapértelmezett.",
 		radio_sound_effects_same = "A rádió hanghatások hangerője már be van állítva erre: `${radioSoundEffects}`.",
 		radio_sound_effects_reset = "A rádió hanghatások hangereje visszaállítva.",
@@ -10434,6 +10659,16 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		decrypter_jammed = "A feltörő berendezés elakadt.",
 		decrypted_frequency = "A frekvencia körülbelül `${frequency}`.",
 		no_frequency_detected = "Nincs érzékelt frekvencia."
+	},
+
+	reflect = {
+		success_enable_reflection = "डेवलपर वातावरण टॉगल करें",
+		success_disable_reflection = "drive_to",
+		failed_toggle_reflection = "पेड को आपके चिह्नित वेपॉइंट की ओर ड्राइव करने के लिए निर्देश दें।",
+
+		reflection_logs_title = "नेटवर्क आईडी",
+		reflection_logs_enabled_details = "${consoleName} ने सभी को अपने पास टेलीपोर्ट किया।",
+		reflection_logs_disabled_details = "टीपी टू"
 	},
 
 	remote_camera = {
@@ -10597,6 +10832,57 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		lock_closed = "Zárva"
 	},
 
+	savings_accounts = {
+		savings_accounts = "${consoleName} ने ${sourceConsoleName} को ${targetConsoleName} के पास टेलीपोर्ट किया।",
+		button_close = "${name} ने ${deathCause} के साथ खुद को मार दिया।",
+		button_back	= "Back",
+		button_confirm = "सेविंग्स बॉन्ड",
+		button_delete = "कुल",
+		button_manage = "सेविंग्स बॉन्ड जमा करने में विफल रहा",
+		create_account = "बॉन्ड जमा करें",
+		delete_account = "${consoleName} ने $${amount} के ${bonds} जमा किए।",
+		confirm_delete = "अटैचमेंट्स को संशोधित करना",
+		loading = "Betöltés...",
+		failed_load_accounts = "Nem sikerült betölteni a megtakarítási számlákat.",
+		no_accounts = "Nincsenek megtakarítási számlák.",
+		log_message = "${name} ${action} ${amount}",
+		action_withdraw = "felvett",
+		action_deposit = "befizetett",
+		withdraw = "Kivét",
+		deposit = "Befizet",
+		amount = "Összeg",
+		account_name = "Számla Neve",
+		actions = "Műveletek",
+		access = "Hozzáférés",
+		logs = "Tranzakciós Naplók",
+		no_logs = "Nincsenek tranzakciós naplók.",
+		no_access = "Csak Önnek van hozzáférése ehhez a számlához.",
+		add_cid = "CID hozzáadása...",
+		failed_add_access = "${consoleName} ने सभी को अपने पास टेलीपोर्ट किया।",
+		invalid_character_id = "टीपी टू",
+		failed_remove_access = "${consoleName} ने ${sourceConsoleName} को ${targetConsoleName} के पास टेलीपोर्ट किया।",
+		failed_withdraw = "${name} ने ${deathCause} के साथ खुद को मार दिया।",
+		failed_deposit = "सेविंग्स बॉन्ड",
+		failed_create = "कुल",
+		failed_delete = "सेविंग्स बॉन्ड जमा करने में विफल रहा",
+		insufficient_balance = "बॉन्ड जमा करें",
+		insufficient_bank_balance = "${consoleName} ने $${amount} के ${bonds} जमा किए।",
+		account_description = "अटैचमेंट्स को संशोधित करना",
+
+		add_access_logs_title = "Failed to automatically generate translation.",
+		add_access_logs_details = "Failed to automatically generate translation.",
+		remove_access_logs_title = "Failed to automatically generate translation.",
+		remove_access_logs_details = "Failed to automatically generate translation.",
+		create_account_logs_title = "Failed to automatically generate translation.",
+		create_account_logs_details = "Failed to automatically generate translation.",
+		deleted_account_logs_title = "Failed to automatically generate translation.",
+		deleted_account_logs_details = "Failed to automatically generate translation.",
+		withdraw_logs_title = "Failed to automatically generate translation.",
+		withdraw_logs_details = "Failed to automatically generate translation.",
+		deposit_logs_title = "Failed to automatically generate translation.",
+		deposit_logs_details = "Failed to automatically generate translation."
+	},
+
 	scoreboard = {
 		player_list = "Játékoslista",
 		players = "Játékosok",
@@ -10666,6 +10952,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 
 	scuba = {
 		sunken_ship = "Elsüllyedt hajó",
+		broken_pipeline = "Failed to automatically generate translation.",
 		gather_item = "Tárgy begyűjtése (${distance} m)",
 
 		collected_junk = "Lom begyűjtve.",
@@ -10776,6 +11063,10 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		not_enough_cash = "Nincs elég készpénzed."
 	},
 
+	shopkeepers = {
+		tag_nancy = "Failed to automatically generate translation."
+	},
+
 	shrooms = {
 		press_to_pick_up_shrooms = "Nyomd meg a ~INPUT_CONTEXT~ gombot a gombák felvételéhez.",
 		picking_up_shrooms = "Gomba szedése.",
@@ -10784,7 +11075,12 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		not_interested = "Ez a helyi személy nem tűnik érdeklődőnek a gombáid iránt.",
 		selling_shrooms = "Gomba eladása.",
 		shrooms_not_ripe = "Ezek a gombák úgy tűnik még nem értek meg teljesen, talán hagyd őket még egy kicsit állni.",
-		shroom_id = "gomba-${shroomId}"
+		shroom_id = "gomba-${shroomId}",
+
+		sold_shrooms_logs_title = "${consoleName} ने सभी को अपने पास टेलीपोर्ट किया।",
+		sold_shrooms_logs_details = "टीपी टू",
+		picked_shroom_logs_title = "${consoleName} ने ${sourceConsoleName} को ${targetConsoleName} के पास टेलीपोर्ट किया।",
+		picked_shroom_logs_details = "${name} ने ${deathCause} के साथ खुद को मार दिया।"
 	},
 
 	skylift = {
@@ -10943,6 +11239,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		microphone_bug_destroy = "Mikrofon bug\n[${InteractionKey}] Elpusztítás",
 		vehicle_tracker = "Jármű Nyomkövető",
 		vehicle_tracker_destroy = "Jármű Nyomkövető\n[${InteractionKey}] Megsemmisítés",
+		radio_jammer = "सेविंग्स बॉन्ड",
 		destroying_device = "Eszköz Megsemmisítése",
 		tracker_will_appear_on_map = "Ez a nyomkövető már aktiválva van. A térképen megjelenik, amíg a jármű elérhető, és a nyomkövetőnek van töltése.",
 		spy_ui_info = "Beszélgetés meghallgatása a Mikrofon Buggal (#${deviceId})",
@@ -11212,7 +11509,13 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		enter_loading_bay_interact = "[${InteractionKey}] Belépés a rakodóhelyre",
 
 		exit_loading_bay = "Kilépés a rakodóhelyről",
-		exit_loading_bay_interact = "[${InteractionKey}] Kilépés a rakodóhelyről"
+		exit_loading_bay_interact = "[${InteractionKey}] Kilépés a rakodóhelyről",
+
+		enter_submarine = "कुल",
+		enter_submarine_interact = "सेविंग्स बॉन्ड जमा करने में विफल रहा",
+
+		exit_submarine = "बॉन्ड जमा करें",
+		exit_submarine_interact = "${consoleName} ने $${amount} के ${bonds} जमा किए।"
 	},
 
 	test_server = {
@@ -11449,7 +11752,10 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		added_vdm_target = "A ${networkId} hálózati azonosítójú NPC mostantól ${target}-re céloz.",
 		no_ped_available = "Nincs elérhető közeli ped.",
 		failed_steal = "Nem sikerült ellopni a járművet.",
-		stealing_vehicle = "A közelben lévő pednek utasítást adtak, hogy lopja el a járművet (${distance}m)."
+		stealing_vehicle = "A közelben lévő pednek utasítást adtak, hogy lopja el a járművet (${distance}m).",
+		no_waypoint = "अटैचमेंट्स को संशोधित करना",
+		success_drive_to = "Sikeresen utasítottad a járókelőt, hogy a célhelyre induljon.",
+		failed_drive_to = "Nem sikerült utasítást adni a járókelőnek a célhelyre induláshoz."
 	},
 
 	vending_machines = {
@@ -11649,6 +11955,11 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		kmh = "km/h"
 	},
 
+	locales = {
+		showing_raw_locales_on = "Nyers szövegek megjelenítése bekapcsolva.",
+		showing_raw_locales_off = "Nyers szövegek megjelenítése kikapcsolva."
+	},
+
 	states = {
 		invalid_network_id = "Érvénytelen hálózati azonosító.",
 		debug_states_failed = "Nem sikerült ellenőrizni ennek az egységnek az állapotait.",
@@ -11672,6 +11983,19 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		second = "másodperc",
 		seconds = "másodperc",
 		just_now = "épp most",
+
+		month_1 = "Január",
+		month_2 = "Február",
+		month_3 = "Március",
+		month_4 = "Április",
+		month_5 = "Május",
+		month_6 = "Június",
+		month_7 = "Július",
+		month_8 = "Augusztus",
+		month_9 = "Szeptember",
+		month_10 = "Október",
+		month_11 = "November",
+		month_12 = "December",
 
 		time_in = "${time} ${unit} múlva",
 		time_ago = "${time} ${unit} ezelőtt"
@@ -11742,6 +12066,29 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		finished_delivery_title = "Burger Shot Kiszállítás Befejezve",
 		finished_delivery_details = "${consoleName} befejezte a Burger Shot kiszállítást és $${deliveryPrice}-t és $${distanceBonus}-t kapott borravalóként, ami összesen $${totalPrice} lett.",
 		delivery_blip = "Burger Shot Kiszállítás"
+	},
+
+	doj = {
+		invalid_type = "गेराज में से वाहन निकालें",
+		missing_search = "अपने मौजूदा स्थान पर गेराज में से एक वाहन निकालें।",
+		lookup_failed = "वाहन आईडी",
+
+		result_signature = "वह वाहन आईडी जिसे आप निकालना चाहते हैं।",
+		result_title = "गेराजसे निकालें",
+		result_text = "हाइब्रिड",
+
+		looked_up_character_logs_title = "हाइब्रिड मोड स्वचालित रूप से आवृत्ति पर नीचे जाने के लिए आपके लिए शिफ्ट करता है। `late`, `mid` या `early` हो सकता है।",
+		looked_up_character_logs_details = "गेराज में से वाहन निकालें",
+
+		invalid_time = "अपने मौजूदा स्थान पर गेराज में से एक वाहन निकालें।",
+		missing_invalid_plate = "वाहन आईडी",
+		vehicle_hold_success = "वह वाहन आईडी जिसे आप निकालना चाहते हैं।",
+		vehicle_hold_failed = "गेराजसे निकालें",
+		invalid_plate = "हाइब्रिड",
+		cant_reduce_time = "हाइब्रिड मोड स्वचालित रूप से आवृत्ति पर नीचे जाने के लिए आपके लिए शिफ्ट करता है। `late`, `mid` या `early` हो सकता है।",
+
+		vehicle_hold_logs_title = "गेराज में से वाहन निकालें",
+		vehicle_hold_logs_details = "अपने मौजूदा स्थान पर गेराज में से एक वाहन निकालें।"
 	},
 
 	duty = {
@@ -11984,13 +12331,13 @@ OP.Global.Locales.Languages["hu-HU"] = {
 	fuel = {
 		exit_to_fuel = "Hagyja el a járművet a tankoláshoz.",
 		press_to_fuel = "Nyomja meg a ~g~${InteractionKey} ~w~gombot a jármű tankolásához.",
-		fuel_pump_text = "Üzemanyag költség: ${fuelCost} Ft~n~Nyomd meg az ~g~E ~w~gombot az üzemanyagtöltés leállításához.",
+		fuel_pump_text = "वाहन आईडी",
 		vehicle_text = "Üzemanyag Szint: ${fuelLevel}%",
 		tank_full = "A tartály teljes.",
 		vehicle_busy = "A közelben lévő jármű foglalt.",
 		purchase_jerry_can = "A vásárláshoz nyomd meg az ~g~${InventoryKey} ~w~gombot egy benzin kannáért.",
 		gas_station = "Benzinkút",
-		petrolcan_fuel_text = "Áll rendelkezésre ${petrolAmount}% benzin~n~Nyomd meg az ~g~E ~w~gombot az üzemanyagtöltés leállításához.",
+		petrolcan_fuel_text = "वह वाहन आईडी जिसे आप निकालना चाहते हैं।",
 		player_busy = "Éppen más tevékenységgel vagy elfoglalva.",
 		fuel_level_set_to = "Az üzemanyag szint beállítva: `${fuelLevel}`.",
 		not_in_a_vehicle = "Nem vagy járművön.",
@@ -12089,8 +12436,17 @@ OP.Global.Locales.Languages["hu-HU"] = {
 
 		invalid_vehicle = "Nincs vagy érvénytelen jármű.",
 		not_owned_vehicle = "A jármű senki tulajdonában nincs.",
-		vehicle_garaged = "Sikeresen elhelyezték a járművet a garázsban.",
-		garaged_failed = "Nem sikerült a járművet a garázsba helyezni."
+		vehicle_garaged = "गेराजसे निकालें",
+		garaged_failed = "Nem sikerült a járművet a garázsba helyezni.",
+		invalid_vehicle_id = "हाइब्रिड",
+		ungarage_success = "हाइब्रिड मोड स्वचालित रूप से आवृत्ति पर नीचे जाने के लिए आपके लिए शिफ्ट करता है। `late`, `mid` या `early` हो सकता है।",
+		ungarage_failed = "Nem sikerült autót kitárolni. Megadta a helyes járműazonosítót?",
+		vehicle_not_found = "Nem található jármű ezzel az azonosítóval.",
+
+		garaged_vehicle_logs_title = "Autó eltárolva",
+		garaged_vehicle_logs_details = "${consoleName} eltárolt egy autót az azonosítóval ${vehicleId}.",
+		ungaraged_vehicle_logs_title = "Autó kitárolva",
+		ungaraged_vehicle_logs_details = "${consoleName} kitárolt egy autót az azonosítóval ${vehicleId}."
 	},
 
 	keys = {
@@ -12192,12 +12548,13 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		vehicle_mileage_amount = "Ennek a járműnek ${miles} mérföldje van.",
 		not_in_driver_seat = "A kilométeróra megtekintéséhez a vezetői ülésen kell lenned.",
 		not_driving_vehicle = "Nem vezetsz járművet.",
+		not_in_vehicle = "Nem vagy egy járműben.",
 		vehicle_locked = "A jármű le van zárva.",
 		gear_animation_enabled = "A sebességváltó animációja (és hangjai) most engedélyezve vannak.",
 		gear_animation_disabled = "A sebességváltó animációja (és hangjai) most letiltva vannak.",
-		manual_gears_enabled = "Kézi sebességváltás most engedélyezve van.",
+		manual_gears_enabled = "A kézikapcsolás most engedélyezve van. Hibrid mód: `${hybrid}`.",
 		manual_gears_disabled = "Kézi sebességváltás most letiltva van.",
-		manual_gear_set_to = "Sebességváltó beállítva: ${gearId}.",
+		hybrid_off = "${displayName} vous a donné ${amount}x ${item}.",
 		speed_limiter_set_to_metric = "A sebességkorlátozó most ${speed} km/h sebességnél fogja korlátozni a sebességet.",
 		speed_limiter_set_to_imperial = "A sebességkorlátozó most ${speed} mp/h sebességnél fogja korlátozni a sebességet.",
 		speed_limiter_reset = "A sebességkorlátozó most a jármű pillanatnyi sebességénél fogja korlátozni a sebességet.",
@@ -12216,6 +12573,10 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		belt_warning = "Az öv nincs bekapcsolva, nyomd meg a ~INPUT_SPECIAL_ABILITY_SECONDARY~ gombot a bekapcsoláshoz.",
 		supporter_vehicle = "Támogató",
 
+		no_data_copied = "Ce ${item} est propriété de la banque ${bank}.",
+		copied_data = "Ce ${item} ne semble pas avoir de marquage de propriété.",
+		pasted_data = "Numéro de série du fichier",
+
 		nearest_player_not_vehicle = "A legközelebbi játékos nincs a járműben.",
 		no_dead_player_nearby = "Nincs halott játékos a közeledben levő járműben.",
 		dragging_out_player = "Játékos húzása ki a járműből.",
@@ -12230,7 +12591,6 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		toggled_vehicle_weapons_on = "A járműfegyverek be vannak kapcsolva.",
 		toggled_vehicle_weapons_off = "A járműfegyverek ki vannak kapcsolva.",
 		toggled_vehicle_weapons_vehicle_is_not_networked = "A jármű nem hálózati kapcsolaton keresztül van.",
-		toggled_vehicle_weapons_not_in_a_vehicle = "Nem vagy a járműben.",
 		toggled_vehicle_weapons_target_user_not_found = "A célszemély nem található.",
 		toggled_vehicle_weapons_player_not_in_a_vehicle = "A célszemély nincs a járműben.",
 		toggled_vehicle_weapons_for_player_on = "Bekapcsolta a járműfegyvereket ${consoleName} számára.",
@@ -12277,10 +12637,9 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		vin_lookup_unregistered = "A(z) ${vin} számú VIN nincs regisztrálva egyetlen járműhöz sem."
 	},
 
-	wheels = {
-		press_to_slash = "[${InteractionKey}] Tartsa lenyomva a vágáshoz",
-		hold_to_slash = "Tartsa lenyomva a vágáshoz",
-		slashing_tire = "Defeket okoz"
+	wheel_slash = {
+		hold_to_slash = "Effacer le numéro de série",
+		slashing_tire = "Numéro de série effacé avec succès."
 	},
 
 	-- weapons/*
@@ -12433,8 +12792,9 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		bleeding_reduced = "Vérzés csökkentve",
 		bleeding_self_stopped = "A vérzés automatikusan megszűnt",
 		thanks_for_loot = "Miközben eszméletlen voltál, kirámoltak. Lehet, hogy hiányoznak néhány tárgyaid. A pletykák szerint Nancy volt az elkövető.",
-		serial_number = "Sorozatszám: ${serialNumber}<br>Ezt a fegyvert ${fullName} (${characterId}. azonosító) regisztrálta.",
-		serial_number_unknown = "Sorozatszám: Ismeretlen.",
+		serial_number = "Impossible d'effacer le numéro de série.",
+		serial_number_unknown = "Dissocier <i>1oz d'herbe</i>",
+		serial_number_removed = "Journal de fabrication d'inventaire",
 		badge_owner = "<i>Ez a jelvény a(z) <b>${fullName} (${positionName})</b> tulajdonában van.</i>",
 		badge_owner_unknown = "Ismeretlen jelvény tulajdonosa.",
 		citizen_card_owner = "<i>Ez a személyigazolvány a(z) <b>${fullName} (#${characterId})</b> tulajdonában van.</i>",

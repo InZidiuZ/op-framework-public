@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 23 (do not change)
+-- AUTO LOCALES: 24 (do not change)
 
 OP.Global.Locales.Languages["meme-spongebob"] = {
 	-- configuration settings for language
@@ -196,6 +196,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		announcement_logs_title = "Bikini Bottom Wide Announcement",
 		announcement_logs_details = "Hey everyone, ${consoleName} just said, `${announcementMessage}`",
 
+		new_player_revive_logs_title = "Fancy Pants Revive",
+		new_player_revive_logs_details = "${consoleName} was brought back to life 'cause the landlubber who sent them to Davy Jones' locker got the boot.",
+
 		posted_announcement = "Posted announcement message, woohoo!",
 		posted_announcement_locale = "Posted announcement message from locale! Goo-goo-ga-joob!",
 		failed_to_post_announcement = "Blow me down! Failed to post announcement message, as no message was added!",
@@ -295,14 +298,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		staff_toggled_off = "Aww! You are no longer available to help.",
 
 		staff_feature_unavailable = "Sorry, you cannot use this feature when you are not available to help.",
-
-		success_enable_reflection = "Yay! Ya successfully turned on the damage reflection.",
-		success_disable_reflection = "Yay! Ya successfully turned off the damage reflection.",
-		failed_toggle_reflection = "Barnacles! Failed to toggle the damage reflection.",
-
-		reflection_logs_title = "Reflection Toggled",
-		reflection_logs_enabled_details = "${consoleName} turned on the damage reflection.",
-		reflection_logs_disabled_details = "${consoleName} turned off the damage reflection.",
 
 		headache_logs_title = "Got yourself a headache",
 		headache_logs_details = "Woohoo, it looks like ${consoleName} has triggered a massive headache on ${targetConsoleName}. That's one way to make 'em earworms stop.",
@@ -422,6 +417,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		register_invalid_character_id = "Shiver me timbers! That ain't a valid character ID.",
 		register_invalid_slot = "That's not a proper inventory slot, matey.",
 		register_weapon_success = "Successfully registered the weapon in slot ${slotId} to character with character id ${cid}, woohoo!",
+		no_serial_number = "No serial number, no go. You can't register a weapon without it.",
+		unknown_character_id = "Whoops! Me no know whose character that be.",
 		register_weapon_failed = "Aw, barnacles! It looks like we failed to register the weapon, try again!",
 
 		register_weapon_missing_permissions = "Oh no! Somebody tried to register a weapon but they don't have the proper clearance for that, whoops!",
@@ -611,6 +608,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		failed_job_search = "Failed to search for jobs.",
 		job_search_no_results = "Uh oh, no jobs found!",
 		job_search_results = "Set ${consoleName}'s job to \"${jobName}, ${departmentName}, ${positionName}\" (Score: ${score}).",
+		job_no_character = "Arrr! The scallywag ye be after don't have a character loaded.",
 
 		job_reset_success = "Yippee! Successfully reset job for ${consoleName}.",
 		failed_job_reset = "Barnacles! Failed to reset job.",
@@ -812,7 +810,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	bans = {
 		banned_no_permissions = "Tried t' `${reason}` without proper bubble-blowing permissions.",
 		fraud_chargeback = "Plankton's evil scheme / Krabby Patty backfired",
-		none_provided = "None provided."
+		none_provided = "None provided.",
+		you_stopped_streaming = "Ye be done streaming, matey."
 	},
 
 	characters = {
@@ -907,8 +906,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		report_command = "report",
 		report_command_help = "Send a message to all active staff members, me hearty!",
 		report_command_parameter_message = "message",
-		report_command_parameter_message_help = "The message ya would like to send, arrr!",
-		report_command_substitutes = "",
+		report_command_parameter_message_help = "Ye have a message ye wanna send. Give a short summary of what ye be reportin' (Example: \"I just got attacked, their id was...\").",
+		report_command_substitutes = "kelp-admin",
 
 		announce_command = "announce",
 		announce_command_help = "Broadcast an announcement to all players, listen up me buckos!",
@@ -946,6 +945,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		wipe_command_parameter_ignore_local_entities_help = "Ignore non-networked entities? If ya cleanin' up from a cheater, it be recommended ya put dis to `true` or `1`.",
 		wipe_command_parameter_model_name = "model name",
 		wipe_command_parameter_model_name_help = "If you are wanting to only get rid of entities of a certain model name, insert a model name here. Otherwise leave blank, at `false` or `0`. You can also set this to `boats`, `buddies`, `treasures` or `kelp`.",
+		wipe_command_parameter_camera = "spyglass",
+		wipe_command_parameter_camera_help = "Use yer spyglass coords instead o' yer peds coords. Defarlt be no, `1` or `y` fer aye.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "noclip",
@@ -1021,7 +1022,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		add_vehicle_command = "add_vehicle",
 		add_vehicle_command_help = "Add a vehicle ta someone's garage.",
 		add_vehicle_command_parameter_model = "model",
-		add_vehicle_command_parameter_model_help = "Da model name or model hash of da vehicle ya wish ta add.",
+		add_vehicle_command_parameter_model_help = "Th' model name or model hash o' th' vessel ye be wishin' t' add. If left blank, th' vessel ye be currently in will be added (includin' its current modifications).",
 		add_vehicle_command_parameter_server_id = "server id",
 		add_vehicle_command_parameter_server_id_help = "Da server ID of da player ya wish ta give a vehicle ta. Leavin' dis blank will auto-select yerself.",
 		add_vehicle_command_substitutes = "",
@@ -1050,6 +1051,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		indestructibility_command_help = "Toggle 'invincibility'.",
 		indestructibility_command_parameter_server_id = "server id",
 		indestructibility_command_parameter_server_id_help = "If ya' wantin' to toggle the 'invincibility' for someone else, insert their server id here, landlubber!",
+		indestructibility_command_parameter_ignore_vehicle = "ignore vessel",
+		indestructibility_command_parameter_ignore_vehicle_help = "If set t' `1` or `y`, this will make only ye invincible not th' vessel ye be inside.",
 		indestructibility_command_substitutes = "ind, sea god, almighty seahorse, spongebob god",
 
 		no_nearby_vehicles_command = "no_nearby_boats",
@@ -1083,10 +1086,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		infinite_ammo_command = "infinite_ammo",
 		infinite_ammo_command_help = "Toggles infinite ammo, arrr matey!",
 		infinite_ammo_command_substitutes = "",
-
-		reflect_damage_command = "reflect_damage",
-		reflect_damage_command_help = "Togglez damaj refleckshun. (Any player who damajes ya will be damajed themselves)",
-		reflect_damage_command_substitutes = "reflect",
 
 		trigger_headache_command = "trigger_headache",
 		trigger_headache_command_help = "Make player lag for short time. MEOW!.",
@@ -1192,6 +1191,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		tp_coords_command_parameter_y_help = "Da Y coordinate you want to teleport to.",
 		tp_coords_command_parameter_z = "Zee",
 		tp_coords_command_parameter_z_help = "Da Z coordinate you want to teleport to. If ya leave it blank, da ground coordinates will be searched fer automatically.",
+		tp_coords_command_parameter_w = "arr",
+		tp_coords_command_parameter_w_help = "The arr coordinate or fancy dance you want to teleport to. This parameter is optional and if left blank, your current fancy dance will be used.",
 		tp_coords_command_substitutes = "tpc",
 
 		tp_waypoint_command = "tp_waypoint",
@@ -1336,6 +1337,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		register_weapon_command_parameter_slot_help = "The slot the weapon is in, like the krusty krab?",
 		register_weapon_command_parameter_character_id = "character id",
 		register_weapon_command_parameter_character_id_help = "The character id of the character you want to register the weapon to, ahoy matey!",
+		register_weapon_command_parameter_no_job = "no jobby",
+		register_weapon_command_parameter_no_job_help = "Remove the jobby restriction from the weapon. Default is no, `1` or `y` for yes.",
 		register_weapon_command_substitutes = "",
 
 		advanced_metagame_command = "advanced_metagame",
@@ -1370,7 +1373,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		slap_command_help = "Slaps a player, sending them straight to Davy Jones' locker.",
 		slap_command_parameter_server_id = "server id",
 		slap_command_parameter_server_id_help = "The server id of the player you want to slap, like Squidward's clarinet.",
-		slap_command_substitutes = "",
+		slap_command_substitutes = "plank",
 
 		damage_player_command = "damage_player",
 		damage_player_command_help = "Harms a player's health, like a jellyfish sting!",
@@ -1469,6 +1472,12 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		profile_debug_command = "profile_debug",
 		profile_debug_command_help = "Toggle da profile debugger.",
 		profile_debug_command_substitutes = "",
+
+		remove_twitch_ban_exception_command = "walk_the_plank_without_exception",
+		remove_twitch_ban_exception_command_help = "Remove a pirate's Twitch ban exception.",
+		remove_twitch_ban_exception_command_parameter_server_id = "server id-ee",
+		remove_twitch_ban_exception_command_parameter_server_id_help = "Da server ID of da player ya wanna remove da exception from.",
+		remove_twitch_ban_exception_command_substitutes = "",
 
 		-- base/users
 		playtime_command = "playtime",
@@ -2084,6 +2093,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		define_area_command_help = "Defeen an area.",
 		define_area_command_substitutes = "area",
 
+		polygon_command = "polygon",
+		polygon_command_help = "Create a polygon in 2D space, yippee!",
+		polygon_command_substitutes = "poly",
+
 		debug_info_command = "debug_info like Squidward fixing his clarinet",
 		debug_info_command_help = "Collect some debugging info about a certain player, just like how Squidward fixes his clarinet.",
 		debug_info_command_parameter_server_id = "server id like Gary's meow language",
@@ -2131,6 +2144,19 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		elevator_enable_all_command = "elevator_enable_all",
 		elevator_enable_command_all_help = "Turns all elevators back on. Yippee ki yay!",
 		elevator_enable_command_all_substitutes = "",
+
+		-- game/emotes
+		emote_command = "emote",
+		emote_command_help = "Play an emote, arrr!",
+		emote_command_parameter_name = "name",
+		emote_command_parameter_name_help = "Da name of da emote, matey!",
+		emote_command_substitutes = "e",
+
+		walk_command = "walk",
+		walk_command_help = "Set yer walkstyle, matey.",
+		walk_command_parameter_name = "name",
+		walk_command_parameter_name_help = "The name o' the walkstyle, matey.",
+		walk_command_substitutes = "",
 
 		-- game/evidence
 		fingerprint_command = "fingarrpint",
@@ -2654,6 +2680,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		walk_forwards_command_parameter_sprint_help = "Whether or not the player should sprint while walking forwards. (Default: false)",
 		walk_forwards_command_substitutes = "",
 
+		info_command = "info",
+		info_command_help = "Display some debug info, used in bug-reports, arrrr.",
+		info_command_substitutes = "",
+
 		-- game/money
 		cash_command = "cashew",
 		cash_command_help = "Display yo cash balance, Skwuidward.",
@@ -3030,8 +3060,13 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		radio_volume_command = "radio_volume",
 		radio_volume_command_help = "Adjust thee radio's volume me hearty.",
 		radio_volume_command_parameter_volume = "volume level",
-		radio_volume_command_parameter_volume_help = "The volume level o' thee radio. Thee value must be between 0 and 1. Thee default be 0.5. Leavin' this blank will return yer current volume level.",
-		radio_volume_command_substitutes = "",
+		radio_volume_command_parameter_volume_help = "The volume level o' the radio, arrrr. The value be in percent so it has to be between 0 and 100, arrrr. The default be 50%. Leavin' this blank will return yer current volume level, arrrr.",
+		radio_volume_command_substitutes = "volume",
+
+		-- game/reflect
+		reflect_damage_command = "reflect_damage",
+		reflect_damage_command_help = "Togglez damage reflection. (Any entity who damages  ya gonna be damaged themselves)",
+		reflect_damage_command_substitutes = "reflect",
 
 		-- game/relationships
 		relationships_debug_command = "relationships_debug",
@@ -3081,6 +3116,11 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		rules_command = "rules",
 		rules_command_help = "Opens the community rules in your browser.",
 		rules_command_substitutes = "",
+
+		-- game/savings_accounts
+		savings_accounts_command = "savings_accounts",
+		savings_accounts_command_help = "Check n' manage all yer savings accounts, mateys.",
+		savings_accounts_command_substitutes = "savings, accounts",
 
 		-- game/scoreboard
 		metagame_command = "meta-game",
@@ -3313,6 +3353,12 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		steal_vehicle_command_parameter_network_id_help = "De network id van de vehicle, arr arr arr!",
 		steal_vehicle_command_substitutes = "",
 
+		drive_to_command = "drive_to",
+		drive_to_command_help = "Tell a ped to drive to yer marked waypoint, arrrr!",
+		drive_to_command_parameter_network_id = "network id",
+		drive_to_command_parameter_network_id_help = "Either the peds network id, the vehicles network id (which the ped is the driver of) or leave empty to select driver of current vehicle.",
+		drive_to_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "voice_debug",
 		voice_debug_command_help = "Toggle debug mode for SpongeBob's voice.",
@@ -3427,6 +3473,11 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		confirm_no_command_help = "Nope! Cancel the current action.",
 		confirm_no_command_substitutes = "nope, uh uh",
 
+		-- global/locales
+		show_raw_locales_command = "show_raw_locales",
+		show_raw_locales_command_help = "Toggle showing off the raw locale names to help debug what locales should be tweaked.",
+		show_raw_locales_command_substitutes = "",
+
 		-- global/states
 		entity_states_command = "what's the deal with this thing",
 		entity_states_command_help = "Umm, what do you call this thing again? Prints all states of that thing.",
@@ -3451,6 +3502,23 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		interface_focuses_command = "interface_focuses",
 		interface_focuses_command_help = "Check which interfaces are set as focused, and don't be afraid to ask for help if ya need it.",
 		interface_focuses_command_substitutes = "interface_focus, focus, focuses, focus me interfaces!",
+
+		--jobs/doj
+		lookup_character_command = "lookup_character",
+		lookup_character_command_help = "Looks up a character based on a search, to be used by judges.",
+		lookup_character_command_parameter_type = "type",
+		lookup_character_command_parameter_type_help = "Either `number` or `twitter` in Bikini Bottom vernacular.",
+		lookup_character_command_parameter_search = "search",
+		lookup_character_command_parameter_search_help = "Your search value (has to match exactly) in a Bikini Bottom way.",
+		lookup_character_command_substitutes = "lookup",
+
+		create_vehicle_hold_command = "create_vehicle_hold",
+		create_vehicle_hold_command_help = "Creates a vehicle hold. This will PD impound the vehicle for an extended period of time, like sending it to the Krusty Krab storage (Note: Any already withdrawn vehicles will continue to exist)",
+		create_vehicle_hold_command_parameter_time = "time",
+		create_vehicle_hold_command_parameter_time_help = "How long the vehicle should be held for (max: 6 weeks). Usable units: `h` for hours, `d` for days and `w` for weeks. Example: `3d` for 3 days.",
+		create_vehicle_hold_command_parameter_plate = "plate",
+		create_vehicle_hold_command_parameter_plate_help = "Da plat of da vehicle.",
+		create_vehicle_hold_command_substitutes = "vehicle_hold",
 
 		--jobs/duty
 		toggle_duty_status_command = "toggle_duty_status",
@@ -3558,9 +3626,15 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		garage_vehicle_command = "krusty krab vehicle",
 		garage_vehicle_command_help = "Delete a vehicle and send it to a garage, bub.",
-		garage_vehicle_command_parameter_network_id = "network id",
-		garage_vehicle_command_parameter_network_id_help = "The network id of the vehicle you want to send to the crusty crab. If left empty, the nearest vehicle will be selected.",
+		garage_vehicle_command_parameter_repair = "repair",
+		garage_vehicle_command_parameter_repair_help = "Whedda or nut da vehicle should be fix’d before bein’ stored.",
 		garage_vehicle_command_substitutes = "krusty krab",
+
+		ungarage_vehicle_command = "ungarage_vehicle",
+		ungarage_vehicle_command_help = "Squidward, bring the vehicle out of its garage at me current location.",
+		ungarage_vehicle_command_parameter_vehicle_id = "vehicle id",
+		ungarage_vehicle_command_parameter_vehicle_id_help = "The vehicle ID ye would like to withdraw.",
+		ungarage_vehicle_command_substitutes = "ungarage",
 
 		-- vehicles/keys
 		give_key_command = "give_key",
@@ -3688,6 +3762,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		manual_toggle_command = "manual_toggle",
 		manual_toggle_command_help = "Toggle whether or not you want to manually control vehicles' gears. (like a boat motor)",
+		manual_toggle_command_command_parameter_hybrid = "hybrid",
+		manual_toggle_command_command_parameter_hybrid_help = "Hybrid mode automatically shifts down fer ye at a certain RPM. Can be `late`, `mid` or `early`.",
 		manual_toggle_command_substitutes = "",
 
 		speed_limiter_command = "speed_limiter",
@@ -3707,6 +3783,14 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		wheelie_command_parameter_power_level = "powah level",
 		wheelie_command_parameter_power_level_help = "How much boost to apply (default is 2.5, lower it if the wheelie is too strong, increase it if it's too weak).",
 		wheelie_command_substitutes = "",
+
+		copy_vehicle_data_command = "copy_vehicle_data",
+		copy_vehicle_data_command_help = "Copies all modifications and damages of the vehicle you are currently in, dagnabbit!",
+		copy_vehicle_data_command_substitutes = "copy",
+
+		paste_vehicle_data_command = "paste_vehicle_data",
+		paste_vehicle_data_command_help = "Pastes all modifications and damages to the vehicle you are currently in. (This will override modifications on owned vehicles), argh!",
+		paste_vehicle_data_command_substitutes = "paste",
 
 		-- vehicles/vin_numbers
 		vin_number_command = "VIN numbah",
@@ -3873,7 +3957,13 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 	twitch = {
 		streaming_state_already_set_to_target = "Arr, the swab's streaming state already be set to the target state provided.",
-		streaming_state_changed = "Teh user's streaming state has been changed to teh target state provided."
+		streaming_state_changed = "Teh user's streaming state has been changed to teh target state provided.",
+
+		twitch_ban_exception_removed = "Removed Twitch ban exception from ${consoleName}. It was under `${removedException}`, barnacles!",
+		twitch_ban_exception_not_removed = "Failed t' remove Twitch ban exception from ${consoleName}.",
+
+		removed_twitch_ban_exception_logs_title = "Removed Twitch Ban Exception",
+		removed_twitch_ban_exception_logs_details = "${consoleName} removed a Twitch ban exception from ${targetConsoleName}."
 	},
 
 	users = {
@@ -3928,11 +4018,17 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		unloaded_character_for_player_logs_title = "Unloaded Character For Player",
 		unloaded_character_for_player_logs_details = "${consoleName} unloaded ${targetConsoleName}'s character ${characterFullName} (${characterId}) with the reason `${message}`. SpongeBob: Ye can say that character is gone like the wind! Hehehehe!",
 		unloaded_character_for_player_no_reason_logs_details = "${consoleName}, me boy, unloaded ${targetConsoleName}'s character ${characterFullName} (${characterId}) without no reason.",
+
 		unloaded_character_self_logs_title = "Unloaded Character, Aye Aye Captain!",
 		unloaded_character_self_logs_details = "${consoleName}, captain, unloaded their own character ${characterFullName} (${characterId}) with the reason `${message}`, yarrr!",
 		unloaded_character_self_no_reason_logs_details = "${consoleName}, aye aye, unloaded their own character ${characterFullName} (${characterId}) without no reason.",
 
+		unloaded_character_for_everyone_logs_title = "Unloaded Character For Everyone",
+		unloaded_character_for_everyone_logs_details = "${consoleName} unloaded ${charactersUnloaded} characters with reason `${message}`.",
+		unloaded_character_for_everyone_no_reason_logs_details = "${consoleName} unloaded ${charactersUnloaded} characters without any specified reason.",
+
 		unloaded_character_for_user = "Unloaded character ${characterFullName} (${characterId}) for ${consoleName}, meow.",
+		unloaded_character_for_everyone = "Uh-oh! ${unloadedCharacters} characters have been disappeared!",
 		user_with_server_id_has_no_character_loaded = "The user with server id `${serverId}` is not swanky with a character.",
 		user_with_server_id_not_found = "I can't find the user with server id `${serverId}`, meow.",
 
@@ -3973,7 +4069,16 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		invalid_destination_server_id = "Squidward's laughing, this destination server id ain't valid.",
 		invalid_source_server_id = "Barnacles! This source server id be invalid.",
 		failed_teleport_player_to_player = "Blimey! Failed to teleport this player to another!",
-		teleported_player_to_player = "Hooray! We've teleported a player to another with success!"
+		teleported_player_to_player = "Hooray! We've teleported a player to another with success!",
+
+		tp_player_logs_title = "Transportation Station",
+		tp_player_logs_details = "${consoleName} moved to ${targetConsoleName}'s location.",
+		tp_here_logs_title = "Transport to My Place",
+		tp_here_logs_details = "${consoleName} brought ${targetConsoleName} to their pineapple.",
+		tp_everyone_logs_title = "Transport Everyone to Me",
+		tp_everyone_logs_details = "${consoleName} teleported everyone to themself, meow.",
+		tp_to_logs_title = "TP To, meow",
+		tp_to_logs_details = "${consoleName} teleported ${sourceConsoleName} to ${targetConsoleName}, meow."
 	},
 
 	afk = {
@@ -4067,6 +4172,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 	arena = {
 		player_died = "${name} turned into a Jellyfish",
+		player_suicide = "${name} killed themselves with ${deathCause}, meow.",
 		player_killed = "${killerName} has sent ${name} to the big kahuna with ${deathCause} (${distance}m)!",
 		hud_info = "Player Amount: ${playerAmount}\n\nDeaths: ${deaths}\nKills: ${kills}. Don't worry, they'll come back as ghostly ghoulies!",
 		press_to_access_menu = "Press ~INPUT_INTERACTION_MENU~ to access the Arena menu. Ooooh, I can't wait to see the action!",
@@ -4147,10 +4253,12 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		deposit = "Put in",
 		balance = "Money in me pocket",
 		transfer = "Hand some doubloons over",
+		savings_bonds = "Savings Bonds, meow",
 		back = "Head back",
 
 		amount = "How many coins?",
 		target = "Who to give it to?",
+		total = "Total, meow",
 
 		confirm_target = "Do ya wanna give $${amount} to \"${name}\"?",
 		cancel = "No thanks, cancel",
@@ -4159,6 +4267,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		failed_deposit = "Oh no! Can't put in the money",
 		failed_withdraw = "Uh oh! Can't take out the money",
 		failed_transfer = "Sorry matey, can't get the coins to them",
+		failed_deposit_bonds = "Failed to deposit savings bonds, meow",
 
 		processing = "Give us a sec, we're working on it...",
 		counting_bills = "Counting me booty...",
@@ -4184,14 +4293,17 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		withdraw_log = "${consoleName} has taken out $${amount}.",
 
 		transfer_log_title = "Bank Transfer",
-		transfer_log = "${consoleName} (#${characterId}) has given $${amount} to ${targetConsoleName} (#${targetCharacterId})."
+		transfer_log = "${consoleName} (#${characterId}) has given $${amount} to ${targetConsoleName} (#${targetCharacterId}).",
+
+		deposit_log_bonds_title = "Bond Deposit, meow",
+		deposit_bonds_log = "${consoleName} deposited ${bonds} worth $${amount}, meow."
 	},
 
 	attachments = {
 		cancel_attachments = "Stop",
 		finish_attachments = "Use",
 
-		modifying_attachments = "Changing ${amount} Gadget Goo-gaws",
+		modifying_attachments = "Modifying Attachments, meow",
 
 		failed_apply = "Couldn't apply gadget goo-gaws.",
 		no_item = "The doodad isn't in your pouch anymore.",
@@ -4308,7 +4420,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		removed_attachments = "Yarr! Me removed ${removed}!",
 		added_attachments = "Ahoy! Me added ${added}!",
-		tint_changed = "Changed the look from `${fromTint}` to `${toTint}`"
+		tint_changed = "Changed tint frum `${before}` ta `${after}`"
 	},
 
 	audio = {
@@ -4371,8 +4483,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		not_enough_players_in_queue = "Sorry, but the Krusty Krab Battle Royale cannot start sea as not enough players be in the queue.",
 		zone_idling = "The krusty krew be taking a break, the zone be idling for now.",
 		zone_advancing = "Look out above, the zone be advancing!",
-		player_died = "${name} be done for, they be joinin' Davy Jones' locker. Only ${remainingPlayers} crew members remain.",
-		player_killed = "${name} met their end at the hands of ${killerName} for reason ${deathCause}, ${distance} meters away. Only ${remainingPlayers} crew members remain.",
+		player_died = "${name} died: ${remainingPlayers} remainin'.",
+		player_suicide = "${name} killed themselves with ${deathCause}: ${remainingPlayers} remainin'.",
+		player_killed = "${killerName} killed ${name} with ${deathCause} (${distance}m): ${remainingPlayers} remainin'.",
 		player_won = "Hooray! ${name} has won the Krusty Krab Battle Royale!",
 		your_team = "Your crew:",
 		received_lobby_invite = "Arr! Ye be gettin' an invite to the lobby from ${serverId}. Type `/br_join ${serverId}` to join the fight!",
@@ -4628,7 +4741,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		exit_the_vehicle_to_scratch = "Exit thé véhiclé to do thé VIN scratch.",
 
 		scratch = "VIN scratch.",
-		press_to_scratch = "Préssé ~g~E ~w~to VIN scratch.",
+		press_to_scratch = "Press ~g~${InteractionKey} ~w~ta VIN scratch.",
 
 		scratching_vehicle = "Scrátching Véhiclé",
 
@@ -5259,17 +5372,29 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		crafted_advanced_repair_kit = "Yarrr! Ye crafted an Advaaaanced Repair Kit!",
 		failed_craft_advanced_repair_kit = "Shiver me timbers! Ye failed to craft an Advaaaanced Repair Kit...",
 
-		pulverize_aluminium = "Pulverize Yer Aluminium, matey!",
-		press_pulverize_aluminium = "[${SeatEjectKey}] Pulverize Yer Aluminium, matey!",
+		process_metal = "Process Metal",
+		press_process_metal = "[${SeatEjectKey}] Process Metal",
+
+		aluminium_powder_recipe = "Craft Aluminium Powder",
 		pulverizing_aluminium = "Pulverizin' Yer Aluminium...",
 		pulverized_aluminium = "Yarrr! Ye have Pulverized Yer Aluminium.",
 		failed_pulverize_aluminium = "Barnacles! Failed to turn aluminium into powder.",
 
-		pulverize_steel = "Pulverize the Steel!",
-		press_pulverize_steel = "[${SeatEjectKey}] Press this to pulverize the Steel!",
+		iron_oxide_recipe = "Craft Iron Oxide but with extra bubbles!",
 		pulverizing_steel = "Pulverizing the Steel...",
 		pulverized_steel = "Pulverized the steel. Yay!",
 		failed_pulverize_steel = "Tartar sauce! It didn't work. Couldn't pulverize the Steel.",
+
+		steel_filings_recipe = "Craft Steel Filings, barnacle style!",
+		filing_steel = "Filing Steel, ahoy!",
+		filed_steel = "Filed steel, ready for jellyfishing!",
+		failed_file_steel = "Barnacles! Failed to file steel!",
+
+		craft_steel_file = "Craft a Steel File, like Squidward does his clarinet!",
+		press_craft_steel_file = "[${SeatEjectKey}] Craft a Steel File, or else Patchy the Pirate will make you walk the plank!",
+		crafting_steel_file = "Crafting a Steel File, don't get caught in the Krusty Krab kitchen!",
+		crafted_steel_file = "Crafted steel file, just like Mr. Krabs' money bags!",
+		failed_craft_steel_file = "Tartar sauce! Failed to craft a steel file!",
 
 		mix_thermite = "Mix the Thermite",
 		press_mix_thermite = "[${SeatEjectKey}] Press this to mix the Thermite!",
@@ -5459,7 +5584,12 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	creation = {
 		turn_right = "Turn starboard, matey!",
 		turn_left = "Turn left, me hearty!",
-		toggle_light = "Toggle Jellyfish Light"
+		toggle_light = "Toggle Jellyfish Light",
+		move_menu = "Move Menu, shake it like a jellyfish!",
+		change_colors = "Change Colors, like a chameleon fish!",
+		move_sliders = "Move Sliders, tighter than Gary's shell!",
+		enter = "Enterrrr",
+		back = "Backkk"
 	},
 
 	creation_menu = {
@@ -5802,14 +5932,12 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		ped = "Paw-paw-ped",
 		vehicle = "Boat-mobile",
 		object = "Thing-a-mabob",
-		network_id = "Tangled up in network-y stuff",
 		owned_by_us = "Owned by us, aye aye!",
 		owned_by = "Owned by one of them landlubbers",
-		one_state_set = "Aye, one state be set!",
-		many_states_set = "Arrr, ${count} states be set!",
+		one_state_set = "1 State",
+		many_states_set = "${count} Statezzz",
 		no_states = "No states be set, argh!",
-		addon_model = "${modelName} (Addon), doodle",
-		entity_health = "Ye be havin' ${health} out of ${maxHealth} health, matey!",
+		native_model = "native/gta",
 		owned_by_server = "Server",
 		owned_by_you = "You, dude",
 		first_owned_short = "First Owner: ${firstOwned}",
@@ -5840,7 +5968,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		world_is = "Bikini Bottom:",
 		controls = "Controls: ${controls} meow",
 		tasks = "Task Calls: ${calls} (${total})",
-		native_calls = "Native Calls: ${calls} (${total})",
+		invoke_calls = "Invoke Callzzz: ${calls} (${total})",
+		draw_calls = "Draw Callzzz: ${calls}",
 		player_speed = "Player Speed: ${playerSpeed}, dude!",
 		player_ped = "Hey, who lives in a pineapple under the sea? Player Ped: ${playerPedId}!",
 		heading = "Heading: ${heading}, that's making me dizzy!",
@@ -5852,6 +5981,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		g_force = "G-Force: ${force}, woo hoo, that was fun!",
 		debug_print_f8 = "Hey, you just got some useful information in your F8 console, cool!",
 		no_vehicle_bone = "Oh no, there's no \"${boneName}\" bone, let's call Sandy for help.",
+		server_vehicles = "Server Vehicless: ${count}",
+		not_networked_vehicles = "Not Networked Vehicless: ${count}",
+		parked_vehicles = "Parked Vehicless: ${count}",
 
 		distance = "Distance: ${distance}m, how far is that from the Chum Bucket?",
 		distance_first = "Hey, I'm SpongeBob SquarePants, and I've just stored the first position!",
@@ -5869,7 +6001,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		vehicle_acceleration_150 = "Meow! 0 to 150: ${time}",
 		vehicle_acceleration_force = "Meow! Launch Force: ${force}",
 
-		invalid_network_id = "Uh-oh! Invalid network ID.",
+		invalid_network_id = "Invalid network id.",
 		delete_entity_success = "Meow! Successfully deleted entity with network id ${networkId}.",
 		delete_entity_failed = "Uh-oh! I couldn't delete that thing, sorry.",
 		delete_entity_no_permissions = "Tried to make an entity disappear without proper permissions, arr arr arr!",
@@ -5979,7 +6111,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		failed_park = "Arrr, the boat be refusin' to be parked, arrr!",
 		deposit_not_enough_money = "Ye don't have enough doubloons to pay the deposit, arrr!",
 		failed_spawn = "Avast ye! The boat be failin' to be spawned, arrr!",
-		vehicle_anchor = "Yer boat be summoned and anchor be dropped, ye can use /anchor to lift the anchor, arrr!"
+		vehicle_anchor = "Yer boat be summoned and anchor be dropped, ye can use /anchor to lift the anchor, arrr!",
+		too_shallow = "It's too shallow for this boat here."
 	},
 
 	doors = {
@@ -6060,7 +6193,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		floor_fourth_floor = "4th Krusty Krab Secret Formula Vault",
 		floor_third_floor = "3rd Floor with Jellyfish Jam Sessions",
 
-		floor_obelisk = "Sandy's Treedome",
 		floor_hangout = "Squidward's Clarinet Practice Spot",
 		floor_penthouse = "Mr. Krabs' Money Counting Lair",
 		floor_theatre_office = "Goo Lagoon Theatre's Director's Office",
@@ -6309,6 +6441,13 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		hold_to_take_gas_mask_off_holding = "Keep holding to take off the Gas Mask, ye old sea dog!"
 	},
 
+	golf = {
+		pickup_ball = "[${InteractionKey}] Pickupp",
+
+		failed_pickup = "Failed to pickitty-up ball.",
+		failed_place = "Failed to placeitty ball."
+	},
+
 	gps = {
 		altitude = "Altitude-dude!",
 		latitude = "Latitude-patties!",
@@ -6516,6 +6655,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		m = "meters, dude!",
 		belt = "BELT, dude!",
 		oil = "OIL, meow",
+		manual = "MANUAL",
 		limiter = "LIMITER, dude!",
 		gear_uc = "GEAR, meow",
 		fuel = "fuel, dude!",
@@ -6530,13 +6670,13 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		rpm = "RPM, dude!",
 		degrees = "degrees Celsius, dude!",
 		degrees_f = "degrees Fahrenheit, dude!",
-		npc_kills = "${kills} locals murdered",
+		npc_kills = "${kills} locals squished ~t~/~w~ ${ranOver} ran over",
 		steps_walked_deaths = "${stepsWalked} steps walked ~t~/~w~ ${deaths} times defeated, dude!",
 		altitude_temperature = "${altitude} ${unit} altitude ~t~/~w~ ${temperature}${degrees} temperature, dude!",
 		scuba_timer = "Bubble left: ${timer}",
 
 		alignment_warning_title = "HUD Alignment",
-		alignment_warning = "Your HUD seems to be partially off-screen. You can adjust it by reducing the \"*Safezone Size*\" in your \"*Display*\" settings.",
+		alignment_warning = "Your HUD seems to be partially off-screen (~${amount}px). You can adjust it by reducing the \"*Safezone Size*\" in your \"*Display*\" settings.",
 
 		muted = "Mute-yah",
 		tx = "TX, meow meow.",
@@ -6550,6 +6690,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		starving = "hungry-yah",
 		injured = "hurt-yah",
 		seriously_injured = "hurting a lot-yah",
+		how_are_you_alive = "bro, how tf are you still alive?",
 		incapacitated = "down for the count-yah",
 		stressed = "stressing out-yah",
 
@@ -6687,8 +6828,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	import_export = {
 		press_to_access = "Press ~INPUT_CONTEXT~ to access the Import/Export menu, me boy!",
 
-		pound = "croosh",
-		pounds = "crooshes",
+		storage_units = "su",
 		minutes = "minuteses",
 
 		total = "Total-y",
@@ -6709,7 +6849,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		no_items = "No Krabby Patties to ship.",
 
-		confirm_dialog = "Aye aye captain! Are ye sure ye want to ship ${total}lbs for $${price}? This shipment won't be cancelled, jellyfishing promise.",
+		confirm_dialog = "Are you sure you want to shipitty ${total}su for $${price}? This shipment cannot be cancelled.",
 		confirm = "Aye aye captain!",
 
 		no_active_order = "Arrr, ye don't have a shipment yet.",
@@ -6725,10 +6865,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		order_success = "Your shipment is on its way to Bikini Bottom! It'll be here in ${minutes} minutes.",
 
 		created_shipment_title = "Shipment Created, Captain!",
-		created_shipment_details = "${consoleName} has created a shipment of ${weight}lbs worth $${price} with ${company}, aye aye!",
+		created_shipment_details = "${consoleName} has created a shipment for ${weight}spatula units for $${price} with ${company}.",
 
 		claimed_shipment_title = "Shipment Claimed, Matey!",
-		claimed_shipment_details = "${consoleName} has swiped a delivery for ${weight}lbs with ${company}.",
+		claimed_shipment_details = "${consoleName} has claimed a shipment for ${weight}spatula units with ${company}.",
 
 		blip_label = "Imports / Exports"
 	},
@@ -6775,8 +6915,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		used = "Used",
 		added = "Added",
+		received = "Receiveth",
 
-		pounds = "shells",
+		storage_units = "spatula units",
+		storage_unit_description = "spatula units = storage unit",
 
 		store = "Store",
 		gas_station = "Gas Station",
@@ -6799,6 +6941,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		gun_store_with_shooting_range = "Ammu-Nation with Range, where Sandy tests out her newest inventions",
 		green_wonderland = "Green Wonderland",
 		copy_shop = "Copy Shop",
+		submarine_locker = "Submarine Locker",
 		astrology_stand = "Astrology Stand, meow",
 		irish_pub = "Irish Pub",
 		bar = "Bar",
@@ -6843,10 +6986,15 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		press_to_access_locker = "Shiver me timbers! Press ~INPUT_REPLAY_SHOWHOTKEY~ to access yer own secret locker.",
 		press_to_access_shared_storage = "Blimey! Press ~INPUT_REPLAY_SHOWHOTKEY~ to access the shared storage, ye scallywag!",
 
+		failed_give = "Failedeth to giveth item(s) to player.",
+		character_too_far = "The player is too far away.",
+		target_inventory_full = "The player's inventory is full.",
+		received_item = "${displayName} gave you ${amount}x ${item}.",
+
 		inspect_weapon = "Me see that this ${itemName} has a serial number of `${itemId}`. Ye got a fine piece of weaponry right there.",
 		inspect_weapon_broken = "Blisterin' barnacles! This ${itemName} be broken! The serial number is `${itemId}`.",
-		inspect_bank_gold_bar = "This gold bar be marked property of th' ${bank} Bank.",
-		inspect_gold_bar = "This gold bar does not seem to have any markings on it, matey.",
+		inspect_bank_property = "This ${item} is marked property of the ${bank} Bank, dude.",
+		inspect_no_property = "This ${item} does not seem to have any property markings on it, dude.",
 
 		searching_dumpster = "Lookin' in the Dumpster!",
 
@@ -6899,11 +7047,17 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		craft_combine = "Combine <i>${output}</i>, aye aye captain!",
 		combining = "Crafting in progress, argh!",
 
+		file_serial = "File Serial Number, dude",
+		filing_off_serial_number = "Filing Off Serial Number, dude",
+		filed_serial_number = "Successfully filed off serial number, dude.",
+		failed_file_serial_number = "Failed to file off serial number, dude.",
+
 		carve_jack_o_lantern = "Carve <i>Jack-o-lantern</i>, woohoo!",
 		crush_cocoa_beans = "Crush <i>Cocoa Beans</i>, meow!",
 		mix_hot_chocolate = "Mix <i>Hot Chocolate</i>, ahoy!",
 		crush_raw_ruby = "Crush <i>Raw Ruby</i>, arrrr!",
 		crush_raw_sapphire = "Crush <i>Raw Sapphire</i>, arf arf!",
+		break_apart_weed = "Break Apart <i>1oz of Weed</i>, dude",
 
 		search = "Search, aye aye captain!",
 		amount = "Amount, barnacles!",
@@ -6945,8 +7099,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		logs_wiped_nearby_ground_inventories_title = "Wiped Nearby Ground Inventories",
 		logs_wiped_nearby_ground_inventories_details = "${consoleName} wiped all the schtuff on the ground within a radius of `${radius}`.",
 
-		logs_combined_title = "Combined Items",
-		logs_combined_details = "${consoleName} combined ${inputs} to make 1x ${output}.",
+		inventory_crafting_logs_title = "Inventory Crafting, dude",
+		inventory_crafting_logs_details = "${consoleName} used ${inputs} to make ${amount}x ${output}.",
 
 		press_use_campfire = "[${InteractionKey}] Use The Fire Pit",
 		use_campfire = "Use The Fire Pit",
@@ -6960,6 +7114,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		dumpster_pizza_slice = "Moldy Pizza Slice (Neglected)",
 		dumpster_banana = "Hairy Banana (Very Mushy) (Abandoned)",
 		dumpster_almond_milk = "Sour Almond Milk",
+		dumpster_knife = "Rusty Shank",
 
 		-- items & item descriptions
 		body_armor = "Protective Shell",
@@ -6983,6 +7138,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		smart_watch_description = "Arr, hate havin' to pay cash everywhere? Just use yer smarty watchy! Also comes with a built in compass, watch, GPS, and plank-walker-tracker! Just don't go for a run at 2am, unless ye want ol' Davy Jones to pay ye a visit.",
 		tablet = "Tablet",
 		tablet_description = "Aye, tis a very big phone.",
+		wallet = "Wallet",
+		wallet_description = "For all yer cash and cards.",
 
 		gps = "GPS",
 		gps_description = "Barnacles, satisfy all yer gadget needs.",
@@ -7067,10 +7224,14 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		picture_description = "Collect all the old pirate shanties of ye and yer mateys. (Size: 1x1)",
 		printed_card = "Printed Piece o' Pirate Booty",
 		printed_card_description = "A wee piece o' piratey treasure, aye? (Size: 9x5)",
+		printed_document = "Printed Document",
+		printed_document_description = "A printed document, a letter maybe? (Size: 21x28)",
 		paper = "Scallywag Paper",
-		paper_description = "A blank sheet o' paper for printin' pirate charts and whatnot.",
+		paper_description = "A blank piece o' paper for printin' pictures. (Size: 1x1)",
 		card_paper = "Buccaneer Card Paper",
-		card_paper_description = "A blank sheet o' paper for printin' pirate business cards, arrr!",
+		card_paper_description = "A blank piece o' paper for printin' business cards. (Size: 9x5)",
+		document_paper = "Document Paper",
+		document_paper_description = "A blank piece of paper for printin' documents, ya know? (Size: 21x28)",
 		printer = "Printer, meow!",
 		printer_description = "No fax, only printer.",
 
@@ -7257,6 +7418,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		belgian_fries_description = "Ye want the tasty fritas, eh? Then send a message to @Giv3n#0753 and say \"fritas\"! Don't forget to bring yer appetite, though, argh!",
 		coke = "Kook!",
 		coke_description = "Pabwo?",
+		pepsi = "Pepsi",
+		pepsi_description = "Cocaine is better than Coke, me boy!",
 		wonder_waffle = "Wondew Waffwe!",
 		wonder_waffle_description = "Vegan, wactose fwee, daiwy fwee, egg fwee, gwuten fwee, owganic, antibiotic fwee, soy fwee, no fwuctose, nut fwee, non GMA, sugaw fwee, fat fwee and wow cawb",
 		cheeseburger = "Cheesebuwgew!",
@@ -7469,6 +7632,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		pet_pingu_description = "This adorable little penguin be the perfect companion fer any adventure, matey! With its soft fur and playful personality, it'll happily perch on yer shoulder as ye go about yer day.",
 		pet_banana_cat = "Banana Cat",
 		pet_banana_cat_description = "Yar fruity feline matey! Th' Banana Cat perches on yer shoulder, addin' a dose o' playful charm to yer day. It's th' purr-fect accessory fer a whimsical touch in yer life.",
+		pet_snowman = "\"Frosty\" The Snowman",
+		pet_snowman_description = "Get frosty with yer very own shoulder snowman! This tiny, chilly companion adds a touch o' winter wonder to yer style, makin' it perfect for snowy adventures and spreadin' frosty cheer.",
 
 		hotwheels_mcqueen = "Relámpago McQueen",
 		hotwheels_mcqueen_description = "Speed, soy Speed, Flota como un Cadillac, pica como un Beemer. KATCHOW, KATCHOW, KATCHOW",
@@ -7511,6 +7676,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		aluminium_powder_description = "A super versatile powdah that's used in all sorts of industrial and chemical thingamajigs. When ya mix it with some otha stuff, kaboom! Intense heat and light!",
 		iron_oxide = "Iron Oxide Powdah",
 		iron_oxide_description = "This powdah is made of iron and oxygen molecules and it's used in all sorts of industrial thingamabobs. When ya mix it with certain things, it gets all hot and bothered and releases a bunch of heat and energy. Cool, huh?",
+		steel_filings = "Steel Filings",
+		steel_filings_description = "A collection o' small steel shavings, produced durin' the machinin' o' various metal components. Commonly used in the makin' o' files.",
 
 		gold_bar = "Golden Krabby Patty",
 		gold_bar_description = "Used fer repairs n' craftin'.",
@@ -7543,7 +7710,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		refined_steel_description = "Used for fancy fixin'.",
 
 		power_saw = "Power Saw",
-		power_saw_description = "Used more for making a racket than actually fixin' anything.",
+		power_saw_description = "Used fer sawin' things off o' other things, arrr.",
+		steel_file = "Steel File, mateys!",
+		steel_file_description = "Used fer filin' things. Not yer taxes though, argh.",
 
 		thermite = "Thur-mite",
 		thermite_description = "Highly vola-tile powder, don't sniffle it!",
@@ -7587,6 +7756,15 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		gold_watches_description = "And... where did ya get these, exactly?",
 		diamonds = "DIAMONDS",
 		diamonds_description = "Ya need 24 to make a full armor. I'd recommend gettin' 27 though so ya can get yerself a pickaxe too.",
+
+		savings_bond_200 = "$200 SaviNgs BoNd, ahoy!",
+		savings_bond_200_description = "A $200 saviNgs boNd that represents yer commitment to finaNcial security. This boNd can be cashed in at participatiN' banks, providin' ye with a boost to yer saviNgs and a step closer to yer finaNcial goals, argh.",
+		savings_bond_500 = "$500 SaviNgs BoNd, matey!",
+		savings_bond_500_description = "A $500 saviNgs boNd that serves as a substantial investment in yer future. When the time be right, redeem it at a bank to unlock its full value and take a significant stride toward yer finaNcial aspirations, arrr.",
+		savings_bond_1000 = "$1,000 Bubbly Bond",
+		savings_bond_1000_description = "A $1,000 bubbly bond, a testament to your dedication to building riches. Keep this bond safe until you're ready to cash it in at a bank, where it will provide you with a substantial treasure boost.",
+		savings_bond_2000 = "$2,000 Bubbly Bond",
+		savings_bond_2000_description = "A $2,000 bubbly bond, a substantial investment in your treasure future. Hold onto this bond until the time is right, and then redeem it at a bank to unlock its full value, helping you achieve your treasure dreams.",
 
 		weather_spell_snow = "WEATHER SPELL (SNOW)",
 		weather_spell_snow_description = "Usin' this item will let ya temporarily control the weather and make it snow! It is a one-time use, so use with care. If ya use two weather spells at once, the second one will simply queue up.",
@@ -7668,6 +7846,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		boombox = "Boombox",
 		boombox_description = "Play music an' be obnoxious anywhere, any time, woohoo!",
+
+		microphone_stand = "Kah-rah-teh Stand",
+		microphone_stand_description = "Make your voice super loud with the Kah-rah-teh Stand. Let everyone hear your message from Bikini Bottom to Jellyfish Fields!",
 
 		lighter = "Lighter",
 		lighter_description = "some scalawag jus' want t' see worlds burn, arrr!",
@@ -7871,6 +8052,12 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		irish_coffee = "Irish Coffee, matey!",
 		irish_coffee_description = "Freshly made coffee with a bit of original irish whiskey in it, arrr, ye won't be disappointed!",
+		guinness_beer = "Jellyfish Juice",
+		guinness_beer_description = "A pint of the finest jellyfish juice in the sea.",
+		jameson_whiskey = "Krabby Patty Special Sauce",
+		jameson_whiskey_description = "A bottle of the secret recipe sauce from the Krusty Krab.",
+		tayto_chips = "Kelp Chips",
+		tayto_chips_description = "It's \"chips\" not \"crisps\"! Enjoy the saltiest and crunchiest snack from the ocean.",
 
 		chip_10 = "$10 Chip, im ready to gamble!",
 		chip_10_description = "A guryjellyfish chip. Can be used to gamble. The item can be converted to doubloons at the casino.",
@@ -8444,7 +8631,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		weapon_addon_680_description = "The Remington 680 is a pump-action shotgun that was developed by Remington Arms in 1950, oh my krabby patties!",
 
 		weapon_addon_honey = "Honey Jectar",
-		weapon_addon_honey_description = "Da AAC Honey Badger PDW be a personal defense weapon, frequently used in a suppressed configuration an' be based on da AR-15. It be chambered in .300 AAC Blackout an' be originally produced by Advanced Armament Corporation (AAC)."
+		weapon_addon_honey_description = "Da AAC Honey Badger PDW be a personal defense weapon, frequently used in a suppressed configuration an' be based on da AR-15. It be chambered in .300 AAC Blackout an' be originally produced by Advanced Armament Corporation (AAC).",
+
+		weapon_addon_glock18c = "Bubble Blower 18C",
+		weapon_addon_glock18c_description = "Introducing the Glock 18C: the pocket-sized party starter! It's got full-auto firepower and enough recoil to make your range day an adventure. Whether you're defending your hideout or just looking to turn heads at the range, the Glock 18C has you covered. Meow meow!"
 	},
 
 	invisibility = {
@@ -8620,7 +8810,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		mixed_with = "Mixed with ${flavor} meow",
 		mixed_with_label = "Lean (${flavor} meow)",
-		mixing = "Mixing Lean meow"
+		mixing = "Mixing Lean meow",
+
+		sold_lean_logs_title = "Sold Lean, meow!",
+		sold_lean_logs_details = "${consoleName} sold 1x Lean for $${reward}, meow."
 	},
 
 	leashes = {
@@ -8837,6 +9030,18 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		reward_text_part_2 = " OP Points for every image created as well as ",
 		reward_text_part_3 = " OP Points for every hour you are on standby.",
 
+		expired = "Expired, meow",
+		upgrade = "Upgrade, meow",
+		upgrade_pledge = "Upgrade Pledge, meow",
+		upgrade_pledge_information = "You can upgrade your pledge to a higher tier at any time. Ugprading your pledge will not reset the remaining time, meow.",
+		upgrading_following_pledge = "Upgweeding Pledge",
+		available_upgrades = "Availabubble Upgwades",
+		cost_points = "${cost} pointy points",
+		buy = "Buy",
+		confirm_pledge_upgrade = "Confirmy Pledge Upgwade",
+		confirm_pledge_upgrade_text = "Awre you surey you wawnt to upgwade your ${pledgeLabel} pwedge to ${pledgeUpgradeLabel} fowr ${cost} OP points?",
+		upgrading_pledge = "Upgweeding Pledge...",
+
 		exiting_login_ui = "Arr, we be leavin' the Login UI, matey!"
 	},
 
@@ -8993,7 +9198,14 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	meth = {
 		press_to_sell_meth = "Press ~INPUT_CONTEXT~ to sell Meth, me boy-o!",
 		local_not_interested = "The local ain't interested at the moment, arrr.",
-		selling_meth = "Selling Meth, me fine laddy!"
+		selling_meth = "Selling Meth, me fine laddy!",
+
+		sold_meth_logs_title = "Sold Meth",
+		sold_meth_logs_details = "${consoleName} sold 1x Meth Bag fowr $${reward}."
+	},
+
+	microphone_stand = {
+		active = "~g~Active"
 	},
 
 	mining = {
@@ -9152,7 +9364,15 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		auto_run_unset = "Auto-run has been unset. Ooh, tartar sauce!",
 
 		walk_forwards_success = "Successfully toggled walking forwards for ${displayName}. Let's go, let's go, let's go!",
-		walk_forwards_failed = "Failed to toggle walking forwards for ${displayName}. Oh, barnacles!"
+		walk_forwards_failed = "Failed to toggle walking forwards for ${displayName}. Oh, barnacles!",
+
+		info_title = "Absorb dis info during bug reports",
+		info_character = "**Nautical Nonsense-ID**: *${id}*",
+		info_job_data = "**Job Barnacles:** *${job}*",
+		info_job_data_none = "**Job Barnacles:** *None*",
+		info_licenses = "**Licenses Arr!:** *${licenses}*",
+		info_licenses_none = "**Licenses Arr!:** *None*",
+		info_timestamp = "*Timestamp - ${time}*"
 	},
 
 	money = {
@@ -9181,7 +9401,13 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		press_to_sell_moonshine = "Ahoy! Press ~INPUT_CONTEXT~ to sell yer Moonshine, arrrr!",
 		local_not_interested = "The local doesn't seem to be interested right now, matey.",
-		selling_moonshine = "Selling me Moonshine, arrrr!"
+		selling_moonshine = "Selling me Moonshine, arrrr!",
+
+		sold_moonshine_logs_title = "Sold Moonshine",
+		sold_moonshine_logs_details = "${consoleName} sold 1x Moonshine for $${reward}.",
+
+		emptied_cooker_logs_title = "Emptied Cooker",
+		emptied_cooker_logs_details = "${consoleName} emptied out a Moonshine cooker and got ${amount} Bottle(s)."
 	},
 
 	nos = {
@@ -10238,9 +10464,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	peds = {
 		ped_robbing_injection = "Excessive me-robbing! (Bypassed server-timeout, most likely using an injector to accomplish this.)",
 		robbed_ped_logs_title = "Robbed Me",
-		robbed_ped_logs_details = "${consoleName} robbed a me and received $${payout}.",
-
-		nancy = "~b~Dr. Nancy"
+		robbed_ped_logs_details = "${consoleName} robbed a me and received $${payout}."
 	},
 
 	pepper_spray = {
@@ -10356,7 +10580,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		removed_marker = "Removed marker for ${address}.",
 		entrance = "Welcome aboard, matey!",
 		back_entrance = "Back Entrance",
-		garage = "Garage"
+		garage = "Garage",
+		located_address = "Located: ${address} Pants!"
 	},
 
 	props = {
@@ -10409,10 +10634,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		frequency_set_to_streamer = "The frequency be all set, ready to go jellyfishing!",
 		frequency_set_to = "The frequency done been set to ${frequency}, let's jam!",
 		frequency_already_set_to = "The frequency already be set to ${frequency}, we ain't need to reset it!",
-		radio_volume_same = "The radio volume already be set to `${radioVolume}`, we ain't gotta change it!",
+		radio_volume_same = "The jelly-fishing jammer is already set to ${radioVolume}%!",
 		radio_volume_reset = "The radio volume now be reset, time to start fresh!",
-		radio_volume_set = "The radio volume done been set to `${radioVolume}`, let's turn it up!",
-		radio_volume_current = "Yer current radio volume be `${radioVolume}`, turn it up or down, the choice be yer's!",
+		radio_volume_set = "The jelly-fishing jammer has now been set to ${radioVolume}%!",
+		radio_volume_current = "Your current jelly-fishing jammer is set to ${radioVolume}%!",
 		radio_volume_current_default = "Yer current radio volume is default.",
 		radio_sound_effects_same = "The volume o' the radio sound effects be already set to `${radioSoundEffects}`.",
 		radio_sound_effects_reset = "The volume o' the radio sound effects has now been reset.",
@@ -10434,6 +10659,16 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		decrypter_jammed = "Oopsie! The decrypter be jammed, matey!",
 		decrypted_frequency = "Feelin' the frequency at around `${frequency}`. Aye aye!",
 		no_frequency_detected = "Arrr, no frequency be detected. Ye scallywag!"
+	},
+
+	reflect = {
+		success_enable_reflection = "Barnacles! Reflection is enabled now!",
+		success_disable_reflection = "Bikini Bottom! Reflection is disabled now!",
+		failed_toggle_reflection = "Tartar Sauce! Failed to toggle reflection.",
+
+		reflection_logs_title = "Reflection Toggle-o-matic",
+		reflection_logs_enabled_details = "${consoleName} has toggled reflection on, tartar sauce!",
+		reflection_logs_disabled_details = "${consoleName} has toggled reflection off, barnacles!"
 	},
 
 	remote_camera = {
@@ -10597,6 +10832,57 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		lock_closed = "Shiver me timbers! The lock be closed."
 	},
 
+	savings_accounts = {
+		savings_accounts = "Savings Accounts, bubble blow!",
+		button_close = "Close, jellyfishing style!",
+		button_back	= "Back",
+		button_confirm = "Confirm, krusty krab style!",
+		button_delete = "Delete, plankton style!",
+		button_manage = "Manage, sandy style!",
+		create_account = "Create Account, pineapple style!",
+		delete_account = "Delete Account, mermaid style!",
+		confirm_delete = "Are you sure you want to permamently delete this account and all logs associated with it? This action cannot be undone, jellyfishing shenanigans!",
+		loading = "Loadin'...",
+		failed_load_accounts = "Failed to load booty accounts.",
+		no_accounts = "No booty accounts.",
+		log_message = "${name} ${action} ${amount}",
+		action_withdraw = "plundered",
+		action_deposit = "stashed",
+		withdraw = "Plunder",
+		deposit = "Stash",
+		amount = "Booty Amount",
+		account_name = "Account Name",
+		actions = "Actions",
+		access = "Access",
+		logs = "Booty Records",
+		no_logs = "No booty records.",
+		no_access = "Nobody except yerself has access to this account.",
+		add_cid = "Add Barnacle ID...",
+		failed_add_access = "Barnacles! Failed to add access.",
+		invalid_character_id = "Barnacles! Invalid or unknown character id.",
+		failed_remove_access = "Barnacles! Failed to remove access.",
+		failed_withdraw = "Barnacles! Failed to withdraw.",
+		failed_deposit = "Barnacles! Failed to deposit.",
+		failed_create = "Barnacles! Failed to create savings account.",
+		failed_delete = "Barnacles! Failed to delete savings account.",
+		insufficient_balance = "Barnacles! Account balance is insufficient.",
+		insufficient_bank_balance = "Barnacles! Your bank balance is insufficient.",
+		account_description = "Only the owner of the account can delete and manage it. People with access to the account can only withdraw and deposit. You can create up to 5 different savings accounts.",
+
+		add_access_logs_title = "Savings Add Access",
+		add_access_logs_details = "${consoleName} gaveth `${firstName} ${lastName}` #${characterId} access to savings account ${accountId}.",
+		remove_access_logs_title = "Savings Remove Access",
+		remove_access_logs_details = "${consoleName} removedt #${characterId} access to savings account ${accountId}.",
+		create_account_logs_title = "Savings Create Account",
+		create_account_logs_details = "${consoleName} created a new savings account named `${accountName}` with the id ${accountId}.",
+		deleted_account_logs_title = "Bikini Bottom Savings Delete Account",
+		deleted_account_logs_details = "${consoleName} deleted a savings account named `${accountName}` with the id ${accountId}.",
+		withdraw_logs_title = "Bikini Bottom Savings Withdraw",
+		withdraw_logs_details = "${consoleName} withdrew $${amount} from savings account ${accountId}.",
+		deposit_logs_title = "Bikini Bottom Savings Deposit",
+		deposit_logs_details = "${consoleName} deposited $${amount} into savings account ${accountId}."
+	},
+
 	scoreboard = {
 		player_list = "Squidward's player list",
 		players = "SpongeBob's crew",
@@ -10666,6 +10952,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 	scuba = {
 		sunken_ship = "Oh boy, it's the Sunken Ship! Meow!",
+		broken_pipeline = "Ripped Pipeline",
 		gather_item = "Gather Item (${distance}m), Meow!",
 
 		collected_junk = "Yay, collected Junk! Meow!",
@@ -10776,6 +11063,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		not_enough_cash = "You don't have enough doubloons, me boy!"
 	},
 
+	shopkeepers = {
+		tag_nancy = "~b~Dr. Nancy"
+	},
+
 	shrooms = {
 		press_to_pick_up_shrooms = "Press ~INPUT_CONTEXT~ to pick up some shrooms, yar!",
 		picking_up_shrooms = "Yarr, yer pickin' up some shrooms!",
@@ -10784,7 +11075,12 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		not_interested = "This landlubber's not interested in yer shrooms, laddie.",
 		selling_shrooms = "Sellin' yer shrooms, aye aye!",
 		shrooms_not_ripe = "Arr, these shrooms ain't ripe yet, maybe let 'em grow a bit longer, arrgghh!",
-		shroom_id = "shroom-${shroomId}"
+		shroom_id = "shroom-${shroomId}",
+
+		sold_shrooms_logs_title = "Sold Shroomz",
+		sold_shrooms_logs_details = "${consoleName} sold 1x Shroomz for $${reward}.",
+		picked_shroom_logs_title = "Picked Shroom",
+		picked_shroom_logs_details = "${consoleName} picked 1x Shroom."
 	},
 
 	skylift = {
@@ -10943,6 +11239,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		microphone_bug_destroy = "Microphone Bug\n[${InteractionKey}] Destroy",
 		vehicle_tracker = "Vehicle Tracker",
 		vehicle_tracker_destroy = "Vehicle Tracker\n[${InteractionKey}] Destroy",
+		radio_jammer = "Radio Jammer",
 		destroying_device = "Destroying Device, like Krusty Krab's kitchen after SpongeBob cooking",
 		tracker_will_appear_on_map = "This tracker has already been activated. It will appear on your map for as long as the vehicle is available and the tracker has battery, like Gary running away from Patrick.",
 		spy_ui_info = "Listening In On Microphone Bug (#${deviceId}), like Mr. Krabs listening to Plankton's secret formula plans.",
@@ -11212,7 +11509,13 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		enter_loading_bay_interact = "[${InteractionKey}] Enter Loading Bay, Arrr!",
 
 		exit_loading_bay = "Exit Loading Bay, Yo Ho Ho!",
-		exit_loading_bay_interact = "[${InteractionKey}] Exit Loading Bay, Yo Ho Ho!"
+		exit_loading_bay_interact = "[${InteractionKey}] Exit Loading Bay, Yo Ho Ho!",
+
+		enter_submarine = "Enter Submarine",
+		enter_submarine_interact = "[${InteractionKey}] Enter Submarinizzle",
+
+		exit_submarine = "Exit Submarine",
+		exit_submarine_interact = "[${InteractionKey}] Exit Submarinizzle"
 	},
 
 	test_server = {
@@ -11449,7 +11752,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		added_vdm_target = "NPC with network id ${networkId} is after ${target} now.",
 		no_ped_available = "No dude nearby is available.",
 		failed_steal = "Failed to snag the vehicle.",
-		stealing_vehicle = "A dude nearby was told to yoink the vehicle (${distance}m)."
+		stealing_vehicle = "A dude nearby was told to yoink the vehicle (${distance}m).",
+		no_waypoint = "No destizzlenation waypoint set.",
+		success_drive_to = "Squidward successfully made the pedestrian drive to the waypoint.",
+		failed_drive_to = "Squidward failed to make the pedestrian drive to the waypoint."
 	},
 
 	vending_machines = {
@@ -11649,6 +11955,11 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		kmh = "km/h me barnacle!"
 	},
 
+	locales = {
+		showing_raw_locales_on = "Toggle showing raw locales on, meow.",
+		showing_raw_locales_off = "Toggle showing raw locales off, meow."
+	},
+
 	states = {
 		invalid_network_id = "Invalid network id. Meow?",
 		debug_states_failed = "Oh no, debugging this entity's states failed. Blub blub blub.",
@@ -11672,6 +11983,19 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		second = "second",
 		seconds = "seconds",
 		just_now = "just now",
+
+		month_1 = "January, meow.",
+		month_2 = "February, meow.",
+		month_3 = "March, meow.",
+		month_4 = "April, meow.",
+		month_5 = "May, meow.",
+		month_6 = "June, meow.",
+		month_7 = "July, meow.",
+		month_8 = "August, meow.",
+		month_9 = "September, meow.",
+		month_10 = "October, meow.",
+		month_11 = "November, meow.",
+		month_12 = "December, meow.",
 
 		time_in = "in ${time} ${unit}",
 		time_ago = "${time} ${unit} ago"
@@ -11742,6 +12066,29 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		finished_delivery_title = "Finished Burger Shot Delivery",
 		finished_delivery_details = "${consoleName} finished a Krusty Krab delivery and received $${deliveryPrice} and $${distanceBonus} in tip, totalling $${totalPrice}!!",
 		delivery_blip = "Krusty Krab Delivery"
+	},
+
+	doj = {
+		invalid_type = "Barnacles! Invalid or missin' type.",
+		missing_search = "Barnacles! Missin' search parameter.",
+		lookup_failed = "Tartar sauce! Did not find any results for the given type and search.",
+
+		result_signature = "State of Bikini Bottom",
+		result_title = "${type} Lookup (\"${search}\")",
+		result_text = "${type} - \"${search}\"\n\nC-ID:\t\t${characterId}\nFirst-Name:\t${firstName}\nLast-Name:\t${lastName}\nPhone-Number:\t${phoneNumber}\nDate-Of-Birth:\t${dateOfBirth}\nGender:\t\t${gender}\n\nTwitter: @${username}",
+
+		looked_up_character_logs_title = "Character Lookup",
+		looked_up_character_logs_details = "${consoleName} looked up a `${type}`, searching for `${search}`.",
+
+		invalid_time = "Arr, bucko! That time be invalid.",
+		missing_invalid_plate = "Arr, bucko! That plate be invalid or missing.",
+		vehicle_hold_success = "Yo-ho-ho! Successfully put a hold on the vessel with plate `${plate}` for ${time}.",
+		vehicle_hold_failed = "Walk the plank! Failed to put a hold on the vessel.",
+		invalid_plate = "No vessel with that plate found, me matey.",
+		cant_reduce_time = "Avast! The vessel be already under the watchful eye of the PD for a longer time than ye specified.",
+
+		vehicle_hold_logs_title = "Vehicke Holde",
+		vehicle_hold_logs_details = "${consoleName} puteth a vehicle with the plate `${plate}` (ID: ${vehicleId}) on holde for ${time}."
 	},
 
 	duty = {
@@ -11984,13 +12331,13 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	fuel = {
 		exit_to_fuel = "Exit the vehicle to refuel, argh!",
 		press_to_fuel = "Press ~g~${InteractionKey} ~w~to refuel the vehicle, meow!",
-		fuel_pump_text = "Fuel Cost: $${fuelCost} krabby patties~n~Press ~g~E ~w~to stop fueling, aye aye captain!",
+		fuel_pump_text = "Fuel Coste: $${fuelCost}~n~Presseth ~g~${InteractionKey} ~w~to ceaseth fueling.",
 		vehicle_text = "Fuel Level: ${fuelLevel}% full of bubbles!",
 		tank_full = "The tank is full, hooray!",
 		vehicle_busy = "The nearby vehicle is busy, meow.",
 		purchase_jerry_can = "Press ~g~${InventoryKey} ~w~to buy a jerray can.",
 		gas_station = "Gahs Station",
-		petrolcan_fuel_text = "Jus' ${petrolAmount}% of petrol left.~n~Press ~g~E ~w~to stop fuelin'.",
+		petrolcan_fuel_text = "Petrol Amounte Left: ${petrolAmount}%~n~Presseth ~g~${InteractionKey} ~w~to ceaseth fueling.",
 		player_busy = "Ya busy with somethin' else.",
 		fuel_level_set_to = "The gahs level has been set to `${fuelLevel}`.",
 		not_in_a_vehicle = "Ya not in a boat mobile.",
@@ -12089,8 +12436,17 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 
 		invalid_vehicle = "Barnacles! None or invalid vehicle.",
 		not_owned_vehicle = "The vehicle ain't owned by anyone.",
-		vehicle_garaged = "Successfully stored the vehicle in Sandy's Treedome.",
-		garaged_failed = "Floundering flounders! Failed to store the vehicle."
+		vehicle_garaged = "Successfullye garaged vehicle with id ${vehicleId}.",
+		garaged_failed = "Floundering flounders! Failed to store the vehicle.",
+		invalid_vehicle_id = "Invalid vehicle id.",
+		ungarage_success = "Successfullye ungaraged the vehicle.",
+		ungarage_failed = "Failed t-o u-ng-arage the vehicle. D-id y-ou enter the correct vehicle id?",
+		vehicle_not_found = "No vehicle with th-at id w-as found.",
+
+		garaged_vehicle_logs_title = "G-ar-aged V-eh-ic-le",
+		garaged_vehicle_logs_details = "${consol-=-eName} g-araged a v-eh-ic-le with id ${veh-ic-leId}.",
+		ungaraged_vehicle_logs_title = "Ung-ar-aged V-eh-ic-le",
+		ungaraged_vehicle_logs_details = "${consol-=-eName} un-gar-aged a v-eh-ic-le with id ${veh-ic-leId}."
 	},
 
 	keys = {
@@ -12192,12 +12548,13 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		vehicle_mileage_amount = "Dis vehicle has gone ${miles} miles.",
 		not_in_driver_seat = "Arrgghh! To check the mileage, you gotta be at the wheel!",
 		not_driving_vehicle = "Barnacles! You're not drivin' a vehicle!",
+		not_in_vehicle = "Y-ou are n-ot in  a v-eh-ic-le.",
 		vehicle_locked = "Tartar sauce! The vehicle be locked!",
 		gear_animation_enabled = "Blisterin' barnacles! Gear animation (and sounds) be enabled!",
 		gear_animation_disabled = "Oh, shrimp! Gear animation (and sounds) be disabled!",
-		manual_gears_enabled = "Ahoy there, matey! Manual gearin' be enabled!",
+		manual_gears_enabled = "M-anual gearing h-as n-ow been en-abled. H-ybr-id-M-ode is `${hybr-==id}`.",
 		manual_gears_disabled = "Squidward's soufflé! Manual gearin' be disabled!",
-		manual_gear_set_to = "Gear be set to ${gearId}.",
+		hybrid_off = "offaroonie",
 		speed_limiter_set_to_metric = "The speed limiter be limmitin' the speed to ${speed} km/h now.",
 		speed_limiter_set_to_imperial = "The speed limiter be limmitin' the speed to ${speed} mp/h now.",
 		speed_limiter_reset = "The speed limiter be limmitin' the speed to whatever speed the vehicle be goin' when ye toggled it.",
@@ -12216,6 +12573,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		belt_warning = "Your floatie belt is not on, press ~INPUT_SPECIAL_ABILITY_SECONDARY~ to put it on.",
 		supporter_vehicle = "Krusty Krab Supporter",
 
+		no_data_copied = "Yee haven't copied any vehicle data, me matey.",
+		copied_data = "Yee copied vehicle data, arrr.",
+		pasted_data = "Yee pasted vehicle data, argh.",
+
 		nearest_player_not_vehicle = "The nearest barnacle head ain't in a sea chariot, yar!",
 		no_dead_player_nearby = "There ain't no seaweed brains in a sea chariot near ye, arr!",
 		dragging_out_player = "Hauling the scallywag outta the sea chariot.",
@@ -12230,7 +12591,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		toggled_vehicle_weapons_on = "Patrick: Yay! We can now shoot stuff out of the boat!",
 		toggled_vehicle_weapons_off = "Patrick: Oops, I think I accidentally turned off the weapons...",
 		toggled_vehicle_weapons_vehicle_is_not_networked = "Sandy: This boat is not connected to the network, y'all.",
-		toggled_vehicle_weapons_not_in_a_vehicle = "Spongebob: You're not in a boat, silly!",
 		toggled_vehicle_weapons_target_user_not_found = "Mr. Krabs: That user went to the Chum Bucket, I reckon.",
 		toggled_vehicle_weapons_player_not_in_a_vehicle = "Gary: Meow, target player is not in a boat.",
 		toggled_vehicle_weapons_for_player_on = "Meow Meow, ${consoleName}'s vehicle weapons are on now!",
@@ -12277,10 +12637,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		vin_lookup_unregistered = "VIN `${vin}` be not registered to any vehicle, y'all."
 	},
 
-	wheels = {
-		press_to_slash = "[${InteractionKey}] Hold to slash, me hearties!",
-		hold_to_slash = "Hold to slash like a true pirate!",
-		slashing_tire = "Slashing the tire, aye aye captain!"
+	wheel_slash = {
+		hold_to_slash = "[${InteractionKey}] Hold to slash, matey!",
+		slashing_tire = "Slashing Tire, arrr!"
 	},
 
 	-- weapons/*
@@ -12433,8 +12792,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		bleeding_reduced = "leakin' slowed down",
 		bleeding_self_stopped = "leakin' stopped by itself",
 		thanks_for_loot = "You were mugg'd while unconsciouss. Some items may be missin'. Roumor says it was Nancy.",
-		serial_number = "Serial Number: ${serialNumber}<br>This thing belongs to ${fullName} (#${characterId}).",
-		serial_number_unknown = "Serial Number: Unknown.",
+		serial_number = "Serial Number: ${serialNumber}<br><i>This weapon be registered to ${fullName} (#${characterId}).</i>",
+		serial_number_unknown = "Serial Number: ${serialNumber}<br><i>This weapon be unregistered, aye.</i>",
+		serial_number_removed = "Serial Number appears to be filed or scratched off, me bucko.",
 		badge_owner = "<i>This badge belongs to <b>${fullName} (${positionName})</b>.</i>",
 		badge_owner_unknown = "Badge Owner be unknown, meow.",
 		citizen_card_owner = "<i>This citizen card belongs to <b>${fullName} (#${characterId})</b>.</i>",

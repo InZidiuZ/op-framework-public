@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 23 (do not change)
+-- AUTO LOCALES: 24 (do not change)
 
 OP.Global.Locales.Languages["it-IT"] = {
 	-- configuration settings for language
@@ -196,6 +196,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 		announcement_logs_title = "Server Wide Annuncio",
 		announcement_logs_details = "${consoleName} ha trasmesso il seguente messaggio all'intero server: `${announcementMessage}`",
 
+		new_player_revive_logs_title = "गेराज में से वाहन निकालें",
+		new_player_revive_logs_details = "अपने मौजूदा स्थान पर गेराज में से एक वाहन निकालें।",
+
 		posted_announcement = "Messaggio di annuncio pubblicato.",
 		posted_announcement_locale = "Messaggio di annuncio pubblicato dal locale.",
 		failed_to_post_announcement = "Impossibile pubblicare il messaggio di annuncio in quanto non è stato aggiunto alcun messaggio.",
@@ -295,14 +298,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		staff_toggled_off = "La tua disponibilità da staffer è ora disattivata.",
 
 		staff_feature_unavailable = "Questa funzione non è disponibile mentre la disponibilità da staffer è disattivata.",
-
-		success_enable_reflection = "Specchio riflesso attivato.",
-		success_disable_reflection = "Specchio riflesso disattivato.",
-		failed_toggle_reflection = "Impossibile attivare/disattivare specchio riflesso.",
-
-		reflection_logs_title = "Specchio riflesso attivato",
-		reflection_logs_enabled_details = "${consoleName} ha attivato specchio riflesso.",
-		reflection_logs_disabled_details = "${consoleName} ha disattivato specchio riflesso.",
 
 		headache_logs_title = "Mal di testa innescato",
 		headache_logs_details = "${consoleName} ha provocato mal di testa a ${targetConsoleName}.",
@@ -422,6 +417,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		register_invalid_character_id = "ID carattere non valido.",
 		register_invalid_slot = "Slot di inventario non valido.",
 		register_weapon_success = "Registrato con successo l'arma in slot ${slotId} al carattere con character id ${cid}.",
+		no_serial_number = "वाहन आईडी",
+		unknown_character_id = "वह वाहन आईडी जिसे आप निकालना चाहते हैं।",
 		register_weapon_failed = "Impossibile registrare l'arma.",
 
 		register_weapon_missing_permissions = "Il giocatore ha tentato di registrare un'arma senza autorizzazioni adeguate.",
@@ -611,6 +608,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		failed_job_search = "Ricerca lavori fallito.",
 		job_search_no_results = "Lavori non trovati.",
 		job_search_results = "Messo ${consoleName} lavoro a \"${jobName}, ${departmentName}, ${positionName}\" (Score: ${score}).",
+		job_no_character = "गेराजसे निकालें",
 
 		job_reset_success = "Lavoro settatto (successo) ${consoleName}.",
 		failed_job_reset = "Lavoro non settato (fallimento).",
@@ -812,7 +810,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 	bans = {
 		banned_no_permissions = "Tentativo di `${reason}` senza le autorizzazioni corrette.",
 		fraud_chargeback = "Frode / Chargeback",
-		none_provided = "Nessun dato fornito."
+		none_provided = "Nessun dato fornito.",
+		you_stopped_streaming = "हाइब्रिड"
 	},
 
 	characters = {
@@ -907,8 +906,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		report_command = "report",
 		report_command_help = "Invia un messaggio a tutti i membri dello staff attivi.",
 		report_command_parameter_message = "messaggio",
-		report_command_parameter_message_help = "Il messaggio che vorresti inviare.",
-		report_command_substitutes = "",
+		report_command_parameter_message_help = "हाइब्रिड मोड स्वचालित रूप से आवृत्ति पर नीचे जाने के लिए आपके लिए शिफ्ट करता है। `late`, `mid` या `early` हो सकता है।",
+		report_command_substitutes = "jelentés",
 
 		announce_command = "announce",
 		announce_command_help = "Trasmetti un annuncio a tutti i giocatori.",
@@ -946,6 +945,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		wipe_command_parameter_ignore_local_entities_help = "Ignorare entità non reti?Se stai pulendo da un imbroglione, si consiglia di metterlo su `vero` o` 1`.",
 		wipe_command_parameter_model_name = "Nome modello",
 		wipe_command_parameter_model_name_help = "Se si desidera cancellare solo le entità di un determinato nome del modello, inserire qui un nome del modello. Altrimenti lasciare vuoto, a `false` o `0`. È anche possibile impostare questo su `vehicles`, `peds`, `objects` o `doors`.",
+		wipe_command_parameter_camera = "kamera",
+		wipe_command_parameter_camera_help = "Használd a kamera koordinátáidat a karakter koordinátái helyett. Alapértelmezett `nem`, `1` vagy `i` a `igen` beállításához.",
 		wipe_command_substitutes = "",
 
 		noclip_command = "noclip",
@@ -1021,7 +1022,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		add_vehicle_command = "add_vehicle",
 		add_vehicle_command_help = "Aggiungi un veicolo al garage di qualcuno.",
 		add_vehicle_command_parameter_model = "modello",
-		add_vehicle_command_parameter_model_help = "Il nome del modello o l'hash modello del veicolo che desideri aggiungere.",
+		add_vehicle_command_parameter_model_help = "A jármű modell neve vagy hash értéke, amit hozzá szeretnél adni. Ha üresen hagyod, akkor a jelenlegi járműved lesz hozzáadva (az aktuális módosításaival együtt).",
 		add_vehicle_command_parameter_server_id = "server id",
 		add_vehicle_command_parameter_server_id_help = "L'ID server del giocatore a cui desideri dare un veicolo.Lasciando questo vuoto ti selezionerà automaticamente.",
 		add_vehicle_command_substitutes = "",
@@ -1050,6 +1051,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		indestructibility_command_help = "Attiva/disattiva 'indestructibility'.",
 		indestructibility_command_parameter_server_id = "server id",
 		indestructibility_command_parameter_server_id_help = "Se vuoi attivare l''indistruttibilità' per qualcun altro, inserisci qui il suo ID server.",
+		indestructibility_command_parameter_ignore_vehicle = "jármű figyelmen kívül hagyása",
+		indestructibility_command_parameter_ignore_vehicle_help = "Ha beállítod `1` vagy `i` értékre, csak te leszel sebezhetetlen, nem a jármű, amiben utazol.",
 		indestructibility_command_substitutes = "ind, god, god_mode, godmode",
 
 		no_nearby_vehicles_command = "no_nearby_vehicles",
@@ -1083,10 +1086,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		infinite_ammo_command = "infinite_ammo",
 		infinite_ammo_command_help = "Attiva/disattiva munizioni infinite.",
 		infinite_ammo_command_substitutes = "",
-
-		reflect_damage_command = "reflect_damage",
-		reflect_damage_command_help = "Attiva/disattiva specchio riflesso. (Non credo ci sia bisogna di una traduzione)",
-		reflect_damage_command_substitutes = "reflect",
 
 		trigger_headache_command = "trigger_headache",
 		trigger_headache_command_help = "Causa il lag di un determinato player per un breve periodo.",
@@ -1192,6 +1191,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		tp_coords_command_parameter_y_help = "Le cordinate Y sulle quali vuoi teletrasportarti.",
 		tp_coords_command_parameter_z = "z",
 		tp_coords_command_parameter_z_help = "Le cordinate Z sulle quali vuoi teletrasportarti. Questo parametro è facoltativo e se lasciato vuoto verranno cercate automaticamente le coordinate del terreno.",
+		tp_coords_command_parameter_w = "w",
+		tp_coords_command_parameter_w_help = "La coordinata W o la direzione in cui desideri teletrasportarti. Questo parametro è opzionale e se lasciato vuoto, verrà utilizzata la tua direzione attuale.",
 		tp_coords_command_substitutes = "tpc",
 
 		tp_waypoint_command = "tp_waypoint",
@@ -1336,6 +1337,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		register_weapon_command_parameter_slot_help = "Lo slot in cui si trova l'arma.",
 		register_weapon_command_parameter_character_id = "character id",
 		register_weapon_command_parameter_character_id_help = "L'ID del personaggio a cui vuoi registrare l'arma.",
+		register_weapon_command_parameter_no_job = "nessuna occupazione",
+		register_weapon_command_parameter_no_job_help = "Rimuovi la restrizione dell'occupazione dall'arma. Il valore predefinito è no, `1` o `y` per sì.",
 		register_weapon_command_substitutes = "",
 
 		advanced_metagame_command = "advanced_metagame",
@@ -1370,7 +1373,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		slap_command_help = "Schiaffeggia un giocatore (uccidendolo).",
 		slap_command_parameter_server_id = "server id",
 		slap_command_parameter_server_id_help = "L'ID del server del giocatore che vuoi schiaffeggiare.",
-		slap_command_substitutes = "",
+		slap_command_substitutes = "uccidi",
 
 		damage_player_command = "damage_player",
 		damage_player_command_help = "Danneggia la salute di un giocatore.",
@@ -1469,6 +1472,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		profile_debug_command = "profile_debug",
 		profile_debug_command_help = "Attiva o disattiva il debugger del profilo.",
 		profile_debug_command_substitutes = "",
+
+		remove_twitch_ban_exception_command = "rimuovi_eccezione_ban_twitch",
+		remove_twitch_ban_exception_command_help = "Rimuovi l'eccezione di ban su Twitch di un giocatore.",
+		remove_twitch_ban_exception_command_parameter_server_id = "Failed to automatically generate translation.",
+		remove_twitch_ban_exception_command_parameter_server_id_help = "Failed to automatically generate translation.",
+		remove_twitch_ban_exception_command_substitutes = "",
 
 		-- base/users
 		playtime_command = "playtime",
@@ -2084,6 +2093,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		define_area_command_help = "Definisce un'area.",
 		define_area_command_substitutes = "area",
 
+		polygon_command = "Failed to automatically generate translation.",
+		polygon_command_help = "Failed to automatically generate translation.",
+		polygon_command_substitutes = "Failed to automatically generate translation.",
+
 		debug_info_command = "info_debug",
 		debug_info_command_help = "Raccogli alcune informazioni di debug su un certo giocatore.",
 		debug_info_command_parameter_server_id = "ID server",
@@ -2131,6 +2144,19 @@ OP.Global.Locales.Languages["it-IT"] = {
 		elevator_enable_all_command = "elevator_enable_all",
 		elevator_enable_command_all_help = "Riattiva tutti gli ascensori più vicini.",
 		elevator_enable_command_all_substitutes = "",
+
+		-- game/emotes
+		emote_command = "Failed to automatically generate translation.",
+		emote_command_help = "Failed to automatically generate translation.",
+		emote_command_parameter_name = "Failed to automatically generate translation.",
+		emote_command_parameter_name_help = "Failed to automatically generate translation.",
+		emote_command_substitutes = "Failed to automatically generate translation.",
+
+		walk_command = "cammina",
+		walk_command_help = "Imposta il tuo stile di camminata.",
+		walk_command_parameter_name = "nome",
+		walk_command_parameter_name_help = "Il nome dello stile di camminata.",
+		walk_command_substitutes = "",
 
 		-- game/evidence
 		fingerprint_command = "fingerprint",
@@ -2654,6 +2680,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		walk_forwards_command_parameter_sprint_help = "Se il giocatore deve scattare o meno mentre cammina in avanti. (Default: false)",
 		walk_forwards_command_substitutes = "",
 
+		info_command = "info",
+		info_command_help = "Mostra alcune informazioni di debug, utili per segnalare bug.",
+		info_command_substitutes = "",
+
 		-- game/money
 		cash_command = "cash",
 		cash_command_help = "Visualizza il tuo saldo in contanti.",
@@ -3030,8 +3060,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 		radio_volume_command = "radio_volume",
 		radio_volume_command_help = "Regola il volume della radio.",
 		radio_volume_command_parameter_volume = "Livello del volume",
-		radio_volume_command_parameter_volume_help = "Il livello di volume della radio.Il valore deve essere compreso tra 0 e 1. L'impostazione predefinita è 0,5.Lasciare questo vuoto restituirà il livello di volume corrente.",
-		radio_volume_command_substitutes = "",
+		radio_volume_command_parameter_volume_help = "Il livello del volume della radio. Il valore è in percentuale, quindi deve essere compreso tra 0 e 100. Il valore predefinito è al 50%. Lasciare vuoto per visualizzare il livello attuale del volume.",
+		radio_volume_command_substitutes = "volume",
+
+		-- game/reflect
+		reflect_damage_command = "reflect_damage",
+		reflect_damage_command_help = "डैमेज प्रतिबिंब टॉगल करें। (आपको किसी भी संविधि ने जो आपको क्षति पहुंचाई है, वह खुद को क्षति पहुंचाएगा)",
+		reflect_damage_command_substitutes = "reflect",
 
 		-- game/relationships
 		relationships_debug_command = "relationships_debug",
@@ -3081,6 +3116,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		rules_command = "regole",
 		rules_command_help = "Apre le regole della comunità nel tuo browser.",
 		rules_command_substitutes = "",
+
+		-- game/savings_accounts
+		savings_accounts_command = "सेविंग्स खाते",
+		savings_accounts_command_help = "अपने सभी सेविंग्स खातों को देखें और प्रबंधित करें।",
+		savings_accounts_command_substitutes = "सेविंग्स, खाते",
 
 		-- game/scoreboard
 		metagame_command = "metagame",
@@ -3230,7 +3270,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		blackout_command_help = "Attiva/disattiva se un blackout è attivo o no.",
 		blackout_command_substitutes = "",
 
-		toggle_developer_ambience_command = "attiva_ambienti_sviluppatore",
+		toggle_developer_ambience_command = "डेवलपर वातावरण टॉगल करें",
 		toggle_developer_ambience_command_help = "Attiva/disattiva gli ambienti sviluppatore.",
 		toggle_developer_ambience_command_substitutes = "",
 
@@ -3312,6 +3352,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		steal_vehicle_command_parameter_network_id = "network id",
 		steal_vehicle_command_parameter_network_id_help = "L'ID di rete del veicolo.",
 		steal_vehicle_command_substitutes = "",
+
+		drive_to_command = "drive_to",
+		drive_to_command_help = "पेड को आपके चिह्नित वेपॉइंट की ओर ड्राइव करने के लिए निर्देश दें।",
+		drive_to_command_parameter_network_id = "नेटवर्क आईडी",
+		drive_to_command_parameter_network_id_help = "jelentés",
+		drive_to_command_substitutes = "",
 
 		-- game/voice
 		voice_debug_command = "voice_debug",
@@ -3427,6 +3473,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		confirm_no_command_help = "Annulla l'azione corrente.",
 		confirm_no_command_substitutes = "/cancel, /abort",
 
+		-- global/locales
+		show_raw_locales_command = "kamera",
+		show_raw_locales_command_help = "Használd a kamera koordinátáidat a karakter koordinátái helyett. Alapértelmezett `nem`, `1` vagy `i` a `igen` beállításához.",
+		show_raw_locales_command_substitutes = "",
+
 		-- global/states
 		entity_states_command = "entity_states",
 		entity_states_command_help = "Stampa tutti gli stati di una certa entità.",
@@ -3451,6 +3502,23 @@ OP.Global.Locales.Languages["it-IT"] = {
 		interface_focuses_command = "interface_focuses",
 		interface_focuses_command_help = "Controlla quali interfacce sono impostate come focalizzate.",
 		interface_focuses_command_substitutes = "/interface_focus, /focus, /focuses",
+
+		--jobs/doj
+		lookup_character_command = "A jármű modell neve vagy hash értéke, amit hozzá szeretnél adni. Ha üresen hagyod, akkor a jelenlegi járműved lesz hozzáadva (az aktuális módosításaival együtt).",
+		lookup_character_command_help = "jármű figyelmen kívül hagyása",
+		lookup_character_command_parameter_type = "Ha beállítod `1` vagy `i` értékre, csak te leszel sebezhetetlen, nem a jármű, amiben utazol.",
+		lookup_character_command_parameter_type_help = "jelentés",
+		lookup_character_command_parameter_search = "kamera",
+		lookup_character_command_parameter_search_help = "Használd a kamera koordinátáidat a karakter koordinátái helyett. Alapértelmezett `nem`, `1` vagy `i` a `igen` beállításához.",
+		lookup_character_command_substitutes = "A jármű modell neve vagy hash értéke, amit hozzá szeretnél adni. Ha üresen hagyod, akkor a jelenlegi járműved lesz hozzáadva (az aktuális módosításaival együtt).",
+
+		create_vehicle_hold_command = "jármű figyelmen kívül hagyása",
+		create_vehicle_hold_command_help = "Ha beállítod `1` vagy `i` értékre, csak te leszel sebezhetetlen, nem a jármű, amiben utazol.",
+		create_vehicle_hold_command_parameter_time = "Pemulihan Pemain Baru",
+		create_vehicle_hold_command_parameter_time_help = "${consoleName} telah dipulihkan karena pemain baru yang membunuhnya telah dilarang.",
+		create_vehicle_hold_command_parameter_plate = "Tidak dapat mendaftarkan senjata tanpa nomor seri.",
+		create_vehicle_hold_command_parameter_plate_help = "ID karakter tidak diketahui.",
+		create_vehicle_hold_command_substitutes = "Pemain target tidak memiliki karakter yang dimuat.",
 
 		--jobs/duty
 		toggle_duty_status_command = "toggle_duty_status",
@@ -3558,9 +3626,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		garage_vehicle_command = "cancella_veicolo_garage",
 		garage_vehicle_command_help = "Elimina un veicolo e invialo al garage.",
-		garage_vehicle_command_parameter_network_id = "network id",
-		garage_vehicle_command_parameter_network_id_help = "L'ID di rete del veicolo che desideri inviare al garage. Se lasciato vuoto, verrà selezionato il veicolo più vicino.",
+		garage_vehicle_command_parameter_repair = "Anda telah berhenti streaming.",
+		garage_vehicle_command_parameter_repair_help = "Pesan yang ingin Anda kirimkan. Ringkasan singkat tentang apa yang Anda laporkan (Contoh: \"Saya baru saja di VDM, ID mereka adalah...\").",
 		garage_vehicle_command_substitutes = "garage",
+
+		ungarage_vehicle_command = "Pemulihan Pemain Baru",
+		ungarage_vehicle_command_help = "${consoleName} telah dipulihkan karena pemain baru yang membunuhnya telah dilarang.",
+		ungarage_vehicle_command_parameter_vehicle_id = "Tidak dapat mendaftarkan senjata tanpa nomor seri.",
+		ungarage_vehicle_command_parameter_vehicle_id_help = "ID karakter tidak diketahui.",
+		ungarage_vehicle_command_substitutes = "Pemain target tidak memiliki karakter yang dimuat.",
 
 		-- vehicles/keys
 		give_key_command = "give_key",
@@ -3688,6 +3762,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		manual_toggle_command = "manual_toggle",
 		manual_toggle_command_help = "Attiva/disattiva Che tu voglia controllare manualmente gli ingranaggi dei veicoli.",
+		manual_toggle_command_command_parameter_hybrid = "Anda telah berhenti streaming.",
+		manual_toggle_command_command_parameter_hybrid_help = "Pesan yang ingin Anda kirimkan. Ringkasan singkat tentang apa yang Anda laporkan (Contoh: \"Saya baru saja di VDM, ID mereka adalah...\").",
 		manual_toggle_command_substitutes = "",
 
 		speed_limiter_command = "speed_limiter",
@@ -3707,6 +3783,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 		wheelie_command_parameter_power_level = "Livello di potenza",
 		wheelie_command_parameter_power_level_help = "Quanta potenza applicare (predefinito è 2.5, abbassalo se l'impennata è troppo forte, aumentalo se è troppo debole).",
 		wheelie_command_substitutes = "",
+
+		copy_vehicle_data_command = "Pemulihan Pemain Baru",
+		copy_vehicle_data_command_help = "${consoleName} telah dipulihkan karena pemain baru yang membunuhnya telah dilarang.",
+		copy_vehicle_data_command_substitutes = "Tidak dapat mendaftarkan senjata tanpa nomor seri.",
+
+		paste_vehicle_data_command = "ID karakter tidak diketahui.",
+		paste_vehicle_data_command_help = "Pemain target tidak memiliki karakter yang dimuat.",
+		paste_vehicle_data_command_substitutes = "Anda telah berhenti streaming.",
 
 		-- vehicles/vin_numbers
 		vin_number_command = "vin_number",
@@ -3873,7 +3957,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 	twitch = {
 		streaming_state_already_set_to_target = "undefined",
-		streaming_state_changed = "undefined"
+		streaming_state_changed = "undefined",
+
+		twitch_ban_exception_removed = "Pesan yang ingin Anda kirimkan. Ringkasan singkat tentang apa yang Anda laporkan (Contoh: \"Saya baru saja di VDM, ID mereka adalah...\").",
+		twitch_ban_exception_not_removed = "Failed to automatically generate translation.",
+
+		removed_twitch_ban_exception_logs_title = "Failed to automatically generate translation.",
+		removed_twitch_ban_exception_logs_details = "Failed to automatically generate translation."
 	},
 
 	users = {
@@ -3928,11 +4018,17 @@ OP.Global.Locales.Languages["it-IT"] = {
 		unloaded_character_for_player_logs_title = "Carattere scaricato per il giocatore",
 		unloaded_character_for_player_logs_details = "${consoleName} scaricata ${targetConsoleName}'s character (`${characterFullName}` - ${characterId}) con il motivo `${message}`.",
 		unloaded_character_for_player_no_reason_logs_details = "${consoleName} unloaded ${targetConsoleName}'s character (`${characterFullName}` - ${characterId}) without any specified reason.",
+
 		unloaded_character_self_logs_title = "Scaricata Character",
 		unloaded_character_self_logs_details = "${consoleName} scaricato il proprio personaggio (`${characterFullName}` - ${characterId}) with the reason `${message}`.",
 		unloaded_character_self_no_reason_logs_details = "${consoleName} scaricato il proprio personaggio (`${characterFullName}` - ${characterId}) without any specified reason.",
 
+		unloaded_character_for_everyone_logs_title = "Failed to automatically generate translation.",
+		unloaded_character_for_everyone_logs_details = "Failed to automatically generate translation.",
+		unloaded_character_for_everyone_no_reason_logs_details = "Pemulihan Pemain Baru",
+
 		unloaded_character_for_user = "Scaricata character ${characterFullName} (${characterId}) for ${consoleName}.",
+		unloaded_character_for_everyone = "${consoleName} telah dipulihkan karena pemain baru yang membunuhnya telah dilarang.",
 		user_with_server_id_has_no_character_loaded = "L'utente con ID server `${serverId}` non ha un carattere caricato.",
 		user_with_server_id_not_found = "L'utente con ID server `${serverId}` non è stato possibile trovare sul server.",
 
@@ -3973,7 +4069,16 @@ OP.Global.Locales.Languages["it-IT"] = {
 		invalid_destination_server_id = "ID Invalido.",
 		invalid_source_server_id = "Sorgente ID non valida.",
 		failed_teleport_player_to_player = "Impossibile teletrasportare un giocatore all'altro.",
-		teleported_player_to_player = "Giocatore teletrasportato ad un altro giocatore."
+		teleported_player_to_player = "Giocatore teletrasportato ad un altro giocatore.",
+
+		tp_player_logs_title = "Tidak dapat mendaftarkan senjata tanpa nomor seri.",
+		tp_player_logs_details = "ID karakter tidak diketahui.",
+		tp_here_logs_title = "Pemain target tidak memiliki karakter yang dimuat.",
+		tp_here_logs_details = "Anda telah berhenti streaming.",
+		tp_everyone_logs_title = "Pesan yang ingin Anda kirimkan. Ringkasan singkat tentang apa yang Anda laporkan (Contoh: \"Saya baru saja di VDM, ID mereka adalah...\").",
+		tp_everyone_logs_details = "Aggiornamento dell'adesione",
+		tp_to_logs_title = "Aggiornamenti disponibili",
+		tp_to_logs_details = "${cost} punti"
 	},
 
 	afk = {
@@ -4067,6 +4172,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 	arena = {
 		player_died = "${name} è morto.",
+		player_suicide = "Acquista",
 		player_killed = "${name} è stato ucciso da ${killerName} per ${deathCause} da una distanza di ${distance}m.",
 		hud_info = "Importo del giocatore: ${playerAmount}\n\nDeaths: ${deaths}\nKills: ${kills}",
 		press_to_access_menu = "Premi ~INPUT_INTERACTION_MENU~ per accedere al menù arena.",
@@ -4147,10 +4253,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		deposit = "Deposita",
 		balance = "Conto",
 		transfer = "Transferisci",
+		savings_bonds = "Conferma l'aggiornamento dell'adesione",
 		back = "Indietro",
 
 		amount = "Importo",
 		target = "Target",
+		total = "Sei sicuro di voler aggiornare la tua adesione ${pledgeLabel} a ${pledgeUpgradeLabel} per ${cost} punti OP?",
 
 		confirm_target = "Vuoi trasferire $${amount} a \"${name}\"?",
 		cancel = "No, annulla",
@@ -4159,6 +4267,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		failed_deposit = "Impossibile depositare denaro",
 		failed_withdraw = "Impossibile prelevare denaro",
 		failed_transfer = "Impossibile trasferire denaro",
+		failed_deposit_bonds = "Aggiornamento dell'adesione in corso...",
 
 		processing = "In processo...",
 		counting_bills = "Contando le fatture...",
@@ -4184,14 +4293,17 @@ OP.Global.Locales.Languages["it-IT"] = {
 		withdraw_log = "${consoleName} Prelevato $${amount}.",
 
 		transfer_log_title = "Trasferisci dalla banca",
-		transfer_log = "${consoleName} (#${characterId}) trasferito $${amount} a ${targetConsoleName} (#${targetCharacterId})."
+		transfer_log = "${consoleName} (#${characterId}) trasferito $${amount} a ${targetConsoleName} (#${targetCharacterId}).",
+
+		deposit_log_bonds_title = "Meth venduta",
+		deposit_bonds_log = "${consoleName} ha venduto 1x busta di Meth per $${reward}."
 	},
 
 	attachments = {
 		cancel_attachments = "Annulla",
 		finish_attachments = "Applicare",
 
-		modifying_attachments = "Modifica ${amount} Attachments",
+		modifying_attachments = "~g~Attivo",
 
 		failed_apply = "Impossibile applicare attachments.",
 		no_item = "L'arma non è più nel tuo inventario.",
@@ -4308,7 +4420,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		removed_attachments = "Distaccata ${removed}",
 		added_attachments = "Aggiunto ${added}",
-		tint_changed = "Cambiata tinta da `${fromTint}` a `${toTint}`"
+		tint_changed = "डैमेज प्रतिबिंब टॉगल करें। (आपको किसी भी संविधि ने जो आपको क्षति पहुंचाई है, वह खुद को क्षति पहुंचाएगा)"
 	},
 
 	audio = {
@@ -4371,8 +4483,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 		not_enough_players_in_queue = "Incapace di iniziare Battle Royale in quanto non ci sono abbastanza giocatori in coda.",
 		zone_idling = "La zona è ora al minimo.",
 		zone_advancing = "La zona ora sta avanzando.",
-		player_died = "${name} è morto: ${remainingPlayers} residua.",
-		player_killed = "${name} è stato ucciso da ${killerName} per motivo ${deathCause} da una distanza di ${distance}m: ${remainingPlayers} residua.",
+		player_died = "सेविंग्स खाते",
+		player_suicide = "अपने सभी सेविंग्स खातों को देखें और प्रबंधित करें।",
+		player_killed = "सेविंग्स, खाते",
 		player_won = "${name} ha vinto!",
 		your_team = "La tua squadra:",
 		received_lobby_invite = "Hai ricevuto un invito alla lobby da ${serverId}. Fare `/br_join ${serverId}` per unirsi!",
@@ -4628,7 +4741,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		exit_the_vehicle_to_scratch = "Esci dal veicolo per far si che diventi tuo.",
 
 		scratch = "Graffia il numero seriale.",
-		press_to_scratch = "Premi ~g~E ~w~per graffiare il numero seriale dell'auto.",
+		press_to_scratch = "डेवलपर वातावरण टॉगल करें",
 
 		scratching_vehicle = "Graffiando il numero del veicolo",
 
@@ -5259,17 +5372,29 @@ OP.Global.Locales.Languages["it-IT"] = {
 		crafted_advanced_repair_kit = "Kit di riparazione avanzato craftatp.",
 		failed_craft_advanced_repair_kit = "Non si è riusciti a craftare il kit di riparazione avanzata.",
 
-		pulverize_aluminium = "Polverizza alluminio",
-		press_pulverize_aluminium = "[${SeatEjectKey}] Polverizza alluminio",
+		process_metal = "drive_to",
+		press_process_metal = "पेड को आपके चिह्नित वेपॉइंट की ओर ड्राइव करने के लिए निर्देश दें।",
+
+		aluminium_powder_recipe = "नेटवर्क आईडी",
 		pulverizing_aluminium = "Polverizzando alluminio",
 		pulverized_aluminium = "Alluminio polverizzato.",
 		failed_pulverize_aluminium = "Polverizzazione dell'alluminio non riuscita.",
 
-		pulverize_steel = "Polverizza acciaio",
-		press_pulverize_steel = "[${SeatEjectKey}] Polverizza acciaio",
+		iron_oxide_recipe = "Failed to automatically generate translation.",
 		pulverizing_steel = "Polverizzando acciaio",
 		pulverized_steel = "Acciaio polverizzato.",
 		failed_pulverize_steel = "Polverizzazione dell'acciaio non riuscito.",
+
+		steel_filings_recipe = "Failed to automatically generate translation.",
+		filing_steel = "Failed to automatically generate translation.",
+		filed_steel = "Failed to automatically generate translation.",
+		failed_file_steel = "Failed to automatically generate translation.",
+
+		craft_steel_file = "Failed to automatically generate translation.",
+		press_craft_steel_file = "Failed to automatically generate translation.",
+		crafting_steel_file = "Failed to automatically generate translation.",
+		crafted_steel_file = "Failed to automatically generate translation.",
+		failed_craft_steel_file = "Failed to automatically generate translation.",
 
 		mix_thermite = "Mescola la termite",
 		press_mix_thermite = "[${SeatEjectKey}] Mescola la termite",
@@ -5459,7 +5584,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 	creation = {
 		turn_right = "Gira a destra",
 		turn_left = "Gira a sinistra",
-		toggle_light = "Attiva/Disattiva luce"
+		toggle_light = "Attiva/Disattiva luce",
+		move_menu = "Failed to automatically generate translation.",
+		change_colors = "Failed to automatically generate translation.",
+		move_sliders = "Failed to automatically generate translation.",
+		enter = "Entra",
+		back = "Indietro"
 	},
 
 	creation_menu = {
@@ -5802,14 +5932,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		ped = "Ped",
 		vehicle = "Veicolo",
 		object = "Oggetto",
-		network_id = "Network Id",
 		owned_by_us = "Di proprietà Nostra",
 		owned_by = "Di propriètà di",
-		one_state_set = "1° stato",
-		many_states_set = "${count} Stato messo",
+		one_state_set = "1 Stato",
+		many_states_set = "${count} Stati",
 		no_states = "Nessun stato",
-		addon_model = "${modelName} (Addon)",
-		entity_health = "Salute ${health}/${maxHealth}",
+		native_model = "native/gta",
 		owned_by_server = "Server",
 		owned_by_you = "undefined",
 		first_owned_short = "Primo proprietario: ${firstOwned}",
@@ -5840,7 +5968,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		world_is = "Mondo:",
 		controls = "Controlli: ${controls}",
 		tasks = "Chiamate di compiti: ${calls} (${total})",
-		native_calls = "Chiamate nativi: ${calls} (${total})",
+		invoke_calls = "Chiamate di Invoke: ${calls} (${total})",
+		draw_calls = "Chiamate di Disegno: ${calls}",
 		player_speed = "Velocità giocatore: ${playerSpeed}",
 		player_ped = "Ped giocatore: ${playerPedId}",
 		heading = "Andando verso: ${heading}",
@@ -5852,6 +5981,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 		g_force = "G-Force: ${force}",
 		debug_print_f8 = "Le informazioni di debug sono state stampate nella tua console F8.",
 		no_vehicle_bone = "No \"${boneName}\" osso",
+		server_vehicles = "Veicoli del Server: ${count}",
+		not_networked_vehicles = "Veicoli non in Rete: ${count}",
+		parked_vehicles = "Veicoli Parcheggiati: ${count}",
 
 		distance = "Distanza: ${distance}m",
 		distance_first = "Prima posizione memorizzata.",
@@ -5869,7 +6001,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		vehicle_acceleration_150 = "Da 0 a 150: ${time}",
 		vehicle_acceleration_force = "Launch Force: ${force}",
 
-		invalid_network_id = "ID di rete non valido.",
+		invalid_network_id = "ID di Rete Non Valido.",
 		delete_entity_success = "Entità eliminata con successo con ID di rete ${networkId}.",
 		delete_entity_failed = "Impossibile eliminare l'entità.",
 		delete_entity_no_permissions = "Tentativo di eliminare un'entità senza le autorizzazioni appropriate.",
@@ -5979,7 +6111,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		failed_park = "Impossibile parcheggiare la barca.",
 		deposit_not_enough_money = "Non hai abbastanza soldi per pagare il deposito.",
 		failed_spawn = "Impossibile spawnare la barca.",
-		vehicle_anchor = "La tua barca è stata spawnata e ancorata, puoi usare /anchor per sollevare l'ancora."
+		vehicle_anchor = "La tua barca è stata spawnata e ancorata, puoi usare /anchor per sollevare l'ancora.",
+		too_shallow = "È troppo basso per questa barca qui."
 	},
 
 	doors = {
@@ -6060,7 +6193,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		floor_fourth_floor = "4th Piano",
 		floor_third_floor = "3rd Piano",
 
-		floor_obelisk = "Obelisco",
 		floor_hangout = "Punto di ritrovo",
 		floor_penthouse = "Attico",
 		floor_theatre_office = "Ufficio del teatro",
@@ -6309,6 +6441,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 		hold_to_take_gas_mask_off_holding = "Continua a tenerlo per togliere la maschera a gas."
 	},
 
+	golf = {
+		pickup_ball = "[${InteractionKey}] Raccogli",
+
+		failed_pickup = "डैमेज प्रतिबिंब टॉगल करें। (आपको किसी भी संविधि ने जो आपको क्षति पहुंचाई है, वह खुद को क्षति पहुंचाएगा)",
+		failed_place = "सेविंग्स खाते"
+	},
+
 	gps = {
 		altitude = "Altitudine",
 		latitude = "Latitudine",
@@ -6516,6 +6655,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		m = "m",
 		belt = "Cintura",
 		oil = "OLIO",
+		manual = "अपने सभी सेविंग्स खातों को देखें और प्रबंधित करें।",
 		limiter = "Limitatore",
 		gear_uc = "INGRANAGGIO",
 		fuel = "benzina",
@@ -6530,13 +6670,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 		rpm = "rpm",
 		degrees = "°C",
 		degrees_f = "°F",
-		npc_kills = "${kills} persone uccise",
+		npc_kills = "सेविंग्स, खाते",
 		steps_walked_deaths = "${stepsWalked} passi ~t~/~w~ ${deaths} bassi",
 		altitude_temperature = "${altitude} ${unit} ~t~/~w~ ${temperature}${degrees}",
 		scuba_timer = "Ossigeno rimasto: ${timer}",
 
 		alignment_warning_title = "Allineamento dell'HUD",
-		alignment_warning = "Il tuo HUD sembra essere parzialmente fuori schermo. Puoi aggiustarlo riducendo la dimensione della \"*Zona sicura*\" nelle impostazioni del tuo \"*Display*\".",
+		alignment_warning = "डेवलपर वातावरण टॉगल करें",
 
 		muted = "Mutato",
 		tx = "undefined",
@@ -6550,6 +6690,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		starving = "affamata",
 		injured = "ferita",
 		seriously_injured = "gravemente ferito",
+		how_are_you_alive = "drive_to",
 		incapacitated = "inabile",
 		stressed = "stressata",
 
@@ -6687,8 +6828,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 	import_export = {
 		press_to_access = "Premi ~INPUT_CONTEXT~ per accedere all'Import/Export menù.",
 
-		pound = "lb",
-		pounds = "lbs",
+		storage_units = "पेड को आपके चिह्नित वेपॉइंट की ओर ड्राइव करने के लिए निर्देश दें।",
 		minutes = "minuti",
 
 		total = "Totale",
@@ -6709,7 +6849,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		no_items = "Nessun articolo da spedire.",
 
-		confirm_dialog = "Sei sicuro di voler spedire ${total}lbs per $${price}? Questa spedizione non può essere cancellata.",
+		confirm_dialog = "नेटवर्क आईडी",
 		confirm = "Sì",
 
 		no_active_order = "Non hai una spedizione attiva.",
@@ -6725,10 +6865,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		order_success = "La tua spedizione è in viaggio! Arriverà tra ${minutes} minuti.",
 
 		created_shipment_title = "Spedizione creata",
-		created_shipment_details = "${consoleName} ha creato una spedizione per ${weight}lbs per $${price} con ${company}.",
+		created_shipment_details = "${consoleName} létrehozott egy szállítmányt ${weight} su értékben $${price} áron a ${company} vállalattól.",
 
 		claimed_shipment_title = "Spedizione ricevuta",
-		claimed_shipment_details = "${consoleName} ha ricevuto la spedizione di ${weight}lbs con ${company}.",
+		claimed_shipment_details = "${consoleName} átvette a ${company} vállalattól érkező ${weight} su értékű szállítmányt.",
 
 		blip_label = "Import / Export"
 	},
@@ -6775,8 +6915,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		used = "Usato",
 		added = "Aggiunto",
+		received = "Fogadva",
 
-		pounds = "lb",
+		storage_units = "su",
+		storage_unit_description = "su = tároló egység",
 
 		store = "Negozio",
 		gas_station = "Stazione di servizio",
@@ -6799,6 +6941,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		gun_store_with_shooting_range = "Ammu-Nation con poligono di tiro",
 		green_wonderland = "Green Wonderland",
 		copy_shop = "Negozio di fotocopie",
+		submarine_locker = "Tengeralattjáró szekrény",
 		astrology_stand = "Astrologia Stand",
 		irish_pub = "Irish Pub",
 		bar = "Bar",
@@ -6843,10 +6986,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 		press_to_access_locker = "Premi ~INPUT_REPLAY_SHOWHOTKEY~ per accedere all'armadietto personale.",
 		press_to_access_shared_storage = "Premi ~INPUT_REPLAY_SHOWHOTKEY~ per accedere al Store condiviso.",
 
+		failed_give = "Nem sikerült a tárgyak átadása a játékosnak.",
+		character_too_far = "A játékos túl messze van.",
+		target_inventory_full = "A játékos csomagtere tele van.",
+		received_item = "${consoleName} létrehozott egy szállítmányt ${weight} su értékben $${price} áron a ${company} vállalattól.",
+
 		inspect_weapon = "Il numero di serie di questo ${itemName} sembra essere `${itemId}`.",
 		inspect_weapon_broken = "Il numero di serie di questo ${itemName} sembra essere `${itemId}`, sembra anche essere completamente rotto.",
-		inspect_bank_gold_bar = "Quest'asta d'oro è di proprietà della Banca ${bank}.",
-		inspect_gold_bar = "Quest'asta d'oro non sembra avere alcun marchio.",
+		inspect_bank_property = "${consoleName} átvette a ${company} vállalattól érkező ${weight} su értékű szállítmányt.",
+		inspect_no_property = "Fogadva",
 
 		searching_dumpster = "Ricerca nel cassonetto",
 
@@ -6899,11 +7047,17 @@ OP.Global.Locales.Languages["it-IT"] = {
 		craft_combine = "Crafta <i>${output}</i>",
 		combining = "Craftando",
 
+		file_serial = "su",
+		filing_off_serial_number = "su = tároló egység",
+		filed_serial_number = "Tengeralattjáró szekrény",
+		failed_file_serial_number = "Nem sikerült a tárgyak átadása a játékosnak.",
+
 		carve_jack_o_lantern = "intaglia <i>Jack-o-lantern</i>",
 		crush_cocoa_beans = "Rompi <i>Cocoa Beans</i>",
 		mix_hot_chocolate = "Mescola <i>Hot Chocolate</i>",
 		crush_raw_ruby = "Rompi <i>Raw Ruby</i>",
 		crush_raw_sapphire = "Rompi <i>Raw Sapphire</i>",
+		break_apart_weed = "A játékos túl messze van.",
 
 		search = "Cerca",
 		amount = "Quantità",
@@ -6945,8 +7099,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		logs_wiped_nearby_ground_inventories_title = "Cancellati Tutti gli inventari a terra",
 		logs_wiped_nearby_ground_inventories_details = "${consoleName} Cancellati tutti gli inventari a terra.",
 
-		logs_combined_title = "Oggetti combinati",
-		logs_combined_details = "${consoleName} ha combinato ${inputs} per creare 1x ${output}.",
+		inventory_crafting_logs_title = "A játékos csomagtere tele van.",
+		inventory_crafting_logs_details = "${consoleName} ha utilizzato ${inputs} per creare ${amount}x ${output}.",
 
 		press_use_campfire = "[${InteractionKey}] Usa il fuoco",
 		use_campfire = "Usa il fuoco",
@@ -6960,6 +7114,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		dumpster_pizza_slice = "Pezzo di pizza ammuffito",
 		dumpster_banana = "Banana pelosa (Molto moscio)",
 		dumpster_almond_milk = "Latte di mandorle avariato",
+		dumpster_knife = "Pugnale Arrugginito",
 
 		-- items & item descriptions
 		body_armor = "Armatura",
@@ -6983,6 +7138,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		smart_watch_description = "Odio dover pagare in contanti ovunque?Usa il tuo orologio intelligente!Viene fornito anche con una bussola incorporata, orologio, GPS e step-tracker!Basta non andare a correre alle 2 del mattino.",
 		tablet = "Tablet",
 		tablet_description = "Telefono molto grande.",
+		wallet = "Portafoglio",
+		wallet_description = "Per tutti i tuoi soldi e carte.",
 
 		gps = "GPS",
 		gps_description = "Soddisfa tutti i bisogni dei tuoi gadget.",
@@ -7067,10 +7224,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 		picture_description = "Raccogli tutti i ricordi tuoi e dei tuoi amici. (Dimensione: 1x1)",
 		printed_card = "Biglietto Stampato",
 		printed_card_description = "Un piccolo biglietto stampato, forse un biglietto da visita? (Dimensione: 9x5)",
+		printed_document = "Documento Stampato",
+		printed_document_description = "Un documento stampato, forse una lettera? (Dimensioni: 21x28)",
 		paper = "Carta Fotografica",
-		paper_description = "Un foglio di carta bianco per stampare foto.",
+		paper_description = "Un pezzo di carta bianco per stampare immagini. (Dimensioni: 1x1)",
 		card_paper = "Carta per Biglietti da Visita",
-		card_paper_description = "Un foglio di carta bianco per stampare biglietti da visita.",
+		card_paper_description = "Un pezzo di carta bianco per stampare biglietti da visita. (Dimensioni: 9x5)",
+		document_paper = "Carta Documento",
+		document_paper_description = "Pemulihan Pemain Baru",
 		printer = "Stampante",
 		printer_description = "Non fax, solo stampante.",
 
@@ -7257,6 +7418,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		belgian_fries_description = "Per un gusto migliorato, dm @Crux#4153 scrivetegli \"fritas\".",
 		coke = "Coca",
 		coke_description = "Escobar?",
+		pepsi = "${consoleName} telah dipulihkan karena pemain baru yang membunuhnya telah dilarang.",
+		pepsi_description = "Tidak dapat mendaftarkan senjata tanpa nomor seri.",
 		wonder_waffle = "Wonder Waffle",
 		wonder_waffle_description = "Vegano, senza lattosio, senza latticini, senza uova, senza glutine, biologico, senza antibiotici, senza soia, senza fruttosio, senza noci, senza GMA, senza zucchero, senza grassi e a basso contenuto di carboidrati ed inesistente",
 		cheeseburger = "Cheeseburger",
@@ -7469,6 +7632,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		pet_pingu_description = "Questo adorabile pinguino è il compagno perfetto per qualsiasi avventura. Con il suo pellicciotto morbido e la personalità giocosa, si appoggerà felicemente sulla tua spalla mentre svolgi le tue attività quotidiane.",
 		pet_banana_cat = "Gatto Banana",
 		pet_banana_cat_description = "Il tuo amico felino fruttato! Il Banana Cat si appollaia sulla tua spalla, aggiungendo un tocco di fascino giocoso alla tua giornata. È l'accessorio perfetto per un tocco di fantasia nella tua vita.",
+		pet_snowman = "ID karakter tidak diketahui.",
+		pet_snowman_description = "Pemain target tidak memiliki karakter yang dimuat.",
 
 		hotwheels_mcqueen = "Lightning McQueen",
 		hotwheels_mcqueen_description = "Io sono velocità, Veloce come una Cadillac come ed elegante come una fita. KATCHOW KATCHOW KATCHOW",
@@ -7511,6 +7676,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		aluminium_powder_description = "",
 		iron_oxide = "Polvere di ossido di ferro",
 		iron_oxide_description = "",
+		steel_filings = "Anda telah berhenti streaming.",
+		steel_filings_description = "Pesan yang ingin Anda kirimkan. Ringkasan singkat tentang apa yang Anda laporkan (Contoh: \"Saya baru saja di VDM, ID mereka adalah...\").",
 
 		gold_bar = "Lingotto d'oro",
 		gold_bar_description = "Utilizzato per riparazioni e lavorazione.",
@@ -7543,7 +7710,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 		refined_steel_description = "Utilizzato per riparazioni professionali.",
 
 		power_saw = "Sega elettrica",
-		power_saw_description = "Usato per segarsi le cose.",
+		power_saw_description = "Pemulihan Pemain Baru",
+		steel_file = "${consoleName} telah dipulihkan karena pemain baru yang membunuhnya telah dilarang.",
+		steel_file_description = "Tidak dapat mendaftarkan senjata tanpa nomor seri.",
 
 		thermite = "Termite",
 		thermite_description = "Polvere altamente esplosiva, non annusare.",
@@ -7587,6 +7756,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 		gold_watches_description = "E ... dove li hai presi, esattamente?",
 		diamonds = "Diamonti",
 		diamonds_description = "Hai bisogno di 24 per fare un'armatura piena.Consiglierei di ricevere 27 però in modo da poterti fare anche un piccone.",
+
+		savings_bond_200 = "ID karakter tidak diketahui.",
+		savings_bond_200_description = "Pemain target tidak memiliki karakter yang dimuat.",
+		savings_bond_500 = "Anda telah berhenti streaming.",
+		savings_bond_500_description = "Pesan yang ingin Anda kirimkan. Ringkasan singkat tentang apa yang Anda laporkan (Contoh: \"Saya baru saja di VDM, ID mereka adalah...\").",
+		savings_bond_1000 = "Failed to automatically generate translation.",
+		savings_bond_1000_description = "Failed to automatically generate translation.",
+		savings_bond_2000 = "Failed to automatically generate translation.",
+		savings_bond_2000_description = "Failed to automatically generate translation.",
 
 		weather_spell_snow = "Weather Spell (Snow)",
 		weather_spell_snow_description = "L'uso di questo articolo ti consentirà di controllare temporaneamente il tempo e farlo nevicare!È un utilizzo una tantum, quindi usa con cura.Se usi due incantesimi meteorologici contemporaneamente, il secondo farà semplicemente la fila.",
@@ -7668,6 +7846,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		boombox = "Boombox",
 		boombox_description = "Suona musica e sii odioso ovunque, in qualsiasi momento!",
+
+		microphone_stand = "Failed to automatically generate translation.",
+		microphone_stand_description = "Failed to automatically generate translation.",
 
 		lighter = "Accendino",
 		lighter_description = "Alcuni uomini vogliono solo vedere bruciare il mondo",
@@ -7871,6 +8052,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		irish_coffee = "Caffè irlandese",
 		irish_coffee_description = "Caffè appena preparato con un po 'di whisky irlandese originale in esso.",
+		guinness_beer = "Failed to automatically generate translation.",
+		guinness_beer_description = "Failed to automatically generate translation.",
+		jameson_whiskey = "Failed to automatically generate translation.",
+		jameson_whiskey_description = "Failed to automatically generate translation.",
+		tayto_chips = "Failed to automatically generate translation.",
+		tayto_chips_description = "Failed to automatically generate translation.",
 
 		chip_10 = "$10 Chip",
 		chip_10_description = "Un chip di gioco d'azzardo.Può essere usato per giocare d'azzardo.L'oggetto può essere convertito in denaro nel casinò.",
@@ -8444,7 +8631,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		weapon_addon_680_description = "Il Remington 680 è una fucile a pompa sviluppato dalla Remington Arms nel 1950.",
 
 		weapon_addon_honey = "Honey Badger",
-		weapon_addon_honey_description = "Il AAC Honey Badger PDW è un'arma per la difesa personale, spesso utilizzata in configurazione silenziata e si basa sull'AR-15. Ha una camera per il calibro .300 AAC Blackout ed è stato originariamente prodotto dalla Advanced Armament Corporation (AAC)."
+		weapon_addon_honey_description = "Il AAC Honey Badger PDW è un'arma per la difesa personale, spesso utilizzata in configurazione silenziata e si basa sull'AR-15. Ha una camera per il calibro .300 AAC Blackout ed è stato originariamente prodotto dalla Advanced Armament Corporation (AAC).",
+
+		weapon_addon_glock18c = "Failed to automatically generate translation.",
+		weapon_addon_glock18c_description = "Pemulihan Pemain Baru"
 	},
 
 	invisibility = {
@@ -8620,7 +8810,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		mixed_with = "Misto con ${flavor}",
 		mixed_with_label = "Lean (${flavor})",
-		mixing = "Mescolando Lean"
+		mixing = "Mescolando Lean",
+
+		sold_lean_logs_title = "${consoleName} telah dipulihkan karena pemain baru yang membunuhnya telah dilarang.",
+		sold_lean_logs_details = "Tidak dapat mendaftarkan senjata tanpa nomor seri."
 	},
 
 	leashes = {
@@ -8837,6 +9030,18 @@ OP.Global.Locales.Languages["it-IT"] = {
 		reward_text_part_2 = " punti OP per ogni immagine creata oltre a ",
 		reward_text_part_3 = " punti OP per ogni ora che rimani in standby.",
 
+		expired = "ID karakter tidak diketahui.",
+		upgrade = "Pemain target tidak memiliki karakter yang dimuat.",
+		upgrade_pledge = "Anda telah berhenti streaming.",
+		upgrade_pledge_information = "Pesan yang ingin Anda kirimkan. Ringkasan singkat tentang apa yang Anda laporkan (Contoh: \"Saya baru saja di VDM, ID mereka adalah...\").",
+		upgrading_following_pledge = "Aggiornamento dell'adesione",
+		available_upgrades = "Aggiornamenti disponibili",
+		cost_points = "${cost} punti",
+		buy = "Acquista",
+		confirm_pledge_upgrade = "Conferma l'aggiornamento dell'adesione",
+		confirm_pledge_upgrade_text = "Sei sicuro di voler aggiornare la tua adesione ${pledgeLabel} a ${pledgeUpgradeLabel} per ${cost} punti OP?",
+		upgrading_pledge = "Aggiornamento dell'adesione in corso...",
+
 		exiting_login_ui = "Uscita (Login UI)"
 	},
 
@@ -8993,7 +9198,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 	meth = {
 		press_to_sell_meth = "Premi ~INPUT_CONTEXT~ per vendere meth.",
 		local_not_interested = "Il locale non sembra essere interessato in questo momento.",
-		selling_meth = "Vendendo Meth."
+		selling_meth = "Vendendo Meth.",
+
+		sold_meth_logs_title = "Meth venduta",
+		sold_meth_logs_details = "${consoleName} ha venduto 1x busta di Meth per $${reward}."
+	},
+
+	microphone_stand = {
+		active = "~g~Attivo"
 	},
 
 	mining = {
@@ -9152,7 +9364,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 		auto_run_unset = "l'auto-run è stato tolto.",
 
 		walk_forwards_success = "Camminata in avanti attivata con successo per ${displayName}.",
-		walk_forwards_failed = "Impossibile attivare o disattivare la camminata in avanti per ${displayName}."
+		walk_forwards_failed = "Impossibile attivare o disattivare la camminata in avanti per ${displayName}.",
+
+		info_title = "Failed to automatically generate translation.",
+		info_character = "Failed to automatically generate translation.",
+		info_job_data = "Failed to automatically generate translation.",
+		info_job_data_none = "Failed to automatically generate translation.",
+		info_licenses = "Failed to automatically generate translation.",
+		info_licenses_none = "Failed to automatically generate translation.",
+		info_timestamp = "Failed to automatically generate translation."
 	},
 
 	money = {
@@ -9181,7 +9401,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		press_to_sell_moonshine = "Premi ~INPUT_CONTEXT~ per vendere il Moonshine.",
 		local_not_interested = "Il locale non sembra essere interessato in questo momento.",
-		selling_moonshine = "Vendendo il Moonshine."
+		selling_moonshine = "Vendendo il Moonshine.",
+
+		sold_moonshine_logs_title = "Failed to automatically generate translation.",
+		sold_moonshine_logs_details = "Failed to automatically generate translation.",
+
+		emptied_cooker_logs_title = "Failed to automatically generate translation.",
+		emptied_cooker_logs_details = "Failed to automatically generate translation."
 	},
 
 	nos = {
@@ -10238,9 +10464,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 	peds = {
 		ped_robbing_injection = "Eccessivo petrolio! (Bypassato server-timeout, molto probabilmente usando un iniettore per raggiungere questo obiettivo.)",
 		robbed_ped_logs_title = "Ped derubato",
-		robbed_ped_logs_details = "${consoleName} derubato un PED e ricevuto $${payout}.",
-
-		nancy = "~b~Dott.ssa Nancy"
+		robbed_ped_logs_details = "${consoleName} derubato un PED e ricevuto $${payout}."
 	},
 
 	pepper_spray = {
@@ -10356,7 +10580,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		removed_marker = "Rimosso il marcatore per ${address}.",
 		entrance = "Ingresso",
 		back_entrance = "Ingresso posteriore",
-		garage = "Garage"
+		garage = "Garage",
+		located_address = "डैमेज प्रतिबिंब टॉगल करें। (आपको किसी भी संविधि ने जो आपको क्षति पहुंचाई है, वह खुद को क्षति पहुंचाएगा)"
 	},
 
 	props = {
@@ -10409,10 +10634,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		frequency_set_to_streamer = "La frequenza è stata impostata.",
 		frequency_set_to = "La frequenza è stata impostata sul canale ${frequency}.",
 		frequency_already_set_to = "La frequenza è stata già impostata sul canale ${frequency}.",
-		radio_volume_same = "Il volume della radio è già impostato su `${radioVolume}`.",
+		radio_volume_same = "सेविंग्स खाते",
 		radio_volume_reset = "Il volume della radio è stato ripristinato.",
-		radio_volume_set = "Il volume della radio è ora impostato su `${radioVolume}`.",
-		radio_volume_current = "Il tuo attuale volume della radio è impostato su `${radioVolume}`.",
+		radio_volume_set = "अपने सभी सेविंग्स खातों को देखें और प्रबंधित करें।",
+		radio_volume_current = "सेविंग्स, खाते",
 		radio_volume_current_default = "Il tuo attuale volume radio è predefinito.",
 		radio_sound_effects_same = "Il volume degli effetti sonori della radio è già impostato su `${radioSoundEffects}`.",
 		radio_sound_effects_reset = "Il volume degli effetti sonori della radio è stato ripristinato.",
@@ -10434,6 +10659,16 @@ OP.Global.Locales.Languages["it-IT"] = {
 		decrypter_jammed = "Il decrypter sembra essere inceppato.",
 		decrypted_frequency = "La frequenza sembra essere intorno `${frequency}`.",
 		no_frequency_detected = "Nessuna frequenza trovata."
+	},
+
+	reflect = {
+		success_enable_reflection = "डेवलपर वातावरण टॉगल करें",
+		success_disable_reflection = "drive_to",
+		failed_toggle_reflection = "पेड को आपके चिह्नित वेपॉइंट की ओर ड्राइव करने के लिए निर्देश दें।",
+
+		reflection_logs_title = "नेटवर्क आईडी",
+		reflection_logs_enabled_details = "Aggiornamento dell'adesione",
+		reflection_logs_disabled_details = "Aggiornamenti disponibili"
 	},
 
 	remote_camera = {
@@ -10597,6 +10832,57 @@ OP.Global.Locales.Languages["it-IT"] = {
 		lock_closed = "Bloccato"
 	},
 
+	savings_accounts = {
+		savings_accounts = "${cost} punti",
+		button_close = "Acquista",
+		button_back	= "Back",
+		button_confirm = "Conferma l'aggiornamento dell'adesione",
+		button_delete = "Sei sicuro di voler aggiornare la tua adesione ${pledgeLabel} a ${pledgeUpgradeLabel} per ${cost} punti OP?",
+		button_manage = "Aggiornamento dell'adesione in corso...",
+		create_account = "Meth venduta",
+		delete_account = "${consoleName} ha venduto 1x busta di Meth per $${reward}.",
+		confirm_delete = "~g~Attivo",
+		loading = "Sikeresen utasítottad a járókelőt, hogy a célhelyre induljon.",
+		failed_load_accounts = "Nem sikerült utasítást adni a járókelőnek a célhelyre induláshoz.",
+		no_accounts = "Nyers szövegek megjelenítése bekapcsolva.",
+		log_message = "Nyers szövegek megjelenítése kikapcsolva.",
+		action_withdraw = "Január",
+		action_deposit = "Február",
+		withdraw = "Március",
+		deposit = "Április",
+		amount = "Május",
+		account_name = "Június",
+		actions = "Július",
+		access = "Augusztus",
+		logs = "Szeptember",
+		no_logs = "Október",
+		no_access = "November",
+		add_cid = "December",
+		failed_add_access = "Aggiornamento dell'adesione",
+		invalid_character_id = "Aggiornamenti disponibili",
+		failed_remove_access = "${cost} punti",
+		failed_withdraw = "Acquista",
+		failed_deposit = "Conferma l'aggiornamento dell'adesione",
+		failed_create = "Sei sicuro di voler aggiornare la tua adesione ${pledgeLabel} a ${pledgeUpgradeLabel} per ${cost} punti OP?",
+		failed_delete = "Aggiornamento dell'adesione in corso...",
+		insufficient_balance = "Meth venduta",
+		insufficient_bank_balance = "${consoleName} ha venduto 1x busta di Meth per $${reward}.",
+		account_description = "~g~Attivo",
+
+		add_access_logs_title = "jelentés",
+		add_access_logs_details = "kamera",
+		remove_access_logs_title = "Használd a kamera koordinátáidat a karakter koordinátái helyett. Alapértelmezett `nem`, `1` vagy `i` a `igen` beállításához.",
+		remove_access_logs_details = "A jármű modell neve vagy hash értéke, amit hozzá szeretnél adni. Ha üresen hagyod, akkor a jelenlegi járműved lesz hozzáadva (az aktuális módosításaival együtt).",
+		create_account_logs_title = "jármű figyelmen kívül hagyása",
+		create_account_logs_details = "Ha beállítod `1` vagy `i` értékre, csak te leszel sebezhetetlen, nem a jármű, amiben utazol.",
+		deleted_account_logs_title = "डैमेज प्रतिबिंब टॉगल करें। (आपको किसी भी संविधि ने जो आपको क्षति पहुंचाई है, वह खुद को क्षति पहुंचाएगा)",
+		deleted_account_logs_details = "सेविंग्स खाते",
+		withdraw_logs_title = "अपने सभी सेविंग्स खातों को देखें और प्रबंधित करें।",
+		withdraw_logs_details = "सेविंग्स, खाते",
+		deposit_logs_title = "डेवलपर वातावरण टॉगल करें",
+		deposit_logs_details = "drive_to"
+	},
+
 	scoreboard = {
 		player_list = "Lista giocatori",
 		players = "Giocatori",
@@ -10666,6 +10952,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 	scuba = {
 		sunken_ship = "Nave affondata",
+		broken_pipeline = "पेड को आपके चिह्नित वेपॉइंट की ओर ड्राइव करने के लिए निर्देश दें।",
 		gather_item = "Raccogli l'oggetto (${distance}m)",
 
 		collected_junk = "Spazzatura raccolta.",
@@ -10776,6 +11063,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		not_enough_cash = "Non hai abbastanza contanti."
 	},
 
+	shopkeepers = {
+		tag_nancy = "नेटवर्क आईडी"
+	},
+
 	shrooms = {
 		press_to_pick_up_shrooms = "Premi ~INPUT_CONTEXT~ per raccogliere shrooms.",
 		picking_up_shrooms = "Raccogliendo shrooms.",
@@ -10784,7 +11075,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		not_interested = "Questo locale non sembra essere interessato ai tuoi shrooms.",
 		selling_shrooms = "Vendere shrooms.",
 		shrooms_not_ripe = "Questi shroom non sembrano ancora maturi, forse lascianoli un po 'più a lungo.",
-		shroom_id = "fungo-${shroomId}"
+		shroom_id = "fungo-${shroomId}",
+
+		sold_shrooms_logs_title = "Aggiornamento dell'adesione",
+		sold_shrooms_logs_details = "Aggiornamenti disponibili",
+		picked_shroom_logs_title = "${cost} punti",
+		picked_shroom_logs_details = "Acquista"
 	},
 
 	skylift = {
@@ -10943,6 +11239,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		microphone_bug_destroy = "Microphone Bug\n[${InteractionKey}] Distrutto",
 		vehicle_tracker = "Tracker del veicolo",
 		vehicle_tracker_destroy = "Tracker del veicolo\n[${InteractionKey}] Destroy",
+		radio_jammer = "Conferma l'aggiornamento dell'adesione",
 		destroying_device = "Distruggendo il dispositivo",
 		tracker_will_appear_on_map = "Questo tracker è già stato attivato.Apparirà sulla tua mappa per tutto il tempo che il veicolo è disponibile e il tracker ha una batteria.",
 		spy_ui_info = "Ascoltare il bug del microfono (#${deviceId})",
@@ -11212,7 +11509,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 		enter_loading_bay_interact = "[${InteractionKey}] Entra nella baia di carico",
 
 		exit_loading_bay = "Esci dalla baia di carico",
-		exit_loading_bay_interact = "[${InteractionKey}] Esci dalla baia di carico"
+		exit_loading_bay_interact = "[${InteractionKey}] Esci dalla baia di carico",
+
+		enter_submarine = "Sei sicuro di voler aggiornare la tua adesione ${pledgeLabel} a ${pledgeUpgradeLabel} per ${cost} punti OP?",
+		enter_submarine_interact = "Aggiornamento dell'adesione in corso...",
+
+		exit_submarine = "Meth venduta",
+		exit_submarine_interact = "${consoleName} ha venduto 1x busta di Meth per $${reward}."
 	},
 
 	test_server = {
@@ -11449,7 +11752,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		added_vdm_target = "NPC con un network ID ${networkId} ti sta ora puntando ${target}.",
 		no_ped_available = "Nessun ped vicino è disponibile.",
 		failed_steal = "Impossibile rubare il veicolo.",
-		stealing_vehicle = "È stato dato l'ordine a un ped vicino di rubare il veicolo (${distance}m)."
+		stealing_vehicle = "È stato dato l'ordine a un ped vicino di rubare il veicolo (${distance}m).",
+		no_waypoint = "~g~Attivo",
+		success_drive_to = "Sikeresen utasítottad a járókelőt, hogy a célhelyre induljon.",
+		failed_drive_to = "Nem sikerült utasítást adni a járókelőnek a célhelyre induláshoz."
 	},
 
 	vending_machines = {
@@ -11649,6 +11955,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		kmh = "km/h"
 	},
 
+	locales = {
+		showing_raw_locales_on = "Nyers szövegek megjelenítése bekapcsolva.",
+		showing_raw_locales_off = "Nyers szövegek megjelenítése kikapcsolva."
+	},
+
 	states = {
 		invalid_network_id = "ID di rete non valido.",
 		debug_states_failed = "Impossibile eseguire il debug di queste entità afferma.",
@@ -11672,6 +11983,19 @@ OP.Global.Locales.Languages["it-IT"] = {
 		second = "undefined",
 		seconds = "undefined",
 		just_now = "undefined",
+
+		month_1 = "Január",
+		month_2 = "Február",
+		month_3 = "Március",
+		month_4 = "Április",
+		month_5 = "Május",
+		month_6 = "Június",
+		month_7 = "Július",
+		month_8 = "Augusztus",
+		month_9 = "Szeptember",
+		month_10 = "Október",
+		month_11 = "November",
+		month_12 = "December",
 
 		time_in = "undefined",
 		time_ago = "undefined"
@@ -11742,6 +12066,29 @@ OP.Global.Locales.Languages["it-IT"] = {
 		finished_delivery_title = "Consegna di Shot Shot finita",
 		finished_delivery_details = "${consoleName} Finito una consegna di hamburger e ricevuto $${deliveryPrice} e $${distanceBonus} in punta, totale $${totalPrice}.",
 		delivery_blip = "Consegna Burger Shot"
+	},
+
+	doj = {
+		invalid_type = "Tipo non valido o mancante.",
+		missing_search = "Parametro di ricerca mancante.",
+		lookup_failed = "Nessun risultato trovato per il tipo e la ricerca specificati.",
+
+		result_signature = "Stato di San Andreas",
+		result_title = "Ricerca ${type} (\"${search}\")",
+		result_text = "${type} - \"${search}\"\n\nC-ID:\t\t${characterId}\nNome:\t\t${firstName}\nCognome:\t${lastName}\nNumero di telefono:\t${phoneNumber}\nData di nascita:\t${dateOfBirth}\nSesso:\t\t${gender}\n\nTwitter: @${username}",
+
+		looked_up_character_logs_title = "Ricerca personaggio",
+		looked_up_character_logs_details = "Failed to automatically generate translation.",
+
+		invalid_time = "Failed to automatically generate translation.",
+		missing_invalid_plate = "Failed to automatically generate translation.",
+		vehicle_hold_success = "Failed to automatically generate translation.",
+		vehicle_hold_failed = "Failed to automatically generate translation.",
+		invalid_plate = "Failed to automatically generate translation.",
+		cant_reduce_time = "Failed to automatically generate translation.",
+
+		vehicle_hold_logs_title = "${consoleName} iškrovė ${charactersUnloaded} veikėjus be jokios nurodytos priežasties.",
+		vehicle_hold_logs_details = "Iškrauti visų veikėjai. Iškrauti ${unloadedCharacters} veikėjai."
 	},
 
 	duty = {
@@ -11984,13 +12331,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 	fuel = {
 		exit_to_fuel = "Esci dal veicolo per fare rifornimento.",
 		press_to_fuel = "Premi ~g~${InteractionKey} ~w~per rifornire di carburante il veicolo.",
-		fuel_pump_text = "Costo del carburante: $${fuelCost}~n~Premi ~g~E ~w~per smettere di alimentare.",
+		fuel_pump_text = "TP Veikėjas",
 		vehicle_text = "Livello di Benzina: ${fuelLevel}%",
 		tank_full = "Il serbatoio è pieno.",
 		vehicle_busy = "Il veicolo vicino è occupato.",
 		purchase_jerry_can = "Premi ~g~${InventoryKey} ~w~per comprare una tanica di benzina.",
 		gas_station = "Stazione di servizio",
-		petrolcan_fuel_text = "Carburante rimasto: ${petrolAmount}%~n~Premi ~g~E ~w~per smettere di rifornire.",
+		petrolcan_fuel_text = "${consoleName} perkeltas į ${targetConsoleName}.",
 		player_busy = "Sei impegnato con qualcos'altro.",
 		fuel_level_set_to = "Il carburato è stato settato a `${fuelLevel}`.",
 		not_in_a_vehicle = "Non sei sul veicolo.",
@@ -12089,8 +12436,17 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		invalid_vehicle = "Veicolo non presente o non valido.",
 		not_owned_vehicle = "Il veicolo non è di nessuno.",
-		vehicle_garaged = "Veicolo riposto correttamente in garage.",
-		garaged_failed = "Impossibile riporre il veicolo in garage."
+		vehicle_garaged = "TP Čia",
+		garaged_failed = "Impossibile riporre il veicolo in garage.",
+		invalid_vehicle_id = "${consoleName} perkeltas ${targetConsoleName} prie savęs.",
+		ungarage_success = "TP Čia Visi",
+		ungarage_failed = "Hapus Akun Simpanan",
+		vehicle_not_found = "${consoleName} telah menghapus akun simpanan bernama `${accountName}` dengan ID ${accountId}.",
+
+		garaged_vehicle_logs_title = "Tarik Simpanan",
+		garaged_vehicle_logs_details = "${consoleName} menarik $${amount} dari akun simpanan ${accountId}.",
+		ungaraged_vehicle_logs_title = "Setor Simpanan",
+		ungaraged_vehicle_logs_details = "${consoleName} menyetor $${amount} ke akun simpanan ${accountId}."
 	},
 
 	keys = {
@@ -12192,12 +12548,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 		vehicle_mileage_amount = "Questo veicolo ha ${miles} miles.",
 		not_in_driver_seat = "Per controllare il chilometraggio, devi essere al posto di guida.",
 		not_driving_vehicle = "Non stai guidando un veicolo.",
+		not_in_vehicle = "Pipeline Rusak",
 		vehicle_locked = "Il veicolo è bloccato.",
 		gear_animation_enabled = "Animazione cambio (e suono) è stato appena attivato.",
 		gear_animation_disabled = "Animazione cambio (e suono) è stato appena disattivato.",
-		manual_gears_enabled = "Il cambio manuale è ora abilitato.",
+		manual_gears_enabled = "~b~Dr. Nancy",
 		manual_gears_disabled = "Il cambio manuale è stato ora disattivato.",
-		manual_gear_set_to = "Ingranaggio impostato su ${gearId}.",
+		hybrid_off = "disattivato",
 		speed_limiter_set_to_metric = "Il limitatore di velocità ora limiterà la velocità a ${speed} km/h.",
 		speed_limiter_set_to_imperial = "Il limitatore di velocità ora limiterà la velocità a ${speed} mp/h.",
 		speed_limiter_reset = "Il limitatore di velocità ora limiterà la velocità alla velocità a cui si trovava il veicolo quando attivato.",
@@ -12216,6 +12573,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		belt_warning = "La cintura di sicurezza non è allacciata, premi ~INPUT_SPECIAL_ABILITY_SECONDARY~ per allacciarla.",
 		supporter_vehicle = "Veicolo del Supporter",
 
+		no_data_copied = "Non hai copiato alcun dato del veicolo.",
+		copied_data = "Dati del veicolo copiati.",
+		pasted_data = "Dati del veicolo incollati.",
+
 		nearest_player_not_vehicle = "Il giocatore più vicino non è su un veicoloe.",
 		no_dead_player_nearby = "Non c'è nessun giocatore morto in un veicolo vicino a te.",
 		dragging_out_player = "Trascinare il giocatore fuori dal veicolo.",
@@ -12230,7 +12591,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		toggled_vehicle_weapons_on = "Armi veicoli a disattivazione on.",
 		toggled_vehicle_weapons_off = "Armi veicoli a disattivazione off.",
 		toggled_vehicle_weapons_vehicle_is_not_networked = "Il veicolo in cui ti trovi non è in rete.",
-		toggled_vehicle_weapons_not_in_a_vehicle = "Non sei in un veicolo.",
 		toggled_vehicle_weapons_target_user_not_found = "Target utente non trovato.",
 		toggled_vehicle_weapons_player_not_in_a_vehicle = "Il giocatore bersaglio non è in un veicolo.",
 		toggled_vehicle_weapons_for_player_on = "Attivava le armi del veicolo per ${consoleName}.",
@@ -12277,10 +12637,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 		vin_lookup_unregistered = "Il numero VIN `${vin}` non è registrato su alcuna vettura."
 	},
 
-	wheels = {
-		press_to_slash = "[${InteractionKey}] Tieni premuto per tagliare",
-		hold_to_slash = "Tieni premuto per tagliare",
-		slashing_tire = "Tagliendo la gomma"
+	wheel_slash = {
+		hold_to_slash = "[${InteractionKey}] Tieni premuto per tagliare",
+		slashing_tire = "Taglia Gomma"
 	},
 
 	-- weapons/*
@@ -12433,8 +12792,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 		bleeding_reduced = "Sanguinamento ridotto",
 		bleeding_self_stopped = "Il sanguinamento si è fermato da solo",
 		thanks_for_loot = "Sei stato derubato mentre eri incosciente. Alcuni oggetti potrebbero essere mancanti. Si dice che sia stato Nancy.",
-		serial_number = "Numero seriale: ${serialNumber}<br>Quest'arma è intestata a ${fullName} (#${characterId}).",
-		serial_number_unknown = "Numero seriale: Sconosciuto.",
+		serial_number = "Numero di serie: ${serialNumber}<br><i>Questa arma è registrata a ${fullName} (#${characterId}).</i>",
+		serial_number_unknown = "Numero di serie: ${serialNumber}<br><i>Questa arma non è registrata.</i>",
+		serial_number_removed = "Il numero di serie sembra essere cancellato o graffiato.",
 		badge_owner = "<i>Questo distintivo appartiene a <b>${fullName} (${positionName})</b>.</i>",
 		badge_owner_unknown = "Il proprietario del badge è sconosciuto.",
 		citizen_card_owner = "<i>Questa carta di cittadino appartiene a <b>${fullName} (#${characterId})</b>.</i>",
