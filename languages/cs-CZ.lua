@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 24 (do not change)
+-- AUTO LOCALES: 25 (do not change)
 
 OP.Global.Locales.Languages["cs-CZ"] = {
 	-- configuration settings for language
@@ -100,6 +100,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 
 		model_name_not_provided = "Není zadáno jméno modelu.",
 		model_name_invalid = "Jméno modelu `${modelName}` je neplatné.",
+		model_name_not_a_vehilce = "Název modelu `${modelName}` není vozidlo.",
 		failed_to_spawn_vehicle = "Nepodařilo se spawnout vozidlo.",
 		spawned_vehicle_for_player = "Úspěšně bylo spawnuto vozidlo `${modelName}` pro ${displayName}.",
 		spawned_vehicle_for_everyone = "Úspěšně bylo spawnuto vozidlo `${modelName}` pro všechny.",
@@ -348,12 +349,6 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		watching_off = "Vypnuto mód sledování.",
 		watching_label = "Sledování: ${nearby}",
 
-		evidence_view_on = "Zapnuto zobrazení důkazů.",
-		evidence_view_off = "Zobrazení důkazů vypnuto.",
-		evidence_view_title = "Přepnutí zobrazení důkazů",
-		evidence_view_details_on = "${consoleName} zapnul rozšířené zobrazení důkazů.",
-		evidence_view_details_off = "${consoleName} vypnul rozšířené zobrazení důkazů.",
-
 		report_muted_no_reason = "Byl jste ztlumen v reportovacím příkazu bez určení důvodu.",
 		report_muted = "Byl jste ztlumen v reportovacím příkazu z důvodu `${reason}`.",
 
@@ -529,9 +524,9 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		advanced_metagame_on = "Povolena pokročilá metahra.",
 		advanced_metagame_off = "Zakázána pokročilá metahra.",
 
-		identity_set = "Úspěšně jste nastavili svou identitu na `${name}`.",
-		identity_reset = "Úspěšně jste obnovili svou identitu.",
-		identity_set_failed = "Selhání při nastavování identity.",
+		identity_set = "Identity hráče ${displayName} byla úspěšně změněna na `${name}`.",
+		identity_reset = "Identity hráče ${displayName} byla úspěšně obnovena.",
+		identity_set_failed = "Nepodařilo se změnit identity hráče ${displayName}.",
 		identity_hud = "Identita: ${playerName}",
 
 		set_identity_no_permission = "Hráč se snažil nastavit své jméno bez dostatečných oprávnění.",
@@ -598,8 +593,8 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		fake_disconnect_off_logs_details = "${consoleName} vypnul falešné odpojení.",
 
 		identity_logs_title = "Nahrazení identity",
-		identity_on_logs_details = "${consoleName} nastavil svou identitu na `${playerName}`.",
-		identity_off_logs_details = "${consoleName} obnovil/a svou identitu.",
+		identity_on_logs_details = "${consoleName} nastavil(a) identitu hráče ${targetConsoleName} na `${playerName}`.",
+		identity_off_logs_details = "${consoleName} obnovil(a) identitu hráče ${targetConsoleName}.",
 
 		clean_ped_logs_title = "Vyčištění postavy",
 		clean_ped_logs_details = "${consoleName} vyčistil/a postavu ${targetName}.",
@@ -1000,7 +995,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		spawn_vehicle_command = "spawn_vehicle",
 		spawn_vehicle_command_help = "Vytvořit vozidlo.",
 		spawn_vehicle_command_parameter_model_name = "název modelu",
-		spawn_vehicle_command_parameter_model_name_help = "Název modelu vozidla, které chcete vytvořit.",
+		spawn_vehicle_command_parameter_model_name_help = "Název modelu vozidla, které chcete spawnout. (Výchozí hodnota je `adder`)",
 		spawn_vehicle_command_parameter_server_id = "server id",
 		spawn_vehicle_command_parameter_server_id_help = "ID hráče na serveru, pro kterého chcete spawnout toto vozidlo. Můžete tuto položku nechat prázdnou nebo nastavit na `0` pro výběr sebe sama.",
 		spawn_vehicle_command_substitutes = "sv",
@@ -1199,10 +1194,6 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		tp_waypoint_command_help = "Teleportovat se na váš nastavený bod.",
 		tp_waypoint_command_substitutes = "tp_marker, tp",
 
-		show_all_evidence_command = "zobraz_vsechny_sledy",
-		show_all_evidence_command_help = "Zobrazí všechny blízké důkazy od vystřelených nábojnic.",
-		show_all_evidence_command_substitutes = "vsechny_sledy, zobraz_sledy, dukazy",
-
 		population_density_command = "populacni_hustota",
 		population_density_command_help = "Přepsat globální násobitel hustoty populace.",
 		population_density_command_parameter_multiplier = "nasobitel",
@@ -1270,7 +1261,9 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		fake_disconnect_command_substitutes = "fake_odstoupit, dc",
 
 		set_identity_command = "nastavit_identitu",
-		set_identity_command_help = "Změní vaše jméno hráče.",
+		set_identity_command_help = "Přepíše jméno hráče.",
+		set_identity_command_parameter_server_id = "server id",
+		set_identity_command_parameter_server_id_help = "Serverové id hráče, kterého chcete přepsat jménem. (0 = vy)",
 		set_identity_command_parameter_player_name = "jméno hráče",
 		set_identity_command_parameter_player_name_help = "Jméno, které chcete nastavit, nebo nechte prázdné pro reset.",
 		set_identity_command_substitutes = "identita",
@@ -1889,6 +1882,10 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		copy_ground_command_help = "Zkopíruje souřadnice země vaší aktuální pozice do schránky.",
 		copy_ground_command_substitutes = "zem",
 
+		copy_coords_command = "copy_coords",
+		copy_coords_command_help = "Zkopíruje souřadnice vaší aktuální pozice do schránky.",
+		copy_coords_command_substitutes = "",
+
 		save_commands_list_command = "ulozit_seznam_prikazu",
 		save_commands_list_command_help = "Uloží seznam všech dostupných op-fw příkazů.",
 		save_commands_list_command_substitutes = "",
@@ -2103,10 +2100,25 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		debug_info_command_parameter_server_id_help = "Hráč, pro kterého chcete získat ladící informace.",
 		debug_info_command_substitutes = "",
 
+		where_is_street_command = "where_is_street",
+		where_is_street_command_help = "Najde určitou ulici na mapě.",
+		where_is_street_command_parameter_name = "název",
+		where_is_street_command_parameter_name_help = "Jméno nebo část jména ulice.",
+		where_is_street_command_substitutes = "kdeje, ulice",
+
+		random_position_command = "nahodna_pozice",
+		random_position_command_help = "Teleportuje vás na náhodnou pozici na hlavním ostrově. (Také zapne neviditelnost)",
+		random_position_command_substitutes = "nahoda",
+
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
 		debug_menu_command_help = "Přepne ladící menu.",
 		debug_menu_command_substitutes = "od",
+
+		-- game/development
+		toggle_developer_ambience_command = "toggle_developer_ambience",
+		toggle_developer_ambience_command_help = "Přepnout vývojové okolí.",
+		toggle_developer_ambience_command_substitutes = "",
 
 		-- game/dna_evidence
 		take_dna_sample_command = "vzít_dna_vzorek",
@@ -2807,6 +2819,12 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		roll_command_parameter_max_help = "Nejvyšší hodnota, kterou můžete získat na jednom hodu. Nejvyšší hodnota zde je 100 000.",
 		roll_command_substitutes = "",
 
+		rock_paper_scissors_command = "kamen_papir_nuzky",
+		rock_paper_scissors_command_help = "Hrajte kámen papír nůžky s někým.",
+		rock_paper_scissors_command_parameter_what = "co",
+		rock_paper_scissors_command_parameter_what_help = "Co chcete hrát. Platné hodnoty jsou `rock` (kámen), `paper` (papír) a `scissors` (nůžky). (Náhodné, pokud ponecháno prázdné)",
+		rock_paper_scissors_command_substitutes = "rps",
+
 		card_command = "karta",
 		card_command_help = "Vyložte náhodnou kartu.",
 		card_command_substitutes = "",
@@ -2822,8 +2840,8 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		ped_spawn_command_parameter_model_help = "Model Peda, kterého chcete spustit.",
 		ped_spawn_command_parameter_weapon = "zbraně",
 		ped_spawn_command_parameter_weapon_help = "Jakou zbraň by měl mít npc (volitelně, „false“ pro přeskočení).",
-		ped_spawn_command_parameter_fearless = "nebojácný",
-		ped_spawn_command_parameter_fearless_help = "Pokud by se npc měl bát zbraní/apod. (výchozí hodnota: ne).",
+		ped_spawn_command_parameter_invincible = "nepřemožitelný",
+		ped_spawn_command_parameter_invincible_help = "Pokud by měl být ped nepřemožitelný. (výchozí: ne)",
 		ped_spawn_command_substitutes = "",
 
 		ped_task_command = "ped_task",
@@ -3270,10 +3288,6 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		blackout_command_help = "Přepněte, zda je aktivní výpadek elektřiny nebo ne.",
 		blackout_command_substitutes = "",
 
-		toggle_developer_ambience_command = "toggle_developer_ambience",
-		toggle_developer_ambience_command_help = "Přepnout vývojové okolí.",
-		toggle_developer_ambience_command_substitutes = "",
-
 		-- game/tablet
 		tablet_command = "tablet",
 		tablet_command_help = "Otevřete uživatelské rozhraní tabletu (pokud máte tablet).",
@@ -3289,6 +3303,8 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		set_time_scale_command_help = "Nastavit časové měřítko serveru.",
 		set_time_scale_command_parameter_time_scale = "časové měřítko",
 		set_time_scale_command_parameter_time_scale_help = "Časové měřítko, které chcete nastavit. Hodnota musí být mezi 0 a 1.",
+		set_time_scale_command_parameter_instanced = "instancovaný",
+		set_time_scale_command_parameter_instanced_help = "Pokud by měla být časová stupnice nastavena pouze pro vaši aktuální instanci. (výchozí: ne)",
 		set_time_scale_command_substitutes = "time_scale, slow_motion",
 
 		-- game/titanic
@@ -3312,6 +3328,11 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		trackers_split_command_help = "Přepíná mezi ukládáním sledovačů ve skupině na mapě a jejich rozdělením.",
 		trackers_split_command_substitutes = "",
 
+		-- game/train_pass
+		train_passes_command = "přechod_pro_vlak",
+		train_passes_command_help = "Zkontroluje počet přechodů pro vlak, které máte.",
+		train_passes_command_substitutes = "",
+
 		-- game/treasure_maps
 		spawn_map_piece_command = "spawn_map_piece",
 		spawn_map_piece_command_help = "Vytvoří část pokladové mapy.",
@@ -3320,6 +3341,10 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		spawn_map_piece_command_parameter_piece_number = "číslo části",
 		spawn_map_piece_command_parameter_piece_number_help = "Číslo části, kterou chcete vytvořit.",
 		spawn_map_piece_command_substitutes = "",
+
+		treasure_maps_debug_command = "ladění_pokladových_map",
+		treasure_maps_debug_command_help = "Přepne nástroj pro ladění pokladových map.",
+		treasure_maps_debug_command_substitutes = "",
 
 		-- game/tsunami
 		set_ocean_scaler_command = "set_ocean_scaler",
@@ -3333,6 +3358,11 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		tsunami_toggle_command_parameter_minutes = "minuty",
 		tsunami_toggle_command_parameter_minutes_help = "Počet minut, po kterých se tsunami rozlije po celé mapě. Výchozí hodnota je 60.",
 		tsunami_toggle_command_substitutes = "",
+
+		-- game/twitter_bid
+		twitter_bid_command = "nabídka_na_Twitteru",
+		twitter_bid_command_help = "Přepne nabídkové rozhraní na Twitteru.",
+		twitter_bid_command_substitutes = "",
 
 		-- game/vdm
 		vdm_command = "vdm",
@@ -3806,6 +3836,8 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		-- weapons/ammo
 		fill_ammo_command = "doplň_nabíjení",
 		fill_ammo_command_help = "Doplňuje munici ve všech vašich zbraních.",
+		fill_ammo_command_parameter_server_id = "serverové_id",
+		fill_ammo_command_parameter_server_id_help = "Serverové ID hráče, pro kterého chcete doplnit munici.",
 		fill_ammo_command_substitutes = "",
 
 		-- weapons/recoil
@@ -4222,6 +4254,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		headshot = "Headshot",
 		killstreak = "Sériová zabití",
 		assist = "Asistence",
+		battle_royale_win = "Vítězství v Bitvě Royale",
 
 		level = "Úroveň",
 		position = "Pozice",
@@ -4594,7 +4627,8 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		blindfolding_player = "Leptání hráče",
 		blindfolding_self = "Leptání sebe",
 		hold_to_take_blindfold_off = "Držte ~INPUT_VEH_HEADLIGHT~, abyste sundali papírový pytel.",
-		hold_to_take_blindfold_off_holding = "Pokračujte v držení, abyste sundali papírový pytel."
+		hold_to_take_blindfold_off_holding = "Pokračujte v držení, abyste sundali papírový pytel.",
+		hold_to_take_blindfold_off_chat = "Podržte **${HeadlightKey}**, abyste sundali papírovou tašku."
 	},
 
 	blips = {
@@ -4819,6 +4853,12 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 
 		join_cache_disabled = "Join Cache je zakázáno.",
 		join_cache_enable = "Připojení do cache povoleno."
+	},
+
+	caffeine = {
+		chest_pain = "Cítíte bolest na hrudi.",
+		heart_attack = "Máte infarkt.",
+		heart_attack_death = "Infarkt (kofein)"
 	},
 
 	capri_sun = {
@@ -5232,6 +5272,13 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		refilled_vape = "Elektronická cigareta byla doplněna.",
 		failed_refill_vape = "Nepodařilo se doplnit elektronickou cigaretu.",
 
+		plain_vape = "Obyčejná (bez příchutě)",
+		mango_vape = "Příchuť manga",
+		strawberry_vape = "Příchuť jahoda",
+		menthol_vape = "Příchuť mentol",
+		apple_vape = "Příchuť jablko",
+		blueberry_vape = "Příchuť borůvka",
+
 		deconstructing_item = "Demontuji ${usedItems}",
 		deconstructed_item = "Demontoval jsi ${usedItems}.",
 
@@ -5429,6 +5476,12 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		crafting_decryption_key = "Probíhá výroba dešifrovacího klíče",
 		crafted_decryption_key = "Vyrobil jsi dešifrovací klíč.",
 		failed_craft_decryption_key = "Nepodařilo se vyrobit dešifrovací klíč.",
+
+		break_decryption_key = "Rozbit dešifrovací klíč",
+		press_break_decryption_key = "[${SeatEjectKey}] Rozbit dešifrovací klíč",
+		breaking_decryption_key = "Probijení dešifrovacího klíče",
+		broke_decryption_key = "Probil se dešifrovací klíč.",
+		failed_break_decryption_key = "Nepodařilo se prolomit dešifrovací klíč.",
 
 		craft_tire_wall = "Vyrob pneumatikovou zeď",
 		press_craft_tire_wall = "[${SeatEjectKey}] Vyrob pneumatikovou zeď",
@@ -5841,6 +5894,15 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		north_west = "SZ"
 	},
 
+	confirm = {
+		confirm_purchase = "Potvrdit nákup",
+		confirm_purchase_label = "${label} | ${cost}",
+
+		deny_purchase = "Nechci to",
+		accept_purchase = "Ano, chci to koupit",
+		accept_purchase_info = "Jste si jisti, že chcete dokončit tento nákup? Toto nelze vrátit zpět."
+	},
+
 	courthouse = {
 		press_to_use_gavel = "Stiskněte ~INPUT_CONTEXT~ pro použití kladiva."
 	},
@@ -5983,6 +6045,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		no_vehicle_bone = "Neexistuje kost \"${boneName}\"",
 		server_vehicles = "Vozidla na serveru: ${count}",
 		not_networked_vehicles = "Vozidla mimo síť: ${count}",
+		invisible_vehicles = "Neviditelná vozidla: ${count}",
 		parked_vehicles = "Zaparkovaná vozidla: ${count}",
 
 		distance = "Vzdálenost: ${distance}m",
@@ -6073,7 +6136,10 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		export = "Exportovat",
 		copied = "Zkopírováno!",
 		invalid_data = "Neplatná data.",
-		invalid_json = "Neplatný JSON."
+		invalid_json = "Neplatný JSON.",
+
+		street_found = "Nalezeno `${name}`, jeho střed byl označen na vaší mapě.",
+		street_not_found = "Nenalezena žádná ulice odpovídající vašemu vyhledávání."
 	},
 
 	debug_menu = {
@@ -6083,6 +6149,11 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		weather = "Počasí",
 		reset = "Obnovit",
 		refresh_interior = "Obnovit interiér"
+	},
+
+	development = {
+		developer_ambience_on = "Vývojářská atmosféra zapnuta.",
+		developer_ambience_off = "Vývojářská atmosféra vypnuta."
 	},
 
 	dna_evidence = {
@@ -6149,12 +6220,10 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		elevator_toggle_failed = "Nepodařilo se přepnout výtah.",
 		elevator_enabled_all = "Všechny výtahy byly úspěšně povoleny.",
 
+		current_floor = "Současný",
+
 		out_of_service = "Nepřístupné",
 		out_of_service_help = "Tento výtah je momentálně nepřístupný.",
-
-		current = "Aktuální",
-		up = "Nahoru",
-		down = "Dolů",
 
 		floor_tunnel_entrance = "Vstup do tunelu",
 		floor_underground_tunnel = "Podzemní tunel",
@@ -6270,13 +6339,6 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 
 		marker_label = "${label} | ${cost}",
 		marker_label_purchase = "[${SeatEjectKey}] Zakoupit ${label} za ${cost}",
-
-		confirm_purchase = "Potvrdit nákup",
-		confirm_purchase_label = "${label} | ${cost}",
-
-		deny_purchase = "Ne, nechci to",
-		accept_purchase = "Ano, chci to koupit",
-		accept_purchase_info = "Jste si jistý, že chcete tento vůz zakoupit? Tuto akci nelze vzít zpět.",
 
 		purchased_vehicle = "Zakoupil(a) jsem ${label} za ${cost}.",
 		insufficient_funds = "Nedostatečné finanční prostředky.",
@@ -6790,6 +6852,8 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		doctor_badge_details = "Doktor | ${firstName} ${lastName} | Pozice: ${positionName}",
 		bcfd_badge = "Odznak BCFD",
 		bcfd_badge_details = "BCFD | ${firstName} ${lastName} | Pozice: ${positionName}",
+		state_badge = "Státní průkaz",
+		state_badge_details = "Stát | ${firstName} ${lastName} | Pozice: ${positionName}",
 		state_security_badge = "Průkaz Státní bezpečnosti",
 		state_security_badge_details = "Oddělení Státní bezpečnosti | ${firstName} ${lastName}",
 		doj_badge = "Průkaz DOJ",
@@ -6807,6 +6871,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		badge_type_ems = "Záchranná zdravotnická služba",
 		badge_type_doctor = "Lékařská rezidence",
 		badge_type_bcfd = "Hasičský sbor okresu Blaine",
+		badge_type_state = "Stát San Andreas",
 		badge_type_state_security = "Státní bezpečnostní oddělení",
 		badge_type_doj = "Ministerstvo spravedlnosti",
 		badge_type_doc = "Oddělení korekcí",
@@ -6821,6 +6886,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		badge_type_short_ems = "EMS",
 		badge_type_short_doctor = "Doktor",
 		badge_type_short_bcfd = "BCFD",
+		badge_type_short_state = "Stát",
 		badge_type_short_state_security = "Státní Bezpečnost",
 		badge_type_short_doc = "DOC"
 	},
@@ -6941,6 +7007,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		gun_store_with_shooting_range = "Ammu-Nation se střelnici",
 		green_wonderland = "Zelený ráj",
 		copy_shop = "Kopírovací obchod",
+		electronics_store = "Obchod s elektronikou",
 		submarine_locker = "Sklad pod vodou",
 		astrology_stand = "Stánek s astrologií",
 		irish_pub = "Irská hospoda",
@@ -6958,7 +7025,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		drug_store = "Skříňka s drogami",
 		ems_badge_store = "Recepce se značkami pro záchranáře",
 		doj_badge_store = "Recepce se značkami DOJ",
-		state_security_store = "Obchod se výbavou pro státní bezpečnost",
+		state_store = "Státní obchod",
 		pharmacy = "Lékárna",
 		chop_shop = "Odstavovací místo",
 		courthouse = "Soudní budova",
@@ -6985,6 +7052,9 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		press_to_access_store = "Stiskněte ~INPUT_REPLAY_SHOWHOTKEY~, aby jste se dostali do obchodu.",
 		press_to_access_locker = "Stiskněte ~INPUT_REPLAY_SHOWHOTKEY~, aby jste se dostali ke svému privátnímu skříňce.",
 		press_to_access_shared_storage = "Stiskněte ~INPUT_REPLAY_SHOWHOTKEY~, abyste získali přístup k sdílenému úložišti.",
+		device_printout_details = "<b>Typ:</b> <i>${type}</i>, <b>Text:</b> <i>${text}</i>",
+		copy_serial_number = "Zkopírovat sériové číslo",
+		serial_number_copied = "${itemName}, Sériové číslo: ${serialNumber}",
 
 		failed_give = "Nepodařilo se předat předmět(y) hráči.",
 		character_too_far = "Hráč je příliš daleko.",
@@ -7113,7 +7183,9 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		dumpster_brownies = "Vyschlé brownie",
 		dumpster_pizza_slice = "Zplísněný kousek pizzy",
 		dumpster_banana = "Chlupatý banán (velmi rozměklý)",
+		dumpster_pepsi = "Spláchnuté Pepsi",
 		dumpster_almond_milk = "Kyselé mandlové mléko",
+		dumpster_capri_sun = "Poloplné Capri Sun",
 		dumpster_knife = "Zrezivělý brousek",
 
 		-- items & item descriptions
@@ -7183,6 +7255,8 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		doctor_badge_description = "Identifikační průkaz pro lékaře.",
 		bcfd_badge = "BCFD",
 		bcfd_badge_description = "Odznak pro hasiče Blain County Fire Department.",
+		state_badge = "Státní průkaz",
+		state_badge_description = "Identifikační průkaz zaměstnanců státu San Andreas.",
 		state_security_badge = "Identifikační průkaz Státní bezpečnosti",
 		state_security_badge_description = "Identifikační průkaz pro agenty Státní bezpečnosti.",
 		doj_badge = "Odznak DOJ",
@@ -7252,6 +7326,10 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		scratch_remover_description = "Používá se k odstranění nárazů a škrábanců z vozidel.",
 		motor_oil = "Motorový olej",
 		motor_oil_description = "Používá se k udržování hladkého chodu motoru.",
+		color_measurer = "Měřič barev",
+		color_measurer_description = "Používá se k měření přesných barev laku na jakémkoli vozidle.",
+		tint_meter = "Měřič zatmavení",
+		tint_meter_description = "Nezbytný nástroj pro zákonové orgány, který kontroluje zatmavení oken vozidel a zajišťuje jejich soulad s bezpečnostními předpisy a viditelnostními normami.",
 
 		multi_tool = "Multifunkční nástroj",
 		multi_tool_description = "Nástroj, který lze použít k různým účelům.",
@@ -7724,6 +7802,8 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		evidence_bag_description = "Uzavřený zločin v pytli pro pozdější použití.",
 		fingerprint_evidence = "Důkaz otisků prstů",
 		fingerprint_evidence_description = "Pomáhá ti chytit ty zločinecké hajzly.",
+		device_printout = "Záznam přístroje",
+		device_printout_description = "Kompaktní tiskový záznam pro hodnoty zařízení, jako jsou testy GSR a alkoholové testy, často používaný v policii pro dokumentaci a ověřování.",
 
 		ammo_box = "Velká bedna s municí",
 		ammo_box_description = "Perfektní pro situace, kdy potřebujete hodně střílet. Obsahuje 60 nábojů každého typu.",
@@ -7794,6 +7874,13 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		ticket_250_description = "Teď už jde o něco, vezměte to riziko.",
 		ticket_500 = "Loterijní lístek $500",
 		ticket_500_description = "Podívejte se na vás, to je celý váš týdenní plat!",
+
+		scratch_ticket = "Hrabací tiket (Cash Extravaganza)",
+		scratch_ticket_description = "Ponořte se do modrých vírů náhody, kde odvaha potká sen o prosperitě. S pouhými 100 dolary se vydáte na dobrodružství, které by mohlo naplnit vaše kapsy až 210 000 dolary. Čeká na vás dobrodružství života!",
+		scratch_ticket_pearl = "Hrabací tiket (Black Pearl)",
+		scratch_ticket_pearl_description = "Vydejte se na cestu za skrytými bohatstvími s tímto záhadným lístkem. Vaše $100 by mohly být klíčem k odemčení pokladu až ve výši $210,000. Každý škrábanec vás přibližuje k nejhlubším tajemstvím oceánu a nesčetným bohatstvím.",
+		scratch_ticket_ching = "Škrábanec (Cha Ching)",
+		scratch_ticket_ching_description = "Ponořte se do elektrizujícího vzrušení potenciálního bohatství. Za pouhých $100 nabízí tento živý lístek elektrizující šanci vyhrát až $210,000. Není to jen hra, je to přehlídka štěstí!",
 
 		avocado = "Avokádo",
 		avocado_description = "Malý zelený kulatý předmět, bude skvělý na přípravu dipu.",
@@ -7876,6 +7963,12 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 
 		vape = "Geek Bar",
 		vape_description = "Chceš vypadat cool? Už ti vadí, že jsi floutek? Potáhni si, brácho!",
+
+		train_pass = "Jízdenka na vlak",
+		train_pass_description = "Po použití obdržíte 3 okamžité průchody ve frontě.",
+
+		xbox_controller = "Ovladač XBOX",
+		xbox_controller_description = "Vypadá trochu vlhký...",
 
 		acetone = "Aceton",
 		acetone_description = "Perfektní na odstranění laku nebo na to, abys ho halířem mrknul, jako Cooper.",
@@ -8140,8 +8233,6 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		gas_mask_description = "Ochrání vás před všemi druhy plynů, i prdů babiček.",
 		nv_goggles = "Brýle pro noční vidění",
 		nv_goggles_description = "Pomohou vám vidět ve tmě.",
-		thermal_goggles = "Termální brýle",
-		thermal_goggles_description = "Pomohou vám vidět skrz zdi (ve skutečnosti ne xD).",
 
 		green_rolls = "Zelené závitky",
 		green_rolls_description = "Pro ty z nás, kteří potřebují víc než průměr.",
@@ -8364,6 +8455,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		weapon_militaryrifle = "Vojenská puška",
 		weapon_heavyrifle = "Těžká puška",
 		weapon_tacticalrifle = "Služební karabina",
+		weapon_battlerifle = "Útočná puška",
 
 		weapon_mg = "MG",
 		weapon_combatmg = "Bojová MG",
@@ -8389,6 +8481,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		weapon_emplauncher = "Kompaktní EMP granátomet",
 		weapon_stinger = "RPG",
 		weapon_railgunxm3 = "Cívkový železniční kanón",
+		weapon_snowlauncher = "Vypouštěč sněhových koulí",
 
 		weapon_grenade = "Granát",
 		weapon_bzgas = "BZ plyn",
@@ -8407,6 +8500,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		weapon_fireextinguisher = "Hasicí přístroj",
 		weapon_hazardcan = "Nebezpečný Jerry Can",
 		weapon_fertilizercan = "Hnojivo",
+		weapon_hackingdevice = "Hackingové zařízení",
 
 		red_parachute = "Červený padák",
 		blue_parachute = "Modrý padák",
@@ -8488,6 +8582,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		weapon_militaryrifle_description = "Tato nesmírně silná útočná puška byla navržena pro vysoce kvalifikované, výjimečně zručné vojáky. Ano, můžete si ji koupit.",
 		weapon_heavyrifle_description = "Těžší znamená lepší, že? Jo, pojďme s tím.",
 		weapon_tacticalrifle_description = "Tento hardware je základním vybavením pro policisty, vojáky a každého, kdo se spouští v boji na život a na smrt s buď policií nebo vojáky.",
+		weapon_battlerifle_description = "Poznejte útočnou pušku, spojení spolehlivosti FN FAL a přesnosti Heckler & Koch G3. S nábojnicí podobnou Vepr 7.62x54r je ideální zbraňí pro sílu a přesnost na bojišti.",
 
 		weapon_mg_description = "Univerzální kulomet, který kombinuje robustní design s spolehlivým výkonem. Dlouhý dostřel a průrazná síla. Velmi účinný proti větším skupinám.",
 		weapon_combatmg_description = "Lehký, kompaktní kulomet, který kombinuje vynikající ovladatelnost s vysokou kadencí a devastujícím účinkem.",
@@ -8513,6 +8608,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		weapon_emplauncher_description = "Vystřeluj do dronů a vrtulníků, aby je uspal.",
 		weapon_stinger_description = "Protiletadlový raketomet s ramenem pro sestřelování nepřátelských letadel.",
 		weapon_railgunxm3_description = "Vše, co potřebujete vědět, je - magnety, a to dělá strašné věci těm, na které je namířena.",
+		weapon_snowlauncher_description = "Skořepinový odpalovač: Proměňte zimu v bojovou zónu se sněhovými koulemi. Inspirováno granátometem M79, bylo hravě upraveno pro střelbu svátečních sněhových koulí. Připravte se na sněhovou zábavu!",
 
 		weapon_grenade_description = "Standardní fragmentační granát. Vytrhněte pojistku, hoďte a najděte úkryt. Ideální pro eliminaci seskupených útočníků.",
 		weapon_bzgas_description = "Použijte pro kouření lidí, které nemáte rádi.",
@@ -8531,6 +8627,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		weapon_fireextinguisher_description = "Hasicí přístroj aka \"Smokovací stroj\".",
 		weapon_hazardcan_description = "Jako běžný kanistr, ale k ničemu.",
 		weapon_fertilizercan_description = "Starý osvědčený kanistr na hovínko, pro vaše plodiny nic lepšího.",
+		weapon_hackingdevice_description = "Je to malé přenosné zařízení, silně založené na detektoru kovu, ale s připojenou anténou a nahrazenými tlačítky.",
 
 		red_parachute_description = "Stejný jako běžný padák, ale červený.",
 		blue_parachute_description = "Stejný jako běžný padák, ale modrý.",
@@ -8634,7 +8731,10 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		weapon_addon_honey_description = "AAC Honey Badger PDW je osobní obranná zbraň, často používaná v tlumené konfiguraci a je založená na AR-15. Je komorován v .300 AAC Blackout a původně byl vyráběn společností Advanced Armament Corporation (AAC).",
 
 		weapon_addon_glock18c = "Glock 18C",
-		weapon_addon_glock18c_description = "Představujeme Glock 18C: drobný iniciátor večírků! Má plnou automatickou palbu a dostatečně silný zpětný ráz, aby z vašeho dne na střelnici udělala dobrodružství. Ať už bráníte své útočiště nebo chcete jen upoutat pozornost na střelnici, Glock 18C vás má chráněné."
+		weapon_addon_glock18c_description = "Představujeme Glock 18C: drobný iniciátor večírků! Má plnou automatickou palbu a dostatečně silný zpětný ráz, aby z vašeho dne na střelnici udělala dobrodružství. Ať už bráníte své útočiště nebo chcete jen upoutat pozornost na střelnici, Glock 18C vás má chráněné.",
+
+		weapon_addon_1911 = "1911 Kimber Tactical",
+		weapon_addon_1911_description = "1911 Kimber Tactical: Když se styl setkává se substance. Důvěřováno nadšencům všude, je to vaše volba jak pro obranu, tak pro cool faktor!"
 	},
 
 	invisibility = {
@@ -8665,6 +8765,10 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		move_to_repair = "Pohybujte se sem pro opravu vozidla.",
 		repairing_vehicle = "Oprava vozidla",
 		fix_visual_damage = "Opravování vizuálního poškození",
+		measuring_color = "Měření barvy",
+		color_measurement = "Měření barvy",
+		color_measurer_result = "**${primary}** (*${primaryId}*) hlavní, **${secondary}** (*${secondaryId}*) vedlejší, **${pearlescent}** (*${pearlescentId}*) pearl a **${wheel}** (*${wheelId}*) barva kol.",
+		no_vehicle_in_front = "Přede vámi není žádné vozidlo.",
 		using_first_aid_kit = "Používání první pomoci",
 		using_bandages = "Používání obvazů",
 		using_ifak = "Používání IFAK",
@@ -8683,6 +8787,8 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		changing_license_plate = "Změna registrační značky",
 		equipping_parachute = "Navlékání padáku s názvem ${itemName}",
 		lockpicking_vehicle = "Lomení zámku vozidla",
+		printout_title = "${type} Výtisk",
+		printout_text = "*${text}*",
 		illegal_weather_name = "Pokus o použití kouzla počasí s nelegálním názvem počasí.",
 		equipping_body_armor = "Navlékání tělové zbroje",
 		illegal_burger_shot_delivery_item_id = "Pokus o použití položky pro doručování z Burger Shotu s nelegálním ID položky.",
@@ -8947,6 +9053,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		joining_arena = "Připojuji se do arény",
 		refresh = "Obnovit",
 		refreshing = "Obnovuji...",
+		use_train_pass = "Použít jízdenku na vlak (${trainPasses})",
 
 		avoid_repeating_letters = "Snažte se vyhnout znám písmen ve vašem křestním a/nebo příjmením.",
 		backstory_empty = "Vaše příběhová linie nemůže být prázdná.",
@@ -9091,7 +9198,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		logs_lucky_wheel_reward_chips_details = "${consoleName} otáčí ruletou a vyhrává žetony v hodnotě ${amount} dolarů.",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} otáčí ruletou a vyhrává šperky s názvem `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} otáčí ruletou a vyhrává předmět s názvem `${itemName}`.",
-		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} otáčí ruletou a vyhrává týden fronty s prioritou."
+		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} otočil kolem a vyhrál položku 'Jízdenka na vlak'."
 	},
 
 	magazines = {
@@ -9459,6 +9566,10 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		missing_model_name = "Chybějící název modelu."
 	},
 
+	ocean_gate = {
+		you_need_a_controller_to_maneuver = "K manévrování tohoto vozidla je potřeba ovladač."
+	},
+
 	orbitcam = {
 		enabled_orbitcam = "Orbitcam povolen.",
 		disabled_orbitcam = "Orbitcam zakázán",
@@ -9572,6 +9683,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		sound_effect_save = "Uložit",
 		sound_effect_reset = "Obnovit",
 
+		reduce_epilepsy = "Snížit blikající obrázky (epilepsie přátelské)",
 		disable_tablet_animation = "Vypnout animaci tabletu",
 		staff_notifications_reports = "Notifikace o hlášeních",
 		staff_notifications_staff_chat = "Notifikace o personálním chatu",
@@ -10390,6 +10502,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		attempt_failed = "pokusil se ${attemptMessage} ale neuspěl",
 		dice_message = "hodil kostkou a dostal ${diceNumber}",
 		roll_message = "hodil vlastní kostkou s nastavením ${rolls}d${max} a dostal ${totalValue}",
+		rps_message = "hrál kámen, nůžky, papír a vybral si ${rps}",
 		citizen_card_message = "ukázal občanský průkaz (${characterId})",
 		badge_message = "ukázal odznak (${characterId})",
 		license_message = "ukázal licenci (${characterId})",
@@ -10406,6 +10519,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		attempt_message_chat_title = "/zkusit [${serverId}]",
 		dice_message_chat_title = "/kostka [${serverId}]",
 		roll_message_chat_title = "/hodit [${serverId}]",
+		rps_message_chat_title = "/knp [${serverId}]",
 		description_message_chat_title = "/popis [${serverId}]",
 		message_too_long = "Zpráva obsahuje příliš mnoho znaků nebo řádek!",
 		card_command_wait = "Právě jste si vylosovali kartu, počkejte chvilku než vylosujete další.",
@@ -10494,10 +10608,6 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		phone_number_is_not_available = "Telefonní číslo `${phoneNumber}` není k dispozici."
 	},
 
-	pictures = {
-		selfie_description = "Fotografie ${firstName} ${lastName}."
-	},
-
 	player_control = {
 		unable_to_drive_for_yourself = "Nemůžete řídit sám sebe.",
 		player_is_not_nearby = "Hráč s ID ${serverId} není poblíž.",
@@ -10565,7 +10675,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		printing = "Tiskuji...",
 
 		printed_logs_title = "Vytisknutý obrázek",
-		printed_logs_details = "${consoleName} vytiskl `${itemName}` pomocí papíru `${paperType}` s URL obrázku `${url}`."
+		printed_logs_details = "${consoleName} vytiskl `${itemName}` s použitím `${paperType}` s URL obrázku `${url}`, horní text: `${topText}` a dolní text: `${bottomText}`."
 	},
 
 	prop_hide = {
@@ -10851,6 +10961,8 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		withdraw = "Výběr",
 		deposit = "Vklad",
 		amount = "Částka",
+		note_reason = "Poznámka / Důvod",
+		reason_placeholder = "Volitelná poznámka nebo důvod...",
 		account_name = "Jméno účtu",
 		actions = "Akce",
 		access = "Přístup",
@@ -10878,9 +10990,9 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		deleted_account_logs_title = "Smazání účtu spoření",
 		deleted_account_logs_details = "${consoleName} smazal účet spoření s názvem `${accountName}` s ID ${accountId}.",
 		withdraw_logs_title = "Výběr ze spoření",
-		withdraw_logs_details = "${consoleName} vybral $${amount} ze spořícího účtu ${accountId}.",
+		withdraw_logs_details = "${consoleName} vybral $${amount} z účtu ${accountId} s důvodem `${reason}`.",
 		deposit_logs_title = "Vklad na spoření",
-		deposit_logs_details = "${consoleName} vložil $${amount} na spořící účet ${accountId}."
+		deposit_logs_details = "${consoleName} vložil $${amount} na účet ${accountId} s důvodem `${reason}`."
 	},
 
 	scoreboard = {
@@ -10902,6 +11014,13 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		server_id_hide_failed = "Selhalo skrytí server-id.",
 		server_id_hidden = "Váše serverové ID je nyní skryté.",
 		server_id_not_hidden = "Váše serverové ID již není skryté."
+	},
+
+	scratch_tickets = {
+		you_won = "Vyhrál jste celkem $${cash} na losu.",
+		you_won_nothing = "Na losu jste nic nevyhrál/a.",
+		scratched_ticket_logs_title = "Laura",
+		scratched_ticket_logs_details = "${consoleName} oškrábal los a vyhrál $${amount}."
 	},
 
 	screenshots = {
@@ -11152,13 +11271,11 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 	special_imports = {
 		special_imports_blip = "Speciální Import",
 
-		purchased_vehicle = "Úspěšně jste zakoupili ${label} za $${price}. Vozidlo bylo přidáno do vaší garáže.",
+		purchased_vehicle = "Úspěšně jste zakoupili ${label} za ${price}. Vozidlo bylo přidáno do vaší garáže.",
 
 		something_went_wrong = "Něco se pokazilo.",
 		not_enough_money = "Nemáte dostatek peněz.",
-		invalid_package = "Neplatná úroveň balíčku. (Potřebujete úroveň božského)",
-
-		dealership_closed = "Prodejna je momentálně uzavřená.",
+		invalid_package = "Neplatná úroveň balíčku. (Potřebujete úroveň godlike)",
 
 		purchased_vehicle_logs_title = "Speciální Importy",
 		purchased_vehicle_logs_details = "${consoleName} zakoupil speciální import vozidla ${modelName} za ${price} (SPZ: ${plate}).",
@@ -11321,10 +11438,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		time_parameters_invalid = "Neplatný parametr hodin nebo minut.",
 		time_currently_transitioning = "Čas právě probíhá přechod, prosím čekejte.",
 		time_successfully_transitioned = "Úspěšně převeden čas na `${hour}:${minute}`.",
-		time_successfully_set = "Úspěšně nastaven čas na `${hour}:${minute}`.",
-
-		developer_ambience_on = "Vývojářské okolí zapnuto.",
-		developer_ambience_off = "Vývojářské okolí vypnuto."
+		time_successfully_set = "Úspěšně nastaven čas na `${hour}:${minute}`."
 	},
 
 	tablet = {
@@ -11394,6 +11508,8 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 	},
 
 	teleporters = {
+		area_not_clear = "Cílové místo je blokováno vozidlem.",
+
 		enter_mechanic_shop = "Vstoupit do autoservisu",
 		enter_mechanic_shop_interact = "[${InteractionKey}] Vstoupit do autoservisu",
 
@@ -11515,7 +11631,19 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		enter_submarine_interact = "[${InteractionKey}] Vstoupit do ponorky",
 
 		exit_submarine = "Opustit ponorku",
-		exit_submarine_interact = "[${InteractionKey}] Opustit ponorku"
+		exit_submarine_interact = "[${InteractionKey}] Opustit ponorku",
+
+		enter_garage = "Vstoupit do garáže",
+		enter_garage_interact = "[${InteractionKey}] Vstoupit do garáže",
+
+		exit_garage = "Opustit garáž",
+		exit_garage_interact = "[${InteractionKey}] Opustit garáž",
+
+		enter_viewer_booth = "Vstoupit do divácké kabiny",
+		enter_viewer_booth_interact = "[${InteractionKey}] Vstoupit do divácké kabiny",
+
+		exit_viewer_booth = "Opustit diváckou kabinu",
+		exit_viewer_booth_interact = "[${InteractionKey}] Opustit diváckou kabinu"
 	},
 
 	test_server = {
@@ -11539,6 +11667,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 
 		teleport = "Možnosti teleportace",
 		teleport_to = "TP Na",
+		tp_customs = "LS Customs",
 		tp_legion = "Legion Square",
 		tp_garage_a = "Garáž A",
 		tp_paleto = "Paleto Bay",
@@ -11658,6 +11787,11 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		studio_blip = "945 Studios"
 	},
 
+	train_pass = {
+		used_train_pass = "Úspěšně použit předmět 'Train Pass'. Nyní máte ${trainPasses} jízdenku(jí)",
+		train_passes = "Máte ${trainPasses} jízdenku(jí)"
+	},
+
 	training = {
 		on_team_attackers = "Jste útočník!\nZbývající čas: ${time}",
 		on_team_defenders = "Jste obránce!\nZbývající čas: ${time}",
@@ -11701,9 +11835,23 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		map_tier_3_description = "Velmi pěkná „třpytivá“ mapa s „100% skutečným“ pečetí v dolním pravém rohu.",
 		map_tier_4_description = "Tato mapa vypadá dražší než většina pokladů. Pojďme!!!!",
 
-		press_to_combine_pieces = "Stiskněte tlačítko ~INPUT_CONTEXT~, abyste spojili části mapy ${mapTier}.",
+		press_to_combine_pieces = "Stiskněte ~INPUT_CONTEXT~ pro spojení mapových kusů do plných map",
 
-		treasure_map = "Mapa pokladu (Úroveň ${mapTier})"
+		treasure_map = "Mapa pokladu (Úroveň ${mapTier})",
+
+		treasure_maps_debug_enabled = "Ladění pokladových map je povoleno",
+		treasure_maps_debug_disabled = "Ladění pokladových map vypnuto.",
+
+		treasure_map_debug = "Mapa (Úroveň: ${mapTier}, Vzdálenost: ${distance})",
+		dig_zone = "Zóna kopání",
+
+		combining_maps = "Spojování map",
+
+		combined_map = "Spojená mapa úrovně ${mapTier}.",
+		no_maps_to_combine = "Nemáte žádné mapy k sestavení.",
+
+		treasure_map_dug_up_logs_title = "Rozkopaná pokladová mapa",
+		treasure_map_dug_up_logs_details = "${consoleName} vykopalo pokladovou mapu úrovně ${mapTier} a získalo drop ID ${dropId}."
 	},
 
 	tsunami = {
@@ -11739,8 +11887,67 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		log_description_discount = "Zakoupili jste `${label}` za $${price} s ${discount}% slevou."
 	},
 
+	tunerchip = {
+		pimp_ride = "Vylepši své auto™",
+
+		drive_force = "Modifikátor točivého momentu",
+		brake_force = "Brzdný výkon",
+		break_bias = "Rozložení brzd (Zadní/Přední)",
+		clutch_change_up = "Modifikátor rychlosti zvedání spojky",
+		clutch_change_down = "Modifikátor rychlosti snižování spojky",
+		air_fuel_mixture = "Směs vzduchu/paliva",
+
+		close = "Zavřít",
+		reset = "Resetovat úpravu",
+		apply = "Použít úpravu",
+		save = "Uložit úpravu",
+		tunes = "Úpravy",
+		save_tune = "Uložit úpravu",
+		back = "Zpět",
+		name = "Název",
+		cancel = "Zrušit",
+		loaded_tune = "Úprava úspěšně nahrána.",
+		loading = "Používá se úprava...",
+		success = "Úprava úspěšně použita.",
+		failed = "Nepodařilo se aplikovat úpravy.",
+		failed_delete = "Nepodařilo se odstranit úpravy.",
+		failed_save = "Nepodařilo se uložit úpravy.",
+		success_save = "Úpravy byly úspěšně uloženy.",
+		success_delete = "Úpravy byly úspěšně odstraněny."
+	},
+
+	twitter_bid = {
+		twitter_bid = "Twitter Nabídka",
+		information_part_1 = "Chcete všem vědět, kdo je šéf na Twitteru? Buďte nejvyšším nabízejícím na ověřovací značku!",
+		information_part_2 = "Ten, kdo zaplatí nejvíce peněz, získá modrou ověřovací značku, dokud někdo jiný nepředloží vyšší částku.",
+		information_part_3 = "Pokud vás předběhne někdo jiný, peníze nedostanete zpět.",
+		information_part_4 = "Ujistěte se, že tam je pěkný citát, který mohou lidé okamžitě spatřit, aby se všichni na vás zanechali hořkosti.",
+		no_bidder_yet = "Žádný nabízející",
+		no_bidder_yet_quote = "Buďte první, kdo zkusí nabídnout! (Citát sem)",
+		bid_amount = "Částka nabídky",
+		close = "Zavřít",
+		bid_amount = "Částka nabídky",
+		bid_quote = "Citát nabídky",
+		place_bid = "Umístit nabídku",
+		win_the_bid = "Vyhrát nabídku!",
+		bid_won = "Vyhráli jste nabídku... zatím.",
+		bid_must_be_greater_than_current_bidder = "Nabídka musí být vyšší než současný nabízející.",
+		max_quote_length_exceeded = "Překročena maximální délka citátu.",
+		not_enough_bank_balance = "Nedostatečný bankovní zůstatek.",
+
+		twitter_bid_placed_logs_title = "Zakázka na Twitteru umístěna",
+		twitter_bid_placed_logs_details = "${consoleName} umístil zakázku na Twitteru ve výši $${bidAmount} s citací `${bidQuote}`."
+	},
+
 	vape = {
-		press_to_use = "Stiskněte ~INPUT_CONTEXT~ pro potáhnutí. Stiskněte ~INPUT_FRONTEND_CANCEL~ pro odložení vape."
+		press_to_use = "Stiskněte ~INPUT_CONTEXT~ pro potáhnutí. Stiskněte ~INPUT_FRONTEND_CANCEL~ pro odložení vape.",
+
+		plain_vape = "Geek Bar (Bez příchutě)",
+		mango_vape = "Geek Bar (Mango)",
+		strawberry_vape = "Geek Bar (Jahoda)",
+		menthol_vape = "Geek Bar (Mentol)",
+		apple_vape = "Geek Bar (Jablko)",
+		blueberry_vape = "Geek Bar (Borůvka)"
 	},
 
 	vdm = {
@@ -11844,7 +12051,9 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 
 	washrooms = {
 		use_sink = "[${InteractionKey}] Použít dřez",
-		using_sink = "Používání dřezu"
+		using_sink = "Používání dřezu",
+		refill_bottle = "[${InteractionKey}] Nabít lahvičku",
+		refilling_bottle = "Doplnění lahvičky"
 	},
 
 	weed_field = {
@@ -12134,6 +12343,19 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		aim_assist_disabled = "Nyní budete mířit hůře než zločinci/provokatéři. Doporučuje se okamžitě opětovně povolit pomoc s mířením.",
 		you_are_not_police = "Tato funkce je vyhrazena pouze policistům, ne zločincům/provokatéřům.",
 
+		no_vehicle_tint = "V blízkosti není žádné okno vozidla, abych změřil zatmavení skla.",
+		window_broken = "To okno je rozbité.",
+		window_open = "To okno je otevřené.",
+		measuring_tint = "Měření zatmavení skla",
+		tint_measurement = "Hodnota zatmavení",
+
+		tint_0 = "Toto okno nemá žádné zatmavení.",
+		tint_1 = "Toto okno má černé zatmavení.",
+		tint_2 = "Toto okno má tmavě šedé zatmavení.",
+		tint_3 = "Toto okno má světle šedé zatmavení.",
+		tint_4 = "Toto okno má zatmavení limuzíny.",
+		tint_5 = "Toto okno má zelené zatmavení.",
+
 		undercover_enabled = "Nyní jste pod příkryvkou.",
 		undercover_disabled = "Již nejste pod příkryvkou.",
 
@@ -12242,7 +12464,8 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		return_button = "Zpět",
 
 		toggled_messages_on = "Zprávy zapnuty.",
-		toggled_messages_off = "Zprávy vypnuty."
+		toggled_messages_off = "Zprávy vypnuty.",
+		cannot_toggle_mechanic_messages = "Tovární řidiči nemohou vypnout zprávy od mechaniků."
 	},
 
 	weazel_news = {
@@ -12367,7 +12590,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		vehicle_at_police_impound = "Vaše vozidlo je momentálně na policejním odtažení.",
 		vehicle_at_impound = "Vaše vozidlo se nachází na odtahovém dvoře.",
 		waypoint_to_impound = "Propojeno s odtahovým dvořem bylo nastaveno na GPS.",
-		unable_to_withdraw = "Nelze vybrat vozidlo, protože je momentálně využíváno.",
+		unable_to_withdraw = "Nelze vybrat vozidlo, protože je právě používáno.",
 		vehicle_in_garage = "Váš vůz se nachází v garáži ${garageName}. Na vaší mapě je označený cíl.",
 		insufficient_funds = "Nemáte dostatek peněz k výběru tohoto vozidla.",
 		error_withdrawing = "Při pokusu o výběr vozidla se vyskytla chyba.",
@@ -12572,6 +12795,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		vehicle_is_locked = "Vozidlo je zamknuté.",
 		belt_warning = "Vaše bezpečnostní pásy nejsou zapnuty, stiskněte ~INPUT_SPECIAL_ABILITY_SECONDARY~, abyste si je zapnuli.",
 		supporter_vehicle = "Podporovatel",
+		getting_out = "Vystupování",
 
 		no_data_copied = "Nezkopíroval jste žádná data o vozidle.",
 		copied_data = "Zkopírována data o vozidle.",
@@ -12657,8 +12881,16 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		type_shotgun = "náboje cal. 12",
 		type_stungun = "náboje pro taser",
 
-		fill_ammo_success = "Náboje úspěšně doplněny.",
-		fill_ammo_failed = "Nepodařilo se doplnit náboje."
+		invalid_server_id = "Neplatné ID serveru.",
+		fill_ammo_success = "Úspěšně doplněno střelivo pro sebe.",
+		fill_ammo_success_player = "Úspěšně doplněno střelivo pro ${displayName}.",
+		fill_ammo_success_everyone = "Úspěšně doplněno střelivo pro všechny.",
+		fill_ammo_failed = "Nepodařilo se doplnit náboje.",
+
+		fill_ammo_everyone_logs_title = "Doplněno střelivo všem",
+		fill_ammo_everyone_logs_details = "${consoleName} doplnil střelivo všem.",
+		fill_ammo_player_logs_title = "Doplnění munice hráči",
+		fill_ammo_player_logs_details = "${consoleName} doplnil munici hráči ${targetConsoleName}."
 	},
 
 	throwables = {
@@ -12811,14 +13043,13 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		processed_by = "<i>Zpracováno ${processName}.</i>",
 		evidence_casings = "Nábojnice se vrátily k sériovému číslu ${serialNumber}, které bylo drženo uživatelem ${buyerName} (${buyerCid}) při použití.",
 		evidence_bullets = "Důkazy naznačují, že střely byly vystřeleny pomocí ${bulletLabel}.",
-		evidence_clothing = "Kus oblečení (${clothingType}).",
-		evidence_car_dna = "Byla nalezena DNA na vozidle s SPZ ${plateNumber} a koresponduje s ${DNAOwnerName} (${DNAOwner}).",
+		evidence_vehicle_dna = "Byla nalezena DNA ve vozidle s registrační značkou ${plateNumber} na sedadle ${seat}. DNA patří ${fullName} (${characterId}).",
 		evidence_dna = "Byla nalezena DNA u ${fullName} #${characterId}.",
 		evidence_fingerprint = "Odtisk prstu patřící ${fullName} #${characterId}.",
-		evidence_not_processed = "Tento pytel s důkazy zatím nebyl zpracován.",
+		evidence_not_processed = "Ještě nezpracováno.",
 		additional_information = "Další informace:",
 		picked_up_at_location = "Převzato na místě:",
-		clothing_dna_trace = "DNA stopy patří ${fullName} (#${cid})",
+		clothing_dna_trace = "Stopy DNA vede k ${fullName} (#${characterId})",
 		clothing_dna_trace_unprocessed = "Neprocesované DNA stopy na oblečení",
 		timestamp_of_pickup = "Časové razítko převzetí:",
 		weapon_name = "Název zbraně:",

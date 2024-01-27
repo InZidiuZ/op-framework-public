@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 24 (do not change)
+-- AUTO LOCALES: 25 (do not change)
 
 OP.Global.Locales.Languages["fi-FI"] = {
 	-- configuration settings for language
@@ -100,6 +100,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 		model_name_not_provided = "Ei mallin nimeä annettu.",
 		model_name_invalid = "Mallin nimi `${modelName}` on virheellinen.",
+		model_name_not_a_vehilce = "Mallin nimi `${modelName}` ei ole ajoneuvo.",
 		failed_to_spawn_vehicle = "Ajoneuvon luominen epäonnistui.",
 		spawned_vehicle_for_player = "Onnistuneesti luotiin ajoneuvo `${modelName}` pelaajalle ${displayName}.",
 		spawned_vehicle_for_everyone = "Onnistuneesti luotiin ajoneuvo `${modelName}` kaikille.",
@@ -348,12 +349,6 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		watching_off = "Aseta tarkkailutila pois päältä.",
 		watching_label = "Tarkkaillaan: ${nearby}",
 
-		evidence_view_on = "Aseta todisteiden katselu päälle.",
-		evidence_view_off = "Näytön todisteiden katselu käännetty pois päältä.",
-		evidence_view_title = "Käännetty Todisteiden katselunäkymä",
-		evidence_view_details_on = "${consoleName} käynnisti edistyneen todisteiden katselunäkymän.",
-		evidence_view_details_off = "${consoleName} pysäytti edistyneen todisteiden katselunäkymän.",
-
 		report_muted_no_reason = "Olet estetty raportointi-komennosta ilman määriteltyä syytä.",
 		report_muted = "Olet estetty raportointi-komennosta syystä `${reason}`.",
 
@@ -529,9 +524,9 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		advanced_metagame_on = "Lisätty kehittyneempi metapeli päälle.",
 		advanced_metagame_off = "Lisätty kehittyneempi metapeli pois päältä.",
 
-		identity_set = "Nimesi on nyt asetettu nimelle `${name}`.",
-		identity_reset = "Nimesi on nyt palautettu oletusasetuksille.",
-		identity_set_failed = "Nimesi asettaminen epäonnistui.",
+		identity_set = "Henkilöllisyys asetettu onnistuneesti    ${displayName}:lle: `${name}`.",
+		identity_reset = "Henkilöllisyys nollattu onnistuneesti ${displayName}:lle.",
+		identity_set_failed = "Henkilöllisyyden asettaminen ${displayName}:lle epäonnistui.",
 		identity_hud = "Nimi: ${playerName}",
 
 		set_identity_no_permission = "Pelaaja yritti asettaa nimensä ilman oikeuksia.",
@@ -598,8 +593,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		fake_disconnect_off_logs_details = "${consoleName} sulki feikkipoistumisen.",
 
 		identity_logs_title = "Henkilöllisyyden ohitus",
-		identity_on_logs_details = "${consoleName} asetti henkilöllisyytensä arvoksi `${playerName}`.",
-		identity_off_logs_details = "${consoleName} nollasi henkilöllisyytensä.",
+		identity_on_logs_details = "${consoleName} asetti henkilöllisyyden käyttäjälle ${targetConsoleName} muotoon`${playerName}`.",
+		identity_off_logs_details = "${consoleName} nollasi käyttäjän ${targetConsoleName} henkilöllisyyden.",
 
 		clean_ped_logs_title = "Siisti Pedi",
 		clean_ped_logs_details = "${consoleName} siivosi ${targetName}'n pedin.",
@@ -1000,7 +995,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		spawn_vehicle_command = "spawn_auton",
 		spawn_vehicle_command_help = "Spawnaa auto.",
 		spawn_vehicle_command_parameter_model_name = "mallin nimi",
-		spawn_vehicle_command_parameter_model_name_help = "Auton mallin nimi, jota haluat spawnaa.",
+		spawn_vehicle_command_parameter_model_name_help = "Ajoneuvon mallin nimi, jota haluat kutsua. (Oletuksena `adder`)",
 		spawn_vehicle_command_parameter_server_id = "palvelimen tunniste",
 		spawn_vehicle_command_parameter_server_id_help = "Pelaajan palvelimen tunniste, jolle haluat luoda tämän ajoneuvon. Voit jättää tämän tyhjäksi tai asettaa sen arvoon `0` valitaksesi itsesi.",
 		spawn_vehicle_command_substitutes = "sv",
@@ -1199,10 +1194,6 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		tp_waypoint_command_help = "Teleporttaa valitsemaasi reittipisteeseen.",
 		tp_waypoint_command_substitutes = "tp_marker, tp",
 
-		show_all_evidence_command = "näytä_kaikki_todisteet",
-		show_all_evidence_command_help = "Näyttää kaikki lähellä olevat hylsyjen todisteet.",
-		show_all_evidence_command_substitutes = "kaikki_todisteet, nayta_todisteet, todisteet",
-
 		population_density_command = "asukastiheys",
 		population_density_command_help = "Ohittaa globaalin asukastiheyden kerroksen.",
 		population_density_command_parameter_multiplier = "kerroin",
@@ -1270,7 +1261,9 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		fake_disconnect_command_substitutes = "fake_leave, dc",
 
 		set_identity_command = "set_identity",
-		set_identity_command_help = "Korvaa pelihahmosi nimen.",
+		set_identity_command_help = "Ohittaa pelaajan nimen.",
+		set_identity_command_parameter_server_id = "palvelimen ID",
+		set_identity_command_parameter_server_id_help = "Pelaajan palvelimen ID, jonka nimeä haluat ohittaa. (0 = sinä itse)",
 		set_identity_command_parameter_player_name = "pelihahmon nimi",
 		set_identity_command_parameter_player_name_help = "Nimi, jonka haluat asettaa tai tyhjäksi palauttamiseksi.",
 		set_identity_command_substitutes = "identity",
@@ -1889,6 +1882,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		copy_ground_command_help = "Kopioi nykyisen sijaintisi maan koordinaatit leikepöydälle.",
 		copy_ground_command_substitutes = "maa",
 
+		copy_coords_command = "kopioi_koordinaatit",
+		copy_coords_command_help = "Kopioi nykyisen sijaintisi koordinaatit leikepöydälle.",
+		copy_coords_command_substitutes = "",
+
 		save_commands_list_command = "tallenna_komennot_lista",
 		save_commands_list_command_help = "Tallentaa luettelon kaikista käytettävissä olevista op-fw-komennoista.",
 		save_commands_list_command_substitutes = "",
@@ -2103,10 +2100,25 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		debug_info_command_parameter_server_id_help = "Pelaaja, jonka debug-tiedot haluat kerätä.",
 		debug_info_command_substitutes = "",
 
+		where_is_street_command = "missä_on_katu",
+		where_is_street_command_help = "Paikanna tietty katu kartalta.",
+		where_is_street_command_parameter_name = "nimi",
+		where_is_street_command_parameter_name_help = "Kadun nimi tai sen osa.",
+		where_is_street_command_substitutes = "missäon, katu",
+
+		random_position_command = "satunnainen_sijainti",
+		random_position_command_help = "Teleporttaa sinut satunnaiseen sijaintiin pääsaarella. (Myös päällystää sinut näkymättömäksi)",
+		random_position_command_substitutes = "satunnainen",
+
 		-- game/debug_menu
 		debug_menu_command = "debug_valikko",
 		debug_menu_command_help = "Vaihtaa debug-valikon tilaa.",
 		debug_menu_command_substitutes = "dm",
+
+		-- game/development
+		toggle_developer_ambience_command = "toggle_developer_ambience",
+		toggle_developer_ambience_command_help = "Vaihda kehittäjä taustamelu päälle/pois.",
+		toggle_developer_ambience_command_substitutes = "",
 
 		-- game/dna_evidence
 		take_dna_sample_command = "take_dna_sample",
@@ -2807,6 +2819,12 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		roll_command_parameter_max_help = "Korkein mahdollinen arvo yhdellä heitolla. Suurin arvo tässä on 100 000.",
 		roll_command_substitutes = "",
 
+		rock_paper_scissors_command = "kivi_paperi_sakset",
+		rock_paper_scissors_command_help = "Pelaa kivi paperi sakset jonkun kanssa.",
+		rock_paper_scissors_command_parameter_what = "mitä",
+		rock_paper_scissors_command_parameter_what_help = "Mitä haluat pelata. Kelvolliset arvot ovat `kivi`, `paperi` ja `sakset`. (Satunnainen, jos jätetään tyhjäksi)",
+		rock_paper_scissors_command_substitutes = "rps",
+
 		card_command = "kortti",
 		card_command_help = "Arvo satunnainen kortti.",
 		card_command_substitutes = "",
@@ -2822,8 +2840,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		ped_spawn_command_parameter_model_help = "Pedihahmon malli, jonka haluat luoda.",
 		ped_spawn_command_parameter_weapon = "ase",
 		ped_spawn_command_parameter_weapon_help = "Millä aseella pedi pitäisi olla (valinnainen, \"false\" ohittaaksesi).",
-		ped_spawn_command_parameter_fearless = "peloton",
-		ped_spawn_command_parameter_fearless_help = "Pelottaako pedit aseita jne. (oletusarvo: ei).",
+		ped_spawn_command_parameter_invincible = "haavoittumaton",
+		ped_spawn_command_parameter_invincible_help = "Jos ped pitäisi olla haavoittumaton. (oletus: ei).",
 		ped_spawn_command_substitutes = "",
 
 		ped_task_command = "ped_tehtävä",
@@ -3270,10 +3288,6 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		blackout_command_help = "Vaihtaa katkoksen tilan päälle tai pois päältä.",
 		blackout_command_substitutes = "",
 
-		toggle_developer_ambience_command = "toggle_developer_ambience",
-		toggle_developer_ambience_command_help = "Vaihda kehittäjä taustamelu päälle/pois.",
-		toggle_developer_ambience_command_substitutes = "",
-
 		-- game/tablet
 		tablet_command = "tabletti",
 		tablet_command_help = "Avaa tabletti käyttöliittymän (jos sinulla on tabletti).",
@@ -3289,6 +3303,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		set_time_scale_command_help = "Aseta palvelimen aikaskaala.",
 		set_time_scale_command_parameter_time_scale = "aikaskaala",
 		set_time_scale_command_parameter_time_scale_help = "Aikaskaala, jonka haluat asettaa. Arvon on oltava välillä 0 - 1.",
+		set_time_scale_command_parameter_instanced = "esikatseluperusteinen",
+		set_time_scale_command_parameter_instanced_help = "Jos aikaskaala pitäisi asettaa vain nykyiselle instanssille. (oletus ei)",
 		set_time_scale_command_substitutes = "aikaskaala, hidastus",
 
 		-- game/titanic
@@ -3312,6 +3328,11 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		trackers_split_command_help = "Vaihtaa seurantalaitteiden ryhmittelyn kartalla tai erikseen.",
 		trackers_split_command_substitutes = "",
 
+		-- game/train_pass
+		train_passes_command = "junapassit",
+		train_passes_command_help = "Tarkista junapassiesi määrä.",
+		train_passes_command_substitutes = "",
+
 		-- game/treasure_maps
 		spawn_map_piece_command = "luo_karttapalapeli",
 		spawn_map_piece_command_help = "Luo aarrekarttapalan.",
@@ -3320,6 +3341,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		spawn_map_piece_command_parameter_piece_number = "palan numero",
 		spawn_map_piece_command_parameter_piece_number_help = "Numero, jolle haluat luoda palasen.",
 		spawn_map_piece_command_substitutes = "",
+
+		treasure_maps_debug_command = "aarteenkartat_debug",
+		treasure_maps_debug_command_help = "Kytke aarteenkarttojen debug-työkalu päälle/pois.",
+		treasure_maps_debug_command_substitutes = "",
 
 		-- game/tsunami
 		set_ocean_scaler_command = "aseta_valtameri_skaalaaja",
@@ -3333,6 +3358,11 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		tsunami_toggle_command_parameter_minutes = "minuutit",
 		tsunami_toggle_command_parameter_minutes_help = "Aika ennen kuin tsunami tulvii koko kartan. Oletusarvo on 60.",
 		tsunami_toggle_command_substitutes = "",
+
+		-- game/twitter_bid
+		twitter_bid_command = "twitter_tarjous",
+		twitter_bid_command_help = "Avaa/sulje Twitter tarjous käyttöliittymä.",
+		twitter_bid_command_substitutes = "",
 
 		-- game/vdm
 		vdm_command = "vdm",
@@ -3806,6 +3836,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		-- weapons/ammo
 		fill_ammo_command = "lisää_ammuksia",
 		fill_ammo_command_help = "Täyttää kaikkien aseidesi ammukset.",
+		fill_ammo_command_parameter_server_id = "palvelin id",
+		fill_ammo_command_parameter_server_id_help = "Pelaajan palvelin ID, jonka haluat täyttää ammuksilla.",
 		fill_ammo_command_substitutes = "",
 
 		-- weapons/recoil
@@ -4222,6 +4254,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		headshot = "Kuolinisku",
 		killstreak = "Tappoputki",
 		assist = "Avustus",
+		battle_royale_win = "Battle Royale -voitto",
 
 		level = "Taso",
 		position = "Sijoitus",
@@ -4594,7 +4627,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		blindfolding_player = "Asetetaan paperipussi pelaajan päähän.",
 		blindfolding_self = "Laitetaan paperipussi päähän.",
 		hold_to_take_blindfold_off = "Paina ~INPUT_VEH_HEADLIGHT~, jotta voit ottaa paperipussin pois päältä.",
-		hold_to_take_blindfold_off_holding = "Jatka painamista, jotta voit ottaa paperipussin pois päältä."
+		hold_to_take_blindfold_off_holding = "Jatka painamista, jotta voit ottaa paperipussin pois päältä.",
+		hold_to_take_blindfold_off_chat = "Pidä **${HeadlightKey}** ottaaksesi paperipussin pois päältä."
 	},
 
 	blips = {
@@ -4819,6 +4853,12 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 		join_cache_disabled = "Liittymisvälimuisti on poistettu käytöstä.",
 		join_cache_enable = "Liitymisen välimuisti on käytössä."
+	},
+
+	caffeine = {
+		chest_pain = "Sinulla on rintakipua.",
+		heart_attack = "Sinulla on sydänkohtaus.",
+		heart_attack_death = "Sydänkohtaus (Kofeiini)"
 	},
 
 	capri_sun = {
@@ -5232,6 +5272,13 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		refilled_vape = "Vape täytetty.",
 		failed_refill_vape = "Vapen täyttäminen epäonnistui.",
 
+		plain_vape = "Plain (Ei makua)",
+		mango_vape = "Mangon maku",
+		strawberry_vape = "Vadelman maku",
+		menthol_vape = "Mentolin maku",
+		apple_vape = "Omenan maku",
+		blueberry_vape = "Mustikan maku",
+
 		deconstructing_item = "Purkamassa ${usedItems}",
 		deconstructed_item = "Purkaminen onnistui ${usedItems}.",
 
@@ -5429,6 +5476,12 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		crafting_decryption_key = "Salauksen avaimen valmistus",
 		crafted_decryption_key = "Valmistettu salauksen purkuavain.",
 		failed_craft_decryption_key = "Salauksen purkuavaimen valmistaminen epäonnistui.",
+
+		break_decryption_key = "Murtamisen salausavain",
+		press_break_decryption_key = "[${SeatEjectKey}] Murtamisen salausavain",
+		breaking_decryption_key = "Salauksen murtaminen",
+		broke_decryption_key = "Murtautui salauksen avain.",
+		failed_break_decryption_key = "Salauksen murtaminen epäonnistui.",
 
 		craft_tire_wall = "Valmista rengasmuuri",
 		press_craft_tire_wall = "[${SeatEjectKey}] Valmista rengasmuuri",
@@ -5841,6 +5894,15 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		north_west = "LoKo"
 	},
 
+	confirm = {
+		confirm_purchase = "Vahvista ostos",
+		confirm_purchase_label = "${label} | ${cost}",
+
+		deny_purchase = "Ei kiitos, en halua sitä",
+		accept_purchase = "Kyllä, haluan ostaa sen",
+		accept_purchase_info = "Oletko varma, että haluat suorittaa tämän oston? Toimenpidettä ei voi perua."
+	},
+
 	courthouse = {
 		press_to_use_gavel = "Paina ~INPUT_CONTEXT~, jotta voit käyttää nuijaa."
 	},
@@ -5983,6 +6045,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		no_vehicle_bone = "Ei \"${boneName}\"-luuta",
 		server_vehicles = "Palvelimen ajoneuvot: ${count}",
 		not_networked_vehicles = "Ei verkkoyhteydessä olevia ajoneuvoja: ${count}",
+		invisible_vehicles = "Näkymättömät ajoneuvot: ${count}",
 		parked_vehicles = "Pysäköidyt ajoneuvot: ${count}",
 
 		distance = "Etäisyys: ${distance}m",
@@ -6073,7 +6136,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		export = "Vie",
 		copied = "Kopioitu!",
 		invalid_data = "Virheelliset tiedot.",
-		invalid_json = "Virheellinen JSON."
+		invalid_json = "Virheellinen JSON.",
+
+		street_found = "Löydetty `${name}`, sen keskus on merkitty karttaasi.",
+		street_not_found = "Ei löydy katua, joka vastaa hakua."
 	},
 
 	debug_menu = {
@@ -6083,6 +6149,11 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		weather = "Sää",
 		reset = "Palauta",
 		refresh_interior = "Päivitä sisätila"
+	},
+
+	development = {
+		developer_ambience_on = "Kehittäjän tunnelma päällekytketty.",
+		developer_ambience_off = "Kehittäjän tunnelma pois päältä."
 	},
 
 	dna_evidence = {
@@ -6149,12 +6220,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		elevator_toggle_failed = "Hissin tilan vaihtaminen epäonnistui.",
 		elevator_enabled_all = "Kaikki hissit ovat nyt päällä.",
 
+		current_floor = "Nykyinen",
+
 		out_of_service = "Huollossa",
 		out_of_service_help = "Tämä hissi on tällä hetkellä huollossa.",
-
-		current = "Nykyinen",
-		up = "Ylös",
-		down = "Alas",
 
 		floor_tunnel_entrance = "Tunnelin sisäänkäynti",
 		floor_underground_tunnel = "Maanalainen tunneli",
@@ -6270,13 +6339,6 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 		marker_label = "${label} | ${cost}",
 		marker_label_purchase = "[${SeatEjectKey}] Osta ${label} hintaan ${cost}",
-
-		confirm_purchase = "Vahvista osto",
-		confirm_purchase_label = "${label} | ${cost}",
-
-		deny_purchase = "Ei haittaa, en halua sitä",
-		accept_purchase = "Kyllä, haluan ostaa sen",
-		accept_purchase_info = "Oletko varma, että haluat ostaa tämän ajoneuvon? Tätä toimintoa ei voi perua.",
 
 		purchased_vehicle = "Ostit ${label} hintaan ${cost}.",
 		insufficient_funds = "Varat eivät riitä.",
@@ -6790,6 +6852,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		doctor_badge_details = "Lääkäri | ${firstName} ${lastName} | Asema: ${positionName}",
 		bcfd_badge = "BCFD-kortti",
 		bcfd_badge_details = "BCFD | ${firstName} ${lastName} | Asema: ${positionName}",
+		state_badge = "Valtion ID",
+		state_badge_details = "Valtio | ${etunimi} ${sukunimi} | Asema: ${tehtävänimi}",
 		state_security_badge = "Valtion turvallisuus-ID",
 		state_security_badge_details = "Valtion turvallisuusosasto | ${firstName} ${lastName}",
 		doj_badge = "DOJ ID",
@@ -6807,6 +6871,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		badge_type_ems = "Ensihoitopalvelut",
 		badge_type_doctor = "Lääkärin sijaisuus",
 		badge_type_bcfd = "Blaine Countyn palokunta",
+		badge_type_state = "San Andreasin valtion",
 		badge_type_state_security = "Valtion turvallisuusosasto",
 		badge_type_doj = "Oikeusministeriö",
 		badge_type_doc = "Rikosseuraamuslaitos",
@@ -6821,6 +6886,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		badge_type_short_ems = "EMS",
 		badge_type_short_doctor = "Lääkäri",
 		badge_type_short_bcfd = "BCFD",
+		badge_type_short_state = "Valtio",
 		badge_type_short_state_security = "SSD",
 		badge_type_short_doc = "DY"
 	},
@@ -6941,6 +7007,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		gun_store_with_shooting_range = "Ammu-Nation ampumaradalla",
 		green_wonderland = "Vihreä ihmemaa",
 		copy_shop = "Kopiopaja",
+		electronics_store = "Elektroniikkakauppa",
 		submarine_locker = "Una botella del mejor whiskey irlandés del mundo.",
 		astrology_stand = "Astrologian koju",
 		irish_pub = "Irlantilainen pubi",
@@ -6958,7 +7025,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		drug_store = "Lääkekaappi",
 		ems_badge_store = "EMS-tunnusliput",
 		doj_badge_store = "DOJ-tunnusliput",
-		state_security_store = "Valtiollisen turvallisuuden kauppa",
+		state_store = "Valtion kauppa",
 		pharmacy = "Apteekki",
 		chop_shop = "Purkamokauppa",
 		courthouse = "Oikeustalo",
@@ -6985,6 +7052,9 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		press_to_access_store = "Paina ~INPUT_REPLAY_SHOWHOTKEY~, päästäksesi kauppaan.",
 		press_to_access_locker = "Paina ~INPUT_REPLAY_SHOWHOTKEY~, päästäksesi omaan lokeroosi.",
 		press_to_access_shared_storage = "Paina ~INPUT_REPLAY_SHOWHOTKEY~ avataksesi jaettu säilytys.",
+		device_printout_details = "<b>Tyyppi:</b> <i>${tyyppi}</i>, <b>Teksti:</b> <i>${teksti}</i>",
+		copy_serial_number = "Kopioi sarjanumero",
+		serial_number_copied = "${itemName}, Sarjanumero: ${serialNumber}",
 
 		failed_give = "Papas Tayto",
 		character_too_far = "Son \"papas\", no \"crisps\".",
@@ -7113,7 +7183,9 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		dumpster_brownies = "Kuivuneet kaakut",
 		dumpster_pizza_slice = "Homeinen pizzaviipale",
 		dumpster_banana = "Karvainen banaani (erittäin pehmeä)",
+		dumpster_pepsi = "Litistynyt Pepsi",
 		dumpster_almond_milk = "Hapan mantelimaito",
+		dumpster_capri_sun = "Puolityhjä Capri Sun",
 		dumpster_knife = "Ruosteinen puukko",
 
 		-- items & item descriptions
@@ -7183,6 +7255,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		doctor_badge_description = "Serverio vietos jau nustatytos į `${slots}`.",
 		bcfd_badge = "Mirtis",
 		bcfd_badge_description = "Įprastas",
+		state_badge = "Valtion henkilökortti",
+		state_badge_description = "Henkilökortti San Andreasin valtion työntekijöille.",
 		state_security_badge = "Vienas Gyvenimas",
 		state_security_badge_description = "Pasirinkus šią parinktį, tavo veikėjas turės tik vieną gyvenimą. Jei mirsi ir nepateksi į ligoninę, prarasi savo veikėją.",
 		doj_badge = "Oikeusministeriön tunnus",
@@ -7252,6 +7326,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		scratch_remover_description = "Käytetään töyssyjen ja naarmujen poistamiseen ajoneuvoista.",
 		motor_oil = "Moottoriöljy",
 		motor_oil_description = "Käytetään pitämään moottori käynnissä sujuvasti.",
+		color_measurer = "Värinmittari",
+		color_measurer_description = "Käytetään mittaamaan tarkkoja värejä kaikkien ajoneuvojen maalipinnasta.",
+		tint_meter = "Tummennusmittari",
+		tint_meter_description = "Välttämätön työkalu lainvalvontaviranomaisille, tummennusmittari tarkistaa ajoneuvojen ikkunoiden tummennuksen, jotta ne täyttävät turvallisuusmääräykset ja näkyvyysstandardit.",
 
 		multi_tool = "Monitoimityökalu",
 		multi_tool_description = "Työkalu, jota voi käyttää monenlaisiin tarkoituksiin.",
@@ -7724,6 +7802,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		evidence_bag_description = "Suljetut rikokset pussissa myöhempää käyttöä varten.",
 		fingerprint_evidence = "Sormenjälkitodiste",
 		fingerprint_evidence_description = "Auttavat sinua saamaan kiinni ne rikolliset sälät.",
+		device_printout = "Laitteen tuloste",
+		device_printout_description = "Tiivis paperitulos laitteen lukemista, kuten GSR- ja puhallustestit, usein käytetään lainvalvonnassa dokumentointiin ja vahvistamiseen.",
 
 		ammo_box = "Iso patruunalaatikko",
 		ammo_box_description = "Täydellinen, kun tarvitset ampua paljon. Sisältää 60 patruunaa jokaiselle patruunatyypille.",
@@ -7794,6 +7874,13 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		ticket_250_description = "Nyt päästään jonnekin, ota se riski.",
 		ticket_500 = "$500 Lottolippu",
 		ticket_500_description = "Katsopa sinua menemään, se on koko viikkosi palkka!",
+
+		scratch_ticket = "Raaputuskortti (Rahahurma)",
+		scratch_ticket_description = "Sukella sinisten pyörteiden arvauspeleihin, missä rohkeus kohtaa vaurauden unelman. Vain 100 dollarilla aloita tehtävä, joka voi täyttää taskusi jopa 210 000 dollarilla. Elämän seikkailu odottaa!",
+		scratch_ticket_pearl = "Raaputuskortti (Musta helmi)",
+		scratch_ticket_pearl_description = "Lähde purjehtimaan etsimään piilotettuja rikkauksia tämän arvoituksellisen lipun kanssa. Sinun 100 dollarisi voivat olla avain aarteen löytämiseen, jopa 210 000 dollariin asti. Jokainen raapaisu vie sinut lähemmäs valtameren syvintä salaisuutta ja kertomattomia aarteita.",
+		scratch_ticket_ching = "Raaputusarpa (Cha Ching)",
+		scratch_ticket_ching_description = "Immerse yourself in the electric thrill of potential wealth. Vain 100 dollarin hintainen tämä eloisa lippu tarjoaa sähköistävän mahdollisuuden voittaa jopa 210 000 dollaria. Se ei ole vain peli, se on näytös kohtalon suuntaan!",
 
 		avocado = "Avokado",
 		avocado_description = "Pieni vihreä pallomainen esine, olisi mahtavaa tehdä siitä dippiä.",
@@ -7876,6 +7963,12 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 		vape = "Geek Bar",
 		vape_description = "Yritätkö näyttää siistiltä? Väsynyt olemaan nynny? Hengitä sisään kaveri!",
+
+		train_pass = "Junalippu",
+		train_pass_description = "Käytettäessä saat 3x välittömiä lippuja jonossa.",
+
+		xbox_controller = "XBOX-ohjain",
+		xbox_controller_description = "Näyttää hieman märältä...",
 
 		acetone = "Asetoni",
 		acetone_description = "Ihan täydellinen maalin poistoon tai höyryttelyyn, Cooper-tyyliin.",
@@ -8140,8 +8233,6 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		gas_mask_description = "Suojaa kaikenlaiselta kaasulta, jopa mummon pieruilta.",
 		nv_goggles = "Pimeänäkölaitteet",
 		nv_goggles_description = "Auttaa näkemään pimeässä.",
-		thermal_goggles = "Lämpökamerat",
-		thermal_goggles_description = "Auttaa näkemään seinien läpi (ei oikeasti xD).",
 
 		green_rolls = "Vihreät rullat",
 		green_rolls_description = "Niille, jotka tarvitsevat enemmän kuin keskiverto.",
@@ -8364,6 +8455,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		weapon_militaryrifle = "Sotilaskivääri",
 		weapon_heavyrifle = "Raskas kivääri",
 		weapon_tacticalrifle = "Palveluskivääri",
+		weapon_battlerifle = "Taistelukivääri",
 
 		weapon_mg = "Konekivääri",
 		weapon_combatmg = "Taistelukonekivääri",
@@ -8389,6 +8481,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		weapon_emplauncher = "Kompakti EMP-putki",
 		weapon_stinger = "RPG",
 		weapon_railgunxm3 = "Kelarailo",
+		weapon_snowlauncher = "Lumipalloheittäjä",
 
 		weapon_grenade = "Kranaatti",
 		weapon_bzgas = "BZ-kaasu",
@@ -8407,6 +8500,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		weapon_fireextinguisher = "Palosammutin",
 		weapon_hazardcan = "Vaarallinen bensankanisteri",
 		weapon_fertilizercan = "Lannoitekanisteri",
+		weapon_hackingdevice = "Hakulaitteisto",
 
 		red_parachute = "Punainen laskuvarjo",
 		blue_parachute = "Sininen laskuvarjo",
@@ -8488,6 +8582,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		weapon_militaryrifle_description = "Tämä äärimmäisen voimakas rynnäkkökivääri on suunniteltu erittäin päteville, poikkeuksellisen taitaville sotilaille. Kyllä, voit ostaa sen.",
 		weapon_heavyrifle_description = "Raskas tarkoittaa parempaa, eikö niin?! Joo, mennään sen mukaan.",
 		weapon_tacticalrifle_description = "Tämän kauden välttämätön työkalu lainvalvontahenkilöstölle, sotilashenkilöstölle ja kaikille, jotka ovat taistelussa joko lainvalvontahenkilöstöä tai sotilashenkilöstöä vastaan hengestään.",
+		weapon_battlerifle_description = "Tutustu Taistelukivääriin, FN FAL luotettavuuden ja Heckler & Koch G3 tarkkuuden yhdistelmään. Siinä on Vepr 7.62x54r -lehtinen lehti, joten se on luotettavin ja tarkimmin tähtäävä ase taistelukentällä.",
 
 		weapon_mg_description = "Yleiskäyttöinen konekivääri, joka yhdistää kestävän suunnittelun luotettavaan suorituskykyyn. Pitkä kantomatka ja läpäisevä voima. Erittäin tehokas suuria ryhmiä vastaan.",
 		weapon_combatmg_description = "Kevyt, kompakti konekivääri, joka yhdistää erinomaisen liikkuvuuden korkeaan tuli-nopeuteen tuhoisilla seurauksilla.",
@@ -8513,6 +8608,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		weapon_emplauncher_description = "Ammu sitä nelikoptereiden ja helikoptereiden kimppuun tehdäksesi ne uneliaiksi.",
 		weapon_stinger_description = "Olkapäälle asennettava ilmaan-ilmasta ampuva ohjusputki vihollislentokoneiden tuhoamiseen.",
 		weapon_railgunxm3_description = "Kaikki mitä tarvitset tietää - magneetit, ja se saa kauheita asioita siihen kohteeseen, jota kohti se on suunnattu.",
+		weapon_snowlauncher_description = "Lumipalloheittimet: Muuta talvi lumisodan taistelukentäksi. Inspiroiden M79 kranaatinheitin, se on leikkisästi muokattu ampumaan juhlavia lumipalloja. Valmistaudu lumisiin kepposiin!",
 
 		weapon_grenade_description = "Tavallinen sirpalesideinen kranaatti. Vedä tappi, heitä se, ja sitten etsi suojaa. Ihanteellinen ryhmittyneiden hyökkääjien eliminointiin.",
 		weapon_bzgas_description = "Käytetään henkilöiden tupakanhöyryttämiseen, joista et pidä.",
@@ -8531,6 +8627,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		weapon_fireextinguisher_description = "Palonsammutin eli \"savukone\".",
 		weapon_hazardcan_description = "Kuten bensatölkki, mutta hyödytön.",
 		weapon_fertilizercan_description = "Hyvä vanha lannantölkki, ei parempaa kasveillesi.",
+		weapon_hackingdevice_description = "Se on pieni käsilaitelaite, joka perustuu vahvasti metallinpaljastimeen, mutta jossa on mukana antenni ja painikkeet.",
 
 		red_parachute_description = "Aivan kuten normaali laskuvarjo, mutta punainen.",
 		blue_parachute_description = "Aivan kuten normaali laskuvarjo, mutta sininen.",
@@ -8634,7 +8731,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		weapon_addon_honey_description = "AAC Honey Badger PDW on henkilökohtaiseen puolustukseen tarkoitettu ase, jota usein käytetään vaimennetussa konfiguraatiossa. Se perustuu AR-15:een ja on kaliberiltaan .300 AAC Blackout. Alun perin sen valmisti Advanced Armament Corporation (AAC).",
 
 		weapon_addon_glock18c = "Glock 18C-aseen lisävaruste",
-		weapon_addon_glock18c_description = "Fucking used for sawing shit off of other shitty things."
+		weapon_addon_glock18c_description = "Fucking used for sawing shit off of other shitty things.",
+
+		weapon_addon_1911 = "1911 Kimber Taktinen",
+		weapon_addon_1911_description = "1911 Kimber Taktinen: Missä tyyli kohtaa sisällön. Joka puolella harrastajien luottama, se on valintasi sekä puolustukseen että cooliuden tekijään!"
 	},
 
 	invisibility = {
@@ -8665,6 +8765,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		move_to_repair = "Liiku tänne korjataksesi ajoneuvon.",
 		repairing_vehicle = "Korjataan ajoneuvoa",
 		fix_visual_damage = "Korjataan visuaalista vahinkoa",
+		measuring_color = "Värin mittaaminen",
+		color_measurement = "Värin mittaus",
+		color_measurer_result = "**${primary}** (*${primaryId}*) ensisijainen, **${secondary}** (*${secondaryId}*) toissijainen, **${pearlescent}** (*${pearlescentId}*) helmiäis- ja **${wheel}** (*${wheelId}*) pyöränväri.",
+		no_vehicle_in_front = "Sinun edessäsi ei ole ajoneuvoa.",
 		using_first_aid_kit = "Käytetään ensiapusarjaa",
 		using_bandages = "Käytetään sideharsoja",
 		using_ifak = "Käytetään IFAK-ensiapusarjaa",
@@ -8683,6 +8787,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		changing_license_plate = "Rekisterikilven vaihtaminen",
 		equipping_parachute = "Varjon varustaminen ${itemName}",
 		lockpicking_vehicle = "Ajoneuvon lukon avaaminen",
+		printout_title = "${type} Tuloste",
+		printout_text = "*${text}*",
 		illegal_weather_name = "Yritetään käyttää sään taikaa laittomalla säätunnuksella.",
 		equipping_body_armor = "Panssarin varustaminen",
 		illegal_burger_shot_delivery_item_id = "Yritetään käyttää burger shot -toimitustuotetta laittomalla tuote-id:llä.",
@@ -8947,6 +9053,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		joining_arena = "Liitytään areenalle",
 		refresh = "Päivitä",
 		refreshing = "Päivittää...",
+		use_train_pass = "Käytä junalippua (${trainPasses})",
 
 		avoid_repeating_letters = "Yritä välttää paljon toistuvia kirjaimia ensi- ja/tai sukunimessäsi.",
 		backstory_empty = "Taustatarinasi ei voi olla tyhjä.",
@@ -9091,7 +9198,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		logs_lucky_wheel_reward_chips_details = "${consoleName} on pyöräyttänyt onnenpyörää ja voittanut ${amount} arvosta pelimerkkejä.",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} on pyöräyttänyt onnenpyörää ja voittanut korun, jonka nimi on `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} on pyöräyttänyt onnenpyörää ja voittanut esineen, jonka nimi on `${itemName}`.",
-		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} on pyöräyttänyt onnenpyörää ja voittanut yhden viikon jonon etuuden."
+		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} on pyöräyttänyt onnenpyörää ja voittanut 'Junalippu' -esineen."
 	},
 
 	magazines = {
@@ -9459,6 +9566,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		missing_model_name = "Mallin nimi puuttuu."
 	},
 
+	ocean_gate = {
+		you_need_a_controller_to_maneuver = "Tarvitset ohjaimen tämän ajoneuvon ohjaamiseen."
+	},
+
 	orbitcam = {
 		enabled_orbitcam = "Orbitcam on otettu käyttöön.",
 		disabled_orbitcam = "Orbitcam on pois käytöstä.",
@@ -9572,6 +9683,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		sound_effect_save = "Tallenna",
 		sound_effect_reset = "Palauta",
 
+		reduce_epilepsy = "Vähennä välkkymistä (kohtauksia aiheuttamaton)",
 		disable_tablet_animation = "Poista tablettianimaatio käytöstä",
 		staff_notifications_reports = "Raportti-ilmoitukset",
 		staff_notifications_staff_chat = "Henkilökunta-chat-ilmoitukset",
@@ -10390,6 +10502,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		attempt_failed = "yritti ${attemptMessage} mutta epäonnistui",
 		dice_message = "heitettiin noppaa ja saatiin ${diceNumber}",
 		roll_message = "heitettiin mukautettua noppaa asetuksilla ${rolls}d${max} ja saatiin ${totalValue}",
+		rps_message = "pelasi kiven, paperin, sakset ja valitsi ${rps}",
 		citizen_card_message = "näytti henkilökortin (${characterId})",
 		badge_message = "näytti merkin (${characterId})",
 		license_message = "näytti luvan (${characterId})",
@@ -10406,6 +10519,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		attempt_message_chat_title = "/yritys [${serverId}]",
 		dice_message_chat_title = "/noppa [${serverId}]",
 		roll_message_chat_title = "/heitä [${serverId}]",
+		rps_message_chat_title = "/rps [${serverId}]",
 		description_message_chat_title = "/kuvaus [${serverId}]",
 		message_too_long = "Viesti sisältää liian monta merkkiä tai riviä!",
 		card_command_wait = "Olet juuri vetänyt kortin, odota hetki ennen kuin vedät toisen.",
@@ -10494,10 +10608,6 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		phone_number_is_not_available = "Puhelinnumero `${phoneNumber}` ei ole käytettävissä."
 	},
 
-	pictures = {
-		selfie_description = "${firstName} ${lastName}:n kuva."
-	},
-
 	player_control = {
 		unable_to_drive_for_yourself = "Et voi ajaa itseäsi.",
 		player_is_not_nearby = "Pelaajaa, jonka palvelin-ID on ${serverId}, ei ole lähellä.",
@@ -10565,7 +10675,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		printing = "Tulostetaan...",
 
 		printed_logs_title = "Tulostettu kuva",
-		printed_logs_details = "${consoleName} tulosti `${itemName}` käyttäen `${paperType}`:a ja kuvalinkkiä `${url}`."
+		printed_logs_details = "${consoleName} tulosti `${itemName}` käyttäen `${paperType}`-paperia URL-osoitteella `${url}`, yläteksti: `${topText}` ja alateksti: `${bottomText}`."
 	},
 
 	prop_hide = {
@@ -10851,6 +10961,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		withdraw = "Nosta",
 		deposit = "Talleta",
 		amount = "Summa",
+		note_reason = "Huomautus / Syy",
+		reason_placeholder = "Valinnainen huomautus tai syy...",
 		account_name = "Tilin nimi",
 		actions = "Toiminnot",
 		access = "Pääsy",
@@ -10878,9 +10990,9 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		deleted_account_logs_title = "Eliminar Cuenta de Ahorros",
 		deleted_account_logs_details = "${consoleName} eliminó una cuenta de ahorros llamada `${accountName}` con el ID ${accountId}.",
 		withdraw_logs_title = "Retiro de Ahorros",
-		withdraw_logs_details = "${consoleName} retiró $${amount} de la cuenta de ahorros ${accountId}.",
+		withdraw_logs_details = "${consoleName} nosti $${amount} säästötililtä ${accountId} syynä `${reason}`.",
 		deposit_logs_title = "Depósito de Ahorros",
-		deposit_logs_details = "${consoleName} depositó $${amount} en la cuenta de ahorros ${accountId}."
+		deposit_logs_details = "${consoleName} talletti $${amount} säästötilille ${accountId} syynä `${reason}`."
 	},
 
 	scoreboard = {
@@ -10902,6 +11014,13 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		server_id_hide_failed = "Palvelin tunnistetiedon piilotuksen vaihto epäonnistui.",
 		server_id_hidden = "Palvelimen tunniste on nyt piilotettu.",
 		server_id_not_hidden = "Palvelimen tunniste ei ole enää piilotettu."
+	},
+
+	scratch_tickets = {
+		you_won = "Voitit yhteensä $${cash} raaputusarvasta.",
+		you_won_nothing = "Et voittanut mitään raaputusarvasta.",
+		scratched_ticket_logs_title = "Raaputusarpa",
+		scratched_ticket_logs_details = "${consoleName} raaputti arvan ja voitti $${amount}."
 	},
 
 	screenshots = {
@@ -11152,13 +11271,11 @@ OP.Global.Locales.Languages["fi-FI"] = {
 	special_imports = {
 		special_imports_blip = "Erikoisimportit",
 
-		purchased_vehicle = "Ostit onnistuneesti ${label} hintaan $${price}. Ajoneuvo on lisätty autotalliisi.",
+		purchased_vehicle = "Ostos onnistui! Maksoit ${price} ja ${label} on lisätty talliisi.",
 
 		something_went_wrong = "Jotain meni pieleen.",
 		not_enough_money = "Sinulla ei ole tarpeeksi rahaa.",
-		invalid_package = "Virheellinen pakettitaso. (Tarvitset jumalallisen tason)",
-
-		dealership_closed = "Automyynti on tällä hetkellä suljettu.",
+		invalid_package = "Virheellinen pakettitaso. (Tarvitset Jumalainen-tason)",
 
 		purchased_vehicle_logs_title = "Erikoisimportit",
 		purchased_vehicle_logs_details = "${consoleName} osti `${modelName}` erikoisimportin ajoneuvon hintaan ${price} (Rekisterinumero: `${plate}`).",
@@ -11321,10 +11438,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		time_parameters_invalid = "Virheellinen tunti- tai minuuttiparametri.",
 		time_currently_transitioning = "Aika on tällä hetkellä siirtymässä, odota hetki.",
 		time_successfully_transitioned = "Aika onnistuneesti siirretty kello ${hour}:${minute}.",
-		time_successfully_set = "Aika onnistuneesti asetettu kello ${hour}:${minute}.",
-
-		developer_ambience_on = "Kehittäjän taustaäänet päällä.",
-		developer_ambience_off = "Kehittäjän taustaäänet pois päältä."
+		time_successfully_set = "Aika onnistuneesti asetettu kello ${hour}:${minute}."
 	},
 
 	tablet = {
@@ -11394,6 +11508,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 	},
 
 	teleporters = {
+		area_not_clear = "Kohde on estetty ajoneuvolla.",
+
 		enter_mechanic_shop = "Mene autokorjaamoon",
 		enter_mechanic_shop_interact = "[${InteractionKey}] Mene autokorjaamoon",
 
@@ -11515,7 +11631,19 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		enter_submarine_interact = "[${InteractionKey}] Mene sukellusveneeseen",
 
 		exit_submarine = "Poistu sukellusveneestä",
-		exit_submarine_interact = "[${InteractionKey}] Poistu sukellusveneestä"
+		exit_submarine_interact = "[${InteractionKey}] Poistu sukellusveneestä",
+
+		enter_garage = "Mene talliin",
+		enter_garage_interact = "[${InteractionKey}] Mene talliin",
+
+		exit_garage = "Poistu tallista",
+		exit_garage_interact = "[${InteractionKey}] Poistu tallista",
+
+		enter_viewer_booth = "Mene katsojan koppiin",
+		enter_viewer_booth_interact = "[${InteractionKey}] Mene katsojakoppiin",
+
+		exit_viewer_booth = "Poistu katsojakopista",
+		exit_viewer_booth_interact = "[${InteractionKey}] Poistu katsojakopista"
 	},
 
 	test_server = {
@@ -11539,6 +11667,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 		teleport = "Teleporttausasetukset",
 		teleport_to = "Teleporttaa",
+		tp_customs = "LS-tulli",
 		tp_legion = "Legion Square",
 		tp_garage_a = "Autotalli A",
 		tp_paleto = "Paleto Bay",
@@ -11658,6 +11787,11 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		studio_blip = "945 Studios"
 	},
 
+	train_pass = {
+		used_train_pass = "'Junalippu' -esine käytetty onnistuneesti. Sinulla on nyt ${trainPasses} junalippua.",
+		train_passes = "Sinulla on ${trainPasses} junalippua."
+	},
+
 	training = {
 		on_team_attackers = "Olet hyökkääjä!\nJäljellä oleva aika: ${time}",
 		on_team_defenders = "Olet puolustaja!\nJäljellä oleva aika: ${time}",
@@ -11701,9 +11835,23 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		map_tier_3_description = "Erittäin hieno \"kimaltava\" kartta, jossa on \"100% aito\" sinetti oikeassa alanurkassa.",
 		map_tier_4_description = "Tämä kartta näyttää kalliimmalta kuin useimmat aarteet. Lähdetään!!!!",
 
-		press_to_combine_pieces = "Paina ~INPUT_CONTEXT~, jotta voit yhdistää kartan palaset ${mapTier}.",
+		press_to_combine_pieces = "Paina ~INPUT_CONTEXT~, jotta voit yhdistää karttapalat kokonaisiksi karttoiksi.",
 
-		treasure_map = "Aartekartta (Taso ${mapTier})"
+		treasure_map = "Aartekartta (Taso ${mapTier})",
+
+		treasure_maps_debug_enabled = "Aarrekarttojen testausominaisuus käytössä.",
+		treasure_maps_debug_disabled = "Aarteen kartat vianetsintä poistettu käytöstä.",
+
+		treasure_map_debug = "Kartta (Taso: ${mapTier}, Etäisyys: ${distance})",
+		dig_zone = "Kaivamisalue",
+
+		combining_maps = "Karttojen yhdistäminen",
+
+		combined_map = "Tason ${mapTier} yhdistetty kartta.",
+		no_maps_to_combine = "Sinulla ei ole karttoja yhdistettäväksi.",
+
+		treasure_map_dug_up_logs_title = "Aarteen kartta kaivettu ylös",
+		treasure_map_dug_up_logs_details = "${consoleName} on kaivanut ylös aarteen kartan tasolta ${mapTier} ja saanut pudotustunnisteen ${dropId}."
 	},
 
 	tsunami = {
@@ -11739,8 +11887,67 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		log_description_discount = "Ostit `${label}` hintaan $${price} alennuksella ${discount} %."
 	},
 
+	tunerchip = {
+		pimp_ride = "Pimp My Ride™",
+
+		drive_force = "Vääntömomentin säätö",
+		brake_force = "Jarruteho",
+		break_bias = "Jarrujen jakotaso (Takajarrut/Etujarrut)",
+		clutch_change_up = "Vaihdonvaihtojen yläraja",
+		clutch_change_down = "Vaihdonvaihtojen alaraja",
+		air_fuel_mixture = "Ilma/Polttoaineseos",
+
+		close = "Sulje",
+		reset = "Palauta säätö",
+		apply = "Käytä säätöä",
+		save = "Tallenna säätö",
+		tunes = "Säädöt",
+		save_tune = "Tallenna säätö",
+		back = "Takaisin",
+		name = "Nimi",
+		cancel = "Peruuta",
+		loaded_tune = "Säätö ladattu onnistuneesti.",
+		loading = "Säätöä käytetään...",
+		success = "Säätö käytetty onnistuneesti.",
+		failed = "Virhe tunen asettamisessa.",
+		failed_delete = "Virhe tunen poistamisessa.",
+		failed_save = "Virhe tunen tallentamisessa.",
+		success_save = "Tune tallennettu onnistuneesti.",
+		success_delete = "Tune poistettu onnistuneesti."
+	},
+
+	twitter_bid = {
+		twitter_bid = "Twitter tarjous",
+		information_part_1 = "Haluatko kertoa kaikille, kuka on Twitterin pomo? Olkoon sinulla suurin tarjousvarausmerkki!",
+		information_part_2 = "Se joka maksaa eniten rahaa, saa sinisen varausmerkin, kunnes joku tekee korkeamman tarjouksen.",
+		information_part_3 = "Jos joku tekee suuremman tarjouksen kuin sinä, et saa rahojasi takaisin.",
+		information_part_4 = "Varmista, että laitat näyttävän sitaatin saadaksesi ihmiset inhoamaan sinua.",
+		no_bidder_yet = "Ei tarjouksentekijää",
+		no_bidder_yet_quote = "Ole ensimmäinen tarjoamassa! (Lisää sitaatti tähän)",
+		bid_amount = "Tarjoussumma",
+		close = "Sulje",
+		bid_amount = "Tarjoussumma",
+		bid_quote = "Tarjouksen sitaatti",
+		place_bid = "Jätä tarjous",
+		win_the_bid = "Voita tarjous!",
+		bid_won = "Olet voittanut tarjouksen... ainakin toistaiseksi.",
+		bid_must_be_greater_than_current_bidder = "Tarjouksen on oltava suurempi kuin nykyinen tarjouksentekijä.",
+		max_quote_length_exceeded = "Sitaatin enimmäispituus ylittynyt.",
+		not_enough_bank_balance = "Pankkisaldosi ei ole tarpeeksi suuri.",
+
+		twitter_bid_placed_logs_title = "Twinker-tarjous tehty",
+		twitter_bid_placed_logs_details = "${consoleName} teki Twinker-tarjouksen ${bidAmount} dollarin hintaan tekstillä `${bidQuote}`."
+	},
+
 	vape = {
-		press_to_use = "Paina ~INPUT_CONTEXT~, tupakoidaksesi. Paina ~INPUT_FRONTEND_CANCEL~, laittaaksesi sähkötupakan pois."
+		press_to_use = "Paina ~INPUT_CONTEXT~, tupakoidaksesi. Paina ~INPUT_FRONTEND_CANCEL~, laittaaksesi sähkötupakan pois.",
+
+		plain_vape = "Geek Bar (Ei makua)",
+		mango_vape = "Geek Bar (Mango)",
+		strawberry_vape = "Geek Bar (Mansikka)",
+		menthol_vape = "Geek Bar (Mentoli)",
+		apple_vape = "Geek Bar (Omena)",
+		blueberry_vape = "Geek Bar (Mustikka)"
 	},
 
 	vdm = {
@@ -11844,7 +12051,9 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 	washrooms = {
 		use_sink = "[${InteractionKey}] Käytä pesuallas",
-		using_sink = "Käytössä pesuallas"
+		using_sink = "Käytössä pesuallas",
+		refill_bottle = "[${InteractionKey}] Täytä pullo",
+		refilling_bottle = "Pullojen täyttö"
 	},
 
 	weed_field = {
@@ -12134,6 +12343,19 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		aim_assist_disabled = "Tulet nyt tähtäämään huonommin kuin rikolliset / pahikset. Suosittelemme ottamaan tähtäysavun välittömästi uudelleen käyttöön.",
 		you_are_not_police = "Tämä ominaisuus on varattu poliisille, ei rikollisille / pahiksille.",
 
+		no_vehicle_tint = "Lähistöllä ei ole ikkunoita ajoneuvoon, joiden tummuutta voitaisiin mitata.",
+		window_broken = "Kyseinen ikkuna on rikki.",
+		window_open = "Kyseinen ikkuna on auki.",
+		measuring_tint = "Tummuuden mittaus",
+		tint_measurement = "Tummuuden mittaus",
+
+		tint_0 = "Tässä ikkunassa ei ole tummennusta.",
+		tint_1 = "Tämän ikkunan tummuus on täysin musta.",
+		tint_2 = "Tämän ikkunan tummuus on tumma savu.",
+		tint_3 = "Tämän ikkunan tummuus on vaalea savu.",
+		tint_4 = "Tämän ikkunan tummuus on limusiini.",
+		tint_5 = "Tämän ikkunan tummuus on vihreä.",
+
 		undercover_enabled = "Olet nyt salaisessa tehtävässä.",
 		undercover_disabled = "Et enää ole salaisessa tehtävässä.",
 
@@ -12242,7 +12464,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		return_button = "Palaa",
 
 		toggled_messages_on = "Viestit päällä.",
-		toggled_messages_off = "Viestit pois päältä."
+		toggled_messages_off = "Viestit pois päältä.",
+		cannot_toggle_mechanic_messages = "Hinausajajat eivät voi kytkeä mekaanikkomuistutuksia pois päältä."
 	},
 
 	weazel_news = {
@@ -12367,7 +12590,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		vehicle_at_police_impound = "Ajoneuvosi on tällä hetkellä poliisin pidättämänä.",
 		vehicle_at_impound = "Ajoneuvosi sijaitsee takavarikointipaikalla.",
 		waypoint_to_impound = "Navigaattoriin on merkitty reitti takavarikointipaikalle.",
-		unable_to_withdraw = "Ei voi ottaa ajoneuvoa pois, koska se on tällä hetkellä ulkona.",
+		unable_to_withdraw = "Ei voi nostaa ajoneuvoa, koska se ei ole tällä hetkellä saatavilla.",
 		vehicle_in_garage = "Ajoneuvosi sijaitsee ${garageName}. Reitti on merkitty kartalle.",
 		insufficient_funds = "Sinulla ei ole tarpeeksi rahaa tämän auton nostamiseen.",
 		error_withdrawing = "Tapahtui virhe yritettäessä nostaa autoasi.",
@@ -12572,6 +12795,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		vehicle_is_locked = "Ajoneuvo on lukittuna.",
 		belt_warning = "Turvavyösi ei ole päällä, paina ~INPUT_SPECIAL_ABILITY_SECONDARY~, laittaaksesi sen päälle.",
 		supporter_vehicle = "Tukija",
+		getting_out = "Poistutaan",
 
 		no_data_copied = "Ruosteinen puukko",
 		copied_data = "Lompakko",
@@ -12657,8 +12881,16 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		type_shotgun = "haulikko patruuna",
 		type_stungun = "taserin patruunat",
 
-		fill_ammo_success = "Ammus täytettiin onnistuneesti.",
-		fill_ammo_failed = "Ammuksen täyttäminen epäonnistui."
+		invalid_server_id = "Virheellinen palvelin id.",
+		fill_ammo_success = "Ammukset täytetty onnistuneesti itsellesi.",
+		fill_ammo_success_player = "Ammukset täytetty onnistuneesti pelaajalle ${displayName}.",
+		fill_ammo_success_everyone = "Ammukset täytetty onnistuneesti kaikille.",
+		fill_ammo_failed = "Ammuksen täyttäminen epäonnistui.",
+
+		fill_ammo_everyone_logs_title = "Täytettiin kaikkien ammukset",
+		fill_ammo_everyone_logs_details = "${consoleName} täytti kaikkien ammukset.",
+		fill_ammo_player_logs_title = "Täytetty pelaajan ammukset",
+		fill_ammo_player_logs_details = "${consoleName} täytti ${targetConsoleName}n ammukset."
 	},
 
 	throwables = {
@@ -12811,14 +13043,13 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		processed_by = "<i>Käsitelty ${processName} toimesta.</i>",
 		evidence_casings = "Kuoret palautettiin sarjanumerolle ${serialNumber}, joka oli ${buyerName} (${buyerCid}) hallussaan käytön aikana.",
 		evidence_bullets = "Luodin jäljet vaikuttavat olevan peräisin ${bulletLabel}sta.",
-		evidence_clothing = "Vaatekappale (${clothingType}).",
-		evidence_car_dna = "Ajoneuvosta, jonka rekisterinumero on ${plateNumber}, löydetty DNA kuuluu henkilölle ${DNAOwnerName} (${DNAOwner}).",
+		evidence_vehicle_dna = "Ajoneuvosta ${plateNumber} löytyi DNA jälki istuimelta ${seat}. DNA jälki kuuluu henkilölle ${fullName} (${characterId}).",
 		evidence_dna = "DNA on kerätty henkilöltä ${fullName} #${characterId}.",
 		evidence_fingerprint = "Sormenjälki henkilöltä ${fullName} #${characterId}.",
-		evidence_not_processed = "Tätä todistepussia ei ole vielä käsitelty.",
+		evidence_not_processed = "Ei vielä käsitelty.",
 		additional_information = "Lisätietoja:",
 		picked_up_at_location = "Noudettu sijainnista:",
-		clothing_dna_trace = "DNA-jäljet jäljitettynä henkilölle ${fullName} (#${cid})",
+		clothing_dna_trace = "DNA jäljet kuuluvat henkilölle ${fullName} (#${characterId})",
 		clothing_dna_trace_unprocessed = "Käsittelemättömät DNA-jäljet vaatteissa",
 		timestamp_of_pickup = "Noudon aikaleima:",
 		weapon_name = "Aseen nimi:",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 24 (do not change)
+-- AUTO LOCALES: 25 (do not change)
 
 OP.Global.Locales.Languages["meme-klingon"] = {
 	-- configuration settings for language
@@ -100,6 +100,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 		model_name_not_provided = "loDpu'vIS model nID yo'wI'pu'.",
 		model_name_invalid = "Model nID '${modelName}' jImejpu'",
+		model_name_not_a_vehilce = "mupwI' jImej `${modelName}` chu' Qap not a vehicle.",
 		failed_to_spawn_vehicle = "bI'reS cha'logh",
 		spawned_vehicle_for_player = "tIn bon '${modelName}' Qapvam'e' ${displayName}.",
 		spawned_vehicle_for_everyone = "tagh loDpu'wI'pu' De' vIba'logh neH '${modelName}'",
@@ -348,12 +349,6 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		watching_off = "DaH ghu'veQ: 'watching mode' ngagh'a'.",
 		watching_label = "QImHa' wIv: ${nearby} lobHa'lu'.",
 
-		evidence_view_on = "tlhIngan Hol: 'evidence view' chu' mabmey.",
-		evidence_view_off = "puSvo' qanHa'lu' 'evidence' jang.",
-		evidence_view_title = "'evidence' jang vIpuv.",
-		evidence_view_details_on = "${consoleName} 'evidence' jang vIta'lu' maH.",
-		evidence_view_details_off = "${consoleName} 'evidence' jang qanHa'lu' maH.",
-
 		report_muted_no_reason = "Dochvam vItu'lu'chuqDaq 'report' jangqa'mo'vo' vIHech.",
 		report_muted = "Dochvam vItu'lu'chuqDaq 'report' jangqa'mo'vo' vISuvchuqDaq yIvbej '${reason}'.",
 
@@ -529,9 +524,9 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		advanced_metagame_on = "advanced metagame chenmoH",
 		advanced_metagame_off = "advanced metagame chenmoHbe'",
 
-		identity_set = "reH je '${name}' HIq chenmoH",
-		identity_reset = "reH nadaq chenmoH",
-		identity_set_failed = "yuQummoHwI' yInISQo'.",
+		identity_set = "qaStaHvIS ${displayName} identity to `${name}` jImej.",
+		identity_reset = "qaStaHvIS ${displayName} identity reset jImej.",
+		identity_set_failed = "qaStaHvIS ${displayName} identity failed jImej.",
 		identity_hud = "yuQummoHwI': ${playerName}",
 
 		set_identity_no_permission = "chay' SuqImtaHvIS tlhIngan Hol vItlhutlhchu' cha'log. cha' chaq QInDu' Daq patlh luqIp.",
@@ -598,8 +593,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		fake_disconnect_off_logs_details = "${consoleName} bItlhIH vIneH ngeD.",
 
 		identity_logs_title = "tIghlaw' yIghlaw'",
-		identity_on_logs_details = "${consoleName} ghaHta'pu' yIghlaw' \"${playerName}\" QI'lop.",
-		identity_off_logs_details = "${consoleName} cha'logh cha'puqlo' logh cha'logh.",
+		identity_on_logs_details = "${consoleName} qaStaHvIS ${targetConsoleName} identity to `${playerName}` jImej.",
+		identity_off_logs_details = "${consoleName} qaStaHvIS ${targetConsoleName} identity reset jImej.",
 
 		clean_ped_logs_title = "QachDaq Ped",
 		clean_ped_logs_details = "${consoleName} qachDaq ${targetName} ped.",
@@ -1000,7 +995,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		spawn_vehicle_command = "Huj qej",
 		spawn_vehicle_command_help = "Huj qej.",
 		spawn_vehicle_command_parameter_model_name = "model name",
-		spawn_vehicle_command_parameter_model_name_help = "The name of the vehicle you wish to spawn in Klingon.",
+		spawn_vehicle_command_parameter_model_name_help = "The model name of the vehicle ghaH 'oH va' you're wanting to spawn. (Defaults to `adder`)",
 		spawn_vehicle_command_parameter_server_id = "Server ID",
 		spawn_vehicle_command_parameter_server_id_help = "The player's server ID for whom you'd like to spawn the vehicle. You can leave this blank, or set it to `0` to select yourself.",
 		spawn_vehicle_command_substitutes = "sv",
@@ -1199,10 +1194,6 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		tp_waypoint_command_help = "Teleport to your set waypoint. (Translated to Klingon)",
 		tp_waypoint_command_substitutes = "tp_marker, tp",
 
-		show_all_evidence_command = "cha'logh bIr bommey",
-		show_all_evidence_command_help = "QongDu' bommey cha'logh jIbelchoH.",
-		show_all_evidence_command_substitutes = "bommey_cha'logh, cha'logh_bommey, bommey",
-
 		population_density_command = "nuqneH_population_density",
 		population_density_command_help = "jIghaj population density mu'tlhegh.",
 		population_density_command_parameter_multiplier = "taHjaj",
@@ -1270,7 +1261,9 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		fake_disconnect_command_substitutes = "fake_leave, dc",
 
 		set_identity_command = "Qu'wI' je",
-		set_identity_command_help = "chImeH yIDel qagh De' peel.",
+		set_identity_command_help = "lIghtlhvammoHmey je Dujvam.",
+		set_identity_command_parameter_server_id = "server id",
+		set_identity_command_parameter_server_id_help = "Dujvam vItlhutlh yIDIl vay' vIrol tInobchoH DujchoH. (0 = jIHtaHbogh)",
 		set_identity_command_parameter_player_name = "HochwI' je",
 		set_identity_command_parameter_player_name_help = "HochwI' je qagh DIl power.",
 		set_identity_command_substitutes = "identity",
@@ -1889,6 +1882,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		copy_ground_command_help = "tetlh vetlhvam wo' vetlh.",
 		copy_ground_command_substitutes = "vetlhvam",
 
+		copy_coords_command = "lojmIt_coords",
+		copy_coords_command_help = "lojmIt loS yaDghachvam ta' jIQogh.",
+		copy_coords_command_substitutes = "",
+
 		save_commands_list_command = "Save_commands_list",
 		save_commands_list_command_help = "lo'laHbe'chugh Qapbe' tIq 'oH available op-fw pIm.",
 		save_commands_list_command_substitutes = "",
@@ -2103,10 +2100,25 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		debug_info_command_parameter_server_id_help = "'e' yImev debugging pIq collect qang.",
 		debug_info_command_substitutes = "",
 
+		where_is_street_command = "nuv_street_vIparHa'",
+		where_is_street_command_help = "chImej Dujvam bIngIH be' map.",
+		where_is_street_command_parameter_name = "ngan",
+		where_is_street_command_parameter_name_help = "yerDaq yoH qep or jImej of the qep.",
+		where_is_street_command_substitutes = "ngugh, qep",
+
+		random_position_command = "lojmIt vay'",
+		random_position_command_help = "Teleport you to a lojmIt vay' on the maInpu'. (Also turns on your invisible' weapon)",
+		random_position_command_substitutes = "random",
+
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
 		debug_menu_command_help = "baHja'mo' tebHa'mo' neH toggles.",
 		debug_menu_command_substitutes = "dm",
+
+		-- game/development
+		toggle_developer_ambience_command = "Deposit, Savings",
+		toggle_developer_ambience_command_help = "togglingh the developer ambience.",
+		toggle_developer_ambience_command_substitutes = "",
 
 		-- game/dna_evidence
 		take_dna_sample_command = "D.N.A. sample Suq",
@@ -2807,6 +2819,12 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		roll_command_parameter_max_help = "jIqIj DaqDaq 'e' yIghItlh legh. Daq boQ 'e' vay' wa'vatlh 100,000.",
 		roll_command_substitutes = "",
 
+		rock_paper_scissors_command = "bangloD_j'viS",
+		rock_paper_scissors_command_help = "Play bangloD_j'viS with someone.",
+		rock_paper_scissors_command_parameter_what = "ghItlh",
+		rock_paper_scissors_command_parameter_what_help = "viq rur. poH values Hoch 'veDDI', 'DuH' je 'Se'. (random jImej DaH jImejDaq)",
+		rock_paper_scissors_command_substitutes = "rps",
+
 		card_command = "chong'wI' ghItlh",
 		card_command_help = "logh porgh chong'wI'.",
 		card_command_substitutes = "",
@@ -2822,8 +2840,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		ped_spawn_command_parameter_model_help = "moDel of lIngta' toQ DuQchaj joH'a' pID.",
 		ped_spawn_command_parameter_weapon = "we'pon",
 		ped_spawn_command_parameter_weapon_help = "Qaghmey be' or not be' (tIn pong: \"false\" pe'vIl).",
-		ped_spawn_command_parameter_fearless = "Qaghmey be' or not be'",
-		ped_spawn_command_parameter_fearless_help = "Qaghmey be' rur je engine qun qab jatlh (tIn pong: ghobe').",
+		ped_spawn_command_parameter_invincible = "jIvwI'be' moH",
+		ped_spawn_command_parameter_invincible_help = "vaj vay' Ha'DIbaH jIvwI'be' moH. (Default: chImuv).",
 		ped_spawn_command_substitutes = "",
 
 		ped_task_command = "ped tI'HomQe'bogh",
@@ -3270,10 +3288,6 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		blackout_command_help = "ngeHlu' ghaH je Hoch tlhoy Do'Ha'",
 		blackout_command_substitutes = "",
 
-		toggle_developer_ambience_command = "Deposit, Savings",
-		toggle_developer_ambience_command_help = "togglingh the developer ambience.",
-		toggle_developer_ambience_command_substitutes = "",
-
 		-- game/tablet
 		tablet_command = "to'waQ_ghevI",
 		tablet_command_help = "to'waQ ghevI (to'waQ gheD 'oHchuq).",
@@ -3289,6 +3303,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		set_time_scale_command_help = "ghogh not tlhIngan wej nuqDaq 'Iv. (server) scale pIm mu'qaD.",
 		set_time_scale_command_parameter_time_scale = "mu'qaD PIm",
 		set_time_scale_command_parameter_time_scale_help = "mu'qaD PIm cha'logh DaH maj je mu'qaD PIm chu' be'logh 0 'ej 1.",
+		set_time_scale_command_parameter_instanced = "retlh",
+		set_time_scale_command_parameter_instanced_help = "vaj retlh vIHtaHghach 'eb vItlhutlh vItlhutlh laHbe'lu'. (Default: chImuv)",
 		set_time_scale_command_substitutes = "mu'qaD_pIm, ghogh_yo'",
 
 		-- game/titanic
@@ -3312,6 +3328,11 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		trackers_split_command_help = "tugh trackereghlogh map ngItlh DaHvammo' qar law' lutlhchugh teywI'.",
 		trackers_split_command_substitutes = "",
 
+		-- game/train_pass
+		train_passes_command = "pIqaD Soj",
+		train_passes_command_help = "luq Soj DocheghmoHchu' vItlhutlh.",
+		train_passes_command_substitutes = "",
+
 		-- game/treasure_maps
 		spawn_map_piece_command = "QIn paq 'ej legh",
 		spawn_map_piece_command_help = "QIn paq 'ej legh chu' chovnatlh map tier vay'.",
@@ -3320,6 +3341,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		spawn_map_piece_command_parameter_piece_number = "QIv",
 		spawn_map_piece_command_parameter_piece_number_help = "The QIv mIw' number you would like to spawn.",
 		spawn_map_piece_command_substitutes = "",
+
+		treasure_maps_debug_command = "Duj Sovlu'lu'",
+		treasure_maps_debug_command_help = "Sovlu'lu' pagh HoS treasure maps.",
+		treasure_maps_debug_command_substitutes = "",
 
 		-- game/tsunami
 		set_ocean_scaler_command = "Set_ocean_scaler",
@@ -3333,6 +3358,11 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		tsunami_toggle_command_parameter_minutes = "taH pagh",
 		tsunami_toggle_command_parameter_minutes_help = "tlhIngan Hol Daghaj moghquv pagh. pagh poH wa' 60.",
 		tsunami_toggle_command_substitutes = "",
+
+		-- game/twitter_bid
+		twitter_bid_command = "twitter_bid",
+		twitter_bid_command_help = "Twitter bid UI pagh toggle.",
+		twitter_bid_command_substitutes = "",
 
 		-- game/vdm
 		vdm_command = "vdm",
@@ -3806,6 +3836,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		-- weapons/ammo
 		fill_ammo_command = "tlhIngan epruQ",
 		fill_ammo_command_help = "tlhIngan weapon HoS cha'lu' ammo ngeH.",
+		fill_ammo_command_parameter_server_id = "chenmoH SorHa'",
+		fill_ammo_command_parameter_server_id_help = "chenmoH SorHa'ID lo'wI' vInaD ammo chenmoH.",
 		fill_ammo_command_substitutes = "",
 
 		-- weapons/recoil
@@ -4222,6 +4254,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		headshot = "tay'Ha'moH",
 		killstreak = "qa'Hom jIlwI'",
 		assist = "Qapchu'",
+		battle_royale_win = "Battle Royale laH",
 
 		level = "Hap",
 		position = "nagh",
@@ -4594,7 +4627,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		blindfolding_player = "lopmogh qIpbe'chugh chegh",
 		blindfolding_self = "qIpbe'chugh be'pu' chogh",
 		hold_to_take_blindfold_off = "bIghojnIS ~INPUT_VEH_HEADLIGHT~ paghqa' chogh qIpbe'chugh.",
-		hold_to_take_blindfold_off_holding = "Qapla' paghqa'mo' tIq ~INPUT_VEH_HEADLIGHT~ qIpbe'chugh chogh bIghojnIS."
+		hold_to_take_blindfold_off_holding = "Qapla' paghqa'mo' tIq ~INPUT_VEH_HEADLIGHT~ qIpbe'chugh chogh bIghojnIS.",
+		hold_to_take_blindfold_off_chat = "Hol **${HeadlightKey}** vIlegh HIQ qos."
 	},
 
 	blips = {
@@ -4819,6 +4853,12 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 		join_cache_disabled = "Join cache vIDallu'",
 		join_cache_enable = "Join cache pIm vItlhutlh."
+	},
+
+	caffeine = {
+		chest_pain = "SoH 'Iw HIq.",
+		heart_attack = "SoHqanglaHbe'",
+		heart_attack_death = "SoHqanglaHbe' (nI'wI')"
 	},
 
 	capri_sun = {
@@ -5232,6 +5272,13 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		refilled_vape = "choQwI' vey 'Ivmey.",
 		failed_refill_vape = "choQwI' vey qay'be'",
 
+		plain_vape = "ngIm",
+		mango_vape = "mango",
+		strawberry_vape = "strawberry",
+		menthol_vape = "menthol",
+		apple_vape = "apple",
+		blueberry_vape = "blueberry",
+
 		deconstructing_item = "${usedItems} DIvIlmey",
 		deconstructed_item = "${usedItems} vagh Deconstructed.",
 
@@ -5429,6 +5476,12 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		crafting_decryption_key = "Hatlh lojmIt decryption Key",
 		crafted_decryption_key = "lojmIt Decryption Key ropmeH.",
 		failed_craft_decryption_key = "Decryption Key ropmeH qabHa' Suq.",
+
+		break_decryption_key = "ghItlh Decryption Key",
+		press_break_decryption_key = "[${SeatEjectKey}] ghItlh Decryption Key",
+		breaking_decryption_key = "bopachta' legh",
+		broke_decryption_key = "bopachta' legh vItlhutlh.",
+		failed_break_decryption_key = "bopachta' legh vItlhutlh.",
 
 		craft_tire_wall = "Hatlh cheb tire Wall",
 		press_craft_tire_wall = "[${SeatEjectKey}] Hatlh cheb tire Wall",
@@ -5841,6 +5894,15 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		north_west = "chorghmey yo'"
 	},
 
+	confirm = {
+		confirm_purchase = "Confirm Purchase",
+		confirm_purchase_label = "${label} | ${cost}",
+
+		deny_purchase = "Nevermind, I don't want it",
+		accept_purchase = "qaHbe', lo'laHbe'",
+		accept_purchase_info = "Are you sure you want to complete this purchase? This cannot be undone."
+	},
+
 	courthouse = {
 		press_to_use_gavel = "~INPUT_CONTEXT~ naQ ~qaSgharHa'~ jay'"
 	},
@@ -5983,6 +6045,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		no_vehicle_bone = "ghoqwIj \"${boneName}\" ghoqwI'",
 		server_vehicles = "Server be'etlh: ${count}",
 		not_networked_vehicles = "be'etlh not Networked: ${count}",
+		invisible_vehicles = "Invisible Vehicles: ${count}",
 		parked_vehicles = "be'etlh Qur: ${count}",
 
 		distance = "Segh: ${distance}m",
@@ -6073,7 +6136,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		export = "wuq",
 		copied = "pegh!",
 		invalid_data = "meqchIS.",
-		invalid_json = "chu' vIneH be'chu'"
+		invalid_json = "chu' vIneH be'chu'",
+
+		street_found = "Found `${name}`, its center has been marked on your map.",
+		street_not_found = "Qotlh rIngan QaQmeyvam vIlev."
 	},
 
 	debug_menu = {
@@ -6083,6 +6149,11 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		weather = "Weather",
 		reset = "Reset",
 		refresh_interior = "Refresh Interior"
+	},
+
+	development = {
+		developer_ambience_on = "Qapla' ghIj, Developer ambience toggled on.",
+		developer_ambience_off = "Qapla' be', Developer ambience toggled off."
 	},
 
 	dna_evidence = {
@@ -6149,12 +6220,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		elevator_toggle_failed = "Hoch law' tlhIngan yoH.",
 		elevator_enabled_all = "tuq Hoch je pIm Hevqu'pu' tlha' jay'.",
 
+		current_floor = "QaH",
+
 		out_of_service = "ghIq Daq nItlh Doch",
 		out_of_service_help = "jInmol Hevqu'pu' Hoch qetDu' bIH.",
-
-		current = "nIvbogh",
-		up = "bIQ",
-		down = "Qun",
 
 		floor_tunnel_entrance = "chotDap nuHuk vIchel",
 		floor_underground_tunnel = "retlh nuHuk vIchel",
@@ -6270,13 +6339,6 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 		marker_label = "${label} | ${cost}",
 		marker_label_purchase = "[${SeatEjectKey}] ${label} tlhap ${cost}",
-
-		confirm_purchase = "yInar",
-		confirm_purchase_label = "${label} | ${cost}",
-
-		deny_purchase = "qamuSHa', QIch  'oH",
-		accept_purchase = "HIq, jImej",
-		accept_purchase_info = "lIjchoHbe'chugh, 'Iv jImej vIghItlh vIghaj. mach, qarDaSmo' vItlhutlh.",
 
 		purchased_vehicle = "${label} tlhapta' ${cost}.",
 		insufficient_funds = "chenmoHwI' SaS.",
@@ -6790,6 +6852,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		doctor_badge_details = "lo'wI' | ${firstName} ${lastName} | poSlogh: ${positionName}",
 		bcfd_badge = "BCFD Badge",
 		bcfd_badge_details = "BCFD | ${firstName} ${lastName} | lo'law' Hoch: ${positionName}",
+		state_badge = "QaSta ID",
+		state_badge_details = "QaSta | ${firstName} ${lastName} | patlh: ${positionName}",
 		state_security_badge = "State Security ID",
 		state_security_badge_details = "tlhoy State Security Department | ${firstName} ${lastName}",
 		doj_badge = "DOJ ID",
@@ -6807,6 +6871,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		badge_type_ems = "Qapla' ta'SIch",
 		badge_type_doctor = "Hur'Iq patlh",
 		badge_type_bcfd = "Blaine Daqatlh HoH",
+		badge_type_state = "Qa'San cha'log QaSta",
 		badge_type_state_security = "tera' vIn",
 		badge_type_doj = "ghItlhmeH yuQjIqat",
 		badge_type_doc = "Department Daq Hutlh",
@@ -6821,6 +6886,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		badge_type_short_ems = "EMS",
 		badge_type_short_doctor = "nID",
 		badge_type_short_bcfd = "BCFD",
+		badge_type_short_state = "QaSta",
 		badge_type_short_state_security = "SSD",
 		badge_type_short_doc = "DOC"
 	},
@@ -6941,6 +7007,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		gun_store_with_shooting_range = "yInwI' Hem vangleS",
 		green_wonderland = "tungDaj Hij",
 		copy_shop = "ngIq nagh beQ",
+		electronics_store = "pe'taQ Duvtlh",
 		submarine_locker = "Submarine Locker",
 		astrology_stand = "astrology lo'",
 		irish_pub = "Irish Pub",
@@ -6958,7 +7025,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		drug_store = "Drug Cabinet",
 		ems_badge_store = "EMS maqtagh",
 		doj_badge_store = "DOJ maqtagh",
-		state_security_store = "Duj QeDpa' QIb Store",
+		state_store = "QaSta Duj",
 		pharmacy = "Heghbe'chugh lo'DI' pong",
 		chop_shop = "QInHom",
 		courthouse = "QoSvo'",
@@ -6985,6 +7052,9 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		press_to_access_store = "patlh ~INPUT_REPLAY_SHOWHOTKEY~ nIvbogh qay'be'",
 		press_to_access_locker = "patlh ~INPUT_REPLAY_SHOWHOTKEY~ poymoHwI' qay'be'",
 		press_to_access_shared_storage = "patlh ~INPUT_REPLAY_SHOWHOTKEY~ qay'be' Suqub, jupbe'",
+		device_printout_details = "<b>vItlhutlh:</b> <i>${type}</i>, <b>mugh:</b> <i>${text}</i>",
+		copy_serial_number = "HIq Serial Number",
+		serial_number_copied = "${itemName}, Serial Number: ${serialNumber}",
 
 		failed_give = "Failed to give item(s) to player.",
 		character_too_far = "The player is too far away.",
@@ -7113,7 +7183,9 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		dumpster_brownies = "Dried Up Brownies",
 		dumpster_pizza_slice = "Moldy Pizza Slice",
 		dumpster_banana = "Hairy Banana (Very Mushy)",
+		dumpster_pepsi = "Flat Pepsi",
 		dumpster_almond_milk = "tI'vavlI' SoD Hoch jatlh",
+		dumpster_capri_sun = "Half-Empty Capri Sun",
 		dumpster_knife = "QInDuS Hem",
 
 		-- items & item descriptions
@@ -7183,6 +7255,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		doctor_badge_description = "loghqam HaqwI'chaj",
 		bcfd_badge = "BCFD",
 		bcfd_badge_description = "Blain neHma' qapta' lo' DujmoHwI' HaqwI'chaj",
+		state_badge = "yanID",
+		state_badge_description = "yoH San Andreas vItlhutlhla cha'logh State loghmeH chaw'be' law' yIv.",
 		state_security_badge = "qoStaHvIS Security ID",
 		state_security_badge_description = "qoStaHvIS Security bejpu' qorDu'lIj QaQar",
 		doj_badge = "DOJ 'ImpeD",
@@ -7252,6 +7326,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		scratch_remover_description = "Sop vIlegh bumps & scratches from vehicles.",
 		motor_oil = "motor oil",
 		motor_oil_description = "vaSa' lo'qu' qeylIS roQ.",
+		color_measurer = "Sut peb",
+		color_measurer_description = "tanISch mIw qol laH Duy' tu'wIj qem paint.",
+		tint_meter = "QIv neQ Dish",
+		tint_meter_description = "puljIj neH Hop SoH tIn law' vehicle window lajngaq regulations 'ej visibility standards chelvam.",
 
 		multi_tool = "loDHom tup",
 		multi_tool_description = "Daq jImej vIneHbechbe'",
@@ -7724,6 +7802,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		evidence_bag_description = "Qapla' neH law' chu' Sealed SoHbe' crime.",
 		fingerprint_evidence = "nItlh chIm",
 		fingerprint_evidence_description = "tlhIngan qIghom HoH 'e' Help law' yIlIj.",
+		device_printout = "ghItlh printout",
+		device_printout_description = "poSvIp vIleghlI' HIq rap tIn law enforcement Hoch documentation je verification.",
 
 		ammo_box = "QeQ vIb moQ",
 		ammo_box_description = "QIn logh ghaHpu' Hey DaH lutlhDaj. boQDu' je 60 pa' Hoch ammo lo', cha'logh ammo qarDaq.",
@@ -7794,6 +7874,13 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		ticket_250_description = "DaH noblu'bogh nInbe', Sa' teHra' yIlaD.",
 		ticket_500 = "$500 Lottery Ticket",
 		ticket_500_description = "jIyInDaq rIn tIn ghu'vam ngoq jIbogh, tIv",
+
+		scratch_ticket = "Hegh botlhHa' (chay lI' botlh pat)",
+		scratch_ticket_description = "Duj vItlhutlh puj vay' puff betleH, net 'oH nIlvad Suq ramp cha'logh je. vItlhutlh 'utlh tlhejFEPmey ngItlh $100, vImej je yuQmoH choHvo' $210,000. vItlhutlh SeHnetbogh qaStaHvIS!",
+		scratch_ticket_pearl = "Hegh botlhHa' (chong lo' botlh)",
+		scratch_ticket_pearl_description = "GhaH jem' 'ej De'wI'yonDaj neH Daqvamvo' je pum. $100 poH So'batlh puqqaD 'uleghlu'taHvIS 'ej De'wI' puqje'SoH Qoghlu'bogh ghuH. tach'eghvam HIq qo'mey DaH lutlhvam 'ej gitlhvam.",
+		scratch_ticket_ching = "qoghlu'chaj (Ching)",
+		scratch_ticket_ching_description = "SIqvo'logh tu'qom luq taw'be' Hoch veqlargh ghu'vetlh. $100 DawI'mey DeSDu' neH 'uj jImej yInSIp cha'puj lu' SovmeH Qogh'e' wIghoj. qoghlu'bogh HoH DevolaHbe'.",
 
 		avocado = "HovDoq",
 		avocado_description = "'Iw HoHchu' huy' rapjaj, Dip chenmoH.",
@@ -7876,6 +7963,12 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 		vape = "qIchwI' geek",
 		vape_description = "logh tlhIngan Daq 'ej beQbe' Hoch bInep, cha'logh tlhIngan.",
+
+		train_pass = "QInHom Pass",
+		train_pass_description = "loDvo' tav, cha'logh 3x buy' ngonlIj QoSlIj laH.",
+
+		xbox_controller = "XBOX boQDu'",
+		xbox_controller_description = "trans: HuchQeD tlhal...",
 
 		acetone = "acetone",
 		acetone_description = "'oH luteb Hegh vIneH. Cooper chu' SIq qayqeq.",
@@ -8140,8 +8233,6 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		gas_mask_description = "Dujmey Qap Qovpatlh, ngugh grandmas farts bech.",
 		nv_goggles = "rutlh lI'wI'",
 		nv_goggles_description = "DuSaQ DaHjaj, HurDaj vItlhutlh reH.",
-		thermal_goggles = "HoS lI'wI'",
-		thermal_goggles_description = "nargh tlhInganbogh lo'taHvIS (buH xD jImej).",
 
 		green_rolls = "yItlhutlh",
 		green_rolls_description = "nav mu'ghom wa'Hom wej jIyajbe'.",
@@ -8364,6 +8455,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		weapon_militaryrifle = "mIitary QIb",
 		weapon_heavyrifle = "Qun mIghtaHvIS",
 		weapon_tacticalrifle = "Hap bomwI'",
+		weapon_battlerifle = "vItlhutlh",
 
 		weapon_mg = "KeH cha ma'veq",
 		weapon_combatmg = "combat cha ma'veq",
@@ -8389,6 +8481,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		weapon_emplauncher = "Qet'loch wIv",
 		weapon_stinger = "qutluch chonnaQ",
 		weapon_railgunxm3 = "Coil Railgun",
+		weapon_snowlauncher = "tlhuwghev nIvbogh",
 
 		weapon_grenade = "ghIq",
 		weapon_bzgas = "BZ Gas",
@@ -8407,6 +8500,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		weapon_fireextinguisher = "tutlh",
 		weapon_hazardcan = "QoQ'SIy jerI'Qoq",
 		weapon_fertilizercan = "HoS maqtagh",
+		weapon_hackingdevice = "lu'Hom beqew",
 
 		red_parachute = "QIj parachute",
 		blue_parachute = "SuD parachute",
@@ -8488,6 +8582,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		weapon_militaryrifle_description = "nIvbogh De'wI'pu' HoSqu'mo' vetlh lo'laHbe'mo' jang; Dalo'eyDI' jIH Hochbe'chuq, vaj vItlhutlh.",
 		weapon_heavyrifle_description = "tIv ghaH poHchoHbe', vaj mIw HIq vIHHa': Hoch tIv targh \"ngugh vIjatlhbe'\".",
 		weapon_tacticalrifle_description = "law'qu'be' yaS law'qu'qu' ghoQ qar, jangpu'wI', pa'wI' be'ral law'qu' je.",
+		weapon_battlerifle_description = "vItlhutlh, FN FAL jaH DaghajlIj nuD Hechler & Koch G3. lulegh je vISoptaHvIS magazine yuS tu'lu'be', tInSIbpu' Suq 'ej qaH ghotpu' los angeles.",
 
 		weapon_mg_description = "SuvwI' HIq vItlhutlh qetbe' law', puqloD DeSpetlh. nIvbogh yInmeH 'ej longDaq choghwI'vam quvbe'ghach. chaq nughub.",
 		weapon_combatmg_description = "HIq chovnatlh ghopDu' luqIHmo' Hoch roDmey DeSpetlh. jIDmey vItlhutlh qetbe' law' lo'laHbe'",
@@ -8513,6 +8608,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		weapon_emplauncher_description = "chIjmeH jey 'e' yIwojmeyDaq mavjopwI' ghaH je jey.",
 		weapon_stinger_description = "QeylIS QIvan DaHar'a'ghach laSvargh quwI' Daq DalIj nuvpu' Hol 'e' qIb poHmoHlaHbe'.",
 		weapon_railgunxm3_description = "Qo'mey poHmoH 'ej 'oH Daq HeghmoH laHvaD - 'ach toqDuj chenmoHmoHchugh.",
+		weapon_snowlauncher_description = "Hov 'ej ghava' SlobHommey: vItlhutlh jaj SeQ charge mara'chuq mach. wItlhutlh lugh mach Falltu'lab mu'quv xe'vetlh. 'oy'naQ snowy hiq shenanigans!",
 
 		weapon_grenade_description = "mIw HIvje' munvam. chach pe'nIS, DuQ, 'ej qoSlIj bop. bIghHa' Dujmeyvam wIbuS.",
 		weapon_bzgas_description = "Qaghmey 'e' yItanbe'. ghobe' qechvam nuqneH jImejbe'chugh.",
@@ -8531,6 +8627,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		weapon_fireextinguisher_description = "Tayqeq pogh 'ej 'oy'na jIDeH bom.",
 		weapon_hazardcan_description = "ngaS pagh Ha'quj, 'ach jochchoHbe'.",
 		weapon_fertilizercan_description = "SajlIj 'oH QI'lop pagh, loH Qap Qap 'e' vaj vIlegh.",
+		weapon_hackingdevice_description = "choHmo' Say'mo' ray' be'nIQtahvIS MoHIr, Datlhutlh juHwI'. antenna botlh jazz buttons qar.",
 
 		red_parachute_description = "QI'lop chur parachute naDev.",
 		blue_parachute_description = "QI'lop tebwI' parachute naDev.",
@@ -8634,7 +8731,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		weapon_addon_honey_description = "pIn pongaD Badger PDW tIq je personal defense weapon, vaj mu' qan audioch configuration vIchuy'choH. gun laD gun 'ej bay ghu'wI' je Advanced Armament Corporation (AAC) chenmoH. .300 AAC Blackout vItlhutlh ngeD.",
 
 		weapon_addon_glock18c = "Glock 18C rap",
-		weapon_addon_glock18c_description = "w"
+		weapon_addon_glock18c_description = "w",
+
+		weapon_addon_1911 = "1911 Kimber Tactical",
+		weapon_addon_1911_description = "1911 Kimber Tactical: nI' yImev nISwI'wIj jIbogh. baQa' bebwe'chugh DaH noblawmo', toH logh attack je cool factor!"
 	},
 
 	invisibility = {
@@ -8665,6 +8765,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		move_to_repair = "lojmIt SeH yIqaw.",
 		repairing_vehicle = "yIghItlh lojmIt",
 		fix_visual_damage = "Qap Visual Damage",
+		measuring_color = "qogh DIng",
+		color_measurement = "qogh patlh",
+		color_measurer_result = "**${primary}** (*${primaryId}*) Hegh, **${secondary}** (*${secondaryId}*) Hem, **${pearlescent}** (*${pearlescentId}*) bISarHa' 'ej **${wheel}** (*${wheelId}*) 'ar color.",
+		no_vehicle_in_front = "pagh vIneH tInDI' HEX",
 		using_first_aid_kit = "naw'logh boQwI'",
 		using_bandages = "boQwI' ghe'naQ",
 		using_ifak = "IFAK boQwI' ghe'naQ",
@@ -8683,6 +8787,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		changing_license_plate = "Qochbe' QujHomHa'",
 		equipping_parachute = "${itemName} tlhap",
 		lockpicking_vehicle = "lochpick yapQo'",
+		printout_title = "${type} printout",
+		printout_text = "*${text}*",
 		illegal_weather_name = "nga'chuq mIw bom nav qarDaq qIb SuvmeH.",
 		equipping_body_armor = "mInDu' wa'leS beQ qaS",
 		illegal_burger_shot_delivery_item_id = "Item ID lojmeH qar law' Hoch burger shot delivery item vItlhutlh.",
@@ -8947,6 +9053,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		joining_arena = "maqbara joq",
 		refresh = "cholegh",
 		refreshing = "cholegh chogh",
+		use_train_pass = "qaStaHvIS Qama' ('IQnIS je)",
 
 		avoid_repeating_letters = "DI'ruS nejwIj/ghItwIj tlhIngan ngejtaHvIS 'uy', qaSarbe'!",
 		backstory_empty = "boQwI' jImej.",
@@ -9091,7 +9198,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		logs_lucky_wheel_reward_chips_details = "${consoleName} vIlIj tlhIngan Hol vIHech je chong $${amount} chips.",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} has spun the wheel and won jewelry with the name of `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} has spun the wheel and won an item with the name of `${itemName}`.",
-		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} has spun the wheel and won one week of queue priority.", --  logs_lucky_wheel_reward_queue_priority_details = "
+		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} vItlhutlh Dol 'ej rap yatlh jImej law' Hoch 'ach 'IQnIS je."
 	},
 
 	magazines = {
@@ -9459,6 +9566,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		missing_model_name = "vItlhutlh lut."
 	},
 
+	ocean_gate = {
+		you_need_a_controller_to_maneuver = "tera'ngan vItlhutlhghach buv jabbI'ID."
+	},
+
 	orbitcam = {
 		enabled_orbitcam = "pIbu' orbitcam qaq law'",
 		disabled_orbitcam = "pIbu' orbitcam qaq law' chIm",
@@ -9572,6 +9683,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		sound_effect_save = "ghonDun",
 		sound_effect_reset = "lojmIt",
 
+		reduce_epilepsy = "choHvaD lutlhvo' Flickering yItlhIng (Epilepsy friendly)",
 		disable_tablet_animation = "lIbghu'taHvIS SaH"; -- "Disable Tablet Animation",
 		staff_notifications_reports = "QIn DevmeH maHvaD pagh report",
 		staff_notifications_staff_chat = "DevmeH chat paq notifications",
@@ -10390,6 +10502,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		attempt_failed = "${attemptMessage} tlhIngan lugh tIqta'ghachbe'.",
 		dice_message = "qIpHevDaq Duj Dapol 'ej Hech ${diceNumber}",
 		roll_message = "HaD 'echlet ${max} 'ej ${rolls} qam Daq Dapol 'ej qorDu'pu'chugh ${totalValue}",
+		rps_message = "DuQ 'ebmey Dijvetlh ${rps} 'ej Haqtajvam:",
 		citizen_card_message = "reH oleh (${characterId})",
 		badge_message = "reH batchu' (${characterId})",
 		license_message = "reH cha'legh (${characterId})",
@@ -10406,6 +10519,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		attempt_message_chat_title = "/attempt [${serverId}]",
 		dice_message_chat_title = "/Duj [${serverId}]",
 		roll_message_chat_title = "/Qet [${serverId}]",
+		rps_message_chat_title = "/rps [${serverId}]",
 		description_message_chat_title = "/chuvmey [${serverId}]",
 		message_too_long = "ghItlh jay'ran puqloD qaStaHvIS qanob!",
 		card_command_wait = "wo'ta'vIS cha'logh puqloDqa' wa'logh betleH je.",
@@ -10494,10 +10608,6 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		phone_number_is_not_available = "qaStaHvIS yIngeS '${phoneNumber}' vIghaj."
 	},
 
-	pictures = {
-		selfie_description = "${firstName} ${lastName} poHwI'pu'."
-	},
-
 	player_control = {
 		unable_to_drive_for_yourself = "qo'noS rouqetlh qul tay' SoH HoSghajbe'",
 		player_is_not_nearby = "legh yaS wa'DIch Id ${serverId} jatlh.",
@@ -10565,7 +10675,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		printing = "yIlopedia'",
 
 		printed_logs_title = "yIlopped nagh",
-		printed_logs_details = "${consoleName} printed a `${itemName}` be using `${paperType}` jen URL be `${url}`."
+		printed_logs_details = "Duj ${consoleName} puq 'oH ${itemName} ${paperType} tetlh url ${url}, rIQ-text: ${topText} 'ej pIn-text: ${bottomText}."
 	},
 
 	prop_hide = {
@@ -10851,6 +10961,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		withdraw = "HaStaHvIS",
 		deposit = "lumSoH",
 		amount = "DIm",
+		note_reason = "paq / Ho'lIl",
+		reason_placeholder = "HoH DajlaHbe'chugh paq...",
 		account_name = "DaHjaj teywI'",
 		actions = "Qap",
 		access = "thev",
@@ -10878,9 +10990,9 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		deleted_account_logs_title = "pIqaD ngIn Delete yIqaw'",
 		deleted_account_logs_details = "${consoleName} yIqaw' ${accountId} DI' ${accountName} DaH jInmol.",
 		withdraw_logs_title = "pIqaD ngIn qar'ID",
-		withdraw_logs_details = "${consoleName} qar'ID yIbogh ${accountId} loch $${amount}.",
+		withdraw_logs_details = "${consoleName} Ho'Du' $${amount} De'wI' Savings Account ${accountId} chay' `${reason}`.",
 		deposit_logs_title = "pIqaD ngIn pesHa'",
-		deposit_logs_details = "${consoleName} pesHa' yIchIm ${accountId} loch $${amount}."
+		deposit_logs_details = "${consoleName} HoS $${amount} Hoch Savings Account ${accountId} chay' `${reason}`."
 	},
 
 	scoreboard = {
@@ -10902,6 +11014,13 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		server_id_hide_failed = "Server ID vo' Qay' cha'logh je.",
 		server_id_hidden = "tor Server ID Hoch",
 		server_id_not_hidden = "tor Server ID Hoch cha'logh."
+	},
+
+	scratch_tickets = {
+		you_won = "ghaH jatlh $${cash} juStaHvIS scratch tikIs.",
+		you_won_nothing = "ghaH jatlh bIghHa' scratch tikIs.",
+		scratched_ticket_logs_title = "Scratched Ticket",
+		scratched_ticket_logs_details = "${consoleName} scratch tik ropchoH $${amount}."
 	},
 
 	screenshots = {
@@ -11152,13 +11271,11 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 	special_imports = {
 		special_imports_blip = "Qapla' Special Imports",
 
-		purchased_vehicle = "qIn botlhale' ${label} chu' Suq $${price}. Hegh DIr vItlhutlh QapvamDI' cha' QIn lupwI'pu'.",
+		purchased_vehicle = "Qap bought ${label} for ${price}. QawHaq De' has been added to your garage.",
 
 		something_went_wrong = "Hoch ghotvam'e'.",
 		not_enough_money = "Qeq yImev.",
-		invalid_package = "vItlhutlh package luq Daghaj. (Qo'vam nuqneH godlike tier Suq)",
-
-		dealership_closed = "Ha'DIbaH Da' Deslership.",
+		invalid_package = "QeD level Qaplaw'. (reH vItlhutlh)",
 
 		purchased_vehicle_logs_title = "ngIq puqloD Qoylu'pu'",
 		purchased_vehicle_logs_details = "${consoleName} purchased a `${modelName}` special imports DISvam for ${price} (ngoq: `${plate}`).",
@@ -11167,7 +11284,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		marker_label_purchase = "[${SeatEjectKey}] ${label} ghom HIq for ${price} latinum",
 		marker_label_purchase_timer = "[${timer}s] ${label} ghom HIq Dargh ${SeatEjectKey} luj ${price} latinum",
 
-		vehicle_sold_out = "${label} | jey' lutlh left"
+		vehicle_sold_out = "${label} | Sold out"
 	},
 
 	spectating = {
@@ -11321,10 +11438,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		time_parameters_invalid = "mISjej Huq Heghbe' jatlh.",
 		time_currently_transitioning = "mISjej pe'ta' labtaHvIS, qatlh.",
 		time_successfully_transitioned = "QIn 'e' poH tIvoQta' ${hour}:${minute} 'ej.",
-		time_successfully_set = "QIn 'e' tIq 'och ${hour}:${minute} 'ej.",
-
-		developer_ambience_on = "Developer ambience toggled on.",
-		developer_ambience_off = "Developer ambience toggled off."
+		time_successfully_set = "QIn 'e' tIq 'och ${hour}:${minute} 'ej."
 	},
 
 	tablet = {
@@ -11394,6 +11508,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 	},
 
 	teleporters = {
+		area_not_clear = "Daghaj 'e' yIDej.",
+
 		enter_mechanic_shop = "meqaSvo' MaH",
 		enter_mechanic_shop_interact = "[${InteractionKey}] meqaSvo' MaH",
 
@@ -11515,7 +11631,19 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		enter_submarine_interact = "[${InteractionKey}] ghorqo' Submarine",
 
 		exit_submarine = "chorqo' Submarine",
-		exit_submarine_interact = "[${InteractionKey}] chorqo' Submarine"
+		exit_submarine_interact = "[${InteractionKey}] chorqo' Submarine",
+
+		enter_garage = "ghItlh De'Ha'",
+		enter_garage_interact = "[${InteractionKey}] ghItlh De'Ha'",
+
+		exit_garage = "ghItlh ya'",
+		exit_garage_interact = "[${InteractionKey}] ghItlh ya'",
+
+		enter_viewer_booth = "qa'logh De'Ha'",
+		enter_viewer_booth_interact = "[$InteractionKey] Duj Viewer Booth",
+
+		exit_viewer_booth = "Chep Viewer Booth",
+		exit_viewer_booth_interact = "[$InteractionKey] Chep Viewer Booth"
 	},
 
 	test_server = {
@@ -11539,6 +11667,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 		teleport = "Suq poz Vuv 'oH",
 		teleport_to = "Suq Hlq",
+		tp_customs = "LS Customs",
 		tp_legion = "Legion Square",
 		tp_garage_a = "Garage A",
 		tp_paleto = "Paleto Bay",
@@ -11658,6 +11787,11 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		studio_blip = "945 Studios"
 	},
 
+	train_pass = {
+		used_train_pass = "ghobe'logh 'ej law' Train Pass. ghaH ${trainPasses} qap 'Iw paS.",
+		train_passes = "SuvwI'pa' qap ${trainPasses}"
+	},
+
 	training = {
 		on_team_attackers = "You are an attacker!\nTime left: ${time}",
 		on_team_defenders = "You are a defender!\nTime left: ${time}",
@@ -11701,9 +11835,23 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		map_tier_3_description = "chuQ 'In sparkly map wa' nobHa' chest seal. ",
 		map_tier_4_description = "HuchDaq lleH lo'laHbe' puq magh vIqaw! ",
 
-		press_to_combine_pieces = "QI'lop ~ INPUT_CONTEXT ~ to combine pieces of map ${mapTier}.",
+		press_to_combine_pieces = "mI'qech ~INPUT_CONTEXT~ jaloS 'ar mIlloghvam map puSwIj pong maj.",
 
-		treasure_map = "Hubne' Map (tIe ${mapTier})"
+		treasure_map = "Hubne' Map (tIe ${mapTier})",
+
+		treasure_maps_debug_enabled = "Treasure map debug enabled.",
+		treasure_maps_debug_disabled = "ba'log wejraj",
+
+		treasure_map_debug = "yItlh (leng: ${mapTier}, potlh: ${distance})",
+		dig_zone = "'opbe' rup",
+
+		combining_maps = "yopbe' rup",
+
+		combined_map = "rop yIqem leng ${mapTier}.",
+		no_maps_to_combine = "Heghlu'meH QaQ jIH 'opbogh.",
+
+		treasure_map_dug_up_logs_title = "yItlh Rop ghoqlogh",
+		treasure_map_dug_up_logs_details = "${consoleName} yItlh rop ${mapTier} pa'logh je ${dropId} jap."
 	},
 
 	tsunami = {
@@ -11739,8 +11887,67 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		log_description_discount = "botleH `${label}` loStaH $${price} vaj ${discount}% rur."
 	},
 
+	tunerchip = {
+		pimp_ride = "pIm binah™",
+
+		drive_force = "ghom HomtaH",
+		brake_force = "HomtaH qel",
+		break_bias = "HomtaH wInDaj (pagh / po)",
+		clutch_change_up = "HomtaH Qoylu' jImej",
+		clutch_change_down = "HomtaH DImej jImej",
+		air_fuel_mixture = "Hatlh nIvDaq HomtaH",
+
+		close = "law'",
+		reset = "QInHom Tune",
+		apply = "Tune Do",
+		save = "Tune bach",
+		tunes = "tunes",
+		save_tune = "Tune bach",
+		back = "Qap",
+		name = "ngutlh",
+		cancel = "ghoch",
+		loaded_tune = "Tune bay' vItlhutlh.",
+		loading = "Tune joq...",
+		success = "Tune bay' vIlaD.",
+		failed = "qu''e' tune DaH vIng.",
+		failed_delete = "tune VItlhutlh.",
+		failed_save = "tune jabbI'Do' tIv.",
+		success_save = "tune Qapla' tIv.",
+		success_delete = "tune HIvI'ta' tIv!"
+	},
+
+	twitter_bid = {
+		twitter_bid = "Twitter tlhob bid",
+		information_part_1 = "cha'logh batlh je nIvbogh twitter - DaryImtaHvIS je bIDh'a'? verification marq!",
+		information_part_2 = "DochvI'lIj mo' 'ej chenmo' jab'a' vay'. verification marq, Sum number vay' Bid'e'",
+		information_part_3 = "gbIngwI'vetlh waH. qanchoHbe' chenmoH.",
+		information_part_4 = "parHa'mo' pejwI' ghotpu' ghoS ghIqtos, DaH jImej bIRAS'e'be'choHpu'.",
+		no_bidder_yet = "ghobe' pagh",
+		no_bidder_yet_quote = "you won jImej! (qep'a'Daq mIwvam vItlhutlh)",
+		bid_amount = "buy' Dargh",
+		close = "Qap",
+		bid_amount = "buy' Dargh",
+		bid_quote = "buy' qep",
+		place_bid = "buy' Qav",
+		win_the_bid = "buy' Hiq!",
+		bid_won = "buy' Ha'DIbaH... jImej.",
+		bid_must_be_greater_than_current_bidder = "buy' muDmaHvam DeSDu'chugh bottlhev.",
+		max_quote_length_exceeded = "qep'a' vI'el cha'maHegh.",
+		not_enough_bank_balance = "tIn chu'wI' Dochmey.",
+
+		twitter_bid_placed_logs_title = "Twitter poHchugh",
+		twitter_bid_placed_logs_details = "${consoleName} choH bid Twitter of $${bidAmount} quoting `${bidQuote}`."
+	},
+
 	vape = {
-		press_to_use = "lInobmeH ~INPUT_CONTEXT~ 'u' Dech law', vapeng net tay'mo', ~INPUT_FRONTEND_CANCEL~ pIq law'."
+		press_to_use = "lInobmeH ~INPUT_CONTEXT~ 'u' Dech law', vapeng net tay'mo', ~INPUT_FRONTEND_CANCEL~ pIq law'.",
+
+		plain_vape = "Geek Bar (maHvaD)",
+		mango_vape = "Geek Bar (manggu)",
+		strawberry_vape = "Geek Bar (tuj)",
+		menthol_vape = "Geek Bar (menthl)",
+		apple_vape = "Geek Bar (mang)",
+		blueberry_vape = "Geek Bar (luj)"
 	},
 
 	vdm = {
@@ -11844,7 +12051,9 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 
 	washrooms = {
 		use_sink = "[${InteractionKey}] neH qIv. (Use Sink)",
-		using_sink = "neH qIvluʼ. (Using Sink)"
+		using_sink = "neH qIvluʼ. (Using Sink)",
+		refill_bottle = "[${InteractionKey}] pongmey Soch",
+		refilling_bottle = "qaq'Iw qul"
 	},
 
 	weed_field = {
@@ -12134,6 +12343,19 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		aim_assist_disabled = "Heghlu'meH QaQ jajvam! You will now aim worse than criminals/scumbags once again. It is recommended to re-enable the aim assist immediately.",
 		you_are_not_police = "qaStaHvIS yIn 'ej chep! This feature is reserved for police, not criminals/scumbags.",
 
+		no_vehicle_tint = "pagh tu'lu' qarlaw' cha'loghlI' QapmeH vItlaH",
+		window_broken = "qaSpu' qeH jImej QaQa'",
+		window_open = "qaSpu' qeH vItlhutlh",
+		measuring_tint = "tIn tIgh",
+		tint_measurement = "tIn cha'logh",
+
+		tint_0 = "qaS 'aw' SoH",
+		tint_1 = "qaS tint pagh qIrq baH",
+		tint_2 = "qaS tint Dark Smoke",
+		tint_3 = "qaS tint Light Smoke",
+		tint_4 = "qaS tint Limo",
+		tint_5 = "qaS tint Dul",
+
 		undercover_enabled = "Heghlu'meH QaQ jajvam! You are now undercover.",
 		undercover_disabled = "Qapla'! Qapla'! You are no longer undercover.",
 
@@ -12242,7 +12464,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		return_button = "tasbe' qay'mey",
 
 		toggled_messages_on = "taHqeq cha'logh chaq.",
-		toggled_messages_off = "taHqeq cha'logh Qo'noS chaq."
+		toggled_messages_off = "taHqeq cha'logh Qo'noS chaq.",
+		cannot_toggle_mechanic_messages = "Tow Drivers cannot toggle mechanic messages off."
 	},
 
 	weazel_news = {
@@ -12367,7 +12590,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		vehicle_at_police_impound = "Hegh QaQ law', qaw'lu'be' yInob jIHeghbe'",
 		vehicle_at_impound = "Qo'noS QangDaq yInob",
 		waypoint_to_impound = "qeylIS ghuS GPS net jangIz. Qo'noS QangDaq",
-		unable_to_withdraw = "Qagh Hoch tlhIngan Hol laH puq.",
+		unable_to_withdraw = "QInjom Hoch yIlegh veng HoH ghajbe'chugh.",
 		vehicle_in_garage = "Daru'wI' nom tInalu'pu'. ${garageName} vIvoq. jIlIj Qovpatlh.",
 		insufficient_funds = "toHDuj jay' yIqImbe'chugh lo'tu'Hom DI'onlaHbe'.",
 		error_withdrawing = "wovbe'chuqDaq yo' qarDaq lo'tu'be'chugh.",
@@ -12572,6 +12795,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		vehicle_is_locked = "tera' HIqIj.",
 		belt_warning = "tlhoeqqaD Suq vItlhutlh, ~INPUT_SPECIAL_ABILITY_SECONDARY~ nobHa' tlhoqnISbe'.",
 		supporter_vehicle = "HapwI'",
+		getting_out = "ghItlhlaH",
 
 		no_data_copied = "ghItlh HIq copied pagh.",
 		copied_data = "vehicle data copied.",
@@ -12657,8 +12881,16 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		type_shotgun = "12-Duy'a' tagh rItlh",
 		type_stungun = "taser cartridges",
 
-		fill_ammo_success = "rItlh Dung qeylIS",
-		fill_ammo_failed = "rItlh Dung cha'logh"
+		invalid_server_id = "Server ID chaw'",
+		fill_ammo_success = "qel ammo bImej.",
+		fill_ammo_success_player = "qel ammo bImej ${displayName}.",
+		fill_ammo_success_everyone = "qel ammo bImej wa'",
+		fill_ammo_failed = "rItlh Dung cha'logh",
+
+		fill_ammo_everyone_logs_title = "qel ammo bImej log",
+		fill_ammo_everyone_logs_details = "${consoleName} qel ammo bImej.",
+		fill_ammo_player_logs_title = "QIj Sa'quv vItlhutlh",
+		fill_ammo_player_logs_details = "${consoleName} vItlhutlh ${targetConsoleName} lo' Doq."
 	},
 
 	throwables = {
@@ -12811,14 +13043,13 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		processed_by = "<i>${processName} chu' chenpu'.</i>",
 		evidence_casings = "luqvetlh DuzDajDaq serial lo'law' ${serialNumber}Daq tu'lu'be' ${buyerName} (${buyerCid}) chenmoHpu'",
 		evidence_bullets = "${bulletLabel} tayDaj qelmeH cha'logh jImej qaw'choH.",
-		evidence_clothing = "Qap bey''a' je (${clothingType}).",
-		evidence_car_dna = "veS HIqDaq nID 'utlh plate ${plateNumber} 'ej qarDaq DaH jImej ${DNAOwnerName} (${DNAOwner}).",
+		evidence_vehicle_dna = "DNA[] pyu'vam ${plateNumber} Qun neH ${seat} pe' Da jImej ${fullName} (${characterId}).",
 		evidence_dna = "${fullName} #${characterId} laH bey' DNA jImej.",
 		evidence_fingerprint = "${fullName} #${characterId} bey'vaD qIb jImej.",
-		evidence_not_processed = "QIn bag bey'vaD ghom vItlhutlh.",
+		evidence_not_processed = "Hoch qatlhbe'.",
 		additional_information = "choHnIS:",
 		picked_up_at_location = "qonwI' lo'",
-		clothing_dna_trace = "DNA traces ${fullName} (#${cid}) laHchuqpu'.",
+		clothing_dna_trace = "DNA Traces jImej ${fullName} (#${characterId})",
 		clothing_dna_trace_unprocessed = "bIghHa' DNA ngeb traces neHngI' chu' qarDaq",
 		timestamp_of_pickup = "QIb tIq:",
 		weapon_name = "lojmIt ngeH:",
