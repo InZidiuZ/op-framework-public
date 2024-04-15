@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 24 (do not change)
+-- AUTO LOCALES: 25 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -100,6 +100,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		model_name_not_provided = "ไม่ได้ระบุชื่อโมเดล",
 		model_name_invalid = "ชื่อโมเดล `${modelName}` ไม่ถูกต้อง",
+		model_name_not_a_vehilce = "ชื่อโมเดล `${modelName}` ไม่ใช่ยานพาหนะ",
 		failed_to_spawn_vehicle = "ไม่สามารถสร้างยานพาหนะได้",
 		spawned_vehicle_for_player = "สร้างยานพาหนะแบบ ${modelName} สำหรับ ${displayName} สำเร็จแล้ว",
 		spawned_vehicle_for_everyone = "สร้างรถ ${modelName} สำเร็จสำหรับทุกคน",
@@ -348,12 +349,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		watching_off = "ปิดโหมดดู",
 		watching_label = "กำลังดู: ${nearby}",
 
-		evidence_view_on = "เปิดโหมดดูหลักฐาน",
-		evidence_view_off = "ปิดการแสดงพยาน",
-		evidence_view_title = "เปิด/ปิดการแสดงพยาน",
-		evidence_view_details_on = "${consoleName} เปิดการแสดงรายละเอียดขั้นสูงของพยาน",
-		evidence_view_details_off = "${consoleName} ปิดการแสดงรายละเอียดขั้นสูงของพยาน",
-
 		report_muted_no_reason = "คุณได้ถูกปิดเสียงจากคำสั่งรายงานโดยไม่ระบุเหตุผล",
 		report_muted = "คุณได้ถูกปิดเสียงจากคำสั่งรายงานเนื่องจาก ${reason}",
 
@@ -529,9 +524,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		advanced_metagame_on = "เปิดการใช้งานเมต้าเกมขั้นสูงเรียบร้อยแล้ว",
 		advanced_metagame_off = "ปิดการใช้งานเมต้าเกมขั้นสูงเรียบร้อยแล้ว",
 
-		identity_set = "ตั้งค่าเอกลักษณ์ของคุณเป็น `${name}` เรียบร้อยแล้ว",
-		identity_reset = "รีเซ็ตเอกลักษณ์ของคุณเรียบร้อยแล้ว",
-		identity_set_failed = "การตั้งค่าตัวตนของคุณล้มเหลว",
+		identity_set = "ตั้งค่าเรียบร้อยแล้วสำหรับตัวบุคคล ${displayName} เป็น `${name}`",
+		identity_reset = "รีเซ็ตเรียบร้อยแล้วสำหรับตัวบุคคล ${displayName}",
+		identity_set_failed = "การตั้งค่าไม่สำเร็จสำหรับตัวบุคคล ${displayName}",
 		identity_hud = "ตัวตน: ${playerName}",
 
 		set_identity_no_permission = "ผู้เล่นพยายามตั้งชื่อเล่นของพวกเขาโดยไม่ได้รับอนุญาต",
@@ -598,8 +593,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		fake_disconnect_off_logs_details = "${consoleName} ปิดการตัดการเชื่อมต่อเลียนแบบ",
 
 		identity_logs_title = "การเลียนแบบตัวตน",
-		identity_on_logs_details = "${consoleName} ตั้งตัวเลือกเลียนแบบตัวตนได้เป็น `${playerName}`",
-		identity_off_logs_details = "${consoleName} รีเซ็ตตัวตนของพวกเขา",
+		identity_on_logs_details = "${consoleName} ตั้งค่าตัวบุคคลของ ${targetConsoleName} เป็น `${playerName}`",
+		identity_off_logs_details = "${consoleName} รีเซ็ตตัวบุคคลของ ${targetConsoleName}",
 
 		clean_ped_logs_title = "ทำความสะอาดเป็ด",
 		clean_ped_logs_details = "${consoleName} ทำความสะอาดเป็ดของ ${targetName}",
@@ -1000,7 +995,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		spawn_vehicle_command = "spawn_vehicle",
 		spawn_vehicle_command_help = "สร้างยานพาหนะ",
 		spawn_vehicle_command_parameter_model_name = "ชื่อโมเดล",
-		spawn_vehicle_command_parameter_model_name_help = "ชื่อโมเดลของยานพาหนะที่คุณต้องการสร้าง",
+		spawn_vehicle_command_parameter_model_name_help = "ชื่อโมเดลของยานพาหนะที่คุณต้องการสร้าง (ค่าเริ่มต้นเป็น `adder`)",
 		spawn_vehicle_command_parameter_server_id = "ID เซิร์ฟเวอร์",
 		spawn_vehicle_command_parameter_server_id_help = "ID เซิร์ฟเวอร์ของผู้เล่นที่คุณต้องการสร้างยานพาหนะสำหรับ คุณสามารถเว้นว่างหรือใส่เลข 0 เพื่อเลือกตัวเอง",
 		spawn_vehicle_command_substitutes = "sv",
@@ -1199,10 +1194,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		tp_waypoint_command_help = "กระโดดไปยังจุดหมายของคุณ",
 		tp_waypoint_command_substitutes = "tp_marker, tp",
 
-		show_all_evidence_command = "show_all_evidence",
-		show_all_evidence_command_help = "แสดงหลักฐานกระสุนที่อยู่ใกล้เคียงทั้งหมด",
-		show_all_evidence_command_substitutes = "all_evidence, show_evidence, evidence",
-
 		population_density_command = "ความหนาแน่นของประชากร",
 		population_density_command_help = "แทนที่ตัวคูณความหนาแน่นของประชากรทั่วโลก",
 		population_density_command_parameter_multiplier = "ตัวคูณ",
@@ -1270,7 +1261,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		fake_disconnect_command_substitutes = "fake_leave, dc",
 
 		set_identity_command = "set_identity",
-		set_identity_command_help = "การเปลี่ยนแปลงชื่อผู้เล่นของคุณ",
+		set_identity_command_help = "แทนที่ชื่อของผู้เล่น",
+		set_identity_command_parameter_server_id = "ไอดีเซิร์ฟเวอร์",
+		set_identity_command_parameter_server_id_help = "ไอดีเซิร์ฟเวอร์ของผู้เล่นที่คุณต้องการแทนที่ชื่อ (0 = ตัวคุณเอง)",
 		set_identity_command_parameter_player_name = "ชื่อผู้เล่น",
 		set_identity_command_parameter_player_name_help = "ชื่อที่คุณต้องการตั้งค่าหรือเว้นว่างเพื่อรีเซ็ต",
 		set_identity_command_substitutes = "identity",
@@ -1889,6 +1882,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		copy_ground_command_help = "คัดลอกพิกัดพื้นดินของตำแหน่งปัจจุบันไปยังคลิปบอร์ดของคุณ",
 		copy_ground_command_substitutes = "พื้น",
 
+		copy_coords_command = "copy_coords",
+		copy_coords_command_help = "คัดลอกพิกัดตำแหน่งปัจจุบันของคุณไปยังคลิปบอร์ด",
+		copy_coords_command_substitutes = "",
+
 		save_commands_list_command = "save_commands_list",
 		save_commands_list_command_help = "Saves a list of all available op-fw commands.",
 		save_commands_list_command_substitutes = "",
@@ -2103,10 +2100,25 @@ OP.Global.Locales.Languages["th-TH"] = {
 		debug_info_command_parameter_server_id_help = "ผู้เล่นที่คุณต้องการเก็บข้อมูลการแก้ปัญหาสำหรับ",
 		debug_info_command_substitutes = "",
 
+		where_is_street_command = "where_is_street",
+		where_is_street_command_help = "ค้นหาถนนที่ต้องการบนแผนที่",
+		where_is_street_command_parameter_name = "ชื่อ",
+		where_is_street_command_parameter_name_help = "ชื่อถนนหรือส่วนใดส่วนหนึ่งของชื่อถนน",
+		where_is_street_command_substitutes = "ที่ไหน, ถนน",
+
+		random_position_command = "random_position",
+		random_position_command_help = "พาคุณไปยังตำแหน่งสุ่มบนเกาะหลัก (พร้อมทั้งเปิดโหมดอาละวาด)",
+		random_position_command_substitutes = "สุ่ม",
+
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
 		debug_menu_command_help = "เปิด/ปิดเมนูการดีบัก",
 		debug_menu_command_substitutes = "dm",
+
+		-- game/development
+		toggle_developer_ambience_command = "toggle_developer_ambience",
+		toggle_developer_ambience_command_help = "เปิด/ปิดเสียงพื้นที่พัฒนา",
+		toggle_developer_ambience_command_substitutes = "",
 
 		-- game/dna_evidence
 		take_dna_sample_command = "take_dna_sample",
@@ -2807,6 +2819,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		roll_command_parameter_max_help = "ค่าสูงสุดที่คุณสามารถได้รับจากการทอยลูกเต๋าได้ในครั้งเดียว ค่าสูงสุดที่นี่คือ 100,000",
 		roll_command_substitutes = "",
 
+		rock_paper_scissors_command = "rock_paper_scissors",
+		rock_paper_scissors_command_help = "เล่นเกม rock paper scissors กับใครสักคน",
+		rock_paper_scissors_command_parameter_what = "อะไร",
+		rock_paper_scissors_command_parameter_what_help = "คุณต้องการเล่นอะไร? ค่าที่ถูกต้องคือ `rock` (หิน), `paper` (กระดาษ), และ `scissors` (กรรไกร) (ถ้าเว้นว่างไว้จะเล่นแบบสุ่ม)",
+		rock_paper_scissors_command_substitutes = "rps",
+
 		card_command = "ไพ่",
 		card_command_help = "สุ่มไพ่แบบสุ่ม",
 		card_command_substitutes = "",
@@ -2822,8 +2840,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		ped_spawn_command_parameter_model_help = "โมเดลของตัวละคร NPC ที่คุณต้องการสร้าง.",
 		ped_spawn_command_parameter_weapon = "weapon",
 		ped_spawn_command_parameter_weapon_help = "อาวุธที่ต้องการให้ตัวละคร NPC เป็นเจ้าของ (ไม่บังคับ, พิมพ์ \"false\" เพื่อข้าม).",
-		ped_spawn_command_parameter_fearless = "fearless",
-		ped_spawn_command_parameter_fearless_help = "ถ้าต้องการให้ตัวละคร NPC เกรงกลัวอาวุธ/อื่นๆ (ค่าเริ่มต้นไม่, พิมพ์ \"true\" หากต้องการให้).",
+		ped_spawn_command_parameter_invincible = "invincible",
+		ped_spawn_command_parameter_invincible_help = "หาก ped จะต้องไม่ถูกทำลาย (ค่าเริ่มต้น: ไม่ใช่)",
 		ped_spawn_command_substitutes = "",
 
 		ped_task_command = "ped_task",
@@ -3270,10 +3288,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		blackout_command_help = "สลับการเปิด-ปิดการจำกัดการใช้งานไฟฟ้า",
 		blackout_command_substitutes = "",
 
-		toggle_developer_ambience_command = "toggle_developer_ambience",
-		toggle_developer_ambience_command_help = "เปิด/ปิดเสียงพื้นที่พัฒนา",
-		toggle_developer_ambience_command_substitutes = "",
-
 		-- game/tablet
 		tablet_command = "tablet",
 		tablet_command_help = "เปิดหน้าต่างแท็บเล็ต (หากคุณมีแท็บเล็ต)",
@@ -3289,6 +3303,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		set_time_scale_command_help = "ตั้งค่าขนาดเวลาของเซิร์ฟเวอร์",
 		set_time_scale_command_parameter_time_scale = "ขนาดเวลา",
 		set_time_scale_command_parameter_time_scale_help = "ขนาดเวลาที่คุณต้องการตั้งค่า ค่าต้องอยู่ระหว่าง 0 และ 1",
+		set_time_scale_command_parameter_instanced = "instanced",
+		set_time_scale_command_parameter_instanced_help = "หากต้องการตั้งเวลาเป็นกลางแค่สำหรับการทำงานปัจจุบันของคุณ (ค่าเริ่มต้น: ไม่ใช่)",
 		set_time_scale_command_substitutes = "time_scale, slow_motion",
 
 		-- game/titanic
@@ -3312,6 +3328,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		trackers_split_command_help = "สลับระหว่างการเก็บตัวติดตามในหมวดหมู่บนแผนที่หรือแยกแต่ละตัว",
 		trackers_split_command_substitutes = "",
 
+		-- game/train_pass
+		train_passes_command = "train_passes",
+		train_passes_command_help = "ตรวจสอบจำนวนบัตรรถไฟที่คุณมี",
+		train_passes_command_substitutes = "",
+
 		-- game/treasure_maps
 		spawn_map_piece_command = "สร้างแผนที่หาขุมทรัพย์",
 		spawn_map_piece_command_help = "สร้างชิ้นส่วนแผนที่หาขุมทรัพย์",
@@ -3320,6 +3341,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		spawn_map_piece_command_parameter_piece_number = "หมายเลขชิ้นงาน",
 		spawn_map_piece_command_parameter_piece_number_help = "หมายเลขชิ้นงานที่คุณต้องการสร้าง",
 		spawn_map_piece_command_substitutes = "",
+
+		treasure_maps_debug_command = "treasure_maps_debug",
+		treasure_maps_debug_command_help = "เปิดหรือปิดเครื่องมือดูแผนที่สมบูรณ์",
+		treasure_maps_debug_command_substitutes = "",
 
 		-- game/tsunami
 		set_ocean_scaler_command = "set_ocean_scaler",
@@ -3333,6 +3358,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		tsunami_toggle_command_parameter_minutes = "นาที",
 		tsunami_toggle_command_parameter_minutes_help = "จำนวนนาทีที่จะใช้ในการก่อการร้ายทุกไปทุกมา ค่าเริ่มต้นคือ 60.",
 		tsunami_toggle_command_substitutes = "",
+
+		-- game/twitter_bid
+		twitter_bid_command = "twitter_bid",
+		twitter_bid_command_help = "เปิดหรือปิดตัวช่วยเสนอราคา Twitter",
+		twitter_bid_command_substitutes = "",
 
 		-- game/vdm
 		vdm_command = "vdm",
@@ -3806,6 +3836,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		-- weapons/ammo
 		fill_ammo_command = "fill_ammo",
 		fill_ammo_command_help = "เติมกระสุนทุกปืนของคุณ",
+		fill_ammo_command_parameter_server_id = "server id",
+		fill_ammo_command_parameter_server_id_help = "ไอดีเซิร์ฟเวอร์ของผู้เล่นที่คุณต้องการเติมกระสุน",
 		fill_ammo_command_substitutes = "",
 
 		-- weapons/recoil
@@ -4222,6 +4254,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		headshot = "ยิงหัว",
 		killstreak = "ต่อเนื่องการฆ่า",
 		assist = "ช่วยเหลือ",
+		battle_royale_win = "ชนะ Battle Royale",
 
 		level = "เลเวล",
 		position = "ตำแหน่ง",
@@ -4594,7 +4627,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		blindfolding_player = "ใส่ถุงกระดาษบนผู้เล่น",
 		blindfolding_self = "ใส่ถุงกระดาษบนตนเอง",
 		hold_to_take_blindfold_off = "กดค้าง ~INPUT_VEH_HEADLIGHT~ เพื่อถอดถุงกระดาษ",
-		hold_to_take_blindfold_off_holding = "ค้างไว้เพื่อถอดถุงกระดาษ"
+		hold_to_take_blindfold_off_holding = "ค้างไว้เพื่อถอดถุงกระดาษ",
+		hold_to_take_blindfold_off_chat = "กด**${HeadlightKey}**เพื่อถอดปลอกหน้ารับประทาน"
 	},
 
 	blips = {
@@ -4819,6 +4853,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		join_cache_disabled = "การใช้แคชเข้าร่วมถูกปิดใช้งาน",
 		join_cache_enable = "การใช้แคชเข้าร่วมถูกเปิดใช้งาน"
+	},
+
+	caffeine = {
+		chest_pain = "คุณมีอาการเจ็บหน้าอก",
+		heart_attack = "คุณกำลังมีอาการภาวะหัวใจขาดเลือด",
+		heart_attack_death = "ภาวะหัวใจขาดเลือด (คาเฟอีน)"
 	},
 
 	capri_sun = {
@@ -5232,6 +5272,13 @@ OP.Global.Locales.Languages["th-TH"] = {
 		refilled_vape = "เติมเวปเรียบร้อยแล้ว",
 		failed_refill_vape = "ไม่สามารถเติมเวปได้",
 
+		plain_vape = "ปกติ (ไม่มีรส)",
+		mango_vape = "รสมะม่วง",
+		strawberry_vape = "รสสตรอเบอร์รี่",
+		menthol_vape = "รสเม็นโทล",
+		apple_vape = "รสแอปเปิ้ล",
+		blueberry_vape = "รสบลูเบอร์รี่",
+
 		deconstructing_item = "กำลังแยกส่วน ${usedItems}",
 		deconstructed_item = "ถอด ${usedItems} แล้ว",
 
@@ -5429,6 +5476,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		crafting_decryption_key = "การสร้างกุญแจถอดรหัส",
 		crafted_decryption_key = "สร้างกุญแจถอดรหัสแล้ว",
 		failed_craft_decryption_key = "ไม่สามารถสร้างกุญแจถอดรหัสได้",
+
+		break_decryption_key = "แตกประทานออก",
+		press_break_decryption_key = "[${SeatEjectKey}] แตกประทานออก",
+		breaking_decryption_key = "ทำลายคีย์การถอดรหัส",
+		broke_decryption_key = "ทำลายคีย์การถอดรหัสแล้ว",
+		failed_break_decryption_key = "ไม่สามารถทำลายคีย์การถอดรหัสได้",
 
 		craft_tire_wall = "การสร้างกำแพงยางรถ",
 		press_craft_tire_wall = "[${SeatEjectKey}] การสร้างกำแพงยางรถ",
@@ -5841,6 +5894,15 @@ OP.Global.Locales.Languages["th-TH"] = {
 		north_west = "ทิศเหนือตะวันตก"
 	},
 
+	confirm = {
+		confirm_purchase = "ยืนยันการซื้อ",
+		confirm_purchase_label = "${label} | ${cost}",
+
+		deny_purchase = "ไม่ต้องการ",
+		accept_purchase = "ใช่ ต้องการซื้อ",
+		accept_purchase_info = "คุณแน่ใจหรือไม่ว่าต้องการทำการซื้อนี้? ไม่สามารถยกเลิกการดำเนินการนี้ได้"
+	},
+
 	courthouse = {
 		press_to_use_gavel = "กด ~INPUT_CONTEXT~ เพื่อใช้ค้อน"
 	},
@@ -5983,6 +6045,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		no_vehicle_bone = "ไม่มีโบนัส \"${boneName}\"",
 		server_vehicles = "ยานพาหนะของเซิร์ฟเวอร์: ${count}",
 		not_networked_vehicles = "ยานพาหนะที่ไม่ได้เชื่อมต่อแบบเครือข่าย: ${count}",
+		invisible_vehicles = "ยานพาหนะที่ถูกปกปิด: ${count}",
 		parked_vehicles = "ยานพาหนะที่จอด: ${count}",
 
 		distance = "ระยะทาง: ${distance} เมตร",
@@ -6073,7 +6136,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		export = "ส่งออก",
 		copied = "คัดลอกแล้ว",
 		invalid_data = "ข้อมูลไม่ถูกต้อง",
-		invalid_json = "JSON ไม่ถูกต้อง"
+		invalid_json = "JSON ไม่ถูกต้อง",
+
+		street_found = "พบ `${name}` แล้ว ศูนย์กลางถูกมาร์คบนแผนที่ของคุณ",
+		street_not_found = "ไม่พบถนนที่ตรงกับการค้นหาของคุณ"
 	},
 
 	debug_menu = {
@@ -6083,6 +6149,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		weather = "สภาพอากาศ",
 		reset = "รีเซ็ต",
 		refresh_interior = "รีเฟรชอินเทอร์เรียล"
+	},
+
+	development = {
+		developer_ambience_on = "เปิดโหมด Developer Ambience",
+		developer_ambience_off = "ปิดโหมด Developer Ambience"
 	},
 
 	dna_evidence = {
@@ -6149,12 +6220,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		elevator_toggle_failed = "ไม่สามารถเปลี่ยนสถานะเปิด/ปิดลิฟท์ได้",
 		elevator_enabled_all = "เปิดการใช้งานลิฟท์ทั้งหมดเรียบร้อยแล้ว",
 
+		current_floor = "ชั้นปัจจุบัน",
+
 		out_of_service = "ไม่สามารถใช้งานได้",
 		out_of_service_help = "ขณะนี้ลิฟท์ไม่สามารถใช้งานได้",
-
-		current = "ปัจจุบัน",
-		up = "ขึ้น",
-		down = "ลง",
 
 		floor_tunnel_entrance = "ทางเข้าลอยฟ้า",
 		floor_underground_tunnel = "ทางเดินใต้ดิน",
@@ -6270,13 +6339,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		marker_label = "${label} | ${cost}",
 		marker_label_purchase = "[${SeatEjectKey}] ซื้อ ${label} ในราคา ${cost}",
-
-		confirm_purchase = "ยืนยันการซื้อ",
-		confirm_purchase_label = "${label} | ${cost}",
-
-		deny_purchase = "ไม่เป็นไร ฉันไม่ต้องการ",
-		accept_purchase = "ใช่ ฉันต้องการซื้อ",
-		accept_purchase_info = "คุณแน่ใจหรือไม่ว่าต้องการซื้อยานพาหนะรุ่นนี้? การดำเนินการนี้ไม่สามารถยกเลิกได้.",
 
 		purchased_vehicle = "ซื้อ ${label} ในราคา ${cost} แล้ว",
 		insufficient_funds = "เงินไม่พอ",
@@ -6790,6 +6852,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		doctor_badge_details = "แพทย์ | ${firstName} ${lastName} | ตำแหน่ง: ${positionName}",
 		bcfd_badge = "ป้ายชื่อ BCFD",
 		bcfd_badge_details = "BCFD | ${firstName} ${lastName} | ตำแหน่ง: ${positionName}",
+		state_badge = "เลขประจำตัวประชาชน",
+		state_badge_details = "สถานะ | ${firstName} ${lastName} | ตำแหน่ง: ${positionName}",
 		state_security_badge = "บัตรประจำตัวรัฐวิสาหกิจ",
 		state_security_badge_details = "แผนกรัฐวิสาหกิจ | ${firstName} ${lastName}",
 		doj_badge = "บัตรประจำตัว DOJ",
@@ -6807,6 +6871,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		badge_type_ems = "บริการการแพทย์ฉุกเฉิน",
 		badge_type_doctor = "ปฏิบัติการแพทย์",
 		badge_type_bcfd = "แผนกดับเพลิง Blaine County",
+		badge_type_state = "สถานะของแซนแอนเดรียส",
 		badge_type_state_security = "แผนกรักษารัฐ",
 		badge_type_doj = "กรมดำเนินคดี",
 		badge_type_doc = "กรมราชทัณฑ์",
@@ -6821,6 +6886,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		badge_type_short_ems = "EMS",
 		badge_type_short_doctor = "แพทย์",
 		badge_type_short_bcfd = "BCFD",
+		badge_type_short_state = "สถานะ",
 		badge_type_short_state_security = "SSD",
 		badge_type_short_doc = "DOC"
 	},
@@ -6941,6 +7007,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		gun_store_with_shooting_range = "ร้านค้าอาวุธและสนามยิง",
 		green_wonderland = "กรีน วันเดอร์แลนด์",
 		copy_shop = "ร้านคัดลอก",
+		electronics_store = "ร้านอิเลคทรอนิกส์",
 		submarine_locker = "ตู้เก็บของใต้น้ำ",
 		astrology_stand = "Astrology Stand",
 		irish_pub = "ผับไอริช",
@@ -6958,7 +7025,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		drug_store = "ตู้เก็บยา",
 		ems_badge_store = "โต๊ะขายเครื่องหมาย EMS",
 		doj_badge_store = "โต๊ะขายเครื่องหมาย DOJ",
-		state_security_store = "ร้านค้ารัฐบาล",
+		state_store = "ร้านสถานะ",
 		pharmacy = "เภสัชกรรม",
 		chop_shop = "ที่ซ่อมรถเป็นชิ้นส่วน",
 		courthouse = "ศาลยุติธรรม",
@@ -6985,6 +7052,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		press_to_access_store = "กด ~INPUT_REPLAY_SHOWHOTKEY~ เพื่อเข้าถึงร้านค้า",
 		press_to_access_locker = "กด ~INPUT_REPLAY_SHOWHOTKEY~ เพื่อเข้าถึงล็อกเกอร์ส่วนตัวของคุณ",
 		press_to_access_shared_storage = "กด ~INPUT_REPLAY_SHOWHOTKEY~ เพื่อเข้าถึงที่เก็บไฟล์ร่วมกัน",
+		device_printout_details = "<b>ประเภท:</b> <i>${type}</i>, <b>ข้อความ:</b> <i>${text}</i>",
+		copy_serial_number = "คัดลอกหมายเลขซีเรียล",
+		serial_number_copied = "${itemName}, หมายเลขซีเรียล: ${serialNumber}",
 
 		failed_give = "ไม่สามารถส่งไอเท็มให้กับผู้เล่นได้",
 		character_too_far = "ผู้เล่นอยู่ห่างเกินไป",
@@ -7113,7 +7183,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		dumpster_brownies = "บราวนี่แห้งเกิน",
 		dumpster_pizza_slice = "พิซซ่าแถบ (ที่มีรสกลิ่น)",
 		dumpster_banana = "กล้วยที่มีขน (แห้งเปื่อย)",
+		dumpster_pepsi = "Pepsi ซึ่งแห้งแล้ว",
 		dumpster_almond_milk = "นมอัลมอนด์ที่เป่าเป็นเป็นรสซอย",
+		dumpster_capri_sun = "Capri Sun ครึ่งว่าง",
 		dumpster_knife = "มีดสกปรก",
 
 		-- items & item descriptions
@@ -7183,6 +7255,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		doctor_badge_description = "บัตรประจำตัวสำหรับแพทย์",
 		bcfd_badge = "BCFD",
 		bcfd_badge_description = "ป้ายตราสำหรับผู้ดับเพลิงแผนกสหกรณ์ดับเพลิง Blain County",
+		state_badge = "บัตรประจำตัวรัฐ",
+		state_badge_description = "บัตรประจำตัวสำหรับพนักงานของรัฐ San Andreas",
 		state_security_badge = "บัตรประจำตัวมหาดเล็กซึ่งเป็นผู้นำของรัฐ",
 		state_security_badge_description = "บัตรประจำตัวสำหรับเอเยนต์ของ State Security",
 		doj_badge = "เหรียญตรา DOJ",
@@ -7252,6 +7326,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		scratch_remover_description = "น้ำยาที่ใช้ลบรอยขูดและรอยถลอกจากรถยนต์",
 		motor_oil = "Motor Oil",
 		motor_oil_description = "ใช้เพื่อให้เครื่องยนต์ของคุณทำงานอย่างราบรื่น",
+		color_measurer = "เครื่องวัดสี",
+		color_measurer_description = "ใช้วัดสีที่แน่นอนของสีสีทุกสีของยานพาหนะ",
+		tint_meter = "เครื่องวัดเทนท์",
+		tint_meter_description = "เครื่องมือที่สำคัญสำหรับการดำเนินการในกฎหมาย เครื่องวัดเทนท์ตรวจสอบเทนท์หน้าต่างรถเพื่อให้มั่นใจว่าพวกเขาปฏิบัติตามกฎระเบียบความปลอดภัยและมาตรฐานที่เกี่ยวข้องกัน",
 
 		multi_tool = "เครื่องมือหลายประโยชน์",
 		multi_tool_description = "เครื่องมือที่ใช้สำหรับทุกสิ่งอย่าง",
@@ -7724,6 +7802,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		evidence_bag_description = "ถุงซีลแล้วเก็บของประกอบการอาชญากรรมไว้",
 		fingerprint_evidence = "หลักฐานริ้วมือ",
 		fingerprint_evidence_description = "ช่วยจับคนร้ายให้ได้ง่ายขึ้น",
+		device_printout = "บันทึกอุปกรณ์",
+		device_printout_description = "บันทึกกระดาษขนาดเล็กสำหรับบันทึกค่าอุปกรณ์ เช่น GSR และการทดสอบหาพฤติกรรมการหายใจ เป็นสิ่งที่ถูกใช้อย่างแพร่หลายในการบันทึกและยืนยันข้อมูลทางกฏหมาย",
 
 		ammo_box = "กล่องกระสุนใหญ่",
 		ammo_box_description = "เหมาะสำหรับเมื่อคุณต้องการยิงมาก เป็นกล่องที่มี 60 นัดของแต่ละประเภทของกระสุน",
@@ -7794,6 +7874,13 @@ OP.Global.Locales.Languages["th-TH"] = {
 		ticket_250_description = "ตอนนี้เริ่มมีเงินเยอะขึ้นแล้ว เปิดโอกาสให้ตัวเองสักที",
 		ticket_500 = "ตั๋วลอตเตอรี่ $500",
 		ticket_500_description = "ดูเจ๋ง นี่คือเงินเดือนของคุณตลอดสัปดาห์!",
+
+		scratch_ticket = "สแกรตช์-ออฟ (เงินสุมพลัง)",
+		scratch_ticket_description = "ลงรอยสวยงามสีน้ำเงินของโอกาสที่จะพบเจอที่ท้าทายที่สุดที่ความเป็นจริงพบเจอกับความฝันที่ร่วมสนุกไปด้วยกันในขณะที่ใช้เงิน 100 ดอลลาร์เท่านั้น และเริ่มการผจญภัยที่อาจเปลี่ยนกระเป๋าคุณเป็น 210,000 ดอลลาร์ สัมผัสประสบการณ์ที่ไม่มีวันลืม!",
+		scratch_ticket_pearl = "สแกรตช์-ออฟ (มุกดำ)",
+		scratch_ticket_pearl_description = "เริ่มการผจญภัยไปกับตั๋วบัตรโบราณที่ซ่อนรอยความร่ำรวยอันลึกลับไว้ 100 ดอลลาร์ของคุณอาจเป็นกุญแจที่เปิดเผยสมบัติของทองคำมหาสมบัติมูลค่าสูงสุดถึง 210,000 ดอลลาร์ การถูกเรียกใช้ครั้งใดครั้งหนึ่งก็จะช่วยให้คุณเข้าใกล้ลึก ๆ ลึก ๆ สู่ความลับและความร่ำรวยที่ไม่รู้จักของมหาสมบัติของมหาสมุทร",
+		scratch_ticket_ching = "หวนคิง (Cha Ching)",
+		scratch_ticket_ching_description = "แทงหวยเอเล็กทริคที่ดุจอึ 100 ดอลลาร์เท่านั้น ตั๋วที่สดใสนี้มีโอกาสที่แฟนไม่ซ้ำใครจะชนะรางวัลรวมทั้งสูงสุดถึง 210,000 ดอลลาร์ มันไม่ได้เป็นเพียงเกม แต่เป็นการเล่นผสมอารมณ์ของโชคชะตา!",
 
 		avocado = "อะโวคาโด",
 		avocado_description = "วัตถุเล็ก ๆ สีเขียวที่อาจจะดีที่จะทำเป็นดิบ",
@@ -7876,6 +7963,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		vape = "กลิ่นพอดีให้ดูแก่หน้า? เบื่อหน่าย ลองหา Geek Bar เข้าไปใช้งานดูสิ!",
 		vape_description = "เบื่อสายดู ลองใช้งานดู",
+
+		train_pass = "บัตรรถไฟ",
+		train_pass_description = "เมื่อใช้งาน คุณจะได้รับบัตรเข้าชิงทันที 3 ใบในคิว",
+
+		xbox_controller = "คอนโทรลเลอร์ XBOX",
+		xbox_controller_description = "ดูเหมือนจะเปียกน้ำนิดหน่อย...",
 
 		acetone = "แอซิโตน",
 		acetone_description = "เหมาะสำหรับทำความสะอาดหรือการลมเพื่อดูสุดเจ๋ง",
@@ -8140,8 +8233,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		gas_mask_description = "ช่วยป้องกันไม่ให้ได้รับอันตรายจากแก๊ส",
 		nv_goggles = "แว่นตา Night Vision",
 		nv_goggles_description = "ช่วยให้เห็นในที่มืด",
-		thermal_goggles = "แว่นตา Thermal",
-		thermal_goggles_description = "ช่วยให้คุณมองเห็นที่ผ่านกำแพงได้ (แต่ไม่จริง xD)",
 
 		green_rolls = "ซาบธง",
 		green_rolls_description = "สำหรับคนที่ต้องการมากกว่าปกติ",
@@ -8364,6 +8455,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		weapon_militaryrifle = "ไรเฟิลล์ทหาร",
 		weapon_heavyrifle = "ไรเฟิลล์หนัก",
 		weapon_tacticalrifle = "ไรเฟิลล์บริการ",
+		weapon_battlerifle = "ไรเฟิลรบ",
 
 		weapon_mg = "กองเหล็ก",
 		weapon_combatmg = "กองเหล็กประจัญหน้า",
@@ -8389,6 +8481,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		weapon_emplauncher = "เรืองแสง",
 		weapon_stinger = "หัวปืนระเบิด",
 		weapon_railgunxm3 = "ปืนระเบิดไฟฟ้า",
+		weapon_snowlauncher = "ปืนยิงลูกหิมะ",
 
 		weapon_grenade = "ระเบิดมือ",
 		weapon_bzgas = "แก๊สพิษ",
@@ -8407,6 +8500,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		weapon_fireextinguisher = "เครื่องดับเพลิง",
 		weapon_hazardcan = "ถังน้ำมันอันตราย",
 		weapon_fertilizercan = "ถังปุ๋ย",
+		weapon_hackingdevice = "อุปกรณ์แฮ็กคิ่ง",
 
 		red_parachute = "ร่มชูชีพสีแดง",
 		blue_parachute = "ร่มชูชีพสีน้ำเงิน",
@@ -8488,6 +8582,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		weapon_militaryrifle_description = "ปืนโตและทรงพลังนี้ถูกออกแบบมาสำหรับทหารที่มีคุณสมบัติและฝีมือพิเศษมากๆ ใช่คุณสามารถซื้อมันได้",
 		weapon_heavyrifle_description = "น้ำหนักมากขึ้นแปลว่าดีกว่าล่ะ ใช่เหรอล่ะ? ใช่แหละ ไปเลย",
 		weapon_tacticalrifle_description = "อุปกรณ์ที่ต้องมีในฤดูกาลนี้สำหรับตำรวจ ทหาร และผู้ที่ต้องเอาชนะศัตรูในการต่อสู้จนถึงตายกับตำรวจ หรือทหาร",
+		weapon_battlerifle_description = "สวมรอยไรเฟิลรบที่เป็นผลสรุปจากความน่าเชื่อถือของ FN FAL และความแม่นยำของ Heckler & Koch G3 พร้อมกับนิตยสารที่คล้ายกับ Vepr 7.62x54R เป็นอาวุธที่คุณพึงพอใจสำหรับศัตรูในสนามรบ",
 
 		weapon_mg_description = "เป็นปืนกลภาระบาดทั่วไปที่ผสมผสานการออกแบบที่ทนทานกับการทำงานที่เชื่อถือได้ มีพลังการทำลายสูงและสามารถมีผลลัพธ์อย่างมากเมื่อเจอกลุ่มคนมาก",
 		weapon_combatmg_description = "เป็นปืนกลแบบเบา พกพาได้สะดวก ผสานความคล่องตัวด้วยอัตรายิงสูงเพื่อทำลายศัตรูอย่างโหดเหี้ยม",
@@ -8513,6 +8608,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		weapon_emplauncher_description = "ยิงไปที่เสือกและเฮลิคอปเตอร์เพื่อทำให้พวกเขาง่วงนอน",
 		weapon_stinger_description = "เครื่องปืนยานพาหนะป้องกันรถยนต์ขนส่งสินค้าพิเศษที่ปล่อยไปสู่อากาศ ใช้ในการต่อสู้กับอาวุธป้องกันทางอากาศของศัตรู",
 		weapon_railgunxm3_description = "ที่คุณต้องรู้คือ - ว่าแม่เหล็ก และมันทำอันตรายอยู่บนสิ่งที่เราชี้ไป",
+		weapon_snowlauncher_description = "ปืนปริศนาหิมะ: การกลับฤดูหนาวเป็นเขตรบหิมะขันที่สนุกสนาน ได้รับแรงบันดาลใจจากปืนยาง M79 ที่ได้รับการปรับแต่งโดยเล่นสนุกในการยิงลูกหิมะที่สวยงาม พร้อมที่จะเตรียมตัวสำหรับการทำกลโกงในหิมะ!",
 
 		weapon_grenade_description = "ระเบิดฟรังเมนต์มาตรฐาน ดึงลูกกลิ้งออก โยนไป แล้วหาที่หลบพ้น ใช้กับคู่ต่อสู้หลายคน",
 		weapon_bzgas_description = "ใช้สำหรับปิดสนิมชิ่วโมงคนที่คุณไม่ชอบ",
@@ -8531,6 +8627,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		weapon_fireextinguisher_description = "ถนนุบายไฟหรือรุ่นย่อโคมไฟได้เลย",
 		weapon_hazardcan_description = "เหมือนกับถังน้ำมัน แต่ไร้ประโยชน์",
 		weapon_fertilizercan_description = "หีบปุ๋ยยังเป็นเอกลักษณ์ ไม่มีอะไรดีกว่าสำหรับพืชของคุณ",
+		weapon_hackingdevice_description = "เป็นอุปกรณ์พกพาเล็ก ๆ ที่อิงตามอุปกรณ์ตรวจจับโลหะ ใช้สำหรับการแจ้งเตือนของมือเราะ แต่มีเสาอากาศและปุ่มที่ถูกแทนที่",
 
 		red_parachute_description = "เหมือนร่มชูชีพปกติ แต่เป็นสีแดง",
 		blue_parachute_description = "เหมือนร่มชูชีพปกติ แต่เป็นสีน้ำเงิน",
@@ -8634,7 +8731,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		weapon_addon_honey_description = "เอไอซี ฮันนี่ แบดเจอร์ เป็นอาวุธป้องกันส่วนตัวที่ใช้บ่อยในรูปแบบรุกอัดเสียงและอิงตามพื้นฐานของ AR-15 มีลำกล้องหลอดมู่ลี่เป็นจำนวนมาก และเป็นชิ้นส่วนกำเนิดจาก  Advanced Armament Corporation (AAC) หน้าแรก",
 
 		weapon_addon_glock18c = "กลโก18C",
-		weapon_addon_glock18c_description = "นี่คือ Glock 18C: พกพาได้และมีกำลังยิงแบบเต็มอัตโนมัติพร้อมด้วยแรงสะเทือนเพียงพอที่จะทำให้วันสนับสนุนของคุณกลายเป็นผจญภัย ไม่ว่าคุณจะป้องกันดินแดนของคุณหรือเพียงแค่ต้องการจะดึงดูดความสนใจในช่วงระยะเป้าหมาย  Glock 18C สามารถประทับใจคุณได้"
+		weapon_addon_glock18c_description = "นี่คือ Glock 18C: พกพาได้และมีกำลังยิงแบบเต็มอัตโนมัติพร้อมด้วยแรงสะเทือนเพียงพอที่จะทำให้วันสนับสนุนของคุณกลายเป็นผจญภัย ไม่ว่าคุณจะป้องกันดินแดนของคุณหรือเพียงแค่ต้องการจะดึงดูดความสนใจในช่วงระยะเป้าหมาย  Glock 18C สามารถประทับใจคุณได้",
+
+		weapon_addon_1911 = "1911 Kimber Tactical",
+		weapon_addon_1911_description = "1911 Kimber Tactical: สถานที่ที่การออกแบบมาพบกับสารที่สำคัญ ได้รับความไว้วางใจจากผู้สนใจทุกที่ เป็นรางวัลเจ้าหลายประเภทสำหรับการป้องกันและปัจจัยความรู้สึกที่เยี่ยมยอด!"
 	},
 
 	invisibility = {
@@ -8665,6 +8765,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		move_to_repair = "ย้ายมาที่นี่เพื่อซ่อมรถ",
 		repairing_vehicle = "กำลังซ่อมแซมรถ",
 		fix_visual_damage = "กำลังซ่อมแซมความเสียหายทางสายตา",
+		measuring_color = "วัดสี",
+		color_measurement = "การวัดสี",
+		color_measurer_result = "สีหลัก **${primary}** (*${primaryId}*), สีรอง **${secondary}** (*${secondaryId}*), สีไหล่พลอย **${pearlescent}** (*${pearlescentId}*) และสีล้อ **${wheel}** (*${wheelId}*)",
+		no_vehicle_in_front = "ไม่มีรถยนต์ข้างหน้าคุณ",
 		using_first_aid_kit = "ใช้กล่องเครื่องมือปฐมพยาบาล",
 		using_bandages = "ใช้ผ้าพันแผล",
 		using_ifak = "ใช้ชุดปฐมพยาบาล IFAK",
@@ -8683,6 +8787,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		changing_license_plate = "เปลี่ยนเลขทะเบียน",
 		equipping_parachute = "ใส่ร่มชูชีพ ${itemName}",
 		lockpicking_vehicle = "เปิดล็อครถยนต์โดยไม่มีกุญแจ",
+		printout_title = "ใบพิมพ์ ${type}",
+		printout_text = "*${text}*",
 		illegal_weather_name = "พยายามใช้สิ่งที่เป็นชื่ออากาศที่ผิดกฏหมาย",
 		equipping_body_armor = "กำลังสวมเสื้อเกราะ",
 		illegal_burger_shot_delivery_item_id = "พยายามใช้งานไอเทมการจัดส่งบรเกอร์ช็อตด้วย ID ไอเทมที่ผิดกฏหมาย",
@@ -8947,6 +9053,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		joining_arena = "เข้าร่วมการปะทะ Arena",
 		refresh = "รีเฟรช",
 		refreshing = "กำลังรีเฟรช...",
+		use_train_pass = "ใช้บัตรรถไฟ (${trainPasses})",
 
 		avoid_repeating_letters = "ลองหลีกเลี่ยงการใช้ตัวอักษรที่ซ้ำซ้อนมากในชื่อและ/หรือนามสกุลของคุณนะคะ",
 		backstory_empty = "เรื่องราวที่คุณเล่าว่างเปล่าไป",
@@ -9091,7 +9198,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		logs_lucky_wheel_reward_chips_details = "${consoleName} หมุนลูกเขย่าโชคและได้รับชิปมูลค่า $${amount}",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} หมุนล้อแล้วได้รับเครื่องประดับชื่อ `${itemName}`",
 		logs_lucky_wheel_reward_item_details = "${consoleName} หมุนล้อแล้วได้รับไอเท็มชื่อ `${itemName}`",
-		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} หมุนวงล้อแล้วได้รับสิทธิ์คิว 1 สัปดาห์"
+		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} ชนะการหมุนวงล้อและได้รับไอเท็ม 'บัตรรถไฟ' แล้ว"
 	},
 
 	magazines = {
@@ -9459,6 +9566,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		missing_model_name = "ไม่ได้ระบุชื่อโมเดล"
 	},
 
+	ocean_gate = {
+		you_need_a_controller_to_maneuver = "คุณต้องใช้คอนโทรลเลอร์เพื่อควบคุมยานพาหนะนี้"
+	},
+
 	orbitcam = {
 		enabled_orbitcam = "เปิดการใช้งานกล้องวงกลมแล้ว",
 		disabled_orbitcam = "ปิดการใช้งานกล้องวงกลมแล้ว",
@@ -9572,6 +9683,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		sound_effect_save = "บันทึก",
 		sound_effect_reset = "รีเซ็ต",
 
+		reduce_epilepsy = "ลดรูปภาพที่ระยิบระยับ (เป็นมิตรต่อผู้ป่วยโรคลมชัก)",
 		disable_tablet_animation = "ปิดการเล่นแอนิเมชันแท็บเล็ต",
 		staff_notifications_reports = "แจ้งเตือนรายงาน",
 		staff_notifications_staff_chat = "แจ้งเตือนสนทนาของเจ้าหน้าที่",
@@ -10390,6 +10502,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		attempt_failed = "พยายาม ${attemptMessage} แต่ล้มเหลว",
 		dice_message = "ทอยลูกเต๋าและได้ ${diceNumber}",
 		roll_message = "ทอยลูกเต๋าเฉพาะกำหนดด้วยการตั้งค่า ${rolls}d${max} และได้ผลรวม ${totalValue}",
+		rps_message = "เล่นเกมหมากรุกกระดาษค้างคานแล้วตัดใจ ${rps}",
 		citizen_card_message = "แสดงบัตรประชาชน (${characterId})",
 		badge_message = "แสดงป้ายตรา (${characterId})",
 		license_message = "แสดงใบอนุญาติ (${characterId})",
@@ -10406,6 +10519,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		attempt_message_chat_title = "/attempt [${serverId}]",
 		dice_message_chat_title = "/ลูกเต๋า [${serverId}]",
 		roll_message_chat_title = "/สุ่ม [${serverId}]",
+		rps_message_chat_title = "/rps [${serverId}]",
 		description_message_chat_title = "/ลักษณะ [${serverId}]",
 		message_too_long = "ข้อความมีจำนวนตัวอักษรหรือบรรทัดมากเกินไป!",
 		card_command_wait = "คุณได้รับการสุ่มไพ่ไปแล้ว โปรดรอสักครู่ก่อนสุ่มอีกครั้ง",
@@ -10494,10 +10608,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		phone_number_is_not_available = "หมายเลขโทรศัพท์ ${phoneNumber} ไม่สามารถใช้งานได้."
 	},
 
-	pictures = {
-		selfie_description = "ภาพของ ${firstName} ${lastName}."
-	},
-
 	player_control = {
 		unable_to_drive_for_yourself = "คุณไม่สามารถเปลี่ยนสถานะของตัวเองได้",
 		player_is_not_nearby = "ผู้เล่นกับ ID ${serverId} ไม่อยู่ใกล้เคียงกับคุณ",
@@ -10565,7 +10675,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		printing = "กำลังพิมพ์...",
 
 		printed_logs_title = "พิมพ์ภาพ",
-		printed_logs_details = "${consoleName} พิมพ์ `${itemName}` โดยใช้ `${paperType}` ด้วยลิงก์รูปภาพ `${url}`"
+		printed_logs_details = "${consoleName} พิมพ์ `${itemName}` ด้วย `${paperType}` โดยใช้ลิงก์รูปภาพ `${url}` ข้อความด้านบน `${topText}` และข้อความด้านล่าง `${bottomText}`"
 	},
 
 	prop_hide = {
@@ -10851,6 +10961,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		withdraw = "ถอน",
 		deposit = "ฝาก",
 		amount = "จำนวน",
+		note_reason = "หมายเหตุ / เหตุผล",
+		reason_placeholder = "หมายเหตุหรือเหตุผลที่ไม่บังคับ...",
 		account_name = "ชื่อบัญชี",
 		actions = "การดำเนินการ",
 		access = "การเข้าถึง",
@@ -10878,9 +10990,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		deleted_account_logs_title = "ลบบัญชีเงินออม",
 		deleted_account_logs_details = "${consoleName} ได้ลบบัญชีเงินออมที่ชื่อ `${accountName}` ที่มีรหัส ${accountId}",
 		withdraw_logs_title = "ถอนเงินจากบัญชีเงินออม",
-		withdraw_logs_details = "${consoleName} ได้ถอนเงิน $${amount} จากบัญชีเงินออมเลขที่ ${accountId}",
+		withdraw_logs_details = "${consoleName} ถอนเงิน $${amount} จากบัญชีออมทรัพย์ ${accountId} ด้วยเหตุผล `${reason}`.",
 		deposit_logs_title = "ฝากเงินไปยังบัญชีเงินออม",
-		deposit_logs_details = "${consoleName} ได้ฝากเงิน $${amount} เข้าบัญชีเงินออมเลขที่ ${accountId}"
+		deposit_logs_details = "${consoleName} ฝากเงิน $${amount} เข้าบัญชีออมทรัพย์ ${accountId} ด้วยเหตุผล `${reason}`."
 	},
 
 	scoreboard = {
@@ -10902,6 +11014,13 @@ OP.Global.Locales.Languages["th-TH"] = {
 		server_id_hide_failed = "ไม่สามารถเปลี่ยนสถานะการซ่อนไอดีเซิร์ฟเวอร์ได้",
 		server_id_hidden = "สไอดีเซิร์ฟเวอร์ของคุณถูกซ่อนแล้ว",
 		server_id_not_hidden = "สไอดีเซิร์ฟเวอร์ของคุณไม่ถูกซ่อนแล้ว"
+	},
+
+	scratch_tickets = {
+		you_won = "คุณได้รับเงินรวมทั้งสิ้น $${cash} จากตั๋วสแครทช์.",
+		you_won_nothing = "คุณไม่ได้รับรางวัลใด ๆ จากตั๋วสแครท์.",
+		scratched_ticket_logs_title = "ตั๋วสแครท์",
+		scratched_ticket_logs_details = "${consoleName} ขูดตั๋วและได้รับเงินรวมทั้งสิ้น $${amount}."
 	},
 
 	screenshots = {
@@ -11152,13 +11271,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 	special_imports = {
 		special_imports_blip = "นำเข้าพิเศษ(Special Imports)",
 
-		purchased_vehicle = "ซื้อ ${label} เรียบร้อยแล้ว ราคา $${price} ยานพาหนะได้ถูกเพิ่มลงในโรงจอดของคุณแล้ว",
+		purchased_vehicle = "ซื้อ ${label} สำเร็จแล้ว ด้วยราคา ${price} รถยนต์ถูกเพิ่มเข้าสู่โรงรถของคุณ",
 
 		something_went_wrong = "เกิดข้อผิดพลาดบางอย่าง",
 		not_enough_money = "คุณมีเงินไม่พอ",
-		invalid_package = "ระดับแพ็คเกจไม่ถูกต้อง (คุณต้องมีระดับ godlike)",
-
-		dealership_closed = "ร้านขายรถยนต์ปิดให้บริการชั่วคราว",
+		invalid_package = "ระดับแพ็กเกจไม่ถูกต้อง (คุณต้องมีระดับ godlike)",
 
 		purchased_vehicle_logs_title = "นำเข้าพิเศษ",
 		purchased_vehicle_logs_details = "${consoleName} ซื้อรถยนต์นำเข้าพิเศษ ${modelName} ราคา ${price} (เลขทะเบียน: ${plate})",
@@ -11167,7 +11284,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		marker_label_purchase = "[${SeatEjectKey}] ซื้อ ${label} ในราคา ${price} บาท",
 		marker_label_purchase_timer = "[${timer}s] กดค้าง ${SeatEjectKey} เพื่อซื้อ ${label} ในราคา ${price} บาท",
 
-		vehicle_sold_out = "${label} | สินค้าหมด"
+		vehicle_sold_out = "${label} | ขายหมดแล้ว"
 	},
 
 	spectating = {
@@ -11321,10 +11438,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		time_parameters_invalid = "พารามิเตอร์ hour หรือ minute ไม่ถูกต้อง",
 		time_currently_transitioning = "เวลากำลังเปลี่ยน กรุณารอสักครู่",
 		time_successfully_transitioned = "เปลี่ยนเวลาเป็น ${hour}:${minute} สำเร็จแล้ว",
-		time_successfully_set = "ตั้งเวลาเป็น ${hour}:${minute} สำเร็จแล้ว",
-
-		developer_ambience_on = "เปิดโหมด Developer ambience แล้ว",
-		developer_ambience_off = "ปิดโหมด Developer ambience แล้ว"
+		time_successfully_set = "ตั้งเวลาเป็น ${hour}:${minute} สำเร็จแล้ว"
 	},
 
 	tablet = {
@@ -11394,6 +11508,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 	},
 
 	teleporters = {
+		area_not_clear = "ที่หมายปลายทางถูกบล็อคด้วยรถยนต์",
+
 		enter_mechanic_shop = "เข้าสู่โรงงานช่างยนต์",
 		enter_mechanic_shop_interact = "[${InteractionKey}] เข้าสู่โรงงานช่างยนต์",
 
@@ -11515,7 +11631,19 @@ OP.Global.Locales.Languages["th-TH"] = {
 		enter_submarine_interact = "[${InteractionKey}] เข้าสู่เรือดำน้ำ",
 
 		exit_submarine = "ออกจากเรือดำน้ำ",
-		exit_submarine_interact = "[${InteractionKey}] ออกจากเรือดำน้ำ"
+		exit_submarine_interact = "[${InteractionKey}] ออกจากเรือดำน้ำ",
+
+		enter_garage = "เข้าสู่โรงรถ",
+		enter_garage_interact = "[${InteractionKey}] เข้าสู่โรงรถ",
+
+		exit_garage = "ออกจากโรงรถ",
+		exit_garage_interact = "[${InteractionKey}] ออกจากโรงรถ",
+
+		enter_viewer_booth = "เข้าห้องที่ชม",
+		enter_viewer_booth_interact = "[${InteractionKey}] เข้าชมบูธ",
+
+		exit_viewer_booth = "ออกจากชมบูธ",
+		exit_viewer_booth_interact = "[${InteractionKey}] ออกจากชมบูธ"
 	},
 
 	test_server = {
@@ -11539,6 +11667,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		teleport = "ตัวเลือกโทรทัศน์",
 		teleport_to = "โทรทัศน์ไปยัง",
+		tp_customs = "LS Customs",
 		tp_legion = "สี่แยกเลกีอน",
 		tp_garage_a = "โรงเก็บรถ A",
 		tp_paleto = "เมืองเล็กๆ บริเวณอเมริกันอัลป์",
@@ -11658,6 +11787,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		studio_blip = "945 Studios"
 	},
 
+	train_pass = {
+		used_train_pass = "ใช้ 'บัตรรถไฟ' สำเร็จแล้ว ตอนนี้คุณมีบัตรรถไฟ ${trainPasses} ใบ",
+		train_passes = "คุณมีบัตรรถไฟ ${trainPasses} ใบ"
+	},
+
 	training = {
 		on_team_attackers = "คุณเป็นผู้โจมตี!\nเวลาที่เหลือ: ${time}",
 		on_team_defenders = "คุณเป็นผู้ป้องกัน!\nเวลาที่เหลือ: ${time}",
@@ -11701,9 +11835,23 @@ OP.Global.Locales.Languages["th-TH"] = {
 		map_tier_3_description = "แผนที่ระดับ 3 นี้สวยงาม มีลักษณะสไตล์ \"แววว่าแวว\" และมีตราตัวเลข \"100% แท้จริง\" ที่มุมขวาล่าง",
 		map_tier_4_description = "แผนที่ระดับ 4 นี้ดูมีค่าและหรูหรากว่ามีมากกว่าสมบัติอื่น ๆ มากพอที่จะไปตามหามันได้",
 
-		press_to_combine_pieces = "กด ~INPUT_CONTEXT~ เพื่อรวมภาพยนต์ชิ้นของแผนที่ระดับ ${mapTier} ",
+		press_to_combine_pieces = "กด ~INPUT_CONTEXT~ เพื่อรวมชิ้นส่วนแผนที่เข้าด้วยกัน",
 
-		treasure_map = "แผนที่สมบัติพิเศษ (ระดับ ${mapTier})"
+		treasure_map = "แผนที่สมบัติพิเศษ (ระดับ ${mapTier})",
+
+		treasure_maps_debug_enabled = "เปิดใช้งานการแก้แผนที่ระลอก.",
+		treasure_maps_debug_disabled = "ปิดโหมดดูเส้นทางของสมบัติแล้ว",
+
+		treasure_map_debug = "แผนที่ (ระดับ: ${mapTier}, ระยะทาง: ${distance})",
+		dig_zone = "พื้นที่ขุด",
+
+		combining_maps = "การผสานแผนที่",
+
+		combined_map = "แผนที่ที่ผสานแล้วระดับ ${mapTier}",
+		no_maps_to_combine = "คุณไม่มีแผนที่ที่จะผสาน",
+
+		treasure_map_dug_up_logs_title = "สมบัติที่ได้ถูกขุดพบ",
+		treasure_map_dug_up_logs_details = "${consoleName} ได้ขุดแผนที่ทรัพย์สมบัติระดับ ${mapTier} และได้รับรหัสสินค้าที่ ${dropId}"
 	},
 
 	tsunami = {
@@ -11739,8 +11887,67 @@ OP.Global.Locales.Languages["th-TH"] = {
 		log_description_discount = "ซื้อ `${label}` คืนมาที่ราคา $${price} หลังหักส่วนลด ${discount}%"
 	},
 
+	tunerchip = {
+		pimp_ride = "ปั้มรถแบบของฉัน™",
+
+		drive_force = "โทรคความแรง",
+		brake_force = "กำลังเบรก",
+		break_bias = "การกระจายเบรก (หลัง/หน้า)",
+		clutch_change_up = "ความเร็วการเปลี่ยนเกียร์ขึ้น",
+		clutch_change_down = "ความเร็วการเปลี่ยนเกียร์ลง",
+		air_fuel_mixture = "ส่วนผสมอากาศ/เชื้อเพลิง",
+
+		close = "ปิด",
+		reset = "รีเซ็ต",
+		apply = "นำไปใช้",
+		save = "บันทึก",
+		tunes = "ไทล์",
+		save_tune = "บันทึกไทล์",
+		back = "กลับ",
+		name = "ชื่อ",
+		cancel = "ยกเลิก",
+		loaded_tune = "โหลดไทล์เรียบร้อยแล้ว",
+		loading = "กำลังนำไปใช้ไทล์...",
+		success = "นำไปใช้ไทล์เรียบร้อยแล้ว",
+		failed = "การปรับแต่งล้มเหลว",
+		failed_delete = "การลบล้มเหลว",
+		failed_save = "การบันทึกล้มเหลว",
+		success_save = "บันทึกการปรับแต่งสำเร็จ",
+		success_delete = "ลบการปรับแต่งเรียบร้อยแล้ว"
+	},
+
+	twitter_bid = {
+		twitter_bid = "การเสนอราคาทวีตเตอร์",
+		information_part_1 = "ต้องการให้ทุกคนทราบว่าใครเป็นเจ้านายบนทวิตเตอร์? เป็นผู้เสนอราคาสูงสุดในเครื่องหมายการยืนยัน!",
+		information_part_2 = "ไม่ว่าใครจะจ่ายเงินมากที่สุดก็จะได้รับเครื่องหมายการยืนยันสีน้ำเงิน จนกว่าคนอื่นจะเสนอราคาสูงกว่า",
+		information_part_3 = "หากมีใครเสนอราคาเกินคุณ คุณจะไม่ได้เงินคืน",
+		information_part_4 = "ตรวจสอบให้แน่ใจว่าคุณใส่คำพูดที่ดีเจ ทำให้ทุกคนมีความเกลียดชังต่อคุณ",
+		no_bidder_yet = "ยังไม่มีผู้เสนอราคา",
+		no_bidder_yet_quote = "เป็นคนแรกที่เสนอราคา! (ใส่คำพูดที่นี่)",
+		bid_amount = "จำนวนเงินเสนอราคา",
+		close = "ปิด",
+		bid_amount = "จำนวนเงินเสนอราคา",
+		bid_quote = "คำพูดเสนอราคา",
+		place_bid = "เสนอราคา",
+		win_the_bid = "ชนะการเสนอราคา!",
+		bid_won = "คุณได้ชนะการเสนอราคา... อย่างชั่วคราว",
+		bid_must_be_greater_than_current_bidder = "จำนวนเงินเสนอราคาต้องมากกว่าผู้เสนอราคาปัจจุบัน",
+		max_quote_length_exceeded = "เกินหมดความยาวสูงสุดของคำพูด",
+		not_enough_bank_balance = "ยอดเงินในบัญชีธนาคารไม่เพียงพอ",
+
+		twitter_bid_placed_logs_title = "เสียงจากการประมูลทวิตเตอร์",
+		twitter_bid_placed_logs_details = "${consoleName} ประมูลทวิตเตอร์ด้วยจำนวน $${bidAmount} พร้อมกำหนดราคา `${bidQuote}`"
+	},
+
 	vape = {
-		press_to_use = "กด ~INPUT_CONTEXT~ เพื่อดับบุหรี่ไฟฟ้า กด ~INPUT_FRONTEND_CANCEL~ เพื่อเก็บบุหรี่ไฟฟ้าลง"
+		press_to_use = "กด ~INPUT_CONTEXT~ เพื่อดับบุหรี่ไฟฟ้า กด ~INPUT_FRONTEND_CANCEL~ เพื่อเก็บบุหรี่ไฟฟ้าลง",
+
+		plain_vape = "Geek Bar (ไม่มีรส)",
+		mango_vape = "Geek Bar (มะม่วง)",
+		strawberry_vape = "Geek Bar (สตรอเบอร์รี่)",
+		menthol_vape = "Geek Bar (เย็น)",
+		apple_vape = "Geek Bar (แอปเปิ้ล)",
+		blueberry_vape = "Geek Bar (บลูเบอร์รี่)"
 	},
 
 	vdm = {
@@ -11844,7 +12051,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 	washrooms = {
 		use_sink = "[${InteractionKey}] ใช้ซิงค์",
-		using_sink = "กำลังใช้ซิงค์"
+		using_sink = "กำลังใช้ซิงค์",
+		refill_bottle = "[${InteractionKey}] เติมน้ำยา",
+		refilling_bottle = "เติมขวด"
 	},
 
 	weed_field = {
@@ -12134,6 +12343,19 @@ OP.Global.Locales.Languages["th-TH"] = {
 		aim_assist_disabled = "การเปิดใช้งานการช่วยเล็งของคุณถูกยกเลิกแล้ว คุณจะเล็งแย่กว่าคนร้าย/ไอ้เหี้ยอีกครั้ง แนะนำให้เปิดใช้งานการช่วยเล็งใหม่ทันที",
 		you_are_not_police = "คุณไม่ใช่ตำรวจ ฟีเจอร์นี้เป็นไปสำหรับตำรวจเท่านั้น ไม่ใช่สำหรับนักอาชีพอาชญากรรม/คนไร้ค่า",
 
+		no_vehicle_tint = "ไม่มีหน้าต่างของยานพาหนะใกล้เคียงสำหรับการวัดความมืดของกระจก",
+		window_broken = "หน้าต่างนั้นถูกแตก",
+		window_open = "หน้าต่างนั้นถูกเปิด",
+		measuring_tint = "กำลังวัดความมืด",
+		tint_measurement = "การวัดความมืดของกระจก",
+
+		tint_0 = "หน้าต่างนี้ไม่มีการใส่ฟิล์ม",
+		tint_1 = "ความมืดของหน้าต่างนี้เป็นสีดำแท้",
+		tint_2 = "ความมืดของหน้าต่างนี้เป็นสีดำเข้ม",
+		tint_3 = "ความมืดของหน้าต่างนี้เป็นสีดำอ่อน",
+		tint_4 = "ความมืดของหน้าต่างนี้เป็นฟิล์มลิโม",
+		tint_5 = "ความมืดของหน้าต่างนี้เป็นสีเขียว",
+
 		undercover_enabled = "คุณได้เปิดใช้งานการปลอมตัวแล้ว",
 		undercover_disabled = "คุณไม่ได้อยู่ในสถานะปลอมตัวอย่างแท้จริง",
 
@@ -12242,7 +12464,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		return_button = "ย้อนกลับ",
 
 		toggled_messages_on = "เปิดข้อความแจ้งเตือนแล้ว",
-		toggled_messages_off = "ปิดข้อความแจ้งเตือนแล้ว"
+		toggled_messages_off = "ปิดข้อความแจ้งเตือนแล้ว",
+		cannot_toggle_mechanic_messages = "นักลากไม่สามารถปิดข้อความช่างได้"
 	},
 
 	weazel_news = {
@@ -12367,7 +12590,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		vehicle_at_police_impound = "ยานพาหนะของคุณถูกถือกั้นโดยตำรวจ",
 		vehicle_at_impound = "ยานพาหนะของคุณถูกเก็บที่ที่จอดรถจำกัดความสามารถ",
 		waypoint_to_impound = "ตำแหน่งที่จอดรถจำกัดความสามารถถูกทำเครื่องหมายบน GPS ของคุณ",
-		unable_to_withdraw = "ไม่สามารถถอดยานพาหนะได้ในขณะนี้",
+		unable_to_withdraw = "ไม่สามารถเสียประกันรถยนต์ได้เนื่องจากถูกใช้งานอยู่",
 		vehicle_in_garage = "ยานพาหนะของคุณอยู่ที่ ${garageName} มีเส้นทางถูกทำเครื่องหมายบนแผนที่ของคุณ",
 		insufficient_funds = "คุณไม่มีเงินเพียงพอที่จะเบิกยานพาหนะนี้",
 		error_withdrawing = "เกิดข้อผิดพลาดขณะพยายามถอนยานพาหนะของคุณ",
@@ -12572,6 +12795,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		vehicle_is_locked = "ยานพาหนะถูกล็อค",
 		belt_warning = "คุณยังไม่ได้คุณภาพการเข้าร่วมทางบันไดที่นั่งของคุณ กด ~INPUT_SPECIAL_ABILITY_SECONDARY~ เพื่อคุณภาพการเข้าร่วม",
 		supporter_vehicle = "ยานพาหนะผู้สนับสนุน",
+		getting_out = "ออกจากรถ",
 
 		no_data_copied = "คุณยังไม่ได้คัดลอกข้อมูลรถยนต์ใด ๆ",
 		copied_data = "คัดลอกข้อมูลรถยนต์แล้ว",
@@ -12657,8 +12881,16 @@ OP.Global.Locales.Languages["th-TH"] = {
 		type_shotgun = "กระสุนช็อตกัน",
 		type_stungun = "แทซเซอร์แคร์ทริดจ์",
 
-		fill_ammo_success = "เติมกระสุนสำเร็จ",
-		fill_ammo_failed = "ไม่สามารถเติมกระสุนได้"
+		invalid_server_id = "รหัสเซิร์ฟเวอร์ไม่ถูกต้อง",
+		fill_ammo_success = "เติมกระสุนให้คุณเรียบร้อยแล้ว",
+		fill_ammo_success_player = "เติมกระสุนให้กับ ${displayName} เรียบร้อยแล้ว",
+		fill_ammo_success_everyone = "เติมกระสุนให้ทุกคนเรียบร้อยแล้ว",
+		fill_ammo_failed = "ไม่สามารถเติมกระสุนได้",
+
+		fill_ammo_everyone_logs_title = "เติมกระสุนให้ทุกคน",
+		fill_ammo_everyone_logs_details = "ผู้เล่น ${consoleName} เติมกระสุนให้ทุกคน",
+		fill_ammo_player_logs_title = "เติมกระสุนให้กับผู้เล่น",
+		fill_ammo_player_logs_details = "${consoleName} เติมกระสุนให้กับ ${targetConsoleName} แล้ว"
 	},
 
 	throwables = {
@@ -12811,14 +13043,13 @@ OP.Global.Locales.Languages["th-TH"] = {
 		processed_by = "<i>ประมวลผลโดย ${processName}</i>",
 		evidence_casings = "เคสมากถูกส่งกลับไปยังหมายเลขซีเรียล ${serialNumber} ซึ่งถือโดย ${buyerName} (${buyerCid}) ในขณะที่ใช้",
 		evidence_bullets = "แรงกระสุนแสดงถึงการสร้างโดย ${bulletLabel}",
-		evidence_clothing = "ชิ้นเสื้อผ้า (${clothingType})",
-		evidence_car_dna = "พบ DNA จากยานพาหนะหมายเลขทะเบียน ${plateNumber} และพบว่าเป็นของ ${DNAOwnerName} (${DNAOwner})",
+		evidence_vehicle_dna = "พบเอกลักษณ์จาก DNA ในรถที่มีทะเบียน ${plateNumber} บนที่นั่ง ${seat} พบเอกลักษณ์ถึง ${fullName} (${characterId})",
 		evidence_dna = "DNA รวบรวมจาก ${fullName} #${characterId}",
 		evidence_fingerprint = "รอยนิ้วมือของ ${fullName} #${characterId}",
-		evidence_not_processed = "ถุงเก็บของพยานนี้ยังไม่ได้รับการประมวลผล",
+		evidence_not_processed = "ยังไม่ได้ดำเนินการ",
 		additional_information = "ข้อมูลเพิ่มเติม:",
 		picked_up_at_location = "รับของที่ตำแหน่ง:",
-		clothing_dna_trace = "ร่องรอย DNA ส่งกลับไปยัง ${fullName} (#${cid})",
+		clothing_dna_trace = "พบร่องรอย DNA ถึง ${fullName} (#${characterId})",
 		clothing_dna_trace_unprocessed = "ร่องรอย DNA ที่ยังไม่ได้ประมวลผลบนเสื้อผ้า",
 		timestamp_of_pickup = "เวลาของการรับของ:",
 		weapon_name = "ชื่ออาวุธ:",
