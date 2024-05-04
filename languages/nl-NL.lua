@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 25 (do not change)
+-- AUTO LOCALES: 27 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -134,6 +134,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		added_vehicle_logs_title = "Voertuig Toegevoegd",
 		added_vehicle_logs_details = "${consoleName} heeft een voertuig met modelnaam `${modelName}` toegevoegd aan hun garage.",
 
+		vehicle_saved = "Voertuig succesvol opgeslagen met modelnaam `${modelName}`.",
+		failed_to_save_vehicle = "Kon voertuig niet opslaan.",
+
 		invalid_amount = "Ongeldig bedrag.",
 
 		added_cash_title = "Cash toegevoegd",
@@ -260,6 +263,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		you_have_been_kicked_no_reason = "Je bent zonder opgegeven reden uit de server gekickt door ${kicker}.",
 
 		logs_player_kicked_title = "Speler Gekickt",
+		logs_player_kicked_system_title = "Speler Uitgesloten door Systeem",
 		logs_player_kicked_details = "${consoleName} is gekickt van de server door ${kicker} met reden `${reason}`.",
 		logs_player_kicked_no_reason_details = "${consoleName} is zonder opgegeven reden gekickt van de server door ${kicker}.",
 
@@ -358,17 +362,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		already_sending_staff_message = "Je bent al bezig met het versturen van een bericht naar het personeel. Wacht even.",
 		unable_to_send_identical_staff_message = "Je kunt niet twee dezelfde berichten naar het personeel versturen binnen 30 seconden.",
 
-		tp_coords_invalid_coordinates = "Ongeldige coördinaten.",
-		tp_coords_teleported_to_coordinates = "Teleporteerde naar coördinaten X: ${x}, Y: ${y}, Z: ${z}.",
-
-		teleported_to_waypoint = "Teleporteerde naar het genoteerde punt ${locationLabel}.",
-		no_waypoint_set = "Je moet een waypoint instellen.",
-
-		teleported_to_coordinates_logs_title = "Teleporteer naar coördinaten",
-		teleported_to_coordinates_logs_details = "${consoleName} is geteleporteerd naar coördinaten X: ${x}, Y: ${y}, Z: ${z}.",
-		teleported_to_waypoint_logs_title = "Teleporteer naar Waypoint",
-		teleported_to_waypoint_logs_details = "${consoleName} is geteleporteerd naar een waypoint bij ${locationLabel}.",
-
 		population_density_set_to = "De populatiedichtheid is gewijzigd naar ${multiplierLabel}%.",
 		population_density_set_off = "Het overschrijven van de bevolkingsdichtheid vermenigvuldiger is uitgeschakeld.",
 		population_density_is_not_on = "Het overschrijven van de bevolkingsdichtheid vermenigvuldiger is niet ingeschakeld.",
@@ -403,6 +396,13 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		you_are_not_in_a_vehicle = "Je zit niet in een voertuig.",
 		repaired_vehicle = "Voertuig gerepareerd.",
+		player_not_in_vehicle = "Die speler zit niet in een voertuig.",
+		no_character = "Speler is offline of heeft geen karakter geladen.",
+		repaired_player_vehicle = "Het voertuig van ${displayName} is gerepareerd.",
+		failed_player_repair = "Reparatie van het voertuig is mislukt.",
+
+		repaired_player_vehicle_logs_title = "Gerepareerd Voertuig van Speler",
+		repaired_player_vehicle_logs_details = "${consoleName} heeft het voertuig gerepareerd waar ${targetConsoleName} in zat.",
 
 		success_nos_refill = "NOS succesvol gevuld.",
 		failed_nos_refill = "NOS vullen mislukt.",
@@ -487,7 +487,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		attachment_off = "Bevestiging '${attachment}' succesvol uitgeschakeld.",
 
 		tint_invalid = "Ongeldige wapentint.",
-		tint_range_invalid = "Ongeldige wapenkleurbereik (moet tussen 0 en ${max} zijn).",
+		tint_index_invalid = "Ongeldige wapentint index.",
 		tint_failed_set = "Kon wapenkleur niet instellen.",
 		tint_removed = "Wapenkleur succesvol verwijderd.",
 		tint_set = "Wapenkleur succesvol ingesteld op `${tint}` (${tintIndex}).",
@@ -517,9 +517,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		item_durability_set_no_permission = "Poging om de duurzaamheid van een item in te stellen zonder de juiste machtigingen.",
 
 		item_metadata_set_no_permission = "Poging om de metadata van een item in te stellen zonder de juiste machtigingen.",
-		item_metadata_invalid_metadata = "Ongeldige item metadata.",
 		item_metadata_set_success = "Metadata succesvol ingesteld voor items in slot ${slotId}.",
 		item_metadata_set_failed = "Metadata instellen gefaald.",
+		item_metadata_missing_key = "Ontbrekende metagegevensleutel.",
 
 		advanced_metagame_on = "Geavanceerde metagame ingeschakeld.",
 		advanced_metagame_off = "Geavanceerde metagame uitgeschakeld.",
@@ -696,6 +696,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		weapon_spawn_ban = "Verlangend naar de `${weaponName}`? Dit is geen wapenarsenaal en dat wapen? Nog in de smidse.",
 		advanced_noclip_ban = "Probeer je een geheime doorgang door ongezien gangenstelsel? Dit is geen magische wals en die beweging? Niet op onze danskaart.",
 		illegal_local_vehicle_ban = "Het lijkt erop dat je het onzichtbare ros van Lord Mirage hebt gevonden! Helaas is deze mystieke rit gereserveerd voor de jaarlijkse spookparade.",
+		handling_field_ban = "Het lijkt erop dat je hebt geprobeerd de natuurkunde te versnellen. Leuke poging, maar in deze wereld houden we onze wielen stevig op de grond.",
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Slechte Creatie",
@@ -711,6 +712,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		type_illegal_event = "Illegaal Client Evenement",
 		type_illegal_freeze = "Illegale Freeze",
 		type_illegal_global = "Illegaal Globaal Gebruik",
+		type_illegal_handling_field = "Illegaal Handlingveld",
 		type_illegal_native = "Illegale Native-aanroep",
 		type_illegal_ped_spawn = "Gespawnde Ped",
 		type_illegal_server_event = "Illegaal Server Evenement",
@@ -768,6 +770,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		high_fov_debug = "Huidig: ${fov}",
 
 		illegal_oxy_run = "Speler heeft een oxy-run sneller voltooid dan menselijk mogelijk is.",
+
+		fov_warning = "Je FOV is ongebruikelijk hoog",
+		fov_warning_details = "Dit wordt waarschijnlijk veroorzaakt door een FOV-modifier. Huidig: ${fov}",
+
+		stretched_res_warning = "Gerekt Beeld (~r~${ratio}~w~)",
 
 		fast_movement_warning = "Je bent gemarkeerd voor te snel bewegen! Laat dit een ontwikkelaar weten en vertel wat je deed om dit te veroorzaken, want je zou dit chatbericht niet moeten krijgen.",
 		invincibility_warning = "Je bent gemarkeerd omdat je onsterfelijk bent! Laat dit zo snel mogelijk weten aan een ontwikkelaar en vertel wat je aan het doen was toen dit gebeurde, aangezien je dit chatbericht niet zou moeten ontvangen.",
@@ -1017,10 +1024,14 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		add_vehicle_command = "voertuig_toevoegen",
 		add_vehicle_command_help = "Voeg een voertuig toe aan de garage van iemand.",
 		add_vehicle_command_parameter_model = "model",
-		add_vehicle_command_parameter_model_help = "lookup_character",
+		add_vehicle_command_parameter_model_help = "De modelnaam of model-hash van het voertuig dat je wilt toevoegen. Als dit leeg wordt gelaten, wordt het voertuigmodel waarin je je momenteel bevindt toegevoegd.",
 		add_vehicle_command_parameter_server_id = "server-id",
 		add_vehicle_command_parameter_server_id_help = "De server-ID van de speler aan wie je een voertuig wilt geven. Laat dit leeg om automatisch jezelf te selecteren.",
 		add_vehicle_command_substitutes = "",
+
+		save_vehicle_command = "save_vehicle",
+		save_vehicle_command_help = "Sla het voertuig waarin je je momenteel bevindt (met zijn aanpassingen) op in je garage.",
+		save_vehicle_command_substitutes = "",
 
 		aimbot_command = "aimbot",
 		aimbot_command_help = "'aimbot' aan/uit zetten.",
@@ -1178,22 +1189,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		warning_message_command_parameter_message_help = "Het bericht dat je aan de spelers wilt tonen. Je kunt deze parameter leeg laten om het waarschuwingsbericht te verwijderen.",
 		warning_message_command_substitutes = "",
 
-		tp_coords_command = "tp_coords",
-		tp_coords_command_help = "Teleporteer naar bepaalde coördinaten.",
-		tp_coords_command_parameter_x = "x",
-		tp_coords_command_parameter_x_help = "De X-coördinaat waar u naar toe wilt teleporteren.",
-		tp_coords_command_parameter_y = "y",
-		tp_coords_command_parameter_y_help = "De Y-coördinaat waar u naar toe wilt teleporteren.",
-		tp_coords_command_parameter_z = "z",
-		tp_coords_command_parameter_z_help = "De Z-coördinaat waar u naar toe wilt teleporteren. Deze parameter is optioneel en als deze leeg blijft, worden automatisch de grondcoördinaten gezocht.",
-		tp_coords_command_parameter_w = "w",
-		tp_coords_command_parameter_w_help = "De W-coördinaat of richting waar u naar toe wilt teleporteren. Deze parameter is optioneel en als deze leeg wordt gelaten, wordt uw huidige richting gebruikt.",
-		tp_coords_command_substitutes = "tpc",
-
-		tp_waypoint_command = "tp_waypoint",
-		tp_waypoint_command_help = "Teleporteer naar uw ingestelde waypoint.",
-		tp_waypoint_command_substitutes = "tp_marker, tp",
-
 		population_density_command = "bevolkingsdichtheid",
 		population_density_command_help = "Overschrijf de globale bevolkingsdichtheid vermenigvuldiger.",
 		population_density_command_parameter_multiplier = "vermenigvuldiger",
@@ -1202,6 +1197,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		repair_vehicle_command = "repareer_voertuig",
 		repair_vehicle_command_help = "Repareer het voertuig waarin je zit.",
+		repair_vehicle_command_parameter_server_id = "server id",
+		repair_vehicle_command_parameter_server_id_help = "De server-id van het voertuig dat je wilt repareren. (optioneel)",
 		repair_vehicle_command_substitutes = "repareren",
 
 		enter_vehicle_command = "invoeren_voertuig",
@@ -1243,6 +1240,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		player_info_command_parameter_server_id = "server id",
 		player_info_command_parameter_server_id_help = "De server ID van de speler waarover je informatie wilt krijgen. Laat dit leeg als je informatie over jezelf wilt krijgen.",
 		player_info_command_substitutes = "speler, si",
+
+		ender_chest_command = "ender_kist",
+		ender_chest_command_help = "Toegang tot jouw ender kist.",
+		ender_chest_command_substitutes = "ek",
 
 		inventory_command = "inventaris",
 		inventory_command_help = "Opent een opgegeven inventaris.",
@@ -1315,9 +1316,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		set_metadata_command = "set_metadata",
 		set_metadata_command_help = "Stelt alle metadata van items in een bepaald vak in.",
 		set_metadata_command_parameter_slot = "vak",
-		set_metadata_command_parameter_slot_help = "Welk vak om de duurzaamheid van items in te stellen.",
-		set_metadata_command_parameter_metadata = "metadata",
-		set_metadata_command_parameter_metadata_help = "De metadata-json om in te stellen.",
+		set_metadata_command_parameter_slot_help = "Welk slot om items metadata in te stellen.",
+		set_metadata_command_parameter_key = "sleutel",
+		set_metadata_command_parameter_key_help = "De metadata sleutel die je wilt instellen.",
+		set_metadata_command_parameter_value = "waarde",
+		set_metadata_command_parameter_value_help = "De metadata waarde die je wilt instellen. (Leeg laten om een sleutel te verwijderen)",
 		set_metadata_command_substitutes = "metadata",
 
 		refill_nitro_command = "vulnitro",
@@ -1503,26 +1506,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		admin_command = "admin",
 		admin_command_help = "Opent het adminmenu.",
 		admin_command_substitutes = "",
-
-		tp_player_command = "tp_speler",
-		tp_player_command_help = "Teleporteert je naar een speler.",
-		tp_player_command_parameter_server_id = "server id",
-		tp_player_command_parameter_server_id_help = "De server-id van de speler waar je naartoe wilt teleporteren.",
-		tp_player_command_substitutes = "",
-
-		tp_here_command = "tp_hier",
-		tp_here_command_help = "Teleporteert een speler naar jou.",
-		tp_here_command_parameter_server_id = "server id",
-		tp_here_command_parameter_server_id_help = "De server id van de speler die je wilt teleporteren.",
-		tp_here_command_substitutes = "",
-
-		tp_to_command = "tp_naar",
-		tp_to_command_help = "Teleporteert een speler naar een andere speler.",
-		tp_to_command_parameter_source_id = "bron id",
-		tp_to_command_parameter_source_id_help = "De speler die je wilt teleporteren.",
-		tp_to_command_parameter_destination_id = "bestemming id",
-		tp_to_command_parameter_destination_id_help = "De speler waarnaar je wilt teleporteren.",
-		tp_to_command_substitutes = "",
 
 		-- game/airdrops
 		create_airdrop_command = "maak_luchtaanval",
@@ -1936,6 +1919,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		vehicle_info_command_help = "Printt informatie over het voertuig waarin je zit om problemen op te lossen.",
 		vehicle_info_command_substitutes = "",
 
+		vehicle_doors_command = "voertuig_deuren",
+		vehicle_doors_command_help = "Teken alle bestaande voertuigdeuren op het dichtstbijzijnde voertuig.",
+		vehicle_doors_command_substitutes = "",
+
 		delete_entity_command = "verwijder_entiteit",
 		delete_entity_command_help = "Verwijdert een entiteit met een bepaalde netwerk-ID.",
 		delete_entity_command_parameter_network_id = "netwerk-ID",
@@ -2144,6 +2131,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		door_debug_command_help = "Biedt informatie over nabije deuren.",
 		door_debug_command_substitutes = "",
 
+		-- game/effect_zones
+		effect_zones_debug_command = "effect_zones_debug",
+		effect_zones_debug_command_help = "Debug welke effectzones je momenteel bent.",
+		effect_zones_debug_command_substitutes = "",
+
 		-- game/elevators
 		elevator_enable_command = "elevator_aanzetten",
 		elevator_enable_command_help = "Zet de dichtstbijzijnde lift weer aan.",
@@ -2158,6 +2150,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		elevator_enable_command_all_substitutes = "",
 
 		-- game/emotes
+		emote_menu_command = "emote_menu",
+		emote_menu_command_help = "Schakel het emotemenu in of uit.",
+		emote_menu_command_substitutes = "",
+
 		emote_command = "emote",
 		emote_command_help = "Speel een emote af.",
 		emote_command_parameter_name = "naam",
@@ -2169,6 +2165,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		walk_command_parameter_name = "Radiolyden er nå satt til ${radioVolume}%.",
 		walk_command_parameter_name_help = "Din nåværende radiolyd er satt til ${radioVolume}%.",
 		walk_command_substitutes = "",
+
+		mood_command = "mood",
+		mood_command_help = "Stel je expressie/humeur in.",
+		mood_command_parameter_name = "naam",
+		mood_command_parameter_name_help = "De naam van de expressie/humeur.",
+		mood_command_substitutes = "",
 
 		-- game/evidence
 		fingerprint_command = "vingerafdruk",
@@ -2204,6 +2206,13 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		flag_swap_leaderboard_command_help = "Schakel het vlagwissel-scorebord in.",
 		flag_swap_leaderboard_command_substitutes = "",
 
+		-- game/flight_radar
+		callsign_command = "callsign",
+		callsign_command_help = "Stel je roepnaam in voor de vluchtradar.",
+		callsign_command_parameter_callsign = "roepnaam",
+		callsign_command_parameter_callsign_help = "Je roepnaam of leeg om te resetten.",
+		callsign_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "maak_forcefield",
 		create_forcefield_command_help = "Maakt een forcefield op jouw huidige positie.",
@@ -2233,6 +2242,13 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		fortnite_wipe_command_parameter_radius = "straal",
 		fortnite_wipe_command_parameter_radius_help = "De straal die je wilt wissen. Als je het leeg laat of op 0 zet, wordt alles gewist.",
 		fortnite_wipe_command_substitutes = "",
+
+		-- game/fortune_cookies
+		fortune_cookie_command = "koekje_van_geluk",
+		fortune_cookie_command_help = "Plaats een gelukskoekje met een vooraf ingesteld bericht.",
+		fortune_cookie_command_parameter_fortune = "geluk",
+		fortune_cookie_command_parameter_fortune_help = "Het geluksbericht dat je wilt.",
+		fortune_cookie_command_substitutes = "",
 
 		-- game/freecam
 		freecam_command = "freecam",
@@ -2512,6 +2528,23 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		jackpot_take_fees_command_help = "Neem een ​​vergoeding van alle jackpot-inventarissen.",
 		jackpot_take_fees_command_substitutes = "",
 
+		-- game/jail
+		check_jail_command = "check_jail",
+		check_jail_command_help = "Controleer hoeveel tijd een speler nog in de gevangenis heeft.",
+		check_jail_parameter_server_id = "server id",
+		check_jail_parameter_server_id_help = "De server-id van de speler.",
+		check_jail_command_substitutes = "",
+
+		modify_jail_command = "modify_jail",
+		modify_jail_command_help = "Pas de gevangenistijd van een speler aan.",
+		modify_jail_parameter_server_id = "server id",
+		modify_jail_parameter_server_id_help = "De server-id van de speler.",
+		modify_jail_parameter_operation = "operation",
+		modify_jail_parameter_operation_help = "De bewerking die je wilt uitvoeren. (toevoegen of aftrekken)",
+		modify_jail_parameter_amount = "bedrag",
+		modify_jail_parameter_amount_help = "Het aantal minuten dat je wilt toevoegen of verwijderen. Kan niet meer zijn dan 5 minuten tegelijk.",
+		modify_jail_command_substitutes = "mod_gevangenis",
+
 		-- game/lag
 		fake_lag_command = "fake_lag",
 		fake_lag_command_help = "Creëert nep lag.",
@@ -2588,7 +2621,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		mining_debug_command_substitutes = "",
 
 		-- game/miscellaneous
-		-- these two commands should remain the same on all languages in case someone joins in with a language they don't know.
+		-- these two commands (language & languages) should remain the same on all languages in case someone joins in with a language they don't know.
 		-- you can change the _help parts though if you'd like, not the "language code" though.
 		language_command = "language",
 		language_command_help = "Stel uw voorkeurstaal in. Deze verandering wordt opgeslagen voor volgende sessies. De verandering is onmiddellijk.",
@@ -2696,6 +2729,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		info_command_help = "Refleksjon er deaktivert.",
 		info_command_substitutes = "",
 
+		whois_command = "whois",
+		whois_command_help = "Vind een speler op basis van hun naam of een deel van hun naam.",
+		whois_command_parameter_search = "zoekopdracht",
+		whois_command_parameter_search_help = "De naam of een deel van de naam van de speler.",
+		whois_command_substitutes = "",
+
 		-- game/money
 		cash_command = "geld",
 		cash_command_help = "Toon je geldsaldo.",
@@ -2752,6 +2791,13 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		remove_notice_command_parameter_message_id = "bericht id",
 		remove_notice_command_parameter_message_id_help = "De id van het bericht dat u wilt verwijderen.",
 		remove_notice_command_substitutes = "",
+
+		-- game/npc_watch
+		npc_watch_command = "npc_kijken",
+		npc_watch_command_help = "Kijk hoe een willekeurige NPC zijn dag doorbrengt.",
+		npc_watch_command_parameter_in_vehicle = "in voertuig",
+		npc_watch_command_parameter_in_vehicle_help = "De NPC moet in een voertuig zijn. (standaard nee)",
+		npc_watch_command_substitutes = "",
 
 		-- game/objects
 		frozen_objects_scan_command = "bevroren_objecten_scan",
@@ -2903,6 +2949,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		phone_number_available_command_parameter_phone_number = "telefoonnummer",
 		phone_number_available_command_parameter_phone_number_help = "Het telefoonnummer dat je wilt controleren of deze beschikbaar is. Zorg ervoor dat het in het formaat XXX-XXXX staat.",
 		phone_number_available_command_substitutes = "nummer_beschikbaar",
+
+		-- game/plants
+		plants_debug_command = "plants_debug",
+		plants_debug_command_help = "Debug alle planten.",
+		plants_debug_command_substitutes = "",
 
 		-- game/player_control
 		drive_for_command = "rijden_voor",
@@ -3293,6 +3344,47 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		tablet_command_help = "Opent de tablet UI (als je een tablet hebt).",
 		tablet_command_substitutes = "",
 
+		-- game/teleporting
+		tp_back_command = "tp_terug",
+		tp_back_command_help = "Teleporteer terug naar waar je was voordat je laatst teleporteerde.",
+		tp_back_command_substitutes = "terug",
+
+		tp_coords_command = "tp_coords",
+		tp_coords_command_help = "Teleporteer naar bepaalde coördinaten.",
+		tp_coords_command_parameter_x = "x",
+		tp_coords_command_parameter_x_help = "De X-coördinaat waar u naar toe wilt teleporteren.",
+		tp_coords_command_parameter_y = "y",
+		tp_coords_command_parameter_y_help = "De Y-coördinaat waar u naar toe wilt teleporteren.",
+		tp_coords_command_parameter_z = "z",
+		tp_coords_command_parameter_z_help = "De Z-coördinaat waar u naar toe wilt teleporteren. Deze parameter is optioneel en als deze leeg blijft, worden automatisch de grondcoördinaten gezocht.",
+		tp_coords_command_parameter_w = "w",
+		tp_coords_command_parameter_w_help = "De W-coördinaat of richting waar u naar toe wilt teleporteren. Deze parameter is optioneel en als deze leeg wordt gelaten, wordt uw huidige richting gebruikt.",
+		tp_coords_command_substitutes = "tpc",
+
+		tp_waypoint_command = "tp_waypoint",
+		tp_waypoint_command_help = "Teleporteer naar uw ingestelde waypoint.",
+		tp_waypoint_command_substitutes = "tp_marker, tp",
+
+		tp_to_player_command = "tp_naar_speler",
+		tp_to_player_command_help = "Teleporteert je naar een speler.",
+		tp_to_player_command_parameter_server_id = "server id",
+		tp_to_player_command_parameter_server_id_help = "De server-id van de speler naar wie je wilt teleporteren.",
+		tp_to_player_command_substitutes = "",
+
+		tp_player_here_command = "tp_speler_hier",
+		tp_player_here_command_help = "Teleporteert een speler naar jou.",
+		tp_player_here_command_parameter_server_id = "server-id",
+		tp_player_here_command_parameter_server_id_help = "De server-id van de speler die je wilt teleporteren.",
+		tp_player_here_command_substitutes = "",
+
+		tp_player_player_command = "tp_speler_speler",
+		tp_player_player_command_help = "Teleporteert een speler naar een andere speler.",
+		tp_player_player_command_parameter_source_id = "bron-id",
+		tp_player_player_command_parameter_source_id_help = "De speler naar wie je wilt teleporteren.",
+		tp_player_player_command_parameter_destination_id = "bestemmings-ID",
+		tp_player_player_command_parameter_destination_id_help = "De speler naar wie je de bronspeler wilt teleporteren.",
+		tp_player_player_command_substitutes = "",
+
 		-- game/test_server
 		test_menu_command = "test_menu",
 		test_menu_command_help = "Schakel het test server menu in of uit.",
@@ -3452,11 +3544,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		explode_command_parameter_server_id_help = "Server-ID van de doelspeler.",
 		explode_command_substitutes = "",
 
-		ignite_player_command = "ontvlam_speler",
-		ignite_player_command_help = "Zet een speler kort in vuur en vlam.",
-		ignite_player_command_parameter_server_id = "server id",
-		ignite_player_command_parameter_server_id_help = "Server-ID van de doelspeler.",
-		ignite_player_command_substitutes = "ontvlam, brand",
+		taze_player_command = "taze_player",
+		taze_player_command_help = "Tazet een speler.",
+		taze_player_command_parameter_server_id = "server-ID",
+		taze_player_command_parameter_server_id_help = "Server-ID van de doelspeler.",
+		taze_player_command_substitutes = "stun, taze",
 
 		run_command_as_command = "voer_uit_als",
 		run_command_as_command_help = "Laat een andere speler een commando uitvoeren.",
@@ -3532,6 +3624,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		interface_focuses_command = "interface_focuses",
 		interface_focuses_command_help = "Controleer welke interfaces als gefocust zijn ingesteld.",
 		interface_focuses_command_substitutes = "interface_focus, focus, focuses",
+
+		-- jobs/bus_driver
+		bus_debug_command = "bus_debug",
+		bus_debug_command_help = "Teken alle bushaltes.",
+		bus_debug_command_substitutes = "",
 
 		--jobs/doj
 		lookup_character_command = "lookup_character",
@@ -3627,6 +3724,16 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		licenses_command_help = "Ontvang uw licenties.",
 		licenses_command_substitutes = "",
 
+		set_marriage_command = "set_marriage",
+		set_marriage_command_help = "Stel de huwelijksstatus in tussen twee personages.",
+		set_marriage_command_parameter_partner_a_cid = "partner a",
+		set_marriage_command_parameter_partner_a_cid_help = "Het karakter-ID van de eerste partner.",
+		set_marriage_command_parameter_partner_b_cid = "partner b",
+		set_marriage_command_parameter_partner_b_cid_help = "Het karakter-ID van de tweede partner.",
+		set_marriage_command_parameter_state = "staat",
+		set_marriage_command_parameter_state_help = "Kies tussen `getrouwd` of `gescheiden`.",
+		set_marriage_command_substitutes = "",
+
 		-- jobs/tow
 		toggle_mechanic_messages_command = "mechanici_meldingen",
 		toggle_mechanic_messages_command_help = "Schakelt het ontvangen van meldingen van monteurs in of uit.",
@@ -3648,6 +3755,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		set_fuel_command_parameter_fuel_level = "brandstofniveau",
 		set_fuel_command_parameter_fuel_level_help = "De brandstofniveau waarde die je wilt instellen. Als je dit leeg laat wordt `100` automatisch geselecteerd.",
 		set_fuel_command_substitutes = "brandstof",
+
+		-- vehicles/garage_access
+		manage_garage_command = "beheer_garage",
+		manage_garage_command_help = "Beheer je garage en wie er toegang toe heeft.",
+		manage_garage_command_substitutes = "bg",
 
 		-- vehicles/garages
 		toggle_garage_debug_command = "garage_debug_toggle",
@@ -3734,6 +3846,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		mute_sirens_command = "dempen_sirenes",
 		mute_sirens_command_help = "Dempt alle sirenes en claxons.",
 		mute_sirens_command_substitutes = "",
+
+		-- vehicles/trailers
+		toggle_trailer_command = "schakel_aanhangwagen",
+		toggle_trailer_command_help = "Koppelt los of maakt een aanhangwagen vast aan het voertuig waarin je zit.",
+		toggle_trailer_command_substitutes = "aanhangwagen",
 
 		-- vehicles/vehicles
 		flip_command = "omdraaien",
@@ -3889,7 +4006,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	core = {
-		version = "Versie"
+		version = "Versie",
+
+		access_denied = "Toegang geweigerd",
+		file_not_found = "Bestand niet gevonden.",
+		only_lua_files_allowed = "Alleen Lua-bestanden zijn toegestaan."
 	},
 
 	couches = {
@@ -3915,7 +4036,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		api_reported_no_updates = "De Discord API heeft geen updates gemeld in de emoji-lijst.",
 		emojis_added = "${added} emoji('s) toegevoegd.",
 		emojis_removed = "${removed} emoji('s) verwijderd.",
-		emojis_updated = "${added} emoji('s) toegevoegd en ${removed} emoji('s) verwijderd."
+		emojis_updated = "${added} emoji('s) toegevoegd en ${removed} emoji('s) verwijderd.",
+		no_emojis = "Er zijn geen emoji's beschikbaar."
 	},
 
 	errors = {
@@ -4082,7 +4204,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		dropped_timed_out_player_logs_title = "Gedropte Time-Out Speler",
 		dropped_timed_out_player_logs_details = "${consoleName} werd handmatig gedropt omdat ze al lange tijd geen ping hebben gegeven aan het framework.",
 
-		critical_error_while_loading_data = "Er is een kritieke fout opgetreden bij het laden van je gegevens."
+		critical_error_while_loading_data = "Er is een kritieke fout opgetreden bij het laden van je gegevens.",
+
+		ping_unstable = "Je ping is instabiel.",
+		ping_stable = "Je ping is nu weer stabiel."
 	},
 
 	whitelist = {
@@ -4092,25 +4217,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	-- game/*
 	admin_menu = {
 		menu_title = "Admin Menu",
-		spectate_player = "Speler bekijken",
-		teleport_player = "Teleporteer naar speler",
-		teleport_player_here = "Teleporteer speler naar jou",
-		failed_teleport_to_player = "Kon niet teleporteren naar speler.",
-		failed_teleport_player_here = "Kon speler niet naar jou teleporteren.",
-		invalid_target_server_id = "Ongeldige doel-server ID.",
-		invalid_destination_server_id = "Ongeldige bestemmings-server ID.",
-		invalid_source_server_id = "Ongeldige bron-server ID.",
-		failed_teleport_player_to_player = "Kan de speler niet teleporteren naar de andere speler.",
-		teleported_player_to_player = "Speler is succesvol geteleporteerd naar de andere speler.",
-
-		tp_player_logs_title = "geen baan",
-		tp_player_logs_details = "Verwijder de baanbeperking van het wapen. Standaard is dit nee, `1` of `y` voor ja.",
-		tp_here_logs_title = "doden",
-		tp_here_logs_details = "verwijder_twitch_ban_uitzondering",
-		tp_everyone_logs_title = "Verwijder een spelers Twitch ban-uitzondering.",
-		tp_everyone_logs_details = "${consoleName} heeft iedereen naar zichzelf geteleporteerd.",
-		tp_to_logs_title = "TP Naar",
-		tp_to_logs_details = "${consoleName} heeft ${sourceConsoleName} geteleporteerd naar ${targetConsoleName}."
+		spectate_player = "Speler bekijken"
 	},
 
 	afk = {
@@ -4278,7 +4385,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		net = "Netto",
 		net_ratio = "Netto Verhouding",
 		items_gambled = "Ingezetten Items",
-		screenshots_taken = "Screenshots Gemaakt"
+		screenshots_taken = "Screenshots Gemaakt",
+
+		called_airdrop_logs_title = "Airdrop Geroepen",
+		called_airdrop_logs_details = "${consoleName} heeft een luchtafwerping gevoelsd."
 	},
 
 	atms = {
@@ -4818,7 +4928,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		medical_care_1 = "Als je gewond raakt, kun je naar het ziekenhuis gaan om je in te checken en te laten behandelen. Je kunt het ziekenhuis op de kaart vinden. Je kunt ook verband of EHBO-kits gebruiken om jezelf te genezen.",
 		medical_care_2 = "Als je respawn zonder naar het ziekenhuis te zijn gebracht of als je het spel verlaat terwijl je neergaat, kun je enkele van je items verliezen. Een server herstart telt als het verlaten van het spel.",
 
-		safety_hint = "Tip: Je kunt je wapen van veiligheid afhalen door op ALT en de middelste muisknop te drukken. Blijf veilig!",
+		safety_hint = "Hint: Je kunt je wapen van de veiligheidsstand halen met behulp van ${keybind}. Blijf veilig!",
 
 		closing_sentence = "Er is nog veel meer te doen in de stad! Vraag rond en maak wat vrienden ;)"
 	},
@@ -4844,6 +4954,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		buddy_pass_used_logs_title = "Buddy Pass Gebruikt",
 		buddy_pass_used_logs_details = "${consoleName} heeft hun Buddy Pass gebruikt om ${targetConsoleName} door te duwen."
+	},
+
+	bus_map = {
+		bus_tracker = "Bus"
 	},
 
 	cache = {
@@ -5093,6 +5207,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		replace_outfit = "Vervang deze outfit.",
 		new_outfit = "Outfit opslaan",
 		no_saved_outfits = "Geen opgeslagen outfits.",
+		last_updated = "Laatst bijgewerkt ${ago}.",
 
 		save_outfit_title = "Outfit opslaan",
 		save_outfit_label = "Naam outfit:",
@@ -5205,24 +5320,45 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		fried_item = "Belgische frietjes zijn gefrituurd.",
 		failed_fry_item = "Frituren van frietjes is mislukt.",
 
-		grill_item = "Rauwe hamburgers grillen",
-		press_to_grill_item = "[${SeatEjectKey}] Rauwe hamburgers grillen",
-		grilling_item = "Hamburgers aan het grillen",
-		grilled_item = "Hamburgers zijn gegrild.",
-		failed_grill_item = "Grillen van hamburgers is mislukt.",
+		grill_item = "Grill",
+		press_to_grill_item = "[${SeatEjectKey}] Grill",
+		grilling_patty = "Patty grillen",
+		grilled_patty = "Gegrilde patty",
+		failed_grill_patty = "Niet gelukt om de patty te grillen.",
+		grilling_bacon = "Bacon bakken",
+		grilled_bacon = "Gebakken bacon",
+		failed_grill_bacon = "Niet gelukt om de bacon te bakken.",
+		frying_egg = "Ei bakken",
+		fried_egg = "Gebakken ei",
+		failed_fry_egg = "Niet gelukt om het ei te bakken.",
+
+		patty_recipe = "Grilpatty",
+		bacon_recipe = "Spek",
+		egg_recipe = "Bak ei",
 
 		hamburger_recipe = "Hamburger",
 		cheeseburger_recipe = "Cheeseburger",
+		bacon_burger_recipe = "Baconkaasburger",
+		bne_burger_recipe = "Bacon & ei burger",
+		veggie_burger_recipe = "Vegetarische burger",
 
 		assemble_burger = "Burger in elkaar zetten",
 		press_to_assemble_burger = "[${SeatEjectKey}] Burger in elkaar zetten",
-		assembling_burger = "Burger in elkaar zetten",
-		assembled_burger = "Burger in elkaar gezet",
-		failed_assemble_burger = "Kon de burger niet in elkaar zetten.",
-
-		assembling_cheeseburger = "Cheeseburger in elkaar zetten",
-		assembled_cheeseburger = "Cheeseburger in elkaar gezet",
-		failed_assemble_cheeseburger = "Kon de cheeseburger niet in elkaar zetten.",
+		assembling_burger = "Hamburger aan het maken",
+		assembled_burger = "Hamburger gemaakt",
+		failed_assemble_burger = "Hamburger maken mislukt.",
+		assembling_cheeseburger = "Cheeseburger aan het maken",
+		assembled_cheeseburger = "Cheeseburger gemaakt",
+		failed_assemble_cheeseburger = "Cheeseburger maken mislukt.",
+		assembling_bacon_burger = "Bacon Cheeseburger aan het maken",
+		assembled_bacon_burger = "Bacon Cheeseburger gemaakt",
+		failed_assemble_bacon_burger = "Bacon Cheeseburger maken mislukt.",
+		assembling_bne_burger = "Bacon-Egg Burger aan het maken",
+		assembled_bne_burger = "Maakte een Bacon n' Egg Burger",
+		failed_assemble_bne_burger = "Kon geen bacon n' egg burger maken.",
+		assembling_veggie_burger = "Maakt Veggie Burger",
+		assembled_veggie_burger = "Maakte een Veggie Burger",
+		failed_assemble_veggie_burger = "Kon geen veggie burger maken.",
 
 		mix_avocado_smoothie = "Avocado Smoothie mixen",
 		press_to_mix_avocado_smoothie = "[${SeatEjectKey}] Avocado Smoothie mixen",
@@ -5273,6 +5409,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		failed_refill_vape = "Het is niet gelukt om de vape bij te vullen.",
 
 		plain_vape = "Standaard (Geen Smaak)",
+		weed_vape = "THC-olie",
 		mango_vape = "Mango Smaak",
 		strawberry_vape = "Aardbei Smaak",
 		menthol_vape = "Menthol Smaak",
@@ -5314,6 +5451,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		process_rubber = "Rubber Verwerken",
 		press_process_rubber = "[${SeatEjectKey}] Rubber Verwerken",
 		failed_process_rubber = "Rubber verwerken mislukt.",
+
+		craft_pvc_pipe = "Maak PVC-buis",
+		press_craft_pvc_pipe = "[${SeatEjectKey}] Maak PVC-buis",
+		crafting_pvc_pipe = "Maakt PVC-buis",
+		crafted_pvc_pipe = "PVC-buis gemaakt.",
+		failed_craft_pvc_pipe = "Kon geen PVC-buis maken.",
 
 		process_aluminium = "Aluminium Verwerken",
 		press_process_aluminium = "[${SeatEjectKey}] Aluminium Verwerken",
@@ -5501,11 +5644,18 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		sawed_shotgun = "Shotgun afgezaagd.",
 		failed_saw_shotgun = "Mislukt om shotgun af te zagen.",
 
-		bake_brownies = "Brownies bakken",
-		press_bake_brownies = "[${SeatEjectKey}] Brownies bakken",
+		use_microwave = "Gebruik Magnetron",
+		press_to_use_microwave = "[${SeatEjectKey}] Gebruik Magnetron",
+
+		brownies_recipe = "Brownies",
 		baking_brownies = "Brownies worden gebakken",
 		baked_brownies = "Brownies gebakken.",
 		failed_bake_brownies = "Mislukt om brownies te bakken.",
+
+		weed_gummies_recipe = "Wiet Gummies",
+		making_weed_gummies = "Wiet Gummies maken",
+		made_weed_gummies = "Wiet gummies gemaakt.",
+		failed_make_weed_gummies = "Mislukt om wiet gummies te maken.",
 
 		mix_brushstroke_paint = "Meng penseelstreekverf",
 		press_mix_brushstroke_paint = "[${SeatEjectKey}] Meng penseelstreek verf",
@@ -5597,6 +5747,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		mixed_grimace_shake = "Grimace shake gemixt.",
 		failed_mix_grimace_shake = "Kon Grimace shake niet mixen.",
 
+		assemble_snowlauncher = "Monteer Sneeuwballenwerper",
+		press_to_assemble_snowlauncher = "[${SeatEjectKey}] Monteer Sneeuwballenwerper",
+		assembling_snowlauncher = "Sneeuwballenwerper aan het monteren",
+		assembled_snowlauncher = "Sneeuwballenwerper gemonteerd.",
+		failed_assemble_snowlauncher = "Mislukt om sneeuwballenwerper in elkaar te zetten.",
+
 		deconstruct_ammo = "Ontbind munitie",
 		press_to_deconstruct_ammo = "[${SeatEjectKey}] Ontbind munitie",
 
@@ -5620,6 +5776,32 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		crafting_ammo = "Ammunitie Maken",
 		crafted_ammo = "Ammunitie is gemaakt.",
 		failed_craft_ammo = "Ammo kon niet worden gecreëerd.",
+
+		process_weed = "Verwerk Wiet",
+		press_to_process_weed = "[${SeatEjectKey}] Verwerk Wiet",
+
+		package_1q_recipe = "Verpak 4x 1q Wiet",
+		packaging_1q = "Verpakken 4x 1q Wiet",
+		packaged_1q = "Verpakte 4x 1q wiet.",
+		failed_package_1q = "Mislukt om 4x 1q wiet te verpakken.",
+
+		process_bud_recipe = "Verwerk Wiet Top",
+		processing_bud = "Verwerken Wiet Top",
+		processed_bud = "Verwerkte wiet top.",
+		failed_process_bud = "Mislukt om wiet top te verwerken.",
+
+		process_meat = "Vlees Verwerken",
+		press_to_process_meat = "[${SeatEjectKey}] Vlees Verwerken",
+
+		beef_sausages_recipe = "Runderworstjes",
+		crafting_beef_sausages = "Runderworstjes Maken",
+		crafted_beef_sausages = "Runderworstjes gemaakt.",
+		failed_craft_beef_sausages = "Kan geen runderworstjes maken.",
+
+		bacon_recipe = "Spek",
+		crafting_bacon = "Spek Aan het Maken",
+		crafted_bacon = "Spek gemaakt.",
+		failed_craft_bacon = "Kan geen spek maken.",
 
 		no_required_items = "Je hebt niet alle benodigde items.",
 
@@ -5664,7 +5846,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		divorced = "Gescheiden",
 		divorced_description = "Selecteer of je ouders gescheiden zijn.",
 
-		["in"] = "in",
+		["in"] = "In",
 		out = "Uit",
 		up = "Omhoog",
 		down = "Omlaag",
@@ -6035,6 +6217,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		player_speed = "Spelersnelheid: ${playerSpeed}",
 		player_ped = "Speler-ped: ${playerPedId}",
 		heading = "Kop: ${heading}",
+		bearing = "Richting: ${bearing}°",
 		coords = "Coördinaten: ${coords}",
 		rotation = "Rotatie: ${rotation}",
 		normal = "Oppervlak: ${normal}",
@@ -6047,6 +6230,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		not_networked_vehicles = "Niet Verbonden Voertuigen: ${count}",
 		invisible_vehicles = "Onzichtbare voertuigen: ${count}",
 		parked_vehicles = "Geparkeerde Voertuigen: ${count}",
+		available_doors = "Beschikbare Deur ID's: ${doors}",
 
 		distance = "Afstand: ${distance}m",
 		distance_first = "Eerste positie opgeslagen.",
@@ -6062,6 +6246,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		vehicle_acceleration = "0 tot 60: ${time}",
 		vehicle_acceleration_120 = "0 tot 120: ${time}",
 		vehicle_acceleration_150 = "0 tot 150: ${time}",
+		vehicle_brake_distance = "Rem Afst: ${distance}m",
 		vehicle_acceleration_force = "Lanceerkracht: ${force}",
 
 		invalid_network_id = "Ongeldige netwerk id.",
@@ -6072,6 +6257,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		failed_entity_info = "Kan geen informatie over het object krijgen.",
 		printed_entity_info = "Objectserverinformatie weergegeven in F8.",
 
+		no_entity_network = "Geen entiteit met netwerk id ${networkId}.",
 		move_entity_success = "Entiteit met netwerk-ID ${networkId} is succesvol verplaatst.",
 		move_entity_failed = "Het is niet gelukt om de entiteit te verplaatsen.",
 		move_entity_no_permissions = "Poging om een entiteit te verplaatsen zonder de juiste toestemming.",
@@ -6208,6 +6394,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		unlocks = "Ontgrendelingen: <i>${cluster}</i>."
 	},
 
+	effect_zones = {
+		in_zones = "Effectzones: ~g~${zones}",
+		not_in_zones = "Niet in een effectzone.",
+		effects = "Effecten: ${effects}"
+	},
+
 	elevators = {
 		use_elevator = "[${InteractionKey}] Gebruik Lift",
 		elevator_title = "Lift",
@@ -6333,6 +6525,32 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		give_item_failed = "Het geven van ${itemName} aan de speler is mislukt."
 	},
 
+	emote_menu = {
+		menu_title = "OP-FW Emotes",
+
+		dance_emotes = "🕺 Dans Emotes",
+		dance_emotes_description = "Lijst van alle dans emotes.",
+		shared_emotes = "👫 Gedeelde Emotes",
+		shared_emotes_description = "Lijst van alle gedeelde emotes.",
+		prop_emotes = "📦 Prop Emotes",
+		prop_emotes_description = "Lijst van alle prop-emotes.",
+		animal_emotes = "🐻 Dierlijke Emotes",
+		animal_emotes_description = "Lijst van alle dierlijke emotes.",
+		pegi_emotes = "🔞 PEGI-Emotes",
+		pegi_emotes_description = "Lijst van alle PEGI-emotes.",
+		racing_emotes = "🏁 Race-Emotes",
+		racing_emotes_description = "Lijst van alle race-emotes.",
+
+		emotes = "Emotes",
+		emotes_description = "Lijst van alle emotes.",
+		moods = "Uitdrukkingen / Stemmingen",
+		moods_description = "Verander je uitdrukking / stemming.",
+		walkstyles = "Loopstijlen",
+		walkstyles_description = "Verander je loopstijl.",
+		cancel_emote = "Emote Annuleren",
+		cancel_emote_description = "Annuleer het huidige emote dat wordt afgespeeld."
+	},
+
 	exclusive_dealership = {
 		cost_money = "€${price}",
 		cost_points = "${points} OP Punten",
@@ -6424,6 +6642,16 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		flags_on_ground = "Vlaggen op de grond: ${flagsOnGround}"
 	},
 
+	flight_radar = {
+		callsign_invalid = "Je callsign moet tussen 3 en 10 karakters bevatten.",
+		callsign_set = "Callsign succesvol bijgewerkt naar `${callsign}`.",
+		callsign_reset = "Callsign succesvol gereset.",
+		callsign_set_failed = "Kon callsign niet bijwerken.",
+
+		emergency_type_1 = "PD",
+		emergency_type_2 = "EMS"
+	},
+
 	forcefields = {
 		invalid_radius = "Ongeldige straal (moet tussen 1 en 200 liggen).",
 		failed_create = "Kon geen krachtveld creëren.",
@@ -6442,7 +6670,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	fortune_cookies = {
 		opened_cookie_logs_title = "Fortune Cookie Geopend",
 		opened_cookie_logs_details = "${consoleName} heeft een fortune cookie geopend en heeft `${fortune}` gekregen.",
+		created_cookie_logs_title = "Fortune Cookie Aangemaakt",
+		created_cookie_logs_details = "${consoleName} heeft een fortune cookie aangemaakt met de boodschap `${fortune}`.",
 
+		missing_fortune = "Fortuin ontbreekt.",
+		failed_create_cookie = "Kon geen gelukskoekje maken.",
 		failed_open = "Kon het fortune cookie niet openen."
 	},
 
@@ -6573,6 +6805,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		decrypting = "Decoderen",
 		guns_disabled = "Wapentransport is momenteel uitgeschakeld.",
 		high_level_cooldown = "Kan geen verbinding maken met de FIB-server, probeer later opnieuw.",
+		timeout_cooldown = "FIB-firewall heeft de verbinding geblokkeerd, probeer het later opnieuw.",
 		failed_start_run = "Kon wapentransport niet starten.",
 		hack_timeout = "Verbinding met server verloren, probeer opnieuw.",
 
@@ -6682,6 +6915,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		revived_player_removed_injuries_details = "${consoleName} heeft ${targetConsoleName} gereanimeerd en hun letsel verwijderd.",
 		revived_player_title = "Speler gereanimeerd",
 		revived_player_details = "${consoleName} heeft ${targetConsoleName} gereanimeerd.",
+		revived_range_self_title = "Herleefde Bereik En Zelf",
+		revived_range_self_details = "${consoleName} heeft iedereen binnen een straal van ${radius}m gereanimeerd, inclusief henzelf.",
+		revived_range_title = "Herleefde Bereik",
+		revived_range_details = "${consoleName} heeft iedereen binnen een straal van ${radius}m gereanimeerd.",
 		death_alcohol_poisoning = "Je bent flauwgevallen door alcoholvergiftiging.",
 		character_has_hardcore_died = "${fullName} is overleden. Je kunt een andere karakter selecteren.",
 
@@ -6725,6 +6962,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		battery = "batterij",
 		fps = "FPS",
 		ping = "PING",
+		tps = "TPS",
 		autopilot = "autopiloot",
 		ground_asl = "AGL/ASL (${unit})",
 		heading = "RICHTING",
@@ -6746,6 +6984,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		fps_unit = "fps",
 		ping_unit = "ms",
+		tps_unit = "tps",
 
 		smart_warnings = "Waarschuwing: ${warnings}!",
 		dehydrated = "uitgedroogd",
@@ -6787,6 +7026,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	identification = {
 		los_santos = "Los Santos",
 		citizen_card = "Burgerkaart",
+		driver_license = "Rijbewijs",
 		first_name = "Voornaam",
 		last_name = "Achternaam",
 		gender = "Geslacht",
@@ -6794,6 +7034,17 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		gender_female = "Vrouw",
 		date_of_birth = "Geboortedatum",
 		citizen_id = "Burgerservicenummer (BSN)",
+
+		dl_no = "RIJBEWIJS NR.",
+		class = "KLASSE",
+
+		fn = "VN",
+		cid = "CID",
+		dob = "GEBOORTEDATUM",
+		sex = "GESLACHT",
+		iss = "UITGEGEVEN",
+		cls = "KLA",
+		["end"] = "END",
 
 		citizenship = "Nationaliteit",
 		citizenship_value = "VS",
@@ -6816,6 +7067,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		citizen_card_details = "${firstName} ${lastName} | Geboortedatum: ${dateOfBirth} | Geslacht: ${gender} | BSN: ${characterId}",
 		just_showed_citizen_card = "Je hebt zojuist je Burgerkaart laten zien. Wacht even.",
+		driver_license_details = "${voornaam} ${achternaam} | Geboortedatum: ${geboortedatum} | Geslacht: ${geslacht} | BurgerID: ${karakterId}",
+		just_showed_driver_license = "U heeft zojuist uw rijbewijs laten zien. Wacht even.",
 
 		boat_license = "Vaarbewijs",
 		boat_license_details = "Vaarbewijs | ${firstName} ${lastName} | Burger ID: ${characterId}",
@@ -6846,6 +7099,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		swat_badge_details = "SWAT | ${firstName} ${lastName} | Positie: ${positionName}",
 		management_badge = "Management Badge",
 		management_badge_details = "Management | ${firstName} ${lastName} | Positie: ${positionName}",
+		ftp_badge = "FTP Badge",
+		ftp_badge_details = "FTP | ${voornaam} ${achternaam} | Positie: ${positienaam}",
 		ems_badge = "EMS ID",
 		ems_badge_details = "EMS | ${firstName} ${lastName} | Positie: ${positionName}",
 		doctor_badge = "Dokter ID",
@@ -6868,6 +7123,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		badge_type_fib = "Federale onderzoeksafdeling",
 		badge_type_swat = "Speciale Wapens en Tactiek",
 		badge_type_management = "SASP Management",
+		badge_type_ftp = "Field Training Program",
 		badge_type_ems = "Spoedeisende Medische Diensten",
 		badge_type_doctor = "Medisch Residentieprogramma",
 		badge_type_bcfd = "Brandweer Blaine County",
@@ -6883,6 +7139,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		badge_type_short_fib = "FIB",
 		badge_type_short_swat = "SWAT",
 		badge_type_short_management = "Management",
+		badge_type_short_ftp = "FTP",
 		badge_type_short_ems = "Ambulance",
 		badge_type_short_doctor = "Dokter",
 		badge_type_short_bcfd = "BCFD",
@@ -6996,7 +7253,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		mug_shots = "Mugshots",
 		prison_store = "Gevangeniswinkel",
 		fruit_vendor = "Fruitverkoper",
-		supermarket = "Supermarkt",
+		food_market = "Voedselmarkt",
 		island_store = "Eilandwinkel",
 		travel_agency = "Reisbureau",
 		island_bar = "Eilandbar",
@@ -7070,7 +7327,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		nameable_title = "Naamgevingsitem naam:",
 
-		locker_restricted = "Je kunt dit item niet verplaatsen naar die inventaris.",
+		inventory_restricted = "Je kunt dit item niet in die inventaris verplaatsen.",
 
 		press_to_access_shredder = "[${InteractionKey}] Toegang tot shredder.",
 
@@ -7092,6 +7349,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		press_to_open_public_inventory = "~INPUT_REPLAY_SHOWHOTKEY~ Toegang tot ${label}",
 
 		burgershot_counter = "Burgershot Balie",
+		arcade_counter = "Arcade Balie",
+		tequilala_counter = "Tequi-la-la Balie",
+		prison_counter = "Gevangenisteller",
 
 		inventory_name_missing = "Ontbrekende inventarisnaamparameter.",
 
@@ -7128,6 +7388,13 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		crush_raw_ruby = "Ruwe Robijn Malen",
 		crush_raw_sapphire = "Ruwe Saffier Malen",
 		break_apart_weed = "감자칩을 \"칩스\"로 불러야 합니다, \"크리스프\"라고 하면 안 됩니다.",
+		brine_meat = "Pekel <i>Rauw Vlees</i>",
+		prepare_sandwich = "Bereid <i>BBQ Sandwich</i>",
+		pickle_cucumbers = "Inleggen <i>Komkommers</i>",
+		melt_chocolate = "Smelt <i>Pure Chocolade</i>",
+		craft_torch = "Maak <i>Fakkel</i>",
+		prepare_beans_toast = "Bereid <i>Bonen op Toast</i>",
+		mix_pancake_batter = "Mix <i>Pannenkoekbeslag</i>",
 
 		search = "Zoeken",
 		amount = "Hoeveelheid",
@@ -7151,6 +7418,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		logs_item_moved_title = "Item verplaatst",
 		logs_item_moved_details = "${consoleName} heeft ${moveAmount}x ${itemLabel} verplaatst naar ${endInventory}:${endSlot} vanuit inventaris ${startInventory}:${startSlot}.",
+		logs_item_given_title = "Item Gegeven",
+		logs_item_given_details = "${consoleName} heeft ${amount}x ${label} gegeven aan ${targetConsoleName}.",
 
 		logs_item_purchased_title = "Item(s) gekocht",
 		logs_item_purchased_no_tax_details = "${consoleName} heeft ${purchaseAmount}x `${itemLabel}` gekocht voor $${purchaseCost}.",
@@ -7202,6 +7471,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		citizen_card = "Identiteitskaart",
 		citizen_card_description = "Dient als identificatiebewijs, wapenvergunning en rijbewijs.",
+		driver_license = "Rijbewijs",
+		driver_license_description = "Een officieel rijbewijs. Absoluut niet uit een ontbijtgranendoos gehaald.",
 		phone = "Telefoon",
 		phone_description = "never:tm:",
 		radio = "Radio",
@@ -7249,6 +7520,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		swat_badge_description = "Een insigne voor officieren van de afdeling Speciale Wapens en Tactieken.",
 		management_badge = "Beheerdersinsigne",
 		management_badge_description = "Een insigne voor agenten van de beheerafdeling van de SASP.",
+		ftp_badge = "FTP Badge",
+		ftp_badge_description = "Een badge voor trainers van het Field Training Program.",
 		ems_badge = "EMS ID",
 		ems_badge_description = "Een ID voor EMS-paramedici.",
 		doctor_badge = "Arts-ID",
@@ -7291,20 +7564,28 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		compass_description = "43.3068 N 0.7668 W",
 		map = "Kaart",
 		map_description = "Toont waar je naartoe gaat en waar je bent geweest. Of misschien was je daar?",
+		bus_map = "Buskaart",
+		bus_map_description = "Een kaart van de busroutes in Los Santos. Toont alle haltes waar je een bus kunt nemen.",
+		flight_radar = "Vliegradar",
+		flight_radar_description = "Deze geavanceerde vliegradarontvanger is uw venster naar de lucht, met realtime inzichten in vliegtuigbewegingen zolang ze binnen het bereik van een radarstation zijn. Perfect voor luchtvaartliefhebbers en professionals, het biedt een uitgebreid overzicht van het luchtruim, zodat u altijd verbonden bent met de wereld daarboven.",
 		glass_breaker = "Noodraamhammer",
 		glass_breaker_description = "Gebruikt om autoruiten te breken in geval van nood.",
 
 		picture = "Afbeelding",
 		picture_description = "Verzamel alle herinneringen aan jou en je vrienden. (Grootte: 1x1)",
+		picture_wide = "Afbeelding",
+		picture_wide_description = "Verzamel alle herinneringen van jou en je vrienden. (Formaat: 14x8.5)",
 		printed_card = "Gedrukte Kaart",
 		printed_card_description = "Een kleine gedrukte kaart, misschien een visitekaartje? (Grootte: 9x5)",
 		printed_document = "Gedrukt Document",
 		printed_document_description = "Een gedrukt document, misschien een brief? (Formaat: 21x28)",
-		paper = "Fotopapier",
-		paper_description = "Een blanco vel papier om foto's op af te drukken. (Formaat: 1x1)",
-		card_paper = "Kaartpapier",
+		paper = "Foto Papier (1x1)",
+		paper_description = "Een blanco vel papier voor het afdrukken van vierkante foto's. (Formaat: 1x1)",
+		paper_wide = "Foto Papier (14x8.5)",
+		paper_wide_description = "Een blanco vel papier voor het afdrukken van brede foto's. (Formaat: 14x8.5)",
+		card_paper = "Kaart Papier (9x5)",
 		card_paper_description = "Een blanco vel papier om visitekaartjes op af te drukken. (Formaat: 9x5)",
-		document_paper = "Document Papier",
+		document_paper = "Document Papier (21x28)",
 		document_paper_description = "Een blanco vel papier om documenten af te drukken. (Grootte: 21x28)",
 		printer = "Printer",
 		printer_description = "Alleen printer, geen fax.",
@@ -7351,6 +7632,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		bean_machine_delivery_description = "Een tas vol met heerlijke traktaties van een klein koffietentje in de stad.",
 		kissaki_delivery = "Kissaki Maaltijd",
 		kissaki_delivery_description = "Een heerlijke verzameling sushi en andere Japanse delicatessen.",
+		green_wonderland_delivery = "Groene Wonderland Tas",
+		green_wonderland_delivery_description = "Een tas vol met jouw favoriete groene lekkernijen. #420blazeit",
 
 		ear_defenders = "Oorbeschermers",
 		ear_defenders_description = "Gebruikt om uw oren te beschermen tegen harde geluiden.",
@@ -7367,6 +7650,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		small_frog_description = "Gewoon een kleine kikker. Kijk naar dat kleine kereltje, hij is zo schattig!",
 		seashell = "Zeester",
 		seashell_description = "Een zeester van het strand. Je kunt de oceaan horen als je hem tegen je oor houdt.",
+		lucky_penny = "Geluksmunt",
+		lucky_penny_description = "Stuit op een glinstering van geluk met deze Geluksmunt, een zeldzame vondst op de weg die een vleugje serendipiteit belooft. Houd het dichtbij en laat geluk je pad leiden.",
+		small_frog_mk2 = "Kleine Kikker MK2",
+		small_frog_mk2_description = "In de modder ligt een ongrijpbare amfibische strijder: de Kleine Kikker MK2, te herkennen aan zijn miniatuur militaire helm en het kleine AK-geweer dat hij lijkt te dragen. Het spotten van één met je vergrootglas te midden van de modder is een zeldzame en amusante eer, een teken van de nieuwsgierige wonderen van de natuur.",
+		caterpillar = "Rups",
+		caterpillar_description = "Een tuinschat, deze opvallende rups kan een zeldzame vondst zijn in het gras, alleen opgemerkt door degenen met een vergrootglas en een scherp gevoel voor nieuwsgierigheid. Zijn levendige strepen en delicate bewegingen zijn een genot voor natuurliefhebbers.",
 
 		keys = "Sleutels",
 		keys_description = "Een paar sleutels voor een aantal deuren ergens.",
@@ -7492,6 +7781,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		water_description = "Gevaar! Dihydrogen monoxide is kleurloos en geurloos. Per ongeluk inademen van DHMO kan fataal zijn. Langdurige blootstelling aan zijn vaste vorm veroorzaakt ernstige weefselschade. Symptomen van DHMO-inname kunnen overmatig zweten en plassen zijn, en mogelijk een opgeblazen gevoel, misselijkheid, braken en onevenwichtigheid van lichaamselektrolyten.",
 		hamburger = "Hamburger",
 		hamburger_description = "De smaak van Amerika!",
+		bacon_burger = "Bacon Cheeseburger",
+		bacon_burger_description = "Een klassieke favoriet, deze bacon cheeseburger combineert sappig, gegrild rundvlees met knapperig spek en gesmolten kaas. Elke hap levert een perfecte mix van hartige smaken, waardoor het een tijdloze keuze is voor liefhebbers van hamburgers.",
+		bne_burger = "Bacon en Ei Burger",
+		bne_burger_description = "Verrijk je hamburgerervaring met deze combinatie van knapperig spek, een perfect gegrild ei en rijke gesmolten kaas op een hartige rundvleesburger. Het is een stevige, bevredigende maaltijd die briljant het ontbijt en de lunch met elkaar verbindt.",
+		veggie_burger = "Veggie Burger",
+		veggie_burger_description = "Deze lichte en verfrissende veggie burger heeft vier knapperige slabladeren tussen zachte broodjes, met een vleugje ketchup voor een lichte pittigheid. Een eenvoudige, groene variant op de klassieke burger, perfect voor wie op zoek is naar een lichtere maaltijdoptie.",
 		belgian_fries = "Belgische Frietjes",
 		belgian_fries_description = "Voor een betere smaak, DM @Giv3n#0753 en stuur hem \"fritas\" zonder iets anders toe te voegen.",
 		coke = "Coca Cola",
@@ -7660,6 +7955,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		weed_1q_description = "420 bro",
 		weed_1oz = "Weed 1 oz",
 		weed_1oz_description = "1680 bro",
+		weed_bud = "Wiettop",
+		weed_bud_description = "Een epische 420, maatje.",
 
 		oxy_prescription = "Oxy Recept",
 		oxy_prescription_description = "Vaag Oxy recept.",
@@ -7669,6 +7966,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		brownies = "Brownies",
 		brownies_description = "Smeltend, luchtig en dubbele hoeveelheid chocolade met slechts een vleugje extra kick om je te laten terugvallen en alles in twijfel te trekken.",
+		weed_gummies = "Wiet Gummies",
+		weed_gummies_description = "Een heerlijke manier om high te worden.",
 
 		ejector_seat = "Ejector-stoel",
 		ejector_seat_description = "Ejecto Seato Cuz!",
@@ -7718,6 +8017,25 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		hotwheels_towmater = "Takel",
 		hotwheels_towmater_description = "Mijn naam is Takel, als tomaat maar dan zonder de to.",
 
+		kinder_surprise = "Kinder Surprise-ei",
+		kinder_surprise_description = "Dit is geen gewoon ei! Kraak het open en ontdek een wereld vol verwondering en een knuffelbaar maatje dat staat te popelen om je vriend te zijn. Wie zal je binnenin vinden? Zal het de energieke Sparky McBowtie zijn, de wijze Captain Whiskerface, of misschien wel de stijlvolle Sir Fancy Pants? De verrassing is de helft van het plezier!",
+		plush_green = "Mosse McPluiskop",
+		plush_green_description = "Deze knuffel heeft last van warrelig haar, maar geen zorgen, ze zijn altijd klaar voor een avontuur (zelfs als ze het niet helemaal zien aankomen).",
+		plush_red = "Shades de Superster",
+		plush_red_description = "Deze knuffel is altijd cool, kalm en verzameld. Ze kunnen misschien niet zien zonder hun zonnebril, maar ze kunnen zeker de beat voelen.",
+		plush_pink = "Sir Chique Broekje",
+		plush_pink_description = "Deze knuffel is een geklede heer die er altijd op zijn best uitziet. Ze zijn misschien een beetje chique, maar ze zijn altijd nuchter (nou ja, zo nuchter als een knuffel met een hoge hoed kan zijn).",
+		plush_blue = "Sparky McStrik",
+		plush_blue_description = "Dit kleine ventje heeft de elektrische look helemaal onder de knie, met haar dat knettert van energie en een vlinderdas die altijd chic blijft. Laat je echter niet misleiden door de vonken - Sparky McStrik is helemaal gek op knuffels en gezellige avonden thuis. Raak gewoon niet zijn haar aan wanneer hij zich oplaadt voor een bedtijdverhaal!",
+		plush_white = "Kapitein Snorrengezicht",
+		plush_white_description = "Deze knuffel is een wijze oude ziel met een baard die verhalen vertelt. Ze kunnen misschien niet praten, maar ze hebben altijd een luisterend oor (of moeten we zeggen, een luisterende steek?).",
+		plush_yellow = "Sunshine Dread",
+		plush_yellow_description = "Deze knuffel draait helemaal om goede vibes en positieve energie. Ze zijn misschien een beetje chill, maar ze zijn altijd in voor een goede tijd.",
+		plush_orange = "Tang de Ontdekker",
+		plush_orange_description = "Deze knuffel is altijd op zoek naar nieuwe avonturen. Ze zijn misschien een beetje rommelig, maar ze zijn altijd klaar voor een uitdaging.",
+		plush_wasabi = "Wasabi Wonder",
+		plush_wasabi_description = "Dit kleintje is een ware zeldzaamheid, net als een frisse explosie van Wasabi! Hun oogverblindende groene vacht zal zeker de aandacht trekken. Onderschat hun kleine formaat niet - ze zitten boordevol persoonlijkheid en zijn altijd klaar voor een draai.",
+
 		boxing_gloves = "Bokshandschoenen",
 		boxing_gloves_description = "Verandert je in Rocky, maar waarschijnlijk krijg je geen vervolg...",
 		leash = "Hondenriem",
@@ -7744,6 +8062,21 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		jolly_rancher_cherry_description = "Geniet van de gedurfde en levendige kersensmaak van deze onweerstaanbare Jolly Rancher harde snoepjes.",
 		jolly_rancher_grape = "Druiven Jolly Rancher",
 		jolly_rancher_grape_description = "Ervaar de sappige en weelderige smaak van druiven met deze lekkermakende Jolly Rancher harde snoepjes.",
+
+		lollipop_pack = "Lollypakket",
+		lollipop_pack_description = "Duik in een mysterie van smaken met dit lollypakket. Elk exemplaar is een zoete verrassing, met een willekeurige mix van onze heerlijke en fruitige variëteiten. Een genot voor de smaakpapillen in elke kleurrijke verpakking!",
+		lollipop_apple = "Appellolly",
+		lollipop_apple_description = "Zoet met een tart twist, deze appellolly is als een wandeling door herfstboomgaarden, waarbij de essentie van sappige appels in elke lik wordt vastgelegd.",
+		lollipop_coke = "Colalolly",
+		lollipop_coke_description = "De klassieke colasmaak gevangen in een lolly. Het is een bruisende, verfrissende traktatie die de vertrouwde prik van een frisdrankfontein levert in een werveling van snoep.",
+		lollipop_grape = "Druivenlolly",
+		lollipop_grape_description = "Barstensvol met de rijke en sappige smaak van met de hand geplukte druiven, is deze lolly een paarse traktatie die je rechtstreeks naar de zonovergoten velden zal brengen.",
+		lollipop_raspberry = "frambozenlolly",
+		lollipop_raspberry_description = "Deze frambozenlolly biedt een explosie van bessengoedheid, waarin zoetheid wordt gecombineerd met een lichte zuurheid, net als het zomerfruit waar het naar vernoemd is.",
+		lollipop_strawberry = "Aardbeien Lolly",
+		lollipop_strawberry_description = "De essentie van zongerijpte aardbeien is geïnfuseerd in deze lolly, wat zorgt voor een zoete, met bessen gevulde ervaring die net zo heerlijk is als een zonnige dag.",
+		lollipop_watermelon = "Watermeloen Lolly",
+		lollipop_watermelon_description = "Een verfrissend plakje zomer, deze watermeloen lolly heeft alle zoetheid en geen van de zaden, waardoor het een sappige, hydraterende traktatie is voor elk moment van het jaar.",
 
 		bucket = "Emmer",
 		bucket_description = "Kan gebruikt worden als een noodhelm.",
@@ -7881,6 +8214,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		scratch_ticket_pearl_description = "Ga op zoek naar verborgen schatten met dit raadselachtige kaartje. Jouw $100 kan de sleutel zijn tot het ontgrendelen van een fortuin van maar liefst $210.000. Elke kras brengt je dichter bij de diepste geheimen van de oceaan en onvertelde rijkdommen.",
 		scratch_ticket_ching = "Kraslot (Cha Ching)",
 		scratch_ticket_ching_description = "Laat je onderdompelen in de elektrische sensatie van potentiële rijkdom. Voor slechts $100 biedt dit levendige kraslot de opwindende kans om tot wel $210.000 te winnen. Het is niet zomaar een spel, het is een spektakel van fortuin!",
+		scratch_ticket_carnival = "Kraslot (Kermis)",
+		scratch_ticket_carnival_description = "Stap nu naar voren en sluit je aan bij het kermis van kans! Voor slechts $100 kun je tot $210.000 winnen. De kermis is in de stad en de hoofdprijs wacht op je!",
 
 		avocado = "Avocado",
 		avocado_description = "Kleine, groene, bolvormige object. Geweldig om een dipsaus van te maken.",
@@ -7915,6 +8250,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		milk = "Melk",
 		milk_description = "Gewone koeienmelk geëxtraheerd met liefde.",
+
+		tomato_juice = "Tomatensap",
+		tomato_juice_description = "Deze levendig rode blik bevat de 'in-flight drank van kampioenen' (volgens geen enkele kampioen ooit). Tomatensap - het is als zonneschijn in een blikje, als zonneschijn vaag naar spijt smaakte.",
 
 		almond_milk = "Amandelmelk",
 		almond_milk_description = "Hoe hebben ze in hemelsnaam amandelen gemolken??????",
@@ -7954,6 +8292,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		empty_tank = "Lege Tank",
 		empty_tank_description = "Bevat geen propaan of propaanaccessoires meer.",
+
+		pvc_pipe = "PVC Buis",
+		pvc_pipe_description = "Dit veelzijdige stuk PVC-buis is een droom voor doe-het-zelvers, ideaal voor het maken van alles, van zelfgemaakte kanonnen tot inventieve lanceerplatforms. Het stevige maar lichte ontwerp maakt het perfect voor tal van creatieve en praktische projecten.",
 
 		pepper_spray = "Pepper spray",
 		pepper_spray_description = "MIJN OGEN!",
@@ -8000,6 +8341,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		plastic_chair_description = "Kan overal in de wereld geplaatst worden. Perfect voor kamperen, jagen en vissen!",
 		fishing_chair = "Visstoel",
 		fishing_chair_description = "Kan overal ter wereld geplaatst worden. Perfect voor kamperen, jagen en vissen!",
+		sleeping_bag = "Slaapzak",
+		sleeping_bag_description = "Een draagbaar bed voor de vermoeide reiziger, perfect voor kamperen, jagen en vissen!",
 		yoga_mat = "Yogamat",
 		yoga_mat_description = "Kan overal ter wereld geplaatst worden. Perfect voor kamperen, jagen en vissen!",
 		cooler_box = "Koelbox",
@@ -8016,6 +8359,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		disposable_grill_description = "Kan overal in de wereld worden geplaatst. Perfect voor kamperen, jagen en vissen! Dit item kan niet opnieuw worden opgenomen.",
 		grill = "Grill",
 		grill_description = "Kan overal in de wereld worden geplaatst. Perfect om te kamperen, jagen en vissen!",
+		torch = "Fakkel",
+		torch_description = "Deze fakkel doorbreekt de duisternis in de mijn, een stevig licht voor de onverschrokken ontdekkingsreiziger of mijnwerker, die de duisternis op afstand houdt met zijn constante vlam.",
+		ladder = "Ladder",
+		ladder_description = "Deze robuuste en stevige ladder is ontworpen om op een veilige en betrouwbare manier nieuwe hoogten te bereiken. Het grote, zware frame zorgt voor stabiliteit voor de uitdagende taken die wat meer bereik en kracht vereisen. Ideaal voor degenen die niet bang zijn om hoger te klimmen en de grote klussen aan te pakken.",
 		police_barrier = "Politie Barrier",
 		police_barrier_description = "Kan overal in de wereld worden geplaatst.",
 		dummy = "Dummie",
@@ -8142,6 +8489,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		cupcake_description = "Een luchtige cake gevuld met magische eenhoorn-room en versierd met toppings",
 		pink_lemonade = "Roze limonade",
 		pink_lemonade_description = "Absoluut niet zomaar gewone limonade die roze is geverfd zodat we je het dubbele kunnen vragen...",
+		iced_latte = "IJskoffie",
+		iced_latte_description = "Een verfrissende ijskoffie, perfect voor een warme dag.",
 
 		irish_coffee = "Ierse Koffie",
 		irish_coffee_description = "Vers gezette koffie met een beetje originele Ierse whiskey erin.",
@@ -8187,6 +8536,49 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		wood_description = "Een stuk hout vers van de boom.",
 		charcoal = "Houtskool",
 		charcoal_description = "Superieur aan normale kolen.",
+		canine_tooth = "Bergleeuwtand",
+		canine_tooth_description = "Een zeldzaam en krachtig reliek uit de wildernis, deze bergleeuwtand symboliseert de rauwe essentie van de jacht. Een zeldzame prijs voor elke jager.",
+		antlers = "Hertengeweien",
+		antlers_description = "Zelden gevonden, deze geweien zijn een gracieuze eerbetoon van een jager aan de stille dans van de natuur. Een zeldzame en elegante vondst.",
+		pancake_mix = "Pannenkoekmix",
+		pancake_mix_description = "Een veelzijdige mix die de eerste stap is naar een perfecte ochtend. Deze pannenkoekmix wacht erop om gewekt te worden met een scheut melk, klaar om te transformeren in een glad beslag voor jouw culinaire genot.",
+		beef_sausages = "Runderworsten",
+		beef_sausages_description = "Gemaakt van de beste stukken rauw vlees, zijn deze runderworsten een eerbetoon aan de vaardigheid van de jager en het vakmanschap van de slager. Klaar voor de grill, beloven ze een sissend feest rechtstreeks vanuit de wildernis naar je bord.",
+		raw_bacon = "Rauwe Bacon",
+		raw_bacon_description = "Deze premium bacon, gesneden uit de beste stukken en perfect gezouten, is klaar om elke maaltijd te veranderen in een hartige meesterwerk. Ideaal voor de grill, wacht het om knapperig te worden tot een smakelijke verrukking.",
+
+		liquid_smoke = "Vloeibare Rook",
+		liquid_smoke_description = "Deze fles vloeibare rook is een geheim van culinaire alchemie, een geconcentreerde essentie die rauw vlees doordrenkt met de oude fluisteringen van vuur en hout.",
+		raw_brined_meat = "Rauw Gepekeld Vlees",
+		raw_brined_meat_description = "Dit rauwe vlees, gekust door vloeibare rook, draagt de belofte van toekomstige feesten. Wanneer gegrild, verandert het in stoofvlees, een hartige getuigenis van geduld en vakmanschap.",
+		bread_loaf = "Brood Eenheid",
+		bread_loaf_description = "Een brood eenheid, vers uit de oven. Perfect voor broodjes, toast en stevige maaltijden.",
+		bbq_sauce = "BBQ Saus",
+		bbq_sauce_description = "Een rijke en pittige saus die een explosie van smaak toevoegt aan elk gerecht. Perfect voor grillen, marineren en dippen.",
+		bbq_sandwich = "BBQ Sandwich",
+		bbq_sandwich_description = "Een heerlijke sandwich gevuld met mals, rokerig vlees en pittige BBQ-saus. Een stevige maaltijd die de ziel verzadigt.",
+		cucumber = "Komkommer",
+		cucumber_description = "Een knapperige en verfrissende komkommer, perfect voor salades, snacks of het maken van zelfgemaakte augurken.",
+		salt = "Zout",
+		salt_description = "Een snufje zout kan elk gerecht transformeren, smaken versterken en diepte toevoegen aan je culinaire creaties.",
+		pickles = "Augurken",
+		pickles_description = "Een potje pittige, knapperige augurken, perfect voor tussendoor, broodjes en om een pittige kick aan je maaltijden te geven.",
+		dark_chocolate = "Pure Chocolade",
+		dark_chocolate_description = "Een rijke en decadente traktatie, pure chocolade is perfect om je zoete trek te bevredigen en te genieten van de diepe, complexe smaken van cacao.",
+		beans = "Bon​en",
+		beans_description = "Aanschouw! De Heilige Graal! Het Ambrozijn van de Goden, vervat in een vat van blik! Het is niet zomaar Heinz Gebakken Bonen, beste heer, maar een poort naar een rijk van puur, onbezoedeld BONENGENOT! Elke boon, een genotvolle hap, gedrenkt in een brouwsel zo weelderig, dat het geheimen fluistert van smaken onbekend. Dit is niet slechts voedsel; het is het levenselixer zelf, omhuld in een kelk van metaal, klaar om zijn grootheid te schenken aan jouw smaakpapillen. Omarm de boon! Vereer de boon! Laat elke hap jou transporteren naar een domein waar bonen heersen, en elke lepel een stap dichter bij de zaligheid van bonen is.",
+		beans_toast = "Bonen op Brood",
+		beans_toast_description = "Een klassiek Brits gerecht, bonen op brood is een eenvoudige en bevredigende maaltijd die perfect is voor ontbijt, lunch of diner. De rijke, hartige smaken van de bonen passen perfect bij het warme, boterachtige brood, wat resulteert in een troostende en stevige maaltijd die snel en gemakkelijk te bereiden is.",
+		pancake_batter = "Pannenkoekenbeslag",
+		pancake_batter_description = "Dit rijke en gladde pannenkoekenbeslag, gemaakt van onze premium pannenkoekmix en verse melk, is het canvas voor jouw ontbijtmeesterwerk. Klaar om op de grill te gaan en op te fluffen tot gouden, heerlijke pannenkoeken.",
+		pancakes = "Pannenkoeken",
+		pancakes_description = "Zacht en goudbruin, vers van de grill, zijn deze Amerikaanse pannenkoeken een heerlijk verwennerij om je dag te beginnen. Lekker, hoewel niet de gezondste keuze - denk aan ze als vrijheid op een bord, waar vrijheid inhoudt dat je geniet van elke met siroop doordrenkte hap!",
+		grilled_sausages = "Gegrilde Worstjes",
+		grilled_sausages_description = "Geniet van het rokerige aroma van deze vers gegrilde worstjes, een culinaire beloning voor de bekwame jager. Sappig, smaakvol en perfect bereid, ze zijn een rustieke verrukking die de geest van de jacht viert met elke hap.",
+		grilled_bacon = "Gegrilde Bacon",
+		grilled_bacon_description = "Krokant, goudbruin en onweerstaanbaar rokerig, deze gegrilde bacon is de ultieme verwennerij voor degenen die de fijnere dingen in het leven waarderen. Vers van de grill is het een bruisend feest van smaak, klaar om van te genieten.",
+		fried_egg = "Gebakken Ei",
+		fried_egg_description = "Zonnig-side-up en gegrild tot gouden perfectie, dit gebakken ei heeft een heerlijk lopende dooier omhuld door knapperig kantwerk van randen. Het is een eenvoudige maar weelderige keuze voor elke maaltijd, waaruit blijkt dat soms de beste smaken voortkomen uit de eenvoudigste methoden.",
 
 		beef_jerky = "Gedroogd rundvlees",
 		beef_jerky_description = "Enkele lekkere stukjes gedroogd rundvlees.",
@@ -8204,6 +8596,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		peanuts_description = "Een blik met pinda's, perfect als tussendoortje.",
 		olives = "Olijven",
 		olives_description = "Een kleine kom met olijven, de perfecte snack voor een feest.",
+		popcorn = "Popcorn",
+		popcorn_description = "Een zak popcorn, perfect voor een filmavond.",
 
 		rice = "Rijst",
 		rice_description = "Het zijn mollige, luchtige korrels.",
@@ -8667,8 +9061,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		weapon_addon_rc4 = "Remington R4-C",
 		weapon_addon_rc4_description = "Pittig en snel, de perfecte partner om in je squad te hebben. Zolang de roodharige het maar niet vastheeft.",
 
-		weapon_addon_pp19 = "PP-19 Vityaz",
-		weapon_addon_pp19_description = "Het toppunt van Russische excellentie, perfect voor elke vorm van 'Raid'.",
+		weapon_addon_mcx = "SIG MCX",
+		weapon_addon_mcx_description = "Beroemd om zijn aanpasbaarheid en precisie, de SIG MCX is een veelzijdig vuurwapen dat ongeëvenaarde betrouwbaarheid en prestaties biedt voor elke situatie.",
 
 		weapon_addon_m9a3 = "Beretta M9A3",
 		weapon_addon_m9a3_description = "Alles wat je nodig hebt om je vuile werk goedkoop te doen.",
@@ -8678,9 +9072,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		weapon_addon_m870 = "Remington M870",
 		weapon_addon_m870_description = "Perfecte sport- en jachtgeweer, hoewel het schieten op danny's niet echt een sport is ... toch?",
-
-		weapon_addon_rpk16 = "RPK-16",
-		weapon_addon_rpk16_description = "De meest perfecte machinegeweer die ooit heeft bestaan, vergeet alleen de trainingspak niet.",
 
 		weapon_addon_tacknife = "Ultimate Tactical Knife",
 		weapon_addon_tacknife_description = "Eindelijk heb je niveau 100 bereikt. De Kolonel zou trots zijn.",
@@ -8709,7 +9100,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		weapon_addon_mk18 = "MK18",
 		weapon_addon_mk18_description = "\"Blijf bewapend of word neergeschoten\" - George Washington (waarschijnlijk)",
 
-		weapon_addon_glock = "Glock 17",
+		weapon_addon_glock = "Glock 19X",
 		weapon_addon_glock_description = "De meest populaire handwapen ter wereld.",
 
 		weapon_addon_colt = "Colt 1851 Navy",
@@ -8734,7 +9125,22 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		weapon_addon_glock18c_description = "Maak kennis met de Glock 18C: de zakformaat feeststarter! Het heeft volautomatische vuurkracht en genoeg terugslag om je schietdag een avontuur te maken. Of je nu je schuilplaats verdedigt of gewoon indruk wilt maken op het schietterrein, de Glock 18C heeft je gedekt.",
 
 		weapon_addon_1911 = "1911 Kimber Tactical",
-		weapon_addon_1911_description = "De 1911 Kimber Tactical: Waar stijl en substantie samenkomen. Vertrouwd door enthousiastelingen overal, is het jouw go-to voor zowel verdediging als coolheidsfactor!"
+		weapon_addon_1911_description = "De 1911 Kimber Tactical: Waar stijl en substantie samenkomen. Vertrouwd door enthousiastelingen overal, is het jouw go-to voor zowel verdediging als coolheidsfactor!",
+
+		weapon_addon_svd = "SVD Dragunov",
+		weapon_addon_svd_description = "Precisie en kracht, de SVD Dragunov is een semi-automatisch sluipschuttersgeweer dat al tientallen jaren een hoofdbestanddeel is van militaire en wetshandhavings-eenheden. Het is de perfecte keuze voor langeafstandsgevechten en het zal ervoor zorgen dat je vijanden twee keer nadenken voordat ze je trotseren.",
+
+		weapon_addon_axmc = "AXMC",
+		weapon_addon_axmc_description = "De AXMC is een toppunt van scherpschutters technologie, met uitzonderlijke nauwkeurigheid op lange afstand en een modulair ontwerp dat geldt als de standaard voor precisieschieten.",
+
+		weapon_addon_6kh4 = "6KH4",
+		weapon_addon_6kh4_description = "Speciaal ontworpen voor de moderne jager, combineert deze 6KH4 bajonetmes een tijdloos ontwerp met robuuste functionaliteit, perfect voor de precieze eisen van de wildernis.",
+
+		weapon_addon_jericho = "Jericho 941",
+		weapon_addon_jericho_description = "De Jericho 941 valt op door zijn betrouwbaarheid, precisie en ergonomisch ontwerp en biedt schutters een superieure ervaring op het gebied van prestaties en comfort.",
+
+		weapon_addon_fn509 = "FN-509",
+		weapon_addon_fn509_description = "De FN-509 is een meesterwerk in balans en nauwkeurigheid, uitgerust met een capaciteit van 15 rondes om betrouwbaarheid en precisie bij elk schot te garanderen. Een vertrouwde metgezel voor verdediging en dienst."
 	},
 
 	invisibility = {
@@ -8765,6 +9171,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		move_to_repair = "Verplaats hierheen om het voertuig te repareren.",
 		repairing_vehicle = "Voertuig aan het repareren",
 		fix_visual_damage = "Herstellen van visuele schade",
+		no_vehicle_nearby = "Geen voertuig in de buurt.",
+		no_vehicle_seat_nearby = "Je bent niet in de buurt van de zitplaats van het voertuig.",
+		bleaching_vehicle_seat = "Bleken van voertuigzitplaats",
+		vehicle_seat_bleached = "De zitplaats van het voertuig succesvol gebleekt.",
 		measuring_color = "Kleur meten",
 		color_measurement = "Kleurmeting",
 		color_measurer_result = "**${primary}** (*${primaryId}*) primaire, **${secondary}** (*${secondaryId}*) secundaire, **${pearlescent}** (*${pearlescentId}*) parelmoer en **${wheel}** (*${wheelId}*) wielkleur.",
@@ -8799,6 +9209,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		drank_gasoline_death = "Vergiftiging door benzine",
 		drank_bleach_death = "Vergiftiging door bleekmiddel",
 		finished_joint = "Je hebt je joint afgemaakt.",
+		cant_place_here = "Je kunt dit hier niet plaatsen.",
 
 		using_cuffs = "Gebruikt Handboeien",
 		you_moved_too_fast = "Je bewoog te snel.",
@@ -8806,10 +9217,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		failed_burger_shot_delivery = "Mislukt om de burgershot maaltijd te openen.",
 		failed_bean_machine_delivery = "Mislukt om de bean machine levering te openen.",
 		failed_kissaki_delivery = "Mislukt om kissaki maaltijd te openen.",
+		failed_green_wonderland_delivery = "Kon de groene wonderlandtas niet openen.",
 
 		burger_shot_delivery_empty = "Deze burgershot maaltijd lijkt leeg te zijn.",
 		bean_machine_delivery_empty = "Die levering van Bean Machine lijkt leeg te zijn.",
 		kissaki_delivery_empty = "Die kissaki maaltijd leek leeg te zijn.",
+		green_wonderland_delivery_empty = "Die groene wonderlandtas leek leeg te zijn.",
 
 		logs_used_weather_spell_title = "Weerspreuk gebruikt",
 		logs_used_weather_spell_details = "${consoleName} heeft de weerspreuk `${itemName}` gebruikt.",
@@ -8862,11 +9275,26 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		the_ticket_was = "Het ticket was ${ticket}.",
 		recent_pots_will_show_here = "Recente potten worden hier getoond.",
 		server_id = "Het server-ID waar je naartoe wilt overdragen...",
-		transfer_items_to_anoter_person = "Items overdragen aan een andere persoon."
+		transfer_items_to_anoter_person = "Items overdragen aan een andere persoon.",
+		cancel_bet = "Annuleer Weddenschap"
 	},
 
 	jail = {
 		press_to_leave_jail = "Druk op ~INPUT_CONTEXT~ om de gevangenis te verlaten.",
+		invalid_server_id = "Ongeldige server-ID.",
+		failed_check_jail = "Kon gevangenistijd niet controleren.",
+		check_not_jailed = "Die speler zit niet in de gevangenis.",
+		remaining_time_check = "${fullName} zit nog ${remaining} in de gevangenis.",
+		invalid_operation = "Ongeldige operatie. Moet `toevoegen` of `aftrekken` zijn.",
+		invalid_amount = "Ongeldig bedrag. Moet boven 0 en onder of gelijk aan 5 zijn.",
+		failed_modify_jail = "Kon gevangenistijd niet aanpassen.",
+		modified_jail = "Gevangenistijd aangepast voor ${fullName}. Hun nieuwe gevangenistijd is ${remaining}.",
+
+		trigger_lockdown = "Activeer Lockdown",
+		press_trigger_lockdown = "[${InteractionKey}] Activeer Lockdown",
+		lockdown_active = "Lockdown Actief",
+		lockdown_title = "[Dispatch]",
+		lockdown_detals = "10-78, Lockdown geïnitieerd bij Bolingbroke Penitentiary. Dringende assistentie gevraagd.",
 
 		menu_title = "Gevangenis Menu",
 		check_remaining_time = "Controleer resterende tijd",
@@ -8875,9 +9303,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		close_menu = "Sluit menu",
 
 		sentence_reduced = "Je straf is verminderd met ${amount} maanden, je hebt nog ${remaining} maanden te gaan.",
+		sentence_increased = "Uw straf is met ${amount} maanden verhoogd, u heeft nog ${remaining} maanden over.",
 		sentence_over = "Uw zin is afgelopen.",
-		remaining_time = "Resterende tijd: ${remaining} maanden.",
-		jailed = "U bent ${amount} maanden gevangengezet.",
+		remaining_time_fmt = "${months} maanden (*${display}*)",
+		remaining_time = "Resterende tijd: ${remaining}.",
+		jailed = "Je bent opgesloten voor ${amount}.",
 
 		mission_help_1 = "Druk op ~INPUT_CONTEXT~ om de vloer schoon te maken.",
 		mission_help_2 = "Druk op ~INPUT_CONTEXT~ om iets te eten.",
@@ -8887,7 +9317,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		mission_2 = "Een boterham eten.",
 		mission_3 = "Trainen.",
 
-		mission_blip = "Gevangenismissie"
+		mission_blip = "Gevangenismissie",
+
+		modify_jail_logs_title = "Gewijzigde Gevangenistijd",
+		modify_jail_logs_details = "${consoleName} heeft de gevangenistijd voor ${targetCharacter} #${targetCharacterId} (${operation} ${amount} maanden) gewijzigd naar ${after}.",
+		triggered_lockdown_logs_title = "Lockdown Geactiveerd",
+		triggered_lockdown_logs_details = "${consoleName} heeft een gevangenislockdown geactiveerd."
 	},
 
 	kiosks = {
@@ -8898,6 +9333,13 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		fake_lag_invalid_fps = "Ongeldige fps.",
 		fake_lag_clamp = "Fps wordt beperkt tot onder ${fps}.",
 		fake_lag_disabled = "De valse vertraging is uitgeschakeld."
+	},
+
+	lag_switch = {
+		you_seem_to_be_lagging = "Je ping is instabiel. Een afgevuurde kogel is niet gesynchroniseerd.",
+
+		lag_detected_logs_title = "Lag Gedetecteerd",
+		lag_detected_logs_details = "${consoleName} probeerde te schieten terwijl hij aan het haperen was. Ping verschil: ${pingTimerDifference}. Ping instabiel: ${pingUnstable}."
 	},
 
 	lean = {
@@ -9012,7 +9454,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		god_tier = "Godenniveau",
 		custom_plate = "Aangepaste kentekenplaat",
 		custom_character_id = "Aangepast personage ID",
-		custom_phone_number = "Aangepast telefoonnummer",
+		custom_phone_number = "Aangepast Telefoonnummer",
 		reskin = "Reskin",
 		webstore = "Webwinkel",
 		none = "Geen",
@@ -9164,18 +9606,18 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 	lottery = {
 		lottery_announcement = "Lotterij aankondiging",
-		lottery_about_to_roll = "Er wordt over 5 minuten een winnaar getrokken voor de loterij van vandaag. De totale pot staat op $${totalPot}, waarbij jij $${betAmount} hebt ingelegd. Je kans om te winnen is ${odds}%.",
-		current_lottery_pot = "Het totale bedrag van de loterij is momenteel $${totalPot}. U heeft ingezet $${betAmount}. Uw kans om te winnen is ${odds}%.",
+		lottery_about_to_roll = "Over 5 minuten wordt er een winnaar getrokken voor de loterij van vandaag. De totale pot staat momenteel op $${totalAmount} waar jij $${betAmount} hebt ingezet. Jouw kans om te winnen is ${odds}%",
+		current_lottery_pot = "De totale pot staat momenteel op $${totalAmount} waar jij $${betAmount} hebt ingezet. Jouw kans om te winnen is ${odds}%.",
 		drew_a_lottery_winner = "Er is een winnaar getrokken voor de loterij.",
 		roll_lottery_no_permission = "De speler heeft geprobeerd de loterij te laten rollen, maar heeft geen toestemming om dit te doen.",
-		winner_has_been_picked = "${fullName} heeft het loterijpot van $${totalPot} gewonnen! Ze hebben $${betAmount} ingezet en hun kans om te winnen was ${odds}%.",
+		winner_has_been_picked = "${fullName} heeft de loterijpot van $${totalAmount} gewonnen! Ze hebben $${betAmount} ingezet en hun kans om te winnen was ${odds}%.",
 		claimed_lottery_winnings = "Alle loterijwinsten zijn geclaimd.",
 		no_lottery_winnings = "U heeft geen ongeclaimde loterijwinsten.",
 		internal_server_error = "Er is een interne serverfout opgetreden.",
 		use_disabled_animal = "U kunt de loterij niet gebruiken als een dierlijke ped.",
 
 		lottery_log_title = "Gewonnen Loterij",
-		lottery_log_description = "${fullName} (#${characterId}) heeft de loterijpot van $${totalPot} gewonnen. Ze wedden $${betAmount}."
+		lottery_log_description = "${fullName} (#${characterId}) heeft de loterijpot van $${totalAmount} gewonnen. Ze hebben $${betAmount} ingezet."
 	},
 
 	lucky_wheel = {
@@ -9223,9 +9665,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		failed_sell = "Het is niet gelukt om het item te verkopen.",
 
 		found_item_logs_title = "Item Gevonden Op Grond",
-		found_item_logs_details = "${consoleName} heeft een ${item} gevonden op de grond (${ground}).",
-		sold_item_logs_title = "Zeldzaam Item Verkocht",
-		sold_item_logs_details = "${consoleName} heeft een ${item} verkocht voor $${price}."
+		found_item_logs_details = "${consoleName} heeft een ${item} gevonden op de grond (${ground})."
 	},
 
 	mdt = {
@@ -9242,7 +9682,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	mechanics = {
 		move_here_check = "Kom hierheen om op upgrades te controleren",
 		checking_upgrades = "Voertuig upgrades controleren",
-		upgrades_list = "${armor}, ${engine}, ${brakes}, ${transmission} en ${turbo}.",
+		upgrades_list = "${armor}, ${engine}, ${brakes}, ${transmission}, ${suspension} en ${turbo}.",
 
 		has_no_turbo = "heeft geen turbo geïnstalleerd",
 		has_turbo = "heeft een turbo geïnstalleerd",
@@ -9264,6 +9704,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		transmission_2 = "Sport Transmissie",
 		transmission_3 = "Race Transmissie",
 
+		suspension_0 = "Standaard vering",
+		suspension_1 = "Verlaagde vering",
+		suspension_2 = "Straat vering",
+		suspension_3 = "Sport vering",
+		suspension_4 = "Wedstrijdophanging",
+
 		engine_0 = "Standaard Motor",
 		engine_1 = "Motor EMS Level 2",
 		engine_2 = "Motor EMS Level 3",
@@ -9282,10 +9728,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		catnip = "[${InteractionKey}] Geef Kattenkruid",
 		treat = "[${InteractionKey}] Geef Beloning",
 		check_up = "[${InteractionKey}] Medische controle",
-		chill = "[${InteractionKey}] Ontspannen",
-		meditate = "[${InteractionKey}] Mediteren",
-		salute = "[${InteractionKey}] Saluut brengen",
-		stretch = "[${InteractionKey}] Rekken",
 
 		feed_active = "Maxwell aan het voeren",
 		pet_active = "Maxwell aan het aaien",
@@ -9293,10 +9735,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		catnip_active = "Maxwell kattenkruid geven",
 		treat_active = "Maxwell een traktatie geven",
 		check_up_active = "Controleer Maxwell",
-		chill_active = "Ontspan met Maxwell",
-		meditate_active = "Meditatie met Maxwell",
-		salute_active = "Groet Maxwell",
-		stretch_active = "Doe rek- en strekoefeningen met Maxwell",
 
 		maxwell_appeared = "Maxwell is in de buurt verschenen.",
 		maxwell_shot = "Maxwell neergeschoten"
@@ -9459,6 +9897,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		server_tps_response = "${tps}",
 		license_copied = "Licentie met succes gekopieerd naar klembord.",
 		uptime = "Downtijd: ${uptime}",
+		empty_search = "Uw zoekopdracht is leeg.",
+		no_player_matching = "Geen speler gevonden die overeenkomt met uw zoekopdracht: *${search}*.",
+		whois_player = "Gevonden speler *${name}* die overeenkomt met uw zoekopdracht.",
 
 		picture_no_url = "URL ontbreekt.",
 		picture_invalid_url = "Ongeldige URL, moet beginnen met https://.",
@@ -9473,9 +9914,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		walk_forwards_success = "Lopen voor ${displayName} is succesvol aan/uit gezet.",
 		walk_forwards_failed = "Lopen voor ${displayName} kan niet aan/uit gezet worden.",
 
+		info_invalid_job = "Ongeldige baan",
 		info_title = "Voeg deze informatie toe bij bugrapporten",
 		info_character = "**Karakter-ID**: *${id}*",
-		info_job_data = "**Baangegevens:** *${job}*",
+		info_job_data = "**Baan Gegevens:** *${job}* - ${salaris}",
 		info_job_data_none = "**Baangegevens:** *Geen*",
 		info_licenses = "**Licenties:** *${licenses}*",
 		info_licenses_none = "**Licenties:** *Geen*",
@@ -9557,6 +9999,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		add_notice_missing_permissions = "Speler heeft geprobeerd een notitie toe te voegen zonder de juiste machtigingen.",
 		remove_notice_missing_permissions = "Speler heeft geprobeerd een notitie te verwijderen zonder de juiste machtigingen."
+	},
+
+	npc_watch = {
+		no_npc_nearby = "Geen NPC in de buurt om te zien."
 	},
 
 	objects = {
@@ -9670,25 +10116,36 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		about_detection_areas_text = "Detectiegebieden kunnen handige hulpmiddelen zijn voor het personeel wanneer ze proberen een bedrieger te identificeren die ongewenste voertuigen en/of voetgangers spawn. Gebruik `/detection_area_add` om een detectiegebied te maken. Zodra je een gebied hebt gemaakt, zal het hier verschijnen. Alleen de laatste 100 entiteiten worden gelogd in elk gebied.",
 		detection_area_title = "Detectiegebied #${detectionAreaId}",
 
+		about_settings_title = "Instellingen",
+		about_settings_text = "Deze velden stellen u in staat om verschillende instellingen te wijzigen om uw ervaring aan te passen.",
 		about_sound_effects_title = "Geluidseffecten",
-		about_sound_effects_text = "Deze velden stellen je in staat om sommige geluidseffecten te overschrijven. Ze hebben een link naar een .oog-bestand nodig om correct te werken. Het moet ook een https:// URL zijn en geen http://. Een gemakkelijke manier om een bestand te uploaden is om het naar Discord te uploaden, vervolgens de link te kopiëren en deze in de velden hier in te voeren.",
+		about_sound_effects_text = "Deze velden stellen u in staat om sommige geluidseffecten te overschrijven. Ze vereisen een directe link naar een .oog-bestand om goed te functioneren. Het moet ook een https:// URL zijn en geen http://. Onthoud dat Discord-links zullen verlopen.",
+		about_staff_settings_title = "Medewerker Instellingen",
+		about_staff_settings_text = "Als je medewerkersrechten hebt, kunnen deze velden worden gebruikt om bepaalde instellingen met betrekking tot medewerkers te wijzigen.",
 		radio_mic_click_on = "Radio Mic Klik (Aan)",
 		radio_mic_click_off = "Radio Mic Klik (Uit)",
 		lean_cam_mode = "Leun-Richt-Camera",
 		lean_option_1 = "Vasthouden om te schakelen",
 		lean_option_2 = "Drukken om te schakelen",
-		lean_option_3 = "Uit",
 		clipboard_animation = "Clipboard-animatie",
+		chop_shop_sound = "Chop Shop Radio Geluid Uitschakelen",
+		seatbelt_sound = "Geluid van Autogordelwaarschuwing Uitschakelen",
 		sound_effect_placeholder = "URL naar .oog bestand...",
-		sound_effect_save = "Opslaan",
-		sound_effect_reset = "Resetten",
+
+		button_save = "Opslaan",
+		button_reset = "Resetten",
+		value_off = "Uit",
+		value_on = "Aan",
+		sound_off = "Geluid Uit",
+		sound_on = "Geluid Aan",
 
 		reduce_epilepsy = "Verminder flikkerende beelden (epilepsievriendelijk)",
+		pause_menu_emote = "Emote Pauze Menu",
 		disable_tablet_animation = "Tablet-animatie uitschakelen",
-		staff_notifications_reports = "Melding notificaties",
-		staff_notifications_staff_chat = "Staff-chat notificaties",
-		staff_notifications_general = "Algemene notificaties",
-		staff_notifications_anti_cheat = "Anti-cheat notificaties",
+		staff_notifications_reports = "Meldingsgeluiden voor Rapporten (geluid)",
+		staff_notifications_staff_chat = "Meldingsgeluiden voor Medewerkerschat (geluid)",
+		staff_notifications_general = "Algemene meldingen (Geluid)",
+		staff_notifications_anti_cheat = "Anti-Cheat meldingen (Geluid)",
 
 		december_1 = "1 december",
 		december_2 = "2 december",
@@ -9765,8 +10222,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		about_unusual_explosions = "Ongebruikelijke explosie-evenementen die normaal gesproken niet plaatsvinden.",
 		explosions_by_type_title = "Explosies per type",
 		players_causing_explosions_title = "Spelers die explosies veroorzaken",
-		show_common_events_off = "Vaak voorkomende evenementen niet weergeven: UIT",
-		show_common_events_on = "Vaak voorkomende evenementen weergeven: AAN",
+		include_common_events_off = "Inclusief veelvoorkomende gebeurtenissen: UIT",
+		include_common_events_on = "Inclusief veelvoorkomende gebeurtenissen: AAN",
 
 		explosion_events_type = "Type explosie",
 		explosion_events_amount = "Aantal explosies",
@@ -9800,6 +10257,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		model = "Model",
 		label = "Label",
 		amount = "Bedrag",
+		time_ago = "Tijd geleden",
 		console_name = "Speler",
 		expected = "Verwacht",
 		actual = "Feitelijk",
@@ -10462,7 +10920,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		not_paid = "Niet Betaald",
 		insert_dollar = "[${InteractionKey}] Stop $${amount}",
 
-		no_cash = "Je hebt geen dollar.",
+		no_cash = "Je hebt geen $4 in contanten.",
 		max_time = "De parkeermeter heeft zijn maximum bereikt.",
 		failed_pay = "Kon parkeermeter niet betalen."
 	},
@@ -10504,6 +10962,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		roll_message = "gooide een aangepaste dobbelsteen met ${rolls}d${max} instellingen en kreeg ${totalValue}",
 		rps_message = "speelde steen papier schaar en koos ${rps}",
 		citizen_card_message = "toonde een ID-kaart (${characterId})",
+		driver_license_message = "toonde een rijbewijs (${characterId})",
 		badge_message = "toonde een badge (${characterId})",
 		license_message = "liet een vergunning zien (${characterId})",
 		ped_message_logs_title = "Ped Bericht",
@@ -10608,6 +11067,36 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		phone_number_is_not_available = "Het telefoonnummer `${phoneNumber}` is niet beschikbaar."
 	},
 
+	plants = {
+		planting_seed = "Zaad planten",
+		seed_planted = "Zaad succesvol geplant.",
+		failed_plant = "Zaad planten mislukt.",
+		cant_plant_here = "Je kunt hier geen zaad planten.",
+
+		press_water_plant = "[${InteractionKey}] Water geven",
+		press_harvest_plant = "[${InteractionKey}] Oogsten",
+		press_destroy_plant = "[${SeatEjectKey}] Plant verwijderen",
+		watering_plant = "Plant water geven",
+		harvesting_plant = "Plant oogsten",
+		destroying_plant = "Plant verwijderen",
+
+		plant_weed = "Plant wieden",
+
+		planted_seed_logs_title = "Gezaaid Zaad",
+		planted_seed_logs_details = "${consoleName} heeft een ${plant} (#${plantId}) gezaaid op ${material}.",
+		harvested_plant_logs_title = "Geoogste Plant",
+		harvested_plant_logs_details = "${consoleName} heeft een ${plant} (#${plantId}) geoogst en ontving ${items}.",
+		watered_plant_logs_title = "Plant Watergegeven",
+		watered_plant_logs_details = "${consoleName} heeft een ${plant} (#${plantId}) water gegeven.",
+		ran_over_plant_logs_title = "Plant Overgereden",
+		ran_over_plant_logs_details = "${consoleName} is over een plant heen gereden (#${plantId}).",
+		shoveled_plant_logs_title = "Plant Uitgegraven",
+		shoveled_plant_logs_details = "${consoleName} heeft een plant (#${plantId}) uitgegraven (vernietigd).",
+
+		total_plants = "Totaal aantal planten: ${count}",
+		nearby_plants = "Aangrenzende planten: ${count}"
+	},
+
 	player_control = {
 		unable_to_drive_for_yourself = "Je kunt geen chauffeur voor jezelf zijn.",
 		player_is_not_nearby = "De speler met server-ID ${serverId} is niet in de buurt.",
@@ -10636,7 +11125,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	players = {
-		player_left = "Speler vertrokken [${serverId}]"
+		player_left = "Speler vertrokken [${serverId}]",
+		player_exited = "Speler Uitgelogd [${serverId}]",
+		player_crashed = "Speler Crashte [${serverId}]"
 	},
 
 	pole_dancing = {
@@ -10673,9 +11164,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		invalid_domain = "Dit domein is niet toegestaan.",
 		print = "Printen",
 		printing = "Aan het printen...",
+		document_title = "Mijn gave titel",
+		image_url = "https://files.catbox.moe/ttt1e4.jpg",
 
 		printed_logs_title = "Geprinte afbeelding",
-		printed_logs_details = "${consoleName} heeft een `${itemName}` afgedrukt met `${paperType}` met de afbeeldings-URL `${url}`, bovenste-tekst: `${topText}` en onderste-tekst: `${bottomText}`."
+		printed_logs_details = "${consoleName} drukte een `${itemName}` af op `${paperType}` met de afbeeldings-URL `${url}`, titel: `${title}`, bovenste tekst: `${topText}` en onderste tekst: `${bottomText}`."
 	},
 
 	prop_hide = {
@@ -10729,7 +11222,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		placing_prop = "Prop plaatsen",
 		pickup_prop = "Prop opnemen",
 		setting_up_tire_wall = "Tire Wall opzetten",
-		destroying_tire_wall = "Tire Wall vernietigen"
+		destroying_tire_wall = "Tire Wall vernietigen",
+
+		placed_prop_logs_title = "Geplaatste Prop",
+		placed_prop_logs_details = "${consoleName} plaatste een `${itemName}` op ${coords} (ID: ${propId}).",
+		spawned_prop_logs_title = "Verschenen Prop",
+		spawned_prop_logs_details = "${consoleName} heeft een prop gespawned met model `${modelName}` op ${coords} (ID: ${propId})."
 	},
 
 	radio = {
@@ -11229,13 +11727,19 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	smoothies = {
 		blend = "Blenden",
 		close = "Sluiten",
+		name_placeholder = "Fruit Smoothie",
+		name_suffix = "Smoothie / Milkshake",
+
+		name_default = "Heerlijk",
+		name_drugs = "Verdacht",
+		name_alcohol = "Alcoholisch",
 
 		use_blender = "[${InteractionKey}] Gebruik Blender",
 		blending = "Blenden",
 		no_ingredients = "Je hebt geen ingrediënten om een smoothie te maken.",
 
-		milkshake_label = "Milkshake (${flavors})",
-		smoothie_label = "Smoothie (${flavors})",
+		milkshake_label = "${name} Milkshake",
+		smoothie_label = "${name} Smoothie",
 		seperator = "en"
 	},
 
@@ -11365,7 +11869,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		spy_ui_connecting = "Verbinding maken met de microfoon bug (#${deviceId})",
 		spy_ui_connection_failed = "Verbinding maken met de microfoon bug (#${deviceId}) is mislukt)",
 		spy_ui_awaiting_data = "Wachten op gegevens...",
-		spy_ui_data_failed = "Gegevens niet verkregen."
+		spy_ui_data_failed = "Gegevens niet verkregen.",
+
+		used_tracker_logs_title = "Gebruik van Voertuig Tracker",
+		used_tracker_logs_details = "${consoleName} heeft een voertuig tracker gebruikt op voertuig ${vehicleId}.",
+		used_bug_logs_title = "Gebruik van Microfoon Bug",
+		used_bug_logs_details = "${consoleName} gebruikte een microfoonbug op ${identifier}."
 	},
 
 	starter_car = {
@@ -11505,6 +12014,36 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		user_not_found = "De gezochte gebruiker werd niet gevonden op de server.",
 		invalid_character_id = "Ongeldige karakter ID parameter verzonden.",
 		invalid_license_identifier = "Ongeldige licentie ID parameter verzonden."
+	},
+
+	teleporting = {
+		source_no_character = "Bronspeler heeft geen geladen personage.",
+		target_no_character = "Doelspeler heeft geen geladen personage.",
+		invalid_coordinates = "Ongeldige coördinaten.",
+		no_waypoint_set = "Geen routebepaling ingesteld.",
+		failed_teleport_to_player = "Mislukt om naar speler te teleporteren.",
+		failed_teleport_player_here = "Mislukt om speler naar jou te teleporteren.",
+		failed_teleport_player_player = "Mislukt om speler naar speler te teleporteren.",
+		no_back_coords = "Nergens om terug naar te teleporteren.",
+		cant_tp_same_player = "Je kunt een speler niet naar zichzelf teleporteren.",
+		cant_tp_self_self = "Je kunt jezelf niet naar jezelf teleporteren.",
+
+		use_tp_to_player = "Gebruik `/tp_to_player` om jezelf naar een speler te teleporteren.",
+		use_tp_player_here = "Gebruik `/tp_player_here` om een speler naar jou te teleporteren.",
+
+		teleported_to_coordinates = "Geteleporteerd naar `${location}`. (${coords})",
+		teleported_to_player = "Geteleporteerd naar ${displayName}.",
+		teleported_player_here = "Geteleporteerd ${displayName} naar jou.",
+		teleported_player_player = "Geteleporteerd ${sourceName} naar ${targetName}.",
+
+		teleport_to_coords_logs_title = "Teleport naar Coördinaten",
+		teleport_to_coords_logs_details = "${consoleName} teleporteerd naar coördinaten ${coords}.",
+		teleport_to_player_logs_title = "Teleporteer naar Speler",
+		teleport_to_player_logs_details = "${consoleName} teleporteerd naar ${targetConsoleName}.",
+		teleport_player_here_logs_title = "Teleporteer Speler Naar Zichzelf",
+		teleport_player_here_logs_details = "${consoleName} teleporteerd ${targetConsoleName} naar henzelf.",
+		teleport_player_player_logs_title = "Teleporteer Speler Naar Speler",
+		teleport_player_player_logs_details = "${consoleName} heeft ${sourceConsoleName} geteleporteerd naar ${targetConsoleName}."
 	},
 
 	teleporters = {
@@ -11652,6 +12191,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		vehicles = "Voertuigopties",
 		spawn_car = "Voertuig spawnen",
 		upgrade_vehicle = "Voertuig upgraden",
+		break_windows = "Ramen breken",
 		pop_tires = "Lekke banden",
 		detach_doors = "Deuren losmaken",
 		damage_vehicle = "Voertuig beschadigen",
@@ -11660,6 +12200,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		player = "Speler Opties",
 		starve = "Je hongerig maken",
+		add_stress = "Stress toevoegen",
 		feed = "Je voeden",
 		relief_stress = "Stress verlichten",
 		reset_health = "Gezondheid resetten",
@@ -11745,7 +12286,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	trading_cards = {
-		access_store = "[${InteractionKey}] Toegang tot Winkel",
+		access_store = "Druk op ~INPUT_CONTEXT~ om toegang te krijgen tot de handelskaartenwinkel.",
 
 		buy_pack = "${packName} Kopen",
 		store_title = "Kaartenwinkel",
@@ -11942,7 +12483,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	vape = {
 		press_to_use = "Druk op ~INPUT_CONTEXT~ om een ​​hijs te nemen. Druk op ~INPUT_FRONTEND_CANCEL~ om de e-sigaret weg te bergen.",
 
-		plain_vape = "Geek Bar (Geen Smaak)",
+		plain_vape = "Geek Bar",
+		weed_vape = "Geek Bar (THC-olie)",
 		mango_vape = "Geek Bar (Mango)",
 		strawberry_vape = "Geek Bar (Aardbei)",
 		menthol_vape = "Geek Bar (Menthol)",
@@ -12056,6 +12598,20 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		refilling_bottle = "Fles vullen"
 	},
 
+	weed = {
+		strain_default = "Wild Haze",
+		strain_lemon = "Lemon Haze",
+		strain_northern = "Northern Lights",
+		strain_kush = "OG Kush",
+
+		default_emoji = "🥦",
+		lemon_emoji = "🏃",
+		northern_emoji = "🛡️",
+		kush_emoji = "🦁",
+
+		strain_description = "<b>Soort:</b> <i>${strain}</i> ${emoji}"
+	},
+
 	weed_field = {
 		pick_weed = "Druk op ~INPUT_CONTEXT~ om wiet te plukken.",
 		picking_weed = "Wiet aan het plukken"
@@ -12092,8 +12648,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		explode_success = "Succesvol ${consoleName} laten ontploffen.",
 		explode_failed = "Niet gelukt om de speler te laten ontploffen.",
 
-		ignite_success = "Succesvol ${consoleName} in brand gestoken.",
-		ignite_failed = "Niet gelukt om de speler in brand te steken.",
+		taze_success = "Speler ${consoleName} succesvol getaserd.",
+		taze_failed = "Speler niet succesvol getaserd.",
 
 		flashbang_success = "Succesvol ${consoleName} verblind met een flashbang.",
 		flashbang_failed = "Kon de speler niet verblinden met een flashbang.",
@@ -12192,6 +12748,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		second = "seconde",
 		seconds = "seconden",
 		just_now = "zojuist",
+		now = "nu",
 
 		month_1 = "januari",
 		month_2 = "februari",
@@ -12277,6 +12834,35 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		delivery_blip = "Burger Shot Bezorging"
 	},
 
+	bus_driver = {
+		start_route = "Druk op ~INPUT_CONTEXT~ om een route te starten",
+		failed_start_job = "Het starten van een nieuwe taak is mislukt.",
+		next_stop = "Volgende Halte",
+		bus_hq = "Bus Hoofdkantoor",
+		job_cancelled = "De taak is geannuleerd.",
+		next_stop_help = "Volgende Halte: ${stop} van ${total}",
+		passenger_count = "Passagiers: ${passengers} van ${seats}",
+		shutdown_engine = "Zet je motor uit en wacht op de passagiers.",
+		return_to_hq = "Keer terug naar het hoofdkwartier.",
+		bus_stop = "Bushalte",
+		pay_for_ticket = "Houd ~INPUT_CONTEXT~ ingedrukt om voor een kaartje te betalen ($18).",
+		not_enough_money_ticket = "Je hebt niet genoeg geld voor een kaartje ($18).",
+		ticket_paid = "${displayName} heeft betaald voor een buskaartje.",
+		paid_for_ticket = "Je hebt succesvol betaald voor een buskaartje.",
+
+		east_route = "Arcade",
+		pillbox_route = "Pillbox",
+		little_seoul_route = "Klein Seoul",
+		sandy_route = "Sandy Desert-lijn",
+		paleto_route = "Great Ocean Express",
+		grapeseed_route = "Grapeseed Greenway",
+		route_68_route = "Route 68 Direct",
+		airport_route = "Luchthaven Pendelbus",
+
+		finished_job_logs_title = "Voltooide Busroute",
+		finished_job_logs_details = "${consoleName} heeft de '${route}' busroute voltooid en ontving $${payout}."
+	},
+
 	doj = {
 		invalid_type = "w",
 		missing_search = "De W-coördinaat of richting waar u naar toe wilt teleporteren. Deze parameter is optioneel en als deze leeg wordt gelaten, wordt uw huidige richting gebruikt.",
@@ -12330,6 +12916,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		job_government = "Afvalverzamelaar",
 		job_mechanic = "Sleepdienst Chaffeur",
 		job_delivery = "Koeriersdienst",
+		job_bus_driver = "Buschauffeur",
 		changed_job_already_set_to_job = "Je hebt al de baan: ${jobName}.",
 		changed_job_success = "Je hebt succesvol de baan ${jobName} aangenomen.",
 		changed_job_success_go_to_coords = "Je hebt succesvol de baan ${jobName} aangenomen. Volg de route op je map om te beginnen.",
@@ -12432,6 +13019,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		license_fishing = "Visvergunning",
 		license_weapon = "Wapenvergunning",
 		license_mining = "Mijnbouwvergunning",
+		license_driver = "Rijbewijs",
 		gave_character_license = "Heeft ${characterName} vergunning `${licenseLabel}` gegeven.",
 		character_already_has_license = "${characterName} heeft al vergunning `${licenseLabel}`.",
 		removed_character_license = "Vergunning `${licenseLabel}` is verwijderd van ${characterName}.",
@@ -12446,7 +13034,21 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		you_have_no_licenses = "Je hebt geen licenties.",
 		player_has_no_licenses = "${characterName} heeft geen licenties.",
 		failed_to_get_licenses = "Het ophalen van de licenties is mislukt.",
-		license_list = "Beschikbare licenties: ${licenseList}."
+		license_list = "Beschikbare licenties: ${licenseList}.",
+		already_married = "Een of beide partners zijn al getrouwd.",
+		either_not_married = "Een of beide partners zijn niet getrouwd.",
+		not_married = "Partners zijn niet met elkaar getrouwd.",
+		failed_marriage = "mislukt om huwelijksstatus in te stellen.",
+		marriage_success = "${nameA} en ${nameB} zijn nu getrouwd.",
+		divorce_success = "${nameA} en ${nameB} zijn niet meer getrouwd.",
+		character_not_online = "Een van de partners is momenteel niet online. Alleen overleden partners kunnen worden gescheiden als ze offline zijn.",
+		you_are_now_married = "Je bent nu getrouwd met ${name}.",
+		you_are_no_longer_married = "Je bent niet langer getrouwd met ${name}.",
+
+		divorced_logs_title = "Scheiding",
+		divorced_logs_details = "${consoleName} heeft de huwelijksstatus van ${nameA} #${cidA} en ${nameB} #${cidB} gewijzigd naar `gescheiden`.",
+		married_logs_title = "Getrouwd",
+		married_logs_details = "${consoleName} heeft de huwelijksstatus van ${nameA} #${cidA} en ${nameB} #${cidB} bijgewerkt naar `getrouwd`."
 	},
 
 	tow = {
@@ -12502,7 +13104,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		anchored_successfully = "Anker succesvol geplaatst.",
 		removing_anchor = "Verwijderen van het anker",
 		deploying_anchor = "Anker uitwerpen",
-		no_vehicle_nearby = "Er is geen boot in de buurt waar je het anker kan uitwerpen."
+		no_vehicle_nearby = "Er is geen boot in de buurt waar je het anker kan uitwerpen.",
+		vehicle_not_anchorable = "Je kunt deze boot niet verankeren."
 	},
 
 	car_wash = {
@@ -12579,16 +13182,42 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		unknown = "Onbekend"
 	},
 
+	garage_access = {
+		menu_title = "Garagebeheerder",
+		button_close = "Sluiten",
+		loading = "Laden...",
+		access = "Garage Toegang",
+		access_description = "Deze personages hebben toegang om jouw voertuigen op te halen en terug te plaatsen in jouw garage.",
+		accessible = "Jouw Toegang",
+		accessible_description = "Dit zijn de garages waar je toegang toe hebt gekregen.",
+		no_access = "Niemand behalve jij kan bij je garage komen.",
+		no_accessible = "Niemand heeft je toegang gegeven tot hun garage.",
+
+		failed_allow_access = "Het toestaan van toegang tot de garage is mislukt.",
+		failed_remove_access = "Het verwijderen van toegang tot de garage is mislukt.",
+		already_has_access = "Dit personage heeft al toegang tot je garage.",
+		invalid_character_id = "Ongeldige karakter-id.",
+		does_not_access = "Dit personage heeft al geen toegang tot je garage.",
+
+		added_access_logs_title = "Toegang tot garage toegevoegd",
+		added_access_logs_details = "${consoleName} (#${characterId}) gaf #${targetCharacterId} toegang tot hun garage.",
+		removed_access_logs_title = "Toegang tot garage verwijderd",
+		removed_access_logs_details = "${consoleName} (#${characterId}) heeft de toegang van #${targetCharacterId} tot hun garage verwijderd."
+	},
+
 	garages = {
 		garage_empty = "Je garage is leeg!",
 		impound_lot = "Inbeslagnameplaats",
 		police_impound = "Politiemeeneem",
+		owner_self = "Eigenaar",
+		owner_other = "Toegang",
 		engine = "Motor",
 		body = "Carrosserie",
 		vehicle_in = "In",
 		vehicle_out = "Uit",
 		vehicle_at_police_impound = "Je voertuig wordt momenteel vastgehouden door de politie.",
 		vehicle_at_impound = "Je voertuig bevindt zich op de Inbeslagnameplaats.",
+		impound_lot_short = "Inbeslagname",
 		waypoint_to_impound = "Een routepunt naar de Inbeslagnameplaats is gemarkeerd op je GPS.",
 		unable_to_withdraw = "Kan het voertuig niet opnemen, want het is momenteel niet beschikbaar.",
 		vehicle_in_garage = "Je voertuig bevindt zich in ${garageName}. Er is een routebeschrijving toegevoegd aan je kaart.",
@@ -12608,7 +13237,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		not_enough_balance_to_retrieve = "Je hebt niet genoeg saldo in een van je accounts om dit voertuig op te halen.",
 		press_to_access = "Druk op ~INPUT_CONTEXT~ om de garage te openen.",
 		ui_return = "Terug",
-		ui_vehicle_list = "Voertuigenlijst",
+		ui_my_vehicle_list = "Mijn Voertuigen",
+		ui_other_vehicle_list = "Andere Voertuigen",
 		ui_store_vehicle = "Voertuig opslaan",
 		ui_vehicle_sell = "Verkoop voertuigen",
 		ui_retrieve_vehicle = "Voertuig ophalen",
@@ -12631,8 +13261,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		state_loading = "Bezig met laden...",
 
 		vehicle_weight = "Gewicht: ${weight}",
-		last_garage_letter = "Laatst - Garage ${letter}",
-		last_garage_impound = "Laatst - Inbeslagname Lot",
 		no_last_garage_letter = "Geen laatste garage",
 
 		purchase_vehicle = "Druk op ~INPUT_CONTEXT~ voor toegang tot de shop",
@@ -12641,7 +13269,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		purchase_success = "De ${label} die je net hebt gekocht is aan je garage toegevoegd.",
 		purchase_failed = "Het is niet gelukt om het voertuig te kopen.",
 		already_owned = "Je bezit al dit voertuigmodel.",
-		maximum_owned = "Je kunt niet meer dan 6 voertuigen bezitten.",
+		maximum_owned = "Je kunt niet meer dan 8 voertuigen bezitten.",
 		not_enough_money = "Je hebt niet genoeg geld om dit voertuig te kopen.",
 
 		sold_vehicle = "Verkocht ${label} voor $${price}.",
@@ -12759,6 +13387,14 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		failed_generic = "Er is iets fout gegaan."
 	},
 
+	trailers = {
+		cant_attach_trailer = "Dit voertuig heeft geen trekhaak.",
+		no_trailer_nearby = "Geen trailer in de buurt.",
+		not_in_vehicle = "Je rijdt niet in een voertuig.",
+		not_lined_up = "Je voertuig staat niet recht voor de trailer.",
+		keybind_description = "Koppel een trailer los of vast"
+	},
+
 	vehicles = {
 		flip_flipping = "Voertuig wordt omgedraaid",
 		flip_unable = "Je kunt geen voertuig omdraaien terwijl er mensen in zitten.",
@@ -12777,6 +13413,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		gear_animation_disabled = "De versnellingsanimatie (en geluiden) zijn nu uitgeschakeld.",
 		manual_gears_enabled = "~b~Dr. Nancy",
 		manual_gears_disabled = "Handmatig schakelen is nu uitgeschakeld.",
+		manual_gears_too_fast = "Je kunt alleen wisselen van automaat naar handmatig bij snelheden onder de 30 mph.",
 		hybrid_off = "uit",
 		speed_limiter_set_to_metric = "De snelheidsbegrenzer zal de snelheid nu beperken tot ${speed} km/u.",
 		speed_limiter_set_to_imperial = "De snelheidsbegrenzer zal de snelheid nu beperken tot ${speed} mijl/u.",
@@ -13024,13 +13661,15 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		bleeding_reduced = "Bloeden Verminderd",
 		bleeding_self_stopped = "Bloeden vanzelf gestopt",
 		thanks_for_loot = "Je bent beroofd terwijl je bewusteloos was. Sommige items kunnen ontbreken. Geruchten zeggen dat het Nancy was.",
+		guards_found_unconcious = "De bewakers hebben je bewusteloos gevonden en naar het gevangenisziekenhuis gebracht.",
 		serial_number = "Serienummer: ${serialNumber}<br><i>Dit wapen is geregistreerd op naam van ${fullName} (#${characterId}).</i>",
 		serial_number_unknown = "Serienummer: ${serialNumber}<br><i>Dit wapen is niet geregistreerd.</i>",
 		serial_number_removed = "Het serienummer lijkt verwijderd of beschadigd.",
 		badge_owner = "<i>Deze badge behoort toe aan <b>${fullName} (${positionName})</b>.</i>",
 		badge_owner_unknown = "Eigenaar van de badge is onbekend.",
 		citizen_card_owner = "<i>Deze identiteitskaart behoort toe aan <b>${fullName} (#${characterId})</b>.</i>",
-		citizen_card_has_portrait = "<i>Het heeft een afbeelding.</i>",
+		driver_license_owner = "<i>Deze rijbewijs behoort toe aan <b>${fullName} (#${characterId})</b>.</i>",
+		has_portrait = "<i>Er zit een foto bij.</i>",
 		picture_pending = "<i>De afbeelding wordt nog verwerkt...</i>",
 		picture_selfie_owner = "<i>Dit is een foto van <b>${fullName}</b>.</i>",
 		bought_by = "Gekocht door ${buyerName} (${buyerCid}).",

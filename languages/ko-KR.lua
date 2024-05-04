@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 25 (do not change)
+-- AUTO LOCALES: 27 (do not change)
 
 OP.Global.Locales.Languages["ko-KR"] = {
 	-- configuration settings for language
@@ -134,6 +134,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		added_vehicle_logs_title = "차량 추가됨",
 		added_vehicle_logs_details = "${consoleName} 님이 `${modelName}` 모델 이름의 차량을 자신의 차고에 추가했습니다.",
 
+		vehicle_saved = "모델명이 `${modelName}`인 차량이 성공적으로 저장되었습니다.",
+		failed_to_save_vehicle = "차량 저장에 실패했습니다.",
+
 		invalid_amount = "잘못된 금액입니다.",
 
 		added_cash_title = "현금 추가됨",
@@ -260,6 +263,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		you_have_been_kicked_no_reason = "${kicker}님께서 이유 없이 추방하셨습니다.",
 
 		logs_player_kicked_title = "플레이어 추방",
+		logs_player_kicked_system_title = "시스템에 의해 플레이어 추방됨",
 		logs_player_kicked_details = "${consoleName}님은 ${kicker}님께서 이유 `${reason}`로 인해 추방하셨습니다.",
 		logs_player_kicked_no_reason_details = "${consoleName}님은 ${kicker}님께서 이유 없이 추방하셨습니다.",
 
@@ -358,17 +362,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		already_sending_staff_message = "이미 스탭 메시지를 보내고 있습니다. 잠시 기다려주세요.",
 		unable_to_send_identical_staff_message = "30초 이내에 동일한 스탭 메시지를 두 번 이상 보낼 수 없습니다.",
 
-		tp_coords_invalid_coordinates = "유효하지 않은 좌표입니다.",
-		tp_coords_teleported_to_coordinates = "좌표 X: ${x}, Y: ${y}, Z: ${z}로 이동했습니다.",
-
-		teleported_to_waypoint = "${locationLabel} 웨이포인트로 이동했습니다.",
-		no_waypoint_set = "경로지점을 설정해야합니다.",
-
-		teleported_to_coordinates_logs_title = "좌표로 이동됨",
-		teleported_to_coordinates_logs_details = "${consoleName} 님이 X: ${x}, Y: ${y}, Z: ${z} 좌표로 이동하였습니다.",
-		teleported_to_waypoint_logs_title = "경로지점으로 이동됨",
-		teleported_to_waypoint_logs_details = "${consoleName} 님이 ${locationLabel} 위치에 있는 경로지점으로 이동하였습니다.",
-
 		population_density_set_to = "인구 밀도 배율이 ${multiplierLabel}%로 설정되었습니다.",
 		population_density_set_off = "인구 밀도 곱셈기능이 비활성화되었습니다.",
 		population_density_is_not_on = "인구 밀도 곱셈기능이 활성화되어 있지 않습니다.",
@@ -403,6 +396,13 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		you_are_not_in_a_vehicle = "차량에 타고 있지 않습니다.",
 		repaired_vehicle = "수리된 차량.",
+		player_not_in_vehicle = "해당 플레이어는 차량에 탑승 중이 아닙니다.",
+		no_character = "플레이어가 오프라인 상태이거나 캐릭터를 불러오지 않은 상태입니다.",
+		repaired_player_vehicle = "${displayName}이(가) 탑승한 차량을 수리했습니다.",
+		failed_player_repair = "차량 수리에 실패했습니다.",
+
+		repaired_player_vehicle_logs_title = "플레이어 차량 수리됨",
+		repaired_player_vehicle_logs_details = "${consoleName}님이 ${targetConsoleName}이(가) 타고 있던 차량을 수리했습니다.",
 
 		success_nos_refill = "NOS를 성공적으로 채웠습니다.",
 		failed_nos_refill = "NOS 충전에 실패했습니다.",
@@ -487,7 +487,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		attachment_off = "'${attachment}' 부착물이 성공적으로 해제되었습니다.",
 
 		tint_invalid = "잘못된 무기 틴트입니다.",
-		tint_range_invalid = "유효하지 않은 무기 테마 범위입니다 (0과 ${max} 사이여야합니다).",
+		tint_index_invalid = "유효하지 않은 무기 틴트 인덱스입니다.",
 		tint_failed_set = "무기 테마 설정에 실패했습니다.",
 		tint_removed = "무기 테마가 성공적으로 제거되었습니다.",
 		tint_set = "무기 테마를 성공적으로 `${tint}` (${tintIndex})로 설정했습니다.",
@@ -517,9 +517,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		item_durability_set_no_permission = "올바른 권한 없이 아이템 내구도를 설정하려고 시도했습니다.",
 
 		item_metadata_set_no_permission = "올바른 권한 없이 아이템 메타데이터를 설정하려고 시도했습니다.",
-		item_metadata_invalid_metadata = "잘못된 아이템 메타데이터입니다.",
 		item_metadata_set_success = "슬롯 ${slotId}에 있는 아이템의 메타데이터를 성공적으로 설정했습니다.",
 		item_metadata_set_failed = "메타데이터 설정에 실패했습니다.",
+		item_metadata_missing_key = "메타데이터 키가 누락되었습니다.",
 
 		advanced_metagame_on = "고급 메타게임이 켜졌습니다.",
 		advanced_metagame_off = "고급 메타게임이 꺼졌습니다.",
@@ -696,6 +696,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		weapon_spawn_ban = "'${weaponName}'을(를) 간절히 원하셨나요? 이곳은 무기고가 아니며, 그 무기는 아직 제작 과정 중입니다.",
 		advanced_noclip_ban = "숨은 통로를 통해 몰래 슬라이드를 시도하고 계셨나요? 이곳은 환상의 왈츠가 아니며, 그런 동작은 우리의 댄스 카드에 없습니다.",
 		illegal_local_vehicle_ban = "감히 로드 미라지의 보이지 않는 군마를 발견한 것 같군요! 안타깝게도, 이 신비로운 탈 것은 연례 유령 퍼레이드를 위해 예약되어 있습니다.",
+		handling_field_ban = "물리 법칙을 터보 충전하려고 했는데, 좋은 시도였어요. 하지만 이 세계에서는 바퀴를 현실에 그대로 묶어둡니다.",
 
 		type_aimbot = "에임봇",
 		type_bad_creation = "잘못된 창조물",
@@ -711,6 +712,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		type_illegal_event = "불법 클라이언트 이벤트",
 		type_illegal_freeze = "불법 동결",
 		type_illegal_global = "불법 글로벌 사용",
+		type_illegal_handling_field = "불법 핸들링 필드",
 		type_illegal_native = "불법 네이티브 호출",
 		type_illegal_ped_spawn = "소환된 Ped",
 		type_illegal_server_event = "불법 서버 이벤트",
@@ -768,6 +770,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		high_fov_debug = "현재 설정된 시야각: ${fov}",
 
 		illegal_oxy_run = "플레이어가 인간적으로 불가능한 속도로 산소를 운반한 것으로 탐지됩니다.",
+
+		fov_warning = "FOV(시야각)가 비정상적으로 높습니다",
+		fov_warning_details = "이는 아마도 FOV 수정기에 의해 발생한 것입니다. 현재: ${fov}",
+
+		stretched_res_warning = "늘어진 해상도 (~r~${ratio}~w~)",
 
 		fast_movement_warning = "플레이어의 이동 속도가 너무 빠른 것으로 판단되어 경고합니다! 개발자분께 연락을 취해, 어떤 기능을 사용했는지 알려주시기 바랍니다.",
 		invincibility_warning = "무적 상태로 플레이하고 있으므로 경고가 발생했습니다! 관리자에게 알려주시고 해당 상황이 발생한 이유를 설명해주시기 바랍니다. 이 메시지를 받아서는 안됩니다.",
@@ -1017,10 +1024,14 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		add_vehicle_command = "add_vehicle",
 		add_vehicle_command_help = "누군가의 차고에 차량을 추가합니다.",
 		add_vehicle_command_parameter_model = "모델",
-		add_vehicle_command_parameter_model_help = "A jármű modell neve vagy hash értéke, amit hozzá szeretnél adni. Ha üresen hagyod, akkor a jelenlegi járműved lesz hozzáadva (az aktuális módosításaival együtt).",
+		add_vehicle_command_parameter_model_help = "추가하려는 차량의 모델 이름 또는 모델 해시입니다. 비워두면 현재 탑승 중인 차량 모델이 추가됩니다.",
 		add_vehicle_command_parameter_server_id = "서버 ID",
 		add_vehicle_command_parameter_server_id_help = "차량을 전달할 플레이어의 서버 ID입니다. 이 값을 비워두면 자동으로 자신을 선택합니다.",
 		add_vehicle_command_substitutes = "",
+
+		save_vehicle_command = "차량저장",
+		save_vehicle_command_help = "현재 탑승 중인 차량(수정 사항 포함)을 차고에 저장합니다.",
+		save_vehicle_command_substitutes = "",
 
 		aimbot_command = "에임봇",
 		aimbot_command_help = "에임봇을 켜거나 끕니다.",
@@ -1178,22 +1189,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		warning_message_command_parameter_message_help = "플레이어에게 표시할 메시지입니다. 경고 메시지를 제거하려면이 매개 변수를 비워 둘 수 있습니다.",
 		warning_message_command_substitutes = "",
 
-		tp_coords_command = "tp_coords",
-		tp_coords_command_help = "일부 좌표로 이동합니다.",
-		tp_coords_command_parameter_x = "x",
-		tp_coords_command_parameter_x_help = "이동할 X 좌표입니다.",
-		tp_coords_command_parameter_y = "y",
-		tp_coords_command_parameter_y_help = "이동할 Y 좌표입니다.",
-		tp_coords_command_parameter_z = "z",
-		tp_coords_command_parameter_z_help = "이동할 Z 좌표입니다. 이 매개 변수는 선택적입니다. 비워 두면 지면 좌표가 자동으로 검색됩니다.",
-		tp_coords_command_parameter_w = "w",
-		tp_coords_command_parameter_w_help = "이동하려는 W 좌표 또는 헤딩입니다. 이 매개 변수는 선택 사항입니다. 비워 두면 현재 헤딩이 사용됩니다.",
-		tp_coords_command_substitutes = "tpc",
-
-		tp_waypoint_command = "tp_waypoint",
-		tp_waypoint_command_help = "설정된 웨이포인트로 이동합니다.",
-		tp_waypoint_command_substitutes = "tp_marker, tp",
-
 		population_density_command = "인구밀도",
 		population_density_command_help = "전역 인구밀도 배율을 덮어씁니다.",
 		population_density_command_parameter_multiplier = "배율",
@@ -1202,6 +1197,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		repair_vehicle_command = "차량수리",
 		repair_vehicle_command_help = "현재 탑승 중인 차량을 수리합니다.",
+		repair_vehicle_command_parameter_server_id = "서버 아이디",
+		repair_vehicle_command_parameter_server_id_help = "수리하려는 차량의 서버 아이디입니다. (옵션)",
 		repair_vehicle_command_substitutes = "수리",
 
 		enter_vehicle_command = "차량_탑승",
@@ -1243,6 +1240,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		player_info_command_parameter_server_id = "서버 ID",
 		player_info_command_parameter_server_id_help = "정보를 가져올 플레이어의 서버 ID입니다. 비워 두면 자신이 선택됩니다.",
 		player_info_command_substitutes = "player, pi",
+
+		ender_chest_command = "엔더 상자",
+		ender_chest_command_help = "엔더 상자에 접근합니다.",
+		ender_chest_command_substitutes = "ec",
 
 		inventory_command = "inventory",
 		inventory_command_help = "지정된 인벤토리를 엽니다.",
@@ -1315,9 +1316,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		set_metadata_command = "메타데이터_설정",
 		set_metadata_command_help = "특정 슬롯의 모든 아이템 메타데이터를 설정합니다.",
 		set_metadata_command_parameter_slot = "슬롯",
-		set_metadata_command_parameter_slot_help = "어떤 슬롯에 아이템 내구도를 설정할지 선택합니다.",
-		set_metadata_command_parameter_metadata = "메타데이터",
-		set_metadata_command_parameter_metadata_help = "설정할 메타데이터 JSON입니다.",
+		set_metadata_command_parameter_slot_help = "아이템 메타데이터를 설정할 슬롯입니다.",
+		set_metadata_command_parameter_key = "키",
+		set_metadata_command_parameter_key_help = "설정하려는 메타데이터 키입니다.",
+		set_metadata_command_parameter_value = "값",
+		set_metadata_command_parameter_value_help = "설정하려는 메타데이터 값입니다. (키를 삭제하려면 비워둡니다)",
 		set_metadata_command_substitutes = "metadata",
 
 		refill_nitro_command = "nitro_보충",
@@ -1503,26 +1506,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		admin_command = "어드민",
 		admin_command_help = "어드민 메뉴를 엽니다.",
 		admin_command_substitutes = "",
-
-		tp_player_command = "tp_player",
-		tp_player_command_help = "플레이어로 이동합니다.",
-		tp_player_command_parameter_server_id = "서버 아이디",
-		tp_player_command_parameter_server_id_help = "이동하려는 플레이어의 서버 아이디입니다.",
-		tp_player_command_substitutes = "",
-
-		tp_here_command = "tp_here",
-		tp_here_command_help = "플레이어를 당신에게 순간이동시킵니다.",
-		tp_here_command_parameter_server_id = "서버 아이디",
-		tp_here_command_parameter_server_id_help = "순간이동시키고 싶은 플레이어의 서버 아이디입니다.",
-		tp_here_command_substitutes = "",
-
-		tp_to_command = "tp_to",
-		tp_to_command_help = "플레이어를 다른 플레이어에게 순간이동시킵니다.",
-		tp_to_command_parameter_source_id = "출발지 아이디",
-		tp_to_command_parameter_source_id_help = "순간이동시키려는 플레이어입니다.",
-		tp_to_command_parameter_destination_id = "도착지 아이디",
-		tp_to_command_parameter_destination_id_help = "순간이동시키려는 플레이어의 위치입니다.",
-		tp_to_command_substitutes = "",
 
 		-- game/airdrops
 		create_airdrop_command = "에어드롭생성",
@@ -1936,6 +1919,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		vehicle_info_command_help = "차량 문제를 해결하는 도움을 드리기 위한 현재 차량 정보를 인쇄합니다.",
 		vehicle_info_command_substitutes = "",
 
+		vehicle_doors_command = "차량_도어",
+		vehicle_doors_command_help = "가장 가까운 차량의 모든 도어를 표시합니다.",
+		vehicle_doors_command_substitutes = "",
+
 		delete_entity_command = "엔티티_삭제",
 		delete_entity_command_help = "특정 네트워크 ID를 가진 엔티티를 삭제합니다.",
 		delete_entity_command_parameter_network_id = "네트워크 ID",
@@ -2144,6 +2131,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		door_debug_command_help = "근처 문에 대한 디버그 정보를 출력합니다.",
 		door_debug_command_substitutes = "",
 
+		-- game/effect_zones
+		effect_zones_debug_command = "이펙트_존_디버그",
+		effect_zones_debug_command_help = "현재 어떤 이펙트 존에 있는지 디버깅합니다.",
+		effect_zones_debug_command_substitutes = "",
+
 		-- game/elevators
 		elevator_enable_command = "elevator_enable",
 		elevator_enable_command_help = "가장 가까운 엘리베이터를 다시 켭니다.",
@@ -2158,6 +2150,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		elevator_enable_command_all_substitutes = "",
 
 		-- game/emotes
+		emote_menu_command = "이모티콘 메뉴",
+		emote_menu_command_help = "이모티콘 메뉴를 전환합니다.",
+		emote_menu_command_substitutes = "",
+
 		emote_command = "Sei sicuro di voler aggiornare la tua adesione ${pledgeLabel} a ${pledgeUpgradeLabel} per ${cost} punti OP?",
 		emote_command_help = "Aggiornamento dell'adesione in corso...",
 		emote_command_parameter_name = "Meth venduta",
@@ -2169,6 +2165,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		walk_command_parameter_name = "Tarik Simpanan",
 		walk_command_parameter_name_help = "${consoleName} menarik $${amount} dari akun simpanan ${accountId}.",
 		walk_command_substitutes = "",
+
+		mood_command = "기분",
+		mood_command_help = "표정/기분을 설정합니다.",
+		mood_command_parameter_name = "이름",
+		mood_command_parameter_name_help = "표정/기분의 이름입니다.",
+		mood_command_substitutes = "",
 
 		-- game/evidence
 		fingerprint_command = "지문",
@@ -2204,6 +2206,13 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		flag_swap_leaderboard_command_help = "플래그 교체 리더보드를 전환합니다.",
 		flag_swap_leaderboard_command_substitutes = "",
 
+		-- game/flight_radar
+		callsign_command = "콜사인",
+		callsign_command_help = "비행 레이더를 위한 콜사인을 설정합니다.",
+		callsign_command_parameter_callsign = "콜사인",
+		callsign_command_parameter_callsign_help = "콜사인을 입력하거나 비워두어 리셋합니다.",
+		callsign_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "create_forcefield",
 		create_forcefield_command_help = "현재 위치에 힘 필드를 생성합니다.",
@@ -2233,6 +2242,13 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		fortnite_wipe_command_parameter_radius = "반경",
 		fortnite_wipe_command_parameter_radius_help = "청소하고 싶은 반경을 설정하세요. 비워두거나 0으로 설정하면 모두 청소됩니다.",
 		fortnite_wipe_command_substitutes = "",
+
+		-- game/fortune_cookies
+		fortune_cookie_command = "운세_쿠키",
+		fortune_cookie_command_help = "미리 정의된 메시지가 담긴 운세 쿠키를 소환합니다.",
+		fortune_cookie_command_parameter_fortune = "운세",
+		fortune_cookie_command_parameter_fortune_help = "원하는 운세 메시지입니다.",
+		fortune_cookie_command_substitutes = "",
 
 		-- game/freecam
 		freecam_command = "프리캠",
@@ -2344,7 +2360,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		death_timer_command_substitutes = "",
 
 		cpr_command = "cpr",
-		cpr_command_help = "가장 가까운 NPC나 플레이어에게 CPR을 수행합니다.",
+		cpr_command_help = "가장 가까운 NPC 또는 플레이어에게 심폐소생술을 시도합니다.",
 		cpr_command_substitutes = "",
 
 		-- game/hitmarkers
@@ -2512,6 +2528,23 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		jackpot_take_fees_command_help = "잭팟 인벤토리에서 수수료를 취합니다.",
 		jackpot_take_fees_command_substitutes = "",
 
+		-- game/jail
+		check_jail_command = "감옥확인",
+		check_jail_command_help = "플레이어가 감옥에서 얼마나 남았는지 확인합니다.",
+		check_jail_parameter_server_id = "서버 ID",
+		check_jail_parameter_server_id_help = "플레이어의 서버 ID입니다.",
+		check_jail_command_substitutes = "",
+
+		modify_jail_command = "감옥수정",
+		modify_jail_command_help = "플레이어의 감옥 유지 시간을 수정합니다.",
+		modify_jail_parameter_server_id = "서버 ID",
+		modify_jail_parameter_server_id_help = "플레이어의 서버 ID입니다.",
+		modify_jail_parameter_operation = "작업",
+		modify_jail_parameter_operation_help = "수행하려는 작업입니다. (추가 또는 감소)",
+		modify_jail_parameter_amount = "양",
+		modify_jail_parameter_amount_help = "추가하거나 제거하려는 시간 양입니다. 한 번에 5분 이상은 불가능합니다.",
+		modify_jail_command_substitutes = "mod_jail",
+
 		-- game/lag
 		fake_lag_command = "fake_lag",
 		fake_lag_command_help = "가짜 랙을 만듭니다.",
@@ -2588,7 +2621,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		mining_debug_command_substitutes = "",
 
 		-- game/miscellaneous
-		-- these two commands should remain the same on all languages in case someone joins in with a language they don't know.
+		-- these two commands (language & languages) should remain the same on all languages in case someone joins in with a language they don't know.
 		-- you can change the _help parts though if you'd like, not the "language code" though.
 		language_command = "language",
 		language_command_help = "선호하는 언어를 설정합니다. 이 변경은 재로그인하여도 유지됩니다. 변경은 즉시 적용됩니다.",
@@ -2696,6 +2729,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		info_command_help = "${consoleName} menyetor $${amount} ke akun simpanan ${accountId}.",
 		info_command_substitutes = "",
 
+		whois_command = "whois",
+		whois_command_help = "이름 또는 부분적인 이름으로 플레이어를 찾습니다.",
+		whois_command_parameter_search = "검색",
+		whois_command_parameter_search_help = "플레이어의 이름 또는 일부분.",
+		whois_command_substitutes = "",
+
 		-- game/money
 		cash_command = "현금",
 		cash_command_help = "당신의 현금 잔액을 표시합니다.",
@@ -2752,6 +2791,13 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		remove_notice_command_parameter_message_id = "메시지 ID",
 		remove_notice_command_parameter_message_id_help = "제거하려는 메시지의 ID입니다.",
 		remove_notice_command_substitutes = "",
+
+		-- game/npc_watch
+		npc_watch_command = "npc_watch",
+		npc_watch_command_help = "임의의 NPC가 일상 생활을 하는 것을 관찰합니다.",
+		npc_watch_command_parameter_in_vehicle = "차량 내",
+		npc_watch_command_parameter_in_vehicle_help = "NPC가 차량 안에 있어야 합니다. (기본값 아니요)",
+		npc_watch_command_substitutes = "",
 
 		-- game/objects
 		frozen_objects_scan_command = "동결된 오브젝트 스캔",
@@ -2903,6 +2949,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		phone_number_available_command_parameter_phone_number = "전화번호",
 		phone_number_available_command_parameter_phone_number_help = "사용 가능한지 확인하려는 전화번호입니다. 형식이 XXX-XXXX인지 확인하십시오.",
 		phone_number_available_command_substitutes = "번호_확인",
+
+		-- game/plants
+		plants_debug_command = "plants_debug",
+		plants_debug_command_help = "모든 식물을 디버깅합니다.",
+		plants_debug_command_substitutes = "",
 
 		-- game/player_control
 		drive_for_command = "드라이브_포",
@@ -3293,6 +3344,47 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		tablet_command_help = "태블릿 UI를 엽니다. (태블릿이 있는 경우) ",
 		tablet_command_substitutes = "",
 
+		-- game/teleporting
+		tp_back_command = "tp_back",
+		tp_back_command_help = "마지막으로 이동하기 전 위치로 텔레포트합니다.",
+		tp_back_command_substitutes = "뒤로",
+
+		tp_coords_command = "tp_coords",
+		tp_coords_command_help = "일부 좌표로 이동합니다.",
+		tp_coords_command_parameter_x = "x",
+		tp_coords_command_parameter_x_help = "이동할 X 좌표입니다.",
+		tp_coords_command_parameter_y = "y",
+		tp_coords_command_parameter_y_help = "이동할 Y 좌표입니다.",
+		tp_coords_command_parameter_z = "z",
+		tp_coords_command_parameter_z_help = "이동할 Z 좌표입니다. 이 매개 변수는 선택적입니다. 비워 두면 지면 좌표가 자동으로 검색됩니다.",
+		tp_coords_command_parameter_w = "w",
+		tp_coords_command_parameter_w_help = "이동하려는 W 좌표 또는 헤딩입니다. 이 매개 변수는 선택 사항입니다. 비워 두면 현재 헤딩이 사용됩니다.",
+		tp_coords_command_substitutes = "tpc",
+
+		tp_waypoint_command = "tp_waypoint",
+		tp_waypoint_command_help = "설정된 웨이포인트로 이동합니다.",
+		tp_waypoint_command_substitutes = "tp_marker, tp",
+
+		tp_to_player_command = "tp_to_player",
+		tp_to_player_command_help = "플레이어에게 이동합니다.",
+		tp_to_player_command_parameter_server_id = "서버 ID",
+		tp_to_player_command_parameter_server_id_help = "이동하려는 플레이어의 서버 ID.",
+		tp_to_player_command_substitutes = "",
+
+		tp_player_here_command = "tp_player_here",
+		tp_player_here_command_help = "플레이어를 여기로 이동시킵니다.",
+		tp_player_here_command_parameter_server_id = "서버 ID",
+		tp_player_here_command_parameter_server_id_help = "이동시키고 싶은 플레이어의 서버 ID.",
+		tp_player_here_command_substitutes = "",
+
+		tp_player_player_command = "플레이어_플레이어_텔레포트",
+		tp_player_player_command_help = "플레이어를 다른 플레이어에게 텔레포트합니다.",
+		tp_player_player_command_parameter_source_id = "출발 id",
+		tp_player_player_command_parameter_source_id_help = "텔레포트할 플레이어입니다.",
+		tp_player_player_command_parameter_destination_id = "도착 id",
+		tp_player_player_command_parameter_destination_id_help = "출발 플레이어를 텔레포트할 대상 플레이어입니다.",
+		tp_player_player_command_substitutes = "",
+
 		-- game/test_server
 		test_menu_command = "테스트_메뉴",
 		test_menu_command_help = "테스트 서버 메뉴를 전환합니다.",
@@ -3452,11 +3544,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		explode_command_parameter_server_id_help = "대상 플레이어의 서버 ID입니다.",
 		explode_command_substitutes = "",
 
-		ignite_player_command = "ignite_player",
-		ignite_player_command_help = "단시간 동안 플레이어를 불태웁니다.",
-		ignite_player_command_parameter_server_id = "서버 ID",
-		ignite_player_command_parameter_server_id_help = "대상 플레이어의 서버 ID입니다.",
-		ignite_player_command_substitutes = "ignite, burn",
+		taze_player_command = "테이징_플레이어",
+		taze_player_command_help = "플레이어를 테이징합니다.",
+		taze_player_command_parameter_server_id = "서버 ID",
+		taze_player_command_parameter_server_id_help = "대상 플레이어의 서버 ID입니다.",
+		taze_player_command_substitutes = "stun, taze",
 
 		run_command_as_command = "run_command_as",
 		run_command_as_command_help = "다른 플레이어가 명령어를 실행하도록합니다.",
@@ -3532,6 +3624,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		interface_focuses_command = "인터페이스_포커스",
 		interface_focuses_command_help = "UI 요소가 포커스된 인터페이스를 확인합니다.",
 		interface_focuses_command_substitutes = "인터페이스_포커스, 포커스, 포커스들",
+
+		-- jobs/bus_driver
+		bus_debug_command = "bus_debug",
+		bus_debug_command_help = "모든 버스 정거장을 표시합니다.",
+		bus_debug_command_substitutes = "",
 
 		--jobs/doj
 		lookup_character_command = "A jármű modell neve vagy hash értéke, amit hozzá szeretnél adni. Ha üresen hagyod, akkor a jelenlegi járműved lesz hozzáadva (az aktuális módosításaival együtt).",
@@ -3627,6 +3724,16 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		licenses_command_help = "면허증을 확인합니다.",
 		licenses_command_substitutes = "",
 
+		set_marriage_command = "set_marriage",
+		set_marriage_command_help = "두 캐릭터 사이의 결혼 상태를 설정합니다.",
+		set_marriage_command_parameter_partner_a_cid = "파트너 A",
+		set_marriage_command_parameter_partner_a_cid_help = "첫 번째 파트너의 캐릭터 ID입니다.",
+		set_marriage_command_parameter_partner_b_cid = "파트너 B",
+		set_marriage_command_parameter_partner_b_cid_help = "두 번째 파트너의 캐릭터 ID입니다.",
+		set_marriage_command_parameter_state = "상태",
+		set_marriage_command_parameter_state_help = "`married` 또는 `divorced` 중 하나입니다.",
+		set_marriage_command_substitutes = "",
+
 		-- jobs/tow
 		toggle_mechanic_messages_command = "정비알림",
 		toggle_mechanic_messages_command_help = "정비알림을 받을지 여부를 변경합니다.",
@@ -3648,6 +3755,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		set_fuel_command_parameter_fuel_level = "연료 수준",
 		set_fuel_command_parameter_fuel_level_help = "설정하려는 연료 수준입니다. 이 항목을 비워둘 경우 `100`으로 자동 선택됩니다.",
 		set_fuel_command_substitutes = "연료",
+
+		-- vehicles/garage_access
+		manage_garage_command = "차고 관리",
+		manage_garage_command_help = "차고 및 접근 권한을 관리합니다.",
+		manage_garage_command_substitutes = "mg",
 
 		-- vehicles/garages
 		toggle_garage_debug_command = "toggle_garage_debug",
@@ -3734,6 +3846,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		mute_sirens_command = "사이렌 음소거",
 		mute_sirens_command_help = "모든 사이렌과 경적 소리를 음소거합니다.",
 		mute_sirens_command_substitutes = "",
+
+		-- vehicles/trailers
+		toggle_trailer_command = "트레일러 전환",
+		toggle_trailer_command_help = "현재 탑승 중인 차량에 트레일러를 분리 또는 부착합니다.",
+		toggle_trailer_command_substitutes = "트레일러",
 
 		-- vehicles/vehicles
 		flip_command = "뒤척이기",
@@ -3889,7 +4006,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	},
 
 	core = {
-		version = "버전"
+		version = "버전",
+
+		access_denied = "액세스 거부됨",
+		file_not_found = "파일을 찾을 수 없습니다.",
+		only_lua_files_allowed = "Lua 파일만 허용됩니다."
 	},
 
 	couches = {
@@ -3915,7 +4036,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		api_reported_no_updates = "디스코드 API에서 이모지 목록의 업데이트를 보고하지 않았습니다.",
 		emojis_added = "${added}개의 이모지가 추가되었습니다.",
 		emojis_removed = "${removed}개의 이모지가 제거되었습니다.",
-		emojis_updated = "${added}개의 이모지가 추가되고, ${removed}개의 이모지가 제거되었습니다."
+		emojis_updated = "${added}개의 이모지가 추가되고, ${removed}개의 이모지가 제거되었습니다.",
+		no_emojis = "이용가능한 이모지가 없습니다."
 	},
 
 	errors = {
@@ -4082,7 +4204,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		dropped_timed_out_player_logs_title = "접속 시간 초과로 인해 접속 해제된 플레이어",
 		dropped_timed_out_player_logs_details = "${consoleName}이(가) 오랜 시간 동안 프레임워크에 ping을 보내지 않아수동으로 접속 해제되었습니다.",
 
-		critical_error_while_loading_data = "데이터를 로드하는 중에 심각한 오류가 발생했습니다."
+		critical_error_while_loading_data = "데이터를 로드하는 중에 심각한 오류가 발생했습니다.",
+
+		ping_unstable = "핑이 불안정합니다.",
+		ping_stable = "핑이 다시 안정화되었습니다."
 	},
 
 	whitelist = {
@@ -4092,25 +4217,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	-- game/*
 	admin_menu = {
 		menu_title = "관리자 메뉴",
-		spectate_player = "플레이어 감시",
-		teleport_player = "플레이어에게 이동",
-		teleport_player_here = "플레이어를 여기로 이동",
-		failed_teleport_to_player = "플레이어에게 이동에 실패했습니다.",
-		failed_teleport_player_here = "플레이어를 여기로 이동에 실패했습니다.",
-		invalid_target_server_id = "잘못된 대상 서버 ID입니다.",
-		invalid_destination_server_id = "잘못된 대상 서버 ID입니다.",
-		invalid_source_server_id = "잘못된 출발 서버 ID입니다.",
-		failed_teleport_player_to_player = "플레이어를 다른 플레이어에게 이동하지 못했습니다.",
-		teleported_player_to_player = "플레이어를 다른 플레이어에게 이동했습니다.",
-
-		tp_player_logs_title = "TP Veikėjas",
-		tp_player_logs_details = "${consoleName} perkeltas į ${targetConsoleName}.",
-		tp_here_logs_title = "TP Čia",
-		tp_here_logs_details = "${consoleName} perkeltas ${targetConsoleName} prie savęs.",
-		tp_everyone_logs_title = "TP Čia Visi",
-		tp_everyone_logs_details = "${consoleName}이/가 모두를 자기 자신에게 텔레포트했습니다.",
-		tp_to_logs_title = "텔레포트 대상",
-		tp_to_logs_details = "${consoleName}이/가 ${sourceConsoleName}을/를 ${targetConsoleName}에게 텔레포트했습니다."
+		spectate_player = "플레이어 감시"
 	},
 
 	afk = {
@@ -4278,7 +4385,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		net = "순이익",
 		net_ratio = "순이익 비율",
 		items_gambled = "배팅한 아이템",
-		screenshots_taken = "화면 캡처가 찍혔습니다"
+		screenshots_taken = "화면 캡처가 찍혔습니다",
+
+		called_airdrop_logs_title = "에어드롭 호출됨",
+		called_airdrop_logs_details = "${consoleName}님이 에어드롭을 호출했습니다."
 	},
 
 	atms = {
@@ -4818,7 +4928,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		medical_care_1 = "부상을 입었다면 병원에 방문하여 진찰과 치료를 받을 수 있습니다. 맵에서 병원을 찾아볼 수 있습니다. 또한 붕대나 응급 처치 키트를 사용하여 자신의 체력을 회복할 수 있습니다.",
 		medical_care_2 = "병원에 이송되지 않고 리스폰하거나, 게임을 나갈 때 무력화 상태였다면 일부 아이템을 잃어버릴 수 있습니다. 서버 재시작은 게임을 나간 것으로 처리됩니다.",
 
-		safety_hint = "힌트: 당신은 ALT와 휠버튼을 눌러 무기의 안전장치를 해제할 수 있습니다. 안전하게 사용하세요!",
+		safety_hint = "힌트: ${keybind} 키를 사용하여 무기 안전 장치를 해제할 수 있습니다. 안전하게 이용하세요!",
 
 		closing_sentence = "도시에서 할 것은 아직 많이 남았습니다! 주변을 둘러보고 친구를 사귀세요 ;)"
 	},
@@ -4844,6 +4954,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		buddy_pass_used_logs_title = "버디 패스 사용됨",
 		buddy_pass_used_logs_details = "${consoleName}님이 버디 패스를 사용하여 ${targetConsoleName}님을 미뤄 넣었습니다."
+	},
+
+	bus_map = {
+		bus_tracker = "버스"
 	},
 
 	cache = {
@@ -5093,6 +5207,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		replace_outfit = "이 의상으로 교체하기",
 		new_outfit = "새로운 의상 저장",
 		no_saved_outfits = "저장된 의상이 없습니다.",
+		last_updated = "최근 업데이트 ${ago}.",
 
 		save_outfit_title = "새로운 의상 저장하기",
 		save_outfit_label = "의상 이름:",
@@ -5205,24 +5320,45 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		fried_item = "벨기에 감자튀김이 완성되었습니다.",
 		failed_fry_item = "감자튀김을 튀기는 것에 실패했습니다.",
 
-		grill_item = "패티구이하기",
-		press_to_grill_item = "[${SeatEjectKey}] 패티구이하기",
-		grilling_item = "패티를 구우는 중입니다.",
-		grilled_item = "패티가 구워졌습니다.",
-		failed_grill_item = "패티를 구우는 것에 실패했습니다.",
+		grill_item = "그릴",
+		press_to_grill_item = "[${SeatEjectKey}] 그릴",
+		grilling_patty = "패티 그리기",
+		grilled_patty = "구운 패티",
+		failed_grill_patty = "패티 구우기 실패.",
+		grilling_bacon = "베이컨 구우는 중",
+		grilled_bacon = "구운 베이컨",
+		failed_grill_bacon = "베이컨 구우기 실패.",
+		frying_egg = "계란 튀기는 중",
+		fried_egg = "튀긴 계란",
+		failed_fry_egg = "계란 튀기기 실패.",
+
+		patty_recipe = "패티 구우기",
+		bacon_recipe = "베이컨 만들기",
+		egg_recipe = "계란 튀기기",
 
 		hamburger_recipe = "햄버거",
 		cheeseburger_recipe = "치즈버거",
+		bacon_burger_recipe = "베이컨 치즈버거",
+		bne_burger_recipe = "베이컨 앤 에그 버거",
+		veggie_burger_recipe = "채소 버거",
 
 		assemble_burger = "버거 조립하기",
 		press_to_assemble_burger = "[${SeatEjectKey}] 버거 조립하기",
-		assembling_burger = "햄버거 조립 중",
-		assembled_burger = "햄버거 조립 완료",
-		failed_assemble_burger = "햄버거 조립 실패.",
-
-		assembling_cheeseburger = "치즈버거 조립 중",
-		assembled_cheeseburger = "치즈버거 조립 완료",
-		failed_assemble_cheeseburger = "치즈버거 조립 실패.",
+		assembling_burger = "햄버거 만들기",
+		assembled_burger = "햄버거를 만들었습니다",
+		failed_assemble_burger = "햄버거를 만들지 못했습니다.",
+		assembling_cheeseburger = "치즈버거를 만들고 있습니다",
+		assembled_cheeseburger = "치즈버거를 만들었습니다",
+		failed_assemble_cheeseburger = "치즈버거를 만들지 못했습니다.",
+		assembling_bacon_burger = "베이컨 치즈버거를 만들고 있습니다",
+		assembled_bacon_burger = "베이컨 치즈버거를 만들었습니다",
+		failed_assemble_bacon_burger = "베이컨 치즈버거를 만들지 못했습니다.",
+		assembling_bne_burger = "베이컨-계란 버거를 만들고 있습니다",
+		assembled_bne_burger = "베이컨과 계란 버거를 만들었습니다",
+		failed_assemble_bne_burger = "베이컨 앤 에그 버거를 만드는 데 실패했습니다.",
+		assembling_veggie_burger = "채식주의자 버거 만드는 중",
+		assembled_veggie_burger = "채식주의자 버거를 만들었습니다.",
+		failed_assemble_veggie_burger = "채식주의자 버거를 만드는 데 실패했습니다.",
 
 		mix_avocado_smoothie = "아보카도 스무디 만들기",
 		press_to_mix_avocado_smoothie = "[${SeatEjectKey}] 아보카도 스무디 만들기",
@@ -5273,6 +5409,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		failed_refill_vape = "VAPE 내용물 채우기에 실패했습니다.",
 
 		plain_vape = "기본 (맛 없음)",
+		weed_vape = "대마 카트리지",
 		mango_vape = "망고 맛",
 		strawberry_vape = "딸기 맛",
 		menthol_vape = "멘솔 맛",
@@ -5314,6 +5451,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		process_rubber = "고무 가공",
 		press_process_rubber = "[${SeatEjectKey}] 고무 가공",
 		failed_process_rubber = "고무 가공 실패.",
+
+		craft_pvc_pipe = "PVC 파이프 제작",
+		press_craft_pvc_pipe = "[${SeatEjectKey}] PVC 파이프 제작",
+		crafting_pvc_pipe = "PVC 파이프 제작 중",
+		crafted_pvc_pipe = "PVC 파이프 제작 완료.",
+		failed_craft_pvc_pipe = "PVC 파이프 제작 실패.",
 
 		process_aluminium = "알루미늄 가공",
 		press_process_aluminium = "[${SeatEjectKey}] 알루미늄 가공",
@@ -5501,11 +5644,18 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		sawed_shotgun = "송곳니 샷건이 제작되었습니다.",
 		failed_saw_shotgun = "송곳니 샷건 제작에 실패하였습니다.",
 
-		bake_brownies = "브라우니 굽기",
-		press_bake_brownies = "[${SeatEjectKey}] 브라우니 굽기",
+		use_microwave = "전자렌지 사용",
+		press_to_use_microwave = "[${SeatEjectKey}] 전자렌지 사용",
+
+		brownies_recipe = "브라우니",
 		baking_brownies = "브라우니 굽는 중",
 		baked_brownies = "브라우니가 굽혔습니다.",
 		failed_bake_brownies = "브라우니 굽기에 실패하였습니다.",
+
+		weed_gummies_recipe = "위드 구미",
+		making_weed_gummies = "위드 구미 제작 중",
+		made_weed_gummies = "위드 구미 제작 완료.",
+		failed_make_weed_gummies = "위드 구미 제작 실패.",
 
 		mix_brushstroke_paint = "브러쉬 스트로크 페인트 혼합",
 		press_mix_brushstroke_paint = "[${SeatEjectKey}] 브러쉬 스트로크 페인트 혼합하기",
@@ -5597,6 +5747,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		mixed_grimace_shake = "그림 계란 흔들기 완료.",
 		failed_mix_grimace_shake = "그림치즈 쉐이크를 혼합하는 데 실패했습니다.",
 
+		assemble_snowlauncher = "눈덩이 런처 조립",
+		press_to_assemble_snowlauncher = "[${SeatEjectKey}] 눌러 눈덩이 런처 조립",
+		assembling_snowlauncher = "눈덩이 런처 조립 중",
+		assembled_snowlauncher = "눈덩이 런처 조립 완료.",
+		failed_assemble_snowlauncher = "눈덩이 런처 조립 실패.",
+
 		deconstruct_ammo = "탄약 분해",
 		press_to_deconstruct_ammo = "[${SeatEjectKey}] 탄약 분해",
 
@@ -5620,6 +5776,32 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		crafting_ammo = "탄약 제작 중",
 		crafted_ammo = "탄약이 제작되었습니다.",
 		failed_craft_ammo = "탄약 제작에 실패했습니다.",
+
+		process_weed = "대마초 가공",
+		press_to_process_weed = "[${SeatEjectKey}] 눌러 대마초 가공",
+
+		package_1q_recipe = "1q 대마초 4개 포장",
+		packaging_1q = "1q 대마초 4개 포장 중",
+		packaged_1q = "1q 대마초 4개 포장 완료.",
+		failed_package_1q = "1q 대마초 4개 포장 실패.",
+
+		process_bud_recipe = "대마초 버드 가공하기",
+		processing_bud = "대마초 버드 처리 중",
+		processed_bud = "가공된 대마초 버드.",
+		failed_process_bud = "대마초 버드 처리 실패.",
+
+		process_meat = "고기 가공하기",
+		press_to_process_meat = "[${SeatEjectKey}] 고기 가공하기",
+
+		beef_sausages_recipe = "소시지 만들기",
+		crafting_beef_sausages = "소시지 제조 중",
+		crafted_beef_sausages = "소시지 제조 완료.",
+		failed_craft_beef_sausages = "소시지 제조 실패.",
+
+		bacon_recipe = "베이컨 만들기",
+		crafting_bacon = "베이컨 제조 중",
+		crafted_bacon = "베이컨 제작됨.",
+		failed_craft_bacon = "베이컨 제작 실패함.",
 
 		no_required_items = "필요한 모든 아이템이 없습니다.",
 
@@ -5664,10 +5846,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		divorced = "이혼",
 		divorced_description = "부모님이 이혼한 경우에 선택하세요.",
 
-		["in"] = "in",
-		out = "나가기",
-		up = "위",
-		down = "아래",
+		["in"] = "In",
+		out = "밖으로",
+		up = "위로",
+		down = "아래로",
 		brow = "눈썹",
 		brow_description = "외모 특징을 변경합니다.",
 
@@ -6035,6 +6217,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		player_speed = "플레이어 이동 속도: ${playerSpeed}",
 		player_ped = "플레이어 캐릭터 ID: ${playerPedId}",
 		heading = "시선 방향: ${heading}",
+		bearing = "방위: ${bearing}°",
 		coords = "좌표: ${coords}",
 		rotation = "방향: ${rotation}",
 		normal = "표면: ${normal}",
@@ -6047,6 +6230,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		not_networked_vehicles = "네트워크에 연결되지 않은 차량: ${count}",
 		invisible_vehicles = "투명 차량: ${count}",
 		parked_vehicles = "주차된 차량: ${count}",
+		available_doors = "사용 가능한 문 ID: ${doors}",
 
 		distance = "거리: ${distance}m",
 		distance_first = "첫 위치 기억됨.",
@@ -6062,6 +6246,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		vehicle_acceleration = "0에서 60까지: ${time}",
 		vehicle_acceleration_120 = "0에서 120까지 가속: ${time}",
 		vehicle_acceleration_150 = "0에서 150까지: ${time}",
+		vehicle_brake_distance = "제동 거리: ${distance}m",
 		vehicle_acceleration_force = "출발 힘: ${force}",
 
 		invalid_network_id = "유효하지 않은 네트워크 ID입니다.",
@@ -6072,6 +6257,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		failed_entity_info = "엔티티 정보를 가져오는 데 실패했습니다.",
 		printed_entity_info = "엔티티 서버 정보를 F8에 출력했습니다.",
 
+		no_entity_network = "네트워크 ID가 ${networkId}인 엔티티가 없습니다.",
 		move_entity_success = "네트워크 ID가 ${networkId}인 엔티티를 성공적으로 이동했습니다.",
 		move_entity_failed = "엔티티 이동에 실패했습니다.",
 		move_entity_no_permissions = "적절한 권한 없이 엔티티를 이동하려고 시도했습니다.",
@@ -6208,6 +6394,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		unlocks = "해금: <i>${cluster}</i>."
 	},
 
+	effect_zones = {
+		in_zones = "영향 영역: ~g~${zones}",
+		not_in_zones = "어떠한 영향 영역에도 속해 있지 않습니다.",
+		effects = "효과: ${effects}"
+	},
+
 	elevators = {
 		use_elevator = "[${InteractionKey}] 엘리베이터 사용",
 		elevator_title = "엘리베이터",
@@ -6333,6 +6525,32 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		give_item_failed = "${itemName}을(를) 플레이어에게 주는데 실패하였습니다."
 	},
 
+	emote_menu = {
+		menu_title = "OP-FW 감정 표현",
+
+		dance_emotes = "🕺 춤 감정 표현",
+		dance_emotes_description = "모든 춤 감정 표현 목록.",
+		shared_emotes = "👫 공유 이모티콘",
+		shared_emotes_description = "모든 공유 이모티콘 목록입니다.",
+		prop_emotes = "📦 소품 이모티콘",
+		prop_emotes_description = "모든 소품 이모티콘 목록입니다.",
+		animal_emotes = "🐻 동물 이모티콘",
+		animal_emotes_description = "모든 동물 이모티콘 목록입니다.",
+		pegi_emotes = "🔞 Pegi 이모티콘",
+		pegi_emotes_description = "모든 Pegi 이모티콘 목록입니다.",
+		racing_emotes = "🏁 레이싱 이모티콘",
+		racing_emotes_description = "모든 레이싱 이모티콘 목록입니다.",
+
+		emotes = "이모티콘",
+		emotes_description = "모든 이모티콘 목록입니다.",
+		moods = "표현 / 기분",
+		moods_description = "표정 / 기분을 변경합니다.",
+		walkstyles = "걷기 스타일",
+		walkstyles_description = "걷는 방식을 변경합니다.",
+		cancel_emote = "감정 표현 취소",
+		cancel_emote_description = "현재 재생 중인 감정 표현을 취소합니다."
+	},
+
 	exclusive_dealership = {
 		cost_money = "${price}원",
 		cost_points = "${points} OP 포인트",
@@ -6424,6 +6642,16 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		flags_on_ground = "땅에 깃발이 있습니다: ${flagsOnGround}"
 	},
 
+	flight_radar = {
+		callsign_invalid = "콜사인은 3자에서 10자 사이어야 합니다.",
+		callsign_set = "콜사인이 성공적으로 `${callsign}`(으)로 업데이트되었습니다.",
+		callsign_reset = "콜사인이 성공적으로 재설정되었습니다.",
+		callsign_set_failed = "콜사인 업데이트에 실패했습니다.",
+
+		emergency_type_1 = "경찰",
+		emergency_type_2 = "응급 의료"
+	},
+
 	forcefields = {
 		invalid_radius = "유효하지 않은 반경 (1에서 200 사이여야 함).",
 		failed_create = "포스 필드 생성에 실패했습니다.",
@@ -6442,7 +6670,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	fortune_cookies = {
 		opened_cookie_logs_title = "운세 쿠키 열기",
 		opened_cookie_logs_details = "${consoleName}님이 운세 쿠키를 열어 `${fortune}`을(를) 받았습니다.",
+		created_cookie_logs_title = "운세 쿠키 생성됨",
+		created_cookie_logs_details = "${consoleName}님이 메시지 `${fortune}`를 담은 운세 쿠키를 생성했습니다.",
 
+		missing_fortune = "운세가 없습니다.",
+		failed_create_cookie = "운세 쿠키 생성 실패.",
 		failed_open = "운세 쿠키를 열지 못했습니다."
 	},
 
@@ -6573,6 +6805,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		decrypting = "해독 중",
 		guns_disabled = "총기 밀매가 현재 사용 불가능합니다.",
 		high_level_cooldown = "FIB 서버와 연결하지 못하여, 나중에 다시 시도해주세요.",
+		timeout_cooldown = "FIB 방화벽이 연결을 차단했습니다. 나중에 다시 시도하십시오.",
 		failed_start_run = "총기 밀매를 시작하는 데 실패했습니다.",
 		hack_timeout = "서버와의 연결이 끊긴 것으로 판단되어, 다시 시도해주세요.",
 
@@ -6682,6 +6915,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		revived_player_removed_injuries_details = "${consoleName}님이 ${targetConsoleName}님을 부활시키고 부상을 회복시켰습니다.",
 		revived_player_title = "부활한 플레이어",
 		revived_player_details = "${consoleName}님이 ${targetConsoleName}님을 부활시켰습니다.",
+		revived_range_self_title = "범위 내 사람들과 자신 부활",
+		revived_range_self_details = "${consoleName}님이 ${radius}m 범위 내 모두, 자신 포함해서 부활했습니다.",
+		revived_range_title = "소생 범위",
+		revived_range_details = "${consoleName}님이 반경 ${radius}m 내의 모든 사람들을 소생시켰습니다.",
 		death_alcohol_poisoning = "알콜 중독으로 인해 기절했습니다.",
 		character_has_hardcore_died = "${fullName}님이 사망하셨습니다. 다른 캐릭터를 선택할 수 있습니다.",
 
@@ -6725,6 +6962,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		battery = "배터리",
 		fps = "FPS",
 		ping = "핑",
+		tps = "TPS",
 		autopilot = "자동조종",
 		ground_asl = "상대고도/해발고도 (${unit})",
 		heading = "방향",
@@ -6746,6 +6984,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		fps_unit = "fps",
 		ping_unit = "ms",
+		tps_unit = "tps",
 
 		smart_warnings = "경고: ${warnings}!",
 		dehydrated = "탈수",
@@ -6787,6 +7026,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	identification = {
 		los_santos = "로스 산토스",
 		citizen_card = "시민증",
+		driver_license = "운전면허증",
 		first_name = "이름",
 		last_name = "성",
 		gender = "성별",
@@ -6794,6 +7034,17 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		gender_female = "여성",
 		date_of_birth = "생년월일",
 		citizen_id = "주민등록번호",
+
+		dl_no = "면허증 번호",
+		class = "등급",
+
+		fn = "이름",
+		cid = "시민 ID",
+		dob = "생년월일",
+		sex = "성별",
+		iss = "발행일",
+		cls = "분류",
+		["end"] = "END",
 
 		citizenship = "국적",
 		citizenship_value = "미국",
@@ -6816,6 +7067,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		citizen_card_details = "${firstName} ${lastName} | 생년월일: ${dateOfBirth} | 성별: ${gender} | 주민등록번호: ${characterId}",
 		just_showed_citizen_card = "시민증을 제시하였습니다. 잠시만 기다려주세요.",
+		driver_license_details = "${firstName} ${lastName} | 생년월일: ${dateOfBirth} | 성별: ${gender} | 시민 ID: ${characterId}",
+		just_showed_driver_license = "운전면허증을 보여주셨습니다. 잠시만 기다려주세요.",
 
 		boat_license = "보트 운전 면허",
 		boat_license_details = "보트 운전 면허 | ${firstName} ${lastName} | 주민등록번호: ${characterId}",
@@ -6846,6 +7099,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		swat_badge_details = "SWAT | ${firstName} ${lastName} | 직책: ${positionName}",
 		management_badge = "관리 부서 배지",
 		management_badge_details = "관리 | ${firstName} ${lastName} | 직책: ${positionName}",
+		ftp_badge = "FTP 배지",
+		ftp_badge_details = "FTP | ${firstName} ${lastName} | 직위: ${positionName}",
 		ems_badge = "EMS 신분증",
 		ems_badge_details = "EMS | ${firstName} ${lastName} | 직책: ${positionName}",
 		doctor_badge = "의사 신분증",
@@ -6868,6 +7123,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		badge_type_fib = "연방수사국",
 		badge_type_swat = "특수무기 및 전술부대",
 		badge_type_management = "SASP 경영진",
+		badge_type_ftp = "현장 훈련 프로그램",
 		badge_type_ems = "응급의학 서비스",
 		badge_type_doctor = "의학 수련시설",
 		badge_type_bcfd = "블레인 카운티 소방서",
@@ -6883,6 +7139,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		badge_type_short_fib = "FIB",
 		badge_type_short_swat = "SWAT",
 		badge_type_short_management = "관리",
+		badge_type_short_ftp = "FTP",
 		badge_type_short_ems = "응급실",
 		badge_type_short_doctor = "의사",
 		badge_type_short_bcfd = "BCFD",
@@ -6996,7 +7253,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		mug_shots = "사진 촬영 대기실",
 		prison_store = "교도소 상점",
 		fruit_vendor = "과일 가판대",
-		supermarket = "슈퍼마켓",
+		food_market = "식료품 시장",
 		island_store = "섬 상점",
 		travel_agency = "여행사",
 		island_bar = "섬 바",
@@ -7070,7 +7327,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		nameable_title = "설명을 추가할 아이템 이름:",
 
-		locker_restricted = "이 아이템은 해당 인벤토리로 이동할 수 없습니다.",
+		inventory_restricted = "해당 아이템을 그 인벤토리로 옮길 수 없습니다.",
 
 		press_to_access_shredder = "[${InteractionKey}] 분쇄기에 접근",
 
@@ -7092,6 +7349,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		press_to_open_public_inventory = "~INPUT_REPLAY_SHOWHOTKEY~ ${label}에 접근",
 
 		burgershot_counter = "버거샷 카운터",
+		arcade_counter = "아케이드 카운터",
+		tequilala_counter = "테킬라 카운터",
+		prison_counter = "감옥 계수기",
 
 		inventory_name_missing = "인벤토리 이름이 누락되었습니다.",
 
@@ -7128,6 +7388,13 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		crush_raw_ruby = "<i>원석 루비</i>를 분쇄하기",
 		crush_raw_sapphire = "<i>원석 사파이어</i>를 분쇄하기",
 		break_apart_weed = "Failed to automatically generate translation.",
+		brine_meat = "살림집 <i>생고기</i>",
+		prepare_sandwich = "준비 <i>BBQ 샌드위치</i>",
+		pickle_cucumbers = "피클 <i>오이</i>",
+		melt_chocolate = "녹이기 <i>다크 초콜릿</i>",
+		craft_torch = "토치 만들기",
+		prepare_beans_toast = "<i>빈즈 온 토스트</i> 준비하기",
+		mix_pancake_batter = "<i>팬케이크 반죽</i> 만들기",
 
 		search = "조사",
 		amount = "수량",
@@ -7151,6 +7418,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		logs_item_moved_title = "아이템 이동됨",
 		logs_item_moved_details = "${consoleName}님이 ${moveAmount}개의 ${itemLabel}을(를) 인벤토리 ${startInventory}:${startSlot}에서 ${endInventory}:${endSlot}로 이동했습니다.",
+		logs_item_given_title = "아이템 지급",
+		logs_item_given_details = "${consoleName}님이 ${targetConsoleName}님에게 ${amount}x ${label}을/를 지급했습니다.",
 
 		logs_item_purchased_title = "아이템 구매됨",
 		logs_item_purchased_no_tax_details = "${consoleName}님이 `${itemLabel}`를 ${purchaseAmount}개 구매하여 $${purchaseCost}를 지불했습니다.",
@@ -7202,6 +7471,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		citizen_card = "주민증",
 		citizen_card_description = "신분증, 사격 라이선스 및 운전면허로 작용합니다.",
+		driver_license = "운전 면허증",
+		driver_license_description = "공식 운전 면허증. 시리얼 상자 뒷면에서 꺼내온 건 아니에요.",
 		phone = "핸드폰",
 		phone_description = "never:tm:",
 		radio = "무전기",
@@ -7249,6 +7520,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		swat_badge_description = "특수무기 및 전술부서의 경찰관을 위한 배지입니다.",
 		management_badge = "경영부서 배지",
 		management_badge_description = "SASP 경찰 관리 부서의 요원을 위한 배지입니다.",
+		ftp_badge = "FTP 배지",
+		ftp_badge_description = "필드 트레이닝 프로그램 트레이너를 위한 배지.",
 		ems_badge = "EMS 신분증",
 		ems_badge_description = "EMS 의료사들을 위한 신분증입니다.",
 		doctor_badge = "의사 신분증",
@@ -7291,20 +7564,28 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		compass_description = "43.3068 북위 0.7668 경도",
 		map = "지도",
 		map_description = "어디로 가고 있는지, 어디에 갔는지를 보여줍니다. 아니면, 아마도 당신은 저기에 있었나요?",
+		bus_map = "버스 지도",
+		bus_map_description = "로스 산토스의 버스 노선을 보여주는 지도입니다. 버스를 탈 수 있는 모든 정류장을 보여줍니다.",
+		flight_radar = "비행 레이더",
+		flight_radar_description = "이 고급 비행 레이더 수신기는 하늘로 가는 창입니다. 레이더 기지의 범위 내에 있는 한 항공기의 움직임에 대한 실시간 통찰력을 제공합니다. 항공 애호가 및 전문가들에게 완벽하며, 공중 풍경에 대한 포괄적인 개요를 제공하여 항상 세계 관계를 유지합니다.",
 		glass_breaker = "비상용 창 깨기",
 		glass_breaker_description = "비상 상황에서 차 창문을 깨는 데 사용됩니다.",
 
 		picture = "사진",
 		picture_description = "친구들과 함께한 모든 추억을 수집하세요. (크기: 1x1)",
+		picture_wide = "사진",
+		picture_wide_description = "당신과 친구들의 모든 추억을 수집하세요. (크기: 14x8.5)",
 		printed_card = "인쇄된 카드",
 		printed_card_description = "작은 인쇄된 카드입니다, 사명 카드일까요? (크기: 9x5)",
 		printed_document = "인쇄된 문서",
 		printed_document_description = "인쇄된 문서입니다. 편지일지도 모르겠죠? (크기: 21x28)",
-		paper = "사진용 종이",
-		paper_description = "사진을 인쇄하기 위한 빈 종이입니다. (크기: 1x1)",
-		card_paper = "명함 용지",
+		paper = "사진 용지 (1x1)",
+		paper_description = "정사각형 사진을 인쇄하기 위한 빈 용지입니다. (크기: 1x1)",
+		paper_wide = "사진 용지 (14x8.5)",
+		paper_wide_description = "와이드 사진을 출력하기 위한 빈 용지입니다. (사이즈: 14x8.5)",
+		card_paper = "카드 용지 (9x5)",
 		card_paper_description = "명함을 인쇄하기 위한 빈 종이입니다. (크기: 9x5)",
-		document_paper = "문서용 종이",
+		document_paper = "문서 용지 (21x28)",
 		document_paper_description = "${consoleName} iškrovė ${charactersUnloaded} veikėjus be jokios nurodytos priežasties.",
 		printer = "프린터",
 		printer_description = "팩스 없이 프린터만 있습니다.",
@@ -7351,6 +7632,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		bean_machine_delivery_description = "업타운 작은 커피숍에서 나오는 멋진 간식이 가득 든 가방.",
 		kissaki_delivery = "키사키 식사",
 		kissaki_delivery_description = "맛있는 초밥과 일본의 다른 고급 요리들을 모은 메뉴입니다.",
+		green_wonderland_delivery = "그린 원더랜드 배달물",
+		green_wonderland_delivery_description = "당신이 좋아하는 그린 꿀템이 가득한 가방. #420blazeit",
 
 		ear_defenders = "귀마개",
 		ear_defenders_description = "시끄러운 소음으로부터 귀를 보호하기 위해 사용됩니다.",
@@ -7367,6 +7650,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		small_frog_description = "작은 개구리입니다. 이 작은 친구를 보세요, 정말 귀엽죠!",
 		seashell = "조개껍질",
 		seashell_description = "해변에서 찾은 조개껍질입니다. 귀를 대면 바다 소리를 들을 수 있습니다.",
+		lucky_penny = "행운의 페니",
+		lucky_penny_description = "행운의 빛을 발견할 수 있는 듯한 운수 좋은 페니, 도로에서 찾을 수 있는 희귀한 보물로서 행운을 약속합니다. 가까이 가져다 두고 행운이 당신의 길을 이끌도록 해보세요.",
+		small_frog_mk2 = "작은 개구리 MK2",
+		small_frog_mk2_description = "진흙 속에는 작은 군대 모자와 작은 AK를 든 것처럼 보이는 작은 개구리 MK2가 숨어 있습니다. 돋보기로 진흙 속에서 찾아내는 것은 자연의 신기한 경이로움의 증거이며 드물고 재미있는 명예입니다.",
+		caterpillar = "애벌레",
+		caterpillar_description = "정원의 보석 같은 이 화려한 애벌레는 피어 있는 풀에서 흔히 찾을 수 없는 희귀한 존재다. 확대유리와 호기심이 예민한 사람만이 발견할 수 있다. 선명한 줄무늬와 섬세한 움직임은 자연을 사랑하는 이들에게 큰 즐거움을 준다.",
 
 		keys = "열쇠",
 		keys_description = "어딘가의 문들에 대한 한 쌍의 열쇠입니다.",
@@ -7492,6 +7781,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		water_description = "위험! 이산화수소가 무색, 무취입니다. 이산화수소를 실수로 흡입한 경우 치명적 일 수 있습니다. 고체 형태의 이산화수소에 장기적으로 노출되면 심각한 조직 손상을 유발합니다. 이산화수소 섭취의 증상으로는 과다한 땀과 소변, 복부 부기, 메스꺼움, 구토와 체액 전해질 불균형이 있을 수 있습니다.",
 		hamburger = "햄버거",
 		hamburger_description = "미국의 맛!",
+		bacon_burger = "베이컨 치즈버거",
+		bacon_burger_description = "클래식한 맛을 선사하는 이 베이컨 치즈버거는 즉석에서 구운 쥬시한 소고기에 바삭한 베이컨과 녹인 치즈가 얹혀져 있습니다. 한 입 먹을 때마다 깔끔한 맛이 느껴지며, 햄버거 애호가들에게는 시대를 초월하는 선택입니다.",
+		bne_burger = "베이컨 앤 에그 버거",
+		bne_burger_description = "바삭바삭한 베이컨, 완벽히 구운 계란, 그리고 짭짤한 소고기 패티 위에 풍부하게 녹아든 치즈의 조화로운 조합으로 버거 경험을 한층 높여보세요. 아침과 점심을 아름답게 연결하는 푸짐하고 만족스러운 한 끼 식사입니다.",
+		veggie_burger = "채식주의자용 버거",
+		veggie_burger_description = "부드러운 버거 바닐라에 촉촉한 상추 네 잎이 살짝 빵 사이에 놓여 있으며, 약간의 케첩으로 가벼운 산미를 더했습니다. 클래식 버거에 신선한 녹색의 색다른 변주로 가벼운 식사 옵션을 찾는 분들에게 딱입니다.",
 		belgian_fries = "벨기에 감자튀김",
 		belgian_fries_description = "개선 된 맛을 위해, DM @Giv3n#0753에게 'fritas' 만 메시지를 보내세요.",
 		coke = "콜라",
@@ -7660,6 +7955,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		weed_1q_description = "420 브로",
 		weed_1oz = "위드 1온스",
 		weed_1oz_description = "1680 브로",
+		weed_bud = "마리화나 꽃봉오리",
+		weed_bud_description = "에픽 420 브로",
 
 		oxy_prescription = "산소 처방전",
 		oxy_prescription_description = "불안한 산소 처방전입니다.",
@@ -7669,6 +7966,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		brownies = "브라우니",
 		brownies_description = "겉이 바삭하고 속은 부드러울 브라우니이며 초콜릿 맛이 진하게 나며 약간의 킥이 가미되어 인생을 되돌아보게 합니다.",
+		weed_gummies = "마리화나 구미",
+		weed_gummies_description = "높아지는 맛있는 방법.",
 
 		ejector_seat = "탈출 시트",
 		ejector_seat_description = "탈출장치가 장착 된 좌석입니다!",
@@ -7718,6 +8017,25 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		hotwheels_towmater = "타우 메이터",
 		hotwheels_towmater_description = "내 이름은 메이터야, 토마터처럼 Tuh가 없어.",
 
+		kinder_surprise = "킨더 서프라이즈 에그",
+		kinder_surprise_description = "이것은 보통의 달걀이 아니다! 깨어서 안쪽에 기다리는 경이로운 세계와 달콤한 동료를 만날 수 있는데, 어떤 친구를 만날까요? 활동적인 스파키 맥 보우타이, 지혜로운 캡틴 위스커페이스, 아니면 세련된 써 팬시 팬츠? 놀람은 즐거움의 반은다!",
+		plush_green = "이끼 맥헤어페이스",
+		plush_green_description = "이 촉촉한 인형은 침대에 들어간 채로 잘리지 않고 항상 모험을 좋아해요 (뭐든 발견할 수 있더라도).",
+		plush_red = "슈퍼스타 셰이즈",
+		plush_red_description = "이 촉촉한 인형은 항상 시원하고 차분하고 침착합니다. 선글라스 없이 시야를 확보할 수 없을지 몰라도 비트는 분명히 느낄 수 있어요.",
+		plush_pink = "팬시 팬츠 귀족님",
+		plush_pink_description = "이 촉촉한 인형은 항상 최고의 복장을 입은 멋진 분이에요. 조금은 화려할지 몰라도, 완전히 지상으로 내려갈 준비가 돼 있어요 (하의를 입은 모자 차림 인형이 되는 한).",
+		plush_blue = "스파키 맥보우타이",
+		plush_blue_description = "이 작은 친구는 전기적인 룩을 완벽하게 소화하는데, 에너지로 가득찬 머리카락과 언제나 세련된 보우타이가 특징입니다. 하지만 스파키 맥보우타이는 전기가 아니라 포옹과 아늑한 밤을 즐기는 데 집중합니다. 그런데 잠시! 잔소리를 준비하며 전기를 충전하는 동안 머리를 만지지 마세요!",
+		plush_white = "캡틴 위스커페이스",
+		plush_white_description = "이 인형은 이야기를 들려주는 수염을 가진 현명한 늙은 혼이에요. 말은 못하지만 항상 듣는 귀(또는 꼬리)를 가지고 있습니다.",
+		plush_yellow = "선샤인 드레드",
+		plush_yellow_description = "이 인형은 긍정적인 에너지와 밝은 분위기를 전하는 것을 좋아합니다. 약간은 침착할 수 있지만, 항상 즐거운 시간을 보내는 것을 좋아합니다.",
+		plush_orange = "탱 어업자",
+		plush_orange_description = "이 인형은 항상 새로운 모험을 찾고 있습니다. 조금은 난장판일 수 있지만, 항상 도전을 즐기는 편입니다.",
+		plush_wasabi = "와사비 고수",
+		plush_wasabi_description = "이 작은 친구는 신선한 와사비처럼 진정한 희귀품입니다! 눈부시게 녹색으로 속을 들어볼 수 있습니다. 그 작은 크기를 과소평가하지 마세요 - 그들은 성격 가득한 패키지이고 항상 즐거움을 추구합니다.",
+
 		boxing_gloves = "복싱 글러브",
 		boxing_gloves_description = "락키가 될 수 있지만 당신은 아마 속편을 못할 것이다 ...",
 		leash = "리드줄",
@@ -7744,6 +8062,21 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		jolly_rancher_cherry_description = "놀이기구에 몰려 흔들리며 신나게 즐기는 기쁨과 같은 쥴리랜처 하드 캔디의 대담하고 활기찬 체리맛을 즐겨보세요.",
 		jolly_rancher_grape = "포도쥴리랜처",
 		jolly_rancher_grape_description = "이 생생하고 개운한 Jolly Rancher 하드 캔디로 포도의 즙을 가득 느껴보세요.",
+
+		lollipop_pack = "롤리팝 팩",
+		lollipop_pack_description = "롤리팝 팩으로 신비한 맛의 메들리에 빠져보세요. 각각은 달콤한 놀램을 안겨주며, 다채로운 과일 풍미로 이루어진 랜덤한 혼합물을 제공합니다. 화려한 포장마다 맛있는 손님을 위한 즐거움을 선사합니다!",
+		lollipop_apple = "사과 롤리팝",
+		lollipop_apple_description = "새콤한 맛에 달콤함이 가미된 이 사과 맛 롤리팝은 가을 과수원을 거닐고 있는 듯한 느낌을 줍니다. 시원하고 쫄깃한 사과의 본질을 한 입씩 느낄 수 있습니다.",
+		lollipop_coke = "콜라 롤리팝",
+		lollipop_coke_description = "롤리팝의 고전 콜라 맛. 기포가 일어나는 상쾌한 맛은 마치 사이다 분수대의 익숙한 향을 캔디 속에서 전달합니다.",
+		lollipop_grape = "포도 롤리팝",
+		lollipop_grape_description = "숙성포도의 풍부하고 즙이 많은 맛으로 가득한 이 롤리팝은 여러분을 햇빛이 듬뿍 드는 들판으로 직접 이동시켜줄 보라색 즐거움이에요.",
+		lollipop_raspberry = "라즈베리 롤리팝",
+		lollipop_raspberry_description = "이 라즈베리 롤리팝은 달콤함과 약간의 쌉싸름함을 결합한 베리의 터져나오는 맛으로, 여름 과일 이름을 딴 것처럼 달콤한 청아함을 선사합니다.",
+		lollipop_strawberry = "딸기 맛 롤리팝",
+		lollipop_strawberry_description = "해가 닿아 익은 딸기의 정수가 이 롤리팝에 스며들어 달콤하고 베리향 가득한 경험을 제공합니다. 마치 화창한 날과 같이 즐거운 맛입니다.",
+		lollipop_watermelon = "수박 맛 롤리팝",
+		lollipop_watermelon_description = "여름의 상쾌한 슬라이스를 닮은 이 수박 롤리팝은 모든 달콤함을 가지고 있고 씨는 전혀 없어, 연중 언제든지 즐기기 좋은 촉촉하고 수분 공급이 되는 대접입니다.",
 
 		bucket = "양동이",
 		bucket_description = "임시 헬멧으로 사용할 수 있어요.",
@@ -7881,6 +8214,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		scratch_ticket_pearl_description = "이 수수께끼 같은 티켓으로 숨겨진 부를 찾아 항해하세요. 100달러를 통해 210,000달러까지의 재화가 숨겨져 있을지도 모릅니다. 각각의 스크래치는 바다의 가장 깊은 비밀과 전하지 않은 재물에 다가갈 수 있게 해줍니다.",
 		scratch_ticket_ching = "스크래치-오프 (차칭)",
 		scratch_ticket_ching_description = "잠재적인 부의 전기적인 설렘에 빠져보세요. 100달러만으로도 화려한 티켓을 통해 최대 210,000달러를 얻을 수 있는 화려한 기회가 찾아옵니다. 이것은 단순한 게임이 아니라 행운의 향연입니다!",
+		scratch_ticket_carnival = "스크래치 카니발",
+		scratch_ticket_carnival_description = "한번 정성스럽게 다가오세요! 오직 $100으로 최대 $210,000을 딸 수 있는 운의 축제에 참여해 보세요. 축제가 도시에 온 거리에서 당신을 기다리는 대상이 있습니다!",
 
 		avocado = "아보카도",
 		avocado_description = "작고 초록색 집니다. 딥을 만드는 데 유용합니다.",
@@ -7915,6 +8250,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		milk = "우유",
 		milk_description = "사랑으로 추출된 일반적인 소 우유입니다.",
+
+		tomato_juice = "토마토 주스",
+		tomato_juice_description = "이 선명한 붉은 캔은 '우승자의 비행 음료수'로 알려져 있는 토마토 주스를 담고 있습니다 (어느 우승자도 말하지 않았지만). 토마토 주스 - 햇빛이 캔 속에 있듯, 햇빛이 추하게 맛이 났다면 하는 느낌입니다.",
 
 		almond_milk = "아몬드 우유",
 		almond_milk_description = "아몬드에서 우유를 어떻게 짠거야??????",
@@ -7954,6 +8292,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		empty_tank = "빈 탱크",
 		empty_tank_description = "프로판 또는 프로판 액세서리가 포함되어 있지 않습니다.",
+
+		pvc_pipe = "PVC 파이프",
+		pvc_pipe_description = "이 다재다능한 PVC 파이프는 DIY 애호가들의 꿈의 재료입니다. 집에서 만든 대포부터 창의적인 발사 장치까지 만들 때 이상적입니다. 튼튼하면서 가벼운 디자인으로 다양한 창의적이고 실용적인 프로젝트에 완벽합니다.",
 
 		pepper_spray = "페퍼 스프레이",
 		pepper_spray_description = "내 눈!",
@@ -8000,6 +8341,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		plastic_chair_description = "세계 어디든지 배치할 수 있습니다. 캠핑, 사냥 및 낚시에 이상적입니다!",
 		fishing_chair = "낚시 의자",
 		fishing_chair_description = "세계 어디에서나 놓을 수 있습니다. 캠핑, 사냥 및 낚시에 완벽합니다!",
+		sleeping_bag = "침낭",
+		sleeping_bag_description = "피곤한 여행자를 위한 휴대용 침대, 캠핑, 사냥 및 낚시에 적합합니다!",
 		yoga_mat = "요가 매트",
 		yoga_mat_description = "세계 어디에서나 놓을 수 있습니다. 캠핑, 사냥 및 낚시에 완벽합니다!",
 		cooler_box = "쿨러 박스",
@@ -8016,6 +8359,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		disposable_grill_description = "캠핑, 사냥, 낚시에 완벽한 어디에서나 놓을 수 있습니다! 이 아이템은 다시 줍을 수 없습니다.",
 		grill = "그릴",
 		grill_description = "모든 장소에 놓을 수 있습니다. 캠핑, 사냥, 낚시에 딱입니다!",
+		torch = "횃불",
+		torch_description = "이 횃불은 광산의 어둠을 꿰뚫어 주는 튼튼한 조명입니다. 대담한 탐험가나 광부들을 위한 견고한 불빛으로, 꾸준한 불꽃으로 어둠을 물리칩니다.",
+		ladder = "사다리",
+		ladder_description = "이 견고하고 튼튼한 사다리는 안전하고 신뢰할 수 있게 새로운 높이에 도달할 수 있도록 설계되었습니다. 큼직한 무거운 프레임으로 안정성을 확보하며, 좀 더 높은 곳을 오를 용기와 힘을 요구하는 도전적인 작업에 이상적입니다.",
 		police_barrier = "경찰 방호막",
 		police_barrier_description = "모든 장소에 놓을 수 있습니다.",
 		dummy = "파괴 허용 훈련용 표적",
@@ -8142,6 +8489,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		cupcake_description = "마법의 유니콘 크림이 들어간 부드러운 케이크입니다.",
 		pink_lemonade = "핑크 레모네이드",
 		pink_lemonade_description = "핑크색을 입히기 위해 그냥 레모네이드를 두 배 가격으로 판매하는 것이 아닙니다...",
+		iced_latte = "아이스 라떼",
+		iced_latte_description = "더운 날씨에 완벽한 상쾌한 아이스 커피입니다.",
 
 		irish_coffee = "아이리쉬 커피",
 		irish_coffee_description = "신선한 커피에 약간의 아이리쉬 위스키가 더해진 음료입니다.",
@@ -8187,6 +8536,49 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		wood_description = "나무에서 새로 벤 그대로의 나무입니다.",
 		charcoal = "숯",
 		charcoal_description = "보통의 석탄보다 좋은 숯입니다.",
+		canine_tooth = "산사자 이빨",
+		canine_tooth_description = "야생의 힘을 상징하는 희귀하고 강력한 유물로, 이 산사자 이빨은 사냥의 순수한 본성을 상징합니다. 어떤 사냥꾼에게는 희귀한 전리품입니다.",
+		antlers = "사슴 뿔",
+		antlers_description = "드물게 발견되는 이 사슴 뿔은 사냥꾼의 야생의 조용한 댄스에 대한 우아한 헌사입니다. 희귀하고 우아한 수집품입니다.",
+		pancake_mix = "팬케이크 믹스",
+		pancake_mix_description = "완벽한 아침을 위한 첫 번째 단계인 다재다능한 혼합물입니다. 이 팬케이크 믹스는 우유 스플래시로 깨어나기를 기다리며, 여러분의 요리 즐거움을 위한 부드러운 반죽으로 변신할 준비가 되어 있습니다.",
+		beef_sausages = "소시지",
+		beef_sausages_description = "최상급 생고기로 만든 소시지는 사냥꾼의 기술과 정육장의 솜씨를 증명하는 제품입니다. 그릴에 구워 먹으면 와일드에서 직접 담은 고기를 접시 위로, 활활 타오르는 식사를 약속합니다.",
+		raw_bacon = "생 베이컨",
+		raw_bacon_description = "최상급 고기에서 잘라내어 완벽하게 숙성시킨 이 프리미엄 베이컨은 어떤 식사라도 맛있게 만들어줍니다. 그릴에 구워 먹는 것이 최고이며 입 안에서 살살 녹아요.",
+
+		liquid_smoke = "액체 연기",
+		liquid_smoke_description = "이 병에 담긴 액체 연기는 조리의 요술에 관한 비밀입니다. 불과 나무의 고대적 속삭임을 살이고 있는 농축된 본질로, 생고기에 주입됩니다.",
+		raw_brined_meat = "소금 절인 생고기",
+		raw_brined_meat_description = "액체 연기에 입맞춘 이 생고기는 미래의 연회를 약속합니다. 그릴에 얹으면 비프 저키로 변화하여 인내와 장인 정신의 증거가 됩니다.",
+		bread_loaf = "빵 반죽",
+		bread_loaf_description = "오븐에서 따뜻하게 구운 빵 반죽입니다. 샌드위치, 토스트, 든든한 식사에 딱입니다.",
+		bbq_sauce = "BBQ 소스",
+		bbq_sauce_description = "풍부하고 고소한 맛을 더해 어떤 요리에도 활력을 불어넣습니다. 그릴, 양념, 딥핑에 최적입니다.",
+		bbq_sandwich = "BBQ 샌드위치",
+		bbq_sandwich_description = "부드럽고 연기 풍기는 고기와 매콤한 BBQ 소스로 가득한 맛있는 샌드위치. 영혼을 만족시켜 주는 푸짐한 한 끼 식사입니다.",
+		cucumber = "오이",
+		cucumber_description = "신선하고 상큼한 오이, 샐러드, 간식 또는 집에서 직접 만든 피클에 완벽합니다.",
+		salt = "소금",
+		salt_description = "조금의 소금은 어떤 요리든 변화시킬 수 있으며, 맛을 향상시키고 요리 창조물에 깊이를 더합니다.",
+		pickles = "피클",
+		pickles_description = "신랄하고 바삭바삭한 피클 한 병, 간식으로 딱 좋고 샌드위치나 음식에 톡 쏘는 맛을 더해줍니다.",
+		dark_chocolate = "다크 초콜릿",
+		dark_chocolate_description = "풍부하고 고급스러운 간식, 다크 초콜릿은 달달한 입맛을 충족시켜줄 뿐만 아니라 코코아의 깊고 복잡한 맛을 즐길 수 있습니다.",
+		beans = "콩",
+		beans_description = "여기 보시라! 그릇 속 식물신들의 식권! 그것은 단지 헤인즈 베이크드 빈즈가 아니라, 아님 말아라, 존귀한 콩 블리스를 향하는 문고온 베인의 개울이다! 각각의 콩, 기쁨의 입자로 가득찬, 알려지지 않은 맛들을 속이 담은 금화에 있는 물약이다. 이것은 단순히 먹을거리가 아니다; 이것은 생명의 영약 그 자체로, 당신의 미각에 자신의 위엄을 선사해줄 금속잔, 당신을 위해 그 볼거리를 안고 기다리고 있다. 콩을 영접하라! 콩을 숭배하라! 각각의 조각이 당신을 콩이 무릎위에 통치하는 영토로 이송시키도록 허락하라. 콩이 지배하는 오락가득한 이 양립구역으로 가는 각 걸음이 콩의 금실로의 보따리에 한 발자국 더 가까와지는 것이다.",
+		beans_toast = "빈즈 토스트",
+		beans_toast_description = "영국의 클래식 요리인 빈즈 토스트는 아침, 점심 또는 저녁으로 완벽한 식사입니다. 빈의 풍부하고 맛있는 맛이 따뜻하고 버터링한 토스트와 완벽하게 어우러져 안락하고 건실한 식사를 만들어 냅니다. 빠르고 쉽게 준비할 수 있습니다.",
+		pancake_batter = "팬케이크 반죽",
+		pancake_batter_description = "저품질 팬케이크 혼합물과 신선한 우유로 만든 부드럽고 부드러운 팬케이크 반죽은 아침 식사의 걸작의 캔버스입니다. 그릴에 올려 황금색, 맛있는 팬케이크로 부풀어 오릅니다.",
+		pancakes = "팬케이크",
+		pancakes_description = "부들부들하고 황금빛, 그릴에서 막 꺼낸 이 미국식 팬케이크는 하루를 시작하는 맛있고 호화스러운 방법입니다. 맛있지만 가장 건강한 선택은 아닙니다. 이것을 상상해보세요. 그것은 자유통장 위의 자유를 즐기며 시럽으로 적신 각각의 입김을 즐기는 것이 포함됩니다!",
+		grilled_sausages = "구운 소시지",
+		grilled_sausages_description = "새로 구운 소시지의 연기 풍기는 향긋함을 만끽해보세요. 능숙한 사냥꾼을 위한 요리로서 쥬시하고 맛있으며 완벽하게 조리된 이 소시지들은 각 물어뜯음마다 사냥 정신을 축하하는 전통적인 즐거움입니다.",
+		grilled_bacon = "그릴 베이컨",
+		grilled_bacon_description = "바삭하고 황금빛이며 매혹적으로 훈연된 이 그릴 베이컨은 즐길 가치 있는 것을 평가하는 사람들을 위한 최상급 탐닉품이다. 그릴에서 신선한 것으로, 그것은 맛을 즐기기 위해 준비된 척척 갈기는 모두를 위한 풍미있는 축제이다.",
+		fried_egg = "계란후라이",
+		fried_egg_description = "해장과 골든 판을 얻은 햇빛에 쬐긴 계란후라이는 바삭하게 선 윤곽을 감싸는 노른자 속새의 즐거운 맛을 자랑합니다. 어떤 식사에도 간단하지만 풍성한 선택인 계란후라이는 때로는 가장 맛있는 맛이 가장 단순한 방법으로부터 나오는 것을 보여줍니다.",
 
 		beef_jerky = "소고기 저키",
 		beef_jerky_description = "맛있는 소고기 저키 입니다.",
@@ -8204,6 +8596,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		peanuts_description = "스낵으로 딱 좋은 땅콩 한 병.",
 		olives = "올리브",
 		olives_description = "파티에 딱 맞는 작은 그릇에 담긴 올리브, 완벽한 간식입니다.",
+		popcorn = "팝콘",
+		popcorn_description = "영화 시간에 완벽한 팝콘 한 봉지.",
 
 		rice = "밥",
 		rice_description = "풍부하고 보송보송한 곡물입니다.",
@@ -8667,8 +9061,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		weapon_addon_rc4 = "Remington R4-C",
 		weapon_addon_rc4_description = "난폭하고 빠르며, 부대에서 가지고 있으면 완벽한 동료입니다. 빨간 머리가 이것을 들고 있지 않는다면요.",
 
-		weapon_addon_pp19 = "PP-19 Vityaz",
-		weapon_addon_pp19_description = "러시아의 최고봉이자, 어떤 \"공격\"에도 완벽한 무기입니다.",
+		weapon_addon_mcx = "SIG MCX",
+		weapon_addon_mcx_description = "적응성과 정밀성으로 유명한 SIG MCX는 다재다능한 총기로 어떤 시나리오에도 놀라운 신뢰성과 성능을 제공한다.",
 
 		weapon_addon_m9a3 = "베레타 M9A3",
 		weapon_addon_m9a3_description = "일을 처리할 수 있는 모든 것이 들어있는 무기입니다.",
@@ -8678,9 +9072,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		weapon_addon_m870 = "레밍턴 M870",
 		weapon_addon_m870_description = "완벽한 스포츠 및 사냥 산총인데, 다니의 쏘기는 정말 스포츠인가요...?",
-
-		weapon_addon_rpk16 = "RPK-16",
-		weapon_addon_rpk16_description = "존재하는 가장 완벽한 기관총이지만, 트랙수트 잊지 마세요.",
 
 		weapon_addon_tacknife = "궁극의 전술용 나이프",
 		weapon_addon_tacknife_description = "드디어 레벨 100을 도달했습니다. 대령은 자랑스러워할 겁니다.",
@@ -8709,7 +9100,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		weapon_addon_mk18 = "MK18",
 		weapon_addon_mk18_description = "\"무장하지 않으면 죽인다\" - 조지 워싱턴 (아마도)",
 
-		weapon_addon_glock = "Glock 17",
+		weapon_addon_glock = "Glock 19X",
 		weapon_addon_glock_description = "세계에서 가장 인기 있는 권총입니다.",
 
 		weapon_addon_colt = "콜트 1851 네이비",
@@ -8734,7 +9125,22 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		weapon_addon_glock18c_description = "${consoleName} iškrovė ${charactersUnloaded} veikėjus be jokios nurodytos priežasties.",
 
 		weapon_addon_1911 = "1911 킴버 태티컬",
-		weapon_addon_1911_description = "1911 킴버 태티컬: 스타일과 실용성이 결합된 무기입니다. 열렬한 애호가들에게 신뢰받으며 방어와 멋 지수 둘 다를 고려할 때 선택하는 무기입니다!"
+		weapon_addon_1911_description = "1911 킴버 태티컬: 스타일과 실용성이 결합된 무기입니다. 열렬한 애호가들에게 신뢰받으며 방어와 멋 지수 둘 다를 고려할 때 선택하는 무기입니다!",
+
+		weapon_addon_svd = "SVD 드라구노프",
+		weapon_addon_svd_description = "정밀성과 파워를 갖춘 SVD 드라구노프는 수십 년 동안 군사 및 경찰 부대의 필수 장비로 자리잡은 반자동 저격 소총입니다. 장거리 전투에 이상적하며, 적들이 당신의 앞을 건너지 말아야 한다는 확신을 줄 것입니다.",
+
+		weapon_addon_axmc = "AXMC",
+		weapon_addon_axmc_description = "AXMC는 저격총 엔지니어링의 정점이며, 현저한 장거리 정확도와 정밀사격의 기준으로 자리 잡은 모듈식 설계를 제공합니다.",
+
+		weapon_addon_6kh4 = "6KH4",
+		weapon_addon_6kh4_description = "현대 사냥꾼을 위해 제작된 이 6KH4 베이오넷 나이프는 고전적인 디자인과 견고한 기능성을 결합하여 완벽하게 외딴 지역에서의 정밀한 요구를 충족시킵니다.",
+
+		weapon_addon_jericho = "Jericho 941",
+		weapon_addon_jericho_description = "Jericho 941는 신뢰성, 정밀성 및 인체 공학적 디자인으로 두드러지며, 총기 사격수에게 성능과 편안함 모두에서 우수한 경험을 제공합니다.",
+
+		weapon_addon_fn509 = "FN-509",
+		weapon_addon_fn509_description = "FN-509는 균형과 정확도의 걸작으로, 15발 용량을 갖추어 신뢰성과 정밀성을 모든 사격에서 보장합니다. 방어와 임무를 위한 신뢰할 수 있는 동반자입니다."
 	},
 
 	invisibility = {
@@ -8765,6 +9171,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		move_to_repair = "차량 수리를 위해 이곳으로 이동하십시오.",
 		repairing_vehicle = "차량 수리 중",
 		fix_visual_damage = "시각적인 손상을 고치는 중입니다",
+		no_vehicle_nearby = "주변에 차량이 없습니다.",
+		no_vehicle_seat_nearby = "차량 좌석 근처에 있지 않습니다.",
+		bleaching_vehicle_seat = "차량 좌석 연마 중",
+		vehicle_seat_bleached = "좌석을 성공적으로 연마했습니다.",
 		measuring_color = "색상 측정",
 		color_measurement = "색상 측정 결과",
 		color_measurer_result = "**${primary}** (*${primaryId}*) 주색, **${secondary}** (*${secondaryId}*) 보조색, **${pearlescent}** (*${pearlescentId}*) 진주색 및 **${wheel}** (*${wheelId}*) 휠 색상.",
@@ -8799,6 +9209,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		drank_gasoline_death = "휘발유 중독",
 		drank_bleach_death = "염소산 나트륨 중독",
 		finished_joint = "담배를 마셨습니다.",
+		cant_place_here = "여기에는 놓을 수 없습니다.",
 
 		using_cuffs = "수갑 사용 중",
 		you_moved_too_fast = "움직임이 너무 빠릅니다.",
@@ -8806,10 +9217,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		failed_burger_shot_delivery = "버거샷 배달 실패.",
 		failed_bean_machine_delivery = "빈 머신 배달 실패.",
 		failed_kissaki_delivery = "키사키 식사를 열지 못했습니다.",
+		failed_green_wonderland_delivery = "녹색 원더랜드 가방을 여는 데 실패했습니다.",
 
 		burger_shot_delivery_empty = "그 버거샷 식사는 비어 있는 것 같습니다.",
 		bean_machine_delivery_empty = "그 빈 머신 배달은 비어 있는 것 같습니다.",
 		kissaki_delivery_empty = "그 키사키 식사는 비어 있는 것 같습니다.",
+		green_wonderland_delivery_empty = "그 녹색 원더랜드 가방은 비어 있는 것으로 보입니다.",
 
 		logs_used_weather_spell_title = "날씨 주문 사용",
 		logs_used_weather_spell_details = "${consoleName} 님이 `${itemName}`(을)를 사용하여 날씨를 변경하였습니다.",
@@ -8862,11 +9275,26 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		the_ticket_was = "티켓 번호는 ${ticket} 입니다.",
 		recent_pots_will_show_here = "최근 포트는 여기에 표시됩니다.",
 		server_id = "전송하려는 서버 ID...",
-		transfer_items_to_anoter_person = "다른 사람에게 아이템 전송"
+		transfer_items_to_anoter_person = "다른 사람에게 아이템 전송",
+		cancel_bet = "베팅 취소"
 	},
 
 	jail = {
 		press_to_leave_jail = "감옥을 떠나려면 ~INPUT_CONTEXT~ 를 누르세요.",
+		invalid_server_id = "유효하지 않은 서버 ID.",
+		failed_check_jail = "감옥 시간을 확인하는 데 실패했습니다.",
+		check_not_jailed = "해당 플레이어는 감옥에 있지 않습니다.",
+		remaining_time_check = "${fullName}님은 ${remaining} 감옥에 수감되어 있습니다.",
+		invalid_operation = "유효하지 않은 작업입니다. `add` 또는 `sub` 중 하나여야 합니다.",
+		invalid_amount = "유효하지 않은 양입니다. 0보다 크고 5 이하이어야 합니다.",
+		failed_modify_jail = "감옥 시간 수정에 실패했습니다.",
+		modified_jail = "${fullName}님의 감옥 시간이 수정되었습니다. 새로운 감옥 시간은 ${remaining}입니다.",
+
+		trigger_lockdown = "로크다운 시작",
+		press_trigger_lockdown = "[${InteractionKey}] 로크다운 시작",
+		lockdown_active = "봉쇄 중",
+		lockdown_title = "[발령]",
+		lockdown_detals = "10-78, 볼링브로크 교도소에서 봉쇄가 개시되었습니다. 긴급 백업을 요청합니다.",
 
 		menu_title = "감옥 메뉴",
 		check_remaining_time = "남은 시간 확인",
@@ -8875,9 +9303,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		close_menu = "메뉴 닫기",
 
 		sentence_reduced = "형량이 ${amount} 개월 축소되었습니다. ${remaining} 개월이 남았습니다.",
+		sentence_increased = "귀하의 형량이 ${amount}개월 늘어났습니다. ${remaining}개월이 남았습니다.",
 		sentence_over = "귀하는 석방되었습니다.",
-		remaining_time = "남은 시간: ${remaining} 개월.",
-		jailed = "${amount} 개월간 수감되었습니다.",
+		remaining_time_fmt = "${months}개월 (*${display}*)",
+		remaining_time = "남은 시간: ${remaining}.",
+		jailed = "${amount}에 감금되었습니다.",
 
 		mission_help_1 = "바닥을 청소하려면 ~INPUT_CONTEXT~ 버튼을 누르세요.",
 		mission_help_2 = "뭔가 먹으려면 ~INPUT_CONTEXT~ 버튼을 누르세요.",
@@ -8887,7 +9317,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		mission_2 = "샌드위치 먹기.",
 		mission_3 = "운동하기.",
 
-		mission_blip = "수감 미션"
+		mission_blip = "수감 미션",
+
+		modify_jail_logs_title = "감금 시간 수정됨",
+		modify_jail_logs_details = "${consoleName}님이 ${targetCharacter} #${targetCharacterId}(${operation} ${amount}개월)의 감금 시간을 ${after}로 수정하였습니다.",
+		triggered_lockdown_logs_title = "봉쇄 시작됨",
+		triggered_lockdown_logs_details = "${consoleName} 님이 감옥 봉쇄를 시작했습니다."
 	},
 
 	kiosks = {
@@ -8898,6 +9333,13 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		fake_lag_invalid_fps = "유효하지 않은 fps입니다.",
 		fake_lag_clamp = "fps를 ${fps} 미만으로 제한합니다.",
 		fake_lag_disabled = "가짜 렉이 비활성화되었습니다."
+	},
+
+	lag_switch = {
+		you_seem_to_be_lagging = "당신의 핑이 불안정합니다. 발사된 총알이 동기화되지 않았습니다.",
+
+		lag_detected_logs_title = "랙 감지됨",
+		lag_detected_logs_details = "${consoleName} 님이 랙으로 발사를 시도했습니다. 핑 차이: ${pingTimerDifference}. 핑 불안정: ${pingUnstable}."
 	},
 
 	lean = {
@@ -9012,7 +9454,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		god_tier = "갓 티어",
 		custom_plate = "커스텀 번호판",
 		custom_character_id = "커스텀 캐릭터 ID",
-		custom_phone_number = "커스텀 전화번호",
+		custom_phone_number = "사용자 정의 전화번호",
 		reskin = "리스킨",
 		webstore = "웹 스토어",
 		none = "없음",
@@ -9164,18 +9606,18 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 	lottery = {
 		lottery_announcement = "복권 발표",
-		lottery_about_to_roll = "5분 후에 오늘의 복권 추첨이 진행됩니다. 총 누적 상금은 $${totalPot}이며, ${betAmount}를 걸어 ${odds}%의 당첨확률을 가지고 있습니다.",
-		current_lottery_pot = "현재 총 상금은 $${totalPot}이며, $${betAmount}을(를) 걸었습니다. 당신의 당첨 확률은 ${odds}%입니다.",
+		lottery_about_to_roll = "오늘의 복권 추첨이 5분 후에 진행됩니다. 총 상금은 현재 $${totalAmount}이며 당신의 건 금액은 $${betAmount}입니다. 당첨 확률은 ${odds}%입니다.",
+		current_lottery_pot = "현재 총 상금은 $${totalAmount}으로 여러분은 $${betAmount}을 걸었습니다. 당첨 확률은 ${odds}%입니다.",
 		drew_a_lottery_winner = "복권의 당첨자가 선발되었습니다.",
 		roll_lottery_no_permission = "플레이어가 복권을 추첨하려 하였으나 권한이 없습니다.",
-		winner_has_been_picked = "${fullName} 님이 $${totalPot} 상금을 당첨 받았습니다! 이들의 배팅금액은 $${betAmount}이며, 당첨 확률은 ${odds}%입니다.",
+		winner_has_been_picked = "${fullName} 님께 $${totalAmount}의 복권 상금이 수여되었습니다! ${fullName} 님은 $${betAmount}을 거셨으며 당첨 확률은 ${odds}%입니다.",
 		claimed_lottery_winnings = "모든 복권 상금을 수령하였습니다.",
 		no_lottery_winnings = "미청구 복권 상금이 없습니다.",
 		internal_server_error = "서버 내부 오류가 발생했습니다.",
 		use_disabled_animal = "복권을 동물 NPC로 사용할 수 없습니다.",
 
 		lottery_log_title = "복권 당첨",
-		lottery_log_description = "${fullName} (ID: #${characterId}) 님이 $${totalPot}의 상금을 당첨받으셨습니다. 베팅금은 $${betAmount}입니다."
+		lottery_log_description = "${fullName} (#${characterId}) 님이 $${totalAmount}의 복권 상금을 획득하셨습니다. ${fullName} 님은 $${betAmount}을 거셨습니다."
 	},
 
 	lucky_wheel = {
@@ -9223,9 +9665,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		failed_sell = "아이템 판매에 실패했습니다.",
 
 		found_item_logs_title = "바닥에서 아이템 발견",
-		found_item_logs_details = "${consoleName}이(가) ${ground}에서 ${item}을(를) 발견했습니다.",
-		sold_item_logs_title = "레어 아이템 판매",
-		sold_item_logs_details = "${consoleName}이(가) ${item}을(를) $${price}에 판매했습니다."
+		found_item_logs_details = "${consoleName}이(가) ${ground}에서 ${item}을(를) 발견했습니다."
 	},
 
 	mdt = {
@@ -9242,7 +9682,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	mechanics = {
 		move_here_check = "업그레이드를 확인하려면 여기로 이동",
 		checking_upgrades = "차량 업그레이드 확인 중",
-		upgrades_list = "${armor}, ${engine}, ${brakes}, ${transmission} 및 ${turbo}.",
+		upgrades_list = "${armor}, ${engine}, ${brakes}, ${transmission}, ${suspension} 그리고 ${turbo}.",
 
 		has_no_turbo = "터보가 설치되어 있지 않습니다.",
 		has_turbo = "터보가 설치되어 있습니다.",
@@ -9264,6 +9704,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		transmission_2 = "스포츠 변속기",
 		transmission_3 = "레이스 변속기",
 
+		suspension_0 = "기본 서스펜션",
+		suspension_1 = "낮춘 서스펜션",
+		suspension_2 = "거리용 서스펜션",
+		suspension_3 = "스포츠 서스펜션",
+		suspension_4 = "경주용 서스펜션",
+
 		engine_0 = "기본 엔진",
 		engine_1 = "엔진 EMS 레벨 2",
 		engine_2 = "엔진 EMS 레벨 3",
@@ -9282,10 +9728,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		catnip = "[${InteractionKey}] 고양이 붕대주기",
 		treat = "[${InteractionKey}] 간식주기",
 		check_up = "[${InteractionKey}] 체크 업",
-		chill = "[${InteractionKey}] 쉬다",
-		meditate = "[${InteractionKey}] 명상하다",
-		salute = "[${InteractionKey}] 경례",
-		stretch = "[${InteractionKey}] 스트레칭",
 
 		feed_active = "맥스웰에게 먹이주기 중",
 		pet_active = "맥스웰을 쓰다듬는 중",
@@ -9293,10 +9735,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		catnip_active = "맥스웰에게 고양이 멘토 줌",
 		treat_active = "맥스웰에게 간식 주기",
 		check_up_active = "맥스웰에게 인사하기",
-		chill_active = "맥스웰과 함께 휴식하기",
-		meditate_active = "맥스웰과 함께 명상하기",
-		salute_active = "맥스웰에게 경례하기",
-		stretch_active = "맥스웰과 함께 스트레칭하기",
 
 		maxwell_appeared = "맥스웰이 근처에 나타났습니다.",
 		maxwell_shot = "맥스웰 캐릭터를 샷하기"
@@ -9459,6 +9897,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		server_tps_response = "${tps}",
 		license_copied = "라이선스가 클립보드에 복사되었습니다.",
 		uptime = "가동 시간: ${uptime}",
+		empty_search = "검색이 비어 있습니다.",
+		no_player_matching = "검색과 일치하는 플레이어가 없습니다: *${search}*.",
+		whois_player = "검색과 일치하는 *${name}*을(를) 찾았습니다.",
 
 		picture_no_url = "URL이 누락되었습니다.",
 		picture_invalid_url = "잘못된 URL입니다. 반드시 'https://'로 시작해야 합니다.",
@@ -9473,9 +9914,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		walk_forwards_success = "${displayName}님의 전진 걷기가 성공적으로 전환되었습니다.",
 		walk_forwards_failed = "${displayName}님의 전진 걷기 전환에 실패했습니다.",
 
+		info_invalid_job = "유효하지 않은 직업",
 		info_title = "Failed to automatically generate translation.",
 		info_character = "Failed to automatically generate translation.",
-		info_job_data = "Failed to automatically generate translation.",
+		info_job_data = "**직업 데이터:** *${job}* - ${급여}",
 		info_job_data_none = "Failed to automatically generate translation.",
 		info_licenses = "Failed to automatically generate translation.",
 		info_licenses_none = "Failed to automatically generate translation.",
@@ -9557,6 +9999,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		add_notice_missing_permissions = "플레이어가 적절한 권한없이 알림을 추가하려고했습니다.",
 		remove_notice_missing_permissions = "플레이어가 적절한 권한없이 알림을 제거하려고했습니다."
+	},
+
+	npc_watch = {
+		no_npc_nearby = "주변에 NPC가 없습니다."
 	},
 
 	objects = {
@@ -9670,25 +10116,36 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		about_detection_areas_text = "탐지 구역은 스텝이 원하지 않는 차량이나 보행자를 생성하는 체터를 식별하는 데 유용한 도구일 수 있습니다. 탐지 구역을 만들려면 `/detection_area_add` 명령어를 사용하십시오. 구역을 만들면 여기에 나타납니다. 각 구역에는 최신 100개의 엔티티만 로그됩니다.",
 		detection_area_title = "탐지 구역 #${detectionAreaId}",
 
+		about_settings_title = "설정",
+		about_settings_text = "이 필드들을 사용하여 여러 설정을 변경하여 사용자 정의할 수 있습니다.",
 		about_sound_effects_title = "효과음",
-		about_sound_effects_text = "이 필드들은 몇 가지 효과음을 덮어쓸 수 있도록 해줍니다. 이들은 .oog 파일 링크를 제공해야 제대로 작동합니다. 또한, http://가 아닌 https:// URL이어야 합니다. 파일을 업로드하는 쉬운 방법은 파일을 디스코드에 업로드한 다음 링크를 복사하여 이 필드에 삽입하는 것입니다.",
+		about_sound_effects_text = "이러한 필드들은 일부 소리 효과를 무시하도록 허용합니다. 올바르게 작동하려면 .oog 파일에 대한 직접 링크가 필요합니다. 반드시 https:// URL이어야 합니다. http://가 아니어야 합니다. 디스코드 링크는 만료될 수 있다는 점을 기억하세요.",
+		about_staff_settings_title = "스태프 설정",
+		about_staff_settings_text = "스태프 권한이 있는 경우, 이러한 필드를 통해 일부 스태프 관련 설정을 재설정할 수 있습니다.",
 		radio_mic_click_on = "라디오 마이크 클릭 (켜짐)",
 		radio_mic_click_off = "라디오 마이크 클릭 (꺼짐)",
 		lean_cam_mode = "앞으로 젖히기 카메라",
 		lean_option_1 = "전환하려면 누르세요",
 		lean_option_2 = "전환하려면 누르세요",
-		lean_option_3 = "꺼짐",
 		clipboard_animation = "클립보드 애니메이션",
+		chop_shop_sound = "차량 해체장 라디오 소리 끄기",
+		seatbelt_sound = "안전벨트 경보음 끄기",
 		sound_effect_placeholder = ".ogg 파일의 URL...",
-		sound_effect_save = "저장",
-		sound_effect_reset = "초기화",
+
+		button_save = "저장",
+		button_reset = "재설정",
+		value_off = "끄기",
+		value_on = "켜기",
+		sound_off = "소리 끄기",
+		sound_on = "소리 켜기",
 
 		reduce_epilepsy = "번쩍임을 줄여주세요 (월워용친화적)",
+		pause_menu_emote = "일시 중지 메뉴 감정 표현",
 		disable_tablet_animation = "태블릿 애니메이션 비활성화",
-		staff_notifications_reports = "신고 알림",
-		staff_notifications_staff_chat = "스태프 채팅 알림",
-		staff_notifications_general = "일반 알림",
-		staff_notifications_anti_cheat = "안티-치트 알림",
+		staff_notifications_reports = "신고 알림 (소리)",
+		staff_notifications_staff_chat = "스태프 채팅 알림 (소리)",
+		staff_notifications_general = "일반 알림 (소리)",
+		staff_notifications_anti_cheat = "안티 치트 알림 (소리)",
 
 		december_1 = "12월 1일",
 		december_2 = "12월 2일",
@@ -9765,8 +10222,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		about_unusual_explosions = "보통 발생하지 않는 이상한 폭발 이벤트입니다.",
 		explosions_by_type_title = "종류별 폭발",
 		players_causing_explosions_title = "폭발을 일으킨 플레이어",
-		show_common_events_off = "일반적인 이벤트 표시 : 끔 ",
-		show_common_events_on = "일반적인 이벤트 표시 : 켬",
+		include_common_events_off = "공통 이벤트 포함: 끔",
+		include_common_events_on = "공통 이벤트 포함: 켬",
 
 		explosion_events_type = "종류",
 		explosion_events_amount = "양",
@@ -9800,6 +10257,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		model = "모델",
 		label = "이름표",
 		amount = "금액",
+		time_ago = "시간 전",
 		console_name = "플레이어",
 		expected = "예상",
 		actual = "실제",
@@ -10462,7 +10920,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		not_paid = "결제되지 않음",
 		insert_dollar = "[${InteractionKey}] $${amount}을(를) 넣으세요",
 
-		no_cash = "돈이 없습니다.",
+		no_cash = "현금으로 4달러가 없습니다.",
 		max_time = "이 주차 미터는 이미 최대치에 도달했습니다.",
 		failed_pay = "주차 미터에 대한 지불에 실패하였습니다."
 	},
@@ -10504,6 +10962,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		roll_message = "${rolls}d${max} 설정으로 주사위를 굴려 ${totalValue}(을)를 얻었습니다.",
 		rps_message = "가위바위보를 플레이하고 ${rps}(으)로 선택했습니다.",
 		citizen_card_message = "시민증(${characterId})을(를) 제시했습니다.",
+		driver_license_message = "운전 면허증을 보여주었습니다 (${characterId})",
 		badge_message = "증명서(${characterId})을(를) 제시했습니다.",
 		license_message = "${characterId}의 면허증을 제시했습니다.",
 		ped_message_logs_title = "피드 메시지",
@@ -10608,6 +11067,36 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		phone_number_is_not_available = "전화번호 `${phoneNumber}`은(는) 사용 불가능합니다."
 	},
 
+	plants = {
+		planting_seed = "씨앗 심기",
+		seed_planted = "씨앗을 성공적으로 심었습니다.",
+		failed_plant = "씨앗을 심는 데 실패했습니다.",
+		cant_plant_here = "여기에는 씨앗을 심을 수 없습니다.",
+
+		press_water_plant = "[${InteractionKey}] 물 주기",
+		press_harvest_plant = "[${InteractionKey}] 수확하기",
+		press_destroy_plant = "[${SeatEjectKey}] 삽",
+		watering_plant = "식물 물주기",
+		harvesting_plant = "식물 수확하기",
+		destroying_plant = "식물 파괴 중",
+
+		plant_weed = "잡초 제거",
+
+		planted_seed_logs_title = "씨앗 심기",
+		planted_seed_logs_details = "${consoleName}님이 ${material}에 ${plant} (#${plantId})를 심었습니다.",
+		harvested_plant_logs_title = "식물 수확",
+		harvested_plant_logs_details = "${consoleName}님이 ${plant} (#${plantId})을 수확하고 ${items}을(를) 받았습니다.",
+		watered_plant_logs_title = "식물 물주기",
+		watered_plant_logs_details = "${consoleName}님이 ${plant} (#${plantId})에 물을 주었습니다.",
+		ran_over_plant_logs_title = "식물을 친 사건",
+		ran_over_plant_logs_details = "${consoleName}이(가) 식물을 침 (#${plantId}).",
+		shoveled_plant_logs_title = "삽으로 파괴된 식물",
+		shoveled_plant_logs_details = "${consoleName}님이 식물을 파쇄했습니다 (#${plantId}).",
+
+		total_plants = "총 식물 수: ${count}",
+		nearby_plants = "근처 식물 수: ${count}"
+	},
+
 	player_control = {
 		unable_to_drive_for_yourself = "본인 대신 운전할 수 없습니다.",
 		player_is_not_nearby = "서버 아이디가 ${serverId}인 플레이어가 근처에 없습니다.",
@@ -10636,7 +11125,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	},
 
 	players = {
-		player_left = "플레이어가 나갔습니다 [${serverId}]"
+		player_left = "플레이어가 나갔습니다 [${serverId}]",
+		player_exited = "플레이어가 나감 [${serverId}]",
+		player_crashed = "플레이어 충돌함 [${serverId}]"
 	},
 
 	pole_dancing = {
@@ -10673,9 +11164,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		invalid_domain = "이 도메인은 허용되지 않습니다.",
 		print = "인쇄",
 		printing = "인쇄 중...",
+		document_title = "멋진 제목",
+		image_url = "https://files.catbox.moe/ttt1e4.jpg",
 
 		printed_logs_title = "인쇄된 이미지",
-		printed_logs_details = "${consoleName}님이 `${itemName}`을/를 `${paperType}`를 사용하여 출력하였습니다. 이미지 URL은 `${url}`이며 상단 텍스트는 `${topText}`로, 하단 텍스트는 `${bottomText}`입니다."
+		printed_logs_details = "${consoleName}이(가) `${paperType}`을(를) 이용하여 `${itemName}`을(를) 인쇄하였으며, 이미지 URL은 `${url}`, 제목은 `${title}`, 상단 텍스트는 `${topText}`, 하단 텍스트는 `${bottomText}`입니다."
 	},
 
 	prop_hide = {
@@ -10729,7 +11222,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		placing_prop = "소품 배치 중",
 		pickup_prop = "소품 집어들기 중",
 		setting_up_tire_wall = "타이어 벽 설치 중",
-		destroying_tire_wall = "타이어 벽 철거 중"
+		destroying_tire_wall = "타이어 벽 철거 중",
+
+		placed_prop_logs_title = "소재물 배치됨",
+		placed_prop_logs_details = "${consoleName}님이 ${coords} 위치에 `${itemName}`을(를) 배치했습니다. (ID: ${propId}).",
+		spawned_prop_logs_title = "소재물 생성됨",
+		spawned_prop_logs_details = "${consoleName}님이 ${coords} 위치에 모델 `${modelName}`을(를) 가진 소재물을 생성했습니다. (ID: ${propId})."
 	},
 
 	radio = {
@@ -11229,13 +11727,19 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	smoothies = {
 		blend = "믹싱",
 		close = "닫기",
+		name_placeholder = "과일 스무디",
+		name_suffix = "스무디 / 밀크쉐이크",
+
+		name_default = "맛있는",
+		name_drugs = "의심스러운",
+		name_alcohol = "주취 유발",
 
 		use_blender = "[${InteractionKey}] 믹서기 사용하기",
 		blending = "블렌딩 중",
 		no_ingredients = "스무디를 만들 재료가 없습니다.",
 
-		milkshake_label = "밀크셰이크 (${flavors})",
-		smoothie_label = "스무디 (${flavors})",
+		milkshake_label = "${name} 밀크쉐이크",
+		smoothie_label = "${name} 스무디",
 		seperator = "와"
 	},
 
@@ -11365,7 +11869,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		spy_ui_connecting = "마이크로폰 버그 (#${deviceId})에 연결 중",
 		spy_ui_connection_failed = "마이크로폰 버그 (#${deviceId})에 연결 실패",
 		spy_ui_awaiting_data = "데이터를 기다리는 중...",
-		spy_ui_data_failed = "데이터 실패"
+		spy_ui_data_failed = "데이터 실패",
+
+		used_tracker_logs_title = "사용자 차량 추적기",
+		used_tracker_logs_details = "${consoleName}님이 차량 ${vehicleId}에 트래커를 사용했습니다.",
+		used_bug_logs_title = "마이크로폰 버그 사용됨",
+		used_bug_logs_details = "${consoleName}님이 ${identifier}에 마이크로폰 버그를 사용했습니다."
 	},
 
 	starter_car = {
@@ -11505,6 +12014,36 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		user_not_found = "서버에서 해당 사용자를 찾을 수 없습니다.",
 		invalid_character_id = "잘못된 캐릭터 ID 매개 변수가 전송되었습니다.",
 		invalid_license_identifier = "잘못된 라이선스 식별자 매개 변수가 전송되었습니다."
+	},
+
+	teleporting = {
+		source_no_character = "출처 플레이어가 캐릭터를 불러오지 않았습니다.",
+		target_no_character = "대상 플레이어가 캐릭터를 불러오지 않았습니다.",
+		invalid_coordinates = "유효하지 않은 좌표입니다.",
+		no_waypoint_set = "웨이포인트가 설정되지 않았습니다.",
+		failed_teleport_to_player = "플레이어로 이동에 실패했습니다.",
+		failed_teleport_player_here = "플레이어를 여기로 이동시키는 데 실패했습니다.",
+		failed_teleport_player_player = "플레이어를 다른 플레이어에게 이동시키는 데 실패했습니다.",
+		no_back_coords = "복귀할 장소가 없습니다.",
+		cant_tp_same_player = "플레이어를 자기 자신에게 이동시킬 수 없습니다.",
+		cant_tp_self_self = "자신을 자신에게 이동시킬 수 없습니다.",
+
+		use_tp_to_player = "플레이어에게 이동하려면 `/tp_to_player`를 사용하세요.",
+		use_tp_player_here = "플레이어를 여기로 이동시키려면 `/tp_player_here`를 사용하세요.",
+
+		teleported_to_coordinates = "${coords}로 이동했습니다. (${location})",
+		teleported_to_player = "${displayName}님에게 이동했습니다.",
+		teleported_player_here = "${displayName}님을 여기로 이동했습니다.",
+		teleported_player_player = "${sourceName}님을 ${targetName}님에게 이동했습니다.",
+
+		teleport_to_coords_logs_title = "좌표로 이동함",
+		teleport_to_coords_logs_details = "${consoleName}이(가) 좌표 ${coords}(으)로 이동하였습니다.",
+		teleport_to_player_logs_title = "플레이어에게 이동",
+		teleport_to_player_logs_details = "${consoleName}이(가) ${targetConsoleName}님에게 이동하였습니다.",
+		teleport_player_here_logs_title = "플레이어를 자신에게 이동",
+		teleport_player_here_logs_details = "${consoleName}이(가) ${targetConsoleName}님을 자신에게 이동하였습니다.",
+		teleport_player_player_logs_title = "플레이어에서 플레이어로 이동",
+		teleport_player_player_logs_details = "${consoleName}이(가) ${sourceConsoleName}님을 ${targetConsoleName}님에게 이동하였습니다."
 	},
 
 	teleporters = {
@@ -11652,6 +12191,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		vehicles = "차량 옵션",
 		spawn_car = "차량 소환",
 		upgrade_vehicle = "차량 업그레이드",
+		break_windows = "창문 부수기",
 		pop_tires = "타이어 펑크",
 		detach_doors = "문 분리",
 		damage_vehicle = "차량 손상",
@@ -11660,6 +12200,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 
 		player = "플레이어 옵션",
 		starve = "굶주리기",
+		add_stress = "스트레스 추가",
 		feed = "먹이기",
 		relief_stress = "스트레스 해소",
 		reset_health = "체력 초기화",
@@ -11745,7 +12286,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	},
 
 	trading_cards = {
-		access_store = "[${InteractionKey}] 상점 이용",
+		access_store = "거래 카드 가게에 접속하려면 ~INPUT_CONTEXT~를 누르세요.",
 
 		buy_pack = "${packName} 구매하기",
 		store_title = "카드 상점",
@@ -11942,7 +12483,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	vape = {
 		press_to_use = "사용하려면 ~INPUT_CONTEXT~을 누르세요. 담배를 끄려면 ~INPUT_FRONTEND_CANCEL~을 누르세요.",
 
-		plain_vape = "Geek Bar (플레인)",
+		plain_vape = "Geek 바",
+		weed_vape = "Geek 바 (THC 오일)",
 		mango_vape = "Geek Bar (망고)",
 		strawberry_vape = "Geek Bar (딸기)",
 		menthol_vape = "Geek Bar (멘솔)",
@@ -12056,6 +12598,20 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		refilling_bottle = "병 채우는 중"
 	},
 
+	weed = {
+		strain_default = "와일드 헤이즈",
+		strain_lemon = "레몬 헤이즈",
+		strain_northern = "노던 라이츠",
+		strain_kush = "OG 쿠시",
+
+		default_emoji = "🥦",
+		lemon_emoji = "🏃",
+		northern_emoji = "🛡️",
+		kush_emoji = "🦁",
+
+		strain_description = "<b>Strain:</b> <i>${strain}</i> ${emoji}"
+	},
+
 	weed_field = {
 		pick_weed = "~INPUT_CONTEXT~ 눌러 마리화초를 따십시오.",
 		picking_weed = "마리화초 따는중"
@@ -12092,8 +12648,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		explode_success = "${consoleName}을(를) 폭발시키는 데 성공했습니다.",
 		explode_failed = "플레이어를 폭발시키지 못했습니다.",
 
-		ignite_success = "${consoleName}이(가) 성공적으로 불붙었습니다.",
-		ignite_failed = "플레이어에게 불을 붙이지 못했습니다.",
+		taze_success = "${consoleName}님을 성공적으로 테이즈했습니다.",
+		taze_failed = "플레이어를 전기 충격기로 공격하는 데 실패했습니다.",
 
 		flashbang_success = "${consoleName}님을 성공적으로 섬광수류탄으로 공격하였습니다.",
 		flashbang_failed = "플레이어에게 섬광수류탄을 사용하는 것에 실패하였습니다.",
@@ -12192,6 +12748,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		second = "초",
 		seconds = "초",
 		just_now = "방금",
+		now = "지금",
 
 		month_1 = "Január",
 		month_2 = "Február",
@@ -12277,6 +12834,35 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		delivery_blip = "버거샷 배달"
 	},
 
+	bus_driver = {
+		start_route = "~INPUT_CONTEXT~ 키를 눌러 루트를 시작합니다.",
+		failed_start_job = "새로운 일을 시작할 수 없습니다.",
+		next_stop = "다음 정거장",
+		bus_hq = "버스 본부",
+		job_cancelled = "일이 취소되었습니다.",
+		next_stop_help = "다음 정거장: 총 ${total} 중 ${stop}",
+		passenger_count = "탑승객: ${seats} 중 ${passengers}",
+		shutdown_engine = "엔진을 종료하고 탑승객을 기다립니다.",
+		return_to_hq = "본부로 돌아갑니다.",
+		bus_stop = "버스 정류장",
+		pay_for_ticket = "~INPUT_CONTEXT~ 키를 눌러 티켓을 구입합니다 ($18).",
+		not_enough_money_ticket = "티켓을 구매하기에 돈이 부족합니다 ($18).",
+		ticket_paid = "${displayName}님이 버스 티켓을 구매했습니다.",
+		paid_for_ticket = "버스 티켓을 성공적으로 구매했습니다.",
+
+		east_route = "아케이드",
+		pillbox_route = "필박스",
+		little_seoul_route = "릴 서울",
+		sandy_route = "샌디 사막 노선",
+		paleto_route = "그레이트 오션 익스프레스",
+		grapeseed_route = "그레이프시드 그린웨이",
+		route_68_route = "루트 68 다이렉트",
+		airport_route = "공항 셔틀",
+
+		finished_job_logs_title = "완료된 버스 노선",
+		finished_job_logs_details = "${consoleName}님이 `${route}` 버스 노선을 운전하여 $${payout}를 받았습니다."
+	},
+
 	doj = {
 		invalid_type = "${consoleName} iškrovė ${charactersUnloaded} veikėjus be jokios nurodytos priežasties.",
 		missing_search = "Iškrauti visų veikėjai. Iškrauti ${unloadedCharacters} veikėjai.",
@@ -12330,6 +12916,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		job_government = "폐기물 수거원",
 		job_mechanic = "레커",
 		job_delivery = "배송 일자리",
+		job_bus_driver = "버스 운전사",
 		changed_job_already_set_to_job = "이미 ${jobName}으로 설정된 직업입니다.",
 		changed_job_success = "성공적으로 ${jobName}으로 직업이 변경되었습니다.",
 		changed_job_success_go_to_coords = "${jobName}으로 직업이 변경되었습니다. 지도에서 웨이포인트를 따라 가세요.",
@@ -12432,6 +13019,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		license_fishing = "낚시 면허",
 		license_weapon = "무기 면허",
 		license_mining = "채굴 면허",
+		license_driver = "운전면허",
 		gave_character_license = "${characterName} 님에게 면허 `${licenseLabel}`을 지급하였습니다.",
 		character_already_has_license = "${characterName} 님은 이미 면허 `${licenseLabel}`이 있습니다.",
 		removed_character_license = "${characterName} 님의 면허 `${licenseLabel}`을 제거하였습니다.",
@@ -12446,7 +13034,21 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		you_have_no_licenses = "라이센스가 없습니다.",
 		player_has_no_licenses = "${characterName}님은 라이선스가 없습니다.",
 		failed_to_get_licenses = "라이선스를 가져오지 못했습니다.",
-		license_list = "사용 가능한 라이선스: ${licenseList}."
+		license_list = "사용 가능한 라이선스: ${licenseList}.",
+		already_married = "한 쪽 또는 양 쪽이 이미 결혼했습니다.",
+		either_not_married = "한 쪽 또는 양 쪽이 결혼하지 않았습니다.",
+		not_married = "같이 있지만 서로 결혼하지 않았습니다.",
+		failed_marriage = "결혼 상태를 설정하는 데 실패했습니다.",
+		marriage_success = "${nameA}님과 ${nameB}님이 이제 결혼했습니다.",
+		divorce_success = "${nameA}님과 ${nameB}님이 이제 이혼했습니다.",
+		character_not_online = "파트너 중 한 명이 현재 온라인 상태가 아닙니다. 오프라인 상태일 때는 사망한 파트너만 이혼이 가능합니다.",
+		you_are_now_married = "이제 ${name}님과 결혼했습니다.",
+		you_are_no_longer_married = "이제 ${name}님과의 결혼이 해지되었습니다.",
+
+		divorced_logs_title = "이혼",
+		divorced_logs_details = "${consoleName}이/가 ${nameA} #${cidA}님과 ${nameB} #${cidB}님의 결혼 상태를 '이혼함'으로 업데이트했습니다.",
+		married_logs_title = "결혼",
+		married_logs_details = "${consoleName}이/가 ${nameA} #${cidA}님과 ${nameB} #${cidB}님의 결혼 상태를 '결혼함'으로 업데이트했습니다."
 	},
 
 	tow = {
@@ -12502,7 +13104,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		anchored_successfully = "앵커를 성공적으로 배치했습니다.",
 		removing_anchor = "앵커 연결을 해제 중입니다.",
 		deploying_anchor = "닻을 내리는 중입니다.",
-		no_vehicle_nearby = "주변에 닻을 내릴 수 있는 배가 없습니다."
+		no_vehicle_nearby = "주변에 닻을 내릴 수 있는 배가 없습니다.",
+		vehicle_not_anchorable = "이 보트는 고정할 수 없습니다."
 	},
 
 	car_wash = {
@@ -12579,16 +13182,42 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		unknown = "알 수 없음"
 	},
 
+	garage_access = {
+		menu_title = "차고 관리자",
+		button_close = "닫기",
+		loading = "로딩 중...",
+		access = "차고 접근",
+		access_description = "이 캐릭터들은 차고에서 차량을 인출 및 보관할 수 있는 권한을 가지고 있습니다.",
+		accessible = "귀하의 접근",
+		accessible_description = "귀하가 접근 권한을 부여받은 차고입니다.",
+		no_access = "현재 귀하의 차고에는 귀하 외에 아무도 접근할 수 없습니다.",
+		no_accessible = "아무도 귀하에게 차고 접근권한을 부여해주지 않았습니다.",
+
+		failed_allow_access = "차고 접근을 허용하지 못했습니다.",
+		failed_remove_access = "차고 접근을 제거하지 못했습니다.",
+		already_has_access = "캐릭터가 이미 귀하의 차고에 접근 권한을 갖고 있습니다.",
+		invalid_character_id = "유효하지 않은 캐릭터 ID입니다.",
+		does_not_access = "캐릭터가 이미 귀하의 차고에 대한 접근 권한이 없습니다.",
+
+		added_access_logs_title = "차고 접근 추가됨",
+		added_access_logs_details = "${consoleName} (#${characterId})이(가) #${targetCharacterId}에게 차고 접근을 부여했습니다.",
+		removed_access_logs_title = "차고 접근 제거됨",
+		removed_access_logs_details = "${consoleName} (${characterId}번)이(가) ${targetCharacterId}번의 차고 접근을 제거했습니다."
+	},
+
 	garages = {
 		garage_empty = "차고가 비어 있습니다!",
 		impound_lot = "검색 차고",
 		police_impound = "경찰 검색 차고",
+		owner_self = "소유함",
+		owner_other = "접근",
 		engine = "엔진",
 		body = "차체",
 		vehicle_in = "입고",
 		vehicle_out = "출고",
 		vehicle_at_police_impound = "귀하의 차량이 현재 경찰 출입금지 중입니다.",
 		vehicle_at_impound = "귀하의 차량은 검색 차고에 있습니다.",
+		impound_lot_short = "압류",
 		waypoint_to_impound = "검색 차고로의 길 안내가 GPS에 설정되었습니다.",
 		unable_to_withdraw = "현재 차량이 외부에 있어서 차량을 회수할 수 없습니다.",
 		vehicle_in_garage = "${garageName}에 차량이 있습니다. 지도에 마커가 표시되었습니다.",
@@ -12608,7 +13237,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		not_enough_balance_to_retrieve = "이 차량을 가져오기에 충분한 잔액이 없습니다.",
 		press_to_access = "차고지에 접근하려면 ~INPUT_CONTEXT~을/를 누르세요.",
 		ui_return = "돌아가기",
-		ui_vehicle_list = "차량 목록",
+		ui_my_vehicle_list = "내 차량",
+		ui_other_vehicle_list = "다른 차량",
 		ui_store_vehicle = "차량 보관",
 		ui_vehicle_sell = "차량 판매",
 		ui_retrieve_vehicle = "차량 반환",
@@ -12631,8 +13261,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		state_loading = "불러오는중...",
 
 		vehicle_weight = "무게: ${weight}",
-		last_garage_letter = "최근 - ${letter} 차고지",
-		last_garage_impound = "최근 - 격리 차고지",
 		no_last_garage_letter = "마지막 차고 없음",
 
 		purchase_vehicle = "상점에 접근하려면 ~INPUT_CONTEXT~를 누르십시오.",
@@ -12641,7 +13269,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		purchase_success = "${label}을(를) 구매하셔서 차고에 추가되었습니다.",
 		purchase_failed = "차량 구매에 실패했습니다.",
 		already_owned = "이 차량 모델은 이미 소유하고 있습니다.",
-		maximum_owned = "6대 이상의 차량을 소유할 수 없습니다.",
+		maximum_owned = "8대 이상의 차량을 소유할 수 없습니다.",
 		not_enough_money = "이 차량을 구매할 금액이 부족합니다.",
 
 		sold_vehicle = "${label}을(를) $${price}에 판매했습니다.",
@@ -12759,6 +13387,14 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		failed_generic = "문제가 발생했습니다."
 	},
 
+	trailers = {
+		cant_attach_trailer = "이 차량에는 트레일러 훅이 없습니다.",
+		no_trailer_nearby = "근처에 트레일러가 없습니다.",
+		not_in_vehicle = "차량을 운전 중이 아닙니다.",
+		not_lined_up = "차량이 트레일러와 일직선이 아닙니다.",
+		keybind_description = "트레일러를 분리 또는 연결합니다"
+	},
+
 	vehicles = {
 		flip_flipping = "차량 뒤집기",
 		flip_unable = "차량 내부에 사람이 있을 때는 차량을 뒤집을 수 없습니다.",
@@ -12777,6 +13413,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		gear_animation_disabled = "기어 애니메이션 (및 소리)이 이제 비활성화되었습니다.",
 		manual_gears_enabled = "수동 기어 변속이 활성화되었습니다. Hybrid-Mode: `${hybrid}`.",
 		manual_gears_disabled = "수동 기어링이 이제 비활성화되었습니다.",
+		manual_gears_too_fast = "30mph 이하에서만 수동 변경이 가능합니다.",
 		hybrid_off = "끄기",
 		speed_limiter_set_to_metric = "${speed} km/h 로 속도 제한이 설정됩니다.",
 		speed_limiter_set_to_imperial = "${speed} mp/h 로 속도 제한이 설정됩니다.",
@@ -13024,13 +13661,15 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		bleeding_reduced = "출혈이 줄었습니다",
 		bleeding_self_stopped = "자연 치유로 인해 출혈이 멈췄습니다.",
 		thanks_for_loot = "무의식 중에 털린 적이 있었습니다. 일부 아이템이 사라질 수 있습니다. 소문에 의하면 나안시가 그 일을 한 거 같아요.",
+		guards_found_unconcious = "경비원들이 당신을 의식을 잃은 채 발견하고 수감소 병원으로 이송했습니다.",
 		serial_number = "일련번호: ${serialNumber}<br><i>이 무기는 ${fullName}님이 소유하고 있습니다 (#${characterId}).</i>",
 		serial_number_unknown = "일련번호: ${serialNumber}<br><i>이 무기는 등록되어 있지 않습니다.</i>",
 		serial_number_removed = "일련번호가 제거되었거나 긁혀 빠져 있습니다.",
 		badge_owner = "<i>이 배지는 <b>${fullName} (${positionName})</b>님의 것입니다.</i>",
 		badge_owner_unknown = "뱃지 소유주가 알 수 없습니다.",
 		citizen_card_owner = "<i>이 시민 카드는 <b>${fullName} (#${characterId})</b>님의 것입니다.</i>",
-		citizen_card_has_portrait = "<i>사진이 있습니다.</i>",
+		driver_license_owner = "<i>이 운전 면허증은 <b>${fullName} (#${characterId})</b> 님 소유입니다.</i>",
+		has_portrait = "<i>사진이 첨부되어 있습니다.</i>",
 		picture_pending = "<i>사진이 아직 처리 중입니다...</i>",
 		picture_selfie_owner = "<i>이것은 <b>${fullName}</b>의 사진입니다.</i>",
 		bought_by = "${buyerName}님이 구매하셨습니다 (${buyerCid}).",

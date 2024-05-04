@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 25 (do not change)
+-- AUTO LOCALES: 27 (do not change)
 
 OP.Global.Locales.Languages["meme-minionese"] = {
 	-- configuration settings for language
@@ -134,6 +134,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		added_vehicle_logs_title = "Tulaliloo ti Amoeba",
 		added_vehicle_logs_details = "${consoleName} tulaliloo a vehicle with model name `${modelName}` to their garage.",
 
+		vehicle_saved = "undefined",
+		failed_to_save_vehicle = "undefined",
+
 		invalid_amount = "Bananaaaa? Invalid amount. (Translation: Sorry, the amount you entered is invalid.)",
 
 		added_cash_title = "Added Some Bananas!",
@@ -260,6 +263,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		you_have_been_kicked_no_reason = "Me sorry. You have been kicked without a specified reason by ${kicker}.",
 
 		logs_player_kicked_title = "Player Kicked",
+		logs_player_kicked_system_title = "undefined",
 		logs_player_kicked_details = "${consoleName} has been kicked from the server by ${kicker} for reason `${reason}`.",
 		logs_player_kicked_no_reason_details = "${consoleName} has been kicked from the server by ${kicker} without a specified reason.",
 
@@ -358,17 +362,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		already_sending_staff_message = "Bello! You're already sending a message to the staff. Please wait.",
 		unable_to_send_identical_staff_message = "Bello! You can't send two identical messages to the staff within 30 seconds.",
 
-		tp_coords_invalid_coordinates = "Banana! Coordinates not valid.",
-		tp_coords_teleported_to_coordinates = "Bee doo bee doo! Teleported to X: ${x}, Y: ${y}, Z: ${z}.",
-
-		teleported_to_waypoint = "Bee doo bee doo! Teleported to waypoint at ${locationLabel}.",
-		no_waypoint_set = "Bello, you need to set a waypoint.",
-
-		teleported_to_coordinates_logs_title = "Teleported To Coordinates (Translated in Minionese)",
-		teleported_to_coordinates_logs_details = "${consoleName} teleported to coordinates X: ${x}, Y: ${y}, Z: ${z}. Meantime, babbled some words like ${x}, ${y} and ${z}.",
-		teleported_to_waypoint_logs_title = "Teleported To Waypoint (Translated in Minionese)",
-		teleported_to_waypoint_logs_details = "${consoleName} teleported to a waypoint at ${locationLabel}. Oh la la!",
-
 		population_density_set_to = "Me want banana! The population density multiplier override has been set to ${multiplierLabel}%.",
 		population_density_set_off = "Bello! The population density multiplier override has been turned off.",
 		population_density_is_not_on = "Me want banana! The population density multiplier override is not on.",
@@ -403,6 +396,13 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		you_are_not_in_a_vehicle = "Me nona ina da vehicle.",
 		repaired_vehicle = "Da vehicle beena repaired.",
+		player_not_in_vehicle = "undefined",
+		no_character = "undefined",
+		repaired_player_vehicle = "undefined",
+		failed_player_repair = "undefined",
+
+		repaired_player_vehicle_logs_title = "undefined",
+		repaired_player_vehicle_logs_details = "undefined",
 
 		success_nos_refill = "Me successfully refilled NOS.",
 		failed_nos_refill = "Me failed to refill NOS.",
@@ -487,7 +487,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		attachment_off = "Yayyy! Successfully toggled '${attachment}' attachment off. Bananaaaaaa!",
 
 		tint_invalid = "Oh no, invalid weapon tint. Me not understand. Bababa.",
-		tint_range_invalid = "Bello! Invalid weapon tint range (has to be between 0 and ${max}).",
+		tint_index_invalid = "undefined",
 		tint_failed_set = "Sorry! Failed to set weapon tint.",
 		tint_removed = "Poulet Tikka Masala! Successfully removed weapon tint.",
 		tint_set = "Me want banana! Successfully set weapon tint to `${tint}` (${tintIndex}).",
@@ -517,9 +517,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		item_durability_set_no_permission = "Tulaliloo ti amo banana! Attempted to set an item's durability without proper permissions.",
 
 		item_metadata_set_no_permission = "Tulaliloo ti amo banana! Attempted to set an item's metadata without proper permissions.",
-		item_metadata_invalid_metadata = "Bananaaaa! Invalid item metadata.",
 		item_metadata_set_success = "Successfully set metadata for itemss in slot ${slotId}.",
 		item_metadata_set_failed = "Failed to set metadata. Bellooo!",
+		item_metadata_missing_key = "undefined",
 
 		advanced_metagame_on = "Toggled advanced metagame on. Bellooo!",
 		advanced_metagame_off = "Toggled advanced metagame off. Bellooo!",
@@ -696,6 +696,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		weapon_spawn_ban = "Bello, yearning for the `${weaponName}`? Poopaye! Dis no be a weapon storeroom, and that piece? Still in the forge.",
 		advanced_noclip_ban = "Bello, trying a secret slide through unseen corridors? Poopaye! Dis no be a phantom waltz, and that move? Not on our dance card.",
 		illegal_local_vehicle_ban = "Bello! You've discovered the hidden unicorn of Meester Mirage! Oh, but this enchanting ride is only for the annual ghostly parade.",
+		handling_field_ban = "undefined",
 
 		type_aimbot = "Aimbotio",
 		type_bad_creation = "Ba Ba Ba Bad Creation",
@@ -711,6 +712,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		type_illegal_event = "Bello Bananana Bananana (Illegal Client Event)",
 		type_illegal_freeze = "Bello Para (Illegal Freeze)",
 		type_illegal_global = "Illegal Global Usage",
+		type_illegal_handling_field = "undefined",
 		type_illegal_native = "Bobo Illegal Gadget",
 		type_illegal_ped_spawn = "Bello Bello Banana (Spawned Ped)",
 		type_illegal_server_event = "Bello Bananana (Illegal Server Event)",
@@ -768,6 +770,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		high_fov_debug = "BANANA! Current: ${fov}",
 
 		illegal_oxy_run = "BANANA! Player completed an oxy run faster than humanly possible. KANPAI!",
+
+		fov_warning = "undefined",
+		fov_warning_details = "undefined",
+
+		stretched_res_warning = "undefined",
 
 		fast_movement_warning = "Pou have been flagged for moving too fast!! Bello! Please tell a developer what pou were doing so they can ma take care of it. Tank yu!",
 		invincibility_warning = "Pou have been flagged for being invincible! Aye aye! Please tell a developer what pou were doing so they can ma take care of it. Tank yu!",
@@ -1017,10 +1024,14 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		add_vehicle_command = "add_vehicle",
 		add_vehicle_command_help = "Add a vehicle to someone's garage.",
 		add_vehicle_command_parameter_model = "model",
-		add_vehicle_command_parameter_model_help = "Model tum aulah model hash se tum tuobe wish tu add. Naah se tebiibo, tuobe jettuh tu se edd ebaa (tat tuobe akwoi modificashuns).",
+		add_vehicle_command_parameter_model_help = "undefined",
 		add_vehicle_command_parameter_server_id = "server id",
 		add_vehicle_command_parameter_server_id_help = "Da server ID of da player you wish to give a vehicle to. Leavin' dis blank will auto-select yourself.",
 		add_vehicle_command_substitutes = "",
+
+		save_vehicle_command = "undefined",
+		save_vehicle_command_help = "undefined",
+		save_vehicle_command_substitutes = "",
 
 		aimbot_command = "aimbot",
 		aimbot_command_help = "Toggl' 'aimbot'.",
@@ -1178,22 +1189,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		warning_message_command_parameter_message_help = "Whaaat yaa want too saaay, Banaaananaa? You can leeeave thiiis blank if yaa wannt tooo remove da warning message.",
 		warning_message_command_substitutes = "",
 
-		tp_coords_command = "tp_coords",
-		tp_coords_command_help = "Teleport likeee a Minion to soomeee coordinates, Bello!",
-		tp_coords_command_parameter_x = "x",
-		tp_coords_command_parameter_x_help = "Banana bee doo bee doo: The X coordinate ya want t' teleport t'.",
-		tp_coords_command_parameter_y = "bee",
-		tp_coords_command_parameter_y_help = "Banana bee doo bee doo: The Y coordinate ya want t' teleport t'.",
-		tp_coords_command_parameter_z = "la",
-		tp_coords_command_parameter_z_help = "Banana bee doo bee doo: The Z coordinate ya wanna teleport t'. Dis parameter be optional an' if left blank, da ground coordinates will be searched fer automatically.",
-		tp_coords_command_parameter_w = "wi",
-		tp_coords_command_parameter_w_help = "De W coordinate or beedoing you want to teleport to. Bee doo bee doo bee doo. This parameter is banana optional and if left empty, your current heading will be used. Bello!",
-		tp_coords_command_substitutes = "tpc",
-
-		tp_waypoint_command = "tp_waypoint",
-		tp_waypoint_command_help = "Teleport t' ya set-up waypoint.",
-		tp_waypoint_command_substitutes = "tp_marker, tp",
-
 		population_density_command = "bananaba_bababa",
 		population_density_command_help = "Bababa the bababa bababa bababa.",
 		population_density_command_parameter_multiplier = "bababa",
@@ -1202,6 +1197,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		repair_vehicle_command = "bababa_banana",
 		repair_vehicle_command_help = "Ba the bababa bababa bababa bababa.",
+		repair_vehicle_command_parameter_server_id = "undefined",
+		repair_vehicle_command_parameter_server_id_help = "undefined",
 		repair_vehicle_command_substitutes = "papoy",
 
 		enter_vehicle_command = "enter_vehicle",
@@ -1243,6 +1240,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		player_info_command_parameter_server_id = "server ID",
 		player_info_command_parameter_server_id_help = "The poopaye's server ID you would like to get information about. If left blank, yourself is selected.",
 		player_info_command_substitutes = "poopaye_info, pi",
+
+		ender_chest_command = "undefined",
+		ender_chest_command_help = "undefined",
+		ender_chest_command_substitutes = "undefined",
 
 		inventory_command = "muky_inventory",
 		inventory_command_help = "Open a specified inventory with a muky name.",
@@ -1315,9 +1316,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		set_metadata_command = "establecer_metadatos",
 		set_metadata_command_help = "Establece los metadatos de todos los objetos en un cierto espacio.",
 		set_metadata_command_parameter_slot = "espacio",
-		set_metadata_command_parameter_slot_help = "En cuál espacio se debe establecer la durabilidad del objeto.",
-		set_metadata_command_parameter_metadata = "metadatos",
-		set_metadata_command_parameter_metadata_help = "El json con los metadatos a establecer.",
+		set_metadata_command_parameter_slot_help = "undefined",
+		set_metadata_command_parameter_key = "undefined",
+		set_metadata_command_parameter_key_help = "undefined",
+		set_metadata_command_parameter_value = "undefined",
+		set_metadata_command_parameter_value_help = "undefined",
 		set_metadata_command_substitutes = "metadata", -- Translation: "bazooka banana",
 
 		refill_nitro_command = "refill_nitro", -- Translation: "bello-bello nitroo",
@@ -1503,26 +1506,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		admin_command = "admin",
 		admin_command_help = "Opens thee edmeen menoo.",
 		admin_command_substitutes = "",
-
-		tp_player_command = "tp_player",
-		tp_player_command_help = "Teleports yuu tue a playir.",
-		tp_player_command_parameter_server_id = "server id",
-		tp_player_command_parameter_server_id_help = "Thi server id of thi playir yuu wush tu teleport tue.",
-		tp_player_command_substitutes = "",
-
-		tp_here_command = "tp_here",
-		tp_here_command_help = "Belloo banana! Teleports a player to you. (Translation: Teleporta un player a tú.)",
-		tp_here_command_parameter_server_id = "server id",
-		tp_here_command_parameter_server_id_help = "The server id of the player you wish to teleport. (Translation: El ID del servidor del player que deseas teleportar.)",
-		tp_here_command_substitutes = "",
-
-		tp_to_command = "tp_to",
-		tp_to_command_help = "Banana! Teleports a player to another player. (Translation: Teleporta un player hacia otro player.)",
-		tp_to_command_parameter_source_id = "source id",
-		tp_to_command_parameter_source_id_help = "The player you want to teleport. (Translation: El player que deseas teleportar.)",
-		tp_to_command_parameter_destination_id = "destination id",
-		tp_to_command_parameter_destination_id_help = "The player you want to teleport to. (Translation: El player al cual deseas teleportar.)",
-		tp_to_command_substitutes = "",
 
 		-- game/airdrops
 		create_airdrop_command = "babe_luau",
@@ -1936,6 +1919,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		vehicle_info_command_help = "Bello! Prints informations about the plonker's vehicle to help fixing problems.",
 		vehicle_info_command_substitutes = "",
 
+		vehicle_doors_command = "undefined",
+		vehicle_doors_command_help = "undefined",
+		vehicle_doors_command_substitutes = "",
+
 		delete_entity_command = "delete_entity",
 		delete_entity_command_help = "Banana! Deletes an entity with a certain network ID.",
 		delete_entity_command_parameter_network_id = "network ID",
@@ -2144,6 +2131,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		door_debug_command_help = "Bello, bello! Translating information about nearby doors.",
 		door_debug_command_substitutes = "",
 
+		-- game/effect_zones
+		effect_zones_debug_command = "undefined",
+		effect_zones_debug_command_help = "undefined",
+		effect_zones_debug_command_substitutes = "",
+
 		-- game/elevators
 		elevator_enable_command = "elevator_na",
 		elevator_enable_command_help = "Banana! Turns the nearest elevator back on.",
@@ -2158,6 +2150,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		elevator_enable_command_all_substitutes = "",
 
 		-- game/emotes
+		emote_menu_command = "undefined",
+		emote_menu_command_help = "undefined",
+		emote_menu_command_substitutes = "",
+
 		emote_command = "gelato",
 		emote_command_help = "banana banana banana.",
 		emote_command_parameter_name = "banana",
@@ -2169,6 +2165,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		walk_command_parameter_name = "banana",
 		walk_command_parameter_name_help = "Bello! The banana walkstyle name.",
 		walk_command_substitutes = "",
+
+		mood_command = "undefined",
+		mood_command_help = "undefined",
+		mood_command_parameter_name = "undefined",
+		mood_command_parameter_name_help = "undefined",
+		mood_command_substitutes = "",
 
 		-- game/evidence
 		fingerprint_command = "banana-baboi",
@@ -2204,6 +2206,13 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		flag_swap_leaderboard_command_help = "Tigul leaderbob, tada!",
 		flag_swap_leaderboard_command_substitutes = "",
 
+		-- game/flight_radar
+		callsign_command = "undefined",
+		callsign_command_help = "undefined",
+		callsign_command_parameter_callsign = "undefined",
+		callsign_command_parameter_callsign_help = "undefined",
+		callsign_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "create_fartgun",
 		create_forcefield_command_help = "Creates a fartgun at yer current position.",
@@ -2233,6 +2242,13 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		fortnite_wipe_command_parameter_radius = "tulaliloo_radius",
 		fortnite_wipe_command_parameter_radius_help = "The radius you want to wipe for. Leaving it blank or setting it to 0 will wipe everything. Bello!",
 		fortnite_wipe_command_substitutes = "",
+
+		-- game/fortune_cookies
+		fortune_cookie_command = "undefined",
+		fortune_cookie_command_help = "undefined",
+		fortune_cookie_command_parameter_fortune = "undefined",
+		fortune_cookie_command_parameter_fortune_help = "undefined",
+		fortune_cookie_command_substitutes = "",
 
 		-- game/freecam
 		freecam_command = "freecam",
@@ -2344,7 +2360,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		death_timer_command_substitutes = "",
 
 		cpr_command = "cpr",
-		cpr_command_help = "Bababa bahh banana bapple baboiiiii.",
+		cpr_command_help = "undefined",
 		cpr_command_substitutes = "",
 
 		-- game/hitmarkers
@@ -2512,6 +2528,23 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		jackpot_take_fees_command_help = "Bababa! Take a fee from all jackpot inventories.",
 		jackpot_take_fees_command_substitutes = "",
 
+		-- game/jail
+		check_jail_command = "undefined",
+		check_jail_command_help = "undefined",
+		check_jail_parameter_server_id = "undefined",
+		check_jail_parameter_server_id_help = "undefined",
+		check_jail_command_substitutes = "",
+
+		modify_jail_command = "undefined",
+		modify_jail_command_help = "undefined",
+		modify_jail_parameter_server_id = "undefined",
+		modify_jail_parameter_server_id_help = "undefined",
+		modify_jail_parameter_operation = "undefined",
+		modify_jail_parameter_operation_help = "undefined",
+		modify_jail_parameter_amount = "undefined",
+		modify_jail_parameter_amount_help = "undefined",
+		modify_jail_command_substitutes = "undefined",
+
 		-- game/lag
 		fake_lag_command = "fake_lag",
 		fake_lag_command_help = "Create fake lag.",
@@ -2588,7 +2621,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		mining_debug_command_substitutes = "",
 
 		-- game/miscellaneous
-		-- these two commands should remain the same on all languages in case someone joins in with a language they don't know.
+		-- these two commands (language & languages) should remain the same on all languages in case someone joins in with a language they don't know.
 		-- you can change the _help parts though if you'd like, not the "language code" though.
 		language_command = "language",
 		language_command_help = "Me want banana! Set your preferred language. This change will save for future sessions. Da change is immediate.",
@@ -2696,6 +2729,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		info_command_help = "Bello! Display some banana debug info, used in banana-bug-reports.",
 		info_command_substitutes = "",
 
+		whois_command = "undefined",
+		whois_command_help = "undefined",
+		whois_command_parameter_search = "undefined",
+		whois_command_parameter_search_help = "undefined",
+		whois_command_substitutes = "",
+
 		-- game/money
 		cash_command = "banana",
 		cash_command_help = "Show how much banana you have.",
@@ -2752,6 +2791,13 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		remove_notice_command_parameter_message_id = "message id",
 		remove_notice_command_parameter_message_id_help = "The id of the message you want to remove. Ta-da!",
 		remove_notice_command_substitutes = "",
+
+		-- game/npc_watch
+		npc_watch_command = "undefined",
+		npc_watch_command_help = "undefined",
+		npc_watch_command_parameter_in_vehicle = "undefined",
+		npc_watch_command_parameter_in_vehicle_help = "undefined",
+		npc_watch_command_substitutes = "",
 
 		-- game/objects
 		frozen_objects_scan_command = "banana-potato-bappo",
@@ -2903,6 +2949,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		phone_number_available_command_parameter_phone_number = "banana language phone",
 		phone_number_available_command_parameter_phone_number_help = "Da banana language phone you want to check if be available. Make sure it follow da format of XXX-XXXX.",
 		phone_number_available_command_substitutes = "number_available",
+
+		-- game/plants
+		plants_debug_command = "undefined",
+		plants_debug_command_help = "undefined",
+		plants_debug_command_substitutes = "",
 
 		-- game/player_control
 		drive_for_command = "drive_for",
@@ -3293,6 +3344,47 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		tablet_command_help = "Poopaye, tae po ah mah tablet UI (jiji, if you have a tablet).",
 		tablet_command_substitutes = "",
 
+		-- game/teleporting
+		tp_back_command = "undefined",
+		tp_back_command_help = "undefined",
+		tp_back_command_substitutes = "undefined",
+
+		tp_coords_command = "tp_coords",
+		tp_coords_command_help = "Teleport likeee a Minion to soomeee coordinates, Bello!",
+		tp_coords_command_parameter_x = "x",
+		tp_coords_command_parameter_x_help = "Banana bee doo bee doo: The X coordinate ya want t' teleport t'.",
+		tp_coords_command_parameter_y = "bee",
+		tp_coords_command_parameter_y_help = "Banana bee doo bee doo: The Y coordinate ya want t' teleport t'.",
+		tp_coords_command_parameter_z = "la",
+		tp_coords_command_parameter_z_help = "Banana bee doo bee doo: The Z coordinate ya wanna teleport t'. Dis parameter be optional an' if left blank, da ground coordinates will be searched fer automatically.",
+		tp_coords_command_parameter_w = "wi",
+		tp_coords_command_parameter_w_help = "De W coordinate or beedoing you want to teleport to. Bee doo bee doo bee doo. This parameter is banana optional and if left empty, your current heading will be used. Bello!",
+		tp_coords_command_substitutes = "tpc",
+
+		tp_waypoint_command = "tp_waypoint",
+		tp_waypoint_command_help = "Teleport t' ya set-up waypoint.",
+		tp_waypoint_command_substitutes = "tp_marker, tp",
+
+		tp_to_player_command = "undefined",
+		tp_to_player_command_help = "undefined",
+		tp_to_player_command_parameter_server_id = "undefined",
+		tp_to_player_command_parameter_server_id_help = "undefined",
+		tp_to_player_command_substitutes = "",
+
+		tp_player_here_command = "undefined",
+		tp_player_here_command_help = "undefined",
+		tp_player_here_command_parameter_server_id = "undefined",
+		tp_player_here_command_parameter_server_id_help = "undefined",
+		tp_player_here_command_substitutes = "",
+
+		tp_player_player_command = "undefined",
+		tp_player_player_command_help = "undefined",
+		tp_player_player_command_parameter_source_id = "undefined",
+		tp_player_player_command_parameter_source_id_help = "undefined",
+		tp_player_player_command_parameter_destination_id = "undefined",
+		tp_player_player_command_parameter_destination_id_help = "undefined",
+		tp_player_player_command_substitutes = "",
+
 		-- game/test_server
 		test_menu_command = "test_menu",
 		test_menu_command_help = "Toggle da test server menu.",
@@ -3452,11 +3544,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		explode_command_parameter_server_id_help = "Server ID of the target player in Minionese.",
 		explode_command_substitutes = "",
 
-		ignite_player_command = "ignite_player",
-		ignite_player_command_help = "Lights a player on fire for a short moment in Minionese.",
-		ignite_player_command_parameter_server_id = "server id",
-		ignite_player_command_parameter_server_id_help = "Server ID of the target player in Minionese.",
-		ignite_player_command_substitutes = "ignite, burn",
+		taze_player_command = "undefined",
+		taze_player_command_help = "undefined",
+		taze_player_command_parameter_server_id = "undefined",
+		taze_player_command_parameter_server_id_help = "undefined",
+		taze_player_command_substitutes = "undefined",
 
 		run_command_as_command = "run_command_as",
 		run_command_as_command_help = "Banaanana ba naaa bababa naaana baanana, ba naaaa baba naaana ba naanana baanana.",
@@ -3532,6 +3624,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		interface_focuses_command = "interface_focuses",
 		interface_focuses_command_help = "Choco! Check which interfaces are set as focused.",
 		interface_focuses_command_substitutes = "interface_focus, focus, focuses",
+
+		-- jobs/bus_driver
+		bus_debug_command = "undefined",
+		bus_debug_command_help = "undefined",
+		bus_debug_command_substitutes = "",
 
 		--jobs/doj
 		lookup_character_command = "lookup_character",
@@ -3627,6 +3724,16 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		licenses_command_help = "Gib ya bello-li-cen-sez.",
 		licenses_command_substitutes = "",
 
+		set_marriage_command = "undefined",
+		set_marriage_command_help = "undefined",
+		set_marriage_command_parameter_partner_a_cid = "undefined",
+		set_marriage_command_parameter_partner_a_cid_help = "undefined",
+		set_marriage_command_parameter_partner_b_cid = "undefined",
+		set_marriage_command_parameter_partner_b_cid_help = "undefined",
+		set_marriage_command_parameter_state = "undefined",
+		set_marriage_command_parameter_state_help = "undefined",
+		set_marriage_command_substitutes = "",
+
 		-- jobs/tow
 		toggle_mechanic_messages_command = "toggol-mechanic-messajes",
 		toggle_mechanic_messages_command_help = "Toggles whethor o not ya receive mechanique messajes.",
@@ -3648,6 +3755,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		set_fuel_command_parameter_fuel_level = "fuel level",
 		set_fuel_command_parameter_fuel_level_help = "Da fuel level you would like to set it to. Leaving this blank will auto-select `100`.",
 		set_fuel_command_substitutes = "fuel",
+
+		-- vehicles/garage_access
+		manage_garage_command = "undefined",
+		manage_garage_command_help = "undefined",
+		manage_garage_command_substitutes = "undefined",
 
 		-- vehicles/garages
 		toggle_garage_debug_command = "toggle_garage_debug",
@@ -3734,6 +3846,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		mute_sirens_command = "bello! bello! baanaanaa!",
 		mute_sirens_command_help = "Babaa! Babaa! Baanaabaanaa! *muted sirens and horns*.",
 		mute_sirens_command_substitutes = "",
+
+		-- vehicles/trailers
+		toggle_trailer_command = "undefined",
+		toggle_trailer_command_help = "undefined",
+		toggle_trailer_command_substitutes = "undefined",
 
 		-- vehicles/vehicles
 		flip_command = "pota!..",
@@ -3889,7 +4006,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	},
 
 	core = {
-		version = "Poopaye"
+		version = "Poopaye",
+
+		access_denied = "undefined",
+		file_not_found = "undefined",
+		only_lua_files_allowed = "undefined"
 	},
 
 	couches = {
@@ -3915,7 +4036,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		api_reported_no_updates = "Ba-na-na, the Discord API didn't find any updates in the emoji list.",
 		emojis_added = "Bee-do bee-do, ${added} emoji(s) have been added.",
 		emojis_removed = "Poopaye! ${removed} emoji(s) have been removed.",
-		emojis_updated = "Bello! ${added} emoji(s) have been added and ${removed} emoji(s) have been removed."
+		emojis_updated = "Bello! ${added} emoji(s) have been added and ${removed} emoji(s) have been removed.",
+		no_emojis = "undefined"
 	},
 
 	errors = {
@@ -4082,7 +4204,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		dropped_timed_out_player_logs_title = "Dropped Timed Out Player",
 		dropped_timed_out_player_logs_details = "${consoleName} was manually dropped for not having pinged the framework in a long time in Minionese.",
 
-		critical_error_while_loading_data = "Bananaaaa, ke da-layyyy ke-da-lay ke-lay ke-gua-, tu mow."
+		critical_error_while_loading_data = "Bananaaaa, ke da-layyyy ke-da-lay ke-lay ke-gua-, tu mow.",
+
+		ping_unstable = "undefined",
+		ping_stable = "undefined"
 	},
 
 	whitelist = {
@@ -4092,25 +4217,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	-- game/*
 	admin_menu = {
 		menu_title = "Admin Menu In Minionese",
-		spectate_player = "Bello! Spectate Player",
-		teleport_player = "Bello! Teleport To Player",
-		teleport_player_here = "Bello! Teleport Player To You",
-		failed_teleport_to_player = "Meeeee no can teleport to player!",
-		failed_teleport_player_here = "Meeeeee no can teleport player to you!",
-		invalid_target_server_id = "BANANA! Invalid target server id.",
-		invalid_destination_server_id = "BANANA! Invalid destination server id.",
-		invalid_source_server_id = "BANANA! Invalid source server id.",
-		failed_teleport_player_to_player = "BANANA! Failed to teleport player to player.",
-		teleported_player_to_player = "BANANA! Teleported player to player.",
-
-		tp_player_logs_title = "TP Player",
-		tp_player_logs_details = "${consoleName} teleported to ${targetConsoleName}.",
-		tp_here_logs_title = "TP Here",
-		tp_here_logs_details = "${consoleName} teleported ${targetConsoleName} to themselves.",
-		tp_everyone_logs_title = "TP Here Everyone",
-		tp_everyone_logs_details = "${consoleName} banana teleport everyone to banana themself.",
-		tp_to_logs_title = "TP To",
-		tp_to_logs_details = "${consoleName} banana teleported ${sourceConsoleName} to banana ${targetConsoleName}."
+		spectate_player = "Bello! Spectate Player"
 	},
 
 	afk = {
@@ -4278,7 +4385,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		net = "Bello",
 		net_ratio = "Bello Ratio",
 		items_gambled = "Banana Potatoes",
-		screenshots_taken = "Banana banana!"
+		screenshots_taken = "Banana banana!",
+
+		called_airdrop_logs_title = "undefined",
+		called_airdrop_logs_details = "undefined"
 	},
 
 	atms = {
@@ -4818,7 +4928,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		medical_care_1 = "If you get injured, you can go to hospital to check-in and get treatment. Hospital can be found on map. You can also use bandages or first aid kits to heal yourself.",
 		medical_care_2 = "If you respawn without being brought to hospital or exit game while downed, you may lose some items. Server restart counts as exiting game.",
 
-		safety_hint = "Poopaye! Hint: You can take your weapon off safety by pressing ALT and the middle mouse button. Stay safe!",
+		safety_hint = "undefined",
 
 		closing_sentence = "BANANA! Bello! Bello! Bello! Bello! Bello! Ask around and make some friends ;)"
 	},
@@ -4844,6 +4954,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		buddy_pass_used_logs_title = "Buddy Pass Bee-do",
 		buddy_pass_used_logs_details = "${consoleName} used their Buddy Pass to push through ${targetConsoleName}. Bee-do!"
+	},
+
+	bus_map = {
+		bus_tracker = "undefined"
 	},
 
 	cache = {
@@ -5093,6 +5207,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		replace_outfit = "Bananaaaa.",
 		new_outfit = "Bello, gelato.",
 		no_saved_outfits = "No daaa, no outfits.",
+		last_updated = "undefined",
 
 		save_outfit_title = "Save new Outfit",
 		save_outfit_label = "Outfit Name:",
@@ -5205,24 +5320,45 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		fried_item = "Fried belgian fries. Bello!",
 		failed_fry_item = "Frying fries, no good. KANPAI!",
 
-		grill_item = "Grill Raw Patties",
-		press_to_grill_item = "[${SeatEjectKey}] Grill Raw Patties",
-		grilling_item = "Grilling Patties (1 patty)",
-		grilled_item = "Bapple Botatas Peelay",
-		failed_grill_item = "Hana Gorga Papple Botatas Peelay",
+		grill_item = "undefined",
+		press_to_grill_item = "undefined",
+		grilling_patty = "undefined",
+		grilled_patty = "undefined",
+		failed_grill_patty = "undefined",
+		grilling_bacon = "undefined",
+		grilled_bacon = "undefined",
+		failed_grill_bacon = "undefined",
+		frying_egg = "undefined",
+		fried_egg = "undefined",
+		failed_fry_egg = "undefined",
+
+		patty_recipe = "undefined",
+		bacon_recipe = "undefined",
+		egg_recipe = "undefined",
 
 		hamburger_recipe = "Hamburger",
 		cheeseburger_recipe = "Cheeseburger",
+		bacon_burger_recipe = "undefined",
+		bne_burger_recipe = "undefined",
+		veggie_burger_recipe = "undefined",
 
 		assemble_burger = "Assemble Burger",
 		press_to_assemble_burger = "[${SeatEjectKey}] Assemble Burger",
-		assembling_burger = "Assembling Hamburger",
-		assembled_burger = "Assembled Hamburger",
-		failed_assemble_burger = "Papple Botatas Hana Gorga Assemble A Hamburger.",
-
-		assembling_cheeseburger = "Assembling Cheeseburger",
-		assembled_cheeseburger = "Assembled Cheeseburger",
-		failed_assemble_cheeseburger = "Bee-doh! Failed to assemble a cheeseburger.",
+		assembling_burger = "undefined",
+		assembled_burger = "undefined",
+		failed_assemble_burger = "undefined",
+		assembling_cheeseburger = "undefined",
+		assembled_cheeseburger = "undefined",
+		failed_assemble_cheeseburger = "undefined",
+		assembling_bacon_burger = "undefined",
+		assembled_bacon_burger = "undefined",
+		failed_assemble_bacon_burger = "undefined",
+		assembling_bne_burger = "undefined",
+		assembled_bne_burger = "undefined",
+		failed_assemble_bne_burger = "undefined",
+		assembling_veggie_burger = "undefined",
+		assembled_veggie_burger = "undefined",
+		failed_assemble_veggie_burger = "undefined",
 
 		mix_avocado_smoothie = "Babble babble! Mix Avocado Smoothie",
 		press_to_mix_avocado_smoothie = "[${SeatEjectKey}] Babble babble! Mix Avocado Smoothie",
@@ -5273,6 +5409,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		failed_refill_vape = "Banana Vacuuuuum refill fail.",
 
 		plain_vape = "Plain (No Flavur)",
+		weed_vape = "undefined",
 		mango_vape = "Mango Flavur",
 		strawberry_vape = "Strawberry Flavur",
 		menthol_vape = "Menthol Flavur",
@@ -5314,6 +5451,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		process_rubber = "Tulalutu Rubber",
 		press_process_rubber = "[${SeatEjectKey}] Tulalutu Rubber",
 		failed_process_rubber = "Dulolo Tulalutu Rubber.",
+
+		craft_pvc_pipe = "undefined",
+		press_craft_pvc_pipe = "undefined",
+		crafting_pvc_pipe = "undefined",
+		crafted_pvc_pipe = "undefined",
+		failed_craft_pvc_pipe = "undefined",
 
 		process_aluminium = "Tulalutu Aluminium",
 		press_process_aluminium = "[${SeatEjectKey}] Tulalutu Aluminium",
@@ -5501,11 +5644,18 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		sawed_shotgun = "Banana! Sawed off shotgun.",
 		failed_saw_shotgun = "Uh-oh! Failed to saw off shotgun.",
 
-		bake_brownies = "Bake Brownies",
-		press_bake_brownies = "[${SeatEjectKey}] Bake Brownies",
+		use_microwave = "undefined",
+		press_to_use_microwave = "undefined",
+
+		brownies_recipe = "undefined",
 		baking_brownies = "Baking Brownies",
 		baked_brownies = "Mwah mwah! Baked brownies.",
 		failed_bake_brownies = "Bee do bee do! Failed to bake brownies.",
+
+		weed_gummies_recipe = "undefined",
+		making_weed_gummies = "undefined",
+		made_weed_gummies = "undefined",
+		failed_make_weed_gummies = "undefined",
 
 		mix_brushstroke_paint = "Bellok-bellok Brushstroke Paint Yo!",
 		press_mix_brushstroke_paint = "[${SeatEjectKey}] Bellok-bellok Brushstroke Paint Yo!",
@@ -5597,6 +5747,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		mixed_grimace_shake = "Mixed grimace shake.",
 		failed_mix_grimace_shake = "Bello! Failed to mix grimace shake.",
 
+		assemble_snowlauncher = "undefined",
+		press_to_assemble_snowlauncher = "undefined",
+		assembling_snowlauncher = "undefined",
+		assembled_snowlauncher = "undefined",
+		failed_assemble_snowlauncher = "undefined",
+
 		deconstruct_ammo = "Bello Deconstruct Ammo",
 		press_to_deconstruct_ammo = "[${SeatEjectKey}] Bello Deconstruct Ammo",
 
@@ -5620,6 +5776,32 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		crafting_ammo = "Kaboomkle Ammo",
 		crafted_ammo = "Kaboomkle ammo.",
 		failed_craft_ammo = "Bello tooby bada ammo.",
+
+		process_weed = "undefined",
+		press_to_process_weed = "undefined",
+
+		package_1q_recipe = "undefined",
+		packaging_1q = "undefined",
+		packaged_1q = "undefined",
+		failed_package_1q = "undefined",
+
+		process_bud_recipe = "undefined",
+		processing_bud = "undefined",
+		processed_bud = "undefined",
+		failed_process_bud = "undefined",
+
+		process_meat = "undefined",
+		press_to_process_meat = "undefined",
+
+		beef_sausages_recipe = "undefined",
+		crafting_beef_sausages = "undefined",
+		crafted_beef_sausages = "undefined",
+		failed_craft_beef_sausages = "undefined",
+
+		bacon_recipe = "undefined",
+		crafting_bacon = "undefined",
+		crafted_bacon = "undefined",
+		failed_craft_bacon = "undefined",
 
 		no_required_items = "Tank yu, but yu don't have all the required items.",
 
@@ -5664,10 +5846,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		divorced = "Bee-doh, divorced!",
 		divorced_description = "Selecto la 'yes' si yoi parents am divorced.",
 
-		["in"] = "in",
-		out = "bee-do, out",
-		up = "bee-do, up",
-		down = "bee-do, down",
+		["in"] = "In",
+		out = "undefined",
+		up = "undefined",
+		down = "undefined",
 		brow = "Bee-do, brow",
 		brow_description = "Make changes to your physical features, bee-doo!",
 
@@ -6035,6 +6217,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		player_speed = "Player Speed: ${playerSpeed} bah bah bah bah-bah",
 		player_ped = "Boboo Gelo: ${playerPedId}",
 		heading = "Bavela: ${heading}",
+		bearing = "undefined",
 		coords = "Minion: ${coords}",
 		rotation = "Rotation: ${rotation}",
 		normal = "Banana: ${normal}",
@@ -6047,6 +6230,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		not_networked_vehicles = "Not Networked Banana: ${count}",
 		invisible_vehicles = "PO KA, INVISIBLE VEHICLES: ${count}",
 		parked_vehicles = "Parked Banana: ${count}",
+		available_doors = "undefined",
 
 		distance = "Distance: ${distance}m",
 		distance_first = "Bluuh ba laa!",
@@ -6062,6 +6246,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		vehicle_acceleration = "0 to 60: ${time} (Translation: Bee-do bee-do bee-do!)",
 		vehicle_acceleration_120 = "0 to 120: ${time} (Translation: Bello!)",
 		vehicle_acceleration_150 = "0 to 150: ${time} (Translation: Poopaye!)",
+		vehicle_brake_distance = "undefined",
 		vehicle_acceleration_force = "Launch Force: ${force} (Translation: Bee-do!)",
 
 		invalid_network_id = "Banana Gelato",
@@ -6072,6 +6257,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		failed_entity_info = "Uh-oh! Failed tu get entity information.",
 		printed_entity_info = "Bello! Printed entity server information in F8.",
 
+		no_entity_network = "undefined",
 		move_entity_success = "Tank yu! Successfully moved entity wit network id ${networkId}.",
 		move_entity_failed = "Ah no! Failed to move da entity.",
 		move_entity_no_permissions = "Baboi tulaliloo ti amo moveee!",
@@ -6208,6 +6394,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		unlocks = "Bello: <i>${cluster}</i>."
 	},
 
+	effect_zones = {
+		in_zones = "undefined",
+		not_in_zones = "undefined",
+		effects = "undefined"
+	},
+
 	elevators = {
 		use_elevator = "[${InteractionKey}] Use Elevator",
 		elevator_title = "Elevator",
@@ -6333,6 +6525,32 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		give_item_failed = "Uh-oh! (Failed to give ${itemName} to player)"
 	},
 
+	emote_menu = {
+		menu_title = "undefined",
+
+		dance_emotes = "undefined",
+		dance_emotes_description = "undefined",
+		shared_emotes = "undefined",
+		shared_emotes_description = "undefined",
+		prop_emotes = "undefined",
+		prop_emotes_description = "undefined",
+		animal_emotes = "undefined",
+		animal_emotes_description = "undefined",
+		pegi_emotes = "undefined",
+		pegi_emotes_description = "undefined",
+		racing_emotes = "undefined",
+		racing_emotes_description = "undefined",
+
+		emotes = "undefined",
+		emotes_description = "undefined",
+		moods = "undefined",
+		moods_description = "undefined",
+		walkstyles = "undefined",
+		walkstyles_description = "undefined",
+		cancel_emote = "undefined",
+		cancel_emote_description = "undefined"
+	},
+
 	exclusive_dealership = {
 		cost_money = "${price}$",
 		cost_points = "${points} OP Points",
@@ -6424,6 +6642,16 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		flags_on_ground = "Bellooo belloo: ${flagsOnGround}"
 	},
 
+	flight_radar = {
+		callsign_invalid = "undefined",
+		callsign_set = "undefined",
+		callsign_reset = "undefined",
+		callsign_set_failed = "undefined",
+
+		emergency_type_1 = "undefined",
+		emergency_type_2 = "undefined"
+	},
+
 	forcefields = {
 		invalid_radius = "Invalid radius (has to be between 1 and 200). Gelato!",
 		failed_create = "Papoy! Failed to create forcefield.",
@@ -6442,7 +6670,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	fortune_cookies = {
 		opened_cookie_logs_title = "Bello! Opened Fortune Cookie",
 		opened_cookie_logs_details = "${consoleName} opened a fortune cookie and got `${fortune}`. Banana!",
+		created_cookie_logs_title = "undefined",
+		created_cookie_logs_details = "undefined",
 
+		missing_fortune = "undefined",
+		failed_create_cookie = "undefined",
 		failed_open = "Sorree! Failed to open fortune cookie."
 	},
 
@@ -6573,6 +6805,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		decrypting = "Decrypting",
 		guns_disabled = "Bello, no more gun running for now.",
 		high_level_cooldown = "Poopaye, failed to connect with FIB server, try again later.",
+		timeout_cooldown = "undefined",
 		failed_start_run = "Uh-oh, failed to start gun run.",
 		hack_timeout = "Bee-do, lost connection with server, try again.",
 
@@ -6682,6 +6915,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		revived_player_removed_injuries_details = "${consoleName} bee doo ${targetConsoleName} and removed their banana.",
 		revived_player_title = "Bee Doo",
 		revived_player_details = "${consoleName} bee doo ${targetConsoleName}.",
+		revived_range_self_title = "undefined",
+		revived_range_self_details = "undefined",
+		revived_range_title = "undefined",
+		revived_range_details = "undefined",
 		death_alcohol_poisoning = "Bee-do, Bee-do! You paa-passed out due to alcohol poisoning.",
 		character_has_hardcore_died = "${fullName} has died. You may select another character. Me want banana!",
 
@@ -6725,6 +6962,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		battery = "bababa! battery",
 		fps = "fps",
 		ping = "ping",
+		tps = "undefined",
 		autopilot = "autopilot",
 		ground_asl = "AGL/ASL (${unit})",
 		heading = "bee-do-bee-do HEADING",
@@ -6746,6 +6984,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		fps_unit = "fps",
 		ping_unit = "mks",
+		tps_unit = "undefined",
 
 		smart_warnings = "KiKiKree: ${warnings}!",
 		dehydrated = "poka-poka",
@@ -6787,6 +7026,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	identification = {
 		los_santos = "Los Santos",
 		citizen_card = "Citizen Card",
+		driver_license = "undefined",
 		first_name = "Banana Language:",
 		last_name = "Apple Language:",
 		gender = "Disguise:",
@@ -6794,6 +7034,17 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		gender_female = "Underwear",
 		date_of_birth = "Date of Bananane",
 		citizen_id = "Bababa ID",
+
+		dl_no = "undefined",
+		class = "undefined",
+
+		fn = "undefined",
+		cid = "undefined",
+		dob = "undefined",
+		sex = "undefined",
+		iss = "undefined",
+		cls = "undefined",
+		["end"] = "END",
 
 		citizenship = "Bababaity",
 		citizenship_value = "USA",
@@ -6816,6 +7067,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		citizen_card_details = "${firstName} ${lastName} | Ba-ba-ba-ba Date Of Birth: ${dateOfBirth} | Ba-ba-gaga Gender: ${gender} | Bababa ID: ${characterId}",
 		just_showed_citizen_card = "Bee do bee do bee do, you just showed a Bababa Card. Ba-na-na!",
+		driver_license_details = "undefined",
+		just_showed_driver_license = "undefined",
 
 		boat_license = "Boating Language",
 		boat_license_details = "Boating Language | ${firstName} ${lastName} | Banana: ${characterId}",
@@ -6846,6 +7099,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		swat_badge_details = "SWAT | ${firstName} ${lastName} | BAPPLE: ${positionName}",
 		management_badge = "Management Badge",
 		management_badge_details = "Management | ${firstName} ${lastName} | BAPPLE: ${positionName}",
+		ftp_badge = "undefined",
+		ftp_badge_details = "undefined",
 		ems_badge = "EMS ID",
 		ems_badge_details = "EMS | ${firstName} ${lastName} | BAPPLE: ${positionName}",
 		doctor_badge = "Doctor ID",
@@ -6868,6 +7123,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		badge_type_fib = "Bellovin La Investigation Bureau",
 		badge_type_swat = "Special Weapons Nee Tactics",
 		badge_type_management = "SASP Management Bee Do",
+		badge_type_ftp = "undefined",
 		badge_type_ems = "Emergency Medical Services Bee Do Bee Do Bee Do",
 		badge_type_doctor = "Medical Residency Bee Do Bee Do",
 		badge_type_bcfd = "Blaine County Fire Department Bee Do",
@@ -6883,6 +7139,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		badge_type_short_fib = "BANANA",
 		badge_type_short_swat = "POTATO",
 		badge_type_short_management = "MINION MANAGEMENT",
+		badge_type_short_ftp = "undefined",
 		badge_type_short_ems = "BUMBLEBEE MEDIC",
 		badge_type_short_doctor = "DOCTOR GOGGLES",
 		badge_type_short_bcfd = "BANANA COAST FIRE DEPT",
@@ -6996,7 +7253,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		mug_shots = "Banana Potatoo Mug Shots",
 		prison_store = "Banana Potatoo Prison Store",
 		fruit_vendor = "Banana Potatoo Fruit Vendor",
-		supermarket = "Banana Potatoo Supermarket",
+		food_market = "undefined",
 		island_store = "Banana Potatoo Island Store",
 		travel_agency = "Banana Potatoo Travel Agency",
 		island_bar = "Banana Potatoo Island Bar",
@@ -7070,7 +7327,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		nameable_title = "Bapple Nameable Item Name:",
 
-		locker_restricted = "Ma caddayn kartid inaad soo saarto barto daqiiqadaas.",
+		inventory_restricted = "undefined",
 
 		press_to_access_shredder = "[${InteractionKey}] Bapple access shredder.",
 
@@ -7092,6 +7349,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		press_to_open_public_inventory = "~INPUT_REPLAY_SHOWHOTKEY~ Bidonka ${label}",
 
 		burgershot_counter = "Burgershot Counter",
+		arcade_counter = "undefined",
+		tequilala_counter = "undefined",
+		prison_counter = "undefined",
 
 		inventory_name_missing = "Bananaaaah! Inwhich minion language I say inventory name parameter?",
 
@@ -7128,6 +7388,13 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		crush_raw_ruby = "Bello <i>Raw Ruby</i>",
 		crush_raw_sapphire = "Bello <i>Raw Sapphire</i>",
 		break_apart_weed = "Titi <i>1oz ni duoa</i>",
+		brine_meat = "undefined",
+		prepare_sandwich = "undefined",
+		pickle_cucumbers = "undefined",
+		melt_chocolate = "undefined",
+		craft_torch = "undefined",
+		prepare_beans_toast = "undefined",
+		mix_pancake_batter = "undefined",
 
 		search = "Papoy",
 		amount = "Bananu",
@@ -7151,6 +7418,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		logs_item_moved_title = "Oggetto Spostato",
 		logs_item_moved_details = "${consoleName} ha spostato ${moveAmount}x ${itemLabel} in ${endInventory}:${endSlot} dall'inventario ${startInventory}:${startSlot}.",
+		logs_item_given_title = "undefined",
+		logs_item_given_details = "undefined",
 
 		logs_item_purchased_title = "Oggetto/i Acquistato/i",
 		logs_item_purchased_no_tax_details = "${consoleName} purchased ${purchaseAmount}x `${itemLabel}` for $${purchaseCost}.", -- "${consoleName} Bubuoka ${purchaseAmount} goriya `$(itemLabel)` meh $${purchaseCost}",
@@ -7202,6 +7471,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		citizen_card = "Citizen Card",
 		citizen_card_description = "Acts as identification, a firearm license and driving license. Bababa!",
+		driver_license = "undefined",
+		driver_license_description = "undefined",
 		phone = "Phone",
 		phone_description = "never:tm: Bababa!",
 		radio = "Radio",
@@ -7249,6 +7520,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		swat_badge_description = "Bello. Poopaye, me wantee badge. Me SWAT.",
 		management_badge = "Management Badge",
 		management_badge_description = "Bee do bee do bee do. Me agent of SASP Management department.",
+		ftp_badge = "undefined",
+		ftp_badge_description = "undefined",
 		ems_badge = "EMS ID",
 		ems_badge_description = "Bee do! Bee do! Bee do! Me EMS. Give me ID.",
 		doctor_badge = "Doctor ID",
@@ -7291,20 +7564,28 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		compass_description = "Bananaaaaaaa!",
 		map = "Bello Bello",
 		map_description = "Shows you where you're going and where you've been. Apo maybe banaana?",
+		bus_map = "undefined",
+		bus_map_description = "undefined",
+		flight_radar = "undefined",
+		flight_radar_description = "undefined",
 		glass_breaker = "Bee Do Bee Do Emergency Window Breaker",
 		glass_breaker_description = "Used to break car windows in case of emergency.",
 
 		picture = "Bello Bello",
 		picture_description = "Bello! Bello! Ke ha ha ha! Bello! Ke ha ha ha! Ke ha ha ha! Bello! Bello! Bello! (Raccogli tutte le minnoni di te e ttuoi amici. (Dimezione: 1x1))",
+		picture_wide = "undefined",
+		picture_wide_description = "undefined",
 		printed_card = "Bello! Bello! Ke ha ha ha! Bello! Ke ha ha ha! Ke ha ha ha! Bello! Bello! Bello! (Stampato Card)",
 		printed_card_description = "Bello! Bello! Ke ha ha ha! Bello! Ke ha ha ha! Ke ha ha ha! Bello! Bello! Bello! (Un pezzioolo di carta stampato, forse un biglietto da visita? (Dimezione: 9x5))",
 		printed_document = "Tulula Tulula",
 		printed_document_description = "Tu tul bo, tu tul bo? (Size: 21x28)",
-		paper = "Bello! Bello! Ke ha ha ha! Bello! Ke ha ha ha! Ke ha ha ha! Bello! Bello! Bello! (Carta Fotografica)",
-		paper_description = "Bello bo lu poula, papoye. (Size: 1x1)",
-		card_paper = "Bello! Bello! Ke ha ha ha! Bello! Ke ha ha ha! Ke ha ha ha! Bello! Bello! Bello! (Carta per Biglietti)",
+		paper = "undefined",
+		paper_description = "undefined",
+		paper_wide = "undefined",
+		paper_wide_description = "undefined",
+		card_paper = "undefined",
 		card_paper_description = "Bello bo lu poula, tu tul poe-poe. (Size: 9x5)",
-		document_paper = "Tulula Poulet",
+		document_paper = "undefined",
 		document_paper_description = "Bello! A blank piece of paper for printing documents. (Size: 21x28)",
 		printer = "Bababa! Printer.",
 		printer_description = "Bello, no fax, only printer.",
@@ -7351,6 +7632,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		bean_machine_delivery_description = "Bello Bello Bello! A bag full of wonderful treats from a little coffeeshop uptown.",
 		kissaki_delivery = "Ki sa ki Po ti bu lo ta.",
 		kissaki_delivery_description = "A na na la ne po ta tu la of sa ma ma la no ta and pi ma pi no ka no ti pa li.",
+		green_wonderland_delivery = "undefined",
+		green_wonderland_delivery_description = "undefined",
 
 		ear_defenders = "Bee Do Bee Do Ear Defenders",
 		ear_defenders_description = "Bee Do Bee Do! Used to protect your ears from loud noises.",
@@ -7367,6 +7650,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		small_frog_description = "Just a la-ba-da small frog. Bello! Look at the po-tu-ta little guy, he's so cute!",
 		seashell = "La-ba-da Seashell",
 		seashell_description = "A la-ba-da seashell from the beach. You can tu-lah-laa the ocean if you put it up to your ear.",
+		lucky_penny = "undefined",
+		lucky_penny_description = "undefined",
+		small_frog_mk2 = "undefined",
+		small_frog_mk2_description = "undefined",
+		caterpillar = "undefined",
+		caterpillar_description = "undefined",
 
 		keys = "Bello! Kee Kee!",
 		keys_description = "Kee Kee belloo! A pair of keys to some-doora somewhere.",
@@ -7492,6 +7781,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		water_description = "Babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble babble.",
 		hamburger = "Bapple",
 		hamburger_description = "Bapple bapple bapple bapple bapple!",
+		bacon_burger = "undefined",
+		bacon_burger_description = "undefined",
+		bne_burger = "undefined",
+		bne_burger_description = "undefined",
+		veggie_burger = "undefined",
+		veggie_burger_description = "undefined",
 		belgian_fries = "Fritas",
 		belgian_fries_description = "Bababa bababa, BANANA! Bababa bababa, POTATO! Bababa bababa, CHERRY! Fritas fritas fritas fritas fritas.",
 		coke = "Bapple?",
@@ -7660,6 +7955,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		weed_1q_description = "Bananaaaa!",
 		weed_1oz = "Weed 1oz",
 		weed_1oz_description = "1680 bro banana",
+		weed_bud = "undefined",
+		weed_bud_description = "undefined",
 
 		oxy_prescription = "Oxy Prescription bananaaaaaa",
 		oxy_prescription_description = "Sketchy oxy prescription. bababa babanana",
@@ -7669,6 +7966,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		brownies = "Brownies",
 		brownies_description = "Goey, Foamy, and double the amount of chocolate with just a hint of extra kick to really make you sit back and question all of life. babanana la boda",
+		weed_gummies = "undefined",
+		weed_gummies_description = "undefined",
 
 		ejector_seat = "Ejector Seat",
 		ejector_seat_description = "Ejecto Seato Cuz! babanana",
@@ -7718,6 +8017,25 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		hotwheels_towmater = "Bellole Tow Mater",
 		hotwheels_towmater_description = "Mon names my Mater, like tomater mais sans the Tuh.",
 
+		kinder_surprise = "undefined",
+		kinder_surprise_description = "undefined",
+		plush_green = "undefined",
+		plush_green_description = "undefined",
+		plush_red = "undefined",
+		plush_red_description = "undefined",
+		plush_pink = "undefined",
+		plush_pink_description = "undefined",
+		plush_blue = "undefined",
+		plush_blue_description = "undefined",
+		plush_white = "undefined",
+		plush_white_description = "undefined",
+		plush_yellow = "undefined",
+		plush_yellow_description = "undefined",
+		plush_orange = "undefined",
+		plush_orange_description = "undefined",
+		plush_wasabi = "undefined",
+		plush_wasabi_description = "undefined",
+
 		boxing_gloves = "Bee-doo bee-doo boxing gloves",
 		boxing_gloves_description = "Bee-do bee-do, turns you into Rocky, but you probably won't get a sequel...",
 		leash = "Leh-sh",
@@ -7744,6 +8062,21 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		jolly_rancher_cherry_description = "Baboi! Bello banana babo gelato ti amo! (Translation: Wow! Delicious cherry babo ice cream, I love it!)",
 		jolly_rancher_grape = "Babo Gelato Purple",
 		jolly_rancher_grape_description = "Baboi! Babo gelato Purple bapples, chasy! (Translation: Wow! Babo gelato Purple grapes, yummy!)",
+
+		lollipop_pack = "undefined",
+		lollipop_pack_description = "undefined",
+		lollipop_apple = "undefined",
+		lollipop_apple_description = "undefined",
+		lollipop_coke = "undefined",
+		lollipop_coke_description = "undefined",
+		lollipop_grape = "undefined",
+		lollipop_grape_description = "undefined",
+		lollipop_raspberry = "undefined",
+		lollipop_raspberry_description = "undefined",
+		lollipop_strawberry = "undefined",
+		lollipop_strawberry_description = "undefined",
+		lollipop_watermelon = "undefined",
+		lollipop_watermelon_description = "undefined",
 
 		bucket = "Bapple",
 		bucket_description = "Bello! Can be used as a makeshift helmet.",
@@ -7881,6 +8214,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		scratch_ticket_pearl_description = "Bello! Set sail on a quest for hidden riches wid dis mysterious ticket. Your $100 could be da key to unlocking a loot of up to $210,000. Each scratch brings you closer to da ocean's deepest secrets and fortunes untold.",
 		scratch_ticket_ching = "Scratch-Off (Cha Ching)",
 		scratch_ticket_ching_description = "Banana! Immerse yourself in da electric thrill of possible wealth. For just $100, dis colorful ticket offers da electrifying chance to win up to $210,000. It's not just a game, it's a hilarious display of fortune!",
+		scratch_ticket_carnival = "undefined",
+		scratch_ticket_carnival_description = "undefined",
 
 		avocado = "Avocado-o",
 		avocado_description = "Bee-doo! Small green bulbus object, would be great to make a dip out of.",
@@ -7915,6 +8250,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		milk = "Bababa",
 		milk_description = "Bello bababa bababa bababa bababa bababa.",
+
+		tomato_juice = "undefined",
+		tomato_juice_description = "undefined",
 
 		almond_milk = "Bananaaaa Miya!",
 		almond_milk_description = "Bello po ka! How the fuck did they milk almonds??????",
@@ -7954,6 +8292,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		empty_tank = "Bababa ti Tank",
 		empty_tank_description = "Dakkel laeng ti panaglaingna kasla nga bigatna maidsa ken aksesorio ti propane.",
+
+		pvc_pipe = "undefined",
+		pvc_pipe_description = "undefined",
 
 		pepper_spray = "Pepper Spray",
 		pepper_spray_description = "BABBAN GU!",
@@ -8000,6 +8341,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		plastic_chair_description = "Bee doo bee doo bee doo! Can be placed anywhaaare in da world. Purfect for camping, hunting n' fishinnn'!",
 		fishing_chair = "Fishing Chair",
 		fishing_chair_description = "Poopaye! Can be placed anywhaaare in da world. Purfect for camping, hunting n' fishinnn'!",
+		sleeping_bag = "undefined",
+		sleeping_bag_description = "undefined",
 		yoga_mat = "Bello tuba tuba",
 		yoga_mat_description = "Me wanto tuba tuba! Can be placedo anywhere in the worldo. Perfecto for camping, hunting and fishingo!",
 		cooler_box = "Koko Loko Box",
@@ -8016,6 +8359,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		disposable_grill_description = "Puraka maku hana labodaga chuka. Jaa puraka maku la jello jee. Bello gelato da la jee chuka!",
 		grill = "Maku",
 		grill_description = "Maku hana labodaga chuka. Jaa maku la jello jee!",
+		torch = "undefined",
+		torch_description = "undefined",
+		ladder = "undefined",
+		ladder_description = "undefined",
 		police_barrier = "Bello Bob Barrier",
 		police_barrier_description = "Dapo Chaka tu.",
 		dummy = "Bee do Bee do",
@@ -8142,6 +8489,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		cupcake_description = "Me want banana! (translation: A fluffy cake filled topped with magical unicorn cream.)",
 		pink_lemonade = "Para la bukena! (translation: Pink Lemonade)",
 		pink_lemonade_description = "Luk at mee! (translation: Totally not just regular lemonade dyed pink so we can charge you twice as much...)",
+		iced_latte = "undefined",
+		iced_latte_description = "undefined",
 
 		irish_coffee = "Gelato! (translation: Irish Coffee)",
 		irish_coffee_description = "Poulet tikka masala! (translation: Freshly made coffee with a bit of original irish whiskey in it.)",
@@ -8187,6 +8536,49 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		wood_description = "A banana-flavored piece of wood fresh from a tree.",
 		charcoal = "Charc-coal",
 		charcoal_description = "Superior to normal coal...banana!.",
+		canine_tooth = "undefined",
+		canine_tooth_description = "undefined",
+		antlers = "undefined",
+		antlers_description = "undefined",
+		pancake_mix = "undefined",
+		pancake_mix_description = "undefined",
+		beef_sausages = "undefined",
+		beef_sausages_description = "undefined",
+		raw_bacon = "undefined",
+		raw_bacon_description = "undefined",
+
+		liquid_smoke = "undefined",
+		liquid_smoke_description = "undefined",
+		raw_brined_meat = "undefined",
+		raw_brined_meat_description = "undefined",
+		bread_loaf = "undefined",
+		bread_loaf_description = "undefined",
+		bbq_sauce = "undefined",
+		bbq_sauce_description = "undefined",
+		bbq_sandwich = "undefined",
+		bbq_sandwich_description = "undefined",
+		cucumber = "undefined",
+		cucumber_description = "undefined",
+		salt = "undefined",
+		salt_description = "undefined",
+		pickles = "undefined",
+		pickles_description = "undefined",
+		dark_chocolate = "undefined",
+		dark_chocolate_description = "undefined",
+		beans = "undefined",
+		beans_description = "undefined",
+		beans_toast = "undefined",
+		beans_toast_description = "undefined",
+		pancake_batter = "undefined",
+		pancake_batter_description = "undefined",
+		pancakes = "undefined",
+		pancakes_description = "undefined",
+		grilled_sausages = "undefined",
+		grilled_sausages_description = "undefined",
+		grilled_bacon = "undefined",
+		grilled_bacon_description = "undefined",
+		fried_egg = "undefined",
+		fried_egg_description = "undefined",
 
 		beef_jerky = "Bapple Jerky",
 		beef_jerky_description = "Some nice pieces of beef jerky...banana.",
@@ -8204,6 +8596,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		peanuts_description = "Bee doo bee doo bee doo! A can of banana peepo is perfect for snacking.",
 		olives = "Bananaaaaah!",
 		olives_description = "Baboi baboi, a bananaaaaah snack for a party.",
+		popcorn = "undefined",
+		popcorn_description = "undefined",
 
 		rice = "Potato",
 		rice_description = "Bee doo bee doo bee doo! It's plump, fluffy grains of potato.",
@@ -8667,8 +9061,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		weapon_addon_rc4 = "Remington R4-C",
 		weapon_addon_rc4_description = "Feisty and quick, da perfect partner to have with you in your squad, except if da red head is holding it.",
 
-		weapon_addon_pp19 = "PP-19 Vityaz",
-		weapon_addon_pp19_description = "The pinnacle of Russian gibberish, perfect for any kind of \"Raid\". Bello!",
+		weapon_addon_mcx = "undefined",
+		weapon_addon_mcx_description = "undefined",
 
 		weapon_addon_m9a3 = "Bapple M9A3",
 		weapon_addon_m9a3_description = "Pssst... Poopaye! Everything yoo need to geddeh your dirty deeds done dirt cheap!",
@@ -8678,9 +9072,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		weapon_addon_m870 = "Remingtone M870",
 		weapon_addon_m870_description = "Perfect sport and hunting shotgun, although shooting dannys isn't really a sport... is it? Bello!",
-
-		weapon_addon_rpk16 = "RPK-16",
-		weapon_addon_rpk16_description = "The most perfect machine gun to ever exist, just don't forget the tracksuit. Tulaliloo!",
 
 		weapon_addon_tacknife = "Bababa Bananana Tactical Knife",
 		weapon_addon_tacknife_description = "Bababa Bananana! Level 100! Bello! The Colonel would be proud.",
@@ -8709,7 +9100,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		weapon_addon_mk18 = "BANANA LAZER",
 		weapon_addon_mk18_description = "\"dadada bah bah bababa dadada\" - Stuart",
 
-		weapon_addon_glock = "POKITA!",
+		weapon_addon_glock = "undefined",
 		weapon_addon_glock_description = "Bello! Bello! Bello!",
 
 		weapon_addon_colt = "TULALI",
@@ -8734,7 +9125,22 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		weapon_addon_glock18c_description = "Tulalalalalaaaaa! Intoducing da Glock 18C: da small and mighty party startah! It has da boom boom pow in full-auto and enough bumpiness to make your shooty day a big adventure. Whethah you're defendin' your hideout or just lookin' to make eyes pop at da shooty place, da Glock 18C gotcha back!",
 
 		weapon_addon_1911 = "1911 Kimber Tactical",
-		weapon_addon_1911_description = "Da 1911 Kimber Tactical: Where style meets substance. Trusted by enthusiasts everywhere, it's your go-to for both defense and cool factor!"
+		weapon_addon_1911_description = "Da 1911 Kimber Tactical: Where style meets substance. Trusted by enthusiasts everywhere, it's your go-to for both defense and cool factor!",
+
+		weapon_addon_svd = "undefined",
+		weapon_addon_svd_description = "undefined",
+
+		weapon_addon_axmc = "undefined",
+		weapon_addon_axmc_description = "undefined",
+
+		weapon_addon_6kh4 = "undefined",
+		weapon_addon_6kh4_description = "undefined",
+
+		weapon_addon_jericho = "undefined",
+		weapon_addon_jericho_description = "undefined",
+
+		weapon_addon_fn509 = "undefined",
+		weapon_addon_fn509_description = "undefined"
 	},
 
 	invisibility = {
@@ -8765,6 +9171,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		move_to_repair = "Luku-luku tosi-tos! Move here to repair de vehicle.",
 		repairing_vehicle = "Bee-doo Bee-doo Repairing Vehicle Bee-Doo!",
 		fix_visual_damage = "Bello bobo hana bee doo bee doo",
+		no_vehicle_nearby = "undefined",
+		no_vehicle_seat_nearby = "undefined",
+		bleaching_vehicle_seat = "undefined",
+		vehicle_seat_bleached = "undefined",
 		measuring_color = "Bello Bello",
 		color_measurement = "Bello Measurement",
 		color_measurer_result = "**${primary}** (*${primaryId}*) banana, **${secondary}** (*${secondaryId}*) banana, **${pearlescent}** (*${pearlescentId}*) banana and **${wheel}** (*${wheelId}*) banana.",
@@ -8799,6 +9209,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		drank_gasoline_death = "BANANA! Me want Banana! Gasoline Poisoning",
 		drank_bleach_death = "Bababa Bo Boo! (Bleach Poisoning)",
 		finished_joint = "Bello! You finished your joint.",
+		cant_place_here = "undefined",
 
 		using_cuffs = "Bee Doo Bee Doo Handcuffs",
 		you_moved_too_fast = "Bee Do Bee Do, you moved too fast.",
@@ -8806,10 +9217,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		failed_burger_shot_delivery = "Me didn't get to open burgershot meal. Me sorry.",
 		failed_bean_machine_delivery = "Me couldn't get the bean machine delivery to open. Ooopsie!",
 		failed_kissaki_delivery = "Failed to open baboi baboi.",
+		failed_green_wonderland_delivery = "undefined",
 
 		burger_shot_delivery_empty = "Banana! That burgershot meal seemed to be empty.",
 		bean_machine_delivery_empty = "Bananaaaaa. That bean machine delivery seemed to be empty.",
 		kissaki_delivery_empty = "That baboi kissaki meal seemed to be baboi baboi baboi.",
+		green_wonderland_delivery_empty = "undefined",
 
 		logs_used_weather_spell_title = "Used Weather Spell",
 		logs_used_weather_spell_details = "${consoleName} used weather spell `${itemName}`.",
@@ -8862,11 +9275,26 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		the_ticket_was = "Da ticket was ${ticket}.",
 		recent_pots_will_show_here = "Gelato ba nanaaaa!",
 		server_id = "The server ID you want to transfer to...",
-		transfer_items_to_anoter_person = "Bananaaaa items to another Minion."
+		transfer_items_to_anoter_person = "Bananaaaa items to another Minion.",
+		cancel_bet = "undefined"
 	},
 
 	jail = {
 		press_to_leave_jail = "Press ~INPUT_CONTEXT~ to leave banana.",
+		invalid_server_id = "undefined",
+		failed_check_jail = "undefined",
+		check_not_jailed = "undefined",
+		remaining_time_check = "undefined",
+		invalid_operation = "undefined",
+		invalid_amount = "undefined",
+		failed_modify_jail = "undefined",
+		modified_jail = "undefined",
+
+		trigger_lockdown = "undefined",
+		press_trigger_lockdown = "undefined",
+		lockdown_active = "undefined",
+		lockdown_title = "undefined",
+		lockdown_detals = "undefined",
 
 		menu_title = "Jail Banana",
 		check_remaining_time = "Bello! Checka remainin' time",
@@ -8875,9 +9303,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		close_menu = "Bello! Closea menu",
 
 		sentence_reduced = "Bello! Youra sentence was reduced by ${amount} months, you have ${remaining} months left.",
+		sentence_increased = "undefined",
 		sentence_over = "Bello! Youra sentence is over.",
-		remaining_time = "Bello! Remaining time: ${remaining} months.",
-		jailed = "Banana banana! You have been jailed for ${amount} months.",
+		remaining_time_fmt = "undefined",
+		remaining_time = "undefined",
+		jailed = "undefined",
 
 		mission_help_1 = "Press ~INPUT_CONTEXT~ to clean da floor.",
 		mission_help_2 = "Press ~INPUT_CONTEXT~ to eat da banana.",
@@ -8887,7 +9317,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		mission_2 = "Bababa... Eating a sandwich.",
 		mission_3 = "Minionese! Working out.",
 
-		mission_blip = "Jail Mission"
+		mission_blip = "Jail Mission",
+
+		modify_jail_logs_title = "undefined",
+		modify_jail_logs_details = "undefined",
+		triggered_lockdown_logs_title = "undefined",
+		triggered_lockdown_logs_details = "undefined"
 	},
 
 	kiosks = {
@@ -8898,6 +9333,13 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		fake_lag_invalid_fps = "Banana! Invalid fps.",
 		fake_lag_clamp = "Banana! Clamping fps ta be below ${fps}.",
 		fake_lag_disabled = "Bello! Da fake lag be disabled."
+	},
+
+	lag_switch = {
+		you_seem_to_be_lagging = "undefined",
+
+		lag_detected_logs_title = "undefined",
+		lag_detected_logs_details = "undefined"
 	},
 
 	lean = {
@@ -9012,7 +9454,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		god_tier = "Ba Bone",
 		custom_plate = "Banana Plate",
 		custom_character_id = "Banana Character ID",
-		custom_phone_number = "Banana Plate Number",
+		custom_phone_number = "undefined",
 		reskin = "Banana Reskin",
 		webstore = "Banana Store",
 		none = "Bello",
@@ -9164,18 +9606,18 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 	lottery = {
 		lottery_announcement = "Bapple bee doo bapple bee doo bapple bee doo!",
-		lottery_about_to_roll = "Bananaaaa! A winner will be drawn in 5 minutes for today's lottery. The total pot is currently at $${totalPot} where you have put in $${betAmount}. Your chance of winning is ${odds}%.",
-		current_lottery_pot = "Bello! Total pot right now is $${totalPot}, where you put in $${betAmount}. Your chance of winning is ${odds}%.",
+		lottery_about_to_roll = "undefined",
+		current_lottery_pot = "undefined",
 		drew_a_lottery_winner = "Bello! A winner for the lottery has been drawn.",
 		roll_lottery_no_permission = "Oopsie! The player tried to roll the lottery but doesn't have permission.",
-		winner_has_been_picked = "Congratulations to ${fullName} for winning the lottery pot of $${totalPot}! They bet $${betAmount} and had a ${odds}% chance of winning.",
+		winner_has_been_picked = "${fullName} la da boda kew ku $$${totalAmount}! Ba la po ${betAmount} la ba kew da bo pi wu ${odds}%.",
 		claimed_lottery_winnings = "Yay! Claimed all the lottery winnings.",
 		no_lottery_winnings = "Bapple chone, you no have any unclaimed lottery winnings.",
 		internal_server_error = "Poopaye! An internal server error happened.",
 		use_disabled_animal = "You cannot use the lottery as an animal ped.",
 
 		lottery_log_title = "Won Lottery",
-		lottery_log_description = "${fullName} (#${characterId}) has won the lottery pot of $${totalPot}. They bet $${betAmount}."
+		lottery_log_description = "${fullName} (#${characterId}) la da boda kew ku $$${totalAmount}. Ba la po ${betAmount}."
 	},
 
 	lucky_wheel = {
@@ -9223,9 +9665,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		failed_sell = "Bello! Failed to sell item.",
 
 		found_item_logs_title = "Bello! Found Item On Ground",
-		found_item_logs_details = "${consoleName} found a ${item} on the ground (${ground}).",
-		sold_item_logs_title = "Bello! Sold Rare Item",
-		sold_item_logs_details = "${consoleName} sold a ${item} for $${price}."
+		found_item_logs_details = "${consoleName} found a ${item} on the ground (${ground})."
 	},
 
 	mdt = {
@@ -9242,7 +9682,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	mechanics = {
 		move_here_check = "Bapples? (Check upgrades here)",
 		checking_upgrades = "Bee Doh! Checking vehicle upgrades...",
-		upgrades_list = "Vehicle upgrades: ${armor}, ${engine}, ${brakes}, ${transmission} and ${turbo}.",
+		upgrades_list = "${armor}, ${engine}, ${brakes}, ${transmission}, ${suspension} bo ${turbo}.",
 
 		has_no_turbo = "No turboooo :(",
 		has_turbo = "Turboooo! :D",
@@ -9264,6 +9704,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		transmission_2 = "Beeee Do Transmission",
 		transmission_3 = "Bananaaaa! Transmission",
 
+		suspension_0 = "Stock Suspension",
+		suspension_1 = "Lowered Suspension",
+		suspension_2 = "Street Suspension",
+		suspension_3 = "Sport Suspension",
+		suspension_4 = "Banana Suspension",
+
 		engine_0 = "Bababa Engine",
 		engine_1 = "Engine EMS Level 2",
 		engine_2 = "Engine EMS Level 3",
@@ -9282,10 +9728,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		catnip = "[${InteractionKey}] Give Catnip, bababa!",
 		treat = "[${InteractionKey}] Give Treat, bapple!",
 		check_up = "[${InteractionKey}] Bello Bello",
-		chill = "[${InteractionKey}] Bello Bello",
-		meditate = "[${InteractionKey}] Bello Bello",
-		salute = "[${InteractionKey}] Bello Bello",
-		stretch = "[${InteractionKey}] Bello Bello",
 
 		feed_active = "Bapple! Feeding Maxwell, baboi!",
 		pet_active = "Tiki-tiki! Petting Maxwell, bababa!",
@@ -9293,10 +9735,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		catnip_active = "Bello Banana Banana",
 		treat_active = "Bello Banana Bello",
 		check_up_active = "Bello no Maxwell",
-		chill_active = "Bello con Maxwell",
-		meditate_active = "Bello meditate con Maxwell",
-		salute_active = "Bello salute Maxwell",
-		stretch_active = "Bello stretch con Maxwell",
 
 		maxwell_appeared = "Bello! Maxwell has appeared near you.",
 		maxwell_shot = "Bello shot Maxwell"
@@ -9459,6 +9897,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		server_tps_response = "${tps}",
 		license_copied = "Successfully copied license to clipboard.",
 		uptime = "Uptime: ${uptime}",
+		empty_search = "Banana banana banana.",
+		no_player_matching = "Banana player matching search: *${search}*.",
+		whois_player = "Banana *${name}* matching your search.",
 
 		picture_no_url = "Bababa potato. Missing url.",
 		picture_invalid_url = "Muhahaha! Invalid url, it has to start with https://. Potatooooo!",
@@ -9473,9 +9914,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		walk_forwards_success = "Bello! Bello! Successfully toggled walking forwards for ${displayName}.",
 		walk_forwards_failed = "Belloo... Failed to toggle walking forwards for ${displayName}.",
 
+		info_invalid_job = "Banana job",
 		info_title = "Bello! Add dis info during bug reports",
 		info_character = "**Character-ID**: *${id}*",
-		info_job_data = "**Job Data:** *${job}*",
+		info_job_data = "**Job Data:** *${job}* - ${paycheck}",
 		info_job_data_none = "**Job Data:** *Nada*",
 		info_licenses = "**Licenses:** *${licenses}*",
 		info_licenses_none = "**Licenses:** *Nada*",
@@ -9557,6 +9999,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		add_notice_missing_permissions = "Bello! Player attempted to add a notice without proper permissions.",
 		remove_notice_missing_permissions = "Bee-do bee-do! Player attempted to remove a notice without proper permissions."
+	},
+
+	npc_watch = {
+		no_npc_nearby = "Banana NPC banana banana."
 	},
 
 	objects = {
@@ -9670,25 +10116,36 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		about_detection_areas_text = "BEE-DOO Detection areas can be a useful tool for the BANANA staff members when trying to identify a cheater spawning in unwanted vehicles and/or peds. To create a detection area, use `/detection_area_add`. Once you've created an area, it will appear here. Only the latest 100 entities will be logged in each area. BEE-DOO",
 		detection_area_title = "BEE-DOO Detection Area #${detectionAreaId}",
 
+		about_settings_title = "Banana",
+		about_settings_text = "Banana banana banana banana banana banana banana banana banana banana.",
 		about_sound_effects_title = "Bananaberry Papple Sound Effects",
-		about_sound_effects_text = "Bello! Des fields allow you to override some sound effects. Dey require a link to an .oog file in order to work properly. It must also be an https:// URL and not an http:// one. An easy way of uploading a file would be to upload it to discord, then copy its link, and inserting it into the fields here.",
+		about_sound_effects_text = "Banana banana banana banana banana banana banana banana banana banana banana banana banana banana banana banana banana banana banana banana banana banana banana banana banana banana banana. Banana banana banana banana banana banana banana banana banana banana banana banana banana banana banana banana banana.",
+		about_staff_settings_title = "Bello Staff Settings",
+		about_staff_settings_text = "Bello, if yu haffa staff permissions, these fields let yu override some more staff-related settings.",
 		radio_mic_click_on = "Radio Mic Click (On)",
 		radio_mic_click_off = "Radio Mic Click (Off)",
 		lean_cam_mode = "Banana-Aim Camera",
 		lean_option_1 = "Holdo to toggle",
 		lean_option_2 = "Presso to toggle",
-		lean_option_3 = "Offo",
 		clipboard_animation = "Paper-Pen Animation",
+		chop_shop_sound = "Bello, Disable Chop Shop Radio Sound",
+		seatbelt_sound = "Bello, Disable Seatbelt Ding",
 		sound_effect_placeholder = "URL to .oog file...",
-		sound_effect_save = "Bello!",
-		sound_effect_reset = "Banaaanaaa!",
+
+		button_save = "Banana",
+		button_reset = "Bello Reset",
+		value_off = "Banana",
+		value_on = "Potato",
+		sound_off = "Banana Off",
+		sound_on = "Banana On",
 
 		reduce_epilepsy = "Banana! Reduce banana images (Banana Friendly)",
+		pause_menu_emote = "Banana Menu Emote",
 		disable_tablet_animation = "Bello! Disable Tablet Animation",
-		staff_notifications_reports = "Bapples bapple doot doot bapple tee bah.",
-		staff_notifications_staff_chat = "Bee doo bee doo bee doo.",
-		staff_notifications_general = "Bello! Bello! Bello!",
-		staff_notifications_anti_cheat = "Banana! Aaaah!",
+		staff_notifications_reports = "Report Notifications (Sound)",
+		staff_notifications_staff_chat = "Staff-Chat Notifications (Sound)",
+		staff_notifications_general = "Banana Potatoes (Banana Sound)",
+		staff_notifications_anti_cheat = "Banana-Bottom Bello (Banana Sound)",
 
 		december_1 = "Bababa... tulaliloo ti amo!",
 		december_2 = "Bababa... ti amore!",
@@ -9765,8 +10222,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		about_unusual_explosions = "Unusual Minionese explosion events that don't occur normally.",
 		explosions_by_type_title = "Minionese Explosions by type",
 		players_causing_explosions_title = "Minionese Players causing explosions",
-		show_common_events_off = "Tulaliloo: OFF",
-		show_common_events_on = "Tulaliloo: ON",
+		include_common_events_off = "Banana Bello: OFF",
+		include_common_events_on = "Banana Bello: ON",
 
 		explosion_events_type = "Bello",
 		explosion_events_amount = "Baboi",
@@ -9800,6 +10257,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		model = "Modelo",
 		label = "Tag",
 		amount = "Bello!",
+		time_ago = "Bababa",
 		console_name = "Minionese gibberish",
 		expected = "Understand?",
 		actual = "Actually",
@@ -10462,7 +10920,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		not_paid = "Me no paid",
 		insert_dollar = "[${InteractionKey}] Insert $${amount}",
 
-		no_cash = "Acha! You don't have a dollar.",
+		no_cash = "Ba-ba-ba $4 ba-ba-ba cash.",
 		max_time = "This parking meter is already maxed out.",
 		failed_pay = "Be-do be-do be-do! Failed to pay parking meter."
 	},
@@ -10504,6 +10962,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		roll_message = "bello! Gave a custom roll with settings ${rolls}d${max}. Result: ${totalValue}",
 		rps_message = "Banana! played banana paper banana and banana ${rps}",
 		citizen_card_message = "para la tulipa! Showed a citizen card (${characterId})",
+		driver_license_message = "ba-ba-ba banana driver's license (${characterId})",
 		badge_message = "para la baba! Showed a badge (${characterId})",
 		license_message = "potato, po-tah-to! Showed a license (${characterId})",
 		ped_message_logs_title = "Ped Message",
@@ -10608,6 +11067,36 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		phone_number_is_not_available = "Oh no! Da phone number `${phoneNumber}` is not available..."
 	},
 
+	plants = {
+		planting_seed = "Potato Banana",
+		seed_planted = "Bello banana potato.",
+		failed_plant = "Banana potato bee-do-ba.",
+		cant_plant_here = "Banana-babble potato-babble.",
+
+		press_water_plant = "[${InteractionKey}] Bello",
+		press_harvest_plant = "[${InteractionKey}] Meep",
+		press_destroy_plant = "[${SeatEjectKey}] Bello-Bello",
+		watering_plant = "Bello Bello",
+		harvesting_plant = "Meep Meep",
+		destroying_plant = "Bello-Bello",
+
+		plant_weed = "Meep Meep",
+
+		planted_seed_logs_title = "Bello Bello",
+		planted_seed_logs_details = "${consoleName} planted a ${plant} (#${plantId}) on ${material}.",
+		harvested_plant_logs_title = "Meep Meep",
+		harvested_plant_logs_details = "${consoleName} harvested a ${plant} (#${plantId}) and received ${items}.",
+		watered_plant_logs_title = "Bababa Plant",
+		watered_plant_logs_details = "${consoleName} bababa a ${plant} (#${plantId}).",
+		ran_over_plant_logs_title = "Tum-tum Plant",
+		ran_over_plant_logs_details = "${consoleName} tum-tum a plant (#${plantId}).",
+		shoveled_plant_logs_title = "Po-do Plant",
+		shoveled_plant_logs_details = "${consoleName} po-do (destroyed) a plant (#${plantId}).",
+
+		total_plants = "Total Po-do: ${count}",
+		nearby_plants = "Nearby Po-do: ${count}"
+	},
+
 	player_control = {
 		unable_to_drive_for_yourself = "Me not understand, you can't drive for yourself.",
 		player_is_not_nearby = "The player with server ID ${serverId} not nearby. Me sorry.",
@@ -10636,7 +11125,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	},
 
 	players = {
-		player_left = "Player goodbye [${serverId}]"
+		player_left = "Player goodbye [${serverId}]",
+		player_exited = "Player Exited [${serverId}]",
+		player_crashed = "Banana Bello [${serverId}]"
 	},
 
 	pole_dancing = {
@@ -10673,9 +11164,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		invalid_domain = "This domain is not allowed - Boohoo!",
 		print = "Bello",
 		printing = "Babble babble babble...",
+		document_title = "Me cool title",
+		image_url = "https://files.catbox.moe/ttt1e4.jpg",
 
 		printed_logs_title = "Bello Image",
-		printed_logs_details = "${consoleName} banana a `${itemName}` using `${paperType}` banana the image banana `${url}`, banana: `${topText}` banana banana: `${bottomText}`."
+		printed_logs_details = "${consoleName} bababa a `${itemName}` using `${paperType}` with the image URL `${url}`, title: `${title}`, bello-text: `${topText}` and poopa-text: `${bottomText}`."
 	},
 
 	prop_hide = {
@@ -10729,7 +11222,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		placing_prop = "Bellofy Plup",
 		pickup_prop = "Picko Up Propo",
 		setting_up_tire_wall = "Settingo Upo Tiro Wallo",
-		destroying_tire_wall = "Destroyo Tiro Wallo"
+		destroying_tire_wall = "Destroyo Tiro Wallo",
+
+		placed_prop_logs_title = "Banana Poop",
+		placed_prop_logs_details = "${consoleName} bababa a `${itemName}` at ${coords} (ID: ${propId}).",
+		spawned_prop_logs_title = "Spawned Prop",
+		spawned_prop_logs_details = "${consoleName} babbled a prop wid model `${modelName}` at ${coords} (ID: ${propId})."
 	},
 
 	radio = {
@@ -11229,13 +11727,19 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	smoothies = {
 		blend = "Blenda",
 		close = "Kapu!",
+		name_placeholder = "Bababa Smoothie",
+		name_suffix = "Smoothie / Milkshake",
+
+		name_default = "Bello",
+		name_drugs = "Potato",
+		name_alcohol = "Banana",
 
 		use_blender = "[${InteractionKey}] Blenda kodowa!",
 		blending = "Blenda-ju",
 		no_ingredients = "Bello! Yu dunt hav any intrudients tu mak a smoothie.",
 
-		milkshake_label = "Banana frappé (${flavors})",
-		smoothie_label = "Słodziak (${smaki})",
+		milkshake_label = "${name} Milkshake",
+		smoothie_label = "${name} Smoothie",
 		seperator = "i"
 	},
 
@@ -11365,7 +11869,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		spy_ui_connecting = "Bapple beedo bapple connecting (#${deviceId})",
 		spy_ui_connection_failed = "Bapple beedo bapple failed to connect (#${deviceId})",
 		spy_ui_awaiting_data = "BEE DO BEE DO: Awaiting data...",
-		spy_ui_data_failed = "BANANA: Data failed"
+		spy_ui_data_failed = "BANANA: Data failed",
+
+		used_tracker_logs_title = "User Vehicle Tracker",
+		used_tracker_logs_details = "${consoleName} used a vehicle tracker on vehicle ${vehicleId}.",
+		used_bug_logs_title = "Used Microphone Bug",
+		used_bug_logs_details = "${consoleName} bee-doo a microphone bug on ${identifier}."
 	},
 
 	starter_car = {
@@ -11505,6 +12014,36 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		user_not_found = "Beda! User jidan tak ditemuin di server.",
 		invalid_character_id = "ID karakter yang dikirimkan tidak valid. Pwede, Pwede...",
 		invalid_license_identifier = "Identifikasi lisensi yang dikirimkan tidak valid."
+	},
+
+	teleporting = {
+		source_no_character = "Banana player has no character loaded.",
+		target_no_character = "Potato player has no character loaded.",
+		invalid_coordinates = "Bananaaaa coordinates.",
+		no_waypoint_set = "No banana set.",
+		failed_teleport_to_player = "Bananaaaa to teleport to player.",
+		failed_teleport_player_here = "Bananaaaa to teleport player to beetu.",
+		failed_teleport_player_player = "Bananaaaa to teleport player to player.",
+		no_back_coords = "No banana to teleport back to.",
+		cant_tp_same_player = "Bello! You can't teleport a player to themselves. Banana!",
+		cant_tp_self_self = "Bello! You can't teleport yourself to yourself. Potatoooo!",
+
+		use_tp_to_player = "Bello! Use `/tp_to_player` to teleport yourself to a player. Me want banana!",
+		use_tp_player_here = "Bello! Use `/tp_player_here` to teleport a player to you. Me love bananas!",
+
+		teleported_to_coordinates = "Bee doo! Teleported to `${location}`. (${coords})",
+		teleported_to_player = "Bee doo! Teleported to ${displayName}.",
+		teleported_player_here = "Bee doo! Teleported ${displayName} to you. Ba-na-na!",
+		teleported_player_player = "Bee doo! Teleported ${sourceName} to ${targetName}.",
+
+		teleport_to_coords_logs_title = "Bamboo-la To Coordinates",
+		teleport_to_coords_logs_details = "${bananaName} Bello! ${coords} la.",
+		teleport_to_player_logs_title = "Bamboo-la To Fellow Minion",
+		teleport_to_player_logs_details = "${bananaName} Bello! ${targetBananaName} la.",
+		teleport_player_here_logs_title = "Banana-la To Self",
+		teleport_player_here_logs_details = "${bananaName} Bello! ${targetBananaName} la me.",
+		teleport_player_player_logs_title = "Banana-la To Fellow Minion",
+		teleport_player_player_logs_details = "${consoleName} boddle ${sourceConsoleName} to ${targetConsoleName}."
 	},
 
 	teleporters = {
@@ -11652,6 +12191,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		vehicles = "Banana Options",
 		spawn_car = "Bapples Bobba",
 		upgrade_vehicle = "Upgrade Bapple",
+		break_windows = "Break Windows",
 		pop_tires = "Poppy Tires",
 		detach_doors = "Bobba Doors",
 		damage_vehicle = "Moo-La",
@@ -11660,6 +12200,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 
 		player = "Minion Options",
 		starve = "Hunga",
+		add_stress = "Add Stress",
 		feed = "Bapple",
 		relief_stress = "Minion Chill",
 		reset_health = "Resetty Health",
@@ -11745,7 +12286,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	},
 
 	trading_cards = {
-		access_store = "[${InteractionKey}] Bee-Do Bee-Do Bee-Do",
+		access_store = "Press ~INPUT_CONTEXT~ to access the Trading Card Store.",
 
 		buy_pack = "Bee-Do Bee-doo ${packName}",
 		store_title = "Card Bee-do Store",
@@ -11942,7 +12483,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	vape = {
 		press_to_use = "Press ~INPUT_CONTEXT~ to take a hit. Press ~INPUT_FRONTEND_CANCEL~ to put vape away.",
 
-		plain_vape = "Geek Carl-banana Bar (No Banana-flavor)",
+		plain_vape = "Geek Bar",
+		weed_vape = "Geek Bar (THC Oil)",
 		mango_vape = "Geek Carl-banana Bar (Mango)",
 		strawberry_vape = "Geek Carl-banana Bar (Strawberry)",
 		menthol_vape = "Geek Carl-banana Bar (Menthol)",
@@ -12056,6 +12598,20 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		refilling_bottle = "Poopaye Boopaye Bello"
 	},
 
+	weed = {
+		strain_default = "Wild Haze",
+		strain_lemon = "Lemon Haze",
+		strain_northern = "Northern Lights",
+		strain_kush = "OG Kush",
+
+		default_emoji = "🥦",
+		lemon_emoji = "🏃",
+		northern_emoji = "🛡️",
+		kush_emoji = "🦁",
+
+		strain_description = "<b>Lose:</b> <i>${strain}</i> ${emoji}"
+	},
+
 	weed_field = {
 		pick_weed = "Press ~INPUT_CONTEXT~ to pick some weed.",
 		picking_weed = "Bababa doh, pickin' some weed bee doh"
@@ -12092,8 +12648,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		explode_success = "Baboi! Successfully made ${consoleName} explode.",
 		explode_failed = "Bee-do bee-do bee-do. Failed to make player explode.",
 
-		ignite_success = "Bee-doo bee-doo! Successfully lit ${consoleName} on fire.",
-		ignite_failed = "Bananaaaa! Failed to light player on fire.",
+		taze_success = "Bello! Successfully tazed ${consoleName}.",
+		taze_failed = "Banana! Failed to taze player.",
 
 		flashbang_success = "Bee-Do Bee-Do! Successfully flashbanged ${consoleName}.",
 		flashbang_failed = "Aiya! Failed to flashbang player.",
@@ -12192,6 +12748,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		second = "tu",
 		seconds = "tus",
 		just_now = "pakapaka",
+		now = "bababa",
 
 		month_1 = "Dululu",
 		month_2 = "Chichichi",
@@ -12277,6 +12834,35 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		delivery_blip = "Burger Shot Delivery tulaloo!"
 	},
 
+	bus_driver = {
+		start_route = "Gelato ~INPUT_CONTEXT~ to start a route",
+		failed_start_job = "Me want banana... Failed to start a new job.",
+		next_stop = "Baboi Stop",
+		bus_hq = "Banana HQ",
+		job_cancelled = "Bananaaaa! The job has been cancelled.",
+		next_stop_help = "Baboi Stop: ${stop} of ${total}",
+		passenger_count = "Bananaaaa: ${passengers} of ${seats}",
+		shutdown_engine = "Banana Cold Engine and wait for passengers.",
+		return_to_hq = "Bello bottom HQ la.",
+		bus_stop = "Bus Stop",
+		pay_for_ticket = "Bee-do ~INPUT_CONTEXT~ to pay for a ticket ($18).",
+		not_enough_money_ticket = "Boboo! You no gots enough banana for a ticket ($18).",
+		ticket_paid = "${displayName} paid for a bus ticket.",
+		paid_for_ticket = "Bee-do! You successfully paid for a bus ticket.",
+
+		east_route = "Arcade",
+		pillbox_route = "Pillbox",
+		little_seoul_route = "Little Seoul",
+		sandy_route = "Sandy Desert Line",
+		paleto_route = "Great Ocean Express",
+		grapeseed_route = "Grapeseed Greenway",
+		route_68_route = "Route 68 Ba-Doo",
+		airport_route = "Airport La-La",
+
+		finished_job_logs_title = "Finished Bello Bello Route",
+		finished_job_logs_details = "${consoleName} finished driving the `${route}` bus route and got $${payout}."
+	},
+
 	doj = {
 		invalid_type = "Banana-da or da missing type-da.",
 		missing_search = "Da missing search parameter.",
@@ -12330,6 +12916,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		job_government = "Bee-do Waste Collector",
 		job_mechanic = "Bee-doh Tow Driver",
 		job_delivery = "Delivery Job",
+		job_bus_driver = "Bob Bus Driver",
 		changed_job_already_set_to_job = "Me minion already a ${jobName}.",
 		changed_job_success = "Me minion setted job to ${jobName} successfully.",
 		changed_job_success_go_to_coords = "Me minion setted job to ${jobName} successfully. Follow the waypoint on your map to get started.",
@@ -12432,6 +13019,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		license_fishing = "Fishing Bee-do License",
 		license_weapon = "Bellopi pidipi-bop Weapons License",
 		license_mining = "Mining License. Ba-ba-na-na!",
+		license_driver = "Driver's Bello",
 		gave_character_license = "Bapadoodoo ${characterName} license `${licenseLabel}`.",
 		character_already_has_license = "${characterName} bababa-bellopi has license `${licenseLabel}`",
 		removed_character_license = "Bababa-bellopi removed license `${licenseLabel}` from ${characterName}.",
@@ -12446,7 +13034,21 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		you_have_no_licenses = "Bee doo bee doo, you have no licenses.",
 		player_has_no_licenses = "Bee doo bee doo, ${characterName} has no licenses.",
 		failed_to_get_licenses = "Uh oh, failed to get licenses.",
-		license_list = "Available licenses: ${licenseList}."
+		license_list = "Available licenses: ${licenseList}.",
+		already_married = "Me or both minions are already married.",
+		either_not_married = "Me or both minions are not married.",
+		not_married = "Minions are not married to each other.",
+		failed_marriage = "Bee-Do Bee-Do! Couldn't make marriage banana happen.",
+		marriage_success = "${nameA} and ${nameB} are now banana beedo.",
+		divorce_success = "${nameA} and ${nameB} are no longer banana beedo.",
+		character_not_online = "Baboi yoy, one of the banana is not currently banana. Only banana banana can be banana while banana.",
+		you_are_now_married = "Bello! You are banana beedo to ${name}.",
+		you_are_no_longer_married = "Banana! You are no longer banana beedo to ${name}.",
+
+		divorced_logs_title = "Banana",
+		divorced_logs_details = "${consoleName} banana the banana state of ${nameA} #${cidA} and ${nameB} #${cidB} to `divorced`.",
+		married_logs_title = "Baboouu",
+		married_logs_details = "${consoleName} menoda iwaso ukiya ${nameA} #${cidA} iukato ${nameB} #${cidB} ti `baboouu`."
 	},
 
 	tow = {
@@ -12502,7 +13104,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		anchored_successfully = "Anchor is down banana!",
 		removing_anchor = "Removing anchor... banana.",
 		deploying_anchor = "Deploying anchor... banana.",
-		no_vehicle_nearby = "No boat here banana! Can't anchor anything!"
+		no_vehicle_nearby = "No boat here banana! Can't anchor anything!",
+		vehicle_not_anchorable = "Me wanto anchor me boat."
 	},
 
 	car_wash = {
@@ -12579,16 +13182,42 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		unknown = "Poopaye! Unknown!"
 	},
 
+	garage_access = {
+		menu_title = "Manager of Parking",
+		button_close = "Poof",
+		loading = "Bee-do Bee-do Bee-do...",
+		access = "Access to Parking",
+		access_description = "Banana! These Minions can take or give car from your parking.",
+		accessible = "Your Parking",
+		accessible_description = "Banana! These are the parkings you can use.",
+		no_access = "Bello meesa nobody can access your garage.",
+		no_accessible = "Bello meesa nobody has given you access to their garage.",
+
+		failed_allow_access = "Meesa failed to allow access to garage.",
+		failed_remove_access = "Meesa failed to remove access from garage.",
+		already_has_access = "Character already has access to your garage.",
+		invalid_character_id = "Invalid character id.",
+		does_not_access = "Character already does not have access to your garage.",
+
+		added_access_logs_title = "Added Garage Access",
+		added_access_logs_details = "${consoleName} (#${characterId}) gave #${targetCharacterId} access to their garage.",
+		removed_access_logs_title = "Bello Garage Access Removed",
+		removed_access_logs_details = "${consoleName} (#${characterId}) bananabot #${targetCharacterId}'s access to their garage."
+	},
+
 	garages = {
 		garage_empty = "Tulaliloo ti amo! Your garage is empty!",
 		impound_lot = "Bellovile",
 		police_impound = "Bellovile Police Skewl",
+		owner_self = "Banana",
+		owner_other = "Bee-Do",
 		engine = "Beep boop",
 		body = "Lu la",
 		vehicle_in = "Laa",
 		vehicle_out = "Poopaye",
 		vehicle_at_police_impound = "Me sorry, your vehicle is currently on police hold.",
 		vehicle_at_impound = "Me found your vehicle at Bellovile.",
+		impound_lot_short = "Bananaaaa",
 		waypoint_to_impound = "Me marked Bellovile on your GPS.",
 		unable_to_withdraw = "Bello! Unable to withdraw vehicle as it is currently out.",
 		vehicle_in_garage = "Bello! Your vehicle iz located in ${garageName}. A waypoint haz been marked on your mapo.",
@@ -12608,7 +13237,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		not_enough_balance_to_retrieve = "Whaaa? You don't have enough bananas in your accounts to retrieve this vehicle.",
 		press_to_access = "Bello! Press ~INPUT_CONTEXT~ to access the gare-bo.",
 		ui_return = "Poopaye",
-		ui_vehicle_list = "Vehicle List-ah",
+		ui_my_vehicle_list = "Minion's Vehicles",
+		ui_other_vehicle_list = "Banana's Vehicles",
 		ui_store_vehicle = "Store Vehicle-ah",
 		ui_vehicle_sell = "Sell Vehicles-ah",
 		ui_retrieve_vehicle = "Retrieve Vehicle-ah",
@@ -12631,8 +13261,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		state_loading = "Bee-Do Bee-Do! Loading...",
 
 		vehicle_weight = "BANANA! Weight: ${weight}",
-		last_garage_letter = "Banka-Banka - Garage ${letter}",
-		last_garage_impound = "Banka-Banka - Impound Lot",
 		no_last_garage_letter = "Belloo! Atepleh! Haha! No Last Garage",
 
 		purchase_vehicle = "Baboi! Press ~INPUT_CONTEXT~ to access the shop",
@@ -12641,7 +13269,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		purchase_success = "Mwak! The ${label} you just purchased has been added to your garage.",
 		purchase_failed = "Me want banana! Failed to purchase vehicle.",
 		already_owned = "Potato! You already own this vehicle model.",
-		maximum_owned = "Underwear! You cannot own more than 6 vehicles.",
+		maximum_owned = "Banana, banana! (Translation: You cannot own more than 8 vehicles.)",
 		not_enough_money = "Banana! You don't have enouch money to purchase this vehicle.",
 
 		sold_vehicle = "Tank yu! Sold ${label} for $${price}.",
@@ -12759,6 +13387,14 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		failed_generic = "Bananaaaa! Something went wrong."
 	},
 
+	trailers = {
+		cant_attach_trailer = "Bello! (Translation: This vehicle has no tow hitch.)",
+		no_trailer_nearby = "Banana, banana, ba-na-na! (Translation: No trailer nearby.)",
+		not_in_vehicle = "Gelato, gelato! (Translation: You are not driving a vehicle.)",
+		not_lined_up = "Bababa babananaaaa! (me needa line up with trailer)",
+		keybind_description = "Bop para papoy pajama (attach or detach trailer)"
+	},
+
 	vehicles = {
 		flip_flipping = "Flipping Vehicle",
 		flip_unable = "Bee-do Bee-do! You are unable to flip a vehicle while there are people inside.",
@@ -12777,6 +13413,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		gear_animation_disabled = "Gear animation (an' sounds) have now been disabled, meh.",
 		manual_gears_enabled = "Bello! Manual gearing has now been enabled. Hybrid-Mode is `${hybrid}`.",
 		manual_gears_disabled = "Manual gearing has now been disabled, meh.",
+		manual_gears_too_fast = "Me can only toggle manual below 30mph.",
 		hybrid_off = "ba-ba-na-na",
 		speed_limiter_set_to_metric = "Baboi baboi! Da speed limiter bala now limit da speed at ${speed} km/h.",
 		speed_limiter_set_to_imperial = "Baboi baboi! Da speed limiter bala now limit da speed at ${speed} mp/h.",
@@ -13024,13 +13661,15 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		bleeding_reduced = "Beebee tatata",
 		bleeding_self_stopped = "Tatata beebee tulaloo loo tulaloo loo",
 		thanks_for_loot = "Ba-Na-Na Ba-La-La. Ba-Na-Na Bu-Na-Na-Na-Na. Ba-Na-Na Ooh-Na-Na. Nancy Ba-La-La-La-La.",
+		guards_found_unconcious = "Bee-Do Bee-Do! (guards found you unconcious and took you to prison hospital)",
 		serial_number = "Banana: ${serialNumber}<br><i>Minionese: ${fullName} (#${characterId}).</i>",
 		serial_number_unknown = "Banana: ${serialNumber}<br><i>Minionese: Unregistered banana!</i>",
 		serial_number_removed = "Banana bananaaa! Banana bananaaa!",
 		badge_owner = "<i>Poofalize! Zees badge belong to <b>${fullName} (${positionName})</b>.</i>",
 		badge_owner_unknown = "Badge owner be unknown.",
 		citizen_card_owner = "<i>Poofalize! Zees citizen card belong to <b>${fullName} (#${characterId})</b>.</i>",
-		citizen_card_has_portrait = "<i>It has a picture.</i>",
+		driver_license_owner = "<i>Po ka lu <b>${fullName} (#${characterId})</b>.</i>",
+		has_portrait = "<i>Me-ehehe, me see picture!</i>",
 		picture_pending = "<i>Me needa wait a bit for zee picture...</i>",
 		picture_selfie_owner = "<i>Zee picture of <b>${fullName}</b>.</i>",
 		bought_by = "${buyerName} (${buyerCid}) buy dis item.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 25 (do not change)
+-- AUTO LOCALES: 27 (do not change)
 
 OP.Global.Locales.Languages["pt-BR"] = {
 	-- configuration settings for language
@@ -134,6 +134,9 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		added_vehicle_logs_title = "Veículo Adicionado",
 		added_vehicle_logs_details = "${consoleName} adicionou um veículo com nome de modelo `${modelName}` à sua garagem.",
 
+		vehicle_saved = "Veículo salvo com sucesso com o nome do modelo `${modelName}`.",
+		failed_to_save_vehicle = "Falha ao salvar o veículo.",
+
 		invalid_amount = "Quantia inválida.",
 
 		added_cash_title = "Dinheiro adicionado",
@@ -260,6 +263,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		you_have_been_kicked_no_reason = "Você foi expulso sem um motivo especificado por ${kicker}.",
 
 		logs_player_kicked_title = "Jogador Expulso",
+		logs_player_kicked_system_title = "Jogador Expulso pelo Sistema",
 		logs_player_kicked_details = "${consoleName} foi expulso do servidor por ${kicker} pelo motivo `${reason}`.",
 		logs_player_kicked_no_reason_details = "${consoleName} foi expulso do servidor por ${kicker} sem um motivo especificado.",
 
@@ -358,17 +362,6 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		already_sending_staff_message = "Você já está enviando uma mensagem para a equipe. Por favor, aguarde.",
 		unable_to_send_identical_staff_message = "Você não pode enviar duas mensagens idênticas para a equipe seguidas em um intervalo de 30 segundos.",
 
-		tp_coords_invalid_coordinates = "Coordenadas inválidas.",
-		tp_coords_teleported_to_coordinates = "Teleportado para as coordenadas X: ${x}, Y: ${y}, Z: ${z}.",
-
-		teleported_to_waypoint = "Teleportado para o ponto de referência em ${locationLabel}.",
-		no_waypoint_set = "Você precisa definir um ponto de referência.",
-
-		teleported_to_coordinates_logs_title = "Teleportado para coordenadas",
-		teleported_to_coordinates_logs_details = "${consoleName} foi teleportado para as coordenadas X: ${x}, Y: ${y}, Z: ${z}.",
-		teleported_to_waypoint_logs_title = "Teleportado para ponto de referência",
-		teleported_to_waypoint_logs_details = "${consoleName} foi teleportado para um ponto de referência em ${locationLabel}.",
-
 		population_density_set_to = "A sobrescrita de multiplicador de densidade populacional foi definida como ${multiplierLabel}%.",
 		population_density_set_off = "A substituição de densidade populacional foi desligada.",
 		population_density_is_not_on = "A substituição de densidade populacional não está ativa.",
@@ -403,6 +396,13 @@ OP.Global.Locales.Languages["pt-BR"] = {
 
 		you_are_not_in_a_vehicle = "Você não está em um veículo.",
 		repaired_vehicle = "Veículo reparado.",
+		player_not_in_vehicle = "Esse jogador não está em um veículo.",
+		no_character = "Jogador está offline ou não possui um personagem carregado.",
+		repaired_player_vehicle = "Reparado o veículo em que ${displayName} estava.",
+		failed_player_repair = "Falha ao reparar o veículo.",
+
+		repaired_player_vehicle_logs_title = "Veículo do Jogador Reparado",
+		repaired_player_vehicle_logs_details = "${consoleName} consertou o veículo em que ${targetConsoleName} estava.",
 
 		success_nos_refill = "Nitro refilado com sucesso.",
 		failed_nos_refill = "Falha ao refilar nitro.",
@@ -487,7 +487,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		attachment_off = "O anexo '${attachment}' foi desativado com sucesso.",
 
 		tint_invalid = "Tonalidade de arma inválida.",
-		tint_range_invalid = "Intervalo de tonalidade de arma inválido (tem que estar entre 0 e ${max}).",
+		tint_index_invalid = "Índice de tonalidade de arma inválido.",
 		tint_failed_set = "Falha ao definir a tonalidade da arma.",
 		tint_removed = "Tonalidade da arma removida com sucesso.",
 		tint_set = "Tonalidade da arma definida com sucesso para `${tint}` (${tintIndex}).",
@@ -517,9 +517,9 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		item_durability_set_no_permission = "Tentou definir a durabilidade de um item sem permissão adequada.",
 
 		item_metadata_set_no_permission = "Tentou definir os metadados de um item sem permissão adequada.",
-		item_metadata_invalid_metadata = "Metadados do item inválidos.",
 		item_metadata_set_success = "Metadados definidos com sucesso para o item no slot ${slotId}.",
 		item_metadata_set_failed = "A definição de metadados falhou.",
+		item_metadata_missing_key = "Chave de metadados ausente.",
 
 		advanced_metagame_on = "Ativou o metajogo avançado.",
 		advanced_metagame_off = "Desativou o metajogo avançado.",
@@ -696,6 +696,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		weapon_spawn_ban = "Desejando a `${weaponName}`, estava? Isto não é um arsenal, e aquela arma? Ainda no forjamento.",
 		advanced_noclip_ban = "Tentando passar secretamente por corredores invisíveis? Isto não é uma valsa fantasma, e esse movimento? Não está em nossos planos de dança.",
 		illegal_local_vehicle_ban = "Parece que você encontrou o corcel invisível do Senhor Mirage! Infelizmente, esse passeio místico é reservado para o desfile anual dos fantasmas.",
+		handling_field_ban = "Parece que você tentou turbinar as leis da física. Boa tentativa, mas neste mundo, mantemos nossas rodas firmemente plantadas na realidade.",
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Criação Errada",
@@ -711,6 +712,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		type_illegal_event = "Evento do Cliente Ilegal",
 		type_illegal_freeze = "Congelamento Ilegal",
 		type_illegal_global = "Uso Global Ilegal",
+		type_illegal_handling_field = "Campo de Manipulação Ilegal",
 		type_illegal_native = "Chamada de Função Proibida",
 		type_illegal_ped_spawn = "Spawn de Ped Ilegal",
 		type_illegal_server_event = "Evento do Servidor Ilegal",
@@ -768,6 +770,11 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		high_fov_debug = "Atual: ${fov}",
 
 		illegal_oxy_run = "O jogador completou uma corrida de oxigênio mais rápido do que humanamente possível.",
+
+		fov_warning = "Seu FOV está incomumente alto.",
+		fov_warning_details = "Isso provavelmente é causado por um Modificador de FOV. Atual: ${fov}",
+
+		stretched_res_warning = "Resolução Esticada (~r~${ratio}~w~)",
 
 		fast_movement_warning = "Você foi marcado por se mover muito rápido! Por favor, informe um desenvolvedor e diga o que você estava fazendo, pois não deveria estar recebendo esta mensagem de chat.",
 		invincibility_warning = "Você foi marcado como invencível! Por favor, informe um desenvolvedor e explique o que você estava fazendo para receber esta mensagem, já que você não deveria estar recebendo-a.",
@@ -1017,10 +1024,14 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		add_vehicle_command = "adicionar_veiculo",
 		add_vehicle_command_help = "Adiciona um veículo na garagem de alguém.",
 		add_vehicle_command_parameter_model = "modelo",
-		add_vehicle_command_parameter_model_help = "O nome do modelo ou o hash do veículo que você deseja adicionar. Se deixado em branco, o veículo em que você está atualmente será adicionado (incluindo suas modificações atuais).",
+		add_vehicle_command_parameter_model_help = "O nome do modelo ou hash do veículo que você deseja adicionar. Se deixado em branco, o modelo do veículo em que você está atualmente será adicionado.",
 		add_vehicle_command_parameter_server_id = "ID do servidor",
 		add_vehicle_command_parameter_server_id_help = "O ID do servidor do jogador que você deseja dar um veículo. Deixando em branco, você será selecionado automaticamente.",
 		add_vehicle_command_substitutes = "",
+
+		save_vehicle_command = "salvar_veículo",
+		save_vehicle_command_help = "Salva o veículo em que você está no momento (com suas modificações) na sua garagem.",
+		save_vehicle_command_substitutes = "",
 
 		aimbot_command = "aimbot",
 		aimbot_command_help = "Ative ou desative o 'aimbot'.",
@@ -1178,22 +1189,6 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		warning_message_command_parameter_message_help = "A mensagem que você gostaria de exibir aos jogadores. Você pode deixar este parâmetro em branco para remover a mensagem de alerta.",
 		warning_message_command_substitutes = "",
 
-		tp_coords_command = "tp_coordenadas",
-		tp_coords_command_help = "Teleportar para algumas coordenadas.",
-		tp_coords_command_parameter_x = "x",
-		tp_coords_command_parameter_x_help = "A coordenada X para onde você quer se teletransportar.",
-		tp_coords_command_parameter_y = "y",
-		tp_coords_command_parameter_y_help = "A coordenada Y para onde você quer se teletransportar.",
-		tp_coords_command_parameter_z = "z",
-		tp_coords_command_parameter_z_help = "A coordenada Z para onde você quer se teletransportar. Este parâmetro é opcional e, se deixado em branco, as coordenadas do solo serão buscadas automaticamente.",
-		tp_coords_command_parameter_w = "w",
-		tp_coords_command_parameter_w_help = "A coordenada W ou ângulo de rotação para onde deseja teleportar. Este parâmetro é opcional e, se deixado em branco, será usado o ângulo de rotação atual.",
-		tp_coords_command_substitutes = "tpc",
-
-		tp_waypoint_command = "tp_waypoint",
-		tp_waypoint_command_help = "Teleporta até o waypoint configurado.",
-		tp_waypoint_command_substitutes = "tp_marker, tp",
-
 		population_density_command = "densidade_populacional",
 		population_density_command_help = "Substitui o multiplicador global de densidade populacional.",
 		population_density_command_parameter_multiplier = "multiplicador",
@@ -1202,6 +1197,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 
 		repair_vehicle_command = "reparar_veículo",
 		repair_vehicle_command_help = "Repara o veículo em que você está.",
+		repair_vehicle_command_parameter_server_id = "id do servidor",
+		repair_vehicle_command_parameter_server_id_help = "O id do servidor do veículo que você deseja reparar. (opcional)",
 		repair_vehicle_command_substitutes = "consertar",
 
 		enter_vehicle_command = "entrar_veiculo",
@@ -1243,6 +1240,10 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		player_info_command_parameter_server_id = "id_do_servidor",
 		player_info_command_parameter_server_id_help = "O ID do servidor do jogador que você deseja obter informações. Se deixado em branco, você mesmo é selecionado.",
 		player_info_command_substitutes = "jogador, ip",
+
+		ender_chest_command = "ender_chest",
+		ender_chest_command_help = "Acesse seu baú do fim.",
+		ender_chest_command_substitutes = "be",
 
 		inventory_command = "inventario",
 		inventory_command_help = "Abre um inventário específico.",
@@ -1315,9 +1316,11 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		set_metadata_command = "definir_metadados",
 		set_metadata_command_help = "Define todos os metadados dos itens em um determinado slot.",
 		set_metadata_command_parameter_slot = "slot",
-		set_metadata_command_parameter_slot_help = "Em qual slot definir a durabilidade dos itens.",
-		set_metadata_command_parameter_metadata = "metadados",
-		set_metadata_command_parameter_metadata_help = "Os metadados em formato json a serem definidos.",
+		set_metadata_command_parameter_slot_help = "Em qual slot definir os metadados dos itens.",
+		set_metadata_command_parameter_key = "chave",
+		set_metadata_command_parameter_key_help = "A chave de metadados que você deseja definir.",
+		set_metadata_command_parameter_value = "valor",
+		set_metadata_command_parameter_value_help = "O valor de metadados que você deseja definir. (Vazio para excluir uma chave)",
 		set_metadata_command_substitutes = "metadados",
 
 		refill_nitro_command = "enchernitro",
@@ -1503,26 +1506,6 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		admin_command = "admin",
 		admin_command_help = "Abre o menu de administração.",
 		admin_command_substitutes = "",
-
-		tp_player_command = "tp_jogador",
-		tp_player_command_help = "Teletransporta você para um jogador.",
-		tp_player_command_parameter_server_id = "id do servidor",
-		tp_player_command_parameter_server_id_help = "O id do servidor do jogador para o qual você deseja se teletransportar.",
-		tp_player_command_substitutes = "",
-
-		tp_here_command = "tp_aqui",
-		tp_here_command_help = "Teleporta um jogador até você.",
-		tp_here_command_parameter_server_id = "id do servidor",
-		tp_here_command_parameter_server_id_help = "O id do jogador que você deseja teleportar.",
-		tp_here_command_substitutes = "",
-
-		tp_to_command = "tp_para",
-		tp_to_command_help = "Teleporta um jogador para outro jogador.",
-		tp_to_command_parameter_source_id = "id de origem",
-		tp_to_command_parameter_source_id_help = "O jogador que você deseja teleportar.",
-		tp_to_command_parameter_destination_id = "id de destino",
-		tp_to_command_parameter_destination_id_help = "O jogador que você deseja teleportar para.",
-		tp_to_command_substitutes = "",
 
 		-- game/airdrops
 		create_airdrop_command = "criar_avioes",
@@ -1936,6 +1919,10 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		vehicle_info_command_help = "Exibe informações sobre o veículo em que você está para ajudar a depurar problemas.",
 		vehicle_info_command_substitutes = "",
 
+		vehicle_doors_command = "vehicle_doors",
+		vehicle_doors_command_help = "Desenhe todas as portas existentes no veículo mais próximo.",
+		vehicle_doors_command_substitutes = "",
+
 		delete_entity_command = "deletar_entidade",
 		delete_entity_command_help = "Exclui uma entidade com um determinado ID de rede.",
 		delete_entity_command_parameter_network_id = "ID de rede",
@@ -2144,6 +2131,11 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		door_debug_command_help = "Depura informações sobre as portas próximas.",
 		door_debug_command_substitutes = "",
 
+		-- game/effect_zones
+		effect_zones_debug_command = "effect_zones_debug",
+		effect_zones_debug_command_help = "Depurar as zonas de efeito em que você está atualmente.",
+		effect_zones_debug_command_substitutes = "",
+
 		-- game/elevators
 		elevator_enable_command = "elevator_enable",
 		elevator_enable_command_help = "Ativa o elevador mais próximo.",
@@ -2158,6 +2150,10 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		elevator_enable_command_all_substitutes = "",
 
 		-- game/emotes
+		emote_menu_command = "emote_menu",
+		emote_menu_command_help = "Alternar o menu de emotes.",
+		emote_menu_command_substitutes = "",
+
 		emote_command = "emoção",
 		emote_command_help = "Executar uma emoção.",
 		emote_command_parameter_name = "nome",
@@ -2169,6 +2165,12 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		walk_command_parameter_name = "nome",
 		walk_command_parameter_name_help = "O nome do estilo de caminhada.",
 		walk_command_substitutes = "",
+
+		mood_command = "mood",
+		mood_command_help = "Definir sua expressão/emoção.",
+		mood_command_parameter_name = "nome",
+		mood_command_parameter_name_help = "O nome da expressão/emoção.",
+		mood_command_substitutes = "",
 
 		-- game/evidence
 		fingerprint_command = "impressão digital",
@@ -2204,6 +2206,13 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		flag_swap_leaderboard_command_help = "Ativa ou desativa o quadro de líderes do evento de bandeiras.",
 		flag_swap_leaderboard_command_substitutes = "",
 
+		-- game/flight_radar
+		callsign_command = "callsign",
+		callsign_command_help = "Define seu callsign para o radar de voo.",
+		callsign_command_parameter_callsign = "callsign",
+		callsign_command_parameter_callsign_help = "Seu callsign ou deixe em branco para redefinir.",
+		callsign_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "criar_campo_de_forca",
 		create_forcefield_command_help = "Cria um campo de força na sua posição atual.",
@@ -2233,6 +2242,13 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		fortnite_wipe_command_parameter_radius = "raio",
 		fortnite_wipe_command_parameter_radius_help = "O raio que você deseja limpar. Deixando em branco ou definindo como 0 irá limpar tudo.",
 		fortnite_wipe_command_substitutes = "",
+
+		-- game/fortune_cookies
+		fortune_cookie_command = "fortune_cookie",
+		fortune_cookie_command_help = "Spawn um biscoito da sorte com uma mensagem pré-definida.",
+		fortune_cookie_command_parameter_fortune = "fortune",
+		fortune_cookie_command_parameter_fortune_help = "A mensagem de boa sorte que você deseja.",
+		fortune_cookie_command_substitutes = "",
 
 		-- game/freecam
 		freecam_command = "câmera_livre",
@@ -2344,7 +2360,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		death_timer_command_substitutes = "",
 
 		cpr_command = "rcp",
-		cpr_command_help = "Realiza a RCP no ped ou jogador mais próximo.",
+		cpr_command_help = "Realize RCP no NPC ou jogador mais próximo.",
 		cpr_command_substitutes = "",
 
 		-- game/hitmarkers
@@ -2512,6 +2528,23 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		jackpot_take_fees_command_help = "Cobra uma taxa de todas as invetórios do jackpot.",
 		jackpot_take_fees_command_substitutes = "",
 
+		-- game/jail
+		check_jail_command = "verificar_prisao",
+		check_jail_command_help = "Verificar quanto tempo um jogador tem restante na prisão.",
+		check_jail_parameter_server_id = "id_do_servidor",
+		check_jail_parameter_server_id_help = "O id do servidor do jogador.",
+		check_jail_command_substitutes = "",
+
+		modify_jail_command = "modificar_prisao",
+		modify_jail_command_help = "Modificar o tempo de prisão de um jogador.",
+		modify_jail_parameter_server_id = "id_do_servidor",
+		modify_jail_parameter_server_id_help = "O id do servidor do jogador.",
+		modify_jail_parameter_operation = "operacao",
+		modify_jail_parameter_operation_help = "A operação que você deseja realizar. (adicionar ou subtrair)",
+		modify_jail_parameter_amount = "quantidade",
+		modify_jail_parameter_amount_help = "A quantidade de tempo que você deseja adicionar ou remover em minutos. Não pode ser mais que 5 minutos de uma vez.",
+		modify_jail_command_substitutes = "modificar_prisao",
+
 		-- game/lag
 		fake_lag_command = "fake_lag",
 		fake_lag_command_help = "Cria uma falsa lag.",
@@ -2588,7 +2621,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		mining_debug_command_substitutes = "",
 
 		-- game/miscellaneous
-		-- these two commands should remain the same on all languages in case someone joins in with a language they don't know.
+		-- these two commands (language & languages) should remain the same on all languages in case someone joins in with a language they don't know.
 		-- you can change the _help parts though if you'd like, not the "language code" though.
 		language_command = "idioma",
 		language_command_help = "Defina seu idioma preferido. Essa alteração será salva para sessões futuras e a mudança é imediata.",
@@ -2696,6 +2729,12 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		info_command_help = "Exibe algumas informações de debug, usadas em relatórios de bugs.",
 		info_command_substitutes = "",
 
+		whois_command = "quem",
+		whois_command_help = "Encontre um jogador pelo nome completo ou parte dele.",
+		whois_command_parameter_search = "busca",
+		whois_command_parameter_search_help = "O nome completo ou parte do nome do jogador.",
+		whois_command_substitutes = "",
+
 		-- game/money
 		cash_command = "dinheiro",
 		cash_command_help = "Mostra o seu saldo em dinheiro.",
@@ -2752,6 +2791,13 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		remove_notice_command_parameter_message_id = "id da mensagem",
 		remove_notice_command_parameter_message_id_help = "O id da mensagem que você deseja remover.",
 		remove_notice_command_substitutes = "",
+
+		-- game/npc_watch
+		npc_watch_command = "npc_observar",
+		npc_watch_command_help = "Observe um NPC aleatório em sua rotina diária.",
+		npc_watch_command_parameter_in_vehicle = "no veículo",
+		npc_watch_command_parameter_in_vehicle_help = "O NPC precisa estar em um veículo. (padrão não)",
+		npc_watch_command_substitutes = "",
 
 		-- game/objects
 		frozen_objects_scan_command = "scanear_objetos_congelados",
@@ -2903,6 +2949,11 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		phone_number_available_command_parameter_phone_number = "número de telefone",
 		phone_number_available_command_parameter_phone_number_help = "O número de telefone que você deseja verificar se está disponível. Certifique-se de que siga o formato XXX-XXXX.",
 		phone_number_available_command_substitutes = "numero_disponivel",
+
+		-- game/plants
+		plants_debug_command = "plants_debug",
+		plants_debug_command_help = "Depurar todas as plantas.",
+		plants_debug_command_substitutes = "",
 
 		-- game/player_control
 		drive_for_command = "dirigir_por",
@@ -3293,6 +3344,47 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		tablet_command_help = "Abre a interface do tablet (se você tiver um).",
 		tablet_command_substitutes = "",
 
+		-- game/teleporting
+		tp_back_command = "tp_back",
+		tp_back_command_help = "Teleportar de volta para onde você estava antes de se teletransportar pela última vez.",
+		tp_back_command_substitutes = "back",
+
+		tp_coords_command = "tp_coordenadas",
+		tp_coords_command_help = "Teleportar para algumas coordenadas.",
+		tp_coords_command_parameter_x = "x",
+		tp_coords_command_parameter_x_help = "A coordenada X para onde você quer se teletransportar.",
+		tp_coords_command_parameter_y = "y",
+		tp_coords_command_parameter_y_help = "A coordenada Y para onde você quer se teletransportar.",
+		tp_coords_command_parameter_z = "z",
+		tp_coords_command_parameter_z_help = "A coordenada Z para onde você quer se teletransportar. Este parâmetro é opcional e, se deixado em branco, as coordenadas do solo serão buscadas automaticamente.",
+		tp_coords_command_parameter_w = "w",
+		tp_coords_command_parameter_w_help = "A coordenada W ou ângulo de rotação para onde deseja teleportar. Este parâmetro é opcional e, se deixado em branco, será usado o ângulo de rotação atual.",
+		tp_coords_command_substitutes = "tpc",
+
+		tp_waypoint_command = "tp_waypoint",
+		tp_waypoint_command_help = "Teleporta até o waypoint configurado.",
+		tp_waypoint_command_substitutes = "tp_marker, tp",
+
+		tp_to_player_command = "tp_to_player",
+		tp_to_player_command_help = "Teleporta você para um jogador.",
+		tp_to_player_command_parameter_server_id = "ID do servidor",
+		tp_to_player_command_parameter_server_id_help = "O ID do servidor do jogador para o qual você deseja se teleportar.",
+		tp_to_player_command_substitutes = "",
+
+		tp_player_here_command = "tp_player_here",
+		tp_player_here_command_help = "Teleporta um jogador até você.",
+		tp_player_here_command_parameter_server_id = "ID do servidor",
+		tp_player_here_command_parameter_server_id_help = "O ID do servidor do jogador que você deseja teleportar.",
+		tp_player_here_command_substitutes = "",
+
+		tp_player_player_command = "tp_player_player",
+		tp_player_player_command_help = "Teleporta um jogador para outro jogador.",
+		tp_player_player_command_parameter_source_id = "ID de origem",
+		tp_player_player_command_parameter_source_id_help = "O jogador que você deseja teleportar.",
+		tp_player_player_command_parameter_destination_id = "id de destino",
+		tp_player_player_command_parameter_destination_id_help = "O jogador para o qual você deseja teleportar o jogador de origem.",
+		tp_player_player_command_substitutes = "",
+
 		-- game/test_server
 		test_menu_command = "menu_teste",
 		test_menu_command_help = "Ative ou desative o menu de teste do servidor.",
@@ -3452,11 +3544,11 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		explode_command_parameter_server_id_help = "ID do servidor do jogador alvo.",
 		explode_command_substitutes = "",
 
-		ignite_player_command = "queimar_jogador",
-		ignite_player_command_help = "Queima um jogador por um curto período de tempo.",
-		ignite_player_command_parameter_server_id = "id do servidor",
-		ignite_player_command_parameter_server_id_help = "ID do servidor do jogador alvo.",
-		ignite_player_command_substitutes = "queimar, fogo",
+		taze_player_command = "taze_player",
+		taze_player_command_help = "Aplica um taser em um jogador.",
+		taze_player_command_parameter_server_id = "id do servidor",
+		taze_player_command_parameter_server_id_help = "ID do servidor do jogador alvo.",
+		taze_player_command_substitutes = "stun, taze",
 
 		run_command_as_command = "executar_comando_como",
 		run_command_as_command_help = "Faz com que outro jogador execute um comando.",
@@ -3532,6 +3624,11 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		interface_focuses_command = "focos_interface",
 		interface_focuses_command_help = "Verifique quais interfaces estão definidas como focadas.",
 		interface_focuses_command_substitutes = "foco_interface, focos",
+
+		-- jobs/bus_driver
+		bus_debug_command = "onibus_debug",
+		bus_debug_command_help = "Desenhar todas as paradas de ônibus.",
+		bus_debug_command_substitutes = "",
 
 		--jobs/doj
 		lookup_character_command = "procurar_personagem",
@@ -3627,6 +3724,16 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		licenses_command_help = "Obtenha suas licenças.",
 		licenses_command_substitutes = "",
 
+		set_marriage_command = "set_casamento",
+		set_marriage_command_help = "Definir o estado de casamento entre dois personagens.",
+		set_marriage_command_parameter_partner_a_cid = "parceiro a",
+		set_marriage_command_parameter_partner_a_cid_help = "O ID do personagem do primeiro parceiro.",
+		set_marriage_command_parameter_partner_b_cid = "parceiro b",
+		set_marriage_command_parameter_partner_b_cid_help = "O ID do personagem do segundo parceiro.",
+		set_marriage_command_parameter_state = "estado",
+		set_marriage_command_parameter_state_help = "Pode ser `casado` ou `divorciado`.",
+		set_marriage_command_substitutes = "",
+
 		-- jobs/tow
 		toggle_mechanic_messages_command = "alternar_mensagens_mecanico",
 		toggle_mechanic_messages_command_help = "Alterna se você recebe ou não mensagens de mecânico.",
@@ -3648,6 +3755,11 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		set_fuel_command_parameter_fuel_level = "nível de combustível",
 		set_fuel_command_parameter_fuel_level_help = "O nível de combustível que você deseja definir. Deixar em branco selecionará automaticamente o nível `100`.",
 		set_fuel_command_substitutes = "combustível",
+
+		-- vehicles/garage_access
+		manage_garage_command = "gerenciar_garagem",
+		manage_garage_command_help = "Gerencie sua garagem e quem tem acesso a ela.",
+		manage_garage_command_substitutes = "gg",
 
 		-- vehicles/garages
 		toggle_garage_debug_command = "toggle_garage_debug",
@@ -3734,6 +3846,11 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		mute_sirens_command = "mutar_sirenes",
 		mute_sirens_command_help = "Silencia todas as sirenes e buzinas.",
 		mute_sirens_command_substitutes = "",
+
+		-- vehicles/trailers
+		toggle_trailer_command = "alternar_reboque",
+		toggle_trailer_command_help = "Desacopla ou acopla um reboque ao veículo em que você está.",
+		toggle_trailer_command_substitutes = "reboque",
 
 		-- vehicles/vehicles
 		flip_command = "capotar",
@@ -3889,7 +4006,11 @@ OP.Global.Locales.Languages["pt-BR"] = {
 	},
 
 	core = {
-		version = "Versão"
+		version = "Versão",
+
+		access_denied = "Acesso Negado",
+		file_not_found = "Arquivo não encontrado.",
+		only_lua_files_allowed = "Apenas arquivos Lua são permitidos."
 	},
 
 	couches = {
@@ -3915,7 +4036,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		api_reported_no_updates = "A API do Discord não relatou nenhuma atualização na lista de emojis.",
 		emojis_added = "Adicionado(s) ${added} emoji(s).",
 		emojis_removed = "Removido(s) ${removed} emoji(s).",
-		emojis_updated = "Adicionado(s) ${added} emoji(s) e removido(s) ${removed} emoji(s)."
+		emojis_updated = "Adicionado(s) ${added} emoji(s) e removido(s) ${removed} emoji(s).",
+		no_emojis = "Não há emojis disponíveis."
 	},
 
 	errors = {
@@ -4082,7 +4204,10 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		dropped_timed_out_player_logs_title = "Jogador Desconectado por Tempo Excedido",
 		dropped_timed_out_player_logs_details = "${consoleName} foi desconectado manualmente por não ter enviado ping para o framework por um longo tempo.",
 
-		critical_error_while_loading_data = "Ocorreu um erro crítico ao tentar carregar seus dados."
+		critical_error_while_loading_data = "Ocorreu um erro crítico ao tentar carregar seus dados.",
+
+		ping_unstable = "Seu ping está instável.",
+		ping_stable = "Seu ping está estável novamente."
 	},
 
 	whitelist = {
@@ -4092,25 +4217,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 	-- game/*
 	admin_menu = {
 		menu_title = "Menu de Administração",
-		spectate_player = "Observar Jogador",
-		teleport_player = "Teleportar Para Jogador",
-		teleport_player_here = "Teleportar Jogador Para Você",
-		failed_teleport_to_player = "Falha ao teleportar para o jogador.",
-		failed_teleport_player_here = "Falha ao teleportar o jogador para você.",
-		invalid_target_server_id = "ID do servidor de destino inválido.",
-		invalid_destination_server_id = "ID do servidor de destino inválido.",
-		invalid_source_server_id = "ID do servidor de origem inválido.",
-		failed_teleport_player_to_player = "Falha ao teleportar jogador para outro jogador.",
-		teleported_player_to_player = "Teleportou jogador para outro jogador.",
-
-		tp_player_logs_title = "kopiuj",
-		tp_player_logs_details = "wklej_dane_pojazdu",
-		tp_here_logs_title = "Wkleja wszystkie modyfikacje i uszkodzenia do pojazdu, w którym aktualnie się znajdujesz. (Nadpisze modyfikacje na posiadanych pojazdach)",
-		tp_here_logs_details = "wklej",
-		tp_everyone_logs_title = "Usunięto wyjątek z blokady Twitch dla ${consoleName}. Był pod nazwą `${removedException}`.",
-		tp_everyone_logs_details = "${consoleName} teleportou todos para si mesmo.",
-		tp_to_logs_title = "TP Para",
-		tp_to_logs_details = "${consoleName} teleportou ${sourceConsoleName} para ${targetConsoleName}."
+		spectate_player = "Observar Jogador"
 	},
 
 	afk = {
@@ -4278,7 +4385,10 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		net = "Internet",
 		net_ratio = "Taxa de Internet",
 		items_gambled = "Itens Apostados",
-		screenshots_taken = "Capturas de tela tiradas"
+		screenshots_taken = "Capturas de tela tiradas",
+
+		called_airdrop_logs_title = "Airdrop Chamado",
+		called_airdrop_logs_details = "${consoleName} chamou um airdrop."
 	},
 
 	atms = {
@@ -4818,7 +4928,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		medical_care_1 = "Se você se machucar, pode ir para o hospital fazer um check-in e ser tratado. Você pode encontrar o hospital no mapa. Você também pode usar bandagens ou kits de primeiros socorros para se curar.",
 		medical_care_2 = "Se você renascer sem passar pelo hospital ou sair do jogo ferido, poderá perder alguns de seus itens. Um reinício do servidor conta como saída do jogo.",
 
-		safety_hint = "Dica: Você pode tirar a segurança da arma pressionando ALT e o botão do meio do mouse. Fique seguro!",
+		safety_hint = "Dica: Você pode tirar a segurança da sua arma usando ${keybind}. Mantenha-se seguro!",
 
 		closing_sentence = "Há muito mais para fazer na cidade! Pergunte por aí e faça alguns amigos ;)"
 	},
@@ -4844,6 +4954,10 @@ OP.Global.Locales.Languages["pt-BR"] = {
 
 		buddy_pass_used_logs_title = "Passe do Amigo Utilizado",
 		buddy_pass_used_logs_details = "${consoleName} utilizou seu Passe do Amigo para empurrar ${targetConsoleName}."
+	},
+
+	bus_map = {
+		bus_tracker = "Ônibus"
 	},
 
 	cache = {
@@ -5093,6 +5207,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		replace_outfit = "Substituir esta roupa.",
 		new_outfit = "Salvar Roupa",
 		no_saved_outfits = "Nenhuma roupa salva.",
+		last_updated = "Última atualização ${ago}.",
 
 		save_outfit_title = "Salvar nova Roupa",
 		save_outfit_label = "Nome do Traje:",
@@ -5205,24 +5320,45 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		fried_item = "Batatas fritas belgas prontas.",
 		failed_fry_item = "Falha ao fritar as batatas.",
 
-		grill_item = "Grelhar hambúrgueres crus",
-		press_to_grill_item = "[${SeatEjectKey}] Grelhar hambúrgueres crus",
-		grilling_item = "Grelhando hambúrgueres",
-		grilled_item = "Hambúrgueres grelhados prontos.",
-		failed_grill_item = "Falha ao grelhar os hambúrgueres.",
+		grill_item = "Churrasqueira",
+		press_to_grill_item = "[${SeatEjectKey}] Churrasqueira",
+		grilling_patty = "Grelhando o Patty",
+		grilled_patty = "Patty Grelhado",
+		failed_grill_patty = "Falha ao grelhar o patty.",
+		grilling_bacon = "Grelhando Bacon",
+		grilled_bacon = "Bacon Grelhado",
+		failed_grill_bacon = "Falha ao grelhar o bacon.",
+		frying_egg = "Fritando Ovo",
+		fried_egg = "Ovo Frito",
+		failed_fry_egg = "Falha ao fritar o ovo.",
+
+		patty_recipe = "Grelhar Patty",
+		bacon_recipe = "Bacon",
+		egg_recipe = "Fritar Ovo",
 
 		hamburger_recipe = "Hambúrguer",
 		cheeseburger_recipe = "Cheeseburger",
+		bacon_burger_recipe = "Hambúrguer de Bacon com Queijo",
+		bne_burger_recipe = "Hambúrguer Bacon com Ovo",
+		veggie_burger_recipe = "Hambúrguer Vegetariano",
 
 		assemble_burger = "Montar Hambúrguer",
 		press_to_assemble_burger = "[${SeatEjectKey}] Montar Hambúrguer",
 		assembling_burger = "Montando Hambúrguer",
-		assembled_burger = "Hambúrguer Montado",
-		failed_assemble_burger = "Falha ao montar o hambúrguer.",
-
+		assembled_burger = "Hambúrguer feito",
+		failed_assemble_burger = "Falha ao fazer hambúrguer.",
 		assembling_cheeseburger = "Montando Cheeseburger",
-		assembled_cheeseburger = "Cheeseburger Montado",
-		failed_assemble_cheeseburger = "Falha ao montar o cheeseburger.",
+		assembled_cheeseburger = "Cheeseburger feito",
+		failed_assemble_cheeseburger = "Falha ao fazer cheeseburger.",
+		assembling_bacon_burger = "Montando Bacon Cheeseburger",
+		assembled_bacon_burger = "Bacon Cheeseburger feito",
+		failed_assemble_bacon_burger = "Falha ao fazer bacon cheeseburger.",
+		assembling_bne_burger = "Montando Bacon-Egg Burger",
+		assembled_bne_burger = "Feito um Hambúrguer de Bacon e Ovo",
+		failed_assemble_bne_burger = "Falha ao fazer um hambúrguer de bacon e ovo.",
+		assembling_veggie_burger = "Fazendo Hambúrguer Vegetariano",
+		assembled_veggie_burger = "Hambúrguer Vegetariano Feito",
+		failed_assemble_veggie_burger = "Falha ao fazer um hambúrguer vegetariano.",
 
 		mix_avocado_smoothie = "Misturar Smoothie de Abacate",
 		press_to_mix_avocado_smoothie = "[${SeatEjectKey}] Misturar Smoothie de Abacate",
@@ -5273,6 +5409,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		failed_refill_vape = "Falha ao recarregar vape.",
 
 		plain_vape = "Sem Sabor",
+		weed_vape = "Óleo de THC",
 		mango_vape = "Sabor Manga",
 		strawberry_vape = "Sabor Morango",
 		menthol_vape = "Sabor Menta",
@@ -5314,6 +5451,12 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		process_rubber = "Processamento de Borracha",
 		press_process_rubber = "[${SeatEjectKey}] Processar Borracha",
 		failed_process_rubber = "Falha ao processar borracha.",
+
+		craft_pvc_pipe = "Fabricar Tubo de PVC",
+		press_craft_pvc_pipe = "[${SeatEjectKey}] Fabricar Tubo de PVC",
+		crafting_pvc_pipe = "Fabricando Tubo de PVC",
+		crafted_pvc_pipe = "Tubo de PVC fabricado.",
+		failed_craft_pvc_pipe = "Falha ao fabricar tubo de PVC.",
 
 		process_aluminium = "Processamento de Alumínio",
 		press_process_aluminium = "[${SeatEjectKey}] Processar Alumínio",
@@ -5501,11 +5644,18 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		sawed_shotgun = "Espingarda serrada.",
 		failed_saw_shotgun = "Falha ao serraro espingarda.",
 
-		bake_brownies = "Assar Brownies",
-		press_bake_brownies = "[${SeatEjectKey}] Assar Brownies",
+		use_microwave = "Usar Micro-ondas",
+		press_to_use_microwave = "[${SeatEjectKey}] Usar Micro-ondas",
+
+		brownies_recipe = "Brownies",
 		baking_brownies = "Assando Brownies",
 		baked_brownies = "Brownies assados.",
 		failed_bake_brownies = "Falha ao assar brownies.",
+
+		weed_gummies_recipe = "Gomas de Maconha",
+		making_weed_gummies = "Fabricando Gomas de Maconha",
+		made_weed_gummies = "Gomas de maconha feitas.",
+		failed_make_weed_gummies = "Falha ao fazer gomas de maconha.",
 
 		mix_brushstroke_paint = "Misturar Tinta de Pincelada",
 		press_mix_brushstroke_paint = "[${SeatEjectKey}] Misturar Tinta de Pincelada",
@@ -5597,6 +5747,12 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		mixed_grimace_shake = "Tremor de Grimace misturado.",
 		failed_mix_grimace_shake = "Não foi possível misturar o shake de careta.",
 
+		assemble_snowlauncher = "Montar Lançador de Bolas de Neve",
+		press_to_assemble_snowlauncher = "[${SeatEjectKey}] Montar Lançador de Bolas de Neve",
+		assembling_snowlauncher = "Montando Lançador de Bolas de Neve",
+		assembled_snowlauncher = "Lançador de bolas de neve montado.",
+		failed_assemble_snowlauncher = "Falha ao montar lançador de bolas de neve.",
+
 		deconstruct_ammo = "Desconstruir Munição",
 		press_to_deconstruct_ammo = "[${SeatEjectKey}] Desconstruir Munição",
 
@@ -5620,6 +5776,32 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		crafting_ammo = "Fabricando Munição",
 		crafted_ammo = "Munição fabricada.",
 		failed_craft_ammo = "Falha ao fabricar munição.",
+
+		process_weed = "Processar Erva",
+		press_to_process_weed = "[${SeatEjectKey}] Processar Erva",
+
+		package_1q_recipe = "Empacotar 4x 1q de Erva",
+		packaging_1q = "Empacotando 4x 1q de Erva",
+		packaged_1q = "Erva empacotada em 4x 1q.",
+		failed_package_1q = "Falha ao empacotar 4x 1q de Erva.",
+
+		process_bud_recipe = "Processar Bud de Erva",
+		processing_bud = "Processando Bud de Erva",
+		processed_bud = "Bud de Erva processado.",
+		failed_process_bud = "Falha ao processar Bud de Erva.",
+
+		process_meat = "Processar Carne",
+		press_to_process_meat = "[${SeatEjectKey}] Processar Carne",
+
+		beef_sausages_recipe = "Salsichas de Carne Bovina",
+		crafting_beef_sausages = "Fabricando Salsichas de Carne Bovina",
+		crafted_beef_sausages = "Salsichas de carne bovina fabricadas.",
+		failed_craft_beef_sausages = "Falha ao fabricar salsichas de carne bovina.",
+
+		bacon_recipe = "Bacon",
+		crafting_bacon = "Fabricando Bacon",
+		crafted_bacon = "Bacon fabricado.",
+		failed_craft_bacon = "Falha ao fabricar bacon.",
 
 		no_required_items = "Você não possui todos os itens necessários.",
 
@@ -5664,10 +5846,10 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		divorced = "Divorciados",
 		divorced_description = "Selecione se seus pais são divorciados.",
 
-		["in"] = "in",
-		out = "sair",
-		up = "para cima",
-		down = "para baixo",
+		["in"] = "In",
+		out = "Sair",
+		up = "Subir",
+		down = "Descer",
 		brow = "sobrancelha",
 		brow_description = "Faça mudanças em suas características físicas.",
 
@@ -6035,6 +6217,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		player_speed = "Velocidade do jogador: ${playerSpeed}",
 		player_ped = "Ped do jogador: ${playerPedId}",
 		heading = "Cabeçalho: ${heading}",
+		bearing = "Orientação: ${bearing}°",
 		coords = "Coordenadas: ${coords}",
 		rotation = "Rotação: ${rotation}",
 		normal = "Superfície: ${normal}",
@@ -6047,6 +6230,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		not_networked_vehicles = "Wytworzono pilnik do stali.",
 		invisible_vehicles = "Veículos Invisíveis: ${count}",
 		parked_vehicles = "Nie udało się wytworzyć pilnika do stali.",
+		available_doors = "IDs das Portas Disponíveis: ${doors}",
 
 		distance = "Distância: ${distance}m",
 		distance_first = "Armazenando a primeira posição.",
@@ -6062,6 +6246,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		vehicle_acceleration = "0 a 60: ${time}",
 		vehicle_acceleration_120 = "0 a 120: ${time}",
 		vehicle_acceleration_150 = "0 a 150: ${time}",
+		vehicle_brake_distance = "Distância de Freio: ${distance}m",
 		vehicle_acceleration_force = "Força de lançamento: ${force}",
 
 		invalid_network_id = "Menu Przesuwania",
@@ -6072,6 +6257,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		failed_entity_info = "Falha ao obter informações da entidade.",
 		printed_entity_info = "Informações da entidade impressas no servidor (tecla F8).",
 
+		no_entity_network = "Nenhuma entidade com id de rede ${networkId}.",
 		move_entity_success = "Entidade com ID de rede ${networkId} movida com sucesso.",
 		move_entity_failed = "Falha ao mover a entidade.",
 		move_entity_no_permissions = "Tentativa de mover uma entidade sem permissões adequadas.",
@@ -6208,6 +6394,12 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		unlocks = "Desbloqueios: <i>${cluster}</i>."
 	},
 
+	effect_zones = {
+		in_zones = "Zonas de Efeito: ~g~${zones}",
+		not_in_zones = "Não está em nenhuma zona de efeito.",
+		effects = "Efeitos: ${effects}"
+	},
+
 	elevators = {
 		use_elevator = "[${InteractionKey}] Usar Elevador",
 		elevator_title = "Elevador",
@@ -6333,6 +6525,32 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		give_item_failed = "Falha ao entregar o item ${itemName} para o jogador."
 	},
 
+	emote_menu = {
+		menu_title = "Emotes OP-FW",
+
+		dance_emotes = "🕺 Emotes de Dança",
+		dance_emotes_description = "Lista de todos os emotes de dança.",
+		shared_emotes = "👫 Emotes Compartilhados",
+		shared_emotes_description = "Lista de todos os emotes compartilhados.",
+		prop_emotes = "📦 Emotes de Prop",
+		prop_emotes_description = "Lista de todos os emotes de objetos.",
+		animal_emotes = "🐻 Emotes de Animais",
+		animal_emotes_description = "Lista de todos os emotes de animais.",
+		pegi_emotes = "🔞 Emotes PEGI",
+		pegi_emotes_description = "Lista de todos os emotes PEGI.",
+		racing_emotes = "🏁 Emotes de Corrida",
+		racing_emotes_description = "Lista de todos os emotes de corrida.",
+
+		emotes = "Emotes",
+		emotes_description = "Lista de todos os emotes.",
+		moods = "Expressões / Humores",
+		moods_description = "Mude sua expressão / humor.",
+		walkstyles = "Estilos de Andar",
+		walkstyles_description = "Mude seu estilo de andar.",
+		cancel_emote = "Cancelar Emote",
+		cancel_emote_description = "Cancelar o emote atualmente em execução."
+	},
+
 	exclusive_dealership = {
 		cost_money = "R$ ${price}",
 		cost_points = "${points} Pontos OP",
@@ -6424,6 +6642,16 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		flags_on_ground = "Bandeiras no chão: ${flagsOnGround}"
 	},
 
+	flight_radar = {
+		callsign_invalid = "Seu callsign precisa ter entre 3 e 10 caracteres.",
+		callsign_set = "Callsign atualizado com sucesso para `${callsign}`.",
+		callsign_reset = "Callsign redefinido com sucesso.",
+		callsign_set_failed = "Falha ao atualizar o callsign.",
+
+		emergency_type_1 = "PD",
+		emergency_type_2 = "EMS"
+	},
+
 	forcefields = {
 		invalid_radius = "Raio inválido (deve estar entre 1 e 200).",
 		failed_create = "Falha ao criar escudo de força.",
@@ -6442,7 +6670,11 @@ OP.Global.Locales.Languages["pt-BR"] = {
 	fortune_cookies = {
 		opened_cookie_logs_title = "Biscoito da Sorte Aberto",
 		opened_cookie_logs_details = "${consoleName} abriu um biscoito da sorte e obteve `${fortune}`.",
+		created_cookie_logs_title = "Criado Cookie da Sorte",
+		created_cookie_logs_details = "${consoleName} criou um cookie da sorte com a mensagem `${fortune}`.",
 
+		missing_fortune = "Fortuna ausente.",
+		failed_create_cookie = "Falha ao criar biscoito da fortuna.",
 		failed_open = "Falha ao abrir o biscoito da sorte."
 	},
 
@@ -6573,6 +6805,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		decrypting = "Decifrando",
 		guns_disabled = "O transporte de armas está atualmente desativado.",
 		high_level_cooldown = "Não foi possível estabelecer conexão com o servidor da FIB, tente novamente mais tarde.",
+		timeout_cooldown = "Firewall da FIB bloqueou a conexão, tente novamente mais tarde.",
 		failed_start_run = "Não foi possível iniciar o transporte de armas.",
 		hack_timeout = "Conexão com o servidor perdida, tente novamente.",
 
@@ -6682,6 +6915,10 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		revived_player_removed_injuries_details = "${consoleName} reviveu ${targetConsoleName} e removeu suas lesões.",
 		revived_player_title = "Jogador Revivido",
 		revived_player_details = "${consoleName} reviveu ${targetConsoleName}.",
+		revived_range_self_title = "Revivido Intervalo e Eu Mesmo",
+		revived_range_self_details = "${consoleName} reviveu todos em um alcance de ${radius}m, incluindo a si mesmos.",
+		revived_range_title = "Revivido Intervalo",
+		revived_range_details = "${consoleName} reviveu todos em um alcance de ${radius}m.",
 		death_alcohol_poisoning = "Você desmaiou devido a intoxicação alcoólica.",
 		character_has_hardcore_died = "${fullName} morreu. Você pode selecionar outro personagem.",
 
@@ -6725,6 +6962,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		battery = "bateria",
 		fps = "FPS",
 		ping = "PING",
+		tps = "TPS",
 		autopilot = "piloto automático",
 		ground_asl = "Terra nível do mar/altitude (${unit})",
 		heading = "CABEÇALHO",
@@ -6746,6 +6984,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 
 		fps_unit = "fps",
 		ping_unit = "ms",
+		tps_unit = "tps",
 
 		smart_warnings = "Aviso: ${warnings}!",
 		dehydrated = "desidratado",
@@ -6787,6 +7026,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 	identification = {
 		los_santos = "Los Santos",
 		citizen_card = "Cartão de Cidadão",
+		driver_license = "Carteira de Motorista",
 		first_name = "Nome",
 		last_name = "Sobrenome",
 		gender = "Gênero",
@@ -6794,6 +7034,17 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		gender_female = "Feminino",
 		date_of_birth = "Data de Nascimento",
 		citizen_id = "ID do Cidadão",
+
+		dl_no = "Nº da CNH",
+		class = "CLASSE",
+
+		fn = "NOME",
+		cid = "ID do Cidadão",
+		dob = "DT DE NASC",
+		sex = "SEXO",
+		iss = "EMI",
+		cls = "CLASSE",
+		["end"] = "END",
 
 		citizenship = "Cidadania",
 		citizenship_value = "EUA",
@@ -6816,6 +7067,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 
 		citizen_card_details = "${firstName} ${lastName} | Data de Nascimento: ${dateOfBirth} | Gênero: ${gender} | ID do Cidadão: ${characterId}",
 		just_showed_citizen_card = "Você acabou de mostrar um Cartão de Cidadão. Por favor, aguarde um pouco.",
+		driver_license_details = "${firstName} ${lastName} | Data de Nascimento: ${dateOfBirth} | Gênero: ${gender} | ID do Cidadão: ${characterId}",
+		just_showed_driver_license = "Você acabou de mostrar a Carteira de Motorista. Por favor, aguarde um pouco.",
 
 		boat_license = "Licença de Navegação",
 		boat_license_details = "Licença de Navegação | ${firstName} ${lastName} | ID do Cidadão: ${characterId}",
@@ -6846,6 +7099,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		swat_badge_details = "SWAT | ${firstName} ${lastName} | Cargo: ${positionName}",
 		management_badge = "Identificação da Administração",
 		management_badge_details = "Administração | ${firstName} ${lastName} | Cargo: ${positionName}",
+		ftp_badge = "Distintivo FTP",
+		ftp_badge_details = "FTP | ${firstName} ${lastName} | Cargo: ${positionName}",
 		ems_badge = "Identificação do EMS",
 		ems_badge_details = "EMS | ${firstName} ${lastName} | Cargo: ${positionName}",
 		doctor_badge = "Identificação do Médico",
@@ -6868,6 +7123,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		badge_type_fib = "Bureau de Investigações Federais",
 		badge_type_swat = "Táticas e Armas Especiais",
 		badge_type_management = "Administração do SASP",
+		badge_type_ftp = "Programa de Treinamento de Campo",
 		badge_type_ems = "Serviço de Emergência Médica",
 		badge_type_doctor = "Residência Médica",
 		badge_type_bcfd = "Departamento de Bombeiros do Condado de Blaine",
@@ -6883,6 +7139,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		badge_type_short_fib = "FIB",
 		badge_type_short_swat = "SWAT",
 		badge_type_short_management = "Gerenciamento",
+		badge_type_short_ftp = "FTP",
 		badge_type_short_ems = "EMS",
 		badge_type_short_doctor = "Médico",
 		badge_type_short_bcfd = "BCFD",
@@ -6996,7 +7253,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		mug_shots = "Fotos de criminosos",
 		prison_store = "Loja da prisão",
 		fruit_vendor = "Vendedor de frutas",
-		supermarket = "Supermercado",
+		food_market = "Mercado de Alimentos",
 		island_store = "Loja na ilha",
 		travel_agency = "Agência de viagens",
 		island_bar = "Bar na ilha",
@@ -7070,7 +7327,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 
 		nameable_title = "Nome do item personalizado:",
 
-		locker_restricted = "Você não pode mover este item para esse inventário.",
+		inventory_restricted = "Você não pode mover este item para esse inventário.",
 
 		press_to_access_shredder = "[${InteractionKey}] Acessar a fragmentadora.",
 
@@ -7092,6 +7349,9 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		press_to_open_public_inventory = "~INPUT_REPLAY_SHOWHOTKEY~ Acessar ${label}",
 
 		burgershot_counter = "Balcão do Burgershot",
+		arcade_counter = "Balcão de Arcade",
+		tequilala_counter = "Balcão Tequi-la-la",
+		prison_counter = "Balcão da Prisão",
 
 		inventory_name_missing = "Parâmetro de nome do inventário faltando.",
 
@@ -7128,6 +7388,13 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		crush_raw_ruby = "Moer <i>Rubi bruto</i>",
 		crush_raw_sapphire = "Moer <i>Safira bruta</i>",
 		break_apart_weed = "Quebrar <i>1oz de Maconha</i>",
+		brine_meat = "Salgar <i>Carne Crua</i>",
+		prepare_sandwich = "Preparar <i>Sanduíche de Churrasco</i>",
+		pickle_cucumbers = "Em Conserva <i>Pepinos</i>",
+		melt_chocolate = "Derreter <i>Chocolate Amargo</i>",
+		craft_torch = "Criar <i>Tocha</i>",
+		prepare_beans_toast = "Preparar <i>Feijão com Torrada</i>",
+		mix_pancake_batter = "Misturar <i>Massa de Panqueca</i>",
 
 		search = "Buscar",
 		amount = "Quantidade",
@@ -7151,6 +7418,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 
 		logs_item_moved_title = "Item Movido",
 		logs_item_moved_details = "${consoleName} moveu ${moveAmount}x ${itemLabel} para ${endInventory}:${endSlot} do inventário ${startInventory}:${startSlot}.",
+		logs_item_given_title = "Item Entregue",
+		logs_item_given_details = "${consoleName} deu ${amount}x ${label} para ${targetConsoleName}.",
 
 		logs_item_purchased_title = "Item(s) Comprado(s)",
 		logs_item_purchased_no_tax_details = "${consoleName} comprou ${purchaseAmount}x `${itemLabel}` por $${purchaseCost}.",
@@ -7202,6 +7471,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 
 		citizen_card = "Cartão de Cidadão",
 		citizen_card_description = "Age como identificação, licença para porte de armas e de condução.",
+		driver_license = "Carteira de Motorista",
+		driver_license_description = "Uma carteira de motorista oficial. Com certeza não veio de uma caixa de cereal.",
 		phone = "Telefone",
 		phone_description = "never:tm:",
 		radio = "Rádio",
@@ -7249,6 +7520,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		swat_badge_description = "Um crachá para oficiais do departamento de Armas e Táticas Especiais.",
 		management_badge = "Crachá de Gerenciamento",
 		management_badge_description = "Um crachá para Agentes da divisão de Gerenciamento do SASP.",
+		ftp_badge = "Distintivo FTP",
+		ftp_badge_description = "Um distintivo para instrutores do Programa de Treinamento de Campo.",
 		ems_badge = "ID do EMS",
 		ems_badge_description = "Um ID para Paramédicos do Serviço de Emergência Médica.",
 		doctor_badge = "ID de Médico",
@@ -7291,20 +7564,28 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		compass_description = "43.3068 N 0.7668 W",
 		map = "Mapa",
 		map_description = "Mostra onde você está e onde esteve. Ou talvez você estivesse lá?",
+		bus_map = "Mapa de Ônibus",
+		bus_map_description = "Um mapa das rotas de ônibus em Los Santos. Mostra todos os pontos onde você pode pegar um ônibus.",
+		flight_radar = "Radar de Voo",
+		flight_radar_description = "Este receptor avançado de Radar de Voo é sua janela para os céus, oferecendo insights em tempo real sobre movimentos de aeronaves, desde que estejam dentro do alcance de uma estação de radar. Perfeito para entusiastas da aviação e profissionais, ele fornece uma visão abrangente da paisagem aérea, garantindo que você esteja sempre conectado ao mundo acima.",
 		glass_breaker = "Quebrador de Emergência de Vidro",
 		glass_breaker_description = "Usado para quebrar janelas de carros em casos de emergência.",
 
 		picture = "Foto",
 		picture_description = "Colete todas as memórias de você e seus amigos. (Tamanho: 1x1)",
+		picture_wide = "Foto Ampliada",
+		picture_wide_description = "Colete todas as lembranças suas e de seus amigos. (Tamanho: 14x8.5)",
 		printed_card = "Cartão Impresso",
 		printed_card_description = "Um pequeno cartão impresso, talvez um cartão de visita? (Tamanho: 9x5)",
 		printed_document = "Documento Impresso",
 		printed_document_description = "Um documento impresso, talvez uma carta? (Tamanho: 21x28)",
-		paper = "Papel Fotográfico",
-		paper_description = "Uma folha em branco para imprimir imagens. (Tamanho: 1x1)",
-		card_paper = "Papel para Cartão",
+		paper = "Papel Fotográfico (1x1)",
+		paper_description = "Um pedaço de papel em branco para imprimir fotos quadradas. (Tamanho: 1x1)",
+		paper_wide = "Papel Fotográfico (14x8.5)",
+		paper_wide_description = "Um pedaço de papel em branco para imprimir fotos amplas. (Tamanho: 14x8.5)",
+		card_paper = "Papel de Cartão (9x5)",
 		card_paper_description = "Uma folha em branco para imprimir cartões de visita. (Tamanho: 9x5)",
-		document_paper = "Papel de Documento",
+		document_paper = "Papel de Documento (21x28)",
 		document_paper_description = "Odrodzenie nowego gracza",
 		printer = "Impressora",
 		printer_description = "Sem fax, apenas impressora.",
@@ -7351,6 +7632,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		bean_machine_delivery_description = "Um saco cheio de delícias vindas de uma pequena cafeteria no centro.",
 		kissaki_delivery = "Refeição Kissaki",
 		kissaki_delivery_description = "Uma deliciosa coleção de sushi e outras iguarias japonesas.",
+		green_wonderland_delivery = "Saco de Maravilhas Verdes",
+		green_wonderland_delivery_description = "Um saco cheio de suas guloseimas preferidas verdes. #420blazeit",
 
 		ear_defenders = "Protetor Auricular",
 		ear_defenders_description = "Usado para proteger seus ouvidos de barulhos fortes.",
@@ -7367,6 +7650,12 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		small_frog_description = "Apenas um sapo pequeno. Olhe para esse pequeno cara, ele é tão fofo!",
 		seashell = "Concha",
 		seashell_description = "Uma concha da praia. Você pode ouvir o oceano se colocá-la perto do ouvido.",
+		lucky_penny = "Moeda da Sorte",
+		lucky_penny_description = "Encontre um brilho de fortuna com esta Moeda da Sorte, uma descoberta rara na estrada que promete um toque de serendipidade. Mantenha-a por perto e deixe a sorte guiar seu caminho.",
+		small_frog_mk2 = "Sapo Pequeno MK2",
+		small_frog_mk2_description = "Na lama, há um elusivo anfíbio combatente: o Sapo Pequeno MK2, distinguível pelo seu capacete militar em miniatura e pela pequena AK que parece empunhar. Avistar um com sua lupa no meio da lama é uma honra rara e divertida, um testemunho das curiosas maravilhas da natureza.",
+		caterpillar = "Lagarta",
+		caterpillar_description = "Uma joia do jardim, esta marcante lagarta pode ser uma descoberta rara na grama, apenas avistada por aqueles com uma lupa e um aguçado senso de curiosidade. Suas listras vibrantes e movimentos delicados são um deleite para os entusiastas da natureza.",
 
 		keys = "Chaves",
 		keys_description = "Um par de chaves para algumas portas em algum lugar.",
@@ -7492,6 +7781,12 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		water_description = "Perigo! O dióxido de hidrogênio é incolor e sem odor. A inalação acidental de DHMO pode ser fatal. A exposição prolongada à sua forma sólida causa danos graves nos tecidos. Os sintomas da ingestão de DHMO podem incluir suor excessivo e micção, e possivelmente uma sensação de inchaço, náusea, vômito e desequilíbrio eletrolítico do corpo.",
 		hamburger = "Hambúrguer",
 		hamburger_description = "O sabor da América!",
+		bacon_burger = "Hambúrguer de Bacon com Queijo",
+		bacon_burger_description = "Um favorito clássico, este hambúrguer de bacon com queijo combina carne suculenta e grelhada com bacon crocante e queijo derretido. Cada mordida proporciona uma mistura perfeita de sabores salgados, tornando-o uma escolha atemporal para os entusiastas de hambúrgueres.",
+		bne_burger = "Hambúrguer de Bacon com Ovo",
+		bne_burger_description = "Eleve sua experiência de hambúrguer com esta combinação de bacon crocante, um ovo perfeitamente grelhado e queijo derretido sobre um suculento hambúrguer de carne. É uma refeição robusta e satisfatória que faz uma ponte brilhante entre o café da manhã e o almoço.",
+		veggie_burger = "Hambúrguer Vegano",
+		veggie_burger_description = "Este hambúrguer vegano leve e refrescante apresenta quatro folhas de alface crocante entre pães macios, com um toque de ketchup para um leve toque azedo. Uma simples e verde variação do clássico hambúrguer, perfeito para aqueles que buscam uma opção de refeição mais leve.",
 		belgian_fries = "Batata Frita Belga",
 		belgian_fries_description = "Para um sabor melhorado, contate @Giv3n#0753 e envie a mensagem \"fritas\".",
 		coke = "Coca-Cola",
@@ -7660,6 +7955,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		weed_1q_description = "420, irmão",
 		weed_1oz = "Maconha 1oz",
 		weed_1oz_description = "1680, mano",
+		weed_bud = "Bud de Maconha",
+		weed_bud_description = "Epic 420, mano",
 
 		oxy_prescription = "Receita de Oxi",
 		oxy_prescription_description = "Receita suspeita de oxi.",
@@ -7669,6 +7966,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 
 		brownies = "Brownies",
 		brownies_description = "Molhadinhos, fofinhos e com o dobro de quantidade de chocolate, com apenas um toque extra para realmente te fazer sentar e se questionar sobre a vida.",
+		weed_gummies = "Gomas de Maconha",
+		weed_gummies_description = "Uma maneira deliciosa de ficar chapado.",
 
 		ejector_seat = "Assento Ejetor",
 		ejector_seat_description = "Ejecto Seato Porque Sim!",
@@ -7718,6 +8017,25 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		hotwheels_towmater = "Reboque Mater",
 		hotwheels_towmater_description = "Meu nome é Mater, como tomate, mas sem o Tuh.",
 
+		kinder_surprise = "Ovo Surpresa Kinder",
+		kinder_surprise_description = "Este não é um ovo comum! Quebre-o para descobrir um mundo de maravilhas e um companheiro fofinho esperando para ser seu amigo. Quem você encontrará dentro? Será o enérgico Sparky McBowtie, o sábio Capitão Whiskerface, ou talvez o elegante Sir Fancy Pants? A surpresa é metade da diversão!",
+		plush_green = "Pelúcia McHairface",
+		plush_green_description = "Essa pelúcia tem um sério caso de cabelo bagunçado, mas não se preocupe, sempre estão prontos para uma aventura (mesmo que não consigam ver direito o que está por vir).",
+		plush_red = "Shades, o Superstar",
+		plush_red_description = "Essa pelúcia está sempre tranquila, calma e sob controle. Talvez não consigam enxergar sem seus óculos escuros, mas definitivamente conseguem sentir a batida.",
+		plush_pink = "Sir Fancy Pants",
+		plush_pink_description = "Essa pelúcia é um elegante vestidor que sempre está impecável. Podem ser um pouco requintados, mas sempre estão com os pés no chão (bem, tanto quanto uma pelúcia de cartola pode estar).",
+		plush_blue = "Sparky McBowtie",
+		plush_blue_description = "Esse garotinho tem o visual elétrico até nos mínimos detalhes, com cabelos que estalam de energia e um laço borboleta que sempre fica elegante. Mas não se deixe enganar pelas faíscas, pois Sparky McBowtie é só amor e aconchego. Só não mexa no cabelo dele quando estiver se preparando para contar uma história antes de dormir!",
+		plush_white = "Capitão Bigodeface",
+		plush_white_description = "Este pelúcia é uma alma sábia com uma barba que conta histórias. Eles podem não falar, mas sempre têm um ouvido atento (ou deveríamos dizer, uma costura que ouve?).",
+		plush_yellow = "Sunshine Dread",
+		plush_yellow_description = "Este bichinho de pelúcia é só boas vibrações e energias positivas. Eles podem ser um pouco tranquilos, mas estão sempre prontos para se divertir.",
+		plush_orange = "Tang, o Explorador",
+		plush_orange_description = "Este bichinho de pelúcia está sempre em busca de novas aventuras. Eles podem ser um pouco bagunceiros, mas estão sempre dispostos a enfrentar desafios.",
+		plush_wasabi = "Wasabi Mestre",
+		plush_wasabi_description = "Este pequenino é uma verdadeira raridade, assim como uma explosão fresca de Wasabi! Seu brilhante casaco verde com certeza chama a atenção. Não subestime seu tamanho pequeno - eles estão cheios de personalidade e sempre prontos para agitação.",
+
 		boxing_gloves = "Luvas de Boxe",
 		boxing_gloves_description = "Transforma você em Rocky, mas provavelmente você não terá uma sequência...",
 		leash = "Coleira",
@@ -7744,6 +8062,21 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		jolly_rancher_cherry_description = "Delicie-se com o sabor ousado e vibrante de cereja dessas irresistíveis balas duras Jolly Rancher.",
 		jolly_rancher_grape = "Jolly Rancher de uva",
 		jolly_rancher_grape_description = "Experimente o sabor suculento e delicioso de uva com essas balas duras Jolly Rancher de dar água na boca.",
+
+		lollipop_pack = "Pacote de Pirulitos",
+		lollipop_pack_description = "Mergulhe em uma mistura misteriosa de sabores com esse pacote de pirulitos. Cada um é uma doce surpresa, oferecendo uma mistura aleatória de nossas variedades deliciosas e frutadas. Uma alegria para as papilas gustativas em cada pacote colorido!",
+		lollipop_apple = "Pirulito de Maçã",
+		lollipop_apple_description = "Doce com um toque azedo, este pirulito sabor maçã é como uma caminhada por pomares de outono, capturando a essência de maçãs crocantes e suculentas em cada lambida.",
+		lollipop_coke = "Pirulito de Coca-Cola",
+		lollipop_coke_description = "O sabor clássico da cola capturado em um pirulito. É uma guloseima borbulhante e refrescante que entrega o zumbido familiar de uma fonte de refrigerante em um redemoinho de doce.",
+		lollipop_grape = "Pirulito de Uva",
+		lollipop_grape_description = "Cheio do sabor rico e suculento das uvas maduras, este pirulito é um prazer roxo que vai te transportar diretamente para os campos ensolarados.",
+		lollipop_raspberry = "Pirulito de Framboesa",
+		lollipop_raspberry_description = "Este pirulito de framboesa oferece uma explosão de bondade de frutas silvestres, combinando doçura com um leve azedinho, assim como a fruta de verão da qual recebe o nome.",
+		lollipop_strawberry = "Pirulito de Morango",
+		lollipop_strawberry_description = "A essência de morangos maduros ao sol está presente neste pirulito, proporcionando uma experiência doce e repleta de sabores de frutas vermelhas, tão encantadora quanto um dia ensolarado.",
+		lollipop_watermelon = "Pirulito de Melancia",
+		lollipop_watermelon_description = "Uma fatia refrescante de verão, este pirulito de melancia tem todo o doce e nenhuma das sementes, tornando-se um doce suculento e hidratante em qualquer época do ano.",
 
 		bucket = "Balde",
 		bucket_description = "Pode ser usado como um capacete improvisado.",
@@ -7881,6 +8214,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		scratch_ticket_pearl_description = "Embarque em uma busca por riquezas ocultas com este bilhete enigmático. Seus $100 podem ser a chave para desbloquear um tesouro de até $210.000. Cada raspadinha te aproxima dos segredos mais profundos do oceano e fortunas incontáveis.",
 		scratch_ticket_ching = "Raspadinha (Cha Ching)",
 		scratch_ticket_ching_description = "Deixe-se envolver pela emoção eletrizante da riqueza potencial. Por apenas $100, este bilhete vibrante oferece a eletrificante chance de ganhar até $210.000. Não é apenas um jogo, é um espetáculo de fortuna!",
+		scratch_ticket_carnival = "Rasca-Rasca (Carnaval)",
+		scratch_ticket_carnival_description = "Chegue mais perto e junte-se ao carnaval da sorte! Por apenas R$100, você pode ganhar até R$210.000. O carnaval está na cidade, e o grande prêmio está esperando por você!",
 
 		avocado = "Abacate",
 		avocado_description = "Pequeno objeto verde bulboso, seria ótimo para fazer um dip.",
@@ -7915,6 +8250,9 @@ OP.Global.Locales.Languages["pt-BR"] = {
 
 		milk = "Leite",
 		milk_description = "Leite de vaca comum extraído com amor.",
+
+		tomato_juice = "Suco de Tomate",
+		tomato_juice_description = "Esta lata vibrante vermelha contém a 'bebida a bordo dos campeões' (segundo nenhum campeão de verdade). Suco de tomate - é como sol em uma lata, se o sol tivesse um gosto vagamente de arrependimento.",
 
 		almond_milk = "Leite de Amêndoa",
 		almond_milk_description = "Como diabos eles tiraram leite de amêndoas??????",
@@ -7954,6 +8292,9 @@ OP.Global.Locales.Languages["pt-BR"] = {
 
 		empty_tank = "Tanque Vazio",
 		empty_tank_description = "Não contém mais propano ou acessórios de propano.",
+
+		pvc_pipe = "Tubo de PVC",
+		pvc_pipe_description = "Este versátil tubo de PVC é um sonho para entusiastas do faça-você-mesmo, ideal para criar desde canhões caseiros até lançadores inventivos. Seu design resistente e ao mesmo tempo leve o torna perfeito para uma infinidade de projetos criativos e práticos.",
 
 		pepper_spray = "Spray de pimenta",
 		pepper_spray_description = "MEUS OLHOS!",
@@ -8000,6 +8341,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		plastic_chair_description = "Pode ser colocado em qualquer lugar do mundo. Perfeito para acampamentos, caça e pesca!",
 		fishing_chair = "Cadeira de Pesca",
 		fishing_chair_description = "Pode ser colocada em qualquer lugar do mundo. Perfeita para camping, caça e pesca!",
+		sleeping_bag = "Saco de dormir",
+		sleeping_bag_description = "Uma cama portátil para o viajante cansado, perfeita para acampar, caçar e pescar!",
 		yoga_mat = "Tapete de Yoga",
 		yoga_mat_description = "Pode ser colocado em qualquer lugar do mundo. Perfeito para camping, caça e pesca!",
 		cooler_box = "Caixa Térmica",
@@ -8016,6 +8359,10 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		disposable_grill_description = "Pode ser colocada em qualquer lugar do mundo. Perfeita para camping, caça e pesca! Este item não pode ser pego novamente.",
 		grill = "Churrasqueira",
 		grill_description = "Pode ser colocada em qualquer lugar do mundo. Perfeita para acampar, caçar e pescar!",
+		torch = "Tocha",
+		torch_description = "Esta tocha perfura a escuridão da mina, uma luz resistente para o explorador intrépido ou mineiro, afastando a escuridão com sua chama constante.",
+		ladder = "Escada",
+		ladder_description = "Esta robusta e resistente escada foi projetada para alcançar novas alturas com segurança e confiabilidade. Sua grande e pesada estrutura garante estabilidade para aquelas tarefas desafiadoras que exigem um pouco mais de alcance e força. Ideal para aqueles que não têm medo de subir mais alto e enfrentar os grandes trabalhos.",
 		police_barrier = "Barreira Policial",
 		police_barrier_description = "Pode ser colocada em qualquer lugar do mundo.",
 		dummy = "Boneco",
@@ -8142,6 +8489,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		cupcake_description = "Um bolo fofo recheado e coberto com creme de unicórnio mágico.",
 		pink_lemonade = "Limonda Rosa",
 		pink_lemonade_description = "Definitivamente não é apenas limonada com corante rosa para cobrar o dobro do preço...",
+		iced_latte = "Latte Gelado",
+		iced_latte_description = "Um café gelado refrescante, perfeito para um dia quente.",
 
 		irish_coffee = "Café Irlandês",
 		irish_coffee_description = "Café recém-preparado com um pouco de uísque irlandês original.",
@@ -8187,6 +8536,49 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		wood_description = "Um pedaço de madeira fresca de uma árvore.",
 		charcoal = "Carvão",
 		charcoal_description = "Superior ao carvão normal.",
+		canine_tooth = "Dente de Puma",
+		canine_tooth_description = "Uma raridade poderosa da natureza selvagem, este dente de puma simboliza a essência bruta da caça. Um prêmio raro para qualquer caçador.",
+		antlers = "Chifres de Veado",
+		antlers_description = "Raramente encontrados, estes chifres são um tributo gracioso do caçador à dança silenciosa da natureza selvagem. Uma descoberta rara e elegante.",
+		pancake_mix = "Mix de Panqueca",
+		pancake_mix_description = "Uma mistura versátil que é o primeiro passo para uma manhã perfeita. Este mix de panqueca aguarda para ser despertado com um respingo de leite, pronto para se transformar em uma massa suave para seu deleite culinário.",
+		beef_sausages = "Salsichas de carne bovina",
+		beef_sausages_description = "Feitas com os cortes mais nobres de carne crua, essas salsichas de carne bovina são um testemunho da habilidade do caçador e do ofício do açougueiro. Prontas para a grelha, prometem um festim crepitante direto da natureza para o seu prato.",
+		raw_bacon = "Bacon cru",
+		raw_bacon_description = "Este bacon premium, fatiado a partir dos melhores cortes e curado à perfeição, está pronto para transformar qualquer refeição em uma obra-prima saborosa. Ideal para a grelha, aguarda para dourar e se tornar um deleite irresistível.",
+
+		liquid_smoke = "Fumaça Líquida",
+		liquid_smoke_description = "Esta garrafa de fumaça líquida é um segredo da alquimia culinária, uma essência concentrada que infunde carnes cruas com os sussurros antigos do fogo e da madeira.",
+		raw_brined_meat = "Carne em Conserva Crua",
+		raw_brined_meat_description = "Esta carne crua, banhada em fumaça líquida, carrega a promessa de futuros banquetes. Quando grelhada, transforma-se em carne seca, um testemunho saboroso da paciência e do artesanato.",
+		bread_loaf = "Pão",
+		bread_loaf_description = "Um pão fresquinho, recém-saído do forno. Perfeito para sanduíches, torradas e refeições substanciais.",
+		bbq_sauce = "Molho de Churrasco",
+		bbq_sauce_description = "Um molho rico e tangy que adiciona uma explosão de sabor a qualquer prato. Perfeito para grelhar, marinar e mergulhar.",
+		bbq_sandwich = "Sanduíche de Churrasco",
+		bbq_sandwich_description = "Um sanduíche delicioso recheado com carne macia e defumada e molho de churrasco tangy. Uma refeição substancial que satisfaz a alma.",
+		cucumber = "Pepino",
+		cucumber_description = "Um pepino crocante e refrescante, perfeito para saladas, lanches ou fazer picles caseiros.",
+		salt = "Sal",
+		salt_description = "Uma pitada de sal pode transformar qualquer prato, realçando sabores e adicionando profundidade às suas criações culinárias.",
+		pickles = "Picles",
+		pickles_description = "Um pote de picles crocantes e picantes, perfeito para petiscar, sanduíches e adicionar um toque picante às suas refeições.",
+		dark_chocolate = "Chocolate Amargo",
+		dark_chocolate_description = "Um tratamento rico e decadente, o chocolate amargo é perfeito para satisfazer sua vontade de doces e saborear os sabores profundos e complexos do cacau.",
+		beans = "Feijões",
+		beans_description = "Eis! O Santo Graal! O Ambrosia dos Deuses, contido numa vasilha de lata! Não são meros Feijões Cozidos Heinz, meu bom senhor, mas sim uma passagem para um reino de ÊXTASE DE FEIJÃO puro e imaculado! Cada feijão, um pedaço de prazer, imerso em uma mistura tão opulenta, sussurra segredos de sabores desconhecidos. Isto não é simplesmente sustento; é o elixir da própria vida, envolto numa taça de metal, aguardando para conferir sua magnificência aos teus gomos gustativos. Abraça o feijão! Adora o feijão! Deixe que cada pedacinho te transporte para um domínio onde os feijões reinam supremos, e cada colherada é um passo mais perto do êxtase de feijões.",
+		beans_toast = "Feijão com Torrada",
+		beans_toast_description = "Um prato clássico britânico, feijão com torrada é uma refeição simples e satisfatória que é perfeita para o café da manhã, almoço ou jantar. Os sabores ricos e salgados do feijão combinam perfeitamente com a torrada quente e amanteigada, criando uma refeição reconfortante e substanciosa que é rápida e fácil de preparar.",
+		pancake_batter = "Massa de Panqueca",
+		pancake_batter_description = "Essa massa rica e suave de panqueca, feita com nossa mistura premium de panqueca e leite fresco, é a tela para a sua obra-prima matinal. Pronta para ir para a chapa e se transformar em panquecas douradas e deliciosas.",
+		pancakes = "Panquecas",
+		pancakes_description = "Fofas e douradas, recém-saídas da grelha, essas panquecas americanas são uma forma deliciosamente indulgente de começar o seu dia. Saborosas, embora não sejam a escolha mais saudável - pense nelas como liberdade em um prato, onde a liberdade inclui saborear cada mordida encharcada de xarope!",
+		grilled_sausages = "Salsichas Grelhadas",
+		grilled_sausages_description = "Saboreie o aroma defumado destas salsichas recém-grelhadas, uma recompensa culinária para o hábil caçador. Suculentas, saborosas e cozidas à perfeição, são um deleite rústico que celebra o espírito da caça a cada mordida.",
+		grilled_bacon = "Bacon Grelhado",
+		grilled_bacon_description = "Crocante, dourado e irresistivelmente defumado, este bacon grelhado é o máximo do prazer para aqueles que apreciam as coisas mais refinadas da vida. Fresco da grelha, é uma celebração efervescente de sabor, pronto para ser apreciado.",
+		fried_egg = "Ovo Frito",
+		fried_egg_description = "Com a gema ensolarada para cima e grelhado até a perfeição dourada, este ovo frito possui uma gema deliciosamente mole envolta em bordas crocantes. É uma opção simples, mas sumptuosa para qualquer refeição, demonstrando que às vezes, os melhores sabores vêm dos métodos mais simples.",
 
 		beef_jerky = "Carne Seca de Bovino",
 		beef_jerky_description = "Algumas fatias gostosas de carne seca.",
@@ -8204,6 +8596,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		peanuts_description = "Um pote de amendoins, perfeito para petiscar.",
 		olives = "Azeitonas",
 		olives_description = "Uma pequena tigela de azeitonas, o lanche perfeito para uma festa.",
+		popcorn = "Pipoca",
+		popcorn_description = "Um saco de pipoca, perfeito para assistir a filmes.",
 
 		rice = "Arroz",
 		rice_description = "São grãos fofos e cheios.",
@@ -8667,8 +9061,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		weapon_addon_rc4 = "Remington R4-C",
 		weapon_addon_rc4_description = "Atrevida e rápida, a parceira perfeita para ter em sua equipe. Contanto que a ruiva não esteja segurando.",
 
-		weapon_addon_pp19 = "PP-19 Vityaz",
-		weapon_addon_pp19_description = "O auge da excelência russa, perfeito para qualquer tipo de \"raide\".",
+		weapon_addon_mcx = "SIG MCX",
+		weapon_addon_mcx_description = "Reconhecido por sua adaptabilidade e precisão, o SIG MCX é uma arma versátil que oferece confiabilidade e desempenho incomparáveis para qualquer cenário.",
 
 		weapon_addon_m9a3 = "Beretta M9A3",
 		weapon_addon_m9a3_description = "Tudo o que você precisa para realizar suas ações sujas a baixo custo.",
@@ -8678,9 +9072,6 @@ OP.Global.Locales.Languages["pt-BR"] = {
 
 		weapon_addon_m870 = "Remington M870",
 		weapon_addon_m870_description = "Perfeito para esportes e caça, embora atirar em Dannys não seja realmente um esporte... é?",
-
-		weapon_addon_rpk16 = "RPK-16",
-		weapon_addon_rpk16_description = "A metralhadora mais perfeita que já existiu, só não se esqueça da roupa de ginástica.",
 
 		weapon_addon_tacknife = "Faca Tática Suprema",
 		weapon_addon_tacknife_description = "Finalmente, você chegou ao nível 100. O Coronel ficaria orgulhoso.",
@@ -8709,7 +9100,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		weapon_addon_mk18 = "MK18",
 		weapon_addon_mk18_description = "\"Mantenha-se armado ou seja abatido\" - George Washington (provavelmente)",
 
-		weapon_addon_glock = "Glock 17",
+		weapon_addon_glock = "Glock 19X",
 		weapon_addon_glock_description = "A pistola mais popular do mundo.",
 
 		weapon_addon_colt = "Colt 1851 Navy",
@@ -8734,7 +9125,22 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		weapon_addon_glock18c_description = "Novato Revivido",
 
 		weapon_addon_1911 = "Kimber Tático 1911",
-		weapon_addon_1911_description = "O Kimber Tático 1911: Onde estilo encontra substância. Confiável por entusiastas em todos os lugares, é o seu recurso tanto para defesa quanto para fator legal!"
+		weapon_addon_1911_description = "O Kimber Tático 1911: Onde estilo encontra substância. Confiável por entusiastas em todos os lugares, é o seu recurso tanto para defesa quanto para fator legal!",
+
+		weapon_addon_svd = "SVD Dragunov",
+		weapon_addon_svd_description = "Precisão e potência, o SVD Dragunov é um rifle de precisão semiautomático que tem sido um pilar em unidades militares e de aplicação da lei por décadas. É a escolha perfeita para engajamentos de longo alcance e garantirá que seus inimigos pensem duas vezes antes de cruzarem seu caminho.",
+
+		weapon_addon_axmc = "AXMC",
+		weapon_addon_axmc_description = "O AXMC é um pico de engenharia sniper, oferecendo uma precisão excepcional a longas distâncias e um design modular que serve de referência para tiros de precisão.",
+
+		weapon_addon_6kh4 = "6KH4",
+		weapon_addon_6kh4_description = "Criada para o caçador moderno, esta faca baioneta 6KH4 combina um design atemporal com funcionalidade robusta, perfeita para as demandas precisas da natureza selvagem.",
+
+		weapon_addon_jericho = "Jericho 941",
+		weapon_addon_jericho_description = "O Jericho 941 se destaca por sua confiabilidade, precisão e design ergonômico, oferecendo aos atiradores uma experiência superior em desempenho e conforto.",
+
+		weapon_addon_fn509 = "FN-509",
+		weapon_addon_fn509_description = "O FN-509 é uma obra-prima em equilíbrio e precisão, equipado com uma capacidade de 15 cartuchos para garantir confiabilidade e precisão em cada tiro. Um companheiro confiável para defesa e dever."
 	},
 
 	invisibility = {
@@ -8765,6 +9171,10 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		move_to_repair = "Mova-se aqui para reparar o veículo.",
 		repairing_vehicle = "Reparando veículo.",
 		fix_visual_damage = "Corrigindo Danos Visuais",
+		no_vehicle_nearby = "Nenhum veículo próximo.",
+		no_vehicle_seat_nearby = "Você não está perto do assento do veículo.",
+		bleaching_vehicle_seat = "Branqueando Assento do Veículo",
+		vehicle_seat_bleached = "Assento branqueado com sucesso.",
 		measuring_color = "Medindo Cor",
 		color_measurement = "Medição de Cor",
 		color_measurer_result = "**${primary}** (ID ${primaryId}) primário, **${secondary}** (ID ${secondaryId}) secundário, **${pearlescent}** (ID ${pearlescentId}) perolado e **${wheel}** (ID ${wheelId}) cor da roda.",
@@ -8799,6 +9209,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		drank_gasoline_death = "Envenenamento por gasolina",
 		drank_bleach_death = "Envenenamento por alvejante",
 		finished_joint = "Você terminou seu baseado.",
+		cant_place_here = "Você não pode colocar isso aqui.",
 
 		using_cuffs = "Usando algemas",
 		you_moved_too_fast = "Você se moveu rápido demais.",
@@ -8806,10 +9217,12 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		failed_burger_shot_delivery = "Falha ao abrir o pacote do burgershot.",
 		failed_bean_machine_delivery = "Falha ao abrir a entrega do bean machine.",
 		failed_kissaki_delivery = "Falha ao abrir a refeição do kissaki.",
+		failed_green_wonderland_delivery = "Falha ao abrir o saco verde maravilha.",
 
 		burger_shot_delivery_empty = "Aquele pacote do burgershot parece estar vazio.",
 		bean_machine_delivery_empty = "A entrega da Bean Machine parece estar vazia.",
 		kissaki_delivery_empty = "Aquela refeição do kissaki parecia estar vazia.",
+		green_wonderland_delivery_empty = "Parece que o saco verde maravilha está vazio.",
 
 		logs_used_weather_spell_title = "Usou Encantamento do Tempo",
 		logs_used_weather_spell_details = "${consoleName} usou o encantamento do tempo `${itemName}`.",
@@ -8862,11 +9275,26 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		the_ticket_was = "O bilhete era ${ticket}.",
 		recent_pots_will_show_here = "As panelas recentes irão aparecer aqui.",
 		server_id = "O ID do servidor que você deseja transferir para...",
-		transfer_items_to_anoter_person = "Transferir itens para outra pessoa."
+		transfer_items_to_anoter_person = "Transferir itens para outra pessoa.",
+		cancel_bet = "Cancelar Aposta"
 	},
 
 	jail = {
 		press_to_leave_jail = "Pressione ~INPUT_CONTEXT~ para sair da prisão.",
+		invalid_server_id = "ID do servidor inválido.",
+		failed_check_jail = "Falha ao verificar tempo de prisão.",
+		check_not_jailed = "Este jogador não está preso.",
+		remaining_time_check = "${fullName} está preso por ${remaining}.",
+		invalid_operation = "Operação inválida. Deve ser `add` ou `sub`.",
+		invalid_amount = "Quantidade inválida. Deve ser acima de 0 e abaixo ou igual a 5.",
+		failed_modify_jail = "Falha ao modificar tempo de prisão.",
+		modified_jail = "Tempo de prisão modificado para ${fullName}. Seu novo tempo de prisão é ${remaining}.",
+
+		trigger_lockdown = "Acionar Bloqueio",
+		press_trigger_lockdown = "[${InteractionKey}] Acionar Bloqueio",
+		lockdown_active = "Bloqueio Ativo",
+		lockdown_title = "[Despacho]",
+		lockdown_detals = "10-78, Bloqueio iniciado no Presídio Bolingbroke. Reforço de emergência solicitado.",
 
 		menu_title = "Menu da Prisão",
 		check_remaining_time = "Verificar tempo restante",
@@ -8875,9 +9303,11 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		close_menu = "Fechar Menu",
 
 		sentence_reduced = "Sua sentença foi reduzida em ${amount} meses, você ainda tem ${remaining} meses restantes.",
+		sentence_increased = "Sua sentença foi aumentada em ${amount} meses, você tem ${remaining} meses restantes.",
 		sentence_over = "Sua sentença acabou.",
-		remaining_time = "Tempo restante: ${remaining} meses.",
-		jailed = "Você foi preso por ${amount} meses.",
+		remaining_time_fmt = "${months} meses (*${display}*)",
+		remaining_time = "Tempo Restante: ${remaining}.",
+		jailed = "Você foi preso por ${amount}.",
 
 		mission_help_1 = "Pressione ~INPUT_CONTEXT~ para limpar o chão.",
 		mission_help_2 = "Pressione ~INPUT_CONTEXT~ para comer algo.",
@@ -8887,7 +9317,12 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		mission_2 = "Comendo um sanduíche.",
 		mission_3 = "Malhando.",
 
-		mission_blip = "Missão de Prisão"
+		mission_blip = "Missão de Prisão",
+
+		modify_jail_logs_title = "Tempo de Prisão Modificado",
+		modify_jail_logs_details = "${consoleName} modificou o tempo de prisão de ${targetCharacter} #${targetCharacterId} (${operation} ${amount} meses) para ${after}.",
+		triggered_lockdown_logs_title = "Bloqueio Acionado",
+		triggered_lockdown_logs_details = "${consoleName} acionou um bloqueio na prisão."
 	},
 
 	kiosks = {
@@ -8898,6 +9333,13 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		fake_lag_invalid_fps = "FPS inválido.",
 		fake_lag_clamp = "Limitando o FPS para ser abaixo de ${fps}.",
 		fake_lag_disabled = "O fake lag foi desativado."
+	},
+
+	lag_switch = {
+		you_seem_to_be_lagging = "Seu ping está instável. Um tiro disparado não foi sincronizado.",
+
+		lag_detected_logs_title = "Lag Detectada",
+		lag_detected_logs_details = "${consoleName} tentou atirar enquanto sofria com lag. Diferença de ping: ${pingTimerDifference}. Ping instável: ${pingUnstable}."
 	},
 
 	lean = {
@@ -9164,18 +9606,18 @@ OP.Global.Locales.Languages["pt-BR"] = {
 
 	lottery = {
 		lottery_announcement = "Anúncio de Loteria",
-		lottery_about_to_roll = "O sorteio para a loteria de hoje acontecerá em 5 minutos. O jackpot atual é de $${totalPot} onde você apostou $${betAmount}. Sua chance de ganhar é de ${odds}%.",
-		current_lottery_pot = "O valor total do prêmio atual é de $${totalPot} e você apostou $${betAmount}. Sua chance de ganhar é de ${odds}%.",
+		lottery_about_to_roll = "Um vencedor será sorteado em 5 minutos para a loteria de hoje. O valor total do prêmio está atualmente em $ ${totalAmount} onde você apostou $ ${betAmount}. Sua chance de ganhar é de ${odds}%",
+		current_lottery_pot = "O valor total do prêmio está atualmente em $ ${totalAmount} onde você apostou $ ${betAmount}. Sua chance de ganhar é de ${odds}%.",
 		drew_a_lottery_winner = "Um vencedor da loteria foi sorteado.",
 		roll_lottery_no_permission = "O jogador tentou sortear a loteria, mas não tinha permissão para fazê-lo.",
-		winner_has_been_picked = "${fullName} ganhou o prêmio da loteria de $${totalPot}! Eles apostaram $${betAmount} e sua chance de ganhar era de ${odds}%.",
+		winner_has_been_picked = "${fullName} ganhou o prêmio da loteria no valor de $${totalAmount}! Eles apostaram $${betAmount} e sua chance de ganhar foi de ${odds}%.",
 		claimed_lottery_winnings = "Recebeu todos os prêmios da loteria.",
 		no_lottery_winnings = "Você não tem nenhum ganho de loteria não reclamado.",
 		internal_server_error = "Um erro interno do servidor ocorreu.",
 		use_disabled_animal = "Você não pode usar a loteria como um ped de animal.",
 
 		lottery_log_title = "Ganhou na Loteria",
-		lottery_log_description = "${fullName} (#${characterId}) ganhou o pote da loteria de $${totalPot}. Eles apostaram $${betAmount}."
+		lottery_log_description = "${fullName} (#${characterId}) ganhou o prêmio da loteria no valor de $${totalAmount}. Eles apostaram $${betAmount}."
 	},
 
 	lucky_wheel = {
@@ -9223,9 +9665,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		failed_sell = "Falhou ao vender o item.",
 
 		found_item_logs_title = "Item Encontrado no Chão",
-		found_item_logs_details = "${consoleName} encontrou um(a) ${item} no chão (${ground}).",
-		sold_item_logs_title = "Item Raro Vendido",
-		sold_item_logs_details = "${consoleName} vendeu um(a) ${item} por $${price}."
+		found_item_logs_details = "${consoleName} encontrou um(a) ${item} no chão (${ground})."
 	},
 
 	mdt = {
@@ -9242,7 +9682,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 	mechanics = {
 		move_here_check = "Mova aqui para verificar atualizações",
 		checking_upgrades = "Verificando Melhorias de Veículo",
-		upgrades_list = "${armor}, ${engine}, ${brakes}, ${transmission} e ${turbo}.",
+		upgrades_list = "${armor}, ${engine}, ${brakes}, ${transmission}, ${suspension} e ${turbo}.",
 
 		has_no_turbo = "não tem turbo instalado",
 		has_turbo = "tem turbo instalado",
@@ -9264,6 +9704,12 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		transmission_2 = "Transmissão esportiva",
 		transmission_3 = "Transmissão de corrida",
 
+		suspension_0 = "Suspensão Padrão",
+		suspension_1 = "Suspensão Rebaixada",
+		suspension_2 = "Suspensão de Rua",
+		suspension_3 = "Suspensão Esportiva",
+		suspension_4 = "Suspensão de Competição",
+
 		engine_0 = "Motor original",
 		engine_1 = "Nível 2 do sistema EMS",
 		engine_2 = "Nível 3 do sistema EMS",
@@ -9282,10 +9728,6 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		catnip = "[${InteractionKey}] Dar Catnip",
 		treat = "[${InteractionKey}] Dar Petisco",
 		check_up = "[${InteractionKey}] Checar Estado",
-		chill = "[${InteractionKey}] Relaxar",
-		meditate = "[${InteractionKey}] Meditar",
-		salute = "[${InteractionKey}] Saudar",
-		stretch = "[${InteractionKey}] Alongar",
 
 		feed_active = "Alimentando Maxwell",
 		pet_active = "Acariciando Maxwell",
@@ -9293,10 +9735,6 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		catnip_active = "Dando catnip para o Maxwell",
 		treat_active = "Dando um agrado para o Maxwell",
 		check_up_active = "Checando Maxwell",
-		chill_active = "Relaxando com Maxwell",
-		meditate_active = "Meditando com Maxwell",
-		salute_active = "Saudando Maxwell",
-		stretch_active = "Alongando com Maxwell",
 
 		maxwell_appeared = "Maxwell apareceu perto de você.",
 		maxwell_shot = "Maxwell foi atingido"
@@ -9459,6 +9897,9 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		server_tps_response = "${tps}",
 		license_copied = "Licença copiada para a área de transferência com sucesso.",
 		uptime = "Tempo de atividade: ${uptime}",
+		empty_search = "Sua busca está vazia.",
+		no_player_matching = "Nenhum jogador encontrado correspondente à busca: *${search}*.",
+		whois_player = "Encontrado *${name}* correspondente à sua busca.",
 
 		picture_no_url = "URL ausente.",
 		picture_invalid_url = "URL inválida, deve começar com https://.",
@@ -9473,9 +9914,10 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		walk_forwards_success = "Alternância da opção caminhar para frente bem-sucedida para ${displayName}.",
 		walk_forwards_failed = "Falha ao alternar a opção caminhar para frente para ${displayName}.",
 
+		info_invalid_job = "Trabalho inválido",
 		info_title = "Failed to automatically generate translation.",
 		info_character = "Failed to automatically generate translation.",
-		info_job_data = "Failed to automatically generate translation.",
+		info_job_data = "**Dados do Trabalho:** *${job}* - ${paycheck}",
 		info_job_data_none = "Failed to automatically generate translation.",
 		info_licenses = "Failed to automatically generate translation.",
 		info_licenses_none = "Failed to automatically generate translation.",
@@ -9557,6 +9999,10 @@ OP.Global.Locales.Languages["pt-BR"] = {
 
 		add_notice_missing_permissions = "Jogador tentou adicionar um aviso sem as permissões adequadas.",
 		remove_notice_missing_permissions = "Jogador tentou remover um aviso sem as permissões adequadas."
+	},
+
+	npc_watch = {
+		no_npc_nearby = "Nenhum NPC por perto para observar."
 	},
 
 	objects = {
@@ -9670,25 +10116,36 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		about_detection_areas_text = "As áreas de detecção podem ser uma ferramenta útil para os membros da equipe quando tentando identificar um trapaceiro que cria veículos e/ou pedestres indesejados. Para criar uma área de detecção, use o comando `/detection_area_add`. Uma vez criada a área, ela aparecerá aqui. Apenas as últimas 100 entidades serão registradas em cada área.",
 		detection_area_title = "Área de Detecção #${detectionAreaId}",
 
+		about_settings_title = "Configurações",
+		about_settings_text = "Estes campos permitem que você altere várias configurações para personalizar sua experiência.",
 		about_sound_effects_title = "Efeitos Sonoros",
-		about_sound_effects_text = "Estes campos permitem substituir alguns efeitos sonoros. Eles requerem um link para um arquivo .oog para funcionarem corretamente. O link deve ser https:// e não http://. Uma maneira fácil de enviar um arquivo é carregá-lo no Discord, copiar o link e colá-lo nos campos aqui.",
+		about_sound_effects_text = "Estes campos permitem que você substitua alguns efeitos sonoros. Eles requerem um link direto para um arquivo .oog para funcionar corretamente. Deve ser também um URL https:// e não http://. Lembre-se de que os links do discord expirarão.",
+		about_staff_settings_title = "Configurações da Equipe",
+		about_staff_settings_text = "Se você tem permissões de equipe, esses campos permitem que você substitua algumas configurações mais relacionadas à equipe.",
 		radio_mic_click_on = "Som do clique do rádio (Ligado)",
 		radio_mic_click_off = "Som do clique do rádio (Desligado)",
 		lean_cam_mode = "Modo de Câmera de Inclinação-mira",
 		lean_option_1 = "Pressione para alternar",
 		lean_option_2 = "Segure para alternar",
-		lean_option_3 = "Desativado",
 		clipboard_animation = "Animação da prancheta",
+		chop_shop_sound = "Desabilitar Som do Rádio da Chop Shop",
+		seatbelt_sound = "Desabilitar Alerta do Cinto de Segurança",
 		sound_effect_placeholder = "URL do arquivo .oog...",
-		sound_effect_save = "Salvar",
-		sound_effect_reset = "Resetar",
+
+		button_save = "Salvar",
+		button_reset = "Redefinir",
+		value_off = "Desligado",
+		value_on = "Ligado",
+		sound_off = "Som Desligado",
+		sound_on = "Som Ligado",
 
 		reduce_epilepsy = "Reduzir imagens piscantes (hipoalérgicas)",
+		pause_menu_emote = "Emote do Menu de Pausa",
 		disable_tablet_animation = "Desativar animação do tablet",
-		staff_notifications_reports = "Notificações de denúncias",
-		staff_notifications_staff_chat = "Notificações do chat da equipe",
-		staff_notifications_general = "Notificações gerais",
-		staff_notifications_anti_cheat = "Notificações do anti-cheat",
+		staff_notifications_reports = "Notificações de Relatórios (Som)",
+		staff_notifications_staff_chat = "Notificações do Chat da Equipe (Som)",
+		staff_notifications_general = "Notificações Gerais (Som)",
+		staff_notifications_anti_cheat = "Notificações de Anti-Cheat (Som)",
 
 		december_1 = "1º de dezembro",
 		december_2 = "2º de dezembro",
@@ -9765,8 +10222,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		about_unusual_explosions = "Eventos de explosão pouco comuns que não ocorrem normalmente.",
 		explosions_by_type_title = "Explosões por tipo",
 		players_causing_explosions_title = "Jogadores causando explosões",
-		show_common_events_off = "Mostrar eventos comuns: DESLIGADO",
-		show_common_events_on = "Mostrar eventos comuns: LIGADO",
+		include_common_events_off = "Incluir eventos comuns: DESATIVADO",
+		include_common_events_on = "Incluir eventos comuns: ATIVADO",
 
 		explosion_events_type = "Tipo",
 		explosion_events_amount = "Quantidade",
@@ -9800,6 +10257,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		model = "Modelo",
 		label = "Rótulo",
 		amount = "Quantidade",
+		time_ago = "Tempo",
 		console_name = "Jogador",
 		expected = "Esperado",
 		actual = "Atual",
@@ -10462,7 +10920,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		not_paid = "Não está pago",
 		insert_dollar = "[${InteractionKey}] Inserir $${amount}",
 
-		no_cash = "Você não tem nenhum dólar.",
+		no_cash = "Você não tem $4 em dinheiro.",
 		max_time = "Este parquímetro já atingiu o tempo máximo permitido.",
 		failed_pay = "Falha ao pagar o parquímetro."
 	},
@@ -10504,6 +10962,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		roll_message = "jogou um dado personalizado com as configurações ${rolls}d${max} e teve o resultado ${totalValue}",
 		rps_message = "jogou pedra, papel ou tesoura e escolheu ${rps}",
 		citizen_card_message = "mostrou um cartão de cidadão (${characterId})",
+		driver_license_message = "mostrou uma carteira de motorista (${characterId})",
 		badge_message = "mostrou uma insígnia (${characterId})",
 		license_message = "exibiu a licença de condução (${characterId})",
 		ped_message_logs_title = "Mensagem Ped",
@@ -10608,6 +11067,36 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		phone_number_is_not_available = "O número de telefone `${phoneNumber}` não está disponível."
 	},
 
+	plants = {
+		planting_seed = "Plantando Semente",
+		seed_planted = "Semente plantada com sucesso.",
+		failed_plant = "Falha ao plantar semente.",
+		cant_plant_here = "Você não pode plantar uma semente aqui.",
+
+		press_water_plant = "[${InteractionKey}] Regar",
+		press_harvest_plant = "[${InteractionKey}] Colher",
+		press_destroy_plant = "[${SeatEjectKey}] Pá",
+		watering_plant = "Regando planta",
+		harvesting_plant = "Colhendo planta",
+		destroying_plant = "Destruindo planta",
+
+		plant_weed = "Planta daninha",
+
+		planted_seed_logs_title = "Semente plantada",
+		planted_seed_logs_details = "${consoleName} plantou um(a) ${plant} (#${plantId}) em ${material}.",
+		harvested_plant_logs_title = "Planta colhida",
+		harvested_plant_logs_details = "${consoleName} colheu um(a) ${plant} (#${plantId}) e recebeu ${items}.",
+		watered_plant_logs_title = "Planta Regada",
+		watered_plant_logs_details = "${consoleName} regou uma ${plant} (#${plantId}).",
+		ran_over_plant_logs_title = "Planta Atropelada",
+		ran_over_plant_logs_details = "${consoleName} atropelou uma planta (#${plantId}).",
+		shoveled_plant_logs_title = "Planta Removida",
+		shoveled_plant_logs_details = "${consoleName} removeu (destruiu) uma planta (#${plantId}).",
+
+		total_plants = "Total de Plantas: ${count}",
+		nearby_plants = "Plantas Próximas: ${count}"
+	},
+
 	player_control = {
 		unable_to_drive_for_yourself = "Você não pode assumir o controle de si mesmo.",
 		player_is_not_nearby = "O jogador com o ID do servidor ${serverId} não está próximo.",
@@ -10636,7 +11125,9 @@ OP.Global.Locales.Languages["pt-BR"] = {
 	},
 
 	players = {
-		player_left = "Jogador saiu [${serverId}]"
+		player_left = "Jogador saiu [${serverId}]",
+		player_exited = "Jogador Saindo [${serverId}]",
+		player_crashed = "Jogador Caiu [${serverId}]"
 	},
 
 	pole_dancing = {
@@ -10673,9 +11164,11 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		invalid_domain = "Este domínio não é permitido.",
 		print = "Imprimir",
 		printing = "Imprimindo...",
+		document_title = "Meu título legal",
+		image_url = "https://files.catbox.moe/ttt1e4.jpg",
 
 		printed_logs_title = "Imagem Impressa",
-		printed_logs_details = "${consoleName} imprimiu um(a) `${itemName}` usando `${paperType}` com a URL da imagem `${url}`, texto superior: `${topText}` e texto inferior: `${bottomText}`."
+		printed_logs_details = "${consoleName} imprimiu um `${itemName}` usando `${paperType}` com a URL da imagem `${url}`, título: `${title}`, texto superior: `${topText}` e texto inferior: `${bottomText}`."
 	},
 
 	prop_hide = {
@@ -10729,7 +11222,12 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		placing_prop = "Colocando objeto",
 		pickup_prop = "Pegando objeto",
 		setting_up_tire_wall = "Configurando Parede de Pneus",
-		destroying_tire_wall = "Destruindo Parede de Pneus"
+		destroying_tire_wall = "Destruindo Parede de Pneus",
+
+		placed_prop_logs_title = "Objeto Colocado",
+		placed_prop_logs_details = "${consoleName} colocou um `${itemName}` em ${coords} (ID: ${propId}).",
+		spawned_prop_logs_title = "Objeto Gerado",
+		spawned_prop_logs_details = "${consoleName} gerou um prop com modelo `${modelName}` em ${coords} (ID: ${propId})."
 	},
 
 	radio = {
@@ -11229,13 +11727,19 @@ OP.Global.Locales.Languages["pt-BR"] = {
 	smoothies = {
 		blend = "Misturar",
 		close = "Fechar",
+		name_placeholder = "Smoothie de Frutas",
+		name_suffix = "Smoothie / Vitamina",
+
+		name_default = "Delicioso",
+		name_drugs = "Suspeito",
+		name_alcohol = "Alcoólico",
 
 		use_blender = "[${InteractionKey}] Usar Misturador",
 		blending = "Misturando",
 		no_ingredients = "Você não tem ingredientes para fazer um suco.",
 
-		milkshake_label = "Milkshake (${flavors})",
-		smoothie_label = "Suco (${flavors})",
+		milkshake_label = "${name} Milkshake",
+		smoothie_label = "${name} Smoothie",
 		seperator = "e"
 	},
 
@@ -11365,7 +11869,12 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		spy_ui_connecting = "Conectando ao Microfone Espião (#${deviceId})",
 		spy_ui_connection_failed = "Não foi possível conectar ao Microfone Espião (#${deviceId})",
 		spy_ui_awaiting_data = "Aguardando dados...",
-		spy_ui_data_failed = "Falha nos dados"
+		spy_ui_data_failed = "Falha nos dados",
+
+		used_tracker_logs_title = "Rastreador de Veículo Usado",
+		used_tracker_logs_details = "${consoleName} usou um rastreador de veículo no veículo ${vehicleId}.",
+		used_bug_logs_title = "Bug de Microfone Utilizado",
+		used_bug_logs_details = "${consoleName} usou um bug de microfone em ${identifier}."
 	},
 
 	starter_car = {
@@ -11505,6 +12014,36 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		user_not_found = "O usuário enviado não foi encontrado no servidor.",
 		invalid_character_id = "Parâmetro de ID de personagem inválido enviado.",
 		invalid_license_identifier = "Parâmetro de identificador de licença inválido enviado."
+	},
+
+	teleporting = {
+		source_no_character = "Jogador de origem não possui um personagem carregado.",
+		target_no_character = "Jogador de destino não possui um personagem carregado.",
+		invalid_coordinates = "Coordenadas inválidas.",
+		no_waypoint_set = "Nenhum ponto de referência definido.",
+		failed_teleport_to_player = "Falha ao teleportar para o jogador.",
+		failed_teleport_player_here = "Falha ao teleportar o jogador até você.",
+		failed_teleport_player_player = "Falha ao teleportar jogador para jogador.",
+		no_back_coords = "Nenhum local para teleportar de volta.",
+		cant_tp_same_player = "Você não pode teleportar um jogador para si mesmo.",
+		cant_tp_self_self = "Você não pode se teleportar para si mesmo.",
+
+		use_tp_to_player = "Use `/tp_to_player` para se teleportar para um jogador.",
+		use_tp_player_here = "Use `/tp_player_here` para teleportar um jogador até você.",
+
+		teleported_to_coordinates = "Teleportado para `${location}`. (${coords})",
+		teleported_to_player = "Teleportado para ${displayName}.",
+		teleported_player_here = "Teleportado ${displayName} até você.",
+		teleported_player_player = "Teleportado ${sourceName} para ${targetName}.",
+
+		teleport_to_coords_logs_title = "Teleportado Para Coordenadas",
+		teleport_to_coords_logs_details = "${consoleName} teleportado para coordenadas ${coords}.",
+		teleport_to_player_logs_title = "Teleportado Para Jogador",
+		teleport_to_player_logs_details = "${consoleName} teleportado para ${targetConsoleName}.",
+		teleport_player_here_logs_title = "Teleportado Jogador Para Si Mesmo",
+		teleport_player_here_logs_details = "${consoleName} teleportou ${targetConsoleName} para si mesmo.",
+		teleport_player_player_logs_title = "Teleportado Jogador Para Jogador",
+		teleport_player_player_logs_details = "${consoleName} teleportou ${sourceConsoleName} para ${targetConsoleName}."
 	},
 
 	teleporters = {
@@ -11652,6 +12191,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		vehicles = "Opções de Veículos",
 		spawn_car = "Spawn de Carro",
 		upgrade_vehicle = "Melhorar Veículo",
+		break_windows = "Quebrar Janelas",
 		pop_tires = "Furar Pneus",
 		detach_doors = "Desanexar Portas",
 		damage_vehicle = "Danificar Veículo",
@@ -11660,6 +12200,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 
 		player = "Opções de Jogador",
 		starve = "Fome",
+		add_stress = "Adicionar Estresse",
 		feed = "Alimentar-se",
 		relief_stress = "Reduzir Estresse",
 		reset_health = "Resetar Saúde",
@@ -11745,7 +12286,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 	},
 
 	trading_cards = {
-		access_store = "[${InteractionKey}] Acessar Loja",
+		access_store = "Pressione ~INPUT_CONTEXT~ para acessar a Loja de Cartas Colecionáveis.",
 
 		buy_pack = "Comprar ${packName}",
 		store_title = "Loja de Cartas",
@@ -11942,7 +12483,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 	vape = {
 		press_to_use = "Pressione ~INPUT_CONTEXT~ para dar uma tragada. Pressione ~INPUT_FRONTEND_CANCEL~ para guardar o cigarro eletrônico.",
 
-		plain_vape = "Geek Bar (Sem Sabor)",
+		plain_vape = "Geek Bar",
+		weed_vape = "Geek Bar (Óleo de THC)",
 		mango_vape = "Geek Bar (Manga)",
 		strawberry_vape = "Geek Bar (Morango)",
 		menthol_vape = "Geek Bar (Mentol)",
@@ -12056,6 +12598,20 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		refilling_bottle = "Recarregando Garrafa"
 	},
 
+	weed = {
+		strain_default = "Wild Haze",
+		strain_lemon = "Lemon Haze",
+		strain_northern = "Northern Lights",
+		strain_kush = "OG Kush",
+
+		default_emoji = "🥦",
+		lemon_emoji = "🏃",
+		northern_emoji = "🛡️",
+		kush_emoji = "🦁",
+
+		strain_description = "<b>Cepa:</b> <i>${strain}</i> ${emoji}"
+	},
+
 	weed_field = {
 		pick_weed = "Pressione ~INPUT_CONTEXT~ para colher maconha.",
 		picking_weed = "Colhendo maconha"
@@ -12092,8 +12648,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		explode_success = "Jogador ${consoleName} explodiu com sucesso.",
 		explode_failed = "Falha ao fazer o jogador explodir.",
 
-		ignite_success = "Jogador ${consoleName} foi incendiado com sucesso.",
-		ignite_failed = "Falha ao incendiar o jogador.",
+		taze_success = "Tazed com sucesso ${consoleName}.",
+		taze_failed = "Falha ao atordoar jogador.",
 
 		flashbang_success = "${consoleName} foi atordoado com sucesso.",
 		flashbang_failed = "Falha ao atordoar jogador.",
@@ -12192,6 +12748,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		second = "segundo",
 		seconds = "segundos",
 		just_now = "agora mesmo",
+		now = "agora",
 
 		month_1 = "Janeiro",
 		month_2 = "Fevereiro",
@@ -12277,6 +12834,35 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		delivery_blip = "Entrega do Burger Shot"
 	},
 
+	bus_driver = {
+		start_route = "Pressione ~INPUT_CONTEXT~ para iniciar uma rota",
+		failed_start_job = "Falha ao iniciar um novo trabalho.",
+		next_stop = "Próxima Parada",
+		bus_hq = "Sede do Ônibus",
+		job_cancelled = "O trabalho foi cancelado.",
+		next_stop_help = "Próxima Parada: ${stop} de ${total}",
+		passenger_count = "Passageiros: ${passengers} de ${seats}",
+		shutdown_engine = "Desligue o motor e espere pelos passageiros.",
+		return_to_hq = "Retornar à sede.",
+		bus_stop = "Ponto de Ônibus",
+		pay_for_ticket = "Segure ~INPUT_CONTEXT~ para pagar pela passagem ($18).",
+		not_enough_money_ticket = "Você não tem dinheiro suficiente para a passagem ($18).",
+		ticket_paid = "${displayName} pagou pela passagem de ônibus.",
+		paid_for_ticket = "Você pagou com sucesso pela passagem de ônibus.",
+
+		east_route = "Arcade",
+		pillbox_route = "Pillbox",
+		little_seoul_route = "Little Seoul",
+		sandy_route = "Linha do Deserto de Sandy",
+		paleto_route = "Expresso do Grande Oceano",
+		grapeseed_route = "Caminho Verde de Grapeseed",
+		route_68_route = "Rota 68 Direto",
+		airport_route = "Ônibus do Aeroporto",
+
+		finished_job_logs_title = "Rota de Ônibus Concluída",
+		finished_job_logs_details = "${consoleName} concluiu a rota de ônibus `${route}` e recebeu $${payout}."
+	},
+
 	doj = {
 		invalid_type = "Novato Revivido",
 		missing_search = "${consoleName} foi revivido porque o novo jogador que o matou foi banido.",
@@ -12330,6 +12916,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		job_government = "Coletor de lixo",
 		job_mechanic = "Guincho",
 		job_delivery = "Entregador",
+		job_bus_driver = "Motorista de Ônibus",
 		changed_job_already_set_to_job = "Seu emprego já está definido como ${jobName}.",
 		changed_job_success = "Seu emprego foi definido com sucesso para ${jobName}.",
 		changed_job_success_go_to_coords = "Seu emprego foi definido com sucesso para ${jobName}. Siga o caminho no seu mapa para começar.",
@@ -12432,6 +13019,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		license_fishing = "Licença de Pesca",
 		license_weapon = "Licença de Armas",
 		license_mining = "Licença de Mineração",
+		license_driver = "Carteira de Motorista",
 		gave_character_license = "Concedeu a ${characterName} a licença `${licenseLabel}`.",
 		character_already_has_license = "${characterName} já possui a licença `${licenseLabel}`",
 		removed_character_license = "Removeu a licença `${licenseLabel}` de ${characterName}.",
@@ -12446,7 +13034,21 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		you_have_no_licenses = "Você não possui nenhuma licença.",
 		player_has_no_licenses = "${characterName} não possui licenças.",
 		failed_to_get_licenses = "Falha ao obter as licenças.",
-		license_list = "Licenças disponíveis: ${licenseList}."
+		license_list = "Licenças disponíveis: ${licenseList}.",
+		already_married = "Um ou ambos os parceiros já estão casados.",
+		either_not_married = "Um ou ambos os parceiros não estão casados.",
+		not_married = "Os parceiros não estão casados um com o outro.",
+		failed_marriage = "Falha ao definir estado civil de casamento.",
+		marriage_success = "${nameA} e ${nameB} estão agora casados.",
+		divorce_success = "${nameA} e ${nameB} não estão mais casados.",
+		character_not_online = "Um dos parceiros não está atualmente online. Apenas os parceiros falecidos podem ser divorciados enquanto estão offline.",
+		you_are_now_married = "Você está agora casado com ${name}.",
+		you_are_no_longer_married = "Você não está mais casado com ${name}.",
+
+		divorced_logs_title = "Divórcio",
+		divorced_logs_details = "${consoleName} atualizou o estado marital de ${nameA} #${cidA} e ${nameB} #${cidB} para `divorciados`.",
+		married_logs_title = "Casado",
+		married_logs_details = "${consoleName} atualizou o estado civil de ${nameA} #${cidA} e ${nameB} #${cidB} para `casado`."
 	},
 
 	tow = {
@@ -12502,7 +13104,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		anchored_successfully = "Âncora implantada com sucesso.",
 		removing_anchor = "Desconectando Âncora",
 		deploying_anchor = "Ancorando...",
-		no_vehicle_nearby = "Não há nenhum barco por perto para você ancorar."
+		no_vehicle_nearby = "Não há nenhum barco por perto para você ancorar.",
+		vehicle_not_anchorable = "Você não pode ancorar este barco."
 	},
 
 	car_wash = {
@@ -12579,16 +13182,42 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		unknown = "Desconhecido"
 	},
 
+	garage_access = {
+		menu_title = "Gerenciador de Garagem",
+		button_close = "Fechar",
+		loading = "Carregando...",
+		access = "Acesso à Garagem",
+		access_description = "Esses personagens têm acesso para retirar e depositar seus veículos da sua garagem.",
+		accessible = "Seu Acesso",
+		accessible_description = "Essas são as garagens às quais você tem acesso.",
+		no_access = "Somente você pode acessar sua garagem.",
+		no_accessible = "Ninguém lhe deu acesso à sua garagem.",
+
+		failed_allow_access = "Falha ao permitir acesso à garagem.",
+		failed_remove_access = "Falha ao remover acesso à garagem.",
+		already_has_access = "Personagem já tem acesso à sua garagem.",
+		invalid_character_id = "ID do personagem inválida.",
+		does_not_access = "Personagem já não tem acesso à sua garagem.",
+
+		added_access_logs_title = "Acesso à Garagem Adicionado",
+		added_access_logs_details = "${consoleName} (#${characterId}) deu acesso à sua garagem para #${targetCharacterId}.",
+		removed_access_logs_title = "Acesso do Estacionamento Removido",
+		removed_access_logs_details = "${consoleName} (#${characterId}) removeu o acesso de #${targetCharacterId} ao seu estacionamento."
+	},
+
 	garages = {
 		garage_empty = "Sua garagem está vazia!",
 		impound_lot = "Depósito",
 		police_impound = "Depósito da polícia",
+		owner_self = "Proprietário",
+		owner_other = "Acesso",
 		engine = "Motor",
 		body = "Carroceria",
 		vehicle_in = "Dentro",
 		vehicle_out = "Fora",
 		vehicle_at_police_impound = "Seu veículo está atualmente sob custódia policial.",
 		vehicle_at_impound = "Seu veículo está localizado no depósito.",
+		impound_lot_short = "Depósito",
 		waypoint_to_impound = "Um ponto de referência para o depósito foi marcado em seu GPS.",
 		unable_to_withdraw = "Não é possível retirar o veículo, pois ele está atualmente em uso.",
 		vehicle_in_garage = "Seu veículo está localizado em ${garageName}. Um waypoint foi marcado no seu mapa.",
@@ -12608,7 +13237,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		not_enough_balance_to_retrieve = "Você não tem saldo suficiente em uma de suas contas para recuperar este veículo.",
 		press_to_access = "Pressione ~INPUT_CONTEXT~ para acessar a garagem.",
 		ui_return = "Voltar",
-		ui_vehicle_list = "Lista de Veículos",
+		ui_my_vehicle_list = "Meus Veículos",
+		ui_other_vehicle_list = "Outros Veículos",
 		ui_store_vehicle = "Armazenar Veículo",
 		ui_vehicle_sell = "Vender Veículos",
 		ui_retrieve_vehicle = "Recuperar Veículo",
@@ -12631,8 +13261,6 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		state_loading = "Carregando...",
 
 		vehicle_weight = "Peso: ${weight}",
-		last_garage_letter = "Última - Garagem ${letter}",
-		last_garage_impound = "Última - Depósito",
 		no_last_garage_letter = "Sem garagem anterior",
 
 		purchase_vehicle = "Pressione ~INPUT_CONTEXT~ para acessar a loja",
@@ -12641,7 +13269,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		purchase_success = "O(a) ${label} que você acabou de comprar foi adicionado(a) à sua garagem.",
 		purchase_failed = "Falha ao comprar o veículo.",
 		already_owned = "Você já possui este modelo de veículo.",
-		maximum_owned = "Você não pode possuir mais do que 6 veículos.",
+		maximum_owned = "Você não pode possuir mais do que 8 veículos.",
 		not_enough_money = "Você não tem dinheiro suficiente para comprar este veículo.",
 
 		sold_vehicle = "Vendeu ${label} por $${price}.",
@@ -12759,6 +13387,14 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		failed_generic = "Algo deu errado."
 	},
 
+	trailers = {
+		cant_attach_trailer = "Este veículo não tem engate para reboque.",
+		no_trailer_nearby = "Nenhum reboque por perto.",
+		not_in_vehicle = "Você não está dirigindo um veículo.",
+		not_lined_up = "Seu veículo não está alinhado com o reboque.",
+		keybind_description = "Acoplar ou desacoplar um reboque"
+	},
+
 	vehicles = {
 		flip_flipping = "Virando o Veículo",
 		flip_unable = "Você não pode virar um veículo enquanto há pessoas dentro.",
@@ -12777,6 +13413,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		gear_animation_disabled = "A animação de marchas (e sons) agora está desativada.",
 		manual_gears_enabled = "Stan odbić",
 		manual_gears_disabled = "A troca de marchas manual agora está desativada.",
+		manual_gears_too_fast = "Você só pode alternar para manual abaixo de 30mph.",
 		hybrid_off = "Statyw mikrofonowy",
 		speed_limiter_set_to_metric = "O limitador de velocidade agora limitará a velocidade em ${speed} km/h.",
 		speed_limiter_set_to_imperial = "O limitador de velocidade agora limitará a velocidade em ${speed} mp/h.",
@@ -13024,13 +13661,15 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		bleeding_reduced = "Sangramento reduzido",
 		bleeding_self_stopped = "O sangramento parou por si só",
 		thanks_for_loot = "Você foi assaltado enquanto estava inconsciente. Alguns itens podem estar faltando. Rumores dizem que foi a Nancy.",
+		guards_found_unconcious = "Os guardas te encontraram inconsciente e te levaram para o hospital da prisão.",
 		serial_number = "Chipsy Tayto",
 		serial_number_unknown = "To „chips\" a nie „crisps\".",
 		serial_number_removed = "Glock 18C",
 		badge_owner = "<i>Este distintivo pertence a <b>${fullName} (${positionName})</b>.</i>",
 		badge_owner_unknown = "O proprietário do distintivo é desconhecido.",
 		citizen_card_owner = "<i>Este cartão de cidadão pertence a <b>${fullName} (#${characterId})</b>.</i>",
-		citizen_card_has_portrait = "<i>Tem uma foto.</i>",
+		driver_license_owner = "<i>Esta CNH pertence a <b> ${fullName} (#${characterId}) </b>.</i>",
+		has_portrait = "<i>Tem uma foto.</i>",
 		picture_pending = "<i>A foto ainda está sendo processada...</i>",
 		picture_selfie_owner = "<i>Esta é uma foto de <b>${fullName}</b>.</i>",
 		bought_by = "Comprado por ${buyerName} (${buyerCid}).",
