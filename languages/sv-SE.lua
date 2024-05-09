@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["sv-SE"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		phone_number_available_command_parameter_phone_number_help = "Det telefonnummer du vill kontrollera om det är tillgängligt. Se till att det följer formatet XXX-XXXX.",
 		phone_number_available_command_substitutes = "nummer_tillgängligt",
 
+		share_phone_number_command = "dela_telefonnummer",
+		share_phone_number_command_help = "Dela ditt telefonnummer med alla omkring dig (< 1,5m).",
+		share_phone_number_command_substitutes = "dela_nummer",
+
 		-- game/plants
 		plants_debug_command = "plants_debug",
 		plants_debug_command_help = "Felsök alla växter.",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		-- game/trackers
 		tracker_command = "spårare",
 		tracker_command_help = "Växla synlighet på din spårare.",
+		tracker_command_parameter_break = "break",
+		tracker_command_parameter_break_help = "Bryt din spårare och skicka en meddelandeanmälan om det. (Kan inte aktiveras igen förrän 20 minuter har gått)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "spårare_delade",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		barbershop = "Barberare",
 
 		changing_area = "Omklädningsområde",
+		barber = "Barberare",
 
 		switch_outfit = "Byt till denna outfit.",
 		replace_outfit = "Ersätt denna klädsel.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? Nej betjänt, jag äter bara tic tacs!",
 		pizza_slice = "Pizzabit",
-		pizza_slice_description = "En liten bit av pizzan för dig.",
+		pizza_slice_description = "En liten bit pizza åt dig, med extra pepperoni (inte vegansk).",
 		hot_dog = "Korv med Bröd",
 		hot_dog_description = "Glufs i dig denna korv som om det vore din sista.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		api_error = "Vårt API har returnerat ett fel.",
 		api_not_available = "Vårt API är inte tillgängligt.",
 		phone_number_is_available = "Telefonnumret ${phoneNumber} är tillgängligt.",
-		phone_number_is_not_available = "Telefonnumret ${phoneNumber} är inte tillgängligt."
+		phone_number_is_not_available = "Telefonnumret ${phoneNumber} är inte tillgängligt.",
+
+		no_phone = "Du har ingen telefon.",
+		nobody_nearby = "Ingen tillräckligt nära för att dela ditt nummer med.",
+		shared_number = "${fullName} delade sitt telefonnummer med dig. Använd /ja för att acceptera det och skapa en ny kontakt eller /nej för att avböja.",
+		shared_number_expired = "Begäran om att dela numret har gått ut.",
+		shared_number_declined = "Du avböjde begäran om att dela numret.",
+		failed_to_share = "Det gick inte att dela ditt telefonnummer.",
+		number_share_timeout = "Du delade precis ditt telefonnummer. Vänligen vänta en stund innan du försöker igen.",
+		phone_number_shared = "Har delat ditt telefonnummer med ${nearby} närliggande spelare."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Följare kommer nu lagras inom sin kategori på kartan.",
 		trackers_split = "Följare kommer nu delas upp i individuella markeringar.",
+
+		tracker_broken = "${lastName}s spårare har blivit sönder nära ${location}",
+		tracker_broken_unit = "${unitId} ${lastName}s spårare har blivit sönder nära ${location}",
+		tracker_broken_title = "[Dispatch]",
+		tracker_broken_blip = "Sönder Tracker ${lastName}",
+		tracker_broken_timeout = "Din spårare är sönder. Du kan aktivera den igen 20 minuter senare.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["da-DK"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		phone_number_available_command_parameter_phone_number_help = "Det telefonnummer du gerne vil tjekke om er tilgængeligt. Sørg for at det følger formatet XXX-XXXX.",
 		phone_number_available_command_substitutes = "nummer_tilgængeligt",
 
+		share_phone_number_command = "del_telefonnummer",
+		share_phone_number_command_help = "Del dit telefonnummer med alle omkring dig (< 1,5 m).",
+		share_phone_number_command_substitutes = "del_nummer",
+
 		-- game/plants
 		plants_debug_command = "plants_debug",
 		plants_debug_command_help = "Vis fejlfinding for alle planter.",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		-- game/trackers
 		tracker_command = "sporingsenhed",
 		tracker_command_help = "Slår din sporingsenhed til eller fra.",
+		tracker_command_parameter_break = "pause",
+		tracker_command_parameter_break_help = "Pause din tracker og send en besked om det til disponenten. (Kan ikke aktiveres igen, før der er gået 20 minutter)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "opdel_sporingsenheder",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		barbershop = "Frisørsalon",
 
 		changing_area = "Omklædningsareal",
+		barber = "Frisør",
 
 		switch_outfit = "Skift til dette outfit.",
 		replace_outfit = "Erstat dette outfit.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? Nej officer, jeg spiser bare Tic Tac!",
 		pizza_slice = "Pizzastykke",
-		pizza_slice_description = "En lille skive af Za til dig.",
+		pizza_slice_description = "En lille skive pizza til dig, med ekstra pepperoni (ikke vegansk).",
 		hot_dog = "Hotdog",
 		hot_dog_description = "Guf denne hotdog i dig som om det var din sidste.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["da-DK"] = {
 		api_error = "Vores bagvedliggende API returnerede en fejl.",
 		api_not_available = "Vores bagvedliggende API er ikke tilgængelig.",
 		phone_number_is_available = "Telefonnummeret `${phoneNumber}` er tilgængeligt.",
-		phone_number_is_not_available = "Telefonnummeret `${phoneNumber}` er ikke tilgængeligt."
+		phone_number_is_not_available = "Telefonnummeret `${phoneNumber}` er ikke tilgængeligt.",
+
+		no_phone = "Du har ikke en telefon.",
+		nobody_nearby = "Ingen tæt nok til at dele dit nummer med.",
+		shared_number = "${fullName} delte deres telefonnummer med dig. Brug /yes for at acceptere det og oprette en ny kontakt eller /no for at afvise det.",
+		shared_number_expired = "Anmodningen om nummerdeling er udløbet.",
+		shared_number_declined = "Du afviste anmodningen om nummerdeling.",
+		failed_to_share = "Fejl ved deling af dit telefonnummer.",
+		number_share_timeout = "Du har netop delt dit telefonnummer. Vent venligst et øjeblik, før du prøver igen.",
+		phone_number_shared = "Har delt dit telefonnummer med ${nearby} spiller(e) i nærheden."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["da-DK"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})", --"${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Trackers vil nu blive gemt i deres respektive kategorier på kortet.", --"Trackers vil nu blive gemt i deres respektive kategorier på kortet.",
 		trackers_split = "Trackers vil nu blive opdelt i individuelle blips.", --"Trackers vil nu blive opdelt i individuelle blips.",
+
+		tracker_broken = "${lastName}s tracker er blevet ødelagt nær ${location}",
+		tracker_broken_unit = "${unitId} ${lastName}s tracker er blevet ødelagt nær ${location}",
+		tracker_broken_title = "[Dispatch]",
+		tracker_broken_blip = "Ødelagt Tracker ${lastName}",
+		tracker_broken_timeout = "Din tracker er ødelagt. Du kan genaktivere den 20 minutter senere.",
 
 		department_sasp = "SASP", --"SASP",
 		department_bcso = "BCSO", --"BCSO",

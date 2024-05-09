@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["meme-spongebob"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		phone_number_available_command_parameter_phone_number_help = "The phone numbah ya would like to check if is available. Make sure it follows the format of XXX-XXXX.",
 		phone_number_available_command_substitutes = "numbah_available",
 
+		share_phone_number_command = "undefined",
+		share_phone_number_command_help = "undefined",
+		share_phone_number_command_substitutes = "undefined",
+
 		-- game/plants
 		plants_debug_command = "undefined",
 		plants_debug_command_help = "undefined",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		-- game/trackers
 		tracker_command = "tracker",
 		tracker_command_help = "Toggle whether yer tracker is visible or invisible.",
+		tracker_command_parameter_break = "undefined",
+		tracker_command_parameter_break_help = "undefined",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "split trackers",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		barbershop = "Barbershop",
 
 		changing_area = "Changin' Area",
+		barber = "undefined",
 
 		switch_outfit = "Change into dis outfit.",
 		replace_outfit = "Replace dis outfit.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? No officer, I'm just eating tic tacs!",
 		pizza_slice = "Pizza Slice",
-		pizza_slice_description = "A lil slice of the Za for ya, me hearty!",
+		pizza_slice_description = "undefined",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "Munch on this sea frank like it'll be your last.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		api_error = "Oh no, something's not right. Our system seems as confused as Patrick trying to solve a Rubik's Cube.",
 		api_not_available = "Uh oh, the back-end API has gone fishing with Sandy Cheeks. It's not available right now.",
 		phone_number_is_available = "Hurray! The phone number `${phoneNumber}` is available, just like a fresh Krabby Patty.",
-		phone_number_is_not_available = "Sorry pal, but the phone number `${phoneNumber}` is already taken like the last Krabby Patty in the Krusty Krab."
+		phone_number_is_not_available = "Sorry pal, but the phone number `${phoneNumber}` is already taken like the last Krabby Patty in the Krusty Krab.",
+
+		no_phone = "undefined",
+		nobody_nearby = "undefined",
+		shared_number = "undefined",
+		shared_number_expired = "undefined",
+		shared_number_declined = "undefined",
+		failed_to_share = "undefined",
+		number_share_timeout = "undefined",
+		phone_number_shared = "Successfully shared your phone number with ${nearby} kind critters(s)."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel}), full steam ahead!",
 		trackers_in_category = "Trackers will now be stowed away in their categories on the map like a treasure chest!",
 		trackers_split = "Trackers will now be split into individual blips like plankton!",
+
+		tracker_broken = "${lastName}'s tracker has been broke near ${location}",
+		tracker_broken_unit = "${unitId} ${lastName}'s tracker has been broke near ${location}",
+		tracker_broken_title = "[Jellyfishing Expedition]",
+		tracker_broken_blip = "Broke Tracker ${lastName}",
+		tracker_broken_timeout = "Yer tracker is broke. Ye can re-enable it 20 minutes after.",
 
 		department_sasp = "SASP: SpongeBob SquarePants Police Department!",
 		department_bcso = "BCSO: Bikini Bottom County Sheriff's Office!",

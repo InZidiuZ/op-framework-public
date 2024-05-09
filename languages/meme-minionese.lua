@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["meme-minionese"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		phone_number_available_command_parameter_phone_number_help = "Da banana language phone you want to check if be available. Make sure it follow da format of XXX-XXXX.",
 		phone_number_available_command_substitutes = "number_available",
 
+		share_phone_number_command = "bello_phone_number",
+		share_phone_number_command_help = "Shares your phone number wit aal da Minions around ya (< 1.5m).",
+		share_phone_number_command_substitutes = "bello_number",
+
 		-- game/plants
 		plants_debug_command = "undefined",
 		plants_debug_command_help = "undefined",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		-- game/trackers
 		tracker_command = "banana_bello_tracker",
 		tracker_command_help = "Toggle your tracker's visibility. Bello!",
+		tracker_command_parameter_break = "break",
+		tracker_command_parameter_break_help = "Break ya tracker and send a dispatch notification about it. (Cant be re-enabled untill 20min have passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "banana_bello_trackers_split",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		barbershop = "Salon Fata",
 
 		changing_area = "Dukiyar Sanarwa",
+		barber = "Barber",
 
 		switch_outfit = "Sanar da wannan wankan.",
 		replace_outfit = "Bananaaaa.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Gelatoooo!",
 		pizza_slice = "Pizza Slice",
-		pizza_slice_description = "Bello slice of da Za for ya.",
+		pizza_slice_description = "A Lil slice of da Za for ya, wit extra pepperoni (not vegan).",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "Bee doo bee doo! Gobble up this glizzy like it'll be your last.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		api_error = "Oopsie daisy! Our back-end API returned an error!",
 		api_not_available = "Whaaaat? Our back-end API is not available!",
 		phone_number_is_available = "Hehehe, the phone number `${phoneNumber}` is available! Banana!",
-		phone_number_is_not_available = "Oh no! Da phone number `${phoneNumber}` is not available..."
+		phone_number_is_not_available = "Oh no! Da phone number `${phoneNumber}` is not available...",
+
+		no_phone = "Me don't has a phone, bababa.",
+		nobody_nearby = "No bad guys close enough to tell your number to.",
+		shared_number = "${fullName} shared their number with you. Say /yes to like it and make a new friend or /no to say no.",
+		shared_number_expired = "The number share request went bye-bye.",
+		shared_number_declined = "You said no to the number sharing.",
+		failed_to_share = "Couldn't share your number, oopsie.",
+		number_share_timeout = "You just shared your number. Wait a little bit before trying again, banana.",
+		phone_number_shared = "Belloo! Bellooo! Belloo! Ba ba boo bee doo bee, po ka-cha la la! Mwah, po ka-cha la la! Ba ba boo bee doo bee, po ka-cha la la! Doo bee doo bee doo!"
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})", -- "${unitId}: ${firstName} ${lastName} (${departmentLabel})" (unit ID, first name, last name, and department label) becomes "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Trackers will now be stored inside of their categories on the map.", -- "Trackers will now be stored inside of their categories on the map." becomes "Trackers will be kept with their category on the map.",
 		trackers_split = "Trackers will now be split into individual blips.", -- "Trackers will now be split into individual blips." becomes "Trackers will be separated into individual dots.",
+
+		tracker_broken = "${lastName}'s eh-heh tracker busted near ${location}",
+		tracker_broken_unit = "${unitId} ${lastName}'s tracker got kaput near ${location}",
+		tracker_broken_title = "[Dittoe toe dittoe doo]",
+		tracker_broken_blip = "Ba ba boo bee doo bee Tracker ${lastName}",
+		tracker_broken_timeout = "Bee doo? Tracker go boink. Boink ba ba boo bee bee bee, ba boo boo. Tee hee, bee doo boop 20 minutes later.",
 
 		department_sasp = "SASP", -- "SASP",
 		department_bcso = "BCSO", -- "BCSO",

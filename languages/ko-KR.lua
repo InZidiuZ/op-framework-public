@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["ko-KR"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		phone_number_available_command_parameter_phone_number_help = "사용 가능한지 확인하려는 전화번호입니다. 형식이 XXX-XXXX인지 확인하십시오.",
 		phone_number_available_command_substitutes = "번호_확인",
 
+		share_phone_number_command = "전화번호_공유",
+		share_phone_number_command_help = "근처 모든 사람들과 전화번호를 공유합니다 (< 1.5m).",
+		share_phone_number_command_substitutes = "번호_공유",
+
 		-- game/plants
 		plants_debug_command = "plants_debug",
 		plants_debug_command_help = "모든 식물을 디버깅합니다.",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		-- game/trackers
 		tracker_command = "추적기",
 		tracker_command_help = "추적기를 숨기거나 보입니다.",
+		tracker_command_parameter_break = "파괴",
+		tracker_command_parameter_break_help = "트래커를 파괴하고 그 사실을 디스패치합니다. (20분이 지날 때까지 다시 활성화할 수 없음)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "추적기_분할",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		barbershop = "이발소",
 
 		changing_area = "의상 탈의실",
+		barber = "이발사",
 
 		switch_outfit = "이 의상으로 변경하기",
 		replace_outfit = "이 의상으로 교체하기",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		tic_tac = "틱택",
 		tic_tac_description = "옥시? 아니요 경찰관님, 저는 그냥 틱택씩 먹고 있을 뿐이에요!",
 		pizza_slice = "피자 조각",
-		pizza_slice_description = "자! 이 녀석 어때요? 작지만 여러 마디 말을 해줄게요. '자! 이 좀비 먹어요!'",
+		pizza_slice_description = "피망이 들어간 페퍼로니 토핑이 올려진 작은 피자 조각 (비건식이 아님).",
 		hot_dog = "핫도그",
 		hot_dog_description = "이 글리지를 마지막 식사인 것처럼 움막이세요.",
 		nachos = "나초스",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		api_error = "백엔드 API에서 오류가 발생했습니다.",
 		api_not_available = "백엔드 API를 사용할 수 없습니다.",
 		phone_number_is_available = "전화번호 `${phoneNumber}`은(는) 사용 가능합니다.",
-		phone_number_is_not_available = "전화번호 `${phoneNumber}`은(는) 사용 불가능합니다."
+		phone_number_is_not_available = "전화번호 `${phoneNumber}`은(는) 사용 불가능합니다.",
+
+		no_phone = "핸드폰이 없습니다.",
+		nobody_nearby = "주변에 전화번호를 공유할 사람이 없습니다.",
+		shared_number = "${fullName}님이 전화번호를 공유했습니다. 수락하려면 /yes를 사용하여 새 연락처를 만들거나 거부하려면 /no를 사용하세요.",
+		shared_number_expired = "전화번호 공유 요청이 만료되었습니다.",
+		shared_number_declined = "전화번호 공유 요청을 거부했습니다.",
+		failed_to_share = "전화번호 공유에 실패했습니다.",
+		number_share_timeout = "전화번호를 방금 공유했습니다. 다시 시도하기 전에 잠시 기다려 주세요.",
+		phone_number_shared = "근처 플레이어 ${nearby} 명에게 전화번호를 성공적으로 공유했습니다."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "트래커는 이제 맵 내 분류에서 저장됩니다.",
 		trackers_split = "트래커는 개별 블립으로 분할됩니다.",
+
+		tracker_broken = "${lastName}가 ${location} 근처에서 추적기를 파괴했습니다.",
+		tracker_broken_unit = "${unitId} ${lastName}가 ${location} 근처에서 추적기를 파괴했습니다.",
+		tracker_broken_title = "[배치]",
+		tracker_broken_blip = "파괴된 추적기 ${lastName}",
+		tracker_broken_timeout = "귀하는 현재 추적기가 고장 났습니다. 20분 후에 다시 활성화할 수 있습니다.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

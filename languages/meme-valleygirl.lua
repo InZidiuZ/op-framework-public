@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["meme-valleygirl"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		phone_number_available_command_parameter_phone_number_help = "The phone number you wanna check if it's like, available or not. Make sure it's like, in the format of XXX-XXXX, ya know?",
 		phone_number_available_command_substitutes = "num_available",
 
+		share_phone_number_command = "like, share_phone_number",
+		share_phone_number_command_help = "Shares ur phone number with, like, everyone nearby (< 1.5m).",
+		share_phone_number_command_substitutes = "share_number",
+
 		-- game/plants
 		plants_debug_command = "plants_debug",
 		plants_debug_command_help = "Like, debug all the plants, duh.",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		-- game/trackers
 		tracker_command = "tracker",
 		tracker_command_help = "Toggle your like, tracker's visibility.",
+		tracker_command_parameter_break = "break",
+		tracker_command_parameter_break_help = "Break ur tracker and, like, send a dispatch notification about it. (Can't be re-enabled until, like, 20min have passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		barbershop = "Barbershop",
 
 		changing_area = "Changing Area",
+		barber = "Barber",
 
 		switch_outfit = "Change into this outfit.",
 		replace_outfit = "Like, swap this outfit.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Like, no way officer, I'm just eating some Tic Tacs.",
 		pizza_slice = "Pizza Slice",
-		pizza_slice_description = "Just a lil' slice of yummy pizza, y'know?",
+		pizza_slice_description = "Like, a Lil slice of the Za for ya, with extra pepperoni (not vegan).",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "Chow down on this gnarly glizzy like it's your last bite.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		api_error = "Like, seriously? Our back-end API is like totally freaking out.",
 		api_not_available = "Oh my God, the API is like totally MIA.",
 		phone_number_is_available = "Woo-hoo! The digits ${phoneNumber} are like totally free.",
-		phone_number_is_not_available = "Yeah no, sorry but the digits ${phoneNumber} are taken."
+		phone_number_is_not_available = "Yeah no, sorry but the digits ${phoneNumber} are taken.",
+
+		no_phone = "Like, oh-em-gee, you don't have, like, a phone.",
+		nobody_nearby = "Ugh, like, no one is, like, totally close enough to swap numbers with.",
+		shared_number = "${fullName} was, like, totally awesome and gave you their digits. Just use /yes to add them as a contact or /no to, like, say nope.",
+		shared_number_expired = "Um, like, sorry, but the number swap request timed out.",
+		shared_number_declined = "Ew, you, like, totally said no to swapping numbers. Rude.",
+		failed_to_share = "Ugh, like, bummer! Couldn't share your number.",
+		number_share_timeout = "Chill, you just shared your number. Give it a sec before trying again.",
+		phone_number_shared = "Like, OMG you totally shared your digits with ${nearby} nearby player(s)."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel}), so cute!",
 		trackers_in_category = "Trackers will now be stored inside of their categories on the map, like, duh!",
 		trackers_split = "Trackers will now be split into individual blips, how convenient!",
+
+		tracker_broken = "Uh-oh, ${lastName}'s tracker got, like, busted near ${location}",
+		tracker_broken_unit = "Uh-oh, ${unitId}, ${lastName}'s tracker is totally messed up near ${location}",
+		tracker_broken_title = "[Dispatcher Alert]",
+		tracker_broken_blip = "Tracker Troubs - ${lastName}",
+		tracker_broken_timeout = "Eek! Your tracker is currently broken. You can fix it in, like, 20 minutes.",
 
 		department_sasp = "SASP, so legit!",
 		department_bcso = "BCSO, oh yeah!",

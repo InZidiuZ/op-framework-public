@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		phone_number_available_command_parameter_phone_number_help = "หมายเลขโทรศัพท์ที่คุณต้องการตรวจสอบว่าสามารถใช้ได้หรือไม่ โปรดตรวจสอบให้แน่ใจว่าตามรูปแบบ XXX-XXXX",
 		phone_number_available_command_substitutes = "available_number",
 
+		share_phone_number_command = "share_phone_number",
+		share_phone_number_command_help = "แชร์หมายเลขโทรศัพท์ของคุณกับทุกคนรอบตัวคุณ (< 1.5 เมตร)",
+		share_phone_number_command_substitutes = "share_number",
+
 		-- game/plants
 		plants_debug_command = "plants_debug",
 		plants_debug_command_help = "Debug พืชทั้งหมด",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		-- game/trackers
 		tracker_command = "ติดตาม",
 		tracker_command_help = "เปิดหรือปิดการมองเห็นตัวติดตามของคุณ",
+		tracker_command_parameter_break = "break",
+		tracker_command_parameter_break_help = "ทำลายตัวติดตามของคุณและส่งการแจ้งเตือนไปยังเจ้าหน้าที่เกี่ยวกับนี้ (ไม่สามารถเปิดใช้ใหม่จนกว่าจะผ่านไป 20 นาที)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "แยกตัวติดตาม",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		barbershop = "ร้านตัดผม",
 
 		changing_area = "ห้องเปลี่ยนเสื้อผ้า",
+		barber = "ร้านตัดผม",
 
 		switch_outfit = "เปลี่ยนเป็นชุดเสื้อผ้านี้",
 		replace_outfit = "แทนที่ชุดนี้",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		tic_tac = "ติดแตก",
 		tic_tac_description = "Oxy? ไม่ใช่นายตำรวจ ผมกำลังกินติดแตกเท่านั้น!",
 		pizza_slice = "ชิ้นพิซซ่า",
-		pizza_slice_description = "ชิ้นพิซซ่าเล็กน้อยสำหรับคุณ",
+		pizza_slice_description = "แผ่นพิซซ่าขนาดเล็กพร้อมพริกไทยเยอะๆ (ไม่ใช่อาหารมังสวิรัติ)",
 		hot_dog = "ฮอตดอก",
 		hot_dog_description = "กินฮอตด็อกไปเถอะ คือเลิซซี่ในโอกาสสุดท้ายของคุณ",
 		nachos = "นาโชส์",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["th-TH"] = {
 		api_error = "API ของเราของเราเกินพลาด.",
 		api_not_available = "API ของเราไม่สามารถใช้งานได้ในขณะนี้.",
 		phone_number_is_available = "หมายเลขโทรศัพท์ ${phoneNumber} สามารถใช้งานได้.",
-		phone_number_is_not_available = "หมายเลขโทรศัพท์ ${phoneNumber} ไม่สามารถใช้งานได้."
+		phone_number_is_not_available = "หมายเลขโทรศัพท์ ${phoneNumber} ไม่สามารถใช้งานได้.",
+
+		no_phone = "คุณไม่มีโทรศัพท์",
+		nobody_nearby = "ไม่มีใครใกล้พอที่จะแชร์หมายเลขโทรศัพท์ของคุณ",
+		shared_number = "${fullName} แชร์หมายเลขโทรศัพท์กับคุณ ใช้คำสั่ง /yes เพื่อยอมรับและเพิ่มเป็นที่ติดต่อใหม่ หรือใช้คำสั่ง /no เพื่อปฏิเสธ",
+		shared_number_expired = "คำขอแชร์หมายเลขหมดอายุแล้ว",
+		shared_number_declined = "คุณได้ปฏิเสธคำขอแชร์หมายเลข",
+		failed_to_share = "การแชร์หมายเลขโทรศัพท์ล้มเหลว",
+		number_share_timeout = "คุณเพิ่งแชร์หมายเลขโทรศัพท์ของคุณไป โปรดรอสักครู่ก่อนลองอีกครั้ง",
+		phone_number_shared = "แชร์หมายเลขโทรศัพท์ของคุณกับผู้เล่นใกล้เคียง ${nearby} คนสำเร็จ"
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "ตัวติดตามจะถูกจัดเก็บไว้ภายในหมวดหมู่บนแผนที่",
 		trackers_split = "ตัวติดตามจะถูกแยกออกเป็นบลิปแต่ละตัว",
+
+		tracker_broken = "แทรกเกอร์ของ ${lastName} ถูกทำลายใกล้ ${location}",
+		tracker_broken_unit = "แทรกเกอร์ของ ${unitId} ${lastName} ถูกทำลายใกล้ ${location}",
+		tracker_broken_title = "[สะสม]",
+		tracker_broken_blip = "แทรกเกอร์เสียของ ${lastName}",
+		tracker_broken_timeout = "แทรกเกอร์ของคุณเสียแล้ว คุณสามารถเปิดใช้งานอีกครั้งหลังจาก 20 นาที",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["ne-NP"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		phone_number_available_command_parameter_phone_number_help = "तपाईंले जाँच गर्न चाहनु भएको फोन नम्बर। यो XXX-XXXX फोर्म्याटको होनुपर्छ।",
 		phone_number_available_command_substitutes = "नम्बर_उपलब्ध",
 
+		share_phone_number_command = "फोन नम्बर साझा गर्नुहोस्",
+		share_phone_number_command_help = "तपाईंको फोन नम्बरलाई तपाईं वरियताको हरेक व्यक्ति संग साझा गर्नुहोस् (< 1.5 मीटर)",
+		share_phone_number_command_substitutes = "नम्बर साझा गर्नुहोस्",
+
 		-- game/plants
 		plants_debug_command = "रोप्याउने_डीबग",
 		plants_debug_command_help = "सबै रोपहरूको डिबग गर्नुहोस्।",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		-- game/trackers
 		tracker_command = "talaashi_garna",
 		tracker_command_help = "Talaashi ko visibility ko lagi khoi rakhne ho ki rakhnna nai.",
+		tracker_command_parameter_break = "ब्रेक",
+		tracker_command_parameter_break_help = "तपाईंको ट्र्याकर टुट्नुहोस् र त्यसको बारेमा एक वितरण सूचना पठाउनुहोस्। (२० मिनेट सम्म पुन: सक्रिय गर्न सकिँदैन)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		barbershop = "बार्बरिक",
 
 		changing_area = "परिवर्तन क्षेत्र",
+		barber = "बार्बर",
 
 		switch_outfit = "यस आउटफिटमा परिवर्तन गर्नुहोस्।",
 		replace_outfit = "यो आउटफिट प्रतिस्थापन गर्नुहोस्।",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		tic_tac = "टिक टैक",
 		tic_tac_description = "ऑक्सी? नहीं अधिकारी, मैं सिर्फ टिक टैक खा रहा हूं!",
 		pizza_slice = "पिज़्ज़ा स्लाइस",
-		pizza_slice_description = "थोडो जा तपाईंको लागि जाफा को परता।",
+		pizza_slice_description = "ताजा ज्ञानको र थप प्यारोनीसहित थामिएको थिचा, एउटा जुम्ला (भेजन भान्नुहोस्।)",
 		hot_dog = "हट डग",
 		hot_dog_description = "यो glizzy तल्लोभेटी खानुहोस् यसले तपाईंको अन्तिम हुनेछ जस्तै।",
 		nachos = "नाचोस",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		api_error = "हाम्रो ब्याक-एन्ड एपीआई एक त्रुटि फिर्ता लिएको छ।",
 		api_not_available = "हाम्रो ब्याक-एन्ड एपीआई उपलब्ध छैन।",
 		phone_number_is_available = "फोन नम्वर `${phoneNumber}` उपलब्ध छ।",
-		phone_number_is_not_available = "फोन नम्वर `${phoneNumber}` उपलब्ध छैन।"
+		phone_number_is_not_available = "फोन नम्वर `${phoneNumber}` उपलब्ध छैन।",
+
+		no_phone = "तपाईंको मोबाइल फोन छैन।",
+		nobody_nearby = "कसै नजिकमा छैन तपाईंको नम्बर सेयर गर्न.",
+		shared_number = "${fullName} ले तपाईंसँग आफ्नो फोन नम्बर साझा गर्नुभयो। /yes भनेर स्वीकार गर्नुहोस र नयाँ संपर्क बनाउने वा /no भनेर अस्वीकार गर्नुहोस।",
+		shared_number_expired = "नम्बर साझा गर्ने अनुरोध समाप्त भयो।",
+		shared_number_declined = "तपाईंले नम्बर साझा गर्ने अनुरोध अस्वीकृत गर्नुभयो।",
+		failed_to_share = "तपाईंको फोन नम्बर साझा गर्ने असफल भयो।",
+		number_share_timeout = "तपाईंले जस्तै अब फोन नम्बर साझा गरे। कृपया फेरि प्रयास गर्नुहोस।",
+		phone_number_shared = "तपाईंले आफ्नो फोन नम्बर सफलतापूर्वक ${नजिक} नजिकका खेलाडी(हरू)संग साझा गर्‍यौं।"
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "ट्र्याकरहरू अब मानचित्रमा तिनीहरूको वर्गहरूमा संग्रहीत हुनेछन्।",
 		trackers_split = "ट्र्याकरहरू अब व्यक्तिगत ब्लिपहरूमा विभाजित हुनेछन्।",
+
+		tracker_broken = "${परिचय} को ट्र्याकर ${स्थान} नजिकमा बिग्रियो।",
+		tracker_broken_unit = "${इकाई आइडी} ${लास्ट नाम} को ट्र्याकर ${स्थान} नजिकमा बिग्रियो।",
+		tracker_broken_title = "[डिस्प्याच]",
+		tracker_broken_blip = "बिग्रिएको ट्र्याकर ${लास्ट नाम}",
+		tracker_broken_timeout = "तपाईंको ट्र्याकर बिग्रिएको छ। तपाईं २० मिनेट पछि पुन: सक्षम गर्न सक्नुहुनेछ।",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

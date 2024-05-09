@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["tr-TR"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		phone_number_available_command_parameter_phone_number_help = "Mevcut olup olmadığını kontrol etmek istediğiniz telefon numarası. Lütfen XXX-XXXX formatına uygun olduğundan emin olun.",
 		phone_number_available_command_substitutes = "numara_mevcut",
 
+		share_phone_number_command = "telefon_numarasını_paylaş",
+		share_phone_number_command_help = "Telefon numaranızı etrafınızdaki herkesle paylaşır (< 1.5m).",
+		share_phone_number_command_substitutes = "numara_paylaş",
+
 		-- game/plants
 		plants_debug_command = "bitkiler_hata_ayıklama",
 		plants_debug_command_help = "Tüm bitkilerin hatalarını ayıklar.",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		-- game/trackers
 		tracker_command = "izleyici",
 		tracker_command_help = "İzleyicinin görünürlüğünü açıp kapatır.",
+		tracker_command_parameter_break = "arıza",
+		tracker_command_parameter_break_help = "Takip cihazınızı arızalayın ve bununla ilgili bir bildirim gönderin. (Yeniden etkinleştirilemez, 20 dakika geçene kadar)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "izleyiciler_split",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		barbershop = "Berber Dükkânı",
 
 		changing_area = "Giysi Değiştirme Bölümü",
+		barber = "Berber",
 
 		switch_outfit = "Bu kıyafete değiştir.",
 		replace_outfit = "Bu kıyafeti değiştirin.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oksijen mi? Hayır memur, sadece tic tac yiyorum!",
 		pizza_slice = "Pizza Dilimi",
-		pizza_slice_description = "Bir dilim Za senin için.",
+		pizza_slice_description = "Bir dilim Za, ekstra pepperonili (vejetaryen değil).",
 		hot_dog = "Sosisli sandviç",
 		hot_dog_description = "Bu sosisi yerken, sanki sonuncusuymuş gibi yutun.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		api_error = "Arka plandaki API'miz bir hata döndürdü.",
 		api_not_available = "Arka plandaki API'miz mevcut değil.",
 		phone_number_is_available = "Telefon numarası `${phoneNumber}` kullanılabilir durumda.",
-		phone_number_is_not_available = "Telefon numarası `${phoneNumber}` kullanılamaz durumda."
+		phone_number_is_not_available = "Telefon numarası `${phoneNumber}` kullanılamaz durumda.",
+
+		no_phone = "Telefonun yok.",
+		nobody_nearby = "Telefon numaranı paylaşabileceğin kimse yakında değil.",
+		shared_number = "${fullName}, telefon numarasını seninle paylaştı. Onaylamak ve yeni bir kişi eklemek için /yes kullan ya da reddetmek için /no kullan.",
+		shared_number_expired = "Telefon numarası paylaşım isteği süresi doldu.",
+		shared_number_declined = "Telefon numarası paylaşım isteğini reddettin.",
+		failed_to_share = "Telefon numaranı paylaşma başarısız oldu.",
+		number_share_timeout = "Şu anda telefon numaranı paylaştın. Tekrar denemeden önce lütfen biraz bekleyin.",
+		phone_number_shared = "Telefon numaranızı başarıyla ${nearby} civardaki oyuncu(yla) paylaştınız."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "İzleyiciler artık haritada kategorilerine göre saklanacak.",
 		trackers_split = "İzleyiciler artık bireysel göstergeler halinde bölünecek.",
+
+		tracker_broken = "${lastName}'in takip cihazı ${location} yakınında bozulmuştur.",
+		tracker_broken_unit = "${unitId} ${lastName}'in takip cihazı ${location} yakınında bozulmuştur.",
+		tracker_broken_title = "[Dağıtım]",
+		tracker_broken_blip = "Bozuk Takip Cihazı - ${lastName}",
+		tracker_broken_timeout = "Takip cihazınız bozuk. 20 dakika sonra tekrar etkinleştirebilirsiniz.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

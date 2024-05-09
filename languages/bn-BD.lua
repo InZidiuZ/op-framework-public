@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["bn-BD"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		phone_number_available_command_parameter_phone_number_help = "আপনি যাচাই করতে চান তা নির্দিষ্ট ফোন নম্বর। নিশ্চিত হউন যে সেটি XXX-XXXX এর ফরম্যাট অনুসরণ করে।",
 		phone_number_available_command_substitutes = "সংখ্যা_উপলভ্য",
 
+		share_phone_number_command = "ফোন নম্বর শেয়ার",
+		share_phone_number_command_help = "আপনার ফোন নম্বরটি সবার সাথে ভাগ করুন (< 1.5 মিটারের মধ্যে)।",
+		share_phone_number_command_substitutes = "হিসাব নম্বর ভাগ",
+
 		-- game/plants
 		plants_debug_command = "plants_debug",
 		plants_debug_command_help = "সমস্ত উদ্ভিদ ডিবাগ করুন।",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		-- game/trackers
 		tracker_command = "ট্র্যাকার",
 		tracker_command_help = "আপনার ট্র্যাকারের দৃশ্যতার টগল করুন।",
+		tracker_command_parameter_break = "বিরক্ত",
+		tracker_command_parameter_break_help = "আপনার ট্র্যাকার বিচ্ছিন্ন করুন এবং এর সম্পর্কে একটি ডিসপ্যাচ বিজ্ঞপ্তি প্রেরণ করুন। (আবার সক্রিয় করা যাবে না যদি 20 মিনিট পার না হয়ে যায়)।",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "ট্র্যাকারগুলি_বিভাজন",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		barbershop = "বার্বার দোকান",
 
 		changing_area = "বদলার এলাকা",
+		barber = "বার্বার",
 
 		switch_outfit = "এই জামাকাপড়ে পরিবর্তন করুন।",
 		replace_outfit = "এই আউটফিট পরিবর্তন করুন।",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		tic_tac = "টিক ট্যাক",
 		tic_tac_description = "অক্সি? না অফিসার, আমি শুধুমাত্র টিক ট্যাক খাচ্ছি!",
 		pizza_slice = "পিজা স্লাইস",
-		pizza_slice_description = "তোমার জন্য একটি চমৎকার পিঁজা!",
+		pizza_slice_description = "তোমার জন্য একটি ছোট্ট জা স্লাইস, এক্সট্রা পেপেরনি সহ (ভেজিটেরিয়ান নয়)।",
 		hot_dog = "হট ডগ",
 		hot_dog_description = "এই গ্লিজি যখন আপনার শেষ হবে যে পরে খাওয়ার মত খান।",
 		nachos = "নাচোস",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		api_error = "আমাদের ব্যাক-এন্ড API এ একটি ত্রুটি হয়েছে।",
 		api_not_available = "আমাদের ব্যাক-এন্ড API উপলব্ধ নেই।",
 		phone_number_is_available = "ফোন নম্বর ${phoneNumber} টি উপলব্ধ।",
-		phone_number_is_not_available = "ফোন নম্বর ${phoneNumber} টি উপলব্ধ নেই।"
+		phone_number_is_not_available = "ফোন নম্বর ${phoneNumber} টি উপলব্ধ নেই।",
+
+		no_phone = "তোমার ফোন নেই।",
+		nobody_nearby = "কারো তাড়াতাড়ি তোমার নম্বর সাঝাকে নাই।",
+		shared_number = "${fullName} তোমার ফোন নম্বর সেয়ার করলো। /yes টাইপ করে এটি গ্রহণ করুন এবং নতুন যোগাযোগ ব্যক্তিত্ব তৈরি করুন বা /no টাইপ করে প্রত্যাখ্যান করুন।",
+		shared_number_expired = "নম্বর সেয়ার অনুরোধটি মেয়াদ উত্তীর্ণ হয়েছে।",
+		shared_number_declined = "তুমি নম্বর সেয়ার অনুরোধটি প্রত্যাখ্যান করেছ।",
+		failed_to_share = "তোমার ফোন নম্বর সেয়ার করতে ব্যর্থ হয়েছে।",
+		number_share_timeout = "তুমি সম্প্রতি তোমার ফোন নম্বর সাঝাকেছ। দয়া করে আবার চেষ্টা করার আগে কিছুক্ষণ অপেক্ষা করুন।",
+		phone_number_shared = "${nearby} জন পাসের গেমারদের সাথে আপনার ফোন নম্বর ভাগাভাগি করা হয়েছে।"
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "মানচিত্রে এখন ট্র্যাকারগুলি তাদের বিভাগের মধ্যে সংরক্ষিত থাকবে।",
 		trackers_split = "ট্র্যাকারগুলি এখন একক ব্লিপে বিভক্ত করা হবে।",
+
+		tracker_broken = "${location} এ ${lastName} এর ট্র্যাকার ভেঙ্গে গিয়েছে।",
+		tracker_broken_unit = "${location} এ ${unitId} ${lastName} এর ট্র্যাকার ভেঙ্গে গিয়েছে।",
+		tracker_broken_title = "[ডিসপ্যাচ]",
+		tracker_broken_blip = "${lastName}-এর ভেঙ্গে গিয়েছে ট্র্যাকার।",
+		tracker_broken_timeout = "আপনার ট্র্যাকার ভেঙ্গে গিয়েছে। আপনি ২০ মিনিট পর আবার চালু করতে পারবেন।",
 
 		department_sasp = "এসএএসপি",
 		department_bcso = "বিসিএসও",

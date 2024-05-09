@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["id-ID"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 		phone_number_available_command_parameter_phone_number_help = "Nomor telepon yang ingin Anda periksa ketersediaannya. Pastikan mengikuti format XXX-XXXX.",
 		phone_number_available_command_substitutes = "nomor_tersedia",
 
+		share_phone_number_command = "bagikan_nomor_telepon",
+		share_phone_number_command_help = "Berbagi nomor telepon Anda dengan semua orang di sekitar Anda (<1,5m).",
+		share_phone_number_command_substitutes = "bagikan_nomor",
+
 		-- game/plants
 		plants_debug_command = "plants_debug",
 		plants_debug_command_help = "Debug semua tanaman.",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		-- game/trackers
 		tracker_command = "pemantau",
 		tracker_command_help = "Mengaktifkan/Nonaktifkan visibilitas pemantau Anda.",
+		tracker_command_parameter_break = "break",
+		tracker_command_parameter_break_help = "Memutuskan pelacakan Anda dan mengirim pemberitahuan pengiriman tentang hal itu. (Tidak bisa diaktifkan kembali sampai 20 menit telah berlalu)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "pecahkan_pemantau",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		barbershop = "Toko Pangkas Rambut",
 
 		changing_area = "Area Ganti Pakaian",
+		barber = "Tukang Cukur",
 
 		switch_outfit = "Ganti dengan pakaian ini.",
 		replace_outfit = "Gantikan pakaian ini.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? Bukan, petugas, saya hanya makan tic tac!",
 		pizza_slice = "Potongan Pizza",
-		pizza_slice_description = "Sejumput piza untukmu.",
+		pizza_slice_description = "Potongan kecil pizza untuk Anda, dengan pepperoni tambahan (bukan vegan).",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "Makan hot dog ini seakan-akan ini yang terakhir untukmu.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["id-ID"] = {
 		api_error = "API backend kami mengembalikan kesalahan.",
 		api_not_available = "API backend kami tidak tersedia.",
 		phone_number_is_available = "Nomor telepon `${phoneNumber}` tersedia.",
-		phone_number_is_not_available = "Nomor telepon `${phoneNumber}` tidak tersedia."
+		phone_number_is_not_available = "Nomor telepon `${phoneNumber}` tidak tersedia.",
+
+		no_phone = "Kamu tidak memiliki telepon.",
+		nobody_nearby = "Tidak ada orang cukup dekat untuk membagikan nomor teleponmu.",
+		shared_number = "${fullName} membagikan nomor telepon mereka denganmu. Gunakan /yes untuk menerima dan membuat kontak baru atau /no untuk menolak.",
+		shared_number_expired = "Permintaan berbagi nomor telah kedaluwarsa.",
+		shared_number_declined = "Kamu menolak permintaan berbagi nomor.",
+		failed_to_share = "Gagal membagikan nomor teleponmu.",
+		number_share_timeout = "Kamu baru saja membagikan nomor teleponmu. Harap tunggu sebentar sebelum mencoba lagi.",
+		phone_number_shared = "Berhasil membagikan nomor telepon Anda kepada ${nearby} pemain di sekitar."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["id-ID"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Pelacak sekarang akan disimpan dalam kategori mereka pada peta.",
 		trackers_split = "Pelacakan sekarang akan dibagi menjadi blip individu.",
+
+		tracker_broken = "Pelacak milik ${lastName} telah rusak di sekitar ${location}",
+		tracker_broken_unit = "Unit ${unitId} milik ${lastName} telah rusak di sekitar ${location}",
+		tracker_broken_title = "[Dispatch]",
+		tracker_broken_blip = "Pelacak Rusak ${lastName}",
+		tracker_broken_timeout = "Pelacak Anda rusak. Anda dapat mengaktifkannya kembali 20 menit setelahnya.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["meme-dinosaur"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		phone_number_available_command_parameter_phone_number_help = "The roar number you want to check if is available. Make sure it follows the format of XXX-XXXX.",
 		phone_number_available_command_substitutes = "number_available",
 
+		share_phone_number_command = "undefined",
+		share_phone_number_command_help = "undefined",
+		share_phone_number_command_substitutes = "undefined",
+
 		-- game/plants
 		plants_debug_command = "undefined",
 		plants_debug_command_help = "undefined",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		-- game/trackers
 		tracker_command = "tracker",
 		tracker_command_help = "Toggle your tracker's visibility.",
+		tracker_command_parameter_break = "undefined",
+		tracker_command_parameter_break_help = "undefined",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		barbershop = "Barbershop",
 
 		changing_area = "Raaargh Area",
+		barber = "undefined",
 
 		switch_outfit = "Raaargh into this outfit.",
 		replace_outfit = "Rawr! Replace this outfit, please.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Me not carry oxy. Me carry tic tacs!",
 		pizza_slice = "Ptero Slice",
-		pizza_slice_description = "Little slice of meat for munching.",
+		pizza_slice_description = "undefined",
 		hot_dog = "Hot Meat Tube",
 		hot_dog_description = "Devour this bone like it'll be your last.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		api_error = "Our ancient API returned an error.",
 		api_not_available = "Our ancient API is not available.",
 		phone_number_is_available = "The roar number `${phoneNumber}` is available.",
-		phone_number_is_not_available = "The roar number `${phoneNumber}` is not available."
+		phone_number_is_not_available = "The roar number `${phoneNumber}` is not available.",
+
+		no_phone = "undefined",
+		nobody_nearby = "undefined",
+		shared_number = "undefined",
+		shared_number_expired = "undefined",
+		shared_number_declined = "undefined",
+		failed_to_share = "undefined",
+		number_share_timeout = "undefined",
+		phone_number_shared = "Roar-roar shared your phone number with ${nearby} nearby player(s)."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Rrrroar! Trackers will now be filed under their categories in the map!",
 		trackers_split = "Raaaaaawr! Trackers will now appear as separate blips!",
+
+		tracker_broken = "${lastName}'s tracker has been broken near ${location}",
+		tracker_broken_unit = "${unitId} ${lastName}'s tracker has been broken near ${location}",
+		tracker_broken_title = "[Dispatch]",
+		tracker_broken_blip = "Broken Tracker ${lastName}",
+		tracker_broken_timeout = "Roar roar! Your tracker is broken. You can re-enable it 20 minutes after.",
 
 		department_sasp = "SASP", -- SASP means "Sharp-toothed Association of Stomping Predators",
 		department_bcso = "BCSO", -- BCSO is the "Big Carnivorous Squad Organization",

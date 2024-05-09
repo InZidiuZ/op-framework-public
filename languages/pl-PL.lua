@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["pl-PL"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		phone_number_available_command_parameter_phone_number_help = "Numer telefonu, który chcesz sprawdzić, jeśli jest dostępny. Upewnij się, że jest zgodny z formatem XXX-XXXX.",
 		phone_number_available_command_substitutes = "number_available",
 
+		share_phone_number_command = "podziel_numer_telefonu",
+		share_phone_number_command_help = "Udostępnia swój numer telefonu wszystkim wokół Ciebie (< 1,5 m).",
+		share_phone_number_command_substitutes = "podziel_numer",
+
 		-- game/plants
 		plants_debug_command = "plants_debug",
 		plants_debug_command_help = "Debugowanie wszystkich roślin.",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		-- game/trackers
 		tracker_command = "tracker",
 		tracker_command_help = "włącz/wyłącz swój gps.",
+		tracker_command_parameter_break = "przerwa",
+		tracker_command_parameter_break_help = "Zniszcz swój śledzący urządzenie i wyślij powiadomienie o tym. (Nie można ponownie włączyć przez kolejne 20 minut)",
 		tracker_command_substitutes = "gps",
 
 		trackers_split_command = "trackers_split",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		barbershop = "Fryzjer",
 
 		changing_area = "Przebieralnia",
+		barber = "Fryzjer",
 
 		switch_outfit = "Przebierz się w ten strój.",
 		replace_outfit = "Zmień ten strój.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Jedno z najlepszych wspomnień z dzieciństwa.",
 		pizza_slice = "Kawałek pizzy",
-		pizza_slice_description = "A Ty lubisz pizze z ananasem?",
+		pizza_slice_description = "Mały kawałek pizzy dla Ciebie, z dodatkowymi plasterkami pepperoni (nie wegańska).",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "Pożeraj tę kiełbasę jakby była twoją ostatnią.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		api_error = "Nasz back-end API zwrócił błąd.",
 		api_not_available = "Nasz back-end API jest niedostępny.",
 		phone_number_is_available = "Numer telefonu `${phoneNumber}` jest dostępny.",
-		phone_number_is_not_available = "Numer telefonu `${phoneNumber}` jest niedostępny."
+		phone_number_is_not_available = "Numer telefonu `${phoneNumber}` jest niedostępny.",
+
+		no_phone = "Nie masz telefonu.",
+		nobody_nearby = "Nikt nie jest wystarczająco blisko, aby podzielić się z nim swoim numerem.",
+		shared_number = "${fullName} podzielił(a) się z Tobą swoim numerem telefonu. Użyj /yes, aby go zaakceptować i dodać jako nowy kontakt lub /no, aby odrzucić.",
+		shared_number_expired = "Prośba o udostępnienie numeru wygasła.",
+		shared_number_declined = "Odrzuciłeś(aś) prośbę o udostępnienie numeru.",
+		failed_to_share = "Nie udało się udostępnić swojego numeru telefonu.",
+		number_share_timeout = "Właśnie udostępniłeś(aś) swój numer telefonu. Proszę poczekaj chwilę przed ponowną próbą.",
+		phone_number_shared = "Pomyślnie udostępniono swój numer telefonu ${nearby} pobliskim graczom."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName}",
 		trackers_in_category = "GPSy będą teraz zgrupowane",
 		trackers_split = "GPSy będą teraz rodzielone indywidualnie.",
+
+		tracker_broken = "Tracker ${lastName} został uszkodzony w pobliżu ${location}",
+		tracker_broken_unit = "Tracker ${lastName} użytkownika ${unitId} został uszkodzony w pobliżu ${location}",
+		tracker_broken_title = "[Dyspozytor]",
+		tracker_broken_blip = "Uszkodzony Tracker ${lastName}",
+		tracker_broken_timeout = "Twój tracker jest uszkodzony. Możesz ponownie go aktywować po 20 minutach.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

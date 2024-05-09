@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["meme-klingon"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		phone_number_available_command_parameter_phone_number_help = "tlhIngan Hol cha' cha'DIch vaj HuchDI' vay' DIlaw'. yIqvIp 'ej nIvbogh XXX-XXXX format.",
 		phone_number_available_command_substitutes = "cha'DIch_vay'",
 
+		share_phone_number_command = "Quch_telefoon_nom",
+		share_phone_number_command_help = "choQmoH Hoch ghaHlaH je vagh_jaj (< 1.5m).",
+		share_phone_number_command_substitutes = "Quch_nom",
+
 		-- game/plants
 		plants_debug_command = "undefined",
 		plants_debug_command_help = "undefined",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		-- game/trackers
 		tracker_command = "joQwI'",
 		tracker_command_help = "joQwI' reDchu'.",
+		tracker_command_parameter_break = "QeH",
+		tracker_command_parameter_break_help = "QeH 'ej DIvI' law'laH Dispatch notification about (20min chovmoH 'ej DaH je re-enabled).",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "joQwI' chen",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		barbershop = "BetleH 'alwI'",
 
 		changing_area = "be' joy'",
+		barber = "Qoch",
 
 		switch_outfit = "chu' vIneHbe'el Hoch.",
 		replace_outfit = "qoVDI' Hem Hoch.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? qoq pav 'e' Dajatlh!",
 		pizza_slice = "Pizza Slice",
-		pizza_slice_description = "pa’ Hem jaghpu’ je leghlu’, cha’logh Sor'Ha’.",
+		pizza_slice_description = "Za tugh vetlh pepperoni (not vegan) lay'.",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "glizzy chaHlaH like 'e' yInID.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		api_error = "qumbe'vaD QIb nIvbogh 'oH.",
 		api_not_available = "qa'meH vaD QIbpu' Hoch vIlegh.",
 		phone_number_is_available = "qaStaHvIS yIngeS '${phoneNumber}' vIghojchoH.",
-		phone_number_is_not_available = "qaStaHvIS yIngeS '${phoneNumber}' vIghaj."
+		phone_number_is_not_available = "qaStaHvIS yIngeS '${phoneNumber}' vIghaj.",
+
+		no_phone = "Qoy'! jIyIta'pu",
+		nobody_nearby = "pagh tIq 'ej maH lo'",
+		shared_number = "${fullName} 'u' net Sov jIHtaHvISmo' tu'lu'. /yes ngevwI' SoHvaD vay' vIlo' 'ej wa'DIch /no jojdI' vIpoQ.",
+		shared_number_expired = "net Sov jIHtaHvISmo' tu'lu'.",
+		shared_number_declined = "net Sov jIHtaHvISmo'.",
+		failed_to_share = "vI'ay' SoVDaq",
+		number_share_timeout = "tugh net Sov jIHtaHvIS. qaStaHvIS qet mobchu'.",
+		phone_number_shared = "Hut'Ha' ghu' bIngDaq HutlhmeH QubDaq ${nearby} player(s)."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})", -- tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Trackers will now be stored inside of their categories on the map.", -- trackers_in_category = "", //Could not find a proper Klingon translation for "Trackers will now be stored inside of their categories on the map.",
 		trackers_split = "Trackers will now be split into individual blips.", -- trackers_split = "", //Could not find a proper Klingon translation for "Trackers will now be split into individual blips.",
+
+		tracker_broken = "${lastName} tracker vIlo'Daq ${location} ghu'vetlh.",
+		tracker_broken_unit = "${unitId} ${lastName} tracker vIlo'Daq ${location} ghu'vetlh.",
+		tracker_broken_title = "[Dispatch]",
+		tracker_broken_blip = "'ejnISDI' ${lastName}",
+		tracker_broken_timeout = "bI'reS vIbloS. re-enable 20mochlaH youtubeq.",
 
 		department_sasp = "SASP", -- department_sasp = "SASP",
 		department_bcso = "BCSO", -- department_bcso = "BCSO",

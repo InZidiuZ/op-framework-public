@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["et-EE"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		phone_number_available_command_parameter_phone_number_help = "Telefoninumber, mida soovite kontrollida, kas see on saadaval. Veenduge, et see järgib formaati XXX-XXXX.",
 		phone_number_available_command_substitutes = "number_available",
 
+		share_phone_number_command = "jaga_telefoninumbrit",
+		share_phone_number_command_help = "Jagab sinu telefoninumbrit kõigi enda ümber (< 1.5m).",
+		share_phone_number_command_substitutes = "jaga_number",
+
 		-- game/plants
 		plants_debug_command = "plants_debug",
 		plants_debug_command_help = "Silu kõiki taimi.",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		-- game/trackers
 		tracker_command = "jälgija",
 		tracker_command_help = "Lülitab sisse/välja jälgija nähtavuse.",
+		tracker_command_parameter_break = "katkesta",
+		tracker_command_parameter_break_help = "Katkesta oma jälitaja ja saada selle kohta teade. (Ei saa uuesti sisse lülitada enne kui on möödunud 20 minutit)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "jälgijate_eraldus",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		barbershop = "Juuksurisalong",
 
 		changing_area = "Riietusruum",
+		barber = "Juuksemeister",
 
 		switch_outfit = "Vahetada rõivastust.",
 		replace_outfit = "Asenda see rõivastus.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? Pole midagi, ma söön lihtsalt tic tace!",
 		pizza_slice = "Pizza viil",
-		pizza_slice_description = "Veidi pitsat sinu jaoks.",
+		pizza_slice_description = "Üks viil pitsa Nagu on traditionaalne, lisaks ekstra pepperonit (mitte taimetoitlane).",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "Naudi seda glizzit nagu see oleks su viimane.",
 		nachos = "Nachod",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["et-EE"] = {
 		api_error = "Meie tagapoolne API tagastas veateate.",
 		api_not_available = "Meie tagapoolne API pole saadaval.",
 		phone_number_is_available = "Telefoninumber ${phoneNumber} on saadaval.",
-		phone_number_is_not_available = "Telefoninumber ${phoneNumber} pole saadaval."
+		phone_number_is_not_available = "Telefoninumber ${phoneNumber} pole saadaval.",
+
+		no_phone = "Sul pole telefoni.",
+		nobody_nearby = "Kedagi piisavalt lähedal, et oma numbrit jagada, ei leidu.",
+		shared_number = "${fullName} jagas sinuga oma telefoninumbrit. Kasuta /yes selle vastuvõtmiseks ja uue kontakti loomiseks või /no tagasilükkamiseks.",
+		shared_number_expired = "Telefoninumbri jagamise päring on aegunud.",
+		shared_number_declined = "Sa keeldusid telefoninumbri jagamise päringust.",
+		failed_to_share = "Telefoninumbri jagamine ebaõnnestus.",
+		number_share_timeout = "Sa just jagasid oma telefoni numbrit. Palun oota hetk enne uuesti proovimist.",
+		phone_number_shared = "Teie telefoninumber on edukalt jagatud ${nearby} lähedalasuvale mängijale."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["et-EE"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Jälitajad salvestatakse nüüd kategooriate kaupa kaardil.",
 		trackers_split = "Jälitajad kuvatakse nüüd eraldi blipidena.",
+
+		tracker_broken = "${lastName} jälitaja on katki lähedal asuvast asukohast ${location}",
+		tracker_broken_unit = "${unitId} ${lastName} jälitaja on katki lähedal asuvast asukohast ${location}",
+		tracker_broken_title = "[Hädaabi]",
+		tracker_broken_blip = "Katkine jälitaja ${lastName}",
+		tracker_broken_timeout = "Teie jälitaja on katki. Saate selle uuesti sisse lülitada 20 minuti pärast.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

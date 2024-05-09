@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["bg-BG"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		phone_number_available_command_parameter_phone_number_help = "Телефонният номер, който бихте искали да проверите дали е наличен. Уверете се, че следва формата на XXX-XXXX.",
 		phone_number_available_command_substitutes = "достъпен_номер",
 
+		share_phone_number_command = "сподели_телефонен_номер",
+		share_phone_number_command_help = "Споделя твоят телефонен номер с всички в близост (< 1.5м).",
+		share_phone_number_command_substitutes = "сподели_номер",
+
 		-- game/plants
 		plants_debug_command = "plants_debug",
 		plants_debug_command_help = "Отстранете грешки при всички растения.",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		-- game/trackers
 		tracker_command = "тракер",
 		tracker_command_help = "Превключва видимостта на тракера.",
+		tracker_command_parameter_break = "унищожи",
+		tracker_command_parameter_break_help = "Унищожи твоят проследяващ уред и изпрати съобщение за известие за това. (Не може да бъде включен отново до изтичането на 20 минути)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "тракери_раздел",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		barbershop = "Фризьорски салон",
 
 		changing_area = "Зона за смяна",
+		barber = "Фризьор",
 
 		switch_outfit = "Облечете този тоалет.",
 		replace_outfit = "Заменете този тоалет.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		tic_tac = "Тик Так",
 		tic_tac_description = "Окси? Не, полицай, просто ям тик таци!",
 		pizza_slice = "Филия пица",
-		pizza_slice_description = "Малък фрагмент от За за теб.",
+		pizza_slice_description = "Малко парче пица за теб, с допълнителни пеперони (не е веган).",
 		hot_dog = "Хот-дог",
 		hot_dog_description = "Прегърни този глизи, като че ли е последният ти.",
 		nachos = "Начос",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		api_error = "Нашият API се завърна с грешка.",
 		api_not_available = "Нашият API не е достъпен.",
 		phone_number_is_available = "Телефонният номер `${phoneNumber}` е наличен.",
-		phone_number_is_not_available = "Телефонният номер `${phoneNumber}` не е наличен."
+		phone_number_is_not_available = "Телефонният номер `${phoneNumber}` не е наличен.",
+
+		no_phone = "Нямате телефон.",
+		nobody_nearby = "Няма никой достатъчно близо, за да споделите вашия номер.",
+		shared_number = "${fullName} сподели своя телефонен номер с вас. Използвайте /yes, за да го приемете и създадете нов контакт или /no, за да отхвърлите.",
+		shared_number_expired = "Заявката за споделяне на номера е изтекла.",
+		shared_number_declined = "Отхвърлихте заявката за споделяне на номера.",
+		failed_to_share = "Неуспешно споделяне на вашия телефонен номер.",
+		number_share_timeout = "Току-що споделихте вашия телефонен номер. Моля, изчакайте малко преди да опитате отново.",
+		phone_number_shared = "Успешно споделихте вашия телефонен номер с ${nearby} близки играчи."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Трекърите ще бъдат сортирани по категории на картата.",
 		trackers_split = "Тракерите вече ще бъдат разделени на отделни маркери.",
+
+		tracker_broken = "Тракерът на ${lastName} е разрушен близо до ${location}",
+		tracker_broken_unit = "Тракерът на ${unitId} ${lastName} е разрушен близо до ${location}",
+		tracker_broken_title = "[Изпращане]",
+		tracker_broken_blip = "Разрушен тракер ${lastName}",
+		tracker_broken_timeout = "Вашият тракер е разрушен. Можете да го активирате отново след 20 минути.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["meme-yoda"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		phone_number_available_command_parameter_phone_number_help = "The phone number, you would like to check if available, hmm. Follow the format of XXX-XXXX, you must.",
 		phone_number_available_command_substitutes = "available_number, number_available",
 
+		share_phone_number_command = "share_phone_number",
+		share_phone_number_command_help = "Shares your phone number with everyone around, it does (< 1.5m).",
+		share_phone_number_command_substitutes = "share_number",
+
 		-- game/plants
 		plants_debug_command = "undefined",
 		plants_debug_command_help = "undefined",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		-- game/trackers
 		tracker_command = "tracker",
 		tracker_command_help = "Visibility of tracker, toggle you will.",
+		tracker_command_parameter_break = "break",
+		tracker_command_parameter_break_help = "Break your tracker and send a dispatch notification, about it you will. (Cant be re-enabled until 20min passed have)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		barbershop = "Barbershop, it is.",
 
 		changing_area = "Changing Area, you have.",
+		barber = "Barber",
 
 		switch_outfit = "Into this outfit, change you must.",
 		replace_outfit = "Outfit replace, you must.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? No officer, I'm just eating tic tacs, I am!",
 		pizza_slice = "Pizza Slice",
-		pizza_slice_description = "A lil slice of the Za for ya, hmm.",
+		pizza_slice_description = "A Lil slice of the Za for ya, with extra pepperoni (not vegan).",
 		hot_dog = "Hot Dog, hmmm.",
 		hot_dog_description = "Gobble up this glizzy like it'll be your last.",
 		nachos = "Nachos, hmmm.",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		api_error = "Error, the back-end API has returned.",
 		api_not_available = "API, the back-end is not available.",
 		phone_number_is_available = "The phone number, ${phoneNumber} is available, it is.",
-		phone_number_is_not_available = "The phone number, ${phoneNumber} is, unfortunately, not available."
+		phone_number_is_not_available = "The phone number, ${phoneNumber} is, unfortunately, not available.",
+
+		no_phone = "Phone, you don't have.",
+		nobody_nearby = "Close enough, nobody to share your number with is.",
+		shared_number = "${fullName} shared their phone number with you, they have. /yes, use it to accept and create a new contact, or /no, use it to decline.",
+		shared_number_expired = "The number share request, it has expired.",
+		shared_number_declined = "The number share request, you declined.",
+		failed_to_share = "Your phone number, failed to share.",
+		number_share_timeout = "You just shared your phone number, you have. Try again, wait a moment, you must.",
+		phone_number_shared = "Successfully shared your phone number with ${nearby} nearby player(s)."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		tracker_character_unit_id = "${unitId}: ${lastName}, ${firstName} (${departmentLabel}) is tracked, hmmm",
 		trackers_in_category = "Trackers inside of their categories on the map, stored will be, hmmm.",
 		trackers_split = "Individual blips, trackers now are.",
+
+		tracker_broken = "${lastName}'s tracker near ${location} broken, it has been.",
+		tracker_broken_unit = "${unitId} ${lastName}'s tracker near ${location} broken, it has been.",
+		tracker_broken_title = "[Dispatch]",
+		tracker_broken_blip = "Broken Tracker, ${lastName}",
+		tracker_broken_timeout = "Your tracker is broken. After 20 minutes, re-enable it you can.",
 
 		department_sasp = "SASP, hmmm",
 		department_bcso = "BCSO, hmmm",

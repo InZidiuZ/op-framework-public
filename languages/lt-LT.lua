@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["lt-LT"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		phone_number_available_command_parameter_phone_number_help = "Telefono numeris, kurį norite patikrinti, ar yra prieinamas. Įsitikinkite, kad jis atitinka formato XXX-XXXX.",
 		phone_number_available_command_substitutes = "numeris_pasiekiamas",
 
+		share_phone_number_command = "dalintis_telefono_numeriu",
+		share_phone_number_command_help = "Dalinais savo telefono numeriu su visais, esančiais šalia (< 1.5 m).",
+		share_phone_number_command_substitutes = "dalintis_numeriu",
+
 		-- game/plants
 		plants_debug_command = "Failed to automatically generate translation.",
 		plants_debug_command_help = "Failed to automatically generate translation.",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		-- game/trackers
 		tracker_command = "sekančio_rodinys",
 		tracker_command_help = "Perjungia sekančio rodinio matomumą.",
+		tracker_command_parameter_break = "nuleidimas",
+		tracker_command_parameter_break_help = "Nuleidžia jūsų sekiklį ir išsiunčia pranešimą apie tai. (Negalima įjungti iki pasibaigs 20 minučių)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "sekančių_padalijimas",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		barbershop = "Kirpykla",
 
 		changing_area = "Perėjimo zona",
+		barber = "Kirpėjas",
 
 		switch_outfit = "Pereiti į šią aprangą.",
 		replace_outfit = "Keisti šią aprangą.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oksas? Ne, pareigūnai, tiesiog kramtoju tic-tac'us!",
 		pizza_slice = "Picos skiltelė",
-		pizza_slice_description = "Truputis picos skonio tau.",
+		pizza_slice_description = "Nedidelis pjaustytas pjausčiukas tik jums, su ekstra pepperoni (ne veganams).",
 		hot_dog = "Karštas šuo",
 		hot_dog_description = "Smeigtas šuosas, kandantis tarsi būtų paskutinis.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		api_error = "Mūsų sistemos API grąžino klaidą.",
 		api_not_available = "Mūsų sistemos API nepasiekiamas.",
 		phone_number_is_available = "Telefono numeris `${phoneNumber}` yra laisvas.",
-		phone_number_is_not_available = "Telefono numeris `${phoneNumber}` yra užimtas."
+		phone_number_is_not_available = "Telefono numeris `${phoneNumber}` yra užimtas.",
+
+		no_phone = "Neturite telefono.",
+		nobody_nearby = "Nieko pakankamai arti, su kuo galėtum pasidalinti savo numeriu.",
+		shared_number = "${fullName} pasidalino savo telefono numeriu su jumis. Naudokite /taip, norėdami jį priimti ir sukurti naują kontaktą arba /ne, norėdami atsisakyti.",
+		shared_number_expired = "Telefono numerio dalinimosi užklausa yra pasibaigusi.",
+		shared_number_declined = "Atsisakėte telefono numerio dalinimosi užklausos.",
+		failed_to_share = "Nepavyko pasidalinti savo telefono numeriu.",
+		number_share_timeout = "Jūs ką tik pasidalinote savo telefono numeriu. Prašome palaukti prieš bandant dar kartą.",
+		phone_number_shared = "Jūsų telefono numeris sėkmingai bendras su ${nearby} artimais žaidėjais."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Sekimo prietaisai dabar bus saugomi pagal kategorijas žemėlapyje.",
 		trackers_split = "Stebėjimo prietaisai dabar bus skirstomi į atskiras žymes.",
+
+		tracker_broken = "Žaidėjo ${lastName} sekimo įrenginys sugedęs, netoli vietos ${location}",
+		tracker_broken_unit = "${unitId} žaidėjo ${lastName} sekimo įrenginys sugedęs, netoli vietos ${location}",
+		tracker_broken_title = "[Persiuntimas]",
+		tracker_broken_blip = "Sugedęs sekimo įrenginys ${lastName}",
+		tracker_broken_timeout = "Jūsų sekimo įrenginys sugedes. Galite jį įjungti iš naujo po 20 minučių.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

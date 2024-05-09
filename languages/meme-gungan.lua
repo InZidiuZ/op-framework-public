@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["meme-gungan"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		phone_number_available_command_parameter_phone_number_help = "Yousa phone number yousa would lika check if isa available. Makesa sure it follows the format of XXX-XXXX.",
 		phone_number_available_command_substitutes = "number_available",
 
+		share_phone_number_command = "blaba_phone_number",
+		share_phone_number_command_help = "Blabas your phone number with everyone tinka yousa around (< 1.5m).",
+		share_phone_number_command_substitutes = "blaba_number",
+
 		-- game/plants
 		plants_debug_command = "undefined",
 		plants_debug_command_help = "undefined",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		-- game/trackers
 		tracker_command = "tracker",
 		tracker_command_help = "Togga your tracker's visibility.",
+		tracker_command_parameter_break = "break",
+		tracker_command_parameter_break_help = "Break your tracker and send a dispatch notification about it. (Can't be re-enabled until 20min have passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		barbershop = "Barber Shop",
 
 		changing_area = "Changin' Area",
+		barber = "Barber",
 
 		switch_outfit = "Change into disa outfit.",
 		replace_outfit = "Kudala lammese tabeta anima.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? No officer, Immen just eating tic tacs!",
 		pizza_slice = "Pizza Slice",
-		pizza_slice_description = "Yoo-sa want a tiny slice of za.",
+		pizza_slice_description = "A lil slice of da Za for ya, with extra pepperoni (not vegan).",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "Gobble up this gobbler like it's your last.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		api_error = "Our back-end API mesa no understandin.",
 		api_not_available = "Mesa back-end API no available.",
 		phone_number_is_available = "Da phone number `${phoneNumber}` is available.",
-		phone_number_is_not_available = "Da phone number `${phoneNumber}` is not available."
+		phone_number_is_not_available = "Da phone number `${phoneNumber}` is not available.",
+
+		no_phone = "Yousa don't have a phone.",
+		nobody_nearby = "Nobody mesa near enough to share yousa number with.",
+		shared_number = "${fullName} shared their phone number with yousa. Use /yes to accept it and create a new contact or /no to decline.",
+		shared_number_expired = "The number share request has expired.",
+		shared_number_declined = "Yousa declined the number share request.",
+		failed_to_share = "Failed to share yousa phone number.",
+		number_share_timeout = "Yousa just shared yousa phone number. Please wait a moment before trying again.",
+		phone_number_shared = "Meesa successfully shared your phone number with ${nearby} nearby player(s)."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		tracker_character_unit_id = "${unitId}: ${lastName} ${firstName} (${departmentLabel})",
 		trackers_in_category = "Trackers will now be stored inside of their categories on the map.",
 		trackers_split = "Trackers will now be split into individual blips.",
+
+		tracker_broken = "${lastName}'s tracker has been broken near ${location}",
+		tracker_broken_unit = "${unitId} ${lastName}'s tracker has been broken near ${location}",
+		tracker_broken_title = "[Dispatch]",
+		tracker_broken_blip = "Broken Tracker ${lastName}",
+		tracker_broken_timeout = "Your tracker is broken. You can re-enable it 20 minutes after.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

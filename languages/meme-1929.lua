@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["meme-1929"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		phone_number_available_command_parameter_phone_number_help = "The telephone number you would like to check if it is available. Ensure it follows the format of XXX-XXXX.",
 		phone_number_available_command_substitutes = "number_available",
 
+		share_phone_number_command = "share_telegraph_number",
+		share_phone_number_command_help = "Shares your telegraph number with everyone around you (< 1.5m).",
+		share_phone_number_command_substitutes = "share_number",
+
 		-- game/plants
 		plants_debug_command = "undefined",
 		plants_debug_command_help = "undefined",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		-- game/trackers
 		tracker_command = "tracker",
 		tracker_command_help = "Toggle thy tracker's visibility.",
+		tracker_command_parameter_break = "hinder",
+		tracker_command_parameter_break_help = "Hinder your tracker and send a dispatch notification about it. (Can't be re-enabled until 20 minutes have passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		barbershop = "Barbershop",
 
 		changing_area = "Changing Area",
+		barber = "Hairdresser",
 
 		switch_outfit = "Change into this outfit.",
 		replace_outfit = "Replace dis outfit.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? No officer, I'm just consuming tic tacs!",
 		pizza_slice = "Pizza Slice",
-		pizza_slice_description = "A small piece of pizza for you.",
+		pizza_slice_description = "A small slice of pizza for you, with extra pepperoni (not suitable for vegans).",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "Gobble up this glizzy like it'll be your last.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		api_error = "Our back-end API hath returned an error.",
 		api_not_available = "Our back-end API is not ready.",
 		phone_number_is_available = "The telephonic numeral `${phoneNumber}` is at hand.",
-		phone_number_is_not_available = "The telephonic numeral `${phoneNumber}` is not at hand."
+		phone_number_is_not_available = "The telephonic numeral `${phoneNumber}` is not at hand.",
+
+		no_phone = "You ain't got no blower.",
+		nobody_nearby = "No one's near 'nough to give your digits to.",
+		shared_number = "${fullName} done gave their phone digits to ya. Type /yes to take 'em and add 'em as a new contact or /no to pass.",
+		shared_number_expired = "The request to share numbers done expired.",
+		shared_number_declined = "You said no to sharin' digits.",
+		failed_to_share = "Couldn't let folks know your number.",
+		number_share_timeout = "Just shared your number. Give it a moment 'fore tryin' again.",
+		phone_number_shared = "Successfully shared thy telephone number with ${nearby} nearby player(s)."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		tracker_character_unit_id = "${unitId}: ${lastName}, ${firstName} (${departmentLabel})",
 		trackers_in_category = "Trackers will now be stored inside of their categories on the map.",
 		trackers_split = "Trackers will now be split into individual blips.",
+
+		tracker_broken = "The tracker of ${lastName} hath been broken near ${location}",
+		tracker_broken_unit = "The tracker of ${unitId} ${lastName} hath been broken near ${location}",
+		tracker_broken_title = "[Dispatch]",
+		tracker_broken_blip = "Broken Tracker of ${lastName}",
+		tracker_broken_timeout = "Thy tracker is broken. Thou can re-enable it 20 minutes after.",
 
 		department_sasp = "State Police",
 		department_bcso = "Sheriff's Department",

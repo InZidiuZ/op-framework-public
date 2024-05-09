@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["meme-habibi"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		phone_number_available_command_parameter_phone_number_help = "الرقم الذي ترغب في التحقق ما إذا كان متاحًا. تأكد من اتباع التنسيق XXX-XXXX.",
 		phone_number_available_command_substitutes = "number_available",
 
+		share_phone_number_command = "ya all habibis hit me up",
+		share_phone_number_command_help = "Spreadin' some hush-hush digits to all nearby peeps (< 1.5m).",
+		share_phone_number_command_substitutes = "ya all hit me up",
+
 		-- game/plants
 		plants_debug_command = "undefined",
 		plants_debug_command_help = "undefined",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		-- game/trackers
 		tracker_command = "tracker",
 		tracker_command_help = "Toggle visibility of your tracker.",
+		tracker_command_parameter_break = "halt",
+		tracker_command_parameter_break_help = "Pause your tracker and shoot out a signal. (Will restart after 20min)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		barbershop = "Barbershop",
 
 		changing_area = "Changing Area",
+		barber = "Salon magic",
 
 		switch_outfit = "Change into this outfit.",
 		replace_outfit = "Replace this outfit.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		tic_tac = "تيك تاك",
 		tic_tac_description = "أوكسي؟ لا ضابط، أنا فقط أكل تيك تاك!",
 		pizza_slice = "شريحة بيتزا",
-		pizza_slice_description = "A small piece of pizza for you.",
+		pizza_slice_description = "A small slice of good stuff topped with extra pepperoni (not for the veggie lovers).",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "اجعل هذا الفرنكفورت يختفي في فمك كما لو كان آخر مرة لك.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		api_error = "Oops Habibi, our back-end API returned an error.",
 		api_not_available = "I'm sorry Habibi, our back-end API is currently not available.",
 		phone_number_is_available = "Great news Habibi, the phone number `${phoneNumber}` is available.",
-		phone_number_is_not_available = "I'm sorry Habibi, the phone number `${phoneNumber}` is not available."
+		phone_number_is_not_available = "I'm sorry Habibi, the phone number `${phoneNumber}` is not available.",
+
+		no_phone = "Ma3aksh telephone.",
+		nobody_nearby = "Mafeesh wahed mwaafeg 3alaak 3ashan tessher m3ah.",
+		shared_number = "${fullName} 3amalak share lel raqm dyalo. Estemal /yes 3ashan toqbelo w tosheel contact gedid aw /no 3ashan torad.",
+		shared_number_expired = "El request el share lel raqm 7assa.",
+		shared_number_declined = "Radit 3ala el share request lel raqm.",
+		failed_to_share = "Msh 2ader tesher telephonek.",
+		number_share_timeout = "Enta shareet telephonek bara. 3ayez targel shwya zay ma tshof.",
+		phone_number_shared = "I successfully shared your phone number with ${nearby} nearby player(s)."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Trackers will now be stored inside of their categories on the map.",
 		trackers_split = "Trackers will now be split into individual blips.",
+
+		tracker_broken = "The tracker of ${lastName} has malfunctioned near ${location}",
+		tracker_broken_unit = "${unitId} The tracker of ${lastName} has malfunctioned near ${location}",
+		tracker_broken_title = "[Dispatch]",
+		tracker_broken_blip = "Malfunctioned Tracker: ${lastName}",
+		tracker_broken_timeout = "Your tracker is malfunctioning. You can re-enable it after 20 minutes.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

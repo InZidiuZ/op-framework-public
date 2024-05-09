@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["meme-uwu"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		phone_number_available_command_parameter_phone_number_help = "The phone numbewr you would like to check if is availabwe. Make sure it follows the fowmat of XXX-XXXX.",
 		phone_number_available_command_substitutes = "numbewr_availabwe",
 
+		share_phone_number_command = "shawe_phone_numbew",
+		share_phone_number_command_help = "Shares youw phone numbew with evewyonye awound you (< 1.5m).",
+		share_phone_number_command_substitutes = "shawe_numbew",
+
 		-- game/plants
 		plants_debug_command = "undefined",
 		plants_debug_command_help = "undefined",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		-- game/trackers
 		tracker_command = "twacker",
 		tracker_command_help = "Togwwe your twacker's visibility.",
+		tracker_command_parameter_break = "bweak",
+		tracker_command_parameter_break_help = "Bweak youw twackew and send a dispawch nowtification about it. (Cant be we-enabwed until 20min have passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "twackers_split",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		barbershop = "Bawbershop",
 
 		changing_area = "Changing Awea",
+		barber = "Bawbew",
 
 		switch_outfit = "Change into this outfit.",
 		replace_outfit = "UwU,  wepwace dis outfit.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? No officew, I'm jus' eatin' tic tacs, nya~!",
 		pizza_slice = "Pizza Swice",
-		pizza_slice_description = "A little slice of da za for ya~",
+		pizza_slice_description = "A Wiw swice of the Za fow ya, with extwa peppewoni (nyot vegan).",
 		hot_dog = "Hawt Dawg",
 		hot_dog_description = "Gobbwe up this gwizzy wike it'ww be youw wast.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		api_error = "Our back-end API returned an error. UwU",
 		api_not_available = "Our back-end API is not available. OwO",
 		phone_number_is_available = "The phone numbwer `${phoneNumber}` is availabwe. UwU",
-		phone_number_is_not_available = "The phwone numbwer `${phoneNumber}` is not availabwe. OwO"
+		phone_number_is_not_available = "The phwone numbwer `${phoneNumber}` is not availabwe. OwO",
+
+		no_phone = "UwU don't have a phwone.",
+		nobody_nearby = "Nyobody cwose enyough to shawe youw nyumber with.",
+		shared_number = "${fullName} shawed theiw phwone nyumber with you. Use /yes to accept it and cweate a nyew contact ow /no to decwine.",
+		shared_number_expired = "The nyumbew shawe wequest has expiwed.",
+		shared_number_declined = "You decwined the nyumbew shawe wequest.",
+		failed_to_share = "Faiwed to shawe youw phwone nyumber.",
+		number_share_timeout = "You just shawed youw phwone nyumber. Pwease wait a moment befowe twying again.",
+		phone_number_shared = "Successfurry shawed youw phone numbew with ${neawby} neawby pwayer(s)."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel}) -nya~",
 		trackers_in_category = "Twackers wiww now be stored inside of theiw categowies on the mawp -owo",
 		trackers_split = "Twackers wiww now be split into individuaw bwips -owo",
+
+		tracker_broken = "${wastName}'s twackew has been bwoken neaw ${wocation}",
+		tracker_broken_unit = "${unitId} ${wastName}'s twackew has been bwoken neaw ${wocation}",
+		tracker_broken_title = "[Dispatch]",
+		tracker_broken_blip = "Bwoken Twackew ${wastName}",
+		tracker_broken_timeout = "Youw twackew is bwoken. You can we-enabwe it 20 minutes aftew.",
 
 		department_sasp = "SASP -nya~",
 		department_bcso = "BCSO -nya~",

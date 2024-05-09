@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["meme-rude"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		phone_number_available_command_parameter_phone_number_help = "The f****n' phone number you wanna check if that s**t is available. Make sure it follows the format of XXX-XXXX, a**hole.",
 		phone_number_available_command_substitutes = "number_available, ya lazy motherf****r",
 
+		share_phone_number_command = "share_phone_number",
+		share_phone_number_command_help = "Shares your f*cking phone number with everyone around you (< 1.5m).",
+		share_phone_number_command_substitutes = "share_number",
+
 		-- game/plants
 		plants_debug_command = "undefined",
 		plants_debug_command_help = "undefined",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		-- game/trackers
 		tracker_command = "tracker",
 		tracker_command_help = "Toggle your fucking tracker's goddamn visibility.",
+		tracker_command_parameter_break = "break",
+		tracker_command_parameter_break_help = "Break your f*cking tracker and send a dispatch notification about it. (Can't be re-enabled until 20min have f*cking passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		barbershop = "Barbershop",
 
 		changing_area = "Changing Area",
+		barber = "Barber",
 
 		switch_outfit = "Change into this badass outfit or don't, I don't give a shit.",
 		replace_outfit = "Replace this fucking outfit.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "The perfect excuse for when the cops ask if you have drugs on you. Just say no and offer them a tic tac!",
 		pizza_slice = "Pizza Slice",
-		pizza_slice_description = "A fucking slice of 'za for ya.",
+		pizza_slice_description = "A Lil slice of the Za for ya, with extra pepperoni (not f*cking vegan).",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "Fucking gobble up this glizzy like it'll be your fucking last.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		api_error = "What the fuck did you do? Our back-end API is bitching about an error.",
 		api_not_available = "Our back-end API is being a lazy fuck and isn't available right now.",
 		phone_number_is_available = "Well, hot damn! The phone number `${phoneNumber}` is up for grabs.",
-		phone_number_is_not_available = "Sorry, dickwad. The phone number `${phoneNumber}` has already been taken."
+		phone_number_is_not_available = "Sorry, dickwad. The phone number `${phoneNumber}` has already been taken.",
+
+		no_phone = "You fucking don't have a damn phone, idiot.",
+		nobody_nearby = "There ain't nobody damn close enough to share your fucking number with.",
+		shared_number = "${fullName} fucking shared their goddamn phone number with your sorry ass. Use /yes to accept that shit and create a new damn contact or /no to reject it like a motherfucker.",
+		shared_number_expired = "The number share request just freakin' expired, so screw it.",
+		shared_number_declined = "You rejected the damn number share request, asshole.",
+		failed_to_share = "Failed miserably to share your worthless phone number, what a dumbass.",
+		number_share_timeout = "You just shared your effin' phone number, so hold your horses before trying that shit again.",
+		phone_number_shared = "Successfully shared your bloody phone number with ${nearby} bloody nearby player(s)."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		tracker_character_unit_id = "Listen up, asswipe! It's ${unitId}: ${firstName} ${lastName} from the ${departmentLabel} department.",
 		trackers_in_category = "We ain't disorganized anymore, motherfucker! Trackers are sorted by categories on the map now.",
 		trackers_split = "I ain't gonna spoonfeed you dumbfuckers anymore! Each tracker is now its own damn blip.",
+
+		tracker_broken = "Some tosser named ${lastName} had their shagging tracker broken near ${location}",
+		tracker_broken_unit = "Unit ${unitId} dropped the fucking hammer on ${lastName}'s tracker near ${location}",
+		tracker_broken_title = "[Dispatch]",
+		tracker_broken_blip = "Buggered Tracker for ${lastName}",
+		tracker_broken_timeout = "Oi, your tracker is all buggered up. Wait 20 minutes before you can use it again.",
 
 		department_sasp = "SASP? Oh, yeah, that's the San Andreas State Police. Got it?",
 		department_bcso = "BCSO? You don't know what that is? It's the Blaine County Sheriff's Office, you numbskull.",

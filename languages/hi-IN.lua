@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["hi-IN"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		phone_number_available_command_parameter_phone_number_help = "फोन नंबर जिसकी उपलब्धता आप जांचना चाहते हैं। सुनिश्चित करें कि यह XXX-XXXX के प्रारूप का पालन करता है।",
 		phone_number_available_command_substitutes = "फोन_नंबर_उपलब्ध",
 
+		share_phone_number_command = "फ़ोन नंबर साझा करें",
+		share_phone_number_command_help = "आपका फ़ोन नंबर सभी के साथ साझा करता है जो आपके आस-पास हैं (< 1.5m)।",
+		share_phone_number_command_substitutes = "नंबर साझा करें",
+
 		-- game/plants
 		plants_debug_command = "plants_debug",
 		plants_debug_command_help = "सभी पौधों की डीबगिंग करें।",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		-- game/trackers
 		tracker_command = "ट्रैकर",
 		tracker_command_help = "अपने ट्रैकर की दृश्यता टॉगल करें।",
+		tracker_command_parameter_break = "विराम",
+		tracker_command_parameter_break_help = "अपना ट्रैकर ब्रेक करें और इसके बारे में एक डिस्पैच अधिसूचना भेजें। (20 मिनट बाद ही फिर से सक्रिय किया जा सकता है)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "ट्रैकर_विभाजित_करें",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		barbershop = "बार्बर शॉप",
 
 		changing_area = "परिवर्तन क्षेत्र",
+		barber = "नाई",
 
 		switch_outfit = "इस आउटफिट में बदलें।",
 		replace_outfit = "इस आउटफिट को बदलें।",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		tic_tac = "टिक टैक",
 		tic_tac_description = "आक्सी? नहीं अधिकारी, मैं बस टिक टैक खा रहा हूँ!",
 		pizza_slice = "पिज्जा स्लाइस",
-		pizza_slice_description = "थोड़ी सी पिज़्ज़ा टुकड़ा आपके लिए।",
+		pizza_slice_description = "एक झटका जा जाता है जिसमें अतिरिक्त पेपरोनी है (वेगन नहीं)।",
 		hot_dog = "हॉट डॉग",
 		hot_dog_description = "इसे अपने आखिरी जैसा खा जैसे यह आपकी आखिरी हो।",
 		nachos = "नाचोस",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		api_error = "हमारे बैक-एंड एपीआई ने एक त्रुटि लौटाई है।",
 		api_not_available = "हमारे बैक-एंड एपीआई उपलब्ध नहीं है।",
 		phone_number_is_available = "${phoneNumber} फ़ोन नंबर उपलब्ध है।",
-		phone_number_is_not_available = "${phoneNumber} फ़ोन नंबर उपलब्ध नहीं है।"
+		phone_number_is_not_available = "${phoneNumber} फ़ोन नंबर उपलब्ध नहीं है।",
+
+		no_phone = "आपके पास फ़ोन नहीं है।",
+		nobody_nearby = "आपके पास कोई इतनी पास नहीं है जिसे आप अपने नंबर के साथ साझा कर सकते हैं।",
+		shared_number = "${fullName} ने अपना फ़ोन नंबर आपके साथ साझा किया है। /yes दबाकर इसे स्वीकार करें और एक नया संपर्क बनाएं या /no दबाकर इसे अस्वीकार करें।",
+		shared_number_expired = "नंबर साझा करने का अनुरोध समाप्त हो गया है।",
+		shared_number_declined = "आपने नंबर साझा करने के अनुरोध को मना कर दिया है।",
+		failed_to_share = "आपका फ़ोन नंबर साझा करने में विफल रहा।",
+		number_share_timeout = "आपने हाल ही में अपना फ़ोन नंबर साझा किया है। कृपया फिर से प्रयास करने से पहले कुछ समय इंतजार करें।",
+		phone_number_shared = "आपने ${nearby} आस-पास के खिलाफ़ अपनी फ़ोन नंबर सांझा किया।"
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "मानचित्र पर रैकशक अब उनकी श्रेणियों में संग्रहीत किए जाएँगे।",
 		trackers_split = "रैकशक अब विभक्त होंगे।",
+
+		tracker_broken = "${lastName} का ट्रैकर ${location} के निकट टूट गया है।",
+		tracker_broken_unit = "${unitId} ${lastName} का ट्रैकर ${location} के निकट टूट गया है।",
+		tracker_broken_title = "[डिस्पैच]",
+		tracker_broken_blip = "टूटा हुआ ट्रैकर ${lastName}",
+		tracker_broken_timeout = "आपका ट्रैकर टूट गया है। आप इसे 20 मिनट बाद पुन: सक्षम कर सकते हैं।",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

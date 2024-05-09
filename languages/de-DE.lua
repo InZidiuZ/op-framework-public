@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["de-DE"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["de-DE"] = {
 		phone_number_available_command_parameter_phone_number_help = "Die Telefonnummer, die du überprüfen möchtest, ob sie verfügbar ist. Stelle sicher, dass sie im Format XXX-XXXX vorliegt.",
 		phone_number_available_command_substitutes = "nummer_verfügbar",
 
+		share_phone_number_command = "telefonnummer_teilen",
+		share_phone_number_command_help = "Teilt deine Telefonnummer mit allen in deiner Nähe (< 1,5 m).",
+		share_phone_number_command_substitutes = "nummer_teilen",
+
 		-- game/plants
 		plants_debug_command = "pflanzen_debug",
 		plants_debug_command_help = "Debugge alle Pflanzen.",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["de-DE"] = {
 		-- game/trackers
 		tracker_command = "tracker",
 		tracker_command_help = "Schaltet die Sichtbarkeit Ihres Trackers um.",
+		tracker_command_parameter_break = "unterbrechen",
+		tracker_command_parameter_break_help = "Unterbricht deinen Tracker und sendet eine Benachrichtigung darüber. (Kann nicht wieder aktiviert werden, bis 20 Minuten vergangen sind)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["de-DE"] = {
 		barbershop = "Friseursalon",
 
 		changing_area = "Umkleidebereich",
+		barber = "Friseur",
 
 		switch_outfit = "Ziehe dieses Outfit an.",
 		replace_outfit = "Ersetze dieses Outfit.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["de-DE"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? Nein Officer, ich esse nur Tic Tacs!",
 		pizza_slice = "Pizzastück",
-		pizza_slice_description = "Eine kleine Scheibe Pizza für dich.",
+		pizza_slice_description = "Ein kleines Stück Pizza für dich, mit extra Pepperoni (nicht vegan).",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "Verschlinge diese Wurst wie wenn es deine letzte wäre.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["de-DE"] = {
 		api_error = "Unsere Back-End-API hat einen Fehler zurückgegeben.",
 		api_not_available = "Unsere Back-End-API ist nicht verfügbar.",
 		phone_number_is_available = "Die Telefonnummer `${phoneNumber}` ist verfügbar.",
-		phone_number_is_not_available = "Die Telefonnummer `${phoneNumber}` ist nicht verfügbar."
+		phone_number_is_not_available = "Die Telefonnummer `${phoneNumber}` ist nicht verfügbar.",
+
+		no_phone = "Du hast kein Telefon.",
+		nobody_nearby = "Niemand in der Nähe, mit dem du deine Nummer teilen kannst.",
+		shared_number = "${fullName} hat dir ihre Telefonnummer geteilt. Benutze /yes, um sie anzunehmen und einen neuen Kontakt zu erstellen, oder /no, um abzulehnen.",
+		shared_number_expired = "Die Anfrage zum Teilen der Nummer ist abgelaufen.",
+		shared_number_declined = "Du hast die Anfrage zum Teilen der Nummer abgelehnt.",
+		failed_to_share = "Fehler beim Teilen deiner Telefonnummer.",
+		number_share_timeout = "Du hast gerade deine Telefonnummer geteilt. Bitte warte einen Moment, bevor du es erneut versuchst.",
+		phone_number_shared = "Erfolgreich deine Telefonnummer mit ${nearby} Spieler(n) in der Nähe geteilt."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["de-DE"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Tracker werden nun innerhalb ihrer Kategorien auf der Karte gespeichert.",
 		trackers_split = "Tracker werden nun in einzelne Blips unterteilt.",
+
+		tracker_broken = "Der Tracker von ${lastName} wurde in der Nähe von ${location} zerstört.",
+		tracker_broken_unit = "Der Tracker von ${unitId} ${lastName} wurde in der Nähe von ${location} zerstört.",
+		tracker_broken_title = "[Dispatch]",
+		tracker_broken_blip = "Kaputter Tracker: ${lastName}",
+		tracker_broken_timeout = "Dein Tracker ist kaputt. Du kannst ihn 20 Minuten später wieder aktivieren.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

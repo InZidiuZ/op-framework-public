@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["fi-FI"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		phone_number_available_command_parameter_phone_number_help = "Puhelinnumero, jonka saatavuuden haluat tarkistaa. Varmista, että se noudattaa muotoa XXX-XXXX.",
 		phone_number_available_command_substitutes = "numero_saata",
 
+		share_phone_number_command = "jaa_puhelinnumero",
+		share_phone_number_command_help = "Jakaa puhelinnumerosi kaikkien ympärilläsi olevien kanssa (< 1.5m).",
+		share_phone_number_command_substitutes = "jaa_numero",
+
 		-- game/plants
 		plants_debug_command = "kasvit_debug",
 		plants_debug_command_help = "Vianmääritys kaikille kasveille.",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		-- game/trackers
 		tracker_command = "seurantalaite",
 		tracker_command_help = "Vaihtaa seurantalaitteen näkyvyyden.",
+		tracker_command_parameter_break = "katko",
+		tracker_command_parameter_break_help = "Katkaise seurantalaite ja lähetä siitä ilmoitus (Ei voi ottaa uudelleen käyttöön ennen kuin 20 minuuttia on kulunut).",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "seurantalaitteet_ryhmittäin",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		barbershop = "Parturi",
 
 		changing_area = "Pukeutumisalue",
+		barber = "Parturi",
 
 		switch_outfit = "Vaihda tähän asuun.",
 		replace_outfit = "Korvaa tämä asu.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oksy? Ei, virkailija, syön vain tic taceja!",
 		pizza_slice = "Pizzaviipale",
-		pizza_slice_description = "Pala za:ta sulla.",
+		pizza_slice_description = "Pieni viipale pitsaa, extra pepperonia (ei vegaani).",
 		hot_dog = "Herkku",
 		hot_dog_description = "Imaiset tämän makkaran kuin se oisi sun viimeinen.",
 		nachos = "Nachot",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		api_error = "Taustajärjestelmän API palautti virheen.",
 		api_not_available = "Taustajärjestelmän API ei ole käytettävissä.",
 		phone_number_is_available = "Puhelinnumero `${phoneNumber}` on käytettävissä.",
-		phone_number_is_not_available = "Puhelinnumero `${phoneNumber}` ei ole käytettävissä."
+		phone_number_is_not_available = "Puhelinnumero `${phoneNumber}` ei ole käytettävissä.",
+
+		no_phone = "Sinulla ei ole puhelinta.",
+		nobody_nearby = "Kukaan ei ole tarpeeksi lähellä jakamiseen.",
+		shared_number = "${fullName} jakoi puhelinnumeronsa kanssasi. Käytä /yes hyväksyäksesi sen ja luodaksesi uuden yhteyden tai /no hylätäksesi sen.",
+		shared_number_expired = "Puhelinnumeronsi jakamispyyntö on vanhentunut.",
+		shared_number_declined = "Hylkäsit puhelinnumeronsi jakamispyynnön.",
+		failed_to_share = "Puhelinnumerosi jakaminen epäonnistui.",
+		number_share_timeout = "Juuri jaosit puhelinnumerosi. Odota hetki ennen kuin yrität uudelleen.",
+		phone_number_shared = "Olet onnistuneesti jakanut puhelinnumerosi ${nearby} lähellä olevalle pelaajalle."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Seurantalaitteet tallennetaan nyt kartan kategorioihin.",
 		trackers_split = "Seurantajärjestelmä jaetaan nyt yksittäisiksi merkeiksi.",
+
+		tracker_broken = "${lastName}:n seurantalaite on rikottu lähellä sijaintia ${location}",
+		tracker_broken_unit = "${unitId} ${lastName}:n seurantalaite on rikottu lähellä sijaintia ${location}",
+		tracker_broken_title = "[Hälytys]",
+		tracker_broken_blip = "Rikottu seurantalaite: ${lastName}",
+		tracker_broken_timeout = "Seurantalaiteesi on rikki. Voit ottaa sen uudelleen käyttöön 20 minuutin kuluttua.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

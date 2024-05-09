@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["fr-CA"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["fr-CA"] = {
 		phone_number_available_command_parameter_phone_number_help = "Le numéro de téléphone que vous souhaitez vérifier s'il est disponible. Assurez-vous qu'il suit le format XXX-XXXX.",
 		phone_number_available_command_substitutes = "numero_disponible",
 
+		share_phone_number_command = "partager_numero_telephone",
+		share_phone_number_command_help = "Partage votre numéro de téléphone avec tout le monde autour de vous (< 1,5 m).",
+		share_phone_number_command_substitutes = "partager_numero",
+
 		-- game/plants
 		plants_debug_command = "plants_debug",
 		plants_debug_command_help = "Déboguer toutes les plantes.",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["fr-CA"] = {
 		-- game/trackers
 		tracker_command = "traceur",
 		tracker_command_help = "Active ou désactive la visibilité de votre traceur.",
+		tracker_command_parameter_break = "casser",
+		tracker_command_parameter_break_help = "Cassez votre traqueur et envoyez une notification de dispache à ce sujet. (Ne peut pas être réactivé avant 20 minutes)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "separation_traceurs",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["fr-CA"] = {
 		barbershop = "Salon de coiffure",
 
 		changing_area = "Espace de changement",
+		barber = "Coiffeur",
 
 		switch_outfit = "Changer de tenue avec celle-ci.",
 		replace_outfit = "Remplacer cette tenue.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["fr-CA"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy ? Non monsieur l'agent, je mange juste des tic tacs !",
 		pizza_slice = "Tranche de pizza",
-		pizza_slice_description = "Une petite tranche de pizza pour vous.",
+		pizza_slice_description = "Une petite tranche de Za pour vous, avec des extra pepperoni (non végétarien).",
 		hot_dog = "Hot dog",
 		hot_dog_description = "Dévorez ce hot dog comme si c'était le dernier.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["fr-CA"] = {
 		api_error = "Notre API en arrière-plan a renvoyé une erreur.",
 		api_not_available = "Notre API en arrière-plan n'est pas disponible.",
 		phone_number_is_available = "Le numéro de téléphone `${phoneNumber}` est disponible.",
-		phone_number_is_not_available = "Le numéro de téléphone `${phoneNumber}` n'est pas disponible."
+		phone_number_is_not_available = "Le numéro de téléphone `${phoneNumber}` n'est pas disponible.",
+
+		no_phone = "Vous n'avez pas de téléphone.",
+		nobody_nearby = "Personne n'est assez proche pour partager votre numéro.",
+		shared_number = "${fullName} a partagé son numéro de téléphone avec vous. Utilisez /yes pour l'accepter et créer un nouveau contact ou /no pour le refuser.",
+		shared_number_expired = "La demande de partage de numéro a expiré.",
+		shared_number_declined = "Vous avez refusé la demande de partage de numéro.",
+		failed_to_share = "Échec du partage de votre numéro de téléphone.",
+		number_share_timeout = "Vous venez de partager votre numéro de téléphone. Veuillez attendre un moment avant de réessayer.",
+		phone_number_shared = "Votre numéro de téléphone a été partagé avec ${nearby} joueur(s) à proximité avec succès."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["fr-CA"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Les traqueurs seront désormais stockés dans leurs catégories sur la carte.",
 		trackers_split = "Les traqueurs seront maintenant divisés en balises individuelles.",
+
+		tracker_broken = "Le traceur de ${lastName} a été désactivé près de ${location}",
+		tracker_broken_unit = "Le traceur de ${lastName} (${unitId}) a été désactivé près de ${location}",
+		tracker_broken_title = "[Central]",
+		tracker_broken_blip = "Traceur Désactivé ${lastName}",
+		tracker_broken_timeout = "Votre traceur est désactivé. Vous pourrez le réactiver 20 minutes plus tard.",
 
 		department_sasp = "Sûreté de l'État et de la Police",
 		department_bcso = "Bureau du shérif du comté",

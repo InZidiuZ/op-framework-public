@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["nb-NO"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		phone_number_available_command_parameter_phone_number_help = "Telefonnummeret du vil sjekke om er tilgjengelig. Sørg for at det følger formatet XXX-XXXX.",
 		phone_number_available_command_substitutes = "nummer_tilgjengelig",
 
+		share_phone_number_command = "del_telefonnummer",
+		share_phone_number_command_help = "Deler telefonnummeret ditt med alle rundt deg (< 1,5 m).",
+		share_phone_number_command_substitutes = "del_nummer",
+
 		-- game/plants
 		plants_debug_command = "planter_debug",
 		plants_debug_command_help = "Feilsøk alle planter.",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		-- game/trackers
 		tracker_command = "sporing",
 		tracker_command_help = "Veksler synligheten til sporingen din.",
+		tracker_command_parameter_break = "pauset",
+		tracker_command_parameter_break_help = "Pause sporingen din og send en melding om det til politiet. (Kan ikke aktiveres igjen før det har gått 20 minutter)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "sporingskategorier",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		barbershop = "Frisørsalong",
 
 		changing_area = "Område for antrekkbytte",
+		barber = "Frisør",
 
 		switch_outfit = "Bytt til dette antrekket.",
 		replace_outfit = "Erstatt dette antrekket.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? Nei, offiser, jeg spiser bare tic tac!",
 		pizza_slice = "Pizzastykke",
-		pizza_slice_description = "En liten skive med pizza for deg.",
+		pizza_slice_description = "En liten bit av pizza til deg, med ekstra pepperoni (ikke vegansk).",
 		hot_dog = "Pølse",
 		hot_dog_description = "Slug denne pølsa som om det var din siste.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		api_error = "Vår bakre API returnerte en feil.",
 		api_not_available = "Vår bakre API er ikke tilgjengelig.",
 		phone_number_is_available = "Telefonnummeret `${phoneNumber}` er tilgjengelig.",
-		phone_number_is_not_available = "Telefonnummeret `${phoneNumber}` er ikke tilgjengelig."
+		phone_number_is_not_available = "Telefonnummeret `${phoneNumber}` er ikke tilgjengelig.",
+
+		no_phone = "Du har ikke en telefon.",
+		nobody_nearby = "Ingen nær nok til å dele nummeret ditt med.",
+		shared_number = "${fullName} delte telefonnummeret sitt med deg. Bruk /ja for å akseptere det og opprette en ny kontakt eller /nei for å avslå.",
+		shared_number_expired = "Forespørselen om deling av nummer har utløpt.",
+		shared_number_declined = "Du avslo forespørselen om deling av nummer.",
+		failed_to_share = "Klarte ikke å dele telefonnummeret ditt.",
+		number_share_timeout = "Du delte nettopp telefonnummeret ditt. Vennligst vent et øyeblikk før du prøver igjen.",
+		phone_number_shared = "Vellykket delt telefonnummeret ditt med ${nearby} spillere i nærheten."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Trackers vil nå bli lagret i deres kategorier på kartet.",
 		trackers_split = "Trackers vil nå bli delt opp i individuelle merkeenheter.",
+
+		tracker_broken = "${lastName}s tracker er ødelagt i nærheten av ${location}",
+		tracker_broken_unit = "${unitId} ${lastName}s tracker er ødelagt i nærheten av ${location}",
+		tracker_broken_title = "[Dispatch]",
+		tracker_broken_blip = "Ødelagt Tracker ${lastName}",
+		tracker_broken_timeout = "Din tracker er ødelagt. Du kan aktivere den på nytt 20 minutter etterpå.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

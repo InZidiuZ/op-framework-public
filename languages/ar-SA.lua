@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["ar-SA"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		phone_number_available_command_parameter_phone_number_help = "الرقم الذي ترغب في التحقق ما إذا كان متاحًا. تأكد من اتباع صيغة XXX-XXXX.",
 		phone_number_available_command_substitutes = "الرقم_المتاح",
 
+		share_phone_number_command = "مشاركة_رقم_الهاتف",
+		share_phone_number_command_help = "يشارك رقم هاتفك مع الجميع من حولك (< 1.5 م).",
+		share_phone_number_command_substitutes = "مشاركة_الرقم",
+
 		-- game/plants
 		plants_debug_command = "تصحيح_النباتات",
 		plants_debug_command_help = "تصحيح جميع النباتات.",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		-- game/trackers
 		tracker_command = "تعقب",
 		tracker_command_help = "تبديل رؤية جهاز التعقب.",
+		tracker_command_parameter_break = "تعطيل",
+		tracker_command_parameter_break_help = "تعطيل جهاز التتبع الخاص بك وإرسال إشعار عن ذلك. (لا يمكن إعادة التفعيل حتى يمر 20 دقيقة)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "تقسيم_تعقب",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		barbershop = "محل الحلاقة",
 
 		changing_area = "منطقة تغيير الملابس",
+		barber = "حلاق",
 
 		switch_outfit = "تغيير الملابس إلى هذه الملابس.",
 		replace_outfit = "ستستبدل هذه الزي.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		tic_tac = "تيك تاك",
 		tic_tac_description = "أوكسجين؟ لا يا ضابط، أنا فقط أكل تيك تاك!",
 		pizza_slice = "شريحة بيتزا",
-		pizza_slice_description = "قطعة صغيرة من البيتزا لك.",
+		pizza_slice_description = "شريحة صغيرة من البيتزا مع الفلفل الحار (ليس نباتي).",
 		hot_dog = "هوت دوج",
 		hot_dog_description = "تناول هذا النقانق مثلما سيكون آخر وجبة لديك.",
 		nachos = "ناتشوز",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		api_error = "أعاد خدمة API الخلفية لدينا خطأ.",
 		api_not_available = "خدمة API الخلفية لدينا غير متاحة.",
 		phone_number_is_available = "رقم الهاتف ${phoneNumber} متاح.",
-		phone_number_is_not_available = "رقم الهاتف ${phoneNumber} غير متاح."
+		phone_number_is_not_available = "رقم الهاتف ${phoneNumber} غير متاح.",
+
+		no_phone = "ليس لديك هاتف.",
+		nobody_nearby = "لا يوجد أحد بالقرب يمكن مشاركة رقمك معه.",
+		shared_number = "${fullName} قام بمشاركة رقم هاتفه معك. استخدم /نعم لقبول العرض وإنشاء جهة اتصال جديدة أو /لا لرفضه.",
+		shared_number_expired = "انتهت صلاحية طلب مشاركة الرقم.",
+		shared_number_declined = "لقد رفضت طلب مشاركة الرقم.",
+		failed_to_share = "فشل في مشاركة رقم الهاتف الخاص بك.",
+		number_share_timeout = "لقد قمت للتو بمشاركة رقم هاتفك. يرجى الانتظار قليلاً قبل المحاولة مرة أخرى.",
+		phone_number_shared = "تم مشاركة رقم هاتفك بنجاح مع ${nearby} لاعب(ين) قريب(ين)."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "سيتم الآن وضع المُتتبعين داخل فئاتهم على الخريطة.",
 		trackers_split = "سيتم الآن تقسيم المُتتبعين إلى بلوب فردي.",
+
+		tracker_broken = "تم كسر تعقب ${lastName} بالقرب من ${location}",
+		tracker_broken_unit = "تم كسر تعقب ${unitId} ${lastName} بالقرب من ${location}",
+		tracker_broken_title = "[الإرسال]",
+		tracker_broken_blip = "تعقب مكسور ${lastName}",
+		tracker_broken_timeout = "تعقبك مكسور. يمكنك تشغيله مرة أخرى بعد 20 دقيقة.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

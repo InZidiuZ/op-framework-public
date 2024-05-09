@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["cs-CZ"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		phone_number_available_command_parameter_phone_number_help = "Telefonní číslo, které chcete zkontrolovat, zda je k dispozici. Ujistěte se, že odpovídá formátu XXX-XXXX.",
 		phone_number_available_command_substitutes = "cislo_dostupne",
 
+		share_phone_number_command = "sdílet_telefonní_číslo",
+		share_phone_number_command_help = "Sdílí vaše telefonní číslo se všemi kolem vás (< 1,5m).",
+		share_phone_number_command_substitutes = "sdílet_číslo",
+
 		-- game/plants
 		plants_debug_command = "plants_debug",
 		plants_debug_command_help = "Ladit všechny rostliny.",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		-- game/trackers
 		tracker_command = "sledovac",
 		tracker_command_help = "Přepíná viditelnost sledovače.",
+		tracker_command_parameter_break = "přestávka",
+		tracker_command_parameter_break_help = "Zničí váš tracker a odešle o tom oznámení dispečerovi. (Nelze znovu povolit, dokud neuplyne 20 minut)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "rozvržení_sledovačů",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		barbershop = "Kadeřnický salon",
 
 		changing_area = "Prostor pro převlékání",
+		barber = "Holič",
 
 		switch_outfit = "Převlékni se do tohoto oblečení.",
 		replace_outfit = "Změň toto oblečení.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? Ne, pane, jen si žvýkám tic tacy!",
 		pizza_slice = "Kousek pizzy",
-		pizza_slice_description = "Kousíček za za tebe.",
+		pizza_slice_description = "Malý kousek pizzy pro vás, s extra pepperoni (není veganská).",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "Schovej si ho do sebe jako by to bylo tvé poslední.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		api_error = "Náš API backend vrátil chybu.",
 		api_not_available = "Naše API není k dispozici.",
 		phone_number_is_available = "Telefonní číslo `${phoneNumber}` je k dispozici.",
-		phone_number_is_not_available = "Telefonní číslo `${phoneNumber}` není k dispozici."
+		phone_number_is_not_available = "Telefonní číslo `${phoneNumber}` není k dispozici.",
+
+		no_phone = "Nemáš telefon.",
+		nobody_nearby = "Nikdo dost blízko, aby sis s ním mohl(a) vyměnit číslo.",
+		shared_number = "${fullName} ti sdílí své telefonní číslo. Použij /ano pro přijetí a vytvoření nového kontaktu nebo /ne pro odmítnutí.",
+		shared_number_expired = "Žádost o sdílení čísla vypršela.",
+		shared_number_declined = "Odmítl(a) jsi žádost o sdílení čísla.",
+		failed_to_share = "Nepodařilo se sdílet tvé telefonní číslo.",
+		number_share_timeout = "Právě jsi sdílel(a) své telefonní číslo. Počkej chvíli, než to zkusíš znovu.",
+		phone_number_shared = "Úspěšně jste sdíleli své telefonní číslo s ${nearby} hráčem(hráči) v blízkosti."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Sledovače budou nyní uloženy ve svých kategoriích na mapě.",
 		trackers_split = "Trackery budou nyní rozděleny do jednotlivých značek.",
+
+		tracker_broken = "Stopač ${lastName} byl poškozen v blízkosti ${location}",
+		tracker_broken_unit = "Jednotka ${unitId} Stopač ${lastName} byl poškozen v blízkosti ${location}",
+		tracker_broken_title = "[Dispečink]",
+		tracker_broken_blip = "Poškozený stopač ${lastName}",
+		tracker_broken_timeout = "Váš stopač je poškozen. Můžete ho znovu aktivovat po 20 minutách.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

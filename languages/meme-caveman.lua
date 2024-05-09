@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["meme-caveman"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		phone_number_available_command_parameter_phone_number_help = "You say ug-ug number, me check if available. Make sure it follows the format of XXX-XXXX.",
 		phone_number_available_command_substitutes = "number_avail",
 
+		share_phone_number_command = "me share phone number",
+		share_phone_number_command_help = "Share phone number with others near (< 1.5m).",
+		share_phone_number_command_substitutes = "me share number",
+
 		-- game/plants
 		plants_debug_command = "undefined",
 		plants_debug_command_help = "undefined",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		-- game/trackers
 		tracker_command = "tracker",
 		tracker_command_help = "Me make tracker visible or invisible.",
+		tracker_command_parameter_break = "break",
+		tracker_command_parameter_break_help = "Break tracker and tell everyone. (Wait 20 moons to fix)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "tracking_split",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		barbershop = "Hair Hut",
 
 		changing_area = "Fitting cave",
+		barber = "Hair Cutter",
 
 		switch_outfit = "Change into this fur.",
 		replace_outfit = "Grug replace this outfit.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Me not do Oxy, me just eat Tic Tacs!",
 		pizza_slice = "Pizza Slice",
-		pizza_slice_description = "Small piece of hot circle bread with toppings.",
+		pizza_slice_description = "Piece of Za with lots of meat (not for plant eaters).",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "Gobble up dis glizzy like it be last meal.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		api_error = "Arg! backend api bad.",
 		api_not_available = "Backend api no exist nostril!",
 		phone_number_is_available = "Ah! You lucky! `${phoneNumber}` free to use.",
-		phone_number_is_not_available = "Nonono! `${phoneNumber}` already taken by someone else."
+		phone_number_is_not_available = "Nonono! `${phoneNumber}` already taken by someone else.",
+
+		no_phone = "You no have shiny rock with talking magic.",
+		nobody_nearby = "No one close to trade numbers with.",
+		shared_number = "${fullName} give you shiny rock with number. Use /yes to take it and new friend or /no to say no.",
+		shared_number_expired = "Time for shiny rock trade gone.",
+		shared_number_declined = "You say no to shiny rock trade.",
+		failed_to_share = "You no can share shiny rock number.",
+		number_share_timeout = "You just share shiny rock number. Wait a bit before trying again.",
+		phone_number_shared = "Ooga booga, you shared your grunt with ${nearby} grunt(s) nearby."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Trackers store in their map categories!",
 		trackers_split = "Trackers split into separate blips.",
+
+		tracker_broken = "${lastName} grunt's tracker kaput near ${location}",
+		tracker_broken_unit = "${unitId} ${lastName} grunt's tracker kaput near ${location}",
+		tracker_broken_title = "[Ooga]",
+		tracker_broken_blip = "Kaput Tracker ${lastName}",
+		tracker_broken_timeout = "Ooga! Your tracker kaput. You fix after 20 moons.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

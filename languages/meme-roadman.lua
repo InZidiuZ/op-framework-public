@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["meme-roadman"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		phone_number_available_command_parameter_phone_number_help = "The numba you wanna check if is available. Make sure it's in the format of XXX-XXXX.",
 		phone_number_available_command_substitutes = "numba_avail",
 
+		share_phone_number_command = "input your digits",
+		share_phone_number_command_help = "Send out your phone number to man dem inna di vicinity (< 1.5m).",
+		share_phone_number_command_substitutes = "send number",
+
 		-- game/plants
 		plants_debug_command = "undefined",
 		plants_debug_command_help = "undefined",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		-- game/trackers
 		tracker_command = "find my boys",
 		tracker_command_help = "Let's you show or hide your location on the map, innit?",
+		tracker_command_parameter_break = "mash up",
+		tracker_command_parameter_break_help = "Mash up your tracker and bun a notification bout it to di mandem. (Can't be re-enabled until 20min passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "put my boys on the map",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		barbershop = "Barbershop",
 
 		changing_area = "Changing Area",
+		barber = "trim shop",
 
 		switch_outfit = "Peep this outfit and make the switch.",
 		replace_outfit = "Swap this outfit, blud.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? Nah bruv, just popping some tic tacs innit.",
 		pizza_slice = "Pizza Slice",
-		pizza_slice_description = "A small slice of pizza just for you, init.",
+		pizza_slice_description = "A small slice of the pizza for ya, wid extra pepperoni (not vegan).",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "Slurp this glizzy like it's your ultimeat.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		api_error = "Bro, the API messed up and returned an error.",
 		api_not_available = "The API ain't working atm, try again later yeah.",
 		phone_number_is_available = "Yo, the number `${phoneNumber}` is available innit.",
-		phone_number_is_not_available = "The number `${phoneNumber}` ain't available bro."
+		phone_number_is_not_available = "The number `${phoneNumber}` ain't available bro.",
+
+		no_phone = "You ain't got no phone fam.",
+		nobody_nearby = "No one nearby to link up and give your digits to.",
+		shared_number = "${fullName} linked you with their digits. Type /yes to add them to your contacts or /no to pass.",
+		shared_number_expired = "That number link has timed out fam.",
+		shared_number_declined = "You said nah to sharing numbers.",
+		failed_to_share = "Couldn't link up and share your digits.",
+		number_share_timeout = "Just dropped your digits. Chill for a sec before trying again.",
+		phone_number_shared = "Boom! Your digits have been shared with ${nearby} mandem nearby."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Trackers will now be stored inside of their categories on the map.",
 		trackers_split = "Trackers will now be split into individual blips.",
+
+		tracker_broken = "Yo blud ${lastName}'s tracking ting got mash up near ${location}",
+		tracker_broken_unit = "${unitId} fam ${lastName}'s tracking ting got mash up near ${location}",
+		tracker_broken_title = "[Dispatch]",
+		tracker_broken_blip = "Mandem's Tracking Ting Gone ${lastName}",
+		tracker_broken_timeout = "Safe fam, your tracking thing is boomed. Allow it fam, wait 20 minutes then re-enable it.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

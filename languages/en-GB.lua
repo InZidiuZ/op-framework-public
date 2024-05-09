@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["en-GB"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		phone_number_available_command_parameter_phone_number_help = "The phone number you would like to check if is available. Make sure it follows the format of XXX-XXXX.",
 		phone_number_available_command_substitutes = "number_available",
 
+		share_phone_number_command = "share_phone_number",
+		share_phone_number_command_help = "Shares your phone number with everyone around you (< 1.5m).",
+		share_phone_number_command_substitutes = "share_number",
+
 		-- game/plants
 		plants_debug_command = "plants_debug",
 		plants_debug_command_help = "Debug all plants.",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		-- game/trackers
 		tracker_command = "tracker",
 		tracker_command_help = "Toggle your tracker's visibility.",
+		tracker_command_parameter_break = "break",
+		tracker_command_parameter_break_help = "Break your tracker and send a dispatch notification about it. (Can't be re-enabled until 20 minutes have passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		barbershop = "Barbershop",
 
 		changing_area = "Changing Area",
+		barber = "Hairdresser",
 
 		switch_outfit = "Change into this outfit.",
 		replace_outfit = "Replace this outfit.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? No officer, I'm just eating tic tacs!",
 		pizza_slice = "Pizza Slice",
-		pizza_slice_description = "A Lil slice of the Za for ya.",
+		pizza_slice_description = "A small slice of pizza for you, with extra pepperoni (not suitable for vegans).",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "Enjoy this hot dog as if it were your last meal.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["en-GB"] = {
 		api_error = "Our back-end API returned an error.",
 		api_not_available = "Our back-end API is not available.",
 		phone_number_is_available = "The phone number `${phoneNumber}` is available.",
-		phone_number_is_not_available = "The phone number `${phoneNumber}` is not available."
+		phone_number_is_not_available = "The phone number `${phoneNumber}` is not available.",
+
+		no_phone = "You don't have a mobile phone.",
+		nobody_nearby = "There's nobody nearby to share your number with.",
+		shared_number = "${fullName} has shared their phone number with you. Use /yes to accept and add them as a contact, or /no to decline.",
+		shared_number_expired = "The number sharing request has expired.",
+		shared_number_declined = "You have declined the number sharing request.",
+		failed_to_share = "Failed to share your phone number.",
+		number_share_timeout = "You have recently shared your phone number. Please wait a moment before trying again.",
+		phone_number_shared = "Successfully shared your phone number with ${nearby} nearby player(s)."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["en-GB"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Trackers will now be stored inside of their categories on the map.",
 		trackers_split = "Trackers will now be split into individual blips.",
+
+		tracker_broken = "${lastName}'s tracker has been broken near ${location}",
+		tracker_broken_unit = "${unitId} ${lastName}'s tracker has been broken near ${location}",
+		tracker_broken_title = "[Dispatch]",
+		tracker_broken_blip = "Broken Tracker ${lastName}",
+		tracker_broken_timeout = "Your tracker is broken. You can re-enable it 20 minutes later.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

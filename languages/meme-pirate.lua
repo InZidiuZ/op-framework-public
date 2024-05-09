@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["meme-pirate"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		phone_number_available_command_parameter_phone_number_help = "Th' fone numb'r ye be wantin' t' check if 'tis available. Make sure 't follows th' format o' XXX-XXXX.",
 		phone_number_available_command_substitutes = "numb'r_available",
 
+		share_phone_number_command = "share_phone_number",
+		share_phone_number_command_help = "Shares yer phone number with everyone around ye (< 1.5m).",
+		share_phone_number_command_substitutes = "share_number",
+
 		-- game/plants
 		plants_debug_command = "undefined",
 		plants_debug_command_help = "undefined",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		-- game/trackers
 		tracker_command = "spyglass",
 		tracker_command_help = "Toggle yer spyglass's visibility.",
+		tracker_command_parameter_break = "break",
+		tracker_command_parameter_break_help = "Break yer tracker and send a dispatch notification about it. (Cant be re-enabled until 20min have passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "split_yer_spyglasses",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		barbershop = "Barber Shop",
 
 		changing_area = "Changing Area",
+		barber = "Barber",
 
 		switch_outfit = "Haul the mainstay and change into this outfit, ye landlubber.",
 		replace_outfit = "Replacin' this outfit.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? Nay officer, I be just eatin' tic tacs!",
 		pizza_slice = "Pizza Slice",
-		pizza_slice_description = "A Lil slice o' th' Za fer ya.",
+		pizza_slice_description = "A Lil slice o' the Za for ya, with extra pepperoni (not vegan).",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "Gobble up this glizzy like it'll be yer last, matey.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		api_error = "Ahoy matey, our back-end API be returning an error!",
 		api_not_available = "Avast ye! Our back-end API be not available.",
 		phone_number_is_available = "Shiver me timbers! That phone number `${phoneNumber}` be available!",
-		phone_number_is_not_available = "Blimey! That phone number `${phoneNumber}` be not available, ye landlubber!"
+		phone_number_is_not_available = "Blimey! That phone number `${phoneNumber}` be not available, ye landlubber!",
+
+		no_phone = "Ye don't have a parrot on yer shoulder, arr.",
+		nobody_nearby = "Nobody close enough to share your number with, matey.",
+		shared_number = "${fullName} shared their handwritten scroll with ye. Use /aye to accept it and create a new contact or /nay to decline.",
+		shared_number_expired = "Aye, the request to share numbers be expired.",
+		shared_number_declined = "Ye walked the plank on the number share request.",
+		failed_to_share = "Blast, failed to share yer phone number.",
+		number_share_timeout = "Ye just shared yer phone number. Please swap the deck before tryin' again.",
+		phone_number_shared = "Yarr! Successfully shared yer spyglass number wit' ${nearby} swashbucklers."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} o' ${departmentLabel} tracker",
 		trackers_in_category = "Trackers be now stored inside o' their categories on th' map.",
 		trackers_split = "Trackers be now split into individual blips.",
+
+		tracker_broken = "${lastName}'s tracker has been shattered near ${location}",
+		tracker_broken_unit = "${unitId} ${lastName}'s tracker has been shattered near ${location}",
+		tracker_broken_title = "[Dispatch]",
+		tracker_broken_blip = "Shattered Tracker ${lastName}",
+		tracker_broken_timeout = "Ye tracker be shattered. Ye can re-enable it 20 minutes later.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

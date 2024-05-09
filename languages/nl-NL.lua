@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		phone_number_available_command_parameter_phone_number_help = "Het telefoonnummer dat je wilt controleren of deze beschikbaar is. Zorg ervoor dat het in het formaat XXX-XXXX staat.",
 		phone_number_available_command_substitutes = "nummer_beschikbaar",
 
+		share_phone_number_command = "deel_telefoonnummer",
+		share_phone_number_command_help = "Deelt je telefoonnummer met iedereen in de buurt (< 1.5m).",
+		share_phone_number_command_substitutes = "deel_nummer",
+
 		-- game/plants
 		plants_debug_command = "plants_debug",
 		plants_debug_command_help = "Debug alle planten.",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		-- game/trackers
 		tracker_command = "tracker",
 		tracker_command_help = "Schakel de zichtbaarheid van je tracker in of uit.",
+		tracker_command_parameter_break = "breuk",
+		tracker_command_parameter_break_help = "Breek je tracker en stuur een melding naar de meldkamer. (Kan pas na 20 minuten opnieuw worden geactiveerd)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		barbershop = "Kapper",
 
 		changing_area = "Kleedruimte",
+		barber = "Kapper",
 
 		switch_outfit = "Draag deze outfit.",
 		replace_outfit = "Vervang deze outfit.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? Nee, officer, ik ben gewoon tic tacs aan het eten!",
 		pizza_slice = "Pizzapunt",
-		pizza_slice_description = "Een klein stukje pizza voor jou.",
+		pizza_slice_description = "Een stukje pizza voor jou, met extra pepperoni (niet vegan).",
 		hot_dog = "Hotdog",
 		hot_dog_description = "Verslind deze hotdog alsof het je laatste is.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		api_error = "Onze back-end API heeft een fout geretourneerd.",
 		api_not_available = "Onze back-end API is niet beschikbaar.",
 		phone_number_is_available = "Het telefoonnummer `${phoneNumber}` is beschikbaar.",
-		phone_number_is_not_available = "Het telefoonnummer `${phoneNumber}` is niet beschikbaar."
+		phone_number_is_not_available = "Het telefoonnummer `${phoneNumber}` is niet beschikbaar.",
+
+		no_phone = "Je hebt geen telefoon.",
+		nobody_nearby = "Niemand dichtbij genoeg om je nummer mee te delen.",
+		shared_number = "${fullName} heeft zijn/haar telefoonnummer met je gedeeld. Gebruik /ja om het te accepteren en een nieuwe contactpersoon aan te maken of /nee om het af te wijzen.",
+		shared_number_expired = "Het verzoek om het nummer te delen is verlopen.",
+		shared_number_declined = "Je hebt het verzoek om het nummer te delen afgewezen.",
+		failed_to_share = "Het delen van je telefoonnummer is mislukt.",
+		number_share_timeout = "Je hebt zojuist je telefoonnummer gedeeld. Wacht even voordat je het opnieuw probeert.",
+		phone_number_shared = "Je hebt succesvol je telefoonnummer gedeeld met ${nearby} nabije speler(s)."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Trackers worden nu opgeslagen in hun categorieën op de kaart.",
 		trackers_split = "Trackers worden nu opgesplitst in individuele markeringen.",
+
+		tracker_broken = "De tracker van ${lastName} is kapot gegaan in de buurt van ${location}",
+		tracker_broken_unit = "Eenheid ${unitId} heeft de tracker van ${lastName} kapot gemaakt in de buurt van ${location}",
+		tracker_broken_title = "[Meldkamer]",
+		tracker_broken_blip = "Kapotte Tracker ${lastName}",
+		tracker_broken_timeout = "Je tracker is kapot. Je kunt hem weer inschakelen 20 minuten later.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["ro-RO"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		phone_number_available_command_parameter_phone_number_help = "Numărul de telefon pe care dorești să-l verifici dacă este disponibil. Asigură-te că urmează formatul XXX-XXXX.",
 		phone_number_available_command_substitutes = "numar_disponibil",
 
+		share_phone_number_command = "partaja_numar_telefon",
+		share_phone_number_command_help = "Partajează numărul tău de telefon cu toți cei din jurul tău (< 1.5m).",
+		share_phone_number_command_substitutes = "partaja_numar",
+
 		-- game/plants
 		plants_debug_command = "plants_debug",
 		plants_debug_command_help = "Depanează toate plantele.",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		-- game/trackers
 		tracker_command = "urmaritor",
 		tracker_command_help = "Comută vizibilitatea urmăritorului tău.",
+		tracker_command_parameter_break = "pierdere",
+		tracker_command_parameter_break_help = "Rupe-ți tracker-ul și trimite o notificare de dispecerat despre asta. (Nu poate fi reactivat până nu au trecut 20 de minute)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "split_urmaritori",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		barbershop = "Salon de coafură",
 
 		changing_area = "Zona de schimbare",
+		barber = "Frizer",
 
 		switch_outfit = "Schimbă-te în această ținută.",
 		replace_outfit = "Înlocuiți această ținută.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxigen? Nu, ofițere, doar mănânc tic-tac-uri!",
 		pizza_slice = "Felie de pizza",
-		pizza_slice_description = "O mică felie de pizza pentru tine.",
+		pizza_slice_description = "Un mic felie de pizza, cu extra șuncă picantă (nu este vegană).",
 		hot_dog = "Câine Cald",
 		hot_dog_description = "Înghiți acest hot dog ca și cum ar fi ultimul.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		api_error = "API-ul nostru a întors o eroare.",
 		api_not_available = "API-ul nostru nu este disponibil.",
 		phone_number_is_available = "Numărul de telefon `${phoneNumber}` este disponibil.",
-		phone_number_is_not_available = "Numărul de telefon `${phoneNumber}` nu este disponibil."
+		phone_number_is_not_available = "Numărul de telefon `${phoneNumber}` nu este disponibil.",
+
+		no_phone = "Nu ai telefon.",
+		nobody_nearby = "Nimeni nu este suficient de aproape pentru a-ți împărtăși numărul.",
+		shared_number = "${fullName} ți-a împărtășit numărul de telefon. Folosește /yes pentru a-l accepta și a crea un contact nou sau /no pentru a-l respinge.",
+		shared_number_expired = "Cererea de împărtășire a numărului a expirat.",
+		shared_number_declined = "Ai respins cererea de împărtășire a numărului.",
+		failed_to_share = "Nu s-a putut împărtăși numărul tău de telefon.",
+		number_share_timeout = "Ai împărtășit acum numărul tău de telefon. Te rugăm să aștepți un moment înainte de a încerca din nou.",
+		phone_number_shared = "Numărul tău de telefon a fost distribuit cu succes către ${nearby} jucător(i) din apropiere."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "Urmaritorii vor fi stocati acum in categoriile lor pe harta.",
 		trackers_split = "Urmaritorii vor fi impartiti in blip-uri individuale.",
+
+		tracker_broken = "Urmăritorul lui ${lastName} a fost deteriorat în apropierea zonei ${location}",
+		tracker_broken_unit = "Urmăritorul lui ${lastName} a fost deteriorat în apropierea zonei ${location} (${unitId})",
+		tracker_broken_title = "[Dispecerat]",
+		tracker_broken_blip = "Urmăritor Deteriorat - ${lastName}",
+		tracker_broken_timeout = "Urmăritorul tău este deteriorat. Poți reactiva funcționalitatea acestuia după 20 de minute.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

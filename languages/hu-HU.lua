@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["hu-HU"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		phone_number_available_command_parameter_phone_number_help = "A telefonszám, amit szeretnél ellenőrizni, hogy elérhető-e. Győződj meg róla, hogy megfelel a következő formátumnak: XXX-XXXX.",
 		phone_number_available_command_substitutes = "elérhető_számok",
 
+		share_phone_number_command = "telefonszám_megosztása",
+		share_phone_number_command_help = "Ossza meg a telefonszámát az Ön közelében lévő mindenki (< 1,5 m).",
+		share_phone_number_command_substitutes = "szám_megosztása",
+
 		-- game/plants
 		plants_debug_command = "növények_debug",
 		plants_debug_command_help = "Növények hibakeresése.",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		-- game/trackers
 		tracker_command = "nyomkövető",
 		tracker_command_help = "Nyomkövető láthatóságának kapcsolása.",
+		tracker_command_parameter_break = "szünet",
+		tracker_command_parameter_break_help = "Szüneteltesse a nyomkövetőt, és küldjön értesítést róla. (Nem lehet újra engedélyezni, amíg 20 perc el nem telik)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "nyomkövetők_elválasztása",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		barbershop = "Fodrászat",
 
 		changing_area = "Öltöző",
+		barber = "Fodrász",
 
 		switch_outfit = "Váltás erre az öltözékre.",
 		replace_outfit = "Öltözet cseréje.",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxi? Nem tisztelt rendőr úr, csak tic tacsot eszem!",
 		pizza_slice = "Pizzaszelet",
-		pizza_slice_description = "Egy kis szelet a pizzából számodra.",
+		pizza_slice_description = "Egy kis szelet pizza extra pepperonival (nem vegán).",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "Falatozz el ezt a glizzyt, mintha az lenne az utolsó.",
 		nachos = "Nachos",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		api_error = "Háttér API-nk hibát adott vissza.",
 		api_not_available = "Háttér API-nk nem elérhető.",
 		phone_number_is_available = "A telefonszám `${phoneNumber}` elérhető.",
-		phone_number_is_not_available = "A telefonszám `${phoneNumber}` nem elérhető."
+		phone_number_is_not_available = "A telefonszám `${phoneNumber}` nem elérhető.",
+
+		no_phone = "Nincs telefonod.",
+		nobody_nearby = "Nincs elég közel senki, akivel megoszthatnád a számodat.",
+		shared_number = "${fullName} megosztotta veled a telefonszámát. Használd a /yes parancsot az elfogadáshoz és egy új kapcsolat létrehozásához, vagy a /no parancsot a visszautasításhoz.",
+		shared_number_expired = "A szám-megosztási kérés lejárt.",
+		shared_number_declined = "Visszautasítottad a szám-megosztási kérést.",
+		failed_to_share = "Nem sikerült megosztani a telefonszámodat.",
+		number_share_timeout = "Épp most osztottad meg a telefonszámodat. Kérlek várj egy kicsit, mielőtt újra megpróbálnád.",
+		phone_number_shared = "Sikeresen megosztottad a telefonszámodat ${nearby} közeli játékossal."
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName} (${departmentLabel})",
 		trackers_in_category = "A követők most a kategóriájukban lesznek tárolva a térképen.",
 		trackers_split = "A nyomkövetők mostantól külön blipsekre lesznek osztva.",
+
+		tracker_broken = "${lastName} nyomkövetője elromlott a közelben: ${location}",
+		tracker_broken_unit = "${unitId} ${lastName} nyomkövetője elromlott a közelben: ${location}",
+		tracker_broken_title = "[Közvetítés]",
+		tracker_broken_blip = "Elromlott nyomkövető ${lastName}",
+		tracker_broken_timeout = "A nyomkövetőd meghibásodott. 20 perc múlva újra aktiválhatod.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",

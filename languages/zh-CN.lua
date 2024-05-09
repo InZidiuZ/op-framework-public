@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 27 (do not change)
+-- AUTO LOCALES: 28 (do not change)
 
 OP.Global.Locales.Languages["zh-CN"] = {
 	-- configuration settings for language
@@ -2950,6 +2950,10 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		phone_number_available_command_parameter_phone_number_help = "您希望检查是否可用的电话号码。请确保遵循XXX-XXXX的格式。",
 		phone_number_available_command_substitutes = "number_available",
 
+		share_phone_number_command = "分享手机号",
+		share_phone_number_command_help = "将您的手机号与周围所有人（< 1.5米）分享。",
+		share_phone_number_command_substitutes = "分享号码",
+
 		-- game/plants
 		plants_debug_command = "undefined",
 		plants_debug_command_help = "undefined",
@@ -3414,6 +3418,8 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		-- game/trackers
 		tracker_command = "追踪器",
 		tracker_command_help = "切换追踪器的可见性。",
+		tracker_command_parameter_break = "断开",
+		tracker_command_parameter_break_help = "断开您的追踪器并发送通知。 （无法重新启用直到20分钟过去）",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "追踪器分离",
@@ -5202,6 +5208,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		barbershop = "理发店",
 
 		changing_area = "更衣区",
+		barber = "理发师",
 
 		switch_outfit = "更换为这套服装。",
 		replace_outfit = "替换这套服装。",
@@ -7812,7 +7819,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? 不，警官，我只是在吃薄荷糖！",
 		pizza_slice = "披萨片",
-		pizza_slice_description = "一小块披萨。",
+		pizza_slice_description = "一小块扎，额外的意大利辣香肠（不是素食）。",
 		hot_dog = "热狗",
 		hot_dog_description = "吞下这个热狗就像是你的最后一餐。",
 		nachos = "玉米片",
@@ -11064,7 +11071,16 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		api_error = "我们的后端API返回了一个错误。",
 		api_not_available = "我们的后端API不可用。",
 		phone_number_is_available = "手机号码`${phoneNumber}`可用。",
-		phone_number_is_not_available = "手机号码`${phoneNumber}`不可用。"
+		phone_number_is_not_available = "手机号码`${phoneNumber}`不可用。",
+
+		no_phone = "您没有手机。",
+		nobody_nearby = "附近没有人可以分享您的号码。",
+		shared_number = "${fullName}与您分享了他们的电话号码。使用 /yes 来接受创建新联系人，或者使用 /no 来拒绝。",
+		shared_number_expired = "电话号码分享请求已过期。",
+		shared_number_declined = "您拒绝了电话号码分享请求。",
+		failed_to_share = "无法分享您的电话号码。",
+		number_share_timeout = "您刚刚分享了您的电话号码。请等待片刻再试。",
+		phone_number_shared = "成功将你的电话号码分享给附近的 ${nearby} 名玩家。"
 	},
 
 	plants = {
@@ -12269,6 +12285,12 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		tracker_character_unit_id = "${unitId}: ${firstName} ${lastName}（${departmentLabel}）",
 		trackers_in_category = "追踪器现在将按类别存储在地图上。",
 		trackers_split = "跟踪器将分为单独的标记。",
+
+		tracker_broken = "${lastName} 的跟踪器在 ${location} 附近已经损坏。",
+		tracker_broken_unit = "${unitId} ${lastName} 的跟踪器在 ${location} 附近已经损坏。",
+		tracker_broken_title = "[调度]",
+		tracker_broken_blip = "${lastName} 的损坏跟踪器",
+		tracker_broken_timeout = "你的跟踪器已经损坏。你可以在20分钟后重新启用它。",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",
