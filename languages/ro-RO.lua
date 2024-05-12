@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["ro-RO"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "Modelul proprietatii pe care doriti sa o spawnati.",
 		spawn_prop_command_parameter_network = "rețea",
-		spawn_prop_command_parameter_network_help = "Doriți să conectați rețeaua la obiect? Se recomandă să activați această opțiune doar pentru obiectele care trebuie să poată fi mutate.",
-		spawn_prop_command_parameter_no_pickup = "nu permite ridicarea",
-		spawn_prop_command_parameter_no_pickup_help = "Ar trebui să permitați acest obiect doar adminilor super utilizatori?",
+		spawn_prop_command_parameter_network_help = "Doriți să rețelegeți obiectul? Este recomandat să activați această opțiune doar pentru obiecte care ar trebui să poată fi mutate. Nu toate obiectele sunt mobile însă.",
+		spawn_prop_command_parameter_restricted = "restrict",
+		spawn_prop_command_parameter_restricted_help = "Permiteți doar super adminilor să ridice acest obiect.",
+		spawn_prop_command_parameter_culling = "culling",
+		spawn_prop_command_parameter_culling_help = "Raza de cenzură la care distanța obiectul este generat/șters. Raza implicită este de 200m, creșteți doar această valoare pentru obiecte mari care ar trebui să fie vizibile de la distanțe mari.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "debug_prop-uri",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		tracker_command = "urmaritor",
 		tracker_command_help = "Comută vizibilitatea urmăritorului tău.",
 		tracker_command_parameter_break = "pierdere",
-		tracker_command_parameter_break_help = "Rupe-ți tracker-ul și trimite o notificare de dispecerat despre asta. (Nu poate fi reactivat până nu au trecut 20 de minute)",
+		tracker_command_parameter_break_help = "Anulează tracker-ul și trimite o notificare de desfășurare despre asta. Tastează `yes` sau `y` pentru a anula tracker-ul. (Nu poate fi reactivat până nu trec 20 minute)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "split_urmaritori",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		return_button = "Înapoi",
 		deposit = "Depozit de $${amount}",
 		no_deposit = "Fără depozit",
-		deposit_not_enough_money = "Nu aveți destui bani pentru a plăti depozitul."
+		deposit_not_enough_money = "Nu aveți destui bani pentru a plăti depozitul.",
+		helipad = "Pistă de elicopter"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		craft_torch = "Confecționează <i>Făclie</i>",
 		prepare_beans_toast = "Prepară <i>Fasole cu pâine prăjită</i>",
 		mix_pancake_batter = "Amestecă <i>Aluat pentru clătite</i>",
+		disassemble_bandages = "Dezasamblează <i>Leziuni</i>",
+		craft_tourniquet = "Confecționează un <i>Garou</i>",
 
 		search = "Caută",
 		amount = "Cantitate",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		first_aid_kit_description = "Kit-ul \"fă-o singur\" de doctor.",
 		bandages = "Leucoplast",
 		bandages_description = "Pentru toate tăieturile și zgârieturile.",
+		tourniquet = "Garou",
+		tourniquet_description = "Un instrument de salvare în situații critice, garoul este proiectat să oprească sângerările severe rapid. Deși oferă vindecare minimă în comparație cu opțiunile mai complete de prim ajutor, capacitatea sa de a opri pierderea de sânge poate fi crucială în situații de urgență.",
+		gauze = "Gază",
+		gauze_description = "Essențial pentru orice trusă de prim ajutor, această gază este moale, absorbantă și perfectă pentru pansarea rănilor. Oferă fundația de bază pentru îngrijirea rănilor, ajutând la gestionarea sângerării și protejând împotriva infecțiilor.",
 		oxygen_tank = "Butelie de Oxigen",
 		oxygen_tank_description = "Un pachet de extensie pulmonară.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		no_vehicle_in_front = "Nu există niciun vehicul în fața ta.",
 		using_first_aid_kit = "Folosind trusa de prim ajutor",
 		using_bandages = "Folosind bandaje",
+		using_tourniquet = "Folosind Turnichet",
 		using_ifak = "Folosind IFAK",
 		move_to_wash = "Mută-te aici pentru a spăla vehiculul",
 		vehicle_too_clean = "Vehiculul este prea curat pentru a fi spălat",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		unable_to_use_lighter_in_vehicle = "Nu poți utiliza bricheta în vehicul.",
 		not_possible_in_a_vehicle = "Această acțiune nu este posibilă în vehicul.",
 		just_used_bandage = "V-ați utilizat recent un trusou de prim ajutor, așteptați un pic înainte de a utiliza altul.",
+		just_used_tourniquet = "Ați folosit tocmai un turnichet, așteptați puțin înainte de a folosi altul.",
 		drank_gasoline_death = "Otrăvire cu benzină",
 		drank_bleach_death = "Otrăvire cu clor",
 		finished_joint = "Ai terminat jointul.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		prop = "Unelte",
 		model_parameter_missing = "Lipsește parametrul `model`.",
 		model_parameter_invalid = "Modelul `${model}` nu este valid.",
-		model_parameter_is_not_an_object = "Modelul `${model}` nu este un obiect.",
 		spawned_prop_non_networked = "A fost creat un obiect ne-reținut în rețeaua serverului cu modelul `${model}`.",
 		spawned_prop_networked = "A fost creat un obiect în rețeaua serverului cu modelul `${model}`.",
 		spawned_exact_prop = "Obiectul creat corespunde exact descrierii.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		not_able_to_spawn_while_moving = "Trebuie să stați nemișcat atunci când creați un obiect.",
 		stand_still_to_place_prop = "Trebuie să stați nemișcat pentru a plasa un obiect.",
 		prop_no_interior = "Puteți plasa acest obiect doar în afara clădirilor.",
+		invalid_culling_value = "Valoare de eliminare nevalidă, trebuie să fie între 10m și 2,500m.",
+		invalid_model = "Model nevalid/necunoscut `${name}` (${hash}).",
 
 		invalid_prop_id = "ID-ul obiectului este invalid.",
 		prop_deleted = "Obiectul cu ID-ul ${propId} a fost șters.",

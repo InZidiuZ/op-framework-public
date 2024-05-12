@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["ar-SA"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		spawn_prop_command_parameter_model_hash = "النموذج",
 		spawn_prop_command_parameter_model_hash_help = "نموذج المتعلق الذي تريد التوليد به.",
 		spawn_prop_command_parameter_network = "الشبكة",
-		spawn_prop_command_parameter_network_help = "هل ترغب في توصيل الـPROP بالشبكة؟ نوصي بتمكين هذه الميزة فقط للـPROP القابل للحركة.",
-		spawn_prop_command_parameter_no_pickup = "عدم الالتقاط",
-		spawn_prop_command_parameter_no_pickup_help = "هل يجب أن يتم الالتقاط من قبل المشرفين الرئيسيين فقط؟",
+		spawn_prop_command_parameter_network_help = "هل ترغب في توصيل الكائن بالشبكة؟ من الأفضل تمكين هذا الخيار فقط للأشياء التي يجب أن تكون قابلة للتحرك. ليس جميع الأشياء قابلة للتحرك بالطبع.",
+		spawn_prop_command_parameter_restricted = "مقيد",
+		spawn_prop_command_parameter_restricted_help = "السماح فقط للمشرفين العامين باختيار هذا الكائن.",
+		spawn_prop_command_parameter_culling = "تجنب",
+		spawn_prop_command_parameter_culling_help = "نصف قطر التجنيب الذي يتم فيه إنشاء/إزالة الكائن. النصف القطر الافتراضي هو 200 متر، قم بزيادته فقط للأشياء الكبيرة التي يجب أن تكون مرئية من بعيد.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "تصحيح الموديلات",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		tracker_command = "تعقب",
 		tracker_command_help = "تبديل رؤية جهاز التعقب.",
 		tracker_command_parameter_break = "تعطيل",
-		tracker_command_parameter_break_help = "تعطيل جهاز التتبع الخاص بك وإرسال إشعار عن ذلك. (لا يمكن إعادة التفعيل حتى يمر 20 دقيقة)",
+		tracker_command_parameter_break_help = "اكسر جهاز التعقب الخاص بك وأرسل إشعاراً بذلك. اكتب `نعم` أو `ي` لكسر جهاز التعقب الخاص بك. (لا يمكن إعادة تمكينه حتى يمر 20 دقيقة)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "تقسيم_تعقب",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		return_button = "رجوع",
 		deposit = "إيداع $$ {amount}",
 		no_deposit = "لا يوجد إيداع",
-		deposit_not_enough_money = "لا يوجد لديك ما يكفي من المال لدفع الإيداع."
+		deposit_not_enough_money = "لا يوجد لديك ما يكفي من المال لدفع الإيداع.",
+		helipad = "منصة هليكوبتر"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		craft_torch = "صنع <i>شعلة</i>",
 		prepare_beans_toast = "تحضير <i>فاصوليا محمصة</i>",
 		mix_pancake_batter = "خلط <i>عجينة البانكيك</i>",
+		disassemble_bandages = "فك تجميع <i>الضمادات</i>",
+		craft_tourniquet = "صنع <i>الحزام الطويل</i>",
 
 		search = "بحث",
 		amount = "المقدار",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		first_aid_kit_description = "صندوق الطبيب الشخصي \"افعلها بنفسك\".",
 		bandages = "ضمادات",
 		bandages_description = "لجميع الجروح والجروح البسيطة.",
+		tourniquet = "الحزام الطويل",
+		tourniquet_description = "أداة لإنقاذ الحياة في الحالات الحرجة، تم تصميم الحزام الطويل لوقف النزيف الشديد بسرعة. بينما يوفر الشفاء الأدنى مقارنة بخيارات الإسعاف الأولية الأكثر شمولاً، يمكن أن يكون قدرته على إيقاف فقدان الدم محورياً في حالات الطوارئ.",
+		gauze = "شاش طبية",
+		gauze_description = "ضرورية لأي علبة إسعاف أولي، تعتبر هذه الشاش طرية وامتصاصية ومثالية لتضميد الجروح. توفر الأساس الأساسي للرعاية الجراحية، مساعدة في إدارة النزيف وحماية الجسم من العدوى.",
 		oxygen_tank = "صندوق أكسجين",
 		oxygen_tank_description = "حزمة توسع الرئة.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		no_vehicle_in_front = "لا يوجد مركبة أمامك.",
 		using_first_aid_kit = "جارٍ استخدام علبة الإسعافات الأولية",
 		using_bandages = "جارٍ استخدام الضمادات",
+		using_tourniquet = "استخدام الكراويط",
 		using_ifak = "جارٍ استخدام كيس الإسعاف الفوري المفرد",
 		move_to_wash = "انتقل هنا لغسل المركبة",
 		vehicle_too_clean = "المركبة نظيفة جداً ولا يمكن غسيلها الآن",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		unable_to_use_lighter_in_vehicle = "لا يمكنك استخدام الولاعة في السيارة.",
 		not_possible_in_a_vehicle = "هذا الإجراء غير ممكن في السيارة.",
 		just_used_bandage = "لقد استخدمت طقم إسعافات أولية للتو ، انتظر قليلاً قبل استخدام طقم آخر.",
+		just_used_tourniquet = "لقد استخدمت للتو كراويط، انتظر لحظة قبل استخدام كراويط أخرى.",
 		drank_gasoline_death = "تسمم البنزين",
 		drank_bleach_death = "تسمم بالمبيض",
 		finished_joint = "لقد انتهيت من حلتك.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		prop = "أداة",
 		model_parameter_missing = "المعلمة `model` غير متوفرة.",
 		model_parameter_invalid = "النموذج `${model}` غير صالح.",
-		model_parameter_is_not_an_object = "الموديل `${model}` ليس عبارة عن كائن.",
 		spawned_prop_non_networked = "تم إنشاء كائن غير متصل بالشبكة باستخدام الموديل `${model}`.",
 		spawned_prop_networked = "تم إنشاء كائن متصل بالشبكة باستخدام الموديل `${model}`.",
 		spawned_exact_prop = "تم إنشاء نسخة من الكائن بشكل دقيق.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		not_able_to_spawn_while_moving = "يجب عليك التوقف عن الحركة عند إنشاء الملكية الفكرية.",
 		stand_still_to_place_prop = "يجب عليك التوقف عن الحركة لوضع الملكية الفكرية.",
 		prop_no_interior = "يمكنك وضع هذه الملكية الفكرية فقط في الخارج.",
+		invalid_culling_value = "قيمة قطع غير صالحة، يجب أن تكون بين 10م و2,500م.",
+		invalid_model = "نموذج غير صالح/غير معروف `${name}` (${hash}).",
 
 		invalid_prop_id = "معرف الملكية الفكرية غير صالح.",
 		prop_deleted = "تم حذف الملكية الفكرية بالرقم ${propId}.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["meme-1929"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "The prop model you would like to spawn.",
 		spawn_prop_command_parameter_network = "networked",
-		spawn_prop_command_parameter_network_help = "Do you want to network the prop? We suggest enabling this only for props that should be movable.",
-		spawn_prop_command_parameter_no_pickup = "no pick up",
-		spawn_prop_command_parameter_no_pickup_help = "Should this prop be picked up only by super admins?",
+		spawn_prop_command_parameter_network_help = "Wouldst thou like to network the prop? It is recommended thou only enable this for props that should be able to move. Not all props are movable though.",
+		spawn_prop_command_parameter_restricted = "restricted",
+		spawn_prop_command_parameter_restricted_help = "Only allow this prop to be picked up by super admins.",
+		spawn_prop_command_parameter_culling = "culling",
+		spawn_prop_command_parameter_culling_help = "Culling radius at which distance the prop is spawned/despawned. Default radius is 200m, only increase this for large props that should be visible from afar.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		tracker_command = "tracker",
 		tracker_command_help = "Toggle thy tracker's visibility.",
 		tracker_command_parameter_break = "hinder",
-		tracker_command_parameter_break_help = "Hinder your tracker and send a dispatch notification about it. (Can't be re-enabled until 20 minutes have passed)",
+		tracker_command_parameter_break_help = "Break your tracker and dispatch a notification about it. Input `yes` or `y` to break your tracker. (Cannot be re-enabled until 20 minutes have passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		return_button = "Return",
 		deposit = "$${amount} Deposit",
 		no_deposit = "No Deposit",
-		deposit_not_enough_money = "Thou dost not have enow coin to pay the deposit."
+		deposit_not_enough_money = "Thou dost not have enow coin to pay the deposit.",
+		helipad = "Aeronautical Station"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		craft_torch = "undefined",
 		prepare_beans_toast = "undefined",
 		mix_pancake_batter = "undefined",
+		disassemble_bandages = "Take apart <i>Strips of Cloth</i>",
+		craft_tourniquet = "Make <i>Tourniquet</i>",
 
 		search = "Search",
 		amount = "Amount",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		first_aid_kit_description = "The \"do-it-yourself\" doctor-kit.",
 		bandages = "Bandages",
 		bandages_description = "For all cuts and scrapes.",
+		tourniquet = "Tourniquet",
+		tourniquet_description = "An essential tool in critical moments, the tourniquet is crafted to swiftly halt severe bleeding. Though it provides minimal recovery compared to more extensive medical aids, its capability to stop blood loss can be crucial in urgent situations.",
+		gauze = "Lint",
+		gauze_description = "Indispensable for any initial aid box, this lint is gentle, absorbent, and ideal for wrapping wounds. It establishes the basic groundwork for caring for wounds, assisting in controlling bleeding and guarding against infection.",
 		oxygen_tank = "Oxygen Reservoir",
 		oxygen_tank_description = "A device to expand your lungs' capacity.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		no_vehicle_in_front = "undefined",
 		using_first_aid_kit = "Using First Aid Kit",
 		using_bandages = "Using Dressings",
+		using_tourniquet = "Utilizing Tourniquet",
 		using_ifak = "Using IFAK",
 		move_to_wash = "Move hither to wash the automobile",
 		vehicle_too_clean = "The automobile is too clean to be washed.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		unable_to_use_lighter_in_vehicle = "You are unable to use a lighter in a vehicle.",
 		not_possible_in_a_vehicle = "This action is not possible in a vehicle.",
 		just_used_bandage = "You have just applied a first aid kit, wait a little while before using another one.",
+		just_used_tourniquet = "You have just utilized a tourniquet, please wait before using another one.",
 		drank_gasoline_death = "Death by Gasoline Poisoning",
 		drank_bleach_death = "Poisoned by Bleach",
 		finished_joint = "You finished your weed rollin'.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		prop = "Property",
 		model_parameter_missing = "The `model` attribute is missing.",
 		model_parameter_invalid = "The model `${model}` is an invalid model.",
-		model_parameter_is_not_an_object = "The model `${model}` is not an object.",
 		spawned_prop_non_networked = "Spawned a non-networked object with model `${model}`.",
 		spawned_prop_networked = "Spawned a networked object with model `${model}`.",
 		spawned_exact_prop = "Spawned exact object.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		not_able_to_spawn_while_moving = "Thou must stand still whilst spawning a prop.",
 		stand_still_to_place_prop = "Thou must stand still to place a prop.",
 		prop_no_interior = "Thou can only place this prop outside.",
+		invalid_culling_value = "Unacceptable culling value, should fall between 10m and 2,500m.",
+		invalid_model = "Invalid/Unrecognized model `${name}` (${hash}).",
 
 		invalid_prop_id = "Invalid prop id.",
 		prop_deleted = "Prop with id ${propId} wast deleted.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["meme-minionese"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		spawn_prop_command_parameter_model_hash = "banana",
 		spawn_prop_command_parameter_model_hash_help = "The prop model you would like to spawn. Banana!",
 		spawn_prop_command_parameter_network = "bello",
-		spawn_prop_command_parameter_network_help = "Pou gelatoo tatoo kampolo? Bello kampolo, para tu no papoy d'immi kampolo.",
-		spawn_prop_command_parameter_no_pickup = "no papoy",
-		spawn_prop_command_parameter_no_pickup_help = "Kan tu papoy seulement par les super admins?",
+		spawn_prop_command_parameter_network_help = "Bello, bapple bottom jiji? Tulaliloo ti amo kampai banana. Poopay riah. Me want banana. Underwear la bodaaa tu.",
+		spawn_prop_command_parameter_restricted = "baboi",
+		spawn_prop_command_parameter_restricted_help = "Gelato papoi! Me want bananaaaaah! Jiji gelato ti aamoo. Bee do bee do bee do. La la bellow da.",
+		spawn_prop_command_parameter_culling = "baaah",
+		spawn_prop_command_parameter_culling_help = "Bananaaaaahhh, tulaliloo po kass. La bodaaaah ti aamoo. Bello bananaaaa. Baboi po kass me want banana. Jiji hana dul sae.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "kiwi_kiwi",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		tracker_command = "banana_bello_tracker",
 		tracker_command_help = "Toggle your tracker's visibility. Bello!",
 		tracker_command_parameter_break = "break",
-		tracker_command_parameter_break_help = "Break ya tracker and send a dispatch notification about it. (Cant be re-enabled untill 20min have passed)",
+		tracker_command_parameter_break_help = "Bello, break banana pe po ka po ka. Type `potato` or `banana` to break banana pe po ka. (Me no banana until 20min have passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "banana_bello_trackers_split",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		return_button = "Bello",
 		deposit = "$${amount} BANANA",
 		no_deposit = "No BANANA",
-		deposit_not_enough_money = "You do not have enough BANANA to pay the deposit."
+		deposit_not_enough_money = "You do not have enough BANANA to pay the deposit.",
+		helipad = "Bapple"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		craft_torch = "undefined",
 		prepare_beans_toast = "undefined",
 		mix_pancake_batter = "undefined",
+		disassemble_bandages = "Ba ba <i>Bandages</i>",
+		craft_tourniquet = "Bello <i>Tourniquet</i>",
 
 		search = "Papoy",
 		amount = "Bananu",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		first_aid_kit_description = "The \"do-it-yourself\" baboi-doctor-kit.",
 		bandages = "Bandages",
 		bandages_description = "Tulaliloo ti amo for all outchies and booboos.",
+		tourniquet = "Tourniquet",
+		tourniquet_description = "Bello, me banana chasy booya, the tourniquet is banana to stop severe chasy quickly. Banana chasy hehe compared to more comprehensive first aid options, chasy to halt chasy can be poopaye in hehe.",
+		gauze = "Bababa",
+		gauze_description = "Bababa, bababa bababa bananaaaa! Bababa me banana, bluubluubluu!",
 		oxygen_tank = "Bababa Banana Tank",
 		oxygen_tank_description = "Bababa Tank that make you breathy.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		no_vehicle_in_front = "Bello bello bello bello bello.",
 		using_first_aid_kit = "Bee-doo Bee-doo Using First Aid Kit Bee-Doo!",
 		using_bandages = "Bee-doo Bee-doo Using Bandages Bee-Doo!",
+		using_tourniquet = "Bala tu Tourniquet",
 		using_ifak = "Bee-doo Bee-doo Using IFAK Bee-Doo!",
 		move_to_wash = "Bee-do Bee-do Move here to wash the vehicle Bee-do!",
 		vehicle_too_clean = "Bee-do Bee-do The vehicle is too clean to be washed Bee-do!",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		unable_to_use_lighter_in_vehicle = "BANANA! You are not able to use a lighter in a vehicle.",
 		not_possible_in_a_vehicle = "BANANA! This action is not possible in a vehicle.",
 		just_used_bandage = "BANANA! You just used a first aid kit, wait a bit before using another one.",
+		just_used_tourniquet = "Bababa bababa bababa tourniquet, bababa po ka ba da ga.",
 		drank_gasoline_death = "BANANA! Me want Banana! Gasoline Poisoning",
 		drank_bleach_death = "Bababa Bo Boo! (Bleach Poisoning)",
 		finished_joint = "Bello! You finished your joint.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		prop = "Prop",
 		model_parameter_missing = "Da `model` parameter iz missing.",
 		model_parameter_invalid = "Da model `${model}` iz an invalid model.",
-		model_parameter_is_not_an_object = "Bello: The model `${model}` is not an object.",
 		spawned_prop_non_networked = "Banana: Spawned a non-networked prop with model `${model}`.",
 		spawned_prop_networked = "Bello: Spawned a networked prop with model `${model}`.",
 		spawned_exact_prop = "Bee do bee do bee do: Spawned exact prop.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		not_able_to_spawn_while_moving = "Bee doo bee doo bee doo (Translation: You can't spawn a prop while moving).",
 		stand_still_to_place_prop = "Bee doo bee doo bee doo (Translation: You have to stand still to place a prop).",
 		prop_no_interior = "Bee doo bee doo bee doo (Translation: You can only place this prop outside).",
+		invalid_culling_value = "Bababa bababa bababa, bababa tutu bee doo bee doo 10m la 2,500m.",
+		invalid_model = "Invalid bababa `${name}` (${hash}).",
 
 		invalid_prop_id = "Bee doo bee doo bee doo (Translation: Invalid prop id).",
 		prop_deleted = "Bee doo bee doo bee doo (Translation: Prop with id ${propId} was deleted).",

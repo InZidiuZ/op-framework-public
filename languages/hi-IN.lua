@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["hi-IN"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		spawn_prop_command_parameter_model_hash = "मॉडल",
 		spawn_prop_command_parameter_model_hash_help = "आप जिस प्रॉप मॉडल को उत्पन्न करना चाहते हैं।",
 		spawn_prop_command_parameter_network = "नेटवर्क",
-		spawn_prop_command_parameter_network_help = "क्या आप प्रॉप को नेटवर्क करना चाहते हैं? यह सिर्फ प्रॉप के लिए सुझाव दिया जाता है जो हिल सकते हैं।",
-		spawn_prop_command_parameter_no_pickup = "खरीद नहीं",
-		spawn_prop_command_parameter_no_pickup_help = "क्या इस प्रॉप को केवल सुपर एडमिन्स द्वारा ही उठाया जा सकता है?",
+		spawn_prop_command_parameter_network_help = "क्या आप इस प्रॉप को नेटवर्क करना चाहेंगे? सुझाव दिया जाता है कि आप इसे केवल वे प्रॉप्स के लिए सक्षम करें जो चल सकते हों। हालाकि, सभी प्रॉप्स चले जाने योग्य नहीं होते हैं।",
+		spawn_prop_command_parameter_restricted = "प्रतिबंधित",
+		spawn_prop_command_parameter_restricted_help = "केवल सुपर एडमिन्स द्वारा पिकअप किया जाने वाले इस प्रॉप को स्वीकृत करें।",
+		spawn_prop_command_parameter_culling = "कलिंग",
+		spawn_prop_command_parameter_culling_help = "दूरी जिस पर प्रॉप स्वॉन/डीस्पॉन होता है की कलिंग त्रिज्या। डिफ़ॉल्ट त्रिज्या 200मी है, इसे केवल दूर से दिखने वाले बड़े प्रॉप्स के लिए बढ़ाएं।",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "प्रोप्स डीबग",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		tracker_command = "ट्रैकर",
 		tracker_command_help = "अपने ट्रैकर की दृश्यता टॉगल करें।",
 		tracker_command_parameter_break = "विराम",
-		tracker_command_parameter_break_help = "अपना ट्रैकर ब्रेक करें और इसके बारे में एक डिस्पैच अधिसूचना भेजें। (20 मिनट बाद ही फिर से सक्रिय किया जा सकता है)",
+		tracker_command_parameter_break_help = "अपना ट्रैकर तोड़ें और इसके बारे में एक डिस्पैच सूचना भेजें। अपना ट्रैकर तोड़ने के लिए `हाँ` या `ह` टाइप करें। (20 मिनट बाद तक पुनः सक्रिय नहीं किया जा सकता)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "ट्रैकर_विभाजित_करें",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		return_button = "वापस जाएं",
 		deposit = "$${amount} जमा",
 		no_deposit = "कोई जमा नहीं",
-		deposit_not_enough_money = "आपके पास जमा भुगतान करने के लिए पर्याप्त धन नहीं है।"
+		deposit_not_enough_money = "आपके पास जमा भुगतान करने के लिए पर्याप्त धन नहीं है।",
+		helipad = "हेलीपैड"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		craft_torch = "लाइट बनाएं <i>टॉर्च</i>",
 		prepare_beans_toast = "तैयार करें <i>बीन्स टोस्ट</i>",
 		mix_pancake_batter = "मिश्रण करें <i>पैनकेक बैटर</i>",
+		disassemble_bandages = "<i>बैंडेज</i> को खोलें",
+		craft_tourniquet = "<i>टर्नीकेट</i> बनाएं",
 
 		search = "खोजें",
 		amount = "मात्रा",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		first_aid_kit_description = "\"खुद से कुछ करो\" डॉक्टर किट।",
 		bandages = "बैंडेज",
 		bandages_description = "सभी चोटों और खरोंचों के लिए।",
+		tourniquet = "टर्नीकेट",
+		tourniquet_description = "तीव्र स्थितियों में जीवन को बचाने वाला उपकरण, टर्नीकेट गंभीर रक्तस्राव को तेजी से रोकने के लिए डिज़ाइन किया गया है। जबकि इसके पास और व्यापक प्राथमिक चिकित्सा विकल्पों की तुलना में कम इलाज होता है, तो इसकी रक्त हानि को रोकने की क्षमता आपातकालीन स्थितियों में महत्वपूर्ण हो सकती है।",
+		gauze = "गॉज",
+		gauze_description = "किसी भी पहली सहायता किट के लिए आवश्यक है, यह गॉज नरम, अवशोषक है, और घावों को पोषण करने के लिए उत्तम है। यह घाव की देखभाल के लिए मूल आधार प्रदान करता है, रक्तस्राव को नियंत्रित करने में मदद करता है और संक्रमण से बचाव करता है।",
 		oxygen_tank = "ऑक्सीजन टैंक",
 		oxygen_tank_description = "एक फेफड़ों को फैलाने वाला पैक।",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		no_vehicle_in_front = "आपके सामने कोई वाहन नहीं है।",
 		using_first_aid_kit = "पहली मदद किट का उपयोग कर रहे हैं",
 		using_bandages = "बैंडेज का उपयोग कर रहे हैं",
+		using_tourniquet = "टर्नीकेट का उपयोग कर रहा है",
 		using_ifak = "IFAK का उपयोग कर रहे हैं",
 		move_to_wash = "गाड़ी को धोने के लिए यहां ले जाएँ",
 		vehicle_too_clean = "वाहन बहुत साफ है इसलिए ये धोना मना है।",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		unable_to_use_lighter_in_vehicle = "आप वाहन में एक लाइटर का उपयोग नहीं कर सकते।",
 		not_possible_in_a_vehicle = "वाहन में यह कार्रवाई संभव नहीं है।",
 		just_used_bandage = "आपने एक पहली मदद किट का उपयोग किया है, कुछ देर पहले एक और का उपयोग करने के लिए प्रतीक्षा करें।",
+		just_used_tourniquet = "आपने अभी टर्निकेट का उपयोग किया है, कुछ समय पहले एक और उपयोग करने से पहले थोड़ी देर प्रतीक्षा करें।",
 		drank_gasoline_death = "गैसोलीन विषणुता",
 		drank_bleach_death = "ब्लीच विषणुता",
 		finished_joint = "आपने ज्वाइंट पूरा कर लिया है।",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		prop = "प्रॉप",
 		model_parameter_missing = "`model` पैरामीटर अनुपस्थित है।",
 		model_parameter_invalid = "`${model}` मॉडल अमान्य है।",
-		model_parameter_is_not_an_object = "`${model}` मॉडल एक वस्तु नहीं है।",
 		spawned_prop_non_networked = "मॉडल `${model}` के साथ एक गैर-नेटवर्क्ड प्रॉप स्पॉन हुआ।",
 		spawned_prop_networked = "मॉडल `${model}` के साथ एक नेटवर्क्ड प्रॉप स्पॉन हुआ।",
 		spawned_exact_prop = "विस्तृत प्रॉप जन्मित हुआ।",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		not_able_to_spawn_while_moving = "आप जब प्रॉप उत्पन्न कर रहे हो तो ठहरा हुआ होना चाहिए।",
 		stand_still_to_place_prop = "एक प्रॉप रखने के लिए आपको ठहरा हुआ होना चाहिए।",
 		prop_no_interior = "आप केवल बाहर इस प्रॉप को रख सकते हैं।",
+		invalid_culling_value = "अवैध कलिंग मान, इसे 10 मीटर से 2,500 मीटर के बीच होना चाहिए।",
+		invalid_model = "अमान्य/अज्ञात मॉडल `${name}` (${hash})।",
 
 		invalid_prop_id = "अमान्य प्रॉप आईडी।",
 		prop_deleted = "${propId} आईडी वाला प्रॉप हटाया गया।",

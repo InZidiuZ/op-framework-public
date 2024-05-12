@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "Het prop model dat je wilt spawnen.",
 		spawn_prop_command_parameter_network = "netwerk",
-		spawn_prop_command_parameter_network_help = "Wil je het object via het netwerk verbinden? Het wordt aanbevolen om dit alleen in te schakelen voor objecten die kunnen bewegen.",
-		spawn_prop_command_parameter_no_pickup = "niet oppakbaar",
-		spawn_prop_command_parameter_no_pickup_help = "Kan dit object alleen worden opgepakt door super beheerders?",
+		spawn_prop_command_parameter_network_help = "Wil je het object netwerken? Het wordt aanbevolen om dit alleen in te schakelen voor objecten die kunnen bewegen. Niet alle objecten kunnen echter bewegen.",
+		spawn_prop_command_parameter_restricted = "beperkt",
+		spawn_prop_command_parameter_restricted_help = "Sta alleen toe dat dit object wordt opgepakt door superbeheerders.",
+		spawn_prop_command_parameter_culling = "culling",
+		spawn_prop_command_parameter_culling_help = "Culling radius op welke afstand het object wordt gespawned/gedespawnd. Standaard radius is 200m, alleen verhogen voor grote objecten die van ver zichtbaar moeten zijn.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		tracker_command = "tracker",
 		tracker_command_help = "Schakel de zichtbaarheid van je tracker in of uit.",
 		tracker_command_parameter_break = "breuk",
-		tracker_command_parameter_break_help = "Breek je tracker en stuur een melding naar de meldkamer. (Kan pas na 20 minuten opnieuw worden geactiveerd)",
+		tracker_command_parameter_break_help = "Breek je tracker en stuur een melding naar de meldkamer. Typ `ja` of `j` om je tracker te breken. (Kan niet opnieuw worden ingeschakeld totdat er 20 minuten zijn verstreken)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		return_button = "Terug",
 		deposit = "$${bedrag} Borg",
 		no_deposit = "Geen Borg",
-		deposit_not_enough_money = "Je hebt niet genoeg geld om de borg te betalen."
+		deposit_not_enough_money = "Je hebt niet genoeg geld om de borg te betalen.",
+		helipad = "Helikopterplatform"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		craft_torch = "Maak <i>Fakkel</i>",
 		prepare_beans_toast = "Bereid <i>Bonen op Toast</i>",
 		mix_pancake_batter = "Mix <i>Pannenkoekbeslag</i>",
+		disassemble_bandages = "Demonteer <i>Verbanden</i>",
+		craft_tourniquet = "Maak <i>Staakverband</i>",
 
 		search = "Zoeken",
 		amount = "Hoeveelheid",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		first_aid_kit_description = "De \"doe-het-zelf\"-dokterstas.",
 		bandages = "Verband",
 		bandages_description = "Voor alle zere plekken en schrammen.",
+		tourniquet = "Staakverband",
+		tourniquet_description = "Een levensreddend hulpmiddel in kritieke situaties, het staakverband is ontworpen om ernstige bloedingen snel te stoppen. Hoewel het minimale genezing biedt in vergelijking met meer uitgebreide eerste hulp opties, kan het vermogen om bloedverlies te stoppen doorslaggevend zijn in noodsituaties.",
+		gauze = "Verbandgaas",
+		gauze_description = "Essentieel voor elke EHBO-kit, dit verbandgaas is zacht, absorberend en perfect voor het verbinden van wonden. Het biedt de basis voor wondverzorging, helpt bij het stelpen van bloedingen en beschermt tegen infecties.",
 		oxygen_tank = "Zuurstoftank",
 		oxygen_tank_description = "Een longuitbreidingspakket.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		no_vehicle_in_front = "Er is geen voertuig voor je.",
 		using_first_aid_kit = "Gebruikt de Eerste Hulp Kit",
 		using_bandages = "Gebruikt Verband",
+		using_tourniquet = "Gebruik van een Stuwband",
 		using_ifak = "Gebruikt IFAK",
 		move_to_wash = "Verplaats hierheen om het voertuig te wassen",
 		vehicle_too_clean = "Het voertuig is te schoon om te worden gewassen.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		unable_to_use_lighter_in_vehicle = "Je kunt geen aansteker gebruiken in een voertuig.",
 		not_possible_in_a_vehicle = "Deze actie is niet mogelijk in een voertuig.",
 		just_used_bandage = "Je hebt zojuist een eerste hulp kit gebruikt, wacht even voordat je een nieuwe gebruikt.",
+		just_used_tourniquet = "Je hebt zojuist een stuwband gebruikt, wacht even voordat je een andere gebruikt.",
 		drank_gasoline_death = "Vergiftiging door benzine",
 		drank_bleach_death = "Vergiftiging door bleekmiddel",
 		finished_joint = "Je hebt je joint afgemaakt.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		prop = "Object",
 		model_parameter_missing = "De parameter `model` ontbreekt.",
 		model_parameter_invalid = "Het object `${model}` is ongeldig.",
-		model_parameter_is_not_an_object = "Het object `${model}` is geen object.",
 		spawned_prop_non_networked = "Heeft een niet-netwerkgerelateerd object met het model `${model}` gespawned.",
 		spawned_prop_networked = "Heeft een netwerkgerelateerd object met het model `${model}` gespawned.",
 		spawned_exact_prop = "Exacte prop gespawned.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		not_able_to_spawn_while_moving = "Je moet stil staan om een prop te spawnen.",
 		stand_still_to_place_prop = "Je moet stil staan om een prop te plaatsen.",
 		prop_no_interior = "Je kunt deze prop alleen buiten plaatsen.",
+		invalid_culling_value = "Ongeldige waarde voor inkrimping, moet tussen 10m en 2.500m liggen.",
+		invalid_model = "Ongeldig/Onbekend model `${name}` (${hash}).",
 
 		invalid_prop_id = "Ongeldige prop-id.",
 		prop_deleted = "Prop met id ${propId} is verwijderd.",

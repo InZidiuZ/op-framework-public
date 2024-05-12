@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["cs-CZ"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "Model objektu, který chcete spawnout.",
 		spawn_prop_command_parameter_network = "síť",
-		spawn_prop_command_parameter_network_help = "Chcete objekt udělat síťovým? Doporučuje se to jen pro objekty, které by měly být schopny se pohybovat.",
-		spawn_prop_command_parameter_no_pickup = "není možné zvednout",
-		spawn_prop_command_parameter_no_pickup_help = "Má být tento objekt dostupný pouze pro super adminy?",
+		spawn_prop_command_parameter_network_help = "Chcete prop zahrnout do sítě? Doporučuje se tuto možnost povolit pouze pro objekty, které by měly být schopny se pohybovat. Nicméně ne všechny objekty jsou pohyblivé.",
+		spawn_prop_command_parameter_restricted = "omezeno",
+		spawn_prop_command_parameter_restricted_help = "Povolit pouze super administrátorům zvedat tento objekt.",
+		spawn_prop_command_parameter_culling = "ústřižek",
+		spawn_prop_command_parameter_culling_help = "Rádius ústřižku, ve kterém je objekt spawnut/odspawnut. Výchozí rádius je 200m, zvýšte pouze pro velké objekty, které by měly být viditelné z dálky.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		tracker_command = "sledovac",
 		tracker_command_help = "Přepíná viditelnost sledovače.",
 		tracker_command_parameter_break = "přestávka",
-		tracker_command_parameter_break_help = "Zničí váš tracker a odešle o tom oznámení dispečerovi. (Nelze znovu povolit, dokud neuplyne 20 minut)",
+		tracker_command_parameter_break_help = "Přerušit svůj tracker a odeslat oznámení o tom. Napište `yes` nebo `y` pro přerušení trackru. (Nelze opětovně aktivovat do uplynutí 20 minut)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "rozvržení_sledovačů",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		return_button = "Zpět",
 		deposit = "Vklad: $${amount}",
 		no_deposit = "Bez vkladu",
-		deposit_not_enough_money = "Nemáte dostatek peněz k zaplacení vkladu."
+		deposit_not_enough_money = "Nemáte dostatek peněz k zaplacení vkladu.",
+		helipad = "Vrtulníková plošina"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		craft_torch = "Vyrobit <i>Pochodeň</i>",
 		prepare_beans_toast = "Připravit <i>Fazole na toastu</i>",
 		mix_pancake_batter = "Smíchat <i>Těsto na lívance</i>",
+		disassemble_bandages = "Rozložit <i>Bandáže</i>",
+		craft_tourniquet = "Vyrobit <i>Tourniquet</i>",
 
 		search = "Hledat",
 		amount = "Množství",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		first_aid_kit_description = "Sada na \"udělej si sám\" doktora.",
 		bandages = "Obinadla",
 		bandages_description = "Pro všechny bolístky a škrábance.",
+		tourniquet = "Tourniquet",
+		tourniquet_description = "Záchranářský nástroj v kritických situacích, tourniquet je navržen tak, aby rychle zastavil těžké krvácení. Zatímco nabízí minimální léčbu ve srovnání s komplexnějšími prvními pomocními možnostmi, jeho schopnost zastavit krvácení může být rozhodující v nouzových situacích.",
+		gauze = "Gáza",
+		gauze_description = "Základní součástka každé lékárničky první pomoci, tato gáza je měkká, savá a skvělá k obvazování ran. Poskytuje základní podporu péče o rány, pomáhá kontrolovat krvácení a chrání před infekcí.",
 		oxygen_tank = "Kyslíková láhev",
 		oxygen_tank_description = "Nádrž na rozšíření plic.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		no_vehicle_in_front = "Přede vámi není žádné vozidlo.",
 		using_first_aid_kit = "Používání první pomoci",
 		using_bandages = "Používání obvazů",
+		using_tourniquet = "Použití torniketu",
 		using_ifak = "Používání IFAK",
 		move_to_wash = "Přesuňte se sem, abyste umyli vozidlo",
 		vehicle_too_clean = "Vozidlo je příliš čisté na to, aby se dalo umýt.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		unable_to_use_lighter_in_vehicle = "Nemůžete použít zapalovač ve vozidle.",
 		not_possible_in_a_vehicle = "Tato akce není možná ve vozidle.",
 		just_used_bandage = "Právě jste použili lékárničku, počkejte chvíli před použitím dalšího.",
+		just_used_tourniquet = "Právě jste použili torniket, počkejte chvíli před použitím dalšího.",
 		drank_gasoline_death = "Otrava benzínem",
 		drank_bleach_death = "Otrava bělidlem",
 		finished_joint = "Dokončili jste joint.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		prop = "Objekt",
 		model_parameter_missing = "Chybí parametr `model`.",
 		model_parameter_invalid = "Model `${model}` je neplatný.",
-		model_parameter_is_not_an_object = "Model `${model}` není objekt.",
 		spawned_prop_non_networked = "Vytvořený nepřipojený objekt s modelem `${model}`.",
 		spawned_prop_networked = "Vytvořil se síťově prop s modelem `${model}`.",
 		spawned_exact_prop = "Vytvořil se přesný prop.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		not_able_to_spawn_while_moving = "Při vytváření propu musíte stát.",
 		stand_still_to_place_prop = "Musíte stát, abyste umístili prop.",
 		prop_no_interior = "Tento objekt lze umístit jen venku.",
+		invalid_culling_value = "Neplatná hodnota omezení, musí být mezi 10m a 2 500m.",
+		invalid_model = "Neplatný/Neznámý model `${name}` (${hash}).",
 
 		invalid_prop_id = "Neplatné ID objektu.",
 		prop_deleted = "Objekt s ID ${propId} byl odstraněn.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["de-DE"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["de-DE"] = {
 		spawn_prop_command_parameter_model_hash = "modell",
 		spawn_prop_command_parameter_model_hash_help = "Das Requisitenmodell, das du spawnen möchtest.",
 		spawn_prop_command_parameter_network = "Netzwerk",
-		spawn_prop_command_parameter_network_help = "Möchtest du das Prop im Netzwerk verwenden? Es wird empfohlen, dies nur für Props zu aktivieren, die sich bewegen können sollen.",
-		spawn_prop_command_parameter_no_pickup = "Kein Aufheben",
-		spawn_prop_command_parameter_no_pickup_help = "Soll dieses Prop nur von Super-Administratoren aufgehoben werden können?",
+		spawn_prop_command_parameter_network_help = "Möchten Sie das Prop vernetzen? Es wird empfohlen, dies nur für Props zu aktivieren, die sich bewegen sollen. Nicht alle Props sind jedoch beweglich.",
+		spawn_prop_command_parameter_restricted = "eingeschränkt",
+		spawn_prop_command_parameter_restricted_help = "Erlauben Sie nur Super Admins, dieses Prop aufzuheben.",
+		spawn_prop_command_parameter_culling = "Culling",
+		spawn_prop_command_parameter_culling_help = "Culling-Radius, in dem das Prop erscheint/verschwindet. Der Standardradius beträgt 200 m. Erhöhen Sie dies nur für große Props, die aus der Ferne sichtbar sein sollen.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["de-DE"] = {
 		tracker_command = "tracker",
 		tracker_command_help = "Schaltet die Sichtbarkeit Ihres Trackers um.",
 		tracker_command_parameter_break = "unterbrechen",
-		tracker_command_parameter_break_help = "Unterbricht deinen Tracker und sendet eine Benachrichtigung darüber. (Kann nicht wieder aktiviert werden, bis 20 Minuten vergangen sind)",
+		tracker_command_parameter_break_help = "Brechen Sie Ihren Tracker und senden Sie eine Benachrichtigung an die Einsatzleitung darüber. Geben Sie `ja` oder `j` ein, um Ihren Tracker zu brechen. (Kann erst nach 20 Minuten wieder aktiviert werden)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["de-DE"] = {
 		return_button = "Zurück",
 		deposit = "$${amount} Kaution",
 		no_deposit = "Keine Kaution",
-		deposit_not_enough_money = "Du hast nicht genug Geld, um die Kaution zu bezahlen."
+		deposit_not_enough_money = "Du hast nicht genug Geld, um die Kaution zu bezahlen.",
+		helipad = "Hubschrauberlandeplatz"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["de-DE"] = {
 		craft_torch = "Herstellen <i>Fackel</i>",
 		prepare_beans_toast = "Bereite <i>Bohnen auf Toast</i> zu",
 		mix_pancake_batter = "Mische <i>Pfannkuchenteig</i>",
+		disassemble_bandages = "Bandagen abbauen",
+		craft_tourniquet = "Tourniquet herstellen",
 
 		search = "Suchen",
 		amount = "Menge",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["de-DE"] = {
 		first_aid_kit_description = "Das DIY-Arztkit.",
 		bandages = "Verbandsmaterial",
 		bandages_description = "Für alle kleinen Verletzungen und Wunden.",
+		tourniquet = "Tourniquet",
+		tourniquet_description = "Ein lebensrettendes Werkzeug in kritischen Situationen, das Tourniquet ist darauf ausgelegt, starke Blutungen schnell zu stoppen. Obwohl es im Vergleich zu umfassenderen Erste-Hilfe-Optionen nur minimale Heilung bietet, kann seine Fähigkeit, Blutverlust zu stoppen, in Notfällen entscheidend sein.",
+		gauze = "Gaze",
+		gauze_description = "Dieses Gaze ist ein unverzichtbarer Bestandteil jeder Erste-Hilfe-Ausrüstung. Es ist weich, saugfähig und perfekt zum Verbinden von Wunden geeignet. Es bildet die grundlegende Grundlage für die Wundversorgung, hilft bei der Blutstillung und schützt vor Infektionen.",
 		oxygen_tank = "Sauerstofftank",
 		oxygen_tank_description = "Ein Lungenvergrößerungspaket.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["de-DE"] = {
 		no_vehicle_in_front = "Es befindet sich kein Fahrzeug vor Ihnen.",
 		using_first_aid_kit = "Erste-Hilfe-Set wird genutzt",
 		using_bandages = "Verbände werden genutzt",
+		using_tourniquet = "Tourniquet verwenden",
 		using_ifak = "IFAK wird genutzt",
 		move_to_wash = "Fahre hierhin, um das Fahrzeug zu waschen",
 		vehicle_too_clean = "Das Fahrzeug ist zu sauber um gewaschen zu werden.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["de-DE"] = {
 		unable_to_use_lighter_in_vehicle = "Du kannst ein Feuerzeug nicht im Fahrzeug benutzen.",
 		not_possible_in_a_vehicle = "Diese Aktion ist im Fahrzeug nicht möglich.",
 		just_used_bandage = "Du hast gerade ein Erste-Hilfe-Set benutzt, warte eine Weile, bevor du ein weiteres benutzt.",
+		just_used_tourniquet = "Du hast gerade ein Tourniquet benutzt. Warte einen Moment, bevor du ein weiteres verwendest.",
 		drank_gasoline_death = "Benzinvergiftung",
 		drank_bleach_death = "Bleichmittelvergiftung",
 		finished_joint = "Du hast deinen Joint fertiggeraucht.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["de-DE"] = {
 		prop = "Objekt",
 		model_parameter_missing = "Der Parameter `model` fehlt.",
 		model_parameter_invalid = "Das Objekt`${model}` ist ungültig.",
-		model_parameter_is_not_an_object = "Das Objekt `${model}` ist kein Objekt.",
 		spawned_prop_non_networked = "Das nicht vernetzte Objekt wurde erstellt mit dem Model `${model}`.",
 		spawned_prop_networked = "Das vernetzte Objekt wurde erstellt mit dem Model `${model}`.",
 		spawned_exact_prop = "Exaktes Objekt erstellt.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["de-DE"] = {
 		not_able_to_spawn_while_moving = "Du musst stehen bleiben, um ein Objekt zu erstellen.",
 		stand_still_to_place_prop = "Du musst stehen bleiben, um ein Objekt zu platzieren.",
 		prop_no_interior = "Du kannst dieses Objekt nur draußen platzieren.",
+		invalid_culling_value = "Ungültiger Culling-Wert, muss zwischen 10 m und 2.500 m liegen.",
+		invalid_model = "Ungültiges/Unbekanntes Modell `${name}` (${hash}).",
 
 		invalid_prop_id = "Ungültige Objekt-ID.",
 		prop_deleted = "Das Objekt mit der ID ${propId} wurde gelöscht.",

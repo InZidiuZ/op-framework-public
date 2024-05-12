@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["meme-klingon"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "The prop model you would like to spawn.",
 		spawn_prop_command_parameter_network = "QonwI' DalIneQ?",
-		spawn_prop_command_parameter_network_help = "QonwI' jatlhpu'be'chugh 'e' laygunpu'.",
-		spawn_prop_command_parameter_no_pickup = "pagh SuqneH?",
-		spawn_prop_command_parameter_no_pickup_help = "Qap'a'be'chugh jIrmo' Super Admins'e'",
+		spawn_prop_command_parameter_network_help = "Hochchu' vaj prop nabmey DaMey DaneH? Qap law' Hochchu' chel vay' vaj Hochvam yabtaH. Hochvam qaStaHvIS pagh Hochchu'bej 'e' vIleghbe'chugh vaj.",
+		spawn_prop_command_parameter_restricted = "Darat",
+		spawn_prop_command_parameter_restricted_help = "Hoch prop be Qe' pam cha' DaH wovHom je. super admins Hochbogh DochwI' vIlo'laH.",
+		spawn_prop_command_parameter_culling = "teywI'",
+		spawn_prop_command_parameter_culling_help = "HubwI' ngeb mola' ghajbe'. 'anjajmeyDaq raD mejqaS tu'lu'lu'chu' prop ngeb ghajbe'. Default raD radius 200m Hoch never chel law' chu'be'.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		tracker_command = "joQwI'",
 		tracker_command_help = "joQwI' reDchu'.",
 		tracker_command_parameter_break = "QeH",
-		tracker_command_parameter_break_help = "QeH 'ej DIvI' law'laH Dispatch notification about (20min chovmoH 'ej DaH je re-enabled).",
+		tracker_command_parameter_break_help = "moHa' DuvmeH poH, 'ej qet vIghovta' not Accounting DIvI' app qach. pa' yIn tlhap wa' jatlhlaH, noH vIghovta'. (jonterghlaH 20mIn choHta'bogh re-enabled pa')",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "joQwI' chen",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		return_button = "Qay",
 		deposit = "Depozit: $${amount}",
 		no_deposit = "Yo'q depozit",
-		deposit_not_enough_money = "Siz depozitni to'lash uchun yetarli mablag'ni ega emassiz."
+		deposit_not_enough_money = "Siz depozitni to'lash uchun yetarli mablag'ni ega emassiz.",
+		helipad = "Helipad"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		craft_torch = "tlhergh torch",
 		prepare_beans_toast = "chu' DuSoj",
 		mix_pancake_batter = "'e' vIlegh",
+		disassemble_bandages = "nabHa' <i>DarEw'yIn</i>",
+		craft_tourniquet = "nIvbogh <i>batlhquv</i>",
 
 		search = "wutlh",
 		amount = "ngoS",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		first_aid_kit_description = "The \"do-it-yourself\" doctor-kit.",
 		bandages = "Bandages",
 		bandages_description = "For all outchies and booboos.",
+		tourniquet = "batlhquv",
+		tourniquet_description = "ghab Dich chess soQ costs, batlhquv tachlath qumwI' Dalo' ppt lam Daq. ghaH vur paj tough ghoS chu' Duvo burDaq Hoch batlhquvchaj Situation vItlh chaH jatlhlaH vIchop.",
+		gauze = "qoch",
+		gauze_description = "lo'laHbe'ghach ghaH, 'oH vISovbe', je 'oH vIvonba'. Daq Hegh 'ach poQej 'e' pagh 'ev rur pa' joHDaq care, 'oH managing bleeding 'ej protecting against infection.",
 		oxygen_tank = "ghItlh'a' qoQ",
 		oxygen_tank_description = "lung-expansion qutlh.",
 		ifak = "yIwIv",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		no_vehicle_in_front = "pagh vIneH tInDI' HEX",
 		using_first_aid_kit = "naw'logh boQwI'",
 		using_bandages = "boQwI' ghe'naQ",
+		using_tourniquet = "DI'ruj tourniquet",
 		using_ifak = "IFAK boQwI' ghe'naQ",
 		move_to_wash = "QonoS Daq je 'eb Sevghach ghe'",
 		vehicle_too_clean = "Sevghach naQwI' tIq ghajbe'.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		unable_to_use_lighter_in_vehicle = "beH vay' DujDaq lo'laHbe', lighter yIIn.",
 		not_possible_in_a_vehicle = "Qapbe', DujDaqDaq qarbe' vItlhutlh.",
 		just_used_bandage = "qopbe'lu'chugh vIghro' first aid kit, vajDIch wa'logh vIghro' qar.",
+		just_used_tourniquet = "nuqneH tourniquet, vorghlaH 'ej wo' neH tuj lo'.",
 		drank_gasoline_death = "Gasoline Poisoning",
 		drank_bleach_death = "QeH HemqaD qeylIS Sogh",
 		finished_joint = "DaHmey vItlhutlh.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		prop = "poS",
 		model_parameter_missing = "`model` rap je neH.",
 		model_parameter_invalid = "rap 'oHbej `${model}` poS DuHIvDIch.",
-		model_parameter_is_not_an_object = "lu'be' ${model} chIDejQa' chImeH vIlo'laHbe'.",
 		spawned_prop_non_networked = "QapHa'Q baSvIl ${model} 'e' vItlhutlh.",
 		spawned_prop_networked = "QapHa'Q baSvIl ${model} vItlhutlh.",
 		spawned_exact_prop = "tlhobHa'mo' QapHa'Q vItlhutlh.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		not_able_to_spawn_while_moving = "loD HIqDaq lo'be' yIbaH. Hutlh ghotpu' prop DaH ghaHbe'.",
 		stand_still_to_place_prop = "prop tInmoHghach cha'logh yIbaH.",
 		prop_no_interior = "vaj qarDaqbe' lo'laHbe'ghach prop cha'logh yIghoj.",
+		invalid_culling_value = "nentay jon, tu'be' between 10m je 2,500m.",
+		invalid_model = "nay' unknown model `${name}` (${hash}).",
 
 		invalid_prop_id = "prop ID pagh jatlh.",
 		prop_deleted = "prop ${propId} jeh. netta' lu'ta' jatlh.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["da-DK"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["da-DK"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "Modellen af den omgivelse, du gerne vil spawn.",
 		spawn_prop_command_parameter_network = "netværk",
-		spawn_prop_command_parameter_network_help = "Ønsker du at netværke rekvisitten? Det anbefales, at du kun aktiverer dette for rekvisitter, som skal kunne bevæge sig.",
-		spawn_prop_command_parameter_no_pickup = "ingen opsnapping",
-		spawn_prop_command_parameter_no_pickup_help = "Skal denne rekvisitter kun kunne opsnappes af super admins?",
+		spawn_prop_command_parameter_network_help = "Ønsker du at netværke rekvisitet? Det anbefales kun at aktivere dette for rekvisitter, der skal være i stand til at bevæge sig. Ikke alle rekvisitter kan dog flyttes.",
+		spawn_prop_command_parameter_restricted = "begrænset",
+		spawn_prop_command_parameter_restricted_help = "Tillad kun denne rekvisit at blive samlet op af superadministratorer.",
+		spawn_prop_command_parameter_culling = "afkortning",
+		spawn_prop_command_parameter_culling_help = "Afkortningsradius, ved hvilken afstand rekvisitivet bliver spawnet/fjernet. Standardradius er 200 m, øg kun dette for store rekvisitter, der skal være synlige på lang afstand.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "rekvisitter_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		tracker_command = "sporingsenhed",
 		tracker_command_help = "Slår din sporingsenhed til eller fra.",
 		tracker_command_parameter_break = "pause",
-		tracker_command_parameter_break_help = "Pause din tracker og send en besked om det til disponenten. (Kan ikke aktiveres igen, før der er gået 20 minutter)",
+		tracker_command_parameter_break_help = "Bryd din tracker og send en meddelelse om det. Skriv `ja` eller `j` for at bryde din tracker. (Kan ikke aktiveres igen før der er gået 20 minutter)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "opdel_sporingsenheder",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		return_button = "Tilbage",
 		deposit = "$${amount} Indskud",
 		no_deposit = "Ingen Indskud",
-		deposit_not_enough_money = "Du har ikke nok penge til at betale indskuddet."
+		deposit_not_enough_money = "Du har ikke nok penge til at betale indskuddet.",
+		helipad = "Helikopterlandingsplads"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		craft_torch = "Lav <i>Fakkel</i>",
 		prepare_beans_toast = "Forbered <i>Bønner på Ristet Brød</i>",
 		mix_pancake_batter = "Bland <i>Pandekagedej</i>",
+		disassemble_bandages = "Adskil <i>Bandager</i>",
+		craft_tourniquet = "Lav <i>Tourniquet</i>",
 
 		search = "Søg",
 		amount = "Mængde",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		first_aid_kit_description = "\"Gør-det-selv\"-lægekassen.",
 		bandages = "Bandager",
 		bandages_description = "Til alle småskrammer og skrammer.",
+		tourniquet = "Tourniquet",
+		tourniquet_description = "Et livreddende værktøj i kritiske situationer, tourniquet'en er designet til hurtigt at stoppe alvorlig blødning. Mens det tilbyder minimal heling i forhold til mere omfattende førstehjælpsmuligheder, kan dens evne til at standse blodtab være afgørende i nødsituationer.",
+		gauze = "Gasbind",
+		gauze_description = "Essentiel for enhver førstehjælpskasse, denne gasbind er blød, absorberende og perfekt til at dressere sår. Det giver det grundlæggende fundament for sårovervågning, hvilket hjælper med at styre blødning og beskytte mod infektion.",
 		oxygen_tank = "Oxygen Tank",
 		oxygen_tank_description = "Et lungesætningspakke.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		no_vehicle_in_front = "Der er ingen køretøj foran dig.",
 		using_first_aid_kit = "Bruger Førstehjælpskasse",
 		using_bandages = "Bruger Bandager",
+		using_tourniquet = "Bruger Tourniquet",
 		using_ifak = "Bruger IFAK",
 		move_to_wash = "Flyt herhen for at vaske køretøjet",
 		vehicle_too_clean = "Køretøjet er for rent til at blive vasket.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		unable_to_use_lighter_in_vehicle = "Du kan ikke bruge en lighter i en bil.",
 		not_possible_in_a_vehicle = "Denne handling er ikke mulig i en bil.",
 		just_used_bandage = "Du har lige brugt et førstehjælpskit, vent lidt før du bruger et nyt.",
+		just_used_tourniquet = "Du har lige brugt en tourniquet, vent lidt, før du bruger en anden.",
 		drank_gasoline_death = "Benzinforgiftning",
 		drank_bleach_death = "Bleach forgiftning",
 		finished_joint = "undefined",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["da-DK"] = {
 		prop = "Rekvisit",
 		model_parameter_missing = "Parameteren `model` mangler.",
 		model_parameter_invalid = "Modellen `${model}` er en ugyldig model.",
-		model_parameter_is_not_an_object = "Modellen `${model}` er ikke et objekt.",
 		spawned_prop_non_networked = "Spawner en ikke-netværksprop med model `${model}`.",
 		spawned_prop_networked = "Spawner en netværksprop med model `${model}`.",
 		spawned_exact_prop = "Spawner eksakt prop.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		not_able_to_spawn_while_moving = "Du skal stå stille for at spawn en rekvisit.",
 		stand_still_to_place_prop = "Du skal stå stille for at placere en rekvisit.",
 		prop_no_interior = "Du kan kun placere denne rekvisit udenfor.",
+		invalid_culling_value = "Ugyldig nedskæringsværdi, skal være mellem 10m og 2.500m.",
+		invalid_model = "Ugyldig/ukendt model `${name}` (${hash}).",
 
 		invalid_prop_id = "Ugyldigt rekvisit id.",
 		prop_deleted = "Rekvisit med id ${propId} blev slettet.",

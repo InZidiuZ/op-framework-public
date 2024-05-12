@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["id-ID"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "Model prop yang ingin kamu munculkan.",
 		spawn_prop_command_parameter_network = "network",
-		spawn_prop_command_parameter_network_help = "Apakah kamu ingin menghubungkan prop ini? Disarankan hanya mengaktifkan fitur ini untuk prop yang seharusnya bisa bergerak.",
-		spawn_prop_command_parameter_no_pickup = "no pickup",
-		spawn_prop_command_parameter_no_pickup_help = "Apakah prop ini hanya dapat diambil oleh super admin?",
+		spawn_prop_command_parameter_network_help = "Apakah Anda ingin melakukan jaringan pada prop ini? Anda disarankan untuk hanya mengaktifkan ini untuk prop-prop yang seharusnya bisa bergerak. Tidak semua prop dapat bergerak meskipun.",
+		spawn_prop_command_parameter_restricted = "terbatas",
+		spawn_prop_command_parameter_restricted_help = "Hanya memperbolehkan prop ini diambil oleh super admin.",
+		spawn_prop_command_parameter_culling = "culling",
+		spawn_prop_command_parameter_culling_help = "Jari jarak culling di mana prop di-spawn/di-despawn. Jari jarak default adalah 200m, hanya tingkatkan ini untuk prop-prop besar yang seharusnya terlihat dari jauh.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		tracker_command = "pemantau",
 		tracker_command_help = "Mengaktifkan/Nonaktifkan visibilitas pemantau Anda.",
 		tracker_command_parameter_break = "break",
-		tracker_command_parameter_break_help = "Memutuskan pelacakan Anda dan mengirim pemberitahuan pengiriman tentang hal itu. (Tidak bisa diaktifkan kembali sampai 20 menit telah berlalu)",
+		tracker_command_parameter_break_help = "Menghentikan pelacakan Anda dan mengirimkan pemberitahuan ke polisi tentang hal itu. Ketik `ya` atau `y` untuk menghentikan pelacakan Anda. (Tidak dapat diaktifkan kembali hingga 20 menit telah berlalu)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "pecahkan_pemantau",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		return_button = "Kembali",
 		deposit = "$${amount} Deposit",
 		no_deposit = "Tidak ada Deposit",
-		deposit_not_enough_money = "Anda tidak memiliki cukup uang untuk membayar deposit."
+		deposit_not_enough_money = "Anda tidak memiliki cukup uang untuk membayar deposit.",
+		helipad = "Landasan Helikopter"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		craft_torch = "Membuat <i>Senter</i>",
 		prepare_beans_toast = "Mempersiapkan <i>Kacang di atas Roti Panggang</i>",
 		mix_pancake_batter = "Mencampur <i>Adonan Pancake</i>",
+		disassemble_bandages = "Memecah <i>Perban</i>",
+		craft_tourniquet = "Membuat <i>Tourniquet</i>",
 
 		search = "Cari",
 		amount = "Jumlah",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 		first_aid_kit_description = "Kit dokter \"lakukan sendiri\".",
 		bandages = "Perban",
 		bandages_description = "Untuk luka-luka ringan.",
+		tourniquet = "Tourniquet",
+		tourniquet_description = "Sebagai alat penyelamat hidup dalam situasi kritis, tourniquet dirancang untuk menghentikan pendarahan parah dengan cepat. Meskipun menawarkan penyembuhan minimal dibandingkan dengan opsi pertolongan pertama yang lebih komprehensif, kemampuannya untuk menghentikan kehilangan darah dapat sangat penting dalam skenario darurat.",
+		gauze = "Perban",
+		gauze_description = "Perban penting untuk kit pertolongan pertama, perban ini lembut, menyerap, dan sempurna untuk membalut luka. Perban ini memberikan dasar yang diperlukan untuk perawatan luka, membantu mengatasi pendarahan dan melindungi dari infeksi.",
 		oxygen_tank = "Tabung Oksigen",
 		oxygen_tank_description = "Tabung perluasan paru-paru.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		no_vehicle_in_front = "Tidak ada kendaraan di depanmu.",
 		using_first_aid_kit = "Menggunakan Kit Pertolongan Pertama",
 		using_bandages = "Menggunakan Perban",
+		using_tourniquet = "Menggunakan Tourniquet",
 		using_ifak = "Menggunakan IFAK",
 		move_to_wash = "Pindah ke sini untuk mencuci kendaraan",
 		vehicle_too_clean = "Kendaraan terlalu bersih untuk dicuci.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		unable_to_use_lighter_in_vehicle = "Anda tidak dapat menggunakan korek di dalam kendaraan.",
 		not_possible_in_a_vehicle = "Tindakan ini tidak mungkin dilakukan di dalam kendaraan.",
 		just_used_bandage = "Anda baru saja menggunakan perban, tunggu sebentar sebelum menggunakan yang lain.",
+		just_used_tourniquet = "Anda baru saja menggunakan tourniquet, tunggu sebentar sebelum menggunakan yang lain.",
 		drank_gasoline_death = "Keracunan Bahan Bakar",
 		drank_bleach_death = "Keracunan Pemutih",
 		finished_joint = "Anda selesai menghisap ganja.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["id-ID"] = {
 		prop = "Prop",
 		model_parameter_missing = "Parameter `model` hilang.",
 		model_parameter_invalid = "Model `${model}` tidak valid.",
-		model_parameter_is_not_an_object = "Model `${model}` bukanlah objek.",
 		spawned_prop_non_networked = "Prop yang di-spawn bukanlah networked prop dengan model `${model}`.",
 		spawned_prop_networked = "Memunculkan prop jaringan dengan model `${model}`.",
 		spawned_exact_prop = "Memunculkan prop tepat.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		not_able_to_spawn_while_moving = "Anda harus berdiri diam saat memunculkan prop.",
 		stand_still_to_place_prop = "Anda harus berdiri diam untuk menempatkan prop.",
 		prop_no_interior = "Anda hanya bisa menempatkan prop ini di luar ruangan.",
+		invalid_culling_value = "Nilai pemangsulan tidak valid, harus berada di antara 10m dan 2,500m.",
+		invalid_model = "Model tidak valid/unknown `${name}` (${hash}).",
 
 		invalid_prop_id = "ID prop tidak valid.",
 		prop_deleted = "Prop dengan id ${propId} telah dihapus.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["meme-dinosaur"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "The prop model you would like to spawn. Raaaawr!",
 		spawn_prop_command_parameter_network = "rawr",
-		spawn_prop_command_parameter_network_help = "Me like move? Rawr! Only use for prop that move.",
-		spawn_prop_command_parameter_no_pickup = "no nom",
-		spawn_prop_command_parameter_no_pickup_help = "Me no let anyone nom nom my prop, only super smart dinos can nom nom.",
+		spawn_prop_command_parameter_network_help = "Roar rah rawr roar? Rah roar rawr rawr rah roar! Rah rawr rah rah rawr roar. Rawr rah rawr rah rah rawr rah rah rawr.",
+		spawn_prop_command_parameter_restricted = "rawrict rawr",
+		spawn_prop_command_parameter_restricted_help = "Rah rawr rawr rah rawr rah rawr rah rah rah rah rawr.",
+		spawn_prop_command_parameter_culling = "culling",
+		spawn_prop_command_parameter_culling_help = "Rawrul rahrawr rawr rah rah rawr rah rawr rawr. Rawr rawr rahrawr rah rawr rawr, rahrawr rahrawr rawr rah rah rawr rah rah rawr.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "roar_at_props",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		tracker_command = "tracker",
 		tracker_command_help = "Toggle your tracker's visibility.",
 		tracker_command_parameter_break = "undefined",
-		tracker_command_parameter_break_help = "undefined",
+		tracker_command_parameter_break_help = "Roar your tracker ultrahigh and send a dispatch notification about it. Type `yes` or `y` to roar your tracker. (Cant be re-enabled until 20min have passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		return_button = "Rarr!",
 		deposit = "$${amount} Rawr! Deposit",
 		no_deposit = "No Rawr! Deposit",
-		deposit_not_enough_money = "Rawr! You no have enough shinies to pay deposit."
+		deposit_not_enough_money = "Rawr! You no have enough shinies to pay deposit.",
+		helipad = "Sky-nest"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		craft_torch = "undefined",
 		prepare_beans_toast = "undefined",
 		mix_pancake_batter = "undefined",
+		disassemble_bandages = "Disassemble <i>Leaf-wraps</i>",
+		craft_tourniquet = "Create <i>Bone-lock</i>",
 
 		search = "Scavenge",
 		amount = "Sack Size",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		first_aid_kit_description = "All you need to become a self-taught Dino medic.",
 		bandages = "Dino Bandages",
 		bandages_description = "For all bumps and bruises in the Dino world.",
+		tourniquet = "Bone-lock",
+		tourniquet_description = "A life-saving tool in critical situations, the bone-lock is designed to stop severe bleeding quickly. While it offers minimal healing compared to more comprehensive first aid options, its ability to halt blood loss can be pivotal in emergency scenarios.",
+		gauze = "Sauropoda Fiber",
+		gauze_description = "Essential for any first aid nest, this Sauropoda fiber is soft, absorbent, and perfect for dressing wounds. It provides the basic foundation for wound care, helping to manage bleeding and protect against infection.",
 		oxygen_tank = "Rawr-oxygen Tank",
 		oxygen_tank_description = "A pack for bigger breaths.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		no_vehicle_in_front = "undefined",
 		using_first_aid_kit = "Rawr Rawr Rawr",
 		using_bandages = "Rooar Rooar Rooar",
+		using_tourniquet = "Applying Tourniquet",
 		using_ifak = "Rarr Rarr Rarr",
 		move_to_wash = "Stomp over here to clean vehicle",
 		vehicle_too_clean = "Vehicle already spotless, no need to clean more!",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		unable_to_use_lighter_in_vehicle = "You no able to use lighter in vehicle.",
 		not_possible_in_a_vehicle = "Me can't do this in vehicle.",
 		just_used_bandage = "Me just used first aid kit, wait little bit before use another one.",
+		just_used_tourniquet = "You just applied a tourniquet, wait a bit before applying another one.",
 		drank_gasoline_death = "Me die from drinking gasoline.",
 		drank_bleach_death = "Rawr! Bleach poisoning!",
 		finished_joint = "Raaawr! You finished your joint.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		prop = "Leaf",
 		model_parameter_missing = "The `model` parameter is missing.",
 		model_parameter_invalid = "The leaf `${model}` is not valid.",
-		model_parameter_is_not_an_object = "The dinosaur `${model}` is not an object.",
 		spawned_prop_non_networked = "Spawned a non-networked rock with dinosaur `${model}`.",
 		spawned_prop_networked = "Spawned a networked bone with dinosaur `${model}`.",
 		spawned_exact_prop = "Spawned exact fossil.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		not_able_to_spawn_while_moving = "You have to stay still when spawning a prop, or else it will become lost in time.",
 		stand_still_to_place_prop = "You have to remain stationary to place a prop, like a mighty tree standing tall.",
 		prop_no_interior = "You can only place this mighty object outside, in the vast and open wilds.",
+		invalid_culling_value = "Invalid culling value, has to be between 10 tail lengths and 2,500 tail lengths.",
+		invalid_model = "Invalid/Unknown model `${name}` (${hash}).",
 
 		invalid_prop_id = "Invalid mighty object identifier, try again with the right code!",
 		prop_deleted = "Prop with identifier ${propId} was banished into oblivion, gone forever.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["bg-BG"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		spawn_prop_command_parameter_model_hash = "модел",
 		spawn_prop_command_parameter_model_hash_help = "Моделът на обекта, който искате да се появи.",
 		spawn_prop_command_parameter_network = "мрежа",
-		spawn_prop_command_parameter_network_help = "Искате ли да свържете обекта към мрежата? Препоръчва се да активирате това само за обекти, които трябва да могат да се движат.",
-		spawn_prop_command_parameter_no_pickup = "не може да се вдига",
-		spawn_prop_command_parameter_no_pickup_help = "Този обект може ли само да се вдига от супер админите?",
+		spawn_prop_command_parameter_network_help = "Искате ли да мрежате обекта? Препоръчва се да активирате това само за обекти, които могат да се движат. Обаче не всички обекти могат да се местят.",
+		spawn_prop_command_parameter_restricted = "ограничен",
+		spawn_prop_command_parameter_restricted_help = "Позволете само на супер администраторите да вдигат този обект.",
+		spawn_prop_command_parameter_culling = "изчистване",
+		spawn_prop_command_parameter_culling_help = "Радиус на изчистване, на която дистанция обектът се появява/изчезва. Стандартният радиус е 200м, увеличете само това за големи обекти, които трябва да са видими отдалеч.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "debugirane_na_pov",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		tracker_command = "тракер",
 		tracker_command_help = "Превключва видимостта на тракера.",
 		tracker_command_parameter_break = "унищожи",
-		tracker_command_parameter_break_help = "Унищожи твоят проследяващ уред и изпрати съобщение за известие за това. (Не може да бъде включен отново до изтичането на 20 минути)",
+		tracker_command_parameter_break_help = "Счупи проследяващата си система и изпрати известие за спецподкрепа за това. Въведи `yes` или `y`, за да счупиш проследяващата си система. (Не може да се активира отново, докато не са изминали 20 минути)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "тракери_раздел",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		return_button = "Назад",
 		deposit = "Депозит: $${amount}",
 		no_deposit = "Без депозит",
-		deposit_not_enough_money = "Нямате достатъчно пари, за да заплатите депозита."
+		deposit_not_enough_money = "Нямате достатъчно пари, за да заплатите депозита.",
+		helipad = "Хелипад"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		craft_torch = "Произведете <i>Фенер</i>",
 		prepare_beans_toast = "Пригответе <i>Фасул на Тост</i>",
 		mix_pancake_batter = "Разбъркайте <i>Смес за Палачинки</i>",
+		disassemble_bandages = "Разглоби <i>Превръзки</i>",
+		craft_tourniquet = "Изработи <i>Турникетка</i>",
 
 		search = "Търси",
 		amount = "Количество",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		first_aid_kit_description = "Комплект за самолечение.",
 		bandages = "Бинтове",
 		bandages_description = "За всички рани и наранявания.",
+		tourniquet = "Турникетка",
+		tourniquet_description = "Инструмент за спасяване на живот в критични ситуации, турникетката е предназначена да спира бързо сериозното кървене. Въпреки че предлага минимално лечение в сравнение с по-комплексни първа помощ, способността й да спира кървенето може да бъде решаващо в спешни ситуации.",
+		gauze = "Газа",
+		gauze_description = "Отлична за всеки еърст ейд кит, тази газа е мека, абсорбираща и идеална за обвиване на рани. Тя предоставя основата за грижа за раните, помага за управление на кръвотечението и защитава срещу инфекции.",
 		oxygen_tank = "Аксесоар за кислород",
 		oxygen_tank_description = "Пакет за разширяване на белите дробове.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		no_vehicle_in_front = "Няма превозно средство пред вас.",
 		using_first_aid_kit = "Използване на първа помощ",
 		using_bandages = "Използване на бандажи",
+		using_tourniquet = "Използване на турникет",
 		using_ifak = "Използване на IFAK",
 		move_to_wash = "Преместете се тук, за да измият превозното средство",
 		vehicle_too_clean = "Превозното средство е прекалено чисто, за да се измие.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		unable_to_use_lighter_in_vehicle = "Не можете да използвате запалка в превозно средство.",
 		not_possible_in_a_vehicle = "Това действие не е възможно в превозно средство.",
 		just_used_bandage = "Току-що използвахте аптечка, изчакайте малко, преди да използвате друга.",
+		just_used_tourniquet = "Току-що използвахте турникет, изчакайте малко преди да използвате друг.",
 		drank_gasoline_death = "Отравяне с бензин",
 		drank_bleach_death = "Отравяне с избелващ препарат",
 		finished_joint = "Димяхте последното си джойнтче.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		prop = "Обект",
 		model_parameter_missing = "Липсва параметърът 'model'.",
 		model_parameter_invalid = "Моделът '${model}' не е валиден.",
-		model_parameter_is_not_an_object = "Моделът '${model}' не е обект.",
 		spawned_prop_non_networked = "Създаден обект без мрежова връзка с модел '${model}'.",
 		spawned_prop_networked = "Създаден е мрежов обект с модел `${model}`.",
 		spawned_exact_prop = "Създаден е точен обект.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		not_able_to_spawn_while_moving = "Трябва да стоите неподвижно, за да създавате обекти.",
 		stand_still_to_place_prop = "Трябва да стоите неподвижно, за да поставите обекта.",
 		prop_no_interior = "Можете да поставите този предмет само на открито.",
+		invalid_culling_value = "Невалидна стойност за пресячене, трябва да бъде между 10м и 2,500м.",
+		invalid_model = "Невалиден/Непознат модел `${name}` (${hash}).",
 
 		invalid_prop_id = "Невалиден идентификатор на предмет.",
 		prop_deleted = "Предметът с идентификатор ${propId} беше изтрит.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["zh-CN"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		spawn_prop_command_parameter_model_hash = "模型",
 		spawn_prop_command_parameter_model_hash_help = "您想要生成的道具模型。",
 		spawn_prop_command_parameter_network = "网络",
-		spawn_prop_command_parameter_network_help = "您是否希望连接该道具？建议仅对应该可以移动的道具启用此选项。",
-		spawn_prop_command_parameter_no_pickup = "无法拾取",
-		spawn_prop_command_parameter_no_pickup_help = "该道具是否仅由超级管理员可以拾取？",
+		spawn_prop_command_parameter_network_help = "您希望对这个道具进行网络化吗？建议仅对应该能够移动的道具启用此选项。然而，并非所有道具都是可移动的。",
+		spawn_prop_command_parameter_restricted = "restricted",
+		spawn_prop_command_parameter_restricted_help = "仅允许超级管理员拾取此道具。",
+		spawn_prop_command_parameter_culling = "culling",
+		spawn_prop_command_parameter_culling_help = "剔除半径，在此距离内生成/删除道具。默认半径为200米，仅在应该从远处可见的大型道具上增加此值。",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		tracker_command = "追踪器",
 		tracker_command_help = "切换追踪器的可见性。",
 		tracker_command_parameter_break = "断开",
-		tracker_command_parameter_break_help = "断开您的追踪器并发送通知。 （无法重新启用直到20分钟过去）",
+		tracker_command_parameter_break_help = "中断您的追踪器并发送调度通知。输入 `yes` 或 `y` 来中断您的追踪器。（在20分钟内无法重新启用）",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "追踪器分离",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		return_button = "返回",
 		deposit = "${amount} 押金",
 		no_deposit = "无押金",
-		deposit_not_enough_money = "您的余额不足以支付押金。"
+		deposit_not_enough_money = "您的余额不足以支付押金。",
+		helipad = "直升机停机坪"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		craft_torch = "undefined",
 		prepare_beans_toast = "undefined",
 		mix_pancake_batter = "undefined",
+		disassemble_bandages = "拆解 <i>绷带</i>",
+		craft_tourniquet = "制作 <i>止血带</i>",
 
 		search = "搜索",
 		amount = "数量",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		first_aid_kit_description = "自己动手的医生工具包。",
 		bandages = "绷带",
 		bandages_description = "用于处理所有疼痛和伤口。",
+		tourniquet = "止血带",
+		tourniquet_description = "在紧急情况下，止血带是一种挽救生命的工具，旨在快速停止严重出血。尽管与更全面的急救选项相比，它的治愈能力较小，但其制止出血的能力在紧急情况下至关重要。",
+		gauze = "纱布",
+		gauze_description = "这种纱布是任何急救包都必不可少的，柔软吸水，非常适合处理伤口。它为伤口护理提供了基本基础，有助于控制出血并防止感染。",
 		oxygen_tank = "氧气罐",
 		oxygen_tank_description = "肺扩容背包。",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		no_vehicle_in_front = "前方没有车辆。",
 		using_first_aid_kit = "使用急救包",
 		using_bandages = "使用绷带",
+		using_tourniquet = "使用止血带",
 		using_ifak = "使用IFAK",
 		move_to_wash = "移动到这里清洗车辆",
 		vehicle_too_clean = "车辆太干净了，不需要清洗。",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		unable_to_use_lighter_in_vehicle = "您不能在车内使用打火机。",
 		not_possible_in_a_vehicle = "在车内无法进行此操作。",
 		just_used_bandage = "您刚刚使用了一个急救包，请等待片刻后再使用。",
+		just_used_tourniquet = "您刚刚使用了止血带，请稍等一会再使用另一个。",
 		drank_gasoline_death = "喝了汽油中毒身亡",
 		drank_bleach_death = "喝了漂白剂中毒身亡",
 		finished_joint = "你抽完了你的大麻卷烟。",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		prop = "道具",
 		model_parameter_missing = "缺少 `model` 参数。",
 		model_parameter_invalid = "模型 `${model}` 是无效的模型。",
-		model_parameter_is_not_an_object = "模型 `${model}` 不是一个对象。",
 		spawned_prop_non_networked = "生成了一个非网络化的模型 `${model}`。",
 		spawned_prop_networked = "生成了一个带有型号 `${model}` 的网络物体。",
 		spawned_exact_prop = "生成了准确的物体。",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		not_able_to_spawn_while_moving = "生成物体时必须保持静止。",
 		stand_still_to_place_prop = "放置物体时必须保持静止。",
 		prop_no_interior = "你只能将此物品放置在室外。",
+		invalid_culling_value = "无效的裁剪数值，必须在10米到2,500米之间。",
+		invalid_model = "无效/未知模型 `${name}` (${hash}).",
 
 		invalid_prop_id = "无效的道具ID。",
 		prop_deleted = "已删除ID为 ${propId} 的物品。",

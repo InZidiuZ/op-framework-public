@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["meme-gungan"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "The chaloo model you would like to spawn.",
 		spawn_prop_command_parameter_network = "mernes",
-		spawn_prop_command_parameter_network_help = "T'sa, mesa recommanen dat dis be only enable fo props dat should be abil to move.",
-		spawn_prop_command_parameter_no_pickup = "noo pickup",
-		spawn_prop_command_parameter_no_pickup_help = "Should des prop only be picked up by super admins?",
+		spawn_prop_command_parameter_network_help = "Mesa help yousa network da prop? It issa recommended yousa only enable dis for props dat should be able to move. Not all props are movable though.",
+		spawn_prop_command_parameter_restricted = "restricted",
+		spawn_prop_command_parameter_restricted_help = "Only allow dis prop to be picked up by super admins.",
+		spawn_prop_command_parameter_culling = "culling",
+		spawn_prop_command_parameter_culling_help = "Culling radius at which distance da prop is spawned/despawned. Default radius issa 200m, only increase dis for large props dat should be visible from far away.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		tracker_command = "tracker",
 		tracker_command_help = "Togga your tracker's visibility.",
 		tracker_command_parameter_break = "break",
-		tracker_command_parameter_break_help = "Break your tracker and send a dispatch notification about it. (Can't be re-enabled until 20min have passed)",
+		tracker_command_parameter_break_help = "Yousa break your tracker and send a dispatch notification about it. Typa `yes` or `y` to break your tracker. (Cant be re-enabled until 20min have passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		return_button = "Muy Muy",
 		deposit = "$${amount} Binka",
 		no_deposit = "No Binka",
-		deposit_not_enough_money = "Yousa no have enough money to pay the Binka."
+		deposit_not_enough_money = "Yousa no have enough money to pay the Binka.",
+		helipad = "Helipad"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		craft_torch = "undefined",
 		prepare_beans_toast = "undefined",
 		mix_pancake_batter = "undefined",
+		disassemble_bandages = "Disassemble <i>Bandages</i>",
+		craft_tourniquet = "Craft <i>Tourniquet</i>",
 
 		search = "Saga",
 		amount = "Aamounnti",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		first_aid_kit_description = "Wassaboo doctor kit.",
 		bandages = "Bandages",
 		bandages_description = "For all your outchies and booboos.",
+		tourniquet = "Tourniquet",
+		tourniquet_description = "A life-saving tool in critical situations, the tourniquet is designed to stop severe bleeding quickly. While it offers minimal healing compared to more comprehensive first aid options, its ability to halt blood loss can be pivotal in emergency scenarios.",
+		gauze = "Kapto",
+		gauze_description = "Essential for any first aid kit, dis kapto is soft, absorbent, und perfecto for dressing wounds. It provides de basic foundation for wound care, helping to manage bleeding und protecten against infection.",
 		oxygen_tank = "Oxyjin Tank",
 		oxygen_tank_description = "Ah, lung-expansion packen.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		no_vehicle_in_front = "Meesa no see vehicle in front of you.",
 		using_first_aid_kit = "Mesa using first aid kit",
 		using_bandages = "Mesa using bandages",
+		using_tourniquet = "Using Tourniquet",
 		using_ifak = "Mesa using IFAK",
 		move_to_wash = "Mesa moveen here to wash da vehicle",
 		vehicle_too_clean = "Da vehicle is too clean to be washed-o.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		unable_to_use_lighter_in_vehicle = "Yousa not able to use a lighter in a vehicle.",
 		not_possible_in_a_vehicle = "This action issen possible in a vehicle.",
 		just_used_bandage = "Yousa just used a first aid kit, wait a bit before usin another one.",
+		just_used_tourniquet = "Yousa just used a tourniquet, wait a bit before using another one.",
 		drank_gasoline_death = "Gasoline poisonin",
 		drank_bleach_death = "Dansen Poisoning",
 		finished_joint = "Yousa finished yousa joint.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		prop = "Prop",
 		model_parameter_missing = "Da `model` parametia is missin.",
 		model_parameter_invalid = "Da model `${model}` is an invalida model.",
-		model_parameter_is_not_an_object = "Mesa thinks da model `${model}` issen't an object, okeyday?",
 		spawned_prop_non_networked = "Mesa spawned a prop with the model `${model}`, but it no part of da network.",
 		spawned_prop_networked = "Mesa spawned a prop with da model `${model}`, and it part of da network.",
 		spawned_exact_prop = "Mesa spawned da exact prop.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		not_able_to_spawn_while_moving = "Yousa have to stand still when spawning a prop.",
 		stand_still_to_place_prop = "Yousa have to stand still to place a prop.",
 		prop_no_interior = "Yousa can only place dissa prop outside.",
+		invalid_culling_value = "Invalid culling value, hasta be between 10m und 2,500m.",
+		invalid_model = "Invalid/Unknown model `${name}` (${hash}).",
 
 		invalid_prop_id = "Invalid prop id.",
 		prop_deleted = "Prop with id ${propId} was deleted.",

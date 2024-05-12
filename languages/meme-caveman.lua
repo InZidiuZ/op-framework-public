@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["meme-caveman"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "Ugg the prop model you want to spawn.",
 		spawn_prop_command_parameter_network = "unga-bunga-grunt",
-		spawn_prop_command_parameter_network_help = "Unga bunga? (network) Huh? Me no understand, you use?",
-		spawn_prop_command_parameter_no_pickup = "no take",
-		spawn_prop_command_parameter_no_pickup_help = "Prop no take by weaklings. Only big boss take.",
+		spawn_prop_command_parameter_network_help = "Ugh ugh want to make prop go together? Ugh ugh only good for props that move. Not all props move though.",
+		spawn_prop_command_parameter_restricted = "restricted",
+		spawn_prop_command_parameter_restricted_help = "Ugh ugh only super admins pick up this prop.",
+		spawn_prop_command_parameter_culling = "culling",
+		spawn_prop_command_parameter_culling_help = "Culling circle for how far prop appears/disappears. Default is 200m, only make bigger for big props seen from far away.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		tracker_command = "tracker",
 		tracker_command_help = "Me make tracker visible or invisible.",
 		tracker_command_parameter_break = "break",
-		tracker_command_parameter_break_help = "Break tracker and tell everyone. (Wait 20 moons to fix)",
+		tracker_command_parameter_break_help = "Ugh Break tracker and send dispatch. Type `yes` or `y` to break tracker. (Cant be re-enabled until 20 moons have passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "tracking_split",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		return_button = "Ugh, me go back",
 		deposit = "Me give $$${amount} deposit",
 		no_deposit = "No deposit needed",
-		deposit_not_enough_money = "Ugh, you no have enough shiny rocks to pay deposit."
+		deposit_not_enough_money = "Ugh, you no have enough shiny rocks to pay deposit.",
+		helipad = "Helipad"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		craft_torch = "undefined",
 		prepare_beans_toast = "undefined",
 		mix_pancake_batter = "undefined",
+		disassemble_bandages = "Disassemble <i>Fabric for Wounds</i>",
+		craft_tourniquet = "Create <i>Strap to Stop Blood</i>",
 
 		search = "Search",
 		amount = "Amount",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		first_aid_kit_description = "Tools for making feel better.",
 		bandages = "Tie-Up Grass for Bleed",
 		bandages_description = "Use for all boo-boos and bad cuts.",
+		tourniquet = "Strap to Stop Blood",
+		tourniquet_description = "Useful tool in bad times, strap to stop blood is for quick stop of much bleeding. Not for healing, but can save life in emergency.",
+		gauze = "Gauze",
+		gauze_description = "Ugga for any first aid kit, this gauze is soft, absorbent, and perfect for dressing boo-boos. It good foundation for taking care of owies, help stop bleeding and protect against dirty stuff.",
 		oxygen_tank = "Big breath bag",
 		oxygen_tank_description = "Makes big air for caveman lungs.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		no_vehicle_in_front = "You no see vehicle in front of you.",
 		using_first_aid_kit = "Grock Using First Aid Kit",
 		using_bandages = "Grock Using Bandages",
+		using_tourniquet = "Using Tourniquet",
 		using_ifak = "Grock Using IFAK",
 		move_to_wash = "Grock Move here to wash the grock vehicle",
 		vehicle_too_clean = "Grock! The vehicle too clean for washing",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		unable_to_use_lighter_in_vehicle = "Me no able to use lighter thing in big moving rock",
 		not_possible_in_a_vehicle = "Me no able to do that thing in big moving rock",
 		just_used_bandage = "Me just use first aid thing, need wait before use again",
+		just_used_tourniquet = "You just used a tourniquet, wait a bit before using another one.",
 		drank_gasoline_death = "Me drink gasoline and now me go bye-bye forever",
 		drank_bleach_death = "Ugh! You drink bleach! Grog dizzy now, me see black!",
 		finished_joint = "Ugh! Unga bunga! You finished joint.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		prop = "Ugh Prop",
 		model_parameter_missing = "Me not see `model`.",
 		model_parameter_invalid = "Me no know what `${model}` is.",
-		model_parameter_is_not_an_object = "Ugh! `${model}` not object!",
 		spawned_prop_non_networked = "Ugh! Make prop `${model}` NON-NETWORKED!",
 		spawned_prop_networked = "Ugh! Make prop `${model}` NETWORKED!",
 		spawned_exact_prop = "Ugh! Spawned prop exactly!",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		not_able_to_spawn_while_moving = "Ugga bugga! No spawn while moving. Stand still to place prop.",
 		stand_still_to_place_prop = "You can't move around while placing prop. Stay put!",
 		prop_no_interior = "You can't place this prop inside cave. Outside only!",
+		invalid_culling_value = "Ugga culling value, need to be between 10m and 2,500m.",
+		invalid_model = "Ugga model `${name}` (${hash}).",
 
 		invalid_prop_id = "Prop id not caveman level. Me no understand.",
 		prop_deleted = "Prop with id ${propId} was deleted. Farewell, prop!",

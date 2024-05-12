@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["meme-roadman"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "Tell me the model hash of the prop you wanna spawn innit.",
 		spawn_prop_command_parameter_network = "net",
-		spawn_prop_command_parameter_network_help = "U wan dis prop to move? If so, enable dis.",
-		spawn_prop_command_parameter_no_pickup = "no pick",
-		spawn_prop_command_parameter_no_pickup_help = "Only mangs wit super admin powers can pick dis prop up fam.",
+		spawn_prop_command_parameter_network_help = "undefined",
+		spawn_prop_command_parameter_restricted = "undefined",
+		spawn_prop_command_parameter_restricted_help = "undefined",
+		spawn_prop_command_parameter_culling = "undefined",
+		spawn_prop_command_parameter_culling_help = "undefined",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		tracker_command = "find my boys",
 		tracker_command_help = "Let's you show or hide your location on the map, innit?",
 		tracker_command_parameter_break = "mash up",
-		tracker_command_parameter_break_help = "Mash up your tracker and bun a notification bout it to di mandem. (Can't be re-enabled until 20min passed)",
+		tracker_command_parameter_break_help = "undefined",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "put my boys on the map",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		return_button = "Allow dat",
 		deposit = "$$ {amount} Depo",
 		no_deposit = "No Depo",
-		deposit_not_enough_money = "You don't have enough guap to pay dat depo."
+		deposit_not_enough_money = "You don't have enough guap to pay dat depo.",
+		helipad = "undefined"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		craft_torch = "undefined",
 		prepare_beans_toast = "undefined",
 		mix_pancake_batter = "undefined",
+		disassemble_bandages = "undefined",
+		craft_tourniquet = "undefined",
 
 		search = "Search",
 		amount = "Amount",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		first_aid_kit_description = "The \"do-it-yourself\" doctor-pack.",
 		bandages = "Bandages",
 		bandages_description = "For all the boo-boos and ouchies.",
+		tourniquet = "undefined",
+		tourniquet_description = "undefined",
+		gauze = "Gauze",
+		gauze_description = "Bruv, if you're tryna sort out any first aid ting, you need this gauze. It's bare soft and can soak up any blood, perfect for lookin' after wounds. It's the basic stuff to help manage bleeding and keep out any infections.",
 		oxygen_tank = "Oxy Tank",
 		oxygen_tank_description = "A pack to expand your lungs, ya know what I'm sayin'?",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		no_vehicle_in_front = "undefined",
 		using_first_aid_kit = "Fixing up with a first aid kit",
 		using_bandages = "Wrapping the wounds with bandages",
+		using_tourniquet = "Man's using Tourniquet",
 		using_ifak = "Using an IFAK to patch it up",
 		move_to_wash = "Get over here to rinse the whip",
 		vehicle_too_clean = "Can't wash the whip, it's already too clean",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		unable_to_use_lighter_in_vehicle = "Oi fam, can't use a lighter in the whip.",
 		not_possible_in_a_vehicle = "Can't do this while in a ride fam.",
 		just_used_bandage = "Yo, just used a first aid kit, wait a bit before using another.",
+		just_used_tourniquet = "Bruv, you just used a tourniquet. Allow it a bit before trying another one.",
 		drank_gasoline_death = "Died from drinking gasoline, smh. ",
 		drank_bleach_death = "Man down from drinkin' bleach",
 		finished_joint = "You mashed dat zoot, innit.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		prop = "Thing",
 		model_parameter_missing = "You forgot to include the `model` parameter, respect",
 		model_parameter_invalid = "Nah fam, '${model}' ain't a valid model.",
-		model_parameter_is_not_an_object = "Fam, the model `${model}` ain't no object.",
 		spawned_prop_non_networked = "Aight, spawned a non-networked prop with the model `${model}`.",
 		spawned_prop_networked = "Boom, spawned a networked prop with the model `${model}`.",
 		spawned_exact_prop = "Nice one, exact prop has spawned.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		not_able_to_spawn_while_moving = "Bruv, you can't spawn a prop while you're movin'.",
 		stand_still_to_place_prop = "Stay still if you wanna place a prop, fam.",
 		prop_no_interior = "Sorry mate, you can't put that prop inside.",
+		invalid_culling_value = "Peak! That culling value ain't right, it has to be between 10m and 2,500m.",
+		invalid_model = "Fam, that model ain't valid/known `${name}` (${hash}).",
 
 		invalid_prop_id = "Nah fam, that prop id ain't valid.",
 		prop_deleted = "Prop with id ${propId} has been removed, innit.",

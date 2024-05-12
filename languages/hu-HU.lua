@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["hu-HU"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		spawn_prop_command_parameter_model_hash = "modell",
 		spawn_prop_command_parameter_model_hash_help = "A tárgy modellje, amit spawnolni szeretnél.",
 		spawn_prop_command_parameter_network = "hálózat",
-		spawn_prop_command_parameter_network_help = "Szeretnéd, hogy a tárgy hálózatba kerüljön? Ez csak azokhoz a tárgyakhoz ajánlott, amelyek képesek mozogni.",
-		spawn_prop_command_parameter_no_pickup = "nem felvehető",
-		spawn_prop_command_parameter_no_pickup_help = "Csak a rendszergazdák vehetik-e fel ezt a tárgyat?",
+		spawn_prop_command_parameter_network_help = "Szeretné hálózatról betölteni a tárgyat? Csak azokhoz a tárgyakhoz ajánlott, amelyek képesek mozogni. Ne felejtsd el, hogy nem minden tárgy mozgatható.",
+		spawn_prop_command_parameter_restricted = "korlátozott",
+		spawn_prop_command_parameter_restricted_help = "Csak a főadminisztrátorok számára engedélyezett ezt a tárgyat felvenni.",
+		spawn_prop_command_parameter_culling = "lezárás",
+		spawn_prop_command_parameter_culling_help = "A lezárás sugar, amelyen belül a tárgy megjelenik/eltűnik. Az alapértelmezett sugar 200m, csak növeld ezt nagy tárgyakkal, amelyek távolról is láthatók szeretnél hogy legyen.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		tracker_command = "nyomkövető",
 		tracker_command_help = "Nyomkövető láthatóságának kapcsolása.",
 		tracker_command_parameter_break = "szünet",
-		tracker_command_parameter_break_help = "Szüneteltesse a nyomkövetőt, és küldjön értesítést róla. (Nem lehet újra engedélyezni, amíg 20 perc el nem telik)",
+		tracker_command_parameter_break_help = "Törje meg a nyomkövetőjét, és küldjön riasztást róla. Írja be a „yes” vagy „y” parancsot a nyomkövető megtöréséhez. (20 percig nem lehet újra aktiválni)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "nyomkövetők_elválasztása",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		return_button = "Vissza",
 		deposit = "${amount} Letét",
 		no_deposit = "Nincs letét",
-		deposit_not_enough_money = "Nincs elég pénzed a letét kifizetéséhez."
+		deposit_not_enough_money = "Nincs elég pénzed a letét kifizetéséhez.",
+		helipad = "Helipad"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		craft_torch = "Fáklyát készít",
 		prepare_beans_toast = "Készíts <i>babos pirítóst</i>",
 		mix_pancake_batter = "Keverd össze a <i>palacsintatésztát</i>",
+		disassemble_bandages = "Szétszerelni a(z) <i>Kötözőket</i>",
+		craft_tourniquet = "Gyártása a(z) <i>Tourniquet</i>-nek",
 
 		search = "Keresés",
 		amount = "Mennyiség",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		first_aid_kit_description = "A \"csempéssze el magad\" orvoscsomag.",
 		bandages = "Kötözők",
 		bandages_description = "Minden zsibbadásra és kisebbségekre.",
+		tourniquet = "Tourniquet",
+		tourniquet_description = "Életmentő eszköz válságos helyzetekben, a tourniquetet arra tervezték, hogy gyorsan megállítsa a súlyos vérzést. Habár minimális gyógyulást nyújt az átfogóbb elsősegélynyújtási lehetőségekhez képest, vérvesztésmegállító képessége döntő fontosságú lehet sürgősségi helyzetekben.",
+		gauze = "Pólya",
+		gauze_description = "Ez a pólya alapvető fontosságú bármely elsősegélydoboz számára, puha, nedvszívó és tökéletes sebkezeléshez. A sebek kezelése során az alapvető alapját biztosítja, segít a vérzés kezelésében és a fertőzés elleni védelemben.",
 		oxygen_tank = "Oxigén tartály",
 		oxygen_tank_description = "Tüdőtágító készlet.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		no_vehicle_in_front = "Nincs jármű előtted.",
 		using_first_aid_kit = "ELSŐSEGÉLYKÉSZLET használata",
 		using_bandages = "KENDŐ használata",
+		using_tourniquet = "Véroxigén-csípő használata",
 		using_ifak = "IFAK használata",
 		move_to_wash = "Mozogjon ide, hogy megtisztítsa a járművet",
 		vehicle_too_clean = "A jármű túl tiszta ahhoz, hogy mosásra kerüljön.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		unable_to_use_lighter_in_vehicle = "Nem tudsz öngyújtót használni járműben.",
 		not_possible_in_a_vehicle = "Ez a cselekvés nem lehetséges járműben.",
 		just_used_bandage = "Éppen használtál egy elsősegély dobozt, várj egy kicsit mielőtt használsz egy másikat.",
+		just_used_tourniquet = "Épp most használtál egy véroxigén-csípőt, várj egy kicsit, mielőtt újabbat használsz.",
 		drank_gasoline_death = "Benzin mérgezés",
 		drank_bleach_death = "Hiperszódás oldat mérgezés",
 		finished_joint = "Befejezted a cigit.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		prop = "Objektum",
 		model_parameter_missing = "Hiányzik a `model` paraméter.",
 		model_parameter_invalid = "A `${model}` modell érvénytelen modell.",
-		model_parameter_is_not_an_object = "A `${model}` modell nem egy objektum.",
 		spawned_prop_non_networked = "Létrehozott egy nem-hálózatos objektumot a `${model}` modell segítségével.",
 		spawned_prop_networked = "Hálózati propot helyezett el a(z) `${model}` modell használatával.",
 		spawned_exact_prop = "Pontos propot helyezett el.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		not_able_to_spawn_while_moving = "A prop spawnolásához meg kell állnia.",
 		stand_still_to_place_prop = "Helyezzen el egy propot úgy, hogy megáll.",
 		prop_no_interior = "Csak kívül helyezheted el ezt az elemet.",
+		invalid_culling_value = "Érvénytelen kiöntési érték, 10m és 2,500m között kell lennie.",
+		invalid_model = "Érvénytelen/Ismeretlen modell `${name}` (${hash}).",
 
 		invalid_prop_id = "Érvénytelen elem azonosító.",
 		prop_deleted = "Az ${propId} azonosítójú elem törölve lett.",

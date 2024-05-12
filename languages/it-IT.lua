@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["it-IT"] = {
 	-- configuration settings for language
@@ -487,7 +487,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		attachment_off = "Attivato con successo '${attachment}' attachment off.",
 
 		tint_invalid = "Tinta dell'arma non valida.",
-		tint_index_invalid = "Indice di tintura dell'arma non valido.",
+		tint_index_invalid = "Indice di tinta dell'arma non valido.",
 		tint_failed_set = "Impossibile impostare la tinta dell'arma.",
 		tint_removed = "Tinta dell'arma rimossa con successo.",
 		tint_set = "Imposta con successo l'arma tinta a `${tint}` (${tintIndex}).",
@@ -2951,7 +2951,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		phone_number_available_command_substitutes = "number_available",
 
 		share_phone_number_command = "condividi_numero_telefono",
-		share_phone_number_command_help = "Condivide il tuo numero di telefono con tutti quelli intorno a te (< 1,5 m).",
+		share_phone_number_command_help = "Condivide il tuo numero di telefono con tutti intorno a te (< 1,5 m).",
 		share_phone_number_command_substitutes = "condividi_numero",
 
 		-- game/plants
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		spawn_prop_command_parameter_model_hash = "modello",
 		spawn_prop_command_parameter_model_hash_help = "Il modello di prop che desideri generare.",
 		spawn_prop_command_parameter_network = "network",
-		spawn_prop_command_parameter_network_help = "Vorresti collegare l'elica?Si consiglia di abilitarlo solo per oggetti di scena che dovrebbero essere in grado di muoversi.",
-		spawn_prop_command_parameter_no_pickup = "nessun ritiro",
-		spawn_prop_command_parameter_no_pickup_help = "Questo oggetto di scena dovrebbe essere raccolto solo da super amministratori?",
+		spawn_prop_command_parameter_network_help = "Vuoi mettere in rete il prop? Si consiglia di attivare questa opzione solo per i prop che dovrebbero poter muoversi. Non tutti i prop sono però mobili.",
+		spawn_prop_command_parameter_restricted = "restricto",
+		spawn_prop_command_parameter_restricted_help = "Consenti solo a super admin di raccogliere questo oggetto.",
+		spawn_prop_command_parameter_culling = "raggio_di_culling",
+		spawn_prop_command_parameter_culling_help = "Raggio di culling a cui distanza l'oggetto viene spawnato/eliminato. Il raggio predefinito è di 200m, aumentalo solo per oggetti grandi che devono essere visibili da lontano.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3418,8 +3420,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		-- game/trackers
 		tracker_command = "tracker",
 		tracker_command_help = "Attiva/disattiva Visibilità del tuo tracker.",
-		tracker_command_parameter_break = "interrompi",
-		tracker_command_parameter_break_help = "Interrompe il tuo tracker e invia una notifica di dispacciamento in merito. (Non può essere riattivato fino a quando non sono trascorsi 20 minuti)",
+		tracker_command_parameter_break = "rompi",
+		tracker_command_parameter_break_help = "Rompi il tuo tracker e invia una notifica di intervento. Digita 'sì' o 's' per rompere il tracker. (Non può essere riattivato fino a quando non siano passati 20 minuti)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -3552,9 +3554,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		taze_player_command = "taze_player",
 		taze_player_command_help = "Tase un giocatore.",
-		taze_player_command_parameter_server_id = "server id",
-		taze_player_command_parameter_server_id_help = "ID server del giocatore obiettivo.",
-		taze_player_command_substitutes = "paralizza, tase",
+		taze_player_command_parameter_server_id = "id server",
+		taze_player_command_parameter_server_id_help = "ID server del giocatore bersaglio.",
+		taze_player_command_substitutes = "stun, taze",
 
 		run_command_as_command = "run_command_as",
 		run_command_as_command_help = "Fa eseguire un altro giocatore un comando.",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		return_button = "Torna",
 		deposit = "Deposito $${amount}",
 		no_deposit = "Nessun deposito",
-		deposit_not_enough_money = "Non hai abbastanza soldi per pagare il deposito."
+		deposit_not_enough_money = "Non hai abbastanza soldi per pagare il deposito.",
+		helipad = "Eliporto"
 	},
 
 	airstrike = {
@@ -4409,7 +4412,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		target = "Destinatario",
 		total = "Totale",
 
-		confirm_target = "Vuoi trasferire $${amount} a \"${name}\"?",
+		confirm_target = "Vuoi trasferire $${amount}",
 		cancel = "No, annulla",
 		confirm_transfer = "Sì, trasferisci",
 
@@ -5282,7 +5285,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	containers = {
-		drill_container = "Premi INPUT_CONTEXT per forare il contenitore.",
+		drill_container = "Premi ~INPUT_CONTEXT~ per forare il contenitore.",
 
 		drilling_container = "Foratura del Contenitore",
 		failed_drill = "Impossibile forare il contenitore.",
@@ -5651,8 +5654,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		sawed_shotgun = "Fucile a pompa segato.",
 		failed_saw_shotgun = "Impossibile segare il fucile a pompa.",
 
-		use_microwave = "Usa il Microonde",
-		press_to_use_microwave = "[${SeatEjectKey}] Usa il Microonde",
+		use_microwave = "Usa il microonde",
+		press_to_use_microwave = "[${SeatEjectKey}] Usa il microonde",
 
 		brownies_recipe = "Brownies",
 		baking_brownies = "Cuocendo Brownies",
@@ -5808,7 +5811,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		bacon_recipe = "Bacon",
 		crafting_bacon = "Crafting Bacon",
 		crafted_bacon = "Munizioni artigianate.",
-		failed_craft_bacon = "Crafting del bacon fallito.",
+		failed_craft_bacon = "Impossibile craftare il bacon.",
 
 		no_required_items = "Non hai tutti gli oggetti richiesti.",
 
@@ -6590,21 +6593,21 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	fake_ids = {
-		press_to_purchase = "Premi ~INPUT_CONTEXT~ per acquistare una Fake-ID.",
+		press_to_purchase = "Premi ~INPUT_CONTEXT~ per acquistare la Fake-ID.",
 
-		store_title = "Negozio Fake-ID",
+		store_title = "Negozio delle Fake-ID",
 
 		female_id = "Fake-ID Femminile",
 		male_id = "Fake-ID Maschile",
 		close_menu = "Chiudi Menu",
 
-		logs_purchased_title = "Acquisto Fake-ID",
+		logs_purchased_title = "Fake-ID Acquistata",
 		logs_purchased_details = "${consoleName} ha acquistato una ${type} (${firstName} ${lastName} #${characterId}).",
 
 		something_went_wrong = "Qualcosa è andato storto.",
 		failed_not_on_duty = "Devi essere in servizio per acquistare una Fake-ID.",
-		failed_not_enough_money = "Non hai abbastanza soldi per acquistare una Fake-ID.",
-		purchase_success = "Acquisto della falsa identità completato con successo per $3.000."
+		failed_not_enough_money = "Non hai abbastanza denaro per acquistare una Fake-ID.",
+		purchase_success = "Acquisto di un'identità falsa completato con successo per $3,000."
 	},
 
 	farming = {
@@ -6823,7 +6826,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	gun_trader = {
-		press_e_to_talk = "Premi INPUT_CONTEXT per parlare con Jim.",
+		press_e_to_talk = "Premi ~INPUT_CONTEXT~ per parlare con Jim.",
 		trader_closed = "Il negozio di Jim è attualmente chiuso.",
 
 		sorry_closed = "Spiacenti amico, il negozio è chiuso.",
@@ -6892,9 +6895,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 		is_in_school = "È a scuola: ${isInSchool}",
 		yes = "Sì",
 		no = "No",
-		press_to_hide_in_locker = "Premi INPUT_CONTEXT per nasconderti nell'armadietto.",
+		press_to_hide_in_locker = "Premi ~INPUT_CONTEXT~ per nasconderti nell'armadietto.",
 		locker_is_occupied = "L'armadietto è occupato.",
-		press_to_exit_locker = "Premi INPUT_CONTEXT per uscire dall'armadietto.",
+		press_to_exit_locker = "Premi ~INPUT_CONTEXT~ per uscire dall'armadietto.",
 		failed_to_start_escape_room = "Impossibile avviare la stanza di fuga.",
 		started_escape_room = "Hai avviato la stanza di fuga con ${playerAmount} giocatori.",
 		escape_instructions = "Una volta completato, le porte si sbloccheranno e potrai uscire dall'edificio.",
@@ -7156,7 +7159,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	import_export = {
-		press_to_access = "Premi INPUT_CONTEXT per accedere al menu Importa/Esporta.",
+		press_to_access = "Premi ~INPUT_CONTEXT~ per accedere al menu Importa/Esporta.",
 
 		storage_units = "su",
 		minutes = "minuti",
@@ -7233,10 +7236,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	interiors = {
-		in_interior = "In Interior: ${interiorId} (${portals} portali).",
-		in_room_id = "In Stanza: ${roomId} (${roomName}).",
-		total_interiors = "Totale Interni: ${totalInteriors} (${totalInteriorPortals} totali portali).",
-		total_unloaded_interiors = "Totale Interni Scaricati: ${totalUnloadedInteriors} (${totalUnloadedInteriorPortals} totali portali).",
+		in_interior = "All'interno: ${interiorId} (${portali} portali).",
+		in_room_id = "Nella stanza: ${roomId} (${nomeStanza}).",
+		total_interiors = "Interni totali: ${totalInteriors} (${totalePortaliInterni} portali totali).",
+		total_unloaded_interiors = "Interni non caricati totali: ${totalUnloadedInteriors} (${totalePortaliInterniNonCaricati} portali totali).",
 		portal_text = "id=${portalId} f=${flags}"
 	},
 
@@ -7260,7 +7263,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		mug_shots = "Foto Segnaletiche",
 		prison_store = "Negozio del Carcere",
 		fruit_vendor = "Venditore di Frutta",
-		food_market = "Mercato Alimentare",
+		food_market = "Mercato alimentare",
 		island_store = "Negozio dell'Isola",
 		travel_agency = "Agenzia di Viaggi",
 		island_bar = "Bar dell'Isola",
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		craft_torch = "Craft <i>Torch</i>",
 		prepare_beans_toast = "Prepare <i>Beans on Toast</i>",
 		mix_pancake_batter = "Mix <i>Pancake Batter</i>",
+		disassemble_bandages = "Smontare <i>Bendaggi</i>",
+		craft_tourniquet = "Creare <i>Laccio emostatico</i>",
 
 		search = "Cerca",
 		amount = "Quantità",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		first_aid_kit_description = "Il \"do-it-yourself\" doctor-kit.",
 		bandages = "Bende",
 		bandages_description = "Per tutti gli outhies e i booboos.",
+		tourniquet = "Laccio emostatico",
+		tourniquet_description = "Uno strumento salvavita in situazioni critiche, il laccio emostatico è progettato per fermare rapidamente sanguinamenti gravi. Sebbene offra una guarigione minima rispetto a opzioni di pronto soccorso più complete, la sua capacità di interrompere la perdita di sangue può essere cruciale in scenari di emergenza.",
+		gauze = "Garza",
+		gauze_description = "Essenziale per qualsiasi kit di pronto soccorso, questa garza è morbida, assorbente e perfetta per la medicazione delle ferite. Fornisce la base di base per la cura delle ferite, aiutando a gestire sanguinamenti e proteggere contro le infezioni.",
 		oxygen_tank = "Serbatorio di ossigeno",
 		oxygen_tank_description = "Un pacchetto di espansione polmonare.",
 		ifak = "IFAK",
@@ -7819,7 +7828,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		tic_tac = "Tic Tac",
 		tic_tac_description = "TIC-TAC. BOOOOOOOOOM, ah no aspettate è ancora mattina!",
 		pizza_slice = "Fetta di pizza",
-		pizza_slice_description = "Una fetta piccola di pizza per te, con extra di pepperoni (non vegano).",
+		pizza_slice_description = "MAMMA MIA MARCELLOO! WHAT AR YU DUING.",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "Divora questa salsiccia come se fosse l'ultima.",
 		nachos = "Nachos",
@@ -8581,7 +8590,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		pancakes = "Pancake",
 		pancakes_description = "Soffice e dorato, appena sfornato, questi pancake americani sono un modo deliziosamente indulgente per iniziare la tua giornata. Gustosi, anche se non la scelta più salutare—pensaci come libertà nel piatto, dove la libertà include il godersi ogni morso imbevuto di sciroppo!",
 		grilled_sausages = "Salsicce Grigliate",
-		grilled_sausages_description = "Goditi l'aroma affumicato di queste salsicce appena grigliate, una ricompensa culinaria per l'abile cacciatore. Succose, saporite e cotte alla perfezione, sono una delizia rustica che celebra lo spirito della caccia ad ogni morso.",
+		grilled_sausages_description = "Assapora l'aroma affumicato di queste salsicce appena grigliate, un premio culinario per il cacciatore esperto. Succulente, saporite e cotte alla perfezione, sono una delizia rustica che celebra lo spirito della caccia ad ogni morso.",
 		grilled_bacon = "Pancetta Grigliata",
 		grilled_bacon_description = "Croccante, dorata e irresistibilmente affumicata, questa pancetta grigliata è l'indulgenza definitiva per coloro che apprezzano le cose migliori della vita. Appena uscita dalla griglia, è una celebrazione sfrigolante di sapori, pronta per essere gustata.",
 		fried_egg = "Uovo Fritto",
@@ -9069,7 +9078,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		weapon_addon_rc4_description = "Esipante e veloce, il partner perfetto da avere nella tua squadra.Finché la testa rossa non la tiene.",
 
 		weapon_addon_mcx = "SIG MCX",
-		weapon_addon_mcx_description = "Famoso per la sua adattabilità e precisione, il SIG MCX è un'arma versatile che offre affidabilità e prestazioni senza pari per qualsiasi scenario.",
+		weapon_addon_mcx_description = "Rinomato per la sua versatilità e precisione, il SIG MCX è un'arma versatile che offre una affidabilità e prestazioni senza pari per qualsiasi scenario.",
 
 		weapon_addon_m9a3 = "Beretta M9A3",
 		weapon_addon_m9a3_description = "Tutto ciò di cui hai bisogno per fare le tue azioni sporche a buon mercato.",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		no_vehicle_in_front = "Non c'è nessun veicolo di fronte a te.",
 		using_first_aid_kit = "Uso del Kit di Pronto Soccorso",
 		using_bandages = "Uso delle Bende",
+		using_tourniquet = "Utilizzo del laccio emostatico",
 		using_ifak = "Uso dell'IFAK",
 		move_to_wash = "Spostati qui per lavare il veicolo",
 		vehicle_too_clean = "Il veicolo è troppo pulito per essere lavato.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		unable_to_use_lighter_in_vehicle = "Non puoi usare un accendino in un veicolo.",
 		not_possible_in_a_vehicle = "Questa azione non è possibile in un veicolo.",
 		just_used_bandage = "Hai appena usato un kit di pronto soccorso, aspetta un po' prima di usarne un altro.",
+		just_used_tourniquet = "Hai appena usato un laccio emostatico, aspetta un po' prima di usarne un altro.",
 		drank_gasoline_death = "Avvelenamento da Benzina",
 		drank_bleach_death = "Avvelenamento da Candeggina",
 		finished_joint = "Hai finito la tua canna.",
@@ -9287,7 +9298,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	jail = {
-		press_to_leave_jail = "Premi INPUT_CONTEXT per uscire dal carcere.",
+		press_to_leave_jail = "Premi ~INPUT_CONTEXT~ per uscire dal carcere.",
 		invalid_server_id = "ID server non valido.",
 		failed_check_jail = "Impossibile controllare il tempo di prigione.",
 		check_not_jailed = "Quel giocatore non è in prigione.",
@@ -9337,9 +9348,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	lag = {
-		fake_lag_invalid_fps = "Fps non validi.",
-		fake_lag_clamp = "Limitazione fps al di sotto di ${fps}.",
-		fake_lag_disabled = "Il lag finto è stato disattivato."
+		fake_lag_invalid_fps = "Fps non valido.",
+		fake_lag_clamp = "Limitazione fps per essere al di sotto di ${fps}.",
+		fake_lag_disabled = "Il lag finto è stato disabilitato."
 	},
 
 	lag_switch = {
@@ -9350,7 +9361,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	lean = {
-		press_to_sell_lean = "Premi INPUT_CONTEXT per vendere Lean.",
+		press_to_sell_lean = "Premi ~INPUT_CONTEXT~ per vendere Lean.",
 		local_not_interested = "Il locale non sembra interessato al momento.",
 		not_interested = "Questo locale non sembra interessato al tuo lean.",
 		selling_lean = "Vendita di Lean.",
@@ -9608,7 +9619,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	loot = {
-		press_to_pick_up = "Premi INPUT_CONTEXT per raccogliere ${itemLabel}."
+		press_to_pick_up = "Premi ~INPUT_CONTEXT~ per raccogliere ${itemLabel}."
 	},
 
 	lottery = {
@@ -9628,10 +9639,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	lucky_wheel = {
-		hold_to_spin_lucky_wheel = "Tieni premuto INPUT_CONTEXT per girare la Ruota della Fortuna. Il costo è di ${cost} Punti OP. Gira gratis tra ${time}.",
-		hold_to_spin_lucky_wheel_free_one_left = "Tieni premuto INPUT_CONTEXT per girare la Ruota della Fortuna. Hai ancora 1 giro gratis oggi.",
-		hold_to_spin_lucky_wheel_free_multiple_left = "Tieni premuto INPUT_CONTEXT per girare la Ruota della Fortuna. Hai ancora ${spins} giri gratis oggi.",
-		continue_holding_to_spin_lucky_wheel = "Continua a tenere premuto INPUT_CONTEXT per girare la Ruota della Fortuna.",
+		hold_to_spin_lucky_wheel = "Tieni premuto ~INPUT_CONTEXT~ per girare la Ruota della Fortuna. Il costo è di ${cost} Punti OP. Gira gratis tra ${time}.",
+		hold_to_spin_lucky_wheel_free_one_left = "Tieni premuto ~INPUT_CONTEXT~ per girare la Ruota della Fortuna. Hai ancora 1 giro gratis oggi.",
+		hold_to_spin_lucky_wheel_free_multiple_left = "Tieni premuto ~INPUT_CONTEXT~ per girare la Ruota della Fortuna. Hai ancora ${spins} giri gratis oggi.",
+		continue_holding_to_spin_lucky_wheel = "Continua a tenere premuto ~INPUT_CONTEXT~ per girare la Ruota della Fortuna.",
 		lucky_wheel_is_occupied = "La Ruota della Fortuna è attualmente occupata. Per favore, attendi.",
 		not_enough_op_points = "Hai bisogno di ${cost} Punti OP per girare la Ruota della Fortuna. Hai ${points} Punti OP.",
 		used_op_points = "Hai utilizzato ${cost} Punti OP. Ora ne hai ${points} rimasti.",
@@ -9748,7 +9759,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	meth = {
-		press_to_sell_meth = "Premi INPUT_CONTEXT per vendere Metanfetamine.",
+		press_to_sell_meth = "Premi ~INPUT_CONTEXT~ per vendere Metanfetamine.",
 		local_not_interested = "Il locale non sembra interessato in questo momento.",
 		selling_meth = "Vendita di Metanfetamine.",
 
@@ -9975,7 +9986,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 	notepads = {
 		take_notes = "Prendere appunti...",
-		press_to_open = "Premi INPUT_DETONATE per aprire questo Blocco Note.",
+		press_to_open = "Premi ~INPUT_DETONATE~ per aprire questo Blocco Note.",
 		notepad_busy = "Qualcun altro sta usando questo blocco note.",
 		dropped_notepad_title = "Blocco Note Abbandonato",
 		dropped_notepad_text_title_details = "${consoleName} ha abbandonato un blocco note con il testo ${text}.",
@@ -10229,8 +10240,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		about_unusual_explosions = "Eventi di esplosione insoliti che non si verificano normalmente.",
 		explosions_by_type_title = "Esplosioni per Tipo",
 		players_causing_explosions_title = "Giocatori che causano esplosioni",
-		include_common_events_off = "Includi eventi comuni: DISATTIVATO",
-		include_common_events_on = "Includi eventi comuni: ATTIVATO",
+		include_common_events_off = "Includi eventi comuni: OFF",
+		include_common_events_on = "Includi eventi comuni: ON",
 
 		explosion_events_type = "Tipo",
 		explosion_events_amount = "Quantità",
@@ -11075,11 +11086,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		no_phone = "Non hai un telefono.",
 		nobody_nearby = "Nessuno abbastanza vicino per condividere il tuo numero.",
-		shared_number = "${fullName} ha condiviso il proprio numero di telefono con te. Usa /sì per accettarlo e creare un nuovo contatto o /no per rifiutarlo.",
+		shared_number = "${fullName} ha condiviso il suo numero di telefono con te. Usa /yes per accettarlo e creare un nuovo contatto o /no per rifiutarlo.",
 		shared_number_expired = "La richiesta di condivisione del numero è scaduta.",
 		shared_number_declined = "Hai rifiutato la richiesta di condivisione del numero.",
 		failed_to_share = "Impossibile condividere il tuo numero di telefono.",
-		number_share_timeout = "Hai appena condiviso il tuo numero di telefono. Attendi un attimo prima di riprovare.",
+		number_share_timeout = "Hai appena condiviso il tuo numero di telefono. Attendi un momento prima di riprovare.",
 		phone_number_shared = "Hai condiviso con successo il tuo numero di telefono con ${nearby} giocatori nelle vicinanze."
 	},
 
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["it-IT"] = {
 		prop = "Prop",
 		model_parameter_missing = "Il parametro `modello` manca.",
 		model_parameter_invalid = "Il modello `${model}` non è un modello valido.",
-		model_parameter_is_not_an_object = "Il modello `${model}` non è un oggetto.",
 		spawned_prop_non_networked = "Spawnato un prop non in rete con il modello `${model}`.",
 		spawned_prop_networked = "Spawnato un prop in rete con il modello `${model}`.",
 		spawned_exact_prop = "Prop esatto spawnato.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		not_able_to_spawn_while_moving = "Devi stare fermo quando spawni un prop.",
 		stand_still_to_place_prop = "Devi stare fermo per posizionare un prop.",
 		prop_no_interior = "Puoi posizionare questo prop solo all'esterno.",
+		invalid_culling_value = "Valore di limitazione non valido, deve essere compreso tra 10m e 2.500m.",
+		invalid_model = "Modello non valido/sconosciuto `${name}` (${hash}).",
 
 		invalid_prop_id = "ID prop non valido.",
 		prop_deleted = "Prop con ID ${propId} è stato eliminato.",
@@ -12287,10 +12299,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		trackers_split = "I tracker verranno ora divisi in singoli blip.",
 
 		tracker_broken = "Il tracker di ${lastName} è stato danneggiato vicino a ${location}",
-		tracker_broken_unit = "${unitId} Il tracker di ${lastName} è stato danneggiato vicino a ${location}",
-		tracker_broken_title = "[Dispaccio]",
-		tracker_broken_blip = "Tracker Danneggiato di ${lastName}",
-		tracker_broken_timeout = "Il tuo tracker è danneggiato. Puoi riattivarlo 20 minuti dopo.",
+		tracker_broken_unit = "Il tracker di ${lastName} è stato danneggiato vicino a ${location} (ID unità: ${unitId})",
+		tracker_broken_title = "[Centrale]",
+		tracker_broken_blip = "Tracker danneggiato ${lastName}",
+		tracker_broken_timeout = "Il tuo tracker è rotto. Puoi riattivarlo 20 minuti dopo.",
 
 		department_sasp = "SASP",
 		department_bcso = "BCSO",
@@ -12534,7 +12546,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		vending_coffee_not_enough_cash = "Non hai abbastanza soldi per comprare un Caffè. Il costo è $${costo}.",
 		vending_snack = "Premi ~INPUT_CONTEXT~ per acquistare uno Snack. Il costo è $${costo}.",
 		vending_snack_not_enough_cash = "Non hai abbastanza soldi per comprare uno Snack. Il costo è $${costo}.",
-		vending_soda = "Premi ~INPUT_CONTEXT~ per acquistare una Bibita. Il costo è $${costo}.",
+		vending_soda = "Premi ~INPUT_CONTEXT~ per acquistare una Bibita. Il costo è $${cost}.",
 		vending_soda_not_enough_cash = "Non hai abbastanza soldi per comprare una Bibita. Il costo è $${costo}.",
 		vending_water = "Premi ~INPUT_CONTEXT~ per acquistare una Bottiglia d'Acqua. Il costo è $${costo}.",
 		vending_water_not_enough_cash = "Non hai abbastanza soldi per comprare una Bottiglia d'Acqua. Il costo è $${costo}.",
@@ -12670,8 +12682,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		explode_success = "Hai fatto esplodere con successo ${consoleName}.",
 		explode_failed = "Impossibile far esplodere il giocatore.",
 
-		taze_success = "Hai stordito con successo ${consoleName}.",
-		taze_failed = "Impossibile stordire il giocatore.",
+		taze_success = "Hai taserato con successo ${consoleName}.",
+		taze_failed = "Impossibile taserare il giocatore.",
 
 		flashbang_success = "Hai lanciato con successo una granata flashbang a ${consoleName}.",
 		flashbang_failed = "Impossibile lanciare la granata flashbang al giocatore.",
@@ -12857,7 +12869,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	bus_driver = {
-		start_route = "Premi INPUT_CONTEXT per iniziare una tratta",
+		start_route = "Premi ~INPUT_CONTEXT~ per iniziare una tratta",
 		failed_start_job = "Impossibile avviare un nuovo lavoro.",
 		next_stop = "Prossima Fermata",
 		bus_hq = "Sede dell'Autobus",
@@ -12867,7 +12879,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		shutdown_engine = "Spegni il motore e aspetta i passeggeri.",
 		return_to_hq = "Ritorna alla sede.",
 		bus_stop = "Fermata dell'Autobus",
-		pay_for_ticket = "Tieni premuto INPUT_CONTEXT per pagare un biglietto ($18).",
+		pay_for_ticket = "Tieni premuto ~INPUT_CONTEXT~ per pagare un biglietto ($18).",
 		not_enough_money_ticket = "Non hai abbastanza soldi per un biglietto ($18).",
 		ticket_paid = "${displayName} ha pagato un biglietto dell'autobus.",
 		paid_for_ticket = "Hai pagato con successo per un biglietto dell'autobus.",

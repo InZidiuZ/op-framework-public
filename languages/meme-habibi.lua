@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["meme-habibi"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "The prop model you would like to spawn.",
 		spawn_prop_command_parameter_network = "ibdag alshaarik",
-		spawn_prop_command_parameter_network_help = "Hal tureed an takhdir alshaarik? Yuwsiro an tastakhdam hatha mawjood faqat lilashaarik allati yajib an taharaka.",
-		spawn_prop_command_parameter_no_pickup = "la yutakhadha",
-		spawn_prop_command_parameter_no_pickup_help = "Hal yajib an yutakhadha hatha alshaarik li almani'in almkhtasqin fakat?",
+		spawn_prop_command_parameter_network_help = "Do you want to link the prop to a network? It's suggested to select this only for props that need to move. Not all props are movable, though.",
+		spawn_prop_command_parameter_restricted = "restricted",
+		spawn_prop_command_parameter_restricted_help = "Allow only super admins to interact with this prop.",
+		spawn_prop_command_parameter_culling = "culling",
+		spawn_prop_command_parameter_culling_help = "Culling radius determines the distance in which the prop appears/disappears. Default radius is 200m; only increase for large props that need to be visible from afar.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		tracker_command = "tracker",
 		tracker_command_help = "Toggle visibility of your tracker.",
 		tracker_command_parameter_break = "halt",
-		tracker_command_parameter_break_help = "Pause your tracker and shoot out a signal. (Will restart after 20min)",
+		tracker_command_parameter_break_help = "Break your tracker and send a dispatch notification about it. Type `yes` or `y` to break your tracker. (Cant be re-enabled until 20min have passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		return_button = "رجوع",
 		deposit = "وديعة ${amount}دولار",
 		no_deposit = "لا يوجد وديعة",
-		deposit_not_enough_money = "ليس لديك ما يكفي من المال لدفع الوديعة"
+		deposit_not_enough_money = "ليس لديك ما يكفي من المال لدفع الوديعة",
+		helipad = "Helipad"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		craft_torch = "undefined",
 		prepare_beans_toast = "undefined",
 		mix_pancake_batter = "undefined",
+		disassemble_bandages = "Disassemble <i>Bandages</i>",
+		craft_tourniquet = "Craft <i>Tourniquet</i>",
 
 		search = "Search",
 		amount = "Amount",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		first_aid_kit_description = "The DIY kit for doctors.",
 		bandages = "Almrimat",
 		bandages_description = "For all the ouchies and booboos.",
+		tourniquet = "Tourniquet",
+		tourniquet_description = "A life-saving tool in critical situations, the tourniquet is designed to stop severe bleeding quickly. While it offers minimal healing compared to more comprehensive first aid options, its ability to halt blood loss can be pivotal in emergency scenarios.",
+		gauze = "غزة",
+		gauze_description = "ضروري لأي علبة إسعافات أولية، هذا الغزة ناعم وامتصاصي، ومثالي لتغيير الجروح. إنه يوفر الأساس الأساسي لرعاية الجروح، مما يساعد في إدارة النزف وحماية الجروح من العدوى.",
 		oxygen_tank = "حزمة تمدد الرئة",
 		oxygen_tank_description = "حزمة تمدد الرئة.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		no_vehicle_in_front = "undefined",
 		using_first_aid_kit = "استخدام علبة الإسعافات الأولية",
 		using_bandages = "استخدام الضمادات",
+		using_tourniquet = "استخدام ضاغط",
 		using_ifak = "استخدام IFAK",
 		move_to_wash = "انتقل هنا لغسل السيارة",
 		vehicle_too_clean = "السيارة نظيفة جداً للغسل.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		unable_to_use_lighter_in_vehicle = "You are not able to use a lighter in a vehicle.",
 		not_possible_in_a_vehicle = "This action is not possible in a vehicle.",
 		just_used_bandage = "You just used a first aid kit, wait a bit before using another one.",
+		just_used_tourniquet = "لقد استخدمت للتو ضاغطًا، انتظر قليلاً قبل استخدام آخر.",
 		drank_gasoline_death = "Gasoline Poisoning",
 		drank_bleach_death = "Poisoned with Bleach",
 		finished_joint = "Ahlan, you finished your joint.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		prop = "Prop",
 		model_parameter_missing = "The `model` parameter is missing.",
 		model_parameter_invalid = "The model `${model}` is an invalid model.",
-		model_parameter_is_not_an_object = "Matek `${model}` msh object.",
 		spawned_prop_non_networked = "Msh hayawanat 3al shabakat lel model `${model}`.",
 		spawned_prop_networked = "Hayawanat 3al shabakat matlaqa lel model ${model}.",
 		spawned_exact_prop = "Hayawanat matlaqa da5el el game.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		not_able_to_spawn_while_moving = "Ya habibi, you can't spawn a prop while moving. Please stand still.",
 		stand_still_to_place_prop = "Please stand still to place a prop, ya habibi.",
 		prop_no_interior = "Ya habibi, you can only place this prop outside.",
+		invalid_culling_value = "قيمة قص مزيل غير صالحة، يجب أن تكون بين 10 متر و2,500 متر.",
+		invalid_model = "نموذج غير صالح/مجهول `${name}` (${hash}).",
 
 		invalid_prop_id = "Maafi, the prop id you provided is invalid.",
 		prop_deleted = "Ya habibi, prop with id ${propId} has been deleted.",

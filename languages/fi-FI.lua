@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["fi-FI"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		spawn_prop_command_parameter_model_hash = "malli",
 		spawn_prop_command_parameter_model_hash_help = "Esineen malli, jonka haluat luoda.",
 		spawn_prop_command_parameter_network = "verkko",
-		spawn_prop_command_parameter_network_help = "Haluatko liittää esineen verkkoon? Suositellaan vain esineille, jotka voivat liikkua.",
-		spawn_prop_command_parameter_no_pickup = "ei nouto",
-		spawn_prop_command_parameter_no_pickup_help = "Voiko tätä esinettä poimia vain super adminit?",
+		spawn_prop_command_parameter_network_help = "Haluatko verkkoyhdistää rekvisiittaa? On suositeltavaa ottaa tämä käyttöön vain niille rekvisiitoille, jotka pitäisi pystyä liikuttamaan. Kaikki rekvisiitat eivät ole kuitenkaan liikuteltavia.",
+		spawn_prop_command_parameter_restricted = "rajoitettu",
+		spawn_prop_command_parameter_restricted_help = "Salli tämän rekvisiitan poimiminen vain ylivalvojille.",
+		spawn_prop_command_parameter_culling = "karsinta",
+		spawn_prop_command_parameter_culling_help = "Karsinnan säde, jossa etäisyydellä rekvisiitta luodaan/poistetaan. Oletussäde on 200 metriä, kasvata tätä vain suuria rekvisiittoja varten, jotka pitäisi näkyä kaukaa.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		tracker_command = "seurantalaite",
 		tracker_command_help = "Vaihtaa seurantalaitteen näkyvyyden.",
 		tracker_command_parameter_break = "katko",
-		tracker_command_parameter_break_help = "Katkaise seurantalaite ja lähetä siitä ilmoitus (Ei voi ottaa uudelleen käyttöön ennen kuin 20 minuuttia on kulunut).",
+		tracker_command_parameter_break_help = "Katkaise seurantasi ja lähetä hälytysilmoitus siitä. Kirjoita `yes` tai `y` katkaistaksesi seurantasi. (Ei voi ottaa uudelleen käyttöön ennen kuin on kulunut 20 minuuttia)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "seurantalaitteet_ryhmittäin",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		return_button = "Palaa",
 		deposit = "${amount} Talletus",
 		no_deposit = "Ei Talletusta",
-		deposit_not_enough_money = "Sinulla ei ole tarpeeksi rahaa talletuksen maksamiseen."
+		deposit_not_enough_money = "Sinulla ei ole tarpeeksi rahaa talletuksen maksamiseen.",
+		helipad = "Helikopterilaskeutumispaikka"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		craft_torch = "Valmista <i>soihtu</i>",
 		prepare_beans_toast = "Valmista <i>Papuja paahtoleivällä</i>",
 		mix_pancake_batter = "Sekoita <i>Pannukakkutaikina</i>",
+		disassemble_bandages = "Pura <i>Sidokset</i>",
+		craft_tourniquet = "Valmista <i>Kiertoside</i>",
 
 		search = "Etsi",
 		amount = "Määrä",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		first_aid_kit_description = "\"Tee-se-itse\" lääkärin pakkaus.",
 		bandages = "Sideharso",
 		bandages_description = "Kaikkiin haavoihin ja kolhuille.",
+		tourniquet = "Kiertoside",
+		tourniquet_description = "Elämää pelastava työkalu kriittisissä tilanteissa, kiertoside on suunniteltu pysäyttämään vakavat verenvuodot nopeasti. Vaikka se tarjoaa vähemmän parantumista verrattuna laajempiin ensiapuvaihtoehtoihin, sen kyky pysäyttää verenvirtaus voi olla ratkaisevan tärkeä hätätilanteissa.",
+		gauze = "Sideharso",
+		gauze_description = "Välttämätön osa ensiapupakkausta, tämä sideharso on pehmeää, imukykyistä ja täydellistä haavojen sidontaan. Se tarjoaa perustan haavanhoitoon auttaen kontrolloimaan verenvuotoa ja suojaamaan infektiolta.",
 		oxygen_tank = "Happisäiliö",
 		oxygen_tank_description = "Keuhkojen laajennuspakkaus.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		no_vehicle_in_front = "Sinun edessäsi ei ole ajoneuvoa.",
 		using_first_aid_kit = "Käytetään ensiapusarjaa",
 		using_bandages = "Käytetään sideharsoja",
+		using_tourniquet = "Tourniquetin käyttö",
 		using_ifak = "Käytetään IFAK-ensiapusarjaa",
 		move_to_wash = "Siirry tänne pestäksesi ajoneuvon",
 		vehicle_too_clean = "Ajoneuvo on liian puhdas pestäväksi.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		unable_to_use_lighter_in_vehicle = "Et voi käyttää tulitikkuja ajoneuvossa.",
 		not_possible_in_a_vehicle = "Tämä toiminto ei ole mahdollinen ajoneuvossa.",
 		just_used_bandage = "Käytit juuri ensiapulaukkua, odota hetki ennen kuin käytät toista.",
+		just_used_tourniquet = "Käytit juuri tourniquetia, odota hetki ennen kuin käytät toista.",
 		drank_gasoline_death = "Bensamyrkytys",
 		drank_bleach_death = "Valkaisuaineen myrkytys",
 		finished_joint = "Poltit kannabissätkän loppuun.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		prop = "Esine",
 		model_parameter_missing = "Parametri `model` puuttuu.",
 		model_parameter_invalid = "Malli `${model}` on virheellinen.",
-		model_parameter_is_not_an_object = "Malli `${model}` ei ole objekti.",
 		spawned_prop_non_networked = "Luotiin ei-verkkoon kytketty esine mallilla `${model}`.",
 		spawned_prop_networked = "Luotiin verkkoyhteydellä varustettu esine mallilla `${model}`.",
 		spawned_exact_prop = "Luotiin tarkka esine.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		not_able_to_spawn_while_moving = "Sinun täytyy seisoa paikallasi luodessasi esinettä.",
 		stand_still_to_place_prop = "Sinun täytyy seisoa paikallasi asettaaksesi esineen.",
 		prop_no_interior = "Voit sijoittaa tämän esineen vain ulkopuolelle.",
+		invalid_culling_value = "Virheellinen karsintearvo, sen tulee olla välillä 10 metristä 2 500 metriin.",
+		invalid_model = "Virheellinen tai tuntematon malli `${name}` (${hash}).",
 
 		invalid_prop_id = "Virheellinen esineen tunniste.",
 		prop_deleted = "Esine tunnisteella ${propId} poistettiin.",

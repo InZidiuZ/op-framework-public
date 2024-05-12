@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["pt-BR"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		spawn_prop_command_parameter_model_hash = "modelo",
 		spawn_prop_command_parameter_model_hash_help = "O modelo da prop que você deseja criar.",
 		spawn_prop_command_parameter_network = "rede",
-		spawn_prop_command_parameter_network_help = "Você gostaria de compartilhar o objeto? É recomendado que você ative isso apenas para objetos que devem se mover.",
-		spawn_prop_command_parameter_no_pickup = "sem pegar",
-		spawn_prop_command_parameter_no_pickup_help = "Este objeto só pode ser pego por super administradores?",
+		spawn_prop_command_parameter_network_help = "Você gostaria de fazer a rede do objeto? É recomendável habilitar isso apenas para objetos que devem ser capazes de se mover. Nem todos os objetos são móveis, no entanto.",
+		spawn_prop_command_parameter_restricted = "restrito",
+		spawn_prop_command_parameter_restricted_help = "Permitir que apenas super administradores possam pegar este objeto.",
+		spawn_prop_command_parameter_culling = "culling",
+		spawn_prop_command_parameter_culling_help = "Raio de corte no qual a distância do objeto é feito o spawn/despawn. O raio padrão é de 200m, aumente isso apenas para objetos grandes que devem ser visíveis de longe.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "depurar_objetos",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		tracker_command = "rastreador",
 		tracker_command_help = "Ativa/Desativa a visibilidade do rastreador.",
 		tracker_command_parameter_break = "quebrar",
-		tracker_command_parameter_break_help = "Quebra o seu rastreador e envia uma notificação de despacho a respeito. (Não pode ser reativado até que 20 minutos tenham se passado)",
+		tracker_command_parameter_break_help = "Quebrar seu rastreador e enviar uma notificação de despacho sobre isso. Digite `yes` ou `y` para quebrar seu rastreador. (Não pode ser reativado até que 20 minutos tenham passado)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "rastreadores_divididos",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		return_button = "Retornar",
 		deposit = "Depósito de $${amount}",
 		no_deposit = "Sem Depósito",
-		deposit_not_enough_money = "Você não tem dinheiro suficiente para pagar o depósito."
+		deposit_not_enough_money = "Você não tem dinheiro suficiente para pagar o depósito.",
+		helipad = "Heliponto"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		craft_torch = "Criar <i>Tocha</i>",
 		prepare_beans_toast = "Preparar <i>Feijão com Torrada</i>",
 		mix_pancake_batter = "Misturar <i>Massa de Panqueca</i>",
+		disassemble_bandages = "Desmontar <i>Bandagens</i>",
+		craft_tourniquet = "Fabricar <i>Torniquete</i>",
 
 		search = "Buscar",
 		amount = "Quantidade",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		first_aid_kit_description = "O kit de médico \"faça você mesmo\".",
 		bandages = "Curativos",
 		bandages_description = "Para todos os machucados e ferimentos.",
+		tourniquet = "Torniquete",
+		tourniquet_description = "Uma ferramenta que salva vidas em situações críticas, o torniquete é projetado para parar rapidamente sangramentos graves. Embora ofereça cura mínima em comparação com opções de primeiros socorros mais abrangentes, sua capacidade de interromper a perda de sangue pode ser decisiva em cenários de emergência.",
+		gauze = "Gaze",
+		gauze_description = "Essencial para qualquer kit de primeiros socorros, esse gaze é macio, absorvente e perfeito para curativos. Ele fornece a base básica para o cuidado de feridas, ajudando a controlar o sangramento e proteger contra infecções.",
 		oxygen_tank = "Tanque de oxigênio",
 		oxygen_tank_description = "Um pacote de expansão pulmonar.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		no_vehicle_in_front = "Não há nenhum veículo na frente de você.",
 		using_first_aid_kit = "Usando kit de primeiros socorros.",
 		using_bandages = "Usando bandagens.",
+		using_tourniquet = "Usando Ligadura",
 		using_ifak = "Usando IFAK.",
 		move_to_wash = "Mova-se aqui para lavar o veículo.",
 		vehicle_too_clean = "O veículo está muito limpo para ser lavado.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		unable_to_use_lighter_in_vehicle = "Você não pode usar um isqueiro dentro do veículo.",
 		not_possible_in_a_vehicle = "Esta ação não é possível dentro de um veículo.",
 		just_used_bandage = "Você acabou de usar um kit de primeiros socorros. Aguarde um pouco antes de usar outro.",
+		just_used_tourniquet = "Você acabou de usar uma ligadura, espere um pouco antes de usar outra.",
 		drank_gasoline_death = "Envenenamento por gasolina",
 		drank_bleach_death = "Envenenamento por alvejante",
 		finished_joint = "Você terminou seu baseado.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		prop = "Objeto",
 		model_parameter_missing = "O parâmetro `model` está faltando.",
 		model_parameter_invalid = "O modelo `${model}` não é válido.",
-		model_parameter_is_not_an_object = "O modelo `${model}` não é um objeto.",
 		spawned_prop_non_networked = "Criou um objeto não sincronizado com o modelo `${model}`.",
 		spawned_prop_networked = "Criou um objeto sincronizado com o modelo `${model}`.",
 		spawned_exact_prop = "Objeto posicionado com sucesso.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["pt-BR"] = {
 		not_able_to_spawn_while_moving = "Você precisa estar parado para posicionar um objeto.",
 		stand_still_to_place_prop = "Você precisa estar parado para posicionar um objeto.",
 		prop_no_interior = "Você só pode posicionar esse objeto do lado de fora de interiores.",
+		invalid_culling_value = "Valor de supressão inválido, deve estar entre 10m e 2.500m.",
+		invalid_model = "Modelo inválido/desconhecido `${name}` (${hash}).",
 
 		invalid_prop_id = "ID de objeto inválido.",
 		prop_deleted = "O Objeto com o id ${propId} foi deletado.",

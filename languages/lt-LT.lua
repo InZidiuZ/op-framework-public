@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["lt-LT"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		spawn_prop_command_parameter_model_hash = "modelis",
 		spawn_prop_command_parameter_model_hash_help = "Objekto modelis, kurį norite įkelti.",
 		spawn_prop_command_parameter_network = "tinklas",
-		spawn_prop_command_parameter_network_help = "Ar norite skelbti objektą tinkle? Rekomenduojama tai įjungti tik objektams, kurie turėtų galimybę judėti.",
-		spawn_prop_command_parameter_no_pickup = "negalima paimti",
-		spawn_prop_command_parameter_no_pickup_help = "Ar ši žaidimo dalis turėtų būti paimta tik super administratorių?",
+		spawn_prop_command_parameter_network_help = "Ar norite prijungti objektą prie tinklo? Rekomenduojama tai įjungti tik toms objektams, kurie turi būti galimi judėti. Tačiau ne visi objektai gali būti judinami.",
+		spawn_prop_command_parameter_restricted = "ribotas",
+		spawn_prop_command_parameter_restricted_help = "Leisti šį objektą pasiimti tik labaiems administratoriams.",
+		spawn_prop_command_parameter_culling = "apkarpymas",
+		spawn_prop_command_parameter_culling_help = "Apkarpymo spindulys, kuriame atstumu objektas yra sukurtas/ištrinamas. Numatytasis spindulys yra 200 m, padidinkite tik tuo atveju, jei dideli objektai turėtų būti matomi toli.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		tracker_command = "sekančio_rodinys",
 		tracker_command_help = "Perjungia sekančio rodinio matomumą.",
 		tracker_command_parameter_break = "nuleidimas",
-		tracker_command_parameter_break_help = "Nuleidžia jūsų sekiklį ir išsiunčia pranešimą apie tai. (Negalima įjungti iki pasibaigs 20 minučių)",
+		tracker_command_parameter_break_help = "Sunaikinkite savo sekimo priemonę ir apie tai praneškite dispečeriui. Parašykite „yes“ arba „y“, norėdami sunaikinti savo sekimo priemonę. (Negalima įjungti iki praėjus 20 minučių)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "sekančių_padalijimas",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		return_button = "Grįžti",
 		deposit = "$${amount} Indėlis",
 		no_deposit = "Nėra indėlio",
-		deposit_not_enough_money = "Jūs neturite pakankamai pinigų, kad sumokėtumėte indėlį."
+		deposit_not_enough_money = "Jūs neturite pakankamai pinigų, kad sumokėtumėte indėlį.",
+		helipad = "Sraigtasparnis"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		craft_torch = "Failed to automatically generate translation.",
 		prepare_beans_toast = "Failed to automatically generate translation.",
 		mix_pancake_batter = "Failed to automatically generate translation.",
+		disassemble_bandages = "Išardyti <i>Marškinius</i>",
+		craft_tourniquet = "Pagaminti <i>turniketą</i>",
 
 		search = "Ieškoti",
 		amount = "Kiekis",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		first_aid_kit_description = "„Padaryk pats“ daktaro rinkinys.",
 		bandages = "Tvarstis",
 		bandages_description = "Visiems pagraužėjimams ir sumušimams.",
+		tourniquet = "Turniketas",
+		tourniquet_description = "Gelbėtojui kritinėse situacijose skirta gyvybės išsaugojimo priemonė turniketas sukurta stabdyti sunkų kraujavimą greitai. Nors jis suteikia minimalų gydymą lyginant su išsamesnėmis pirmosios pagalbos priemonėmis, jo gebėjimas sustabdyti kraujavimą gali būti lemiamas skubiose situacijose.",
+		gauze = "Gazė",
+		gauze_description = "Būtina bet kokio pirminės pagalbos rinkinio dalis, ši gazė yra minkšta, sugeria, idealiai tinka apsirengimų sužeidimams. Ji suteikia pagrindą sužeidimų priežiūrai, padeda valdyti kraujavimą ir apsaugo nuo infekcijos.",
 		oxygen_tank = "Deguonies Balionas",
 		oxygen_tank_description = "Plaučių išplėtimo paketas.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		no_vehicle_in_front = "Priešais jūsų nėra transporto priemonės.",
 		using_first_aid_kit = "Naudojamas pirštinės pirmosios pagalbos rinkinys",
 		using_bandages = "Naudojami tvarsčiai",
+		using_tourniquet = "Naudojamas Turniketas",
 		using_ifak = "Naudojamas „IFAK“ (individualios pirmosios pagalbos rinkinys)",
 		move_to_wash = "Perkeldamas automobilį švarinimui",
 		vehicle_too_clean = "Automobilis per švarus, kad būtų nuplaunamas",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		unable_to_use_lighter_in_vehicle = "Negalite naudoti žievelės automobilyje.",
 		not_possible_in_a_vehicle = "Šis veiksmas negalimas automobilyje.",
 		just_used_bandage = "Jus tik ką naudojote pirmosios pagalbos rinkinį, palaukite šiek tiek prieš naudodami kitą.",
+		just_used_tourniquet = "Jūs šiuo metu naudojote turniketą, palaukite prieš panaudodami kitą.",
 		drank_gasoline_death = "Benzino apsinuodijimas",
 		drank_bleach_death = "Ploviklio apsinuodijimas",
 		finished_joint = "Jūs pasibaigė jūsų sujungimas.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		prop = "Reikmenis",
 		model_parameter_missing = "Trūksta `model` parametras.",
 		model_parameter_invalid = "Modelis `${model}` yra neteisingas.",
-		model_parameter_is_not_an_object = "Modelis `${model}` nėra objektas.",
 		spawned_prop_non_networked = "Sugeneruota nereteisėta reikmenimi su modeliu `${model}`.",
 		spawned_prop_networked = "Sukurtas tinklo prietaisas su modeliu `${model}`.",
 		spawned_exact_prop = "Sukurtas tikslus prietaisas.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		not_able_to_spawn_while_moving = "Turite būti stovinčiam, norint sukurti prietaisą.",
 		stand_still_to_place_prop = "Kad įsikurtumėte prietaisą, turite stovėti.",
 		prop_no_interior = "Šį objektą gali būti pastatyti tik lauke.",
+		invalid_culling_value = "Netinkama apkarpymo vertė, turi būti nuo 10m iki 2,500m.",
+		invalid_model = "Netinkamas/Nežinomas modelis `${name}` (${hash}).",
 
 		invalid_prop_id = "Neleistinas objekto ID.",
 		prop_deleted = "Objektas su ID ${propId} buvo ištrintas.",

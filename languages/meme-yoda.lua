@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["meme-yoda"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "The model hash of the prop you wish to spawn, you must provide.",
 		spawn_prop_command_parameter_network = "network",
-		spawn_prop_command_parameter_network_help = "Network the prop, would you like to?  Recommended for moving props, it is.",
-		spawn_prop_command_parameter_no_pickup = "no pickup",
-		spawn_prop_command_parameter_no_pickup_help = "Picked up by only super admins, this prop should be?",
+		spawn_prop_command_parameter_network_help = "Would you like to network the prop? Recommended, it is, for props that movable should be. Not movable, all props are, though.",
+		spawn_prop_command_parameter_restricted = "restricted",
+		spawn_prop_command_parameter_restricted_help = "Only allow this prop to be picked up by super admins, you will.",
+		spawn_prop_command_parameter_culling = "culling",
+		spawn_prop_command_parameter_culling_help = "Culling radius, at which distance the prop is spawned/despawned. Default radius, 200m is, increase this only for large props that visible from far away should be.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		tracker_command = "tracker",
 		tracker_command_help = "Visibility of tracker, toggle you will.",
 		tracker_command_parameter_break = "break",
-		tracker_command_parameter_break_help = "Break your tracker and send a dispatch notification, about it you will. (Cant be re-enabled until 20min passed have)",
+		tracker_command_parameter_break_help = "Break your tracker and send a dispatch notification about it. Type `yes` or `y` to break your tracker. (Cant be re-enabled until 20min have passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		return_button = "Return, you shall.",
 		deposit = "$${amount} Deposit, you will.",
 		no_deposit = "No deposit, there is.",
-		deposit_not_enough_money = "Enough money, you do not have, to pay the deposit."
+		deposit_not_enough_money = "Enough money, you do not have, to pay the deposit.",
+		helipad = "Helipad"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		craft_torch = "undefined",
 		prepare_beans_toast = "undefined",
 		mix_pancake_batter = "undefined",
+		disassemble_bandages = "Disassemble <i>Bandages</i>",
+		craft_tourniquet = "Craft <i>Tourniquet</i>",
 
 		search = "Search, you must",
 		amount = "Amount, show you must",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		first_aid_kit_description = "The \"do-it-yourself\" doctor-kit, this is.",
 		bandages = "Bandages, these are.",
 		bandages_description = "For all outchies and booboos, they are useful.",
+		tourniquet = "Tourniquet",
+		tourniquet_description = "A life-saving tool in critical situations, the tourniquet is designed to stop severe bleeding quickly. While it offers minimal healing compared to more comprehensive first aid options, its ability to halt blood loss can be pivotal in emergency scenarios.",
+		gauze = "Gauze, it is",
+		gauze_description = "Essential for any first aid kit, this gauze is soft, absorbent, and perfect for dressing wounds. The basic foundation for wound care, it provides. Manage bleeding, it helps, and against infection, protect it does.",
 		oxygen_tank = "Oxygen tank, you have.",
 		oxygen_tank_description = "Lung-expansion pack, this is.",
 		ifak = "IFAK, this is.",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		no_vehicle_in_front = "Vehicle in front of you, there is not.",
 		using_first_aid_kit = "First aid kit, using I am",
 		using_bandages = "Bandages, using I am",
+		using_tourniquet = "Using Tourniquet, you are",
 		using_ifak = "IFAK, using I am",
 		move_to_wash = "Here, move to wash the vehicle",
 		vehicle_too_clean = "Clean, the vehicle is. Too clean to be washed it should be.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		unable_to_use_lighter_in_vehicle = "In a vehicle, a lighter you cannot use.",
 		not_possible_in_a_vehicle = "Not possible in a vehicle, this action is.",
 		just_used_bandage = "Wait a bit before using another first aid kit, you must.",
+		just_used_tourniquet = "You just used a tourniquet, wait a bit before using another one, you must.",
 		drank_gasoline_death = "Gasoline poisoning, you have.",
 		drank_bleach_death = "Poisoned by bleach, you have been.",
 		finished_joint = "Finished your joint, you have.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		prop = "Prop, this is.",
 		model_parameter_missing = "Missing, the `model` parameter is.",
 		model_parameter_invalid = "Invalid, the model `${model}` is.",
-		model_parameter_is_not_an_object = "An object, the model `${model}` is not.",
 		spawned_prop_non_networked = "Non-networked prop spawned, model `${model}` it has.",
 		spawned_prop_networked = "Networked prop spawned, model `${model}` it has.",
 		spawned_exact_prop = "Exact prop spawned, mm!",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		not_able_to_spawn_while_moving = "When spawning a prop, you must stand still, hmm.",
 		stand_still_to_place_prop = "To place a prop, you must stand still, yes.",
 		prop_no_interior = "Sorry, outside only this prop can be placed, hmmm.",
+		invalid_culling_value = "Invalid culling value, has to be between 10m and 2,500m, it is.",
+		invalid_model = "Invalid/Unknown model `${name}` (${hash}), it is.",
 
 		invalid_prop_id = "Invalid prop ID, this is, hmmm.",
 		prop_deleted = "Prop with ID ${propId} was deleted, yes.",

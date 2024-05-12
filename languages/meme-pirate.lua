@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["meme-pirate"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "Th' prop model ye would like to spawn.",
 		spawn_prop_command_parameter_network = "network",
-		spawn_prop_command_parameter_network_help = "Would ye like to network th' prop? It be recommended ye only enable this fer props that should be able t' move.",
-		spawn_prop_command_parameter_no_pickup = "no pickup",
-		spawn_prop_command_parameter_no_pickup_help = "Should this prop only be picked up by Captain Hook's crew?",
+		spawn_prop_command_parameter_network_help = "Would ye like to network the prop? 'Tis recommended ye only enable this fer props that should be able to move. Not all props be movable though.",
+		spawn_prop_command_parameter_restricted = "restricted",
+		spawn_prop_command_parameter_restricted_help = "Only allow this prop to be picked up by super admins.",
+		spawn_prop_command_parameter_culling = "culling",
+		spawn_prop_command_parameter_culling_help = "Culling radius at which distance the prop be spawned/despawned. Default radius be 200m, only increase this fer large props that should be visible from far away.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		tracker_command = "spyglass",
 		tracker_command_help = "Toggle yer spyglass's visibility.",
 		tracker_command_parameter_break = "break",
-		tracker_command_parameter_break_help = "Break yer tracker and send a dispatch notification about it. (Cant be re-enabled until 20min have passed)",
+		tracker_command_parameter_break_help = "Break yer tracker and send a dispatch notification about it. Type `aye` or `y` to break yer tracker. (Cant be re-enabled until 20 min have passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "split_yer_spyglasses",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		return_button = "Sail Back",
 		deposit = "$${amount} Buried Booty",
 		no_deposit = "No Booty to Burry",
-		deposit_not_enough_money = "Ye dun' have enough booty t' bury the deposit."
+		deposit_not_enough_money = "Ye dun' have enough booty t' bury the deposit.",
+		helipad = "Helipad"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		craft_torch = "undefined",
 		prepare_beans_toast = "undefined",
 		mix_pancake_batter = "undefined",
+		disassemble_bandages = "Disassemble <i>Bandages</i>",
+		craft_tourniquet = "Craft <i>Tourniquet</i>",
 
 		search = "Scourge",
 		amount = "Amount",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		first_aid_kit_description = "The \"do-it-yourself\" doctor-kit, ahoy!",
 		bandages = "Bandages, arrr!",
 		bandages_description = "For all outchies and booboos, avast!",
+		tourniquet = "Tourniquet",
+		tourniquet_description = "A life-saving tool in critical situations, the tourniquet be designed to stop severe bleedin' quickly. While it offers minimal healin' compared to more comprehensive first aid options, its ability to halt blood loss can be pivotal in emergency scenarios.",
+		gauze = "Bandana",
+		gauze_description = "Essential fer any first aid kit, this bandana be soft, absorbent, and perfect fer dressin' wounds. It provides the basic foundation fer wound care, helpin' to manage bleedin' and protectin' against infection.",
 		oxygen_tank = "Oxygen Barrel",
 		oxygen_tank_description = "A lung-expansion kit fer yer underwater journeys, arrr!",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		no_vehicle_in_front = "There be no vessel in front o' ye.",
 		using_first_aid_kit = "Usin' First Aid Kit",
 		using_bandages = "Usin' Bandages",
+		using_tourniquet = "Usin' Tourniquet",
 		using_ifak = "Usin' IFAK",
 		move_to_wash = "Move here to swab the ship",
 		vehicle_too_clean = "Arrr, the ship be too clean to be washed.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		unable_to_use_lighter_in_vehicle = "Ye can't be usin' a lighter in a vehicle.",
 		not_possible_in_a_vehicle = "This action be not possible in a vessel.",
 		just_used_bandage = "Ye just used a first aid kit, wait a bit afore usin' another one.",
+		just_used_tourniquet = "Ye just used a tourniquet, wait a bit afore usin' another one.",
 		drank_gasoline_death = "Gasoline Poisonin'",
 		drank_bleach_death = "Bleach Poisonin' matey!",
 		finished_joint = "Ye finished yer joint.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		prop = "Prop",
 		model_parameter_missing = "The `model` parameter be missin'.",
 		model_parameter_invalid = "The model `${model}` be an invalid model.",
-		model_parameter_is_not_an_object = "Arrr, ye scallywag! The model `${model}` be not an object.",
 		spawned_prop_non_networked = "Shiver me timbers, we've spawned a non-networked prop with model `${model}`.",
 		spawned_prop_networked = "Ahoy matey, we've spawned a networked prop with model `${model}`.",
 		spawned_exact_prop = "Hoist the colors, we've spawned the exact prop!",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		not_able_to_spawn_while_moving = "Ye have to stand still when spawnin' a prop.",
 		stand_still_to_place_prop = "Ye have to stand still to place a prop.",
 		prop_no_interior = "Ye can only place this prop outside.",
+		invalid_culling_value = "Invalid cullin' value, has to be betwixt 10m and 2,500m.",
+		invalid_model = "Invalid/Unknown model `${name}` (${hash}).",
 
 		invalid_prop_id = "Invalid prop id.",
 		prop_deleted = "Prop wit' id ${propId} was deleted.",

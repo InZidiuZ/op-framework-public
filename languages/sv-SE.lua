@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["sv-SE"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		spawn_prop_command_parameter_model_hash = "modell",
 		spawn_prop_command_parameter_model_hash_help = "Modellen för föremålet du vill skapa.",
 		spawn_prop_command_parameter_network = "nätverk",
-		spawn_prop_command_parameter_network_help = "Vill du nätverka objektet? Det rekommenderas att du endast aktiverar detta för objekt som ska kunna röra på sig.",
-		spawn_prop_command_parameter_no_pickup = "ingen upphämtning",
-		spawn_prop_command_parameter_no_pickup_help = "Ska detta objekt bara kunna plockas upp av superadmin?",
+		spawn_prop_command_parameter_network_help = "Vill du nätverka rekvisitan? Det rekommenderas att du endast aktiverar detta för rekvisita som ska kunna flyttas. Inte alla rekvisita går att flytta dock.",
+		spawn_prop_command_parameter_restricted = "begränsad",
+		spawn_prop_command_parameter_restricted_help = "Tillåt endast superadmins att plocka upp denna rekvisita.",
+		spawn_prop_command_parameter_culling = "kulling",
+		spawn_prop_command_parameter_culling_help = "Kullsvisning radie för vilken avståndet som rekvisitan spawnas/despawnas. Standardradie är 200m, öka endast detta för stora rekvisita som ska vara synliga på långt avstånd.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		tracker_command = "spårare",
 		tracker_command_help = "Växla synlighet på din spårare.",
 		tracker_command_parameter_break = "break",
-		tracker_command_parameter_break_help = "Bryt din spårare och skicka en meddelandeanmälan om det. (Kan inte aktiveras igen förrän 20 minuter har gått)",
+		tracker_command_parameter_break_help = "Bryt din spårare och skicka en dispatch-notis om detta. Skriv `ja` eller `j` för att bryta din spårare. (Kan inte aktiveras på nytt förrän 20 minuter har gått)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "spårare_delade",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		return_button = "Återgå",
 		deposit = "$${amount} Insättning",
 		no_deposit = "Ingen Insättning",
-		deposit_not_enough_money = "Du har inte tillräckligt med pengar för att betala insättningen."
+		deposit_not_enough_money = "Du har inte tillräckligt med pengar för att betala insättningen.",
+		helipad = "Helikopterplatta"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		craft_torch = "Tillverka <i>Fackla</i>",
 		prepare_beans_toast = "Förbered <i>Bönor på rostat bröd</i>",
 		mix_pancake_batter = "Blanda <i>Pannkakssmet</i>",
+		disassemble_bandages = "Ta isär <i>Bandage</i>",
+		craft_tourniquet = "Tillverka <i>Tourniquet</i>",
 
 		search = "Sök",
 		amount = "Mängd",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		first_aid_kit_description = "\"Gör-det-själv\"-läkarkit.",
 		bandages = "Bandage",
 		bandages_description = "För alla småskador och sår.",
+		tourniquet = "Tourniquet",
+		tourniquet_description = "Ett livräddande verktyg i kritiska situationer, tourniqueten är utformad för att snabbt stoppa allvarlig blödning. Även om den erbjuder minimal läkning jämfört med mer omfattande första hjälpen-alternativ, kan dess förmåga att stoppa blodförlust vara avgörande i nödsituationer.",
+		gauze = "Gasbinda",
+		gauze_description = "Viktigt för varje första hjälpen-kit, denna gasbinda är mjuk, absorberande och perfekt för att förbanda sår. Den utgör grunden för sårvård, hjälper till att hantera blödning och skydda mot infektion.",
 		oxygen_tank = "Syretank",
 		oxygen_tank_description = "En lungexpansionspacka.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		no_vehicle_in_front = "Det finns inget fordon framför dig.",
 		using_first_aid_kit = "Använder första hjälpen-kit",
 		using_bandages = "Använder bandage",
+		using_tourniquet = "Använder Tourniquet",
 		using_ifak = "Använder IFAK",
 		move_to_wash = "Flytta hit för att tvätta fordonet",
 		vehicle_too_clean = "Fordonet är för rent för att tvättas.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		unable_to_use_lighter_in_vehicle = "Du kan inte använda en tändare i ett fordon.",
 		not_possible_in_a_vehicle = "Den här åtgärden är inte möjlig i ett fordon.",
 		just_used_bandage = "Du använde just en första hjälpen-remedier. Vänta en stund innan du använder en annan.",
+		just_used_tourniquet = "Du har precis använt en tourniquet, vänta en stund innan du använder en annan.",
 		drank_gasoline_death = "Bensinförgiftning",
 		drank_bleach_death = "Förgiftning av blekmedel",
 		finished_joint = "Du har rökt klart din joint.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		prop = "Rekvisita",
 		model_parameter_missing = "Parametern `model` saknas.",
 		model_parameter_invalid = "Modellen `${model}` är en ogiltig modell.",
-		model_parameter_is_not_an_object = "Modellen `${model}` är inte en objekt.",
 		spawned_prop_non_networked = "Skapade en icke-nätverkad rekvisita med modell `${model}`.",
 		spawned_prop_networked = "Skapade en nätverkad rekvisita med modell `${model}`.",
 		spawned_exact_prop = "Skapade exakt rekvisita.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		not_able_to_spawn_while_moving = "Du måste stå stilla när du spawnar en objekt.",
 		stand_still_to_place_prop = "Du måste stå stilla för att placera en objekt.",
 		prop_no_interior = "Du kan endast placera den här objekten utomhus.",
+		invalid_culling_value = "Ogiltigt avverkningsvärde, måste ligga mellan 10m och 2 500m.",
+		invalid_model = "Ogiltig/okänd modell `${name}` (${hash}).",
 
 		invalid_prop_id = "Ogiltigt objekt-ID.",
 		prop_deleted = "Objektet med ID ${propId} raderades.",

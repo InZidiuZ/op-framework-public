@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "รหัสของทรัพย์สินที่คุณต้องการสร้าง",
 		spawn_prop_command_parameter_network = "เครือข่าย",
-		spawn_prop_command_parameter_network_help = "คุณต้องการเชื่อมต่อเครือข่ายของวัตถุหรือไม่? ขอแนะนำให้คุณเปิดใช้งานเฉพาะสำหรับวัตถุที่ต้องการเคลื่อนไหวเท่านั้น",
-		spawn_prop_command_parameter_no_pickup = "ไม่สามารถหยิบได้",
-		spawn_prop_command_parameter_no_pickup_help = "ควรจะให้ผู้ดูแลระบบเท่านั้นที่จะสามารถหยิบได้หรือไม่?",
+		spawn_prop_command_parameter_network_help = "คุณต้องการเชื่อมต่อ prop ด้วยเครือข่ายหรือไม่? คำแนะนำคือให้เปิดใช้งานเฉพาะสำหรับ props ที่ต้องการให้เคลื่อนไหวเท่านั้น ไม่ใช่ทุก prop ที่สามารถเคลื่อนไหวได้",
+		spawn_prop_command_parameter_restricted = "restricted",
+		spawn_prop_command_parameter_restricted_help = "ให้เฉพาะ super admins เท่านั้นที่สามารถหยิบ prop นี้",
+		spawn_prop_command_parameter_culling = "culling",
+		spawn_prop_command_parameter_culling_help = "รัศมี culling ที่ prop จะถูกสร้างขึ้น/ลบออก. รัศมีเริ่มต้นคือ 200 เมตร, เพิ่มให้มากขึ้นเฉพาะสำหรับ props ขนาดใหญ่ที่ต้องการให้มองเห็นจากระยะไกล",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		tracker_command = "ติดตาม",
 		tracker_command_help = "เปิดหรือปิดการมองเห็นตัวติดตามของคุณ",
 		tracker_command_parameter_break = "break",
-		tracker_command_parameter_break_help = "ทำลายตัวติดตามของคุณและส่งการแจ้งเตือนไปยังเจ้าหน้าที่เกี่ยวกับนี้ (ไม่สามารถเปิดใช้ใหม่จนกว่าจะผ่านไป 20 นาที)",
+		tracker_command_parameter_break_help = "ทำลายตัวติดตามของคุณและส่งการแจ้งเตือนไปยังหน่วยสืบสวนเกี่ยวกับมัน พิมพ์ `yes` หรือ `y` เพื่อทำลายตัวติดตามของคุณ (ไม่สามารถเปิดใช้งานอีกครั้งจนกว่าจะผ่านไป 20 นาที)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "แยกตัวติดตาม",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		return_button = "ย้อนกลับ",
 		deposit = "เงินฝาก $$ {amount}",
 		no_deposit = "ไม่มีการฝากเงิน",
-		deposit_not_enough_money = "คุณมีเงินไม่เพียงพอที่จะชำระเงินฝาก"
+		deposit_not_enough_money = "คุณมีเงินไม่เพียงพอที่จะชำระเงินฝาก",
+		helipad = "ท่าเฮลิคอปเตอร์"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		craft_torch = "การสร้าง <i>เทอร์ช</i>",
 		prepare_beans_toast = "เตรียม <i>ถั่วบนขนมปัง</i>",
 		mix_pancake_batter = "ผสม <i>แป้งแพนเค้ก</i>",
+		disassemble_bandages = "แยกออก <i>ผ้าพันแผล</i>",
+		craft_tourniquet = "สร้าง <i>เอ็นนุกิเก็ต</i>",
 
 		search = "ค้นหา",
 		amount = "จำนวน",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		first_aid_kit_description = "ชุดแพทย์ที่ให้เราทำเองได้",
 		bandages = "ผ้าพันแผล",
 		bandages_description = "สำหรับบาดแผลของทุกชนิด",
+		tourniquet = "เอ็นนุกิเก็ต",
+		tourniquet_description = "เครื่องมือช่วยชีวิตในสถานการณ์ฉุกเฉินเชิงสำคัญ เอ็นนุกิเก็ตถูกออกแบบให้หยุดเลือดที่หนัก ๆ อย่างรวดเร็ว ขณะที่มันให้การรักษาเบาๆ เมื่อเปรียบเทียบกับตัวเลือดรวมที่มีความครอบคลุมมากกว่า ความสามารถของมันในการหยุดการเสื่อมเลือดสามารถเป็นสำคัญในสถานการณ์ฉุกเฉิน",
+		gauze = "ผ้ากาวซ์",
+		gauze_description = "สิ่งจำเป็นสำหรับกล่องโปร่งแสงอุบัติเหตุ ผ้ากาวซ์นี้เนียนนุ่ม สามารถดูดน้ำได้ดี และเหมาะสำหรับแผลแต่ง. มันมุ่งเน้นไปที่พื้นฐานของการดูแลแผล ช่วยในการควบคุมเลือดออกและป้องกันการติดเชื้อ.",
 		oxygen_tank = "ถังออกซิเจน",
 		oxygen_tank_description = "ชุดขยายปอด",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		no_vehicle_in_front = "ไม่มีรถยนต์ข้างหน้าคุณ",
 		using_first_aid_kit = "ใช้กล่องเครื่องมือปฐมพยาบาล",
 		using_bandages = "ใช้ผ้าพันแผล",
+		using_tourniquet = "ใช้ทัวร์นิเก็ต",
 		using_ifak = "ใช้ชุดปฐมพยาบาล IFAK",
 		move_to_wash = "เลื่อนมาล้างรถ",
 		vehicle_too_clean = "รถสะอาดเกินไปไม่จำเป็นต้องล้าง",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		unable_to_use_lighter_in_vehicle = "คุณไม่สามารถใช้ไฟและโถบินในยานพาหนะได้",
 		not_possible_in_a_vehicle = "การดำเนินการนี้ไม่เป็นไปได้ในยานพาหนะ",
 		just_used_bandage = "คุณใช้ชุดแผ่นพับแผลไปเมื่อสักครู่ โปรดรอสักครู่ก่อนใช้ต่อ",
+		just_used_tourniquet = "คุณใช้ทัวร์นิเก็ตไปแล้ว รอสักครู่ก่อนใช้อีกครั้ง.",
 		drank_gasoline_death = "ป่วยฉีดน้ำมันเครื่อง",
 		drank_bleach_death = "พิษจากน้ำยาทำความสะอาด",
 		finished_joint = "คุณสิ้นสุดการจราจรของคุณแล้ว",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["th-TH"] = {
 		prop = "พื้นที่",
 		model_parameter_missing = "พารามิเตอร์ `model` หายไป",
 		model_parameter_invalid = "รูปแบบของ model `${model}` ไม่ถูกต้อง",
-		model_parameter_is_not_an_object = "โมเดล `${model}` ไม่ใช่วัตถุ",
 		spawned_prop_non_networked = "สร้างอุปกรณ์ที่ไม่ได้เชื่อมต่อเครือข่ายด้วยโมเดล `${model}`",
 		spawned_prop_networked = "สร้างอุปกรณ์ที่เชื่อมต่อเครือข่ายด้วยโมเดล `${model}`",
 		spawned_exact_prop = "สร้างอุปกรณ์ด้วยความแม่นยำ",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		not_able_to_spawn_while_moving = "คุณต้องหยุดเคลื่อนที่เมื่อสร้างสิ่งของ.",
 		stand_still_to_place_prop = "คุณต้องหยุดเคลื่อนที่เพื่อวางสิ่งของ.",
 		prop_no_interior = "คุณสามารถวางสิ่งของนี้ได้เฉพาะภายนอกเท่านั้น.",
+		invalid_culling_value = "ค่าการกรองที่ไม่ถูกต้อง, ต้องอยู่ระหว่าง 10 เมตร และ 2,500 เมตร.",
+		invalid_model = "โมเดลไม่ถูกต้อง/ไม่รู้จัก `${name}` (${hash}).",
 
 		invalid_prop_id = "รหัสสิ่งของไม่ถูกต้อง.",
 		prop_deleted = "ลบสิ่งของที่มีรหัส ${propId} เรียบร้อยแล้ว.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["et-EE"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 		spawn_prop_command_parameter_model_hash = "mudel",
 		spawn_prop_command_parameter_model_hash_help = "Mudel, mille soovid luua.",
 		spawn_prop_command_parameter_network = "võrk",
-		spawn_prop_command_parameter_network_help = "Kas soovite võrgustada propi? Soovitame seda lubada ainult propi jaoks, mis peaksid liikuma.",
-		spawn_prop_command_parameter_no_pickup = "ei korja üles",
-		spawn_prop_command_parameter_no_pickup_help = "Kas see prop peaks olema ainult superadminide poolt korjatav?",
+		spawn_prop_command_parameter_network_help = "Kas soovite võrku vastavust vea propile? Soovitatav on see lubada ainult propide puhul, mis peaksid saama liikuda. Kuid mitte kõik propid ei ole liigutatavad.",
+		spawn_prop_command_parameter_restricted = "piiratud",
+		spawn_prop_command_parameter_restricted_help = "Luba selle propi korjamist ainult super administraatoritel.",
+		spawn_prop_command_parameter_culling = "kaugus",
+		spawn_prop_command_parameter_culling_help = "Kaugus, mille raadiuses propi saab genereerida/kõrvaldada. Vaikimisi raadius on 200m, suurendage seda ainult suurte propide jaoks, mida peaks kaugelt nägema.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		tracker_command = "jälgija",
 		tracker_command_help = "Lülitab sisse/välja jälgija nähtavuse.",
 		tracker_command_parameter_break = "katkesta",
-		tracker_command_parameter_break_help = "Katkesta oma jälitaja ja saada selle kohta teade. (Ei saa uuesti sisse lülitada enne kui on möödunud 20 minutit)",
+		tracker_command_parameter_break_help = "Katkesta jälgija ja saada sellest teade hädahelkuriteenistusele. Sisesta 'yes' või 'y', et katkestada jälgija. (Ei saa uuesti sisse lülitada enne, kui on möödunud 20 minutit)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "jälgijate_eraldus",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		return_button = "Tagasi",
 		deposit = "$${amount} Tagatis",
 		no_deposit = "Tagatiseta",
-		deposit_not_enough_money = "Sul pole piisavalt raha, et maksta tagatist."
+		deposit_not_enough_money = "Sul pole piisavalt raha, et maksta tagatist.",
+		helipad = "Helikopteri maandumisplats"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		craft_torch = "Valmista <i>torch</i>",
 		prepare_beans_toast = "Valmista <i>Oad röstsaiaga</i>",
 		mix_pancake_batter = "Sega <i>Pannkoogitainas</i>",
+		disassemble_bandages = "Lahuta <i>sidemeid</i>",
+		craft_tourniquet = "Valmista <i>tourniquet</i>",
 
 		search = "Otsi",
 		amount = "Kogus",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		first_aid_kit_description = "Loo iseenda arsti komplekt.",
 		bandages = "Sidemed",
 		bandages_description = "Kõigeks, mis valus ja haiget teeb.",
+		tourniquet = "Tourniquet",
+		tourniquet_description = "Elupäästev vahend kriitilistes olukordades, tourniquet on mõeldud tõsise verejooksu kiireks peatamiseks. Kuigi see pakub minimaalset paranemist võrreldes põhjalikumate esmaabivõimalustega, võib selle võime verekaotuse peatamiseks olla määrava tähtsusega erakorralistes olukordades.",
+		gauze = "Side",
+		gauze_description = "Kriitiline igale esmaabikomplektile, see side on pehme, imav ja ideaalne haavade sidumiseks. See pakub haavahoolduse põhialust, aidates haldada verejooksu ja kaitsta nakkuste eest.",
 		oxygen_tank = "Hapnikupaak",
 		oxygen_tank_description = "Kopsude laienduspakett.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		no_vehicle_in_front = "Sinu ees pole ühtegi sõidukit.",
 		using_first_aid_kit = "Kasutan Esmaabikomplekti",
 		using_bandages = "Kasutan Sidemeid",
+		using_tourniquet = "Tourniqueti kasutamine",
 		using_ifak = "Kasutan IFAK'i",
 		move_to_wash = "Liiguta siia, et pesta sõidukit",
 		vehicle_too_clean = "Sõiduk on liiga puhas, et seda pesta.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		unable_to_use_lighter_in_vehicle = "Te ei saa sõidukisse süütevedelikku kasutada.",
 		not_possible_in_a_vehicle = "See tegevus pole sõidukis võimalik.",
 		just_used_bandage = "Kasutasid just esmaabipakki, oota enne teise kasutamist.",
+		just_used_tourniquet = "Kasutasid hiljuti tourniqueti, oota enne teise kasutamist veidi aega.",
 		drank_gasoline_death = "Bensiinimürgitus",
 		drank_bleach_death = "Valgendimürgitus",
 		finished_joint = "Sa lõpetasid oma joint'i.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["et-EE"] = {
 		prop = "Objekt",
 		model_parameter_missing = "Puudub `model` parameeter.",
 		model_parameter_invalid = "`model` parameeter `${model}` on vigane.",
-		model_parameter_is_not_an_object = "`model` parameeter `${model}` ei ole objekt.",
 		spawned_prop_non_networked = "Loodi mittevõrgutoimeline objekt mudeliga `${model}`.",
 		spawned_prop_networked = "Loodi võrgutoimeline objekt mudeliga `${model}`.",
 		spawned_exact_prop = "Eseme täpne taaslavastus õnnestus.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		not_able_to_spawn_while_moving = "Ese taaslavastamiseks tuleb seista paigal.",
 		stand_still_to_place_prop = "Ese paigutamiseks tuleb seista paigal.",
 		prop_no_interior = "Seda eset saab paigutada ainult õues.",
+		invalid_culling_value = "Vigane piiranguväärtus, peab olema vahemikus 10m kuni 2,500m.",
+		invalid_model = "Vigane/Tundmatu mudel `${name}` (${hash}).",
 
 		invalid_prop_id = "Vigane eseme id.",
 		prop_deleted = "Rekvisiidiga ${propId} seotud objekt on kustutatud.",

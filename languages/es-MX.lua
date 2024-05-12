@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["es-MX"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["es-MX"] = {
 		spawn_prop_command_parameter_model_hash = "modelo",
 		spawn_prop_command_parameter_model_hash_help = "El modelo del prop que desea crear.",
 		spawn_prop_command_parameter_network = "red",
-		spawn_prop_command_parameter_network_help = "¿Deseas establecer la red del objeto? Se recomienda solo habilitarlo para objetos que se puedan mover.",
-		spawn_prop_command_parameter_no_pickup = "sin recoger",
-		spawn_prop_command_parameter_no_pickup_help = "¿Este objeto solo se puede recoger por super administradores?",
+		spawn_prop_command_parameter_network_help = "¿Te gustaría conectar en red el objeto? Se recomienda habilitar esto solo para objetos que se muevan. Sin embargo, no todos los objetos son móviles.",
+		spawn_prop_command_parameter_restricted = "restringido",
+		spawn_prop_command_parameter_restricted_help = "Solo permitir que este objeto sea recogido por superadministradores.",
+		spawn_prop_command_parameter_culling = "eliminación",
+		spawn_prop_command_parameter_culling_help = "Radio de eliminación en el cual se spawneará/despawneará el objeto. El radio predeterminado es de 200 m, solo aumenta esto para objetos grandes que deben ser visibles desde lejos.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		tracker_command = "rastreador",
 		tracker_command_help = "Alterna la visibilidad de tu rastreador.",
 		tracker_command_parameter_break = "romper",
-		tracker_command_parameter_break_help = "Rompe tu rastreador y envía una notificación de despacho al respecto. (No se puede volver a activar hasta que hayan pasado 20 minutos)",
+		tracker_command_parameter_break_help = "Rompe tu rastreador y envía una notificación de despacho al respecto. Escribe `sí` o `s` para romper tu rastreador. (No se puede volver a habilitar hasta que hayan pasado 20 minutos)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "division_rastreadores",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["es-MX"] = {
 		return_button = "Regresar",
 		deposit = "$${cantidad} de depósito",
 		no_deposit = "Sin depósito",
-		deposit_not_enough_money = "No tienes suficiente dinero para pagar el depósito."
+		deposit_not_enough_money = "No tienes suficiente dinero para pagar el depósito.",
+		helipad = "Helipuerto"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["es-MX"] = {
 		craft_torch = "Crear <i>Antorcha</i>",
 		prepare_beans_toast = "Preparar <i>Frijoles con Pan Tostado</i>",
 		mix_pancake_batter = "Mezclar <i>Masa para Hot Cakes</i>",
+		disassemble_bandages = "Desmontar <i>Vendas</i>",
+		craft_tourniquet = "Fabricar <i>Torniquete</i>",
 
 		search = "Buscar",
 		amount = "Cantidad",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["es-MX"] = {
 		first_aid_kit_description = "El kit de \"hazlo-tu-mismo\" del doctor.",
 		bandages = "Vendas",
 		bandages_description = "Para todas las heridas y golpes.",
+		tourniquet = "Torniquete",
+		tourniquet_description = "Una herramienta vital en situaciones críticas, el torniquete está diseñado para detener el sangrado severo rápidamente. Aunque ofrece una curación mínima en comparación con opciones de primeros auxilios más completas, su capacidad para detener la pérdida de sangre puede ser crucial en situaciones de emergencia.",
+		gauze = "Gasa",
+		gauze_description = "Esencial para cualquier kit de primeros auxilios, esta gasa es suave, absorbente y perfecta para cubrir heridas. Proporciona la base básica para el cuidado de heridas, ayudando a controlar el sangrado y proteger contra infecciones.",
 		oxygen_tank = "Tanque de oxígeno",
 		oxygen_tank_description = "Un paquete de expansión pulmonar.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		no_vehicle_in_front = "No hay ningún vehículo frente a ti.",
 		using_first_aid_kit = "Usando Kit de Primeros Auxilios",
 		using_bandages = "Usando Vendajes",
+		using_tourniquet = "Usando torniquete",
 		using_ifak = "Usando IFAK",
 		move_to_wash = "Muévete aquí para lavar el vehículo",
 		vehicle_too_clean = "El vehículo está demasiado limpio para ser lavado.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		unable_to_use_lighter_in_vehicle = "No se puede usar un encendedor dentro de un vehículo.",
 		not_possible_in_a_vehicle = "Esta acción no es posible dentro de un vehículo.",
 		just_used_bandage = "Acabas de usar un botiquín de primeros auxilios, espera un poco antes de usar otro.",
+		just_used_tourniquet = "Acabas de usar un torniquete, espera un momento antes de usar otro.",
 		drank_gasoline_death = "Envenenamiento por gasolina",
 		drank_bleach_death = "Envenenamiento por lejía",
 		finished_joint = "Has terminado tu porro.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["es-MX"] = {
 		prop = "Objeto",
 		model_parameter_missing = "Falta el parámetro `model`.",
 		model_parameter_invalid = "El modelo `${model}` no es válido.",
-		model_parameter_is_not_an_object = "El modelo `${model}` no es un objeto.",
 		spawned_prop_non_networked = "Objeto con modelo `${model}` fue generado sin conexión a red.",
 		spawned_prop_networked = "Objeto con modelo `${model}` fue generado en red.",
 		spawned_exact_prop = "Objeto exacto creado.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["es-MX"] = {
 		not_able_to_spawn_while_moving = "Debes estar quieto al crear un objeto.",
 		stand_still_to_place_prop = "Debes estar quieto para colocar un objeto.",
 		prop_no_interior = "Solo puedes colocar este objeto afuera.",
+		invalid_culling_value = "Valor de corte inválido, debe estar entre 10 m y 2,500 m.",
+		invalid_model = "Modelo inválido/desconocido `${name}` (${hash}).",
 
 		invalid_prop_id = "ID de objeto no válido.",
 		prop_deleted = "El objeto con id ${propId} ha sido eliminado.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["meme-valleygirl"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "The, like, prop model you would like to spawn. Like, you've got to know the right hash or it won't work, duh.",
 		spawn_prop_command_parameter_network = "network, y'know?",
-		spawn_prop_command_parameter_network_help = "Would you like to network the prop? Duuh, it's recommended to only enable this for props that should be able to move.",
-		spawn_prop_command_parameter_no_pickup = "no pickup, like, seriously?",
-		spawn_prop_command_parameter_no_pickup_help = "Should this prop only be picked up by, like, super admins?",
+		spawn_prop_command_parameter_network_help = "Do you wanna network the prop? Like, it's better for props that need to move, ya know? But not all props can move, so like, choose wisely, girl.",
+		spawn_prop_command_parameter_restricted = "restricted",
+		spawn_prop_command_parameter_restricted_help = "This prop can only be touched by super admins, like, no one else.",
+		spawn_prop_command_parameter_culling = "culling",
+		spawn_prop_command_parameter_culling_help = "Culling stuff to decide when the prop appears or disappears. The default is like 200m, but change it for really big props that need to be seen from like far away, you know?",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		tracker_command = "tracker",
 		tracker_command_help = "Toggle your like, tracker's visibility.",
 		tracker_command_parameter_break = "break",
-		tracker_command_parameter_break_help = "Break ur tracker and, like, send a dispatch notification about it. (Can't be re-enabled until, like, 20min have passed)",
+		tracker_command_parameter_break_help = "OMG, break ur tracker and send a notification sayin' u broke it. Type `yes` or `y` to break ur tracker. (U can't turn it back on until 20min have passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		return_button = "Like, Return",
 		deposit = "Leave a deposit of $${amount}",
 		no_deposit = "No deposit needed, duh!",
-		deposit_not_enough_money = "You don't have sufficient cash, sorry not sorry!"
+		deposit_not_enough_money = "You don't have sufficient cash, sorry not sorry!",
+		helipad = "Like, Helipad"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		craft_torch = "Craft <i>Torch</i>, omg, lit",
 		prepare_beans_toast = "Prepare <i>Beans on Toast</i>, like, so British",
 		mix_pancake_batter = "Mix <i>Pancake Batter</i>, like, pancake time!",
+		disassemble_bandages = "Disassemble <i>Bandages</i>",
+		craft_tourniquet = "Craft <i>Tourniquet</i>",
 
 		search = "Search, duh!",
 		amount = "Amount, obvi!",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		first_aid_kit_description = "For when you gotta patch yourself up, like, after a gnarly fall or something.",
 		bandages = "Bandages",
 		bandages_description = "For all the boo-boos out there that need some healing love.",
+		tourniquet = "Tourniquet",
+		tourniquet_description = "A life-saving tool in, like, hardcore situations, the tourniquet is meant to stop major bleedin' real fast. It's not gonna heal much, but it can be, like, super important in emergencies.",
+		gauze = "OMG, Like Gauze",
+		gauze_description = "OMG, you totally need this gauze for, like, any first aid kit! It's, like, so soft, absorbent, and, like, perf for dressing wounds. It's, like, the basic, like, foundation for wound care, helping with the bleeding and, like, protecting against infection.",
 		oxygen_tank = "Oxygen Tank",
 		oxygen_tank_description = "Like, a lung-expansion pack... you know, for when you're, like, deep sea diving or something.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		no_vehicle_in_front = "Like, there's no vehicle in front of you, ugh.",
 		using_first_aid_kit = "Like, using a first aid kit",
 		using_bandages = "Putting on band-aids, duh",
+		using_tourniquet = "Like, Using Tourniquet",
 		using_ifak = "Using IFAK, so pro",
 		move_to_wash = "Omigod, move here to wash the car",
 		vehicle_too_clean = "The car is, like, too clean to be washed.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		unable_to_use_lighter_in_vehicle = "Ugh, you can't use a lighter in a vehicle!",
 		not_possible_in_a_vehicle = "Girl, you can't do that in a car!",
 		just_used_bandage = "Whoa, chill! You just used a first aid kit, wait before using another one.",
+		just_used_tourniquet = "OMG, you just used a tourniquet! Like, wait a bit before using another one, k?",
 		drank_gasoline_death = "Like, you drank gasoline and died. Not totally unexpected tbh.",
 		drank_bleach_death = "OMG! You drank bleach, you're, like, so dead!",
 		finished_joint = "You like totally finished your joint, like for sure.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		prop = "Prop (duh)",
 		model_parameter_missing = "Don't forget to include what you want to pick up, like, the `model` parameter is missing or something",
 		model_parameter_invalid = "Umm, the model `${model}` is like, not a good choice. Just saying",
-		model_parameter_is_not_an_object = "Ugh, that model `${model}` is not even an object.",
 		spawned_prop_non_networked = "Yas, I spawned a non-networked prop with model `${model}`.",
 		spawned_prop_networked = "Look at that, I spawned a networked prop with the model `${model}`.",
 		spawned_exact_prop = "Boom! Spawned the exact prop.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		not_able_to_spawn_while_moving = "Like, you can't spawn stuffs while you're moving!",
 		stand_still_to_place_prop = "Hold up, you gotta be still to place that prop.",
 		prop_no_interior = "Sorry, but you can't place that prop indoors.",
+		invalid_culling_value = "Ugh, like, the culling value is, like, so invalid! It, like, should be between 10m and 2,500m.",
+		invalid_model = "Like, OMG, invalid/unknown model `${name}` (${hash}).",
 
 		invalid_prop_id = "Uh oh, that's a bogus prop id.",
 		prop_deleted = "Prop with id ${propId} got booted.",

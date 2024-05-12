@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["bn-BD"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		spawn_prop_command_parameter_model_hash = "মডেল",
 		spawn_prop_command_parameter_model_hash_help = "আপনি যে সম্পদ মডেলটি উৎপন্ন করতে চান তা উল্লেখ করুন।",
 		spawn_prop_command_parameter_network = "নেটওয়ার্ক",
-		spawn_prop_command_parameter_network_help = "আপনি কি প্রপটি নেটওয়ার্ক করতে চান? এটি শুধুমাত্র চলমান অবস্থান পরিবর্তনযোগ্য প্রপটিগুলির জন্য সুপারিশ করা হয়।",
-		spawn_prop_command_parameter_no_pickup = "নো পিকআপ",
-		spawn_prop_command_parameter_no_pickup_help = "কি এই প্রপটি শুধুমাত্র সুপার অ্যাডমিনগনদ্বারা উঠিয়ে নেওয়া হবে?",
+		spawn_prop_command_parameter_network_help = "কি আপনি প্রপ-এর নেটওয়ার্ক করতে চান? প্রপ-গুলি যেসব গতিশীল হওয়া উচিত তারা জন্য মাত্র এটি সুপারের জনদের কে অনুমতি দেয়া হলো বলে এটি সুপারের সময় সতর্কতা অবশ্যই রেখেন। তবে সব প্রপ-গুলি সর্বশেষ উচিত নন।",
+		spawn_prop_command_parameter_restricted = "সীমিত",
+		spawn_prop_command_parameter_restricted_help = "শুধুমাত্র এই প্রপটি সুপার অ্যাডমিন দ্বারা উঠানোর অনুমতি দেওয়া আছে।",
+		spawn_prop_command_parameter_culling = "কালিং",
+		spawn_prop_command_parameter_culling_help = "প্রপটির কে দূরত্বের সাথে যে দূরত্বে স্পউন/ডিস্পউন হয় তার অধীনে কালিং ব্যার্ডিয়াস। ডিফল্ট আতি: 200 মিটার, এইটি মাত্র দূর থেকে দেখা যাবে সেইজন্য উচিত বড় প্রপগুলির জন্য এটি বেঞ্চনা করা।",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		tracker_command = "ট্র্যাকার",
 		tracker_command_help = "আপনার ট্র্যাকারের দৃশ্যতার টগল করুন।",
 		tracker_command_parameter_break = "বিরক্ত",
-		tracker_command_parameter_break_help = "আপনার ট্র্যাকার বিচ্ছিন্ন করুন এবং এর সম্পর্কে একটি ডিসপ্যাচ বিজ্ঞপ্তি প্রেরণ করুন। (আবার সক্রিয় করা যাবে না যদি 20 মিনিট পার না হয়ে যায়)।",
+		tracker_command_parameter_break_help = "আপনার ট্র্যাকার ভাঙ্গার জন্য এবং এটি সম্পর্কে বিজ্ঞপ্তি প্ঠাটান পাঠান। 'হ্যাঁ' বা 'y' টাইপ করুন আপনার ট্র্যাকার ভাঙ্গতে। (20 মিনিট পার না হওয়া পর্যন্ত পুনরায় সক্রিয় করা যাবে না)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "ট্র্যাকারগুলি_বিভাজন",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		return_button = "ফেরত দিন",
 		deposit = "$${amount} ডিপোজিট",
 		no_deposit = "কোন ডিপোজিট নেই",
-		deposit_not_enough_money = "আপনার ডিপোজিট করার জন্য পর্যাপ্ত টাকা নেই।"
+		deposit_not_enough_money = "আপনার ডিপোজিট করার জন্য পর্যাপ্ত টাকা নেই।",
+		helipad = "হেলিপ্যাড"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		craft_torch = "তৈরি করুন <i>টর্চ</i>",
 		prepare_beans_toast = "প্রস্তুত করুন <i>বিন ও টোস্ট</i>",
 		mix_pancake_batter = "মিশে নিন <i>প্যানকেক ব্যাটার</i>",
+		disassemble_bandages = "<i>ব্যান্ডেজ</i> ভাঙ্গুন",
+		craft_tourniquet = "<i>টার্নিকেট</i> তৈরি করুন",
 
 		search = "অনুসন্ধান",
 		amount = "পরিমান",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		first_aid_kit_description = "স্ব-চিকিৎসা করার জন্য একটি বক্স।",
 		bandages = "ব্যান্ডেজ",
 		bandages_description = "সকল ঘাড় ফুটে গেলে ও ব্রণের জন্য।",
+		tourniquet = "টার্নিকেট",
+		tourniquet_description = "গমানকারী অবস্থায় জীবানুরক্ষা সরঞ্জাম, টার্নিকেট শীঘ্রভাবে গভীর রক্তপাত বন্ধের জন্য পরিচিত। আপনাকে প্রাথমিক চিকিৎসা বিকল্পগুলির তুলনায় কম সুরক্ষা প্রদান করে, কিন্তু কোন্দল রক্তপাত করার সামর্থ্য আকড়েও ভেতরকার অত্যাবশ্যক হতে পারে জরুরি অবস্তাগুলিতে।",
+		gauze = "গজ",
+		gauze_description = "প্রথম চিকিৎসা বহন সেটের জন্য অত্যাবশ্যক, এই গজটি মৃদু, সশোধকাত্মক, এবং ঘাবর উপযুক্ত। এটি ঘাস মেরের জন্য বেসিক ভিত্তিতে প্রদান করে, রক্তস্রাব সহন এবং সংক্রামণে বিপদগোপন করার মধ্যে সাহায্য করে।",
 		oxygen_tank = "অক্সিজেন ট্যাঙ্ক",
 		oxygen_tank_description = "একটি ফুসফুস প্যাকটি।",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		no_vehicle_in_front = "তুমার সামনে কোন গাড়ি নেই।",
 		using_first_aid_kit = "প্রথম পরিহোর বাকস ব্যবহার করা হচ্ছে",
 		using_bandages = "ব্যান্ডেজ ব্যবহার করা হচ্ছে",
+		using_tourniquet = "ট্যুর্নিকেট ব্যবহার করা হচ্ছে",
 		using_ifak = "আইফাক ব্যবহার করা হচ্ছে",
 		move_to_wash = "গাড়ি ধুওয়ার জন্য এখানে আসুন",
 		vehicle_too_clean = "গাড়িটি পরিষ্কার খুব বেশি হয়ে গেছে এবং ধুয়ে নেয়া যাবে না।",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		unable_to_use_lighter_in_vehicle = "আপনি যানবাহনে লাইটার ব্যবহার করতে পারবেন না।",
 		not_possible_in_a_vehicle = "এই ক্রিয়াটি যানবাহনে সম্ভব নয়।",
 		just_used_bandage = "আপনি একটি প্রথম প্রহর সেবন করেছেন, অন্যটি ব্যবহার করার আগে কিছুক্ষণ অপেক্ষা করুন।",
+		just_used_tourniquet = "আপনি একটি ট্যুর্নিকেট ব্যবহার করেছেন, আরেকটি ব্যবহার পূর্বে অপেক্ষা করুন।",
 		drank_gasoline_death = "গ্যাসোলিন হারানো হইছে এবং অসুস্থতার কারণে মারা যাচ্ছেন",
 		drank_bleach_death = "ব্লিচ বিষক্ত হওয়া",
 		finished_joint = "তুমি তোমার হুকা শেষ করেছি।",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		prop = "প্রপ",
 		model_parameter_missing = "`মডেল` পরমিতি অনুপস্থিত।",
 		model_parameter_invalid = "`${model}` মডেলটি একটি অবৈধ মডেল।",
-		model_parameter_is_not_an_object = "মডেল `${model}` একটি অবজেক্ট নয়।",
 		spawned_prop_non_networked = "মডেল `${model}` নিটওয়ার্ক নেই স্পউন করা হয়েছে।",
 		spawned_prop_networked = "মডেল `${model}` নেটওয়ার্ক সঙ্গে স্পউন করা হয়েছে।",
 		spawned_exact_prop = "সঠিক প্রপ স্পউন করা হয়েছে।",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		not_able_to_spawn_while_moving = "প্রপ স্পউন করতে আপনাকে অবশ্যই ভারী থাকতে হবে।",
 		stand_still_to_place_prop = "প্রপ রাখতে আপনাকে অবশ্যই ভারী থাকতে হবে।",
 		prop_no_interior = "আপনি শুধুমাত্র এই প্রপটি বাইরে স্থাপন করতে পারবেন।",
+		invalid_culling_value = "অবৈধ অথবা ভুল মাত্রা, 10মিটার এবং 2,500মিটার এর মধ্যে থাকতে হবে।",
+		invalid_model = "অবৈধ/অজানা মডেল `${name}` (${hash})।",
 
 		invalid_prop_id = "অবৈধ প্রপ আইডি।",
 		prop_deleted = "আইডি সহ প্রপ ${propId} মুছে ফেলা হয়েছে।",

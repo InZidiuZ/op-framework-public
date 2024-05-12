@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["fr-FR"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		spawn_prop_command_parameter_model_hash = "modèle",
 		spawn_prop_command_parameter_model_hash_help = "Le modèle de la propriété à apparaître.",
 		spawn_prop_command_parameter_network = "réseau",
-		spawn_prop_command_parameter_network_help = "Voulez-vous mettre le prop en réseau? Il est recommandé de l'activer uniquement pour les props qui doivent pouvoir se déplacer.",
-		spawn_prop_command_parameter_no_pickup = "pas de ramassage",
-		spawn_prop_command_parameter_no_pickup_help = "Ce prop ne devrait-il être ramassé que par les super admins?",
+		spawn_prop_command_parameter_network_help = "Souhaitez-vous mettre en réseau l'accessoire ? Il est recommandé de n'activer cette option que pour les accessoires pouvant être déplacés. Tous les accessoires ne sont pas déplaçables cependant.",
+		spawn_prop_command_parameter_restricted = "restreint",
+		spawn_prop_command_parameter_restricted_help = "Autoriser uniquement les super administrateurs à ramasser cet accessoire.",
+		spawn_prop_command_parameter_culling = "culling",
+		spawn_prop_command_parameter_culling_help = "Rayon de lissage à la distance à laquelle l'accessoire est apparu/disparu. Le rayon par défaut est de 200 m, n'augmentez cela que pour les gros accessoires qui doivent être visibles de loin.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "debug_props",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		tracker_command = "traqueur",
 		tracker_command_help = "Active ou désactive la visibilité de votre traqueur.",
 		tracker_command_parameter_break = "casser",
-		tracker_command_parameter_break_help = "Casse votre traqueur et envoie une notification de dispatch à ce sujet. (Ne peut pas être réactivé avant 20 minutes)",
+		tracker_command_parameter_break_help = "Désactiver votre traqueur et envoyer une notification de déploiement à ce sujet. Tapez `oui` ou `o` pour désactiver votre traqueur. (Ne peut pas être réactivé avant 20 minutes)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "separer_traqueurs",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		return_button = "Retour",
 		deposit = "Dépôt de $${amount}",
 		no_deposit = "Pas de dépôt",
-		deposit_not_enough_money = "Vous n'avez pas assez d'argent pour payer le dépôt."
+		deposit_not_enough_money = "Vous n'avez pas assez d'argent pour payer le dépôt.",
+		helipad = "Héliport"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		craft_torch = "Fabriquer <i>Torche</i>",
 		prepare_beans_toast = "Préparer <i>Haricots sur Toast</i>",
 		mix_pancake_batter = "Mélanger <i>Pâte à Pancakes</i>",
+		disassemble_bandages = "Démonter les <i>Bandes</i>",
+		craft_tourniquet = "Fabriquer un <i>Tourniquet</i>",
 
 		search = "Chercher",
 		amount = "Quantité",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		first_aid_kit_description = "La trousse \"faites-le vous-même\" de médecin.",
 		bandages = "Bandages",
 		bandages_description = "Pour toutes les blessures et les petits bobos.",
+		tourniquet = "Tourniquet",
+		tourniquet_description = "Outil de sauvetage essentiel dans les situations critiques, le tourniquet est conçu pour stopper rapidement les saignements graves. Bien qu'il offre une guérison minimale par rapport à des options de premiers secours plus complètes, sa capacité à arrêter la perte de sang peut être cruciale en cas d'urgence.",
+		gauze = "Gaze",
+		gauze_description = "Essentiel pour toute trousse de premiers secours, ce gaze est doux, absorbant et parfait pour habiller les plaies. Il constitue la base essentielle des soins aux plaies, aidant à contrôler les saignements et à protéger contre les infections.",
 		oxygen_tank = "Bouteille d'oxygène",
 		oxygen_tank_description = "Un pack d'expansion des poumons.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		no_vehicle_in_front = "Il n'y a aucun véhicule devant vous.",
 		using_first_aid_kit = "Utilisation du kit de premiers secours",
 		using_bandages = "Utilisation de bandages",
+		using_tourniquet = "Utilisation d'un garrot",
 		using_ifak = "Utilisation d'un IFAK",
 		move_to_wash = "Déplacez-vous ici pour laver le véhicule",
 		vehicle_too_clean = "Le véhicule est trop propre pour être lavé.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		unable_to_use_lighter_in_vehicle = "Vous ne pouvez pas utiliser un briquet dans un véhicule.",
 		not_possible_in_a_vehicle = "Cette action n'est pas possible dans un véhicule.",
 		just_used_bandage = "Vous avez utilisé une trousse de premiers secours, attendez un peu avant d'en utiliser une autre.",
+		just_used_tourniquet = "Vous venez d'utiliser un garrot, attendez un peu avant d'en utiliser un autre.",
 		drank_gasoline_death = "Empoisonnement à l'essence",
 		drank_bleach_death = "Empoisonnement à l'eau de Javel",
 		finished_joint = "Tu as fini ton joint.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		prop = "Prop",
 		model_parameter_missing = "Le paramètre `modèle` est manquant.",
 		model_parameter_invalid = "Le modèle `${model}` est un modèle invalide.",
-		model_parameter_is_not_an_object = "Le modèle `${model}` n'est pas un objet.",
 		spawned_prop_non_networked = "A spaw un prop non-networked avec le modèle `${model}`.",
 		spawned_prop_networked = "A spaw un prop avec réseau avec le modèle `${model}`.",
 		spawned_exact_prop = "Propriété exacte apparue.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["fr-FR"] = {
 		not_able_to_spawn_while_moving = "Vous devez être immobile pour faire apparaître une propriété.",
 		stand_still_to_place_prop = "Vous devez être immobile pour placer une propriété.",
 		prop_no_interior = "Vous ne pouvez placer cette propriété qu'à l'extérieur.",
+		invalid_culling_value = "Valeur de culling invalide, doit être comprise entre 10m et 2 500m.",
+		invalid_model = "Modèle invalide/inconnu `${name}` (${hash}).",
 
 		invalid_prop_id = "Identifiant de propriété invalide.",
 		prop_deleted = "Le Prop avec l'identifiant ${propId} a été supprimé.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["nn-NO"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		spawn_prop_command_parameter_model_hash = "modell",
 		spawn_prop_command_parameter_model_hash_help = "Modellen til eiendelen du vil spawne.",
 		spawn_prop_command_parameter_network = "nettverk",
-		spawn_prop_command_parameter_network_help = "Ønsker du å nettverke eiendelen? Det anbefales at du kun aktiverer dette for eiendeler som skal kunne bevege seg.",
-		spawn_prop_command_parameter_no_pickup = "ikke ta opp",
-		spawn_prop_command_parameter_no_pickup_help = "Skal denne eiendelen kun kunne plukkes opp av superadmins?",
+		spawn_prop_command_parameter_network_help = "Vil du koble til denne rekvisitten til nettverket? Det anbefales at du kun aktiverer dette for rekvisitter som bør kunne flyttes. Ikke alle rekvisitter er flyttbare likevel.",
+		spawn_prop_command_parameter_restricted = "begrenset",
+		spawn_prop_command_parameter_restricted_help = "Tillat kun superadmins å plukke opp denne rekvisitten.",
+		spawn_prop_command_parameter_culling = "skjæring",
+		spawn_prop_command_parameter_culling_help = "Avstandsradius for skjæring der rekvisitten blir spawnet/fjernet. Standardradius er 200 m, øk kun dette for store rekvisitter som bør være synlige på lang avstand.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		tracker_command = "sporingsenhet",
 		tracker_command_help = "Veksler synligheten til sporingsenheten din.",
 		tracker_command_parameter_break = "bryte",
-		tracker_command_parameter_break_help = "Bryt sporinga di og send ei varsel om det. (Kan ikkje slås på igjen før det har gått 20 minutt)",
+		tracker_command_parameter_break_help = "Bryt sporinga di og send ein varsel om det. Skriv `ja` eller `j` for å bryte sporinga di. (Kan ikkje slåast på igjen før det har gått 20 minutt)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "splitt_sporingsenheter",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		return_button = "Tilbake",
 		deposit = "${amount} Innskudd",
 		no_deposit = "Ingen Innskudd",
-		deposit_not_enough_money = "Du har ikke nok penger til å betale innskuddet."
+		deposit_not_enough_money = "Du har ikke nok penger til å betale innskuddet.",
+		helipad = "Helikopterplass"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		craft_torch = "Lag <i>Fakkel</i>",
 		prepare_beans_toast = "Lag <i>Bønner på ristet brød</i>",
 		mix_pancake_batter = "Bland <i>Pannekakerøre</i>",
+		disassemble_bandages = "Demonter <i>Bandasjar</i>",
+		craft_tourniquet = "Lag <i>Tourniquet</i>",
 
 		search = "Søk",
 		amount = "Antall",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		first_aid_kit_description = "Den \"gjør-det-selv\" legekofferten.",
 		bandages = "Bandasjer",
 		bandages_description = "For alle smerte og småskader.",
+		tourniquet = "Tourniquet",
+		tourniquet_description = "Et livreddende verktøy i kritiske situasjoner, tourniqueten er designet for å stoppe kraftig blødning raskt. Mens den tilbyr minimal helbredelse sammenlignet med mer omfattende førstehjelpsalternativer, kan dens evne til å stanse blodtap være avgjørende i nødsituasjoner.",
+		gauze = "Bandasje",
+		gauze_description = "Essensiell for alle førstehjelpssett, denne bandasjen er myk, absorberende og perfekt for å behandle sår. Den gir grunnlaget for sårbehandling, hjelper til med å stoppe blødning og beskytter mot infeksjon.",
 		oxygen_tank = "Oksygentank",
 		oxygen_tank_description = "En lungeutvidelsespakke.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		no_vehicle_in_front = "Det er ingen kjøretøy foran deg.",
 		using_first_aid_kit = "Bruker førstehjelpsskrin",
 		using_bandages = "Bruker bandasjer",
+		using_tourniquet = "Bruker Tourniquet",
 		using_ifak = "Bruker IFAK",
 		move_to_wash = "Flytt hit for å vaske kjøretøyet",
 		vehicle_too_clean = "Kjøretøyet er for rent til å bli vasket.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		unable_to_use_lighter_in_vehicle = "Du kan ikke bruke en lighter i et kjøretøy.",
 		not_possible_in_a_vehicle = "Denne handlingen er ikke mulig i et kjøretøy.",
 		just_used_bandage = "Du har akkurat brukt et førstehjelpssett, vent litt før du bruker et annet.",
+		just_used_tourniquet = "Du har nettopp brukt en tourniquet, vent litt før du bruker en annen.",
 		drank_gasoline_death = "Bensinforgiftning",
 		drank_bleach_death = "Blekforgiftning",
 		finished_joint = "Du fullførte jointen din.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		prop = "Gjenstand",
 		model_parameter_missing = "Det manglar `model`-parameteret.",
 		model_parameter_invalid = "Modellen `${model}` er ei ugyldig modell.",
-		model_parameter_is_not_an_object = "Modellen `${model}` er ikkje eit objekt.",
 		spawned_prop_non_networked = "Skapte ei ikkje-nettverkskopla gjenstand med modell `${model}`.",
 		spawned_prop_networked = "Spawna ein nettverkshandel eigendom med modell `${model}`.",
 		spawned_exact_prop = "Spawna eksakt eigendom.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		not_able_to_spawn_while_moving = "Du må stå stille når du spawner ein eigendom.",
 		stand_still_to_place_prop = "Du må stå stille for å plassera ein eigendom.",
 		prop_no_interior = "Du kan bare plassere dette objektet utenfor.",
+		invalid_culling_value = "Ugyldig verdsetting for inngjerding, må være mellom 10m og 2,500m.",
+		invalid_model = "Ugyldig/ukjent modell `${name}` (${hash}).",
 
 		invalid_prop_id = "Ugyldig objektid.",
 		prop_deleted = "Objekt med id ${propId} ble slettet.",

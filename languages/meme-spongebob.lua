@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["meme-spongebob"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "Bringin' out the magic conch, which model hash do ya want to use?",
 		spawn_prop_command_parameter_network = "network",
-		spawn_prop_command_parameter_network_help = "Would you like to net it? Only enable this for props that should be able to move or change shape, bucko!",
-		spawn_prop_command_parameter_no_pickup = "no pickup",
-		spawn_prop_command_parameter_no_pickup_help = "Should only admins who are super fancy be able to pick it up, barnacle head?",
+		spawn_prop_command_parameter_network_help = "Would you like to network the prop? It is recommended you only enable this for props that should be able to move. Not all props are movable though.",
+		spawn_prop_command_parameter_restricted = "only for super barnacles 🦸‍♂️",
+		spawn_prop_command_parameter_restricted_help = "Only allow this prop to be picked up by super admins.",
+		spawn_prop_command_parameter_culling = "visibility distance",
+		spawn_prop_command_parameter_culling_help = "Culling radius at which distance the prop is spawned/despawned. Default radius is 200m, only increase this for large props that should be visible from far away.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		tracker_command = "tracker",
 		tracker_command_help = "Toggle whether yer tracker is visible or invisible.",
 		tracker_command_parameter_break = "undefined",
-		tracker_command_parameter_break_help = "undefined",
+		tracker_command_parameter_break_help = "Ahoy matey! Break yer tracker and send a dispatch notification about it. Type `aye` or `y` to break yer tracker. (Cant be re-enabled until 20min have passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "split trackers",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		return_button = "Go back SpongeBob!",
 		deposit = "$${amount} me monay",
 		no_deposit = "No monay needed!",
-		deposit_not_enough_money = "Sorry, ya don't have enough jellyfish jelly to pay for the deposit."
+		deposit_not_enough_money = "Sorry, ya don't have enough jellyfish jelly to pay for the deposit.",
+		helipad = "Ahoy, me mateys! Helipad"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		craft_torch = "undefined",
 		prepare_beans_toast = "undefined",
 		mix_pancake_batter = "undefined",
+		disassemble_bandages = "Disassemble <i>Bandages</i>",
+		craft_tourniquet = "Craft <i>Tourniquet</i>",
 
 		search = "Search, aye aye captain!",
 		amount = "Amount, barnacles!",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		first_aid_kit_description = "The \"do-it-yourself\" SpongeBob doctor-kit.",
 		bandages = "Fixer-Upper Bandages",
 		bandages_description = "For all boo-boos and ouchies. Patch up like they do in the Krusty Krab kitchen!",
+		tourniquet = "Ahoy! Tourniquet",
+		tourniquet_description = "Ahoy, me hearties! A life-saving tool in critical situations, the tourniquet is designed to stop severe bleeding quickly. While it offers minimal healing compared to more comprehensive first aid options, its ability to halt blood loss can be pivotal in emergency scenarios.",
+		gauze = "Gauze-O",
+		gauze_description = "Essential for any first aid kit, this gauze is soft, absorbent, and perfect for dressing boo-boos. It provides the basic foundation for patching up wounds, helping to stop the ouchies and protect against ickiness.",
 		oxygen_tank = "Oxyhgen Tanque",
 		oxygen_tank_description = "A lung-expansion pack. (Un paquete de expansión pulmonar)",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		no_vehicle_in_front = "undefined",
 		using_first_aid_kit = "Going to apply some of that boo-boo balm!",
 		using_bandages = "Got some sticky strips for the owies!",
+		using_tourniquet = "Using Tourniquet-y",
 		using_ifak = "IFAK at the ready, let's patch up those cuts!",
 		move_to_wash = "Shift it over here and let's get scrubbin'!",
 		vehicle_too_clean = "This ride is already spic and span, no need for a wash!",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		unable_to_use_lighter_in_vehicle = "Ya can't use a lighter in a vehicle.",
 		not_possible_in_a_vehicle = "Ya can't do that in a vehicle.",
 		just_used_bandage = "Ya just used a first aid kit, wait a bit before usin' another one.",
+		just_used_tourniquet = "You just used a tourniquet, wait a bit before using another one, meow.",
 		drank_gasoline_death = "Gasoline Poisonin'",
 		drank_bleach_death = "Bleach Poisoning. Meow meow meow!",
 		finished_joint = "You finished yer joint.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		prop = "Prop, dude!",
 		model_parameter_missing = "Oh, no! The `model` parameter's missing, dude!",
 		model_parameter_invalid = "The model `${model}` isn't a valid model, dude!",
-		model_parameter_is_not_an_object = "The model `${model}` ain't an object me boyo!",
 		spawned_prop_non_networked = "Arrr! Spawned a non-networked prop with model `${model}`.",
 		spawned_prop_networked = "Ho ho! Spawned a networked prop with model `${model}`.",
 		spawned_exact_prop = "Yarrr! Spawned the exact prop ye wanted!",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		not_able_to_spawn_while_moving = "You can't be movin' while tryin' to spawn a thingamajig.",
 		stand_still_to_place_prop = "Stop movin' if ya wanna put down a thingamajig.",
 		prop_no_interior = "Ya can only put this thingamajig outside.",
+		invalid_culling_value = "Invalid culling value, has to be between 10m and 2,500m, meow.",
+		invalid_model = "Invalid/Unknown model `${name}` (${hash}), meow.",
 
 		invalid_prop_id = "That ain't a valid thingamajig ID.",
 		prop_deleted = "The thingamajig with ID ${propId} was thrown out.",

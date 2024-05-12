@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["meme-rude"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "Tell me the goddamn prop model that you want to spawn, you asshole.",
 		spawn_prop_command_parameter_network = "network that fucking prop?",
-		spawn_prop_command_parameter_network_help = "Do you want to fucking network the prop? It's recommended you enable this shit only for props that should fucking move.",
-		spawn_prop_command_parameter_no_pickup = "no fucking pickup",
-		spawn_prop_command_parameter_no_pickup_help = "Should this piece of shit prop only be picked up by fucking super admins?",
+		spawn_prop_command_parameter_network_help = "Do you wanna fucking network the prop? It's recommended you only enable this for props that should be able to move. Not all props are movable though, so be smart about it.",
+		spawn_prop_command_parameter_restricted = "restricted",
+		spawn_prop_command_parameter_restricted_help = "Only allow this bloody prop to be picked up by super admins. Nobody else can touch it.",
+		spawn_prop_command_parameter_culling = "culling",
+		spawn_prop_command_parameter_culling_help = "Culling radius at which distance the prop is spawned/despawned. Default radius is 200m, only increase this for fucking huge props that should be visible from far as f***ing swear words away.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		tracker_command = "tracker",
 		tracker_command_help = "Toggle your fucking tracker's goddamn visibility.",
 		tracker_command_parameter_break = "break",
-		tracker_command_parameter_break_help = "Break your f*cking tracker and send a dispatch notification about it. (Can't be re-enabled until 20min have f*cking passed)",
+		tracker_command_parameter_break_help = "Break your tracker and send a fuckin' notification about it. Fuckin' type `yes` or `y` to break your fuckin' tracker. (Can't be re-enabled until 20 fuckin' minutes have fuckin' passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "trackers_split",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		return_button = "Fuck off",
 		deposit = "Put down $$ {amount} you cheap fuck",
 		no_deposit = "No fuckin' way am I puttin' down a deposit",
-		deposit_not_enough_money = "You broke ass motherfucker, you don't have enough money for the deposit"
+		deposit_not_enough_money = "You broke ass motherfucker, you don't have enough money for the deposit",
+		helipad = "Motherfuckin' Helipad"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		craft_torch = "undefined",
 		prepare_beans_toast = "undefined",
 		mix_pancake_batter = "undefined",
+		disassemble_bandages = "Disassemble <i>Bandages</i>",
+		craft_tourniquet = "Craft <i>Tourniquet</i>",
 
 		search = "Search, motherfucker",
 		amount = "Amount, asshole",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		first_aid_kit_description = "The Ultimate Way to Say \"Fuck You\" to the Grim Reaper.",
 		bandages = "Fucking Bandages (For All Your Fucking Wounds)",
 		bandages_description = "Use These Shit Bandages to Cover Up Your Fucking Boo-boos and Get Back in the Fucking Game.",
+		tourniquet = "Motherfuckin' Tourniquet",
+		tourniquet_description = "A life-saving tool in fuckin' critical situations, the tourniquet is designed to stop severe bleeding fuckin' quickly. While it offers minimal healing compared to more comprehensive first aid options, its ability to halt blood loss can be pivotal in emergency fuckin' scenarios.",
+		gauze = "Goddamn Gauze",
+		gauze_description = "Fuckin' essential for any dumbass first aid kit, this goddamn gauze is soft as shit, absorbs like a champ, and perfect for coverin' those nasty ass wounds. It's the basic shit you need for takin' care of wounds, stoppin' that bleedin' crap, and protectin' against infections like a boss.",
 		oxygen_tank = "Oxygen Tank",
 		oxygen_tank_description = "A device to help you breathe clearly underwater, instead of closing your eyes and waiting for the sweet release of death.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		no_vehicle_in_front = "undefined",
 		using_first_aid_kit = "Using crappy first aid kit",
 		using_bandages = "Using useless bandages",
+		using_tourniquet = "Fuckin' Usin' Tourniquet",
 		using_ifak = "Using freaking IFAK",
 		move_to_wash = "Move your ass here to wash the freaking vehicle",
 		vehicle_too_clean = "Are you kidding me? The freaking vehicle is too clean to be washed",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		unable_to_use_lighter_in_vehicle = "You dumbass, you can't use that lighter in a fuckin' car!",
 		not_possible_in_a_vehicle = "No fuckin' way you can do that in a ride!",
 		just_used_bandage = "You used a goddamn first aid kit, wait a bit before using another one.",
+		just_used_tourniquet = "You just fuckin' used a tourniquet, chill the hell out before slammin' on another one.",
 		drank_gasoline_death = "You done drank that gasoline like a fuckin' idiot and died. Congrats.",
 		drank_bleach_death = "Fucking Died from Drinking Bleach",
 		finished_joint = "You fucking finished your joint, you high as fuck.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		prop = "Prop",
 		model_parameter_missing = "Hey asshole, the `model` parameter is fucking missing.",
 		model_parameter_invalid = "The model you've picked \"${model}\" is a fucking joke mate, pick a valid one!",
-		model_parameter_is_not_an_object = "That fucking model `${model}` is not an object, dumbass.",
 		spawned_prop_non_networked = "I just spawned a fucking prop `${model}` but it's not networked.",
 		spawned_prop_networked = "Look at that shit, I just spawned a networked prop `${model}`.",
 		spawned_exact_prop = "Oh shit, I spawned that exact fucking prop, nice.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		not_able_to_spawn_while_moving = "Quit fucking moving! You gotta stand fucking still to spawn a goddamn prop.",
 		stand_still_to_place_prop = "Just fucking stand still if you wanna fucking place a damn prop.",
 		prop_no_interior = "What the fuck?! You can only place this damn prop outside!",
+		invalid_culling_value = "What the fuck, invalid culling value, it's gotta be between 10m and 2,500m or you're just messin' shit up.",
+		invalid_model = "The hell is this, invalid/unknown model `${name}` (${hash}).",
 
 		invalid_prop_id = "You are fucking stupid or what? That's an invalid fucking prop id!",
 		prop_deleted = "I just deleted the fucking prop with id ${propId}! Are you happy now?",

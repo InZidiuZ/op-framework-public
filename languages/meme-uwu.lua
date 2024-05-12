@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["meme-uwu"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "The pwop modew you wouwd wike to spawn.",
 		spawn_prop_command_parameter_network = "netwowk",
-		spawn_prop_command_parameter_network_help = "Would yuw like to netwowk the pwop? It is wecommended yuw onwy enable this fow pwops that shouwd be abwe to move.",
-		spawn_prop_command_parameter_no_pickup = "no picky uppy",
-		spawn_prop_command_parameter_no_pickup_help = "Shouwd this pwop onwy be picky uppy by supew adminy?",
+		spawn_prop_command_parameter_network_help = "Wouwd you wike tuwu netwowk teh pwop? It is wecommended uwu onwy enabwe this fow pwops that shouwd be abwe tuwu muve. Nyot aww pwops awe muvabwe dough.",
+		spawn_prop_command_parameter_restricted = "westwicted",
+		spawn_prop_command_parameter_restricted_help = "Onwy awwow this pwop tuwu be picked up by supew adminyos.",
+		spawn_prop_command_parameter_culling = "cuwwying",
+		spawn_prop_command_parameter_culling_help = "Cuwwying wadius at which distance teh pwop is spawnyed/despawnyed. Defauwt wadius is 200m, onwy incwease this fow wawge pwops that shouwd be visibwe fwom faw away.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "pwops_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		tracker_command = "twacker",
 		tracker_command_help = "Togwwe your twacker's visibility.",
 		tracker_command_parameter_break = "bweak",
-		tracker_command_parameter_break_help = "Bweak youw twackew and send a dispawch nowtification about it. (Cant be we-enabwed until 20min have passed)",
+		tracker_command_parameter_break_help = "Bweak youw twackew and send a dispawch nyotyification about it. Type `yes` ow `y` to bweak youw twackew. (Cant be we-enyabwed untiw 20min have passed)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "twackers_split",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		return_button = "Weturn",
 		deposit = "$${amount} Depowosit",
 		no_deposit = "No Depowosit",
-		deposit_not_enough_money = "You do not have enough money to pay the depowosit."
+		deposit_not_enough_money = "You do not have enough money to pay the depowosit.",
+		helipad = "Hewipad"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		craft_torch = "undefined",
 		prepare_beans_toast = "undefined",
 		mix_pancake_batter = "undefined",
+		disassemble_bandages = "Disassembwe <i>Bandages</i>",
+		craft_tourniquet = "Cwaft <i>Touwniquet</i>",
 
 		search = "Seawch",
 		amount = "Amount",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		first_aid_kit_description = "The \"do-it-youwself\" doctow-kit.",
 		bandages = "Bandages",
 		bandages_description = "Fow all outchies and booboos.",
+		tourniquet = "Touwniquet",
+		tourniquet_description = "A wife-saving toow in cwiticaw situations, the touwniquet is designed to stop sewewe bweeding quickwy. Whiwe it offews minimaw heawing compawed to mowe compwehensive fiwst aid options, its abiwity to hawt bwood woss can be pivotaw in ewmewgency scenawyios.",
+		gauze = "Gauze-chan",
+		gauze_description = "Essential fow any fiwst aid kit, this gauze is soft, absorbent, and pewfect fow dwessing wounds. It pwovides the basic foundation fow wound cawe, hewping to manage bweeding and pwotect against infection. OwO",
 		oxygen_tank = "Oxygwenn Tank",
 		oxygen_tank_description = "A lung-expansion pack. OwO",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		no_vehicle_in_front = "Theiwe is nyot vehicwe in fwont of yuw.",
 		using_first_aid_kit = "Using Fiwst Aid Kit UwU",
 		using_bandages = "Using Bandages UwU",
+		using_tourniquet = "Using Tourniquet",
 		using_ifak = "Using IFAK UwU",
 		move_to_wash = "Move hewe to wash the vehicwe",
 		vehicle_too_clean = "The vehicwe is too cwean to be washed UwU.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		unable_to_use_lighter_in_vehicle = "You awe not able to use a lightwer in a vehicle.",
 		not_possible_in_a_vehicle = "This action is not possible in a vehicle.",
 		just_used_bandage = "You just used a fiwst aid kit, wait a bit befowe using another one.",
+		just_used_tourniquet = "You just used a tourniquet, wait a bit befowe using another one, senpai~",
 		drank_gasoline_death = "Gasowine Poisoning",
 		drank_bleach_death = "Bweach Poisoning UwU",
 		finished_joint = "UwU You finished youw joint.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		prop = "Pwop",
 		model_parameter_missing = "Da `modew` pawameter iws missing.",
 		model_parameter_invalid = "Da modew `${modew}` iws an invalid modew.",
-		model_parameter_is_not_an_object = "Da modew `${model}` is not an objewct.",
 		spawned_prop_non_networked = "Swawned a non-netwowked pwop with modew `${model}`.",
 		spawned_prop_networked = "Swawned a netwowked pwop with modew `${model}`.",
 		spawned_exact_prop = "Swawned exact pwop.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		not_able_to_spawn_while_moving = "Yuwu have to stand still when spawning a pwop.",
 		stand_still_to_place_prop = "Yuwu have to stand still to place a pwop.",
 		prop_no_interior = "Yuwu can only place this pwop outside.",
+		invalid_culling_value = "Invawid culling vawue, has to be between 10m and 2,500m. uwu",
+		invalid_model = "Invawid/Unknown modew `${name}` (${hash}). OwO",
 
 		invalid_prop_id = "Invalid pwop id.",
 		prop_deleted = "Pwop with id ${propId} was deleted.",

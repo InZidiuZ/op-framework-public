@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["tr-TR"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "Oluşturmak istediğiniz nesnenin modeli.",
 		spawn_prop_command_parameter_network = "ağ",
-		spawn_prop_command_parameter_network_help = "Prop'u ağda mı olmasını istersiniz? Hareket edebilmesi gereken prop'lar için sadece bunu etkinleştirmeniz önerilir.",
-		spawn_prop_command_parameter_no_pickup = "toplama yok",
-		spawn_prop_command_parameter_no_pickup_help = "Bu prop sadece süper yöneticiler tarafından toplanılsın mı?",
+		spawn_prop_command_parameter_network_help = "Eşyayı ağa bağlamak ister misiniz? Sadece hareket edebilmesi gereken eşyalar için bu seçeneği etkinleştirmeniz önerilir. Ancak tüm eşyalar hareket edilebilir değildir.",
+		spawn_prop_command_parameter_restricted = "kısıtlı",
+		spawn_prop_command_parameter_restricted_help = "Yalnızca süper yöneticiler tarafından alınabilmesine izin verilen bu eşya.",
+		spawn_prop_command_parameter_culling = "sönme",
+		spawn_prop_command_parameter_culling_help = "Eşyanın oluşturulduğu/maddenin yok edildiği sönme yarıçapı. Varsayılan yarıçap 200m'dir, yalnızca uzaktan görülebilen büyük eşyalar için arttırın.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		tracker_command = "izleyici",
 		tracker_command_help = "İzleyicinin görünürlüğünü açıp kapatır.",
 		tracker_command_parameter_break = "arıza",
-		tracker_command_parameter_break_help = "Takip cihazınızı arızalayın ve bununla ilgili bir bildirim gönderin. (Yeniden etkinleştirilemez, 20 dakika geçene kadar)",
+		tracker_command_parameter_break_help = "Trackerınızı kapatın ve bunun hakkında bir bildirim gönderin. Trackerınızı kapatmak için 'evet' veya 'e' yazın. (20 dakika geçmeden yeniden etkinleştirilemez)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "izleyiciler_split",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		return_button = "Geri Dön",
 		deposit = "${amount} Depozito",
 		no_deposit = "Depozito Yok",
-		deposit_not_enough_money = "Depozitoyu ödeyecek kadar paranız yok."
+		deposit_not_enough_money = "Depozitoyu ödeyecek kadar paranız yok.",
+		helipad = "Heliport"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		craft_torch = "Meşale Yap <i>Meşale</i>",
 		prepare_beans_toast = "Hazırla <i>Fasulye Tostu</i>",
 		mix_pancake_batter = "Hamur Karıştır <i>Pancake Hamuru</i>",
+		disassemble_bandages = "<i>Sargı Bezi</i>'ni sökmek",
+		craft_tourniquet = "<i>Tourniquet</i> yapmak",
 
 		search = "Arama",
 		amount = "Miktar",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		first_aid_kit_description = "Kendin yap doktor kiti.",
 		bandages = "Bandaj",
 		bandages_description = "Tüm çizikler ve kesikler için.",
+		tourniquet = "Tourniquet",
+		tourniquet_description = "Önemli durumlarda hayat kurtarıcı bir araç olan tourniquet, ciddi kanamaları hızlı bir şekilde durdurmaya yönelik tasarlanmıştır. Daha kapsamlı ilk yardım seçeneklerine kıyasla minimal iyileşme sağlasa da, kan kaybını durdurma yeteneği acil durumlarda hayati önem taşıyabilir.",
+		gauze = "Gazlı Bez",
+		gauze_description = "Herhangi bir ilk yardım çantası için gerekli olan gazlı bez, yumuşaktır, emicidir ve yaraları sarmak için mükemmeldir. Kanamayı kontrol etmeye ve enfeksiyondan korunmaya yardımcı olarak yara bakımının temelini oluşturur.",
 		oxygen_tank = "Oksijen Tankı",
 		oxygen_tank_description = "Bir akciğer genişletme paketi.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		no_vehicle_in_front = "Önünüzde araç yok.",
 		using_first_aid_kit = "Ilk Yardim Cantasi Kullanılıyor",
 		using_bandages = "Sargı Kullanılıyor",
+		using_tourniquet = "Tornike Kullanılıyor",
 		using_ifak = "IFAK Kullanılıyor",
 		move_to_wash = "Aracı yıkamak için buraya gelin",
 		vehicle_too_clean = "Araba çok temiz, yıkanamaz.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		unable_to_use_lighter_in_vehicle = "Araçta çakmak kullanamazsınız.",
 		not_possible_in_a_vehicle = "Bu eylem araçta mümkün değildir.",
 		just_used_bandage = "Yeni bir ilk yardım kiti kullanmadan önce biraz bekle.",
+		just_used_tourniquet = "Bir tornike kullandınız, başka bir tane kullanmadan önce biraz bekleyin.",
 		drank_gasoline_death = "Benzin Zehirlenmesi",
 		drank_bleach_death = "Bleach Zehirlenmesi",
 		finished_joint = "Jointinizi bitirdiniz.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		prop = "Prop",
 		model_parameter_missing = "`model` parametresi eksik.",
 		model_parameter_invalid = "Model `${model}` geçersiz bir model.",
-		model_parameter_is_not_an_object = "Model '${model}' bir nesne değil.",
 		spawned_prop_non_networked = "Ağ ile bağlantısı olmayan '${model}' modeli ile bir nesne spawn edildi.",
 		spawned_prop_networked = "Ağ ile bağlantılı '${model}' modeli ile bir nesne spawn edildi.",
 		spawned_exact_prop = "Tam olarak belirtilen nesne spawn edildi.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		not_able_to_spawn_while_moving = "Bir prop yerleştirirken durmanız gerekiyor.",
 		stand_still_to_place_prop = "Bir prop yerleştirmek için durmanız gerekiyor.",
 		prop_no_interior = "Sadece bu prop dışarıda yerleştirilebilir.",
+		invalid_culling_value = "Geçersiz eğme değeri, 10m ile 2.500m arasında olmalıdır.",
+		invalid_model = "Geçersiz/Bilinmeyen model `${name}` (${hash}).",
 
 		invalid_prop_id = "Geçersiz prop idsi.",
 		prop_deleted = "${propId} kimliğiyle prop silindi.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["ko-KR"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		spawn_prop_command_parameter_model_hash = "모델",
 		spawn_prop_command_parameter_model_hash_help = "생성할 소유물 모델입니다.",
 		spawn_prop_command_parameter_network = "네트워크",
-		spawn_prop_command_parameter_network_help = "프롭을 네트워크에 연결하시겠습니까? 움직일 수 있는 프롭에만 이 기능을 사용하는 것이 좋습니다.",
-		spawn_prop_command_parameter_no_pickup = "줍지 못함",
-		spawn_prop_command_parameter_no_pickup_help = "이 프롭은 슈퍼 어드민만 줍을 수 있도록 하시겠습니까?",
+		spawn_prop_command_parameter_network_help = "이 소품을 네트워크에 연결하시겠습니까? 이 기능은 이동이 가능해야 하는 소품에만 권장됩니다. 그러나 모든 소품이 이동 가능한 것은 아닙니다.",
+		spawn_prop_command_parameter_restricted = "제한됨",
+		spawn_prop_command_parameter_restricted_help = "이 소품을 수퍼 어드민만 집을 수 있도록 허용합니다.",
+		spawn_prop_command_parameter_culling = "집약",
+		spawn_prop_command_parameter_culling_help = "이 소품이 생성/소멸되는 외부 반경. 기본 반경은 200m이며, 멀리서 볼 수 있어야 하는 큰 소품인 경우에만 이 값을 증가시키세요.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "부동산 디버그",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		tracker_command = "추적기",
 		tracker_command_help = "추적기를 숨기거나 보입니다.",
 		tracker_command_parameter_break = "파괴",
-		tracker_command_parameter_break_help = "트래커를 파괴하고 그 사실을 디스패치합니다. (20분이 지날 때까지 다시 활성화할 수 없음)",
+		tracker_command_parameter_break_help = "트래커를 비활성화하고 관련 통지를 보냅니다. '예' 또는 'y'를 입력하여 트래커를 비활성화하세요. (20분 후에만 다시 활성화할 수 있습니다)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "추적기_분할",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		return_button = "돌아가기",
 		deposit = "$${amount} 예치금",
 		no_deposit = "예치금 없음",
-		deposit_not_enough_money = "예치금을 지불할 충분한 돈이 없습니다."
+		deposit_not_enough_money = "예치금을 지불할 충분한 돈이 없습니다.",
+		helipad = "헬리패드"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		craft_torch = "토치 만들기",
 		prepare_beans_toast = "<i>빈즈 온 토스트</i> 준비하기",
 		mix_pancake_batter = "<i>팬케이크 반죽</i> 만들기",
+		disassemble_bandages = "<i>붕대</i> 분해",
+		craft_tourniquet = "<i>투르니켓</i> 제작",
 
 		search = "조사",
 		amount = "수량",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		first_aid_kit_description = "\"자가 진료\" 의사 키트입니다.",
 		bandages = "붕대",
 		bandages_description = "모든 부상과 상처를 위한 것입니다.",
+		tourniquet = "투르니켓",
+		tourniquet_description = "중요한 상황에서 생명을 구하는 도구인 투르니켓은 심한 출혈을 빠르게 막는 데 사용됩니다. 보다 포괄적인 응급 처치 방법에 비해 치유 능력은 미미하지만, 피 흐름을 멈추는 능력은 응급 상황에서 결정적일 수 있습니다.",
+		gauze = "가저",
+		gauze_description = "어떤 구급상자에도 필수품인 이 가저는 부드럽고 흡수력이 좋으며 상처를 붕대로 감을 때 완벽합니다. 출혈을 관리하고 감염으로부터 보호하기 위한 상처 치료의 기본 기초를 제공합니다.",
 		oxygen_tank = "산소 탱크",
 		oxygen_tank_description = "폐확장 팩입니다.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		no_vehicle_in_front = "앞에 차량이 없습니다.",
 		using_first_aid_kit = "응급 처치 키트를 사용 중",
 		using_bandages = "붕대를 사용 중",
+		using_tourniquet = "터니켓 사용 중",
 		using_ifak = "IFAK를 사용 중",
 		move_to_wash = "차량 세차를 위해 이곳으로 이동하십시오.",
 		vehicle_too_clean = "이 차량은 세차하기에 너무 깨끗합니다.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		unable_to_use_lighter_in_vehicle = "차 안에서 라이터를 사용할 수 없습니다.",
 		not_possible_in_a_vehicle = "이 작업은 차 안에서는 불가능합니다.",
 		just_used_bandage = "구급상자를 방금 사용했습니다. 다른 것을 사용하기 전에 잠시 기다려주세요.",
+		just_used_tourniquet = "터니켓을 방금 사용했습니다. 다시 사용하기 전에 잠시 기다려주세요.",
 		drank_gasoline_death = "휘발유 중독",
 		drank_bleach_death = "염소산 나트륨 중독",
 		finished_joint = "담배를 마셨습니다.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		prop = "오브젝트",
 		model_parameter_missing = "`model` 매개 변수가 누락되었습니다.",
 		model_parameter_invalid = "`${model}` 모델은 유효하지 않습니다.",
-		model_parameter_is_not_an_object = "`${model}` 모델은 객체가 아닙니다.",
 		spawned_prop_non_networked = "모델 `${model}`을(를) 사용하여 네트워크가 연결되지 않은 오브젝트를 생성했습니다.",
 		spawned_prop_networked = "모델 `${model}`을(를) 사용하여 네트워크가 연결된 오브젝트를 생성했습니다.",
 		spawned_exact_prop = "정확한 소품이 스폰되었습니다.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		not_able_to_spawn_while_moving = "소품을 스폰할 때는 가만히 서 있어야 합니다.",
 		stand_still_to_place_prop = "소품을 배치하려면 가만히 서 있어야 합니다.",
 		prop_no_interior = "이 소품은 실내에만 배치할 수 있습니다.",
+		invalid_culling_value = "올바르지 않은 개량 값입니다. 10m에서 2,500m 사이여야 합니다.",
+		invalid_model = "잘못된/알 수 없는 모델 `${name}` (${hash}).",
 
 		invalid_prop_id = "유효하지 않은 소품 ID입니다.",
 		prop_deleted = "${propId} 번 소품이 삭제되었습니다.",

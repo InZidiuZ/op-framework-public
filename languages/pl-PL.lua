@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 28 (do not change)
+-- AUTO LOCALES: 29 (do not change)
 
 OP.Global.Locales.Languages["pl-PL"] = {
 	-- configuration settings for language
@@ -3015,9 +3015,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		spawn_prop_command_parameter_model_hash = "Model",
 		spawn_prop_command_parameter_model_hash_help = "Model propa, który chcesz zrespić.",
 		spawn_prop_command_parameter_network = "Sieć",
-		spawn_prop_command_parameter_network_help = "Jeżeli chcesz połączyć te propy to zaleca się żeby sieciowe były animowane.",
-		spawn_prop_command_parameter_no_pickup = "brak odbioru",
-		spawn_prop_command_parameter_no_pickup_help = "Czy ten rekwizyt powinien być wybierany tylko przez superadministratorów?",
+		spawn_prop_command_parameter_network_help = "Czy chcesz połączyć obiekt z siecią? Zaleca się włączenie tej opcji tylko dla obiektów, które powinny móc się poruszać. Nie wszystkie obiekty są ruchome.",
+		spawn_prop_command_parameter_restricted = "ograniczony",
+		spawn_prop_command_parameter_restricted_help = "Zezwalaj jedynie superadministratorom na podnoszenie tego obiektu.",
+		spawn_prop_command_parameter_culling = "wyłączanie obiektu",
+		spawn_prop_command_parameter_culling_help = "Promień wyłączania, na odległość której obiekt jest odtwarzany/usuwany. Domyślny promień wynosi 200 m, zwiększaj tę wartość tylko dla dużych obiektów, które powinny być widoczne z daleka.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3419,7 +3421,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		tracker_command = "tracker",
 		tracker_command_help = "włącz/wyłącz swój gps.",
 		tracker_command_parameter_break = "przerwa",
-		tracker_command_parameter_break_help = "Zniszcz swój śledzący urządzenie i wyślij powiadomienie o tym. (Nie można ponownie włączyć przez kolejne 20 minut)",
+		tracker_command_parameter_break_help = "Zniszcz swój tracker i wyślij powiadomienie o jego uszkodzeniu. Wpisz `yes` lub `y`, aby zniszczyć swój tracker. (Nie można go ponownie aktywować przez 20 minut)",
 		tracker_command_substitutes = "gps",
 
 		trackers_split_command = "trackers_split",
@@ -4255,7 +4257,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		return_button = "Powrót",
 		deposit = "$${amount} Wpłata",
 		no_deposit = "Brak wpłaty",
-		deposit_not_enough_money = "Nie masz wystarczająco dużo pieniędzy, aby zapłacić."
+		deposit_not_enough_money = "Nie masz wystarczająco dużo pieniędzy, aby zapłacić.",
+		helipad = "Lądowisko dla helikopterów"
 	},
 
 	airstrike = {
@@ -7402,6 +7405,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		craft_torch = "Wykonaj <i>Latarkę</i>",
 		prepare_beans_toast = "Przygotuj <i>Fasolę na grzance</i>",
 		mix_pancake_batter = "Wymieszaj <i>Ciasto na naleśniki</i>",
+		disassemble_bandages = "Rozkładaj <i>bandaże</i>",
+		craft_tourniquet = "Wytwarzaj <i>tasiemki uciskowe</i>",
 
 		search = "Szukaj",
 		amount = "Ilość",
@@ -7471,6 +7476,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		first_aid_kit_description = "Zestaw najpotrzebniejszych medykamentów.",
 		bandages = "Bandaże",
 		bandages_description = "Można plasterek?",
+		tourniquet = "Tasiemka uciskowa",
+		tourniquet_description = "Narzędzie ratujące życie w sytuacjach krytycznych, tasiemka uciskowa jest przeznaczona do szybkiego zatrzymywania ciężkiego krwotoku. Chociaż oferuje minimalne leczenie w porównaniu z bardziej kompleksowymi opcjami pierwszej pomocy, jej zdolność do zatrzymywania utraty krwi może być decydująca w sytuacjach awaryjnych.",
+		gauze = "Gaza",
+		gauze_description = "Niezbędna do każdej apteczki pierwszej pomocy, ta gaza jest miękka, chłonna i idealna do opatrywania ran. Stanowi podstawę podstawowej opieki ranowej, pomagając w kontroli krwawienia i ochronie przed infekcją.",
 		oxygen_tank = "Butla z tlenem",
 		oxygen_tank_description = "Zbiornik pozwalający na eksploracje głębin morskich i oceanów.",
 		ifak = "IFAK",
@@ -9188,6 +9197,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		no_vehicle_in_front = "Przed tobą nie ma pojazdu.",
 		using_first_aid_kit = "Opatrujesz rany",
 		using_bandages = "Korzystanie z bandaży",
+		using_tourniquet = "Używanie opaski uciskowej",
 		using_ifak = "Używanie IFAK",
 		move_to_wash = "Stań tutaj aby wyczyścic pojazd",
 		vehicle_too_clean = "Pojazd jest zbyt czysty, aby go umyć.",
@@ -9213,6 +9223,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		unable_to_use_lighter_in_vehicle = "Nie możesz użyć zapalniczki podczas podróży pojazdem.",
 		not_possible_in_a_vehicle = "Nie możesz tego zrobić w pojeździe.",
 		just_used_bandage = "Poczekaj chwilę, zanim użyjesz następnej apteczki",
+		just_used_tourniquet = "Właśnie użyłeś opaski uciskowej, poczekaj chwilę przed zastosowaniem kolejnej.",
 		drank_gasoline_death = "Zatrucie benzyną",
 		drank_bleach_death = "Zatrucie wybielaczem",
 		finished_joint = "Zakończyłeś palenie jointa.",
@@ -11217,7 +11228,6 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		prop = "Prop",
 		model_parameter_missing = "Brakuje parametru model",
 		model_parameter_invalid = "Model `${model}` jest nieprawidłowy.",
-		model_parameter_is_not_an_object = "Model `${model}` nie jest przedmiotem.",
 		spawned_prop_non_networked = "Zrespiono niesieciowy model propu `${model}`.",
 		spawned_prop_networked = "Zrespiono sieciowy model propu. `${model}`.",
 		spawned_exact_prop = "Zrespiono dokładny prop.",
@@ -11227,6 +11237,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		not_able_to_spawn_while_moving = "Zatrzymaj się żeby zrespić propy.",
 		stand_still_to_place_prop = "Musisz stać w miejscu żeby zrespić propy.",
 		prop_no_interior = "Ten prop można umieścić tylko poza interiorem.",
+		invalid_culling_value = "Nieprawidłowa wartość eliminacji, musi mieścić się w zakresie od 10 m do 2 500 m.",
+		invalid_model = "Nieprawidłowy/nieznany model `${name}` (${hash}).",
 
 		invalid_prop_id = "Nieprawidłowy identyfikator propu.",
 		prop_deleted = "Prop o id ${propId} został usunięty.",
