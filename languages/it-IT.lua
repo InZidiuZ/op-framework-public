@@ -6965,9 +6965,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 		belt = "CINTURA",
 		oil = "OLIO",
 		manual = "MANUALE",
-		limiter = "LIMITATORE",
+		limiter = "Cruise Control",
 		gear_uc = "CAMBIO",
-		fuel = "carburante",
+		fuel = "Benzina",
 		nitro = "nitro",
 		battery = "batteria",
 		fps = "FPS",
@@ -6977,10 +6977,10 @@ OP.Global.Locales.Languages["it-IT"] = {
 		ground_asl = "AGL/ASL (${unità})",
 		heading = "DIREZIONE",
 		gear = "cambio",
-		rpm = "giri/min",
+		rpm = "rpm",
 		degrees = "°C",
 		degrees_f = "°F",
-		npc_kills = "${uccisioni} locali uccisi t/w ${investiti} investiti",
+		npc_kills = "${uccisioni} Cittadini uccisi t/w ${investiti} investiti",
 		steps_walked_deaths = "${passiPercorsi} passi t/w ${morte} morti",
 		altitude_temperature = "${altitudine} ${unità} t/w ${temperatura}${gradi}",
 		scuba_timer = "Ossigeno rimanente: ${timer}",
@@ -9258,7 +9258,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	jackpot = {
-		press_to_deposit = "Premi INPUT_REPLAY_SHOWHOTKEY per depositare gli oggetti nel Jackpot Online.",
+		press_to_deposit = "Premi ~INPUT_REPLAY_SHOWHOTKEY~ per depositare gli oggetti nel Jackpot Online.",
 		can_only_withdraw_at_casino = "Puoi ritirare solo al casinò.",
 
 		took_jackpot_fees = "Prelevate le commissioni del jackpot. Rimossi ${removedTotalItems} oggetti del valore di $${removedTotalWorth} da ${inventories} inventari.",
@@ -9390,7 +9390,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	letterboxes = {
-		press_to_access = "Premi g${SeatEjectKey} wper accedere alla ${type}",
+		press_to_access = "Premi [${SeatEjectKey}] per accedere alla ${type}",
 		letterbox_broken = "La ${type} è rotta.",
 
 		type_letterbox = "buca delle lettere",
@@ -13271,11 +13271,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		not_enough_balance_to_retrieve = "Non hai abbastanza denaro in nessuno dei tuoi account per recuperare questo veicolo.",
 		press_to_access = "Premi ~INPUT_CONTEXT~ per accedere al garage.",
 		ui_return = "Torna",
-		ui_my_vehicle_list = "I Miei Veicoli",
+		ui_my_vehicle_list = "Veicoli Personali",
 		ui_other_vehicle_list = "Altri Veicoli",
-		ui_store_vehicle = "Store Vehicle",
-		ui_vehicle_sell = "Vendi Veicoli",
-		ui_retrieve_vehicle = "Ritira Veicolo",
+		ui_store_vehicle = "Parcheggia Veicolo",
+		ui_vehicle_sell = "Vendi Veicolo",
+		ui_retrieve_vehicle = "Ritira il tuo Veicolo",
 		ui_close_menu = "Chiudi Menu",
 		garage_letter = "Garage ${lettera}",
 		garage_emergency = "Garage ${tipo}",
