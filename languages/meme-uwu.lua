@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["meme-uwu"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		bed_command_help = "Attwempt to way down in the neawest bed uwu.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "pickuwu_bicycle",
+		pickup_bicycle_command_help = "Piwck up da cwosest biwcycle.",
+		pickup_bicycle_command_substitutes = "pw",
+
 		-- game/bills
 		create_bill_command = "cweate_bill",
 		create_bill_command_help = "Bwiww anothew pwayew a cewtain amount of money.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "mute_boomboxes",
+		mute_boomboxes_command_help = "Mutes/Unmutes aww boomboxes.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipwe_boomboxes",
 		wipe_boomboxes_command_help = "Wipwes boomboxes.",
 		wipe_boomboxes_command_parameter_radius = "wadius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		press_to_leave_bed = "Pwess ~INPUT_CONTEXT~ to weave the bed."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "No biwcycle nyeawby.",
+		failed_pickup_bicycle = "Faiwled to pickuwu biwcycle.",
+		picking_up = "Piwcking Up Biwcycle",
+		moving_too_fast = "You'we muvwing tuwu fast tuwu pick up da biwcycle.",
+
+		picked_up_logs_title = "Picked Up Biwcycle",
+		picked_up_logs_details = "${conswoweName} pickuwu up a biwcycle wid da netwowk id #${netwowkId} (`${modewName}`).",
+		dropped_bicycle_logs_title = "Dwopped Bike",
+		dropped_bicycle_logs_details = "${conswoweName} dwopped the bike they wewe cawwying."
+	},
+
 	bills = {
 		select_player = "Sewect Pwayer",
 		no_nearby_players = "No biwwabwe pwayers neaw yew.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		skip_song = "Skip Song",
 		volume = "Vowume",
 		music = "Mewsic",
+
+		mute_boomboxes = "Mute Boomboxes",
+		mute_boomboxes_enabled = "Aww boomboxes awe nyow muted.",
+		mute_boomboxes_disabled = "Aww boomboxes awe no wongew muted.",
 
 		store_boombox = "Stowe the Boombox in youw inventowy",
 		put_boombox_down = "Put the Boombox on the gwound",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		milking_cow_failed = "OwO, Failed to milk cow."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Yu awe owewdosing one fenyanytew.",
+		overdose = "Fenyanytew Owewdose",
+
+		grind_painkillers = "[${IntewactionKey}] Gwind up painkiwwews",
+		grinding_painkillers = "Gwinding Up Painkiwwews",
+		mix_acetone = "[${IntewactionKey}] Mix with acetonye",
+		mixing_acetone = "Mixwing With Acetwone",
+		add_hydrogen_peroxide = "[${IntewactionKey}] Add Hydwogen Pewoxide",
+		adding_hydrogen_peroxide = "Adding Hydwogen Pewoxide",
+		boil = "[${IntewactionKey}] Boiw Ingwidients",
+		boiling = "Boiwing Ingwidients",
+		cool_down = "[${IntewactionKey}] Coow Down",
+		cooling_down = "Coowing Down",
+		fill_ampules = "[${IntewactionKey}] Fill Ampules",
+		filling_ampules = "Filling Ampules",
+
+		selling_fentanyl = "Selling Fentanyl",
+		press_to_sell_fentanyl = "Pwess ~INPUT_CONTWEXT~ to sell Fentanyl.",
+		local_not_interested = "The wocaw doesn't seem to be intewested wight nyow.",
+
+		something_went_wrong = "Somethwing went wwong.",
+		made_fentanyl_logs_title = "Made Fentanyl",
+		made_fentanyl_logs_details = "${consoweNyame} made ${amount}x fentanyl.",
+		sold_fentanyl_logs_title = "Sowd Fentanyl",
+		sold_fentanyl_logs_details = "${consoweNyame} sowd 1x ampuwe of fentanyl fow $${wewawd}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Taking Fingerprint",
 		already_fingerprinting = "Uwu aweady taking a fingewpwin of a pwayew.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		press_to_access_shared_storage = "Pwess ~INPUT_REPLAY_SHOWHOTKEY~ to access da shawed stowage.",
 		device_printout_details = "<b>Type:</b> <i>${type}</i>, <b>Text:</b> <i>${text}</i>",
 		copy_serial_number = "Copy Sewiaw Nyumbew",
+		copy_fingerprint = "Copy Fingewpwint",
 		serial_number_copied = "${itemName}, Sewiaw Nyumbew: ${serialNumber}",
 
 		failed_give = "Faiwed to give item(s) to playew.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		lean = "Lean",
 		lean_description = "Sippin' on some sizzurp, sip, sippin' on some, sip UwU.",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "Dubbed the \"sneaky snooze\", fentanyl is a powewfuw wittwe potion that packs a wawwop. With just a whispew of this substance, you can send even the most wide-awake into a wowwd of dweams. Handwe with cawe, though! It's so potent that if dweams wewe cuwwency, you'd be a biwwionaiwe in onye dose. Pewfect fow when you nyeed to make big pwobwems into sweepy onyes.",
+
 		grimace_shake = "Gwimace Shake",
 		grimace_shake_description = "Cwazy? I was cwazy once. They put me in a woom. A wubbew woom. A wubbew woom with wats. And wats make me cwazy. Cwazy? I was cwazy once. They put me in a woom. A wubbew woom. A wubbew woom with wats. And wats make me cwazy. Cwazy? I was cwazy once. They put me in a woom. A wubbew woom. A wubbew woom with wats. And wats make me cwazy. Cwazy? I was cwazy once. They put me in a woom. A wubbew woom. A wubbew woom with wats. And wats make me cwazy. Cwazy? I was cwazy once.....",
+
+		hydrogen_peroxide = "Hydwogen Pewoxide",
+		hydrogen_peroxide_description = "This bubbwy bweuw, knyown fow its fizz and cwean, is a stapwe in scyence wabs and beyond. Whiwe it’s famous fow making cuts and suwfaces spotwess, it’s awso got a knyack fow mixing up with othew ingwedients to \"dwyeam up\" some pwetty potent concoctions. Handwe with enwightenment and a bit of caution.",
 
 		jolly_ranchers = "Jolly Wanchews",
 		jolly_ranchers_description = "Induwge in the sweet and tangy flavors of Jolly Wanchews, the classic hawd candies that buwst with fwuity goodness ^w^.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		button_confirm = "Confwim",
 		button_delete = "Dewete",
 		button_manage = "Manage",
+		button_leave = "Weave",
 		create_account = "Cweate Account",
 		delete_account = "Dewete Account",
 		confirm_delete = "Awe you suwe you want to pewmanentwy dewete this account and aww wogs associated with it? This action cannot be undwone.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		insufficient_balance = "Account balance is insufficient, nya~.",
 		insufficient_bank_balance = "Your bank balance is insufficient, nya~.",
 		account_description = "Only the owner of the account can delete and manage it, nya~. People with access to the account can only withdraw and deposit, nya~. You can create up to 5 different savings accounts, nya~.",
+		leave_account = "Weave Account",
+		confirm_leave = "Awe you suwe you want to weave \"${name}\"? You wiww nyo wongew have access to this account.",
 
 		add_access_logs_title = "Savings Add Access OwO",
 		add_access_logs_details = "${consoleName} gwafe $`${firstName} ${lastName}` #${characterId} access to savings account ${accountId}. UwU",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		create_account_logs_details = "${consoleName} cweated a new savings account named $`${accountName}` with the id ${accountId}. UwU",
 		deleted_account_logs_title = "Savings Dewete Account",
 		deleted_account_logs_details = "${consoleName} deweted a savings account nyamed `${accountName}` with the id ${accountId}.",
+		left_account_logs_title = "Savings Weft Account OwO",
+		left_account_logs_details = "${consoleName} weft a savings account named `${accountName}` with the id ${accountId}.",
 		withdraw_logs_title = "Savings Withdwaww",
 		withdraw_logs_details = "${consoleName} withdrew $${amount} fwom savings account ${accountId} with Weason `${reason}`.",
 		deposit_logs_title = "Savings Depowosit",

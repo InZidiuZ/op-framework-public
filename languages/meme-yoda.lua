@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["meme-yoda"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		bed_command_help = "Nearest bed, attempt to lay down in.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "pickup_bicycle",
+		pickup_bicycle_command_help = "Choose up the closest bicycle, you must.",
+		pickup_bicycle_command_substitutes = "pb",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Another player bill a certain amount of money, you can.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "mute_boomboxes",
+		mute_boomboxes_command_help = "Mutes/Unmutes all boomboxes, this command does.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Boomboxes, wipe them you can.",
 		wipe_boomboxes_command_parameter_radius = "radius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		press_to_leave_bed = "Press ~INPUT_CONTEXT~ to leave the bed, hmmm."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "Nearby, no bicycle is.",
+		failed_pickup_bicycle = "Failed to pickup bicycle, it has.",
+		picking_up = "Bicycle, picking up, I am.",
+		moving_too_fast = "Moving too fast, you are, to pick up the bicycle.",
+
+		picked_up_logs_title = "Picked Up Bicycle, I Have",
+		picked_up_logs_details = "${consoleName}, a bicycle picked up, has with the network id #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Bicycle Dropped Has Been",
+		dropped_bicycle_logs_details = "${consoleName} dropped the bicycle they were carrying."
+	},
+
 	bills = {
 		select_player = "Player Select",
 		no_nearby_players = "Billable players near you, there are none.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		skip_song = "Skip song, you may.",
 		volume = "Volume, adjust you can.",
 		music = "Music, listen to you can.",
+
+		mute_boomboxes = "Boomboxes Mute",
+		mute_boomboxes_enabled = "Muted, all boomboxes are now.",
+		mute_boomboxes_disabled = "Muted, all boomboxes are no longer.",
 
 		store_boombox = "Store the Boombox in your inventory, you can.",
 		put_boombox_down = "Put the Boombox on the ground, you must.",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		milking_cow_failed = "Failed to milk cow, I have."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "On fentanyl, you are overdosing.",
+		overdose = "Overdose of Fentanyl",
+
+		grind_painkillers = "[${InteractionKey}] Grind painkillers up, you must",
+		grinding_painkillers = "Painkillers Being Grinded Up",
+		mix_acetone = "[${InteractionKey}] Mix with acetone, you should.",
+		mixing_acetone = "With Acetone, mixing, hmm",
+		add_hydrogen_peroxide = "[${InteractionKey}] Hydrogen Peroxide, add, hmm",
+		adding_hydrogen_peroxide = "Hydrogen Peroxide, adding, hmm",
+		boil = "[${InteractionKey}] Ingridients, boil, hmm",
+		boiling = "Ingridients, boiling, hmm",
+		cool_down = "[${InteractionKey}] Down, cool, hmm",
+		cooling_down = "Down, cooling, hmm",
+		fill_ampules = "[${InteractionKey}] Ampules, Fill, hmm",
+		filling_ampules = "Ampules, Filling, hmm",
+
+		selling_fentanyl = "Fentanyl, selling, hmm",
+		press_to_sell_fentanyl = "Sell Fentanyl, hmm, press ~INPUT_CONTEXT~.",
+		local_not_interested = "Interested right now, the local doesn't seem.",
+
+		something_went_wrong = "Went wrong, something has.",
+		made_fentanyl_logs_title = "Fentanyl Made",
+		made_fentanyl_logs_details = "${consoleName} ${amount}x fentanyl made.",
+		sold_fentanyl_logs_title = "Fentanyl Sold",
+		sold_fentanyl_logs_details = "1x ampule of fentanyl sold by ${consoleName} for $$${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Fingerprint, taking it is.",
 		already_fingerprinting = "Taking a fingerprint of a player, you already are.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		press_to_access_shared_storage = "Access the shared storage, you may. Press ~INPUT_REPLAY_SHOWHOTKEY~.",
 		device_printout_details = "<b>Type:</b> <i>${type}</i>, <b>Text:</b> <i>${text}</i>",
 		copy_serial_number = "Copy Serial Number",
+		copy_fingerprint = "Fingerprint, copy",
 		serial_number_copied = "Serial Number, ${serialNumber} it is, ${itemName}.",
 
 		failed_give = "Failed to give item(s) to player.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		lean = "Lean",
 		lean_description = "Sizzurp sippin', sip, some sippin', sip.",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "\"The sneaky snoozer\", fentanyl dubbed is. A potent potion, small but mighty. A whisper, and wide-awake folks into dreamland sent. Handle with care, you must! So potent, if dreams were currency, a billionaire you'd be in one dose. Need to turn big problems into sleepy ones, perfect it is.",
+
 		grimace_shake = "Shake Grimace",
 		grimace_shake_description = "Crazy? Once crazy I was. In a room they locked me. A rubber room. With rats it had. And rats, they make me crazy. Crazy? Once crazy I was. Locked me in a room they did. A rubber room. With rats it had. And rats, they make me crazy. Crazy? Once crazy I was. Locked me in a room they did. A rubber room. With rats it had. And rats, they make me crazy. Crazy? Once crazy I was. Locked me in a room they did. A rubber room. With rats it had. And rats, they make me crazy. Crazy? Once crazy I was.....",
+
+		hydrogen_peroxide = "Hydrogen Peroxide, it is",
+		hydrogen_peroxide_description = "Bubbly brew, this is, known for its fizz and clean. A staple in science labs and beyond, it is. Famous for making cuts and surfaces spotless, it is. Also, a knack for mixing up with other ingredients to \"dream up\" some potent concoctions, it has. Handle with enlightenment and a bit of caution, you must.",
 
 		jolly_ranchers = "Ranchers Jolly",
 		jolly_ranchers_description = "Indulge in flavor sweet and tangy of Jolly Ranchers, hard candies classic bursting with fruity goodness they are.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		button_confirm = "Confirm, ye shall",
 		button_delete = "Delete, ye must",
 		button_manage = "Manage, ye should",
+		button_leave = "Leave, you should",
 		create_account = "Account, create ye shall",
 		delete_account = "Account, delete ye shall",
 		confirm_delete = "Sure, ye want to delete this account and all linked logs, hmm? Cannot be undone, this action.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		insufficient_balance = "Account balance is insufficient, it is.",
 		insufficient_bank_balance = "Your bank balance is insufficient, it is.",
 		account_description = "Only the owner of the account can delete and manage it. People with access to the account can only withdraw and deposit. You can create up to 5 different savings accounts it can.",
+		leave_account = "Leave Account, you will",
+		confirm_leave = "Are you sure you want to leave \"${name}\"? You will no longer have access to this account, you will.",
 
 		add_access_logs_title = "Add Access, Savings Does",
 		add_access_logs_details = "To savings account ${accountId}, ${consoleName} gave `${firstName} ${lastName}` #${characterId} access.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		create_account_logs_details = "Named `${accountName}`, ${consoleName} created account new with the id ${accountId} savings.",
 		deleted_account_logs_title = "Account Delete, Savings",
 		deleted_account_logs_details = "Deleted, ${consoleName} did, a savings account named `${accountName}`, with the id ${accountId}.",
+		left_account_logs_title = "Savings Left, Account",
+		left_account_logs_details = "${consoleName} a savings account named `${accountName}` with the id ${accountId}, left.",
 		withdraw_logs_title = "Withdraw, Savings",
 		withdraw_logs_details = "${consoleName} withdrew $${amount} from savings account ${accountId} with reason `${reason}`.",
 		deposit_logs_title = "Deposit, Savings",

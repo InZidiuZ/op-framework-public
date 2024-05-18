@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["meme-minionese"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		bed_command_help = "BANANA! Attempt to lay down in the nearest bed.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "gibberish_gibberish",
+		pickup_bicycle_command_help = "Gibberish the gibberish gibberish.",
+		pickup_bicycle_command_substitutes = "gb",
+
 		-- game/bills
 		create_bill_command = "cre-bo-bill",
 		create_bill_command_help = "Bello anohter ployer a cotion omout of money.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "mute_boomboxes",
+		mute_boomboxes_command_help = "Mutes/Unmutes all boomboxes.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Bee Do Bee Do Bee Do! Wipe boomboxes.",
 		wipe_boomboxes_command_parameter_radius = "radius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		press_to_leave_bed = "Press ~INPUT_CONTEXT~ to leave the bed. Ba-na-naaaa!"
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "Banana banana.",
+		failed_pickup_bicycle = "Banana to gibberish gibberish.",
+		picking_up = "Gibberish Gibberish Gibberish",
+		moving_too_fast = "Gibberish gibberish gibberish gibberish gibberish gibberish.",
+
+		picked_up_logs_title = "Gibberish Gibberish Gibberish",
+		picked_up_logs_details = "${bananaName} gibberish up a gibberish with the gibberish id gibberish (${bananaId}) (`${bananaName}`).",
+		dropped_bicycle_logs_title = "Bopoto Boptoki",
+		dropped_bicycle_logs_details = "${consoleName} bopoto the bicycle they were carrying."
+	},
+
 	bills = {
 		select_player = "Bello! Select Banana!",
 		no_nearby_players = "Oopsie! No billable Bananas near you.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		skip_song = "Tank yu, next",
 		volume = "Belloome",
 		music = "Musica",
+
+		mute_boomboxes = "Bistibid Boomboxes",
+		mute_boomboxes_enabled = "All boomboxes are now muted.",
+		mute_boomboxes_disabled = "All boomboxes are no longer muted.",
 
 		store_boombox = "Store the Bee-do Boombox in your inventory",
 		put_boombox_down = "Put the Bee-do Boombox on the ground",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		milking_cow_failed = "Bana loogaad iyo hayaan."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Bababa balalala on fentanyl.",
+		overdose = "Fentanyl Balalala",
+
+		grind_painkillers = "[${InteractionKey}] Grind up painkillers",
+		grinding_painkillers = "Lingipopo Up Painkillers",
+		mix_acetone = "[${InteractionKey}] Mix with acetone",
+		mixing_acetone = "Mixing wit Babi Banana",
+		add_hydrogen_peroxide = "[${InteractionKey}] Add Hydrogen Peroxide",
+		adding_hydrogen_peroxide = "Adding Hydrogen Peroxide",
+		boil = "[${InteractionKey}] Boil Ingridients",
+		boiling = "Boiling Ingridients",
+		cool_down = "[${InteractionKey}] Cool Down",
+		cooling_down = "Cooling Down",
+		fill_ampules = "[${InteractionKey}] Fill Ampules",
+		filling_ampules = "Filling Ampules",
+
+		selling_fentanyl = "Selling Fentanyl",
+		press_to_sell_fentanyl = "Press ~INPUT_CONTEXT~ to sell Fentanyl.",
+		local_not_interested = "Bello lok aman't seboto bah.",
+
+		something_went_wrong = "Babble la pai.",
+		made_fentanyl_logs_title = "Made Fentanyl",
+		made_fentanyl_logs_details = "${consoleName} made ${amount}x fentanyl.",
+		sold_fentanyl_logs_title = "Sold Fentanyl",
+		sold_fentanyl_logs_details = "${consoleName} sold 1x ampule of fentanyl for $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Me want taking Fingerprint",
 		already_fingerprinting = "Banaana! Banaana! Banana-nana, you already taking a fingerprint of a player.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		press_to_access_shared_storage = "Baba! Press ~INPUT_REPLAY_SHOWHOTKEY~ to access the shared storage.",
 		device_printout_details = "<b>Kele:</b> <i>${type}</i>, <b>Gelatii:</b> <i>${text}</i>",
 		copy_serial_number = "Bello Serial Number",
+		copy_fingerprint = "Copi Kikikiki",
 		serial_number_copied = "${itemName}, Bello Serial Number: ${serialNumber}",
 
 		failed_give = "Failed to bababa kelzi(s) to jiji.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		lean = "Banana Juice",
 		lean_description = "Sippin on some sizzurp, ba-ba-ba-na-na, ba-ba-ba-na-na-na.",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "Dubbed the \"sneaky snoozer\", fentanyl is a powerful little potion that packs a wallop. With just a whisper of this substance, you can send even the most wide-awake into a world of dreams. Handle with care, though! It's so potent that if dreams were currency, you'd be a billionaire in one dose. Perfect for when you need to make big problems into sleepy ones.",
+
 		grimace_shake = "Bee-do Shake",
 		grimace_shake_description = "Bello? Me bello once. Poopaye poopa! Me bello once. They put me in a pothole. A pothole with bapple. And bapple make me bello. Bello? Me bello once. Poopaye poopa! Me bello once. They put me in a pothole. A pothole with bapple. And bapple make me bello. Bello? Me bello once. Poopaye poopa! Me bello once. They put me in a pothole. A pothole with bapple. And bapple make me bello. Bello? Me bello once. Poopaye poopa! Me bello once.....",
+
+		hydrogen_peroxide = "Bello Hydrogen Peroxide",
+		hydrogen_peroxide_description = "Bello bubbly brew, known for its fizz and clean, is a staple in science labs and beyond. Bello banana! While it’s famous for making cuts and surfaces spotless, it’s also got a knack for mixing up with other ingredients to \"dream up\" some pretty potent concoctions. Handle with enlightenment and a bit of caution.",
 
 		jolly_ranchers = "Jelly Jigglers",
 		jolly_ranchers_description = "Indulge in the sweet and tangy flavors of Jelly Jigglers, the classic hard candies that burst with fruity goodness.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		button_confirm = "Bello",
 		button_delete = "Bello ta ta",
 		button_manage = "Bababa bababa",
+		button_leave = "Loomoo",
 		create_account = "Bello tulolo",
 		delete_account = "Bello ta ta tulolo",
 		confirm_delete = "Bee doo bee doo bee doo tulolo tiki tak, tulolo tiki tak ke ba ba da ga? Tulutu bababa banana. Baa na na baa na na.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		insufficient_balance = "Balamp o bidahin balanda hu.",
 		insufficient_bank_balance = "Balamp o bidahin bank balance nan hu.",
 		account_description = "Ke tu amp hum bu di account, bidahin hu dipwatak o pwa hinhidu capsalanan hu. Mute tu pwa hahain hu, taduhu hum withdraw hu diposit. Ke mutin bu, mekanin tu upa 5 pwa savings account hu.",
+		leave_account = "Loomoo Account",
+		confirm_leave = "Bello poopa! Bello poopa! Are you sure you want to loomoo \"${name}\"? You will no longer have access to this account.",
 
 		add_access_logs_title = "Kumpulan Akses Penambahan",
 		add_access_logs_details = "${consoleName} memberikan `${firstName} ${lastName}` #${characterId} akses ke rekening tabungan ${accountId}.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		create_account_logs_details = "${consoleName} membuat rekening tabungan baru dengan nama `${accountName}` dengan id ${accountId}.",
 		deleted_account_logs_title = "Bello Delete Account",
 		deleted_account_logs_details = "${consoleName} delete a bello account named `${accountName}` with the id ${accountId}.",
+		left_account_logs_title = "Bababa Bottom Account",
+		left_account_logs_details = "${consoleName} left a bababa account named `${accountName}` with the id ${accountId}.",
 		withdraw_logs_title = "Bello Plunder",
 		withdraw_logs_details = "${consoleName} withdrew $${amount} frum savingz uccount ${accountId} with reasun `${reason}`.",
 		deposit_logs_title = "Bello Deposit",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["meme-roadman"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		bed_command_help = "Tryna get some rest in the nearest bed, innit.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "undefined",
+		pickup_bicycle_command_help = "undefined",
+		pickup_bicycle_command_substitutes = "undefined",
+
 		-- game/bills
 		create_bill_command = "create_cash",
 		create_bill_command_help = "Mandem, bill another brudda a certain amount of funds.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "undefined",
+		mute_boomboxes_command_help = "undefined",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Allows you to wipe them boomboxes clean, fam.",
 		wipe_boomboxes_command_parameter_radius = "radius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		press_to_leave_bed = "Press ~INPUT_CONTEXT~ to bounce off da bed."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "undefined",
+		failed_pickup_bicycle = "undefined",
+		picking_up = "undefined",
+		moving_too_fast = "undefined",
+
+		picked_up_logs_title = "undefined",
+		picked_up_logs_details = "undefined",
+		dropped_bicycle_logs_title = "undefined",
+		dropped_bicycle_logs_details = "undefined"
+	},
+
 	bills = {
 		select_player = "Choose a Player",
 		no_nearby_players = "Bruv, there ain't no billable mandem near you.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		skip_song = "Next track",
 		volume = "How loud fam",
 		music = "Sounds",
+
+		mute_boomboxes = "undefined",
+		mute_boomboxes_enabled = "undefined",
+		mute_boomboxes_disabled = "undefined",
 
 		store_boombox = "Stash that beatbox",
 		put_boombox_down = "Lay it on the ground",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		milking_cow_failed = "Failed to squeeze dat cow, fam."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "undefined",
+		overdose = "undefined",
+
+		grind_painkillers = "undefined",
+		grinding_painkillers = "undefined",
+		mix_acetone = "undefined",
+		mixing_acetone = "undefined",
+		add_hydrogen_peroxide = "undefined",
+		adding_hydrogen_peroxide = "undefined",
+		boil = "undefined",
+		boiling = "undefined",
+		cool_down = "undefined",
+		cooling_down = "undefined",
+		fill_ampules = "undefined",
+		filling_ampules = "undefined",
+
+		selling_fentanyl = "undefined",
+		press_to_sell_fentanyl = "undefined",
+		local_not_interested = "undefined",
+
+		something_went_wrong = "undefined",
+		made_fentanyl_logs_title = "undefined",
+		made_fentanyl_logs_details = "undefined",
+		sold_fentanyl_logs_title = "undefined",
+		sold_fentanyl_logs_details = "undefined"
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Man's takin' your fingerprint fam",
 		already_fingerprinting = "You already fingyin' a player, bruv.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		press_to_access_shared_storage = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to access the shared stash fam.",
 		device_printout_details = "undefined",
 		copy_serial_number = "undefined",
+		copy_fingerprint = "undefined",
 		serial_number_copied = "undefined",
 
 		failed_give = "undefined",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		lean = "Sizzurp",
 		lean_description = "Drankin' some sizzurp, sip, sip, sippin'..",
 
+		fentanyl = "undefined",
+		fentanyl_description = "undefined",
+
 		grimace_shake = "Grimace Shake",
 		grimace_shake_description = "Mad ting? I was mad once. Dem man put me in a cell. A bouncy cell. A bouncy cell with rats. And rats make me mad. Mad ting? I was mad once. Dem man put me in a cell. A bouncy cell. A bouncy cell with rats. And rats make me mad. Mad ting? I was mad once. Dem man put me in a cell. A bouncy cell. A bouncy cell with rats. And rats make me mad. Mad ting? I was mad once. Dem man put me in a cell. A bouncy cell. A bouncy cell with rats. And rats make me mad. Mad ting? I was mad once.....",
+
+		hydrogen_peroxide = "undefined",
+		hydrogen_peroxide_description = "undefined",
 
 		jolly_ranchers = "Jollys",
 		jolly_ranchers_description = "Taste the fruity goodness of Jolly Ranchers, the classic candy.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		button_confirm = "undefined",
 		button_delete = "undefined",
 		button_manage = "undefined",
+		button_leave = "undefined",
 		create_account = "undefined",
 		delete_account = "undefined",
 		confirm_delete = "undefined",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		insufficient_balance = "undefined",
 		insufficient_bank_balance = "undefined",
 		account_description = "undefined",
+		leave_account = "undefined",
+		confirm_leave = "undefined",
 
 		add_access_logs_title = "undefined",
 		add_access_logs_details = "undefined",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		create_account_logs_details = "undefined",
 		deleted_account_logs_title = "undefined",
 		deleted_account_logs_details = "undefined",
+		left_account_logs_title = "P's Savings Left Account",
+		left_account_logs_details = "${consoleName} dashed a savings account named `${accountName}` with the id ${accountId}.",
 		withdraw_logs_title = "undefined",
 		withdraw_logs_details = "undefined",
 		deposit_logs_title = "undefined",

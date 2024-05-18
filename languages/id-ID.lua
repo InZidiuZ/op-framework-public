@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["id-ID"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 		bed_command_help = "Mencoba berbaring di tempat tidur terdekat.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "ambil_sepeda",
+		pickup_bicycle_command_help = "Ambil sepeda terdekat.",
+		pickup_bicycle_command_substitutes = "mb",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Membuat tagihan kepada pemain lain dengan jumlah uang tertentu.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 		toggle_ignition_bomb_command_substitutes = "aktifkan_bom_pemantik",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "matikan_boomboxes",
+		mute_boomboxes_command_help = "Menyilangkan/Membuka suara semua boomboxes.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "hapus_boombox",
 		wipe_boomboxes_command_help = "Menghapus boombox.",
 		wipe_boomboxes_command_parameter_radius = "radius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["id-ID"] = {
 		press_to_leave_bed = "Tekan ~INPUT_CONTEXT~ untuk keluar dari tempat tidur."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "Tidak ada sepeda di dekatnya.",
+		failed_pickup_bicycle = "Gagal mengambil sepeda.",
+		picking_up = "Mengambil Sepeda",
+		moving_too_fast = "Anda terlalu cepat untuk mengambil sepeda.",
+
+		picked_up_logs_title = "Mengambil Sepeda",
+		picked_up_logs_details = "${consoleName} mengambil sepeda dengan ID jaringan #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Sepeda Terjatuh",
+		dropped_bicycle_logs_details = "${consoleName} menjatuhkan sepeda yang mereka bawa."
+	},
+
 	bills = {
 		select_player = "Pilih Pemain",
 		no_nearby_players = "Tidak ada pemain yang dapat di-tagih di dekat Anda.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 		skip_song = "Lewati Lagu",
 		volume = "Volume",
 		music = "Musik",
+
+		mute_boomboxes = "Membisukan Boombox",
+		mute_boomboxes_enabled = "Semua boombox sekarang dibisukan.",
+		mute_boomboxes_disabled = "Semua boombox tidak dibisukan lagi.",
 
 		store_boombox = "Simpan Boombox di inventaris Anda",
 		put_boombox_down = "Letakkan Boombox di tanah",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["id-ID"] = {
 		milking_cow_failed = "Gagal memerah sapi."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Anda sedang overdosis fentanyl.",
+		overdose = "Overdosis Fentanyl",
+
+		grind_painkillers = "[${InteractionKey}] Giling obat penghilang rasa sakit",
+		grinding_painkillers = "Menggiling Obat Penghilang Rasa Sakit",
+		mix_acetone = "[${InteractionKey}] Campur dengan aseton",
+		mixing_acetone = "Mencampur dengan Aseton",
+		add_hydrogen_peroxide = "[${InteractionKey}] Tambahkan Hidrogen Peroksida",
+		adding_hydrogen_peroxide = "Menambahkan Hidrogen Peroksida",
+		boil = "[${InteractionKey}] Rebus Bahan",
+		boiling = "Merebus Bahan",
+		cool_down = "[${InteractionKey}] Dinginkan",
+		cooling_down = "Mendinginkan",
+		fill_ampules = "[${InteractionKey}] Isi Amplop",
+		filling_ampules = "Mengisi Amplop",
+
+		selling_fentanyl = "Menjual Fentanyl",
+		press_to_sell_fentanyl = "Tekan ~INPUT_CONTEXT~ untuk menjual Fentanyl.",
+		local_not_interested = "Orang lokal tampaknya tidak tertarik saat ini.",
+
+		something_went_wrong = "Terjadi kesalahan.",
+		made_fentanyl_logs_title = "Membuat Fentanyl",
+		made_fentanyl_logs_details = "${consoleName} membuat ${amount}x fentanyl.",
+		sold_fentanyl_logs_title = "Menjual Fentanyl",
+		sold_fentanyl_logs_details = "${consoleName} menjual 1x ampul fentanyl seharga $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Mengambil Sidik Jari",
 		already_fingerprinting = "Anda sedang mengambil sidik jari seorang pemain.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		press_to_access_shared_storage = "Tekan ~INPUT_REPLAY_SHOWHOTKEY~ untuk mengakses penyimpanan bersama.",
 		device_printout_details = "<b>Tipe:</b> <i>${type}</i>, <b>Teks:</b> <i>${text}</i>",
 		copy_serial_number = "Salin Nomor Seri",
+		copy_fingerprint = "Salin Sidik Jari",
 		serial_number_copied = "${itemName}, Nomor Seri: ${serialNumber}",
 
 		failed_give = "तस्वीरों को मुद्रित करने के लिए एक खाली कागज। (आकार: 1x1)",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["id-ID"] = {
 		lean = "Lean",
 		lean_description = "Sippin di atas sizzurp, minum, sippin di atasnya, minum.",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "Dikenal sebagai \"snoozer curang\", fentanyl adalah ramuan kecil yang sangat kuat. Dengan hanya sentuhan dari zat ini, Anda dapat membuat bahkan orang yang paling segar terlelap. Namun, hati-hati! Fentanyl begitu kuat sehingga jika mimpi adalah uang, Anda akan menjadi miliarder hanya dengan satu dosis. Sangat cocok saat Anda perlu mengubah masalah besar menjadi masalah tidur.",
+
 		grimace_shake = "Shake Grimace",
 		grimace_shake_description = "Gila? Saya dulu juga gila. Mereka menempatkan saya di dalam kamar. Kamar dari karet. Kamar dari karet dengan tikus-tikus. Dan tikus-tikus membuat saya gila. Gila? Saya dulu juga gila. Mereka menempatkan saya di dalam kamar. Kamar dari karet. Kamar dari karet dengan tikus-tikus. Dan tikus-tikus membuat saya gila. Gila? Saya dulu juga gila. Mereka menempatkan saya di dalam kamar. Kamar dari karet. Kamar dari karet dengan tikus-tikus. Dan tikus-tikus membuat saya gila. Gila? Saya dulu juga gila. Mereka menempatkan saya di dalam kamar. Kamar dari karet. Kamar dari karet dengan tikus-tikus. Dan tikus-tikus membuat saya gila. Gila? Saya dulu juga gila.....",
+
+		hydrogen_peroxide = "Hidrogen Peroksida",
+		hydrogen_peroxide_description = "Campuran berbusa ini, dikenal karena efek gelembungnya dan kebersihannya, adalah kebutuhan penting di laboratorium ilmiah dan di luar sana. Meskipun terkenal akan kemampuannya membuat luka dan permukaan bersih, hidrogen peroksida juga mampu bercampur dengan bahan lain untuk menciptakan ramuan yang cukup kuat. Gunakan dengan pengetahuan dan sedikit kehati-hatian.",
 
 		jolly_ranchers = "Permen Jolly Ranchers",
 		jolly_ranchers_description = "Nikmati rasa manis dan asam dari Jolly Ranchers, permen keras klasik yang meledak dengan cita rasa buah yang lezat.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		button_confirm = "Konfirmasi",
 		button_delete = "Hapus",
 		button_manage = "Kelola",
+		button_leave = "Keluar",
 		create_account = "Buat Akun",
 		delete_account = "Hapus Akun",
 		confirm_delete = "Apakah Anda yakin ingin menghapus akun ini secara permanen dan semua catatan yang terkait dengannya? Tindakan ini tidak dapat dibatalkan.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		insufficient_balance = "Failed to automatically generate translation.",
 		insufficient_bank_balance = "Failed to automatically generate translation.",
 		account_description = "Failed to automatically generate translation.",
+		leave_account = "Keluar Akun",
+		confirm_leave = "Apakah Anda yakin ingin keluar dari \"${name}\"? Anda tidak akan lagi memiliki akses ke akun ini.",
 
 		add_access_logs_title = "Tambahkan Akses Penyimpanan",
 		add_access_logs_details = "${consoleName} memberikan akses kepada `${firstName} ${lastName}` (#${characterId}) ke akun penyimpanan ${accountId}.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		create_account_logs_details = "${consoleName} membuat akun penyimpanan baru dengan nama `${accountName}` dan id ${accountId}.",
 		deleted_account_logs_title = "Hapus Akun Simpanan",
 		deleted_account_logs_details = "${consoleName} telah menghapus akun simpanan bernama `${accountName}` dengan ID ${accountId}.",
+		left_account_logs_title = "Tabungan yang Ditinggalkan",
+		left_account_logs_details = "${consoleName} meninggalkan tabungan dengan nama `${accountName}` dengan id ${accountId}.",
 		withdraw_logs_title = "Tarik Simpanan",
 		withdraw_logs_details = "${consoleName} menarik $${amount} dari akun tabungan ${accountId} dengan alasan `${reason}`.",
 		deposit_logs_title = "Setor Simpanan",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["tr-TR"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		bed_command_help = "En yakın yatağa yatmayı deneyin.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "bisikleti_al",
+		pickup_bicycle_command_help = "En yakın bisikleti alır.",
+		pickup_bicycle_command_substitutes = "ba",
+
 		-- game/bills
 		create_bill_command = "hesap_oluştur",
 		create_bill_command_help = "Başka bir oyuncuya belirli bir miktar para faturası oluşturun.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "boomboxları_sustur",
+		mute_boomboxes_command_help = "Tüm boomboxları susturur/susturmaz.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Boombox'ları temizler.",
 		wipe_boomboxes_command_parameter_radius = "yarıçap",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		press_to_leave_bed = "Yataktan çıkmak için ~INPUT_CONTEXT~ tuşuna basın."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "Yakında bisiklet yok.",
+		failed_pickup_bicycle = "Bisiklet alınamadı.",
+		picking_up = "Bisiklet Alınıyor",
+		moving_too_fast = "Bisikleti almak için çok hızlı hareket ediyorsunuz.",
+
+		picked_up_logs_title = "Bisiklet Alındı",
+		picked_up_logs_details = "${consoleName}, ağ kimliği #${networkId} olan bir bisikleti (${modelName}) aldı.",
+		dropped_bicycle_logs_title = "Atılan Bisiklet",
+		dropped_bicycle_logs_details = "${consoleName}, taşıdığı bisikleti attı."
+	},
+
 	bills = {
 		select_player = "Oyuncu Seç",
 		no_nearby_players = "Yakınında ücretlendirilebilecek oyuncu yok.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		skip_song = "Şarkıyı Atla",
 		volume = "Ses Şiddeti",
 		music = "Müzik",
+
+		mute_boomboxes = "Boombox'ları Sustur",
+		mute_boomboxes_enabled = "Tüm boombox'lar artık susturuldu.",
+		mute_boomboxes_disabled = "Tüm boombox'lar artık susturulmamış.",
 
 		store_boombox = "Boombox'ı envanterinde depola",
 		put_boombox_down = "Boombox'ı yerleştir",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		milking_cow_failed = "İnek sağma başarısız oldu."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Fentanil üzerine aşırı doz aldınız.",
+		overdose = "Fentanil Aşırı Doz",
+
+		grind_painkillers = "[${InteractionKey}] Ağrı kesicileri öğüt",
+		grinding_painkillers = "Ağrı Kesicileri Öğütme",
+		mix_acetone = "[${InteractionKey}] Aseton ile karıştır",
+		mixing_acetone = "Aseton ile Karıştırma",
+		add_hydrogen_peroxide = "[${InteractionKey}] Hidrojen Peroksit Ekleyin",
+		adding_hydrogen_peroxide = "Hidrojen Peroksit Ekleniyor",
+		boil = "[${InteractionKey}] Malzemeleri Kaynat",
+		boiling = "Malzemeleri Kaynatma",
+		cool_down = "[${InteractionKey}] Soğut",
+		cooling_down = "Soğutma",
+		fill_ampules = "[${InteractionKey}] Ampulleri Doldur",
+		filling_ampules = "Ampulleri Doldurma",
+
+		selling_fentanyl = "Fentanil Satışı",
+		press_to_sell_fentanyl = "Fentanil satmak için ~INPUT_CONTEXT~ tuşuna basın.",
+		local_not_interested = "Yerli şu anda ilgilenmiyor gibi görünmüyor.",
+
+		something_went_wrong = "Bir şeyler ters gitti.",
+		made_fentanyl_logs_title = "Fentanyl Üretildi",
+		made_fentanyl_logs_details = "${consoleName} ${amount} adet fentanil üretti.",
+		sold_fentanyl_logs_title = "Fentanyl Satıldı",
+		sold_fentanyl_logs_details = "${consoleName}, fentanil içeren 1 adet ampulü $${reward} karşılığında sattı."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Parmak İzi Alınıyor",
 		already_fingerprinting = "Zaten bir oyuncunun parmak izini alıyorsunuz.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		press_to_access_shared_storage = "Paylaşılan depoya erişmek için ~INPUT_REPLAY_SHOWHOTKEY~ tuşuna basın.",
 		device_printout_details = "<b>Tür:</b> <i>${type}</i>, <b>Metin:</b> <i>${text}</i>",
 		copy_serial_number = "Seri Numarasını Kopyala",
+		copy_fingerprint = "Parmak İzi Kopyala",
 		serial_number_copied = "${itemName}, Seri Numarası: ${serialNumber}",
 
 		failed_give = "Öğe(ler) oyuncuya verilemedi.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		lean = "Sizzurp",
 		lean_description = "Sizzurp üzerine yudum atmak, yudum, biraz içme, yudum.",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "\"Gizemli uyutucu\" olarak adlandırılan fentanil, güçlü bir ilaçtır ve etkileri çok güçlüdür. Bu maddeyi sadece bir fısıltıyla kullandığınızda en uyanık insanları bile rüyalara gönderebilirsiniz. Ancak dikkatli kullanın! O kadar güçlüdür ki rüyalar para olsaydı, tek dozda milyarlarca zengin olabilirdiniz. Büyük sorunları uykulu hale getirmeniz gerektiğinde mükemmel bir seçenektir.",
+
 		grimace_shake = "Grimas Sallama",
 		grimace_shake_description = "Delirdim mi? Bir zamanlar delirdim. Beni bir odaya koydular. Bir kauçuk oda. Farelerle dolu bir kauçuk oda. Ve fareler beni deli eder. Delirdim mi? Bir zamanlar delirdim. Beni bir odaya koydular. Bir kauçuk oda. Farelerle dolu bir kauçuk oda. Ve fareler beni deli eder. Delirdim mi? Bir zamanlar delirdim. Beni bir odaya koydular. Bir kauçuk oda. Farelerle dolu bir kauçuk oda. Ve fareler beni deli eder. Delirdim mi? Bir zamanlar delirdim. Beni bir odaya koydular. Bir kauçuk oda. Farelerle dolu bir kauçuk oda. Ve fareler beni deli eder. Delirdim mi? Bir zamanlar delirdim.....",
+
+		hydrogen_peroxide = "Hidrojen Peroksit",
+		hydrogen_peroxide_description = "Bu kabarcıklı karışım, köpürmesi ve temizleyici özelliği ile bilinir ve bilim laboratuvarlarında ve ötesinde bir temel unsurdur. Kesikleri ve yüzeyleri tertemiz yapmasıyla ünlü olmasına rağmen, diğer malzemelerle karışıp oldukça etkili karışımlar \"hayal etme\" yeteneğine sahiptir. Biraz dikkat ve bilinçle ele alın.",
 
 		jolly_ranchers = "Jolly Rancher",
 		jolly_ranchers_description = "Tatlı ve ekşi Jolly Rancher lezzetlerine dalın, meyve lezzeti dolu klasik sert şekerlerdir.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		button_confirm = "Onayla",
 		button_delete = "Sil",
 		button_manage = "Yönet",
+		button_leave = "Çıkış",
 		create_account = "Hesap Oluştur",
 		delete_account = "Hesabı Sil",
 		confirm_delete = "Bu hesabı ve onunla ilişkili tüm kayıtları kalıcı olarak silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		insufficient_balance = "Hesap bakiyesi yetersiz.",
 		insufficient_bank_balance = "Banka bakiyeniz yetersiz.",
 		account_description = "Hesabın sahibi sadece onu silebilir ve yönetebilir. Hesaba erişimi olan kişiler sadece para çekebilir ve yatırabilir. En fazla 5 farklı tasarruf hesabı oluşturabilirsiniz.",
+		leave_account = "Hesaptan Çık",
+		confirm_leave = "\"${name}\" isimli hesaptan ayrılmak istediğinizden emin misiniz? Artık bu hesaba erişiminiz olmayacak.",
 
 		add_access_logs_title = "Tasarruf Hesabı Erişim Yetkisi Ekle",
 		add_access_logs_details = "${consoleName}, `${firstName} ${lastName}` adlı karaktere #${characterId} tasarruf hesabı ${accountId}'ye erişim yetkisi verdi.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		create_account_logs_details = "${consoleName}, ${accountName} adında yeni bir tasarruf hesabı oluşturdu. Hesap ID'si: ${accountId}.",
 		deleted_account_logs_title = "Hesap Silme İşlemi",
 		deleted_account_logs_details = "${consoleName}, ${accountId} ID'li `${accountName}` adlı bir birikim hesabını sildi.",
+		left_account_logs_title = "Tasarruf Kalan Hesap",
+		left_account_logs_details = "${consoleName}, ${accountId} numaralı `${accountName}` adlı bir tasarruf hesabını kapattı.",
 		withdraw_logs_title = "Birikim Havale",
 		withdraw_logs_details = "${consoleName}, ${accountId} hesabından $${amount} çekildi, neden: `${reason}`.",
 		deposit_logs_title = "Birikim Yatırma",

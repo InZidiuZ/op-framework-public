@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["es-MX"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["es-MX"] = {
 		bed_command_help = "Intenta acostarte en la cama más cercana.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "recoger_bicicleta",
+		pickup_bicycle_command_help = "Recoge la bicicleta más cercana.",
+		pickup_bicycle_command_substitutes = "rb",
+
 		-- game/bills
 		create_bill_command = "crear_factura",
 		create_bill_command_help = "Factura a otro jugador una cierta cantidad de dinero.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["es-MX"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "silenciar_radios",
+		mute_boomboxes_command_help = "Silencia o activa el sonido de todas las radios.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Borra las boomboxes.",
 		wipe_boomboxes_command_parameter_radius = "radio",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["es-MX"] = {
 		press_to_leave_bed = "Presiona ~INPUT_CONTEXT~ para salir de la cama."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "No hay una bicicleta cercana.",
+		failed_pickup_bicycle = "No se pudo recoger la bicicleta.",
+		picking_up = "Recogiendo bicicleta",
+		moving_too_fast = "Te estás moviendo muy rápido para recoger la bicicleta.",
+
+		picked_up_logs_title = "Bicicleta Recogida",
+		picked_up_logs_details = "${consoleName} recogió una bicicleta con el id de red #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Bicicleta Abandonada",
+		dropped_bicycle_logs_details = "${consoleName} abandonó la bicicleta que estaba cargando."
+	},
+
 	bills = {
 		select_player = "Seleccionar jugador",
 		no_nearby_players = "No hay jugadores cercanos a los que se pueda facturar.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["es-MX"] = {
 		skip_song = "Saltar canción",
 		volume = "Volumen",
 		music = "Música",
+
+		mute_boomboxes = "Silenciar Estéreos Portátiles",
+		mute_boomboxes_enabled = "Todos los estéreos portátiles están ahora silenciados.",
+		mute_boomboxes_disabled = "Todos los estéreos portátiles ya no están silenciados.",
 
 		store_boombox = "Guardar la Caja de Música en tu inventario",
 		put_boombox_down = "Poner la Caja de Música en el suelo",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["es-MX"] = {
 		milking_cow_failed = "Error al ordeñar la vaca."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Estás teniendo una sobredosis de fentanilo.",
+		overdose = "Sobredosis de Fentanilo",
+
+		grind_painkillers = "[${InteractionKey}] Triturar analgésicos",
+		grinding_painkillers = "Triturando analgésicos",
+		mix_acetone = "[${InteractionKey}] Mezclar con acetona",
+		mixing_acetone = "Mezclando con Acetona",
+		add_hydrogen_peroxide = "[${InteractionKey}] Agregar Peróxido de Hidrógeno",
+		adding_hydrogen_peroxide = "Agregando Peróxido de Hidrógeno",
+		boil = "[${InteractionKey}] Hervir Ingredientes",
+		boiling = "Hirviendo Ingredientes",
+		cool_down = "[${InteractionKey}] Enfriar",
+		cooling_down = "Enfriando",
+		fill_ampules = "[${InteractionKey}] Llenar Ampolletas",
+		filling_ampules = "Llenando Ampolletas",
+
+		selling_fentanyl = "Vendiendo Fentanilo",
+		press_to_sell_fentanyl = "Presiona ~INPUT_CONTEXT~ para vender Fentanilo",
+		local_not_interested = "El local no parece estar interesado en este momento.",
+
+		something_went_wrong = "Algo salió mal.",
+		made_fentanyl_logs_title = "Fabricó Fentanilo",
+		made_fentanyl_logs_details = "${consoleName} fabricó ${amount}x fentanilo.",
+		sold_fentanyl_logs_title = "Vendió Fentanilo",
+		sold_fentanyl_logs_details = "${consoleName} vendió 1x ampolla de fentanilo por $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Tomando Huella Digital",
 		already_fingerprinting = "Ya estás tomando la huella digital de un jugador.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		press_to_access_shared_storage = "Presiona ~INPUT_REPLAY_SHOWHOTKEY~ para acceder al almacenamiento compartido.",
 		device_printout_details = "<b>Tipo:</b> <i>${type}</i>, <b>Texto:</b> <i>${text}</i>",
 		copy_serial_number = "Copiar número de serie",
+		copy_fingerprint = "Copiar Huella Digital",
 		serial_number_copied = "${itemName}, Número de serie: ${serialNumber}",
 
 		failed_give = "Tayto Chips",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["es-MX"] = {
 		lean = "Lean",
 		lean_description = "Tomando un trago de sizzurp, sorbo, tomando un trago, sorbo.",
 
+		fentanyl = "Fentanilo",
+		fentanyl_description = "Apodado el 'dormilón sigiloso', el fentanilo es una poderosa poción que tiene un fuerte impacto. Con solo un susurro de esta sustancia, puedes enviar a cualquier persona, incluso a la más despierta, a un mundo de sueños. ¡Manéjalo con cuidado! Es tan potente que si los sueños fueran moneda, serías millonario con una sola dosis. Perfecto para cuando necesitas convertir grandes problemas en pequeños dormilones.",
+
 		grimace_shake = "Sacudida de gesto",
 		grimace_shake_description = "¿Loco? Una vez fui loco. Me metieron en una habitación. Una habitación de goma. Una habitación de goma con ratas. Y las ratas me vuelven loco. ¿Loco? Una vez fui loco. Me metieron en una habitación. Una habitación de goma. Una habitación de goma con ratas. Y las ratas me vuelven loco. ¿Loco? Una vez fui loco. Me metieron en una habitación. Una habitación de goma. Una habitación de goma con ratas. Y las ratas me vuelven loco. ¿Loco? Una vez fui loco. Me metieron en una habitación. Una habitación de goma. Una habitación de goma con ratas. Y las ratas me vuelven loco. ¿Loco? Una vez fui loco.....",
+
+		hydrogen_peroxide = "Peróxido de hidrógeno",
+		hydrogen_peroxide_description = "Esta mezcla efervescente, conocida por su efervescencia y limpieza, es un elemento básico en laboratorios de ciencias y más allá. Aunque es famosa por limpiar cortadas y superficies, también tiene la habilidad de mezclarse con otros ingredientes para 'soñar' algunas mezclas bastante potentes. Manipúlalo con conocimiento y un poco de precaución.",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Disfruta de los sabores dulces y agrios de Jolly Ranchers, los clásicos caramelos duros que explotan con deliciosos sabores frutales.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["es-MX"] = {
 		button_confirm = "No se pudo depositar.",
 		button_delete = "No se pudo crear la cuenta de ahorros.",
 		button_manage = "No se pudo eliminar la cuenta de ahorros.",
+		button_leave = "Salir",
 		create_account = "El saldo de la cuenta es insuficiente.",
 		delete_account = "El saldo de tu cuenta bancaria es insuficiente.",
 		confirm_delete = "Solo el propietario de la cuenta puede eliminarla y gestionarla. Las personas con acceso a la cuenta solo pueden retirar y depositar. Puedes crear hasta 5 cuentas de ahorro diferentes.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["es-MX"] = {
 		insufficient_balance = "El saldo de la cuenta es insuficiente.",
 		insufficient_bank_balance = "El saldo de tu cuenta bancaria es insuficiente.",
 		account_description = "Solo el propietario de la cuenta puede eliminarla y gestionarla. Las personas con acceso a la cuenta solo pueden retirar y depositar. Puedes crear hasta 5 cuentas de ahorro diferentes.",
+		leave_account = "Salir de la Cuenta",
+		confirm_leave = "¿Estás seguro de que quieres salir de \"${name}\"? Ya no tendrás acceso a esta cuenta.",
 
 		add_access_logs_title = "Agregar acceso a ahorros",
 		add_access_logs_details = "${consoleName} le dio acceso a la cuenta de ahorros ${accountId} a `${firstName} ${lastName}` (#${characterId}).",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["es-MX"] = {
 		create_account_logs_details = "${consoleName} creó una nueva cuenta de ahorros llamada `${accountName}` con el id ${accountId}.",
 		deleted_account_logs_title = "No se pudo recoger la pelota.",
 		deleted_account_logs_details = "No se pudo colocar la pelota.",
+		left_account_logs_title = "Cuenta de ahorros cancelada",
+		left_account_logs_details = "${consoleName} canceló una cuenta de ahorros llamada `${accountName}` con el ID ${accountId}.",
 		withdraw_logs_title = "MANUAL",
 		withdraw_logs_details = "${consoleName} retiró $${amount} de la cuenta de ahorros ${accountId} con motivo `${reason}`.",
 		deposit_logs_title = "Tu HUD parece estar parcialmente fuera de pantalla (~${amount}px). Puedes ajustarlo reduciendo el tamaño de la \"*Zona segura*\" en la configuración de \"*Pantalla*\".",

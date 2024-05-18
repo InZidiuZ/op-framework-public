@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["meme-spongebob"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		bed_command_help = "Attempt ta lay down in da near'est bed.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "pick_up_bike",
+		pickup_bicycle_command_help = "Get da closest bike.",
+		pickup_bicycle_command_substitutes = "pupb",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Take the booty from another pirate a certain amount of dubloons.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "shut_yo_boomboxes",
+		mute_boomboxes_command_help = "Disables/Enables all boomboxes.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Wipez da boomboxes.",
 		wipe_boomboxes_command_parameter_radius = "radius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		press_to_leave_bed = "Press ~INPUT_CONTEXT~ to get ye outta this bed."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "No bike around here, dude.",
+		failed_pickup_bicycle = "Sorry dude, couldn't get da bike.",
+		picking_up = "Getting da Bike now",
+		moving_too_fast = "Hey, slow down! Can't get dat bike if you zoomin'.",
+
+		picked_up_logs_title = "Got da Bike",
+		picked_up_logs_details = "${consoleName} got a bike with the network id #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Dropped Bike",
+		dropped_bicycle_logs_details = "${consoleName} dropped the bike they were carrying."
+	},
+
 	bills = {
 		select_player = "Select Playa",
 		no_nearby_players = "No billable playas near yee.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		skip_song = "Skkkip Songaroo",
 		volume = "Voluumee",
 		music = "Musicy",
+
+		mute_boomboxes = "Shhh Boomboxes",
+		mute_boomboxes_enabled = "All boomboxes be quiet now.",
+		mute_boomboxes_disabled = "All boomboxes can play music again.",
 
 		store_boombox = "Storxy the Boombox in yar inventory matey",
 		put_boombox_down = "Poot thar Boombox on thar ground",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		milking_cow_failed = "Failed to milk cow, meow meow."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "You are overdosing on fentanyl, me boy-o.",
+		overdose = "Fentanyl Overdose",
+
+		grind_painkillers = "[${InteractionKey}] Crush dem painkillers",
+		grinding_painkillers = "Smashing Painkillers",
+		mix_acetone = "[${InteractionKey}] Mix with acetone matey",
+		mixing_acetone = "Mixing with Acetone",
+		add_hydrogen_peroxide = "[${InteractionKey}] Add Hydrogen Peroxide",
+		adding_hydrogen_peroxide = "Adding Hydrogen Peroxide",
+		boil = "[${InteractionKey}] Boil Ingredients",
+		boiling = "Boiling Ingredients",
+		cool_down = "[${InteractionKey}] Cool Down",
+		cooling_down = "Cooling Down",
+		fill_ampules = "[${InteractionKey}] Fill Ampules",
+		filling_ampules = "Filling Ampules",
+
+		selling_fentanyl = "Selling Fentanyl",
+		press_to_sell_fentanyl = "Press ~INPUT_CONTEXT~ to sell Fentanyl.",
+		local_not_interested = "The local doesn't seem to be interested right now. Meow.",
+
+		something_went_wrong = "Oh barnacles, something went wrong.",
+		made_fentanyl_logs_title = "Made Fentanyl, Yee-haw!",
+		made_fentanyl_logs_details = "${consoleName} made ${amount}x fentanyl, yay!",
+		sold_fentanyl_logs_title = "Sold Fentanyl, Aye Aye Captain!",
+		sold_fentanyl_logs_details = "${consoleName} sold 1x ampule of fentanyl for $${reward}, woo-hoo!"
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Aye, we be takin' yer fingerprints now",
 		already_fingerprinting = "Tartar sauce! You're already snail-tracting a player's fingerprints!",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		press_to_access_shared_storage = "Blimey! Press ~INPUT_REPLAY_SHOWHOTKEY~ to access the shared storage, ye scallywag!",
 		device_printout_details = "undefined",
 		copy_serial_number = "undefined",
+		copy_fingerprint = "Copy Fingerprint, Aye Aye Captain!",
 		serial_number_copied = "undefined",
 
 		failed_give = "Failedeth to giveth item(s) to player.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		lean = "Lean",
 		lean_description = "Sippin on some seawater, sip, sippin on some, sip.",
 
+		fentanyl = "Fentanyl, Meow!",
+		fentanyl_description = "Dubbed the \"sneaky snoozer\", fentanyl is a powerful little potion that packs a wallop. With just a whisper of this substance, you can send even the most wide-awake into a world of dreams. Handle with care, though! It's so potent that if dreams were currency, you'd be a billionaire in one dose. Perfect for when you need to make big problems into sleepy ones. Oh tartar sauce!",
+
 		grimace_shake = "Grimace Shake",
 		grimace_shake_description = "Crazy? I was craaaazy once. They plopped me in a room. A room made of rubbaaah. A rubbaaah room with raaaaaats. And raaaaaats make me craaaazy. Craaaazy? I was craaaazy once. They plopped me in a room. A room made of rubbaaah. A rubbaaah room with raaaaaats. And raaaaaats make me craaaazy. Craaaazy? I was craaaazy once. They plopped me in a room. A room made of rubbaaah. A rubbaaah room with raaaaaats. And raaaaaats make me craaaazy. Craaaazy? I was craaaazy once. They plopped me in a room. A room made of rubbaaah. A rubbaaah room with raaaaaats. And raaaaaats make me craaaazy. Craaaazy? I was craaaazy once.....",
+
+		hydrogen_peroxide = "Bubbly Brew",
+		hydrogen_peroxide_description = "Dis bubbly brew, known for its fizz and clean, is a staple in science labs and beyond. While it’s famous for making cuts and surfaces spotless, it’s also got a knack for mixing up with other ingredients to \"dream up\" some pretty potent concoctions. Handle with enlightenment and a bit of caution.",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Indulge in the sweet and tangy flavors of Jolly Ranchers, the classic hard candies that burst with fruity goodness. Yum-yum!",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		button_confirm = "Confirm, krusty krab style!",
 		button_delete = "Delete, plankton style!",
 		button_manage = "Manage, sandy style!",
+		button_leave = "Go Bye-Bye",
 		create_account = "Create Account, pineapple style!",
 		delete_account = "Delete Account, mermaid style!",
 		confirm_delete = "Are you sure you want to permamently delete this account and all logs associated with it? This action cannot be undone, jellyfishing shenanigans!",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		insufficient_balance = "Barnacles! Account balance is insufficient.",
 		insufficient_bank_balance = "Barnacles! Your bank balance is insufficient.",
 		account_description = "Only the owner of the account can delete and manage it. People with access to the account can only withdraw and deposit. You can create up to 5 different savings accounts.",
+		leave_account = "Leave Account",
+		confirm_leave = "Are you sure you want to go bye-bye from \"${name}\"? You will no longer have access to this account.",
 
 		add_access_logs_title = "Savings Add Access",
 		add_access_logs_details = "${consoleName} gaveth `${firstName} ${lastName}` #${characterId} access to savings account ${accountId}.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		create_account_logs_details = "${consoleName} created a new savings account named `${accountName}` with the id ${accountId}.",
 		deleted_account_logs_title = "Bikini Bottom Savings Delete Account",
 		deleted_account_logs_details = "${consoleName} deleted a savings account named `${accountName}` with the id ${accountId}.",
+		left_account_logs_title = "Sandy's Seashell Stash",
+		left_account_logs_details = "${consoleName} swam away from a seashell stash named `${accountName}` with the id ${accountId}.",
 		withdraw_logs_title = "Bikini Bottom Savings Withdraw",
 		withdraw_logs_details = "undefined",
 		deposit_logs_title = "Bikini Bottom Savings Deposit",

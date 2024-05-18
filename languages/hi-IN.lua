@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["hi-IN"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		bed_command_help = "नज़दीकी बिस्तर में लेट जाने की कोशिश करें।",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "पिकअप_बाइसिकिल",
+		pickup_bicycle_command_help = "निकटतम साइकिल को पिकअप करें।",
+		pickup_bicycle_command_substitutes = "पीबी",
+
 		-- game/bills
 		create_bill_command = "बिल_बनाएं",
 		create_bill_command_help = "किसी दूसरे खिलाड़ी को निश्चित राशि का बिल बनाएं।",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "म्यूट_बूमबॉक्स",
+		mute_boomboxes_command_help = "सभी बूमबॉक्स को म्यूट/अन-म्यूट करें।",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "बूमबॉक्स मिटाएँ।",
 		wipe_boomboxes_command_parameter_radius = "radius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		press_to_leave_bed = "बिस्तर छोड़ने के लिए ~INPUT_CONTEXT~ दबाएं।"
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "कोई साइकिल नजदीक नहीं है।",
+		failed_pickup_bicycle = "साइकिल उठाने में विफल रहा।",
+		picking_up = "साइकिल उठा रहे हैं",
+		moving_too_fast = "आप साइकिल उठाने के लिए बहुत तेजी से आगे बढ़ रहे हैं।",
+
+		picked_up_logs_title = "साइकिल उठा लिया",
+		picked_up_logs_details = "${consoleName} ने नेटवर्क आईडी #${networkId} ( `${modelName}` ) के साथ एक साइकिल उठाई।",
+		dropped_bicycle_logs_title = "गिराया गया साइकिल",
+		dropped_bicycle_logs_details = "${consoleName} ने उन्होंने उठाए हुए साइकिल को गिरा दिया।"
+	},
+
 	bills = {
 		select_player = "प्लेयर का चयन करें",
 		no_nearby_players = "आपके पास कोई बिल भरने योग्य प्लेयर नहीं हैं।",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		skip_song = "गाने को छोड़ें",
 		volume = "वॉल्यूम",
 		music = "संगीत",
+
+		mute_boomboxes = "बूमबॉक्स को म्यूट करें",
+		mute_boomboxes_enabled = "सभी बूमबॉक्स अब म्यूट हैं।",
+		mute_boomboxes_disabled = "सभी बूमबॉक्स अब म्यूट नहीं हैं।",
 
 		store_boombox = "बूमबॉक्स को अपने वितरण में स्टोर करें",
 		put_boombox_down = "बूमबॉक्स को भूमि पर रखें",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		milking_cow_failed = "गाय को दूध निकालने में विफल रहा।"
 	},
 
+	fentanyl = {
+		you_are_overdosing = "आप फेंटानिल पर अधिक खुराक ले रहे हैं।",
+		overdose = "फेंटानिल की अधिक खुराक",
+
+		grind_painkillers = "[${InteractionKey}] पेनकिलर को ग्राइंड करें",
+		grinding_painkillers = "पेनकििलर को ग्राइंड कर रहे हैं",
+		mix_acetone = "[${InteractionKey}] एसिटोन के साथ मिश्रित करें",
+		mixing_acetone = "ऐसीटोन के साथ मिश्रण",
+		add_hydrogen_peroxide = "[${InteractionKey}] हाइड्रोजन पेरॉक्साइड जोड़ें",
+		adding_hydrogen_peroxide = "हाइड्रोजन पेरॉक्साइड जोड़ना",
+		boil = "[${InteractionKey}] सामग्री को उबालें",
+		boiling = "सामग्री को उबालना",
+		cool_down = "[${InteractionKey}] ठंडा हो जाए",
+		cooling_down = "ठंडा हो रहा है",
+		fill_ampules = "[${InteractionKey}] एम्प्यूल भरें",
+		filling_ampules = "एम्प्यूल भर रहा है",
+
+		selling_fentanyl = "फेंटानाइल बेचना",
+		press_to_sell_fentanyl = "फेंटानाइल बेचने के लिए दबाएं ~INPUT_CONTEXT~।",
+		local_not_interested = "स्थानीय वर्तमान में दिखाई नहीं दे रहा है।",
+
+		something_went_wrong = "कुछ गलत हो गया।",
+		made_fentanyl_logs_title = "फेंटानील बनाया",
+		made_fentanyl_logs_details = "${consoleName} ने ${amount}x फेंटानील बनाया।",
+		sold_fentanyl_logs_title = "फेंटानील बेचा",
+		sold_fentanyl_logs_details = "${consoleName} ने 1x फेंटानील की एम्पयूल $${reward} में बेची।"
+	},
+
 	fingerprint = {
 		taking_fingerprint = "उंगली के निशान लगा रहे हैं",
 		already_fingerprinting = "आप पहले से ही एक खिलाड़ी का उंगली के निशान लगा रहे हैं।",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		press_to_access_shared_storage = "साझा भंडारण तक पहुंचने के लिए ~INPUT_REPLAY_SHOWHOTKEY~ दबाएं।",
 		device_printout_details = "<b>प्रकार:</b> <i>${type}</i>, <b>टेक्स्ट:</b> <i>${text}</i>",
 		copy_serial_number = "सीरील नंबर कॉपी करें",
+		copy_fingerprint = "उंगली का नक्शा कॉपी करें",
 		serial_number_copied = "${itemName}, सीरियल नंबर: ${serialNumber}",
 
 		failed_give = "वस्तु (वस्तुएँ) खिलाने में विफल हुआ।",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		lean = "लीन",
 		lean_description = "थोड़े से सप्पली, सिप, सिप होते हुए कुछ सूक्ष्म टि्का।",
 
+		fentanyl = "फेंटानील",
+		fentanyl_description = "इसे 'चुपचाप सोने वाला' कहा जाने वाला फेंटानील एक शक्तिशाली लघु पोषण है जो एक तेजी से मार पिटाई कर सकता है। इस तत्व के मल्टिमिलिंट पर्याप्त की केवल एक सांस के साथ, आप हरसंगित को भी सपनों की दुनिया में भेज सकते हैं। ध्यान से संबोधित करें, तभी यह इतना प्रबल है कि अगर सपने मुद्रा होते, तो एक खुराक में आप एक अरबपति होते। जब आपको बड़ी समस्याओं को नींद भेजने की आवश्यकता होती है तो यह बिल्कुल उसके लिए उपयुक्त है।",
+
 		grimace_shake = "ग्रिमीस शेक",
 		grimace_shake_description = "पागल हुआ? मैं पागल था एक समय। उन्होंने मुझे एक कमरे में रखा। एक रबर कमरा। एक रबर कमरा जहां चूहे होते हैं। और चूहे मुझे पागल बनाते हैं। पागल हुआ? मैं पागल था एक समय। उन्होंने मुझे एक कमरे में रखा। एक रबर कमरा। एक रबर कमरा जिसमें चूहे होते हैं। और चूहे मुझे पागल बनाते हैं। पागल हुआ? मैं पागल था एक समय। उन्होंने मुझे एक कमरे में रखा। एक रबर कमरा। एक रबर कमरा जिसमें चूहे होते हैं। और चूहे मुझे पागल बनाते हैं। पागल हुआ? मैं पागल था एक समय।.....",
+
+		hydrogen_peroxide = "हाइड्रोजन पेरोक्साइड",
+		hydrogen_peroxide_description = "इस बुलबुलेदार मिश्रण के लिए, जिसे उसके फिज और स्वच्छता के लिए जाना जाता है, विज्ञान प्रयोगशालाओं में और बाहर एक महत्वपूर्ण उपकरण है। जबकि यह छेदों और सतहों को धोने के लिए प्रसिद्ध है, यह अन्य तत्वों के साथ मिश्रित होने के लिए \"सपने देखने\" के लिए भी एक काबिलियता रखता है। एक ज्ञान और थोड़ी सतर्कता के साथ हल करें।",
 
 		jolly_ranchers = "जॉली रैंचर्स",
 		jolly_ranchers_description = "जॉली रैंचर्स के मिठास भरे और तलख फलों का आनंद लें, उन शानदार हार्ड कैंडी का भोजन करें जो फलियों के साथ भरा होता है।",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		button_confirm = "Confirmer",
 		button_delete = "Supprimer",
 		button_manage = "Gérer",
+		button_leave = "छोड़ें",
 		create_account = "Créer un compte",
 		delete_account = "Supprimer le compte",
 		confirm_delete = "Êtes-vous sûr de vouloir supprimer définitivement ce compte et tous les journaux qui lui sont associés ? Cette action ne peut pas être annulée.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		insufficient_balance = "Créer un compte",
 		insufficient_bank_balance = "Supprimer le compte",
 		account_description = "Êtes-vous sûr de vouloir supprimer définitivement ce compte et tous les journaux qui lui sont associés ? Cette action ne peut pas être annulée.",
+		leave_account = "खाता छोड़ें",
+		confirm_leave = "\"${name}\" छोड़ना चाहते हैं? क्या आप इस खाते तक पहुँच नहीं पाएंगे।",
 
 		add_access_logs_title = "किताबी पहुँच जोड़ें",
 		add_access_logs_details = "${consoleName} ने `${firstName} ${lastName}` को पहुँच दी #${characterId} ने मूल्य संग्रह संख्या ${accountId} को।",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		create_account_logs_details = "${consoleName} ने नया किताबी खाता नामित `${accountName}` के साथ आईडी ${accountId} बनाया।",
 		deleted_account_logs_title = "Impossible de ramasser la balle.",
 		deleted_account_logs_details = "Impossible de placer la balle.",
+		left_account_logs_title = "बचत बचा हुआ खाता",
+		left_account_logs_details = "${consoleName} ने `${accountName}` नाम के साथ खाता ${accountId} छोड़ दिया।",
 		withdraw_logs_title = "MANUEL",
 		withdraw_logs_details = "${consoleName} ने ${accountId} से बचत खाते से $${amount} निकाला, कारण `${reason}`।",
 		deposit_logs_title = "Votre HUD semble partiellement hors écran (~${amount}px). Vous pouvez l'ajuster en réduisant la \"*Taille de la zone de sécurité*\" dans vos paramètres \"*Affichage*\".",

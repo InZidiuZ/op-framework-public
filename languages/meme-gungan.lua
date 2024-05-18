@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["meme-gungan"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		bed_command_help = "Attempt to lay down in da nearest bed.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "mumbawanga_bishkil",
+		pickup_bicycle_command_help = "Grabba da closest bishkil.",
+		pickup_bicycle_command_substitutes = "mb",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Mesa wanta bil da eza ooma to anoder playa.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "kajamba_boomboxes",
+		mute_boomboxes_command_help = "Mutes/Unmutes all boomboxes.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Youses dis command to wipe boomboxes.",
 		wipe_boomboxes_command_parameter_radius = "radius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		press_to_leave_bed = "Press ~INPUT_CONTEXT~ to leave the bed."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "No bishkil nearby.",
+		failed_pickup_bicycle = "Failed to grabba bishkil.",
+		picking_up = "Grabbin' Bishkil",
+		moving_too_fast = "Yousa movin' too fast to grabba da bishkil.",
+
+		picked_up_logs_title = "Grabbed Bishkil",
+		picked_up_logs_details = "${consoleName} grabbed a bishkil with da network id #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Goneesa Bicycle",
+		dropped_bicycle_logs_details = "${consoleName} dropped the bicycle they were carrying."
+	},
+
 	bills = {
 		select_player = "Selecta Player",
 		no_nearby_players = "No billable playas near youssa.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		skip_song = "Skipen Songen",
 		volume = "Volumen",
 		music = "Musoken",
+
+		mute_boomboxes = "Mute Boomboxes",
+		mute_boomboxes_enabled = "All boomboxes are now muted.",
+		mute_boomboxes_disabled = "All boomboxes are no longer muted.",
 
 		store_boombox = "Storo da Bumgong in yours inventory",
 		put_boombox_down = "Putten da Bumgong on da ground",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		milking_cow_failed = "Cha-milkin' failsa."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Yousa overdosing on fentanyl.",
+		overdose = "Fentanyl Overdose",
+
+		grind_painkillers = "[${InteractionKey}] Grind up painkillers",
+		grinding_painkillers = "Grinding Up Painkillers",
+		mix_acetone = "[${InteractionKey}] Mix with acetone",
+		mixing_acetone = "Meesa Mixin' Wesa Acetone",
+		add_hydrogen_peroxide = "[${InteractionKey}] Add Hydrogen Peroxide",
+		adding_hydrogen_peroxide = "Meesa Addin' Hydrogen Peroxide",
+		boil = "[${InteractionKey}] Boil Ingridients",
+		boiling = "Boilin' Ingridients",
+		cool_down = "[${InteractionKey}] Cool Down",
+		cooling_down = "Coolin' Down",
+		fill_ampules = "[${InteractionKey}] Fill Ampules",
+		filling_ampules = "Fillin' Ampules",
+
+		selling_fentanyl = "Sellin' Fentanyl",
+		press_to_sell_fentanyl = "Press ~INPUT_CONTEXT~ to sell Fentanyl.",
+		local_not_interested = "Yousa local not seem to be interested right now.",
+
+		something_went_wrong = "Mesa apologize. Something went wrong.",
+		made_fentanyl_logs_title = "Mesa Made Fentanyl",
+		made_fentanyl_logs_details = "${consoleName} made ${amount}x fentanyl.",
+		sold_fentanyl_logs_title = "Sold Fentanyl",
+		sold_fentanyl_logs_details = "${consoleName} sold 1x ampule of fentanyl for $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Takinga Fingerprint",
 		already_fingerprinting = "Yusa already takin' a fingerprint of a playa.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		press_to_access_shared_storage = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to access da shared storage.",
 		device_printout_details = "<b>Type:</b> <i>${type}</i>, <b>Text:</b> <i>${text}</i>",
 		copy_serial_number = "Copaska Heefren Seria Numben",
+		copy_fingerprint = "Copy Fingerprint",
 		serial_number_copied = "${itemName}, Seria Numben: ${serialNumber}",
 
 		failed_give = "Failed to give item(s) to player.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		lean = "L68n",
 		lean_description = "Sippin' on some sizzurp, sip, sippin' on some, sip.",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "Dubbed da \"sneaky snoozer\", fentanyl is a powerful little potion that packs a wallop. With just a whisper of dis substance, yousa can send even da most wide-awake into a world of dreams. Handle with care, though! It's so potent that if dreams were currency, yousa'd be a billionaire in one dose. Perfect for when yousa need to make big problems into sleepy ones.",
+
 		grimace_shake = "Grimace Shake",
 		grimace_shake_description = "Binko? Mesa binko once. Dey put Bombad mesa ina room. A plasticky room. A plasticky room with clommels. And clommels maken binko binko. Binko? Mesa binko once. Dey put Bombad mesa ina room. A plasticky room. A plasticky room with clommels. And clommels maken binko binko. Binko? Mesa binko once. Dey put Bombad mesa ina room. A plasticky room. A plasticky room with clommels. And clommels maken binko binko. Binko? Mesa binko once. Dey put Bombad mesa ina room. A plasticky room. A plasticky room with clommels. And clommels maken binko binko. Binko? Mesa binko once.....",
+
+		hydrogen_peroxide = "Hrunda Peroxide",
+		hydrogen_peroxide_description = "Dis bubbly brew, known for its fizz and clean, is a staple in science labs and beyond. While it’s famous for making cuts and surfaces spotless, it’s also got a knack for mixing up with other ingredients to \"dream up\" some pretty potent concoctions. Handle with enlightenment and a bit of caution.",
 
 		jolly_ranchers = "Jollee Ranchas",
 		jolly_ranchers_description = "Indulge in da sweet an' tangy flavas of Jollee Ranchas, da classic hard candies dat burst wit fruity goodness.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		button_confirm = "Kushky",
 		button_delete = "Megool",
 		button_manage = "Meeza",
+		button_leave = "Lave",
 		create_account = "Create Moopa",
 		delete_account = "Delete Moopa",
 		confirm_delete = "Yousa surely want to permamently delete this Moopa and all logs associated with it? Disen action muchoo be unundooken.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		insufficient_balance = "Account balance is insufficient.",
 		insufficient_bank_balance = "Your bank balance is insufficient.",
 		account_description = "Only the owner of the account can delete and manage it. People with access to the account can only withdraw and deposit. Yousa can create up to 5 different savings accounts.",
+		leave_account = "Lave Account",
+		confirm_leave = "Yousa sure you want to lave \"${name}\"? Yousa will no longer have access to thissa account.",
 
 		add_access_logs_title = "Savings Thosa Access",
 		add_access_logs_details = "${consoleName} oblera `${firstName} ${lastName}` #${characterId} access to savingsi account ${accountId}.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		create_account_logs_details = "${consoleName} creata a new savingsi account named `${accountName}` witha the id ${accountId}.",
 		deleted_account_logs_title = "Nuna Deleten Account-Savings",
 		deleted_account_logs_details = "${consoleName} nuna deleten a savings account mesa named `${accountName}` withen the id ${accountId}.",
+		left_account_logs_title = "Mo thumbnail savings account",
+		left_account_logs_details = "${consoleName} jarjar left a savings account named `${accountName}` wid da id ${accountId}.",
 		withdraw_logs_title = "Withdraw-Savings",
 		withdraw_logs_details = "${consoleName} withdrawn $${amount} from savings account ${accountId} with reason `${reason}`.",
 		deposit_logs_title = "Deposit-Savings",

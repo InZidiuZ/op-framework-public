@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["en-AU"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["en-AU"] = {
 		bed_command_help = "Have a crack at having a kip in the nearest bed.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "grab_bike",
+		pickup_bicycle_command_help = "Grab the closest bike.",
+		pickup_bicycle_command_substitutes = "gb",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Slap another player with a bill for a certain amount of dosh.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["en-AU"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "mute_stereos",
+		mute_boomboxes_command_help = "Mutes/Unmutes all stereos.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Wipe boomboxes.",
 		wipe_boomboxes_command_parameter_radius = "radius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["en-AU"] = {
 		press_to_leave_bed = "Press ~INPUT_CONTEXT~ to leave the bed."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "No bike nearby.",
+		failed_pickup_bicycle = "Failed to grab bike.",
+		picking_up = "Picking Up Bike",
+		moving_too_fast = "You're going too quick to grab the bike.",
+
+		picked_up_logs_title = "Picked Up Bike",
+		picked_up_logs_details = "${consoleName} picked up a bike with the network id #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Dropped Pushy",
+		dropped_bicycle_logs_details = "${consoleName} dropped the pushy they were carrying."
+	},
+
 	bills = {
 		select_player = "Select Player",
 		no_nearby_players = "No billable players near you.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["en-AU"] = {
 		skip_song = "Skip Track",
 		volume = "Volume",
 		music = "Tunes",
+
+		mute_boomboxes = "Ssh Boomboxes",
+		mute_boomboxes_enabled = "All boomboxes are now on mute.",
+		mute_boomboxes_disabled = "All boomboxes are off mute now.",
 
 		store_boombox = "Store the Ghetto Blaster in your inventory",
 		put_boombox_down = "Put the Ghetto Blaster on the ground",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["en-AU"] = {
 		milking_cow_failed = "Failed to milk cow."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "You are overdosing on fentanyl.",
+		overdose = "Fentanyl Overdose",
+
+		grind_painkillers = "[${InteractionKey}] Grind up painkillers",
+		grinding_painkillers = "Grinding Up Painkillers",
+		mix_acetone = "[${InteractionKey}] Mix with acetone",
+		mixing_acetone = "Mixing With Acetone",
+		add_hydrogen_peroxide = "[${InteractionKey}] Add Hydrogen Peroxide",
+		adding_hydrogen_peroxide = "Adding Hydrogen Peroxide",
+		boil = "[${InteractionKey}] Boil Ingredients",
+		boiling = "Boiling Ingredients",
+		cool_down = "[${InteractionKey}] Cool Down",
+		cooling_down = "Cooling Down",
+		fill_ampules = "[${InteractionKey}] Fill Ampoules",
+		filling_ampules = "Filling Ampoules",
+
+		selling_fentanyl = "Selling Fentanyl",
+		press_to_sell_fentanyl = "Press ~INPUT_CONTEXT~ to sell Fentanyl.",
+		local_not_interested = "The local doesn't seem to be keen right now.",
+
+		something_went_wrong = "Something went pear-shaped.",
+		made_fentanyl_logs_title = "Made Fentanyl",
+		made_fentanyl_logs_details = "${consoleName} whipped up ${amount}x fentanyl.",
+		sold_fentanyl_logs_title = "Sold Fentanyl",
+		sold_fentanyl_logs_details = "${consoleName} offloaded 1x ampule of fentanyl for $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Taking Fingerprint",
 		already_fingerprinting = "You are already taking a fingerprint of a player.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["en-AU"] = {
 		press_to_access_shared_storage = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to access the shared storage.",
 		device_printout_details = "<b>Type:</b> <i>${type}</i>, <b>Text:</b> <i>${text}</i>",
 		copy_serial_number = "Copy Serial Number",
+		copy_fingerprint = "Copy Fingerprint",
 		serial_number_copied = "${itemName}, Serial Number: ${serialNumber}",
 
 		failed_give = "Serienummer: ${serialNumber}<br><i>Dette våben tilhører ${fullName} (#${characterId}).</i>",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["en-AU"] = {
 		lean = "Purple Drank",
 		lean_description = "Sippin on some sizzurp, sip, sippin on some, sip.",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "Known as the \"sneaky snoozer\", fentanyl is a potent little concoction that packs a punch. Just a tad of this substance can send even the most wide-awake person into dreamland. Handle with care though! It's so strong that if dreams were cash, you'd be a billionaire in one hit. Perfect for when you need to turn big problems into sleepy ones.",
+
 		grimace_shake = "Crazy Shake",
 		grimace_shake_description = "Crazy? I was crazy once. They put me in a loony bin. A rubber loony bin with rats. And rats make me bonkers. Bonkers? I was bonkers once. They put me in a loony bin. A rubber loony bin with rats. And rats make me bonkers. Bonkers? I was bonkers once. They put me in a loony bin. A rubber loony bin with rats. And rats make me bonkers. Bonkers? I was bonkers once. They put me in a loony bin. A rubber loony bin with rats. And rats make me bonkers. Bonkers? I was bonkers once.....",
+
+		hydrogen_peroxide = "Hydrogen Peroxide",
+		hydrogen_peroxide_description = "This fizzy potion, known for its bubbles and cleaning properties, is commonly used in science labs and more. While it’s renowned for disinfecting cuts and surfaces, it also has a talent for combining with other ingredients to create some powerful mixtures. Handle with care and a touch of caution.",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Indulge in the sweet and tangy flavours of Jolly Ranchers, the classic hard lollies that burst with fruity goodness.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["en-AU"] = {
 		button_confirm = "Savings Bonds",
 		button_delete = "Total",
 		button_manage = "Failed to deposit savings bonds",
+		button_leave = "Bail",
 		create_account = "Bond Deposit",
 		delete_account = "${consoleName} deposited ${bonds} worth $${amount}.",
 		confirm_delete = "Modifying Attachments",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["en-AU"] = {
 		insufficient_balance = "Bond Deposit",
 		insufficient_bank_balance = "${consoleName} deposited ${bonds} worth $${amount}.",
 		account_description = "Modifying Attachments",
+		leave_account = "Bail on Account",
+		confirm_leave = "Are you fair dinkum about bailing on \"${name}\"? You won't be able to access this account anymore.",
 
 		add_access_logs_title = "Add Access to Savings",
 		add_access_logs_details = "${consoleName} gave `${firstName} ${lastName}` #${characterId} access to the savings account ${accountId}.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["en-AU"] = {
 		create_account_logs_details = "${consoleName} created a new savings account named `${accountName}` with the ID ${accountId}.",
 		deleted_account_logs_title = "walk",
 		deleted_account_logs_details = "Set your walkstyle.",
+		left_account_logs_title = "Left Savings Account",
+		left_account_logs_details = "${consoleName} left a savings account named `${accountName}` with the id ${accountId}.",
 		withdraw_logs_title = "name",
 		withdraw_logs_details = "${consoleName} withdrew $${amount} from savings account ${accountId} with reason `${reason}`.",
 		deposit_logs_title = "info",

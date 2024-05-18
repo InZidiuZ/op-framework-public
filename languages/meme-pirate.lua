@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["meme-pirate"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		bed_command_help = "Attempt t'lay down in th' nearest bed.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "plunder_bicycle",
+		pickup_bicycle_command_help = "Plunder the closest bicycle.",
+		pickup_bicycle_command_substitutes = "pl",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Yarr! Send yer matey a certain amount of doubloons.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "shut-yer-trap_boomboxes",
+		mute_boomboxes_command_help = "Mutes/Unmutes all boomboxes.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Swab th' deck o' boomboxes.",
 		wipe_boomboxes_command_parameter_radius = "radius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		press_to_leave_bed = "Press ~INPUT_CONTEXT~ to leave the bed, matey."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "No bicycle aboard nearby, arrr!",
+		failed_pickup_bicycle = "Failed to plunder bicycle, ye scallywag.",
+		picking_up = "Picking Up Bicycle, ahoy!",
+		moving_too_fast = "Ye be movin' too swift to plunder the bicycle, matey.",
+
+		picked_up_logs_title = "Picked Up Bicycle",
+		picked_up_logs_details = "${consoleName} plundered a bicycle with the network id #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Dropped Bicycle",
+		dropped_bicycle_logs_details = "${consoleName} dropped th' bicycle they were carryin'."
+	},
+
 	bills = {
 		select_player = "Select Matey",
 		no_nearby_players = "No billable mateys near ye, matey.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		skip_song = "Skip Me Tune",
 		volume = "Volume",
 		music = "Shanties",
+
+		mute_boomboxes = "Mute Boomboxes",
+		mute_boomboxes_enabled = "All boomboxes be now muted.",
+		mute_boomboxes_disabled = "All boomboxes be no longer muted.",
 
 		store_boombox = "Store th' Arrrbox o' Boom in yer hold",
 		put_boombox_down = "Pirch th' Arrrbox o' Boom on th' deck",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		milking_cow_failed = "Failed to plunder cow, yarr."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Ye be overdosin' on fentanyl.",
+		overdose = "Fentanyl Overdose",
+
+		grind_painkillers = "[${InteractionKey}] Grind up painkillers",
+		grinding_painkillers = "Grindin' Up Painkillers",
+		mix_acetone = "[${InteractionKey}] Mix with acetone",
+		mixing_acetone = "Mixing Wi' Acetone",
+		add_hydrogen_peroxide = "[${InteractionKey}] Add Hydrogen Peroxide",
+		adding_hydrogen_peroxide = "Addin' Hydrogen Peroxide",
+		boil = "[${InteractionKey}] Boil Ingredients",
+		boiling = "Boilin' Ingredients",
+		cool_down = "[${InteractionKey}] Cool Down",
+		cooling_down = "Coolin' Down",
+		fill_ampules = "[${InteractionKey}] Fill Ampules",
+		filling_ampules = "Fillin' Ampules",
+
+		selling_fentanyl = "Sellin' Fentanyl",
+		press_to_sell_fentanyl = "Press ~INPUT_CONTEXT~ to sell Fentanyl.",
+		local_not_interested = "Arrr, the local doesn't seem to be interested right now.",
+
+		something_went_wrong = "Arrr, something went wrong.",
+		made_fentanyl_logs_title = "Made Fentanyl",
+		made_fentanyl_logs_details = "${consoleName} made ${amount}x fentanyl.",
+		sold_fentanyl_logs_title = "Sold Fentanyl",
+		sold_fentanyl_logs_details = "${consoleName} sold 1x ampule of fentanyl for $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Taking Pirate Fingerprint",
 		already_fingerprinting = "Ye be already takin' a fingerprint o' a player.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		press_to_access_shared_storage = "Shiver me timbers! Press ~INPUT_REPLAY_SHOWHOTKEY~ to access the shared storage.",
 		device_printout_details = "<b>Arr, Type:</b> <i>${type}</i>, <b>Text:</b> <i>${text}</i>",
 		copy_serial_number = "Copy Serial Number",
+		copy_fingerprint = "Copy Mark o' Fingers",
 		serial_number_copied = "${itemName}, Serial Number: ${serialNumber}",
 
 		failed_give = "Failed to automatically generate translation.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		lean = "Sip-sip, pass",
 		lean_description = "Sippin' on some sizzurp, sip, sippin' on some, sip.",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "Dubbed the \"sneaky snoozer\", fentanyl be a powerful wee potion that packs a wallop. Wit' just a whisper o' this substance, ye can send even the most wide-awake into a world o' dreams. Handle wit' care, though! It's so potent that if dreams were gold, ye'd be a billionaire in one dose. Perfect for when ye need to make big problems into sleepy ones.",
+
 		grimace_shake = "Grimace Shake",
 		grimace_shake_description = "Crazy? I was crazed once. They put me in a room. A rubber room. A rubber room with rats. And rats make me crazed. Crazed? I was crazed once. They put me in a room. A rubber room. A rubber room with rats. And rats make me crazed. Crazed? I was crazed once. They put me in a room. A rubber room. A rubber room with rats. And rats make me crazed. Crazed? I was crazed once. They put me in a room. A rubber room. A rubber room with rats. And rats make me crazed. Crazed? I was crazed once.....",
+
+		hydrogen_peroxide = "H2O2",
+		hydrogen_peroxide_description = "This bubbly grog, known fer its fizz and clean, be a staple in science labs and beyond. While it’s famous fer makin' cuts and surfaces spotless, it’s also got a knack fer mixin' up with other ingredients to \"dream up\" some pretty potent concoctions. Handle with enlightenment and a bit of caution.",
 
 		jolly_ranchers = "Jolly Cattle Rustlers",
 		jolly_ranchers_description = "Indulge in the sweet and tangy flavors of Jolly Ranchers, the classic hard candies that burst with fruity goodness, me hearty.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		button_confirm = "Aye",
 		button_delete = "Scuttle",
 		button_manage = "Steer",
+		button_leave = "Set Sail",
 		create_account = "Craft Account",
 		delete_account = "Scuttle Account",
 		confirm_delete = "Be ye sure ye be wantin' to permanently scuttle this account and all logs associated wit' it? This be no undone.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		insufficient_balance = "Failed to automatically generate translation.",
 		insufficient_bank_balance = "Failed to automatically generate translation.",
 		account_description = "Failed to automatically generate translation.",
+		leave_account = "Set Sail Account",
+		confirm_leave = "Be ye sure ye want to set sail from \"${name}\"? Ye will no longer have access to this account.",
 
 		add_access_logs_title = "Savin's Add Access",
 		add_access_logs_details = "${consoleName} gave `${firstName} ${lastName}` #${characterId} access to savin's account ${accountId}.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		create_account_logs_details = "${consoleName} created a new savin's account named `${accountName}` with the id ${accountId}.",
 		deleted_account_logs_title = "Savin's Delete Account",
 		deleted_account_logs_details = "${consoleName} delete a savin's account named `${accountName}` wit' th' id ${accountId}.",
+		left_account_logs_title = "Booty Left Account",
+		left_account_logs_details = "${consoleName} left a treasure chest named `${accountName}` with the id ${accountId}.",
 		withdraw_logs_title = "Savin's Withdraw",
 		withdraw_logs_details = "${consoleName} plundered $${amount} from treasure hoard ${accountId} with reason `${reason}`.",
 		deposit_logs_title = "Savin's Deposit",

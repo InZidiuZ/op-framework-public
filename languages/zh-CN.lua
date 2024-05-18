@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["zh-CN"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		bed_command_help = "尝试躺在最近的床上。",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "pickup_bicycle",
+		pickup_bicycle_command_help = "捡起最近的自行车。",
+		pickup_bicycle_command_substitutes = "pb",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "给另一个玩家开个帐单，金额为特定数额。",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		toggle_ignition_bomb_command_substitutes = "切换引擎炸弹",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "mute_boomboxes",
+		mute_boomboxes_command_help = "静音/取消静音所有音乐播放器。",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "清除音响",
 		wipe_boomboxes_command_help = "清除音响。",
 		wipe_boomboxes_command_parameter_radius = "半径",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		press_to_leave_bed = "按 ~INPUT_CONTEXT~ 键离开床。"
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "附近没有自行车。",
+		failed_pickup_bicycle = "无法捡起自行车。",
+		picking_up = "捡起自行车中",
+		moving_too_fast = "您移动得太快，无法捡起自行车。",
+
+		picked_up_logs_title = "捡起自行车",
+		picked_up_logs_details = "${consoleName} 捡起了一个网络ID为#${networkId}的自行车（`${modelName}`）.",
+		dropped_bicycle_logs_title = "丢弃自行车",
+		dropped_bicycle_logs_details = "${consoleName} 丢弃了他们携带的自行车。"
+	},
+
 	bills = {
 		select_player = "选择玩家",
 		no_nearby_players = "附近没有可结算费用的玩家。",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		skip_song = "跳过歌曲",
 		volume = "音量",
 		music = "音乐",
+
+		mute_boomboxes = "静音音乐播放器",
+		mute_boomboxes_enabled = "所有音乐播放器现在已被静音。",
+		mute_boomboxes_disabled = "所有音乐播放器已取消静音。",
 
 		store_boombox = "将音箱存放在你的背包中",
 		put_boombox_down = "将音箱放在地上",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		milking_cow_failed = "挤奶失败。"
 	},
 
+	fentanyl = {
+		you_are_overdosing = "您正在服用芬太尼过量。",
+		overdose = "芬太尼过量",
+
+		grind_painkillers = "[${InteractionKey}] 研磨止痛药",
+		grinding_painkillers = "正在研磨止痛药",
+		mix_acetone = "[${InteractionKey}] 与丙酮混合",
+		mixing_acetone = "与丙酮混合",
+		add_hydrogen_peroxide = "[${InteractionKey}] 添加过氧化氢",
+		adding_hydrogen_peroxide = "添加过氧化氢",
+		boil = "[${InteractionKey}] 煮原料",
+		boiling = "煮原料",
+		cool_down = "[${InteractionKey}] 冷却",
+		cooling_down = "冷却中",
+		fill_ampules = "[${InteractionKey}] 填充安瓿",
+		filling_ampules = "填充安瓿",
+
+		selling_fentanyl = "贩卖芬太尼",
+		press_to_sell_fentanyl = "按下 ~INPUT_CONTEXT~ 键出售芬太尼。",
+		local_not_interested = "当地居民似乎现在对此不感兴趣。",
+
+		something_went_wrong = "出了点问题。",
+		made_fentanyl_logs_title = "制作芬太尼",
+		made_fentanyl_logs_details = "${consoleName} 制作了 ${amount} 瓶芬太尼。",
+		sold_fentanyl_logs_title = "出售芬太尼",
+		sold_fentanyl_logs_details = "${consoleName} 出售了 1 瓶芬太尼，售价 $${reward}。"
+	},
+
 	fingerprint = {
 		taking_fingerprint = "提取指纹中",
 		already_fingerprinting = "你已经在提取玩家的指纹。",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		press_to_access_shared_storage = "按下 ~INPUT_REPLAY_SHOWHOTKEY~ 键以访问共享存储。",
 		device_printout_details = "<b>类型：</b> <i>${type}</i>，<b>文本：</b> <i>${text}</i>",
 		copy_serial_number = "复制序列号",
+		copy_fingerprint = "复制指纹",
 		serial_number_copied = "复制${itemName}的序列号：${serialNumber}",
 
 		failed_give = "无法将物品给予玩家。",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		lean = "嗑药饮料",
 		lean_description = "喝了一些冰凉的药饮料，嘶嘶声、喝了一些，嘶嘶声。",
 
+		fentanyl = "芬太尼",
+		fentanyl_description = "被誉为“潜行者”，芬太尼是一种强力的小药物，能在瞬间让人入睡。只需少量使用，即可将即便是最清醒的人送入梦乡。但需要小心处理！它的效力如此之强，如果梦境可以成为货币，你只需一剂就能成为亿万富翁。当你需要将大麻烦变为小困难时，这种药物就非常适合。",
+
 		grimace_shake = "怪笑奶昔",
 		grimace_shake_description = "疯狂？我曾经疯狂过。他们把我关在一个房间里。一个橡胶房间。一个橡胶房间里有老鼠。老鼠让我疯狂。疯狂？我曾经疯狂过。他们把我关在一个房间里。一个橡胶房间。一个橡胶房间里有老鼠。老鼠让我疯狂。疯狂？我曾经疯狂过。他们把我关在一个房间里。一个橡胶房间。一个橡胶房间里有老鼠。老鼠让我疯狂。疯狂？我曾经疯狂过。他们把我关在一个房间里。一个橡胶房间。一个橡胶房间里有老鼠。老鼠让我疯狂。疯狂？我曾经疯狂过......",
+
+		hydrogen_peroxide = "过氧化氢",
+		hydrogen_peroxide_description = "这种冒泡饮料以其气泡和清洁而闻名，是科学实验室及其他领域的常备之物。尽管它以清洁切口和表面而闻名，但它也擅长与其他成分混合，制作出一些相当强效的混合物。请谨慎对待并略带警惕。",
 
 		jolly_ranchers = "欢乐牧场糖果",
 		jolly_ranchers_description = "沉溺于欢乐牧场糖果的甜美和酸甜的口味，这些经典的硬糖爆发着水果的美味。",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		button_confirm = "确认",
 		button_delete = "删除",
 		button_manage = "管理",
+		button_leave = "离开",
 		create_account = "创建账户",
 		delete_account = "删除账户",
 		confirm_delete = "您确定要永久删除此账户及其关联的所有日志吗？此操作无法撤消。",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		insufficient_balance = "账户余额不足。",
 		insufficient_bank_balance = "您的银行余额不足。",
 		account_description = "只有账户所有者可以删除和管理账户。拥有账户访问权限的人只能提现和存款。您最多可以创建5个不同的储蓄账户。",
+		leave_account = "离开账号",
+		confirm_leave = "您确定要离开\"${name}\"吗？您将不再能访问该账号。",
 
 		add_access_logs_title = "添加存款账户访问权限",
 		add_access_logs_details = "${consoleName} 给予 `${firstName} ${lastName}`（ID #${characterId}）访问存款账户 ${accountId} 的权限。",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		create_account_logs_details = "${consoleName} 创建了一个名为 `${accountName}`，ID 为 ${accountId} 的新存款账户。",
 		deleted_account_logs_title = "删除储蓄账户",
 		deleted_account_logs_details = "${consoleName} 删除了账户名为 `${accountName}` ，ID 为 ${accountId} 的储蓄账户。",
+		left_account_logs_title = "剩余储蓄账户",
+		left_account_logs_details = "${consoleName} 左侧一个名为 `${accountName}` 的储蓄账户，账户ID为 ${accountId}。",
 		withdraw_logs_title = "储蓄账户取款",
 		withdraw_logs_details = "${consoleName}用理由`${reason}`从储蓄账户${accountId}中取出了$${amount}。",
 		deposit_logs_title = "储蓄账户存款",

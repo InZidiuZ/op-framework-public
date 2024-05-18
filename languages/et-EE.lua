@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["et-EE"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["et-EE"] = {
 		bed_command_help = "Katseta lähima voodi peal magamist.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "võta_jalgratas",
+		pickup_bicycle_command_help = "Võtke lähim jalgratas.",
+		pickup_bicycle_command_substitutes = "vj",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Saada mängijale arve teatud summa eest.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "vähenda_boomboxid",
+		mute_boomboxes_command_help = "Vaigista/luba kõik boomboxid.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Kustutab boomboxid.",
 		wipe_boomboxes_command_parameter_radius = "raadius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["et-EE"] = {
 		press_to_leave_bed = "Väljumiseks vajutage ~INPUT_CONTEXT~."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "Ühtegi jalgratast läheduses pole.",
+		failed_pickup_bicycle = "Jalgratta võtmine ebaõnnestus.",
+		picking_up = "Jalgratta võtmine",
+		moving_too_fast = "Liigud liiga kiiresti, et jalgratast võtta.",
+
+		picked_up_logs_title = "Jalgratta võtmine",
+		picked_up_logs_details = "${consoleName} võttis jalgratta võrgu id-ga #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Mahajäetud jalgratas",
+		dropped_bicycle_logs_details = "${consoleName} jäi maha jalgrattaga, mida nad kandsid."
+	},
+
 	bills = {
 		select_player = "Vali mängija",
 		no_nearby_players = "Sinu lähedal ei ole mängijaid, keda saaks arvele võtta.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["et-EE"] = {
 		skip_song = "Järgmine lugu",
 		volume = "Helitugevus",
 		music = "Muusika",
+
+		mute_boomboxes = "Vaigista boomboxid",
+		mute_boomboxes_enabled = "Kõik boomboxid on nüüd vaigistatud.",
+		mute_boomboxes_disabled = "Kõik boomboxid pole enam vaigistatud.",
 
 		store_boombox = "Pane Boombox oma inventari",
 		put_boombox_down = "Pane Boombox maha",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["et-EE"] = {
 		milking_cow_failed = "Lehma lüpsemine ebaõnnestus."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Te üledoseerite fentanüüli.",
+		overdose = "Fentanüüli üledoos",
+
+		grind_painkillers = "[${InteractionKey}] Jahvata valuvaigisteid",
+		grinding_painkillers = "Valuvaigistite jahvatamine",
+		mix_acetone = "[${InteractionKey}] Sega atsetooniga",
+		mixing_acetone = "Segamine atsetooniga",
+		add_hydrogen_peroxide = "[${InteractionKey}] Lisa vesinikperoksiid",
+		adding_hydrogen_peroxide = "Vesinikperoksiidi lisamine",
+		boil = "[${InteractionKey}] Keeda koostisosi",
+		boiling = "Koostisainete keetmine",
+		cool_down = "[${InteractionKey}] Jahuta maha",
+		cooling_down = "Jahutamine",
+		fill_ampules = "[${InteractionKey}] Täida ampullid",
+		filling_ampules = "Ampullide täitmine",
+
+		selling_fentanyl = "Fentanüüli müümine",
+		press_to_sell_fentanyl = "Vajuta ~INPUT_CONTEXT~, et müüa fentanüüli.",
+		local_not_interested = "Kohalik ei paista praegu huvitatud olevat.",
+
+		something_went_wrong = "Tekkis viga.",
+		made_fentanyl_logs_title = "Valmistas Fentanüüli",
+		made_fentanyl_logs_details = "${consoleName} valmistas ${amount}x fentanüüli.",
+		sold_fentanyl_logs_title = "Müüs Fentanüüli",
+		sold_fentanyl_logs_details = "${consoleName} müüs 1x ampulli fentanüüli eest $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Võetakse sõrmejälge",
 		already_fingerprinting = "Sa juba võtad mängija sõrmejälge.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		press_to_access_shared_storage = "Vajuta ~INPUT_REPLAY_SHOWHOTKEY~, et pääseda jagatud salvestusse.",
 		device_printout_details = "<b>Tüüp:</b> <i>${type}</i>, <b>Tekst:</b> <i>${text}</i>",
 		copy_serial_number = "Kopeeri seerianumber",
+		copy_fingerprint = "Kopeeri sõrmejälg",
 		serial_number_copied = "${itemName}, Seerianumber: ${serialNumber}",
 
 		failed_give = "No se pudo entregar el/los objeto(s) al jugador.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["et-EE"] = {
 		lean = "Lean",
 		lean_description = "Sippin nats sizzurpi, siip, sippin natsi, siip.",
 
+		fentanyl = "Fentanüül",
+		fentanyl_description = "Hüüdnimega \"hiiliv uinutaja\", on fentanüül võimas väike eliksiir, mis pakib hoobi. Vaid selle aine õhukese sosina abil saate isegi kõige tulisemad unne saata. Kuid olge ettevaatlik! See on nii tugev, et kui uned oleksid raha, oleksite ühes annuses miljardär. Ideaalne suurte probleemide unes lahendamiseks.",
+
 		grimace_shake = "grimass raputus",
 		grimace_shake_description = "Hullumeelne? Olin kunagi hull. Panid mind tuppa. Kummist tuppa. Kummist tuppa rottidega. Ja rotid ajavad mind hulluks. Hullumeelne? Olin kunagi hull. Panid mind tuppa. Kummist tuppa. Kummist tuppa rottidega. Ja rotid ajavad mind hulluks. Hullumeelne? Olin kunagi hull. Panid mind tuppa. Kummist tuppa. Kummist tuppa rottidega. Ja rotid ajavad mind hulluks. Hullumeelne? Olin kunagi hull. Panid mind tuppa. Kummist tuppa. Kummist tuppa rottidega. Ja rotid ajavad mind hulluks. Hullumeelne? Olin kunagi hull.....",
+
+		hydrogen_peroxide = "Vesinikperoksiid",
+		hydrogen_peroxide_description = "See mulisev jook, tuntud oma mullitamise ja puhtuse poolest, on laborites ja mujal laialt levinud. Kuigi see on kuulus lõikude ja pindade laitmatuks muutmise eest, on sellel ka oskus seguneda teiste koostisosadega, et \"unistuste\" mõttes valmistada üsna võimsaid segusid. Käsitlege valgustuse ja pisut ettevaatlikkusega.",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Naudi magusaid ja hapukaid Jolly Ranchersi maitseid, mis on klassikalised kõvakommid ja plahvatavad puuviljase headusega.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["et-EE"] = {
 		button_confirm = "Failed to automatically generate translation.",
 		button_delete = "Failed to automatically generate translation.",
 		button_manage = "Failed to automatically generate translation.",
+		button_leave = "Lahku",
 		create_account = "Failed to automatically generate translation.",
 		delete_account = "Failed to automatically generate translation.",
 		confirm_delete = "Failed to automatically generate translation.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		insufficient_balance = "Konto jääk ei ole piisav.",
 		insufficient_bank_balance = "Sinu pangakonto jääk ei ole piisav.",
 		account_description = "Konto omanik saab seda kustutada ja hallata. Inimesed, kellel on kontole juurdepääs, saavad ainult raha välja võtta ja sissemakseid teha. Saate luua kuni 5 erinevat säästukontot.",
+		leave_account = "Lahku konto",
+		confirm_leave = "Kas olete kindel, et soovite lahkuda kasutajakontolt \"${name}\"? Te ei pääse sellele kontole enam ligi.",
 
 		add_access_logs_title = "llamaradmin",
 		add_access_logs_details = "camara",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["et-EE"] = {
 		create_account_logs_details = "Si se establece en `1` o `s`, solo estarás invencible, no el vehículo en el que te encuentras.",
 		deleted_account_logs_title = "Säästukonto kustutamine",
 		deleted_account_logs_details = "${consoleName} kustutas säästukonto nimega `${accountName}` id-ga ${accountId}.",
+		left_account_logs_title = "Järeljäänud hoiu konto",
+		left_account_logs_details = "${consoleName} jättis hoiukonto nimega `${accountName}` ID-ga ${accountId}.",
 		withdraw_logs_title = "Säästukonto väljavõtmine",
 		withdraw_logs_details = "${consoleName} võttis ${amount} dollarit säästukontolt numbriga ${accountId} põhjusega `${reason}`.",
 		deposit_logs_title = "Säästukonto sissemakse",

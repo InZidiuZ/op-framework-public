@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["bn-BD"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		bed_command_help = "নিকটতম বিছানায় শয়নে আসার চেষ্টা করুন।",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "pickup_bicycle",
+		pickup_bicycle_command_help = "আসন নিন।",
+		pickup_bicycle_command_substitutes = "pb",
+
 		-- game/bills
 		create_bill_command = "বিল_তৈরি_করুন",
 		create_bill_command_help = "অন্য একজন গেমারকে একটি নির্দিষ্ট পরিমাণ টাকা বিল করুন।",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "mute_boomboxes",
+		mute_boomboxes_command_help = "সব বুমবক্স মিউট/আনমিউট করুন।",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "বুমবক্স মুছে ফেলুন।",
 		wipe_boomboxes_command_parameter_radius = "radius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		press_to_leave_bed = "বিশ্রামদান থেকে বের হতে চাইলে টিপুন ~INPUT_CONTEXT~।"
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "কোন বাইসাইকেল মোছা নেই।",
+		failed_pickup_bicycle = "বাইসাইকেল নিতে ব্যর্থ হয়েছে।",
+		picking_up = "বাইসাইকেল তুলছি",
+		moving_too_fast = "আপনি বাইসাইকেল নিতে অত্যন্ত দ্রুত চলছেন।",
+
+		picked_up_logs_title = "ভ্রাত মোছা হয়েছে",
+		picked_up_logs_details = "${consoleName} নেটওয়ার্ক আইডি সহ একটি বাইসাইকেল নিয়েছেন #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "প্রমাণপত্র পড়েছে",
+		dropped_bicycle_logs_details = "${consoleName} সেই বাইসাইকেলটি পড়ে ফেললেন যা তারা ধারণ করছিলেন।"
+	},
+
 	bills = {
 		select_player = "প্লেয়ার নির্বাচন করুন",
 		no_nearby_players = "আপনার কাছে কোনও বিলযোগ্য প্লেয়ার নেই।",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		skip_song = "গান ছেঁকুন",
 		volume = "ভলিউম",
 		music = "সঙ্গীত",
+
+		mute_boomboxes = "বুমবক্স সাইলেন্ট করুন",
+		mute_boomboxes_enabled = "সমস্ত বুমবক্স এখন নিঃশব্দ করা হয়েছে।",
+		mute_boomboxes_disabled = "সমস্ত বুমবক্স এখন আর নিঃশব্দ করা হচ্ছে না।",
 
 		store_boombox = "আপনার ইনভেন্টরিতে বুমবক্সটি সংরক্ষণ করুন",
 		put_boombox_down = "জমা দিন বুমবক্সটি",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		milking_cow_failed = "গাভীর দুধ দুখল করতে ব্যর্থ হয়েছে।"
 	},
 
+	fentanyl = {
+		you_are_overdosing = "আপনি ফেন্টানিলে অধিক খাচ্ছেন।",
+		overdose = "ফেন্টানিল অধিক খাওয়া",
+
+		grind_painkillers = "[${InteractionKey}] পেইনকিলার কুটা",
+		grinding_painkillers = "পেইনকিলার কুটা দিচ্ছি",
+		mix_acetone = "[${InteractionKey}] এসিটোন দিয়ে মিশিয়ে নাওয়া",
+		mixing_acetone = "এসিটোন সহ মিশানো",
+		add_hydrogen_peroxide = "[${InteractionKey}] হাইড্রোজেন পেরক্সাইড যোগ করুন",
+		adding_hydrogen_peroxide = "হাইড্রোজেন পেরক্সাইড যোগ করা হচ্ছে",
+		boil = "[${InteractionKey}] উপাদানগুলি জ্বালানো",
+		boiling = "উপাদানগুলি জ্বালানো হচ্ছে",
+		cool_down = "[${InteractionKey}] ঠান্ডা হওয়া",
+		cooling_down = "ঠান্ডা হচ্ছে",
+		fill_ampules = "[${InteractionKey}] এমপিউল পূরণ করুন",
+		filling_ampules = "এমপিউল পূরণ করা হচ্ছে",
+
+		selling_fentanyl = "ফেন্টানাইল বিক্রি করা",
+		press_to_sell_fentanyl = "ফেন্টানাইল বিক্রি করতে ~INPUT_CONTEXT~ চাপুন।",
+		local_not_interested = "এ লোকটি এখন আগ্রহী নয় মনে হচ্ছে।",
+
+		something_went_wrong = "কিছু ভুল হয়েছে।",
+		made_fentanyl_logs_title = "ফেন্টানাইল তৈরি করা হয়েছে",
+		made_fentanyl_logs_details = "${consoleName}-এর দ্বারা ${amount} বার ফেন্টানাইল তৈরি করা হয়েছে।",
+		sold_fentanyl_logs_title = "ফেন্টানাইল বিক্রি হয়েছে",
+		sold_fentanyl_logs_details = "${consoleName}-এর দ্বারা 1 টি ফেন্টানাইল অ্যাম্পুল $${reward} এ বিক্রি হয়েছে।"
+	},
+
 	fingerprint = {
 		taking_fingerprint = "ফিঙ্গারপ্রিন্ট নেওয়া হচ্ছে",
 		already_fingerprinting = "আপনি ইতিমধ্যে একটি খেলোয়াড়ের উঁচুত্ব নিয়ে ফিঙ্গারপ্রিন্ট নিচ্ছেন।",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		press_to_access_shared_storage = "শেয়ারড স্টোরেজ এ প্রবেশ করতে ~INPUT_REPLAY_SHOWHOTKEY~ চাপুন।",
 		device_printout_details = "<b>ধরন:</b> <i>${type}</i>, <b>পাঠ্য:</b> <i>${text}</i>",
 		copy_serial_number = "সিরিয়াল নম্বার কপি করুন",
+		copy_fingerprint = "আঙুলপ্রতিচ্ছবি কপি",
 		serial_number_copied = "${itemName}, সিরিয়াল নম্বার: ${serialNumber}",
 
 		failed_give = "বস্তু(গুলি) খেয়াল ব্যক্তিকে দিতে ব্যর্থ হয়েছে।",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		lean = "লিন",
 		lean_description = "সিজার্প নিচু খাচ্ছি, সিপ, সিজার্প নিচু খাচ্ছি, সিপ।",
 
+		fentanyl = "ফেন্টানাইল",
+		fentanyl_description = "নামকরা \"লুকানো লোডা\", ফেন্টানাইল একটি শক্তিশালী পুরাণ যা হ্তবিশাল আঘাত দেয়। এই পদার্থটির একটি \"গাবো শুনলেই আপনি সবচেয়ে জাগরিতদেরকেও স্বপ্নের একটি বিশ্বে পাঠাতে পারেন। তবে সাবধানে চালিয়ে নাও! এটি এত শক্তিশালী যে যদি স্বপ্ন অর্থ হত, তাহলে আপনি একবারেই একটি কোটিপতি হতেন। যখন আপনার বড় সমস্যাগুলি কিছুটা নিদ্রাজনকে পরিণাম হিতৈষি করা প্রয়োজন।",
+
 		grimace_shake = "গ্রিমেস শেক",
 		grimace_shake_description = "পাগল? আমি একবার পাগল ছিলাম। তারা আমাকে একটি ককুর ঘরে রেখেছিল। রাবার থলের একটি ঘর। রাত্বির সঙ্গে। এবং এটি ক্ষেত্রে কর্মী তিনি পাগল করে। পাগল? আমি একবার পাগল ছিলাম। তারা আমাকে একটি ককুর ঘরে রেখেছিল। রাবার থলের একটি ঘর। রাত্বির সঙ্গে। এবং এটি ক্ষেত্রে কর্মী তিনি পাগল করে। পাগল? আমি একবার পাগল ছিলাম। তারা আমাকে একটি ককুর ঘরে রেখেছিল। রাবার থলের একটি ঘর। রাত্বির সঙ্গে। এবং এটি ক্ষেত্রে কর্মী তিনি পাগল করে। পাগল? আমি একবার পাগল ছিলাম। তারা আমাকে একটি ককুর ঘরে রেখেছিল। রাবার থলের একটি ঘর। রাত্বির সঙ্গে। এবং এটি ক্ষেত্রে কর্মী তিনি পাগল করে। পাগল? আমি একবার পাগল ছিলাম.....",
+
+		hydrogen_peroxide = "হাইড্রোজেন প্যারক্সাইড",
+		hydrogen_peroxide_description = "এই বাবলি ব্যু, যা তার ফিজ এবং ক্লীনের জন্য পরিচিত, বিজ্ঞান গবেষণা কেন্দ্রগুলিতে এবং দুরে। এটি কেটের এবং উপকরণগুলি পরিষ্কার করা জন্য বিখ্যাত হওয়া ছাড়া, এটি অন্যান্য ইংরেজীয় উপাদান সাথে মিশে নতুন প্রকরণগুলি \"ভাবলে\"র জন্য প্রতিভা সম্পাদিত করার একটি সামর্থ্য আছে। উজ্জ্বলতা এবং কিছু সাবধানতার সাথে হ্যান্ডেল করুন।",
 
 		jolly_ranchers = "জলি রঞ্চার",
 		jolly_ranchers_description = "মিষ্টি ও তাজার স্বাদে মজার জলি রঞ্চারগুলি খেতে সময় কাটান। এটি ক্লাসিক হার্ড ক্যান্ডি যা ফলের মধুর বুকে বারবার বুস্তি দেয়।",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		button_confirm = "নিশ্চিত করুন",
 		button_delete = "মুছে ফেলুন",
 		button_manage = "পরিচালনা করুন",
+		button_leave = "ছেড়ে দিন",
 		create_account = "হিসাব খুলুন",
 		delete_account = "হিসাব মুছে ফেলুন",
 		confirm_delete = "আপনি কি নিশ্চিত যে এই হিসাবটি এবং এর সমস্ত লগ সহ স্থায়ীভাবে মুছে ফেলতে চান? এই কর্মটি প্রত্যাহার করা যাবে না।",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		insufficient_balance = "অ্যাকাউন্টে ব্যালেন্স অপর্যাপ্ত।",
 		insufficient_bank_balance = "আপনার ব্যাংক ব্যালেন্স অপর্যাপ্ত।",
 		account_description = "কেবলমাত্র হিসাবটির মালিক নিজেই এটি মুছে ফেলতে এবং পরিচালনা করতে পারেন। হিসাবে অ্যাক্সেস পাওয়া ব্যক্তিগণ কেবলমাত্র উত্তোলন এবং আমানত করতে পারে। আপনি সর্বাধিক ৫টি পৃথক সঞ্চয় হিসাব তৈরি করতে পারেন।",
+		leave_account = "অ্যাকাউন্ট থেকে বিদায়",
+		confirm_leave = "আপনি কি নিশ্চিত যে আপনি \"${name}\" ছেড়ে দিতে চান? আপনার এই অ্যাকাউন্টে আর প্রবেশ পাবেন না।",
 
 		add_access_logs_title = "সঞ্চয় যোগদানের অ্যাক্সেস",
 		add_access_logs_details = "${consoleName} নেন ${firstName} ${lastName}-কে সঞ্চয় অ্যাকাউন্ট ${accountId} এর অ্যাক্সেস দিয়েছেন।",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		create_account_logs_details = "${consoleName} নেন একটি নতুন সঞ্চয় অ্যাকাউন্ট `${accountName}` নামে তৈরি করেছেন, যার আইডি হচ্ছে ${accountId}।",
 		deleted_account_logs_title = "সঞ্চয় অ্যাকাউন্ট মুছে ফেলা হয়েছে",
 		deleted_account_logs_details = "${consoleName} নামের একটি সঞ্চয় অ্যাকাউন্ট মুছে ফেলেছেন, নাম: `${accountName}`, আইডি: ${accountId}।",
+		left_account_logs_title = "নিথিনী বাঁচা অ্যাকাউন্ট",
+		left_account_logs_details = "${consoleName} নির্দিষ্ট `${accountName}` নামের একটি নিথিনী অ্যাকাউন্টের ID ${accountId} ছেড়েছেন।",
 		withdraw_logs_title = "সঞ্চয় সম্পর্কিত টাকা উত্তোলন",
 		withdraw_logs_details = "${consoleName} সেভিংস হিসাব ${accountId} থেকে $${amount} উত্তোলন করেন যা বাহির হয়েছে `${reason}`।",
 		deposit_logs_title = "সঞ্চয় সম্পর্কিত টাকা জমা",

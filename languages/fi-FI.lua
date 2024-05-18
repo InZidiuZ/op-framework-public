@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["fi-FI"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		bed_command_help = "Yritä laskeutua lähimpään vuoteeseen.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "nosta_polkupyorä",
+		pickup_bicycle_command_help = "Nosta lähin polkupyörä.",
+		pickup_bicycle_command_substitutes = "np",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Laskuta toinen pelaaja tietty määrä rahaa.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		toggle_ignition_bomb_command_substitutes = "käynnistyspommi",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "vaimenna_boomboxit",
+		mute_boomboxes_command_help = "Vaimentaa/Poistaa vaimennuksen kaikista boomboxeista.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "pyyhi_radiot",
 		wipe_boomboxes_command_help = "Pyyhi radiot.",
 		wipe_boomboxes_command_parameter_radius = "säde",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		press_to_leave_bed = "Paina ~INPUT_CONTEXT~ poistuaksesi vuoteesta."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "Ei polkupyörää lähellä.",
+		failed_pickup_bicycle = "Polkupyörän nostaminen epäonnistui.",
+		picking_up = "Nostetaan polkupyörää",
+		moving_too_fast = "Liikut liian nopeasti noustaksesi polkupyörää.",
+
+		picked_up_logs_title = "Nostettu polkupyörä",
+		picked_up_logs_details = "${consoleName} nosti polkupyörän verkkotunnuksella #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Pudotettu polkupyörä",
+		dropped_bicycle_logs_details = "${consoleName} pudotti kantamansa polkupyörän."
+	},
+
 	bills = {
 		select_player = "Valitse pelaaja",
 		no_nearby_players = "Lähelläsi ei ole laskutettavia pelaajia.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		skip_song = "Ohita kappale",
 		volume = "Äänenvoimakkuus",
 		music = "Musiikki",
+
+		mute_boomboxes = "Mykistä boomboxit",
+		mute_boomboxes_enabled = "Kaikki boomboxit ovat nyt mykistettyjä.",
+		mute_boomboxes_disabled = "Kaikki boomboxit eivät ole enää mykistettyjä.",
 
 		store_boombox = "Säilytä boombox inventoriossasi",
 		put_boombox_down = "Laita boombox maahan",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		milking_cow_failed = "Lehmän lypsäminen epäonnistui."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Yliannostelet fentanyylillä.",
+		overdose = "Fentanyyliyliannostus",
+
+		grind_painkillers = "[${InteractionKey}] Jauha särkylääkkeitä",
+		grinding_painkillers = "Jauhetaan särkylääkkeitä",
+		mix_acetone = "[${InteractionKey}] Sekoita asetoniin",
+		mixing_acetone = "Sekoita asetonin kanssa",
+		add_hydrogen_peroxide = "[${InteractionKey}] Lisää vetyperoksidia",
+		adding_hydrogen_peroxide = "Lisätään vetyperoksidia",
+		boil = "[${InteractionKey}] Kiehauta ainekset",
+		boiling = "Kiehautetaan ainekset",
+		cool_down = "[${InteractionKey}] Anna jäähtyä",
+		cooling_down = "Jäähdytetään",
+		fill_ampules = "[${InteractionKey}] Täytä ampullit",
+		filling_ampules = "Täytetään ampullit",
+
+		selling_fentanyl = "Myy fentanyyliä",
+		press_to_sell_fentanyl = "Paina ~INPUT_CONTEXT~, jotta myyt fentanyyliä.",
+		local_not_interested = "Paikallinen ei vaikuta kiinnostuneelta juuri nyt.",
+
+		something_went_wrong = "Jotain meni pieleen.",
+		made_fentanyl_logs_title = "Valmisti Fentanyyliä",
+		made_fentanyl_logs_details = "${consoleName} valmisti ${amount} kpl fentanyyliä.",
+		sold_fentanyl_logs_title = "Myi Fentanyyliä",
+		sold_fentanyl_logs_details = "${consoleName} myi 1 kpl fentanyyliampullin hintaan $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Otetaan sormenjälkiä",
 		already_fingerprinting = "Olet jo ottamassa pelaajan sormenjälkiä.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		press_to_access_shared_storage = "Paina ~INPUT_REPLAY_SHOWHOTKEY~ avataksesi jaettu säilytys.",
 		device_printout_details = "<b>Tyyppi:</b> <i>${tyyppi}</i>, <b>Teksti:</b> <i>${teksti}</i>",
 		copy_serial_number = "Kopioi sarjanumero",
+		copy_fingerprint = "Kopioi Sormenjälki",
 		serial_number_copied = "${itemName}, Sarjanumero: ${serialNumber}",
 
 		failed_give = "Papas Tayto",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		lean = "Lean",
 		lean_description = "Sippaan sizzurpia, si-sippaan mua, sippaan jotain, si-sippaan...",
 
+		fentanyl = "Fentanyyli",
+		fentanyl_description = "Nimetty \"hiipiväksi torkuttajaksi\", fentanyyli on tehokas pikku sekoitus, joka iskee kovaa. Pelkällä hyräyksellä tästä aineesta voit lähettää jopa valveillaolijoista unelmoijia. Käsittele varovasti, kuitenkin! Se on niin tehokas, että jos unelmat olisivat valuuttaa, olisit miljardööri yhdellä annoksella. Täydellinen ratkaisu, kun tarvitset muuttaa suuret ongelmat unisiksi.",
+
 		grimace_shake = "Grimace Shake",
 		grimace_shake_description = "Hullu? Olin hullu kerran. He lukitsivat minut huoneeseen. Kumihuoneeseen. Kumihuoneeseen, jossa oli rottia. Ja rotat tekevät minut hulluksi. Hullu? Olin hullu kerran. He lukitsivat minut huoneeseen. Kumihuoneeseen. Kumihuoneeseen, jossa oli rottia. Ja rotat tekevät minut hulluksi. Hullu? Olin hullu kerran. He lukitsivat minut huoneeseen. Kumihuoneeseen. Kumihuoneeseen, jossa oli rottia. Ja rotat tekevät minut hulluksi. Hullu? Olin hullu kerran. He lukitsivat minut huoneeseen. Kumihuoneeseen. Kumihuoneeseen, jossa oli rottia. Ja rotat tekevät minut hulluksi. Hullu? Olin hullu kerran.....",
+
+		hydrogen_peroxide = "Vetyperoksidi",
+		hydrogen_peroxide_description = "Tämä kupliva sekoitus tunnetaan sen poreilusta ja puhdistavasta vaikutuksestaan. Se on tärkeä osa tiedelaboratorioita ja paljon muutakin. Vaikka se onkin kuuluisa haavojen ja pintojen puhdistamisesta, sillä on myös taito sekoittua muiden ainesosien kanssa luodakseen melko voimakkaita juomia. Käsittele valistuneesti ja hieman varovasti.",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Nauti makeista ja kirpeistä Jolly Ranchers -karamelleista, klassisista kovista karamelleista, jotka pursuavat hedelmäisellä herkullisuudella.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		button_confirm = "poly",
 		button_delete = "emote",
 		button_manage = "Joue une emote.",
+		button_leave = "Lähtö",
 		create_account = "nom",
 		delete_account = "Le nom de l'emote.",
 		confirm_delete = "e",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		insufficient_balance = "nom",
 		insufficient_bank_balance = "Le nom de l'emote.",
 		account_description = "e",
+		leave_account = "Lähtötili",
+		confirm_leave = "Oletko varma, että haluat lähteä tililtä \"${name}\"? Sinulla ei enää ole pääsyä tähän tiliin.",
 
 		add_access_logs_title = "Soit `number` soit `twitter`.",
 		add_access_logs_details = "recherche",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		create_account_logs_details = "Crée une détention de véhicule. Cela permettra de confisquer le véhicule par la police pour une période prolongée. (Note : Les véhicules déjà retirés continueront d'exister)",
 		deleted_account_logs_title = "Eliminar Cuenta de Ahorros",
 		deleted_account_logs_details = "${consoleName} eliminó una cuenta de ahorros llamada `${accountName}` con el ID ${accountId}.",
+		left_account_logs_title = "Säästötili suljettu",
+		left_account_logs_details = "${consoleName} sulki säästötilin nimeltä `${accountName}` tunnuksella ${accountId}.",
 		withdraw_logs_title = "Retiro de Ahorros",
 		withdraw_logs_details = "${consoleName} nosti $${amount} säästötililtä ${accountId} syynä `${reason}`.",
 		deposit_logs_title = "Depósito de Ahorros",

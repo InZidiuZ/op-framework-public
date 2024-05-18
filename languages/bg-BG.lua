@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["bg-BG"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		bed_command_help = "Опитайте да легнете в най-близката легла.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "вземи_велосипед",
+		pickup_bicycle_command_help = "Вземете най-близкия велосипед.",
+		pickup_bicycle_command_substitutes = "вв",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Фактурирайте определена сума пари на друг играч.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		toggle_ignition_bomb_command_substitutes = "запалване_бомба",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "изключи_гетобластерите",
+		mute_boomboxes_command_help = "Заглушава/Разглушава всички гетобластери.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "изтрий_бумбокси",
 		wipe_boomboxes_command_help = "Изтриване на бумбоксите.",
 		wipe_boomboxes_command_parameter_radius = "радиус",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		press_to_leave_bed = "Натиснете ~INPUT_CONTEXT~ , за да излезете от леглото."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "Няма велосипед в близост.",
+		failed_pickup_bicycle = "Неуспешно взимане на велосипед.",
+		picking_up = "Взимане на велосипед",
+		moving_too_fast = "Премествате се твърде бързо, за да вземете велосипеда.",
+
+		picked_up_logs_title = "Взет велосипед",
+		picked_up_logs_details = "${consoleName} взе велосипед с мрежовия идентификатор #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Паднало Колело",
+		dropped_bicycle_logs_details = "${consoleName} падна с колелото, което носеше."
+	},
+
 	bills = {
 		select_player = "Изберете играч",
 		no_nearby_players = "Няма близки играчи за фактуриране.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		skip_song = "Прескочи песента",
 		volume = "Сила на звука",
 		music = "Музика",
+
+		mute_boomboxes = "Изключи Boomboxes",
+		mute_boomboxes_enabled = "Всички Boomboxes са изключени в момента.",
+		mute_boomboxes_disabled = "Всички Boomboxes вече не са изключени.",
 
 		store_boombox = "Запази бумбокса в инвентара си",
 		put_boombox_down = "Постави бумбокса на земята",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		milking_cow_failed = "Неуспех при подмяна на крава."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Прекалихте с фентанил.",
+		overdose = "Прекомерна Доза Фентанил",
+
+		grind_painkillers = "[${InteractionKey}] Изтриване на болкоуспокоителите",
+		grinding_painkillers = "Изтриване на Болкоуспокоителите",
+		mix_acetone = "[${InteractionKey}] Смесете с ацетон",
+		mixing_acetone = "Смесване с ацетон",
+		add_hydrogen_peroxide = "[${InteractionKey}] Добавяне на воден пероксид",
+		adding_hydrogen_peroxide = "Добавяне на воден пероксид",
+		boil = "[${InteractionKey}] Кипене на съставките",
+		boiling = "Кипене на съставките",
+		cool_down = "[${InteractionKey}] Изстудяване",
+		cooling_down = "Изстудяване",
+		fill_ampules = "[${InteractionKey}] Пълнене на ампули",
+		filling_ampules = "Пълнене на ампули",
+
+		selling_fentanyl = "Продаване на фентанил",
+		press_to_sell_fentanyl = "Натиснете ~INPUT_CONTEXT~, за да продадете фентанил.",
+		local_not_interested = "Местният не изглежда заинтересован в момента.",
+
+		something_went_wrong = "Възникна проблем.",
+		made_fentanyl_logs_title = "Произведен Фентанил",
+		made_fentanyl_logs_details = "${consoleName} произведе ${amount} бр. фентанил.",
+		sold_fentanyl_logs_title = "Продаден Фентанил",
+		sold_fentanyl_logs_details = "${consoleName} продаде 1 бр. ампула фентанил за $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Вземане на отпечатък",
 		already_fingerprinting = "Вече вземате отпечатък от играч.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		press_to_access_shared_storage = "Натиснете ~INPUT_REPLAY_SHOWHOTKEY~, за да получите достъп до споделеното хранилище.",
 		device_printout_details = "<b>Тип:</b> <i>${type}</i>, <b>Текст:</b> <i>${text}</i>",
 		copy_serial_number = "Копиране на сериен номер",
+		copy_fingerprint = "Копиране на пръстен отпечатък",
 		serial_number_copied = "${itemName}, Сериен номер: ${serialNumber}",
 
 		failed_give = "Неуспешно предаване на елемент(и) към играча.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		lean = "Лийн",
 		lean_description = "Пиянчване със сизърп, сип, сипане, сип.",
 
+		fentanyl = "Фентанил",
+		fentanyl_description = "Наречен \"подлата заспиваща смесь\", фентанилът е мощно малко зельо, което прави голям ефект. Само с едно докосване на тази субстанция, можете да изпратите дори най-бделия в свят на сънища. Обаче бъдете внимателни! Той е толкова мощен, че ако сънищата бяха валута, щяхте да сте милиардер след едно дозиране. Идеален, когато трябва да обърнете големи проблеми във спокойно решими.",
+
 		grimace_shake = "Гримасно разклащане",
 		grimace_shake_description = "Луд? Една гледа луд бях. Те ме затвориха в стая. Резбарна стая. Резбарна стая с плъхове. И плъховете ме правят луд. Луд? Една гледа луд бях. Те ме затвориха в стая. Резбарна стая. Резбарна стая с плъхове. И плъховете ме правят луд. Луд? Една гледа луд бях. Те ме затвориха в стая. Резбарна стая. Резбарна стая с плъхове. И плъховете ме правят луд. Луд? Една гледа луд бях. Те ме затвориха в стая. Резбарна стая. Резбарна стая с плъхове. И плъховете ме правят луд. Луд? Една гледа луд бях.....",
+
+		hydrogen_peroxide = "Воден пероксид",
+		hydrogen_peroxide_description = "Този пенист бил, известен със своята бучкавина и чистота, е стандарт в научните лаборатории и не само. Въпреки че е известен с това, че прави наранявания и повърхности перфектно чисти, той също така е майстор в смесването с други съставки, за да „придума“ някои доста мощни смеси. Обработвайте с прозрение и малко внимание.",
 
 		jolly_ranchers = "Жоли Ранчъри",
 		jolly_ranchers_description = "Насладете се на сладките и киселите вкусове на Жоли Ранчъри, класическите твърди бонбони, изпълнени с плодова сладост.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		button_confirm = "Потвърди",
 		button_delete = "Изтрий",
 		button_manage = "Управлявай",
+		button_leave = "Напусни",
 		create_account = "Създай Сметка",
 		delete_account = "Изтрий Сметка",
 		confirm_delete = "Сигурни ли сте, че искате да изтриете тази сметка завинаги и всички свързани с нея записи? Това действие не може да бъде отменено.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		insufficient_balance = "Недостатъчен баланс на сметката.",
 		insufficient_bank_balance = "Недостатъчен банков баланс.",
 		account_description = "Само собственикът на сметката може да я изтрие и управлява. Хора с достъп до сметката могат само да изтеглят и депозират. Можете да създадете до 5 различни сметки за спестявания.",
+		leave_account = "Напусни профила",
+		confirm_leave = "Сигурни ли сте, че искате да напуснете профила „${name}“? Няма да имате повече достъп до този профил.",
 
 		add_access_logs_title = "Добавете достъп до спестовния сметка",
 		add_access_logs_details = "${consoleName} даде достъп на `${firstName} ${lastName}` #${characterId} до спестовния сметка ${accountId}.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		create_account_logs_details = "${consoleName} създаде нова спестовна сметка с името `${accountName}` с идентификационен номер ${accountId}.",
 		deleted_account_logs_title = "Изтриване на сметка за спестявания",
 		deleted_account_logs_details = "${consoleName} изтри ${accountName} спестяване, с идентификационен номер ${accountId}.",
+		left_account_logs_title = "Оставени на запис със спестовен акаунт",
+		left_account_logs_details = "${consoleName} остави спестовен акаунт на име `${accountName}` с идентификационен номер ${accountId}.",
 		withdraw_logs_title = "Теглене от спестявания",
 		withdraw_logs_details = "${consoleName} изтегли $${amount} от сметка ${accountId} с причина `${reason}`.",
 		deposit_logs_title = "Депозиране в спестявания",

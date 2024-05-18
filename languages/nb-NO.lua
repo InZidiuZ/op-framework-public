@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["nb-NO"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		bed_command_help = "Forsøk å legge deg i nærmeste seng.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "plukkopp_sykkel",
+		pickup_bicycle_command_help = "Plukk opp nærmeste sykkel.",
+		pickup_bicycle_command_substitutes = "ps",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Fakturer en annen spiller en bestemt sum penger.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		toggle_ignition_bomb_command_substitutes = "ignisjonsbombe",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "mute_boomboxes",
+		mute_boomboxes_command_help = "Slår av/på all boomboxes.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "slett_boomboxer",
 		wipe_boomboxes_command_help = "Sletter boomboxer.",
 		wipe_boomboxes_command_parameter_radius = "radius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		press_to_leave_bed = "Trykk ~INPUT_CONTEXT~ for å forlate senga."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "Ingen sykkel i nærheten.",
+		failed_pickup_bicycle = "Klarte ikke å plukke opp sykkelen.",
+		picking_up = "Plukker opp sykkel",
+		moving_too_fast = "Du beveger deg for fort til å plukke opp sykkelen.",
+
+		picked_up_logs_title = "Plukket opp sykkel",
+		picked_up_logs_details = "${consoleName} plukket opp en sykkel med nettverks-ID #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Sluppet sykkel",
+		dropped_bicycle_logs_details = "${consoleName} slapp sykkelen de bar på."
+	},
+
 	bills = {
 		select_player = "Velg Spiller",
 		no_nearby_players = "Ingen betalbare spillere i nærheten av deg.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		skip_song = "Hopp over sang",
 		volume = "Volum",
 		music = "Musikk",
+
+		mute_boomboxes = "Dempe boomboxes",
+		mute_boomboxes_enabled = "Alle boomboxes dempet nå.",
+		mute_boomboxes_disabled = "Alle boomboxes er ikke lenger dempet.",
 
 		store_boombox = "Lagre Boombox i inventaret ditt",
 		put_boombox_down = "Sett ned Boombox på bakken",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		milking_cow_failed = "Ku melking mislyktes."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Du tar for mye fentanyl.",
+		overdose = "Fentanyl overdosering",
+
+		grind_painkillers = "[${InteractionKey}] Kvern smertestillende",
+		grinding_painkillers = "Kverner smertestillende",
+		mix_acetone = "[${InteractionKey}] Bland  med aceton",
+		mixing_acetone = "Blanding med Aceton",
+		add_hydrogen_peroxide = "[${InteractionKey}] Legg til hydrogenperoksid",
+		adding_hydrogen_peroxide = "Legger til hydrogenperoksid",
+		boil = "[${InteractionKey}] Kok ingredienser",
+		boiling = "Koker ingredienser",
+		cool_down = "[${InteractionKey}] Avkjøl",
+		cooling_down = "Avkjøler",
+		fill_ampules = "[${InteractionKey}] Fyll ampuller",
+		filling_ampules = "Fyller ampuller",
+
+		selling_fentanyl = "Selger Fentanyl",
+		press_to_sell_fentanyl = "Trykk ~INPUT_CONTEXT~ for å selge Fentanyl.",
+		local_not_interested = "Lokalbefolkningen virker ikke interessert akkurat nå.",
+
+		something_went_wrong = "Noe gikk galt.",
+		made_fentanyl_logs_title = "Laget Fentanyl",
+		made_fentanyl_logs_details = "${consoleName} laget ${amount}x fentanyl.",
+		sold_fentanyl_logs_title = "Solgt Fentanyl",
+		sold_fentanyl_logs_details = "${consoleName} solgte 1x ampulle med fentanyl for $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Tar Fingeravtrykk",
 		already_fingerprinting = "Du tar allerede fingeravtrykk av en spiller.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		press_to_access_shared_storage = "Trykk ~INPUT_REPLAY_SHOWHOTKEY~ for å åpne delt lagring.",
 		device_printout_details = "<b>Type:</b> <i>${type}</i>, <b>Tekst:</b> <i>${text}</i>",
 		copy_serial_number = "Kopier Serienummer",
+		copy_fingerprint = "Kopier Fingeravtrykk",
 		serial_number_copied = "${itemName}, Serienummer: ${serialNumber}",
 
 		failed_give = "일련번호: ${serialNumber}<br><i>이 무기는 ${fullName}님이 소유하고 있습니다 (#${characterId}).</i>",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		lean = "Lean",
 		lean_description = "Drikker litt sizzurp, slurp, drikker litt, slurp.",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "Kalt den \"snikende slumreren\", er fentanyl en kraftig liten drikke som virkelig smeller til. Med bare en dugg av denne substansen, kan du sende selv de mest våkne inn i en verden av drømmer. Behandle forsiktig, dog! Den er så potent at hvis drømmer var valuta, ville du være milliardær i en dose. Perfekt når du trenger å gjøre store problemer om til søvnige.",
+
 		grimace_shake = "Grimasse-shake",
 		grimace_shake_description = "Gærn? Jeg var gærn en gang. De putta meg på et rom. Et rom av gummi. Et rom av gummi med rotter. Og rotter gjør meg gærn. Gærn? Jeg var gærn en gang. De putta meg på et rom. Et rom av gummi. Et rom av gummi med rotter. Og rotter gjør meg gærn. Gærn? Jeg var gærn en gang. De putta meg på et rom. Et rom av gummi. Et rom av gummi med rotter. Og rotter gjør meg gærn. Gærn? Jeg var gærn en gang. De putta meg på et rom. Et rom av gummi. Et rom av gummi med rotter. Og rotter gjør meg gærn. Gærn? Jeg var gærn en gang.....",
+
+		hydrogen_peroxide = "Hydrogenperoksid",
+		hydrogen_peroxide_description = "Denne boblende bryggen, kjent for sin brus og rengjøring, er en grunnleggende del av vitenskapslaboratorier og mer. Mens den er kjent for å gjøre kutt og overflater skinnende rene, har den også en evne til å blande seg med andre ingredienser for å \"drømme opp\" ganske potente brygg. Håndter med opplysning og litt forsiktighet.",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Nyt de søte og syrlige smakene av Jolly Ranchers, de klassiske harde godteriene som spruter med fruktig godhet.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		button_confirm = "라디오 방해기",
 		button_delete = "잠수함 탑승",
 		button_manage = "[${InteractionKey}] 잠수함 탑승",
+		button_leave = "Forlat",
 		create_account = "잠수함 내림",
 		delete_account = "[${InteractionKey}] 잠수함 내림",
 		confirm_delete = "목적지가 설정되지 않았습니다.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		insufficient_balance = "잠수함 내림",
 		insufficient_bank_balance = "[${InteractionKey}] 잠수함 내림",
 		account_description = "목적지가 설정되지 않았습니다.",
+		leave_account = "Forlat konto",
+		confirm_leave = "Er du sikker på at du vil forlate \"${name}\"? Du vil ikke lenger ha tilgang til denne kontoen.",
 
 		add_access_logs_title = "Enten nettverks-ID-en til personen, nettverks-ID-en til kjøretøyet (som personen kjører), eller la det stå tomt for å velge sjåføren av nåværende kjøretøy.",
 		add_access_logs_details = "show_raw_locales",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		create_account_logs_details = "type",
 		deleted_account_logs_title = "Veksle skaderefleksjon. (Enhver enhet som skader deg vil selv bli skadet)",
 		deleted_account_logs_details = "savings_accounts",
+		left_account_logs_title = "Sparing Venstre Konto",
+		left_account_logs_details = "${consoleName} forlot en sparekonto med navnet `${accountName}` med ID ${accountId}.",
 		withdraw_logs_title = "Vis og administrer alle sparekontoene dine.",
 		withdraw_logs_details = "${consoleName} trakk $${amount} fra sparekonto ${accountId} med grunn `${reason}`.",
 		deposit_logs_title = "toggle_developer_ambience",

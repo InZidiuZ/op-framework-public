@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["ne-NP"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		bed_command_help = "निकटतम बेडमा लेट्न कोशिश गर्नुहोस्।",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "pickup_bicycle",
+		pickup_bicycle_command_help = "नजिकैको साइकल किन्नुहोस्।",
+		pickup_bicycle_command_substitutes = "pb",
+
 		-- game/bills
 		create_bill_command = "बिल सिर्जना गर्नुहोस्",
 		create_bill_command_help = "अर्को खेलाडीलाई निश्चित रकमको बिल बनाउनुहोस्।",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "mute_boomboxes",
+		mute_boomboxes_command_help = "सबै बूमबोक्स म्युट/अनम्युट गर्नुहोस्।",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "बूमबक्सहरू धुन्नुहोस्।",
 		wipe_boomboxes_command_parameter_radius = "रेडियस",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		press_to_leave_bed = "बेडबाट निस्कनका लागि ~INPUT_CONTEXT~ थिच्नुहोस्।"
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "कुनै साइकल नजिकै छैन।",
+		failed_pickup_bicycle = "साइकल किन्न असफल भयो।",
+		picking_up = "साइकल किन रहेको छ",
+		moving_too_fast = "तपाईं साइकल मिलाउन धेरै गति मा छिनुहुन्छ।",
+
+		picked_up_logs_title = "साइकल मिल्नुभयो",
+		picked_up_logs_details = "${consoleName} नेटवर्क आइडी #${networkId} (`${modelName}`). संग साइकल मिलाइनुभयो।",
+		dropped_bicycle_logs_title = "गिराएको साइकल",
+		dropped_bicycle_logs_details = "${consoleName} ले उनीहरूले लिएको साइकल गिराए."
+	},
+
 	bills = {
 		select_player = "प्लेयर चयन गर्नुहोस्",
 		no_nearby_players = "तपाईंसँग नजिकै कुनै बिल गर्ने प्लेयरहरू छैनन्।",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		skip_song = "स्किप सॉन्ग",
 		volume = "वॉल्यूम",
 		music = "संगीत",
+
+		mute_boomboxes = "बूमबक्स म्युट गर्नुहोस्",
+		mute_boomboxes_enabled = "सबै बूमबक्सहरू अहिले म्युट गरिएको छ।",
+		mute_boomboxes_disabled = "सबै बूमबक्सहरू अहिले म्युट नहुने छ।",
 
 		store_boombox = "बूमबॉक्स को अपने इन्वेंटरी में स्टोर करें",
 		put_boombox_down = "बूमबॉक्स को यहाँ रखे",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		milking_cow_failed = "गाईलाई दुध चिच्याएर असफल भयो।"
 	},
 
+	fentanyl = {
+		you_are_overdosing = "तपाइं फेन्टानिलमा अधिक सेवन गरिरहेका छौं।",
+		overdose = "फेन्टानिल अधिक सेवन",
+
+		grind_painkillers = "[${InteractionKey}] पेनकिलरहरूलाई कुट्टाउनुहोस्",
+		grinding_painkillers = "पेनकिलरहरू कुट्टिन्छ",
+		mix_acetone = "[${InteractionKey}] ऐसिटोनसँग मिस गर्नुहोस्",
+		mixing_acetone = "एसिटोनसँग मिस्तान",
+		add_hydrogen_peroxide = "[${InteractionKey}] हाइड्रोजन पेरक्साइड थप्नुहोस्",
+		adding_hydrogen_peroxide = "हाइड्रोजन पेरक्साइड थप्दै",
+		boil = "[${InteractionKey}] सामग्री उकाल्नुहोस्",
+		boiling = "सामग्री उकाउँदै",
+		cool_down = "[${InteractionKey}] शीतल हुनुहोस्",
+		cooling_down = "शीतल हुन्छ",
+		fill_ampules = "[${InteractionKey}] एम्पुलहरू भर्नुहोस्",
+		filling_ampules = "एम्पुलहरू भर्दै",
+
+		selling_fentanyl = "फेन्टनिल बेच्नुहोस्",
+		press_to_sell_fentanyl = "फेन्टनिल बेच्नका लागि ~INPUT_CONTEXT~ थिच्नुहोस्।",
+		local_not_interested = "स्थानीय अहिले देखि रुचारहिनुपर्छ।",
+
+		something_went_wrong = "केहि गलति भयो।",
+		made_fentanyl_logs_title = "फेन्टनाइल बनाइयो",
+		made_fentanyl_logs_details = "${consoleName}ले ${amount} जनाको फेन्टनाइल बनाइयो।",
+		sold_fentanyl_logs_title = "फेन्टनाइल बेच्दै",
+		sold_fentanyl_logs_details = "${consoleName}ले 1x एम्पुल फेन्टनाइल बेचेर $${reward} मात्र पाए।"
+	},
+
 	fingerprint = {
 		taking_fingerprint = "अंगुली छाप लिनुहोस्",
 		already_fingerprinting = "तपाईं पहिले नै एक खेलाडीको अंगुली छापीरहेका छ।",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		press_to_access_shared_storage = "साझा भण्डारमा पहुँच गर्न ~INPUT_REPLAY_SHOWHOTKEY~ थिच्नुहोस्।",
 		device_printout_details = "<b>प्रकार:</b> <i>${प्रकार}</i>, <b>माथि:</b> <i>${माथि}</i>",
 		copy_serial_number = "कपी सिरियल नंबर",
+		copy_fingerprint = "औंशीको प्रतिलिपि",
 		serial_number_copied = "${itemName}, सिरियल नंबर: ${serialNumber}",
 
 		failed_give = "Numero di serie: ${serialNumber}<br><i>Questa arma è registrata a ${fullName} (#${characterId}).</i>",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		lean = "लिन",
 		lean_description = "थप्रो मिसाको सेवन गर्दा, मिठो, सिप, केही सिपमा सिपिन्ग अन, सिप.",
 
+		fentanyl = "फेन्टनाइल",
+		fentanyl_description = "\"डब्ड द स्नीकी स्नुजर\" भनिएको प्रबल छोटो पोषाक हो जसले एक चोटीले प्रहार गर्छ। यस पदार्थको सिर्‍जना गर्दा, तपाईं अचेलसमा पनि सपनाको संसारमा पठाउने छ। तर ध्यान दिनुहोस्! यो त्यस्तो शक्तिशाली छ कि सपना मुद्रा भए भने, तपाइले एउटा मोटा संग्रहालयमा एक करोडपति हुनुहुन्थ्यो। जब तपाईंले ठूलो समस्यालाई निद्रामा पर्न खोज्नुहुन्छ भने यो पूर्ण हुन सक्छ।",
+
 		grimace_shake = "ग्रिमस शेक",
 		grimace_shake_description = "पागल? मैले पनि पागल थिए. उनीहरूले मलाई कोठा लागाएको थियो । लट्ठ, छुच्चे र उनीहरूले मलाई पागल बनाउछन् । पागल? मैले पनि पागल थिए. उनीहरूले मलाई कोठा लागाएको थियो । लट्ठ, छुच्चे र उनीहरूले मलाई पागल बनाउछन् । पागल? मैले पनि पागल थिए. उनीहरूले मलाई कोठा लागाएको थियो । लट्ठ, छुच्चे र उनीहरूले मलाई पागल बनाउछन् । पागल? मैले पनि पागल थिए. उनीहरूले मलाई कोठा लागाएको थियो । लट्ठ, छुच्चे र उनीहरूले मलाई पागल बनाउछन् । पागल? मैले पनि पागल थिए.....",
+
+		hydrogen_peroxide = "हाइड्रोजन पेरोक्साइड",
+		hydrogen_peroxide_description = "यो बबली ब्रू, जसको झैँझल र सफा को लागि प्रसिद्ध छ, विज्ञान गरी र बाहिरीतिहरूको मुख्य भाग हो। यो काटीहरू र सतहहरूलाई धुँवार बनाउने लागि प्रसिद्ध छ, यसले अरु तत्वहरूसँग मिसालेख्न यो त बनाहरूको साथ यो \"सुपना चढाउने\" को लागि पनि प्रसिद्ध छ। प्रागज्ञतासँग र हल्का सावधानीसँग हातले सम्हाल्नुहोस।",
 
 		jolly_ranchers = "जाली रचर्स",
 		jolly_ranchers_description = "जाली रचर्सको मिठो र खट्टा स्वादमा खुशी लिनुहोस्, फलतस्वीरका नेपाली सार्वजनिक स्थानहरूमा उपलब्ध नै हुन्छ।",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		button_confirm = "पुष्टि गर्नुहोस्",
 		button_delete = "मेटाउनुहोस्",
 		button_manage = "प्रबन्ध गर्नुहोस्",
+		button_leave = "छोड्नुहोस्",
 		create_account = "खाता सिर्जना गर्नुहोस्",
 		delete_account = "खाता हटाउनुहोस्",
 		confirm_delete = "के तपाईं यो खाता र सम्बन्धित सबै लगतहरू सहित कायमर्जित गर्न चाहानुहुन्छ? यस कार्यको छानबिन गर्न सकिँदैन।",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		insufficient_balance = "खाता शेषराख्नको लागि पर्याप्त शेषांश छैन।",
 		insufficient_bank_balance = "तपाईंको बैंक शेषांक पर्याप्त छैन।",
 		account_description = "खाताको मालिकले मात्र त्यसलाई मेटाउन र व्यवस्थापन गर्न सक्छन्। खाताको पहुँच भएकाहरूले केवल निकास र जमा गर्न सक्छन्। तपाईं ५ विभिन्न बचत खाता सिर्जना गर्न सक्नुहुन्छ।",
+		leave_account = "खाता छोड्नुहोस्",
+		confirm_leave = "के तपाईं \"${name}\" बाट बाहिर हुन चाहनुहुन्छ? तपाईंले यस खातामा अहिले थाहा पाइएन।",
 
 		add_access_logs_title = "Enten nettverks-ID-en til personen, nettverks-ID-en til kjøretøyet (som personen kjører), eller la det stå tomt for å velge sjåføren av nåværende kjøretøy.",
 		add_access_logs_details = "show_raw_locales",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		create_account_logs_details = "type",
 		deleted_account_logs_title = "Veksle skaderefleksjon. (Enhver enhet som skader deg vil selv bli skadet)",
 		deleted_account_logs_details = "savings_accounts",
+		left_account_logs_title = "बचत बाँकी खाता",
+		left_account_logs_details = "${consoleName} ले `${accountName}` नामक बचत खाता छोडे  र उसको आईडी ${accountId} हो।",
 		withdraw_logs_title = "Vis og administrer alle sparekontoene dine.",
 		withdraw_logs_details = "${consoleName}ले ${accountId}सँग बचत खाताबाट $${amount} निकासा गर्‍यो र कारण `${reason}` थियो।",
 		deposit_logs_title = "toggle_developer_ambience",

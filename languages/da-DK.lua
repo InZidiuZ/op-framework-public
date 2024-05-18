@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["da-DK"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["da-DK"] = {
 		bed_command_help = "Forsøger at lægge dig i den nærmeste seng.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "pickup_cykel",
+		pickup_bicycle_command_help = "Saml den nærmeste cykel op.",
+		pickup_bicycle_command_substitutes = "pc",
+
 		-- game/bills
 		create_bill_command = "lav_regning",
 		create_bill_command_help = "undefined",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "dæmp_boomboxes",
+		mute_boomboxes_command_help = "Dæmper/Slukker alle boomboxes.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Sletter alle boomboxes.",
 		wipe_boomboxes_command_parameter_radius = "radius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["da-DK"] = {
 		press_to_leave_bed = "Tryk ~INPUT_CONTEXT~ for at forlade sengen."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "Ingen cykel i nærheden.",
+		failed_pickup_bicycle = "Kunne ikke samle cykel op.",
+		picking_up = "Samler Cykel Op",
+		moving_too_fast = "Du bevæger dig for hurtigt til at samle cyklen op.",
+
+		picked_up_logs_title = "Samlet Cykel Op",
+		picked_up_logs_details = "${consoleName} samlede en cykel op med netværks-id #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Tabt Cykel",
+		dropped_bicycle_logs_details = "${consoleName} tabte den cykel, de bar på."
+	},
+
 	bills = {
 		select_player = "undefined",
 		no_nearby_players = "undefined",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		skip_song = "Spring Sang Over",
 		volume = "Lydstyrke",
 		music = "Musik",
+
+		mute_boomboxes = "Dæmp Boomboxes",
+		mute_boomboxes_enabled = "Alle boomboxes er nu dæmpet.",
+		mute_boomboxes_disabled = "Alle boomboxes er ikke længere dæmpet.",
 
 		store_boombox = "Gem boomboxen i dit inventory",
 		put_boombox_down = "Sæt boomboxen på jorden",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["da-DK"] = {
 		milking_cow_failed = "undefined"
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Du tager en overdosis af fentanyl.",
+		overdose = "Fentanyl Overdosis",
+
+		grind_painkillers = "[${InteractionKey}] Knus smertestillende",
+		grinding_painkillers = "Knuser Smertestillende",
+		mix_acetone = "[${InteractionKey}] Bland med acetone",
+		mixing_acetone = "Blanding med Aceton",
+		add_hydrogen_peroxide = "[${InteractionKey}] Tilføj Brintoverilte",
+		adding_hydrogen_peroxide = "Tilføjer Brintoverilte",
+		boil = "[${InteractionKey}] Kog Ingredienserne",
+		boiling = "Koger Ingredienserne",
+		cool_down = "[${InteractionKey}] Afkøl",
+		cooling_down = "Afkøler",
+		fill_ampules = "[${InteractionKey}] Fyld Ampuller",
+		filling_ampules = "Fylder Ampuller",
+
+		selling_fentanyl = "Sælger Fentanyl",
+		press_to_sell_fentanyl = "Tryk ~INPUT_CONTEXT~ for at sælge Fentanyl.",
+		local_not_interested = "Lokalen virker ikke interesseret lige nu.",
+
+		something_went_wrong = "Noget gik galt.",
+		made_fentanyl_logs_title = "Oprettet Fentanyl",
+		made_fentanyl_logs_details = "${consoleName} lavede ${amount}x fentanyl.",
+		sold_fentanyl_logs_title = "Solgt Fentanyl",
+		sold_fentanyl_logs_details = "${consoleName} solgte 1x ampul fentanyl for $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Tager fingeraftryk",
 		already_fingerprinting = "Du tager allerede fingeraftryk af en spiller.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		press_to_access_shared_storage = "Trykke ~INPUT_REPLAY_SHOWHOTKEY~ for at få adgang til fælles opbevaring.",
 		device_printout_details = "<b>Type:</b> <i>${type}</i>, <b>Tekst:</b> <i>${text}</i>",
 		copy_serial_number = "Kopier Serienummer",
+		copy_fingerprint = "Kopier Fingerprints",
 		serial_number_copied = "${itemName}, Serienummer: ${serialNumber}",
 
 		failed_give = "Kunne ikke give genstand(e) til spilleren.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["da-DK"] = {
 		lean = "Lean",
 		lean_description = "Sippin på noget sizzurp, sip, sippin på noget, sip.",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "Kaldet den 'snedige slummer', er fentanyl en kraftig lille bryg, der kan give en ordenlig rus. Med blot en antydning af denne substans kan du sende selv den mest friske person ind i en drømmeverden. Vær dog forsigtig! Det er så potent, at hvis drømme var valuta, ville du være milliardær efter én dosis. Perfekt til når du har brug for at omdanne store problemer til søvnige.",
+
 		grimace_shake = "Grimasse Ryst",
 		grimace_shake_description = "Vild? Jeg var vild engang. De satte mig i et rum. Et gummiværels. Et gummiværelse med rotter. Og rotter gør mig vild. Vild? Jeg var vild engang. De satte mig i et rum. Et gummiværelse med rotter. Og rotter gør mig vild. Vild? Jeg var vild engang. De satte mig i et rum. Et gummiværelse med rotter. Og rotter gør mig vild. Vild? Jeg var vild engang. De satte mig i et rum. Et gummiværelse med rotter. Og rotter gør mig vild. Vild? Jeg var vild engang.....",
+
+		hydrogen_peroxide = "Brintoverilte",
+		hydrogen_peroxide_description = "Denne boblende bryg, kendt for sin brus og rensende egenskaber, er et grundlæggende element i videnskabelige laboratorier og mere. Mens det er berømt for at gøre sår og overflader skinnende rene, har det også evnen til at blande sig med andre ingredienser for at \"drømme op\" nogle ret potent blandinger. Håndter med varsomhed og en smule forsigtighed.",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Forkæl dig selv med de søde og saftige smage af Jolly Ranchers, de klassiske hårde slik, der eksploderer med frugtgodhed.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		button_confirm = "Bekræft",
 		button_delete = "Slet",
 		button_manage = "Administrer",
+		button_leave = "Forlad",
 		create_account = "Opret Konto",
 		delete_account = "Slet Konto",
 		confirm_delete = "Er du sikker på, at du vil slette denne konto permanent og alle tilknyttede logfiler? Denne handling kan ikke fortrydes.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		insufficient_balance = "Kontoen har ikke tilstrækkelig saldo.",
 		insufficient_bank_balance = "Din banksaldo er ikke tilstrækkelig.",
 		account_description = "Kun ejeren af kontoen kan slette og administrere den. Personer med adgang til kontoen kan kun hæve og indsætte. Du kan oprette op til 5 forskellige opsparingskonti.",
+		leave_account = "Forlad Konto",
+		confirm_leave = "Er du sikker på, at du vil forlade \"${name}\"? Du vil ikke længere have adgang til denne konto.",
 
 		add_access_logs_title = "Tilføj adgang til Opsparing",
 		add_access_logs_details = "${consoleName} gav `${firstName} ${lastName}` (#${characterId}) adgang til opsparingskonto ${accountId}.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		create_account_logs_details = "${consoleName} oprettede en ny opsparingskonto med navnet `${accountName}` (id: ${accountId}).",
 		deleted_account_logs_title = "Konto Sletning",
 		deleted_account_logs_details = "${consoleName} slettede en konto kaldet `${accountName}` med id ${accountId}.",
+		left_account_logs_title = "Opsparing Venstre Konto",
+		left_account_logs_details = "${consoleName} forlod en opsparingskonto kaldet `${accountName}` med id ${accountId}.",
 		withdraw_logs_title = "Hævning fra Konto",
 		withdraw_logs_details = "${consoleName} hævede $${amount} fra opsparingskonto ${accountId} med grund `${reason}`.",
 		deposit_logs_title = "Indbetaling til Konto",

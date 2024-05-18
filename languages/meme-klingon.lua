@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["meme-klingon"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		bed_command_help = "vItlhutlh qImtaHvIS chav.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "ghoy'cho' qeylIS",
+		pickup_bicycle_command_help = "choHchoH qeylIS vIju'",
+		pickup_bicycle_command_substitutes = "gh",
+
 		-- game/bills
 		create_bill_command = "ghuv_bill",
 		create_bill_command_help = "Qapvam QapIv 'ej pe'vIl ngogh ghaH.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		toggle_ignition_bomb_command_substitutes = "jorwI'_Dap",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "bomboxchoH",
+		mute_boomboxes_command_help = "bomboxchoH Daq nob maH.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "bu'meQyo'",
 		wipe_boomboxes_command_help = "bu'meQyo'.",
 		wipe_boomboxes_command_parameter_radius = "Sotlu'",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		press_to_leave_bed = "ghoH ~INPUT_CONTEXT~ to leave the bed."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "QeylIS jIHbe'",
+		failed_pickup_bicycle = "qeylIS ghoy'qu'be'",
+		picking_up = "teb Qong",
+		moving_too_fast = "mI'ta' yI'otmeH ghaH ghoy' qeylIS.",
+
+		picked_up_logs_title = "ghoy'cho' qeylIS",
+		picked_up_logs_details = "${consoleName} network id #${networkId} (`` ${modelName} vIchoH} qeylIS.",
+		dropped_bicycle_logs_title = "Qo'chu' 'uch",
+		dropped_bicycle_logs_details = "${consoleName} 'uch Daq ghaHta' Dap."
+	},
+
 	bills = {
 		select_player = "nguch wuq",
 		no_nearby_players = "ghItlhvam cha'logh 'e' yuQwI'",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		skip_song = "QomHa'",
 		volume = "Hanjoq",
 		music = "QeH",
+
+		mute_boomboxes = "jomwI' ghom jomwI' De'",
+		mute_boomboxes_enabled = "ghom jomwI' tI' De' vay'.",
+		mute_boomboxes_disabled = "ghom jomwI' jomlaHbe' De'.",
 
 		store_boombox = "Qoh'a'joq qarDaq patlh pIq",
 		put_boombox_down = "Qoh'a'joq DuQoy",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		milking_cow_failed = "QamDogh De'wI' DaH."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "to' rul ghaH vI'agh.",
+		overdose = "Fentanyl to' rul",
+
+		grind_painkillers = "[${InteractionKey}] DImup painkillers Daq",
+		grinding_painkillers = "painkillers DImup",
+		mix_acetone = "[${InteractionKey}] acetone mIq",
+		mixing_acetone = "tlhap 'ej acetone chaq",
+		add_hydrogen_peroxide = "[${InteractionKey}] Hydrogen Peroxide nge'",
+		adding_hydrogen_peroxide = "Hydrogen Peroxide nge' tlhap",
+		boil = "[${InteractionKey}] chaq 'IngrIDients",
+		boiling = "'IngrIDients chaq",
+		cool_down = "[${InteractionKey}] qur",
+		cooling_down = "qur lo'",
+		fill_ampules = "[${InteractionKey}] nge'taH",
+		filling_ampules = "nge'taH",
+
+		selling_fentanyl = "Fentanyl bagh yu' be'",
+		press_to_sell_fentanyl = "yiQ ~INPUT_CONTEXT~ nge' Fentanyl bagh yu' be'.",
+		local_not_interested = "The local doesn't seem to be interested right now.",
+
+		something_went_wrong = "Something went wrong.",
+		made_fentanyl_logs_title = "Qam Fentanyl",
+		made_fentanyl_logs_details = "${consoleName} nIv ${amount} botlh fentanyl.",
+		sold_fentanyl_logs_title = "Fentanyl luteb",
+		sold_fentanyl_logs_details = "${consoleName} vagh 1x fentanyl tIchlaH $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "ngawHa'moHmo'",
 		already_fingerprinting = "qo' bIQ'a', 'oHbe' neH je fingerprint ngeHbe'.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		press_to_access_shared_storage = "patlh ~INPUT_REPLAY_SHOWHOTKEY~ qay'be' Suqub, jupbe'",
 		device_printout_details = "<b>vItlhutlh:</b> <i>${type}</i>, <b>mugh:</b> <i>${text}</i>",
 		copy_serial_number = "HIq Serial Number",
+		copy_fingerprint = "lo'wI' raQ",
 		serial_number_copied = "${itemName}, Serial Number: ${serialNumber}",
 
 		failed_give = "Failed to give item(s) to player.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		lean = "Lean",
 		lean_description = "Sippin on some sizzurp, sip, sippin on some, sip.",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "Dubbed the \"Sutlhab quv\", fentanyl yInlo'. 'oH Qan maHDaq De' ghaHbogh Dar cuerpo 'ej chen qur incapaz 'e' HochmoHchugh vaj. botHub Dep cautiously, cha! chay' 'e' vIneH suvchoH, targhmey qIr'DajlaH HIlaw'bejDaq. QaQ suvbe' 'ej DaH nuq nuq lo'laH qeylIS wa'. Hoch pImHa' shoot vaj ghaH loS.",
+
 		grimace_shake = "QImeq Shake",
 		grimace_shake_description = "HoH? jIQong. 'ach jIQongDaqDAj ghom vInep. vInepvor reH. vInepvor reH ratlhDaq. ratlhDaq QapmeH vInepDaq. HoH? jIQong. 'ach jIQongDaqDAj ghom vInep. vInepvor reH. vInepvor reH ratlhDaq. ratlhDaq QapmeH vInepDaq. HoH? jIQong. 'ach jIQongDaqDAj ghom vInep. vInepvor reH. vInepvor reH ratlhDaq. ratlhDaq QapmeH vInepDaq. HoH? jIQong. 'ach jIQongDaqDAj ghom vInep. vInepvor reH. vInepvor reH ratlhDaq. ratlhDaq QapmeH vInepDaq. HoH? jIQong jIQongmaH.....",
+
+		hydrogen_peroxide = "QItlhwI' Peroxide",
+		hydrogen_peroxide_description = "chaq parchaS, ghotpu' commonvo' vIparHa'laH, rap QawmoHlaH 'e' Daq yIje'. jIHapDI' wab tus vilegh 'ej patlu'taHvIS yIlo'laH, 'ach qa'vamDaj 'opmey vIbeqya'. vut jor tuQ tIv musI'(D) 'ej Hoch jen SaHmeH ghaH.",
 
 		jolly_ranchers = "Qulqu'ngan",
 		jolly_ranchers_description = "che'meH tIqpuj Qulqu'ngan cha'logh law' tlhInganpu' HIq.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		button_confirm = "Qor",
 		button_delete = "lIw",
 		button_manage = "Qaw'",
+		button_leave = "vo'",
 		create_account = "So'la' yInID",
 		delete_account = "So'la' WIchID",
 		confirm_delete = "jImej'e' lo'taHvIS so'la' Hovtay'wI' je Se'argh HoH. ngugh beQ 'e' pa'taHvIS.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		insufficient_balance = "SoS account balance.",
 		insufficient_bank_balance = "SoS Qav bank.",
 		account_description = "vay' account je neHlaHbe' law' Hoch SeHlaw'. SaHvamvo'wI' SeHlaw' Hoch withdraw je 'ej deposit. 'u' Soj savings accounts 'utlh porghHa'.",
+		leave_account = "vo' tu'Hom",
+		confirm_leave = "ghaH SuvwI'pa' \"${name}\" vo'vaD 'e'. tlhIngan wej tIboghchu' je.",
 
 		add_access_logs_title = "Savings chaw'ta' je",
 		add_access_logs_details = "${consoleName} pagh' ${firstName} ${lastName} #${characterId} jatlhmeH ${accountId} savings account vItlhutlh.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		create_account_logs_details = "${consoleName} jImej qab ${accountName} cha'logh a savings account je'ID ${accountId}.",
 		deleted_account_logs_title = "pIqaD ngIn Delete yIqaw'",
 		deleted_account_logs_details = "${consoleName} yIqaw' ${accountId} DI' ${accountName} DaH jInmol.",
+		left_account_logs_title = "Qaw'ta' pagh qey",
+		left_account_logs_details = "${consoleName} qaw' qechta' account SovDagh `${accountName}` meq id ${accountId}.",
 		withdraw_logs_title = "pIqaD ngIn qar'ID",
 		withdraw_logs_details = "${consoleName} Ho'Du' $${amount} De'wI' Savings Account ${accountId} chay' `${reason}`.",
 		deposit_logs_title = "pIqaD ngIn pesHa'",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["ar-SA"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		bed_command_help = "محاولة الاستلقاء في السرير الأقرب.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "التقاط_دراجة",
+		pickup_bicycle_command_help = "التقاط أقرب دراجة.",
+		pickup_bicycle_command_substitutes = "أدخل_الدراجة",
+
 		-- game/bills
 		create_bill_command = "إنشاء_فاتورة",
 		create_bill_command_help = "فاتورة مبلغ معين للاعب آخر.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "كتم_صناديق_الصوت",
+		mute_boomboxes_command_help = "إكتمال/رفع صوت جميع صناديق الصوت.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "مسح صناديق الصوت.",
 		wipe_boomboxes_command_parameter_radius = "نصف القطر",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		press_to_leave_bed = "اضغط ~INPUT_CONTEXT~ للخروج من السرير."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "لا يوجد دراجة بالقرب.",
+		failed_pickup_bicycle = "فشل في التقاط الدراجة.",
+		picking_up = "التقاط الدراجة",
+		moving_too_fast = "أنت تتحرك بسرعة كبيرة لتتمكن من التقاط الدراجة.",
+
+		picked_up_logs_title = "تم التقاط الدراجة",
+		picked_up_logs_details = "${consoleName} قام بالتقاط دراجة برقم الشبكة #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "دراجة تم التخلص منها",
+		dropped_bicycle_logs_details = "${consoleName} قام بالتخلص من الدراجة التي كان يحملها."
+	},
+
 	bills = {
 		select_player = "اختر اللاعب",
 		no_nearby_players = "لا يوجد لاعبون قريبون يمكن فرض الرسوم عليهم.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		skip_song = "تخطي الأغنية",
 		volume = "الصوت",
 		music = "الموسيقى",
+
+		mute_boomboxes = "كتم البوكسات الصوتية",
+		mute_boomboxes_enabled = "تم كتم جميع البوكسات الصوتية الآن.",
+		mute_boomboxes_disabled = "لم تعد جميع البوكسات الصوتية مكتومة.",
 
 		store_boombox = "احتفظ بالبوم بوكس في مخزونك",
 		put_boombox_down = "ضع البوم بوكس على الأرض",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		milking_cow_failed = "فشل في الحلبة."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "أنت تعاني من جرعة زائدة من الفينتانيل.",
+		overdose = "جرعة زائدة من الفينتانيل",
+
+		grind_painkillers = "[${InteractionKey}] طحن حبوب مسكنة",
+		grinding_painkillers = "جارٍ طحن الحبوب المسكنة",
+		mix_acetone = "[${InteractionKey}] مزجه مع الأسيتون",
+		mixing_acetone = "التخليط مع الأسيتون",
+		add_hydrogen_peroxide = "[${InteractionKey}] إضافة بيروكسيد الهيدروجين",
+		adding_hydrogen_peroxide = "إضافة بيروكسيد الهيدروجين",
+		boil = "[${InteractionKey}] غلي المكونات",
+		boiling = "غلي المكونات",
+		cool_down = "[${InteractionKey}] تبريد",
+		cooling_down = "تبريد",
+		fill_ampules = "[${InteractionKey}] ملء الأمبولات",
+		filling_ampules = "ملء الأمبولات",
+
+		selling_fentanyl = "بيع الفينتانيل",
+		press_to_sell_fentanyl = "اضغط على ~INPUT_CONTEXT~ لبيع الفينتانيل.",
+		local_not_interested = "المحل لا يبدو مهتمًا في الوقت الحالي.",
+
+		something_went_wrong = "حدث خطأ ما.",
+		made_fentanyl_logs_title = "تم صنع الفنتانيل",
+		made_fentanyl_logs_details = "${consoleName} قام بصنع ${amount}x من الفنتانيل.",
+		sold_fentanyl_logs_title = "تم بيع الفنتانيل",
+		sold_fentanyl_logs_details = "${consoleName} باع ثلث أمبولة من الفنتانيل مقابل $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "جارٍ أخذ البصمة",
 		already_fingerprinting = "أنت تأخذ بالفعل بصمة إحدى اللاعبين.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		press_to_access_shared_storage = "اضغط ~INPUT_REPLAY_SHOWHOTKEY~ للدخول الى المخزن المشترك",
 		device_printout_details = "<b>النوع:</b> <i>${type}</i>، <b>النص:</b> <i>${text}</i>",
 		copy_serial_number = "نسخ الرقم التسلسلي",
+		copy_fingerprint = "نسخ بصمة الإصبع",
 		serial_number_copied = "${itemName}، الرقم التسلسلي: ${serialNumber}",
 
 		failed_give = "فشل في إعطاء العناصر للاعب.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		lean = "الشراب المخدر",
 		lean_description = "يتم استخدامه في كثير من الأحيان كمهدئ للسعال، ويعطل الجهاز العصبي المركزي",
 
+		fentanyl = "الفنتانيل",
+		fentanyl_description = "المعروف أيضًا بـ \"المنوم الخفي\"، الفنتانيل هو جرعة قوية تتسبب في تأثير قوي. بمجرد نقرة خفيفة بهذه المادة، يمكنك إرسال حتى أكثر الأشخاص استيقاظًا إلى عالم الأحلام. كن حذرًا، فهو كثير الفتك بحيث إذا كانت الأحلام عملة، لكنت مليونيرًا بجرعة واحدة. مثالي لحين تحتاج فيه لتحويل المشاكل الكبيرة إلى مشاكل نائمة.",
+
 		grimace_shake = "غريماس شيك",
 		grimace_shake_description = "جنون؟ كنت مجنوناً مرة واحدة. قد وضعوني في غرفة. غرفة مطاطية. غرفة مطاطية مع الجرذان. والجرذان تجعلني مجنوناً. جنون؟ كنت مجنوناً مرة واحدة. قد وضعوني في غرفة. غرفة مطاطية. غرفة مطاطية مع الجرذان. والجرذان تجعلني مجنوناً. جنون؟ كنت مجنوناً مرة واحدة. قد وضعوني في غرفة. غرفة مطاطية. غرفة مطاطية مع الجرذان. والجرذان تجعلني مجنوناً. جنون؟ كنت مجنوناً مرة واحدة. قد وضعوني في غرفة. غرفة مطاطية. غرفة مطاطية مع الجرذان. والجرذان تجعلني مجنوناً. جنون؟ كنت مجنوناً مرة واحدة.....",
+
+		hydrogen_peroxide = "بيروكسيد الهيدروجين",
+		hydrogen_peroxide_description = "هذا الشراب الفوار، المعروف بتألقه ونظافته، هو جزء أساسي في المعامل العلمية وخارجها. بالرغم من أنه مشهور بتنظيف الجروح والأسطح، إلا أنه لديه موهبة للمزج مع المكونات الأخرى لإبتكار بعض الخلائط النافعة بشكل جميل. من الضروري التعامل معه بحذر وتوخي بعض الحذر.",
 
 		jolly_ranchers = "حلوى جولي رانشي",
 		jolly_ranchers_description = "تمتع بنكهات الحلوى الحلوة والحامضة لحلوى جولي رانشرز ، الحلوى الصلبة الكلاسيكية التي تنفجر بالفواكه اللذيذة.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		button_confirm = "تأكيد",
 		button_delete = "حذف",
 		button_manage = "إدارة",
+		button_leave = "المغادرة",
 		create_account = "إنشاء حساب",
 		delete_account = "حذف حساب",
 		confirm_delete = "هل ترغب حقًا في حذف هذا الحساب نهائيًا وجميع السجلات المرتبطة به؟ لا يمكن التراجع عن هذا الإجراء.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		insufficient_balance = "رصيد الحساب غير كافي.",
 		insufficient_bank_balance = "رصيد حسابك البنكي غير كاف.",
 		account_description = "يمكن فقط لصاحب الحساب حذفه وإدارته. الأشخاص الذين لديهم صلاحية للحساب يمكنهم فقط سحب وإيداع الأموال. يمكنك إنشاء حتى 5 حسابات توفير مختلفة.",
+		leave_account = "مغادرة الحساب",
+		confirm_leave = "هل أنت متأكد من رغبتك في مغادرة \"${name}\"؟ لن تكون لديك مزايا الوصول إلى هذا الحساب بعد الآن.",
 
 		add_access_logs_title = "إضافة وصول للمدخرات",
 		add_access_logs_details = "قدم ${consoleName} وصولًا لحساب المدخرات ${accountId} لـ `${firstName} ${lastName}` رقم ${characterId}.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		create_account_logs_details = "قام ${consoleName} بإنشاء حساب جديد في المدخرات بأسم `${accountName}` بالرقم ${accountId}.",
 		deleted_account_logs_title = "حذف حساب التوفير",
 		deleted_account_logs_details = "${consoleName} قام بحذف حساب التوفير بإسم `${accountName}` بالرقم ${accountId}.",
+		left_account_logs_title = "حساب التوفير المتبقي",
+		left_account_logs_details = "${consoleName} غادر حساب التوفير بالاسم `${accountName}` برقم الهوية ${accountId}.",
 		withdraw_logs_title = "سحب التوفير",
 		withdraw_logs_details = "انسحاب ${consoleName} ${amount} ريال من حساب التوفير ${accountId} بسبب `${reason}`.",
 		deposit_logs_title = "إيداع التوفير",

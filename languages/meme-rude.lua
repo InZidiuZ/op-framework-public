@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["meme-rude"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		bed_command_help = "Fucking attempt to lay down in the nearest bed, you lazy cunt.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "undefined",
+		pickup_bicycle_command_help = "undefined",
+		pickup_bicycle_command_substitutes = "undefined",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Forcefully extort another fucking player a certain amount of goddamn money.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "undefined",
+		mute_boomboxes_command_help = "undefined",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "F*cking wipe those f*cking boomboxes.",
 		wipe_boomboxes_command_parameter_radius = "radius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		press_to_leave_bed = "Press ~INPUT_CONTEXT~ to get the fuck off the bed."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "undefined",
+		failed_pickup_bicycle = "undefined",
+		picking_up = "undefined",
+		moving_too_fast = "undefined",
+
+		picked_up_logs_title = "undefined",
+		picked_up_logs_details = "undefined",
+		dropped_bicycle_logs_title = "undefined",
+		dropped_bicycle_logs_details = "undefined"
+	},
+
 	bills = {
 		select_player = "Select Player",
 		no_nearby_players = "No billable cunts near you.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		skip_song = "Skip That F***ing Song",
 		volume = "Turn That S*** Up",
 		music = "S***ty Music",
+
+		mute_boomboxes = "undefined",
+		mute_boomboxes_enabled = "undefined",
+		mute_boomboxes_disabled = "undefined",
 
 		store_boombox = "Store the F***ing Boombox in your S***ty inventory",
 		put_boombox_down = "Put the F***ing Boombox on the Damn Ground",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		milking_cow_failed = "Failed to fucking milk the cow, you incompetent twat."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "undefined",
+		overdose = "undefined",
+
+		grind_painkillers = "undefined",
+		grinding_painkillers = "undefined",
+		mix_acetone = "undefined",
+		mixing_acetone = "undefined",
+		add_hydrogen_peroxide = "undefined",
+		adding_hydrogen_peroxide = "undefined",
+		boil = "undefined",
+		boiling = "undefined",
+		cool_down = "undefined",
+		cooling_down = "undefined",
+		fill_ampules = "undefined",
+		filling_ampules = "undefined",
+
+		selling_fentanyl = "undefined",
+		press_to_sell_fentanyl = "undefined",
+		local_not_interested = "undefined",
+
+		something_went_wrong = "undefined",
+		made_fentanyl_logs_title = "undefined",
+		made_fentanyl_logs_details = "undefined",
+		sold_fentanyl_logs_title = "undefined",
+		sold_fentanyl_logs_details = "undefined"
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Let's fucking add your prints to our shitty database.",
 		already_fingerprinting = "You're already making a fucking fingerprint of a player, dipshit.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		press_to_access_shared_storage = "Press the button ~INPUT_REPLAY_SHOWHOTKEY~ to access the goddamn shared storage in this shit!",
 		device_printout_details = "undefined",
 		copy_serial_number = "undefined",
+		copy_fingerprint = "undefined",
 		serial_number_copied = "undefined",
 
 		failed_give = "undefined",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		lean = "Freaking Lean",
 		lean_description = "Sippin' on that sweet sizzurp, sip, sippin' on that nasty sh*t, sip. Gonna be feeling like a freaking boss after this!",
 
+		fentanyl = "undefined",
+		fentanyl_description = "undefined",
+
 		grimace_shake = "Grimace Shake",
 		grimace_shake_description = "Fucking insane? I was fucking insane once. Those motherfuckers locked me up. Locked me up in a fucking padded room. A fucking padded room full of rats. And you know what fucking rats do to me? They drive me fucking insane. Fucking insane? I was fucking insane once. Those motherfuckers locked me up. Locked me up in a fucking padded room. A fucking padded room full of rats. And you know what fucking rats do to me? They drive me fucking insane. Fucking insane? I was fucking insane once. Those motherfuckers locked me up. Locked me up in a fucking padded room. A fucking padded room full of rats. And you know what fucking rats do to me? They drive me fucking insane. Fucking insane? I was fucking insane once. Those motherfuckers locked me up. Locked me up in a fucking padded room. A fucking padded room full of rats. And you know what fucking rats do to me? They drive me fucking insane. Fucking insane? I was fucking insane.....",
+
+		hydrogen_peroxide = "undefined",
+		hydrogen_peroxide_description = "undefined",
 
 		jolly_ranchers = "Stupid-Ass Jolly Ranchers",
 		jolly_ranchers_description = "Stuff your stupid crap face with these freaking sweet and tangy Jolly Ranchers, the freaking classic hard candies that burst with freaking fruity goodness. You're welcome.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		button_confirm = "Fuck Yeah",
 		button_delete = "Fucking Delete",
 		button_manage = "Manage that Shit",
+		button_leave = "undefined",
 		create_account = "Fucking Create an Account",
 		delete_account = "God damn Delete this Ass Account",
 		confirm_delete = "Are you fucking sure you wanna permanently wipe the shit out of this fucking account and all the logs connected to it? You can't fucking undo this shit.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		insufficient_balance = "You have a fucking insufficient account balance, you broke ass bitch.",
 		insufficient_bank_balance = "Your fucking bank balance is insufficient, you poor fucking bastard.",
 		account_description = "Only the fucking owner of the account can delete and manage it. People with access to the account can only withdraw and deposit. You can create up to 5 different fucking savings accounts.",
+		leave_account = "undefined",
+		confirm_leave = "undefined",
 
 		add_access_logs_title = "F**k Yeah, Adding Access B*tches",
 		add_access_logs_details = "${consoleName} f**king gave `${firstName} ${lastName}` #${characterId} access to that f**king savings account ${accountId}.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["meme-rude"] = {
 		create_account_logs_details = "${consoleName} f**king created a new savings account named `${accountName}` with the f**king id ${accountId}.",
 		deleted_account_logs_title = "Fucking Deleted Ass Account",
 		deleted_account_logs_details = "${consoleName} fucking deleted a shitty ass account named `${accountName}` with the fucking id ${accountId}.",
+		left_account_logs_title = "Fucking Savings Left Account",
+		left_account_logs_details = "${consoleName} fucked off a savings account named `${accountName}` with the id ${accountId}.",
 		withdraw_logs_title = "Fucking Withdraw That Shit",
 		withdraw_logs_details = "undefined",
 		deposit_logs_title = "Fucking Deposit That Crap",

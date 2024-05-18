@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["pl-PL"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		bed_command_help = "Spróbuj położyć się w najbliższym łóżku.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "podnies_rower",
+		pickup_bicycle_command_help = "Podnosi najbliższy rower.",
+		pickup_bicycle_command_substitutes = "pr",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Obciąż innego gracza określoną kwotą pieniędzy.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "wycisz_radio",
+		mute_boomboxes_command_help = "Wycisza/włącza dźwięk w radio.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Wyczyść boomboxy.",
 		wipe_boomboxes_command_parameter_radius = "radius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		press_to_leave_bed = "Wciśnij ~INPUT_CONTEXT~ aby opuścić łóżko."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "Brak roweru w pobliżu.",
+		failed_pickup_bicycle = "Nie udało się podnieść roweru.",
+		picking_up = "Podnoszenie roweru",
+		moving_too_fast = "Poruszasz się zbyt szybko, aby podnieść rower.",
+
+		picked_up_logs_title = "Podniesiono rower",
+		picked_up_logs_details = "${consoleName} podniósł/a rower o identyfikatorze sieciowym #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Porzucony rower",
+		dropped_bicycle_logs_details = "${consoleName} porzucił/a rower, który trzymał/a."
+	},
+
 	bills = {
 		select_player = "Wybierz Gracza",
 		no_nearby_players = "Nie ma żadnych płatnych graczy w pobliżu.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		skip_song = "Pomiń utwór",
 		volume = "Głośność",
 		music = "Muzyka",
+
+		mute_boomboxes = "Wycisz boomboxy",
+		mute_boomboxes_enabled = "Wszystkie boomboxy są teraz wyciszone.",
+		mute_boomboxes_disabled = "Wszystkie boomboxy nie są już wyciszone.",
 
 		store_boombox = "Przechowaj Boomboxa w swoim ekwipunku.",
 		put_boombox_down = "Połóż Boombox na ziemi.",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		milking_cow_failed = "Nie udało się doić krowę."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Przedawkowałeś/aś fentanylem.",
+		overdose = "Przedawkowanie fentanylu",
+
+		grind_painkillers = "[${InteractionKey}] Rozetrzyj tabletki przeciwbólowe",
+		grinding_painkillers = "Roztrzynanie tabletek przeciwbólowych",
+		mix_acetone = "[${InteractionKey}] Wymieszaj z acetonem",
+		mixing_acetone = "Mieszanie z acetonem",
+		add_hydrogen_peroxide = "[${InteractionKey}] Dodaj nadtlenek wodoru",
+		adding_hydrogen_peroxide = "Dodawanie nadtlenku wodoru",
+		boil = "[${InteractionKey}] Gotowanie składników",
+		boiling = "Gotowanie składników",
+		cool_down = "[${InteractionKey}] Schładzanie",
+		cooling_down = "Schładzanie",
+		fill_ampules = "[${InteractionKey}] Napełnij ampułki",
+		filling_ampules = "Napełnianie ampułek",
+
+		selling_fentanyl = "Sprzedaż fentanylu",
+		press_to_sell_fentanyl = "Naciśnij ~INPUT_CONTEXT~ aby sprzedać Fentanyl.",
+		local_not_interested = "Miejscowy nie wydaje się zainteresowany teraz.",
+
+		something_went_wrong = "Coś poszło nie tak.",
+		made_fentanyl_logs_title = "Wyprodukowany Fentanyl",
+		made_fentanyl_logs_details = "${consoleName} wyprodukował(a) ${amount}x fentanylu.",
+		sold_fentanyl_logs_title = "Sprzedany Fentanyl",
+		sold_fentanyl_logs_details = "${consoleName} sprzedał(a) 1 ampułkę fentanylu za $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Pobieranie odcisków palców",
 		already_fingerprinting = "Już pobierasz odcisk palca gracza.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		press_to_access_shared_storage = "Wciśnij ~INPUT_REPLAY_SHOWHOTKEY~ by użyć ogólnego magazynu.",
 		device_printout_details = "<b>Typ:</b> <i>${typ}</i>, <b>Tekst:</b> <i>${tekst}</i>",
 		copy_serial_number = "Skopiuj numer seryjny",
+		copy_fingerprint = "Kopiuj Odcisk Palca",
 		serial_number_copied = "${itemName}, Numer seryjny: ${serialNumber}",
 
 		failed_give = "Nie udało się przekazać przedmiotów graczowi.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		lean = "Lean",
 		lean_description = "Lean, jest to napój będący narkotykiem rekreacyjnym, przygotowany przez zmieszanie syropu na kaszel lub zimnego syropu zawierającego kodeinę i prometazynę na receptę z napojem bezalkoholowym.",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "Nazwany \"podstępnym usypiaczem\", fentanyl to potężna mała mikstura, która robi wrażenie. Zaledwie szepnięcie tej substancji może przenieść nawet najbardziej rozbrykanego do świata marzeń. Trzeba jednak uważać! Jest tak potężny, że gdyby marzenia były walutą, byłbyś miliarderem po jednej dawce. Idealny, gdy musisz zamienić duże problemy w śpioszki.",
+
 		grimace_shake = "Koktajl grymasów",
 		grimace_shake_description = "Szalony? Byłem kiedyś szalony. Włożyli mnie do pokoju. Gumnianego pokoju. Gumnianego pokoju z szczurami. A szczury sprawiają, że mi się przykręca. Szalony? Byłem kiedyś szalony. Włożyli mnie do pokoju. Gumnianego pokoju. Gumnianego pokoju z szczurami. A szczury sprawiają, że mi się przykręca. Szalony? Byłem kiedyś szalony. Włożyli mnie do pokoju. Gumnianego pokoju. Gumnianego pokoju z szczurami. A szczury sprawiają, że mi się przykręca. Szalony? Byłem kiedyś szalony. Włożyli mnie do pokoju. Gumnianego pokoju. Gumnianego pokoju z szczurami. A szczury sprawiają, że mi się przykręca. Szalony? Byłem kiedyś szalony.....",
+
+		hydrogen_peroxide = "Woda utleniona",
+		hydrogen_peroxide_description = "Ta bąbelkowa mikstura, znana ze swojej piany i czystości, jest stałym elementem w laboratoriach naukowych i nie tylko. Choć słynie z oczyszczania ran i powierzchni, ma też zdolność łączenia się z innymi składnikami, by \"wymyślić\" dość potężne mikstury. Postępuj z rozwagą i trochę ostrożności.",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Ciesz się słodkim i cierpkim smakiem Jolly Ranchers, klasycznych cukierków twardych, które wybuchają soczystością owoców.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		button_confirm = "Potwierdź",
 		button_delete = "Usuń",
 		button_manage = "Zarządzaj",
+		button_leave = "Opuszczenie",
 		create_account = "Utwórz konto",
 		delete_account = "Usuń konto",
 		confirm_delete = "Czy na pewno chcesz bezpowrotnie usunąć to konto i wszystkie powiązane z nim logi? Tej operacji nie można cofnąć.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		insufficient_balance = "Saldo konta jest niewystarczające.",
 		insufficient_bank_balance = "Twoje saldo bankowe jest niewystarczające.",
 		account_description = "Tylko właściciel konta może je usunąć i zarządzać nim. Osoby posiadające dostęp do konta mogą tylko wypłacać i wpłacać środki. Możesz utworzyć maksymalnie 5 różnych kont oszczędnościowych.",
+		leave_account = "Opuszczenie konta",
+		confirm_leave = "Czy na pewno chcesz opuścić „${name}”? Nie będziesz miał już dostępu do tego konta.",
 
 		add_access_logs_title = "Dodano dostęp do oszczędności",
 		add_access_logs_details = "${consoleName} nadał użytkownikowi `${firstName} ${lastName}` (ID postaci: ${characterId}) dostęp do konta oszczędnościowego o ID ${accountId}.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		create_account_logs_details = "${consoleName} utworzył nowe konto oszczędnościowe o nazwie `${accountName}` i ID ${accountId}.",
 		deleted_account_logs_title = "Usunięcie konta oszczędnościowego",
 		deleted_account_logs_details = "${consoleName} usunął(a) konto oszczędnościowe o nazwie `${accountName}` o identyfikatorze ${accountId}.",
+		left_account_logs_title = "Konto oszczędnościowe zamknięte",
+		left_account_logs_details = "${consoleName} zamknął konto oszczędnościowe o nazwie `${accountName}` o identyfikatorze ${accountId}.",
 		withdraw_logs_title = "Wypłata z konta oszczędnościowego",
 		withdraw_logs_details = "${consoleName} wypłacił $${amount} z konta oszczędnościowego ${accountId} z powodem `${reason}`.",
 		deposit_logs_title = "Wpłata na konto oszczędnościowe",

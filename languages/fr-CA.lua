@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["fr-CA"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["fr-CA"] = {
 		bed_command_help = "Essayer de se coucher dans le lit le plus proche.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "ramasser_velo",
+		pickup_bicycle_command_help = "Ramasser le vélo le plus proche.",
+		pickup_bicycle_command_substitutes = "rv",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Facturer un certain montant d'argent à un autre joueur.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["fr-CA"] = {
 		toggle_ignition_bomb_command_substitutes = "allume_bombe",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "couper_son_boombox",
+		mute_boomboxes_command_help = "Coupe/Rétablit le son de toutes les boombox.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "effacer_boomboxes",
 		wipe_boomboxes_command_help = "Efface les boomboxes.",
 		wipe_boomboxes_command_parameter_radius = "rayon",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["fr-CA"] = {
 		press_to_leave_bed = "Appuyez sur ~INPUT_CONTEXT~ pour quitter le lit."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "Aucun vélo à proximité.",
+		failed_pickup_bicycle = "Échec de ramassage du vélo.",
+		picking_up = "En train de ramasser le vélo",
+		moving_too_fast = "Vous bougez trop rapidement pour ramasser le vélo.",
+
+		picked_up_logs_title = "Vélo Ramassé",
+		picked_up_logs_details = "${consoleName} a ramassé un vélo avec l'identifiant réseau #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Vélo abandonné",
+		dropped_bicycle_logs_details = "${consoleName} a abandonné le vélo qu'il transportait."
+	},
+
 	bills = {
 		select_player = "Sélectionner un joueur",
 		no_nearby_players = "Aucun joueur payant à proximité.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["fr-CA"] = {
 		skip_song = "Passer la chanson",
 		volume = "Volume",
 		music = "Musique",
+
+		mute_boomboxes = "Muter les boomboxes",
+		mute_boomboxes_enabled = "Toutes les boomboxes sont maintenant muettes.",
+		mute_boomboxes_disabled = "Toutes les boomboxes ne sont plus muettes.",
 
 		store_boombox = "Stocker le boombox dans votre inventaire",
 		put_boombox_down = "Poser le boombox par terre",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["fr-CA"] = {
 		milking_cow_failed = "Échec de la traite de la vache."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Vous faites une overdose de fentanyl.",
+		overdose = "Overdose de fentanyl",
+
+		grind_painkillers = "[${InteractionKey}] Broyer les analgésiques",
+		grinding_painkillers = "Broyage des analgésiques en cours",
+		mix_acetone = "[${InteractionKey}] Mélanger avec de l'acétone",
+		mixing_acetone = "Mélanger avec de l'acétone",
+		add_hydrogen_peroxide = "[${InteractionKey}] Ajouter du peroxyde d'hydrogène",
+		adding_hydrogen_peroxide = "Ajouter du peroxyde d'hydrogène",
+		boil = "[${InteractionKey}] Faire bouillir les ingrédients",
+		boiling = "Faire bouillir les ingrédients",
+		cool_down = "[${InteractionKey}] Refroidir",
+		cooling_down = "En train de refroidir",
+		fill_ampules = "[${InteractionKey}] Remplir les ampoules",
+		filling_ampules = "Remplir les ampoules",
+
+		selling_fentanyl = "Vente de Fentanyl",
+		press_to_sell_fentanyl = "Appuyez sur ~INPUT_CONTEXT~ pour vendre du Fentanyl",
+		local_not_interested = "La personne du coin ne semble pas intéressée pour le moment.",
+
+		something_went_wrong = "Quelque chose s'est mal passé.",
+		made_fentanyl_logs_title = "Fabriqué du fentanyl",
+		made_fentanyl_logs_details = "${consoleName} a fabriqué ${amount} doses de fentanyl.",
+		sold_fentanyl_logs_title = "Vendu du fentanyl",
+		sold_fentanyl_logs_details = "${consoleName} a vendu 1 ampoule de fentanyl pour $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Prise d'empreinte",
 		already_fingerprinting = "Vous prenez déjà l'empreinte d'un joueur.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["fr-CA"] = {
 		press_to_access_shared_storage = "Appuyez sur ~INPUT_REPLAY_SHOWHOTKEY~ pour accéder au stockage partagé.",
 		device_printout_details = "<b>Type :</b> <i>${type}</i>, <b>Texte :</b> <i>${text}</i>",
 		copy_serial_number = "Copier le numéro de série",
+		copy_fingerprint = "Copier l'empreinte digitale",
 		serial_number_copied = "${itemName}, Numéro de série : ${serialNumber}",
 
 		failed_give = "Tyhjä paperi valokuvien tulostamiseen. (Koko: 1x1)",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["fr-CA"] = {
 		lean = "Lean",
 		lean_description = "Sippin sur du sizzurp, sip, sippin sur du sip.",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "Surnommé le \"sédatif discret\", le fentanyl est une potion puissante qui frappe fort. Avec juste une touche de cette substance, vous pouvez plonger même les plus éveillés dans un monde de rêves. Manipulez-le avec précaution! Il est si puissant que si les rêves étaient une monnaie, vous seriez millionnaire en une dose. Parfait pour transformer de gros problèmes en petits soucis endormis.",
+
 		grimace_shake = "Frappé Grimace",
 		grimace_shake_description = "Dingue? J'étais fou une fois. Ils m'ont mis dans une pièce. Une pièce en caoutchouc. Une pièce en caoutchouc avec des rats. Et les rats me rendent fou. Dingue? J'étais fou une fois. Ils m'ont mis dans une pièce. Une pièce en caoutchouc. Une pièce en caoutchouc avec des rats. Et les rats me rendent fou. Dingue? J'étais fou une fois. Ils m'ont mis dans une pièce. Une pièce en caoutchouc. Une pièce en caoutchouc avec des rats. Et les rats me rendent fou. Dingue? J'étais fou une fois. Ils m'ont mis dans une pièce. Une pièce en caoutchouc. Une pièce en caoutchouc avec des rats. Et les rats me rendent fou. Dingue? J'étais fou une fois.....",
+
+		hydrogen_peroxide = "Peroxyde d'hydrogène",
+		hydrogen_peroxide_description = "Cet élixir pétillant, réputé pour son effervescence et sa propreté, est un incontournable des laboratoires de sciences et au-delà. Bien qu'il soit célèbre pour désinfecter les coupures et les surfaces, il a aussi un don pour se mélanger à d'autres ingrédients pour \"rêver ensemble\" à des mélanges assez puissants. À manipuler avec éclairage et un soupçon de prudence.",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Régalez-vous des saveurs douces et acidulées des Jolly Ranchers, les bonbons durs classiques qui éclatent de bonté fruitée.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["fr-CA"] = {
 		button_confirm = "Confirmer",
 		button_delete = "Supprimer",
 		button_manage = "Gérer",
+		button_leave = "Quitter",
 		create_account = "Créer un compte",
 		delete_account = "Supprimer le compte",
 		confirm_delete = "Êtes-vous sûr de vouloir supprimer définitivement ce compte et tous les journaux qui lui sont associés ? Cette action ne peut pas être annulée.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["fr-CA"] = {
 		insufficient_balance = "nom",
 		insufficient_bank_balance = "Le nom de l'emote.",
 		account_description = "e",
+		leave_account = "Quitter le compte",
+		confirm_leave = "Êtes-vous sûr de vouloir quitter \"${name}\"? Vous n'aurez plus accès à ce compte.",
 
 		add_access_logs_title = "Soit `number` soit `twitter`.",
 		add_access_logs_details = "recherche",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["fr-CA"] = {
 		create_account_logs_details = "Crée une détention de véhicule. Cela permettra de confisquer le véhicule par la police pour une période prolongée. (Note : Les véhicules déjà retirés continueront d'exister)",
 		deleted_account_logs_title = "Falló al desgarajear el vehículo. ¿Ingresaste el id del vehículo correcto?",
 		deleted_account_logs_details = "No se encontró ningún vehículo con ese id.",
+		left_account_logs_title = "Compte d'épargne laissé",
+		left_account_logs_details = "${consoleName} a laissé un compte d'épargne nommé `${accountName}` avec l'identifiant ${accountId}.",
 		withdraw_logs_title = "Vehículo Garajeado",
 		withdraw_logs_details = "${consoleName} a retiré $${amount} du compte d'épargne ${accountId} avec la raison `${reason}`.",
 		deposit_logs_title = "Vehículo Desgarajeado",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["meme-1929"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		bed_command_help = "Attempt to lie down in the nearest bed.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "undefined",
+		pickup_bicycle_command_help = "undefined",
+		pickup_bicycle_command_substitutes = "undefined",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Demand payment from another player for a specified amount of money.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "undefined",
+		mute_boomboxes_command_help = "undefined",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Wipe phonographs.",
 		wipe_boomboxes_command_parameter_radius = "radius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		press_to_leave_bed = "Press ~INPUT_CONTEXT~ to leave the bed."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "undefined",
+		failed_pickup_bicycle = "undefined",
+		picking_up = "undefined",
+		moving_too_fast = "undefined",
+
+		picked_up_logs_title = "undefined",
+		picked_up_logs_details = "undefined",
+		dropped_bicycle_logs_title = "undefined",
+		dropped_bicycle_logs_details = "undefined"
+	},
+
 	bills = {
 		select_player = "Select Playah",
 		no_nearby_players = "No billable playahs near thee.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		skip_song = "Skip Tune",
 		volume = "Volume",
 		music = "Music",
+
+		mute_boomboxes = "undefined",
+		mute_boomboxes_enabled = "undefined",
+		mute_boomboxes_disabled = "undefined",
 
 		store_boombox = "Store the Phonograph in your pack",
 		put_boombox_down = "Put the Phonograph on the floor",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		milking_cow_failed = "Failed to milk cow."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "undefined",
+		overdose = "undefined",
+
+		grind_painkillers = "undefined",
+		grinding_painkillers = "undefined",
+		mix_acetone = "undefined",
+		mixing_acetone = "undefined",
+		add_hydrogen_peroxide = "undefined",
+		adding_hydrogen_peroxide = "undefined",
+		boil = "undefined",
+		boiling = "undefined",
+		cool_down = "undefined",
+		cooling_down = "undefined",
+		fill_ampules = "undefined",
+		filling_ampules = "undefined",
+
+		selling_fentanyl = "undefined",
+		press_to_sell_fentanyl = "undefined",
+		local_not_interested = "undefined",
+
+		something_went_wrong = "undefined",
+		made_fentanyl_logs_title = "undefined",
+		made_fentanyl_logs_details = "undefined",
+		sold_fentanyl_logs_title = "undefined",
+		sold_fentanyl_logs_details = "undefined"
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Recording Fingerprints",
 		already_fingerprinting = "Thou art already taketh a fingerprint of a player.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		press_to_access_shared_storage = "Presseth ~INPUT_REPLAY_SHOWHOTKEY~ to access the shared storage.",
 		device_printout_details = "undefined",
 		copy_serial_number = "undefined",
+		copy_fingerprint = "undefined",
 		serial_number_copied = "undefined",
 
 		failed_give = "undefined",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		lean = "undefined",
 		lean_description = "undefined",
 
+		fentanyl = "undefined",
+		fentanyl_description = "undefined",
+
 		grimace_shake = "Grimace Shake",
 		grimace_shake_description = "Mad? I was mad once. They threw me in a cell. A padded cell. A padded cell with rats. And rats drive me mad. Mad? I was mad once. They threw me in a cell. A padded cell. A padded cell with rats. And rats drive me mad. Mad? I was mad once. They threw me in a cell. A padded cell. A padded cell with rats. And rats drive me mad. Mad? I was mad once. They threw me in a cell. A padded cell. A padded cell with rats. And rats drive me mad. Mad? I was mad once.....",
+
+		hydrogen_peroxide = "Oxygenated water",
+		hydrogen_peroxide_description = "This effervescent potion, known for its effervescence and purity, is a basic necessity in laboratories and beyond. While it is renowned for purifying wounds and surfaces, it also has a talent for blending with other substances to create some rather potent mixtures. Handle with understanding and a hint of caution.",
 
 		jolly_ranchers = "undefined",
 		jolly_ranchers_description = "undefined",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		button_confirm = "undefined",
 		button_delete = "undefined",
 		button_manage = "undefined",
+		button_leave = "Depart",
 		create_account = "undefined",
 		delete_account = "undefined",
 		confirm_delete = "undefined",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		insufficient_balance = "undefined",
 		insufficient_bank_balance = "undefined",
 		account_description = "undefined",
+		leave_account = "Depart Account",
+		confirm_leave = "Are you certain you want to depart from \"${name}\"? You will forfeit access to this account.",
 
 		add_access_logs_title = "undefined",
 		add_access_logs_details = "undefined",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		create_account_logs_details = "undefined",
 		deleted_account_logs_title = "undefined",
 		deleted_account_logs_details = "undefined",
+		left_account_logs_title = "Left Account Savings",
+		left_account_logs_details = "${consoleName} withdrew from a savings account named `${accountName}` with the ID ${accountId}.",
 		withdraw_logs_title = "undefined",
 		withdraw_logs_details = "undefined",
 		deposit_logs_title = "undefined",

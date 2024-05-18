@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["cs-CZ"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		bed_command_help = "Pokusí se lehnout na nejbližší postel.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "zdvihni_kolo",
+		pickup_bicycle_command_help = "Zvednout nejbližší kolo.",
+		pickup_bicycle_command_substitutes = "zk",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Pošlete jinému hráči určitou částku peněz.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		toggle_ignition_bomb_command_substitutes = "zapalovaci_bomba",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "ztlumit_boomboxy",
+		mute_boomboxes_command_help = "Ztlumí/odemkne všechny boomboxy.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "vymazat_boomboxy",
 		wipe_boomboxes_command_help = "Vymaže boomboxy.",
 		wipe_boomboxes_command_parameter_radius = "polomer",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		press_to_leave_bed = "Stiskněte ~INPUT_CONTEXT~, abyste vylezli z postele."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "Žádné kolo není poblíž.",
+		failed_pickup_bicycle = "Nepodařilo se zvednout kolo.",
+		picking_up = "Zvedání kola",
+		moving_too_fast = "Pohybujete se příliš rychle na zvednutí kola.",
+
+		picked_up_logs_title = "Zvednutí kola",
+		picked_up_logs_details = "${consoleName} zvedl kolo s síťovým ID #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Upuštěné kolo",
+		dropped_bicycle_logs_details = "${consoleName} upustil/a kolo, které nesl/a."
+	},
+
 	bills = {
 		select_player = "Vyberte hráče",
 		no_nearby_players = "V okolí vás nejsou žádní hráči, kteří by mohli platit.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		skip_song = "Přeskočit skladbu",
 		volume = "Hlasitost",
 		music = "Hudba",
+
+		mute_boomboxes = "Ztlumit boomboxy",
+		mute_boomboxes_enabled = "Všechny boomboxy jsou nyní stišeny.",
+		mute_boomboxes_disabled = "Všechny boomboxy již nejsou stišeny.",
 
 		store_boombox = "Uložit přenosné rádio do inventáře",
 		put_boombox_down = "Položit přenosné rádio na zem",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		milking_cow_failed = "Nepodařilo se dojit krávu."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Předávkováváte se fentanylem.",
+		overdose = "Předávkování fentanylem",
+
+		grind_painkillers = "[${InteractionKey}] Rozemelejte léky proti bolesti",
+		grinding_painkillers = "Rozemelávání léků proti bolesti",
+		mix_acetone = "[${InteractionKey}] Smíchejte s acetonem",
+		mixing_acetone = "Míchání s Acetonem",
+		add_hydrogen_peroxide = "[${InteractionKey}] Přidat peroxid vodíku",
+		adding_hydrogen_peroxide = "Přidávání peroxidu vodíku",
+		boil = "[${InteractionKey}] Vařit suroviny",
+		boiling = "Vaření surovin",
+		cool_down = "[${InteractionKey}] Nechte vychladnout",
+		cooling_down = "Chlazení",
+		fill_ampules = "[${InteractionKey}] Naplnit ampule",
+		filling_ampules = "Naplňování ampulí",
+
+		selling_fentanyl = "Prodávání fentanylu",
+		press_to_sell_fentanyl = "Stiskněte tlačítko ~INPUT_CONTEXT~ pro prodej fentanylu.",
+		local_not_interested = "Místní se zdá být v tuto chvíli nezajímavý.",
+
+		something_went_wrong = "Něco se pokazilo.",
+		made_fentanyl_logs_title = "Vyrobený Fentanyl",
+		made_fentanyl_logs_details = "${consoleName} vyrobil/a ${amount}x fentanylu.",
+		sold_fentanyl_logs_title = "Prodáný Fentanyl",
+		sold_fentanyl_logs_details = "${consoleName} prodal/a 1x ampuli fentanylu za $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Odběr otisků prstů",
 		already_fingerprinting = "Již odebíráte otisky prstů hráče.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		press_to_access_shared_storage = "Stiskněte ~INPUT_REPLAY_SHOWHOTKEY~, abyste získali přístup k sdílenému úložišti.",
 		device_printout_details = "<b>Typ:</b> <i>${type}</i>, <b>Text:</b> <i>${text}</i>",
 		copy_serial_number = "Zkopírovat sériové číslo",
+		copy_fingerprint = "Zkopírovat otisk prstu",
 		serial_number_copied = "${itemName}, Sériové číslo: ${serialNumber}",
 
 		failed_give = "Nepodařilo se předat předmět(y) hráči.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		lean = "Lean",
 		lean_description = "Sippin na sizzurpu, sippin, sippin na něm.",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "Nazvaný „pozorovatel ze tmy“, fentanyl je mocný malý lektvar, který má velký úder. S pouhým šepotem této látky můžete poslat i toho nejbdělejšího do říše snů. S ním ovšem zacházejte opatrně! Je tak silný, že kdyby byly sny měnou, byli byste miliardářem po jedné dávce. Ideální pro situace, kdy potřebujete velké problémy změnit v ospalé.",
+
 		grimace_shake = "Grimace Shake",
 		grimace_shake_description = "Blázen? Byl jsem blázen jednou. Dali mě do místnosti. Gumičková místnost. Gumičková místnost s krysy. A krysy mě dělají bláznem. Blázen? Byl jsem blázen jednou. Dali mě do místnosti. Gumičková místnost. Gumičková místnost s krysy. A krysy mě dělají bláznem. Blázen? Byl jsem blázen jednou. Dali mě do místnosti. Gumičková místnost. Gumičková místnost s krysy. A krysy mě dělají bláznem. Blázen? Byl jsem blázen jednou. Dali mě do místnosti. Gumičková místnost. Gumičková místnost s krysy. A krysy mě dělají bláznem. Blázen? Byl jsem blázen jednou.....",
+
+		hydrogen_peroxide = "Vodíkový peroxid",
+		hydrogen_peroxide_description = "Tento bublinkový nápoj, známý svou bublinkovitou povahou a čistotou, je pilířem vědeckých laboratoří a mimo ně. Zatímco je slavný tím, že zanechává řezy a povrchy bez poskvrnky, má také šik o smíchání s jinými ingrediencemi a \"vymyslet\" docela silné směsi. Zacházejte s ním s důvtipem a trochou opatrnosti.",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Ponořte se do sladkých a kyselých chutí Jolly Ranchers, klasických tvrdých bonbonů, které praskají v ovocném blahobytu.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		button_confirm = "Potvrdit",
 		button_delete = "Smazat",
 		button_manage = "Spravovat",
+		button_leave = "Opustit",
 		create_account = "Vytvořit účet",
 		delete_account = "Smazat účet",
 		confirm_delete = "Jste si jisti, že chcete trvale smazat tento účet a veškeré s ním spojené záznamy? Tuto akci nelze vrátit zpět.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		insufficient_balance = "Na účtu není dostatek peněz.",
 		insufficient_bank_balance = "Na vašem bankovním účtu není dostatek peněz.",
 		account_description = "Pouze vlastník účtu jej může smazat nebo spravovat. Lidé s přístupem k účtu mohou pouze vkládat a vybírat peníze. Můžete vytvořit až 5 různých spořících účtů.",
+		leave_account = "Opustit účet",
+		confirm_leave = "Jste si jisti, že chcete opustit „${name}“? Už nebudete mít přístup k tomuto účtu.",
 
 		add_access_logs_title = "Přidat přístup k účtu ušetřených peněz",
 		add_access_logs_details = "${consoleName} udělil/udělila přístup k účtu ušetřených peněz ${accountId} uživateli ${firstName} ${lastName}, ID postavy: ${characterId}.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		create_account_logs_details = "${consoleName} vytvořil/vytvořila nový účet pro úspory s názvem `${accountName}` a ID: ${accountId}.",
 		deleted_account_logs_title = "Smazání účtu spoření",
 		deleted_account_logs_details = "${consoleName} smazal účet spoření s názvem `${accountName}` s ID ${accountId}.",
+		left_account_logs_title = "Zbývající účet úspor",
+		left_account_logs_details = "${consoleName} opustil účet úspor s názvem `${accountName}` s ID ${accountId}.",
 		withdraw_logs_title = "Výběr ze spoření",
 		withdraw_logs_details = "${consoleName} vybral $${amount} z účtu ${accountId} s důvodem `${reason}`.",
 		deposit_logs_title = "Vklad na spoření",

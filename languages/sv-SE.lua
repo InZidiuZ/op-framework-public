@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["sv-SE"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		bed_command_help = "Försök att lägga dig i närmaste säng.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "plocka_up_cykel",
+		pickup_bicycle_command_help = "Plockar upp närmaste cykel.",
+		pickup_bicycle_command_substitutes = "pc",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Skapa en faktura till en annan spelare för en viss summa pengar.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		toggle_ignition_bomb_command_substitutes = "tändningsbomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "tysta_boomboxar",
+		mute_boomboxes_command_help = "Tystar/Av-tystar alla boomboxar.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Rensa boomboxes.",
 		wipe_boomboxes_command_parameter_radius = "radie",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		press_to_leave_bed = "Tryck ~INPUT_CONTEXT~ för att lämna sängen."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "Ingen cykel i närheten.",
+		failed_pickup_bicycle = "Misslyckades med att plocka upp cykeln.",
+		picking_up = "Plockar upp cykeln",
+		moving_too_fast = "Du rör dig för fort för att plocka upp cykeln.",
+
+		picked_up_logs_title = "Plockade upp cykeln",
+		picked_up_logs_details = "${consoleName} plockade upp en cykel med nätverks-ID #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Tappad Cykel",
+		dropped_bicycle_logs_details = "${consoleName} tappade cykeln de bar."
+	},
+
 	bills = {
 		select_player = "Välj spelare",
 		no_nearby_players = "Inga fakturerbara spelare i närheten av dig.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		skip_song = "Hoppa över låt",
 		volume = "Volym",
 		music = "Musik",
+
+		mute_boomboxes = "Tysta Boomboxar",
+		mute_boomboxes_enabled = "Alla boomboxar är nu tystade.",
+		mute_boomboxes_disabled = "Alla boomboxar är inte längre tystade.",
 
 		store_boombox = "Förvara Boomboxen i din inventering",
 		put_boombox_down = "Lägg ner Boomboxen på marken",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		milking_cow_failed = "Misslyckades att mjölka ko."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Du överdoserar på fentanyl.",
+		overdose = "Fentanyl Överdos",
+
+		grind_painkillers = "[${InteractionKey}] Krossa smärtstillande medel",
+		grinding_painkillers = "Krossar Smärtstillande medel",
+		mix_acetone = "[${InteractionKey}] Blanda med aceton",
+		mixing_acetone = "Blanda med Aceton",
+		add_hydrogen_peroxide = "[${InteractionKey}] Lägg till Väteperoxid",
+		adding_hydrogen_peroxide = "Lägger till Väteperoxid",
+		boil = "[${InteractionKey}] Koka ingredienser",
+		boiling = "Kokar ingredienser",
+		cool_down = "[${InteractionKey}] Svalna",
+		cooling_down = "Svalnar",
+		fill_ampules = "[${InteractionKey}] Fyll ampuller",
+		filling_ampules = "Fyller ampuller",
+
+		selling_fentanyl = "Säljer Fentanyl",
+		press_to_sell_fentanyl = "Tryck på ~INPUT_CONTEXT~ för att sälja Fentanyl.",
+		local_not_interested = "Den lokala verkar inte vara intresserad just nu.",
+
+		something_went_wrong = "Något gick fel.",
+		made_fentanyl_logs_title = "Tillverkad Fentanyl",
+		made_fentanyl_logs_details = "${consoleName} tillverkade ${amount}x fentanyl.",
+		sold_fentanyl_logs_title = "Såld Fentanyl",
+		sold_fentanyl_logs_details = "${consoleName} sålde 1x ampull fentanyl för $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Tar fingeravtryck",
 		already_fingerprinting = "Du tar redan fingeravtryck på en spelare.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		press_to_access_shared_storage = "Tryck på ~INPUT_REPLAY_SHOWHOTKEY~ för att komma åt delad förvaring.",
 		device_printout_details = "<b>Typ:</b> <i>${type}</i>, <b>Text:</b> <i>${text}</i>",
 		copy_serial_number = "Kopiera serienummer",
+		copy_fingerprint = "Kopiera Fingeravtryck",
 		serial_number_copied = "${itemName}, Serienummer: ${serialNumber}",
 
 		failed_give = "Misslyckades med att ge föremål till spelaren.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		lean = "Lean",
 		lean_description = "Sippin på lite sizzurp, sip, sippin på något, sip.",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "Kallad den 'slumrande lurviga', fentanyl är en kraftfull liten potion som packar en smäll. Med bara en viskning av denna substans kan du sända även den mest vaksamma in i en värld av drömmar. Hantera med försiktighet! Den är så potent att om drömmar var valuta, skulle du bli miljardär med en dos. Perfekt när du behöver förvandla stora problem till sömniga.",
+
 		grimace_shake = "Grimas skaka",
 		grimace_shake_description = "Galen? Jag var galen en gång. De satte mig i ett rum. Ett gummirum. Ett gummirum med råttor. Och råttor får mig att bli galen. Galen? Jag var galen en gång. De satte mig i ett rum. Ett gummirum. Ett gummirum med råttor. Och råttor får mig att bli galen. Galen? Jag var galen en gång. De satte mig i ett rum. Ett gummirum. Ett gummirum med råttor. Och råttor får mig att bli galen. Galen? Jag var galen en gång. De satte mig i ett rum. Ett gummirum. Ett gummirum med råttor. Och råttor får mig att bli galen. Galen? Jag var galen en gång.....",
+
+		hydrogen_peroxide = "Väteperoxid",
+		hydrogen_peroxide_description = "Denna bubbliga brygd, känd för sin bubbel och rengöring, är en stapelvara i vetenskapliga laboratorier och därefter. Medan den är känd för att göra snitt och ytor skinande rena, har den också en förmåga att blanda sig med andra ingredienser för att \"drömma ihop\" en del rätt potent blandningar. Hantera med upplysning och en smula försiktighet.",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Unna dig de söta och syrliga smakerna av Jolly Ranchers, de klassiska hårda godisarna som exploderar med fruktig godhet.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		button_confirm = "Bekräfta",
 		button_delete = "Radera",
 		button_manage = "Hantera",
+		button_leave = "Lämna",
 		create_account = "Skapa konto",
 		delete_account = "Radera konto",
 		confirm_delete = "Är du säker på att du vill permanent radera detta konto och alla loggar som är associerade med det? Denna åtgärd kan inte ångras.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		insufficient_balance = "Kontot har otillräckligt saldo.",
 		insufficient_bank_balance = "Ditt bankkonto har otillräckligt saldo.",
 		account_description = "Endast ägaren av kontot kan ta bort och hantera det. Personer med behörighet till kontot kan bara ta ut och sätta in pengar. Du kan skapa upp till 5 olika sparkonton.",
+		leave_account = "Lämna konto",
+		confirm_leave = "Är du säker på att du vill lämna \"${name}\"? Du kommer inte längre ha åtkomst till detta konto.",
 
 		add_access_logs_title = "Lägg till åtkomst till sparande",
 		add_access_logs_details = "${consoleName} gav `${firstName} ${lastName}` åtkomst till sparningskontot ${accountId}.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		create_account_logs_details = "${consoleName} skapade ett nytt sparande konto med namnet `${accountName}` och id ${accountId}.",
 		deleted_account_logs_title = "Kontos raderat",
 		deleted_account_logs_details = "${consoleName} raderade ett sparkonto med namnet `${accountName}` och ID ${accountId}.",
+		left_account_logs_title = "Sparkonto Kvar",
+		left_account_logs_details = "${consoleName} lämnade ett sparkonto med namnet `${accountName}` med id ${accountId}.",
 		withdraw_logs_title = "Uttag från sparkonto",
 		withdraw_logs_details = "${consoleName} drog tillbaka $${amount} från sparkontot ${accountId} med anledning `${reason}`.",
 		deposit_logs_title = "Insättning på sparkonto",

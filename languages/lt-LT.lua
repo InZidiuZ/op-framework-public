@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["lt-LT"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		bed_command_help = "Bandykite atsigulti artimiausioje lovose.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "paimti_dvirati",
+		pickup_bicycle_command_help = "Paimk artimiausią dviratį.",
+		pickup_bicycle_command_substitutes = "pd",
+
 		-- game/bills
 		create_bill_command = "sukurti_sąskaitą",
 		create_bill_command_help = "Parašykite kitam žaidėjui nurodytą pinigų sumą.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		toggle_ignition_bomb_command_substitutes = "įjungti_degalų_sprogstamąją",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "nutildyti_boomboxus",
+		mute_boomboxes_command_help = "Nutildyti/Atšaukti visus boomboxus.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "valyti_bumboxus",
 		wipe_boomboxes_command_help = "Valyti bumboxus.",
 		wipe_boomboxes_command_parameter_radius = "spindulys",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		press_to_leave_bed = "Paspauskite ~INPUT_CONTEXT~, kad išeitumėte iš lovos."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "Netoli nėra dviračio.",
+		failed_pickup_bicycle = "Nepavyko paimti dviračio.",
+		picking_up = "Paimamas dviratis",
+		moving_too_fast = "Jūs judate per greitai norėdami paimti dviratį.",
+
+		picked_up_logs_title = "Paimtas dviratis",
+		picked_up_logs_details = "${consoleName} paimė dviratį su tinklo id #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Mestas dviratis",
+		dropped_bicycle_logs_details = "${consoleName} numetė dviratį, kurį nešiojo."
+	},
+
 	bills = {
 		select_player = "Pasirinkti žaidėją",
 		no_nearby_players = "Nėra jokių apmokestinamų žaidėjų, esančių šalia jūsų.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		skip_song = "Praleisti dainą",
 		volume = "Garsumas",
 		music = "Muzika",
+
+		mute_boomboxes = "Išjungti garsiakalbius",
+		mute_boomboxes_enabled = "Visi garsiakalbiai dabar išjungti.",
+		mute_boomboxes_disabled = "Visi garsiakalbiai nebėra išjungti.",
 
 		store_boombox = "Įdėti būmboksą į inventorius",
 		put_boombox_down = "Padėti būmboksą ant žemės",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		milking_cow_failed = "Nepavyko pasirūkyti karvės."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Perdozuojate fentanilį.",
+		overdose = "Fentanilio perdozavimas",
+
+		grind_painkillers = "[${InteractionKey}] Susmulkinkite skausmą malšinančius vaistus",
+		grinding_painkillers = "Skausmą malšinančių vaistų malimo procesas",
+		mix_acetone = "[${InteractionKey}] Sumaišykite su acetono",
+		mixing_acetone = "Mišymas su acetono",
+		add_hydrogen_peroxide = "[${InteractionKey}] Pridėti vandenilio peroksido",
+		adding_hydrogen_peroxide = "Pridedamas vandenilio peroksidas",
+		boil = "[${InteractionKey}] Kaišti ingredientus",
+		boiling = "Ingredientų kaitinimas",
+		cool_down = "[${InteractionKey}] Atvėsti",
+		cooling_down = "Atvėsta",
+		fill_ampules = "[${InteractionKey}] Užpilti ampulas",
+		filling_ampules = "Ampulų užpildymas",
+
+		selling_fentanyl = "Parduodama fentanilis",
+		press_to_sell_fentanyl = "Spauskite ~INPUT_CONTEXT~, kad parduotumėte fentanilį.",
+		local_not_interested = "Vietinis šiuo metu neatrodo susidomėjęs.",
+
+		something_went_wrong = "Įvyko klaida.",
+		made_fentanyl_logs_title = "Pagamintas Fentanilis",
+		made_fentanyl_logs_details = "${consoleName} pagamino ${amount} vienetų fentanilio.",
+		sold_fentanyl_logs_title = "Parduotas Fentanilis",
+		sold_fentanyl_logs_details = "${consoleName} parduota 1 ampulė fentanilio už $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Imant pirštų antspaudą",
 		already_fingerprinting = "Jau imate kito žaidėjo pirštų antspaudą.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		press_to_access_shared_storage = "Paspauskite ~INPUT_REPLAY_SHOWHOTKEY~, kad gautumėte prieigą prie bendro naudojimo saugyklos.",
 		device_printout_details = "<b>Rūšis:</b> <i>${tipas}</i>, <b>Tekstas:</b> <i>${tekstas}</i>",
 		copy_serial_number = "Kopijuoti serijos numerį",
+		copy_fingerprint = "Kopijuoti pirštų atspaudą",
 		serial_number_copied = "${itemName}, Serijos numeris: ${serialNumber}",
 
 		failed_give = "일련번호: ${serialNumber}<br><i>이 무기는 ${fullName}님이 소유하고 있습니다 (#${characterId}).</i>",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		lean = "Leanas",
 		lean_description = "Gardžiai gurkšnauju sizzurpą, gurks, gurkšnauju, gurks.",
 
+		fentanyl = "Fentanilis",
+		fentanyl_description = "Pavadintas „užlipusis mieguistas“, fentanilis yra galinga maža gėrimų galimybė, kuri duoda stiprų smūgį. Vien šios medžiagos šnabždesiu galite išsiųsti net ir labiausiai budrius į sapnų pasaulį. Tačiau tvarkykis atsargiai! Ji yra tokia stipri, kad jei sapnai būtų valiuta, viena dozėje būtum milijonierius. Puikiai tinka, kai turite padaryti didelius sunkumus miegais.",
+
 		grimace_shake = "Grimaso kokteilis",
 		grimace_shake_description = "Beproto? Buvau beprotis vieną kartą. Jie uždėjo mane į kambarį. Guminį kambarį. Guminį kambarį su pelėmis. O pelės man suteikia beprotiškumą. Beprotis? Buvau beprotis vieną kartą. Jie mane įdėjo į kambarį. Guminį kambarį. Guminį kambarį su pelėmis. O pelės mane padaro beprotišku. Beprotis? Buvau beprotis vieną kartą. Jie mane įdėjo į kambarį. Guminį kambarį. Guminį kambarį su pelėmis. O pelės mane padaro beprotišku. Beprotis? Buvau beprotis vieną kartą. Jie mane įdėjo į kambarį. Guminį kambarį. Guminį kambarį su pelėmis. O pelės mane padaro beprotišku. Beprotis? Buvau beprotis vieną kartą.....",
+
+		hydrogen_peroxide = "Vandenilio peroksidas",
+		hydrogen_peroxide_description = "Šis burbuliuojantis gėrimas, žinomas dėl savo putų ir švaros, yra itin populiari mokslo laboratorijose ir ne tik. Nors jis garsėja tuo, kad suteikia odelės įbrėžimams gydyti ir paviršius išvalyti, taip pat jis puikiai derinasi su kitais ingredientais, kad sukurtų gana galingas mišiniais. Tvarkykite su protingumu ir šiek tiek atsargiai.",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Mėgaukitės saldžiais ir rūgštais Jolly Ranchers saldumynais, klasikiniais kietais saldainiais, kurie spjovinėja su vaisiniu skoniu.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		button_confirm = "Patvirtinti",
 		button_delete = "Ištrinti",
 		button_manage = "Tvarkyti",
+		button_leave = "Palikti",
 		create_account = "Sukurti sąskaitą",
 		delete_account = "Ištrinti sąskaitą",
 		confirm_delete = "Ar tikrai norite visam laikui ištrinti šią sąskaitą ir visas su ja susijusias žurnalo įrašus? Šios veiksmo negalima atšaukti.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		insufficient_balance = "잠수함 내림",
 		insufficient_bank_balance = "[${InteractionKey}] 잠수함 내림",
 		account_description = "목적지가 설정되지 않았습니다.",
+		leave_account = "Palikti paskyrą",
+		confirm_leave = "Ar tikrai norite palikti „${name}“ paskyrą? Jums nebereiks šios paskyros.",
 
 		add_access_logs_title = "Pridėti prieigos teises",
 		add_access_logs_details = "${consoleName} suteikė `${firstName} ${lastName}` #${characterId} prieigos teises prie taupomosios sąskaitos ${accountId}.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		create_account_logs_details = "${consoleName} sukūrė naują taupomąją sąskaitą pavadinimu `${accountName}` su id ${accountId}.",
 		deleted_account_logs_title = "Ištrintos sąskaitos trynimas",
 		deleted_account_logs_details = "${consoleName} ištrynė sąskaitą su pavadinimu `${accountName}` ir ID ${accountId}.",
+		left_account_logs_title = "Išsaugota Likusi sąskaita",
+		left_account_logs_details = "${consoleName} paliko išsaugotą sąskaitą pavadinimu `${accountName}` su id ${accountId}.",
 		withdraw_logs_title = "Išėmimas iš sąskaitos",
 		withdraw_logs_details = "${consoleName} iš pervedė $${amount} iš taupomosios sąskaitos ${accountId} su priežastimi `${reason}`.",
 		deposit_logs_title = "Papildymas į sąskaitą",

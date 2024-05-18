@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		bed_command_help = "พยายามนอนบนเตียงที่ใกล้ที่สุด",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "pickup_bicycle",
+		pickup_bicycle_command_help = "เก็บจักรยานที่อยู่ใกล้ที่สุด",
+		pickup_bicycle_command_substitutes = "pb",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "เรียกเก็บเงินจากผู้เล่นคนอื่นๆ ด้วยจำนวนเงินที่กำหนด",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "mute_boomboxes",
+		mute_boomboxes_command_help = "ปิดเสียง/เปิดเสียงบูมบ็อกทั้งหมด",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "ล้างกล่องเพลง",
 		wipe_boomboxes_command_parameter_radius = "รัศมี",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["th-TH"] = {
 		press_to_leave_bed = "กด ~INPUT_CONTEXT~ เพื่อออกจากเตียง"
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "ไม่มีจักรยานใกล้เคียง",
+		failed_pickup_bicycle = "ไม่สามารถเก็บจักรยานได้",
+		picking_up = "กำลังเก็บจักรยาน",
+		moving_too_fast = "คุณกำลังเคลื่อนที่อย่างเร็วเกินไป เพื่อเลี้ยวจักรยาน",
+
+		picked_up_logs_title = "เก็บจักรยานแล้ว",
+		picked_up_logs_details = "${consoleName} เก็บจักรยานที่มี network id #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "รายการรถจักรยานทิ้ง",
+		dropped_bicycle_logs_details = "${consoleName} ทิ้งรถจักรยานที่พวกเขาถืออยู่."
+	},
+
 	bills = {
 		select_player = "เลือกผู้เล่น",
 		no_nearby_players = "ไม่มีผู้เล่นที่อยู่ใกล้คุณ",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		skip_song = "ข้ามเพลง",
 		volume = "ระดับเสียง",
 		music = "เพลง",
+
+		mute_boomboxes = "ปิดเสียงบูมบ็อกซ์",
+		mute_boomboxes_enabled = "บูมบ็อกซ์ทั้งหมดถูกปิดเสียงแล้ว.",
+		mute_boomboxes_disabled = "บูมบ็อกซ์ทั้งหมดไม่ถูกปิดเสียงแล้ว.",
 
 		store_boombox = "เก็บบูมบ็อกซ์ในกระเป๋า",
 		put_boombox_down = "วางบูมบ็อกซ์ลง",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["th-TH"] = {
 		milking_cow_failed = "การสกัดนมจากวัวล้มเหลว"
 	},
 
+	fentanyl = {
+		you_are_overdosing = "คุณกำลังทำการใช้ยาเกินขนาดของฟีนทานิล.",
+		overdose = "ยาเกิน",
+
+		grind_painkillers = "[${InteractionKey}] บดเม็ดแก้ปวด",
+		grinding_painkillers = "กำลังบดเม็ดแก้ปวด",
+		mix_acetone = "[${InteractionKey}] ผสมกับอะซิโทน",
+		mixing_acetone = "การผสมกับแอซิโทน",
+		add_hydrogen_peroxide = "[${InteractionKey}] เพิ่มไฮโดรเจนเปอรอกไซด์",
+		adding_hydrogen_peroxide = "กำลังเพิ่มไฮโดรเจนเปอรอกไซด์",
+		boil = "[${InteractionKey}] ต้มส่วนผสม",
+		boiling = "กำลังต้มส่วนผสม",
+		cool_down = "[${InteractionKey}] รอให้เย็น",
+		cooling_down = "กำลังรอเย็น",
+		fill_ampules = "[${InteractionKey}] เติมสารลงหลอดบอล",
+		filling_ampules = "กำลังเติมสารลงหลอดบอล",
+
+		selling_fentanyl = "ขายเฟนทานิล",
+		press_to_sell_fentanyl = "กด ~INPUT_CONTEXT~ เพื่อขายเฟนทานิล",
+		local_not_interested = "พื้นที่ท้องถิ่นดูเหมือนไม่สนใจในขณะนี้",
+
+		something_went_wrong = "เกิดข้อผิดพลาดบางอย่าง",
+		made_fentanyl_logs_title = "ทำ Fentanyl",
+		made_fentanyl_logs_details = "${consoleName} ทำ Fentanyl จำนวน ${amount} ชิ้น",
+		sold_fentanyl_logs_title = "ขาย Fentanyl",
+		sold_fentanyl_logs_details = "${consoleName} ขายอัมพูล Fentanyl 1 ชิ้น ในราคา $${reward}"
+	},
+
 	fingerprint = {
 		taking_fingerprint = "กำลังเก็บลายนิ้วมือ",
 		already_fingerprinting = "คุณกำลังเก็บลายนิ้วมือของผู้เล่นอยู่แล้ว",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		press_to_access_shared_storage = "กด ~INPUT_REPLAY_SHOWHOTKEY~ เพื่อเข้าถึงที่เก็บไฟล์ร่วมกัน",
 		device_printout_details = "<b>ประเภท:</b> <i>${type}</i>, <b>ข้อความ:</b> <i>${text}</i>",
 		copy_serial_number = "คัดลอกหมายเลขซีเรียล",
+		copy_fingerprint = "คัดลอกลายนิ้วมือ",
 		serial_number_copied = "${itemName}, หมายเลขซีเรียล: ${serialNumber}",
 
 		failed_give = "ไม่สามารถส่งไอเท็มให้กับผู้เล่นได้",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["th-TH"] = {
 		lean = "Lean",
 		lean_description = "ดื่มยาศรีษะผสมน้ำเปล่าและโค้ก เพื่อผ่อนคลายตัวเอง",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "เรียกว่า \"sneaky snoozer\" สารเสพติด Fentanyl เป็นสารทำให้คนหลับอย่างมีประสิทธิภาพ ด้วยแค่หางเสียดของสารนี้ คุณสามารถส่งคนไปยังโลกของความฝันได้ แต่ควรระมัดระวัง! มันมีประสิทธิภาพมากขนาดนั้น ถ้าความฝันเป็นสกุลเงิน คุณจะเป็นเศรษฐีในหนึ่งโพสเดียว ลงตัวสำหรับเมืองที่คุณต้องการแก้ปัญหาใหญ่ให้กลายเป็นปัญหาเล็ก",
+
 		grimace_shake = "Grimace Shake",
 		grimace_shake_description = "บ้าใช่ไหม? กาลครั้งหนึ่งผมมีบ้านร้าง พวกเขาใส่ผมอยู่ในห้อง ห้องยาง. ห้องยางที่มีหนู. และหนูทำให้ผมบ้า. บ้าใช่ไหม? กาลครั้งหนึ่งผมมีบ้านร้าง พวกเขาใส่ผมอยู่ในห้อง ห้องยาง. ห้องยางที่มีหนู. และหนูทำให้ผมบ้า. บ้าใช่ไหม? กาลครั้งหนึ่งผมมีบ้านร้าง พวกเขาใส่ผมอยู่ในห้วง ห้องยาง. ห้องยางที่มีหนู. และหนูทำให้ผมบ้า. บ้าใช่ไหม? กาลครั้งหนึ่งผมมีบ้านร้าง พวกเขาใส่ผมอยู่ในห้อง ห้องยาง. ห้องยางที่มีหนู. และหนูทำให้ผมบ้า. บ้าใช่ไหม? กาลครั้งหนึ่งผม.....",
+
+		hydrogen_peroxide = "ไฮโดรเจนเปอร์ออกไซด์",
+		hydrogen_peroxide_description = "สารเหลวฟองฟองนี้เป็นที่รู้จักด้วยความเฉียบแหลมและสะอาด เป็นของหลักในห้อง实验วิทยาศาสตร์และอื่นๆ นอกจากใช้ทำความสะอาดบาดแผลแล้ว ยังสามารถผสมกับส่วนผสมอื่นเพื่อสร้างสูตรที่มีประสิทธิภาพได้ด้วย จัดการด้วยความรู้และระวัง",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "สนุกกับรสชาติหวานและเปรี้ยวของ Jolly Ranchers ลูกอมแข็งคลาสสิกที่เต็มไปด้วยความหอมหวาน",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		button_confirm = "ยืนยัน",
 		button_delete = "ลบ",
 		button_manage = "จัดการ",
+		button_leave = "ออก",
 		create_account = "สร้างบัญชี",
 		delete_account = "ลบบัญชี",
 		confirm_delete = "คุณแน่ใจหรือไม่ว่าต้องการลบบัญชีนี้อย่างถาวรและข้อมูลทั้งหมดที่เกี่ยวข้องกับบัญชีนี้? การดำเนินการนี้ไม่สามารถย้อนกลับได้.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		insufficient_balance = "ยอดเงินในบัญชีไม่เพียงพอ",
 		insufficient_bank_balance = "ยอดเงินในธนาคารของคุณไม่เพียงพอ",
 		account_description = "เฉพาะเจ้าของบัญชีเท่านั้นที่สามารถลบและจัดการได้ คนที่มีสิทธิ์เข้าถึงบัญชีสามารถถอนและฝากได้เท่านั้น คุณสามารถสร้างบัญชีเงินฝากได้สูงสุด 5 บัญชีต่างๆ",
+		leave_account = "ออกจากบัญชี",
+		confirm_leave = "คุณแน่ใจที่จะออกจาก \"${name}\" หรือไม่? คุณจะไม่สามารถเข้าถึงบัญชีนี้อีกต่อไป",
 
 		add_access_logs_title = "เพิ่มสิทธิ์การเข้าถึงบัญชีเงินออม",
 		add_access_logs_details = "${consoleName} ให้สิทธิ์การเข้าถึงบัญชีเงินออมให้กับ `${firstName} ${lastName}` เลขตัวละคร #${characterId} ในบัญชีเงินออม ${accountId} ",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		create_account_logs_details = "${consoleName} สร้างบัญชีเงินออมใหม่ชื่อ `${accountName}` หมายเลขบัญชี ${accountId} ",
 		deleted_account_logs_title = "ลบบัญชีเงินออม",
 		deleted_account_logs_details = "${consoleName} ได้ลบบัญชีเงินออมที่ชื่อ `${accountName}` ที่มีรหัส ${accountId}",
+		left_account_logs_title = "บันทึกบัญชีเงินออมธรรม",
+		left_account_logs_details = "${consoleName} ออกจากบัญชีเงินออมธรรมชื่อ `${accountName}` ด้วยรหัส ${accountId}.",
 		withdraw_logs_title = "ถอนเงินจากบัญชีเงินออม",
 		withdraw_logs_details = "${consoleName} ถอนเงิน $${amount} จากบัญชีออมทรัพย์ ${accountId} ด้วยเหตุผล `${reason}`.",
 		deposit_logs_title = "ฝากเงินไปยังบัญชีเงินออม",

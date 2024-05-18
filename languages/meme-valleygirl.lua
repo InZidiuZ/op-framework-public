@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["meme-valleygirl"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		bed_command_help = "Like, try to find the nearest bed to like, totally lay down, you know.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "like, pickup_bicycle",
+		pickup_bicycle_command_help = "Pick up the closest like, bicycle.",
+		pickup_bicycle_command_substitutes = "pb",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Like, bill another player, like, a certain amount of money.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "mute_boomboxes",
+		mute_boomboxes_command_help = "Mutes/Unmutes all boomboxes.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Wipes out, like, all the boomboxes nearby.",
 		wipe_boomboxes_command_parameter_radius = "radius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		press_to_leave_bed = "Press ~INPUT_CONTEXT~ to leave the bed - sooo easy!"
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "Like, no bicycle nearby.",
+		failed_pickup_bicycle = "Failed to pickup bicycle.",
+		picking_up = "Like, Picking Up Bicycle",
+		moving_too_fast = "You're like, moving too fast to pick up the bicycle.",
+
+		picked_up_logs_title = "Picked Up Bicycle",
+		picked_up_logs_details = "${consoleName} picked up like, a bicycle with the network id #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Bicycle Dropped, Like OMG",
+		dropped_bicycle_logs_details = "${consoleName} totally dropped the bike they were carrying, so awkward."
+	},
+
 	bills = {
 		select_player = "Select, like, Player",
 		no_nearby_players = "No, like, billable players near you.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		skip_song = "Skip this jam, like totally!",
 		volume = "Volume, turn it up or down",
 		music = "Music, my jam!",
+
+		mute_boomboxes = "Shhh, Mute Boomboxes",
+		mute_boomboxes_enabled = "All boomboxes are muted now, like duh.",
+		mute_boomboxes_disabled = "No more muted boomboxes, like yay!",
 
 		store_boombox = "Stash the Boombox in your bag, babe",
 		put_boombox_down = "Like, put the Boombox on the ground",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		milking_cow_failed = "Like, totally failed to milk cow."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "OMG, You're like totally overdosing on fentanyl, like not cool at all.",
+		overdose = "Overdose of Fentanyl, OMG",
+
+		grind_painkillers = "[${InteractionKey}] Like, Grind up those painkillers",
+		grinding_painkillers = "OMG, Grinding Up those Painkillers",
+		mix_acetone = "[${InteractionKey}] Mix it with acetone, like totally",
+		mixing_acetone = "Mixing With Acetone, like, OMG",
+		add_hydrogen_peroxide = "[${InteractionKey}] Add Some Hydrogen Peroxide, ya know",
+		adding_hydrogen_peroxide = "Totally Adding Hydrogen Peroxide right now",
+		boil = "[${InteractionKey}] Boil the Ingridients",
+		boiling = "Boiling the Ingridients, like, duh",
+		cool_down = "[${InteractionKey}] Chill Out",
+		cooling_down = "Chilling Out right now",
+		fill_ampules = "[${InteractionKey}] Fill Up the Ampules",
+		filling_ampules = "Just, like, Filling the Ampules",
+
+		selling_fentanyl = "Selling Fentanyl, for real",
+		press_to_sell_fentanyl = "Press ~INPUT_CONTEXT~ if you wanna sell some Fentanyl, like, ASAP",
+		local_not_interested = "Like, the local is, like, totally not interested right now.",
+
+		something_went_wrong = "Oopsie, like, something went wrong.",
+		made_fentanyl_logs_title = "Made Fentanyl, Like, Totally",
+		made_fentanyl_logs_details = "${consoleName} made ${amount}x fentanyl, you know.",
+		sold_fentanyl_logs_title = "Sold Fentanyl, Oh Em Gee",
+		sold_fentanyl_logs_details = "${consoleName} like, totally sold 1x ampule of fentanyl for $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Like, taking fingerprints right now, hold on.",
 		already_fingerprinting = "Like, you're already taking a fingerprint of someone.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		press_to_access_shared_storage = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to access the shared storage, duh.",
 		device_printout_details = "<b>Type:</b> <i>${type}</i>, <b>Text:</b> <i>${text}</i>",
 		copy_serial_number = "Like, Copy Serial Number",
+		copy_fingerprint = "Copy Fingerprint, Like, Seriously",
 		serial_number_copied = "${itemName}, Serial Number: ${serialNumber}, ya know!",
 
 		failed_give = "Ugh, couldn't give item(s) to player.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		lean = "Sizzurp",
 		lean_description = "Sippin' on some purple drank, sippin', sippin'.",
 
+		fentanyl = "Fentanyl, Duh",
+		fentanyl_description = "OMG, so this stuff called fentanyl is like, the \"sneaky snoozer\", you know? It's like, totally powerful and can make you snooze in a snap. Be careful, though! It's like, super strong. If dreams were, like, money, you'd be a billionaire in one dose. Perfect when you need to turn big problems into, like, snoozy ones.",
+
 		grimace_shake = "Grimace Shake",
 		grimace_shake_description = "OMG? Like, I was OMG once. They put me, like, in a room. A rubber room. A rubber room with, like, rats. And rats make me OMG. OMG? Like, I was OMG once. They put me, like, in a room. A rubber room. A rubber room with, like, rats. And rats make me OMG. OMG? Like, I was OMG once. They put me, like, in a room. A rubber room. A rubber room with, like, rats. And rats make me OMG. OMG? Like, I was OMG once. They put me, like, in a room. A rubber room. A rubber room with, like, rats. And rats make me OMG. OMG? Like, I was OMG once.....",
+
+		hydrogen_peroxide = "Hydrogen Peroxide, like, totally fab!",
+		hydrogen_peroxide_description = "OMG, this like, super bubbly potion is, like, so iconic in science labs and stuff. It’s, like, amazing at, you know, cleaning stuff and making everything spic and span. Plus, it’s, like, a total pro at mixing with other ingredients to, like, create some seriously lit mixtures. Just, you know, handle with care and all that jazz.",
 
 		jolly_ranchers = "Jollys",
 		jolly_ranchers_description = "Get your fix on the sweet and tangy flavors of Jolly Rancher candies. Burstin' with fruity goodness.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		button_confirm = "Confirm",
 		button_delete = "Delete",
 		button_manage = "Manage",
+		button_leave = "Later gator",
 		create_account = "Create Account",
 		delete_account = "Delete Account",
 		confirm_delete = "Are you sure you wanna, like, totally delete this account and all logs associated with it? This action cannot be undone, like ever.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		insufficient_balance = "Ugh! Account balance is, like, so insufficient.",
 		insufficient_bank_balance = "Duh! Your bank balance is, like, so insufficient.",
 		account_description = "Like only the owner of the account can, like, delete and manage it. People with access to the account can, like, only withdraw and deposit. You can create up to, like, 5 different savings accounts.",
+		leave_account = "Later, like, bye Felicia!",
+		confirm_leave = "Are you, like, totally sure you wanna bounce from \"${name}\"? You won’t be able to, like, access this account anymore, just, you know, FYI.",
 
 		add_access_logs_title = "Like, Totally Adding Access",
 		add_access_logs_details = "${consoleName}, like, totally gave `${firstName} ${lastName}` #${characterId} access to, like, the savings account ${accountId}.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		create_account_logs_details = "${consoleName}, like, totally created a new savings account called `${accountName}` with the, like, totally rad id ${accountId}.",
 		deleted_account_logs_title = "Like, Savings Delete Account",
 		deleted_account_logs_details = "${consoleName} totally deleted a, like, savings account named `${accountName}` with the, like, id ${accountId}.",
+		left_account_logs_title = "Like, Savings in the Left Account",
+		left_account_logs_details = "${consoleName} totally ditched a savings account called `${accountName}` with the id ${accountId}.",
 		withdraw_logs_title = "Like, Savings Withdraw",
 		withdraw_logs_details = "${consoleName} took out like $${amount} from savings account ${accountId} and was all like `${reason}`.",
 		deposit_logs_title = "Like, Savings Deposit",

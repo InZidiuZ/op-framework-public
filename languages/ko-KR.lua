@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["ko-KR"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		bed_command_help = "가장 가까운 침대에 눕습니다.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "자전거 가져오기",
+		pickup_bicycle_command_help = "가장 가까운 자전거를 가져옵니다.",
+		pickup_bicycle_command_substitutes = "자전거",
+
 		-- game/bills
 		create_bill_command = "계산서_생성",
 		create_bill_command_help = "특정한 금액을 다른 플레이어에게 청구합니다.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "블루투스 스피커 음소거",
+		mute_boomboxes_command_help = "모든 블루투스 스피커를 음소거/음소거 해제합니다.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "붐박스를 삭제합니다.",
 		wipe_boomboxes_command_parameter_radius = "radius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		press_to_leave_bed = "빠져 나오려면 ~INPUT_CONTEXT~를 누르세요."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "가까이에 자전거가 없습니다.",
+		failed_pickup_bicycle = "자전거를 가져오는 데 실패했습니다.",
+		picking_up = "자전거 가져오는 중",
+		moving_too_fast = "자전거를 가져오려면 너무 빨리 움직입니다.",
+
+		picked_up_logs_title = "자전거를 가져왔습니다",
+		picked_up_logs_details = "${consoleName} 님이 네트워크 ID #${networkId} (`${modelName}`) 자전거를 가져왔습니다.",
+		dropped_bicycle_logs_title = "버려진 자전거",
+		dropped_bicycle_logs_details = "${consoleName}님이 운반하던 자전거를 버렸습니다."
+	},
+
 	bills = {
 		select_player = "플레이어 선택",
 		no_nearby_players = "근처에 청구 가능한 플레이어가 없습니다.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		skip_song = "다음 곡으로 넘기기",
 		volume = "볼륨",
 		music = "음악",
+
+		mute_boomboxes = "붐박스 음소거",
+		mute_boomboxes_enabled = "모든 붐박스가 음소거됩니다.",
+		mute_boomboxes_disabled = "모든 붐박스가 더 이상 음소거되지 않습니다.",
 
 		store_boombox = "인벤토리에 붐박스 저장",
 		put_boombox_down = "지면에 붐박스 놓기",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		milking_cow_failed = "소를 우는 것에 실패했습니다."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "펜타닐 중독 중입니다.",
+		overdose = "펜타닐 중독",
+
+		grind_painkillers = "[${InteractionKey}] 진통제 분쇄",
+		grinding_painkillers = "진통제 분쇄 중",
+		mix_acetone = "[${InteractionKey}] 아세톤과 섞기",
+		mixing_acetone = "아세톤과 혼합 중",
+		add_hydrogen_peroxide = "[${InteractionKey}] 과산화수소 추가",
+		adding_hydrogen_peroxide = "과산화수소 추가 중",
+		boil = "[${InteractionKey}] 재료 끓이기",
+		boiling = "재료 끓이는 중",
+		cool_down = "[${InteractionKey}] 냉각",
+		cooling_down = "냉각 중",
+		fill_ampules = "[${InteractionKey}] 앰퓔 채우기",
+		filling_ampules = "앰퓔 채우는 중",
+
+		selling_fentanyl = "펜타닐 판매 중",
+		press_to_sell_fentanyl = "판매하려면 ~INPUT_CONTEXT~을(를) 누르세요.",
+		local_not_interested = "이 지역 주민은 현재 흥미를 보이지 않는 것으로 보입니다.",
+
+		something_went_wrong = "문제가 발생했습니다.",
+		made_fentanyl_logs_title = "펜타닐 제조",
+		made_fentanyl_logs_details = "${consoleName}님이 펜타닐을 ${amount}개 제조했습니다.",
+		sold_fentanyl_logs_title = "펜타닐 판매",
+		sold_fentanyl_logs_details = "${consoleName}님이 펜타닐 앰플 1개를 $${reward}에 판매했습니다."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "지문 채취 중",
 		already_fingerprinting = "이미 다른 플레이어의 지문을 채취 중입니다.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		press_to_access_shared_storage = "공유 창고를 이용하려면 ~INPUT_REPLAY_SHOWHOTKEY~을(를) 누르세요.",
 		device_printout_details = "<b>유형:</b> <i>${type}</i>, <b>텍스트:</b> <i>${text}</i>",
 		copy_serial_number = "일련번호 복사",
+		copy_fingerprint = "지문 복사",
 		serial_number_copied = "${itemName}, 일련번호: ${serialNumber} 복사됨",
 
 		failed_give = "Failed to automatically generate translation.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		lean = "린",
 		lean_description = "시즈럽을 마시면서 즐기는 린입니다.",
 
+		fentanyl = "펜타닐",
+		fentanyl_description = "\"몸이 홱들어만 눕히는\"으로 불리는 펜타닐은 강력한 작은 물약으로, 한 끼 먹으면 누구든지 꿈이 가득한 세계로 보내 줄 수 있습니다. 그러나 조심스럽게 다뤄야 합니다! 꿈이 화폐가 된다면 한 번 섭취로 억만장자가 될 정도로 강력합니다. 큰 문제들을 잠들게 만들어야 하는 상황에 완벽하죠.",
+
 		grimace_shake = "거북목 흔들기",
 		grimace_shake_description = "미친 거야? 한번은 내가 미쳤지. 그들은 나를 한 방에 넣었어. 고무방. 쥐들이 있는 고무방. 그리고 쥐들은 나를 미치게 만들어. 미친 거야? 한번은 내가 미쳤지. 그들은 나를 한 방에 넣었어. 고무방. 쥐들이 있는 고무방. 그리고 쥐들은 나를 미치게 만들어. 미친 거야? 한번은 내가 미쳤지. 그들은 나를 한 방에 넣었어. 고무방. 쥐들이 있는 고무방. 그리고 쥐들은 나를 미치게 만들어. 미친 거야? 한번은 내가 미쳤지. 그들은 나를 한 방에 넣었어. 고무방. 쥐들이 있는 고무방. 그리고 쥐들은 나를 미치게 만들어. 미친 거야? 한번은 내가 미쳤지....",
+
+		hydrogen_peroxide = "과산화수소",
+		hydrogen_peroxide_description = "이 거품 많은 양조액은 그 발포와 깨끗함으로 유명하며, 과학 실험실뿐만 아니라 가정에서도 매우 중요합니다. 상처와 표면을 깨끗이 만드는 것으로 유명하지만, 다른 성분들과 섞여서 상당히 강력한 혼합체를 만들어내기도 합니다. 이를 다룰 때에는 깨달음을 갖고 조심스럽게 다뤄야 합니다.",
 
 		jolly_ranchers = "졸리랜처스",
 		jolly_ranchers_description = "과일 맛이 가득한 클래식 하드 캔디인 졸리랜처스의 달콤하고 시원한 맛을 즐겨보세요.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		button_confirm = "Conferma l'aggiornamento dell'adesione",
 		button_delete = "Sei sicuro di voler aggiornare la tua adesione ${pledgeLabel} a ${pledgeUpgradeLabel} per ${cost} punti OP?",
 		button_manage = "Aggiornamento dell'adesione in corso...",
+		button_leave = "나가기",
 		create_account = "Meth venduta",
 		delete_account = "${consoleName} ha venduto 1x busta di Meth per $${reward}.",
 		confirm_delete = "~g~Attivo",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		insufficient_balance = "Meth venduta",
 		insufficient_bank_balance = "${consoleName} ha venduto 1x busta di Meth per $${reward}.",
 		account_description = "~g~Attivo",
+		leave_account = "계정 나가기",
+		confirm_leave = "\"${name}\"을(를) 나가시겠습니까? 이 계정에 더 이상 접근할 수 없게 됩니다.",
 
 		add_access_logs_title = "किताबी पहुँच जोड़ें",
 		add_access_logs_details = "${consoleName} ने `${firstName} ${lastName}` को पहुँच दी #${characterId} ने मूल्य संग्रह संख्या ${accountId} को।",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		create_account_logs_details = "${consoleName} ने नया किताबी खाता नामित `${accountName}` के साथ आईडी ${accountId} बनाया।",
 		deleted_account_logs_title = "Hapus Akun Simpanan",
 		deleted_account_logs_details = "${consoleName} telah menghapus akun simpanan bernama `${accountName}` dengan ID ${accountId}.",
+		left_account_logs_title = "남은 예금 계좌",
+		left_account_logs_details = "${consoleName}님이 id가 ${accountId}인 `${accountName}`이라는 예금 계좌를 나갔습니다.",
 		withdraw_logs_title = "Tarik Simpanan",
 		withdraw_logs_details = "${consoleName}님이 ${accountId}번 장기 예금 계좌에서 $${amount}을(를) `${reason}` 이유로 인출했습니다.",
 		deposit_logs_title = "Setor Simpanan",

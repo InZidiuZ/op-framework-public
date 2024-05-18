@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["hu-HU"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		bed_command_help = "Próbálj lefeküdni a legközelebbi ágyban.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "biciklit_felvenni",
+		pickup_bicycle_command_help = "A legközelebbi biciklit felvenni.",
+		pickup_bicycle_command_substitutes = "bf",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Szolgáltatást nyúl egy másik játékosnak egy adott összegért.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		toggle_ignition_bomb_command_substitutes = "gyújtógyertya_bomba",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "boomboxok_némítása",
+		mute_boomboxes_command_help = "Az összes boombox némítása/feloldása.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "boombox_törlés",
 		wipe_boomboxes_command_help = "Törli a boomboxokat.",
 		wipe_boomboxes_command_parameter_radius = "sugár",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		press_to_leave_bed = "Nyomd meg a ~INPUT_CONTEXT~ gombot az ágy elhagyásához."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "Nincs bicikli a közelben.",
+		failed_pickup_bicycle = "Nem sikerült felvenni a biciklit.",
+		picking_up = "Bicikli felvétele",
+		moving_too_fast = "Túl gyorsan mozogsz a bicikli felvételekor.",
+
+		picked_up_logs_title = "Felvett bicikli",
+		picked_up_logs_details = "${consoleName} felvette a biciklit a hálózati azonosítóval #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Eldobott Bicikli",
+		dropped_bicycle_logs_details = "${consoleName} eldobta a biciklit, amit vittek."
+	},
+
 	bills = {
 		select_player = "Játékos Kiválasztása",
 		no_nearby_players = "Nincsenek játékosok a közeledben, akikre számlázhatnál.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		skip_song = "Dal kihagyása",
 		volume = "Hangerő",
 		music = "Zene",
+
+		mute_boomboxes = "Hangfalak Némítása",
+		mute_boomboxes_enabled = "Minden hangfal mostantól némítva van.",
+		mute_boomboxes_disabled = "Minden hangfal már nem némítva.",
 
 		store_boombox = "Tárold a Boomboxot az inventáriumban",
 		put_boombox_down = "Helyezd le a Boomboxot a földre",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		milking_cow_failed = "Nem sikerült megfejni a tehenet."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Túladagolást szenvedsz fentanillal.",
+		overdose = "Fentanil Túladagolás",
+
+		grind_painkillers = "[${InteractionKey}] Zúzd szét a fájdalomcsillapítókat",
+		grinding_painkillers = "Fájdalomcsillapítók Zúzása",
+		mix_acetone = "[${InteractionKey}] Keverd össze az acetonnal",
+		mixing_acetone = "Acetonnal Való Keverés",
+		add_hydrogen_peroxide = "[${InteractionKey}] Hidrogén-peroxid Hozzáadása",
+		adding_hydrogen_peroxide = "Hidrogén-peroxid Hozzáadása",
+		boil = "[${InteractionKey}] Összetevők Forralása",
+		boiling = "Összetevők Forralása",
+		cool_down = "[${InteractionKey}] Lehűtés",
+		cooling_down = "Lehűtés",
+		fill_ampules = "[${InteractionKey}] Ampullák Töltése",
+		filling_ampules = "Ampullák Töltése",
+
+		selling_fentanyl = "Fentanil Eladása",
+		press_to_sell_fentanyl = "Nyomd meg a ~INPUT_CONTEXT~ gombot a Fentanil eladásához.",
+		local_not_interested = "A helyi lakos most nem tűnik érdeklődőnek.",
+
+		something_went_wrong = "Valami hiba történt.",
+		made_fentanyl_logs_title = "Fentanil Elkészítve",
+		made_fentanyl_logs_details = "${consoleName} ${amount}x fentanilt készített.",
+		sold_fentanyl_logs_title = "Fentanil Eladva",
+		sold_fentanyl_logs_details = "${consoleName} eladta 1x fentanil ampullát $${reward}-ért."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Ujjlenyomat vétele",
 		already_fingerprinting = "Már veszel ujjlenyomatot egy játékostól.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		press_to_access_shared_storage = "Nyomd meg a ~INPUT_REPLAY_SHOWHOTKEY~ gombot a közös tárolóhoz való hozzáféréshez.",
 		device_printout_details = "<b>Típus:</b> <i>${type}</i>, <b>Szöveg:</b> <i>${text}</i>",
 		copy_serial_number = "Sorozatszám másolása",
+		copy_fingerprint = "Ujjlenyomat Másolása",
 		serial_number_copied = "${itemName}, Sorozatszám: ${serialNumber}",
 
 		failed_give = "Nem sikerült a tárgyak átadása a játékosnak.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		lean = "Lean",
 		lean_description = "Sippin on some sizzurp, sip, sippin on some, sip.",
 
+		fentanyl = "Fentanil",
+		fentanyl_description = "A „suba alattipus” néven ismert fentanil egy erős kis varázslat, amely nagy ütésre képes. Csak egy csepp ebből a hatóanyagból, és még a legbrekegőbbeket is álomvilágba küldheted. Azonban vigyázz vele! Olyan erős, hogyha az álmok pénznemek lennének, már 1 adag után milliárdos lennél. Tökéletes, amikor nagy problémákat álmosítanál el.",
+
 		grimace_shake = "Grimace Shake",
 		grimace_shake_description = "Őrült voltam? Voltam már egyszer őrült. Egy szobába tettek. Egy gumiszobába. Egy gumiszobába patkányokkal. És a patkányok őrületbe kergettek. Őrült voltam? Voltam már egyszer őrült. Egy szobába tettek. Egy gumiszobába. Egy gumiszobába patkányokkal. És a patkányok őrületbe kergettek. Őrült voltam? Voltam már egyszer őrült. Egy szobába tettek. Egy gumiszobába. Egy gumiszobába patkányokkal. És a patkányok őrületbe kergettek. Őrült voltam? Voltam már egyszer őrült. Egy szobába tettek. Egy gumiszobába. Egy gumiszobába patkányokkal. És a patkányok őrületbe kergettek. Őrült voltam? Voltam már egyszer.....",
+
+		hydrogen_peroxide = "Hidrogén-peroxid",
+		hydrogen_peroxide_description = "Ez a buborékos ital, amelyet pezsgéséről és tisztaságáról ismernek, alapvető eleme a tudományos laboratóriumoknak és még annál is többnek. Bár híres arról, hogy vágásokat és felületeket ragyogóvá tesz, de képessége van más összetevőkkel keveredve \"álmodozni\" néhány elég erős keveréket is. Kezelje megvilágosodással és óvatossággal.",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Mélyedjen el az ízletes és savanykás Jolly Ranchers cukorkák ízében, amik a gyümölcsök finom ízével robbannak szét a szájban.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		button_confirm = "सेविंग्स बॉन्ड",
 		button_delete = "कुल",
 		button_manage = "सेविंग्स बॉन्ड जमा करने में विफल रहा",
+		button_leave = "Kilépés",
 		create_account = "बॉन्ड जमा करें",
 		delete_account = "${consoleName} ने $${amount} के ${bonds} जमा किए।",
 		confirm_delete = "अटैचमेंट्स को संशोधित करना",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		insufficient_balance = "बॉन्ड जमा करें",
 		insufficient_bank_balance = "${consoleName} ने $${amount} के ${bonds} जमा किए।",
 		account_description = "अटैचमेंट्स को संशोधित करना",
+		leave_account = "Fiók elhagyása",
+		confirm_leave = "Biztosan ki akarsz lépni innen: \"${name}\"? Ennek a fióknak a hozzáférését már nem fogod tudni elérni.",
 
 		add_access_logs_title = "Failed to automatically generate translation.",
 		add_access_logs_details = "Failed to automatically generate translation.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		create_account_logs_details = "Failed to automatically generate translation.",
 		deleted_account_logs_title = "Failed to automatically generate translation.",
 		deleted_account_logs_details = "Failed to automatically generate translation.",
+		left_account_logs_title = "Megtakarítási bal számla",
+		left_account_logs_details = "${consoleName} egy megtakarítási számlát hagyott el a(z) `${accountName}` nevűvel, azonosítóval ${accountId}.",
 		withdraw_logs_title = "Failed to automatically generate translation.",
 		withdraw_logs_details = "${consoleName} ${amount} dollárt vett ki a ${accountId} megtakarítási számlájáról `${reason}` indokkal.",
 		deposit_logs_title = "Failed to automatically generate translation.",

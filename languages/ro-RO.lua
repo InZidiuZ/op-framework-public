@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["ro-RO"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		bed_command_help = "Încearcă să te întinzi în cel mai apropiat pat.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "ridica_bicicleta",
+		pickup_bicycle_command_help = "Rideci cea mai apropiată bicicletă.",
+		pickup_bicycle_command_substitutes = "rb",
+
 		-- game/bills
 		create_bill_command = "creează_factură",
 		create_bill_command_help = "Facturează un alt jucător cu o anumită sumă de bani.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "opreste_sunete_boxe",
+		mute_boomboxes_command_help = "Oprește/Activează sunetul la toate boomboxurile.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Șterge boombox-urile.",
 		wipe_boomboxes_command_parameter_radius = "rază",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		press_to_leave_bed = "Apasă ~INPUT_CONTEXT~ pentru a te ridica din pat."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "Nu există biciclete în apropiere.",
+		failed_pickup_bicycle = "Nu s-a putut ridica bicicleta.",
+		picking_up = "Se ridică bicicleta",
+		moving_too_fast = "Te deplasezi prea repede pentru a ridica bicicleta.",
+
+		picked_up_logs_title = "Bicicletă Ridicată",
+		picked_up_logs_details = "${consoleName} a ridicat o bicicletă cu id-ul de rețea #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Bicicletă Abandonată",
+		dropped_bicycle_logs_details = "${consoleName} a abandonat bicicleta pe care o transporta."
+	},
+
 	bills = {
 		select_player = "Selectează jucător",
 		no_nearby_players = "Nu există jucători apropiați care pot fi taxați.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		skip_song = "Păsire melodie",
 		volume = "Volum",
 		music = "Muzică",
+
+		mute_boomboxes = "Oprire Sonorizare Portabilă",
+		mute_boomboxes_enabled = "Toate boxele portabile sunt acum blocate.",
+		mute_boomboxes_disabled = "Toate boxele portabile nu mai sunt blocate.",
 
 		store_boombox = "Depozitează Boomboxul în inventarul tău",
 		put_boombox_down = "Așază Boomboxul pe jos",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		milking_cow_failed = "Nu s-a putut mulge vaca."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Faceti supradoza de fentanil.",
+		overdose = "Supradoza de Fentanil",
+
+		grind_painkillers = "[${InteractKey}] Triturati pastilele pentru durere",
+		grinding_painkillers = "Se Macină Pastilele pentru Durere",
+		mix_acetone = "[${InteractKey}] Amestecă cu acetona",
+		mixing_acetone = "Amestecare cu Acetonă",
+		add_hydrogen_peroxide = "[${InteractionKey}] Adaugă Peroxid de Hidrogen",
+		adding_hydrogen_peroxide = "Adăugare de Peroxid de Hidrogen",
+		boil = "[${InteractionKey}] Fierbe Ingrediente",
+		boiling = "Fierbere Ingrediente",
+		cool_down = "[${InteractionKey}] Răcește",
+		cooling_down = "Răcire",
+		fill_ampules = "[${InteractionKey}] Umple Ampule",
+		filling_ampules = "Umplere Ampule",
+
+		selling_fentanyl = "Vânzare Fentanil",
+		press_to_sell_fentanyl = "Apasă ~INPUT_CONTEXT~ pentru a vinde Fentanil.",
+		local_not_interested = "Localul nu pare interesat în acest moment.",
+
+		something_went_wrong = "Ceva nu a mers bine.",
+		made_fentanyl_logs_title = "Fentanil Produs",
+		made_fentanyl_logs_details = "${consoleName} a produs ${amount}x fentanil.",
+		sold_fentanyl_logs_title = "Fentanil Vândut",
+		sold_fentanyl_logs_details = "${consoleName} a vândut 1x ampułă de fentanil pentru $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Se ia amprenta",
 		already_fingerprinting = "Deja iei amprentele unui jucător.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		press_to_access_shared_storage = "Apasă ~INPUT_REPLAY_SHOWHOTKEY~ pentru a accesa depozitul comun.",
 		device_printout_details = "<b>Tip:</b> <i>${type}</i>, <b>Text:</b> <i>${text}</i>",
 		copy_serial_number = "Copiază Numărul de Serie",
+		copy_fingerprint = "Copiază Amprenta",
 		serial_number_copied = "${itemName}, Număr de Serie: ${serialNumber}",
 
 		failed_give = "Numer seryjny: ${serialNumber}<br><i>Ta broń jest zarejestrowana na ${fullName} (#${characterId}).</i>",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		lean = "Lean",
 		lean_description = "Sorbind dintr-un amestec de sirop pentru tuse, bărbie, sorbind dintr-unul, bărbie.",
 
+		fentanyl = "Fentanil",
+		fentanyl_description = "Supranumit „adormitorul furișat”, fentanilul este o mică pocnitură puternică care face ravagii. Doar cu un șoptit al acestei substanțe, poți trimite chiar și pe cel mai treaz în lumea viselor. Ai grijă cum o manipulezi! Este atât de potent încât dacă visele ar fi monedă, ai fi miliardar după o singură doză. Perfect pentru când ai nevoie să transformi problemele mari în cele adormite.",
+
 		grimace_shake = "Fățarnică scuturare",
 		grimace_shake_description = "Nebun? Am fost nebun odată. M-au închis într-o cameră. O cameră de cauciuc. O cameră de cauciuc cu șobolani. Și șobolanii mă fac nebun. Nebun? Am fost nebun odată. M-au închis într-o cameră. O cameră de cauciuc. O cameră de cauciuc cu șobolani. Și șobolanii mă fac nebun. Nebun? Am fost nebun odată. M-au închis într-o cameră. O cameră de cauciuc. O cameră de cauciuc cu șobolani. Și șobolanii mă fac nebun. Nebun? Am fost nebun odată. M-au închis într-o cameră. O cameră de cauciuc. O cameră de cauciuc cu șobolani. Și șobolanii mă fac nebun. Nebun? Am fost nebun odată.....",
+
+		hydrogen_peroxide = "Perioxid de hidrogen",
+		hydrogen_peroxide_description = "Această băutură spongioasă, cunoscută pentru efervescența și curățenia sa, este un element de bază în laboratoarele de științe și nu numai. Deși este faimoasă pentru faptul că face tăieturile și suprafețele imaculate, are și talentul de a se amesteca cu alte ingrediente pentru a „inventa” niște băuturi destul de puternice. Manipulați cu luciditate și cu puțină atenție.",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Bucurați-vă de aromele dulci și acide ale Jolly Ranchers, bomboanele tari clasice care răbufnesc cu gust de fructe.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		button_confirm = "Nie udało się wpłacić środków.",
 		button_delete = "Nie udało się utworzyć konta oszczędnościowego.",
 		button_manage = "Nie udało się usunąć konta oszczędnościowego.",
+		button_leave = "Ieși",
 		create_account = "Saldo konta jest niewystarczające.",
 		delete_account = "Twoje saldo bankowe jest niewystarczające.",
 		confirm_delete = "Tylko właściciel konta może je usunąć i zarządzać nim. Osoby posiadające dostęp do konta mogą tylko wypłacać i wpłacać środki. Możesz utworzyć maksymalnie 5 różnych kont oszczędnościowych.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		insufficient_balance = "Saldo konta jest niewystarczające.",
 		insufficient_bank_balance = "Twoje saldo bankowe jest niewystarczające.",
 		account_description = "Tylko właściciel konta może je usunąć i zarządzać nim. Osoby posiadające dostęp do konta mogą tylko wypłacać i wpłacać środki. Możesz utworzyć maksymalnie 5 różnych kont oszczędnościowych.",
+		leave_account = "Părăsește Contul",
+		confirm_leave = "Sunteți sigur că doriți să părăsiți „${name}”? Nu veți mai avea acces la acest cont.",
 
 		add_access_logs_title = "Antingen `number` eller `twitter`.",
 		add_access_logs_details = "sök",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		create_account_logs_details = "Skapar en fordonshållning. Detta kommer att förvara fordonet hos polisen under en längre tid. (Observera: Eventuellt tidigare uttagna fordon kommer att fortsätta att existera)",
 		deleted_account_logs_title = "Cont de economii șters",
 		deleted_account_logs_details = "${consoleName} a șters un cont de economii denumit `${accountName}` cu id-ul ${accountId}.",
+		left_account_logs_title = "Cont Economii Rămas",
+		left_account_logs_details = "${consoleName} a părăsit un cont de economii numit `${accountName}` cu id-ul ${accountId}.",
 		withdraw_logs_title = "Retragere din contul de economii",
 		withdraw_logs_details = "${consoleName} a retras $$${amount} din contul de economii ${accountId} cu motivul `${reason}`.",
 		deposit_logs_title = "Depunere în contul de economii",

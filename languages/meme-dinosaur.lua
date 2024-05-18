@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["meme-dinosaur"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		bed_command_help = "Attempt to lay down in the nearest dinosaur nest.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "undefined",
+		pickup_bicycle_command_help = "undefined",
+		pickup_bicycle_command_substitutes = "undefined",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Chomp another dinosaur a certain amount of leaves.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "undefined",
+		mute_boomboxes_command_help = "undefined",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Raaawr! Clear boomboxes.",
 		wipe_boomboxes_command_parameter_radius = "radius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		press_to_leave_bed = "Press ~INPUT_CONTEXT~ to leave the bed."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "undefined",
+		failed_pickup_bicycle = "undefined",
+		picking_up = "undefined",
+		moving_too_fast = "undefined",
+
+		picked_up_logs_title = "undefined",
+		picked_up_logs_details = "undefined",
+		dropped_bicycle_logs_title = "undefined",
+		dropped_bicycle_logs_details = "undefined"
+	},
+
 	bills = {
 		select_player = "Select Tiny Arms",
 		no_nearby_players = "No billable Tiny Arms near ya.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		skip_song = "Run away from song",
 		volume = "Loudness",
 		music = "Groovy roars",
+
+		mute_boomboxes = "undefined",
+		mute_boomboxes_enabled = "undefined",
+		mute_boomboxes_disabled = "undefined",
 
 		store_boombox = "Store the boombox in your dino-pack",
 		put_boombox_down = "Place the boombox on the ground",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		milking_cow_failed = "Raaaawr! Failed to milk cow."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "undefined",
+		overdose = "undefined",
+
+		grind_painkillers = "undefined",
+		grinding_painkillers = "undefined",
+		mix_acetone = "undefined",
+		mixing_acetone = "undefined",
+		add_hydrogen_peroxide = "undefined",
+		adding_hydrogen_peroxide = "undefined",
+		boil = "undefined",
+		boiling = "undefined",
+		cool_down = "undefined",
+		cooling_down = "undefined",
+		fill_ampules = "undefined",
+		filling_ampules = "undefined",
+
+		selling_fentanyl = "undefined",
+		press_to_sell_fentanyl = "undefined",
+		local_not_interested = "The sawla doesn't seem to be interested right now.",
+
+		something_went_wrong = "Something went wrong.",
+		made_fentanyl_logs_title = "Made Fentanyl",
+		made_fentanyl_logs_details = "${consoleName} made ${amount}x fentanyl.",
+		sold_fentanyl_logs_title = "Sold Fentanyl",
+		sold_fentanyl_logs_details = "${consoleName} sold 1x ampule of fentanyl for $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Takingo Fingerprinto",
 		already_fingerprinting = "ROARRR! You already tracking this ${player} with your tiny arms.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		press_to_access_shared_storage = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to access the communal dino-hide. RAWR!",
 		device_printout_details = "undefined",
 		copy_serial_number = "undefined",
+		copy_fingerprint = "Copy Fingerprint",
 		serial_number_copied = "undefined",
 
 		failed_give = "Failed to give rawr(s) to player.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		lean = "Lean",
 		lean_description = "Sippin' on some sizzurp, sip, sippin' on some, sip.",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "Dubbed the \"sneaky snoozer\", fentanyl is a powerful little potion that packs a wallop. With just a whisper of this substance, you can send even the most wide-awake into a world of dreams. Handle with care, though! It's so potent that if dreams were currency, you'd be a billionaire in one dose. Perfect for when you need to make big problems into sleepy ones.",
+
 		grimace_shake = "Grimace Shake",
 		grimace_shake_description = "Roar? I was roaring once. They plop me in a nest. A leafy nest. A leafy nest with bugs. And bugs drive me roar. Roar? I was roaring once. They plop me in a nest. A leafy nest. A leafy nest with bugs. And bugs drive me roar. Roar? I was roaring once. They plop me in a nest. A leafy nest. A leafy nest with bugs. And bugs drive me roar. Roar? I was roaring once. They plop me in a nest. A leafy nest. A leafy nest with bugs. And bugs drive me roar. Roar? I was roaring once.....",
+
+		hydrogen_peroxide = "Hydrogen Peroxide",
+		hydrogen_peroxide_description = "This hissing brew, known for its bubbles and purity, is fundamental in science caves and beyond. While it’s renowned for tidying wounds and surfaces squeaky clean, it also has a talent for mingling with other ingredients to \"imagine up\" some pretty powerful mixtures. Treat with knowledge and a pinch of caution.",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Indulge in the sweet and tangy flavors of Jolly Ranchers, the classic hard candies that burst with fruity goodness.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		button_confirm = "rawrr Confirm",
 		button_delete = "rawrr Delete",
 		button_manage = "rawrr Manage",
+		button_leave = "Leave",
 		create_account = "rawrr Create Account",
 		delete_account = "rawrr Delete Account",
 		confirm_delete = "rawrr Are you sure you want to permamently delete this account and all logs associated with it? rawrr This action cannot be undone.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		insufficient_balance = "Rawrr! Account balance is insufficient.",
 		insufficient_bank_balance = "Rawrr! Your bank balance is insufficient.",
 		account_description = "Rawrr! Only the owner of the account can delete and manage it. Dinosaurs with access to the account can only withdraw and deposit. Rawrr! You can create up to 5 different savings accounts.",
+		leave_account = "Leave Account",
+		confirm_leave = "Are you sure you want to abandon \"${name}\"? You will no longer have entry to this account.",
 
 		add_access_logs_title = "Skreee Add Access",
 		add_access_logs_details = "${consoleName} skreee `${firstName} ${lastName}` #${characterId} skreee to skreee skreee ${accountId}.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		create_account_logs_details = "${consoleName} skreee skreee skreee skreee named `${accountName}` skreee skreee the skreee ${accountId}.",
 		deleted_account_logs_title = "Rawrrr Delete Rawr",
 		deleted_account_logs_details = "${consoleName} rawrrred a rawr named `${accountName}` with the rawrid ${accountId}.",
+		left_account_logs_title = "Savings Left Account",
+		left_account_logs_details = "${consoleName} roared a savings account named `${accountName}` with the id ${accountId}.",
 		withdraw_logs_title = "Rawrrr Withdraw",
 		withdraw_logs_details = "undefined",
 		deposit_logs_title = "Rawrrr Deposit",

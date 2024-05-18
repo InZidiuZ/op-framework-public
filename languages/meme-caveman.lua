@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["meme-caveman"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		bed_command_help = "Need sleep? Want lay down in nearest bed?",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "grab_bicycle",
+		pickup_bicycle_command_help = "Grab closest bicycle.",
+		pickup_bicycle_command_substitutes = "gb",
+
 		-- game/bills
 		create_bill_command = "create_unga_bill",
 		create_bill_command_help = "Ooga booga! Bill another caveman a certain amount of shiny rocks.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "hush_boomboxes",
+		mute_boomboxes_command_help = "Quiet/Unquiet all boomboxes.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Ugga Bugga! Wipe boomboxes.",
 		wipe_boomboxes_command_parameter_radius = "radius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		press_to_leave_bed = "Press ~INPUT_CONTEXT~ to get out of bed."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "No bicycle close.",
+		failed_pickup_bicycle = "No grab of bicycle.",
+		picking_up = "Grabbing Bicycle",
+		moving_too_fast = "You quick for grab bicycle.",
+
+		picked_up_logs_title = "Bicycle Grabbed",
+		picked_up_logs_details = "${consoleName} grab bicycle with network id #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Ugga Ugga Drop Bike",
+		dropped_bicycle_logs_details = "${consoleName} ugga ugga drop bike!"
+	},
+
 	bills = {
 		select_player = "Me Select Player",
 		no_nearby_players = "No billable players near you.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		skip_song = "Skip Uggabugga!",
 		volume = "Volungga",
 		music = "Ooga Booga",
+
+		mute_boomboxes = "Ugga Boomboxes Quiet",
+		mute_boomboxes_enabled = "All boomboxes quiet now.",
+		mute_boomboxes_disabled = "All boomboxes no more quiet.",
 
 		store_boombox = "Put Uggabugga box in cave bag",
 		put_boombox_down = "Drop Uggabugga box",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		milking_cow_failed = "Ugh, me not able to milk cow."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "You have too much fentanyl!",
+		overdose = "Fentanyl Much Too",
+
+		grind_painkillers = "[${InteractionKey}] Grind painkillers",
+		grinding_painkillers = "Grinding Painkillers",
+		mix_acetone = "[${InteractionKey}] Mix with acetone",
+		mixing_acetone = "Ugga Ugga With Acetone",
+		add_hydrogen_peroxide = "[${InteractionKey}] Add Hydrogen Peroxide",
+		adding_hydrogen_peroxide = "Adding Hydrogen Peroxide",
+		boil = "[${InteractionKey}] Boil Ingridients",
+		boiling = "Boiling Ingridients",
+		cool_down = "[${InteractionKey}] Cool Down",
+		cooling_down = "Cooling Down",
+		fill_ampules = "[${InteractionKey}] Fill Ampules",
+		filling_ampules = "Filling Ampules",
+
+		selling_fentanyl = "Selling Fentanyl",
+		press_to_sell_fentanyl = "Press ~INPUT_CONTEXT~ to sell Fentanyl.",
+		local_not_interested = "Ugh local not happy right now.",
+
+		something_went_wrong = "Ugh something go wrong.",
+		made_fentanyl_logs_title = "Made Fentanyl",
+		made_fentanyl_logs_details = "${consoleName} made ${amount}x fentanyl.",
+		sold_fentanyl_logs_title = "Sold Fentanyl",
+		sold_fentanyl_logs_details = "${consoleName} sold 1x ampule of fentanyl for $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Taking FingerprintOoga Booga",
 		already_fingerprinting = "Ugggh! You already take fingerprint of player.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		press_to_access_shared_storage = "Press ~INPUT_REPLAY_SHOWHOTKEY~ for stash all caveman goods.",
 		device_printout_details = "<b>Ugga:</b> <i>${type}</i>, <b>Oog:</b> <i>${text}</i>",
 		copy_serial_number = "Copy Serial Number",
+		copy_fingerprint = "Copy Fingerprint",
 		serial_number_copied = "${itemName}, Serial Number: ${serialNumber}",
 
 		failed_give = "Fail to give thing(s) to caveman.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		lean = "Purple Drank",
 		lean_description = "Slurpin' on some purple drank, sip, slurpin' on some, sip.",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "Call 'sneaky snoozer', fentanyl strong juice that really hit hard. With just little sip, send even eye-openers into sleep land. Be careful! So strong that if dreams were coins, you rich after one sip. Good for making big problems into sleepy problems.",
+
 		grimace_shake = "Grimace Shake",
 		grimace_shake_description = "Crazy? Me was crazy once. They put me in room. Room made out of rubber. Rubber room had rats. Rats make me crazy. Crazy? Me was crazy once. They put me in room. Room made out of rubber. Rubber room had rats. Rats make me crazy. Crazy? Me was crazy once. They put me in room. Room made out of rubber. Rubber room had rats. Rats make me crazy. Crazy? Me was crazy once. They put me in room. Room made out of rubber. Rubber room had rats. Rats make me crazy. Crazy? Me was crazy once.....",
+
+		hydrogen_peroxide = "Bubbly Brew",
+		hydrogen_peroxide_description = "Ugga ugga, this fizzy water, good fer making cuts clean. Use in labs and more. Mix with other things to make strong stuff. Use with smartness and a little care.",
 
 		jolly_ranchers = "Yummy Rocks",
 		jolly_ranchers_description = "Tasty rocks for mouth party. Sweet and tangy like mammoth berry. Crunchy, too.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		button_confirm = "Urk",
 		button_delete = "Nak'nak",
 		button_manage = "Karkar",
+		button_leave = "Me Go",
 		create_account = "Ongo Bongo",
 		delete_account = "Nak'nak Ongo Bongo",
 		confirm_delete = "Ugh ugh. Nooka wunga nak'nak dee-dak? Gak meep ooga-dee booga. Korkak donoo.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		insufficient_balance = "Ugh! Not enough shiny rocks in account.",
 		insufficient_bank_balance = "Ugh! Not enough shiny rocks in bank.",
 		account_description = "Only owner can destroy and manage. Others can take and give. You can make up to 5 money holes.",
+		leave_account = "Me Leave Account",
+		confirm_leave = "You sure you want to leave \"${name}\"? You no longer have this account.",
 
 		add_access_logs_title = "Save giveth Access",
 		add_access_logs_details = "${consoleName} giveth `${firstName} ${lastName}` #${characterId} access to savings account ${accountId}.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		create_account_logs_details = "${consoleName} createth a new savings account named `${accountName}` with the id ${accountId}.",
 		deleted_account_logs_title = "Gone Bye-Bye Account",
 		deleted_account_logs_details = "${consoleName} erased an account called `${accountName}` with the id ${accountId}.",
+		left_account_logs_title = "Ugga Left Money Hole",
+		left_account_logs_details = "${consoleName} ugga a money hole named `${accountName}` with the ugga ${accountId}.",
 		withdraw_logs_title = "Take Money from Account",
 		withdraw_logs_details = "${consoleName} took $${amount} from cave bank ${accountId} because `${reason}`.",
 		deposit_logs_title = "Put Money in Account",

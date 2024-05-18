@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		bed_command_help = "Probeer in het dichtstbijzijnde bed te gaan liggen.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "ophalen_fiets",
+		pickup_bicycle_command_help = "Haal de dichtstbijzijnde fiets op.",
+		pickup_bicycle_command_substitutes = "of",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Stuur een andere speler een bepaald bedrag aan geld.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		toggle_ignition_bomb_command_substitutes = "ontstekingsbom",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "dempen_boomboxen",
+		mute_boomboxes_command_help = "Dempen/ongedempt alle boomboxen.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Veegt boomboxen schoon.",
 		wipe_boomboxes_command_parameter_radius = "straal",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		press_to_leave_bed = "Druk op ~INPUT_CONTEXT~ om het bed te verlaten."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "Geen fiets in de buurt.",
+		failed_pickup_bicycle = "Kan fiets niet ophalen.",
+		picking_up = "Fiets aan het ophalen",
+		moving_too_fast = "Je beweegt te snel om de fiets op te pakken.",
+
+		picked_up_logs_title = "Fiets opgehaald",
+		picked_up_logs_details = "${consoleName} heeft een fiets opgehaald met het netwerk ID #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Achtergelaten Fiets",
+		dropped_bicycle_logs_details = "${consoleName} heeft de fiets laten vallen die ze aan het dragen waren."
+	},
+
 	bills = {
 		select_player = "Selecteer speler",
 		no_nearby_players = "Geen factureerbare spelers in de buurt.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		skip_song = "Volgend nummer",
 		volume = "Volume",
 		music = "Muziek",
+
+		mute_boomboxes = "Dempen Boomboxen",
+		mute_boomboxes_enabled = "Alle boomboxen zijn nu gedempt.",
+		mute_boomboxes_disabled = "Alle boomboxen zijn niet langer gedempt.",
 
 		store_boombox = "Berg de boombox op in je inventaris",
 		put_boombox_down = "Plaats de boombox op de grond",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		milking_cow_failed = "Koe melken is mislukt."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Je hebt een overdosis fentanyl genomen.",
+		overdose = "Fentanyl Overdosis",
+
+		grind_painkillers = "[${InteractionKey}] Pijnstillers vermalen",
+		grinding_painkillers = "Pijnstillers aan het vermalen",
+		mix_acetone = "[${InteractionKey}] Mengen met aceton",
+		mixing_acetone = "Mengen met Aceton",
+		add_hydrogen_peroxide = "[${InteractionKey}] Waterstofperoxide Toevoegen",
+		adding_hydrogen_peroxide = "Waterstofperoxide Toevoegen",
+		boil = "[${InteractionKey}] Ingrediënten Koken",
+		boiling = "Ingrediënten Koken",
+		cool_down = "[${InteractionKey}] Laten Afkoelen",
+		cooling_down = "Laten Afkoelen",
+		fill_ampules = "[${InteractionKey}] Ampullen Vullen",
+		filling_ampules = "Ampullen Vullen",
+
+		selling_fentanyl = "Fentanyl Verkopen",
+		press_to_sell_fentanyl = "Druk op ~INPUT_CONTEXT~ om Fentanyl te verkopen.",
+		local_not_interested = "De plaatselijke persoon lijkt op dit moment niet geïnteresseerd te zijn.",
+
+		something_went_wrong = "Er is iets misgegaan.",
+		made_fentanyl_logs_title = "Fentanyl Gemaakt",
+		made_fentanyl_logs_details = "${consoleName} heeft ${amount}x fentanyl gemaakt.",
+		sold_fentanyl_logs_title = "Fentanyl Verkocht",
+		sold_fentanyl_logs_details = "${consoleName} heeft 1x ampul fentanyl verkocht voor $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Fingerprint nemen...",
 		already_fingerprinting = "Je neemt al een fingerprint van een speler.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		press_to_access_shared_storage = "Druk op ~INPUT_REPLAY_SHOWHOTKEY~ om toegang te krijgen tot de gedeelde opslag.",
 		device_printout_details = "<b>Type:</b> <i>${type}</i>, <b>Tekst:</b> <i>${tekst}</i>",
 		copy_serial_number = "Serienummer kopiëren",
+		copy_fingerprint = "Vingerafdruk Kopiëren",
 		serial_number_copied = "${itemName}, Serienummer: ${serialNumber}",
 
 		failed_give = "테이토 칩스",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		lean = "Lean",
 		lean_description = "Sippend aan wat sizzurp, slok, sippend aan wat, slok.",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "Ook wel de \"sluwe sluimeraar\" genoemd, fentanyl is een krachtig klein brouwsel dat een flinke klap uitdeelt. Met slechts een vleugje van deze stof kun je zelfs de wakkerste persoon naar dromenland sturen. Pas echter op! Het is zo krachtig dat als dromen geld waren, je met één dosis miljardair zou zijn. Perfect voor wanneer je grote problemen in slaperige oplossingen wilt veranderen.",
+
 		grimace_shake = "Gruwel Schud",
 		grimace_shake_description = "Gek? Ik was ooit gek. Ze stopten me in een kamer. Een rubberen kamer. Een rubberen kamer met ratten. En ratten maken me gek. Gek? Ik was ooit gek. Ze stopten me in een kamer. Een rubberen kamer. Een rubberen kamer met ratten. En ratten maken me gek. Gek? Ik was ooit gek. Ze stopten me in een kamer. Een rubberen kamer. Een rubberen kamer met ratten. En ratten maken me gek. Gek? Ik was ooit gek. Ze stopten me in een kamer. Een rubberen kamer. Een rubberen kamer met ratten. En ratten maken me gek. Gek? Ik was ooit gek.....",
+
+		hydrogen_peroxide = "Waterstofperoxide",
+		hydrogen_peroxide_description = "Deze bruisende brouwsel, bekend om zijn bubbels en reinheid, is een onmisbaar middel in laboratoria en daarbuiten. Terwijl het beroemd is om wonden en oppervlakken smetteloos te maken, heeft het ook een talent om te mengen met andere ingrediënten om wat behoorlijk krachtige brouwsels te \"bedenken\". Handel met inzicht en een beetje voorzichtigheid.",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Geniet van de zoete en pittige smaken van Jolly Ranchers, de klassieke harde snoepjes die barsten van fruitige goedheid.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		button_confirm = "Bevestigen",
 		button_delete = "Verwijderen",
 		button_manage = "Beheren",
+		button_leave = "Verlaten",
 		create_account = "Account aanmaken",
 		delete_account = "Account verwijderen",
 		confirm_delete = "Weet u zeker dat u dit account en alle bijbehorende logs permanent wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		insufficient_balance = "Saldo is ontoereikend.",
 		insufficient_bank_balance = "Uw banksaldo is ontoereikend.",
 		account_description = "Alleen de eigenaar van de rekening kan deze verwijderen en beheren. Personen met toegang tot de rekening kunnen alleen geld opnemen en storten. U kunt maximaal 5 verschillende spaarrekeningen aanmaken.",
+		leave_account = "Account Verlaten",
+		confirm_leave = "Weet je zeker dat je \"${name}\" wil verlaten? Je hebt dan geen toegang meer tot dit account.",
 
 		add_access_logs_title = "Enten nettverks-ID-en til personen, nettverks-ID-en til kjøretøyet (som personen kjører), eller la det stå tomt for å velge sjåføren av nåværende kjøretøy.",
 		add_access_logs_details = "show_raw_locales",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		create_account_logs_details = "type",
 		deleted_account_logs_title = "Beliggenhet: ${address}",
 		deleted_account_logs_details = "Radiolyden er allerede satt til ${radioVolume}%.",
+		left_account_logs_title = "Spaarrekening Opgezegd",
+		left_account_logs_details = "${consoleName} heeft een spaarrekening met de naam `${accountName}` en het id ${accountId} opgezegd.",
 		withdraw_logs_title = "Radiolyden er nå satt til ${radioVolume}%.",
 		withdraw_logs_details = "${consoleName} heeft €${amount} opgenomen van spaarrekening ${accountId} met reden `${reason}`.",
 		deposit_logs_title = "Refleksjon er aktivert.",

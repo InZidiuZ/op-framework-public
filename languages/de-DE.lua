@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 30 (do not change)
+-- AUTO LOCALES: 31 (do not change)
 
 OP.Global.Locales.Languages["de-DE"] = {
 	-- configuration settings for language
@@ -1616,6 +1616,11 @@ OP.Global.Locales.Languages["de-DE"] = {
 		bed_command_help = "Versuche, im nächstgelegenen Bett zu schlafen.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "fahrrad_aufnehmen",
+		pickup_bicycle_command_help = "Nimm das nächstgelegene Fahrrad auf.",
+		pickup_bicycle_command_substitutes = "fa",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Einem anderen Spieler eine bestimmte Geldsumme in Rechnung stellen.",
@@ -1631,6 +1636,10 @@ OP.Global.Locales.Languages["de-DE"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "boombox_stummschalten",
+		mute_boomboxes_command_help = "Schaltet alle Boomboxen stumm/laut.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Entfernt alle Musikboxen.",
 		wipe_boomboxes_command_parameter_radius = "Radius",
@@ -4697,6 +4706,18 @@ OP.Global.Locales.Languages["de-DE"] = {
 		press_to_leave_bed = "Drücke ~INPUT_CONTEXT~, um das Bett zu verlassen."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "Kein Fahrrad in der Nähe.",
+		failed_pickup_bicycle = "Fahrrad konnte nicht aufgenommen werden.",
+		picking_up = "Fahrrad wird aufgenommen",
+		moving_too_fast = "Du bewegst dich zu schnell, um das Fahrrad aufzunehmen.",
+
+		picked_up_logs_title = "Fahrrad aufgenommen",
+		picked_up_logs_details = "${consoleName} hat ein Fahrrad mit der Netzwerk-ID #${networkId} (\`${modelName}\`) aufgenommen.",
+		dropped_bicycle_logs_title = "Abgelegtes Fahrrad",
+		dropped_bicycle_logs_details = "${consoleName} hat das Fahrrad, das sie/er getragen haben, abgelegt."
+	},
+
 	bills = {
 		select_player = "Spieler auswählen",
 		no_nearby_players = "Keine anrechenbaren Spieler in der Nähe.",
@@ -4805,6 +4826,10 @@ OP.Global.Locales.Languages["de-DE"] = {
 		skip_song = "Song überspringen",
 		volume = "Lautstärke",
 		music = "Musik",
+
+		mute_boomboxes = "Boombox stummschalten",
+		mute_boomboxes_enabled = "Alle Boomboxen sind jetzt stummgeschaltet.",
+		mute_boomboxes_disabled = "Alle Boomboxen sind nicht mehr stummgeschaltet.",
 
 		store_boombox = "Die Boombox im Inventar verstauen",
 		put_boombox_down = "Die Boombox auf den Boden legen",
@@ -6617,6 +6642,34 @@ OP.Global.Locales.Languages["de-DE"] = {
 		milking_cow_failed = "Kuh melken fehlgeschlagen."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Du überschreitest die Dosis von Fentanyl.",
+		overdose = "Fentanyl-Überdosis",
+
+		grind_painkillers = "[${InteractionKey}] Schmerzmittel zermahlen",
+		grinding_painkillers = "Schmerzmittel zermahlen",
+		mix_acetone = "[${InteractionKey}] Mit Aceton mischen",
+		mixing_acetone = "Mit Aceton mischen",
+		add_hydrogen_peroxide = "[${InteractionKey}] Wasserstoffperoxid hinzufügen",
+		adding_hydrogen_peroxide = "Wasserstoffperoxid hinzufügen",
+		boil = "[${InteractionKey}] Zutaten kochen",
+		boiling = "Zutaten kochen",
+		cool_down = "[${InteractionKey}] Abkühlen",
+		cooling_down = "Abkühlen",
+		fill_ampules = "[${InteractionKey}] Ampullen füllen",
+		filling_ampules = "Ampullen füllen",
+
+		selling_fentanyl = "Fentanyl verkaufen",
+		press_to_sell_fentanyl = "Drücke ~INPUT_CONTEXT~, um Fentanyl zu verkaufen.",
+		local_not_interested = "Der Einheimische scheint derzeit nicht interessiert zu sein.",
+
+		something_went_wrong = "Etwas ist schiefgelaufen.",
+		made_fentanyl_logs_title = "Fentanyl hergestellt",
+		made_fentanyl_logs_details = "${consoleName} hat ${amount}x Fentanyl hergestellt.",
+		sold_fentanyl_logs_title = "Fentanyl verkauft",
+		sold_fentanyl_logs_details = "${consoleName} hat 1x Ampulle Fentanyl für $${reward} verkauft."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Fingerabdrücke nehmen",
 		already_fingerprinting = "Sie nehmen bereits die Fingerabdrücke eines Spielers.",
@@ -7321,6 +7374,7 @@ OP.Global.Locales.Languages["de-DE"] = {
 		press_to_access_shared_storage = "Drücke ~INPUT_REPLAY_SHOWHOTKEY~, um auf den gemeinsamen Stauraum zuzugreifen.",
 		device_printout_details = "<b>Typ:</b> <i>${type}</i>, <b>Text:</b> <i>${text}</i>",
 		copy_serial_number = "Seriennummer kopieren",
+		copy_fingerprint = "Fingerabdruck kopieren",
 		serial_number_copied = "${itemName}, Seriennummer: ${serialNumber}",
 
 		failed_give = "Konnte Item(s) nicht an den Spieler geben.",
@@ -8063,8 +8117,14 @@ OP.Global.Locales.Languages["de-DE"] = {
 		lean = "Lean",
 		lean_description = "Sippin auf einigen Sizzurp, schlürfen, schlürfen auf einige, schlürfen.",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "Als der „heimliche Schlummertrunk“ bekannt, ist Fentanyl ein starkes kleines Elixier, das ordentlich zuschlägt. Mit nur einem Hauch dieser Substanz kannst du selbst die Wachsten in Traumwelten schicken. Doch sei vorsichtig! Es ist so potent, dass du mit einer Dosis zum Milliardär der Träume würdest. Perfekt, wenn du große Probleme verschlafen willst.",
+
 		grimace_shake = "Grimassen-Schütteln",
 		grimace_shake_description = "Verrückt? Ich war einmal verrückt. Sie haben mich in einen Raum gesteckt. Einen Gummiraum. Einen Gummiraum mit Ratten. Und Ratten machen mich verrückt. Verrückt? Ich war einmal verrückt. Sie haben mich in einen Raum gesteckt. Einen Gummiraum. Einen Gummiraum mit Ratten. Und Ratten machen mich verrückt. Verrückt? Ich war einmal verrückt. Sie haben mich in einen Raum gesteckt. Einen Gummiraum. Einen Gummiraum mit Ratten. Und Ratten machen mich verrückt. Verrückt? Ich war einmal verrückt. Sie haben mich in einen Raum gesteckt. Einen Gummiraum. Einen Gummiraum mit Ratten. Und Ratten machen mich verrückt. Verrückt? Ich war einmal verrückt.....",
+
+		hydrogen_peroxide = "Wasserstoffperoxid",
+		hydrogen_peroxide_description = "Dieses sprudelnde Gebräu, bekannt für seine Bläschen und Sauberkeit, ist ein unverzichtbares Element in Wissenschaftslabors und darüber hinaus. Während es für die Reinigung von Wunden und Oberflächen berühmt ist, hat es auch ein Talent zum Mischen mit anderen Zutaten, um einige ziemlich potente Mischungen zu \"erschaffen\". Handhaben Sie es mit Umsicht und ein wenig Vorsicht.",
 
 		jolly_ranchers = "Jolly Ranchers",
 		jolly_ranchers_description = "Tauchen Sie ein in die süßen und sauren Aromen von Jolly Ranchers, den klassischen Bonbons, die mit fruchtiger Güte platzen.",
@@ -11476,6 +11536,7 @@ OP.Global.Locales.Languages["de-DE"] = {
 		button_confirm = "Bestätigen",
 		button_delete = "Löschen",
 		button_manage = "Verwalten",
+		button_leave = "Verlassen",
 		create_account = "Konto erstellen",
 		delete_account = "Konto löschen",
 		confirm_delete = "Sind Sie sicher, dass Sie dieses Konto und alle damit verbundenen Protokolle dauerhaft löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden.",
@@ -11514,6 +11575,8 @@ OP.Global.Locales.Languages["de-DE"] = {
 		insufficient_balance = "Kontostand ist nicht ausreichend.",
 		insufficient_bank_balance = "Ihr Bankguthaben ist nicht ausreichend.",
 		account_description = "Nur der Besitzer des Kontos kann es löschen und verwalten. Personen mit Zugriff auf das Konto können nur abheben und einzahlen. Sie können bis zu 5 verschiedene Sparkonten erstellen.",
+		leave_account = "Konto verlassen",
+		confirm_leave = "Möchtest du wirklich „${name}“ verlassen? Du wirst keinen Zugriff mehr auf dieses Konto haben.",
 
 		add_access_logs_title = "Sparzugriff hinzufügen",
 		add_access_logs_details = "${consoleName} hat `${firstName} ${lastName}` Zugriff auf das Sparbuch mit der ID ${accountId} gewährt.",
@@ -11523,6 +11586,8 @@ OP.Global.Locales.Languages["de-DE"] = {
 		create_account_logs_details = "${consoleName} hat ein neues Spareinlagenkonto mit dem Namen `${accountName}` und der ID ${accountId} erstellt.",
 		deleted_account_logs_title = "Sparbuch löschen",
 		deleted_account_logs_details = "${consoleName} hat ein Sparbuch namens `${accountName}` mit der ID ${accountId} gelöscht.",
+		left_account_logs_title = "Sparbuch Konto verlassen",
+		left_account_logs_details = "${consoleName} hat ein Sparbuch Konto mit dem Namen `${accountName}` und der ID ${accountId} verlassen.",
 		withdraw_logs_title = "Sparbuchabhebung",
 		withdraw_logs_details = "${consoleName} hat $${amount} von dem Sparkonto ${accountId} abgehoben mit dem Grund `${reason}`.",
 		deposit_logs_title = "Sparbucheinzahlung",
