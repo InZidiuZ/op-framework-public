@@ -2512,6 +2512,12 @@ OP.Global.Locales.Languages["en-US"] = {
 		invisibility_command_parameter_server_id_help = "If you're wanting to toggle someone elses invisibility.",
 		invisibility_command_substitutes = "inv, invis, invisible",
 
+		invisibility_mode_command = "invisibility_mode",
+		invisibility_mode_command_help = "Set your invisibility mode. Can be either 'full' (you are only visible to seniorStaff+ while invisible) or 'normal' (you are visible to all staff who have peek on).",
+		invisibility_mode_command_parameter_mode = "mode",
+		invisibility_mode_command_parameter_mode_help = "Can be either 'full' for full invisibility or 'normal' for regular visibility.",
+		invisibility_mode_command_substitutes = "",
+
 		-- game/isolation
 		isolate_player_command = "isolate_player",
 		isolate_player_command_help = "Isolates a player, rejecting anything they try to do.",
@@ -9221,6 +9227,9 @@ OP.Global.Locales.Languages["en-US"] = {
 	invisibility = {
 		invisibility_on = "Toggled invisibility on.",
 		invisibility_off = "Toggled invisibility off.",
+		invalid_invisibility_mode = "Invalid invisibility mode. Has to be 'full' or 'normal'.",
+		invisibility_mode_full = "Invisibility mode set to 'full'. Regular staff members can not see you.",
+		invisibility_mode_normal = "Invisibility mode set to 'normal'. Regular staff members can now see you.",
 
 		toggled_invisibility = "Successfully toggled ${displayName}'s invisibility.",
 		failed_invisibility = "Failed to toggle ${displayName}'s invisibility.",
@@ -9393,6 +9402,23 @@ OP.Global.Locales.Languages["en-US"] = {
 		mission_1 = "Cleaning the floor.",
 		mission_2 = "Eating a sandwich.",
 		mission_3 = "Working out.",
+
+		preparing_food = "Preparing food for other inmates.",
+		prepare_food = "Press ~INPUT_CONTEXT~ to prepare food.",
+		cleaning_desk = "Cleaning the desk.",
+		clean_desk = "Press ~INPUT_CONTEXT~ to clean the desk.",
+		making_bed = "Making the bed.",
+		make_bed = "Press ~INPUT_CONTEXT~ to make the bed.",
+		aligning_cone = "Aligning the traffic cone.",
+		align_cone = "Press ~INPUT_CONTEXT~ to align the traffic cone.",
+		inspecting_sprinkler = "Inspecting the sprinkler.",
+		inspect_sprinkler = "Press ~INPUT_CONTEXT~ to inspect the sprinkler.",
+		watering_plant = "Watering the plant.",
+		water_plant = "Press ~INPUT_CONTEXT~ to water the plant.",
+		organizing_weights = "Organizing the weights.",
+		organize_weights = "Press ~INPUT_CONTEXT~ to organize the weights.",
+
+		upstairs_notification = "This task is upstairs.",
 
 		mission_blip = "Jail Mission",
 

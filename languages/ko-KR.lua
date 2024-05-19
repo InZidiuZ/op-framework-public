@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["ko-KR"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		invisibility_command_parameter_server_id = "서버 아이디",
 		invisibility_command_parameter_server_id_help = "다른 플레이어의 투명 상태를 전환하려면 사용합니다.",
 		invisibility_command_substitutes = "inv, invis, invisible",
+
+		invisibility_mode_command = "invisibility_mode",
+		invisibility_mode_command_help = "귀하의 투명 모드를 설정합니다. 'full' (투명 상태에서는 seniorStaff+에게만 표시) 또는 'normal' (모든 peek를 가진 스태프에게 표시) 중 하나일 수 있습니다.",
+		invisibility_mode_command_parameter_mode = "mode",
+		invisibility_mode_command_parameter_mode_help = "'full'은 완전히 투명하거나 'normal'은 일반적으로 표시될 수 있습니다.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isolate_player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["ko-KR"] = {
 	invisibility = {
 		invisibility_on = "투명화를 켰습니다.",
 		invisibility_off = "투명화를 껐습니다.",
+		invalid_invisibility_mode = "잘못된 투명 모드입니다. 'full' 또는 'normal'이어야 합니다.",
+		invisibility_mode_full = "투명 모드가 '풀'로 설정되었습니다. 일반 스태프는 당신을 볼 수 없습니다.",
+		invisibility_mode_normal = "투명 모드가 '보통'으로 설정되었습니다. 일반 스태프는 이제 당신을 볼 수 있습니다.",
 
 		toggled_invisibility = "${displayName}의 투명화가 성공적으로 토글되었습니다.",
 		failed_invisibility = "${displayName}의 투명화를 토글하는 데 실패했습니다.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["ko-KR"] = {
 		mission_1 = "바닥 청소하기.",
 		mission_2 = "샌드위치 먹기.",
 		mission_3 = "운동하기.",
+
+		preparing_food = "다른 수감자를 위해 음식을 준비 중입니다.",
+		prepare_food = "~INPUT_CONTEXT~를 눌러 음식을 준비하세요.",
+		cleaning_desk = "책상을 청소 중입니다.",
+		clean_desk = "~INPUT_CONTEXT~를 눌러 책상을 청소하세요.",
+		making_bed = "침대를 정리 중입니다.",
+		make_bed = "~INPUT_CONTEXT~를 눌러 침대를 정리하세요.",
+		aligning_cone = "교통 콘을 정렬 중입니다.",
+		align_cone = "교통 콘을 정렬하려면 ~INPUT_CONTEXT~을(를) 누르세요.",
+		inspecting_sprinkler = "스프링클러를 점검 중입니다.",
+		inspect_sprinkler = "스프링클러를 점검하려면 ~INPUT_CONTEXT~을(를) 누르세요.",
+		watering_plant = "식물에 물주기 중입니다.",
+		water_plant = "식물에 물을 주기 위해 ~INPUT_CONTEXT~을(를) 누르세요.",
+		organizing_weights = "운동 기구 정리 중입니다.",
+		organize_weights = "운동 기구를 정리하려면 ~INPUT_CONTEXT~을(를) 누르세요.",
+
+		upstairs_notification = "이 작업은 위층에 있습니다.",
 
 		mission_blip = "수감 미션",
 

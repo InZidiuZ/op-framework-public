@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["de-DE"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["de-DE"] = {
 		invisibility_command_parameter_server_id = "Server-ID",
 		invisibility_command_parameter_server_id_help = "Wenn du die Unsichtbarkeit einer anderen Person ein- oder ausschalten möchtest.",
 		invisibility_command_substitutes = "inv, invis, unsichtbar",
+
+		invisibility_mode_command = "unsichtbarkeitsmodus",
+		invisibility_mode_command_help = "Stellen Sie Ihren Unsichtbarkeitsmodus ein. Kann entweder 'voll' sein (Sie sind nur für SeniorStaff+ sichtbar, während Sie unsichtbar sind) oder 'normal' (Sie sind für alle Mitarbeiter sichtbar, die Einblick haben).",
+		invisibility_mode_command_parameter_mode = "modus",
+		invisibility_mode_command_parameter_mode_help = "Kann entweder 'voll' für volle Unsichtbarkeit oder 'normal' für reguläre Sichtbarkeit sein.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "Spieler_isolieren",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["de-DE"] = {
 	invisibility = {
 		invisibility_on = "Unsichtbarkeit eingeschaltet.",
 		invisibility_off = "Unsichtbarkeit ausgeschaltet.",
+		invalid_invisibility_mode = "Ungültiger Unsichtbarkeitsmodus. Muss 'voll' oder 'normal' sein.",
+		invisibility_mode_full = "Unsichtbarkeitsmodus auf 'voll' gesetzt. Normales Personal kann dich nicht sehen.",
+		invisibility_mode_normal = "Unsichtbarkeitsmodus auf 'normal' gesetzt. Normales Personal kann dich jetzt sehen.",
 
 		toggled_invisibility = "Unsichtbarkeit für ${displayName} erfolgreich umgeschaltet.",
 		failed_invisibility = "Unsichtbarkeit für ${displayName} konnte nicht umgeschaltet werden.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["de-DE"] = {
 		mission_1 = "Den Boden putzen.",
 		mission_2 = "Ein Sandwich essen.",
 		mission_3 = "Trainieren.",
+
+		preparing_food = "Bereite Essen für andere Insassen vor.",
+		prepare_food = "Drücke ~INPUT_CONTEXT~, um Essen zuzubereiten.",
+		cleaning_desk = "Den Schreibtisch reinigen.",
+		clean_desk = "Drücke ~INPUT_CONTEXT~, um den Schreibtisch zu reinigen.",
+		making_bed = "Das Bett machen.",
+		make_bed = "Drücke ~INPUT_CONTEXT~, um das Bett zu machen.",
+		aligning_cone = "Den Verkehrshut ausrichten.",
+		align_cone = "Drücken Sie ~INPUT_CONTEXT~, um den Verkehrshut auszurichten.",
+		inspecting_sprinkler = "Inspektion des Sprinklers.",
+		inspect_sprinkler = "Drücken Sie ~INPUT_CONTEXT~, um den Sprinkler zu inspizieren.",
+		watering_plant = "Die Pflanze gießen.",
+		water_plant = "Drücken Sie ~INPUT_CONTEXT~, um die Pflanze zu gießen.",
+		organizing_weights = "Gewichte sortieren.",
+		organize_weights = "Drücken Sie ~INPUT_CONTEXT~, um die Gewichte zu sortieren.",
+
+		upstairs_notification = "Diese Aufgabe befindet sich im oberen Stockwerk.",
 
 		mission_blip = "Gefängnismission",
 

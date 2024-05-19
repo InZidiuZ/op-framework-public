@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["ro-RO"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		invisibility_command_parameter_server_id = "id server",
 		invisibility_command_parameter_server_id_help = "Dacă dorești să comuți starea de invizibilitate a altcuiva.",
 		invisibility_command_substitutes = "inv, invizibil, invizibilitate",
+
+		invisibility_mode_command = "mod_invizibilitate",
+		invisibility_mode_command_help = "Setează modul tău de invizibilitate. Poate fi 'complet' (ești vizibil doar pentru seniorStaff+ când ești invizibil) sau 'normal' (ești vizibil pentru tot personalul care are acces).",
+		invisibility_mode_command_parameter_mode = "mod",
+		invisibility_mode_command_parameter_mode_help = "Poate fi 'complet' pentru invizibilitate completă sau 'normal' pentru vizibilitate normală.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "izolarea_jucătorului",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 	invisibility = {
 		invisibility_on = "Ai activat invizibilitatea.",
 		invisibility_off = "Ai dezactivat invizibilitatea.",
+		invalid_invisibility_mode = "Mod invizibilitate invalid. Trebuie să fie 'complet' sau 'normal'.",
+		invisibility_mode_full = "Modul de invizibilitate setat pe 'complet'. Membrii obișnuiți ai staff-ului nu te pot vedea.",
+		invisibility_mode_normal = "Modul de invizibilitate setat pe 'normal'. Membrii obișnuiți ai staff-ului te pot vedea acum.",
 
 		toggled_invisibility = "Ai activat cu succes invizibilitatea lui ${displayName}.",
 		failed_invisibility = "Nu s-a putut activa invizibilitatea lui ${displayName}.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		mission_1 = "Curățarea podelei.",
 		mission_2 = "Mâncarea unui sandwich.",
 		mission_3 = "Făcând exerciții.",
+
+		preparing_food = "Pregătind mâncare pentru ceilalți deținuți.",
+		prepare_food = "Apasă ~INPUT_CONTEXT~ pentru a pregăti mâncare.",
+		cleaning_desk = "Curățând biroul.",
+		clean_desk = "Apasă ~INPUT_CONTEXT~ pentru a curăța biroul.",
+		making_bed = "Făcând patul.",
+		make_bed = "Apasă ~INPUT_CONTEXT~ pentru a face patul.",
+		aligning_cone = "Aliniind conul de trafic.",
+		align_cone = "Apasă ~INPUT_CONTEXT~ pentru a alinia conul de trafic.",
+		inspecting_sprinkler = "Se inspectează aspersorul.",
+		inspect_sprinkler = "Apasă ~INPUT_CONTEXT~ pentru a inspecta aspersorul.",
+		watering_plant = "Udând planta.",
+		water_plant = "Apasă ~INPUT_CONTEXT~ pentru a uda planta.",
+		organizing_weights = "Se organizează greutățile.",
+		organize_weights = "Apasă ~INPUT_CONTEXT~ pentru a organiza greutățile.",
+
+		upstairs_notification = "Această sarcină este la etaj.",
 
 		mission_blip = "Misiunea Închisoare",
 

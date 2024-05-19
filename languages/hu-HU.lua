@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["hu-HU"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		invisibility_command_parameter_server_id = "szerver azonosító",
 		invisibility_command_parameter_server_id_help = "Ha más valaki láthatatlanságát szeretnéd váltani.",
 		invisibility_command_substitutes = "inv, invis, láthatatlan",
+
+		invisibility_mode_command = "láthatatlanság_mód",
+		invisibility_mode_command_help = "Állítsd be a láthatatlanság módodat. Lehet 'teljes' (csak a seniorStaff+ láthat téged láthatatlanul) vagy 'normál' (az összes ún. peek rendelkező alkalmazott lát téged).",
+		invisibility_mode_command_parameter_mode = "mód",
+		invisibility_mode_command_parameter_mode_help = "Lehet 'teljes' a teljes láthatatlansághoz vagy 'normál' az általános láthatósághoz.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "játékos elszigetelése",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["hu-HU"] = {
 	invisibility = {
 		invisibility_on = "Láthatatlanság bekapcsolva.",
 		invisibility_off = "Az átláthatatlanság kikapcsolva.",
+		invalid_invisibility_mode = "Érvénytelen láthatatlanság mód. 'teljes' vagy 'normál' lehet csak.",
+		invisibility_mode_full = "Teljes láthatatlanság mód beállítva. A normál személyzet nem lát téged.",
+		invisibility_mode_normal = "Normál láthatatlanság mód beállítva. Mostantól a normál személyzet láthat téged.",
 
 		toggled_invisibility = "Sikeresen átkapcsolva ${displayName} átláthatatlansága.",
 		failed_invisibility = "${displayName} átláthatatlanságának kapcsolása sikertelen.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		mission_1 = "A padló takarítása.",
 		mission_2 = "Egy szendvics elfogyasztása.",
 		mission_3 = "Edzés.",
+
+		preparing_food = "Étel készítése más raboknak.",
+		prepare_food = "Nyomd meg a ~INPUT_CONTEXT~ gombot az étel elkészítéséhez.",
+		cleaning_desk = "Íróasztal tisztítása.",
+		clean_desk = "Nyomd meg a ~INPUT_CONTEXT~ gombot az íróasztal kitakarításához.",
+		making_bed = "Ágyazás.",
+		make_bed = "Nyomd meg a ~INPUT_CONTEXT~ gombot az ágyazáshoz.",
+		aligning_cone = "A forgalomirányító kúp igazítása.",
+		align_cone = "Nyomd meg a ~INPUT_CONTEXT~ billentyűt a forgalomirányító kúp igazításához.",
+		inspecting_sprinkler = "Az öntöző ellenőrzése.",
+		inspect_sprinkler = "Nyomd meg a ~INPUT_CONTEXT~ billentyűt az öntöző ellenőrzéséhez.",
+		watering_plant = "A növény öntözése.",
+		water_plant = "Nyomd meg a ~INPUT_CONTEXT~ billentyűt a növény öntözéséhez.",
+		organizing_weights = "Súlyok rendezése.",
+		organize_weights = "Nyomd meg a ~INPUT_CONTEXT~ billentyűt a súlyok rendezéséhez.",
+
+		upstairs_notification = "Ez a feladat az emeleten található.",
 
 		mission_blip = "Börtön küldetés",
 

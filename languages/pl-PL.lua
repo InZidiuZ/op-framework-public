@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["pl-PL"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		invisibility_command_parameter_server_id = "server id",
 		invisibility_command_parameter_server_id_help = "Jeśli chcesz przełączyć niewidzialność kogoś innego.",
 		invisibility_command_substitutes = "inv, vanish",
+
+		invisibility_mode_command = "tryb_niewidzialnosci",
+		invisibility_mode_command_help = "Ustaw swoj tryb niewidzialnosci. Moze to byc 'pelny' (jestes widoczny tylko dla seniorStaff+) lub 'normalny' (jestes widoczny dla wszystkich czlonkow personelu, ktorzy maja wlaczone ogladanie).",
+		invisibility_mode_command_parameter_mode = "tryb",
+		invisibility_mode_command_parameter_mode_help = "Moze byc 'pelny' dla pelnej niewidzialnosci lub 'normalny' dla zwyklej widocznosci.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isolate_player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["pl-PL"] = {
 	invisibility = {
 		invisibility_on = "Włączono niewidzialność.",
 		invisibility_off = "Wyłączono niewidzialność.",
+		invalid_invisibility_mode = "Nieprawidlowy tryb niewidzialnosci. Musi byc 'pelny' lub 'normalny'.",
+		invisibility_mode_full = "Tryb niewidzialności ustawiony na „pełny”. Zwykli pracownicy nie widzą cię.",
+		invisibility_mode_normal = "Tryb niewidzialności ustawiony na „normalny”. Zwykli pracownicy mogą cię teraz widzieć.",
 
 		toggled_invisibility = "Pomyślnie włączono niewidzialność dla ${displayName}.",
 		failed_invisibility = "Nie udało się włączyć niewidzialności dla ${displayName}.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["pl-PL"] = {
 		mission_1 = "Umyj podłogę.",
 		mission_2 = "Zjedz kanapkę.",
 		mission_3 = "Poćwicz.",
+
+		preparing_food = "Przygotowuję jedzenie dla innych więźniów.",
+		prepare_food = "Naciśnij ~INPUT_CONTEXT~, aby przygotować jedzenie.",
+		cleaning_desk = "Sprzątam biurko.",
+		clean_desk = "Naciśnij ~INPUT_CONTEXT~, aby posprzątać biurko.",
+		making_bed = "Pościelanie łóżka.",
+		make_bed = "Naciśnij ~INPUT_CONTEXT~, aby zaścielić łóżko.",
+		aligning_cone = "Wyrównuję pachołek drogowy.",
+		align_cone = "Naciśnij ~INPUT_CONTEXT~, aby wyrównać pachołek drogowy.",
+		inspecting_sprinkler = "Sprawdzanie zraszacza.",
+		inspect_sprinkler = "Naciśnij ~INPUT_CONTEXT~, aby sprawdzić zraszacz.",
+		watering_plant = "Podlewanie rośliny.",
+		water_plant = "Naciśnij ~INPUT_CONTEXT~, aby podlać roślinę.",
+		organizing_weights = "Organizowanie ciężarków.",
+		organize_weights = "Naciśnij ~INPUT_CONTEXT~, aby zorganizować ciężarki.",
+
+		upstairs_notification = "To zadanie znajduje się na górze.",
 
 		mission_blip = "Więzienna aktywność",
 

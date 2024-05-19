@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["meme-gungan"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		invisibility_command_parameter_server_id = "server id",
 		invisibility_command_parameter_server_id_help = "If you'sa wanten to toggle someone elses invisibility.",
 		invisibility_command_substitutes = "inv, invis, invisible",
+
+		invisibility_mode_command = "pompiti-invisibleness",
+		invisibility_mode_command_help = "Mesa setten yousa invisibleness mode. Gungan can be 'full' (yousa only visible to seniorStaff+ whilsa invisible) or 'normal' (you are visible to all staff who have peek on).",
+		invisibility_mode_command_parameter_mode = "mode",
+		invisibility_mode_command_parameter_mode_help = "Gungan can be 'full' mesa full invisibleness or 'normal' mesa regular visibility.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "mee-sa isolate_player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	invisibility = {
 		invisibility_on = "Gungansieee Insiwibility siinon.",
 		invisibility_off = "Gungansieee Insiwibility siinoff.",
+		invalid_invisibility_mode = "Invalid invisibleness mode. Has to be 'full' or 'normal'.",
+		invisibility_mode_full = "Meesa set invisibility mode to 'full'. Regular staff members can't see yousa.",
+		invisibility_mode_normal = "Meesa set invisibility mode to 'normal'. Regular staff members can see yousa now.",
 
 		toggled_invisibility = "Successaden toggledade ${displayName}'s insiwibility.",
 		failed_invisibility = "Failedade tooggledade ${displayName}'s insiwibility.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		mission_1 = "Cleaning da floor.",
 		mission_2 = "Eating a sandwich.",
 		mission_3 = "Working out.",
+
+		preparing_food = "Preparin food for other inmates.",
+		prepare_food = "Press ~INPUT_CONTEXT~ to prepare food.",
+		cleaning_desk = "Cleanin the desk.",
+		clean_desk = "Press ~INPUT_CONTEXT~ to clean the desk.",
+		making_bed = "Makin' the bed.",
+		make_bed = "Press ~INPUT_CONTEXT~ to make the bed.",
+		aligning_cone = "Alignin the traffic cone.",
+		align_cone = "Yousa press ~INPUT_CONTEXT~ to align the traffic cone.",
+		inspecting_sprinkler = "Inspecting the sprinkler.",
+		inspect_sprinkler = "Yousa press ~INPUT_CONTEXT~ to inspect the sprinkler.",
+		watering_plant = "Watering the plant.",
+		water_plant = "Yousa press ~INPUT_CONTEXT~ to water the plant.",
+		organizing_weights = "Organizing the weights.",
+		organize_weights = "Yousa press ~INPUT_CONTEXT~ to organize the weights.",
+
+		upstairs_notification = "Disa task isen upstairs.",
 
 		mission_blip = "Jail Mission",
 

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["id-ID"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["id-ID"] = {
 		invisibility_command_parameter_server_id = "id server",
 		invisibility_command_parameter_server_id_help = "Jika Anda ingin mengaktifkan atau menonaktifkan keberadaan orang lain.",
 		invisibility_command_substitutes = "inv, invis, tidak terlihat",
+
+		invisibility_mode_command = "invisibility_mode",
+		invisibility_mode_command_help = "Atur mode kealpaan Anda. Dapat berupa 'penuh' (Anda hanya terlihat oleh seniorStaff+ saat tidak terlihat) atau 'normal' (Anda terlihat oleh semua staf yang memiliki peek on).",
+		invisibility_mode_command_parameter_mode = "mode",
+		invisibility_mode_command_parameter_mode_help = "Dapat berupa 'penuh' untuk invisibilitas penuh atau 'normal' untuk keterlihatan reguler.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isolasi_pemain",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["id-ID"] = {
 	invisibility = {
 		invisibility_on = "Nyalakan penyamaran.",
 		invisibility_off = "Invisibilitas dimatikan.",
+		invalid_invisibility_mode = "Mode kealpaan tidak valid. Harus 'penuh' atau 'normal'.",
+		invisibility_mode_full = "Mode kelebihan 'penuh'. Staff biasa tidak bisa melihatmu.",
+		invisibility_mode_normal = "Mode kelebihan diubah ke 'normal'. Staff biasa sekarang bisa melihatmu.",
 
 		toggled_invisibility = "Berhasil mengubah invisibilitas ${displayName}.",
 		failed_invisibility = "Gagal mengubah invisibilitas ${displayName}.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["id-ID"] = {
 		mission_1 = "Membersihkan lantai.",
 		mission_2 = "Makan sandwich.",
 		mission_3 = "Berolahraga.",
+
+		preparing_food = "Menyiapkan makanan untuk tahanan lain.",
+		prepare_food = "Tekan ~INPUT_CONTEXT~ untuk menyiapkan makanan.",
+		cleaning_desk = "Membersihkan meja.",
+		clean_desk = "Tekan ~INPUT_CONTEXT~ untuk membersihkan meja.",
+		making_bed = "Merapikan tempat tidur.",
+		make_bed = "Tekan ~INPUT_CONTEXT~ untuk merapikan tempat tidur.",
+		aligning_cone = "Membuat kejernihan kerucut lalu lintas.",
+		align_cone = "Tekan ~INPUT_CONTEXT~ untuk meluruskan tanda lalu lintas.",
+		inspecting_sprinkler = "Memeriksa sprinkler.",
+		inspect_sprinkler = "Tekan ~INPUT_CONTEXT~ untuk memeriksa sprinkler.",
+		watering_plant = "Memberi air pada tanaman.",
+		water_plant = "Tekan ~INPUT_CONTEXT~ untuk memberi air pada tanaman.",
+		organizing_weights = "Mengatur beban.",
+		organize_weights = "Tekan ~INPUT_CONTEXT~ untuk mengatur beban.",
+
+		upstairs_notification = "Tugas ini ada di lantai atas.",
 
 		mission_blip = "Misi Penjara",
 

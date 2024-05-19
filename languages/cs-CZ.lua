@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["cs-CZ"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		invisibility_command_parameter_server_id = "ID serveru",
 		invisibility_command_parameter_server_id_help = "Pokud chcete přepnout neviditelnost někoho jiného.",
 		invisibility_command_substitutes = "inv, invis, neviditelný",
+
+		invisibility_mode_command = "rezim_neviditelnosti",
+		invisibility_mode_command_help = "Nastaví váš režim neviditelnosti. Může být buď 'plný' (jste viditelní pouze pro seniory +, kteří jsou neviditelní) nebo 'normální' (jste viditelní pro všechny členy týmu, kteří mají možnost náhledu).",
+		invisibility_mode_command_parameter_mode = "režim",
+		invisibility_mode_command_parameter_mode_help = "Může být buď 'plný' pro úplnou neviditelnost nebo 'normální' pro běžnou viditelnost.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "izolovat_hráče",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 	invisibility = {
 		invisibility_on = "Skrývání zapnuto.",
 		invisibility_off = "Neviditelnost vypnuta.",
+		invalid_invisibility_mode = "Neplatný režim neviditelnosti. Musí být 'plný' nebo 'normální'.",
+		invisibility_mode_full = "Režim neviditelnosti nastaven na 'plný'. Běžní zaměstnanci vás nevidí.",
+		invisibility_mode_normal = "Režim neviditelnosti nastaven na 'normální'. Běžní zaměstnanci vás nyní vidí.",
 
 		toggled_invisibility = "Úspěšně zapnuta neviditelnost u ${displayName}.",
 		failed_invisibility = "Chyba při zapínání neviditelnosti u ${displayName}.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["cs-CZ"] = {
 		mission_1 = "Uklízení podlahy.",
 		mission_2 = "Jídlo sendvič.",
 		mission_3 = "Cvičení.",
+
+		preparing_food = "Příprava jídla pro ostatní vězně.",
+		prepare_food = "Stiskněte ~INPUT_CONTEXT~ pro přípravu jídla.",
+		cleaning_desk = "Čištění stolu.",
+		clean_desk = "Stiskněte ~INPUT_CONTEXT~ pro úklid stolu.",
+		making_bed = "Stlání postele.",
+		make_bed = "Stiskněte ~INPUT_CONTEXT~ pro ustlání postele.",
+		aligning_cone = "Zarovnání dopravní kužely.",
+		align_cone = "Stiskněte ~INPUT_CONTEXT~ pro úpravu dopravní kužel.",
+		inspecting_sprinkler = "Prohlížení zavlažovače.",
+		inspect_sprinkler = "Stiskněte ~INPUT_CONTEXT~ pro prohlédnutí zavlažovače.",
+		watering_plant = "Zalévání rostliny.",
+		water_plant = "Stiskněte ~INPUT_CONTEXT~ pro zalití rostliny.",
+		organizing_weights = "Organizace činek.",
+		organize_weights = "Stiskněte ~INPUT_CONTEXT~ pro organizaci činek.",
+
+		upstairs_notification = "Tato úloha je nahoře.",
 
 		mission_blip = "Úkol ve vězení",
 

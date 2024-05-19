@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["meme-valleygirl"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		invisibility_command_parameter_server_id = "server id, like oh my gosh",
 		invisibility_command_parameter_server_id_help = "If you wanna toggle someone else's invisibility, ya know?",
 		invisibility_command_substitutes = "inv, invis, invisible",
+
+		invisibility_mode_command = "like, invisibility_mode",
+		invisibility_mode_command_help = "So, set your invisibility mode. You can choose 'full' (only seniorStaff+ can see you when invisible) or 'normal' (everyone with peek on can see you).",
+		invisibility_mode_command_parameter_mode = "mode, like, duh",
+		invisibility_mode_command_parameter_mode_help = "Like, choose 'full' for total invisibility or 'normal' to be seen normally, you know?",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isolate_player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	invisibility = {
 		invisibility_on = "Like, invisibility is, like, totally on.",
 		invisibility_off = "Invisibility is so off right now.",
+		invalid_invisibility_mode = "Like, totally bogus invisibility mode. Gotta be 'full' or 'normal', for sure.",
+		invisibility_mode_full = "Like, poof! You're, like, totally invisible. Regular staff can't even see you.",
+		invisibility_mode_normal = "Invisibility mode set to 'normal'. Regular staff members can now see you. Like, bummer, right?",
 
 		toggled_invisibility = "Totally toggled ${displayName}'s invisibility, like, ya know.",
 		failed_invisibility = "Failed to toggle ${displayName}'s invisibility, can you believe it?",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		mission_1 = "Cleaning the floor, so gross.",
 		mission_2 = "Eating, like, a sandwich.",
 		mission_3 = "Gonna, like, work out.",
+
+		preparing_food = "Like, prepping food for the other inmates.",
+		prepare_food = "Press ~INPUT_CONTEXT~ to, like, make some grub.",
+		cleaning_desk = "Gotta, like, clean the desk, ya know?",
+		clean_desk = "Press ~INPUT_CONTEXT~ to tidy up the desk.",
+		making_bed = "Time to, like, make the bed all neat.",
+		make_bed = "Press ~INPUT_CONTEXT~ to fix up the bed.",
+		aligning_cone = "Like, making sure the traffic cone is, like, totally straight.",
+		align_cone = "Like, press ~INPUT_CONTEXT~ to, like, align the traffic cone.",
+		inspecting_sprinkler = "Inspecting the sprinkler, so, like, exciting!",
+		inspect_sprinkler = "Press ~INPUT_CONTEXT~ to, you know, inspect the sprinkler.",
+		watering_plant = "Totally watering the plant, like, so green!",
+		water_plant = "Press ~INPUT_CONTEXT~ to, like, water the plant.",
+		organizing_weights = "Organizing the weights, like, workout vibes!",
+		organize_weights = "Press ~INPUT_CONTEXT~ to, like, organize the weights.",
+
+		upstairs_notification = "OMG, this task is, like, upstairs. Can you even?",
 
 		mission_blip = "Jail Mission, so not chic.",
 

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["ne-NP"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		invisibility_command_parameter_server_id = "सर्वर आईडी",
 		invisibility_command_parameter_server_id_help = "यदि तपाईं कसैको अदृश्यता टगल गर्न चाहानुहुन्छ भने।",
 		invisibility_command_substitutes = "inv, invis, अप्रत्यक्ष",
+
+		invisibility_mode_command = "अप्रत्यक्षता_मोड",
+		invisibility_mode_command_help = "'आपको अप्रत्यक्षता मोड सेट गर्नुहोस। यसले तपाईं 'पूर्ण' (तपाईं सम्पूर्ण अद्यक्ष कर्मचारीहरूमात्रको लागि मात्र दृश्यमान छन्) वा 'सामान्य' (तपाईंलाई सबै कर्मचारीहरूले देख्ने अधिकार छ) भएर हुन सक्छ।",
+		invisibility_mode_command_parameter_mode = "मोड",
+		invisibility_mode_command_parameter_mode_help = "'पूर्ण' को लागि पूर्ण अदृश्यता वा सामान्य दृश्यमानता को लागि 'सामान्य' हुन सक्छ।",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isolate_player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["ne-NP"] = {
 	invisibility = {
 		invisibility_on = "अदृश्यता चालू गरियो।",
 		invisibility_off = "अदृश्यता बन्द गरियो।",
+		invalid_invisibility_mode = "अमान्य अदृश्यता मोड। 'पूर्ण' वा 'सामान्य' हुनुपर्छ।",
+		invisibility_mode_full = "गायब अवस्था 'पूर्ण' मा सेट गरिईएको छ। सामान्य कार्यकर्ताहरू तपाईंलाई हेर्न सक्दैन।",
+		invisibility_mode_normal = "गायब अवस्था 'सामान्य' मा सेट गरिईएको छ। सामान्य कार्यकर्ताहरू अब तपाईंलाई हेर्न सक्नेछन्।",
 
 		toggled_invisibility = "${displayName} को अदृश्यता सफलतापूर्वक बदलियो।",
 		failed_invisibility = "${displayName} को अदृश्यता बदल्न सकेन।",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		mission_1 = "फर्सा सफा गर्नु।",
 		mission_2 = "स्यान्डविच खानु।",
 		mission_3 = "व्यायाम गर्नु।",
+
+		preparing_food = "अन्य बन्धिहरूका लागि खाना तयार गर्दै।",
+		prepare_food = "~INPUT_CONTEXT~ थिच्न खाना तयार गर्नुहोस।",
+		cleaning_desk = "डेस्क सफा गर्दै।",
+		clean_desk = "~INPUT_CONTEXT~ थिच्न डेस्क सफा गर्नुहोस।",
+		making_bed = "बिछाउनी बनाउँदै।",
+		make_bed = "~INPUT_CONTEXT~ थिच्न बिछाउनी बनाउनुहोस।",
+		aligning_cone = "ट्राफिक कोन मिलाएको छ।",
+		align_cone = "यातायात कोन अलाइन गर्न ~INPUT_CONTEXT~ थिच्नुहोस|",
+		inspecting_sprinkler = "स्प्रिङक्लरलाई जाँच गरिरहेको छ।",
+		inspect_sprinkler = "स्प्रिङक्लरलाई जाँच गर्न ~INPUT_CONTEXT~ थिच्नुहोस|",
+		watering_plant = "रोपाइ खेत खिस्क्यो।",
+		water_plant = "रोपाइ खेत खिस्न ~INPUT_CONTEXT~ थिच्नुहोस|",
+		organizing_weights = "वजनहरू ब्यबस्थित गरिरहेको छ।",
+		organize_weights = "वजनहरू ब्यबस्थित गर्न ~INPUT_CONTEXT~ थिच्नुहोस|",
+
+		upstairs_notification = "यो काम ऊपरमा छ।",
 
 		mission_blip = "जेल मिसन",
 

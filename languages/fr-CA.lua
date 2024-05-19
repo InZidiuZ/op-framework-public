@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["fr-CA"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["fr-CA"] = {
 		invisibility_command_parameter_server_id = "ID du serveur",
 		invisibility_command_parameter_server_id_help = "Si vous souhaitez activer ou désactiver l'invisibilité de quelqu'un d'autre.",
 		invisibility_command_substitutes = "inv, invis, invisible",
+
+		invisibility_mode_command = "mode_invisibilite",
+		invisibility_mode_command_help = "Définir votre mode d'invisibilité. Peut être soit 'complet' (vous n'êtes visible que par les membres supérieurs du personnel+ lorsque vous êtes invisible) ou 'normal' (vous êtes visible par tout le personnel ayant accès au peek).",
+		invisibility_mode_command_parameter_mode = "mode",
+		invisibility_mode_command_parameter_mode_help = "Peut être soit 'complet' pour une invisibilité totale, soit 'normal' pour une visibilité normale.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isoler_joueur",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["fr-CA"] = {
 	invisibility = {
 		invisibility_on = "Invisibilité activée.",
 		invisibility_off = "Invisibilité désactivée.",
+		invalid_invisibility_mode = "Mode d'invisibilité invalide. Doit être 'complet' ou 'normal'.",
+		invisibility_mode_full = "Mode invisibilité réglé sur 'complet'. Les membres du personnel régulier ne peuvent pas vous voir.",
+		invisibility_mode_normal = "Mode invisibilité réglé sur 'normal'. Les membres du personnel régulier peuvent maintenant vous voir.",
 
 		toggled_invisibility = "Invisibilité de ${displayName} activée avec succès.",
 		failed_invisibility = "Impossible d'activer l'invisibilité de ${displayName}.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["fr-CA"] = {
 		mission_1 = "Nettoyer le sol.",
 		mission_2 = "Manger un sandwich.",
 		mission_3 = "Faire de l'exercice.",
+
+		preparing_food = "Préparation de la nourriture pour les autres détenus.",
+		prepare_food = "Appuyez sur ~INPUT_CONTEXT~ pour préparer la nourriture.",
+		cleaning_desk = "Nettoyage du bureau.",
+		clean_desk = "Appuyez sur ~INPUT_CONTEXT~ pour nettoyer le bureau.",
+		making_bed = "Faire le lit.",
+		make_bed = "Appuyez sur ~INPUT_CONTEXT~ pour faire le lit.",
+		aligning_cone = "Alignement du cône de signalisation.",
+		align_cone = "Appuyez sur ~INPUT_CONTEXT~ pour aligner le cône de circulation.",
+		inspecting_sprinkler = "Inspection de l'arroseur.",
+		inspect_sprinkler = "Appuyez sur ~INPUT_CONTEXT~ pour inspecter l'arroseur.",
+		watering_plant = "Arroser la plante.",
+		water_plant = "Appuyez sur ~INPUT_CONTEXT~ pour arroser la plante.",
+		organizing_weights = "Organisation des poids.",
+		organize_weights = "Appuyez sur ~INPUT_CONTEXT~ pour organiser les poids.",
+
+		upstairs_notification = "Ceci est une tâche à l'étage.",
 
 		mission_blip = "Mission de prison",
 

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["meme-dinosaur"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		invisibility_command_parameter_server_id = "server id",
 		invisibility_command_parameter_server_id_help = "If rawr rawr to rawr someone else's rawr.",
 		invisibility_command_substitutes = "inv, invis, invisible",
+
+		invisibility_mode_command = "roaaksaanuiv_mode",
+		invisibility_mode_command_help = "Takka anivaraak roaaksaanuiv mode. Tiiap apiti 'full' (suoriv'akmiivi s'sorseniorStaff+ byortiak tiiapiivi) o oraa 'normal' (suorivroaa tiiapiivi roaa o vyiiave peek on).",
+		invisibility_mode_command_parameter_mode = "aksadroaak",
+		invisibility_mode_command_parameter_mode_help = "Jyap tiiap 'full' ro full roaaksaanuivri ro o 'normal' ro regular vyiiavari.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isolate_player", -- isolate_player_command = "isolate_player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 	invisibility = {
 		invisibility_on = "Rawr! Turned on invisibility.",
 		invisibility_off = "Rawr! Turned off invisibility.",
+		invalid_invisibility_mode = "Vyinavavna iviraakroaaksaanuiv mode. Tiiap to be 'full' o 'normal'.",
+		invisibility_mode_full = "Invisibility roar set to 'full'. Regular thunder-lizards cannot spot you.",
+		invisibility_mode_normal = "Invisibility roar set to 'normal'. Regular thunder-lizards can now see you.",
 
 		toggled_invisibility = "Rawr! Successfully toggled ${displayName}'s invisibility.",
 		failed_invisibility = "Rawr! Failed to toggle ${displayName}'s invisibility.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["meme-dinosaur"] = {
 		mission_1 = "Scrubbing the floor.",
 		mission_2 = "Chomping on a sandwich.",
 		mission_3 = "Lifting rocks.",
+
+		preparing_food = "Preparing dino chow for other captives.",
+		prepare_food = "Stomp ~INPUT_CONTEXT~ to prep dino chow.",
+		cleaning_desk = "Scrubbing the stone slab.",
+		clean_desk = "Stomp ~INPUT_CONTEXT~ to clean the stone slab.",
+		making_bed = "Arranging the nest.",
+		make_bed = "Stomp ~INPUT_CONTEXT~ to make the nest.",
+		aligning_cone = "Positioning the traffic bone.",
+		align_cone = "Rawr ~INPUT_CONTEXT~ to align the traffic cone.",
+		inspecting_sprinkler = "RAWR! Inspecting the sprinkler.",
+		inspect_sprinkler = "Rawr ~INPUT_CONTEXT~ to inspect the sprinkler.",
+		watering_plant = "RAWR! Watering the plant.",
+		water_plant = "Rawr ~INPUT_CONTEXT~ to water the plant.",
+		organizing_weights = "RAWR! Organizing the weights.",
+		organize_weights = "Rawr ~INPUT_CONTEXT~ to organize the weights.",
+
+		upstairs_notification = "RAWR! This task is upstairs.",
 
 		mission_blip = "Locked Up Mission",
 

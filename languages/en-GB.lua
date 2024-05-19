@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["en-GB"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["en-GB"] = {
 		invisibility_command_parameter_server_id = "server id",
 		invisibility_command_parameter_server_id_help = "If you want to toggle someone else's invisibility.",
 		invisibility_command_substitutes = "inv, invis, invisible",
+
+		invisibility_mode_command = "invisibility_mode",
+		invisibility_mode_command_help = "Set your invisibility mode. Can be either 'full' (you are only visible to seniorStaff+ while invisible) or 'normal' (you are visible to all staff who have peek on).",
+		invisibility_mode_command_parameter_mode = "mode",
+		invisibility_mode_command_parameter_mode_help = "Can be either 'full' for full invisibility or 'normal' for regular visibility.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isolate_player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 	invisibility = {
 		invisibility_on = "Toggled invisibility on.",
 		invisibility_off = "Toggled invisibility off.",
+		invalid_invisibility_mode = "Invalid invisibility mode. Must be 'full' or 'normal'.",
+		invisibility_mode_full = "Invisibility mode set to 'full'. Ordinary staff members cannot see you.",
+		invisibility_mode_normal = "Invisibility mode set to 'normal'. Ordinary staff members can now see you.",
 
 		toggled_invisibility = "Successfully toggled ${displayName}'s invisibility.",
 		failed_invisibility = "Failed to toggle ${displayName}'s invisibility.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["en-GB"] = {
 		mission_1 = "Cleaning the floor.",
 		mission_2 = "Eating a sandwich.",
 		mission_3 = "Working out.",
+
+		preparing_food = "Preparing food for other inmates.",
+		prepare_food = "Press ~INPUT_CONTEXT~ to prepare food.",
+		cleaning_desk = "Cleaning the desk.",
+		clean_desk = "Press ~INPUT_CONTEXT~ to clean the desk.",
+		making_bed = "Making the bed.",
+		make_bed = "Press ~INPUT_CONTEXT~ to make the bed.",
+		aligning_cone = "Aligning the traffic cone.",
+		align_cone = "Press ~INPUT_CONTEXT~ to align the traffic cone.",
+		inspecting_sprinkler = "Inspecting the sprinkler.",
+		inspect_sprinkler = "Press ~INPUT_CONTEXT~ to inspect the sprinkler.",
+		watering_plant = "Watering the plant.",
+		water_plant = "Press ~INPUT_CONTEXT~ to water the plant.",
+		organizing_weights = "Organising the weights.",
+		organize_weights = "Press ~INPUT_CONTEXT~ to organise the weights.",
+
+		upstairs_notification = "This task is upstairs.",
 
 		mission_blip = "Jail Mission",
 

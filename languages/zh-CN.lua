@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["zh-CN"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		invisibility_command_parameter_server_id = "服务器ID",
 		invisibility_command_parameter_server_id_help = "如果你想切换其他玩家的隐身状态。",
 		invisibility_command_substitutes = "inv, invis, invisible（可替代命令）",
+
+		invisibility_mode_command = "invisibility_mode",
+		invisibility_mode_command_help = "设置隐形模式。可以是'full'（你只对 seniorStaff+ 在隐形时可见）或'normal'（对所有开启 peek 权限的员工可见）。",
+		invisibility_mode_command_parameter_mode = "mode",
+		invisibility_mode_command_parameter_mode_help = "可以是'full'代表完全隐形或'normal'代表正常可见。",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "隔离玩家",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["zh-CN"] = {
 	invisibility = {
 		invisibility_on = "已切换为隐身状态。",
 		invisibility_off = "关闭隐身。",
+		invalid_invisibility_mode = "无效的隐形模式。必须是'full'或'normal'。",
+		invisibility_mode_full = "隐身模式已设置为'全隐身'。普通工作人员无法看到你。",
+		invisibility_mode_normal = "隐身模式已设置为'正常'。普通工作人员现在可以看到你。",
 
 		toggled_invisibility = "成功切换 ${displayName} 的隐身状态。",
 		failed_invisibility = "无法切换 ${displayName} 的隐身状态。",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		mission_1 = "清洁地板。",
 		mission_2 = "吃一个三明治。",
 		mission_3 = "锻炼身体。",
+
+		preparing_food = "为其他囚犯准备食物。",
+		prepare_food = "按 ~INPUT_CONTEXT~ 键准备食物。",
+		cleaning_desk = "清理桌子。",
+		clean_desk = "按 ~INPUT_CONTEXT~ 键清理桌子。",
+		making_bed = "整理床铺。",
+		make_bed = "按 ~INPUT_CONTEXT~ 键整理床铺。",
+		aligning_cone = "摆放交通锥。",
+		align_cone = "按下 ~INPUT_CONTEXT~ 键来对齐交通锥。",
+		inspecting_sprinkler = "正在检查洒水器。",
+		inspect_sprinkler = "按下 ~INPUT_CONTEXT~ 键来检查洒水器。",
+		watering_plant = "给植物浇水。",
+		water_plant = "按下 ~INPUT_CONTEXT~ 键来给植物浇水。",
+		organizing_weights = "整理器械。",
+		organize_weights = "按下 ~INPUT_CONTEXT~ 键来整理器械。",
+
+		upstairs_notification = "这个任务在楼上。",
 
 		mission_blip = "监狱任务",
 

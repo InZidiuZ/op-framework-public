@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["bn-BD"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		invisibility_command_parameter_server_id = "সার্ভার আইডি",
 		invisibility_command_parameter_server_id_help = "আপনি যদি অন্যদের অদৃশ্যতা টগল করতে চান।",
 		invisibility_command_substitutes = "inv, invis, invisible",
+
+		invisibility_mode_command = "বেদেখাবেলা_মোড",
+		invisibility_mode_command_help = "আপনার বেদেখাবেলা মোড সেট করুন। 'পূর্ণ' (আপনি শীর্ষ স্টাফ+ এর কেবল দৃশ্যমান) বা 'নরমাল' (সব স্টাফের এক্সেস থাকে) হতে পারে।",
+		invisibility_mode_command_parameter_mode = "মোড",
+		invisibility_mode_command_parameter_mode_help = "'পূর্ণ' এর ইমান ইিং ভা 'নরমাল' এর জন্য।",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "প্লেয়ার আইজোলেট করুন",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["bn-BD"] = {
 	invisibility = {
 		invisibility_on = "নিরাপদতা চালু করা হয়েছে।",
 		invisibility_off = "নিরাপদতা বন্ধ করা হয়েছে।",
+		invalid_invisibility_mode = "অবৈধ বেদেখাবেলা মোড। 'পূর্ণ' অথবা 'নরমাল' হতে হবে।",
+		invisibility_mode_full = "অদৃশ্যতা মোড সেট করা হয়েছে 'পূর্ণ'. সাধারণ স্টাফ অবস্থা দেখতে পারবে না।",
+		invisibility_mode_normal = "অদৃশ্যতা মোড সেট করা হয়েছে 'সাধারণ'. সাধারণ স্টাফ অবস্থা এখন দেখতে পারবে।",
 
 		toggled_invisibility = "${displayName} এর নিরাপদতা সফলভাবে চালু বা বন্ধ করা হয়েছে।",
 		failed_invisibility = "${displayName} এর নিরাপদতা চালু বা বন্ধ করা হয়নি।",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		mission_1 = "ফ্লোর পরিষ্কারণ।",
 		mission_2 = "স্যানডউইচ খেয়ে হচ্ছেন।",
 		mission_3 = "কাজ করছেন।",
+
+		preparing_food = "অন্য সেলের জন্য খাদ্য তৈরি করা হচ্ছে।",
+		prepare_food = "~ INPUT_CONTEXT ~ চাপ দিতে খাদ্য তৈরি করুন।",
+		cleaning_desk = "ডেস্ক পরিষ্কারের কাজ।",
+		clean_desk = "~ INPUT_CONTEXT ~ চাপ দিতে ডেস্ক পরিষ্কার করুন।",
+		making_bed = "বিছানা তৈরি করা।",
+		make_bed = "~ INPUT_CONTEXT ~ চাপ দিতে বিছানা তৈরি করুন।",
+		aligning_cone = "ট্রাফিক কোন সারিবদ্ধ করা হচ্ছে।",
+		align_cone = "ট্র্যাফিক কোন লাইন করতে ~INPUT_CONTEXT~ চাপুন।",
+		inspecting_sprinkler = "স্প্রিঙ্কলার পরীক্ষা করা হচ্ছে।",
+		inspect_sprinkler = "স্প্রিঙ্কলার পরীক্ষা করতে ~INPUT_CONTEXT~ চাপুন।",
+		watering_plant = "উদ্ভিদকে পানি দেওয়া হচ্ছে।",
+		water_plant = "উদ্ভিদকে পানি দেওয়ার জন্য ~INPUT_CONTEXT~ চাপুন।",
+		organizing_weights = "ওজন সম্পর্কে সাজানো হচ্ছে।",
+		organize_weights = "ওজন সাজানোর জন্য ~INPUT_CONTEXT~ চাপুন।",
+
+		upstairs_notification = "এই কাজটি উপরে আছে।",
 
 		mission_blip = "জেল মিশন",
 

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["meme-klingon"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		invisibility_command_parameter_server_id = "tlhIngan Hol vIghaj",
 		invisibility_command_parameter_server_id_help = "cha'logh qagh Sovghach vItlhutlh",
 		invisibility_command_substitutes = "inv, invis, invisible",
+
+		invisibility_mode_command = "ghaHlo' 'ach",
+		invisibility_mode_command_help = "nIteb ghaHlo' 'ach. vaj maH maj choH matlh. yaS Hutlh vetlh ngoD, 'ej chenmoH qarDaq. tu'lu'vam vay'.",
+		invisibility_mode_command_parameter_mode = "ngach",
+		invisibility_mode_command_parameter_mode_help = "vaj maH maj choH matlh. yaS Hutlh vetlh ngoD 'ach 'ej chenmoH qarDaq.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "QI'lIj rur vItlhutlh, nge'choHmoHmo' jabbI'ID qonta'",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 	invisibility = {
 		invisibility_on = "Qabbaj bo'bIl vItlhutlh.",
 		invisibility_off = "Qabbaj bo'bIl DaH.",
+		invalid_invisibility_mode = "ghaHlo' 'ach pagh ghaH 'ach. vetlh 'ach, vetlh ngoD, Hoch 'ach.",
+		invisibility_mode_full = "'eSDaq DanoHmeH 'ay'. ghot'e'vetlh SoSmo' pIn'a' neH.",
+		invisibility_mode_normal = "'eSDaq DanoHmeH chIy 'ay'. ghot'e'vetlh SoSmo' verHom.",
 
 		toggled_invisibility = "${displayName} jImejDI' qabbaj bo'bIl vItlhutlh.",
 		failed_invisibility = "${displayName} jImejDI' qabbaj bo'bIl DaHmey.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["meme-klingon"] = {
 		mission_1 = "chu' SaH.",
 		mission_2 = "De' sandwich Hegh.",
 		mission_3 = "Qong.",
+
+		preparing_food = "QeS 'oH 'ejwIvmoH.",
+		prepare_food = "tan ~INPUT_CONTEXT~ Hoch 'oH",
+		cleaning_desk = "Ha'DIbaHpu' jIl",
+		clean_desk = "tan ~INPUT_CONTEXT~ Hoch jIl",
+		making_bed = "'or 'ejwIv",
+		make_bed = "tan ~INPUT_CONTEXT~ Hoch 'or",
+		aligning_cone = "luch 'ISmoH cone.",
+		align_cone = "ghItlh ~INPUT_CONTEXT~ Doch cone traffic chen.",
+		inspecting_sprinkler = "quvHa' SoH.",
+		inspect_sprinkler = "~INPUT_CONTEXT~ Doch sprinkler quvHa'.",
+		watering_plant = "bIQ botany.",
+		water_plant = "~INPUT_CONTEXT~ Doch botany bIQ.",
+		organizing_weights = "law' weights.",
+		organize_weights = "~INPUT_CONTEXT~ Doch weights law'.",
+
+		upstairs_notification = "ghaHpu' upstairs yIghel.",
 
 		mission_blip = "Jail Mission",
 

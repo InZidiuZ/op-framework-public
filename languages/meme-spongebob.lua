@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["meme-spongebob"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		invisibility_command_parameter_server_id = "server id, matey!",
 		invisibility_command_parameter_server_id_help = "If ye be wantin' t' toggle some other scurvy dog's invisibility.",
 		invisibility_command_substitutes = "inv, invis, invisible, avast!",
+
+		invisibility_mode_command = "bikini_bottom_blending_mode",
+		invisibility_mode_command_help = "Get ready for wearing your invisible pants. You can either choose 'complete' (only Mr. Krabs and up can see you wiggling your toesies) or 'regular' (everyone with peek on can catch you in the act).",
+		invisibility_mode_command_parameter_mode = "toe_wiggling_mode",
+		invisibility_mode_command_parameter_mode_help = "Options are either 'complete' for complete invisibility or 'regular' for ordinary visibility.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isolate_player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 	invisibility = {
 		invisibility_on = "Toggle invisibility on.",
 		invisibility_off = "Toggle invisibility off.",
+		invalid_invisibility_mode = "Oops! Looks like you dropped your anchor. Stick to 'complete' or 'regular', okay?",
+		invisibility_mode_full = "In the language of SpongeBob, you've become invisibobble like Gary the Snail does. Jellyfishers can't spot you.",
+		invisibility_mode_normal = "Back to Bikini Bottom reality! No more invisibobble mode, so SpongeBob's pals can see ya again.",
 
 		toggled_invisibility = "Successfully toggled ${displayName}'s invisibility.",
 		failed_invisibility = "Failed to toggle ${displayName}'s invisibility.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["meme-spongebob"] = {
 		mission_1 = "Scrubbin' the deck!",
 		mission_2 = "Devourin' a sandwich like it's Barnacle Boy's belt!",
 		mission_3 = "Pumpin' iron to stay in shape!",
+
+		preparing_food = "Whippin' up some Krabby Patties for the cellmates.",
+		prepare_food = "Give the magic touch and press ~INPUT_CONTEXT~ for food prep.",
+		cleaning_desk = "Moppin' the deck, uh, desk.",
+		clean_desk = "Grab your spatula and press ~INPUT_CONTEXT~ to tidy up the desk.",
+		making_bed = "Tuckin' in the sheets to make the bed as neat as Squidward's clarinet playing.",
+		make_bed = "Put on your square pants and press ~INPUT_CONTEXT~ to make the bed look sharp.",
+		aligning_cone = "Ready to roll - aligning the traffic cone for a boatmobile race.",
+		align_cone = "Press ~INPUT_CONTEXT~ to align the traffic cone, me boyo!",
+		inspecting_sprinkler = "Inspecting the sprinkler, aye!",
+		inspect_sprinkler = "Press ~INPUT_CONTEXT~ to inspect the sprinkler, arr!",
+		watering_plant = "Watering the plant, aye aye captain!",
+		water_plant = "Press ~INPUT_CONTEXT~ to water the plant, ya hoot!",
+		organizing_weights = "Organizing the weights, ready for lifting!",
+		organize_weights = "Press ~INPUT_CONTEXT~ to organize the weights, argh!",
+
+		upstairs_notification = "This task is upstairs, above the sea pineapple!",
 
 		mission_blip = "Jail Mission, argh!",
 

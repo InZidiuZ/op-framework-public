@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["sv-SE"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		invisibility_command_parameter_server_id = "servers ID",
 		invisibility_command_parameter_server_id_help = "Om du vill växla osynligheten för någon annan.",
 		invisibility_command_substitutes = "inv, osynlig, osynlighet",
+
+		invisibility_mode_command = "osynlighetsläge",
+		invisibility_mode_command_help = "Ställ in ditt osynlighetsläge. Kan antingen vara 'full' (är synlig endast för seniorStaff+ när osynlig) eller 'normal' (är synlig för all personal med peek på).",
+		invisibility_mode_command_parameter_mode = "läge",
+		invisibility_mode_command_parameter_mode_help = "Kan vara antingen 'full' för full osynlighet eller 'normal' för vanlig synlighet.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isolate_player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["sv-SE"] = {
 	invisibility = {
 		invisibility_on = "Osynlighet aktiverad.",
 		invisibility_off = "Osynlighet avaktiverad.",
+		invalid_invisibility_mode = "Ogiltigt osynlighetsläge. Måste vara 'full' eller 'normal'.",
+		invisibility_mode_full = "Osynlighetsläge inställt på 'fullt'. Vanliga personalmedlemmar kan inte se dig.",
+		invisibility_mode_normal = "Osynlighetsläge inställt på 'normalt'. Vanliga personalmedlemmar kan nu se dig.",
 
 		toggled_invisibility = "Osynligheten har framgångsrikt aktiverats för ${displayName}.",
 		failed_invisibility = "Det gick inte att aktivera osynlighet för ${displayName}.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["sv-SE"] = {
 		mission_1 = "Städa golvet.",
 		mission_2 = "Äta en smörgås.",
 		mission_3 = "Träna.",
+
+		preparing_food = "Förbereder mat åt andra intagna.",
+		prepare_food = "Tryck på ~INPUT_CONTEXT~ för att förbereda mat.",
+		cleaning_desk = "Städar skrivbordet.",
+		clean_desk = "Tryck på ~INPUT_CONTEXT~ för att städa skrivbordet.",
+		making_bed = "Bäddar sängen.",
+		make_bed = "Tryck på ~INPUT_CONTEXT~ för att bädda sängen.",
+		aligning_cone = "Justering av trafikkonen.",
+		align_cone = "Tryck på ~INPUT_CONTEXT~ för att rätta till trafikkonen.",
+		inspecting_sprinkler = "Inspekterar sprinklern.",
+		inspect_sprinkler = "Tryck på ~INPUT_CONTEXT~ för att inspektera sprinklern.",
+		watering_plant = "Vattnar växten.",
+		water_plant = "Tryck på ~INPUT_CONTEXT~ för att vattna växten.",
+		organizing_weights = "Organiserar vikterna.",
+		organize_weights = "Tryck på ~INPUT_CONTEXT~ för att organisera vikterna.",
+
+		upstairs_notification = "Denna uppgift är på övervåningen.",
 
 		mission_blip = "Fängebelsesmission",
 

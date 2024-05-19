@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["fi-FI"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		invisibility_command_parameter_server_id = "palvelimen ID",
 		invisibility_command_parameter_server_id_help = "Jos haluat vaihtaa jonkun toisen näkymättömyyden tilaa.",
 		invisibility_command_substitutes = "inv, invis, näkymätön",
+
+		invisibility_mode_command = "näkymättömyystila",
+		invisibility_mode_command_help = "Aseta näkymättömyystilasi. Voi olla joko 'täysi' (olet näkyvissä vain seniorStaff+ -henkilöille näkymättömänä) tai 'normaali' (olet näkyvissä kaikille henkilökunnalle, joilla on kurkistus päällä).",
+		invisibility_mode_command_parameter_mode = "tila",
+		invisibility_mode_command_parameter_mode_help = "Voi olla joko 'täysi' täydellistä näkymättömyyttä varten tai 'normaali' säännöllistä näkyvyyttä varten.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "eristä_pelaaja",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["fi-FI"] = {
 	invisibility = {
 		invisibility_on = "Pysymättömyys päällä.",
 		invisibility_off = "Näkymättömyys pois päältä.",
+		invalid_invisibility_mode = "Virheellinen näkymättömyystila. Tulee olla 'täysi' tai 'normaali'.",
+		invisibility_mode_full = "Näkymättömyystila asetettu 'täysiksi'. Tavalliset henkilökunnan jäsenet eivät näe sinua.",
+		invisibility_mode_normal = "Näkymättömyystila asetettu 'normaaliksi'. Tavalliset henkilökunnan jäsenet voivat nyt nähdä sinut.",
 
 		toggled_invisibility = "${displayName}'n näkymättömyys onnistuneesti vaihdettu päälle/pois päältä.",
 		failed_invisibility = "Epäonnistui ${displayName}'n näkymättömyyden vaihtaminen.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		mission_1 = "Lattian siivous.",
 		mission_2 = "Voileivän syöminen.",
 		mission_3 = "Liikunta.",
+
+		preparing_food = "Valmistetaan ruokaa muille vangeille.",
+		prepare_food = "Paina ~INPUT_CONTEXT~ valmistaaksesi ruokaa.",
+		cleaning_desk = "Siivotaan työpöytä.",
+		clean_desk = "Paina ~INPUT_CONTEXT~ siivotaksesi työpöydän.",
+		making_bed = "Sijataan sänkyä.",
+		make_bed = "Paina ~INPUT_CONTEXT~ sijatakseksi sängyn.",
+		aligning_cone = "Suoristetaan liikennemerkkiä.",
+		align_cone = "Paina ~INPUT_CONTEXT~, jotta suuntaat liikennemerkkiä.",
+		inspecting_sprinkler = "Tarkastetaan sadettajaa.",
+		inspect_sprinkler = "Paina ~INPUT_CONTEXT~, jotta voit tarkastaa sadettajaa.",
+		watering_plant = "Kastellaan kasvia.",
+		water_plant = "Paina ~INPUT_CONTEXT~, jotta voit kastella kasvia.",
+		organizing_weights = "Järjestetään painoja.",
+		organize_weights = "Paina ~INPUT_CONTEXT~, jotta voit järjestää painoja.",
+
+		upstairs_notification = "Tämä tehtävä on yläkerrassa.",
 
 		mission_blip = "Vankilatehtävä",
 

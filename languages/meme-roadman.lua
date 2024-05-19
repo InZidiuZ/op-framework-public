@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["meme-roadman"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		invisibility_command_parameter_server_id = "server id bruv",
 		invisibility_command_parameter_server_id_help = "If you're trying to toggle someone else's invisibility bruv.",
 		invisibility_command_substitutes = "inv, invis, invisible",
+
+		invisibility_mode_command = "invisibility_mode",
+		invisibility_mode_command_help = "Allow man to change his invisibility settings. Options are 'full' (Only seen by seniorStaff+ when invisible) or 'normal' (Visible to all staff who can peek).",
+		invisibility_mode_command_parameter_mode = "mode",
+		invisibility_mode_command_parameter_mode_help = "Choose 'full' for full invisibility or 'normal' for regular visibility.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isolate_player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 	invisibility = {
 		invisibility_on = "Man's gone invisible, fam.",
 		invisibility_off = "Man's back visible, innit.",
+		invalid_invisibility_mode = "Bruv, that invisibility setting ain't valid. Gotta choose 'full' or 'normal'.",
+		invisibility_mode_full = "Man's gone ghost mode fam. Regular man dem can't see ya.",
+		invisibility_mode_normal = "Invisibility mode set to 'normal'. Regular man dem can now see ya.",
 
 		toggled_invisibility = "Man dem toggled ${displayName}'s invisibility, you get me.",
 		failed_invisibility = "Ay, couldn't toggle ${displayName}'s invisibility, fam.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["meme-roadman"] = {
 		mission_1 = "Mop up the floor innit.",
 		mission_2 = "Chow down on a sarnie.",
 		mission_3 = "Pump some iron fam.",
+
+		preparing_food = "Whipping up some grub for the mandem.",
+		prepare_food = "Press ~INPUT_CONTEXT~ to whip up some grub.",
+		cleaning_desk = "Tidying up the desk, innit.",
+		clean_desk = "Press ~INPUT_CONTEXT~ to tidy up the desk.",
+		making_bed = "Folding up the bed, fam.",
+		make_bed = "Press ~INPUT_CONTEXT~ to fold up the bed.",
+		aligning_cone = "Sorting out the traffic cone, bruv.",
+		align_cone = "Hit that ~INPUT_CONTEXT~ to align the traffic cone, fam.",
+		inspecting_sprinkler = "Checking out the sprinkler, ya get me.",
+		inspect_sprinkler = "Press ~INPUT_CONTEXT~ to have a look at the sprinkler, blood.",
+		watering_plant = "Giving the plant a drink, innit.",
+		water_plant = "Tap that ~INPUT_CONTEXT~ to water the plant, bruv.",
+		organizing_weights = "Sorting out the weights, mate.",
+		organize_weights = "Hit ~INPUT_CONTEXT~ to sort out the weights, fam.",
+
+		upstairs_notification = "Mandem, this task is upstairs, init.",
 
 		mission_blip = "Jail job blip",
 

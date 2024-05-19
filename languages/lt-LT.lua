@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["lt-LT"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		invisibility_command_parameter_server_id = "serverio ID",
 		invisibility_command_parameter_server_id_help = "Jei norite perjungti kažkurio kito nematomumą.",
 		invisibility_command_substitutes = "inv, invis, nemat",
+
+		invisibility_mode_command = "ne_matomumo_režimas",
+		invisibility_mode_command_help = "Nustatyti savo nematomumo režimą. Gali būti 'pilnas' (matomi tik viršininkams+ kai esi nematomas) arba 'įprastas' (matomi visiems personalui, kurie turi galimybę 'vogti').",
+		invisibility_mode_command_parameter_mode = "režimas",
+		invisibility_mode_command_parameter_mode_help = "Gali būti 'pilnas' pilnam matomumui arba 'įprastas' įprastai matomumui.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "izoliuoti žaidėją",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["lt-LT"] = {
 	invisibility = {
 		invisibility_on = "Įjungtas nerodymas.",
 		invisibility_off = "Išjungtas nematomumas.",
+		invalid_invisibility_mode = "Neteisingas nematomumo režimas. Turi būti 'pilnas' arba 'įprastas'.",
+		invisibility_mode_full = "Nematomumo režimas nustatytas kaip 'pilnas'. Paprasti personalo nariai tavęs nematys.",
+		invisibility_mode_normal = "Nematomumo režimas nustatytas kaip 'normalus'. Paprasti personalo nariai dabar tavęs mato.",
 
 		toggled_invisibility = "Sėkmingai perkeltas ${displayName} nematomumas.",
 		failed_invisibility = "Nepavyko perkelti ${displayName} nematomumo.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		mission_1 = "Valyti grindis.",
 		mission_2 = "Valgyti sumuštini.",
 		mission_3 = "Sportuoti.",
+
+		preparing_food = "Gaminamas maistas kitiems kaliniams.",
+		prepare_food = "Spauskite ~INPUT_CONTEXT~, kad paruoštumėte maistą.",
+		cleaning_desk = "Valo stalą.",
+		clean_desk = "Spauskite ~INPUT_CONTEXT~, kad išvalytumėte stalą.",
+		making_bed = "Dengiamas lova.",
+		make_bed = "Spauskite ~INPUT_CONTEXT~, kad padengtumėte lovą.",
+		aligning_cone = "Lyginamas eismo ženklas.",
+		align_cone = "Paspauskite ~INPUT_CONTEXT~, kad išlygintumėte eismo ženklą.",
+		inspecting_sprinkler = "Tiriamas purkštuvas.",
+		inspect_sprinkler = "Paspauskite ~INPUT_CONTEXT~, kad patikrintumėte purkštuvo veikimą.",
+		watering_plant = "Laistoma augalija.",
+		water_plant = "Paspauskite ~INPUT_CONTEXT~, kad palaistytumėte augaliją.",
+		organizing_weights = "Svorio rinkiniai tvarkomi.",
+		organize_weights = "Paspauskite ~INPUT_CONTEXT~, kad sutvarkytumėte svorio rinkinius.",
+
+		upstairs_notification = "Ši užduotis yra aukščiau.",
 
 		mission_blip = "Kalėjimo misija",
 

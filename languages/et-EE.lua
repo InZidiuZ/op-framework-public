@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["et-EE"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["et-EE"] = {
 		invisibility_command_parameter_server_id = "serveri ID",
 		invisibility_command_parameter_server_id_help = "Kui soovite lülitada kellegi teise nähtamatusse.",
 		invisibility_command_substitutes = "inv, invis, nähtumatu",
+
+		invisibility_mode_command = "invisibility_mode",
+		invisibility_mode_command_help = "Määrake oma nähtamatusrežiim. Võib olla kas 'täis' (oled nähtav ainult vanemadministraatoritele+ oma nähtamatusrežiimil) või 'tavaline' (oled nähtav kõigile administraatoritele, kellel on piiluv).",
+		invisibility_mode_command_parameter_mode = "režiim",
+		invisibility_mode_command_parameter_mode_help = "Võib olla kas 'täis' täielikuks nähtamatuseks või 'tavaline' tavaliseks nähtavuseks.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isoleeri_mängija",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["et-EE"] = {
 	invisibility = {
 		invisibility_on = "Lülitati nähtamatus sisse.",
 		invisibility_off = "Lülitati nähtamatus välja.",
+		invalid_invisibility_mode = "Vigane nähtamatuse režiim. Peab olema 'täis' või 'tavaline'.",
+		invisibility_mode_full = "Nähtamatusrežiim on seatud 'täis'. Tavalised töötajad ei näe sind.",
+		invisibility_mode_normal = "Nähtamatusrežiim on seatud 'tavaline'. Tavalised töötajad näevad sind nüüd.",
 
 		toggled_invisibility = "Nähtamatus on edukalt lülitatud kasutajale ${displayName}.",
 		failed_invisibility = "Ei õnnestunud kasutaja ${displayName} nähtamatust lülitada.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["et-EE"] = {
 		mission_1 = "Põranda koristamine.",
 		mission_2 = "Võileiva söömine.",
 		mission_3 = "Treenimine.",
+
+		preparing_food = "Valmistad toitu teistele vangidele.",
+		prepare_food = "Vajuta ~INPUT_CONTEXT~, et toitu valmistada.",
+		cleaning_desk = "Laua puhastamine.",
+		clean_desk = "Vajuta ~INPUT_CONTEXT~, et lauda puhastada.",
+		making_bed = "Voodi tegemine.",
+		make_bed = "Vajuta ~INPUT_CONTEXT~, et voodit teha.",
+		aligning_cone = "Tõkkekonede joondamine.",
+		align_cone = "Vajuta ~INPUT_CONTEXT~, et liigutada liiklusmärki.",
+		inspecting_sprinkler = "Vaatad niisutajat.",
+		inspect_sprinkler = "Vajuta ~INPUT_CONTEXT~, et niisutajat vaadata.",
+		watering_plant = "Kastad taime.",
+		water_plant = "Vajuta ~INPUT_CONTEXT~, et taime kasta.",
+		organizing_weights = "Korraldad raskused.",
+		organize_weights = "Vajuta ~INPUT_CONTEXT~, et raskusi korraldada.",
+
+		upstairs_notification = "See ülesanne on teisel korrusel.",
 
 		mission_blip = "Vangla missioon",
 

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["tr-TR"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		invisibility_command_parameter_server_id = "sunucu id'si",
 		invisibility_command_parameter_server_id_help = "Başka birinin görünmezliğini açmak veya kapatmak istiyorsanız.",
 		invisibility_command_substitutes = "görünmez, görünürlük, gizlilik",
+
+		invisibility_mode_command = "görünmezlik_modu",
+		invisibility_mode_command_help = "Görünmezlik modunu ayarlar. Sadece 'tam' (tamamen görünmezken yalnızca üst personel tarafından görülebilirsiniz) veya 'normal' (görünürken tüm personele görünebilirsiniz) olabilir.",
+		invisibility_mode_command_parameter_mode = "mod",
+		invisibility_mode_command_parameter_mode_help = "'tam' için tam görünmezlik veya 'normal' için normal görünürlük olabilir.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "oyuncu_izole_et",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 	invisibility = {
 		invisibility_on = "Görünmezlik açıldı.",
 		invisibility_off = "Görünmezlik kapatıldı.",
+		invalid_invisibility_mode = "Geçersiz görünmezlik modu. 'tam' veya 'normal' olmalıdır.",
+		invisibility_mode_full = "Görünmezlik modu 'tam' olarak ayarlandı. Normal personel seni göremez.",
+		invisibility_mode_normal = "Görünmezlik modu 'normal' olarak ayarlandı. Normal personel artık seni görebilir.",
 
 		toggled_invisibility = "${displayName}'ın görünmezliği başarıyla değiştirildi.",
 		failed_invisibility = "${displayName}'ın görünmezliğini değiştirmek başarısız oldu.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		mission_1 = "Zemini temizleme.",
 		mission_2 = "Sandviç yeme.",
 		mission_3 = "Spor yapma.",
+
+		preparing_food = "Diğer mahkumlar için yemek hazırlanıyor.",
+		prepare_food = "Yemek hazırlamak için ~INPUT_CONTEXT~ tuşuna basın.",
+		cleaning_desk = "Masayı temizlemek.",
+		clean_desk = "Masa temizlemek için ~INPUT_CONTEXT~ tuşuna basın.",
+		making_bed = "Yatak yapma.",
+		make_bed = "Yatak yapmak için ~INPUT_CONTEXT~ tuşuna basın.",
+		aligning_cone = "Trafik konisini hizalama.",
+		align_cone = "Trafik konisini hizalamak için ~INPUT_CONTEXT~ tuşuna basın.",
+		inspecting_sprinkler = "Sulama sistemi kontrol ediliyor.",
+		inspect_sprinkler = "Sulama sistemi kontrol etmek için ~INPUT_CONTEXT~ tuşuna basın.",
+		watering_plant = "Bitki sulanıyor.",
+		water_plant = "Bitkiyi sulamak için ~INPUT_CONTEXT~ tuşuna basın.",
+		organizing_weights = "Ağırlıklar düzenleniyor.",
+		organize_weights = "Ağırlıkları düzenlemek için ~INPUT_CONTEXT~ tuşuna basın.",
+
+		upstairs_notification = "Bu görev üst katta.",
 
 		mission_blip = "Hapishane Görevi",
 

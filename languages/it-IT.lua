@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["it-IT"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 		invisibility_command_parameter_server_id = "ID del server",
 		invisibility_command_parameter_server_id_help = "Se vuoi attivare/disattivare l'invisibilità di qualcun altro.",
 		invisibility_command_substitutes = "inv, invis, invisibile",
+
+		invisibility_mode_command = "modalità_invisibilità",
+		invisibility_mode_command_help = "Imposta la tua modalità di invisibilità. Può essere 'completa' (sei visibile solo al personale senior + mentre sei invisibile) o 'normale' (sei visibile a tutto il personale che ha il permesso).",
+		invisibility_mode_command_parameter_mode = "modalità",
+		invisibility_mode_command_parameter_mode_help = "Può essere 'completa' per l'invisibilità totale o 'normale' per la visibilità normale.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isolate_player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["it-IT"] = {
 	invisibility = {
 		invisibility_on = "Invisibilità attivata.",
 		invisibility_off = "Invisibilità disattivata.",
+		invalid_invisibility_mode = "Modalità di invisibilità non valida. Deve essere 'completa' o 'normale'.",
+		invisibility_mode_full = "Modalità invisibilità impostata su 'completa'. I membri dello staff regolare non possono vederti.",
+		invisibility_mode_normal = "Modalità invisibilità impostata su 'normale'. I membri dello staff regolare possono vederti ora.",
 
 		toggled_invisibility = "Invisibilità di ${displayName} attivata con successo.",
 		failed_invisibility = "Impossibile attivare l'invisibilità di ${displayName}.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["it-IT"] = {
 		mission_1 = "Pulizia del pavimento.",
 		mission_2 = "Mangiare un panino.",
 		mission_3 = "Allenamento.",
+
+		preparing_food = "Preparazione del cibo per gli altri detenuti.",
+		prepare_food = "Premi ~INPUT_CONTEXT~ per preparare il cibo.",
+		cleaning_desk = "Pulizia della scrivania.",
+		clean_desk = "Premi ~INPUT_CONTEXT~ per pulire la scrivania.",
+		making_bed = "Fare il letto.",
+		make_bed = "Premi ~INPUT_CONTEXT~ per fare il letto.",
+		aligning_cone = "Allineamento del cono del traffico.",
+		align_cone = "Premi ~INPUT_CONTEXT~ per allineare il cono del traffico.",
+		inspecting_sprinkler = "Ispezione dell'irrigatore.",
+		inspect_sprinkler = "Premi ~INPUT_CONTEXT~ per ispezionare l'irrigatore.",
+		watering_plant = "Annaffiare la pianta.",
+		water_plant = "Premi ~INPUT_CONTEXT~ per annaffiare la pianta.",
+		organizing_weights = "Organizzazione dei pesi.",
+		organize_weights = "Premi ~INPUT_CONTEXT~ per organizzare i pesi.",
+
+		upstairs_notification = "Questo compito è al piano di sopra.",
 
 		mission_blip = "Missione Carcere",
 

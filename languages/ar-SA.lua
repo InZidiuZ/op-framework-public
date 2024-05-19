@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["ar-SA"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		invisibility_command_parameter_server_id = "معرّف الخادم",
 		invisibility_command_parameter_server_id_help = "إذا كنت ترغب في تبديل ظهور شخص آخر غير المرئي.",
 		invisibility_command_substitutes = "تبويب، غير مرئي، غير مرئيّة",
+
+		invisibility_mode_command = "وضع الخفاء",
+		invisibility_mode_command_help = "قم بتعيين وضع الخفاء الخاص بك. يمكن أن يكون إما 'كامل' (لا يمكن رؤيتك إلا من قبل كبار الموظفين وما فوق أثناء الخفاء) أو 'عادي' (يمكن رؤيتك من جميع أعضاء الفريق الذين لديهم صلاحيات المشاهدة).",
+		invisibility_mode_command_parameter_mode = "الوضع",
+		invisibility_mode_command_parameter_mode_help = "يمكن أن يكون إما 'كامل' للخفاء الكامل أو 'عادي' للرؤية العادية.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isolate_player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 	invisibility = {
 		invisibility_on = "تم تبديل الاختفاء إلى التشغيل.",
 		invisibility_off = "تم تبديل الاختفاء إلى الإيقاف.",
+		invalid_invisibility_mode = "وضع الخفاء غير صالح. يجب أن يكون 'كامل' أو 'عادي'.",
+		invisibility_mode_full = "تم تعيين وضع الخفاء إلى 'كامل'. لا يستطيع أعضاء الطاقم العادي رؤيتك.",
+		invisibility_mode_normal = "تم تعيين وضع الخفاء إلى 'عادي'. يمكن لأعضاء الطاقم العادي رؤيتك الآن.",
 
 		toggled_invisibility = "تم تبديل الاختفاء بنجاح لـ ${displayName}.",
 		failed_invisibility = "فشل في تبديل الاختفاء لـ ${displayName}.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		mission_1 = "تنظيف الأرضيات.",
 		mission_2 = "أكل شطيرة.",
 		mission_3 = "التمرين الرياضي.",
+
+		preparing_food = "جاري تحضير الطعام للسجناء الآخرين.",
+		prepare_food = "اضغط على ~INPUT_CONTEXT~ لتحضير الطعام.",
+		cleaning_desk = "جاري تنظيف المكتب.",
+		clean_desk = "اضغط على ~INPUT_CONTEXT~ لتنظيف المكتب.",
+		making_bed = "جاري ترتيب السرير.",
+		make_bed = "اضغط على ~INPUT_CONTEXT~ لترتيب السرير.",
+		aligning_cone = "جاري توجيه مخروط المرور.",
+		align_cone = "اضغط ~INPUT_CONTEXT~ لتوجيه مخروط المرور.",
+		inspecting_sprinkler = "فحص الرشاش.",
+		inspect_sprinkler = "اضغط ~INPUT_CONTEXT~ لفحص الرشاش.",
+		watering_plant = "ري النبات.",
+		water_plant = "اضغط ~INPUT_CONTEXT~ لسقي النبات.",
+		organizing_weights = "تنظيم الأوزان.",
+		organize_weights = "اضغط ~INPUT_CONTEXT~ لتنظيم الأوزان.",
+
+		upstairs_notification = "هذه المهمة في الطابق العلوي.",
 
 		mission_blip = "مهمة السجن",
 

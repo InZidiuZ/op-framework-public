@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["meme-habibi"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		invisibility_command_parameter_server_id = "id خادم",
 		invisibility_command_parameter_server_id_help = "If yo wanna toggle someone else's invisibility, habibi.",
 		invisibility_command_substitutes = "خفاء, غير مرئي",
+
+		invisibility_mode_command = "invisibility_mode",
+		invisibility_mode_command_help = "Set your invisibility mode. Can be either 'full' (you are only visible to seniorStaff+ while invisible) or 'normal' (you are visible to all staff who have peek on).",
+		invisibility_mode_command_parameter_mode = "mode",
+		invisibility_mode_command_parameter_mode_help = "Can be either 'full' for full invisibility or 'normal' for regular visibility.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "ihajek_player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 	invisibility = {
 		invisibility_on = "Toggled invisibility on. (Toglet invisibility en.)",
 		invisibility_off = "Toggled invisibility off. (Toglet invisibility off.)",
+		invalid_invisibility_mode = "Invalid invisibility mode. Has to be 'full' or 'normal'.",
+		invisibility_mode_full = "Invisibility mode set to 'full'. The regular staff can't see you.",
+		invisibility_mode_normal = "Invisibility mode set to 'normal'. Regular staff can now see you.",
 
 		toggled_invisibility = "Successfully toggled ${displayName}'s invisibility. (Invisibility toggled successfully for ${displayName}.)",
 		failed_invisibility = "Failed to toggle ${displayName}'s invisibility. (Failed to toggle invisibility for ${displayName}.)",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["meme-habibi"] = {
 		mission_1 = "Cleaning the floor. (تنظيف الأرضية).",
 		mission_2 = "Eating a sandwich. (تناول شطيرة).",
 		mission_3 = "Working out. (ممارسة التمارين الرياضية).",
+
+		preparing_food = "Preparing food for other prisoners.",
+		prepare_food = "Press ~INPUT_CONTEXT~ to prepare food.",
+		cleaning_desk = "Cleaning the desk.",
+		clean_desk = "Press ~INPUT_CONTEXT~ to clean the desk.",
+		making_bed = "Making the bed.",
+		make_bed = "Press ~INPUT_CONTEXT~ to make the bed.",
+		aligning_cone = "Aligning the traffic cone.",
+		align_cone = "كبس ~INPUT_CONTEXT~ لتحديد موضع المخروط المروري.",
+		inspecting_sprinkler = "فحص الرشاش.",
+		inspect_sprinkler = "كبس ~INPUT_CONTEXT~ لفحص الرشاش.",
+		watering_plant = "سقي النبات.",
+		water_plant = "كبس ~INPUT_CONTEXT~ لسقي النبات.",
+		organizing_weights = "تنظيم الأثقال.",
+		organize_weights = "كبس ~INPUT_CONTEXT~ لتنظيم الأثقال.",
+
+		upstairs_notification = "هذه المهمة في الطابق العلوي.",
 
 		mission_blip = "Jail Mission (مهمة السجن).",
 

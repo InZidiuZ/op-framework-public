@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		invisibility_command_parameter_server_id = "server-id",
 		invisibility_command_parameter_server_id_help = "Als je de onzichtbaarheid van iemand anders wilt in- of uitschakelen.",
 		invisibility_command_substitutes = "inv, invis, onzichtbaar",
+
+		invisibility_mode_command = "onzichtbaarheidsmodus",
+		invisibility_mode_command_help = "Stel je onzichtbaarheidsmodus in. Kan 'volledig' zijn (je bent alleen zichtbaar voor seniorStaff+ terwijl je onzichtbaar bent) of 'normaal' (je bent zichtbaar voor al het personeel dat peek heeft).",
+		invisibility_mode_command_parameter_mode = "modus",
+		invisibility_mode_command_parameter_mode_help = "Kan 'volledig' zijn voor volledige onzichtbaarheid of 'normaal' voor reguliere zichtbaarheid.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isolate_player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	invisibility = {
 		invisibility_on = "Invisibility aan.",
 		invisibility_off = "Invisibility uit.",
+		invalid_invisibility_mode = "Ongeldige onzichtbaarheidsmodus. Moet 'volledig' of 'normaal' zijn.",
+		invisibility_mode_full = "Onzichtbaarheidsmodus ingesteld op 'volledig'. Gewone medewerkers kunnen je niet zien.",
+		invisibility_mode_normal = "Onzichtbaarheidsmodus ingesteld op 'normaal'. Gewone medewerkers kunnen je nu zien.",
 
 		toggled_invisibility = "Invisibility succesvol aan/uit gezet voor ${displayName}.",
 		failed_invisibility = "Invisibility aan/uit zetten voor ${displayName} mislukt.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		mission_1 = "De vloer schoonmaken.",
 		mission_2 = "Een boterham eten.",
 		mission_3 = "Trainen.",
+
+		preparing_food = "Voedsel bereiden voor andere gevangenen.",
+		prepare_food = "Druk op ~INPUT_CONTEXT~ om voedsel te bereiden.",
+		cleaning_desk = "Het bureau schoonmaken.",
+		clean_desk = "Druk op ~INPUT_CONTEXT~ om het bureau schoon te maken.",
+		making_bed = "Het bed opmaken.",
+		make_bed = "Druk op ~INPUT_CONTEXT~ om het bed op te maken.",
+		aligning_cone = "Het verkeerskegeltje uitlijnen.",
+		align_cone = "Druk op ~INPUT_CONTEXT~ om de verkeerskegel te plaatsen.",
+		inspecting_sprinkler = "Inspecteren van de sproeier.",
+		inspect_sprinkler = "Druk op ~INPUT_CONTEXT~ om de sproeier te inspecteren.",
+		watering_plant = "De plant water geven.",
+		water_plant = "Druk op ~INPUT_CONTEXT~ om de plant water te geven.",
+		organizing_weights = "Gewichten organiseren.",
+		organize_weights = "Druk op ~INPUT_CONTEXT~ om de gewichten te organiseren.",
+
+		upstairs_notification = "Deze taak bevindt zich boven.",
 
 		mission_blip = "Gevangenismissie",
 

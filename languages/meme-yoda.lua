@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["meme-yoda"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		invisibility_command_parameter_server_id = "server id",
 		invisibility_command_parameter_server_id_help = "Toggle, you can, someone else's invisibility, if wanting.",
 		invisibility_command_substitutes = "inv, invis, invisible",
+
+		invisibility_mode_command = "invisibility_mode",
+		invisibility_mode_command_help = "Set your invisibility mode, you must. Can be 'full' (visible to seniorStaff+ only when invisible) or 'normal' (visible to all staff with peek on).",
+		invisibility_mode_command_parameter_mode = "mode",
+		invisibility_mode_command_parameter_mode_help = "Choose you must, 'full' for full invisibility or 'normal' for regular visibility.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isolate_player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	invisibility = {
 		invisibility_on = "Invisibility toggled on, it has.",
 		invisibility_off = "Invisibility toggled off, it has.",
+		invalid_invisibility_mode = "Invalid invisibility mode, it is. 'Full' or 'normal' it must be.",
+		invisibility_mode_full = "Invisibility mode set to 'full'. You, regular staff members cannot see.",
+		invisibility_mode_normal = "Invisibility mode set to 'normal'. You, regular staff members can now see.",
 
 		toggled_invisibility = "Invisibility of ${displayName} toggled successfully, it has.",
 		failed_invisibility = "Failed to toggle invisibility of ${displayName}, it has.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		mission_1 = "The floor, cleaning you shall be.",
 		mission_2 = "A sandwich, eating you will be.",
 		mission_3 = "Working out, mm?",
+
+		preparing_food = "Preparing food for other inmates, you are.",
+		prepare_food = "Press ~INPUT_CONTEXT~ to food prepare.",
+		cleaning_desk = "Cleaning the desk, you are.",
+		clean_desk = "Press ~INPUT_CONTEXT~ to desk clean.",
+		making_bed = "Making the bed, you are.",
+		make_bed = "Press ~INPUT_CONTEXT~ to bed make.",
+		aligning_cone = "Aligning the traffic cone, you are.",
+		align_cone = "Press ~INPUT_CONTEXT~ to align, the traffic cone. Yes, hmmm.",
+		inspecting_sprinkler = "Inspecting the sprinkler. Hmmm, yes.",
+		inspect_sprinkler = "Press ~INPUT_CONTEXT~ to inspect, the sprinkler. Yes, hmmm.",
+		watering_plant = "Watering, the plant. Hmmm.",
+		water_plant = "Press ~INPUT_CONTEXT~ to water, the plant. Yes, hmmm.",
+		organizing_weights = "Organizing, the weights. Hmmm.",
+		organize_weights = "Press ~INPUT_CONTEXT~ to organize, the weights. Yes, hmmm.",
+
+		upstairs_notification = "This task is, upstairs. Hmmm.",
 
 		mission_blip = "Jail Mission, there is.",
 

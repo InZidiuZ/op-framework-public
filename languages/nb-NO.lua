@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["nb-NO"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		invisibility_command_parameter_server_id = "server id",
 		invisibility_command_parameter_server_id_help = "Hvis du ønsker å slå av/på usynligheten til en annen spiller.",
 		invisibility_command_substitutes = "inv, invis, usynlig",
+
+		invisibility_mode_command = "usynlighetsmodus",
+		invisibility_mode_command_help = "Angi usynlighetsmodusen din. Kan enten være 'full' (du er bare synlig for seniorstab og høyere mens du er usynlig) eller 'normal' (du er synlig for all stab som har tittet på).",
+		invisibility_mode_command_parameter_mode = "modus",
+		invisibility_mode_command_parameter_mode_help = "Kan være enten 'full' for full usynlighet eller 'normal' for vanlig synlighet.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isoler_spiller",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["nb-NO"] = {
 	invisibility = {
 		invisibility_on = "Skjult modus aktivert.",
 		invisibility_off = "Skjult modus deaktivert.",
+		invalid_invisibility_mode = "Ugyldig usynlighetsmodus. Må være 'full' eller 'normal'.",
+		invisibility_mode_full = "Usynlighetsmodus satt til 'full'. Vanlige stabmedlemmer kan ikke se deg.",
+		invisibility_mode_normal = "Usynlighetsmodus satt til 'normal'. Vanlige stabmedlemmer kan nå se deg.",
 
 		toggled_invisibility = "Skjult modus har blitt aktivert for ${displayName}.",
 		failed_invisibility = "Kunne ikke aktivere skjult modus for ${displayName}.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["nb-NO"] = {
 		mission_1 = "Rengjør gulvet.",
 		mission_2 = "Spiser en sandwich.",
 		mission_3 = "Trene.",
+
+		preparing_food = "Forbereder mat til andre innsatte.",
+		prepare_food = "Trykk ~INPUT_CONTEXT~ for å forberede mat.",
+		cleaning_desk = "Rydder pulten.",
+		clean_desk = "Trykk ~INPUT_CONTEXT~ for å rydde pulten.",
+		making_bed = "Lager sengen.",
+		make_bed = "Trykk ~INPUT_CONTEXT~ for å lage sengen.",
+		aligning_cone = "Justere trafikk-konen.",
+		align_cone = "Trykk ~INPUT_CONTEXT~ for å justere trafikk-kjeglen.",
+		inspecting_sprinkler = "Inspekterer vannsprøyten.",
+		inspect_sprinkler = "Trykk ~INPUT_CONTEXT~ for å inspisere vannsprøyten.",
+		watering_plant = "Vanner planten.",
+		water_plant = "Trykk ~INPUT_CONTEXT~ for å vanne planten.",
+		organizing_weights = "Organiserer vektene.",
+		organize_weights = "Trykk ~INPUT_CONTEXT~ for å organisere vektene.",
+
+		upstairs_notification = "Denne oppgaven er ovenpå.",
 
 		mission_blip = "Fengselsoppdrag",
 

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["meme-minionese"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		invisibility_command_parameter_server_id = "belloca id",
 		invisibility_command_parameter_server_id_help = "Banana tulaliloo baboiii bababa dress.",
 		invisibility_command_substitutes = "inv, invis, invisible",
+
+		invisibility_mode_command = "bananaLanguage_mode",
+		invisibility_mode_command_help = "Bello, set your bananaLanguage mode. Can be either 'potato' (you are only visible to seniorStaff+ while bananaLanguage) or 'banana' (you are visible to all staff who have peek on).",
+		invisibility_mode_command_parameter_mode = "mode",
+		invisibility_mode_command_parameter_mode_help = "Can be either 'potato' for full bananaLanguage or 'banana' for regular bananaLanguage.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isolate_player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 	invisibility = {
 		invisibility_on = "Bello! Toggled invisibility on.",
 		invisibility_off = "Bello! Toggled invisibility off.",
+		invalid_invisibility_mode = "Banana! Invalid bananaLanguage mode. Has to be 'potato' or 'banana'.",
+		invisibility_mode_full = "Bello-bello mode set to 'bello'. Regular staff members can not see you.",
+		invisibility_mode_normal = "Bello-bello mode set to 'normal'. Regular staff members can now see you.",
 
 		toggled_invisibility = "Potato! Successfully toggled ${displayName}'s invisibility.",
 		failed_invisibility = "Banana potato! Failed to toggle ${displayName}'s invisibility.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["meme-minionese"] = {
 		mission_1 = "Banana! Cleaning the floor.",
 		mission_2 = "Bababa... Eating a sandwich.",
 		mission_3 = "Minionese! Working out.",
+
+		preparing_food = "Bee-do-bee-do preparing food for other inmates.",
+		prepare_food = "Press ~INPUT_CONTEXT~ to prepare food, bee-do.",
+		cleaning_desk = "Bello-bello cleaning the desk, bee-do.",
+		clean_desk = "Press ~INPUT_CONTEXT~ to clean the desk, bee-do.",
+		making_bed = "Bee-do making the bed, bee-do.",
+		make_bed = "Press ~INPUT_CONTEXT~ to make the bed, bee-do.",
+		aligning_cone = "Bee-do aligning the traffic cone, bee-do.",
+		align_cone = "Bello! Press ~INPUT_CONTEXT~ to align da traffic cone.",
+		inspecting_sprinkler = "Bello! Inspecting da sprinkler.",
+		inspect_sprinkler = "Bello! Press ~INPUT_CONTEXT~ to inspect da sprinkler.",
+		watering_plant = "Bello! Watering da plant.",
+		water_plant = "Bello! Press ~INPUT_CONTEXT~ to water da plant.",
+		organizing_weights = "Bello! Organizing da weights.",
+		organize_weights = "Bello! Press ~INPUT_CONTEXT~ to organize da weights.",
+
+		upstairs_notification = "Bello! Dis task is upstairs.",
 
 		mission_blip = "Jail Mission",
 

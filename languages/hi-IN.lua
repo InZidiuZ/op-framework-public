@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["hi-IN"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		invisibility_command_parameter_server_id = "सर्वर आईडी",
 		invisibility_command_parameter_server_id_help = "यदि आप किसी अन्य व्यक्ति की अदृश्यता सक्षम / अक्षम करना चाहते हैं।",
 		invisibility_command_substitutes = "inv, invis, invisible",
+
+		invisibility_mode_command = "अदृश्यता_मोड",
+		invisibility_mode_command_help = "अपनी अदृश्यता मोड सेट करें। यह 'पूर्ण' (जब आप अदृश्य हो तो आप केवल वरिष्ठ कर्मचारियों को दिखाई देंगे) या 'सामान्य' (आप सभी कर्मचारियों को दिखाई देंगे जिनके पिक है) हो सकता है।",
+		invisibility_mode_command_parameter_mode = "मोड",
+		invisibility_mode_command_parameter_mode_help = "'पूर्ण' के लिए पूर्ण अदृश्यता या 'सामान्य' के लिए सामान्य दिखाई देने के लिए हो सकता है।",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isolate_player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["hi-IN"] = {
 	invisibility = {
 		invisibility_on = "अदृश्यता टॉगल की गई।",
 		invisibility_off = "अदृश्यता टॉगल हटा दी गई।",
+		invalid_invisibility_mode = "अवैध अदृश्यता मोड। 'पूर्ण' या 'सामान्य' होना चाहिए।",
+		invisibility_mode_full = "अदृश्यता मोड को 'पूर्ण' पर सेट किया गया है। सामान्य कर्मचारी आपको नहीं देख सकते।",
+		invisibility_mode_normal = "अदृश्यता मोड को 'सामान्य' पर सेट किया गया है। सामान्य कर्मचारी अब आपको देख सकते हैं।",
 
 		toggled_invisibility = "${displayName} की अदृश्यता सफलतापूर्वक टॉगल हो गई।",
 		failed_invisibility = "${displayName} की अदृश्यता टॉगल करने में विफल रहा।",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["hi-IN"] = {
 		mission_1 = "फर्श साफ करना।",
 		mission_2 = "एक सैंडविच खाना।",
 		mission_3 = "वर्कआउट करना।",
+
+		preparing_food = "अन्य अप्रिज्यों के लिए खाना बना रहे हैं।",
+		prepare_food = "~INPUT_CONTEXT~ दबाएं खाना बनाने के लिए।",
+		cleaning_desk = "डेस्क साफ कर रहे हैं।",
+		clean_desk = "~INPUT_CONTEXT~ दबाएं डेस्क साफ करने के लिए।",
+		making_bed = "बिस्तर बना रहे हैं।",
+		make_bed = "~INPUT_CONTEXT~ दबाएं बिस्तर बनाने के लिए।",
+		aligning_cone = "ट्रैफिक कोन को संरेखित कर रहे हैं।",
+		align_cone = "यातायात कोन को संरेखित करने के लिए ~INPUT_CONTEXT~ दबाएं।",
+		inspecting_sprinkler = "स्प्रिंकलर की जाँच कर रहे हैं।",
+		inspect_sprinkler = "स्प्रिंकलर की जाँच करने के लिए ~INPUT_CONTEXT~ दबाएं।",
+		watering_plant = "पौधे को पानी दे रहे हैं।",
+		water_plant = "पौधे को पानी देने के लिए ~INPUT_CONTEXT~ दबाएं।",
+		organizing_weights = "वेट्स को संगठित कर रहे हैं।",
+		organize_weights = "वेट्स को संगठित करने के लिए ~INPUT_CONTEXT~ दबाएं।",
+
+		upstairs_notification = "यह कार्य ऊपर है।",
 
 		mission_blip = "जेल मिशन",
 

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["meme-caveman"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		invisibility_command_parameter_server_id = "ug ug",
 		invisibility_command_parameter_server_id_help = "Ugh if you wanna toggle someone elses invisibility.",
 		invisibility_command_substitutes = "inv, invis, invisible",
+
+		invisibility_mode_command = "oop",
+		invisibility_mode_command_help = "Set your oop mode. Can be either 'ug' (you are only seen by bigBoss+ while oop) or 'ugga' (you are seen by all boss who peek on).",
+		invisibility_mode_command_parameter_mode = "ugg",
+		invisibility_mode_command_parameter_mode_help = "Can be either 'ug' for full oop or 'ugga' for regular oop.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "me isolate player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	invisibility = {
 		invisibility_on = "Toggled invisibility on.",
 		invisibility_off = "Toggled invisibility off.",
+		invalid_invisibility_mode = "Uggga! Oog oop mode. Gotta be 'ug' or 'ugga'.",
+		invisibility_mode_full = "Ugga bugga mode set to 'full'. Regular cave folk can no see you.",
+		invisibility_mode_normal = "Ugga bugga mode set to 'normal'. Regular cave folk can see you now.",
 
 		toggled_invisibility = "Ugga! Successfully toggled ${displayName}'s invisibility.",
 		failed_invisibility = "Ugga! Failed to toggle ${displayName}'s invisibility.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		mission_1 = "Clean the floor like mammoth brain.",
 		mission_2 = "Eat sandwich like hungry wolf.",
 		mission_3 = "Make muscle big by working out.",
+
+		preparing_food = "Me preparing food for other cave dwellers.",
+		prepare_food = "Ugga bugga ~INPUT_CONTEXT~ to prepare food.",
+		cleaning_desk = "Me cleaning the rock.",
+		clean_desk = "Ugga bugga ~INPUT_CONTEXT~ to clean the rock.",
+		making_bed = "Me making the sleeping spot.",
+		make_bed = "Ugga bugga ~INPUT_CONTEXT~ to make the sleeping spot.",
+		aligning_cone = "Me aligning the traffic cone.",
+		align_cone = "Ugga ~INPUT_CONTEXT~ to align the traffic cone.",
+		inspecting_sprinkler = "Oonga oonga the sprinkler.",
+		inspect_sprinkler = "Ugga ~INPUT_CONTEXT~ to inspect the sprinkler.",
+		watering_plant = "Splash splash the plant.",
+		water_plant = "Ugga ~INPUT_CONTEXT~ to water the plant.",
+		organizing_weights = "Ugga ugga the weights.",
+		organize_weights = "Ugga ~INPUT_CONTEXT~ to organize the weights.",
+
+		upstairs_notification = "Ugga oonga task upstairs.",
 
 		mission_blip = "Jail Mission for punishment.",
 

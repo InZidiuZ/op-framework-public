@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["bg-BG"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		invisibility_command_parameter_server_id = "идентификатор на сървъра",
 		invisibility_command_parameter_server_id_help = "Ако искате да превключите невидимостта на някой друг.",
 		invisibility_command_substitutes = "невид, нел, невидим",
+
+		invisibility_mode_command = "режим_невидимост",
+		invisibility_mode_command_help = "Задайте вашият режим на невидимост. Може да бъде 'пълен' (вие сте видими само за seniorStaff+ докато сте невидими) или 'нормален' (вие сте видими за всички членове на персонала, които могат да пилят).",
+		invisibility_mode_command_parameter_mode = "режим",
+		invisibility_mode_command_parameter_mode_help = "Може да бъде 'пълен' за пълна невидимост или 'нормален' за обикновена видимост.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "изолация_на_играч",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["bg-BG"] = {
 	invisibility = {
 		invisibility_on = "Включена невидимост.",
 		invisibility_off = "Изкл. невидимост.",
+		invalid_invisibility_mode = "Невалиден режим на невидимост. Трябва да бъде 'пълен' или 'нормален'.",
+		invisibility_mode_full = "Режимът на невидимост е настроен на 'пълен'. Обикновените служители не могат да ви виждат.",
+		invisibility_mode_normal = "Режимът на невидимост е настроен на 'нормален'. Сега обикновените служители могат да ви виждат.",
 
 		toggled_invisibility = "Успешно се превключи невидимостта на ${displayName}.",
 		failed_invisibility = "Неуспешно превключване на невидимостта на ${displayName}.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		mission_1 = "Почистване на пода.",
 		mission_2 = "Ядене на сандвич.",
 		mission_3 = "Трениране.",
+
+		preparing_food = "Приготвяне на храна за другите затворници.",
+		prepare_food = "Натиснете ~INPUT_CONTEXT~, за да приготвите храна.",
+		cleaning_desk = "Почистване на бюрото.",
+		clean_desk = "Натиснете ~INPUT_CONTEXT~, за да почистите бюрото.",
+		making_bed = "Справяне на леглото.",
+		make_bed = "Натиснете ~INPUT_CONTEXT~, за да сгърбите леглото.",
+		aligning_cone = "Подреждане на пътните конуси.",
+		align_cone = "Натисни ~INPUT_CONTEXT~, за да подравниш конуса за движението.",
+		inspecting_sprinkler = "Проверка на разпръсквача.",
+		inspect_sprinkler = "Натисни ~INPUT_CONTEXT~, за да провериш разпръсквача.",
+		watering_plant = "Поливане на растението.",
+		water_plant = "Натисни ~INPUT_CONTEXT~, за да полееш растението.",
+		organizing_weights = "Организиране на тежестите.",
+		organize_weights = "Натисни ~INPUT_CONTEXT~, за да организираш тежестите.",
+
+		upstairs_notification = "Тази задача е горе.",
 
 		mission_blip = "Задача в затвора",
 

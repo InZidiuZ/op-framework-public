@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["da-DK"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["da-DK"] = {
 		invisibility_command_parameter_server_id = "server id",
 		invisibility_command_parameter_server_id_help = "undefined",
 		invisibility_command_substitutes = "inv, invis, invisible",
+
+		invisibility_mode_command = "usynlighedstilstand",
+		invisibility_mode_command_help = "Indstil din usynlighedstilstand. Kan være enten 'fuld' (du er kun synlig for seniorStaff+ mens du er usynlig) eller 'normal' (du er synlig for alt personale, der har kig på).",
+		invisibility_mode_command_parameter_mode = "tilstand",
+		invisibility_mode_command_parameter_mode_help = "Kan være enten 'fuld' for fuld usynlighed eller 'normal' for almindelig synlighed.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isolate_player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 	invisibility = {
 		invisibility_on = "undefined",
 		invisibility_off = "undefined",
+		invalid_invisibility_mode = "Ugyldig usynlighedstilstand. Skal være 'fuld' eller 'normal'.",
+		invisibility_mode_full = "Usynlighedstilstand sat til 'fuld'. Almindelige personalemedlemmer kan ikke se dig.",
+		invisibility_mode_normal = "Usynlighedstilstand sat til 'normal'. Almindelige personalemedlemmer kan nu se dig.",
 
 		toggled_invisibility = "undefined",
 		failed_invisibility = "undefined",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["da-DK"] = {
 		mission_1 = "Gulvvask.",
 		mission_2 = "Spiser en sandwich.",
 		mission_3 = "Træner.",
+
+		preparing_food = "Forbereder mad til andre indsatte.",
+		prepare_food = "Tryk på ~INPUT_CONTEXT~ for at forberede mad.",
+		cleaning_desk = "Rengøring af skrivebordet.",
+		clean_desk = "Tryk på ~INPUT_CONTEXT~ for at rengøre skrivebordet.",
+		making_bed = "Redning af sengen.",
+		make_bed = "Tryk på ~INPUT_CONTEXT~ for at rede sengen.",
+		aligning_cone = "Justering af trafikkonen.",
+		align_cone = "Tryk på ~INPUT_CONTEXT~ for at justere trafikkeglen.",
+		inspecting_sprinkler = "Inspekterer sprinkleren.",
+		inspect_sprinkler = "Tryk på ~INPUT_CONTEXT~ for at inspicere sprinkleren.",
+		watering_plant = "Vander planten.",
+		water_plant = "Tryk på ~INPUT_CONTEXT~ for at vande planten.",
+		organizing_weights = "Organiserer vægtene.",
+		organize_weights = "Tryk på ~INPUT_CONTEXT~ for at organisere vægtene.",
+
+		upstairs_notification = "Denne opgave er ovenpå.",
 
 		mission_blip = "Fængselsmission",
 

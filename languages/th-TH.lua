@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		invisibility_command_parameter_server_id = "ไอดีเซิร์ฟเวอร์",
 		invisibility_command_parameter_server_id_help = "หากคุณต้องการสลับสถานะการมองเห็นของบุคคลอื่น",
 		invisibility_command_substitutes = "inv, invis, invisible",
+
+		invisibility_mode_command = "โหมดความโปร่งใส",
+		invisibility_mode_command_help = "ตั้งค่าโหมดความโปร่งใสของคุณ สามารถเลือกใช้ 'full' (คุณเห็นได้เฉพาะโดยผู้ดูแลสูงกว่าเท่านั้นเมื่อท่านโปร่งใส) หรือ 'normal' (คุณเห็นได้โดยทุกคนที่มีการดูแพคที่เปิดใช้งาน).",
+		invisibility_mode_command_parameter_mode = "โหมด",
+		invisibility_mode_command_parameter_mode_help = "สามารถเลือกใช้ 'full' สำหรับโหมดความโปร่งใสเต็มหรือ 'normal' สำหรับการมองเห็นอย่างปกติ.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isolate_player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 	invisibility = {
 		invisibility_on = "เปิดโหมดล่องหน",
 		invisibility_off = "ปิดโหมดล่องหน",
+		invalid_invisibility_mode = "โหมดความโปร่งใสไม่ถูกต้อง ต้องเป็น 'full' หรือ 'normal'.",
+		invisibility_mode_full = "ตั้งโหมด 'ซ่อนตัว' เป็น 'เต็ม'. บุคลากรปกติจะไม่เห็นคุณ",
+		invisibility_mode_normal = "ตั้งโหมด 'ซ่อนตัว' เป็น 'ปกติ'. บุคลากรปกติสามารถเห็นคุณได้",
 
 		toggled_invisibility = "เปิดโหมดล่องหนของ ${displayName} สำเร็จ",
 		failed_invisibility = "ไม่สามารถเปิดโหมดล่องหนของ ${displayName} ได้",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["th-TH"] = {
 		mission_1 = "ทำความสะอาดพื้น",
 		mission_2 = "กินแซนด์วิช",
 		mission_3 = "ออกกำลังกาย",
+
+		preparing_food = "กำลังเตรียมอาหารสำหรับนักโทษอื่น",
+		prepare_food = "กด ~INPUT_CONTEXT~ เพื่อเตรียมอาหาร",
+		cleaning_desk = "กำลังทำความสะอาดโต๊ะ",
+		clean_desk = "กด ~INPUT_CONTEXT~ เพื่อทำความสะอาดโต๊ะ",
+		making_bed = "กำลังทำท่านอน",
+		make_bed = "กด ~INPUT_CONTEXT~ เพื่อทำท่านอน",
+		aligning_cone = "วางคอนโทรปไปให้ตรง",
+		align_cone = "กด ~INPUT_CONTEXT~ เพื่อจัดตำแหน่งกระบอกสำหรับจราจร",
+		inspecting_sprinkler = "กำลังตรวจสอบเครื่องพ่นน้ำ",
+		inspect_sprinkler = "กด ~INPUT_CONTEXT~ เพื่อตรวจสอบเครื่องพ่นน้ำ",
+		watering_plant = "กำลังรดน้ำต้นไม้",
+		water_plant = "กด ~INPUT_CONTEXT~ เพื่อรดน้ำต้นไม้",
+		organizing_weights = "กำลังจัดเรียงน้ำหนัก",
+		organize_weights = "กด ~INPUT_CONTEXT~ เพื่อจัดเรียงน้ำหนัก",
+
+		upstairs_notification = "งานนี้อยู่ชั้นบน",
 
 		mission_blip = "ภารกิจคุก",
 

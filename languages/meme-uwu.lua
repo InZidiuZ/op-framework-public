@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["meme-uwu"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		invisibility_command_parameter_server_id = "servewr id",
 		invisibility_command_parameter_server_id_help = "If yuw'we wanting tuwu toggwe someone ewses invisibiwity.",
 		invisibility_command_substitutes = "inv, invis, invisibwe",
+
+		invisibility_mode_command = "invisibility_mode_owo",
+		invisibility_mode_command_help = "Set youw invisibiwity mode nya~ Can be eithew 'fuww' (yuw awe onwy visibwe to seniowStaff+ whiwe invisibwe) ow 'nyowmaw' (yuw awe visibwe to aww staff who have peek on uwu).",
+		invisibility_mode_command_parameter_mode = "mode_owo",
+		invisibility_mode_command_parameter_mode_help = "Can be eithew 'fuww' fow fuww invisibiwity ow 'nyowmaw' fow wegulaw visibiwity uwu.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "isolate_pwayew",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 	invisibility = {
 		invisibility_on = "Toggled invisibility on UwU.",
 		invisibility_off = "Toggled invisibility off UwU.",
+		invalid_invisibility_mode = "Invawid invisibiwity mode owo. Has to be 'fuww' ow 'nyowmaw' uwu.",
+		invisibility_mode_full = "Invisibility mode set to 'fuww'. Weguwaw staff members can nyot see ywou.",
+		invisibility_mode_normal = "Invisibility mode set to 'nyowmaw'. Weguwaw staff members can nyow see ywou.",
 
 		toggled_invisibility = "Successfully toggled ${displayName}'s invisibility UwU.",
 		failed_invisibility = "Failed to toggle ${displayName}'s invisibility UwU.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		mission_1 = "Cleany weny the floowy.",
 		mission_2 = "Eating a sandwuch.",
 		mission_3 = "Workey wouty.",
+
+		preparing_food = "Pwepawing food fow othew inymates.",
+		prepare_food = "Pwess ~INPUT_CONTYEXT~ to pweapawe food.",
+		cleaning_desk = "Cweanying the desk.",
+		clean_desk = "Pwess ~INPUT_CONTYEXT~ to cwean the desk.",
+		making_bed = "Makying the bed.",
+		make_bed = "Pwess ~INPUT_CONTYEXT~ to make the bed.",
+		aligning_cone = "Awwignying the twaffic cone.",
+		align_cone = "Pwess ~INPUT_CONTEXT~ to align the twaffic cone. UWU",
+		inspecting_sprinkler = "Inspecting the sprinkler. *notices ur sprinkler*",
+		inspect_sprinkler = "Pwess ~INPUT_CONTEXT~ to inspect the sprinkler. OwO",
+		watering_plant = "Watering the plant. *gives wataaaa*",
+		water_plant = "Pwess ~INPUT_CONTEXT~ to water the plant. UwU",
+		organizing_weights = "Organizing the weights. *organizes wights*",
+		organize_weights = "Pwess ~INPUT_CONTEXT~ to organize the weights. UwU",
+
+		upstairs_notification = "Dis task is upstairs. OwO",
 
 		mission_blip = "Jaiwl Mission",
 

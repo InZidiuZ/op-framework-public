@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 31 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["meme-pirate"] = {
 	-- configuration settings for language
@@ -2513,6 +2513,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		invisibility_command_parameter_server_id = "ship id",
 		invisibility_command_parameter_server_id_help = "If ye be wantin' t' toggle someone else's invisibility.",
 		invisibility_command_substitutes = "inv, invis, invisible",
+
+		invisibility_mode_command = "invisibility_mode",
+		invisibility_mode_command_help = "Set yer invisibility mode. Can be either 'full' (ye be only visible to seniorStaff+ while invisible) or 'normal' (ye be visible to all staff who have peek on).",
+		invisibility_mode_command_parameter_mode = "mode",
+		invisibility_mode_command_parameter_mode_help = "Can be either 'full' for full invisibility or 'normal' for regular visibility.",
+		invisibility_mode_command_substitutes = "",
 
 		-- game/isolation
 		isolate_player_command = "maroon_player",
@@ -9223,6 +9229,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	invisibility = {
 		invisibility_on = "Arr! Toggled invisibility on.",
 		invisibility_off = "Arr! Toggled invisibility off.",
+		invalid_invisibility_mode = "Invalid invisibility mode. Has to be 'full' or 'normal'.",
+		invisibility_mode_full = "Invisibility mode be set to 'full'. Regular crew members can not spy thee.",
+		invisibility_mode_normal = "Invisibility mode be set to 'normal'. Regular crew members can now spy thee.",
 
 		toggled_invisibility = "Arr! Successfully toggled ${displayName}'s invisibility.",
 		failed_invisibility = "Arr! Failed to toggle ${displayName}'s invisibility.",
@@ -9395,6 +9404,23 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		mission_1 = "Cleanin' th' deck.",
 		mission_2 = "Eatin' a sandwich.",
 		mission_3 = "Workin' out.",
+
+		preparing_food = "Preparing grub fer other scallywags.",
+		prepare_food = "Press ~INPUT_CONTEXT~ to prepare grub.",
+		cleaning_desk = "Cleaning the desk.",
+		clean_desk = "Press ~INPUT_CONTEXT~ to clean the desk.",
+		making_bed = "Makin' the hammock.",
+		make_bed = "Press ~INPUT_CONTEXT~ to make the hammock.",
+		aligning_cone = "Alignin' the traffic cone.",
+		align_cone = "Press ~INPUT_CONTEXT~ to align the traffic cone, me hearties.",
+		inspecting_sprinkler = "Inspectin' the sprinkler, ye scallywag.",
+		inspect_sprinkler = "Press ~INPUT_CONTEXT~ to inspect the sprinkler, arr!",
+		watering_plant = "Waterin' the plant, aye!",
+		water_plant = "Press ~INPUT_CONTEXT~ to water the plant, me matey.",
+		organizing_weights = "Organizin' the weights, me hearties.",
+		organize_weights = "Press ~INPUT_CONTEXT~ to organize the weights, ye landlubber.",
+
+		upstairs_notification = "This task be upstairs, ye scurvy dogs.",
 
 		mission_blip = "Brig Mission",
 
