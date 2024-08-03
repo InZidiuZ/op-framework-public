@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 25 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["id-ID"] = {
 	-- configuration settings for language
@@ -134,6 +134,9 @@ OP.Global.Locales.Languages["id-ID"] = {
 		added_vehicle_logs_title = "Kendaraan Ditambahkan",
 		added_vehicle_logs_details = "${consoleName} menambahkan kendaraan dengan nama model `${modelName}` ke garasenya.",
 
+		vehicle_saved = "Berhasil menyimpan kendaraan dengan nama model `${modelName}`.",
+		failed_to_save_vehicle = "Gagal menyimpan kendaraan.",
+
 		invalid_amount = "Jumlah tidak valid.",
 
 		added_cash_title = "Uang Ditambahkan",
@@ -260,6 +263,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		you_have_been_kicked_no_reason = "Kamu telah ditendang tanpa alasan yang spesifik oleh ${kicker}.",
 
 		logs_player_kicked_title = "Pemain Ditendang",
+		logs_player_kicked_system_title = "Pemain Dikeluarkan oleh Sistem",
 		logs_player_kicked_details = "${consoleName} telah ditendang dari server oleh ${kicker} dengan alasan `${reason}`.",
 		logs_player_kicked_no_reason_details = "${consoleName} telah ditendang dari server oleh ${kicker} tanpa alasan yang spesifik.",
 
@@ -358,17 +362,6 @@ OP.Global.Locales.Languages["id-ID"] = {
 		already_sending_staff_message = "Anda sedang mengirim pesan staff. Harap tunggu.",
 		unable_to_send_identical_staff_message = "Anda tidak dapat mengirimkan dua pesan staff yang identik berturut-turut dalam 30 detik.",
 
-		tp_coords_invalid_coordinates = "Koordinat tidak valid.",
-		tp_coords_teleported_to_coordinates = "Terteleportasi ke koordinat X: ${x}, Y: ${y}, Z: ${z}.",
-
-		teleported_to_waypoint = "Terteleportasi ke waypoint ${locationLabel}.",
-		no_waypoint_set = "Anda harus menetapkan suatu titik tujuan.",
-
-		teleported_to_coordinates_logs_title = "Teleported Ke Koordinat",
-		teleported_to_coordinates_logs_details = "${consoleName} teleported ke koordinat X: ${x}, Y: ${y}, Z: ${z}.",
-		teleported_to_waypoint_logs_title = "Teleported Ke Titik Tujuan",
-		teleported_to_waypoint_logs_details = "${consoleName} teleported ke titik tujuan di ${locationLabel}.",
-
 		population_density_set_to = "Penggandaan kepadatan penduduk telah diatur ke ${multiplierLabel}%.",
 		population_density_set_off = "Pengganda kerapatan penduduk sudah dimatikan.",
 		population_density_is_not_on = "Pengganda kerapatan penduduk tidak aktif.",
@@ -403,6 +396,13 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 		you_are_not_in_a_vehicle = "Anda tidak berada dalam kendaraan.",
 		repaired_vehicle = "Kendaraan diperbaiki.",
+		player_not_in_vehicle = "Pemain tersebut tidak sedang dalam kendaraan.",
+		no_character = "Pemain sedang offline atau karakternya tidak dimuat.",
+		repaired_player_vehicle = "Memperbaiki kendaraan yang digunakan ${displayName}.",
+		failed_player_repair = "Gagal memperbaiki kendaraan.",
+
+		repaired_player_vehicle_logs_title = "Memperbaiki Kendaraan Pemain",
+		repaired_player_vehicle_logs_details = "${consoleName} memperbaiki kendaraan ${targetConsoleName}.",
 
 		success_nos_refill = "Berhasil mengisi ulang NOS.",
 		failed_nos_refill = "Gagal mengisi ulang NOS.",
@@ -487,7 +487,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		attachment_off = "Berhasil mematikan lampiran '${attachment}' pada senjata.",
 
 		tint_invalid = "Tint senjata tidak valid.",
-		tint_range_invalid = "Rentang tint senjata tidak valid (harus antara 0 dan ${max}).",
+		tint_index_invalid = "Indeks warna senjata tidak valid.",
 		tint_failed_set = "Gagal mengatur tint senjata.",
 		tint_removed = "Berhasil menghapus warna senjata.",
 		tint_set = "Berhasil mengatur warna senjata menjadi `${tint}` (${tintIndex}).",
@@ -517,9 +517,9 @@ OP.Global.Locales.Languages["id-ID"] = {
 		item_durability_set_no_permission = "Percobaan untuk mengatur daya tahan barang tanpa izin yang sesuai.",
 
 		item_metadata_set_no_permission = "Percobaan untuk mengatur metadata barang tanpa izin yang sesuai.",
-		item_metadata_invalid_metadata = "Metadata barang tidak valid.",
 		item_metadata_set_success = "Berhasil mengatur metadata untuk barang di slot ${slotId}.",
 		item_metadata_set_failed = "Gagal mengatur metadata.",
+		item_metadata_missing_key = "Kunci metadata tidak ditemukan.",
 
 		advanced_metagame_on = "Mengaktifkan metagame canggih.",
 		advanced_metagame_off = "Menonaktifkan metagame canggih.",
@@ -696,6 +696,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		weapon_spawn_ban = "Merindukan `${weaponName}`, ya? Ini bukan gudang senjata, dan barangnya? Masih dalam pembuatan.",
 		advanced_noclip_ban = "Mencoba meluncur rahasia melalui lorong-lorong yang tak terlihat? Ini bukan tarian semu, dan gerakan itu? Bukan di kartu tarian kami.",
 		illegal_local_vehicle_ban = "Sepertinya kamu telah menemukan kuda tidak terlihat milik Lord Mirage! Sayangnya, kendaraan mistis ini hanya dapat digunakan saat parade setiap tahunnya.",
+		handling_field_ban = "Sepertinya kamu mencoba untuk mempercepat hukum fisika. Upaya bagus, tapi di dunia ini, kita harus tetap realistis dalam mengemudi.",
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Pembuatan buruk",
@@ -711,6 +712,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		type_illegal_event = "Event Klien Ilegal",
 		type_illegal_freeze = "Pembekuan Ilegal",
 		type_illegal_global = "Penggunaan Global Ilegal",
+		type_illegal_handling_field = "Bidang Penanganan Ilegal",
 		type_illegal_native = "Pemanggilan Native Ilegal",
 		type_illegal_ped_spawn = "Pedan Dibuat",
 		type_illegal_server_event = "Event Server Ilegal",
@@ -768,6 +770,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 		high_fov_debug = "Saat ini: ${fov}",
 
 		illegal_oxy_run = "Pemain menyelesaikan perjalanan oksigen lebih cepat dari yang manusiawi.",
+
+		fov_warning = "FOV Anda sangat tinggi",
+		fov_warning_details = "Ini kemungkinan disebabkan oleh Modifikasi FOV. Saat ini: ${fov}",
+
+		stretched_res_warning = "Resolusi Terstretch (~r~${ratio}~w~)",
 
 		fast_movement_warning = "Anda telah ditandai karena bergerak terlalu cepat! Harap beri tahu pengembang dan jelaskan kepada mereka apa yang Anda lakukan untuk menyebabkan pesan ini karena Anda seharusnya tidak menerima pesan obrolan ini.",
 		invincibility_warning = "Anda telah ditandai karena tak terkalahkan! Harap beri tahu pengembang dan jelaskan kepada mereka apa yang Anda lakukan untuk menyebabkan pesan ini karena Anda seharusnya tidak menerima pesan obrolan ini.",
@@ -1017,10 +1024,14 @@ OP.Global.Locales.Languages["id-ID"] = {
 		add_vehicle_command = "tambah_kendaraan",
 		add_vehicle_command_help = "Menambahkan kendaraan ke garasi seseorang.",
 		add_vehicle_command_parameter_model = "model",
-		add_vehicle_command_parameter_model_help = "A jármű modell neve vagy hash értéke, amit hozzá szeretnél adni. Ha üresen hagyod, akkor a jelenlegi járműved lesz hozzáadva (az aktuális módosításaival együtt).",
+		add_vehicle_command_parameter_model_help = "Nama model atau hash model dari kendaraan yang ingin Anda tambahkan. Jika dikosongkan, model kendaraan yang sedang Anda gunakan akan ditambahkan.",
 		add_vehicle_command_parameter_server_id = "server id",
 		add_vehicle_command_parameter_server_id_help = "ID server dari pemain yang ingin Anda berikan kendaraan. Biarkan kosong untuk memilih diri sendiri secara otomatis.",
 		add_vehicle_command_substitutes = "",
+
+		save_vehicle_command = "simpan_kendaraan",
+		save_vehicle_command_help = "Simpan kendaraan yang Anda gunakan saat ini (beserta modifikasinya) ke garasi Anda.",
+		save_vehicle_command_substitutes = "",
 
 		aimbot_command = "aimbot",
 		aimbot_command_help = "Mengaktifkan/menonaktifkan 'aimbot'.",
@@ -1178,22 +1189,6 @@ OP.Global.Locales.Languages["id-ID"] = {
 		warning_message_command_parameter_message_help = "Pesan yang ingin Anda tampilkan kepada pemain. Anda dapat meninggalkan parameter ini kosong untuk menghapus pesan peringatan.",
 		warning_message_command_substitutes = "",
 
-		tp_coords_command = "tp_coords",
-		tp_coords_command_help = "Teleport ke beberapa koordinat.",
-		tp_coords_command_parameter_x = "x",
-		tp_coords_command_parameter_x_help = "Koordinat X yang ingin Anda teleportasikan.",
-		tp_coords_command_parameter_y = "y",
-		tp_coords_command_parameter_y_help = "Koordinat Y yang ingin Anda teleportasikan.",
-		tp_coords_command_parameter_z = "z",
-		tp_coords_command_parameter_z_help = "Koordinat Z yang ingin Anda teleportasikan. Parameter ini bersifat opsional dan jika kosong, koordinat tanah akan dicari otomatis.",
-		tp_coords_command_parameter_w = "गेराज में से वाहन निकालें",
-		tp_coords_command_parameter_w_help = "अपने मौजूदा स्थान पर गेराज में से एक वाहन निकालें।",
-		tp_coords_command_substitutes = "tpc",
-
-		tp_waypoint_command = "tp_waypoint",
-		tp_waypoint_command_help = "Teleportasikan ke waypoint yang telah ditentukan.",
-		tp_waypoint_command_substitutes = "tp_marker, tp",
-
 		population_density_command = "population_density",
 		population_density_command_help = "Mengganti pengali kepadatan populasi global.",
 		population_density_command_parameter_multiplier = "pengali",
@@ -1202,6 +1197,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 		repair_vehicle_command = "perbaiki_kendaraan",
 		repair_vehicle_command_help = "Memperbaiki kendaraan yang sedang Anda gunakan.",
+		repair_vehicle_command_parameter_server_id = "id_server",
+		repair_vehicle_command_parameter_server_id_help = "ID server dari kendaraan yang ingin Anda perbaiki. (opsional)",
 		repair_vehicle_command_substitutes = "perbaiki",
 
 		enter_vehicle_command = "masuk_kendaraan",
@@ -1243,6 +1240,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 		player_info_command_parameter_server_id = "ID server",
 		player_info_command_parameter_server_id_help = "ID server pemain yang ingin Anda dapatkan informasinya. Jika kosong, Anda akan dipilih.",
 		player_info_command_substitutes = "pemain, pi",
+
+		ender_chest_command = "peti_ender",
+		ender_chest_command_help = "Akses peti ender Anda.",
+		ender_chest_command_substitutes = "pe",
 
 		inventory_command = "inventaris",
 		inventory_command_help = "Membuka inventaris tertentu.",
@@ -1315,9 +1316,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 		set_metadata_command = "set_metadata",
 		set_metadata_command_help = "Mengatur metadata semua barang di slot tertentu.",
 		set_metadata_command_parameter_slot = "slot",
-		set_metadata_command_parameter_slot_help = "Slot mana yang akan diatur daya tahannya.",
-		set_metadata_command_parameter_metadata = "metadata",
-		set_metadata_command_parameter_metadata_help = "Json metadata yang akan diatur.",
+		set_metadata_command_parameter_slot_help = "Slot mana yang ingin Anda atur metadata itemnya.",
+		set_metadata_command_parameter_key = "kunci",
+		set_metadata_command_parameter_key_help = "Kunci metadata yang ingin Anda set.",
+		set_metadata_command_parameter_value = "nilai",
+		set_metadata_command_parameter_value_help = "Nilai metadata yang ingin Anda set. (Kosongkan untuk menghapus kunci)",
 		set_metadata_command_substitutes = "metadata",
 
 		refill_nitro_command = "isi_nitro",
@@ -1504,26 +1507,6 @@ OP.Global.Locales.Languages["id-ID"] = {
 		admin_command_help = "Membuka menu admin.",
 		admin_command_substitutes = "",
 
-		tp_player_command = "tp_player",
-		tp_player_command_help = "Teleportasi ke seorang pemain.",
-		tp_player_command_parameter_server_id = "ID server",
-		tp_player_command_parameter_server_id_help = "ID server dari pemain yang ingin Anda teleportasi ke.",
-		tp_player_command_substitutes = "",
-
-		tp_here_command = "tp_here",
-		tp_here_command_help = "Teleportasi seorang pemain ke Anda.",
-		tp_here_command_parameter_server_id = "ID server",
-		tp_here_command_parameter_server_id_help = "ID server dari pemain yang ingin Anda teleportasi ke.",
-		tp_here_command_substitutes = "",
-
-		tp_to_command = "tp_to",
-		tp_to_command_help = "Mengirimkan pemain ke pemain lain.",
-		tp_to_command_parameter_source_id = "id sumber",
-		tp_to_command_parameter_source_id_help = "Pemain yang ingin Anda kirimkan.",
-		tp_to_command_parameter_destination_id = "id tujuan",
-		tp_to_command_parameter_destination_id_help = "Pemain yang ingin Anda kirimkan ke.",
-		tp_to_command_substitutes = "",
-
 		-- game/airdrops
 		create_airdrop_command = "create_airdrop",
 		create_airdrop_command_help = "Membuat air drop.",
@@ -1633,6 +1616,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 		bed_command_help = "Mencoba berbaring di tempat tidur terdekat.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "ambil_sepeda",
+		pickup_bicycle_command_help = "Ambil sepeda terdekat.",
+		pickup_bicycle_command_substitutes = "mb",
+
 		-- game/bills
 		create_bill_command = "create_bill",
 		create_bill_command_help = "Membuat tagihan kepada pemain lain dengan jumlah uang tertentu.",
@@ -1648,6 +1636,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 		toggle_ignition_bomb_command_substitutes = "aktifkan_bom_pemantik",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "matikan_boomboxes",
+		mute_boomboxes_command_help = "Menyilangkan/Membuka suara semua boomboxes.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "hapus_boombox",
 		wipe_boomboxes_command_help = "Menghapus boombox.",
 		wipe_boomboxes_command_parameter_radius = "radius",
@@ -1936,6 +1928,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 		vehicle_info_command_help = "Mencetak informasi yang berkaitan dengan kendaraan yang anda gunakan untuk membantu memecahkan masalah.",
 		vehicle_info_command_substitutes = "",
 
+		vehicle_doors_command = "pintu_kendaraan",
+		vehicle_doors_command_help = "Gambar semua pintu kendaraan yang ada di kendaraan terdekat.",
+		vehicle_doors_command_substitutes = "",
+
 		delete_entity_command = "hapus_entitas",
 		delete_entity_command_help = "Menghapus entitas dengan network id tertentu.",
 		delete_entity_command_parameter_network_id = "network id",
@@ -2144,6 +2140,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 		door_debug_command_help = "Menampilkan informasi debug tentang pintu-pintu terdekat.",
 		door_debug_command_substitutes = "",
 
+		-- game/effect_zones
+		effect_zones_debug_command = "debug_zona_efek",
+		effect_zones_debug_command_help = "Debug zona efek apa yang saat ini Anda berada di dalamnya.",
+		effect_zones_debug_command_substitutes = "",
+
 		-- game/elevators
 		elevator_enable_command = "aktifkan_elevator",
 		elevator_enable_command_help = "Menghidupkan kembali elevator terdekat.",
@@ -2158,6 +2159,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 		elevator_enable_command_all_substitutes = "",
 
 		-- game/emotes
+		emote_menu_command = "menu_emote",
+		emote_menu_command_help = "Mengaktifkan menu emote.",
+		emote_menu_command_substitutes = "",
+
 		emote_command = "कुल",
 		emote_command_help = "सेविंग्स बॉन्ड जमा करने में विफल रहा",
 		emote_command_parameter_name = "बॉन्ड जमा करें",
@@ -2169,6 +2174,12 @@ OP.Global.Locales.Languages["id-ID"] = {
 		walk_command_parameter_name = "nama",
 		walk_command_parameter_name_help = "Nama dari gaya berjalan.",
 		walk_command_substitutes = "",
+
+		mood_command = "mood",
+		mood_command_help = "Atur ekspresi/perasaan Anda.",
+		mood_command_parameter_name = "nama",
+		mood_command_parameter_name_help = "Nama dari ekspresi/perasaan.",
+		mood_command_substitutes = "",
 
 		-- game/evidence
 		fingerprint_command = "sidik_jari",
@@ -2204,6 +2215,13 @@ OP.Global.Locales.Languages["id-ID"] = {
 		flag_swap_leaderboard_command_help = "Mengaktifkan papan peringkat 'tukar bendera'.",
 		flag_swap_leaderboard_command_substitutes = "",
 
+		-- game/flight_radar
+		callsign_command = "callsign",
+		callsign_command_help = "Atur panggilan Anda untuk radar penerbangan.",
+		callsign_command_parameter_callsign = "callsign",
+		callsign_command_parameter_callsign_help = "Panggilan Anda atau kosongkan untuk mereset.",
+		callsign_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "buat_forcefield",
 		create_forcefield_command_help = "Membuat sebuah forcefield di posisi saat ini.",
@@ -2233,6 +2251,13 @@ OP.Global.Locales.Languages["id-ID"] = {
 		fortnite_wipe_command_parameter_radius = "radius",
 		fortnite_wipe_command_parameter_radius_help = "Jari-jari yang ingin Anda hapus. Jika dikosongkan atau disetel menjadi 0, semuanya akan dihapus.",
 		fortnite_wipe_command_substitutes = "",
+
+		-- game/fortune_cookies
+		fortune_cookie_command = "fortune_cookie",
+		fortune_cookie_command_help = "Spawna fortune cookie dengan pesan yang telah ditentukan.",
+		fortune_cookie_command_parameter_fortune = "fortune",
+		fortune_cookie_command_parameter_fortune_help = "Pesan keberuntungan yang Anda inginkan.",
+		fortune_cookie_command_substitutes = "",
 
 		-- game/freecam
 		freecam_command = "freecam",
@@ -2344,7 +2369,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		death_timer_command_substitutes = "",
 
 		cpr_command = "cpr",
-		cpr_command_help = "Melakukan CPR pada ped atau pemain terdekat.",
+		cpr_command_help = "Lakukan CPR pada NPC atau pemain terdekat.",
 		cpr_command_substitutes = "",
 
 		-- game/hitmarkers
@@ -2489,6 +2514,12 @@ OP.Global.Locales.Languages["id-ID"] = {
 		invisibility_command_parameter_server_id_help = "Jika Anda ingin mengaktifkan atau menonaktifkan keberadaan orang lain.",
 		invisibility_command_substitutes = "inv, invis, tidak terlihat",
 
+		invisibility_mode_command = "invisibility_mode",
+		invisibility_mode_command_help = "Atur mode kealpaan Anda. Dapat berupa 'penuh' (Anda hanya terlihat oleh seniorStaff+ saat tidak terlihat) atau 'normal' (Anda terlihat oleh semua staf yang memiliki peek on).",
+		invisibility_mode_command_parameter_mode = "mode",
+		invisibility_mode_command_parameter_mode_help = "Dapat berupa 'penuh' untuk invisibilitas penuh atau 'normal' untuk keterlihatan reguler.",
+		invisibility_mode_command_substitutes = "",
+
 		-- game/isolation
 		isolate_player_command = "isolasi_pemain",
 		isolate_player_command_help = "Isolasi seorang pemain, menolak segala sesuatu yang mereka coba lakukan.",
@@ -2511,6 +2542,23 @@ OP.Global.Locales.Languages["id-ID"] = {
 		jackpot_take_fees_command = "jackpot_ambil_biaya",
 		jackpot_take_fees_command_help = "Mengambil biaya dari semua inventaris jackpot.",
 		jackpot_take_fees_command_substitutes = "",
+
+		-- game/jail
+		check_jail_command = "check_jail",
+		check_jail_command_help = "Periksa berapa lama waktu yang tersisa bagi seorang pemain di penjara.",
+		check_jail_parameter_server_id = "server id",
+		check_jail_parameter_server_id_help = "ID server pemain yang diinginkan.",
+		check_jail_command_substitutes = "",
+
+		modify_jail_command = "modify_jail",
+		modify_jail_command_help = "Modifikasi waktu penahanan seorang pemain.",
+		modify_jail_parameter_server_id = "id_server",
+		modify_jail_parameter_server_id_help = "ID server dari pemain.",
+		modify_jail_parameter_operation = "operasi",
+		modify_jail_parameter_operation_help = "Operasi yang ingin Anda lakukan. (tambah atau kurang)",
+		modify_jail_parameter_amount = "jumlah",
+		modify_jail_parameter_amount_help = "Jumlah waktu yang ingin ditambahkan atau dikurangi dalam menit. Tidak boleh lebih dari 5 menit pada satu waktu.",
+		modify_jail_command_substitutes = "mod_penjara",
 
 		-- game/lag
 		fake_lag_command = "pemain palsu",
@@ -2588,7 +2636,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		mining_debug_command_substitutes = "",
 
 		-- game/miscellaneous
-		-- these two commands should remain the same on all languages in case someone joins in with a language they don't know.
+		-- these two commands (language & languages) should remain the same on all languages in case someone joins in with a language they don't know.
 		-- you can change the _help parts though if you'd like, not the "language code" though.
 		language_command = "language",
 		language_command_help = "Atur bahasa yang Anda inginkan. Perubahan ini akan disimpan untuk sesi selanjutnya. Perubahan ini efektif segera.",
@@ -2696,6 +2744,12 @@ OP.Global.Locales.Languages["id-ID"] = {
 		info_command_help = "Tampilkan beberapa informasi debugging, digunakan dalam laporan bug.",
 		info_command_substitutes = "",
 
+		whois_command = "siapa",
+		whois_command_help = "Temukan seorang pemain berdasarkan nama mereka atau bagian dari nama mereka.",
+		whois_command_parameter_search = "cari",
+		whois_command_parameter_search_help = "Nama atau bagian dari nama pemain.",
+		whois_command_substitutes = "",
+
 		-- game/money
 		cash_command = "uang",
 		cash_command_help = "Tampilkan saldo uang Anda.",
@@ -2752,6 +2806,13 @@ OP.Global.Locales.Languages["id-ID"] = {
 		remove_notice_command_parameter_message_id = "id pesan",
 		remove_notice_command_parameter_message_id_help = "Id pesan yang ingin Anda hapus.",
 		remove_notice_command_substitutes = "",
+
+		-- game/npc_watch
+		npc_watch_command = "npc_watch",
+		npc_watch_command_help = "Mengawasi NPC acak menjalani hari-harinya.",
+		npc_watch_command_parameter_in_vehicle = "di kendaraan",
+		npc_watch_command_parameter_in_vehicle_help = "NPC harus berada di dalam kendaraan. (default tidak)",
+		npc_watch_command_substitutes = "",
 
 		-- game/objects
 		frozen_objects_scan_command = "pemeriksaan_objek_beku",
@@ -2904,6 +2965,15 @@ OP.Global.Locales.Languages["id-ID"] = {
 		phone_number_available_command_parameter_phone_number_help = "Nomor telepon yang ingin Anda periksa ketersediaannya. Pastikan mengikuti format XXX-XXXX.",
 		phone_number_available_command_substitutes = "nomor_tersedia",
 
+		share_phone_number_command = "bagikan_nomor_telepon",
+		share_phone_number_command_help = "Berbagi nomor telepon Anda dengan semua orang di sekitar Anda (<1,5m).",
+		share_phone_number_command_substitutes = "bagikan_nomor",
+
+		-- game/plants
+		plants_debug_command = "plants_debug",
+		plants_debug_command_help = "Debug semua tanaman.",
+		plants_debug_command_substitutes = "",
+
 		-- game/player_control
 		drive_for_command = "drive_for",
 		drive_for_command_help = "Mengambil alih kendaraan pemain dan mengendarainya untuk mereka.",
@@ -2960,9 +3030,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "Model prop yang ingin kamu munculkan.",
 		spawn_prop_command_parameter_network = "network",
-		spawn_prop_command_parameter_network_help = "Apakah kamu ingin menghubungkan prop ini? Disarankan hanya mengaktifkan fitur ini untuk prop yang seharusnya bisa bergerak.",
-		spawn_prop_command_parameter_no_pickup = "no pickup",
-		spawn_prop_command_parameter_no_pickup_help = "Apakah prop ini hanya dapat diambil oleh super admin?",
+		spawn_prop_command_parameter_network_help = "Apakah Anda ingin melakukan jaringan pada prop ini? Anda disarankan untuk hanya mengaktifkan ini untuk prop-prop yang seharusnya bisa bergerak. Tidak semua prop dapat bergerak meskipun.",
+		spawn_prop_command_parameter_restricted = "terbatas",
+		spawn_prop_command_parameter_restricted_help = "Hanya memperbolehkan prop ini diambil oleh super admin.",
+		spawn_prop_command_parameter_culling = "culling",
+		spawn_prop_command_parameter_culling_help = "Jari jarak culling di mana prop di-spawn/di-despawn. Jari jarak default adalah 200m, hanya tingkatkan ini untuk prop-prop besar yang seharusnya terlihat dari jauh.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3293,6 +3365,47 @@ OP.Global.Locales.Languages["id-ID"] = {
 		tablet_command_help = "Buka tampilan tablet (jika anda memiliki tablet).",
 		tablet_command_substitutes = "",
 
+		-- game/teleporting
+		tp_back_command = "tp_back",
+		tp_back_command_help = "Teleport kembali ke lokasi sebelum terakhir kali kamu melakukan teleport.",
+		tp_back_command_substitutes = "back",
+
+		tp_coords_command = "tp_coords",
+		tp_coords_command_help = "Teleport ke beberapa koordinat.",
+		tp_coords_command_parameter_x = "x",
+		tp_coords_command_parameter_x_help = "Koordinat X yang ingin Anda teleportasikan.",
+		tp_coords_command_parameter_y = "y",
+		tp_coords_command_parameter_y_help = "Koordinat Y yang ingin Anda teleportasikan.",
+		tp_coords_command_parameter_z = "z",
+		tp_coords_command_parameter_z_help = "Koordinat Z yang ingin Anda teleportasikan. Parameter ini bersifat opsional dan jika kosong, koordinat tanah akan dicari otomatis.",
+		tp_coords_command_parameter_w = "गेराज में से वाहन निकालें",
+		tp_coords_command_parameter_w_help = "अपने मौजूदा स्थान पर गेराज में से एक वाहन निकालें।",
+		tp_coords_command_substitutes = "tpc",
+
+		tp_waypoint_command = "tp_waypoint",
+		tp_waypoint_command_help = "Teleportasikan ke waypoint yang telah ditentukan.",
+		tp_waypoint_command_substitutes = "tp_marker, tp",
+
+		tp_to_player_command = "tp_to_player",
+		tp_to_player_command_help = "Teleport kamu ke seorang pemain.",
+		tp_to_player_command_parameter_server_id = "server id",
+		tp_to_player_command_parameter_server_id_help = "ID server pemain yang ingin kamu teleportasikan ke sana.",
+		tp_to_player_command_substitutes = "",
+
+		tp_player_here_command = "tp_player_here",
+		tp_player_here_command_help = "Teleport seorang pemain ke tempatmu.",
+		tp_player_here_command_parameter_server_id = "server id",
+		tp_player_here_command_parameter_server_id_help = "ID server pemain yang ingin kamu teleportasikan ke tempatmu.",
+		tp_player_here_command_substitutes = "",
+
+		tp_player_player_command = "tp_player_player",
+		tp_player_player_command_help = "Menteleportasikan seorang pemain ke pemain lain.",
+		tp_player_player_command_parameter_source_id = "id sumber",
+		tp_player_player_command_parameter_source_id_help = "Pemain yang ingin Anda teleport.",
+		tp_player_player_command_parameter_destination_id = "id tujuan",
+		tp_player_player_command_parameter_destination_id_help = "Pemain yang ingin Anda teleportkan pemain sumber kepadanya.",
+		tp_player_player_command_substitutes = "",
+
 		-- game/test_server
 		test_menu_command = "menu_uji",
 		test_menu_command_help = "Tombol untuk memunculkan atau menyembunyikan menu uji server.",
@@ -3322,6 +3435,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		-- game/trackers
 		tracker_command = "pemantau",
 		tracker_command_help = "Mengaktifkan/Nonaktifkan visibilitas pemantau Anda.",
+		tracker_command_parameter_break = "break",
+		tracker_command_parameter_break_help = "Menghentikan pelacakan Anda dan mengirimkan pemberitahuan ke polisi tentang hal itu. Ketik `ya` atau `y` untuk menghentikan pelacakan Anda. (Tidak dapat diaktifkan kembali hingga 20 menit telah berlalu)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "pecahkan_pemantau",
@@ -3452,11 +3567,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 		explode_command_parameter_server_id_help = "ID Server dari pemain yang ditargetkan.",
 		explode_command_substitutes = "",
 
-		ignite_player_command = "nyalakan_player",
-		ignite_player_command_help = "Menyalaikan pemain dengan api untuk sesaat.",
-		ignite_player_command_parameter_server_id = "server id",
-		ignite_player_command_parameter_server_id_help = "ID server pemain target.",
-		ignite_player_command_substitutes = "nyalakan, bakar",
+		taze_player_command = "taze_player",
+		taze_player_command_help = "Mengeletrik seorang pemain.",
+		taze_player_command_parameter_server_id = "id server",
+		taze_player_command_parameter_server_id_help = "ID Server dari pemain target.",
+		taze_player_command_substitutes = "stun, taze",
 
 		run_command_as_command = "jalankan_perintah_sebagai",
 		run_command_as_command_help = "Membuat pemain lain menjalankan perintah.",
@@ -3532,6 +3647,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 		interface_focuses_command = "interface_focuses",
 		interface_focuses_command_help = "Memeriksa antarmuka mana yang sedang difokuskan.",
 		interface_focuses_command_substitutes = "interface_focus, fokus, fokus",
+
+		-- jobs/bus_driver
+		bus_debug_command = "bus_debug",
+		bus_debug_command_help = "Gambar semua halte bus.",
+		bus_debug_command_substitutes = "",
 
 		--jobs/doj
 		lookup_character_command = "lookup_character",
@@ -3627,6 +3747,16 @@ OP.Global.Locales.Languages["id-ID"] = {
 		licenses_command_help = "Dapatkan lisensi Anda.",
 		licenses_command_substitutes = "",
 
+		set_marriage_command = "set_marriage",
+		set_marriage_command_help = "Atur status pernikahan antara dua karakter.",
+		set_marriage_command_parameter_partner_a_cid = "partner a",
+		set_marriage_command_parameter_partner_a_cid_help = "ID karakter dari pasangan pertama.",
+		set_marriage_command_parameter_partner_b_cid = "pasangan b",
+		set_marriage_command_parameter_partner_b_cid_help = "ID karakter pasangan kedua.",
+		set_marriage_command_parameter_state = "status",
+		set_marriage_command_parameter_state_help = "Baik `menikah` atau `bercerai`.",
+		set_marriage_command_substitutes = "",
+
 		-- jobs/tow
 		toggle_mechanic_messages_command = "toggle_pesan_mekanik",
 		toggle_mechanic_messages_command_help = "Mengaktifkan atau menonaktifkan pesan mekanik yang diterima.",
@@ -3648,6 +3778,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 		set_fuel_command_parameter_fuel_level = "tingkat bahan bakar",
 		set_fuel_command_parameter_fuel_level_help = "Tingkat bahan bakar yang ingin Anda atur. Jika kosong, akan otomatis dipilih `100`.",
 		set_fuel_command_substitutes = "bensin",
+
+		-- vehicles/garage_access
+		manage_garage_command = "kelola_garasi",
+		manage_garage_command_help = "Mengelola garasi Anda dan siapa yang memiliki akses ke sana.",
+		manage_garage_command_substitutes = "kg",
 
 		-- vehicles/garages
 		toggle_garage_debug_command = "toggle_garage_debug",
@@ -3734,6 +3869,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 		mute_sirens_command = "mute_sirens",
 		mute_sirens_command_help = "Mematikan suara sirene dan klakson.",
 		mute_sirens_command_substitutes = "",
+
+		-- vehicles/trailers
+		toggle_trailer_command = "aktifkan_trailer",
+		toggle_trailer_command_help = "Melepaskan atau mengaitkan trailer ke kendaraan yang Anda gunakan.",
+		toggle_trailer_command_substitutes = "trailer",
 
 		-- vehicles/vehicles
 		flip_command = "flip",
@@ -3889,7 +4029,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 	},
 
 	core = {
-		version = "Versi"
+		version = "Versi",
+
+		access_denied = "Akses Ditolak",
+		file_not_found = "File tidak ditemukan.",
+		only_lua_files_allowed = "Hanya file Lua yang diperbolehkan."
 	},
 
 	couches = {
@@ -3915,7 +4059,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		api_reported_no_updates = "API Discord melaporkan tidak ada pembaruan dalam daftar emoji.",
 		emojis_added = "${added} emoji telah ditambahkan.",
 		emojis_removed = "${removed} emoji telah dihapus.",
-		emojis_updated = "${added} emoji telah ditambahkan dan ${removed} emoji telah dihapus."
+		emojis_updated = "${added} emoji telah ditambahkan dan ${removed} emoji telah dihapus.",
+		no_emojis = "Tidak ada emoji yang tersedia."
 	},
 
 	errors = {
@@ -4082,7 +4227,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 		dropped_timed_out_player_logs_title = "Pemain yang Timeout Terjatuh",
 		dropped_timed_out_player_logs_details = "${consoleName} terjatuh secara manual karena sudah lama tidak memberi respons ke framework.",
 
-		critical_error_while_loading_data = "Terjadi kesalahan kritis saat memuat data Anda."
+		critical_error_while_loading_data = "Terjadi kesalahan kritis saat memuat data Anda.",
+
+		ping_unstable = "Ping Anda tidak stabil.",
+		ping_stable = "Ping Anda kembali stabil."
 	},
 
 	whitelist = {
@@ -4092,25 +4240,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 	-- game/*
 	admin_menu = {
 		menu_title = "Menu Admin",
-		spectate_player = "Melihat Pemain",
-		teleport_player = "Teleport ke Pemain",
-		teleport_player_here = "Teleport Pemain Kepadamu",
-		failed_teleport_to_player = "Gagal teleport ke pemain.",
-		failed_teleport_player_here = "Gagal teleport pemain kepadamu.",
-		invalid_target_server_id = "ID server target tidak valid.",
-		invalid_destination_server_id = "ID server tujuan tidak valid.",
-		invalid_source_server_id = "ID server sumber tidak valid.",
-		failed_teleport_player_to_player = "Gagal teleport pemain ke pemain.",
-		teleported_player_to_player = "Memindahkan pemain ke pemain.",
-
-		tp_player_logs_title = "वाहन आईडी",
-		tp_player_logs_details = "वह वाहन आईडी जिसे आप निकालना चाहते हैं।",
-		tp_here_logs_title = "गेराजसे निकालें",
-		tp_here_logs_details = "हाइब्रिड",
-		tp_everyone_logs_title = "हाइब्रिड मोड स्वचालित रूप से आवृत्ति पर नीचे जाने के लिए आपके लिए शिफ्ट करता है। `late`, `mid` या `early` हो सकता है।",
-		tp_everyone_logs_details = "${consoleName} ने सभी को अपने पास टेलीपोर्ट किया।",
-		tp_to_logs_title = "टीपी टू",
-		tp_to_logs_details = "${consoleName} ने ${sourceConsoleName} को ${targetConsoleName} के पास टेलीपोर्ट किया।"
+		spectate_player = "Melihat Pemain"
 	},
 
 	afk = {
@@ -4142,7 +4272,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		return_button = "Kembali",
 		deposit = "$${amount} Deposit",
 		no_deposit = "Tidak ada Deposit",
-		deposit_not_enough_money = "Anda tidak memiliki cukup uang untuk membayar deposit."
+		deposit_not_enough_money = "Anda tidak memiliki cukup uang untuk membayar deposit.",
+		helipad = "Landasan Helikopter"
 	},
 
 	airstrike = {
@@ -4278,7 +4409,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 		net = "Neto",
 		net_ratio = "Rasio Neto",
 		items_gambled = "Barang yang Dipertaruhkan",
-		screenshots_taken = "Screenshot yang Diambil"
+		screenshots_taken = "Screenshot yang Diambil",
+
+		called_airdrop_logs_title = "Memanggil Drop Udara",
+		called_airdrop_logs_details = "${consoleName} memanggil drop udara."
 	},
 
 	atms = {
@@ -4578,6 +4712,18 @@ OP.Global.Locales.Languages["id-ID"] = {
 		press_to_leave_bed = "Tekan ~INPUT_CONTEXT~ untuk keluar dari tempat tidur."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "Tidak ada sepeda di dekatnya.",
+		failed_pickup_bicycle = "Gagal mengambil sepeda.",
+		picking_up = "Mengambil Sepeda",
+		moving_too_fast = "Anda terlalu cepat untuk mengambil sepeda.",
+
+		picked_up_logs_title = "Mengambil Sepeda",
+		picked_up_logs_details = "${consoleName} mengambil sepeda dengan ID jaringan #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "Sepeda Terjatuh",
+		dropped_bicycle_logs_details = "${consoleName} menjatuhkan sepeda yang mereka bawa."
+	},
+
 	bills = {
 		select_player = "Pilih Pemain",
 		no_nearby_players = "Tidak ada pemain yang dapat di-tagih di dekat Anda.",
@@ -4686,6 +4832,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 		skip_song = "Lewati Lagu",
 		volume = "Volume",
 		music = "Musik",
+
+		mute_boomboxes = "Membisukan Boombox",
+		mute_boomboxes_enabled = "Semua boombox sekarang dibisukan.",
+		mute_boomboxes_disabled = "Semua boombox tidak dibisukan lagi.",
 
 		store_boombox = "Simpan Boombox di inventaris Anda",
 		put_boombox_down = "Letakkan Boombox di tanah",
@@ -4818,7 +4968,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		medical_care_1 = "Jika Anda terluka, Anda dapat pergi ke rumah sakit untuk mendaftar dan mendapatkan perawatan. Anda dapat menemukan rumah sakit di peta. Anda juga dapat menggunakan perban atau kit pertolongan pertama untuk menyembuhkan diri sendiri.",
 		medical_care_2 = "Jika Anda respawn tanpa dibawa ke rumah sakit atau Anda keluar dari permainan saat terluka, Anda dapat kehilangan beberapa item Anda. Restart server dianggap sebagai keluar dari permainan.",
 
-		safety_hint = "Petunjuk: Anda dapat menonaktifkan pengaman senjata dengan menekan tombol ALT dan tombol tengah mouse. Tetaplah aman!",
+		safety_hint = "Petunjuk: Anda dapat menonaktifkan keselamatan senjata menggunakan ${keybind}. Tetap aman!",
 
 		closing_sentence = "Masih banyak hal yang bisa dilakukan di kota ini! Tanyakan sekitar dan buat beberapa teman ;)"
 	},
@@ -4844,6 +4994,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 		buddy_pass_used_logs_title = "Buddy Pass Digunakan",
 		buddy_pass_used_logs_details = "${consoleName} menggunakan Buddy Pass mereka untuk push melalui ${targetConsoleName}."
+	},
+
+	bus_map = {
+		bus_tracker = "Bus"
 	},
 
 	cache = {
@@ -5088,11 +5242,13 @@ OP.Global.Locales.Languages["id-ID"] = {
 		barbershop = "Toko Pangkas Rambut",
 
 		changing_area = "Area Ganti Pakaian",
+		barber = "Tukang Cukur",
 
 		switch_outfit = "Ganti dengan pakaian ini.",
 		replace_outfit = "Gantikan pakaian ini.",
 		new_outfit = "Simpan Pakaian",
 		no_saved_outfits = "Tidak ada outfit disimpan.",
+		last_updated = "Terakhir diperbarui ${ago}.",
 
 		save_outfit_title = "Simpan Outfit Baru",
 		save_outfit_label = "Nama Outfit:",
@@ -5205,24 +5361,45 @@ OP.Global.Locales.Languages["id-ID"] = {
 		fried_item = "Kentang goreng Belgia.",
 		failed_fry_item = "Gagal menggoreng kentang.",
 
-		grill_item = "Panggang Adonan Daging Mentah",
-		press_to_grill_item = "[${SeatEjectKey}] Panggang Adonan Daging Mentah",
-		grilling_item = "Mempanggang adonan daging",
-		grilled_item = "Adonan daging sudah dipanggang.",
-		failed_grill_item = "Gagal memanggang adonan daging.",
+		grill_item = "Panggangan",
+		press_to_grill_item = "[${SeatEjectKey}] Panggang",
+		grilling_patty = "Memanggang Patty",
+		grilled_patty = "Patty Panggang",
+		failed_grill_patty = "Gagal menggoreng patty.",
+		grilling_bacon = "Menggoreng Bacon",
+		grilled_bacon = "Bacon Panggang",
+		failed_grill_bacon = "Gagal menggoreng bacon.",
+		frying_egg = "Menggoreng Telur",
+		fried_egg = "Telur Goreng",
+		failed_fry_egg = "Gagal menggoreng telur.",
+
+		patty_recipe = "Resep Patty Panggang",
+		bacon_recipe = "Bacon",
+		egg_recipe = "Resep Telur Goreng",
 
 		hamburger_recipe = "Hambergur",
 		cheeseburger_recipe = "Keju Hambergur",
+		bacon_burger_recipe = "Burger Bacon Keju",
+		bne_burger_recipe = "Burger Bacon dan Telur",
+		veggie_burger_recipe = "Burger Sayuran",
 
 		assemble_burger = "Susun Burger",
 		press_to_assemble_burger = "[${SeatEjectKey}] Susun Burger",
-		assembling_burger = "Mengassembling Hamburger",
-		assembled_burger = "Hamburger Terkumpul",
-		failed_assemble_burger = "Gagal untuk merakit hamburger.",
-
-		assembling_cheeseburger = "Mengassembling Cheeseburger",
-		assembled_cheeseburger = "Cheeseburger Terkumpul",
-		failed_assemble_cheeseburger = "Gagal untuk merakit cheeseburger.",
+		assembling_burger = "Merakit Burger",
+		assembled_burger = "Membuat Hamburger",
+		failed_assemble_burger = "Gagal membuat hamburger.",
+		assembling_cheeseburger = "Membuat Cheeseburger",
+		assembled_cheeseburger = "Membuat Cheeseburger",
+		failed_assemble_cheeseburger = "Gagal membuat cheeseburger.",
+		assembling_bacon_burger = "Membuat Bacon Cheeseburger",
+		assembled_bacon_burger = "Membuat Bacon Cheeseburger",
+		failed_assemble_bacon_burger = "Gagal membuat bacon cheeseburger.",
+		assembling_bne_burger = "Membuat Bacon-Egg Burger",
+		assembled_bne_burger = "Membuat Bacon n' Egg Burger",
+		failed_assemble_bne_burger = "Gagal membuat burger bacon n' telur.",
+		assembling_veggie_burger = "Membuat Burger Sayuran",
+		assembled_veggie_burger = "Berhasil membuat Burger Sayuran",
+		failed_assemble_veggie_burger = "Gagal membuat burger sayuran.",
 
 		mix_avocado_smoothie = "Mencampur Smoothie Alpukat",
 		press_to_mix_avocado_smoothie = "[${SeatEjectKey}] Mencampur Smoothie Alpukat",
@@ -5273,6 +5450,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		failed_refill_vape = "Gagal mengisi ulang vape.",
 
 		plain_vape = "Biasa (Tanpa Rasa)",
+		weed_vape = "Minyak THC",
 		mango_vape = "Rasa Mangga",
 		strawberry_vape = "Rasa Stroberi",
 		menthol_vape = "Rasa Menthol",
@@ -5314,6 +5492,12 @@ OP.Global.Locales.Languages["id-ID"] = {
 		process_rubber = "Proses Karet",
 		press_process_rubber = "[${SeatEjectKey}] Proses Karet",
 		failed_process_rubber = "Gagal memproses karet.",
+
+		craft_pvc_pipe = "Buat Pipa PVC",
+		press_craft_pvc_pipe = "[${SeatEjectKey}] Membuat Pipa PVC",
+		crafting_pvc_pipe = "Sedang membuat Pipa PVC",
+		crafted_pvc_pipe = "Pipa PVC berhasil dibuat.",
+		failed_craft_pvc_pipe = "Gagal membuat Pipa PVC.",
 
 		process_aluminium = "Proses Aluminium",
 		press_process_aluminium = "[${SeatEjectKey}] Proses Aluminium",
@@ -5501,11 +5685,18 @@ OP.Global.Locales.Languages["id-ID"] = {
 		sawed_shotgun = "[${IkhtisarKunci}] Arm",
 		failed_saw_shotgun = "[${IkhtisarKunci}] Disarm",
 
-		bake_brownies = "Sedang melakukan disarm",
-		press_bake_brownies = "Sedang melakukan arm",
+		use_microwave = "Gunakan Microwave",
+		press_to_use_microwave = "[${SeatEjectKey}] Gunakan Microwave",
+
+		brownies_recipe = "Resep Brownies",
 		baking_brownies = "Gagal mengaplikasikan outfit.",
 		baked_brownies = "Outfit tidak ada.",
 		failed_bake_brownies = "Nama outfit tidak ada.",
+
+		weed_gummies_recipe = "Resep Permen Ganja",
+		making_weed_gummies = "Sedang membuat Permen Ganja",
+		made_weed_gummies = "Permen ganja berhasil dibuat.",
+		failed_make_weed_gummies = "Gagal membuat permen ganja.",
 
 		mix_brushstroke_paint = "Outfit tidak valid.",
 		press_mix_brushstroke_paint = "[${SeatEjectKey}] Campur Cat Coretan Sikat",
@@ -5597,6 +5788,12 @@ OP.Global.Locales.Languages["id-ID"] = {
 		mixed_grimace_shake = "Grimace shake berhasil dicampur.",
 		failed_mix_grimace_shake = "Gagal mencampur grimace shake.",
 
+		assemble_snowlauncher = "Rakit Pelontar Bola Salju",
+		press_to_assemble_snowlauncher = "[${SeatEjectKey}] Merakit Pembuat Bola Salju",
+		assembling_snowlauncher = "Merakit Pembuat Bola Salju",
+		assembled_snowlauncher = "Pembuat bola salju berhasil dirakit.",
+		failed_assemble_snowlauncher = "Gagal merakit pembuat bola salju.",
+
 		deconstruct_ammo = "Memecah Amunisi",
 		press_to_deconstruct_ammo = "[${SeatEjectKey}] Menghancurkan Amunisi",
 
@@ -5620,6 +5817,32 @@ OP.Global.Locales.Languages["id-ID"] = {
 		crafting_ammo = "Membuat Peluru",
 		crafted_ammo = "Berhasil membuat peluru.",
 		failed_craft_ammo = "Gagal membuat peluru.",
+
+		process_weed = "Proses Ganja",
+		press_to_process_weed = "[${SeatEjectKey}] Proses Ganja",
+
+		package_1q_recipe = "Kemas Ganja 1q 4x",
+		packaging_1q = "Mengemas Ganja 1q 4x",
+		packaged_1q = "Ganja 1q 4x berhasil dikemas.",
+		failed_package_1q = "Gagal mengemas Ganja 1q 4x.",
+
+		process_bud_recipe = "Mengolah Herbal Ganja",
+		processing_bud = "Sedang Mengolah Herbal Ganja",
+		processed_bud = "Herbal ganja terolah.",
+		failed_process_bud = "Gagal mengolah herbal ganja.",
+
+		process_meat = "Mengolah Daging",
+		press_to_process_meat = "[${SeatEjectKey}] Mengolah Daging",
+
+		beef_sausages_recipe = "Sosis Daging Sapi",
+		crafting_beef_sausages = "Membuat Sosis Daging Sapi",
+		crafted_beef_sausages = "Sosis daging sapi terbuat.",
+		failed_craft_beef_sausages = "Gagal membuat sosis daging sapi.",
+
+		bacon_recipe = "Bacon",
+		crafting_bacon = "Membuat Bacon",
+		crafted_bacon = "Bacon yang dibuat.",
+		failed_craft_bacon = "Gagal membuat bacon.",
 
 		no_required_items = "Kamu tidak memiliki semua bahan yang diperlukan.",
 
@@ -5664,10 +5887,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 		divorced = "Bercerai",
 		divorced_description = "Pilih jika orang tua kamu bercerai.",
 
-		["in"] = "in",
-		out = "keluar",
-		up = "naik",
-		down = "turun",
+		["in"] = "In",
+		out = "Keluar",
+		up = "Naik",
+		down = "Turun",
 		brow = "Alis",
 		brow_description = "Ubah ciri-ciri fisik kamu.",
 
@@ -6035,6 +6258,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		player_speed = "Kecepatan Pemain: ${playerSpeed}",
 		player_ped = "Ped Pemain: ${playerPedId}",
 		heading = "Arah: ${heading}",
+		bearing = "Arah: ${bearing}°",
 		coords = "Koordinat: ${coords}",
 		rotation = "Rotasi: ${rotation}",
 		normal = "Permukaan: ${normal}",
@@ -6047,6 +6271,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		not_networked_vehicles = "Failed to automatically generate translation.",
 		invisible_vehicles = "Kendaraan Tak Terlihat: ${count}",
 		parked_vehicles = "Failed to automatically generate translation.",
+		available_doors = "ID Pintu Tersedia: ${doors}",
 
 		distance = "Jarak: ${distance}m",
 		distance_first = "Posisi pertama disimpan.",
@@ -6062,6 +6287,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		vehicle_acceleration = "0 hingga 60: ${time}",
 		vehicle_acceleration_120 = "0 hingga 120: ${time}",
 		vehicle_acceleration_150 = "0 hingga 150: ${time}",
+		vehicle_brake_distance = "Jarak Pengereman: ${distance}m",
 		vehicle_acceleration_force = "Tekanan Peluncuran: ${force}",
 
 		invalid_network_id = "Failed to automatically generate translation.",
@@ -6072,6 +6298,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		failed_entity_info = "Gagal mendapatkan informasi entitas.",
 		printed_entity_info = "Mencetak informasi entitas server di F8.",
 
+		no_entity_network = "Tidak ada entitas dengan id jaringan ${networkId}.",
 		move_entity_success = "Berhasil memindahkan entitas dengan id jaringan ${networkId}.",
 		move_entity_failed = "Gagal memindahkan entitas.",
 		move_entity_no_permissions = "Mencoba memindahkan entitas tanpa izin yang tepat.",
@@ -6208,6 +6435,12 @@ OP.Global.Locales.Languages["id-ID"] = {
 		unlocks = "Membuka: <i>${cluster}</i>."
 	},
 
+	effect_zones = {
+		in_zones = "Zona Efek: ~g~${zones}",
+		not_in_zones = "Tidak berada di dalam zona efek apapun.",
+		effects = "Efek: ${effects}"
+	},
+
 	elevators = {
 		use_elevator = "[${InteractionKey}] Gunakan Lift",
 		elevator_title = "Lift",
@@ -6333,6 +6566,32 @@ OP.Global.Locales.Languages["id-ID"] = {
 		give_item_failed = "Gagal memberikan ${itemName} kepada pemain."
 	},
 
+	emote_menu = {
+		menu_title = "OP-FW Emotes",
+
+		dance_emotes = "🕺 Emotes Dance",
+		dance_emotes_description = "Daftar semua emotes dance.",
+		shared_emotes = "👫 Emotes Bersama",
+		shared_emotes_description = "Daftar semua emotes bersama.",
+		prop_emotes = "📦 Emotes Properti",
+		prop_emotes_description = "Daftar semua emotes properti.",
+		animal_emotes = "🐻 Emotes Hewan",
+		animal_emotes_description = "Daftar semua emotes hewan.",
+		pegi_emotes = "🔞 Emotes Pegi",
+		pegi_emotes_description = "Daftar semua emotes Pegi.",
+		racing_emotes = "🏁 Emotes Balapan",
+		racing_emotes_description = "Daftar semua emotes balapan.",
+
+		emotes = "Emotes",
+		emotes_description = "Daftar semua emotes.",
+		moods = "Ekspresi / Mood",
+		moods_description = "Ubah ekspresi / mood Anda.",
+		walkstyles = "Gaya Berjalan",
+		walkstyles_description = "Ubah gaya berjalan Anda.",
+		cancel_emote = "Batalkan Emote",
+		cancel_emote_description = "Batalkan emote yang sedang diputar."
+	},
+
 	exclusive_dealership = {
 		cost_money = "Harga: ${price}",
 		cost_points = "Harga: ${points} Poin OP",
@@ -6389,6 +6648,34 @@ OP.Global.Locales.Languages["id-ID"] = {
 		milking_cow_failed = "Gagal memerah sapi."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "Anda sedang overdosis fentanyl.",
+		overdose = "Overdosis Fentanyl",
+
+		grind_painkillers = "[${InteractionKey}] Giling obat penghilang rasa sakit",
+		grinding_painkillers = "Menggiling Obat Penghilang Rasa Sakit",
+		mix_acetone = "[${InteractionKey}] Campur dengan aseton",
+		mixing_acetone = "Mencampur dengan Aseton",
+		add_hydrogen_peroxide = "[${InteractionKey}] Tambahkan Hidrogen Peroksida",
+		adding_hydrogen_peroxide = "Menambahkan Hidrogen Peroksida",
+		boil = "[${InteractionKey}] Rebus Bahan",
+		boiling = "Merebus Bahan",
+		cool_down = "[${InteractionKey}] Dinginkan",
+		cooling_down = "Mendinginkan",
+		fill_ampules = "[${InteractionKey}] Isi Amplop",
+		filling_ampules = "Mengisi Amplop",
+
+		selling_fentanyl = "Menjual Fentanyl",
+		press_to_sell_fentanyl = "Tekan ~INPUT_CONTEXT~ untuk menjual Fentanyl.",
+		local_not_interested = "Orang lokal tampaknya tidak tertarik saat ini.",
+
+		something_went_wrong = "Terjadi kesalahan.",
+		made_fentanyl_logs_title = "Membuat Fentanyl",
+		made_fentanyl_logs_details = "${consoleName} membuat ${amount}x fentanyl.",
+		sold_fentanyl_logs_title = "Menjual Fentanyl",
+		sold_fentanyl_logs_details = "${consoleName} menjual 1x ampul fentanyl seharga $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Mengambil Sidik Jari",
 		already_fingerprinting = "Anda sedang mengambil sidik jari seorang pemain.",
@@ -6424,6 +6711,16 @@ OP.Global.Locales.Languages["id-ID"] = {
 		flags_on_ground = "Bendera di tanah: ${flagsOnGround}"
 	},
 
+	flight_radar = {
+		callsign_invalid = "Callsign Anda harus terdiri dari 3 hingga 10 karakter.",
+		callsign_set = "Berhasil memperbarui callsign menjadi `${callsign}`.",
+		callsign_reset = "Berhasil mereset callsign.",
+		callsign_set_failed = "Gagal memperbarui callsign.",
+
+		emergency_type_1 = "PD",
+		emergency_type_2 = "EMS"
+	},
+
 	forcefields = {
 		invalid_radius = "Radius tidak valid (harus antara 1 dan 200).",
 		failed_create = "Gagal membuat medan paksa.",
@@ -6442,7 +6739,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 	fortune_cookies = {
 		opened_cookie_logs_title = "Membuka Fortune Cookie",
 		opened_cookie_logs_details = "${consoleName} membuka fortune cookie dan mendapatkan `${fortune}`.",
+		created_cookie_logs_title = "Membuat Kue Keberuntungan",
+		created_cookie_logs_details = "${consoleName} membuat kue keberuntungan dengan pesan `${fortune}`.",
 
+		missing_fortune = "Pesan keberuntungan kosong.",
+		failed_create_cookie = "Gagal membuat kue keberuntungan.",
 		failed_open = "Gagal membuka fortune cookie."
 	},
 
@@ -6573,6 +6874,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		decrypting = "Dekripsi",
 		guns_disabled = "Pengiriman senjata saat ini dinonaktifkan.",
 		high_level_cooldown = "Gagal menghubungkan dengan server FIB, coba lagi nanti.",
+		timeout_cooldown = "Firewall FIB memblokir koneksi, coba lagi nanti.",
 		failed_start_run = "Gagal memulai pengiriman senjata.",
 		hack_timeout = "Koneksi ke server terputus, coba lagi.",
 
@@ -6682,6 +6984,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 		revived_player_removed_injuries_details = "${consoleName} menghidupkan kembali ${targetConsoleName} dan menghilangkan cidera mereka.",
 		revived_player_title = "Pemain Dihidupkan Kembali",
 		revived_player_details = "${consoleName} menghidupkan kembali ${targetConsoleName}.",
+		revived_range_self_title = "Menghidupkan Kembali Area dan Diri Sendiri",
+		revived_range_self_details = "${consoleName} menghidupkan kembali semua orang dalam radius ${radius}m, termasuk diri mereka sendiri.",
+		revived_range_title = "Rentang Dibangkitkan",
+		revived_range_details = "${consoleName} membangkitkan kembali semua orang dalam jarak ${radius}m.",
 		death_alcohol_poisoning = "Anda pingsan karena keracunan alkohol.",
 		character_has_hardcore_died = "${fullName} telah meninggal. Anda dapat memilih karakter lain.",
 
@@ -6725,6 +7031,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		battery = "baterai",
 		fps = "FPS",
 		ping = "PING",
+		tps = "TPS",
 		autopilot = "autopilot",
 		ground_asl = "AGL/ASL (${unit})",
 		heading = "HEADING",
@@ -6746,6 +7053,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 		fps_unit = "fps",
 		ping_unit = "ms",
+		tps_unit = "tps",
 
 		smart_warnings = "Peringatan: ${warnings}!",
 		dehydrated = "terhidrasi",
@@ -6787,6 +7095,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 	identification = {
 		los_santos = "Los Santos",
 		citizen_card = "Kartu Warga",
+		driver_license = "SIM",
 		first_name = "Nama Depan",
 		last_name = "Nama Belakang",
 		gender = "Jenis Kelamin",
@@ -6794,6 +7103,17 @@ OP.Global.Locales.Languages["id-ID"] = {
 		gender_female = "Perempuan",
 		date_of_birth = "Tanggal Lahir",
 		citizen_id = "KTP",
+
+		dl_no = "NO. SIM",
+		class = "KELAS",
+
+		fn = "NAMA DEPAN",
+		cid = "CID",
+		dob = "TGL LAHIR",
+		sex = "JENIS KELAMIN",
+		iss = "ISS",
+		cls = "KLS",
+		["end"] = "END",
 
 		citizenship = "Kewarganegaraan",
 		citizenship_value = "AS",
@@ -6816,6 +7136,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 		citizen_card_details = "${firstName} ${lastName} | Tanggal Lahir: ${dateOfBirth} | Jenis Kelamin: ${gender} | ID Warga: ${characterId}",
 		just_showed_citizen_card = "Anda baru saja menunjukkan Kartu Warga. Harap tunggu sebentar.",
+		driver_license_details = "${firstName} ${lastName} | Tanggal Lahir: ${dateOfBirth} | Jenis Kelamin: ${gender} | ID Warga: ${characterId}",
+		just_showed_driver_license = "Anda baru saja menunjukkan SIM. Mohon tunggu sebentar.",
 
 		boat_license = "Izin Perahu",
 		boat_license_details = "Izin Perahu | ${firstName} ${lastName} | ID Warga: ${characterId}",
@@ -6846,6 +7168,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		swat_badge_details = "SWAT | ${firstName} ${lastName} | Posisi: ${positionName}",
 		management_badge = "Lencana Manajemen",
 		management_badge_details = "Manajemen | ${firstName} ${lastName} | Posisi: ${positionName}",
+		ftp_badge = "Lencana FTP",
+		ftp_badge_details = "FTP | ${firstName} ${lastName} | Posisi: ${positionName}",
 		ems_badge = "ID EMS",
 		ems_badge_details = "EMS | ${firstName} ${lastName} | Posisi: ${positionName}",
 		doctor_badge = "ID Dokter",
@@ -6868,6 +7192,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		badge_type_fib = "Biro Investigasi Federal",
 		badge_type_swat = "Senjata dan Taktik Khusus",
 		badge_type_management = "Pengelolaan SASP",
+		badge_type_ftp = "Program Pelatihan Lapangan",
 		badge_type_ems = "Layanan Medis Darurat",
 		badge_type_doctor = "Residen Medis",
 		badge_type_bcfd = "Departemen Pemadam Kebakaran Kabupaten Blaine",
@@ -6883,6 +7208,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		badge_type_short_fib = "FIB",
 		badge_type_short_swat = "SWAT",
 		badge_type_short_management = "Manajemen",
+		badge_type_short_ftp = "FTP",
 		badge_type_short_ems = "EMS",
 		badge_type_short_doctor = "Dokter",
 		badge_type_short_bcfd = "BCFD",
@@ -6996,7 +7322,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		mug_shots = "Fotografi Wajah",
 		prison_store = "Toko Penjara",
 		fruit_vendor = "Penjual Buah",
-		supermarket = "Supermarket",
+		food_market = "Pasar Makanan",
 		island_store = "Toko Pulau",
 		travel_agency = "Biaya Perjalanan",
 		island_bar = "Bar Pulau",
@@ -7054,6 +7380,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		press_to_access_shared_storage = "Tekan ~INPUT_REPLAY_SHOWHOTKEY~ untuk mengakses penyimpanan bersama.",
 		device_printout_details = "<b>Tipe:</b> <i>${type}</i>, <b>Teks:</b> <i>${text}</i>",
 		copy_serial_number = "Salin Nomor Seri",
+		copy_fingerprint = "Salin Sidik Jari",
 		serial_number_copied = "${itemName}, Nomor Seri: ${serialNumber}",
 
 		failed_give = "तस्वीरों को मुद्रित करने के लिए एक खाली कागज। (आकार: 1x1)",
@@ -7070,7 +7397,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 		nameable_title = "Nama Item yang Dapat Dibuat:",
 
-		locker_restricted = "Anda tidak dapat memindahkan item ini ke inventaris tersebut.",
+		inventory_restricted = "Anda tidak dapat memindahkan item ini ke inventaris tersebut.",
 
 		press_to_access_shredder = "[${InteractionKey}] Akses mesin penghancur.",
 
@@ -7092,6 +7419,9 @@ OP.Global.Locales.Languages["id-ID"] = {
 		press_to_open_public_inventory = "~INPUT_REPLAY_SHOWHOTKEY~ Akses ${label}",
 
 		burgershot_counter = "Loket Burgershot",
+		arcade_counter = "Loket Arkade",
+		tequilala_counter = "Loket Tequi-la-la",
+		prison_counter = "Loket Penjara",
 
 		inventory_name_missing = "Parameter nama inventaris kosong.",
 
@@ -7128,6 +7458,15 @@ OP.Global.Locales.Languages["id-ID"] = {
 		crush_raw_ruby = "Hancurkan <i>Raw Ruby</i>",
 		crush_raw_sapphire = "Hancurkan <i>Saphir Mentah</i>",
 		break_apart_weed = "Pecahkan <i>1oz Ganja</i>",
+		brine_meat = "Rendam <i>Daging Mentah</i>",
+		prepare_sandwich = "Siapkan <i>Roti BBQ</i>",
+		pickle_cucumbers = "Asin <i>Timun</i>",
+		melt_chocolate = "Lelehkan <i>Cokelat Hitam</i>",
+		craft_torch = "Membuat <i>Senter</i>",
+		prepare_beans_toast = "Mempersiapkan <i>Kacang di atas Roti Panggang</i>",
+		mix_pancake_batter = "Mencampur <i>Adonan Pancake</i>",
+		disassemble_bandages = "Memecah <i>Perban</i>",
+		craft_tourniquet = "Membuat <i>Tourniquet</i>",
 
 		search = "Cari",
 		amount = "Jumlah",
@@ -7151,6 +7490,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 		logs_item_moved_title = "Item Dipindahkan",
 		logs_item_moved_details = "${consoleName} memindahkan ${moveAmount}x ${itemLabel} ke ${endInventory}:${endSlot} dari inventaris ${startInventory}:${startSlot}.",
+		logs_item_given_title = "Barang Diberikan",
+		logs_item_given_details = "${consoleName} memberikan ${amount}x ${label} kepada ${targetConsoleName}.",
 
 		logs_item_purchased_title = "Item Dibeli",
 		logs_item_purchased_no_tax_details = "${consoleName} membeli ${purchaseAmount}x `${itemLabel}` seharga $${purchaseCost}.",
@@ -7195,6 +7536,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 		first_aid_kit_description = "Kit dokter \"lakukan sendiri\".",
 		bandages = "Perban",
 		bandages_description = "Untuk luka-luka ringan.",
+		tourniquet = "Tourniquet",
+		tourniquet_description = "Sebagai alat penyelamat hidup dalam situasi kritis, tourniquet dirancang untuk menghentikan pendarahan parah dengan cepat. Meskipun menawarkan penyembuhan minimal dibandingkan dengan opsi pertolongan pertama yang lebih komprehensif, kemampuannya untuk menghentikan kehilangan darah dapat sangat penting dalam skenario darurat.",
+		gauze = "Perban",
+		gauze_description = "Perban penting untuk kit pertolongan pertama, perban ini lembut, menyerap, dan sempurna untuk membalut luka. Perban ini memberikan dasar yang diperlukan untuk perawatan luka, membantu mengatasi pendarahan dan melindungi dari infeksi.",
 		oxygen_tank = "Tabung Oksigen",
 		oxygen_tank_description = "Tabung perluasan paru-paru.",
 		ifak = "IFAK",
@@ -7202,6 +7547,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 		citizen_card = "Kartu Warga",
 		citizen_card_description = "Berfungsi sebagai identifikasi, lisensi senjata api, dan lisensi mengemudi.",
+		driver_license = "SIM (Surat Izin Mengemudi)",
+		driver_license_description = "Surat izin mengemudi resmi. Bukan hasil dari kotak sereal belakang.",
 		phone = "Telepon",
 		phone_description = "never:tm:",
 		radio = "Radio",
@@ -7249,6 +7596,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		swat_badge_description = "Lencana untuk petugas departemen Special Weapons and Tactics.",
 		management_badge = "Lencana Manajemen",
 		management_badge_description = "Lencana untuk Agen Divisi Manajemen SASP.",
+		ftp_badge = "Lencana FTP",
+		ftp_badge_description = "Sebuah lencana bagi pelatih Program Pelatihan Lapangan.",
 		ems_badge = "ID EMS",
 		ems_badge_description = "Sebuah ID untuk Paramedis EMS.",
 		doctor_badge = "ID Dokter",
@@ -7291,20 +7640,28 @@ OP.Global.Locales.Languages["id-ID"] = {
 		compass_description = "43.3068 N 0.7668 W",
 		map = "Peta",
 		map_description = "Menunjukkan ke mana kamu pergi dan di mana kamu sudah pergi. Atau mungkin kamu berada di sana?",
+		bus_map = "Peta Bus",
+		bus_map_description = "Sebuah peta rute bus di Los Santos. Menunjukkan semua halte di mana Anda bisa menaiki bus.",
+		flight_radar = "Radar Penerbangan",
+		flight_radar_description = "Penerima Radar Penerbangan canggih ini adalah jendela Anda ke langit, menawarkan pandangan real-time tentang gerakan pesawat selama mereka berada dalam jangkauan stasiun radar. Sempurna untuk para penggemar aviasi dan profesional, memberikan gambaran yang komprehensif tentang lanskap udara, memastikan Anda selalu terhubung dengan dunia di atas.",
 		glass_breaker = "Pemecah Kaca Darurat",
 		glass_breaker_description = "Digunakan untuk memecahkan kaca mobil dalam keadaan darurat.",
 
 		picture = "Gambar",
 		picture_description = "Kumpulkan semua kenangan tentangmu dan teman-temanmu. (Ukuran: 1x1)",
+		picture_wide = "Foto Lebar",
+		picture_wide_description = "Kumpulkan semua kenangan Anda dan teman-teman Anda. (Ukuran: 14x8.5)",
 		printed_card = "Kartu Tercetak",
 		printed_card_description = "Sebuah kartu tercetak kecil, mungkin kartu bisnis? (Ukuran: 9x5)",
 		printed_document = "मुद्रित दस्तावेज",
 		printed_document_description = "एक मुद्रित दस्तावेज, शायद एक पत्र? (आकार: 21x28)",
-		paper = "Kertas Foto",
-		paper_description = "तस्वीरों को मुद्रित करने के लिए एक खाली कागज। (आकार: 1x1)",
-		card_paper = "Kertas Kartu",
+		paper = "Kertas Foto (1x1)",
+		paper_description = "Sehelai kertas kosong untuk mencetak foto persegi. (Ukuran: 1x1)",
+		paper_wide = "Kertas Foto (14x8.5)",
+		paper_wide_description = "Sehelai kertas kosong untuk mencetak foto dengan lebar. (Ukuran: 14x8.5)",
+		card_paper = "Kertas Kartu (9x5)",
 		card_paper_description = "व्यापार कार्डों को मुद्रित करने के लिए एक खाली कागज। (आकार: 9x5)",
-		document_paper = "दस्तावेज़ी कागज",
+		document_paper = "Kertas Dokumen (21x28)",
 		document_paper_description = "गेराज में से वाहन निकालें",
 		printer = "Printer",
 		printer_description = "Tanpa fax, hanya printer.",
@@ -7351,6 +7708,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		bean_machine_delivery_description = "Sebuah kantong penuh penganan lezat dari sebuah kafe kecil di pusat kota.",
 		kissaki_delivery = "Kissaki Meal",
 		kissaki_delivery_description = "Koleksi lezat sushi dan hidangan Jepang lainnya.",
+		green_wonderland_delivery = "Paket Green Wonderland",
+		green_wonderland_delivery_description = "Sebuah tas penuh dengan barang-barang favorit berwarna hijau Anda. #420blazeit",
 
 		ear_defenders = "Pelindung Telinga",
 		ear_defenders_description = "Digunakan untuk melindungi telinga Anda dari suara keras.",
@@ -7367,51 +7726,57 @@ OP.Global.Locales.Languages["id-ID"] = {
 		small_frog_description = "Hanya katak kecil. Lihatlah si kecil, dia sangat lucu!",
 		seashell = "Kerang Laut",
 		seashell_description = "Sebuah kerang laut dari pantai. Anda dapat mendengar suara ombak jika Anda menempatkannya di telinga Anda.",
+		lucky_penny = "Koin Keberuntungan",
+		lucky_penny_description = "Temui kilatan keberuntungan dengan Koin Keberuntungan ini, temuan langka di jalan yang menjanjikan sentuhan takdir. Simpanlah dekat dan biarkan keberuntungan membimbing jalan Anda.",
+		small_frog_mk2 = "Katak Kecil MK2",
+		small_frog_mk2_description = "Di lumpur, terdapat seorang prajurit amphibi yg sulit ditemui: Katak Kecil MK2, dapat dikenali dengan helm militer miniatur dan senjata AK mungil yang sepertinya dipegangnya. Menemukan satu dengan kacamata pembesar Anda di tengah lumpur adalah suatu kehormatan langka dan menghibur, sebuah bukti dari keajaiban alam yang menarik.",
+		caterpillar = "Ulat Belang",
+		caterpillar_description = "Permata taman, ulat belang yang mencolok ini dapat menjadi temuan langka di dalam rumput, hanya terlihat oleh mereka yang memakai kaca pembesar dan memiliki rasa ingin tahu yang tajam. Garis-garis berwarna cerahnya dan gerakan yang lemah lembut memperkaya pengalaman para pecinta alam.",
 
 		keys = "Kunci",
 		keys_description = "Sebuah pasangan kunci untuk beberapa pintu di suatu tempat.",
 
 		raw_diamond = "Intan Mentah",
-		raw_diamond_description = "Intan dalam bentuk alaminya, baru dari tambang.",
+		raw_diamond_description = "Sebuah berlian langka dan belum dipotong, kasar dan tidak tersentuh, menyimpan kilauan yang belum terjamah di dalam belahan-belahannya. Sempurna bagi mereka yang melihat keindahan dalam potensi mentah, permata ini menanti sentuhan seorang ahli untuk mengeluarkan keindahannya yang sejati.",
 		raw_morganite = "Morganite Mentah",
-		raw_morganite_description = "Morganite dalam bentuk alaminya, baru dari tambang.",
+		raw_morganite_description = "Sebuah batu permata merah muda lembut dalam keadaan alaminya, morganit mentah sangat langka dan dihargai karena warna lembutnya. Ia menjanjikan daya tarik keindahan yang halus begitu dipotong dan dipolisikan dengan ahli.",
 		raw_ruby = "Ruby Mentah",
-		raw_ruby_description = "Ruby dalam bentuk alaminya, baru dari tambang.",
+		raw_ruby_description = "Kaya dan dalam warnanya, ruby mentah ini menyimpan keindahan yang luar biasa di dalam penampilan kasarnya. Sebuah permata yang melambangkan gairah dan kekuatan, menunggu transformasi menjadi sebuah karya yang benar-benar memikat perhatian.",
 		raw_sapphire = "Saphir Mentah",
-		raw_sapphire_description = "Saphir dalam bentuk alaminya, baru dari tambang.",
+		raw_sapphire_description = "Safir kasar ini, dengan warna biru intensnya, bercerita tentang kedalaman dan misteri. Seindah dan sekuat apapun, ini siap untuk diolah menjadi perhiasan yang mencerminkan langit.",
 		raw_emerald = "Zamrud Mentah",
-		raw_emerald_description = "Zamrud dalam bentuk alaminya, langsung dari tambang.",
+		raw_emerald_description = "Sebuah zamrud kasar yang cerah, yang menangkap esensi lanskap hijau dan hutan lebat. Umum namun memikat, ini memiliki potensi untuk keindahan yang memukau setelah diolah.",
 
 		ruby_dust = "Debu Ruby",
-		ruby_dust_description = "Debu dari Ruby.",
+		ruby_dust_description = "Serbuk merah yang cerah yang terbuat dari ruby yang dihancurkan halus, dihargai karena warna merah yang dalam. Pigmen mewah ini sempurna untuk menambahkan warna yang berani dan mencolok ke dalam proyek apa pun, terutama ketika digabungkan dengan warna-warna patriotik lainnya untuk menciptakan tampilan yang pasti menarik perhatian dan menginspirasi kebanggaan nasional.",
 		sapphire_dust = "Debu Sapphire",
-		sapphire_dust_description = "Debu dari Sapphire.",
+		sapphire_dust_description = "Serbuk biru eksklusif yang dibuat dengan menggiling safir berkualitas tinggi menjadi serbuk halus. Warna biru yang memikat dan dalam dari pigmen ini mengingatkan pada langit yang cerah dan samudra yang megah, menjadikannya pilihan ideal untuk proyek-proyek yang membutuhkan sentuhan yang megah dan berkelas. Ketika dipadukan dengan warna lain yang membangkitkan semangat dari bendera berbintang tertentu, hasilnya benar-benar memukau.",
 
 		morganite = "Morganite",
-		morganite_description = "Morganite yang dipotong dan diasah.",
+		morganite_description = "Dengan warna peach hangatnya, morganite yang dipoles menaklukkan hati dengan kilauannya yang halus namun memikat. Sebuah permata yang menggabungkan kelangkaan dengan daya tarik romantis, sempurna untuk perhiasan halus yang eksklusif.",
 		ruby = "Ruby",
-		ruby_description = "Ruby yang dipotong dan diasah.",
+		ruby_description = "Dipotong dengan sempurna, ruby ini berkilau dengan cahaya merah muda yang dalam. Warna yang cerah dan kilauannya yang mengilap membuatnya menjadi permata yang banyak dicari untuk perhiasan berkesan dan hiasan elegan.",
 		sapphire = "Sapphire",
-		sapphire_description = "Sapphire yang dipotong dan diasah.",
+		sapphire_description = "Sebagai simbol kebijaksanaan dan kebangsawanan, sapphire yang dipoles ini mempesona dengan kilauan biru kerajaannya. Ketahanan dan kilauannya membuatnya menjadi favorit baik untuk pemakaian sehari-hari maupun pakaian seremonial.",
 		emerald = "Emerald",
-		emerald_description = "Emerald yang dipotong dan diasah.",
+		emerald_description = "Dipoles untuk mengungkapkan warna hijau yang memancar kehidupan musim semi, emerald ini merupakan bukti dari keindahan alam. Dicintai karena warna kaya dan kejernihan, emerald menjadi tulang punggung dalam setiap koleksi permata.",
 
 		ring = "Cincin",
-		ring_description = "Hanya sebuah cincin kosong.",
+		ring_description = "Sebuah dasar yang sederhana namun elegan untuk karya pribadi, cincin kosong ini terbuat dari logam halus, siap dihias dengan batu permata apa pun. Ini adalah kanvas sempurna untuk pesan yang terukir, menjadikannya unik seperti kisah pemakainya sendiri.",
 
-		morganite_ring = "Cincin Morganite",
-		morganite_ring_description = "Cincin cantik dengan Morganite besar di tengahnya. Sempurna untuk pernikahan, sahabat terbaik, atau orang asing.",
-		ruby_ring = "Cincin Ruby",
-		ruby_ring_description = "Cincin cantik dengan Ruby besar di tengahnya. Sempurna untuk pernikahan, sahabat terbaik, atau orang asing.",
-		sapphire_ring = "Cincin Sapphire",
-		sapphire_ring_description = "Cincin cantik dengan Sapphire besar di tengahnya. Sempurna untuk pernikahan, sahabat terbaik, atau orang asing.",
-		emerald_ring = "Cincin Zamrud",
-		emerald_ring_description = "Cincin cantik dengan batu zamrud besar di tengahnya. Sempurna untuk pernikahan, sahabat terbaik, atau orang asing.",
 		diamond_ring = "Cincin Berlian",
-		diamond_ring_description = "Cincin cantik dengan berlian besar di tengahnya. Sempurna untuk pernikahan, sahabat terbaik, atau orang asing.",
+		diamond_ring_description = "Cincin berlian yang sangat indah ini menampilkan berlian yang dipotong dengan cemerlang yang terpasang di atas band perak yang elegan, dihias dengan berlian-berlian kecil di sepanjang kelilingnya. Keanggunan abadinya dan kilauan gemerlapnya membuatnya menjadi simbol cinta dan komitmen yang utama.",
+		morganite_ring = "Cincin Morganite",
+		morganite_ring_description = "Lembut dan halus, cincin morganite ini bersinar dengan warna merah muda yang hangat. Batu permata ini terletak di dalam pengaturan emas mawar yang meningkatkan warna lembutnya, menawarkan potongan modern dan romantis yang menonjol dengan daya tarik femininnya.",
+		ruby_ring = "Cincin Ruby",
+		ruby_ring_description = "Berani dan memikat, cincin ruby ini memiliki batu permata merah tua di hatinya. Diletakkan di atas ban perak klasik dengan detail yang rumit, ini adalah potongan yang melambangkan gairah dan kekuatan cinta yang tak tergoyahkan.",
+		sapphire_ring = "Cincin Sapphire",
+		sapphire_ring_description = "Megah dan mencolok, cincin sapphire ini menampilkan batu permata biru tua, mengingatkan kita pada langit tengah malam. Ditempatkan di atas ban perak dengan batu samping yang elegan, ini menawarkan sentuhan kesopanan dan aura kerajaan bagi siapa pun yang mengenakannya.",
+		emerald_ring = "Cincin Zamrud",
+		emerald_ring_description = "Cincin zamrud yang penuh warna dan kehidupan ini menampilkan batu hijau yang kaya, dipasang dalam band perak yang dirajut dengan indah. Ini adalah perayaan keindahan hijau alam, sempurna untuk mereka yang menghargai pertumbuhan dan pembaharuan.",
 
 		gemstone_scanner = "Pemindai Batu Permata",
-		gemstone_scanner_description = "Berguna untuk memindai batu permata.",
+		gemstone_scanner_description = "Alat penting bagi setiap penambang, Pemindai Batu Permata dirancang untuk menilai stabilitas batu permata yang tertanam dalam batu. Dengan mengevaluasi integritas struktural masing-masing batu permata, perangkat ini membantu penambang menentukan pendekatan yang paling aman untuk ekstraksi, mengurangi risiko pemicu ledakan berbahaya. Aplikasi penting untuk menjaga nilai batu permata dan keselamatan operasi penambangan.",
 
 		extended_clip = "Magazen Tambahan",
 		extended_clip_description = "Pelebihan peluru sebelum harus reload.",
@@ -7454,27 +7819,27 @@ OP.Global.Locales.Languages["id-ID"] = {
 		spring_description = "Tidak tahu kenapa, tapi orang-orang suka membersihkannya?",
 
 		grenade_shell = "Bubuk Peluru Granat",
-		grenade_shell_description = "Bubuk peluru untuk granat.",
+		grenade_shell_description = "Kepala granat kosong ini adalah komponen penting untuk membuat granat khusus, seperti tipe asap atau gas. Casing yang kokoh dirancang untuk dapat mengandung dan melepaskan berbagai zat saat digunakan dengan mekanisme pencetus yang benar.",
 		grenade_pin = "Peniti Granat",
-		grenade_pin_description = "Peniti untuk granat.",
+		grenade_pin_description = "Menggunakan penting untuk penanganan dan penggunaan granat dengan aman, pin ini berfungsi sebagai kunci keamanan. Saat dipasangkan dengan kepala granat, memungkinkan kontrol dan penentuan waktu yang tepat yang diperlukan untuk menciptakan alat dispersi asap atau gas yang efektif dalam situasi taktis.",
 
 		paint = "Cat",
-		paint_description = "Berguna untuk Pagar dan Rumah, jangan hanya menghirupnya.",
+		paint_description = "Sebuah kaleng cat premium berstandar senjata, tersedia dalam berbagai warna klasik. Berikan senjata andalan Anda lapisan baru untuk tampilan seperti baru dari pabrik yang akan mengesankan teman-teman dan menakuti musuh. Satu kaleng cukup untuk perbaikan senjata lengkap, jangan mulai menghisapnya.",
 		paint_brush = "Kuas Cat",
-		paint_brush_description = "Berguna untuk Melukis.",
+		paint_brush_description = "Sebuah kuas berkualitas tinggi terbuat dari bulu terbaik, dirancang untuk aplikasi cat yang presisi dan merata pada permukaan senjata apa pun. Bila dipadukan dengan cat premium kami, kuas ini akan membantu Anda secara terampil merancang tampilan baru senjata Anda, apakah Anda ingin motif kamuflase yang mencolok atau desain yang elegan dan stylish.",
 
 		skin_patriotic = "Skin Patriotik",
-		skin_patriotic_description = "Untuk kalian semua orang Amerika yang berdarah merah.",
+		skin_patriotic_description = "Tunjukkan cintamu pada biru, putih, dan merah dengan skin senjata patriotik ini. Sempurna untuk patriot Amerika sejati yang ingin mengekspresikan kebanggaan nasional mereka saat membawa senjata. Ini akan membuat senjatamu menjadi pusat perhatian saat kamu berjuang untuk kebebasan.",
 		skin_brushstroke = "Kulit Coretan Kuas",
-		skin_brushstroke_description = "Untuk semua pecinta seni di sana.",
+		skin_brushstroke_description = "Berjejalanlah dengan senjatamu menggunakan skin sapuan kuas abstrak ini. Seperti memiliki karya seni modern yang juga dapat menghantam musuh-musuhmu.",
 		skin_skull = "Kulit Tengkorak",
-		skin_skull_description = "Untuk semua anak muda yang edgy di sana.",
+		skin_skull_description = "Timbulkan ketakutan di hati musuh-musuhmu dengan skin tengkorak keren ini. Tidak ada yang mengatakan 'jangan ganggu saya' seperti motif tengkorak yang menakutkan pada senjata pilihanmu.",
 		skin_leopard = "Kulit Leopard",
-		skin_leopard_description = "Untuk semua pecinta hewan di sana.",
+		skin_leopard_description = "Tunjukkan sisi liar Anda dan berburu dengan kulit macan yang ganas ini. Cara yang sempurna untuk menambah daya tarik hewan ke dalam inventaris Anda.",
 		skin_zebra = "Kulit Zebra",
-		skin_zebra_description = "Untuk semua pecinta hewan di sana.",
+		skin_zebra_description = "Dapatkan garis Anda di jalan-jalan brutal dengan kulit motif zebra yang mencolok ini. Hitam dan putih dan dibaca sepenuhnya... obituari korban Anda, itulah maksudnya.",
 		skin_geometric = "Kulit Geometri",
-		skin_geometric_description = "Untuk semua penggemar matematika di sana.",
+		skin_geometric_description = "Untuk penembak yang lebih mampu dalam matematika, kulit geometris ini menambah gaya yang terhitung pada senjata Anda. Bukti bahwa Anda sama terampilnya dalam trigonometri dan trigonometri senapan.",
 
 		refillable_bottle = "Botol Isi Ulang",
 		refillable_bottle_description = "Selamatkan kura-kura sungguh-sungguh.",
@@ -7492,6 +7857,12 @@ OP.Global.Locales.Languages["id-ID"] = {
 		water_description = "Bahaya! Dihidrogen monoksida tidak berwarna dan tidak berbau. Inhalasi tidak sengaja dapat berakibat fatal. Paparan berkepanjangan terhadap bentuk padatnya dapat menyebabkan kerusakan jaringan parah. Gejala dari kelebihan konsumsi DHMO dapat mencakup keringat berlebihan dan buang air kecil, serta mungkin sensasi kembung, mual, muntah, dan ketidakseimbangan elektrolit tubuh.",
 		hamburger = "Hamburger",
 		hamburger_description = "Rasa Amerika!",
+		bacon_burger = "Burger Bacon-Cheese",
+		bacon_burger_description = "Pilihan klasik favorit, burger bacon-cheese ini mengombinasikan daging sapi panggang yang juicy dengan bacon renyah dan keju meleleh. Setiap gigitan memberikan gabungan rasa gurih yang sempurna, menjadikannya pilihan yang abadi bagi para penggemar burger.",
+		bne_burger = "Burger Bacon dan Telur",
+		bne_burger_description = "Tingkatkan pengalaman burger Anda dengan kombinasi bacon renyah, telur yang dipanggang sempurna, dan keju leleh di atas patty daging sapi yang gurih. Ini adalah hidangan yang lezat dan memuaskan yang menggabungkan sarapan dan makan siang secara brilian.",
+		veggie_burger = "Burger Sayuran",
+		veggie_burger_description = "Burger sayuran ringan dan menyegarkan ini menampilkan empat daun selada yang renyah terselip di antara roti lembut, dengan sentuhan saus tomat untuk sedikit rasa asam. Sebuah variasi hijau sederhana pada burger klasik, sempurna untuk mereka yang mencari pilihan makanan yang lebih ringan.",
 		belgian_fries = "Kentang Goreng Belgia",
 		belgian_fries_description = "Untuk rasa yang lebih baik, DM @Giv3n#0753 dan kirim pesan kepada dia hanya dengan kata \"fritas\".",
 		coke = "Coca-Cola",
@@ -7513,11 +7884,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 		taco = "Taco",
 		taco_description = "Spesialisasi dari El Brayan.",
 		smores = "S'mores",
-		smores_description = "ya",
+		smores_description = "undefined",
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? Bukan, petugas, saya hanya makan tic tac!",
 		pizza_slice = "Potongan Pizza",
-		pizza_slice_description = "Sejumput piza untukmu.",
+		pizza_slice_description = "Potongan kecil pizza untuk Anda, dengan pepperoni tambahan (bukan vegan).",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "Makan hot dog ini seakan-akan ini yang terakhir untukmu.",
 		nachos = "Nachos",
@@ -7660,6 +8031,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		weed_1q_description = "420 bro",
 		weed_1oz = "Ganja 1oz",
 		weed_1oz_description = "1680 bro",
+		weed_bud = "Bud Ganja",
+		weed_bud_description = "Hebat ganja 420 bro",
 
 		oxy_prescription = "Resep Oxy",
 		oxy_prescription_description = "Resep oxy yang mencurigakan.",
@@ -7669,6 +8042,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 		brownies = "Brownies",
 		brownies_description = "Lezat, Berongga, dan dua kali lipat cokelat dengan rasa tambahan yang membuat Anda duduk kembali dan mempertanyakan segalanya dalam kehidupan.",
+		weed_gummies = "Permen Karet Ganja",
+		weed_gummies_description = "Cara lezat untuk mabuk.",
 
 		ejector_seat = "Kursi Ejector",
 		ejector_seat_description = "Ejecto Seato Karena!",
@@ -7718,6 +8093,25 @@ OP.Global.Locales.Languages["id-ID"] = {
 		hotwheels_towmater = "Tow Mater",
 		hotwheels_towmater_description = "Namaku Mater, seperti tomatir tapi tanpa Tuh.",
 
+		kinder_surprise = "Telur Kejutan Kinder",
+		kinder_surprise_description = "Ini bukan telur biasa! Pecahkan untuk menemukan dunia keajaiban dan teman yang siap menjadi sahabatmu. Siapa yang akan kamu temui di dalamnya? Bisa saja si energik Sparky McBowtie, si bijak Kapten Whiskerface, atau bahkan si modis Sir Fancy Pants? Kejutannya adalah separuh kesenangan!",
+		plush_green = "Mossy McHairface",
+		plush_green_description = "Boneka ini memiliki rambut kusut yang sangat parah, tetapi jangan khawatir, mereka selalu siap untuk petualangan (meskipun mereka mungkin tidak bisa melihatnya datang).",
+		plush_red = "Shades si Superstar",
+		plush_red_description = "Boneka ini selalu keren, tenang, dan terkumpul. Mereka mungkin tidak bisa melihat tanpa kacamata hitam mereka, tetapi mereka pasti bisa merasakan irama.",
+		plush_pink = "Sir Fancy Pants",
+		plush_pink_description = "Boneka ini berpakaian rapi yang selalu tampil maksimal. Mereka mungkin agak mewah, tetapi mereka selalu rendah hati (yah, se-rendah hati boneka dengan topi tinggi bisa).",
+		plush_blue = "Sparky McBowtie",
+		plush_blue_description = "Little guy ini punya tampilan listrik yang sempurna, dengan rambut yang berkreket dengan energi dan dasi kupu-kupu yang selalu rapi. Jangan biarkan percikan itu menipumu, meskipun - Sparky McBowtie hanya tentang berpelukan dan malam yang nyaman. Hanya jangan sentuh rambutnya saat dia sedang mengecas untuk mendengarkan cerita sebelum tidur!",
+		plush_white = "Captain Whiskerface",
+		plush_white_description = "Boneka ini adalah jiwa tua yang bijaksana dengan janggut yang menceritakan kisah. Mereka mungkin tidak bisa berbicara, tapi selalu siap mendengarkan (atau sebaiknya kita katakan, jahitan mendengarkan?).",
+		plush_yellow = "Sunshine Dread",
+		plush_yellow_description = "Boneka ini membawa energi positif dan selalu memberikan nuansa yang menyenangkan. Meskipun terlihat santai, mereka selalu siap untuk bersenang-senang.",
+		plush_orange = "Tang si Penjelajah",
+		plush_orange_description = "Boneka ini selalu mencari petualangan baru. Meskipun agak berantakan, mereka tidak pernah menolak tantangan.",
+		plush_wasabi = "Wasabi Whiz",
+		plush_wasabi_description = "Boneka kecil ini sungguh langka, sama seperti sensasi Wasabi yang segar! Mantel hijau mereka yang bersinar pasti akan membuat orang tertarik. Jangan sepelekan ukuran kecil mereka - mereka penuh dengan kepribadian dan siap untuk berpetualang.",
+
 		boxing_gloves = "Sarung Tinju",
 		boxing_gloves_description = "Mengubahmu menjadi Rocky, tapi mungkin kamu tidak akan mendapatkan sekuel...",
 		leash = "Tali",
@@ -7729,8 +8123,14 @@ OP.Global.Locales.Languages["id-ID"] = {
 		lean = "Lean",
 		lean_description = "Sippin di atas sizzurp, minum, sippin di atasnya, minum.",
 
+		fentanyl = "Fentanyl",
+		fentanyl_description = "Dikenal sebagai \"snoozer curang\", fentanyl adalah ramuan kecil yang sangat kuat. Dengan hanya sentuhan dari zat ini, Anda dapat membuat bahkan orang yang paling segar terlelap. Namun, hati-hati! Fentanyl begitu kuat sehingga jika mimpi adalah uang, Anda akan menjadi miliarder hanya dengan satu dosis. Sangat cocok saat Anda perlu mengubah masalah besar menjadi masalah tidur.",
+
 		grimace_shake = "Shake Grimace",
 		grimace_shake_description = "Gila? Saya dulu juga gila. Mereka menempatkan saya di dalam kamar. Kamar dari karet. Kamar dari karet dengan tikus-tikus. Dan tikus-tikus membuat saya gila. Gila? Saya dulu juga gila. Mereka menempatkan saya di dalam kamar. Kamar dari karet. Kamar dari karet dengan tikus-tikus. Dan tikus-tikus membuat saya gila. Gila? Saya dulu juga gila. Mereka menempatkan saya di dalam kamar. Kamar dari karet. Kamar dari karet dengan tikus-tikus. Dan tikus-tikus membuat saya gila. Gila? Saya dulu juga gila. Mereka menempatkan saya di dalam kamar. Kamar dari karet. Kamar dari karet dengan tikus-tikus. Dan tikus-tikus membuat saya gila. Gila? Saya dulu juga gila.....",
+
+		hydrogen_peroxide = "Hidrogen Peroksida",
+		hydrogen_peroxide_description = "Campuran berbusa ini, dikenal karena efek gelembungnya dan kebersihannya, adalah kebutuhan penting di laboratorium ilmiah dan di luar sana. Meskipun terkenal akan kemampuannya membuat luka dan permukaan bersih, hidrogen peroksida juga mampu bercampur dengan bahan lain untuk menciptakan ramuan yang cukup kuat. Gunakan dengan pengetahuan dan sedikit kehati-hatian.",
 
 		jolly_ranchers = "Permen Jolly Ranchers",
 		jolly_ranchers_description = "Nikmati rasa manis dan asam dari Jolly Ranchers, permen keras klasik yang meledak dengan cita rasa buah yang lezat.",
@@ -7745,6 +8145,21 @@ OP.Global.Locales.Languages["id-ID"] = {
 		jolly_rancher_grape = "Jolly Rancher Anggur",
 		jolly_rancher_grape_description = "Rasakan rasa anggur yang lezat dan segar dengan permen keras Jolly Rancher yang menggugah selera ini.",
 
+		lollipop_pack = "Paket Lollipop",
+		lollipop_pack_description = "Telusuri medley misteri rasa dengan paket lollipop ini. Setiap satu adalah kejutan manis, menawarkan campuran acak dari berbagai rasa buah kami yang menyenangkan. Sebuah kegembiraan bagi lidah dalam setiap paket berwarna-warni!",
+		lollipop_apple = "Lollipop Apel",
+		lollipop_apple_description = "Manis dengan sentuhan asam, lollipop rasa apel ini seperti berjalan melalui kebun raya musim gugur, menangkap esensi apel yang renyah dan juicy dalam setiap jilatan.",
+		lollipop_coke = "Lollipop Coca-Cola",
+		lollipop_coke_description = "Rasa cola klasik yang terperangkap dalam sebatang lollipop. Ini adalah camilan berbusa dan menyegarkan yang memberikan sensasi menggelitik dari soda di dalam pusaran permen.",
+		lollipop_grape = "Lollipop Anggur",
+		lollipop_grape_description = "Penuh dengan rasa anggur yang kaya dan juicy, lollipop ini adalah kenikmatan ungu yang akan membawamu langsung ke ladang yang terkena sinar matahari.",
+		lollipop_raspberry = "Lollipop Raspberry",
+		lollipop_raspberry_description = "Lollipop raspberry ini menawarkan ledakan rasa buah beri, menggabungkan manis dengan sedikit keasaman, sama seperti musim panas buah yang dinamakan setelahnya.",
+		lollipop_strawberry = "Permen Lolipop Stroberi",
+		lollipop_strawberry_description = "Essensi stroberi matang terpancar dalam permen lolipop ini, memberikan pengalaman manis berisi buah yang menyenangkan seperti hari yang cerah.",
+		lollipop_watermelon = "Permen Lolipop Semangka",
+		lollipop_watermelon_description = "Potongan segar dari musim panas, permen lolipop semangka ini memiliki semua manisnya dan tanpa biji, menjadikannya sebagai camilan yang juicy dan menyegarkan kapan pun saatnya.",
+
 		bucket = "Ember",
 		bucket_description = "Dapat digunakan sebagai helm sementara.",
 		fertilizer = "Pupuk",
@@ -7758,7 +8173,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		steel_filings_description = "हाइब्रिड मोड स्वचालित रूप से आवृत्ति पर नीचे जाने के लिए आपके लिए शिफ्ट करता है। `late`, `mid` या `early` हो सकता है।",
 
 		gold_bar = "Bar Emas",
-		gold_bar_description = "Digunakan untuk perbaikan dan kerajinan.",
+		gold_bar_description = "undefined",
 
 		ancient_ring = "Cincin Kuno",
 		ancient_ring_description = "Sebuah cincin emas yang terkikis oleh zaman dan ombak, ukirannya yang rumit pudar, berbisik tentang cinta dan kesetiaan dari era yang telah berlalu. Dahulu simbol ikatan abadi, kini memanggil dengan daya tarik cerita-cerita tak terhitung dan peradaban yang hilang.",
@@ -7766,26 +8181,26 @@ OP.Global.Locales.Languages["id-ID"] = {
 		ancient_coin_description = "Koin ini memiliki tanda-tanda perdagangan kuno, permukaan emasnya dillalui oleh garam dan pasir laut, menyimpan beban berabad-abad dalam desainnya. Lambang yang terukir padanya bercerita tentang jangkauan kekaisaran dan perjalanan sejarah yang mengalirkan kekayaan dari tangan ke tangan.",
 
 		aluminium = "Aluminium Mentah",
-		aluminium_description = "Digunakan untuk perbaikan dan kerajinan.",
+		aluminium_description = "undefined",
 		glass = "Kaca Kasar",
-		glass_description = "Digunakan untuk perbaikan dan kerajinan.",
+		glass_description = "undefined",
 		rubber = "Karet Mentah",
-		rubber_description = "Digunakan untuk perbaikan dan kerajinan.",
+		rubber_description = "undefined",
 		scrap_metal = "Scrap Logam",
-		scrap_metal_description = "Digunakan untuk perbaikan dan kerajinan.",
+		scrap_metal_description = "undefined",
 		steel = "Besi Mentah",
-		steel_description = "Digunakan untuk perbaikan dan kerajinan.",
+		steel_description = "undefined",
 
 		purified_aluminium = "Aluminium Murni",
-		purified_aluminium_description = "Digunakan untuk perbaikan profesional.",
+		purified_aluminium_description = "undefined",
 		tempered_glass = "Kaca Tempered",
-		tempered_glass_description = "Digunakan untuk perbaikan profesional.",
+		tempered_glass_description = "undefined",
 		vulcanized_rubber = "Karet Vulkani",
-		vulcanized_rubber_description = "Digunakan untuk perbaikan profesional.",
+		vulcanized_rubber_description = "undefined",
 		processed_metal = "Logam Diproses",
-		processed_metal_description = "Digunakan untuk perbaikan profesional.",
+		processed_metal_description = "undefined",
 		refined_steel = "Baja Diperhalus",
-		refined_steel_description = "Digunakan untuk perbaikan profesional.",
+		refined_steel_description = "undefined",
 
 		power_saw = "Gergaji Listrik",
 		power_saw_description = "गेराज में से वाहन निकालें",
@@ -7860,10 +8275,9 @@ OP.Global.Locales.Languages["id-ID"] = {
 		acid_description = "Membuat Anda terpengaruh secara permanen. Tidak ada yang bisa melarikan diri.",
 
 		rose = "Mawar",
-		rose_description = "Saya tidak tahu teman, saya rasa ERP.",
-
+		rose_description = "undefined",
 		teddy_bear = "Boneka Teddy",
-		teddy_bear_description = "Seorang teman yang akan benar-benar mendengarkan Anda.",
+		teddy_bear_description = "undefined",
 
 		self_driving_chip = "Chip Kendaraan Mandiri",
 		self_driving_chip_description = "Rusa mati di mana-mana... sungguh lucu.",
@@ -7881,6 +8295,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		scratch_ticket_pearl_description = "Berlayarlah dalam pencarian kekayaan tersembunyi dengan tiket misterius ini. Uang $100 Anda bisa menjadi kunci untuk membuka harta karun senilai hingga $210.000. Setiap menggaruk membawa Anda lebih dekat dengan rahasia laut yang paling dalam dan kekayaan tak terhitung.",
 		scratch_ticket_ching = "Gosok (Cha Ching)",
 		scratch_ticket_ching_description = "Rasakan sensasi listrik dari potensi kekayaan dengan tiket berwarna cerah ini. Hanya dengan $100, tiket penuh vitalitas ini menawarkan peluang memenangkan hingga $210.000 yang mendebarkan. Ini bukan hanya sekadar permainan, ini adalah pesta keberuntungan!",
+		scratch_ticket_carnival = "Kupu-Kupu Undian (Karnaval)",
+		scratch_ticket_carnival_description = "Langkah tepat dan bergabunglah dengan karnaval keberuntungan! Hanya dengan $100, Anda bisa memenangkan hingga $210.000. Karnaval sedang di kota, dan hadiah besar sedang menunggu Anda!",
 
 		avocado = "Alpukat",
 		avocado_description = "Benda hijau kecil seperti bola, bagus untuk membuat saus.",
@@ -7915,6 +8331,9 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 		milk = "Susu",
 		milk_description = "Susu sapi biasa yang diekstraksi dengan penuh kasih sayang.",
+
+		tomato_juice = "Jus Tomat",
+		tomato_juice_description = "Kaleng berwarna merah ini berisi \"minuman penerbangan para juara\" (menurut tidak ada juara). Jus tomat - seperti matahari dalam kaleng, jika matahari terasa sedikit seperti penyesalan.",
 
 		almond_milk = "Susu Almond",
 		almond_milk_description = "Bagaimana setan mereka bisa mengambil susu dari almond??????",
@@ -7955,6 +8374,9 @@ OP.Global.Locales.Languages["id-ID"] = {
 		empty_tank = "Tangki Kosong",
 		empty_tank_description = "Tidak lagi berisi propana atau aksesori propana.",
 
+		pvc_pipe = "Pipa PVC",
+		pvc_pipe_description = "Potongan pipa PVC yang serbaguna ini adalah impian para penggemar DIY, ideal untuk membuat segala hal mulai dari meriam rumahan hingga peluncur kreatif. Desainnya yang kokoh namun ringan membuatnya sempurna untuk berbagai proyek kreatif dan praktis.",
+
 		pepper_spray = "Semprotan Lada",
 		pepper_spray_description = "MATAKU!",
 
@@ -7989,57 +8411,65 @@ OP.Global.Locales.Languages["id-ID"] = {
 		meth_table_description = "Haha referensi Breaking Bad yang lucu tentang memasak meth.",
 
 		campfire = "Api Unggun",
-		campfire_description = "Dapat ditempatkan di mana saja di dunia. Sempurna untuk berkemah, berburu, dan memancing! Item ini tidak dapat diambil kembali.",
+		campfire_description = "undefined",
 		tent = "Tenda",
-		tent_description = "Dapat ditempatkan di mana saja di dunia. Sempurna untuk berkemah, berburu, dan memancing!",
+		tent_description = "undefined",
 		cloth_tent = "Tenda Kain",
-		cloth_tent_description = "Dapat ditempatkan di mana saja di dunia. Cocok untuk berkemah, berburu, dan memancing!",
+		cloth_tent_description = "undefined",
 		canvas_tent = "Tenda Kanvas",
-		canvas_tent_description = "Dapat ditempatkan di mana saja di dunia. Cocok untuk berkemah, berburu, dan memancing!",
+		canvas_tent_description = "undefined",
 		plastic_chair = "Kursi Plastik",
-		plastic_chair_description = "Dapat ditempatkan di mana saja di dunia. Cocok untuk berkemah, berburu, dan memancing!",
+		plastic_chair_description = "undefined",
 		fishing_chair = "Kursi Memancing",
-		fishing_chair_description = "Dapat ditempatkan di mana saja di dunia. Cocok untuk berkemah, berburu, dan memancing!",
+		fishing_chair_description = "undefined",
+		sleeping_bag = "Sleeping Bag",
+		sleeping_bag_description = "undefined",
 		yoga_mat = "Matras Yoga",
-		yoga_mat_description = "Dapat ditempatkan di mana saja di dunia. Sempurna untuk berkemah, berburu, dan memancing!",
+		yoga_mat_description = "undefined",
 		cooler_box = "Kotak Pendingin",
-		cooler_box_description = "Dapat ditempatkan di mana saja di dunia. Sempurna untuk berkemah, berburu, dan memancing!",
+		cooler_box_description = "undefined",
 		parasol = "Payung Pantai",
-		parasol_description = "Dapat ditempatkan di mana saja di dunia. Sempurna untuk berkemah, berburu, dan memancing!",
+		parasol_description = "undefined",
 		parasol_table = "Meja Payung Pantai",
-		parasol_table_description = "Dapat ditempatkan di mana saja di dunia. Sempurna untuk berkemah, berburu, dan memancing!",
+		parasol_table_description = "undefined",
 		table = "Meja",
-		table_description = "Dapat ditempatkan di mana saja di dunia. Sempurna untuk berkemah, berburu, dan memancing!",
+		table_description = "undefined",
 		towel = "Handuk",
-		towel_description = "Dapat ditempatkan di mana saja di dunia. Sempurna untuk berkemah, berburu, dan memancing!",
+		towel_description = "undefined",
 		disposable_grill = "Pemanggang Sekali Pakai",
-		disposable_grill_description = "Dapat ditempatkan di mana saja di dunia. Sempurna untuk berkemah, berburu, dan memancing! Item ini tidak dapat diambil kembali.",
+		disposable_grill_description = "undefined",
 		grill = "Pemanggang",
-		grill_description = "Dapat ditempatkan di mana saja di dunia. Sempurna untuk berkemah, berburu, dan memancing!",
+		grill_description = "undefined",
+		torch = "Senter",
+		torch_description = "Senter ini menembus kegelapan tambang, cahaya yang kokoh untuk penjelajah atau penambang pemberani, menjauhkan kegelapan dengan nyala api yang mantap.",
+		ladder = "Tangga",
+		ladder_description = "Tangga yang tahan lama dan kokoh ini dirancang untuk mencapai ketinggian baru secara aman dan dapat diandalkan. Bingkai besar dan beratnya memastikan stabilitas untuk tugas-tugas menantang yang memerlukan jangkauan dan kekuatan lebih. Ideal untuk mereka yang tidak takut mendaki lebih tinggi dan menyelesaikan pekerjaan besar.",
 		police_barrier = "Penghalang Polisi",
-		police_barrier_description = "Dapat ditempatkan di mana saja di dunia.",
+		police_barrier_description = "undefined",
 		dummy = "Boneka",
-		dummy_description = "Dapat ditempatkan di mana saja di dunia.",
+		dummy_description = "undefined",
 		target = "Sasaran",
-		target_description = "Dapat ditempatkan di mana saja di dunia.",
+		target_description = "undefined",
 		large_target = "Sasaran Besar",
-		large_target_description = "Dapat ditempatkan di mana saja di dunia.",
+		large_target_description = "undefined",
 		cone = "Tanda Kone",
-		cone_description = "Dapat ditempatkan di mana saja di dunia.",
+		cone_description = "undefined",
 		spike_strips = "Paku Penguat",
-		spike_strips_description = "Dapat ditempatkan di mana saja di dunia.",
+		spike_strips_description = "undefined",
 		spike_strips_large = "Spike Strips Besar",
-		spike_strips_large_description = "Dapat ditempatkan di mana saja di dunia.",
+		spike_strips_large_description = "undefined",
+		stop_sticks = "undefined",
+		stop_sticks_description = "undefined",
 		floodlight = "Lampu Sorot",
-		floodlight_description = "Dapat ditempatkan di mana saja di dunia.",
+		floodlight_description = "undefined",
 		left_diversion_sign = "Tanda Pengalihan Ke Kiri",
-		left_diversion_sign_description = "Dapat ditempatkan di mana saja di dunia.",
+		left_diversion_sign_description = "undefined",
 		right_diversion_sign = "Tanda Pengalihan Ke Kanan",
-		right_diversion_sign_description = "Dapat ditempatkan di mana saja di dunia.",
+		right_diversion_sign_description = "undefined",
 		stop_sign = "Tanda Berhenti",
-		stop_sign_description = "Dapat ditempatkan di mana saja di dunia.",
+		stop_sign_description = "undefined",
 		bear_trap = "Jebakan Beruang",
-		bear_trap_description = "Dapat ditempatkan di mana saja di dunia.",
+		bear_trap_description = "undefined",
 		barrier = "Barier",
 		barrier_description = "Barier konstruksi standar Anda.",
 		traffic_barrier = "Barier Lalu Lintas",
@@ -8054,28 +8484,28 @@ OP.Global.Locales.Languages["id-ID"] = {
 		wheel_clamp_description = "Tidak ada mobil kabur di sini! Ban Terkunci serius, mengamankan kendaraan dengan kuat dan menghentikan gerakan yang tidak diizinkan. Perangkat ini yang tahan banting adalah pengawas yang diam, memastikan aturan parkir dihormati dan diikuti.",
 
 		bandit_1 = "Bandit 1",
-		bandit_1_description = "Dapat ditempatkan di mana saja di dunia.",
+		bandit_1_description = "undefined",
 		bandit_2 = "Bandit 2",
-		bandit_2_description = "Dapat ditempatkan di mana saja di dunia.",
+		bandit_2_description = "undefined",
 		hostage_1 = "Sandera 1",
-		hostage_1_description = "Dapat ditempatkan di mana saja di dunia.",
+		hostage_1_description = "undefined",
 		hostage_2 = "Sandera 2",
-		hostage_2_description = "Dapat ditempatkan di mana saja di dunia.",
+		hostage_2_description = "undefined",
 
 		director_chair = "Kursi Sutradara",
-		director_chair_description = "Dapat ditempatkan di mana saja di dunia. Tempat duduk yang nyaman saat bepergian.",
+		director_chair_description = "undefined",
 		beach_chair = "Kursi Pantai",
-		beach_chair_description = "Dapat ditempatkan di mana saja di dunia. Tempat duduk yang nyaman saat bepergian.",
+		beach_chair_description = "undefined",
 		green_fishing_chair = "Kursi Memancing Hijau",
-		green_fishing_chair_description = "Dapat ditempatkan di mana saja di dunia. Tempat duduk yang nyaman saat bepergian.",
+		green_fishing_chair_description = "undefined",
 		blue_fishing_chair = "Kursi Memancing Biru",
-		blue_fishing_chair_description = "Dapat ditempatkan di mana saja di dunia. Tempat duduk yang nyaman saat bepergian.",
+		blue_fishing_chair_description = "undefined",
 
 		tire_wall = "Dinding Ban",
-		tire_wall_description = "Ketika Anda membutuhkan perlindungan tetapi tidak ada.",
+		tire_wall_description = "undefined",
 
 		claymore = "Claymore",
-		claymore_description = "Ranjau anti-personel paling ultimate.",
+		claymore_description = "undefined",
 
 		tv_stand = "Rak TV",
 		tv_stand_description = "Gunakan ini untuk menjaga TV berdiri di mana pun Anda inginkan.",
@@ -8142,6 +8572,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		cupcake_description = "Sebuah kue yang lembut dengan topping krim unicorn ajaib.",
 		pink_lemonade = "Lemonade Merah Muda",
 		pink_lemonade_description = "Bukan sekedar lemonade biasa yang dicelupkan pewarna merah muda agar kita bisa menghargai dua kali lipat...",
+		iced_latte = "Es Latte",
+		iced_latte_description = "Sebuah kopi es yang menyegarkan, sempurna untuk hari yang panas.",
 
 		irish_coffee = "Kopi Irlandia",
 		irish_coffee_description = "Kopi segar yang dicampur dengan sedikit whiskey irlandia asli.",
@@ -8168,25 +8600,68 @@ OP.Global.Locales.Languages["id-ID"] = {
 		chip_10000_description = "Sebuah chip perjudian. Dapat digunakan untuk berjudi. Item ini dapat diubah menjadi uang di kasino.",
 
 		grubs = "Cacing Tanah",
-		grubs_description = "Sempurna untuk memancing.",
+		grubs_description = "undefined",
 		leeches = "Lintah",
-		leeches_description = "Sangat cocok untuk memancing.",
+		leeches_description = "undefined",
 		earthworms = "Cacing Tanah",
-		earthworms_description = "Sangat cocok untuk memancing.",
+		earthworms_description = "undefined",
 		fishing_rod = "Tongkat Memancing",
-		fishing_rod_description = "Sangat cocok untuk memancing.",
+		fishing_rod_description = "undefined",
 		raw_meat = "Daging Mentah",
-		raw_meat_description = "Potongan daging segar.",
+		raw_meat_description = "undefined",
 		cooked_meat = "Daging Matang",
-		cooked_meat_description = "Daging yang baru saja dimasak.",
+		cooked_meat_description = "undefined",
 		burnt_meat = "Daging Hangus",
-		burnt_meat_description = "Daging yang telah terbakar.",
+		burnt_meat_description = "undefined",
 		leather = "Kulit",
-		leather_description = "Kulit yang bagus dari rusa.",
+		leather_description = "undefined",
 		wood = "Kayu",
-		wood_description = "Sebuah potongan kayu segar dari pohon.",
+		wood_description = "undefined",
 		charcoal = "Arang",
-		charcoal_description = "Lebih unggul dari batu bara biasa.",
+		charcoal_description = "undefined",
+		canine_tooth = "Gigi Singa Gunung",
+		canine_tooth_description = "Sebuah artefak langka dan kuat dari alam liar, gigi singa gunung ini melambangkan esensi kasar dari perburuan. Sebuah hadiah langka bagi para pemburu.",
+		antlers = "Tanduk Rusa",
+		antlers_description = "Jarang ditemukan, tanduk ini adalah penghormatan anggun pemburu terhadap tarian diam dari alam liar. Sebuah temuan langka dan elegan.",
+		pancake_mix = "Campuran Pancake",
+		pancake_mix_description = "Campuran serbaguna yang merupakan langkah pertama untuk pagi yang sempurna. Campuran pancake ini menunggu untuk dibangunkan dengan sedikit susu, siap bermetamorfosis menjadi adonan halus untuk kenikmatan kuliner Anda.",
+		beef_sausages = "Sosis Sapi",
+		beef_sausages_description = "Dibuat dari irisan daging sapi terbaik, sosis sapi ini adalah bukti dari keterampilan pemburu dan keahlian tukang daging. Siap untuk dipanggang, mereka menjanjikan sebuah pesta panggang langsung dari alam liar ke piring Anda.",
+		raw_bacon = "Bacon Mentah",
+		raw_bacon_description = "Bacon premium ini, diiris dari potongan terbaik dan diawetkan dengan sempurna, siap untuk mengubah setiap hidangan menjadi mahakarya nikmat. Ideal untuk dipanggang, ini menunggu untuk menjadi renyah menjadi kelezatan yang menggugah selera.",
+
+		liquid_smoke = "Asap Cair",
+		liquid_smoke_description = "Botol asap cair ini adalah rahasia dari alkimia kuliner, sebuah esensi yang terkonsentrasi yang menginfus daging mentah dengan bisikan kuno dari api dan kayu.",
+		raw_brined_meat = "Daging Direndam Mentah",
+		raw_brined_meat_description = "Daging mentah ini, dicium oleh asap cair, membawa janji pesta masa depan. Saat dipanggang, daging ini berubah menjadi daging asap, sebuah bukti lezat dari kesabaran dan keterampilan.",
+		bread_loaf = "Roti Loaf",
+		bread_loaf_description = "Sebuah roti loaf, baru dari oven. Sempurna untuk sandwich, roti bakar, dan hidangan berat.",
+		bbq_sauce = "Saus BBQ",
+		bbq_sauce_description = "Saus kaya dan asam yang menambahkan ledakan rasa pada setiap hidangan. Sempurna untuk dipanggang, direndam, dan dicelupkan.",
+		bbq_sandwich = "Sandwich Saus BBQ",
+		bbq_sandwich_description = "Sandwich lezat yang diisi dengan daging lembut dan asap serta saus BBQ yang asam. Sebuah hidangan berat yang memuaskan jiwa.",
+		cucumber = "Mentimun",
+		cucumber_description = "Mentimun segar dan renyah, sempurna untuk salad, camilan, atau membuat acar sendiri.",
+		salt = "Garam",
+		salt_description = "Sejumput garam dapat mengubah hidangan apa pun, meningkatkan rasa dan menambah kedalaman pada kreasi kuliner Anda.",
+		pickles = "Acar",
+		pickles_description = "Sebuah potongan acar yang asam dan renyah, sempurna untuk camilan, sandwich, dan memberikan rasa pedas segar pada hidangan Anda.",
+		dark_chocolate = "Cokelat Hitam",
+		dark_chocolate_description = "Sebuah pilihan mewah dan lezat, cokelat hitam sempurna untuk memanjakan gigi manis Anda dan menikmati rasa coklat yang dalam dan kompleks.",
+		beans = "Kacang",
+		beans_description = "Lihatlah! Cawan yang Suci! Ambrosia Para Dewa, terkandung dalam sebuah wadah kaleng! Ini bukan semata-mata Heinz Baked Beans, tuan, melainkan gerbang ke dunia kepuasan kacang yang murni dan tak ternoda! Setiap kacang, sepotong kelezatan, direndam dalam ramuan yang begitu mewah, ia merintihkan rahasia dari cita rasa tak dikenal. Ini bukan sekedar penyediaan makanan; ini adalah eliksir kehidupan itu sendiri, terbungkus dalam cangkir logam, menunggu untuk memberikan kemuliaannya kepada lidah Anda. Peluk kacang itu! Sembah kacang itu! Biarkan setiap suapan membawa Anda ke kerajaan di mana kacang menjadi raja, dan setiap sendok adalah langkah lebih dekat ke kebahagiaan kacang.",
+		beans_toast = "Roti Bakar Kacang",
+		beans_toast_description = "Roti bakar kacang adalah hidangan klasik Inggris, yang sederhana namun memuaskan dan sempurna untuk sarapan, makan siang, atau makan malam. Rasa kacang yang kaya dan gurih sangat cocok dengan roti yang hangat dan bermentega, menciptakan hidangan yang nyaman dan bergizi yang cepat dan mudah disiapkan.",
+		pancake_batter = "Adonan Pancake",
+		pancake_batter_description = "Adonan pancake ini, dengan tekstur yang kaya dan halus, terbuat dari campuran pancake premium kami dan susu segar, merupakan kanvas bagi masterpiece sarapan Anda. Siap untuk dimasak dan mengembang menjadi pancake emas yang lezat.",
+		pancakes = "Pancake",
+		pancakes_description = "Gurih dan keemasan, fresh dari pemanggangan, pancake Amerika ini adalah cara yang lezat untuk memulai hari Anda. Lezat, meskipun bukan pilihan yang paling sehat—anggaplah mereka sebagai kebebasan di piring, di mana kebebasan mencakup menikmati setiap gigitan yang direndam sirup!",
+		grilled_sausages = "Sosis Panggang",
+		grilled_sausages_description = "Nikmati aroma asap dari sosis panggang ini, hadiah kuliner bagi pemburu yang terampil. Juicy, penuh rasa, dan dimasak dengan sempurna, mereka adalah kelezatan rustic yang merayakan semangat berburu dengan setiap gigitan.",
+		grilled_bacon = "Bakon Panggang",
+		grilled_bacon_description = "Bakon panggang yang renyah, berwarna keemasan, dan sangat harum. Bakon panggang ini adalah kesenangan utama bagi mereka yang menghargai hal-hal halus dalam hidup. Segar dari pemanggangan, ini merupakan perayaan rasa yang menggoda, siap dinikmati.",
+		fried_egg = "Telur Dadar",
+		fried_egg_description = "Dipanggang hingga keemasan, telur dadar ini memiliki kuning telur yang lembut diapit oleh pinggiran yang renyah. Ini merupakan pilihan sederhana namun lezat untuk setiap hidangan, menunjukkan bahwa terkadang, rasa terbaik berasal dari metode yang sederhana.",
 
 		beef_jerky = "Beef Jerky",
 		beef_jerky_description = "Potongan-potongan daging sapi yang enak.",
@@ -8204,6 +8679,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		peanuts_description = "Kaleng kacang, sempurna untuk ngemil.",
 		olives = "Zaitun",
 		olives_description = "Bakul kecil zaitun, camilan sempurna untuk pesta.",
+		popcorn = "Popcorn",
+		popcorn_description = "Sebungkus popcorn, sempurna untuk menonton film.",
 
 		rice = "Nasi",
 		rice_description = "Nasi butiran yang kenyal dan lembut.",
@@ -8667,8 +9144,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		weapon_addon_rc4 = "Remington R4-C",
 		weapon_addon_rc4_description = "Berani dan cepat, pasangan sempurna untuk memiliki di skuad Anda. Selama orang berambut merah tidak memegangnya.",
 
-		weapon_addon_pp19 = "PP-19 Vityaz",
-		weapon_addon_pp19_description = "Puncak keunggulan Rusia, sempurna untuk semua jenis \"Raid\".",
+		weapon_addon_mcx = "SIG MCX",
+		weapon_addon_mcx_description = "Terkenal karena keberagaman dan ketepatannya, SIG MCX adalah senjata api serbaguna yang menawarkan keandalan dan performa yang tak tertandingi untuk setiap skenario.",
 
 		weapon_addon_m9a3 = "Beretta M9A3",
 		weapon_addon_m9a3_description = "Semua yang Anda butuhkan untuk menyelesaikan pekerjaan kotor Anda dengan harga murah.",
@@ -8678,9 +9155,6 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 		weapon_addon_m870 = "Remington M870",
 		weapon_addon_m870_description = "Shotgun sempurna untuk olahraga dan berburu, meski menembak orang-orang biasa bukanlah olahraga... bukan?",
-
-		weapon_addon_rpk16 = "RPK-16",
-		weapon_addon_rpk16_description = "Senjata mesin paling sempurna yang pernah ada, jangan lupa jaket olahraga.",
 
 		weapon_addon_tacknife = "Pisau Taktis Ultimate",
 		weapon_addon_tacknife_description = "Akhirnya, kamu mencapai level 100. Kolonel pasti akan bangga.",
@@ -8709,7 +9183,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		weapon_addon_mk18 = "MK18",
 		weapon_addon_mk18_description = "\"Stay strapped or get clapped\" - George Washington (Probably)",
 
-		weapon_addon_glock = "Glock 17",
+		weapon_addon_glock = "Glock 19X",
 		weapon_addon_glock_description = "Sidearm paling populer di dunia.",
 
 		weapon_addon_colt = "Colt 1851 Navy",
@@ -8734,12 +9208,30 @@ OP.Global.Locales.Languages["id-ID"] = {
 		weapon_addon_glock18c_description = "गेराज में से वाहन निकालें",
 
 		weapon_addon_1911 = "1911 Kimber Tactical",
-		weapon_addon_1911_description = "1911 Kimber Tactical: Di mana gaya bertemu materi. Dipercaya oleh para penggemar di mana-mana, ini adalah senjata andalan Anda baik untuk pertahanan maupun faktor keren!"
+		weapon_addon_1911_description = "1911 Kimber Tactical: Di mana gaya bertemu materi. Dipercaya oleh para penggemar di mana-mana, ini adalah senjata andalan Anda baik untuk pertahanan maupun faktor keren!",
+
+		weapon_addon_svd = "SVD Dragunov",
+		weapon_addon_svd_description = "Presisi dan kekuatan, SVD Dragunov adalah senapan runduk semi-otomatis yang telah menjadi pilihan utama unit militer dan penegak hukum selama beberapa dekade. Senjata ini merupakan pilihan sempurna untuk pertempuran jarak jauh, dan dijamin membuat musuh Anda berpikir dua kali sebelum menghadapi Anda.",
+
+		weapon_addon_axmc = "AXMC",
+		weapon_addon_axmc_description = "AXMC adalah puncak dari rekayasa senapan runduk, menawarkan akurasi tinggi untuk jarak jauh dan desain modular yang menetapkan standar baru dalam bidang menembak dengan presisi.",
+
+		weapon_addon_6kh4 = "6KH4",
+		weapon_addon_6kh4_description = "Diciptakan untuk pemburu modern, pisau belati 6KH4 ini menggabungkan desain yang timeless dengan fungsionalitas yang tangguh, sempurna untuk tuntutan yang tepat di alam liar.",
+
+		weapon_addon_jericho = "Jericho 941",
+		weapon_addon_jericho_description = "Jericho 941 menonjol karena kehandalannya, ketepatan, dan desain ergonomisnya, menawarkan pengalaman superior bagi penembak dalam hal performa dan kenyamanan.",
+
+		weapon_addon_fn509 = "FN-509",
+		weapon_addon_fn509_description = "FN-509 adalah kelas master dalam keseimbangan dan ketepatan, dilengkapi dengan kapasitas 15 peluru untuk memastikan kehandalan dan ketepatan dalam setiap tembakan. Sahabat terpercaya untuk pertahanan dan tugas."
 	},
 
 	invisibility = {
 		invisibility_on = "Nyalakan penyamaran.",
 		invisibility_off = "Invisibilitas dimatikan.",
+		invalid_invisibility_mode = "Mode kealpaan tidak valid. Harus 'penuh' atau 'normal'.",
+		invisibility_mode_full = "Mode kelebihan 'penuh'. Staff biasa tidak bisa melihatmu.",
+		invisibility_mode_normal = "Mode kelebihan diubah ke 'normal'. Staff biasa sekarang bisa melihatmu.",
 
 		toggled_invisibility = "Berhasil mengubah invisibilitas ${displayName}.",
 		failed_invisibility = "Gagal mengubah invisibilitas ${displayName}.",
@@ -8765,12 +9257,17 @@ OP.Global.Locales.Languages["id-ID"] = {
 		move_to_repair = "Pindah ke sini untuk memperbaiki kendaraan.",
 		repairing_vehicle = "Memperbaiki Kendaraan",
 		fix_visual_damage = "Memperbaiki Kerusakan Visual",
+		no_vehicle_nearby = "Tidak ada kendaraan di sekitar.",
+		no_vehicle_seat_nearby = "Anda tidak berada di dekat kursi kendaraan tersebut.",
+		bleaching_vehicle_seat = "Memutihkan Tempat Duduk Kendaraan",
+		vehicle_seat_bleached = "Berhasil memutihkan kursi.",
 		measuring_color = "Mengukur Warna",
 		color_measurement = "Pengukuran Warna",
 		color_measurer_result = "**${primary}** (*${primaryId}*) warna primer, **${secondary}** (*${secondaryId}*) warna sekunder, **${pearlescent}** (*${pearlescentId}*) warna pearlescent, dan **${wheel}** (*${wheelId}*) warna roda.",
 		no_vehicle_in_front = "Tidak ada kendaraan di depanmu.",
 		using_first_aid_kit = "Menggunakan Kit Pertolongan Pertama",
 		using_bandages = "Menggunakan Perban",
+		using_tourniquet = "Menggunakan Tourniquet",
 		using_ifak = "Menggunakan IFAK",
 		move_to_wash = "Pindah ke sini untuk mencuci kendaraan",
 		vehicle_too_clean = "Kendaraan terlalu bersih untuk dicuci.",
@@ -8796,9 +9293,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 		unable_to_use_lighter_in_vehicle = "Anda tidak dapat menggunakan korek di dalam kendaraan.",
 		not_possible_in_a_vehicle = "Tindakan ini tidak mungkin dilakukan di dalam kendaraan.",
 		just_used_bandage = "Anda baru saja menggunakan perban, tunggu sebentar sebelum menggunakan yang lain.",
+		just_used_tourniquet = "Anda baru saja menggunakan tourniquet, tunggu sebentar sebelum menggunakan yang lain.",
 		drank_gasoline_death = "Keracunan Bahan Bakar",
 		drank_bleach_death = "Keracunan Pemutih",
 		finished_joint = "Anda selesai menghisap ganja.",
+		cant_place_here = "Anda tidak bisa meletakkan ini di sini.",
 
 		using_cuffs = "Menggunakan Borgol",
 		you_moved_too_fast = "Anda bergerak terlalu cepat.",
@@ -8806,10 +9305,12 @@ OP.Global.Locales.Languages["id-ID"] = {
 		failed_burger_shot_delivery = "Gagal membuka pesanan burger shot.",
 		failed_bean_machine_delivery = "Gagal membuka pesanan bean machine.",
 		failed_kissaki_delivery = "Gagal membuka pesanan kissaki.",
+		failed_green_wonderland_delivery = "Gagal membuka tas green wonderland.",
 
 		burger_shot_delivery_empty = "Pesanan burger shot terlihat kosong.",
 		bean_machine_delivery_empty = "Pesanan bean machine terlihat kosong.",
 		kissaki_delivery_empty = "Pesanan kissaki terlihat kosong.",
+		green_wonderland_delivery_empty = "Tas green wonderland tersebut sepertinya kosong.",
 
 		logs_used_weather_spell_title = "Menggunakan Sihir Cuaca",
 		logs_used_weather_spell_details = "${consoleName} menggunakan sihir cuaca `${itemName}`.",
@@ -8862,11 +9363,26 @@ OP.Global.Locales.Languages["id-ID"] = {
 		the_ticket_was = "Tiket tersebut adalah ${ticket}.",
 		recent_pots_will_show_here = "Daftar taruhan terbaru akan ditampilkan di sini.",
 		server_id = "ID server yang ingin Anda pindahkan...",
-		transfer_items_to_anoter_person = "Transfer barang ke orang lain."
+		transfer_items_to_anoter_person = "Transfer barang ke orang lain.",
+		cancel_bet = "Batalkan Taruhan"
 	},
 
 	jail = {
 		press_to_leave_jail = "Tekan ~INPUT_CONTEXT~ untuk keluar dari penjara.",
+		invalid_server_id = "ID server tidak valid.",
+		failed_check_jail = "Gagal memeriksa waktu di penjara.",
+		check_not_jailed = "Pemain tersebut tidak dipenjara.",
+		remaining_time_check = "${fullName} dipenjara selama ${remaining}.",
+		invalid_operation = "Operasi tidak valid. Harus berupa `add` atau `sub`.",
+		invalid_amount = "Jumlah tidak valid. Harus di atas 0 dan di bawah atau sama dengan 5.",
+		failed_modify_jail = "Gagal mengubah waktu penjara.",
+		modified_jail = "Mengubah waktu penjara untuk ${fullName}. Waktu penjaranya sekarang adalah ${remaining}.",
+
+		trigger_lockdown = "Picu Penguncian",
+		press_trigger_lockdown = "[${InteractionKey}] Picu Penguncian",
+		lockdown_active = "Pembatasan Aktif",
+		lockdown_title = "[Penyiaran]",
+		lockdown_detals = "10-78, Pembatasan di inisiasi di Penjara Bolingbroke. Backup darurat diminta.",
 
 		menu_title = "Menu Penjara",
 		check_remaining_time = "Cek sisa waktu",
@@ -8875,9 +9391,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 		close_menu = "Tutup Menu",
 
 		sentence_reduced = "Hukumanmu dikurangi ${amount} bulan, masih tersisa ${remaining} bulan.",
+		sentence_increased = "Hukuman Anda diperpanjang sebesar ${amount} bulan, Anda memiliki sisa ${remaining} bulan.",
 		sentence_over = "Hukumanmu sudah selesai.",
-		remaining_time = "Sisa Waktu: ${remaining} bulan.",
-		jailed = "Kamu telah dipenjara selama ${amount} bulan.",
+		remaining_time_fmt = "${months} bulan (*${display}*)",
+		remaining_time = "Waktu Tersisa: ${remaining}.",
+		jailed = "Anda telah dipenjara selama ${amount} bulan.",
 
 		mission_help_1 = "Tekan ~INPUT_CONTEXT~ untuk membersihkan lantai.",
 		mission_help_2 = "Tekan ~INPUT_CONTEXT~ untuk makan sesuatu.",
@@ -8887,7 +9405,29 @@ OP.Global.Locales.Languages["id-ID"] = {
 		mission_2 = "Makan sandwich.",
 		mission_3 = "Berolahraga.",
 
-		mission_blip = "Misi Penjara"
+		preparing_food = "Menyiapkan makanan untuk tahanan lain.",
+		prepare_food = "Tekan ~INPUT_CONTEXT~ untuk menyiapkan makanan.",
+		cleaning_desk = "Membersihkan meja.",
+		clean_desk = "Tekan ~INPUT_CONTEXT~ untuk membersihkan meja.",
+		making_bed = "Merapikan tempat tidur.",
+		make_bed = "Tekan ~INPUT_CONTEXT~ untuk merapikan tempat tidur.",
+		aligning_cone = "Membuat kejernihan kerucut lalu lintas.",
+		align_cone = "Tekan ~INPUT_CONTEXT~ untuk meluruskan tanda lalu lintas.",
+		inspecting_sprinkler = "Memeriksa sprinkler.",
+		inspect_sprinkler = "Tekan ~INPUT_CONTEXT~ untuk memeriksa sprinkler.",
+		watering_plant = "Memberi air pada tanaman.",
+		water_plant = "Tekan ~INPUT_CONTEXT~ untuk memberi air pada tanaman.",
+		organizing_weights = "Mengatur beban.",
+		organize_weights = "Tekan ~INPUT_CONTEXT~ untuk mengatur beban.",
+
+		upstairs_notification = "Tugas ini ada di lantai atas.",
+
+		mission_blip = "Misi Penjara",
+
+		modify_jail_logs_title = "Mengubah Waktu Penjara",
+		modify_jail_logs_details = "${consoleName} mengubah waktu penjara untuk ${targetCharacter} #${targetCharacterId} (${operasi} ${amount} bulan) menjadi ${after}.",
+		triggered_lockdown_logs_title = "Memicu Pembatasan",
+		triggered_lockdown_logs_details = "${consoleName} memicu pembatasan di penjara."
 	},
 
 	kiosks = {
@@ -8898,6 +9438,13 @@ OP.Global.Locales.Languages["id-ID"] = {
 		fake_lag_invalid_fps = "fps tidak valid.",
 		fake_lag_clamp = "Mengunci fps agar di bawah ${fps}.",
 		fake_lag_disabled = "Fake lag telah dinonaktifkan."
+	},
+
+	lag_switch = {
+		you_seem_to_be_lagging = "Ping Anda tidak stabil. Peluru yang ditembak belum disinkronisasi.",
+
+		lag_detected_logs_title = "Deteksi Lag",
+		lag_detected_logs_details = "${consoleName} mencoba menembak saat lag. Perbedaan Ping: ${pingTimerDifference}. Ping tidak stabil: ${pingUnstable}."
 	},
 
 	lean = {
@@ -9164,18 +9711,18 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 	lottery = {
 		lottery_announcement = "Pengumuman Lotere",
-		lottery_about_to_roll = "Pemenang akan diundi dalam 5 menit untuk lotere hari ini. Jumlah total hadiah saat ini sebesar $${totalPot} di mana Anda telah bertaruh sebesar $${betAmount}. Peluang Anda untuk menang adalah ${odds}%.",
-		current_lottery_pot = "Total hadiah saat ini adalah $${totalPot}, di mana Anda telah memasukkan $${betAmount}. Peluang Anda untuk menang adalah ${odds}%.",
+		lottery_about_to_roll = "Pemenang akan diumumkan dalam 5 menit untuk undian hari ini. Total hadiah saat ini adalah $${totalAmount} di mana Anda telah memasang $${betAmount}. Peluang Anda untuk menang adalah ${odds}%.",
+		current_lottery_pot = "Total hadiah saat ini adalah $${totalAmount} di mana Anda telah memasang $${betAmount}. Peluang Anda untuk menang adalah ${odds}%.",
 		drew_a_lottery_winner = "Pemenang undian telah dipilih.",
 		roll_lottery_no_permission = "Pemain mencoba mengundi undian tetapi tidak memiliki izin untuk melakukannya.",
-		winner_has_been_picked = "${fullName} telah memenangkan pot undian sebesar $${totalPot}! Mereka memasang $${betAmount} dan peluang mereka untuk menang adalah ${odds}%.",
+		winner_has_been_picked = "${fullName} telah memenangkan hadiah lotre sebesar $${totalAmount}! Mereka memasang $${betAmount} dan peluang mereka untuk menang adalah ${odds}%.",
 		claimed_lottery_winnings = "Mengklaim semua hadiah undian.",
 		no_lottery_winnings = "Anda tidak memiliki hadiah lotere yang belum diklaim.",
 		internal_server_error = "Terjadi kesalahan server internal.",
 		use_disabled_animal = "Anda tidak dapat menggunakan lotere sebagai hewan peliharaan.",
 
 		lottery_log_title = "Menang Lotre",
-		lottery_log_description = "${fullName} (#${characterId}) telah memenangkan pot lotre sebesar $${totalPot}. Mereka bertaruh sebesar $${betAmount}."
+		lottery_log_description = "${fullName} (#${characterId}) telah memenangkan hadiah lotre sebesar $${totalAmount}. Mereka memasang $${betAmount}."
 	},
 
 	lucky_wheel = {
@@ -9223,9 +9770,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		failed_sell = "Gagal menjual item.",
 
 		found_item_logs_title = "Menemukan Item di Tanah",
-		found_item_logs_details = "${consoleName} menemukan ${item} di tanah (${ground}).",
-		sold_item_logs_title = "Menjual Item Langka",
-		sold_item_logs_details = "${consoleName} menjual ${item} dengan harga $${price}."
+		found_item_logs_details = "${consoleName} menemukan ${item} di tanah (${ground})."
 	},
 
 	mdt = {
@@ -9242,7 +9787,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 	mechanics = {
 		move_here_check = "Pindah ke sini untuk memeriksa upgrade",
 		checking_upgrades = "Memeriksa Upgrade Kendaraan",
-		upgrades_list = "${armor}, ${engine}, ${brakes}, ${transmission} dan ${turbo}.",
+		upgrades_list = "${armor}, ${engine}, ${brakes}, ${transmission}, ${suspension} dan ${turbo}.",
 
 		has_no_turbo = "tidak memiliki turbo terpasang",
 		has_turbo = "memiliki turbo terpasang",
@@ -9264,6 +9809,12 @@ OP.Global.Locales.Languages["id-ID"] = {
 		transmission_2 = "Transmisi Sport",
 		transmission_3 = "Transmisi Balap",
 
+		suspension_0 = "Suspensi Standar",
+		suspension_1 = "Suspensi Diturunkan",
+		suspension_2 = "Suspensi Jalan Raya",
+		suspension_3 = "Suspensi Olahraga",
+		suspension_4 = "Suspensi Kompetisi",
+
 		engine_0 = "Mesin Standar",
 		engine_1 = "Mesin EMS Level 2",
 		engine_2 = "Mesin EMS Level 3",
@@ -9282,10 +9833,6 @@ OP.Global.Locales.Languages["id-ID"] = {
 		catnip = "[${InteractionKey}] Berikan Catnip",
 		treat = "[${InteractionKey}] Berikan Makanan",
 		check_up = "[${InteractionKey}] Periksa",
-		chill = "[${InteractionKey}] Santai",
-		meditate = "[${InteractionKey}] Meditasi",
-		salute = "[${InteractionKey}] Hormat",
-		stretch = "[${InteractionKey}] Peregangan",
 
 		feed_active = "Memberi Makan Maxwell",
 		pet_active = "Memijat Maxwell",
@@ -9293,10 +9840,6 @@ OP.Global.Locales.Languages["id-ID"] = {
 		catnip_active = "Memberikan Catnip ke Maxwell",
 		treat_active = "Memberikan makanan ke Maxwell",
 		check_up_active = "Memeriksa kondisi Maxwell",
-		chill_active = "Bersenang-senang dengan Maxwell",
-		meditate_active = "Meditasi dengan Maxwell",
-		salute_active = "Melambaikan tangan ke Maxwell",
-		stretch_active = "Meluruskan tubuh dengan Maxwell",
 
 		maxwell_appeared = "Maxwell muncul di dekat Anda.",
 		maxwell_shot = "Menembak Maxwell"
@@ -9459,6 +10002,9 @@ OP.Global.Locales.Languages["id-ID"] = {
 		server_tps_response = "${tps}",
 		license_copied = "Berhasil menyalin lisensi ke clipboard.",
 		uptime = "Waktu Aktif: ${uptime}",
+		empty_search = "Pencarian Anda kosong.",
+		no_player_matching = "Tidak ada pemain yang cocok dengan pencarian: *${search}*.",
+		whois_player = "Ditemukan *${name}* sesuai dengan pencarian Anda.",
 
 		picture_no_url = "URL tidak tersedia.",
 		picture_invalid_url = "URL tidak valid, harus dimulai dengan https://.",
@@ -9473,9 +10019,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 		walk_forwards_success = "Berhasil mengganti ke mode berjalan ke depan untuk ${displayName}.",
 		walk_forwards_failed = "Gagal mengganti ke mode berjalan ke depan untuk ${displayName}.",
 
+		info_invalid_job = "Pekerjaan Tidak Valid",
 		info_title = "Failed to automatically generate translation.",
 		info_character = "Failed to automatically generate translation.",
-		info_job_data = "Failed to automatically generate translation.",
+		info_job_data = "**Data Pekerjaan:** *${job}* - ${paycheck}",
 		info_job_data_none = "Failed to automatically generate translation.",
 		info_licenses = "Failed to automatically generate translation.",
 		info_licenses_none = "Failed to automatically generate translation.",
@@ -9557,6 +10104,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 		add_notice_missing_permissions = "Pemain mencoba menambahkan notifikasi tanpa izin yang tepat.",
 		remove_notice_missing_permissions = "Pemain mencoba menghapus pemberitahuan tanpa izin yang tepat."
+	},
+
+	npc_watch = {
+		no_npc_nearby = "Tidak ada NPC di sekitar untuk diawasi."
 	},
 
 	objects = {
@@ -9670,25 +10221,36 @@ OP.Global.Locales.Languages["id-ID"] = {
 		about_detection_areas_text = "Area deteksi dapat menjadi alat yang berguna bagi anggota staf ketika mencoba mengidentifikasi seorang cheater yang membuat spawn kendaraan dan/atau NPC yang tidak diinginkan. Untuk membuat area deteksi, gunakan `/detection_area_add`. Setelah Anda membuat area, akan muncul di sini. Hanya 100 entitas terbaru yang akan dicatat di setiap area.",
 		detection_area_title = "Area Deteksi #${detectionAreaId}",
 
+		about_settings_title = "Pengaturan",
+		about_settings_text = "Kolom ini memungkinkan Anda mengubah berbagai pengaturan untuk menyesuaikan pengalaman Anda.",
 		about_sound_effects_title = "Efek Suara",
-		about_sound_effects_text = "Kolom-kolom ini memungkinkan Anda untuk mengganti beberapa efek suara. Mereka membutuhkan tautan ke file .oog agar berfungsi dengan baik. Tautan tersebut harus merupakan URL https:// dan bukan http://. Cara mudah mengunggah file adalah dengan mengunggahnya ke discord, kemudian menyalin tautannya, dan menyisipkannya ke kolom-kolom di sini.",
+		about_sound_effects_text = "Kolom ini memungkinkan Anda untuk mengganti beberapa efek suara. Untuk dapat berfungsi dengan baik, Anda memerlukan tautan langsung ke file .oog. Tautan harus berupa URL https:// dan bukan http://. Ingatlah bahwa tautan discord akan kedaluwarsa.",
+		about_staff_settings_title = "Pengaturan Staff",
+		about_staff_settings_text = "Jika Anda memiliki izin staff, bidang-bidang ini memungkinkan Anda untuk mengesampingkan beberapa pengaturan yang lebih berhubungan dengan staff.",
 		radio_mic_click_on = "Klik Tombol Radio (Nyala)",
 		radio_mic_click_off = "Klik Tombol Radio (Mati)",
 		lean_cam_mode = "Mode Kamera Miring-Aim",
 		lean_option_1 = "Tahan untuk mengaktifkan",
 		lean_option_2 = "Tekan untuk mengaktifkan",
-		lean_option_3 = "Nonaktif",
 		clipboard_animation = "Animasi Clipboard",
+		chop_shop_sound = "Nonaktifkan Suara Radio Chop Shop",
+		seatbelt_sound = "Nonaktifkan Suara Bel Pemadam",
 		sound_effect_placeholder = "URL file .oog...",
-		sound_effect_save = "Simpan",
-		sound_effect_reset = "Reset",
+
+		button_save = "Simpan",
+		button_reset = "Atur Ulang",
+		value_off = "Matikan",
+		value_on = "Hidupkan",
+		sound_off = "Suara Mati",
+		sound_on = "Suara Hidup",
 
 		reduce_epilepsy = "Reduksi Gambar Berkedip (Ramah untuk Epilepsi)",
+		pause_menu_emote = "Menu Jeda Emote",
 		disable_tablet_animation = "Nonaktifkan Animasi Tablet",
-		staff_notifications_reports = "Notifikasi Laporan",
-		staff_notifications_staff_chat = "Notifikasi Obrolan Staff",
-		staff_notifications_general = "Notifikasi Umum",
-		staff_notifications_anti_cheat = "Pemberitahuan Anti-Cheat",
+		staff_notifications_reports = "Notifikasi Laporan (Suara)",
+		staff_notifications_staff_chat = "Notifikasi Staff-Chat (Suara)",
+		staff_notifications_general = "Notifikasi Umum (Suara)",
+		staff_notifications_anti_cheat = "Notifikasi Anti-Cheat (Suara)",
 
 		december_1 = "1 Desember",
 		december_2 = "2 Desember",
@@ -9765,8 +10327,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		about_unusual_explosions = "Kejadian ledakan yang tidak biasa yang tidak terjadi secara normal.",
 		explosions_by_type_title = "Ledakan berdasarkan tipe",
 		players_causing_explosions_title = "Pemain yang menyebabkan ledakan",
-		show_common_events_off = "Tampilkan kejadian umum: MATI",
-		show_common_events_on = "Tampilkan kejadian umum: HIDUP",
+		include_common_events_off = "Sertakan peristiwa umum: MATI",
+		include_common_events_on = "Sertakan peristiwa umum: HIDUP",
 
 		explosion_events_type = "Tipe",
 		explosion_events_amount = "Jumlah",
@@ -9800,6 +10362,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		model = "Model",
 		label = "Label",
 		amount = "Jumlah",
+		time_ago = "Waktu",
 		console_name = "Pemain",
 		expected = "Yang Diharapkan",
 		actual = "Yang Sebenarnya",
@@ -10462,7 +11025,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		not_paid = "Belum Dibayar",
 		insert_dollar = "[${InteractionKey}] Masukkan $${amount}",
 
-		no_cash = "Anda tidak memiliki uang satu dolar.",
+		no_cash = "Anda tidak memiliki $4 tunai.",
 		max_time = "Maksimum waktu parkir telah tercapai.",
 		failed_pay = "Gagal membayar parkir."
 	},
@@ -10504,6 +11067,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		roll_message = "melempar dadu kustom dengan pengaturan ${rolls}d${max} dan mendapatkan ${totalValue}",
 		rps_message = "bermain batu-gunting-kertas dan memilih ${rps}",
 		citizen_card_message = "menunjukkan kartu identitas (${characterId})",
+		driver_license_message = "menunjukkan SIM (${characterId})",
 		badge_message = "menunjukkan lencana (${characterId})",
 		license_message = "menunjukkan lisensi (${characterId})",
 		ped_message_logs_title = "Pesan Ped",
@@ -10605,7 +11169,46 @@ OP.Global.Locales.Languages["id-ID"] = {
 		api_error = "API backend kami mengembalikan kesalahan.",
 		api_not_available = "API backend kami tidak tersedia.",
 		phone_number_is_available = "Nomor telepon `${phoneNumber}` tersedia.",
-		phone_number_is_not_available = "Nomor telepon `${phoneNumber}` tidak tersedia."
+		phone_number_is_not_available = "Nomor telepon `${phoneNumber}` tidak tersedia.",
+
+		no_phone = "Kamu tidak memiliki telepon.",
+		nobody_nearby = "Tidak ada orang cukup dekat untuk membagikan nomor teleponmu.",
+		shared_number = "${fullName} membagikan nomor telepon mereka denganmu. Gunakan /yes untuk menerima dan membuat kontak baru atau /no untuk menolak.",
+		shared_number_expired = "Permintaan berbagi nomor telah kedaluwarsa.",
+		shared_number_declined = "Kamu menolak permintaan berbagi nomor.",
+		failed_to_share = "Gagal membagikan nomor teleponmu.",
+		number_share_timeout = "Kamu baru saja membagikan nomor teleponmu. Harap tunggu sebentar sebelum mencoba lagi.",
+		phone_number_shared = "Berhasil membagikan nomor telepon Anda kepada ${nearby} pemain di sekitar."
+	},
+
+	plants = {
+		planting_seed = "Menanam Benih",
+		seed_planted = "Berhasil menanam benih.",
+		failed_plant = "Gagal menanam benih.",
+		cant_plant_here = "Anda tidak bisa menanam benih di sini.",
+
+		press_water_plant = "[${InteractionKey}] Siram",
+		press_harvest_plant = "[${InteractionKey}] Panen",
+		press_destroy_plant = "[${SeatEjectKey}] Sekop",
+		watering_plant = "Menyiram Tanaman",
+		harvesting_plant = "Memetik Tanaman",
+		destroying_plant = "Menghancurkan Tanaman",
+
+		plant_weed = "Menanam Gulma",
+
+		planted_seed_logs_title = "Bibit Tanaman Ditanam",
+		planted_seed_logs_details = "${consoleName} menanam ${plant} (#${plantId}) di ${material}.",
+		harvested_plant_logs_title = "Tanaman Dipanen",
+		harvested_plant_logs_details = "${consoleName} memanen ${plant} (#${plantId}) dan menerima ${items}.",
+		watered_plant_logs_title = "Tanaman Disiram",
+		watered_plant_logs_details = "${consoleName} menyiram ${plant} (#${plantId}).",
+		ran_over_plant_logs_title = "Menabrak Tanaman",
+		ran_over_plant_logs_details = "${consoleName} menabrak sebuah tanaman (#${plantId}).",
+		shoveled_plant_logs_title = "Tanaman Yang Dihancurkan",
+		shoveled_plant_logs_details = "${consoleName} menggali (menghancurkan) tanaman (#${plantId}).",
+
+		total_plants = "Total Tanaman: ${count}",
+		nearby_plants = "Tanaman di Sekitar: ${count}"
 	},
 
 	player_control = {
@@ -10636,7 +11239,9 @@ OP.Global.Locales.Languages["id-ID"] = {
 	},
 
 	players = {
-		player_left = "Pemain Keluar [${serverId}]"
+		player_left = "Pemain Keluar [${serverId}]",
+		player_exited = "Player Keluar [${serverId}]",
+		player_crashed = "Player Terguncang [${serverId}]"
 	},
 
 	pole_dancing = {
@@ -10673,9 +11278,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 		invalid_domain = "Domain ini tidak diperbolehkan.",
 		print = "Cetak",
 		printing = "Mencetak...",
+		document_title = "Judul Keren Saya",
+		image_url = "https://files.catbox.moe/ttt1e4.jpg",
 
 		printed_logs_title = "Gambar Dicetak",
-		printed_logs_details = "${consoleName} mencetak `${itemName}` menggunakan `${paperType}` dengan URL gambar `${url}`, teks atas: `${topText}` dan teks bawah: `${bottomText}`."
+		printed_logs_details = "${consoleName} mencetak `${itemName}` menggunakan `${paperType}` dengan URL gambar `${url}`, judul: `${title}`, teks atas: `${topText}` dan teks bawah: `${bottomText}`."
 	},
 
 	prop_hide = {
@@ -10708,7 +11315,6 @@ OP.Global.Locales.Languages["id-ID"] = {
 		prop = "Prop",
 		model_parameter_missing = "Parameter `model` hilang.",
 		model_parameter_invalid = "Model `${model}` tidak valid.",
-		model_parameter_is_not_an_object = "Model `${model}` bukanlah objek.",
 		spawned_prop_non_networked = "Prop yang di-spawn bukanlah networked prop dengan model `${model}`.",
 		spawned_prop_networked = "Memunculkan prop jaringan dengan model `${model}`.",
 		spawned_exact_prop = "Memunculkan prop tepat.",
@@ -10718,6 +11324,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		not_able_to_spawn_while_moving = "Anda harus berdiri diam saat memunculkan prop.",
 		stand_still_to_place_prop = "Anda harus berdiri diam untuk menempatkan prop.",
 		prop_no_interior = "Anda hanya bisa menempatkan prop ini di luar ruangan.",
+		invalid_culling_value = "Nilai pemangsulan tidak valid, harus berada di antara 10m dan 2,500m.",
+		invalid_model = "Model tidak valid/unknown `${name}` (${hash}).",
 
 		invalid_prop_id = "ID prop tidak valid.",
 		prop_deleted = "Prop dengan id ${propId} telah dihapus.",
@@ -10729,7 +11337,12 @@ OP.Global.Locales.Languages["id-ID"] = {
 		placing_prop = "Menempatkan Prop",
 		pickup_prop = "Mengambil Prop",
 		setting_up_tire_wall = "Menyiapkan Dinding Ban",
-		destroying_tire_wall = "Menghancurkan Dinding Ban"
+		destroying_tire_wall = "Menghancurkan Dinding Ban",
+
+		placed_prop_logs_title = "Menempatkan Properti",
+		placed_prop_logs_details = "${consoleName} menempatkan `${itemName}` di ${coords} (ID: ${propId}).",
+		spawned_prop_logs_title = "Menspawn Properti",
+		spawned_prop_logs_details = "${consoleName} menspawn properti dengan model `${modelName}` di ${coords} (ID: ${propId})."
 	},
 
 	radio = {
@@ -10949,6 +11562,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		button_confirm = "Konfirmasi",
 		button_delete = "Hapus",
 		button_manage = "Kelola",
+		button_leave = "Keluar",
 		create_account = "Buat Akun",
 		delete_account = "Hapus Akun",
 		confirm_delete = "Apakah Anda yakin ingin menghapus akun ini secara permanen dan semua catatan yang terkait dengannya? Tindakan ini tidak dapat dibatalkan.",
@@ -10968,6 +11582,13 @@ OP.Global.Locales.Languages["id-ID"] = {
 		access = "Failed to automatically generate translation.",
 		logs = "Failed to automatically generate translation.",
 		no_logs = "Failed to automatically generate translation.",
+		summary = "undefined",
+		name = "undefined",
+		transactions = "undefined",
+		withdrawn = "undefined",
+		deposited = "undefined",
+		last_action = "undefined",
+		no_summary = "undefined",
 		no_access = "Failed to automatically generate translation.",
 		add_cid = "Failed to automatically generate translation.",
 		failed_add_access = "Failed to automatically generate translation.",
@@ -10980,6 +11601,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		insufficient_balance = "Failed to automatically generate translation.",
 		insufficient_bank_balance = "Failed to automatically generate translation.",
 		account_description = "Failed to automatically generate translation.",
+		leave_account = "Keluar Akun",
+		confirm_leave = "Apakah Anda yakin ingin keluar dari \"${name}\"? Anda tidak akan lagi memiliki akses ke akun ini.",
 
 		add_access_logs_title = "Tambahkan Akses Penyimpanan",
 		add_access_logs_details = "${consoleName} memberikan akses kepada `${firstName} ${lastName}` (#${characterId}) ke akun penyimpanan ${accountId}.",
@@ -10989,6 +11612,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		create_account_logs_details = "${consoleName} membuat akun penyimpanan baru dengan nama `${accountName}` dan id ${accountId}.",
 		deleted_account_logs_title = "Hapus Akun Simpanan",
 		deleted_account_logs_details = "${consoleName} telah menghapus akun simpanan bernama `${accountName}` dengan ID ${accountId}.",
+		left_account_logs_title = "Tabungan yang Ditinggalkan",
+		left_account_logs_details = "${consoleName} meninggalkan tabungan dengan nama `${accountName}` dengan id ${accountId}.",
 		withdraw_logs_title = "Tarik Simpanan",
 		withdraw_logs_details = "${consoleName} menarik $${amount} dari akun tabungan ${accountId} dengan alasan `${reason}`.",
 		deposit_logs_title = "Setor Simpanan",
@@ -11229,13 +11854,19 @@ OP.Global.Locales.Languages["id-ID"] = {
 	smoothies = {
 		blend = "Blender",
 		close = "Tutup",
+		name_placeholder = "Smoothie Buah",
+		name_suffix = "Smoothie / Milkshake",
+
+		name_default = "Lezat",
+		name_drugs = "Mencurigakan",
+		name_alcohol = "Beralkohol",
 
 		use_blender = "[${InteractionKey}] Gunakan Blender",
 		blending = "Sedang melaksanakan pencampuran",
 		no_ingredients = "Anda tidak memiliki bahan untuk membuat minuman.",
 
-		milkshake_label = "Milkshake (${flavors})",
-		smoothie_label = "Smoothie (${flavors})",
+		milkshake_label = "${name} Milkshake",
+		smoothie_label = "${name} Smoothie",
 		seperator = "dan"
 	},
 
@@ -11365,7 +11996,12 @@ OP.Global.Locales.Languages["id-ID"] = {
 		spy_ui_connecting = "Menghubungkan Ke Bug Mikrofon (#${deviceId})",
 		spy_ui_connection_failed = "Gagal Terhubung ke Bug Mikrofon (#${deviceId})",
 		spy_ui_awaiting_data = "Menunggu data...",
-		spy_ui_data_failed = "Gagal memuat data"
+		spy_ui_data_failed = "Gagal memuat data",
+
+		used_tracker_logs_title = "Pengguna Pelacak Kendaraan",
+		used_tracker_logs_details = "${consoleName} menggunakan pelacak kendaraan di kendaraan ${vehicleId}.",
+		used_bug_logs_title = "Menggunakan Bug Mikrofon",
+		used_bug_logs_details = "${consoleName} menggunakan bug mikrofon pada ${identifier}."
 	},
 
 	starter_car = {
@@ -11505,6 +12141,36 @@ OP.Global.Locales.Languages["id-ID"] = {
 		user_not_found = "Pengguna yang dikirim tidak ditemukan di server.",
 		invalid_character_id = "Parameter id karakter tidak valid yang dikirim.",
 		invalid_license_identifier = "Parameter pengenal lisensi tidak valid yang dikirim."
+	},
+
+	teleporting = {
+		source_no_character = "Pemain sumber tidak memiliki karakter yang dimuat.",
+		target_no_character = "Pemain target tidak memiliki karakter yang dimuat.",
+		invalid_coordinates = "Koordinat tidak valid.",
+		no_waypoint_set = "Tidak ada titik awal yang ditetapkan.",
+		failed_teleport_to_player = "Gagal melakukan teleportasi ke pemain.",
+		failed_teleport_player_here = "Gagal melakukan teleportasi pemain ke posisi Anda.",
+		failed_teleport_player_player = "Gagal melakukan teleportasi pemain ke pemain lain.",
+		no_back_coords = "Tidak ada tempat untuk melakukan teleportasi kembali.",
+		cant_tp_same_player = "Anda tidak dapat melakukan teleportasi pemain ke diri mereka sendiri.",
+		cant_tp_self_self = "Kamu tidak bisa teleport diri sendiri ke diri sendiri.",
+
+		use_tp_to_player = "Gunakan `/tp_to_player` untuk teleport diri kamu ke seorang pemain.",
+		use_tp_player_here = "Gunakan `/tp_player_here` untuk teleport seorang pemain ke kamu.",
+
+		teleported_to_coordinates = "Terlepas ke `${location}`. (${coords})",
+		teleported_to_player = "Terlepas ke ${displayName}.",
+		teleported_player_here = "Terlepas ${displayName} ke kamu.",
+		teleported_player_player = "Terlepas ${sourceName} ke ${targetName}.",
+
+		teleport_to_coords_logs_title = "Terlepas Ke Koordinat",
+		teleport_to_coords_logs_details = "${consoleName} dipindahkan ke koordinat ${coords}.",
+		teleport_to_player_logs_title = "Dipindahkan Ke Pemain",
+		teleport_to_player_logs_details = "${consoleName} dipindahkan ke ${targetConsoleName}.",
+		teleport_player_here_logs_title = "Pemain Dipindahkan Ke Sendiri",
+		teleport_player_here_logs_details = "${consoleName} memindahkan ${targetConsoleName} ke dirinya sendiri.",
+		teleport_player_player_logs_title = "Pemain Dipindahkan Ke Pemain",
+		teleport_player_player_logs_details = "${consoleName} memindahkan ${sourceConsoleName} ke ${targetConsoleName}."
 	},
 
 	teleporters = {
@@ -11652,6 +12318,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		vehicles = "Opsi Kendaraan",
 		spawn_car = "Keluarkan Mobil",
 		upgrade_vehicle = "Tingkatkan Kendaraan",
+		break_windows = "Menghancurkan Jendela",
 		pop_tires = "Bocorkan Ban",
 		detach_doors = "Lepaskan Pintu",
 		damage_vehicle = "Kerusakan Kendaraan",
@@ -11660,6 +12327,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 		player = "Opsi Pemain",
 		starve = "Kelaparan",
+		add_stress = "Menambahkan Stres",
 		feed = "Berikan Makan",
 		relief_stress = "Legakan Stres",
 		reset_health = "Atur Ulang Kesehatan",
@@ -11729,6 +12397,12 @@ OP.Global.Locales.Languages["id-ID"] = {
 		trackers_in_category = "Pelacak sekarang akan disimpan dalam kategori mereka pada peta.",
 		trackers_split = "Pelacakan sekarang akan dibagi menjadi blip individu.",
 
+		tracker_broken = "Pelacak milik ${lastName} telah rusak di sekitar ${location}",
+		tracker_broken_unit = "Unit ${unitId} milik ${lastName} telah rusak di sekitar ${location}",
+		tracker_broken_title = "[Dispatch]",
+		tracker_broken_blip = "Pelacak Rusak ${lastName}",
+		tracker_broken_timeout = "Pelacak Anda rusak. Anda dapat mengaktifkannya kembali 20 menit setelahnya.",
+
 		department_sasp = "SASP",
 		department_bcso = "BCSO",
 		department_sahp = "SAHP",
@@ -11745,7 +12419,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 	},
 
 	trading_cards = {
-		access_store = "[${InteractionKey}] Akses Toko",
+		access_store = "Tekan ~INPUT_CONTEXT~ untuk mengakses Toko Kartu Perdagangan.",
 
 		buy_pack = "Beli ${packName}",
 		store_title = "Toko Kartu",
@@ -11942,7 +12616,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 	vape = {
 		press_to_use = "Tekan ~INPUT_CONTEXT~ untuk mengambil. Tekan ~INPUT_FRONTEND_CANCEL~ untuk menyimpan vape.",
 
-		plain_vape = "Geek Bar (Tanpa Rasa)",
+		plain_vape = "Geek Bar",
+		weed_vape = "Geek Bar (Minyak THC)",
 		mango_vape = "Geek Bar (Mangga)",
 		strawberry_vape = "Geek Bar (Stroberi)",
 		menthol_vape = "Geek Bar (Mentol)",
@@ -12056,6 +12731,20 @@ OP.Global.Locales.Languages["id-ID"] = {
 		refilling_bottle = "Mengisi Botol"
 	},
 
+	weed = {
+		strain_default = "Wild Haze",
+		strain_lemon = "Lemon Haze",
+		strain_northern = "Northern Lights",
+		strain_kush = "OG Kush",
+
+		default_emoji = "🥦",
+		lemon_emoji = "🏃",
+		northern_emoji = "🛡️",
+		kush_emoji = "🦁",
+
+		strain_description = "<b>Strain:</b> <i>${strain}</i> ${emoji}"
+	},
+
 	weed_field = {
 		pick_weed = "Tekan ~INPUT_CONTEXT~ untuk memetik ganja.",
 		picking_weed = "Memetik Ganja"
@@ -12092,8 +12781,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		explode_success = "Berhasil membuat ${consoleName} meledak.",
 		explode_failed = "Gagal membuat pemain meledak.",
 
-		ignite_success = "Berhasil menyalakan api pada ${consoleName}.",
-		ignite_failed = "Gagal menyalakan api pada pemain.",
+		taze_success = "Berhasil mengejutkan ${consoleName}.",
+		taze_failed = "Gagal mengejutkan pemain.",
 
 		flashbang_success = "Berhasil melempar granat kilat pada ${consoleName}.",
 		flashbang_failed = "Gagal melempar granat kilat pada pemain.",
@@ -12192,6 +12881,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		second = "detik",
 		seconds = "detik",
 		just_now = "baru saja",
+		now = "sekarang",
 
 		month_1 = "Januari",
 		month_2 = "Februari",
@@ -12277,6 +12967,35 @@ OP.Global.Locales.Languages["id-ID"] = {
 		delivery_blip = "Pengantaran Burger Shot"
 	},
 
+	bus_driver = {
+		start_route = "Tekan ~INPUT_CONTEXT~ untuk memulai rute",
+		failed_start_job = "Gagal memulai pekerjaan baru.",
+		next_stop = "Tujuan berikutnya",
+		bus_hq = "Pusat Bus",
+		job_cancelled = "Pekerjaan telah dibatalkan.",
+		next_stop_help = "Tujuan berikutnya: ${stop} dari ${total}",
+		passenger_count = "Penumpang: ${penumpang} dari ${kursi}",
+		shutdown_engine = "Matikan mesin dan tunggu penumpang.",
+		return_to_hq = "Kembali ke Pusat.",
+		bus_stop = "Halte Bus",
+		pay_for_ticket = "Tahan ~INPUT_CONTEXT~ untuk membayar tiket ($18).",
+		not_enough_money_ticket = "Anda tidak memiliki cukup uang tunai untuk membeli tiket ($18).",
+		ticket_paid = "${displayName} telah membayar tiket bus.",
+		paid_for_ticket = "Anda telah berhasil membayar tiket bus.",
+
+		east_route = "Arcade",
+		pillbox_route = "Pillbox",
+		little_seoul_route = "Little Seoul",
+		sandy_route = "Sandy Desert Line",
+		paleto_route = "Great Ocean Express",
+		grapeseed_route = "Grapeseed Greenway",
+		route_68_route = "Route 68 Direct",
+		airport_route = "Airport Shuttle",
+
+		finished_job_logs_title = "Mengakhiri Rute Bus",
+		finished_job_logs_details = "${consoleName} menyelesaikan mengemudi rute bus `${route}` dan menerima $${payout}."
+	},
+
 	doj = {
 		invalid_type = "गेराज में से वाहन निकालें",
 		missing_search = "अपने मौजूदा स्थान पर गेराज में से एक वाहन निकालें।",
@@ -12330,6 +13049,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		job_government = "Pengumpul Sampah",
 		job_mechanic = "Tow Driver",
 		job_delivery = "Pekerjaan Pengiriman",
+		job_bus_driver = "Sopir Bus",
 		changed_job_already_set_to_job = "Pekerjaanmu sudah diatur menjadi ${jobName}.",
 		changed_job_success = "Berhasil mengatur pekerjaanmu menjadi ${jobName}.",
 		changed_job_success_go_to_coords = "Berhasil mengatur pekerjaanmu menjadi ${jobName}. Ikuti waypoint di peta untuk memulai.",
@@ -12432,6 +13152,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		license_fishing = "Surat Izin Memancing",
 		license_weapon = "Surat Izin Senjata",
 		license_mining = "Surat Izin Penambangan",
+		license_driver = "Surat Izin Mengemudi",
 		gave_character_license = "Memberikan ${characterName} surat izin `${licenseLabel}`.",
 		character_already_has_license = "${characterName} sudah memiliki surat izin `${licenseLabel}`",
 		removed_character_license = "Menghapus surat izin `${licenseLabel}` dari ${characterName}.",
@@ -12446,7 +13167,21 @@ OP.Global.Locales.Languages["id-ID"] = {
 		you_have_no_licenses = "Anda tidak memiliki lisensi.",
 		player_has_no_licenses = "${characterName} tidak memiliki lisensi.",
 		failed_to_get_licenses = "Gagal mendapatkan lisensi.",
-		license_list = "Lisensi yang tersedia: ${licenseList}."
+		license_list = "Lisensi yang tersedia: ${licenseList}.",
+		already_married = "Salah satu atau kedua pasangan sudah menikah.",
+		either_not_married = "Salah satu atau kedua pasangan belum menikah.",
+		not_married = "Pasangan tidak menikah satu sama lain.",
+		failed_marriage = "Gagal mengatur status pernikahan.",
+		marriage_success = "${nameA} dan ${nameB} sekarang menikah.",
+		divorce_success = "${nameA} dan ${nameB} tidak lagi menikah.",
+		character_not_online = "Salah satu pasangan tidak sedang online. Hanya pasangan yang sudah meninggal yang bisa bercerai saat offline.",
+		you_are_now_married = "Anda sekarang menikah dengan ${name}.",
+		you_are_no_longer_married = "Anda tidak lagi menikah dengan ${name}.",
+
+		divorced_logs_title = "Cerai",
+		divorced_logs_details = "${consoleName} memperbarui status pernikahan ${nameA} #${cidA} dan ${nameB} #${cidB} menjadi `cerai`.",
+		married_logs_title = "Menikah",
+		married_logs_details = "${consoleName} memperbarui status pernikahan ${nameA} #${cidA} dan ${nameB} #${cidB} menjadi `menikah`."
 	},
 
 	tow = {
@@ -12502,7 +13237,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		anchored_successfully = "Berhasil mengaitkan ikatan.",
 		removing_anchor = "Memutuskan ikatan",
 		deploying_anchor = "Mengaitkan ikatan",
-		no_vehicle_nearby = "Tidak ada perahu di dekatnya yang dapat diikatkan."
+		no_vehicle_nearby = "Tidak ada perahu di dekatnya yang dapat diikatkan.",
+		vehicle_not_anchorable = "Anda tidak dapat mengikat perahu ini."
 	},
 
 	car_wash = {
@@ -12579,16 +13315,42 @@ OP.Global.Locales.Languages["id-ID"] = {
 		unknown = "Tidak Diketahui"
 	},
 
+	garage_access = {
+		menu_title = "Manajer Garasi",
+		button_close = "Tutup",
+		loading = "Memuat...",
+		access = "Akses Garasi",
+		access_description = "Karakter-karakter ini memiliki akses untuk menarik dan menyimpan kendaraan Anda dari dan ke garasi Anda.",
+		accessible = "Akses Anda",
+		accessible_description = "Ini adalah garasi yang telah diberikan akses kepada Anda.",
+		no_access = "Tidak ada yang kecuali Anda yang dapat mengakses garasi Anda.",
+		no_accessible = "Tidak ada yang memberi Anda akses ke garasi mereka.",
+
+		failed_allow_access = "Gagal mengizinkan akses ke garasi.",
+		failed_remove_access = "Gagal menghapus akses dari garasi.",
+		already_has_access = "Karakter sudah memiliki akses ke garasi Anda.",
+		invalid_character_id = "Id karakter tidak valid.",
+		does_not_access = "Karakter sudah tidak memiliki akses ke garasi Anda.",
+
+		added_access_logs_title = "Tambahkan Akses Garasi",
+		added_access_logs_details = "${consoleName} (#${characterId}) memberikan akses kepada #${targetCharacterId} ke garasinya.",
+		removed_access_logs_title = "Hapus Akses Garasi",
+		removed_access_logs_details = "${consoleName} (#${characterId}) menghapus akses #${targetCharacterId} ke garasinya."
+	},
+
 	garages = {
 		garage_empty = "Garasi Anda kosong!",
 		impound_lot = "Lokasi Penyimpanan",
 		police_impound = "Penyimpanan Polisi",
+		owner_self = "Milik Sendiri",
+		owner_other = "Akses",
 		engine = "Mesin",
 		body = "Badan Kendaraan",
 		vehicle_in = "Masuk",
 		vehicle_out = "Keluar",
 		vehicle_at_police_impound = "Kendaraan Anda saat ini dalam penahanan polisi.",
 		vehicle_at_impound = "Kendaraan Anda berada di Lokasi Penyimpanan.",
+		impound_lot_short = "Impound",
 		waypoint_to_impound = "Titik tujuan ke Lokasi Penyimpanan telah ditandai di GPS Anda.",
 		unable_to_withdraw = "Tidak dapat menarik kendaraan karena sedang digunakan.",
 		vehicle_in_garage = "Kendaraan Anda berada di ${garageName}. Sebuah waypoint telah ditandai di peta anda.",
@@ -12608,7 +13370,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		not_enough_balance_to_retrieve = "Anda tidak memiliki cukup saldo di salah satu akun Anda untuk mengambil kendaraan ini.",
 		press_to_access = "Tekan ~INPUT_CONTEXT~ untuk mengakses garasi.",
 		ui_return = "Kembali",
-		ui_vehicle_list = "Daftar Kendaraan",
+		ui_my_vehicle_list = "Daftar Kendaraan Saya",
+		ui_other_vehicle_list = "Daftar Kendaraan Lainnya",
 		ui_store_vehicle = "Simpan Kendaraan",
 		ui_vehicle_sell = "Jual Kendaraan",
 		ui_retrieve_vehicle = "Ambil Kendaraan",
@@ -12631,8 +13394,6 @@ OP.Global.Locales.Languages["id-ID"] = {
 		state_loading = "Memuat...",
 
 		vehicle_weight = "Berat: ${weight}",
-		last_garage_letter = "Terakhir - Garasi ${letter}",
-		last_garage_impound = "Terakhir - Tempat Impound",
 		no_last_garage_letter = "Tidak Ada Garasi Terakhir",
 
 		purchase_vehicle = "Tekan ~INPUT_CONTEXT~ untuk mengakses toko",
@@ -12641,7 +13402,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		purchase_success = "Kendaraan ${label} yang baru saja Anda beli telah ditambahkan ke garasi Anda.",
 		purchase_failed = "Gagal membeli kendaraan.",
 		already_owned = "Anda sudah memiliki model kendaraan ini.",
-		maximum_owned = "Anda tidak dapat memiliki lebih dari 6 kendaraan.",
+		maximum_owned = "Anda tidak dapat memiliki lebih dari 8 kendaraan.",
 		not_enough_money = "Anda tidak memiliki cukup uang untuk membeli kendaraan ini.",
 
 		sold_vehicle = "Terjual ${label} seharga $${price}.",
@@ -12759,6 +13520,14 @@ OP.Global.Locales.Languages["id-ID"] = {
 		failed_generic = "Ada yang salah."
 	},
 
+	trailers = {
+		cant_attach_trailer = "Kendaraan ini tidak memiliki ganco penarik.",
+		no_trailer_nearby = "Tidak ada trailer di sekitar.",
+		not_in_vehicle = "Anda tidak sedang mengemudi kendaraan.",
+		not_lined_up = "Kendaraan Anda tidak sejajar dengan trailer.",
+		keybind_description = "Melepaskan atau mengaitkan trailer"
+	},
+
 	vehicles = {
 		flip_flipping = "Membalikkan Kendaraan",
 		flip_unable = "Anda tidak dapat membalikkan kendaraan saat ada orang di dalamnya.",
@@ -12777,6 +13546,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		gear_animation_disabled = "Animasi gigi (dan suara) sekarang telah dinonaktifkan.",
 		manual_gears_enabled = "नेटवर्क आईडी",
 		manual_gears_disabled = "Pergantian gigi manual sekarang telah dinonaktifkan.",
+		manual_gears_too_fast = "Anda hanya bisa mengganti gigi manual di bawah 30mph.",
 		hybrid_off = "${consoleName} ने ${inputs} का उपयोग करके ${amount}x ${output} बनाया।",
 		speed_limiter_set_to_metric = "Pembatas kecepatan sekarang akan membatasi kecepatan menjadi ${speed} km/jam.",
 		speed_limiter_set_to_imperial = "Pembatas kecepatan sekarang akan membatasi kecepatan menjadi ${speed} mp/jam.",
@@ -13024,13 +13794,15 @@ OP.Global.Locales.Languages["id-ID"] = {
 		bleeding_reduced = "Pendarahan Berkurang",
 		bleeding_self_stopped = "Pendarahan berhenti sendiri",
 		thanks_for_loot = "Anda digeledah saat tidak sadar. Beberapa barang mungkin hilang. Desas-desus mengatakan bahwa pelakunya adalah Nancy.",
+		guards_found_unconcious = "Penjaga menemukan Anda tidak sadar dan membawa Anda ke rumah sakit penjara.",
 		serial_number = "तस्वीरों को मुद्रित करने के लिए एक खाली कागज। (आकार: 1x1)",
 		serial_number_unknown = "व्यापार कार्डों को मुद्रित करने के लिए एक खाली कागज। (आकार: 9x5)",
 		serial_number_removed = "दस्तावेज़ी कागज",
 		badge_owner = "<i>Lencana ini milik <b>${fullName} (${positionName})</b>.</i>",
 		badge_owner_unknown = "Pemilik Lencana tidak diketahui.",
 		citizen_card_owner = "<i>Kartu warga ini milik <b>${fullName} (#${characterId})</b>.</i>",
-		citizen_card_has_portrait = "<i>Kartu tersebut memiliki gambar.</i>",
+		driver_license_owner = "<i>Kartu SIM ini milik <b>${fullName} (#${characterId})</b>.</i>",
+		has_portrait = "<i>Ada foto di dalamnya.</i>",
 		picture_pending = "<i>Gambar masih diproses...</i>",
 		picture_selfie_owner = "<i>Ini adalah gambar dari <b>${fullName}</b>.</i>",
 		bought_by = "Dibeli oleh ${buyerName} (${buyerCid}).",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 25 (do not change)
+-- AUTO LOCALES: 32 (do not change)
 
 OP.Global.Locales.Languages["ar-SA"] = {
 	-- configuration settings for language
@@ -134,6 +134,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		added_vehicle_logs_title = "تمت إضافة مركبة",
 		added_vehicle_logs_details = "${consoleName} قام بإضافة مركبة بوزن النموذج `${modelName}` إلى مرآبه.",
 
+		vehicle_saved = "تم حفظ المركبة بنجاح بواسطة اسم النموذج `${modelName}`.",
+		failed_to_save_vehicle = "فشل في حفظ المركبة.",
+
 		invalid_amount = "المبلغ غير صالح.",
 
 		added_cash_title = "تمت إضافة النقود",
@@ -260,6 +263,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		you_have_been_kicked_no_reason = "لقد تم طردك بدون ذكر سبب من ${kicker}.",
 
 		logs_player_kicked_title = "تم طرد اللاعب",
+		logs_player_kicked_system_title = "تم طرد اللاعب من قبل النظام",
 		logs_player_kicked_details = "تم طرد ${consoleName} من الخادم بواسطة ${kicker} لسبب `${reason}`.",
 		logs_player_kicked_no_reason_details = "تم طرد ${consoleName} من الخادم بواسطة ${kicker} بدون ذكر سبب.",
 
@@ -358,17 +362,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		already_sending_staff_message = "أنت ترسل رسالة للموظفين حاليا. الرجاء الانتظار.",
 		unable_to_send_identical_staff_message = "لا يمكنك إرسال رسالتين للموظفين مطابقتين متتاليتين في غضون 30 ثانية.",
 
-		tp_coords_invalid_coordinates = "إحداثيات غير صالحة.",
-		tp_coords_teleported_to_coordinates = "تم نقلك إلى الإحداثيات X: ${x}، Y: ${y}، Z: ${z}.",
-
-		teleported_to_waypoint = "تم نقلك إلى نقطة الوجهة عند ${locationLabel}.",
-		no_waypoint_set = "يجب عليك وضع نقطة معينة.",
-
-		teleported_to_coordinates_logs_title = "تم النقل إلى إحداثيات",
-		teleported_to_coordinates_logs_details = "تم تحويل ${consoleName} إلى الإحداثيات X: ${x}، Y: ${y}، Z: ${z}.",
-		teleported_to_waypoint_logs_title = "تم النقل إلى النقطة المعينة",
-		teleported_to_waypoint_logs_details = "تم نقل ${consoleName} إلى النقطة المعينة ${locationLabel}.",
-
 		population_density_set_to = "تم ضبط ضعف كثافة السكان على ${multiplierLabel}%.",
 		population_density_set_off = "تم إيقاف تشغيل تضاعف كثافة السكان.",
 		population_density_is_not_on = "تضاعف كثافة السكان غير مفعل.",
@@ -403,6 +396,13 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		you_are_not_in_a_vehicle = "أنت لست في مركبة.",
 		repaired_vehicle = "تم إصلاح المركبة.",
+		player_not_in_vehicle = "هذا اللاعب ليس داخل مركبة.",
+		no_character = "اللاعب غير متصل أو ليس لديه شخصية محملة.",
+		repaired_player_vehicle = "تم إصلاح المركبة التي كان فيها ${displayName}.",
+		failed_player_repair = "فشل في إصلاح المركبة.",
+
+		repaired_player_vehicle_logs_title = "تم إصلاح مركبة اللاعب",
+		repaired_player_vehicle_logs_details = "${consoleName} قام بإصلاح المركبة التي كان يستقلها ${targetConsoleName}.",
 
 		success_nos_refill = "تم إعادة ملء NOS بنجاح.",
 		failed_nos_refill = "فشلت عملية إعادة ملء NOS.",
@@ -487,7 +487,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		attachment_off = "تم تعطيل المرفق '${attachment}' بنجاح.",
 
 		tint_invalid = "صبغة السلاح غير صالحة.",
-		tint_range_invalid = "نطاق صبغة السلاح غير صالح (يجب أن يكون بين 0 و ${max}).",
+		tint_index_invalid = "مؤشر لون السلاح غير صالح.",
 		tint_failed_set = "فشل في تعيين صبغة السلاح.",
 		tint_removed = "تم إزالة صبغة السلاح بنجاح.",
 		tint_set = "تم تعيين صبغة السلاح بنجاح إلى `${tint}` (${tintIndex}).",
@@ -517,9 +517,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		item_durability_set_no_permission = "تمت محاولة تعيين متانة العناصر بدون الإذن المناسب.",
 
 		item_metadata_set_no_permission = "تمت محاولة تعيين بيانات العناصر بدون الإذن المناسب.",
-		item_metadata_invalid_metadata = "بيانات عنصر غير صالحة.",
 		item_metadata_set_success = "تم تعيين البيانات بنجاح للعناصر في الفتحة ${slotId}.",
 		item_metadata_set_failed = "فشل في تعيين البيانات.",
+		item_metadata_missing_key = "مفتاح البيانات الوصفية مفقود.",
 
 		advanced_metagame_on = "تحويل التركيز على التفاصيل المتقدمة تم تشغيله.",
 		advanced_metagame_off = "تحويل التركيز على التفاصيل المتقدمة تم إيقافه.",
@@ -696,6 +696,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		weapon_spawn_ban = "تتوق لـ `${weaponName}`؟ هذه ليست ترسانة، وتلك القطعة؟ لا تزال في الفرن.",
 		advanced_noclip_ban = "تحاول الانزلاق السري عبر الممرات غير المرئية؟ هذه ليست رقصة مهرجان، وتلك الحركة؟ ليست في جدول رقصنا.",
 		illegal_local_vehicle_ban = "يبدو أنك وجدت حصان الأمير/الملك الخفي! للأسف، هذه الركوبة السحرية محجوزة لموكب الأشباح السنوي.",
+		handling_field_ban = "يبدو أنك حاولت زيادة سرعة الفيزياء. محاولة جيدة، ولكن في هذا العالم، نحافظ على أرجلنا متماسكة في الواقع.",
 
 		type_aimbot = "إيمبوت",
 		type_bad_creation = "إنشاء سيء",
@@ -711,6 +712,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		type_illegal_event = "حدث غير قانوني للعميل",
 		type_illegal_freeze = "تجميد غير قانوني",
 		type_illegal_global = "استخدام عام غير قانوني",
+		type_illegal_handling_field = "حقل تعامل غير قانوني",
 		type_illegal_native = "استدعاء برنامج وحدة عبر النظام غير قانوني",
 		type_illegal_ped_spawn = "ظهور شخصية غير قانوني",
 		type_illegal_server_event = "حدث غير قانوني للخادم",
@@ -768,6 +770,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		high_fov_debug = "الحالي: ${fov}",
 
 		illegal_oxy_run = "أكمل اللاعب جولة الأوكسي بشكل أسرع مما يمكن بشراسة بشرية.",
+
+		fov_warning = "زاوية الرؤية الأفقية لديك مرتفعة بشكل غير عادي",
+		fov_warning_details = "هذا الأمر عادة ما يحدث بسبب معدل زاوية الرؤية. الحالي: ${fov}",
+
+		stretched_res_warning = "دقة الشاشة مشدودة (~r~${ratio}~w~)",
 
 		fast_movement_warning = "لقد تم تمييزك للحركة السريعة! يرجى إعلام المطور وإخباره بما كنت تفعله لتحريك نفسك بسرعة كبيرة حتى لا تتلقى هذه الرسالة.",
 		invincibility_warning = "لقد تم تمييزك للكونكريت! يرجى إعلام المطور وإخباره بما كنت تفعله لجعل نفسك عديم الأذى حتى لا تتلقى هذه الرسالة.",
@@ -1017,10 +1024,14 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		add_vehicle_command = "add_vehicle",
 		add_vehicle_command_help = "أضف مركبة إلى كراج شخص ما.",
 		add_vehicle_command_parameter_model = "النموذج",
-		add_vehicle_command_parameter_model_help = "اسم النموذج أو هاش النموذج للمركبة التي ترغب في إضافتها. إذا تم تركه فارغاً، سيتم إضافة المركبة التي توجد بها حاليًا (بما في ذلك التعديلات الحالية).",
+		add_vehicle_command_parameter_model_help = "اسم النموذج أو التجزئة الرمزية للمركبة التي ترغب في إضافتها. إذا تركته فارغًا، سيتم إضافة نموذج المركبة التي تستقلها حاليًا.",
 		add_vehicle_command_parameter_server_id = "هوية الخادم",
 		add_vehicle_command_parameter_server_id_help = "معرّف الخادم الخاص بلاعب الذي تريد منح مركبة له. ترك هذا الحقل فارغًا سيتم اختيارك تلقائيًا.",
 		add_vehicle_command_substitutes = "",
+
+		save_vehicle_command = "حفظ_المركبة",
+		save_vehicle_command_help = "احفظ المركبة التي تقودها حاليًا (مع تعديلاتها) في مرآبك.",
+		save_vehicle_command_substitutes = "",
 
 		aimbot_command = "التصويب التلقائي",
 		aimbot_command_help = "تبديل 'التصويب التلقائي'.",
@@ -1178,22 +1189,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		warning_message_command_parameter_message_help = "الرسالة التي تريد عرضها للاعبين. يمكنك ترك هذا المعامل فارغًا لإزالة الرسالة التحذيرية",
 		warning_message_command_substitutes = "",
 
-		tp_coords_command = "tp_coords",
-		tp_coords_command_help = "الانتقال إلى إحداثيات معينة",
-		tp_coords_command_parameter_x = "س",
-		tp_coords_command_parameter_x_help = "إحداثيات الفاصلة المنقولة لها التي تريد الانتقال إليها في الاتجاه العرضي (X).",
-		tp_coords_command_parameter_y = "y",
-		tp_coords_command_parameter_y_help = "إحداثيات الفاصلة المنقولة لها التي تريد الانتقال إليها في الاتجاه الطولي (Y).",
-		tp_coords_command_parameter_z = "z",
-		tp_coords_command_parameter_z_help = "إحداثيات الفاصلة المنقولة لها التي تريد الانتقال إليها في الاتجاه الارتفاعي (Z). إذا ترك هذا المعامل فارغًا، سيتم البحث عن إحداثيات الأرض تلقائيًا.",
-		tp_coords_command_parameter_w = "w",
-		tp_coords_command_parameter_w_help = "الإحداثية W أو الاتجاه الذي ترغب في الانتقال إليه. هذا المعلم اختياري وإذا تركته فارغًا، سيتم استخدام الاتجاه الحالي الخاص بك.",
-		tp_coords_command_substitutes = "tpc",
-
-		tp_waypoint_command = "tp_waypoint",
-		tp_waypoint_command_help = "الانتقال لموقع الوايبوينت الذي قمت بتعيينه من قبل.",
-		tp_waypoint_command_substitutes = "tp_marker, tp",
-
 		population_density_command = "كثافة_السكان",
 		population_density_command_help = "تجاوز مضاعف كثافة السكان العالمي.",
 		population_density_command_parameter_multiplier = "مضاعف",
@@ -1202,6 +1197,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		repair_vehicle_command = "اصلاح_المركبة",
 		repair_vehicle_command_help = "إصلاح السيارة التي تقودها.",
+		repair_vehicle_command_parameter_server_id = "معرف_السيرفر",
+		repair_vehicle_command_parameter_server_id_help = "معرف السيرفر للمركبة التي ترغب في إصلاحها. (اختياري)",
 		repair_vehicle_command_substitutes = "اصلح",
 
 		enter_vehicle_command = "ادخل_المركبة",
@@ -1243,6 +1240,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		player_info_command_parameter_server_id = "معرّف الخادم",
 		player_info_command_parameter_server_id_help = "معرّف الخادم لللاعب الذي تود الحصول على معلومات حوله، في حال تركتها فارغة، سيتم اختيارك.",
 		player_info_command_substitutes = "اللاعب, معلومات",
+
+		ender_chest_command = "صندوق_النهاية",
+		ender_chest_command_help = "الوصول إلى صندوق النهاية الخاص بك.",
+		ender_chest_command_substitutes = "ec",
 
 		inventory_command = "المخزون",
 		inventory_command_help = "يقوم بفتح المخزن المحدد.",
@@ -1315,9 +1316,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		set_metadata_command = "تعيين_البيانات",
 		set_metadata_command_help = "يعين جميع بيانات العناصر في فتحة محددة.",
 		set_metadata_command_parameter_slot = "الفتحة",
-		set_metadata_command_parameter_slot_help = "أي فتحة لتعيين تحمل العناصر فيها.",
-		set_metadata_command_parameter_metadata = "البيانات",
-		set_metadata_command_parameter_metadata_help = "الـ json الخاص بالبيانات لتعيينها.",
+		set_metadata_command_parameter_slot_help = "أي فتحة لتعيين بيانات العناصر فيها.",
+		set_metadata_command_parameter_key = "مفتاح",
+		set_metadata_command_parameter_key_help = "المفتاح الذي ترغب في تعيينه.",
+		set_metadata_command_parameter_value = "قيمة",
+		set_metadata_command_parameter_value_help = "القيمة التي ترغب في تعيينها. (لا تضع شيئًا لحذف المفتاح)",
 		set_metadata_command_substitutes = "بيانات_السيارة",
 
 		refill_nitro_command = "املأ_خزان_نترو",
@@ -1504,26 +1507,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		admin_command_help = "يفتح قائمة المدير.",
 		admin_command_substitutes = "",
 
-		tp_player_command = "نقل_اللاعب",
-		tp_player_command_help = "ينقلك إلى لاعب محدد.",
-		tp_player_command_parameter_server_id = "معرف_الخادم",
-		tp_player_command_parameter_server_id_help = "معرف الخادم للاعب الذي تريد الانتقال إليه.",
-		tp_player_command_substitutes = "",
-
-		tp_here_command = "tp_here",
-		tp_here_command_help = "ينقل لاعب إليك.",
-		tp_here_command_parameter_server_id = "معرف الخادم",
-		tp_here_command_parameter_server_id_help = "معرّف اللاعب الذي تريد نقله.",
-		tp_here_command_substitutes = "",
-
-		tp_to_command = "tp_to",
-		tp_to_command_help = "ينقل لاعبًا إلى لاعب آخر.",
-		tp_to_command_parameter_source_id = "معرف المصدر",
-		tp_to_command_parameter_source_id_help = "اللاعب الذي تريد نقله.",
-		tp_to_command_parameter_destination_id = "معرف الوجهة",
-		tp_to_command_parameter_destination_id_help = "اللاعب الذي تريد نقل اللاعب له.",
-		tp_to_command_substitutes = "",
-
 		-- game/airdrops
 		create_airdrop_command = "انشاء_إسقاط_جوي",
 		create_airdrop_command_help = "انشاء إسقاط جوي.",
@@ -1633,6 +1616,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		bed_command_help = "محاولة الاستلقاء في السرير الأقرب.",
 		bed_command_substitutes = "",
 
+		-- game/bicycles
+		pickup_bicycle_command = "التقاط_دراجة",
+		pickup_bicycle_command_help = "التقاط أقرب دراجة.",
+		pickup_bicycle_command_substitutes = "أدخل_الدراجة",
+
 		-- game/bills
 		create_bill_command = "إنشاء_فاتورة",
 		create_bill_command_help = "فاتورة مبلغ معين للاعب آخر.",
@@ -1648,6 +1636,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
+		mute_boomboxes_command = "كتم_صناديق_الصوت",
+		mute_boomboxes_command_help = "إكتمال/رفع صوت جميع صناديق الصوت.",
+		mute_boomboxes_command_substitutes = "",
+
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "مسح صناديق الصوت.",
 		wipe_boomboxes_command_parameter_radius = "نصف القطر",
@@ -1936,6 +1928,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		vehicle_info_command_help = "تقوم بطباعة معلومات تتعلق بالمركبة التي تستخدمها لمساعدة في تصحيح المشكلات.",
 		vehicle_info_command_substitutes = "",
 
+		vehicle_doors_command = "vehicle_doors",
+		vehicle_doors_command_help = "رسم جميع أبواب السيارة المجاورة.",
+		vehicle_doors_command_substitutes = "",
+
 		delete_entity_command = "حذف_الكيان",
 		delete_entity_command_help = "تقوم بحذف كائن معين بمعرّف الشبكة.",
 		delete_entity_command_parameter_network_id = "معرّف الشبكة",
@@ -2144,6 +2140,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		door_debug_command_help = "تصحيح معلومات بالنسبة للأبواب القريبة",
 		door_debug_command_substitutes = "",
 
+		-- game/effect_zones
+		effect_zones_debug_command = "effect_zones_debug",
+		effect_zones_debug_command_help = "تصحيح المناطق التي تتأثر بها حاليًا.",
+		effect_zones_debug_command_substitutes = "",
+
 		-- game/elevators
 		elevator_enable_command = "elevator_enable",
 		elevator_enable_command_help = "يقوم بتشغيل أقرب مصعد.",
@@ -2158,6 +2159,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		elevator_enable_command_all_substitutes = "",
 
 		-- game/emotes
+		emote_menu_command = "emote_menu",
+		emote_menu_command_help = "قم بتبديل قائمة الايموشن.",
+		emote_menu_command_substitutes = "",
+
 		emote_command = "حركة",
 		emote_command_help = "تشغيل حركة.",
 		emote_command_parameter_name = "الاسم",
@@ -2169,6 +2174,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		walk_command_parameter_name = "الاسم",
 		walk_command_parameter_name_help = "اسم نمط المشي.",
 		walk_command_substitutes = "",
+
+		mood_command = "مزاج",
+		mood_command_help = "تعيين تعبيرك/مزاجك.",
+		mood_command_parameter_name = "الاسم",
+		mood_command_parameter_name_help = "اسم التعبير/المزاج.",
+		mood_command_substitutes = "",
 
 		-- game/evidence
 		fingerprint_command = "بصمة",
@@ -2204,6 +2215,13 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		flag_swap_leaderboard_command_help = "تبديل قائمة المتصدرين للأعلام المبادلة.",
 		flag_swap_leaderboard_command_substitutes = "",
 
+		-- game/flight_radar
+		callsign_command = "رمز النداء",
+		callsign_command_help = "تعيين رمز النداء الخاص بك لجهاز رادار الرحلات الجوية.",
+		callsign_command_parameter_callsign = "رمز النداء",
+		callsign_command_parameter_callsign_help = "رمز النداء الخاص بك أو اتركه فارغًا لإعادة التعيين.",
+		callsign_command_substitutes = "",
+
 		-- game/forcefields
 		create_forcefield_command = "انشاء_حقل_قوة",
 		create_forcefield_command_help = "ينشئ حقل قوة في موقعك الحالي.",
@@ -2233,6 +2251,13 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		fortnite_wipe_command_parameter_radius = "نصف_القطر",
 		fortnite_wipe_command_parameter_radius_help = "نصف القطر الذي تريد مسحه. إذا تركته فارغاً أو ضبطته على 0، فستتم عملية المسح لكل شيء.",
 		fortnite_wipe_command_substitutes = "",
+
+		-- game/fortune_cookies
+		fortune_cookie_command = "كعكة الحظ",
+		fortune_cookie_command_help = "إنشاء كعكة الحظ برسالة محددة.",
+		fortune_cookie_command_parameter_fortune = "حظ",
+		fortune_cookie_command_parameter_fortune_help = "رسالة الحظ التي تريدها.",
+		fortune_cookie_command_substitutes = "",
 
 		-- game/freecam
 		freecam_command = "فري_كام",
@@ -2344,7 +2369,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		death_timer_command_substitutes = "",
 
 		cpr_command = "إسعاف القلب والرئتين",
-		cpr_command_help = "أداء إسعاف القلب والرئتين على أقرب شخص معه او لاعب.",
+		cpr_command_help = "قم بتنفيذ عملية الإنعاش القلبي الرئوي لأقرب شخص غير لاعب أو لاعب.",
 		cpr_command_substitutes = "",
 
 		-- game/hitmarkers
@@ -2489,6 +2514,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		invisibility_command_parameter_server_id_help = "إذا كنت ترغب في تبديل ظهور شخص آخر غير المرئي.",
 		invisibility_command_substitutes = "تبويب، غير مرئي، غير مرئيّة",
 
+		invisibility_mode_command = "وضع الخفاء",
+		invisibility_mode_command_help = "قم بتعيين وضع الخفاء الخاص بك. يمكن أن يكون إما 'كامل' (لا يمكن رؤيتك إلا من قبل كبار الموظفين وما فوق أثناء الخفاء) أو 'عادي' (يمكن رؤيتك من جميع أعضاء الفريق الذين لديهم صلاحيات المشاهدة).",
+		invisibility_mode_command_parameter_mode = "الوضع",
+		invisibility_mode_command_parameter_mode_help = "يمكن أن يكون إما 'كامل' للخفاء الكامل أو 'عادي' للرؤية العادية.",
+		invisibility_mode_command_substitutes = "",
+
 		-- game/isolation
 		isolate_player_command = "isolate_player",
 		isolate_player_command_help = "يعزل اللاعب، ورفض أي شيء يحاول القيام به.",
@@ -2511,6 +2542,23 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		jackpot_take_fees_command = "jackpot_take_fees",
 		jackpot_take_fees_command_help = "استخراج رسوم من جميع مخزونات الجائزة الكبرى.",
 		jackpot_take_fees_command_substitutes = "",
+
+		-- game/jail
+		check_jail_command = "check_jail",
+		check_jail_command_help = "تحقق من الوقت المتبقي للاعب في السجن.",
+		check_jail_parameter_server_id = "معرّف الخادم",
+		check_jail_parameter_server_id_help = "معرّف الخادم للاعب.",
+		check_jail_command_substitutes = "",
+
+		modify_jail_command = "modify_jail",
+		modify_jail_command_help = "تعديل وقت إقامة اللاعب في السجن.",
+		modify_jail_parameter_server_id = "معرف الخادم",
+		modify_jail_parameter_server_id_help = "معرف الخادم للاعب.",
+		modify_jail_parameter_operation = "العملية",
+		modify_jail_parameter_operation_help = "العملية التي ترغب في تنفيذها. (إضافة أو طرح)",
+		modify_jail_parameter_amount = "المبلغ",
+		modify_jail_parameter_amount_help = "الوقت الذي ترغب في إضافته أو إزالته بالدقائق. لا يمكن أن يكون أكثر من 5 دقائق في كل مرة.",
+		modify_jail_command_substitutes = "تعديل_السجن",
 
 		-- game/lag
 		fake_lag_command = "fake_lag",
@@ -2588,7 +2636,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		mining_debug_command_substitutes = "",
 
 		-- game/miscellaneous
-		-- these two commands should remain the same on all languages in case someone joins in with a language they don't know.
+		-- these two commands (language & languages) should remain the same on all languages in case someone joins in with a language they don't know.
 		-- you can change the _help parts though if you'd like, not the "language code" though.
 		language_command = "language",
 		language_command_help = "تعيين اللغة المفضلة لديك. هذا التغيير سيحفظ للجلسات المستقبلية، وهو فوري التغيير.",
@@ -2696,6 +2744,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		info_command_help = "عرض بعض المعلومات التصحيحية ، تُستخدم في تقارير الأخطاء.",
 		info_command_substitutes = "",
 
+		whois_command = "من_هو",
+		whois_command_help = "البحث عن لاعب بواسطة اسمه أو جزء من اسمه.",
+		whois_command_parameter_search = "البحث",
+		whois_command_parameter_search_help = "اسم اللاعب أو جزء من اسمه.",
+		whois_command_substitutes = "",
+
 		-- game/money
 		cash_command = "النقد",
 		cash_command_help = "عرض رصيدك النقدي.",
@@ -2752,6 +2806,13 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		remove_notice_command_parameter_message_id = "معرف الرسالة",
 		remove_notice_command_parameter_message_id_help = "معرف الرسالة التي تريد إزالتها.",
 		remove_notice_command_substitutes = "",
+
+		-- game/npc_watch
+		npc_watch_command = "مراقبة_NPC",
+		npc_watch_command_help = "مراقبة شخصية NPC عشوائية تقوم بحياتها اليومية.",
+		npc_watch_command_parameter_in_vehicle = "في المركبة",
+		npc_watch_command_parameter_in_vehicle_help = "يجب أن يكون الشخصية NPC داخل مركبة. (افتراضياً لا)",
+		npc_watch_command_substitutes = "",
 
 		-- game/objects
 		frozen_objects_scan_command = "امر_فحص_اﻻشياء_المتجمدة",
@@ -2904,6 +2965,15 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		phone_number_available_command_parameter_phone_number_help = "الرقم الذي ترغب في التحقق ما إذا كان متاحًا. تأكد من اتباع صيغة XXX-XXXX.",
 		phone_number_available_command_substitutes = "الرقم_المتاح",
 
+		share_phone_number_command = "مشاركة_رقم_الهاتف",
+		share_phone_number_command_help = "يشارك رقم هاتفك مع الجميع من حولك (< 1.5 م).",
+		share_phone_number_command_substitutes = "مشاركة_الرقم",
+
+		-- game/plants
+		plants_debug_command = "تصحيح_النباتات",
+		plants_debug_command_help = "تصحيح جميع النباتات.",
+		plants_debug_command_substitutes = "",
+
 		-- game/player_control
 		drive_for_command = "قود_بدلا_من",
 		drive_for_command_help = "قود سيارة اللاعب بدلاً منه.",
@@ -2960,9 +3030,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		spawn_prop_command_parameter_model_hash = "النموذج",
 		spawn_prop_command_parameter_model_hash_help = "نموذج المتعلق الذي تريد التوليد به.",
 		spawn_prop_command_parameter_network = "الشبكة",
-		spawn_prop_command_parameter_network_help = "هل ترغب في توصيل الـPROP بالشبكة؟ نوصي بتمكين هذه الميزة فقط للـPROP القابل للحركة.",
-		spawn_prop_command_parameter_no_pickup = "عدم الالتقاط",
-		spawn_prop_command_parameter_no_pickup_help = "هل يجب أن يتم الالتقاط من قبل المشرفين الرئيسيين فقط؟",
+		spawn_prop_command_parameter_network_help = "هل ترغب في توصيل الكائن بالشبكة؟ من الأفضل تمكين هذا الخيار فقط للأشياء التي يجب أن تكون قابلة للتحرك. ليس جميع الأشياء قابلة للتحرك بالطبع.",
+		spawn_prop_command_parameter_restricted = "مقيد",
+		spawn_prop_command_parameter_restricted_help = "السماح فقط للمشرفين العامين باختيار هذا الكائن.",
+		spawn_prop_command_parameter_culling = "تجنب",
+		spawn_prop_command_parameter_culling_help = "نصف قطر التجنيب الذي يتم فيه إنشاء/إزالة الكائن. النصف القطر الافتراضي هو 200 متر، قم بزيادته فقط للأشياء الكبيرة التي يجب أن تكون مرئية من بعيد.",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "تصحيح الموديلات",
@@ -3293,6 +3365,47 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		tablet_command_help = "فتح واجهة جهاز اللوحي (إن وجد).",
 		tablet_command_substitutes = "",
 
+		-- game/teleporting
+		tp_back_command = "انتقل_للوراء",
+		tp_back_command_help = "الانتقال الى المكان الذي كنت فيه قبل آخر عملية انتقال.",
+		tp_back_command_substitutes = "back",
+
+		tp_coords_command = "tp_coords",
+		tp_coords_command_help = "الانتقال إلى إحداثيات معينة",
+		tp_coords_command_parameter_x = "س",
+		tp_coords_command_parameter_x_help = "إحداثيات الفاصلة المنقولة لها التي تريد الانتقال إليها في الاتجاه العرضي (X).",
+		tp_coords_command_parameter_y = "y",
+		tp_coords_command_parameter_y_help = "إحداثيات الفاصلة المنقولة لها التي تريد الانتقال إليها في الاتجاه الطولي (Y).",
+		tp_coords_command_parameter_z = "z",
+		tp_coords_command_parameter_z_help = "إحداثيات الفاصلة المنقولة لها التي تريد الانتقال إليها في الاتجاه الارتفاعي (Z). إذا ترك هذا المعامل فارغًا، سيتم البحث عن إحداثيات الأرض تلقائيًا.",
+		tp_coords_command_parameter_w = "w",
+		tp_coords_command_parameter_w_help = "الإحداثية W أو الاتجاه الذي ترغب في الانتقال إليه. هذا المعلم اختياري وإذا تركته فارغًا، سيتم استخدام الاتجاه الحالي الخاص بك.",
+		tp_coords_command_substitutes = "tpc",
+
+		tp_waypoint_command = "tp_waypoint",
+		tp_waypoint_command_help = "الانتقال لموقع الوايبوينت الذي قمت بتعيينه من قبل.",
+		tp_waypoint_command_substitutes = "tp_marker, tp",
+
+		tp_to_player_command = "tp_to_player",
+		tp_to_player_command_help = "يقوم بتحويلك إلى لاعب.",
+		tp_to_player_command_parameter_server_id = "معرف الخادم",
+		tp_to_player_command_parameter_server_id_help = "معرف الخادم للشخص الذي تريد التحويل إليه.",
+		tp_to_player_command_substitutes = "",
+
+		tp_player_here_command = "tp_player_here",
+		tp_player_here_command_help = "يقوم بتحويل لاعب إليك.",
+		tp_player_here_command_parameter_server_id = "معرف الخادم",
+		tp_player_here_command_parameter_server_id_help = "معرف الخادم للشخص الذي تريد تحويله إليك.",
+		tp_player_here_command_substitutes = "",
+
+		tp_player_player_command = "tp_player_player",
+		tp_player_player_command_help = "تنقل لاعب إلى لاعب آخر.",
+		tp_player_player_command_parameter_source_id = "معرف المصدر",
+		tp_player_player_command_parameter_source_id_help = "اللاعب الذي تريد نقله.",
+		tp_player_player_command_parameter_destination_id = "معرف الوجهة",
+		tp_player_player_command_parameter_destination_id_help = "اللاعب الذي تريد نقل اللاعب المصدر إليه.",
+		tp_player_player_command_substitutes = "",
+
 		-- game/test_server
 		test_menu_command = "قائمة الاختبار",
 		test_menu_command_help = "تبديل قائمة الخوادم الاختبارية.",
@@ -3322,6 +3435,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		-- game/trackers
 		tracker_command = "تعقب",
 		tracker_command_help = "تبديل رؤية جهاز التعقب.",
+		tracker_command_parameter_break = "تعطيل",
+		tracker_command_parameter_break_help = "اكسر جهاز التعقب الخاص بك وأرسل إشعاراً بذلك. اكتب `نعم` أو `ي` لكسر جهاز التعقب الخاص بك. (لا يمكن إعادة تمكينه حتى يمر 20 دقيقة)",
 		tracker_command_substitutes = "",
 
 		trackers_split_command = "تقسيم_تعقب",
@@ -3452,11 +3567,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		explode_command_parameter_server_id_help = "معرف الخادم للاعب المستهدف.",
 		explode_command_substitutes = "",
 
-		ignite_player_command = "اشعال_لاعب",
-		ignite_player_command_help = "إشعال النار في اللاعب لفترة قصيرة.",
-		ignite_player_command_parameter_server_id = "معرف الخادم",
-		ignite_player_command_parameter_server_id_help = "معرف الخادم للاعب المستهدف.",
-		ignite_player_command_substitutes = "اشعال، حريق",
+		taze_player_command = "taze_player",
+		taze_player_command_help = "يُصعق لاعب.",
+		taze_player_command_parameter_server_id = "معرف_السيرفر",
+		taze_player_command_parameter_server_id_help = "معرف السيرفر للاعب الهدف.",
+		taze_player_command_substitutes = "صاعقة, جذر",
 
 		run_command_as_command = "تشغيل_الأمر_كـ",
 		run_command_as_command_help = "يجعل لاعباً آخر ينفذ أمرًا.",
@@ -3532,6 +3647,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		interface_focuses_command = "واجهات التركيز",
 		interface_focuses_command_help = "التحقق من الواجهات التي تم تعيينها باعتبارها مركز التركيز.",
 		interface_focuses_command_substitutes = "واجهة التركيز, تركيز, تركيزات",
+
+		-- jobs/bus_driver
+		bus_debug_command = "bus_debug",
+		bus_debug_command_help = "رسم جميع مواقف الحافلات.",
+		bus_debug_command_substitutes = "",
 
 		--jobs/doj
 		lookup_character_command = "lookup_character",
@@ -3627,6 +3747,16 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		licenses_command_help = "احصل على تراخيصك.",
 		licenses_command_substitutes = "",
 
+		set_marriage_command = "set_marriage",
+		set_marriage_command_help = "تعيين حالة الزواج بين شخصين.",
+		set_marriage_command_parameter_partner_a_cid = "الشريك_أ",
+		set_marriage_command_parameter_partner_a_cid_help = "معرف الشخصية للشريك الأول.",
+		set_marriage_command_parameter_partner_b_cid = "شريك ب",
+		set_marriage_command_parameter_partner_b_cid_help = "معرف الشخصية الثانية.",
+		set_marriage_command_parameter_state = "الحالة",
+		set_marriage_command_parameter_state_help = "إما `متزوج` أو `مطلق`.",
+		set_marriage_command_substitutes = "",
+
 		-- jobs/tow
 		toggle_mechanic_messages_command = "تبديل_رسائل_الفني",
 		toggle_mechanic_messages_command_help = "يقوم بتبديل تلقيك لرسائل الفني.",
@@ -3648,6 +3778,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		set_fuel_command_parameter_fuel_level = "مستوى الوقود",
 		set_fuel_command_parameter_fuel_level_help = "المستوى الذي تريد تعيينه لمستوى الوقود. يتم ترك هذا الحقل فارغًا بشكل افتراضي ويختار `100`.",
 		set_fuel_command_substitutes = "وقود",
+
+		-- vehicles/garage_access
+		manage_garage_command = "إدارة المرآب",
+		manage_garage_command_help = "إدارة مرآبك ومن لديه وصول إليه.",
+		manage_garage_command_substitutes = "إم-جي",
 
 		-- vehicles/garages
 		toggle_garage_debug_command = "toggle_garage_debug",
@@ -3734,6 +3869,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		mute_sirens_command = "كتم_الصفارات",
 		mute_sirens_command_help = "يكتم جميع الصفارات والأبواق.",
 		mute_sirens_command_substitutes = "",
+
+		-- vehicles/trailers
+		toggle_trailer_command = "تبديل الحاوية",
+		toggle_trailer_command_help = "يفصل أو يربط حاوية بالمركبة التي تستقلها.",
+		toggle_trailer_command_substitutes = "trailer",
 
 		-- vehicles/vehicles
 		flip_command = "اقلب",
@@ -3889,7 +4029,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 	},
 
 	core = {
-		version = "الإصدار"
+		version = "الإصدار",
+
+		access_denied = "تم رفض الوصول",
+		file_not_found = "الملف غير موجود.",
+		only_lua_files_allowed = "الملفات المسموح بها هي ملفات Lua فقط."
 	},
 
 	couches = {
@@ -3915,7 +4059,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		api_reported_no_updates = "لم تتلق الراية الآلية أي تحديثات في قائمة الإيموجي.",
 		emojis_added = "تمت إضافة ${added} إيموجي(ات).",
 		emojis_removed = "تمت إزالة ${removed} إيموجي(ات).",
-		emojis_updated = "تمت إضافة ${added} إيموجي(ات) وإزالة ${removed} إيموجي(ات)."
+		emojis_updated = "تمت إضافة ${added} إيموجي(ات) وإزالة ${removed} إيموجي(ات).",
+		no_emojis = "لا توجد رموز تعبيرية متاحة."
 	},
 
 	errors = {
@@ -4082,7 +4227,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		dropped_timed_out_player_logs_title = "انقطاع لاعب بسبب انتهاء الوقت",
 		dropped_timed_out_player_logs_details = "تم إسقاط ${consoleName} يدويًا نظرًا لعدم وجود تجاوب لفترة طويلة.",
 
-		critical_error_while_loading_data = "حدث خطأ حرج أثناء محاولة تحميل البيانات الخاصة بك."
+		critical_error_while_loading_data = "حدث خطأ حرج أثناء محاولة تحميل البيانات الخاصة بك.",
+
+		ping_unstable = "تأخير الانترنت غير مستقر.",
+		ping_stable = "تأخير الانترنت الخاص بك ثابت الآن مرة أخرى."
 	},
 
 	whitelist = {
@@ -4092,25 +4240,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 	-- game/*
 	admin_menu = {
 		menu_title = "قائمة الإدارة",
-		spectate_player = "مشاهدة اللاعب",
-		teleport_player = "الانتقال للاعب",
-		teleport_player_here = "الانتقال بلاعب إليك",
-		failed_teleport_to_player = "فشل في الانتقال للاعب.",
-		failed_teleport_player_here = "فشل في نقل اللاعب إليك.",
-		invalid_target_server_id = "مُعرّف خادم الهدف غير صالح.",
-		invalid_destination_server_id = "مُعرّف خادم الوجهة غير صالح.",
-		invalid_source_server_id = "مُعرّف خادم المصدر غير صالح.",
-		failed_teleport_player_to_player = "فشل في تحويل اللاعب إلى لاعب.",
-		teleported_player_to_player = "تم تحويل اللاعب إلى لاعب.",
-
-		tp_player_logs_title = "نقل اللاعب",
-		tp_player_logs_details = "${consoleName} قام بنقل نفسه إلى ${targetConsoleName}.",
-		tp_here_logs_title = "نقل بك إلى هنا",
-		tp_here_logs_details = "${consoleName} قام بنقل ${targetConsoleName} إليه ذاته.",
-		tp_everyone_logs_title = "نقل الجميع إلى هنا",
-		tp_everyone_logs_details = "${consoleName} قام بنقل الجميع إلى نفسه.",
-		tp_to_logs_title = "نقل إلى",
-		tp_to_logs_details = "${consoleName} قام بنقل ${sourceConsoleName} إلى ${targetConsoleName}."
+		spectate_player = "مشاهدة اللاعب"
 	},
 
 	afk = {
@@ -4142,7 +4272,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		return_button = "رجوع",
 		deposit = "إيداع $$ {amount}",
 		no_deposit = "لا يوجد إيداع",
-		deposit_not_enough_money = "لا يوجد لديك ما يكفي من المال لدفع الإيداع."
+		deposit_not_enough_money = "لا يوجد لديك ما يكفي من المال لدفع الإيداع.",
+		helipad = "منصة هليكوبتر"
 	},
 
 	airstrike = {
@@ -4278,7 +4409,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		net = "الصافي",
 		net_ratio = "نسبة الصافي",
 		items_gambled = "العناصر المُقامر بها",
-		screenshots_taken = "تم التقاط لقطات الشاشة"
+		screenshots_taken = "تم التقاط لقطات الشاشة",
+
+		called_airdrop_logs_title = "طلب إسقاط الهبوط",
+		called_airdrop_logs_details = "${consoleName} طلب إسقاط هبوط."
 	},
 
 	atms = {
@@ -4578,6 +4712,18 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		press_to_leave_bed = "اضغط ~INPUT_CONTEXT~ للخروج من السرير."
 	},
 
+	bicycles = {
+		no_bicycle_nearby = "لا يوجد دراجة بالقرب.",
+		failed_pickup_bicycle = "فشل في التقاط الدراجة.",
+		picking_up = "التقاط الدراجة",
+		moving_too_fast = "أنت تتحرك بسرعة كبيرة لتتمكن من التقاط الدراجة.",
+
+		picked_up_logs_title = "تم التقاط الدراجة",
+		picked_up_logs_details = "${consoleName} قام بالتقاط دراجة برقم الشبكة #${networkId} (`${modelName}`).",
+		dropped_bicycle_logs_title = "دراجة تم التخلص منها",
+		dropped_bicycle_logs_details = "${consoleName} قام بالتخلص من الدراجة التي كان يحملها."
+	},
+
 	bills = {
 		select_player = "اختر اللاعب",
 		no_nearby_players = "لا يوجد لاعبون قريبون يمكن فرض الرسوم عليهم.",
@@ -4686,6 +4832,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		skip_song = "تخطي الأغنية",
 		volume = "الصوت",
 		music = "الموسيقى",
+
+		mute_boomboxes = "كتم البوكسات الصوتية",
+		mute_boomboxes_enabled = "تم كتم جميع البوكسات الصوتية الآن.",
+		mute_boomboxes_disabled = "لم تعد جميع البوكسات الصوتية مكتومة.",
 
 		store_boombox = "احتفظ بالبوم بوكس في مخزونك",
 		put_boombox_down = "ضع البوم بوكس على الأرض",
@@ -4818,7 +4968,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		medical_care_1 = "إذا تعرضت لإصابة ، يمكنك الذهاب إلى المستشفى للاستيفاء والعلاج. يمكنك العثور على المستشفى على الخريطة. يمكنك أيضًا استخدام الضمادات أو علب الإسعافات الأولية للشفاء بنفسك.",
 		medical_care_2 = "إذا قمت باستعادة مستواك دون أن يتم نقلك إلى المستشفى أو خرجت من اللعبة أثناء السقوط ، فقد تخسر بعض من مستلزماتك الخاصة. عدم الارتباط بالخادم يعد خروجًا من اللعبة.",
 
-		safety_hint = "تلميح: يمكنك إبقاء سلاحك في وضع عدم الأمان عن طريق الضغط على ALT وزر الماوس الأوسط. كن آمنًا!",
+		safety_hint = "تلميح: يمكنك إلغاء تشغيل السلامة لسلاحك باستخدام ${keybind}. حافظ على سلامتك!",
 
 		closing_sentence = "هناك الكثير من الأشياء التي يمكن القيام بها في المدينة! اسأل حولك وتعرف على بعض الأصدقاء ;)"
 	},
@@ -4844,6 +4994,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		buddy_pass_used_logs_title = "استخدام تذكرة الصديق",
 		buddy_pass_used_logs_details = "استخدم ${consoleName} تذكرته لدفع ${targetConsoleName} من خلال."
+	},
+
+	bus_map = {
+		bus_tracker = "حافلة"
 	},
 
 	cache = {
@@ -5088,11 +5242,13 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		barbershop = "محل الحلاقة",
 
 		changing_area = "منطقة تغيير الملابس",
+		barber = "حلاق",
 
 		switch_outfit = "تغيير الملابس إلى هذه الملابس.",
 		replace_outfit = "ستستبدل هذه الزي.",
 		new_outfit = "حفظ الزي",
 		no_saved_outfits = "لا يوجد أي أزياء محفوظة.",
+		last_updated = "آخر تحديث ${ago}.",
 
 		save_outfit_title = "حفظ زي جديد",
 		save_outfit_label = "اسم الزي:",
@@ -5205,24 +5361,45 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		fried_item = "البطاطس المقلية البلجيكية.",
 		failed_fry_item = "فشل في قلي البطاطس.",
 
-		grill_item = "شواء اللحم النيء",
-		press_to_grill_item = "[${SeatEjectKey}] شواء اللحم النيء",
-		grilling_item = "شواء اللحم",
-		grilled_item = "البطائح المشوية.",
-		failed_grill_item = "فشل في شوي البطائح.",
+		grill_item = "شواية",
+		press_to_grill_item = "[${SeatEjectKey}] شواية",
+		grilling_patty = "شواء البافلة",
+		grilled_patty = "لحم مشوي",
+		failed_grill_patty = "فشل في شوي اللحم.",
+		grilling_bacon = "شوي البيكون",
+		grilled_bacon = "بيكون مشوي",
+		failed_grill_bacon = "فشل في شوي البيكون.",
+		frying_egg = "قلي البيض",
+		fried_egg = "بيض مقلي",
+		failed_fry_egg = "فشل في قلي البيض.",
+
+		patty_recipe = "شوي اللحم",
+		bacon_recipe = "لحم خنزير مقدد",
+		egg_recipe = "قلي البيض",
 
 		hamburger_recipe = "هامبورغر",
 		cheeseburger_recipe = "تشيزبورغر",
+		bacon_burger_recipe = "برجر البيكون بالجبن",
+		bne_burger_recipe = "برجر البيكون مع البيض",
+		veggie_burger_recipe = "برجر نباتي",
 
 		assemble_burger = "تركيب برجر",
 		press_to_assemble_burger = "[${SeatEjectKey}] تركيب برجر",
-		assembling_burger = "تجميع هامبورغر",
-		assembled_burger = "هامبورغر مجمع",
-		failed_assemble_burger = "فشل في تجميع هامبورغر.",
-
-		assembling_cheeseburger = "تجميع تشيزبورغر",
-		assembled_cheeseburger = "تشيزبورغر مجمع",
-		failed_assemble_cheeseburger = "فشل في تجميع برجر الجبن.",
+		assembling_burger = "تحضير البرجر",
+		assembled_burger = "تم صنع هامبرجر",
+		failed_assemble_burger = "فشل في صنع هامبرجر.",
+		assembling_cheeseburger = "جاري تحضير شيز برجر",
+		assembled_cheeseburger = "تم صنع شيز برجر",
+		failed_assemble_cheeseburger = "فشل في صنع شيز برجر.",
+		assembling_bacon_burger = "جاري تحضير بيكون برجر",
+		assembled_bacon_burger = "تم صنع بيكون برجر",
+		failed_assemble_bacon_burger = "فشل في صنع بيكون برجر.",
+		assembling_bne_burger = "جاري تحضير برجر بالبيض و البيكون",
+		assembled_bne_burger = "تم صنع برجر بالبيض والبيكون",
+		failed_assemble_bne_burger = "فشل في تحضير برجر البيض مع اللحم المقدد.",
+		assembling_veggie_burger = "جاري تحضير برجر الخضار",
+		assembled_veggie_burger = "تم تحضير برجر الخضار",
+		failed_assemble_veggie_burger = "فشل في تحضير برجر الخضار.",
 
 		mix_avocado_smoothie = "خلط عصير الأفوكادو",
 		press_to_mix_avocado_smoothie = "[${SeatEjectKey}] خلط عصير الأفوكادو",
@@ -5273,6 +5450,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		failed_refill_vape = "فشل إعادة تعبئة الفيب.",
 
 		plain_vape = "بدون نكهة",
+		weed_vape = "زيت THC",
 		mango_vape = "نكهة المانجو",
 		strawberry_vape = "نكهة الفراولة",
 		menthol_vape = "نكهة النعناع",
@@ -5314,6 +5492,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		process_rubber = "معالجة المطاط",
 		press_process_rubber = "[${SeatEjectKey}] معالجة المطاط",
 		failed_process_rubber = "فشلت عملية معالجة المطاط.",
+
+		craft_pvc_pipe = "صنع أنبوب PVC",
+		press_craft_pvc_pipe = "[${SeatEjectKey}] صناعة أنبوب بي في سي",
+		crafting_pvc_pipe = "جاري صناعة أنبوب بي في سي",
+		crafted_pvc_pipe = "تم صناعة أنبوب بي في سي.",
+		failed_craft_pvc_pipe = "فشل في صناعة أنبوب بي في سي.",
 
 		process_aluminium = "معالجة الألومنيوم",
 		press_process_aluminium = "[${SeatEjectKey}] معالجة الألومنيوم",
@@ -5501,11 +5685,18 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		sawed_shotgun = "تم قطع الخرطوشة.",
 		failed_saw_shotgun = "فشل تقطيع الخرطوشة.",
 
-		bake_brownies = "تحضير البطاطا بالفرن",
-		press_bake_brownies = "[${SeatEjectKey}] تحضير البطاطا بالفرن",
+		use_microwave = "استخدام الميكروويف",
+		press_to_use_microwave = "[${SeatEjectKey}] استخدام الميكروويف",
+
+		brownies_recipe = "وصفة البراونيز",
 		baking_brownies = "جاري تحضير البطاطا بالفرن",
 		baked_brownies = "تم تحضير البطاطا بالفرن.",
 		failed_bake_brownies = "فشل تحضير البطاطا بالفرن.",
+
+		weed_gummies_recipe = "وصفة الجيلاتي القنب",
+		making_weed_gummies = "جاري تحضير الجيلاتي القنب",
+		made_weed_gummies = "تم تحضير الجيلاتي القنب.",
+		failed_make_weed_gummies = "فشل في تحضير الجيلاتي القنب.",
 
 		mix_brushstroke_paint = "اخلط صبغة ستروك الفرشاة",
 		press_mix_brushstroke_paint = "[${SeatEjectKey}] اخلط صبغة ستروك الفرشاة",
@@ -5597,6 +5788,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		mixed_grimace_shake = "تم مزج الرهيبة المهزوزة.",
 		failed_mix_grimace_shake = "فشل في خلط مشروب الاستثارة.",
 
+		assemble_snowlauncher = "تجميع مطلق الثلج",
+		press_to_assemble_snowlauncher = "[${SeatEjectKey}] تجميع مطلق الثلج",
+		assembling_snowlauncher = "جارٍ تجميع مطلق الثلج",
+		assembled_snowlauncher = "تم تجميع مطلق الثلج.",
+		failed_assemble_snowlauncher = "فشل في تجميع مطلق الثلج.",
+
 		deconstruct_ammo = "تفكيك الذخيرة",
 		press_to_deconstruct_ammo = "[${SeatEjectKey}] تفكيك الذخيرة",
 
@@ -5620,6 +5817,32 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		crafting_ammo = "جاري صنع الذخيرة",
 		crafted_ammo = "تم صنع الذخيرة.",
 		failed_craft_ammo = "فشل في تصنيع الذخيرة.",
+
+		process_weed = "عملية تجهيز الحشيش",
+		press_to_process_weed = "[${SeatEjectKey}] تجهيز الحشيش",
+
+		package_1q_recipe = "تعبئة 4x 1q حشيش",
+		packaging_1q = "جارٍ تعبئة 4x 1q حشيش",
+		packaged_1q = "تم تعبئة 4x 1q حشيش.",
+		failed_package_1q = "فشل في تعبئة 4x 1q حشيش.",
+
+		process_bud_recipe = "معالجة براعم الحشيش",
+		processing_bud = "جاري معالجة براعم الحشيش",
+		processed_bud = "تم معالجة براعم الحشيش.",
+		failed_process_bud = "فشل في معالجة براعم الحشيش.",
+
+		process_meat = "معالجة اللحوم",
+		press_to_process_meat = "[${SeatEjectKey}] معالجة اللحوم",
+
+		beef_sausages_recipe = "نقانق لحم البقر",
+		crafting_beef_sausages = "جاري صنع نقانق لحم البقر",
+		crafted_beef_sausages = "تم صنع نقانق لحم البقر.",
+		failed_craft_beef_sausages = "فشل في صنع نقانق لحم البقر.",
+
+		bacon_recipe = "لحم خنزير مقدد",
+		crafting_bacon = "جاري صنع اللحم المقدد",
+		crafted_bacon = "جُبن الخنزير المقدد.",
+		failed_craft_bacon = "فشل في تحضير جُبن الخنزير المقدد.",
 
 		no_required_items = "ليس لديك جميع الأدوات المطلوبة.",
 
@@ -5664,10 +5887,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		divorced = "مطلّق",
 		divorced_description = "اختر إذا كان والداك مطلّقين.",
 
-		["in"] = "in",
+		["in"] = "In",
 		out = "خارج",
-		up = "أعلى",
-		down = "أسفل",
+		up = "فوق",
+		down = "تحت",
 		brow = "حاجب",
 		brow_description = "أجعل تغييرات على ملامحك الجسدية.",
 
@@ -6035,6 +6258,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		player_speed = "سرعة اللاعب: ${playerSpeed}",
 		player_ped = "معرف الشخصية: ${playerPedId}",
 		heading = "التوجّه: ${heading}",
+		bearing = "الاتجاه: ${bearing}°",
 		coords = "الإحداثيات: ${coords}",
 		rotation = "الدوران: ${rotation}",
 		normal = "السطح: ${normal}",
@@ -6047,6 +6271,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		not_networked_vehicles = "مركبات غير متصلة بالشبكة: ${count}",
 		invisible_vehicles = "المركبات غير مرئية: ${count}",
 		parked_vehicles = "مركبات متوقفة: ${count}",
+		available_doors = "معرفات الأبواب المتاحة: ${doors}",
 
 		distance = "المسافة: ${distance}م",
 		distance_first = "تمّ حفظ الموقع الأول.",
@@ -6062,6 +6287,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		vehicle_acceleration = "من صفر إلى 60: ${time}",
 		vehicle_acceleration_120 = "من صفر إلى 120: ${time}",
 		vehicle_acceleration_150 = "من صفر إلى 150: ${time}",
+		vehicle_brake_distance = "مسافة الفرامل: ${distance}م",
 		vehicle_acceleration_force = "قوة الانطلاق: ${force}",
 
 		invalid_network_id = "مُعرّف الشبكة غير صالح.",
@@ -6072,6 +6298,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		failed_entity_info = "فشل في الحصول على معلومات الكيان.",
 		printed_entity_info = "تمت طباعة معلومات الكيان في الخادم في الزر F8.",
 
+		no_entity_network = "لا يوجد كائن بالهوية الشبكية ${networkId}.",
 		move_entity_success = "تم نقل الكيان بشكل ناجح برقم المعرف الشبكي ${networkId}.",
 		move_entity_failed = "فشل في نقل الكيان.",
 		move_entity_no_permissions = "محاولة نقل كيان بدون الأذونات المناسبة.",
@@ -6208,6 +6435,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		unlocks = "يفتح: <i>${cluster}</i>."
 	},
 
+	effect_zones = {
+		in_zones = "مناطق التأثير: ~g~${zones}",
+		not_in_zones = "غير موجود في أي منطقة تأثير.",
+		effects = "التأثيرات: ${effects}"
+	},
+
 	elevators = {
 		use_elevator = "[${InteractionKey}] استخدم المصعد",
 		elevator_title = "المصعد",
@@ -6333,6 +6566,32 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		give_item_failed = "فشل في إعطاء ${itemName} للاعب."
 	},
 
+	emote_menu = {
+		menu_title = "راوتس إموتس",
+
+		dance_emotes = "🕺 الرقص",
+		dance_emotes_description = "قائمة بجميع الرقصات.",
+		shared_emotes = "👫 العبارات المشتركة",
+		shared_emotes_description = "قائمة بكافة العبارات المشتركة.",
+		prop_emotes = "📦 العبارات مع العقارات",
+		prop_emotes_description = "قائمة بكافة العبارات التي تتضمن عقارات.",
+		animal_emotes = "🐻 العبارات الحيوانية",
+		animal_emotes_description = "قائمة بكافة العبارات الحيوانية.",
+		pegi_emotes = "🔞 العبارات Pegi",
+		pegi_emotes_description = "قائمة بكافة العبارات Pegi.",
+		racing_emotes = "🏁 العبارات للسباقات",
+		racing_emotes_description = "قائمة بكافة العبارات للسباقات.",
+
+		emotes = "العبارات",
+		emotes_description = "قائمة بكافة العبارات.",
+		moods = "التعابير / المزاج",
+		moods_description = "قم بتغيير تعبير / مزاجك.",
+		walkstyles = "أنماط المشي",
+		walkstyles_description = "قم بتغيير أسلوب المشي الخاص بك.",
+		cancel_emote = "إلغاء العبارة",
+		cancel_emote_description = "إلغاء العبارة التي تعرض حالياً."
+	},
+
 	exclusive_dealership = {
 		cost_money = "${price} ريال",
 		cost_points = "${points} نقطة OP",
@@ -6389,6 +6648,34 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		milking_cow_failed = "فشل في الحلبة."
 	},
 
+	fentanyl = {
+		you_are_overdosing = "أنت تعاني من جرعة زائدة من الفينتانيل.",
+		overdose = "جرعة زائدة من الفينتانيل",
+
+		grind_painkillers = "[${InteractionKey}] طحن حبوب مسكنة",
+		grinding_painkillers = "جارٍ طحن الحبوب المسكنة",
+		mix_acetone = "[${InteractionKey}] مزجه مع الأسيتون",
+		mixing_acetone = "التخليط مع الأسيتون",
+		add_hydrogen_peroxide = "[${InteractionKey}] إضافة بيروكسيد الهيدروجين",
+		adding_hydrogen_peroxide = "إضافة بيروكسيد الهيدروجين",
+		boil = "[${InteractionKey}] غلي المكونات",
+		boiling = "غلي المكونات",
+		cool_down = "[${InteractionKey}] تبريد",
+		cooling_down = "تبريد",
+		fill_ampules = "[${InteractionKey}] ملء الأمبولات",
+		filling_ampules = "ملء الأمبولات",
+
+		selling_fentanyl = "بيع الفينتانيل",
+		press_to_sell_fentanyl = "اضغط على ~INPUT_CONTEXT~ لبيع الفينتانيل.",
+		local_not_interested = "المحل لا يبدو مهتمًا في الوقت الحالي.",
+
+		something_went_wrong = "حدث خطأ ما.",
+		made_fentanyl_logs_title = "تم صنع الفنتانيل",
+		made_fentanyl_logs_details = "${consoleName} قام بصنع ${amount}x من الفنتانيل.",
+		sold_fentanyl_logs_title = "تم بيع الفنتانيل",
+		sold_fentanyl_logs_details = "${consoleName} باع ثلث أمبولة من الفنتانيل مقابل $${reward}."
+	},
+
 	fingerprint = {
 		taking_fingerprint = "جارٍ أخذ البصمة",
 		already_fingerprinting = "أنت تأخذ بالفعل بصمة إحدى اللاعبين.",
@@ -6424,6 +6711,16 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		flags_on_ground = "الأعلام على الأرض: ${flagsOnGround}"
 	},
 
+	flight_radar = {
+		callsign_invalid = "يجب أن يكون خط الإتصال الخاص بك ما بين 3 و 10 أحرف.",
+		callsign_set = "تم تحديث خط الإتصال بنجاح إلى `${callsign}`.",
+		callsign_reset = "تم إعادة ضبط خط الإتصال بنجاح.",
+		callsign_set_failed = "فشل تحديث خط الإتصال.",
+
+		emergency_type_1 = "PD",
+		emergency_type_2 = "الإسعاف"
+	},
+
 	forcefields = {
 		invalid_radius = "نصف القطر غير صحيح (يجب أن يكون بين 1 و 200).",
 		failed_create = "فشل إنشاء الحقل القوي.",
@@ -6442,7 +6739,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 	fortune_cookies = {
 		opened_cookie_logs_title = "فتح بسكويت الحظ",
 		opened_cookie_logs_details = "${consoleName} فتح بسكويت الحظ وحصل على `${fortune}`.",
+		created_cookie_logs_title = "تم إنشاء بسكويت التنبؤ",
+		created_cookie_logs_details = "${consoleName} قام بإنشاء بسكويت التنبؤ بالرسالة `${fortune}`.",
 
+		missing_fortune = "رسالة التنبؤ غير متوفرة.",
+		failed_create_cookie = "فشل في إنشاء بسكويت التنبؤ.",
 		failed_open = "فشل في فتح بسكويت الحظ."
 	},
 
@@ -6573,6 +6874,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		decrypting = "فك التشفير",
 		guns_disabled = "تم تعطيل بيع الأسلحة حالياً.",
 		high_level_cooldown = "فشل الاتصال مع خادم النفوذ الفدرالي، حاول مرة أخرى في وقت لاحق.",
+		timeout_cooldown = "جدار الحماية الخاص بـ FIB قام بحجب الاتصال، يرجى المحاولة مرة أخرى لاحقًا.",
 		failed_start_run = "فشل بدء توصيل الأسلحة.",
 		hack_timeout = "انقطع الاتصال بالخادم، حاول مرة أخرى.",
 
@@ -6682,6 +6984,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		revived_player_removed_injuries_details = "${consoleName} قام بإحياء ${targetConsoleName} وإزالة إصاباتهم.",
 		revived_player_title = "إحياء اللاعب",
 		revived_player_details = "${consoleName} قام بإحياء ${targetConsoleName}.",
+		revived_range_self_title = "إحياء المدى والذات",
+		revived_range_self_details = "${consoleName} قام بإحياء الجميع في نطاق بلغ ${radius} مترًا، بما في ذلك نفسهم.",
+		revived_range_title = "نطاق الإحياء",
+		revived_range_details = "${consoleName} أحيى الجميع في نطاق ${radius} متر.",
 		death_alcohol_poisoning = "لقد فقدت الوعي بسبب التسمم بالكحول.",
 		character_has_hardcore_died = "${fullName} توفي بالفعل. يمكنك اختيار شخصية أخرى.",
 
@@ -6725,6 +7031,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		battery = "البطارية",
 		fps = "إطارات/الثانية",
 		ping = "تأخير",
+		tps = "معدل التحول",
 		autopilot = "التوجيه الآلي",
 		ground_asl = "أعلى سطح الأرض (AGL/ASL (${unit}))",
 		heading = "الاتجاه",
@@ -6746,6 +7053,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		fps_unit = "إطار في الثانية",
 		ping_unit = "مللي ثانية",
+		tps_unit = "tps",
 
 		smart_warnings = "تحذير: ${warnings}!",
 		dehydrated = "عطشان",
@@ -6787,6 +7095,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 	identification = {
 		los_santos = "لوس سانتوس",
 		citizen_card = "بطاقة المواطن",
+		driver_license = "رخصة القيادة",
 		first_name = "الاسم الأول",
 		last_name = "اسم العائلة",
 		gender = "الجنس",
@@ -6794,6 +7103,17 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		gender_female = "أنثى",
 		date_of_birth = "تاريخ الولادة",
 		citizen_id = "رقم هوية المواطن",
+
+		dl_no = "رقم الرخصة",
+		class = "الصنف",
+
+		fn = "الاسم الأول",
+		cid = "رقم الهوية",
+		dob = "تاريخ الميلاد",
+		sex = "الجنس",
+		iss = "مكان الإصدار",
+		cls = "الفئة",
+		["end"] = "END",
 
 		citizenship = "الجنسية",
 		citizenship_value = "الولايات المتحدة الأمريكية",
@@ -6816,6 +7136,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		citizen_card_details = "${firstName} ${lastName} | تاريخ الميلاد: ${dateOfBirth} | الجنس: ${gender} | رقم هوية المواطن: ${characterId}",
 		just_showed_citizen_card = "لقد عرضت بطاقة المواطن. يرجى الانتظار قليلاً.",
+		driver_license_details = "${firstName} ${lastName} | تاريخ الميلاد: ${dateOfBirth} | الجنس: ${gender} | رقم الهوية: ${characterId}",
+		just_showed_driver_license = "لقد قمت للتو بعرض رخصة القيادة. يرجى الانتظار قليلاً.",
 
 		boat_license = "رخصة القيادة للقوارب",
 		boat_license_details = "رخصة القيادة للقوارب | ${firstName} ${lastName} | الرقم الشخصي: ${characterId}",
@@ -6846,6 +7168,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		swat_badge_details = "SWAT | ${firstName} ${lastName} | المنصب: ${positionName}",
 		management_badge = "شارة الإدارة",
 		management_badge_details = "الإدارة | ${firstName} ${lastName} | المنصب: ${positionName}",
+		ftp_badge = "شارة برنامج التدريب الميداني",
+		ftp_badge_details = "FTP | ${firstName} ${lastName} | المنصب: ${positionName}",
 		ems_badge = "رقم هوية الإسعاف",
 		ems_badge_details = "الإسعاف | ${firstName} ${lastName} | المنصب: ${positionName}",
 		doctor_badge = "رقم هوية الطبيب",
@@ -6868,6 +7192,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		badge_type_fib = "المكتب الفيدرالي للتحقيق",
 		badge_type_swat = "الأسلحة الخاصة والتكتيكات الخاصة",
 		badge_type_management = "إدارة خدمات الأمن العام",
+		badge_type_ftp = "برنامج التدريب الميداني",
 		badge_type_ems = "الخدمات الطبية الطارئة",
 		badge_type_doctor = "الإقامة الطبية",
 		badge_type_bcfd = "إدارة الإطفاء في مقاطعة بلاين",
@@ -6883,6 +7208,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		badge_type_short_fib = "المباحث",
 		badge_type_short_swat = "وحدة الطوارئ الخاصة",
 		badge_type_short_management = "الإدارة",
+		badge_type_short_ftp = "FTP",
 		badge_type_short_ems = "الإسعافات الأولية",
 		badge_type_short_doctor = "الطبيب",
 		badge_type_short_bcfd = "إدارة الحرائق",
@@ -6996,7 +7322,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		mug_shots = "صور القلاع",
 		prison_store = "متجر السجن",
 		fruit_vendor = "بائع الفواكه",
-		supermarket = "سوبر ماركت",
+		food_market = "سوق الطعام",
 		island_store = "متجر الجزيرة",
 		travel_agency = "وكالة السفر",
 		island_bar = "الحانة على الجزيرة",
@@ -7054,6 +7380,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		press_to_access_shared_storage = "اضغط ~INPUT_REPLAY_SHOWHOTKEY~ للدخول الى المخزن المشترك",
 		device_printout_details = "<b>النوع:</b> <i>${type}</i>، <b>النص:</b> <i>${text}</i>",
 		copy_serial_number = "نسخ الرقم التسلسلي",
+		copy_fingerprint = "نسخ بصمة الإصبع",
 		serial_number_copied = "${itemName}، الرقم التسلسلي: ${serialNumber}",
 
 		failed_give = "فشل في إعطاء العناصر للاعب.",
@@ -7070,7 +7397,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		nameable_title = "اسم العنصر الذي يمكن تسميته:",
 
-		locker_restricted = "لا يمكنك نقل هذا العنصر إلى ذلك المستودع.",
+		inventory_restricted = "لا يمكنك نقل هذا العنصر إلى تلك المخزن.",
 
 		press_to_access_shredder = "[${InteractionKey}] الوصول إلى الجرافة.",
 
@@ -7092,6 +7419,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		press_to_open_public_inventory = "~INPUT_REPLAY_SHOWHOTKEY~ الوصول إلى ${label}",
 
 		burgershot_counter = "منتجع برغر شوت",
+		arcade_counter = "عداد الألعاب",
+		tequilala_counter = "عداد تيكوي-لا-لا",
+		prison_counter = "عداد السجن",
 
 		inventory_name_missing = "معدل الجرد مفقود.",
 
@@ -7128,6 +7458,15 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		crush_raw_ruby = "سحق الياقوت <i>الخام</i>",
 		crush_raw_sapphire = "سحق الياقوت الأزرق <i>الخام</i>",
 		break_apart_weed = "تفتيت <i>1 أوقية من الحشيش</i>",
+		brine_meat = "نقع <i>اللحم الخام</i>",
+		prepare_sandwich = "تحضير <i> شطيرة بار بي كيو</i>",
+		pickle_cucumbers = "تخزين <i>الخيار</i>",
+		melt_chocolate = "ذوبان <i>شوكولاتة غامقة</i>",
+		craft_torch = "صنع <i>شعلة</i>",
+		prepare_beans_toast = "تحضير <i>فاصوليا محمصة</i>",
+		mix_pancake_batter = "خلط <i>عجينة البانكيك</i>",
+		disassemble_bandages = "فك تجميع <i>الضمادات</i>",
+		craft_tourniquet = "صنع <i>الحزام الطويل</i>",
 
 		search = "بحث",
 		amount = "المقدار",
@@ -7151,6 +7490,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		logs_item_moved_title = "تم نقل العنصر",
 		logs_item_moved_details = "${consoleName} قام بنقل ${moveAmount} عنصر(أو أكثر) من ${startInventory}:${startSlot} إلى ${endInventory}:${endSlot}. و هو/هي عبارة عن عنصر ${itemLabel}.",
+		logs_item_given_title = "تم إعطاء العنصر",
+		logs_item_given_details = "قام ${consoleName} بإعطاء ${amount}x ${label} لـ ${targetConsoleName}.",
 
 		logs_item_purchased_title = "تم شراء العنصر(أو العناصر)",
 		logs_item_purchased_no_tax_details = "${consoleName} قام بشراء ${purchaseAmount}x `${itemLabel}` بقيمة $${purchaseCost}.",
@@ -7195,6 +7536,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		first_aid_kit_description = "صندوق الطبيب الشخصي \"افعلها بنفسك\".",
 		bandages = "ضمادات",
 		bandages_description = "لجميع الجروح والجروح البسيطة.",
+		tourniquet = "الحزام الطويل",
+		tourniquet_description = "أداة لإنقاذ الحياة في الحالات الحرجة، تم تصميم الحزام الطويل لوقف النزيف الشديد بسرعة. بينما يوفر الشفاء الأدنى مقارنة بخيارات الإسعاف الأولية الأكثر شمولاً، يمكن أن يكون قدرته على إيقاف فقدان الدم محورياً في حالات الطوارئ.",
+		gauze = "شاش طبية",
+		gauze_description = "ضرورية لأي علبة إسعاف أولي، تعتبر هذه الشاش طرية وامتصاصية ومثالية لتضميد الجروح. توفر الأساس الأساسي للرعاية الجراحية، مساعدة في إدارة النزيف وحماية الجسم من العدوى.",
 		oxygen_tank = "صندوق أكسجين",
 		oxygen_tank_description = "حزمة توسع الرئة.",
 		ifak = "IFAK",
@@ -7202,6 +7547,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		citizen_card = "بطاقة مواطن",
 		citizen_card_description = "تعمل كهوية، ترخيص لحمل السلاح ورخصة قيادة.",
+		driver_license = "رخصة القيادة",
+		driver_license_description = "رخصة قيادة رسمية. بالتأكيد ليست من ظهر علبة الحبوب الصباحية.",
 		phone = "الهاتف",
 		phone_description = "لا يوجد :tm:",
 		radio = "الراديو",
@@ -7249,6 +7596,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		swat_badge_description = "شارة لضباط إدارة الأسلحة الخاصة وتكتيكات الشرطة.",
 		management_badge = "شارة الإدارة",
 		management_badge_description = "شارة لعملاء إدارة إدارة شرطة Blain County.",
+		ftp_badge = "شارة FTP",
+		ftp_badge_description = "شارة لمدربي برنامج التدريب الميداني.",
 		ems_badge = "هوية الـEMS",
 		ems_badge_description = "هوية لمضمدي الإسعافات الأولية (EMS).",
 		doctor_badge = "هوية الطبيب",
@@ -7291,20 +7640,28 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		compass_description = "43.3068 N 0.7668 W",
 		map = "الخريطة",
 		map_description = "يعرض لك مكان وجهتك والأماكن التي زرتها، أو ربما كنت هناك؟",
+		bus_map = "خريطة الحافلات",
+		bus_map_description = "خريطة تُظهر مسارات الحافلات في لوس سانتوس. تُظهر لك جميع المحطات حيث يمكنك الحصول على الحافلة.",
+		flight_radar = "رادار الطيران",
+		flight_radar_description = "هذا الرادار المتقدم للطيران هو نافذتك إلى السماء، حيث يوفر أدلة فورية حية على حركة الطائرات طالما كانت داخل نطاق محطة الرادار. مثالي لهواة الطيران والمحترفين على حد سواء، إذ يوفر لمحة شاملة عن المشهد الجوي، مما يضمن أن تكون دائمًا متصلاً بالعالم أعلاه.",
 		glass_breaker = "كسار النوافذ في حالات الطوارئ",
 		glass_breaker_description = "يستخدم لكسر الزجاج في السيارات في حالات الطوارئ.",
 
 		picture = "صورة",
 		picture_description = "اجمع كل الذكريات لك ولأصدقائك. (الحجم: 1x1)",
+		picture_wide = "صورة واسعة",
+		picture_wide_description = "اجمع كل الذكريات التي تجمعك بأصدقائك. (الحجم: 14x8.5)",
 		printed_card = "بطاقة مطبوعة",
 		printed_card_description = "بطاقة مطبوعة صغيرة، بطاقة عمل ربما؟ (الحجم: 9x5)",
 		printed_document = "مستند مطبوع",
 		printed_document_description = "مستند مطبوع، ربما رسالة؟ (الحجم: 21x28)",
-		paper = "ورق صور",
-		paper_description = "قطعة ورق فارغة لطباعة الصور. (الحجم: 1x1)",
-		card_paper = "ورق بطاقات",
+		paper = "ورقة الصور (1x1)",
+		paper_description = "ورقة فارغة لطباعة الصور المربعة. (الحجم: 1x1)",
+		paper_wide = "ورقة الصور (14x8.5)",
+		paper_wide_description = "ورقة فارغة لطباعة الصور العريضة. (الحجم: 14x8.5)",
+		card_paper = "ورقة البطاقة (9x5)",
 		card_paper_description = "قطعة ورق فارغة لطباعة بطاقات العمل. (الحجم: 9x5)",
-		document_paper = "ورقة وثيقة",
+		document_paper = "ورقة المستند (21x28)",
 		document_paper_description = "قطعة ورق فارغة لطباعة المستندات. (الحجم: 21x28)",
 		printer = "طابعة",
 		printer_description = "لا فاكس، فقط طابعة.",
@@ -7351,6 +7708,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		bean_machine_delivery_description = "حقيبة مليئة بالأطعمة والمشروبات اللذيذة من مقهى رائع في المدينة العليا.",
 		kissaki_delivery = "وجبة كيساكي",
 		kissaki_delivery_description = "تشكيلة لذيذة من السوشي والأطعمة اليابانية الأخرى.",
+		green_wonderland_delivery = "حقيبة عجائب اللون الأخضر",
+		green_wonderland_delivery_description = "حقيبة مليئة بحلوياتك الخضراء المفضلة. #420blazeit",
 
 		ear_defenders = "حماية الأذنين",
 		ear_defenders_description = "تستخدم لحماية الأذنين من الضوضاء العالية.",
@@ -7367,51 +7726,57 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		small_frog_description = "مجرد ضفدع صغير. أنظر إلى هذا الكائن الصغير، إنه لطيف جدًا!",
 		seashell = "صدفة",
 		seashell_description = "صدفة من الشاطئ. يمكنك سماع صوت البحر عند وضعها بجانب أذنك.",
+		lucky_penny = "القرش الحظ",
+		lucky_penny_description = "تعثر على بريق من الحظ مع هذا القرش الحظ، إكتشاف نادر على الطريق الذي يعد بلمسة من الصدفة. احتفظ به بجوارك ودع الحظ يوجه طريقك.",
+		small_frog_mk2 = "ضفدع صغير MK2",
+		small_frog_mk2_description = "في الطين، تكمن واحدة من الضفادع الجنود: الضفدع الصغير MK2، مميز بخوذته العسكرية الصغيرة وبندقيته الصغيرة من نوع AK التي يبدو أنه يعتمدها. رؤية واحد باستخدام عدستك الخاصة في الطين تعتبر شرف نادر وممتع، إشارة إلى عجائب الطبيعة الفضولية.",
+		caterpillar = "يرقة فراشة",
+		caterpillar_description = "يعد هذا اليرقة جوهرة في الحديقة، يمكن أن يكون العثور عليها نادرًا في العشب، حيث لا يمكن رؤيتها إلا من قبل الأشخاص الذين يمتلكون مجهرًا وحس دقيق للفضول. خطوطها الزاهية وحركاتها الرقيقة تُسعد عشاق الطبيعة.",
 
 		keys = "مفاتيح",
 		keys_description = "زوج من المفاتيح لبعض الأبواب في مكان ما.",
 
 		raw_diamond = "الماس الخام",
-		raw_diamond_description = "الماس في شكله الطبيعي، جديد من المنجم.",
+		raw_diamond_description = "ماس نادر وغير مصقول، خام وعذراء، يحمل بريقًا لم يستغل بعد ضمن المحلات الخاصة به. مثالي لأولئك الذين يجدون الجمال في الإمكانيات الخام، هذا الجوهر ينتظر لمسة سيد ليطلق بهجته الكاملة.",
 		raw_morganite = "مورغانيت خام",
-		raw_morganite_description = "مورغانيت بشكله الطبيعي، طازج من المنجم.",
+		raw_morganite_description = "حجر كريمي وردي اللون في حالته الطبيعية، الفيروز الخام نادر ومحفوظ لألوانه الرقيقة. إنه يعد بسحر الجمال المصقول عند القطع والتلميع الماهرين.",
 		raw_ruby = "ياقوت خام",
-		raw_ruby_description = "ياقوت بشكله الطبيعي، طازج من المنجم.",
+		raw_ruby_description = "غني وعميق في اللون، يحتفظ هذا الزمرد الأحمر الخام بجمال شرس في طبيعته الخشنة. جوهرة ترمز إلى العاطفة والقوة، وتنتظر التحول إلى قطعة تنتزع الانتباه حقًا.",
 		raw_sapphire = "ياقوت أزرق خام",
-		raw_sapphire_description = "ياقوت أزرق بشكله الطبيعي، طازج من المنجم.",
+		raw_sapphire_description = "هذا الياقوت الخام، بألوانه الزرقاء العميقة، يتحدث عن العمق والغموض. صلبة وجميلة في الوقت نفسه، جاهزة لأن تنحت وتصنع إلى مجوهرة تعكس السماء.",
 		raw_emerald = "زمرد خام",
-		raw_emerald_description = "زمرد بشكله الطبيعي، طازج من المنجم.",
+		raw_emerald_description = "زمرد خام زاهي يلتقط جوهر المناظر الطبيعية الخضراء والغابات العميقة. شائع ولكن مبهر، يحتفظ بإمكانية تحويله إلى جمال ساحر بمجرد تنقيته.",
 
 		ruby_dust = "غبار الياقوت",
-		ruby_dust_description = "غبار الياقوت.",
+		ruby_dust_description = "مسحوق أحمر زاهي مصنوع من تحطيم الياقوت بعناية، محل الثناء على لونه العميق الغني. هذا المصبغ الفاخر مثالي لإضافة لمسة بارزة وجريئة إلى أي مشروع، خاصةً عند دمجه مع ألوان وطنية أخرى لخلق مظهر مؤكد أنه سيرفع الرؤوس ويلهم الفخر الوطني.",
 		sapphire_dust = "غبار الياقوت الأزرق",
-		sapphire_dust_description = "غبار من الياقوت الأزرق.",
+		sapphire_dust_description = "مسحوق أزرق فاخر تم إنشاؤه عن طريق طحن الياقوت عالي الجودة إلى مسحوق ناعم. اللون الأزرق العميق المذهل لهذا الصبغة يذكر بالسماء الصافية والمحيطات العظيمة، مما يجعله خيارًا مثاليًا للمشاريع التي تتطلب لمسة سيدية وأنيقة. عند دمجه مع ألوان أخرى تستحضر روح لافته لعلم معين، سيكون النتيجة مذهلة حقًا.",
 
 		morganite = "مورغانيت",
-		morganite_description = "مورغانيت مقطع وملمع.",
+		morganite_description = "بألوانه الدافئة الخوخية، تلتقط المورجانيت المصقولة القلب بلمعانها البسيط ولكن المذهل. جوهرة تجمع بين الندرة والجاذبية الرومانسية، مثالية للمجوهرات الفاخرة.",
 		ruby = "ياقوت",
-		ruby_description = "ياقوت مقطع وملمع.",
+		ruby_description = "مقصوصة باتقان، تتألق هذه الياقوتة بضوء عميق برقّ. لونها الزاهي ولمعانها البرّاق يجعلها حجرًا كريمًا مرغوبًا لقطع الإكسسوارات البيانية والتزيينات الأنيقة.",
 		sapphire = "ياقوت أزرق",
-		sapphire_description = "ياقوت أزرق مقطع وملمع.",
+		sapphire_description = "رمز للحكمة والنبل، يخطف هذا الياقوت المصقول الأبصار ببريقه الأزرق الملكي. صلابته ولمعانه جعله مفضّلاً لكل من الاستخدام اليومي والزي الاحتفالي.",
 		emerald = "زمرد",
-		emerald_description = "زمرد مقطع وملمع.",
+		emerald_description = "مصقول ليكشف عن الأخضر النابض بالحياة الذي يتنافس مع حيوية الربيع، يُعتبر هذا الزمرّد دليلاً على روعة الطبيعة. يُقدّر للونه الغني ووضوحه، وهو منتج أساسي في أي مجموعة من الأحجار الكريمة.",
 
 		ring = "خاتم",
-		ring_description = "مجرد خاتم.",
+		ring_description = "أساس بسيط وأنيق لإبداع شخصي، هذا الخاتم الفارغ مصنوع من المعدن الرفيع، جاهز لتزيينه بأي حجر كريم. إنه قماش مثالي لرسالة محفورة، مما يجعله فريدًا مثل قصة الشخص الذي يرتديه.",
 
-		morganite_ring = "خاتم مورغانيت",
-		morganite_ring_description = "خاتم جميل مع حجر كبير من مورغانيت في الوسط. مثالي للأفراح والأصدقاء الحميمين وأشخاص غرباء تمامًا.",
-		ruby_ring = "خاتم الياقوت",
-		ruby_ring_description = "خاتم جميل يحتوي على ياقوت كبير في المنتصف. مثالي للزفاف، الأصدقاء الأوفياء أو الغرباء التامين.",
-		sapphire_ring = "خاتم الياقوت الأزرق",
-		sapphire_ring_description = "خاتم جميل يحتوي على ياقوت أزرق كبير في المنتصف. مثالي للزفاف، الأصدقاء الأوفياء أو الغرباء التامين.",
-		emerald_ring = "خاتم الزمرد",
-		emerald_ring_description = "خاتم جميل يحتوي على زمرد كبير في المنتصف. مثالي للزفاف، الأصدقاء الأوفياء أو الغرباء التامين.",
 		diamond_ring = "خاتم الماس",
-		diamond_ring_description = "خاتم جميل يحتوي على ماسة كبيرة في المنتصف. مثالي للأفراح، أفضل الأصدقاء، أو الغرباء.",
+		diamond_ring_description = "يتميز هذا الخاتم الماسي الرائع بماسة مقطوعة ببراعة موضوعة في حلقة فضية أنيقة، مزينة بماسات صغيرة على محيطها. إن أناقته الخالدة وتألقه المشع يجعله رمزًا نهائيًا للحب والالتزام.",
+		morganite_ring = "خاتم مورغانيت",
+		morganite_ring_description = "رقيقة ولطيفة، تتألق هذه الخاتم المرغنيت بلون دافئ وردي الخوخ. الجوهرة موضوعة في إعداد من الذهب الوردي الذي يعزز لونها اللطيف، مما يقدم قطعة حديثة ورومانسية تبرز بسحرها الأنثوي.",
+		ruby_ring = "خاتم الياقوت",
+		ruby_ring_description = "جريء وجذّاب، يتمتع هذا الخاتم بجوهرة عميقة اللون قرمزية في قلبه. ضعت في حزام فضي كلاسيكي بتفاصيل معقدة، إنها قطعة ترمز إلى العاطفة وقوة الحب اللاإنكسارية.",
+		sapphire_ring = "خاتم الياقوت الأزرق",
+		sapphire_ring_description = "ملكية وملفتة، يتميز هذا الخاتم بجوهرة زرقاء عميقة، تذكّرنا بسماء منتصف الليل. معبأة في حزام فضي مع أحجار جانبية أنيقة، تقدم لمسة من التطور وأجواء ملكية لأي شخص يرتديها.",
+		emerald_ring = "خاتم الزمرد",
+		emerald_ring_description = "حلقة زمردية مشرقة ومليئة بالحياة، تعرض هذه الحلقة حجرًا أخضر غنيًا، موضوعًا في حلقة فضية مصنوعة بدقة. إنها احتفال بجمال الطبيعة الخصبة، مثالية لأولئك الذين يقدرون النمو والتجديد.",
 
 		gemstone_scanner = "جهاز فحص الأحجار الكريمة",
-		gemstone_scanner_description = "مفيد لفحص الأحجار الكريمة.",
+		gemstone_scanner_description = "أداة حيوية لأي منجم، صُمم جهاز فحص الأحجار الكريمة لتقييم استقرار الأحجار الكريمة المضمنة في الصخور. من خلال تقييم سلامة هيكلية كل حجر كريم، يساعد هذا الجهاز عمال المناجم في تحديد النهج الأكثر أمانًا للاستخراج، مما يقلل من خطر حدوث انفجارات خطيرة. لا بد منها للحفاظ على قيمة الأحجار الكريمة وسلامة عمليات التعدين.",
 
 		extended_clip = "مشبك ممتد",
 		extended_clip_description = "أقل عدد من عمليات إعادة التحميل.",
@@ -7454,27 +7819,27 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		spring_description = "لا أعرف لماذا، لكن الناس يحبون تنظيف هذه الأشياء.",
 
 		grenade_shell = "قذيفة قنبلة",
-		grenade_shell_description = "جراب للقنبلة.",
+		grenade_shell_description = "هذا العلبة فارغة للقنبلة أمر حرج لتصنيع القنابل المتخصصة، مثل أنواع الدخان أو الغاز. تم تصميم تغليفها القوي للحفاظ على وتفجير مختلف المواد بأمان عند استخدامها بالتزامن مع الآلية المشغلة الصحيحة.",
 		grenade_pin = "دبوس قنبلة",
-		grenade_pin_description = "دبوس للقنبلة.",
+		grenade_pin_description = "ضروري للتعامل الآمن وتفجير القنابل، يعمل هذا الدبوس كقفل أمان. عند الجمع بينه وبين علبة القنبلة، يسمح بالتحكم الدقيق والتوقيت اللازم لإنشاء أجهزة فعالة لتفريغ الدخان أو الغاز في الحالات التكتيكية.",
 
 		paint = "الدهان",
-		paint_description = "مفيد للسياج والمنازل ، فقط لا تبدأ في تنفيسه.",
+		paint_description = "علبة من الطلاء عالي الجودة المصنوع للاستخدام في الأسلحة، متوفر في مجموعة متنوعة من الألوان الكلاسيكية. امنح سلاحك الثقيل مظهراً جديداً يبدو كأنه جديد بالكامل، سيبهر أصدقاءك ويثير الصداقة في أعدائك. تكفي علبة واحدة لصيانة كاملة للسلاح، فقط لا تبدأ في تنشيف الطلاء.",
 		paint_brush = "فرشاة الرسم",
-		paint_brush_description = "مفيدة للرسم.",
+		paint_brush_description = "فرشاة عالية الجودة مصنوعة من أجود أنواع الشعيرات، مصممة لتطبيق الطلاء بدقة وتساوٍ على أي سطح للسلاح. عند استخدامها مع الطلاء العالي الجودة لدينا، ستساعدك هذه الفرشاة على صقل مهارتك في تصميم مظهر سلاحك الجديد، سواء كنت تريد تصميمات قوية بأسلوب التمويه أو تصاميم أنيقة وأنيقة.",
 
 		skin_patriotic = "بشرة وطنية",
-		skin_patriotic_description = "لجميع الأمريكيين الأحمر الدمويين هناك.",
+		skin_patriotic_description = "اظهر حبك للأحمر والأبيض والأزرق مع هذه القشرة الوطنية. مثالية لأي باتريوت أمريكي حقيقي يرغب في التعبير عن فخره الوطني أثناء التصويب. ستجعل سلاحك يبرز أثناء قتالك من أجل الحرية.",
 		skin_brushstroke = "بشرة الفرشاة",
-		skin_brushstroke_description = "لجميع عشاق الفن هناك.",
+		skin_brushstroke_description = "كن فنيًا مع أرسنالك باستخدام هذه القشرة الفنية المجردة. فهو كما لو كان لديك قطعة فن حديثة يمكن أن تضع ثقوبًا في أعدائك أيضًا.",
 		skin_skull = "بشرة الجمجمة",
-		skin_skull_description = "لجميع الأطفال المتمردين هناك.",
+		skin_skull_description = "أثر الرعب في قلوب أعدائك مع هذه القشرة ذات الجمجمة البارعة. لا شيء يعبر عن \"لا تُعبث معي\" تمامًا مثل نقش الجمجمة المرعبة على سلاح الاختيار الخاص بك.",
 		skin_leopard = "بشرة النمر",
-		skin_leopard_description = "لجميع محبي الحيوانات البرية.",
+		skin_leopard_description = "اطلق جانبك البري وانطلق في مطاردة فريسة باستخدام هذا الجلد بنقش النمر العنيف. إنه الطريقة المثالية لإضافة بعض الجاذبية الحيوانية إلى مجموعة الأسلحة الخاصة بك.",
 		skin_zebra = "جلد الحمار الوحشي",
-		skin_zebra_description = "لجميع محبي الحيوانات البرية.",
+		skin_zebra_description = "اكتسب خطوطك على الشوارع العنيفة باستخدام هذا الشكل البارز بنمط الحمار الوحشي. أسود وأبيض، وأحمر في كل مكان... فاتحة النعوت لضحاياك، تلك.",
 		skin_geometric = "جلد هندسي",
-		skin_geometric_description = "لجميع هواة الرياضيات.",
+		skin_geometric_description = "بالنسبة للمُطلق الذي لديه ميل إلى الرياضيات، هذا الجلد الهندسي يضيف بعض الأناقة المحسوبة إلى سلاحك. أثبت أنك ماهر على حدساب الزوايا واطلاق النار.",
 
 		refillable_bottle = "زجاجة قابلة لإعادة الاستخدام",
 		refillable_bottle_description = "انقذ سلاحف البحر حقيقةً وعلى الإله للأبد.",
@@ -7492,6 +7857,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		water_description = "خطر! ثنائي أكسيد الهيدروجين عديم اللون والرائحة. يمكن أن يؤدي استنشاق DHMO عن طريق الخطأ إلى الوفاة. يسبب التعرض المطول لشكله الصلب أضراراً جسيمة في الأنسجة. تشمل أعراض استهلاك DHMO التعرق المفرط والتبول، وربما شعور متورم وغثيان وقيء وعدم توازن الكهربوليتات في الجسم.",
 		hamburger = "همبرغر",
 		hamburger_description = "طعم أمريكا!",
+		bacon_burger = "برغر البيكون والجبن",
+		bacon_burger_description = "مفضلة كلاسيكية، يجمع برغر البيكون والجبن هذا بين لحم البقر المشوي اللذيذ مع قرمشة البيكون والجبن المذاب. يقدم كل لقمة مزيجًا مثاليًا من النكهات اللذيذة، مما يجعله اختيارًا لا يقدم لعشاق البرغر.",
+		bne_burger = "برغر البيكون والبيض",
+		bne_burger_description = "ارفع تجربتك مع البرجر بهذه المزيج من لحم البقر اللذيذ، والبيض المشوي بشكل مثالي، والجبنة المذابة الغنية فوق قطعة لحم مقرمشة. إنه وجبة سخية ومرضية تجسد رائعًا تقارب الإفطار والغداء.",
+		veggie_burger = "برجر نباتي",
+		veggie_burger_description = "يتميز هذا البرجر النباتي، الخفيف والمنعش، بأربعة أوراق خس مقرمشة بين أربع قطع خبز ناعمة، مع لمسة من الكاتشب لنكهة طفيفة. إنها لفتة خضراء بسيطة على البرجر الكلاسيكي، مثالي لأولئك الذين يبحثون عن خيار وجبة خفيف.",
 		belgian_fries = "بطاطس فرنسية بلجيكية",
 		belgian_fries_description = "لتحسين الطعم، ارسل رسالة إلى @Giv3n#0753 واكتب له 'fritas'.",
 		coke = "كوكاكولا",
@@ -7513,11 +7884,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		taco = "تاكو",
 		taco_description = "تخصص إل برايان.",
 		smores = "سمورز",
-		smores_description = "نعم",
+		smores_description = "وجبة شهية تجمع بين المارشميلو اللزج، الشوكولاتة المذابة، وكعك الجراهام المقرمش في خليط كلاسيكي يعد في نار المخيم. يتم تقديم السمورز في مقهى بين ماشين والعديد من الحانات والمراقص، حيث تقدم هذه الوجبة الغنية بالذكريات والراحة لحظة من النفاذ. مثالية للمشاركة أو التمتع بلحظة من الدلال.",
 		tic_tac = "تيك تاك",
 		tic_tac_description = "أوكسجين؟ لا يا ضابط، أنا فقط أكل تيك تاك!",
 		pizza_slice = "شريحة بيتزا",
-		pizza_slice_description = "قطعة صغيرة من البيتزا لك.",
+		pizza_slice_description = "شريحة صغيرة من البيتزا مع الفلفل الحار (ليس نباتي).",
 		hot_dog = "هوت دوج",
 		hot_dog_description = "تناول هذا النقانق مثلما سيكون آخر وجبة لديك.",
 		nachos = "ناتشوز",
@@ -7660,6 +8031,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		weed_1q_description = "جداً عاليًا",
 		weed_1oz = "سيجار حشيش 1 أونصة",
 		weed_1oz_description = "1680 ريال يا رفيق",
+		weed_bud = "برعم الحشيش",
+		weed_bud_description = "إبيك 420 يا برو",
 
 		oxy_prescription = "وصفة الأوكسي",
 		oxy_prescription_description = "وصفة أوكسي مشبوهة.",
@@ -7669,6 +8042,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		brownies = "البراونيز",
 		brownies_description = "لاذعة، فوامية، وضعف حجم الشوكولاتة مع لمحة من الركلة الإضافية لجعلك تجلس وتتساءل عن كل شيء في الحياة.",
+		weed_gummies = "حلوى الحشيش",
+		weed_gummies_description = "طريقة لذيذة للحصول على نشوة.",
 
 		ejector_seat = "مقعد الاقتحام",
 		ejector_seat_description = "إيجيكتو سيتو كوز!",
@@ -7718,6 +8093,25 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		hotwheels_towmater = "مايتر",
 		hotwheels_towmater_description = "اسمي مايتر، مثل توماتر ولكن بدون الحرف تاء.",
 
+		kinder_surprise = "بيضة كيندر سبرايز",
+		kinder_surprise_description = "هذه ليست بيضة عادية! اكسرها لتكتشف عالمًا من العجائب وصديق محبوب ينتظر أن يكون صديقك. من ستجد بالداخل؟ هل يمكن أن يكون النشيط سباركي ماكبوتاي، أو الحكيم الكابتن ويسكرفيس، أو ربما حتى الأنيق السير فانسي بانتس؟ المفاجأة نصف المرح!",
+		plush_green = "موسي ماك هيرفيس",
+		plush_green_description = "هذا الدمى لديه حالة خطيرة من شعر السرير، لكن لا داعي للقلق، فهم دائماً مستعدين للمغامرة (حتى لو لم يتمكنوا من رؤيتها بشكل واضح).",
+		plush_red = "شيدز النجم",
+		plush_red_description = "هذا الدمية دائماً باردة وهادئة ومتماسكة. قد لا يتمكنون من رؤية بدون نظاراتهم، ولكنهم بالتأكيد يمكنهم الاحساس بالإيقاع.",
+		plush_pink = "السيد بنطلون فانسي",
+		plush_pink_description = "هذا الدمية هو ملبس أنيق دائماً يبدو بأفضل حالاته. قد يكونون قليلاً فاخرين، ولكنهم دائماً على الأرض (حسناً، بقدر ما يمكن لدمية برأس طويل أن تكون على الأرض).",
+		plush_blue = "سباركي ماكباوتاي",
+		plush_blue_description = "لديه هذا الصغير منظرًا كهربائيًا رائعًا، مع شعر ينبعث منه طاقة وربطة عنق تبقى دائمًا أنيقة. لا تدع الشرر يخدعك، سباركي ماكباوتاي يعشق الأحضان والليالي الدافئة. فقط لا تلمس شعره عندما يكون يشحن للبدء بحكاية قبل النوم!",
+		plush_white = "الكابتن ويسكرفيس",
+		plush_white_description = "هذا الدمية مليئة بروح عجوز حكيمة، مع لحية تحكي القصص. قد لا يستطيعون التحدث، ولكن دائمًا مستعدين للاستماع (أو يجب أن نقول، للخياطة العاكسة).",
+		plush_yellow = "الرعب الشمسي",
+		plush_yellow_description = "هذا اللعبة المحشوة تعبر عن جو من الطاقة الإيجابية والعزائي. قد تكون هادئة قليلاً، ولكنها دائمًا ما تكون جاهزة لقضاء وقت ممتع.",
+		plush_orange = "تانغ المستكشف",
+		plush_orange_description = "هذه اللعبة المحشوة دائمًا في البحث عن مغامرات جديدة. قد تكون فوضوية قليلاً، ولكنها دائمًا مستعدة للتحدي.",
+		plush_wasabi = "واسابي الخبير",
+		plush_wasabi_description = "هذا الصغار نادر حقًا، تمامًا مثل انفجار الواسابي الطازج! يجذب لونهم الأخضر المبهر الأنظار بالتأكيد. لا تستهين بحجمهم الصغير - إنها ممتلئة بالشخصية ودائمًا مستعدة للمرح.",
+
 		boxing_gloves = "قفّازات الملاكمة",
 		boxing_gloves_description = "تُحوّلك إلى روكي، لكنّك ربّما لن تحصل على تتمّة...",
 		leash = "حبل المشية",
@@ -7729,8 +8123,14 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		lean = "الشراب المخدر",
 		lean_description = "يتم استخدامه في كثير من الأحيان كمهدئ للسعال، ويعطل الجهاز العصبي المركزي",
 
+		fentanyl = "الفنتانيل",
+		fentanyl_description = "المعروف أيضًا بـ \"المنوم الخفي\"، الفنتانيل هو جرعة قوية تتسبب في تأثير قوي. بمجرد نقرة خفيفة بهذه المادة، يمكنك إرسال حتى أكثر الأشخاص استيقاظًا إلى عالم الأحلام. كن حذرًا، فهو كثير الفتك بحيث إذا كانت الأحلام عملة، لكنت مليونيرًا بجرعة واحدة. مثالي لحين تحتاج فيه لتحويل المشاكل الكبيرة إلى مشاكل نائمة.",
+
 		grimace_shake = "غريماس شيك",
 		grimace_shake_description = "جنون؟ كنت مجنوناً مرة واحدة. قد وضعوني في غرفة. غرفة مطاطية. غرفة مطاطية مع الجرذان. والجرذان تجعلني مجنوناً. جنون؟ كنت مجنوناً مرة واحدة. قد وضعوني في غرفة. غرفة مطاطية. غرفة مطاطية مع الجرذان. والجرذان تجعلني مجنوناً. جنون؟ كنت مجنوناً مرة واحدة. قد وضعوني في غرفة. غرفة مطاطية. غرفة مطاطية مع الجرذان. والجرذان تجعلني مجنوناً. جنون؟ كنت مجنوناً مرة واحدة. قد وضعوني في غرفة. غرفة مطاطية. غرفة مطاطية مع الجرذان. والجرذان تجعلني مجنوناً. جنون؟ كنت مجنوناً مرة واحدة.....",
+
+		hydrogen_peroxide = "بيروكسيد الهيدروجين",
+		hydrogen_peroxide_description = "هذا الشراب الفوار، المعروف بتألقه ونظافته، هو جزء أساسي في المعامل العلمية وخارجها. بالرغم من أنه مشهور بتنظيف الجروح والأسطح، إلا أنه لديه موهبة للمزج مع المكونات الأخرى لإبتكار بعض الخلائط النافعة بشكل جميل. من الضروري التعامل معه بحذر وتوخي بعض الحذر.",
 
 		jolly_ranchers = "حلوى جولي رانشي",
 		jolly_ranchers_description = "تمتع بنكهات الحلوى الحلوة والحامضة لحلوى جولي رانشرز ، الحلوى الصلبة الكلاسيكية التي تنفجر بالفواكه اللذيذة.",
@@ -7745,6 +8145,21 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		jolly_rancher_grape = "حلوى جولي رانشر العنب",
 		jolly_rancher_grape_description = "تجربة طعم العنب العصيري والشهي مع حلوى جولي رانشر الصلبة اللذيذة هذه.",
 
+		lollipop_pack = "حزمة اللوليبوب",
+		lollipop_pack_description = "استمتع بمزيج غامض من النكهات مع حزمة اللوليبوب هذه. كل لوليبوب هي مفاجأة حلوة، حيث تقدم مزيجًا عشوائيًا من تشكيلتنا اللذيذة والفاكهية. فرح للحواس الذوقية في كل عبوة ملونة!",
+		lollipop_apple = "لوليبوب تفاح",
+		lollipop_apple_description = "حلوة مع لمسة حامضة، هذا اللوليبوب بنكهة التفاح كالمشي في بساتين الخريف، حيث يلتقط جوهر التفاح الطازج والعصيري في كل لعقة.",
+		lollipop_coke = "لوليبوب كوكاكولا",
+		lollipop_coke_description = "نكهة الكولا الكلاسيكية المحبوبة في حلوى السكاكر. إنها حلوى فوارة منعشة تقدم النكهة العرفة لمكان توزيع المشروبات الغازية في دوامة من الحلوى.",
+		lollipop_grape = "حلوى العنب",
+		lollipop_grape_description = "مليئة بنكهة العنب الغنية والعصيرية، تعتبر حلوى العنب هذه متعة بنفسجية ستنقلك مباشرة إلى حقول الشمس المشمسة.",
+		lollipop_raspberry = "حلوى التوت البري",
+		lollipop_raspberry_description = "تقدم حلوى التوت البري هذه اندفاعًا من الطعم الجيد، مزج الحلاوة مع قليل من الحموضة، تمامًا كما هو الحال مع الفاكهة الصيفية التي يأخذ اسمها منها.",
+		lollipop_strawberry = "لوليبوب فراولة",
+		lollipop_strawberry_description = "جوهر الفراولة المنضجة تمتزج في هذا اللوليبوب، ممنحًا تجربة حلوة ومليئة بالتوت تشبه يوم مشمس.",
+		lollipop_watermelon = "لوليبوب بطيخ",
+		lollipop_watermelon_description = "شريحة منعشة من الصيف، يحتوي هذا اللوليبوب على كل حلاوة البطيخ دون بذور، مما يجعله حلوى عصيرية ومرطبة في أي وقت من السنة.",
+
 		bucket = "دلو",
 		bucket_description = "يمكن استخدامه كخوذة مؤقتة.",
 		fertilizer = "سماد",
@@ -7758,7 +8173,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		steel_filings_description = "مجموعة من بتلات الصلب الصغيرة المنتجة أثناء تصنيع مكونات المعدن المختلفة. يتم استخدامها بشكل شائع في صناعة الملفات.",
 
 		gold_bar = "قلم ذهبي",
-		gold_bar_description = "يستخدم للإصلاحات والصنع",
+		gold_bar_description = "هذا القضيب الذهبي الصلب هو رمز للثراء والفرصة، يتألق بالإمكانيات. يمكن العثور عليه من خلال الاستكشاف والجهود الذكية، حيث يمكن بيعه مقابل مبلغ كبير، مما يجعله أصلًا مفضلًا لأولئك الذين يسعون لتعزيز وضعهم المالي. يعتبر كل قضيب دليلاً على القيمة المستمرة للذهب في أي سوق.",
 
 		ancient_ring = "الخاتم القديم",
 		ancient_ring_description = "خاتم ذهبي متعهد بتنفيذ الإشارات المعقدة الباهتة بفضل الزمن والمد والجزر، وينمو الهوى والولاء من عصور مضت. كما يعد رمزًا للروابط الأبدية، فهو الآن يستدر بجاذبية القصص المذكورة والحضارات المفقودة.",
@@ -7766,26 +8181,26 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		ancient_coin_description = "تحمل هذه العملة علامات التجارة القديمة، حيث تم أذابة سطحها الذهبي بملوحة البحر ورماله، وتحمل الأثقال منذ قرون بتصميمها. الرمز الذي تم نقشه على العملة يتحدث عن امتداد إمبراطورية وحركة تاريخية تمرر الثروة من يد إلى أخرى.",
 
 		aluminium = "ألومنيوم خام",
-		aluminium_description = "يستخدم للإصلاحات والصنع",
+		aluminium_description = "شكل خام وغير مصقول من الألمنيوم، يُعتبر عادةً متواجدًا في حالات أقل معالجة. إنه مثالي للإصلاحات الأساسية والصناعة، حيث يوفر خصائصه الخفيفة والمتينة لتطبيقات مختلفة.",
 		glass = "زجاج خام",
-		glass_description = "يستخدم للإصلاحات والصنع",
+		glass_description = "هذا الشكل الأساسي من الزجاج، على الرغم من أنه غير مصقول وغير مثالي، إلا أنه متعدد الاستخدامات في احتياجات الصناعة المختلفة والإصلاحات الأساسية، حيث يوفر الشفافية الأساسية والحماية.",
 		rubber = "مطاط خام",
-		rubber_description = "يستخدم للإصلاحات والصنع",
+		rubber_description = "مطاط مرن وقابل للتشكيل، هذا المطاط الغير معالج ضروري للصناعة والإصلاحات الأساسية للمركبات. تجعل قدرته على التكيفه ملائمًا لمجموعة متنوعة من الاستخدامات، من العزل إلى امتصاص الصدمات.",
 		scrap_metal = "خردة معدنية",
-		scrap_metal_description = "يستخدم للإصلاحات والصنع",
+		scrap_metal_description = "مجموعة من المعادن المختلفة في شكلها الأكثر عناصريّة، غالباً ما يتم استعادتها وإعادة استخدامها. مثالية للحرف والإصلاحات الأساسية، تجسد مبدأ الاستفادة القصوى في الهندسة.",
 		steel = "صلب خام",
-		steel_description = "يستخدم للإصلاحات والصنع",
+		steel_description = "قوي ومتين، الفولاذ الخام هو المادة الأساسية للحرف والإصلاحات. طبيعته القوية تجعله لا غنى عنه للنزاهة الهيكلية في المشاريع البسيطة والمعقدة على حد سواء.",
 
 		purified_aluminium = "ألومنيوم منقى",
-		purified_aluminium_description = "يستخدم للإصلاحات المهنية.",
+		purified_aluminium_description = "هذا الألومنيوم عالي الجودة مكرر بدقة للحصول على جودة وأداء متفوق. يستخدم أساسًا من قبل الفنيين للإصلاحات المتقدمة للمركبات، حيث يضمن الدوام والموثوقية في التطبيقات الصعبة.",
 		tempered_glass = "زجاج مقوى",
-		tempered_glass_description = "يستخدم للإصلاحات المهنية.",
+		tempered_glass_description = "تم تعزيز الزجاج لزيادة قوته وسلامته، حيث يخضع لعلاجات حرارية مراقبة لزيادة متانته. مثالي لإصلاح المركبات عالية الجودة، مضمون لوضوح ومرونة مثالية.",
 		vulcanized_rubber = "مطاط مفلكن",
-		vulcanized_rubber_description = "يستخدم للإصلاحات المهنية.",
+		vulcanized_rubber_description = "تم معالجة هذا المطاط من خلال التفاعل بالفلكنة لتحسين قوته ومرونته، ويستخدم هذا المطاط في إصلاحات عالية الجودة. يوفر أداءً محسنًا وطول عمر أفضل، مثالي لمكونات المركبات الحرجة.",
 		processed_metal = "معدن مجهز",
-		processed_metal_description = "يستخدم للإصلاحات المهنية.",
+		processed_metal_description = "تم تكرير هذا المعدن ومعالجته لتلبية معايير جودة أعلى. على الرغم من عدم مناسبته للحرف، إلا أنه يتفوق في إصلاح المركبات، مما يوفر قوة ومقاومة محسنتين للتآكل.",
 		refined_steel = "فولاذ مكرر",
-		refined_steel_description = "يستخدم للإصلاحات المهنية.",
+		refined_steel_description = "تم تكريس هذا الصلب بأناقة للاستخدامات عالية الجودة، ويستخدم حصراً من قبل الفنيين لإصلاح المركبات الفاخرة. قوته الفائقة ومقاومته للتآكل تضمن أداءً متميزًا.",
 
 		power_saw = "منشار كهربائي",
 		power_saw_description = "يستخدم لنشر الأشياء عن الأشياء الأخرى.",
@@ -7860,10 +8275,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		acid_description = "يجعلك مخدر بشكل دائم. لا يوجد مفر منه.",
 
 		rose = "زهرة الورد",
-		rose_description = "ما هو الأمر يا رجل، erp أعتقد",
-
+		rose_description = "وردة أنيقة واحدة، زهورها الزاهية ورائحتها اللطيفة تقول الكثير. هذا الرمز الزمني للمودة هو طريقة كلاسيكية للتعبير عن مشاعرك، حيث تحمل جمالها جوهر الجمال والإعجاب العميق.",
 		teddy_bear = "دب اللعبة",
-		teddy_bear_description = "صديق يستمع إليك فعلًا.",
+		teddy_bear_description = "هذا الدب الناعم الدافء هو هدية دافئة لطيفة، مثالية للتعبير عن المودة والعناية. حضنه التري بالفرو يحمل دفء المهدي، مما يجعله تذكارًا ثمينًا يرمز إلى الحب والصداقة.",
 
 		self_driving_chip = "شريحة القيادة الذاتية",
 		self_driving_chip_description = "غزلان ميتة في كل مكان ... مضحك للغاية.",
@@ -7881,6 +8295,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		scratch_ticket_pearl_description = "ابحر في رحلة البحث عن الثروات المخفية بهذه التذكرة الغامضة. يمكن أن تكون $100 مفتاح فتح خزانة تحتوي على ما يصل إلى $210,000. كل عملية خدش تقربك أكثر من أعماق البحر وثرواته التي لا يحصى.",
 		scratch_ticket_ching = "تذكرة الخدش (Cha Ching)",
 		scratch_ticket_ching_description = "انغمس في حماسة يمكن أن تأتي معها الثروة. مقابل فقط $100، تقدم لك هذه التذكرة الحماسية الفرصة المثيرة للفوز بما يصل إلى $210,000. إنها ليست مجرد لعبة، بل هي مشهد للثروة!",
+		scratch_ticket_carnival = "تذكرة خربشة (كرنفال)",
+		scratch_ticket_carnival_description = "انضم إلى مهرجان الفرص! بمجرد $100، يمكنك الفوز بقيمة تصل إلى $210,000. المهرجان في المدينة، والجائزة الكبرى في انتظارك!",
 
 		avocado = "الأفوكادو",
 		avocado_description = "كائن أخضر صغير، سيكون رائع لصنع ديب.",
@@ -7915,6 +8331,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		milk = "حليب",
 		milk_description = "حليب عادي من آبار الأبقار بالحب.",
+
+		tomato_juice = "عصير الطماطم",
+		tomato_juice_description = "هذه العلبة المشرقة باللون الأحمر تحمل \"المشروب المعلب للأبطال\" (وفقًا لأي بطل على الإطلاق). عصير الطماطم - إنها كالشمس داخل علبة، إذا كانت الشمس تذوق بشكل خفيف الندم.",
 
 		almond_milk = "حليب اللوز",
 		almond_milk_description = "كيف تحلبون حليب اللوز؟؟؟؟؟",
@@ -7955,6 +8374,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		empty_tank = "خزان فارغ",
 		empty_tank_description = "لا يحتوي بعد الآن على مواد البروبان أو ملحقات البروبان.",
 
+		pvc_pipe = "أنبوب بي في سي",
+		pvc_pipe_description = "هذه القطعة الحيوية من أنابيب البولي فينيل كلورايد تحلم بها عشاق DIY، مثالية لصنع كل شيء من المدافع المنزلية إلى القواذف الابتكارية. تصميمها القوي وخفيف الوزن يجعلها مثالية لمجموعة من المشاريع الإبداعية والعملية.",
+
 		pepper_spray = "رذاذ فلفل",
 		pepper_spray_description = "عيناي!",
 
@@ -7989,57 +8411,65 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		meth_table_description = "مزحة مضحكة عن مسلسل Breaking Bad المشهور الذي يتحدث عن صنع الميث.",
 
 		campfire = "نار مخيم",
-		campfire_description = "يمكن وضعها في أي مكان في العالم. مثالية للتخييم والصيد والصيد! لا يمكن التقاط هذا العنصر مرة أخرى.",
+		campfire_description = "اجتمع حول هذا موقد التخييم الريفي، الذي يعتبر مصباحاً للدفء والضوء تحت سماء مفتوحة. مثالي لرواية القصص والاستمتاع بالدفء، إنه ملجأ لا يتكرر يحترق بإضاءة قوية قبل أن يتحول إلى رماد. يمكن وضعه في أي مكان في العالم.",
 		tent = "خيمة",
-		tent_description = "يمكن وضعها في أي مكان في العالم. مثالية للتخييم والصيد والصيد!",
+		tent_description = "يوفر هذا الخيمة المتينة مأوى مريحًا من البرية، مثالي للاستراحة بعد يوم من المغامرة. بنيته المتينة والقماش الزاوي المقاوم للماء يوفران ملجأ آمن تحت السماء. يمكن وضعه في أي مكان في العالم.",
 		cloth_tent = "خيمة قماشية",
-		cloth_tent_description = "يمكن وضعها في أي مكان في العالم. مثالية للتخييم والصيد والأسماك!",
+		cloth_tent_description = "خفيف الوزن وسهل النقل، هذا الخيمة القماشي هو مأوى الشخص البسيط الذي يحميك من العوامل الطبيعية أثناء رحلاتك في الهواء الطلق. يمكن وضعه في أي مكان في العالم.",
 		canvas_tent = "خيمة قماشية",
-		canvas_tent_description = "يمكن وضعها في أي مكان في العالم. مثالية للتخييم والصيد والأسماك!",
+		canvas_tent_description = "صُممت للرحلات البرية الصعبة، هذه الخيمة القماشية توفر حماية قوية مع لمسة من السحر التقليدي. يتحمل موادها الثقيلة الرياح والأمطار، مما يضمن قاعدة مريحة. يمكن وضعها في أي مكان في العالم.",
 		plastic_chair = "كرسي بلاستيك",
-		plastic_chair_description = "يمكن وضعها في أي مكان في العالم. مثالية للتخييم والصيد والأسماك!",
+		plastic_chair_description = "بسيطة ولكنها وظيفية، هذه الكرسي البلاستيكي يوفر نقطة استراحة سريعة أينما كنت. خفيف الوزن وسهل النقل، مثالي لفترات قصيرة من النشاطات الخارجية الخاصة بك. يمكن وضعه في أي مكان في العالم.",
 		fishing_chair = "كرسي صيد",
-		fishing_chair_description = "يمكن وضعها في أي مكان في العالم. مثالية للتخييم والصيد والأسماك!",
+		fishing_chair_description = "مصممة للراحة أثناء الانتظار لفترات طويلة، تجمع هذه الكرسي الصيد بين المتانة والراحة، حيث يتميز بحامل قضبان مدمج لصباحيات هادئة على ضفاف البحيرة. يمكن وضعه في أي مكان في العالم.",
+		sleeping_bag = "حقيبة نوم",
+		sleeping_bag_description = "اختبر الدفء مع هذه الكيس نوم، مُصممة للليالي الباردة تحت النجوم. التصميم المدمج يجعله سهل الحمل، مما يوفر الراحة أينما وُضعت رأسك.",
 		yoga_mat = "حصيرة اليوجا",
-		yoga_mat_description = "يمكن وضعها في أي مكان في العالم. مثالية للتخييم والصيد والأسماك!",
+		yoga_mat_description = "هذا الحصيرة اليوغا المحمولة هي أساسك للاسترخاء وممارسة الرياضة في الهواء الطلق. فكها لتجد سلامك الداخلي أو لتمارس التمارين بعد رحلة تسلق شاقة. يمكن وضعه في أي مكان في العالم.",
 		cooler_box = "صندوق التبريد",
-		cooler_box_description = "يمكن وضعها في أي مكان في العالم. مثالية للتخييم والصيد والأسماك!",
+		cooler_box_description = "احتفظ بمشروباتك الباردة والمنعشة بهذه الصندوق العازل للحرارة. إنه ضروري لأي يوم خارجي تحت أشعة الشمس، حيث يحافظ على مشروباتك ووجبات الوجبات الخفيفة باردة وجاهزة. يمكن وضعه في أي مكان في العالم.",
 		parasol = "شمسية",
-		parasol_description = "يمكن وضعها في أي مكان في العالم. مثالية للتخييم والصيد والأسماك!",
+		parasol_description = "احجب نفسك من أشعة الشمس مع هذا الشمس. إنه إكسسوار رائع للأيام المشمسة، حيث يوفر الإغاثة الفورية من الحرارة مع إضافة لمسة من الألوان إلى تجهيزاتك. يمكن وضعه في أي مكان في العالم.",
 		parasol_table = "طاولة الشمسية",
-		parasol_table_description = "يمكن وضعها في أي مكان في العالم. مثالية للتخييم والصيد والأسماك!",
+		parasol_table_description = "هذه الطاولة الشمسية هي الرفيق المثالي للهواء الطلق، حيث تقدم سطح تناول طعام مستقر مع ظل مدمج. مثالية للاستمتاع بالوجبات الخفيفة أو الاسترخاء في الهواء الطلق دون وهج الشمس. يمكن وضعها في أي مكان في العالم.",
 		table = "طاولة",
-		table_description = "تستطيع وضعها في أي مكان في العالم. مثالية للتخييم، الصيد والأسماك!",
+		table_description = "هذا الجدول البسيط هو إضافة مثالية لموقع التخييم الخاص بك أو إعداد نزهة، حيث يوفر سطحًا مستقرًا لتناول الطعام أو الألعاب أو التخطيط لمغامرتك التالية. يمكن وضعه في أي مكان في العالم.",
 		towel = "منشفة",
-		towel_description = "تستطيع وضعها في أي مكان في العالم. مثالية للتخييم، الصيد والأسماك!",
+		towel_description = "منشفة ناعمة وامتصاصية لتجفيف الجسم بعد السباحة في البحيرة أو مسح عرق اليوم. إنها راحة صغيرة تجعل كل الفارق في الهواء الطلق الرائع. يمكن وضعها في أي مكان في العالم.",
 		disposable_grill = "شواية متنقلة",
-		disposable_grill_description = "تستطيع وضعها في أي مكان في العالم. مثالية للتخييم، الصيد والأسماك! لا يمكن التقاط هذا العنصر مرة أخرى.",
+		disposable_grill_description = "يوفر هذا الشواية القابلة للتصرف طريقة مريحة لطهي وجبات شهية بدون عناء التنظيف. ما عليك سوى إشعالها، وشوي ما تشتهي قلبك، ثم التخلص منها بشكل مسؤول. يمكن وضعها في أي مكان في العالم.",
 		grill = "مشواة للأكل",
-		grill_description = "تستطيع وضعها في أي مكان في العالم. مثالية للتخييم، الصيد والأسماك!",
+		grill_description = "شواية قوية مصممة للمغامر الطهي. سواء كان الأمر يتعلق بشواء شرائح اللحم أو تحميص الخضروات، هذه الشواية هي شريكتك الموثوقة لإعداد وجبات شهية بضوء النيران. يمكن وضعها في أي مكان في العالم.",
+		torch = "مصباح يدوي",
+		torch_description = "هذا المصباح يخترق ظلام المنجم، وهو ضوء قوي للمستكشف الجريء أو عامل المناجم، يبعد الظلام بلهبه المتواصل.",
+		ladder = "سلم",
+		ladder_description = "هذا السلم قوي ومتين مصمم للوصول إلى ارتفاعات جديدة بشكل آمن وموثوق. إطاره الكبير والثقيل يضمن الاستقرار لتلك المهام الصعبة التي تتطلب بعض الوصول والقوة الإضافية. مثالي لأولئك الذين لا يخافون من التسلق إلى أعلى ومواجهة المهام الكبيرة.",
 		police_barrier = "حاجز شرطة",
-		police_barrier_description = "يمكن وضعه في أي مكان في العالم.",
+		police_barrier_description = "هذه ليست مجرد حاجز؛ إنها خط في الرمال. يمكن استخدامها للتحكم في الحشود، مواقع الجريمة، أو عندما تحتاج فقط إلى القليل من المساحة الشخصية. يمكن وضعها في أي مكان في العالم.",
 		dummy = "جسم اختبار",
-		dummy_description = "يمكن وضعه في أي مكان في العالم.",
+		dummy_description = "ليس مجرد وجه جذاب. استخدمه لممارسة الرماية، أو لملء الفراغ خلال المراقبة المملة. يمكن وضعه في أي مكان في العالم.",
 		target = "هدف",
-		target_description = "يمكن وضعه في أي مكان في العالم.",
+		target_description = "التصويب يعني الإيمان. اجعل رصاصتك مثالية، لأنه عندما يحين الوقت، سترغب في أن تكون رصاصتك أصلية مثل ذكائك. يمكن وضعه في أي مكان في العالم.",
 		large_target = "هدف كبير",
-		large_target_description = "يمكن وضعه في أي مكان في العالم.",
+		large_target_description = "أكبر، لأنه في بعض الأحيان تحتاج إلى دفعة ثقة. سواء كانت نجاحًا أم فشلاً، المهم هو التمرن حتى لا ترتكب الأخطاء. يمكن وضعه في أي مكان في العالم.",
 		cone = "مخروط",
-		cone_description = "يمكن وضعه في أي مكان في العالم.",
+		cone_description = "بطل التنظيم المجهول لحركة المرور. جيد لتوجيه التدفقات، أو ليكون هدفًا منغلقًا في أوقات الفراغ. يمكن وضعه في أي مكان في العالم.",
 		spike_strips = "أشرطة الكتف",
-		spike_strips_description = "يمكن وضعه في أي مكان في العالم.",
+		spike_strips_description = "أداة لتقطع الطريق لحفلتك في المطاردات ذات السرعة العالية. عندما تريد قول \"قف هنا!\" ولكن بأناقة وشوك. يمكن وضعها في أي مكان في العالم.",
 		spike_strips_large = "شرائط تثبيت كبيرة",
-		spike_strips_large_description = "يمكن وضعها في أي مكان في العالم.",
+		spike_strips_large_description = "هذه مخصصة للقبض على الأسماك الكبيرة أو عندما تحتاج لتغطية مزيد من الإسفلت. مثل وضع السجادة الحمراء، باستثناء أنها ليست للشخصيات المهمة، بل لتبويس الإطارات. يمكن وضعها في أي مكان في العالم.",
+		stop_sticks = "قواعد التوقف",
+		stop_sticks_description = "فكر في هذه القضبان كمواجهة جسم غير قابل للتحرك تلتقي بقوة لا تتوقف. لا تثقب قواعد التوقف الإطارات، بل تتوقف السيارات فجأة. مثالية لإعداد نقاط فحص السرعة الفورية. يمكن وضعها في أي مكان في العالم.",
 		floodlight = "ضوء فيضي",
-		floodlight_description = "يمكن وضعه في أي مكان في العالم.",
+		floodlight_description = "حول الليل إلى نهار عندما تكون في مهمة صيد. رائع للعثور على المفاتيح المفقودة أو إنارة المشبوهين الذين يحاولون اللعب في لعبة الاختباء والبحث. يمكن وضعه في أي مكان في العالم.",
 		left_diversion_sign = "علامة تحويل اليسار",
-		left_diversion_sign_description = "يمكن وضعها في أي مكان في العالم.",
+		left_diversion_sign_description = "عندما ترغب في إرباك اللصوص، حرفيًا. مثالي لإرسال المتسللين إلى اليسار عندما يجب عليهم حقًا الانحراف لليمين. يمكن وضعه في أي مكان في العالم.",
 		right_diversion_sign = "علامة تحويل اليمين",
-		right_diversion_sign_description = "يمكن وضعها في أي مكان في العالم.",
+		right_diversion_sign_description = "مثل شقيقه المستقوي للجانب الأيسر، ولكن لأولئك الذين فاتهم منحنى اليمين في ألباكيركي. يقوم بإرسال المشبوهين في طريق بديع، بعيدًا عن المتاعب. يمكن وضعه في أي مكان في العالم.",
 		stop_sign = "علامة توقف",
-		stop_sign_description = "يمكن وضعها في أي مكان في العالم.",
+		stop_sign_description = "ليس مجرد ديكور طرق عادي. هذا يعني الجد ويأتي مع شارة. يوقف السيارات وأحيانًا المشاة الذين يقرؤون اللافتات. يمكن وضعه في أي مكان في العالم.",
 		bear_trap = "فخ الدب",
-		bear_trap_description = "يمكن وضعه في أي مكان في العالم.",
+		bear_trap_description = "هذه الفخاخ القوية مصممة للإمساك بقوة لا ترحم، مما يتسبب في إلتقاط أي شيء يثير فكيها القويين. فعالة ولا تغفر، تجعل الهروب صعبًا ومؤلمًا، مضمونة عدم فرار أي شيء يدخل. أداة قوية لتأمين أي مكان. يمكن وضعها في أي مكان في العالم.",
 		barrier = "حاجز للبناء",
 		barrier_description = "حاجز البناء القياسي.",
 		traffic_barrier = "حاجز المرور",
@@ -8054,28 +8484,28 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		wheel_clamp_description = "لا سيارات هاربة هنا! قفل العجلة يعني الجد وضمان أن السيارات محكمة المكان ولا يمكن نقلها بدون إذن. هذا الجهاز الثقيل الواجب يضمن احترام قوانين وضوابط وقوف السيارات.",
 
 		bandit_1 = "اللص 1",
-		bandit_1_description = "يمكن وضعه في أي مكان في العالم.",
+		bandit_1_description = "الشخص المناسب لديك في حالات التدريب، دائماً مستعد للعب دور الشرير دون الشكوى من ساعات العمل الطويلة أو نقص السيناريو. يمكن وضعه في أي مكان في العالم.",
 		bandit_2 = "اللص 2",
-		bandit_2_description = "يمكن وضعه في أي مكان في العالم.",
+		bandit_2_description = "الشريك الصامت في الجريمة مع الشرير الأول، متفهم بنفس القدر ودائماً جاهز لمعركة مزيفة أو هروب مدبر. يمكن وضعه في أي مكان في العالم.",
 		hostage_1 = "الرهينة 1",
-		hostage_1_description = "يمكن وضعه في أي مكان في العالم.",
+		hostage_1_description = "الضحية دائماً، وأبداً البطل. مثالي لمهام الإنقاذ أو لإقناع المتدربين بإنقاذ اليوم. يمكن وضعه في أي مكان في العالم.",
 		hostage_2 = "الرهينة 2",
-		hostage_2_description = "يمكن وضعه في أي مكان في العالم.",
+		hostage_2_description = "تعتبر واحدة من الأدوار المفضلة دائمًا في دور الضحية، لأن الممارسة تجعل الشخص أكثر اكتساباً للمهارة، والجميع يستحق فرصة ثانية ليتم إنقاذه. يمكن وضعها في أي مكان في العالم.",
 
 		director_chair = "كرسي المخرج",
-		director_chair_description = "يمكن وضعه في أي مكان في العالم. مقعد مريح للجلوس أثناء التنقل.",
+		director_chair_description = "تولي السيطرة في هذا الكرسي الكلاسيكي للمخرج، الذي يقدم مزيجاً من الأناقة والراحة. تصميمه القوي ووضعيته المرتفعة للجلوس يجعله مثاليًا للإشراف على أي مشهد أو مجرد الاستمتاع برؤية عالية. يمكن وضعه في أي مكان في العالم.",
 		beach_chair = "كرسي الشاطئ",
-		beach_chair_description = "يمكن وضعها في أي مكان في العالم. مقاعد مريحة للذهاب.",
+		beach_chair_description = "استرخ واستمتع بأشعة الشمس مع هذا الكرسي الشاطئي الخفيف الوزن. صمم للراحة والنقل السهل، إنه الكرسي الذي تلجأ إليه لشواطئ الرمال وملاذات حوض السباحة. يمكن وضعه في أي مكان في العالم.",
 		green_fishing_chair = "كرسي صيد أخضر",
-		green_fishing_chair_description = "يمكن وضعها في أي مكان في العالم. مقاعد مريحة للذهاب.",
+		green_fishing_chair_description = "استقر في هذه الكرسي الأخضر المتين ليوم هادئ على حافة الماء. ظهرها المريح وإطارها القوي يوفران الدعم المثالي لساعات طويلة من الصيد. يمكن وضعها في أي مكان في العالم.",
 		blue_fishing_chair = "كرسي صيد أزرق",
-		blue_fishing_chair_description = "يمكن وضعها في أي مكان في العالم. مقاعد مريحة للذهاب.",
+		blue_fishing_chair_description = "استمتع بمغامرات الصيد الخاصة بك في هذا الكرسي الأزرق القوي. بني ليدوم، يجمع بين الراحة والمناسبة، مما يجعله رفيقًا أساسيًا لأي عاشق للصيد. يمكن وضعها في أي مكان في العالم.",
 
 		tire_wall = "جدار الإطارات",
-		tire_wall_description = "عندما تحتاج إلى غطاء ولكنه غير متاح.",
+		tire_wall_description = "هذا الجدار الإطارات القوي يوفر غطاء موثوق به في أي سيناريو، مثالي للوضع الاستراتيجي في الحقل. مصنوع من الإطارات المعبأة بشكل جيد، يمكنه إيقاف الرصاص وحمايتك بفعالية. ومع ذلك، كن يقظًا - فقد يؤدي التمركز السيء إلى تعريض رأسك لقناص ماهر.",
 
 		claymore = "كلايمور",
-		claymore_description = "أحدث الألغام المضادة للأفراد.",
+		claymore_description = "هذه اللغمة الفتاكة من نوع كلايمور هي أداة دفاعية قوية مصممة لحماية وتأمين المناطق بدقة. بمجرد تفعيلها، ستنفجر بشكل قوي عند عبور المُحتل لمسارها، ضمانًا للتحكم الصلب في الحدود. تحتاج إلى اتخاذ الحذر في تمركزها وتعاملك معها لتجنب النتائج غير المقصودة.",
 
 		tv_stand = "رف التلفزيون",
 		tv_stand_description = "استخدم هذا لتثبيت التلفزيون في أي مكان تريده.",
@@ -8142,6 +8572,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		cupcake_description = "كعكة هشة محشوة بكريمة سحرية مزينة بألوان الحورية.",
 		pink_lemonade = "ليمونيد وردي",
 		pink_lemonade_description = "ليس مجرد ليمونيد عادي صبغناه باللون الوردي لكي نحصل على سعرين...",
+		iced_latte = "لاتيه مثلج",
+		iced_latte_description = "قهوة مثلجة منعشة، مثالية ليوم حار.",
 
 		irish_coffee = "قهوة إيرلندية",
 		irish_coffee_description = "قهوة طازجة مع نكهة خاصة من ويسكي إيرلندي.",
@@ -8168,25 +8600,68 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		chip_10000_description = "رقاقة قمار، يمكن استخدامها للقمار. يمكن تحويل هذا العنصر إلى نقود في الكازينو.",
 
 		grubs = "دود الأرض",
-		grubs_description = "مثالي للصيد.",
+		grubs_description = "منتج غذائي أساسي لصيادي الأسماك، تتحرك هذه اليرقات بفعالية. مثالية لصيد الأسماك العذبة، تجذب مجموعة واسعة من الأسماك بمظهرها الطبيعي وحركتها.",
 		leeches = "دود الدم",
-		leeches_description = "مثاليّة للصيد.",
+		leeches_description = "صمود وفعالية، يعتبر استخدام العلق ناجحًا لصيد الأسماك الكبيرة. تجعل تقلباتها الحية في الماء منها صيد غير قابل للمقاومة للأسماك الضارية الباحثة عن وجبة دسمة.",
 		earthworms = "دودة الأرض",
-		earthworms_description = "مثاليّة للصيد.",
+		earthworms_description = "الطعم التقليدي، تفضله الصيادين بسبب جاذبيته العالمية. تستطيع هذه الدودة السمينة إغواء حتى الأسماك الأكثر حذرًا، مما يجعلها ضرورية لأي بعثة صيد.",
 		fishing_rod = "قصبة الصيد",
-		fishing_rod_description = "مثالية للصيد.",
+		fishing_rod_description = "تم تصنيع هذه القصبة الصيد لتحقيق الدوامة والدقة، فهي رفيقك المثالي عند الماء. تصميمها المتوازن يضمن تجربة رمي رائعة، ملائمة لكل من الصيادين المبتدئين والمحترفين.",
 		raw_meat = "لحم نيء",
-		raw_meat_description = "قطعة لحم جديدة.",
+		raw_meat_description = "مأخوذة حديثاً من الصيد، هذا اللحم الخام يحمل وعد وجبة غذائية مغذية. مثالية للطهي على الشواية، حيث يتطلب التعامل الحذر لإطلاق نكهته الكاملة.",
 		cooked_meat = "لحم مطبوخ",
-		cooked_meat_description = "لحم تم طهيه للتو.",
+		cooked_meat_description = "مشوية بشهوة ومحكمة الطهي، يحتفظ هذا اللحم المطهو بجوهر البرية. كل لقمة تتغمر بنكهة التدخين من الهواء الطلق، مما يوفر وجبة شهية بعد صيد ناجح.",
 		burnt_meat = "لحم محترق",
-		burnt_meat_description = "لحم تم حرقه.",
+		burnt_meat_description = "تُركت على الشواية لفترة طويلة، جعل ذلك اللحم يتحول إلى شكل أقل جاذبية. بينما لا يزال صالحًا للأكل، إلا أن تناول اللحم المحروق قد يترك لديك طعم مر وبعض الإزعاج.",
 		leather = "جلد",
-		leather_description = "زيّن جلد الظبي الطازج.",
+		leather_description = "هذا الجلد المتين، الذي يتم الحصول عليه من لحم الحيوانات المسلوخة، يتميز بقوامه الخشن. مثالي للاستخدام في الحرف اليدوية أو في صناعة السلع المتينة المختلفة، إنه مورد قيم لأي رجل في الهواء الطلق أو حرفي.",
 		wood = "خشب",
-		wood_description = "قطعة خشب طازجة من شجرة.",
+		wood_description = "هذه الكومة من الأخشاب، المُستدامة المصدر من الغابات المحلية، توفر الدفء والفائدة. مثالية للاستخدام في الحرف اليدوية، البناء، أو كوقود للنار، إنها مورد أساسي لأي إعداد في الهواء الطلق أو البقاء على قيد الحياة.",
 		charcoal = "فحم",
-		charcoal_description = "أفضل من الفحم العادي.",
+		charcoal_description = "يتم إنتاجه بحرق الخشب على الشواية، هذا الفحم وقود فعال يزيد من تجربة الشواء. يحترق بحرارة أعلى وأنظف من الخشب النيء، مما يجعله مثاليًا للطهي وتعزيز متعتك من الأنشطة الطهي في الهواء الطلق.",
+		canine_tooth = "سن أسد الجبال",
+		canine_tooth_description = "تمثل سن أسد الجبال هذا أثرًا نادرًا وقويًا من البرية، حيث يرمز إلى جوهر الصيد النقي. جائزة نادرة لأي صياد.",
+		antlers = "قرون الغزال",
+		antlers_description = "نادرًا ما توجد، تُعتبر هذه القرون تحية ساحرة من الصياد للرقص الصامت للبرية. اكتشاف نادر وأنيق.",
+		pancake_mix = "خليط البانكيك",
+		pancake_mix_description = "خليط متعدد الاستخدامات يعتبر أول خطوة نحو صباح مثالي. ينتظر هذا الخليط أن يُنعش برشة من الحليب، جاهزًا ليتحول إلى عجينة ناعمة لسرورك الطهوي.",
+		beef_sausages = "نقانق لحم بقري",
+		beef_sausages_description = "مصنوعة من أجود أنواع اللحم الخام، تعتبر هذه النقانق اللحمية شهادة على مهارة الصياد وحرفة الجزار. جاهزة للشواء، تعد وجبة مقرمشة مباشرة من البرية إلى طبقك.",
+		raw_bacon = "لحم خنزير مقدد خام",
+		raw_bacon_description = "هذا اللحم المقدد الفاخر، مقطع من أفضل القطع ومعالج بشكل مثالي، جاهز لتحويل أي وجبة إلى تحفة لذيذة. مثالي للشواء، فهو في انتظار أن ينشف ويتحول إلى لذة تجعل الفم ينفر.",
+
+		liquid_smoke = "الدخان السائل",
+		liquid_smoke_description = "هذه الزجاجة من الدخان السائل هي سر الخلطات الطهية، جوهر مكثف يمنح اللحوم الخام لمسته الأقدم من نار وخشب.",
+		raw_brined_meat = "لحم معلَّد نيء",
+		raw_brined_meat_description = "هذا اللحم النيء، المقبِّل بالدخان السائل، يحمل وعد الولائم المستقبلية. عند طهيه على الشواية، يتحول إلى لحم مجفف بيف جيركي، شهادة لذيذة عن الصبر والحرفة.",
+		bread_loaf = "رغيف خبز",
+		bread_loaf_description = "رغيف خبز، طازج من الفرن. مثالي للسندويشات، الخبز المحمص، والوجبات الغنية.",
+		bbq_sauce = "صلصة الباربيكيو",
+		bbq_sauce_description = "صلصة غنية وحمضية تضيف نكهة مميزة لأي طبق. مثالية للشوي، التبيل، والتغميس.",
+		bbq_sandwich = "ساندويتش الباربيكيو",
+		bbq_sandwich_description = "ساندويتش لذيذ مليء بلحم مدخن لين وصلصة الباربيكيو الحمضية. وجبة كثيفة تشبع الروح.",
+		cucumber = "خيار",
+		cucumber_description = "خيار منعش ومقرمش، مثالي للسلطات، التسالي، أو صنع المخلل في المنزل.",
+		salt = "ملح",
+		salt_description = "رشة من الملح يمكن أن تحول أي طبق، وتعزز النكهات وتضيف عمقًا لإبداعاتك المطبخية.",
+		pickles = "المخلل",
+		pickles_description = "جرة من المخلل الحامض والمقرمش، مثالي للوجبات الخفيفة، السندويشات، وإضافة نكهة حمضية لوجباتك.",
+		dark_chocolate = "شوكولاتة داكنة",
+		dark_chocolate_description = "حلوى غنية وفاخرة، الشوكولاتة الداكنة مثالية لتلذذ حلوى عقارب الساعة وتذوق النكهات العميقة والمعقدة للكاكاو.",
+		beans = "فاصوليا",
+		beans_description = "هواه، الكأس المقدس! الأمبروزيا للآلهة، محتوى في إناء من الصفيح! لا يتعلق الأمر فقط بفاصوليا هاينز المخبوزة، سيدي العزيز، بل إنها بوابة إلى عالم من النعيم النقي غير المدنس! كل فاصوليا، لذة، مطبوخة في خليط بهيج، تهمس أسرار نكهات غير معروفة. هذا ليس مجرد غذاء؛ بل هو إكسير الحياة نفسه، محبوس في قدح معدني، في انتظار أن ينثر عظمته على حواس الذواقة الخاصة بك. اعتنق الفاصوليا! اعبدها! دع كل لقمة تنقلك إلى مملكة حيث تتفوق الفاصوليا، وكل ملعقة كيوم أقرب إلى نعيم الفاصوليا.",
+		beans_toast = "فطور الفول بالخبز المحمص",
+		beans_toast_description = "وجبة بريطانية كلاسيكية، فطور الفول بالخبز المحمص هو وجبة بسيطة ومرضية مثالية للإفطار أو الغداء أو العشاء. تتناغم نكهات الفول غنية الطعم تمامًا مع الخبز المحمص الدافئ والزبدة، مما يخلق وجبة مريحة وشهية سريعة وسهلة التحضير.",
+		pancake_batter = "خليط البان كيك",
+		pancake_batter_description = "هذا الخليط الغني والناعم للبان كيك، المصنوع من خليط البان كيك الفاخر والحليب الطازج، هو لوحة الرسام لتحفتك الفنية في الإفطار. جاهز للوضع على الشواية والنفخ إلى بان كيك ذهبي ولذيذ.",
+		pancakes = "البان كيك",
+		pancakes_description = "سميكة وذهبية، طازجة من الشواية، هذه البان كيك الأمريكية هي طريقة لذيذة ومترفة لبدء يومك. لذيذة، على الرغم من أنها ليست الخيار الأكثر صحة - اعتبرها حرية على طبق، حيث تتضمن الحرية الاستمتاع بكل لقمة مشبعة بالسيروب!",
+		grilled_sausages = "نقانق مشوية",
+		grilled_sausages_description = "استمتع بعبير الدخان من هذه النقانق المشوية حديثًا، جائزة فنية للصياد الماهر. لذيذة، ذات نكهة رائعة، ومطهوة باتقان، هي فرحة ريفية تحتفي بروح الصيد مع كل لقمة.",
+		grilled_bacon = "لحم خنزير مشوي",
+		grilled_bacon_description = "لحم خنزير مقرمش، ذهبي اللون، وذو نكهة دخانية لا تقاوم، يعتبر اللحم الخنزير المشوي هذا تجربة فاخرة لأولئك الذين يقدرون الأمور الراقية في الحياة. طازج من الشواية ، إنه احتفال لذيذ بالنكهة، جاهز ليتذوقه.",
+		fried_egg = "بيض مقلي",
+		fried_egg_description = "مقلى على الجهة الشمسية ومحمص باتقان ذهبي، يتميز هذا البيض المقلي بصفاره الرخو الممتزج بحوافه المقرمشة بشكل رائع. إنه خيار بسيط ولذيذ لأي وجبة، يظهر أن أفضل النكهات تأتي أحيانًا من أبسط الطرق.",
 
 		beef_jerky = "جيركي اللحم البقري",
 		beef_jerky_description = "بعض أجزاء لذيذة من جيركي اللحم البقري.",
@@ -8204,6 +8679,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		peanuts_description = "علبة من فول السودان، مثالي للتناول.",
 		olives = "زيتون",
 		olives_description = "صحن صغير من الزيتون، وجبة خفيفة مثالية للحفلة.",
+		popcorn = "فشار",
+		popcorn_description = "كيس من الفشار، مثالي ليلة مشاهدة الأفلام.",
 
 		rice = "أرز",
 		rice_description = "نخالة مطرية وحبوب مرطبة.",
@@ -8667,8 +9144,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		weapon_addon_rc4 = "ريمنجتون آر4-سي",
 		weapon_addon_rc4_description = "جريئة وسريعة، الشريك الكامل لديك في الفريق. طالما أن الشخص الأحمر الرأس لا يحملها.",
 
-		weapon_addon_pp19 = "بي بي-19 فيتياز",
-		weapon_addon_pp19_description = "قمة الاتقان الروسي، مثالية لأي نوع من \"الغارات\".",
+		weapon_addon_mcx = "SIG MCX",
+		weapon_addon_mcx_description = "مشهور بقابليته ودقته، SIG MCX هي سلاح ناري متعدد الاستخدامات يقدم موثوقية وأداء غير مسبوق لأي سيناريو.",
 
 		weapon_addon_m9a3 = "بريتا M9A3",
 		weapon_addon_m9a3_description = "كل ما تحتاج إليه لأداء أعمالك القذرة بسعر معقول.",
@@ -8678,9 +9155,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		weapon_addon_m870 = "ريمنغتون M870",
 		weapon_addon_m870_description = "بندقية الصيد الأمثل، على الرغم من أن إطلاق النار على داني ليس رياضة حقيقية ... أليس كذلك؟",
-
-		weapon_addon_rpk16 = "RPK-16",
-		weapon_addon_rpk16_description = "أفضل بندقية آلية على الإطلاق، فقط لا تنسى البذلة الرياضية.",
 
 		weapon_addon_tacknife = "سكين تكتيكي متعدد الأغراض النهائي",
 		weapon_addon_tacknife_description = "أخيراً، وصلت إلى المستوى 100. الكولونيل سيفخر بك.",
@@ -8709,7 +9183,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		weapon_addon_mk18 = "ميكي 18",
 		weapon_addon_mk18_description = "\"ابق مسلحًا أو امضَ ببطء\" - جورج واشنطن (ربما)",
 
-		weapon_addon_glock = "جلوك 17",
+		weapon_addon_glock = "جلاك 19X",
 		weapon_addon_glock_description = "المسدس الأكثر شهرة في العالم.",
 
 		weapon_addon_colt = "كولت 1851 نافي",
@@ -8734,12 +9208,30 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		weapon_addon_glock18c_description = "تقدم بلوك 18C: بداية ممتازة في جيبك! إنها تحتوي على قوة نارية تامة وكافية من الارتداد لجعل يوم التدريب في المدى مغامرة. سواء كنت تدافع عن مخبأك أو ترغب فقط في جذب الأنظار في المدى ، فإن بلوك 18C عند حاجتك.",
 
 		weapon_addon_1911 = "1911 Kimber Tactical",
-		weapon_addon_1911_description = "النموذج التكتيكي 1911 Kimber: حيث يلتقي الأناقة مع المضمون. موثوق به من قبل الهواة في كل مكان ، فهو اختيارك للدفاع والعامل الجذاب أيضًا!"
+		weapon_addon_1911_description = "النموذج التكتيكي 1911 Kimber: حيث يلتقي الأناقة مع المضمون. موثوق به من قبل الهواة في كل مكان ، فهو اختيارك للدفاع والعامل الجذاب أيضًا!",
+
+		weapon_addon_svd = "سڤد دراجونوف",
+		weapon_addon_svd_description = "الدقة والقوة، سڤد دراجونوف هي بندقية قنص نصف اتوماتيكية تعتبر ركيزة أساسية لوحدات الجيش والشرطة منذ عقود. إنها الخيار المثالي للمواجهات على مسافات بعيدة، ومضمونة لجعل أعدائك يفكرون مرتين قبل التحدي.",
+
+		weapon_addon_axmc = "أيه إكس إم سي",
+		weapon_addon_axmc_description = "أيه إكس إم سي هي قمة في هندسة القنص، توفر دقة استثنائية على مسافات طويلة وتصميم معدل يعتبر معيارًا للرماية الدقيقة.",
+
+		weapon_addon_6kh4 = "سكين بيونيه 6KH4",
+		weapon_addon_6kh4_description = "مصممة للصياد الحديث، تجمع هذه السكينة بيونيه 6KH4 بين تصميم خالد ووظائف قوية، مما يجعلها مثالية لمتطلبات البرية الدقيقة.",
+
+		weapon_addon_jericho = "جيريكو 941",
+		weapon_addon_jericho_description = "تتميز جيريكو 941 بموثوقيتها ودقتها وتصميمها الانسيابي، مما يوفر للرماة تجربة فائقة في الأداء والراحة.",
+
+		weapon_addon_fn509 = "إف إن-509",
+		weapon_addon_fn509_description = "إف إن-509 هي درس رائع في التوازن والدقة، مجهزة بسعة 15 طلقة لضمان الموثوقية والدقة في كل طلقة. رفيق موثوق للدفاع والواجب."
 	},
 
 	invisibility = {
 		invisibility_on = "تم تبديل الاختفاء إلى التشغيل.",
 		invisibility_off = "تم تبديل الاختفاء إلى الإيقاف.",
+		invalid_invisibility_mode = "وضع الخفاء غير صالح. يجب أن يكون 'كامل' أو 'عادي'.",
+		invisibility_mode_full = "تم تعيين وضع الخفاء إلى 'كامل'. لا يستطيع أعضاء الطاقم العادي رؤيتك.",
+		invisibility_mode_normal = "تم تعيين وضع الخفاء إلى 'عادي'. يمكن لأعضاء الطاقم العادي رؤيتك الآن.",
 
 		toggled_invisibility = "تم تبديل الاختفاء بنجاح لـ ${displayName}.",
 		failed_invisibility = "فشل في تبديل الاختفاء لـ ${displayName}.",
@@ -8765,12 +9257,17 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		move_to_repair = "انتقل هنا لإصلاح المركبة.",
 		repairing_vehicle = "جارٍ إصلاح المركبة",
 		fix_visual_damage = "إصلاح الأضرار البصرية",
+		no_vehicle_nearby = "لا توجد مركبة قريبة.",
+		no_vehicle_seat_nearby = "أنت لست بالقرب من مقعد المركبة.",
+		bleaching_vehicle_seat = "تبييض مقعد المركبة",
+		vehicle_seat_bleached = "تم تبييض المقعد بنجاح.",
 		measuring_color = "قياس اللون",
 		color_measurement = "قياس اللون",
 		color_measurer_result = "**${primary}** (*${primaryId}*) الأساسي، **${secondary}** (*${secondaryId}*) الثانوي، **${pearlescent}** (*${pearlescentId}*) اللون اللؤلؤي و **${wheel}** (*${wheelId}*) لون العجلة.",
 		no_vehicle_in_front = "لا يوجد مركبة أمامك.",
 		using_first_aid_kit = "جارٍ استخدام علبة الإسعافات الأولية",
 		using_bandages = "جارٍ استخدام الضمادات",
+		using_tourniquet = "استخدام الكراويط",
 		using_ifak = "جارٍ استخدام كيس الإسعاف الفوري المفرد",
 		move_to_wash = "انتقل هنا لغسل المركبة",
 		vehicle_too_clean = "المركبة نظيفة جداً ولا يمكن غسيلها الآن",
@@ -8796,9 +9293,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		unable_to_use_lighter_in_vehicle = "لا يمكنك استخدام الولاعة في السيارة.",
 		not_possible_in_a_vehicle = "هذا الإجراء غير ممكن في السيارة.",
 		just_used_bandage = "لقد استخدمت طقم إسعافات أولية للتو ، انتظر قليلاً قبل استخدام طقم آخر.",
+		just_used_tourniquet = "لقد استخدمت للتو كراويط، انتظر لحظة قبل استخدام كراويط أخرى.",
 		drank_gasoline_death = "تسمم البنزين",
 		drank_bleach_death = "تسمم بالمبيض",
 		finished_joint = "لقد انتهيت من حلتك.",
+		cant_place_here = "لا يمكنك وضع هذا هنا.",
 
 		using_cuffs = "استخدام الأصفاد",
 		you_moved_too_fast = "لقد تحركت بسرعة كبيرة جداً.",
@@ -8806,10 +9305,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		failed_burger_shot_delivery = "فشل في فتح وجبة برجر شوت.",
 		failed_bean_machine_delivery = "فشل في فتح خدمة بين ماتشين.",
 		failed_kissaki_delivery = "فشل في فتح وجبة كيساكي.",
+		failed_green_wonderland_delivery = "فشل فتح حقيبة عالم الخضرة.",
 
 		burger_shot_delivery_empty = "يبدو أن تلك وجبة برجر شوت كانت فارغة.",
 		bean_machine_delivery_empty = "يبدو أن خدمة بين ماتشين كانت فارغة.",
 		kissaki_delivery_empty = "على ما يبدو أن وجبة كيساكي الخاصة بك كانت فارغة.",
+		green_wonderland_delivery_empty = "يبدو أن حقيبة عالم الخضرة فارغة.",
 
 		logs_used_weather_spell_title = "استخدم تعويذة الطقس",
 		logs_used_weather_spell_details = "${consoleName} استخدم تعويذة الطقس `${itemName}`.",
@@ -8862,11 +9363,26 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		the_ticket_was = "التذكرة كانت ${ticket}.",
 		recent_pots_will_show_here = "ستظهر الأواني الأخيرة هنا",
 		server_id = "معرف الخادم الذي تريد التحويل إليه...",
-		transfer_items_to_anoter_person = "تحويل العناصر إلى شخص آخر."
+		transfer_items_to_anoter_person = "تحويل العناصر إلى شخص آخر.",
+		cancel_bet = "إلغاء الرهان"
 	},
 
 	jail = {
 		press_to_leave_jail = "اضغط ~INPUT_CONTEXT~ للخروج من السجن.",
+		invalid_server_id = "معرّف خادم غير صالح.",
+		failed_check_jail = "فشل في التحقق من وقت السجن.",
+		check_not_jailed = "هذا اللاعب ليس مسجون.",
+		remaining_time_check = "${fullName} مسجون لمدة ${remaining}.",
+		invalid_operation = "عملية غير صالحة. يجب أن تكون إما `add` أو `sub`.",
+		invalid_amount = "المبلغ غير صالح. يجب أن يكون أعلى من 0 وأقل أو يساوي 5.",
+		failed_modify_jail = "فشل في تعديل وقت السجن.",
+		modified_jail = "تم تعديل وقت السجن لـ ${fullName}. وقت سجنهم الجديد هو ${remaining}.",
+
+		trigger_lockdown = "تشغيل الإغلاق",
+		press_trigger_lockdown = "[${InteractionKey}] تشغيل الإغلاق",
+		lockdown_active = "الإغلاق الكلي نشط",
+		lockdown_title = "[التبليغ]",
+		lockdown_detals = "10-78، تم تفعيل الإغلاق الكلي في سجن بولينجبروك. طلب طاقم طوارئ.",
 
 		menu_title = "قائمة الزنزانة",
 		check_remaining_time = "تحقق من الوقت المتبقي",
@@ -8875,9 +9391,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		close_menu = "إغلاق القائمة",
 
 		sentence_reduced = "تم تخفيض عقوبتك بمقدار ${amount} أشهر، لديك ${remaining} أشهر متبقية.",
+		sentence_increased = "تم زيادة عقوبتك بمقدار ${amount} شهرًا، لديك ${remaining} شهرًا متبقيًا.",
 		sentence_over = "انتهت عقوبتك.",
-		remaining_time = "الوقت المتبقي: ${remaining} أشهر.",
-		jailed = "تم سجنك لمدة ${amount} أشهر.",
+		remaining_time_fmt = "${months} شهر (*${display}*)",
+		remaining_time = "الوقت المتبقي: ${remaining}.",
+		jailed = "لقد تم سجنك لمدة ${amount}.",
 
 		mission_help_1 = "اضغط ~INPUT_CONTEXT~ لتنظيف الأرضية.",
 		mission_help_2 = "اضغط ~INPUT_CONTEXT~ لتناول الطعام.",
@@ -8887,7 +9405,29 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		mission_2 = "أكل شطيرة.",
 		mission_3 = "التمرين الرياضي.",
 
-		mission_blip = "مهمة السجن"
+		preparing_food = "جاري تحضير الطعام للسجناء الآخرين.",
+		prepare_food = "اضغط على ~INPUT_CONTEXT~ لتحضير الطعام.",
+		cleaning_desk = "جاري تنظيف المكتب.",
+		clean_desk = "اضغط على ~INPUT_CONTEXT~ لتنظيف المكتب.",
+		making_bed = "جاري ترتيب السرير.",
+		make_bed = "اضغط على ~INPUT_CONTEXT~ لترتيب السرير.",
+		aligning_cone = "جاري توجيه مخروط المرور.",
+		align_cone = "اضغط ~INPUT_CONTEXT~ لتوجيه مخروط المرور.",
+		inspecting_sprinkler = "فحص الرشاش.",
+		inspect_sprinkler = "اضغط ~INPUT_CONTEXT~ لفحص الرشاش.",
+		watering_plant = "ري النبات.",
+		water_plant = "اضغط ~INPUT_CONTEXT~ لسقي النبات.",
+		organizing_weights = "تنظيم الأوزان.",
+		organize_weights = "اضغط ~INPUT_CONTEXT~ لتنظيم الأوزان.",
+
+		upstairs_notification = "هذه المهمة في الطابق العلوي.",
+
+		mission_blip = "مهمة السجن",
+
+		modify_jail_logs_title = "تعديل وقت السجن",
+		modify_jail_logs_details = "${consoleName} قام بتعديل وقت السجن لـ ${targetCharacter} #${targetCharacterId} (${operation} ${amount} أشهر) إلى ${after}.",
+		triggered_lockdown_logs_title = "تم تنشيط الإغلاق",
+		triggered_lockdown_logs_details = "${consoleName} قام بتنشيط إغلاق السجن."
 	},
 
 	kiosks = {
@@ -8898,6 +9438,13 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		fake_lag_invalid_fps = "اطارات في الثانية غير صالحة.",
 		fake_lag_clamp = "إحصار الإطارات في الثانية لتكون أقل من ${fps}.",
 		fake_lag_disabled = "تم تعطيل التأخير المزيف."
+	},
+
+	lag_switch = {
+		you_seem_to_be_lagging = "تبدو واجهة الشبكة غير مستقرة. الرصاصة التي أُطلقت غير متزامنة.",
+
+		lag_detected_logs_title = "تم اكتشاف تأخر التواصل",
+		lag_detected_logs_details = "${consoleName} حاول إطلاق النار وهو يعاني من تأخر في الاتصال. فارق البنج: ${pingTimerDifference}. البنج غير مستقر: ${pingUnstable}."
 	},
 
 	lean = {
@@ -9012,7 +9559,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		god_tier = "المستوى الإلهي",
 		custom_plate = "رقم لوحة مخصص",
 		custom_character_id = "معرف شخصية مخصص",
-		custom_phone_number = "رقم لوحة هاتف مخصص",
+		custom_phone_number = "رقم هاتف مخصص",
 		reskin = "تغيير المظهر",
 		webstore = "متجر الويب",
 		none = "لا شيء",
@@ -9164,18 +9711,18 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 	lottery = {
 		lottery_announcement = "إعلان اليانصيب",
-		lottery_about_to_roll = "سيتم إختيار الفائز في خمس دقائق في يانصيب اليوم. إجمالي الجائزة الآن $${totalPot} وأنت قمت بوضع $${betAmount}. فرصة فوزك هي ${odds}%.",
-		current_lottery_pot = "مجموع الجائزة حاليًا هو $${totalPot} حيث أنتم دخلتم $${betAmount}. فرصتكم في الفوز هي ${odds}%.",
+		lottery_about_to_roll = "سوف يتم اختيار الفائز خلال ٥ دقائق في سحب اليانصيب اليومي. إجمالي الجائزة حاليًا هو ${totalAmount} دولار حيث قمت بالمشاركة بمبلغ ${betAmount} دولار. فرصتك في الفوز تبلغ ${odds}%.",
+		current_lottery_pot = "الحاوية الإجمالية حالياً ${totalAmount} دولار حيث قمت بالمراهنة بمبلغ ${betAmount} دولار. فرصتك في الفوز هي ${odds}%.",
 		drew_a_lottery_winner = "تم سحب فائز باليانصيب.",
 		roll_lottery_no_permission = "حاول اللاعب تشغيل اليانصيب لكنه لم يكن لديه الإذن لذلك.",
-		winner_has_been_picked = "${fullName} فاز بجائزة اليانصيب بقيمة $${totalPot}! راهن $${betAmount} وكانت فرصته ${odds}%.",
+		winner_has_been_picked = "${fullName} قد فاز بجائزة اليانصيب بمبلغ ${totalAmount} دولار! قام بمراهنة ${betAmount} دولار وكانت فرصة فوزه ${odds}%. ",
 		claimed_lottery_winnings = "استلم جميع مكاسب اليانصيب.",
 		no_lottery_winnings = "ليس لديك أي أرباح في اليانصيب غير المطالب بها.",
 		internal_server_error = "حدث خطأ داخلي في الخادم.",
 		use_disabled_animal = "لا يمكنك استخدام اليانصيب كحيوان.",
 
 		lottery_log_title = "فاز باليانصيب",
-		lottery_log_description = "${fullName} (#${characterId}) فاز بجائزة اليانصيب بقيمة $${totalPot} بعد المشاركة بـ $${betAmount}."
+		lottery_log_description = "${fullName} (#${characterId}) فاز بجائزة اليانصيب بمبلغ ${totalAmount} دولار. قدم مراهنة بمبلغ ${betAmount} دولار."
 	},
 
 	lucky_wheel = {
@@ -9223,9 +9770,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		failed_sell = "فشل في بيع العنصر.",
 
 		found_item_logs_title = "وجد عنصر على الأرض",
-		found_item_logs_details = "عثر ${consoleName} على ${item} على الأرض (${ground}).",
-		sold_item_logs_title = "تم بيع عنصر نادر",
-		sold_item_logs_details = "قام ${consoleName} ببيع ${item} مقابل $${price}."
+		found_item_logs_details = "عثر ${consoleName} على ${item} على الأرض (${ground})."
 	},
 
 	mdt = {
@@ -9242,7 +9787,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 	mechanics = {
 		move_here_check = "انتقِل هنا للتحقق من الترقيات",
 		checking_upgrades = "جارٍ التحقق من ترقيات السيارة",
-		upgrades_list = "${armor}، ${engine}، ${brakes}، ${transmission} و ${turbo}.",
+		upgrades_list = "${armor}, ${engine}, ${brakes}, ${transmission}, ${suspension} و ${turbo}.",
 
 		has_no_turbo = "لا يوجد توربو مثبت",
 		has_turbo = "يوجد توربو مثبت",
@@ -9264,6 +9809,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		transmission_2 = "ناقل حركة الرياضة",
 		transmission_3 = "ناقل حركة السباق",
 
+		suspension_0 = "تعليقات المصنع",
+		suspension_1 = "تعليقات منخفضة",
+		suspension_2 = "تعليقات الشارع",
+		suspension_3 = "تعليقات رياضية",
+		suspension_4 = "تعليقات المنافسة",
+
 		engine_0 = "محرك المخزون",
 		engine_1 = "محرك EMS مستوى 2",
 		engine_2 = "محرك EMS مستوى 3",
@@ -9282,10 +9833,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		catnip = "[${InteractionKey}] إعطاء القط نعناع",
 		treat = "[${InteractionKey}] إعطاء القط معجب",
 		check_up = "[${InteractionKey}] فحص",
-		chill = "[${InteractionKey}] استرخاء",
-		meditate = "[${InteractionKey}] التأمل",
-		salute = "[${InteractionKey}] التحية",
-		stretch = "[${InteractionKey}] التمدد",
 
 		feed_active = "إطعام Maxwell",
 		pet_active = "تحسين Maxwell",
@@ -9293,10 +9840,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		catnip_active = "إعطاء ماكسويل القطاط",
 		treat_active = "إعطاء ماكسويل حلوى",
 		check_up_active = "فحص ماكسويل",
-		chill_active = "الاسترخاء مع ماكسويل",
-		meditate_active = "التأمل مع ماكسويل",
-		salute_active = "تحية ماكسويل",
-		stretch_active = "تمديد الجسم مع ماكسويل",
 
 		maxwell_appeared = "ظهر ماكسويل بالقرب منك.",
 		maxwell_shot = "ماكسويل مصور"
@@ -9459,6 +10002,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		server_tps_response = "${tps}",
 		license_copied = "تم نسخ الترخيص بنجاح إلى الحافظة.",
 		uptime = "الوقت اللي قضيتوا في الخدمة: $ {uptime}",
+		empty_search = "البحث فارغ.",
+		no_player_matching = "لا يوجد لاعب يتطابق مع البحث: *${search}*.",
+		whois_player = "تم العثور على *${name}* يتطابق مع بحثك.",
 
 		picture_no_url = "لا يوجد رابط.",
 		picture_invalid_url = "الرابط غير صحيح، يجب أن يبدأ بـ https://.",
@@ -9473,9 +10019,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		walk_forwards_success = "تم تبديل التمشي للأمام بنجاح لـ${displayName}.",
 		walk_forwards_failed = "فشل في تبديل التمشي للأمام لـ${displayName}.",
 
+		info_invalid_job = "وظيفة غير صالحة",
 		info_title = "أرفق هذه المعلومات أثناء تقارير الأخطاء",
 		info_character = "**معرّف الشخصية**: *${id}*",
-		info_job_data = "**بيانات الوظيفة:** *${job}*",
+		info_job_data = "**بيانات الوظيفة:** *${job}* - ${paycheck}",
 		info_job_data_none = "**بيانات الوظيفة:** *لا شيء*",
 		info_licenses = "**الرخص:** *${licenses}*",
 		info_licenses_none = "**الرخص:** *لا شيء*",
@@ -9557,6 +10104,10 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		add_notice_missing_permissions = "حاول اللاعب إضافة تنبيه بدون الصلاحيات اللازمة.",
 		remove_notice_missing_permissions = "حاول اللاعب إزالة تنبيه بدون الصلاحيات اللازمة."
+	},
+
+	npc_watch = {
+		no_npc_nearby = "لا يوجد أي شخصية غير لاعبة قريبة."
 	},
 
 	objects = {
@@ -9670,25 +10221,36 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		about_detection_areas_text = "يمكن أن تكون مناطق الكشف أداة مفيدة لأعضاء الفريق عند محاولة تحديد احتيالي ينشئ مركبات أو شخصيات غير مرغوب فيها. لإنشاء منطقة الكشف، استخدم `/detection_area_add`. بمجرد إنشاء منطقة، ستظهر هنا. سيتم تسجيل أحدث 100 كيان في كل منطقة فقط.",
 		detection_area_title = "منطقة الكشف #${detectionAreaId}",
 
+		about_settings_title = "الإعدادات",
+		about_settings_text = "تسمح لك هذه الحقول بتغيير مختلف الإعدادات لتخصيص تجربتك.",
 		about_sound_effects_title = "تأثيرات الصوت",
-		about_sound_effects_text = "تتيح لك هذه الحقول تغيير بعض تأثيرات الصوت. إنها تتطلب رابطًا لملف .ogg للعمل بشكل صحيح. يجب أن يكون الرابط HTTPS:// وليس HTTP://. وسيلة سهلة لتحميل الملف هي تحميله على ديسكورد ، ثم نسخ الرابط الخاص به ولصقه في هذه الحقول",
+		about_sound_effects_text = "تسمح لك هذه الحقول بتجاوز بعض تأثيرات الصوت. تتطلب هذه المجالات رابطًا مباشرًا إلى ملف .oog لكي تعمل بشكل صحيح. يجب أن يكون الرابط https:// وليس http://. تذكر أن روابط ديسكورد ستنتهي.",
+		about_staff_settings_title = "إعدادات الطاقم",
+		about_staff_settings_text = "إذا كان لديك صلاحيات الطاقم ، تسمح لك هذه الحقول بتجاوز بعض الإعدادات المتعلقة بالطاقم بشكل أفضل.",
 		radio_mic_click_on = "تأثير صوت الراديو عند الضغط (تشغيل)",
 		radio_mic_click_off = "تأثير صوت الراديو عند الضغط (إيقاف)",
 		lean_cam_mode = "وضعية الكاميرا المائلة",
 		lean_option_1 = "استمرار لتبديل",
 		lean_option_2 = "اضغط للتبديل",
-		lean_option_3 = "إيقاف",
 		clipboard_animation = "تأثير الحافظة",
+		chop_shop_sound = "تعطيل صوت راديو محل السرقة",
+		seatbelt_sound = "تعطيل صوت حزام الأمان",
 		sound_effect_placeholder = "رابط الملف الصوتي بصيغة .oog...",
-		sound_effect_save = "حفظ",
-		sound_effect_reset = "إعادة تعيين",
+
+		button_save = "حفظ",
+		button_reset = "إعادة تعيين",
+		value_off = "إيقاف",
+		value_on = "تشغيل",
+		sound_off = "إيقاف الصوت",
+		sound_on = "تشغيل الصوت",
 
 		reduce_epilepsy = "تقليل وميض الصور (صديق للصرع)",
+		pause_menu_emote = "إيقاف قائمة الايموشنات",
 		disable_tablet_animation = "تعطيل حركة اللوحي",
-		staff_notifications_reports = "تنبيهات البلاغات",
-		staff_notifications_staff_chat = "تنبيهات المحادثات الداخلية لفريق العمل",
-		staff_notifications_general = "تنبيهات عامة",
-		staff_notifications_anti_cheat = "تنبيهات مكافحة الغش",
+		staff_notifications_reports = "إشعارات التقارير (صوت)",
+		staff_notifications_staff_chat = "إشعارات دردشة الطاقم (صوت)",
+		staff_notifications_general = "الإخطارات العامة (صوت)",
+		staff_notifications_anti_cheat = "إخطارات مكافحة الغش (صوت)",
 
 		december_1 = "1 ديسمبر",
 		december_2 = "2 ديسمبر",
@@ -9765,8 +10327,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		about_unusual_explosions = "أحداث الانفجار غير المعتادة التي لا تحدث بشكل عادي.",
 		explosions_by_type_title = "الانفجارات حسب النوع",
 		players_causing_explosions_title = "اللاعبين الذين يتسببون في الانفجارات",
-		show_common_events_off = "Show common events: OFF",
-		show_common_events_on = "Show common events: ON",
+		include_common_events_off = "تضمين الأحداث الشائعة: إيقاف",
+		include_common_events_on = "تضمين الأحداث الشائعة: تشغيل",
 
 		explosion_events_type = "Type",
 		explosion_events_amount = "Amount",
@@ -9800,6 +10362,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		model = "النموذج",
 		label = "التسمية",
 		amount = "الكمية",
+		time_ago = "الوقت المنقضي",
 		console_name = "اللاعب",
 		expected = "المتوقع",
 		actual = "الفعلي",
@@ -10462,7 +11025,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		not_paid = "لم يتم الدفع",
 		insert_dollar = "[${InteractionKey}] إدخال ${amount} دولار",
 
-		no_cash = "لا يوجد لديك دولار واحد.",
+		no_cash = "ليس لديك 4 دولارات نقدًا.",
 		max_time = "تم استنفاد وقت وقوف السيارة هذا بالفعل.",
 		failed_pay = "فشل الدفع لجهاز الضبط الالي لوقوف السيارات."
 	},
@@ -10504,6 +11067,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		roll_message = "لقد قام برمي النرد المخصص بإعدادات ${rolls}d${max} و حصل على ${totalValue}",
 		rps_message = "لعبت لعبة الحجر ورقة مقص واخترت ${rps}",
 		citizen_card_message = "استعرض هويته (${characterId})",
+		driver_license_message = "أظهر رخصة القيادة (${characterId})",
 		badge_message = "استعرض شارته (${characterId})",
 		license_message = "استعرض رخصته (${characterId})",
 		ped_message_logs_title = "رسائل الشخصيات غير اللاعبة",
@@ -10605,7 +11169,46 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		api_error = "أعاد خدمة API الخلفية لدينا خطأ.",
 		api_not_available = "خدمة API الخلفية لدينا غير متاحة.",
 		phone_number_is_available = "رقم الهاتف ${phoneNumber} متاح.",
-		phone_number_is_not_available = "رقم الهاتف ${phoneNumber} غير متاح."
+		phone_number_is_not_available = "رقم الهاتف ${phoneNumber} غير متاح.",
+
+		no_phone = "ليس لديك هاتف.",
+		nobody_nearby = "لا يوجد أحد بالقرب يمكن مشاركة رقمك معه.",
+		shared_number = "${fullName} قام بمشاركة رقم هاتفه معك. استخدم /نعم لقبول العرض وإنشاء جهة اتصال جديدة أو /لا لرفضه.",
+		shared_number_expired = "انتهت صلاحية طلب مشاركة الرقم.",
+		shared_number_declined = "لقد رفضت طلب مشاركة الرقم.",
+		failed_to_share = "فشل في مشاركة رقم الهاتف الخاص بك.",
+		number_share_timeout = "لقد قمت للتو بمشاركة رقم هاتفك. يرجى الانتظار قليلاً قبل المحاولة مرة أخرى.",
+		phone_number_shared = "تم مشاركة رقم هاتفك بنجاح مع ${nearby} لاعب(ين) قريب(ين)."
+	},
+
+	plants = {
+		planting_seed = "زراعة بذور",
+		seed_planted = "تم زراعة البذور بنجاح.",
+		failed_plant = "فشلت عملية زراعة البذرة.",
+		cant_plant_here = "لا يمكنك زراعة بذرة هنا.",
+
+		press_water_plant = "[${InteractionKey}] ري",
+		press_harvest_plant = "[${InteractionKey}] حصاد",
+		press_destroy_plant = "[${SeatEjectKey}] مجرفة",
+		watering_plant = "سقي النبات",
+		harvesting_plant = "جني النبات",
+		destroying_plant = "تدمير النبات",
+
+		plant_weed = "زراعة الحشائش",
+
+		planted_seed_logs_title = "البذور المزروعة",
+		planted_seed_logs_details = "${consoleName} زرع ${plant} (#${plantId}) على ${material}.",
+		harvested_plant_logs_title = "النبات المحصود",
+		harvested_plant_logs_details = "${consoleName} حصد ${plant} (#${plantId}) وحصل على ${items}.",
+		watered_plant_logs_title = "النبات المُسقى",
+		watered_plant_logs_details = "${consoleName} قام بسقي نبات ${plant} (#${plantId}).",
+		ran_over_plant_logs_title = "دهست نبات",
+		ran_over_plant_logs_details = "${consoleName} قام بدهس نبات (#${plantId}).",
+		shoveled_plant_logs_title = "تم تدمير النبات",
+		shoveled_plant_logs_details = "قام ${consoleName} بتدمير نبات (#${plantId}).",
+
+		total_plants = "إجمالي النباتات: ${count}",
+		nearby_plants = "النباتات القريبة: ${count}"
 	},
 
 	player_control = {
@@ -10636,7 +11239,9 @@ OP.Global.Locales.Languages["ar-SA"] = {
 	},
 
 	players = {
-		player_left = "خرج اللاعب [${serverId}]"
+		player_left = "خرج اللاعب [${serverId}]",
+		player_exited = "خرج اللاعب [${serverId}]",
+		player_crashed = "تعطل اللاعب [${serverId}]"
 	},
 
 	pole_dancing = {
@@ -10673,9 +11278,11 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		invalid_domain = "هذا النطاق غير مسموح به.",
 		print = "طباعة",
 		printing = "جاري الطباعة...",
+		document_title = "عنواني الرائع",
+		image_url = "https://files.catbox.moe/ttt1e4.jpg",
 
 		printed_logs_title = "صورة مطبوعة",
-		printed_logs_details = "${consoleName} قام بطباعة `${itemName}` باستخدام `${paperType}` وعنوان الصورة `${url}`، النص العلوي: `${topText}` والنص السفلي: `${bottomText}`."
+		printed_logs_details = "${consoleName} قام بطباعة `${itemName}` باستخدام `${paperType}` مع عنوان الصورة `${url}`, العنوان: `${title}`, النص العلوي: `${topText}` والنص السفلي: `${bottomText}`."
 	},
 
 	prop_hide = {
@@ -10708,7 +11315,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		prop = "أداة",
 		model_parameter_missing = "المعلمة `model` غير متوفرة.",
 		model_parameter_invalid = "النموذج `${model}` غير صالح.",
-		model_parameter_is_not_an_object = "الموديل `${model}` ليس عبارة عن كائن.",
 		spawned_prop_non_networked = "تم إنشاء كائن غير متصل بالشبكة باستخدام الموديل `${model}`.",
 		spawned_prop_networked = "تم إنشاء كائن متصل بالشبكة باستخدام الموديل `${model}`.",
 		spawned_exact_prop = "تم إنشاء نسخة من الكائن بشكل دقيق.",
@@ -10718,6 +11324,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		not_able_to_spawn_while_moving = "يجب عليك التوقف عن الحركة عند إنشاء الملكية الفكرية.",
 		stand_still_to_place_prop = "يجب عليك التوقف عن الحركة لوضع الملكية الفكرية.",
 		prop_no_interior = "يمكنك وضع هذه الملكية الفكرية فقط في الخارج.",
+		invalid_culling_value = "قيمة قطع غير صالحة، يجب أن تكون بين 10م و2,500م.",
+		invalid_model = "نموذج غير صالح/غير معروف `${name}` (${hash}).",
 
 		invalid_prop_id = "معرف الملكية الفكرية غير صالح.",
 		prop_deleted = "تم حذف الملكية الفكرية بالرقم ${propId}.",
@@ -10729,7 +11337,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		placing_prop = "وضع العنصر",
 		pickup_prop = "التقاط العنصر",
 		setting_up_tire_wall = "إعداد حائط الإطارات",
-		destroying_tire_wall = "تدمير حائط الإطارات"
+		destroying_tire_wall = "تدمير حائط الإطارات",
+
+		placed_prop_logs_title = "تم وضع الكائن",
+		placed_prop_logs_details = "${consoleName} قام بوضع `${itemName}` في ${coords} (المعرف: ${propId}).",
+		spawned_prop_logs_title = "تم إنشاء الكائن",
+		spawned_prop_logs_details = "${consoleName} قام بإنشاء كائن بنموذج `${modelName}` في ${coords} (المعرف: ${propId})."
 	},
 
 	radio = {
@@ -10949,6 +11562,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		button_confirm = "تأكيد",
 		button_delete = "حذف",
 		button_manage = "إدارة",
+		button_leave = "المغادرة",
 		create_account = "إنشاء حساب",
 		delete_account = "حذف حساب",
 		confirm_delete = "هل ترغب حقًا في حذف هذا الحساب نهائيًا وجميع السجلات المرتبطة به؟ لا يمكن التراجع عن هذا الإجراء.",
@@ -10968,6 +11582,13 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		access = "الوصول",
 		logs = "سجلات المعاملات",
 		no_logs = "لا توجد سجلات معاملات.",
+		summary = "ملخص",
+		name = "الاسم",
+		transactions = "المعاملات",
+		withdrawn = "تم السحب",
+		deposited = "تم الايداع",
+		last_action = "آخر عملية",
+		no_summary = "لا توجد معاملات لتلخيصها.",
 		no_access = "لا أحد بخلافك لديه الوصول إلى هذا الحساب.",
 		add_cid = "إضافة CID...",
 		failed_add_access = "فشل في إضافة صلاحية.",
@@ -10980,6 +11601,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		insufficient_balance = "رصيد الحساب غير كافي.",
 		insufficient_bank_balance = "رصيد حسابك البنكي غير كاف.",
 		account_description = "يمكن فقط لصاحب الحساب حذفه وإدارته. الأشخاص الذين لديهم صلاحية للحساب يمكنهم فقط سحب وإيداع الأموال. يمكنك إنشاء حتى 5 حسابات توفير مختلفة.",
+		leave_account = "مغادرة الحساب",
+		confirm_leave = "هل أنت متأكد من رغبتك في مغادرة \"${name}\"؟ لن تكون لديك مزايا الوصول إلى هذا الحساب بعد الآن.",
 
 		add_access_logs_title = "إضافة وصول للمدخرات",
 		add_access_logs_details = "قدم ${consoleName} وصولًا لحساب المدخرات ${accountId} لـ `${firstName} ${lastName}` رقم ${characterId}.",
@@ -10989,6 +11612,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		create_account_logs_details = "قام ${consoleName} بإنشاء حساب جديد في المدخرات بأسم `${accountName}` بالرقم ${accountId}.",
 		deleted_account_logs_title = "حذف حساب التوفير",
 		deleted_account_logs_details = "${consoleName} قام بحذف حساب التوفير بإسم `${accountName}` بالرقم ${accountId}.",
+		left_account_logs_title = "حساب التوفير المتبقي",
+		left_account_logs_details = "${consoleName} غادر حساب التوفير بالاسم `${accountName}` برقم الهوية ${accountId}.",
 		withdraw_logs_title = "سحب التوفير",
 		withdraw_logs_details = "انسحاب ${consoleName} ${amount} ريال من حساب التوفير ${accountId} بسبب `${reason}`.",
 		deposit_logs_title = "إيداع التوفير",
@@ -11229,13 +11854,19 @@ OP.Global.Locales.Languages["ar-SA"] = {
 	smoothies = {
 		blend = "خلط",
 		close = "اغلاق",
+		name_placeholder = "سموذي الفواكه",
+		name_suffix = "سموذي / ميلك شيك",
+
+		name_default = "لذيذ",
+		name_drugs = "مشبوه",
+		name_alcohol = "كحولي",
 
 		use_blender = "[${InteractionKey}] استخدم الخلاط",
 		blending = "جاري الخلط",
 		no_ingredients = "ليس لديك أي مكونات لعمل السموثي.",
 
-		milkshake_label = "ميلك شيك (${flavors})",
-		smoothie_label = "العصير (${flavors})",
+		milkshake_label = "ميلك شيك ${name}",
+		smoothie_label = "سموذي ${name}",
 		seperator = "و"
 	},
 
@@ -11365,7 +11996,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		spy_ui_connecting = "يتم الآن الاتصال بالبث المباشر للميكروفون (# ${deviceId})",
 		spy_ui_connection_failed = "فشل الاتصال بالبث المباشر للميكروفون (# ${deviceId})",
 		spy_ui_awaiting_data = "في انتظار البيانات...",
-		spy_ui_data_failed = "فشل الحصول على البيانات"
+		spy_ui_data_failed = "فشل الحصول على البيانات",
+
+		used_tracker_logs_title = "تتبع السيارة المستخدمة",
+		used_tracker_logs_details = "undefined",
+		used_bug_logs_title = "undefined",
+		used_bug_logs_details = "undefined"
 	},
 
 	starter_car = {
@@ -11505,6 +12141,36 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		user_not_found = "لم يتم العثور على المستخدم المرسل في الخادم.",
 		invalid_character_id = "معرف الشخصية المرسل غير صالح.",
 		invalid_license_identifier = "معرف الترخيص غير صالح."
+	},
+
+	teleporting = {
+		source_no_character = "لم يقم اللاعب المحدد بتحميل شخصيته بعد.",
+		target_no_character = "لم يقم اللاعب المستهدف بتحميل شخصيته بعد.",
+		invalid_coordinates = "الإحداثيات غير صالحة.",
+		no_waypoint_set = "لم يتم تعيين نقطة الوجهة.",
+		failed_teleport_to_player = "فشل في تحويل التليبورت إلى اللاعب.",
+		failed_teleport_player_here = "فشل في تحويل التليبورت لجلب اللاعب إليك.",
+		failed_teleport_player_player = "فشل في تحويل التليبورت لنقل اللاعب لآخر.",
+		no_back_coords = "لا يوجد موقع للعودة إليه بعد التحويل.",
+		cant_tp_same_player = "لا يمكنك نقل اللاعب إلى نفسه.",
+		cant_tp_self_self = "لا يمكنك نقل نفسك إلى نفسك.",
+
+		use_tp_to_player = "استخدم `/tp_to_player` لنقل نفسك إلى لاعب معين.",
+		use_tp_player_here = "استخدم `/tp_player_here` لنقل لاعب إليك.",
+
+		teleported_to_coordinates = "تم نقلك إلى `${location}`. (${coords})",
+		teleported_to_player = "تم نقلك إلى ${displayName}.",
+		teleported_player_here = "تم نقل ${displayName} إليك.",
+		teleported_player_player = "تم نقل ${sourceName} إلى ${targetName}.",
+
+		teleport_to_coords_logs_title = "تم النقل إلى الإحداثيات",
+		teleport_to_coords_logs_details = "${consoleName} تم نقله إلى الإحداثيات ${coords}.",
+		teleport_to_player_logs_title = "نقل إلى لاعب",
+		teleport_to_player_logs_details = "${consoleName} تم نقله إلى ${targetConsoleName}.",
+		teleport_player_here_logs_title = "نقل اللاعب إلى الذات",
+		teleport_player_here_logs_details = "${consoleName} قام بنقل ${targetConsoleName} إلى نفسه.",
+		teleport_player_player_logs_title = "نقل لاعب إلى لاعب",
+		teleport_player_player_logs_details = "${consoleName} قام بنقل ${sourceConsoleName} إلى ${targetConsoleName}."
 	},
 
 	teleporters = {
@@ -11652,6 +12318,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		vehicles = "خيارات المركبات",
 		spawn_car = "إنشاء سيارة",
 		upgrade_vehicle = "ترقية المركبة",
+		break_windows = "كسر النوافذ",
 		pop_tires = "فتح الإطارات",
 		detach_doors = "فك الأبواب",
 		damage_vehicle = "تلف المركبة",
@@ -11660,6 +12327,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 
 		player = "خيارات اللاعبين",
 		starve = "تجويع نفسك",
+		add_stress = "إضافة ضغط",
 		feed = "إطعام نفسك",
 		relief_stress = "تخفيف الضغوط",
 		reset_health = "إعادة تعيين الصحة",
@@ -11729,6 +12397,12 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		trackers_in_category = "سيتم الآن وضع المُتتبعين داخل فئاتهم على الخريطة.",
 		trackers_split = "سيتم الآن تقسيم المُتتبعين إلى بلوب فردي.",
 
+		tracker_broken = "تم كسر تعقب ${lastName} بالقرب من ${location}",
+		tracker_broken_unit = "تم كسر تعقب ${unitId} ${lastName} بالقرب من ${location}",
+		tracker_broken_title = "[الإرسال]",
+		tracker_broken_blip = "تعقب مكسور ${lastName}",
+		tracker_broken_timeout = "تعقبك مكسور. يمكنك تشغيله مرة أخرى بعد 20 دقيقة.",
+
 		department_sasp = "SASP",
 		department_bcso = "BCSO",
 		department_sahp = "SAHP",
@@ -11745,7 +12419,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 	},
 
 	trading_cards = {
-		access_store = "[${InteractionKey}] الوصول إلى المتجر",
+		access_store = "اضغط على ~INPUT_CONTEXT~ للوصول إلى متجر بطاقات التداول.",
 
 		buy_pack = "شراء حزمة ${packName}",
 		store_title = "متجر البطاقات",
@@ -11942,7 +12616,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 	vape = {
 		press_to_use = "اضغط ~INPUT_CONTEXT~ لإستخدام السجائر. اضغط ~INPUT_FRONTEND_CANCEL~ لوضع السجائر جانباً.",
 
-		plain_vape = "جهاز جيك بار (بدون نكهة)",
+		plain_vape = "جيك بار",
+		weed_vape = "جيك بار (زيت THC)",
 		mango_vape = "جهاز جيك بار (بنكهة المانجو)",
 		strawberry_vape = "جهاز جيك بار (بنكهة الفراولة)",
 		menthol_vape = "جهاز جيك بار (بنكهة النعناع البارد)",
@@ -12056,6 +12731,20 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		refilling_bottle = "إعادة ملء الزجاجة"
 	},
 
+	weed = {
+		strain_default = "هيز بري",
+		strain_lemon = "ليمون هيز",
+		strain_northern = "أضواء شمالية",
+		strain_kush = "OG كوش",
+
+		default_emoji = "🥦",
+		lemon_emoji = "🏃",
+		northern_emoji = "🛡️",
+		kush_emoji = "🦁",
+
+		strain_description = "<b>سلالة:</b> <i>${strain}</i> ${emoji}"
+	},
+
 	weed_field = {
 		pick_weed = "اضغط ~INPUT_CONTEXT~ للحصول على الحشيش.",
 		picking_weed = "جاري حصد الحشيش"
@@ -12092,8 +12781,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		explode_success = "تم إجبار ${consoleName} على الانفجار بنجاح.",
 		explode_failed = "فشل إجبار اللاعب على الانفجار.",
 
-		ignite_success = "تم إشعال النار في ${consoleName} بنجاح.",
-		ignite_failed = "فشل إشعال النار في اللاعب.",
+		taze_success = "تمت صدم ${consoleName} بنجاح.",
+		taze_failed = "فشل في تركيب الليزر للاعب.",
 
 		flashbang_success = "تم تفجير ضوء القنبلة الصوتية بنجاح على ${consoleName}.",
 		flashbang_failed = "فشل في تفجير ضوء القنبلة الصوتية على اللاعب.",
@@ -12192,6 +12881,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		second = "ثانية",
 		seconds = "ثواني",
 		just_now = "الآن للتو",
+		now = "الآن",
 
 		month_1 = "يناير",
 		month_2 = "فبراير",
@@ -12277,6 +12967,35 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		delivery_blip = "توصيل طعام برغر شوت"
 	},
 
+	bus_driver = {
+		start_route = "اضغط ~INPUT_CONTEXT~ لبدء المسار",
+		failed_start_job = "فشل في بدء وظيفة جديدة.",
+		next_stop = "الوقف التالي",
+		bus_hq = "مقر الحافلات",
+		job_cancelled = "تم إلغاء الوظيفة.",
+		next_stop_help = "الوقف التالي: ${stop} من ${total}",
+		passenger_count = "الركاب: ${passengers} من ${seats}",
+		shutdown_engine = "أوقف محركك وانتظر الركاب.",
+		return_to_hq = "العودة إلى المقر الرئيسي.",
+		bus_stop = "موقف الحافلات",
+		pay_for_ticket = "استمر في الضغط على ~INPUT_CONTEXT~ لشراء تذكرة ($18).",
+		not_enough_money_ticket = "ليس لديك ما يكفي من المال لشراء تذكرة الحافلة (18 دولارًا).",
+		ticket_paid = "${displayName} دفع ثمن تذكرة الحافلة.",
+		paid_for_ticket = "لقد دفعت بنجاح ثمن تذكرة الحافلة.",
+
+		east_route = "الألعاب",
+		pillbox_route = "بيلبوكس",
+		little_seoul_route = "ليتل سيول",
+		sandy_route = "خط الصحراء الرملية",
+		paleto_route = "إكسبريس الجميلة الكبيرة",
+		grapeseed_route = "ممر جريبسيد الأخضر",
+		route_68_route = "مباشرة طريق 68",
+		airport_route = "خدمة نقل المطار",
+
+		finished_job_logs_title = "انتهاء جولة الحافلة",
+		finished_job_logs_details = "${consoleName} أنهى قيادة مسار الحافلة `${route}` واستلم  $${payout}."
+	},
+
 	doj = {
 		invalid_type = "نوع غير صالح أو مفقود.",
 		missing_search = "معلمة البحث مفقودة.",
@@ -12330,6 +13049,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		job_government = "جامع النفايات",
 		job_mechanic = "سائق سطحة",
 		job_delivery = "سائق توصيل",
+		job_bus_driver = "سائق حافلة",
 		changed_job_already_set_to_job = "لقد تم تعيين وظيفتك بالفعل على ${jobName}.",
 		changed_job_success = "تم تعيين وظيفتك بنجاح على ${jobName}.",
 		changed_job_success_go_to_coords = "تم تعيين وظيفتك بنجاح على ${jobName}. اتبع الإرشادات على الخريطة للبدء.",
@@ -12432,6 +13152,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		license_fishing = "رخصة صيد الأسماك",
 		license_weapon = "ترخيص الأسلحة",
 		license_mining = "رخصة التعدين",
+		license_driver = "رخصة القيادة",
 		gave_character_license = "منح ${characterName} ترخيص `${licenseLabel}`.",
 		character_already_has_license = "${characterName} لديه بالفعل ترخيص `${licenseLabel}`",
 		removed_character_license = "تم إزالة ترخيص `${licenseLabel}` من ${characterName}.",
@@ -12446,7 +13167,21 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		you_have_no_licenses = "لا تمتلك تراخيص.",
 		player_has_no_licenses = "${characterName} لا يمتلك تراخيص.",
 		failed_to_get_licenses = "فشل في الحصول على التراخيص.",
-		license_list = "التراخيص المتاحة: ${licenseList}."
+		license_list = "التراخيص المتاحة: ${licenseList}.",
+		already_married = "أحد الشريكين أو كليهما متزوج بالفعل.",
+		either_not_married = "أحد الشريكين أو كليهما ليسا متزوجين.",
+		not_married = "الشركاء غير متزوجين ببعضهما البعض.",
+		failed_marriage = "فشل في تعيين حالة الزواج.",
+		marriage_success = "${nameA} و ${nameB} متزوجان الآن.",
+		divorce_success = "${nameA} و ${nameB} لم يعدا متزوجين.",
+		character_not_online = "أحد الشركاء غير متصل حاليًا. يمكن فقط الطلاق من الشركاء الذين توفوا وهم غير متصلين.",
+		you_are_now_married = "أنت الآن متزوج من ${name}.",
+		you_are_no_longer_married = "لم تعد متزوجًا من ${name}.",
+
+		divorced_logs_title = "الطلاق",
+		divorced_logs_details = "${consoleName} قام بتحديث حالة الزواج بين ${nameA} #${cidA} و ${nameB} #${cidB} إلى `مطلق`.",
+		married_logs_title = "متزوج",
+		married_logs_details = "${consoleName} قام بتحديث حالة الزواج بين ${nameA} #${cidA} و ${nameB} #${cidB} إلى `متزوج`."
 	},
 
 	tow = {
@@ -12502,7 +13237,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		anchored_successfully = "تم نشر الطوق بنجاح.",
 		removing_anchor = "جارٍ فصل الطوق",
 		deploying_anchor = "جارٍ نشر الطوق",
-		no_vehicle_nearby = "لا يوجد قارب قريب يمكنك ربطه بالطوق."
+		no_vehicle_nearby = "لا يوجد قارب قريب يمكنك ربطه بالطوق.",
+		vehicle_not_anchorable = "لا يمكنك ربط هذا القارب."
 	},
 
 	car_wash = {
@@ -12579,16 +13315,42 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		unknown = "غير معروف"
 	},
 
+	garage_access = {
+		menu_title = "مدير الكراج",
+		button_close = "إغلاق",
+		loading = "جار التحميل...",
+		access = "وصول الكراج",
+		access_description = "هؤلاء الشخصيات لديها الوصول لسحب واستيداع مركباتك من وإلى كراجك.",
+		accessible = "وصولك",
+		accessible_description = "هذه هي الكراجات التي تم منحك وصول إليها.",
+		no_access = "لا أحد بإمكانه الوصول لكراجك سواك.",
+		no_accessible = "لم يمنحك أي شخص وصول لكراجه.",
+
+		failed_allow_access = "فشل في السماح بالوصول إلى الجراج.",
+		failed_remove_access = "فشل في إزالة الوصول من الجراج.",
+		already_has_access = "الشخصية لديها بالفعل الوصول إلى جراجك.",
+		invalid_character_id = "هوية شخصية غير صالحة.",
+		does_not_access = "الشخصية ليس لديها بالفعل وصول إلى جراجك.",
+
+		added_access_logs_title = "تمت إضافة الوصول إلى الجراج",
+		added_access_logs_details = "${consoleName} (#${characterId}) أعطى #${targetCharacterId} الوصول إلى جراجه.",
+		removed_access_logs_title = "تمت إزالة الوصول إلى الجراج",
+		removed_access_logs_details = "${consoleName} (#${characterId}) قام بإزالة صلاحية الدخول لمرآب #${targetCharacterId}."
+	},
+
 	garages = {
 		garage_empty = "مرآبك فارغ!",
 		impound_lot = "موقف الحجز",
 		police_impound = "حجز الشرطة",
+		owner_self = "مملوك",
+		owner_other = "صلاحية الدخول",
 		engine = "المحرك",
 		body = "الجسم",
 		vehicle_in = "داخل",
 		vehicle_out = "خارج",
 		vehicle_at_police_impound = "تم حجز مركبتك حالياً من قبل الشرطة.",
 		vehicle_at_impound = "تم حجز مركبتك في موقف الحجز.",
+		impound_lot_short = "حجز",
 		waypoint_to_impound = "تم وضع علامة على خريطتك للوصول إلى موقف الحجز.",
 		unable_to_withdraw = "غير قادر على سحب المركبة حيث أنها تعمل حاليًا.",
 		vehicle_in_garage = "سيارتك موجودة في ${garageName}. تم تعيين نقطة الوجهة على الخريطة.",
@@ -12608,7 +13370,8 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		not_enough_balance_to_retrieve = "لا يوجد لديك رصيد كافٍ في أي حساب لاسترداد هذه المركبة.",
 		press_to_access = "اضغط ~INPUT_CONTEXT~ للدخول الى الكراج.",
 		ui_return = "رجوع",
-		ui_vehicle_list = "قائمة المركبات",
+		ui_my_vehicle_list = "مركباتي",
+		ui_other_vehicle_list = "مركبات أخرى",
 		ui_store_vehicle = "ايداع المركبة",
 		ui_vehicle_sell = "بيع المركبات",
 		ui_retrieve_vehicle = "استرجاع المركبة",
@@ -12631,8 +13394,6 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		state_loading = "جاري التحميل...",
 
 		vehicle_weight = "الوزن: ${weight}",
-		last_garage_letter = "الأخير - المرآب ${letter}",
-		last_garage_impound = "الأخير - مكان حجز المركبات",
 		no_last_garage_letter = "لا يوجد مرآب سابق",
 
 		purchase_vehicle = "اضغط ~INPUT_CONTEXT~ للوصول إلى المحل",
@@ -12641,7 +13402,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		purchase_success = "تم شراء ${label} بنجاح وإضافتها إلى مرآبك.",
 		purchase_failed = "فشل شراء السيارة.",
 		already_owned = "أنت تمتلك هذا الطراز من السيارات بالفعل.",
-		maximum_owned = "لا يمكنك امتلاك أكثر من 6 سيارات.",
+		maximum_owned = "لا يمكنك امتلاك أكثر من ٨ مركبات.",
 		not_enough_money = "ليس لديك ما يكفي من المال لشراء هذه السيارة.",
 
 		sold_vehicle = "تم بيع ${label} مقابل $${price}.",
@@ -12759,6 +13520,14 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		failed_generic = "حدث خطأ ما."
 	},
 
+	trailers = {
+		cant_attach_trailer = "هذه المركبة ليست لديها جنزير للسحب.",
+		no_trailer_nearby = "لا يوجد جنزير بالقرب.",
+		not_in_vehicle = "أنت لست تقود مركبة.",
+		not_lined_up = "مركبتك ليست محاذية مع الجنزير.",
+		keybind_description = "افصل أو اربط مقطورة"
+	},
+
 	vehicles = {
 		flip_flipping = "قلب السيارة",
 		flip_unable = "لا يمكنك إقلاع السيارة بينما هناك أشخاص داخلها.",
@@ -12777,6 +13546,7 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		gear_animation_disabled = "تم تعطيل رسوم الجير (والأصوات).",
 		manual_gears_enabled = "تم تفعيل التحول اليدوي للسرعات. الوضع المختلط هو `${hybrid}`.",
 		manual_gears_disabled = "تم تعطيل التحويل اليدوي للجير.",
+		manual_gears_too_fast = "يمكنك تبديل السرعة يدويًا فقط عند السرعات الدنيا من 30 ميل في الساعة.",
 		hybrid_off = "إيقاف",
 		speed_limiter_set_to_metric = "سيقوم المحدد السرعة الآن بتقييد السرعة عند ${speed} كم/ساعة.",
 		speed_limiter_set_to_imperial = "سيقوم المحدد السرعة الآن بتقييد السرعة عند ${speed} ميل/ساعة.",
@@ -13024,13 +13794,15 @@ OP.Global.Locales.Languages["ar-SA"] = {
 		bleeding_reduced = "تم التخفيف من النزيف",
 		bleeding_self_stopped = "توقف النزيف بنفسه",
 		thanks_for_loot = "تم اغتنامك أثناء فقدان الوعي. قد تفتقد بعض المواد. يقال إنها كانت نانسي.",
+		guards_found_unconcious = "وجد الحراسك بوضع غير واعي وأحضروك إلى مستشفى السجن.",
 		serial_number = "الرقم التسلسلي: ${serialNumber}<br><i>هذا السلاح مسجل تحت اسم ${fullName} (#${characterId}).</i>",
 		serial_number_unknown = "الرقم التسلسلي: ${serialNumber}<br><i>هذا السلاح غير مسجل.</i>",
 		serial_number_removed = "يبدو أن الرقم التسلسلي تم ازالته أو تم خدشه.",
 		badge_owner = "<i>ينتمي هذا الشارة لـ <b>${fullName} (${positionName})</b>.</i>",
 		badge_owner_unknown = "صاحب الشارة غير معروف.",
 		citizen_card_owner = "<i>ينتمي هذا البطاقة المدنية لـ <b>${fullName} (#${characterId})</b>.</i>",
-		citizen_card_has_portrait = "<i>البطاقة تحتوي على صورة.</i>",
+		driver_license_owner = "<i>رخصة القيادة هذه تنتمي إلى <b>${fullName} (#${characterId})</b>.</i>",
+		has_portrait = "<i>يحتوي على صورة.</i>",
 		picture_pending = "<i>جاري معالجة الصورة...</i>",
 		picture_selfie_owner = "<i>هذه صورة لـ <b>${fullName}</b>.</i>",
 		bought_by = "تم شراؤها بواسطة ${buyerName} (${buyerCid}).",
