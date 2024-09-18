@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 32 (do not change)
+-- AUTO LOCALES: 33 (do not change)
 
 OP.Global.Locales.Languages["bg-BG"] = {
 	-- configuration settings for language
@@ -23,13 +23,20 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		yes = "Да",
 		no = "Не",
 		n_a = "N/A",
-		invalid_server_id = "Невалиден сървър ID."
+		invalid_server_id = "Невалиден сървър ID.",
+		appreciated_tier = "Оценен клас",
+		respected_tier = "Уважаван клас",
+		heroic_tier = "Хероичен клас",
+		legendary_tier = "Легендарен клас",
+		god_tier = "Божествен клас"
 	},
 
 	-- animations/*
 	emotes = {
 		get_in_trunk = "Натиснете ~INPUT_ENTER~, за да влезнете в багажника.",
 		put_boombox_in_trunk = "Натиснете ~INPUT_ENTER~, за да поставите пултето в багажника.",
+		put_bicycle_in_trunk = "Натиснете ~INPUT_ENTER~ за да поставите колелото в багажника.",
+		cant_put_bicycle_in_trunk = "Не може да поставите колелото в този багажник.",
 		put_player_in_trunk = "Натиснете ~INPUT_ENTER~ , за да сложите играча в багажника.",
 		put_player_in_seat = "[${VehicleEnterKey}] Постави на седалка",
 		putting_player_in_seat = "Поставяне на седалка",
@@ -47,22 +54,9 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		piggyback_hop_on = "[${InteractionKey}] каца",
 		stop_piggyback = "Натиснете ~INPUT_VEH_HEADLIGHT~ за да спрете да пигибаквате.",
 
-		lockpicking_cuffs = "Отключване на белезници",
-		lockpick_cuffs_too_fast = "Движихте се твърде бързо.",
-		success_lockpick_cuffs = "Успешно отключихте белезниците.",
-		failed_lockpick_cuffs = "Неуспешно кравене на патрици под затвор",
-		lockpick_lost = "Изгубихте инструмента за кравене на патрици",
-
-		not_cuffed = "Не сте закован",
-		unable_to_lockpick = "Не можете да кравете патриците",
-
-		lockpick_cuffs_logs_title = "Хващане на патрици",
-		lockpick_cuffs_logs_details = "${consoleName} успешно криви патриците си с помощта на `${itemName}`.",
-
 		you_are_not_being_carried = "В момента не бърдош",
 		successfully_uncarried = "Успешно прекратяване на бърдото",
 		failed_uncarried = "Неуспешно прекратяване на бърдото",
-		uncarry_missing_permissions = "Опит за принудително прекратяване на носенето без необходимите разрешения.",
 
 		uncarry_logs_title = "Принудително прекратяване на носенето",
 		uncarry_logs_details = "${consoleName} принудително прекрати носенето на ${targetName}.",
@@ -77,6 +71,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		struggle_logs_details = "${consoleName} се освободи от ${targetName} и го пренесе.",
 
 		ragdolled_player = "Рзпроваляне на играча ${displayName}."
+	},
+
+	ledges = {
+		no_ledge = "Не сте близо до парапет.",
+		invalid_variation = "Невалидна вариация.",
+		press_x_to_stop = "Натиснете ~INPUT_VEH_DUCK~ за да спрете да седите."
 	},
 
 	-- base/*
@@ -98,6 +98,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		noclip_toggle_activated_self_on_logs_details = "${consoleName} включи NoClip на позиция `x: ${xCoord}, y: ${yCoord}, z: ${zCoord}`. (В превозно средство: ${inVehicle})",
 		noclip_toggle_activated_self_off_logs_details = "${consoleName} изключи NoClip на позиция `x: ${xCoord}, y: ${yCoord}, z: ${zCoord}`.",
 
+		can_not_trigger_remotely_without_staff = "Трябва да сте персонал, за да активирате тази команда от разстояние.",
+
 		model_name_not_provided = "Не е предоставено име на модел.",
 		model_name_invalid = "Невалидно име на модел `${modelName}`.",
 		model_name_not_a_vehilce = "Моделът `${modelName}` не е превозно средство.",
@@ -114,10 +116,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		vehicle_created = "Превозното средство беше създадено успешно.",
 		failed_vehicle_creation = "Неуспех при създаването на превозното средство.",
 
+		invalid_network_id = "Невалиден идентификатор на мрежа.",
+
 		-- NOTE: `add_vehicle` command:
 		add_vehicle_added_vehicle_for_everyone = "Добавено превозно средство с моделно име `${modelName}` за всички.",
-		add_vehicle_added_vehicle_for_player = "Добавено превозно средство с моделно име `${modelName}` за ${consoleName}.",
-		add_vehicle_added_vehicle = "Добавено превозно средство с моделно име `${modelName}`.",
+		add_vehicle_added_vehicle_for_player = "Добавено превозно средство с моделно име `${modelName}` #${vehicleId} за ${consoleName}.",
+		add_vehicle_added_vehicle = "Добавено превозно средство с моделно име `${modelName}` #${vehicleId}.",
 		add_vehicle_character_not_loaded = "Целевият играч няма заредени герои.",
 		add_vehicle_target_user_not_found = "Целевият потребител не може да бъде намерен.",
 		add_vehicle_invalid_input = "Невалиден вход.",
@@ -134,7 +138,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		added_vehicle_logs_title = "Добавено превозно средство",
 		added_vehicle_logs_details = "${consoleName} добави превозно средство с моделно име `${modelName}` в своя гараж.",
 
-		vehicle_saved = "Успешно запазване на превозното средство с име на модел `${modelName}`.",
+		vehicle_saved = "Успешно запазване на превозното средство с моделно име `${modelName}` #${vehicleId}.",
 		failed_to_save_vehicle = "Неуспешно запазване на превозното средство.",
 
 		invalid_amount = "Невалидна сума.",
@@ -211,6 +215,9 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		staff_title = "ПЕРСОНАЛ ${staffName}",
 		staff_message_logs_title = "Съобщение на персонала",
 		staff_message_logs_details = "${consoleName} изпрати следното съобщение в чата на персонала: `${staffMessage}`",
+		local_staff_title = "ЛОКАЛЕН ПЕРСОНАЛ ${staffName}",
+		local_staff_message_logs_title = "Съобщения на локалния персонал",
+		local_staff_message_logs_details = "${consoleName} изпрати следното съобщение в чата на локалния персонал: `${staffMessage}`",
 
 		staff_pm_title = "ЛС ПЕРСОНАЛ ${transmissionTitle}",
 		staff_pm_logs_title = "ЛС на персонала",
@@ -220,7 +227,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		staff_pm_not_recipient_not_staff = "Играчът, към когото опитвате да изпратите съобщение, не е член на екипа.",
 		staff_pm_unable_to_message_self = "Не можете да изпращате съобщения на себе си.",
 		staff_pm_warning = "Внимание - Лично съобщение за екипа",
-		staff_pm_first_time = "Виждаме, че никога не сте използвали лични съобщения с екипа. За да отговорите на лично съобщение, използвайте командата /staffpm.",
+		staff_pm_first_time = "Виждаме, че никога не сте използвали лични съобщения към персонала. За да отговорите на лично съобщение към персонала, използвайте `/staffpm` следвано от идентификационния номер на получателя. За улеснение може да използвате `/reply`, за да отговорите на последното лично съобщение към персонала, което сте получили.",
+		reply_pm_not_found = "Няма налично лично съобщение на персонала, на което да отговорите.",
 
 		important_staff_pm_title = "!ВАЖНО - Лично съобщение до вас: ${recipient}",
 		close_staffpm = "Затвори",
@@ -245,6 +253,13 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		player_revived_success = "Играчът е възкресен успешно.",
 
 		missing_valid_license_identifier_parameter = "Липсва валиден параметър 'идентификатор на лиценз'.",
+
+		wipe_broken = "broken - Счупени/фрагментирани обекти",
+		wipe_npcs = "npcs - NPC-та и техните превозни средства.",
+		wipe_objects = "objects - Всички обекти",
+		wipe_vehicles = "vehicles - Всички превозни средства",
+		wipe_peds = "peds - Всички NPC-та",
+		wipe_doors = "doors - Всички обекти на врати",
 
 		wiped_entities = "Изтрити обекти. Изтрити са ${deletedEntities} обекти, които споделят мрежа.",
 		wipe_entities_logs_title = "Изтрити обекти",
@@ -331,8 +346,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		warning_message_removed_title = "Предупредителното съобщение е премахнато",
 		warning_message_removed_details = "${consoleName} премахна предупредителното съобщение.",
 
-		indestructibility_on = "Включено 'Неуязвимост'.",
-		indestructibility_off = "Изключено 'Неуязвимост'.",
 		speed_boost_on = "Включено 'Ускорение на скоростта'.",
 		speed_boost_off = "Изключено 'Ускорение на скоростта'.",
 		nitro_boost_on = "Включено 'Нитро ускорение'.",
@@ -367,33 +380,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		population_density_is_not_on = "Настройката за умножител на плътността на населението не е активирана.",
 		population_density_already_set_to = "Настройката за умножител на плътността на населението е вече настроена на ${multiplierLabel}%.",
 
-		enabled_features_list = "Активирани функции:",
-		aimbot_feature = "Аимбот",
-		disabled_collisions_feature = "Изключени сблъсъци",
-		disabled_recoil_feature = "Изключен откат",
-		evidence_view_feature = "Преглед на доказателства",
-		hit_indicator_feature = "Показване на попадение",
-		indestructibility_feature = "Неуязвимост",
-		infinite_ammo_feature = "Неограничени боеприпаси",
-		invisibility_feature = "Невидимост",
-		muted_sirens_feature = "Изключени сирени",
-		nitro_boost_feature = "Нитро ускорение",
-		no_nearby_vehicles_feature = "Няма близки превозни средства",
-		peeking_feature = "Плющене",
-		roll_control_feature = "Контрол на завъртане",
-		speed_boost_feature = "Ускорение на скоростта",
-		speed_up_progress_bar_feature = "Ускоряване на лента за напредъка",
-		sticky_feet_feature = "Лепкави крака",
-		wallhack_feature = "Прозирни стени",
-		watching_feature = "Наблюдаване",
-		fortnite_feature = "Фортнайт",
-		reflection_feature = "Отразяване на урон",
-		stable_cam_feature = "Стабилна камера",
-		super_jump_feature = "Супер скок",
-		server_id_hidden_feature = "Скрит идентификатор на сървъра",
-		fake_disconnect_feature = "Фалшиво изключване",
-		brighter_nights_feature = "По-светли нощи",
-
 		you_are_not_in_a_vehicle = "Вие не сте в превозно средство.",
 		repaired_vehicle = "Превозното средство е поправено.",
 		player_not_in_vehicle = "Този играч не е в превозното средство.",
@@ -407,16 +393,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		success_nos_refill = "Успешно попълни NOS.",
 		failed_nos_refill = "Неуспешно попълване на NOS.",
 
-		refill_nitro_missing_permissions = "Играчът се опита да попълни своя NOS без необходимите разрешения.",
-
 		register_invalid_character_id = "Невалидно идентификационно число за герой.",
 		register_invalid_slot = "Невалидно място за инвентар.",
 		register_weapon_success = "Успешно регистрирахте оръжието в място ${slotId} за героя с идентификационен номер ${cid}.",
 		no_serial_number = "Не може да се регистрира оръжие без сериен номер.",
 		unknown_character_id = "Непознат идентификационен номер на герой.",
 		register_weapon_failed = "Неуспешна регистрация на оръжие.",
-
-		register_weapon_missing_permissions = "Играчът се опита да регистрира оръжие без необходимите права.",
 
 		vehicle_smoke_invalid_class = "Не може да се активира дим за това класно автомобил.",
 
@@ -509,14 +491,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		cleaned_ped_self = "Успешно почистихте своя персонаж.",
 		clean_ped_failed = "Неуспешно почистване на персонаж.",
 		cleaned_ped_for_all = "Успешно почистени персонажи на всички.",
-		clean_ped_no_permission = "Опит за почистване на персонаж без необходимите права.",
 
 		item_durability_set_success = "Успешно зададена здравина от ${amount}% за артикули в слот ${slotId}.",
 		item_durability_set_failed = "Неуспешно задаване на издръжливостта.",
 		item_durability_invalid_amount = "Невалидно количество издръжливост (0 <> 100).",
-		item_durability_set_no_permission = "Опит за задаване на издръжливост за предмет без подходящи разрешения.",
 
-		item_metadata_set_no_permission = "Опит за задаване на метаданни на предмет без подходящи разрешения.",
 		item_metadata_set_success = "Успешно зададени метаданни за предмет в слот ${slotId}.",
 		item_metadata_set_failed = "Неуспешно задаване на метаданни.",
 		item_metadata_missing_key = "Отсъстващ ключ на метаданните.",
@@ -529,8 +508,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		identity_set_failed = "Неуспешно задаване на идентичността на ${displayName}.",
 		identity_hud = "Самоличност: ${playerName}",
 
-		set_identity_no_permission = "Играч опита да зададе своето име без необходимите разрешения.",
-
 		invalid_range_parameter = "Невалиден параметър за обхват.",
 		wipe_first_owned_success = "Успешно изтрихте всички ${amount} елементи, притежавани първоначално от играча със сървър идентификатор `${serverId}`.",
 		wipe_first_owned_success_range = "Успешно изтрити всички ${amount} същества, които са притежание на играч със сървърния идентификатор `${serverId}` в обхват от ${range}м.",
@@ -541,11 +518,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		scoop_invalid = "Не сте прибрали никакви играчи.",
 		unscooped_players = "Неприбрани ${amount} от общо ${total} играч(и).",
 		unscoop_failed = "Неуспешно освобождаване на играчите.",
-
-		toggle_collisions_missing_permissions = "Играчът се опита да превключи колизиите си без подходящи разрешения.",
-		wipe_first_owned_missing_permissions = "Играчът се опита да изтрие първия притежаван от него елемент без подходящи разрешения.",
-
-		freeze_missing_permissions = "Играчът се опита да замрази или размрази друг играч без подходящи разрешения.",
 
 		freeze_success = "Успешно заблокирахте ${consoleName}.",
 		failed_freeze = "Неуспешно замразяване на играч.",
@@ -562,13 +534,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		slap_failed = "Неуспешно плескане на играч.",
 		slap_logs_title = "Плеснат играч",
 		slap_logs_details = "${consoleName} плесна ${targetName}.",
-		slap_missing_permissions = "Играчът опита да плесне друг играч без необходимите разрешения.",
 
 		damaged_player = "Успешно наранена/нанесена щета на ${consoleName} за ${damage} damage.",
 		damage_player_failed = "Неуспешно нанасяне на щета на играч.",
 		damage_player_logs_title = "Наранен Играч",
 		damage_player_logs_details = "${consoleName} нанесе ${damage} щета на ${targetConsoleName}.",
-		damage_player_missing_permissions = "Играч се опита да нанесе щета на друг играч без подходящи разрешения.",
 
 		refill_nitro_logs_title = "Зареждане на Нитро",
 		refill_nitro_logs_details = "${consoleName} зареди нитрото си.",
@@ -599,15 +569,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		clean_ped_logs_title = "Почистено тяло",
 		clean_ped_logs_details = "${consoleName} почисти телото на ${targetName}.",
 
-		invalid_job_search = "Невалидно търсене на работа (трябва да са поне 3 знака).",
-		failed_job_search = "Неуспешно търсене на работа.",
-		job_search_no_results = "Няма намерени работи.",
-		job_search_results = "Зададени са данните за работа на ${consoleName} като \"${jobName}, ${departmentName}, ${positionName}\" (Score: ${score}).",
-		job_no_character = "Целевият играч няма зареден герой.",
-
-		job_reset_success = "Успешно нулирана работната позиция на ${consoleName}.",
-		failed_job_reset = "Неуспешно нулиране на работата.",
-
 		create_vehicle_logs_title = "Създадено превозно средство",
 		create_vehicle_logs_details = "${consoleName} създаде превозно средство с име на модел `${modelName}`.",
 
@@ -627,13 +588,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		wipe_first_owned_logs_details = "${consoleName} изтрива ${amount} обекта, притежавани първоначално от играча със сървърен идентификатор `${serverId}` в обхват от ${range} метра.",
 
 		unscoop_logs_title = "Несъбрани играчи",
-		unscoop_logs_details = "${consoleName} не събра ${amount} играч(и) на `${coords}`.",
-
-		set_job_logs_title = "Задаване на работа",
-		set_job_logs_details = "${consoleName} зададе работа на ${targetConsoleName} (#${characterId}) като `${jobName}, ${departmentName}, ${positionName}` (Резултат: ${score}, Търсене: `${search}`).",
-
-		reset_job_logs_title = "Нулиране на работа",
-		reset_job_logs_details = "${consoleName} нулира работата на ${targetConsoleName} (#${characterId})."
+		unscoop_logs_details = "${consoleName} не събра ${amount} играч(и) на `${coords}`."
 	},
 
 	anti_cheat = {
@@ -663,7 +618,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 		-- GPT-4 generated ban messages
 		bad_entity_spawn = "Опа, опита се да призове древния артефакт '${modelName}', нали? Това не е епизод на 'Antiques Roadshow', а този реликвар остава в сейфа.",
-		bad_screen_word_ban = "Чули сме за изпити с отворени книги, но това е абсурдно.",
 		blacklisted_command_ban = "Съжалявам, но нямате права за изпълнение на тази команда. Моля, свържете се с администраторите на сървъра, ако смятате, че това е грешка.",
 		clear_tasks_ban = "Това не е център за обучение на Джедаи. Вашите усилия да влияете на свободната воля на другите са отбелязани... и отхвърлени.",
 		damage_modifier_ban = "Вашият ниво на мощност не може да бъде над 9000.",
@@ -690,7 +644,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		suspicious_explosion_ban = "Съжалявам, но това не е филм на Майкъл Бей. Ексцесивното използване на пиротехника не е разрешено.",
 		text_entry_ban = "Инспектирането на елементи не е разрешено в този браузър.",
 		thermal_night_vision_ban = "По-ярките нощи не са позволени.",
-		underground_ban = "Изглежда сте попаднали в дупка на зайче.",
 		vehicle_modification_ban = "Не успяхте да намерите течност за фаровете на колата си.",
 		vehicle_spawn_ban = "Ах, мечтаещи за разходка с `${modelName}`, нали? Това не е шоурум, а този модел? Има вечна списъчна очакване!",
 		weapon_spawn_ban = "Тъжно ли сте за `${weaponName}`? Това не е оръжеен склад, а това парче? Все още е в ковачницата.",
@@ -700,7 +653,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Лошо Създателство",
-		type_bad_screen_word = "Лоша Дума на екрана",
 		type_blacklisted_command = "Команда в Черния списък",
 		type_clear_tasks = "Изчистване на Задачите",
 		type_damage_modifier = "Модификатор на Управлението",
@@ -734,7 +686,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		type_suspicious_transfer = "Подозрителен превод",
 		type_text_entry = "Текстов вход",
 		type_thermal_night_vision = "Термално/нощно виждане",
-		type_underground = "Подземно",
 		type_vehicle_modification = "Промяна на превозно средство",
 		type_illegal_local_vehicle = "Използване на ненамрежов превозно средство",
 
@@ -899,6 +850,13 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		ragdoll_command_parameter_server_id_help = "Укажете идентификация на сървъра, за да разрушите друг играч.",
 		ragdoll_command_substitutes = "",
 
+		-- animations/ledges
+		sit_ledge_command = "седи_на_парапет",
+		sit_ledge_command_help = "Седнете на парапет, ако сте пред него. Трябва да гледате към парапета.",
+		sit_ledge_command_parameter_variation = "вариация",
+		sit_ledge_command_parameter_variation_help = "Коя анимация на сядане да се възпроизведе (1 - 4).",
+		sit_ledge_command_substitutes = "парапет",
+
 		-- animations/walkstyles
 		marathon_command = "маратон",
 		marathon_command_help = "Превключване на debug функцията 'маратон', за да видите кой пешир трябва да се подобри.",
@@ -933,11 +891,23 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		important_staff_pm_command_parameter_message_help = "Важното съобщение, което искате да изпратите.",
 		important_staff_pm_command_substitutes = "!staffpm, !staff_pm",
 
+		reply_pm_command = "отговори_лично_съобщение",
+		reply_pm_command_help = "Отговорете на последното персонално съобщение, което сте получили.",
+		reply_pm_command_parameter_message = "съобщение",
+		reply_pm_command_parameter_message_help = "Съобщението, което искате да изпратите.",
+		reply_pm_command_substitutes = "reply",
+
 		staff_command = "персонал",
 		staff_command_help = "Излъчете съобщение до всички активни членове на персонала.",
 		staff_command_parameter_message = "съобщение",
 		staff_command_parameter_message_help = "Съобщението, което искате да изпратите.",
 		staff_command_substitutes = "",
+
+		local_staff_command = "local_staff",
+		local_staff_command_help = "Излъчване на съобщение до всички активни членове на персонала в радиус от 25м.",
+		local_staff_command_parameter_message = "съобщение",
+		local_staff_command_parameter_message_help = "Съобщението, което искате да изпратите.",
+		local_staff_command_substitutes = "lstaff",
 
 		wipe_command = "изтриване",
 		wipe_command_help = "Изтрийте нежелани обекти от картата.",
@@ -946,7 +916,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		wipe_command_parameter_ignore_local_entities = "игнориране на локални обекти",
 		wipe_command_parameter_ignore_local_entities_help = "Игнорирайте обекти, които не са съседствуващи? Ако искате да почистите след измамник, се препоръчва да го поставите на `true` или `1`.",
 		wipe_command_parameter_model_name = "име на модел",
-		wipe_command_parameter_model_name_help = "Ако искате да изтриете само обекти с определено име на модел, поставете името на модела тук. В противен случай го оставете празно, на `false` или `0`. Можете също да го зададете на `vehicles`, `peds`, `objects` или `doors`.",
+		wipe_command_parameter_model_name_help = "Ако желаете да изтриете само обекти от определено име на модел, въведете име на модела тук. В противен случай оставете празно, `false` или `0`. Можете да го настроите и на `vehicles`, `peds`, `objects`, `doors`, `broken` или `npcs`.",
 		wipe_command_parameter_camera = "камера",
 		wipe_command_parameter_camera_help = "Използвайте координатите на камерата си вместо координатите на вашия персонаж. По подразбиране е не, `1` или `y` за да.",
 		wipe_command_substitutes = "",
@@ -1053,33 +1023,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		nitro_boost_command_parameter_server_id_help = "Ако искате да превключите 'нитро усилването' за някой друг, посочете техния идентификатор на сървъра тук.",
 		nitro_boost_command_substitutes = "нитро",
 
-		indestructibility_command = "неразрушимост",
-		indestructibility_command_help = "Превключете 'неразрушимост'.",
-		indestructibility_command_parameter_server_id = "идентификатор на сървъра",
-		indestructibility_command_parameter_server_id_help = "Ако искате да превключите 'неразрушимостта' за някой друг, поставете техния идентификатор на сървъра тук.",
-		indestructibility_command_parameter_ignore_vehicle = "игнорирай превозното средство",
-		indestructibility_command_parameter_ignore_vehicle_help = "Ако е зададено на `1` или `y`, това ще направи само вас неразрушими, а не и превозното средство, в което се намирате.",
-		indestructibility_command_substitutes = "нер, бог, режим_бог, богрежим",
-
 		no_nearby_vehicles_command = "няма_близки_превозни_средства",
 		no_nearby_vehicles_command_help = "Превключете 'няма близки превозни средства'.",
 		no_nearby_vehicles_command_parameter_server_id = "идентификатор на сървъра",
 		no_nearby_vehicles_command_parameter_server_id_help = "Ако искате да превключите 'няма близки превозни средства' за някого друг, въведете неговия идентификатор на сървъра тук.",
 		no_nearby_vehicles_command_substitutes = "",
-
-		job_command = "работа",
-		job_command_help = "Актуализирайте работата на някого, базирана на търсене.",
-		job_command_parameter_server_id = "идентификатор на сървъра",
-		job_command_parameter_server_id_help = "Идентификаторът на играча на сървъра или 0, за да изберете себе си.",
-		job_command_parameter_search = "търсене",
-		job_command_parameter_search_help = "Работата / отделът / позицията или част от него, които искате да потърсите, или `none`, за да премахнете работата.",
-		job_command_substitutes = "",
-
-		reset_job_command = "reset_job",
-		reset_job_command_help = "Нулира работата на някого до безработен.",
-		reset_job_command_parameter_server_id = "идентификатор на сървъра",
-		reset_job_command_parameter_server_id_help = "Идентификаторът на играча от сървъра или 0, за да изберете себе си.",
-		reset_job_command_substitutes = "",
 
 		watching_command = "наблюдаване",
 		watching_command_help = "Показва ви всички играчи, които са в близост и се наблюдават.",
@@ -1403,6 +1351,16 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		trigger_ems_call_command_help = "изпраща местно обаждане за спешна помощ от вашата позиция.",
 		trigger_ems_call_command_substitutes = "",
 
+		ridealong_command = "ridealong",
+		ridealong_command_help = "Превключва дали можеш да влезеш в превозните средства на NPC-тата.",
+		ridealong_command_substitutes = "",
+
+		kill_ped_command = "kill_ped",
+		kill_ped_command_help = "Убива NPC-то с дадената мрежова идентификационна информация.",
+		kill_ped_command_parameter_network_id = "мрежова идентификационна информация",
+		kill_ped_command_parameter_network_id_help = "Мрежовата идентификационна информация на NPC-то, което да бъде убито.",
+		kill_ped_command_substitutes = "",
+
 		-- base/anti_cheat
 		model_detect_add_command = "model_detect_add",
 		model_detect_add_command_help = "Временно добавя модел към списъка за откриване. Списъкът се нулира при рестартиране на сървъра.",
@@ -1464,6 +1422,19 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		get_pings_command_help = "Вземете средното време на отговор от различни сървъри по света, за да намерите най-подходящото местоположение за този сървър.",
 		get_pings_command_substitutes = "",
 
+		-- base/points
+		points_command = "points",
+		points_command_help = "Показва количеството OPC Points, които притежавате.",
+		points_command_substitutes = "",
+
+		use_points_command = "use_points",
+		use_points_command_help = "Използване на точките. Това се използва, когато сървърът има специални предимства, за които те трябва ръчно да платят. Не използвайте това, освен ако не ви е инструктирано, тъй като ще отнеме точките ви без да се замисля два пъти!",
+		use_points_command_parameter_amount = "сума",
+		use_points_command_parameter_amount_help = "Сумата точки, която сървърът трябва да се опита да вземе от вас.",
+		use_points_command_parameter_label = "етикет",
+		use_points_command_parameter_label_help = "Етикет, който ще бъде записан заедно с използването на точки.",
+		use_points_command_substitutes = "",
+
 		-- base/profile
 		profile_debug_command = "profile_debug",
 		profile_debug_command_help = "Превключвател за профилния дебъгер.",
@@ -1478,12 +1449,16 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		-- base/users
 		playtime_command = "playtime",
 		playtime_command_help = "Проверете общото време за игра на сървъра, както и времето за игра в текущата сесия.",
+		playtime_command_parameter_total_playtime = "общо време на игра",
+		playtime_command_parameter_total_playtime_help = "По подразбиране времето на игра на героите ще бъде използвано. Задайте това на `y`, за да използвате общото време в сървъра.",
 		playtime_command_parameter_server_id = "Идентификатор на сървъра",
 		playtime_command_parameter_server_id_help = "Идентификаторът на сървъра на играча, за когото искате да разберете игровото време. Можете да оставите празно или да го зададете на `0`, за да изберете себе си.",
 		playtime_command_substitutes = "",
 
 		leaderboard_command = "таблица с резултати",
 		leaderboard_command_help = "Проверете таблицата с резултати за игровото време.",
+		leaderboard_command_parameter_total_playtime = "общо време за игра",
+		leaderboard_command_parameter_total_playtime_help = "По подразбиране, времето за игра, наистина играно от героите, ще бъде използвано. Задайте това на `y`, за да използвате общото време в сървъра вместо това.",
 		leaderboard_command_substitutes = "",
 
 		package_command = "пакет",
@@ -1521,6 +1496,13 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		create_airdrop_custom_command_parameter_items = "артикули",
 		create_airdrop_custom_command_parameter_items_help = "Низ съдържащ списък с предмети и количеството им. Низът трябва да изглежда като 'зелено ябълко:5,хамбургер:3'.",
 		create_airdrop_custom_command_substitutes = "",
+
+		-- game/airports
+		registration_lookup_command = "registration_lookup",
+		registration_lookup_command_help = "Търсене на регистрация на самолет.",
+		registration_lookup_command_parameter_registration = "регистрация",
+		registration_lookup_command_parameter_registration_help = "Регистрацията на самолета (например N123AZ).",
+		registration_lookup_command_substitutes = "регистрация",
 
 		-- game/airstrike
 		call_airstrike_command = "call_airstrike",
@@ -1795,6 +1777,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		reconnect_command_socket_command_help = "Опитва се да се свърже отново с командния сокет.",
 		reconnect_command_socket_command_substitutes = "",
 
+		-- game/container_storage
+		containers_command = "контейнери",
+		containers_command_help = "Преглед и управление на наемени съхранителни контейнери.",
+		containers_command_substitutes = "",
+
 		-- game/crafting
 		crafting_debug_command = "отстраняване_на_проблеми_с_изработката",
 		crafting_debug_command_help = "Дебъгва всички местоположения за ръчна изработка.",
@@ -1841,8 +1828,14 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 		-- game/debug
 		debug_command = "debug",
-		debug_command_help = "Превключване на режима на отстраняване на грешки за обектите. Това ще покаже някои общи информации за близките обекти.",
+		debug_command_help = "Превключване на дебъгера. Това ще покаже някои общи информации за вас и света и ще покаже съществата, на които гледате.",
+		debug_command_parameter_minimal = "минимално",
+		debug_command_parameter_minimal_help = "Показване само на минимална информация (избягва множество нативни обаждания).",
 		debug_command_substitutes = "",
+
+		entity_debug_command = "entity_debug",
+		entity_debug_command_help = "Превключване на дебъгера на единството. Това ще покаже някои общи информации за единицата, която гледате.",
+		entity_debug_command_substitutes = "",
 
 		npc_debug_command = "npc_debug",
 		npc_debug_command_help = "Отстраняване на грешки за всички NPC-та без животни около вас.",
@@ -1978,6 +1971,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		play_animation_command_parameter_flags_help = "Флаговете на анимацията, която искате да възпроизведете.",
 		play_animation_command_substitutes = "анимация",
 
+		play_scenario_command = "play_scenario",
+		play_scenario_command_help = "Възпроизвежда определен сценарий.",
+		play_scenario_command_parameter_scenario = "сценарий",
+		play_scenario_command_parameter_scenario_help = "Името на сценария, който искате да възпроизведете.",
+		play_scenario_command_substitutes = "сценарий",
+
 		draw_coords_command = "рисувай_координати",
 		draw_coords_command_help = "Рисува координати в света.",
 		draw_coords_command_parameter_x = "x",
@@ -2106,6 +2105,24 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		random_position_command_help = "Те телепортира до случайна позиция на главния остров. (Също така включва невидимост)",
 		random_position_command_substitutes = "случайна",
 
+		crash_ui_command = "crash_ui",
+		crash_ui_command_help = "Извиква събитие в потребителския интерфейс, което намерено ще го срине и ще предизвика познатата 'флашбанг' грешка.",
+		crash_ui_command_substitutes = "",
+
+		toggle_deep_log_events_command = "toggle_deep_log_events",
+		toggle_deep_log_events_command_help = "Превключва дълбокото записване на събития в конзолата.",
+		toggle_deep_log_events_command_substitutes = "",
+
+		find_native_toggles_command = "find_native_toggles",
+		find_native_toggles_command_help = "Това ще ви помогне да откриете потенциални 'toggle' функции за определено поведение, като проверява голям брой функции (natives) на всеки такт. Ще се записва в конзолата всеки път когато някоя от тях се промени.",
+		find_native_toggles_command_parameter_extreme = "extreme",
+		find_native_toggles_command_parameter_extreme_help = "Включва също всички неизвестни функции (natives), които нямат параметри.",
+		find_native_toggles_command_substitutes = "",
+
+		show_cancelled_vehicles_command = "покажи_отказани_превозни_средства",
+		show_cancelled_vehicles_command_help = "Превключете показването на отказани превозни средства.",
+		show_cancelled_vehicles_command_substitutes = "",
+
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
 		debug_menu_command_help = "Превключва дебъг менюто.",
@@ -2139,6 +2156,14 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		door_debug_command = "door_debug",
 		door_debug_command_help = "Отстраняване на грешки за информация за близките врати.",
 		door_debug_command_substitutes = "",
+
+		disable_doors_command = "деактивиране_на_вратите",
+		disable_doors_command_help = "Пълно деактивиране на скрипта за врати за модифициране на обекти на врати.",
+		disable_doors_command_substitutes = "",
+
+		add_doors_command = "добави_врати",
+		add_doors_command_help = "Превключване на добавянето на врати за копиране.",
+		add_doors_command_substitutes = "",
 
 		-- game/effect_zones
 		effect_zones_debug_command = "effect_zones_debug",
@@ -2413,10 +2438,21 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		animal_debug_command_help = "Превключва дебъга за животни.",
 		animal_debug_command_substitutes = "",
 
+		-- game/indestructability
+		indestructibility_command = "неразрушимост",
+		indestructibility_command_help = "Превключване на недвижимостта си.",
+		indestructibility_command_parameter_server_id = "идентификатор на сървъра",
+		indestructibility_command_parameter_server_id_help = "Ако искате да превключите някому друг недвижимостта, вмъкнете неговият идентификатор на сървъра тук.",
+		indestructibility_command_substitutes = "нер, бог, режим_бог, богрежим",
+
 		-- game/injuries
 		inspect_command = "провери",
 		inspect_command_help = "Проверява най-близкия играч за наранявания.",
 		inspect_command_substitutes = "",
+
+		autopsy_command = "некропсия",
+		autopsy_command_help = "Извършете некропсия на тялото на най-близкия играч. (Ще ви покаже последната записана причина за смърт)",
+		autopsy_command_substitutes = "",
 
 		-- game/instances
 		instance_create_command = "създай_инстанция",
@@ -2611,6 +2647,19 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		refresh_magazines_command_help = "Обновете списанията, ако има промени в базата данни.",
 		refresh_magazines_command_substitutes = "",
 
+		create_magazine_command = "create_magazine",
+		create_magazine_command_help = "Спаунете списание от определен брой на определена серия.",
+		create_magazine_command_parameter_series_name = "име на серията",
+		create_magazine_command_parameter_series_name_help = "Името на серията на списанията.",
+		create_magazine_command_parameter_issue_id = "номер на броя",
+		create_magazine_command_parameter_issue_id_help = "Идентификационен номер на броя, който искате да спаунете.",
+		create_magazine_command_substitutes = "",
+
+		-- game/map
+		live_map_command = "жива_карта",
+		live_map_command_help = "Превключване на живата карта (ще покаже всички играчи на картата ви).",
+		live_map_command_substitutes = "",
+
 		-- game/mdt
 		mdt_command = "mdt",
 		mdt_command_help = "Превключване на MDT интерфейса.",
@@ -2629,6 +2678,19 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		maxwell_debug_command = "maxwell_debug",
 		maxwell_debug_command_help = "Отстраняване на грешки в местоположението на максуел.",
 		maxwell_debug_command_substitutes = "",
+
+		-- game/minecraft
+		minecraft_command = "майнкрафт",
+		minecraft_command_help = "Поставяне на блокове от Майнкрафт, много епично!",
+		minecraft_command_parameter_no_sound = "без_звук",
+		minecraft_command_parameter_no_sound_help = "Без звук при поставяне на блоковете.",
+		minecraft_command_substitutes = "",
+
+		minecraft_wipe_command = "майнкрафт_изчистване",
+		minecraft_wipe_command_help = "Изчистване на всички блокове от Майнкрафт в определен радиус.",
+		minecraft_wipe_command_parameter_radius = "радиус",
+		minecraft_wipe_command_parameter_radius_help = "Радиусът, в който искате да изтриете блокове. (0 = всички блокове, максимум 5000)",
+		minecraft_wipe_command_substitutes = "",
 
 		-- game/mining
 		mining_debug_command = "mining_debug",
@@ -2750,6 +2812,15 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		whois_command_parameter_search_help = "Името или част от името на играча.",
 		whois_command_substitutes = "",
 
+		-- game/model_view
+		model_view_command = "model_view",
+		model_view_command_help = "Преглеждане на модел със зелен екран в заден план.",
+		model_view_command_parameter_model = "модел",
+		model_view_command_parameter_model_help = "Име на модела или хаш, който искате да видите.",
+		model_view_command_parameter_no_blocker = "без блокер",
+		model_view_command_parameter_no_blocker_help = "Деактивиране на сенчестия блокер (по подразбиране: не).",
+		model_view_command_substitutes = "модел, изглед",
+
 		-- game/money
 		cash_command = "наличност",
 		cash_command_help = "Показване на баланса ви в наличност.",
@@ -2835,6 +2906,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		oxy_tutorial_command = "oxy_tutorial",
 		oxy_tutorial_command_help = "Възпроизвеждане на урока за работа с кислород (oxy) при следващото стартиране на играта.",
 		oxy_tutorial_command_substitutes = "",
+
+		-- game/pacific_bank
+		power_generators_debug_command = "power_generators_debug",
+		power_generators_debug_command_help = "Превключва дебъгването на генераторите на енергия на Тихоокеанската банка.",
+		power_generators_debug_command_substitutes = "",
 
 		-- game/panel
 		panel_command = "панел",
@@ -2937,13 +3013,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		ped_steal_command_parameter_server_id = "server id",
 		ped_steal_command_parameter_server_id_help = "Сървър идентификацията на играча.",
 		ped_steal_command_substitutes = "steal_ped",
-
-		-- game/ped_takeover
-		takeover_ped_command = "takeover_ped",
-		takeover_ped_command_help = "Дава ви контрол над определен пед.",
-		takeover_ped_command_parameter_network_id = "ид. на мрежата",
-		takeover_ped_command_parameter_network_id_help = "Идентификационен номер на мрежата на педа, който искате да превземете.",
-		takeover_ped_command_substitutes = "превземи",
 
 		-- game/ped_tasks
 		ped_debug_command = "ped_debug",
@@ -3212,6 +3281,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		savings_accounts_command_help = "Прегледайте и управлявайте всичките си сметки за спестявания.",
 		savings_accounts_command_substitutes = "спестявания, сметки",
 
+		-- game/scenarios
+		scenarios_debug_command = "scenarios_debug",
+		scenarios_debug_command_help = "Превключва дебъгването на сценариите.",
+		scenarios_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "метагейм",
 		metagame_command_help = "Превключи постоянното изчертаване на идентификаторите на играчите.",
@@ -3390,13 +3464,13 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		tp_to_player_command_help = "Телепортира ви до играч.",
 		tp_to_player_command_parameter_server_id = "server id",
 		tp_to_player_command_parameter_server_id_help = "Сървърният идентификатор на играча, до когото искате да се телепортирате.",
-		tp_to_player_command_substitutes = "",
+		tp_to_player_command_substitutes = "тпдо",
 
 		tp_player_here_command = "tp_player_here",
 		tp_player_here_command_help = "Телепортира играч до вас.",
 		tp_player_here_command_parameter_server_id = "server id",
 		tp_player_here_command_parameter_server_id_help = "Сървърният идентификатор на играча, когото искате да телепортирате до вас.",
-		tp_player_here_command_substitutes = "",
+		tp_player_here_command_substitutes = "тптук",
 
 		tp_player_player_command = "tp_player_player",
 		tp_player_player_command_help = "Телепортира един играч до друг играч.",
@@ -3504,6 +3578,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		drive_to_command_parameter_network_id_help = "Или идентификаторът на мрежата на пешеходеца, идентификаторът на мрежата на превозното средство (на което пешеходецът е шофьор) или оставете празно, за да изберете шофьора на текущото превозно средство.",
 		drive_to_command_substitutes = "",
 
+		hop_in_command = "качи_се",
+		hop_in_command_help = "Позволява на най-близкия NPC да качи вашия автомобил (ако има свободно място).",
+		hop_in_command_parameter_network_id = "идентификационен номер на мрежата",
+		hop_in_command_parameter_network_id_help = "Идентификационният номер на NPC (по избор).",
+		hop_in_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "voice_debug",
 		voice_debug_command_help = "Превключва дебъгера на гласовата комуникация.",
@@ -3589,14 +3669,18 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		ped_forwards_command_help = "Накарва най-близкия пешеходец в превозно средство да кара напред.",
 		ped_forwards_command_substitutes = "",
 
+		vehicle_flip_command = "vehicle_flip",
+		vehicle_flip_command_help = "Завъртане на превозното средство около определена ос.",
+		vehicle_flip_command_parameter_axis = "ос",
+		vehicle_flip_command_parameter_axis_help = "Ос за завъртане, `x`, `y` или `z`.",
+		vehicle_flip_command_parameter_network_id = "идентификационен номер на мрежата",
+		vehicle_flip_command_parameter_network_id_help = "Идентификационният номер на превозното средство за завъртане. Оставете празно, за да завъртите превозното средство, в което сте.",
+		vehicle_flip_command_substitutes = "vf",
+
 		-- global/entities
 		local_entities_debug_command = "локални_обекти-дебъг",
 		local_entities_debug_command_help = "Превключва дебъга за локалните обекти.",
 		local_entities_debug_command_substitutes = "локални_обекти_дебъг_команди",
-
-		no_ped_population_areas_debug_command = "без_зона_на_населението_debug",
-		no_ped_population_areas_debug_command_help = "Превключване на дебъгера 'без зона на населението'.",
-		no_ped_population_areas_debug_command_substitutes = "",
 
 		-- global/explosions
 		create_explosion_command = "създай_експлозия",
@@ -3627,12 +3711,22 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		entity_states_command = "състояния_на_обект",
 		entity_states_command_help = "Извежда всички състояния на определен обект.",
 		entity_states_command_parameter_network_id = "мрежов идентификатор",
-		entity_states_command_parameter_network_id_help = "Мрежов идентификатор на обекта.",
+		entity_states_command_parameter_network_id_help = "Идентификационният номер в мрежата на същността. Ако оставите празно или зададете на 0, ще избере превозното средство, в което се намирате, а след това вашата собствена фигура на играча.",
 		entity_states_command_substitutes = "",
 
 		draw_entity_states_command = "изобрази_състояния_на_обект",
 		draw_entity_states_command_help = "Показва всички обекти с едно или повече състояния.",
 		draw_entity_states_command_substitutes = "",
+
+		set_entity_state_command = "set_entity_state",
+		set_entity_state_command_help = "Задава състоянието на единицата на дадената стойност, независимо от ограниченията.",
+		set_entity_state_command_parameter_network_id = "идентификационен номер в мрежата",
+		set_entity_state_command_parameter_network_id_help = "Идентификационният номер в мрежата на същността. Ако оставите празно или зададете на 0, ще избере превозното средство, в което се намирате, а след това вашата собствена фигура на играча.",
+		set_entity_state_command_parameter_key = "ключ",
+		set_entity_state_command_parameter_key_help = "Името на състоянието.",
+		set_entity_state_command_parameter_value = "стойност",
+		set_entity_state_command_parameter_value_help = "Стойността, на която искате да зададете състоянието.",
+		set_entity_state_command_substitutes = "",
 
 		-- illegal/drugs
 		drugs_debug_command = "drugs_debug",
@@ -3652,6 +3746,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		bus_debug_command = "bus_debug",
 		bus_debug_command_help = "Изчертава всички автобусни спирки.",
 		bus_debug_command_substitutes = "",
+
+		start_bus_route_command = "start_bus_route",
+		start_bus_route_command_help = "Стартирайте определен маршрут на автобус.",
+		start_bus_route_command_parameter_route = "маршрут",
+		start_bus_route_command_parameter_route_help = "Името на маршрута, който искате да стартирате.",
+		start_bus_route_command_substitutes = "",
 
 		--jobs/doj
 		lookup_character_command = "търси_персонаж",
@@ -3674,7 +3774,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		toggle_duty_status_command = "toggle_duty_status",
 		toggle_duty_status_command_help = "Превключва статуса ви на задължение/без задължение.",
 		toggle_duty_status_command_parameter_server_id = "идентификатор на сървъра",
-		toggle_duty_status_command_parameter_server_id_help = "Целевият идентификатор на сървъра или празно, ако искате да превключите своя собствен статус на задължение.",
+		toggle_duty_status_command_parameter_server_id_help = "Идентификационен номер на целевия сървър или празно, ако искате да превключите състоянието на служебност.",
 		toggle_duty_status_command_substitutes = "duty_status, duty",
 
 		toggle_training_command = "превключване_на_обучение",
@@ -3684,6 +3784,30 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		toggle_operator_status_command = "превключване_на_статус_оператор",
 		toggle_operator_status_command_help = "Превключва вашето състояние на аварийен оператор. С това включено, ще получите възможността да приемате обаждания на 911.",
 		toggle_operator_status_command_substitutes = "оператор, превключване_оператор, операторски_статус",
+
+		-- jobs/emergency
+		remove_clothing_command = "remove_clothing",
+		remove_clothing_command_help = "Премахнете определен дрехол от друг играч. Работи само със свързани или свалени играчи.",
+		remove_clothing_command_parameter_type = "type",
+		remove_clothing_command_parameter_type_help = "Видът на дрехата, която искате да премахнете. Може да бъде `mask`, `glasses`, `hat` или `gloves`.",
+		remove_clothing_command_parameter_server_id = "идентификационен номер на сървъра",
+		remove_clothing_command_parameter_server_id_help = "Сървърният идентификатор на играча, от когото искате да премахнете облеклото. Ако остане празно, ще избере най-близкия бъдещ или свален играч.",
+		remove_clothing_command_substitutes = "rc",
+
+		-- jobs/jobs
+		job_command = "работа",
+		job_command_help = "Актуализирайте работата на някого въз основа на прекъсване или превключете работния интерфейс.",
+		job_command_parameter_server_id = "идентификатор на сървъра",
+		job_command_parameter_server_id_help = "Идентификаторът на играча на сървъра или 0, за да изберете себе си.",
+		job_command_parameter_shortcut = "прекъсване",
+		job_command_parameter_shortcut_help = "Прекъсването към работата, която искате да настроите. Оставете това поле празно, за да превключите работния интерфейс.",
+		job_command_substitutes = "",
+
+		reset_job_command = "reset_job",
+		reset_job_command_help = "Нулира работата на някого до безработен.",
+		reset_job_command_parameter_server_id = "идентификатор на сървъра",
+		reset_job_command_parameter_server_id_help = "Идентификаторът на играча от сървъра или 0, за да изберете себе си.",
+		reset_job_command_substitutes = "",
 
 		-- jobs/police
 		aim_assist_command = "помощ_при_целта",
@@ -3750,12 +3874,19 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		set_marriage_command = "set_marriage",
 		set_marriage_command_help = "Задава състоянието на брака между двама персонажи.",
 		set_marriage_command_parameter_partner_a_cid = "партньор а",
-		set_marriage_command_parameter_partner_a_cid_help = "Идентификаторът на персонажа на първия партньор.",
+		set_marriage_command_parameter_partner_a_cid_help = "Идентификаторът на героя на партньор А.",
 		set_marriage_command_parameter_partner_b_cid = "партньор b",
 		set_marriage_command_parameter_partner_b_cid_help = "Идентификационен номер на втория партньор.",
 		set_marriage_command_parameter_state = "състояние",
 		set_marriage_command_parameter_state_help = "Или `женен` или `разведен`.",
 		set_marriage_command_substitutes = "",
+
+		-- jobs/tasks
+		tasks_debug_command = "tasks_debug",
+		tasks_debug_command_help = "Извежда отстранителна информация за всички задачи чрез F8.",
+		tasks_debug_command_parameter_area_id = "идентификационен номер на областта",
+		tasks_debug_command_parameter_area_id_help = "Идентификационен номер на областта на задачата, която искате да отстраните. Оставете празно, за да извеждате всички области.",
+		tasks_debug_command_substitutes = "",
 
 		-- jobs/tow
 		toggle_mechanic_messages_command = "превключване_на_съобщенията_за_механик",
@@ -3767,6 +3898,19 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		toggle_anchor_command_help = "Превключва котвата на близост лодка.",
 		toggle_anchor_command_substitutes = "котва",
 
+		-- vehicles/cruise_control
+		set_cruise_control_speed_command = "set_cruise_control_speed",
+		set_cruise_control_speed_command_help = "Задава скоростта на круизния контрол на превозното средство, в което сте.",
+		set_cruise_control_speed_command_parameter_speed = "скорост",
+		set_cruise_control_speed_command_parameter_speed_help = "Скоростта, на която искате да я зададете.",
+		set_cruise_control_speed_command_substitutes = "контрол на кръстосането, кк",
+
+		set_speed_limiter_speed_command = "set_speed_limiter_speed",
+		set_speed_limiter_speed_command_help = "Задайте скоростната ограничителна скорост на превозното средство, в което се намирате.",
+		set_speed_limiter_speed_command_parameter_speed = "скорост",
+		set_speed_limiter_speed_command_parameter_speed_help = "Максималната скорост, която искате да зададете.",
+		set_speed_limiter_speed_command_substitutes = "ограничител_на_скорост, оск",
+
 		-- vehicles/damage
 		vehicle_damage_debug_command = "отстраняване_на_повреди_на_превозно_средство_отстраняване",
 		vehicle_damage_debug_command_help = "Отстранява текущите стойности на повреди на превозните средства.",
@@ -3777,6 +3921,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		set_fuel_command_help = "Задава нивото на горивото на превозното средство, в което се намирате.",
 		set_fuel_command_parameter_fuel_level = "ниво_на_горивото",
 		set_fuel_command_parameter_fuel_level_help = "Нивото на горивото, което искате да зададете. Оставянето на това поле празно ще автоматично избере `100`.",
+		set_fuel_command_parameter_server_id = "идентификатор_на_сървъра",
+		set_fuel_command_parameter_server_id_help = "Ако искате да зададете горивото за друг играч. Ако оставите това празно, ще се изберете автоматично.",
 		set_fuel_command_substitutes = "гориво",
 
 		-- vehicles/garage_access
@@ -3805,7 +3951,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		give_key_command = "дай_ключ",
 		give_key_command_help = "Дай ключ за превозно средство на близък човек.",
 		give_key_command_parameter_server_id = "сървър id",
-		give_key_command_parameter_server_id_help = "Сървър id на играча, на когото искате да дадете ключа. Можете да го оставите празно (или на 0), за да го дадете на най-близкия човек.",
+		give_key_command_parameter_server_id_help = "Идентификаторът на сървъра на играча, на когото искате да дадете ключа. Това може да бъде оставено празно (или на 0), за да бъде дадено на най-близкото лице.",
 		give_key_command_substitutes = "дайключ",
 
 		hotwire_vehicle_command = "откража_превозното_средство",
@@ -3824,6 +3970,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		keys_command_parameter_server_id_help = "Дайте на друг играч ключовете на превозното средство, в което се намират.",
 		keys_command_substitutes = "",
 
+		check_ignition_tampering_command = "провери_злонамерението_на_запалката",
+		check_ignition_tampering_command_help = "Проверете дали запалката на най-близкия автомобил е била злонамерено променена.",
+		check_ignition_tampering_command_substitutes = "",
+
 		-- vehicles/modifications
 		wheel_offset_command = "offset_na_kolyata",
 		wheel_offset_command_help = "Променете отместването на колелата на превозното средство.",
@@ -3841,6 +3991,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		wheel_rotation_command_parameter_value_help = "Количеството, което искате да промените. Може да бъде в интервала от -0.5 до 0.5, като 0 е стандартната стойност.",
 		wheel_rotation_command_substitutes = "",
 
+		-- vehicles/oil
+		oil_level_command = "ниво_на_масло",
+		oil_level_command_help = "Проверете нивото на масло на най-близкия автомобил.",
+		oil_level_command_substitutes = "масло",
+
 		-- vehicles/plates
 		fake_plate_command = "фалшива_табела",
 		fake_plate_command_help = "Превключва фалшивата табела на текущото превозно средство.",
@@ -3857,8 +4012,14 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		custom_plate_command_parameter_vehicle_id = "идентификатор на превозното средство",
 		custom_plate_command_parameter_vehicle_id_help = "Идентификаторът на превозното средство, на което искате да зададете персонализираната табела. (Можете да намерите този идентификатор в гаража си)",
 		custom_plate_command_parameter_plate_number = "номер на табелата",
-		custom_plate_command_parameter_plate_number_help = "Номер на табелата, който искате да зададете. Номерата на табелата могат да бъдат до 8 знака и могат да съдържат само главни букви и цифри.",
+		custom_plate_command_parameter_plate_number_help = "Номер на табелата, която бихте искали да зададете. Номерата на табелата могат да бъдат до 8 символа дълги и могат да съдържат само главни букви и цифри. Играта игнорира интервалите.",
 		custom_plate_command_substitutes = "",
+
+		reset_plate_command = "нулиране_на_табелата",
+		reset_plate_command_help = "Нулирайте табелата на вашето превозно средство (ако има персонализирана табела, която не отговаря на обичайния формат).",
+		reset_plate_command_parameter_vehicle_id = "идентификационен номер на превозното средство",
+		reset_plate_command_parameter_vehicle_id_help = "Идентификационният номер на превозното средство, което искате да нулирате. (Можете да намерите този номер в гаража си)",
+		reset_plate_command_substitutes = "",
 
 		-- vehicles/runways
 		ifr_command = "ifr",
@@ -3877,7 +4038,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 		-- vehicles/vehicles
 		flip_command = "flip",
-		flip_command_help = "Обръщане на обръщено превозно средство.",
+		flip_command_help = "Превъртете превърнато превозно средство или количка за пазаруване.",
 		flip_command_substitutes = "",
 
 		toggle_roll_control_command = "превключване_на_контрол_на_котене",
@@ -3935,12 +4096,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		manual_toggle_command_command_parameter_hybrid = "хибрид",
 		manual_toggle_command_command_parameter_hybrid_help = "Хибридният режим автоматично превключва на по-ниска предавка при определено обороти на двигателя. Може да бъде `късно`, `средно` или `рано`.",
 		manual_toggle_command_substitutes = "",
-
-		speed_limiter_command = "ограничител_на_скоростта",
-		speed_limiter_command_parameter_speed = "скорост",
-		speed_limiter_command_parameter_speed_help = "Коя скорост бихте искали ограничителят на скоростта да използва? Можете да оставите това поле празно, за да го нулирате и върнете към нормалното поведение.",
-		speed_limiter_command_help = "Преобразувайте обичайното поведение на ограничителя на скоростта, за да зададете предварително ограничение на скоростта.",
-		speed_limiter_command_substitutes = "сл, контрол_на_скоростта, управление_на_скоростта",
 
 		toggle_vehicle_weapons_command = "превключване_на_оръжия_на_превозното_средство",
 		toggle_vehicle_weapons_command_help = "Превключва дали оръжията на превозното средство могат да бъдат използвани или не.",
@@ -4090,6 +4245,15 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		list_hosts = "${listHosts}"
 	},
 
+	points = {
+		you_have_points = "Имате ${frameworkPoints} ОП точка(и).",
+		used_points = "Използвани са ${amount} ОП точка(и) под етикета `${label}`.",
+		not_enough_op_points = "Нямате достатъчно ОП точки.",
+
+		points_used_logs_title = "Използвани ОП Точки",
+		points_used_logs_details = "${consoleName} използва ${amount} ОП точка(и) под етикет `${label}`."
+	},
+
 	profile = {
 		profile_debug_enabled = "Профилът на дебъгера е активиран. Проверете конзолата F8 за изход.",
 		profile_debug_disabled = "Профилът на дебъгера е деактивиран."
@@ -4125,11 +4289,16 @@ OP.Global.Locales.Languages["bg-BG"] = {
 	routes = {
 		route_not_found = "Маршрутът ${route} не е намерен.",
 		route_restricted = "Маршрутът ${route} е ограничен.",
+		route_disabled = "Маршрут ${route} е деактивиран.",
 		internal_server_error = "Вътрешна грешка на сървъра."
 	},
 
 	session = {
 		connecting_from_new_session = "Свързвате се от нова сесия."
+	},
+
+	steam = {
+		no_steam_allowed = "За да играете на този сървър, първо затворете FiveM, след това изключете Steam."
 	},
 
 	twitch = {
@@ -4145,9 +4314,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 	users = {
 		playtime = "Игрово време",
+		playtime_total = "Време за игра (Общо време за игра)",
 		player_playtime = "${playerName} (Позиция ${position})\nОбщо игрово време: ${totalPlaytime}\nИгрово време в сесията: ${sessionPlaytime}",
 		leaderboard = "Класация",
+		leaderboard_total = "Класация (Общо време за игра)",
 		your_position = "Вашата позиция",
+		leaderboard_loading = "Класацията все още се зарежда.",
 		logs_user_reject_connection_title = "Отхвърлена връзка",
 		logs_user_reject_connection_details = "Отхвърлена връзка от ${consoleName} (`${reason}`).",
 		logs_user_connected_title = "Потребител свързан",
@@ -4238,6 +4410,37 @@ OP.Global.Locales.Languages["bg-BG"] = {
 	},
 
 	-- game/*
+	admin_features = {
+		enabled_features_list = "Активирани Функционалности:",
+
+		advanced_metagame_feature = "AM",
+		aimbot_feature = "Aimbot",
+		disabled_recoil_feature = "Изключен откат",
+		evidence_view_feature = "Преглед на доказателства",
+		hit_indicator_feature = "Индикатор за попадение",
+		indestructibility_feature = "Неразрушимост",
+		infinite_ammo_feature = "Безкрайни боеприпаси",
+		invisibility_feature = "Невидимост",
+		muted_sirens_feature = "Заглушени сирени",
+		nitro_boost_feature = "Нитро ускорение",
+		no_nearby_vehicles_feature = "Няма коли в близост",
+		peeking_feature = "Пикиране",
+		roll_control_feature = "Контрол на завиване",
+		speed_boost_feature = "Ускорение на скоростта",
+		speed_up_progress_bar_feature = "Ускоряване на лентата за напредък",
+		sticky_feet_feature = "Лепкави крака",
+		wallhack_feature = "Стенахак",
+		watching_feature = "Наблюдение",
+		fortnite_feature = "Fortnite",
+		reflection_feature = "Отразяване на урон",
+		stable_cam_feature = "Стабилна камера",
+		super_jump_feature = "Супер скок",
+		server_id_hidden_feature = "Скрит идентификатор на сървъра",
+		fake_disconnect_feature = "Измамно изключване",
+		brighter_nights_feature = "Светлите нощи",
+		ridealong_feature = "Връзка с превозно средство"
+	},
+
 	admin_menu = {
 		menu_title = "Меню за администратори",
 		spectate_player = "Следи Играча"
@@ -4266,14 +4469,24 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		park_vehicle = "Паркирайте превозното средство",
 		park_vehicle_outside = "Паркирайте превозното средство извън",
 		close_menu = "Затвори менюто",
+		illegal = "Нелегално",
+		illegal_license_success = "Успешно хакнахте базата данни на FAA, лицензът ви е валиден за 5 дни.",
+		failed_illegal_license = "Неуспешно получаване на нелегална лицензия.",
 		spawned_vehicle = "Спавнато превозно средство.",
+		spawned_vehicle_large = "Спауниран голям превозно средство. Маркерът към него е поставен на картата ви.",
 		spawner_on_timeout = "Генераторът на превозно средство е на пауза. Моля, опитайте отново.",
 		spawn_area_not_clear = "Зоната за появяване не е свободна.",
 		return_button = "Назад",
 		deposit = "Депозит: $${amount}",
 		no_deposit = "Без депозит",
 		deposit_not_enough_money = "Нямате достатъчно пари, за да заплатите депозита.",
-		helipad = "Хелипад"
+		vehicle_no_free_seat = "Няма свободни места на това превозно средство.",
+		press_to_enter_aircraft = "Натиснете ~INPUT_ENTER~, за да влезете в самолета.",
+		no_aircraft_to_enter = "Няма налични самолети за влизане.",
+		helipad = "Хелипад",
+		looking_up = "Запитване за Регистрация",
+		registration_not_found = "Регистрацията не беше намерена.",
+		registration_lookup = "Регистрационният номер на самолета `${registration}` беше последно отдаден под наем на ${fullName} #${characterId}."
 	},
 
 	airstrike = {
@@ -4644,8 +4857,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		toggled_battle_royale_on = "Превключихте Battle Royale.",
 		toggled_battle_royale_off = "Изключихте Battle Royale.",
 		battle_royale_info = "Вие сте в реда за Battle Royale!\nВ момента има ${battleRoyaleQueueLength} играчи в реда.",
-		toggle_battle_royale_missing_permissions = "Играчът опита да превключи Битката на Royale, но нямаше необходимите разрешения за това.",
-		start_battle_royale_missing_permissions = "Играчът опита да стартира Битка на Royale, но нямаше необходимите разрешения за това.",
 		unable_to_start_battle_royale_not_active = "Не може да се стартира Битка на Royale, тъй като Битката на Royale не е активирана.",
 		not_enough_players_in_queue = "Не може да се стартира Битка на Royale, тъй като няма достатъчно играчи в опашката.",
 		zone_idling = "Зоната сега е в покой.",
@@ -4672,10 +4883,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		advancing = "Предстои да напредне",
 		battle_royale = "Битка на рояли",
 		press_to_deploy_parachute = "Натиснете ~INPUT_PARACHUTE_DEPLOY~, за да деплоирате падалото.",
-		join_battle_royale_instance_missing_permissions = "Играчът опита да се присъедини към инстанция на Битка на рояли, но нямаше необходимите разрешения да го направи.",
 		no_match_found = "${consoleName} не участва в никакъв мач.",
 		joined_instance = "Влезе в инстанцията на ${consoleName}.",
-		leave_battle_royale_instance_missing_permissions = "Играчът опита да напусне инстанция на Битка на роял, но нямаше необходимите разрешения да го направи.",
 		left_instance = "Напусна инстанцията.",
 		failed_to_leave_instance = "Неуспешно напускане на инстанция, тъй като не си в никаква.",
 		already_in_match = "Неуспешно присъединяване към инстанция, тъй като вече си в мач.",
@@ -4782,14 +4991,17 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		bean_machine = "Бийн Машийн",
 		arcade_bar = "Аркаден бар",
 		japanese_restaurant = "Японски ресторант",
-		luxury_autos = "Луксозни автомобили",
+		lsuv = "Употребявани автомобили в Лос Сантос",
 		rockford_records = "Рокфорд Рекърдс",
 		dispensary = "Лекарствена канабис аптека",
 		haunted_high_school = "Заклинателна гимназия",
 		sushi_restaurant = "Ресторант Суши",
+		pizza_this = "Пица Този",
+		city_hall = "Кметство",
 
 		bank = "Банка",
 		hospital = "Болница",
+		fire_department = "Пожарна служба",
 		bolingbroke = "Корекционна затвора Болингброук",
 		police_department = "Полицейски управление",
 		motel = "Мотел",
@@ -4820,9 +5032,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		recharging_countermeasures = "Презареждане на противомерни мерки ${percentage}%",
 
 		ignition_bomb_triggered_logs_title = "Запалително устройство за запалване",
-		ignition_bomb_triggered_logs_details = "${consoleName} включи двигателя на превозното средство, към което е прикрепена бомба за запалване.",
-
-		toggle_ignition_bomb_missing_permissions = "Играчът опита да превключи запалително устройство, но няма необходимите разрешения."
+		ignition_bomb_triggered_logs_details = "${consoleName} включи двигателя на превозното средство, към което е прикрепена бомба за запалване."
 	},
 
 	boomboxes = {
@@ -4937,7 +5147,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 		already_max_vin_scratched_vehicles = "Вече имате максималния брой превредени превозни средства с VIN в гаража си.",
 		contract_has_expired = "Този договор е изтекъл.",
-		you_already_have_a_contract_started = "Вече сте започнали договор."
+		you_already_have_a_contract_started = "Вече сте започнали договор.",
+
+		transferred_crypt_logs_title = "Прехвърлен крипт",
+		transferred_crypt_logs_details = "${consoleName} прехвърли ${amount} крипт към ${targetConsoleName}."
 	},
 
 	brochure = {
@@ -4991,9 +5204,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		no_buddy_passes_available = "Нямате налични пропуски за приятели.",
 		no_queue_with_queue_pin = "Никой не е в опашката с предоставения ПИН.",
 		buddy_pushed_through = "Промъкнахте ${playerName} през опашката!",
+		no_players_in_queue = "Няма играчи в опашката.",
 
 		buddy_pass_used_logs_title = "Използван Buddy Pass",
-		buddy_pass_used_logs_details = "${consoleName} използва своя Buddy Pass, за да премине през ${targetConsoleName}."
+		buddy_pass_used_logs_details = "${consoleName} използва своя Buddy Pass, за да премине през ${targetConsoleName}.",
+
+		push_through_random = "Имате ли чувство за щедрост? Попърна някого случайно през опашката!"
 	},
 
 	bus_map = {
@@ -5317,11 +5533,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 	containers = {
 		drill_container = "Натиснете ~INPUT_CONTEXT~, за да отворите контейнера с дрила.",
-
 		drilling_container = "Контейнер за пробиване",
 		failed_drill = "Неуспешно пробиване на контейнера.",
 		drill_success = "Успешно пробиване на контейнера.",
 
+		containers_due_soon = "${count} от вашите съхранителни контейнери скоро изтичат.",
 		container_blip = "Контейнер"
 	},
 
@@ -5335,7 +5551,22 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		glass_recipe = "Стопяване на стъкло",
 		steel_recipe = "Стопяване на стомана",
 		scrap_metal_recipe = "Стопяване на скрап метал",
+		melt_gun_parts_recipe = "Стопете части за оръжие",
 		aluminium_recipe = "Стопяване на алуминий",
+		copper_recipe = "Извлечи мед",
+		copper_wire_recipe = "Изтопи медна тел",
+		brass_recipe = "Смеси цинк и мед",
+		aluminium_ore_recipe = "Изтопи боксит",
+		steel_ore_recipe = "Изтопи желязна руда",
+		gold_ore_recipe = "Изтопи златна руда",
+		gold_nuggets_recipe = "Изтопи златни късчета",
+		tungsten_ore_recipe = "Изтопи волфрамова руда",
+		tungsten_bar_recipe = "Изтопи волфрамови късчета",
+		titatium_ore_recipe = "Изтопи титаниева руда",
+		titanium_bar_recipe = "Изтопи титаниеви късчета",
+		smelt_rusty_metal_recipe = "Изтопи ръждясала метал",
+		smelt_rusty_tank_shell_recipe = "Разтопете ръждив бронеколан",
+		smelt_rusty_diving_helmet_recipe = "Разтопете ръждиво гмуркаче",
 
 		smelting_materials = "Стопяване на ${usedItems}",
 		smelted_materials = "Стопен ${usedItems}.",
@@ -5349,17 +5580,30 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		press_to_scrap_item = "[${SeatEjectKey}] Скропи предмети",
 		failed_scrap_item = "Неуспешно скропване на предмет.",
 
-		cut_item = "Картофи за нарязване",
-		press_to_cut_item = "[${SeatEjectKey}] Нарежи картофи",
-		cutting_item = "Нарязване на 3 картофи",
-		cut_item_done = "Нарязани картофи на фриз.",
-		failed_cut_item = "Неуспешно рязане на картофите.",
+		cut_potato = "Нарежете картофи",
+		press_to_cut_potato = "[${SeatEjectKey}] Нарежете картофи",
+		cutting_potato = "Нарязване на картофи",
+		cut_potato_done = "Нарязахте картофите на фри",
+		failed_cut_potato = "Неуспешно нарязване на картофите",
 
-		fry_item = "Пържене на картофките",
-		press_to_fry_item = "[${SeatEjectKey}] Пържене на картофките",
-		frying_item = "Пържене на картофките",
-		fried_item = "Пържени белгийски картофи.",
-		failed_fry_item = "Неуспешно пържене на картофи.",
+		prepare_chicken_nuggets = "Пригответе пилешки нагетки",
+		press_to_prepare_chicken_nuggets = "[${SeatEjectKey}] Пригответе пилешки нагетки",
+		preparing_chicken_nuggets = "Приготвяне на пилешки нагетки",
+		prepared_chicken_nuggets = "Приготвени пилешки кубчета.",
+		failed_prepare_chicken_nuggets = "Неуспешно приготвяне на пилешки кубчета.",
+
+		use_fryer = "Използвай Фритюрник",
+		press_to_use_fryer = "[${SeatEjectKey}] Използвай Фритюрник",
+
+		fries_recipe = "Белгийски Фрий",
+		frying_fries = "Пържене на фрий",
+		fried_fries = "Пържени белгийски фрий.",
+		failed_fry_fries = "Неуспешно пържене на фрий.",
+
+		nuggets_recipe = "Пилешки Кубчета",
+		frying_nuggets = "Пържене на пилешки кубчета",
+		fried_nuggets = "Пържени пилешки кубчета.",
+		failed_fry_nuggets = "Неуспешно пържене на пилешки кубчета.",
 
 		grill_item = "Грил",
 		press_to_grill_item = "[${SeatEjectKey}] Грил",
@@ -5413,12 +5657,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		filled_nitro_tank = "Напълнен нитро резервоар",
 		failed_fill_nitro_tank = "Неуспешно запълване на нитро резервоар.",
 
-		craft_sheet_metal = "Изработка на листов метал",
-		press_to_craft_sheet_metal = "[${SeatEjectKey}] Изработете листов метал",
-		crafting_sheet_metal = "Изработка на листов метал",
-		crafted_sheet_metal = "Изработен листов метал.",
-		failed_craft_sheet_metal = "Неуспешно изработване на листов метал.",
-
 		craft_empty_tank = "Сглобяване на празен резервоар",
 		press_to_craft_empty_tank = "[${SeatEjectKey}] Сглоби празен резервоар",
 		crafting_empty_tank = "Сглобяване на празен резервоар",
@@ -5437,11 +5675,23 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		crafted_nitro_tank = "Сглобен нитро резервоар.",
 		failed_craft_nitro_tank = "Неуспешно сглобяване на нитро резервоар.",
 
+		craft_glass_pipe = "Изработка на стъклен пипе",
+		press_craft_glass_pipe = "[${SeatEjectKey}] Изработка на стъклен пипе",
+		crafting_glass_pipe = "Изработка на стъклен пипе",
+		crafted_glass_pipe = "Изработено стъклено пипе.",
+		failed_craft_glass_pipe = "Неуспешно изработване на стъклено пипе.",
+
 		salvage_meth_table = "Разглобяване на метамфетаминена маса",
 		press_to_salvage_meth_table = "[${SeatEjectKey}] Разглобяване на метамфетаминена маса",
 		salvaging_meth_table = "Разглобяване на метамфетаминена маса",
 		salvaged_meth_table = "Разопитана маса за метамфетамин.",
 		failed_salvage_meth_table = "Неуспешно разопитване на масата за метамфетамин.",
+
+		make_crack = "Правене на крак",
+		press_to_make_crack = "[${SeatEjectKey}] Правене на крак",
+		making_crack = "Правене на крак",
+		made_crack = "Направен крак.",
+		failed_make_crack = "Неуспешно правене на крак.",
 
 		refill_vape = "Зареждане на Вейп",
 		press_to_refill_vape = "[${SeatEjectKey}] Зареди Вейп",
@@ -5490,28 +5740,68 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		failed_process_copper = "Неуспешно обработване на медни напитки.",
 
 		process_rubber = "Преработка на гума",
-		press_process_rubber = "[${SeatEjectKey}] Преработка на гума",
 		failed_process_rubber = "Неуспешна преработка на гума.",
 
-		craft_pvc_pipe = "Изработка на PVC тръба",
-		press_craft_pvc_pipe = "[${SeatEjectKey}] Изработи PVC тръба",
+		process_polymer_resin = "Преработване на полимерна смола",
+		failed_process_polymer_resin = "Неуспешно преработване на полимерна смола.",
+
+		craft_components = "Компоненти за изработка",
+		press_craft_components = "[${SeatEjectKey}] Компоненти за изработка",
+
+		aluminium_rod_recipe = "Алуминиев прът",
+		aluminium_plate_recipe = "Алуминиева плоча",
+		sheet_metal_recipe = "Листов метал",
+		steel_tube_recipe = "Стоманена тръба",
+		tungsten_plate_recipe = "Тунгстенова плоча",
+		titanium_rod_recipe = "Титаниев прът",
+		hardened_steel_plate_recipe = "Закалена стоманена плоча",
+		screws_recipe = "Винтове от стомана",
+		spring_recipe = "Стоманена пружина",
+		high_tensile_spring_recipe = "Стоманена пружина с висока твърдост",
+		pvc_pipe_recipe = "PVC тръба",
+		lens_recipe = "Обектив",
+		muzzle_brake_recipe = "Страничен спрейд",
+
 		crafting_pvc_pipe = "Изработва се PVC тръба",
 		crafted_pvc_pipe = "Изработена PVC тръба.",
 		failed_craft_pvc_pipe = "Неуспешно изработване на PVC тръба.",
 
-		process_aluminium = "Преработка на алуминий",
-		press_process_aluminium = "[${SeatEjectKey}] Преработка на алуминий",
 		failed_process_aluminium = "Неуспешна преработка на алуминий.",
-
-		process_steel = "Преработка на стомана",
-		press_process_steel = "[${SeatEjectKey}] Преработка на стомана",
 		failed_process_steel = "Неуспешна преработка на стомана.",
 
-		craft_lens = "Изработка на обектив",
-		press_craft_lens = "[${SeatEjectKey}] Изработка на обектив",
 		crafting_lens = "Изработка на обектив",
 		crafted_lens = "Изработен обектив.",
 		failed_craft_lens = "Неуспешно изработване на обектив.",
+
+		craft_gun_parts = "Произведете части за оръжие",
+		press_craft_gun_parts = "[${SeatEjectKey}] Произведете части за оръжие",
+		assemble_gun_parts = "Сглобете частите за пушка",
+		press_assemble_gun_parts = "[${SeatEjectKey}] Сглобете частите за пушка",
+
+		trigger_recipe = "Спусък",
+		smg_lower_receiver_recipe = "SMG Долен приемник",
+		smg_lower_receiver_mk2_recipe = "SMG Долен приемник MK2",
+		smg_upper_receiver_recipe = "SMG Горен приемник",
+		smg_upper_receiver_mk2_recipe = "SMG Горен приемник MK2",
+		rifle_lower_receiver_recipe = "Горен приемник на пушка",
+		rifle_lower_receiver_mk2_recipe = "Горен приемник на пушка MK2",
+		rifle_upper_receiver_recipe = "Долен приемник на пушка",
+		rifle_upper_receiver_mk2_recipe = "Долен приемник на пушка MK2",
+		shotgun_lower_receiver_recipe = "Горен приемник на пушка с дулок",
+		shotgun_lower_receiver_mk2_recipe = "Горен приемник на пушка с дулок MK2",
+		shotgun_upper_receiver_recipe = "Долен приемник на пушка с дулок",
+
+		crafting_trigger = "Изработка на спусък",
+		crafted_trigger = "Изработен спусък.",
+		failed_craft_trigger = "Неуспешна изработка на спусък.",
+
+		crafting_lower_receiver = "Изработване на долен приемник",
+		crafted_lower_receiver = "Изработен долен приемник.",
+		failed_craft_lower_receiver = "Неуспешно изработване на долен приемник.",
+
+		crafting_upper_receiver = "Изработване на горен приемник",
+		crafted_upper_receiver = "Изработен горен приемник.",
+		failed_craft_upper_receiver = "Неуспешно изработване на горен приемник.",
 
 		craft_sight = "Изработка на прицел",
 		press_craft_sight = "[${SeatEjectKey}] Изработване на прицел",
@@ -5621,6 +5911,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		filed_steel = "Търкана стомана.",
 		failed_file_steel = "Неуспешно търкане на стомана.",
 
+		converter_recipe = "Разглобяване на конвертор",
+		breaking_down_converter = "Разглобяване на конвертор",
+		broke_down_converter = "Разглобихте конвертора.",
+		failed_break_converter = "Неуспешно разглобяване на конвертор.",
+
 		craft_steel_file = "Произведи Стоманен Файл",
 		press_craft_steel_file = "[${SeatEjectKey}] Произведи Стоманен Файл",
 		crafting_steel_file = "Произвежда Стоманен Файл",
@@ -5649,8 +5944,15 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		press_deconstruct_chip = "[${SeatEjectKey}] Разглоби чип",
 		failed_deconstruct_chip = "Неуспешно разглобяване на чип.",
 
-		craft_device_scanner = "Изработване на Скенер за Устройства",
-		press_craft_device_scanner = "[${SeatEjectKey}] Изработете Скенер за Устройства",
+		craft_equipment = "Произвеждане на снарежение",
+		press_craft_equipment = "[${SeatEjectKey}] Произвеждане на снарежение",
+
+		radio_decrypter_recipe = "Радио декриптор",
+		crafting_radio_decrypter = "Създаване на Декриптор за Радио",
+		crafted_radio_decrypter = "Създаден декриптор за радио.",
+		failed_craft_radio_decrypter = "Неуспешно създаване на декриптор за радио.",
+
+		device_scanner_recipe = "Устройство за сканиране",
 		crafting_device_scanner = "Изработка на Скенер за Устройства",
 		crafted_device_scanner = "Създаден е скенер за устройства.",
 		failed_craft_device_scanner = "Неуспешно изработване на скенер за устройства.",
@@ -5734,12 +6036,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		mixed_patriotic_paint = "Смесена патриотична боя.",
 		failed_mix_patriotic_paint = "Неуспешно смесване на патриотична боя.",
 
-		craft_radio_decrypter = "Създаване на радио декриптор",
-		press_craft_radio_decrypter = "[${SeatEjectKey}] Създаване на радио декриптор",
-		crafting_radio_decrypter = "Създаване на Декриптор за Радио",
-		crafted_radio_decrypter = "Създаден декриптор за радио.",
-		failed_craft_radio_decrypter = "Неуспешно създаване на декриптор за радио.",
-
 		craft_grenade_shell = "Създаване на Гранатна Туба",
 		press_craft_grenade_shell = "[${SeatEjectKey}] Създаване на гранатна туба",
 		crafting_grenade_shell = "Създаване на Гранатна Туба",
@@ -5797,6 +6093,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		deconstruct_ammo = "Разглобете Муниции",
 		press_to_deconstruct_ammo = "[${SeatEjectKey}] Разглобяване на боеприпаси",
 
+		craft_casings = "Произвеждане на корпуси",
+		crafting_casings = "Произвеждане на корпуси",
+		crafted_casings = "Произведени корпуси.",
+		failed_craft_casings = "Неуспешно произвеждане на корпуси.",
+
 		pistol_deconstruct_recipe = "Разглобяване на пистолетни боеприпаси",
 		shotgun_deconstruct_recipe = "Разглобяване на дробовикови боеприпаси",
 		sub_deconstruct_recipe = "Разглобяване на подкуфарни боеприпаси",
@@ -5843,6 +6144,181 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		crafting_bacon = "Изработка на свинско месо",
 		crafted_bacon = "Изработено свинско месо.",
 		failed_craft_bacon = "Неуспешно изработване на свинско месо.",
+
+		cook_food = "Готвене на храна",
+		press_to_cook_food = "[${SeatEjectKey}] Готвене на храна",
+
+		rice_recipe = "Ориз",
+		cooking_rice = "Готвене на ориз",
+		cooked_rice = "Готвен ориз.",
+		failed_cook_rice = "Неуспешно варене на ориз.",
+
+		miso_soup_recipe = "Супа Мисо",
+		cooking_miso_soup = "Готвене на супа Мисо",
+		cooked_miso_soup = "Готвена супа Мисо.",
+		failed_cook_miso_soup = "Неуспешно варене на супа Мисо.",
+
+		ramen_recipe = "Рамен",
+		cooking_ramen = "Готвене на рамен",
+		cooked_ramen = "Готвен рамен.",
+		failed_cook_ramen = "Неуспешно варене на рамен.",
+
+		spicy_ramen_recipe = "Пикантен рамен",
+		cooking_spicy_ramen = "Готвене на пикантен рамен",
+		cooked_spicy_ramen = "Готвен пикантен рамен.",
+		failed_cook_spicy_ramen = "Неуспешно варене на пикантен рамен.",
+
+		cut_ingridients = "Изрязване на съставките",
+		press_to_cut_ingridients = "[${SeatEjectKey}] Изрязване на съставките",
+
+		tofu_recipe = "Кубчета тофу",
+		cutting_tofu = "Изрязване на тофу",
+		cut_tofu_done = "Изрязано тофу.",
+		failed_cut_tofu = "Неуспешно изрязване на тофу.",
+
+		spring_onions_recipe = "Пресни луковици",
+		cutting_spring_onions = "Изрязване на пресни луковици",
+		cut_spring_onions_done = "Изрязани пресни луковици.",
+		failed_cut_spring_onions = "Неуспешно изрязване на пресни луковици.",
+
+		fish_recipe = "Рибен филе",
+		filetting_fish = "Филетиране на риба",
+		filet_fish = "Филетиране на риба.",
+		failed_filet_fish = "Неуспешно филетиране на рибата.",
+
+		assemble_sushi = "Сглобяване на суши",
+		press_to_assemble_sushi = "[${SeatEjectKey}] Сглоби суши",
+
+		sushi_recipe = "Суши",
+		assembling_sushi = "Сглобяване на суши",
+		assembled_sushi = "Сглобено суши.",
+		failed_assemble_sushi = "Неуспешно сглобяване на суши.",
+
+		nigiri_recipe = "Нигири",
+		assembling_nigiri = "Сглобяване на нигири",
+		assembled_nigiri = "Сглобен нигири.",
+		failed_assemble_nigiri = "Неуспешно сглобяване на нигири.",
+
+		bento_box_recipe = "Бенто кутия",
+		assembling_bento_box = "Сглобяване на бенто кутия",
+		assembled_bento_box = "Сглобена бенто кутия.",
+		failed_assemble_bento_box = "Неуспешно сглобяване на бенто кутия.",
+
+		kimchi_recipe = "Кимчи",
+		making_kimchi = "Приготовяване на кимчи",
+		made_kimchi = "Приготвено кимчи.",
+		failed_make_kimchi = "Неуспешно приготвяне на кимчи.",
+
+		mix_pizza_dough = "Смесване на пица тесто",
+		press_to_mix_pizza_dough = "[${SeatEjectKey}] Смесване на пица тесто",
+		mixing_pizza_dough = "Смесване на пица тесто",
+		mix_pizza_dough_done = "Пица тестото е смесено.",
+		failed_mix_pizza_dough = "Неуспешно смесване на пица тесто.",
+
+		slice_ingredients = "Нарязване на съставките",
+		press_to_slice_ingredients = "[${SeatEjectKey}] Нарежете съставките",
+
+		pineapple_slice_recipe = "Нарежете ананас",
+		slicing_pineapple = "Нарежете ананас",
+		sliced_pineapple = "Нарязан ананас.",
+		failed_slice_pineapple = "Неуспешно нарязване на ананас.",
+
+		bell_pepper_slice_recipe = "Нарежете чушка",
+		slicing_bell_pepper = "Нарежете чушка",
+		sliced_bell_pepper = "Нарязана чушка.",
+		failed_slice_bell_pepper = "Неуспешно нарязване на чушка.",
+
+		top_pizza = "Горна пица",
+		press_to_top_pizza = "[${SeatEjectKey}] Горна пица",
+
+		margherita_recipe = "Маргерита Пица",
+		topping_margherita = "Топинг за Маргерита Пица",
+		topped_margherita = "Пицата „маргерита“ е с топинг.",
+		failed_topping_margherita = "Грешка при добавянето на топинг върху пицата „маргерита“.",
+
+		salami_recipe = "Салам Пица",
+		topping_salami = "Топинг за Салам Пица",
+		topped_salami = "Пицата със салам е с топинг.",
+		failed_topping_salami = "Грешка при добавянето на топинг върху пицата със салам.",
+
+		pepperoni_recipe = "Пеперони Пица",
+		topping_pepperoni = "Топинг за Пеперони Пица",
+		topped_pepperoni = "Пицата „пеперони“ е с топинг.",
+		failed_topping_pepperoni = "Неуспешно добавяне на пеперони на пица.",
+
+		vegetarian_recipe = "Вегетарианска пица",
+		topping_vegetarian = "Добавяне на съставки на вегетарианска пица",
+		topped_vegetarian = "Вегетарианската пица е приготвена.",
+		failed_topping_vegetarian = "Неуспешно добавяне на съставки на вегетарианска пица.",
+
+		ham_recipe = "Пица с шунка",
+		topping_ham = "Добавяне на съставки на пица с шунка",
+		topped_ham = "Пицата с шунка е приготвена.",
+		failed_topping_ham = "Неуспешно добавяне на съставки на пица с шунка.",
+
+		diavola_recipe = "Диавола Пица",
+		topping_diavola = "Добавяне на съставки на Диавола Пица",
+		topped_diavola = "Диавола пицата е приготвена.",
+		failed_topping_diavola = "Неуспешно при добавянето на топинг на пица Диавола.",
+
+		hawaiian_recipe = "Хавайска Пица",
+		topping_hawaiian = "Топинг за Хавайска Пица",
+		topped_hawaiian = "Пица Хавайна с добавен топинг.",
+		failed_topping_hawaiian = "Неуспешно при добавянето на топинг на хавайска пица.",
+
+		bake_pizza = "Печете Пица",
+		press_to_bake_pizza = "[${SeatEjectKey}] Печете Пица",
+
+		bread_sticks_recipe = "Печете Печени Пръчици",
+		baking_bread_sticks = "Печете печени пръчици",
+		baked_bread_sticks = "Изпечени печени пръчици.",
+		failed_baking_bread_sticks = "Неуспешно при печенето на печени пръчици.",
+
+		baking_margherita = "Печене на пица Маргарита",
+		baked_margherita = "Печена пица Маргарита.",
+		failed_baking_margherita = "Неуспешно печене на пица Маргарита.",
+
+		baking_ham = "Печене на пица с Шунка",
+		baked_ham = "Печена пица с Шунка.",
+		failed_baking_ham = "Неуспешно печене на пица с Шунка.",
+
+		baking_hawaiian = "Печене на Хавайска пица",
+		baked_hawaiian = "Печена Хавайска пица.",
+		failed_baking_hawaiian = "Неуспешно печене на Хавайска пица.",
+
+		baking_diavola = "Печене на Диавола Пица",
+		baked_diavola = "Печена Диавола пица.",
+		failed_baking_diavola = "Неуспешно печене на Диавола пица.",
+
+		baking_salami = "Печене на пица с салами",
+		baked_salami = "Печена пица със салами.",
+		failed_baking_salami = "Неуспешно печене на пица със салами.",
+
+		baking_pepperoni = "Печене на пица с пеперони",
+		baked_pepperoni = "Печена пица с пеперони.",
+		failed_baking_pepperoni = "Неуспешно печене на пица с пеперони.",
+
+		baking_vegetarian = "Печене на вегетарианска пица",
+		baked_vegetarian = "Печена вегетарианска пица.",
+		failed_baking_vegetarian = "Неуспешно печене на вегетарианска пица.",
+
+		bake_cake = "Печене на торта",
+		press_to_bake_cake = "[${SeatEjectKey}] Печене на торта",
+
+		lemon_cake_recipe = "Лимоново торта",
+		baking_lemon_cake = "Печене на лимоново торта",
+		baked_lemon_cake = "Печена лимонова торта.",
+		failed_baking_lemon_cake = "Неуспешно печене на лимонова торта.",
+
+		berry_cake_recipe = "Ягодова торта",
+		baking_berry_cake = "Печене на ягодова торта",
+		baked_berry_cake = "Печена ягодова торта.",
+		failed_baking_berry_cake = "Неуспешно печене на ягодова торта.",
+
+		chocolate_cake_recipe = "Шоколадова торта",
+		baking_chocolate_cake = "Печене на шоколадова торта",
+		baked_chocolate_cake = "Печена шоколадова торта.",
+		failed_baking_chocolate_cake = "Неуспешно печене на шоколадова торта.",
 
 		no_required_items = "Нямате всички необходими предмети.",
 
@@ -6123,11 +6599,59 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 		deny_purchase = "Няма нужда, не искам го",
 		accept_purchase = "Да, искам да го купя",
-		accept_purchase_info = "Сигурни ли сте, че искате да завършите тази покупка? Това не може да бъде отменено."
+		accept_purchase_info = "Сигурни ли сте, че искате да завършите тази покупка? Това не може да бъде отменено.",
+
+		yes = "Да",
+		no = "Не"
+	},
+
+	container_storage = {
+		rent_container = "[${InteractionKey}] Наем #${id} ($${price} на седмица)",
+		renting_container = "Наем на контейнер",
+		failed_rent_container = "Неуспешно наемане на контейнер.",
+		rent_container_success = "Успешно наемане на контейнер #${id}. Можете да управлявате контейнерите си, използвайки `/containers`.",
+		access_container = "[${InteractionKey}] Достъп #${id}",
+		container_id = "#${id}",
+
+		storage_containers = "Контейнери за съхранение",
+		container = "Контейнер",
+		loading = "Зареждане...",
+		failed_remove_access = "Неуспешно премахване на достъп.",
+		failed_add_access = "Неуспешно добавяне на достъп.",
+		access = "Достъп",
+		add_cid = "Добави CID",
+		no_containers = "Нямате притежание или достъп до никакви контейнери за съхранение.",
+		no_access = "Никой освен вас няма достъп до този контейнер.",
+		back = "Назад",
+		close = "Затвори",
+		character_not_exist = "Героят не съществува.",
+		paid_until = "Платено до:",
+		pay_rent = "Плащане на наем",
+		expired = "Изтекъл",
+		not_enough_money = "Нямате достатъчно пари.",
+		failed_pay_rent = "Неуспешно плащане на наема.",
+		mark_gps = "Маркиране на ГПС",
+		container_alert = "Вашият контейнер #${containerId} бива обезсърчен.",
+
+		rented_container_logs_title = "Наем на контейнер",
+		rented_container_logs_details = "${consoleName} нае контейнер №${containerId} за $${price}.",
+		paid_rent_logs_title = "Платена наемна такса за контейнер",
+		paid_rent_logs_details = "${consoleName} плати $${price} наем за контейнер №${containerId}.",
+		lockpicked_container_logs_title = "Отключен контейнер",
+		lockpicked_container_logs_details = "${consoleName} отключи контейнер №${containerId}."
 	},
 
 	courthouse = {
 		press_to_use_gavel = "Натиснете ~INPUT_CONTEXT~ за използване на мъниче."
+	},
+
+	crack = {
+		press_to_sell_crack = "Натисни ~INPUT_CONTEXT~ за продажба на Крак.",
+		local_not_interested = "Местният жител не изглежда заинтересован в момента.",
+		selling_crack = "Продаване на кокаин.",
+
+		sold_crack_logs_title = "Продаден кокаин",
+		sold_crack_logs_details = "${consoleName} продаде 1x пакетче кокаин за $${reward}."
 	},
 
 	daily_activities = {
@@ -6159,8 +6683,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		headshot_kills_in_arena = "Направи ${amount} убийства в главата в Арената.",
 		punch_locals = "Удари ${amount} местни жители.",
 		move_from_place_to_place = "Премести се от ${from} до ${to} за ${time} секунди.",
-		put_bets_in_jackpot = "Постави залози на стойност $${amount} в Джакпота.",
-		win_bets_in_jackpot = "Изиграй залози на стойност $${amount} в Джакпота.",
+		put_bets_in_jackpot = "Поставете залози на стойност $${amount} в джакпота на казиното.",
+		win_bets_in_jackpot = "Печелете артикули на стойност $${amount} в джакпота на казиното.",
 		chop_vehicles = "Разкъсвай ${amount} превозни средства.",
 		purchase_ammo = "Купи ${amount} боеприпаси.",
 		collect_items_from_diving = "Съберете ${amount}бр. ${itemLabel} от гмуркане.",
@@ -6169,6 +6693,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		refine_gems = "Рафинирайте ${amount} бр. скъпоценни камъни.",
 		visit_location = "Посетете ${location}.",
 		visit_the_location = "Посетете ${location}.",
+		punch_a_shark = "Ударете акула.",
+		put_bets_in_lottery = "Поставете общо $${amount} в лотарията.",
 
 		confirm_task_refresh = "Сигурни ли сте, че искате да освежите тази задача? Цената е $${cost}.",
 		yes = "Да",
@@ -6183,8 +6709,13 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		restore_streak = "Възстановяване на поредица от ${streak}",
 		confirm_streak_restore = "Сигурни ли сте, че искате да възстановите поредицата си от ${streak} дни? Цената е ${cost} ОП точки.",
 
-		not_enough_op_points = "За да възстановите поредицата, ви трябват ${cost} ОП точки. Вие разполагате с ${points} ОП точки.",
-		streak_restored = "Вашата поредица от ${streak} дни е възстановена срещу ${cost} ОП точки."
+		not_enough_op_points = "Нуждаете се от ${cost} точки ОП за възстановяване на серията си. Имате ${points} точка(и) ОП.",
+		streak_restored = "Вашата поредица от ${streak} дни е възстановена срещу ${cost} ОП точки.",
+
+		logs_daily_task_reward_title = "Награда за дневната задача",
+		logs_daily_task_reward_money_details = "${consoleName} завърши задача и получи $${amount}.",
+		logs_daily_task_reward_items_details = "${consoleName} завърши задача и получи ${amount} артикули.",
+		logs_daily_task_reward_brought_items_details = "${consoleName} закупи ${itemAmount} артикул(а) и получи $${amount}."
 	},
 
 	dashcam = {
@@ -6234,6 +6765,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		owner_player = "Регистрирано на ~g~${fullName}",
 		character_known = "Герой: ~g~${fullName}",
 		character_unknown = "Герой: ~r~Неизвестен",
+		entity_id = "Идентификационен номер на същество: ${entity}",
+		model_name = "Име на модела: ${modelName}",
+		resource = "Ресурс: ${resource}",
+		network_id = "Мрежов идентификационен номер: ${networkId}",
+		["local"] = "-local-",
 		invalid_radius_parameter = "Невалиден параметър `radius`.",
 		inject_code_invalid_player = "Няма играчи със сървър ID `${serverId}`.",
 		inject_code_success_for_everyone = "Успешно вмъкнат код за всички.",
@@ -6254,6 +6790,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		controls = "Контроли: ${controls}",
 		tasks = "Заявки: ${calls} (${total})",
 		invoke_calls = "Извиквания на функция: ${calls} (${total})",
+		native_calls = "Извиквания на нейтрални функции: ${calls} (${total})",
 		draw_calls = "Извиквания на draw: ${calls}",
 		player_speed = "Скорост на Играча: ${playerSpeed}",
 		player_ped = "Идентификационен номер на Играча: ${playerPedId}",
@@ -6264,7 +6801,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		normal = "Повърхност: ${normal}",
 		velocity = "Скорост: ${velocity}",
 		ground_material = "Тип повърхност: ${material}",
-		g_force = "Lateralno ускорение: ${force}",
 		debug_print_f8 = "Информация за дебъгване е отпечатана в конзолата F8.",
 		no_vehicle_bone = "Няма '${boneName}' кости",
 		server_vehicles = "Сървър превозни средства: ${count}",
@@ -6272,6 +6808,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		invisible_vehicles = "Невидими превозни средства: ${count}",
 		parked_vehicles = "Паркирани превозни средства: ${count}",
 		available_doors = "Налични идентификатори на врати: ${doors}",
+		copied_object_info = "Информацията за копиран обект.",
+		copied_model_name = "Копирано име на модел.",
+		copied_entity_id = "Копиран идентификатор на единица.",
+		copied_hit_coords = "Копирани координати на удар.",
 
 		distance = "Дистанция: ${distance}м",
 		distance_first = "Запаметена първа позиция.",
@@ -6288,12 +6828,9 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		vehicle_acceleration_120 = "0 до 120: ${time}",
 		vehicle_acceleration_150 = "0 до 150: ${time}",
 		vehicle_brake_distance = "Дистанция при спиране: ${distance}м",
-		vehicle_acceleration_force = "Сила на старт: ${force}",
 
-		invalid_network_id = "Невалиден идентификатор в мрежата.",
 		delete_entity_success = "Успешно изтрито существо с идентификационен номер на мрежата ${networkId}.",
 		delete_entity_failed = "Неуспешно изтрито существо.",
-		delete_entity_no_permissions = "Опит за изтриване на существо без достатъчни разрешения.",
 
 		failed_entity_info = "Неуспешно получена информация за същество.",
 		printed_entity_info = "Изписана сървърна информация за съществото в F8.",
@@ -6301,7 +6838,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		no_entity_network = "Няма обект с мрежов идентификатор ${networkId}.",
 		move_entity_success = "Успешно премести едност на мрежовото идентификационно номер ${networkId}.",
 		move_entity_failed = "Неуспешно преместване на едноств.",
-		move_entity_no_permissions = "Опит за преместване на едиство без необходимите права.",
 
 		weapon_name_missing = "Липсващ параметър с име на оръжие.",
 		weapon_name_invalid = "`${weaponName}` не е валидно име на оръжие.",
@@ -6330,8 +6866,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		disabled_network_debug = "Отстраняване на проблеми с мрежата на обектите е деактивирано.",
 		failed_network_debug = "Неуспех при включване на отстраняване на проблеми в мрежата на обекти.",
 
-		network_owner_subscription_no_permissions = "Опит за абониране към собствениците на обекти в мрежата без необходимите права.",
-
 		missing_ipl = "Липсващ параметър за ipl.",
 		enabled_ipl = "Успешно активиран ipl `${ipl}`.",
 		disabled_ipl = "Успешно деактивиран ipl `${ipl}`.",
@@ -6346,6 +6880,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 		missing_code = "Липсващ параметър 'code'.",
 		run_code_success = "Успешно изпълнение на кодов фрагмент.",
+		run_code_invalid = "Невалиден откъс код.",
 		run_code_error = "Грешка при изпълнение на кодов фрагмент.",
 
 		searching_world = "Търсене в света:\n${modelNames}",
@@ -6366,7 +6901,18 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		invalid_json = "Невалиден JSON.",
 
 		street_found = "Намерено `${name}`, неговият център е отбелязан на вашата карта.",
-		street_not_found = "Не е намерена улица, която отговаря на вашето търсене."
+		street_not_found = "Не е намерена улица, която отговаря на вашето търсене.",
+
+		only_super_admins_can_turn_on = "Само супер администраторите могат да го включат. Това може да бъде активирано ръчно от управителя на сървъра за вас. След това можете да го изключите с тази команда.",
+		deep_logging_enabled = "Дълбокото вписване е активирано.",
+		deep_logging_disabled = "Дълбокото логване е деактивирано.",
+		deep_logging_active = "Дълбокото логване е активно.",
+
+		find_native_toggles_enabled = "Опцията 'Намери настройки на оригиналния код' е активирана.",
+		find_native_toggles_disabled = "Опцията 'Намери настройки на оригиналния код' е деактивирана.",
+
+		showing_cancelled_vehicles_enabled = "Показването на отменени превозни средства е активирано.",
+		showing_cancelled_vehicles_disabled = "Показването на отменени превозни средства не е повече активно."
 	},
 
 	debug_menu = {
@@ -6392,12 +6938,13 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 		evidence_failed = "Неуспешно взимане на ДНК доказателство.",
 
-		evidence_text = "Тип на Доказателството: ДНК Доказателство\nДНК събрана от ${fullName} #${characterId}\n\nДопълнителна информация:\n • Времеви отпечатък на събирането: ${time}"
+		evidence_text = "DNA доказателство: Образецът гоне към ${name} (#${cid}) (взет на ${time})."
 	},
 
 	docks = {
 		press_to_access_spawner = "Натиснете ~INPUT_CONTEXT~, за да достъпите спауъра за превозни средства.",
 		boat_dock = "Място за лодки",
+		emergency_vehicles = "Спешни превозни средства",
 		vehicle_list = "Списък с превозни средства",
 		park_boat = "Запаркирай лодката",
 		close_menu = "Затвори менюто",
@@ -6427,10 +6974,15 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		saved_doors_to_file = "Записани са ${amount} врати във файл на сървъра.",
 		no_nearby_doors = "Няма близки врати, които да се запишат.",
 		lockpicking_door = "Взлом на врата",
+		copied_doors = "Копиране на ${doors} врата.",
+		adding_doors = "Добавяне на врати.",
+		stop_adding_doors = "Не се добавят врати повече.",
 
 		debug_doors_on = "Отстраняването на грешки на вратите е включено.",
 		debug_doors_off = "Отстраняването на грешки на вратите е изключено.",
 		doors_no_job = "Няма",
+		disabled_doors = "Изключени врати.",
+		enabled_doors = "Включени врати.",
 
 		unlocks = "Отключвания: <i>${cluster}</i>."
 	},
@@ -6475,7 +7027,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		floor_loading_bay = "Пристанище за товарене",
 		floor_vault = "Сейфова стая",
 
-		floor_second_floor = "Втори етаж",
+		floor_second_floor = "2-ри етаж",
 		floor_icu = "Интензивно отделение",
 		floor_ground = "Партер",
 		floor_surgery = "Операционна",
@@ -6494,6 +7046,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 		floor_fourth_floor = "4-ти етаж",
 		floor_third_floor = "3-ти етаж",
+		floor_second_floor = "2-ри етаж",
+		floor_first_floor = "1-ви етаж",
+
+		floor_gangway = "Прав, проход",
 
 		floor_hangout = "Място за Прекарване",
 		floor_penthouse = "Пентхаус",
@@ -6508,7 +7064,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 		floor_showroom = "Шоурум",
 		floor_office = "Офис",
-		floor_doj_office = "Офис на DOJ",
 
 		floor_penthouse_top = "Пентхаус (Горен етаж)",
 		floor_penthouse_entrance = "Пентхаус (Вход)",
@@ -6676,6 +7231,14 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		sold_fentanyl_logs_details = "${consoleName} продаде 1 бр. ампула фентанил за $${reward}."
 	},
 
+	fields = {
+		pick_weed = "Натиснете ~INPUT_CONTEXT~, за да изберете трева.",
+		picking_weed = "Избиране на трева",
+
+		pick_tobacco = "Натиснете ~INPUT_CONTEXT~, за да изберете тютюн.",
+		picking_tobacco = "Избиране на тютюн"
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Вземане на отпечатък",
 		already_fingerprinting = "Вече вземате отпечатък от играч.",
@@ -6792,6 +7355,9 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		extract_rubber = "Натисни ~INPUT_CONTEXT~, за да извлечеш гума от дървото.",
 		extracting_rubber = "Извличане на гума",
 
+		pick_oranges = "Натиснете ~INPUT_CONTEXT~, за да изберете портокали.",
+		picking_oranges = "Събиране на портокали",
+
 		tree_klonk = "Нещо падна от дървото и удари главата ти."
 	},
 
@@ -6802,6 +7368,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		gas_time_left = "Имаш още ${gasTime} секунди с газова маска.",
 		hold_to_take_gas_mask_off = "Задържи ~INPUT_VEH_HEADLIGHT~ за сваляне на газовата маска.",
 		hold_to_take_gas_mask_off_holding = "Продължи да задържаш за сваляне на газовата маска."
+	},
+
+	gift_boxes = {
+		failed_seal_box = "Неуспешно запечатване на кутията за подарък.",
+		failed_open_box = "Неуспешно отваряне на кутията за подарък."
 	},
 
 	golf = {
@@ -6866,6 +7437,19 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		something_went_wrong = "Възникна грешка при опит за закупуване на жвака.",
 
 		flavor = "Жвачка (${flavor})"
+	},
+
+	gun_crafting = {
+		menu_title = "Сглобяване на оръжие",
+		close_menu = "Затвори менюто",
+		assemble_gun = "Сглоби оръжие",
+		press_assemble_gun = "[${SeatEjectKey}] Сглоби оръжие",
+		assembling_gun = "Сглобяване на ${weapon}",
+		crafting_success = "Успешно сглобено ${weapon}.",
+		crafting_failed = "Неуспешно сглобяване на оръжие.",
+
+		crafted_gun_logs_title = "Сглобено оръжие",
+		crafted_gun_logs_details = "${consoleName} сглоби 1x `${weapon}` на маса за сглобяване на оръжие."
 	},
 
 	gun_running = {
@@ -7023,8 +7607,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		m = "метра",
 		belt = "ПОЯС",
 		oil = "МАСЛО",
+		megaphone = "ГОВОРИТЕЛ",
 		manual = "РЪЧНИК",
-		limiter = "ОГРАНИЧИТЕЛ",
+		cruise_control = "ТЕМПОМАТ",
+		speed_limiter = "ОГРАНИЧИТЕЛ НА СКОРОСТТА",
 		gear_uc = "СКОРОСТ",
 		fuel = "гориво",
 		nitro = "Нитро",
@@ -7096,6 +7682,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		los_santos = "Лос Сантос",
 		citizen_card = "Гражданска карта",
 		driver_license = "Шофьорска лицензия",
+		press_pass = "Пропуск за преса",
 		first_name = "Име",
 		last_name = "Фамилия",
 		gender = "Пол",
@@ -7138,6 +7725,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		just_showed_citizen_card = "Току-що показахте гражданска карта. Моля, изчакайте малко.",
 		driver_license_details = "${firstName} ${lastName} | Дата на раждане: ${dateOfBirth} | Пол: ${gender} | Идентификационен номер на гражданин: ${characterId}",
 		just_showed_driver_license = "Показвате шофьорска лицензия. Моля, изчакайте малко.",
+		press_pass_details = "${firstName} ${lastName} | Пол: ${gender} | Граждански ИД: ${characterId}",
+		just_showed_press_pass = "Показване на Пропуск за преса. Моля изчакайте малко.",
 
 		boat_license = "Лиценз за лодка",
 		boat_license_details = "Лиценз за лодка | ${firstName} ${lastName} | Граждански идентификационен номер: ${characterId}",
@@ -7265,6 +7854,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		blip_label = "Импорт / Експорт"
 	},
 
+	indestructibility = {
+		indestructibility_on = "Включена неуязвимост.",
+		indestructibility_off = "Изключена неуязвимост."
+	},
+
 	injuries = {
 		inspect_no_player = "Няма играч рядко, когото може да проверите.",
 		already_inspecting = "Вече проверявате играч.",
@@ -7272,7 +7866,14 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		inspecting = "Проверяване на играч",
 		no_injuries = "Няма наранявания или кървене",
 		patient_bleeding = "Пациент кърви.",
-		injury = "${label} нараняване"
+		patient_bite_wounds = "Пациентът има ухапвания.",
+		injury = "${label} нараняване",
+		performing_autopsy = "Извършва се аутопсия",
+		already_performing_autopsy = "Вече се извършва аутопсия.",
+		autopsy_no_player = "Няма играч наблизо, на когото да извършите аутопсия.",
+		autopsy_result = "Изглежда, че пациентът е починал от `${label}` около ${time}.",
+		autopsy_no_result = "Аутопсията изглежда е неизяснена.",
+		autopsy_failed = "Неуспешно извършване на аутопсия."
 	},
 
 	instances = {
@@ -7318,10 +7919,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		cleaning_station = "Станция за почистване",
 		grocery_store = "Хранителен магазин",
 		dons_country_store = "Магазин Донс Кънтри",
-		penthouse_fridge = "Хладилник в пентхауса",
+		cigar_store = "Тютюнев магазин",
+		penthouse_fridge = "Хладилник",
 		mug_shots = "Снимки на арестувани",
 		prison_store = "Магазин в затвора",
 		fruit_vendor = "Плодова палатка",
+		fruit_market = "Пазар на плодове 'Аламо'",
 		food_market = "Хранителен магазин",
 		island_store = "Магазин на острова",
 		travel_agency = "Пътна агенция",
@@ -7329,7 +7932,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		burger_bar = "Бургер бар",
 		tool_store = "Магазин за инструменти",
 		gun_store = "Аму-Нация",
+		locksmith = "Ключар",
+		the_chemist = "Аптека 'Химик'",
 		discount_store = "Магазин с намаление",
+		skater_store = "Магазин за скейтбордове",
 		gun_store_with_shooting_range = "Аму-Нация със стрелбище",
 		green_wonderland = "Зелен рай",
 		copy_shop = "Магазин за копия",
@@ -7343,8 +7949,9 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		strip_club = "Стриптйз клуб",
 		police_store = "Магазин на полицията",
 		fib_store = "Магазин на ФИБ",
-		police_badge_store = "Полицейско бюро за значки",
-		doc_badge_store = "Бюро за значки на DOC",
+		deputy_madison = "Заместник Мадисън",
+		sergeant_harris = "Сержант Харис",
+		dr_thompson = "Д-р Томпсън",
 		flower_store = "Цветарски магазин на Стейси",
 		gift_store = "Магазин за подаръци Дел Перо",
 		ems_store = "Магазин на СЛУЖБАТА за спешни медицински случаи",
@@ -7360,12 +7967,14 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		erp_shop = "ERP Магазин",
 		pet_shop = "Зоомагазин",
 		bean_machine = "Bean Machine",
+		bean_machine_fridge = "Хладилник на Bean Machine",
 		hunting_store = "Магазин за лов",
 		fishing_store = "Магазин за риболов",
 		los_santos_golf_club = "Клуб за голф Лос Сантос",
 		arcade_bar = "Аркада Бар",
 		japanese_restaurant = "Японски Ресторант",
 		japanese_restaurant_kitchen = "Японска Ресторантска Кухня",
+		pizza_restaurant = "Пицария",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Мелница за Зърно",
 		pd_prefix = "ПД",
@@ -7375,13 +7984,15 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		br_prefix = "БР",
 		inventory_overweight = "Вашето инвентарно пространство е претоварено!",
 		vehicle_locked = "Това превозно средство е заключено.",
+		press_to_talk_to = "Натиснете ~INPUT_REPLAY_SHOWHOTKEY~ за да говорите с ${name}.",
 		press_to_access_store = "Натиснете ~INPUT_REPLAY_SHOWHOTKEY~, за да отворите магазина.",
 		press_to_access_locker = "Натиснете ~INPUT_REPLAY_SHOWHOTKEY~, за да отворите личният си сейф.",
 		press_to_access_shared_storage = "Натиснете ~INPUT_REPLAY_SHOWHOTKEY~, за да получите достъп до споделеното хранилище.",
 		device_printout_details = "<b>Тип:</b> <i>${type}</i>, <b>Текст:</b> <i>${text}</i>",
 		copy_serial_number = "Копиране на сериен номер",
-		copy_fingerprint = "Копиране на пръстен отпечатък",
 		serial_number_copied = "${itemName}, Сериен номер: ${serialNumber}",
+		copy_fingerprint = "Копиране на пръстен отпечатък",
+		copy_evidence = "Копиране на доказателства",
 
 		failed_give = "Неуспешно предаване на елемент(и) към играча.",
 		character_too_far = "Играчът е твърде далече.",
@@ -7394,10 +8005,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		inspect_no_property = "Тази ${item} не изглежда, че има никакви отбелязвания за собственост върху нея.",
 
 		searching_dumpster = "Търсене в контейнера",
+		searching_homeless_tent = "Претърсване на намето на бездомника",
 
 		nameable_title = "Име на предмет, което може да се именува:",
 
 		inventory_restricted = "Не можете да преместите този артикул в този инвентар.",
+		inventory_no_more_items = "Не можете да поставите още предмети в този инвентар.",
 
 		press_to_access_shredder = "[${InteractionKey}] Достъп до унищожителя.",
 
@@ -7422,6 +8035,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		arcade_counter = "Бройлер за игри",
 		tequilala_counter = "Бройлер в Tequi-la-la",
 		prison_counter = "Затворен брояч",
+		kissaki_counter = "Плот на Kissaki",
+		underground_bar_counter = "Плот на подземен бар",
+		pizza_this_counter = "Плот на Pizza This",
+		yellow_jack_counter = "Плот на Yellow Jack",
+		bahama_mamas_counter = "Брояч на Бахама Мама",
 
 		inventory_name_missing = "Липсва параметър за име на инвентара.",
 
@@ -7443,6 +8061,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		broken_food = "Този предмет е изтекъл.",
 		broken_drugs = "Този предмет е изтекъл.",
 		vape_empty = "Този атомайзер е празен.",
+		pen_empty = "Този даб пен е празен.",
 
 		craft_combine = "Съчетаване на <i>${output}</i>",
 		combining = "Съчетаване",
@@ -7467,6 +8086,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		mix_pancake_batter = "Разбъркайте <i>Смес за Палачинки</i>",
 		disassemble_bandages = "Разглоби <i>Превръзки</i>",
 		craft_tourniquet = "Изработи <i>Турникетка</i>",
+		mix_pilk = "Смеси <i>Пепси и Мляко</i>",
+		break_apart_battery = "Раздели <i>Батерия</i>",
+		mix_gunpowder = "Смеси <i>Барут</i>",
+		roll_cigar = "Навий <i>Сигара</i>",
 
 		search = "Търси",
 		amount = "Количество",
@@ -7511,10 +8134,15 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		logs_wiped_nearby_ground_inventories_details = "${consoleName} изтри всички земни складове в радиус от `${radius}`.",
 
 		inventory_crafting_logs_title = "Инвентар за изработка",
-		inventory_crafting_logs_details = "${consoleName} използва ${inputs}, за да създаде ${amount}x ${output}.",
+		inventory_crafting_logs_details = "${consoleName} използва ${inputs}, за да създаде ${output}.",
 
 		press_use_campfire = "[${InteractionKey}] Използвайте костенурката",
 		use_campfire = "Използвайте костенурката",
+
+		inventory_not_loaded = "Инвентарът не е зареден.",
+		invalid_inventory_name = "Невалидно име на инвентара.",
+		inventory_refresh_success = "Инвентарът е успешно обновен.",
+		inventory_refresh_failed = "Неуспешно обновяване на инвентара.",
 
 		dumpster_sandwich = "Плеснели парченца хляб",
 		dumpster_beer = "Нацъфтяло бира",
@@ -7549,6 +8177,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		citizen_card_description = "Служи като идентификация, лиценз за оръжие и шофьорска книжка.",
 		driver_license = "Шофьорска Книжка",
 		driver_license_description = "Официална шофьорска книжка. Абсолютно не е от гърба на пакет за закуска.",
+		press_pass = "Предстартов пропуск",
+		press_pass_description = "Този официален Предстартов Пропуск ви идентифицира като репортер или журналист, като ви предоставя достъп до ограничени зони и събития. Носете го с гордост, докато следите и разкривате истината.",
 		phone = "Телефон",
 		phone_description = "never:tm:",
 		radio = "Радио",
@@ -7558,7 +8188,9 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		tablet = "Таблет",
 		tablet_description = "Много голям телефон.",
 		wallet = "Портфейл",
-		wallet_description = "За всичките ви пари и карти.",
+		wallet_description = "Създаден с патриотизъм на сърцето, този портфейл не само съхранява вашите основни неща като лични документи и пари, но го прави с изпълнение на национална гордост. Живописното изображение на американския флаг и символа на орела правят изява винаги, когато го изваждате. Идеален за тези, които носят не само своите ценности, но и чувство на гордост.",
+		folder = "Папка",
+		folder_description = "Тази здрава синя папка е основният организатор на всичките ви важни документи. Идеална за подреждане на документи, лични карти и снимки наредно и лесно достъпни. Без значение дали за бизнес или лична употреба, тя е надежден пазител на вашите хартиени съкровища.",
 
 		gps = "GPS",
 		gps_description = "Удовлетворете всичките си нужди от гаджети.",
@@ -7666,8 +8298,13 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		printer = "Принтер",
 		printer_description = "Само принтер, без факс.",
 
+		label_printer = "Принтер за етикети",
+		label_printer_description = "Персонализирайте вашите предмети с този принтер за етикети! Просто сложете предмет и отпечатайте стилен нов дизайн, за да му придадете свеж и персонализиран вид. Идеален за добавяне на стил на вашите ежедневни неща!",
+
 		brochure = "Брошура",
 		brochure_description = "Помощна брошура, която ще ви помогне да започнете в града.",
+		bus_ticket = "Билет за автобус",
+		bus_ticket_description = "Вашият еднопосочен билет за <b>${route}</b>! Този билет е идеален за хората, които обичат да запазят спомен от пътуванията си. Той е валиден за едно пътуване от <b>${date}</b>, така че бъдете нащрек и се насладете на пътуването. Помнете, че този билет е валиден само за едно пътуване, затова го използвайте с усет!",
 
 		basic_repair_kit = "Основен комплект за ремонт",
 		basic_repair_kit_description = "Прави нещата да работят, но едва-едва.",
@@ -7710,9 +8347,42 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		kissaki_delivery_description = "Вкусна колекция от суши и други японски изкушения.",
 		green_wonderland_delivery = "Зелено учудващо багаж",
 		green_wonderland_delivery_description = "Чанта пълна с любимите ви зелени дреболии. #420blazeit",
+		pizza_this_delivery = "Пица Този Бокс",
+		pizza_this_delivery_description = "Пренесете горещата и вкусна си пица със стил в доставъчната кутия на Пица Този, която ще гарантира, че всяко парче стига точно толкова съвършено, колкото е излязло от фурната.",
+
+		empty_box = "Празна кутия",
+		empty_box_description = "Започнете с тази проста, здрава кутия, за да създадете персонализиран подарък. Напълнете я с неизтриваеми съкровища и е готова да бъде превърната в мислителен подарък. Идеална за пакетиране на всичко, което символизира любов, с изключение на прехвърлимите и оръжия.",
+		gift_box = "Подаръчна кутия",
+		gift_box_description = "Тази елегантно запечатана подаръчна кутия, украсена със свежа панделка, е красив начин да представите внимателно подбраните си предмети. Идеална за специални поводи, тя предава топлина и внимание, гарантирайки, че вашето жест на подаряване е толкова възторжен, колкото подаръка вътре.",
 
 		ear_defenders = "Защита за уши",
 		ear_defenders_description = "Използва се, за да предпазите ушите си от силни шумове.",
+
+		skateboard = "Ске́йтборд",
+		skateboard_description = "Имаме ске́йтборд в GTA V преди Skate 4.",
+		deck_arcade = "Дек Arcade Attack",
+		deck_arcade_description = "Подобри играта си на ске́йт с Дека Arcade Attack. Предлагащ ярка пикселарна графика, която ви връща във времето на класическите игри, този дек е перфектен за геймърите ске́йтъри. Носете носталгията на улиците и мелчете по релсите, като че ли ще побийте високи резултати!",
+		deck_cats = "Дек Feline Frenzy",
+		deck_cats_description = "Покажете любовта си към котките с Дека Feline Frenzy. Остро прикрашен с игриви котешки графики, този дек е перфектен за ентусиастите на котките, които искат да добавят забавление в своите каранета. Ске́йтвайте със стил и нека всяко умение бъде перфектно котешко!",
+		deck_flowers = "Дъска \"Тропически Вибрации\"",
+		deck_flowers_description = "Пренесете плажа на улиците с дъската \"Тропически Вибрации\". Покрита с обилни цветни модели, тази дъска е идеална за тези, които искат да карат на скейт в състояние на вечно лято. Усещайте бриза и карайте вълните на урбанистичната джунгла!",
+		deck_weed = "Дъска \"Висока Скорост\"",
+		deck_weed_description = "Прегърнете абсолютната релаксация с дъската \"Висока Скорост\". Идеална за скейтъри, които обичат да държат нещата спокойни, докато хващат сериозни скокове.",
+		deck_blossom = "Дъска \"Цветен Букет\"",
+		deck_blossom_description = "Намерете вътрешния си мир с Черешовите цветя. Този дек е идеален за тези, които искат да внесат допир на спокойствие в своите скейт сесии.",
+		deck_peace = "Психеделичен дек на Сирената",
+		deck_peace_description = "Залезте в състояние на психеделична сирена. Този дек е идеален за тези, които обичат скейтбординга си с приятно настроение.",
+		deck_simpsons = "Бартов дек на Хаоса",
+		deck_simpsons_description = "Контролирайте вашата вътрешна бунтарка с Бартовия дек на Хаоса. Идеален за фенове на Симпсъните, които искат да внесат малко хаос от Спрингфийлд в своето скийтбордиране.",
+		deck_police = "Дек за полицията на Синята линия",
+		deck_police_description = "Покажете подкрепата си към полицейските с Thin Blue Line Deck. Идеален за офицери, които искат да карат със стил, представяйки значката.",
+		deck_ems = "Дек за СМП на Червената линия",
+		deck_ems_description = "Почитайте спешните реагенти с Red Line Deck. Идеален за СМП персонал, които искат да карат с гордост и да почитат героичната им работа.",
+		deck_usa = "Дек за свободата",
+		deck_usa_description = "Уха! Карайте с гордост на Stars and Stripes Deck, най-важният символ на свободата и американската мечта. Изработен за истински патриоти, този дек ще ви накара да карате с духа на червеното, бялото и синьото под краката ви. Благослови Америка!",
+
+		paper_straw = "Хартиен сламка",
+		paper_straw_description = "Пийте устойчиво с тази екологоско модна хартиена сламка. Проектирана за намаляване на пластмасовите отпадъци, тя помага за спасяването на костенурките, като предоставя уникално преживяване по време на пиене. Сламката по естествен начин се разтваря в напитката ви с течение на времето, преобръщайки ви с целите ѝ екологоско приложение и я правейки перфектна за еднократно използване.",
 
 		clothing_bag = "Чанта за Одежда",
 		clothing_bag_description = "Никога не се притеснявайте за модни аварии! Чантата за одежда ви позволява да съхранявате любимия си тоалет и моментално да го обличате където и да отидете. Тази чанта е с цялата магия на фея Кръстница, само без бибиди-бобиди-бу.",
@@ -7722,6 +8392,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 		clover = "Четирисъчлен клевер",
 		clover_description = "Рядък четирисъчлен клевер за късмет. Можете да го намерите в тревата, ако достатъчно добре погледнете.",
+		clover_mk2 = "4-листен лист кълвач MK2",
+		clover_mk2_description = "Рядка и неуловима 5-листена детелина, казано е, че носи порция извънредна късмет—ако успеете да я забележите, криейки се в тревата!",
 		small_frog = "Малка жабка",
 		small_frog_description = "Просто малка жабка. Погледнете го, толкова е сладък!",
 		seashell = "Ракушка",
@@ -7801,22 +8473,82 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		pistol_sight = "Прицел за пистолет",
 		pistol_sight_description = "Как да поправите лошата си цел.",
 
+		tungsten_ore = "Руда от волфрам",
+		tungsten_ore_description = "Не е лесно да се намери, но тази скала има потенциал! С малка, но стойностна концентрация от волфрам, това е съкровище на миньора, което чака да бъде пречистено.",
+		tungsten_nugget = "Волфрамов кристал",
+		tungsten_nugget_description = "Пречистена руда, която дава този малък бижу. Малък на размер, голям на стойност, всеки кристал е доказателство за усилията да се извлече чист волфрам от неговите скромни начала.",
+		tungsten_bar = "Волфрамов прът",
+		tungsten_bar_description = "Истопете достатъчно от тези заслужено спечелени кристали и ще получите солиден волфрамов прът. Здрав като брадва и готов за всяко предизвикателство, което му хвърлите по пътя.",
+
+		titanium_ore = "Титанова руда",
+		titanium_ore_description = "Сияен, сребристо-сив минерал с загадъчен блясък, титановата руда е универсален и много търсен материал, намерен дълбоко в земята. Тя не е изключително рядка, но истинската й стойност се крие в процеса на пречистване.",
+		titanium_nugget = "Титаново късче",
+		titanium_nugget_description = "Извлечено от рудата, това малко титаново късче представлява концентрирана форма на ценния метал. Всяко късче е малък знак за чистотата и здравината на титана.",
+		titanium_bar = "Титаниева пръчка",
+		titanium_bar_description = "Изкована от няколко титаниеви късчета, тази пръчка е здрав кусък метал с висока якост. Нейните леки и издръжливи свойства я правят идеална за изработка на премиум компоненти.",
+
+		titanium_rod = "Титаниев стержен",
+		titanium_rod_description = "Изработен от титаниеви пръчки, този стержен е невероятно здрав и устойчив. Неговите леки свойства, комбинирани с изключителната му издръжливост, го правят ключов компонент за високопроизводствени приложения.",
 		aluminium_plate = "Алуминиева плоча",
 		aluminium_plate_description = "Внимание: Не предпазва от куршуми... наркоман.",
 		aluminium_rod = "Алуминиева пръчка",
 		aluminium_rod_description = "Опитайте да не бият с тази главата на приятелите си.",
-		copper_nugget = "Меден късче",
-		copper_nugget_description = "Малко късче от тази сладка, златисто-кафява смес.",
+		steel_tube = "Стоманена тръба",
+		steel_tube_description = "Универсален и здрав стоманен тръбен профил, идеален за различни изработки. Без значение дали строите, поправяте или изобретявате нещо, този профил е вашият избор за здравина и надеждност.",
+		hardened_steel_plate = "Устойчива стоманена плоча",
+		hardened_steel_plate_description = "Тази устойчива стоманена плоча е предназначена да устои на най-тежките условия, осигурявайки висока здравина и устойчивост за всякакъв тежък проект. Идеална за укрепване на структури, създаване на напреднали компоненти или гарантиране, че вашите творения ще устоят на изпитанието на времето.",
 		copper_wire = "Медна жица",
 		copper_wire_description = "Универсална жица, която може да се използва за почти всичко електронно.",
 		lens = "Леща",
 		lens_description = "Използва се в очила и микроскопи, ти, тъпанар.",
 		polymer_resin = "Полимерна смола",
 		polymer_resin_description = "Не се пуши, но все пак е готино.",
+		fibreglass_resin = "Резинов фибростъклен материал",
+		fibreglass_resin_description = "Този универсален лепилен материал е от съществено значение за укрепване и поправка, създаване на здрави, леки компоненти. Лесен за нанасяне и се застоява до здрав, устойчив финал, идеален е за проекти за самостоятелно изработване и професионална употреба.",
 		screws = "Винтове",
 		screws_description = "Какво правите? Завивате ли?",
 		spring = "Пролет",
 		spring_description = "Не знам защо, но хората харесват да ги почистват?",
+		high_tensile_spring = "Превивна пружина с висока твърдост",
+		high_tensile_spring_description = "Превивна пружина с висока твърдост, създадена за оптимална производителност, предлага изключителна здравина и еластичност. Идеална за приложения с високо натоварване, тази пружина гарантира надеждно функциониране и дълготрайност, като става от съществено значение за напреднали проекти за изработване и инженеринг.",
+		tungsten_plate = "Плоча от волфрам",
+		tungsten_plate_description = "Изкована от две твърди пръта от волфрам, тази плоча е здрава, издръжлива и готова да издържа на всеки натиск или висока температура. Истински тест на сила и устойчивост.",
+		reinforced_steel_tube = "Подсилена стоманена тръба",
+		reinforced_steel_tube_description = "Проектирана за максимална здравина, тази подсилена стоманена тръба е създадена да издържа на най-тежките условия. Нейната здрава конструкция гарантира изключителна здравина и устойчивост.",
+		muzzle_brake = "Глушител за куршуми",
+		muzzle_brake_description = "Създаден, за да овладее зверския отдача и изстрелване на куршумите от оръжието, този важен компонент пренасочва газовете от патроните, за да запази известността на мишената и ударите в цел. Изработен с прецизност, той гарантира по-плавно действие и по-добра точност, което го прави задължителен за всеки сериозен стрелец.",
+
+		trigger = "Спусък",
+		trigger_description = "Важният компонент за всяко строителство на огнестрелно оръжие, било то пушка, репетирорка или пушка. Изработен с прецизност за ясно, надеждно спускане на спусъка всеки път.",
+		smg_lower_receiver = "Долен приемник на SMG",
+		smg_lower_receiver_description = "Основната част за вашия SMG, долният приемник е мястото, от което всичко започва. Основен за съдържането на механизма за стрелба и свързването на другите компоненти, този елемент е първата стъпка за изграждане на мощна автоматична пушка.",
+		smg_lower_receiver_mk2 = "Долен приемник на SMG MK2",
+		smg_lower_receiver_mk2_description = "Подобрена версия на стандартния долен приемник, MK2 предлага подобрена издръжливост и прецизност. Идеален за тези, които търсят по-надежден и здрав SMG за интензивни ситуации.",
+		smg_upper_receiver = "Горен приемник за пушки SMG",
+		smg_upper_receiver_description = "Завършвайки основната рамка на вашия SMG, горният приемник е от съществено значение за монтирането на цевта и други горни компоненти. Той е проектиран за гладка работа и последователност на работата.",
+		smg_upper_receiver_mk2 = "Горен приемник за пушки SMG MK2",
+		smg_upper_receiver_mk2_description = "Вариантът MK2 на горния приемник за SMG включва подобрения за по-добра точност и стабилност. Това е изборът за онези, които изискват върховна производителност от своето огнестрелно оръжие.",
+		rifle_lower_receiver = "Долен приемник на пушка",
+		rifle_lower_receiver_description = "Основата на вашата пушка, долният приемник държи спусъчната група и биковият склад. Този ключов компонент гарантира, че основата на вашата пушка е здрава и готова за по-нататъшно сглобяване.",
+		rifle_lower_receiver_mk2 = "Долен приемник на пушка MK2",
+		rifle_lower_receiver_mk2_description = "Подобрена версия на стандартния долен приемник на пушка, MK2 осигурява подобрена здравина и надеждност, което го прави идеален за високопроизводителни пушки.",
+		rifle_upper_receiver = "Горна част на карабина",
+		rifle_upper_receiver_description = "Свързващата част между цевта и групата с болт, горната част на карабина е ключов елемент за точността и работата на карабина ви. Този елемент осигурява, че карабина ви може да се справи с всяка задача с прецизност.",
+		rifle_upper_receiver_mk2 = "Горна част на карабина MK2",
+		rifle_upper_receiver_mk2_description = "Горната част MK2 за карабини предлага превъзходно инженерство за увеличена точност и здравина, правейки карабина ви готов за най-изисканите условия.",
+		shotgun_lower_receiver = "Долен приемник за пушка",
+		shotgun_lower_receiver_description = "Сърцето на вашата пушка, долният приемник е от съществено значение за носенето на сглобката на спусъка и осигуряването на база за останалата част на оръжието. Започнете строежа на вашата пушка с този здрав компонент.",
+		shotgun_lower_receiver_mk2 = "Долен приемник за пушка MK2",
+		shotgun_lower_receiver_mk2_description = "Надграждането до версия MK2 ви дава допълнителна здравина и дълготрайност, идеално за конструиране на пушка, която може да издържи на натоварването от честото използване.",
+		shotgun_upper_receiver = "Горна част на пиштолет-пушка",
+		shotgun_upper_receiver_description = "Проектирана да монтира цевта и да осигури гладко циклиране на патроните, горната част е критична част от функционалността на вашата пиштолет-пушка. Сглобете вашия идеален пиштолет-пушка с този ключов компонент.",
+
+		copper_nugget = "Меден късче",
+		copper_nugget_description = "Малко късче от тази сладка, златисто-кафява смес.",
+		zinc = "Цинк",
+		zinc_description = "Добит от батерии, цинкът е вашият избор за метал за изработка и индустриални нужди. Независимо дали поправяте нещата или го комбинирате, за да създадете нещо още по-впечатляващо, този универсален елемент е скрито съкровище във вашия инструментариум.",
+		brass = "Месинг",
+		brass_description = "Чрез умело съчетаване на мед и цинк получавате месинг - здрав метал, идеален за изработка на калъпи за ракети. Това е като алхимия за съвременния век, превръщайки прости елементи в ключовите компоненти на вашето оръжие.",
 
 		grenade_shell = "Гранатовата обвивка",
 		grenade_shell_description = "undefined",
@@ -7842,16 +8574,16 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		skin_geometric_description = "undefined",
 
 		refillable_bottle = "Пълнима бутилка",
-		refillable_bottle_description = "Застрашаване на костенурките наистина и заистина.",
+		refillable_bottle_description = "Подобрете хидратацията си с тази елегантна, презапълваема бутилка. Проектирана за еко осъзнатите и модно насочените, нейната издръжлива конструкция и минималистичен дизайн я правят идеален спътник за поддържане на хидратацията през целия ден. Напълнете я с любимия си напитка и задоволете жаждата си, докато сте на работа, в залата или пътувате из света.",
 
 		capri_sun = "Каприсън",
-		capri_sun_description = "Вкусна наслада от детството ви.",
+		capri_sun_description = "Възкръснете радостта от детството с всяка глътка от Capri Sun! Този иконичен плик е пълен с пикантния вкус на портокал, предлагайки освежаващ взрив, напомнящ за слънчеви дни и забавни следобеди. Идеален за приключения или носталгично удоволствие, това е вашата малка кутия слънчице, която утолява жаждата и провокира спомени.",
 
 		gumball = "Жувка",
-		gumball_description = "Жувка, какво друго искате да кажа?",
+		gumball_description = "Насладете се на взрив от неочакван вкус с всяка цветна топка за жвакане. Просто внимавайте да не възприемете прекалено сериозно - не забравяйте да жувате, а не да поглъщате! Всяко парче предлага приятно изненада, като прави всяко жеване забавно и пълно с вкусни приключения.",
 
 		chorus_fruit = "Плод на корацията",
-		chorus_fruit_description = "Плод, който може да ви телепортира до случайна локация.",
+		chorus_fruit_description = "Разкрийте тайните на плода Хорус, рядък ботанически чудеса, който се покланя от почитателите на алтернативната медицина за неговите изключителни свойства. След като бъде консумиран, този плод предлага внезапно стъпало, освежаващо преместване в място - изненадващ ефект, който мнозина приписват на неговата мистична енергия. Идеален за онези, които търсят бързо оздравяване или спонтанна промяна на дестинацията си. Обърнете се към неочакваното и позволете на плода Хорус да ви пренесе в нови възможности.",
 
 		water = "Вода",
 		water_description = "Опасност! Дихидроген монооксидът е безцветен и без миризма. Случайно вдишване на ДМО може да бъде фатално. Продължително излагане на твърдата му форма причинява сериозни наранявания на тъканите. Симптоми от поглъщане на ДМО могат да включват прекомерно изпотяване и уриниране, и може би чувство на надуване, гадене, повръщане и нарушаване на електролитния баланс на организма.",
@@ -7869,6 +8601,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		coke_description = "Пабло?",
 		pepsi = "Пепси",
 		pepsi_description = "Кокаинът е по-добър от Кока.",
+		fanta_light = "Fanta Light",
+		fanta_light_description = "Насладете се на изискания и освежаващ вкус на Fanta Light. Идеално за моментите, когато се нуждаете от напитка, която ви кара да си мислите, „Мога ли да взема Fanta Light, бре?“ Насладете се на лекия и освежаващ вкус на този иконичен напитк.",
+		sprite = "Sprite",
+		sprite_description = "Освежете се с бутилка Sprite, лимонадата с лимета, която удря. Тя има тази пухкава карбонизация, която щипе и понякога дори боли, но си струва. Заредена със сладост, Sprite е вашето предпочитано за захарно, пухкаво наслаждение!",
+		pilk = "Пилк",
+		pilk_description = "Любопитно съчетание на Пепси и мляко, ръчно изработен Пилк предлага смес от газирана освежаваща напитка и кремообразна нежност. Разбъркайте добре преди пиене, тъй като млякото естествено се стича на дъното, създавайки уникално и пътешествено вкусово изживяване.",
 		wonder_waffle = "Чудесен гофрет",
 		wonder_waffle_description = "Веган, без лактоза, без млечни продукти, без яйца, без глутен, органичен, без антибиотици, без соеви продукти, без фруктоза, без ядки, без ГМО, без захар, без мазнини и с ниско съдържание на въглехидрати",
 		cheeseburger = "Чийзбургер",
@@ -7887,8 +8625,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		smores_description = "undefined",
 		tic_tac = "Тик Так",
 		tic_tac_description = "Окси? Не, полицай, просто ям тик таци!",
-		pizza_slice = "Филия пица",
-		pizza_slice_description = "Малко парче пица за теб, с допълнителни пеперони (не е веган).",
 		hot_dog = "Хот-дог",
 		hot_dog_description = "Прегърни този глизи, като че ли е последният ти.",
 		nachos = "Начос",
@@ -7901,6 +8637,82 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		vanilla_milkshake_description = "Класически млечен шейк, отлично се комбинира с бургер и картофки!",
 		chocolate_milkshake = "Шоколадов млечен шейк",
 		chocolate_milkshake_description = "Чудесно изглеждащ шейк, просто се надявайте, че ЦРУ не ви успява преди да го изпиете...",
+
+		pizza_dough = "Тесто за пица",
+		pizza_dough_description = "Това премиум тесто за пица е готово за вашето готварско изкуство. Еластично и гъвкаво, е идеално за оформяне във вашата идеална основа за всякакви плънки. Замесете го, покрийте го и го изпечете в хрупкава, златиста кора, която е основата на вкусната домашна пица.",
+		black_olives = "Черни маслини",
+		black_olives_description = "Тези черни маслини внасят богат, земен вкус във всяко ястие. Нарязани и готови за разпръскване върху пици, те добавят допир от средиземноморски вкус, който допълва както месни, така и вегетариански надения.",
+		bell_pepper = "Червен пипер",
+		bell_pepper_description = "Сияен и сладък, този целият червен пипер добавя цвят и хрупкавост на всяко ястие. Идеален за пълнене, нарязване или хапване, той е вариантен любимец на кухнята.",
+		bell_pepper_sliced = "Нарязан червен пипер",
+		bell_pepper_sliced_description = "Прясно нарязан червен чуш, готов да добави сладък и хрупкав вкус към вашите салати, пържени ястия или сандвичи. Удобно приготвен за всичките ви кулинарни приключения.",
+		pepperoni = "Пеперони",
+		pepperoni_description = "Пикантен и ароматен, пеперонито е неизменен топинг за любителите на пицата. Неговият наситен вкус и приятната хрупкавост след изпичане го правят популярен избор, добавяйки пикантна свежест, която подобрява всяка хапка.",
+		jalapeno = "Халапеньо",
+		jalapeno_description = "Пресни халапеньос добавят остра пикантност към всяка пица. Нарязани на тънко, тези чушки внасят взрив от топлина и ярък, растителен нюанс, който пречиства по-обилните вкусове, идеален за тези, които ценят пикантен вкус.",
+		mozarella = "Моцарела",
+		mozarella_description = "Кремава и вкусна, моцарелата е типичният сирене за пица. То се топи в еластичен и лепкав слой, който перфектно събира всички наденици и създава това обичано издърпване на пицата с всяка филийка.",
+		ham = "Шунка",
+		ham_description = "Сладка и пикантна, шунката добавя богат и наситен вкус към пицата. Нейните нежни, сочни късчета предлагат приятен контраст, когато се съчетаят с кремавата текстура на разтопения сирене, което я прави популярен избор за много хора.",
+		salami = "Салам",
+		salami_description = "Саламът носи плътен и чеснов вкус с подправен след смокинга, който придава изразителност на пиците. Неговата плътна текстура и богат вкус предоставят на гризенето богат вкус, който се отличава сред другите плънки.",
+		tomato_sauce = "Сос от домати",
+		tomato_sauce_description = "Този ярък сос от домати е изработен от узрели домати, сготвени с подправки и подправки, за да развият богат, дълбок вкус. Той служи като основна база, която подчертава всяка пица със своите сладки и кисели нюанси.",
+		flour = "Брашно",
+		flour_description = "Висококачественото брашно е ключово за създаването на идеалното тесто за пица. То осигурява структура и зъвкавост, които обичат обожателите на пицата, като го прави основна съставка в изработката на пица.",
+		olive_oil = "Зехтин",
+		olive_oil_description = "Богат и ароматен, зехтинът се изсипва върху пицата за допълнителен вкусен слой. Той добавя деликатна плодова нотка и помага за постигането на златиста и хрупкава кора, която е неотразима.",
+		pizza_cheese = "Пица сирене",
+		pizza_cheese_description = "Подобрете своите домашни пици с това богато и тегло сирене за пица, проектирано да се стопи красиво и да добави кремообразна, лепкава текстура във всеки ароматен залп.",
+		pineapple_slices = "Парчета ананас",
+		pineapple_slices_description = "Сладък, кисел и сочен, тези парчета ананас са идеални за добавяне на тропическо настроение към вашите ястия. Независимо дали сте почитател на ананаса върху пицата или предпочитате да го консумирате като самостоятелна закуска, тези парчета принасят свежест и вкус на всяко кулинарно творение.",
+		pizza_saver = "Подложка за пица",
+		pizza_saver_description = "Предназначена е да задържа сиренето от кутията, но когато сте дете, мислите, че е за барбита и акционни фигури да се седят върху нея.",
+		bread_sticks = "Пудинг пулемети",
+		bread_sticks_description = "Златисти и хрупкави отвън, меки и дъвчащи отвътре, тези пудинг пулемети са изработени от тесто за пица. Идеални за потапяне в маринара или пък за наслаждаване самостоятелно, те са вкусна и универсална закуска.",
+
+		pizza_margherita_raw = "Необработена Маргерита Пица",
+		pizza_margherita_raw_description = "Тази пица Маргарита е свежо приготвена с ярък сос от домати, свеж моцарела и ароматен босилек върху перфектно наденичено тесто, готова да се пусне в пещта и да се изпече до съвършенство.",
+		pizza_salami_raw = "Сурова пица Салами",
+		pizza_salami_raw_description = "Новосготвена, тази пица Салами предлага богат сос от домати, нареден с пикантни филийки салами и щедра моцарела върху домашно тесто, готово за изпичане в хрупкава, месиста наслада.",
+		pizza_diavola_raw = "Сурова пица Диавола",
+		pizza_diavola_raw_description = "Тази пица Диавола е изкусно приготвена с основа от сурово тесто, покрита с пикантно пеперони, остри чушки джалапеньо и щедра поръскалка сирене, чакайки топлината на фурната да разкрие целия си вкус.",
+		pizza_ham_raw = "Сурова Пица с Шунка",
+		pizza_ham_raw_description = "Тази пица с Шунка е ръчно изработена с домашно тесто, покрита с ароматни филии от шунка, нежна моцарела и доматен сос, всичко подредено и готово за печене, за да създаде уютно и вкусно ястие.",
+		pizza_hawaiian_raw = "Сурова Хавайска Пица",
+		pizza_hawaiian_raw_description = "Тази неусвоена хавайска пица е приготвена и готова за фурната, с изобилие от сладък ананас, вкусен шунка и растящ моцарела на сочна основа - готова да устрои вековното разискване с всеки вкусен залък.",
+		pizza_pepperoni_raw = "Неусвоена пица с пеперони",
+		pizza_pepperoni_raw_description = "Подгответе се за огнена празнична трапеза! Тази неусвоена пикантна пица с пеперони е натоварена с пикантни филийки пеперони и пикантен сос, просто чака да влезе във фурната. Идеална за тези, които обичат пикантните продукти с пица.",
+		pizza_vegetarian_raw = "Сурова Вегетарианска Пица",
+		pizza_vegetarian_raw_description = "Пригответе се да пекете свеж пикантен празник с тази сурова Вегетарианска Пица. Натрупана е с ярки зеленчуци и топла сирене, това е здравословно удоволствие, което чака фурната.",
+		pizza_margherita = "Маргарита Пица",
+		pizza_margherita_description = "Насладете се на простотата на класическата Маргарита пица, със златиста кора, покрита с богата доматена сос, кремав моцарела и докосване на свеж босилек. Този вечен фаворит предлага вкус на Италия с всяка ароматна филийка.",
+		pizza_salami = "Саламена пица",
+		pizza_salami_description = "Насладете се на наситените вкусове на свежа пица с салам, щедро покрита с пикантни резени салам, които се сливат красиво със сирене моцарела и остър сос от домати.",
+		pizza_diavola = "Пица Диавола",
+		pizza_diavola_description = "Изпитайте пикантния удар на пица Диавола, с пикантно пеперони, халапеньос и богат сос от домати, всичко овлажнено под слой разтопено сирене, перфектно изпечено до хрупкаво удоволствие.",
+		pizza_ham = "Пица с шунка",
+		pizza_ham_description = "Тази пица с шунка излиза от фурната с хрупкав корпус, покрит с сочни резени шунка, кремава моцарела и остър сос от домати, създавайки вълнуващ баланс от сладки и пикантни вкусове.",
+		pizza_hawaiian = "Хавайска пица",
+		pizza_hawaiian_description = "Свежа от фурната, тази хавайска пица комбинира контроверзния, но обичан микс от сочен ананас и ароматен шунка на златна коричка. Потопете се в този тропически завой, който продължава да предизвиква дебати и докосва вкусовите рецептори.",
+		pizza_pepperoni = "Пеперони Пица",
+		pizza_pepperoni_description = "Горещ завой на класическия фаворит! Тази пикантна пеперони пица е изпечена до съвършенство, с хрупкава коричка, топена сирене и пеперони с огнен удар. Не е за слабите по сърце, тази пица дава пламък!",
+		pizza_vegetarian = "Вегетарианска пица",
+		pizza_vegetarian_description = "Насладете се на порция от природата с тази вкусна вегетарианска пица. Натоварена с пъстър зеленчуци, кремав сирене и перфектно тесто, това е празник на вкусовете директно от градината.",
+		pizza_slice = "Маргарита пица на филия",
+		pizza_slice_description = "Насладете се на класическото удоволствие от филия Маргарита пица, с бистро моцарела, ароматен босилек и богата доматена основа върху хрупкаво тесто. Идеално за бърз, вкусен залък.",
+		pizza_slice_salami = "Саламена пица на филия",
+		pizza_slice_salami_description = "Насладете се на филенца Салями пица, където пикантната Салями се слива с разтопената моцарела и киселата доматена сос над перфектно изпечен кор. Идеална за тези, които жаждаят за по-пикантен вкус.",
+		pizza_slice_diavola = "Филенца Диавола Пица",
+		pizza_slice_diavola_description = "Открийте смелите вкусове с филенца Диавола пица, предлагаща пикантен пеперони, пламтящи халапеньоси и разтапящо се сирене върху хрупкав кор. Пикантно удоволствие за любителите на подправките.",
+		pizza_slice_ham = "Филенца Пица с Шунка",
+		pizza_slice_ham_description = "Насладете се на филенца Шунка пица, комбинираща сладка шунка с кремообразна моцарела и вкусен доматен сос на златист кор. Задоволяващо съчетание от сладко и пикантно във всяка хапка.",
+		pizza_slice_hawaiian = "Хавайско пица със скилидка",
+		pizza_slice_hawaiian_description = "Насладете се на скилидка от хавайска пица, където сладката ананас се среща с маслената шунка върху шепа плавящ моцарела и кисел доматен сос. Тази вълнуваща комбинация предизвиква конвенциите и разтърсва вкусовите рецептори, доказвайки, че понякога неочакваните съчетания правят най-паметното ястие.",
+		pizza_slice_pepperoni = "Скилидка с пеперони",
+		pizza_slice_pepperoni_description = "Една скилидка от пикантна наслада! Насладете се на прясно печените пеперони и разтапящия се сирене с всяка хапка. Тази скилидка се оказва силен удар, идеален за бързо пикантно лакомство!",
+		pizza_slice_vegetarian = "Пица С Печурки",
+		pizza_slice_vegetarian_description = "Единичен филийка пица с печурки, пълна с пресни зеленчуци и разтопено сирене. Идеална за леко, но удовлетворително удоволствие, пълно с градински вкусове.",
 
 		burrito = "Бурито",
 		burrito_description = "Бурито е ястие от мексиканската и тексанската кухня, което се състои от пшеничен тортила, останали съставки.",
@@ -7934,6 +8746,14 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		raw_fries_description = "По същество просто картоф, но някой не се е постарал достатъчно, за да го превърне в нещо.",
 		raw_patty = "Сурово Патешко",
 		raw_patty_description = "90% Истинско месо, другите 10% се загубиха при превода на опаковката.",
+		chicken_nuggets_raw = "Сурови Пилешки Пикантни",
+		chicken_nuggets_raw_description = "Изработени с нежна пилешка гърда и облечени в панировка, тези сурови пилешки пикантни са готови да бъдат изпечени до златиста перфекция. Идеални за създаване на домашна, вкусна закуска или ястие.",
+		breadcrumbs = "Панировъчни кришки",
+		breadcrumbs_description = "Тези обикновени панировъчни кришки са идеални за добавяне на хрупкаво, златисто покритие към любимите ви пържени или печени ястия. Изработени от обогатен хляб, те гарантират вкусна хрупкавост всеки път.",
+		chicken_breast = "Пилешко бутче",
+		chicken_breast_description = "Свежи и нежни, тези сурови пилешки бутчета са универсална съставка, готова за вашата кулинарна креативност. Идеални за грил, печене или пържене, те предлагат висококачествен източник на протеин за всяко ястие.",
+		chicken_nuggets = "Пилешки наденички",
+		chicken_nuggets_description = "Тези свежи пилешки наденички са златисти и хрупкави отвън, сочни и нежни отвътре. Отлично подправени и пържени до съвършенство, те са прекрасна закуска или основно ястие.",
 
 		apple = "Ябълка",
 		apple_description = "Дръж злите доктори на отсъствие!",
@@ -7957,6 +8777,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		strawberry_description = "Обикновено се намира на полета... завинаги.",
 		watermelon = "Арбуз",
 		watermelon_description = "Дали е вода или пък е диня? Никога може да не разберем.",
+		lemon = "Лимон",
+		lemon_description = "Свеж и ароматен лимон, изпълнен със задъхан вкус и яркожълт цвят. Идеален за добавяне на освежаващ акцент към любимите ви ястия и напитки. Всяка дясна ви доставя цитрусова енергия, която буди вкусовите ви рецептори.",
 
 		banana_peel = "Кора от банан",
 		banana_peel_description = "Доста плъзгава, внимавайте когато стъпвате върху нея.",
@@ -7993,6 +8815,9 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		cabbage = "Зеле",
 		cabbage_description = "Идеално за приготвяне на домашен кимчи.",
 
+		cabbage_seeds = "Семена за зеле",
+		cabbage_seeds_description = "Тези издръжливи семена за зеле са първата ви стъпка към отглеждането на парче сочни, лисести зеленчуци. Засейте ги във всяка уелнта почва и гледайте как се развиват в здрави зелеви глави, идеални за разнообразни кулинарни наслади. От свежи салати до пикантно кимчи, тези зелеви са готови да превърнат вашите кулинарни приключения.",
+
 		smoothie = "Смути",
 		smoothie_description = "Перфектната комбинация от плодове, зеленчуци и електролити, която лекува дори най-лошите геймърски махмурлуци.",
 		blender = "Блендер",
@@ -8009,10 +8834,32 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		jack_o_lantern_description = "Тиква с изрязано лице.",
 
 		cigarette = "Цигара",
-		cigarette_description = "Ако не пушите, сте плъх, брат.",
+		cigarette_description = "Ако не пушите, сте плажник брат! Пушете и изглеждайте като най-готиното куче в града—поне така казват. Вашите бели дробове може и да не се съгласят, но е, жертвите трябва да се правят за стил, нали?",
 		cigarette_pack = "Пакет цигари",
-		cigarette_pack_description = "За вашето тате, който има пристрастие към цигарите (надявам се да се върне след като си тръгне да ги купи).",
+		cigarette_pack_description = "Класическа пачка цигари - защото явно нищо не говори \"Ще се върна след 5 минути\" толкова добре като тях. Идеални за изразяване на вътрешния ви мистериозен татко, който излезе за цигари и... ну, знаете останалото.",
+		cigarette_carton = "Кутия с цигари",
+		cigarette_carton_description = "Искате цяла кутия? Ето го вашето решение! Кутия с цигари, която е свидетелство за вашата посветеност (или на вашите баща, ако те все още ги купуват). С 8 пачки вътре, имате достатъчно, за да задоволите лошата си навика и все пак да имате няколко останали за споделяне... или не.",
+		snus_pack = "Плик снус",
+		snus_pack_description = "Този плик е като моя лична запасена радост. Отвори го, вземи плик и усети този порив. Винаги трябва да имам един с мен – не мога да оцеля без моето Zyn!",
+		snus = "Снус",
+		snus_description = "Тези малки пликове са спасители, приятелю. Просто сложи един под горната си устна и буум – мигновено бързане без никакъв дим. Всичко става заради този бавен горящ ефект и укротяване на напрежението. Не мога да им се наситя!",
 
+		cigar_olivia = "Олива Серия G",
+		cigar_olivia_description = "Олива Серия G предлага уникален и балансиран вкус, смесващ нотки на богато кафе и кедър с допир на орехова сладост. Средното тяло и плавният финал го правят перфектен избор за тези, които искат изтънчен, но достъпен пушек.",
+		cigar_romeo = "Romeo y Julieta 1875",
+		cigar_romeo_description = "Търсите нещо плътно и достъпно? Romeo y Julieta 1875 предлага благ вкус на земли и с лек орехов аромат и намек за сладост. Идеално за релаксиращ вечер без голяма сила.",
+		cigar_arturo = "Arturo Fuente Gran Reserva",
+		cigar_arturo_description = "С плавен вкус и добре балансиран бленд, Arturo Fuente Gran Reserva има нотки на сладко дърво и мека дъжда. Средно-тяло, но богат на вкус, идеален за всеки, който се наслаждава на класическо пушене без удар.",
+		cigar_cohiba = "Кохиба",
+		cigar_cohiba_description = "За тези с изтънчен вкус, кохиба робусто предлага богато и кремообразно изгаряне, комбинирайки фини подправки с нотки на кедър. Това е гладко, средно тяло пура, която говори за изтънченост без да прекалява със силата.",
+
+		tobacco_leaf = "Тютюнен лист",
+		tobacco_leaf_description = "Този свеж зелен тютюнен лист е само на първите си стъпки. В следващите пет дни ще изсъхне, превръщайки се в дълбоко кафяв, идеален за завиване на пури. Следете внимателно тази трансформация!",
+		cigar_homemade = "Цигара (Ръчно свита)",
+		cigar_homemade_description = "Тази ръчно свита цигара доставя богат, земен вкус с намек на подправка. Изработена с внимание и прецизност, тя е перфектното възнаграждение за времето и усилията, вложени във всеки етап от процеса.",
+
+		crack = "Крак",
+		crack_description = "Известен със своя бърз, интензивен усет, този плочест материал е уличната версия на кокаин, която е изварена. Може да предизвика еуфорично ускорение, но внимавайте: той е толкова известен с опасността си, колкото и с очарованието си. Бъдете внимателни - от първия удар до трудния падение е хлъзгав път.",
 		cocaine_bag = "Кокаинова чанта",
 		cocaine_bag_description = "По-малки парчета от колумбийска история.",
 		cocaine_brick = "Кокаинова тухла",
@@ -8022,9 +8869,9 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		oxy = "Окси",
 		oxy_description = "Имаш ли някакви наркотици? Помага при болки в гърба.",
 		antibiotics = "Антибиотици",
-		antibiotics_description = "Ти помагат да се отървеш от инфекции и паразити.",
-		pain_killers = "Болкоуспокоителни",
-		pain_killers_description = "Това е върхово време за продажба, ленто, имам нужда от наркотици.",
+		antibiotics_description = "Тези малки спасители изпъдват паразитите, особено когато сте изяли малко твърде много от онези съмнителни, недокарани меса. Вземете едно от тези, и скоро ще се чувствате по-малко като бюфет за насекоми.",
+		pain_killers = "Ибупрофен",
+		pain_killers_description = "Ибупрофенът е вашето решение при главоболие, болки в мускулите или този път, когато прекалихте в залата за фитнес. Известен със своето способност да намали болката, възпалението и температурата, това е малката таблетка, която действа с голям удар. Просто помнете, че ключът е в умереността - това не е бонбон, независимо колко много ви боли гърбът.",
 		weed_seeds = "Семена за плевел",
 		weed_seeds_description = "Расте плевел, братко",
 		weed_1q = "Плевел 1кв.",
@@ -8087,6 +8934,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		pet_banana_cat_description = "Вашият плодов фелин в приятел! Банановото котенце се настанива на вашето рамо, добавяйки доза игрив чар към вашия ден. То е перфектната аксесоарна доза игрив чар към вашия ден. То е перфектната аксесоарна доза игрив чар към вашия ден. То е перфектната аксесоарна доза игрив чар към вашия ден. То е перфектната аксесоарна доза игрив чар към вашия ден. То е перфектната допълнителна играчка за вашия усмихнат всекидневен живот.",
 		pet_snowman = "\"Замръзналият\" Снежкомъж",
 		pet_snowman_description = "Забавлявайте се с вашата собствена презрамена снежка! Този малък, студен приятел придава зимно настроение на вашият стил, което го прави идеален за заснежени приключения и разпръскване на замръзнало настроение.",
+		pet_owl = "Хути",
+		pet_owl_description = "Хути, вашият мъдър и бдителен спътник, зае доказателно място на рамото ви. С острия си поглед и меките си пера, този омайен филин добавя допълнителна доза магия към вашите приключения. Винаги готов да подаде звук на мъдрост, Хути е перфектният приятел за всяко пътешествие.",
 
 		hotwheels_mcqueen = "Светкавичен Маккуин",
 		hotwheels_mcqueen_description = "Скорост, аз съм Скорост, плува като Кадилак, жилне като Биймер. КАЧОУ КАЧОУ КАЧОУ",
@@ -8125,6 +8974,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 		fentanyl = "Фентанил",
 		fentanyl_description = "Наречен \"подлата заспиваща смесь\", фентанилът е мощно малко зельо, което прави голям ефект. Само с едно докосване на тази субстанция, можете да изпратите дори най-бделия в свят на сънища. Обаче бъдете внимателни! Той е толкова мощен, че ако сънищата бяха валута, щяхте да сте милиардер след едно дозиране. Идеален, когато трябва да обърнете големи проблеми във спокойно решими.",
+		narcan = "Наркан",
+		narcan_description = "Този животоспасяващ противоядие е вашата бърза реакция на усвояването на фентанил. Представен във формата на бързо употребима таблетка, Наркан променя ефектите на фентанила, връщайки ви към живота с изумителна бързина. Винаги го дръжте на под ръка – това е ангелът-пазител в джоба ви, готов да действа незабавно, когато най-много се нуждаете от него.",
 
 		grimace_shake = "Гримасно разклащане",
 		grimace_shake_description = "Луд? Една гледа луд бях. Те ме затвориха в стая. Резбарна стая. Резбарна стая с плъхове. И плъховете ме правят луд. Луд? Една гледа луд бях. Те ме затвориха в стая. Резбарна стая. Резбарна стая с плъхове. И плъховете ме правят луд. Луд? Една гледа луд бях. Те ме затвориха в стая. Резбарна стая. Резбарна стая с плъхове. И плъховете ме правят луд. Луд? Една гледа луд бях. Те ме затвориха в стая. Резбарна стая. Резбарна стая с плъхове. И плъховете ме правят луд. Луд? Една гледа луд бях.....",
@@ -8172,6 +9023,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		steel_filings = "Стоманени опили",
 		steel_filings_description = "Колекция от малки стоманени отпадъци, произведени по време на обработката на различни метални компоненти. Обикновено се използва при изработката на файлове.",
 
+		gold_ore = "Златна руда",
+		gold_ore_description = "Изкопайте част от природното съкровище с тази златна руда! Сурова и неполирана, тя е вашият път към откриването на блестящата красота, скрита в земята.",
+		gold_nugget = "Златно късче",
+		gold_nugget_description = "Малко, блестящо парче на късмета! Това златно късче е резултатът от упорит труд и упоритост, перфектно за изработка или обмяна.",
 		gold_bar = "Златна пръчка",
 		gold_bar_description = "undefined",
 
@@ -8191,6 +9046,20 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		steel = "Сурова стомана",
 		steel_description = "undefined",
 
+		aluminium_ore = "Алуминиева руда",
+		aluminium_ore_description = "Богат на боксит, този парче алуминиева руда очаква трансформация в лек и универсален алуминий. Изтопете го, за да произведете метал, перфектен за изработване на всичко, от самолети до консервни кутии за напитки. Ключов ресурс за съвременното инженерство и всекидневно удобство.",
+		iron_ore = "Желязена руда",
+		iron_ore_description = "Суров парче желязна руда, готово да бъде стопено в здрава и устойчива стомана. Тази руда е основата на безброй инструменти, машини и сгради. Извлечете металната същност и я изковете в нещо невероятно.",
+
+		rusty_tank_shell = "Ръждиво танково оръдие",
+		rusty_tank_shell_description = "Това тук ръждиво танково оръдие е преживяло повече мръсотии и кал отколкото пикап колата на един крачолец! Изкопано от недрата на историята, това е добре запазен кусочек от миналото, приятели. Идеално за сядане на верандата и споделяне на военни истории с момчетата!",
+		rusty_cannon_ball = "Ръждив катеричен топ",
+		rusty_cannon_ball_description = "Погледни този древен катеричен топ, приятели! Изваден от дълбините на потопен пиратски кораб. Ръждясал и износен от солените води, този стар реликт носи ехото на ожесточени морски битки и скрити съкровища. Арр, моряци, бъдете внимателни, че не би събудили огнения му дух!",
+		rusty_gear = "Ръждива предавка",
+		rusty_gear_description = "Тази стара предавка, вече ръждясала и износена, някога играеше ключова роля в механизмите на отминалите дни. Зъбците й може и да са тъпи, но все още носи ехото на безброй въртения във своята остаряла форма.",
+		rusty_diving_helmet = "Ръждясали гмуркане шлем",
+		rusty_diving_helmet_description = "Този древен гмуркане шлем, покрит с дебел слой от ръжда, някога смело се справя с дълбините на океана. Сега той стои като реликвия на подводното изследване, отразяваща приказки за потънали съкровища и морски приключения.",
+
 		purified_aluminium = "Пречистен алуминий",
 		purified_aluminium_description = "undefined",
 		tempered_glass = "Закалено стъкло",
@@ -8202,10 +9071,16 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		refined_steel = "Пречистена стомана",
 		refined_steel_description = "undefined",
 
-		power_saw = "Електрическа пила",
-		power_saw_description = "Използва се за отрязване на неща от други неща.",
+		power_saw = "Пила за метал",
+		power_saw_description = "Многофункционална обратноходяща пила, идеална за бързи и мръсни задачи. Без значение дали режете чрез метал, дърво или... други материали, този инструмент се справя с работата.",
 		steel_file = "Стоманен файл",
 		steel_file_description = "Използва се за шлифоване на неща. Но не данъчните ви декларации.",
+		catalytic_converter = "Каталитичен конвертор",
+		catalytic_converter_description = "Имате талант за нощните автомобилни шеги? Този бляскав метален бръква е вашият билет за бързи пари, просто не позволявайте на полицията да ви хване, докато го крадете от паркирани автомобили.",
+		car_brakes = "Спирачки",
+		car_brakes_description = "Прецизна спираща сила точно на вашите върхове на пръстите! Тези високопроизводителни автомобилни спирачки гарантират, че можете да спрете на монета. Идеални за всеки механик или любител на автомобилните DIY проекти.",
+		car_radiator = "Охладител",
+		car_radiator_description = "Запазете двигателя си хладен и работещ гладко с този върховен охладител за автомобили. Основен за предотвратяване на прегряване и поддържане на вашето пътуване в най-добро състояние.",
 
 		thermite = "Термит",
 		thermite_description = "Силно волатилен прах, не го вдишвайте.",
@@ -8236,6 +9111,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		shotgun_ammo = "Патрони за пушка",
 		shotgun_ammo_description = "Хората мислят, че в тях има пистолетно барут! Клоуни... те са пълни с любов и радост.",
 
+		potassium_nitrate = "Нитрат на калий",
+		potassium_nitrate_description = "Този бял кристален прах е ключов съставен елемент в рецептата за барут. Намерен в природата и често използван в торове, той прави мощна смес със сяра и дървени въглища. Обработвайте го внимателно и запомнете, без хващане на дъх!",
+		sulfur = "Сяра",
+		sulfur_description = "Този жълт прах е тайната съставка за производството на барут и други взривни устройства. Само малко от това и сте на половин път към фойерверки! Често се намира в катализатори, но внимавайте да не ви хванат да го търсите!",
 		gunpowder = "Пистолетен барут",
 		gunpowder_description = "Порошна смес, използвана за производство на куршуми.",
 		projectile = "Проектил",
@@ -8271,8 +9150,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		zombie_pill = "Хапче за зомбита",
 		zombie_pill_description = "Странно хапче, което прави още по-страни неща... Поглъщайте го на свой риск. Може би е мъдро да имате оръжие, защото сънищата могат да се превърнат в насилствени.",
 
-		acid = "Киселина",
-		acid_description = "Постоянно ви прави наркотично. Няма избягване от това.",
+		acid = "Киселина (LSD)",
+		acid_description = "Тази ярка таблетка, често наречена \"Киселина\", е вашите билет за пътешествие извън цветния свят на ума. Прославена с трансформирането на обикновеното в магическо, тя предлага калейдоскоп от мисли и усещания, които танцуват на мелодията на вселената. Не просто капка във ведрото, всяко парче е плесен в психеделичния басейн на възприятието. Загрейте се и се потопете във вълните на креативност и прозорливост. Тя ви прави винаги във вълнение, няма избягване от това.",
 
 		rose = "Роза",
 		rose_description = "undefined",
@@ -8297,6 +9176,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		scratch_ticket_ching_description = "Поглезете сетивата си в електрическото усещане за възможно богатство. Само за $100, този живописен билет предлага увлекателната възможност да спечелите до $210,000. Това не е просто игра, а спектакъл на късмета!",
 		scratch_ticket_carnival = "Скреч Карта (Карнавал)",
 		scratch_ticket_carnival_description = "Стъпете и се присъединете към карнавала на шанса! Само за $100, може да спечелите до $210 000. Карнавалът е в града, а голямата награда ви очаква!",
+		scratch_ticket_vu = "Билет за скреч (Vanilla Unicorn)",
+		scratch_ticket_vu_description = "Шлюхи и кокаин.",
+		scratch_ticket_beaver = "Билет за скреч (Лос Сантос)",
+		scratch_ticket_beaver_description = "Продължавайте да скретчвате!",
+		scratch_ticket_minecraft = "Билет за скреч (Minecraft)",
+		scratch_ticket_minecraft_description = "Крийпър...... уааааау маааан",
 
 		avocado = "Авокадо",
 		avocado_description = "Малък, зелен, булбест състав, прекрасен за приготвяне на дип.",
@@ -8383,11 +9268,26 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		jail_card = "Карта за излизане от затвора",
 		jail_card_description = "Излез от затвора без проблем!",
 
+		twitter_verification = "Потвърждаване на Twitter",
+		twitter_verification_description = "Използвайки този артикул, вие ще бъдете верифицирани в Twitter.",
+
 		vape = "Гик Бар",
 		vape_description = "Опитвате се да изглеждате готини? Досадили сте вече да сте пи*ка? Дръпнете си една, брей!",
+		dab_pen = "Даб писалка",
+		dab_pen_description = "Ей, това ли е Пенжамин? Удря като камион, приятелю. Три стабилни светкавици и ти си изготвен. Веднъж, когато светне, играта свършва. Няма повторение, просто се наслаждавай на върха, докато можеш.",
 
 		train_pass = "Проход за влака",
 		train_pass_description = "Когато се използва, ще получите 3 бързи преминавания в опашката.",
+		train_pass_appreciated_tier = "Оценен клас",
+		train_pass_appreciated_tier_description = "Може да се използва за 7 дни на Оценен клас. Не може да бъде подобрен с помощта на ОП точки.",
+		train_pass_respected_tier = "Уважаван клас",
+		train_pass_respected_tier_description = "Може да се използва за 7 дни на Уважаван клас. Не може да бъде подобрен с помощта на ОП точки.",
+		train_pass_heroic_tier = "Героичен Тиър",
+		train_pass_heroic_tier_description = "Може да се използва за 7 дни в Героичен Тиър. Не може да бъде преминал към Ултимативен тиър с ПО точки.",
+		train_pass_legendary_tier = "Легендарен Тиър",
+		train_pass_legendary_tier_description = "Може да се използва за 7 дни в Легендарен тиър. Не може да бъде преминал към Ултимативен тиър с ПО точки.",
+		train_pass_god_tier = "Божествен Тиър",
+		train_pass_god_tier_description = "Може да се използва за 7 дни в Божествен тиър. Не може да бъде преминал към Ултимативен тиър с ПО точки.",
 
 		xbox_controller = "XBOX контролер",
 		xbox_controller_description = "Изглежда малко мокро...",
@@ -8401,6 +9301,9 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		ammonia = "Амоняк",
 		ammonia_description = "Смесете го с избелване за магическо изненада.",
 
+		baking_soda = "Сода за печене",
+		baking_soda_description = "Този универсален бял прах не е само за твоите торти, които да вдигне на максимум. От почистване до научни експерименти, той е герой в домакинството. Просто запомни, че не е за всички видове 'печене'—миг-миг!",
+
 		lithium_batteries = "Литиеви батерии",
 		lithium_batteries_description = "Не се разрешават на търговски самолети, освен ако не искате да експлодирате.",
 
@@ -8409,6 +9312,9 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 		meth_table = "Маса за мет",
 		meth_table_description = "Ха-ха смешна референция към \"Второ измерение\" за готвене на мет.",
+
+		glass_pipe = "Стъклен камбана",
+		glass_pipe_description = "Ей, този камбана, хора, той е като, уау! Просто го напълни, запали и БАМ, ти си на Марс, брат! Блестящ и стъклен, но внимавай, той е крехък, като последната ми мозъчна клетка. Цветовете, хора, ЦВЕТОВЕТЕ! Държи го здраво, не го пускай и ти си, като, крал на космоса или нещо.",
 
 		campfire = "Костер",
 		campfire_description = "undefined",
@@ -8482,6 +9388,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		pedestrian_barrier_description = "Чудесно е да ги имате, освен ако не става въпрос за концерт на Травис Скот...",
 		wheel_clamp = "Привързване на колело",
 		wheel_clamp_description = "Тук няма да избягат коли! Привързването на колело е сериозно и надеждно средство за осигуряване на превозни средства и слагане на край на неоторизираното им движение. Този мощен и устойчив инструмент е беззвучен изпълнител, който гарантира спазването на правилата за паркиране.",
+		old_rug = "Стар килим",
+		old_rug_description = "Разпънете този уютен килим за вашето следващо извъндомовете събиране и запазете уюта! Подходящ е за отлежаване в тревата, без да замърсите дрехите си с тези досадни зелени петна. Разгънете го, отпуснете се и се насладете на околната среда със стил и комфорт.",
 
 		bandit_1 = "Обирник 1",
 		bandit_1_description = "undefined",
@@ -8508,9 +9416,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		claymore_description = "undefined",
 
 		tv_stand = "ТВ стойка",
-		tv_stand_description = "Използвайте я, за да поставите телевизор навсякъде искате.",
+		tv_stand_description = "Подобрете сетъпа за гледане на сериали с този стилен TV стенд. Той държи ТВ-то на перфектно ниво за гледане и предлага място за всичките ви случайни гаджета. Това е като трон за вашия екран.",
+		big_tv = "Голям телевизор",
+		big_tv_description = "Вижте, големият телевизор! Идеален за епични кино вечери или дворни парти, този колосален екран стои толкова висок, колкото вас и превръща всяко пространство в миг във външно кино. Гответе се да изненадате приятелите си с неповторимото преживяване на гледането!",
 		tv_remote = "Дистанционно за ТВ",
-		tv_remote_description = "Универсално дистанционно (батерии на квантови не са включени).",
+		tv_remote_description = "Най-добрият инструмент за ленивия специалист, този телевизионен дистанционен управлява вашата зона на забавление, без да издигате повече от пръст. Смени каналите, загласите силата на звука и превключвай входовете като шеф. Това е вашето билетче към райското картофчево кресло!",
 
 		magic_ball = "Магическа топка 8-ка",
 		magic_ball_description = "Попитайте я въпрос, разклатете я и я обърнете. Отговорът на вашия въпрос се появява магически в прозореца! Толкова лесно е, че няма да повярвате!",
@@ -8566,14 +9476,25 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		cream_cookie_description = "Кремообразен, точно както най-много ви харесва.",
 		cheesecake = "Чийзкейк",
 		cheesecake_description = "Не се бъркайте с торта от сирена.",
-		chocolate_cake = "Шоколадова торта",
-		chocolate_cake_description = "Вкусна торта от най-добрите какаови зърна.",
 		cupcake = "Кефал",
 		cupcake_description = "Пухкава торта с магическа кремова пълнеж.",
 		pink_lemonade = "Розово лимонада",
 		pink_lemonade_description = "Съвсем не обикновена лимонада боядисана в розово, за да можем да ви зареждаме два пъти повече...",
 		iced_latte = "Ледено лате",
 		iced_latte_description = "Освежаващо ледено кафе, идеално за горещ ден.",
+
+		berry_cake = "Торта с ягоди",
+		berry_cake_description = "Прекрасна торта с ягоди, изобилстваща от свежи ягоди и слоеве сладко ягодово сладко. Тази торта е идеалното удоволствие за феновете на ягодите, предлагаща хармонично съчетание от кисело и сладко на всяка хапка.",
+		lemon_cake = "Лимонова торта",
+		lemon_cake_description = "Сочна лимонова торта със слоеве от пропитани с лимон кекс и кремообразен лимонов глазур. Тази торта е мечта за обичателите на цитрусови плодове, предлагаща освежаващ и кисел вкус, който осветлява всеки ден.",
+		chocolate_cake = "Шоколадова торта",
+		chocolate_cake_description = "Изкушителна Шоколадова торта с богати, сочни слоеве от шоколадов кекс и кремообразен шоколадов глазур. Тази торта е рай за любителите на шоколад, предлагаща дълбоки, богати вкусове, които задоволяват всеки сладолюбив.",
+		berry_cake_slice = "Плътка От Ягодово Торта",
+		berry_cake_slice_description = "Насладете се на плътка от ягодова торта, където свежестта на ягодите среща сладостта на сладкия плодов пюре. Всяка хапка е перфектно съчетание на кисело и сладко, правейки ягодовата торта наистина вкусно удоволствие.",
+		lemon_cake_slice = "Плътка От Лимонова Торта",
+		lemon_cake_slice_description = "Настанете с дебела плътка от лимонова торта, в която зеставият бисквит и кремообразното лимоново глазирване. Всяка хапка е експлозия от цитрусова свежест, която освежава вкусовите ви рецептори.",
+		chocolate_cake_slice = "Плътка От Шоколадова Торта",
+		chocolate_cake_slice_description = "Насладете се на филийка Шоколадово Питие, където богатият шоколадов спонсж се среща с кадифен шоколадов глазур. Всяко залез е изкушение, което се топи в устата ви.",
 
 		irish_coffee = "Ирландско кафе",
 		irish_coffee_description = "Свежо приготвено кафе, заличено с оригинално ирландско уиски.",
@@ -8646,6 +9567,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		salt_description = "Щипка сол може да преобрази всяко ястие, подобрявайки вкусовете и добавяйки дълбочина на вашите кулинарни творения.",
 		pickles = "Краставици",
 		pickles_description = "Буркан с кисело-сладки краставички, идеални за закуска, сендвичи и придаване на ароматен вкус на вашите ястия.",
+		pickle = "Краставичка",
+		pickle_description = "Свежа, сочна и хрупкава краставичка директно от буркана. Идеална за пикантна закуска или за допълнение към вашето ястие.",
+		pickle_juice = "Сок от краставица",
+		pickle_juice_description = "Освежаващ и пикантен, този сок от краставица е зестовата течност, оставена след като си вземете краставичка. Идеален за добавяне на малко вкус към вашите закуски или дори за наслаждаване сам по себе си за мариновано удоволствие!",
 		dark_chocolate = "Тъмен шоколад",
 		dark_chocolate_description = "Богато и разкошно удоволствие, тъмният шоколад е идеален за задоволяване на сладкишавата ви страст и наслаждаване на дълбоките, комплексни вкусове на какаото.",
 		beans = "Боб",
@@ -8682,8 +9607,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		popcorn = "Пуканки",
 		popcorn_description = "Чувала пуканки, идеални за вечер на кино.",
 
-		rice = "Ориз",
-		rice_description = "Пухкави зърна.",
+		uncooked_rice = "Неприготвен ориз",
+		uncooked_rice_description = "Този основен зърнен продукт, неприготвеният ориз, е празното платно на безбройно майсторски кулинарни шедьоври. Суров и готов за преобразуване, той обещава да абсорбира вкусове и да подобри всяко ястие, от наситени ризото до деликатни суши ролца.",
+		rice = "Приготвен ориз",
+		rice_description = "Пухкав и нежен, този приготвен ориз е универсална основа, готова да се съчетае с всяко ястие. Перфектно изпарен, за да запази своята финна, орехова същност, той е уютният камък-основа на ястия по целия свят, добавяйки както съдържание, така и текстура на вашето хранене.",
 		nori = "Нори",
 		nori_description = "Това е морски водорасли, но елегантни.",
 		soy_sauce = "Соев сос",
@@ -8696,6 +9623,35 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		coconut_description = "Кокосът е сладък и кремообразен, допълва всякакви десерти, карита и смутита. Ммм.",
 		sugar = "Захар",
 		sugar_description = "Това е кокаин, но не е нелегален и ви дава диабет.",
+		chili = "Чушки чили",
+		chili_description = "Тези огнени малки чушки дават силен удар! Независимо дали добавяте малко остра нотка в салсата си или пускате пикът в любимото си ястие, тези ярки чушки са вашето предпочитано средство за пикантност. Работете с внимание, освен ако не искате пръстите ви да поколебаят и вкусовите ви рецептори да се забавляват!",
+		fish_filets = "Рибни филенца",
+		fish_filets_description = "Тези майсторски нарязани рибни филенца са основата на гурме творенията, особено подходящи за създаване на изискани суши. Прясно уловени, всяко филе е изрязано с прецизност, за да се гарантира идеалната текстура и вкус, като ги прави задължителни за кухнята на всеки ценител на суши. Загребвайте в кулинарната изкуство с тези безупречни парченца от богатството на океана.",
+		sushi = "Суши",
+		sushi_description = "Изкусно приготвени, тези суши маки включват прясно рибни филета, перфектно сварен ориз и хрупкав нори. Всеки руло е хармонично съчетание на вкусове и текстури, предлагайки вкусна проба на традиционната японска кухня във всяка хапка. Насладете се на изтънчената простота на този изискан суши.",
+		nigiri = "Нигири",
+		nigiri_description = "Този елегантен нигири суши показва тънко нарязана риба върху легло от леко подправен ориз. Всяко парче е знак за простота и вкус, внимателно балансирано, за да изрази свежия, нежен вкус на морските дарове. Класически избор за почитателите на суши, това е също толкова визуално привлекателно, колкото и вкусно.",
+		miso_soup = "Мисо супа",
+		miso_soup_description = "Тази уютна чиния мисо супа е топла, пикантна смес от богат бульон от мисо, мек тофу и нарязани пресни пресни луковици. Всяка лъжица предлага успокояващ вкус и нежен умами вкус, което я прави перфектна предястие или леко ястие самостоятелно. Насладете се на деликатния баланс на традиционните съставки, които подхранват душата.",
+		spring_onions = "Пролетни луковици",
+		spring_onions_description = "Сочни и ярки, тези пролетни луковици принасят свежа вълна от вкус към всяко ястие. Известни с леката си пикантност и универсалност, те могат да бъдат използвани цели за печене или задушаване, или нарязани, за да добавят събтилна острота към салати и супи.",
+		spring_onions_cut = "Нарязани пресни луковици",
+		spring_onions_cut_description = "Тези нарязани пресни луковици са готови да подобрят вашите кулинарни творения. Идеални за гарниране или смесване в ястия, техните ярки, пиперливи нотки добавят както вкус, така и цвят, правейки всяко ястие по-вкусно и визуално привлекателно.",
+		tofu = "Тофу",
+		tofu_description = "Този универсален блок тофу е основен продукт за здравословно и креативно готвене. Изработен от соеви зърна, той е нежноомасленият любимец, който чудесно абсорбира вкусовете, правейки го идеален за всичко, от пържене до смутита.",
+		tofu_cubes = "Тофу кубчета",
+		tofu_cubes_description = "Предварително нарязани на идеални кубчета, това тофу е готово да се потопи в следващото ви кулинарно приключение. Идеални за бързи ястия, тези тофу кубчета могат да бъдат хвърлени в супи, салати или горещи тигани, добавяйки хранителен стимул и прекрасна текстура на вашите ястия.",
+		uncooked_ramen = "Неприготвени рамен",
+		uncooked_ramen_description = "Вашият набор за самостоятелно приготвяне на рамен, готов за вас да го превърнете в гореща купа вкусотия. Просто добавете гореща вода и любимите си добавки и ще имате бързо и вкусно ястие в нула време!",
+		ramen = "Рамен",
+		ramen_description = "Чиния пълна с уют, пълна с лапещи, ароматни бульон и всичките ви любими добавки. Независимо дали шумещ вкъщи или по време на движение, този рамен е обич в чиния.",
+		spicy_ramen = "Остър рамен",
+		spicy_ramen_description = "За тези, които обичат да живеят на края, Острият рамен внася пикантност! Потопете се в пламтящ бульон с лапещи и пикантни добавки, които ще разведрят вашите рецептори. Можете ли да го понасяте?",
+		bento_box = "Бенто кутия",
+		bento_box_description = "Прекрасна комбинация от вкусове и текстури, тази Бенто кутия е вашето предпочитано място за балансирано хранене. Напълнена с разнообразие от вкусотии, това е като пикник в кутия. Идеална за обяд или лека вечеря!",
+
+		asahi_beer = "Асахи Бира",
+		asahi_beer_description = "Насладете се на свежия, чист вкус на Асахи Бира, премиум японска лагер бира, известна с гладкият и освежаващ вкус. Това златисто пиво е изкусно изработено, за да повдигне всяко събитие, като го прави перфектен избор както за случайни глътки, така и за фини обяди.",
 
 		golf_ball = "Голф топка",
 		golf_ball_description = "Използва се за голф.",
@@ -8710,17 +9666,27 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		gas_mask_description = "Ще ви спаси от всички видове газ, дори пързалянията на баби.",
 		nv_goggles = "Нощни видеоочила",
 		nv_goggles_description = "Ще ви помогнат да виждате в тъмното.",
+		vision_goggles = "Виртуални Про Очила",
+		vision_goggles_description = "Влезте в бъдещето с Виртуални Про Очила, най-новото в рязката технология на очилата. Съчетавайки елегантен дизайн с напреднала функционалност, тези очила предлагат неповторимо преживяване. Сложете ги и трансформирайте своя поглед към света!",
+		skate_helmet = "Каска за скеѹтборд",
+		skate_helmet_description = "Запазете главата си безопасна, докато изглеждате страхотно с тази надеждна каска за скеѹтборд. Идеална е за избягване на нежелани удари в главата и показване на стила си, тя е задължителна за всеки, който се удря. Първо безопасност, второ настроение!",
 
 		green_rolls = "Зелени рула",
 		green_rolls_description = "За тези от нас, които имат нужда от повече от средното количество.",
 		rolling_paper = "Ролираща хартия",
 		rolling_paper_description = "Бърза хартия, с която да навиете и изпушите болката си.",
+		bong = "Бонг",
+		bong_description = "Подобрете начина си на пушене с този висококачествен стъклен бонг. Проектиран за гладки, студени тегления, той филтрира дима през вода за по-чисто и приятно изживяване. Идеален за самостоятелни сесии или споделяне с приятели, просто го напълнете, налягайте, запалете и се насладете!",
+		bong_water = "Бонгова вода",
+		bong_water_description = "\"Мога ли да пия от твоята бонгова вода?\"",
 
 		arena_pill = "Арена хапче",
 		arena_pill_description = "Странна хапчета, които правят още по-странични неща... Глътнете на ваш риск. Все пак, може би е добра идея да носите оръжие, за да се предпазите от насилствени сънища.",
 
 		shovel = "Лопата",
 		shovel_description = "Издръжлив инструмент за копане, предназначен за откриване на скрити богатства и разкриване на тайни във всяка среда, което го прави ценна актив за страстните ловци на съкровища.",
+		pickaxe = "Кирка",
+		pickaxe_description = "Тази надеждна кирка ще ви помогне да съборите всички блокове, които сте поставили, павеши си път за нови творения. Издръжлива и ефективна, това е инструментът по избор за всеки строител, готов да преизпълни света.",
 
 		electric_fuse = "Електрически предпазител",
 		electric_fuse_description = "Електрическият предпазител е необходим предмет за затворени помещения. Трябва да бъде поставен в кутията с предпазители, за да се подава захранване на ключалката от карта.",
@@ -9183,8 +10149,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		weapon_addon_mk18 = "MK18",
 		weapon_addon_mk18_description = "\"Подготвен да стреляш или да получиш насреща\" - Джордж Вашингтон (вероятно)",
 
-		weapon_addon_glock = "Глок 19X",
-		weapon_addon_glock_description = "Най-популярният пистолет в света.",
+		weapon_addon_glock = "Глок 19",
+		weapon_addon_glock_description = "Този компактен и надежден Глок 19 с гордо споменава американското знаме на плочата, защото нищо не казва свобода толкова красноречиво като звездите, ивиците и 9-мм. Перфектен за патриотите, които обичат оръжията си толкова смели, колкото обичат страната си.",
 
 		weapon_addon_colt = "Колт 1851 Нейви",
 		weapon_addon_colt_description = "Оригиналният револвер, който го започна всичко.",
@@ -9223,7 +10189,16 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		weapon_addon_jericho_description = "Jericho 941 се отличава с надеждност, прецизност и ергономичен дизайн, предлагайки на стрелците изключително изживяване както във въпрос на представителност, така и на комфорт.",
 
 		weapon_addon_fn509 = "FN-509",
-		weapon_addon_fn509_description = "FN-509 е майсторски клас в баланса и точността, оборудван с капацитет от 15 заряда, гарантиращ надеждност и прецизност във всяко изстрелване. Доверен спътник за защита и служба."
+		weapon_addon_fn509_description = "FN-509 е майсторски клас в баланса и точността, оборудван с капацитет от 15 заряда, гарантиращ надеждност и прецизност във всяко изстрелване. Доверен спътник за защита и служба.",
+
+		weapon_addon_garand = "M1 Гаранд",
+		weapon_addon_garand_description = "Срещнете M1 Гаранд, пушката, която практически сама спечели Втората световна война (или поне така твърди на всяко събрание на ветераните). Този класически артефакт на историята идва с характеристичния си \"пинг\" звук, който обявява на всеки - приятел или враг, че току-що сте изчерпали боеприпаси. Идеален за тези, които ценят малко драматичност във въоръжението си, този надежден спътник е толкова надежден, колкото военните истории на дядо ви и също толкова легендарен.",
+
+		weapon_addon_multitool = "Многофункционален инструмент",
+		weapon_addon_multitool_description = "Точно като нормалния многофункционален инструмент, но без излишествата.",
+
+		weapon_addon_ar15 = "AR-15",
+		weapon_addon_ar15_description = "Срещни AR-15, надеждният аутсайдър сред пушките. Той е като странният брат на карабинерифъла - същите сърца, различен вкус. Перфектен, когато искаш да покажеш нещо различно, без да ставаш твърде изискан. Надежден, точен и точно толкова \"пю-пю\" за всяка спокойна ситуация."
 	},
 
 	invisibility = {
@@ -9277,12 +10252,15 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		hotwiring_vehicle = "Прехвърляне на превозното средство",
 		lockpick_broke = "Счупено е уреда за отключване",
 		failed_hotwire = "Неуспешно прехвърляне на превозното средство, може би опитайте с по-добри инструменти?",
+		no_meth_bag = "Нямате мет-чанта.",
+		no_weed_1q = "Нямате 1q от трева.",
 		unpacking_green_rolls = "Разопаковане на зелени ролки",
 		you_do_not_have_enough_rolling_paper = "Нямате достатъчно ролки за започване.",
 		rolling_joint = "Завиване на джойнт",
 		rolling_joints = "Завиване на джойнтове",
 		changing_license_plate = "Смяна на номерната табела",
 		equipping_parachute = "Екипиране на ${itemName}",
+		no_lighter = "Нямате запалка.",
 		lockpicking_vehicle = "Отключване на превозно средство",
 		printout_title = "${type} Изписване",
 		printout_text = "*${text}*",
@@ -9298,6 +10276,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		drank_bleach_death = "Отравяне с избелващ препарат",
 		finished_joint = "Димяхте последното си джойнтче.",
 		cant_place_here = "Не можеш да поставиш това тук.",
+		failed_slice_pizza = "Неуспешно нарязване на пица.",
+		failed_slice_cake = "Неуспешно разрязване на торта.",
+		straw_no_drinks = "Нямате напитки, за да пиете с тази сламка.",
+		failed_use_straw = "Неуспешно използване на хартиена сламка.",
 
 		using_cuffs = "Използване на ръкопожеляване",
 		you_moved_too_fast = "Движихте се прекалено бързо.",
@@ -9306,17 +10288,21 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		failed_bean_machine_delivery = "Неуспех при отваряне на доставката от Бийн Машин.",
 		failed_kissaki_delivery = "Неуспех при отваряне на доставката от Кисаки.",
 		failed_green_wonderland_delivery = "Неуспешно отваряне на зелената чанта с чудеса.",
+		failed_pizza_this_delivery = "Неуспешно отваряне на кутията с пица.",
 
 		burger_shot_delivery_empty = "Тази доставка от Бъргер Шот изглежда празна.",
 		bean_machine_delivery_empty = "Тази доставка от Бийн Машин изглежда празна.",
 		kissaki_delivery_empty = "Тази доставка от Кисаки изглежда празна.",
 		green_wonderland_delivery_empty = "Тази зелена чанта с чудеса изглежда празна.",
+		pizza_this_delivery_empty = "Тази кутия с пица изглежда празна.",
 
 		logs_used_weather_spell_title = "Използване на Магия за Време",
 		logs_used_weather_spell_details = "${consoleName} използва магията за време `${itemName}`.",
 
 		you_have_used_jail_card = "Използвахте карта 'излез от затвора'!",
 		you_are_not_in_jail = "Вие не сте в затвора.",
+
+		you_are_now_verified_on_twitter = "Сега сте верифициран в Twitter.",
 
 		stored_map_location = "Успешно актуализирахте местоположението на картата.",
 		failed_location_map = "Неуспешно актуализиране на местоположението на картата.",
@@ -9364,7 +10350,18 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		recent_pots_will_show_here = "Скорошните печалби ще се показват тук.",
 		server_id = "Идентификационният номер на сървъра, към който искате да прехвърлите...",
 		transfer_items_to_anoter_person = "Прехвърлете предмети на друг човек.",
-		cancel_bet = "Отказ на залог"
+		cancel_bet = "Отказ на залог",
+		max_bet_warning = "Максималната сума, която може да заложите, е $20,000 на котка.",
+		maximum_bet_exceeded = "Превишили сте максималната сума на залог от $20,000 за пазар.",
+
+		jackpot_bet_placed_logs_title = "Поставен е залог за джакпот",
+		jackpot_bet_placed_logs_details = "${consoleName} постави залог за джакпот на стойност $${worth}.",
+
+		jackpot_won_logs_title = "Джакпот спечелен",
+		jackpot_won_logs_details = "${consoleName} спечели джакпот на стойност $${worth}.",
+
+		jackpot_bet_cancelled_logs_title = "Отменени залози за джакпот",
+		jackpot_bet_cancelled_logs_details = "${consoleName} отмени своите залози за джакпот на стойност $${worth}."
 	},
 
 	jail = {
@@ -9434,6 +10431,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		read_catalog = "Натиснете ~g~${InteractionKey} ~w~за четене на каталога."
 	},
 
+	label_printer = {
+		image_url = "https://image.url/here.png",
+		printing = "Принтиране...",
+		print = "Принтиране"
+	},
+
 	lag = {
 		fake_lag_invalid_fps = "Невалидни fps.",
 		fake_lag_clamp = "Ограничаване на fps до по-малко от ${fps}.",
@@ -9491,8 +10494,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		something_went_wrong = "Неуспешно откриване на елемент.",
 		locate_success = "Успешно открит елемент съответстващ на `${filter}` на позиция (${x}, ${y}, ${z}) (инстанция = ${instance}).",
 
-		locate_entity_no_permissions = "Опит за откриване на елемент без подходящи разрешения.",
-
 		locate_entity_logs_title = "Открит Елемент",
 		locate_entity_logs_details = "${consoleName} опитва да открие елемент от тип `${filterType}` със стойност `${filterValue}`."
 	},
@@ -9500,9 +10501,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 	login = {
 		exit_city = "Излизане от града.",
 		press_to_exit_city = "Натиснете ~g~${InteractionKey} ~w~, за да излезете от града.",
-		bad_words_in_character_creation = "Опит за създаване на герой със съмнителна дума в името или историята: \"${badWords}\"",
-		disallowed_words_in_character_name = "Опит за създаване на герой със съмнително име: \"${characterName}\"",
-		disallowed_birthday_ban = "Опит за създаване на герой със съмнителна рожденна дата: \"${birthday}\"",
 
 		inventory_help_text = "Натиснете клавиш ~INPUT_REPLAY_SHOWHOTKEY~, за да отворите инвентара си.",
 
@@ -9569,11 +10567,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		copy_license = "Номер на лиценз",
 		copy_license_success = "Копирано!",
 		cache_assets = "Кеширане на ресурси",
-		download_assets = "Искате ли да изтеглите и кеширате повечето ресурси на сървъра? Това може да доведе до няколко неща:",
-		cache_assets_less_lag = "Потенциално по-малко спазове на скоростта, по-малко загубени кадри и по-малко скачане на пинг по време на играта. Особено ако използвате по-старо оборудване или по-бавна връзка.",
-		cache_assets_crashes = "Това може да причини сриване на играта по време на процеса. Ако това се случи, използвайте опцията 'бавно изтегляне'.",
-		cache_assets_restart = "Когато завършите, препоръчваме ви да рестартирате играта, тъй като това може да причини лаг за останалата част от сесията.",
-		cache_assets_disk = "Това ще отнеме малко място на диска, затова се уверете, че има свободно пространство. След актуализация най-добре е да изчистите стария си кеш, за да освободите пространство.",
+		download_assets = "Бихте ли искали да изтеглите и кеширате почти всички активи на сървъра? Ето предимствата и възможностите:",
+		cache_assets_performance = "Ползвайте по-добър FPS и по-малко спайкове на пинг по време на играта, особено ако имате по-нисък хардуер или по-бавна връзка.",
+		cache_assets_crashes = "Играта може да се срине по време на процеса. Ако това се случи, използвайте опцията 'бавно сваляне' вместо това.",
+		cache_assets_restart = "След завършването на изтеглянето, рестартирайте играта си, за да предотвратите забавяне по време на тази сесия.",
+		cache_assets_disk = "Това ще използва известно дисково пространство, така че се уверете, че разполагате с достатъчно.",
+		cache_assets_no_repeat = "Няма да е необходимо да правите това за всяко обновяване, тъй като само няколко файла ще се променят.",
 		vehicles = "Превозни средства",
 		objects = "Обекти",
 		peds = "NPC-та",
@@ -9617,9 +10616,9 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		date_not_future = "Вашата дата на раждане не може да бъде в бъдещето.",
 		date_too_old = "Вашата дата на раждане не може да бъде по-стара от 100 години.",
 
-		bad_words = "Има неподходящи думи във вашето име на героя или историята.",
-		disallowed_name = "Във вашето име на героя има някои неразрешени думи.",
-		disallowed_birthday = "Вашата дата на раждане не е разрешена.",
+		bad_words = "Вашето име или история съдържат забранени думи. Обходът на филтъра ще доведе до бан. Всички нови герои се преглеждат от персонала.",
+		disallowed_name = "Вашето име съдържа забранени думи. Обходът на филтъра ще доведе до бан. Всички нови герои се преглеждат от персонала.",
+		disallowed_birthday = "Вашият рожден ден не е позволен. Обходът на филтъра ще доведе до бан. Всички нови герои се преглеждат от персонала.",
 		numbers_not_allowed = "Числата не са разрешени в името на героя.",
 		something_went_wrong = "Нещо се обърка при опит за създаване на героя ви.",
 		character_slot_occupied = "Този слот за герой вече е зает.",
@@ -9696,7 +10695,29 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		confirm_pledge_upgrade_text = "Сигурни ли сте, че искате да подобрите обещанието си от ${pledgeLabel} на ${pledgeUpgradeLabel} за ${cost} OP точки?",
 		upgrading_pledge = "Обновяване на обещание...",
 
-		exiting_login_ui = "Излизане (UI за вход)"
+		medal = "Медал",
+		claim_points = "Изискване на точки (${claimablePoints})",
+		medal_what_is_this_text_part_1 = "С получаването на гледания и харесвания на вашите клипове в Медал, можете да спечелите ОП точки! Получавате по една точка на всеки 2 клипа, по една точка на всеки 150 гледания и по една точка на всеки 10 харесвания.",
+		account_name = "Име на профил",
+		connected_account = "Свързан профил",
+		medal_stats = "Статистика на Медал",
+		clips = "Клипове",
+		views = "Гледания",
+		likes = "Харесвания",
+		points_earned = "Заслужени точки",
+		claimable_points = "Изискваеми точки",
+		launch_medal_and_click_refresh = "Стартирайте Медал и кликнете върху опресняване.",
+
+		referrals = "Препоръки",
+		referrals_title = "Заработете ОП точки, като поканите приятели",
+		referrals_what_is_this_text_part_1 = "Поканете приятелите си да се присъединят към сървъра и започнете да печелите ОП точки заедно! След като се присъединят, помолете ги да въведат вашия лицензионен идентификатор по-долу, за да ви посочат като препоръчител.",
+		referrals_what_is_this_text_part_2 = "Когато вашият приятел достигне 12 часа игрово време, и двамата ще получите по 25 ОП точки. Запомнете, че те могат да ви изберат като препоръчител само в първите 24 часа от игровото им време.",
+		referrals_what_is_this_text_part_3 = "Тази функционалност използва общата времева рамка за игра, защото е споделена между всички OP-FW сървъри.",
+		your_framework_playtime = "Вашето време за игра в рамката:",
+		license_id = "Идентификационен номер на лиценза",
+		set_referrer = "Задайте препращач",
+		your_referrer = "Вашият препращач:",
+		your_referees = "Вашите препращани лица:"
 	},
 
 	logs = {
@@ -9714,7 +10735,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		lottery_about_to_roll = "Скоро ще бъде изтеглен печелившият на днешния лотариен тираж. Общата сума в банката е $${totalAmount}, като ти си вложил $${betAmount}. Твоят шанс за печалба е ${odds}%.",
 		current_lottery_pot = "Общият залог в момента е $${totalAmount}, където сте поставили $${betAmount}. Ваш шанс за печалба е ${odds}%.",
 		drew_a_lottery_winner = "Изтеглен e печелившият на лотарията.",
-		roll_lottery_no_permission = "Играчът опита да изтегли лотарията, но няма разрешение да го направи.",
 		winner_has_been_picked = "${fullName} спечели залога на лотарията от $${totalAmount}! Те заложиха $${betAmount} и техният шанс за печалба беше ${odds}%.",
 		claimed_lottery_winnings = "Взе всички печалби от лотарията.",
 		no_lottery_winnings = "Нямате неполучени печалби от лотарията.",
@@ -9733,6 +10753,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		lucky_wheel_is_occupied = "Късметлийското колело е заето в момента. Моля, изчакайте.",
 		not_enough_op_points = "Нуждаете се от ${cost} ОР точки, за да завъртите Късметлийското колело. Имате ${points} ОР точки.",
 		used_op_points = "Използвахте ${cost} ОР точки. Сега имате останали ${points} ОР точки.",
+		you_have_op_points = "Вече притежавате ${points} OP точки.",
 		casino_company_name = "Казино и хотел Даймънд",
 		vehicle_won_tweet = "Някой само сега се забогатя от късметлийското колело и си осигури много рядкия ${modelDisplayName}! Кой е щастливият победител? Отидете сега и грабнете наградата си.",
 		vehicle_is_not_in_cdimage = "Това превозно средство не се намира в играта.",
@@ -9742,7 +10763,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} завъртя колелото и спечели превозно средство.",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} получи успешно превозно средство с име на модел `${modelName}`.",
 		logs_lucky_wheel_reward_money_details = "${consoleName} завъртя колелото и спечели $${amount}.",
-		logs_lucky_wheel_reward_chips_details = "${consoleName} е завъртял колелото и спечели ${amount} чипове.",
+		logs_lucky_wheel_reward_points_details = "${consoleName} е завъртял колелото и е спечелил ${amount} OP точки.",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} е завъртял колелото и спечели бижута с име `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} е завъртял колелото и спечели предмет с име `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} завъртя колелото и спечели 'Билет за влак' предмет."
@@ -9751,7 +10772,9 @@ OP.Global.Locales.Languages["bg-BG"] = {
 	magazines = {
 		issue_id = "Проблем №${issueId}",
 		releases_updated = "Актуализирани версии.",
-		no_release_changes = "Няма промени в версиите."
+		no_release_changes = "Няма промени в версиите.",
+		magazine_issue_does_not_exist = "Серията на списание '${seriesName}' не съществува с идентификационен номер на брой #${issueId}.",
+		magazine_created = "Създаде серия на списание '${seriesName}' с номер на изданието #${issueId}."
 	},
 
 	magnifying_glass = {
@@ -9773,6 +10796,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		found_item_logs_details = "${consoleName} откри артикул ${item} на земята (${ground})."
 	},
 
+	map = {
+		failed_toggle = "Неуспешно превключване на живата карта.",
+		toggled_on = "Успешно активирана живата карта.",
+		toggled_off = "Успешно деактивирана живата карта."
+	},
+
 	mdt = {
 		mdt_title = "Мобилна Данни Терминал",
 		loading_reports = "Зареждане на докладите...",
@@ -9782,6 +10811,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 		title_placeholder = "Заглавие",
 		body_placeholder = "Моят доклад..."
+	},
+
+	medal = {
+		in_the_main_menu = "В главното меню.",
+		roleplaying_as = "Играе ролята на ${fullName}."
 	},
 
 	mechanics = {
@@ -9834,21 +10868,23 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		treat = "[${InteractionKey}] Дай Лакомство",
 		check_up = "[${InteractionKey}] Провери",
 
-		feed_active = "Хранясе на Максуел",
-		pet_active = "Глезене на Максуел",
-		brush_active = "Четкане на Максуел",
-		catnip_active = "Даване на Катнит на Максуел",
-		treat_active = "Даване на гозба на Максуел",
-		check_up_active = "Проверка на Максуел",
+		feed_active = "Храни ${name}",
+		pet_active = "Ласкае ${name}",
+		brush_active = "Чете ${name}",
+		catnip_active = "Дава Котешка мента на ${name}",
+		treat_active = "Дава Лакомство на ${name}",
+		check_up_active = "Проверка на ${name}",
 
 		maxwell_appeared = "Максуел се появи близо до вас.",
-		maxwell_shot = "Максуел естрелян"
+		maxwell_shot = "Убит ${name}"
 	},
 
 	meth = {
 		press_to_sell_meth = "Натиснете ~INPUT_CONTEXT~, за да продадете Мет.",
 		local_not_interested = "Местният не изглежда заинтересован в момента.",
 		selling_meth = "Продажба на Мет.",
+		you_are_overdosing = "Преувеличаваш с наркотиците.",
+		overdose = "Прекомерна доза мет",
 
 		sold_meth_logs_title = "Продадено метамфетамин",
 		sold_meth_logs_details = "${consoleName} продаде 1x плик с метамфетамин за $${reward}."
@@ -9858,6 +10894,13 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		active = "~g~Активно"
 	},
 
+	minecraft = {
+		failed_place_block = "Неуспешно поставяне на блок.",
+		failed_break_block = "Неуспешно пробиване на блок.",
+		success_wipe_blocks = "Успешно изтриване на блокове в радиус от ${radius}м.",
+		failed_wipe_blocks = "Неуспешно изтриване на блокове."
+	},
+
 	mining = {
 		drill_scan_stone = "[${InteractionKey}] Пробив на камък, [${SeatEjectKey}] Сканиране на камък",
 		scan_stone = "[${SeatEjectKey}] Сканиране на камък",
@@ -9865,10 +10908,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		scanning_stone = "Сканиране",
 		drilling = "Пробиване",
 		failed_drill_stone = "Неуспешно пробиване на камък.",
-		drill_no_drops = "Не открихте скъпоценни камъни в този камък.",
-		drill_drops = "Открихте някои скъпоценни камъни в този камък.",
+		drill_no_drops = "Не намери нищо в този камък.",
+		drill_drops = "Намери нещо в този камък.",
 		used_drill = "Вашият бормашина се повреди.",
-		still_shook = "Още сте разстроени от последната експлозия и не открихте скъпоценни камъни в този камък.",
+		still_shook = "Все още сте разтрепан от последния взрив и не намерихте нищо в този камък.",
 
 		kill_label = "Експлозия при добив",
 
@@ -10008,7 +11051,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 		picture_no_url = "Липсва URL адрес.",
 		picture_invalid_url = "Невалиден URL адрес, трябва да започва с https://.",
-		picture_no_description = "Липсва описание.",
 		picture_failed = "Неуспешно създаване на изображение.",
 
 		auto_run_already_set_to = "Автоматичното изпълнение вече е настроено на бутон ${controlId}.",
@@ -10019,6 +11061,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		walk_forwards_success = "Успешно превключихте ходенето напред за ${displayName}.",
 		walk_forwards_failed = "Грешка при опит за превключване на ходенето напред за ${displayName}.",
 
+		info_paycheck = " *(Без мултипликатори)*",
 		info_invalid_job = "Невалидна професия",
 		info_title = "Прикачете тази информация по време на съобщения за грешки",
 		info_character = "**Идентификационен номер на героя**: *${id}*",
@@ -10027,6 +11070,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		info_licenses = "**Лицензи**: *${licenses}*",
 		info_licenses_none = "**Лицензи**: *Няма*",
 		info_timestamp = "*Времеви маркер - ${time}*"
+	},
+
+	model_view = {
+		invalid_model = "Невалидна модел."
 	},
 
 	money = {
@@ -10090,20 +11137,14 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		sign_invalid_slot = "Невалидна позиция в инвентара.",
 		signed_notepad = "Успешно подписан бележник на позиция `${slotId}`.",
 		failed_sign_notepad = "Неуспешно подписване на бележник.",
-		sign_already_signed = "Не можете да подпишете този бележник.",
-
-		notepad_info_missing_permissions = "Играчът опита да получи информация за бележниците без необходимите разрешения.",
-		wipe_notepads_missing_permissions = "Играчът опита да изтрие бележниците без необходимите разрешения."
+		sign_already_signed = "Не можете да подпишете този бележник."
 	},
 
 	notices = {
 		message_too_long = "Съобщението съдържа твърде много знаци или редове!",
 		invalid_notice_id = "Невалиден идентификатор на бележка.",
 		successfully_removed_notice = "Бележката беше успешно премахната.",
-		failed_remove_notice = "Неуспешно премахване на бележката.",
-
-		add_notice_missing_permissions = "Играчът се опита да добави бележка без необходимите разрешения.",
-		remove_notice_missing_permissions = "Играчът опита да премахне обява без необходимите разрешения."
+		failed_remove_notice = "Неуспешно премахване на бележката."
 	},
 
 	npc_watch = {
@@ -10128,9 +11169,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 		orbitcam_logs_title = "Орбитална камера превключена",
 		orbitcam_on_logs_details = "${consoleName} включи орбиталната си камера.",
-		orbitcam_off_logs_details = "${consoleName} изключи орбиталната си камера.",
-
-		orbitcam_no_permission = "Опитахте да превключите орбиталната си камера без необходимите разрешения."
+		orbitcam_off_logs_details = "${consoleName} изключи орбиталната си камера."
 	},
 
 	overview = {
@@ -10199,7 +11238,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 			<br><br>
 			Every minute, a certain amount of staff points is distributed to all active staff members. This means that if there are 4 staff members active, each person will get 25% of the staff points that minute. The amount of staff points distributed is decided by taking the server's current player amount and dividing that by 32.
 			<br><br>
-			The staff points reset for everyone at the beginning of each week. Your eight most recent weeks will be available for display in a table below.
+			The staff points reset for everyone at the beginning of each week. Your eight most recent weeks will be available for display in a table below. Note: Staff points are stored in the balls.
 		]],
 
 		staff_points_this_week = "Тази седмица",
@@ -10235,6 +11274,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		clipboard_animation = "Анимация на таблото",
 		chop_shop_sound = "Изключете звука на радиото на автокъщата",
 		seatbelt_sound = "Изключете звукът за колана",
+		eating_noises_sound = "Изключи звуците на ядене",
+		detailed_prop_positioning = "Подробно позициониране на обекти",
 		sound_effect_placeholder = "URL към .oog файл...",
 
 		button_save = "Запази",
@@ -10346,9 +11387,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		local_ped_models_title = "Локални модели на играчите",
 		animal_ped_models_title = "Модели на животни",
 
-		bad_screen_word_title = "Лоши думи на екрана",
-		bad_screen_word_about = "Тук са изброени всички играчи, при които са открити определени думи на техния екран. Това ще помогне при откриването на потенциални моддъри.",
-
 		damage_modifier_name = "Име на играча",
 		damage_modifier_expected = "Очаквано",
 		damage_modifier_actual = "Фактическо",
@@ -10379,6 +11417,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		press_to_talk_to_jc = "Натиснете ~g~${InteractionKey} ~w~, за да говорите с JC.",
 		tutorial_will_play_next_time = "Урокът за изкупуването на окси ще се пусне следващия път, когато стартирате задание.",
 		prescription_pick_up = "Изпълнение на рецептурата: ${label}",
+
+		suspicious_person_location = "${zone} на ${address}",
 
 		pick_up_the_prescriptions = "Вземете фалшивите рецепти, отбелязани на картата.",
 		redeem_them_at_the_city = "След това трябва да ги обмените в града.",
@@ -10894,6 +11934,9 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 		taking_too_long_3_part_1 = "Йо, братче, много забавяш, братче, опитваш ли се да ми откраднеш работата, братче?",
 
+		-- NOTE: ops looks like I originally clipped this twice or something
+		taking_too_long_4_part_1 = "Брат, взимаш много време, опитваш ли се да ми откраднеш работата?",
+
 		taking_too_long_5_part_1 = "Ей, ти мислиш че си смешен, а?",
 		taking_too_long_5_part_2 = "Ай, ела.. Моля те, ела при мен сега, братко, виж какво ще ти се случи, братко.",
 
@@ -10996,7 +12039,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 	},
 
 	panic = {
-		press_panic_button = "Имате 5 секунди да натиснете паниковия бутон (X).",
+		press_panic_button = "Имате 6 секунди да натиснете бутона за паника (X).",
 		panic_button_timeout = "Не успяхте да натиснете паниковия бутон навреме.",
 
 		panic_button_title = "[Диспечър]",
@@ -11007,7 +12050,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		panic_blip = "10-14 ${lastName}",
 
 		label_officer = "полицай",
-		label_paramedic = "лекар"
+		label_paramedic = "лекар",
+		label_firefighter = "пожарникар"
 	},
 
 	paper_bags = {
@@ -11050,6 +12094,9 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		no_items_to_sell = "Нямаш ${itemLabel} за продан.",
 		close_menu = "Затвори менюто",
 
+		sell_vehicle_parts_far = "Продай части на превозни средства",
+		sell_vehicle_parts_near = "[${InteractionKey}] Продаване на части за превозни средства",
+
 		sell_items = "Продай ${itemLabel}",
 		press_to_sell_items = "[${InteractionKey}] Продай ${amount}x ${itemLabel}",
 		sold_items = "Продадено ${sellAmount}x ${itemLabel} за $${sellPrice}.",
@@ -11068,6 +12115,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		rps_message = "игра рок-хартия-ножици и избра ${rps}",
 		citizen_card_message = "показа гражданска карта (${characterId})",
 		driver_license_message = "представи шофьорска книжка (${characterId})",
+		press_pass_message = "показа пропуск за публикация (${characterId})",
 		badge_message = "показа значка (${characterId})",
 		license_message = "показа лиценз (${characterId})",
 		ped_message_logs_title = "Съобщение на НПС",
@@ -11132,19 +12180,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		ped_not_found = "Пешакът на играча не е намерен."
 	},
 
-	ped_takeover = {
-		failed_reset = "Неуспех при връщане към оригиналния пешак.",
-		failed_reset_not_exist = "Вашият оригинален пешак не съществува или не е близо до вас.",
-		failed_takeover = "Неуспешно превземане на гражданин.",
-		invalid_network_id = "Невалиден мрежов идентификатор."
-	},
-
-	peds = {
-		ped_robbing_injection = "Прекомерно грабеж на гражданини! (Скоро вероятно се използва инжектор, за да се постигне това.)",
-		robbed_ped_logs_title = "Грабнат гражданин",
-		robbed_ped_logs_details = "${consoleName} грабна гражданин и получи $${payout}."
-	},
-
 	pepper_spray = {
 		press_to_pepper_spray = "Натисни ~INPUT_ATTACK~, за да използваш пиперов спрей.",
 		using_pepper_spray = "Използване на пиперов спрей."
@@ -11190,11 +12225,14 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		press_water_plant = "[${InteractionKey}] Поливане",
 		press_harvest_plant = "[${InteractionKey}] Беритба",
 		press_destroy_plant = "[${SeatEjectKey}] Лопата",
+		press_fertilize_plant = "[${CoverKey}] Торене",
 		watering_plant = "Поливане на Растение",
 		harvesting_plant = "Събиране на Растение",
+		fertilizing_plant = "Торене на растение",
 		destroying_plant = "Унищожаване на растение",
 
 		plant_weed = "Засаждане на Плевел",
+		plant_cabbage = "Растение капия",
 
 		planted_seed_logs_title = "Засадено Семе",
 		planted_seed_logs_details = "${consoleName} засади ${plant} (#${plantId}) на ${material}.",
@@ -11206,6 +12244,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		ran_over_plant_logs_details = "${consoleName} предвзе едно растение (#${plantId}).",
 		shoveled_plant_logs_title = "Унищожено растение",
 		shoveled_plant_logs_details = "${consoleName} унищожи (лопати) едно растение (#${plantId}).",
+		fertilized_plant_logs_title = "Торено растение",
+		fertilized_plant_logs_details = "${consoleName} тори растение (#${plantId}).",
 
 		total_plants = "Общо растения: ${count}",
 		nearby_plants = "Близки растения: ${count}"
@@ -11223,7 +12263,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		set_player_scale_to_for = "Задаване на размера на играча на `${scale}` за ${consoleName}.",
 		reset_player_scale = "Нулиране на размера на играча.",
 		set_player_scale_to = "Задаване на размера на играча на `${scale}`.",
-		set_player_scale_no_permission = "Играчът нямаше необходимите разрешения за задаване на размер на играча.",
 		player_is_already_set_to_scale = "${consoleName} вече е със зададен мащаб `${scale}`.",
 		you_are_already_set_to_scale = "Вече сте със зададен мащаб `${scale}`.",
 		player_is_not_scaled = "${consoleName} няма зададен мащаб.",
@@ -11255,6 +12294,13 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		pole_dancing_offset = "Модел '${modelName}': vector3(${x}, ${y}, ${z})"
 	},
 
+	police_calls = {
+		ped_robbing_injection = "Прекомерно ограбване на NPC-та! (Прескочена сървърна забрана, вероятно с помощта на инжектор.)",
+
+		robbed_ped_logs_title = "Ограбен пешеход",
+		robbed_ped_logs_details = "${consoleName} ограби пешеход и получи $${payout}."
+	},
+
 	pools = {
 		pools_overflowing = "Басейните надничат: ~r~${poolsOverflowing}"
 	},
@@ -11279,7 +12325,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		print = "Принтиране",
 		printing = "Принтиране...",
 		document_title = "Моят страхотен заглавие",
-		image_url = "https://files.catbox.moe/ttt1e4.jpg",
+		image_url = "https://image.url/here.png",
 
 		printed_logs_title = "Принтиране на изображението",
 		printed_logs_details = "${consoleName} отпечати `${itemName}` използвайки `${paperType}` с адрес на изображението `${url}`, заглавие: `${title}`, текст над изображението: `${topText}` и текст под изображението: `${bottomText}`."
@@ -11326,6 +12372,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		prop_no_interior = "Можете да поставите този предмет само на открито.",
 		invalid_culling_value = "Невалидна стойност за пресячене, трябва да бъде между 10м и 2,500м.",
 		invalid_model = "Невалиден/Непознат модел `${name}` (${hash}).",
+		cancelled_positioning = "Отменена позициониране на предмета.",
 
 		invalid_prop_id = "Невалиден идентификатор на предмет.",
 		prop_deleted = "Предметът с идентификатор ${propId} беше изтрит.",
@@ -11343,6 +12390,13 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		placed_prop_logs_details = "${consoleName} постави `${itemName}` на ${coords} (ID: ${propId}).",
 		spawned_prop_logs_title = "Издигнат обект",
 		spawned_prop_logs_details = "${consoleName} издигна обект с модел `${modelName}` на ${coords} (ID: ${propId})."
+	},
+
+	quiet_hours = {
+		received_streaming_reward = "Беше възнаграден с ${amount} точка(и) OP за стриймване по време на тихи часове. Сега притежавате ${points} точка(и) OP.",
+
+		logs_quiet_hours_streaming_reward_reward_title = "Възнаграждение за Стриймване по време на Тихи Часове",
+		logs_quiet_hours_streaming_reward_reward_points_details = "${consoleName} беше възнаграден с ${amount} точка(и) OP за стриймване по време на тихи часове."
 	},
 
 	radio = {
@@ -11373,8 +12427,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		radio_debug_failed = "Неуспешно включване/изключване на отстраняването на грешки при радиото.",
 		radio_debug_off = "Успешно изключване на отстраняването на радиоотчай.",
 		radio_debug_on = "Успешно включване на отстраняването на радиоотчай.",
-
-		radio_debug_no_permissions = "Опит за включване/изключване на отстраняването на радиоотчай без права.",
 
 		decrypt_frequency = "[${InteractionKey}] Дешифриране на честотата",
 		decrypting_frequency = "Дешифриране на честотата",
@@ -11531,9 +12583,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		riot_mode_enabled_help = "Режимът на бунта е активиран.",
 		riot_mode_disabled_help = "Режимът на бунта е деактивиран.",
 
-		add_riot_player_no_permissions = "Опитване за добавяне на играч в списъка с бунтовници без необходимите разрешения.",
-		remove_riot_player_no_permissions = "Опитване за премахване на играч от списъка с бунтовници без необходимите разрешения.",
-
 		player_already_in_riot_list = "${consoleName} вече е в списъка с бунтовници.",
 		player_not_in_riot_list = "${consoleName} не се намира в списъка с бунтовници.",
 		added_riot_player = "Добавен ${consoleName} към списъка с бунтовници.",
@@ -11641,6 +12690,17 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		server_id_not_hidden = "Твоето идентификационно номер на сървъра вече не е скрито."
 	},
 
+	scrapyard = {
+		press_to_scrap = "Натиснете ~INPUT_CONTEXT~ за разкопчаване на това превозно средство.",
+		scrapyard = "Боклукчийско дворище",
+		cant_scrap_vehicle = "Извинявайте, партньоре, но тази кола има повече червени знамена отколкото родео. Не можем да я приемем!",
+		failed_scrap_vehicle = "Изглежда, че боклукчийското ни дворище има проблеми. Опитайте отново да разкопчаете превозното си средство по-късно, партньоре!",
+		scrap_confirm = "Сигурни ли сте, че искате да разкопчаете това превозно средство? Това ще го ИЗТРИЕ ПОСТОЯННО от гаража ви и ще получите 12-16% от оригиналната му цена в брой и златни слитъци.",
+		scrap_success = "Е, превърнахме онази гнила кола в съкровище. Изглежда беше време да кажем сбогом, партньоре!",
+		scrapped_vehicle_logs_title = "Разкроена кола",
+		scrapped_vehicle_logs_details = "${consoleName} разкрои своята кола (${modelName} #${vehicleId}) и получи ${gold}x Златен(и) слитък(ци) и $${cash} в брой (${percentage}% от оригиналната цена)."
+	},
+
 	scratch_tickets = {
 		you_won = "Печелите общо $${cash} от билета за срепка.",
 		you_won_nothing = "Няма голям печалба от билета за срепка.",
@@ -11709,7 +12769,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 	scuba_gear = {
 		equipping_scuba_tank = "Сложете гмуркане танк",
-		equipping_scuba_mask = "Сложете гмуркане маска"
+		equipping_scuba_mask = "Сложете гмуркане маска",
+		cant_use_in_vehicle = "Не можеш да сложиш потопителния екипаж в кола."
 	},
 
 	security_cameras = {
@@ -11736,7 +12797,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		la_mesa_pd = "Полицейска станция Ла Меса",
 		beaver_bush_ranger_station = "Станция на парка рейнджърите Бивър Буш",
 		cinema = "Кино",
-		st_fiacre_hospital = "Болница Свети Фаякър",
 		weazel_news = "Новини Уийзъл",
 		palomino_fib_facility = "Сграда на ФИБ в Паломино",
 		bank_1 = "Банка Легион Скуеър",
@@ -11788,8 +12848,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 	},
 
 	shockwaves = {
-		create_shockwave_missing_permissions = "Играчът се опита да създаде шокова вълна, но нямаше необходимите разрешения.",
-		push_player_missing_permissions = "Играчът се опита да отбутне друг играч, но нямаше необходимите разрешения.",
 		shockwave_success = "Успешно се създаде шокова вълна.",
 		shockwave_failed = "Неуспешно създаване на шокова вълна.",
 
@@ -11811,6 +12869,15 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		tag_nancy = "~b~Д-р Нанси"
 	},
 
+	shopping_carts = {
+		press_to_enter = "Натисни ~INPUT_DETONATE~ за да се качиш в количката.",
+		press_to_exit = "Натисни ~INPUT_VEH_DUCK~ за да излезеш от количката.",
+		press_to_push = "Натиснете ~INPUT_CONTEXT~, за да плъзгате количката.",
+		press_to_stop_pushing = "Натиснете ~INPUT_VEH_DUCK~, за да спрете да плъзгате количката.",
+		failed_enter = "Неуспешно качване на количката.",
+		flipping = "Обръщане на количката"
+	},
+
 	shrooms = {
 		press_to_pick_up_shrooms = "Натиснете ~INPUT_CONTEXT~, за да съберете гъби.",
 		picking_up_shrooms = "Събиране на Шампиньони.",
@@ -11825,6 +12892,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		sold_shrooms_logs_details = "${consoleName} продаде 1 бройка гъби за $${reward}.",
 		picked_shroom_logs_title = "Събрана гъба",
 		picked_shroom_logs_details = "${consoleName} събра 1 бройка гъба."
+	},
+
+	skateboards = {
+		failed_place = "Неуспешно поставяне на скейтборда.",
+		no_skateboard_deck = "Нямате скейтборд, за да смените деката на.",
+		swapping_deck = "Смяна на деката"
 	},
 
 	skylift = {
@@ -11887,11 +12960,15 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		paleto_bay_bus_station = "Автогара Палето Бей",
 
 		mission_row_police_station = "Полицейска станция Роу Мишън",
+		highway_police_station = "Полицейско управление на магистрала",
+		palomino_fib_police_station = "Полицейско управление Palomino FIB",
 		sandy_police_station = "Полицейска станция Сенди Шорс",
 		paleto_police_station = "Полицейска станция Палето Бей",
 		cayo_police_station = "Полицейска станция Кайо Перико",
+		prison = "Затвор",
 
 		mount_zonah = "Болница Маунт Зона",
+		rockford_fire_dep = "Пожарно-спасителен департамент Rockford",
 		sandy_hospital = "Болница Сенди Шорс",
 		paleto_hospital = "Болница Палето Бей",
 		cayo_station = "Медицинска постоянка Кайо",
@@ -12309,7 +13386,13 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		enter_viewer_booth_interact = "[${InteractionKey}] Влез в гледателна кабина",
 
 		exit_viewer_booth = "Излез от гледателната кабина",
-		exit_viewer_booth_interact = "[${InteractionKey}] Излез от гледателната кабина"
+		exit_viewer_booth_interact = "[${InteractionKey}] Излез от гледателната кабина",
+
+		enter_phone_tower = "Влизане в телефонната кула",
+		enter_phone_tower_interact = "[${InteractionKey}] Влизане в телефонната кула",
+
+		exit_phone_tower = "Излизане от телефонната кула",
+		exit_phone_tower_interact = "[${InteractionKey}] Излизане от телефонната кула"
 	},
 
 	test_server = {
@@ -12358,7 +13441,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 	time_scale = {
 		invalid_time_scale = "Стойността ${timeScale} е невалидна времева скала.",
-		set_time_scale_missing_permissions = "Играчът се опита да зададе времевата скала, но нямаше необходимите права.",
 		time_scale_set_to = "Установен е времевата скала на ${timeScale}.",
 		time_scale_disabled = "Отменено е презаписването на времевата скала.",
 		time_scale_already_set_to = "Времевата скала е вече зададена на ${timeScale}.",
@@ -12368,7 +13450,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 	titanic = {
 		created_titanic = "Създадена е Титаник с време за потъване от ${sinkTime} минути(а).",
 		failed_to_create_titanic = "Неуспешно създаване на Титаник.",
-		create_titanic_missing_permissions = "Играчът опита да създаде Титаник, но нямаше необходимите разрешения."
+		created_titanic_logs_title = "Създадено Титаник",
+		created_titanic_logs_details = "${consoleName} създаде Титаник с време за потъване от ${sinkTime} минута(и) в ${coords}."
 	},
 
 	top_down = {
@@ -12415,7 +13498,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		department_police_undercover = "Скрит полицай",
 
 		department_police_training = "Полицейско обучение",
-		department_ems_training = "СМП обучение"
+		department_medical_training = "Подготовка на спешно медицинско обслужване",
+		department_bcfd_training = "Подготовка на BCFD"
 	},
 
 	trading_cards = {
@@ -12463,7 +13547,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 	train_pass = {
 		used_train_pass = "Успешно използван предмет 'Train Pass'. Сега притежавате ${trainPasses} брой карти за влак.",
-		train_passes = "Имате ${trainPasses} брой карти за влак"
+		used_train_pass_tier = "Успешно използван ${tierLabel}.",
+		train_passes = "Имате ${trainPasses} брой карти за влак",
+
+		non_lucky_wheel_train_pass_used_logs_title = "Използване на Пропуск за Влак, неоткрит чрез Късметлийското Колело",
+		non_lucky_wheel_train_pass_used_logs_details = "${consoleName} използва пропуск за влак, който не е произлязъл от Късметлийското Колело."
 	},
 
 	training = {
@@ -12480,7 +13568,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		attacker = "НАПАДАЩ",
 		defender = "ЗАЩИТНИК",
 		attackers_won = "Нападателите спечелиха!",
-		defenders_won = "Защитниците спечелиха!"
+		defenders_won = "Защитниците спечелиха!",
+		training = "Обучение"
 	},
 
 	traps = {
@@ -12533,7 +13622,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		no_ocean_scaler_intensity_set = "Вече е зададена нулева интензивност на мащабирането на океана.",
 		set_ocean_scaler_to = "Интензивността на мащабирането на океана е зададена на `${intensity}`.",
 		reset_ocean_scaler = "Възстанови интензивността на мащабирането на океана.",
-		set_ocean_scaler_no_permission = "Играчът няма достатъчни права за задаване на интензивността на мащабирането на океана.",
 
 		tsunami_started = "Цунами започна. Ще отнеме ${minutes} минути да наводни картата.",
 		tsunami_stopped = "Цунамито спря."
@@ -12592,10 +13680,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 	twitter_bid = {
 		twitter_bid = "Оферта в Twitter",
-		information_part_1 = "Искате да покажете на всички, кой е господарят в Twitter? Бъдете най-големият оферент за провереното клеймо!",
-		information_part_2 = "Този, който заплати най-голяма сума, ще получи синьото проверено клеймо, докато някой друг не предложи по-висока сума.",
-		information_part_3 = "Ако някой ви победи в офертата, парите ви не се връщат.",
-		information_part_4 = "Уверете се, че поставяте занимателна цитатна реплика, за да привлечете вниманието на всички и да ги накарате да ви завиждат.",
+		information_part_1 = "Готови ли сте да поемете дирекцията в Twitter? Покажете на света кой е шефът, като станете най-високият предлагач за синият знак за проверка!",
+		information_part_2 = "Най-големият предлагач получава желаният син отметкован знак, но внимавайте — някой може да ви превъзмогне по всяко време. Запазете позицията си във върха, като ги превъзмогнете срещате обратно.",
+		information_part_3 = "Помнете, ако бъдете победени в търга, парите или точките ви се губят — няма възстановяване.",
+		information_part_4 = "Уверете се, че включвате остър цитат, който ще привлече внимание и ще породи малко завист.",
 		no_bidder_yet = "Няма предлагач",
 		no_bidder_yet_quote = "Бъдете първият, който дава оферта! (Цитатът е тук)",
 		bid_amount = "Сума на офертата",
@@ -12608,9 +13696,18 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		bid_must_be_greater_than_current_bidder = "Офертата трябва да бъде по-голяма от текущия предлагач.",
 		max_quote_length_exceeded = "Надхвърлена е максималната дължина на цитата.",
 		not_enough_bank_balance = "Недостатъчен баланс в банката.",
+		not_enough_points = "Недостатъчно OP точки.",
 
 		twitter_bid_placed_logs_title = "Публикувана оферта в Twitter",
-		twitter_bid_placed_logs_details = "${consoleName} направи оферта в Twitter за $${bidAmount} с цитат `${bidQuote}`."
+		twitter_bid_placed_logs_details = "${consoleName} направи оферта в Twitter за $${bidAmount} с цитат `${bidQuote}`.",
+		twitter_bid_placed_points_logs_title = "Поставена Twitter търговска оферта",
+		twitter_bid_placed_points_logs_details = "${consoleName} постави търговска оферта в Twitter от ${bidAmount} OP точки с цитат `${bidQuote}`.",
+
+		in_game_cash = "В игрови пари",
+		op_points = "OP точки",
+
+		cost_money = "${amount} лв.",
+		cost_points = "${amount} ОП точки"
 	},
 
 	vape = {
@@ -12637,7 +13734,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		stealing_vehicle = "Беше издадена инструкция към близък пешеходец да открадне превозното средство (${distance}м).",
 		no_waypoint = "Не е зададен целевия пътека.",
 		success_drive_to = "Успешно насочено към маршрут.",
-		failed_drive_to = "Неуспешно насочване към маршрут."
+		failed_drive_to = "Неуспешно насочване към маршрут.",
+		not_in_vehicle = "Не се намирате в превозно средство.",
+		success_hop_in = "Успешно насочено на лице за качване.",
+		failed_hop_in = "Неуспешно насочване на лице за качване.",
+		no_free_seats = "Няма свободни места."
 	},
 
 	vending_machines = {
@@ -12691,9 +13792,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 		affected_by_jammer = "Вашият радиоприемник изглежда е засегнат от помеха или нещо подобно.",
 
-		listening_missing_permissions = "Играчът опита да промени състоянието на своето слушане, но няма необходимите разрешения.",
-		voice_mute_missing_permissions = "Играчът опита да промени състоянието на заглушаването на друг играч, но няма необходимите разрешения.",
-
 		music_mode_logs_title = "Превключено състояние на гласа",
 		music_mode_logs_details_on = "${consoleName} промени своя режим на гласов вход на 'музика'.",
 		music_mode_logs_details_off = "${consoleName} промени режима на гласов вход на 'говор'.",
@@ -12745,11 +13843,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		strain_description = "<b>Сорт:</b> <i>${strain}</i> ${emoji}"
 	},
 
-	weed_field = {
-		pick_weed = "Натиснете ~INPUT_CONTEXT~ за да съберете трева.",
-		picking_weed = "Събиране на трева"
-	},
-
 	wizard = {
 		menu_title = "Магьосник",
 
@@ -12798,9 +13891,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		reversing_failed = "Неуспешно задействане на обратно движение на пешеход.",
 		driving_forwards_failed = "Неуспешно задействане на движение напред на пешеход.",
 		reversing_success = "Успешно задействане на обратно движение на пешеход.",
-		driving_forwards_success = "Успешно задействане на движение напред на пешеход.",
-
-		vehicle_temp_action_missing_permissions = "Играчът опита да изпълни временно действие върху превозно средство без подходящи разрешения."
+		driving_forwards_success = "Успешно задействане на движение напред на пешеход."
 	},
 
 	yoga = {
@@ -12815,15 +13906,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		looting_zombie = "Обиране на зомби",
 		zombie_looting_injection = "Твърде много обиране на зомбита! (Пренебрегнато изчакване на сървъра, вероятно с помощта на инжектор.)",
 
-		zombie_trip_limit = "Чувствате се твърде уморени, за да продължавате да обирате зомбита. Може би опитайте отново утре."
+		zombie_trip_limit = "Чувствате се твърде уморени, за да продължавате да обирате зомбита. Може би опитайте отново утре.",
+
+		not_able_to_loot_in_interior = "Не можеш да обирате зомбитата вътре в сгради."
 	},
 
 	-- global/*
-	entities = {
-		in_no_ped_population_area = "Вие сте в зона 'без население на пешеходци'.",
-		not_in_no_ped_population_area = "Вие не сте в зона 'без население на пешеходци'."
-	},
-
 	explosions = {
 		invalid_explosion_type = "Типът на експлозията `${explosionType}` е невалиден.",
 		invalid_camera_shake = "Трептенето на камерата `${cameraShake}` е невалидно.",
@@ -12863,8 +13951,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		debug_states_failed = "Неуспешно отстраняване на грешки по състоянието на тези обекти.",
 		no_states = "Този обект няма зададени състояния.",
 		printed_states = "Отпечатани състояния на обект ${networkId}.",
-
-		get_entity_states_missing_permissions = "Играчът опита да получи състоянията на даден обект без подходящи разрешения."
+		invalid_key = "Невалиден ключ.",
+		state_set = "Успешно зададено състояние на обекта.",
+		state_removed = "Успешно премахнато състояние на обекта.",
+		state_set_failed = "Неуспешно задаване на състояние на обекта."
 	},
 
 	time = {
@@ -12933,7 +14023,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 	-- interfaces/*
 	interface = {
 		no_interfaces_are_focused = "Няма фокусирани интерфейси.",
-		interfaces_focused = "Фокусирани интерфейси:\n${interfacesFocused}"
+		interfaces_focused = "Фокусирани интерфейси:\n${interfacesFocused}",
+		interface_crashed = "Изглежда, че интерфейсът ви се срина. Това най-вероятно означава, че сте изчерпали паметта. Той автоматично е рестартиран и нещата трябва да продължат да функционират както преди, но ако не, моля, информирайте ни в Discord гилдията на рамката."
 	},
 
 	-- jobs/*
@@ -12968,7 +14059,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 	},
 
 	bus_driver = {
-		start_route = "Натиснете ~INPUT_CONTEXT~, за да стартирате маршрута",
 		failed_start_job = "Неуспешно стартиране на нова работа.",
 		next_stop = "Следваща Спирка",
 		bus_hq = "Офис на автобусната компания",
@@ -12982,15 +14072,25 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		not_enough_money_ticket = "Нямате достатъчно пари за билет ($18).",
 		ticket_paid = "${displayName} плати за билет за автобус.",
 		paid_for_ticket = "Успешно заплатихте за билет за автобус.",
+		invalid_route_name = "Липсващо или невалидно име на автобусен маршрут.",
+		already_in_mission = "Вече сте в автобусна мисия.",
+		press_to_open_menu = "Натиснете ~INPUT_CONTEXT~, за да отворите менюто на автобуса.",
+		press_to_park_bus = "Натиснете ~INPUT_CONTEXT~, за да паркирате автобуса си.",
+		start_route = "Започни Маршрут",
+		bus_menu = "Меню на Автобуса",
+		close_menu = "Затвори Менюто",
+		rent_bus = "Наем на Автобус",
+		deposit = "Депозит: $${deposit}",
 
-		east_route = "Аркада",
-		pillbox_route = "Пилбокс",
-		little_seoul_route = "Малко Сеул",
+		east_route = "Маршрут към Аркада",
+		pillbox_route = "Маршрут към Пилбокс",
+		little_seoul_route = "Маршрут към Малко Сеул",
 		sandy_route = "Пустинен маршрут",
 		paleto_route = "Голям Океан Експрес",
 		grapeseed_route = "Грейпсийд Грийнуей",
 		route_68_route = "Маршрут 68 Директ",
 		airport_route = "Летищен транспорт",
+		business_route = "Линия за Бизнес",
 
 		finished_job_logs_title = "Завършен автобусен маршрут",
 		finished_job_logs_details = "${consoleName} завърши шофирането на маршрута `${route}` с автобус и получи $${payout}."
@@ -13020,8 +14120,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 	},
 
 	duty = {
-		toggle_duty_status_no_permissions = "Опит за превключване на режим на служба чрез командата без правилни разрешения.",
-
 		duty_status_on = "Успешно активира режим на служба.",
 		duty_status_off = "Успешно деактивира режим на служба.",
 		duty_status_failed = "Неуспешно превключване на режим на служба.",
@@ -13034,6 +14132,17 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 		toggled_operator_status_on = "Включен статус на оператор.",
 		toggled_operator_status_off = "Изключен статус на оператор."
+	},
+
+	emergency = {
+		no_nearby_vehicle = "Няма близък превозно средство.",
+		no_nearby_vehicle_door = "Не сте близо до вратата на превозното средство.",
+		removing_door = "Премахване на Вратата",
+		failed_remove_door = "Неуспешно премахване на вратата на превозното средство.",
+		invalid_clothing_type = "Невалиден тип облекло.",
+		no_nearby_player = "Няма заковани или свалени играчи наблизо.",
+		removing_clothing = "Премахване на ${type}",
+		failed_remove_clothing = "Неуспешно премахване на дреха."
 	},
 
 	job_center = {
@@ -13056,6 +14165,23 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		changed_job_failure = "Възникна грешка при опита да замените работата си с ${jobName}.",
 		changed_job_title = "Смени работа",
 		changed_job_details = "${consoleName} смени работата си на `${jobName}`."
+	},
+
+	jobs = {
+		job_reset_success = "Успешно нулиране на работата за ${consoleName}.",
+		failed_job_reset = "Неуспешно нулиране на работата за ${consoleName}.",
+		invalid_job_shortcut = "Невалидно бързо включване.",
+		job_set = "Успешно задаване на работа за ${consoleName} на `${jobName} / ${departmentName} / ${positionName}`.",
+		job_set_fail = "Неуспешно задаване на работа за ${consoleName}.",
+		failed_job_data = "Неуспешно извличане на данни за работата на играча.",
+
+		button_close = "Затвори",
+		button_save = "Запази",
+
+		set_job_logs_title = "Задай работа",
+		set_job_logs_details = "${consoleName} зададе на ${targetConsoleName} (#${characterId}) работата `${jobName}, ${departmentName}, ${positionName}`.",
+		reset_job_logs_title = "Нулиране на работа",
+		reset_job_logs_details = "${consoleName} нулира на ${targetConsoleName} (#${characterId}) работата."
 	},
 
 	police = {
@@ -13153,6 +14279,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		license_weapon = "Лиценз за оръжие",
 		license_mining = "Лиценз за миньорство",
 		license_driver = "Шофьорска лицензия",
+		license_press = "Натисни Лиценз",
 		gave_character_license = "Даде лиценз `${licenseLabel}` на ${characterName}.",
 		character_already_has_license = "${characterName} вече притежава лиценз `${licenseLabel}`.",
 		removed_character_license = "Премахнат лиценз `${licenseLabel}` от ${characterName}.",
@@ -13184,6 +14311,64 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		married_logs_details = "${consoleName} актуализира състоянието на брака между ${nameA} #${cidA} и ${nameB} #${cidB} на `омъжен`."
 	},
 
+	tasks = {
+		task_blip = "Задача",
+		tasks = "${amount} Задачи",
+		no_tasks = "Няма Задачи",
+		press_start_task = "[${SeatEjectKey}] Стартирай Задача",
+		no_active_tasks = "В момента няма нищо за направо.",
+		something_went_wrong = "Нещо се обърка.",
+		task_cancelled = "Задачата беше отказана.",
+		task_completed = "Задачата беше успешно изпълнена.",
+		task_failed_complete = "Неуспешно изпълнение на задачата.",
+
+		on_floor = "На етаж ${floor}.",
+		ground_floor = "Партер",
+		second_floor = "Втори етаж",
+		icu_floor = "Абитуриентска болница",
+		surgery_floor = "Етаж за операции",
+
+		task_make_bed = "Сглобете леглото.",
+		task_make_bed_near = "Натиснете ~INPUT_DETONATE~, за да сглобите леглото.",
+		task_make_bed_active = "Сглобяване на легло",
+
+		task_clean_toilet = "Почистете тоалетната.",
+		task_clean_toilet_near = "Натиснете ~INPUT_DETONATE~, за да почистите тоалетната.",
+		task_clean_toilet_active = "Почистване на тоалетната",
+
+		task_take_out_trash = "Изхвърлете боклука.",
+		task_take_out_trash_near = "Натиснете ~INPUT_DETONATE~, за да изхвърлите боклука.",
+		task_take_out_trash_active = "Изхвърляне на боклука",
+
+		task_clean_microwave = "Почистете микровълновата.",
+		task_clean_microwave_near = "Натиснете ~INPUT_DETONATE~, за да почистите микровълновата.",
+		task_clean_microwave_active = "Почистване на микровълновата",
+
+		task_restock_pharmacy = "Заредете аптеката.",
+		task_restock_pharmacy_near = "Натиснете ~INPUT_DETONATE~, за да подновите аптеката.",
+		task_restock_pharmacy_active = "Подновяване на аптеката",
+
+		task_restock_vending_machine = "Подновете автомата за продажба.",
+		task_restock_vending_machine_near = "Натиснете ~INPUT_DETONATE~, за да подновите автомата за продажба.",
+		task_restock_vending_machine_active = "Подновяване на автомата за продажба",
+
+		task_drthompson_lollipop = "Донесете на Д-р Томпсън лолипоп.",
+		task_drthompson_lollipop_near = "Натиснете ~INPUT_DETONATE~, за да дадете на Д-р Томпсън лолипопа.",
+		task_drthompson_lollipop_active = "Даване на д-р Томпсън лолипоп",
+
+		task_nancy_backrub = "Дайте на Нанси обратен масаж.",
+		task_nancy_backrub_near = "Натиснете ~INPUT_DETONATE~, за да дадете обратен масаж на Нанси.",
+		task_nancy_backrub_active = "Даване на обратен масаж на Нанси",
+
+		task_do_laundry = "Изперете прането.",
+		task_do_laundry_near = "Натиснете ~INPUT_DETONATE~, за да изперете прането.",
+		task_do_laundry_active = "Пране на използвани чаршафи",
+
+		task_disinfect_table = "Дезинфекция на операционната маса.",
+		task_disinfect_table_near = "Натиснете ~INPUT_DETONATE~, за да дезинфектирате операционната маса.",
+		task_disinfect_table_active = "Дезинфекция на масата"
+	},
+
 	tow = {
 		press_to_access_spawner = "Натиснете ~INPUT_CONTEXT~ за достъп до спавнера на автомобили.",
 		tow_vehicles = "Изваждане на автомобили",
@@ -13201,6 +14386,14 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		toggled_messages_on = "Съобщенията са включени.",
 		toggled_messages_off = "Съобщенията са изключени.",
 		cannot_toggle_mechanic_messages = "Товарачите не могат да изключат съобщенията на механиките."
+	},
+
+	trucking = {
+		trailer_locked = "Заключено",
+		inspect_cargo = "[${SeatEjectKey}] Проверка на товара",
+		inspecting_cargo = "Проверка на товара",
+		failed_cargo = "Неуспешно проверяване на товара.",
+		cargo_result = "Този ремарке изглежда транспортира ${cargo}."
 	},
 
 	weazel_news = {
@@ -13274,6 +14467,37 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		unclamped_log_details = "${consoleName} премахва скоба за заключване от превозното средство с регистрационен номер `${plate}`."
 	},
 
+	converters = {
+		stealing_converter = "Кражба на катализатор",
+		no_converter = "Това превозно средство не изглежда, че има катализатор.",
+		electric_vehicle = "Това превозно средство е електрическо.",
+
+		stole_converter_logs_title = "Крадец на катализатори",
+		stole_converter_logs_details = "${consoleName} открадна катализатор от превозното средство."
+	},
+
+	cruise_control = {
+		cruise_control = "Контрол на кръстосан ход / Автопилот",
+		speed_set_to_metric = "Зададена скорост на кръстосан ход на ${speed}км/ч.",
+		speed_set_to_imperial = "Зададена скорост на кръстосан ход на ${speed}мили в час.",
+		cruise_control_set_metric = "Контролът на кръстосан ход е зададен на ${speed}км/ч.",
+		cruise_control_set_imperial = "Контролът на кръстосан ход е зададен на ${speed}мили в час.",
+		cruise_control_reset = "Скоростта на кръстосан ход е нулирана.",
+		cruise_control_disabled = "Контролът на кръстосан ход е деактивиран.",
+		autopilot_metric = "~g~Автопилот~s~: ${altitude}м ~c~/~s~ ${speed}км/ч",
+		autopilot_imperial = "~g~Автопилот~s~: ${altitude}фута ~c~/~s~ ${speed}възлове",
+		hover_metric = "~g~Задържане на височина~s~: ${altitude}м",
+		hover_imperial = "~g~Задържане на височина~s~: ${altitude}фута",
+
+		speed_limiter = "Ограничител на скоростта",
+		speed_limiter_reset = "Ограничителят на скоростта е нулиран.",
+		speed_limiter_to_metric = "Задайте скоростния ограничител на скорост ${speed}км/ч.",
+		speed_limiter_to_imperial = "Задайте скоростния ограничител на скорост ${speed}мили в час.",
+		speed_limiter_set_metric = "Ограничителят на скоростта е зададен на ${speed}км/ч.",
+		speed_limiter_set_imperial = "Ограничителят на скоростта е настроен на ${speed}mph.",
+		speed_limiter_disabled = "Ограничителят на скоростта е деактивиран."
+	},
+
 	damage = {
 		vehicle = "Идентификационен номер на превозното средство: ${entity}",
 		general = "Основна информация: ${value}",
@@ -13289,10 +14513,15 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 	fuel = {
 		exit_to_fuel = "Излез от превозното средство, за да заредиш гориво.",
+		exit_to_charge = "Излезте от превозното средство, за да заредите.",
 		press_to_fuel = "Натисни ~g~${InteractionKey} ~w~, за да заредиш гориво в превозното средство.",
+		press_to_charge = "Натиснете ~g~${InteractionKey} ~w~, за да заредите превозното средство.",
 		fuel_pump_text = "Цена на горивото: $${fuelCost}~n~Натиснете ~g~${InteractionKey} ~w~, за да спрете зареждането.",
 		vehicle_text = "Ниво на горивото: ${fuelLevel}%",
+		fuel_pump_text_ev = "Цена за електроенергия: $${fuelCost}~n~Натиснете ~g~${InteractionKey} ~w~, за да спрете зареждането.",
+		vehicle_text_ev = "Ниво на батерията: ${fuelLevel}%",
 		tank_full = "Резервоарът е пълен.",
+		battery_full = "Батерията е пълна.",
 		vehicle_busy = "Близкият автомобил е зает.",
 		purchase_jerry_can = "Натиснете ~g~${InventoryKey} ~w~за закупуване на канистра за гориво.",
 		gas_station = "Бензиностанция",
@@ -13308,6 +14537,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 	gadgets = {
 		helicopter_camera_vehicle_info = "Натисни ~g~${InventoryKey} ~w~, за да закупиш Комплект за Почистване.",
+		helicopter_camera_aircraft_info = "Скорост: ${speed}\nМодел: ${model}\nрегистрация: ${registration}",
 		helicopter_camera_altitude = "Почистване на Превозно Средство",
 		helicopter_camera_altitude_asl = "Нямаш достатъчно пари, за да използваш Въздушното Устройство.",
 		helicopter_camera_locked_on = "Превозното средство се отдалечи твърде много, за да бъде почистено.",
@@ -13362,6 +14592,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		vehicle_in_the_way = "Има превозно средство блокиращо точката за поява.",
 		vehicle_is_out = "Вашето превозно средство вече е извън.",
 		vehicle_stored = "Вашето превозно средство е съхранено.",
+		vehicle_stored_other = "Превозното средство е съхранено.",
 		error_storing = "Неуспешно съхраняване на превозното средство. Дали превозното средство е ваше?",
 		no_nearby_vehicle = "Не са намерени близки превозни средства.",
 		no_vehicles_to_retrieve = "Нямате превозни средства за възстановяване!",
@@ -13393,7 +14624,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		state_storing = "Запазване...",
 		state_loading = "Зареждане...",
 
-		vehicle_weight = "Тегло: ${weight}",
+		vehicle_items = "${items} елемента",
+		vehicle_no_items = "Няма елементи",
 		no_last_garage_letter = "Няма последен гараж",
 
 		purchase_vehicle = "Натисни ~INPUT_CONTEXT~ за достъп до магазина",
@@ -13435,7 +14667,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 	keys = {
 		no_nearby_player = "Не е открит близък играч.",
-		no_nearby_vehicle = "Не е открито близко превозно средство.",
+		no_nearby_vehicle = "Няма близко превозно средство.",
 		no_keys_for_vehicle = "Нямате ключовете на това превозно средство.",
 		vehicle_locked = "Превозното средство е заключено",
 		vehicle_unlocked = "Колата е отключена",
@@ -13449,7 +14681,14 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		picked_up_keys = "Взети ключове за `${plate}`.",
 		hotwired_vehicle_for_player = "Направи ${displayName} да направи \"hotwire\" на превозното средство, в което се намира.",
 		gave_keys_success = "Успешно даде на ${displayName} ключовете на техния автомобил.",
-		gave_keys_failure = "Неуспешно даде на ${displayName} ключовете на техния автомобил."
+		gave_keys_failure = "Неуспешно даде на ${displayName} ключовете на техния автомобил.",
+
+		no_nearby_vehicle = "Няма близко превозно средство.",
+		there_is_someone_in_the_driver_seat = "Има някой на водачкото място.",
+		the_driver_door_is_closed = "Вратата на водача е затворена.",
+		checking_ignition = "Проверка на запалването",
+		ignition_tampered_with = "Запалването е било намесено.",
+		ignition_not_tampered_with = "Запалването не е било намесено."
 	},
 
 	modifications = {
@@ -13465,7 +14704,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 	oil = {
 		move_to_change = "Преместете се тук, за да смените маслото на превозното средство.",
 		changing_oil = "Смяна на масло",
-		low_oil = "Вашето превозно средство се нуждае от смяна на маслото!"
+		low_oil = "Вашето превозно средство се нуждае от смяна на маслото!",
+		no_nearby_vehicle = "Няма превозни средства в близост.",
+		vehicle_has_no_engine = "Най-близкото превозно средство няма двигател.",
+		check_oil = "Преместете се тук, за да проверите нивото на маслото",
+		oil_level = "Нивото на маслото в превозното средство е на ${percentage}%.",
+		checking_oil_level = "Проверка на нивото на маслото"
 	},
 
 	plates = {
@@ -13480,13 +14724,14 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		vehicle_does_not_belong_to_player = "ID на превозното средство `${vehicleId}` не принадлежи на вас.",
 		vehicle_id_does_not_exist = "ID на превозното средство `${vehicleId}` не съществува.",
 		you_have_no_character_loaded = "Вие нямате зареден персонаж.",
+		vehicle_plate_not_custom = "Превозното средство с идентификационен номер `${vehicleId}` няма персонализиран номер.",
+		confirm_reset_plate = "Сигурни ли сте, че искате да нулирате номера на това превозно средство? Тази операция не може да бъде отменена. Въведете `yes`, за да потвърдите или `no`, за да откажете.",
+		cancelled_resetting_plate = "Отменихте нулирането на номера на колата.",
 		vehicle_plate_changed = "Променихте номера на плочката на превозното средство с ID `${vehicleId}` на `${plateNumber}`.",
 
 		you_are_not_in_a_vehicle = "Вие не сте в превозно средство.",
 		fake_plate_active = "Успешно генерирахте фалшива плочка за вашия автомобил.",
-		fake_plate_inactive = "Върнете номера на плочката на превозното средство към оригиналното състояние.",
-
-		fake_plate_missing_permissions = "Играчът се опита да зададе фалшив номер на плочката чрез команда без необходимите разрешения."
+		fake_plate_inactive = "Върнете номера на плочката на превозното средство към оригиналното състояние."
 	},
 
 	runways = {
@@ -13507,8 +14752,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 		spawner_burger_shot = "Доставни превозни средства на Burger Shot",
 		spawner_bean_machine = "Доставни превозни средства на Bean Machine",
+		spawner_pizza_this = "Превозни средства за доставка на пица",
+		spawner_kissaki_sushi = "Превозни средства за доставка на суши от Кисаки",
 		spawner_weazel_news = "Превозни средства на Weazel News",
 		spawner_state = "Държавни превозни средства",
+		spawner_airport = "Превозни средства за летище",
 		close_menu = "Затвори менюто",
 		vehicle_list = "Списък на превозните средства",
 		park_vehicle = "Паркирай МПС",
@@ -13548,17 +14796,6 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		manual_gears_disabled = "Ръчните предавки са деактивирани.",
 		manual_gears_too_fast = "Можете да активирате само ръчните скорости под 30 мили в час.",
 		hybrid_off = "изключен",
-		speed_limiter_set_to_metric = "Ограничителят на скоростта ще ограничава скоростта до ${speed} км/ч.",
-		speed_limiter_set_to_imperial = "Ограничителят на скоростта ще ограничава скоростта до ${speed} мили/ч.",
-		speed_limiter_reset = "Ограничителят на скоростта ще ограничава скоростта до скоростта, на която е превключван.",
-		speed_limiter_on_metric = "Ограничител на скоростта зададен на ${speed} км/ч.",
-		speed_limiter_on_imperial = "Ограничител на скоростта зададен на ${speed} мили/ч.",
-		speed_limiter_on_plane_metric = "Ограничител на скоростта зададен на ${speed} км/ч и ${altitude} метра.",
-		speed_limiter_on_plane_imperial = "Ограничител на скоростта зададен на ${speed} мили на час и ${altitude} фута.",
-		speed_limiter_on_helicopter_metric = "Ограничител на скоростта зададен на ${altitude} метра (хеликоптер).",
-		speed_limiter_on_helicopter_imperial = "Ограничител на скоростта зададен на ${altitude} фута (хеликоптер).",
-		autopilot_metric = "~g~Автопилот~s~: ${altitude}м ~c~/~s~ ${speed}км/ч",
-		autopilot_imperial = "~g~Автопилот~s~: ${altitude}фута ~c~/~s~ ${speed}възла",
 		you_are_cuffed = "Вие сте арестувани.",
 		belt_is_on_and_vehicle_is_locked = "Вие сте пристегнат и превозното средство е заключено.",
 		belt_is_on = "Вие сте закопчали колана си.",
@@ -13721,6 +14958,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		check_in_escorted = "Вие бъдете придружавани",
 		checking_in = "Регистриране на вход",
 		doctor_notified = "Доктор е уведомен, моля, изчакайте",
+		no_free_bed_found = "Не беше намерена свободна легло.",
 		leave_bed = "Натиснете ~INPUT_CONTEXT~ за да излезете от леглото",
 		you_have_been_charged = "Вие бяхте таксувани $${cost} за вашите наранявания",
 		beds_occupied = "Всички легла са заети",
@@ -13777,6 +15015,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		cannot_respawn_currently = "Не можеш да се оживиш в момента",
 		hold_to_respawn = "Натисни и задръж ~b~ENTER ~w~, за да се оживиш или изчакай медицинска помощ",
 		hold_to_respawn_secondslol = "Натисни и задръж ~b~ENTER (${seconds}) ~w~, за да се оживиш или изчакай медицинска помощ",
+		respawn_warning = "Не спаунвайте, ако все още участвате в активен сценарий на ролева игра.",
 		passed_out = "Загуби съзнание",
 		light = "Лека",
 		moderate = "Умерена",
@@ -13802,13 +15041,16 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		badge_owner_unknown = "Собственикът на значката е неизвестен.",
 		citizen_card_owner = "<i>Тази лична карта принадлежи на <b>${fullName} (#${characterId})</b>.</i>",
 		driver_license_owner = "<i>Тази шофьорска книжка принадлежи на <b>${fullName} (#${characterId})</b>.</i>",
+		press_pass_owner = "<i>Този преспас принадлежи на <b>${fullName} (#${characterId})</b>.</i>",
 		has_portrait = "<i>Има снимка.</i>",
 		picture_pending = "<i>Снимката все още се обработва...</i>",
 		picture_selfie_owner = "<i>Това е снимка на <b>${fullName}</b>.</i>",
 		bought_by = "Купено от ${buyerName} (${buyerCid}).",
 		bought_by_unknown = "Купувачът на този предмет е неизвестен.",
 		cigarette_pack = "Остават ${cigarettes} цигари.",
-		evidence_incomplete = "Тази торбичка с доказателства е непълна.",
+		cigarette_carton = "Остават ${packs} пачки цигари.",
+		snus_pack = "Остават ${snus} пакетчета с нюс.",
+		evidence_incomplete = "Този доказателствен материал е непълен и не може да бъде прегледан.",
 		evidence_type = "Вид на доказателството",
 		processed_picked_up = "<i>Подиграл от ${pickupName} и обработен от ${processName}.</i>",
 		picked_up = "<i>Подиграл от ${pickupName}.</i>",
@@ -13860,6 +15102,12 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		smart_watch_hover = "<i>Тази умна гривна принадлежи на <b>${name} (#${cid})</b>. Тя е записала <b>${stepsWalked}</b> стъпки.</i>",
 		item_contains = "<b>Съдържание:</b> <i>${contents}</i>.",
 		item_engraving = "<b>Гравиране:</b> <i>${message}</i>.",
-		evidence_incomplete = "Тази торбичка с доказателства е непълна."
+		evidence_bag_casing = "Куршуми: ${casings} бройки куршуми бяха изстреляни с ${weapon}, регистриран на ${name} (#${cid}) (подбрани в ${time} близо до ${location}).",
+		evidence_bag_casing_unregistered = "Куршуми: ${casings} бройки куршуми бяха изстреляни с нерегистриран ${weapon} (подбрани в ${time} близо до ${location}).",
+		evidence_bag_impact = "Куршумни следи: ${impacts} следи изглежда, че са създадени от ${weapon} (подбрани в ${time} близо до ${location}).",
+		evidence_bag_vehicle = "DNA от превозното средство: Образецът се оказа, че е от ${name} (#${cid}) и беше извлечен от седалката ${seat} в превозното средство с номер на регистрация ${plate} (захванато на ${time} близо до ${location}).",
+		evidence_bag_vehicle_empty = "DNA от превозното средство: Образецът не съвпада с никакъв запис и беше извлечен от седалката ${seat} в превозното средство с номер на регистрация ${plate} (захванато на ${time} близо до ${location}).",
+		evidence_bag_clothing = "Облекло: Образецът взет от ${type} се оказа, че е от ${name} (#${cid}) (захванато на ${time} близо до ${location}).",
+		evidence_bag_clothing_empty = "Дрехи: Пробата, взета от ${type}, не съответства на никакъв запис (вземана в ${time} близо до ${location})."
 	}
 }

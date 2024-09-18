@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 32 (do not change)
+-- AUTO LOCALES: 33 (do not change)
 
 OP.Global.Locales.Languages["meme-caveman"] = {
 	-- configuration settings for language
@@ -23,13 +23,20 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		yes = "Ug",
 		no = "Nuh",
 		n_a = "Not Available",
-		invalid_server_id = "Ugga ugga! Me no understand server ID."
+		invalid_server_id = "Ugga ugga! Me no understand server ID.",
+		appreciated_tier = "undefined",
+		respected_tier = "undefined",
+		heroic_tier = "undefined",
+		legendary_tier = "undefined",
+		god_tier = "undefined"
 	},
 
 	-- animations/*
 	emotes = {
 		get_in_trunk = "Press ~INPUT_ENTER~ to go in big box.",
 		put_boombox_in_trunk = "Press ~INPUT_ENTER~ to put boombox in big box.",
+		put_bicycle_in_trunk = "undefined",
+		cant_put_bicycle_in_trunk = "undefined",
 		put_player_in_trunk = "Press ~INPUT_ENTER~ to put player in big box.",
 		put_player_in_seat = "[${VehicleEnterKey}] Place in seatee",
 		putting_player_in_seat = "Ugh, Place In Seat",
@@ -47,22 +54,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		piggyback_hop_on = "[${InteractionKey}] hop on",
 		stop_piggyback = "Ugh! ~INPUT_VEH_HEADLIGHT~ press to stop piggyback.",
 
-		lockpicking_cuffs = "Lockpick Cuffs",
-		lockpick_cuffs_too_fast = "You move too fast. Ugh!",
-		success_lockpick_cuffs = "Ugh! Successfully unlock cuffs.",
-		failed_lockpick_cuffs = "Ugh! Failed to unlock cuffs.",
-		lockpick_lost = "You lose lockpick. Ugh!",
-
-		not_cuffed = "You not cuffed. Ugh!",
-		unable_to_lockpick = "You can't lockpick cuffs. Ugh!",
-
-		lockpick_cuffs_logs_title = "Lockpicked Handcuffs",
-		lockpick_cuffs_logs_details = "${consoleName} successfully pick lock their cuffs using a `${itemName}`. Ugh!",
-
 		you_are_not_being_carried = "Ugh! You not carried now.",
 		successfully_uncarried = "Ugh! You drop now.",
 		failed_uncarried = "Ugh! Cannot drop.",
-		uncarry_missing_permissions = "Ugh! Not allowed to stop carry without big boss permission.",
 
 		uncarry_logs_title = "Force Uncarry",
 		uncarry_logs_details = "${consoleName} force ${targetName} drop them.",
@@ -77,6 +71,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		struggle_logs_details = "${consoleName} fight hard and free themselves from ${targetName} who had them.",
 
 		ragdolled_player = "Ugga ${displayName} ragdoll."
+	},
+
+	ledges = {
+		no_ledge = "undefined",
+		invalid_variation = "undefined",
+		press_x_to_stop = "undefined"
 	},
 
 	-- base/*
@@ -98,6 +98,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		noclip_toggle_activated_self_on_logs_details = "${consoleName} toggle noclip on at position `x: ${xCoord}, y: ${yCoord}, z: ${zCoord}`. (In vehicle: ${inVehicle})",
 		noclip_toggle_activated_self_off_logs_details = "${consoleName} toggle off of noclip at place `x: ${xCoord}, y: ${yCoord}, z: ${zCoord}`.",
 
+		can_not_trigger_remotely_without_staff = "undefined",
+
 		model_name_not_provided = "Nothing for what thing we made.",
 		model_name_invalid = "Thing wherefore we say `${modelName}` is not good.",
 		model_name_not_a_vehilce = "Ugh, model name `${modelName}` not a vehilce.",
@@ -114,10 +116,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		vehicle_created = "Me make vehicle! Good job!",
 		failed_vehicle_creation = "Me no make vehicle! Sad!",
 
+		invalid_network_id = "undefined",
+
 		-- NOTE: `add_vehicle` command:
 		add_vehicle_added_vehicle_for_everyone = "Ugh! Added big new car with name `${modelName}` for everyone.",
-		add_vehicle_added_vehicle_for_player = "Ugh! Added big new car with name `${modelName}` for ${consoleName}.",
-		add_vehicle_added_vehicle = "Ugh! Added big new car with name `${modelName}`.",
+		add_vehicle_added_vehicle_for_player = "undefined",
+		add_vehicle_added_vehicle = "undefined",
 		add_vehicle_character_not_loaded = "Ugh! Target player has no loaded characters.",
 		add_vehicle_target_user_not_found = "Ugh! Can't find target user.",
 		add_vehicle_invalid_input = "Ugga bugga.",
@@ -211,6 +215,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		staff_title = "STAFF ${staffName}",
 		staff_message_logs_title = "Staff Message History. Me see all.",
 		staff_message_logs_details = "${consoleName} grunt the following message in staff chat: `${staffMessage}`",
+		local_staff_title = "undefined",
+		local_staff_message_logs_title = "undefined",
+		local_staff_message_logs_details = "undefined",
 
 		staff_pm_title = "STAFF PM ${transmissionTitle}",
 		staff_pm_logs_title = "Staff PM",
@@ -220,7 +227,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		staff_pm_not_recipient_not_staff = "Oog. Player you try message not staff.",
 		staff_pm_unable_to_message_self = "Ugh. You no message yourself.",
 		staff_pm_warning = "Staff ooga booga",
-		staff_pm_first_time = "Hmm. You never use staff ooga booga. To respond, use /staffpm command.",
+		staff_pm_first_time = "undefined",
+		reply_pm_not_found = "undefined",
 
 		important_staff_pm_title = "!STAFF PM You -> ${recipient}",
 		close_staffpm = "Ugga",
@@ -245,6 +253,13 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		player_revived_success = "Player alive again!",
 
 		missing_valid_license_identifier_parameter = "Uggh, missing 'licenseIdentifier'!",
+
+		wipe_broken = "undefined",
+		wipe_npcs = "undefined",
+		wipe_objects = "undefined",
+		wipe_vehicles = "undefined",
+		wipe_peds = "undefined",
+		wipe_doors = "undefined",
 
 		wiped_entities = "Entities gone. Me delete ${deletedEntities} networked entities.",
 		wipe_entities_logs_title = "Destroyed everything!",
@@ -331,8 +346,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		warning_message_removed_title = "Ugg-Akk Message Ugg-Akk-Akk-Removed",
 		warning_message_removed_details = "${consoleName} ugg-Akk-Akk the Ugg-Akk message.",
 
-		indestructibility_on = "Ugg-Akk 'Indestructibility' Ugged-Akk-Akk-Akk On.",
-		indestructibility_off = "Ugg-Akk 'Indestructibility' Ugged-Akk-Akk-Akk Off.",
 		speed_boost_on = "Ugg-Akk 'Speed Boost' Ugged-Akk-Akk-Akk On.",
 		speed_boost_off = "Ugg-Akk 'Speed Boost' Ugged-Akk-Akk-Akk Off.",
 		nitro_boost_on = "Me turned on 'Nitro Boost'.",
@@ -367,33 +380,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		population_density_is_not_on = "Population density not on. Ugh.",
 		population_density_already_set_to = "Population already ${multiplierLabel}% so no need to change. Ugh.",
 
-		enabled_features_list = "Things working:",
-		aimbot_feature = "Magic arrow",
-		disabled_collisions_feature = "Not bump into thing",
-		disabled_recoil_feature = "Ugh Ugh No Recoil",
-		evidence_view_feature = "See Big Evidence",
-		hit_indicator_feature = "Hit Stone Stick",
-		indestructibility_feature = "Indestructible Like Rock",
-		infinite_ammo_feature = "Never Run Out of Pointy Sticks",
-		invisibility_feature = "Disappear Like Magic",
-		muted_sirens_feature = "Silent Scary Beasts",
-		nitro_boost_feature = "Go Fast Like Sabre Tooth",
-		no_nearby_vehicles_feature = "No Chariots in Sight",
-		peeking_feature = "Sneaky Peek",
-		roll_control_feature = "Stop Roll Like Boulder",
-		speed_boost_feature = "Go Faster Than Mammoth",
-		speed_up_progress_bar_feature = "Make Bar Fill Fast",
-		sticky_feet_feature = "Sticky Feet",
-		wallhack_feature = "Wallhack",
-		watching_feature = "Watching",
-		fortnite_feature = "Fortnite",
-		reflection_feature = "Reflection of Damage",
-		stable_cam_feature = "Stable Cam",
-		super_jump_feature = "Super Jump. Grug jump high!",
-		server_id_hidden_feature = "Server-ID Hidden. Grug invisible!",
-		fake_disconnect_feature = "Fake-DC. Grug trick others!",
-		brighter_nights_feature = "BN",
-
 		you_are_not_in_a_vehicle = "You not ride go go.",
 		repaired_vehicle = "Vehicle good now.",
 		player_not_in_vehicle = "undefined",
@@ -407,16 +393,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		success_nos_refill = "You have big speed now.",
 		failed_nos_refill = "No fuel for speed.",
 
-		refill_nitro_missing_permissions = "You no can have more speed, me say no.",
-
 		register_invalid_character_id = "No such caveman.",
 		register_invalid_slot = "Slot not good, try another.",
 		register_weapon_success = "Ugg Ugg. Successfully put big thing in slot ${slotId} for character with character id ${cid}.",
 		no_serial_number = "Me no can register a club without a secret number.",
 		unknown_character_id = "Me no know character id.",
 		register_weapon_failed = "Wrong! Did not put big thing in slot.",
-
-		register_weapon_missing_permissions = "Player not have strong enough club to put big thing in slot.",
 
 		vehicle_smoke_invalid_class = "Cannot make smoke for this kind of big thing.",
 
@@ -509,14 +491,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		cleaned_ped_self = "Ugg ugg! Ped cleaned! Now me like new.",
 		clean_ped_failed = "Ugh, cleaning failed. Me ped still dirty.",
 		cleaned_ped_for_all = "All peds cleaned! Everyone look so fresh now.",
-		clean_ped_no_permission = "Me tried to clean player's stinky ape without grunt grunt permissions.",
 
 		item_durability_set_success = "Me set ${amount}% durability for item in slot ${slotId}. Item strong now!",
 		item_durability_set_failed = "Hmm, me no able to set durability. Something went wrong.",
 		item_durability_invalid_amount = "Ugh, me no understand how much durability do you want. Only numbers between 0 and 100 allowed!",
-		item_durability_set_no_permission = "Ugh, me no allowed to change thing's durability.",
 
-		item_metadata_set_no_permission = "Me no allowed to change thing's extra info.",
 		item_metadata_set_success = "Ooga booga! Successfully changed item metadata in slot ${slotId}.",
 		item_metadata_set_failed = "Ugh. Me not able to change metadata. Failed!",
 		item_metadata_missing_key = "undefined",
@@ -529,8 +508,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		identity_set_failed = "Ugh, me failed to set identity of ${displayName}.",
 		identity_hud = "Identity: ${playerName}",
 
-		set_identity_no_permission = "Player try set name with no big strong permission.",
-
 		invalid_range_parameter = "That range speakin' no make sense.",
 		wipe_first_owned_success = "Me smash all ${amount} thing first owned by player with server id `${serverId}`.",
 		wipe_first_owned_success_range = "Me smash all ${amount} thing first owned by player with server id `${serverId}` in ${range}m distance.",
@@ -541,11 +518,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		scoop_invalid = "Me no scoop anyone. Try again maybe?",
 		unscooped_players = "Me put down ${amount} of ${total} player(s).",
 		unscoop_failed = "Me can't put down players. Something wrong!",
-
-		toggle_collisions_missing_permissions = "You no have permission to turn off collisions.",
-		wipe_first_owned_missing_permissions = "Ugh. Player try wipe entities, but no right. Dumb dumb.",
-
-		freeze_missing_permissions = "Player try freeze or unfreeze other player but no right. Play nice!",
 
 		freeze_success = "Me successfully freeze ${consoleName}. You all stay still now!",
 		failed_freeze = "Uh oh, failed to freeze player. Maybe try again?",
@@ -562,13 +534,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		slap_failed = "Ugh, unable to slap player.",
 		slap_logs_title = "Ugh Ugh Slap Player",
 		slap_logs_details = "${consoleName} ugh slapped ${targetName}.",
-		slap_missing_permissions = "Ugh, player not allowed to slap other player.",
 
 		damaged_player = "Ugh Ugh, ${consoleName} successfully ugh damaged for ${damage} damage.",
 		damage_player_failed = "Ugh, unable to damage player.",
 		damage_player_logs_title = "Ugh, Hurt Player",
 		damage_player_logs_details = "${consoleName} hurt ${targetConsoleName} for ${damage} oof!",
-		damage_player_missing_permissions = "Me caveperson no let player hurt others without permission.",
 
 		refill_nitro_logs_title = "More Go-Dust",
 		refill_nitro_logs_details = "${consoleName} refill 'dem go-dust.",
@@ -599,15 +569,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		clean_ped_logs_title = "Cleaned Caveman",
 		clean_ped_logs_details = "${consoleName} clean ${targetName]'s caveman.",
 
-		invalid_job_search = "Ungood job search (need at least 3 thinkings).",
-		failed_job_search = "No find job. Me sorry.",
-		job_search_no_results = "No jobs found. Me no see any job.",
-		job_search_results = "Me set ${consoleName}'s job to \"${jobName}, ${departmentName}, ${positionName}\" (Score: ${score}).",
-		job_no_character = "Target caveperson no have caveperson loaded.",
-
-		job_reset_success = "Me successfully reset job for ${consoleName}.",
-		failed_job_reset = "Me failed to reset job.",
-
 		create_vehicle_logs_title = "Created Vehicle",
 		create_vehicle_logs_details = "${consoleName} make big wheel thing. Wheel thing called `${modelName}`.",
 
@@ -627,13 +588,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		wipe_first_owned_logs_details = "${consoleName} wiped ${amount} big rocks first owned by player with server id `${serverId}` with a range of ${range}m.",
 
 		unscoop_logs_title = "Unscooped Players",
-		unscoop_logs_details = "${consoleName} unscooped ${amount} player(s) at `${coords}`.",
-
-		set_job_logs_title = "Set Job",
-		set_job_logs_details = "${consoleName} ugg ${targetConsoleName} (#${characterId}) job to `${jobName}, ${departmentName}, ${positionName}` (Ooga: ${score}, Ook: `${search}`).",
-
-		reset_job_logs_title = "Ugga Job",
-		reset_job_logs_details = "${consoleName} ugga ${targetConsoleName} (#${characterId}) job."
+		unscoop_logs_details = "${consoleName} unscooped ${amount} player(s) at `${coords}`."
 	},
 
 	anti_cheat = {
@@ -663,7 +618,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		-- GPT-4 generated ban messages
 		bad_entity_spawn = "Ugh, tryin' to summon ancient artifact `${modelName}`, eh? This not Antiques Roadshow, and that relic stay in vault.",
-		bad_screen_word_ban = "We've heard of open book exams, but this is ridiculous.",
 		blacklisted_command_ban = "Me sorry, but you no permission to do this command. Contact server big-brains if you think this mistake.",
 		clear_tasks_ban = "This not Jedi mind trick training. You cannot control others. Grug not happy.",
 		damage_modifier_ban = "Your strong no be more than 9000.",
@@ -690,7 +644,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		suspicious_explosion_ban = "Ugh, Stop Big Boom Boom. You Ban.",
 		text_entry_ban = "Looking at guts of website not allowed. Me caveman no like it.",
 		thermal_night_vision_ban = "No Brighter Nights allowed. Me like dark cave.",
-		underground_ban = "You fall into deep, dark hole. Trouble!",
 		vehicle_modification_ban = "You no find headlight fluid for car. Ha! Now car no go.",
 		vehicle_spawn_ban = "Ugh, dreaming of a joyride with `${modelName}`, were you? This not shiny cave to show off, and that type? Still waiting forever!",
 		weapon_spawn_ban = "Wanting the `${weaponName}`, were you? This not weapon stash, and that stick? Still in the fire pit.",
@@ -700,7 +653,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		type_aimbot = "Sharpeye",
 		type_bad_creation = "Bad Build",
-		type_bad_screen_word = "Bad Cave Draw",
 		type_blacklisted_command = "No Use Command",
 		type_clear_tasks = "Erase Tasks",
 		type_damage_modifier = "Hurt Changer",
@@ -734,7 +686,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		type_suspicious_transfer = "Ugga Suspicious Transfer",
 		type_text_entry = "Write",
 		type_thermal_night_vision = "Hot/Cold Eyes",
-		type_underground = "Deep below",
 		type_vehicle_modification = "Change Ride",
 		type_illegal_local_vehicle = "Using Not-Networked Vehicle",
 
@@ -899,6 +850,13 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		ragdoll_command_parameter_server_id_help = "Me say you put server id to ragdoll other caveman.",
 		ragdoll_command_substitutes = "",
 
+		-- animations/ledges
+		sit_ledge_command = "undefined",
+		sit_ledge_command_help = "undefined",
+		sit_ledge_command_parameter_variation = "undefined",
+		sit_ledge_command_parameter_variation_help = "undefined",
+		sit_ledge_command_substitutes = "undefined",
+
 		-- animations/walkstyles
 		marathon_command = "marathon",
 		marathon_command_help = "Ugh ugh! Turn on or off the 'marathon' debug feature to see how walkstyle needs changing.",
@@ -933,11 +891,23 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		important_staff_pm_command_parameter_message_help = "The important message ugg would like to send.",
 		important_staff_pm_command_substitutes = "!staffpm, !staff_pm",
 
+		reply_pm_command = "undefined",
+		reply_pm_command_help = "undefined",
+		reply_pm_command_parameter_message = "undefined",
+		reply_pm_command_parameter_message_help = "undefined",
+		reply_pm_command_substitutes = "undefined",
+
 		staff_command = "staff",
 		staff_command_help = "Me talk to all staff members.",
 		staff_command_parameter_message = "ug-ug",
 		staff_command_parameter_message_help = "grunt. ug-ug message you want to send.",
 		staff_command_substitutes = "",
+
+		local_staff_command = "undefined",
+		local_staff_command_help = "undefined",
+		local_staff_command_parameter_message = "undefined",
+		local_staff_command_parameter_message_help = "undefined",
+		local_staff_command_substitutes = "undefined",
 
 		wipe_command = "wipe",
 		wipe_command_help = "Ug-Ug Wipe unwanted entities from map.",
@@ -946,7 +916,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		wipe_command_parameter_ignore_local_entities = "ug-ug no-see entities",
 		wipe_command_parameter_ignore_local_entities_help = "Ug-Ug no-see? If cleaning up from cheat-ug-ug, then recommend putting to `true` or `1`.",
 		wipe_command_parameter_model_name = "ug-ug ug-ug name",
-		wipe_command_parameter_model_name_help = "If you want smash things of certain model name, me say put model name here. Otherwise leave empty, like `false` or `0`. You can also put `big rocks`, `hairy people`, `things`, or `big hole in wall`.",
+		wipe_command_parameter_model_name_help = "undefined",
 		wipe_command_parameter_camera = "big eyes",
 		wipe_command_parameter_camera_help = "Use cave drawing of where me see instead of where me stand. Default is no, `1` or `y` for yes.",
 		wipe_command_substitutes = "",
@@ -1053,33 +1023,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		nitro_boost_command_parameter_server_id_help = "Me help you toggle 'nitro boost' for someone else, put their server id here.",
 		nitro_boost_command_substitutes = "nitro",
 
-		indestructibility_command = "indestructibility",
-		indestructibility_command_help = "Me toggle 'indestructibility'.",
-		indestructibility_command_parameter_server_id = "ugh ugh server id",
-		indestructibility_command_parameter_server_id_help = "Me help you toggle 'indestructibility' for someone else, put their server id here.",
-		indestructibility_command_parameter_ignore_vehicle = "ignore wheel",
-		indestructibility_command_parameter_ignore_vehicle_help = "If set to `1` or `y`, this make only me invincible, not wheel me in.",
-		indestructibility_command_substitutes = "ind, god, god_mode, godmode",
-
 		no_nearby_vehicles_command = "no_nearby_vehicles",
 		no_nearby_vehicles_command_help = "Fthagnak! 'No nearby vehicles' toggle.",
 		no_nearby_vehicles_command_parameter_server_id = "server id",
 		no_nearby_vehicles_command_parameter_server_id_help = "Fthagnak! Insert server id for 'no nearby vehicles' toggle for other player.",
 		no_nearby_vehicles_command_substitutes = "",
-
-		job_command = "how gud",
-		job_command_help = "Say who do what.",
-		job_command_parameter_server_id = "server id",
-		job_command_parameter_server_id_help = "Ung playas server id or 0 to select yourself.",
-		job_command_parameter_search = "search",
-		job_command_parameter_search_help = "What job caveman do like or not like. Ung job/department/position name or part of it to search for or `none` to remove the job.",
-		job_command_substitutes = "",
-
-		reset_job_command = "ug-ug-reset-job",
-		reset_job_command_help = "Ug-ug-reset job, oog player's job to unemployed.",
-		reset_job_command_parameter_server_id = "ug-ug-server id",
-		reset_job_command_parameter_server_id_help = "Ug-ug-Server id of player or 0 to select self.",
-		reset_job_command_substitutes = "",
 
 		watching_command = "watching",
 		watching_command_help = "Ug-ug-shows you all players who are spectator nearby.",
@@ -1403,6 +1351,16 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		trigger_ems_call_command_help = "Me send local EMS call from where me stand.",
 		trigger_ems_call_command_substitutes = "",
 
+		ridealong_command = "undefined",
+		ridealong_command_help = "undefined",
+		ridealong_command_substitutes = "",
+
+		kill_ped_command = "undefined",
+		kill_ped_command_help = "undefined",
+		kill_ped_command_parameter_network_id = "undefined",
+		kill_ped_command_parameter_network_id_help = "undefined",
+		kill_ped_command_substitutes = "",
+
 		-- base/anti_cheat
 		model_detect_add_command = "ooga_booga_detect",
 		model_detect_add_command_help = "Me add model to detection list. List go away when server restart.",
@@ -1464,6 +1422,19 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		get_pings_command_help = "Ug-ug average ug-ug to various ug-ug around the world to find the most suitable ug-ug location for this ug-ug's current ug-ug.",
 		get_pings_command_substitutes = "",
 
+		-- base/points
+		points_command = "undefined",
+		points_command_help = "undefined",
+		points_command_substitutes = "",
+
+		use_points_command = "undefined",
+		use_points_command_help = "undefined",
+		use_points_command_parameter_amount = "undefined",
+		use_points_command_parameter_amount_help = "undefined",
+		use_points_command_parameter_label = "undefined",
+		use_points_command_parameter_label_help = "undefined",
+		use_points_command_substitutes = "",
+
 		-- base/profile
 		profile_debug_command = "profile_debug",
 		profile_debug_command_help = "Ugghh Toggle the profile debugger.",
@@ -1478,12 +1449,16 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		-- base/users
 		playtime_command = "playtime",
 		playtime_command_help = "Me count how many suns you been on server and this session.",
+		playtime_command_parameter_total_playtime = "undefined",
+		playtime_command_parameter_total_playtime_help = "undefined",
 		playtime_command_parameter_server_id = "server id",
 		playtime_command_parameter_server_id_help = "Me check playtime of player with server ID. You can leave blank or put 0 for yourself.",
 		playtime_command_substitutes = "",
 
 		leaderboard_command = "leaderboard",
 		leaderboard_command_help = "Me show the leaderboard of playtime.",
+		leaderboard_command_parameter_total_playtime = "undefined",
+		leaderboard_command_parameter_total_playtime_help = "undefined",
 		leaderboard_command_substitutes = "",
 
 		package_command = "package",
@@ -1521,6 +1496,13 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		create_airdrop_custom_command_parameter_items = "grab bag",
 		create_airdrop_custom_command_parameter_items_help = "String with stuff and amount like 'big green berry:5,hungry burger:3'.",
 		create_airdrop_custom_command_substitutes = "",
+
+		-- game/airports
+		registration_lookup_command = "undefined",
+		registration_lookup_command_help = "undefined",
+		registration_lookup_command_parameter_registration = "undefined",
+		registration_lookup_command_parameter_registration_help = "undefined",
+		registration_lookup_command_substitutes = "undefined",
 
 		-- game/airstrike
 		call_airstrike_command = "ug-ug call_airstrike",
@@ -1795,6 +1777,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		reconnect_command_socket_command_help = "Me try connect to command socket again.",
 		reconnect_command_socket_command_substitutes = "",
 
+		-- game/container_storage
+		containers_command = "undefined",
+		containers_command_help = "undefined",
+		containers_command_substitutes = "",
+
 		-- game/crafting
 		crafting_debug_command = "ug ug crafting_debug",
 		crafting_debug_command_help = "Ugga buga all crafting spots.",
@@ -1841,8 +1828,14 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		-- game/debug
 		debug_command = "debug",
-		debug_command_help = "Me help you turn on/off entity-debugger. It show some general information about nearby entities.",
+		debug_command_help = "undefined",
+		debug_command_parameter_minimal = "undefined",
+		debug_command_parameter_minimal_help = "undefined",
 		debug_command_substitutes = "",
+
+		entity_debug_command = "undefined",
+		entity_debug_command_help = "undefined",
+		entity_debug_command_substitutes = "",
 
 		npc_debug_command = "npc_debug",
 		npc_debug_command_help = "Me help you debug all non animal npc's around you.",
@@ -1978,6 +1971,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		play_animation_command_parameter_flags_help = "Ugh Ugh! Animation flags for do animation.",
 		play_animation_command_substitutes = "do_animation",
 
+		play_scenario_command = "undefined",
+		play_scenario_command_help = "undefined",
+		play_scenario_command_parameter_scenario = "undefined",
+		play_scenario_command_parameter_scenario_help = "undefined",
+		play_scenario_command_substitutes = "undefined",
+
 		draw_coords_command = "show_stone_map",
 		draw_coords_command_help = "Show coordinates on big rock.",
 		draw_coords_command_parameter_x = "x",
@@ -2106,6 +2105,24 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		random_position_command_help = "Me transport you to ugh random position on main island. (Also turn on ugh invisibility)",
 		random_position_command_substitutes = "ughrandom",
 
+		crash_ui_command = "undefined",
+		crash_ui_command_help = "undefined",
+		crash_ui_command_substitutes = "",
+
+		toggle_deep_log_events_command = "undefined",
+		toggle_deep_log_events_command_help = "undefined",
+		toggle_deep_log_events_command_substitutes = "",
+
+		find_native_toggles_command = "undefined",
+		find_native_toggles_command_help = "undefined",
+		find_native_toggles_command_parameter_extreme = "undefined",
+		find_native_toggles_command_parameter_extreme_help = "undefined",
+		find_native_toggles_command_substitutes = "",
+
+		show_cancelled_vehicles_command = "undefined",
+		show_cancelled_vehicles_command_help = "undefined",
+		show_cancelled_vehicles_command_substitutes = "",
+
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
 		debug_menu_command_help = "Me toggle da debug menu.",
@@ -2139,6 +2156,14 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		door_debug_command = "door_debug_ugh_ugh",
 		door_debug_command_help = "Ooga booga, debugs info about nearby doors.",
 		door_debug_command_substitutes = "",
+
+		disable_doors_command = "undefined",
+		disable_doors_command_help = "undefined",
+		disable_doors_command_substitutes = "",
+
+		add_doors_command = "undefined",
+		add_doors_command_help = "undefined",
+		add_doors_command_substitutes = "",
 
 		-- game/effect_zones
 		effect_zones_debug_command = "undefined",
@@ -2413,10 +2438,21 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		animal_debug_command_help = "Unga bunga, show animal info.",
 		animal_debug_command_substitutes = "",
 
+		-- game/indestructability
+		indestructibility_command = "indestructibility",
+		indestructibility_command_help = "undefined",
+		indestructibility_command_parameter_server_id = "ugh ugh server id",
+		indestructibility_command_parameter_server_id_help = "undefined",
+		indestructibility_command_substitutes = "ind, god, god_mode, godmode",
+
 		-- game/injuries
 		inspect_command = "inspect",
 		inspect_command_help = "Unga bunga, check if player hurt.",
 		inspect_command_substitutes = "",
+
+		autopsy_command = "undefined",
+		autopsy_command_help = "undefined",
+		autopsy_command_substitutes = "",
 
 		-- game/instances
 		instance_create_command = "unga_bunga_create_instance",
@@ -2611,6 +2647,19 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		refresh_magazines_command_help = "Refresh da magazines if dere be changes in da database.",
 		refresh_magazines_command_substitutes = "",
 
+		create_magazine_command = "undefined",
+		create_magazine_command_help = "undefined",
+		create_magazine_command_parameter_series_name = "undefined",
+		create_magazine_command_parameter_series_name_help = "undefined",
+		create_magazine_command_parameter_issue_id = "undefined",
+		create_magazine_command_parameter_issue_id_help = "undefined",
+		create_magazine_command_substitutes = "",
+
+		-- game/map
+		live_map_command = "undefined",
+		live_map_command_help = "undefined",
+		live_map_command_substitutes = "",
+
 		-- game/mdt
 		mdt_command = "mdt",
 		mdt_command_help = "Ugh ugh, open MDT GUI.",
@@ -2629,6 +2678,19 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		maxwell_debug_command = "uggh_maxwell_debug",
 		maxwell_debug_command_help = "Uggh debug maxwells location.",
 		maxwell_debug_command_substitutes = "",
+
+		-- game/minecraft
+		minecraft_command = "undefined",
+		minecraft_command_help = "undefined",
+		minecraft_command_parameter_no_sound = "undefined",
+		minecraft_command_parameter_no_sound_help = "undefined",
+		minecraft_command_substitutes = "",
+
+		minecraft_wipe_command = "undefined",
+		minecraft_wipe_command_help = "undefined",
+		minecraft_wipe_command_parameter_radius = "undefined",
+		minecraft_wipe_command_parameter_radius_help = "undefined",
+		minecraft_wipe_command_substitutes = "",
 
 		-- game/mining
 		mining_debug_command = "mining_debug",
@@ -2750,6 +2812,15 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		whois_command_parameter_search_help = "undefined",
 		whois_command_substitutes = "",
 
+		-- game/model_view
+		model_view_command = "undefined",
+		model_view_command_help = "undefined",
+		model_view_command_parameter_model = "undefined",
+		model_view_command_parameter_model_help = "undefined",
+		model_view_command_parameter_no_blocker = "undefined",
+		model_view_command_parameter_no_blocker_help = "undefined",
+		model_view_command_substitutes = "undefined",
+
 		-- game/money
 		cash_command = "grunt-grunt",
 		cash_command_help = "Me see how many rocks you have.",
@@ -2835,6 +2906,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		oxy_tutorial_command = "oxy_tutorial",
 		oxy_tutorial_command_help = "Play da oxy tutorial next time u start a run.",
 		oxy_tutorial_command_substitutes = "",
+
+		-- game/pacific_bank
+		power_generators_debug_command = "undefined",
+		power_generators_debug_command_help = "undefined",
+		power_generators_debug_command_substitutes = "",
 
 		-- game/panel
 		panel_command = "panel",
@@ -2937,13 +3013,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		ped_steal_command_parameter_server_id = "server id",
 		ped_steal_command_parameter_server_id_help = "The players server id. Unga bunga.",
 		ped_steal_command_substitutes = "me steal that guy",
-
-		-- game/ped_takeover
-		takeover_ped_command = "takeover_ped",
-		takeover_ped_command_help = "Makes you control a certain ped.",
-		takeover_ped_command_parameter_network_id = "network id",
-		takeover_ped_command_parameter_network_id_help = "The network id of the ped you want to take over.",
-		takeover_ped_command_substitutes = "takeover",
 
 		-- game/ped_tasks
 		ped_debug_command = "ped_debug",
@@ -3212,6 +3281,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		savings_accounts_command_help = "Gog-gog and og all your savings accounts.",
 		savings_accounts_command_substitutes = "savings, accounts",
 
+		-- game/scenarios
+		scenarios_debug_command = "undefined",
+		scenarios_debug_command_help = "undefined",
+		scenarios_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "ugga",
 		metagame_command_help = "Toggle draw of player's IDs. Ugg ugga ugga!",
@@ -3390,13 +3464,13 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		tp_to_player_command_help = "undefined",
 		tp_to_player_command_parameter_server_id = "undefined",
 		tp_to_player_command_parameter_server_id_help = "undefined",
-		tp_to_player_command_substitutes = "",
+		tp_to_player_command_substitutes = "undefined",
 
 		tp_player_here_command = "undefined",
 		tp_player_here_command_help = "undefined",
 		tp_player_here_command_parameter_server_id = "undefined",
 		tp_player_here_command_parameter_server_id_help = "undefined",
-		tp_player_here_command_substitutes = "",
+		tp_player_here_command_substitutes = "undefined",
 
 		tp_player_player_command = "undefined",
 		tp_player_player_command_help = "undefined",
@@ -3504,6 +3578,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		drive_to_command_parameter_network_id_help = "Ooga booga the peds network id, the vehicles network id (which the ped is the driver of) or leave empty to select driver of current vehicle.",
 		drive_to_command_substitutes = "",
 
+		hop_in_command = "undefined",
+		hop_in_command_help = "undefined",
+		hop_in_command_parameter_network_id = "undefined",
+		hop_in_command_parameter_network_id_help = "undefined",
+		hop_in_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "ug voice_debug",
 		voice_debug_command_help = "Ug toggle voice debug.",
@@ -3589,14 +3669,18 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		ped_forwards_command_help = "Ug ug make other guy on wheel go forward.",
 		ped_forwards_command_substitutes = "",
 
+		vehicle_flip_command = "undefined",
+		vehicle_flip_command_help = "undefined",
+		vehicle_flip_command_parameter_axis = "undefined",
+		vehicle_flip_command_parameter_axis_help = "undefined",
+		vehicle_flip_command_parameter_network_id = "undefined",
+		vehicle_flip_command_parameter_network_id_help = "undefined",
+		vehicle_flip_command_substitutes = "undefined",
+
 		-- global/entities
 		local_entities_debug_command = "debug_entities_local",
 		local_entities_debug_command_help = "Ug toggle debug for stuff nearby.",
 		local_entities_debug_command_substitutes = "lentities",
-
-		no_ped_population_areas_debug_command = "no_ped_population_areas_debug",
-		no_ped_population_areas_debug_command_help = "Ug toggle the debugger for no-ug-people areas.",
-		no_ped_population_areas_debug_command_substitutes = "",
 
 		-- global/explosions
 		create_explosion_command = "make_big_boom",
@@ -3627,12 +3711,22 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		entity_states_command = "entity_states",
 		entity_states_command_help = "Ughh... Prints all states of certain entity.",
 		entity_states_command_parameter_network_id = "network id",
-		entity_states_command_parameter_network_id_help = "Ughhh... The network id of the entity.",
+		entity_states_command_parameter_network_id_help = "undefined",
 		entity_states_command_substitutes = "",
 
 		draw_entity_states_command = "me draw_entity_states",
 		draw_entity_states_command_help = "Show all big rocks with 1 or more states.",
 		draw_entity_states_command_substitutes = "",
+
+		set_entity_state_command = "undefined",
+		set_entity_state_command_help = "undefined",
+		set_entity_state_command_parameter_network_id = "undefined",
+		set_entity_state_command_parameter_network_id_help = "undefined",
+		set_entity_state_command_parameter_key = "undefined",
+		set_entity_state_command_parameter_key_help = "undefined",
+		set_entity_state_command_parameter_value = "undefined",
+		set_entity_state_command_parameter_value_help = "undefined",
+		set_entity_state_command_substitutes = "",
 
 		-- illegal/drugs
 		drugs_debug_command = "debug for weed skull places",
@@ -3652,6 +3746,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		bus_debug_command = "undefined",
 		bus_debug_command_help = "undefined",
 		bus_debug_command_substitutes = "",
+
+		start_bus_route_command = "undefined",
+		start_bus_route_command_help = "undefined",
+		start_bus_route_command_parameter_route = "undefined",
+		start_bus_route_command_parameter_route_help = "undefined",
+		start_bus_route_command_substitutes = "",
 
 		--jobs/doj
 		lookup_character_command = "lookup_character",
@@ -3674,7 +3774,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		toggle_duty_status_command = "ug-ug_duty_status",
 		toggle_duty_status_command_help = "Ugh, me toggle on duty or off duty.",
 		toggle_duty_status_command_parameter_server_id = "server id",
-		toggle_duty_status_command_parameter_server_id_help = "Ug-ug, enter server id of target or leave empty to toggle own duty status.",
+		toggle_duty_status_command_parameter_server_id_help = "undefined",
 		toggle_duty_status_command_substitutes = "ug-ug_duty, ug-ug_work",
 
 		toggle_training_command = "ug-ug_training",
@@ -3684,6 +3784,30 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		toggle_operator_status_command = "ug-ug_toggle_operator_status",
 		toggle_operator_status_command_help = "Me ug-ug turn on or off me emergency operator status. If on, me receive option to accept 911 calls.",
 		toggle_operator_status_command_substitutes = "ug-ug_operator, ug-ug_toggle_operator, ug-ug_operator_status",
+
+		-- jobs/emergency
+		remove_clothing_command = "undefined",
+		remove_clothing_command_help = "undefined",
+		remove_clothing_command_parameter_type = "undefined",
+		remove_clothing_command_parameter_type_help = "undefined",
+		remove_clothing_command_parameter_server_id = "undefined",
+		remove_clothing_command_parameter_server_id_help = "undefined",
+		remove_clothing_command_substitutes = "undefined",
+
+		-- jobs/jobs
+		job_command = "how gud",
+		job_command_help = "undefined",
+		job_command_parameter_server_id = "server id",
+		job_command_parameter_server_id_help = "Ung playas server id or 0 to select yourself.",
+		job_command_parameter_shortcut = "undefined",
+		job_command_parameter_shortcut_help = "undefined",
+		job_command_substitutes = "",
+
+		reset_job_command = "ug-ug-reset-job",
+		reset_job_command_help = "Ug-ug-reset job, oog player's job to unemployed.",
+		reset_job_command_parameter_server_id = "ug-ug-server id",
+		reset_job_command_parameter_server_id_help = "Ug-ug-Server id of player or 0 to select self.",
+		reset_job_command_substitutes = "",
 
 		-- jobs/police
 		aim_assist_command = "aim_assist",
@@ -3757,6 +3881,13 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		set_marriage_command_parameter_state_help = "undefined",
 		set_marriage_command_substitutes = "",
 
+		-- jobs/tasks
+		tasks_debug_command = "undefined",
+		tasks_debug_command_help = "undefined",
+		tasks_debug_command_parameter_area_id = "undefined",
+		tasks_debug_command_parameter_area_id_help = "undefined",
+		tasks_debug_command_substitutes = "",
+
 		-- jobs/tow
 		toggle_mechanic_messages_command = "me turn on/off mechanic messages",
 		toggle_mechanic_messages_command_help = "Me turn on/off getting messages from mechanic.",
@@ -3766,6 +3897,19 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		toggle_anchor_command = "me turn on/off anchor",
 		toggle_anchor_command_help = "Me turn on/off anchor of nearby boat.",
 		toggle_anchor_command_substitutes = "anchor",
+
+		-- vehicles/cruise_control
+		set_cruise_control_speed_command = "undefined",
+		set_cruise_control_speed_command_help = "undefined",
+		set_cruise_control_speed_command_parameter_speed = "undefined",
+		set_cruise_control_speed_command_parameter_speed_help = "undefined",
+		set_cruise_control_speed_command_substitutes = "undefined",
+
+		set_speed_limiter_speed_command = "undefined",
+		set_speed_limiter_speed_command_help = "undefined",
+		set_speed_limiter_speed_command_parameter_speed = "undefined",
+		set_speed_limiter_speed_command_parameter_speed_help = "undefined",
+		set_speed_limiter_speed_command_substitutes = "undefined",
 
 		-- vehicles/damage
 		vehicle_damage_debug_command = "vehicle_damage_debug",
@@ -3777,6 +3921,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		set_fuel_command_help = "Ugg set tha fuel level of tha vehicle you are in.",
 		set_fuel_command_parameter_fuel_level = "fuel level",
 		set_fuel_command_parameter_fuel_level_help = "Tha fuel level you would like to set it to. Leaving this blank will auto-select `100`.",
+		set_fuel_command_parameter_server_id = "undefined",
+		set_fuel_command_parameter_server_id_help = "undefined",
 		set_fuel_command_substitutes = "fuel",
 
 		-- vehicles/garage_access
@@ -3805,7 +3951,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		give_key_command = "give_key",
 		give_key_command_help = "Give vehicle key to nearby person, UghUgh.",
 		give_key_command_parameter_server_id = "server id",
-		give_key_command_parameter_server_id_help = "Player's server id you give key to, UghUgh. Left blank or set to 0 gives key to nearest person.",
+		give_key_command_parameter_server_id_help = "undefined",
 		give_key_command_substitutes = "givekey",
 
 		hotwire_vehicle_command = "hotwire_vehicle",
@@ -3824,6 +3970,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		keys_command_parameter_server_id_help = "Give another caveman the clubs to the thing they are riding.",
 		keys_command_substitutes = "",
 
+		check_ignition_tampering_command = "undefined",
+		check_ignition_tampering_command_help = "undefined",
+		check_ignition_tampering_command_substitutes = "",
+
 		-- vehicles/modifications
 		wheel_offset_command = "ug-wheel-kizzles",
 		wheel_offset_command_help = "Change kizzles' wheel's position.",
@@ -3841,6 +3991,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		wheel_rotation_command_parameter_value_help = "How much you want to change it? Can be from -0.5 to 0.5, 0 is normal.",
 		wheel_rotation_command_substitutes = "",
 
+		-- vehicles/oil
+		oil_level_command = "undefined",
+		oil_level_command_help = "undefined",
+		oil_level_command_substitutes = "undefined",
+
 		-- vehicles/plates
 		fake_plate_command = "fake_scratch",
 		fake_plate_command_help = "Toggle fake rock scratch of car.",
@@ -3857,8 +4012,14 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		custom_plate_command_parameter_vehicle_id = "vehicle oog oog",
 		custom_plate_command_parameter_vehicle_id_help = "Me want know vehicle ID for custom plate. (Find ID in cave garage)",
 		custom_plate_command_parameter_plate_number = "plate oog oog",
-		custom_plate_command_parameter_plate_number_help = "Me want set plate number. Only 8 big letter and number allowed.",
+		custom_plate_command_parameter_plate_number_help = "undefined",
 		custom_plate_command_substitutes = "",
+
+		reset_plate_command = "undefined",
+		reset_plate_command_help = "undefined",
+		reset_plate_command_parameter_vehicle_id = "undefined",
+		reset_plate_command_parameter_vehicle_id_help = "undefined",
+		reset_plate_command_substitutes = "",
 
 		-- vehicles/runways
 		ifr_command = "ifr",
@@ -3877,7 +4038,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		-- vehicles/vehicles
 		flip_command = "flip",
-		flip_command_help = "Roll over vehicle on side.",
+		flip_command_help = "undefined",
 		flip_command_substitutes = "",
 
 		toggle_roll_control_command = "toggle_roll_control",
@@ -3935,12 +4096,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		manual_toggle_command_command_parameter_hybrid = "groogroog",
 		manual_toggle_command_command_parameter_hybrid_help = "Groogroog grok grunt grunt grunt grook grok grunt grunt grunt. Grok grok be `grok`, `grok` or `grok`.",
 		manual_toggle_command_substitutes = "",
-
-		speed_limiter_command = "speed_limiter",
-		speed_limiter_command_parameter_speed = "speed",
-		speed_limiter_command_parameter_speed_help = "Ugg-ugg! Which speed you want metal wagon to go? If you leave blank, it go back to normal.",
-		speed_limiter_command_help = "Me help you go only fast slow. Me change limit of speedy thing.",
-		speed_limiter_command_substitutes = "sl, cc, cruise_control",
 
 		toggle_vehicle_weapons_command = "toggle_vehicle_weapons",
 		toggle_vehicle_weapons_command_help = "Me make weapons on car work or not work.",
@@ -4090,6 +4245,15 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		list_hosts = "${listHosts}"
 	},
 
+	points = {
+		you_have_points = "undefined",
+		used_points = "undefined",
+		not_enough_op_points = "undefined",
+
+		points_used_logs_title = "undefined",
+		points_used_logs_details = "undefined"
+	},
+
 	profile = {
 		profile_debug_enabled = "Me debug tool on. Check F8 cave hole for output.",
 		profile_debug_disabled = "Me debug tool off."
@@ -4125,11 +4289,16 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	routes = {
 		route_not_found = "Route ${route} not find, me no know what do.",
 		route_restricted = "Route ${route} only for big chief, you no can go there.",
+		route_disabled = "undefined",
 		internal_server_error = "Ugh... Something wrong with server, me no understand."
 	},
 
 	session = {
 		connecting_from_new_session = "You oog connecting from a new session."
+	},
+
+	steam = {
+		no_steam_allowed = "undefined"
 	},
 
 	twitch = {
@@ -4145,9 +4314,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 	users = {
 		playtime = "Time spent hunting mammoth",
+		playtime_total = "undefined",
 		player_playtime = "${playerName} (Position ${position})\nTotal playtime: ${totalPlaytime}\nSession playtime: ${sessionPlaytime}",
 		leaderboard = "Ug Ugg Leaderboard",
+		leaderboard_total = "undefined",
 		your_position = "Ug position",
+		leaderboard_loading = "undefined",
 		logs_user_reject_connection_title = "Connection Ugg Rejected",
 		logs_user_reject_connection_details = "Ugg rejected connection from ${consoleName} (`${reason}`).",
 		logs_user_connected_title = "Ugg Connected",
@@ -4238,6 +4410,37 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	},
 
 	-- game/*
+	admin_features = {
+		enabled_features_list = "undefined",
+
+		advanced_metagame_feature = "undefined",
+		aimbot_feature = "undefined",
+		disabled_recoil_feature = "undefined",
+		evidence_view_feature = "undefined",
+		hit_indicator_feature = "undefined",
+		indestructibility_feature = "undefined",
+		infinite_ammo_feature = "undefined",
+		invisibility_feature = "undefined",
+		muted_sirens_feature = "undefined",
+		nitro_boost_feature = "undefined",
+		no_nearby_vehicles_feature = "undefined",
+		peeking_feature = "undefined",
+		roll_control_feature = "undefined",
+		speed_boost_feature = "undefined",
+		speed_up_progress_bar_feature = "undefined",
+		sticky_feet_feature = "undefined",
+		wallhack_feature = "undefined",
+		watching_feature = "undefined",
+		fortnite_feature = "undefined",
+		reflection_feature = "undefined",
+		stable_cam_feature = "undefined",
+		super_jump_feature = "undefined",
+		server_id_hidden_feature = "undefined",
+		fake_disconnect_feature = "undefined",
+		brighter_nights_feature = "undefined",
+		ridealong_feature = "undefined"
+	},
+
 	admin_menu = {
 		menu_title = "Big boss menu",
 		spectate_player = "Me watch you"
@@ -4266,14 +4469,24 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		park_vehicle = "Park Vehicle",
 		park_vehicle_outside = "Park Vehicle Outside",
 		close_menu = "Close Menu",
+		illegal = "undefined",
+		illegal_license_success = "undefined",
+		failed_illegal_license = "undefined",
 		spawned_vehicle = "Ugh! Spawned the vehicle.",
+		spawned_vehicle_large = "undefined",
 		spawner_on_timeout = "Da vehicle spawner on timeout. Try again.",
 		spawn_area_not_clear = "Spawn area not clear.",
 		return_button = "Ugh, me go back",
 		deposit = "Me give $$${amount} deposit",
 		no_deposit = "No deposit needed",
 		deposit_not_enough_money = "Ugh, you no have enough shiny rocks to pay deposit.",
-		helipad = "Helipad"
+		vehicle_no_free_seat = "undefined",
+		press_to_enter_aircraft = "undefined",
+		no_aircraft_to_enter = "undefined",
+		helipad = "Helipad",
+		looking_up = "undefined",
+		registration_not_found = "undefined",
+		registration_lookup = "undefined"
 	},
 
 	airstrike = {
@@ -4644,8 +4857,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		toggled_battle_royale_on = "Ooga-booga Battle Royale on.",
 		toggled_battle_royale_off = "Ugga! Battle Royale off.",
 		battle_royale_info = "Unga bunga! You in line for Battle Royale!\n ${battleRoyaleQueueLength} cavemen already in line.",
-		toggle_battle_royale_missing_permissions = "Ugh! Player try toggle Battle Royale, but no permission.",
-		start_battle_royale_missing_permissions = "Ugh! Player try start Battle Royale, but no permission.",
 		unable_to_start_battle_royale_not_active = "Unga! Cannot start Battle Royale, as it not enabled.",
 		not_enough_players_in_queue = "Ugh. Not enough peeps in the queue to start the Battle Royale. It's a no-go.",
 		zone_idling = "The zone is just chillin' out for a bit.",
@@ -4672,10 +4883,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		advancing = "Me move on.",
 		battle_royale = "Battle Royale",
 		press_to_deploy_parachute = "Press ~INPUT_PARACHUTE_DEPLOY~ to make leaf-shaped cloth slow fall.",
-		join_battle_royale_instance_missing_permissions = "Player want join Battle Royale, but no permission.",
 		no_match_found = "${consoleName} not in tribe.",
 		joined_instance = "You joined ${consoleName}'s tribe.",
-		leave_battle_royale_instance_missing_permissions = "You no can leave Battle Royale instance. Permission not enough.",
 		left_instance = "You left tribe.",
 		failed_to_leave_instance = "You no can leave tribe. You no in tribe.",
 		already_in_match = "You no can join tribe. You already in tribe.",
@@ -4782,14 +4991,17 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		bean_machine = "Me like Bean Machine",
 		arcade_bar = "Me go to place with games and drinks - Arcade bar",
 		japanese_restaurant = "Me want sushi - Japanese restaurant",
-		luxury_autos = "Me want fancy car - Luxury Autos",
+		lsuv = "undefined",
 		rockford_records = "Rockford Records",
 		dispensary = "Plant Medicine Place",
 		haunted_high_school = "Scary Big Cave for Learning",
 		sushi_restaurant = "Raw Fish Eatery",
+		pizza_this = "undefined",
+		city_hall = "undefined",
 
 		bank = "Stone Safe Place",
 		hospital = "Healer's Cave",
+		fire_department = "undefined",
 		bolingbroke = "Big Stone Cage for Bad People",
 		police_department = "Cave of Law",
 		motel = "Sleeping Cave",
@@ -4820,9 +5032,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		recharging_countermeasures = "Ungadunga countermeasures recharge ${percentage}%",
 
 		ignition_bomb_triggered_logs_title = "Fire Stick Bomb",
-		ignition_bomb_triggered_logs_details = "${consoleName} turned the engine on in a rock car that had a bomb attached to its fire stick.",
-
-		toggle_ignition_bomb_missing_permissions = "Ungadunga player tried to toggle a fire stick bomb but they no have the right to do so."
+		ignition_bomb_triggered_logs_details = "${consoleName} turned the engine on in a rock car that had a bomb attached to its fire stick."
 	},
 
 	boomboxes = {
@@ -4937,7 +5147,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		already_max_vin_scratched_vehicles = "Ugh! You have too many scratched vehicles in cave.",
 		contract_has_expired = "Uh-oh! Contract old like dinosaur bones.",
-		you_already_have_a_contract_started = "Ugh! You already doing a contract."
+		you_already_have_a_contract_started = "Ugh! You already doing a contract.",
+
+		transferred_crypt_logs_title = "undefined",
+		transferred_crypt_logs_details = "undefined"
 	},
 
 	brochure = {
@@ -4991,9 +5204,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		no_buddy_passes_available = "You no have any buddy passes available.",
 		no_queue_with_queue_pin = "There was no one in the queue with the provided PIN.",
 		buddy_pushed_through = "You push ${playerName} through the line!",
+		no_players_in_queue = "undefined",
 
 		buddy_pass_used_logs_title = "Buddy Pass Used",
-		buddy_pass_used_logs_details = "${consoleName} use Buddy Pass to push through ${targetConsoleName}."
+		buddy_pass_used_logs_details = "${consoleName} use Buddy Pass to push through ${targetConsoleName}.",
+
+		push_through_random = "undefined"
 	},
 
 	bus_map = {
@@ -5317,11 +5533,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 	containers = {
 		drill_container = "Ugg-ugg the ~INPUT_CONTEXT~ to drill open the container.",
-
 		drilling_container = "Grog Container",
 		failed_drill = "Me not able to open grog container with drill.",
 		drill_success = "Me opened grog container with drill!",
 
+		containers_due_soon = "undefined",
 		container_blip = "Grog container"
 	},
 
@@ -5335,7 +5551,22 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		glass_recipe = "Fire heat rock to melt sand",
 		steel_recipe = "Burn iron rock to make steel",
 		scrap_metal_recipe = "Burn metal scraps to make metal",
+		melt_gun_parts_recipe = "undefined",
 		aluminium_recipe = "Heat shiny rock to make aluminium",
+		copper_recipe = "undefined",
+		copper_wire_recipe = "undefined",
+		brass_recipe = "undefined",
+		aluminium_ore_recipe = "undefined",
+		steel_ore_recipe = "undefined",
+		gold_ore_recipe = "undefined",
+		gold_nuggets_recipe = "undefined",
+		tungsten_ore_recipe = "undefined",
+		tungsten_bar_recipe = "undefined",
+		titatium_ore_recipe = "undefined",
+		titanium_bar_recipe = "undefined",
+		smelt_rusty_metal_recipe = "undefined",
+		smelt_rusty_tank_shell_recipe = "undefined",
+		smelt_rusty_diving_helmet_recipe = "undefined",
 
 		smelting_materials = "Fire ${usedItems} to make new stuff",
 		smelted_materials = "Fire ${usedItems} to make new stuff",
@@ -5349,17 +5580,30 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		press_to_scrap_item = "[${SeatEjectKey}] Press to turn stuffs into rocks",
 		failed_scrap_item = "Me failed to turn stuffs into rocks.",
 
-		cut_item = "Chop Taters",
-		press_to_cut_item = "[${SeatEjectKey}] Chop Taters",
-		cutting_item = "Me Cut 3 Taters",
-		cut_item_done = "Made taters into fries.",
-		failed_cut_item = "Me no do good, taters not cut.",
+		cut_potato = "undefined",
+		press_to_cut_potato = "undefined",
+		cutting_potato = "undefined",
+		cut_potato_done = "undefined",
+		failed_cut_potato = "undefined",
 
-		fry_item = "Fry Fries",
-		press_to_fry_item = "[${SeatEjectKey}] Fry Fries",
-		frying_item = "Cooking Fries",
-		fried_item = "Done Cook Tasty Fries.",
-		failed_fry_item = "Oh no, fries not good.",
+		prepare_chicken_nuggets = "undefined",
+		press_to_prepare_chicken_nuggets = "undefined",
+		preparing_chicken_nuggets = "undefined",
+		prepared_chicken_nuggets = "undefined",
+		failed_prepare_chicken_nuggets = "undefined",
+
+		use_fryer = "undefined",
+		press_to_use_fryer = "undefined",
+
+		fries_recipe = "undefined",
+		frying_fries = "undefined",
+		fried_fries = "undefined",
+		failed_fry_fries = "undefined",
+
+		nuggets_recipe = "undefined",
+		frying_nuggets = "undefined",
+		fried_nuggets = "undefined",
+		failed_fry_nuggets = "undefined",
 
 		grill_item = "undefined",
 		press_to_grill_item = "undefined",
@@ -5413,12 +5657,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		filled_nitro_tank = "Me filled Nitro Tank",
 		failed_fill_nitro_tank = "Grunt! Failed to fill nitro tank.",
 
-		craft_sheet_metal = "Craft Sheet Metal",
-		press_to_craft_sheet_metal = "[${SeatEjectKey}] Me make Sheet Metal.",
-		crafting_sheet_metal = "Me work on Sheet Metal.",
-		crafted_sheet_metal = "Me made sheet metal.",
-		failed_craft_sheet_metal = "Me no able to make sheet metal.",
-
 		craft_empty_tank = "Assemble Empty Tank",
 		press_to_craft_empty_tank = "[${SeatEjectKey}] Me put together Empty Tank.",
 		crafting_empty_tank = "Me assembling Empty Tank.",
@@ -5437,11 +5675,23 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		crafted_nitro_tank = "Me done assembling nitro tank.",
 		failed_craft_nitro_tank = "Me fail assembling nitro tank. Ugh!",
 
+		craft_glass_pipe = "undefined",
+		press_craft_glass_pipe = "undefined",
+		crafting_glass_pipe = "undefined",
+		crafted_glass_pipe = "undefined",
+		failed_craft_glass_pipe = "undefined",
+
 		salvage_meth_table = "Ug Salvage Meth Table",
 		press_to_salvage_meth_table = "[${SeatEjectKey}] Ug Salvage Meth Table",
 		salvaging_meth_table = "Me Ug Salvage Meth Table",
 		salvaged_meth_table = "Me Salvaged meth table.",
 		failed_salvage_meth_table = "Me Ug Failed to salvage meth table.",
+
+		make_crack = "undefined",
+		press_to_make_crack = "undefined",
+		making_crack = "undefined",
+		made_crack = "undefined",
+		failed_make_crack = "undefined",
 
 		refill_vape = "Refill Vape",
 		press_to_refill_vape = "[${SeatEjectKey}] Refill Vape",
@@ -5490,28 +5740,68 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		failed_process_copper = "Urrrrghh failed to process copper nuggets.",
 
 		process_rubber = "Ugga ugga make rubber",
-		press_process_rubber = "[${SeatEjectKey}] Ugga ugga process rubber",
 		failed_process_rubber = "Urrrrghh failed to process rubber.",
 
-		craft_pvc_pipe = "undefined",
-		press_craft_pvc_pipe = "undefined",
+		process_polymer_resin = "undefined",
+		failed_process_polymer_resin = "undefined",
+
+		craft_components = "undefined",
+		press_craft_components = "undefined",
+
+		aluminium_rod_recipe = "undefined",
+		aluminium_plate_recipe = "undefined",
+		sheet_metal_recipe = "undefined",
+		steel_tube_recipe = "undefined",
+		tungsten_plate_recipe = "undefined",
+		titanium_rod_recipe = "undefined",
+		hardened_steel_plate_recipe = "undefined",
+		screws_recipe = "undefined",
+		spring_recipe = "undefined",
+		high_tensile_spring_recipe = "undefined",
+		pvc_pipe_recipe = "undefined",
+		lens_recipe = "undefined",
+		muzzle_brake_recipe = "undefined",
+
 		crafting_pvc_pipe = "undefined",
 		crafted_pvc_pipe = "undefined",
 		failed_craft_pvc_pipe = "undefined",
 
-		process_aluminium = "Ugga ugga process aluminium",
-		press_process_aluminium = "[${SeatEjectKey}] Ugga ugga process aluminium",
 		failed_process_aluminium = "Urrrrghh failed to process aluminium.",
-
-		process_steel = "Ugga ugga process steel",
-		press_process_steel = "[${SeatEjectKey}] Ugga ugga process steel",
 		failed_process_steel = "Ugh, steel not good.",
 
-		craft_lens = "Craft shiny rock holder",
-		press_craft_lens = "[${SeatEjectKey}] Craft shiny rock holder",
 		crafting_lens = "Me make shiny rock holder",
 		crafted_lens = "Me hold shiny rock now.",
 		failed_craft_lens = "No shiny rock holder made. Me try again.",
+
+		craft_gun_parts = "undefined",
+		press_craft_gun_parts = "undefined",
+		assemble_gun_parts = "undefined",
+		press_assemble_gun_parts = "undefined",
+
+		trigger_recipe = "undefined",
+		smg_lower_receiver_recipe = "undefined",
+		smg_lower_receiver_mk2_recipe = "undefined",
+		smg_upper_receiver_recipe = "undefined",
+		smg_upper_receiver_mk2_recipe = "undefined",
+		rifle_lower_receiver_recipe = "undefined",
+		rifle_lower_receiver_mk2_recipe = "undefined",
+		rifle_upper_receiver_recipe = "undefined",
+		rifle_upper_receiver_mk2_recipe = "undefined",
+		shotgun_lower_receiver_recipe = "undefined",
+		shotgun_lower_receiver_mk2_recipe = "undefined",
+		shotgun_upper_receiver_recipe = "undefined",
+
+		crafting_trigger = "undefined",
+		crafted_trigger = "undefined",
+		failed_craft_trigger = "undefined",
+
+		crafting_lower_receiver = "undefined",
+		crafted_lower_receiver = "undefined",
+		failed_craft_lower_receiver = "undefined",
+
+		crafting_upper_receiver = "undefined",
+		crafted_upper_receiver = "undefined",
+		failed_craft_upper_receiver = "undefined",
 
 		craft_sight = "Craft far-looking rock holder",
 		press_craft_sight = "[${SeatEjectKey}] Craft far-looking rock holder",
@@ -5621,6 +5911,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		filed_steel = "Me file steel.",
 		failed_file_steel = "Me no can file steel.",
 
+		converter_recipe = "undefined",
+		breaking_down_converter = "undefined",
+		broke_down_converter = "undefined",
+		failed_break_converter = "undefined",
+
 		craft_steel_file = "Craft Steel File",
 		press_craft_steel_file = "[${SeatEjectKey}] Craft Steel File",
 		crafting_steel_file = "Crafting Steel File",
@@ -5649,8 +5944,15 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		press_deconstruct_chip = "[${SeatEjectKey}] Me take apart chip.",
 		failed_deconstruct_chip = "Me fail to take apart chip.",
 
-		craft_device_scanner = "Me make device scanner.",
-		press_craft_device_scanner = "[${SeatEjectKey}] Me make device scanner.",
+		craft_equipment = "undefined",
+		press_craft_equipment = "undefined",
+
+		radio_decrypter_recipe = "undefined",
+		crafting_radio_decrypter = "Unga bunga Radio Decrypter in progress",
+		crafted_radio_decrypter = "Radio decrypter unga bunga crafted.",
+		failed_craft_radio_decrypter = "Unga bunga failed to make radio decrypter.",
+
+		device_scanner_recipe = "undefined",
 		crafting_device_scanner = "Me making device scanner.",
 		crafted_device_scanner = "Me made device scanner.",
 		failed_craft_device_scanner = "Me fail to make device scanner.",
@@ -5734,12 +6036,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		mixed_patriotic_paint = "Me mixed patriotic paint.",
 		failed_mix_patriotic_paint = "Me no know how mix patriotic paint.",
 
-		craft_radio_decrypter = "Unga bunga Radio Decrypter",
-		press_craft_radio_decrypter = "[${SeatEjectKey}] Unga bunga Radio Decrypter",
-		crafting_radio_decrypter = "Unga bunga Radio Decrypter in progress",
-		crafted_radio_decrypter = "Radio decrypter unga bunga crafted.",
-		failed_craft_radio_decrypter = "Unga bunga failed to make radio decrypter.",
-
 		craft_grenade_shell = "Unga bunga Grenade Shell Craft",
 		press_craft_grenade_shell = "[${SeatEjectKey}] Unga bunga Grenade Shell Craft",
 		crafting_grenade_shell = "Crafting unga bunga grenade shell.",
@@ -5797,6 +6093,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		deconstruct_ammo = "Break ammo",
 		press_to_deconstruct_ammo = "[${SeatEjectKey}] Smash ammo",
 
+		craft_casings = "undefined",
+		crafting_casings = "undefined",
+		crafted_casings = "undefined",
+		failed_craft_casings = "undefined",
+
 		pistol_deconstruct_recipe = "Break small ammo",
 		shotgun_deconstruct_recipe = "Break big ammo",
 		sub_deconstruct_recipe = "Break medium ammo",
@@ -5843,6 +6144,181 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		crafting_bacon = "undefined",
 		crafted_bacon = "undefined",
 		failed_craft_bacon = "undefined",
+
+		cook_food = "undefined",
+		press_to_cook_food = "undefined",
+
+		rice_recipe = "undefined",
+		cooking_rice = "undefined",
+		cooked_rice = "undefined",
+		failed_cook_rice = "undefined",
+
+		miso_soup_recipe = "undefined",
+		cooking_miso_soup = "undefined",
+		cooked_miso_soup = "undefined",
+		failed_cook_miso_soup = "undefined",
+
+		ramen_recipe = "undefined",
+		cooking_ramen = "undefined",
+		cooked_ramen = "undefined",
+		failed_cook_ramen = "undefined",
+
+		spicy_ramen_recipe = "undefined",
+		cooking_spicy_ramen = "undefined",
+		cooked_spicy_ramen = "undefined",
+		failed_cook_spicy_ramen = "undefined",
+
+		cut_ingridients = "undefined",
+		press_to_cut_ingridients = "undefined",
+
+		tofu_recipe = "undefined",
+		cutting_tofu = "undefined",
+		cut_tofu_done = "undefined",
+		failed_cut_tofu = "undefined",
+
+		spring_onions_recipe = "undefined",
+		cutting_spring_onions = "undefined",
+		cut_spring_onions_done = "undefined",
+		failed_cut_spring_onions = "undefined",
+
+		fish_recipe = "undefined",
+		filetting_fish = "undefined",
+		filet_fish = "undefined",
+		failed_filet_fish = "undefined",
+
+		assemble_sushi = "undefined",
+		press_to_assemble_sushi = "undefined",
+
+		sushi_recipe = "undefined",
+		assembling_sushi = "undefined",
+		assembled_sushi = "undefined",
+		failed_assemble_sushi = "undefined",
+
+		nigiri_recipe = "undefined",
+		assembling_nigiri = "undefined",
+		assembled_nigiri = "undefined",
+		failed_assemble_nigiri = "undefined",
+
+		bento_box_recipe = "undefined",
+		assembling_bento_box = "undefined",
+		assembled_bento_box = "undefined",
+		failed_assemble_bento_box = "undefined",
+
+		kimchi_recipe = "undefined",
+		making_kimchi = "undefined",
+		made_kimchi = "undefined",
+		failed_make_kimchi = "undefined",
+
+		mix_pizza_dough = "undefined",
+		press_to_mix_pizza_dough = "undefined",
+		mixing_pizza_dough = "undefined",
+		mix_pizza_dough_done = "undefined",
+		failed_mix_pizza_dough = "undefined",
+
+		slice_ingredients = "undefined",
+		press_to_slice_ingredients = "undefined",
+
+		pineapple_slice_recipe = "undefined",
+		slicing_pineapple = "undefined",
+		sliced_pineapple = "undefined",
+		failed_slice_pineapple = "undefined",
+
+		bell_pepper_slice_recipe = "undefined",
+		slicing_bell_pepper = "undefined",
+		sliced_bell_pepper = "undefined",
+		failed_slice_bell_pepper = "undefined",
+
+		top_pizza = "undefined",
+		press_to_top_pizza = "undefined",
+
+		margherita_recipe = "undefined",
+		topping_margherita = "undefined",
+		topped_margherita = "undefined",
+		failed_topping_margherita = "undefined",
+
+		salami_recipe = "undefined",
+		topping_salami = "undefined",
+		topped_salami = "undefined",
+		failed_topping_salami = "undefined",
+
+		pepperoni_recipe = "undefined",
+		topping_pepperoni = "undefined",
+		topped_pepperoni = "undefined",
+		failed_topping_pepperoni = "undefined",
+
+		vegetarian_recipe = "undefined",
+		topping_vegetarian = "undefined",
+		topped_vegetarian = "undefined",
+		failed_topping_vegetarian = "undefined",
+
+		ham_recipe = "undefined",
+		topping_ham = "undefined",
+		topped_ham = "undefined",
+		failed_topping_ham = "undefined",
+
+		diavola_recipe = "undefined",
+		topping_diavola = "undefined",
+		topped_diavola = "undefined",
+		failed_topping_diavola = "undefined",
+
+		hawaiian_recipe = "undefined",
+		topping_hawaiian = "undefined",
+		topped_hawaiian = "undefined",
+		failed_topping_hawaiian = "undefined",
+
+		bake_pizza = "undefined",
+		press_to_bake_pizza = "undefined",
+
+		bread_sticks_recipe = "undefined",
+		baking_bread_sticks = "undefined",
+		baked_bread_sticks = "undefined",
+		failed_baking_bread_sticks = "undefined",
+
+		baking_margherita = "undefined",
+		baked_margherita = "undefined",
+		failed_baking_margherita = "undefined",
+
+		baking_ham = "undefined",
+		baked_ham = "undefined",
+		failed_baking_ham = "undefined",
+
+		baking_hawaiian = "undefined",
+		baked_hawaiian = "undefined",
+		failed_baking_hawaiian = "undefined",
+
+		baking_diavola = "undefined",
+		baked_diavola = "undefined",
+		failed_baking_diavola = "undefined",
+
+		baking_salami = "undefined",
+		baked_salami = "undefined",
+		failed_baking_salami = "undefined",
+
+		baking_pepperoni = "undefined",
+		baked_pepperoni = "undefined",
+		failed_baking_pepperoni = "undefined",
+
+		baking_vegetarian = "undefined",
+		baked_vegetarian = "undefined",
+		failed_baking_vegetarian = "undefined",
+
+		bake_cake = "undefined",
+		press_to_bake_cake = "undefined",
+
+		lemon_cake_recipe = "undefined",
+		baking_lemon_cake = "undefined",
+		baked_lemon_cake = "undefined",
+		failed_baking_lemon_cake = "undefined",
+
+		berry_cake_recipe = "undefined",
+		baking_berry_cake = "undefined",
+		baked_berry_cake = "undefined",
+		failed_baking_berry_cake = "undefined",
+
+		chocolate_cake_recipe = "undefined",
+		baking_chocolate_cake = "undefined",
+		baked_chocolate_cake = "undefined",
+		failed_baking_chocolate_cake = "undefined",
 
 		no_required_items = "You no have all the things needed.",
 
@@ -6123,11 +6599,59 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		deny_purchase = "Me no want it",
 		accept_purchase = "Me want to buy it",
-		accept_purchase_info = "You sure me want to complete this purchase? Me can't undo it."
+		accept_purchase_info = "You sure me want to complete this purchase? Me can't undo it.",
+
+		yes = "undefined",
+		no = "undefined"
+	},
+
+	container_storage = {
+		rent_container = "undefined",
+		renting_container = "undefined",
+		failed_rent_container = "undefined",
+		rent_container_success = "undefined",
+		access_container = "undefined",
+		container_id = "undefined",
+
+		storage_containers = "undefined",
+		container = "undefined",
+		loading = "undefined",
+		failed_remove_access = "undefined",
+		failed_add_access = "undefined",
+		access = "undefined",
+		add_cid = "undefined",
+		no_containers = "undefined",
+		no_access = "undefined",
+		back = "undefined",
+		close = "undefined",
+		character_not_exist = "undefined",
+		paid_until = "undefined",
+		pay_rent = "undefined",
+		expired = "undefined",
+		not_enough_money = "undefined",
+		failed_pay_rent = "undefined",
+		mark_gps = "undefined",
+		container_alert = "undefined",
+
+		rented_container_logs_title = "undefined",
+		rented_container_logs_details = "undefined",
+		paid_rent_logs_title = "undefined",
+		paid_rent_logs_details = "undefined",
+		lockpicked_container_logs_title = "undefined",
+		lockpicked_container_logs_details = "undefined"
 	},
 
 	courthouse = {
 		press_to_use_gavel = "Grunt ~INPUT_CONTEXT~ to use Gavel."
+	},
+
+	crack = {
+		press_to_sell_crack = "undefined",
+		local_not_interested = "undefined",
+		selling_crack = "undefined",
+
+		sold_crack_logs_title = "undefined",
+		sold_crack_logs_details = "undefined"
 	},
 
 	daily_activities = {
@@ -6159,8 +6683,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		headshot_kills_in_arena = "Hunt and smash ${amount} foes in Arena with headshot.",
 		punch_locals = "Thump ${amount} villagers.",
 		move_from_place_to_place = "Walk from ${from} to ${to} in ${time} suns.",
-		put_bets_in_jackpot = "Bet ${amount} shiny rocks in the Jackpot.",
-		win_bets_in_jackpot = "Win items worth ${amount} shiny rocks in the Jackpot.",
+		put_bets_in_jackpot = "undefined",
+		win_bets_in_jackpot = "undefined",
 		chop_vehicles = "Smash and chop ${amount} moving wagons.",
 		purchase_ammo = "Trade ${amount} shiny rocks fer ammo.",
 		collect_items_from_diving = "Ugh! Collect ${amount}x ${itemLabel} from Diving.",
@@ -6169,6 +6693,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		refine_gems = "Make ${amount} shiny gems shine more.",
 		visit_location = "Go see ${location}.",
 		visit_the_location = "Go see the ${location}.",
+		punch_a_shark = "undefined",
+		put_bets_in_lottery = "undefined",
 
 		confirm_task_refresh = "Ugh, you wanna do task again? It cost $${cost}. Me smell scam.",
 		yes = "Yes",
@@ -6183,8 +6709,13 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		restore_streak = "Ooga ooga ooga ${streak}",
 		confirm_streak_restore = "Ooga ooga ooga ooga ooga ${streak} days? Cost is ${cost} OP Points. Ooga booga?",
 
-		not_enough_op_points = "Ooga ooga ${cost} OP Points needed to ooga ooga ooga. You have ${points} OP Points. Ooga.",
-		streak_restored = "Ugga ugga! Streak of ${streak} suns restor for ${cost} OP Points."
+		not_enough_op_points = "undefined",
+		streak_restored = "Ugga ugga! Streak of ${streak} suns restor for ${cost} OP Points.",
+
+		logs_daily_task_reward_title = "undefined",
+		logs_daily_task_reward_money_details = "undefined",
+		logs_daily_task_reward_items_details = "undefined",
+		logs_daily_task_reward_brought_items_details = "undefined"
 	},
 
 	dashcam = {
@@ -6234,6 +6765,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		owner_player = "Registered to ~g~${fullName}",
 		character_known = "Character: ~g~${fullName}",
 		character_unknown = "Character: ~r~Unga bunga",
+		entity_id = "undefined",
+		model_name = "undefined",
+		resource = "undefined",
+		network_id = "undefined",
+		["local"] = "-local-",
 		invalid_radius_parameter = "Ugh! Radius wrong.",
 		inject_code_invalid_player = "No players with id `${serverId}`.",
 		inject_code_success_for_everyone = "Code injected for everyone! Yay!",
@@ -6254,6 +6790,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		controls = "Me show you controls: ${controls}",
 		tasks = "Task Calls: ${calls} (${total})",
 		invoke_calls = "Invoke Ooks: ${calls} (${total})",
+		native_calls = "undefined",
 		draw_calls = "Draw Ooks: ${calls}",
 		player_speed = "Player Fast: ${playerSpeed}",
 		player_ped = "Ugg Ugg: ${playerPedId}",
@@ -6264,7 +6801,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		normal = "Ground: ${normal}",
 		velocity = "Fast: ${velocity}",
 		ground_material = "Ground Rock: ${material}",
-		g_force = "G-Force: ${force}",
 		debug_print_f8 = "Debug Ugg has been printed in F8 rock.",
 		no_vehicle_bone = "No \"${boneName}\" bone rock.",
 		server_vehicles = "Server Unga-bungas: ${count}",
@@ -6272,6 +6808,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		invisible_vehicles = "Invisible Vehicles: ${count}",
 		parked_vehicles = "Parked Unga-bungas: ${count}",
 		available_doors = "undefined",
+		copied_object_info = "undefined",
+		copied_model_name = "undefined",
+		copied_entity_id = "undefined",
+		copied_hit_coords = "undefined",
 
 		distance = "Ugg Across: ${distance} rock.",
 		distance_first = "Store first rock Ugg.",
@@ -6288,12 +6828,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		vehicle_acceleration_120 = "Ugh. 0 to 120: ${time} ugh ugh ugh",
 		vehicle_acceleration_150 = "Ugh. 0 to 150: ${time} ugh ugh ugh",
 		vehicle_brake_distance = "undefined",
-		vehicle_acceleration_force = "Ugh. Launch Force: ${force} ugh ugh ugh",
 
-		invalid_network_id = "Ung ooga netwok id.",
 		delete_entity_success = "Ugh. Entity with network id ${networkId} gone.",
 		delete_entity_failed = "Ugh! Failed to delete thingy.",
-		delete_entity_no_permissions = "Unga! Tried delete big rock without permission.",
 
 		failed_entity_info = "Ugh ugh ugh. Failed to get entity information.",
 		printed_entity_info = "Ugh ugh. Printed entity server information in F8.",
@@ -6301,7 +6838,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		no_entity_network = "undefined",
 		move_entity_success = "You move thingy with network id ${networkId}.",
 		move_entity_failed = "Thingy no move.",
-		move_entity_no_permissions = "Ooga! Tried push big rock without permission.",
 
 		weapon_name_missing = "Me need name of weapon.",
 		weapon_name_invalid = "`${weaponName}` is not weapon name me know.",
@@ -6330,8 +6866,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		disabled_network_debug = "Ugg! Entity network debuggery disabled.",
 		failed_network_debug = "Oops! Failed to enable entity network debuggery.",
 
-		network_owner_subscription_no_permissions = "Ugg. Attempted to subscribe to entity network owners without proper permissions.",
-
 		missing_ipl = "Me no see ipl parameter.",
 		enabled_ipl = "Me make ipl `${ipl}` work goodly.",
 		disabled_ipl = "Me make ipl `${ipl}` stop work goodly.",
@@ -6346,6 +6880,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		missing_code = "Grog need code parameter.",
 		run_code_success = "Code snippet do what it was supposed to!",
+		run_code_invalid = "undefined",
 		run_code_error = "Code snippet messed up. Grog sorry.",
 
 		searching_world = "Grog looking for:\n${modelNames}",
@@ -6366,7 +6901,18 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		invalid_json = "JSON no good.",
 
 		street_found = "Me found `${name}`, me mark center on map.",
-		street_not_found = "Ugga ugga! No street found that matches your search."
+		street_not_found = "Ugga ugga! No street found that matches your search.",
+
+		only_super_admins_can_turn_on = "undefined",
+		deep_logging_enabled = "undefined",
+		deep_logging_disabled = "undefined",
+		deep_logging_active = "undefined",
+
+		find_native_toggles_enabled = "undefined",
+		find_native_toggles_disabled = "undefined",
+
+		showing_cancelled_vehicles_enabled = "undefined",
+		showing_cancelled_vehicles_disabled = "undefined"
 	},
 
 	debug_menu = {
@@ -6392,12 +6938,13 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		evidence_failed = "Couldn't sniff DNA.",
 
-		evidence_text = "Evidence Type: DNA Sack\nDNA collected from ${fullName} #${characterId}\n\nExtra Sniffs:\n • Time when sniffed: ${time}"
+		evidence_text = "undefined"
 	},
 
 	docks = {
 		press_to_access_spawner = "Ugga ~INPUT_CONTEXT~ to access vehicugger spawner.",
 		boat_dock = "Boat Ugga",
+		emergency_vehicles = "undefined",
 		vehicle_list = "Ugga Ugga",
 		park_boat = "Park Ugga",
 		close_menu = "Close Ugga",
@@ -6427,10 +6974,15 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		saved_doors_to_file = "Ugg Ugg! Saved `${amount}` doors to a rock on server.",
 		no_nearby_doors = "Me no see doors to save.",
 		lockpicking_door = "Me pick lock of door!",
+		copied_doors = "undefined",
+		adding_doors = "undefined",
+		stop_adding_doors = "undefined",
 
 		debug_doors_on = "Me see doors now.",
 		debug_doors_off = "Me no see doors no more.",
 		doors_no_job = "Me no got job for doors.",
+		disabled_doors = "undefined",
+		enabled_doors = "undefined",
 
 		unlocks = "Unlocks: <i>${cluster}</i>. (Ahem, me not know what this means. Cluster sound fancy)"
 	},
@@ -6475,7 +7027,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		floor_loading_bay = "Loading bay ooga ooga",
 		floor_vault = "Vault Room",
 
-		floor_second_floor = "Second Floor",
+		floor_second_floor = "undefined",
 		floor_icu = "ICU",
 		floor_ground = "Ground Floor",
 		floor_surgery = "Surgery",
@@ -6494,6 +7046,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		floor_fourth_floor = "4th floor (me no know how count)",
 		floor_third_floor = "3rd floor (me no know how count)",
+		floor_second_floor = "undefined",
+		floor_first_floor = "undefined",
+
+		floor_gangway = "undefined",
 
 		floor_hangout = "Good spot to sit and grunt",
 		floor_penthouse = "Big boss cave",
@@ -6508,7 +7064,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		floor_showroom = "Many shiny things cave",
 		floor_office = "Cave Office",
-		floor_doj_office = "DOJ Cave Office",
 
 		floor_penthouse_top = "Top Cave of the Penthouse",
 		floor_penthouse_entrance = "Entrance Cave of the Penthouse",
@@ -6676,6 +7231,14 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		sold_fentanyl_logs_details = "${consoleName} sold 1x ampule of fentanyl for $${reward}."
 	},
 
+	fields = {
+		pick_weed = "undefined",
+		picking_weed = "undefined",
+
+		pick_tobacco = "undefined",
+		picking_tobacco = "undefined"
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Taking FingerprintOoga Booga",
 		already_fingerprinting = "Ugggh! You already take fingerprint of player.",
@@ -6792,6 +7355,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		extract_rubber = "Press ~INPUT_CONTEXT~ to extract rubber from tree.",
 		extracting_rubber = "Extracting Rubber",
 
+		pick_oranges = "undefined",
+		picking_oranges = "undefined",
+
 		tree_klonk = "Rock hit head when shake tree."
 	},
 
@@ -6802,6 +7368,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		gas_time_left = "Me have ${gasTime} suns left for gas mask.",
 		hold_to_take_gas_mask_off = "Hold ~INPUT_VEH_HEADLIGHT~ to remove gas mask.",
 		hold_to_take_gas_mask_off_holding = "Me still holding to remove gas mask."
+	},
+
+	gift_boxes = {
+		failed_seal_box = "undefined",
+		failed_open_box = "undefined"
 	},
 
 	golf = {
@@ -6866,6 +7437,19 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		something_went_wrong = "Something mess up while try to buy Gumball.",
 
 		flavor = "Gumball (${flavor})"
+	},
+
+	gun_crafting = {
+		menu_title = "undefined",
+		close_menu = "undefined",
+		assemble_gun = "undefined",
+		press_assemble_gun = "undefined",
+		assembling_gun = "undefined",
+		crafting_success = "undefined",
+		crafting_failed = "undefined",
+
+		crafted_gun_logs_title = "undefined",
+		crafted_gun_logs_details = "undefined"
 	},
 
 	gun_running = {
@@ -7023,8 +7607,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		m = "m",
 		belt = "BELT",
 		oil = "OIL",
+		megaphone = "undefined",
 		manual = "BOOK",
-		limiter = "UGH! LIMITER!",
+		cruise_control = "undefined",
+		speed_limiter = "undefined",
 		gear_uc = "GEAR",
 		fuel = "ugh, FIRE!",
 		nitro = "NITRO",
@@ -7096,6 +7682,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		los_santos = "Los Santos",
 		citizen_card = "Citizen Card",
 		driver_license = "undefined",
+		press_pass = "undefined",
 		first_name = "First Name",
 		last_name = "Last Name",
 		gender = "Gender",
@@ -7138,6 +7725,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		just_showed_citizen_card = "Ugh show Citizen Ugghh? Wait a bit.",
 		driver_license_details = "undefined",
 		just_showed_driver_license = "undefined",
+		press_pass_details = "undefined",
+		just_showed_press_pass = "undefined",
 
 		boat_license = "Boat License",
 		boat_license_details = "Boat License | ${firstName} ${lastName} | Citizen ID: ${characterId}",
@@ -7265,6 +7854,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		blip_label = "Import / Export"
 	},
 
+	indestructibility = {
+		indestructibility_on = "undefined",
+		indestructibility_off = "undefined"
+	},
+
 	injuries = {
 		inspect_no_player = "No player close. Can't check.",
 		already_inspecting = "You checking a player already.",
@@ -7272,7 +7866,14 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		inspecting = "Checking player",
 		no_injuries = "No injuries, no bleeding",
 		patient_bleeding = "Patient bleedin.",
-		injury = "${label} owie"
+		patient_bite_wounds = "undefined",
+		injury = "${label} owie",
+		performing_autopsy = "undefined",
+		already_performing_autopsy = "undefined",
+		autopsy_no_player = "undefined",
+		autopsy_result = "undefined",
+		autopsy_no_result = "undefined",
+		autopsy_failed = "undefined"
 	},
 
 	instances = {
@@ -7318,10 +7919,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		cleaning_station = "Cleanin' Station",
 		grocery_store = "Groc'ry Store",
 		dons_country_store = "Don's Cave Store",
-		penthouse_fridge = "Penthouse Fridge",
+		cigar_store = "undefined",
+		penthouse_fridge = "undefined",
 		mug_shots = "Mug Shots",
 		prison_store = "Prison Store",
 		fruit_vendor = "Fruit Vendor",
+		fruit_market = "undefined",
 		food_market = "undefined",
 		island_store = "Island Store",
 		travel_agency = "Travel Agency",
@@ -7329,7 +7932,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		burger_bar = "Burger Bar",
 		tool_store = "Tool Store",
 		gun_store = "Ammu-Nation",
+		locksmith = "undefined",
+		the_chemist = "undefined",
 		discount_store = "Discount Store",
+		skater_store = "undefined",
 		gun_store_with_shooting_range = "Ammu-Nation with Range",
 		green_wonderland = "Grrreen Wonderland",
 		copy_shop = "Copy Cave",
@@ -7343,8 +7949,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		strip_club = "Cave Club of Stripping",
 		police_store = "Police Cave Store",
 		fib_store = "FIB Cave Store",
-		police_badge_store = "Police Badge Cave Desk",
-		doc_badge_store = "BIG ROCK THUMP Badge Station",
+		deputy_madison = "undefined",
+		sergeant_harris = "undefined",
+		dr_thompson = "undefined",
 		flower_store = "Stacey's Cave Flower Emporium",
 		gift_store = "Del Perro Cave Gifts",
 		ems_store = "EMS Cave Store",
@@ -7360,12 +7967,14 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		erp_shop = "Trade Thing Shop",
 		pet_shop = "Furry Friend Shop",
 		bean_machine = "Bean Cracker",
+		bean_machine_fridge = "undefined",
 		hunting_store = "Arrow Death Store",
 		fishing_store = "Fish Catching Store",
 		los_santos_golf_club = "Rock Hitting Place",
 		arcade_bar = "Game and Drink Cave",
 		japanese_restaurant = "Sushi Eating Place",
 		japanese_restaurant_kitchen = "Japanese Cave Eater Place Kitchen",
+		pizza_restaurant = "undefined",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Grain Crusher",
 		pd_prefix = "Ugh Ugh Force",
@@ -7375,13 +7984,15 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		br_prefix = "UG",
 		inventory_overweight = "You carry many rocks, need drop some!",
 		vehicle_locked = "Car locked.",
+		press_to_talk_to = "undefined",
 		press_to_access_store = "Hit ~INPUT_REPLAY_SHOWHOTKEY~ to see goods.",
 		press_to_access_locker = "Hit ~INPUT_REPLAY_SHOWHOTKEY~ to open secret storage.",
 		press_to_access_shared_storage = "Press ~INPUT_REPLAY_SHOWHOTKEY~ for stash all caveman goods.",
 		device_printout_details = "<b>Ugga:</b> <i>${type}</i>, <b>Oog:</b> <i>${text}</i>",
 		copy_serial_number = "Copy Serial Number",
-		copy_fingerprint = "Copy Fingerprint",
 		serial_number_copied = "${itemName}, Serial Number: ${serialNumber}",
+		copy_fingerprint = "Copy Fingerprint",
+		copy_evidence = "undefined",
 
 		failed_give = "Fail to give thing(s) to caveman.",
 		character_too_far = "Caveman is too far away.",
@@ -7394,10 +8005,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		inspect_no_property = "Thog no see any mark on this ${item}.",
 
 		searching_dumpster = "Searchee Dumpster",
+		searching_homeless_tent = "undefined",
 
 		nameable_title = "Me can name Item Name:",
 
 		inventory_restricted = "undefined",
+		inventory_no_more_items = "undefined",
 
 		press_to_access_shredder = "[${InteractionKey}] Access shredder.",
 
@@ -7422,6 +8035,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		arcade_counter = "undefined",
 		tequilala_counter = "undefined",
 		prison_counter = "undefined",
+		kissaki_counter = "undefined",
+		underground_bar_counter = "undefined",
+		pizza_this_counter = "undefined",
+		yellow_jack_counter = "undefined",
+		bahama_mamas_counter = "undefined",
 
 		inventory_name_missing = "Me no see inventory name.",
 
@@ -7443,6 +8061,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		broken_food = "This food, it be spoiled and rotten.",
 		broken_drugs = "This drugs, it expired and useless.",
 		vape_empty = "This vape, it empty and no use.",
+		pen_empty = "undefined",
 
 		craft_combine = "Me make <i>${output}</i>.",
 		combining = "Me make item...",
@@ -7467,6 +8086,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		mix_pancake_batter = "undefined",
 		disassemble_bandages = "Disassemble <i>Fabric for Wounds</i>",
 		craft_tourniquet = "Create <i>Strap to Stop Blood</i>",
+		mix_pilk = "undefined",
+		break_apart_battery = "undefined",
+		mix_gunpowder = "undefined",
+		roll_cigar = "undefined",
 
 		search = "Search",
 		amount = "Amount",
@@ -7511,10 +8134,15 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		logs_wiped_nearby_ground_inventories_details = "${consoleName} mashed all nearby stash on ground in a radius of `${radius}`.",
 
 		inventory_crafting_logs_title = "Thog's Crafting Inventory",
-		inventory_crafting_logs_details = "${consoleName} used ${inputs} to create ${amount}x ${output}.",
+		inventory_crafting_logs_details = "undefined",
 
 		press_use_campfire = "[${InteractionKey}] Make Fire",
 		use_campfire = "Make Fire",
+
+		inventory_not_loaded = "undefined",
+		invalid_inventory_name = "undefined",
+		inventory_refresh_success = "undefined",
+		inventory_refresh_failed = "undefined",
 
 		dumpster_sandwich = "Smashed Bready Thing",
 		dumpster_beer = "Fizzy Cold Water",
@@ -7549,6 +8177,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		citizen_card_description = "Shows who caveman are, what weapons caveman can use, and how caveman can drive.",
 		driver_license = "undefined",
 		driver_license_description = "undefined",
+		press_pass = "undefined",
+		press_pass_description = "undefined",
 		phone = "Talking rock",
 		phone_description = "never:tm:",
 		radio = "Radio",
@@ -7558,7 +8188,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		tablet = "Big Flat Rock",
 		tablet_description = "Very big flat rock for do many things.",
 		wallet = "Pouch",
-		wallet_description = "For all your shiny rocks and leafy squares.",
+		wallet_description = "undefined",
+		folder = "undefined",
+		folder_description = "undefined",
 
 		gps = "Where Find Rock",
 		gps_description = "Help with all your tech wants and needs.",
@@ -7666,8 +8298,13 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		printer = "Doodle Machine",
 		printer_description = "No fax, only printer.",
 
+		label_printer = "undefined",
+		label_printer_description = "undefined",
+
 		brochure = "Brochure",
 		brochure_description = "Little helpful rock to get you started in the tribe.",
+		bus_ticket = "undefined",
+		bus_ticket_description = "undefined",
 
 		basic_repair_kit = "Basic Repair Kit",
 		basic_repair_kit_description = "Make thing work, but just a little bit.",
@@ -7710,9 +8347,42 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		kissaki_delivery_description = "Tasty sushi and other fancy Japanese food.",
 		green_wonderland_delivery = "undefined",
 		green_wonderland_delivery_description = "undefined",
+		pizza_this_delivery = "undefined",
+		pizza_this_delivery_description = "undefined",
+
+		empty_box = "undefined",
+		empty_box_description = "undefined",
+		gift_box = "undefined",
+		gift_box_description = "undefined",
 
 		ear_defenders = "Ear Protectors!",
 		ear_defenders_description = "Protect ears from loud bang!",
+
+		skateboard = "undefined",
+		skateboard_description = "undefined",
+		deck_arcade = "undefined",
+		deck_arcade_description = "undefined",
+		deck_cats = "undefined",
+		deck_cats_description = "undefined",
+		deck_flowers = "undefined",
+		deck_flowers_description = "undefined",
+		deck_weed = "undefined",
+		deck_weed_description = "undefined",
+		deck_blossom = "undefined",
+		deck_blossom_description = "undefined",
+		deck_peace = "undefined",
+		deck_peace_description = "undefined",
+		deck_simpsons = "undefined",
+		deck_simpsons_description = "undefined",
+		deck_police = "undefined",
+		deck_police_description = "undefined",
+		deck_ems = "undefined",
+		deck_ems_description = "undefined",
+		deck_usa = "undefined",
+		deck_usa_description = "undefined",
+
+		paper_straw = "undefined",
+		paper_straw_description = "undefined",
 
 		clothing_bag = "Clothes Pouch!",
 		clothing_bag_description = "Never worry about fashion disaster! Clothes pouch store favorite outfit and equip instantly! Like magic! No bibbidi-bobbidi-boo.",
@@ -7722,6 +8392,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		clover = "Green Lucky Plant",
 		clover_description = "Rare green lucky plant for belly full of rock. You rub rock in grass if you see hard enough.",
+		clover_mk2 = "undefined",
+		clover_mk2_description = "undefined",
 		small_frog = "Water Hopper",
 		small_frog_description = "Just small water hopper. Look at little creature, it so nice!",
 		seashell = "Beach Rock",
@@ -7801,22 +8473,82 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		pistol_sight = "Pistol See Far",
 		pistol_sight_description = "How make aim better.",
 
+		tungsten_ore = "undefined",
+		tungsten_ore_description = "undefined",
+		tungsten_nugget = "undefined",
+		tungsten_nugget_description = "undefined",
+		tungsten_bar = "undefined",
+		tungsten_bar_description = "undefined",
+
+		titanium_ore = "undefined",
+		titanium_ore_description = "undefined",
+		titanium_nugget = "undefined",
+		titanium_nugget_description = "undefined",
+		titanium_bar = "undefined",
+		titanium_bar_description = "undefined",
+
+		titanium_rod = "undefined",
+		titanium_rod_description = "undefined",
 		aluminium_plate = "Aluminium Flat Stone",
 		aluminium_plate_description = "Warning: Not stop rock that come fast... stupid.",
 		aluminium_rod = "Aluminium Stick",
 		aluminium_rod_description = "Not use for hit friends, use for make things.",
-		copper_nugget = "Copper Rock Lil'",
-		copper_nugget_description = "Small rock of shiny brown stuff.",
+		steel_tube = "undefined",
+		steel_tube_description = "undefined",
+		hardened_steel_plate = "undefined",
+		hardened_steel_plate_description = "undefined",
 		copper_wire = "Copper String",
 		copper_wire_description = "String for make zeep zeep electronic things.",
 		lens = "Ugga ugga",
 		lens_description = "Good for make eyes see far, you nerd.",
 		polymer_resin = "Polymer Hot Hot",
 		polymer_resin_description = "Not for smoking, but still good.",
+		fibreglass_resin = "undefined",
+		fibreglass_resin_description = "undefined",
 		screws = "Screw Ugga",
 		screws_description = "What you do? Screw things?",
 		spring = "Boing Boing",
 		spring_description = "People like to clean this for some reason.",
+		high_tensile_spring = "undefined",
+		high_tensile_spring_description = "undefined",
+		tungsten_plate = "undefined",
+		tungsten_plate_description = "undefined",
+		reinforced_steel_tube = "undefined",
+		reinforced_steel_tube_description = "undefined",
+		muzzle_brake = "undefined",
+		muzzle_brake_description = "undefined",
+
+		trigger = "undefined",
+		trigger_description = "undefined",
+		smg_lower_receiver = "undefined",
+		smg_lower_receiver_description = "undefined",
+		smg_lower_receiver_mk2 = "undefined",
+		smg_lower_receiver_mk2_description = "undefined",
+		smg_upper_receiver = "undefined",
+		smg_upper_receiver_description = "undefined",
+		smg_upper_receiver_mk2 = "undefined",
+		smg_upper_receiver_mk2_description = "undefined",
+		rifle_lower_receiver = "undefined",
+		rifle_lower_receiver_description = "undefined",
+		rifle_lower_receiver_mk2 = "undefined",
+		rifle_lower_receiver_mk2_description = "undefined",
+		rifle_upper_receiver = "undefined",
+		rifle_upper_receiver_description = "undefined",
+		rifle_upper_receiver_mk2 = "undefined",
+		rifle_upper_receiver_mk2_description = "undefined",
+		shotgun_lower_receiver = "undefined",
+		shotgun_lower_receiver_description = "undefined",
+		shotgun_lower_receiver_mk2 = "undefined",
+		shotgun_lower_receiver_mk2_description = "undefined",
+		shotgun_upper_receiver = "undefined",
+		shotgun_upper_receiver_description = "undefined",
+
+		copper_nugget = "Copper Rock Lil'",
+		copper_nugget_description = "Small rock of shiny brown stuff.",
+		zinc = "undefined",
+		zinc_description = "undefined",
+		brass = "undefined",
+		brass_description = "undefined",
 
 		grenade_shell = "Shell Bang Bang",
 		grenade_shell_description = "undefined",
@@ -7842,16 +8574,16 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		skin_geometric_description = "undefined",
 
 		refillable_bottle = "Refillable Bottle",
-		refillable_bottle_description = "Me care about turtles. Use this refillable bottle and save turtles. For real.",
+		refillable_bottle_description = "undefined",
 
 		capri_sun = "Capri Sun",
-		capri_sun_description = "You not cavechild anymore, but me know you miss Capri Sun. Refreshing treat for hot cave day.",
+		capri_sun_description = "undefined",
 
 		gumball = "Gumball",
-		gumball_description = "A Gumball. It taste yummy, what else me need to say?",
+		gumball_description = "undefined",
 
 		chorus_fruit = "Teleport Fruit",
-		chorus_fruit_description = "Fruit make you go poof! Teleport to random place.",
+		chorus_fruit_description = "undefined",
 
 		water = "Grog",
 		water_description = "Ug-oh! Dihydrogen monoxide is invisible and no smell. Accidentally breathing in too much grog can make you sleep forever. Long time contact with solid grog cause big damage to skin. Signs of drinking grog include too much sweating and peeing, and maybe bloated belly, upset stomach, throwing up and bad balance of rocks inside your body.",
@@ -7869,6 +8601,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		coke_description = "Ugh? Ugh-ga!",
 		pepsi = "Pepsi",
 		pepsi_description = "Cocaine is better than plants.",
+		fanta_light = "undefined",
+		fanta_light_description = "undefined",
+		sprite = "undefined",
+		sprite_description = "undefined",
+		pilk = "undefined",
+		pilk_description = "undefined",
 		wonder_waffle = "Wonder Waffle",
 		wonder_waffle_description = "No meat. No milk. No egg. No grass. No doctor juice. No soy. No fruit sugar. No nut. No tribe modification. No sweet juice. No fat. Low on carb.",
 		cheeseburger = "Meat on Bread",
@@ -7887,8 +8625,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		smores_description = "undefined",
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Me not do Oxy, me just eat Tic Tacs!",
-		pizza_slice = "Pizza Slice",
-		pizza_slice_description = "Piece of Za with lots of meat (not for plant eaters).",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "Gobble up dis glizzy like it be last meal.",
 		nachos = "Nachos",
@@ -7901,6 +8637,82 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		vanilla_milkshake_description = "Mmmm, milkshake good with burger and fries!",
 		chocolate_milkshake = "Choco Milkshake",
 		chocolate_milkshake_description = "Choco shake look good, hope CIA no follow before you drink!",
+
+		pizza_dough = "undefined",
+		pizza_dough_description = "undefined",
+		black_olives = "undefined",
+		black_olives_description = "undefined",
+		bell_pepper = "undefined",
+		bell_pepper_description = "undefined",
+		bell_pepper_sliced = "undefined",
+		bell_pepper_sliced_description = "undefined",
+		pepperoni = "undefined",
+		pepperoni_description = "undefined",
+		jalapeno = "undefined",
+		jalapeno_description = "undefined",
+		mozarella = "undefined",
+		mozarella_description = "undefined",
+		ham = "undefined",
+		ham_description = "undefined",
+		salami = "undefined",
+		salami_description = "undefined",
+		tomato_sauce = "undefined",
+		tomato_sauce_description = "undefined",
+		flour = "undefined",
+		flour_description = "undefined",
+		olive_oil = "undefined",
+		olive_oil_description = "undefined",
+		pizza_cheese = "undefined",
+		pizza_cheese_description = "undefined",
+		pineapple_slices = "undefined",
+		pineapple_slices_description = "undefined",
+		pizza_saver = "undefined",
+		pizza_saver_description = "undefined",
+		bread_sticks = "undefined",
+		bread_sticks_description = "undefined",
+
+		pizza_margherita_raw = "undefined",
+		pizza_margherita_raw_description = "undefined",
+		pizza_salami_raw = "undefined",
+		pizza_salami_raw_description = "undefined",
+		pizza_diavola_raw = "undefined",
+		pizza_diavola_raw_description = "undefined",
+		pizza_ham_raw = "undefined",
+		pizza_ham_raw_description = "undefined",
+		pizza_hawaiian_raw = "undefined",
+		pizza_hawaiian_raw_description = "undefined",
+		pizza_pepperoni_raw = "undefined",
+		pizza_pepperoni_raw_description = "undefined",
+		pizza_vegetarian_raw = "undefined",
+		pizza_vegetarian_raw_description = "undefined",
+		pizza_margherita = "undefined",
+		pizza_margherita_description = "undefined",
+		pizza_salami = "undefined",
+		pizza_salami_description = "undefined",
+		pizza_diavola = "undefined",
+		pizza_diavola_description = "undefined",
+		pizza_ham = "undefined",
+		pizza_ham_description = "undefined",
+		pizza_hawaiian = "undefined",
+		pizza_hawaiian_description = "undefined",
+		pizza_pepperoni = "undefined",
+		pizza_pepperoni_description = "undefined",
+		pizza_vegetarian = "undefined",
+		pizza_vegetarian_description = "undefined",
+		pizza_slice = "undefined",
+		pizza_slice_description = "undefined",
+		pizza_slice_salami = "undefined",
+		pizza_slice_salami_description = "undefined",
+		pizza_slice_diavola = "undefined",
+		pizza_slice_diavola_description = "undefined",
+		pizza_slice_ham = "undefined",
+		pizza_slice_ham_description = "undefined",
+		pizza_slice_hawaiian = "undefined",
+		pizza_slice_hawaiian_description = "undefined",
+		pizza_slice_pepperoni = "undefined",
+		pizza_slice_pepperoni_description = "undefined",
+		pizza_slice_vegetarian = "undefined",
+		pizza_slice_vegetarian_description = "undefined",
 
 		burrito = "Meat Wrap",
 		burrito_description = "Yum yum! Meat in wrap.",
@@ -7934,6 +8746,14 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		raw_fries_description = "Basically same thing as potato, but lazy cook no make effort.",
 		raw_patty = "Ugh-Ugh Meat",
 		raw_patty_description = "90% Real Meat, other 10% lost in package talk.",
+		chicken_nuggets_raw = "undefined",
+		chicken_nuggets_raw_description = "undefined",
+		breadcrumbs = "undefined",
+		breadcrumbs_description = "undefined",
+		chicken_breast = "undefined",
+		chicken_breast_description = "undefined",
+		chicken_nuggets = "undefined",
+		chicken_nuggets_description = "undefined",
 
 		apple = "Round Red Food",
 		apple_description = "Keep Bad Medicine Man away!",
@@ -7957,6 +8777,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		strawberry_description = "Usually in fields... forever.",
 		watermelon = "Grog",
 		watermelon_description = "Grog water or grog melon? Ugg not know.",
+		lemon = "undefined",
+		lemon_description = "undefined",
 
 		banana_peel = "Ugg Slip",
 		banana_peel_description = "Slippery like mammoth dung.",
@@ -7993,6 +8815,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		cabbage = "Cabbige",
 		cabbage_description = "Perfect for make homemade kikkchi.",
 
+		cabbage_seeds = "undefined",
+		cabbage_seeds_description = "undefined",
+
 		smoothie = "Smoothie",
 		smoothie_description = "Good blend of fruits, vegtables, and electrolytes for cure even worst gaming-induced hangovers.",
 		blender = "Ug-Ug make tasty drink machine",
@@ -8009,10 +8834,32 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		jack_o_lantern_description = "Big orange fruit with angry face on it.",
 
 		cigarette = "Smokes",
-		cigarette_description = "If you no smoke, you weak bro.",
+		cigarette_description = "undefined",
 		cigarette_pack = "Smokes Pouch",
-		cigarette_pack_description = "For dad with smoke addiction (hope he come back after getting them).",
+		cigarette_pack_description = "undefined",
+		cigarette_carton = "undefined",
+		cigarette_carton_description = "undefined",
+		snus_pack = "undefined",
+		snus_pack_description = "undefined",
+		snus = "undefined",
+		snus_description = "undefined",
 
+		cigar_olivia = "undefined",
+		cigar_olivia_description = "undefined",
+		cigar_romeo = "undefined",
+		cigar_romeo_description = "undefined",
+		cigar_arturo = "undefined",
+		cigar_arturo_description = "undefined",
+		cigar_cohiba = "undefined",
+		cigar_cohiba_description = "undefined",
+
+		tobacco_leaf = "undefined",
+		tobacco_leaf_description = "undefined",
+		cigar_homemade = "undefined",
+		cigar_homemade_description = "undefined",
+
+		crack = "undefined",
+		crack_description = "undefined",
 		cocaine_bag = "White Powder Bag",
 		cocaine_bag_description = "Tiny pieces of white dirt from other land.",
 		cocaine_brick = "White Powder Block",
@@ -8022,9 +8869,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		oxy = "Oxy",
 		oxy_description = "You got some drugs? Helps with back pain. Ugha!",
 		antibiotics = "Antibiotics",
-		antibiotics_description = "Helping you get rid of those infections and parasites. Ugha ugha!",
-		pain_killers = "Pain Killers",
-		pain_killers_description = "It's peak selling time lace, I need my drugs. Ugha ugha ugha!",
+		antibiotics_description = "undefined",
+		pain_killers = "undefined",
+		pain_killers_description = "undefined",
 		weed_seeds = "Weed Seeds",
 		weed_seeds_description = "Grows the 420, bro. Ugha!",
 		weed_1q = "Weed 1q",
@@ -8087,6 +8934,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		pet_banana_cat_description = "Friend fruity feline! Banana Cat sit shoulder, add playful charm. Purr-fect accessory for whimsical touch in life.",
 		pet_snowman = "\"Frosty\" The Snowman",
 		pet_snowman_description = "Get chilly with your very own snowman on shoulder! This tiny, cold friend adds winter magic to your style, great for snowy adventures and spreading frosty cheer.",
+		pet_owl = "undefined",
+		pet_owl_description = "undefined",
 
 		hotwheels_mcqueen = "Lightning McQueen",
 		hotwheels_mcqueen_description = "Speed. Me go fast like thunder. Float like a huge rock but sting like a cool bug. KATCHOW KATCHOW KATCHOW",
@@ -8125,6 +8974,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		fentanyl = "Fentanyl",
 		fentanyl_description = "Call 'sneaky snoozer', fentanyl strong juice that really hit hard. With just little sip, send even eye-openers into sleep land. Be careful! So strong that if dreams were coins, you rich after one sip. Good for making big problems into sleepy problems.",
+		narcan = "undefined",
+		narcan_description = "undefined",
 
 		grimace_shake = "Grimace Shake",
 		grimace_shake_description = "Crazy? Me was crazy once. They put me in room. Room made out of rubber. Rubber room had rats. Rats make me crazy. Crazy? Me was crazy once. They put me in room. Room made out of rubber. Rubber room had rats. Rats make me crazy. Crazy? Me was crazy once. They put me in room. Room made out of rubber. Rubber room had rats. Rats make me crazy. Crazy? Me was crazy once. They put me in room. Room made out of rubber. Rubber room had rats. Rats make me crazy. Crazy? Me was crazy once.....",
@@ -8172,6 +9023,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		steel_filings = "Steel Filings",
 		steel_filings_description = "A collection of tiny rock bits made when mashing metal stuff together. Usually used for making sharp rocks.",
 
+		gold_ore = "undefined",
+		gold_ore_description = "undefined",
+		gold_nugget = "undefined",
+		gold_nugget_description = "undefined",
 		gold_bar = "Shiny rock",
 		gold_bar_description = "undefined",
 
@@ -8191,6 +9046,20 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		steel = "Strong rock",
 		steel_description = "undefined",
 
+		aluminium_ore = "undefined",
+		aluminium_ore_description = "undefined",
+		iron_ore = "undefined",
+		iron_ore_description = "undefined",
+
+		rusty_tank_shell = "undefined",
+		rusty_tank_shell_description = "undefined",
+		rusty_cannon_ball = "undefined",
+		rusty_cannon_ball_description = "undefined",
+		rusty_gear = "undefined",
+		rusty_gear_description = "undefined",
+		rusty_diving_helmet = "undefined",
+		rusty_diving_helmet_description = "undefined",
+
 		purified_aluminium = "Clean shiny metal",
 		purified_aluminium_description = "undefined",
 		tempered_glass = "Tempered Glass",
@@ -8202,10 +9071,16 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		refined_steel = "Refined Steel",
 		refined_steel_description = "undefined",
 
-		power_saw = "Power Saw",
-		power_saw_description = "Use for sawing rock from rock.",
+		power_saw = "undefined",
+		power_saw_description = "undefined",
 		steel_file = "Rock File",
 		steel_file_description = "Use for making things less rough. Not for numbers on cave wall.",
+		catalytic_converter = "undefined",
+		catalytic_converter_description = "undefined",
+		car_brakes = "undefined",
+		car_brakes_description = "undefined",
+		car_radiator = "undefined",
+		car_radiator_description = "undefined",
 
 		thermite = "Fire Powder",
 		thermite_description = "Big boom-boom powder, no sniffy-sniffy.",
@@ -8236,6 +9111,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		shotgun_ammo = "Shotgun Ammo",
 		shotgun_ammo_description = "People believe there's gunpowder in them, but they're actually filled with sparkly delight and wonder!",
 
+		potassium_nitrate = "undefined",
+		potassium_nitrate_description = "undefined",
+		sulfur = "undefined",
+		sulfur_description = "undefined",
 		gunpowder = "Boom Boom Powder",
 		gunpowder_description = "Powder use make boom boom.",
 		projectile = "Flying Stick",
@@ -8271,8 +9150,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		zombie_pill = "Unga bunga Zombie Pill",
 		zombie_pill_description = "Unga bunga strange pill. Do strange things to you. Swallow at own risk. Unga bunga recommend have club or spear to protect from bad dreams.",
 
-		acid = "Unga bunga Acid",
-		acid_description = "Unga bunga make you high forever. No escape. Unga bunga.",
+		acid = "undefined",
+		acid_description = "undefined",
 
 		rose = "Unga bunga Rose",
 		rose_description = "undefined",
@@ -8297,6 +9176,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		scratch_ticket_ching_description = "Immerse yerself in da electrifyin' thrill of potential wealth. For jus' $100, dis vibrant ticket offers da electrifyin' chance to win up to $210,000. It's not jus' a game, it's a spectacle of fortune!",
 		scratch_ticket_carnival = "undefined",
 		scratch_ticket_carnival_description = "undefined",
+		scratch_ticket_vu = "undefined",
+		scratch_ticket_vu_description = "undefined",
+		scratch_ticket_beaver = "undefined",
+		scratch_ticket_beaver_description = "undefined",
+		scratch_ticket_minecraft = "undefined",
+		scratch_ticket_minecraft_description = "undefined",
 
 		avocado = "Big Leatherfruit",
 		avocado_description = "Small juicy object with a tough skin. Can be used to make a delicious dip.",
@@ -8383,11 +9268,26 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		jail_card = "Jail Card",
 		jail_card_description = "Me get out of cave free card!",
 
+		twitter_verification = "undefined",
+		twitter_verification_description = "undefined",
+
 		vape = "Ooga Booga Stick",
 		vape_description = "You want look cool? You want strong? Take puff puff make you tough, caveman way!",
+		dab_pen = "undefined",
+		dab_pen_description = "undefined",
 
 		train_pass = "Train Paas",
 		train_pass_description = "Wheen used, you will receive three-tiimes instant paases in the queue.",
+		train_pass_appreciated_tier = "undefined",
+		train_pass_appreciated_tier_description = "undefined",
+		train_pass_respected_tier = "undefined",
+		train_pass_respected_tier_description = "undefined",
+		train_pass_heroic_tier = "undefined",
+		train_pass_heroic_tier_description = "undefined",
+		train_pass_legendary_tier = "undefined",
+		train_pass_legendary_tier_description = "undefined",
+		train_pass_god_tier = "undefined",
+		train_pass_god_tier_description = "undefined",
 
 		xbox_controller = "XBOX Kontroller",
 		xbox_controller_description = "Looks a little wet...",
@@ -8401,6 +9301,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		ammonia = "Stink Water",
 		ammonia_description = "Mix with White Water for big magic. BOOM!",
 
+		baking_soda = "undefined",
+		baking_soda_description = "undefined",
+
 		lithium_batteries = "Thunder Stones",
 		lithium_batteries_description = "Not allowed on air-bird, unless you want big BOOM!",
 
@@ -8409,6 +9312,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		meth_table = "Meth Table",
 		meth_table_description = "Haha funny breaking bad reference about cooking meth.",
+
+		glass_pipe = "undefined",
+		glass_pipe_description = "undefined",
 
 		campfire = "Fire Pit",
 		campfire_description = "undefined",
@@ -8482,6 +9388,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		pedestrian_barrier_description = "Keep people safe like whole tribe!",
 		wheel_clamp = "Wheel Clamp",
 		wheel_clamp_description = "Ug! No go far cars! Wheel Clamp mean strong, keep car in place. No move without permission. This big thing make sure park rules respected and followed.",
+		old_rug = "undefined",
+		old_rug_description = "undefined",
 
 		bandit_1 = "Ugh-Ugh 1",
 		bandit_1_description = "undefined",
@@ -8508,9 +9416,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		claymore_description = "Big, dangerous Claymore mine to defend and protect with power. When set up, it will explode loudly if someone comes near, making sure area is safe. Be careful where you put it to not get hurt.",
 
 		tv_stand = "Box for magic shows",
-		tv_stand_description = "Useful for making moving picture box stand still.",
+		tv_stand_description = "undefined",
+		big_tv = "undefined",
+		big_tv_description = "undefined",
 		tv_remote = "Box magic channel changer",
-		tv_remote_description = "Stone universal remote (quantum batteries not cave-included).",
+		tv_remote_description = "undefined",
 
 		magic_ball = "Magic 8-Big Rock",
 		magic_ball_description = "Ask question, shake it, and turn it over. Answer to question magically appear inside! Easy, you no believe!",
@@ -8566,14 +9476,25 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		cream_cookie_description = "Creamy, just how me like it. Me want more!",
 		cheesecake = "Cheesecake",
 		cheesecake_description = "Ungabunga not same as cake made of cheese.",
-		chocolate_cake = "Chocolate Cake",
-		chocolate_cake_description = "Yummy cake made from best cocoa beans.",
 		cupcake = "Cupcake",
 		cupcake_description = "Fluffy cake with magic unicorn cream on top.",
 		pink_lemonade = "Pink Lemonade",
 		pink_lemonade_description = "Not normal lemonade, dyed pink to make you pay more.",
 		iced_latte = "undefined",
 		iced_latte_description = "undefined",
+
+		berry_cake = "undefined",
+		berry_cake_description = "undefined",
+		lemon_cake = "undefined",
+		lemon_cake_description = "undefined",
+		chocolate_cake = "Chocolate Cake",
+		chocolate_cake_description = "undefined",
+		berry_cake_slice = "undefined",
+		berry_cake_slice_description = "undefined",
+		lemon_cake_slice = "undefined",
+		lemon_cake_slice_description = "undefined",
+		chocolate_cake_slice = "undefined",
+		chocolate_cake_slice_description = "undefined",
 
 		irish_coffee = "Irish Coffee",
 		irish_coffee_description = "Fresh coffee with original Irish whiskey inside.",
@@ -8646,6 +9567,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		salt_description = "undefined",
 		pickles = "undefined",
 		pickles_description = "undefined",
+		pickle = "undefined",
+		pickle_description = "undefined",
+		pickle_juice = "undefined",
+		pickle_juice_description = "undefined",
 		dark_chocolate = "undefined",
 		dark_chocolate_description = "undefined",
 		beans = "undefined",
@@ -8682,8 +9607,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		popcorn = "undefined",
 		popcorn_description = "undefined",
 
-		rice = "Fluffy moon rocks",
-		rice_description = "It's plump, white fluffy balls for belly.",
+		uncooked_rice = "undefined",
+		uncooked_rice_description = "undefined",
+		rice = "undefined",
+		rice_description = "undefined",
 		nori = "Fishy green smelly thing",
 		nori_description = "This is green smelly sea thing but for fancy mouths.",
 		soy_sauce = "Brown salty water",
@@ -8696,6 +9623,35 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		coconut_description = "Ugg-ugg and creamy-sweet, coconut makes desserts, curries, and smoothies more ugg-ugg. Dab.",
 		sugar = "Sugar",
 		sugar_description = "It's like white dirt, but not illegal and gives you bad chew-chew.",
+		chili = "undefined",
+		chili_description = "undefined",
+		fish_filets = "undefined",
+		fish_filets_description = "undefined",
+		sushi = "undefined",
+		sushi_description = "undefined",
+		nigiri = "undefined",
+		nigiri_description = "undefined",
+		miso_soup = "undefined",
+		miso_soup_description = "undefined",
+		spring_onions = "undefined",
+		spring_onions_description = "undefined",
+		spring_onions_cut = "undefined",
+		spring_onions_cut_description = "undefined",
+		tofu = "undefined",
+		tofu_description = "undefined",
+		tofu_cubes = "undefined",
+		tofu_cubes_description = "undefined",
+		uncooked_ramen = "undefined",
+		uncooked_ramen_description = "undefined",
+		ramen = "undefined",
+		ramen_description = "undefined",
+		spicy_ramen = "undefined",
+		spicy_ramen_description = "undefined",
+		bento_box = "undefined",
+		bento_box_description = "undefined",
+
+		asahi_beer = "undefined",
+		asahi_beer_description = "undefined",
 
 		golf_ball = "Golf Ball",
 		golf_ball_description = "Used for hitting small rocks and chasing them.",
@@ -8710,17 +9666,27 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		gas_mask_description = "Make nose not smell bad things",
 		nv_goggles = "Goggles to See in Dark",
 		nv_goggles_description = "Help eyes see when sun gone",
+		vision_goggles = "undefined",
+		vision_goggles_description = "undefined",
+		skate_helmet = "undefined",
+		skate_helmet_description = "undefined",
 
 		green_rolls = "Green Rolls",
 		green_rolls_description = "For those of us who need more than the average amount.",
 		rolling_paper = "Rolling Paper",
 		rolling_paper_description = "That quick paper to roll up and smoke your pain away.",
+		bong = "undefined",
+		bong_description = "undefined",
+		bong_water = "undefined",
+		bong_water_description = "undefined",
 
 		arena_pill = "Arena Pill",
 		arena_pill_description = "A strange pill that does even stranger things... Swallow at your own risk. Perhaps having big stick on you to protect from violent dreams would be wise.",
 
 		shovel = "Me strong digger tool",
 		shovel_description = "Me dig dig dig! Find secret stuff and shiny rocks with this tool. Very good for cave men who like treasure hunt!",
+		pickaxe = "undefined",
+		pickaxe_description = "undefined",
 
 		electric_fuse = "Electric Thunder Rock",
 		electric_fuse_description = "You need this to make magic light work for heist. Put in magic light box to open shiny door.",
@@ -9184,7 +10150,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		weapon_addon_mk18_description = "\"Ughhhhhhhhh\" - Ug (Maybe)",
 
 		weapon_addon_glock = "undefined",
-		weapon_addon_glock_description = "Most popular rock in world.",
+		weapon_addon_glock_description = "undefined",
 
 		weapon_addon_colt = "Colt Ugh 1851 Navy",
 		weapon_addon_colt_description = "Original rock, start everything.",
@@ -9223,7 +10189,16 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		weapon_addon_jericho_description = "undefined",
 
 		weapon_addon_fn509 = "undefined",
-		weapon_addon_fn509_description = "undefined"
+		weapon_addon_fn509_description = "undefined",
+
+		weapon_addon_garand = "undefined",
+		weapon_addon_garand_description = "undefined",
+
+		weapon_addon_multitool = "undefined",
+		weapon_addon_multitool_description = "undefined",
+
+		weapon_addon_ar15 = "undefined",
+		weapon_addon_ar15_description = "undefined"
 	},
 
 	invisibility = {
@@ -9277,12 +10252,15 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		hotwiring_vehicle = "Ung-Ung, Start big rock!",
 		lockpick_broke = "Rock stick snap!",
 		failed_hotwire = "Ugh. You mess up trying to hotwire vehicle. Maybe need better tools?",
+		no_meth_bag = "undefined",
+		no_weed_1q = "undefined",
 		unpacking_green_rolls = "Unpack green leaves",
 		you_do_not_have_enough_rolling_paper = "No more paper for leaves",
 		rolling_joint = "Rolling smoke",
 		rolling_joints = "Rolling many smoke",
 		changing_license_plate = "Change name on mammoth",
 		equipping_parachute = "Put on ${itemName}",
+		no_lighter = "undefined",
 		lockpicking_vehicle = "Unlock mammoth with stick",
 		printout_title = "${type} Printout",
 		printout_text = "*${text}*",
@@ -9298,6 +10276,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		drank_bleach_death = "Ugh! You drink bleach! Grog dizzy now, me see black!",
 		finished_joint = "Ugh! Unga bunga! You finished joint.",
 		cant_place_here = "undefined",
+		failed_slice_pizza = "undefined",
+		failed_slice_cake = "undefined",
+		straw_no_drinks = "undefined",
+		failed_use_straw = "undefined",
 
 		using_cuffs = "Me use Handcuffs",
 		you_moved_too_fast = "You move too fast. Me no catch.",
@@ -9306,17 +10288,21 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		failed_bean_machine_delivery = "Grog frustrated, bean machine delivery no work for me.",
 		failed_kissaki_delivery = "Ugga ugg! Couldn't open kissaki meal.",
 		failed_green_wonderland_delivery = "undefined",
+		failed_pizza_this_delivery = "undefined",
 
 		burger_shot_delivery_empty = "Burgershot meal empty, me hungry still.",
 		bean_machine_delivery_empty = "All beans gone from delivery, grog disappoint!",
 		kissaki_delivery_empty = "Ugga! Kissaki meal empty.",
 		green_wonderland_delivery_empty = "undefined",
+		pizza_this_delivery_empty = "undefined",
 
 		logs_used_weather_spell_title = "Me use weather magic",
 		logs_used_weather_spell_details = "${consoleName} use magic for weather spell `${itemName}`.",
 
 		you_have_used_jail_card = "Me use 'get out of jail' card! Me free now!",
 		you_are_not_in_jail = "You not in jail, Yo hunky bunky!",
+
+		you_are_now_verified_on_twitter = "undefined",
 
 		stored_map_location = "Map location updated, good job!",
 		failed_location_map = "Map location update failed, oopsie woopsie!",
@@ -9364,7 +10350,18 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		recent_pots_will_show_here = "Recent pots show here.",
 		server_id = "Server ID you want to move to...",
 		transfer_items_to_anoter_person = "Me give things to other person.",
-		cancel_bet = "No Bet Now"
+		cancel_bet = "No Bet Now",
+		max_bet_warning = "undefined",
+		maximum_bet_exceeded = "undefined",
+
+		jackpot_bet_placed_logs_title = "undefined",
+		jackpot_bet_placed_logs_details = "undefined",
+
+		jackpot_won_logs_title = "undefined",
+		jackpot_won_logs_details = "undefined",
+
+		jackpot_bet_cancelled_logs_title = "undefined",
+		jackpot_bet_cancelled_logs_details = "undefined"
 	},
 
 	jail = {
@@ -9434,6 +10431,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		read_catalog = "Press ~g~${InteractionKey} ~w~to read Catalog. Ugh!"
 	},
 
+	label_printer = {
+		image_url = "undefined",
+		printing = "undefined",
+		print = "undefined"
+	},
+
 	lag = {
 		fake_lag_invalid_fps = "Ugga, bad bang-bang speed.",
 		fake_lag_clamp = "Me make bang-bang speed below ${fps}.",
@@ -9491,8 +10494,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		something_went_wrong = "Ugh, could not find the thing!",
 		locate_success = "Me find thing you want! Look (${x}, ${y}, ${z}) (instance = ${instance}), like you asked (${filter}).",
 
-		locate_entity_no_permissions = "Me no find thing because no permission",
-
 		locate_entity_logs_title = "Me find thing!",
 		locate_entity_logs_details = "${consoleName} - me ground and find `${filterType}` with value `${filterValue}`."
 	},
@@ -9500,9 +10501,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	login = {
 		exit_city = "Me leave city now.",
 		press_to_exit_city = "You press ~g~${InteractionKey} ~w~to go away from city.",
-		bad_words_in_character_creation = "Ugh-Ugh! Tried make person with bad word in name or story: \"${badWords}\"",
-		disallowed_words_in_character_name = "Ugh-Ugh! Tried make person with bad name: \"${characterName}\"",
-		disallowed_birthday_ban = "Ugh-Ugh! Tried make person with bad cave-day: \"${birthday}\"",
 
 		inventory_help_text = "Ook! Press ~INPUT_REPLAY_SHOWHOTKEY~ to open yer inventory.",
 
@@ -9569,11 +10567,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		copy_license = "Me use of tools",
 		copy_license_success = "Ugg!",
 		cache_assets = "Get stuff",
-		download_assets = "Want download stuff from cave? Do this:",
-		cache_assets_less_lag = "Make cave look better, less lag, less broken stick, less slow if you have bad rock and slow bird yelling.",
-		cache_assets_crashes = "Big chance you game crash like mammoth. If happen, choose 'slow download' instead.",
-		cache_assets_restart = "Me done, you restart game, lag happen if not.",
-		cache_assets_disk = "Me put stuff on disk, make sure disk have room. After update, clear old stuff to make room.",
+		download_assets = "undefined",
+		cache_assets_performance = "undefined",
+		cache_assets_crashes = "undefined",
+		cache_assets_restart = "undefined",
+		cache_assets_disk = "undefined",
+		cache_assets_no_repeat = "undefined",
 		vehicles = "Big Cars",
 		objects = "Big Rocks",
 		peds = "Walkin' Folks",
@@ -9617,9 +10616,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		date_not_future = "You no can be born in future",
 		date_too_old = "You no can be older than 100 suns",
 
-		bad_words = "Me see bad caveletters in name or backstory.",
-		disallowed_name = "Ugh, you can't use those words in your caveman name.",
-		disallowed_birthday = "Your birth time not allow.",
+		bad_words = "undefined",
+		disallowed_name = "undefined",
+		disallowed_birthday = "undefined",
 		numbers_not_allowed = "No numbers in caveman name.",
 		something_went_wrong = "Uhh, something bad happened while making your caveman.",
 		character_slot_occupied = "Slot taken, find new slot to make caveman.",
@@ -9696,7 +10695,29 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		confirm_pledge_upgrade_text = "YOU say if Grugg upgrade ${pledgeLabel} pledge to ${pledgeUpgradeLabel} for ${cost} OP wonga?",
 		upgrading_pledge = "Grugg Upgrade in Progress...",
 
-		exiting_login_ui = "Ugga (Login UI)"
+		medal = "undefined",
+		claim_points = "undefined",
+		medal_what_is_this_text_part_1 = "undefined",
+		account_name = "undefined",
+		connected_account = "undefined",
+		medal_stats = "undefined",
+		clips = "undefined",
+		views = "undefined",
+		likes = "undefined",
+		points_earned = "undefined",
+		claimable_points = "undefined",
+		launch_medal_and_click_refresh = "undefined",
+
+		referrals = "undefined",
+		referrals_title = "undefined",
+		referrals_what_is_this_text_part_1 = "undefined",
+		referrals_what_is_this_text_part_2 = "undefined",
+		referrals_what_is_this_text_part_3 = "undefined",
+		your_framework_playtime = "undefined",
+		license_id = "undefined",
+		set_referrer = "undefined",
+		your_referrer = "undefined",
+		your_referees = "undefined"
 	},
 
 	logs = {
@@ -9714,7 +10735,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		lottery_about_to_roll = "undefined",
 		current_lottery_pot = "undefined",
 		drew_a_lottery_winner = "Someone has win big in lottery.",
-		roll_lottery_no_permission = "You not allowed to roll lottery.",
 		winner_has_been_picked = "undefined",
 		claimed_lottery_winnings = "Me get all lottery winnings now.",
 		no_lottery_winnings = "You no have any unclaimed lottery winnings. Sad!",
@@ -9733,6 +10753,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		lucky_wheel_is_occupied = "Grr! Wheel occupied. Wait your turn.",
 		not_enough_op_points = "Ugga need ${cost} Grog Points to spin the Lucky Wheel. You have ${points} Grog Points.",
 		used_op_points = "Ugga used ${cost} Grog Points. You now have ${points} Grog Points left.",
+		you_have_op_points = "undefined",
 		casino_company_name = "The Rock Casino & Resort",
 		vehicle_won_tweet = "Ooga booga! Someone just find shiny rock at the Lucky Wheel and get the ultrasome ${modelDisplayName}! Who's the lucky one? Go there now and take your prize.",
 		vehicle_is_not_in_cdimage = "This vehicle not exist.",
@@ -9742,7 +10763,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} spin wheel and get car.",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} get car `${modelName}`.",
 		logs_lucky_wheel_reward_money_details = "${consoleName} spin wheel and get ${amount} cash.",
-		logs_lucky_wheel_reward_chips_details = "${consoleName} spinny spinny wheel and get ${amount} chips! Ooga booga!",
+		logs_lucky_wheel_reward_points_details = "undefined",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} spin wheel and get shiny `${itemName}` jewelry.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} spin wheel and get `${itemName}` item.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} has spun the wheel and won a 'Train Pass' item."
@@ -9751,7 +10772,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	magazines = {
 		issue_id = "Ugg ugg #${issueId}",
 		releases_updated = "Releases change.",
-		no_release_changes = "No change."
+		no_release_changes = "No change.",
+		magazine_issue_does_not_exist = "undefined",
+		magazine_created = "undefined"
 	},
 
 	magnifying_glass = {
@@ -9773,6 +10796,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		found_item_logs_details = "${consoleName} found a ${item} on Ug ground (${ground})."
 	},
 
+	map = {
+		failed_toggle = "undefined",
+		toggled_on = "undefined",
+		toggled_off = "undefined"
+	},
+
 	mdt = {
 		mdt_title = "Small Stone Tablet with Words",
 		loading_reports = "Ugg ugg load reports...",
@@ -9782,6 +10811,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		title_placeholder = "Me think of title",
 		body_placeholder = "Me got report..."
+	},
+
+	medal = {
+		in_the_main_menu = "undefined",
+		roleplaying_as = "undefined"
 	},
 
 	mechanics = {
@@ -9834,21 +10868,23 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		treat = "[${InteractionKey}] Give Treat",
 		check_up = "[${InteractionKey}] Ugga Up",
 
-		feed_active = "Maxwell eat yum yum",
-		pet_active = "Maxwell like petting",
-		brush_active = "Ugga ugga Maxwell",
-		catnip_active = "Ugga Maxwell Catnip",
-		treat_active = "Ugga Maxwell a Treat",
-		check_up_active = "Me check up on Maxwell",
+		feed_active = "undefined",
+		pet_active = "undefined",
+		brush_active = "undefined",
+		catnip_active = "undefined",
+		treat_active = "undefined",
+		check_up_active = "undefined",
 
 		maxwell_appeared = "Ugh! Maxwell has appeared near you.",
-		maxwell_shot = "Me shot Maxwell"
+		maxwell_shot = "undefined"
 	},
 
 	meth = {
 		press_to_sell_meth = "Press ~INPUT_CONTEXT~ to trade yummy crystal for rocks.",
 		local_not_interested = "Local no want. Maybe later?",
 		selling_meth = "Me trade shiny rocks for yummy crystal.",
+		you_are_overdosing = "undefined",
+		overdose = "undefined",
 
 		sold_meth_logs_title = "Grugg Sell Smelly Stone",
 		sold_meth_logs_details = "${consoleName} sell 1x Smelly Stone for $${reward}."
@@ -9858,6 +10894,13 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		active = "~g~Grugg Active"
 	},
 
+	minecraft = {
+		failed_place_block = "undefined",
+		failed_break_block = "undefined",
+		success_wipe_blocks = "undefined",
+		failed_wipe_blocks = "undefined"
+	},
+
 	mining = {
 		drill_scan_stone = "[${InteractionKey}] Poke rock, [${SeatEjectKey}] Peek at rock",
 		scan_stone = "[${SeatEjectKey}] Peek at rock",
@@ -9865,10 +10908,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		scanning_stone = "Poking rock...",
 		drilling = "Drilling...",
 		failed_drill_stone = "Rock too strong! Me sad.",
-		drill_no_drops = "No shiny rocks inside this rock. Me try others.",
-		drill_drops = "You find shiny rocks in this hard rock.",
+		drill_no_drops = "undefined",
+		drill_drops = "undefined",
 		used_drill = "Your rock-breaker is dead.",
-		still_shook = "You still scared. No shiny rock in this hard rock.",
+		still_shook = "undefined",
 
 		kill_label = "Big boom from mining",
 
@@ -10008,7 +11051,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		picture_no_url = "Grrr, missing link!",
 		picture_invalid_url = "Bad link. Link must start with https://. Grug no understand otherwise.",
-		picture_no_description = "Ugh, no description given.",
 		picture_failed = "Grug sorry, failed to make picture.",
 
 		auto_run_already_set_to = "Me fix problem now. You already set auto-run for ${controlId}. Ooga!",
@@ -10019,6 +11061,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		walk_forwards_success = "Me now walk forwards for ${displayName}.",
 		walk_forwards_failed = "Me no could start walking forwards for ${displayName}.",
 
+		info_paycheck = "undefined",
 		info_invalid_job = "undefined",
 		info_title = "Bug reports info (Ooga booga)",
 		info_character = "**Character-ID**: *${id}*",
@@ -10027,6 +11070,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		info_licenses = "**Licenses:** *${licenses}*",
 		info_licenses_none = "**Licenses:** *Me no have licenses*",
 		info_timestamp = "*When me discovered bug - ${time}*"
+	},
+
+	model_view = {
+		invalid_model = "undefined"
 	},
 
 	money = {
@@ -10090,20 +11137,14 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		sign_invalid_slot = "Slot no good.",
 		signed_notepad = "Me sign notepad in slot `${slotId}` success.",
 		failed_sign_notepad = "Banana! Cannot sign notepad.",
-		sign_already_signed = "Ooga booga! You no sign this notepad.",
-
-		notepad_info_missing_permissions = "Player try see notepad info but no have permission.",
-		wipe_notepads_missing_permissions = "Player try wipe notepads but no have permission."
+		sign_already_signed = "Ooga booga! You no sign this notepad."
 	},
 
 	notices = {
 		message_too_long = "Message too many word or line!",
 		invalid_notice_id = "Notice id no good.",
 		successfully_removed_notice = "Notice removed. Good job!",
-		failed_remove_notice = "Notice no remove. Me confused.",
-
-		add_notice_missing_permissions = "Ugh! Player try add notice but no permission.",
-		remove_notice_missing_permissions = "Ugh! Player try remove notice but no permission."
+		failed_remove_notice = "Notice no remove. Me confused."
 	},
 
 	npc_watch = {
@@ -10128,9 +11169,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		orbitcam_logs_title = "Ugged Orbitcam toggled",
 		orbitcam_on_logs_details = "${consoleName} ugged their orbitcam on.",
-		orbitcam_off_logs_details = "${consoleName} ugged their orbitcam off.",
-
-		orbitcam_no_permission = "Ugg.. Attempted to toggle their orbitcam without required uggs."
+		orbitcam_off_logs_details = "${consoleName} ugged their orbitcam off."
 	},
 
 	overview = {
@@ -10199,7 +11238,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 			<br><br>
 			Every minute, a certain amount of staff points is distributed to all active staff members. This means that if there are 4 staff members active, each person will get 25% of the staff points that minute. The amount of staff points distributed is decided by taking the server's current player amount and dividing that by 32.
 			<br><br>
-			The staff points reset for everyone at the beginning of each week. Your eight most recent weeks will be available for display in a table below.
+			The staff points reset for everyone at the beginning of each week. Your eight most recent weeks will be available for display in a table below. Note: Staff points are stored in the balls.
 		]],
 
 		staff_points_this_week = "Oog Week",
@@ -10235,6 +11274,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		clipboard_animation = "Clipboard Dance",
 		chop_shop_sound = "No Listen Chop Shop Radio Noise",
 		seatbelt_sound = "No Listen Seatbelt Ding",
+		eating_noises_sound = "undefined",
+		detailed_prop_positioning = "undefined",
 		sound_effect_placeholder = "URL tuga .oog file...",
 
 		button_save = "Keep",
@@ -10346,9 +11387,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		local_ped_models_title = "Look of players in area",
 		animal_ped_models_title = "Look of animal players",
 
-		bad_screen_word_title = "Words Bad for Screen",
-		bad_screen_word_about = "Me got list of bad words on screens. Me check who using them and see if they cheat!",
-
 		damage_modifier_name = "Ugg's Name",
 		damage_modifier_expected = "Expected Hit",
 		damage_modifier_actual = "Actual Hit",
@@ -10379,6 +11417,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		press_to_talk_to_jc = "Press ~g~${InteractionKey} ~w~to talk to JC.",
 		tutorial_will_play_next_time = "Oxy tutorial play next time hunt start.",
 		prescription_pick_up = "Get Leaf From Shaman: ${label}",
+
+		suspicious_person_location = "undefined",
 
 		pick_up_the_prescriptions = "Ugga ugga, go pick up the fake medicine map tell you where.",
 		redeem_them_at_the_city = "After that, go to city and give medicine to fake doctor.",
@@ -10894,6 +11934,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		taking_too_long_3_part_1 = "Yoo, you take too long, bro. You tryna steal my job or somethin', bro?",
 
+		-- NOTE: ops looks like I originally clipped this twice or something
+		taking_too_long_4_part_1 = "undefined",
+
 		taking_too_long_5_part_1 = "You think you funny? This no joke!",
 		taking_too_long_5_part_2 = "Come to me now, see what happen to you!",
 
@@ -10996,7 +12039,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	},
 
 	panic = {
-		press_panic_button = "Me help. You push panic button (X) in 5 seconds.",
+		press_panic_button = "undefined",
 		panic_button_timeout = "Me sorry. You no push panic button in time.",
 
 		panic_button_title = "[Dispatch]",
@@ -11007,7 +12050,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		panic_blip = "10-14 ${lastName}",
 
 		label_officer = "cave-man guard",
-		label_paramedic = "cave-man doctor"
+		label_paramedic = "cave-man doctor",
+		label_firefighter = "undefined"
 	},
 
 	paper_bags = {
@@ -11050,6 +12094,9 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		no_items_to_sell = "You no have ${itemLabel} to sell.",
 		close_menu = "Close Menu",
 
+		sell_vehicle_parts_far = "undefined",
+		sell_vehicle_parts_near = "undefined",
+
 		sell_items = "Sell ${itemLabel}, make shiny rock",
 		press_to_sell_items = "[${InteractionKey}] Give away ${amount}x ${itemLabel}",
 		sold_items = "Trader buy ${sellAmount}x ${itemLabel}, pay $${sellPrice}. Shiny rock from sky.",
@@ -11068,6 +12115,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		rps_message = "played rock, paper, or sharp rock and picked ${rps}",
 		citizen_card_message = "me show citizen card (${characterId})",
 		driver_license_message = "undefined",
+		press_pass_message = "undefined",
 		badge_message = "me show badge (${characterId})",
 		license_message = "me show license (${characterId})",
 		ped_message_logs_title = "Ugg Say",
@@ -11132,19 +12180,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		ped_not_found = "Me cannot find player ped."
 	},
 
-	ped_takeover = {
-		failed_reset = "Me fail to switch back to old caveman self.",
-		failed_reset_not_exist = "Me old caveman self no exist or too far away.",
-		failed_takeover = "Me fail to takeover caveman wannabe.",
-		invalid_network_id = "Invalid caveman network id."
-	},
-
-	peds = {
-		ped_robbing_injection = "Me see too much ped-robbing! (Me think cheater using smelly juice to do this!)",
-		robbed_ped_logs_title = "Me Robbed Caveman",
-		robbed_ped_logs_details = "${consoleName} rob caveman and get $$${payout}."
-	},
-
 	pepper_spray = {
 		press_to_pepper_spray = "Ugh. Press ~INPUT_ATTACK~ to use the Pepper Spray.",
 		using_pepper_spray = "Me using Pepper Spray."
@@ -11190,11 +12225,14 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		press_water_plant = "[${InteractionKey}] Splash Splash",
 		press_harvest_plant = "[${InteractionKey}] Gather",
 		press_destroy_plant = "[${SeatEjectKey}] Smash",
+		press_fertilize_plant = "undefined",
 		watering_plant = "undefined",
 		harvesting_plant = "undefined",
+		fertilizing_plant = "undefined",
 		destroying_plant = "Smash Plant",
 
 		plant_weed = "undefined",
+		plant_cabbage = "undefined",
 
 		planted_seed_logs_title = "undefined",
 		planted_seed_logs_details = "undefined",
@@ -11206,6 +12244,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		ran_over_plant_logs_details = "undefined",
 		shoveled_plant_logs_title = "Smashed Plant",
 		shoveled_plant_logs_details = "${consoleName} smashed (destroyed) plant (#${plantId}).",
+		fertilized_plant_logs_title = "undefined",
+		fertilized_plant_logs_details = "undefined",
 
 		total_plants = "undefined",
 		nearby_plants = "undefined"
@@ -11223,7 +12263,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		set_player_scale_to_for = "Me set player scale to `${scale}` for ${consoleName}.",
 		reset_player_scale = "Me reset player scale.",
 		set_player_scale_to = "Me set player scale to `${scale}`.",
-		set_player_scale_no_permission = "Player no have permission to set player's scale.",
 		player_is_already_set_to_scale = "${consoleName} already set to scale `${scale}`.",
 		you_are_already_set_to_scale = "You already set to scale `${scale}`.",
 		player_is_not_scaled = "${consoleName} not scaled.",
@@ -11253,6 +12292,13 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		no_model_name_set = "No model name set. Me no understand.",
 		invalid_model = "Model '${modelName}' me no know.",
 		pole_dancing_offset = "Model '${modelName}': vector3(${x}, ${y}, ${z})"
+	},
+
+	police_calls = {
+		ped_robbing_injection = "undefined",
+
+		robbed_ped_logs_title = "undefined",
+		robbed_ped_logs_details = "undefined"
 	},
 
 	pools = {
@@ -11326,6 +12372,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		prop_no_interior = "You can't place this prop inside cave. Outside only!",
 		invalid_culling_value = "Ugga culling value, need to be between 10m and 2,500m.",
 		invalid_model = "Ugga model `${name}` (${hash}).",
+		cancelled_positioning = "undefined",
 
 		invalid_prop_id = "Prop id not caveman level. Me no understand.",
 		prop_deleted = "Prop with id ${propId} was deleted. Farewell, prop!",
@@ -11343,6 +12390,13 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		placed_prop_logs_details = "undefined",
 		spawned_prop_logs_title = "undefined",
 		spawned_prop_logs_details = "undefined"
+	},
+
+	quiet_hours = {
+		received_streaming_reward = "undefined",
+
+		logs_quiet_hours_streaming_reward_reward_title = "undefined",
+		logs_quiet_hours_streaming_reward_reward_points_details = "undefined"
 	},
 
 	radio = {
@@ -11373,8 +12427,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		radio_debug_failed = "Me caveman not understand radio debug.",
 		radio_debug_off = "Radio debug off! Ughh!",
 		radio_debug_on = "Radio debug on! Ughh!",
-
-		radio_debug_no_permissions = "Me no can play with radio, no permission",
 
 		decrypt_frequency = "[${InteractionKey}] Decrypt Frequency",
 		decrypting_frequency = "Me decrypting frequency.",
@@ -11531,9 +12583,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		riot_mode_enabled_help = "Ugh! Riot mode activated.",
 		riot_mode_disabled_help = "Riot mode stopped. Ugh impressed.",
 
-		add_riot_player_no_permissions = "Ugga ugga! Tried to add a player to the riot list without proper permissions.",
-		remove_riot_player_no_permissions = "Ugga ugga! Tried to remove a player from the riot list without proper permissions.",
-
 		player_already_in_riot_list = "Ugh! ${consoleName} already in riot list.",
 		player_not_in_riot_list = "Ugh. ${consoleName} not found in riot list.",
 		added_riot_player = "Ugh! Added ${consoleName} to riot list.",
@@ -11641,6 +12690,17 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		server_id_not_hidden = "Ugga server id not hidden anymore."
 	},
 
+	scrapyard = {
+		press_to_scrap = "undefined",
+		scrapyard = "undefined",
+		cant_scrap_vehicle = "undefined",
+		failed_scrap_vehicle = "undefined",
+		scrap_confirm = "undefined",
+		scrap_success = "undefined",
+		scrapped_vehicle_logs_title = "undefined",
+		scrapped_vehicle_logs_details = "undefined"
+	},
+
 	scratch_tickets = {
 		you_won = "You hit jackpot! You win $${cash} from scratch stone.",
 		you_won_nothing = "You find nothing but dirt from scratch stone. No win.",
@@ -11709,7 +12769,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 	scuba_gear = {
 		equipping_scuba_tank = "Me equipping Scuba Tank",
-		equipping_scuba_mask = "Me equipping Scuba Mask"
+		equipping_scuba_mask = "Me equipping Scuba Mask",
+		cant_use_in_vehicle = "undefined"
 	},
 
 	security_cameras = {
@@ -11736,7 +12797,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		la_mesa_pd = "La Mesa Ugga PD",
 		beaver_bush_ranger_station = "Ugh Ugh Bush Ranger Station",
 		cinema = "Big TV Cave",
-		st_fiacre_hospital = "St. Fiacre Cures Place",
 		weazel_news = "Weazel Grog",
 		palomino_fib_facility = "Palomino Secret Place",
 		bank_1 = "Legion Square Cave 'o Money",
@@ -11788,8 +12848,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	},
 
 	shockwaves = {
-		create_shockwave_missing_permissions = "Player try make shockwave but no grunt authority. No can do.",
-		push_player_missing_permissions = "You no have permission to push player.",
 		shockwave_success = "Ugh Ugh, Shockwave created.",
 		shockwave_failed = "Ugh. Shockwave creation failed.",
 
@@ -11811,6 +12869,15 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		tag_nancy = "~b~Dr. Nancy"
 	},
 
+	shopping_carts = {
+		press_to_enter = "undefined",
+		press_to_exit = "undefined",
+		press_to_push = "undefined",
+		press_to_stop_pushing = "undefined",
+		failed_enter = "undefined",
+		flipping = "undefined"
+	},
+
 	shrooms = {
 		press_to_pick_up_shrooms = "Urg, press ~INPUT_CONTEXT~ to pick up shrooms.",
 		picking_up_shrooms = "Ugh, picking up shrooms.",
@@ -11825,6 +12892,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		sold_shrooms_logs_details = "${consoleName} sell 1x Shrooms for $${reward}.",
 		picked_shroom_logs_title = "Shroom Picked",
 		picked_shroom_logs_details = "${consoleName} pick 1x Shroom."
+	},
+
+	skateboards = {
+		failed_place = "undefined",
+		no_skateboard_deck = "undefined",
+		swapping_deck = "undefined"
 	},
 
 	skylift = {
@@ -11887,11 +12960,15 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		paleto_bay_bus_station = "Paleto Bay Bus Spot",
 
 		mission_row_police_station = "Mission Row Pig Den",
+		highway_police_station = "undefined",
+		palomino_fib_police_station = "undefined",
 		sandy_police_station = "Sandy Shores Pig Den",
 		paleto_police_station = "Ugh! Paleto Bay PD",
 		cayo_police_station = "Cayo Perico PD",
+		prison = "undefined",
 
 		mount_zonah = "Mount Zonah",
+		rockford_fire_dep = "undefined",
 		sandy_hospital = "Sandy Shores Hospital, ugh!",
 		paleto_hospital = "Paleto Bay Hospital",
 		cayo_station = "Cayo Medical Station",
@@ -12309,7 +13386,13 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		enter_viewer_booth_interact = "[${InteractionKey}] Ungabunga into Viewer Booth",
 
 		exit_viewer_booth = "Ungabunga out of Viewer Booth",
-		exit_viewer_booth_interact = "[${InteractionKey}] Ungabunga out of Viewer Booth"
+		exit_viewer_booth_interact = "[${InteractionKey}] Ungabunga out of Viewer Booth",
+
+		enter_phone_tower = "undefined",
+		enter_phone_tower_interact = "undefined",
+
+		exit_phone_tower = "undefined",
+		exit_phone_tower_interact = "undefined"
 	},
 
 	test_server = {
@@ -12358,7 +13441,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 	time_scale = {
 		invalid_time_scale = "The ${timeScale} value not good time scale.",
-		set_time_scale_missing_permissions = "No have permission for time scale setting.",
 		time_scale_set_to = "Ugh! Time go ${timeScale}.",
 		time_scale_disabled = "Ugh! Time back to normal.",
 		time_scale_already_set_to = "Time already go ${timeScale}.",
@@ -12368,7 +13450,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	titanic = {
 		created_titanic = "Me made big boat called 'Titanic' and it will sink in ${sinkTime} sun passes.",
 		failed_to_create_titanic = "Me no make boat, sorry.",
-		create_titanic_missing_permissions = "Me see player try make boat, but they no have permission."
+		created_titanic_logs_title = "undefined",
+		created_titanic_logs_details = "undefined"
 	},
 
 	top_down = {
@@ -12415,7 +13498,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		department_police_undercover = "Undercover PD",
 
 		department_police_training = "PD Training",
-		department_ems_training = "EMS Training"
+		department_medical_training = "undefined",
+		department_bcfd_training = "undefined"
 	},
 
 	trading_cards = {
@@ -12463,7 +13547,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 	train_pass = {
 		used_train_pass = "Successfully used 'Train Pass' item. You now have ${trainPasses} train pass(es).",
-		train_passes = "You have ${trainPasses} train pass(es)"
+		used_train_pass_tier = "undefined",
+		train_passes = "You have ${trainPasses} train pass(es)",
+
+		non_lucky_wheel_train_pass_used_logs_title = "undefined",
+		non_lucky_wheel_train_pass_used_logs_details = "undefined"
 	},
 
 	training = {
@@ -12480,7 +13568,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		attacker = "UGG-UGG ATTACKER",
 		defender = "UGG-UGG DEFENDER",
 		attackers_won = "UGG-UGG! ATTACKERS WON!",
-		defenders_won = "UGG-UGG! DEFENDERS WON!"
+		defenders_won = "UGG-UGG! DEFENDERS WON!",
+		training = "undefined"
 	},
 
 	traps = {
@@ -12533,7 +13622,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		no_ocean_scaler_intensity_set = "There is no ocean scaler intensity set yet, ugh!",
 		set_ocean_scaler_to = "Ugh! Set ocean scaler intensity to `${intensity}`, ugh!",
 		reset_ocean_scaler = "Reset ocean scaler intensity, ugh!",
-		set_ocean_scaler_no_permission = "Ugh, the player has no permission to set the ocean scaler, ugh!",
 
 		tsunami_started = "Big big water wave started. Me take ${minutes} minutes before it flood all map.",
 		tsunami_stopped = "Failed to automatically generate translation."
@@ -12592,10 +13680,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 	twitter_bid = {
 		twitter_bid = "Twitter Grunt",
-		information_part_1 = "Want to tell everyone chief on Twitter? Be the biggest bidder on the grunt mark!",
-		information_part_2 = "Whoever gives most meat gets blue grunt mark, until another person pays more.",
-		information_part_3 = "If someone pays more than you, no meat back.",
-		information_part_4 = "Make sure to put big word for people to see and make everyone have angry for you.",
+		information_part_1 = "undefined",
+		information_part_2 = "undefined",
+		information_part_3 = "undefined",
+		information_part_4 = "undefined",
 		no_bidder_yet = "No Bidder",
 		no_bidder_yet_quote = "Be the first to bid! (Me say: Quote here)",
 		bid_amount = "Bid Amount",
@@ -12608,9 +13696,18 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		bid_must_be_greater_than_current_bidder = "Bid must be bigger than current bidder.",
 		max_quote_length_exceeded = "Me say: Quote too long, too much!",
 		not_enough_bank_balance = "Ugh, not enough shinies in cave.",
+		not_enough_points = "undefined",
 
 		twitter_bid_placed_logs_title = "Ugga Ugga Bid Placed",
-		twitter_bid_placed_logs_details = "${consoleName} placed ugga ugga bid of $${bidAmount} with ugg quote of `${bidQuote}`."
+		twitter_bid_placed_logs_details = "${consoleName} placed ugga ugga bid of $${bidAmount} with ugg quote of `${bidQuote}`.",
+		twitter_bid_placed_points_logs_title = "undefined",
+		twitter_bid_placed_points_logs_details = "undefined",
+
+		in_game_cash = "undefined",
+		op_points = "undefined",
+
+		cost_money = "undefined",
+		cost_points = "undefined"
 	},
 
 	vape = {
@@ -12637,7 +13734,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		stealing_vehicle = "Ugga! Nearby caveman was told to steal the big rock on wheels (${distance}m).",
 		no_waypoint = "No find way place.",
 		success_drive_to = "Me tell ped drive to waypoint good.",
-		failed_drive_to = "Me no tell ped drive to waypoint. Bad."
+		failed_drive_to = "Me no tell ped drive to waypoint. Bad.",
+		not_in_vehicle = "undefined",
+		success_hop_in = "undefined",
+		failed_hop_in = "undefined",
+		no_free_seats = "undefined"
 	},
 
 	vending_machines = {
@@ -12691,9 +13792,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		affected_by_jammer = "Urrghh, grunts and noises coming from radio. Jammer or some kind.",
 
-		listening_missing_permissions = "Me not understand why you want to listen. No permission.",
-		voice_mute_missing_permissions = "Me no let you mute other caveman voice. No permission.",
-
 		music_mode_logs_title = "Ugh... Grunt... Toggled Voice Mode",
 		music_mode_logs_details_on = "${consoleName} changed their gruntin' input mode to 'music'.",
 		music_mode_logs_details_off = "${consoleName} changed their gruntin' input mode to 'speech'.",
@@ -12745,11 +13843,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		strain_description = "undefined"
 	},
 
-	weed_field = {
-		pick_weed = "Me see weed, me want weed. Press ~INPUT_CONTEXT~ to pick weed.",
-		picking_weed = "Me pick weed. Me happy."
-	},
-
 	wizard = {
 		menu_title = "Shaman",
 
@@ -12798,9 +13891,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		reversing_failed = "Grug fail to make leg-man go backward.",
 		driving_forwards_failed = "Grug fail to make leg-man go forward.",
 		reversing_success = "Grug make leg-man go backward! Good job Grug!",
-		driving_forwards_success = "Grug make leg-man go forward! Success for Grug!",
-
-		vehicle_temp_action_missing_permissions = "Player no have permission to run car temp action. Grug say no."
+		driving_forwards_success = "Grug make leg-man go forward! Success for Grug!"
 	},
 
 	yoga = {
@@ -12815,15 +13906,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		looting_zombie = "Loot Zombie",
 		zombie_looting_injection = "You use magic (injector) to loot zombies! Not fair!",
 
-		zombie_trip_limit = "You too tired to loot more zombies. Come back tomorrow."
+		zombie_trip_limit = "You too tired to loot more zombies. Come back tomorrow.",
+
+		not_able_to_loot_in_interior = "undefined"
 	},
 
 	-- global/*
-	entities = {
-		in_no_ped_population_area = "You in bad place, no people here.",
-		not_in_no_ped_population_area = "You not in no ped population area. Me sorry."
-	},
-
 	explosions = {
 		invalid_explosion_type = "Type of kaboom `${explosionType}` not good.",
 		invalid_camera_shake = "Shakey shakey `${cameraShake}` not good.",
@@ -12863,8 +13951,10 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		debug_states_failed = "Ugg! Failed to debug dis thing's states.",
 		no_states = "This thing no have states set.",
 		printed_states = "Printed states of thing ${networkId}.",
-
-		get_entity_states_missing_permissions = "Ugg! You no allowed to get dis thing's states."
+		invalid_key = "undefined",
+		state_set = "undefined",
+		state_removed = "undefined",
+		state_set_failed = "undefined"
 	},
 
 	time = {
@@ -12933,7 +14023,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	-- interfaces/*
 	interface = {
 		no_interfaces_are_focused = "Me no see interfaces.",
-		interfaces_focused = "Me found:\n${interfacesFocused}"
+		interfaces_focused = "Me found:\n${interfacesFocused}",
+		interface_crashed = "undefined"
 	},
 
 	-- jobs/*
@@ -12968,7 +14059,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	},
 
 	bus_driver = {
-		start_route = "undefined",
 		failed_start_job = "undefined",
 		next_stop = "undefined",
 		bus_hq = "undefined",
@@ -12982,6 +14072,15 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		not_enough_money_ticket = "undefined",
 		ticket_paid = "undefined",
 		paid_for_ticket = "undefined",
+		invalid_route_name = "undefined",
+		already_in_mission = "undefined",
+		press_to_open_menu = "undefined",
+		press_to_park_bus = "undefined",
+		start_route = "undefined",
+		bus_menu = "undefined",
+		close_menu = "undefined",
+		rent_bus = "undefined",
+		deposit = "undefined",
 
 		east_route = "undefined",
 		pillbox_route = "undefined",
@@ -12991,6 +14090,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		grapeseed_route = "undefined",
 		route_68_route = "undefined",
 		airport_route = "undefined",
+		business_route = "undefined",
 
 		finished_job_logs_title = "undefined",
 		finished_job_logs_details = "${consoleName} finished driving the `${route}` meat on foot and received $${payout}."
@@ -13020,8 +14120,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	},
 
 	duty = {
-		toggle_duty_status_no_permissions = "Ugh! Tried to switch on duty status but no permission!",
-
 		duty_status_on = "Me hunt like big caveman now.",
 		duty_status_off = "Me finish hunt for today.",
 		duty_status_failed = "Me no can start/stop hunt now, something wrong!",
@@ -13034,6 +14132,17 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		toggled_operator_status_on = "Ugg! Turned on operator status!",
 		toggled_operator_status_off = "Ugg! Turned off operator status!"
+	},
+
+	emergency = {
+		no_nearby_vehicle = "undefined",
+		no_nearby_vehicle_door = "undefined",
+		removing_door = "undefined",
+		failed_remove_door = "undefined",
+		invalid_clothing_type = "undefined",
+		no_nearby_player = "undefined",
+		removing_clothing = "undefined",
+		failed_remove_clothing = "undefined"
 	},
 
 	job_center = {
@@ -13056,6 +14165,23 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		changed_job_failure = "Error setting ${jobName}.",
 		changed_job_title = "Ugga bugga job changed",
 		changed_job_details = "${consoleName} changed job to `${jobName}`. Unga bunga."
+	},
+
+	jobs = {
+		job_reset_success = "undefined",
+		failed_job_reset = "undefined",
+		invalid_job_shortcut = "undefined",
+		job_set = "undefined",
+		job_set_fail = "undefined",
+		failed_job_data = "undefined",
+
+		button_close = "undefined",
+		button_save = "undefined",
+
+		set_job_logs_title = "undefined",
+		set_job_logs_details = "undefined",
+		reset_job_logs_title = "undefined",
+		reset_job_logs_details = "undefined"
 	},
 
 	police = {
@@ -13153,6 +14279,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		license_weapon = "Grrr... Big Stick License",
 		license_mining = "Rock License",
 		license_driver = "Walker's Rock",
+		license_press = "undefined",
 		gave_character_license = "Me give ${characterName} license `${licenseLabel}`. Ugga ugga!",
 		character_already_has_license = "${characterName} already have `${licenseLabel}` license. No need give again.",
 		removed_character_license = "Removed `${licenseLabel}` license from ${characterName}. Me strongest!",
@@ -13184,6 +14311,64 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		married_logs_details = "${consoleName} poke poke updated the love status of ${nameA} #${cidA} and ${nameB} #${cidB} to `big love`."
 	},
 
+	tasks = {
+		task_blip = "undefined",
+		tasks = "undefined",
+		no_tasks = "undefined",
+		press_start_task = "undefined",
+		no_active_tasks = "undefined",
+		something_went_wrong = "undefined",
+		task_cancelled = "undefined",
+		task_completed = "undefined",
+		task_failed_complete = "undefined",
+
+		on_floor = "undefined",
+		ground_floor = "undefined",
+		second_floor = "undefined",
+		icu_floor = "undefined",
+		surgery_floor = "undefined",
+
+		task_make_bed = "undefined",
+		task_make_bed_near = "undefined",
+		task_make_bed_active = "undefined",
+
+		task_clean_toilet = "undefined",
+		task_clean_toilet_near = "undefined",
+		task_clean_toilet_active = "undefined",
+
+		task_take_out_trash = "undefined",
+		task_take_out_trash_near = "undefined",
+		task_take_out_trash_active = "undefined",
+
+		task_clean_microwave = "undefined",
+		task_clean_microwave_near = "undefined",
+		task_clean_microwave_active = "undefined",
+
+		task_restock_pharmacy = "undefined",
+		task_restock_pharmacy_near = "undefined",
+		task_restock_pharmacy_active = "undefined",
+
+		task_restock_vending_machine = "undefined",
+		task_restock_vending_machine_near = "undefined",
+		task_restock_vending_machine_active = "undefined",
+
+		task_drthompson_lollipop = "undefined",
+		task_drthompson_lollipop_near = "undefined",
+		task_drthompson_lollipop_active = "undefined",
+
+		task_nancy_backrub = "undefined",
+		task_nancy_backrub_near = "undefined",
+		task_nancy_backrub_active = "undefined",
+
+		task_do_laundry = "undefined",
+		task_do_laundry_near = "undefined",
+		task_do_laundry_active = "undefined",
+
+		task_disinfect_table = "undefined",
+		task_disinfect_table_near = "undefined",
+		task_disinfect_table_active = "undefined"
+	},
+
 	tow = {
 		press_to_access_spawner = "Ugh! Press ~INPUT_CONTEXT~ to get new wheel thingy.",
 		tow_vehicles = "Tow Wheel Things",
@@ -13201,6 +14386,14 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		toggled_messages_on = "Ooga booga! You turn messages on.",
 		toggled_messages_off = "Ooga booga! You turn messages off.",
 		cannot_toggle_mechanic_messages = "Tow Drivers not able to turn off mechanic messages, Ug."
+	},
+
+	trucking = {
+		trailer_locked = "undefined",
+		inspect_cargo = "undefined",
+		inspecting_cargo = "undefined",
+		failed_cargo = "undefined",
+		cargo_result = "undefined"
 	},
 
 	weazel_news = {
@@ -13274,6 +14467,37 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		unclamped_log_details = "${consoleName} swipe a round rock from vehicle with plate `${plate}`."
 	},
 
+	converters = {
+		stealing_converter = "undefined",
+		no_converter = "undefined",
+		electric_vehicle = "undefined",
+
+		stole_converter_logs_title = "undefined",
+		stole_converter_logs_details = "undefined"
+	},
+
+	cruise_control = {
+		cruise_control = "undefined",
+		speed_set_to_metric = "undefined",
+		speed_set_to_imperial = "undefined",
+		cruise_control_set_metric = "undefined",
+		cruise_control_set_imperial = "undefined",
+		cruise_control_reset = "undefined",
+		cruise_control_disabled = "undefined",
+		autopilot_metric = "undefined",
+		autopilot_imperial = "undefined",
+		hover_metric = "undefined",
+		hover_imperial = "undefined",
+
+		speed_limiter = "undefined",
+		speed_limiter_reset = "undefined",
+		speed_limiter_to_metric = "undefined",
+		speed_limiter_to_imperial = "undefined",
+		speed_limiter_set_metric = "undefined",
+		speed_limiter_set_imperial = "undefined",
+		speed_limiter_disabled = "undefined"
+	},
+
 	damage = {
 		vehicle = "Vehicle-ID: ${entity}.",
 		general = "General: ${value}.",
@@ -13289,10 +14513,15 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 	fuel = {
 		exit_to_fuel = "Get out of wheel thingy to fill it up with ooga.",
+		exit_to_charge = "undefined",
 		press_to_fuel = "Press ~g~${InteractionKey}~w~ to fill up wheel thingy with ooga.",
+		press_to_charge = "undefined",
 		fuel_pump_text = "Ugg Ugg: $${fuelCost}~n~Grunt ~g~${InteractionKey} ~w~ugga ugg.",
 		vehicle_text = "Ooga Left: ${fuelLevel}%",
+		fuel_pump_text_ev = "undefined",
+		vehicle_text_ev = "undefined",
 		tank_full = "Tank full like mammoth.",
+		battery_full = "undefined",
 		vehicle_busy = "No touch, wheel thingy busy.",
 		purchase_jerry_can = "Ugg ~g~${InventoryKey} ~w~meke Jerry Can.",
 		gas_station = "Fire Station",
@@ -13308,6 +14537,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 	gadgets = {
 		helicopter_camera_vehicle_info = "Fast: ${speed}\nKind: ${model}\nPlate: ${plate}",
+		helicopter_camera_aircraft_info = "undefined",
 		helicopter_camera_altitude = "Ugg ${altitude}ft AGL",
 		helicopter_camera_altitude_asl = "Ugg ${altitude}ft ASL",
 		helicopter_camera_locked_on = "Ug! Locked On",
@@ -13362,6 +14592,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		vehicle_in_the_way = "Ugh, big rock blocking spawn point.",
 		vehicle_is_out = "Your ride already out.",
 		vehicle_stored = "Me took care of your ride.",
+		vehicle_stored_other = "undefined",
 		error_storing = "Me no can store ride. It yours?",
 		no_nearby_vehicle = "No ride nearby.",
 		no_vehicles_to_retrieve = "No ride to get!",
@@ -13393,7 +14624,8 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		state_storing = "Me Store Thing...",
 		state_loading = "Ugg Loading...",
 
-		vehicle_weight = "Thing Weight: ${weight}",
+		vehicle_items = "undefined",
+		vehicle_no_items = "undefined",
 		no_last_garage_letter = "Me no remember last cave",
 
 		purchase_vehicle = "Me make rocks on ground to access shop",
@@ -13435,7 +14667,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 	keys = {
 		no_nearby_player = "No nearby player found. Ugh.",
-		no_nearby_vehicle = "No nearby vehicle found. Ugh.",
+		no_nearby_vehicle = "undefined",
 		no_keys_for_vehicle = "You no have keys for this vehicle.",
 		vehicle_locked = "Vehicle locked.",
 		vehicle_unlocked = "Vehicle unlocked.",
@@ -13449,7 +14681,14 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		picked_up_keys = "Me picked up keys for '${plate}'.",
 		hotwired_vehicle_for_player = "Me made ${displayName} hotwire the big thing they sit on.",
 		gave_keys_success = "Ugg Ugg gave ${displayName} the keys to their big wheel.",
-		gave_keys_failure = "Me failed to give ${displayName} the keys to their big rock on wheels."
+		gave_keys_failure = "Me failed to give ${displayName} the keys to their big rock on wheels.",
+
+		no_nearby_vehicle = "undefined",
+		there_is_someone_in_the_driver_seat = "undefined",
+		the_driver_door_is_closed = "undefined",
+		checking_ignition = "undefined",
+		ignition_tampered_with = "undefined",
+		ignition_not_tampered_with = "undefined"
 	},
 
 	modifications = {
@@ -13465,7 +14704,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 	oil = {
 		move_to_change = "Move here to make the rock on wheels good.",
 		changing_oil = "Me make rock on wheels good",
-		low_oil = "Chariot thirsty, need oil!"
+		low_oil = "Chariot thirsty, need oil!",
+		no_nearby_vehicle = "undefined",
+		vehicle_has_no_engine = "undefined",
+		check_oil = "undefined",
+		oil_level = "undefined",
+		checking_oil_level = "undefined"
 	},
 
 	plates = {
@@ -13480,13 +14724,14 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		vehicle_does_not_belong_to_player = "Car ID '${vehicleId}' not yours, belong to someone else.",
 		vehicle_id_does_not_exist = "No car with ID '${vehicleId}', maybe stolen or destroyed?",
 		you_have_no_character_loaded = "You not bring character, forgetful like banana on tree.",
+		vehicle_plate_not_custom = "undefined",
+		confirm_reset_plate = "undefined",
+		cancelled_resetting_plate = "Ugh! Plate reset no go.",
 		vehicle_plate_changed = "Ugga ugga! Changed the plate of car with ID `${vehicleId}` to `${plateNumber}`.",
 
 		you_are_not_in_a_vehicle = "Ugga! You not inside car.",
 		fake_plate_active = "Successfully made fake plate for car!",
-		fake_plate_inactive = "Reset car plate back to true name.",
-
-		fake_plate_missing_permissions = "Player try make fake plate without right permissions."
+		fake_plate_inactive = "Reset car plate back to true name."
 	},
 
 	runways = {
@@ -13507,8 +14752,11 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 
 		spawner_burger_shot = "Burger Shot delivery mammoths.",
 		spawner_bean_machine = "Bean Machine delivery mammoths.",
+		spawner_pizza_this = "Pizza Wagons Here",
+		spawner_kissaki_sushi = "Kissaki Wagons Here",
 		spawner_weazel_news = "Weazel News mammoths.",
 		spawner_state = "Big Cars",
+		spawner_airport = "Airport Wagons Here",
 		close_menu = "Me done, go away.",
 		vehicle_list = "List of mammoths:",
 		park_vehicle = "Put mammoth to sleep.",
@@ -13548,17 +14796,6 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		manual_gears_disabled = "Ugh! Automatic gear switching only now.",
 		manual_gears_too_fast = "You can only switch manual under 30mph.",
 		hybrid_off = "off",
-		speed_limiter_set_to_metric = "Ug speed limiter ug limit sa speed noong ${speed} km/h.",
-		speed_limiter_set_to_imperial = "Ug speed limiter ug limit sa speed noong ${speed} mp/h.",
-		speed_limiter_reset = "Ug speed limiter ug limit sa speed noong ang bilis ng sasakyan noong ito'y na-toggle.",
-		speed_limiter_on_metric = "Speed limiter na-configure sa ${speed} km/h.",
-		speed_limiter_on_imperial = "Speed limiter na-configure sa ${speed} mp/h.",
-		speed_limiter_on_plane_metric = "Speed limiter na-configure sa ${speed} km/h at ${altitude} metros.",
-		speed_limiter_on_plane_imperial = "Me slow down to ${speed} mp/h and ${altitude} ft.",
-		speed_limiter_on_helicopter_metric = "Me slow down to ${altitude} meters (hover).",
-		speed_limiter_on_helicopter_imperial = "Me slow down to ${altitude} ft (hover).",
-		autopilot_metric = "~g~Auto-pilot~s~: ${altitude}m ~c~/~s~ ${speed}km/h",
-		autopilot_imperial = "~g~Auto-pilot~s~: ${altitude}ft ~c~/~s~ ${speed}knots",
 		you_are_cuffed = "You tied up.",
 		belt_is_on_and_vehicle_is_locked = "Belt on, vehicle locked.",
 		belt_is_on = "Ugh. Belt on.",
@@ -13721,6 +14958,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		check_in_escorted = "Ug have escort to chieftain, ug!",
 		checking_in = "Ugh... Me check-in",
 		doctor_notified = "Ugh... Doctor notified, wait here",
+		no_free_bed_found = "No bed free!",
 		leave_bed = "Ugh... Press ~INPUT_CONTEXT~ to leave bed",
 		you_have_been_charged = "Ugh... You pay $${cost} for wounds",
 		beds_occupied = "Ugh... All beds taken",
@@ -13777,6 +15015,7 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		cannot_respawn_currently = "You no can come back yet",
 		hold_to_respawn = "Hold ~b~UGGA UGGA~w~ to come back to life or wait for medicine man",
 		hold_to_respawn_secondslol = "Hold ~b~UGGA UGGA (${seconds})~w~ to come back to life or wait for medicine man",
+		respawn_warning = "No respawn during roleplay!",
 		passed_out = "You knocked out",
 		light = "Small hurt",
 		moderate = "Hurt",
@@ -13802,13 +15041,16 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		badge_owner_unknown = "Badge belonger is unknown.",
 		citizen_card_owner = "<i>Haga-haga this citizen card belongs to <b>${fullName} (#${characterId})</b>.</i>",
 		driver_license_owner = "<i>Stone carver's shell belongs to <b>${fullName} (#${characterId})</b>.</i>",
+		press_pass_owner = "<i>Press pass of <b>${fullName} (#${characterId})</b>.</i>",
 		has_portrait = "<i>It shows a drawing.</i>",
 		picture_pending = "<i>The picture is still processing. Me not know yet...</i>",
 		picture_selfie_owner = "<i>This is a picture of <b>${fullName}</b>.</i>",
 		bought_by = "Bought by ${buyerName} (${buyerCid}).",
 		bought_by_unknown = "The buyer of this item is unknown. Ugh me not know who.",
 		cigarette_pack = "${cigarettes} firesticks left.",
-		evidence_incomplete = "This thing for seeing what happened is not finished.",
+		cigarette_carton = "${packs} packs of smokables left.",
+		snus_pack = "${snus} snus left.",
+		evidence_incomplete = "Ugga bugga, this evidence not complete, no review possible.",
 		evidence_type = "Type of Thing for Seeing What Happened",
 		processed_picked_up = "<i>Carried by ${pickupName} and understood by ${processName}.</i>",
 		picked_up = "<i>Carried by ${pickupName}.</i>",
@@ -13860,6 +15102,12 @@ OP.Global.Locales.Languages["meme-caveman"] = {
 		smart_watch_hover = "<i>Ugh, this shiny rock belongs to <b>${name} (#${cid})</b>. It has tracked <b>${stepsWalked}</b> steps.</i>",
 		item_contains = "<b>Junk inside:</b> <i>${contents}</i>.",
 		item_engraving = "<b>Ugh, scratchings:</b> <i>${message}</i>.",
-		evidence_incomplete = "This thing for seeing what happened is not finished."
+		evidence_bag_casing = "Ugga! Bullet Casings: ${casings} casing(s) shot by ${weapon} owned by ${name} (#${cid}) (found at ${time} near ${location}).",
+		evidence_bag_casing_unregistered = "Ugga! Bullet Casings: ${casings} casing(s) shot by unregistered ${weapon} (found at ${time} near ${location}).",
+		evidence_bag_impact = "Ugga! Bullet Impact: ${impacts} impact(s) made by ${weapon} (found at ${time} near ${location}).",
+		evidence_bag_vehicle = "Ugga bugga bugga: Sample thag come back to ${name} (#${cid}) and was pulled out from seat ${seat} in a big big wheel with the plate ${plate} (picked up at ${time} near ${location}).",
+		evidence_bag_vehicle_empty = "Ugga bugga bugga: Sample not match any record and was pulled out from seat ${seat} in a big big wheel with the plate ${plate} (picked up at ${time} near ${location}).",
+		evidence_bag_clothing = "Cloth Piece: Sample taken from a ${type} come back to ${name} (#${cid}) (picked up at ${time} near ${location}).",
+		evidence_bag_clothing_empty = "Piece of clothing: Big rock taken from a ${type} did not match any memory (grabbed at ${time} near ${location})."
 	}
 }

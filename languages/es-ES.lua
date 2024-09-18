@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 32 (do not change)
+-- AUTO LOCALES: 33 (do not change)
 
 OP.Global.Locales.Languages["es-ES"] = {
 	-- configuration settings for language
@@ -23,13 +23,20 @@ OP.Global.Locales.Languages["es-ES"] = {
 		yes = "Sí",
 		no = "No",
 		n_a = "No Aplica",
-		invalid_server_id = "ID de servidor inválido."
+		invalid_server_id = "ID de servidor inválido.",
+		appreciated_tier = "Nivel Apreciado",
+		respected_tier = "Nivel Respetado",
+		heroic_tier = "Nivel Heroico",
+		legendary_tier = "Nivel Legendario",
+		god_tier = "Nivel de Dios"
 	},
 
 	-- animations/*
 	emotes = {
 		get_in_trunk = "Presiona ~INPUT_ENTER~ para entrar al maletero.",
 		put_boombox_in_trunk = "Presiona ~INPUT_ENTER~ para poner el boombox en el maletero.",
+		put_bicycle_in_trunk = "Presiona ~INPUT_ENTER~ para colocar la bicicleta en el maletero.",
+		cant_put_bicycle_in_trunk = "No puedes colocar la bicicleta en este maletero.",
 		put_player_in_trunk = "Presiona ~INPUT_ENTER~ para poner al jugador en el maletero.",
 		put_player_in_seat = "[${VehicleEnterKey}] Colocar en Asiento",
 		putting_player_in_seat = "Colocando en asiento",
@@ -47,22 +54,9 @@ OP.Global.Locales.Languages["es-ES"] = {
 		piggyback_hop_on = "[${InteractionKey}] súbete",
 		stop_piggyback = "Presiona ~INPUT_VEH_HEADLIGHT~ para dejar de cargar en piggyback.",
 
-		lockpicking_cuffs = "Forzando las esposas",
-		lockpick_cuffs_too_fast = "Te moviste demasiado rápido.",
-		success_lockpick_cuffs = "Has forzado con éxito las esposas.",
-		failed_lockpick_cuffs = "Error al forzar las esposas.",
-		lockpick_lost = "Has perdido el forzador de cerraduras.",
-
-		not_cuffed = "No estás esposado.",
-		unable_to_lockpick = "No puedes forzar las esposas.",
-
-		lockpick_cuffs_logs_title = "Esposas forzadas",
-		lockpick_cuffs_logs_details = "${consoleName} ha forzado con éxito sus esposas usando `${itemName}`.",
-
 		you_are_not_being_carried = "Actualmente no te están cargando.",
 		successfully_uncarried = "Se detuvo con éxito la carga forzada.",
 		failed_uncarried = "No se pudo detener la carga forzada.",
-		uncarry_missing_permissions = "Intento de detener forzadamente el transporte sin permisos adecuados.",
 
 		uncarry_logs_title = "Detener la carga forzada",
 		uncarry_logs_details = "${consoleName} ha forzado a ${targetName} a dejar de cargarlos.",
@@ -77,6 +71,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 		struggle_logs_details = "${consoleName} se liberó de ${targetName} quien los llevaba.",
 
 		ragdolled_player = "Hizo que ${displayName} se volviera un muñeco de trapo."
+	},
+
+	ledges = {
+		no_ledge = "No estás cerca de un saliente.",
+		invalid_variation = "Variación inválida.",
+		press_x_to_stop = "Presiona ~INPUT_VEH_DUCK~ para dejar de sentarte."
 	},
 
 	-- base/*
@@ -98,6 +98,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		noclip_toggle_activated_self_on_logs_details = "${consoleName} alternó noclip en la posición `x: ${xCoord}, y: ${yCoord}, z: ${zCoord}`. (En un vehículo: ${inVehicle})",
 		noclip_toggle_activated_self_off_logs_details = "${consoleName} desactivó noclip en la posición `x: ${xCoord}, y: ${yCoord}, z: ${zCoord}`.",
 
+		can_not_trigger_remotely_without_staff = "Necesitas ser personal para activar este comando de forma remota.",
+
 		model_name_not_provided = "No se proporcionó el nombre del modelo.",
 		model_name_invalid = "El nombre del modelo `${modelName}` no es válido.",
 		model_name_not_a_vehilce = "El nombre del modelo `${modelName}` no es de un vehículo.",
@@ -114,10 +116,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 		vehicle_created = "Vehículo creado con éxito.",
 		failed_vehicle_creation = "Error al crear vehículo.",
 
+		invalid_network_id = "Identificador de red no válido.",
+
 		-- NOTE: `add_vehicle` command:
 		add_vehicle_added_vehicle_for_everyone = "Se añadió el vehículo con nombre de modelo `${modelName}` para todos.",
-		add_vehicle_added_vehicle_for_player = "Se añadió el vehículo con nombre de modelo `${modelName}` para ${consoleName}.",
-		add_vehicle_added_vehicle = "Se añadió el vehículo con nombre de modelo `${modelName}`.",
+		add_vehicle_added_vehicle_for_player = "Se ha añadido el vehículo con el nombre del modelo `${modelName}` #${vehicleId} para ${consoleName}.",
+		add_vehicle_added_vehicle = "Se ha añadido el vehículo con el nombre del modelo `${modelName}` #${vehicleId}.",
 		add_vehicle_character_not_loaded = "El jugador objetivo no tenía personajes cargados.",
 		add_vehicle_target_user_not_found = "No se pudo encontrar al usuario objetivo.",
 		add_vehicle_invalid_input = "Entrada no válida.",
@@ -134,7 +138,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		added_vehicle_logs_title = "Vehículo Añadido",
 		added_vehicle_logs_details = "${consoleName} añadió un vehículo con nombre de modelo `${modelName}` a su garaje.",
 
-		vehicle_saved = "Vehículo guardado con éxito con el nombre del modelo `${modelName}`.",
+		vehicle_saved = "Vehículo guardado con éxito con el nombre del modelo `${modelName}` #${vehicleId}.",
 		failed_to_save_vehicle = "Error al guardar el vehículo.",
 
 		invalid_amount = "Cantidad no válida.",
@@ -211,6 +215,9 @@ OP.Global.Locales.Languages["es-ES"] = {
 		staff_title = "PERSONAL ${staffName}",
 		staff_message_logs_title = "Registro de mensajes del personal",
 		staff_message_logs_details = "${consoleName} envió el siguiente mensaje en el chat de staff: `${staffMessage}`",
+		local_staff_title = "PERSONAL LOCAL ${staffName}",
+		local_staff_message_logs_title = "Registro de Mensajes del Personal Local",
+		local_staff_message_logs_details = "${consoleName} envió el siguiente mensaje en el chat de personal local: `${staffMessage}`",
 
 		staff_pm_title = "PM DE STAFF ${transmissionTitle}",
 		staff_pm_logs_title = "PM de Staff",
@@ -220,7 +227,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		staff_pm_not_recipient_not_staff = "El jugador al que intentas enviar un mensaje no es un miembro del staff.",
 		staff_pm_unable_to_message_self = "No puedes enviarte un mensaje a ti mismo.",
 		staff_pm_warning = "Mensaje del Staff",
-		staff_pm_first_time = "Observamos que nunca has utilizado los mensajes del staff antes. Para responder a un mensaje del staff, utiliza el comando /staffpm.",
+		staff_pm_first_time = "Vemos que nunca has usado los mensajes del personal antes. Para responder a un mensaje del personal, usa `/staffpm` seguido del id de los destinatarios. Para mayor facilidad, puedes usar `/reply` para responder al último mensaje del personal que recibiste.",
+		reply_pm_not_found = "No hay ningún mensaje del personal al que responder.",
 
 		important_staff_pm_title = "!STAFF PM De ti -> ${recipient}",
 		close_staffpm = "Cerrar",
@@ -245,6 +253,13 @@ OP.Global.Locales.Languages["es-ES"] = {
 		player_revived_success = "Jugador revivido con éxito.",
 
 		missing_valid_license_identifier_parameter = "Falta un parámetro válido de 'identificador de licencia'.",
+
+		wipe_broken = "broken - Objetos rotos/fragmentados",
+		wipe_npcs = "npcs - NPCs y sus vehículos.",
+		wipe_objects = "objects - Todos los objetos",
+		wipe_vehicles = "vehicles - Todos los vehículos",
+		wipe_peds = "peds - Todos los Peds",
+		wipe_doors = "doors - Todos los objetos de puertas",
 
 		wiped_entities = "Entidades borradas. ${deletedEntities} entidades en red borradas.",
 		wipe_entities_logs_title = "Entidades Eliminadas",
@@ -331,8 +346,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		warning_message_removed_title = "Mensaje de Advertencia Eliminado",
 		warning_message_removed_details = "${consoleName} ha eliminado el mensaje de advertencia.",
 
-		indestructibility_on = "Activada la 'Indestructibilidad'.",
-		indestructibility_off = "Desactivada la 'Indestructibilidad'.",
 		speed_boost_on = "Activado el 'Aumento de Velocidad'.",
 		speed_boost_off = "Desactivado el 'Aumento de Velocidad'.",
 		nitro_boost_on = "Activado 'Aumento de Nitro'.",
@@ -367,33 +380,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		population_density_is_not_on = "La multiplicación de la densidad de población no está activada.",
 		population_density_already_set_to = "La multiplicación de la densidad de población ya está establecida en ${multiplierLabel}%.",
 
-		enabled_features_list = "Características habilitadas:",
-		aimbot_feature = "Aimbot",
-		disabled_collisions_feature = "Colisiones desactivadas",
-		disabled_recoil_feature = "Rechazo Desactivado",
-		evidence_view_feature = "Vista de Pruebas",
-		hit_indicator_feature = "Indicador de Golpe",
-		indestructibility_feature = "Indestructibilidad",
-		infinite_ammo_feature = "Munición Infinita",
-		invisibility_feature = "Invisibilidad",
-		muted_sirens_feature = "Sirenas Silenciadas",
-		nitro_boost_feature = "Impulso de Nitro",
-		no_nearby_vehicles_feature = "Sin Vehículos Cercanos",
-		peeking_feature = "Espiar",
-		roll_control_feature = "Control de Giro",
-		speed_boost_feature = "Impulso de Velocidad",
-		speed_up_progress_bar_feature = "Acelerar la Barra de Progreso",
-		sticky_feet_feature = "Pegajoso de pies",
-		wallhack_feature = "Wallhack",
-		watching_feature = "Observando",
-		fortnite_feature = "Fortnite",
-		reflection_feature = "Reflexión de daño",
-		stable_cam_feature = "Cámara Estable",
-		super_jump_feature = "Super Salto",
-		server_id_hidden_feature = "ID del Servidor Oculta",
-		fake_disconnect_feature = "Desconexión Falsa",
-		brighter_nights_feature = "BN",
-
 		you_are_not_in_a_vehicle = "No estás en un vehículo.",
 		repaired_vehicle = "Vehículo reparado.",
 		player_not_in_vehicle = "Ese jugador no está en un vehículo.",
@@ -407,16 +393,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 		success_nos_refill = "NOS rellenado con éxito.",
 		failed_nos_refill = "Fallo al rellenar NOS.",
 
-		refill_nitro_missing_permissions = "El jugador intentó rellenar su NOS sin los permisos adecuados.",
-
 		register_invalid_character_id = "ID de personaje no válida.",
 		register_invalid_slot = "Espacio de inventario no válido.",
 		register_weapon_success = "Arma registrada correctamente en el espacio ${slotId} en el personaje con ID de personaje ${cid}.",
 		no_serial_number = "Invalid or missing number plate.",
 		unknown_character_id = "Successfully put a hold on the vehicle with number plate `${plate}` for ${time}.",
 		register_weapon_failed = "No se pudo registrar el arma.",
-
-		register_weapon_missing_permissions = "El jugador intentó registrar un arma sin los permisos necesarios.",
 
 		vehicle_smoke_invalid_class = "No se puede activar el humo del vehículo para esta clase de vehículo.",
 
@@ -509,14 +491,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 		cleaned_ped_self = "Tu personaje se ha limpiado correctamente.",
 		clean_ped_failed = "Error al intentar limpiar al personaje.",
 		cleaned_ped_for_all = "Todos los personajes han sido limpiados correctamente.",
-		clean_ped_no_permission = "Se intentó limpiar el personaje de un jugador sin los permisos adecuados.",
 
 		item_durability_set_success = "La durabilidad del objeto en el slot ${slotId} se ha establecido correctamente en ${amount}%",
 		item_durability_set_failed = "Error al intentar establecer la durabilidad del objeto.",
 		item_durability_invalid_amount = "Cantidad de durabilidad inválida (debe ser entre 0 y 100).",
-		item_durability_set_no_permission = "Intento de cambiar la durabilidad de un objeto sin permisos suficientes.",
 
-		item_metadata_set_no_permission = "Intento de cambiar los metadatos de un objeto sin permisos suficientes.",
 		item_metadata_set_success = "Se establecieron correctamente los metadatos del objeto en la ranura ${slotId}.",
 		item_metadata_set_failed = "No se pudieron establecer los metadatos del objeto.",
 		item_metadata_missing_key = "Falta la clave de metadatos.",
@@ -529,8 +508,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		identity_set_failed = "Error al establecer la identidad de ${displayName}.",
 		identity_hud = "Identidad: ${playerName}",
 
-		set_identity_no_permission = "El jugador intentó establecer su nombre de jugador sin los permisos apropiados.",
-
 		invalid_range_parameter = "Parámetro de rango inválido.",
 		wipe_first_owned_success = "Se eliminaron exitosamente todas las ${amount} entidades propiedad del jugador con ID de servidor `${serverId}`.",
 		wipe_first_owned_success_range = "Se eliminaron exitosamente todas las ${amount} entidades propiedad del jugador con ID de servidor `${serverId}` en un rango de ${range} m.",
@@ -541,11 +518,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		scoop_invalid = "No has recogido a ningún jugador.",
 		unscooped_players = "No recogidos ${amount} de ${total} jugador(es).",
 		unscoop_failed = "Error al dejar a los jugadores en el suelo.",
-
-		toggle_collisions_missing_permissions = "El jugador intentó toggle sus colisiones sin los permisos necesarios.",
-		wipe_first_owned_missing_permissions = "El jugador intentó eliminar todas las entidades que posee sin los permisos necesarios.",
-
-		freeze_missing_permissions = "El jugador intentó congelar o descongelar a otro jugador sin los permisos necesarios.",
 
 		freeze_success = "Se congeló con éxito a ${consoleName}.",
 		failed_freeze = "No se pudo congelar al jugador.",
@@ -562,13 +534,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 		slap_failed = "No se pudo abofetear al jugador.",
 		slap_logs_title = "Jugador abofeteado",
 		slap_logs_details = "${consoleName} abofeteó a ${targetName}.",
-		slap_missing_permissions = "El jugador intentó abofetear a otro jugador sin los permisos necesarios.",
 
 		damaged_player = "Dañó exitosamente a ${consoleName} por ${damage} puntos de daño.",
 		damage_player_failed = "No se pudo dañar al jugador.",
 		damage_player_logs_title = "Jugador Dañado",
 		damage_player_logs_details = "${consoleName} ha dañado a ${targetConsoleName} con ${damage} puntos de daño.",
-		damage_player_missing_permissions = "El jugador intentó dañar a otro jugador sin permisos adecuados.",
 
 		refill_nitro_logs_title = "Reposición de Nitro",
 		refill_nitro_logs_details = "${consoleName} ha repuesto su nitro.",
@@ -599,15 +569,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		clean_ped_logs_title = "Personaje Limpiado",
 		clean_ped_logs_details = "${consoleName} ha limpiado el personaje de ${targetName}.",
 
-		invalid_job_search = "Búsqueda de trabajo inválida (debe tener al menos 3 caracteres).",
-		failed_job_search = "Fallo al buscar trabajos.",
-		job_search_no_results = "No se encontraron trabajos.",
-		job_search_results = "Asignado trabajo a ${consoleName}: \"${jobName}, ${departmentName}, ${positionName}\" (Puntuación: ${score}).",
-		job_no_character = "Failed to put a hold on the vehicle.",
-
-		job_reset_success = "Trabajo restablecido correctamente para ${consoleName}.",
-		failed_job_reset = "Error al restablecer el trabajo.",
-
 		create_vehicle_logs_title = "Vehículo Creado",
 		create_vehicle_logs_details = "${consoleName} creó un vehículo con el nombre de modelo `${modelName}`.",
 
@@ -627,13 +588,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		wipe_first_owned_logs_details = "${consoleName} ha borrado ${amount} entidades primero propiedad del jugador con id de servidor `${serverId}` con un rango de ${range}m.",
 
 		unscoop_logs_title = "Jugadores No Recogidos",
-		unscoop_logs_details = "${consoleName} ha dejado de recoger a ${amount} jugador(es) en `${coords}`.",
-
-		set_job_logs_title = "Establecer Trabajo",
-		set_job_logs_details = "${consoleName} asignó a ${targetConsoleName} (#${characterId}) el trabajo `${jobName}, ${departmentName}, ${positionName}` (Puntuación: ${score}, Búsqueda: `${search}`).",
-
-		reset_job_logs_title = "Restablecer Trabajo",
-		reset_job_logs_details = "${consoleName} restableció el trabajo de ${targetConsoleName} (#${characterId})."
+		unscoop_logs_details = "${consoleName} ha dejado de recoger a ${amount} jugador(es) en `${coords}`."
 	},
 
 	anti_cheat = {
@@ -663,7 +618,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		-- GPT-4 generated ban messages
 		bad_entity_spawn = "Vaya, ¿intentando invocar el antiguo artefacto de `${modelName}`? Esto no es un episodio de Antiques Roadshow, y ese reliquia se quedará en la bóveda.",
-		bad_screen_word_ban = "Hemos oído hablar de exámenes abiertos, pero esto es ridículo",
 		blacklisted_command_ban = "Lo siento, no tienes permisos para ejecutar este comando. Por favor, contacta con los administradores del servidor si crees que esto es un error.",
 		clear_tasks_ban = "Esto no es un centro de entrenamiento de trucos de la mente Jedi. Se ha registrado y rechazado tus intentos de influir en la libre voluntad de los demás.",
 		damage_modifier_ban = "Tu nivel de poder no puede ser superior a 9000.",
@@ -690,7 +644,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		suspicious_explosion_ban = "Lo siento, pero esto no es una película de Michael Bay. El uso excesivo de pirotecnia no está permitido.",
 		text_entry_ban = "No está permitido inspeccionar elementos en este navegador.",
 		thermal_night_vision_ban = "No se permite utilizar 'Brighter Nights'.",
-		underground_ban = "Parece que has caído en un agujero de conejo.",
 		vehicle_modification_ban = "No pudiste encontrar el fluido para faros de tu coche.",
 		vehicle_spawn_ban = "¿Soñando con un paseo en ${modelName}, verdad? Esto no es una sala de exposición y ¡ese modelo en particular está en una lista de espera eterna!",
 		weapon_spawn_ban = "¿Anhelando el ${weaponName}, eh? Esto no es un arsenal y ¡esa pieza aún está en la fragua!",
@@ -700,7 +653,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Creación Incorrecta",
-		type_bad_screen_word = "Palabra de Pantalla Incorrecta",
 		type_blacklisted_command = "Comando en Lista Negra",
 		type_clear_tasks = "Limpiar Tareas",
 		type_damage_modifier = "Modificador de Daño",
@@ -734,7 +686,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		type_suspicious_transfer = "Transferencia Sospechosa",
 		type_text_entry = "Entrada de Texto",
 		type_thermal_night_vision = "Visión Térmica/Visión Nocturna",
-		type_underground = "Subterráneo",
 		type_vehicle_modification = "Modificación de Vehículo",
 		type_illegal_local_vehicle = "Uso de vehículo no en red",
 
@@ -899,6 +850,13 @@ OP.Global.Locales.Languages["es-ES"] = {
 		ragdoll_command_parameter_server_id_help = "Especifica un id de servidor para dejar sin control a otro jugador.",
 		ragdoll_command_substitutes = "",
 
+		-- animations/ledges
+		sit_ledge_command = "sentarse_borde",
+		sit_ledge_command_help = "Siéntate en un borde si estás frente a uno. Debes estar mirando hacia el borde.",
+		sit_ledge_command_parameter_variation = "variación",
+		sit_ledge_command_parameter_variation_help = "Qué animación de sentado reproducir (1 - 4).",
+		sit_ledge_command_substitutes = "borde",
+
 		-- animations/walkstyles
 		marathon_command = "maraton",
 		marathon_command_help = "Activa/desactiva la función de depuración 'marathon' para ver qué estilos de caminar necesitan ajustarse.",
@@ -933,11 +891,23 @@ OP.Global.Locales.Languages["es-ES"] = {
 		important_staff_pm_command_parameter_message_help = "El mensaje importante que te gustaría enviar.",
 		important_staff_pm_command_substitutes = "!staffpm, !staff_pm",
 
+		reply_pm_command = "responder_mp",
+		reply_pm_command_help = "Responder al último mensaje de staff que recibiste.",
+		reply_pm_command_parameter_message = "mensaje",
+		reply_pm_command_parameter_message_help = "El mensaje que te gustaría enviar.",
+		reply_pm_command_substitutes = "responder",
+
 		staff_command = "equipo",
 		staff_command_help = "Transmite un mensaje a todos los miembros del equipo activos.",
 		staff_command_parameter_message = "mensaje",
 		staff_command_parameter_message_help = "El mensaje que desea enviar.",
 		staff_command_substitutes = "",
+
+		local_staff_command = "personal_local",
+		local_staff_command_help = "Enviar un mensaje a todos los miembros del personal activos dentro de un radio de 25m.",
+		local_staff_command_parameter_message = "mensaje",
+		local_staff_command_parameter_message_help = "El mensaje que deseas enviar.",
+		local_staff_command_substitutes = "personallstaff",
 
 		wipe_command = "borrar",
 		wipe_command_help = "Borrar entidades no deseadas del mapa.",
@@ -946,7 +916,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		wipe_command_parameter_ignore_local_entities = "ignorar entidades locales",
 		wipe_command_parameter_ignore_local_entities_help = "¿Ignorar entidades no conectadas a la red? Si está limpiando a un tramposo, se recomienda que establezca esto en `true` o` 1`.",
 		wipe_command_parameter_model_name = "nombre de modelo",
-		wipe_command_parameter_model_name_help = "Si quieres eliminar solo entidades de un cierto nombre de modelo, inserta aquí el nombre del modelo. De lo contrario, deja en blanco, en `false` o `0`. También puedes establecer esto en `vehicles` (vehículos), `peds` (personas), `objects` (objetos) o `doors` (puertas).",
+		wipe_command_parameter_model_name_help = "Si deseas eliminar solo entidades de un cierto nombre de modelo, inserta un nombre de modelo aquí. De lo contrario, déjalo en blanco, `false` o `0`. También puedes configurarlo como `vehículos`, `peatones`, `objetos`, `puertas`, `rotos` o `npcs`.",
 		wipe_command_parameter_camera = "buscar",
 		wipe_command_parameter_camera_help = "Tu valor de búsqueda (debe coincidir exactamente).",
 		wipe_command_substitutes = "",
@@ -1053,33 +1023,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 		nitro_boost_command_parameter_server_id_help = "Si desea activar o desactivar el 'impulso de nitro' para alguien más, inserte su id de servidor aquí.",
 		nitro_boost_command_substitutes = "nitro",
 
-		indestructibility_command = "indestructibilidad",
-		indestructibility_command_help = "Activar o desactivar 'indestructibilidad'.",
-		indestructibility_command_parameter_server_id = "id del servidor",
-		indestructibility_command_parameter_server_id_help = "Si desea activar o desactivar la 'indestructibilidad' para alguien más, inserte su id de servidor aquí.",
-		indestructibility_command_parameter_ignore_vehicle = "crear_vehiculo_retencion",
-		indestructibility_command_parameter_ignore_vehicle_help = "Crea una retención de vehículo. Esto hará que la policía incaute el vehículo durante un período de tiempo prolongado. (Nota: Cualquier vehículo que haya sido retirado seguirá existiendo)",
-		indestructibility_command_substitutes = "ind, god, god_mode, godmode",
-
 		no_nearby_vehicles_command = "sin_vehiculos_cerca",
 		no_nearby_vehicles_command_help = "Activa o desactiva la opción de 'sin vehículos cercanos'.",
 		no_nearby_vehicles_command_parameter_server_id = "id_del_servidor",
 		no_nearby_vehicles_command_parameter_server_id_help = "Si deseas activar o desactivar la opción de 'sin vehículos cercanos' para otra persona, introduce su id de servidor aquí.",
 		no_nearby_vehicles_command_substitutes = "",
-
-		job_command = "trabajo",
-		job_command_help = "Actualizar el trabajo de alguien basado en una búsqueda.",
-		job_command_parameter_server_id = "id servidor",
-		job_command_parameter_server_id_help = "El id del servidor del jugador o 0 para seleccionarse a sí mismo.",
-		job_command_parameter_search = "búsqueda",
-		job_command_parameter_search_help = "El nombre del trabajo/departamento/posición o una parte de él para buscar o `none` para eliminar el trabajo.",
-		job_command_substitutes = "",
-
-		reset_job_command = "resetear_trabajo",
-		reset_job_command_help = "Resetea el trabajo de alguien a desempleado.",
-		reset_job_command_parameter_server_id = "id de servidor",
-		reset_job_command_parameter_server_id_help = "El id de servidor del jugador o 0 para seleccionarte a ti mismo.",
-		reset_job_command_substitutes = "",
 
 		watching_command = "observando",
 		watching_command_help = "Muestra todos los jugadores que están espiando cerca.",
@@ -1403,6 +1351,16 @@ OP.Global.Locales.Languages["es-ES"] = {
 		trigger_ems_call_command_help = "Envía un llamado local de EMS desde tu posición.",
 		trigger_ems_call_command_substitutes = "",
 
+		ridealong_command = "montarse",
+		ridealong_command_help = "Activa si puedes entrar en los vehículos de los NPC.",
+		ridealong_command_substitutes = "",
+
+		kill_ped_command = "matar_ped",
+		kill_ped_command_help = "Mata al ped con el ID de red proporcionado.",
+		kill_ped_command_parameter_network_id = "ID de red",
+		kill_ped_command_parameter_network_id_help = "El ID de red del ped a matar.",
+		kill_ped_command_substitutes = "",
+
 		-- base/anti_cheat
 		model_detect_add_command = "agregar_detección_modelo",
 		model_detect_add_command_help = "Agrega temporalmente un modelo a la lista de detección. La lista se reinicia al reiniciar el servidor.",
@@ -1464,6 +1422,19 @@ OP.Global.Locales.Languages["es-ES"] = {
 		get_pings_command_help = "Obtener el ping promedio a varios hosts en todo el mundo para encontrar la ubicación de host más adecuada para los jugadores actuales del servidor.",
 		get_pings_command_substitutes = "",
 
+		-- base/points
+		points_command = "puntos",
+		points_command_help = "Muestra la cantidad de puntos OP que tienes.",
+		points_command_substitutes = "",
+
+		use_points_command = "usar_puntos",
+		use_points_command_help = "Usar puntos. Esto se utiliza cuando un servidor tiene ventajas especiales por las que cobran manualmente. ¡No lo uses a menos que se te indique, ya que te quitará tus puntos sin pensarlo dos veces!",
+		use_points_command_parameter_amount = "cantidad",
+		use_points_command_parameter_amount_help = "La cantidad de puntos que el servidor intentará tomar de ti.",
+		use_points_command_parameter_label = "etiqueta",
+		use_points_command_parameter_label_help = "Una etiqueta que se registrará junto con el uso de puntos.",
+		use_points_command_substitutes = "",
+
 		-- base/profile
 		profile_debug_command = "depurar_perfil",
 		profile_debug_command_help = "Activa o desactiva el depurador de perfiles.",
@@ -1478,12 +1449,16 @@ OP.Global.Locales.Languages["es-ES"] = {
 		-- base/users
 		playtime_command = "tiempojugado",
 		playtime_command_help = "Comprueba el tiempo total de juego en el servidor, así como el tiempo de juego en esta sesión.",
+		playtime_command_parameter_total_playtime = "tiempo total de juego",
+		playtime_command_parameter_total_playtime_help = "Por defecto, se utilizará el tiempo de juego realmente jugado en los personajes. Establece esto en `y` para utilizar el tiempo total en el servidor en su lugar.",
 		playtime_command_parameter_server_id = "id servidor",
 		playtime_command_parameter_server_id_help = "La ID del jugador que quieres comprobar el tiempo de juego. Puedes dejarlo en blanco o en `0` para elegirte a ti mismo.",
 		playtime_command_substitutes = "",
 
 		leaderboard_command = "clasificación",
 		leaderboard_command_help = "Comprueba la clasificación de tiempo de juego.",
+		leaderboard_command_parameter_total_playtime = "tiempo total de juego",
+		leaderboard_command_parameter_total_playtime_help = "De forma predeterminada se usará el tiempo de juego real de los personajes. Establece esto en `y` para usar el tiempo total en el servidor en su lugar.",
 		leaderboard_command_substitutes = "",
 
 		package_command = "paquete",
@@ -1521,6 +1496,13 @@ OP.Global.Locales.Languages["es-ES"] = {
 		create_airdrop_custom_command_parameter_items = "artículos",
 		create_airdrop_custom_command_parameter_items_help = "Una cadena que contiene qué artículos y cuántos de ellos debería haber. La cadena debería verse así: 'manzana_verde:5,hamburguesa:3'.",
 		create_airdrop_custom_command_substitutes = "",
+
+		-- game/airports
+		registration_lookup_command = "consulta_matrícula",
+		registration_lookup_command_help = "Buscar la matrícula de una aeronave.",
+		registration_lookup_command_parameter_registration = "matrícula",
+		registration_lookup_command_parameter_registration_help = "La matrícula de la aeronave (ej. N123AZ).",
+		registration_lookup_command_substitutes = "registro",
 
 		-- game/airstrike
 		call_airstrike_command = "llamar_airstrike",
@@ -1795,6 +1777,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 		reconnect_command_socket_command_help = "Intenta reconectar al socket de comandos.",
 		reconnect_command_socket_command_substitutes = "",
 
+		-- game/container_storage
+		containers_command = "contenedores",
+		containers_command_help = "Ver y gestionar tus contenedores de almacenamiento alquilados.",
+		containers_command_substitutes = "",
+
 		-- game/crafting
 		crafting_debug_command = "depuración_crafting",
 		crafting_debug_command_help = "Depura todas las ubicaciones de crafteo.",
@@ -1841,8 +1828,14 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		-- game/debug
 		debug_command = "depurar",
-		debug_command_help = "Activar/desactivar el depurador de entidades. Esto mostrará información general sobre las entidades cercanas.",
+		debug_command_help = "Activar o desactivar el depurador. Esto mostrará información general sobre ti y el mundo, y mostrará entidades a las que miras.",
+		debug_command_parameter_minimal = "minimo",
+		debug_command_parameter_minimal_help = "Mostrar solo la información mínima (evita muchas llamadas nativas).",
 		debug_command_substitutes = "",
+
+		entity_debug_command = "depurar_entidad",
+		entity_debug_command_help = "Activar o desactivar el depurador de entidades. Esto mostrará información general sobre la entidad a la que estás mirando.",
+		entity_debug_command_substitutes = "",
 
 		npc_debug_command = "depurar_npc",
 		npc_debug_command_help = "Depura a todos los NPC no animales alrededor tuyo.",
@@ -1978,6 +1971,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 		play_animation_command_parameter_flags_help = "Los indicadores de la animación que quieres reproducir.",
 		play_animation_command_substitutes = "animación",
 
+		play_scenario_command = "reproducir_escenario",
+		play_scenario_command_help = "Reproduce el escenario especificado.",
+		play_scenario_command_parameter_scenario = "escenario",
+		play_scenario_command_parameter_scenario_help = "El nombre del escenario que deseas reproducir.",
+		play_scenario_command_substitutes = "escenario",
+
 		draw_coords_command = "mostrar_coordenadas",
 		draw_coords_command_help = "Muestra las coordenadas en el mundo.",
 		draw_coords_command_parameter_x = "x",
@@ -2106,6 +2105,24 @@ OP.Global.Locales.Languages["es-ES"] = {
 		random_position_command_help = "Te teleporta a una posición aleatoria en la isla principal. (También activa tu invisibilidad)",
 		random_position_command_substitutes = "aleatorio",
 
+		crash_ui_command = "crash_ui",
+		crash_ui_command_help = "Provoca un evento de interfaz de usuario que hará que la UI falle intencionadamente y active el notorio 'bug de la granada aturdidora'.",
+		crash_ui_command_substitutes = "",
+
+		toggle_deep_log_events_command = "alternar_eventos_log_profundo",
+		toggle_deep_log_events_command_help = "Activa o desactiva el registro detallado de eventos en la consola.",
+		toggle_deep_log_events_command_substitutes = "",
+
+		find_native_toggles_command = "find_native_toggles",
+		find_native_toggles_command_help = "Te ayudará a encontrar potenciales nativas de 'toggle' para ciertos comportamientos revisando una serie de nativas en cada tick. Se registrará cada vez que algunas de estas cambien.",
+		find_native_toggles_command_parameter_extreme = "extreme",
+		find_native_toggles_command_parameter_extreme_help = "Incluye también todas las nativas desconocidas que no tienen parámetros.",
+		find_native_toggles_command_substitutes = "",
+
+		show_cancelled_vehicles_command = "mostrar_vehiculos_cancelados",
+		show_cancelled_vehicles_command_help = "Alternar la visualización de vehículos cancelados.",
+		show_cancelled_vehicles_command_substitutes = "",
+
 		-- game/debug_menu
 		debug_menu_command = "menú_depuración",
 		debug_menu_command_help = "Activa/desactiva el menú de depuración.",
@@ -2139,6 +2156,14 @@ OP.Global.Locales.Languages["es-ES"] = {
 		door_debug_command = "depurar_puerta",
 		door_debug_command_help = "Depura información sobre puertas cercanas.",
 		door_debug_command_substitutes = "",
+
+		disable_doors_command = "desactivar_puertas",
+		disable_doors_command_help = "Deshabilita por completo el script de puertas para modificar objetos de puertas.",
+		disable_doors_command_substitutes = "",
+
+		add_doors_command = "agregar_puertas",
+		add_doors_command_help = "Alternar la adición de puertas para ser copiadas.",
+		add_doors_command_substitutes = "",
 
 		-- game/effect_zones
 		effect_zones_debug_command = "depurar_zonas_efecto",
@@ -2413,10 +2438,21 @@ OP.Global.Locales.Languages["es-ES"] = {
 		animal_debug_command_help = "Activa/desactiva la depuración de animales.",
 		animal_debug_command_substitutes = "",
 
+		-- game/indestructability
+		indestructibility_command = "indestructibilidad",
+		indestructibility_command_help = "Alternar tu indestructibilidad.",
+		indestructibility_command_parameter_server_id = "id del servidor",
+		indestructibility_command_parameter_server_id_help = "Si deseas alternar la indestructibilidad de otra persona, inserta aquí su id de servidor.",
+		indestructibility_command_substitutes = "ind, god, god_mode, godmode",
+
 		-- game/injuries
 		inspect_command = "inspeccionar",
 		inspect_command_help = "Realiza una inspección al jugador más cercano para buscar lesiones.",
 		inspect_command_substitutes = "",
+
+		autopsy_command = "autopsia",
+		autopsy_command_help = "Realiza una autopsia en el cuerpo del jugador más cercano. (Te mostrará la última causa de muerte registrada)",
+		autopsy_command_substitutes = "",
 
 		-- game/instances
 		instance_create_command = "crear_instancia",
@@ -2611,6 +2647,19 @@ OP.Global.Locales.Languages["es-ES"] = {
 		refresh_magazines_command_help = "Actualizar los cargadores en caso de cambios en la base de datos.",
 		refresh_magazines_command_substitutes = "",
 
+		create_magazine_command = "crear_revista",
+		create_magazine_command_help = "Genera una revista de un número específico de una serie determinada.",
+		create_magazine_command_parameter_series_name = "nombre de la serie",
+		create_magazine_command_parameter_series_name_help = "El nombre de la serie de la revista.",
+		create_magazine_command_parameter_issue_id = "identificador de número",
+		create_magazine_command_parameter_issue_id_help = "El número de edición que quieres generar.",
+		create_magazine_command_substitutes = "",
+
+		-- game/map
+		live_map_command = "mapa_en_vivo",
+		live_map_command_help = "Activar/desactivar el mapa en vivo (mostrará a todos los jugadores en tu mapa).",
+		live_map_command_substitutes = "",
+
 		-- game/mdt
 		mdt_command = "mdt",
 		mdt_command_help = "Activar/Desactivar la interfaz del MDT.",
@@ -2629,6 +2678,19 @@ OP.Global.Locales.Languages["es-ES"] = {
 		maxwell_debug_command = "maxwell_debug",
 		maxwell_debug_command_help = "Depurar la ubicación de Maxwells.",
 		maxwell_debug_command_substitutes = "",
+
+		-- game/minecraft
+		minecraft_command = "minecraft",
+		minecraft_command_help = "Coloca bloques de minecraft, ¡muy épico!",
+		minecraft_command_parameter_no_sound = "sin sonido",
+		minecraft_command_parameter_no_sound_help = "Sin sonido al colocar los bloques.",
+		minecraft_command_substitutes = "",
+
+		minecraft_wipe_command = "minecraft_limpiar",
+		minecraft_wipe_command_help = "Limpiar todos los bloques de minecraft en un radio dado.",
+		minecraft_wipe_command_parameter_radius = "radio",
+		minecraft_wipe_command_parameter_radius_help = "El radio en el que quieres eliminar bloques. (0 = todos los bloques, máximo 5000)",
+		minecraft_wipe_command_substitutes = "",
 
 		-- game/mining
 		mining_debug_command = "depuración_minería",
@@ -2750,6 +2812,15 @@ OP.Global.Locales.Languages["es-ES"] = {
 		whois_command_parameter_search_help = "El nombre o parte del nombre del jugador.",
 		whois_command_substitutes = "",
 
+		-- game/model_view
+		model_view_command = "ver_modelo",
+		model_view_command_help = "Ver un modelo con un fondo de pantalla verde.",
+		model_view_command_parameter_model = "modelo",
+		model_view_command_parameter_model_help = "El nombre del modelo o hash que te gustaría ver.",
+		model_view_command_parameter_no_blocker = "sin bloqueador",
+		model_view_command_parameter_no_blocker_help = "Desactivar el bloqueador de sombras (por defecto: no).",
+		model_view_command_substitutes = "modelo, vista",
+
 		-- game/money
 		cash_command = "dinero",
 		cash_command_help = "Mostrar el saldo de tu dinero en efectivo.",
@@ -2835,6 +2906,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 		oxy_tutorial_command = "tutorial_oxy",
 		oxy_tutorial_command_help = "Inicia el tutorial de Oxy la próxima vez que empieces un recorrido.",
 		oxy_tutorial_command_substitutes = "",
+
+		-- game/pacific_bank
+		power_generators_debug_command = "depurar_generadores_energia",
+		power_generators_debug_command_help = "Activa o desactiva la depuración de los generadores de energía del Banco del Pacífico.",
+		power_generators_debug_command_substitutes = "",
 
 		-- game/panel
 		panel_command = "panel",
@@ -2937,13 +3013,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		ped_steal_command_parameter_server_id = "id_servidor",
 		ped_steal_command_parameter_server_id_help = "La ID del servidor del jugador.",
 		ped_steal_command_substitutes = "robar_ped",
-
-		-- game/ped_takeover
-		takeover_ped_command = "controlar_ped",
-		takeover_ped_command_help = "Te permite controlar un ped específico.",
-		takeover_ped_command_parameter_network_id = "id de red",
-		takeover_ped_command_parameter_network_id_help = "El id de red del ped que deseas controlar.",
-		takeover_ped_command_substitutes = "controlar",
 
 		-- game/ped_tasks
 		ped_debug_command = "depurar_ped",
@@ -3212,6 +3281,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 		savings_accounts_command_help = "MANUAL",
 		savings_accounts_command_substitutes = "${kills} habitantes asesinados ~t~/~w~ ${ranOver} atropellados",
 
+		-- game/scenarios
+		scenarios_debug_command = "depurar_escenarios",
+		scenarios_debug_command_help = "Activa o desactiva la depuración de los escenarios.",
+		scenarios_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "metajuego",
 		metagame_command_help = "Activar o desactivar la visualización constante de los IDs de los jugadores.",
@@ -3390,13 +3464,13 @@ OP.Global.Locales.Languages["es-ES"] = {
 		tp_to_player_command_help = "Te teletransporta a un jugador.",
 		tp_to_player_command_parameter_server_id = "id_servidor",
 		tp_to_player_command_parameter_server_id_help = "El id de servidor del jugador al que deseas teletransportarte.",
-		tp_to_player_command_substitutes = "",
+		tp_to_player_command_substitutes = "tpa",
 
 		tp_player_here_command = "tp_jugador_aqui",
 		tp_player_here_command_help = "Teletransporta a un jugador hasta ti.",
 		tp_player_here_command_parameter_server_id = "id_servidor",
 		tp_player_here_command_parameter_server_id_help = "El id de servidor del jugador que deseas teletransportar.",
-		tp_player_here_command_substitutes = "",
+		tp_player_here_command_substitutes = "tpaqui",
 
 		tp_player_player_command = "tp_player_player",
 		tp_player_player_command_help = "Teletransporta a un jugador a otro jugador.",
@@ -3504,6 +3578,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 		drive_to_command_parameter_network_id_help = "Ya sea `number` o `twitter`.",
 		drive_to_command_substitutes = "",
 
+		hop_in_command = "subirse",
+		hop_in_command_help = "Hace que el NPC más cercano se suba a tu vehículo (si hay un asiento libre).",
+		hop_in_command_parameter_network_id = "id de red",
+		hop_in_command_parameter_network_id_help = "El id de red del NPC (opcional).",
+		hop_in_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "voice_debug",
 		voice_debug_command_help = "Alternar la depuración de voz.",
@@ -3589,14 +3669,18 @@ OP.Global.Locales.Languages["es-ES"] = {
 		ped_forwards_command_help = "Hace que el peatón más cercano en un vehículo conduzca hacia adelante.",
 		ped_forwards_command_substitutes = "",
 
+		vehicle_flip_command = "voltear_vehículo",
+		vehicle_flip_command_help = "Hacer que un vehículo se dé la vuelta a lo largo de un eje.",
+		vehicle_flip_command_parameter_axis = "eje",
+		vehicle_flip_command_parameter_axis_help = "El eje alrededor del cual voltear, ya sea `x`, `y` o `z`.",
+		vehicle_flip_command_parameter_network_id = "id de red",
+		vehicle_flip_command_parameter_network_id_help = "El id de red del vehículo a voltear. Dejar vacío para voltear el vehículo en el que estás.",
+		vehicle_flip_command_substitutes = "vf",
+
 		-- global/entities
 		local_entities_debug_command = "depuración_entidades_locales",
 		local_entities_debug_command_help = "Activa o desactiva la depuración de entidades locales.",
 		local_entities_debug_command_substitutes = "lentidades",
-
-		no_ped_population_areas_debug_command = "areas_poblacion_sin_ped_debug",
-		no_ped_population_areas_debug_command_help = "Activa o desactiva el depurador de 'áreas sin población de peatones'.",
-		no_ped_population_areas_debug_command_substitutes = "",
 
 		-- global/explosions
 		create_explosion_command = "crear_explosión",
@@ -3627,12 +3711,22 @@ OP.Global.Locales.Languages["es-ES"] = {
 		entity_states_command = "estados_entidad",
 		entity_states_command_help = "Muestra todos los estados de cierta entidad",
 		entity_states_command_parameter_network_id = "ID de red",
-		entity_states_command_parameter_network_id_help = "El ID de red de la entidad",
+		entity_states_command_parameter_network_id_help = "La ID de red de la entidad. Si se deja en blanco o se establece en 0, seleccionará el vehículo en el que te encuentras o, si no estás en uno, tu propio personaje.",
 		entity_states_command_substitutes = "",
 
 		draw_entity_states_command = "dibujar_estados_entidad",
 		draw_entity_states_command_help = "Muestra todas las entidades con 1 o más estados.",
 		draw_entity_states_command_substitutes = "",
+
+		set_entity_state_command = "set_entity_state",
+		set_entity_state_command_help = "Establece el estado de una entidad al valor indicado sin importar las restricciones.",
+		set_entity_state_command_parameter_network_id = "ID de red",
+		set_entity_state_command_parameter_network_id_help = "La ID de red de la entidad. Si se deja en blanco o se establece en 0, seleccionará el vehículo en el que te encuentras o, si no estás en uno, tu propio personaje.",
+		set_entity_state_command_parameter_key = "clave",
+		set_entity_state_command_parameter_key_help = "El nombre del estado.",
+		set_entity_state_command_parameter_value = "valor",
+		set_entity_state_command_parameter_value_help = "El valor que deseas asignar al estado.",
+		set_entity_state_command_substitutes = "",
 
 		-- illegal/drugs
 		drugs_debug_command = "debug_drogas",
@@ -3652,6 +3746,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 		bus_debug_command = "bus_debug",
 		bus_debug_command_help = "Dibuja todas las paradas de autobús.",
 		bus_debug_command_substitutes = "",
+
+		start_bus_route_command = "iniciar_ruta_autobus",
+		start_bus_route_command_help = "Iniciar una ruta de autobús específica.",
+		start_bus_route_command_parameter_route = "ruta",
+		start_bus_route_command_parameter_route_help = "El nombre de la ruta que deseas iniciar.",
+		start_bus_route_command_substitutes = "",
 
 		--jobs/doj
 		lookup_character_command = "buscar",
@@ -3674,7 +3774,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		toggle_duty_status_command = "alternar_estado_servicio",
 		toggle_duty_status_command_help = "Activa o desactiva tu estado de servicio.",
 		toggle_duty_status_command_parameter_server_id = "id_servidor",
-		toggle_duty_status_command_parameter_server_id_help = "La id del servidor objetivo o vacío si quieres cambiar tu propio estado de servicio.",
+		toggle_duty_status_command_parameter_server_id_help = "La ID del servidor objetivo o vacío si quieres cambiar tu propio estado de servicio.",
 		toggle_duty_status_command_substitutes = "estado_servicio, servicio",
 
 		toggle_training_command = "alternar_entrenamiento",
@@ -3684,6 +3784,30 @@ OP.Global.Locales.Languages["es-ES"] = {
 		toggle_operator_status_command = "cambiar_estado_de_operador",
 		toggle_operator_status_command_help = "Cambia tu estado de operador de emergencias. Con esto activado, recibirás la opción de aceptar llamadas al 911.",
 		toggle_operator_status_command_substitutes = "operador, cambiar_operador, estado_operador",
+
+		-- jobs/emergency
+		remove_clothing_command = "remove_clothing",
+		remove_clothing_command_help = "Eliminar una prenda de vestir en concreto a otro jugador. Solo funciona en jugadores esposados o derribados.",
+		remove_clothing_command_parameter_type = "tipo",
+		remove_clothing_command_parameter_type_help = "El tipo de prenda de vestir que deseas eliminar. Puede ser `máscara`, `gafas`, `sombrero` o `guantes`.",
+		remove_clothing_command_parameter_server_id = "ID del servidor",
+		remove_clothing_command_parameter_server_id_help = "El ID del servidor del jugador al que quieres quitarle la ropa. Si se deja en blanco, se seleccionará al jugador esposado o derribado más cercano.",
+		remove_clothing_command_substitutes = "rc",
+
+		-- jobs/jobs
+		job_command = "trabajo",
+		job_command_help = "Actualizar el trabajo de alguien según un atajo o activar/desactivar la interfaz de trabajo.",
+		job_command_parameter_server_id = "id servidor",
+		job_command_parameter_server_id_help = "El id del servidor del jugador o 0 para seleccionarse a sí mismo.",
+		job_command_parameter_shortcut = "atajo",
+		job_command_parameter_shortcut_help = "El atajo del trabajo que deseas establecer. Deja esto en blanco para activar/desactivar la interfaz de trabajo en su lugar.",
+		job_command_substitutes = "",
+
+		reset_job_command = "resetear_trabajo",
+		reset_job_command_help = "Resetea el trabajo de alguien a desempleado.",
+		reset_job_command_parameter_server_id = "id de servidor",
+		reset_job_command_parameter_server_id_help = "El id de servidor del jugador o 0 para seleccionarte a ti mismo.",
+		reset_job_command_substitutes = "",
 
 		-- jobs/police
 		aim_assist_command = "ayuda_aim",
@@ -3750,12 +3874,19 @@ OP.Global.Locales.Languages["es-ES"] = {
 		set_marriage_command = "set_marriage",
 		set_marriage_command_help = "Establece el estado de matrimonio entre dos personajes.",
 		set_marriage_command_parameter_partner_a_cid = "pareja_a",
-		set_marriage_command_parameter_partner_a_cid_help = "El ID de personaje del primer compañero.",
+		set_marriage_command_parameter_partner_a_cid_help = "El ID del personaje del primer/a pareja/o.",
 		set_marriage_command_parameter_partner_b_cid = "pareja b",
-		set_marriage_command_parameter_partner_b_cid_help = "El id del personaje de la segunda pareja.",
+		set_marriage_command_parameter_partner_b_cid_help = "ID del personaje de la segunda pareja.",
 		set_marriage_command_parameter_state = "estado",
 		set_marriage_command_parameter_state_help = "Ya sea `casado` o `divorciado`.",
 		set_marriage_command_substitutes = "",
+
+		-- jobs/tasks
+		tasks_debug_command = "tasks_debug",
+		tasks_debug_command_help = "Imprime información de depuración sobre todas las tareas en tu F8.",
+		tasks_debug_command_parameter_area_id = "id del área",
+		tasks_debug_command_parameter_area_id_help = "El id del área de la tarea que deseas depurar. Deja vacío para imprimir todas las áreas.",
+		tasks_debug_command_substitutes = "",
 
 		-- jobs/tow
 		toggle_mechanic_messages_command = "alternar_msj_mecánico",
@@ -3767,6 +3898,19 @@ OP.Global.Locales.Languages["es-ES"] = {
 		toggle_anchor_command_help = "Activa o desactiva el ancla de un barco cercano.",
 		toggle_anchor_command_substitutes = "ancla",
 
+		-- vehicles/cruise_control
+		set_cruise_control_speed_command = "set_cruise_control_speed",
+		set_cruise_control_speed_command_help = "Establece la velocidad de control de crucero del vehículo en el que te encuentras.",
+		set_cruise_control_speed_command_parameter_speed = "velocidad",
+		set_cruise_control_speed_command_parameter_speed_help = "La velocidad a la que te gustaría establecerlo.",
+		set_cruise_control_speed_command_substitutes = "control_de_c crucero, cc",
+
+		set_speed_limiter_speed_command = "establecer_limite_de_velocidad",
+		set_speed_limiter_speed_command_help = "Establece el límite de velocidad del vehículo en el que te encuentras.",
+		set_speed_limiter_speed_command_parameter_speed = "velocidad",
+		set_speed_limiter_speed_command_parameter_speed_help = "La velocidad máxima a la que te gustaría establecerlo.",
+		set_speed_limiter_speed_command_substitutes = "limitador_velocidad, lv",
+
 		-- vehicles/damage
 		vehicle_damage_debug_command = "depuración_daño_vehículo",
 		vehicle_damage_debug_command_help = "Depura los valores actuales de daño del vehículo.",
@@ -3777,6 +3921,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		set_fuel_command_help = "Establece el nivel de combustible del vehículo en el que te encuentras.",
 		set_fuel_command_parameter_fuel_level = "nivel de combustible",
 		set_fuel_command_parameter_fuel_level_help = "El nivel de combustible que deseas establecer. Si lo dejas en blanco, se seleccionará automáticamente `100`.",
+		set_fuel_command_parameter_server_id = "id_servidor",
+		set_fuel_command_parameter_server_id_help = "Si deseas establecer el combustible para otro jugador. Dejar en blanco seleccionará automáticamente a ti mismo.",
 		set_fuel_command_substitutes = "combustible",
 
 		-- vehicles/garage_access
@@ -3805,7 +3951,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		give_key_command = "dar_llave",
 		give_key_command_help = "Dar una llave de vehículo a una persona cercana.",
 		give_key_command_parameter_server_id = "id del servidor",
-		give_key_command_parameter_server_id_help = "La id del servidor del jugador al que le quieres dar la llave. Esto se puede dejar en blanco (o en 0) para dársela a la persona más cercana.",
+		give_key_command_parameter_server_id_help = "El ID del servidor del jugador al que le gustaría dar la llave. Esto se puede dejar en blanco (o en 0) para dársela a la persona más cercana.",
 		give_key_command_substitutes = "darllave",
 
 		hotwire_vehicle_command = "puentar_vehículo",
@@ -3824,6 +3970,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 		keys_command_parameter_server_id_help = "Da las llaves del vehículo en el que está a otro jugador.",
 		keys_command_substitutes = "",
 
+		check_ignition_tampering_command = "comprobar_manipulacion_encendido",
+		check_ignition_tampering_command_help = "Comprueba si el encendido ha sido manipulado en el vehículo más cercano.",
+		check_ignition_tampering_command_substitutes = "",
+
 		-- vehicles/modifications
 		wheel_offset_command = "offset_ruedas",
 		wheel_offset_command_help = "Modifica el desplazamiento de las ruedas de un vehículo.",
@@ -3841,6 +3991,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 		wheel_rotation_command_parameter_value_help = "La cantidad que deseas modificar. Esto puede variar entre -0.5 y 0.5, siendo 0 el valor predeterminado.",
 		wheel_rotation_command_substitutes = "",
 
+		-- vehicles/oil
+		oil_level_command = "nivel_aceite",
+		oil_level_command_help = "Comprueba el nivel de aceite del vehículo más cercano.",
+		oil_level_command_substitutes = "aceite",
+
 		-- vehicles/plates
 		fake_plate_command = "placa_falsa",
 		fake_plate_command_help = "Activa o desactiva la placa falsa del vehículo actual.",
@@ -3857,8 +4012,14 @@ OP.Global.Locales.Languages["es-ES"] = {
 		custom_plate_command_parameter_vehicle_id = "id del vehículo",
 		custom_plate_command_parameter_vehicle_id_help = "El ID del vehículo en el que te gustaría tener la matrícula personalizada. (Puedes encontrar este ID en tu garaje)",
 		custom_plate_command_parameter_plate_number = "número de matrícula",
-		custom_plate_command_parameter_plate_number_help = "El número de matrícula que te gustaría establecer. Los números de matrícula solo pueden tener hasta 8 caracteres y solo pueden consistir en letras mayúsculas y números.",
+		custom_plate_command_parameter_plate_number_help = "El número de matrícula que te gustaría establecer. Los números de matrícula solo pueden tener hasta 8 caracteres y solo pueden consistir en letras mayúsculas y números. Los espacios son ignorados por el juego.",
 		custom_plate_command_substitutes = "",
+
+		reset_plate_command = "resetear_matricula",
+		reset_plate_command_help = "Restablece la matrícula de tus vehículos (si tiene una matrícula personalizada que no coincide con el formato habitual).",
+		reset_plate_command_parameter_vehicle_id = "identificación del vehículo",
+		reset_plate_command_parameter_vehicle_id_help = "La identificación del vehículo que desea reiniciar la matrícula. (Puede encontrar esta identificación en su garaje)",
+		reset_plate_command_substitutes = "",
 
 		-- vehicles/runways
 		ifr_command = "ifr",
@@ -3877,7 +4038,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		-- vehicles/vehicles
 		flip_command = "voltear",
-		flip_command_help = "Voltea un vehículo volteado.",
+		flip_command_help = "Voltea un vehículo o carrito de la compra volcado.",
 		flip_command_substitutes = "",
 
 		toggle_roll_control_command = "alternar_control_rodadura",
@@ -3935,12 +4096,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		manual_toggle_command_command_parameter_hybrid = "No vehicle with that number plate found.",
 		manual_toggle_command_command_parameter_hybrid_help = "The vehicle is already impounded by the police for a longer time than you specified.",
 		manual_toggle_command_substitutes = "",
-
-		speed_limiter_command = "limitador_de_velocidad",
-		speed_limiter_command_parameter_speed = "velocidad",
-		speed_limiter_command_parameter_speed_help = "¿A qué velocidad deseas que se ajuste el limitador de velocidad? Puedes dejar eso en blanco para restablecerlo y permitir su uso normal.",
-		speed_limiter_command_help = "Anula el comportamiento normal del limitador de velocidad para preajustar el límite de velocidad.",
-		speed_limiter_command_substitutes = "sl, cc, control_de_crucero",
 
 		toggle_vehicle_weapons_command = "alternar_armas_de_vehículo",
 		toggle_vehicle_weapons_command_help = "Alterna si las armas de un vehículo pueden ser utilizadas o no.",
@@ -4090,6 +4245,15 @@ OP.Global.Locales.Languages["es-ES"] = {
 		list_hosts = "${listHosts}"
 	},
 
+	points = {
+		you_have_points = "Tienes ${frameworkPoints} punto(s) OP.",
+		used_points = "Se han utilizado ${amount} punto(s) OP bajo la etiqueta `${label}`.",
+		not_enough_op_points = "No tienes suficientes punto(s) OP.",
+
+		points_used_logs_title = "Punto(s) OP Utilizado(s)",
+		points_used_logs_details = "${consoleName} ha utilizado ${amount} Punto(s) OP bajo la etiqueta `${label}`."
+	},
+
 	profile = {
 		profile_debug_enabled = "El depurador de perfil se ha habilitado. Comprueba la consola F8 para ver las salidas.",
 		profile_debug_disabled = "El depurador de perfil se ha deshabilitado."
@@ -4125,11 +4289,16 @@ OP.Global.Locales.Languages["es-ES"] = {
 	routes = {
 		route_not_found = "Ruta ${route} no encontrada.",
 		route_restricted = "La ruta ${route} está restringida.",
+		route_disabled = "La ruta ${route} ha sido deshabilitada.",
 		internal_server_error = "Error interno del servidor."
 	},
 
 	session = {
 		connecting_from_new_session = "Te estás conectando desde una nueva sesión."
+	},
+
+	steam = {
+		no_steam_allowed = "Para jugar en este servidor, primero cierra FiveM, luego cierra Steam."
 	},
 
 	twitch = {
@@ -4145,9 +4314,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 	users = {
 		playtime = "Tiempo de juego",
+		playtime_total = "Tiempo de juego (Tiempo total)",
 		player_playtime = "${playerName} (Posición ${position})\nTiempo total de juego: ${totalPlaytime}\nTiempo de sesión de juego: ${sessionPlaytime}",
 		leaderboard = "Tabla de posiciones",
+		leaderboard_total = "Clasificación (Tiempo total)",
 		your_position = "Tu posición",
+		leaderboard_loading = "La clasificación todavía se está cargando.",
 		logs_user_reject_connection_title = "Conexión rechazada",
 		logs_user_reject_connection_details = "Conexión rechazada de ${consoleName} (`${reason}`).",
 		logs_user_connected_title = "Usuario conectado",
@@ -4238,6 +4410,37 @@ OP.Global.Locales.Languages["es-ES"] = {
 	},
 
 	-- game/*
+	admin_features = {
+		enabled_features_list = "Funciones habilitadas:",
+
+		advanced_metagame_feature = "AM",
+		aimbot_feature = "Aimbot",
+		disabled_recoil_feature = "Recoil Desactivado",
+		evidence_view_feature = "Visualización de Pruebas",
+		hit_indicator_feature = "Indicador de Impacto",
+		indestructibility_feature = "Indestructibilidad",
+		infinite_ammo_feature = "Munición Infinita",
+		invisibility_feature = "Invisibilidad",
+		muted_sirens_feature = "Sirenas Silenciadas",
+		nitro_boost_feature = "Aumento de Nitro",
+		no_nearby_vehicles_feature = "Sin Vehículos Cercanos",
+		peeking_feature = "Asomarse",
+		roll_control_feature = "Control de Balanceo",
+		speed_boost_feature = "Aumento de Velocidad",
+		speed_up_progress_bar_feature = "Acelerar Barra de Progreso",
+		sticky_feet_feature = "Pies Pegajosos",
+		wallhack_feature = "Truco de Paredes",
+		watching_feature = "Observando",
+		fortnite_feature = "Fortnite",
+		reflection_feature = "Reflejo de Daño",
+		stable_cam_feature = "Cámara Estable",
+		super_jump_feature = "Super Salto",
+		server_id_hidden_feature = "ID de Servidor Oculta",
+		fake_disconnect_feature = "Desconexión Falsa",
+		brighter_nights_feature = "Noches Más Brillantes",
+		ridealong_feature = "Acompañante"
+	},
+
 	admin_menu = {
 		menu_title = "Menú de Administrador",
 		spectate_player = "Espectar Jugador"
@@ -4266,14 +4469,24 @@ OP.Global.Locales.Languages["es-ES"] = {
 		park_vehicle = "Estacionar Vehículo",
 		park_vehicle_outside = "Estacionar Vehículo Afuera",
 		close_menu = "Cerrar Menú",
+		illegal = "Ilegal",
+		illegal_license_success = "Has hackeado con éxito la base de datos de la FAA, tu licencia es válida ahora por 5 días.",
+		failed_illegal_license = "Error al obtener la licencia ilegal.",
 		spawned_vehicle = "Vehículo creado.",
+		spawned_vehicle_large = "Vehículo grande aparecido. Se ha marcado un punto en el mapa.",
 		spawner_on_timeout = "El generador de vehículos está en tiempo de espera. Por favor, intenta de nuevo.",
 		spawn_area_not_clear = "El área de generación no está despejada.",
 		return_button = "Volver",
 		deposit = "Depósito: $${amount}",
 		no_deposit = "Sin depósito",
 		deposit_not_enough_money = "No tienes suficiente dinero para pagar el depósito.",
-		helipad = "Helipuerto"
+		vehicle_no_free_seat = "No hay asientos disponibles en este vehículo.",
+		press_to_enter_aircraft = "Pulsa ~INPUT_ENTER~ para entrar en la aeronave.",
+		no_aircraft_to_enter = "No hay ninguna aeronave disponible para entrar.",
+		helipad = "Helipuerto",
+		looking_up = "Buscando Registro",
+		registration_not_found = "No se ha encontrado el registro.",
+		registration_lookup = "El número de registro de la aeronave `${registration}` fue alquilado por última vez a ${fullName} #${characterId}."
 	},
 
 	airstrike = {
@@ -4644,8 +4857,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		toggled_battle_royale_on = "Battle Royale se ha activado.",
 		toggled_battle_royale_off = "Se ha desactivado Battle Royale.",
 		battle_royale_info = "¡Has entrado en la cola para Battle Royale! \nActualmente hay ${battleRoyaleQueueLength} jugadores en la cola.",
-		toggle_battle_royale_missing_permissions = "El jugador intentó activar o desactivar Battle Royale pero no tiene los permisos necesarios para hacerlo.",
-		start_battle_royale_missing_permissions = "El jugador intentó iniciar un Battle Royale pero no tiene los permisos necesarios para hacerlo.",
 		unable_to_start_battle_royale_not_active = "No se puede iniciar el Battle Royale porque no está activado.",
 		not_enough_players_in_queue = "No se puede iniciar el Battle Royale ya que no hay suficientes jugadores en la cola.",
 		zone_idling = "La zona está en espera.",
@@ -4672,10 +4883,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		advancing = "Avanzando",
 		battle_royale = "Batalla campal",
 		press_to_deploy_parachute = "Presione ~INPUT_PARACHUTE_DEPLOY~ para desplegar el paracaídas.",
-		join_battle_royale_instance_missing_permissions = "El jugador intentó unirse a una instancia de Batalla campal pero no tenía los permisos necesarios para hacerlo.",
 		no_match_found = "${consoleName} no está en ninguna partida.",
 		joined_instance = "Te has unido a la instancia de ${consoleName}.",
-		leave_battle_royale_instance_missing_permissions = "El jugador intentó abandonar una instancia de Battle Royale pero no tenía los permisos necesarios para hacerlo.",
 		left_instance = "Has abandonado la instancia.",
 		failed_to_leave_instance = "No se pudo abandonar la instancia ya que no estabas en ninguna.",
 		already_in_match = "No se pudo unir a la instancia ya que ya estás en una partida.",
@@ -4782,14 +4991,17 @@ OP.Global.Locales.Languages["es-ES"] = {
 		bean_machine = "Cafetería Bean",
 		arcade_bar = "Bar de Arcades",
 		japanese_restaurant = "Restaurante Japonés",
-		luxury_autos = "Autos de Lujo",
+		lsuv = "Vehículos Usados de LS",
 		rockford_records = "Rockford Records",
 		dispensary = "Distribuidora de Marihuana Medicinal",
 		haunted_high_school = "Instituto Encantado",
 		sushi_restaurant = "Restaurante de Sushi",
+		pizza_this = "Pizza Esto",
+		city_hall = "Ayuntamiento",
 
 		bank = "Banco",
 		hospital = "Hospital",
+		fire_department = "Departamento de Bomberos",
 		bolingbroke = "Penitenciaría de Bolingbroke",
 		police_department = "Comisaría",
 		motel = "Motel",
@@ -4820,9 +5032,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		recharging_countermeasures = "Recargando Contramedidas ${porcentaje}%",
 
 		ignition_bomb_triggered_logs_title = "Bomba de Encendido",
-		ignition_bomb_triggered_logs_details = "${consoleName} encendió el motor de un vehículo que tenía una bomba conectada a su encendido.",
-
-		toggle_ignition_bomb_missing_permissions = "El jugador intentó activar o desactivar una bomba de encendido pero no tenía los permisos requeridos."
+		ignition_bomb_triggered_logs_details = "${consoleName} encendió el motor de un vehículo que tenía una bomba conectada a su encendido."
 	},
 
 	boomboxes = {
@@ -4937,7 +5147,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		already_max_vin_scratched_vehicles = "Ya tienes la cantidad máxima de vehículos con VIN rayado en tu garaje.",
 		contract_has_expired = "Este contrato ha expirado.",
-		you_already_have_a_contract_started = "Ya tienes un contrato en proceso."
+		you_already_have_a_contract_started = "Ya tienes un contrato en proceso.",
+
+		transferred_crypt_logs_title = "Cripto Transferida",
+		transferred_crypt_logs_details = "${consoleName} transfirió ${amount} de cripto a ${targetConsoleName}."
 	},
 
 	brochure = {
@@ -4991,9 +5204,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 		no_buddy_passes_available = "No tienes pases de amigo disponibles.",
 		no_queue_with_queue_pin = "No había nadie en la cola con el PIN proporcionado.",
 		buddy_pushed_through = "¡Has empujado a ${playerName} a través de la cola!",
+		no_players_in_queue = "No hay jugadores en la cola.",
 
 		buddy_pass_used_logs_title = "Buddy Pass Utilizado",
-		buddy_pass_used_logs_details = "${consoleName} usó su Buddy Pass para empujar a través de ${targetConsoleName}."
+		buddy_pass_used_logs_details = "${consoleName} usó su Buddy Pass para empujar a través de ${targetConsoleName}.",
+
+		push_through_random = "¿Te sientes generoso? ¡Empuja a una persona aleatoria a través de la cola!"
 	},
 
 	bus_map = {
@@ -5317,11 +5533,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 	containers = {
 		drill_container = "Presiona ~INPUT_CONTEXT~ para taladrar la caja.",
-
 		drilling_container = "Contenedor de Perforación",
 		failed_drill = "No se pudo abrir el contenedor con la perforación.",
 		drill_success = "Contenedor perforado con éxito.",
 
+		containers_due_soon = "Pronto vencerán ${count} de tus contenedores de almacenamiento.",
 		container_blip = "Contenedor"
 	},
 
@@ -5335,7 +5551,22 @@ OP.Global.Locales.Languages["es-ES"] = {
 		glass_recipe = "Fundir Vidrio",
 		steel_recipe = "Fundir Acero",
 		scrap_metal_recipe = "Fundir Metal de Chatarra",
+		melt_gun_parts_recipe = "Fundir Piezas de Arma",
 		aluminium_recipe = "Fundir Aluminio",
+		copper_recipe = "Extraer cobre",
+		copper_wire_recipe = "Fundir alambre de cobre",
+		brass_recipe = "Combinar zinc y cobre",
+		aluminium_ore_recipe = "Fundir mineral de aluminio",
+		steel_ore_recipe = "Fundir mineral de hierro",
+		gold_ore_recipe = "Fundir mineral de oro",
+		gold_nuggets_recipe = "Fundir pepitas de oro",
+		tungsten_ore_recipe = "Fundir mineral de tungsteno",
+		tungsten_bar_recipe = "Fundir pepitas de tungsteno",
+		titatium_ore_recipe = "Fundir mineral de titanio",
+		titanium_bar_recipe = "Fundir pepitas de titanio",
+		smelt_rusty_metal_recipe = "Fundir metal oxidado",
+		smelt_rusty_tank_shell_recipe = "Fundir Concha de Tanque Oxidada",
+		smelt_rusty_diving_helmet_recipe = "Fundir Casco de Buceo Oxidado",
 
 		smelting_materials = "Fusionando ${usedItems}",
 		smelted_materials = "Fundidos ${usedItems}.",
@@ -5349,17 +5580,30 @@ OP.Global.Locales.Languages["es-ES"] = {
 		press_to_scrap_item = "[${SeatEjectKey}] Reciclar objetos",
 		failed_scrap_item = "Error al reciclar objeto.",
 
-		cut_item = "Cortar patatas",
-		press_to_cut_item = "[${SeatEjectKey}] Cortar patatas",
-		cutting_item = "Cortando 3 patatas",
-		cut_item_done = "Patatas cortadas en tiras.",
-		failed_cut_item = "Error al cortar las patatas.",
+		cut_potato = "Cortar Patatas",
+		press_to_cut_potato = "[${SeatEjectKey}] Cortar Patatas",
+		cutting_potato = "Cortando Patatas",
+		cut_potato_done = "Cortar las patatas en tiras.",
+		failed_cut_potato = "No se pudo cortar las patatas.",
 
-		fry_item = "Freír patatas",
-		press_to_fry_item = "[${SeatEjectKey}] Freír patatas",
-		frying_item = "Friendo patatas",
-		fried_item = "Tiras de patata fritas.",
-		failed_fry_item = "Error al freír las patatas.",
+		prepare_chicken_nuggets = "Preparar Nuggets de Pollo",
+		press_to_prepare_chicken_nuggets = "[${SeatEjectKey}] Preparar Nuggets de Pollo",
+		preparing_chicken_nuggets = "Preparando Nuggets de Pollo",
+		prepared_chicken_nuggets = "Nuggets de pollo preparados.",
+		failed_prepare_chicken_nuggets = "Error al preparar nuggets de pollo.",
+
+		use_fryer = "Usar Freidora",
+		press_to_use_fryer = "[${SeatEjectKey}] Usar Freidora",
+
+		fries_recipe = "Patatas fritas belgas",
+		frying_fries = "Friendo patatas fritas",
+		fried_fries = "Patatas fritas belgas fritas.",
+		failed_fry_fries = "Error al freír las patatas fritas.",
+
+		nuggets_recipe = "Nuggets de Pollo",
+		frying_nuggets = "Friendo Nuggets de Pollo",
+		fried_nuggets = "Nuggets de pollo fritos.",
+		failed_fry_nuggets = "Error al freír los nuggets de pollo.",
 
 		grill_item = "Parrilla",
 		press_to_grill_item = "[${SeatEjectKey}] Parrilla",
@@ -5413,12 +5657,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		filled_nitro_tank = "Tanque de Nitro Llenado",
 		failed_fill_nitro_tank = "No se pudo llenar el tanque de nitro.",
 
-		craft_sheet_metal = "Crear chapa de metal",
-		press_to_craft_sheet_metal = "[${SeatEjectKey}] Crear chapa de metal",
-		crafting_sheet_metal = "Creando chapa de metal",
-		crafted_sheet_metal = "Chapa de metal creada.",
-		failed_craft_sheet_metal = "No se pudo crear la chapa de metal.",
-
 		craft_empty_tank = "Ensamblar tanque vacío",
 		press_to_craft_empty_tank = "[${SeatEjectKey}] Ensamblar tanque vacío",
 		crafting_empty_tank = "Ensamblado tanque vacío",
@@ -5437,11 +5675,23 @@ OP.Global.Locales.Languages["es-ES"] = {
 		crafted_nitro_tank = "Tanque de nitro ensamblado.",
 		failed_craft_nitro_tank = "Fallo al ensamblar tanque de nitro.",
 
+		craft_glass_pipe = "Fabricar Pipa de Cristal",
+		press_craft_glass_pipe = "[${SeatEjectKey}] Fabricar Pipa de Cristal",
+		crafting_glass_pipe = "Fabricando Pipa de Cristal",
+		crafted_glass_pipe = "Pipa de cristal fabricada.",
+		failed_craft_glass_pipe = "Fallo al fabricar la pipa de cristal.",
+
 		salvage_meth_table = "Recoger mesa de metanfetamina",
 		press_to_salvage_meth_table = "[${SeatEjectKey}] Recoger mesa de metanfetamina",
 		salvaging_meth_table = "Recogiendo mesa de metanfetamina...",
 		salvaged_meth_table = "Mesa de metanfetamina recogida.",
 		failed_salvage_meth_table = "Error al recoger mesa de metanfetamina.",
+
+		make_crack = "Hacer Crack",
+		press_to_make_crack = "[${SeatEjectKey}] Hacer Crack",
+		making_crack = "Haciendo Crack",
+		made_crack = "Crack hecho.",
+		failed_make_crack = "Fallo al hacer crack.",
 
 		refill_vape = "Rellenar vape",
 		press_to_refill_vape = "[${SeatEjectKey}] Rellenar vape",
@@ -5490,28 +5740,68 @@ OP.Global.Locales.Languages["es-ES"] = {
 		failed_process_copper = "Error al procesar las pepitas de cobre.",
 
 		process_rubber = "Procesar caucho",
-		press_process_rubber = "[${SeatEjectKey}] Procesar caucho",
 		failed_process_rubber = "Error al procesar el caucho.",
 
-		craft_pvc_pipe = "Crear tubo de PVC",
-		press_craft_pvc_pipe = "[${SeatEjectKey}] Crear Tubo de PVC",
+		process_polymer_resin = "Procesar Resina de Polímero",
+		failed_process_polymer_resin = "Fallo al procesar la resina de polímero.",
+
+		craft_components = "Componentes de fabricación",
+		press_craft_components = "[${SeatEjectKey}] Componentes de fabricación",
+
+		aluminium_rod_recipe = "Varilla de aluminio",
+		aluminium_plate_recipe = "Placa de aluminio",
+		sheet_metal_recipe = "Chapa metálica",
+		steel_tube_recipe = "Tubo de acero",
+		tungsten_plate_recipe = "Placa de tungsteno",
+		titanium_rod_recipe = "Varilla de titanio",
+		hardened_steel_plate_recipe = "Placa de acero endurecido",
+		screws_recipe = "Tornillos de acero",
+		spring_recipe = "Muelle de acero",
+		high_tensile_spring_recipe = "Muelle de acero de alta resistencia",
+		pvc_pipe_recipe = "Tubo de PVC",
+		lens_recipe = "Lente",
+		muzzle_brake_recipe = "Freno de boca",
+
 		crafting_pvc_pipe = "Creando Tubo de PVC",
 		crafted_pvc_pipe = "Tubo de PVC creado.",
 		failed_craft_pvc_pipe = "Error al crear el tubo de PVC.",
 
-		process_aluminium = "Procesar aluminio",
-		press_process_aluminium = "[${SeatEjectKey}] Procesar aluminio",
 		failed_process_aluminium = "Error al procesar el aluminio.",
-
-		process_steel = "Procesar acero",
-		press_process_steel = "[${SeatEjectKey}] Procesar acero",
 		failed_process_steel = "Fallo al procesar el acero.",
 
-		craft_lens = "Fabricar Lente",
-		press_craft_lens = "[${SeatEjectKey}] Fabricar Lente",
 		crafting_lens = "Fabricando Lente",
 		crafted_lens = "Lente fabricado.",
 		failed_craft_lens = "Fallo al fabricar la Lente.",
+
+		craft_gun_parts = "Fabricar piezas de arma",
+		press_craft_gun_parts = "[${SeatEjectKey}] Fabricar piezas de arma",
+		assemble_gun_parts = "Ensamblar piezas de arma",
+		press_assemble_gun_parts = "[${SeatEjectKey}] Ensamblar piezas de arma",
+
+		trigger_recipe = "Gatillo",
+		smg_lower_receiver_recipe = "Receptor inferior de metralleta",
+		smg_lower_receiver_mk2_recipe = "Receptor inferior de metralleta MK2",
+		smg_upper_receiver_recipe = "Receptor superior de metralleta",
+		smg_upper_receiver_mk2_recipe = "Receptor superior de metralleta MK2",
+		rifle_lower_receiver_recipe = "Culata de Rifle",
+		rifle_lower_receiver_mk2_recipe = "Culata de Rifle MK2",
+		rifle_upper_receiver_recipe = "Carcasa Superior de Rifle",
+		rifle_upper_receiver_mk2_recipe = "Carcasa Superior de Rifle MK2",
+		shotgun_lower_receiver_recipe = "Culata de Escopeta",
+		shotgun_lower_receiver_mk2_recipe = "Culata de Escopeta MK2",
+		shotgun_upper_receiver_recipe = "Carcasa Superior de Escopeta",
+
+		crafting_trigger = "Gatillo de Fabricación",
+		crafted_trigger = "Gatillo fabricado.",
+		failed_craft_trigger = "Error al fabricar el gatillo.",
+
+		crafting_lower_receiver = "Creando receptor inferior",
+		crafted_lower_receiver = "Receptor inferior creado.",
+		failed_craft_lower_receiver = "Error al crear el receptor inferior.",
+
+		crafting_upper_receiver = "Creando receptor superior",
+		crafted_upper_receiver = "Receptor superior creado.",
+		failed_craft_upper_receiver = "Error al crear el receptor superior.",
 
 		craft_sight = "Fabricar Mira",
 		press_craft_sight = "[${SeatEjectKey}] Fabricar Mira",
@@ -5621,6 +5911,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 		filed_steel = "Failed to automatically generate translation.",
 		failed_file_steel = "Failed to automatically generate translation.",
 
+		converter_recipe = "Desmontar convertidor",
+		breaking_down_converter = "Desmontando convertidor",
+		broke_down_converter = "Convertidor desmontado.",
+		failed_break_converter = "Error al desmontar el convertidor.",
+
 		craft_steel_file = "Failed to automatically generate translation.",
 		press_craft_steel_file = "Failed to automatically generate translation.",
 		crafting_steel_file = "Failed to automatically generate translation.",
@@ -5649,8 +5944,15 @@ OP.Global.Locales.Languages["es-ES"] = {
 		press_deconstruct_chip = "[${SeatEjectKey}] Desmontar chip",
 		failed_deconstruct_chip = "Error al desmontar chip.",
 
-		craft_device_scanner = "Fabricar Escáner de dispositivos",
-		press_craft_device_scanner = "[${SeatEjectKey}] Fabricar Escáner de dispositivos",
+		craft_equipment = "Fabricar Equipamiento",
+		press_craft_equipment = "[${SeatEjectKey}] Fabricar Equipamiento",
+
+		radio_decrypter_recipe = "Descifrador de Radio",
+		crafting_radio_decrypter = "Fabricando Descodificador de Radio",
+		crafted_radio_decrypter = "Descodificador de radio artesanal fabricado.",
+		failed_craft_radio_decrypter = "Error al fabricar el descodificador de radio.",
+
+		device_scanner_recipe = "Escáner de Dispositivos",
 		crafting_device_scanner = "Fabricando Escáner de dispositivos",
 		crafted_device_scanner = "Se ha fabricado el escáner de dispositivos.",
 		failed_craft_device_scanner = "Error al fabricar el escáner de dispositivos.",
@@ -5734,12 +6036,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		mixed_patriotic_paint = "Pintura patriótica mezclada.",
 		failed_mix_patriotic_paint = "No se pudo mezclar la pintura patriótica.",
 
-		craft_radio_decrypter = "Descodificador de Radio Artesanal",
-		press_craft_radio_decrypter = "[${SeatEjectKey}] Descodificador de Radio Artesanal",
-		crafting_radio_decrypter = "Fabricando Descodificador de Radio",
-		crafted_radio_decrypter = "Descodificador de radio artesanal fabricado.",
-		failed_craft_radio_decrypter = "Error al fabricar el descodificador de radio.",
-
 		craft_grenade_shell = "Cartucho de Granada Artesanal",
 		press_craft_grenade_shell = "[${SeatEjectKey}] Cartucho de Granada Artesanal",
 		crafting_grenade_shell = "Fabricando Cartucho de Granada",
@@ -5797,6 +6093,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 		deconstruct_ammo = "Desmontar Munición",
 		press_to_deconstruct_ammo = "[${SeatEjectKey}] Desmontar Munición",
 
+		craft_casings = "Fabricar Carcasas",
+		crafting_casings = "Fabricando Carcasas",
+		crafted_casings = "Carcasas fabricadas.",
+		failed_craft_casings = "Error al fabricar carcasas.",
+
 		pistol_deconstruct_recipe = "Desmontar Munición de Pistola",
 		shotgun_deconstruct_recipe = "Desmontar Munición de Escopeta",
 		sub_deconstruct_recipe = "Desmontar Munición de Subfusil",
@@ -5843,6 +6144,181 @@ OP.Global.Locales.Languages["es-ES"] = {
 		crafting_bacon = "Elaborando Tocino",
 		crafted_bacon = "Tocino elaborado.",
 		failed_craft_bacon = "Error al elaborar tocino.",
+
+		cook_food = "Cocinar Comida",
+		press_to_cook_food = "[${SeatEjectKey}] Cocinar Comida",
+
+		rice_recipe = "Arroz",
+		cooking_rice = "Cocinando Arroz",
+		cooked_rice = "Arroz cocinado.",
+		failed_cook_rice = "Fallo al cocinar arroz.",
+
+		miso_soup_recipe = "Sopa de miso",
+		cooking_miso_soup = "Cocinando sopa de miso",
+		cooked_miso_soup = "Sopa de miso cocinada.",
+		failed_cook_miso_soup = "Fallo al cocinar sopa de miso.",
+
+		ramen_recipe = "Ramen",
+		cooking_ramen = "Cocinando ramen",
+		cooked_ramen = "Ramen cocinado.",
+		failed_cook_ramen = "Fallo al cocinar ramen.",
+
+		spicy_ramen_recipe = "Ramen picante",
+		cooking_spicy_ramen = "Cocinando ramen picante",
+		cooked_spicy_ramen = "Ramen picante cocinado.",
+		failed_cook_spicy_ramen = "Fallo al cocinar ramen picante.",
+
+		cut_ingridients = "Cortar Ingredientes",
+		press_to_cut_ingridients = "[${SeatEjectKey}] Cortar Ingredientes",
+
+		tofu_recipe = "Dados de Tofu",
+		cutting_tofu = "Cortando Tofu",
+		cut_tofu_done = "Tofu cortado.",
+		failed_cut_tofu = "Error al cortar el tofu.",
+
+		spring_onions_recipe = "Cebolletas",
+		cutting_spring_onions = "Cortando Cebolletas",
+		cut_spring_onions_done = "Cebolletas cortadas.",
+		failed_cut_spring_onions = "Error al cortar las cebolletas.",
+
+		fish_recipe = "Filete de Pescado",
+		filetting_fish = "Fileteando Pescado",
+		filet_fish = "Filete de pescado.",
+		failed_filet_fish = "Error al filetear el pescado.",
+
+		assemble_sushi = "Montar Sushi",
+		press_to_assemble_sushi = "[${SeatEjectKey}] Montar Sushi",
+
+		sushi_recipe = "Sushi",
+		assembling_sushi = "Montando Sushi",
+		assembled_sushi = "Sushi montado.",
+		failed_assemble_sushi = "Error al montar el sushi.",
+
+		nigiri_recipe = "Nigiri",
+		assembling_nigiri = "Montando Nigiri",
+		assembled_nigiri = "Nigiri montado.",
+		failed_assemble_nigiri = "Error al montar el nigiri.",
+
+		bento_box_recipe = "Caja Bento",
+		assembling_bento_box = "Montando Caja Bento",
+		assembled_bento_box = "Bandeja bento montada.",
+		failed_assemble_bento_box = "Error al montar la bandeja bento.",
+
+		kimchi_recipe = "Kimchi",
+		making_kimchi = "Preparando Kimchi",
+		made_kimchi = "Kimchi preparado.",
+		failed_make_kimchi = "Error al preparar kimchi.",
+
+		mix_pizza_dough = "Mezclar masa de pizza",
+		press_to_mix_pizza_dough = "[${SeatEjectKey}] Mezclar masa de pizza",
+		mixing_pizza_dough = "Mezclando masa de pizza",
+		mix_pizza_dough_done = "Masa de pizza mezclada.",
+		failed_mix_pizza_dough = "Error al mezclar la masa de pizza.",
+
+		slice_ingredients = "Cortar ingredientes",
+		press_to_slice_ingredients = "[${SeatEjectKey}] Cortar ingredientes",
+
+		pineapple_slice_recipe = "Cortar piña",
+		slicing_pineapple = "Cortando piña",
+		sliced_pineapple = "Piña cortada.",
+		failed_slice_pineapple = "Error al cortar la piña.",
+
+		bell_pepper_slice_recipe = "Cortar pimiento",
+		slicing_bell_pepper = "Cortando pimiento",
+		sliced_bell_pepper = "Pimiento cortado.",
+		failed_slice_bell_pepper = "Error al cortar el pimiento.",
+
+		top_pizza = "Añadir cobertura a la pizza",
+		press_to_top_pizza = "[${SeatEjectKey}] Añadir cobertura a la pizza",
+
+		margherita_recipe = "Pizza Margarita",
+		topping_margherita = "Cubrir la Pizza Margarita",
+		topped_margherita = "Pizza Margarita cubierta.",
+		failed_topping_margherita = "Error al cubrir la pizza Margarita.",
+
+		salami_recipe = "Pizza de Salami",
+		topping_salami = "Cubrir la Pizza de Salami",
+		topped_salami = "Pizza de Salami cubierta.",
+		failed_topping_salami = "Error al cubrir la pizza de Salami.",
+
+		pepperoni_recipe = "Pizza de Pepperoni",
+		topping_pepperoni = "Cubrir la Pizza de Pepperoni",
+		topped_pepperoni = "Pizza de Pepperoni cubierta.",
+		failed_topping_pepperoni = "Error al añadir el topping de pepperoni a la pizza.",
+
+		vegetarian_recipe = "Pizza Vegetariana",
+		topping_vegetarian = "Añadiendo topping a la pizza vegetariana",
+		topped_vegetarian = "Pizza vegetariana lista.",
+		failed_topping_vegetarian = "Error al añadir el topping a la pizza vegetariana.",
+
+		ham_recipe = "Pizza de Jamón",
+		topping_ham = "Añadiendo topping a la pizza de jamón",
+		topped_ham = "Pizza de jamón lista.",
+		failed_topping_ham = "Error al añadir el topping a la pizza de jamón.",
+
+		diavola_recipe = "Pizza Diavola",
+		topping_diavola = "Añadiendo topping a la pizza diavola",
+		topped_diavola = "Pizza diavola lista.",
+		failed_topping_diavola = "Error al añadir los ingredientes a la pizza diavola.",
+
+		hawaiian_recipe = "Pizza Hawaiana",
+		topping_hawaiian = "Añadiendo ingredientes a la Pizza Hawaiana",
+		topped_hawaiian = "Pizza hawaiana preparada.",
+		failed_topping_hawaiian = "Error al añadir los ingredientes a la pizza hawaiana.",
+
+		bake_pizza = "Hornear Pizza",
+		press_to_bake_pizza = "[${SeatEjectKey}] Hornear Pizza",
+
+		bread_sticks_recipe = "Hornear Palitos de Pan",
+		baking_bread_sticks = "Horneando Palitos de Pan",
+		baked_bread_sticks = "Palitos de pan horneados.",
+		failed_baking_bread_sticks = "Error al hornear los palitos de pan.",
+
+		baking_margherita = "Hornear Pizza Margherita",
+		baked_margherita = "Pizza Margherita horneada.",
+		failed_baking_margherita = "Error al hornear la Pizza Margherita.",
+
+		baking_ham = "Hornear Pizza de Jamón",
+		baked_ham = "Pizza de jamón horneada.",
+		failed_baking_ham = "Error al hornear la Pizza de Jamón.",
+
+		baking_hawaiian = "Hornear Pizza Hawaiana",
+		baked_hawaiian = "Pizza hawaiana horneada.",
+		failed_baking_hawaiian = "Error al hornear la Pizza Hawaiana.",
+
+		baking_diavola = "Hornear Pizza Diavola",
+		baked_diavola = "Pizza Diavola horneada.",
+		failed_baking_diavola = "Error al hornear la Pizza Diavola.",
+
+		baking_salami = "Hornear Pizza de Salami",
+		baked_salami = "Pizza de salami horneada.",
+		failed_baking_salami = "Error al hornear la pizza de salami.",
+
+		baking_pepperoni = "Hornear Pizza de Pepperoni",
+		baked_pepperoni = "Pizza de pepperoni horneada.",
+		failed_baking_pepperoni = "Error al hornear la pizza de pepperoni.",
+
+		baking_vegetarian = "Hornear Pizza Vegetariana",
+		baked_vegetarian = "Pizza vegetariana horneada.",
+		failed_baking_vegetarian = "Error al hornear la pizza vegetariana.",
+
+		bake_cake = "Hornear Pastel",
+		press_to_bake_cake = "[${SeatEjectKey}] Hornear Pastel",
+
+		lemon_cake_recipe = "Pastel de limón",
+		baking_lemon_cake = "Cocinando Pastel de Limón",
+		baked_lemon_cake = "Pastel de limón cocinado.",
+		failed_baking_lemon_cake = "Fallo al cocinar pastel de limón.",
+
+		berry_cake_recipe = "Pastel de Frutas del Bosque",
+		baking_berry_cake = "Cocinando Pastel de Frutas del Bosque",
+		baked_berry_cake = "Pastel de frutas del bosque cocinado.",
+		failed_baking_berry_cake = "Fallo al cocinar pastel de frutas del bosque.",
+
+		chocolate_cake_recipe = "Pastel de Chocolate",
+		baking_chocolate_cake = "Cocinando Pastel de Chocolate",
+		baked_chocolate_cake = "Pastel de chocolate cocinado.",
+		failed_baking_chocolate_cake = "Fallo al cocinar pastel de chocolate.",
 
 		no_required_items = "No tienes todos los objetos necesarios.",
 
@@ -6123,11 +6599,59 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		deny_purchase = "No me interesa",
 		accept_purchase = "Sí, quiero comprarlo",
-		accept_purchase_info = "¿Estás seguro de que quieres completar esta compra? Esta acción no se puede deshacer."
+		accept_purchase_info = "¿Estás seguro de que quieres completar esta compra? Esta acción no se puede deshacer.",
+
+		yes = "Sí",
+		no = "No"
+	},
+
+	container_storage = {
+		rent_container = "[${InteractionKey}] Alquilar #${id} (${price} por semana)",
+		renting_container = "Alquiler de Contenedor",
+		failed_rent_container = "Error al alquilar contenedor.",
+		rent_container_success = "Contenedor #${id} alquilado con éxito. Puedes gestionar tus contenedores usando `/containers`.",
+		access_container = "[${InteractionKey}] Acceder #${id}",
+		container_id = "#${id}",
+
+		storage_containers = "Contenedores de Almacenamiento",
+		container = "Contenedor",
+		loading = "Cargando...",
+		failed_remove_access = "Error al eliminar acceso.",
+		failed_add_access = "Error al añadir acceso.",
+		access = "Acceso",
+		add_cid = "Añadir CID",
+		no_containers = "No posees ni tienes acceso a ningún contenedor de almacenamiento.",
+		no_access = "Nadie excepto tú tiene acceso a este contenedor.",
+		back = "Atrás",
+		close = "Cerrar",
+		character_not_exist = "El personaje no existe.",
+		paid_until = "Pagado Hasta:",
+		pay_rent = "Pagar Alquiler",
+		expired = "Caducado",
+		not_enough_money = "No tienes suficiente dinero.",
+		failed_pay_rent = "Error al pagar el alquiler.",
+		mark_gps = "Marcar GPS",
+		container_alert = "Tu contenedor #${containerId} está siendo manipulado.",
+
+		rented_container_logs_title = "Contenedor Alquilado",
+		rented_container_logs_details = "${consoleName} alquiló el contenedor #${containerId} por $${price}.",
+		paid_rent_logs_title = "Pago de Alquiler de Contenedor",
+		paid_rent_logs_details = "${consoleName} pagó $${price} de alquiler por el contenedor #${containerId}.",
+		lockpicked_container_logs_title = "Contenedor Forzado",
+		lockpicked_container_logs_details = "${consoleName} forzó el contenedor #${containerId}."
 	},
 
 	courthouse = {
 		press_to_use_gavel = "Presiona ~INPUT_CONTEXT~ para usar el Martillo."
+	},
+
+	crack = {
+		press_to_sell_crack = "Presiona ~INPUT_CONTEXT~ para vender Crack.",
+		local_not_interested = "El local no parece estar interesado en este momento.",
+		selling_crack = "Vendiendo Crack.",
+
+		sold_crack_logs_title = "Crack Vendido",
+		sold_crack_logs_details = "${consoleName} vendió 1x Bolsa de Crack por $${reward}."
 	},
 
 	daily_activities = {
@@ -6159,8 +6683,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		headshot_kills_in_arena = "Obtén ${amount} muertes por disparos en la cabeza en la arena.",
 		punch_locals = "Golpea a ${amount} ciudadanos locales.",
 		move_from_place_to_place = "Muevete de ${from} a ${to} en ${time} segundos.",
-		put_bets_in_jackpot = "Haz apuestas por valor de $${amount} en el jackpot.",
-		win_bets_in_jackpot = "Gana objetos por valor de $${amount} en el jackpot.",
+		put_bets_in_jackpot = "Colocar apuestas por valor de $${amount} en el Jackpot del Casino.",
+		win_bets_in_jackpot = "Ganar artículos por valor de $${amount} en el Jackpot del Casino.",
 		chop_vehicles = "Roba ${amount} vehículos.",
 		purchase_ammo = "Compra ${amount} cartuchos.",
 		collect_items_from_diving = "Recoge ${amount}x ${itemLabel} buceando.",
@@ -6169,6 +6693,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		refine_gems = "Refina ${amount} gemas.",
 		visit_location = "Visita ${location}.",
 		visit_the_location = "Visita ${location}.",
+		punch_a_shark = "Pegar a un tiburón.",
+		put_bets_in_lottery = "Colocar un total de $${amount} en la Lotería.",
 
 		confirm_task_refresh = "¿Estás seguro de que quieres actualizar esta tarea? El costo es de $$ {cost}.",
 		yes = "Sí",
@@ -6183,8 +6709,13 @@ OP.Global.Locales.Languages["es-ES"] = {
 		restore_streak = "Restaurar racha de ${streak}",
 		confirm_streak_restore = "¿Estás seguro de que quieres restaurar tu racha de ${streak} días? El costo es de ${cost} puntos OP.",
 
-		not_enough_op_points = "Necesitas ${cost} puntos OP para restaurar tu racha. Tienes ${points} puntos OP.",
-		streak_restored = "Tu racha de ${streak} días ha sido restaurada por ${cost} Puntos OP."
+		not_enough_op_points = "Necesitas ${cost} Puntos de OP para restaurar tu racha. Tienes ${points} Punto(s) de OP.",
+		streak_restored = "Tu racha de ${streak} días ha sido restaurada por ${cost} Puntos OP.",
+
+		logs_daily_task_reward_title = "Recompensa diaria de tarea",
+		logs_daily_task_reward_money_details = "${consoleName} completó una tarea y recibió $${amount}.",
+		logs_daily_task_reward_items_details = "${consoleName} completó una tarea y recibió ${amount} objetos.",
+		logs_daily_task_reward_brought_items_details = "${consoleName} compró ${itemAmount} objeto(s) y recibió $${amount}."
 	},
 
 	dashcam = {
@@ -6234,6 +6765,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 		owner_player = "Registrado a ~g~${fullName}",
 		character_known = "Personaje: ~g~${fullName}",
 		character_unknown = "Personaje: ~r~Desconocido",
+		entity_id = "ID de entidad: ${entity}",
+		model_name = "Nombre del modelo: ${modelName}",
+		resource = "Recurso: ${resource}",
+		network_id = "ID de red: ${networkId}",
+		["local"] = "-local-",
 		invalid_radius_parameter = "Parámetro `radio` inválido.",
 		inject_code_invalid_player = "No hay jugadores con el ID de servidor `${serverId}`.",
 		inject_code_success_for_everyone = "Código inyectado con éxito para todos.",
@@ -6254,6 +6790,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		controls = "Controles: ${controls}",
 		tasks = "Llamadas de Tareas: ${calls} (${total})",
 		invoke_calls = "Llamadas Invoke: ${calls} (${total})",
+		native_calls = "Llamadas nativas: ${calls} (${total})",
 		draw_calls = "Llamadas de Dibujado: ${calls}",
 		player_speed = "Velocidad del jugador: ${playerSpeed}",
 		player_ped = "Personaje: ${playerPedId}",
@@ -6264,7 +6801,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		normal = "Superficie: ${normal}",
 		velocity = "Velocidad: ${velocity}",
 		ground_material = "Material del Suelo: ${material}",
-		g_force = "Fuerza-G: ${force}",
 		debug_print_f8 = "La información de depuración se ha impreso en la consola F8.",
 		no_vehicle_bone = "No hay hueso \"${boneName}\".",
 		server_vehicles = "Vehículos del Servidor: ${count}",
@@ -6272,6 +6808,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 		invisible_vehicles = "Vehículos Invisibles: ${count}",
 		parked_vehicles = "Vehículos Aparcados: ${count}",
 		available_doors = "IDs de puertas disponibles: ${doors}",
+		copied_object_info = "Información del objeto copiada.",
+		copied_model_name = "Nombre del modelo copiado.",
+		copied_entity_id = "ID de la entidad copiada.",
+		copied_hit_coords = "Coordenadas de impacto copiadas.",
 
 		distance = "Distancia: ${distance}m",
 		distance_first = "Posición almacenada.",
@@ -6288,12 +6828,9 @@ OP.Global.Locales.Languages["es-ES"] = {
 		vehicle_acceleration_120 = "0 a 120: ${time}",
 		vehicle_acceleration_150 = "0 a 150: ${time}",
 		vehicle_brake_distance = "Distancia de frenado: ${distance}m",
-		vehicle_acceleration_force = "Fuerza de lanzamiento: ${force}",
 
-		invalid_network_id = "ID de red inválida.",
 		delete_entity_success = "Entidad con ID de red ${networkId} ha sido eliminada exitosamente.",
 		delete_entity_failed = "No se ha podido eliminar la entidad.",
-		delete_entity_no_permissions = "Intento de eliminar una entidad sin los permisos adecuados.",
 
 		failed_entity_info = "Error al obtener información de la entidad.",
 		printed_entity_info = "Información de la entidad impresa en el servidor en F8.",
@@ -6301,7 +6838,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		no_entity_network = "No hay entidad con ID de red ${networkId}.",
 		move_entity_success = "Se ha movido correctamente la entidad con el ID de red ${networkId}.",
 		move_entity_failed = "No se ha podido mover la entidad.",
-		move_entity_no_permissions = "Intento de mover una entidad sin los permisos adecuados.",
 
 		weapon_name_missing = "Falta el parámetro del nombre del arma.",
 		weapon_name_invalid = "`${weaponName}` no es un nombre válido de arma.",
@@ -6330,8 +6866,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		disabled_network_debug = "Depuración de red de entidades desactivada.",
 		failed_network_debug = "No se pudo activar la depuración de red de entidades.",
 
-		network_owner_subscription_no_permissions = "Se intentó suscribir al propietario de la red de entidades sin permisos adecuados.",
-
 		missing_ipl = "Falta parámetro ipl.",
 		enabled_ipl = "Ipl `${ipl}` habilitado con éxito.",
 		disabled_ipl = "Ipl `${ipl}` deshabilitado con éxito.",
@@ -6346,6 +6880,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		missing_code = "Falta el parámetro 'code'.",
 		run_code_success = "Se ha ejecutado el código con éxito.",
+		run_code_invalid = "Fragmento de código no válido.",
 		run_code_error = "El código ha arrojado un error.",
 
 		searching_world = "Buscando en el mundo:\n${modelNames}",
@@ -6366,7 +6901,18 @@ OP.Global.Locales.Languages["es-ES"] = {
 		invalid_json = "JSON inválido.",
 
 		street_found = "Se encontró `${name}`, su centro se ha marcado en tu mapa.",
-		street_not_found = "No se encontró ninguna calle que coincida con tu búsqueda."
+		street_not_found = "No se encontró ninguna calle que coincida con tu búsqueda.",
+
+		only_super_admins_can_turn_on = "Solo los super administradores pueden activar esto. Un administrador del servidor puede activarlo manualmente para ti. Puedes desactivarlo con este comando posteriormente.",
+		deep_logging_enabled = "El registro profundo ha sido activado.",
+		deep_logging_disabled = "El registro profundo ha sido desactivado.",
+		deep_logging_active = "El registro profundo está activo.",
+
+		find_native_toggles_enabled = "La opción 'Encontrar cambios nativos' ha sido habilitada.",
+		find_native_toggles_disabled = "La opción 'Encontrar cambios nativos' ha sido deshabilitada.",
+
+		showing_cancelled_vehicles_enabled = "Mostrando vehículos cancelados.",
+		showing_cancelled_vehicles_disabled = "Ya no se muestran vehículos cancelados."
 	},
 
 	debug_menu = {
@@ -6392,12 +6938,13 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		evidence_failed = "No se pudo obtener la prueba de ADN.",
 
-		evidence_text = "Tipo de evidencia: Prueba de ADN\nADN recolectado de ${fullName} #${characterId}\n\nInformación adicional:\n • Sello de tiempo de recogida: ${time}"
+		evidence_text = "Prueba de ADN: La muestra corresponde a ${name} (#${cid}) (recogida a las ${time})."
 	},
 
 	docks = {
 		press_to_access_spawner = "Presiona ~INPUT_CONTEXT~ para acceder al generador de vehículos.",
 		boat_dock = "Muelle de Barcos",
+		emergency_vehicles = "Vehículos de Emergencia",
 		vehicle_list = "Lista de Vehículos",
 		park_boat = "Aparcar Barco",
 		close_menu = "Cerrar Menú",
@@ -6427,10 +6974,15 @@ OP.Global.Locales.Languages["es-ES"] = {
 		saved_doors_to_file = "Se han guardado `${amount}` puertas en un archivo en el servidor.",
 		no_nearby_doors = "No hay puertas cercanas para guardar.",
 		lockpicking_door = "Forzando una cerradura",
+		copied_doors = "Se han copiado ${doors} puertas.",
+		adding_doors = "Añadiendo puertas.",
+		stop_adding_doors = "No se añaden más puertas.",
 
 		debug_doors_on = "Depuración de puertas activada.",
 		debug_doors_off = "Depuración de puertas desactivada.",
 		doors_no_job = "N/D",
+		disabled_doors = "Puertas desactivadas.",
+		enabled_doors = "Puertas activadas.",
 
 		unlocks = "Desbloqueos: <i>${cluster}</i>."
 	},
@@ -6475,7 +7027,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		floor_loading_bay = "Zona de carga",
 		floor_vault = "Sala de la caja fuerte",
 
-		floor_second_floor = "Segunda Planta",
+		floor_second_floor = "2º piso",
 		floor_icu = "UCI",
 		floor_ground = "Planta Baja",
 		floor_surgery = "Cirugía",
@@ -6494,6 +7046,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		floor_fourth_floor = "4ª planta",
 		floor_third_floor = "3ª planta",
+		floor_second_floor = "2º piso",
+		floor_first_floor = "1er piso",
+
+		floor_gangway = "Pasillo",
 
 		floor_hangout = "Lugar de encuentro",
 		floor_penthouse = "Ático",
@@ -6508,7 +7064,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		floor_showroom = "Sala de exposición",
 		floor_office = "Oficina",
-		floor_doj_office = "Oficina de la Fiscalía General",
 
 		floor_penthouse_top = "Ático (Planta Superior)",
 		floor_penthouse_entrance = "Ático (Entrada)",
@@ -6676,6 +7231,14 @@ OP.Global.Locales.Languages["es-ES"] = {
 		sold_fentanyl_logs_details = "${consoleName} vendió 1x ampolla de fentanyl por $${reward}."
 	},
 
+	fields = {
+		pick_weed = "Pulsa ~INPUT_CONTEXT~ para recolectar hierba.",
+		picking_weed = "Recolectando hierba",
+
+		pick_tobacco = "Pulsa ~INPUT_CONTEXT~ para recolectar tabaco.",
+		picking_tobacco = "Recolectando tabaco"
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Tomando Huella Digital",
 		already_fingerprinting = "Ya estás tomando las huellas dactilares de un jugador.",
@@ -6792,6 +7355,9 @@ OP.Global.Locales.Languages["es-ES"] = {
 		extract_rubber = "Presiona ~INPUT_CONTEXT~ para extraer goma del árbol.",
 		extracting_rubber = "Extrayendo goma",
 
+		pick_oranges = "Pulsa ~INPUT_CONTEXT~ para recolectar naranjas.",
+		picking_oranges = "Recogiendo Naranjas",
+
 		tree_klonk = "Algo cayó del árbol y te golpeó en la cabeza."
 	},
 
@@ -6802,6 +7368,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 		gas_time_left = "Te quedan ${gasTime} segundos de máscara de gas.",
 		hold_to_take_gas_mask_off = "Mantén presionado ~INPUT_VEH_HEADLIGHT~ para quitarte la máscara de gas.",
 		hold_to_take_gas_mask_off_holding = "Sigue manteniendo presionado para quitarte la máscara de gas."
+	},
+
+	gift_boxes = {
+		failed_seal_box = "Error al sellar la caja de regalo.",
+		failed_open_box = "Error al abrir la caja de regalo."
 	},
 
 	golf = {
@@ -6866,6 +7437,19 @@ OP.Global.Locales.Languages["es-ES"] = {
 		something_went_wrong = "Algo salió mal al tratar de comprar una bola de chicle.",
 
 		flavor = "Bola de Chicle (${flavor})"
+	},
+
+	gun_crafting = {
+		menu_title = "Ensamblaje de Armas",
+		close_menu = "Cerrar Menú",
+		assemble_gun = "Ensamblar Arma",
+		press_assemble_gun = "[${SeatEjectKey}] Ensamblar Arma",
+		assembling_gun = "Ensamblado de ${weapon}",
+		crafting_success = "Ha fabricado exitosamente un/a ${weapon}.",
+		crafting_failed = "Error al fabricar el arma.",
+
+		crafted_gun_logs_title = "Arma Fabricada",
+		crafted_gun_logs_details = "${consoleName} fabricó 1x `${weapon}` en una mesa de fabricación de armas."
 	},
 
 	gun_running = {
@@ -7023,8 +7607,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 		m = "m",
 		belt = "CINTURÓN",
 		oil = "ACEITE",
+		megaphone = "PA",
 		manual = "MANUAL",
-		limiter = "LIMITADOR",
+		cruise_control = "CC",
+		speed_limiter = "SL",
 		gear_uc = "ENGRANAJE",
 		fuel = "combustible",
 		nitro = "nitro",
@@ -7096,6 +7682,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		los_santos = "Los Santos",
 		citizen_card = "Documento de Identidad",
 		driver_license = "Licencia de Conducir",
+		press_pass = "Pase de Prensa",
 		first_name = "Nombre",
 		last_name = "Apellido",
 		gender = "Género",
@@ -7138,6 +7725,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		just_showed_citizen_card = "Acabas de mostrar una tarjeta de ciudadanía. Porfavor espera un momento.",
 		driver_license_details = "${firstName} ${lastName} | Fecha de Nacimiento: ${dateOfBirth} | Género: ${gender} | ID Ciudadano: ${characterId}",
 		just_showed_driver_license = "Acabas de mostrar tu Licencia de Conducir. Por favor, espera un momento.",
+		press_pass_details = "${firstName} ${lastName} | Género: ${gender} | ID Ciudadano: ${characterId}",
+		just_showed_press_pass = "Acabas de mostrar un Pase de Prensa. Por favor, espera un momento.",
 
 		boat_license = "Licencia de navegación",
 		boat_license_details = "Licencia de navegación | ${firstName} ${lastName} | ID del ciudadano: ${characterId}",
@@ -7265,6 +7854,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 		blip_label = "Importación / Exportación"
 	},
 
+	indestructibility = {
+		indestructibility_on = "Indestructibilidad activada.",
+		indestructibility_off = "Indestructibilidad desactivada."
+	},
+
 	injuries = {
 		inspect_no_player = "No hay ningún jugador cerca para inspeccionar.",
 		already_inspecting = "Ya estás inspeccionando a un jugador.",
@@ -7272,7 +7866,14 @@ OP.Global.Locales.Languages["es-ES"] = {
 		inspecting = "Inspeccionando al jugador",
 		no_injuries = "Sin lesiones ni sangrado",
 		patient_bleeding = "El paciente está sangrando.",
-		injury = "Lesión de ${label}"
+		patient_bite_wounds = "Paciente tiene heridas de mordedura.",
+		injury = "Lesión de ${label}",
+		performing_autopsy = "Realizando autopsia",
+		already_performing_autopsy = "Ya se está realizando la autopsia.",
+		autopsy_no_player = "No hay ningún jugador cercano al que puedas realizar la autopsia.",
+		autopsy_result = "Parece que el paciente falleció por `${label}` alrededor de las ${time}.",
+		autopsy_no_result = "La autopsia parece ser inconclusa.",
+		autopsy_failed = "No se pudo realizar la autopsia."
 	},
 
 	instances = {
@@ -7318,10 +7919,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 		cleaning_station = "Estación de limpieza",
 		grocery_store = "Tienda de comestibles",
 		dons_country_store = "Tienda de Don's Country",
-		penthouse_fridge = "Nevera del Penthouse",
+		cigar_store = "Tienda de tabacos",
+		penthouse_fridge = "Frigorífico",
 		mug_shots = "Fotos de la policía",
 		prison_store = "Tienda de la prisión",
 		fruit_vendor = "Vendedor de frutas",
+		fruit_market = "Mercado de frutas Alamo",
 		food_market = "Mercado de alimentos",
 		island_store = "Tienda de la isla",
 		travel_agency = "Agencia de viajes",
@@ -7329,7 +7932,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 		burger_bar = "Bar de hamburguesas",
 		tool_store = "Tienda de herramientas",
 		gun_store = "Armería",
+		locksmith = "Cerrajero",
+		the_chemist = "El Químico",
 		discount_store = "Tienda de descuento",
+		skater_store = "Tienda de Skate",
 		gun_store_with_shooting_range = "Armería con campo de tiro",
 		green_wonderland = "Maravilla Verde",
 		copy_shop = "Imprenta",
@@ -7343,8 +7949,9 @@ OP.Global.Locales.Languages["es-ES"] = {
 		strip_club = "Club de Striptease",
 		police_store = "Tienda de la Policía",
 		fib_store = "Tienda del FIB",
-		police_badge_store = "Mostrador de Placas de la Policía",
-		doc_badge_store = "Escritorio de Placas de la DOC",
+		deputy_madison = "Suboficial Madison",
+		sergeant_harris = "Sargento Harris",
+		dr_thompson = "Dr. Thompson",
 		flower_store = "Florería de Stacey",
 		gift_store = "Regalos de Del Perro",
 		ems_store = "Tienda de los Servicios de Emergencia",
@@ -7360,12 +7967,14 @@ OP.Global.Locales.Languages["es-ES"] = {
 		erp_shop = "Tienda ERP",
 		pet_shop = "Tienda de mascotas",
 		bean_machine = "Cafetería Bean",
+		bean_machine_fridge = "Nevera de Bean Machine",
 		hunting_store = "Tienda de caza",
 		fishing_store = "Tienda de pesca",
 		los_santos_golf_club = "Club de Golf de Los Santos",
 		arcade_bar = "Bar de Arcade",
 		japanese_restaurant = "Restaurante Japonés",
 		japanese_restaurant_kitchen = "Cocina del Restaurante Japonés",
+		pizza_restaurant = "Restaurante de Pizza",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Molino de granos",
 		pd_prefix = "PD",
@@ -7375,13 +7984,15 @@ OP.Global.Locales.Languages["es-ES"] = {
 		br_prefix = "BR",
 		inventory_overweight = "¡Tu inventario está sobrecargado!",
 		vehicle_locked = "El vehículo está bloqueado.",
+		press_to_talk_to = "Pulsa ~INPUT_REPLAY_SHOWHOTKEY~ para hablar con ${name}.",
 		press_to_access_store = "Presiona ~INPUT_REPLAY_SHOWHOTKEY~ para acceder a la tienda.",
 		press_to_access_locker = "Presiona ~INPUT_REPLAY_SHOWHOTKEY~ para acceder a tu armario privado.",
 		press_to_access_shared_storage = "Presiona ~INPUT_REPLAY_SHOWHOTKEY~ para acceder al almacenamiento compartido.",
 		device_printout_details = "<b>Tipo:</b> <i>${type}</i>, <b>Texto:</b> <i>${text}</i>",
 		copy_serial_number = "Copiar número de serie",
-		copy_fingerprint = "Copiar Huella Dactilar",
 		serial_number_copied = "${itemName}, Número de serie: ${serialNumber}",
+		copy_fingerprint = "Copiar Huella Dactilar",
+		copy_evidence = "Copiar Evidencia",
 
 		failed_give = "No se pudo entregar el/los objeto(s) al jugador.",
 		character_too_far = "El jugador está demasiado lejos.",
@@ -7394,10 +8005,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 		inspect_no_property = "Guinness",
 
 		searching_dumpster = "Buscando en el contenedor",
+		searching_homeless_tent = "Buscando en la Tienda de Indigentes",
 
 		nameable_title = "Nombre del objeto personalizable:",
 
 		inventory_restricted = "No puedes mover este objeto a ese inventario.",
+		inventory_no_more_items = "No puedes añadir más objetos a este inventario.",
 
 		press_to_access_shredder = "[${InteractionKey}] Acceder a la trituradora.",
 
@@ -7422,6 +8035,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 		arcade_counter = "Mostrador de Arcade",
 		tequilala_counter = "Mostrador de Tequi-la-la",
 		prison_counter = "Contador de la Prisión",
+		kissaki_counter = "Mostrador de Kissaki",
+		underground_bar_counter = "Mostrador del Bar Subterráneo",
+		pizza_this_counter = "Mostrador de Pizza This",
+		yellow_jack_counter = "Mostrador de Yellow Jack",
+		bahama_mamas_counter = "Contador de Bahama Mamas",
 
 		inventory_name_missing = "Falta el parámetro del nombre del inventario.",
 
@@ -7443,6 +8061,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		broken_food = "Este alimento está en mal estado.",
 		broken_drugs = "Este medicamento ha caducado.",
 		vape_empty = "Este vapeador está vacío.",
+		pen_empty = "Este vaporizador está vacío.",
 
 		craft_combine = "Crear <i>${output}</i>",
 		combining = "Creando",
@@ -7467,6 +8086,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 		mix_pancake_batter = "Mezclar <i>Masa de Panqueques</i>",
 		disassemble_bandages = "Desmontar <i>Vendajes</i>",
 		craft_tourniquet = "Confeccionar <i>Vendaje en torniquete</i>",
+		mix_pilk = "Mezclar <i>Pepsi y Leche</i>",
+		break_apart_battery = "Desmontar <i>Batería</i>",
+		mix_gunpowder = "Mezclar <i>Pólvora</i>",
+		roll_cigar = "Hacer un <i>Puro</i>",
 
 		search = "Buscar",
 		amount = "Cantidad",
@@ -7511,10 +8134,15 @@ OP.Global.Locales.Languages["es-ES"] = {
 		logs_wiped_nearby_ground_inventories_details = "${consoleName} borró todos los inventarios del suelo dentro de un radio de `${radius}`.",
 
 		inventory_crafting_logs_title = "Glock 18C",
-		inventory_crafting_logs_details = "${consoleName} usó ${inputs} para crear ${amount}x ${output}.",
+		inventory_crafting_logs_details = "${consoleName} ha utilizado ${inputs} para crear ${output}.",
 
 		press_use_campfire = "[${InteractionKey}] Usar fogata",
 		use_campfire = "Usar fogata",
+
+		inventory_not_loaded = "Inventario no cargado.",
+		invalid_inventory_name = "Nombre de inventario inválido.",
+		inventory_refresh_success = "Inventario actualizado con éxito.",
+		inventory_refresh_failed = "Error al actualizar el inventario.",
 
 		dumpster_sandwich = "Sándwich enmohecido",
 		dumpster_beer = "Cerveza rancia",
@@ -7549,6 +8177,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		citizen_card_description = "Actúa como identificación, licencia de armas y licencia de conducir.",
 		driver_license = "Licencia de Conducir",
 		driver_license_description = "Una licencia de conducir oficial. Definitivamente no es de la parte de atrás de una caja de cereales.",
+		press_pass = "Pase de Prensa",
+		press_pass_description = "Este Pase de Prensa oficial le identifica como reportero o periodista, otorgando acceso a áreas restringidas y eventos. Úselo con orgullo mientras persigue historias y descubre la verdad.",
 		phone = "Teléfono",
 		phone_description = "nunca:tm:",
 		radio = "Radio",
@@ -7558,7 +8188,9 @@ OP.Global.Locales.Languages["es-ES"] = {
 		tablet = "Tableta",
 		tablet_description = "Un teléfono muy grande.",
 		wallet = "Billetera",
-		wallet_description = "Para todo tu dinero y tarjetas.",
+		wallet_description = "Diseñada con el patriotismo en mente, esta cartera no solo almacena sus elementos esenciales como identificaciones y dinero, sino que lo hace con un toque de orgullo nacional. La vibrante bandera estadounidense y el emblema del águila hacen una declaración cada vez que la saca. Perfecta para aquellos que llevan no solo sus objetos de valor, sino también un sentido de orgullo.",
+		folder = "Carpeta",
+		folder_description = "Esta resistente carpeta azul es el organizador por excelencia para todos tus papeles importantes. Ideal para mantener documentos, identificaciones y fotos de forma ordenada y fácilmente accesible. Ya sea para uso empresarial o personal, es un guardián confiable de tus tesoros de papel.",
 
 		gps = "GPS",
 		gps_description = "Satisface todas tus necesidades de dispositivos electrónicos.",
@@ -7666,8 +8298,13 @@ OP.Global.Locales.Languages["es-ES"] = {
 		printer = "Impresora",
 		printer_description = "Sin fax, solo impresora.",
 
+		label_printer = "Impresora de Etiquetas",
+		label_printer_description = "¡Personaliza tu equipo con estilo con esta impresora de etiquetas! Simplemente coloca un artículo en ella e imprime una nueva skin o envoltura elegante para darle un aspecto fresco y personalizado. ¡Perfecta para añadir un toque especial a tus cosas de uso diario!",
+
 		brochure = "Folleto informativo",
 		brochure_description = "Un folleto útil para empezar en la ciudad.",
+		bus_ticket = "Billete de Autobús",
+		bus_ticket_description = "Tu billete de ida para la <b>${route}</b>! Este billete es perfecto para aquellos a quienes les gusta conservar un pequeño recuerdo de sus viajes. Es válido para un solo trayecto desde <b>${date}</b>, así que asegúrate de sujetarlo bien y disfrutar del viaje. Recuerda, este billete solo es válido para un viaje, ¡así que haz que cuente!",
 
 		basic_repair_kit = "Kit de reparación básico",
 		basic_repair_kit_description = "Hace que las cosas funcionen, pero apenas.",
@@ -7710,9 +8347,42 @@ OP.Global.Locales.Languages["es-ES"] = {
 		kissaki_delivery_description = "Una deliciosa colección de sushi y otras delicias japonesas.",
 		green_wonderland_delivery = "Bolsa de Maravillas Verdes",
 		green_wonderland_delivery_description = "Una bolsa llena de tus golosinas verdes favoritas. #420blazeit",
+		pizza_this_delivery = "Caja de Entrega Pizza This",
+		pizza_this_delivery_description = "Transporta tu pizza caliente y deliciosa con estilo con la caja de entrega Pizza This, asegurando que cada porción llegue tan perfecta como salió del horno.",
+
+		empty_box = "Caja vacía",
+		empty_box_description = "Empieza con esta caja simple y resistente para crear un regalo personalizado. Llénala con tesoros no perecederos y estará lista para convertirse en un regalo pensado. Ideal para empacar todo aquello que simboliza afecto, excepto perecederos y armas.",
+		gift_box = "Caja de regalo",
+		gift_box_description = "Esta elegante caja de regalo sellada, adornada con un lazo festivo, es una hermosa forma de presentar tus artículos cuidadosamente seleccionados. Perfecta para ocasiones especiales, transmite calidez y consideración, asegurando que tu gesto de dar sea tan encantador como el regalo en su interior.",
 
 		ear_defenders = "Protectores de Oídos",
 		ear_defenders_description = "Se utilizan para proteger los oídos de ruidos fuertes.",
+
+		skateboard = "Tabla de skate",
+		skateboard_description = "Conseguimos la tabla de skate en GTA V antes que Skate 4.",
+		deck_arcade = "Tabla Arcade Attack",
+		deck_arcade_description = "Mejora tu juego de skate con la Tabla Arcade Attack. Con vibrantes gráficos de píxeles que te transportan a los juegos clásicos, esta tabla es perfecta para el skater gamer. Lleva un poco de nostalgia a las calles y deslízate por esas barandillas como si estuvieras haciendo altas puntuaciones.",
+		deck_cats = "Tabla Feline Frenzy",
+		deck_cats_description = "Muestra tu amor por los gatos con la Tabla Feline Frenzy. Decorada con gráficos juguetones de gatitos, esta tabla es perfecta para los entusiastas de los gatos que quieren añadir un toque de diversión a sus paseos. ¡Patinaje con estilo y que cada truco sea purr-fecto!",
+		deck_flowers = "Tablas de Ambiente Tropical",
+		deck_flowers_description = "Lleva la playa a las calles con las Tablas de Ambiente Tropical. Cubiertas con exuberantes patrones florales, esta tabla es ideal para aquellos que quieren patinar en un estado de verano perpetuo. ¡Siente la brisa y surfea las olas de la jungla urbana!",
+		deck_weed = "Tablas de Alta Velocidad",
+		deck_weed_description = "Abraza la máxima tranquilidad con las tablas de Alta Velocidad. Perfectas para los skaters que les gusta mantener las cosas relajadas mientras se elevan por los aires.",
+		deck_blossom = "Tablas de Cerezo en Flor",
+		deck_blossom_description = "Encuentra tu paz interior con Cherry Blossoms. Esta tabla es ideal para aquellos que desean llevar un toque de tranquilidad a sus sesiones de skate.",
+		deck_peace = "Tabla de Serenidad Psicodélica",
+		deck_peace_description = "Sumérgete en un estado de serenidad psicodélica. Esta tabla es perfecta para aquellos a quienes les gusta el skate con un toque de vibrantes vibraciones.",
+		deck_simpsons = "Tabla de Caos de Bart",
+		deck_simpsons_description = "Canaliza tu interior rebelde con la Tabla de Caos de Bart. Ideal para fans de Los Simpson que desean traer un poco del caos de Springfield a su rutina de skate.",
+		deck_police = "Deck de la Línea Azul",
+		deck_police_description = "Muestra tu apoyo a las fuerzas del orden con el Deck de la Línea Azul. Perfecto para los oficiales que quieren montar con estilo mientras representan el distintivo.",
+		deck_ems = "Deck de la Línea Roja",
+		deck_ems_description = "Rinde homenaje a los socorristas con el Deck de la Línea Roja. Ideal para el personal de EMS que quiera patinar con orgullo y honrar su trabajo heroico.",
+		deck_usa = "Deck de la Libertad",
+		deck_usa_description = "¡Viva América! Pasea con orgullo sobre el Deck de las Estrellas y Rayas, el máximo símbolo de libertad y el sueño americano. Diseñado para verdaderos patriotas, este deck te hará patinar con el espíritu de la bandera roja, blanca y azul bajo tus pies. ¡Dios bendiga a América!",
+
+		paper_straw = "Pajita de papel",
+		paper_straw_description = "Bebe de forma sostenible con esta pajita de papel ecológica. Diseñada para reducir residuos plásticos, ayuda a salvar a las tortugas mientras ofrece una experiencia de bebida única. La pajita se disuelve de forma natural en tu bebida con el tiempo, recordándote su propósito ecológico y haciéndola perfecta para disfrutarla de un solo uso.",
 
 		clothing_bag = "Bolsa de Ropa",
 		clothing_bag_description = "¡Nunca vuelva a preocuparse por emergencias de moda! La bolsa de ropa le permite almacenar su outfit favorito e instantáneamente equiparlo en cualquier lugar donde se encuentre. Esta bolsa tiene todo el poder de un hada madrina, pero sin el bibbidi-bobbidi-boo.",
@@ -7722,6 +8392,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		clover = "Trébol de Cuatro Hojas",
 		clover_description = "Un raro trébol de cuatro hojas para la buena suerte. Puedes encontrar estos en la hierba si buscas lo suficiente.",
+		clover_mk2 = "Trébol de 4 hojas MK2",
+		clover_mk2_description = "Un trébol raro y escurridizo de 5 hojas, ¡se dice que trae consigo una gran dosis de suerte extraordinaria si puedes verlo escondido entre la hierba!",
 		small_frog = "Rana Pequeña",
 		small_frog_description = "Solo una pequeña rana. ¡Mira al pequeño amigo, es tan lindo!",
 		seashell = "Concha de Mar",
@@ -7801,22 +8473,82 @@ OP.Global.Locales.Languages["es-ES"] = {
 		pistol_sight = "Mira para pistola",
 		pistol_sight_description = "Cómo mejorar tu puntería.",
 
+		tungsten_ore = "Mineral de tungsteno",
+		tungsten_ore_description = "¡No es fácil de conseguir, pero esta roca tiene potencial! Con una pequeña pero valiosa concentración de tungsteno, es un tesoro para los mineros que espera ser refinado.",
+		tungsten_nugget = "Pepita de tungsteno",
+		tungsten_nugget_description = "Refina ese mineral y obtendrás esta pequeña joya. Pequeña en tamaño, grande en valor, cada pepita es un testimonio del esfuerzo de extraer tungsteno puro desde sus humildes comienzos.",
+		tungsten_bar = "Barra de tungsteno",
+		tungsten_bar_description = "Funde suficientes de esas pepitas bien ganadas y tendrás una sólida barra de tungsteno. Resistente como una roca y lista para cualquier desafío que se interponga en su camino.",
+
+		titanium_ore = "Mineral de titanio",
+		titanium_ore_description = "Un mineral brillante de color gris plateado con un toque de misterio, el mineral de titanio es un material versátil y muy codiciado que se encuentra en lo más profundo de la tierra. No es excesivamente raro, pero su verdadero valor radica en el proceso de refinado.",
+		titanium_nugget = "Pepita de titanio",
+		titanium_nugget_description = "Extraído del mineral, esta pequeña pepita de titanio representa una forma concentrada del valioso metal. Cada pepita es un pequeño testamento a la pureza y resistencia del titanio.",
+		titanium_bar = "Barra de titanio",
+		titanium_bar_description = "Forjada a partir de múltiples pepitas de titanio, esta barra es un sólido pedazo de metal de alta resistencia. Su naturaleza ligera y duradera la hacen ideal para fabricar componentes premium.",
+
+		titanium_rod = "Varilla de titanio",
+		titanium_rod_description = "Elaborada a partir de barras de titanio, esta varilla es increíblemente resistente y resiliente. Sus propiedades ligeras combinadas con una durabilidad superior la convierten en un componente crítico para aplicaciones de alto rendimiento.",
 		aluminium_plate = "Placa de aluminio",
 		aluminium_plate_description = "Advertencia: No protege contra balas... drogadicto.",
 		aluminium_rod = "Varilla de aluminio",
 		aluminium_rod_description = "Trata de no golpear demasiado fuerte a tus amigos con esto.",
-		copper_nugget = "Pepita de cobre",
-		copper_nugget_description = "Pequeñas pepitas de ese dulce y marrón dorado.",
+		steel_tube = "Tubo de acero",
+		steel_tube_description = "Un tubo de acero versátil y resistente, perfecto para una variedad de proyectos de artesanía. Ya sea que estés construyendo, reparando o inventando, este tubo es tu material de referencia para obtener fuerza y fiabilidad.",
+		hardened_steel_plate = "Placa de acero endurecido",
+		hardened_steel_plate_description = "Esta placa de acero endurecido está diseñada para resistir las condiciones más duras, proporcionando una fuerza y durabilidad superiores para cualquier proyecto de alta resistencia. Perfecta para reforzar estructuras, fabricar componentes avanzados o asegurar que tus creaciones aguanten la prueba del tiempo.",
 		copper_wire = "Cable de cobre",
 		copper_wire_description = "Cable versátil que se puede utilizar para casi cualquier cosa electrónica.",
 		lens = "Lente",
 		lens_description = "Usado en gafas y microscopios, tú nerd.",
 		polymer_resin = "Resina de polímero",
 		polymer_resin_description = "No es la tipo fumable, pero sigue siendo interesante.",
+		fibreglass_resin = "Resina de fibra de vidrio",
+		fibreglass_resin_description = "Este adhesivo versátil es esencial para reforzar y reparar, creando componentes fuertes y ligeros. Fácil de aplicar y cura con un acabado resistente y duradero, es perfecto para proyectos de bricolaje y uso profesional por igual.",
 		screws = "Tornillos",
 		screws_description = "¿Qué haces? ¿Tornillos?",
 		spring = "Resorte",
 		spring_description = "No sé por qué, pero a la gente le encanta limpiar estos.",
+		high_tensile_spring = "Muelle de alta resistencia",
+		high_tensile_spring_description = "Un muelle de alta resistencia diseñado para un rendimiento óptimo, ofreciendo una fuerza y elasticidad excepcionales. Ideal para aplicaciones de alto estrés, este muelle garantiza una funcionalidad fiable y duradera, convirtiéndolo en un componente crucial en proyectos avanzados de artesanía e ingeniería.",
+		tungsten_plate = "Placa de tungsteno",
+		tungsten_plate_description = "Forjada a partir de dos barras sólidas de tungsteno, esta placa es resistente, duradera y lista para resistir cualquier calor o presión que se presente en su camino. Un verdadero testimonio de fuerza y ​​resiliencia.",
+		reinforced_steel_tube = "Tubo de acero reforzado",
+		reinforced_steel_tube_description = "Diseñado para una máxima durabilidad, este tubo de acero reforzado está construido para soportar las condiciones más difíciles. Su robusta construcción garantiza una fuerza y ​​resiliencia excepcionales.",
+		muzzle_brake = "Freno de boca",
+		muzzle_brake_description = "Diseñado para controlar el fuerte retroceso y la elevación del cañón de las armas de fuego, este componente esencial redirige los gases propulsores para mantener tu objetivo estable y tus disparos en el blanco. Fabricado con precisión, garantiza un funcionamiento más suave y una mayor precisión, lo que lo convierte en un elemento imprescindible para cualquier tirador serio.",
+
+		trigger = "Gatillo",
+		trigger_description = "El componente crucial para cualquier construcción de arma de fuego, ya sea una SMG, un rifle o una escopeta. Elaborado con precisión para que el gatillo tenga una respuesta nítida y fiable cada vez.",
+		smg_lower_receiver = "Receptor inferior de SMG",
+		smg_lower_receiver_description = "La pieza fundamental de tu SMG, el receptor inferior es donde todo comienza. Esencial para alojar el mecanismo de disparo y conectar otros componentes, esta pieza es tu primer paso para construir una potencia de fuego rápido.",
+		smg_lower_receiver_mk2 = "Receptor inferior de SMG MK2",
+		smg_lower_receiver_mk2_description = "Una versión mejorada del receptor inferior estándar, el MK2 ofrece una durabilidad y precisión mejoradas. Perfecto para aquellos que buscan construir una SMG más confiable y robusta para situaciones intensas.",
+		smg_upper_receiver = "Cerrojo Superior de SMG",
+		smg_upper_receiver_description = "Completando el armazón esencial de tu SMG, el cerrojo superior es vital para montar el cañón y otros componentes superiores. Está diseñado para garantizar un funcionamiento suave y un rendimiento consistente.",
+		smg_upper_receiver_mk2 = "Cerrojo Superior de SMG MK2",
+		smg_upper_receiver_mk2_description = "La variante MK2 del cerrojo superior de SMG viene con mejoras para una mayor precisión y estabilidad. Es la elección para aquellos que exigen un rendimiento de primera clase de su arma de fuego.",
+		rifle_lower_receiver = "Culata de Rifle",
+		rifle_lower_receiver_description = "La base de tu rifle, la culata de rifle sostiene el grupo del gatillo y el alojamiento del cargador. Este componente crucial asegura que la fundación de tu rifle sea sólida y esté lista para ensamblar más piezas.",
+		rifle_lower_receiver_mk2 = "Culata de Rifle MK2",
+		rifle_lower_receiver_mk2_description = "Una versión mejorada de la culata estándar del rifle, el MK2 ofrece una mayor resistencia y fiabilidad, lo que lo convierte en ideal para rifles de alto rendimiento.",
+		rifle_upper_receiver = "Culata superior de rifle",
+		rifle_upper_receiver_description = "Conectando el cañón y el grupo portacerrojo, la culata superior es clave para la precisión y operatividad de tu rifle. Esta pieza garantiza que tu rifle pueda manejar cualquier tarea con precisión.",
+		rifle_upper_receiver_mk2 = "Culata superior de rifle MK2",
+		rifle_upper_receiver_mk2_description = "La culata superior MK2 para rifles ofrece una ingeniería superior para una mayor precisión y durabilidad, preparando tu rifle para las condiciones más exigentes.",
+		shotgun_lower_receiver = "Receptor Inferior de Escopeta",
+		shotgun_lower_receiver_description = "El núcleo de tu escopeta, el receptor inferior es esencial para mantener el ensamblaje del gatillo y proporcionar una base para el resto del arma. Comienza la construcción de tu escopeta con este componente robusto.",
+		shotgun_lower_receiver_mk2 = "Receptor Inferior de Escopeta MK2",
+		shotgun_lower_receiver_mk2_description = "Actualizar a la versión MK2 te proporciona una resistencia y durabilidad añadidas, perfectas para construir una escopeta que pueda resistir las exigencias del uso frecuente.",
+		shotgun_upper_receiver = "Culata de Escopeta",
+		shotgun_upper_receiver_description = "Diseñada para montar el cañón y garantizar un ciclo suave de los cartuchos, la culata es una parte crítica de la funcionalidad de tu escopeta. Construye tu escopeta definitiva con este componente clave.",
+
+		copper_nugget = "Pepita de cobre",
+		copper_nugget_description = "Pequeñas pepitas de ese dulce y marrón dorado.",
+		zinc = "Zinc",
+		zinc_description = "Extraído de baterías, el zinc es tu metal de confianza para necesidades de fabricación e industriales. Ya sea reparando cosas o combinándolo para crear algo aún más genial, este elemento versátil es una joya oculta en tu kit de herramientas.",
+		brass = "Latón",
+		brass_description = "Al combinar con destreza cobre y zinc, obtienes latón, un metal resistente perfecto para fabricar cartuchos de munición. Es como la alquimia de la era moderna, convirtiendo elementos simples en los componentes clave de tu arsenal.",
 
 		grenade_shell = "Carcasa de granada",
 		grenade_shell_description = "Esta carcasa vacía de granada es un componente crucial para la fabricación de granadas especializadas, como las de humo o gas. Su resistente estructura está diseñada para contener y desplegar de forma segura diversos elementos cuando se utiliza en combinación con el mecanismo de activación correcto.",
@@ -7842,16 +8574,16 @@ OP.Global.Locales.Languages["es-ES"] = {
 		skin_geometric_description = "Para los tiradores más inclinados a las matemáticas, esta piel geométrica añade un estilo calculado a tu arma. Demuestra que eres igualmente hábil en trigonometría como en triggernometría.",
 
 		refillable_bottle = "Botella Recargable",
-		refillable_bottle_description = "Salva las tortugas, ¡por el amor de Dios!",
+		refillable_bottle_description = "Mejora tu hidratación con esta elegante botella recargable. Diseñada para los ecoconscientes y amantes del estilo, su construcción duradera y diseño minimalista la convierten en el compañero perfecto para mantenerte hidratado durante todo el día. Llénala con tu bebida favorita y mantén la sed a raya ya sea en el trabajo, en el gimnasio o explorando el mundo.",
 
 		capri_sun = "Capri Sun",
-		capri_sun_description = "Delicia de tu infancia.",
+		capri_sun_description = "Revive la alegría de tu infancia con cada sorbo de Capri Sun. Esta icónica bolsita rebosa con el sabor vivaz de naranja, ofreciendo una explosión refrescante que recuerda a los días soleados y las tardes llenas de diversión. Perfecto para aventuras o un capricho nostálgico, ¡es tu pequeña caja de sol que sacia la sed y despierta recuerdos!",
 
 		gumball = "Chicle",
-		gumball_description = "Un chicle, ¿qué más quieres que diga?",
+		gumball_description = "Disfruta de una explosión de sabor inesperado con cada gomita de colores. ¡Pero ten cuidado de no emocionarte demasiado, recuerda masticar y no tragar! Cada pieza ofrece una sorpresa encantadora, ¡haciendo de cada masticada una aventura divertida y llena de sabor!",
 
 		chorus_fruit = "Fruta del Coral",
-		chorus_fruit_description = "Una fruta que puede teletransportarte a un lugar aleatorio.",
+		chorus_fruit_description = "Descubre los secretos de la Fruta del Coro, una rara maravilla botánica venerada por los entusiastas de la medicina alternativa por sus extraordinarias propiedades. Una vez consumida, esta fruta ofrece un repentino y vigorizante cambio de ubicación, un efecto sorprendente que muchos atribuyen a su energía mística. Ideal para aquellos que buscan una rápida rejuvenación o un cambio de escenario espontáneo. Acepta lo inesperado y deja que la Fruta del Coro te transporte a nuevas posibilidades.",
 
 		water = "Agua",
 		water_description = "¡Peligro! El monóxido de dihidrógeno es incoloro e inodoro. La inhalación accidental de DHMO puede ser fatal. La exposición prolongada a su forma sólida causa un grave daño tisular. Los síntomas de la ingestión de DHMO pueden incluir sudoración y micción excesivas, y posiblemente una sensación de hinchazón, náuseas, vómitos y desequilibrio de electrolitos corporales.",
@@ -7869,6 +8601,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 		coke_description = "¿Pablo?",
 		pepsi = "Invalid time specified.",
 		pepsi_description = "Invalid or missing number plate.",
+		fanta_light = "Fanta Light",
+		fanta_light_description = "Disfruta del sabor elusivo y refrescante de Fanta Light. Perfecta para cuando necesitas una bebida que te hace pensar, \"¿Puedo tomar una Fanta Light, colega?\" Disfruta del sabor ligero y chispeante de esta bebida icónica.",
+		sprite = "Sprite",
+		sprite_description = "Refresca tu cuerpo con una lata de Sprite, el refresco de limón-lima que sorprende. Tiene esa carbonatación burbujeante que cosquillea y a veces incluso duele al tragar, ¡pero vale la pena! Cargado de dulzura, Sprite es tu elección para una solución azucarada y con gas.",
+		pilk = "Pilk",
+		pilk_description = "Una curiosa mezcla de Pepsi y leche, el Pilk casero ofrece una combinación de refresco burbujeante y suavidad cremosa. Remueve bien antes de beber, ya que la leche se asienta naturalmente en el fondo, creando una experiencia de sabor única y aventurera.",
 		wonder_waffle = "Wonder Waffle",
 		wonder_waffle_description = "Vegano, sin lactosa, sin lácteos, sin huevo, sin gluten, orgánico, sin antibióticos, sin soja, sin fructosa, sin frutos secos, no transgénico, sin azúcar, sin grasa y bajo en carbohidratos",
 		cheeseburger = "Hamburguesa con queso",
@@ -7887,8 +8625,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		smores_description = "Un delicioso manjar que combina malvavisco pegajoso, chocolate derretido y crujientes galletas graham en una clásica creación de fogata. Servidos en Bean Machine y varios bares y pubs, estos S'mores ofrecen una dulce escapada hacia la nostalgia y la comodidad con cada bocado. Perfectos para compartir o disfrutar de un momento de indulgencia.",
 		tic_tac = "Tic Tac",
 		tic_tac_description = "¿Oxi? No, oficial, solo estoy comiendo Tic Tacs.",
-		pizza_slice = "Porción de Pizza",
-		pizza_slice_description = "Un trocito de pizza para ti, con extra de pepperoni (no es vegano).",
 		hot_dog = "Perrito caliente",
 		hot_dog_description = "Devora este glizzy como si fuera el último.",
 		nachos = "Nachos",
@@ -7901,6 +8637,82 @@ OP.Global.Locales.Languages["es-ES"] = {
 		vanilla_milkshake_description = "Un clásico de las diner, ¡ideal para acompañar una hamburguesa y patatas fritas!",
 		chocolate_milkshake = "Batido de Chocolate",
 		chocolate_milkshake_description = "Un batido que tiene muy buena pinta, ¡esperamos que la CIA no te persiga antes de que lo pruebes!",
+
+		pizza_dough = "Masa de Pizza",
+		pizza_dough_description = "Esta masa premium para pizza está lista para tu toque culinario. Elástica y dúctil, es perfecta para dar forma a tu base ideal para cualquier tipo de ingredientes. Estírala, añade los ingredientes y hornéala hasta obtener una corteza crujiente y dorada, que es la base de una deliciosa pizza casera.",
+		black_olives = "Aceitunas Negras",
+		black_olives_description = "Estas aceitunas negras aportan un sabor rico y terroso a cualquier plato. Cortadas y listas para esparcir sobre las pizzas, añaden un toque de frescor mediterráneo que complementa tanto los ingredientes cárnicos como los vegetarianos.",
+		bell_pepper = "Pimiento Rojo",
+		bell_pepper_description = "Vibrante y dulce, este pimiento rojo entero añade un toque de color y crujido a cualquier plato. Perfecto para rellenar, cortar o picar, es un favorito versátil en la cocina.",
+		bell_pepper_sliced = "Pimiento Rojo en Rodajas",
+		bell_pepper_sliced_description = "Pimiento rojo recién cortado, listo para agregar un toque dulce y crujiente a tus ensaladas, salteados o bocadillos. Preparado convenientemente para todas tus aventuras culinarias.",
+		pepperoni = "Pepperoni",
+		pepperoni_description = "Picante y sabroso, el pepperoni es un topping imprescindible para los amantes de la pizza. Su sabor intenso y su deliciosa crujiente al hornearlo lo convierten en una elección popular, añadiendo un toque picante que realza cada bocado.",
+		jalapeno = "Jalapeño",
+		jalapeno_description = "Los jalapeños frescos proporcionan un toque picante a cualquier pizza. Cortados finamente, estos pimientos aportan una explosión de calor y una nota vegetal brillante que corta los sabores más ricos, perfecto para aquellos que aprecian un toque picante.",
+		mozarella = "Mozarella",
+		mozarella_description = "Cremosa y deliciosa, la mozzarella es el queso de pizza por excelencia. Se derrite en una capa elástica y pegajosa que une perfectamente todos los ingredientes, creando ese amado efecto de estirar al cortar cada trozo de pizza.",
+		ham = "Jamón",
+		ham_description = "El jamón dulce y salado añade una rica profundidad de sabor a la pizza. Sus tiernos y jugosos bocados ofrecen un contraste delicioso cuando se combinan con la textura cremosa del queso derretido, lo que lo convierte en una elección popular para muchos.",
+		salami = "Salami",
+		salami_description = "El salami aporta un sabor robusto y ajo con un toque ahumado a las pizzas. Su textura firme y su sabor rico proporcionan un bocado contundente que destaca entre otros ingredientes.",
+		tomato_sauce = "Salsa de Tomate",
+		tomato_sauce_description = "Esta vibrante salsa de tomate se elabora a partir de tomates maduros, cocidos a fuego lento con hierbas y especias para desarrollar un sabor rico y profundo. Sirve como la base fundamental que realza cada pizza con sus notas dulces y ácidas.",
+		flour = "Harina",
+		flour_description = "La harina de alta calidad es esencial para elaborar la masa de pizza perfecta. Proporciona la estructura y la masticabilidad que los amantes de la pizza aprecian, convirtiéndola en un ingrediente fundamental en la elaboración de pizzas.",
+		olive_oil = "Aceite de Oliva",
+		olive_oil_description = "Rico y fragante, el aceite de oliva se vierte sobre la pizza para añadir una capa extra de sabor. Aporta una sutil frutosidad y ayuda a lograr una corteza dorada y crujiente que resulta irresistible.",
+		pizza_cheese = "Queso para Pizza",
+		pizza_cheese_description = "Mejora tus pizzas caseras con este rico y elástico queso para pizza, diseñado para fundirse de forma espectacular y añadir una textura cremosa y pegajosa a cada bocado lleno de sabor.",
+		pineapple_slices = "Rodajas de Piña",
+		pineapple_slices_description = "Dulces, agridulces y jugosas, estas rodajas de piña son perfectas para añadir un toque tropical a tus platos. Ya seas partidario de la piña en la pizza o prefieras disfrutarla como snack independiente, estas rodajas aportan luminosidad y sabor a cualquier creación culinaria.",
+		pizza_saver = "Protector de pizza",
+		pizza_saver_description = "Se supone que evita que el queso se pegue a la caja, pero cuando eras niño pensabas que era para que las Barbies y figuras de acción se sentaran en él.",
+		bread_sticks = "Palitos de pan",
+		bread_sticks_description = "Dorados y crujientes por fuera, suaves y masticables por dentro, estos palitos de pan están hechos de masa de pizza. Perfectos para mojar en salsa marinara o disfrutar solos, son un aperitivo delicioso y versátil.",
+
+		pizza_margherita_raw = "Pizza Margherita cruda",
+		pizza_margherita_raw_description = "Esta pizza Margherita está recién preparada con una vibrante salsa de tomate, mozzarella fresca y albahaca aromática sobre una masa perfectamente fermentada, lista para meter en el horno y hornear a la perfección.",
+		pizza_salami_raw = "Pizza Salami Cruda",
+		pizza_salami_raw_description = "Recién montada, esta pizza Salami presenta una base de salsa de tomate rica, capas de rodajas de salami picante y generosa mozzarella sobre masa casera, lista para hornearse hasta lograr una crujiente y carnosa delicia.",
+		pizza_diavola_raw = "Pizza Diavola Cruda",
+		pizza_diavola_raw_description = "Esta pizza Diavola está expertamente preparada con una base de masa cruda cubierta con picante pepperoni, jalapeños ardientes y una generosa capa de queso, esperando el calor del horno para liberar todo su sabor.",
+		pizza_ham_raw = "Pizza de Jamón Cruda",
+		pizza_ham_raw_description = "Esta pizza de jamón está hecha a mano con masa casera, cubierta con lonchas de sabroso jamón, suave mozzarella y salsa de tomate, todo dispuesto y listo para hornear, creando una comida reconfortante y deliciosa.",
+		pizza_hawaiian_raw = "Pizza Hawaiana Cruda",
+		pizza_hawaiian_raw_description = "Esta pizza hawaiana cruda está preparada y lista para el horno, con una generosa cobertura de dulce piña, sabroso jamón y fundido queso mozzarella sobre una base sabrosa, lista para resolver el debate eterno con cada delicioso bocado.",
+		pizza_pepperoni_raw = "Pizza de Pepperoni Cruda",
+		pizza_pepperoni_raw_description = "¡Prepárate para un festín picante! Esta pizza cruda de pepperoni picante está cargada de rodajas de pepperoni picante y salsa sabrosa, lista para entrar en el horno. Perfecta para aquellos a quienes les encanta un toque picante en su porción.",
+		pizza_vegetarian_raw = "Pizza vegetariana cruda",
+		pizza_vegetarian_raw_description = "Prepárate para hornear un festín fresco del jardín con esta Pizza vegetariana cruda. Apilada con vibrantes verduras y queso fundido, es una delicia saludable esperando en el horno.",
+		pizza_margherita = "Pizza Margherita",
+		pizza_margherita_description = "Disfruta de la simplicidad de una clásica Pizza Margherita, con una corteza dorada cubierta con salsa de tomate rica, mozzarella cremosa y un toque de albahaca fresca. Este favorito atemporal ofrece un sabor de Italia con cada sabroso pedazo.",
+		pizza_salami = "Pizza de Salami",
+		pizza_salami_description = "Disfruta de los sabores intensos de la Pizza de Salami recién horneada, generosamente cubierta con rodajas picantes de salami que se mezclan perfectamente con la mozzarella fundida y una base de tomate con un toque ácido.",
+		pizza_diavola = "Pizza Diabla",
+		pizza_diavola_description = "Experimenta el toque picante de la Pizza Diabla, con pepperoni picante, jalapeños y salsa de tomate rica, todo cubierto bajo una capa de queso derretido, perfectamente horneado para un deleite crujiente.",
+		pizza_ham = "Pizza de Jamón",
+		pizza_ham_description = "Esta Pizza de Jamón sale del horno con una masa crujiente cubierta con jugosas lonchas de jamón, cremosa mozzarella y salsa de tomate con un toque ácido, creando un equilibrio encantador de sabores dulces y salados.",
+		pizza_hawaiian = "Pizza Hawaiana",
+		pizza_hawaiian_description = "Recién salida del horno, esta pizza hawaiana combina la controvertida pero querida mezcla de jugosa piña y sabroso jamón sobre una costra dorada. Sumérgete en este giro tropical que sigue provocando debates y deleitando a las papilas gustativas.",
+		pizza_pepperoni = "Pizza de Pepperoni",
+		pizza_pepperoni_description = "¡Un toque picante en un clásico favorito! Esta picante pizza de pepperoni está horneada a la perfección, con una costra crujiente, queso derretido y pepperoni con un toque picante. ¡No apta para corazones débiles, esta pizza trae el fuego!",
+		pizza_vegetarian = "Pizza Vegetariana",
+		pizza_vegetarian_description = "Disfruta de un trozo de naturaleza con esta deliciosa Pizza Vegetariana. Cargada de verduras coloridas, queso cremoso y una base perfecta, es una celebración de sabores directamente del jardín.",
+		pizza_slice = "Porción de Pizza Margherita",
+		pizza_slice_description = "Saborea la delicia clásica de una porción de pizza Margherita, con su burbujeante mozzarella, albahaca fragante y base de tomate en una base crujiente. Perfecto para un bocado rápido y sabroso.",
+		pizza_slice_salami = "Porción de Pizza de Salami",
+		pizza_slice_salami_description = "Disfruta de una porción de pizza de Salami, donde el picante salami se funde con la mozzarella derretida y una salsa de tomate tangy sobre una base perfectamente horneada. Ideal para aquellos que anhelan un sabor más sabroso.",
+		pizza_slice_diavola = "Porción de Pizza Diavola",
+		pizza_slice_diavola_description = "Sumérgete en los sabores audaces con una porción de pizza Diavola, con pepperoni picante, jalapeños ardientes y queso derretido sobre una base crujiente. ¡Un placer picante para los amantes del picante!",
+		pizza_slice_ham = "Porción de Pizza de Jamón",
+		pizza_slice_ham_description = "Disfruta de una porción de pizza de jamón, combinando el dulce jamón con la cremosa mozzarella y una salsa de tomate sabrosa sobre una base dorada. Una mezcla satisfactoria de dulce y salado en cada bocado.",
+		pizza_slice_hawaiian = "Porción de Pizza Hawaiana",
+		pizza_slice_hawaiian_description = "Disfruta de una porción de pizza hawaiana, donde la dulce piña se encuentra con el sabroso jamón sobre una base de queso mozzarella fundido y salsa de tomate tangy. Esta deliciosa combinación desafía las convenciones y deleita a los paladares, demostrando que a veces, la asociación inesperada crea la comida más memorable.",
+		pizza_slice_pepperoni = "Porción de Pizza de Pepperoni",
+		pizza_slice_pepperoni_description = "¡Una única porción de picante delicia! Disfruta del pepperoni crujiente y el queso fundido con cada bocado. Esta porción tiene un toque, ¡perfecto para un rápido tentempié picante!",
+		pizza_slice_vegetarian = "Porción de Pizza Vegetariana",
+		pizza_slice_vegetarian_description = "Una sola porción de Pizza Vegetariana, rebosante de verduras frescas y queso derretido. Perfecta para un bocado ligero pero satisfactorio lleno de bondad de jardín.",
 
 		burrito = "Burrito",
 		burrito_description = "El burrito es un plato de la cocina mexicana y tex-mex que consiste en una tortilla de harina con varios ingredientes más.",
@@ -7934,6 +8746,14 @@ OP.Global.Locales.Languages["es-ES"] = {
 		raw_fries_description = "Básicamente solo patatas, pero alguien no puso suficiente esfuerzo en hacerlas algo.",
 		raw_patty = "Hamburguesa Cruda",
 		raw_patty_description = "90% Carne Real, el otro 10% se perdió en la traducción del empaque.",
+		chicken_nuggets_raw = "Nuggets de Pollo Crudos",
+		chicken_nuggets_raw_description = "Elaborados con pechuga de pollo tierna y recubiertos de pan rallado, estos nuggets de pollo crudos están listos para ser cocinados hasta la perfección dorada. Ideales para crear un aperitivo o comida casera y deliciosa.",
+		breadcrumbs = "Pan rallado",
+		breadcrumbs_description = "Estas migas de pan simples son perfectas para agregar un recubrimiento crujiente y dorado a tus platos fritos o horneados favoritos. Hechas con pan enriquecido, garantizan un delicioso crujido cada vez.",
+		chicken_breast = "Pechuga de pollo",
+		chicken_breast_description = "Frescas y tiernas, estas pechugas de pollo crudas son un ingrediente versátil listo para tu creatividad culinaria. Ideales para asar, hornear o freír, ofrecen una fuente de proteína de alta calidad para cualquier comida.",
+		chicken_nuggets = "Nuggets de Pollo",
+		chicken_nuggets_description = "Estos nuggets de pollo recién hechos son dorados y crujientes por fuera, tiernos y jugosos por dentro. Perfectamente sazonados y fritos a la perfección, son un delicioso tentempié o comida.",
 
 		apple = "Manzana",
 		apple_description = "¡Mantén alejados a los malvados doctores!",
@@ -7957,6 +8777,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		strawberry_description = "Generalmente se encuentran en campos...para siempre.",
 		watermelon = "Sandía",
 		watermelon_description = "¿Es agua o es una fruta? Quizás nunca lo sepamos.",
+		lemon = "Limón",
+		lemon_description = "Un limón vibrante y lleno de sabor ácido y un color amarillo brillante. Perfecto para darle un toque refrescante a tus platos y bebidas favoritos. Cada bocado ofrece un golpe cítrico que despierta tus papilas gustativas.",
 
 		banana_peel = "Cáscara de plátano",
 		banana_peel_description = "Bastante resbaladiza, ten cuidado al pisarla.",
@@ -7993,6 +8815,9 @@ OP.Global.Locales.Languages["es-ES"] = {
 		cabbage = "Repollo",
 		cabbage_description = "Perfecto para hacer kimchi casero.",
 
+		cabbage_seeds = "Semillas de repollo",
+		cabbage_seeds_description = "Estas resistentes semillas de repollo son tu primer paso hacia el cultivo de un parche de crujientes hojas verdes. Plántalas en cualquier suelo acogedor y observa cómo florecen en robustos repollos perfectos para una variedad de delicias culinarias. Desde ensaladas frescas hasta kimchi picante, estos repollos están listos para transformar tus aventuras en la cocina.",
+
 		smoothie = "Batido",
 		smoothie_description = "La mezcla perfecta de frutas, verduras y electrolitos para curar incluso las peores resacas causadas por el juego.",
 		blender = "Licuadora",
@@ -8009,10 +8834,32 @@ OP.Global.Locales.Languages["es-ES"] = {
 		jack_o_lantern_description = "Una calabaza con una cara tallada en ella.",
 
 		cigarette = "Cigarrillo",
-		cigarette_description = "Si no fumas eres un cobarde colega",
+		cigarette_description = "¡Si no fumas, eres un gallina, colega! Fuma y parecerás el gato más guay de la ciudad, al menos eso dicen. Tus pulmones pueden no estar de acuerdo, ¡pero hey, los sacrificios hay que hacerlos por el estilo, ¿verdad?",
 		cigarette_pack = "Paquete de Cigarrillos",
-		cigarette_pack_description = "Para tu padre que tiene adicción a los cigarrillos (esperemos que regrese después de ir por ellos).",
+		cigarette_pack_description = "Un paquete clásico de cigarrillos, porque aparentemente, nada dice \"Volveré en 5 minutos\" como estos. Perfectos para canalizar tu lado misterioso de padre que salió a por cigarrillos y... bueno, ya conoces el resto.",
+		cigarette_carton = "Caja de Cigarrillos",
+		cigarette_carton_description = "¿Necesitas una caja entera? ¡Aquí está tu solución! Una caja de cigarrillos que es un testamento a tu compromiso (o al de tu padre, si todavía está por ahí recogiéndolos). Con 8 paquetes en el interior, tienes suficiente para alimentar tu mal hábito y aún tener unos pocos para compartir... o no.",
+		snus_pack = "Lata de Snus",
+		snus_pack_description = "Esta lata es como mi reserva personal de alegría. Ábrela, coge una bolsita y siente esa subida. Siempre tengo que llevar una conmigo, ¡no puedo estar sin mi dosis de Zyn!",
+		snus = "Snus",
+		snus_description = "Estas pequeñas bolsitas son salvavidas, amigo. Solo tienes que poner una debajo de tu labio y ¡boom!—un subidón instantáneo sin humo. Se trata de esa sensación gradual y de mantener la calma. ¡No puedo tener suficientes!",
 
+		cigar_olivia = "Oliva Serie G",
+		cigar_olivia_description = "El Oliva Serie G ofrece un sabor único y equilibrado, mezclando notas de café intenso y cedro con un toque de dulzura a nuez. Su cuerpo medio y final suave lo convierten en una elección perfecta para aquellos que buscan un cigarro refinado pero accesible.",
+		cigar_romeo = "Romeo y Julieta 1875",
+		cigar_romeo_description = "¿Buscas algo suave y agradable? El Romeo y Julieta 1875 ofrece un sabor suave y terroso con un toque de almendras tostadas y un toque de dulzura. Perfecto para una noche relajada sin un golpe fuerte.",
+		cigar_arturo = "Arturo Fuente Gran Reserva",
+		cigar_arturo_description = "Con su fumada suave y mezcla bien equilibrada, el Arturo Fuente Gran Reserva desprende notas de madera dulce y un toque de nuez moscada. De cuerpo medio pero rico en sabor, es ideal para aquellos que disfrutan de un humo clásico sin el golpe.",
+		cigar_cohiba = "Cohiba",
+		cigar_cohiba_description = "Para aquellos con un gusto refinado, el Cohiba Robusto ofrece un humo rico y cremoso, combinando un sutil toque de especias con notas de cedro. Es un cigarro suave de cuerpo medio que habla de sofisticación sin exceder en fuerza.",
+
+		tobacco_leaf = "Hoja de Tabaco",
+		tobacco_leaf_description = "Esta hoja de tabaco verde fresca acaba de comenzar su viaje. Durante los próximos cinco días, se secará convirtiéndose en un profundo marrón, perfecto para enrollar cigarros. ¡Mantén un ojo en esa transformación!",
+		cigar_homemade = "Cigar (Hecho a mano)",
+		cigar_homemade_description = "Este cigarro hecho a mano ofrece un sabor rico y terroso con un toque de especias. Elaborado con cuidado y precisión, es la recompensa perfecta por el tiempo y esfuerzo dedicados a cada paso del proceso.",
+
+		crack = "Crack",
+		crack_description = "Conocido por su rápido y intenso subidón, esta sustancia con aspecto de roca es la versión callejera de la cocaína que ha sido cocinada. Puede proporcionar una sensación de euforia instantánea, pero cuidado: es tan famoso por su peligro como por su atractivo. Mantente alerta, es un camino resbaladizo desde la primera calada hasta una caída dura.",
 		cocaine_bag = "Bolsa de Cocaína",
 		cocaine_bag_description = "Pequeñas piezas de la historia colombiana.",
 		cocaine_brick = "Ladrillo de Cocaína",
@@ -8022,9 +8869,9 @@ OP.Global.Locales.Languages["es-ES"] = {
 		oxy = "Oxy",
 		oxy_description = "¿Tienes drogas? Ayuda con el dolor de espalda.",
 		antibiotics = "Antibióticos",
-		antibiotics_description = "Te ayudan a librarte de esas infecciones y parásitos.",
-		pain_killers = "Analgésicos",
-		pain_killers_description = "Es hora de vender pico, necesito mis drogas.",
+		antibiotics_description = "Estos pequeños salvavidas eliminan parásitos de un plumazo, especialmente cuando has comido un poco demasiado de esa carne sospechosa y poco cocida. Toma uno de estos y te sentirás menos como un festín para los bichos en poco tiempo.",
+		pain_killers = "Ibuprofeno",
+		pain_killers_description = "El ibuprofeno es tu elección para combatir dolores de cabeza, dolores musculares o aquella vez que te esforzaste demasiado en el gimnasio. Conocido por reducir el dolor, la inflamación y la fiebre, es la pequeña pastilla que da un gran golpe. Solo recuerda, la moderación es clave, esto no es un caramelo, no importa cuánto te duela la espalda.",
 		weed_seeds = "Semillas de Cannabis",
 		weed_seeds_description = "Cultiva el 420, bro",
 		weed_1q = "Cannabis 1/4",
@@ -8087,6 +8934,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		pet_banana_cat_description = "¡Tu amigo felino frutal! El Gato Plátano se posa en tu hombro, añadiendo un toque de encanto juguetón a tu día. Es el accesorio purrrfecto para dar un toque caprichoso a tu vida.",
 		pet_snowman = "Successfully put a hold on the vehicle with number plate `${plate}` for ${time}.",
 		pet_snowman_description = "Failed to put a hold on the vehicle.",
+		pet_owl = "Hooty",
+		pet_owl_description = "Hooty, tu compañero sabio y vigilante, se posa elegantemente en tu hombro. Con sus ojos agudos y plumas suaves, este encantador búho añade un toque de magia a tus aventuras. Siempre listo para ofrecer un aullido de sabiduría, Hooty es el compañero perfecto para cualquier viaje.",
 
 		hotwheels_mcqueen = "Rayo McQueen",
 		hotwheels_mcqueen_description = "Velocidad, soy Velocidad, Flota como un Cadillac, Pica como un Stingray. ¡KA-CHOW, KA-CHOW, KA-CHOW!",
@@ -8125,6 +8974,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		fentanyl = "Fentanyl",
 		fentanyl_description = "Apodado el \"dormilón sigiloso\", el fentanyl es una poderosa poción que tiene un gran impacto. Con solo un susurro de esta sustancia, puedes enviar incluso al más despierto a un mundo de sueños. ¡Manéjalo con cuidado! Es tan potente que si los sueños fueran moneda, serías millonario con una sola dosis. Perfecto para cuando necesitas convertir grandes problemas en pequeñas siestas.",
+		narcan = "Narcan",
+		narcan_description = "Este antídoto que salva vidas es tu respuesta rápida a la exposición al fentanilo. En forma de una pastilla de rápida administración, Narcan revierte los efectos del fentanilo, devolviéndote de la nada con una velocidad notable. Mantenlo siempre a mano, es el ángel guardián en tu bolsillo, listo para actuar cuando más lo necesitas.",
 
 		grimace_shake = "Sacudida de la Ramera",
 		grimace_shake_description = "¿Loco? Yo estuve loco una vez. Me metieron en una habitación. Una habitación de goma. Una habitación de goma con ratas. Y las ratas me vuelven loco. ¿Loco? Yo estuve loco una vez. Me metieron en una habitación. Una habitación de goma. Una habitación de goma con ratas. Y las ratas me vuelven loco. ¿Loco? Yo estuve loco una vez. Me metieron en una habitación. Una habitación de goma. Una habitación de goma con ratas. Y las ratas me vuelven loco. ¿Loco? Yo estuve loco una vez. Me metieron en una habitación. Una habitación de goma. Una habitación de goma con ratas. Y las ratas me vuelven loco. ¿Loco? Yo estuve loco una vez.....",
@@ -8172,6 +9023,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 		steel_filings = "No vehicle with that number plate found.",
 		steel_filings_description = "The vehicle is already impounded by the police for a longer time than you specified.",
 
+		gold_ore = "Mineral de oro",
+		gold_ore_description = "¡Descubre un trozo del tesoro de la naturaleza con este mineral de oro! Crudo y sin refinar, es tu puerta de entrada para descubrir la belleza brillante oculta dentro de la tierra.",
+		gold_nugget = "Pepita de oro",
+		gold_nugget_description = "¡Un pequeño y reluciente pedazo de fortuna! Esta pepita de oro es el resultado refinado del trabajo duro y la persistencia, perfecta para la elaboración o el comercio.",
 		gold_bar = "Barra de oro",
 		gold_bar_description = "Esta sólida barra de oro es un símbolo de riqueza y oportunidad, brillando con potencial. Encontrada a través de la exploración y astutas empresas, puede ser vendida por una suma sustancial, convirtiéndola en un activo preciado para aquellos que buscan mejorar su posición financiera. Cada barra es un testimonio del valor perdurable del oro en cualquier mercado.",
 
@@ -8191,6 +9046,20 @@ OP.Global.Locales.Languages["es-ES"] = {
 		steel = "Acero en bruto",
 		steel_description = "Fuerte y duradero, el acero crudo es un material fundamental para la fabricación y reparaciones. Su naturaleza robusta lo hace indispensable para la integridad estructural en proyectos simples y complejos.",
 
+		aluminium_ore = "Mineral de aluminio",
+		aluminium_ore_description = "¡Un trozo rico en bauxita de mineral de aluminio, esperando ser transformado en aluminio ligero y versátil! ¡Funde para producir un metal perfecto para la elaboración de todo, desde aeronaves hasta latas de bebidas! Un recurso crucial para la ingeniería moderna y la conveniencia diaria.",
+		iron_ore = "Mineral de hierro",
+		iron_ore_description = "Un trozo crudo de mineral de hierro, listo para ser fundido en acero fuerte y duradero. Este mineral es la base de incontables herramientas, máquinas y estructuras. Extrae la bondad metálica y forja algo increíble con ello.",
+
+		rusty_tank_shell = "Obús de tanque oxidado",
+		rusty_tank_shell_description = "¡Este obús de tanque oxidado ha pasado por más suciedad y mugre que la camioneta de un redneck! Desenterrado de las entrañas de la historia, ¡es un buen trozo del pasado, amigos! ¡Perfecto para sentarse en el porche y rememorar historias de guerra con los chicos!",
+		rusty_cannon_ball = "Bala de cañón oxidada",
+		rusty_cannon_ball_description = "¡Arre, compañero! Contempla esta antigua bala de cañón, rescatada de las profundidades de un barco pirata hundido. Oxidada y desgastada por las aguas bravías, esta reliquia antigua transporta los ecos de feroz batallas marítimas y tesoros enterrados. ¡Zarpa, corazones alegres, manéjala con cuidado para no despertar su espíritu ardiente!",
+		rusty_gear = "Engranaje oxidado",
+		rusty_gear_description = "Este viejo engranaje, ahora oxidado y desgastado, alguna vez desempeñó un papel crucial en la maquinaria de antaño. Sus dientes pueden estar embotados, pero aún conserva los ecos de incontables rotaciones en su forma envejecida.",
+		rusty_diving_helmet = "Casco de buceo oxidado",
+		rusty_diving_helmet_description = "Este antiguo casco de buceo, cubierto por una gruesa capa de óxido, una vez desafió las profundidades del océano. Ahora, se erige como una reliquia de la exploración submarina, resonando cuentos de tesoros hundidos y aventuras marítimas.",
+
 		purified_aluminium = "Aluminio purificado",
 		purified_aluminium_description = "Este aluminio de alta calidad se refina minuciosamente para obtener una calidad y rendimiento superiores. Utilizado principalmente por mecánicos para reparaciones avanzadas de vehículos, garantiza durabilidad y fiabilidad en aplicaciones exigentes.",
 		tempered_glass = "Vidrio Templado",
@@ -8202,10 +9071,16 @@ OP.Global.Locales.Languages["es-ES"] = {
 		refined_steel = "Acero Refinado",
 		refined_steel_description = "Elegante y refinado para aplicaciones de alta calidad, este acero es exclusivamente utilizado por mecánicos para reparaciones premium de vehículos. Su resistencia superior y resistencia a la corrosión garantizan un rendimiento óptimo.",
 
-		power_saw = "Sierra Eléctrica",
-		power_saw_description = "${consoleName} looked up a `${type}`, searching for `${search}`.",
+		power_saw = "Sierra recíproca",
+		power_saw_description = "Una sierra recíproca versátil, perfecta para trabajos rápidos y sucios. Ya sea cortando metal, madera o... otros materiales, esta herramienta lo logra.",
 		steel_file = "Invalid time specified.",
 		steel_file_description = "Invalid or missing number plate.",
+		catalytic_converter = "Conversor catalítico",
+		catalytic_converter_description = "¿Tienes habilidad para las bromas de coche de noche? Este brillante trozo de metal es tu billete a dinero rápido, solo asegúrate de que la policía no te pille robándolo de coches aparcados.",
+		car_brakes = "Frenos",
+		car_brakes_description = "¡Potencia de frenado de alta precisión al alcance de tus dedos! Estos frenos de coche de alto rendimiento garantizan que puedas detenerte en un abrir y cerrar de ojos. Perfecto para cualquier mecánico o entusiasta de los coches que le gusta hacerlo todo por sí mismo.",
+		car_radiator = "Radiador",
+		car_radiator_description = "Mantén tu motor fresco y funcionando sin problemas con este radiador de coche de primera calidad. Esencial para prevenir el sobrecalentamiento y mantener tu vehículo en óptimas condiciones.",
 
 		thermite = "Termita",
 		thermite_description = "Polvo altamente volátil, no inhalar.",
@@ -8236,6 +9111,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 		shotgun_ammo = "Munición de Escopeta",
 		shotgun_ammo_description = "La gente piensa que hay pólvora en ellas. Payasos... están llenas de amor y alegría.",
 
+		potassium_nitrate = "Nitrato de potasio",
+		potassium_nitrate_description = "Este polvo cristalino blanco es un ingrediente clave en la receta de la pólvora. Encontrado en la naturaleza y a menudo usado en fertilizantes, tiene un gran poder cuando se mezcla con azufre y carbón. Manipúlalo con cuidado y recuerda, ¡nada de olerlo!",
+		sulfur = "Azufre",
+		sulfur_description = "Este polvo amarillo es el ingrediente secreto para hacer pólvora y otros explosivos. ¡Solo con espolvorear un poco de este stuff ya estás a mitad de camino para un espectáculo de fuegos artificiales! A menudo encontrado acechando en convertidores catalíticos, ¡pero no te dejes atrapar rebuscando!",
 		gunpowder = "Pólvora",
 		gunpowder_description = "Un polvo utilizado para hacer balas.",
 		projectile = "Proyectil",
@@ -8271,8 +9150,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		zombie_pill = "Pastilla de zombie",
 		zombie_pill_description = "Una extraña pastilla que hace cosas aún más extrañas... Trágala bajo tu propio riesgo. Quizás tener una pistola contigo para protegerte de los sueños violentos sería sabio.",
 
-		acid = "Ácido",
-		acid_description = "Te deja permanentemente drogado. No hay escapatoria.",
+		acid = "Ácido (LSD)",
+		acid_description = "Esta vibrante pastilla, a menudo llamada \"Ácido\", es tu boleto para un viaje a todo color a través del ojo de la mente. Renombrada por transformar lo mundano en mágico, ofrece un caleidoscopio de pensamientos y sensaciones que bailan al ritmo del universo. No es solo una gota en el cubo, cada pieza es un chapuzón en la piscina psicodélica de la percepción. Sumérgete y deja que las olas de creatividad e introspección te envuelvan. Te hace estar permanentemente drogado, no hay escapatoria.",
 
 		rose = "Rosa",
 		rose_description = "Una sola rosa elegante, sus pétalos vibrantes y su delicado aroma dicen mucho. Este símbolo atemporal de afecto es una manera clásica de expresar tus sentimientos, llevando consigo la esencia de belleza y profunda admiración.",
@@ -8297,6 +9176,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 		scratch_ticket_ching_description = "Sumérgete en la emoción eléctrica de la posibilidad de riqueza. Por tan solo $100, este boleto vibrante ofrece la emocionante oportunidad de ganar hasta $210,000. ¡No es solo un juego, es un espectáculo de fortuna!",
 		scratch_ticket_carnival = "Rasca y Gana (Carnaval)",
 		scratch_ticket_carnival_description = "¡Pase y participe en el carnaval de la suerte! Por solo $100, podrías ganar hasta $210,000. ¡El carnaval está en la ciudad, y el gran premio te espera!",
+		scratch_ticket_vu = "Rasca y Gana (Vanilla Unicorn)",
+		scratch_ticket_vu_description = "Prostitutas y cocaína.",
+		scratch_ticket_beaver = "Rasca y Gana (Los Santos)",
+		scratch_ticket_beaver_description = "¡Sigue rascando!",
+		scratch_ticket_minecraft = "Rasca y Gana (Minecraft)",
+		scratch_ticket_minecraft_description = "Creeper...... aaaaaawww maaaaaan",
 
 		avocado = "Aguacate",
 		avocado_description = "Pequeño objeto verde y abultado, sería genial para hacer una salsa.",
@@ -8383,11 +9268,26 @@ OP.Global.Locales.Languages["es-ES"] = {
 		jail_card = "Tarjeta de Cárcel",
 		jail_card_description = "¡Sal de la cárcel gratis!",
 
+		twitter_verification = "Verificación de Twitter",
+		twitter_verification_description = "Usar este objeto te hará verificado en Twitter.",
+
 		vape = "Geek Bar",
 		vape_description = "¿Intentando parecer cool? ¿Cansado de ser un cobarde? Toma un poco bwo!",
+		dab_pen = "Bolígrafo Dab",
+		dab_pen_description = "¡Eh, este Penjamin? Pega como un camión, colega. Tres parpadeos sólidos, y te vas. Una vez que destella, se acabó el juego. Sin recargas, solo disfruta del subidón mientras puedas.",
 
 		train_pass = "Pase de Tren",
 		train_pass_description = "Cuando se usa, recibirás 3 pases instantáneos en la cola.",
+		train_pass_appreciated_tier = "Tier de Apreciado",
+		train_pass_appreciated_tier_description = "Puede usarse durante 7 días del Tier de Apreciado. No se puede mejorar usando Puntos OP.",
+		train_pass_respected_tier = "Tier de Respetado",
+		train_pass_respected_tier_description = "Puede usarse durante 7 días del Tier de Respetado. No se puede mejorar usando Puntos OP.",
+		train_pass_heroic_tier = "Nivel Heroico",
+		train_pass_heroic_tier_description = "Puede ser usado durante 7 días en el Nivel Heroico. No se puede mejorar utilizando Puntos OP.",
+		train_pass_legendary_tier = "Nivel Legendario",
+		train_pass_legendary_tier_description = "Puede ser usado durante 7 días en el Nivel Legendario. No se puede mejorar utilizando Puntos OP.",
+		train_pass_god_tier = "Nivel de Dios",
+		train_pass_god_tier_description = "Puede ser usado durante 7 días en el Nivel de Dios. No se puede mejorar utilizando Puntos OP.",
 
 		xbox_controller = "Controlador de XBOX",
 		xbox_controller_description = "Parece un poco mojado...",
@@ -8401,6 +9301,9 @@ OP.Global.Locales.Languages["es-ES"] = {
 		ammonia = "Amoníaco",
 		ammonia_description = "Mezcla con lejía para una sorpresa mágica.",
 
+		baking_soda = "Bicarbonato de sodio",
+		baking_soda_description = "Este polvo blanco versátil no solo sirve para hacer que tus pasteles suban a la perfección. Desde la limpieza hasta experimentos científicos, es un héroe doméstico. Solo recuerda, no es para todo tipo de 'hornear'—tú me entiendes.",
+
 		lithium_batteries = "Baterías de Litio",
 		lithium_batteries_description = "No se permiten en aviones comerciales, a menos que quieras explotar.",
 
@@ -8409,6 +9312,9 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		meth_table = "Mesa de Metanfetamina",
 		meth_table_description = "Jaja, una graciosa referencia a Breaking Bad sobre cocinar meta.",
+
+		glass_pipe = "Pipa de Cristal",
+		glass_pipe_description = "Ey, esta pipa, tío, ¡es como, whoa! ¡Solo cárgala, enciéndela y BAM, estás en Marte, colega! Como, brillante y de cristal, ten cuidado, es frágil, como mi última neurona. ¡Los colores, tío, los COLORES! Agárrala fuerte, no dejes que se te escape, ¡y eres como el rey del cosmos o algo así!",
 
 		campfire = "Fogata",
 		campfire_description = "Reúnete alrededor de esta rústica hoguera, un faro de calor y luz bajo las estrellas. Ideal para contar historias y calentarse, es un refugio temporal que arde brillantemente antes de convertirse en cenizas. Puede ser colocado en cualquier parte del mundo.",
@@ -8482,6 +9388,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		pedestrian_barrier_description = "Útil a menos que sea un concierto de Travis Scott...",
 		wheel_clamp = "Pinza de Rueda",
 		wheel_clamp_description = "¡Aquí no hay escapadas! La Pinza de Rueda significa negocios, asegurando los vehículos firmemente en su lugar y poniendo fin a cualquier movimiento no autorizado. Este dispositivo resistente es un ejecutor silencioso, asegurándose de que se respeten y cumplan las reglas de estacionamiento.",
+		old_rug = "Alfombra Antigua",
+		old_rug_description = "¡Coloca esta acogedora alfombra para tu próxima reunión al aire libre y mantén las cosas cómodas! Es perfecta para descansar en el césped sin ensuciar tus pantalones con esas molestas manchas verdes. Extiéndela, relájate y disfruta de tu entorno con estilo y comodidad.",
 
 		bandit_1 = "Bandido 1",
 		bandit_1_description = "Tu chico de confianza para escenarios de entrenamiento, siempre listo para interpretar al villano sin quejarse de las largas horas o la falta de guion. Se puede colocar en cualquier parte del mundo.",
@@ -8508,9 +9416,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 		claymore_description = "Esta letal mina Claymore es una poderosa herramienta defensiva diseñada para proteger y asegurar áreas con precisión. Una vez armada, detonará explosivamente cuando un intruso cruce su camino, asegurando un control de perímetro robusto. Ejerce precaución con la colocación y manejo para evitar consecuencias no deseadas.",
 
 		tv_stand = "Soporte para TV",
-		tv_stand_description = "Úsalo para sostener un televisor donde quieras.",
+		tv_stand_description = "Actualiza tu configuración para maratones de series con este elegante Soporte de TV. Mantiene tu televisor a la altura de los ojos perfecta y tiene espacio para todos tus gadgets aleatorios. Es como el trono de tu pantalla.",
+		big_tv = "Televisor Grande",
+		big_tv_description = "¡Contempla el Televisor Grande! Perfecto para esas noches de cine épicas o fiestas en el jardín, esta pantalla colosal se alza tan alta como tú y convierte cualquier espacio en un instantáneo cine al aire libre. ¡Prepárate para sorprender a tus amigos con la máxima experiencia visual!",
 		tv_remote = "Control remoto para TV",
-		tv_remote_description = "Control remoto universal (baterías cuánticas no incluidas).",
+		tv_remote_description = "La herramienta definitiva para el profesional perezoso, este Mando a Distancia de TV te permite gobernar tu dominio del entretenimiento sin levantar más que un dedo. Cambia de canal, sube el volumen y pasa por tus entradas como un jefe. ¡Es tu pase al paraíso del teleadicto!",
 
 		magic_ball = "Bola Mágica 8",
 		magic_ball_description = "Hazle una pregunta, agítala y dale la vuelta. ¡La respuesta a tu pregunta aparecerá mágicamente en la ventana! Es tan fácil, ¡no lo creerás!",
@@ -8566,14 +9476,25 @@ OP.Global.Locales.Languages["es-ES"] = {
 		cream_cookie_description = "Cremosa, como te gusta.",
 		cheesecake = "Pastel de queso",
 		cheesecake_description = "No confundir con un pastel de queso.",
-		chocolate_cake = "Pastel de Chocolate",
-		chocolate_cake_description = "Delicioso pastel hecho con los mejores granos de cacao.",
 		cupcake = "Cupcake",
 		cupcake_description = "Un pastel esponjoso relleno de crema de unicornio mágico.",
 		pink_lemonade = "Limoned Rosado",
 		pink_lemonade_description = "Definitivamente no es solo limonada normal teñida de rosa para cobrarte el doble...",
 		iced_latte = "Café con hielo",
 		iced_latte_description = "Un refrescante café helado, perfecto para un día caluroso.",
+
+		berry_cake = "Pastel de Bayas",
+		berry_cake_description = "Un delicioso Pastel de Bayas, repleto de bayas frescas y capas de dulce mermelada de bayas. Este pastel es el regalo perfecto para los amantes de las bayas, ofreciendo una armoniosa mezcla de sabores ácidos y dulces en cada bocado.",
+		lemon_cake = "Pastel de Limón",
+		lemon_cake_description = "Un vivaz Pastel de Limón con capas de bizcocho infusionado con limón y suave glaseado de limón. Este pastel es el sueño de cualquier amante de los cítricos, ofreciendo un sabor refrescante y ácido que alegra cualquier día.",
+		chocolate_cake = "Pastel de Chocolate",
+		chocolate_cake_description = "Un indulgente Pastel de Chocolate con capas ricas y húmedas de bizcocho de chocolate y suave glaseado de chocolate. Este pastel es el paraíso de cualquier amante del chocolate, ofreciendo sabores profundos y ricos que satisfacen a cualquier goloso.",
+		berry_cake_slice = "Porción de Tarta de Bayas",
+		berry_cake_slice_description = "Disfruta de una porción de Tarta de Bayas, donde la frescura de las bayas se encuentra con la dulzura de la mermelada. Cada bocado es un equilibrio perfecto entre lo agrio y lo dulce, lo que la convierte en un placer delicioso.",
+		lemon_cake_slice = "Porción de Tarta de Limón",
+		lemon_cake_slice_description = "Disfruta de una porción de Tarta de Limón, con una esponjosa y cremosa cobertura de limón. Cada bocado es una explosión de frescura cítrica que refresca tu paladar.",
+		chocolate_cake_slice = "Porción de Tarta de Chocolate",
+		chocolate_cake_slice_description = "Disfruta de un trozo de Tarta de Chocolate, donde el rico bizcocho de chocolate se encuentra con un suave glaseado de chocolate. Cada bocado es un deleite decadente que se deshace en tu boca.",
 
 		irish_coffee = "Café Irlandés",
 		irish_coffee_description = "Café recién hecho con un toque de whisky irlandés original.",
@@ -8646,6 +9567,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 		salt_description = "Una pizca de sal puede transformar cualquier plato, realzando sabores y añadiendo profundidad a tus creaciones culinarias.",
 		pickles = "Pepinillos",
 		pickles_description = "Un frasco de pepinillos crujientes y con un toque ácido, perfecto para picar, sandwiches y darle un toque de sabor a tus comidas.",
+		pickle = "Pepinillo",
+		pickle_description = "Un pepinillo fresco, jugoso y crujiente directamente del frasco. Perfecto como tentempié ácido o para complementar tu comida.",
+		pickle_juice = "Zumo de Pepinillo",
+		pickle_juice_description = "Refrescante y ácido, este zumo de pepinillo es el líquido dorado y picante que queda cuando coges un pepinillo. Perfecto para añadir un toque de sabor a tus tentempiés o incluso disfrutarlo solo como un aperitivo salado.",
 		dark_chocolate = "Chocolate Negro",
 		dark_chocolate_description = "Un dulce rico y decadente, el chocolate negro es perfecto para satisfacer tu goloso y disfrutar de los profundos y complejos sabores del cacao.",
 		beans = "Judías",
@@ -8682,8 +9607,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 		popcorn = "Palomitas de Maíz",
 		popcorn_description = "Una bolsa de palomitas de maíz, perfecta para una noche de cine.",
 
-		rice = "Arroz",
-		rice_description = "Tiene granos suaves y esponjosos.",
+		uncooked_rice = "Arroz crudo",
+		uncooked_rice_description = "Este grano básico, el arroz crudo, es el lienzo en blanco de innumerables obras culinarias. Crudo y listo para transformarse, promete absorber sabores y realzar cualquier plato, desde robustos risottos hasta delicados rollos de sushi.",
+		rice = "Arroz cocido",
+		rice_description = "Esponjoso y tierno, este arroz cocido es una base versátil lista para acompañar cualquier comida. Perfectamente cocido al vapor para capturar su sutil esencia a nuez, es la piedra angular reconfortante de platos de todo el mundo, añadiendo sustancia y textura a tu experiencia culinaria.",
 		nori = "Nori",
 		nori_description = "Esto es alga marina pero elegante.",
 		soy_sauce = "Salsa de soja",
@@ -8696,6 +9623,35 @@ OP.Global.Locales.Languages["es-ES"] = {
 		coconut_description = "Dulce y cremoso, el coco realza los postres, los curris y los batidos.",
 		sugar = "Azúcar",
 		sugar_description = "Es como la cocaína pero no es ilegal y te da diabetes.",
+		chili = "Pimientos Picantes",
+		chili_description = "¡Estos pequeños pimientos ardientes tienen un gran impacto! Ya sea que estés dando un toque de picante a tu salsa o aumentando la intensidad en tu plato favorito, estos coloridos pimientos son tu elección para un toque picante. Maneja con cuidado a menos que quieras sentir un hormigueo en los dedos y hacer bailar a tus papilas gustativas.",
+		fish_filets = "Filetes de Pescado",
+		fish_filets_description = "Estos filetes de pescado expertamente cortados son la base de creaciones gourmet, especialmente ideales para elaborar exquisito sushi. Frescos de la captura, cada filete está cortado con precisión para garantizar la textura y sabor ideales, convirtiéndolos en un imprescindible en la cocina de cualquier conocedor de sushi. Sumérgete en la artesanía culinaria con estas piezas prístinas de la abundancia del océano.",
+		sushi = "Sushi",
+		sushi_description = "Experto en su elaboración, este maki de sushi presenta filetes de pescado fresco, arroz perfectamente cocido y alga crujiente. Cada rollo es una armoniosa mezcla de sabores y texturas, ofreciendo un delicioso sabor de la cocina tradicional japonesa en cada bocado. Disfruta de la refinada simplicidad de este exquisito sushi.",
+		nigiri = "Nigiri",
+		nigiri_description = "Este elegante nigiri sushi presenta finas rodajas de pescado sobre una cama de arroz sutilmente sazonado. Cada pieza es un testimonio de sencillez y sabor, cuidadosamente equilibrado para resaltar el sabor fresco y delicado del marisco. Una elección clásica para los aficionados al sushi, tan visualmente atractivo como delicioso.",
+		miso_soup = "Sopa de Miso",
+		miso_soup_description = "Este reconfortante cuenco de sopa de miso es una mezcla cálida y sabrosa de caldo de miso rico, tofu sedoso y cebolletas frescas picadas. Cada cucharada ofrece un sabor suave y un delicado sabor umami, convirtiéndolo en un entrante perfecto o en una comida ligera por sí solo. Disfruta del equilibrio delicado de ingredientes tradicionales que nutren el alma.",
+		spring_onions = "Cebolletas",
+		spring_onions_description = "Crujientes y vibrantes, estas cebolletas aportan una explosión de sabor fresco a cualquier plato. Conocidas por su suave picante y versatilidad, pueden usarse enteras para asar a la parrilla o saltear, o picadas para añadir un sutil toque de frescura a ensaladas y sopas.",
+		spring_onions_cut = "Cebollas de primavera cortadas",
+		spring_onions_cut_description = "Estas cebollas de primavera recién cortadas están listas para mejorar tus creaciones culinarias. Perfectas para decorar o mezclar en platos, sus notas brillantes y picantes añaden tanto sabor como un toque de color, haciendo que cada comida sea más sabrosa y visualmente atractiva.",
+		tofu = "Tofu",
+		tofu_description = "Este versátil bloque de tofu es un básico para cocinar de forma saludable y creativa. Hecho a partir de soja, es un favorito de sabor suave que absorbe maravillosamente los sabores, lo que lo hace perfecto para todo, desde salteados hasta batidos.",
+		tofu_cubes = "Cubos de Tofu",
+		tofu_cubes_description = "Cortado en cubitos perfectos, este tofu está listo para sumergirse en tu próxima aventura culinaria. Ideal para comidas rápidas, estos cubos de tofu se pueden agregar a sopas, ensaladas o sartenes calientes, aportando un impulso nutritivo y una textura encantadora a tus platos.",
+		uncooked_ramen = "Ramen sin Cocinar",
+		uncooked_ramen_description = "Tu kit de ramen casero, listo para que lo transformes en un cuenco humeante de delicias. ¡Solo agrega agua caliente y tus ingredientes favoritos, y tendrás una comida rápida y sabrosa en poco tiempo!",
+		ramen = "Ramen",
+		ramen_description = "Un bol de pura comodidad, lleno de fideos, caldo sabroso y todos tus ingredientes favoritos. Ya sea que estés sorbiéndolo en casa o en movimiento, este ramen es un abrazo en un bol.",
+		spicy_ramen = "Ramen Picante",
+		spicy_ramen_description = "Para aquellos a los que les gusta vivir al límite, ¡el Ramen Picante trae el fuego! Sumérgete en un caldo ardiente con fideos y ingredientes picantes que harán bailar a tus papilas gustativas. ¿Podrás con ello?",
+		bento_box = "Bandeja Bento",
+		bento_box_description = "Una encantadora mezcla de sabores y texturas, esta Bandeja Bento es tu opción para una comida equilibrada. Llena de variedad de delicias, es como un picnic en una caja. ¡Perfecto para el almuerzo o una cena ligera!",
+
+		asahi_beer = "Cerveza Asahi",
+		asahi_beer_description = "Disfruta del sabor limpio y fresco de la cerveza Asahi, una cerveza premium japonesa conocida por su sabor suave y refrescante. Esta cerveza dorada está expertamente elaborada para elevar cualquier ocasión, convirtiéndola en la elección perfecta tanto para beber de forma casual como para una cena elegante.",
 
 		golf_ball = "Pelota de Golf",
 		golf_ball_description = "Utilizada para jugar al golf.",
@@ -8710,17 +9666,27 @@ OP.Global.Locales.Languages["es-ES"] = {
 		gas_mask_description = "Te protege de todo tipo de gases, incluso de los pedos de la abuela.",
 		nv_goggles = "Gafas de Visión Nocturna",
 		nv_goggles_description = "Te ayudan a ver en la oscuridad.",
+		vision_goggles = "Gafas Visionary Pro",
+		vision_goggles_description = "Adéntrate en el futuro con las gafas Visionary Pro, lo último en tecnología punta para la vista. Combinando un diseño elegante con una funcionalidad avanzada, estas gafas ofrecen una experiencia inmersiva como ninguna otra. ¡Póntelas y transforma tu visión del mundo!",
+		skate_helmet = "Casco de Skate",
+		skate_helmet_description = "Mantén tu cabeza a salvo mientras luces genial con este confiable casco de skate. Perfecto para evitar golpes no deseados en la cabeza y lucir tu estilo, es un imprescindible para todo skater. ¡Seguridad primero, diversión después!",
 
 		green_rolls = "Porros Verdes",
 		green_rolls_description = "Para aquellos de nosotros que necesitamos más que la cantidad promedio.",
 		rolling_paper = "Papel Para Enrollar",
 		rolling_paper_description = "Ese papel rápido para enrollar y fumar el dolor lejos.",
+		bong = "Bong",
+		bong_description = "Eleva tu experiencia fumando con este bong de vidrio de alta calidad. Diseñado para golpes suaves y frescos, filtra el humo a través del agua para una experiencia más limpia y placentera. Perfecto para sesiones individuales o compartir con amigos, ¡solo llénalo, prepáralo, enciéndelo y disfruta!",
+		bong_water = "Agua del bong",
+		bong_water_description = "\"¿Puedo beber el agua de tu bong?\"",
 
 		arena_pill = "Pastilla Arena",
 		arena_pill_description = "Una extraña pastilla que hace cosas aún más extrañas... Trágala bajo tu propio riesgo. Quizás sería prudente llevar un arma contigo para protegerte de los sueños violentos.",
 
 		shovel = "Pala",
 		shovel_description = "Una herramienta resistente para desenterrar riquezas ocultas y descubrir secretos en cualquier entorno, lo que la convierte en un activo valioso para los cazadores de tesoros ávidos.",
+		pickaxe = "Pico",
+		pickaxe_description = "Este confiable pico te ayudará a demoler cualquier bloque que hayas colocado, abriendo paso a nuevas creaciones. Resistente y eficiente, es la herramienta indispensable para cualquier constructor listo para remodelar el mundo.",
 
 		electric_fuse = "Fusible eléctrico",
 		electric_fuse_description = "El fusible eléctrico es un objeto necesario para las salas de atraco. Debe colocarse en la caja de fusibles para energizar la cerradura con tarjeta de acceso.",
@@ -9183,8 +10149,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		weapon_addon_mk18 = "MK18",
 		weapon_addon_mk18_description = "\"Mantén tu arma cargada o prepárate para arrepentirte\" - George Washington (Probablemente)",
 
-		weapon_addon_glock = "Glock 19X",
-		weapon_addon_glock_description = "La pistola más popular del mundo.",
+		weapon_addon_glock = "Glock 19",
+		weapon_addon_glock_description = "Esta compacta y fiable Glock 19 luce orgullosamente una bandera estadounidense en la corredera, porque nada representa la libertad como las estrellas, las rayas y el calibre 9mm. Perfecta para patriotas que les gusta que sus armas sean tan llamativas como su amor por el país.",
 
 		weapon_addon_colt = "Colt 1851 Navy",
 		weapon_addon_colt_description = "El revólver original, el que lo inició todo.",
@@ -9223,7 +10189,16 @@ OP.Global.Locales.Languages["es-ES"] = {
 		weapon_addon_jericho_description = "El Jericho 941 destaca por su fiabilidad, precisión y diseño ergonómico, ofreciendo a los tiradores una experiencia superior en rendimiento y comodidad.",
 
 		weapon_addon_fn509 = "FN-509",
-		weapon_addon_fn509_description = "El FN-509 es una obra maestra en equilibrio y precisión, equipado con una capacidad de 15 rondas para garantizar fiabilidad y precisión en cada disparo. Un compañero de confianza para la defensa y el deber."
+		weapon_addon_fn509_description = "El FN-509 es una obra maestra en equilibrio y precisión, equipado con una capacidad de 15 rondas para garantizar fiabilidad y precisión en cada disparo. Un compañero de confianza para la defensa y el deber.",
+
+		weapon_addon_garand = "M1 Garand",
+		weapon_addon_garand_description = "Conoce al M1 Garand, el fusil que prácticamente ganó solo la Segunda Guerra Mundial (o eso afirma en cada reunión de veteranos). Esta clásica pieza de historia viene con un distintivo sonido de \"ping\" que anuncia a todo el mundo, amigo o enemigo, que acabas de quedarte sin munición. Perfecto para aquellos que aprecian un poco de dramatismo en su potencia de fuego, este fiel compañero es tan fiable como las historias de guerra de tu abuelo y tan legendario.",
+
+		weapon_addon_multitool = "Herramienta Multiusos",
+		weapon_addon_multitool_description = "Como la herramienta multiusos normal pero sin las características sofisticadas.",
+
+		weapon_addon_ar15 = "AR-15",
+		weapon_addon_ar15_description = "Conoce el AR-15, el confiable perdedor en rifles. Es como el primo excéntrico del carabineroil - misma esencia, diferente estilo. Perfecto cuando quieres variar sin ser demasiado sofisticado. Fiable, preciso y con la cantidad justa de \"pew pew\" para cualquier situación relajada."
 	},
 
 	invisibility = {
@@ -9277,12 +10252,15 @@ OP.Global.Locales.Languages["es-ES"] = {
 		hotwiring_vehicle = "Forzando vehículo",
 		lockpick_broke = "Ganzúa rota",
 		failed_hotwire = "No has logrado abrir el vehículo sin llave, quizás deberías utilizar mejores herramientas.",
+		no_meth_bag = "No tienes una bolsa de metanfetamina.",
+		no_weed_1q = "No tienes 1q de hierba.",
 		unpacking_green_rolls = "Desempaquetando Papeles para liar",
 		you_do_not_have_enough_rolling_paper = "No tienes suficiente papel de liar.",
 		rolling_joint = "Liendo porro",
 		rolling_joints = "Liando porros",
 		changing_license_plate = "Cambiando matrícula",
 		equipping_parachute = "Equipando ${itemName}",
+		no_lighter = "No tienes mechero.",
 		lockpicking_vehicle = "Ganzuando vehículo",
 		printout_title = "Informe ${type}",
 		printout_text = "*${text}*",
@@ -9298,6 +10276,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 		drank_bleach_death = "Envenenamiento con lejía",
 		finished_joint = "Has acabado tu porro.",
 		cant_place_here = "No puedes colocar esto aquí.",
+		failed_slice_pizza = "Error al cortar la pizza.",
+		failed_slice_cake = "Error al cortar el pastel.",
+		straw_no_drinks = "No tienes bebidas para beber con esta pajita.",
+		failed_use_straw = "Error al usar la pajita de papel.",
 
 		using_cuffs = "Usando esposas",
 		you_moved_too_fast = "Te has movido demasiado rápido.",
@@ -9306,17 +10288,21 @@ OP.Global.Locales.Languages["es-ES"] = {
 		failed_bean_machine_delivery = "No se pudo abrir el paquete de Bean Machine Delivery.",
 		failed_kissaki_delivery = "Fallo al abrir la entrega de comida de Kissaki.",
 		failed_green_wonderland_delivery = "Error al abrir la bolsa de Green Wonderland.",
+		failed_pizza_this_delivery = "Error al abrir la caja de pizza.",
 
 		burger_shot_delivery_empty = "Ese paquete de comida de Burgershot parece estar vacío.",
 		bean_machine_delivery_empty = "Ese paquete de Bean Machine Delivery parece estar vacío.",
 		kissaki_delivery_empty = "Esa entrega de comida de Kissaki parecía estar vacía.",
 		green_wonderland_delivery_empty = "Parece que la bolsa de Green Wonderland está vacía.",
+		pizza_this_delivery_empty = "Esa caja de pizza parece estar vacía.",
 
 		logs_used_weather_spell_title = "Hechizo de clima usado",
 		logs_used_weather_spell_details = "${consoleName} ha usado el hechizo de clima `${itemName}`.",
 
 		you_have_used_jail_card = "Has utilizado una tarjeta 'Salir de la cárcel'!",
 		you_are_not_in_jail = "No estás en la cárcel.",
+
+		you_are_now_verified_on_twitter = "Ahora estás verificado en Twitter.",
 
 		stored_map_location = "Ubicación del mapa actualizada correctamente.",
 		failed_location_map = "No se ha podido actualizar la ubicación del mapa.",
@@ -9364,7 +10350,18 @@ OP.Global.Locales.Languages["es-ES"] = {
 		recent_pots_will_show_here = "Las ollas recientes se mostrarán aquí.",
 		server_id = "ID del servidor al que quieres transferir...",
 		transfer_items_to_anoter_person = "Transferir objetos a otra persona.",
-		cancel_bet = "Cancelar Apuesta"
+		cancel_bet = "Cancelar Apuesta",
+		max_bet_warning = "La cantidad máxima que puedes apostar es de $20,000 por bote.",
+		maximum_bet_exceeded = "Has excedido la cantidad máxima de apuesta de $20,000 por bote.",
+
+		jackpot_bet_placed_logs_title = "Apuesta de Jackpot realizada",
+		jackpot_bet_placed_logs_details = "${consoleName} realizó una apuesta de jackpot por valor de $${worth}.",
+
+		jackpot_won_logs_title = "Jackpot Ganado",
+		jackpot_won_logs_details = "${consoleName} ganó un jackpot por valor de $${worth}.",
+
+		jackpot_bet_cancelled_logs_title = "Apuesta(s) de Jackpot Cancelada(s)",
+		jackpot_bet_cancelled_logs_details = "${consoleName} canceló su(s) apuesta(s) de jackpot por valor de $${worth}."
 	},
 
 	jail = {
@@ -9434,6 +10431,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 		read_catalog = "Presiona ~g~${InteractionKey} ~w~para leer el catálogo"
 	},
 
+	label_printer = {
+		image_url = "https://url.de.la.imagen/imagen.png",
+		printing = "Imprimiendo...",
+		print = "Imprimir"
+	},
+
 	lag = {
 		fake_lag_invalid_fps = "FPS no válido.",
 		fake_lag_clamp = "Limitando los FPS por debajo de ${fps}.",
@@ -9491,8 +10494,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		something_went_wrong = "No se pudo encontrar la entidad.",
 		locate_success = "Entidad localizada exitosamente coincidiendo con `${filter}` en (${x}, ${y}, ${z}) (instancia = ${instance}).",
 
-		locate_entity_no_permissions = "Se intentó localizar una entidad sin permisos adecuados.",
-
 		locate_entity_logs_title = "Entidad localizada",
 		locate_entity_logs_details = "${consoleName} intentó localizar una entidad tipo `${filterType}` con valor `${filterValue}`."
 	},
@@ -9500,9 +10501,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 	login = {
 		exit_city = "Salir de la ciudad.",
 		press_to_exit_city = "Presiona ~g~${InteractionKey} ~w~para salir de la ciudad.",
-		bad_words_in_character_creation = "Se intentó crear un personaje con una palabra posiblemente ofensiva en el nombre o la historia: \"${badWords}\"",
-		disallowed_words_in_character_name = "Se intentó crear un personaje con un nombre posiblemente inapropiado: \"${characterName}\"",
-		disallowed_birthday_ban = "Se intentó crear un personaje con una fecha de nacimiento posiblemente inapropiada: \"${birthday}\"",
 
 		inventory_help_text = "Presiona ~INPUT_REPLAY_SHOWHOTKEY~ para abrir tu inventario.",
 
@@ -9569,11 +10567,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 		copy_license = "Identificación de Licencia",
 		copy_license_success = "¡Copiado!",
 		cache_assets = "Cachear Recursos",
-		download_assets = "¿Quieres descargar y cachear la mayoría de los recursos del servidor? Esto podría conducir a algunas cosas:",
-		cache_assets_less_lag = "Potencialmente menos caídas de velocidad, menos frames caídos y menos subidas de ping durante el juego. Especialmente si estás usando hardware de gama baja o una conexión más lenta.",
-		cache_assets_crashes = "Podría hacer que tu juego se cuelgue durante el proceso. Si esto ocurre, utiliza la opción de 'descarga lenta'.",
-		cache_assets_restart = "Una vez completado, recomendamos reiniciar tu juego ya que puede causar lag durante el resto de esta sesión.",
-		cache_assets_disk = "Esto ocupará un poco de almacenamiento en el disco, así que asegúrate de que haya espacio disponible. Después de una actualización también puede valer la pena borrar tu caché anterior para liberar espacio.",
+		download_assets = "¿Te gustaría descargar y almacenar en caché la mayoría de los activos del servidor? Aquí tienes los beneficios y consideraciones:",
+		cache_assets_performance = "Disfruta de un mejor rendimiento FPS y menos picos de ping durante el juego, especialmente si tienes hardware de gama baja o una conexión más lenta.",
+		cache_assets_crashes = "El juego puede fallar durante el proceso. Si esto sucede, utiliza la opción de 'descarga lenta' en su lugar.",
+		cache_assets_restart = "Tras completar la descarga, reinicia tu juego para prevenir el lag durante esta sesión.",
+		cache_assets_disk = "Esto utilizará algo de espacio en disco, así que asegúrate de tener suficiente disponible.",
+		cache_assets_no_repeat = "No necesitarás hacer esto en cada actualización, ya que solo cambiarán unos pocos archivos.",
 		vehicles = "Vehículos",
 		objects = "Objetos",
 		peds = "PNJs",
@@ -9617,9 +10616,9 @@ OP.Global.Locales.Languages["es-ES"] = {
 		date_not_future = "Tu fecha de nacimiento no puede ser en el futuro.",
 		date_too_old = "Tu fecha de nacimiento no puede ser mayor de 100 años.",
 
-		bad_words = "Hay palabras ofensivas en tu nombre de personaje o historial.",
-		disallowed_name = "Hay algunas palabras no permitidas en tu nombre de personaje.",
-		disallowed_birthday = "Tu fecha de nacimiento no es permitida.",
+		bad_words = "Tu nombre o trasfondo contiene palabras prohibidas. Sortear el filtro resultará en una prohibición. Todos los nuevos personajes son revisados por el personal.",
+		disallowed_name = "Tu nombre contiene palabras prohibidas. Sortear el filtro resultará en una prohibición. Todos los nuevos personajes son revisados por el personal.",
+		disallowed_birthday = "Tu fecha de nacimiento no está permitida. Sortear el filtro resultará en una prohibición. Todos los nuevos personajes son revisados por el personal.",
 		numbers_not_allowed = "No se permiten números en el nombre de personaje.",
 		something_went_wrong = "Algo salió mal mientras intentábamos crear tu personaje.",
 		character_slot_occupied = "Este espacio de personaje ya está ocupado.",
@@ -9696,7 +10695,29 @@ OP.Global.Locales.Languages["es-ES"] = {
 		confirm_pledge_upgrade_text = "Failed to automatically generate translation.",
 		upgrading_pledge = "Failed to automatically generate translation.",
 
-		exiting_login_ui = "Saliendo (UI de inicio de sesión)"
+		medal = "Medalla",
+		claim_points = "Reclamar Puntos (${claimablePoints})",
+		medal_what_is_this_text_part_1 = "¡Al obtener vistas y 'me gusta' en tus clips de Medal, puedes ganar Puntos OP! Obtienes un punto por cada 2 clips, un punto por cada 150 vistas y un punto por cada 10 'me gusta'.",
+		account_name = "Nombre de la Cuenta",
+		connected_account = "Cuenta Conectada",
+		medal_stats = "Estadísticas de Medal",
+		clips = "Clips",
+		views = "Vistas",
+		likes = "'Me gusta'",
+		points_earned = "Puntos Ganados",
+		claimable_points = "Puntos Reclamables",
+		launch_medal_and_click_refresh = "Inicia Medal y haz clic en actualizar.",
+
+		referrals = "Referidos",
+		referrals_title = "Gana Puntos OP Invitando Amigos",
+		referrals_what_is_this_text_part_1 = "¡Invita a tus amigos a unirse al servidor y comienza a ganar Puntos OP juntos! Una vez que se unan, pídeles que introduzcan tu ID de Licencia a continuación para establecerte como su referente.",
+		referrals_what_is_this_text_part_2 = "Cuando tu amigo alcance las 12 horas de tiempo de juego, ambos recibiréis 25 Puntos OP cada uno. Recuerda, solo pueden establecerte como su referente dentro de las primeras 24 horas de su tiempo de juego.",
+		referrals_what_is_this_text_part_3 = "Esta característica utiliza el tiempo de juego general del marco, ya que se comparte en todos los servidores de OP-FW.",
+		your_framework_playtime = "Tu tiempo de juego en el marco:",
+		license_id = "ID de Licencia",
+		set_referrer = "Establecer Referente",
+		your_referrer = "Tu Referente:",
+		your_referees = "Tus Referidos:"
 	},
 
 	logs = {
@@ -9714,7 +10735,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		lottery_about_to_roll = "En 5 minutos se elegirá un ganador para la lotería de hoy. El bote total es de $${totalAmount} y has apostado $${betAmount}. Tu probabilidad de ganar es del ${odds}%.",
 		current_lottery_pot = "El bote total es actualmente de $${totalAmount}, donde has apostado $${betAmount}. Tu probabilidad de ganar es del ${odds}%.",
 		drew_a_lottery_winner = "Se ha seleccionado un ganador para la lotería.",
-		roll_lottery_no_permission = "El jugador intentó realizar el sorteo de la lotería pero no tenía permisos para hacerlo.",
 		winner_has_been_picked = "¡${fullName} ha ganado el bote de la lotería de $${totalAmount}! Apostaron $${betAmount} y su probabilidad de ganar era del ${odds}%.",
 		claimed_lottery_winnings = "Has reclamado todas las ganancias de la lotería.",
 		no_lottery_winnings = "No tienes ganancias de lotería sin reclamar.",
@@ -9733,6 +10753,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		lucky_wheel_is_occupied = "La Rueda de la Fortuna está actualmente ocupada. Por favor, espera.",
 		not_enough_op_points = "Necesitas ${cost} Puntos OP para girar la Ruleta de la Suerte. Tienes ${points} Puntos OP.",
 		used_op_points = "Has utilizado ${cost} Puntos OP. Ahora tienes ${points} Puntos OP restantes.",
+		you_have_op_points = "Ahora tienes ${points} Puntos OP.",
 		casino_company_name = "El Casino y Resort Diamond",
 		vehicle_won_tweet = "¡Alguien acaba de hacerse rico en la Ruleta de la Suerte y se ha llevado el ultra-raro ${modelDisplayName}! ¿Quién es el afortunado ganador? ¡Ve ahora y reclama tu premio!",
 		vehicle_is_not_in_cdimage = "Este vehículo no está en los archivos del juego.",
@@ -9742,7 +10763,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} ha girado la ruleta y ha ganado un vehículo.",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} ha recibido exitosamente un vehículo con el nombre del modelo `${modelName}`.",
 		logs_lucky_wheel_reward_money_details = "${consoleName} ha girado la ruleta y ha ganado $${amount}.",
-		logs_lucky_wheel_reward_chips_details = "${consoleName} ha girado la ruleta y ha ganado $${amount} en fichas.",
+		logs_lucky_wheel_reward_points_details = "${consoleName} ha girado la rueda y ha ganado ${amount} Puntos OP.",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} ha girado la ruleta y ha ganado joyas con el nombre de `${itemName}`.",
 		logs_lucky_wheel_reward_item_details = "${consoleName} ha girado la ruleta y ha ganado un objeto con el nombre de `${itemName}`.",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} ha girado la rueda y ganado un objeto de 'Pase de Tren'."
@@ -9751,7 +10772,9 @@ OP.Global.Locales.Languages["es-ES"] = {
 	magazines = {
 		issue_id = "Problema #${issueId}",
 		releases_updated = "Actualizaciones disponibles.",
-		no_release_changes = "No hay cambios en las actualizaciones."
+		no_release_changes = "No hay cambios en las actualizaciones.",
+		magazine_issue_does_not_exist = "La serie de revistas '${seriesName}' no existe con un ID de problema #${issueId}.",
+		magazine_created = "Se ha creado la serie de revistas '${seriesName}' con el ID de ejemplar #${issueId}."
 	},
 
 	magnifying_glass = {
@@ -9773,6 +10796,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 		found_item_logs_details = "${consoleName} encontró un ${item} en el suelo (${ground})."
 	},
 
+	map = {
+		failed_toggle = "Error al cambiar el mapa en directo.",
+		toggled_on = "Se ha activado correctamente el mapa en directo.",
+		toggled_off = "Se ha desactivado correctamente el mapa en directo."
+	},
+
 	mdt = {
 		mdt_title = "Terminal de Datos Móvil",
 		loading_reports = "Cargando Reportes...",
@@ -9782,6 +10811,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		title_placeholder = "Título",
 		body_placeholder = "Mi reporte..."
+	},
+
+	medal = {
+		in_the_main_menu = "En el menú principal.",
+		roleplaying_as = "Roleando como ${fullName}."
 	},
 
 	mechanics = {
@@ -9834,21 +10868,23 @@ OP.Global.Locales.Languages["es-ES"] = {
 		treat = "[${InteractionKey}] Dar Golosina",
 		check_up = "[${InteractionKey}] Revisar",
 
-		feed_active = "Alimentando a Maxwell",
-		pet_active = "Acariciando a Maxwell",
-		brush_active = "Cepillando a Maxwell",
-		catnip_active = "Dando hierba gatera a Maxwell",
-		treat_active = "Dando una golosina a Maxwell",
-		check_up_active = "Comprobando a Maxwell",
+		feed_active = "Dando de comer a ${name}",
+		pet_active = "Acariando a ${name}",
+		brush_active = "Cepillando a ${name}",
+		catnip_active = "Dando Catnip a ${name}",
+		treat_active = "Dando un premio a ${name}",
+		check_up_active = "Revisando a ${name}",
 
 		maxwell_appeared = "Maxwell ha aparecido cerca de ti.",
-		maxwell_shot = "Disparó a Maxwell"
+		maxwell_shot = "Disparo a ${name}"
 	},
 
 	meth = {
 		press_to_sell_meth = "Presiona ~INPUT_CONTEXT~ para vender Meth.",
 		local_not_interested = "El local no parece estar interesado en este momento.",
 		selling_meth = "Vendiendo Meth.",
+		you_are_overdosing = "Estás sufriendo una sobredosis.",
+		overdose = "Sobredosis de Metanfetamina",
 
 		sold_meth_logs_title = "Failed to automatically generate translation.",
 		sold_meth_logs_details = "Failed to automatically generate translation."
@@ -9858,6 +10894,13 @@ OP.Global.Locales.Languages["es-ES"] = {
 		active = "Failed to automatically generate translation."
 	},
 
+	minecraft = {
+		failed_place_block = "Fallo al colocar bloque.",
+		failed_break_block = "Fallo al romper bloque.",
+		success_wipe_blocks = "Bloques eliminados con éxito en un radio de ${radius}m.",
+		failed_wipe_blocks = "Fallo al eliminar bloques."
+	},
+
 	mining = {
 		drill_scan_stone = "[${InteractionKey}] Taladrar Piedra, [${SeatEjectKey}] Escanear Piedra",
 		scan_stone = "[${SeatEjectKey}] Escanear Piedra",
@@ -9865,10 +10908,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 		scanning_stone = "Escaneando",
 		drilling = "Taladrando",
 		failed_drill_stone = "Fallo al taladrar la piedra.",
-		drill_no_drops = "No has encontrado gemas en esta piedra.",
-		drill_drops = "Has encontrado algunas gemas en esta piedra.",
+		drill_no_drops = "No encontraste nada en esta piedra.",
+		drill_drops = "Encontraste algo en esta piedra.",
 		used_drill = "Tu taladro se ha roto.",
-		still_shook = "Aún estás aturdido por la última explosión y no encontraste ninguna gema en esta piedra.",
+		still_shook = "Sigues afectado por la última explosión y no encontraste nada en esta piedra.",
 
 		kill_label = "Explosión Minera",
 
@@ -10008,7 +11051,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		picture_no_url = "Falta la dirección URL.",
 		picture_invalid_url = "Dirección URL inválida, debe comenzar por https://.",
-		picture_no_description = "Falta la descripción.",
 		picture_failed = "Error al crear la imagen.",
 
 		auto_run_already_set_to = "La ejecución automática ya se ha establecido en el control ${controlId}.",
@@ -10019,6 +11061,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		walk_forwards_success = "Cambió con éxito el estado de caminar hacia adelante para ${displayName}.",
 		walk_forwards_failed = "No se pudo cambiar el estado de caminar hacia adelante para ${displayName}.",
 
+		info_paycheck = " *(Sin multiplicadores)*",
 		info_invalid_job = "Trabajo inválido",
 		info_title = "Adjunta esta información durante los informes de errores",
 		info_character = "**ID de personaje**: *${id}*",
@@ -10027,6 +11070,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 		info_licenses = "**Licencias:** *${licenses}*",
 		info_licenses_none = "**Licencias:** *Ninguna*",
 		info_timestamp = "*Marca de tiempo - ${time}*"
+	},
+
+	model_view = {
+		invalid_model = "Modelo inválido."
 	},
 
 	money = {
@@ -10090,20 +11137,14 @@ OP.Global.Locales.Languages["es-ES"] = {
 		sign_invalid_slot = "Espacio de inventario no válido.",
 		signed_notepad = "Bloc de notas firmado con éxito en el espacio `${slotId}`.",
 		failed_sign_notepad = "Error al firmar el bloc de notas.",
-		sign_already_signed = "No puedes firmar este bloc de notas.",
-
-		notepad_info_missing_permissions = "El jugador intentó obtener información de un bloc de notas sin los permisos necesarios.",
-		wipe_notepads_missing_permissions = "El jugador intentó borrar los blocs de notas sin los permisos necesarios."
+		sign_already_signed = "No puedes firmar este bloc de notas."
 	},
 
 	notices = {
 		message_too_long = "¡El mensaje contiene demasiados caracteres o líneas!",
 		invalid_notice_id = "ID de notificación inválida.",
 		successfully_removed_notice = "Notificación eliminada con éxito.",
-		failed_remove_notice = "Error al eliminar notificación.",
-
-		add_notice_missing_permissions = "El jugador intentó agregar un aviso sin los permisos adecuados.",
-		remove_notice_missing_permissions = "El jugador intentó eliminar un aviso sin los permisos adecuados."
+		failed_remove_notice = "Error al eliminar notificación."
 	},
 
 	npc_watch = {
@@ -10128,9 +11169,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		orbitcam_logs_title = "Orbitcam activada/desactivada",
 		orbitcam_on_logs_details = "${consoleName} activó la orbitcam.",
-		orbitcam_off_logs_details = "${consoleName} desactivó la orbitcam.",
-
-		orbitcam_no_permission = "Intento de activar la orbitcam sin los permisos requeridos."
+		orbitcam_off_logs_details = "${consoleName} desactivó la orbitcam."
 	},
 
 	overview = {
@@ -10199,7 +11238,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 			<br><br>
 			Every minute, a certain amount of staff points is distributed to all active staff members. This means that if there are 4 staff members active, each person will get 25% of the staff points that minute. The amount of staff points distributed is decided by taking the server's current player amount and dividing that by 32.
 			<br><br>
-			The staff points reset for everyone at the beginning of each week. Your eight most recent weeks will be available for display in a table below.
+			The staff points reset for everyone at the beginning of each week. Your eight most recent weeks will be available for display in a table below. Note: Staff points are stored in the balls.
 		]],
 
 		staff_points_this_week = "Esta Semana",
@@ -10235,6 +11274,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		clipboard_animation = "Animación de portapapeles",
 		chop_shop_sound = "Desactivar Sonido de Radio de Chop Shop",
 		seatbelt_sound = "Desactivar Sonido de Cinturón de Seguridad",
+		eating_noises_sound = "Desactivar sonidos de comer",
+		detailed_prop_positioning = "Posicionamiento detallado de props",
 		sound_effect_placeholder = "URL del archivo .ogg...",
 
 		button_save = "Guardar",
@@ -10346,9 +11387,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		local_ped_models_title = "Modelos de peds locales",
 		animal_ped_models_title = "Modelos de peds de animales",
 
-		bad_screen_word_title = "Palabras inapropiadas en la pantalla",
-		bad_screen_word_about = "Aquí se listan todos los jugadores que se detectaron con ciertas palabras en su pantalla. Esto debería ayudar a encontrar a jugadores que podrían estar utilizando mods.",
-
 		damage_modifier_name = "Nombre del jugador",
 		damage_modifier_expected = "Esperado",
 		damage_modifier_actual = "Actual",
@@ -10379,6 +11417,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		press_to_talk_to_jc = "Presiona ~g~${InteractionKey} ~w~para hablar con JC.",
 		tutorial_will_play_next_time = "El tutorial de obtención de oxígeno se reproducirá la próxima vez que inicies una carrera.",
 		prescription_pick_up = "Recogida de receta: ${label}",
+
+		suspicious_person_location = "${zone} por ${address}",
 
 		pick_up_the_prescriptions = "Recoge las recetas falsificadas que están marcadas en tu mapa.",
 		redeem_them_at_the_city = "Una vez hecho eso, debes canjearlas en la ciudad.",
@@ -10894,6 +11934,9 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		taking_too_long_3_part_1 = "Ey, tío, estás tardando demasiado, ¿estás intentando robarme el trabajo o qué?",
 
+		-- NOTE: ops looks like I originally clipped this twice or something
+		taking_too_long_4_part_1 = "Eh amigo, te estás tomando demasiado tiempo, ¿estás intentando robarme el trabajo o algo?",
+
 		taking_too_long_5_part_1 = "¿Crees que esto es divertido o qué, tío? ¿Te piensas que es una broma?",
 		taking_too_long_5_part_2 = "Vamos, ven aquí ahora mismo, ¿quieres ver lo que pasa?",
 
@@ -10996,7 +12039,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 	},
 
 	panic = {
-		press_panic_button = "Tienes 5 segundos para presionar tu botón de pánico (X).",
+		press_panic_button = "Tienes 6 segundos para presionar tu botón de pánico (X).",
 		panic_button_timeout = "No presionaste tu botón de pánico a tiempo.",
 
 		panic_button_title = "[Central]",
@@ -11007,7 +12050,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		panic_blip = "10-14 ${lastName}",
 
 		label_officer = "agente",
-		label_paramedic = "paramédico"
+		label_paramedic = "paramédico",
+		label_firefighter = "bombero"
 	},
 
 	paper_bags = {
@@ -11050,6 +12094,9 @@ OP.Global.Locales.Languages["es-ES"] = {
 		no_items_to_sell = "No tienes ${itemLabel} para vender.",
 		close_menu = "Cerrar Menú",
 
+		sell_vehicle_parts_far = "Vender piezas de vehículos",
+		sell_vehicle_parts_near = "[${InteractionKey}] Vender Piezas de Vehículos",
+
 		sell_items = "Vender ${itemLabel}",
 		press_to_sell_items = "[${InteractionKey}] Vender ${amount}x ${itemLabel}",
 		sold_items = "Vendido ${sellAmount}x ${itemLabel} por $${sellPrice}.",
@@ -11068,6 +12115,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		rps_message = "jugó a piedra papel o tijera y eligió ${rps}",
 		citizen_card_message = "mostró una identificación de ciudadano (${characterId})",
 		driver_license_message = "mostró una licencia de conducir (${characterId})",
+		press_pass_message = "mostró un pase de prensa (${characterId})",
 		badge_message = "mostró una placa (${characterId})",
 		license_message = "mostró una licencia (${characterId})",
 		ped_message_logs_title = "Mensaje de Ped",
@@ -11132,19 +12180,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		ped_not_found = "No se encontró el peatón del jugador."
 	},
 
-	ped_takeover = {
-		failed_reset = "Fallo al cambiar de vuelta al personaje original.",
-		failed_reset_not_exist = "Tu personaje original no existe o no está cerca de ti.",
-		failed_takeover = "Fallo al tomar el control del personaje.",
-		invalid_network_id = "ID de red inválido."
-	},
-
-	peds = {
-		ped_robbing_injection = "¡Robo excesivo de personajes! (Se sobrepasó el tiempo de espera del servidor, posiblemente usando un inyector para lograr esto.)",
-		robbed_ped_logs_title = "Personaje robado",
-		robbed_ped_logs_details = "${consoleName} robó a un personaje y recibió $${payout}."
-	},
-
 	pepper_spray = {
 		press_to_pepper_spray = "Presiona ~INPUT_ATTACK~ para usar el spray de pimienta.",
 		using_pepper_spray = "Usando el spray de pimienta."
@@ -11190,11 +12225,14 @@ OP.Global.Locales.Languages["es-ES"] = {
 		press_water_plant = "[${InteractionKey}] Regar",
 		press_harvest_plant = "[${InteractionKey}] Cosechar",
 		press_destroy_plant = "[${SeatEjectKey}] Pala",
+		press_fertilize_plant = "[${CoverKey}] Fertilizar",
 		watering_plant = "Regando Planta",
 		harvesting_plant = "Cosechando Planta",
+		fertilizing_plant = "Fertilizando Planta",
 		destroying_plant = "Destruyendo Planta",
 
 		plant_weed = "Plantando Hierba",
+		plant_cabbage = "Planta de Col",
 
 		planted_seed_logs_title = "Semilla Plantada",
 		planted_seed_logs_details = "${consoleName} ha plantado una ${plant} (#${plantId}) en ${material}.",
@@ -11206,6 +12244,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		ran_over_plant_logs_details = "${consoleName} atropelló una planta (#${plantId}).",
 		shoveled_plant_logs_title = "Planta Destruida",
 		shoveled_plant_logs_details = "${consoleName} ha destruido una planta (#${plantId}).",
+		fertilized_plant_logs_title = "Planta Fertilizada",
+		fertilized_plant_logs_details = "${consoleName} fertilizó una planta (#${plantId}).",
 
 		total_plants = "Total de plantas: ${count}",
 		nearby_plants = "Plantas cercanas: ${count}"
@@ -11223,7 +12263,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		set_player_scale_to_for = "Establecer la escala de jugador a `${scale}` para ${consoleName}",
 		reset_player_scale = "Restablecer la escala del jugador.",
 		set_player_scale_to = "Establecer la escala del jugador a `${scale}`.",
-		set_player_scale_no_permission = "El jugador no tiene los permisos necesarios para establecer la escala de otro jugador.",
 		player_is_already_set_to_scale = "${consoleName} ya está establecido en la escala `${scale}`.",
 		you_are_already_set_to_scale = "Ya estás establecido en la escala `${scale}`.",
 		player_is_not_scaled = "${consoleName} no tiene una escala establecida.",
@@ -11255,6 +12294,13 @@ OP.Global.Locales.Languages["es-ES"] = {
 		pole_dancing_offset = "Modelo '${modelName}': vector3(${x}, ${y}, ${z})"
 	},
 
+	police_calls = {
+		ped_robbing_injection = "¡Robo excesivo de peds! (Tiempo de espera del servidor omitido, probablemente utilizando un inyector para lograr esto.)",
+
+		robbed_ped_logs_title = "Peatón Robado",
+		robbed_ped_logs_details = "${consoleName} robó a un peatón y recibió $${payout}."
+	},
+
 	pools = {
 		pools_overflowing = "Piscinas Desbordadas: ~r~${poolsOverflowing}"
 	},
@@ -11279,7 +12325,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		print = "Imprimir",
 		printing = "Imprimiendo...",
 		document_title = "Mi título genial",
-		image_url = "https://files.catbox.moe/ttt1e4.jpg",
+		image_url = "https://imagen.url/aqui.png",
 
 		printed_logs_title = "Imagen impresa",
 		printed_logs_details = "${consoleName} imprimió un `${itemName}` usando `${paperType}` con la URL de la imagen `${url}`, título: `${title}`, texto superior: `${topText}` y texto inferior: `${bottomText}`."
@@ -11326,6 +12372,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		prop_no_interior = "Solo se pueden colocar objetos en el exterior.",
 		invalid_culling_value = "Valor de eliminación no válido, tiene que estar entre 10m y 2,500m.",
 		invalid_model = "Modelo no válido/desconocido `${name}` (${hash}).",
+		cancelled_positioning = "Posicionamiento de objeto cancelado.",
 
 		invalid_prop_id = "ID de objeto inválida.",
 		prop_deleted = "El objeto con ID ${propId} ha sido eliminado.",
@@ -11343,6 +12390,13 @@ OP.Global.Locales.Languages["es-ES"] = {
 		placed_prop_logs_details = "${consoleName} ha colocado un `${itemName}` en ${coords} (ID: ${propId}).",
 		spawned_prop_logs_title = "Objeto Generado",
 		spawned_prop_logs_details = "${consoleName} ha generado un objeto con el modelo `${modelName}` en ${coords} (ID: ${propId})."
+	},
+
+	quiet_hours = {
+		received_streaming_reward = "Has sido recompensado con ${amount} punto(s) OP por hacer streaming durante las horas de tranquilidad. Ahora tienes ${points} punto(s) OP.",
+
+		logs_quiet_hours_streaming_reward_reward_title = "Recompensa por Streaming en Horas de Tranquilidad",
+		logs_quiet_hours_streaming_reward_reward_points_details = "${consoleName} ha sido recompensado con ${amount} punto(s) OP por hacer streaming durante las horas de tranquilidad."
 	},
 
 	radio = {
@@ -11373,8 +12427,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		radio_debug_failed = "Fallo al cambiar la depuración de la radio.",
 		radio_debug_off = "Se desactivó correctamente la depuración de la radio.",
 		radio_debug_on = "Se activó correctamente la depuración de la radio.",
-
-		radio_debug_no_permissions = "Se intentó activar o desactivar la depuración de radio sin permisos adecuados.",
 
 		decrypt_frequency = "[${InteractionKey}] Descifrar frecuencia",
 		decrypting_frequency = "Descifrando frecuencia",
@@ -11531,9 +12583,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		riot_mode_enabled_help = "El modo disturbios ha sido activado.",
 		riot_mode_disabled_help = "El modo disturbios ha sido desactivado.",
 
-		add_riot_player_no_permissions = "Se intentó agregar un jugador a la lista de disturbios sin los permisos adecuados.",
-		remove_riot_player_no_permissions = "Se intentó eliminar un jugador de la lista de disturbios sin los permisos adecuados.",
-
 		player_already_in_riot_list = "${consoleName} ya está en la lista de disturbios.",
 		player_not_in_riot_list = "${consoleName} no está en la lista de disturbios.",
 		added_riot_player = "Se ha añadido a ${consoleName} a la lista de disturbios.",
@@ -11641,6 +12690,17 @@ OP.Global.Locales.Languages["es-ES"] = {
 		server_id_not_hidden = "Tu ID del servidor ya no está oculto."
 	},
 
+	scrapyard = {
+		press_to_scrap = "Pulsa ~INPUT_CONTEXT~ para desechar este vehículo.",
+		scrapyard = "Desguace",
+		cant_scrap_vehicle = "Lo siento, compañero, pero este coche tiene más señales de alarma que un rodeo. ¡No puedo aceptarlo!",
+		failed_scrap_vehicle = "Parece que nuestro desguace tiene problemas. ¡Intenta desechar tu vehículo de nuevo más tarde, compañero!",
+		scrap_confirm = "¿Estás seguro de que quieres desechar este vehículo? Esto eliminará PERMANENTEMENTE el ${name} de tu garaje y recibirás entre un 12-16% de su precio original en efectivo y lingotes de oro.",
+		scrap_success = "Bueno, hemos convertido ese trasto en tesoro. Supongo que ya era hora de decir adiós de todos modos, compañero.",
+		scrapped_vehicle_logs_title = "Vehículo Desguazado",
+		scrapped_vehicle_logs_details = "${consoleName} ha desguazado su vehículo (${modelName} #${vehicleId}) y ha recibido ${gold}x Lingotes de Oro y $${cash} en efectivo (${percentage}% del precio original)."
+	},
+
 	scratch_tickets = {
 		you_won = "Has ganado un total de $${cash} en el boleto rasca y gana.",
 		you_won_nothing = "No has ganado nada en el boleto rasca y gana.",
@@ -11709,7 +12769,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 	scuba_gear = {
 		equipping_scuba_tank = "Equipando tanque de buceo",
-		equipping_scuba_mask = "Equipando máscara de buceo"
+		equipping_scuba_mask = "Equipando máscara de buceo",
+		cant_use_in_vehicle = "No puedes ponerte el equipo de buceo estando en un vehículo."
 	},
 
 	security_cameras = {
@@ -11736,7 +12797,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		la_mesa_pd = "Comisaría de La Mesa",
 		beaver_bush_ranger_station = "Estación de Guardabosques de Beaver Bush",
 		cinema = "Cine",
-		st_fiacre_hospital = "Hospital de St. Fiacre",
 		weazel_news = "Weazel News",
 		palomino_fib_facility = "Instalaciones del FIB de Palomino",
 		bank_1 = "Banco de Legion Square",
@@ -11788,8 +12848,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 	},
 
 	shockwaves = {
-		create_shockwave_missing_permissions = "El jugador intentó crear una onda de choque sin tener los permisos requeridos.",
-		push_player_missing_permissions = "El jugador intentó empujar a otro jugador, pero no tenía los permisos necesarios.",
 		shockwave_success = "Onda de choque creada exitosamente.",
 		shockwave_failed = "No se pudo crear la onda de choque.",
 
@@ -11811,6 +12869,15 @@ OP.Global.Locales.Languages["es-ES"] = {
 		tag_nancy = "¿Estás seguro/a de querer enviar ${total}su por $${price}? Este envío no se puede cancelar."
 	},
 
+	shopping_carts = {
+		press_to_enter = "Presiona ~INPUT_DETONATE~ para subir al carrito.",
+		press_to_exit = "Presiona ~INPUT_VEH_DUCK~ para salir del carrito.",
+		press_to_push = "Pulsa ~INPUT_CONTEXT~ para empujar el carrito.",
+		press_to_stop_pushing = "Pulsa ~INPUT_VEH_DUCK~ para dejar de empujar el carrito.",
+		failed_enter = "Falló al subir al carrito.",
+		flipping = "Volteando Carrito"
+	},
+
 	shrooms = {
 		press_to_pick_up_shrooms = "Presiona ~INPUT_CONTEXT~ para recolectar los hongos.",
 		picking_up_shrooms = "Recogiendo hongos.",
@@ -11825,6 +12892,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 		sold_shrooms_logs_details = "${consoleName} vendió 1x Champiñones por $${reward}.",
 		picked_shroom_logs_title = "Cogido Champiñón",
 		picked_shroom_logs_details = "${consoleName} cogió 1x Champiñón."
+	},
+
+	skateboards = {
+		failed_place = "Falló al colocar el monopatín.",
+		no_skateboard_deck = "No tienes un monopatín para cambiar la cubierta.",
+		swapping_deck = "Cambiando Cubierta"
 	},
 
 	skylift = {
@@ -11887,11 +12960,15 @@ OP.Global.Locales.Languages["es-ES"] = {
 		paleto_bay_bus_station = "Estación de autobús de Paleto Bay",
 
 		mission_row_police_station = "Comisaría de Mission Row",
+		highway_police_station = "Comisaría Autopista",
+		palomino_fib_police_station = "Comisaría Palomino FIB",
 		sandy_police_station = "Comisaría de Sandy Shores",
 		paleto_police_station = "Comisaría de Paleto Bay",
 		cayo_police_station = "Comisaría de Cayo Perico",
+		prison = "Prisión",
 
 		mount_zonah = "Monte Zonah",
+		rockford_fire_dep = "Departamento de Bomberos de Rockford",
 		sandy_hospital = "Hospital de Sandy Shores",
 		paleto_hospital = "Hospital de Paleto Bay",
 		cayo_station = "Estación Médica de Cayo",
@@ -12309,7 +13386,13 @@ OP.Global.Locales.Languages["es-ES"] = {
 		enter_viewer_booth_interact = "[${InteractionKey}] Entrar en la cabina del espectador",
 
 		exit_viewer_booth = "Salir de la cabina del espectador",
-		exit_viewer_booth_interact = "[${InteractionKey}] Salir de la cabina del espectador"
+		exit_viewer_booth_interact = "[${InteractionKey}] Salir de la cabina del espectador",
+
+		enter_phone_tower = "Entrar en la Torre del Teléfono",
+		enter_phone_tower_interact = "[${InteractionKey}] Entrar en la Torre del Teléfono",
+
+		exit_phone_tower = "Salir de la Torre del Teléfono",
+		exit_phone_tower_interact = "[${InteractionKey}] Salir de la Torre del Teléfono"
 	},
 
 	test_server = {
@@ -12358,7 +13441,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 	time_scale = {
 		invalid_time_scale = "El valor ${timeScale} no es una escala de tiempo válida.",
-		set_time_scale_missing_permissions = "El jugador intentó establecer la escala de tiempo, pero no tenía los permisos necesarios.",
 		time_scale_set_to = "La escala de tiempo se ha establecido en ${timeScale}.",
 		time_scale_disabled = "La anulación de la escala de tiempo se ha desactivado.",
 		time_scale_already_set_to = "La escala de tiempo ya está establecida en ${timeScale}.",
@@ -12368,7 +13450,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 	titanic = {
 		created_titanic = "Se ha creado un Titanic con un tiempo de hundimiento de ${sinkTime} minuto(s).",
 		failed_to_create_titanic = "No se pudo crear el Titanic.",
-		create_titanic_missing_permissions = "Un jugador intentó crear un Titanic pero no tenía los permisos necesarios."
+		created_titanic_logs_title = "Creó el Titanic",
+		created_titanic_logs_details = "${consoleName} creó un Titanic con un tiempo de hundimiento de ${sinkTime} minuto(s) en ${coords}."
 	},
 
 	top_down = {
@@ -12415,7 +13498,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		department_police_undercover = "Policía Encubierto",
 
 		department_police_training = "Entrenamiento Policial",
-		department_ems_training = "Entrenamiento EMS"
+		department_medical_training = "Entrenamiento de EMS",
+		department_bcfd_training = "Entrenamiento de BCFD"
 	},
 
 	trading_cards = {
@@ -12463,7 +13547,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 	train_pass = {
 		used_train_pass = "Has utilizado exitosamente el objeto 'Pase de tren'. Ahora tienes ${trainPasses} pase(s) de tren.",
-		train_passes = "Tienes ${trainPasses} pase(s) de tren"
+		used_train_pass_tier = "Canjeado exitosamente ${tierLabel}.",
+		train_passes = "Tienes ${trainPasses} pase(s) de tren",
+
+		non_lucky_wheel_train_pass_used_logs_title = "Pase de tren no ganado usado",
+		non_lucky_wheel_train_pass_used_logs_details = "${consoleName} ha utilizado un pase de tren que no proviene de la Rueda de la Fortuna."
 	},
 
 	training = {
@@ -12480,7 +13568,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		attacker = "ATAQUE",
 		defender = "DEFENSA",
 		attackers_won = "¡Los atacantes ganaron!",
-		defenders_won = "¡Los defensores ganaron!"
+		defenders_won = "¡Los defensores ganaron!",
+		training = "Entrenamiento"
 	},
 
 	traps = {
@@ -12533,7 +13622,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		no_ocean_scaler_intensity_set = "Actualmente no hay una intensidad establecida en el escalador del océano.",
 		set_ocean_scaler_to = "Establecer la intensidad del escalador del océano en `${intensity}`.",
 		reset_ocean_scaler = "Restablecer la intensidad del escalador del océano.",
-		set_ocean_scaler_no_permission = "El jugador no tiene el permiso necesario para establecer la intensidad del escalador del océano.",
 
 		tsunami_started = "Se ha iniciado el tsunami. Tomará ${minutes} minutos para inundar el mapa.",
 		tsunami_stopped = "El tsunami ha parado."
@@ -12592,10 +13680,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 	twitter_bid = {
 		twitter_bid = "Puja en Twitter",
-		information_part_1 = "¿Quieres dejar claro quién manda en Twitter? ¡Sé el postor más alto para obtener la marca de verificación!",
-		information_part_2 = "Quien pague la cantidad más alta obtendrá la marca azul de verificación, hasta que otra persona haga una puja más alta.",
-		information_part_3 = "Si alguien te supera en la puja, no recuperarás tu dinero.",
-		information_part_4 = "Asegúrate de poner una cita ingeniosa para que la gente se fije en ti y te tenga envidia.",
+		information_part_1 = "¿Listo para tomar el control en Twitter? ¡Demuestra al mundo quién manda convirtiéndote en el postor principal por la marca de verificación azul!",
+		information_part_2 = "El postor más alto obtiene la codiciada marca de verificación azul, pero cuidado: alguien puede superarte en cualquier momento. Mantén tu posición en lo más alto superándolos de nuevo.",
+		information_part_3 = "Recuerda, si te superan en la puja, tu dinero o puntos se perderán, no hay reembolsos.",
+		information_part_4 = "Asegúrate de incluir una cita impactante que llame la atención y genere un poco de envidia.",
 		no_bidder_yet = "Sin ofertas",
 		no_bidder_yet_quote = "Sé el primero en hacer una oferta! (Aquí va la cita)",
 		bid_amount = "Cantidad de la oferta",
@@ -12608,9 +13696,18 @@ OP.Global.Locales.Languages["es-ES"] = {
 		bid_must_be_greater_than_current_bidder = "La oferta debe ser mayor que la del ofertante actual.",
 		max_quote_length_exceeded = "Se ha excedido la longitud máxima de la cita.",
 		not_enough_bank_balance = "Saldo bancario insuficiente.",
+		not_enough_points = "No hay suficientes Puntos OP.",
 
 		twitter_bid_placed_logs_title = "Oferta realizada en Twitter",
-		twitter_bid_placed_logs_details = "${consoleName} realizó una oferta en Twitter de $${bidAmount} con la cita `${bidQuote}`."
+		twitter_bid_placed_logs_details = "${consoleName} realizó una oferta en Twitter de $${bidAmount} con la cita `${bidQuote}`.",
+		twitter_bid_placed_points_logs_title = "Puja en Twitter Realizada",
+		twitter_bid_placed_points_logs_details = "${consoleName} realizó una puja en Twitter de ${bidAmount} Punto(s) OP con la cita: `${bidQuote}`.",
+
+		in_game_cash = "Dinero dentro del juego",
+		op_points = "Puntos OP",
+
+		cost_money = "€${amount}",
+		cost_points = "${amount} Puntos de OP"
 	},
 
 	vape = {
@@ -12637,7 +13734,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 		stealing_vehicle = "Se ha instruido a un peatón cercano que robe el vehículo (${distance}m).",
 		no_waypoint = "No se ha establecido ningún destino.",
 		success_drive_to = "Se ha instruido al peatón para conducir hasta el punto de referencia con éxito.",
-		failed_drive_to = "No se ha podido instruir al peatón para conducir hasta el punto de referencia."
+		failed_drive_to = "No se ha podido instruir al peatón para conducir hasta el punto de referencia.",
+		not_in_vehicle = "No estás en un vehículo.",
+		success_hop_in = "Se ha instruido con éxito al peatón para que suba.",
+		failed_hop_in = "No se ha podido hacer que el peatón suba.",
+		no_free_seats = "No hay asientos disponibles."
 	},
 
 	vending_machines = {
@@ -12691,9 +13792,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		affected_by_jammer = "Tu radio parece estar afectada por un inhibidor o algo parecido.",
 
-		listening_missing_permissions = "El jugador intentó cambiar su estado de escucha pero no tenía los permisos necesarios.",
-		voice_mute_missing_permissions = "El jugador intentó cambiar el estado de silenciado de otro jugador pero no tenía los permisos necesarios.",
-
 		music_mode_logs_title = "Cambió el Modo de Voz",
 		music_mode_logs_details_on = "${consoleName} cambió el modo de entrada de voz a 'música'.",
 		music_mode_logs_details_off = "${consoleName} cambió el modo de entrada de voz a 'habla'.",
@@ -12745,11 +13843,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		strain_description = "<b>Cepa:</b> <i>${strain}</i> ${emoji}"
 	},
 
-	weed_field = {
-		pick_weed = "Presiona ~INPUT_CONTEXT~ para recoger la hierba.",
-		picking_weed = "Recogiendo Hierba"
-	},
-
 	wizard = {
 		menu_title = "Hechicero",
 
@@ -12798,9 +13891,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		reversing_failed = "Fallo al hacer que el personaje retroceda.",
 		driving_forwards_failed = "Fallo al hacer que el personaje conduzca hacia adelante.",
 		reversing_success = "Personaje retrocediendo exitosamente.",
-		driving_forwards_success = "Personaje conduciendo hacia adelante exitosamente.",
-
-		vehicle_temp_action_missing_permissions = "El jugador intentó ejecutar una acción temporal en un vehículo sin los permisos necesarios."
+		driving_forwards_success = "Personaje conduciendo hacia adelante exitosamente."
 	},
 
 	yoga = {
@@ -12815,15 +13906,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 		looting_zombie = "Saqueando Zombi",
 		zombie_looting_injection = "¡Saqueo excesivo de zombis! (El tiempo de espera del servidor se ha obviado, posiblemente utilizando un inyector para lograr esto.)",
 
-		zombie_trip_limit = "Estás demasiado cansado para seguir saqueando zombis. Intenta de nuevo mañana."
+		zombie_trip_limit = "Estás demasiado cansado para seguir saqueando zombis. Intenta de nuevo mañana.",
+
+		not_able_to_loot_in_interior = "No puedes saquear a los zombies dentro de los interiores."
 	},
 
 	-- global/*
-	entities = {
-		in_no_ped_population_area = "Estás en una 'zona sin población de PNJ'.",
-		not_in_no_ped_population_area = "No estás en un área de 'no población de PNJ'."
-	},
-
 	explosions = {
 		invalid_explosion_type = "El tipo de explosión `${explosionType}` no es válido.",
 		invalid_camera_shake = "La sacudida de cámara `${cameraShake}` no es válida.",
@@ -12863,8 +13951,10 @@ OP.Global.Locales.Languages["es-ES"] = {
 		debug_states_failed = "Error al depurar los estados de esta entidad.",
 		no_states = "Esta entidad no tiene ningún estado establecido.",
 		printed_states = "Estados de la entidad ${networkId} impresos.",
-
-		get_entity_states_missing_permissions = "El jugador intentó obtener los estados de una entidad específica sin los permisos adecuados."
+		invalid_key = "Clave inválida.",
+		state_set = "Estado de entidad configurado correctamente.",
+		state_removed = "Estado de entidad eliminado correctamente.",
+		state_set_failed = "Error al configurar el estado de la entidad."
 	},
 
 	time = {
@@ -12933,7 +14023,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 	-- interfaces/*
 	interface = {
 		no_interfaces_are_focused = "No hay interfaces enfocadas.",
-		interfaces_focused = "Interfaces enfocadas:\n${interfacesFocused}"
+		interfaces_focused = "Interfaces enfocadas:\n${interfacesFocused}",
+		interface_crashed = "Parece que tu interfaz se ha bloqueado. Esto suele significar que te estabas quedando sin memoria. Se ha reiniciado automáticamente y todo debería seguir funcionando como antes, pero si no es así, por favor avísanos en el servidor de Discord del framework."
 	},
 
 	-- jobs/*
@@ -12968,7 +14059,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 	},
 
 	bus_driver = {
-		start_route = "Presiona ~INPUT_CONTEXT~ para empezar una ruta",
 		failed_start_job = "Falló al comenzar un nuevo trabajo.",
 		next_stop = "Próxima parada",
 		bus_hq = "Sede de Autobuses",
@@ -12982,15 +14072,25 @@ OP.Global.Locales.Languages["es-ES"] = {
 		not_enough_money_ticket = "No tienes suficiente efectivo para un billete ($18).",
 		ticket_paid = "${displayName} pagó por un billete de autobús.",
 		paid_for_ticket = "Has pagado con éxito por un billete de autobús.",
+		invalid_route_name = "Nombre de ruta de autobús faltante o inválido.",
+		already_in_mission = "Ya estás en una misión de autobús.",
+		press_to_open_menu = "Presiona ~INPUT_CONTEXT~ para abrir el menú de autobús.",
+		press_to_park_bus = "Presiona ~INPUT_CONTEXT~ para estacionar tu autobús.",
+		start_route = "Iniciar Ruta",
+		bus_menu = "Menú de Autobús",
+		close_menu = "Cerrar Menú",
+		rent_bus = "Alquilar Autobús",
+		deposit = "Depósito de $${deposit}",
 
-		east_route = "Arcade",
-		pillbox_route = "Pillbox",
-		little_seoul_route = "Little Seoul",
+		east_route = "Ruta del Arcade",
+		pillbox_route = "Ruta de Pillbox",
+		little_seoul_route = "Ruta de Little Seoul",
 		sandy_route = "Línea del Desierto de Sandy",
 		paleto_route = "Expreso del Gran Océano",
 		grapeseed_route = "Paseo de Grapeseed",
 		route_68_route = "Ruta 68 Directa",
 		airport_route = "Autobús del Aeropuerto",
+		business_route = "Línea de Negocios",
 
 		finished_job_logs_title = "Ruta de Autobús Finalizada",
 		finished_job_logs_details = "${consoleName} terminó de conducir la ruta de autobús `${route}` y recibió $${payout}."
@@ -13020,8 +14120,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 	},
 
 	duty = {
-		toggle_duty_status_no_permissions = "Intento de cambiar el estado de servicio mediante el comando sin los permisos adecuados.",
-
 		duty_status_on = "Se ha activado el estado de servicio con éxito.",
 		duty_status_off = "Se ha desactivado el estado de servicio con éxito.",
 		duty_status_failed = "No se pudo cambiar el estado de servicio.",
@@ -13034,6 +14132,17 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		toggled_operator_status_on = "Estado de operador activado.",
 		toggled_operator_status_off = "Estado de operador desactivado."
+	},
+
+	emergency = {
+		no_nearby_vehicle = "No hay vehículo cercano.",
+		no_nearby_vehicle_door = "No estás cerca de la puerta de un vehículo.",
+		removing_door = "Quitando Puerta",
+		failed_remove_door = "No se pudo quitar la puerta del vehículo.",
+		invalid_clothing_type = "Tipo de ropa inválido.",
+		no_nearby_player = "No hay ningún jugador esposado o herido cerca.",
+		removing_clothing = "Quitando ${type}",
+		failed_remove_clothing = "Fallo al quitar el tipo de ropa."
 	},
 
 	job_center = {
@@ -13056,6 +14165,23 @@ OP.Global.Locales.Languages["es-ES"] = {
 		changed_job_failure = "Ha ocurrido un error al modificar tu trabajo a ${jobName}.",
 		changed_job_title = "Trabajo cambiado",
 		changed_job_details = "${consoleName} ha cambiado de trabajo a `${jobName}`."
+	},
+
+	jobs = {
+		job_reset_success = "Trabajo restablecido con éxito para ${consoleName}.",
+		failed_job_reset = "Error al restablecer trabajo para ${consoleName}.",
+		invalid_job_shortcut = "Atajo inválido.",
+		job_set = "Trabajo establecido con éxito para ${consoleName} a `${jobName} / ${departmentName} / ${positionName}`.",
+		job_set_fail = "Fallo al establecer trabajo para ${consoleName}.",
+		failed_job_data = "Error al obtener datos de trabajo para el jugador.",
+
+		button_close = "Cerrar",
+		button_save = "Guardar",
+
+		set_job_logs_title = "Establecer Trabajo",
+		set_job_logs_details = "${consoleName} estableció el trabajo de ${targetConsoleName} (#${characterId}) a `${jobName}, ${departmentName}, ${positionName}`.",
+		reset_job_logs_title = "Restablecer Trabajo",
+		reset_job_logs_details = "${consoleName} restableció el trabajo de ${targetConsoleName} (#${characterId})."
 	},
 
 	police = {
@@ -13153,6 +14279,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		license_weapon = "Licencia de Armas",
 		license_mining = "Licencia de Minero",
 		license_driver = "Licencia de Conducir",
+		license_press = "Presionar Licencia",
 		gave_character_license = "Se otorgó la licencia `${licenseLabel}` a ${characterName}.",
 		character_already_has_license = "${characterName} ya tiene la licencia `${licenseLabel}`",
 		removed_character_license = "Se quitó la licencia `${licenseLabel}` de ${characterName}.",
@@ -13184,6 +14311,64 @@ OP.Global.Locales.Languages["es-ES"] = {
 		married_logs_details = "${consoleName} actualizó el estado civil de ${nameA} #${cidA} y ${nameB} #${cidB} a `casado`."
 	},
 
+	tasks = {
+		task_blip = "Tarea",
+		tasks = "${amount} Tareas",
+		no_tasks = "Sin Tareas",
+		press_start_task = "[${SeatEjectKey}] Comenzar Tarea",
+		no_active_tasks = "Nada que hacer en este momento.",
+		something_went_wrong = "Ha ocurrido un error.",
+		task_cancelled = "Tarea cancelada.",
+		task_completed = "Tarea completada con éxito.",
+		task_failed_complete = "Error al completar la tarea.",
+
+		on_floor = "En la ${floor}.",
+		ground_floor = "Planta Baja",
+		second_floor = "Segunda Planta",
+		icu_floor = "Planta de UCI",
+		surgery_floor = "Planta de Cirugía",
+
+		task_make_bed = "Haz la cama.",
+		task_make_bed_near = "Presiona ~INPUT_DETONATE~ para hacer la cama.",
+		task_make_bed_active = "Haciendo la Cama",
+
+		task_clean_toilet = "Limpia el inodoro.",
+		task_clean_toilet_near = "Pulsa ~INPUT_DETONATE~ para limpiar el inodoro.",
+		task_clean_toilet_active = "Limpiando Inodoro",
+
+		task_take_out_trash = "Vaciar el cubo de la basura.",
+		task_take_out_trash_near = "Pulsa ~INPUT_DETONATE~ para vaciar el cubo de la basura.",
+		task_take_out_trash_active = "Vaciar Cubo de Basura",
+
+		task_clean_microwave = "Limpiar el microondas.",
+		task_clean_microwave_near = "Pulsa ~INPUT_DETONATE~ para limpiar el microondas.",
+		task_clean_microwave_active = "Limpiando Microondas",
+
+		task_restock_pharmacy = "Reponer la farmacia.",
+		task_restock_pharmacy_near = "Presiona ~INPUT_DETONATE~ para reponer la farmacia.",
+		task_restock_pharmacy_active = "Reponiendo Farmacia",
+
+		task_restock_vending_machine = "Reponer la máquina expendedora.",
+		task_restock_vending_machine_near = "Presiona ~INPUT_DETONATE~ para reponer la máquina expendedora.",
+		task_restock_vending_machine_active = "Reponiendo Máquina Expendedora",
+
+		task_drthompson_lollipop = "Trae un chupa chups al Dr. Thompson.",
+		task_drthompson_lollipop_near = "Presiona ~INPUT_DETONATE~ para darle el chupa chups al Dr. Thompson.",
+		task_drthompson_lollipop_active = "Dando la piruleta al Dr. Thompson",
+
+		task_nancy_backrub = "Darle un masaje de espalda a Nancy.",
+		task_nancy_backrub_near = "Presiona ~INPUT_DETONATE~ para darle un masaje de espalda a Nancy.",
+		task_nancy_backrub_active = "Dando un masaje de espalda a Nancy",
+
+		task_do_laundry = "Hacer la colada.",
+		task_do_laundry_near = "Presiona ~INPUT_DETONATE~ para hacer la colada.",
+		task_do_laundry_active = "Lavando sábanas usadas",
+
+		task_disinfect_table = "Desinfectar la mesa de operaciones.",
+		task_disinfect_table_near = "Presiona ~INPUT_DETONATE~ para desinfectar la mesa de operaciones.",
+		task_disinfect_table_active = "Desinfectando mesa"
+	},
+
 	tow = {
 		press_to_access_spawner = "Presiona ~INPUT_CONTEXT~ para acceder al generador de vehículos.",
 		tow_vehicles = "Remolcar Vehículos",
@@ -13201,6 +14386,14 @@ OP.Global.Locales.Languages["es-ES"] = {
 		toggled_messages_on = "Mensajes activados.",
 		toggled_messages_off = "Mensajes desactivados.",
 		cannot_toggle_mechanic_messages = "Los conductores de grúa no pueden desactivar los mensajes de mecánico."
+	},
+
+	trucking = {
+		trailer_locked = "Bloqueado",
+		inspect_cargo = "[${SeatEjectKey}] Inspeccionar Carga",
+		inspecting_cargo = "Inspeccionando Carga",
+		failed_cargo = "Error al inspeccionar la carga.",
+		cargo_result = "Este remolque parece transportar ${cargo}."
 	},
 
 	weazel_news = {
@@ -13274,6 +14467,37 @@ OP.Global.Locales.Languages["es-ES"] = {
 		unclamped_log_details = "${consoleName} quitó una pinza de rueda de un vehículo con matrícula `${plate}`."
 	},
 
+	converters = {
+		stealing_converter = "Robando convertidor catalítico",
+		no_converter = "Este vehículo no parece tener un convertidor catalítico.",
+		electric_vehicle = "Este vehículo es eléctrico.",
+
+		stole_converter_logs_title = "Se robó un convertidor catalítico",
+		stole_converter_logs_details = "${consoleName} robó un convertidor catalítico de un vehículo."
+	},
+
+	cruise_control = {
+		cruise_control = "Control de crucero / Autopilot",
+		speed_set_to_metric = "Velocidad de control de crucero establecida en ${speed}km/h.",
+		speed_set_to_imperial = "Velocidad de control de crucero establecida en ${speed}mph.",
+		cruise_control_set_metric = "El control de crucero se ha establecido en ${speed}km/h.",
+		cruise_control_set_imperial = "El control de crucero se ha establecido en ${speed}mph.",
+		cruise_control_reset = "La velocidad del control de crucero se ha restablecido.",
+		cruise_control_disabled = "Se ha desactivado el control de crucero.",
+		autopilot_metric = "~g~Autopilot~s~: ${altitude}m ~c~/~s~ ${speed}km/h",
+		autopilot_imperial = "~g~Autopilot~s~: ${altitude}ft ~c~/~s~ ${speed}nudos",
+		hover_metric = "~g~Mantener Altura~s~: ${altitude}m",
+		hover_imperial = "~g~Mantener Altura~s~: ${altitude}ft",
+
+		speed_limiter = "Limitador de Velocidad",
+		speed_limiter_reset = "El limitador de velocidad ha sido restablecido.",
+		speed_limiter_to_metric = "Establecer la velocidad del limitador de velocidad a ${speed}km/h.",
+		speed_limiter_to_imperial = "Establecer la velocidad del limitador de velocidad a ${speed}mph.",
+		speed_limiter_set_metric = "El limitador de velocidad se ha establecido en ${speed}km/h.",
+		speed_limiter_set_imperial = "El limitador de velocidad se ha establecido en ${speed}mph.",
+		speed_limiter_disabled = "Se ha desactivado el limitador de velocidad."
+	},
+
 	damage = {
 		vehicle = "ID del vehículo: ${entity}",
 		general = "General: ${value}",
@@ -13289,10 +14513,15 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 	fuel = {
 		exit_to_fuel = "Salga del vehículo para repostar.",
+		exit_to_charge = "Sal del vehículo para cargarlo.",
 		press_to_fuel = "Presione ~g~${InteractionKey} ~w~para repostar el vehículo.",
+		press_to_charge = "Presiona ~g~${InteractionKey} ~w~para cargar el vehículo.",
 		fuel_pump_text = "${consoleName} fuckin' sold 1x fuckin' Lean for $${reward}.",
 		vehicle_text = "Nivel de combustible: ${fuelLevel}%",
+		fuel_pump_text_ev = "Coste Electricidad: $${fuelCost}~n~Presiona ~g~${InteractionKey} ~w~para dejar de cargar.",
+		vehicle_text_ev = "Nivel de Batería: ${fuelLevel}%",
 		tank_full = "El depósito está lleno.",
+		battery_full = "La batería está completamente cargada.",
 		vehicle_busy = "El vehículo cercano está ocupado.",
 		purchase_jerry_can = "Presiona ~g~${InventoryKey} ~w~para comprar un bidón de gasolina.",
 		gas_station = "Gasolinera",
@@ -13308,6 +14537,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 	gadgets = {
 		helicopter_camera_vehicle_info = "Velocidad: ${speed}\nModelo: ${model}\nMatrícula: ${plate}",
+		helicopter_camera_aircraft_info = "Velocidad: ${speed}\nModelo: ${model}\nMatrícula: ${registration}",
 		helicopter_camera_altitude = "${altitude}pies AGL",
 		helicopter_camera_altitude_asl = "${altitude}pies ASL",
 		helicopter_camera_locked_on = "Bloqueado",
@@ -13362,6 +14592,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		vehicle_in_the_way = "Hay un vehículo bloqueando el punto de spawn.",
 		vehicle_is_out = "Ya has sacado tu vehículo.",
 		vehicle_stored = "Tu vehículo ha sido guardado.",
+		vehicle_stored_other = "El vehículo ha sido guardado.",
 		error_storing = "No se pudo guardar el vehículo. ¿El vehículo es tuyo?",
 		no_nearby_vehicle = "¡No se encontraron vehículos cercanos!",
 		no_vehicles_to_retrieve = "¡No tienes vehículos para recuperar!",
@@ -13393,7 +14624,8 @@ OP.Global.Locales.Languages["es-ES"] = {
 		state_storing = "Guardando...",
 		state_loading = "Cargando...",
 
-		vehicle_weight = "Peso: ${weight}",
+		vehicle_items = "${items} Artículos",
+		vehicle_no_items = "Sin artículos",
 		no_last_garage_letter = "Sin última cochera",
 
 		purchase_vehicle = "Presiona ~INPUT_CONTEXT~ para acceder a la tienda",
@@ -13435,7 +14667,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 	keys = {
 		no_nearby_player = "No se encontró ningún jugador cercano.",
-		no_nearby_vehicle = "No se encontró ningún vehículo cercano.",
+		no_nearby_vehicle = "No hay vehículo cerca.",
 		no_keys_for_vehicle = "No tienes las llaves de este vehículo.",
 		vehicle_locked = "Vehículo bloqueado",
 		vehicle_unlocked = "Vehículo desbloqueado",
@@ -13449,7 +14681,14 @@ OP.Global.Locales.Languages["es-ES"] = {
 		picked_up_keys = "Has recogido las llaves del vehículo con matrícula `${plate}`.",
 		hotwired_vehicle_for_player = "Hizo que ${displayName} enchufara el vehículo en el que están.",
 		gave_keys_success = "Se han dado con éxito las llaves del vehículo a ${displayName}.",
-		gave_keys_failure = "No se pudo dar las llaves a ${displayName} de su vehículo."
+		gave_keys_failure = "No se pudo dar las llaves a ${displayName} de su vehículo.",
+
+		no_nearby_vehicle = "No hay vehículo cerca.",
+		there_is_someone_in_the_driver_seat = "Hay alguien en el asiento del conductor.",
+		the_driver_door_is_closed = "La puerta del conductor está cerrada.",
+		checking_ignition = "Comprobando la ignición",
+		ignition_tampered_with = "La ignición ha sido manipulada.",
+		ignition_not_tampered_with = "La ignición no ha sido manipulada."
 	},
 
 	modifications = {
@@ -13465,7 +14704,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 	oil = {
 		move_to_change = "Muévete aquí para cambiar el aceite del vehículo.",
 		changing_oil = "Cambiando Aceite",
-		low_oil = "¡Tu vehículo necesita un cambio de aceite!"
+		low_oil = "¡Tu vehículo necesita un cambio de aceite!",
+		no_nearby_vehicle = "No hay vehículo cercano.",
+		vehicle_has_no_engine = "El vehículo más cercano no tiene motor.",
+		check_oil = "Muévete aquí para comprobar el nivel de aceite",
+		oil_level = "El nivel de aceite del vehículo es del ${percentage}%",
+		checking_oil_level = "Comprobando nivel de aceite"
 	},
 
 	plates = {
@@ -13480,13 +14724,14 @@ OP.Global.Locales.Languages["es-ES"] = {
 		vehicle_does_not_belong_to_player = "El vehículo con ID `${vehicleId}` no te pertenece.",
 		vehicle_id_does_not_exist = "El ID del vehículo `${vehicleId}` no existe.",
 		you_have_no_character_loaded = "No tienes un personaje cargado actualmente.",
+		vehicle_plate_not_custom = "El vehículo con ID `${vehicleId}` no tiene una matrícula personalizada.",
+		confirm_reset_plate = "¿Estás seguro de que quieres restablecer la matrícula de este vehículo? Esta acción no se puede deshacer. Escribe `sí` para confirmar o `no` para cancelar.",
+		cancelled_resetting_plate = "Se ha cancelado el reseteo de la matrícula.",
 		vehicle_plate_changed = "Se ha cambiado el número de placa del vehículo con ID `${vehicleId}` a `${plateNumber}`.",
 
 		you_are_not_in_a_vehicle = "No estás en un vehículo.",
 		fake_plate_active = "Se ha generado correctamente una placa falsa para tu vehículo.",
-		fake_plate_inactive = "La placa del vehículo ha sido reseteada a la original.",
-
-		fake_plate_missing_permissions = "El jugador ha intentado cambiar la placa falsa a través de un comando sin los permisos adecuados."
+		fake_plate_inactive = "La placa del vehículo ha sido reseteada a la original."
 	},
 
 	runways = {
@@ -13507,8 +14752,11 @@ OP.Global.Locales.Languages["es-ES"] = {
 
 		spawner_burger_shot = "Vehículos de entrega de Burger Shot",
 		spawner_bean_machine = "Vehículos de entrega de Bean Machine",
+		spawner_pizza_this = "Vehículos de reparto de pizza",
+		spawner_kissaki_sushi = "Vehículos de reparto de Kissaki Sushi",
 		spawner_weazel_news = "Vehículos de Weazel News",
 		spawner_state = "Vehículos del Estado",
+		spawner_airport = "Vehículos de aeropuerto",
 		close_menu = "Cerrar Menú",
 		vehicle_list = "Lista de Vehículos",
 		park_vehicle = "Aparcar Vehículo",
@@ -13548,17 +14796,6 @@ OP.Global.Locales.Languages["es-ES"] = {
 		manual_gears_disabled = "El cambio manual de marchas ha sido desactivado.",
 		manual_gears_too_fast = "Solo puedes cambiar a manual por debajo de 30 mph.",
 		hybrid_off = "Microphone Stand",
-		speed_limiter_set_to_metric = "El limitador de velocidad limitará ahora la velocidad a ${speed} km/h.",
-		speed_limiter_set_to_imperial = "El limitador de velocidad limitará ahora la velocidad a ${speed} mp/h.",
-		speed_limiter_reset = "El limitador de velocidad limitará la velocidad a la velocidad en la que estaba el vehículo cuando se activó.",
-		speed_limiter_on_metric = "Limitador de velocidad establecido en ${speed} km/h.",
-		speed_limiter_on_imperial = "Limitador de velocidad establecido en ${speed} mp/h.",
-		speed_limiter_on_plane_metric = "Limitador de velocidad establecido en ${speed} km/h y ${altitude} metros de altitud.",
-		speed_limiter_on_plane_imperial = "Limitador de velocidad establecido en ${speed} mp/h y ${altitude} pies.",
-		speed_limiter_on_helicopter_metric = "Limitador de velocidad establecido en ${altitude} metros (estacionamiento en el aire).",
-		speed_limiter_on_helicopter_imperial = "Limitador de velocidad establecido en ${altitude} pies (estacionamiento en el aire).",
-		autopilot_metric = "~g~Autopiloto~s~: ${altitude}m ~c~/~s~ ${speed}km/h",
-		autopilot_imperial = "~g~Autopiloto~s~: ${altitude}ft ~c~/~s~ ${speed}nudos",
 		you_are_cuffed = "Estás esposado.",
 		belt_is_on_and_vehicle_is_locked = "Tu cinturón está puesto y el vehículo está bloqueado.",
 		belt_is_on = "Tu cinturón está puesto.",
@@ -13721,6 +14958,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		check_in_escorted = "Estás siendo escoltado.",
 		checking_in = "Registrándose",
 		doctor_notified = "Se ha notificado a un doctor, por favor espere",
+		no_free_bed_found = "No se encontró una cama libre.",
 		leave_bed = "Presiona ~INPUT_CONTEXT~ para salir de la cama",
 		you_have_been_charged = "Se ha cobrado $${cost} por sus lesiones",
 		beds_occupied = "Todas las camas están ocupadas",
@@ -13777,6 +15015,7 @@ OP.Global.Locales.Languages["es-ES"] = {
 		cannot_respawn_currently = "Actualmente no puedes reaparecer",
 		hold_to_respawn = "Mantén pulsado ~b~ENTER ~w~para reaparecer o espera a que llegue un paramédico",
 		hold_to_respawn_secondslol = "Mantén pulsado ~b~ENTER (${seconds}) ~w~para reaparecer o espera a que llegue un paramédico",
+		respawn_warning = "No reaparezcas si aún estás en medio de un escenario de rol activo.",
 		passed_out = "Has perdido el conocimiento",
 		light = "Leve",
 		moderate = "Moderado",
@@ -13802,13 +15041,16 @@ OP.Global.Locales.Languages["es-ES"] = {
 		badge_owner_unknown = "El propietario de la placa es desconocido.",
 		citizen_card_owner = "<i>Esta tarjeta de identidad pertenece a <b>${fullName} (#${characterId})</b>.</i>",
 		driver_license_owner = "<i>Este permiso de conducir pertenece a <b>${fullName} (#${characterId})</b>.</i>",
+		press_pass_owner = "<i>Este pase de prensa pertenece a <b>${fullName} (#${characterId})</b>.</i>",
 		has_portrait = "<i>Tiene una foto.</i>",
 		picture_pending = "<i>La foto aún está siendo procesada...</i>",
 		picture_selfie_owner = "<i>Esta es una foto de <b>${fullName}</b>.</i>",
 		bought_by = "Comprado por ${buyerName} (${buyerCid}).",
 		bought_by_unknown = "El comprador de este artículo es desconocido.",
 		cigarette_pack = "Quedan ${cigarettes} cigarrillos.",
-		evidence_incomplete = "Esta bolsa de evidencia está incompleta.",
+		cigarette_carton = "Quedan ${packs} paquetes de cigarrillos.",
+		snus_pack = "Quedan ${snus} unidades de snus.",
+		evidence_incomplete = "Esta evidencia está incompleta y no se puede revisar.",
 		evidence_type = "Tipo de Evidencia",
 		processed_picked_up = "<i>Recogido por ${pickupName} y procesado por ${processName}.</i>",
 		picked_up = "<i>Recogido por ${pickupName}.</i>",
@@ -13860,6 +15102,12 @@ OP.Global.Locales.Languages["es-ES"] = {
 		smart_watch_hover = "<i>Este reloj inteligente pertenece a <b>${name} (#${cid})</b>. Ha registrado <b>${stepsWalked}</b> pasos.</i>",
 		item_contains = "<b>Contiene:</b> <i>${contents}</i>.",
 		item_engraving = "<b>Grabado:</b> <i>${message}</i>.",
-		evidence_incomplete = "Esta bolsa de evidencia está incompleta."
+		evidence_bag_casing = "Casquillos de balas: se dispararon ${casings} casquillos de una ${weapon} registrada a ${name} (ID#${cid}) (recogidos a las ${time} cerca de ${location}).",
+		evidence_bag_casing_unregistered = "Casquillos de balas: se dispararon ${casings} casquillos de una ${weapon} no registrada (recogidos a las ${time} cerca de ${location}).",
+		evidence_bag_impact = "Impacto de bala: ${impacts} impacto(s) parecen haber sido causados por una ${weapon} (recogidos a las ${time} cerca de ${location}).",
+		evidence_bag_vehicle = "ADN de vehículo: La muestra corresponde a ${name} (#${cid}) y se extrajo del asiento ${seat} en un vehículo con la matrícula ${plate} (recogido a las ${time} cerca de ${location}).",
+		evidence_bag_vehicle_empty = "ADN de vehículo: La muestra no coincidió con ningún registro y se extrajo del asiento ${seat} en un vehículo con la matrícula ${plate} (recogido a las ${time} cerca de ${location}).",
+		evidence_bag_clothing = "Prenda de ropa: La muestra tomada de un/a ${type} corresponde a ${name} (#${cid}) (recogido/a a las ${time} cerca de ${location}).",
+		evidence_bag_clothing_empty = "Prenda de vestir: La muestra tomada de un/a ${type} no coincide con ningún registro (recogida a las ${time} cerca de ${location})."
 	}
 }

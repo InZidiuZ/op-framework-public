@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 32 (do not change)
+-- AUTO LOCALES: 33 (do not change)
 
 OP.Global.Locales.Languages["meme-pirate"] = {
 	-- configuration settings for language
@@ -23,13 +23,20 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		yes = "Aye",
 		no = "Nay",
 		n_a = "N/A",
-		invalid_server_id = "Arrr! Not a valid ship ID, matey."
+		invalid_server_id = "Arrr! Not a valid ship ID, matey.",
+		appreciated_tier = "Appreciated Tier",
+		respected_tier = "Respected Tier",
+		heroic_tier = "Heroic Tier",
+		legendary_tier = "Legendary Tier",
+		god_tier = "God Tier"
 	},
 
 	-- animations/*
 	emotes = {
 		get_in_trunk = "Hoist the black flag and press ~INPUT_ENTER~ to board the trunk.",
 		put_boombox_in_trunk = "Hoist the black flag and press ~INPUT_ENTER~ to store the boombox in the trunk.",
+		put_bicycle_in_trunk = "Press ~INPUT_ENTER~ to stash the bike in the booty.",
+		cant_put_bicycle_in_trunk = "Ye can't stash the bike in this booty.",
 		put_player_in_trunk = "Hoist the black flag and press ~INPUT_ENTER~ to make the landlubber walk the plank.",
 		put_player_in_seat = "[${VehicleEnterKey}] Make 'em walk the plank",
 		putting_player_in_seat = "Placin' In Seat",
@@ -47,22 +54,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		piggyback_hop_on = "[${InteractionKey}] Hop on, me heartie.",
 		stop_piggyback = "Hoist ~INPUT_VEH_HEADLIGHT~ to stop piggybackin'.",
 
-		lockpicking_cuffs = "Lockpickin' Cuffs",
-		lockpick_cuffs_too_fast = "Ye moved too fast.",
-		success_lockpick_cuffs = "Successfully lockpicked cuffs.",
-		failed_lockpick_cuffs = "Failed to lockpick cuffs.",
-		lockpick_lost = "Ye lost yer lockpick.",
-
-		not_cuffed = "Ye be not cuffed.",
-		unable_to_lockpick = "Ye be unable to lockpick the cuffs.",
-
-		lockpick_cuffs_logs_title = "Lockpicked Handcuffs",
-		lockpick_cuffs_logs_details = "${consoleName} successfully lockpicked their cuffs using a `${itemName}`.",
-
 		you_are_not_being_carried = "Ye be not currently bein' carried, matey.",
 		successfully_uncarried = "Force stop carry be successful, arr!",
 		failed_uncarried = "Arrr! Failed to force stop carry.",
-		uncarry_missing_permissions = "Attempted t' force stop carry without proper permissions, matey.",
 
 		uncarry_logs_title = "Force Uncarry",
 		uncarry_logs_details = "${consoleName} forced ${targetName} to stop carryin' them.",
@@ -77,6 +71,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		struggle_logs_details = "${consoleName} has struggled free out of ${targetName}'s grasp, har har!",
 
 		ragdolled_player = "Made ${displayName} walk the plank."
+	},
+
+	ledges = {
+		no_ledge = "Ye be not near a plank.",
+		invalid_variation = "Invalid plunder.",
+		press_x_to_stop = "Press ~INPUT_VEH_DUCK~ to cease sittin'."
 	},
 
 	-- base/*
@@ -98,6 +98,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		noclip_toggle_activated_self_on_logs_details = "${consoleName} toggled noclip on at position `x: ${xCoord}, y: ${yCoord}, z: ${zCoord}`. (In vessel: ${inVehicle})",
 		noclip_toggle_activated_self_off_logs_details = "${consoleName} toggled off the ability to walk through walls at position `x: ${xCoord}, y: ${yCoord}, z: ${zCoord}`.",
 
+		can_not_trigger_remotely_without_staff = "Ye be needin' to be part of the crew to remotely hoist this command.",
+
 		model_name_not_provided = "Ye didn't provide a name for the model.",
 		model_name_invalid = "The name '${modelName}' be an invalid one for our ship.",
 		model_name_not_a_vehilce = "Arrr! Ye scallywag, `${modelName}` be not a vessel.",
@@ -114,10 +116,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		vehicle_created = "Yarr! Successfully created ship!",
 		failed_vehicle_creation = "Shiver me timbers! We failed to create that ship!",
 
+		invalid_network_id = "Invalid port id, arrr.",
+
 		-- NOTE: `add_vehicle` command:
 		add_vehicle_added_vehicle_for_everyone = "Added a fine vessel wit' model name `${modelName}` for all hands.",
-		add_vehicle_added_vehicle_for_player = "Added a fine vessel wit' model name `${modelName}` for ${consoleName}, me heartie.",
-		add_vehicle_added_vehicle = "Added a fine vessel wit' model name `${modelName}`, arr!",
+		add_vehicle_added_vehicle_for_player = "Added vessel wit' model name `${modelName}` #${vehicleId} fer ${consoleName}.",
+		add_vehicle_added_vehicle = "Added vessel wit' model name `${modelName}` #${vehicleId}.",
 		add_vehicle_character_not_loaded = "The scurvy landlubber had no characters loaded, ye scallywag.",
 		add_vehicle_target_user_not_found = "The target scallywag could not be found, arrr.",
 		add_vehicle_invalid_input = "Invalid input, me hearty.",
@@ -134,7 +138,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		added_vehicle_logs_title = "Added Vessel",
 		added_vehicle_logs_details = "${consoleName} added vessel with model name `${modelName}` to their treasure hold.",
 
-		vehicle_saved = "undefined",
+		vehicle_saved = "Successfully saved vessel wit' model name `${modelName}` #${vehicleId}.",
 		failed_to_save_vehicle = "undefined",
 
 		invalid_amount = "Ahoy! That amount be invalid!",
@@ -211,6 +215,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		staff_title = "SCALLYWAGS ${staffName}",
 		staff_message_logs_title = "Staff Message Logs",
 		staff_message_logs_details = "${consoleName} be sendin' th' followin' message in th' staff chat: `${staffMessage}`",
+		local_staff_title = "LOCAL STAFF ${staffName}",
+		local_staff_message_logs_title = "Local Staff Message",
+		local_staff_message_logs_details = "${consoleName} sent the followin' message in the local staff chat: `${staffMessage}`",
 
 		staff_pm_title = "STAFF PM ${transmissionTitle}",
 		staff_pm_logs_title = "Staff PM",
@@ -220,7 +227,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		staff_pm_not_recipient_not_staff = "Yer tryin' to send a message to someone who ain't part o' the crew.",
 		staff_pm_unable_to_message_self = "Ye can't send a message to yourself, matey.",
 		staff_pm_warning = "Warning from the Cap'n",
-		staff_pm_first_time = "We be noticin' ye've never used the Cap'n's PMs before. To send a message, use the /staffpm command.",
+		staff_pm_first_time = "Ahoy! We see ye have ne'er used staff missives afore. To give a holler back to a scallywag missive, use `/staffpm` followed by the recipient's id. Fer an easy time, ye can use `/reply` to respond to the last staff missive ye received.",
+		reply_pm_not_found = "Arrr! There be no staff word to rebut to.",
 
 		important_staff_pm_title = "!STAFF PM Ye -> ${recipient}",
 		close_staffpm = "Shut it",
@@ -245,6 +253,13 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		player_revived_success = "Ahoy! Revived pirate successfully, arr!",
 
 		missing_valid_license_identifier_parameter = "Yo ho ho! Ye be missin' a valid 'licenseIdentifier' parameter, me hearty!",
+
+		wipe_broken = "broken - Broken/Fragmented Objects",
+		wipe_npcs = "npcs - NPCs and their vessels.",
+		wipe_objects = "objects - All Objects",
+		wipe_vehicles = "ships - All Vessels",
+		wipe_peds = "crew - All Crewmates",
+		wipe_doors = "doors - All Door Objects",
 
 		wiped_entities = "Arrr, me hearties! Ye be wiped out all the scurvy entities. Mutineer ${deletedEntities} networked entities.",
 		wipe_entities_logs_title = "Wiped Entities",
@@ -331,8 +346,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		warning_message_removed_title = "Shiver Me Timbers, Warning Message Removed!",
 		warning_message_removed_details = "${consoleName} Has Walked The Plank And Removed The Warning Message.",
 
-		indestructibility_on = "Hoist The Colors! Toggled 'Indestructibility' On!",
-		indestructibility_off = "Heave Ho! Toggled 'Indestructibility' Off.",
 		speed_boost_on = "Avast Ye! Toggled 'Speed Boost' On.",
 		speed_boost_off = "Strike Me Pink! Toggled 'Speed Boost' Off.",
 		nitro_boost_on = "Arrr, Ye be togglin' 'Nitro Boost' On.",
@@ -367,33 +380,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		population_density_is_not_on = "Ye scallywags, the population density multiplier override be not on.",
 		population_density_already_set_to = "Arrr, The population density multiplier override be already set to ${multiplierLabel}%, matey.",
 
-		enabled_features_list = "Ahoy, these be the features currently enabled:",
-		aimbot_feature = "Aimbot",
-		disabled_collisions_feature = "Disabled Collisions",
-		disabled_recoil_feature = "Disabled Recoil Ya-Harrr!",
-		evidence_view_feature = "Evidence Viewin'",
-		hit_indicator_feature = "Hit Indicator",
-		indestructibility_feature = "Indestructibility Ya-Harrr!",
-		infinite_ammo_feature = "Infinite Ammo",
-		invisibility_feature = "Invisibility Ya-Harrr!",
-		muted_sirens_feature = "Silenced Sirens",
-		nitro_boost_feature = "Nitro Boost",
-		no_nearby_vehicles_feature = "No Nearby Ships",
-		peeking_feature = "Peekin'",
-		roll_control_feature = "Roll Control",
-		speed_boost_feature = "Speed Boost",
-		speed_up_progress_bar_feature = "Speed Up Progress Bar",
-		sticky_feet_feature = "Sticky Peg Leg",
-		wallhack_feature = "Spyglass Vision",
-		watching_feature = "Lookout",
-		fortnite_feature = "Skull & Bones",
-		reflection_feature = "Damage Reflection",
-		stable_cam_feature = "Stable Cam me hearties!",
-		super_jump_feature = "Super Leap",
-		server_id_hidden_feature = "Server-ID Concealed",
-		fake_disconnect_feature = "Fake Ship Abandonment",
-		brighter_nights_feature = "BN",
-
 		you_are_not_in_a_vehicle = "Ye be not in a vessel, matey.",
 		repaired_vehicle = "Repaired me ship, arr!",
 		player_not_in_vehicle = "undefined",
@@ -407,16 +393,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		success_nos_refill = "Successfully refilled me NOS, arr!",
 		failed_nos_refill = "Ahoy! I couldn't refill me NOS.",
 
-		refill_nitro_missing_permissions = "Ye tryin' to refill yer NOS without proper permissions, ye scallywag.",
-
 		register_invalid_character_id = "Ye ID be invalid ye landlubber.",
 		register_invalid_slot = "This slot be invalid, me hearty.",
 		register_weapon_success = "Shiver me timbers! Yer weapon in slot ${slotId} be successfully registered to th' scallywag with character id ${cid}.",
 		no_serial_number = "Cannot register a weapon without a serial number, arrr.",
 		unknown_character_id = "Unknown character id, arrr.",
 		register_weapon_failed = "Blimey! We couldn't register ye weapon.",
-
-		register_weapon_missing_permissions = "Avast ye! This landlubber be attempting to register a weapon without proper permissions.",
 
 		vehicle_smoke_invalid_class = "Ahoy matey! We can't be enabling smoke for this ship class.",
 
@@ -509,14 +491,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		cleaned_ped_self = "Arr, ye have successfully cleaned yer own scallywag.",
 		clean_ped_failed = "Arr, the scallywag cleaning be a failure.",
 		cleaned_ped_for_all = "Arr, ye have successfully cleaned everyone's scallywags.",
-		clean_ped_no_permission = "Attempted to clean a matey's landlubber without proper permissions.",
 
 		item_durability_set_success = "Ye have successfully set the durability to ${amount}% for the items in slot ${slotId}, me hearty!",
 		item_durability_set_failed = "Shiver me timbers! Setting the durability hath failed.",
 		item_durability_invalid_amount = "Landlubber! The durability amount be invalid (0 <> 100).",
-		item_durability_set_no_permission = "Arrr! Ye tried to set a scurvy item's durability without proper permissions.",
 
-		item_metadata_set_no_permission = "Arrr! Ye tried to set a scurvy item's metadata without proper permissions.",
 		item_metadata_set_success = "Arr! Ye successfully set metadata fer items in slot ${slotId}.",
 		item_metadata_set_failed = "Shiver me timbers! We failed to set the metadata.",
 		item_metadata_missing_key = "undefined",
@@ -529,8 +508,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		identity_set_failed = "Failed to set me matey ${displayName}'s identity.",
 		identity_hud = "Identity: ${playerName}",
 
-		set_identity_no_permission = "Shiver me timbers! Ye can't set yer name without proper permissions.",
-
 		invalid_range_parameter = "Belay! That range parameter be invalid.",
 		wipe_first_owned_success = "Avast ye! Successfully deleted all ${amount} entities first owned by a scallywag with server id `${serverId}`.",
 		wipe_first_owned_success_range = "Batten down the hatches! Successfully deleted all ${amount} entities first owned by a scallywag with server id `${serverId}` in a ${range}m range.",
@@ -541,11 +518,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		scoop_invalid = "Avast ye! Ye haven't scooped up any pirates.",
 		unscooped_players = "Unscooped ${amount} o' ${total} mateys.",
 		unscoop_failed = "Failed to unscoop mateys.",
-
-		toggle_collisions_missing_permissions = "Ahoy! Ye tried to toggle yer collisions without proper permissions.",
-		wipe_first_owned_missing_permissions = "Arrr! A hearty pirate tried ter wipe first owned entities wit'out proper permissions.",
-
-		freeze_missing_permissions = "Ahoy, ye scallywag! Ye be attemptin' ter freeze or unfreeze another pirate wit'out proper permissions.",
 
 		freeze_success = "Shiver me timbers! Successfully froze ${consoleName}.",
 		failed_freeze = "Avast ye, matey. We be unable ter freeze that pirate.",
@@ -562,13 +534,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		slap_failed = "Failed to slap matey.",
 		slap_logs_title = "Slapped Matey",
 		slap_logs_details = "${consoleName} slapped ${targetName}.",
-		slap_missing_permissions = "Matey attempted to slap another matey without proper permissions.",
 
 		damaged_player = "Successfully damaged ${consoleName} for ${damage} damage.",
 		damage_player_failed = "Failed to damage matey.",
 		damage_player_logs_title = "Harmed Me Matey",
 		damage_player_logs_details = "${consoleName} harmed ${targetConsoleName} fer ${damage} damage.",
-		damage_player_missing_permissions = "Arrr! Ye matey attempted to harm another matey without proper permissions.",
 
 		refill_nitro_logs_title = "Refilled Nitro",
 		refill_nitro_logs_details = "${consoleName} refilled their swashbucklin' nitro.",
@@ -599,15 +569,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		clean_ped_logs_title = "Cleaned Ped",
 		clean_ped_logs_details = "${consoleName} cleaned ${targetName}'s ped, matey!",
 
-		invalid_job_search = "Blimey! Invalid job search (has to be at least 3 characters), arrr!",
-		failed_job_search = "Avast! Failed to search for jobs, me hearty.",
-		job_search_no_results = "No jobs found, ye scallywag.",
-		job_search_results = "Hoist the sails! Set ${consoleName}'s job to \"${jobName}, ${departmentName}, ${positionName}\" (Score: ${score}).",
-		job_no_character = "Target pirate does not have a character loaded, arrr.",
-
-		job_reset_success = "Shiver me timbers! Successfully reset job for ${consoleName}.",
-		failed_job_reset = "Avast ye mateys! Ye job reset failed.",
-
 		create_vehicle_logs_title = "Created Vessel",
 		create_vehicle_logs_details = "${consoleName} be a-creatin' a vessel wit' model name `${modelName}`.",
 
@@ -627,13 +588,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		wipe_first_owned_logs_details = "${consoleName} be wipin' ${amount} entities first owned by a scurvy dog wit' server id `${serverId}` wit' a range o' ${range}m.",
 
 		unscoop_logs_title = "Unscooped Players",
-		unscoop_logs_details = "${consoleName} be unscoopin' ${amount} player(s) at `${coords}`.",
-
-		set_job_logs_title = "Set Job",
-		set_job_logs_details = "${consoleName} set ${targetConsoleName} (#${characterId}) job t' `${jobName}, ${departmentName}, ${positionName}` (Score: ${score}, Search: `${search}`).",
-
-		reset_job_logs_title = "Reset Job",
-		reset_job_logs_details = "${consoleName} reset ${targetConsoleName} (#${characterId}) job."
+		unscoop_logs_details = "${consoleName} be unscoopin' ${amount} player(s) at `${coords}`."
 	},
 
 	anti_cheat = {
@@ -663,7 +618,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		-- GPT-4 generated ban messages
 		bad_entity_spawn = "Arrr, tryin' to conjure the ancient artifact o' `${modelName}`, were ye? This ain't an episode o' Antiques Roadshow, an' that relic be stayin' in the vault.",
-		bad_screen_word_ban = "We've heard of open book exams, but this be ridiculous.",
 		blacklisted_command_ban = "Arrr, ye be no allowed to perform this command. If ye think this be an error, please contact the server crew.",
 		clear_tasks_ban = "This be not a Jedi mind trick trainin' center. Yer attempts to influence the free will o' others be noted... and rejected.",
 		damage_modifier_ban = "Yer power level cannot exceed 9000, ye scallywag.",
@@ -690,7 +644,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		suspicious_explosion_ban = "Sorry, but this ain't a Michael Bay film. Excessive use o' pyrotechnics be not permitted.",
 		text_entry_ban = "Inspectin' Element be not permitted on this browser.",
 		thermal_night_vision_ban = "Brighter Nights be not allowed.",
-		underground_ban = "Ye seem to have fallen into a rabbit hole, matey.",
 		vehicle_modification_ban = "Ye couldn't find th' headlight fluid for yer car.",
 		vehicle_spawn_ban = "Arr, dreamin' o' a joyride wi' `${modelName}`, were ye? This ain't a showroom, an' that particular model? It be on an eternal waitlist!",
 		weapon_spawn_ban = "Ye be yearnin' fer the `${weaponName}`, were ye? This ain't an armory, an' that piece? Still in the forge.",
@@ -700,7 +653,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Bad Creation",
-		type_bad_screen_word = "Bad Screen Word",
 		type_blacklisted_command = "Blacklisted Command",
 		type_clear_tasks = "Clear Tasks",
 		type_damage_modifier = "Damage Modifier",
@@ -734,7 +686,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		type_suspicious_transfer = "Suspicious Transfer",
 		type_text_entry = "Text Entry",
 		type_thermal_night_vision = "Thermal/Night Vision",
-		type_underground = "Underground",
 		type_vehicle_modification = "Vehicle Modification",
 		type_illegal_local_vehicle = "Usin' Not-Networked Ship",
 
@@ -899,6 +850,13 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		ragdoll_command_parameter_server_id_help = "Specify a server id to be keelhauled another scallywag.",
 		ragdoll_command_substitutes = "",
 
+		-- animations/ledges
+		sit_ledge_command = "sit_ledge",
+		sit_ledge_command_help = "Take a perch on a ledge if ye be in front o' one. Ye have to be facing the ledge.",
+		sit_ledge_command_parameter_variation = "variation",
+		sit_ledge_command_parameter_variation_help = "What sit animation to play (1 - 4).",
+		sit_ledge_command_substitutes = "ledge",
+
 		-- animations/walkstyles
 		marathon_command = "marathon",
 		marathon_command_help = "Toggle th' 'marathon' debug feature t' see what walkstyles needs tweakin'.",
@@ -933,11 +891,23 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		important_staff_pm_command_parameter_message_help = "Thar important message ye would like to send.",
 		important_staff_pm_command_substitutes = "!staffpm, !staff_pm",
 
+		reply_pm_command = "reply_pm",
+		reply_pm_command_help = "Rejoin to the last staff message ye received.",
+		reply_pm_command_parameter_message = "message",
+		reply_pm_command_parameter_message_help = "The message ye would like to send.",
+		reply_pm_command_substitutes = "rejoin",
+
 		staff_command = "crew",
 		staff_command_help = "Broadcast a message t' all active crew members.",
 		staff_command_parameter_message = "parrot",
 		staff_command_parameter_message_help = "Th' parrot ye be wantin' t' send.",
 		staff_command_substitutes = "",
+
+		local_staff_command = "local_swashbucklers",
+		local_staff_command_help = "Bellow a message to all active swashbucklers within a 25m radius.",
+		local_staff_command_parameter_message = "message",
+		local_staff_command_parameter_message_help = "The message ye would like to send.",
+		local_staff_command_substitutes = "lcrew",
 
 		wipe_command = "swab",
 		wipe_command_help = "Swab off th' unwanted entities from th' map.",
@@ -946,7 +916,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		wipe_command_parameter_ignore_local_entities = "ignore local entities",
 		wipe_command_parameter_ignore_local_entities_help = "Ignore non-networked entities, arrr? If ye be cleanin' up aft' a cheater, it be recommended ye put this t' `true` or `1`.",
 		wipe_command_parameter_model_name = "model name",
-		wipe_command_parameter_model_name_help = "If ye be wantin' to only delete entities of a certain model name, insert a model name here, arrr! Otherwise leave blank, at `false` or `0`. Ye can also set this to `ships`, `landlubbers`, `treasures` or `portals`, matey.",
+		wipe_command_parameter_model_name_help = "If ye be wanting to only be deletin' entities of a certain model name, insert a model name here. Otherwise leave blank, at `false` or `0`. Ye can also set this to `ships`, `landlubbers`, `treasures`, `hatchways`, `shattered` or `rum-runners`.",
 		wipe_command_parameter_camera = "spyglass",
 		wipe_command_parameter_camera_help = "Use yer spyglass coords instead o' yer crew's coords. Defaults be nay, `1` or `y` for aye.",
 		wipe_command_substitutes = "",
@@ -1053,33 +1023,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		nitro_boost_command_parameter_server_id_help = "If ye be wantin' to toggle the 'nitro boost' fer someone else, insert their shipmate id here.",
 		nitro_boost_command_substitutes = "nitro",
 
-		indestructibility_command = "invincibility",
-		indestructibility_command_help = "Toggle 'invincibility'.",
-		indestructibility_command_parameter_server_id = "shipmate id",
-		indestructibility_command_parameter_server_id_help = "If ye be wantin' to toggle the 'invincibility' fer someone else, insert their shipmate id here.",
-		indestructibility_command_parameter_ignore_vehicle = "ignore vessel",
-		indestructibility_command_parameter_ignore_vehicle_help = "If set to `1` or `y`, this will make only ye invincible, nay the vessel ye be aboard.",
-		indestructibility_command_substitutes = "arr, ahoy, ahoy_mode, ahoymode",
-
 		no_nearby_vehicles_command = "no_nearby_ships",
 		no_nearby_vehicles_command_help = "Toggle 'no nearby ships'.",
 		no_nearby_vehicles_command_parameter_server_id = "server shipmate id",
 		no_nearby_vehicles_command_parameter_server_id_help = "If ye be wantin' to toggle the 'no nearby ships' fer someone else, insert their server shipmate id here.",
 		no_nearby_vehicles_command_substitutes = "",
-
-		job_command = "vocation",
-		job_command_help = "Update a matey's vocation based on a search.",
-		job_command_parameter_server_id = "server id",
-		job_command_parameter_server_id_help = "The pirates' server id or 0 to select ye'self.",
-		job_command_parameter_search = "search",
-		job_command_parameter_search_help = "The vocation/deck/position name or part o' it to search fer or `none` to remove the job.",
-		job_command_substitutes = "",
-
-		reset_job_command = "reset_job",
-		reset_job_command_help = "Resets ye scallywag's job to unemployed.",
-		reset_job_command_parameter_server_id = "server id",
-		reset_job_command_parameter_server_id_help = "The players server id or 0 to select ye self.",
-		reset_job_command_substitutes = "",
 
 		watching_command = "watching",
 		watching_command_help = "Shows ye all hands who be spectating nearby.",
@@ -1403,6 +1351,16 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		trigger_ems_call_command_help = "Sends a local cry for help to the nearest Loblolly from your position, arrr!",
 		trigger_ems_call_command_substitutes = "",
 
+		ridealong_command = "gangway",
+		ridealong_command_help = "Toggle if ye be able to board NPC's ships.",
+		ridealong_command_substitutes = "",
+
+		kill_ped_command = "keelhaul_ped",
+		kill_ped_command_help = "Keelhauls the swabbie wit' th' given network id.",
+		kill_ped_command_parameter_network_id = "network id",
+		kill_ped_command_parameter_network_id_help = "Th' network id o' th' swabbie t' keelhaul.",
+		kill_ped_command_substitutes = "",
+
 		-- base/anti_cheat
 		model_detect_add_command = "add_model_detect",
 		model_detect_add_command_help = "Temporarily adds a model to the detection list, me hearty. The list resets on server restart.",
@@ -1464,6 +1422,19 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		get_pings_command_help = "Get average ping to various ports around the seven seas to find the most suitable host location for this ship's current crew.",
 		get_pings_command_substitutes = "",
 
+		-- base/points
+		points_command = "booty",
+		points_command_help = "Show th' amount o' OP Booty ye have.",
+		points_command_substitutes = "",
+
+		use_points_command = "plunder_booty",
+		use_points_command_help = "Plunder booty. This be used when a server has special perks they be manually chargin' fer. Do not use this unless instructed as it will take yer booty without a second thought!",
+		use_points_command_parameter_amount = "amount",
+		use_points_command_parameter_amount_help = "The sum o' doubloons the server should attempt to take from ye.",
+		use_points_command_parameter_label = "label",
+		use_points_command_parameter_label_help = "A mark to be logged alongside the point-usage.",
+		use_points_command_substitutes = "",
+
 		-- base/profile
 		profile_debug_command = "profile_debug",
 		profile_debug_command_help = "Toggle th' profile debugger.",
@@ -1478,12 +1449,16 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		-- base/users
 		playtime_command = "playtime",
 		playtime_command_help = "Check total playtime on th' server as well as playtime this session.",
+		playtime_command_parameter_total_playtime = "total playtime",
+		playtime_command_parameter_total_playtime_help = "By default the playtime actually played on characters will be used. Set this to `y` to use the total overall time in the server instead.",
 		playtime_command_parameter_server_id = "server id",
 		playtime_command_parameter_server_id_help = "Th' player's server ID ye want t' get th' playtime fer. Ye can leave this blank or at `0` t' select yourself.",
 		playtime_command_substitutes = "",
 
 		leaderboard_command = "leaderboard",
 		leaderboard_command_help = "Check th' playtime leaderboard.",
+		leaderboard_command_parameter_total_playtime = "total sailin' time",
+		leaderboard_command_parameter_total_playtime_help = "By default the sailin' time actually sailed on scallywags will be used. Set this to `y` to use the total overall time in the server instead.",
 		leaderboard_command_substitutes = "",
 
 		package_command = "package",
@@ -1521,6 +1496,13 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		create_airdrop_custom_command_parameter_items = "items",
 		create_airdrop_custom_command_parameter_items_help = "Arrr! A string containing what items and how many of them there should be. The string should look like 'green_apple:5,hamburger:3'.",
 		create_airdrop_custom_command_substitutes = "",
+
+		-- game/airports
+		registration_lookup_command = "registration_lookup",
+		registration_lookup_command_help = "Look-up an ships registration.",
+		registration_lookup_command_parameter_registration = "registration",
+		registration_lookup_command_parameter_registration_help = "The ships registration (e.g. N123AZ).",
+		registration_lookup_command_substitutes = "registration",
 
 		-- game/airstrike
 		call_airstrike_command = "call_airstrike, avast!",
@@ -1795,6 +1777,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		reconnect_command_socket_command_help = "Attempts t' reconnect t' th' command socket, ye landlubber!",
 		reconnect_command_socket_command_substitutes = "",
 
+		-- game/container_storage
+		containers_command = "booty chest",
+		containers_command_help = "Spyglass and manage yer rented storage containers.",
+		containers_command_substitutes = "",
+
 		-- game/crafting
 		crafting_debug_command = "craftin'_debug",
 		crafting_debug_command_help = "Debugs all crafting locations. Arrrr.",
@@ -1841,8 +1828,14 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		-- game/debug
 		debug_command = "debug",
-		debug_command_help = "Toggle the entity-debugger. This will show some general information about nearby entities, yarrr.",
+		debug_command_help = "Toggle the scallywag-spotter. This will show some general info about ye and the world and display entities ye look at.",
+		debug_command_parameter_minimal = "scanty",
+		debug_command_parameter_minimal_help = "Only show scanty info (avoids lots o' native calls).",
 		debug_command_substitutes = "",
+
+		entity_debug_command = "scallywag_debug",
+		entity_debug_command_help = "Toggle the scallywag-debugger. This will show some general info about the scallywag ye be lookin' at.",
+		entity_debug_command_substitutes = "",
 
 		npc_debug_command = "npc_debug",
 		npc_debug_command_help = "Debugs all non-animal npc's around ye, matey.",
@@ -1978,6 +1971,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		play_animation_command_parameter_flags_help = "Th' animation flags fer th' animation ye be wantin' to play.",
 		play_animation_command_substitutes = "animation",
 
+		play_scenario_command = "sail_scenario",
+		play_scenario_command_help = "Hoists the specified scenario.",
+		play_scenario_command_parameter_scenario = "scenario",
+		play_scenario_command_parameter_scenario_help = "The name of the scenario ye want to sail.",
+		play_scenario_command_substitutes = "scenario",
+
 		draw_coords_command = "draw_coords",
 		draw_coords_command_help = "Draw coordinates in th' world.",
 		draw_coords_command_parameter_x = "x",
@@ -2106,6 +2105,24 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		random_position_command_help = "Teleports ye to a random position on th' main island. (Also turns on yer invisibility)",
 		random_position_command_substitutes = "random",
 
+		crash_ui_command = "crash_ui",
+		crash_ui_command_help = "Set off a UI event which will purposefully crash the UI and set off the notorious 'flashbang' bug.",
+		crash_ui_command_substitutes = "",
+
+		toggle_deep_log_events_command = "toggle_deep_log_events",
+		toggle_deep_log_events_command_help = "Toggle deep logging o' events in th' console.",
+		toggle_deep_log_events_command_substitutes = "",
+
+		find_native_toggles_command = "find_native_toggles",
+		find_native_toggles_command_help = "This will help ye find potential 'toggle' natives fer certain behavior by checking a bunch o' natives every tick. It will log whenever some o' these change.",
+		find_native_toggles_command_parameter_extreme = "extreme",
+		find_native_toggles_command_parameter_extreme_help = "Also inclde all unknown natives that has no parameters.",
+		find_native_toggles_command_substitutes = "",
+
+		show_cancelled_vehicles_command = "show_cancelled_vehicles",
+		show_cancelled_vehicles_command_help = "Toggle showin' o' cancelled ships.",
+		show_cancelled_vehicles_command_substitutes = "",
+
 		-- game/debug_menu
 		debug_menu_command = "debug-menu",
 		debug_menu_command_help = "Toggles th' debug menu.",
@@ -2139,6 +2156,14 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		door_debug_command = "door_debug",
 		door_debug_command_help = "Debugs information 'bout nearby doors, arrr.",
 		door_debug_command_substitutes = "",
+
+		disable_doors_command = "disable_doors",
+		disable_doors_command_help = "Fully disable th' door script from modifyin' door objects.",
+		disable_doors_command_substitutes = "",
+
+		add_doors_command = "add_doors",
+		add_doors_command_help = "Toggle addin' doors to be copied.",
+		add_doors_command_substitutes = "",
 
 		-- game/effect_zones
 		effect_zones_debug_command = "undefined",
@@ -2413,10 +2438,21 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		animal_debug_command_help = "Toggle animal debug, arr!",
 		animal_debug_command_substitutes = "",
 
+		-- game/indestructability
+		indestructibility_command = "invincibility",
+		indestructibility_command_help = "Toggle yer indestructibility.",
+		indestructibility_command_parameter_server_id = "shipmate id",
+		indestructibility_command_parameter_server_id_help = "If ye be wantin' to toggle some scallywag else's indestructibility, insert their server id here.",
+		indestructibility_command_substitutes = "arr, ahoy, ahoy_mode, ahoymode",
+
 		-- game/injuries
 		inspect_command = "inspect",
 		inspect_command_help = "Inspect th' closest pirate for injuries, yar!",
 		inspect_command_substitutes = "",
+
+		autopsy_command = "autopsy",
+		autopsy_command_help = "Perform a scurvy autopsy on the closest player's carcass. (Will show ye the last recorded death reason)",
+		autopsy_command_substitutes = "",
 
 		-- game/instances
 		instance_create_command = "instance_create",
@@ -2611,6 +2647,19 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		refresh_magazines_command_help = "Refresh th' magazines if there has been changes in th' database.",
 		refresh_magazines_command_substitutes = "",
 
+		create_magazine_command = "create_magazine",
+		create_magazine_command_help = "Spawn a broadside of a certain publishment of a certain scroll.",
+		create_magazine_command_parameter_series_name = "series name",
+		create_magazine_command_parameter_series_name_help = "The name of the broadside scroll series.",
+		create_magazine_command_parameter_issue_id = "issue id",
+		create_magazine_command_parameter_issue_id_help = "The publishment reckon ye be wantin' to spawn.",
+		create_magazine_command_substitutes = "",
+
+		-- game/map
+		live_map_command = "ahoy_map",
+		live_map_command_help = "Toggle the ahoy-map (will show all hearties on yer map).",
+		live_map_command_substitutes = "",
+
 		-- game/mdt
 		mdt_command = "mdt",
 		mdt_command_help = "Toggle the MDT UI, arrrr!",
@@ -2629,6 +2678,19 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		maxwell_debug_command = "maxwell_debug",
 		maxwell_debug_command_help = "Debug maxwell's location.",
 		maxwell_debug_command_substitutes = "",
+
+		-- game/minecraft
+		minecraft_command = "treasurecraft",
+		minecraft_command_help = "Place treasurecraft blocks, very legendary!",
+		minecraft_command_parameter_no_sound = "no sound",
+		minecraft_command_parameter_no_sound_help = "No sound when placing the blocks.",
+		minecraft_command_substitutes = "",
+
+		minecraft_wipe_command = "treasurecraft_swab",
+		minecraft_wipe_command_help = "Swab all treasurecraft blocks in a given reach.",
+		minecraft_wipe_command_parameter_radius = "reach",
+		minecraft_wipe_command_parameter_radius_help = "The radius ye want to wipe blocks in. (0 = all blocks, max 5000)",
+		minecraft_wipe_command_substitutes = "",
 
 		-- game/mining
 		mining_debug_command = "mining_debug",
@@ -2750,6 +2812,15 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		whois_command_parameter_search_help = "undefined",
 		whois_command_substitutes = "",
 
+		-- game/model_view
+		model_view_command = "model_view",
+		model_view_command_help = "Behold a model wit' a greenscreen in the background.",
+		model_view_command_parameter_model = "model",
+		model_view_command_parameter_model_help = "The model name or hash ye would like to behold.",
+		model_view_command_parameter_no_blocker = "no blocker",
+		model_view_command_parameter_no_blocker_help = "Disable the shadow blocker (default: no).",
+		model_view_command_substitutes = "model, view",
+
 		-- game/money
 		cash_command = "loot",
 		cash_command_help = "Display yer loot balance.",
@@ -2835,6 +2906,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		oxy_tutorial_command = "oxy_tutorial",
 		oxy_tutorial_command_help = "Play th' oxy tutorial next time yer start a run.",
 		oxy_tutorial_command_substitutes = "",
+
+		-- game/pacific_bank
+		power_generators_debug_command = "power_generators_debug",
+		power_generators_debug_command_help = "Toggle the debugging of the Pacific Bank power generators.",
+		power_generators_debug_command_substitutes = "",
 
 		-- game/panel
 		panel_command = "panel",
@@ -2937,13 +3013,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		ped_steal_command_parameter_server_id = "server id",
 		ped_steal_command_parameter_server_id_help = "The scallywag's server id.",
 		ped_steal_command_substitutes = "steal_ped",
-
-		-- game/ped_takeover
-		takeover_ped_command = "takeover_ped",
-		takeover_ped_command_help = "Makes ye control a ceertain ped.",
-		takeover_ped_command_parameter_network_id = "network id",
-		takeover_ped_command_parameter_network_id_help = "The network id o' th' ped ye want t' take over.",
-		takeover_ped_command_substitutes = "takeover",
 
 		-- game/ped_tasks
 		ped_debug_command = "ped_debug",
@@ -3212,6 +3281,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		savings_accounts_command_help = "Spy and manage all yer savings accounts.",
 		savings_accounts_command_substitutes = "savings, accounts",
 
+		-- game/scenarios
+		scenarios_debug_command = "scenarios_debug",
+		scenarios_debug_command_help = "Toggle debugging of scenarios.",
+		scenarios_debug_command_substitutes = "",
+
 		-- game/scoreboard
 		metagame_command = "plundergame",
 		metagame_command_help = "Toggle constant drawing of pirate's vessel IDs.",
@@ -3390,13 +3464,13 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		tp_to_player_command_help = "undefined",
 		tp_to_player_command_parameter_server_id = "undefined",
 		tp_to_player_command_parameter_server_id_help = "undefined",
-		tp_to_player_command_substitutes = "",
+		tp_to_player_command_substitutes = "tpto",
 
 		tp_player_here_command = "undefined",
 		tp_player_here_command_help = "undefined",
 		tp_player_here_command_parameter_server_id = "undefined",
 		tp_player_here_command_parameter_server_id_help = "undefined",
-		tp_player_here_command_substitutes = "",
+		tp_player_here_command_substitutes = "tphere",
 
 		tp_player_player_command = "undefined",
 		tp_player_player_command_help = "undefined",
@@ -3504,6 +3578,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		drive_to_command_parameter_network_id_help = "Either th' peds network id, th' vessels network id (which th' ped is th' driver of) or leave empty to select driver of current vessel.",
 		drive_to_command_substitutes = "",
 
+		hop_in_command = "hop_in",
+		hop_in_command_help = "Makes the closest NPC hop into yer vessel (if a seat be free).",
+		hop_in_command_parameter_network_id = "network id",
+		hop_in_command_parameter_network_id_help = "The network id o' th' Landlubber (optional).",
+		hop_in_command_substitutes = "",
+
 		-- game/voice
 		voice_debug_command = "voice_debug",
 		voice_debug_command_help = "Toggle the voice debuggin', yarrr.",
@@ -3589,14 +3669,18 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		ped_forwards_command_help = "Makes the nearest landlubber in a vessel sail forwards.",
 		ped_forwards_command_substitutes = "",
 
+		vehicle_flip_command = "vehicle_flip",
+		vehicle_flip_command_help = "Make a vessel flip along a axis.",
+		vehicle_flip_command_parameter_axis = "axis",
+		vehicle_flip_command_parameter_axis_help = "Th' axis to flip around, either `x`, `y` or `z`.",
+		vehicle_flip_command_parameter_network_id = "network id",
+		vehicle_flip_command_parameter_network_id_help = "The network id o' th' vessel to flip. Leave empty to flip th' vessel ye be in.",
+		vehicle_flip_command_substitutes = "vf",
+
 		-- global/entities
 		local_entities_debug_command = "local booty debug",
 		local_entities_debug_command_help = "Toggle the debug for local booty.",
 		local_entities_debug_command_substitutes = "lbooty",
-
-		no_ped_population_areas_debug_command = "no_ped_population_areas_debug",
-		no_ped_population_areas_debug_command_help = "Toggle the 'no scallywag population areas' debugger.",
-		no_ped_population_areas_debug_command_substitutes = "",
 
 		-- global/explosions
 		create_explosion_command = "let 'er rip!",
@@ -3627,12 +3711,22 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		entity_states_command = "entity_states",
 		entity_states_command_help = "Prints all states of a certain entity, arrr!",
 		entity_states_command_parameter_network_id = "network id",
-		entity_states_command_parameter_network_id_help = "Th' network id o' th' entity, matey.",
+		entity_states_command_parameter_network_id_help = "Thar network ID o' th' entity. If left blank or set to 0, it will pick th' vessel ye be in if ye be in one an' after that yer own player ped.",
 		entity_states_command_substitutes = "",
 
 		draw_entity_states_command = "draw_entity_states",
 		draw_entity_states_command_help = "Shows all entities with 1 or more states.",
 		draw_entity_states_command_substitutes = "",
+
+		set_entity_state_command = "set_entity_state",
+		set_entity_state_command_help = "Sets a ship's state to th' given value no matter th' restrictions.",
+		set_entity_state_command_parameter_network_id = "network id",
+		set_entity_state_command_parameter_network_id_help = "Thar network ID o' th' entity. If left blank or set to 0, it will pick th' vessel ye be in if ye be in one an' after that yer own player ped.",
+		set_entity_state_command_parameter_key = "key",
+		set_entity_state_command_parameter_key_help = "Th' name o' th' state.",
+		set_entity_state_command_parameter_value = "value",
+		set_entity_state_command_parameter_value_help = "Th' booty ye want t' set th' state t'.",
+		set_entity_state_command_substitutes = "",
 
 		-- illegal/drugs
 		drugs_debug_command = "drugs_debug",
@@ -3652,6 +3746,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		bus_debug_command = "undefined",
 		bus_debug_command_help = "undefined",
 		bus_debug_command_substitutes = "",
+
+		start_bus_route_command = "start_bus_route",
+		start_bus_route_command_help = "Set sail a specific bus route.",
+		start_bus_route_command_parameter_route = "route",
+		start_bus_route_command_parameter_route_help = "Th' name o' th' route ye want t' set sail.",
+		start_bus_route_command_substitutes = "",
 
 		--jobs/doj
 		lookup_character_command = "lookup_character",
@@ -3674,7 +3774,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		toggle_duty_status_command = "toggle_duty_status",
 		toggle_duty_status_command_help = "Toggles yer on duty status, arr!",
 		toggle_duty_status_command_parameter_server_id = "server id",
-		toggle_duty_status_command_parameter_server_id_help = "The target server id or empty if ye want to toggle yer own duty status, me hearty.",
+		toggle_duty_status_command_parameter_server_id_help = "Ye target ship ID or empty if ye be wantin' to toggle yer own duty status.",
 		toggle_duty_status_command_substitutes = "duty_status, duty",
 
 		toggle_training_command = "toggle_training",
@@ -3684,6 +3784,30 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		toggle_operator_status_command = "toggle_yer_operator_status",
 		toggle_operator_status_command_help = "Toggle yer emergency operator status. Wit' this enabled, ye'll receive th' option t' accept 911 calls.",
 		toggle_operator_status_command_substitutes = "operator, toggle_operator, operator_status",
+
+		-- jobs/emergency
+		remove_clothing_command = "remove_clothing",
+		remove_clothing_command_help = "Be removin' a certain piece o' clothin' from another scallywag. Only works on cuffed or downed scallywags.",
+		remove_clothing_command_parameter_type = "type",
+		remove_clothing_command_parameter_type_help = "The type o' clothin' ye be wantin' to remove. Can be `mask`, `glasses`, `hat` or `gloves`.",
+		remove_clothing_command_parameter_server_id = "ship id",
+		remove_clothing_command_parameter_server_id_help = "Ye server id o' th' pirate ye be wantin' t' remove th' clothing from. If left empty will select th' closest cuffed or downed pirate.",
+		remove_clothing_command_substitutes = "rc",
+
+		-- jobs/jobs
+		job_command = "vocation",
+		job_command_help = "Update someones job based on a shortcut or toggle th' job UI.",
+		job_command_parameter_server_id = "server id",
+		job_command_parameter_server_id_help = "The pirates' server id or 0 to select ye'self.",
+		job_command_parameter_shortcut = "shortcut",
+		job_command_parameter_shortcut_help = "The shortcut t' th' job ye want t' set. Leave this empty t' toggle th' job UI instead.",
+		job_command_substitutes = "",
+
+		reset_job_command = "reset_job",
+		reset_job_command_help = "Resets ye scallywag's job to unemployed.",
+		reset_job_command_parameter_server_id = "server id",
+		reset_job_command_parameter_server_id_help = "The players server id or 0 to select ye self.",
+		reset_job_command_substitutes = "",
 
 		-- jobs/police
 		aim_assist_command = "aim_assist",
@@ -3750,12 +3874,19 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		set_marriage_command = "undefined",
 		set_marriage_command_help = "undefined",
 		set_marriage_command_parameter_partner_a_cid = "undefined",
-		set_marriage_command_parameter_partner_a_cid_help = "undefined",
+		set_marriage_command_parameter_partner_a_cid_help = "Th' scallywag ID o' th' first partner.",
 		set_marriage_command_parameter_partner_b_cid = "undefined",
-		set_marriage_command_parameter_partner_b_cid_help = "undefined",
+		set_marriage_command_parameter_partner_b_cid_help = "Th' scallywag ID o' th' second partner.",
 		set_marriage_command_parameter_state = "undefined",
 		set_marriage_command_parameter_state_help = "undefined",
 		set_marriage_command_substitutes = "",
+
+		-- jobs/tasks
+		tasks_debug_command = "tasks_debug",
+		tasks_debug_command_help = "Prints debug info about all tasks in yer F8.",
+		tasks_debug_command_parameter_area_id = "area id",
+		tasks_debug_command_parameter_area_id_help = "Th' area id o' th' task ye want t' debug. Leave empty t' print all areas.",
+		tasks_debug_command_substitutes = "",
 
 		-- jobs/tow
 		toggle_mechanic_messages_command = "toggle_mechanic_messages",
@@ -3767,6 +3898,19 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		toggle_anchor_command_help = "Toggle the anchor o' a nearby vessel.",
 		toggle_anchor_command_substitutes = "anchor",
 
+		-- vehicles/cruise_control
+		set_cruise_control_speed_command = "set_cruise_control_speed",
+		set_cruise_control_speed_command_help = "Set th' cruise control speed o' th' vessel ye be in.",
+		set_cruise_control_speed_command_parameter_speed = "speed",
+		set_cruise_control_speed_command_parameter_speed_help = "Arrr matey! The speed ye would like to set it to.",
+		set_cruise_control_speed_command_substitutes = "cruise_control, cc",
+
+		set_speed_limiter_speed_command = "set_speed_limiter_speed",
+		set_speed_limiter_speed_command_help = "Set the speed limiter speed of the vessel ye be aboard.",
+		set_speed_limiter_speed_command_parameter_speed = "speed",
+		set_speed_limiter_speed_command_parameter_speed_help = "The maximum speed ye would like to set it to.",
+		set_speed_limiter_speed_command_substitutes = "speed_limiter, sl",
+
 		-- vehicles/damage
 		vehicle_damage_debug_command = "ship damage debug",
 		vehicle_damage_debug_command_help = "Debugs th' ships current damage values.",
@@ -3777,6 +3921,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		set_fuel_command_help = "Set th' fuel level o' th' ship ye be in.",
 		set_fuel_command_parameter_fuel_level = "fuel level",
 		set_fuel_command_parameter_fuel_level_help = "Th' fuel level ye would like to set it to. Leavin' this blank will auto-select `100`.",
+		set_fuel_command_parameter_server_id = "server id",
+		set_fuel_command_parameter_server_id_help = "If ye be wantin' to set the grog fer another matey. Leavin' this blank will auto-select yourself.",
 		set_fuel_command_substitutes = "fuel",
 
 		-- vehicles/garage_access
@@ -3805,7 +3951,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		give_key_command = "give_key",
 		give_key_command_help = "Be givin' a vessel key t' a nearby pirate.",
 		give_key_command_parameter_server_id = "server id",
-		give_key_command_parameter_server_id_help = "Th' player's server id ye'd like t' give th' key t'. This can be left blank (or at 0) t' give it t' th' nearest person.",
+		give_key_command_parameter_server_id_help = "The pirate's server ID ye would like to give the key to. This can be left blank (or at 0) to give it to the nearest scallywag.",
 		give_key_command_substitutes = "givekey",
 
 		hotwire_vehicle_command = "hotwire_vehicle",
@@ -3824,6 +3970,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		keys_command_parameter_server_id_help = "Grant another pirate the booty to the ship they be in.",
 		keys_command_substitutes = "",
 
+		check_ignition_tampering_command = "check_ignition_tampering",
+		check_ignition_tampering_command_help = "Check if the ignition has been tampered with in the nearest vessel.",
+		check_ignition_tampering_command_substitutes = "",
+
 		-- vehicles/modifications
 		wheel_offset_command = "wheel offset",
 		wheel_offset_command_help = "Ahoy! Modify a vessel's wheels' offset.",
@@ -3841,6 +3991,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		wheel_rotation_command_parameter_value_help = "The amount ye be wantin' it to be changed. This can be anywhere from -0.5 to 0.5, 0 bein' default.",
 		wheel_rotation_command_substitutes = "",
 
+		-- vehicles/oil
+		oil_level_command = "oil_level",
+		oil_level_command_help = "Check th' closest ship's grog level.",
+		oil_level_command_substitutes = "oil",
+
 		-- vehicles/plates
 		fake_plate_command = "fake_plate",
 		fake_plate_command_help = "Toggles th' fake plate o' th' current vessel.",
@@ -3857,8 +4012,14 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		custom_plate_command_parameter_vehicle_id = "sailing vessel id",
 		custom_plate_command_parameter_vehicle_id_help = "The sailing vessel ID ye would like to have the custom plate on. (Ye can find this ID in yer harbor)",
 		custom_plate_command_parameter_plate_number = "plate number",
-		custom_plate_command_parameter_plate_number_help = "The plate number ye would like to set. Plate numbers can only be up to 8 characters long and can only consist of capital letters and numbers.",
+		custom_plate_command_parameter_plate_number_help = "Th' plate number ye would like to set. Plate numbers can only be up t' 8 characters long an' can only consist o' capital letters an' numbers. Spaces be ignored by th' game.",
 		custom_plate_command_substitutes = "",
+
+		reset_plate_command = "reset_plate",
+		reset_plate_command_help = "Reset yer vessels’ plate (if it has a custom plate that does not match th' regular format).",
+		reset_plate_command_parameter_vehicle_id = "ship id",
+		reset_plate_command_parameter_vehicle_id_help = "The ship ID ye would like to reset the plate of. (Ye can find this ID in yer garage)",
+		reset_plate_command_substitutes = "",
 
 		-- vehicles/runways
 		ifr_command = "land ho",
@@ -3877,7 +4038,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		-- vehicles/vehicles
 		flip_command = "capsize",
-		flip_command_help = "Give that ship a good tumble.",
+		flip_command_help = "Roll o'er a flipped ship or loot cart.",
 		flip_command_substitutes = "",
 
 		toggle_roll_control_command = "toggle_roll_control",
@@ -3935,12 +4096,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		manual_toggle_command_command_parameter_hybrid = "haul",
 		manual_toggle_command_command_parameter_hybrid_help = "Haul mode automat'matically shifts down fer ye at a certain RPM. Can be `late`, `mid` or `early`.",
 		manual_toggle_command_substitutes = "",
-
-		speed_limiter_command = "speed_limiter",
-		speed_limiter_command_parameter_speed = "speed",
-		speed_limiter_command_parameter_speed_help = "Which speed would ye like the speed limiter to use? Ye can leave this blank in order to reset it, which will return it to normal behavior.",
-		speed_limiter_command_help = "Arrrgh-ride the speed limiter's normal behavior to pre-set the speed limit.",
-		speed_limiter_command_substitutes = "sl, cc, cruise_control",
 
 		toggle_vehicle_weapons_command = "toggle_vehicle_weapons",
 		toggle_vehicle_weapons_command_help = "Toggle whether or not the weapons on a vessel be used, ye scallywags.",
@@ -4090,6 +4245,15 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		list_hosts = "Show Me Hearties"
 	},
 
+	points = {
+		you_have_points = "Ye have ${frameworkPoints} OP Doubloon(s).",
+		used_points = "Used ${amount} OP Doubloon(s) under the label `${label}`.",
+		not_enough_op_points = "Ye do not have enough OP Doubloon(s).",
+
+		points_used_logs_title = "OP Doubloon(s) Used",
+		points_used_logs_details = "${consoleName} used ${amount} OP Point(s) under the label `${label}`."
+	},
+
 	profile = {
 		profile_debug_enabled = "Avast! The profile debugger be enabled. Check the F8 console for output.",
 		profile_debug_disabled = "Belay that! The profile debugger be disabled."
@@ -4125,11 +4289,16 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	routes = {
 		route_not_found = "Route ${route} not found, me hearty.",
 		route_restricted = "Route ${route} be restricted. Ye can't go there!",
+		route_disabled = "Route ${route} has been keelhauled.",
 		internal_server_error = "Blimey! Internal server error!"
 	},
 
 	session = {
 		connecting_from_new_session = "Ye be connectin' from a new session."
+	},
+
+	steam = {
+		no_steam_allowed = "To sail on this server, first close FiveM, then shut down Pirate."
 	},
 
 	twitch = {
@@ -4145,9 +4314,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 	users = {
 		playtime = "Playtime",
+		playtime_total = "Playtime (Total Playtime)",
 		player_playtime = "${playerName} (Position ${position})\nTotal Playtime: ${totalPlaytime}\nSession Playtime: ${sessionPlaytime}, arr!",
 		leaderboard = "Leaderboard, arrr!",
+		leaderboard_total = "Leaderboard (Total Playtime)",
 		your_position = "Yer position, matey!",
+		leaderboard_loading = "The leaderboard be still loading.",
 		logs_user_reject_connection_title = "Ye Be Rejected!",
 		logs_user_reject_connection_details = "Arrr! We be rejectin' connection from ${consoleName} (`${reason}`).",
 		logs_user_connected_title = "Ahoy! User Be Connected!",
@@ -4238,6 +4410,37 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	},
 
 	-- game/*
+	admin_features = {
+		enabled_features_list = "Enabled Features:",
+
+		advanced_metagame_feature = "AM",
+		aimbot_feature = "Aimbot",
+		disabled_recoil_feature = "Disabled Recoil",
+		evidence_view_feature = "Evidence View",
+		hit_indicator_feature = "Hit Indicator",
+		indestructibility_feature = "Indestructibility",
+		infinite_ammo_feature = "Infinite Ammo",
+		invisibility_feature = "Invisibility",
+		muted_sirens_feature = "Muted Sirens",
+		nitro_boost_feature = "Nitro Boost",
+		no_nearby_vehicles_feature = "No Nearby Ships",
+		peeking_feature = "Peeking",
+		roll_control_feature = "Roll Control",
+		speed_boost_feature = "Speed Boost",
+		speed_up_progress_bar_feature = "Speed Up Progress Bar",
+		sticky_feet_feature = "Sticky Peg Leg",
+		wallhack_feature = "Wall Spyglass",
+		watching_feature = "Keepin' Watch",
+		fortnite_feature = "Pirate's Booty",
+		reflection_feature = "Plunderer's Reflection",
+		stable_cam_feature = "Steady Deck",
+		super_jump_feature = "Buccaneer's Leap",
+		server_id_hidden_feature = "Ship-ID Hidden",
+		fake_disconnect_feature = "Fake Plank-Walk",
+		brighter_nights_feature = "Gleaming Night Skies",
+		ridealong_feature = "Joinin' the Crew"
+	},
+
 	admin_menu = {
 		menu_title = "Arrrr! Foul Admin Menu",
 		spectate_player = "Spy on Matey"
@@ -4266,14 +4469,24 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		park_vehicle = "Anchor Vessel",
 		park_vehicle_outside = "Anchor Vessel Outside",
 		close_menu = "Close Ye Menu",
+		illegal = "Against the Code",
+		illegal_license_success = "Successfully plundered the FAA database, yer license be valid for 5 days.",
+		failed_illegal_license = "Arrr! Failed to get illegal letter of marque.",
 		spawned_vehicle = "Spawned vessel.",
+		spawned_vehicle_large = "Spawned a mighty vessel. A marker be set on yer map.",
 		spawner_on_timeout = "The vessel spawner be on a timeout. Please try again, matey.",
 		spawn_area_not_clear = "The spawn area be not clear, ye scallywag.",
 		return_button = "Sail Back",
 		deposit = "$${amount} Buried Booty",
 		no_deposit = "No Booty to Burry",
 		deposit_not_enough_money = "Ye dun' have enough booty t' bury the deposit.",
-		helipad = "Helipad"
+		vehicle_no_free_seat = "No free bunks available on this vessel.",
+		press_to_enter_aircraft = "Press ~INPUT_ENTER~ to board the airship.",
+		no_aircraft_to_enter = "Arrr! No airship to board.",
+		helipad = "Helipad",
+		looking_up = "Scanning the skies",
+		registration_not_found = "Ahoy! The scroll be lost in the depths.",
+		registration_lookup = "The ensign number `${registration}` be last seen in the hands of ${fullName} #${characterId}."
 	},
 
 	airstrike = {
@@ -4644,8 +4857,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		toggled_battle_royale_on = "Toggled Battle Royale on.",
 		toggled_battle_royale_off = "Toggled Battle Royale off, ye scallywags!",
 		battle_royale_info = "Ye be queued up fer Battle Royale!\nThere be currently ${battleRoyaleQueueLength} mateys in the queue.",
-		toggle_battle_royale_missing_permissions = "Ahoy! Ye tried to toggle the Battle Royale, but ye be lackin' the permissions to do so.",
-		start_battle_royale_missing_permissions = "Aye, ye tried to start a Battle Royale but ye don't have the permissions to do so.",
 		unable_to_start_battle_royale_not_active = "Arrr! We be unable to start the Battle Royale as it be not enabled.",
 		not_enough_players_in_queue = "Arrr! We be unable to start the Battle Royale as there be not enough scallywags in the queue.",
 		zone_idling = "Avast, the zone be idling right now!",
@@ -4672,10 +4883,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		advancing = "Advancin'",
 		battle_royale = "Battle Royale",
 		press_to_deploy_parachute = "Press ~INPUT_PARACHUTE_DEPLOY~ to deploy parachute.",
-		join_battle_royale_instance_missing_permissions = "A scallywag attempted to join a Battle Royale instance but didn't have the required permissions to do so.",
 		no_match_found = "Ye scallywag, ${consoleName} be not in any match.",
 		joined_instance = "Hoist the colours! Ye joined the instance of ${consoleName}.",
-		leave_battle_royale_instance_missing_permissions = "Belay that! Ye tried to leave a Battle Royale instance, but ye didn't have the required permissions to do so.",
 		left_instance = "Away on the tide! Ye left the instance.",
 		failed_to_leave_instance = "Shiver me timbers! Ye failed to leave the instance as ye weren't in one.",
 		already_in_match = "Blimey! Ye failed to join the instance as ye be already in a battle.",
@@ -4782,14 +4991,17 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		bean_machine = "Bean Machine",
 		arcade_bar = "Arcade Bar",
 		japanese_restaurant = "Japanese Restaurant",
-		luxury_autos = "Luxury Autos",
+		lsuv = "LS Used Shipmates",
 		rockford_records = "Rockford Records",
 		dispensary = "Dispensary",
 		haunted_high_school = "Spooky High School",
 		sushi_restaurant = "Sushi Grubbin' Joint",
+		pizza_this = "Pizza This",
+		city_hall = "City Hall",
 
 		bank = "Treasure Stashin' Spot",
 		hospital = "Healer's Den",
+		fire_department = "Fire Ahoy!",
 		bolingbroke = "Bolin' Chain Penitentiary",
 		police_department = "The Law's Headquarters",
 		motel = "Sleepin' Quarters",
@@ -4820,9 +5032,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		recharging_countermeasures = "Rechargin' Countermeasures ${percentage}%, me hearty!",
 
 		ignition_bomb_triggered_logs_title = "Ignition Bomb",
-		ignition_bomb_triggered_logs_details = "${consoleName} turned the engine on in a vessel that had a bomb attached to its ignition, arrr!",
-
-		toggle_ignition_bomb_missing_permissions = "A landlubber attempted to toggle an ignition bomb but they didn't have the required permissions, shiver me timbers."
+		ignition_bomb_triggered_logs_details = "${consoleName} turned the engine on in a vessel that had a bomb attached to its ignition, arrr!"
 	},
 
 	boomboxes = {
@@ -4937,7 +5147,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		already_max_vin_scratched_vehicles = "Shiver me timbers! Ye already have the maximum amount of VIN scratched vessels in yer garage.",
 		contract_has_expired = "Avast! This contract thas expired.",
-		you_already_have_a_contract_started = "Ahoy! Ye already have a contract started."
+		you_already_have_a_contract_started = "Ahoy! Ye already have a contract started.",
+
+		transferred_crypt_logs_title = "Transferred Pirate Treasure",
+		transferred_crypt_logs_details = "${consoleName} transferred ${amount} pieces o' pirate treasure to ${targetConsoleName}."
 	},
 
 	brochure = {
@@ -4991,9 +5204,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		no_buddy_passes_available = "Ye do not 'ave any mate passes available.",
 		no_queue_with_queue_pin = "There be no one in the queue with the provided PIN.",
 		buddy_pushed_through = "Ye pushed ${playerName} through the queue, matey!",
+		no_players_in_queue = "There be no shipmates in the queue.",
 
 		buddy_pass_used_logs_title = "Buddy Pass Used",
-		buddy_pass_used_logs_details = "${consoleName} used their Buddy Pass to push through ${targetConsoleName}, ye scallywag."
+		buddy_pass_used_logs_details = "${consoleName} used their Buddy Pass to push through ${targetConsoleName}, ye scallywag.",
+
+		push_through_random = "Feelin' generous? Shove a random scallywag through the queue!"
 	},
 
 	bus_map = {
@@ -5317,11 +5533,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 	containers = {
 		drill_container = "Press ye ~INPUT_CONTEXT~ t' drill open th' container, me matey.",
-
 		drilling_container = "Plunderin' Container",
 		failed_drill = "Failed to plunder the container.",
 		drill_success = "Successfully plundered the container.",
 
+		containers_due_soon = "${count} o' yer storage containers are due soon.",
 		container_blip = "Container"
 	},
 
@@ -5335,7 +5551,22 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		glass_recipe = "Smelt Glass",
 		steel_recipe = "Smelt Steel",
 		scrap_metal_recipe = "Smelt Scrap Metal",
+		melt_gun_parts_recipe = "Melt Gun Pieces",
 		aluminium_recipe = "Smelt Aluminium",
+		copper_recipe = "Plunder Copper",
+		copper_wire_recipe = "Forge Copper Wire",
+		brass_recipe = "Mix Zinc an' Copper",
+		aluminium_ore_recipe = "Forge Aluminium Ore",
+		steel_ore_recipe = "Forge Iron Ore",
+		gold_ore_recipe = "Forge Gold Ore",
+		gold_nuggets_recipe = "Forge Gold Nuggets",
+		tungsten_ore_recipe = "Forge Tungsten Ore",
+		tungsten_bar_recipe = "Forge Tungsten Nuggets",
+		titatium_ore_recipe = "Forge Titatium Ore",
+		titanium_bar_recipe = "Forge Titanium Nuggets",
+		smelt_rusty_metal_recipe = "Forge Rusty Metal",
+		smelt_rusty_tank_shell_recipe = "Smelt Rusty Tank Shell",
+		smelt_rusty_diving_helmet_recipe = "Smelt Rusty Diving Helmet",
 
 		smelting_materials = "Smelting ${usedItems}",
 		smelted_materials = "Smelted ${usedItems}.",
@@ -5349,17 +5580,30 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		press_to_scrap_item = "[${SeatEjectKey}] Scrap Items, avast!",
 		failed_scrap_item = "Failed to scrap item, ye be better off throwin' it to the sharks.",
 
-		cut_item = "Cut Mateys",
-		press_to_cut_item = "[${SeatEjectKey}] Cut Mateys",
-		cutting_item = "Cutting 3 Mateys",
-		cut_item_done = "Cut mateys into fries.",
-		failed_cut_item = "Failed to cut mateys.",
+		cut_potato = "Cut Taters",
+		press_to_cut_potato = "[${SeatEjectKey}] Cut Taters",
+		cutting_potato = "Cutting Taters",
+		cut_potato_done = "Cut taters into fries.",
+		failed_cut_potato = "Failed to cut taters.",
 
-		fry_item = "Fry Fries",
-		press_to_fry_item = "[${SeatEjectKey}] Fry Fries",
-		frying_item = "Frying Fries",
-		fried_item = "Fried belgian fries, arrr.",
-		failed_fry_item = "Failed to fry fries, ye scurvy dog.",
+		prepare_chicken_nuggets = "Prepare Pirate Nuggets",
+		press_to_prepare_chicken_nuggets = "[${SeatEjectKey}] Prepare Pirate Nuggets",
+		preparing_chicken_nuggets = "Preparing Pirate Nuggets.",
+		prepared_chicken_nuggets = "Prepared chicken nuggets.",
+		failed_prepare_chicken_nuggets = "Failed to prepare chicken nuggets.",
+
+		use_fryer = "Use Fryer",
+		press_to_use_fryer = "[${SeatEjectKey}] Use Fryer",
+
+		fries_recipe = "Belgian Fries",
+		frying_fries = "Frying Fries",
+		fried_fries = "Fried belgian fries.",
+		failed_fry_fries = "Failed to fry fries.",
+
+		nuggets_recipe = "Chicken Nuggets",
+		frying_nuggets = "Frying Chicken Nuggets",
+		fried_nuggets = "Fried chicken nuggets.",
+		failed_fry_nuggets = "Failed to fry chicken nuggets.",
 
 		grill_item = "undefined",
 		press_to_grill_item = "undefined",
@@ -5413,12 +5657,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		filled_nitro_tank = "Filled Nitro Tank, arrrr!",
 		failed_fill_nitro_tank = "Failed to fill me nitro tank, arrr!",
 
-		craft_sheet_metal = "Craft Sheet Metal, me hearty!",
-		press_to_craft_sheet_metal = "[${SeatEjectKey}] Craft Sheet Metal, thar she blows!",
-		crafting_sheet_metal = "Craftin' Sheet Metal",
-		crafted_sheet_metal = "Crafted sheet metal, yo ho ho!",
-		failed_craft_sheet_metal = "Failed to craft sheet metal, walk the plank!",
-
 		craft_empty_tank = "Assemble Empty Tank, shiver me timbers!",
 		press_to_craft_empty_tank = "[${SeatEjectKey}] Assemble Empty Tank, avast!",
 		crafting_empty_tank = "Assemblin' Empty Tank",
@@ -5437,11 +5675,23 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		crafted_nitro_tank = "Assembled nitro tank, avast!",
 		failed_craft_nitro_tank = "Ye be a bilge rat! Failed to assemble nitro tank.",
 
+		craft_glass_pipe = "Craft Glass Pipe",
+		press_craft_glass_pipe = "[${SeatEjectKey}] Craft Glass Pipe",
+		crafting_glass_pipe = "Craftin' Glass Pipe",
+		crafted_glass_pipe = "Crafted glass pipe.",
+		failed_craft_glass_pipe = "Failed to craft glass pipe.",
+
 		salvage_meth_table = "Pillage Meth Table",
 		press_to_salvage_meth_table = "[${SeatEjectKey}] Pillage Meth Table",
 		salvaging_meth_table = "Pillaging Meth Table",
 		salvaged_meth_table = "Pillaged meth table.",
 		failed_salvage_meth_table = "Failed to pillage meth table.",
+
+		make_crack = "Make Crack",
+		press_to_make_crack = "[${SeatEjectKey}] Make Crack",
+		making_crack = "Makin' Crack",
+		made_crack = "Made crack.",
+		failed_make_crack = "Failed to make crack.",
 
 		refill_vape = "Refill Vape",
 		press_to_refill_vape = "[${SeatEjectKey}] Refill Vape",
@@ -5490,28 +5740,68 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		failed_process_copper = "Belay! Ye failed to process copper nuggets, me heartie!",
 
 		process_rubber = "Process Rubber, Ye scallywag!",
-		press_process_rubber = "[${SeatEjectKey}] Process Rubber, Avast!",
 		failed_process_rubber = "Blimey! Ye couldn't process rubber, me hearty!",
 
-		craft_pvc_pipe = "undefined",
-		press_craft_pvc_pipe = "undefined",
+		process_polymer_resin = "Process Polymer Resin",
+		failed_process_polymer_resin = "Failed to process polymer resin.",
+
+		craft_components = "Craftin' Components",
+		press_craft_components = "[${SeatEjectKey}] Craftin' Components",
+
+		aluminium_rod_recipe = "Aluminium Rod",
+		aluminium_plate_recipe = "Aluminium Plate",
+		sheet_metal_recipe = "Sheet Metal",
+		steel_tube_recipe = "Steel Tube",
+		tungsten_plate_recipe = "Tungsten Plate",
+		titanium_rod_recipe = "Titanium Rod",
+		hardened_steel_plate_recipe = "Hardened Steel Plate",
+		screws_recipe = "Steel Screws",
+		spring_recipe = "Steel Spring",
+		high_tensile_spring_recipe = "High-Tensile Steel Spring",
+		pvc_pipe_recipe = "PVC Pipe",
+		lens_recipe = "Spyglass",
+		muzzle_brake_recipe = "Muzzle Stop",
+
 		crafting_pvc_pipe = "undefined",
 		crafted_pvc_pipe = "undefined",
 		failed_craft_pvc_pipe = "undefined",
 
-		process_aluminium = "Process Aluminium, Ahoy!",
-		press_process_aluminium = "[${SeatEjectKey}] Process Aluminium, Matey!",
 		failed_process_aluminium = "Shiver me timbers! Ye couldn't process aluminium, Cap'n!",
-
-		process_steel = "Process Steel, Yo ho ho!",
-		press_process_steel = "[${SeatEjectKey}] Process Steel, Heave Ho!",
 		failed_process_steel = "Failed t' process steel.",
 
-		craft_lens = "Craft Spyglass",
-		press_craft_lens = "[${SeatEjectKey}] Craft Spyglass",
 		crafting_lens = "Craftin' Spyglass",
 		crafted_lens = "Crafted spyglass.",
 		failed_craft_lens = "Failed t' craft spyglass.",
+
+		craft_gun_parts = "Craft Gun Pieces",
+		press_craft_gun_parts = "[${SeatEjectKey}] Craft Gun Pieces",
+		assemble_gun_parts = "Assemble Gun Pieces",
+		press_assemble_gun_parts = "[${SeatEjectKey}] Assemble Gun Pieces",
+
+		trigger_recipe = "Trigger",
+		smg_lower_receiver_recipe = "SMG Down Receiver",
+		smg_lower_receiver_mk2_recipe = "SMG Down Receiver Mk2",
+		smg_upper_receiver_recipe = "SMG Up Receiver",
+		smg_upper_receiver_mk2_recipe = "SMG Up Receiver Mk2",
+		rifle_lower_receiver_recipe = "Blunderbuss Nether Plank",
+		rifle_lower_receiver_mk2_recipe = "Blunderbuss Nether Plank MK2",
+		rifle_upper_receiver_recipe = "Blunderbuss Top Plank",
+		rifle_upper_receiver_mk2_recipe = "Blunderbuss Top Plank MK2",
+		shotgun_lower_receiver_recipe = "Blastin' Gun Lower Plank",
+		shotgun_lower_receiver_mk2_recipe = "Blastin' Gun Lower Plank MK2",
+		shotgun_upper_receiver_recipe = "Blastin' Gun Top Plank",
+
+		crafting_trigger = "Craftin' Trigger",
+		crafted_trigger = "Crafted trigger.",
+		failed_craft_trigger = "Failed to craft trigger.",
+
+		crafting_lower_receiver = "Craftin' Lower Receiver",
+		crafted_lower_receiver = "Crafted lower receiver.",
+		failed_craft_lower_receiver = "Failed to craft lower receiver.",
+
+		crafting_upper_receiver = "Craftin' Upper Receiver",
+		crafted_upper_receiver = "Crafted upper receiver.",
+		failed_craft_upper_receiver = "Failed to craft upper receiver.",
 
 		craft_sight = "Craft Eye Sight",
 		press_craft_sight = "[${SeatEjectKey}] Craft Eye Sight",
@@ -5621,6 +5911,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		filed_steel = "Filed steel.",
 		failed_file_steel = "Failed to file steel.",
 
+		converter_recipe = "Break Down Converter",
+		breaking_down_converter = "Breakin' Down Converter",
+		broke_down_converter = "Broke down converter.",
+		failed_break_converter = "Failed to break down converter.",
+
 		craft_steel_file = "Craft Steel File",
 		press_craft_steel_file = "[${SeatEjectKey}] Craft Steel File",
 		crafting_steel_file = "Crafting Steel File",
@@ -5649,8 +5944,15 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		press_deconstruct_chip = "[${SeatEjectKey}] Deconstruct me Chip",
 		failed_deconstruct_chip = "Failed to deconstruct ye chip, ye scallywag.",
 
-		craft_device_scanner = "Craft Device Scanner, ye scurvy dog!",
-		press_craft_device_scanner = "[${SeatEjectKey}] Craft Device Scanner or be walkin' the plank!",
+		craft_equipment = "Craft Booty",
+		press_craft_equipment = "[${SeatEjectKey}] Craft Booty",
+
+		radio_decrypter_recipe = "Radio Decrypt of the Seas",
+		crafting_radio_decrypter = "Craftin' Radio Decrypter, me hearty!",
+		crafted_radio_decrypter = "Crafted radio decrypter, yo ho ho!",
+		failed_craft_radio_decrypter = "Failed to craft radio decrypter, walk the plank!",
+
+		device_scanner_recipe = "Device Scanner Arrrg",
 		crafting_device_scanner = "Craftin' Device Scanner, arr!",
 		crafted_device_scanner = "Ahoy matey! Ye crafted a device scanner!",
 		failed_craft_device_scanner = "Ye failed to craft the device scanner, ye landlubber.",
@@ -5734,12 +6036,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		mixed_patriotic_paint = "Mixed patriotic paint, avast ye!",
 		failed_mix_patriotic_paint = "Failed to mix patriotic paint, ye landlubber.",
 
-		craft_radio_decrypter = "Craft Radio Decrypter",
-		press_craft_radio_decrypter = "[${SeatEjectKey}] Craft Radio Decrypter, ye scurvy dog!",
-		crafting_radio_decrypter = "Craftin' Radio Decrypter, me hearty!",
-		crafted_radio_decrypter = "Crafted radio decrypter, yo ho ho!",
-		failed_craft_radio_decrypter = "Failed to craft radio decrypter, walk the plank!",
-
 		craft_grenade_shell = "Craft Grenade Shell, arrr!",
 		press_craft_grenade_shell = "[${SeatEjectKey}] Craft Grenade Shell, avast!",
 		crafting_grenade_shell = "Craftin' Grenade Shell, aye!",
@@ -5797,6 +6093,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		deconstruct_ammo = "Deconstruct Ammo",
 		press_to_deconstruct_ammo = "[${SeatEjectKey}] Deconstruct Ammo",
 
+		craft_casings = "Craft Doubloons",
+		crafting_casings = "Craftin' Doubloons",
+		crafted_casings = "Crafted doubloons, ye scallywag.",
+		failed_craft_casings = "Failed to craft doubloons, arrr!",
+
 		pistol_deconstruct_recipe = "Deconstruct Pistol Ammo",
 		shotgun_deconstruct_recipe = "Deconstruct Shotgun Ammo",
 		sub_deconstruct_recipe = "Deconstruct Sub Ammo",
@@ -5843,6 +6144,181 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		crafting_bacon = "undefined",
 		crafted_bacon = "undefined",
 		failed_craft_bacon = "undefined",
+
+		cook_food = "Cook Grub",
+		press_to_cook_food = "[${SeatEjectKey}] Cook Grub",
+
+		rice_recipe = "Rice of the Seven Seas",
+		cooking_rice = "Cookin' Rice, matey!",
+		cooked_rice = "Cooked rice, arrr!",
+		failed_cook_rice = "Failed to cook rice.",
+
+		miso_soup_recipe = "Miso Soup",
+		cooking_miso_soup = "Cookin' Miso Soup",
+		cooked_miso_soup = "Cooked miso soup.",
+		failed_cook_miso_soup = "Failed to cook miso soup.",
+
+		ramen_recipe = "Ramen",
+		cooking_ramen = "Cookin' Ramen",
+		cooked_ramen = "Cooked ramen.",
+		failed_cook_ramen = "Failed to cook ramen.",
+
+		spicy_ramen_recipe = "Spicy Ramen",
+		cooking_spicy_ramen = "Cookin' Spicy Ramen",
+		cooked_spicy_ramen = "Cooked spicy ramen.",
+		failed_cook_spicy_ramen = "Failed to cook spicy ramen.",
+
+		cut_ingridients = "Cut Ingridients",
+		press_to_cut_ingridients = "[${SeatEjectKey}] Cut Ingridients",
+
+		tofu_recipe = "Tofu Cubes",
+		cutting_tofu = "Cutting Tofu",
+		cut_tofu_done = "Cut tofu.",
+		failed_cut_tofu = "Failed to cut tofu.",
+
+		spring_onions_recipe = "Spring Onions",
+		cutting_spring_onions = "Cutting Spring Onions",
+		cut_spring_onions_done = "Cut spring onions.",
+		failed_cut_spring_onions = "Failed to cut spring onions.",
+
+		fish_recipe = "Fish Fillet",
+		filetting_fish = "Filleting Fish",
+		filet_fish = "Fillet fish.",
+		failed_filet_fish = "Failed to fillet fish.",
+
+		assemble_sushi = "Assemble Sushi",
+		press_to_assemble_sushi = "[${SeatEjectKey}] Assemble Sushi",
+
+		sushi_recipe = "Sushi",
+		assembling_sushi = "Assembling Sushi",
+		assembled_sushi = "Assembled sushi.",
+		failed_assemble_sushi = "Failed to assemble sushi.",
+
+		nigiri_recipe = "Nigiri",
+		assembling_nigiri = "Assembling Nigiri",
+		assembled_nigiri = "Assembled nigiri.",
+		failed_assemble_nigiri = "Failed to assemble nigiri.",
+
+		bento_box_recipe = "Bento Box",
+		assembling_bento_box = "Assembling Bento Box",
+		assembled_bento_box = "Assembled bento chest.",
+		failed_assemble_bento_box = "Failed to assemble bento chest.",
+
+		kimchi_recipe = "Kimchi",
+		making_kimchi = "Makin' Kimchi",
+		made_kimchi = "Made kimchi.",
+		failed_make_kimchi = "Failed to make kimchi.",
+
+		mix_pizza_dough = "Mix Pizza Dough",
+		press_to_mix_pizza_dough = "[${SeatEjectKey}] Mix Pizza Dough",
+		mixing_pizza_dough = "Mixing Pizza Dough",
+		mix_pizza_dough_done = "Mixed pizza dough.",
+		failed_mix_pizza_dough = "Failed to mix pizza dough.",
+
+		slice_ingredients = "Slice Ingredients",
+		press_to_slice_ingredients = "[${SeatEjectKey}] Slice Arrr Ingredients",
+
+		pineapple_slice_recipe = "Slice Pineapple",
+		slicing_pineapple = "Slice 'n' dice Pineapple",
+		sliced_pineapple = "Sliced pineapple.",
+		failed_slice_pineapple = "Failed to slice pineapple, arrr!",
+
+		bell_pepper_slice_recipe = "Slice Bell Pepper",
+		slicing_bell_pepper = "Slice 'n' dice Bell Pepper",
+		sliced_bell_pepper = "Sliced bell pepper.",
+		failed_slice_bell_pepper = "Failed to slice bell pepper, arrr!",
+
+		top_pizza = "Top Pizza",
+		press_to_top_pizza = "[${SeatEjectKey}] Top Pizza",
+
+		margherita_recipe = "Margherita Pizza",
+		topping_margherita = "Toppin' Margherita Pizza",
+		topped_margherita = "Topped margherita pizza.",
+		failed_topping_margherita = "Failed to toppin' margherita pizza.",
+
+		salami_recipe = "Salami Pizza",
+		topping_salami = "Toppin' Salami Pizza",
+		topped_salami = "Topped salami pizza.",
+		failed_topping_salami = "Failed to toppin' salami pizza.",
+
+		pepperoni_recipe = "Pepperoni Pizza",
+		topping_pepperoni = "Toppin' Pepperoni Pizza",
+		topped_pepperoni = "Topped pepperoni pizza.",
+		failed_topping_pepperoni = "Failed to topping pepperoni pizza.",
+
+		vegetarian_recipe = "Vegetarian Pizza",
+		topping_vegetarian = "Topping Vegetarian Pizza",
+		topped_vegetarian = "Topped vegetarian pizza.",
+		failed_topping_vegetarian = "Failed to topping vegetarian pizza.",
+
+		ham_recipe = "Ham Pizza",
+		topping_ham = "Topping Ham Pizza",
+		topped_ham = "Topped ham pizza.",
+		failed_topping_ham = "Failed to topping ham pizza.",
+
+		diavola_recipe = "Diavola Pizza",
+		topping_diavola = "Topping Diavola Pizza",
+		topped_diavola = "Topped diavola pizza.",
+		failed_topping_diavola = "Failed t' topping diavola pizza.",
+
+		hawaiian_recipe = "Hawaiian Booty",
+		topping_hawaiian = "Toppin' Hawaiian Booty",
+		topped_hawaiian = "Topped hawaiian pizza.",
+		failed_topping_hawaiian = "Failed t' topping hawaiian pizza.",
+
+		bake_pizza = "Bake Pizza",
+		press_to_bake_pizza = "[${SeatEjectKey}] Bake Pizza",
+
+		bread_sticks_recipe = "Bake Bread Sticks",
+		baking_bread_sticks = "Bakin' Bread Sticks",
+		baked_bread_sticks = "Baked bread sticks.",
+		failed_baking_bread_sticks = "Failed t' bake bread sticks.",
+
+		baking_margherita = "Bakin' Margherita Pizza",
+		baked_margherita = "Baked margherita pizza.",
+		failed_baking_margherita = "Failed to bake margherita pizza.",
+
+		baking_ham = "Bakin' Ham Pizza",
+		baked_ham = "Baked ham pizza.",
+		failed_baking_ham = "Failed to bake ham pizza.",
+
+		baking_hawaiian = "Bakin' Hawaiian Pizza",
+		baked_hawaiian = "Baked hawaiian pizza.",
+		failed_baking_hawaiian = "Failed to bake hawaiian pizza.",
+
+		baking_diavola = "Bakin' Diavola Pizza",
+		baked_diavola = "Baked diavola pizza.",
+		failed_baking_diavola = "Failed to bake diavola pizza.",
+
+		baking_salami = "Bakin' Salami Pizza",
+		baked_salami = "Baked salami pizza.",
+		failed_baking_salami = "Failed to bake salami pizza.",
+
+		baking_pepperoni = "Bakin' Pepperoni Pizza",
+		baked_pepperoni = "Baked pepperoni pizza.",
+		failed_baking_pepperoni = "Failed to bake pepperoni pizza.",
+
+		baking_vegetarian = "Bakin' Vegetarian Pizza",
+		baked_vegetarian = "Baked vegetarian pizza.",
+		failed_baking_vegetarian = "Failed to bake vegetarian pizza.",
+
+		bake_cake = "Bake Cake",
+		press_to_bake_cake = "[${SeatEjectKey}] Bake Cake",
+
+		lemon_cake_recipe = "Lemon Cake",
+		baking_lemon_cake = "Baking Lemon Cake",
+		baked_lemon_cake = "Baked lemon cake.",
+		failed_baking_lemon_cake = "Failed to bake lemon cake.",
+
+		berry_cake_recipe = "Berry Cake",
+		baking_berry_cake = "Baking Berry Cake",
+		baked_berry_cake = "Baked berry cake.",
+		failed_baking_berry_cake = "Failed to bake berry cake.",
+
+		chocolate_cake_recipe = "Chocolate Cake",
+		baking_chocolate_cake = "Baking Chocolate Cake",
+		baked_chocolate_cake = "Baked chocolate cake.",
+		failed_baking_chocolate_cake = "Failed to bake chocolate cake.",
 
 		no_required_items = "Yer missing some important loot.",
 
@@ -6123,11 +6599,59 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		deny_purchase = "Nay, I don't be wantin' it",
 		accept_purchase = "Aye, I be wantin' to buy it",
-		accept_purchase_info = "Arrrrr ye sure ye be wantin' to complete this purrrchase? This cannot be undone."
+		accept_purchase_info = "Arrrrr ye sure ye be wantin' to complete this purrrchase? This cannot be undone.",
+
+		yes = "Aye",
+		no = "Nay"
+	},
+
+	container_storage = {
+		rent_container = "[${InteractionKey}] Rent #${id} ($${price} per week)",
+		renting_container = "Rentin' Container",
+		failed_rent_container = "Failed to rent container.",
+		rent_container_success = "Successfully rented container #${id}. Ye can manage yer containers usin' `/containers`.",
+		access_container = "[${InteractionKey}] Access #${id}",
+		container_id = "#${id}",
+
+		storage_containers = "Storage Containers",
+		container = "Container",
+		loading = "Loadin'...",
+		failed_remove_access = "Failed to remove access.",
+		failed_add_access = "Failed t' add access, arrr.",
+		access = "Access",
+		add_cid = "Add CID",
+		no_containers = "Ye don't own or have access t' any storage chests, matey.",
+		no_access = "Nobody except ye has access t' this chest, arrr.",
+		back = "Back",
+		close = "Close",
+		character_not_exist = "Character does not exist.",
+		paid_until = "Paid Until:",
+		pay_rent = "Pay Rent",
+		expired = "Expired",
+		not_enough_money = "Ye do not have enough doubloons, arrr.",
+		failed_pay_rent = "Failed t' pay rent, matey.",
+		mark_gps = "Mark GPS",
+		container_alert = "Yer container #${containerId} be bein' tampered with, arrr.",
+
+		rented_container_logs_title = "Rented Chest",
+		rented_container_logs_details = "${consoleName} rented chest #${containerId} for $${price}.",
+		paid_rent_logs_title = "Paid Chest Rent",
+		paid_rent_logs_details = "${consoleName} paid $${price} rent for chest #${containerId}.",
+		lockpicked_container_logs_title = "Lockpicked Chest",
+		lockpicked_container_logs_details = "${consoleName} lockpicked chest #${containerId}."
 	},
 
 	courthouse = {
 		press_to_use_gavel = "Put yer appendages on th' Gavel. (~INPUT_CONTEXT~)"
+	},
+
+	crack = {
+		press_to_sell_crack = "Press ~INPUT_CONTEXT~ to sell Grog.",
+		local_not_interested = "The scallywag doesn't seem to be interested right now.",
+		selling_crack = "Sellin' Crack.",
+
+		sold_crack_logs_title = "Sold Crack",
+		sold_crack_logs_details = "${consoleName} sold 1x Crack Bag fer $${reward}."
 	},
 
 	daily_activities = {
@@ -6159,8 +6683,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		headshot_kills_in_arena = "Get ye ${amount} headshot kills in thar Arena.",
 		punch_locals = "Punch ${amount} landlubbers.",
 		move_from_place_to_place = "Move from ${from} to ${to} in ${time} seconds.",
-		put_bets_in_jackpot = "Put bets worth $${amount} in thar Jackpot.",
-		win_bets_in_jackpot = "Win booty worth $${amount} in thar Jackpot.",
+		put_bets_in_jackpot = "Put bets worth $${amount} in the Casino Jackpot.",
+		win_bets_in_jackpot = "Win items worth $${amount} in the Casino Jackpot.",
 		chop_vehicles = "Chop ${amount} vessels.",
 		purchase_ammo = "Purchase ${amount} ammo.",
 		collect_items_from_diving = "Collect ${amount}x ${itemLabel} from Diving, me hearty!",
@@ -6169,6 +6693,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		refine_gems = "Refine ${amount} gems, me bucko!",
 		visit_location = "Visit ${location}, me matey!",
 		visit_the_location = "Visit the ${location}, me hearties!",
+		punch_a_shark = "Punch a shark.",
+		put_bets_in_lottery = "Put a total of $${amount} in the Lottery.",
 
 		confirm_task_refresh = "Arrr ye sure ye want to refresh this task? The cost be $${cost}.",
 		yes = "Aye",
@@ -6183,8 +6709,13 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		restore_streak = "Restore streak o' ${streak}",
 		confirm_streak_restore = "Be ye sure ye want to restore yer streak o' ${streak} days? The cost be ${cost} OP Pieces o' Eight.",
 
-		not_enough_op_points = "Ye be needin' ${cost} OP Pieces o' Eight to restore yer streak. Ye be havin' ${points} OP Pieces o' Eight.",
-		streak_restored = "Yer streak o' ${streak} days 'as been restored fer ${cost} OP Points."
+		not_enough_op_points = "Ye need ${cost} OP Points to restore yer streak. Ye have ${points} OP Point(s).",
+		streak_restored = "Yer streak o' ${streak} days 'as been restored fer ${cost} OP Points.",
+
+		logs_daily_task_reward_title = "Daily Task Booty",
+		logs_daily_task_reward_money_details = "${consoleName} completed a task and found $${amount}.",
+		logs_daily_task_reward_items_details = "${consoleName} completed a task and found ${amount} pieces of loot.",
+		logs_daily_task_reward_brought_items_details = "${consoleName} traded in ${itemAmount} piece(s) of loot and got $${amount}."
 	},
 
 	dashcam = {
@@ -6234,6 +6765,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		owner_player = "Registered to ~g~${fullName}, ye buccaneer.",
 		character_known = "Character: ~g~${fullName}, ye be a true pirate.",
 		character_unknown = "Character: ~r~Unknown, ye be a mystery.",
+		entity_id = "Entity ID: ${entity}",
+		model_name = "Model Name: ${modelName}",
+		resource = "Resource: ${resource}",
+		network_id = "Ship Signal ID: ${networkId}",
+		["local"] = "-local-",
 		invalid_radius_parameter = "Arrrgh matey! Yer `radius` parameter be not valid.",
 		inject_code_invalid_player = "There be no swashbucklers with server id `${serverId}`.",
 		inject_code_success_for_everyone = "Successfully injected code for all the lubbers on this ship!",
@@ -6254,6 +6790,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		controls = "Controls: ${controls}",
 		tasks = "Task Calls: ${calls} (${total})",
 		invoke_calls = "Invoke Calls: ${calls} (${total})",
+		native_calls = "Buccaneer Calls: ${calls} (${total})",
 		draw_calls = "Draw Calls: ${calls}",
 		player_speed = "Yarrr, that pirate be sailin' at ${playerSpeed} speed!",
 		player_ped = "Matey Ped: ${playerPedId}",
@@ -6264,7 +6801,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		normal = "Surface: ${normal}",
 		velocity = "Velocity: ${velocity}",
 		ground_material = "Sea Material: ${material}",
-		g_force = "G-Force: ${force}",
 		debug_print_f8 = "Debuggin' information be printed in yer F8 console, matey.",
 		no_vehicle_bone = "No \"${boneName}\" bone, me heartie.",
 		server_vehicles = "Server Ships: ${count}",
@@ -6272,6 +6808,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		invisible_vehicles = "Invisible Ships: ${count}",
 		parked_vehicles = "Parked Ships: ${count}",
 		available_doors = "undefined",
+		copied_object_info = "Copied object info.",
+		copied_model_name = "Copied model name.",
+		copied_entity_id = "Copied shipmate id.",
+		copied_hit_coords = "Copied swashbuckler coordinates.",
 
 		distance = "Distance: ${distance} fathoms",
 		distance_first = "Stored th' first position, arrr.",
@@ -6288,12 +6828,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		vehicle_acceleration_120 = "0 to 120: ${time} seconds",
 		vehicle_acceleration_150 = "0 to 150: ${time} seconds",
 		vehicle_brake_distance = "undefined",
-		vehicle_acceleration_force = "Launch Force: ${force} knots",
 
-		invalid_network_id = "Invalid network id.",
 		delete_entity_success = "Arrr, the entity with network id ${networkId} be successfully deleted.",
 		delete_entity_failed = "Failed t' delete me heartie.",
-		delete_entity_no_permissions = "Attempted to delete an entity without proper permissions.",
 
 		failed_entity_info = "Failed t' get entity information.",
 		printed_entity_info = "Printed entity server information in F8.",
@@ -6301,7 +6838,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		no_entity_network = "undefined",
 		move_entity_success = "Arrr, moved entity wit' network id ${networkId} successfully!",
 		move_entity_failed = "Failed t' move entity, ye scurvy dog!",
-		move_entity_no_permissions = "Attempted to move an entity without proper permissions.",
 
 		weapon_name_missing = "By Blackbeard's sword, ye be missing the weapon name parameter.",
 		weapon_name_invalid = "Ahoy! `${weaponName}` be not a valid weapon name.",
@@ -6330,8 +6866,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		disabled_network_debug = "Arr! Entity network debuggin' be disabled.",
 		failed_network_debug = "Blimey! Failed t'enable entity network debuggin'.",
 
-		network_owner_subscription_no_permissions = "Arrr! Ye be attemptin' to subscribe to entity network owners without proper permissions, ye scoundrel.",
-
 		missing_ipl = "Ahoy! Missing ipl parameter.",
 		enabled_ipl = "Arr! Successfully enabled ipl `${ipl}`.",
 		disabled_ipl = "Arr! Successfully disabled ipl `${ipl}`.",
@@ -6346,6 +6880,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		missing_code = "Avast! Missing code parameter, landlubber!",
 		run_code_success = "Yo-ho-ho! Successfully executed the code snippet, me bucko!",
+		run_code_invalid = "Invalid code snippet.",
 		run_code_error = "Blast ye! Code snippet threw an error.",
 
 		searching_world = "Avast ye! Searching th' World:\n${modelNames}",
@@ -6366,7 +6901,18 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		invalid_json = "Arrr, invalid JSON.",
 
 		street_found = "Found `${name}`, its heart has been marked on yer map.",
-		street_not_found = "Arr, no street found that matches yer search."
+		street_not_found = "Arr, no street found that matches yer search.",
+
+		only_super_admins_can_turn_on = "Only cap'n admins can turn this on. It can be manually turned on by a ship's manager for ye. Ye can turn it off with this command afterwards.",
+		deep_logging_enabled = "Deep logging has been hoisted.",
+		deep_logging_disabled = "Deep loggin' be disabled.",
+		deep_logging_active = "Deep loggin' be active.",
+
+		find_native_toggles_enabled = "'Find native toggles' be enabled.",
+		find_native_toggles_disabled = "'Find native toggles' be disabled.",
+
+		showing_cancelled_vehicles_enabled = "Showin' cancelled vessels.",
+		showing_cancelled_vehicles_disabled = "No longer showin' cancelled vessels."
 	},
 
 	debug_menu = {
@@ -6392,12 +6938,13 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		evidence_failed = "Failed to take DNA evidence.",
 
-		evidence_text = "Evidence Type: DNA Evidence\nDNA collected from ${fullName} #${characterId}\n\nAdditional Information:\n • Timestamp of pickup: ${time}"
+		evidence_text = "DNA Evidence: Sample came back to ${name} (#${cid}) (picked up at ${time})."
 	},
 
 	docks = {
 		press_to_access_spawner = "Press ~INPUT_CONTEXT~ to access the vessel spawner.",
 		boat_dock = "Vessel Dock",
+		emergency_vehicles = "Emergency Ships",
 		vehicle_list = "Vessel List",
 		park_boat = "Park Vessel",
 		close_menu = "Close Menu",
@@ -6427,10 +6974,15 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		saved_doors_to_file = "Be savin' `${amount}` doors to a file on the server, arrr!",
 		no_nearby_doors = "There be no nearby doors to save, me hearty.",
 		lockpicking_door = "Lockpickin' Door",
+		copied_doors = "Copied ${doors} doubloons.",
+		adding_doors = "Addin' doors.",
+		stop_adding_doors = "No longer addin' doors.",
 
 		debug_doors_on = "Arrr! Door debuggin' be on!",
 		debug_doors_off = "Door debuggin' be off, ye scallywag!",
 		doors_no_job = "N/A, ye be a landlubber!",
+		disabled_doors = "Disabled doors.",
+		enabled_doors = "Enabled doors.",
 
 		unlocks = "Unlocks: <i>${cluster}</i>."
 	},
@@ -6475,7 +7027,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		floor_loading_bay = "Loadin' Dock",
 		floor_vault = "Treasure Room",
 
-		floor_second_floor = "Second Mate's Deck",
+		floor_second_floor = "2nd Deck",
 		floor_icu = "Sick Bay",
 		floor_ground = "Main Deck",
 		floor_surgery = "Surgeon's Quarters",
@@ -6494,6 +7046,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		floor_fourth_floor = "4th Deck (Arrrr)",
 		floor_third_floor = "3rd Deck (Arrrr)",
+		floor_second_floor = "2nd Deck",
+		floor_first_floor = "1st Deck",
+
+		floor_gangway = "Gangplank",
 
 		floor_hangout = "Hangout Spot (Arrrr)",
 		floor_penthouse = "Pirate's Cove (Arrrr)",
@@ -6508,7 +7064,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		floor_showroom = "Showroom (Arrrr)",
 		floor_office = "Office Ahoy",
-		floor_doj_office = "DOJ Office Matey",
 
 		floor_penthouse_top = "Pirate Penthouse (Top Floor)",
 		floor_penthouse_entrance = "Pirate Penthouse (Entrance)",
@@ -6676,6 +7231,14 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		sold_fentanyl_logs_details = "${consoleName} sold 1x ampule of fentanyl for $${reward}."
 	},
 
+	fields = {
+		pick_weed = "Press ~INPUT_CONTEXT~ to pick weed.",
+		picking_weed = "Pickin' Weed",
+
+		pick_tobacco = "Press ~INPUT_CONTEXT~ to pick tobacco.",
+		picking_tobacco = "Pickin' Tobacco"
+	},
+
 	fingerprint = {
 		taking_fingerprint = "Taking Pirate Fingerprint",
 		already_fingerprinting = "Ye be already takin' a fingerprint o' a player.",
@@ -6792,6 +7355,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		extract_rubber = "Press ~INPUT_CONTEXT~ to extract rubber from the tree, me hearty.",
 		extracting_rubber = "Extracting Rubber, arrr!",
 
+		pick_oranges = "Press ~INPUT_CONTEXT~ to pick oranges.",
+		picking_oranges = "Picking Oranges",
+
 		tree_klonk = "Somethin' fell from the tree and hit yer noggin."
 	},
 
@@ -6802,6 +7368,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		gas_time_left = "Ye have ${gasTime} seconds left of yer gas mask.",
 		hold_to_take_gas_mask_off = "Hold ~INPUT_VEH_HEADLIGHT~ to take off ye Gas Mask.",
 		hold_to_take_gas_mask_off_holding = "Keep holdin' to take off ye Gas Mask."
+	},
+
+	gift_boxes = {
+		failed_seal_box = "Failed to seal th' gift box.",
+		failed_open_box = "Failed to open th' gift box."
 	},
 
 	golf = {
@@ -6866,6 +7437,19 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		something_went_wrong = "Somethin' went wrong while tryin' to buy a gumball.",
 
 		flavor = "Gumball (${flavor})"
+	},
+
+	gun_crafting = {
+		menu_title = "Gun Assembly",
+		close_menu = "Close Menu",
+		assemble_gun = "Assemble Gun",
+		press_assemble_gun = "[${SeatEjectKey}] Assemble Gun",
+		assembling_gun = "Assembling ${weapon}",
+		crafting_success = "Successfully crafted a ${weapon}.",
+		crafting_failed = "Failed to craft gun.",
+
+		crafted_gun_logs_title = "Crafted Gun",
+		crafted_gun_logs_details = "${consoleName} crafted 1x `${weapon}` at a gun crafting table."
 	},
 
 	gun_running = {
@@ -7023,8 +7607,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		m = "m",
 		belt = "BELT",
 		oil = "OIL",
+		megaphone = "Arr",
 		manual = "name",
-		limiter = "LIMITER",
+		cruise_control = "CC",
+		speed_limiter = "SL",
 		gear_uc = "GEAR",
 		fuel = "grog",
 		nitro = "powder monkeys",
@@ -7096,6 +7682,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		los_santos = "Port of Los Santos",
 		citizen_card = "Pirate's Papers",
 		driver_license = "undefined",
+		press_pass = "Press Pass",
 		first_name = "Portside Name",
 		last_name = "Starboard Name",
 		gender = "Gender",
@@ -7138,6 +7725,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		just_showed_citizen_card = "Ye just showed a Citizen Card. Please wait a bit.",
 		driver_license_details = "undefined",
 		just_showed_driver_license = "undefined",
+		press_pass_details = "${firstName} ${lastName} | Gender: ${gender} | Scallywag ID: ${characterId}",
+		just_showed_press_pass = "Ye just showed a Press Pass. Please wait a bit.",
 
 		boat_license = "Boatin' License",
 		boat_license_details = "Boatin' License | ${firstName} ${lastName} | Citizen ID: ${characterId}",
@@ -7265,6 +7854,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		blip_label = "Pirate Import / Export"
 	},
 
+	indestructibility = {
+		indestructibility_on = "Toggled indestructibility on.",
+		indestructibility_off = "Toggled indestructibility off."
+	},
+
 	injuries = {
 		inspect_no_player = "Ahoy! No scurvy dog nearby that ye can inspect.",
 		already_inspecting = "Ye be already inspectin' a player.",
@@ -7272,7 +7866,14 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		inspecting = "Inspectin' Player",
 		no_injuries = "No injuries or bleedin'. Yo-ho!",
 		patient_bleeding = "Ahoy! The patient be bleedin'.",
-		injury = "${label} Injury"
+		patient_bite_wounds = "Patient has bite wounds.",
+		injury = "${label} Injury",
+		performing_autopsy = "Performing Autopsy",
+		already_performing_autopsy = "Already performing autopsy.",
+		autopsy_no_player = "No bilge rat nearby that ye can perform autopsy on.",
+		autopsy_result = "It appears the scallywag died of `${label}` at around ${time}.",
+		autopsy_no_result = "The autopsy appears to be inconclusive, arrr.",
+		autopsy_failed = "Failed to perform autopsy, arrr."
 	},
 
 	instances = {
@@ -7318,10 +7919,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		cleaning_station = "Swabbin' Station",
 		grocery_store = "Provisions Market",
 		dons_country_store = "Don's Country Store",
-		penthouse_fridge = "Penthouse Fridge",
+		cigar_store = "Cigar Ahoy",
+		penthouse_fridge = "Frigate",
 		mug_shots = "Rogue's Gallery",
 		prison_store = "Brig Bazaar",
 		fruit_vendor = "Fruit Peddler",
+		fruit_market = "Alamo Fruit Market",
 		food_market = "undefined",
 		island_store = "Island Bazaar",
 		travel_agency = "Voyage Arrangements",
@@ -7329,7 +7932,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		burger_bar = "Grub Galley",
 		tool_store = "Tools & Supplies",
 		gun_store = "Gunsmith",
+		locksmith = "Skelet' Key Maker",
+		the_chemist = "The Alchemist",
 		discount_store = "Bargain Bin",
+		skater_store = "Skater's Cove",
 		gun_store_with_shooting_range = "Gunsmith with Shootin' Range",
 		green_wonderland = "Green Wonderland",
 		copy_shop = "Copy Shop",
@@ -7343,8 +7949,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		strip_club = "Strip Galley",
 		police_store = "Privateer Store",
 		fib_store = "FIB Store",
-		police_badge_store = "Privateer Badge Desk",
-		doc_badge_store = "DOC Jolly Roger Desk",
+		deputy_madison = "Deputy Madison",
+		sergeant_harris = "Sergeant Harris",
+		dr_thompson = "Dr. Thompson",
 		flower_store = "Stacey's Flower Emporium",
 		gift_store = "Booty Bay Gifts",
 		ems_store = "Surgeon's Store",
@@ -7360,12 +7967,14 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		erp_shop = "ERP Shop",
 		pet_shop = "Pet Shop",
 		bean_machine = "Bean Machine",
+		bean_machine_fridge = "Bean Machine Fridge",
 		hunting_store = "Hunting Store",
 		fishing_store = "Fishing Store",
 		los_santos_golf_club = "Los Santos Golf Club",
 		arcade_bar = "Arcade Bar",
 		japanese_restaurant = "Japanese Restaurant",
 		japanese_restaurant_kitchen = "Japanese Grog-Armed Tavern",
+		pizza_restaurant = "Pizza Restaurant",
 		["945_studios"] = "945 Studios",
 		grain_mill = "Grain Mill",
 		pd_prefix = "Ahoy there matey, PD",
@@ -7375,13 +7984,15 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		br_prefix = "ARRR",
 		inventory_overweight = "Yer loot be overweight!",
 		vehicle_locked = "Avast! The vessel be locked.",
+		press_to_talk_to = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to parley with ${name}.",
 		press_to_access_store = "Hoist the Jolly Roger! Press ~INPUT_REPLAY_SHOWHOTKEY~ to access the store.",
 		press_to_access_locker = "Ahoy! Press ~INPUT_REPLAY_SHOWHOTKEY~ to access yer private locker.",
 		press_to_access_shared_storage = "Shiver me timbers! Press ~INPUT_REPLAY_SHOWHOTKEY~ to access the shared storage.",
 		device_printout_details = "<b>Arr, Type:</b> <i>${type}</i>, <b>Text:</b> <i>${text}</i>",
 		copy_serial_number = "Copy Serial Number",
-		copy_fingerprint = "Copy Mark o' Fingers",
 		serial_number_copied = "${itemName}, Serial Number: ${serialNumber}",
+		copy_fingerprint = "Copy Mark o' Fingers",
+		copy_evidence = "Copy Evidence",
 
 		failed_give = "Failed to automatically generate translation.",
 		character_too_far = "Failed to automatically generate translation.",
@@ -7394,10 +8005,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		inspect_no_property = "This ${item} does not seem to have any property markings on it.",
 
 		searching_dumpster = "Scourin' Dumpster",
+		searching_homeless_tent = "Searching Homeless Tent",
 
 		nameable_title = "Namable Item Name:",
 
 		inventory_restricted = "undefined",
+		inventory_no_more_items = "Ye cannot stash any more booty in this inventory.",
 
 		press_to_access_shredder = "[${InteractionKey}] Access shredder.",
 
@@ -7422,6 +8035,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		arcade_counter = "undefined",
 		tequilala_counter = "undefined",
 		prison_counter = "undefined",
+		kissaki_counter = "Kissaki Counter",
+		underground_bar_counter = "Underground Bar Counter",
+		pizza_this_counter = "Pizza This Counter",
+		yellow_jack_counter = "Yellow Jack Counter",
+		bahama_mamas_counter = "Bahama Mamas Counter",
 
 		inventory_name_missing = "Missing inventory name parameter.",
 
@@ -7443,6 +8061,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		broken_food = "This loot be spoiled.",
 		broken_drugs = "This loot be expired.",
 		vape_empty = "This vape be empty.",
+		pen_empty = "Dis dab pen be empty.",
 
 		craft_combine = "Craft <i>${output}</i>",
 		combining = "Craftin'",
@@ -7467,6 +8086,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		mix_pancake_batter = "undefined",
 		disassemble_bandages = "Disassemble <i>Bandages</i>",
 		craft_tourniquet = "Craft <i>Tourniquet</i>",
+		mix_pilk = "Mix <i>Pepsi an' Milk</i>",
+		break_apart_battery = "Break Apart <i>Battery</i>",
+		mix_gunpowder = "Mix <i>Gunpowder</i>",
+		roll_cigar = "Roll <i>Cigar</i>",
 
 		search = "Scourge",
 		amount = "Amount",
@@ -7511,10 +8134,15 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		logs_wiped_nearby_ground_inventories_details = "${consoleName} wiped all booties on the ground wit'in a radius o' `${radius}`.",
 
 		inventory_crafting_logs_title = "Inventory Crafting",
-		inventory_crafting_logs_details = "${consoleName} used ${inputs} to create ${amount}x ${output}.",
+		inventory_crafting_logs_details = "${consoleName} used ${inputs} to create ${output}.",
 
 		press_use_campfire = "[${InteractionKey}] Use Campfire, ye scallywag",
 		use_campfire = "Use Campfire",
+
+		inventory_not_loaded = "Inventory be not loaded.",
+		invalid_inventory_name = "Invalid booty name.",
+		inventory_refresh_success = "Successfully refreshed inventory.",
+		inventory_refresh_failed = "Failed t' refresh booty.",
 
 		dumpster_sandwich = "Moldy Booty Sandwich",
 		dumpster_beer = "Stale Booty",
@@ -7549,6 +8177,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		citizen_card_description = "Acts as identification, a firearm license and sailin' license.",
 		driver_license = "undefined",
 		driver_license_description = "undefined",
+		press_pass = "Press Pass",
+		press_pass_description = "This official Press Pass identifies ye as a reporter or journalist, grantin' access t' restricted areas 'n events. Wear it wit' pride as ye chase stories 'n uncover th' truth.",
 		phone = "Ravenswing",
 		phone_description = "never:tm:",
 		radio = "Speakpipe",
@@ -7558,7 +8188,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		tablet = "Tablet",
 		tablet_description = "Very big piece o' parchment.",
 		wallet = "Purse",
-		wallet_description = "Fer all yer doubloons an' cards.",
+		wallet_description = "Crafted wit' patriotism in mind, this wallet not only stores yer essentials like IDs 'n doubloons but does so wit' a flair o' national pride. Th' vibrant American flag 'n eagle emblem make a statement every time ye pull it out. Perfect fer those who carry not just their valuables, but also a sense o' pride.",
+		folder = "Folder",
+		folder_description = "Dis sturdy blue folder be the quintessential organizer fer all yer important papers. Ideal fer keepin' documents, IDs, and photos neatly arranged and easily accessible. Whether fer business or personal use, it's a reliable guardian of yer paper treasures.",
 
 		gps = "GPS",
 		gps_description = "Satisfy all yer gadget needs.",
@@ -7666,8 +8298,13 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		printer = "Printer",
 		printer_description = "No fax, only printer, yaarr.",
 
+		label_printer = "Label Printer",
+		label_printer_description = "Customize yer gear in style wit' this label printer! Just pop in an item, and print a slick new skin or wrap to give it a fresh, personalized look. Perfect fer addin' some flair to yer everyday stuff!",
+
 		brochure = "Pamphlet",
 		brochure_description = "A helpful pamphlet to get ye started in the port town.",
+		bus_ticket = "Bus Ticket",
+		bus_ticket_description = "Yer one-way ticket fer the <b>${route}</b>! This ticket be perfect fer those who like to keep a little souvenir from their travels. It's valid fer a single journey from <b>${date}</b>, so be sure to hang on tight and enjoy the ride. Remember, this ticket's only good fer one trip, so make it count!",
 
 		basic_repair_kit = "Basic Repair Kit",
 		basic_repair_kit_description = "It makes stuff work, but just barely.",
@@ -7710,9 +8347,42 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		kissaki_delivery_description = "A tasty collection o' sushi an' other Japanese delights.",
 		green_wonderland_delivery = "Green Wonderland Bag",
 		green_wonderland_delivery_description = "A bag full o' yer favorite green goodies. #420blazeit",
+		pizza_this_delivery = "Pizza This Box",
+		pizza_this_delivery_description = "Carry yer hot and delicious pizza in style with the Pizza This delivery box, ensuring every slice arrives just as perfect as it left the galley.",
+
+		empty_box = "Bare Crate",
+		empty_box_description = "Set sail wit' this simple, sturdy crate t' create a personalized booty. Fill it wit' loot that don't spoil, 'n it be ready t' be transformed into a thoughtful present. Perfect fer packin' everythin' that symbolizes affection, 'cept perishables 'n weapons.",
+		gift_box = "Gift Crate",
+		gift_box_description = "This elegantly sealed gift crate, adorned wit' a festive ribbon, be a handsome way t' present yer carefully chosen items. Perfect fer special occasions, it conveys warmth 'n thoughtfulness, ensurin' yer gesture of givin' be as delightful as the treasure inside.",
 
 		ear_defenders = "Ear Defenders, hoist the flag!",
 		ear_defenders_description = "Used to protect yer ears from loud noises, arrr!",
+
+		skateboard = "Skullcrusher",
+		skateboard_description = "We got plank in GTA V afore Skate 4.",
+		deck_arcade = "Scallywag Attack Plank",
+		deck_arcade_description = "Level up yer skate game wit' the Arcade Attack Plank. Featurin' vibrant pixel art that takes ye back to classic gamin', this plank be perfect fer the gamer skater. Bring some nostalgia to the streets and grind those rails like ye be hittin' high scores!",
+		deck_cats = "Cat O' Nine Tails Plank",
+		deck_cats_description = "Show yer love fer cats wit' the Feline Frenzy Plank. Adorned wit' playful kitty graphics, this plank be perfect fer cat enthusiasts who be wantin' to add a touch o' fun to their rides. Skate wit' style and let every trick be a purr-fect one!",
+		deck_flowers = "Tropical Vibes Deck",
+		deck_flowers_description = "Bring the beach to the streets with the Tropical Vibes Deck. Covered in lush floral patterns, this deck be ideal fer those who be wantin' t' skate in a state o' perpetual summer. Feel the breeze and ride the waves o' the urban jungle!",
+		deck_weed = "High Speed Deck",
+		deck_weed_description = "Embrace the ultimate chill wit' the High Speed deck. Perfect fer skaters who like t' keep thin's mellow while catchin' some serious air.",
+		deck_blossom = "Cherry Blossom Deck",
+		deck_blossom_description = "Find yer inner peace with Cherry Blossoms. This deck be ideal for those who be wantin' to bring a touch o' tranquility to their skate sessions.",
+		deck_peace = "Psychedelic Serenity Deck",
+		deck_peace_description = "Dive into a state o' psychedelic serenity. This deck be perfect for those who like their skateboarding with a side o' vibrant vibes.",
+		deck_simpsons = "Bart's Mayhem Deck",
+		deck_simpsons_description = "Channel yer inner troublemaker with Bart's Mayhem Deck. Ideal for fans o' The Simpsons who be wantin' t' bring a bit o' Springfield chaos to their skating routine.",
+		deck_police = "Blue Line Deck",
+		deck_police_description = "Show yer support fer law enforcement wit' th' Thin Blue Line Deck. Perfect fer officers lookin' to sail in style while representin' th' badge.",
+		deck_ems = "Red Line Deck",
+		deck_ems_description = "Pay homage t' emergency responders wit' th' Red Line Deck. Ideal fer EMS personnel who want t' skate wit' pride an' honor their heroic work.",
+		deck_usa = "Liberty Deck",
+		deck_usa_description = "Yeehaw! Sail wit' pride on th' Stars an' Stripes Deck, th' ultimate symbol o' freedom an' th' American dream. Crafted fer true patriots, this deck will have ye skatin' wit' th' spirit o' th' red, white, an' blue under yer feet. God bless America!",
+
+		paper_straw = "Parchment Straw",
+		paper_straw_description = "Sip sustainably wit' this eco-friendly parchment straw. Designed t' reduce plastic waste, it helps save th' turtles while providin' a unique drinkin' experience. Th' straw naturally dissolves in yer drink over time, remindin' ye of its eco-friendly purpose and makin' it perfect fer single-use enjoyment.",
 
 		clothing_bag = "Clothing Bag, me bucko!",
 		clothing_bag_description = "Never worry about fashion emergencies again! The clothing bag lets ye store yer favorite outfit and instantly equip it anywhere ye go. This bag has all the magic of a fairy godmother, minus the bibbidi-bobbidi-boo. Aye, hoist the sails, matey!",
@@ -7722,6 +8392,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		clover = "4 Leaf Clover",
 		clover_description = "A rare 4 leaf clover fer good luck. Ye can find these in the grass if ye look hard enough.",
+		clover_mk2 = "4 Sail Clover MK2",
+		clover_mk2_description = "A rare and elusive 5 sail clover, said t' bring a boost of extraordinary luck—if ye can spy it hidin' in th' grass!",
 		small_frog = "Wee Frog",
 		small_frog_description = "Just a wee frog. Look at the little scallywag, he be so cute!",
 		seashell = "Seashell",
@@ -7801,22 +8473,82 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		pistol_sight = "Pistol Spyglass",
 		pistol_sight_description = "How t' fix yer aim, ya scallywag.",
 
+		tungsten_ore = "Tungsten Ore",
+		tungsten_ore_description = "Not th' easiest t' come by, but this rock's got potential! Wit' a small but valuable concentration o' tungsten, it be a miner's treasure waitin' t' be refined.",
+		tungsten_nugget = "Tungsten Nugget",
+		tungsten_nugget_description = "Refine that ore an' ye get this little gem. Small in size, big in value, each nugget be a testament t' th' effort o' extractin' pure tungsten from its humble beginnings.",
+		tungsten_bar = "Tungsten Bar",
+		tungsten_bar_description = "Melt down enough o' those hard-earned nuggets an' ye've got yourself a solid tungsten bar. Tough as nails an' ready for any challenge ye throw its way.",
+
+		titanium_ore = "Titanium Ore",
+		titanium_ore_description = "A shiny, silver-gray ore with a hint of mystery, titanium ore be a versatile and highly sought-after material found deep within th' earth. It's not overly rare, but its true value lies in th' refinin' process.",
+		titanium_nugget = "Titanium Nugget",
+		titanium_nugget_description = "Extracted from th' ore, this small titanium nugget represents a concentrated form o' th' valuable metal. Each nugget be a tiny testament to th' purity and strength o' titanium.",
+		titanium_bar = "Titanium Barrr",
+		titanium_bar_description = "Forged from multiple titanium nuggets, this barrr be a solid piece o' high-strength metal. Its lightweight and durable nature make it ideal fer craftin' premium components.",
+
+		titanium_rod = "Titanium Rodd",
+		titanium_rod_description = "Crafted from titanium bars, this rod be incredibly strong and resilient. Its lightweight properties combined with superior durability make it a critical component fer high-performance applications.",
 		aluminium_plate = "Aluminium Plank",
 		aluminium_plate_description = "Warning: Don't protect against bullets... ye crackhead.",
 		aluminium_rod = "Aluminium Pole",
 		aluminium_rod_description = "Don't beat ye mateys with this or ye walk the plank.",
-		copper_nugget = "Copper Doubloon",
-		copper_nugget_description = "A wee nugget o' that sweet, sweet golden brown.",
+		steel_tube = "Steel Tube",
+		steel_tube_description = "A versatile 'n' sturdy steel tube, perfect fer a variety o' craftin' projects. Whether ye be buildin', repairin', or inventin', this tube be yer go-to material fer strength 'n' reliability.",
+		hardened_steel_plate = "Hardened Steel Plate",
+		hardened_steel_plate_description = "This hardened steel plate be designed to withstand the toughest conditions, providin' superior strength 'n' durability fer any heavy-duty project. Perfect fer reinforcin' structures, craftin' advanced components, or ensurin' yer creations stand the test o' time.",
 		copper_wire = "Copper Cable",
 		copper_wire_description = "Versatile cabling that be used fer almost anythin' electrical.",
 		lens = "Spyglass",
 		lens_description = "Used in spyglasses and telescopes, ye scurvy dog.",
 		polymer_resin = "Goo",
 		polymer_resin_description = "Not the smokeable kind, but still neat.",
+		fibreglass_resin = "Fiberglass Resin",
+		fibreglass_resin_description = "Dis versatile adhesive be essential fer reinforcing an' repairin', creatin' strong, lightweight components. Easy to apply an' cures to a tough, durable finish, it be perfect fer DIY projects an' professional use alike.",
 		screws = "Bolts",
 		screws_description = "What be ye doin? Screwin'?",
 		spring = "Coil",
 		spring_description = "Don't know why, but people love to clean these?",
+		high_tensile_spring = "High Tensile Spring",
+		high_tensile_spring_description = "A high tensile spring crafted fer optimal performance, offerin' exceptional strength an' elasticity. Ideal fer high-stress applications, this spring ensures reliable functionality an' longevity, makin' it a crucial component in advanced craftin' an' engineerin' projects.",
+		tungsten_plate = "Tungsten Plate",
+		tungsten_plate_description = "Forged from two solid tungsten bars, this plate be tough, durable, and ready to withstand whatever heat or pressure comes its way. A true testament to strength and resilience.",
+		reinforced_steel_tube = "Reinforced Steel Tube",
+		reinforced_steel_tube_description = "Engineered fer maximum durability, this reinforced steel tube be built to handle the toughest conditions. Its robust construction ensures exceptional strength and resilience.",
+		muzzle_brake = "Muzzle Brake",
+		muzzle_brake_description = "Designed to tame the beastly recoil and muzzle rise of firearms, this essential blunderbuss piece redirects propellant gases to keep yer aim steady and yer shots on target. Crafted with precision, it ensures smoother operation and improved accuracy, making it a must-have for any serious marksman.",
+
+		trigger = "Trigger",
+		trigger_description = "The crucial piece for any firearm build, whether it's an SMG, blunderbuss, or shotgun. Precision-crafted for a crisp, reliable trigger pull every time.",
+		smg_lower_receiver = "Pistolier Lower Jolly Roger",
+		smg_lower_receiver_description = "Arrr, the foundational piece fer yer Pistolier be the lower jolly roger. 'Tis where it all begins. Essential fer housin' the firin' mechanism and connectin' other components, this piece be yer first step towards buildin' a rapid-fire powerhouse.",
+		smg_lower_receiver_mk2 = "Pistolier Lower Jolly Roger MK2",
+		smg_lower_receiver_mk2_description = "An upgraded version o' the standard lower jolly roger, the MK2 offers enhanced durability and precision. Perfect fer those lookin' to build a more reliable and robust Pistolier fer intense situations.",
+		smg_upper_receiver = "SMG Top Receiver",
+		smg_upper_receiver_description = "Completing the essential frame of yer SMG, the top receiver be vital fer mountin' the barrel and other upper components. It's designed to ensure smooth operation and consistent performance.",
+		smg_upper_receiver_mk2 = "SMG Top Receiver MK2",
+		smg_upper_receiver_mk2_description = "The MK2 variant of the SMG top receiver comes with improvements fer better accuracy and stability. It's the choice fer those who demand top-notch performance from their firearm.",
+		rifle_lower_receiver = "Musket Lower Receiver",
+		rifle_lower_receiver_description = "The backbone o' yer musket, the lower receiver holds the trigger group 'n magazine well. This crucial component ensures yer musket’s foundation be solid 'n ready fer further assembly.",
+		rifle_lower_receiver_mk2 = "Musket Lower Receiver MK2",
+		rifle_lower_receiver_mk2_description = "An enhanced version o' the standard musket lower receiver, the MK2 provides improved strength 'n reliability, makin' it ideal fer high-performance muskets.",
+		rifle_upper_receiver = "Blunderbuss Upper Receiver",
+		rifle_upper_receiver_description = "Connectin' the barrel and bolt carrier group, the upper receiver be key to yer blunderbuss's accuracy and operation. This piece ensures that yer blunderbuss can handle any task with precision.",
+		rifle_upper_receiver_mk2 = "Blunderbuss Upper Receiver MK2",
+		rifle_upper_receiver_mk2_description = "The MK2 upper receiver fer blunderbusses offers superior engineerin' fer increased accuracy and durability, makin' yer blunderbuss ready fer the most demandin' conditions.",
+		shotgun_lower_receiver = "Blunderbuss Lower Receiver",
+		shotgun_lower_receiver_description = "The heart of yer blunderbuss, the lower receiver be vital for holdin' the trigger assembly and providin' a base fer the rest o' the gun. Start yer blunderbuss build wit' this sturdy component.",
+		shotgun_lower_receiver_mk2 = "Blunderbuss Lower Receiver MK2",
+		shotgun_lower_receiver_mk2_description = "Upgradin' to the MK2 version gives ye added strength and longevity, perfect fer constructin' a blunderbuss that can withstand the trials o' frequent use.",
+		shotgun_upper_receiver = "Blunderbuss Upper Receiver",
+		shotgun_upper_receiver_description = "Crafted t'mount th' barrel 'n ensure smooth cyclin' o' shells, th' upper receiver be a critical part o' yer blunderbuss's functionality. Build yer ultimate blunderbuss wit' this key component.",
+
+		copper_nugget = "Copper Doubloon",
+		copper_nugget_description = "A wee nugget o' that sweet, sweet golden brown.",
+		zinc = "Zinc",
+		zinc_description = "Plundered from batteries, zinc be yer go-to metal fer craftin' 'n industrial needs. Whether ye be fixin' things up or combinin' it t' make somethin' even cooler, this versatile element be a hidden gem in yer toolkit.",
+		brass = "Brass",
+		brass_description = "By skillfully combining copper and zinc, ye get brass—a sturdy metal perfect fer craftin' ammo casings. 'Tis like alchemy fer th' modern age, turnin' simple elements into th' key components o' yer arsenal.",
 
 		grenade_shell = "Boom Stick Shell",
 		grenade_shell_description = "undefined",
@@ -7842,16 +8574,16 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		skin_geometric_description = "undefined",
 
 		refillable_bottle = "Refillable Bottle",
-		refillable_bottle_description = "Save the turtles on god for real for real, arrrr.",
+		refillable_bottle_description = "Step up yer hydration game wit' this sleek, refillable bottle. Designed fer th' eco-conscious and style-savvy, its durable construction and minimalist design make it a perfect mate fer stayin' hydrated throughout th' day. Fill it up wit' yer grog o' choice and keep thirst at bay whether ye be at work, hittin' th' gym, or out explorin' th' world.",
 
 		capri_sun = "Capri Sun",
-		capri_sun_description = "Delicious treat from yer childhood, arrrr.",
+		capri_sun_description = "Relive yer joy o' yer childhood wit' each sip o' Capri Sun! This iconic pouch brims wit' th' zesty flavor o' orange, deliverin' a refreshin' burst reminiscent o' sunny days an' fun-filled afternoons. Perfect fer adventures or a nostalgic treat, it’s yer little box o' sunshine that quenches thirst an' sparks memories.",
 
 		gumball = "Gumball",
-		gumball_description = "A gumball, what else do ye want me to say, arrrr?",
+		gumball_description = "Enjoy a burst o' unexpected flavor wit' each colorful gumball. Jus' be careful not t' get too carried away—remember t' chew, not swallow! Each piece offers a delightful surprise, makin' every chew a fun an' flavorful adventure.",
 
 		chorus_fruit = "Chorus Fruit",
-		chorus_fruit_description = "A fruit that can teleport ye to a random location.",
+		chorus_fruit_description = "Plunder the secrets o' Chorus Fruit, a rare botanical marvel revered by alternative medicine enthusiasts fer its extraordinary properties. Once consumed, this fruit offers a sudden, invigoratin' shift in location—a surprisin' side effect that many attribute to its mystical energy. Ideal fer those seekin' a quick rejuvenation or a spontaneous change o' scenery. Embrace the unexpected an' let the Chorus Fruit transport you to new possibilities.",
 
 		water = "Grog",
 		water_description = "Avast! Beware! Dihydrogen monoxide be colorless and scentless. Accidental inhalation o' DHMO may send ye to Davy Jones' locker. Prolonged exposure to its solid form brings fierce tissue damage. Symptoms o' DHMO ingestion may include excessive sweating and peeing, and mayhap a bloated feelin', sickness, spewin' and body electrolyte imbalance.",
@@ -7869,6 +8601,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		coke_description = "Arrr, ye know what I mean, matey?",
 		pepsi = "Pepsi",
 		pepsi_description = "Cocaine be better than Coke.",
+		fanta_light = "Fanta Light",
+		fanta_light_description = "Savor the elusive and refreshing taste of Fanta Light. Perfect for when ye need a drink that makes ye think, 'Can I get a Fanta Light, aye?' Enjoy the light and zesty flavor o' this iconic beverage.",
+		sprite = "Sprite",
+		sprite_description = "Refresh yourself with a can o' Sprite, the lemon-lime soda that packs a punch. It's got that bubbly carbonation that tingles and sometimes even hurts goin' down, but it’s oh-so worth it. Loaded with sweetness, Sprite be yer go-to for a sugary, fizzy fix!",
+		pilk = "Pilk",
+		pilk_description = "A curious blend o' Pepsi and milk, handmade Pilk offers a mix o' fizzy refreshment and creamy smoothness. Stir well afore drinkin', as the milk naturally settles at the bottom, creatin' a unique 'n adventurous flavor experience.",
 		wonder_waffle = "Buccaneer's Bounty",
 		wonder_waffle_description = "Vegan? Lactose free? Ye landlubbers be too picky! It's just a hearty pancake!",
 		cheeseburger = "Arrr, a Burger with Cheese!",
@@ -7887,8 +8625,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		smores_description = "undefined",
 		tic_tac = "Tic Tac",
 		tic_tac_description = "Oxy? Nay officer, I be just eatin' tic tacs!",
-		pizza_slice = "Pizza Slice",
-		pizza_slice_description = "A Lil slice o' the Za for ya, with extra pepperoni (not vegan).",
 		hot_dog = "Hot Dog",
 		hot_dog_description = "Gobble up this glizzy like it'll be yer last, matey.",
 		nachos = "Nachos",
@@ -7901,6 +8637,82 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		vanilla_milkshake_description = "Aye, a diner classic, great wit' a burger and fries!",
 		chocolate_milkshake = "Chocolate Milkshake",
 		chocolate_milkshake_description = "A wonderful lookin' shake, juss' hope the CIA isn't after ye before ye take a sip...",
+
+		pizza_dough = "Pizza Dough",
+		pizza_dough_description = "This premium pizza dough be ready fer yer culinary touch. Elastic 'n supple, it's perfect fer shapin' into yer ideal base fer any toppings. Roll it, top it, 'n bake it into a crispy, golden crust that be the foundation o' a delicious homemade pizza.",
+		black_olives = "Black Pearls",
+		black_olives_description = "Arr, these black pearls bring a rich, earthy flavor to any dish. Sliced and ready to scatter over pizzas, they add a touch of Mediterranean zest that complements both meaty and vegetarian toppings.",
+		bell_pepper = "Pepper of the Bell",
+		bell_pepper_description = "Vibrant and sweet, this whole red bell pepper adds a pop of color and a crunch to any dish. Perfect for stuffing, slicing, or snacking, it's a versatile galley favorite.",
+		bell_pepper_sliced = "Sliced Pepper of the Bell",
+		bell_pepper_sliced_description = "Freshly sliced red bell pepper, ready to add a sweet and crisp bite to your salads, stir-fries, or sandwiches. Conveniently prepped for all yer culinary adventures.",
+		pepperoni = "Pepperoni",
+		pepperoni_description = "Spicy and savory, pepperoni be a must-have topping for pizza enthusiasts. Its robust flavor and delightful crispiness when baked make it a popular choice, addin' a spicy zest that enhances every bite.",
+		jalapeno = "Jalapeno",
+		jalapeno_description = "Fresh jalapeños provide a fiery kick to any pizza. Sliced thinly, these peppers introduce a burst of heat and a bright, vegetal note that cuts through richer flavors, perfect for those who appreciate a spicy edge.",
+		mozarella = "Mozarella",
+		mozarella_description = "Smeary and delicious, mozzarella be the quintessential pizza cheese. It melts into a stretchy, gooey layer that perfectly binds all the toppings together, creatin' that beloved pizza pull wit' every slice.",
+		ham = "Ham",
+		ham_description = "Sweet and savory ham adds a rich depth o' flavor to pizza. Its tender, juicy bites offer a delightful contrast when paired wit' the creamy texture o' melted cheese, makin' it a popular choice fer many.",
+		salami = "Salami",
+		salami_description = "Salami be bringin' a robust and garlicky flavor wit' a hint o' smokiness to pizzas. Its firm texture and rich taste provide a hearty bite that stands out among other toppings.",
+		tomato_sauce = "Tomato Sauce",
+		tomato_sauce_description = "This vibrant tomato sauce be crafted from ripe tomatoes, simmered wit' herbs and spices to develop a rich, deep flavor. It serves as the foundational base that enhances every pizza wit' its sweet and tangy notes.",
+		flour = "Flour",
+		flour_description = "High-quality flour be essential fer craftin' the perfect pizza dough. It provides the structure and chewiness that pizza lovers cherish, makin' it a fundamental ingredient in pizza makin'.",
+		olive_oil = "Olive Oil",
+		olive_oil_description = "Rich an' fragrant, olive oil be drizzled o'er pizza fer an extra layer o' flavor. It adds a subtle fruitiness an' helps achieve a golden, crispy crust that’s irresistible.",
+		pizza_cheese = "Pizza Cheese",
+		pizza_cheese_description = "Enhance yer homemade pizzas wit' this rich an' stretchy pizza cheese, designed t' melt beautifully an' add a creamy, gooey texture t' every flavorful bite.",
+		pineapple_slices = "Pineapple Slices",
+		pineapple_slices_description = "Sweet, tangy, an' juicy, these pineapple slices be perfect fer addin' a tropical flair t' yer dishes. Whether yer a believer in pineapple on pizza or prefer it as a standalone snack, these slices bring brightness an' flavor t' any culinary creation.",
+		pizza_saver = "Pizza Saver",
+		pizza_saver_description = "Its supposed to keep the cheese off the box but when ye're a kid ye thought it was for barbies and action figures to sit at.",
+		bread_sticks = "Bread Sticks",
+		bread_sticks_description = "Golden and crispy on the outside, soft and chewy on the inside, these bread sticks be crafted from pizza dough. Perfect for dipping in marinara or enjoying on their own, they're a delicious and versatile snack.",
+
+		pizza_margherita_raw = "Raw Margherita Pizza",
+		pizza_margherita_raw_description = "Dis Margherita pizza be freshly prepared wit vibrant tomato sauce, fresh mozzarella, n' aromatic basil on a perfectly proofed dough, ready to slide into de oven n' bake to perfection.",
+		pizza_salami_raw = "Raw Salami Pizza",
+		pizza_salami_raw_description = "Freshly assembled, dis Salami pizza features a rich tomato sauce base, layered wit spicy salami slices n' generous mozzarella on homemade dough, ready fer baking into crispy, meaty goodness.",
+		pizza_diavola_raw = "Raw Diavola Pizza",
+		pizza_diavola_raw_description = "Dis Diavola pizza be expertly prepared wit' a base o' raw dough topped wit' spicy pepperoni, fiery jalapeños, an' a hearty sprinkling o' cheese, awaiting the oven's heat to unleash its full flavor.",
+		pizza_ham_raw = "Raw Ham Pizza",
+		pizza_ham_raw_description = "Dis Ham pizza be handcrafted wit' homemade dough, topped wit' savory ham slices, smooth mozzarella, an' tomato sauce, all arranged an' ready for baking to create a comforting an' delicious meal.",
+		pizza_hawaiian_raw = "Raw Hawaiian Pizza",
+		pizza_hawaiian_raw_description = "Dis uncooked Hawaiian pizza be prepped n' poised fer de oven, wit' a bountiful toppin' o' sweet pineapple, savory ham, n' stretchy mozzarella on a saucy base—ready t' settle de age-old debate wit' every delicious bite.",
+		pizza_pepperoni_raw = "Raw Pepperoni Pizza",
+		pizza_pepperoni_raw_description = "Prepare yerself fer a fiery feast! Dis raw spicy pepperoni pizza be loaded wit' hot pepperoni slices n' zesty sauce, jus' waitin' t' hit de oven. Perfect fer those who love a kick wit' their slice.",
+		pizza_vegetarian_raw = "Raw Veggie Pizza",
+		pizza_vegetarian_raw_description = "Prepare to bake a garden-fresh feast with this raw Veggie Pizza. Piled high with vibrant veggies and gooey cheese, it's a wholesome delight waiting for the galley.",
+		pizza_margherita = "Margherita Pizza",
+		pizza_margherita_description = "Indulge in the simplicity of a classic Margherita pizza, with a golden crust topped with rich tomato sauce, creamy mozzarella, and a hint of fresh basil. This timeless favorite delivers a taste of Italia with every savory slice.",
+		pizza_salami = "Salami Pizza",
+		pizza_salami_description = "Groggy the robust flavors of freshly baked Salami pizza, generously topped with spicy salami slices that meld beautifully with gooey mozzarella and a tangy tomato base.",
+		pizza_diavola = "Diavola Pizza",
+		pizza_diavola_description = "Experience the fiery kick of Diavola pizza, with spicy pepperoni, jalapeños, and rich tomato sauce, all smothered under a layer of melted cheese, perfectly baked to crispy delight.",
+		pizza_ham = "Ham Pizza",
+		pizza_ham_description = "This Ham pizza emerges from the galley featuring a crispy crust topped with juicy ham slices, creamy mozzarella, and tangy tomato sauce, creating a delightful balance of sweet and savory flavors.",
+		pizza_hawaiian = "Hawaiian Pie",
+		pizza_hawaiian_description = "Fresh out o' th' galley, this Hawaiian pie combines th' controversial yet beloved mix o' juicy pineapple an' savory ham atop a golden crust. Dive into this tropical twist that continues to spark debates an' delight taste buds.",
+		pizza_pepperoni = "Pepperoni Pie",
+		pizza_pepperoni_description = "A hot twist on a classic favorite! This spicy pepperoni pie be baked to perfection, featurin' crispy crust, molten cheese, an' pepperoni with a fiery kick. Not for the faint of heart, this pie brings th' heat!",
+		pizza_vegetarian = "Vegetarian Pizza",
+		pizza_vegetarian_description = "Enjoy a slice o' nature with this delicious Vegetarian Pizza. Loaded with colorful veggies, creamy cheese, and a perfect crust, it's a celebration o' flavors straight from the garden.",
+		pizza_slice = "Margherita Pizza Slice",
+		pizza_slice_description = "Savor the classic delight o' a Margherita pizza slice, with its bubbly mozzarella, fragrant basil, and rich tomato base on a crispy crust. Perfect for a quick, flavorful bite.",
+		pizza_slice_salami = "Salami Pizza Slice",
+		pizza_slice_salami_description = "Enjoy a slice o' Salami pizza, where spicy salami melds with melted mozzarella and a tangy tomato sauce atop a perfectly baked crust. Ideal for those who crave a zestier taste.",
+		pizza_slice_diavola = "Diavola Pizza Slice",
+		pizza_slice_diavola_description = "Dive into the bold flavors with a slice o' Diavola pizza, featurin' spicy pepperoni, fiery jalapeños, and gooey cheese on a crispy crust. A spicy treat for heat lovers.",
+		pizza_slice_ham = "Ham Pizza Slice",
+		pizza_slice_ham_description = "Relish a slice o' Ham pizza, combinin' sweet ham with creamy mozzarella and a savory tomato sauce on a golden crust. A satisfyin' mix of sweet and savory in each bite.",
+		pizza_slice_hawaiian = "Hawaiian Pizza Slice",
+		pizza_slice_hawaiian_description = "Enjoy a slice o' Hawaiian pizza, where sweet pineapple meets savory ham on a bed o' gooey mozzarella and tangy tomato sauce. This delightful combination challenges conventions and tantalizes taste buds, proving that sometimes, the unexpected pairin' makes the most memorable meal.",
+		pizza_slice_pepperoni = "Pepperoni Pizza Slice",
+		pizza_slice_pepperoni_description = "A single slice of spicy goodness! Enjoy the sizzlin' pepperoni and melty cheese with each bite. This slice packs a punch, perfect for a quick spicy snack!",
+		pizza_slice_vegetarian = "Vegetarian Pizza Slice",
+		pizza_slice_vegetarian_description = "A single slice o' Vegetarian Pizza, burstin' with fresh veggies and melted cheese. Perfect for a light, yet satisfyin', bite full o' garden goodness.",
 
 		burrito = "Burrito, matey!",
 		burrito_description = "A burrito be a dish in Mexican and Tex-Mex cuisine that consists of a flour tortilla with various other ingredients, yarrr.",
@@ -7934,6 +8746,14 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		raw_fries_description = "Basically juss' a spud, but someone didn't put enough effort in to make it somethin'.",
 		raw_patty = "Raw Patty",
 		raw_patty_description = "90% Real Meat, the other 10% got lost in the packagin' translation.",
+		chicken_nuggets_raw = "Raw Chicken Nuggets",
+		chicken_nuggets_raw_description = "Handcrafted with tender chicken breast and coated in breadcrumbs, these raw chicken nuggets be ready to be cooked to golden perfection. Ideal for creatin' a homemade, delicious snack or meal.",
+		breadcrumbs = "Crumbies",
+		breadcrumbs_description = "These plain crumbies be perfect fer addin' a crispy, golden coatin' to yer favorite fried or baked dishes. Made from enriched bread, they ensure a delicious crunch every time.",
+		chicken_breast = "Chicken Breast",
+		chicken_breast_description = "Fresh and tender, these raw chicken breasts be a versatile ingredient ready fer yer culinary creativity. Ideal fer grillin', bakin', or fryin', they offer a high-quality protein source fer any meal.",
+		chicken_nuggets = "Chicken Nuggets",
+		chicken_nuggets_description = "Arrr matey! These freshly made chicken nuggets be golden and crispy on the outside, tender and juicy on the inside. Perfectly seasoned and fried to perfection, they be a delightful snack or meal.",
 
 		apple = "Aaaarrrpple",
 		apple_description = "Keep The Evil Doctors At Bay!",
@@ -7957,6 +8777,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		strawberry_description = "Be usually found in fields... forever.",
 		watermelon = "Watermelon",
 		watermelon_description = "Be it water or be it melon, we may ne'er know.",
+		lemon = "Lemon",
+		lemon_description = "A vibrant and zesty lemon, bursting with tangy flavor and a bright yellow hue. Perfect for addin' a refreshin' twist to yer favorite dishes and drinks. Each bite delivers a citrusy punch that wakes up yer taste buds.",
 
 		banana_peel = "Banana Peel",
 		banana_peel_description = "Rather slippery, watch yer steps!",
@@ -7993,6 +8815,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		cabbage = "Cabbage",
 		cabbage_description = "Perfect for makin' homemade kimchi.",
 
+		cabbage_seeds = "Cabbage Seeds",
+		cabbage_seeds_description = "Arrr, these hearty cabbage seeds be yer first step towards cultivatin' a patch o' crisp, leafy greens. Plant 'em in any welcomin' soil, and watch as they flourish into robust cabbages perfect fer a variety o' culinary delights. From fresh salads to tangy kimchi, these cabbages be ready to transform yer galley adventures.",
+
 		smoothie = "Smoothie",
 		smoothie_description = "Thar perfect blend o' fruits, vegetables, and electrolytes to cure even thar worst gaming-induced hangovers.",
 		blender = "Blender Ahoy!",
@@ -8009,10 +8834,32 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		jack_o_lantern_description = "A pumpkin wit' a face carved into it, arrr",
 
 		cigarette = "Cigarette",
-		cigarette_description = "If ye don't smoke ye be a landlubber, matey!",
+		cigarette_description = "If ye don't smoke, ye be a scurvy pirate! Puff away and look like the coolest cat in town—at least that's what they say. Yer lungs might not agree, but hey, sacrifices must be made for style, right?",
 		cigarette_pack = "Cigarette Pack",
-		cigarette_pack_description = "Fer yer dad who has a cigarette addiction (hopefully he comes back after leaving to get them), arrr",
+		cigarette_pack_description = "A classic pack o' smokes—'cause apparently, nuthin' says \"I'll be back in 5 minutes\" quite like these. Perfect for channelin' yer inner mysterious dad who went out fer cigarettes and... well, ye know the rest.",
+		cigarette_carton = "Cigarette Carton",
+		cigarette_carton_description = "Need a whole carton? Here's yer fix! A carton o' cigarettes that's a testament to yer commitment (or yer dad’s, if he’s still out there grabbin' 'em). With 8 packs inside, ye’ve got enough to fuel yer bad habit and still have a few left to share... or not.",
+		snus_pack = "Snus Can",
+		snus_pack_description = "Dis can be like my personal stash o' joy. Pop it open, grab a pouch, 'n feel that rush. Always gotta have one on me—can’t go without me Zyn fix!",
+		snus = "Snus",
+		snus_description = "These little pouches be lifesavers, matey. Just throw one under yer lip 'n boom—instant buzz wit'out any smoke. It’s all about that slow burn 'n keepin' the edge off. Can’t get enough o’ ’em!",
 
+		cigar_olivia = "Oliva Serie G",
+		cigar_olivia_description = "The Oliva Serie G delivers a unique 'n balanced flavor, blendin' notes o' rich coffee 'n cedar wit' a hint o' nutty sweetness. Its medium body 'n smooth finish make it a perfect choice for those who want a refined yet approachable smoke.",
+		cigar_romeo = "Romeo y Julieta 1875",
+		cigar_romeo_description = "Be ye lookin' fer somethin' mild and approachable? The Romeo y Julieta 1875 delivers a mellow, earthy flavor wit' a hint o' toasted almonds and a touch o' sweetness. Perfect fer a relaxed evenin' without the heavy punch.",
+		cigar_arturo = "Arturo Fuente Gran Reserva",
+		cigar_arturo_description = "Wi' its smooth draw and well-balanced blend, the Arturo Fuente Gran Reserva gives off notes o' sweet wood and a hint o' nutmeg. Medium-bodied but rich in flavor, it’s ideal fer anyone who enjoys a classic smoke without the kick.",
+		cigar_cohiba = "Cohiba",
+		cigar_cohiba_description = "For those with refined taste, the Cohiba Robusto offers a rich and creamy smoke, blending subtle spice with hints of cedar. It's a smooth, medium-bodied cigar that speaks of sophistication without going overboard on strength.",
+
+		tobacco_leaf = "Tobacco Leaf",
+		tobacco_leaf_description = "This fresh green tobacco leaf be just startin' its journey. Over the next five days, it’ll dry out, turnin' a deep brown, perfect for rollin' cigars. Keep an eye on that transformation!",
+		cigar_homemade = "Cigar (Hand-rolled)",
+		cigar_homemade_description = "This here hand-rolled cigar delivers a rich, earthy flavor with a hint of spice. Crafted with care and precision, it’s the perfect booty for the time and effort put into every step of the process.",
+
+		crack = "Crack",
+		crack_description = "Known for its quick, intense high, this rock-like substance be the street version of cocaine that's been cooked up. It may give a euphoric rush, but beware: it's as notorious for its danger as it is for its allure. Stay cautious—it's a slippery slope from the first hit to a hard crash.",
 		cocaine_bag = "Cocaine Bag",
 		cocaine_bag_description = "Smaller pieces o' Colombian history, me hearty.",
 		cocaine_brick = "Cocaine Brick",
@@ -8022,9 +8869,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		oxy = "Oxy",
 		oxy_description = "Arr ye got some drugs? Helps with back pain, me hearty.",
 		antibiotics = "Antibiotics",
-		antibiotics_description = "Helpin' ye get rid of those infections and parasites, arr!",
-		pain_killers = "Pain Killers",
-		pain_killers_description = "It be peak sellin' time lace, I need me drugs.",
+		antibiotics_description = "These wee life-savers be givin' those scallywag parasites a taste o' Davy Jones' locker, especially when ye've had a bit too much o' that dodgy, undercooked meat. Pop one o' these, and ye'll be feelin' less like a bug buffet in no time.",
+		pain_killers = "Ibuprofen",
+		pain_killers_description = "Ibuprofen be yer trusty shipmate for fightin' off headaches, muscle aches, or that time ye overdid it at the gym. Known for reducin' pain, inflammation, and fever, it’s the small pill that packs a mighty wallop. Jus' remember, moderation be key—this ain't candy, no matter how much yer back be hurtin'.",
 		weed_seeds = "Weed Seeds",
 		weed_seeds_description = "Grows the 420, me matey.",
 		weed_1q = "Weed 1q",
@@ -8087,6 +8934,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		pet_banana_cat_description = "Yer fruity feline matey! The Banana Cat perches on yer shoulder, addin' a dose of playful charm to yer day. It be the purr-fect accessory for a whimsical touch in yer life.",
 		pet_snowman = "\"Frosty\" The Snowman",
 		pet_snowman_description = "Get frosty with yer very own shoulder snowman! This tiny, chilly matey adds a touch o' winter wonder to yer style, makin' it perfect fer snowy adventures and spreadin' frosty cheer.",
+		pet_owl = "Hooty",
+		pet_owl_description = "Hooty, yer wise and watchful matey, perches elegantly on yer shoulder. Wit' its sharp eyes and soft feathers, this enchanting owl adds a touch o' myst'ry to yer adventures. Always ready to lend a hoot of wisdom, Hooty be the perfect sidekick for any journey.",
 
 		hotwheels_mcqueen = "Lightnin' McQueen",
 		hotwheels_mcqueen_description = "Speed, I be speed. Float like a Cadillac, sting like a Beemer. KATCHOW KATCHOW KATCHOW",
@@ -8125,6 +8974,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		fentanyl = "Fentanyl",
 		fentanyl_description = "Dubbed the \"sneaky snoozer\", fentanyl be a powerful wee potion that packs a wallop. Wit' just a whisper o' this substance, ye can send even the most wide-awake into a world o' dreams. Handle wit' care, though! It's so potent that if dreams were gold, ye'd be a billionaire in one dose. Perfect for when ye need to make big problems into sleepy ones.",
+		narcan = "Narcan",
+		narcan_description = "This life-savin' antidote be yer quick response to fentanyl exposure. In the form of a swiftly administered pill, Narcan reverses the effects of fentanyl, bringin' ye back from the brink wit' remarkable speed. Always keep it handy—it be the guardian angel in yer pocket, ready to spring into action when ye need it most.",
 
 		grimace_shake = "Grimace Shake",
 		grimace_shake_description = "Crazy? I was crazed once. They put me in a room. A rubber room. A rubber room with rats. And rats make me crazed. Crazed? I was crazed once. They put me in a room. A rubber room. A rubber room with rats. And rats make me crazed. Crazed? I was crazed once. They put me in a room. A rubber room. A rubber room with rats. And rats make me crazed. Crazed? I was crazed once. They put me in a room. A rubber room. A rubber room with rats. And rats make me crazed. Crazed? I was crazed once.....",
@@ -8172,6 +9023,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		steel_filings = "Steel Filings",
 		steel_filings_description = "A collection o' small steel shavin's, produced durin' the machinin' o' various metal components. Commonly used in the makin' o' files.",
 
+		gold_ore = "Gold Doubloon",
+		gold_ore_description = "Unearth a chunk of nature's treasure with this gold doubloon! Raw and unrefined, it's yer gateway to discoverin' the glitterin' beauty hidden within the earth.",
+		gold_nugget = "Gold Nugget",
+		gold_nugget_description = "A small, gleamin' piece of fortune! This gold nugget be the refined result o' hard work and persistence, perfect for craftin' or tradin'.",
 		gold_bar = "Doubloon",
 		gold_bar_description = "undefined",
 
@@ -8191,6 +9046,20 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		steel = "Raw Steel",
 		steel_description = "undefined",
 
+		aluminium_ore = "Aluminium Doubloon",
+		aluminium_ore_description = "A bauxite-rich piece o' aluminium ore, awaitin' transformation into lightweight and versatile aluminium. Smelt it down to produce a metal perfect for craftin' everything from aircraft to beverage cans. A crucial resource for modern engineerin' and everyday convenience.",
+		iron_ore = "Iron Ore",
+		iron_ore_description = "A raw chunk o' iron ore, ready to be smelted down into strong and durable steel. This ore be the foundation o' countless tools, machines, and structures. Extract the metallic goodness and forge it into somethin' incredible.",
+
+		rusty_tank_shell = "Rusty Tank Shell",
+		rusty_tank_shell_description = "This here rusty ol' tank shell's been through more dirt 'n' grime than a redneck's pickup truck! Dug up from the bowels o' history, it be a good ol' piece o' the past, ye scurvy dog. Perfect for sittin' on the porch and spinnin' war stories with the boys!",
+		rusty_cannon_ball = "Rusty Cannon Ball",
+		rusty_cannon_ball_description = "Arr matey! Behold this ancient cannon ball, plucked from the depths of a sunken pirate ship. Rusted and weathered by the briny deep, this ol' relic carries the echoes of fierce sea battles and buried treasures. Avast, me hearties, handle with care lest ye awaken its fiery spirit!",
+		rusty_gear = "Rusty Gear",
+		rusty_gear_description = "This old gear, now rusty and worn, once played a crucial role in the machinery of yesteryears. Its teeth may be dull, but it still holds the echoes of countless rotations in its aged form.",
+		rusty_diving_helmet = "Rusty Diving Helmet",
+		rusty_diving_helmet_description = "Dis ancient divin' helmet, covered in a thick layer o' rust, once braved the depths o' th' ocean. Now, it stands as a relic o' underwater exploration, echoin' tales o' sunken treasures an' maritime adventures.",
+
 		purified_aluminium = "Purified Aluminum",
 		purified_aluminium_description = "undefined",
 		tempered_glass = "Tempered Glass",
@@ -8202,10 +9071,16 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		refined_steel = "Refined Steel",
 		refined_steel_description = "undefined",
 
-		power_saw = "Power Saw",
-		power_saw_description = "Used fer sawin' things off o' other things.",
+		power_saw = "Sawzall",
+		power_saw_description = "A versatile reciprocating saw, perfect fer quick an' dirty jobs. Whether ye be cuttin' through metal, wood, or... other materials, this tool gets it done.",
 		steel_file = "Steel File",
 		steel_file_description = "Used fer filin' things. Not yer taxes though.",
+		catalytic_converter = "Catalytic Converter",
+		catalytic_converter_description = "Got a knack fer nighttime ship pranks? This shiny hunk o' metal be yer ticket to quick loot, just don’t let the constables catch ye swiping it from parked ships.",
+		car_brakes = "Brakes",
+		car_brakes_description = "Precision stopping power right at yer fingertips! These high-performance ship brakes ensure ye can halt on a coin. Perfect fer any mechanic or DIY ship enthusiast.",
+		car_radiator = "Radiator",
+		car_radiator_description = "Keep yer engine cool and running smoothly with this top-notch ship radiator. Essential fer preventin' overheating and keepin' yer ride in peak condition.",
 
 		thermite = "Tharmit",
 		thermite_description = "Arrrr! 'ighly volatile powder, don't sniff it, matey!",
@@ -8236,6 +9111,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		shotgun_ammo = "Shotgun Ammo",
 		shotgun_ammo_description = "People think there's gunpowder in these! Clowns... they're filled with love and joy.",
 
+		potassium_nitrate = "Potassium Nitrate",
+		potassium_nitrate_description = "Dis white crystalline powder be a key ingredient in de recipe fer gunpowder. Found in nature an' often used in fertilizers, it packs a punch when mixed wit' sulfur an' charcoal. Handle wit' care, an' remember, no sniffin'!",
+		sulfur = "Sulfur",
+		sulfur_description = "Dis yellow powder be de secret sauce fer making gunpowder an' other explosive goodies. Just a sprinkle of dis stuff an' ye be halfway to a fireworks show! Often found lurking in catalytic converters, but don't get caught scavengin'!",
 		gunpowder = "Gunpowder",
 		gunpowder_description = "A powder used fer makin' bullets.",
 		projectile = "Projectile",
@@ -8271,8 +9150,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		zombie_pill = "Zombie Pill",
 		zombie_pill_description = "A strange pill that does even stranger things... Swallow at yer own risk, me hearty. Perhaps havin' a gun on ye to protect from violent dreams would be wise.",
 
-		acid = "Acid",
-		acid_description = "Makes ye high permanently. There be no escapin' it, ye scallywag.",
+		acid = "Sour (LSD)",
+		acid_description = "Dis vivid tab, often called \"Sour\", be yer ticket to a technicolor journey through the mind's eye. Renowned fer transformin' the mundane into the magical, it offers a kaleidoscope of thoughts and sensations that dance to the tune of the universe. Not just a drop in the bucket, each piece be a splash in the psychedelic pool of perception. Dive in, and let the waves of creativity and insight wash over you. It makes ye high permanently, there's no escapin' it.",
 
 		rose = "Rose",
 		rose_description = "undefined",
@@ -8297,6 +9176,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		scratch_ticket_ching_description = "Immerse yerself in the electric thrill o' potential wealth. Fer just $100, this vibrant ticket offers the electrifyin' chance to win up to $210,000. It's not just a game, it's a spectacle o' fortune!",
 		scratch_ticket_carnival = "Scratch-Off (Carnival)",
 		scratch_ticket_carnival_description = "Arr, step aboard an' join the carnival o' chance! Fer just $100, ye could win up t' $210,000. The carnival be in town, an' the grand prize be waitin' fer ye!",
+		scratch_ticket_vu = "Scratch-Arr (Vanilla Unicorn)",
+		scratch_ticket_vu_description = "Wenches and grog.",
+		scratch_ticket_beaver = "Scratch-Arr (Los Santos)",
+		scratch_ticket_beaver_description = "Keeeep on scratchin!",
+		scratch_ticket_minecraft = "Scratch-Arr (Minecraft)",
+		scratch_ticket_minecraft_description = "Creeper...... aaaaaawww maaaaaan",
 
 		avocado = "Avocado, matey",
 		avocado_description = "Small green bulbus object, would be great to make a dip out of. Avast, don't let it go to waste!",
@@ -8383,11 +9268,26 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		jail_card = "Jail Card",
 		jail_card_description = "Ye can escape from jail with this here card, me hearty!",
 
+		twitter_verification = "Twitter Letter O' Marque",
+		twitter_verification_description = "Usin' this piece will make ye verified on Twitter.",
+
 		vape = "Geek Barrr",
 		vape_description = "Be ye tryin' to look cool? Arr ye tired o' bein' a coward? Take a hit bwo!",
+		dab_pen = "Feather Stick",
+		dab_pen_description = "Arrr, be this Penjamin? Hits like a mighty vessel, matey. Three solid blinks, and ye be gone. Once it flashes, it be game over. No refills, just ride the high while ye can.",
 
 		train_pass = "Sail Pass",
 		train_pass_description = "When used, ye shall receive 3x instant passes in the queue.",
+		train_pass_appreciated_tier = "Appreciated Tier",
+		train_pass_appreciated_tier_description = "Can be used for 7 days of Appreciated Tier. It can not be upgraded using OP Points.",
+		train_pass_respected_tier = "Respected Tier",
+		train_pass_respected_tier_description = "Can be used for 7 days of Respected Tier. It can not be upgraded using OP Points.",
+		train_pass_heroic_tier = "Heroic Tier",
+		train_pass_heroic_tier_description = "Can be used fer 7 days o' Heroic Tier. It can not be upgraded usin' OP Points.",
+		train_pass_legendary_tier = "Legendary Tier",
+		train_pass_legendary_tier_description = "Can be used fer 7 days o' Legendary Tier. It can not be upgraded usin' OP Points.",
+		train_pass_god_tier = "God Tier",
+		train_pass_god_tier_description = "Can be used fer 7 days o' God Tier. It can not be upgraded usin' OP Points.",
 
 		xbox_controller = "XBOX Pirate Hook",
 		xbox_controller_description = "Looks a little wet... Arrr!",
@@ -8401,6 +9301,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		ammonia = "Ammonia",
 		ammonia_description = "Mix with bleach fer a magical surprise.",
 
+		baking_soda = "Bakin' Soda",
+		baking_soda_description = "Dis versatile white powder ain't just fer makin' yer cakes rise t' perfection. From cleanin' t' science experiments, it be a household hero. Jus' remember, it's not fer all kinds o' 'bakin'—wink, wink!",
+
 		lithium_batteries = "Lithium Batteries",
 		lithium_batteries_description = "Not allowed on commercial airrrcraft, unless ye wanna go boom.",
 
@@ -8409,6 +9312,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		meth_table = "Meth Table",
 		meth_table_description = "Arrr, a humorous breaking bad reference about cookin' meth.",
+
+		glass_pipe = "Glass Pipe",
+		glass_pipe_description = "Arrr, this pipe, matey, it's like, whoa! Jus' pack it, light it, an' BAM, ye be on Mars, bro! Like, shiny an' glassy, careful though, it be fragile, like me last brain cell. The colors, matey, the COLORS! Hold it tight, don’t let it slip, an' ye be, like, king of the cosmos or something.",
 
 		campfire = "Campfire",
 		campfire_description = "undefined",
@@ -8482,6 +9388,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		pedestrian_barrier_description = "Great t' have unless it’s a Travis Scott concert...",
 		wheel_clamp = "Wheel Clamp",
 		wheel_clamp_description = "No getaway ships here! Th' Wheel Clamp means business, securin' vessels firmly in place an' puttin' an end to unauthorized movement. This heavy-duty contraption be a silent enforcer, ensurin' that parkin' rules be respected an' followed.",
+		old_rug = "Auld Rug",
+		old_rug_description = "Lay down this comfy rug for yer next outdoor hangout an' keep things cozy! It’s perfect fer loungin' in the grass without gettin' those pesky green stains on yer pants. Spread it out, kick back, an' enjoy yer surroundings in style an' comfort.",
 
 		bandit_1 = "Scallywag 1",
 		bandit_1_description = "undefined",
@@ -8508,9 +9416,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		claymore_description = "undefined",
 
 		tv_stand = "TV Stand",
-		tv_stand_description = "Use this t' prop a TV up anywhere ye want.",
+		tv_stand_description = "Upgrade yer binge-watchin' setup with this stylish TV Stand. It keeps yer TV at the perfect eye level an' has space fer all yer random gadgets. It’s like the throne fer yer screen.",
+		big_tv = "Yuge TV",
+		big_tv_description = "Arrr, behold the Yuge TV! Perfect fer those epic movie nights or backyard parties, this colossal screen stands as tall as ye and turns any space into an instant outdoor cinema. Get ready to wow yer mateys with the ultimate viewing experience!",
 		tv_remote = "TV Remote",
-		tv_remote_description = "Universal Remote (quantum batteries not included).",
+		tv_remote_description = "The ultimate tool for the lazy pro, this TV Remote lets ye rule yer entertainment domain without liftin' more than a finger. Change channels, crank up the volume, and flip through yer inputs like a boss. It's yer ticket to couch-potato paradise!",
 
 		magic_ball = "Magic 8-Ball",
 		magic_ball_description = "Ask it a question, shake it, an' turn it over. The answer to yer question magically appears inside the window! It be so easy, ye won't believe it!",
@@ -8566,14 +9476,25 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		cream_cookie_description = "Creamy, just how ye like it. Ahoy!",
 		cheesecake = "Cheesecake",
 		cheesecake_description = "Nay t' be confused wi' a cake made o' cheese.",
-		chocolate_cake = "Chocolate Cake",
-		chocolate_cake_description = "Delectable cake made from tha finest cocoa beans.",
 		cupcake = "Cupcake",
 		cupcake_description = "A fluffy cake filled topped wi' magical unicorn cream.",
 		pink_lemonade = "Pink Lemonade",
 		pink_lemonade_description = "Totally not jus' regular lemonade dyed pink so we can charge ye twice as much...",
 		iced_latte = "Iced Grog",
 		iced_latte_description = "A refreshing iced grog, perfect fer a hot day.",
+
+		berry_cake = "Berry Cake",
+		berry_cake_description = "A delightful Berry Cake, bursting with fresh berries and layers of sweet berry jam. This cake be the perfect treat for berry lovers, offerin' a harmonious blend of tangy and sweet flavors in every bite.",
+		lemon_cake = "Lemon Cake",
+		lemon_cake_description = "A zesty Lemon Cake with layers of lemon-infused sponge and creamy lemon frostin'. This cake be a citrus lover's dream, offerin' a refreshin' and tangy flavor that brightens any day.",
+		chocolate_cake = "Chocolate Cake",
+		chocolate_cake_description = "An indulgent Chocolate Cake with rich, moist layers of chocolate sponge and creamy chocolate frostin'. This cake be a chocolate lover's paradise, offerin' deep, rich flavors that satisfy every sweet tooth.",
+		berry_cake_slice = "Berry Cake Slice",
+		berry_cake_slice_description = "Indulge in a slice o' Berry Cake, where the freshness o' berries meets the sweetness o' jam. Each bite be a perfect balance o' tangy and sweet, makin' it a delightful treat.",
+		lemon_cake_slice = "Lemon Cake Slice",
+		lemon_cake_slice_description = "Enjoy a slice o' Lemon Cake, featurin' a zesty sponge and creamy lemon frostin'. Each bite be a burst o' citrusy goodness that refreshes yer palate.",
+		chocolate_cake_slice = "Chocolate Cake Slice",
+		chocolate_cake_slice_description = "Savor a slice of Chocolate Cake, where the rich chocolate sponge meets velvety chocolate frosting. Each bite is a decadent treat that melts in yer mouth.",
 
 		irish_coffee = "Irish Coffee",
 		irish_coffee_description = "Freshly made coffee wi' a bit o' original irish whiskey in it.",
@@ -8646,6 +9567,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		salt_description = "A pinch o' salt can transform any dish, enhancin' flavors and addin' depth to yer culinary creations.",
 		pickles = "Pickles",
 		pickles_description = "A fine jar o' tangy, crunchy pickles, perfect fer snacking, sandwiches, and addin' a zesty kick to yer meals.",
+		pickle = "Pickle",
+		pickle_description = "A fresh, juicy, and crunchy pickle straight from the jar. Perfect for a tangy snack or to complement yer meal.",
+		pickle_juice = "Pickle Juice",
+		pickle_juice_description = "Refreshing and tangy, this pickle juice be the zesty liquid gold left behind when ye reach for a pickle. Perfect for addin' a punch of flavor to yer snacks or even enjoyin' on its own for a briny treat!",
 		dark_chocolate = "Dark Chocolate",
 		dark_chocolate_description = "A rich an' decadent treat, dark chocolate be perfect fer indulgin' yer sweet tooth an' savorin' the deep, complex flavors o' cocoa.",
 		beans = "Beans",
@@ -8682,8 +9607,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		popcorn = "Popcorn",
 		popcorn_description = "A booty of popcorn, perfect fer movie night, arrr.",
 
-		rice = "Rice",
-		rice_description = "It's plump, fluffy grains, me hearty.",
+		uncooked_rice = "Uncooked Rice",
+		uncooked_rice_description = "Dis staple grain, uncooked rice, be de blank canvas of countless culinary masterpieces. Raw and ready fer transformation, it promises to absorb flavors and enhance any dish, from robust risottos to delicate sushi rolls.",
+		rice = "Cooked Rice",
+		rice_description = "Fluffy and tender, dis cooked rice be a versatile base ready to pair wit any meal. Perfectly steamed to capture its subtle, nutty essence, it’s de comforting cornerstone of dishes around de world, adding both substance and texture to yer dining experience.",
 		nori = "Nori",
 		nori_description = "This be seaweed but fancy, ye landlubber.",
 		soy_sauce = "Soy Sauce",
@@ -8696,6 +9623,35 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		coconut_description = "Sweet n' creamy, coconut enhances desserts, curries, n' smoothies. Dab.",
 		sugar = "Sugar",
 		sugar_description = "It be cocaine but not illegal and gives ye diabetes.",
+		chili = "Chili Peppers",
+		chili_description = "These fiery wee peppers pack a punch! Whether ye be addin' a bit of zing to yer salsa or turnin' up the heat in yer favorite dish, these vibrant chilis be yer go-to fer a spicy kick. Handle wit' care unless ye be wantin' yer fingers to tingle and yer taste buds to dance!",
+		fish_filets = "Fish Filets",
+		fish_filets_description = "These expertly sliced fish fillets be the foundation of gourmet creations, particularly perfect fer craftin' exquisite sushi. Fresh from the catch, each fillet be cut wit' precision to ensure the ideal texture and flavor, makin' 'em a must-have fer any sushi connoisseur's galley. Dive into culinary artistry wit' these pristine pieces of the ocean's bounty.",
+		sushi = "Sushi",
+		sushi_description = "Ahoy me hearties, this sushi maki be expertly crafted, featurin' fresh fish fillets, perfectly steamed rice, and crisp nori. Each roll be a harmonious blend o' flavors and textures, offerin' a delightful taste o' traditional Japanese cuisine in every bite. Enjoy the refined simplicity o' this exquisite sushi.",
+		nigiri = "Nigiri",
+		nigiri_description = "Arrr, this elegant nigiri sushi showcases thinly sliced fish atop a bed o' subtly seasoned rice. Each piece be a testament to simplicity and flavor, carefully balanced to highlight the fresh, delicate taste o' the seafood. A classic choice for sushi aficionados, it be as visually appealin' as it be delicious.",
+		miso_soup = "Miso Grub",
+		miso_soup_description = "This heartwarming bowl o' miso grub be a warm, savory blend o' rich miso broth, silken tofu, and freshly chopped spring onions. Each spoonful offers a soothing taste and a gentle umami flavor, makin' it a perfect starter or a light meal on its own. Enjoy the delicate balance o' traditional ingredients that nourish the soul.",
+		spring_onions = "Spring Onions",
+		spring_onions_description = "Crisp and vibrant, these spring onions bring a fresh burst of flavor to any dish. Known for their mild bite and versatility, they can be used whole for grillin' or sautéin', or chopped to add a subtle sharpness to salads and soups.",
+		spring_onions_cut = "Cut Spring Onions be cut",
+		spring_onions_cut_description = "These freshly cut spring onions be all set to enhance yer culinary creations. Perfect fer garnishin' or blendin' into dishes, their bright, peppery notes add both flavor and a pop o' color, makin' every feast both tastier and more visually appealin'.",
+		tofu = "Tofu",
+		tofu_description = "This versatile block o' tofu be a staple fer healthy and creative cookin'. Made from soybeans, it's a mild-flavored favorite that absorbs flavors wonderfully, makin' it perfect fer everything from stir-fries to smoothies.",
+		tofu_cubes = "Tofu Cubes",
+		tofu_cubes_description = "Pre-cut into perfect cubes, this tofu be ready to dive into yer next culinary adventure. Ideal for quick meals, these tofu cubes can be tossed into soups, salads, or hot pans, addin' a nutritious boost and a delightful texture to yer dishes.",
+		uncooked_ramen = "Uncooked Ramen",
+		uncooked_ramen_description = "Yer DIY ramen kit, ready for ye to transform into a steaming bowl of deliciousness. Just add hot water and yer favorite toppings, and ye'll have a quick and tasty meal in no time!",
+		ramen = "Scurvy soup",
+		ramen_description = "A bowl o' pure comfort, packed wit' noodles, savory grog, and all yer favorite fixin's. Whether ye be slurpin' at home or on the go, this scurvy soup be a hug in a bowl.",
+		spicy_ramen = "Spicy Scurvy soup",
+		spicy_ramen_description = "For those who like to live on the edge, Spicy Scurvy soup brings the fire! Dive into a fiery grog wit' noodles and spicy fixin's that'll make yer taste buds dance. Can ye handle it?",
+		bento_box = "Bento Chest",
+		bento_box_description = "A delightful mix o' flavors and textures, this Bento Chest be yer go-to fer a balanced grub. Packed wit' a variety o' goodies, it's like a picnic in a chest. Perfect fer lunch or a light dinner!",
+
+		asahi_beer = "Asahi Grog",
+		asahi_beer_description = "Enjoy the crisp, clean taste o' Asahi Grog, a premium Japanese lager known fer its smooth an' refreshin' flavor. This golden brew be expertly crafted to elevate any occasion, makin' it a perfect choice fer both casual swigs an' fine dinin'.",
 
 		golf_ball = "Golf Ball",
 		golf_ball_description = "Used fer golfing.",
@@ -8710,17 +9666,27 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		gas_mask_description = "Will save ye from every kind of gas, even granny's firebrand.",
 		nv_goggles = "Night Spyglasses",
 		nv_goggles_description = "Will help ye see in the dark of the night.",
+		vision_goggles = "Visionary Pro Spy Glasses",
+		vision_goggles_description = "Step into the future wit' Visionary Pro Spy Glasses, the ultimate in cuttin'-edge eyewear. Combining sleek design wit' advanced functionality, these spy glasses offer an immersive experience like no other. Put 'em on an' transform yer view o' the world!",
+		skate_helmet = "Skate Buccaneer Hat",
+		skate_helmet_description = "Be keepin' yer noggin safe while lookin' rad with this trusty skate buccaneer hat. Perfect for avoidin' unwanted head bumps and showin' off yer style, it's a must-have for every shredder. Safety first, stoke second!",
 
 		green_rolls = "Green Rolls",
 		green_rolls_description = "For those o' us who need more than the average amount.",
 		rolling_paper = "Rollin' Paper",
 		rolling_paper_description = "That quick paper to roll up and smoke yer pain away.",
+		bong = "Bong",
+		bong_description = "Elevate yer smokin' game with this high-quality glass bong. Designed for smooth, cool hits, it filters smoke through water for a cleaner, more enjoyable experience. Perfect for solo sessions or sharin' with hearties, just fill, pack, light, and enjoy!",
+		bong_water = "Bong Juice",
+		bong_water_description = "\"Can i swig yer bong juice?\"",
 
 		arena_pill = "Arena Pill",
 		arena_pill_description = "A strange pill that does even stranger things... Swallow at yer own risk. Perhaps havin' a pistol on ye to protect from violent dreams would be wise.",
 
 		shovel = "Shovel Arrr!",
 		shovel_description = "A sturdy diggin' tool fer unearthing hidden riches and uncovering secrets in any environment, makin' it a valuable booty fer avid treasure hunters.",
+		pickaxe = "Pickaxe",
+		pickaxe_description = "This trusty pickaxe will help ye demolish any blocks ye’ve placed, clearin' the way for new creations. Durable and efficient, it be the go-to weapon for any builder ready to reshape the world.",
 
 		electric_fuse = "Electric Fuse",
 		electric_fuse_description = "Th' Electric Fuse be a required item fer heist rooms. It must be placed in th' fuse box in order to power th' keycard lock.",
@@ -9183,8 +10149,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		weapon_addon_mk18 = "MK18",
 		weapon_addon_mk18_description = "\"Stay strapped or get clapped\" - George Washington (Probably)",
 
-		weapon_addon_glock = "Glock 19X",
-		weapon_addon_glock_description = "Thar be no pistol more beloved by pirates worldwide.",
+		weapon_addon_glock = "Glock 19",
+		weapon_addon_glock_description = "This compact and reliable Glock 19 proudly flies a Jolly Roger on the slide, because nothin' says freedom quite like skull and crossbones and 9mm. Perfect for buccaneers who like their firearms as bold as their love for the sea.",
 
 		weapon_addon_colt = "Colt 1851 Navy",
 		weapon_addon_colt_description = "The original revolver, the one that started it all.",
@@ -9223,7 +10189,16 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		weapon_addon_jericho_description = "Th' Jericho 941 stands out fer its reliability, precision, an' ergonomic design, offerin' shooters a superior experience in both performance an' comfort.",
 
 		weapon_addon_fn509 = "FN-509",
-		weapon_addon_fn509_description = "The FN-509 be a masterclass in balance an' accuracy, equipped wit' a 15-round capacity t' ensure reliability an' precision in every shot. A trusty companion fer defense an' duty."
+		weapon_addon_fn509_description = "The FN-509 be a masterclass in balance an' accuracy, equipped wit' a 15-round capacity t' ensure reliability an' precision in every shot. A trusty companion fer defense an' duty.",
+
+		weapon_addon_garand = "M1 Garand",
+		weapon_addon_garand_description = "Ahoy thar! Meet th' M1 Garand, th' rifle that practically won World War II single-handedly (or so it claims at every veteran's reunion). This classic piece o' history comes wit' a distinct \"ping\" sound that announces t' everyone—matey or foe—that ye’ve just run out o' ammo. Perfect fer those who appreciate a little dramatic flair wit' their firepower, this trusty companion be as reliable as yer grandpa's war stories and just as legendary.",
+
+		weapon_addon_multitool = "Multi Tool",
+		weapon_addon_multitool_description = "Jus' like th' normal multitool but without th' fancy stuff.",
+
+		weapon_addon_ar15 = "AR-15",
+		weapon_addon_ar15_description = "Meet th' AR-15, th' dependable underdog o' rifles. It's like th' carbinerifle's quirky cousin—same guts, different flavor. Perfect fer when ye want t' mix things up without gettin' too fancy. Reliable, accurate, an' just th' right amount o' \"pew pew\" fer any low-key situation."
 	},
 
 	invisibility = {
@@ -9277,12 +10252,15 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		hotwiring_vehicle = "Hotwirin' Vessel",
 		lockpick_broke = "Lockpick Be Shiverin'",
 		failed_hotwire = "Ye failed to hotwire the vessel, maybe try using some better tools, matey?",
+		no_meth_bag = "Ye don't 'ave a meth bag.",
+		no_weed_1q = "Ye don't have 1q of weed, arrr.",
 		unpacking_green_rolls = "Unpackin' Green Rolls",
 		you_do_not_have_enough_rolling_paper = "Ye do not have enough Rollin' Paper.",
 		rolling_joint = "Rollin' Joint",
 		rolling_joints = "Rollin' Joints",
 		changing_license_plate = "Changin' License Plate",
 		equipping_parachute = "Equippin' ${itemName}",
+		no_lighter = "Ye don't have a lighter, me heartie.",
 		lockpicking_vehicle = "Lockpickin' Vessel",
 		printout_title = "${type} Printout",
 		printout_text = "*${text}*",
@@ -9298,6 +10276,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		drank_bleach_death = "Bleach Poisonin' matey!",
 		finished_joint = "Ye finished yer joint.",
 		cant_place_here = "Ye can't place this here.",
+		failed_slice_pizza = "Failed to slice pizza, shiver me timbers.",
+		failed_slice_cake = "Failed to slice cake, ye scallywag.",
+		straw_no_drinks = "Ye have no drinks to drink with this straw, matey.",
+		failed_use_straw = "Failed to use paper straw, ahoy!",
 
 		using_cuffs = "Usin' Hookscuffs",
 		you_moved_too_fast = "Ye moved too fast, matey.",
@@ -9306,17 +10288,21 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		failed_bean_machine_delivery = "Failed to open bean machine delivery, arr!",
 		failed_kissaki_delivery = "Failed t' open kissaki meal.",
 		failed_green_wonderland_delivery = "Failed to open green wonderland bag.",
+		failed_pizza_this_delivery = "Failed to open pizza box, ye landlubber.",
 
 		burger_shot_delivery_empty = "Shiver me timbers! That burgershot meal seemed to be empty, ye scurvy dog!",
 		bean_machine_delivery_empty = "Shiver me timbers! That bean machine delivery seemed to be empty, ye scurvy dog!",
 		kissaki_delivery_empty = "That kissaki meal seemed t' be empty.",
 		green_wonderland_delivery_empty = "Arrr! That green wonderland bag seemed to be empty.",
+		pizza_this_delivery_empty = "That pizza box seemed to be empty, yo-ho-ho.",
 
 		logs_used_weather_spell_title = "Used Weather Spell",
 		logs_used_weather_spell_details = "${consoleName} used weather spell `${itemName}`, arr!",
 
 		you_have_used_jail_card = "Avast ye! Ye've used a 'get out of jail card'!",
 		you_are_not_in_jail = "Ye be not in jail, me hearty.",
+
+		you_are_now_verified_on_twitter = "Ye be now verified on Twitter, me hearty.",
 
 		stored_map_location = "Successfully updated the treasure map's location.",
 		failed_location_map = "Failed to update the treasure map's location.",
@@ -9364,7 +10350,18 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		recent_pots_will_show_here = "Newest bounties be showin' up here.",
 		server_id = "The ship ID ye want to plunder to...",
 		transfer_items_to_anoter_person = "Plunder items to another scallywag.",
-		cancel_bet = "Cancel Bet"
+		cancel_bet = "Cancel Bet",
+		max_bet_warning = "The maximum amount that ye can bet be $20,000 per pot, avast!",
+		maximum_bet_exceeded = "Ye have exceeded the maximum bet amount of $20,000 per pot.",
+
+		jackpot_bet_placed_logs_title = "Jackpot Bet Placed",
+		jackpot_bet_placed_logs_details = "${consoleName} placed a jackpot bet worth $${worth}.",
+
+		jackpot_won_logs_title = "Jackpot Won",
+		jackpot_won_logs_details = "${consoleName} won a jackpot worth $${worth}.",
+
+		jackpot_bet_cancelled_logs_title = "Jackpot Bet(s) Cancelled",
+		jackpot_bet_cancelled_logs_details = "${consoleName} cancelled their jackpot bet(s) worth $${worth}."
 	},
 
 	jail = {
@@ -9434,6 +10431,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		read_catalog = "Press ~g~${InteractionKey} ~w~t' read Catalog"
 	},
 
+	label_printer = {
+		image_url = "https://image.url/here.png",
+		printing = "Printing...",
+		print = "Print"
+	},
+
 	lag = {
 		fake_lag_invalid_fps = "Invalid fps, ye scurvy dog.",
 		fake_lag_clamp = "Clamping fps to be below ${fps}, ye landlubber.",
@@ -9491,8 +10494,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		something_went_wrong = "Failed to locate entity, ye scurvy dog!",
 		locate_success = "Arrr! Successfully located entity matching `${filter}` at (${x}, ${y}, ${z}) (instance = ${instance}).",
 
-		locate_entity_no_permissions = "Attempted to locate an entity without proper permissions, matey.",
-
 		locate_entity_logs_title = "Located Entity",
 		locate_entity_logs_details = "${consoleName} tried to locate entity type `${filterType}` with value `${filterValue}`."
 	},
@@ -9500,9 +10501,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	login = {
 		exit_city = "Abandon the city, mateys!",
 		press_to_exit_city = "Press ~g~${InteractionKey} ~w~to flee the city.",
-		bad_words_in_character_creation = "Attempted t' create a character wit' a possibly bad word in either th' name or backstory: \"${badWords}\"",
-		disallowed_words_in_character_name = "Attempted t' create a character wit' a possibly bad name: \"${characterName}\"",
-		disallowed_birthday_ban = "Attempted t' create a character wit' a possibly bad birthday: \"${birthday}\"",
 
 		inventory_help_text = "Press ~INPUT_REPLAY_SHOWHOTKEY~ to open ye'r inventory, me hearty!",
 
@@ -9569,11 +10567,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		copy_license = "License ID",
 		copy_license_success = "Ye've copied it!",
 		cache_assets = "Cache Assets",
-		download_assets = "Would ye like t' download and cache most o' thar server's assets? Doin' so will lead t' a few things:",
-		cache_assets_less_lag = "Potentially less lag spikes, less dropped frames an' less ping spikes during gameplay. Especially if ye're on lower-end hardware or a slower connection.",
-		cache_assets_crashes = "It may crash yer game during thar process. If this happens, use th' 'slow download' option instead.",
-		cache_assets_restart = "Arrr completion, we reckon ye restart yer game as it may cause lag fer the rest o' this session, savvy?",
-		cache_assets_disk = "This will take up a bit o' disk storage, so make sure there's available space. After an update it may also be worth to clear yer old cache to free up space, arrr!",
+		download_assets = "Arr matey fancy downloadin' and cachin' most o' th' ship's gear? Here be th' benefits an' considerations:",
+		cache_assets_performance = "Enjoy better FPS an' fewer ping spikes durin' gameplay, especially if ye have lower-end hardware or a slower connection.",
+		cache_assets_crashes = "Th' game may crash durin' th' process. If this happens, use th' 'slow download' option instead.",
+		cache_assets_restart = "After completin' th' download, restart yer game t' prevent lag durin' this session.",
+		cache_assets_disk = "Dis will use some disk space, so make sure ye have enough available.",
+		cache_assets_no_repeat = "Ye won't need to do this fer every update, as only a few files will change.",
 		vehicles = "Ships",
 		objects = "Objects",
 		peds = "Scurvy Dogs",
@@ -9617,9 +10616,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		date_not_future = "Yer date o' birth can not be in the future, matey.",
 		date_too_old = "Yer date o' birth can not be older than 100 years, me heartie.",
 
-		bad_words = "There be some bad words in yer character name or backstory.",
-		disallowed_name = "There be some disallowed words in yer character name, me hearty.",
-		disallowed_birthday = "Your date o' birth be not allowed, ye landlubber.",
+		bad_words = "Yer name or backstory contains disallowed words. Circumventing the filter will result in a ban. All new characters be reviewed by crew",
+		disallowed_name = "Yer name contains disallowed words. Circumventing the filter will result in a ban. All new characters be reviewed by crew.",
+		disallowed_birthday = "Yer date o' birth be not allowed. Circumventing the filter will result in a ban. All new characters be reviewed by crew.",
 		numbers_not_allowed = "Numbers be not allowed in yer character name, avast!",
 		something_went_wrong = "Shiver me timbers! Somethin' went wrong while tryin' to create yer character.",
 		character_slot_occupied = "This character slot be already occupied, ye scallywag.",
@@ -9696,7 +10695,29 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		confirm_pledge_upgrade_text = "emote",
 		upgrading_pledge = "Play an emote.",
 
-		exiting_login_ui = "Exiting (Login UI)"
+		medal = "Medal",
+		claim_points = "Claim Booty (${claimablePoints})",
+		medal_what_is_this_text_part_1 = "By gettin' views and likes on yer Medal clips, ye can earn OP Doubloons! Ye get one doubloon per 2 clips, one doubloon per 150 views and one doubloon per 10 likes.",
+		account_name = "Account Name",
+		connected_account = "Connected Account",
+		medal_stats = "Medal Stats",
+		clips = "Clips",
+		views = "Views",
+		likes = "Likes",
+		points_earned = "Doubloons Earned",
+		claimable_points = "Claimable Doubloons",
+		launch_medal_and_click_refresh = "Launch Medal and click refresh.",
+
+		referrals = "Buccaneers",
+		referrals_title = "Earn Booty Points by Inviting Shipmates",
+		referrals_what_is_this_text_part_1 = "Summon ye shipmates to join the ship and start earning Booty Points together! Once they join, be sure to make 'em enter yer License ID below to mark ye as their referrer.",
+		referrals_what_is_this_text_part_2 = "When yer mate reaches 12 hours of plunderin' time, both of ye will receive 25 Booty Points each. Remember, they can only mark ye as their referrer in the first 24 hours of their voyage.",
+		referrals_what_is_this_text_part_3 = "Dis be a feature that uses overall framework playtime, as it be shared across all OP-FW servers.",
+		your_framework_playtime = "Yer framework playtime:",
+		license_id = "License ID",
+		set_referrer = "Set Referrer",
+		your_referrer = "Yer Referrer:",
+		your_referees = "Yer Referees:"
 	},
 
 	logs = {
@@ -9714,7 +10735,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		lottery_about_to_roll = "Arrr! A winner will be drawn in 5 minutes for today's lottery. The total booty be currently at $${totalAmount} where ye have put in $${betAmount}. Yer chance of winning be ${odds}%.",
 		current_lottery_pot = "The total booty be currently at $${totalAmount} where ye have put in $${betAmount}. Yer chance of winning be ${odds}%.",
 		drew_a_lottery_winner = "Ahoy! A scallywag has been drawn as the winner of the lottery!",
-		roll_lottery_no_permission = "Avast! Ye be not havin' permission to roll the lottery, ye scurvy dog!",
 		winner_has_been_picked = "${fullName} has plundered the lottery booty of $${totalAmount}! They bet $${betAmount} and their chance of winnin' was ${odds}%.",
 		claimed_lottery_winnings = "Arr! Claimed all o' the lottery booty!",
 		no_lottery_winnings = "Ye do not have any unclaimed booty from th' lottery.",
@@ -9733,6 +10753,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		lucky_wheel_is_occupied = "Arrr! The Lucky Wheel be currently occupied. Wait yer turn, matey!",
 		not_enough_op_points = "Ye need ${cost} Pieces o' Eight to spin the Lucky Wheel. Ye have ${points} Pieces o' Eight.",
 		used_op_points = "Ye used ${cost} Pieces o' Eight. Ye now have ${points} Pieces o' Eight left.",
+		you_have_op_points = "Ye now have ${points} OP Points.",
 		casino_company_name = "The Diamond Casino & Resort",
 		vehicle_won_tweet = "Ahoy! Someone just struck gold at th' Lucky Wheel and secured th' ultra-rare ${modelDisplayName}! Who be th' fortunate winner? Head o'er now and claim yer prize, matey.",
 		vehicle_is_not_in_cdimage = "Ahoy! This vessel be not in the game files.",
@@ -9742,7 +10763,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		logs_lucky_wheel_reward_vehicle_details = "${consoleName} be spinnin' th' wheel 'n won a vessel, me hearty!",
 		logs_lucky_wheel_reward_vehicle_given_details = "${consoleName} be granted a vessel wit' th' name `${modelName}`!",
 		logs_lucky_wheel_reward_money_details = "${consoleName} has spun th' wheel 'n won $${amount}!",
-		logs_lucky_wheel_reward_chips_details = "${consoleName} 'as spun th' wheel 'n won $${amount} worth o' chips.",
+		logs_lucky_wheel_reward_points_details = "${consoleName} has spun the wheel and plundered ${amount} OP Points.",
 		logs_lucky_wheel_reward_jewelry_details = "${consoleName} has spun th' wheel 'n won jewelry wit' th' name `${itemName}`!",
 		logs_lucky_wheel_reward_item_details = "${consoleName} has spun th' wheel 'n won an item wit' th' name `${itemName}`!",
 		logs_lucky_wheel_reward_queue_priority_details = "${consoleName} has spun the wheel and won a 'Train Pass' item."
@@ -9751,7 +10772,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	magazines = {
 		issue_id = "Buccaneer #${issueId}",
 		releases_updated = "Charts updated, me hearties!",
-		no_release_changes = "There be no changes in the release, arr!"
+		no_release_changes = "There be no changes in the release, arr!",
+		magazine_issue_does_not_exist = "Thar be no magazine series called '${seriesName}' with an issue ID of #${issueId}.",
+		magazine_created = "Created scroll series '${seriesName}' wit' issue ID o' #${issueId}."
 	},
 
 	magnifying_glass = {
@@ -9773,6 +10796,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		found_item_logs_details = "${consoleName} found a ${item} on t' ground (${ground}), arr."
 	},
 
+	map = {
+		failed_toggle = "Failed t' toggle live-map.",
+		toggled_on = "Successfully toggled live-map on.",
+		toggled_off = "Successfully toggled live-map off."
+	},
+
 	mdt = {
 		mdt_title = "Mobile Sea Dog Terminal",
 		loading_reports = "Loading Reports... Yo ho ho...",
@@ -9782,6 +10811,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		title_placeholder = "Title",
 		body_placeholder = "Me report..."
+	},
+
+	medal = {
+		in_the_main_menu = "In th' mainsail menu.",
+		roleplaying_as = "Roleplaying as ${fullName}."
 	},
 
 	mechanics = {
@@ -9834,21 +10868,23 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		treat = "[${InteractionKey}] Give Treat",
 		check_up = "[${InteractionKey}] Check Up",
 
-		feed_active = "Feedin' Maxwell",
-		pet_active = "Petting Maxwell",
-		brush_active = "Brushin' Maxwell",
-		catnip_active = "Givin' Maxwell Catnip",
-		treat_active = "Givin' Maxwell a Treat",
-		check_up_active = "Checkin' up on Maxwell",
+		feed_active = "Feedin' ${name}",
+		pet_active = "Pettin' ${name}",
+		brush_active = "Brushin' ${name}",
+		catnip_active = "Givin' ${name} Catnip",
+		treat_active = "Givin' ${name} a Treat",
+		check_up_active = "Checkin' up on ${name}",
 
 		maxwell_appeared = "Maxwell has appeared near ye.",
-		maxwell_shot = "Shot Maxwell"
+		maxwell_shot = "Shot ${name}"
 	},
 
 	meth = {
 		press_to_sell_meth = "Press ~INPUT_CONTEXT~ to sell Meth, me hearties!",
 		local_not_interested = "Avast! The landlubber doesn't seem interested at the moment.",
 		selling_meth = "Selling Meth, arrr!",
+		you_are_overdosing = "Ye be overdosing.",
+		overdose = "Meth Overdose",
 
 		sold_meth_logs_title = "name",
 		sold_meth_logs_details = "Th' name o'th emote."
@@ -9858,6 +10894,13 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		active = "e"
 	},
 
+	minecraft = {
+		failed_place_block = "Failed to place th' block.",
+		failed_break_block = "Failed to break th' block.",
+		success_wipe_blocks = "Successfully wiped blocks in a ${radius}m radius.",
+		failed_wipe_blocks = "Failed to wipe blocks."
+	},
+
 	mining = {
 		drill_scan_stone = "[${InteractionKey}] Ye can drill the stone, [${SeatEjectKey}] or scan it!",
 		scan_stone = "[${SeatEjectKey}] Scan the stone, ye scallywag!",
@@ -9865,10 +10908,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		scanning_stone = "Scanning the stone, yo ho!",
 		drilling = "Arrr! We're drilling, me hearties!",
 		failed_drill_stone = "Shiver me timbers! Ye failed to drill the stone.",
-		drill_no_drops = "Avast! Ye found no gems in this stone, me matey.",
-		drill_drops = "Arrr, ye found some gems in this stone.",
+		drill_no_drops = "Ye found nothin' in this stone.",
+		drill_drops = "Ye found somethin' in this stone.",
 		used_drill = "Yer drill be broken.",
-		still_shook = "Arrr, ye be still shaken up from th' last explosion and be not findin' any gems in this stone.",
+		still_shook = "Ye be still shaken up from th' last explosion an' didn't find anythin' in this stone.",
 
 		kill_label = "Mining Explosion",
 
@@ -10008,7 +11051,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		picture_no_url = "Missing url, me hearty.",
 		picture_invalid_url = "Invalid url, has to start with https://, arrrrr.",
-		picture_no_description = "Missing description, yo ho ho!",
 		picture_failed = "Failed to create picture, walk the plank!",
 
 		auto_run_already_set_to = "Auto-run be already set to control ${controlId}, arrr.",
@@ -10019,6 +11061,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		walk_forwards_success = "Aye! Successfully toggled walkin' forwards for ${displayName}.",
 		walk_forwards_failed = "Blimey! Failed to toggle walkin' forwards for ${displayName}.",
 
+		info_paycheck = " *(Without multipliers)*",
 		info_invalid_job = "Invalid job, ye scurvy dog!",
 		info_title = "Failed to automatically generate translation.",
 		info_character = "Failed to automatically generate translation.",
@@ -10027,6 +11070,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		info_licenses = "Failed to automatically generate translation.",
 		info_licenses_none = "Failed to automatically generate translation.",
 		info_timestamp = "Failed to automatically generate translation."
+	},
+
+	model_view = {
+		invalid_model = "Invalid model."
 	},
 
 	money = {
@@ -10090,20 +11137,14 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		sign_invalid_slot = "Avast! That slot in yer inventory be invalid!",
 		signed_notepad = "Huzzah! Successfully marked a scroll in slot `${slotId}`.",
 		failed_sign_notepad = "Arrr! Failed to sign the notepad, me heartie.",
-		sign_already_signed = "Yarrr! Ye cannot sign this notepad again.",
-
-		notepad_info_missing_permissions = "Ahoy! Ye attempted to get a notepad's info without proper permissions.",
-		wipe_notepads_missing_permissions = "Shiver me timbers! Ye attempted to wipe notepads without proper permissions."
+		sign_already_signed = "Yarrr! Ye cannot sign this notepad again."
 	},
 
 	notices = {
 		message_too_long = "Blimey! The message be too long. Shorten it, ye scallywag.",
 		invalid_notice_id = "Avast! That notice id be invalid.",
 		successfully_removed_notice = "Aye, matey! We have successfully removed the notice.",
-		failed_remove_notice = "No luck, me bucko. We failed to remove the notice.",
-
-		add_notice_missing_permissions = "Arr, me hearty! The scallywag tried to add a notice without proper permissions.",
-		remove_notice_missing_permissions = "Ahoy! The bilge rat tried to remove a notice without proper permissions."
+		failed_remove_notice = "No luck, me bucko. We failed to remove the notice."
 	},
 
 	npc_watch = {
@@ -10128,9 +11169,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		orbitcam_logs_title = "Toggle'd Orbitcam",
 		orbitcam_on_logs_details = "${consoleName} toggle'd their orbitcam on.",
-		orbitcam_off_logs_details = "${consoleName} toggle'd their orbitcam off.",
-
-		orbitcam_no_permission = "Ahoy! Ye tried to toggle yer orbitcam without the proper permissions!"
+		orbitcam_off_logs_details = "${consoleName} toggle'd their orbitcam off."
 	},
 
 	overview = {
@@ -10199,7 +11238,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 			<br><br>
 			Every minute, a certain amount of staff points is distributed to all active staff members. This means that if there are 4 staff members active, each person will get 25% of the staff points that minute. The amount of staff points distributed is decided by taking the server's current player amount and dividing that by 32.
 			<br><br>
-			The staff points reset for everyone at the beginning of each week. Your eight most recent weeks will be available for display in a table below.
+			The staff points reset for everyone at the beginning of each week. Your eight most recent weeks will be available for display in a table below. Note: Staff points are stored in the balls.
 		]],
 
 		staff_points_this_week = "Dis Week",
@@ -10235,6 +11274,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		clipboard_animation = "Clipboard Animation",
 		chop_shop_sound = "Disable Chop Shop Radio Sound",
 		seatbelt_sound = "Disable Seatbelt Ding",
+		eating_noises_sound = "Disable Eating Noises",
+		detailed_prop_positioning = "Detailed Prop Positioning",
 		sound_effect_placeholder = "URL t' .oog file...",
 
 		button_save = "Save",
@@ -10346,9 +11387,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		local_ped_models_title = "Local Shipmate models",
 		animal_ped_models_title = "Creature Ped models",
 
-		bad_screen_word_title = "Cursed Screen Words",
-		bad_screen_word_about = "Arr! In 'ere every bilge rat who be caught with certain words showin' on their screen be listed. This be helpin' ya catch potential modders.",
-
 		damage_modifier_name = "Matey's Name",
 		damage_modifier_expected = "Expected",
 		damage_modifier_actual = "Actual",
@@ -10379,6 +11417,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		press_to_talk_to_jc = "Avast ye! Press ~g~${InteractionKey} ~w~ to talk to JC.",
 		tutorial_will_play_next_time = "The oxy tutorial will play next time ye start a run.",
 		prescription_pick_up = "Prescription Pick-UP: ${label}, Me hearties!",
+
+		suspicious_person_location = "${zone} by ${address}",
 
 		pick_up_the_prescriptions = "Yarr, pick up th' forged prescriptions marked on yer map.",
 		redeem_them_at_the_city = "Once ye be havin' that, ye have t' redeem 'em at th' city.",
@@ -10894,6 +11934,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		taking_too_long_3_part_1 = "Yo ho ho matey, ye be takin' way too long, ye tryna steal me job or somethin' matey?",
 
+		-- NOTE: ops looks like I originally clipped this twice or something
+		taking_too_long_4_part_1 = "Yoo, me heartie, ye be takin' way too long me heartie, be ye tryna plunder me job or somethin' me heartie?",
+
 		taking_too_long_5_part_1 = "Arrr ye think ye be funny, eh? Ye be thinkin' this be some sort of joke, matey?",
 		taking_too_long_5_part_2 = "Ahoy there! Come t' me right quick, I be beggin' ye. Let's see what happens, ye scurvy dog.",
 
@@ -10996,7 +12039,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	},
 
 	panic = {
-		press_panic_button = "Arrr! Ye got 5 ticks ta press yer panic button (X).",
+		press_panic_button = "Ye have 6 seconds to press yer panic button (X).",
 		panic_button_timeout = "Ye didn't press yer panic button in time, ye scallywag!",
 
 		panic_button_title = "[Dispatch]",
@@ -11007,7 +12050,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		panic_blip = "10-14 ${lastName}",
 
 		label_officer = "swabbie",
-		label_paramedic = "sawbones"
+		label_paramedic = "sawbones",
+		label_firefighter = "firefighter"
 	},
 
 	paper_bags = {
@@ -11050,6 +12094,9 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		no_items_to_sell = "Ye have no ${itemLabel} to sell, matey.",
 		close_menu = "Avast! Close Menu",
 
+		sell_vehicle_parts_far = "Sell Ship Parts",
+		sell_vehicle_parts_near = "[${InteractionKey}] Vend Vehicle Parts",
+
 		sell_items = "Sell ${itemLabel} to the Black Market",
 		press_to_sell_items = "[${InteractionKey}] Sell ${amount}x ${itemLabel}",
 		sold_items = "Avast! Ye have sold ${sellAmount}x ${itemLabel} for $${sellPrice}.",
@@ -11068,6 +12115,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		rps_message = "played rock paper scissors and picked ${rps}, arr!",
 		citizen_card_message = "showed a citizen card (${characterId}) ye scallywag!",
 		driver_license_message = "showed a buccaneer's permit (${characterId})",
+		press_pass_message = "showed a press parchment (${characterId})",
 		badge_message = "showed a badge (${characterId}) ye landlubber!",
 		license_message = "showed a license (${characterId}) arrrr!",
 		ped_message_logs_title = "Ped Message",
@@ -11132,19 +12180,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		ped_not_found = "Arrr! We couldn't find the player ped, me hearties."
 	},
 
-	ped_takeover = {
-		failed_reset = "Ahoy! Failed to switch back t' original sailin' mate.",
-		failed_reset_not_exist = "Yer original sailin' mate doesn't exist or be not near ye.",
-		failed_takeover = "Avast! Failed t' takeover sailin' mate.",
-		invalid_network_id = "Invalid network id, me hearty."
-	},
-
-	peds = {
-		ped_robbing_injection = "Excessive sailin' mate-robbin'! (Bypassed server-timeout, most likely using an injector t' accomplish this.)",
-		robbed_ped_logs_title = "Robbed Sailin' Mate",
-		robbed_ped_logs_details = "${consoleName} robbed a sailin' mate and received $${payout}."
-	},
-
 	pepper_spray = {
 		press_to_pepper_spray = "Press  ~INPUT_ATTACK~ to use thar Pepper Spray, matey.",
 		using_pepper_spray = "Using Pepper Spray, arrr!"
@@ -11190,11 +12225,14 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		press_water_plant = "[${InteractionKey}] Water Yarrr",
 		press_harvest_plant = "[${InteractionKey}] Harvest Yarrr",
 		press_destroy_plant = "[${SeatEjectKey}] Shovel Yarrr",
+		press_fertilize_plant = "[${CoverKey}] Fertilize",
 		watering_plant = "Watering Plant Yarrr",
 		harvesting_plant = "Harvesting Plant Yarrr",
+		fertilizing_plant = "Fertilizin' Plant",
 		destroying_plant = "Destroying Plant Yarrr",
 
 		plant_weed = "Weed Plant Yarrr",
+		plant_cabbage = "Cabbage Plant",
 
 		planted_seed_logs_title = "Planted Seed Yarrr",
 		planted_seed_logs_details = "${consoleName} planted a ${plant} (#${plantId}) on ${material} Yarrr.",
@@ -11206,6 +12244,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		ran_over_plant_logs_details = "${consoleName} ran over a plant (#${plantId}).",
 		shoveled_plant_logs_title = "Shoveled Plant",
 		shoveled_plant_logs_details = "${consoleName} shoveled (destroyed) a plant (#${plantId}).",
+		fertilized_plant_logs_title = "Fertilized Plant",
+		fertilized_plant_logs_details = "${consoleName} fertilized a plant (#${plantId}).",
 
 		total_plants = "Total Plants: ${count}",
 		nearby_plants = "Nearby Plants: ${count}"
@@ -11223,7 +12263,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		set_player_scale_to_for = "Set th' swashbuckler scale t' `${scale}` fer ${consoleName}",
 		reset_player_scale = "Reset th' swashbuckler scale.",
 		set_player_scale_to = "Set th' swashbuckler scale t' `${scale}`.",
-		set_player_scale_no_permission = "Th' swashbuckler did not have thar required permission t' set a swashbuckler's scale.",
 		player_is_already_set_to_scale = "${consoleName} be already set t' scale `${scale}`.",
 		you_are_already_set_to_scale = "Ye be already set t' scale `${scale}`.",
 		player_is_not_scaled = "${consoleName} be not scaled.",
@@ -11255,6 +12294,13 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		pole_dancing_offset = "Model '${modelName}': vector3(${x}, ${y}, ${z}), arrr."
 	},
 
+	police_calls = {
+		ped_robbing_injection = "Excessive ped-robbin'! (Bypassed server-timeout, most likely usin' an injector to accomplish this.)",
+
+		robbed_ped_logs_title = "Plundered Bloke",
+		robbed_ped_logs_details = "${consoleName} plundered a bloke and received $${payout}."
+	},
+
 	pools = {
 		pools_overflowing = "Pools Overflowing: ~r~${poolsOverflowing}, avast!"
 	},
@@ -11279,7 +12325,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		print = "Scribe",
 		printing = "Scribin'...",
 		document_title = "Me hearties cool title",
-		image_url = "https://files.catbox.moe/ttt1e4.jpg",
+		image_url = "https://image.url/here.png",
 
 		printed_logs_title = "Scribed Parchment",
 		printed_logs_details = "${consoleName} printed a `${itemName}` using `${paperType}` wit' th' portrait URL `${url}`, title: `${title}`, top-text: `${topText}` an' bottom-text: `${bottomText}`."
@@ -11326,6 +12372,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		prop_no_interior = "Ye can only place this prop outside.",
 		invalid_culling_value = "Invalid cullin' value, has to be betwixt 10m and 2,500m.",
 		invalid_model = "Invalid/Unknown model `${name}` (${hash}).",
+		cancelled_positioning = "Cancelled prop positining.",
 
 		invalid_prop_id = "Invalid prop id.",
 		prop_deleted = "Prop wit' id ${propId} was deleted.",
@@ -11343,6 +12390,13 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		placed_prop_logs_details = "${consoleName} placed a `${itemName}` at ${coords} (ID: ${propId}).",
 		spawned_prop_logs_title = "Spawned Prop",
 		spawned_prop_logs_details = "${consoleName} spawned a prop wit' model `${modelName}` at ${coords} (ID: ${propId})."
+	},
+
+	quiet_hours = {
+		received_streaming_reward = "Ye were rewarded ${amount} OP Point(s) for streaming during quiet hours. Ye now have ${points} OP Point(s).",
+
+		logs_quiet_hours_streaming_reward_reward_title = "Quiet Hours Streaming Reward",
+		logs_quiet_hours_streaming_reward_reward_points_details = "${consoleName} was rewarded ${amount} OP Point(s) for streaming during quiet hours."
 	},
 
 	radio = {
@@ -11373,8 +12427,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		radio_debug_failed = "Failed t' toggle radio debug.",
 		radio_debug_off = "Successfully toggled radio debug off.",
 		radio_debug_on = "Successfully toggled radio debug on.",
-
-		radio_debug_no_permissions = "Attempted to toggle the radio debug without proper permissions, ye landlubber.",
 
 		decrypt_frequency = "[${InteractionKey}] Decrypt Frequency",
 		decrypting_frequency = "Decrypting Frequency",
@@ -11531,9 +12583,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		riot_mode_enabled_help = "Arr, the crew be in a riotin' mood!",
 		riot_mode_disabled_help = "Riot mode be endin' now, mateys.",
 
-		add_riot_player_no_permissions = "Arrrr! Ye tried to be addin' a scallywag to the riot list without proper permissions.",
-		remove_riot_player_no_permissions = "Arrrr! Ye tried to be removin' a scallywag from the riot list without proper permissions.",
-
 		player_already_in_riot_list = "${consoleName} be already in the riotin' list, matey!",
 		player_not_in_riot_list = "Avast ye! ${consoleName} ain't on the riotin' list!",
 		added_riot_player = "The scallywag, ${consoleName}, be added to the riot list, arrr!",
@@ -11641,6 +12690,17 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		server_id_not_hidden = "Yer server id be no longer hidden."
 	},
 
+	scrapyard = {
+		press_to_scrap = "Press ~INPUT_CONTEXT~ to scrap this vessel, ya scallywag.",
+		scrapyard = "Junkyard",
+		cant_scrap_vehicle = "Arr, sorry matey, but that ship's got more red flags than a rodeo. Can't take it off yer hands!",
+		failed_scrap_vehicle = "Seems our junkyard's got the hiccups. Try scrapping yer vessel again later, matey!",
+		scrap_confirm = "Arr ye sure ye want to scrap this vessel? This will PERMANENTLY remove the ${name} from yer hold and ye will receive 12-16% of its original doubloons in cash and gold bars.",
+		scrap_success = "Arrr, we turned that clunker into treasure. Guess it be time to say goodbye anyway, matey!",
+		scrapped_vehicle_logs_title = "Scrapped Vessel",
+		scrapped_vehicle_logs_details = "${consoleName} scrapped their vessel (${modelName} #${vehicleId}) and received ${gold}x Gold Dubloon(s) and $${cash} in doubloons (${percentage}% of the original price)."
+	},
+
 	scratch_tickets = {
 		you_won = "Ye won a total of $${cash} from th' scratch ticket.",
 		you_won_nothing = "Ye didn't win anythin' from th' scratch ticket.",
@@ -11709,7 +12769,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 	scuba_gear = {
 		equipping_scuba_tank = "Equippin' Scuba Tank",
-		equipping_scuba_mask = "Equippin' Scuba Mask"
+		equipping_scuba_mask = "Equippin' Scuba Mask",
+		cant_use_in_vehicle = "Ye can't put on yer scuba gear in a vessel."
 	},
 
 	security_cameras = {
@@ -11736,7 +12797,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		la_mesa_pd = "La Mesa Pirate Station",
 		beaver_bush_ranger_station = "Beaver Bush Ranger Station",
 		cinema = "Movie Theater",
-		st_fiacre_hospital = "St. Fiacre Hospital",
 		weazel_news = "Weazel News",
 		palomino_fib_facility = "Palomino FIB Facility",
 		bank_1 = "Legion Square Bank",
@@ -11788,8 +12848,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	},
 
 	shockwaves = {
-		create_shockwave_missing_permissions = "Ahoy! Player attempted to create a shockwave but they didn't have the required permissions.",
-		push_player_missing_permissions = "Shiver me timbers! Ye tried to thrust a pirate but ye don't have the permissions.",
 		shockwave_success = "Arrr, Ye've created shockwave successfully!",
 		shockwave_failed = "Shiver me timbers! Ye failed to create shockwave.",
 
@@ -11811,6 +12869,15 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		tag_nancy = "~b~Dr. Nancy"
 	},
 
+	shopping_carts = {
+		press_to_enter = "Press ~INPUT_DETONATE~ to hop in the cart.",
+		press_to_exit = "Press ~INPUT_VEH_DUCK~ to exit the cart.",
+		press_to_push = "Press ~INPUT_CONTEXT~ to heave the cart.",
+		press_to_stop_pushing = "Press ~INPUT_VEH_DUCK~ to cease heaving the cart.",
+		failed_enter = "Failed to hop in the cart.",
+		flipping = "Flipping Cart"
+	},
+
 	shrooms = {
 		press_to_pick_up_shrooms = "Press ~INPUT_CONTEXT~ to pick up Shrooms.",
 		picking_up_shrooms = "Picking up Shrooms, arrr!",
@@ -11825,6 +12892,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		sold_shrooms_logs_details = "${consoleName} plundered 1x Shrooms for $${reward}.",
 		picked_shroom_logs_title = "Plucked Shroom",
 		picked_shroom_logs_details = "${consoleName} plucked 1x Shroom."
+	},
+
+	skateboards = {
+		failed_place = "Failed to place down the skateboard.",
+		no_skateboard_deck = "Ye don't have a skateboard to swap the deck of.",
+		swapping_deck = "Swapping Deck"
 	},
 
 	skylift = {
@@ -11887,11 +12960,15 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		paleto_bay_bus_station = "Paleto Bay Bus Station",
 
 		mission_row_police_station = "Mission Row Brig",
+		highway_police_station = "Highway PD",
+		palomino_fib_police_station = "Palomino FIB PD",
 		sandy_police_station = "Sandy Shores Brig",
 		paleto_police_station = "Port o' Paleto PD",
 		cayo_police_station = "Cayo Perico Pirate Cove",
+		prison = "Prison",
 
 		mount_zonah = "Mount Zonah",
+		rockford_fire_dep = "Rockford Fire Dept.",
 		sandy_hospital = "Sandy Shores Infirmary",
 		paleto_hospital = "Port o' Paleto Infirmary",
 		cayo_station = "Cayo Medical Scallywag Hangout",
@@ -12309,7 +13386,13 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		enter_viewer_booth_interact = "[${InteractionKey}] Enter Scallywag's Hideout",
 
 		exit_viewer_booth = "Abandon Scallywag's Hideout",
-		exit_viewer_booth_interact = "[${InteractionKey}] Abandon Scallywag's Hideout"
+		exit_viewer_booth_interact = "[${InteractionKey}] Abandon Scallywag's Hideout",
+
+		enter_phone_tower = "Enter Phone Tower",
+		enter_phone_tower_interact = "[${InteractionKey}] Enter Phone Tower",
+
+		exit_phone_tower = "Exit Phone Tower",
+		exit_phone_tower_interact = "[${InteractionKey}] Exit Phone Tower"
 	},
 
 	test_server = {
@@ -12358,7 +13441,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 	time_scale = {
 		invalid_time_scale = "Avast ye! ${timeScale} be an invalid time measurement.",
-		set_time_scale_missing_permissions = "The scallywag tried to change the time scale without the proper permissions.",
 		time_scale_set_to = "Arrr! The time scale has been set to ${timeScale}.",
 		time_scale_disabled = "Ahoy! The time scale override has been disabled.",
 		time_scale_already_set_to = "Shiver me timbers! The time scale is already set to ${timeScale}.",
@@ -12368,7 +13450,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	titanic = {
 		created_titanic = "Avast ye! Created a Titanic with the sink time of ${sinkTime} minute(s).",
 		failed_to_create_titanic = "Arrr! Failed to create Titanic.",
-		create_titanic_missing_permissions = "Ahoy there! Ye tried to create a Titanic, but ye didn't have the required permissions."
+		created_titanic_logs_title = "Created Titanic",
+		created_titanic_logs_details = "${consoleName} created a Titanic with a sink time of ${sinkTime} minute(s) at ${coords}."
 	},
 
 	top_down = {
@@ -12415,7 +13498,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		department_police_undercover = "Undercover Scallywags",
 
 		department_police_training = "PD Schoolin'",
-		department_ems_training = "EMS Schoolin'"
+		department_medical_training = "EMS Trainin'",
+		department_bcfd_training = "BCFD Trainin'"
 	},
 
 	trading_cards = {
@@ -12463,7 +13547,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 	train_pass = {
 		used_train_pass = "Successfully used 'Bilge Rat Pass' item. Ye now have ${trainPasses} train pass(es).",
-		train_passes = "Ye have ${trainPasses} train pass(es)"
+		used_train_pass_tier = "Successfully redeemed ${tierLabel}.",
+		train_passes = "Ye have ${trainPasses} train pass(es)",
+
+		non_lucky_wheel_train_pass_used_logs_title = "Non-Lucky Wheel Ship Pass Used",
+		non_lucky_wheel_train_pass_used_logs_details = "${consoleName} used a ship pass that did not sail from the Lucky Wheel."
 	},
 
 	training = {
@@ -12480,7 +13568,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		attacker = "MATEY ON ATTACK",
 		defender = "MATEY ON DEFENSE",
 		attackers_won = "Arrr! The attackers have won!",
-		defenders_won = "Shiver me timbers! The defenders be victorious!"
+		defenders_won = "Shiver me timbers! The defenders be victorious!",
+		training = "Sailin'"
 	},
 
 	traps = {
@@ -12533,7 +13622,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		no_ocean_scaler_intensity_set = "Thar be already no ocean scaler intensity set.",
 		set_ocean_scaler_to = "Set thar ocean scaler intensity to `${intensity}`.",
 		reset_ocean_scaler = "Reset thar ocean scaler intenisty.",
-		set_ocean_scaler_no_permission = "Thar swabbie did not have thar required permission to set thar ocean scaler.",
 
 		tsunami_started = "Tsunami started. It will take ${minutes} minutes to flood the map, ye scallywag.",
 		tsunami_stopped = "Arrr, the mighty tsunami be stopped."
@@ -12592,10 +13680,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 	twitter_bid = {
 		twitter_bid = "Twitter Bid, ye savvy?",
-		information_part_1 = "Want to let everyone know who's boss on Twitter? Be the biggest bidder on the verification mark, arr!",
-		information_part_2 = "Whoever pays the most amount of doubloons gets to have the blue verification mark, until another person bids a higher sum, ye landlubber.",
-		information_part_3 = "If someone outbids ye, ye do not get yer doubloons back, arr.",
-		information_part_4 = "Make sure t' put a slick quote fer scallywags t' glance at in order t' make everyone have a spite fer ye.",
+		information_part_1 = "Ready to take over on Twitter? Show the world who's the captain by becoming the top bidder for the blue verification mark!",
+		information_part_2 = "The highest bidder gets the coveted blue checkmark, but watch out — someone can outbid ye at any time. Keep yer place at the top by outbidding them back.",
+		information_part_3 = "Arrr, remember, if ye be outbid, yer doubloons or booty be gone — there be no refunds.",
+		information_part_4 = "Make sure to include a sharp parley that’ll grab attention and stir up a little envy.",
 		no_bidder_yet = "No Scallywag",
 		no_bidder_yet_quote = "Be th' first t' bid! (Quote goes here)",
 		bid_amount = "Bid Portion",
@@ -12608,9 +13696,18 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		bid_must_be_greater_than_current_bidder = "Bid must be greater than current scallywag.",
 		max_quote_length_exceeded = "Max quote length exceeded.",
 		not_enough_bank_balance = "Not enough doubloons in yer stash, matey!",
+		not_enough_points = "Not enough OP Points, me hearties.",
 
 		twitter_bid_placed_logs_title = "Twitter Bid Placed",
-		twitter_bid_placed_logs_details = "${consoleName} placed a Twitter bid of $${bidAmount} with the quote of `${bidQuote}`."
+		twitter_bid_placed_logs_details = "${consoleName} placed a Twitter bid of $${bidAmount} with the quote of `${bidQuote}`.",
+		twitter_bid_placed_points_logs_title = "Twitter Bid Placed",
+		twitter_bid_placed_points_logs_details = "${consoleName} placed a Twitter bid of ${bidAmount} OP Point(s) with the parley of `${bidQuote}`.",
+
+		in_game_cash = "In-game Loot",
+		op_points = "OP Doubloons",
+
+		cost_money = "${amount} Pieces of Eight",
+		cost_points = "${amount} Pieces of Eight Points"
 	},
 
 	vape = {
@@ -12637,7 +13734,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		stealing_vehicle = "A nearby salty sea dog was instructed to be stealin' the vessel (${distance}m).",
 		no_waypoint = "No X marks the spot set.",
 		success_drive_to = "Arrr, Successfully instructed lubber to sail to waypoint.",
-		failed_drive_to = "Arrr, Failed to instruct lubber to sail to waypoint."
+		failed_drive_to = "Arrr, Failed to instruct lubber to sail to waypoint.",
+		not_in_vehicle = "Ye be not in a vessel.",
+		success_hop_in = "Successfully instructed landlubber to hop in.",
+		failed_hop_in = "Failed to make landlubber hop in.",
+		no_free_seats = "No free seats on deck."
 	},
 
 	vending_machines = {
@@ -12691,9 +13792,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		affected_by_jammer = "Yer radio seems to be affected by a jammer or some kind.",
 
-		listening_missing_permissions = "Matey attempted t' toggle their listenin' status but they didn't have the required permissions.",
-		voice_mute_missing_permissions = "Matey attempted t' toggle another scallywag's muted status but they didn't have the required permissions.",
-
 		music_mode_logs_title = "Toggled Voice Mode",
 		music_mode_logs_details_on = "${consoleName} be changin' their voice input mode to 'music'.",
 		music_mode_logs_details_off = "${consoleName} be changin' their voice input mode to 'speech'.",
@@ -12745,11 +13843,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		strain_description = "<b>Strain:</b> <i>${strain}</i> ${emoji}"
 	},
 
-	weed_field = {
-		pick_weed = "Press ~INPUT_CONTEXT~ t' pick weed.",
-		picking_weed = "Pickin' Weed"
-	},
-
 	wizard = {
 		menu_title = "Sorcerer",
 
@@ -12798,9 +13891,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		reversing_failed = "Failed to make scallywag reverse, avast!",
 		driving_forwards_failed = "Failed to make scallywag sail forwards, ye landlubber!",
 		reversing_success = "Ahoy matey! Successfully made scallywag reverse.",
-		driving_forwards_success = "Blow me down! Successfully made scallywag sail forwards.",
-
-		vehicle_temp_action_missing_permissions = "Ye scurvy dog! Player attempted to run a ship temp action without proper permissions."
+		driving_forwards_success = "Blow me down! Successfully made scallywag sail forwards."
 	},
 
 	yoga = {
@@ -12815,15 +13906,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		looting_zombie = "Plunderin' Zombie",
 		zombie_looting_injection = "Arrrr! Excessive zombie plunderin'! (Bypassed server-timeout, most likely using an injector to accomplish this.)",
 
-		zombie_trip_limit = "Ye be feelin' too tired to continue plunderin' zombies. Maybe try again tomorrow."
+		zombie_trip_limit = "Ye be feelin' too tired to continue plunderin' zombies. Maybe try again tomorrow.",
+
+		not_able_to_loot_in_interior = "Ye be not able to loot in zombies inside interiors, arrr."
 	},
 
 	-- global/*
-	entities = {
-		in_no_ped_population_area = "Ye be in a 'no ped population area'.",
-		not_in_no_ped_population_area = "Ye be not in a 'no pirate population area'."
-	},
-
 	explosions = {
 		invalid_explosion_type = "Blastin' type `${explosionType}` be not valid, arrrr!",
 		invalid_camera_shake = "Camera shake `${cameraShake}` be not valid, matey.",
@@ -12863,8 +13951,10 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		debug_states_failed = "Blimey! I failed to debug this here entity's states.",
 		no_states = "Walk the plank! This entity has no states set.",
 		printed_states = "Avast! I've printed the states of entity ${networkId}, arrr.",
-
-		get_entity_states_missing_permissions = "Shiver me timbers! Ye tried to get the states of a specific entity without proper permissions."
+		invalid_key = "Bogus key.",
+		state_set = "Successfully set entity state, arrr.",
+		state_removed = "Successfully removed entity state, me hearties.",
+		state_set_failed = "Failed to set entity state, scallywag."
 	},
 
 	time = {
@@ -12933,7 +14023,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	-- interfaces/*
 	interface = {
 		no_interfaces_are_focused = "Ahoy! No interfaces be set as focused.",
-		interfaces_focused = "Arr! Focused Interfaces:\n${interfacesFocused}"
+		interfaces_focused = "Arr! Focused Interfaces:\n${interfacesFocused}",
+		interface_crashed = "Yarr, it seems yer interface crashed. This most likely means that ye were runnin' out o' memory. It has automatically been restarted and thin's should continue workin' as before, but if they don't, please let us know in the framework Discord guild."
 	},
 
 	-- jobs/*
@@ -12968,7 +14059,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	},
 
 	bus_driver = {
-		start_route = "Press ~INPUT_CONTEXT~ to set sail on a route",
 		failed_start_job = "Failed to set sail on a new job.",
 		next_stop = "Next Harbor",
 		bus_hq = "Bus Ship",
@@ -12982,15 +14072,25 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		not_enough_money_ticket = "Ye don't have enough doubloons for a ticket ($18).",
 		ticket_paid = "${displayName} paid for a bus ticket.",
 		paid_for_ticket = "Ye successfully paid for a bus ticket.",
+		invalid_route_name = "Missing or invalid bus route name.",
+		already_in_mission = "Ye be already in a bus mission.",
+		press_to_open_menu = "Press ~INPUT_CONTEXT~ to open the bus menu.",
+		press_to_park_bus = "Press ~INPUT_CONTEXT~ to park yer bus.",
+		start_route = "Set Sail",
+		bus_menu = "Buccaneer Menu",
+		close_menu = "Shut Ye Menu",
+		rent_bus = "Rent Ship",
+		deposit = "$${deposit} Doubloons",
 
-		east_route = "Arcade",
-		pillbox_route = "Pillbox",
-		little_seoul_route = "Little Seoul",
+		east_route = "Arcade Route",
+		pillbox_route = "Pillbox Route",
+		little_seoul_route = "Little Seoul Route",
 		sandy_route = "Sandy Desert Line",
 		paleto_route = "Great Ocean Express",
 		grapeseed_route = "Grapeseed Greenway",
 		route_68_route = "Route 68 Direct",
 		airport_route = "Port Shuttle",
+		business_route = "Business Line",
 
 		finished_job_logs_title = "Finished Ship Route",
 		finished_job_logs_details = "${consoleName} finished sailin' the `${route}` ship route and received $${payout}."
@@ -13020,8 +14120,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	},
 
 	duty = {
-		toggle_duty_status_no_permissions = "Attempted to toggle on duty status via command without proper permissions. Arrr!",
-
 		duty_status_on = "Arrr! Ye successfully went on duty.",
 		duty_status_off = "Shiver me timbers! Ye successfully went off duty.",
 		duty_status_failed = "Avast! Ye failed to toggle on duty status.",
@@ -13034,6 +14132,17 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		toggled_operator_status_on = "Avast ye, toggled operator status on.",
 		toggled_operator_status_off = "Avast ye, toggled operator status off."
+	},
+
+	emergency = {
+		no_nearby_vehicle = "No nearby vessel.",
+		no_nearby_vehicle_door = "Not near a vessel door.",
+		removing_door = "Removin' Door",
+		failed_remove_door = "Failed to remove ship door.",
+		invalid_clothing_type = "Invalid garb type.",
+		no_nearby_player = "No cuffed or downed scallywag nearby.",
+		removing_clothing = "Removin' ${type}",
+		failed_remove_clothing = "Failed to remove clothin' type."
 	},
 
 	job_center = {
@@ -13056,6 +14165,23 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		changed_job_failure = "Ahoy! Somethin' went wrong whilst tryin' to set ye job to ${jobName}.",
 		changed_job_title = "Changed Pirate Duty",
 		changed_job_details = "${consoleName} changed their duty to `${jobName}`."
+	},
+
+	jobs = {
+		job_reset_success = "Successfully reset job fer ${consoleName}.",
+		failed_job_reset = "Failed to reset job fer ${consoleName}.",
+		invalid_job_shortcut = "Invalid shortcut.",
+		job_set = "Successfully set job fer ${consoleName} to `${jobName} / ${departmentName} / ${positionName}`.",
+		job_set_fail = "Failed to set job fer ${consoleName}.",
+		failed_job_data = "Failed to get job data fer player.",
+
+		button_close = "Closest",
+		button_save = "Save yer Booty",
+
+		set_job_logs_title = "Set Sail",
+		set_job_logs_details = "${consoleName} set ${targetConsoleName} (#${characterId}) job to `${jobName}, ${departmentName}, ${positionName}`.",
+		reset_job_logs_title = "Reset Sail",
+		reset_job_logs_details = "${consoleName} reset ${targetConsoleName} (#${characterId}) job."
 	},
 
 	police = {
@@ -13153,6 +14279,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		license_weapon = "Weapons License Ahoy!",
 		license_mining = "Mining License",
 		license_driver = "Driver's Charter",
+		license_press = "Press License",
 		gave_character_license = "Gave ye ${characterName} a license fer `${licenseLabel}`.",
 		character_already_has_license = "${characterName} already be havin' a license fer `${licenseLabel}`",
 		removed_character_license = "Taken away license fer `${licenseLabel}` from ${characterName}.",
@@ -13184,6 +14311,64 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		married_logs_details = "${consoleName} updated the marriage state of ${nameA} #${cidA} and ${nameB} #${cidB} to `married`."
 	},
 
+	tasks = {
+		task_blip = "Task",
+		tasks = "${amount} Plunderin' Tasks",
+		no_tasks = "No Plunderin' Tasks",
+		press_start_task = "[${SeatEjectKey}] Begin Plunder",
+		no_active_tasks = "Nothin' to Plunder at the moment.",
+		something_went_wrong = "Somethin' went wrong.",
+		task_cancelled = "Task be cancel'd.",
+		task_completed = "Successfully completed task.",
+		task_failed_complete = "Failed to complete task.",
+
+		on_floor = "On the ${floor}.",
+		ground_floor = "Ground Deck",
+		second_floor = "Second Deck",
+		icu_floor = "Sick Bay Deck",
+		surgery_floor = "Surgery Deck",
+
+		task_make_bed = "Make the bed.",
+		task_make_bed_near = "Press ~INPUT_DETONATE~ to make the bed.",
+		task_make_bed_active = "Makin' Bed",
+
+		task_clean_toilet = "Scour the head.",
+		task_clean_toilet_near = "Press ~INPUT_DETONATE~ to scrub the head.",
+		task_clean_toilet_active = "Scrubbin' Head",
+
+		task_take_out_trash = "Throw the garbage o'erboard.",
+		task_take_out_trash_near = "Press ~INPUT_DETONATE~ to throw thar garbage overboard.",
+		task_take_out_trash_active = "Emptying Garbage Bin",
+
+		task_clean_microwave = "Polish th' microwave.",
+		task_clean_microwave_near = "Press ~INPUT_DETONATE~ to polish th' microwave.",
+		task_clean_microwave_active = "Polishing Microwave",
+
+		task_restock_pharmacy = "Replenish th' pharmacy supplies.",
+		task_restock_pharmacy_near = "Press ~INPUT_DETONATE~ to restock the pharmacy.",
+		task_restock_pharmacy_active = "Restockin' Pharmacy",
+
+		task_restock_vending_machine = "Restock the vending machine.",
+		task_restock_vending_machine_near = "Press ~INPUT_DETONATE~ to restock the vending machine.",
+		task_restock_vending_machine_active = "Restockin' Vending Machine",
+
+		task_drthompson_lollipop = "Bring Dr. Thompson a lollipop.",
+		task_drthompson_lollipop_near = "Press ~INPUT_DETONATE~ to give Dr. Thompson the lollipop.",
+		task_drthompson_lollipop_active = "Givin' Dr. Thompson The Lollipop",
+
+		task_nancy_backrub = "Give Nancy a backrub.",
+		task_nancy_backrub_near = "Press ~INPUT_DETONATE~ to give Nancy a backrub.",
+		task_nancy_backrub_active = "Givin' Nancy A Backrub",
+
+		task_do_laundry = "Do the laundry.",
+		task_do_laundry_near = "Press ~INPUT_DETONATE~ to do the laundry.",
+		task_do_laundry_active = "Washin' Used Sheets",
+
+		task_disinfect_table = "Disinfect the operatin' table.",
+		task_disinfect_table_near = "Press ~INPUT_DETONATE~ to disinfect the operatin' table.",
+		task_disinfect_table_active = "Disinfectin' Table"
+	},
+
 	tow = {
 		press_to_access_spawner = "Arrr! Press ~INPUT_CONTEXT~ to access the vessel spawner, matey.",
 		tow_vehicles = "Tow Ye Vehicles",
@@ -13201,6 +14386,14 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		toggled_messages_on = "Arrr! Toggled messages on me hearty!",
 		toggled_messages_off = "Avast ye! Toggled messages off!",
 		cannot_toggle_mechanic_messages = "Arr, ye scurvy dogs! Tow Drivers can't toggle mechanic messages off."
+	},
+
+	trucking = {
+		trailer_locked = "Bolted",
+		inspect_cargo = "[${SeatEjectKey}] Inspect Booty",
+		inspecting_cargo = "Inspectin' Booty",
+		failed_cargo = "Failed to inspect booty.",
+		cargo_result = "This trailer seems to transport ${cargo}."
 	},
 
 	weazel_news = {
@@ -13274,6 +14467,37 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		unclamped_log_details = "${consoleName} remove a wheel clamp from a vessel with plate `${plate}`. Yo ho ho!"
 	},
 
+	converters = {
+		stealing_converter = "Stealin' Catalytic Converter",
+		no_converter = "This vessel doesn't seem to have a catalytic converter.",
+		electric_vehicle = "This vessel be electric.",
+
+		stole_converter_logs_title = "Stole Catalytic Converter",
+		stole_converter_logs_details = "${consoleName} plundered a catalytic converter from a vessel."
+	},
+
+	cruise_control = {
+		cruise_control = "Sail Control / Autopilot",
+		speed_set_to_metric = "Set sail control speed to ${speed} km/h.",
+		speed_set_to_imperial = "Set sail control speed to ${speed} knots.",
+		cruise_control_set_metric = "Sail control be set to ${speed} km/h.",
+		cruise_control_set_imperial = "Sail control be set to ${speed} knots.",
+		cruise_control_reset = "Sail control speed be reset.",
+		cruise_control_disabled = "Sail control be disabled.",
+		autopilot_metric = "~g~Autopilot~s~: ${altitude}m ~c~/~s~ ${speed}km/h",
+		autopilot_imperial = "~g~Autopilot~s~: ${altitude}ft ~c~/~s~ ${speed}knots",
+		hover_metric = "~g~Hover~s~: ${altitude}m",
+		hover_imperial = "~g~Hover~s~: ${altitude}ft",
+
+		speed_limiter = "Speed Limiter",
+		speed_limiter_reset = "Speed limiter be reset, arrr.",
+		speed_limiter_to_metric = "Set speed limiter speed to ${speed}km/h.",
+		speed_limiter_to_imperial = "Set speed limiter speed to ${speed}mph.",
+		speed_limiter_set_metric = "Speed limiter has been set to ${speed}km/h.",
+		speed_limiter_set_imperial = "Speed limiter be set to ${speed} knots.",
+		speed_limiter_disabled = "Speed limiter be disabled."
+	},
+
 	damage = {
 		vehicle = "Ship-ID: ${entity}",
 		general = "General: ${value}",
@@ -13289,10 +14513,15 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 	fuel = {
 		exit_to_fuel = "Exit th' vessel to refill it.",
+		exit_to_charge = "Abandon the vessel to charge.",
 		press_to_fuel = "Press ~g~${InteractionKey} ~w~t' refill th' vessel.",
+		press_to_charge = "Press ~g~${InteractionKey} ~w~to charge the vessel.",
 		fuel_pump_text = "Fuel Cost: $${fuelCost}~n~Press ~g~${InteractionKey} ~w~to cease fueling.",
 		vehicle_text = "Fuel Level: ${fuelLevel}%",
+		fuel_pump_text_ev = "Electricity Cost: $${fuelCost}~n~Press ~g~${InteractionKey} ~w~to cease charging.",
+		vehicle_text_ev = "Battery Level: ${fuelLevel}%",
 		tank_full = "Th' cask is full.",
+		battery_full = "The battery be plump.",
 		vehicle_busy = "Th' nearby vessel be busy.",
 		purchase_jerry_can = "Press ~g~${InventoryKey} ~w~to purchase a Jerry Can, ye scurvy dog!",
 		gas_station = "Arrr! Gas Station",
@@ -13308,6 +14537,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 	gadgets = {
 		helicopter_camera_vehicle_info = "Speed: ${speed}\nModel: ${model}\nPlate: ${plate}, Matey!",
+		helicopter_camera_aircraft_info = "Speed: ${speed}\nModel: ${model}\nRegistration: ${registration}",
 		helicopter_camera_altitude = "${altitude}ft above sea level",
 		helicopter_camera_altitude_asl = "${altitude}ft above sea level",
 		helicopter_camera_locked_on = "Locked 'n",
@@ -13362,6 +14592,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		vehicle_in_the_way = "Arrr! There be a ship blockin' the spawn point.",
 		vehicle_is_out = "Yer vessel be already out!",
 		vehicle_stored = "Ye vessel has been stowed away.",
+		vehicle_stored_other = "Thar vessel has been stowed.",
 		error_storing = "Failed to store ye vessel. Be it really yers matey?",
 		no_nearby_vehicle = "No ships be found nearby.",
 		no_vehicles_to_retrieve = "Arrr matey! Ye have no vessels to retrieve.",
@@ -13393,7 +14624,8 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		state_storing = "Stowin'...",
 		state_loading = "Loadin'...",
 
-		vehicle_weight = "Weight: ${weight}",
+		vehicle_items = "${items} Booty",
+		vehicle_no_items = "No Booty",
 		no_last_garage_letter = "Arrr! Ye be havin' no Last Garage, Matey!",
 
 		purchase_vehicle = "Press ~INPUT_CONTEXT~ to access the shop, me Heartie!",
@@ -13435,7 +14667,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 	keys = {
 		no_nearby_player = "No matey found nearby.",
-		no_nearby_vehicle = "No ship in sight.",
+		no_nearby_vehicle = "No nearby ship.",
 		no_keys_for_vehicle = "Ye do not have th' keys t' this vessel.",
 		vehicle_locked = "Ship be locked",
 		vehicle_unlocked = "Ship unlocked",
@@ -13449,7 +14681,14 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		picked_up_keys = "Picked up keys for `${plate}`. Avast!",
 		hotwired_vehicle_for_player = "Avast there! ${displayName} has gotten the ship ready to sail!",
 		gave_keys_success = "Successfully handed o'er the keys to ${displayName}'s vessel.",
-		gave_keys_failure = "Failed t' give ${displayName} th' keys t' their vessel."
+		gave_keys_failure = "Failed t' give ${displayName} th' keys t' their vessel.",
+
+		no_nearby_vehicle = "No nearby ship.",
+		there_is_someone_in_the_driver_seat = "Thar be someone in the cap'n seat.",
+		the_driver_door_is_closed = "The cap'n door be closed.",
+		checking_ignition = "Scourin' Ignition",
+		ignition_tampered_with = "Ignition been meddled with.",
+		ignition_not_tampered_with = "Ignition be untouched."
 	},
 
 	modifications = {
@@ -13465,7 +14704,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 	oil = {
 		move_to_change = "Move here t' change th' vessel's oil.",
 		changing_oil = "Changin' Oil",
-		low_oil = "Yer ship needs an oil change!"
+		low_oil = "Yer ship needs an oil change!",
+		no_nearby_vehicle = "Thar be no vessel nearby, arrr.",
+		vehicle_has_no_engine = "Thar be no engine in th' closest vessel, matey.",
+		check_oil = "Sail here t' check th' oil level",
+		oil_level = "Th' vessel's oil level be at ${percentage}%, arrr.",
+		checking_oil_level = "Checkin' Oil Level"
 	},
 
 	plates = {
@@ -13480,13 +14724,14 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		vehicle_does_not_belong_to_player = "Ahoy! Ye cannot be claimin' vehicle ID `${vehicleId}` as yer own, ye scallywag!",
 		vehicle_id_does_not_exist = "Avast! Vehicle ID `${vehicleId}` be not existin'.",
 		you_have_no_character_loaded = "Blimey! Ye be not havin' a character loaded. Arr, walk th' plank ye landlubber!",
+		vehicle_plate_not_custom = "Vessel wit' ID `${vehicleId}` does not have a custom plate, arrr.",
+		confirm_reset_plate = "Be ye sure ye want t' reset th' plate o' this vessel? This action cannot be undone. Type `aye` t' confirm or `nay` t' cancel.",
+		cancelled_resetting_plate = "Cancelled resettin' plate.",
 		vehicle_plate_changed = "Changed th' plate number o' vessel wit' ID `${vehicleId}` t' `${plateNumber}`.",
 
 		you_are_not_in_a_vehicle = "Ye be not in a vessel.",
 		fake_plate_active = "Successfully generated a fake plate fer yer vessel.",
-		fake_plate_inactive = "Reset vessels plate back t' original.",
-
-		fake_plate_missing_permissions = "Player attempted t' set a fake plate via command without proper permissions."
+		fake_plate_inactive = "Reset vessels plate back t' original."
 	},
 
 	runways = {
@@ -13507,8 +14752,11 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 
 		spawner_burger_shot = "Burger Shot Delivery Ships",
 		spawner_bean_machine = "Bean Machine Delivery Ships",
+		spawner_pizza_this = "Pizza Delivery Ships",
+		spawner_kissaki_sushi = "Kissaki Delivery Ships",
 		spawner_weazel_news = "Weazel News Vessels",
 		spawner_state = "State Ships",
+		spawner_airport = "Airport Ships",
 		close_menu = "Aye, close the menu",
 		vehicle_list = "List o' Ships",
 		park_vehicle = "Anchor Ship",
@@ -13548,17 +14796,6 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		manual_gears_disabled = "Manual gearin' 'as now been disabled.",
 		manual_gears_too_fast = "Ye can only toggle manual below 30 knots, matey.",
 		hybrid_off = "Spoken-word Stand",
-		speed_limiter_set_to_metric = "Arrr! The speed limiter be set to throttle the speed at ${speed} knots.",
-		speed_limiter_set_to_imperial = "Arrr! The speed limiter be set to throttle the speed at ${speed} leagues an hour!",
-		speed_limiter_reset = "The scallywags be limitin' the speed to what the vessel was travelin' at when the toggle be switched.",
-		speed_limiter_on_metric = "Aye, the speed limiter be set to slow the vessel's speed to ${speed} knots.",
-		speed_limiter_on_imperial = "Aye, the speed limiter be set to slow the vessel's speed to ${speed} leagues an hour!",
-		speed_limiter_on_plane_metric = "Aye, the speed limit for this aircraft be set to throttle the speed to ${speed} knots and maintain an altitude of ${altitude} meters.",
-		speed_limiter_on_plane_imperial = "Arrrrrr, speed limiter be set to ${speed} nautical miles per hour and ${altitude} fathoms.",
-		speed_limiter_on_helicopter_metric = "Arrrrrr, speed limiter be set to ${altitude} meters (hover).",
-		speed_limiter_on_helicopter_imperial = "Arrrrrr, speed limiter be set to ${altitude} fathoms (hover).",
-		autopilot_metric = "~g~Autopilot~s~: ${altitude}meters ~c~/~s~ ${speed}knots",
-		autopilot_imperial = "~g~Autopilot~s~: ${altitude}fathoms ~c~/~s~ ${speed}knots",
 		you_are_cuffed = "Yarr, ye be cuffed!",
 		belt_is_on_and_vehicle_is_locked = "Yarr, yer belt be on and the vessel be locked.",
 		belt_is_on = "Yer belt be on, matey!",
@@ -13721,6 +14958,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		check_in_escorted = "Batten down the hatches! Ye be escorted!",
 		checking_in = "Reportin' fer duty",
 		doctor_notified = "Avast ye! A doctor 'as been summoned. Hold yer horses!",
+		no_free_bed_found = "No free hammock was found.",
 		leave_bed = "Press ~INPUT_CONTEXT~ to walk the plank",
 		you_have_been_charged = "Ye were charged $${cost} fer yer injuries, ye scurvy dog!",
 		beds_occupied = "All bunks be taken, ye should wait yer turn or sail off",
@@ -13777,6 +15015,7 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		cannot_respawn_currently = "Ye can't be respawnin' at th' moment",
 		hold_to_respawn = "Hoist ~b~ENTER ~w~to respawn or wait for a sawbones to arrive",
 		hold_to_respawn_secondslol = "Hoist ~b~ENTER (${seconds}) ~w~to respawn or wait for a sawbones to arrive",
+		respawn_warning = "Do not respawn if ye be still in an active roleplay scenario.",
 		passed_out = "Ye be passed out",
 		light = "Light",
 		moderate = "Moderate",
@@ -13802,13 +15041,16 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		badge_owner_unknown = "Badge Owner be unknown.",
 		citizen_card_owner = "<i>Dis citizen card belongs to <b>${fullName} (#${characterId})</b>.</i>",
 		driver_license_owner = "<i>This swabby's license belongs to <b>${fullName} (#${characterId})</b>.</i>",
+		press_pass_owner = "<i>This press pass belongs to <b>${fullName} (#${characterId})</b>.</i>",
 		has_portrait = "<i>It has a portrait, argh!</i>",
 		picture_pending = "<i>Arr, the portrait be still processing...</i>",
 		picture_selfie_owner = "<i>Dis be a portrait o' <b>${fullName}</b>.</i>",
 		bought_by = "Bought by ${buyerName} (${buyerCid}).",
 		bought_by_unknown = "The scallywag who bought dis item be unknown.",
 		cigarette_pack = "${cigarettes} booty left, ya scallywags.",
-		evidence_incomplete = "Arrr, this evidence bag be incomplete.",
+		cigarette_carton = "${packs} packs of cigarettes left.",
+		snus_pack = "${snus} snus left.",
+		evidence_incomplete = "Arr, this evidence be incomplete, and can not be reviewed.",
 		evidence_type = "Type o' Evidence",
 		processed_picked_up = "<i>Picked up by ${pickupName} and processed by ${processName}.</i>",
 		picked_up = "<i>Picked up by ${pickupName}.</i>",
@@ -13860,6 +15102,12 @@ OP.Global.Locales.Languages["meme-pirate"] = {
 		smart_watch_hover = "<i>This smart watch belongs t' <b>${name} (#${cid})</b>. It has tracked <b>${stepsWalked}</b> steps.</i>",
 		item_contains = "<b>Contains:</b> <i>${contents}</i>.",
 		item_engraving = "<b>Engrav'n:</b> <i>${message}</i>.",
-		evidence_incomplete = "Arrr, this evidence bag be incomplete."
+		evidence_bag_casing = "Bullet Casings: ${casings} casing(s) were shot by a ${weapon} registered to ${name} (#${cid}) (picked up at ${time} near ${location}).",
+		evidence_bag_casing_unregistered = "Bullet Casings: ${casings} casing(s) were shot by an unregistered ${weapon} (picked up at ${time} near ${location}).",
+		evidence_bag_impact = "Bullet Impact: ${impacts} impact(s) appear to have been created by a ${weapon} (picked up at ${time} near ${location}).",
+		evidence_bag_vehicle = "Scurvy dog DNA: Sample came back to ${name} (#${cid}) and was extracted from seat ${seat} in a vessel with the plate ${plate} (picked up at ${time} near ${location}).",
+		evidence_bag_vehicle_empty = "Scurvy dog DNA: Sample did not match any record and was extracted from seat ${seat} in a vessel with the plate ${plate} (picked up at ${time} near ${location}).",
+		evidence_bag_clothing = "Clothing Piece: Sample taken from a ${type} came back to ${name} (#${cid}) (picked up at ${time} near ${location}).",
+		evidence_bag_clothing_empty = "Garb Scurvy Dog: Sample taken from a ${type} did not match any record (picked up at ${time} near ${location})."
 	}
 }
