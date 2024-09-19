@@ -4298,7 +4298,7 @@ OP.Global.Locales.Languages["hi-IN"] = {
 	},
 
 	steam = {
-		no_steam_allowed = "इस सर्वर पर खेलने के लिए, पहले FiveM को बंद करें, फिर Steam को बंद करें।"
+		no_steam_allowed = "जॉइन करने से पहले, सुनिश्चित करें कि आपका Steam पूरी तरह से बंद है, फिर FiveM लॉन्च करें।"
 	},
 
 	twitch = {
