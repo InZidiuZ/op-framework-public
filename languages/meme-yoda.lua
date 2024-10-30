@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 33 (do not change)
+-- AUTO LOCALES: 34 (do not change)
 
 OP.Global.Locales.Languages["meme-yoda"] = {
 	-- configuration settings for language
@@ -32,6 +32,12 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	-- animations/*
+	chairs = {
+		invalid_model = "Model name missing, or invalid it is.",
+		no_nearby_chair = "Chair of that model, nearby there is none.",
+		chair_offset_copied = "Chair offset, copied it is."
+	},
+
 	emotes = {
 		get_in_trunk = "Enter trunk, you shall. Press ~INPUT_ENTER~ to do so",
 		put_boombox_in_trunk = "Put boombox in trunk, you must. Press ~INPUT_ENTER~ to do so",
@@ -47,6 +53,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		the_trunk_is_occupied = "Occupied, the trunk is.",
 		unable_to_toggle_carry = "Please wait a bit before toggling the carry, you must.",
 		carry_disabled_animal = "Animal Peds, cannot carry they can.",
+		no_carry_nearby = "Nobody nearby to carry, there is.",
+		cant_reach_carry = "Closest person, reach you can't.",
 
 		trunk_hint = "Near it standing, use \"/door\" to open/close the trunk.",
 
@@ -650,6 +658,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		advanced_noclip_ban = "Trying a secret slide through unseen corridors, are you? Phantom waltz, this is not. Our dance card, that move is not on.",
 		illegal_local_vehicle_ban = "Seems like found the invisible steed of Lord Mirage, you have! Alas, reserved for annual phantom parade, this mystical ride is.",
 		handling_field_ban = "undefined",
+		teleported_ban = "Blink and you’re gone? Not in this dimension, traveler.",
+		honeypot_native = "Oh, bother! It seems you've stumbled into a place where honey wasn’t meant to be found. Some pots are best left alone, no matter how tempting they may seem.",
 
 		type_aimbot = "Aimbot, it is",
 		type_bad_creation = "Bad Creation, this is",
@@ -658,8 +668,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		type_damage_modifier = "Damage Modifier, it is",
 		type_distance_taze = "Distance Taze, this is",
 		type_fast_movement = "Fast Movement, it is",
+		type_teleported = "Teleported",
 		type_freecam_detected = "Freecam Detected, it is",
 		type_honeypot = "Honeypot, it is",
+		type_honeypot_native = "Honeypot Native",
 		type_illegal_damage = "Damage, illegal it is.",
 		type_illegal_event = "Illegal Client Event",
 		type_illegal_freeze = "Illegal Freeze",
@@ -829,6 +841,12 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		sit_command_parameter_variation = "variation, what animation",
 		sit_command_parameter_variation_help = "Help with choosing a sit animation (1 - 6).",
 		sit_command_substitutes = "chair",
+
+		chair_offset_command = "chair_offset",
+		chair_offset_command_help = "Define the offset of a nearby chair of a specific model.",
+		chair_offset_command_parameter_model_name = "modelName",
+		chair_offset_command_parameter_model_name_help = "The model name of the chair to define the offset of.",
+		chair_offset_command_substitutes = "",
 
 		-- animations/couches
 		sleep_command = "snooze",
@@ -1514,6 +1532,13 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		airsupport_command_help = "In air support, calls.",
 		airsupport_command_substitutes = "",
 
+		-- game/animals
+		animal_sound_command = "animal_sound",
+		animal_sound_command_help = "Play an animal sound effect.",
+		animal_sound_command_parameter_sound = "sound",
+		animal_sound_command_parameter_sound_help = "The sound you want to play. (Depends on animal model)",
+		animal_sound_command_substitutes = "",
+
 		-- game/archives
 		create_archive_command = "Create archive",
 		create_archive_command_help = "A new case in the archive you are standing nearest, creates it",
@@ -1550,6 +1575,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		play_audio_command_parameter_server_id = "server id",
 		play_audio_command_parameter_server_id_help = "Server's identifier of the player whom you want to play this audio will be. `-1` you can choose for all players.",
 		play_audio_command_substitutes = "",
+
+		-- game/audio_emitters
+		toggle_audio_emitters_command = "toggle_audio_emitters",
+		toggle_audio_emitters_command_help = "Toggle native audio emitters.",
+		toggle_audio_emitters_command_substitutes = "",
 
 		-- game/bandaids
 		random_bandaid_command = "Random bandaid, you must get it",
@@ -2077,18 +2107,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		rotate_marker_command_parameter_marker_name_help = "Edit, you want to, the marker.",
 		rotate_marker_command_substitutes = "",
 
-		rectangle_command = "rectangle",
-		rectangle_command_help = "Create, in 3D space, a rectangle this will.",
-		rectangle_command_substitutes = "rect",
-
-		define_area_command = "Define, an area you can.",
-		define_area_command_help = "An area, define you can.",
-		define_area_command_substitutes = "area",
-
-		polygon_command = "Nyaa~ Failed to remove access.",
-		polygon_command_help = "Nyaa~ Failed to withdraw.",
-		polygon_command_substitutes = "Nyaa~ Failed to deposit.",
-
 		debug_info_command = "debug_info",
 		debug_info_command_help = "Some debugging info about a certain player, collect you must.",
 		debug_info_command_parameter_server_id = "server id",
@@ -2122,6 +2140,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		show_cancelled_vehicles_command = "show_cancelled_vehicles",
 		show_cancelled_vehicles_command_help = "Toggle showing of cancelled vehicles.",
 		show_cancelled_vehicles_command_substitutes = "",
+
+		print_object_models_command = "print_object_models",
+		print_object_models_command_help = "Print, current object models in the console.",
+		print_object_models_command_substitutes = "",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
@@ -2224,6 +2246,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		fake_id_command_parameter_female = "female",
 		fake_id_command_parameter_female_help = "Set to true if female citizen card it is, instead of male.",
 		fake_id_command_substitutes = "",
+
+		-- game/fields
+		field_debug_command = "field_debug",
+		field_debug_command_help = "Debug, all nearby field plants.",
+		field_debug_command_substitutes = "",
 
 		-- game/flag_swap
 		flag_swap_command = "command_swap_flagged_have",
@@ -2601,6 +2628,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		fake_lag_command_help = "Fake lag, create you can.",
 		fake_lag_command_parameter_fps = "fps",
 		fake_lag_command_parameter_fps_help = "The target fps (>= 1).",
+		fake_lag_command_parameter_spike = "spike",
+		fake_lag_command_parameter_spike_help = "Randomly tank your fps (headache).",
 		fake_lag_command_substitutes = "lag",
 
 		-- game/locate
@@ -2609,13 +2638,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		locate_entity_command_parameter_filter = "filter",
 		locate_entity_command_parameter_filter_help = "Which filter entity match should you (id:12345, plate:90FMK072, etc.)",
 		locate_entity_command_substitutes = "le",
-
-		-- game/logs
-		logs_command = "logs",
-		logs_command_help = "Latest server logs for a certain player, show you must.",
-		logs_command_parameter_server_id = "id server, the",
-		logs_command_parameter_server_id_help = "Of the player, the server id is.",
-		logs_command_substitutes = "",
 
 		-- game/loot
 		loot_debug_command = "loot_debug",
@@ -2819,6 +2841,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		model_view_command_parameter_model_help = "The model name or hash, you would like to view.",
 		model_view_command_parameter_no_blocker = "no blocker",
 		model_view_command_parameter_no_blocker_help = "The shadow blocker disable, you can. (default: no).",
+		model_view_command_parameter_components = "components",
+		model_view_command_parameter_components_help = "Weapon components (comma separated).",
 		model_view_command_substitutes = "model, view",
 
 		-- game/money
@@ -2911,6 +2935,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		power_generators_debug_command = "power_generators_debug",
 		power_generators_debug_command_help = "Toggle the debugging of the Pacific Bank power generators.",
 		power_generators_debug_command_substitutes = "",
+
+		power_generators_disable_command = "power_generators_disable",
+		power_generators_disable_command_help = "Disable every Pacific Bank power generator. This is the same as disabling each one successfully at the same time that wasn't already disabled.",
+		power_generators_disable_command_substitutes = "",
 
 		-- game/panel
 		panel_command = "panel",
@@ -3037,11 +3065,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		share_phone_number_command = "share_phone_number",
 		share_phone_number_command_help = "Shares your phone number with everyone around, it does (< 1.5m).",
 		share_phone_number_command_substitutes = "share_number",
-
-		-- game/plants
-		plants_debug_command = "undefined",
-		plants_debug_command_help = "undefined",
-		plants_debug_command_substitutes = "",
 
 		-- game/player_control
 		drive_for_command = "drive_for, hmmm",
@@ -3415,7 +3438,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		weather_command = "weather",
 		weather_command_help = "Weather change you can.",
 		weather_command_parameter_weather = "weather name",
-		weather_command_parameter_weather_help = "Name of weather you desire to set. Valid names are EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS, and HALLOWEEN.",
+		weather_command_parameter_weather_help = "The weather's name you would like to set it to. Valid weather names are EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS, HALLOWEEN, RAIN_HALLOWEEN and SNOW_HALLOWEEN.",
 		weather_command_substitutes = "",
 
 		advance_weather_command = "advance_weather",
@@ -3464,12 +3487,16 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		tp_to_player_command_help = "undefined",
 		tp_to_player_command_parameter_server_id = "undefined",
 		tp_to_player_command_parameter_server_id_help = "undefined",
+		tp_to_player_command_parameter_into_vehicle = "into vehicle",
+		tp_to_player_command_parameter_into_vehicle_help = "If into the player's vehicle, teleport you want.",
 		tp_to_player_command_substitutes = "tpto",
 
 		tp_player_here_command = "undefined",
 		tp_player_here_command_help = "undefined",
 		tp_player_here_command_parameter_server_id = "undefined",
 		tp_player_here_command_parameter_server_id_help = "undefined",
+		tp_player_here_command_parameter_freeze = "freeze",
+		tp_player_here_command_parameter_freeze_help = "If player freeze, you want.",
 		tp_player_here_command_substitutes = "tphere",
 
 		tp_player_player_command = "undefined",
@@ -3591,6 +3618,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		voice_debug_command_parameter_server_id_help = "Insert their server id here, you must, if toggle the 'voice debug' for someone else, you are wanting.",
 		voice_debug_command_substitutes = "",
 
+		broadcast_all_command = "broadcast_all",
+		broadcast_all_command_help = "Toggle broadcasting to all players, you must.",
+		broadcast_all_command_substitutes = "",
+
 		listen_command = "listen",
 		listen_command_help = "Toggles listening mode for a certain user. (You can hear what they say), it does.",
 		listen_command_parameter_server_id = "id server",
@@ -3706,6 +3737,15 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		show_raw_locales_command = "show_raw_locales",
 		show_raw_locales_command_help = "Toggle showing off the raw names of locales to aid in debugging which locales should be adjusted.",
 		show_raw_locales_command_substitutes = "",
+
+		-- global/shapes
+		areas_command = "areas",
+		areas_command_help = "Define circular areas, you can.",
+		areas_command_substitutes = "",
+
+		polygon_command = "Nyaa~ Failed to remove access.",
+		polygon_command_help = "Define a 2D polygon, you must.",
+		polygon_command_substitutes = "Nyaa~ Failed to deposit.",
 
 		-- global/states
 		entity_states_command = "states_entity",
@@ -3947,6 +3987,22 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		ungarage_vehicle_command_parameter_vehicle_id_help = "Successfuwwy put a howd on the vechicwe with pwate `${pwate}` fow ${time}.",
 		ungarage_vehicle_command_substitutes = "Faiwed to put a howd on the vechicwe.",
 
+		respawn_vehicle_command = "respawn_vehicle",
+		respawn_vehicle_command_help = "A vehicle (garage & ungarage) respawn.",
+		respawn_vehicle_command_parameter_repair = "repair",
+		respawn_vehicle_command_parameter_repair_help = "Repair before respawning, the vehicle should be or not.",
+		respawn_vehicle_command_substitutes = "",
+
+		create_garage_command = "create_garage",
+		create_garage_command_help = "Temporary garage, create at the nearest vehicle node.",
+		create_garage_command_substitutes = "",
+
+		remove_garage_command = "remove_garage",
+		remove_garage_command_help = "Temporary garage, remove.",
+		remove_garage_command_parameter_garage_id = "garage id",
+		remove_garage_command_parameter_garage_id_help = "The ID of the temporary garage you would like to remove.",
+		remove_garage_command_substitutes = "",
+
 		-- vehicles/keys
 		give_key_command = "give_key",
 		give_key_command_help = "Give key to person, nearby you can.",
@@ -4149,10 +4205,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		throw_weapon_command_help = "Throw your currently equipped weapon, you must.",
 		throw_weapon_command_substitutes = "yeet, throw",
 
-		throwables_debug_command = "throwables_debug",
-		throwables_debug_command_help = "Debug all throwables nearby, this command does.",
-		throwables_debug_command_substitutes = "",
-
 		-- weapons/weapons
 		check_ammo_command = "check_ammo",
 		check_ammo_command_help = "How much ammo you have in total, this command does check.",
@@ -4298,7 +4350,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	steam = {
-		no_steam_allowed = "To play on this server, first close FiveM, then shut down Steam."
+		no_steam_allowed = "Before joining, shut down Steam completely, you must, and then launch FiveM."
 	},
 
 	twitch = {
@@ -4438,7 +4490,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		server_id_hidden_feature = "Server-ID Hidden",
 		fake_disconnect_feature = "Fake-DC",
 		brighter_nights_feature = "BN",
-		ridealong_feature = "Ridealong"
+		ridealong_feature = "Ridealong",
+		broadcast_all_feature = "Broadcast To All"
 	},
 
 	admin_menu = {
@@ -4512,6 +4565,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		drunk_state_2 = "Drunk, you are.",
 		drunk_state_3 = "Very drunk, you are.",
 		drunk_state_4 = "Dangerously drunk, you are."
+	},
+
+	animals = {
+		invalid_sound = "Sound, invalid it is."
 	},
 
 	arcade = {
@@ -4630,6 +4687,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 	atms = {
 		withdraw = "Withdraw, you must.",
+		withdraw_bonds = "Withdraw in Bonds",
 		deposit = "Deposit, you will.",
 		balance = "Balance, you have.",
 		transfer = "Transfer, you shall.",
@@ -4671,6 +4729,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		withdraw_log_bank_title = "Withdraw of Bank",
 		withdraw_log_atm_title = "Withdrawal from ATM, you have",
 		withdraw_log = "${consoleName} has withdrawn $${amount}, hmmm.",
+		withdraw_log_bonds_title = "Bank Withdraw (Bonds)",
+		withdraw_log_bonds = "${consoleName} withdrew $${amount} in savings bonds (${bonds}).",
 
 		transfer_log_title = "Bank Transfer, transferring the money, we are",
 		transfer_log = "${consoleName} (#${characterId}) has transferred $${amount} to ${targetConsoleName} (#${targetCharacterId}).",
@@ -4815,6 +4875,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		played_audio_effect_for_everyone_details = "The player ${consoleName} played an Audio Effect for everyone. The Audio Effect had an URL of `${url}` and was set to play at a volume of `${volume}`.",
 		played_audio_effect_for_player_title = "Audio Effect, played for a player, it was.",
 		played_audio_effect_for_player_details = "${consoleName}, audio effect played for ${targetConsoleName}, had a URL of `${url}` and volume level set to `${volume}` it had."
+	},
+
+	audio_emitters = {
+		audio_emitters_disabled = "Disabled, audio emitters have been.",
+		audio_emitters_enabled = "Enabled, audio emitters have been."
 	},
 
 	balls = {
@@ -5015,7 +5080,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		pd_sea_hq = "Police Sea HQ, it is.",
 		ems_air_hq = "EMS Air HQ, it is.",
 		ems_boat_hq = "EMS Boat HQ, it is.",
-		ems_garage = "EMS Garage, it is."
+		ems_garage = "EMS Garage, it is.",
+		vineyard = "Vineyard there is."
 	},
 
 	bombs = {
@@ -5560,10 +5626,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		steel_ore_recipe = "Iron Ore smelt, we must",
 		gold_ore_recipe = "Gold Ore smelt, we must",
 		gold_nuggets_recipe = "Gold Nuggets smelt, we must",
-		tungsten_ore_recipe = "Tungsten Ore smelt, we must",
-		tungsten_bar_recipe = "Tungsten Nuggets smelt, we must",
-		titatium_ore_recipe = "Titatium Ore smelt, we must",
-		titanium_bar_recipe = "Titanium Nuggets smelt, we must",
+		tungsten_bar_recipe = "Tungsten Bar, smelt you must.",
+		titanium_bar_recipe = "Titanium Bar, smelt you must.",
 		smelt_rusty_metal_recipe = "Rusty Metal smelt, we must",
 		smelt_rusty_tank_shell_recipe = "Smelt Rusty Tank Shell, you must.",
 		smelt_rusty_diving_helmet_recipe = "Smelt Rusty Diving Helmet, you must.",
@@ -5571,6 +5635,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		smelting_materials = "Smelting, ${usedItems} are",
 		smelted_materials = "Smelted, ${usedItems} have.",
 		failed_smelt_materials = "Failed to smelt materials, we have.",
+		smelting_copper = "Copper, smelting.",
+		combining_copper_zinc = "Copper and Zinc, combining.",
 
 		scrap_knife = "Scrap Knives, these are.",
 		press_to_scrap_knife = "[${SeatEjectKey}] Press, you must, to scrap knives.",
@@ -6921,7 +6987,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		timecycles = "Timecycles, mmmm",
 		weather = "Weather, hmmm",
 		reset = "Reset, hmmm",
-		refresh_interior = "Interior, refresh we must"
+		refresh_interior = "Interior, refresh we must",
+		camera_shakes = "Camera Shakes, there are."
 	},
 
 	development = {
@@ -6973,7 +7040,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		failed_to_sync_doors = "Failed to sync doors, I have. Most likely, something corrupted. Try again, you must.",
 		saved_doors_to_file = "Doors saved to a file on the server, ${amount} have been.",
 		no_nearby_doors = "Save doors, no nearby doors there are.",
-		lockpicking_door = "Lockpicking Door, you are.",
 		copied_doors = "Copied ${doors} doors.",
 		adding_doors = "Adding doors, we are.",
 		stop_adding_doors = "Adding doors, we no longer are.",
@@ -7019,6 +7085,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		floor_lobby = "Lobby, this floor is.",
 		floor_roof = "Roof, this floor is.",
 		floor_helipad = "Helipad, it is.",
+		floor_tower = "Tower, the.",
 
 		floor_shop = "Shop, it is.",
 
@@ -7051,7 +7118,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		floor_gangway = "Gangway, it is.",
 
-		floor_hangout = "Spot of Hangout, it is",
+		floor_hangout = "The Tower, hangout.",
 		floor_penthouse = "Penthouse, it is",
 		floor_theatre_office = "Theatre Office, it is",
 		floor_psychiatrists_office = "Office of the Psychiatrist, it is",
@@ -7165,8 +7232,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		next_rotation_in = "Next rotation in, ${time} it is.",
 
 		exclusive_dealership_blip = "Deluxe Motorsport, Exclusive it is.",
-
-		buyback_closed = "Closed, the exchange is. Sell your vehicle to another player with the correct tier, you can.",
 
 		log_title = "Purchase, EDM",
 		log_description = "Purchased the `${label}` for ${cost} I have | Hmmmm"
@@ -7373,13 +7438,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	gift_boxes = {
 		failed_seal_box = "Failed to seal, the gift box has.",
 		failed_open_box = "Failed to open, the gift box has."
-	},
-
-	golf = {
-		pickup_ball = "[${InteractionKey}] Pickup, [${InteractionKey}] Press to pick up",
-
-		failed_pickup = "Failed to pickup ball, we have.",
-		failed_place = "Failed to place ball, we have."
 	},
 
 	gps = {
@@ -7596,6 +7654,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		cpr_player_logs_details = "${consoleName} performed CPR on ${targetConsoleName}.logs"
 	},
 
+	heated_seats = {
+		hint = "Use ~INPUT_CHARACTER_WHEEL~ and ~INPUT_CELLPHONE_UP~ / ~INPUT_CELLPHONE_DOWN~ for the heated seats you must."
+	},
+
 	hitmarkers = {
 		hitmarkers_enabled = "Enabled, hitmarkers are.",
 		hitmarkers_disabled = "Disabled, hitmarkers are."
@@ -7608,6 +7670,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		belt = "BELT",
 		oil = "OIL, it is.",
 		megaphone = "PA",
+		heat = "HEAT",
 		manual = "MANUAL, this is.",
 		cruise_control = "CC",
 		speed_limiter = "SL",
@@ -7740,6 +7803,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		weapon_license_details = "Weapons license, you possess | ${firstName} ${lastName} | Citizen ID: ${characterId}",
 		mining_license = "Mining License, it is.",
 		mining_license_details = "Mining License, it is | ${firstName} ${lastName} | Citizen ID: ${characterId}",
+		bar_license = "Bar/Law License",
+		bar_license_details = "Bar/Law License | ${firstName} ${lastName} | Citizen ID: ${characterId}",
 		just_showed_license = "A License, you just showed. Wait, you must.",
 
 		just_showed_badge = "A Badge, you just showed. Wait, you must.",
@@ -8002,6 +8067,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		inspect_weapon = "The serial number of this ${itemName}, appears to be it does, `${itemId}`.",
 		inspect_weapon_broken = "Completely broken, it appears to be. The serial number of this ${itemName}, `${itemId}` it has.",
 		inspect_bank_property = "Failed to automatically generate translation.",
+		inspect_bank_property_cid = "This ${item} is marked property of the ${bank} Bank. It was withdrawn by account number #${characterId}.",
 		inspect_no_property = "Failed to automatically generate translation.",
 
 		searching_dumpster = "Dumpster, searching, are you",
@@ -8039,7 +8105,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		underground_bar_counter = "Underground Bar Counter",
 		pizza_this_counter = "Pizza This Counter",
 		yellow_jack_counter = "Yellow Jack Counter",
-		bahama_mamas_counter = "Bahama Mamas Counter",
 
 		inventory_name_missing = "Missing inventory name parameter, you are.",
 
@@ -8054,6 +8119,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		missing_job = "The required job, you do not have, to use this inventory.",
 
+		inventory_active = "Currently being used by someone else, the inventory is.",
 		item_is_broken = "Broken, this item is.",
 		battle_royale_item = "In Battle Royale matches, use only, this item can.",
 		battle_royale_item_disallowed = "Not allowed, this item is, in Battle Royale matches.",
@@ -8090,6 +8156,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		break_apart_battery = "Break Apart <i>Battery</i>",
 		mix_gunpowder = "Mix <i>Gunpowder</i>",
 		roll_cigar = "Roll <i>Cigar</i>",
+		squeeze_orange_juice = "Squeeze <i>Orange Juice</i>",
+		make_apple_juice = "Make <i>Apple Juice</i>",
 
 		search = "Search, you must",
 		amount = "Amount, show you must",
@@ -8213,6 +8281,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		weapon_license_description = "For higher class weaponry, a license you must have. Hmm.",
 		mining_license = "Mining License, it is.",
 		mining_license_description = "For mining, a license, it is.",
+		bar_license = "Bar/Law License",
+		bar_license_description = "A certified proof that you've passed the bar exam and are officially allowed to practice law in the State of San Andreas. Flash it with pride, knowing you've mastered the legal system and can now defend the innocent or prosecute the guilty.",
 
 		sasp_badge = "Badge SASP is",
 		sasp_badge_description = "For officers of the San Andreas Police Department it is.",
@@ -8337,6 +8407,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		radio_decryptor = "Radio Decrypter, the decrypter is",
 		radio_decryptor_description = "if connected to a radio, radio frequencies it can decrypt.",
 
+		drill_large = "Large Drill",
+		drill_large_description = "A tool heavy-duty, built for tough jobs. Capable of handling something big... if you know what you're doing.",
+		drill_small = "Small Drill",
+		drill_small_description = "Compact and precise, this tool is perfect for accessing hard-to-reach places. A few of these might come in handy.",
+
 		paper_bag = "Paper Bag, the bag is",
 		paper_bag_description = "perfect for storing groceries or someone's head perhaps, dead or alive it may be.",
 		burger_shot_delivery = "Burger Shot Meal, it is",
@@ -8387,6 +8462,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		clothing_bag = "Clothing Bag, it is",
 		clothing_bag_description = "Never worry about fashion emergencies again! The clothing bag lets you store your favorite outfit and instantly equip it anywhere you go. All the magic of a fairy godmother, minus the bibbidi-bobbidi-boo, this bag has.",
 
+		tnt_block = "TNT Block",
+		tnt_block_description = "A block highly volatile of Minecraft TNT, ready to blow up your world—just add a spark and run for cover!",
+
 		magnifying_glass = "Magnifying Glass, it is",
 		magnifying_glass_description = "For all your detective needs, a magnifying glass it be. In the grass, a 4 leaf clover you might find or a small frog in the mud, perhaps?",
 
@@ -8418,6 +8496,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		raw_sapphire_description = "undefined",
 		raw_emerald = "Raw Emerald, strong it is",
 		raw_emerald_description = "undefined",
+		raw_opal = "Raw Opal",
+		raw_opal_description = "This rough gemstone is, a dazzling find, reflecting an array of colors as it catches the light. Unearthed in its natural form, a treasure waiting to be cut and polished into something extraordinary.",
+		raw_onyx = "Raw Onyx",
+		raw_onyx_description = "This deep, mysterious gemstone is found in, the depths of the earth, veiling its true potential in, a dark, glossy shell. Raw and unrefined, a symbol of strength and mystery, it is.",
 
 		ruby_dust = "Ruby Dust, useful it can be",
 		ruby_dust_description = "undefined",
@@ -8432,6 +8514,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		sapphire_description = "undefined",
 		emerald = "Emerald, this is.",
 		emerald_description = "undefined",
+		opal = "Opal",
+		opal_description = "Once carefully shaped, this opal radiates with, a mesmerizing play of colors. A brilliant piece, perfect for those who want to carry, a piece of nature's beauty with them, it is.",
+		onyx = "Onyx",
+		onyx_description = "Polished to perfection, this black gemstone exudes a sleek and bold charm, offering a sharp contrast to more vibrant stones. Ideal for those with a taste for the dramatic.",
 
 		ring = "Ring, this is.",
 		ring_description = "undefined",
@@ -8446,6 +8532,15 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		sapphire_ring_description = "undefined",
 		emerald_ring = "Ring of emerald, pretty it is",
 		emerald_ring_description = "undefined",
+		opal_ring = "Opal Ring",
+		opal_ring_description = "A classic rose gold ring set with a vibrant opal stone. The subtle shine of the metal paired with the kaleidoscopic opal makes for an elegant and timeless accessory.",
+		onyx_ring = "Onyx Ring",
+		onyx_ring_description = "Entirely from solid onyx, this ring is crafted, hmm. Strong as it is striking, it is. A symbol of durability and elegance, it is, hmm. For those who appreciate minimalism with an edge, it's.",
+
+		pearl = "Pearl",
+		pearl_description = "Found nestled in the ocean's depths, a timeless gem, this smooth and lustrous pearl is. Inside a mollusk naturally formed, a prized treasure it is, shining with a soft, creamy glow.",
+		pearl_ring = "Pearl Ring",
+		pearl_ring_description = "A classic gold band crowned with a flawless white pearl. This elegant ring sophistication and grace exudes, making it the perfect accessory for any occasion.",
 
 		gemstone_scanner = "Scanner of Gemstones, the",
 		gemstone_scanner_description = "undefined",
@@ -8779,6 +8874,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		watermelon_description = "Water or melon, we may never know. Hmmm.",
 		lemon = "Lemon",
 		lemon_description = "Vibrant and zesty, this lemon is. Bursting with tangy flavor and a bright yellow hue, it is. Perfect for adding a refreshing twist to your favorite dishes and drinks, it is. Each bite delivers a citrusy punch that wakes up your taste buds, it does.",
+
+		orange_juice = "Orange Juice",
+		orange_juice_description = "Fresh-squeezed and full of citrusy sweetness, this orange juice is, pure sunshine in a glass, no additives—just hand-pressed orange goodness.",
+		apple_juice = "Apple Juice",
+		apple_juice_description = "Hand-pressed from crisp apples, this juice is refreshingly pure with a natural apple flavor and a touch of orchard sweetness.",
 
 		banana_peel = "Banana Peel, it is.",
 		banana_peel_description = "Slippery, it is. Careful, you must be when stepping on it.",
@@ -9277,7 +9377,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		dab_pen_description = "Yo, Penjamin this is? Hits like a truck, dude. Three solid blinks, and you're gone. Once it flashes, game over, it is. No refills, just ride the high while you can, you must.",
 
 		train_pass = "Train Pass",
-		train_pass_description = "When used, 3x instant passes in the queue, you will receive.",
+		train_pass_description = "When used, 2x instant passes in the queue, you will receive.",
 		train_pass_appreciated_tier = "Appreciated Tier, it is",
 		train_pass_appreciated_tier_description = "Can be used for 7 days of Appreciated Tier, it can. Upgraded using OP Points, it cannot.",
 		train_pass_respected_tier = "Respected Tier, it is",
@@ -9551,6 +9651,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		raw_bacon = "undefined",
 		raw_bacon_description = "undefined",
 
+		carrot = "Carrot",
+		carrot_description = "A crisp, orange snack loved by health enthusiasts and... bunnies. Watch out, or a rabbit might beat you to it!",
 		liquid_smoke = "undefined",
 		liquid_smoke_description = "undefined",
 		raw_brined_meat = "undefined",
@@ -9606,6 +9708,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		olives_description = "A small bowl of olives, the perfect snack for a party.",
 		popcorn = "undefined",
 		popcorn_description = "undefined",
+		rice_krispies = "Rice Krispies",
+		rice_krispies_description = "Sweet, crispy, and a bit nostalgic, these puffed rice treats snap, crackle, and pop with every bite. Perfect for quick munchies or homemade marshmallow bars!",
+		almond_joy = "Joy, Almond",
+		almond_joy_description = "Coconut and almond wrapped in a creamy milk chocolate coating. Sweet, nutty, and satisfying, it’s the candy bar that reminds you paradise can fit right in your pocket.",
 
 		uncooked_rice = "Uncooked Rice",
 		uncooked_rice_description = "This staple grain is, uncooked rice. The blank canvas of countless culinary masterpieces, it is. Raw and ready for transformation, it promises to absorb flavors and enhance any dish it does, from robust risottos to delicate sushi rolls.",
@@ -9938,13 +10044,15 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		weapon_flare = "Flare, it is",
 		weapon_acidpackage = "Acid Package, it is",
 
-		weapon_petrolcan = "Jerry Can, it is",
-		gadget_parachute = "Parachute, it is",
 		weapon_fireextinguisher = "Fire Extinguisher, it is",
 		weapon_hazardcan = "Hazardous Jerry Can, it is",
 		weapon_fertilizercan = "Fertilizer Can, it is",
 		weapon_hackingdevice = "Hacking Device",
 
+		weapon_petrolcan = "Jerry Can, it is",
+		ev_battery = "Battery, EV",
+
+		gadget_parachute = "Parachute, it is",
 		red_parachute = "Red Parachute, it is",
 		blue_parachute = "Blue Parachute, it is",
 		black_parachute = "Black Parachute, it is",
@@ -10065,13 +10173,15 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		weapon_flare_description = "For air drop, throw this you can.",
 		weapon_acidpackage_description = "A package of acid, this is. Make a mess, you can.",
 
-		weapon_petrolcan_description = "A trail of gasoline, this leaves. Ignitable it is.<br><br>${petrolAmount}% of gasoline remaining, it has.",
-		gadget_parachute_description = "Control over direction and speed increased by ram-air parafoil design, this nylon sports parachute features.",
 		weapon_fireextinguisher_description = "\"Smoke machine\" known as fire extinguisher.",
 		weapon_hazardcan_description = "Gas can-like, useless it is.",
 		weapon_fertilizercan_description = "Good ol can of shit, nothing better for your crops it is.",
 		weapon_hackingdevice_description = "A small hand-held device, heavily based on the Metal Detector, it is. With an included antenna and buttons replaced, it is. Use it wisely, you must.",
 
+		weapon_petrolcan_description = "A trail of gasoline, this leaves. Ignitable it is.<br><br>${petrolAmount}% of gasoline remaining, it has.",
+		ev_battery_description = "A high-voltage solution for your EV, this big battery pack is like a jerry can but for the electric age—ready to give your ride a zap of energy when you need it most.<br><br>Charge remaining: ${chargeAmount}%.",
+
+		gadget_parachute_description = "Control over direction and speed increased by ram-air parafoil design, this nylon sports parachute features.",
 		red_parachute_description = "Normal parachute, but in red it is.",
 		blue_parachute_description = "Normal parachute, but in blue it is.",
 		black_parachute_description = "Parachute black, just like normal but.",
@@ -10148,6 +10258,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		weapon_addon_mk18 = "MK18, it is.",
 		weapon_addon_mk18_description = "\"Stay strapped or get clapped\" - George Washington (Probably), says.",
+
+		weapon_addon_ddm4v7 = "DDM4V7",
+		weapon_addon_ddm4v7_description = "Welcome to the fields, rice you have.",
 
 		weapon_addon_glock = "Glock 19",
 		weapon_addon_glock_description = "This compact and reliable Glock 19 does, proudly sport an American flag on the slide, because nothing says freedom quite like stars, stripes, and 9mm. Perfect for patriots who like their firearms as bold as their love for the country.",
@@ -10273,6 +10386,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		just_used_bandage = "Wait a bit before using another first aid kit, you must.",
 		just_used_tourniquet = "You just used a tourniquet, wait a bit before using another one, you must.",
 		drank_gasoline_death = "Gasoline poisoning, you have.",
+		refilling_lighter = "Lighter, refilling it is.",
 		drank_bleach_death = "Poisoned by bleach, you have been.",
 		finished_joint = "Finished your joint, you have.",
 		cant_place_here = "undefined",
@@ -10374,6 +10488,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		invalid_amount = "undefined",
 		failed_modify_jail = "undefined",
 		modified_jail = "undefined",
+		jail_mission_info = "Missions on your map, you can do to reduce your time in jail.",
 
 		trigger_lockdown = "undefined",
 		press_trigger_lockdown = "undefined",
@@ -10591,6 +10706,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		queue_position_with_priority = "🐌 ${queuePriorityName} priority, you have. 🕐${queueTime} to wait, you must. 🐌 You are ${queuePosition}/${queueTotal} in the line.",
 		queue_position_without_priority = "🐌 You are ${queuePosition}/${queueTotal} in the line. 🕐${queueTime} to wait, you must.",
 		live_on_twitch = "Bored, are you? Check out these streamers, you must!",
+		check_out_community_content = "Bored, are you? Our community content here, check out you must!",
+		community = "Community",
 		live = "Live, it is.",
 		you_are_through = "Through, you are!",
 		join_server = "Server, join you must.",
@@ -10697,7 +10814,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		medal = "Medal",
 		claim_points = "Claim Points (${claimablePoints})",
-		medal_what_is_this_text_part_1 = "By getting views and likes on your Medal clips, earn OP Points you can! One point per 2 clips, one point per 150 views, and one point per 10 likes, you get.",
+		medal_what_is_this_text_part_1 = "By views and likes on your Medal clips getting, OP Points you can earn! Per 2 clips, one point you get, per 500 views, and per 50 likes, one point you get.",
 		account_name = "Account Name",
 		connected_account = "Connected Account",
 		medal_stats = "Medal Stats",
@@ -10718,12 +10835,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		set_referrer = "Set Referrer",
 		your_referrer = "Your Referrer:",
 		your_referees = "Your Referees:"
-	},
-
-	logs = {
-		logs_failed = "Failed to load logs, have we.",
-
-		close = "Close, you may."
 	},
 
 	loot = {
@@ -10897,8 +11008,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	minecraft = {
 		failed_place_block = "Failed to place block, we have.",
 		failed_break_block = "Failed to break block, we have.",
-		success_wipe_blocks = "Blocks in a ${radius}m radius, wiped successfully.",
-		failed_wipe_blocks = "Failed to wipe blocks, we have."
+		success_wipe_blocks = "Successfully ${count} block(s) wiped in a radius of ${radius}m.",
+		failed_wipe_blocks = "Failed to wipe blocks, we have.",
+		press_to_use_jukebox = "Press ~INPUT_CONTEXT~ to use the jukebox."
 	},
 
 	mining = {
@@ -11073,7 +11185,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	model_view = {
-		invalid_model = "Model, invalid it is."
+		invalid_model = "Model, invalid it is.",
+		invalid_component = "Invalid component ${component} is."
 	},
 
 	money = {
@@ -11275,7 +11388,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		chop_shop_sound = "Disable Sound of Chop Shop Radio, hmm",
 		seatbelt_sound = "Disable Ding of Seatbelt, hmm",
 		eating_noises_sound = "Eating Noises, Disable",
-		detailed_prop_positioning = "Prop Positioning, Detailed",
 		sound_effect_placeholder = "URL to .oog file, provide you must...",
 
 		button_save = "Save, hmm",
@@ -11998,6 +12110,26 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		tutorial_3_part_10 = "Love, there is, bro."
 	},
 
+	pacific_bank = {
+		power_generator_disabled = "This power generator disabled, it has been. Repaired, it will be in ${time}.",
+
+		you_completed_the_hack = "You completed the hack. The power generator currently providing power to the security system is: ${outputData}",
+		you_completed_the_hack_no_more_generators = "You completed the hack. There are no power generators providing power to the security system, there are.",
+		you_failed_the_hack = "Failed the hack, you have.",
+		you_completed_the_hack_door_unlocked = "Completed the hack, you have. Unlocked the door, it is.",
+
+		teller_door_hack_completed_logs_title = "Teller Door Hack Completed, it is.",
+		teller_door_hack_completed_logs_details = "In Pacific Bank, ${consoleName} completed the teller door hack.",
+
+		vault_door_hack_completed_logs_title = "Vault Door Hack Completed, it is.",
+		vault_door_hack_completed_logs_details = "In Pacific Bank, ${consoleName} completed the vault door hack.",
+
+		disabled_generators = "${disabledGeneratorsCount} generator(s), disabled they are.",
+
+		drill_drilling = "Drilling (${remainingSeconds}s)",
+		drill_jammed = "[${InteractionKey}] Drill Jammed (${remainingSeconds}s)"
+	},
+
 	panel = {
 		loading_title = "Loading, there is...",
 		error_title = "Something went wrong, it has.",
@@ -12148,7 +12280,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		network_id_invalid = "Network id, invalid it is.",
 		ped_not_found = "Ped with network id `${networkId}` found, not it was.",
 		tracked_ped = "Ped tracked, yes.",
-		tracked_ped_is = "Ped (${entity}) it is:"
+		tracked_ped_is = "Ped (${entity}) it is:",
+		ped_config_flags = "Ped Config Flags"
 	},
 
 	ped_spawn = {
@@ -12156,17 +12289,16 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		ped_spawn_success = "Ped spawned, successfully it was.",
 		ped_failed_spawn = "Ped spawn, failed it did.",
 		invalid_weapon = "Weapon, invalid it is.",
+		invalid_ped_model = "Invalid ped model.",
 		ped_remove_success = "Spawned peds, successfully removed they were.",
 		ped_failed_remove = "Spawned peds, remove failed it did.",
-		ped_task_success = "Task '${task}' assigned, successfully it was.",
-		ped_failed_task = "Failed to assign task '${task}' to spawned peds, we have.",
+		ped_task_success = "Successfully assigned `${task}` task to spawned peds.",
+		ped_failed_task = "Failed to assign `${task}` task to spawned peds.",
 		invalid_target = "Invalid target ID, yes.",
-		missing_task = "Missing task parameter, you are.",
-		invalid_task = "Invalid ped task '${task}' it is.",
-		target_required = "A valid target this ped task requires.",
-		ped_emote_success = "Successfully played '${emote}' emote for spawned peds, we have.",
-		ped_failed_emote = "Failed to play '${emote}' emote for spawned peds, we did.",
-		invalid_emote = "Invalid emote '${emote}' it is.",
+		invalid_task = "Invalid or missing ped task.",
+		ped_emote_success = "Successfully made spawned peds play `${emote}` emote.",
+		ped_failed_emote = "Failed to make spawned peds play `${emote}` emote.",
+		invalid_emote = "Invalid emote `${emote}`.",
 		missing_emote = "Missing emote parameter, you are.",
 
 		emote_list = "Available ped emotes: ${list}, there are.",
@@ -12372,7 +12504,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		prop_no_interior = "Sorry, outside only this prop can be placed, hmmm.",
 		invalid_culling_value = "Invalid culling value, has to be between 10m and 2,500m, it is.",
 		invalid_model = "Invalid/Unknown model `${name}` (${hash}), it is.",
-		cancelled_positioning = "Prop positioning, Cancelled it is.",
+		cancelled_positioning = "Prop positioning, cancelled it has been.",
 
 		invalid_prop_id = "Invalid prop ID, this is, hmmm.",
 		prop_deleted = "Prop with ID ${propId} was deleted, yes.",
@@ -12784,7 +12916,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		mission_row_pd = "Mission Row PD, this is.",
 		pillbox_hospital = "Hospital Pillbox",
 		jewelry_store = "Jewelry Store de Rockford Hills",
-		principal_bank = "Banco Principal",
+		pacific_bank = "Pacific Bank",
 		bolingbroke_penitentiary = "Penitenciaría de Bolingbroke",
 		fort_zancudo = "Fuerte Zancudo",
 		del_perro_pier = "Muelle de Del Perro",
@@ -12944,7 +13076,9 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	snow = {
-		hold_to_pick_up_snowballs = "Hold ~INPUT_CONTEXT~ to pick up snowballs, you must"
+		hold_to_pick_up_snowballs = "Hold ~INPUT_CONTEXT~ to pick up snowballs, you must",
+		building_snowman = "Snowman building, we are.",
+		failed_build_snowman = "Failed to build snowman, we have."
 	},
 
 	sound_effects = {
@@ -12961,6 +13095,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 		mission_row_police_station = "Station, Police Department in Mission Row, this is",
 		highway_police_station = "Highway PD",
+		rockford_police_station = "Rockford Hills PD",
 		palomino_fib_police_station = "Palomino FIB PD",
 		sandy_police_station = "Station, Police Department in Sandy Shores, this is",
 		paleto_police_station = "PD Bay Paleto is",
@@ -13002,6 +13137,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		no_character_loaded = "Character, this player does not have loaded.",
 		not_same_instance = "Not in the same instance as you, this player is.",
 		no_user_or_character = "Player offline or character not loaded, they are.",
+		not_while_noclipped = "Cannot spectate while noclipped, you cannot.",
 
 		resolving_player = "Player resolving...",
 		loading_coords = "Coords, loading them, I am",
@@ -13126,7 +13262,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		minute_changed = "Changed, the minute has been. Now set to `${minute}`.",
 
 		missing_weather = "A weather, you must provide.",
-		invalid_weather = "Not valid, weather `${weatherName}` is. Value weather names are CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT and BLIZZARD.",
+		invalid_weather = "Weather `${weatherName}` is not valid. Value weather names are EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS, HALLOWEEN, RAIN_HALLOWEEN, and SNOW_HALLOWEEN.",
 		weather_changed = "The weather, to `${weatherName}` has been set.",
 		weather_advanced = "Advanced, the weather has been to `${weatherName}`.",
 		weather_advance_fail = "Failed to advance the weather naturally, we have.",
@@ -13415,6 +13551,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		relief_stress = "Stress, relief I will",
 		reset_health = "Health, reset I will",
 		remove_injuries = "Injuries, remove I will",
+		toggle_noclip = "Noclip Toggle",
 
 		teleport = "Teleport Options",
 		teleport_to = "To, teleport I will",
@@ -13760,8 +13897,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	voice = {
 		illegal_radio_frequency = "Illegal radio frequencies, accessing you should not.",
 		voice_chat = "Voice Chat, you have.",
-		voice_server_connected = "Connected to the voice server. Sending voice data to relevant players, I am.",
-		voice_server_disconnected = "Disconnected from the voice server, waiting for connection, we are.",
 		voice_muted = "Muted, the voice chat has been.",
 		voice_unmuted = "Unmuted, the voice chat has been.",
 		broadcasting_voice_to_players = "To players, broadcasting:",
@@ -13800,9 +13935,15 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		stopped_listening_logs_details = "${consoleName} to ${targetConsoleName} listening started.",
 		started_listening_logs_details = "${consoleName} to ${targetConsoleName} listening stopped.",
 
+		broadcast_all_logs_title = "Broadcast Toggled",
+		broadcast_all_logs_details_on = "${consoleName} turned broadcast on for all players.",
+		broadcast_all_logs_details_off = "${consoleName} turned broadcast off for all players.",
+
 		muted_logs_title = "Muted Voice",
 		muted_logs_details = "${consoleName} ${targetConsoleName} from voice chat muted.",
-		unmuted_logs_details = "${consoleName} unmuted ${targetConsoleName} from voice chat."
+		unmuted_logs_details = "${consoleName} unmuted ${targetConsoleName} from voice chat.",
+
+		mumble_disconnected = "Connected to the voice chat, you are not."
 	},
 
 	wallhack = {
@@ -13944,6 +14085,11 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	locales = {
 		showing_raw_locales_on = "Showing raw locales, toggled on, hmm.",
 		showing_raw_locales_off = "Showing raw locales, toggled off, hmm."
+	},
+
+	shapes = {
+		copied_clipboard = "To clipboard, copied.",
+		cancelled = "Cancelled, it is."
 	},
 
 	states = {
@@ -14279,6 +14425,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		license_weapon = "Weapons License, you have.",
 		license_mining = "Mining License - License for Mining",
 		license_driver = "Driver's License, you have",
+		license_bar = "Bar/Law License",
 		license_press = "Press License",
 		gave_character_license = "${characterName} license `${licenseLabel}` received, hmmm.",
 		character_already_has_license = "${characterName} already possesses license `${licenseLabel}`.",
@@ -14456,7 +14603,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 
 	clamps = {
 		no_vehicle_near = "A vehicles left-rear wheel, you are not near.",
-		vehicle_not_driveable = "Attach clamp to a broken vehicle, you cannot.",
 		clamping = "Clamping, I am.",
 		removing_clamp = "Removing Clamp, I am.",
 		remove_clamp = "[${InteractionKey}] Remove Clamp, you must.",
@@ -14516,6 +14662,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		exit_to_charge = "To charge, the vehicle exit you must.",
 		press_to_fuel = "Press, ~g~${InteractionKey} ~w~to refuel the vehicle, you must.",
 		press_to_charge = "Press, you must ~g~${InteractionKey} ~w~to charge the vehicle.",
+		use_moonshine = "Press ~g~${InteractionKey} ~w~to use Moonshine as fuel, you must.",
+		using_moonshine = "With Moonshine, fueling, you are.",
 		fuel_pump_text = "Fuel Cost, You Will Pay: $${fuelCost}~n~To stop fueling, Press ~g~${InteractionKey}~w~.",
 		vehicle_text = "Fuel level, ${fuelLevel}% it is.",
 		fuel_pump_text_ev = "Electricity Cost: $${fuelCost}~n~Press, you must ~g~${InteractionKey} ~w~to stop charging.",
@@ -14526,6 +14674,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		purchase_jerry_can = "Press ~g~${InventoryKey}~w~ to purchase a Jerry Can, you must.",
 		gas_station = "At a gas station, you are.",
 		petrolcan_fuel_text = "Petrol, Left Amount: ${petrolAmount}%~n~To stop fueling, Press ~g~${InteractionKey}~w~.",
+		battery_fuel_text = "Charge Left: ${petrolAmount}%~n~Press ~g~${InteractionKey} ~w~to stop charging.",
 		player_busy = "Busy with something else, you are.",
 		fuel_level_set_to = "Fuel level set to, ${fuelLevel} it has.",
 		not_in_a_vehicle = "In a vehicle, you are not.",
@@ -14569,7 +14718,7 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 	},
 
 	garages = {
-		garage_empty = "Empty, your garage is!",
+		garage_empty = "Empty, that garage is!",
 		impound_lot = "Lot Impounded, hmmm",
 		police_impound = "Police Impound, hmmm",
 		owner_self = "Yours only, it is",
@@ -14588,12 +14737,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		error_withdrawing = "Your vehicle withdrawing, an error occurred.",
 		withdraw_timeout = "Wait a bit, before trying to withdraw another vehicle, you must.",
 		garage_in_use = "In use, this garage currently is. Wait a moment, you must.",
-		invalid_model = "Model of vehicle invalid or unknown, it is.",
 		vehicle_in_the_way = "Block the spawn point, a vehicle does.",
 		vehicle_is_out = "Already out, your vehicle is.",
-		vehicle_stored = "Stored, your vehicle has been.",
-		vehicle_stored_other = "The vehicle has been stored.",
-		error_storing = "Failed to store the vehicle, yours is it?",
+		vehicle_stored = "Stored, the vehicle has been.",
+		error_storing = "Failed to store the vehicle, it has.",
 		no_nearby_vehicle = "Nearby vehicles, found none.",
 		no_vehicles_to_retrieve = "Vehicles to retrieve, none you have!",
 		vehicle_retrieved = "Successfully retrieved, the vehicle has been.",
@@ -14603,6 +14750,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		ui_return = "Return, you must.",
 		ui_my_vehicle_list = "My Vehicles, these are",
 		ui_other_vehicle_list = "Other Vehicles, they are",
+		ui_shared_vehicle_list = "Garage Shared",
+		ui_store_shared = "Shared, in store",
 		ui_store_vehicle = "Store Vehicle, you can.",
 		ui_vehicle_sell = "Sell Vehicles, yes?",
 		ui_retrieve_vehicle = "Retrieve Vehicle, you must.",
@@ -14658,6 +14807,20 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		ungarage_success = "Vehicle, successfully ungaraged, it has been.",
 		ungarage_failed = "Located, I am: ${address}",
 		vehicle_not_found = "Already set to ${radioVolume}% is the radio volume.",
+		vehicle_respawned = "Vehicle with id ${vehicleId} has been respawned, successfully it has.",
+		respawn_failed = "Failed, to respawn vehicle did.",
+
+		not_near_node = "Near a vehicle node, you are not.",
+		invalid_garage_id = "Garage id, invalid it is.",
+		failed_create_garage = "Failed to create, a temporary garage has.",
+		failed_remove_garage = "Failed to remove, a temporary garage has.",
+		created_garage = "Temporary garage have created with id ${garageId}.",
+		removed_garage = "Temporary garage have removed with id ${garageId}.",
+
+		created_garage_logs_title = "Created Garage, has been",
+		created_garage_logs_details = "${consoleName} created a garage with id ${garageId} at position `${xCoord}, ${yCoord}, ${zCoord}`.",
+		removed_garage_logs_title = "Removed Garage, has been",
+		removed_garage_logs_details = "${consoleName} a garage with id ${garageId} removed has.",
 
 		garaged_vehicle_logs_title = "Set to ${radioVolume}% the radio volume has now been.",
 		garaged_vehicle_logs_details = "Set to ${radioVolume}% is your current radio volume.",
@@ -14907,8 +15070,6 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		cant_throw_weapon = "This weapon, throw you cannot.",
 		keybind_description = "Your weapon, throw.",
 
-		total_throwables = "Throwables: ${count}",
-
 		threw_weapon_logs_title = "Weapon Thrown",
 		threw_weapon_logs_details = "${consoleName} threw ${item} their (${coords}).",
 		picked_up_weapon_logs_title = "Weapon Picked Up",
@@ -14948,7 +15109,10 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		folded_stock = "Folded stock, it has.",
 		unfolded_stock = "Unfolded stock, it is.",
 		failed_to_toggle_stock = "Failed to toggle stock, we have.",
-		weapon_has_no_stock = "Stock, this weapon has not."
+		weapon_has_no_stock = "Stock, this weapon has not.",
+
+		petrolcan_explosion_logs_title = "Petrolcan Explosion, there was",
+		petrolcan_explosion_logs_details = "${consoleName} did, blew themselves up with a petrolcan."
 	},
 
 	-- a shared "alpha" locale category uwu - also know, some features such as the ${InteractionKey} will be missing here, so don't try to use it
@@ -15102,8 +15266,8 @@ OP.Global.Locales.Languages["meme-yoda"] = {
 		smart_watch_hover = "<i>This smart watch, <b>${name} (#${cid})</b> it belongs to. <b>${stepsWalked}</b> steps, it has tracked.</i>",
 		item_contains = "<b>Contains:</b> <i>${contents}</i>, it does.",
 		item_engraving = "<b>Engraving:</b> <i>${message}</i>, it has.</i>",
-		evidence_bag_casing = "Bullet Casings: ${casings} casing(s) by a ${weapon} registered to ${name} (#${cid}) were shot. (Picked up at ${time} near ${location}).",
-		evidence_bag_casing_unregistered = "Bullet Casings: ${casings} casing(s) by an unregistered ${weapon} were shot. (Picked up at ${time} near ${location}).",
+		evidence_bag_casing = "Bullet Casings: There were ${casings} casing(s) shot by a ${weapon} (${serialNumber}) registered to ${name} (#${cid}) (picked up at ${time} near ${location}).",
+		evidence_bag_casing_unregistered = "Bullet Casings: There were ${casings} casing(s) shot by an unregistered ${weapon} (${serialNumber}) (picked up at ${time} near ${location}).",
 		evidence_bag_impact = "Bullet Impact: ${impacts} impact(s) created by a ${weapon} appear to be. (Picked up at ${time} near ${location}).",
 		evidence_bag_vehicle = "Vehicle DNA: Sample came back to ${name} (#${cid}) and was extracted from seat ${seat} in a vehicle with the plate ${plate} (picked up at ${time} near ${location}).",
 		evidence_bag_vehicle_empty = "Vehicle DNA: Sample did not match any record and was extracted from seat ${seat} in a vehicle with the plate ${plate} (picked up at ${time} near ${location}).",

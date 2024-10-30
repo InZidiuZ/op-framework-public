@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 33 (do not change)
+-- AUTO LOCALES: 34 (do not change)
 
 OP.Global.Locales.Languages["tr-TR"] = {
 	-- configuration settings for language
@@ -32,6 +32,12 @@ OP.Global.Locales.Languages["tr-TR"] = {
 	},
 
 	-- animations/*
+	chairs = {
+		invalid_model = "Eksik veya geçersiz model adı.",
+		no_nearby_chair = "Yakınında o modelde sandalye yok.",
+		chair_offset_copied = "Sandalye konumu kopyalandı."
+	},
+
 	emotes = {
 		get_in_trunk = "Bagaja girmek için ~INPUT_ENTER~ tuşuna basın.",
 		put_boombox_in_trunk = "Boombox'ı bagaja koymak için ~INPUT_ENTER~ tuşuna basın.",
@@ -47,6 +53,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		the_trunk_is_occupied = "Bagaj dolu.",
 		unable_to_toggle_carry = "Taşımayı açıp kapatmadan önce lütfen biraz bekleyin.",
 		carry_disabled_animal = "Hayvan karakterler taşıyamaz.",
+		no_carry_nearby = "Taşıyacak kimse yok.",
+		cant_reach_carry = "En yakındaki kişiye ulaşamazsınız.",
 
 		trunk_hint = "\"/door\" komutunu yakınında durarak bagajı açmak/kapatmak için kullanabilirsin.",
 
@@ -650,6 +658,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		advanced_noclip_ban = "Gizli koridorlardan sızmak için gizli bir kayma mı deniyorsun? Burası bir hayalet vals değil ve bu hamle? Dans programımızda yok.",
 		illegal_local_vehicle_ban = "Görünmez Mirage'in attını bulmuş gibi görünüyorsunuz! Ne yazık ki, bu mistik yolculuk yıllık hayalet geçidine ayrılmıştır.",
 		handling_field_ban = "Fiziğin kurallarını turboşarjlama girişiminde bulundun gibi görünüyor. Güzel deneme, ama bu dünyada tekerleklerimizi gerçeklikle temas halinde tutuyoruz.",
+		teleported_ban = "Göz kırpsanız dahi gitme? Bu boyutta mümkün değil, yolcu.",
+		honeypot_native = "Oh, sıkıntı! Balın bulunmaması gereken bir yere düştüğünüzü gösteriyor gibi. Bazı tencereler olduğu gibi bırakılmalıdır, ne kadar cazip olurlarsa olsun.",
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Kötü Yaratma",
@@ -658,8 +668,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		type_damage_modifier = "Hasar Değiştirici",
 		type_distance_taze = "Uzaktan Elektrikle Vurma",
 		type_fast_movement = "Hızlı Hareket",
+		type_teleported = "Teleport Edildi",
 		type_freecam_detected = "Freecam Algılandı",
 		type_honeypot = "Bal Kavanozu",
+		type_honeypot_native = "Bal Kapanı Yerli",
 		type_illegal_damage = "Yasadışı Hasar",
 		type_illegal_event = "Yasa Dışı İstemci Olayı",
 		type_illegal_freeze = "Yasa Dışı Donma",
@@ -829,6 +841,12 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		sit_command_parameter_variation = "çeşit",
 		sit_command_parameter_variation_help = "Hangi oturma animasyonunu oynatmak için (1 - 6).",
 		sit_command_substitutes = "sandalye",
+
+		chair_offset_command = "sandalye_ofset",
+		chair_offset_command_help = "Belirli bir modelin yakınındaki sandalyenin ofsetini tanımlayın.",
+		chair_offset_command_parameter_model_name = "model adı",
+		chair_offset_command_parameter_model_name_help = "Ofsetini tanımlamak istediğiniz sandalyenin model adı.",
+		chair_offset_command_substitutes = "",
 
 		-- animations/couches
 		sleep_command = "uyku",
@@ -1514,6 +1532,13 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		airsupport_command_help = "Hava desteği çağırır.",
 		airsupport_command_substitutes = "",
 
+		-- game/animals
+		animal_sound_command = "hayvan_sesi",
+		animal_sound_command_help = "Bir hayvan sesi efekti çalın.",
+		animal_sound_command_parameter_sound = "ses",
+		animal_sound_command_parameter_sound_help = "Oynatmak istediğiniz ses. (Hayvan modeline bağlıdır)",
+		animal_sound_command_substitutes = "",
+
 		-- game/archives
 		create_archive_command = "arşiv_oluştur",
 		create_archive_command_help = "Bulunduğunuz arşivde yeni bir dosya oluşturur.",
@@ -1550,6 +1575,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		play_audio_command_parameter_server_id = "sunucu kimliği",
 		play_audio_command_parameter_server_id_help = "Bu sesi çalmak istediğiniz oyuncunun sunucu kimliği. Tüm oyuncular için `-1` yapabilirsiniz.",
 		play_audio_command_substitutes = "",
+
+		-- game/audio_emitters
+		toggle_audio_emitters_command = "toggle_audio_emitters",
+		toggle_audio_emitters_command_help = "Yerel ses çıkartıcıları (audio emitters) açıp kapatır.",
+		toggle_audio_emitters_command_substitutes = "",
 
 		-- game/bandaids
 		random_bandaid_command = "rastgele_bandaj",
@@ -2077,18 +2107,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		rotate_marker_command_parameter_marker_name_help = "Düzenlemek istediğiniz işaretçi.",
 		rotate_marker_command_substitutes = "",
 
-		rectangle_command = "dikdörtgen",
-		rectangle_command_help = "3B uzayda bir dikdörtgen oluşturun.",
-		rectangle_command_substitutes = "dörtgen",
-
-		define_area_command = "alan_tanımı",
-		define_area_command_help = "Bir alan tanımlayın.",
-		define_area_command_substitutes = "alan",
-
-		polygon_command = "çokgen",
-		polygon_command_help = "2D uzayda bir çokgen oluşturun.",
-		polygon_command_substitutes = "poligon",
-
 		debug_info_command = "debug_info",
 		debug_info_command_help = "Belirli bir oyuncu hakkında bazı hata ayıklama bilgisi toplayın.",
 		debug_info_command_parameter_server_id = "sunucu kimliği",
@@ -2122,6 +2140,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		show_cancelled_vehicles_command = "iptal_edilen_aracları_goster",
 		show_cancelled_vehicles_command_help = "İptal edilen araçların gösterimini açıp kapatır.",
 		show_cancelled_vehicles_command_substitutes = "",
+
+		print_object_models_command = "print_object_models",
+		print_object_models_command_help = "Mevcut nesne modellerini konsolda yazdırır.",
+		print_object_models_command_substitutes = "",
 
 		-- game/debug_menu
 		debug_menu_command = "hata ayıklama menüsü",
@@ -2224,6 +2246,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		fake_id_command_parameter_female = "kadın",
 		fake_id_command_parameter_female_help = "Eğer erkek yerine bir kadın vatandaş kartı istiyorsanız, bu özelliği true olarak ayarlayın.",
 		fake_id_command_substitutes = "",
+
+		-- game/fields
+		field_debug_command = "field_debug",
+		field_debug_command_help = "Yakındaki tüm tarla bitkilerini hata ayıklar.",
+		field_debug_command_substitutes = "",
 
 		-- game/flag_swap
 		flag_swap_command = "bayrak_degisimi",
@@ -2601,6 +2628,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		fake_lag_command_help = "Sahte güç yaratır.",
 		fake_lag_command_parameter_fps = "fps",
 		fake_lag_command_parameter_fps_help = "Hedef fps (>= 1).",
+		fake_lag_command_parameter_spike = "spike",
+		fake_lag_command_parameter_spike_help = "Rastgele olarak fps'inizi düşürür (baş ağrısına neden olabilir).",
 		fake_lag_command_substitutes = "gösterge",
 
 		-- game/locate
@@ -2609,13 +2638,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		locate_entity_command_parameter_filter = "filtre",
 		locate_entity_command_parameter_filter_help = "Varlığın eşleşeceği filtrenin ne olacağı (id:12345, plaka:90FMK072, vb.)",
 		locate_entity_command_substitutes = "vb",
-
-		-- game/logs
-		logs_command = "kayıtlar",
-		logs_command_help = "Belirli bir oyuncu için en son sunucu kayıtlarını göster.",
-		logs_command_parameter_server_id = "sunucu id'si",
-		logs_command_parameter_server_id_help = "Oyuncunun sunucu id'si.",
-		logs_command_substitutes = "",
 
 		-- game/loot
 		loot_debug_command = "yağmala_hata_ayıklama",
@@ -2819,6 +2841,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		model_view_command_parameter_model_help = "Görüntülemek istediğiniz model adı veya hash değeri.",
 		model_view_command_parameter_no_blocker = "engelleyici yok",
 		model_view_command_parameter_no_blocker_help = "Gölge engelleyiciyi devre dışı bırak (varsayılan: yok).",
+		model_view_command_parameter_components = "komponentler",
+		model_view_command_parameter_components_help = "Silah komponentleri (virgülle ayrılmış).",
 		model_view_command_substitutes = "model, view",
 
 		-- game/money
@@ -2911,6 +2935,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		power_generators_debug_command = "power_generators_debug",
 		power_generators_debug_command_help = "Pasifik Bankası güç jeneratörlerinin hata ayıklamasını açıp kapatır.",
 		power_generators_debug_command_substitutes = "",
+
+		power_generators_disable_command = "power_generators_disable",
+		power_generators_disable_command_help = "Pacific Bank'taki her güç jeneratörünü devre dışı bırakın. Bu, zaten devre dışı bırakılmamış her birini aynı anda devre dışı bırakmakla aynıdır.",
+		power_generators_disable_command_substitutes = "",
 
 		-- game/panel
 		panel_command = "panel",
@@ -3037,11 +3065,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		share_phone_number_command = "telefon_numarasını_paylaş",
 		share_phone_number_command_help = "Telefon numaranızı etrafınızdaki herkesle paylaşır (< 1.5m).",
 		share_phone_number_command_substitutes = "numara_paylaş",
-
-		-- game/plants
-		plants_debug_command = "bitkiler_hata_ayıklama",
-		plants_debug_command_help = "Tüm bitkilerin hatalarını ayıklar.",
-		plants_debug_command_substitutes = "",
 
 		-- game/player_control
 		drive_for_command = "drive_for",
@@ -3415,7 +3438,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		weather_command = "hava_durumu",
 		weather_command_help = "Hava durumunu değiştirir.",
 		weather_command_parameter_weather = "hava durumu adı",
-		weather_command_parameter_weather_help = "Hava durumu adı. Geçerli hava durumu adları EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS ve HALLOWEEN'dir.",
+		weather_command_parameter_weather_help = "Ayarlamak istediğiniz hava durumunun adı. Geçerli hava durumu adları EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS, HALLOWEEN, RAIN_HALLOWEEN ve SNOW_HALLOWEEN.",
 		weather_command_substitutes = "",
 
 		advance_weather_command = "hava_geçiş",
@@ -3464,12 +3487,16 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		tp_to_player_command_help = "Bir oyuncuya teleport olursunuz.",
 		tp_to_player_command_parameter_server_id = "sunucu kimliği",
 		tp_to_player_command_parameter_server_id_help = "Teleport yapmak istediğiniz oyuncunun sunucu kimliği.",
+		tp_to_player_command_parameter_into_vehicle = "araç içine",
+		tp_to_player_command_parameter_into_vehicle_help = "Oyuncunun aracına teleport olmak istiyorsanız.",
 		tp_to_player_command_substitutes = "tpto",
 
 		tp_player_here_command = "tp_player_here",
 		tp_player_here_command_help = "Bir oyuncuyu size teleport eder.",
 		tp_player_here_command_parameter_server_id = "sunucu kimliği",
 		tp_player_here_command_parameter_server_id_help = "Teleport etmek istediğiniz oyuncunun sunucu kimliği.",
+		tp_player_here_command_parameter_freeze = "dondur",
+		tp_player_here_command_parameter_freeze_help = "Oyuncuyu dondurmak istiyorsanız.",
 		tp_player_here_command_substitutes = "tphere",
 
 		tp_player_player_command = "tp_player_player",
@@ -3591,6 +3618,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		voice_debug_command_parameter_server_id_help = "Başkasının 'ses hata ayıklama' özelliğini açmak/ kapatmak isterseniz, buraya sunucu idlerini girin.",
 		voice_debug_command_substitutes = "",
 
+		broadcast_all_command = "tumune_yayin",
+		broadcast_all_command_help = "Tüm oyunculara yayını açıp kapatır.",
+		broadcast_all_command_substitutes = "",
+
 		listen_command = "dinle",
 		listen_command_help = "Belirli bir kullanıcı için dinleme modunu açıp kapatır. (Söylediklerini duyarsınız)",
 		listen_command_parameter_server_id = "sunucu idsi",
@@ -3706,6 +3737,15 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		show_raw_locales_command = "show_raw_locales",
 		show_raw_locales_command_help = "Locale'ların hangi ayarlarda değiştirilmesi gerektiğini hata ayıklamaya yardımcı olmak için, ham locale isimlerini göstermeyi açıp kapatır.",
 		show_raw_locales_command_substitutes = "",
+
+		-- global/shapes
+		areas_command = "alanlar",
+		areas_command_help = "Daire şeklinde alanlar tanımlar.",
+		areas_command_substitutes = "",
+
+		polygon_command = "çokgen",
+		polygon_command_help = "2D çokgen tanımlar.",
+		polygon_command_substitutes = "poligon",
 
 		-- global/states
 		entity_states_command = "nesne_durumlari",
@@ -3947,6 +3987,22 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		ungarage_vehicle_command_parameter_vehicle_id_help = "Çıkarmak istediğiniz aracın ID'si.",
 		ungarage_vehicle_command_substitutes = "çıkart",
 
+		respawn_vehicle_command = "araciyenile",
+		respawn_vehicle_command_help = "Bir aracı yeniden oluşturur (garaj ve garaj dışı).",
+		respawn_vehicle_command_parameter_repair = "tamir",
+		respawn_vehicle_command_parameter_repair_help = "Araç yeniden oluşturulmadan önce aracın tamir edilip edilmeyeceği.",
+		respawn_vehicle_command_substitutes = "",
+
+		create_garage_command = "garaj_olustur",
+		create_garage_command_help = "En yakındaki araç düğümünde geçici bir garaj oluştur.",
+		create_garage_command_substitutes = "",
+
+		remove_garage_command = "garaj_sil",
+		remove_garage_command_help = "Geçici bir garajı kaldır.",
+		remove_garage_command_parameter_garage_id = "garaj kimliği",
+		remove_garage_command_parameter_garage_id_help = "Kaldırmak istediğiniz geçici garajın kimliği.",
+		remove_garage_command_substitutes = "",
+
 		-- vehicles/keys
 		give_key_command = "anahtar_ver",
 		give_key_command_help = "Yakındaki bir kişiye araç anahtarı verin.",
@@ -4149,10 +4205,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		throw_weapon_command_help = "Şu anda kullandığınız silahı atın.",
 		throw_weapon_command_substitutes = "fırlat, at",
 
-		throwables_debug_command = "throwables_hata_ayıklama",
-		throwables_debug_command_help = "Yakınındaki tüm atılabilir nesnelerin hatalarını ayıkla.",
-		throwables_debug_command_substitutes = "",
-
 		-- weapons/weapons
 		check_ammo_command = "mühimmat_kontrolü",
 		check_ammo_command_help = "Toplamda kaç mermiye sahip olduğunu kontrol eder.",
@@ -4298,7 +4350,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 	},
 
 	steam = {
-		no_steam_allowed = "Bu sunucuda oynamak için önce FiveM'i kapatın, ardından Steam'i kapatın."
+		no_steam_allowed = "Katılmadan önce Steam'i tamamen kapatmanız ve ardından FiveM'i başlatmanız gerekmektedir."
 	},
 
 	twitch = {
@@ -4438,7 +4490,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		server_id_hidden_feature = "Sunucu Kimliği Gizlenmiş",
 		fake_disconnect_feature = "Sahte-Bağlantı-Kesme",
 		brighter_nights_feature = "Daha Parlak Gece",
-		ridealong_feature = "Yol Arkadaşı"
+		ridealong_feature = "Yol Arkadaşı",
+		broadcast_all_feature = "Herkese Yayınla"
 	},
 
 	admin_menu = {
@@ -4512,6 +4565,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		drunk_state_2 = "Sarhoşsunuz.",
 		drunk_state_3 = "Çok sarhoşsunuz.",
 		drunk_state_4 = "Tehlikeli bir şekilde sarhoşsunuz."
+	},
+
+	animals = {
+		invalid_sound = "Geçersiz ses."
 	},
 
 	arcade = {
@@ -4630,6 +4687,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 	atms = {
 		withdraw = "Para Çekme",
+		withdraw_bonds = "Bono olarak Çek",
 		deposit = "Para Yatırma",
 		balance = "Bakiye",
 		transfer = "Transfer",
@@ -4671,6 +4729,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		withdraw_log_bank_title = "Banka Para Çekme",
 		withdraw_log_atm_title = "ATM Para Çekme",
 		withdraw_log = "${consoleName} ${amount}$ çekti.",
+		withdraw_log_bonds_title = "Banka Çekme (Bono)",
+		withdraw_log_bonds = "${consoleName}, biriktirmeleri arasından $${amount} tutarında bono çekti (${bonds}).",
 
 		transfer_log_title = "Banka Transferi",
 		transfer_log = "${consoleName} (#${characterId}) ${amount}$ para ${targetConsoleName} (#${targetCharacterId}) hesabına transfer etti.",
@@ -4815,6 +4875,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		played_audio_effect_for_everyone_details = "${consoleName} bir ses efekti oynattı ve bu efekt bağlantısı kullanıldı: `${url}`, ses seviyesi `${volume}` olarak ayarlandı.",
 		played_audio_effect_for_player_title = "Belirli Bir Oyuncu İçin Ses Efekti Oynatıldı",
 		played_audio_effect_for_player_details = "${consoleName} oyuncusu için ses efekti çaldı. Ses efektinin bağlantısı `${url}` ve ses seviyesi `${volume}` olarak ayarlandı."
+	},
+
+	audio_emitters = {
+		audio_emitters_disabled = "Ses vericiler devre dışı bırakıldı.",
+		audio_emitters_enabled = "Ses vericiler etkinleştirildi."
 	},
 
 	balls = {
@@ -5015,7 +5080,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		pd_sea_hq = "Polis Deniz Karakolu",
 		ems_air_hq = "Acil Sağlık Hava Karakolu",
 		ems_boat_hq = "Acil Sağlık Deniz Karakolu",
-		ems_garage = "Acil Sağlık Garajı"
+		ems_garage = "Acil Sağlık Garajı",
+		vineyard = "Bağ"
 	},
 
 	bombs = {
@@ -5560,10 +5626,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		steel_ore_recipe = "Demir Cevherini Erit",
 		gold_ore_recipe = "Altın Cevherini Erit",
 		gold_nuggets_recipe = "Altın Noktalarını Erit",
-		tungsten_ore_recipe = "Tungsten Cevherini Erit",
-		tungsten_bar_recipe = "Tungsten Noktalarını Erit",
-		titatium_ore_recipe = "Titanyum Cevherini Erit",
-		titanium_bar_recipe = "Titanyum Noktalarını Erit",
+		tungsten_bar_recipe = "Tungsten Çubuğu Erit",
+		titanium_bar_recipe = "Titanyum Çubuğu Erit",
 		smelt_rusty_metal_recipe = "Paslı Metal Erit",
 		smelt_rusty_tank_shell_recipe = "Paslı Tank Kovanı Ergit",
 		smelt_rusty_diving_helmet_recipe = "Paslı Dalış Kaskını Ergit",
@@ -5571,6 +5635,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		smelting_materials = "Eritme işlemi yapılıyor: ${usedItems}",
 		smelted_materials = "${usedItems} eritildi.",
 		failed_smelt_materials = "Malzemelerin eritme işlemi başarısız oldu.",
+		smelting_copper = "Bakır Eritme",
+		combining_copper_zinc = "Bakır ve Çinko Kombinasyonu",
 
 		scrap_knife = "Hurda Bıçak",
 		press_to_scrap_knife = "[${SeatEjectKey}] Hurda Bıçak",
@@ -6921,7 +6987,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		timecycles = "Zaman Çevrimleri",
 		weather = "Hava Durumu",
 		reset = "Sıfırla",
-		refresh_interior = "İç Mekanı Yenile"
+		refresh_interior = "İç Mekanı Yenile",
+		camera_shakes = "Kamera Sallanmaları"
 	},
 
 	development = {
@@ -6973,7 +7040,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		failed_to_sync_doors = "Kapılar senkronize edilemedi. Muhtemelen bir şey bozuldu. Lütfen tekrar deneyin.",
 		saved_doors_to_file = "Sunucuda `${amount}` kapı dosyaya kaydedildi.",
 		no_nearby_doors = "Kaydedilecek yakındaki kapı yok.",
-		lockpicking_door = "Kilit açma kapısı",
 		copied_doors = "Kopyalanmış ${doors} kapı.",
 		adding_doors = "Kapılar ekleniyor.",
 		stop_adding_doors = "Artık kapılar eklenmiyor.",
@@ -7019,6 +7085,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		floor_lobby = "Lounge",
 		floor_roof = "Çatı",
 		floor_helipad = "Helikopter Pisti",
+		floor_tower = "Kule",
 
 		floor_shop = "Dükkan",
 
@@ -7051,7 +7118,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		floor_gangway = "Köprü geçişi",
 
-		floor_hangout = "Takılınacak Yer",
+		floor_hangout = "Kule",
 		floor_penthouse = "Üst Daire",
 		floor_theatre_office = "Tiyatro Ofisi",
 		floor_psychiatrists_office = "Psikiyatristin Ofisi",
@@ -7165,8 +7232,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		next_rotation_in = "${time} sonra bir sonraki dönüşüm.",
 
 		exclusive_dealership_blip = "Özel Deluxe Motorsport",
-
-		buyback_closed = "Değişim kapalı. Araçlarınızı uygun seviyede olan başka bir oyuncuya satabilirsiniz.",
 
 		log_title = "EDM Satın Alma",
 		log_description = "${cost} karşılığında `${label}` satın alındı."
@@ -7373,13 +7438,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 	gift_boxes = {
 		failed_seal_box = "Hediye kutusunu kapatma başarısız oldu.",
 		failed_open_box = "Hediye kutusunu açma başarısız oldu."
-	},
-
-	golf = {
-		pickup_ball = "[${InteractionKey}] Al",
-
-		failed_pickup = "Hasarı yansıtmayı açar/kapatır. (Sizi yaralayan herhangi bir varlık kendi kendine zarar verir)",
-		failed_place = "hesaplar"
 	},
 
 	gps = {
@@ -7596,6 +7654,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		cpr_player_logs_details = "${consoleName}, ${targetConsoleName} üzerinde CPR uyguladı."
 	},
 
+	heated_seats = {
+		hint = "Isıtmalı koltuklar için ~INPUT_CHARACTER_WHEEL~ ve ~INPUT_CELLPHONE_UP~ / ~INPUT_CELLPHONE_DOWN~ tuşlarını kullanın."
+	},
+
 	hitmarkers = {
 		hitmarkers_enabled = "Vuruş işaretçileri etkinleştirildi.",
 		hitmarkers_disabled = "Vuruş işaretçileri devre dışı bırakıldı."
@@ -7608,6 +7670,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		belt = "KEMER",
 		oil = "YAĞ",
 		megaphone = "DUYURU",
+		heat = "ISI",
 		manual = "Tüm birikim hesaplarınızı görüntüler ve yönetir.",
 		cruise_control = "HIZ SABITLEYICI",
 		speed_limiter = "HIZ SINIRLAYICI",
@@ -7740,6 +7803,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		weapon_license_details = "Silah Lisansı | ${firstName} ${lastName} | Vatandaş Kimliği: ${characterId}",
 		mining_license = "Madencilik Lisansı",
 		mining_license_details = "Madencilik Lisansı | ${firstName} ${lastName} | Medeni Kimlik: ${characterId}",
+		bar_license = "Bar/Hukuk Lisansı",
+		bar_license_details = "Bar/Hukuk Lisansı | ${firstName} ${lastName} | Vatandaş Kimliği: ${characterId}",
 		just_showed_license = "Bir lisans gösterdin. Lütfen biraz bekleyin.",
 
 		just_showed_badge = "Bir rozet gösterdin. Lütfen biraz bekleyin.",
@@ -8002,6 +8067,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		inspect_weapon = "Bu ${itemName} adlı silahın seri numarası `${itemId}` gibi görünüyor.",
 		inspect_weapon_broken = "Bu ${itemName} adlı silahın seri numarası `${itemId}` gibi görünüyor ve tamamen kırılmış görünüyor.",
 		inspect_bank_property = "Bu ${item}, ${bank} Bankası'na ait olarak işaretlenmiştir.",
+		inspect_bank_property_cid = "Bu ${item}, ${bank} Bankası'na ait olarak işaretlendi. #${characterId} hesap numarasıyla çekilmiştir.",
 		inspect_no_property = "Bu ${item} üzerinde herhangi bir mülkiyet işareti bulunmamaktadır.",
 
 		searching_dumpster = "Çöp kutusu aranıyor",
@@ -8039,7 +8105,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		underground_bar_counter = "Yeraltı Bar Sayacı",
 		pizza_this_counter = "Pizza This Sayacı",
 		yellow_jack_counter = "Yellow Jack Sayacı",
-		bahama_mamas_counter = "Bahama Mamas Tezgahı",
 
 		inventory_name_missing = "Envanter ismi belirtilmemiş.",
 
@@ -8054,6 +8119,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		missing_job = "Bu envanteri kullanmak için gerekli işe sahip değilsiniz.",
 
+		inventory_active = "Envanter şu anda başka biri tarafından kullanılmaktadır.",
 		item_is_broken = "Bu öğe bozuk.",
 		battle_royale_item = "Bu öğe yalnızca Battle Royale maçlarında kullanılabilir.",
 		battle_royale_item_disallowed = "Bu öğe Battle Royale maçlarında kullanılamaz.",
@@ -8090,6 +8156,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		break_apart_battery = "<i>Pil</i> parçala",
 		mix_gunpowder = "<i>Barut</i> karıştır",
 		roll_cigar = "<i>Puro</i> sar",
+		squeeze_orange_juice = "<i>Portakal Suyu</i> Sık",
+		make_apple_juice = "<i>Elma Suyu</i> Yap",
 
 		search = "Arama",
 		amount = "Miktar",
@@ -8213,6 +8281,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		weapon_license_description = "Daha yüksek sınıf silahları sahip olmak ve taşımak için bir silah lisansı.",
 		mining_license = "Madencilik Lisansı",
 		mining_license_description = "Madencilik için kullanılan bir lisans.",
+		bar_license = "Bar/Hukuk Lisansı",
+		bar_license_description = "Bar sınavını başarılı bir şekilde geçtiğinizi ve resmen San Andreas Eyaleti'nde hukuk pratiği yapmanıza izin verildiğini kanıtlayan belge. Yasal sistemi ustalıkla öğrendiğinizi ve artık masumları savunabileceğinizi veya suçluları yargılayabileceğinizi bilerek holda flaşlayın.",
 
 		sasp_badge = "SASP Rozeti",
 		sasp_badge_description = "San Andreas Polis Departmanı memurları için bir rozet.",
@@ -8337,6 +8407,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		radio_decryptor = "Radyo Şifre Çözücü",
 		radio_decryptor_description = "Bağlı olduğu radyo frekanslarını şifreler.",
 
+		drill_large = "Büyük Matkap",
+		drill_large_description = "Zorlu işler için tasarlanmış ağır hizmet matkabı. Eğer ne yaptığını biliyorsan, büyük şeylerle başa çıkabilir.",
+		drill_small = "Küçük Matkap",
+		drill_small_description = "Kompakt ve hassas olan bu araç, zor ulaşılabilen yerlere erişmek için mükemmeldir. Birkaç tane işe yarayabilir.",
+
 		paper_bag = "Kağıt Torba",
 		paper_bag_description = "Market alışverişi yapmak ya da birinin başını, ölü ya da diri, saklamak için mükemmeldir.",
 		burger_shot_delivery = "Burger Shot Menüsü",
@@ -8387,6 +8462,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		clothing_bag = "Giyim Çantası",
 		clothing_bag_description = "Artık moda ile ilgili acil durumlarla ilgili endişelenmeyin! Giyim çantası, favori kıyafetlerinizi depolamanıza ve herhangi bir yerde hızlıca giyinmenize olanak tanır. Bu çanta, bir peri nin yağmur bazıları ile aynı büyüye sahiptir ama bibbidi-bobbidi-boo olmadan.",
 
+		tnt_block = "TNT Bloğu",
+		tnt_block_description = "Minecraft TNT'si içeren oldukça uçucu bir blok, dünyanızı havaya uçurmaya hazır - sadece kıvılcım ekleyin ve sığınaklara kaçın!",
+
 		magnifying_glass = "Büyüteç",
 		magnifying_glass_description = "Tüm dedektif ihtiyaçlarınız için bir büyüteç. Belki çimenlerde 4 yapraklı bir yonca veya çamurda küçük bir kurbağa bulabilirsiniz?",
 
@@ -8418,6 +8496,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		raw_sapphire_description = "Bu kaba safir, yoğun mavi tonları ile derinlik ve gizemin ifadesini taşır. Güzel olduğu kadar dayanıklı olan bu taş, gökyüzünü yansıtan takılara dönüştürülmeye hazırdır.",
 		raw_emerald = "Ham Zümrüt",
 		raw_emerald_description = "Canlı, ham bir zümrüt, yemyeşil manzaraların ve derin ormanların özünü yakalar. Sıradan olmasına rağmen büyüleyicidir ve işlendikten sonra nefes kesen güzellik potansiyeli barındırır.",
+		raw_opal = "Ham Opal",
+		raw_opal_description = "Bu hırpalanmış değerli taş, ışığı yakaladığında renklerin çeşitliliğini yansıtarak göz kamaştırıcı bir buluntu. Doğal formunda kazıldığında, kesilip parlatılarak olağanüstü bir şeye dönüştürülmeyi bekleyen bir hazine.",
+		raw_onyx = "Ham Oniks",
+		raw_onyx_description = "Bu derin, gizemli değerli taş, yeryüzünün derinliklerinde bulunur, gerçek potansiyelini karanlık, parlak bir kabukla gizler. Ham ve işlenmemiş halde, güç ve gizemin simgesidir.",
 
 		ruby_dust = "Yakut Tozu",
 		ruby_dust_description = "Zengin, derin kırmızı rengi ile öne çıkan ince ezilmiş yakutlardan yapılmış canlı kırmızı bir toz. Bu lüks pigment özellikle diğer vatansever tonlarla birleştirilerek dikkat çekici ve cesur bir renk katmak için mükemmeldir, başları döndürecek ve milli gururu tetikleyecek bir görünüm yaratır.",
@@ -8432,6 +8514,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		sapphire_description = "Bilgelik ve soyluluk simgesi olan bu cilalanmış safir, kraliyet mavisinin parıltısıyla büyüler. Dayanıklılığı ve parıltısı hem günlük giyim hem de tören kıyafetleri için favori yapar.",
 		emerald = "Zümrüt",
 		emerald_description = "Canlı yeşilini ortaya çıkarmak için cilalanmış, bu zümrüt, ilkbaharın canlılığına rakip olan bir yeşil parlaklığa sahiptir. Zengin rengi ve berraklığıyla kutunun içinde bir değerli taş koleksiyonunun temelidir.",
+		opal = "Opal",
+		opal_description = "Dikkatlice şekillendirildiğinde bu opal, büyüleyici renklerin oyunu ile parlar. Doğanın güzelliğini taşımak isteyenler için mükemmel bir parça.",
+		onyx = "Oniks",
+		onyx_description = "Mükemmelliğe cilalanmış, bu siyah değerli taş, pürüzsüz ve cesur bir cazibe yayar, daha canlı taşlara keskin bir tezat sunar. Drama severler için idealdir.",
 
 		ring = "Yüzük",
 		ring_description = "Kişisel bir yaratım için şık ve zarif bir temel olan bu boş yüzük, ince metalden üretilmiş olup herhangi bir değerli taşla süslenmeye hazırdır. Oyma bir mesaj için mükemmel bir tuvaldir ve kullanıcının kendi hikayesi kadar benzersiz hale getirilir.",
@@ -8446,6 +8532,15 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		sapphire_ring_description = "Asil ve çarpıcı, bu safir yüzük gece gökyüzünü anımsatan derin mavi bir değerli taşa sahiptir. Göz alıcı yan taşlar ile çevrili gümüş bir bant içinde bulunan bu yüzük, sahibine zarafet dokunuşu ve kraliyet havası sunar.",
 		emerald_ring = "Zümrüt Yüzük",
 		emerald_ring_description = "Canlı ve hayat dolu, bu zümrüt yüzük zengin yeşil bir taşı, zarifçe işlenmiş bir gümüş bantta sergiler. Doğanın bereketli güzelliğini kutlayan bu yüzük, büyümeyi ve yenilenmeyi değer verenler için mükemmel bir seçimdir.",
+		opal_ring = "Opal Yüzük",
+		opal_ring_description = "Parlak bir opal taşı ile donatılmış klasik bir gül altın yüzük. Metalin hafif parıltısıyla birlikte, çok renkli opal, zarif ve zamansız bir aksesuar oluşturur.",
+		onyx_ring = "Oniks Yüzük",
+		onyx_ring_description = "Tamamen katı oniksten yapılmış, bu yüzük güçlü olduğu kadar çarpıcıdır. Dayanıklılığın ve zarafetin simgesi olup, keskin bir minimalizmi takdir edenler içindir.",
+
+		pearl = "İnci",
+		pearl_description = "Okyanusun derinliklerinde bulunan, pürüzsüz ve parlak bu inci, zamansız bir değerli taştır. Bir midye içinde doğal olarak oluşan, yumuşak, krem rengiyle parlayan bir hazine olduğu için değerlidir.",
+		pearl_ring = "İnci Yüzük",
+		pearl_ring_description = "Kusursuz beyaz bir inci ile süslenmiş klasik altın bir banttır. Bu zarif yüzük sofistike ve zarafeti yansıtır, herhangi bir olay için mükemmel bir aksesuardır.",
 
 		gemstone_scanner = "Değerli Taş Tarayıcısı",
 		gemstone_scanner_description = "Her madenci için hayati öneme sahip olan Mücevher Tarayıcı, kayalara gömülü mücevherlerin stabilitesini değerlendirmek amacıyla tasarlanmıştır. Her bir mücevherin yapısal bütünlüğünü değerlendirerek, bu cihaz madencilerin çıkarma işlemine en güvenli yaklaşımı belirlemelerine yardımcı olur ve tehlikeli patlamaların tetiklenme riskini azaltır. Hem mücevherlerin değerini korumak hem de madencilik işleminin güvenliğini sağlamak için vazgeçilmez bir araçtır.",
@@ -8779,6 +8874,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		watermelon_description = "Su mu, karpuz mu? Asla bilemezsiniz.",
 		lemon = "Limon",
 		lemon_description = "Canlı ve keskin bir limon, ekşiliği ile patlayan ve parlak sarı rengi ile dikkat çeken bir meyve. Favori yemeklerinize ve içeceklerinize ferahlatıcı bir twist eklemek için mükemmeldir. Her ısırık tadağınızda tat tomurcuklarınızı uyandıran bir narenciye sıçraması sunar.",
+
+		orange_juice = "Portakal Suyu",
+		orange_juice_description = "Sıkılmış taze ve narenciye tadı bulunan bu portakal suyu, katkısız bir güneş ışığı bardağıdır. Sadece el sıkılmış portakal iyiği, katkısız güzellik.",
+		apple_juice = "Elma Suyu",
+		apple_juice_description = "Taze elmalardan elde edilen bu su, doğal elma lezzeti ve biraz bahçe tatlılığıyla ferahlatıcı şekilde saf.",
 
 		banana_peel = "Muz Kabuğu",
 		banana_peel_description = "Oldukça kaygan, üzerine basarken dikkatli olun.",
@@ -9277,7 +9377,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		dab_pen_description = "Yo, bu Penjamin mi? Araç gibi vuruyor, dostum. Üç sağlam yanıp sönme ve işte gittiğin yer burası. Parladığında, oyun biter. Doldurma yok, sadece yükseklikte sürün.",
 
 		train_pass = "Tren Geçişi",
-		train_pass_description = "Kullanıldığında, sıradaki 3 geçiş hakkını anında alırsınız.",
+		train_pass_description = "Kullanıldığında, kuyruktan 2 kat hızlı geçiş alırsınız.",
 		train_pass_appreciated_tier = "Takdir Edilen Seviye",
 		train_pass_appreciated_tier_description = "Takdir Edilen Seviye için 7 günlük kullanım hakkı. OP Puanları kullanılarak yükseltilemez.",
 		train_pass_respected_tier = "Saygı Duyulan Seviye",
@@ -9551,6 +9651,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		raw_bacon = "Çi̇ft Dana Jambon",
 		raw_bacon_description = "En iyi parçalardan dilimlenmiş bu premium jambon, mükemmel şekilde sunulmuş ve her yemeği lezzetli bir başyapıta dönüştürmeye hazır. Izgarada kızartmaya uygun olan bu jambonlar, lezzetli bir ziyafet sunmak için bekliyor.",
 
+		carrot = "Havuç",
+		carrot_description = "Sağlık meraklıları ve... tavşanlar tarafından sevilen turuncu bir çıtır atıştırmalık. Dikkatli olun, yoksa bir tavşan sizi geçebilir!",
 		liquid_smoke = "Sıvı Duman",
 		liquid_smoke_description = "Bu sıvı duman şişesi, mutfağın büyülü sırlarından biridir. Odun ve ateşin eski fısıldamalarını etlere enjekte eden yoğun bir esanstır.",
 		raw_brined_meat = "Çiğ Tuzlu Et",
@@ -9606,6 +9708,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		olives_description = "Biraz zeytin, partiler için mükemmel bir atıştırmalık.",
 		popcorn = "Mısır",
 		popcorn_description = "Film geceleri için mükemmel bir mısır poşeti.",
+		rice_krispies = "Rice Krispies",
+		rice_krispies_description = "Tatlı, çıtır ve biraz nostaljik, bu kabarcıklı pirinç atıştırmalıklar her ısırıkta çıt çıt diye ses çıkarır. Hızlı atıştırmalıklar veya ev yapımı marshmallow barları için mükemmeldir!",
+		almond_joy = "Badem Keyfi",
+		almond_joy_description = "Badem ve hindistan cevizi, kremalı süt çikolatası kaplamasıyla sarılı. Tatlı, fındıklı ve doyurucu, cebinizde cennetin sığabileceğini hatırlatan bir çikolata barı.",
 
 		uncooked_rice = "Pişmemiş Pirinç",
 		uncooked_rice_description = "Bu temel tahıl olan pişmemiş pirinç, birçok mutfak şaheserinin boş tuvali olarak hizmet eder. Ham ve dönüşüme hazır olan pirinç, lezzetleri emeceğini ve güçlü risottolardan narin sushi rulolara kadar her yemeği zenginleştireceğini vadeder.",
@@ -9938,13 +10044,15 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		weapon_flare = "Flare (Işık fişeği)",
 		weapon_acidpackage = "Asit Paketi",
 
-		weapon_petrolcan = "Jerry Can (Benzin kutusu)",
-		gadget_parachute = "Paraşüt",
 		weapon_fireextinguisher = "Yangın Söndürücüsü",
 		weapon_hazardcan = "Tehlikeli Madde Jerry Canı",
 		weapon_fertilizercan = "Gübre Kutusu",
 		weapon_hackingdevice = "Hacking Cihazı",
 
+		weapon_petrolcan = "Jerry Can (Benzin kutusu)",
+		ev_battery = "EV Pil",
+
+		gadget_parachute = "Paraşüt",
 		red_parachute = "Kırmızı Paraşüt",
 		blue_parachute = "Mavi Paraşüt",
 		black_parachute = "Siyah Paraşüt",
@@ -10065,13 +10173,15 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		weapon_flare_description = "Hava indirmiti atmak için atın.",
 		weapon_acidpackage_description = "Bir asit paketi. Karışıklık yapmak için kullanın.",
 
-		weapon_petrolcan_description = "Yakıt izi bırakan bir benzin bidonu.<br><br>Kalan benzin miktarı: ${petrolAmount}%.",
-		gadget_parachute_description = "Bu naylon spor paraşütü, yön ve hız üzerinde daha fazla kontrol sağlamak için ram havaşılı paraşüt tasarımına sahiptir.",
 		weapon_fireextinguisher_description = "Yangın söndürücü ya da 'Duman makinesi'.",
 		weapon_hazardcan_description = "Bir benzin kovası gibi, ama kullanışsız.",
 		weapon_fertilizercan_description = "Köpek pisliği dolu bir kova, tarlalarınız için daha iyisi yoktur.",
 		weapon_hackingdevice_description = "Bu küçük elde taşınan cihaz, Metal Dedektörüne ağ dahil edilerek ve düğmeler değiştirilerek güçlendirilmiştir.",
 
+		weapon_petrolcan_description = "Yakıt izi bırakan bir benzin bidonu.<br><br>Kalan benzin miktarı: ${petrolAmount}%.",
+		ev_battery_description = "EV'niz için yüksek voltajlı bir çözüm, bu büyük pil paketi elektrikli çağ için bir benzin kutusu gibi—en çok ihtiyacınız olduğunda aracınıza bir enerji şarjı vermek için hazır.<br><br>Kalan Şarj: ${chargeAmount}%.",
+
+		gadget_parachute_description = "Bu naylon spor paraşütü, yön ve hız üzerinde daha fazla kontrol sağlamak için ram havaşılı paraşüt tasarımına sahiptir.",
 		red_parachute_description = "Normal paraşüt gibi sadece kırmızı renkte.",
 		blue_parachute_description = "Normal paraşüt gibi sadece mavi renkte.",
 		black_parachute_description = "Normal paraşütle aynı sadece siyah renkte.",
@@ -10148,6 +10258,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		weapon_addon_mk18 = "MK18",
 		weapon_addon_mk18_description = "\"Hazırlıklı ol ya da başın belaya girer\" - George Washington (Büyük ihtimalle)",
+
+		weapon_addon_ddm4v7 = "DDM4V7",
+		weapon_addon_ddm4v7_description = "Rice fields'e hoş geldiniz.",
 
 		weapon_addon_glock = "Glock 19",
 		weapon_addon_glock_description = "Kompakt ve güvenilir olan Glock 19, kayış üzerinde gururla Amerikan bayrağını taşır, çünkü yıldızlar, şeritler ve 9 mm kadar özgürlük pek bir şey ifade eder. Ülkelerini ne kadar çok seven vatanseverler için ateşli silahları kadar cesur olan mükemmeldir.",
@@ -10273,6 +10386,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		just_used_bandage = "Yeni bir ilk yardım kiti kullanmadan önce biraz bekle.",
 		just_used_tourniquet = "Bir tornike kullandınız, başka bir tane kullanmadan önce biraz bekleyin.",
 		drank_gasoline_death = "Benzin Zehirlenmesi",
+		refilling_lighter = "Çakmağı Doldurma",
 		drank_bleach_death = "Bleach Zehirlenmesi",
 		finished_joint = "Jointinizi bitirdiniz.",
 		cant_place_here = "Bunu buraya koyamazsınız.",
@@ -10374,6 +10488,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		invalid_amount = "Geçersiz miktar. 0'ın üstünde ve 5'e eşit veya altında olmalı.",
 		failed_modify_jail = "Hapishane süresi değiştirilemedi.",
 		modified_jail = "${fullName} için hapishane süresi değiştirildi. Yeni hapishane süreleri ${remaining} olarak güncellendi.",
+		jail_mission_info = "Haritanızdaki görevleri yaparak hapis cezanızı azaltabilirsiniz.",
 
 		trigger_lockdown = "Kilitlenmeyi Tetikle",
 		press_trigger_lockdown = "[${InteractionKey}] Kilitlenmeyi Tetikle",
@@ -10591,6 +10706,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		queue_position_with_priority = "🐌 ${queuePriorityName} önceliğiyle ${queuePosition}/${queueTotal} kişi sırasındasın. 🕐${queueTime}",
 		queue_position_without_priority = "🐌 ${queuePosition}/${queueTotal} kişi sırasındasın. 🕐${queueTime}",
 		live_on_twitch = "Sıkıldınız mı? Bu yayıncılara göz atın!",
+		check_out_community_content = "Sıkıldınız mı? Topluluk içeriğimizi buradan kontrol edin!",
+		community = "Topluluk",
 		live = "Canlı",
 		you_are_through = "Sıran bitti!",
 		join_server = "Sunucuya Katıl",
@@ -10697,7 +10814,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		medal = "Madalya",
 		claim_points = "Puanları Talep Et (${claimablePoints})",
-		medal_what_is_this_text_part_1 = "Medal kliplerinizde görüntülenme ve beğeni alarak OP Puanları kazanabilirsiniz! Her 2 klipte bir puan, her 150 görüntülenmede bir puan ve her 10 beğenide bir puan kazanırsınız.",
+		medal_what_is_this_text_part_1 = "Medal videolarınızda görüntü ve beğeni alarak OP Puanları kazanabilirsiniz! 2 klip başına bir puan, 500 görüntü başına bir puan ve 50 beğeni başına bir puan kazanırsınız.",
 		account_name = "Hesap Adı",
 		connected_account = "Bağlı Hesap",
 		medal_stats = "Madalya İstatistikleri",
@@ -10718,12 +10835,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		set_referrer = "Yönlendiren Ayarla",
 		your_referrer = "Yönlendireniniz:",
 		your_referees = "Yönlendirdikleriniz:"
-	},
-
-	logs = {
-		logs_failed = "Günlükler yüklenemedi.",
-
-		close = "Kapat"
 	},
 
 	loot = {
@@ -10897,8 +11008,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 	minecraft = {
 		failed_place_block = "Blok yerleştirilemedi.",
 		failed_break_block = "Blok kırılamadı.",
-		success_wipe_blocks = "${radius}m yarıçapında bloklar başarıyla temizlendi.",
-		failed_wipe_blocks = "Blok temizleme başarısız oldu."
+		success_wipe_blocks = "${radius}m yarıçapında başarılı bir şekilde ${count} bloğu sildiniz.",
+		failed_wipe_blocks = "Blok temizleme başarısız oldu.",
+		press_to_use_jukebox = "Jukebox’u kullanmak için ~INPUT_CONTEXT~ tuşuna basın."
 	},
 
 	mining = {
@@ -11073,7 +11185,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 	},
 
 	model_view = {
-		invalid_model = "Geçersiz model."
+		invalid_model = "Geçersiz model.",
+		invalid_component = "${component} geçersiz bileşen."
 	},
 
 	money = {
@@ -11275,7 +11388,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		chop_shop_sound = "Çalıntı Araba Radyo Sesini Kapat",
 		seatbelt_sound = "Emniyet Kemer Cırt Göstergesini Kapat",
 		eating_noises_sound = "Yeme Seslerini Kapat",
-		detailed_prop_positioning = "Detaylı Eşya Pozisyonlama",
 		sound_effect_placeholder = "Ses efekti URL'si...",
 
 		button_save = "Kaydet",
@@ -11998,6 +12110,26 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		tutorial_3_part_10 = "Aşk kardeşim, aşk."
 	},
 
+	pacific_bank = {
+		power_generator_disabled = "Bu güç jeneratörü devre dışı bırakıldı. ${time} içinde onarılacak.",
+
+		you_completed_the_hack = "Hack’i tamamladınız. Güvenlik sistemine şu anda güç sağlayan güç jeneratörü: ${outputData}",
+		you_completed_the_hack_no_more_generators = "Hack’i tamamladınız. Güvenlik sistemine güç sağlayan başka bir güç jeneratörü bulunmamaktadır.",
+		you_failed_the_hack = "Hackleme başarısız oldu.",
+		you_completed_the_hack_door_unlocked = "Hackleme başarılı oldu. Kapı açıldı.",
+
+		teller_door_hack_completed_logs_title = "Hesap Ünitesi Kapısı Hackleme Tamamlandı",
+		teller_door_hack_completed_logs_details = "${consoleName}, Pasifik Bankası'ndaki hesap ünitesi kapısını hacklemeyi tamamladı.",
+
+		vault_door_hack_completed_logs_title = "Kasa Kapısı Hackleme Tamamlandı",
+		vault_door_hack_completed_logs_details = "${consoleName}, Pasifik Bankası'ndaki kasa kapısını hacklemeyi tamamladı.",
+
+		disabled_generators = "${disabledGeneratorsCount} jeneratör devre dışı bırakıldı.",
+
+		drill_drilling = "Delme işlemi (${remainingSeconds}s)",
+		drill_jammed = "[${InteractionKey}] Delgi Sıkıştı (${remainingSeconds}s)"
+	},
+
 	panel = {
 		loading_title = "Yükleniyor",
 		error_title = "Bir şeyler yanlış gitti",
@@ -12148,7 +12280,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		network_id_invalid = "Geçersiz ağ kimliği.",
 		ped_not_found = "Ağ kimliği `${networkId}` olan karakter bulunamadı.",
 		tracked_ped = "İzlenen Karakter",
-		tracked_ped_is = "Karakter (${entity}) şu şekildedir:"
+		tracked_ped_is = "Karakter (${entity}) şu şekildedir:",
+		ped_config_flags = "Yaya Yapılandırma Bayrakları"
 	},
 
 	ped_spawn = {
@@ -12156,17 +12289,16 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		ped_spawn_success = "Karakter başarıyla doğuruldu.",
 		ped_failed_spawn = "Karakter doğurma başarısız oldu.",
 		invalid_weapon = "Geçersiz silah.",
+		invalid_ped_model = "Geçersiz yaya modeli.",
 		ped_remove_success = "Doğurulmuş karakterler başarıyla kaldırıldı.",
 		ped_failed_remove = "Doğurulmuş karakterleri kaldırma başarısız oldu.",
-		ped_task_success = "Doğurulan karakterlere '${task}' görevi başarıyla atandı.",
-		ped_failed_task = "Oluşturulan yaya karaktere '${task}' görevi atanamadı.",
+		ped_task_success = "Oluşturulan yayalara başarıyla `${task}` görevi atandı.",
+		ped_failed_task = "Oluşturulan yayalara `${task}` görevi atamak başarısız.",
 		invalid_target = "Geçersiz hedef sunucu ID'si.",
-		missing_task = "Görev parametresi eksik.",
-		invalid_task = "Geçersiz yaya karakter görevi '${task}'.",
-		target_required = "Bu yaya karakter görevi geçerli bir hedef gerektirir.",
-		ped_emote_success = "Oluşturulan yaya karakterler başarıyla '${emote}' emotesini yaptılar.",
-		ped_failed_emote = "Oluşturulan yaya karakterlere '${emote}' emotesini yaptırmak başarısız oldu.",
-		invalid_emote = "Geçersiz '${emote}' emote.",
+		invalid_task = "Geçersiz veya eksik yaya görevi.",
+		ped_emote_success = "Oluşturulan yayaların `${emote}` emotesini oynaması başarıyla gerçekleştirildi.",
+		ped_failed_emote = "Oluşturulan yayaların `${emote}` emotesini oynaması başarısız oldu.",
+		invalid_emote = "Geçersiz emote `${emote}`.",
 		missing_emote = "Emote parametresi eksik.",
 
 		emote_list = "Mevcut yaya karakter emote'leri: ${list}.",
@@ -12372,7 +12504,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		prop_no_interior = "Sadece bu prop dışarıda yerleştirilebilir.",
 		invalid_culling_value = "Geçersiz eğme değeri, 10m ile 2.500m arasında olmalıdır.",
 		invalid_model = "Geçersiz/Bilinmeyen model `${name}` (${hash}).",
-		cancelled_positioning = "Konumlandırma iptal edildi.",
+		cancelled_positioning = "Prop konumlandırması iptal edildi.",
 
 		invalid_prop_id = "Geçersiz prop idsi.",
 		prop_deleted = "${propId} kimliğiyle prop silindi.",
@@ -12784,7 +12916,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		mission_row_pd = "Mission Row PD",
 		pillbox_hospital = "Pillbox Hastanesi",
 		jewelry_store = "Rockford Hills Mücevher Dükkanı",
-		principal_bank = "Principal Bankası",
+		pacific_bank = "Pasifik Bankası",
 		bolingbroke_penitentiary = "Bolingbroke Cezaevi",
 		fort_zancudo = "Fort Zancudo",
 		del_perro_pier = "Del Perro Iskelesi",
@@ -12944,7 +13076,9 @@ OP.Global.Locales.Languages["tr-TR"] = {
 	},
 
 	snow = {
-		hold_to_pick_up_snowballs = "Kardan adam yapmak için ~INPUT_CONTEXT~ tuşunu basılı tut"
+		hold_to_pick_up_snowballs = "Kardan adam yapmak için ~INPUT_CONTEXT~ tuşunu basılı tut",
+		building_snowman = "Kardan Adam İnşa Ediliyor",
+		failed_build_snowman = "Kardan adam oluşturma başarısız oldu."
 	},
 
 	sound_effects = {
@@ -12961,6 +13095,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 		mission_row_police_station = "Mission Row Polis Merkezi",
 		highway_police_station = "Otoyol Karakolu",
+		rockford_police_station = "Rockford Tepeleri PD",
 		palomino_fib_police_station = "Palomino FIB Karakolu",
 		sandy_police_station = "Sandy Shores Polis Merkezi",
 		paleto_police_station = "Paleto Körfezi Polis Merkezi",
@@ -13002,6 +13137,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		no_character_loaded = "Oyuncunun yüklenmiş bir karakteri yok.",
 		not_same_instance = "Oyuncu sizinle aynı örnekte değil.",
 		no_user_or_character = "Oyuncu çevrimdışı veya karakter yüklenmemiş.",
+		not_while_noclipped = "Noclip modundayken izlemek mümkün değil.",
 
 		resolving_player = "Oyuncu Çözülüyor",
 		loading_coords = "Koordinatlar yükleniyor",
@@ -13126,7 +13262,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		minute_changed = "Dakika şimdi `${minute}` olarak ayarlandı.",
 
 		missing_weather = "Hava durumu girilmedi.",
-		invalid_weather = "${weatherName} hava durumu geçerli değil. Geçerli hava durumu değerleri: CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT ve BLIZZARD.",
+		invalid_weather = "Hava durumu `${weatherName}` geçersiz. Geçerli hava durumu isimleri EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS, HALLOWEEN, RAIN_HALLOWEEN ve SNOW_HALLOWEEN.",
 		weather_changed = "Hava durumu artık `${weatherName}` olarak ayarlandı.",
 		weather_advanced = "Hava durumu `${weatherName}` olarak ilerletildi.",
 		weather_advance_fail = "Doğal olarak hava durumu ilerletilemedi.",
@@ -13415,6 +13551,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		relief_stress = "Stres Azalt",
 		reset_health = "Sağlığı Sıfırla",
 		remove_injuries = "Yaralanmaları Temizle",
+		toggle_noclip = "Noclip'i Aç/Kapat",
 
 		teleport = "Teleportasyon Seçenekleri",
 		teleport_to = "TP Git",
@@ -13760,8 +13897,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 	voice = {
 		illegal_radio_frequency = "Yasadışı radyo frekanslarına erişmeye çalışıyorsunuz.",
 		voice_chat = "Sesli Sohbet",
-		voice_server_connected = "Ses destekleyici sunucuya bağlandı. İlgili oyunculara ses veri gönderiliyor.",
-		voice_server_disconnected = "Ses sunucusundan koparıldı. Bağlantı bekleniyor.",
 		voice_muted = "Sesli sohbet sessize alındı.",
 		voice_unmuted = "Sesli sohbet açıldı.",
 		broadcasting_voice_to_players = "Oyunculara Yayınlanıyor:",
@@ -13800,9 +13935,15 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		stopped_listening_logs_details = "${consoleName} ${targetConsoleName}'ı dinlemeye başladi.",
 		started_listening_logs_details = "${consoleName} ${targetConsoleName}'ı dinlemeyi durdurdu.",
 
+		broadcast_all_logs_title = "Yayını Değiştir",
+		broadcast_all_logs_details_on = "${consoleName} tüm oyunculara yayını açtı.",
+		broadcast_all_logs_details_off = "${consoleName} tüm oyunculara yayını kapattı.",
+
 		muted_logs_title = "Sessizleştirilmiş Ses",
 		muted_logs_details = "${consoleName} ${targetConsoleName}'ın sesli sohbetini sessize aldı.",
-		unmuted_logs_details = "${consoleName}, ${targetConsoleName}'yi sesli sohbetten sessi açtı."
+		unmuted_logs_details = "${consoleName}, ${targetConsoleName}'yi sesli sohbetten sessi açtı.",
+
+		mumble_disconnected = "Sesli sohbete bağlı değilsiniz."
 	},
 
 	wallhack = {
@@ -13944,6 +14085,11 @@ OP.Global.Locales.Languages["tr-TR"] = {
 	locales = {
 		showing_raw_locales_on = "Ham yerel ayarları görüntülemeyi açtı.",
 		showing_raw_locales_off = "Ham yerel ayarları görüntülemeyi kapattı."
+	},
+
+	shapes = {
+		copied_clipboard = "Panoya kopyalandı.",
+		cancelled = "İptal edildi."
 	},
 
 	states = {
@@ -14279,6 +14425,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		license_weapon = "Silah Taşıma Lisansı",
 		license_mining = "Madencilik Lisansı",
 		license_driver = "Sürücü Ehliyeti",
+		license_bar = "Bar/Hukuk Lisansı",
 		license_press = "Lisansı Bas",
 		gave_character_license = "${characterName}'ye `${licenseLabel}` lisansı verildi.",
 		character_already_has_license = "${characterName} zaten `${licenseLabel}` lisansına sahip.",
@@ -14456,7 +14603,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 
 	clamps = {
 		no_vehicle_near = "Bir aracın sol arka tekerleğine yakın değilsin.",
-		vehicle_not_driveable = "Kırık bir araca kelepçe takılamaz.",
 		clamping = "Kelepçe takılıyor",
 		removing_clamp = "Kelepçe çıkarılıyor",
 		remove_clamp = "[${InteractionKey}] Kelepçe Çıkar",
@@ -14516,6 +14662,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		exit_to_charge = "Şarj etmek için araçtan inin.",
 		press_to_fuel = "Araç yakıtını almak için ~g~${InteractionKey} ~w~tuşuna basın.",
 		press_to_charge = "Araç şarj etmek için ~g~${InteractionKey} ~w~tuşuna basın.",
+		use_moonshine = "Ayışığı'nı yakıt olarak kullanmak için ~g~${InteractionKey} ~w~tuşuna basın.",
+		using_moonshine = "Ayışığı İle Yakıt Dolduruluyor",
 		fuel_pump_text = "Yakıt Ücreti: $${fuelCost}~n~Durdurmak için ~g~${InteractionKey} ~w~tuşuna basın.",
 		vehicle_text = "Yakıt Seviyesi: ${fuelLevel}%",
 		fuel_pump_text_ev = "Elektrik Maliyeti: $${fuelCost}~n~Durdurmak için ~g~${InteractionKey} ~w~tuşuna basın.",
@@ -14526,6 +14674,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		purchase_jerry_can = "Jerry Can satın almak için ~g~${InventoryKey} ~w~tuşuna basın.",
 		gas_station = "Benzin İstasyonu",
 		petrolcan_fuel_text = "Kalan Benzin Miktarı: ${petrolAmount}%~n~Durdurmak için ~g~${InteractionKey} ~w~tuşuna basın.",
+		battery_fuel_text = "Şarj Kalanı: ${petrolAmount}%~n~Durdurmak için ~g~${InteractionKey} ~w~tuşuna basın.",
 		player_busy = "Başka bir işle meşgulsünüz.",
 		fuel_level_set_to = "Yakıt seviyesi `${fuelLevel}` olarak ayarlandı.",
 		not_in_a_vehicle = "Araçta değilsiniz.",
@@ -14569,7 +14718,7 @@ OP.Global.Locales.Languages["tr-TR"] = {
 	},
 
 	garages = {
-		garage_empty = "Garajınız boş!",
+		garage_empty = "Bu garaj boş!",
 		impound_lot = "Çekme Alanı",
 		police_impound = "Polis Çekme Alanı",
 		owner_self = "Sahip",
@@ -14588,12 +14737,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		error_withdrawing = "Aracınızı çekerken bir hata oluştu.",
 		withdraw_timeout = "Başka bir araç çekmeden önce lütfen biraz bekleyin.",
 		garage_in_use = "Bu garaj şu anda kullanımda, lütfen biraz bekleyin.",
-		invalid_model = "Geçersiz veya bilinmeyen araç modeli.",
 		vehicle_in_the_way = "Spawn noktasını engelleyen bir araç var.",
 		vehicle_is_out = "Aracınız zaten dışarıda.",
-		vehicle_stored = "Aracınız depolandı.",
-		vehicle_stored_other = "Araç depolandı.",
-		error_storing = "Araç depolanırken bir hata meydana geldi. Yöneticilerle iletişim kurun.",
+		vehicle_stored = "Araç depolandı.",
+		error_storing = "Araç depolanırken hata oluştu.",
 		no_nearby_vehicle = "Yakınınızda araç bulunmuyor.",
 		no_vehicles_to_retrieve = "Kurtaracak aracınız yok!",
 		vehicle_retrieved = "Araç başarıyla kurtarıldı.",
@@ -14603,6 +14750,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		ui_return = "Geri Dön",
 		ui_my_vehicle_list = "Araçlarım",
 		ui_other_vehicle_list = "Diğer Araçlar",
+		ui_shared_vehicle_list = "Paylaşılan Garaj",
+		ui_store_shared = "Paylaşılan Mağazada Sakla",
 		ui_store_vehicle = "Araç Sakla",
 		ui_vehicle_sell = "Araçları Sat",
 		ui_retrieve_vehicle = "Araçları Geri Al",
@@ -14658,6 +14807,20 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		ungarage_success = "Araç başarıyla garajdan çıkarıldı.",
 		ungarage_failed = "Araç garajdan çıkarılamadı. Doğru araç kimliğini girdiniz mi?",
 		vehicle_not_found = "Bu kimlikte bir araç bulunamadı.",
+		vehicle_respawned = "ID ${vehicleId} numaralı araç başarılı bir şekilde yeniden oluşturuldu.",
+		respawn_failed = "Araç yeniden oluşturulamadı.",
+
+		not_near_node = "Araç düğümüne yakın değil.",
+		invalid_garage_id = "Geçersiz garaj kimliği.",
+		failed_create_garage = "Geçici garaj oluşturulamadı.",
+		failed_remove_garage = "Geçici garaj kaldırılamadı.",
+		created_garage = "ID numarası ${garageId} olan geçici garaj oluşturuldu.",
+		removed_garage = "ID numarası ${garageId} olan geçici garaj kaldırıldı.",
+
+		created_garage_logs_title = "Garaj Oluşturuldu",
+		created_garage_logs_details = "${consoleName}, `${xCoord}, ${yCoord}, ${zCoord}` konumunda ID numarası ${garageId} olan bir garaj oluşturdu.",
+		removed_garage_logs_title = "Garaj Kaldırıldı",
+		removed_garage_logs_details = "${consoleName}, ID numarası ${garageId} olan bir garajı kaldırdı.",
 
 		garaged_vehicle_logs_title = "Garajlanmış Araç",
 		garaged_vehicle_logs_details = "${consoleName}, ${vehicleId} kimlikli bir aracı garaja koydu.",
@@ -14907,8 +15070,6 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		cant_throw_weapon = "Bu silahı atamazsınız.",
 		keybind_description = "Silahınızı atın",
 
-		total_throwables = "Atılabilirler: ${count}",
-
 		threw_weapon_logs_title = "Silah Atıldı",
 		threw_weapon_logs_details = "${consoleName} adlı kişi ${item}(${coords}) silahını attı.",
 		picked_up_weapon_logs_title = "Silah Alındı",
@@ -14948,7 +15109,10 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		folded_stock = "Katlanmış Dipçik",
 		unfolded_stock = "Açılmış Dipçik",
 		failed_to_toggle_stock = "Dipçik değiştirilemedi.",
-		weapon_has_no_stock = "Bu silahın dipçiği yok."
+		weapon_has_no_stock = "Bu silahın dipçiği yok.",
+
+		petrolcan_explosion_logs_title = "Benzincan Patlaması",
+		petrolcan_explosion_logs_details = "${consoleName}, benzincan ile kendini patlattı."
 	},
 
 	-- a shared "alpha" locale category uwu - also know, some features such as the ${InteractionKey} will be missing here, so don't try to use it
@@ -15102,8 +15266,8 @@ OP.Global.Locales.Languages["tr-TR"] = {
 		smart_watch_hover = "<i>Bu akıllı saat <b>${name} (#${cid})</b>'a aittir. <b>${stepsWalked}</b> adım izlemiştir.</i>",
 		item_contains = "<b>İçeriği:</b> <i>${contents}</i>.",
 		item_engraving = "<b>Kazıma:</b> <i>${message}</i>.",
-		evidence_bag_casing = "Mermi Kovanları: ${casings} kovan, ${name} (#${cid}) tarafından kullanılan ${weapon} ile ateşlendi (oluştuğu yer: ${location}, zaman: ${time}).",
-		evidence_bag_casing_unregistered = "Mermi Kovanları: ${casings} kovan, kayıtlı olmayan ${weapon} ile ateşlendi (oluştuğu yer: ${location}, zaman: ${time}).",
+		evidence_bag_casing = "Mermi Kovanları: ${casings} adet kovan, ${name} adlı kişiye kayıtlı olan ${weapon} (${serialNumber}) tarafından ateşlendi (#${cid}) (${time} tarihinde ${location} yakınında bulundu).",
+		evidence_bag_casing_unregistered = "Mermi Kovanları: ${casings} adet kovan, kayıtlı olmayan ${weapon} (${serialNumber}) tarafından ateşlendi (${time} tarihinde ${location} yakınında bulundu).",
 		evidence_bag_impact = "Mermi İzleri: ${impacts} iz, ${weapon} tarafından oluşturulmuş gibi görünüyor (oluştuğu yer: ${location}, zaman: ${time}).",
 		evidence_bag_vehicle = "Araç DNA'sı: Örnek ${isim} (#${cid})'e aitti ve ${plaka} plakalı aracın ${koltuk} koltuğundan çıkarıldı (saat ${saat}'da ${konum} yakınında alındı).",
 		evidence_bag_vehicle_empty = "Araç DNA'sı: Örnek hiçbir kayıtla eşleşmedi ve ${plaka} plakalı aracın ${koltuk} koltuğundan çıkarıldı (saat ${saat}'da ${konum} yakınında alındı).",

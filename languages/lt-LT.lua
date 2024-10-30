@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 33 (do not change)
+-- AUTO LOCALES: 34 (do not change)
 
 OP.Global.Locales.Languages["lt-LT"] = {
 	-- configuration settings for language
@@ -32,6 +32,12 @@ OP.Global.Locales.Languages["lt-LT"] = {
 	},
 
 	-- animations/*
+	chairs = {
+		invalid_model = "Trūksta arba neteisingas modelio pavadinimas.",
+		no_nearby_chair = "Nėra šio modelio kėdės šalia.",
+		chair_offset_copied = "Nukopijuotas kėdės nuokrypis."
+	},
+
 	emotes = {
 		get_in_trunk = "Spauskite ~INPUT_ENTER~, kad patektumėte į bagažinę.",
 		put_boombox_in_trunk = "Spauskite ~INPUT_ENTER~, kad dėtumėte boombox'ą į bagažinę.",
@@ -47,6 +53,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		the_trunk_is_occupied = "Bagažinė užimta.",
 		unable_to_toggle_carry = "Prieš įjungdami neštuvus, palaukite šiek tiek.",
 		carry_disabled_animal = "Gyvūnai negali nešti.",
+		no_carry_nearby = "Niekas nėra šalia, kad galėtų nešti.",
+		cant_reach_carry = "Negalite pasiekti artimiausio asmens.",
 
 		trunk_hint = "Prie trunko atsidaryti/ uždaryti naudokite \"/door\" komandą, būdami netoliese.",
 
@@ -650,6 +658,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		advanced_noclip_ban = "Bandydami slaptai slankiotis per nematomus koridorius? Tai ne fliuškančio vaidmens šokis, ir tas judesys? Nebus mūsų šokio kortelėje.",
 		illegal_local_vehicle_ban = "Atrodo, kad radote nematomą lordo Mirage steed! Deja, šis mistinis žygis yra skirtas kasmetinei fantomų paradai.",
 		handling_field_ban = "Atrodo, kad bandėte padaryti turbo paklausų fizinio dėsnį. Gražus bandymas, bet šiame pasaulyje mes laikomės tikrovės ir laikome ratus ant žemės.",
+		teleported_ban = "Mirksi ir tu jau išnykai? Ne šioje dimensijoje, keliautojau.",
+		honeypot_native = "O, vargšas! Atrodo, kad patekai į vietą, kur medus neturėjo būti randamas. Kai kurie puodai geriau liktų nepaliesti, nepaisant to, kaip jie gali patraukti.",
 
 		type_aimbot = "Aimbotas",
 		type_bad_creation = "Nepavyko sukurti",
@@ -658,8 +668,10 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		type_damage_modifier = "Žalos modifikatorius",
 		type_distance_taze = "Atstumo tazas",
 		type_fast_movement = "Greitas judėjimas",
+		type_teleported = "Perkeltas",
 		type_freecam_detected = "Nustatyta nemokama kamera",
 		type_honeypot = "Medaus puodas",
+		type_honeypot_native = "Kliūtis gimtąja kalba",
 		type_illegal_damage = "Neteisėta žala",
 		type_illegal_event = "Neteisėtas kliento įvykis",
 		type_illegal_freeze = "Neteisėtas sustabdymas",
@@ -829,6 +841,12 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		sit_command_parameter_variation = "variacija",
 		sit_command_parameter_variation_help = "Kuri sėdėjimo animacija bus paleista (1 - 6).",
 		sit_command_substitutes = "kėdė",
+
+		chair_offset_command = "kėdės_offsetas",
+		chair_offset_command_help = "Apibrėžkite netoliese esančios kėdės modelio nuokrypį.",
+		chair_offset_command_parameter_model_name = "modelio pavadinimas",
+		chair_offset_command_parameter_model_name_help = "Kėdės modelio pavadinimas, kurio norite apibrėžti nuokrypį.",
+		chair_offset_command_substitutes = "",
 
 		-- animations/couches
 		sleep_command = "miegoti",
@@ -1514,6 +1532,13 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		airsupport_command_help = "Kviečia oro palaudą.",
 		airsupport_command_substitutes = "",
 
+		-- game/animals
+		animal_sound_command = "gyvūno_garsas",
+		animal_sound_command_help = "Pronūska gyvūno garsą.",
+		animal_sound_command_parameter_sound = "garsas",
+		animal_sound_command_parameter_sound_help = "Garsas, kurį norite paleisti. (Priklauso nuo gyvūno modelio)",
+		animal_sound_command_substitutes = "",
+
 		-- game/archives
 		create_archive_command = "sukurti_archyvą",
 		create_archive_command_help = "Sukuria naują bylą archeivyje, kuris yra artimiausias jums stovint.",
@@ -1550,6 +1575,11 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		play_audio_command_parameter_server_id = "serverio ID",
 		play_audio_command_parameter_server_id_help = "Žaidėjo serverio ID, kuriam norite paleisti šį garsą. Galite naudoti `-1` visiems žaidėjams.",
 		play_audio_command_substitutes = "",
+
+		-- game/audio_emitters
+		toggle_audio_emitters_command = "toggle_audio_emitters",
+		toggle_audio_emitters_command_help = "Perjungti natyvius garso išsiuntėjus.",
+		toggle_audio_emitters_command_substitutes = "",
 
 		-- game/bandaids
 		random_bandaid_command = "atsitiktinis_plastaras",
@@ -2077,18 +2107,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		rotate_marker_command_parameter_marker_name_help = "Markeris, kurį norite redaguoti.",
 		rotate_marker_command_substitutes = "",
 
-		rectangle_command = "stačiakampis",
-		rectangle_command_help = "Sukurkite stačiakampį trimatėje erdvėje.",
-		rectangle_command_substitutes = "sta",
-
-		define_area_command = "apibrėžk_sritį",
-		define_area_command_help = "Apibrėžkite sritį.",
-		define_area_command_substitutes = "sritis",
-
-		polygon_command = "${cost} punti",
-		polygon_command_help = "Acquista",
-		polygon_command_substitutes = "Conferma l'aggiornamento dell'adesione",
-
 		debug_info_command = "derinimo_informacija",
 		debug_info_command_help = "Surinkti kai kurią derinimo informaciją apie tam tikrą žaidėją.",
 		debug_info_command_parameter_server_id = "serverio id",
@@ -2122,6 +2140,10 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		show_cancelled_vehicles_command = "rodyti_atšauktus_automobilius",
 		show_cancelled_vehicles_command_help = "Perjungti atšauktų automobilių rodymą.",
 		show_cancelled_vehicles_command_substitutes = "",
+
+		print_object_models_command = "print_object_models",
+		print_object_models_command_help = "Spausdinti esamus objektų modelius konsolėje.",
+		print_object_models_command_substitutes = "",
 
 		-- game/debug_menu
 		debug_menu_command = "derinimo_meniu",
@@ -2224,6 +2246,11 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		fake_id_command_parameter_female = "moteris",
 		fake_id_command_parameter_female_help = "Nustatykite reikšmę true, jei norite moters tapatybės kortelės, o ne vyro.",
 		fake_id_command_substitutes = "",
+
+		-- game/fields
+		field_debug_command = "field_debug",
+		field_debug_command_help = "Analizuoti visus netoliese esančius lauko augalus.",
+		field_debug_command_substitutes = "",
 
 		-- game/flag_swap
 		flag_swap_command = "vėliavų_keitimo",
@@ -2601,6 +2628,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		fake_lag_command_help = "Sukurkite netikrą vėlavimą.",
 		fake_lag_command_parameter_fps = "kadrai_per_sekundę",
 		fake_lag_command_parameter_fps_help = "Celių skaičius per sekundę (>= 1).",
+		fake_lag_command_parameter_spike = "spike",
+		fake_lag_command_parameter_spike_help = "Atsitiktinai sumažina jūsų fps (galvos skausmas).",
 		fake_lag_command_substitutes = "vėlavimas",
 
 		-- game/locate
@@ -2609,13 +2638,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		locate_entity_command_parameter_filter = "filtras",
 		locate_entity_command_parameter_filter_help = "Koks filtras turi atitikti objektą (id:12345, numeris:90FMK072, ir kt.)",
 		locate_entity_command_substitutes = "rasti_objektą",
-
-		-- game/logs
-		logs_command = "žurnalas",
-		logs_command_help = "Rodyti naujausius serverio žurnalus tam tikram žaidėjui.",
-		logs_command_parameter_server_id = "serverio id",
-		logs_command_parameter_server_id_help = "Žaidėjo serverio id.",
-		logs_command_substitutes = "",
 
 		-- game/loot
 		loot_debug_command = "loot_debug",
@@ -2819,6 +2841,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		model_view_command_parameter_model_help = "Modelio pavadinimas arba hash, kurį norėtumėte peržiūrėti.",
 		model_view_command_parameter_no_blocker = "be šešėlio blokatoriaus",
 		model_view_command_parameter_no_blocker_help = "Išjungti šešėlio blokatorių (numatytoji reikšmė: ne).",
+		model_view_command_parameter_components = "komponentai",
+		model_view_command_parameter_components_help = "Ginklo komponentai (atskirti kableliais).",
 		model_view_command_substitutes = "modelas, rodinys",
 
 		-- game/money
@@ -2911,6 +2935,10 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		power_generators_debug_command = "elektros_generatoriai_debug",
 		power_generators_debug_command_help = "Įjungti/išjungti Ramiojo Banko elektros generatorių derinio sekimą.",
 		power_generators_debug_command_substitutes = "",
+
+		power_generators_disable_command = "power_generators_disable",
+		power_generators_disable_command_help = "Išjungti visus Pacific Bank maitinimo generatorius. Tai tas pats kaip sėkmingai išjungti kiekvieną tuo pačiu metu, kuris dar nebuvo išjungtas.",
+		power_generators_disable_command_substitutes = "",
 
 		-- game/panel
 		panel_command = "panelas",
@@ -3037,11 +3065,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		share_phone_number_command = "dalintis_telefono_numeriu",
 		share_phone_number_command_help = "Dalinais savo telefono numeriu su visais, esančiais šalia (< 1.5 m).",
 		share_phone_number_command_substitutes = "dalintis_numeriu",
-
-		-- game/plants
-		plants_debug_command = "Failed to automatically generate translation.",
-		plants_debug_command_help = "Failed to automatically generate translation.",
-		plants_debug_command_substitutes = "",
 
 		-- game/player_control
 		drive_for_command = "vairuoti_už",
@@ -3415,7 +3438,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		weather_command = "oras",
 		weather_command_help = "Keisti orą.",
 		weather_command_parameter_weather = "oro pavadinimas",
-		weather_command_parameter_weather_help = "Oro pavadinimas, į kurį norite jį nustatyti. Galimi oro pavadinimai yra EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS ir HALLOWEEN.",
+		weather_command_parameter_weather_help = "Oro pavadinimas, į kurį norite jį nustatyti. Galimi orų pavadinimai yra EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS, HALLOWEEN, RAIN_HALLOWEEN ir SNOW_HALLOWEEN.",
 		weather_command_substitutes = "",
 
 		advance_weather_command = "pradėti_orą",
@@ -3464,12 +3487,16 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		tp_to_player_command_help = "Failed to automatically generate translation.",
 		tp_to_player_command_parameter_server_id = "Failed to automatically generate translation.",
 		tp_to_player_command_parameter_server_id_help = "Failed to automatically generate translation.",
+		tp_to_player_command_parameter_into_vehicle = "į transporto priemonę",
+		tp_to_player_command_parameter_into_vehicle_help = "Jei norite teleportuoti į žaidėjo transporto priemonę.",
 		tp_to_player_command_substitutes = "tp_prie",
 
 		tp_player_here_command = "Failed to automatically generate translation.",
 		tp_player_here_command_help = "Failed to automatically generate translation.",
 		tp_player_here_command_parameter_server_id = "Failed to automatically generate translation.",
 		tp_player_here_command_parameter_server_id_help = "Failed to automatically generate translation.",
+		tp_player_here_command_parameter_freeze = "užšaldyti",
+		tp_player_here_command_parameter_freeze_help = "Jei norite užšaldyti žaidėją.",
 		tp_player_here_command_substitutes = "tp_čia",
 
 		tp_player_player_command = "raktas",
@@ -3591,6 +3618,10 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		voice_debug_command_parameter_server_id_help = "Jei norite perjungti „garsą debug“ kitam asmeniui, įrašykite čia jo serverio id.",
 		voice_debug_command_substitutes = "",
 
+		broadcast_all_command = "transliuoti_visoms",
+		broadcast_all_command_help = "Perjungti transliavimą visiems žaidėjams.",
+		broadcast_all_command_substitutes = "",
+
 		listen_command = "klausyti",
 		listen_command_help = "Perjungia klausymo režimą tam tikram vartotojui. (Galite išgirsti, ką jie sako)",
 		listen_command_parameter_server_id = "serverio ID",
@@ -3706,6 +3737,15 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		show_raw_locales_command = "${consoleName} memberikan akses kepada `${firstName} ${lastName}` (#${characterId}) ke akun penyimpanan ${accountId}.",
 		show_raw_locales_command_help = "Hapus Akses Penyimpanan",
 		show_raw_locales_command_substitutes = "",
+
+		-- global/shapes
+		areas_command = "zonos",
+		areas_command_help = "Apibrėžti apskritimas zonas.",
+		areas_command_substitutes = "",
+
+		polygon_command = "${cost} punti",
+		polygon_command_help = "Apibrėžti 2D daugiakampį.",
+		polygon_command_substitutes = "Conferma l'aggiornamento dell'adesione",
 
 		-- global/states
 		entity_states_command = "entitijų būsenos",
@@ -3947,6 +3987,22 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		ungarage_vehicle_command_parameter_vehicle_id_help = "${consoleName} perkeltas į ${targetConsoleName}.",
 		ungarage_vehicle_command_substitutes = "TP Čia",
 
+		respawn_vehicle_command = "atkuriamas_automobilis",
+		respawn_vehicle_command_help = "Atkuria automobilį (garžo & išgaržo).",
+		respawn_vehicle_command_parameter_repair = "pataisyti",
+		respawn_vehicle_command_parameter_repair_help = "Ar automobilis turėtų būti pataisytas prieš atkuriant.",
+		respawn_vehicle_command_substitutes = "",
+
+		create_garage_command = "sukurti_garažą",
+		create_garage_command_help = "Sukurti laikiną garažą artimiausio transporto mazgo vietoje.",
+		create_garage_command_substitutes = "",
+
+		remove_garage_command = "pašalinti_garažą",
+		remove_garage_command_help = "Pašalinti laikiną garažą.",
+		remove_garage_command_parameter_garage_id = "garažo id",
+		remove_garage_command_parameter_garage_id_help = "Laikino garažo, kurį norite pašalinti, identifikacinis numeris.",
+		remove_garage_command_substitutes = "",
+
 		-- vehicles/keys
 		give_key_command = "duoti_raktelį",
 		give_key_command_help = "Duoti automobilio raktelį artimam žmogui.",
@@ -4149,10 +4205,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		throw_weapon_command_help = "Metate savo šiuo metu įrengtą ginklą.",
 		throw_weapon_command_substitutes = "mesti, išmeta",
 
-		throwables_debug_command = "išmetamieji_debug",
-		throwables_debug_command_help = "Derinama visus artimuosius išmetamuosius.",
-		throwables_debug_command_substitutes = "",
-
 		-- weapons/weapons
 		check_ammo_command = "patikrinti_amžius",
 		check_ammo_command_help = "Patikrina, kiek visoje amunicijoje turite.",
@@ -4298,7 +4350,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 	},
 
 	steam = {
-		no_steam_allowed = "Norint žaisti šiame serveryje, pirmiausia uždarykite FiveM, tada išjunkite Steam."
+		no_steam_allowed = "Prie prisijungiant, turite visiškai išjungti „Steam“ ir tada paleisti FiveM."
 	},
 
 	twitch = {
@@ -4438,7 +4490,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		server_id_hidden_feature = "Serverio-ID paslėptas",
 		fake_disconnect_feature = "Netikras atsijungimas",
 		brighter_nights_feature = "Šviesesnės naktys",
-		ridealong_feature = "Kartu keliauti"
+		ridealong_feature = "Kartu keliauti",
+		broadcast_all_feature = "Transliuoti visiems"
 	},
 
 	admin_menu = {
@@ -4512,6 +4565,10 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		drunk_state_2 = "Jūs apsvaigęs.",
 		drunk_state_3 = "Jūs labai apsvaigęs.",
 		drunk_state_4 = "Jūs pavojingai apsvaigęs."
+	},
+
+	animals = {
+		invalid_sound = "Netinkamas garsas."
 	},
 
 	arcade = {
@@ -4630,6 +4687,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 
 	atms = {
 		withdraw = "Išsiimti",
+		withdraw_bonds = "Atsiimti obligacijose",
 		deposit = "Įdėti",
 		balance = "Balansas",
 		transfer = "Pervesti",
@@ -4671,6 +4729,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		withdraw_log_bank_title = "Banko išėmimas",
 		withdraw_log_atm_title = "Bankomato išėmimas",
 		withdraw_log = "${consoleName} išėmė $${amount}.",
+		withdraw_log_bonds_title = "Banko išėmimas (Obligacijos)",
+		withdraw_log_bonds = "${consoleName} atsiėmė $${amount} taupymo obligacijose (${bonds}).",
 
 		transfer_log_title = "Banko pervedimas",
 		transfer_log = "${consoleName} (#${characterId}) perviršiavo $${amount} į ${targetConsoleName} (#${targetCharacterId}).",
@@ -4815,6 +4875,11 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		played_audio_effect_for_everyone_details = "${consoleName} paleido garso efektą visiems. Garso efektas buvo URL `${url}` ir buvo nustatytas groti garso lygyje `${volume}`.",
 		played_audio_effect_for_player_title = "Paleistas garso efektas žaidėjui",
 		played_audio_effect_for_player_details = "${consoleName} paleido garso efektą ${targetConsoleName}. Garso efektas buvo URL `${url}` ir buvo nustatytas groti garso lygyje `${volume}`."
+	},
+
+	audio_emitters = {
+		audio_emitters_disabled = "Garso sklaidytuvai išjungti.",
+		audio_emitters_enabled = "Garso sklaidytuvai įjungti."
 	},
 
 	balls = {
@@ -5015,7 +5080,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		pd_sea_hq = "Policijos jūrų bazių štabas",
 		ems_air_hq = "EMS oro bazių štabas",
 		ems_boat_hq = "EMS laivų bazių štabas",
-		ems_garage = "EMS garažas"
+		ems_garage = "EMS garažas",
+		vineyard = "Vynuogynas"
 	},
 
 	bombs = {
@@ -5560,10 +5626,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		steel_ore_recipe = "Išlydyti geležies rūdą",
 		gold_ore_recipe = "Išlydyti aukso rūdą",
 		gold_nuggets_recipe = "Išlydyti aukso gabaliukus",
-		tungsten_ore_recipe = "Išlydyti volframo rūdą",
-		tungsten_bar_recipe = "Išlydyti volframo gabaliukus",
-		titatium_ore_recipe = "Išlydyti titano rūdą",
-		titanium_bar_recipe = "Išlydyti titaninius gabaliukus",
+		tungsten_bar_recipe = "Išlydykite volframo strypą",
+		titanium_bar_recipe = "Išlydykite titano strypą",
 		smelt_rusty_metal_recipe = "Išlydyti rūdijantį metalą",
 		smelt_rusty_tank_shell_recipe = "Ištirpinkite Rūdijantį Tanko Apvalkalą",
 		smelt_rusty_diving_helmet_recipe = "Ištirpinkite Rūdijantį Nardymo Šalmą",
@@ -5571,6 +5635,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		smelting_materials = "Išlydomos medžiagos: ${usedItems}",
 		smelted_materials = "Ištirpinti ${usedItems}.",
 		failed_smelt_materials = "Nepavyko ištirpinti medžiagų.",
+		smelting_copper = "Lydykite varį",
+		combining_copper_zinc = "Kombinuojamas varis ir cinkas",
 
 		scrap_knife = "Perrinkti peilį",
 		press_to_scrap_knife = "[${SeatEjectKey}] Perrinkti peilį",
@@ -6921,7 +6987,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		timecycles = "Laiko ciklai",
 		weather = "Orai",
 		reset = "Nustatyti iš naujo",
-		refresh_interior = "Atnaujinti interjerą"
+		refresh_interior = "Atnaujinti interjerą",
+		camera_shakes = "Kamera drebėjimai"
 	},
 
 	development = {
@@ -6973,7 +7040,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		failed_to_sync_doors = "Nepavyko sinchronizuoti durų. Greičiausiai kažkas sugadinta. Prašome bandyti dar kartą.",
 		saved_doors_to_file = "Išsaugotos `${amount}` durys į serverio failą.",
 		no_nearby_doors = "Nėra artimų durų skirtų išsaugoti.",
-		lockpicking_door = "Durų atidarymas",
 		copied_doors = "Failed to automatically generate translation.",
 		adding_doors = "Failed to automatically generate translation.",
 		stop_adding_doors = "Failed to automatically generate translation.",
@@ -7019,6 +7085,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		floor_lobby = "Lobis",
 		floor_roof = "Stogas",
 		floor_helipad = "Erdvė helikopteriams",
+		floor_tower = "Bokštas",
 
 		floor_shop = "Parduotuvė",
 
@@ -7051,7 +7118,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 
 		floor_gangway = "Failed to automatically generate translation.",
 
-		floor_hangout = "Pasimatymo vieta",
+		floor_hangout = "Bokštas",
 		floor_penthouse = "Prezidento butas",
 		floor_theatre_office = "Teatro biuras",
 		floor_psychiatrists_office = "Psichiatro biuras",
@@ -7165,8 +7232,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		next_rotation_in = "Kitas pasukimas po: ${time}",
 
 		exclusive_dealership_blip = "Ekskliuzivas Deluxe Motorsport",
-
-		buyback_closed = "Mainų prekyvietė uždaryta. Tu gali parduoti transporto priemonę kitam žaidėjui su tinkamu lygiu.",
 
 		log_title = "EDM pirkimas",
 		log_description = "Nupirkta `${label}` už ${cost}."
@@ -7373,13 +7438,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 	gift_boxes = {
 		failed_seal_box = "Nepavyko uždaryti dovanų dėžutės.",
 		failed_open_box = "Nepavyko atidaryti dovanų dėžutės."
-	},
-
-	golf = {
-		pickup_ball = "[${InteractionKey}] 공 줍기",
-
-		failed_pickup = "Failed to automatically generate translation.",
-		failed_place = "Failed to automatically generate translation."
 	},
 
 	gps = {
@@ -7596,6 +7654,10 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		cpr_player_logs_details = "${consoleName} atliko CP ${targetConsoleName}."
 	},
 
+	heated_seats = {
+		hint = "Naudokite ~INPUT_CHARACTER_WHEEL~ ir ~INPUT_CELLPHONE_UP~ / ~INPUT_CELLPHONE_DOWN~ šildomoms sėdynėms."
+	},
+
 	hitmarkers = {
 		hitmarkers_enabled = "Smūgio indikatoriai įjungti.",
 		hitmarkers_disabled = "Smūgio indikatoriai išjungti."
@@ -7608,6 +7670,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		belt = "DIRŽAS",
 		oil = "ALIEJUS",
 		megaphone = "PA sistemą",
+		heat = "KARŠTIS",
 		manual = "Failed to automatically generate translation.",
 		cruise_control = "Kruizo kontrolę",
 		speed_limiter = "Greičio ribotoją",
@@ -7740,6 +7803,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		weapon_license_details = "Ginklų licenzija | ${firstName} ${lastName} | Piliečio ID: ${characterId}",
 		mining_license = "Gruodžių iškasimo licenzija",
 		mining_license_details = "Gruodžių iškasimo licenzija | ${firstName} ${lastName} | Piliečio ID: ${characterId}",
+		bar_license = "Baro/Teisės licencija",
+		bar_license_details = "Baro/Teisės licencija | ${vardas} ${pavardė} | Piliečio ID: ${characterId}",
 		just_showed_license = "Tik pateikėte licenziją. Prašome palaukti šiek tiek.",
 
 		just_showed_badge = "Jūs tik ką parodėte pažymėjimą. Prašome palaukti šiek tiek.",
@@ -8002,6 +8067,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		inspect_weapon = "Šio ${itemName} serijos numeris atrodo kaip `${itemId}`.",
 		inspect_weapon_broken = "Šio ${itemName} serijos numeris atrodo kaip `${itemId}`, taip pat atrodo, kad jis visiškai sugadintas.",
 		inspect_bank_property = "복사된 차량 데이터가 없습니다.",
+		inspect_bank_property_cid = "Šis ${item} yra žymėtas kaip ${bank} banko nuosavybė. Jį išėmė sąskaitos numeris #${characterId}.",
 		inspect_no_property = "차량 데이터가 복사되었습니다.",
 
 		searching_dumpster = "Ieškoma šiukšlių konteinerio",
@@ -8039,7 +8105,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		underground_bar_counter = "Požeminio Baro Skaitliukas",
 		pizza_this_counter = "Picos Šio Skaitliukas",
 		yellow_jack_counter = "Geltono Džeko Skaitliukas",
-		bahama_mamas_counter = "Bahama Mamas Skaitiklis",
 
 		inventory_name_missing = "Trūksta inventoriaus pavadinimo parametro.",
 
@@ -8054,6 +8119,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 
 		missing_job = "Jūs neturite reikalingos darbo vietos, kad galėtumėte naudoti šį inventorius.",
 
+		inventory_active = "Šį inventorį šiuo metu naudoja kas kitas.",
 		item_is_broken = "Elementas yra sugedęs.",
 		battle_royale_item = "Šis daiktas gali būti naudojamas tik „Battle Royale“ kovose.",
 		battle_royale_item_disallowed = "Šis daiktas negali būti naudojamas „Battle Royale“ kovose.",
@@ -8090,6 +8156,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		break_apart_battery = "Sudaužyk <i>Bateriją</i>",
 		mix_gunpowder = "Sumaišyk <i>Sprogmenis</i>",
 		roll_cigar = "Sukrušk <i>Cigarete</i>",
+		squeeze_orange_juice = "Išspausti <i>Apelsinų sultis</i>",
+		make_apple_juice = "Pagaminti <i>Obuolių sultis</i>",
 
 		search = "Ieškoti",
 		amount = "Kiekis",
@@ -8213,6 +8281,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		weapon_license_description = "Ginklų licenzija turėti ir nešioti aukšto lygio ginklus.",
 		mining_license = "Kalnakasių licenzija",
 		mining_license_description = "Kalnakasių licenzija kasybai.",
+		bar_license = "Baro/Teisės licencija",
+		bar_license_description = "Patvirtintas įrodymas, kad išlaikėte baro egzaminą ir oficialiai leidžiama praktikuoti teisę San Andreas valstijoje. Rodykite didingai, žinodami, kad jūs išmanote teisinę sistemą ir dabar galite ginti kaltuosius ar kaltinti kaltuosius.",
 
 		sasp_badge = "SASP distinktyvinio ženklo",
 		sasp_badge_description = "SASP policijos departamento pareigūnų distinktyvinis ženklas.",
@@ -8337,6 +8407,11 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		radio_decryptor = "Radijo dešifruoklis",
 		radio_decryptor_description = "Dešifruoja radijo dažnius, jei prijungta prie radijo.",
 
+		drill_large = "Didelis grąžtvas",
+		drill_large_description = "Galingas įrankis, skirtas sunkiems darbams. Gali susidoroti su dideliais dalykais... jei žinote, ką darote.",
+		drill_small = "Mažas grąžtvas",
+		drill_small_description = "Kompaktiškas ir tikslus įrankis, puikiai tinka siekiant patekti į sunkiai pasiekiamas vietas. Keletas tokių gali būti naudingi.",
+
 		paper_bag = "Popierinė krepšė",
 		paper_bag_description = "Puikiai tinka maisto produktams arba galbūt kažkieno galvai, gyvai ar negyvai.",
 		burger_shot_delivery = "Burger Shot indelis",
@@ -8387,6 +8462,9 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		clothing_bag = "Drabužių Krepšys",
 		clothing_bag_description = "Daugiau niekada nesijaudink dėl mados krizių! Drabužių krepšys leidžia jums saugoti mėgstamą aprangą ir ją akimirksniu pasausti bet kur jūs einate. Šis krepšys turi visą pasakiškumo magiją, tik be bibbidi-bobbidi-boo.",
 
+		tnt_block = "TNT Blokas",
+		tnt_block_description = "Labai nestabilus Minecraft TNT blokas, pasiruošęs sprogdinti jūsų pasaulį - tiesiog pridėkite kibirkštį ir bėkite ieškoti prieglobsčio!",
+
 		magnifying_glass = "Didinamasis stiklas",
 		magnifying_glass_description = "Didinamasis stiklas visoms jūsų detektyvo reikmėms. Galbūt atrasite 4 lapuota dobilą žolyne arba mažą varliuką purve?",
 
@@ -8418,6 +8496,10 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		raw_sapphire_description = "Ši žalia safyrų žiedas, su savo intensyvia mėlyna spalva, kalba apie gylį ir paslaptį. Toks pat patvarus, kaip ir gražus, jis paruoštas būti pagamintas į perlą, atspindintį dangaus grožį.",
 		raw_emerald = "Šviežia smaragdas",
 		raw_emerald_description = "Gyva, žalia neapdirbta emeralda, kuri užfiksuoja gausios gamtos ir gilių miškų esmę. Nors bendra, tačiau įtakinga, ji turi potencialą tapti kvapų grožiui suformuoti, kai tik bus išvalyta.",
+		raw_opal = "Neapdorotas opalas",
+		raw_opal_description = "Šis rūdžių tipo deimantas yra žavinantis radinys, atspindintis įvairių spalvų švytėjimą, kai patenka šviesa. Iškastas gamtoje savo natūralioje formoje, tai yra lobis, laukiantis būti supjaustytas ir išdažytas į kažką nepaprasto.",
+		raw_onyx = "Šiurkštus Oniksas",
+		raw_onyx_description = "Šis gilus, paslaptingas deimantas rastas žemės gelmėse, slepiantis savo tikrąjį potencialą tamsiame, blizgančiame apvalke. Šiurkštus ir neišplėstas, tai stiprumo ir paslapties simbolis.",
 
 		ruby_dust = "Rubinų dulkių",
 		ruby_dust_description = "Ryškiai raudona miltelių iš smulkintų rubinų, kurie vertinami dėl jų turtingos, giliai raudonos spalvos. Šis prabangus pigmentas puikiai tinka pridėti drąsią ir išskirtinę spalvą bet kokiam projektui, ypač kai jis derinamas su kitomis patriotinėmis spalvomis, kad sukurtų išvaizdą, kuri tikrai patrauks dėmesį ir skatins nacionalinį jausmą.",
@@ -8432,6 +8514,10 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		sapphire_description = "Išminties ir kilnumo simbolis, šis išsklajotas safyras žavi savo karališkai mėlynu blizgesiu. Jo tvirtumas ir švytėjimas jį padaro populiaria atrankai tiek kasdieniam nešiojimui, tiek ceremonialiniam aprangimui.",
 		emerald = "Smaragdas",
 		emerald_description = "Išpjaustytas atskleidžiantis gyvybingą žalią spalvą, lyginantį pavasario vitalumui, šis smaragdas yra gamtos šlovingumo liudijimas. Vertinamas dėl gausios spalvos ir skaidrumo, jis yra bet kokios deimantų kolekcijos raktas.",
+		opal = "Opalas",
+		opal_description = "Kai kartais iškarpytas, šis opalas spinduliuoja žavindamų spalvų žaidimu. Puikus dirbinys, tobula dovana tiems, kurie nori nešti gamtos grožio gabalėlį su savimi.",
+		onyx = "Oniksas",
+		onyx_description = "Poliruotas iki tobulumo, šis juodas akmuo išskiria stilingą ir drąsų žavesį, siūlydamas aštrų kontrastą su ryškesniais akmenimis. Idealuems tiems, kurie mėgaujasi dramatiškumu.",
 
 		ring = "Žiedas",
 		ring_description = "Paprasta, tačiau elegantiška pagrindas asmeniniam kūriniui, šis tuščias žiedas pagamintas iš kokybiško metalo ir paruoštas puošti bet kokiu brangakmeniu. Tai puiki plunksnava įrašytoms žinutėms, todėl jis yra tiek pat unikalus, kaip pats nešėjo pasakojimas.",
@@ -8446,6 +8532,15 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		sapphire_ring_description = "Karališkas ir įspūdingas, šis safyro žiedas puošiamas giliu mėlynu akmeniu, primenantį vidurnakčio dangų. Įdėtas į sidabro žiedą su elegantiškais papildomais akmenimis, jis suteikia šiek tiek išskirtinumo ir karališkos auros bet kuriam, kuris jį vilkės.",
 		emerald_ring = "Emeraldo žiedas",
 		emerald_ring_description = "Gyvybingas ir pilnas gyvybės, šis smaragdinis žiedas puikauja turtingai žalia akmenyje, įdėtame subtiliai pagamintoje sidabro juostoje. Tai gamtos gausos grožio šventė, puikiai tinka tiems, kurie vertina augimą ir atsinaujinimą.",
+		opal_ring = "Opalinis žiedas",
+		opal_ring_description = "Klasikinis rožinis žiedas, papuoštas ryškiu opalo akmeniu. Metalo švelnumas kartu su kaleidoskopiniu opalu suteikia elegantišką ir amžiną aksesuarą.",
+		onyx_ring = "Oniksinis žiedas",
+		onyx_ring_description = "Išpiltas visiškai iš tvirto onikso, šis žiedas yra tiek stiprus, tiek įspūdingas. Išraiškingumo ir elegancijos simbolis, jis skirtas tiems, kurie vertina minimalizmą su išskirtumu.",
+
+		pearl = "Perlas",
+		pearl_description = "Rasta įsimuštose vandenyno gelmėse, šis švelnus ir blizgus perlas yra amžinas brangakmenis. Gamtos formuotas viduje šeivamedžio, tai yra brangus lobis, kuris šviečia švelniu, švelniai kreminiu atspalviu.",
+		pearl_ring = "Perlo Žiedas",
+		pearl_ring_description = "Klasikinis auksinis žiedas, papuoštas puikiu baltu perlu. Šis elegantiškas žiedas sklinda išskirtumu ir grakštumu, todėl tai puiki detale bet kuriai progai.",
 
 		gemstone_scanner = "Akmens nuskaitytuvas",
 		gemstone_scanner_description = "Būtina priemonė bet kokiam kasyklinei, Gemstone Scanner yra skirtas įvertinti į akmenis įstrigusius gemalus pagal stabilumą. Įvertindamas kiekvieno gemo struktūrinę vientisumą, šis įrenginys padeda kasykloms nustatyti saugiausią išgryninimo būdą, mažindamas sprogimų riziką. Būtina priemonė tiek žemynų vertei išsaugoti, tiek kasybos operacijos saugumui užtikrinti.",
@@ -8779,6 +8874,11 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		watermelon_description = "Ar tai vanduo ar ar tai melionas? Mes galbūt niekada nežinosime.",
 		lemon = "Citrina",
 		lemon_description = "Ryški ir žavinga citrina, kuri plyšta nuo aštrių skonių ir šviesios geltonos spalvos. Puikiai tinka suteikti gaivų poskonį jūsų mėgstamiems patiekalams ir gėrimams. Kiekvienas kramtymas suteikia citrusinį smūgį, pažadindamas jūsų skonį.",
+
+		orange_juice = "Apelsinų sultys",
+		orange_juice_description = "Šviežiai spaustos ir pilnos citrusinių saldumynų, šios apelsinų sultys yra grynos saulės spinduliuose stovint stikline, be jokių priedų - tik ranka spaustos apelsinų gerovė.",
+		apple_juice = "Obuolių sultys",
+		apple_juice_description = "Išspaustos rankomis iš sultingų obuolių, šios sultys yra gaivi, natūralaus obuolio skonio ir su šiek tiek sodo saldumo.",
 
 		banana_peel = "Bananų žievelė",
 		banana_peel_description = "Ganske slaptai, būk atsargus, kai ant jo žengsi.",
@@ -9277,7 +9377,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		dab_pen_description = "Ei, tai Penjaminas? Aplink vaikščioja kaip sunkvežimis, čiumpant visus, šaunus trys mirksniai, ir tu jau išnykai. Kai tik mirksi, žaidimas baigtas. Nėra jokio pasipildymo, tiesiog mėgaukis aukštu, kiek gali.",
 
 		train_pass = "Traukinių bilietai",
-		train_pass_description = "Kai naudosite, gausite 3x greitus praejimus eilėse.",
+		train_pass_description = "Naudodami šį bilieta, gausite 2 prekybos eilėje praleistas bilietus.",
 		train_pass_appreciated_tier = "Vertinamas Lygis",
 		train_pass_appreciated_tier_description = "Gali būti naudojamas 7 dienas Vertinamam Lygiui. Jo negalima patobulinti naudojant OP Taškus.",
 		train_pass_respected_tier = "Gerbiamas Lygis",
@@ -9551,6 +9651,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		raw_bacon = "Failed to automatically generate translation.",
 		raw_bacon_description = "Failed to automatically generate translation.",
 
+		carrot = "Morka",
+		carrot_description = "Kietas, oranžinis užkandis, mėgiamas tiek sveikatai rūpinantis žmonėmis, tiek... kiškiai. Saugokitės, nes triušis jį gali pralenkti!",
 		liquid_smoke = "Failed to automatically generate translation.",
 		liquid_smoke_description = "Failed to automatically generate translation.",
 		raw_brined_meat = "Failed to automatically generate translation.",
@@ -9606,6 +9708,10 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		olives_description = "Maža dubenėlis su alyvuogėmis, puikus užkandis vakarėliams.",
 		popcorn = "Failed to automatically generate translation.",
 		popcorn_description = "Failed to automatically generate translation.",
+		rice_krispies = "Ryžiai Krispies",
+		rice_krispies_description = "Saldūs, traškūs ir šiek tiek nostalgijos kuriantys, šie išpuflinti ryžių užkandžiai kiekviename kramtydami sprogs, knark, galiausiai patyliu balsu sukasi, sprogs ryžiais. Puikus greitų užkandžių ar naminių mersinų batonėlių ingredientas!",
+		almond_joy = "Migdolų džoja",
+		almond_joy_description = "Kokosų ir migdolų mišinys apvyniotas kremine pieninio šokolado danga. Saldus, riešutinis ir patenkinantis, tai saldainis, primenantis, kad rojus gali tilpti tiesiog jūsų kišenėje.",
 
 		uncooked_rice = "Nevirtas Ryžiai",
 		uncooked_rice_description = "Šis pagrindinis grūdas, nevirti ryžiai, yra tuščias drobulių pagrindas daugybei kulinarinių šedevrų. Švieži ir pasiruošę viršyti savo formą, jie žada sugerti skonius ir praturtinti bet kokį patiekalą, nuo galingų risotų iki subtilių sushi rulonų.",
@@ -9938,13 +10044,15 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		weapon_flare = "Žibintuvas",
 		weapon_acidpackage = "Rūdžių Pakuotė",
 
-		weapon_petrolcan = "Benzino Talpykla",
-		gadget_parachute = "Parašiutas",
 		weapon_fireextinguisher = "Gaisro Sulaikymo Priemonė",
 		weapon_hazardcan = "Pavojinga Benzino Talpykla",
 		weapon_fertilizercan = "Trąšų Talpykla",
 		weapon_hackingdevice = "Hakerio prietaisas",
 
+		weapon_petrolcan = "Benzino Talpykla",
+		ev_battery = "Elektrinio automobilio baterija",
+
+		gadget_parachute = "Parašiutas",
 		red_parachute = "Raudonas Parašiutas",
 		blue_parachute = "Mėlynas Parašiutas",
 		black_parachute = "Juodas Parašiutas",
@@ -10065,13 +10173,15 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		weapon_flare_description = "Mesti orlaidą oro išmetimui.",
 		weapon_acidpackage_description = "Rūgšties paketas. Panaudoti, kad pridarytumėte purvo.",
 
-		weapon_petrolcan_description = "Palieka benzino likučių taką, kurį galima užsideginti.<br><br>Palikta benzino: ${petrolAmount}%.",
-		gadget_parachute_description = "Nyloninis sportinis parašiutas su raminio oro parafoil dizainu, kuris suteikia didesnį kontrolės elementų kryptimi ir greičiu.",
 		weapon_fireextinguisher_description = "Pirštuotas ugnies gesintuvas, taip pat vadinamas „Dūmų mašina“.",
 		weapon_hazardcan_description = "Lyg benzino kanisteris, bet bevertis.",
 		weapon_fertilizercan_description = "Geras, senas kanistras su šiurkščiu turiniu, nieko geriau neaugina jūsų derliaus.",
 		weapon_hackingdevice_description = "Tai mažas rankinis prietaisas, stipriai remiantis metalo aptiklio principais, tačiau su įtraukta antena ir pakeistomis mygtukų funkcijomis.",
 
+		weapon_petrolcan_description = "Palieka benzino likučių taką, kurį galima užsideginti.<br><br>Palikta benzino: ${petrolAmount}%.",
+		ev_battery_description = "Aukštos įtampos sprendimas jūsų elektromobiliui, ši didelė baterijos pakuotė yra kaip atsarginė kanistra, bet elektriniam amžiui - pasirengusi suteikti jūsų važiavimui stiprio dozę, kai labiausiai to reikia.<br><br>Įkrovimo likutis: ${chargeAmount}%.",
+
+		gadget_parachute_description = "Nyloninis sportinis parašiutas su raminio oro parafoil dizainu, kuris suteikia didesnį kontrolės elementų kryptimi ir greičiu.",
 		red_parachute_description = "Kaip įprastas šuolis, tik raudonas.",
 		blue_parachute_description = "Kaip įprastas šuolis, tik mėlynas.",
 		black_parachute_description = "Kaip įprastas šuolis, tik juodas.",
@@ -10148,6 +10258,9 @@ OP.Global.Locales.Languages["lt-LT"] = {
 
 		weapon_addon_mk18 = "MK18",
 		weapon_addon_mk18_description = "\"Liks pakabintas arba supakintas\" - George Washington (Galbūt)",
+
+		weapon_addon_ddm4v7 = "DDM4V7",
+		weapon_addon_ddm4v7_description = "Sveiki atvykę į ryžių laukus.",
 
 		weapon_addon_glock = "Glock 19",
 		weapon_addon_glock_description = "Šis kompaktiškas ir patikimas Glock 19 su pasididžiavimu puoštas Amerikos vėliava ant stoties, nes niekas neatsako laisvei taip, kaip žvaigždės, juostos ir 9 mm. Puikiai tinka patriotams, kurie mėgsta savo ginklus tokiais ryškiais kaip jų meilė šaliai.",
@@ -10273,6 +10386,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		just_used_bandage = "Jus tik ką naudojote pirmosios pagalbos rinkinį, palaukite šiek tiek prieš naudodami kitą.",
 		just_used_tourniquet = "Jūs šiuo metu naudojote turniketą, palaukite prieš panaudodami kitą.",
 		drank_gasoline_death = "Benzino apsinuodijimas",
+		refilling_lighter = "Užpildyti žiebtuvą",
 		drank_bleach_death = "Ploviklio apsinuodijimas",
 		finished_joint = "Jūs pasibaigė jūsų sujungimas.",
 		cant_place_here = "Failed to automatically generate translation.",
@@ -10374,6 +10488,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		invalid_amount = "Transporto priemonės, kurią norite suremontuoti, serverio id. (neprivalomas)",
 		failed_modify_jail = "galutinio_laužo_skrinija",
 		modified_jail = "Pasiekti savo galutinio laužo skriniją.",
+		jail_mission_info = "Galite vykdyti misijas žemėlapyje, kad sumažintumėte laiką kalėjime.",
 
 		trigger_lockdown = "gls",
 		press_trigger_lockdown = "Kurį slotą nustatyti daiktų metaduomenims.",
@@ -10591,6 +10706,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		queue_position_with_priority = "🐌 Jūs esate ${queuePosition}/${queueTotal} eilėje su ${queuePriorityName} prioritete. 🕐${queueTime}",
 		queue_position_without_priority = "🐌 Jūs esate ${queuePosition}/${queueTotal} eilėje. 🕐${queueTime}",
 		live_on_twitch = "Ar jums nuobodu? Peržiūrėkite šiuos transliuotojus!",
+		check_out_community_content = "Ar jums nuobodu? Patikrinkite mūsų bendruomenės turinį čia!",
+		community = "Bendruomenė",
 		live = "Tiesioginė",
 		you_are_through = "Jūs esate per!",
 		join_server = "Prisijunkite prie serverio",
@@ -10697,7 +10814,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 
 		medal = "Medalis",
 		claim_points = "Pareiškimo taškai (${claimablePoints})",
-		medal_what_is_this_text_part_1 = "Gaudami peržiūras ir patinkame Medalio įrašuose, galite užsidirbti OP Taškų! Gaunate po vieną tašką už 2 įrašus, po vieną tašką už 150 peržiūrų ir po vieną tašką už 10 patikusiųjų.",
+		medal_what_is_this_text_part_1 = "Gaudami peržiūras ir patinkančius jūsų Medalo klipus, galite užsidirbti OP taškų! Gaunate vieną tašką už 2 klipus, vieną tašką už 500 peržiūrų ir vieną tašką už 50 patinka.",
 		account_name = "Paskyros pavadinimas",
 		connected_account = "Prijungta paskyra",
 		medal_stats = "Medalio statistika",
@@ -10718,12 +10835,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		set_referrer = "Nustatyti Rekomenduotoją",
 		your_referrer = "Jūsų Rekomenduotojas:",
 		your_referees = "Jūsų Rekomenduojami žaidėjai:"
-	},
-
-	logs = {
-		logs_failed = "Nepavyko įkelti žurnalų.",
-
-		close = "Uždaryti"
 	},
 
 	loot = {
@@ -10897,8 +11008,9 @@ OP.Global.Locales.Languages["lt-LT"] = {
 	minecraft = {
 		failed_place_block = "Nepavyko įdėti bloko.",
 		failed_break_block = "Nepavyko sulaikyti bloko.",
-		success_wipe_blocks = "Sėkmingai išvalė blokus ${radius}m spindulyje.",
-		failed_wipe_blocks = "Nepavyko išvalyti blokų."
+		success_wipe_blocks = "Sėkmingai pašalinti ${count} blokai(-ų) ${radius}m spinduliu.",
+		failed_wipe_blocks = "Nepavyko išvalyti blokų.",
+		press_to_use_jukebox = "Spauskite ~INPUT_CONTEXT~, kad naudotumėte muzikinę dezutę."
 	},
 
 	mining = {
@@ -11073,7 +11185,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 	},
 
 	model_view = {
-		invalid_model = "Netinkamas modelis."
+		invalid_model = "Netinkamas modelis.",
+		invalid_component = "Neteisingas komponentas `${component}`."
 	},
 
 	money = {
@@ -11275,7 +11388,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		chop_shop_sound = "Išjungti autogrobių radijo garsą",
 		seatbelt_sound = "Išjungti saugos diržo signalą",
 		eating_noises_sound = "Išjungti valgymo garsus",
-		detailed_prop_positioning = "Išsami atributų pozicijavimas",
 		sound_effect_placeholder = "URL į .oog failą...",
 
 		button_save = "Išsaugoti",
@@ -11998,6 +12110,26 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		tutorial_3_part_10 = "Broli, broli."
 	},
 
+	pacific_bank = {
+		power_generator_disabled = "Šis elektros generatorius išjungtas. Jis bus sutvarkytas per ${time}.",
+
+		you_completed_the_hack = "Jūs baigėte įsilaužimą. Dabar dalinamasi elektra su saugumo sistema yra: ${outputData}",
+		you_completed_the_hack_no_more_generators = "Jūs baigėte įsilaužimą. Nėra daugiau elektrinių generatorių, kurie maitina saugumo sistemą.",
+		you_failed_the_hack = "Jūs nepavyko įsilaužti.",
+		you_completed_the_hack_door_unlocked = "Jūs baigėte įsilaužimą. Durys buvo atrakintos.",
+
+		teller_door_hack_completed_logs_title = "Banko Tinklinės Durys Atrakintos",
+		teller_door_hack_completed_logs_details = "${consoleName} baigė tinklinės durų įsilaužimą Ramioje Banke.",
+
+		vault_door_hack_completed_logs_title = "Erdvės Tinklinės Durys Atrakintos",
+		vault_door_hack_completed_logs_details = "${consoleName} baigė erdvės durų įsilaužimą Ramioje Banke.",
+
+		disabled_generators = "Išjungta ${disabledGeneratorsCount} generatorių.",
+
+		drill_drilling = "Gręžiama (${remainingSeconds}s)",
+		drill_jammed = "[${InteractionKey}] Gręžtuvas Susiklimpęs (${remainingSeconds}s)"
+	},
+
 	panel = {
 		loading_title = "Įkeliama",
 		error_title = "Kažkas nutiko negerai",
@@ -12148,7 +12280,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		network_id_invalid = "Neteisingas tinklo ID.",
 		ped_not_found = "Personažas su tinklo ID `${networkId}` nerastas.",
 		tracked_ped = "Sekamas personažas",
-		tracked_ped_is = "Personažas (${entity}) yra:"
+		tracked_ped_is = "Personažas (${entity}) yra:",
+		ped_config_flags = "Ped Konfigūracijos Vėliava"
 	},
 
 	ped_spawn = {
@@ -12156,17 +12289,16 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		ped_spawn_success = "Personažas sėkmingai sukurtas.",
 		ped_failed_spawn = "Nepavyko sukurti personažo.",
 		invalid_weapon = "Netinkama ginklo rūšis.",
+		invalid_ped_model = "Netinkamas pėdos modelis.",
 		ped_remove_success = "Sėkmingai pašalinti sukurti asmenys.",
 		ped_failed_remove = "Nepavyko pašalinti sukurtų asmenų.",
-		ped_task_success = "Sėkmingai priskirta '${task}' užduotis sukurtiems asmenims.",
-		ped_failed_task = "Nepavyko priskirti '${task}' užduoties sukurtiems asmenims.",
+		ped_task_success = "Sėkmingai priskirta užduotis `${task}` sukurtiems žaidėjams.",
+		ped_failed_task = "Nepavyko priskirti užduotį `${task}` sukurtiems žaidėjams.",
 		invalid_target = "Netinkamas tikslinis serverio ID.",
-		missing_task = "Trūksta užduoties parametro.",
-		invalid_task = "Netinkama asmenų užduotis '${task}'.",
-		target_required = "Šiai asmenų užduočiai reikalingas galiojantis tikslas.",
-		ped_emote_success = "Sėkmingai paleisti sukurti asmenys atlieka '${emote}' emociją.",
-		ped_failed_emote = "Nepavyko paleisti paleistų peds '${emote}' emocijos.",
-		invalid_emote = "Neteisinga emocija '${emote}'.",
+		invalid_task = "Netinkama arba praleista ped užduotis.",
+		ped_emote_success = "Sėkmingai padaryti sukurtiems žaidėjams žaisti `${emote}` posūkį.",
+		ped_failed_emote = "Nepavyko sukurtiems žaidėjams atlikti `${emote}` posūkį.",
+		invalid_emote = "Klaidingas emocijos kodas `${emote}`.",
 		missing_emote = "Trūksta emocijos parametras.",
 
 		emote_list = "Pasiekiamos ped emocijos: ${list}.",
@@ -12372,7 +12504,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		prop_no_interior = "Šį objektą gali būti pastatyti tik lauke.",
 		invalid_culling_value = "Netinkama apkarpymo vertė, turi būti nuo 10m iki 2,500m.",
 		invalid_model = "Netinkamas/Nežinomas modelis `${name}` (${hash}).",
-		cancelled_positioning = "Atšaukta objekto pozicionavimas.",
+		cancelled_positioning = "Nutrauktas objekto vietos nustatymas.",
 
 		invalid_prop_id = "Neleistinas objekto ID.",
 		prop_deleted = "Objektas su ID ${propId} buvo ištrintas.",
@@ -12784,7 +12916,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		mission_row_pd = "Mission Row PD",
 		pillbox_hospital = "Pillbox ligoninė",
 		jewelry_store = "Rockford Hills juvelyrikos parduotuvė",
-		principal_bank = "Principal bankas",
+		pacific_bank = "Pacific Bank",
 		bolingbroke_penitentiary = "Bolingbroke kalinimas",
 		fort_zancudo = "Fort Zancudo",
 		del_perro_pier = "Del Perro molo",
@@ -12944,7 +13076,9 @@ OP.Global.Locales.Languages["lt-LT"] = {
 	},
 
 	snow = {
-		hold_to_pick_up_snowballs = "Laikykite ~INPUT_CONTEXT~, kad paimtumėte sniego kamuolius."
+		hold_to_pick_up_snowballs = "Laikykite ~INPUT_CONTEXT~, kad paimtumėte sniego kamuolius.",
+		building_snowman = "Statome snešlapį",
+		failed_build_snowman = "Nepavyko pastatyti snešlapio."
 	},
 
 	sound_effects = {
@@ -12961,6 +13095,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 
 		mission_row_police_station = "Mission Row policijos departamentas",
 		highway_police_station = "Greitkelių policija",
+		rockford_police_station = "Rockford Hills PD",
 		palomino_fib_police_station = "Palomino FIB policija",
 		sandy_police_station = "Sandy Shores policijos departamentas",
 		paleto_police_station = "Paleto Bay policijos departamentas",
@@ -13002,6 +13137,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		no_character_loaded = "Žaidėjas neturi sukurtos veikėjo figūros.",
 		not_same_instance = "Žaidėjas nėra tame pačiame kontekste kaip jūs.",
 		no_user_or_character = "Žaidėjas neprisijungęs arba neturi užkrautos veikėjo informacijos.",
+		not_while_noclipped = "Negalite stebėti neišjungę kliučiavimo režimo.",
 
 		resolving_player = "Išsprendžiamas žaidėjas",
 		loading_coords = "Įkeliami koordinatės",
@@ -13126,7 +13262,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		minute_changed = "Minutė dabar nustatyta į `${minute}`.",
 
 		missing_weather = "Nenurodytas oras.",
-		invalid_weather = "Oras `${weatherName}` yra netinkamas. Galimi oro pavadinimai yra CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT ir BLIZZARD.",
+		invalid_weather = "Oras `${weatherName}` yra neteisingas. Galimos oro būsenos pavadinimai yra: EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS, HALLOWEEN, RAIN_HALLOWEEN ir SNOW_HALLOWEEN.",
 		weather_changed = "Oro sąlygos dabar nustatytos kaip `${weatherName}`.",
 		weather_advanced = "Oro sąlygos buvo pereita prie`${weatherName}`.",
 		weather_advance_fail = "Nepavyko natūraliai pereiti prie kitų oro sąlygų.",
@@ -13415,6 +13551,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		relief_stress = "Mažinti stresą",
 		reset_health = "Nustatyti sveikatą",
 		remove_injuries = "Pašalinti sužalojimus",
+		toggle_noclip = "Perjungti Noclip",
 
 		teleport = "Teleportacijos parinktys",
 		teleport_to = "TP į",
@@ -13760,8 +13897,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 	voice = {
 		illegal_radio_frequency = "Bandoma gauti prieigą prie neteisėtų radijo dažnių.",
 		voice_chat = "Balsinis pokalbis",
-		voice_server_connected = "Prisijungta prie balsinio serverio. Siunčiami balso duomenys atitinkamiems žaidėjams.",
-		voice_server_disconnected = "Atsijungta nuo balso serverio. Laukiama prisijungimo.",
 		voice_muted = "Balso pokalbis tylimas.",
 		voice_unmuted = "Balso pokalbis atšauktas.",
 		broadcasting_voice_to_players = "Transliuojama kitiems žaidėjams:",
@@ -13800,9 +13935,15 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		stopped_listening_logs_details = "${consoleName} pradėjo klausytis ${targetConsoleName}.",
 		started_listening_logs_details = "${consoleName} baigė klausytis ${targetConsoleName}.",
 
+		broadcast_all_logs_title = "Transliavimas Ijungtas",
+		broadcast_all_logs_details_on = "${consoleName} įjungė transliaciją visiems žaidėjams.",
+		broadcast_all_logs_details_off = "${consoleName} išjungė transliaciją visiems žaidėjams.",
+
 		muted_logs_title = "Išjungtas balsas",
 		muted_logs_details = "${consoleName} išjungė ${targetConsoleName} garso pokalbius.",
-		unmuted_logs_details = "${consoleName} įjungė ${targetConsoleName} garso pokalbius."
+		unmuted_logs_details = "${consoleName} įjungė ${targetConsoleName} garso pokalbius.",
+
+		mumble_disconnected = "Neprisijungęs prie balso pokalbių."
 	},
 
 	wallhack = {
@@ -13944,6 +14085,11 @@ OP.Global.Locales.Languages["lt-LT"] = {
 	locales = {
 		showing_raw_locales_on = "Failed to automatically generate translation.",
 		showing_raw_locales_off = "Failed to automatically generate translation."
+	},
+
+	shapes = {
+		copied_clipboard = "Nukopijuota į išeities tekstą.",
+		cancelled = "Atšaukta."
 	},
 
 	states = {
@@ -14279,6 +14425,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		license_weapon = "Ginklų licencija",
 		license_mining = "Geležininkystės licencija",
 		license_driver = "Failed to automatically generate translation.",
+		license_bar = "Baras/Teisės įrodymas",
 		license_press = "Spauskite Licenciją",
 		gave_character_license = "Duota ${characterName} licencija `${licenseLabel}`.",
 		character_already_has_license = "${characterName} jau turi licenciją `${licenseLabel}`",
@@ -14456,7 +14603,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 
 	clamps = {
 		no_vehicle_near = "Jūs nesate šalia automobilio kairiojo galo rato.",
-		vehicle_not_driveable = "Negalima prijungti skustuvo prie sugedusio automobilio.",
 		clamping = "Prijungiama",
 		removing_clamp = "Šalinama skustuvas",
 		remove_clamp = "[${InteractionKey}] Pašalinti skustuvą",
@@ -14516,6 +14662,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		exit_to_charge = "Išlipkite iš transporto priemonės, kad galėtumėte įkrauti.",
 		press_to_fuel = "Paspauskite ~g~${InteractionKey} ~w~, kad užpiltumėte degalų į transporto priemonę.",
 		press_to_charge = "Spauskite ~g~${InteractionKey} ~w~, norėdami įkrauti transporto priemonę.",
+		use_moonshine = "Spauskite ~g~${InteractionKey} ~w~, kad naudotumėte Moonshine kaip kuro šaltinį.",
+		using_moonshine = "Kuriamas Moonshine",
 		fuel_pump_text = "Degalų kaina: $${fuelCost}~n~Spauskite ~g~${InteractionKey} ~w~norint sustabdyti degalinėjimą.",
 		vehicle_text = "Kuro lygis: ${fuelLevel}%",
 		fuel_pump_text_ev = "Elektrumo kaina: $${fuelCost}~n~Spauskite ~g~${InteractionKey} ~w~, kad sustabdytumėte krovimą.",
@@ -14526,6 +14674,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		purchase_jerry_can = "Spauskite ~g~${InventoryKey} ~w~norint įsigyti benzino kanistrą.",
 		gas_station = "Degalinė",
 		petrolcan_fuel_text = "Liko benzinas: ${petrolAmount}%~n~Spauskite ~g~${InteractionKey} ~w~norint sustabdyti degalinėjimą.",
+		battery_fuel_text = "Likęs krovinys: ${petrolAmount}%~n~Paspauskite ~g~${InteractionKey} ~w~norėdami sustabdyti įkrovimą.",
 		player_busy = "Užsiėmęs kokia nors kita veikla.",
 		fuel_level_set_to = "Kuro lygis nustatytas į `${fuelLevel}`.",
 		not_in_a_vehicle = "Jūs neesate transporto priemonėje.",
@@ -14569,7 +14718,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 	},
 
 	garages = {
-		garage_empty = "Jūsų garaže nieko nėra!",
+		garage_empty = "Ši automobilių garažas yra tuščias!",
 		impound_lot = "Sulaikymo aikštelė",
 		police_impound = "Policijos sulaikymas",
 		owner_self = "Failed to automatically generate translation.",
@@ -14588,12 +14737,10 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		error_withdrawing = "Įvyko klaida bandant išsiimti jūsų transporto priemonę.",
 		withdraw_timeout = "Palaukite truputį, kol bandysite išsiimti kitą transporto priemonę.",
 		garage_in_use = "Ši garažas šiuo metu naudojamas, prašome palaukti akimirką.",
-		invalid_model = "Netinkamas arba nežinomas automobilio modelis.",
 		vehicle_in_the_way = "Yra automobilis, trukdantis iškviesti automobilį.",
 		vehicle_is_out = "Jūsų automobilis jau išvykęs.",
-		vehicle_stored = "Jūsų automobilis buvo saugomamas.",
-		vehicle_stored_other = "Transportas buvo padėtas.",
-		error_storing = "Nepavyko išsaugoti automobilio. Ar tai jūsų automobilis?",
+		vehicle_stored = "Automobilis buvo įdėtas į garažą.",
+		error_storing = "Nepavyko įdėti automobilio į garažą.",
 		no_nearby_vehicle = "Nerasta netoliese esančių automobilių.",
 		no_vehicles_to_retrieve = "Neturite automobilių, kuriuos atkurti!",
 		vehicle_retrieved = "Automobilis sėkmingai atkurtas.",
@@ -14603,6 +14750,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		ui_return = "Grįžti",
 		ui_my_vehicle_list = "Failed to automatically generate translation.",
 		ui_other_vehicle_list = "Failed to automatically generate translation.",
+		ui_shared_vehicle_list = "Bendras garažas",
+		ui_store_shared = "Įdėti į bendrą",
 		ui_store_vehicle = "Saugoti transporto priemonę",
 		ui_vehicle_sell = "Parduoti transporto priemones",
 		ui_retrieve_vehicle = "Nuskraidinti transporto priemonę",
@@ -14658,6 +14807,20 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		ungarage_success = "Transporto priemonė sėkmingai išvežta iš garažo.",
 		ungarage_failed = "Veksle skaderefleksjon. (Enhver enhet som skader deg vil selv bli skadet)",
 		vehicle_not_found = "savings_accounts",
+		vehicle_respawned = "Sėkmingai atgautas automobilis su id ${vehicleId}.",
+		respawn_failed = "Nepavyko atgauti automobilio.",
+
+		not_near_node = "Nepasiekiate automobilio vietovės.",
+		invalid_garage_id = "Neteisingas garažo identifikatorius.",
+		failed_create_garage = "Nepavyko sukurti laikino garažo.",
+		failed_remove_garage = "Nepavyko pašalinti laikino garažo.",
+		created_garage = "Sukurtas laikinas garažas su id ${garageId}.",
+		removed_garage = "Pašalintas laikinas garažas su id ${garageId}.",
+
+		created_garage_logs_title = "Sukurtas Garažas",
+		created_garage_logs_details = "${consoleName} sukūrė garažą su id ${garageId} pozicijoje `${xCoord}, ${yCoord}, ${zCoord}`.",
+		removed_garage_logs_title = "Pašalintas Garažas",
+		removed_garage_logs_details = "${consoleName} pašalino garažą su id ${garageId}.",
 
 		garaged_vehicle_logs_title = "Vis og administrer alle sparekontoene dine.",
 		garaged_vehicle_logs_details = "savings, accounts",
@@ -14907,8 +15070,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		cant_throw_weapon = "Negali mesti šio ginklo.",
 		keybind_description = "Mesti savo ginklą",
 
-		total_throwables = "Mestuvai: ${count}",
-
 		threw_weapon_logs_title = "Pašalintas Ginklas",
 		threw_weapon_logs_details = "${consoleName} pašalino savo ${item} (${coords}).",
 		picked_up_weapon_logs_title = "Paimta ginklas",
@@ -14948,7 +15109,10 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		folded_stock = "Suskleista šovimo linija",
 		unfolded_stock = "Išskleista šovimo linija",
 		failed_to_toggle_stock = "Nepavyko perjungti šovimo linijos.",
-		weapon_has_no_stock = "Šiam ginklui nėra šovimo linijos."
+		weapon_has_no_stock = "Šiam ginklui nėra šovimo linijos.",
+
+		petrolcan_explosion_logs_title = "Benzino bakelio sprogimas",
+		petrolcan_explosion_logs_details = "${consoleName} sprogo su benzinu į savo kūną."
 	},
 
 	-- a shared "alpha" locale category uwu - also know, some features such as the ${InteractionKey} will be missing here, so don't try to use it
@@ -15102,8 +15266,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		smart_watch_hover = "<i>Šis išmanusis laikrodis priklauso <b>${name} (#${cid})</b>. Jis užfiksavo <b>${stepsWalked}</b> žingsnių.</i>",
 		item_contains = "<b>Turi:</b> <i>${contents}</i>.",
 		item_engraving = "<b>Graviravimas:</b> <i>${message}</i>.",
-		evidence_bag_casing = "Gulintys ėgliai: ${casings} ėglių(i) buvo iššauta(-os) naudojant ${weapon}, užregistruotą ${name} (#${cid}) (paimta(-os) ${time} šalia ${location}).",
-		evidence_bag_casing_unregistered = "Gulintys ėgliai: ${casings} ėglių(i) buvo iššauta(-os) su neregistruota ${weapon} (paimta(-os) ${time} šalia ${location}).",
+		evidence_bag_casing = "Gulintys ginklo kalimai: ${casings} kalimai buvo iššauti iš ${weapon} (${serialNumber}) registruoto ${name} (#${cid}) (paimta ${time} netoli ${location}).",
+		evidence_bag_casing_unregistered = "Gulintys ginklo kalimai: ${casings} kalimai buvo iššauti iš neregistruoto ${weapon} (${serialNumber}) (paimta ${time} netoli ${location}).",
 		evidence_bag_impact = "Ėglių poveikis: ${impacts} poveikis(-iai) atrodo buvo sukurti(-tos) naudojant ${weapon} (paimta(-os) ${time} šalia ${location}).",
 		evidence_bag_vehicle = "Transporto priemonės DNR: Imtinai priskirta ${name} (#${cid}) ir buvo išgaudytas iš sėdynės ${seat} transporto priemonėje su numeriu ${plate} (paimtas ${time} šalia ${location}).",
 		evidence_bag_vehicle_empty = "Transporto priemonės DNR: Imtinai nepriskirta jokiam įrašui ir buvo išgaudytas iš sėdynės ${seat} transporto priemonėje su numeriu ${plate} (paimtas ${time} šalia ${location}).",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 33 (do not change)
+-- AUTO LOCALES: 34 (do not change)
 
 OP.Global.Locales.Languages["meme-valleygirl"] = {
 	-- configuration settings for language
@@ -32,6 +32,12 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	},
 
 	-- animations/*
+	chairs = {
+		invalid_model = "Like, um, the model name is like missing or totally invalid.",
+		no_nearby_chair = "Ugh, like, there's, like, no chair of that model, like, nearby.",
+		chair_offset_copied = "Like, I, like, totally copied the chair offset, you know?"
+	},
+
 	emotes = {
 		get_in_trunk = "Press ~INPUT_ENTER~ to like, Get in the trunk.",
 		put_boombox_in_trunk = "Press ~INPUT_ENTER~ to like, Put the boombox in the trunk.",
@@ -47,6 +53,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		the_trunk_is_occupied = "The trunk is, like, already taken.",
 		unable_to_toggle_carry = "I, like, think you need to wait a bit before toggling the carry.",
 		carry_disabled_animal = "Animal Peds, like, can't carry.",
+		no_carry_nearby = "Um, like, there's nobody nearby to, like, carry.",
+		cant_reach_carry = "Sorry, but, like, you can't reach, like, the closest person.",
 
 		trunk_hint = "Use \"/door\" to open/close the trunk while standing near it, like, duh.",
 
@@ -650,6 +658,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		advanced_noclip_ban = "Wait, are you, like, trying to sneak around in secret passageways? Girl, this isn't some spooky ghost party, and that move? Not on our dance card, sorry.",
 		illegal_local_vehicle_ban = "Oh my gosh, you totally stumbled upon like the invisible ride of Lord Mirage! But, uh oh, this magical ride is, like, only for the annual phantom parade.",
 		handling_field_ban = "Ew, you can't like turbocharge laws of physics, duh. Gotta keep it real with the wheels.",
+		teleported_ban = "OMG, blink and you’re gone? Like, not in this dimension, traveler.",
+		honeypot_native = "Oh, like, bother! You've, like, stumbled into, like, a place where honey wasn’t, like, meant to be found. Some pots are, like, best left alone, you know?",
 
 		type_aimbot = "Aimbot, duh",
 		type_bad_creation = "Total fail of a creation",
@@ -658,8 +668,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		type_damage_modifier = "Damage modifier for, like, super strong attacks",
 		type_distance_taze = "Taze from, like, far away 'n stuff",
 		type_fast_movement = "Zoomin' around with, like, super speed",
+		type_teleported = "Like, totally teleported",
 		type_freecam_detected = "Freecam, but like, totally busted",
 		type_honeypot = "Honeypot, like, so bait for the fools",
+		type_honeypot_native = "Honeypot Native, like OMG",
 		type_illegal_damage = "Illegal Damage, like, so not allowed",
 		type_illegal_event = "Like, Illegal Event, OMG",
 		type_illegal_freeze = "Like, Illegal Freeze, Stop!",
@@ -829,6 +841,12 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		sit_command_parameter_variation = "var",
 		sit_command_parameter_variation_help = "What sit animation to play, like, pick a number (1 - 6).",
 		sit_command_substitutes = "chair",
+
+		chair_offset_command = "chair_offset, duh",
+		chair_offset_command_help = "Define the offset of a nearby chair of a specific model, y'know.",
+		chair_offset_command_parameter_model_name = "model name, like omg",
+		chair_offset_command_parameter_model_name_help = "The model name of the chair to define the offset of, like, for sure.",
+		chair_offset_command_substitutes = "",
 
 		-- animations/couches
 		sleep_command = "like, nap",
@@ -1514,6 +1532,13 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		airsupport_command_help = "Asks for some major airsupport, like hashtag fighter jets and all, y'know?",
 		airsupport_command_substitutes = "",
 
+		-- game/animals
+		animal_sound_command = "animal_sound, like, meow",
+		animal_sound_command_help = "Play an animal sound effect, how cute.",
+		animal_sound_command_parameter_sound = "sound, like purr",
+		animal_sound_command_parameter_sound_help = "Like, the sound you want to play. (Depends on, like, animal model)",
+		animal_sound_command_substitutes = "",
+
 		-- game/archives
 		create_archive_command = "create an archive",
 		create_archive_command_help = "Creates a new case in the archive you are currently standing nearest.",
@@ -1550,6 +1575,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		play_audio_command_parameter_server_id = "server id",
 		play_audio_command_parameter_server_id_help = "The server ID of the player you want to bang this audio for. You can also use `-1` to play it for everyone, ya know?",
 		play_audio_command_substitutes = "",
+
+		-- game/audio_emitters
+		toggle_audio_emitters_command = "toggle_audio_emitters",
+		toggle_audio_emitters_command_help = "Toggle, like, native audio emitters.",
+		toggle_audio_emitters_command_substitutes = "",
 
 		-- game/bandaids
 		random_bandaid_command = "random_bandaid",
@@ -2077,18 +2107,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		rotate_marker_command_parameter_marker_name_help = "Like, the marker you wanna edit, you know?",
 		rotate_marker_command_substitutes = "",
 
-		rectangle_command = "rectangle",
-		rectangle_command_help = "Create a rectangle in 3D space, cuz like, why not?",
-		rectangle_command_substitutes = "rect",
-
-		define_area_command = "define_area",
-		define_area_command_help = "Define, umm, an area.",
-		define_area_command_substitutes = "area",
-
-		polygon_command = "polygon",
-		polygon_command_help = "Create like a polygon in 2D space.",
-		polygon_command_substitutes = "poly",
-
 		debug_info_command = "debug_info",
 		debug_info_command_help = "Oh em gee, collect some debugging info about a certain player.",
 		debug_info_command_parameter_server_id = "server id",
@@ -2122,6 +2140,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		show_cancelled_vehicles_command = "undefined",
 		show_cancelled_vehicles_command_help = "undefined",
 		show_cancelled_vehicles_command_substitutes = "",
+
+		print_object_models_command = "print_object_models",
+		print_object_models_command_help = "Print, like, current object models in the console.",
+		print_object_models_command_substitutes = "",
 
 		-- game/debug_menu
 		debug_menu_command = "debug_menu",
@@ -2224,6 +2246,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		fake_id_command_parameter_female = "female",
 		fake_id_command_parameter_female_help = "Like, set to true if you want a chick citizen card instead of a dude.",
 		fake_id_command_substitutes = "",
+
+		-- game/fields
+		field_debug_command = "field_debug",
+		field_debug_command_help = "Debug all, like, nearby field plants.",
+		field_debug_command_substitutes = "",
 
 		-- game/flag_swap
 		flag_swap_command = "flag_swaaap",
@@ -2601,6 +2628,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		fake_lag_command_help = "Like, create fake lag. So annoying, am I right?",
 		fake_lag_command_parameter_fps = "fps",
 		fake_lag_command_parameter_fps_help = "The target fps, babe (>= 1).",
+		fake_lag_command_parameter_spike = "spike",
+		fake_lag_command_parameter_spike_help = "Like, mess up your fps randomly (major headache).",
 		fake_lag_command_substitutes = "lag, duh",
 
 		-- game/locate
@@ -2609,13 +2638,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		locate_entity_command_parameter_filter = "filter",
 		locate_entity_command_parameter_filter_help = "What filter the entity should match? Like, id:12345 or plate:90FMK072, like, duh.",
 		locate_entity_command_substitutes = "le",
-
-		-- game/logs
-		logs_command = "logs",
-		logs_command_help = "Show the latest server logs for a certain player. So clutch, right?",
-		logs_command_parameter_server_id = "server id, like oh my god",
-		logs_command_parameter_server_id_help = "Like duh, the server id of the player.",
-		logs_command_substitutes = "",
 
 		-- game/loot
 		loot_debug_command = "loot_debug",
@@ -2819,6 +2841,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		model_view_command_parameter_model_help = "undefined",
 		model_view_command_parameter_no_blocker = "undefined",
 		model_view_command_parameter_no_blocker_help = "undefined",
+		model_view_command_parameter_components = "components",
+		model_view_command_parameter_components_help = "Weapon components (separate with commas, duh).",
 		model_view_command_substitutes = "undefined",
 
 		-- game/money
@@ -2911,6 +2935,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		power_generators_debug_command = "undefined",
 		power_generators_debug_command_help = "undefined",
 		power_generators_debug_command_substitutes = "",
+
+		power_generators_disable_command = "power_generators_disable",
+		power_generators_disable_command_help = "Turn off, like, every single power generator at Pacific Bank. It's, like, the same as turning off each one individually but all at once if they weren't off already.",
+		power_generators_disable_command_substitutes = "",
 
 		-- game/panel
 		panel_command = "panel",
@@ -3037,11 +3065,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		share_phone_number_command = "like, share_phone_number",
 		share_phone_number_command_help = "Shares ur phone number with, like, everyone nearby (< 1.5m).",
 		share_phone_number_command_substitutes = "share_number",
-
-		-- game/plants
-		plants_debug_command = "plants_debug",
-		plants_debug_command_help = "Like, debug all the plants, duh.",
-		plants_debug_command_substitutes = "",
 
 		-- game/player_control
 		drive_for_command = "drive_for",
@@ -3415,7 +3438,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		weather_command = "weather",
 		weather_command_help = "Change the weather to a different vibe.",
 		weather_command_parameter_weather = "weather name",
-		weather_command_parameter_weather_help = "The name of the weather you wanna vibe with. Valid weather names are EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS and HALLOWEEN.",
+		weather_command_parameter_weather_help = "Choose the weather you want to set, you know? Valid weather options are like EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS, HALLOWEEN, RAIN_HALLOWEEN, and SNOW_HALLOWEEN.",
 		weather_command_substitutes = "",
 
 		advance_weather_command = "like, advance_weather",
@@ -3464,12 +3487,16 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		tp_to_player_command_help = "Totally teleport you to a player, duh.",
 		tp_to_player_command_parameter_server_id = "server id",
 		tp_to_player_command_parameter_server_id_help = "Like, the server id of the player you wanna teleport to, you know?",
+		tp_to_player_command_parameter_into_vehicle = "like, into car",
+		tp_to_player_command_parameter_into_vehicle_help = "If you wanna like, teleport into the player's car.",
 		tp_to_player_command_substitutes = "undefined",
 
 		tp_player_here_command = "tp_player_here",
 		tp_player_here_command_help = "Teleports a player to you, like, duh.",
 		tp_player_here_command_parameter_server_id = "server id",
 		tp_player_here_command_parameter_server_id_help = "The server id of the player you want to teleport here.",
+		tp_player_here_command_parameter_freeze = "chill",
+		tp_player_here_command_parameter_freeze_help = "If you wanna like, freeze the player.",
 		tp_player_here_command_substitutes = "undefined",
 
 		tp_player_player_command = "tp_player_player",
@@ -3591,6 +3618,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		voice_debug_command_parameter_server_id_help = "If you're wanting to toggle the 'voice debug' for someone else, like, insert their server id here.",
 		voice_debug_command_substitutes = "",
 
+		broadcast_all_command = "OMG broadcast_all",
+		broadcast_all_command_help = "Toggle like, broadcasting to all players.",
+		broadcast_all_command_substitutes = "",
+
 		listen_command = "listen",
 		listen_command_help = "Toggles listening mode for a certain user, like, so you can hear what they say, ya know?",
 		listen_command_parameter_server_id = "server id, like, totally",
@@ -3706,6 +3737,15 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		show_raw_locales_command = "show_raw_locales",
 		show_raw_locales_command_help = "Like, toggle this on to show the raw names of locales so you can, like, debug what locales need to be changed and stuff.",
 		show_raw_locales_command_substitutes = "",
+
+		-- global/shapes
+		areas_command = "OMG areas",
+		areas_command_help = "Define like, circular areas.",
+		areas_command_substitutes = "",
+
+		polygon_command = "polygon",
+		polygon_command_help = "Define like, a 2D polygon.",
+		polygon_command_substitutes = "poly",
 
 		-- global/states
 		entity_states_command = "entity_states",
@@ -3947,6 +3987,22 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		ungarage_vehicle_command_parameter_vehicle_id_help = "The like, vehicle ID you would like to withdraw.",
 		ungarage_vehicle_command_substitutes = "like, ungarage",
 
+		respawn_vehicle_command = "like, respawn_vehicle",
+		respawn_vehicle_command_help = "Totally bring back a car (garage & ungarage).",
+		respawn_vehicle_command_parameter_repair = "repair",
+		respawn_vehicle_command_parameter_repair_help = "Decide if the car should be fixed before respawning.",
+		respawn_vehicle_command_substitutes = "",
+
+		create_garage_command = "create_garage",
+		create_garage_command_help = "Make a chill garage near a car node.",
+		create_garage_command_substitutes = "",
+
+		remove_garage_command = "remove_garage",
+		remove_garage_command_help = "Get rid of a temporary garage.",
+		remove_garage_command_parameter_garage_id = "garage id",
+		remove_garage_command_parameter_garage_id_help = "Like, put the like ID of the temporary garage ya wanna, like, remove.",
+		remove_garage_command_substitutes = "",
+
 		-- vehicles/keys
 		give_key_command = "give_key, hand over that key",
 		give_key_command_help = "Give a vehicle key to, like, a nearby person.",
@@ -4149,10 +4205,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		throw_weapon_command_help = "Toss your like, totally equipped weapon.",
 		throw_weapon_command_substitutes = "yeet, toss",
 
-		throwables_debug_command = "like, throwables_debug",
-		throwables_debug_command_help = "Oh em gee, like debug all the nearby throwables.",
-		throwables_debug_command_substitutes = "",
-
 		-- weapons/weapons
 		check_ammo_command = "score ammo",
 		check_ammo_command_help = "Check, like, how much ammo you have in total.",
@@ -4298,7 +4350,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	},
 
 	steam = {
-		no_steam_allowed = "undefined"
+		no_steam_allowed = "Ugh, before you, like, come in, you gotta totally shut down Steam and then, like, open up FiveM."
 	},
 
 	twitch = {
@@ -4438,7 +4490,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		server_id_hidden_feature = "undefined",
 		fake_disconnect_feature = "undefined",
 		brighter_nights_feature = "undefined",
-		ridealong_feature = "undefined"
+		ridealong_feature = "undefined",
+		broadcast_all_feature = "Tell Everyone"
 	},
 
 	admin_menu = {
@@ -4512,6 +4565,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		drunk_state_2 = "Whoa, like you're like pretty drunk.",
 		drunk_state_3 = "OMG, like you're really wasted.",
 		drunk_state_4 = "Danger zone, like you shouldn't even be driving."
+	},
+
+	animals = {
+		invalid_sound = "Ew, that sound is not, like, valid."
 	},
 
 	arcade = {
@@ -4630,6 +4687,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 	atms = {
 		withdraw = "Withdraw, like give me my cash",
+		withdraw_bonds = "Take Out Bonds",
 		deposit = "Deposit, like adding to da bank",
 		balance = "Balance, like how much do I have?",
 		transfer = "Transfer, like moving my money",
@@ -4671,6 +4729,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		withdraw_log_bank_title = "Withdrawal from the Bank, Girrrrl!",
 		withdraw_log_atm_title = "ATM Withdraw",
 		withdraw_log = "${consoleName} withdrew like ${amount}.",
+		withdraw_log_bonds_title = "Bank Takeout (Bonds)",
+		withdraw_log_bonds = "${consoleName} took out $${amount} in, like, savings bonds (${bonds}).",
 
 		transfer_log_title = "Bank Transfer",
 		transfer_log = "${consoleName} (#${characterId}) transferred like ${amount} to ${targetConsoleName} (#${targetCharacterId}).",
@@ -4815,6 +4875,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		played_audio_effect_for_everyone_details = "${consoleName} totally played a audio effect for everyone. The audio effect had URL `${url}` and was set to play at volume level `${volume}`. So awesome!",
 		played_audio_effect_for_player_title = "Played Audio Effect For Player, like, only them",
 		played_audio_effect_for_player_details = "${consoleName} totally played a sick audio effect for ${targetConsoleName}. The audio effect had URL `${url}` and was set to play at volume level `${volume}`."
+	},
+
+	audio_emitters = {
+		audio_emitters_disabled = "OMG, no more music vibes here.",
+		audio_emitters_enabled = "Yasss, the music vibes are back on."
 	},
 
 	balls = {
@@ -5015,7 +5080,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		pd_sea_hq = "OMG, like, welcome to the Police Sea HQ!",
 		ems_air_hq = "Hey there! You've, like, arrived at the EMS Air HQ.",
 		ems_boat_hq = "Yass, girl! You found the EMS Boat HQ!",
-		ems_garage = "The EMS Garage is, like, totally where all the cool ambulances hang out."
+		ems_garage = "The EMS Garage is, like, totally where all the cool ambulances hang out.",
+		vineyard = "Like, the Vineyard"
 	},
 
 	bombs = {
@@ -5560,10 +5626,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		steel_ore_recipe = "undefined",
 		gold_ore_recipe = "undefined",
 		gold_nuggets_recipe = "undefined",
-		tungsten_ore_recipe = "undefined",
-		tungsten_bar_recipe = "undefined",
-		titatium_ore_recipe = "undefined",
-		titanium_bar_recipe = "undefined",
+		tungsten_bar_recipe = "Like, Smelt a Tungsten Bar",
+		titanium_bar_recipe = "Like, Smelt a Titanium Bar",
 		smelt_rusty_metal_recipe = "undefined",
 		smelt_rusty_tank_shell_recipe = "undefined",
 		smelt_rusty_diving_helmet_recipe = "undefined",
@@ -5571,6 +5635,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		smelting_materials = "Turning ${usedItems} into melt",
 		smelted_materials = "Melted ${usedItems}.",
 		failed_smelt_materials = "Oops! Failed to melt materials.",
+		smelting_copper = "Currently melting Copper",
+		combining_copper_zinc = "Mixing Copper and Zinc together",
 
 		scrap_knife = "Scrap Knives, omg!",
 		press_to_scrap_knife = "[${SeatEjectKey}] Scrap Knives, duh.",
@@ -6921,7 +6987,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		timecycles = "Timecycles, so like what time is it tho",
 		weather = "Weather, is it, like, gonna rain or something",
 		reset = "Reset, like, starting over or whatever",
-		refresh_interior = "Refresh Interior, gotta make it look fresh"
+		refresh_interior = "Refresh Interior, gotta make it look fresh",
+		camera_shakes = "Woah, my camera's shaky"
 	},
 
 	development = {
@@ -6973,7 +7040,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		failed_to_sync_doors = "WTF, failed to sync doors. Must've been like corrupted or something. Pls try again.",
 		saved_doors_to_file = "Saved `${amount}` doors to a file on the server, like, OMG!",
 		no_nearby_doors = "OMG, there are like no nearby doors to save!",
-		lockpicking_door = "Lockpicking Door, like, so sneaky!",
 		copied_doors = "undefined",
 		adding_doors = "undefined",
 		stop_adding_doors = "undefined",
@@ -7019,6 +7085,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		floor_lobby = "Like, welcome to the lobby.",
 		floor_roof = "OMG, we're on the roof... sooo pretty!",
 		floor_helipad = "Heli-pad, duh!",
+		floor_tower = "The Tower, like duh!",
 
 		floor_shop = "The Shop, like, where you buy stuff.",
 
@@ -7051,7 +7118,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		floor_gangway = "undefined",
 
-		floor_hangout = "Hangout Spot, like totally rad",
+		floor_hangout = "The Rad Hangout Spot",
 		floor_penthouse = "Penthouse, so fancy",
 		floor_theatre_office = "Theatre Office, like so dramatic",
 		floor_psychiatrists_office = "Psychiatrist's Office, for like, therapy and stuff",
@@ -7165,8 +7232,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		next_rotation_in = "The next rotation is in like ${time}",
 
 		exclusive_dealership_blip = "O-M-G! Exclusive Deluxe Motorsport",
-
-		buyback_closed = "The exchange is closed. You can sell your vehicle to another player with the correct tier instead.",
 
 		log_title = "Yaaas! Your EDM Purchase",
 		log_description = "Just, like, bought `${label}` for ${cost}, you know?"
@@ -7373,13 +7438,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	gift_boxes = {
 		failed_seal_box = "undefined",
 		failed_open_box = "undefined"
-	},
-
-	golf = {
-		pickup_ball = "[${InteractionKey}] Pickup, like, Ball",
-
-		failed_pickup = "Like, totally failed to pickup ball.",
-		failed_place = "Like, totally failed to place ball."
 	},
 
 	gps = {
@@ -7596,6 +7654,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		cpr_player_logs_details = "${consoleName} performed CPR on ${targetConsoleName}."
 	},
 
+	heated_seats = {
+		hint = "For lit heated seats, hit up ~INPUT_CHARACTER_WHEEL~ and go ~INPUT_CELLPHONE_UP~ / ~INPUT_CELLPHONE_DOWN~."
+	},
+
 	hitmarkers = {
 		hitmarkers_enabled = "Hitmarkers are like, totally on.",
 		hitmarkers_disabled = "No more hitmarkers, bummer."
@@ -7608,6 +7670,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		belt = "belt, duh.",
 		oil = "Like, OIL",
 		megaphone = "undefined",
+		heat = "OMG, it's like, so HOT",
 		manual = "MANUAL",
 		cruise_control = "undefined",
 		speed_limiter = "undefined",
@@ -7740,6 +7803,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		weapon_license_details = "Weapons License | ${firstName} ${lastName} | Citizen ID: ${characterId}",
 		mining_license = "Mining License, you know?",
 		mining_license_details = "Mining License | ${firstName} ${lastName} | Citizen ID: ${characterId}",
+		bar_license = "Bar/Law License, totally a thing",
+		bar_license_details = "Bar/Law License | ${firstName} ${lastName} | Citizen ID: ${characterId}, you go girl",
 		just_showed_license = "Oh em gee, like, you just showed a license. Like, hold on a hot minute.",
 
 		just_showed_badge = "Whoa, you just showed a badge. Chillax for a sec, k?",
@@ -8002,6 +8067,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		inspect_weapon = "OK, so the serial number for this ${itemName} is like, totally `${itemId}`.",
 		inspect_weapon_broken = "The serial number for this ${itemName} is `${itemId}`, but it's like, totally wrecked now.",
 		inspect_bank_property = "Oh em gee, this ${item} is totally property of the ${bank} Bank.",
+		inspect_bank_property_cid = "OMG, this ${item} is like, totally owned by ${bank} Bank. Some boss withdrew it with account number #${characterId}, like wow.",
 		inspect_no_property = "Like, this ${item} doesn't seem to have any property markings, you know?",
 
 		searching_dumpster = "Searching the trash, like oh my god",
@@ -8039,7 +8105,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		underground_bar_counter = "undefined",
 		pizza_this_counter = "undefined",
 		yellow_jack_counter = "undefined",
-		bahama_mamas_counter = "undefined",
 
 		inventory_name_missing = "Ugh, like, you forgot to include the inventory name, MKAY?",
 
@@ -8054,6 +8119,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		missing_job = "Sorry, you don't have the right gig to use this stash.",
 
+		inventory_active = "Sorry, hun, but the inventory is like, totally in use right now.",
 		item_is_broken = "That's totally broken.",
 		battle_royale_item = "Hold up, this item can only be used in Battle Royale matches.",
 		battle_royale_item_disallowed = "Uh-uh, no can do. This item is not allowed in Battle Royale matches.",
@@ -8090,6 +8156,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		break_apart_battery = "undefined",
 		mix_gunpowder = "undefined",
 		roll_cigar = "undefined",
+		squeeze_orange_juice = "Squeeze <i>Orange Juice</i>, like YAS queen",
+		make_apple_juice = "Like, totally make <i>Apple Juice</i>, so fetch",
 
 		search = "Search, duh!",
 		amount = "Amount, obvi!",
@@ -8213,6 +8281,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		weapon_license_description = "A weapons license for, like, possessin' and carryin' higher class weaponry, ya know?",
 		mining_license = "Mining License",
 		mining_license_description = "A license for, like, mining and stuff.",
+		bar_license = "Bar/Law License, yeah baby",
+		bar_license_description = "It's like a fancy paper that says you rocked the bar exam and can now practice law in San Andreas! Show it off, honey, 'cause you can totally defend the innocent or go after the guilty now.",
 
 		sasp_badge = "SASP Badge, like, don't you forget it!",
 		sasp_badge_description = "A badge for officers of the San Andreas Police Department, yo.",
@@ -8337,6 +8407,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		radio_decryptor = "Radio Decrypter, so rad",
 		radio_decryptor_description = "Decrypts radio frequencies if connected to a radio. How cool is that?",
 
+		drill_large = "Like, Super Big Drill",
+		drill_large_description = "This tool is, like, totally heavy-duty and can handle, like, big stuff... if you're, like, skilled enough.",
+		drill_small = "Tiny Drill",
+		drill_small_description = "Small, but, like, totally precise—perfect for, like, reaching those, like, hard-to-get places. You might, like, need a few of these.",
+
 		paper_bag = "Paper Bag, like, whatever",
 		paper_bag_description = "Perfect for storing groceries or, like, perhaps someone's head, dead or alive. Whatever floats your boat.",
 		burger_shot_delivery = "Burger Shot Meal, like duh!",
@@ -8387,6 +8462,9 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		clothing_bag = "Clothing Bag, OMG!",
 		clothing_bag_description = "Never worry about fashion emergencies again, girl! The clothing bag lets you store your favorite outfit and instantly equip it anywhere you go. This bag has all the magic of a fairy godmother, minus the bibbidi-bobbidi-boo. Seriously!",
 
+		tnt_block = "TNT Block, Um, Boom!",
+		tnt_block_description = "A, like, super explosive block of TNT from, like, Minecraft, ready to, like, blow up everything—just, like, light it up and, like, run for your life!",
+
 		magnifying_glass = "Like, Magnifying Glass",
 		magnifying_glass_description = "A magnifying glass for all your detective needs. Maybe you'll find a 4 leaf clover in the grass or a small frog in the mud?",
 
@@ -8418,6 +8496,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		raw_sapphire_description = "undefined",
 		raw_emerald = "Like, Raw Emerald",
 		raw_emerald_description = "undefined",
+		raw_opal = "Unprocessed Opal",
+		raw_opal_description = "OMG, this gemstone is, like, totally dazzling. It's, like, reflecting all these colors when the light hits it. It's, like, a hidden treasure just waiting to be like, cut and polished into something like, extraordinary, you know?",
+		raw_onyx = "Raw Onyx",
+		raw_onyx_description = "This, like, super deep and mysterious gem is found, like, in the deepest parts of the earth. It's, like, covered in this dark, glossy shell that, like, hides its true power. Raw and unprocessed, it's a symbol of, like, strength and mystery, you know?",
 
 		ruby_dust = "Ruby Dust, duh!",
 		ruby_dust_description = "undefined",
@@ -8432,6 +8514,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		sapphire_description = "undefined",
 		emerald = "Emerald",
 		emerald_description = "undefined",
+		opal = "Opal",
+		opal_description = "Once it's, like, expertly shaped, this opal, you know, just, like, shines with all these, like, mesmerizing colors. It's, like, totally brilliant, perfect for those who, like, wanna carry a piece of nature's beauty with them, you know?",
+		onyx = "OMG, like totally Onyx",
+		onyx_description = "This black gemstone is, like, so polished and sleek, giving off major bold vibes. It's, like, perfect for those who love drama and making a statement.",
 
 		ring = "Ring",
 		ring_description = "undefined",
@@ -8446,6 +8532,15 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		sapphire_ring_description = "undefined",
 		emerald_ring = "Emerald Ring, it's like totally green and stuff!",
 		emerald_ring_description = "undefined",
+		opal_ring = "Opal Ring, duh",
+		opal_ring_description = "Check out this rose gold ring with, like, a super vibrant opal stone. The metal shine combined with the opal's colors is, like, totally classic and chic!",
+		onyx_ring = "Onyx Ring, hello",
+		onyx_ring_description = "This ring is, like, literally made entirely of onyx. It's, like, super strong and stylish. It's for those who are all about that minimalist yet edgy look, you know?",
+
+		pearl = "O-M-G Pearl, like totally",
+		pearl_description = "Okay, so like this pearl is just chilling at the bottom of the ocean looking all smooth and shiny. It's, like, totally timeless and, you know, formed inside a mollusk which is, like, so cool. It's, like, a super valuable treasure that glows with, you know, a soft, creamy vibe.",
+		pearl_ring = "Pearl Ring, like, whoa",
+		pearl_ring_description = "This gold ring is, like, so classic with a totally flawless white pearl on top. It's, like, elegant and so sophisticated—it's, like, the ultimate accessory for, like, any occasion.",
 
 		gemstone_scanner = "Gemstone Scanner",
 		gemstone_scanner_description = "undefined",
@@ -8779,6 +8874,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		watermelon_description = "Um, is this like, water or a melon? Like, who even knows, amirite?",
 		lemon = "undefined",
 		lemon_description = "undefined",
+
+		orange_juice = "Orange Juice, like, yum",
+		orange_juice_description = "So, this orange juice is, like, squeezed fresh and bursting with, you know, citrusy sweetness. It's, like, pure sunshine in a glass, no weird stuff added—just, like, hand-pressed orange magic.",
+		apple_juice = "Like, OMG, Apple Juice",
+		apple_juice_description = "Totally hand-pressed from, like, crisp apples! It's so pure and like, has that natural apple flavor, with a touch of orchard sweetness!",
 
 		banana_peel = "Banana Peel",
 		banana_peel_description = "Like, super slippy, watch your step!",
@@ -9277,7 +9377,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		dab_pen_description = "undefined",
 
 		train_pass = "Like, Train Pass",
-		train_pass_description = "When you use it, you get 3x instant passes in the queue.",
+		train_pass_description = "When you use it, you'll, like, totally get 2x instant passes in the queue!",
 		train_pass_appreciated_tier = "undefined",
 		train_pass_appreciated_tier_description = "undefined",
 		train_pass_respected_tier = "undefined",
@@ -9551,6 +9651,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		raw_bacon = "Raw Bacon, Like, OMG",
 		raw_bacon_description = "This, like, premium bacon, sliced from, like, the best cuts and cured just right, is, like, totally ready to level up any meal into a flavor sensation. Perfect for the grill, it's, like, waiting to crisp up into a total lip-smacking yum fest.",
 
+		carrot = "Carrot",
+		carrot_description = "A, like, super crisp and orange snack that health nuts and bunnies are all over. If you're not quick, a rabbit might snag it first, like, seriously!",
 		liquid_smoke = "Like, Totally Smokin' Liquid",
 		liquid_smoke_description = "OMG, this bottle of liquid smoke is, like, a total game-changer in the kitchen! It's, like, a super concentrated essence that, like, totally gives your meats those ancient vibes of fire and wood, y'know?",
 		raw_brined_meat = "Brined Meat Vibes",
@@ -9606,6 +9708,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		olives_description = "A teeny tiny bowl of olives, the, like, perfect snack to munch on at a party.",
 		popcorn = "Like, Popcorn",
 		popcorn_description = "OMG, like a bag of popcorn, totally perf for movie night.",
+		rice_krispies = "Rice Krispies",
+		rice_krispies_description = "Sweet, crispy, and, like, totally nostalgic! These puffed rice treats snap, like, crackle, and pop with every bite. Perfect for, like, quick munchies or whipping up some homemade marshmallow bars, y'know?",
+		almond_joy = "Almond Joy, like, totally",
+		almond_joy_description = "Coconut and almond chillin' in a creamy milk chocolate coating. So sweet, nutty, and satisfying - it's like the candy bar that's, like, totally bringing paradise to your pocket.",
 
 		uncooked_rice = "undefined",
 		uncooked_rice_description = "undefined",
@@ -9938,13 +10044,15 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		weapon_flare = "Like, Flare",
 		weapon_acidpackage = "Acid Package, just eww",
 
-		weapon_petrolcan = "Jerry Can, duh!",
-		gadget_parachute = "Parachute, cause like, why not",
 		weapon_fireextinguisher = "Fire Extinguisher, in case like, things get too hot",
 		weapon_hazardcan = "Hazardous Jerry Can, woah, like, dangerous",
 		weapon_fertilizercan = "Fertilizer Can, for those plant moms out there",
 		weapon_hackingdevice = "Hacking Device",
 
+		weapon_petrolcan = "Jerry Can, duh!",
+		ev_battery = "EV Battery, duh",
+
+		gadget_parachute = "Parachute, cause like, why not",
 		red_parachute = "Red Parachute, red is sooo my color",
 		blue_parachute = "Blue Parachute, matching my eyes, lulz",
 		black_parachute = "Black Parachute, cause black goes with everything",
@@ -10065,13 +10173,15 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		weapon_flare_description = "Just like, throw it up and wait for the air drop. Easy peasy.",
 		weapon_acidpackage_description = "Like, it's totally a package of acid. You can use it to make a total mess. Duh.",
 
-		weapon_petrolcan_description = "This is like, totally gonna leave a trail of gasoline that can be lit up. <br><br>Gasoline remaining: ${petrolAmount}%.",
-		gadget_parachute_description = "This super cute nylon parachute is so sporty! It's got a ram-air parafoil design, which means you can control where you go and how fast. How dope is that?",
 		weapon_fireextinguisher_description = "This fire extinguisher is totally like a smoke machine! You can use it to make cool visuals or to, like, put out fires and stuff.",
 		weapon_hazardcan_description = "Ugh, this hazard can is, like, so useless! It's just like a regular gas can, but like, way less cool.",
 		weapon_fertilizercan_description = "This fertilizer can is so dope, it's like the best thing for your crops! You can make them grow big and strong with just a can of pure poop, how rad is that?",
 		weapon_hackingdevice_description = "So, it's, like, this super small hand-held device, like, totally based on the Metal Detector, but with, like, an antenna and different buttons and stuff.",
 
+		weapon_petrolcan_description = "This is like, totally gonna leave a trail of gasoline that can be lit up. <br><br>Gasoline remaining: ${petrolAmount}%.",
+		ev_battery_description = "This high-voltage solution for your EV is, like, a big ol' battery pack that's like a jerry can but for the electric age - so ready to give your ride a zap of energy when you're, like, in need.<br><br>Charge remaining: ${chargeAmount}%, like, woah.",
+
+		gadget_parachute_description = "This super cute nylon parachute is so sporty! It's got a ram-air parafoil design, which means you can control where you go and how fast. How dope is that?",
 		red_parachute_description = "OMG, this red parachute is totally fierce! It's just like the regular parachute, but like, red! You'll be the envy of all your friends!",
 		blue_parachute_description = "This blue parachute is totally chill, just like the ocean waves! It's just like the regular parachute, but like, blue! So gnarly!",
 		black_parachute_description = "Just like the normal parachute but in black, totally chic.",
@@ -10148,6 +10258,9 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		weapon_addon_mk18 = "MK18, like, the ultimate weapon",
 		weapon_addon_mk18_description = "\"Stay strapped or get clapped\" - George Washington (Probably), you know what I'm saying?",
+
+		weapon_addon_ddm4v7 = "DDM4V7, get it",
+		weapon_addon_ddm4v7_description = "Like, welcome to the rice fields, totally awesome!",
 
 		weapon_addon_glock = "undefined",
 		weapon_addon_glock_description = "undefined",
@@ -10273,6 +10386,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		just_used_bandage = "Whoa, chill! You just used a first aid kit, wait before using another one.",
 		just_used_tourniquet = "OMG, you just used a tourniquet! Like, wait a bit before using another one, k?",
 		drank_gasoline_death = "Like, you drank gasoline and died. Not totally unexpected tbh.",
+		refilling_lighter = "OMG refilling my lighter, so clutch!",
 		drank_bleach_death = "OMG! You drank bleach, you're, like, so dead!",
 		finished_joint = "You like totally finished your joint, like for sure.",
 		cant_place_here = "Ugh, you can't even place this here.",
@@ -10374,6 +10488,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		invalid_amount = "Um, the amount is totally not cool. Gotta be more than 0 and less than or equal to 5.",
 		failed_modify_jail = "OMG, like total fail trying to change jail time, ugh.",
 		modified_jail = "OMG, changed jail time for ${fullName}. They're gonna be in jail for ${remaining} now, like whoa.",
+		jail_mission_info = "So, like, you can totally do the missions on your map to, like, reduce your time in jail, duh.",
 
 		trigger_lockdown = "Trigger Lockdown, like, emergency mode!",
 		press_trigger_lockdown = "[${InteractionKey}] Hit this to Trigger Lockdown, you know?",
@@ -10591,6 +10706,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		queue_position_with_priority = "🐌 Like you're number ${queuePosition} out of ${queueTotal} with like super awesome ${queuePriorityName} priority. 🕐${queueTime}",
 		queue_position_without_priority = "🐌 You're like number ${queuePosition} out of ${queueTotal}. 🕐${queueTime}",
 		live_on_twitch = "Like, are you bored? Check out these streamers OMG!",
+		check_out_community_content = "Like, are you, like, totally bored? Check out our, like, community content here!",
+		community = "Community, like, totally",
 		live = "OMG, like, totally live!",
 		you_are_through = "OMG you're like in!",
 		join_server = "Join the Server",
@@ -10697,7 +10814,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		medal = "undefined",
 		claim_points = "undefined",
-		medal_what_is_this_text_part_1 = "undefined",
+		medal_what_is_this_text_part_1 = "OMG by getting views and likes on, like, your Medal clips, you can totally earn OP Points! Like, you get one point per 2 clips, one point per 500 views and one point per 50 likes, like, so rad!",
 		account_name = "undefined",
 		connected_account = "undefined",
 		medal_stats = "undefined",
@@ -10718,12 +10835,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		set_referrer = "undefined",
 		your_referrer = "undefined",
 		your_referees = "undefined"
-	},
-
-	logs = {
-		logs_failed = "OMG! Failed to load logs. Like, that's mad wack.",
-
-		close = "As if, close"
 	},
 
 	loot = {
@@ -10897,8 +11008,9 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	minecraft = {
 		failed_place_block = "undefined",
 		failed_break_block = "undefined",
-		success_wipe_blocks = "undefined",
-		failed_wipe_blocks = "undefined"
+		success_wipe_blocks = "So, like, successfully wiped, like, ${count} block(s) in, like, a ${radius}m radius. So cool!",
+		failed_wipe_blocks = "undefined",
+		press_to_use_jukebox = "Like, Press ~INPUT_CONTEXT~ to, like, totally use the jukebox."
 	},
 
 	mining = {
@@ -11073,7 +11185,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	},
 
 	model_view = {
-		invalid_model = "undefined"
+		invalid_model = "undefined",
+		invalid_component = "Ugh, that's like an invalid component `${component}`."
 	},
 
 	money = {
@@ -11275,7 +11388,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		chop_shop_sound = "Turn Off that annoying Chop Shop Radio Sound",
 		seatbelt_sound = "Stop that Seatbelt Ding Ding Ding",
 		eating_noises_sound = "undefined",
-		detailed_prop_positioning = "undefined",
 		sound_effect_placeholder = "URL 2 .oog file...",
 
 		button_save = "Save, like, Duh",
@@ -11998,6 +12110,26 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		tutorial_3_part_10 = "Love you, bro."
 	},
 
+	pacific_bank = {
+		power_generator_disabled = "Oh em gee, this power generator has been, like, totally disabled. It will be repaired in ${time}.",
+
+		you_completed_the_hack = "You, like, totally completed the hack. The, like, power generator currently providing power to the security system is: ${outputData}",
+		you_completed_the_hack_no_more_generators = "You, like, totally completed the hack. There are no power generators, like, providing power to the security system.",
+		you_failed_the_hack = "Ugh, you totally failed the hack, like, bummer.",
+		you_completed_the_hack_door_unlocked = "OMG, you, like, completed the hack. The door is, like, totally unlocked now.",
+
+		teller_door_hack_completed_logs_title = "Teller Door Hack Completed, Like, Woo!",
+		teller_door_hack_completed_logs_details = "${consoleName} totally bossed the teller door hack at Pacific Bank, so rad.",
+
+		vault_door_hack_completed_logs_title = "Vault Door Hack Completed, Epic!",
+		vault_door_hack_completed_logs_details = "${consoleName} nailed the vault door hack at Pacific Bank, sooo impressive.",
+
+		disabled_generators = "Just, like, totally disabled ${disabledGeneratorsCount} generator(s), like, wow.",
+
+		drill_drilling = "Like, Drilling (${remainingSeconds}s)",
+		drill_jammed = "[${InteractionKey}] Drill Jammed (${remainingSeconds}s)"
+	},
+
 	panel = {
 		loading_title = "Loading, like for reals",
 		error_title = "Something totally whack happened",
@@ -12148,7 +12280,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		network_id_invalid = "OMG! Network id is like, totally bogus.",
 		ped_not_found = "Ugh, like, can't find the ped with network id `${networkId}`.",
 		tracked_ped = "Like, checking out this Ped I'm, like, tracking:",
-		tracked_ped_is = "Ugh, this Ped (${entity}) is like, sooo..."
+		tracked_ped_is = "Ugh, this Ped (${entity}) is like, sooo...",
+		ped_config_flags = "Ped Config Flags"
 	},
 
 	ped_spawn = {
@@ -12156,17 +12289,16 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		ped_spawn_success = "The Ped was successfully spawned. So, like, yay!",
 		ped_failed_spawn = "Ugh, we, like, failed to spawn the Ped or something. So, like, not cool!",
 		invalid_weapon = "No way, that's like an invalid weapon, like, for reals.",
+		invalid_ped_model = "Ugh, Invalid ped model.",
 		ped_remove_success = "Like, bye-bye spawned peds. They're totally gone.",
 		ped_failed_remove = "We, like, couldn't get rid of those spawned peds. I'm, like, so bummed out!",
-		ped_task_success = "Aw yeah, we totally assigned the '${task}' task to those Peds we spawned! You're, like, welcome.",
-		ped_failed_task = "Ugh, couldn't even assign the '${task}' task to those lame-o spawned peds.",
+		ped_task_success = "Yas, like, Successfully assigned `${task}` task to spawned peds.",
+		ped_failed_task = "Like, Oh no! Failed to assign `${task}` task to spawned peds.",
 		invalid_target = "Boo! That target server ID isn't valid.",
-		missing_task = "You forgot to tell me what task you want the peds to do.",
-		invalid_task = "Duh, that's not even a valid ped task, '${task}'.",
-		target_required = "Oh-em-gee, you need to give me a valid target for this ped task.",
-		ped_emote_success = "Yasss, successfully made those spawned peds play the '${emote}' emote. So lit!",
-		ped_failed_emote = "Ugh, couldn't even make the spawned peds play the '${emote}' emote. Sorry not sorry.",
-		invalid_emote = "Oh-em-gee, that's like not even a valid emote, '${emote}'.",
+		invalid_task = "Ew, Invalid or missing ped task.",
+		ped_emote_success = "Yas, successfully made spawned peds play `${emote}` emote.",
+		ped_failed_emote = "Ugh, Failed to make spawned peds play `${emote}` emote.",
+		invalid_emote = "Like, OMG, invalid emote `${emote}`.",
 		missing_emote = "You forgot to tell me what emote you want the peds to play, duh.",
 
 		emote_list = "Listen up, these are the ped emotes you can use: ${list}.",
@@ -12372,7 +12504,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		prop_no_interior = "Sorry, but you can't place that prop indoors.",
 		invalid_culling_value = "Ugh, like, the culling value is, like, so invalid! It, like, should be between 10m and 2,500m.",
 		invalid_model = "Like, OMG, invalid/unknown model `${name}` (${hash}).",
-		cancelled_positioning = "undefined",
+		cancelled_positioning = "Ugh, like, cancelled prop positioning.",
 
 		invalid_prop_id = "Uh oh, that's a bogus prop id.",
 		prop_deleted = "Prop with id ${propId} got booted.",
@@ -12784,7 +12916,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		mission_row_pd = "Mission Row PD. Can you even with how cute their cars are?!",
 		pillbox_hospital = "Pillbox Hospital, like omg",
 		jewelry_store = "Rockford Hills Jewelry Store, so bougie",
-		principal_bank = "Principal Bank, like totally",
+		pacific_bank = "Pacific Bank, duh!",
 		bolingbroke_penitentiary = "Bolingbroke Penitentiary, so not fab",
 		fort_zancudo = "Fort Zancudo, like military vibes",
 		del_perro_pier = "Del Perro Pier, so beachy",
@@ -12944,7 +13076,9 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	},
 
 	snow = {
-		hold_to_pick_up_snowballs = "Like, hold ~INPUT_CONTEXT~ to pick up snowballs, okay?"
+		hold_to_pick_up_snowballs = "Like, hold ~INPUT_CONTEXT~ to pick up snowballs, okay?",
+		building_snowman = "Like, seriously building a snowman!",
+		failed_build_snowman = "Ugh, like, total fail trying to build a snowman."
 	},
 
 	sound_effects = {
@@ -12961,6 +13095,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 		mission_row_police_station = "Mission Row PD, whatever",
 		highway_police_station = "undefined",
+		rockford_police_station = "Rockford Hills PD, so official!",
 		palomino_fib_police_station = "undefined",
 		sandy_police_station = "Sandy Shores PD, cool",
 		paleto_police_station = "Paleto Bay PD, like, oh my gosh!",
@@ -13002,6 +13137,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		no_character_loaded = "Uh oh, it looks like, like, that player hasn't loaded a character.",
 		not_same_instance = "Umm, like, that player isn't in your group or whatever, so you can't spectate them.",
 		no_user_or_character = "Player is, like, offline or, like, does not have a character loaded.",
+		not_while_noclipped = "Sorry, can't spectate while noclipped, duh!",
 
 		resolving_player = "Resolving Player",
 		loading_coords = "Loading the Coords",
@@ -13126,7 +13262,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		minute_changed = "Cool, the minute is now `${minute}`.",
 
 		missing_weather = "No weather? How am I supposed to know what to change it to? Sheesh.",
-		invalid_weather = "Oh em gee! The weather `${weatherName}` is not like, valid or whatever. Valid weather names are CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING, THUNDER, SMOG, FOGGY, XMAS, SNOWLIGHT, and BLIZZARD.",
+		invalid_weather = "OMG, like, weather `${weatherName}` is not, like, valid. Check out these choices: EXTRASUNNY, CLEAR, CLOUDS, SMOG, FOGGY, OVERCAST, RAIN, THUNDER, CLEARING, NEUTRAL, SNOW, BLIZZARD, SNOWLIGHT, XMAS, HALLOWEEN, RAIN_HALLOWEEN, and SNOW_HALLOWEEN.",
 		weather_changed = "Yas! The weather has been like, totally set to `${weatherName}`.",
 		weather_advanced = "The weather has been like, advanced to `${weatherName}`.",
 		weather_advance_fail = "Ugh, like, the weather failed to advance naturally.",
@@ -13415,6 +13551,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		relief_stress = "Chill out, like totally",
 		reset_health = "Hit refresh on my health",
 		remove_injuries = "Get rid of my boo-boos",
+		toggle_noclip = "Like, Toggle Noclip",
 
 		teleport = "Teleport Options, woohoo!",
 		teleport_to = "TP me, like, somewhere",
@@ -13760,8 +13897,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	voice = {
 		illegal_radio_frequency = "Trying to tune in to illegal radio frequencies.",
 		voice_chat = "Chit Chat",
-		voice_server_connected = "Connected to the chatty server. Blabbing to other players now.",
-		voice_server_disconnected = "Ugh, like, we're totally disconnected from the voice server. Gonna wait here for a minute...",
 		voice_muted = "Whoa, the voice chat's been muted. Like, why?",
 		voice_unmuted = "Yaaas, the voice chat's back! Let's chat it up!",
 		broadcasting_voice_to_players = "Gettin' loud and proud for my peeps:",
@@ -13800,9 +13935,15 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		stopped_listening_logs_details = "${consoleName} started, like, totally listening to ${targetConsoleName}.",
 		started_listening_logs_details = "${consoleName} like, totally stopped listening to ${targetConsoleName}.",
 
+		broadcast_all_logs_title = "Like, Toggled Broadcast",
+		broadcast_all_logs_details_on = "${consoleName} was like, turning broadcast to all players on.",
+		broadcast_all_logs_details_off = "${consoleName} was like, turning broadcast to all players off.",
+
 		muted_logs_title = "Muted Voice",
 		muted_logs_details = "${consoleName} totes muted ${targetConsoleName} from voice chat.",
-		unmuted_logs_details = "${consoleName} like, unmuted ${targetConsoleName} from voice chat."
+		unmuted_logs_details = "${consoleName} like, unmuted ${targetConsoleName} from voice chat.",
+
+		mumble_disconnected = "OMG, You are like, not connected to the voice chat."
 	},
 
 	wallhack = {
@@ -13944,6 +14085,11 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	locales = {
 		showing_raw_locales_on = "Switched on showing the raw locales, ah-mazing!",
 		showing_raw_locales_off = "Turned off showing the raw locales, like, whatever."
+	},
+
+	shapes = {
+		copied_clipboard = "Copied to clipboard, like, totally.",
+		cancelled = "Ugh, Cancelled."
 	},
 
 	states = {
@@ -14279,6 +14425,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		license_weapon = "Weapons License, like, ya know?",
 		license_mining = "Mining License, like totally",
 		license_driver = "Driver's License, ya know",
+		license_bar = "Bar/Law License, duh",
 		license_press = "undefined",
 		gave_character_license = "OMG, like I gave ${characterName} the license `${licenseLabel}`.",
 		character_already_has_license = "Duh, ${characterName} already has the `${licenseLabel}` license.",
@@ -14456,7 +14603,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 
 	clamps = {
 		no_vehicle_near = "You, like, totally aren't near a vehicles left-rear wheel.",
-		vehicle_not_driveable = "Like, you can't even attach a clamp to a totally broken vehicle, duh.",
 		clamping = "Clamping, like, totally!",
 		removing_clamp = "Removing Clamp, you know?",
 		remove_clamp = "[${InteractionKey}] Like, remove the Clamp, you know?",
@@ -14516,6 +14662,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		exit_to_charge = "undefined",
 		press_to_fuel = "Press ~g~${InteractionKey} ~w~to get pumped and refuel the vehicle.",
 		press_to_charge = "undefined",
+		use_moonshine = "Just, like, press ~g~${InteractionKey} ~w~to use Moonshine as fuel.",
+		using_moonshine = "Fueling With Moonshine, like, totally",
 		fuel_pump_text = "Fuel Cost: $${fuelCost}~n~Press ~g~${InteractionKey} ~w~to, like, stop fueling.",
 		vehicle_text = "Fuel Level: ${fuelLevel}% and like, running low so fill 'er up!",
 		fuel_pump_text_ev = "undefined",
@@ -14526,6 +14674,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		purchase_jerry_can = "Like, press ~g~${InventoryKey} ~w~to, you know, purchase a Jerry Can.",
 		gas_station = "Gas Station",
 		petrolcan_fuel_text = "Petrol Amount Left: ${petrolAmount}%~n~Press ~g~${InteractionKey} ~w~to, like, stop fueling.",
+		battery_fuel_text = "Charge Left: ${petrolAmount}%~n~Like, press ~g~${InteractionKey} ~w~to, like, stop charging.",
 		player_busy = "You are like, so busy with something else right now.",
 		fuel_level_set_to = "Fuel level has been set to `${fuelLevel}`.",
 		not_in_a_vehicle = "You're not even in a vehicle, like, where do you think you're gonna put that gas?",
@@ -14569,7 +14718,7 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 	},
 
 	garages = {
-		garage_empty = "Your garage is, like, empty! How tragic.",
+		garage_empty = "Oh my gosh, that garage is, like, totally empty!",
 		impound_lot = "Impound Lot, like, for real",
 		police_impound = "Police Impound, omg",
 		owner_self = "Mine",
@@ -14588,12 +14737,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		error_withdrawing = "Like, something went wrong while trying to get your ride back.",
 		withdraw_timeout = "Seriously, gotta wait a sec before trying to get another car.",
 		garage_in_use = "This garage is being used by someone else. Wait your turn.",
-		invalid_model = "Uh, that car model doesn't even exist in our world.",
 		vehicle_in_the_way = "OMG, there's a car blocking the spawn area.",
 		vehicle_is_out = "Duh, your ride is already on the streets.",
-		vehicle_stored = "Sweet, we put your car away safe and sound.",
-		vehicle_stored_other = "undefined",
-		error_storing = "Sorry, we couldn't store your car. Is it even yours?",
+		vehicle_stored = "The vehicle has been, like, totally stored.",
+		error_storing = "Ugh, like, sorry but I, like, failed to store the vehicle.",
 		no_nearby_vehicle = "Like, no cars around here to grab.",
 		no_vehicles_to_retrieve = "Ummm, you don't have any cars to retrieve!",
 		vehicle_retrieved = "Score! We got your car back for you!",
@@ -14603,6 +14750,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		ui_return = "Return, like, duh!",
 		ui_my_vehicle_list = "My Rides",
 		ui_other_vehicle_list = "Their Rides",
+		ui_shared_vehicle_list = "Shared Garage, like, duh",
+		ui_store_shared = "Like, totally put it in Shared",
 		ui_store_vehicle = "Store, totes!",
 		ui_vehicle_sell = "Sell, cha-ching!",
 		ui_retrieve_vehicle = "Retrieve, get it back!",
@@ -14658,6 +14807,20 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		ungarage_success = "Successfully, like, ungaraged the vehicle.",
 		ungarage_failed = "Like, totally failed to ungarage the car. Did you, like, enter the right car id?",
 		vehicle_not_found = "Uh, couldn't find any car with that id, like, at all.",
+		vehicle_respawned = "Yay, like, I totally brought back the vehicle with id ${vehicleId}.",
+		respawn_failed = "Like, oh no! I, like, failed to bring back the vehicle.",
+
+		not_near_node = "What a bummer, I'm, like, not near a vehicle node.",
+		invalid_garage_id = "Uh oh, that's like an invalid garage id.",
+		failed_create_garage = "Like, totally bummer, couldn't make a temp garage.",
+		failed_remove_garage = "Ugh, epic fail trying to get rid of that temp garage.",
+		created_garage = "Made a temp garage, you guys! It's like, ID ${garageId}.",
+		removed_garage = "Totally got rid of that temp garage, ID ${garageId}.",
+
+		created_garage_logs_title = "Trying Out a New Garage",
+		created_garage_logs_details = "${consoleName} is, like, creating a garage, with ID ${garageId} at `${xCoord}, ${yCoord}, ${zCoord}`.",
+		removed_garage_logs_title = "Bye Bye Garage",
+		removed_garage_logs_details = "${consoleName} was, like, removing a garage, with ID ${garageId}.",
 
 		garaged_vehicle_logs_title = "Locked Up Car",
 		garaged_vehicle_logs_details = "${consoleName} locked up a car with, like, id ${vehicleId}.",
@@ -14907,8 +15070,6 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		cant_throw_weapon = "Sorry, but you, like, can't throw this weapon.",
 		keybind_description = "Throw your weapon, like, OMG.",
 
-		total_throwables = "Throwables: ${count}",
-
 		threw_weapon_logs_title = "Threw Weapon",
 		threw_weapon_logs_details = "${consoleName}, like, totally threw their ${item} (${coords}).",
 		picked_up_weapon_logs_title = "Like, Picked Up Weapon",
@@ -14948,7 +15109,10 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		folded_stock = "Like, the stock is totally folded now.",
 		unfolded_stock = "Stock like, unfolded and ready to go!",
 		failed_to_toggle_stock = "Oh no, it like, totally failed to toggle the stock.",
-		weapon_has_no_stock = "This weapon, like, doesn't even have a stock or anything, lame."
+		weapon_has_no_stock = "This weapon, like, doesn't even have a stock or anything, lame.",
+
+		petrolcan_explosion_logs_title = "Petrolcan Boom",
+		petrolcan_explosion_logs_details = "OMG, ${consoleName} like totally blew themselves up with a petrolcan, so tragic."
 	},
 
 	-- a shared "alpha" locale category uwu - also know, some features such as the ${InteractionKey} will be missing here, so don't try to use it
@@ -15102,8 +15266,8 @@ OP.Global.Locales.Languages["meme-valleygirl"] = {
 		smart_watch_hover = "<i>This smart watch belongs to <b>${name} (#${cid})</b>, obvs. It's tracked <b>${stepsWalked}</b> steps.</i>",
 		item_contains = "<b>Like it's got:</b> <i>${contents}</i>.",
 		item_engraving = "<b>Ugh, the engraving says:</b> <i>${message}</i>.",
-		evidence_bag_casing = "Bullet Casings: ${casings} casing(s) were shot by a ${weapon} registered to ${name} (#${cid}) (like, found at ${time} near ${location}).",
-		evidence_bag_casing_unregistered = "Bullet Casings: ${casings} casing(s) were shot by, like, an unregistered ${weapon} (found at ${time} near ${location}).",
+		evidence_bag_casing = "Like, there were ${casings} bullet casings from a ${weapon} (${serialNumber}) used by ${name} (#${cid}) at ${time} near ${location}.",
+		evidence_bag_casing_unregistered = "Bullet Casings: ${casings} casing(s) from an unregistered ${weapon} (${serialNumber}) found at ${time} near ${location}.",
 		evidence_bag_impact = "Bullet Impact: ${impacts} impact(s), like, totally show that they were created by a ${weapon} (found at ${time} near ${location}).",
 		evidence_bag_vehicle = "OMG, like, Vehicle DNA: So, like, the sample totally came back to ${name} (#${cid}) and was, like, extracted from seat ${seat} in a vehicle with the plate ${plate} (picked up at ${time} near ${location}).",
 		evidence_bag_vehicle_empty = "Vehicle DNA: The sample, like, didn't match any record and was, like, extracted from seat ${seat} in a vehicle with the plate ${plate} (picked up at ${time} near ${location}).",
