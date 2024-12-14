@@ -901,19 +901,19 @@ OP.Global.Locales.Languages["it-IT"] = {
 		staff_pm_command_parameter_message_help = "Il messaggio che vorresti inviare.",
 		staff_pm_command_substitutes = "staffpm",
 
-		important_staff_pm_command = "messaggio_importante_staff",
+		important_staff_pm_command = "important_staff_pm",
 		important_staff_pm_command_help = "Invia un messaggio importante a un giocatore come membro dello staff.",
 		important_staff_pm_command_parameter_server_id = "id server",
 		important_staff_pm_command_parameter_server_id_help = "L'ID del giocatore a cui stai cercando di inviare un messaggio.",
 		important_staff_pm_command_parameter_message = "messaggio",
 		important_staff_pm_command_parameter_message_help = "Il messaggio importante che desideri inviare.",
-		important_staff_pm_command_substitutes = "!supportomsg, !messaggio_squadra",
+		important_staff_pm_command_substitutes = "!staffpm, !staff_pm",
 
-		reply_pm_command = "rispondi_pm",
+		reply_pm_command = "reply_pm",
 		reply_pm_command_help = "Rispondi all'ultimo messaggio del personale che hai ricevuto.",
 		reply_pm_command_parameter_message = "messaggio",
 		reply_pm_command_parameter_message_help = "Il messaggio che desideri inviare.",
-		reply_pm_command_substitutes = "rispondi",
+		reply_pm_command_substitutes = "reply",
 
 		staff_command = "staff",
 		staff_command_help = "Trasmetti un messaggio a tutti i membri dello staff attivi.",
@@ -921,7 +921,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		staff_command_parameter_message_help = "Il messaggio che vorresti inviare.",
 		staff_command_substitutes = "",
 
-		local_staff_command = "personale_locale",
+		local_staff_command = "local_staff",
 		local_staff_command_help = "Inoltra un messaggio a tutti i membri dello staff attivi entro un raggio di 25 metri.",
 		local_staff_command_parameter_message = "messaggio",
 		local_staff_command_parameter_message_help = "Il messaggio che desideri inviare.",
@@ -1460,8 +1460,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		remove_twitch_ban_exception_command = "rimuovi_eccezione_ban_twitch",
 		remove_twitch_ban_exception_command_help = "Rimuovi l'eccezione di ban su Twitch di un giocatore.",
-		remove_twitch_ban_exception_command_parameter_server_id = "Failed to automatically generate translation.",
-		remove_twitch_ban_exception_command_parameter_server_id_help = "Failed to automatically generate translation.",
+		remove_twitch_ban_exception_command_parameter_server_id = "server id",
+		remove_twitch_ban_exception_command_parameter_server_id_help = "The server ID of the player you want to remove the exception from.",
 		remove_twitch_ban_exception_command_substitutes = "",
 
 		-- base/users
@@ -1648,7 +1648,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
-		mute_boomboxes_command = "silenziare_radio",
+		mute_boomboxes_command = "mute_boombox",
 		mute_boomboxes_command_help = "Silenzia/Attiva audio delle radio.",
 		mute_boomboxes_command_substitutes = "",
 
@@ -2708,7 +2708,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		minecraft_command_parameter_no_sound_help = "Nessun suono quando si posizionano i blocchi.",
 		minecraft_command_substitutes = "",
 
-		minecraft_wipe_command = "pulisci_minecraft",
+		minecraft_wipe_command = "wipe_minecraft",
 		minecraft_wipe_command_help = "Cancella tutti i blocchi di minecraft in un determinato raggio.",
 		minecraft_wipe_command_parameter_radius = "raggio",
 		minecraft_wipe_command_parameter_radius_help = "Il raggio in cui desideri cancellare i blocchi. (0 = tutti i blocchi, max 5000)",
@@ -3146,11 +3146,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		wipe_props_command_substitutes = "",
 
 		-- game/racing
-		race_leave_command = "uscita_gara",
+		race_leave_command = "race_leave",
 		race_leave_command_help = "Abbandona la gara in cui ti trovi.",
 		race_leave_command_substitutes = "uscita_gara",
 
-		race_share_command = "condividi_gara",
+		race_share_command = "race_share",
 		race_share_command_help = "Condividi una pista da corsa con un altro giocatore.",
 		race_share_command_parameter_server_id = "ID server",
 		race_share_command_parameter_server_id_help = "L'ID del server del giocatore con cui desideri condividere una pista.",
@@ -3158,11 +3158,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		race_share_command_parameter_track_name_help = "Il nome della pista che desideri condividere.",
 		race_share_command_substitutes = "",
 
-		race_record_command = "registra_gara",
+		race_record_command = "race_record",
 		race_record_command_help = "Registra una gara.",
 		race_record_command_substitutes = "",
 
-		race_save_command = "salva_gara",
+		race_save_command = "race_save",
 		race_save_command_help = "Salva una gara.",
 		race_save_command_parameter_track_name = "nome tracciato",
 		race_save_command_parameter_track_name_help = "Il nome con cui vuoi salvarla.",
@@ -3170,23 +3170,23 @@ OP.Global.Locales.Languages["it-IT"] = {
 		race_save_command_parameter_track_type_help = "Il tipo di tracciato della gara.",
 		race_save_command_substitutes = "",
 
-		race_delete_command = "elimina_gara",
+		race_delete_command = "race_delete",
 		race_delete_command_help = "Elimina una gara.",
 		race_delete_command_parameter_track_name = "nome percorso",
 		race_delete_command_parameter_track_name_help = "Il nome del percorso che desideri eliminare.",
 		race_delete_command_substitutes = "",
 
-		race_list_command = "race_lista",
+		race_list_command = "race_list",
 		race_list_command_help = "Elenco di tutte le gare salvate.",
 		race_list_command_substitutes = "",
 
-		race_load_command = "race_carica",
+		race_load_command = "race_load",
 		race_load_command_help = "Carica una gara.",
 		race_load_command_parameter_track_name = "nome percorso",
 		race_load_command_parameter_track_name_help = "Il nome del percorso che desideri caricare.",
 		race_load_command_substitutes = "",
 
-		race_start_command = "race_inizia",
+		race_start_command = "race_start",
 		race_start_command_help = "Inizia una gara.",
 		race_start_command_parameter_amount = "importo",
 		race_start_command_parameter_amount_help = "Il costo per partecipare alla gara.",
@@ -3196,15 +3196,15 @@ OP.Global.Locales.Languages["it-IT"] = {
 		race_start_command_parameter_laps_help = "Il numero di giri.",
 		race_start_command_substitutes = "",
 
-		race_cancel_command = "gara_annulla",
+		race_cancel_command = "race_cancel",
 		race_cancel_command_help = "Annulla una gara.",
 		race_cancel_command_substitutes = "",
 
-		race_checkpoints_command = "gara_checkpoints",
+		race_checkpoints_command = "race_checkpoints",
 		race_checkpoints_command_help = "Attiva/disattiva i checkpoints.",
 		race_checkpoints_command_substitutes = "",
 
-		race_sounds_command = "suoni_gara",
+		race_sounds_command = "race_sounds",
 		race_sounds_command_help = "Attiva/disattiva i suoni.",
 		race_sounds_command_substitutes = "",
 
@@ -3289,20 +3289,20 @@ OP.Global.Locales.Languages["it-IT"] = {
 		rooms_debug_command_substitutes = "",
 
 		-- game/rules
-		explain_rule_command = "spiega_regola",
+		explain_rule_command = "explain_rule",
 		explain_rule_command_help = "Mostra la spiegazione di una determinata regola.",
 		explain_rule_command_parameter_number = "numero",
 		explain_rule_command_parameter_number_help = "Il numero della regola (esempio: 1.1)",
 		explain_rule_command_substitutes = "regola",
 
-		rules_command = "regole",
+		rules_command = "rules",
 		rules_command_help = "Apre le regole della comunità nel tuo browser.",
 		rules_command_substitutes = "",
 
 		-- game/savings_accounts
-		savings_accounts_command = "सेविंग्स खाते",
-		savings_accounts_command_help = "अपने सभी सेविंग्स खातों को देखें और प्रबंधित करें।",
-		savings_accounts_command_substitutes = "सेविंग्स, खाते",
+		savings_accounts_command = "savings_accounts",
+		savings_accounts_command_help = "Visualizza e gestisci tutti i tuoi conti di risparmio.",
+		savings_accounts_command_substitutes = "savings, accounts",
 
 		-- game/scenarios
 		scenarios_debug_command = "debug_scenario",
@@ -5226,7 +5226,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		getting_started = "Per Iniziare",
 		getting_started_1 = "Sei appena arrivato in aeroporto e probabilmente ti stai chiedendo cosa fare adesso? Tutti i nuovi cittadini ricevono un'auto in omaggio. Potrebbe non essere la migliore, ma e tua. La troverai nel parcheggio.",
 		getting_started_2 = "Se non ti va di guidare, puoi anche camminare, farti prendere da un amico o chiamare un taxi usando il telefono. Puoi accedere al telefono usando il muscolo \"P\".",
-		getting_started_3 = "La maggior parte delle auto ha il bagagliaio dove puoi mettere non solo oggetti ma anche altre persone. Puoi /portare qualcuno, poi avvicinarti a un bagagliaio, aprirlo (/apriporta) e metterli dentro. Allo stesso modo puoi anche farli uscire. Se hai capovolto la tua auto puoi /ribaltarla sulle ruote.",
+		getting_started_3 = "La maggior parte delle auto ha il bagagliaio dove puoi mettere non solo oggetti ma anche altre persone. Puoi portare qualcuno, poi avvicinarti a un bagagliaio, aprirlo (/apriporta) e metterli dentro. Allo stesso modo puoi anche farli uscire. Se hai capovolto la tua auto puoi /ribaltarla sulle ruote.",
 
 		where_now = "Cosa Fare Adesso?",
 		where_now_1 = "Ora che hai la tua prima auto, puoi iniziare a esplorare la città. Dato che hai bisogno di rimanere nutrito e idratato, un negozio di alimentari e un buon punto di partenza. Lì puoi acquistare cibo e bevande, oltre che bendaggi per aiutarti a guarire dalle ferite.",
@@ -8563,7 +8563,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		extended_smg_clip_description = "Meno ricarica.",
 		extended_shotgun_clip = "Caricatore aumentato (Shotgun)",
 		extended_shotgun_clip_description = "Meno ricarica.",
-		drum = "Caricatore a tambuto",
+		drum = "Caricatore a tamburo",
 		drum_description = "Non ricaricare mai più.",
 		pistol_sight = "Mirino per pistola",
 		pistol_sight_description = "Come correggere il cattivo obiettivo.",
@@ -8694,8 +8694,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		belgian_fries_description = "Per un gusto migliorato, dm @Crux#4153 scrivetegli \"fritas\".",
 		coke = "Coca",
 		coke_description = "Escobar?",
-		pepsi = "${consoleName} telah dipulihkan karena pemain baru yang membunuhnya telah dilarang.",
-		pepsi_description = "Tidak dapat mendaftarkan senjata tanpa nomor seri.",
+		pepsi = " Pepsi.",
+		pepsi_description = "Meglio la coke",
 		fanta_light = "Fanta Light",
 		fanta_light_description = "Assapora il gusto sfuggente e rinfrescante della Fanta Light. Perfetta quando hai bisogno di una bevanda che ti fa pensare, \"Posso avere una Fanta Light, per favore?\" Goditi il gusto leggero e frizzante di questa bevanda iconica.",
 		sprite = "Sprite",
@@ -9173,8 +9173,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		power_saw = "Sega alternativa",
 		power_saw_description = "Una sega alternativa versatile, perfetta per lavori veloci e sporchi. Che tu stia tagliando metallo, legno o... altri materiali, questo strumento fa al caso tuo.",
-		steel_file = "${consoleName} telah dipulihkan karena pemain baru yang membunuhnya telah dilarang.",
-		steel_file_description = "Tidak dapat mendaftarkan senjata tanpa nomor seri.",
+		steel_file =  "Fili in acciaio",
+		steel_file_description = "Si usa per archiviare le cose. Non per le tasse, però.",
 		catalytic_converter = "Convertitore catalitico",
 		catalytic_converter_description = "Sei portato per gli scherzi notturni in auto? Questo brillante pezzo di metallo è il tuo biglietto per guadagnare rapidamente, basta non farsi beccare dalla polizia mentre lo rubi dalle auto parcheggiate.",
 		car_brakes = "Freni",
@@ -9228,17 +9228,17 @@ OP.Global.Locales.Languages["it-IT"] = {
 		necklaces_description = "Aggiungi un po 'di bling extra al tuo outfit!",
 		gold_watches = "Orologi d'oro",
 		gold_watches_description = "E ... dove li hai presi, esattamente?",
-		diamonds = "Diamonti",
+		diamonds = "Diamanti",
 		diamonds_description = "Hai bisogno di 24 per fare un'armatura piena.Consiglierei di ricevere 27 però in modo da poterti fare anche un piccone.",
 
-		savings_bond_200 = "ID karakter tidak diketahui.",
-		savings_bond_200_description = "Pemain target tidak memiliki karakter yang dimuat.",
-		savings_bond_500 = "Anda telah berhenti streaming.",
-		savings_bond_500_description = "Pesan yang ingin Anda kirimkan. Ringkasan singkat tentang apa yang Anda laporkan (Contoh: \"Saya baru saja di VDM, ID mereka adalah...\").",
-		savings_bond_1000 = "Failed to automatically generate translation.",
-		savings_bond_1000_description = "Failed to automatically generate translation.",
-		savings_bond_2000 = "Failed to automatically generate translation.",
-		savings_bond_2000_description = "Failed to automatically generate translation.",
+		savings_bond_200 = "$200 Savings Bond",
+		savings_bond_200_description = "A $200 savings bond that represents your commitment to financial security. This bond can be cashed in at participating banks, providing you with a boost to your savings and a step closer to your financial goals.",
+		savings_bond_500 = "$500 Savings Bond",
+		savings_bond_500_description = "A $500 savings bond that serves as a substantial investment in your future. When the time is right, redeem it at a bank to unlock its full value and take a significant stride toward your financial aspirations.",
+		savings_bond_1000 = "$1,000 Savings Bond",
+		savings_bond_1000_description = "A $1,000 savings bond, a testament to your dedication to building wealth. Keep this bond safe until you're ready to cash it in at a bank, where it will provide you with a substantial financial boost.",
+		savings_bond_2000 = "$2,000 Savings Bond",
+		savings_bond_2000_description = "A $2,000 savings bond, a substantial investment in your financial future. Hold onto this bond until the time is right, and then redeem it at a bank to unlock its full value, helping you achieve your financial dreams.",
 
 		weather_spell_snow = "Weather Spell (Snow)",
 		weather_spell_snow_description = "L'uso di questo articolo ti consentirà di controllare temporaneamente il tempo e farlo nevicare!e un utilizzo una tantum, quindi usa con cura.Se usi due incantesimi meteorologici contemporaneamente, il secondo farà semplicemente la fila.",
@@ -9335,11 +9335,11 @@ OP.Global.Locales.Languages["it-IT"] = {
 		trading_card_pack = "Pacchetto di carte collezionabili",
 		trading_card_pack_description = "Un pacchetto di carte commerciali casuali, otteniamo delle buone tiri.",
 
-		boombox = "Boombox",
+		boombox = "Stereo",
 		boombox_description = "Suona musica e sii odioso ovunque, in qualsiasi momento!",
 
-		microphone_stand = "Failed to automatically generate translation.",
-		microphone_stand_description = "Failed to automatically generate translation.",
+		microphone_stand = "Asta per microfono.",
+		microphone_stand_description = "Amplificate la portata della vostra voce con il supporto per microfono. Fate sentire il vostro messaggio in lungo e in largo!.",
 
 		lighter = "Accendino",
 		lighter_description = "Alcuni uomini vogliono solo vedere bruciare il mondo",
@@ -9410,7 +9410,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		meth_bag = "Sacco di metanfetamina",
 		meth_bag_description = "Soprannominata \"Cooper's Spice\". Alcuni dei cristalli più puri per abbellire il mare di Alamo.",
 
-		meth_table = "Tavolo di polvere bianca",
+		meth_table = "Tavolo Meth",
 		meth_table_description = "Haha che si diverte un cattivo riferimento sulla cucina meth.",
 
 		glass_pipe = "Pipa di Vetro",
@@ -9598,12 +9598,12 @@ OP.Global.Locales.Languages["it-IT"] = {
 
 		irish_coffee = "Caffe irlandese",
 		irish_coffee_description = "Caffe appena preparato con un po 'di whisky irlandese originale in esso.",
-		guinness_beer = "Failed to automatically generate translation.",
-		guinness_beer_description = "Failed to automatically generate translation.",
-		jameson_whiskey = "Failed to automatically generate translation.",
-		jameson_whiskey_description = "Failed to automatically generate translation.",
-		tayto_chips = "Failed to automatically generate translation.",
-		tayto_chips_description = "Failed to automatically generate translation.",
+		guinness_beer = "Guinness",
+		guinness_beer_description = "Una pinta della migliore birra irlandese del mondo.",
+		jameson_whiskey = "Jameson.",
+		jameson_whiskey_description = "“Una bottiglia del miglior whisky irlandese del mondo..",
+		tayto_chips = "Tayto Chips.",
+		tayto_chips_description = "Its \"chips\" not \"crisps\".",
 
 		chip_10 = "$10 Chip",
 		chip_10_description = "Un chip di gioco d'azzardo.Può essere usato per giocare d'azzardo.L'oggetto può essere convertito in denaro nel casinò.",
@@ -10283,8 +10283,8 @@ OP.Global.Locales.Languages["it-IT"] = {
 		weapon_addon_honey = "Honey Badger",
 		weapon_addon_honey_description = "Il AAC Honey Badger PDW e un'arma per la difesa personale, spesso utilizzata in configurazione silenziata e si basa sull'AR-15. Ha una camera per il calibro .300 AAC Blackout ed e stato originariamente prodotto dalla Advanced Armament Corporation (AAC).",
 
-		weapon_addon_glock18c = "Failed to automatically generate translation.",
-		weapon_addon_glock18c_description = "Pemulihan Pemain Baru",
+		weapon_addon_glock18c = "Glock18c.",
+		weapon_addon_glock18c_description = "4the real ninjas",
 
 		weapon_addon_1911 = "1911 Kimber Tactical",
 		weapon_addon_1911_description = "Il 1911 Kimber Tactical: Dove lo stile incontra la sostanza. Affidabile per gli appassionati di tutto il mondo, e la tua scelta sia per la difesa che per il fattore cool!",
@@ -10812,7 +10812,7 @@ OP.Global.Locales.Languages["it-IT"] = {
 		confirm_pledge_upgrade_text = "Sei sicuro di voler aggiornare la tua adesione ${pledgeLabel} a ${pledgeUpgradeLabel} per ${cost} punti OP?",
 		upgrading_pledge = "Aggiornamento dell'adesione in corso...",
 
-		medal = "Medaglia",
+		medal = "Medal",
 		claim_points = "Richiedi Punti (${claimablePoints})",
 		medal_what_is_this_text_part_1 = "Ottenendo visualizzazioni e mi piace sui tuoi clip di Medal, puoi guadagnare Punti OP! Ottieni un punto ogni 2 clip, un punto ogni 500 visualizzazioni e un punto ogni 50 mi piace.",
 		account_name = "Nome Account",
@@ -13879,14 +13879,14 @@ OP.Global.Locales.Languages["it-IT"] = {
 	},
 
 	vending_machines = {
-		vending_coffee = "Premi ~INPUT_CONTEXT~ per acquistare un Caffe. Il costo e $${costo}.",
-		vending_coffee_not_enough_cash = "Non hai abbastanza soldi per comprare un Caffe. Il costo e $${costo}.",
-		vending_snack = "Premi ~INPUT_CONTEXT~ per acquistare uno Snack. Il costo e $${costo}.",
-		vending_snack_not_enough_cash = "Non hai abbastanza soldi per comprare uno Snack. Il costo e $${costo}.",
+		vending_coffee = "Premi ~INPUT_CONTEXT~ per acquistare un Caffe. Il costo e $${cost}.",
+		vending_coffee_not_enough_cash = "Non hai abbastanza soldi per comprare un Caffe. Il costo e $${cost}.",
+		vending_snack = "Premi ~INPUT_CONTEXT~ per acquistare uno Snack. Il costo e $${cost}.",
+		vending_snack_not_enough_cash = "Non hai abbastanza soldi per comprare uno Snack. Il costo e $${cost}.",
 		vending_soda = "Premi ~INPUT_CONTEXT~ per acquistare una Bibita. Il costo e $${cost}.",
-		vending_soda_not_enough_cash = "Non hai abbastanza soldi per comprare una Bibita. Il costo e $${costo}.",
-		vending_water = "Premi ~INPUT_CONTEXT~ per acquistare una Bottiglia d'Acqua. Il costo e $${costo}.",
-		vending_water_not_enough_cash = "Non hai abbastanza soldi per comprare una Bottiglia d'Acqua. Il costo e $${costo}.",
+		vending_soda_not_enough_cash = "Non hai abbastanza soldi per comprare una Bibita. Il costo e $${cost}.",
+		vending_water = "Premi ~INPUT_CONTEXT~ per acquistare una Bottiglia d'Acqua. Il costo e $${cost}.",
+		vending_water_not_enough_cash = "Non hai abbastanza soldi per comprare una Bottiglia d'Acqua. Il costo e $${cost}.",
 		vending_machine_damaged = "Questo Distributore Automatico e danneggiato. Controlla di nuovo più tardi.",
 		vending_water_cooler = "Premi ~INPUT_CONTEXT~ per prendere un Bicchiere d'Acqua.",
 
@@ -14298,13 +14298,13 @@ OP.Global.Locales.Languages["it-IT"] = {
 		press_to_browse_jobs = "Premi ~INPUT_CONTEXT~ per sfogliare i lavori.",
 		change_job = "Cambia Lavoro: ${jobName}",
 		job_unemployed = "Disoccupato",
-		job_transportation = "Autista di Camion",
-		job_taxi = "Autista di Taxi",
+		job_transportation = "Camionista",
+		job_taxi = "Taxista",
 		job_journalist = "Giornalista",
-		job_government = "Raccoglitore di Rifiuti",
-		job_mechanic = "Concessionario di Traino",
-		job_delivery = "Lavoro di Consegna",
-		job_bus_driver = "Bus Driver",
+		job_government = "Netturbino",
+		job_mechanic = "Rimozione Forzata",
+		job_delivery = "Corriere",
+		job_bus_driver = "Autista di Bus",
 		changed_job_already_set_to_job = "Il tuo lavoro e già impostato su ${jobName}.",
 		changed_job_success = "Hai impostato con successo il tuo lavoro su ${jobName}.",
 		changed_job_success_go_to_coords = "Hai impostato con successo il tuo lavoro su ${jobName}. Segui il waypoint sulla tua mappa per iniziare.",
